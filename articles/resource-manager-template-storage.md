@@ -39,8 +39,8 @@
 | ---- | ---- |
 | type | 枚举<br />必需<br />**Microsoft.Storage/storageAccounts**<br /><br />要创建的资源类型。 |
 | apiVersion | 枚举<br />必需<br />**2015-06-15** or **2015-05-01-preview**<br /><br />用于创建资源的 API 版本。 | 
-| name | 字符串<br />必需<br />3 到 24 个字符，仅限数字和小写字母。<br /><br />要创建的存储帐户的名称。该名称必须在全 Azure 中唯一。请考虑在你的命名约定中使用 [uniqueString](/documentation/articles/resource-group-template-functions#uniquestring) 函数，如下面的示例所示。 |
-| location | 字符串<br />所需<br />支持存储帐户的区域。若要确定有效的区域，请参阅[支持的区域](/documentation/articles/resource-manager-supported-services#supported-regions)。<br /><br />托管存储帐户的区域。 |
+| name | 字符串<br />必需<br />3 到 24 个字符，仅限数字和小写字母。<br /><br />要创建的存储帐户的名称。该名称必须在全 Azure 中唯一。请考虑在你的命名约定中使用 [uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数，如下面的示例所示。 |
+| location | 字符串<br />所需<br />支持存储帐户的区域。若要确定有效的区域，请参阅[支持的区域](/documentation/articles/resource-manager-supported-services/#supported-regions)。<br /><br />托管存储帐户的区域。 |
 | properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于指定要创建的存储帐户的类型。 |
 
 <a id="properties"></a>
@@ -48,7 +48,7 @@
 
 | 名称 | 值 |
 | ---- | ---- | 
-| accountType | 字符串<br />必需<br />**Standard\_LRS**、**Standard\_ZRS**、**Standard\_GRS**、**Standard\_RAGRS** 或 **Premium\_LRS**<br /><br />存储帐户的类型。允许的值对应于标准本地冗余、标准区域冗余、标准地域冗余、标准读取访问地域冗余和高级本地冗余。有关这些帐户类型的信息，请参阅 [Azure 存储复制](/documentation/articles/storage-redundancy)。 |
+| accountType | 字符串<br />必需<br />**Standard\_LRS**、**Standard\_ZRS**、**Standard\_GRS**、**Standard\_RAGRS** 或 **Premium\_LRS**<br /><br />存储帐户的类型。允许的值对应于标准本地冗余、标准区域冗余、标准地域冗余、标准读取访问地域冗余和高级本地冗余。有关这些帐户类型的信息，请参阅 [Azure 存储复制](/documentation/articles/storage-redundancy/)。 |
 
 	
 ## 示例
@@ -90,6 +90,6 @@
 
 ## 后续步骤
 
-- 有关存储的常规信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
+- 有关存储的常规信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction/)。
 
 <!---HONumber=Mooncake_0425_2016-->

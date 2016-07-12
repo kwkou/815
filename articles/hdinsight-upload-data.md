@@ -60,7 +60,7 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 
 [AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
 
-1. [安装和配置适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install)。
+1. [安装和配置适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
 
@@ -100,13 +100,13 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 
 ###<a id="powershell"></a>Azure PowerShell
 
-Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关配置工作站以运行 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关配置工作站以运行 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 [AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-powershell.md)]
 
 **将本地文件上载到 Azure Blob 存储**
 
-1. 根据[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明打开 Azure PowerShell 控制台。
+1. 根据[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明打开 Azure PowerShell 控制台。
 2. 设置以下脚本中前五个变量的值：
 
 		$subscriptionName = "<AzureSubscriptionName>"
@@ -152,7 +152,7 @@ AzCopy 语法为：
 
 若要使用 Hadoop 命令，必须先使用以下方法之一连接到头节点：
 
-* **基于 Windows 的 HDInsight**：[使用远程桌面连接](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)
+* **基于 Windows 的 HDInsight**：[使用远程桌面连接](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp)
 
 连接之后，可以使用以下语法将文件上载到存储。
 
@@ -248,27 +248,27 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 [azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
 [azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs/
-[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
-[azure-azcopy-download]: /documentation/articles/storage-use-azcopy
-[azure-azcopy]: /documentation/articles/storage-use-azcopy
+[azure-create-storage-account]: /documentation/articles/storage-create-storage-account/
+[azure-azcopy-download]: /documentation/articles/storage-use-azcopy/
+[azure-azcopy]: /documentation/articles/storage-use-azcopy/
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 
-[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started/
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
-[azurecli]: /documentation/articles/xplat-cli-install
+[azurecli]: /documentation/articles/xplat-cli-install/
 
 
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png

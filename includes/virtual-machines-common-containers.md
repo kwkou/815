@@ -3,7 +3,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 **但是，这个新闻已经过时了。** *最新* 的新闻是 Azure 可带来更多的 Docker 好处：
 
-- 可通过 Azure CLI [创建 Docker 主机](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)。
+- 可通过 Azure CLI [创建 Docker 主机](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)。
 - 可与许多专有和开放源配置管理工具集成
 
 而且由于可通过编程方式在 Azure 上创建 VM 和 Linux 容器，因此还可以使用 VM 和容器*协调*工具来创建多组虚拟机 (VM)，并在 Linux 容器和很快即将支持的 [Windows 容器](https://msdn.microsoft.com/zh-cn/virtualization/windowscontainers/about/about_overview)中部署应用程序。
@@ -53,7 +53,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 开发人员很快就会开始喜欢 Docker 容器，因为首先它有助于轻松使用 Linux 容器：
 
 - 他们可以使用简单的增量命令来创建易于部署的固定映像，并可使用 dockerfile 自动构建这些映像。
-- 通过对[公有](https://registry.hub.docker.com/)或[私有 docker 注册表](/documentation/articles/virtual-machines-linux-docker-registry-in-blob-storage)使用简单的 [Git](https://git-scm.com/) 式推送和拉取命令，就可对这些映像进行共享。 
+- 通过对[公有](https://registry.hub.docker.com/)或[私有 docker 注册表](/documentation/articles/virtual-machines-linux-docker-registry-in-blob-storage/)使用简单的 [Git](https://git-scm.com/) 式推送和拉取命令，就可对这些映像进行共享。 
 - 他们可以考虑用单独的应用程序组件来代替计算机
 - 他们可以使用大量适合于 docker 容器的工具以及不同的基础映像。
 
@@ -102,7 +102,7 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 
 有多个常用系统可部署整个组的 VM，并在其上安装 Docker（或其他 Linux 容器主机系统）作为可自动化组。有关直接链接，请参阅下文的[容器和工具](#containers-and-vm-technologies)节。有许多系统都或多或少能实现这一点，此列表不能尽录。根据你的技能组合和具体情况，它们可能有用，也可能不发挥作用。
 
-Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles/virtual-machines-linux-docker-machine)) 和一个负载平衡、docker-container 群集管理工具 ([swarm](/documentation/articles/virtual-machines-linux-docker-swarm))。此外，[Azure Docker VM 扩展程序](https://github.com/Azure/azure-docker-extension/blob/master/README.md)附带了默认的 [`docker-compose`](https://docs.docker.com/compose/) 支持，此功能可在多个容器内部署已配置的应用程序容器。
+Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles/virtual-machines-linux-docker-machine/)) 和一个负载平衡、docker-container 群集管理工具 ([swarm](/documentation/articles/virtual-machines-linux-docker-swarm/))。此外，[Azure Docker VM 扩展程序](https://github.com/Azure/azure-docker-extension/blob/master/README.md)附带了默认的 [`docker-compose`](https://docs.docker.com/compose/) 支持，此功能可在多个容器内部署已配置的应用程序容器。
 
 另外，你还可以尝试使用 [Mesosphere 的数据中心操作系统 (DCOS)](http://docs.mesosphere.com/install/azurecluster/)。DCOS 基于开放源 [mesos](http://mesos.apache.org/)“分布式系统内核”，有助于你将数据中心视为一个可寻址服务进行处理。DCOS 拥有适合于多个重要系统（[Spark](http://spark.apache.org/) 和 [Kafka](http://kafka.apache.org/) 及其他）的内置程序包，以及 [Marathon](https://mesosphere.github.io/marathon/)（一种容器控制系统）和 [Chronos](https://mesosphere.com/blog/2015/04/30/chronos-2-3-3-released/)（一种分布式计划程序）等内置服务。Mesos 是借鉴了从 Twitter、AirBnb 和其他网络级企业学到的经验。
 
@@ -148,14 +148,14 @@ Docker 工具：
 
 Azure 上的 Docker：
 
-- [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension)
+- [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension/)
 - [Azure Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
-- [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)
-- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine)
-- [如何在 Azure 上将 docker 与 swarm 一起使用](/documentation/articles/virtual-machines-linux-docker-swarm)
-- [在 Azure 上使用 Docker 和 Compose 入门](/documentation/articles/virtual-machines-linux-docker-compose-quickstart)
+- [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)
+- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine/)
+- [如何在 Azure 上将 docker 与 swarm 一起使用](/documentation/articles/virtual-machines-linux-docker-swarm/)
+- [在 Azure 上使用 Docker 和 Compose 入门](/documentation/articles/virtual-machines-linux-docker-compose-quickstart/)
 - [对包含在容器内的应用程序的 `compose`](https://github.com/Azure/azure-docker-extension#11-public-configuration-keys) 提供内置支持
-- [在 Azure 上实施 Docker 专有注册表](/documentation/articles/virtual-machines-linux-docker-registry-in-blob-storage)
+- [在 Azure 上实施 Docker 专有注册表](/documentation/articles/virtual-machines-linux-docker-registry-in-blob-storage/)
 
 Linux 分发和 Azure 示例：
 
@@ -179,7 +179,7 @@ Linux 分发和 Azure 示例：
 	- [第三方：适用于 Azure 的 Hudson Storage 插件](https://github.com/hudson3-plugins/windows-azure-storage-plugin)
 	
 -	[Chef](https://docs.chef.io/index.html)
-	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-extensions-features)
+	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-extensions-features/)
 	- [视频：Chef 是什么及其工作原理](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
 -	[Azure 自动化](/home/features/automation/)

@@ -17,9 +17,9 @@
 
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encode-asset)
-- [REST](/documentation/articles/media-services-rest-encode-asset)
-- [门户](/documentation/articles/media-services-manage-content#encode)
+- [.NET](/documentation/articles/media-services-dotnet-encode-asset/)
+- [REST](/documentation/articles/media-services-rest-encode-asset/)
+- [门户](/documentation/articles/media-services-manage-content/#encode)
 
 ##概述
 要通过 Internet 传送数字视频，你必须对媒体进行压缩。数字视频文件相当大，可能因过大而无法通过 Internet 传送或者无法在你客户的设备上正常显示。编码是压缩视频和音频以便你的客户能够查看媒体的过程。
@@ -32,20 +32,20 @@
 - 通过 OData 批处理。
   
 
-建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
-如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)。
+如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
 
 
->[AZURE.NOTE]在开始引用媒体处理器之前，请确认你的媒体处理器 ID 准确无误。有关详细信息，请参阅[获取媒体处理器](/documentation/articles/media-services-rest-get-media-processor)。
+>[AZURE.NOTE]在开始引用媒体处理器之前，请确认你的媒体处理器 ID 准确无误。有关详细信息，请参阅[获取媒体处理器](/documentation/articles/media-services-rest-get-media-processor/)。
 
 ##创建包含单个编码任务的作业 
 
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
->访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
+>访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
+>在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
 >
 >使用 JSON 并指定在请求中使用 **__metadata** 关键字（例如，为了引用某个链接对象）时，必须将 Accept 标头设置为 [JSON 详细格式](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/)：Accept: application/json;odata=verbose。
 
@@ -257,10 +257,10 @@
 
 
 ##后续步骤
-了解如何创建一个对资产进行编码的作业后，请转到[如何使用媒体服务检查作业进度](/documentation/articles/media-services-rest-check-job-progress)主题。
+了解如何创建一个对资产进行编码的作业后，请转到[如何使用媒体服务检查作业进度](/documentation/articles/media-services-rest-check-job-progress/)主题。
 
 
 ##另请参阅
 
-[获取媒体处理器](/documentation/articles/media-services-rest-get-media-processor)
+[获取媒体处理器](/documentation/articles/media-services-rest-get-media-processor/)
 <!---HONumber=Mooncake_0328_2016-->

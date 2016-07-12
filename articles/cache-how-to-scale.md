@@ -14,7 +14,7 @@
 
 # 如何缩放 Azure Redis 缓存
 
->[AZURE.NOTE]Azure Redis 缓存缩放功能目前处于预览状态。在预览期，你无法向上缩放到高级层缓存，或者由此向下缩放，但可以更改高级缓存内的定价层，并且可以在已启用群集的高级缓存中[更改群集大小](/documentation/articles/cache-how-to-premium-clustering#cluster-size)。
+>[AZURE.NOTE]Azure Redis 缓存缩放功能目前处于预览状态。在预览期，你无法向上缩放到高级层缓存，或者由此向下缩放，但可以更改高级缓存内的定价层，并且可以在已启用群集的高级缓存中[更改群集大小](/documentation/articles/cache-how-to-premium-clustering/#cluster-size)。
 
 Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能的选择更加灵活。如果创建缓存后，你的应用程序的要求发生更改，可以使用 Azure PowerShell 缩放缓存的大小。
 
@@ -29,7 +29,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 -	网络带宽
 -	CPU 使用率
 
-如果确定缓存不再满足应用程序的要求，可以更改到适合应用程序的更大或更小缓存定价层。有关确定应使用哪个缓存定价层的详细信息，请参阅[我应当使用哪些 Redis 缓存产品/服务和大小](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
+如果确定缓存不再满足应用程序的要求，可以更改到适合应用程序的更大或更小缓存定价层。有关确定应使用哪个缓存定价层的详细信息，请参阅[我应当使用哪些 Redis 缓存产品/服务和大小](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
 
 ## 如何自动执行缩放操作
 
@@ -41,13 +41,13 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 	Set-AzureRmRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
 
-有关使用 PowerShell 进行缩放的详细信息，请参阅[使用 PowerShell 缩放 Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell#scale)。
+有关使用 PowerShell 进行缩放的详细信息，请参阅[使用 PowerShell 缩放 Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell/#scale)。
 
 ### 使用 Azure CLI 进行缩放
 
 若要使用 Azure CLI 缩放 Azure Redis 缓存实例，请调用 `azure rediscache set` 命令并传入所需的配置更改，包括新大小、sku 或群集大小，具体取决于所需的缩放操作。
 
-有关使用 Azure CLI 进行缩放的详细信息，请参阅[更改现有 Redis 缓存的设置](/documentation/articles/cache-manage-cli#scale)。
+有关使用 Azure CLI 进行缩放的详细信息，请参阅[更改现有 Redis 缓存的设置](/documentation/articles/cache-manage-cli/#scale)。
 
 ### 使用 MAML 进行缩放
 
@@ -82,9 +82,9 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 -	你无法从**基本**或**标准**定价层缩放到**高级**缓存定价层。
 -	你无法从**高级**缓存缩放到**基本**或**标准**定价层。
 -	可以从一个**高级**缓存定价层缩放到另一个高级缓存定价层。
--	如果在创建**高级**缓存时启用了群集，则可以[更改群集大小](/documentation/articles/cache-how-to-premium-clustering#cluster-size)。
+-	如果在创建**高级**缓存时启用了群集，则可以[更改群集大小](/documentation/articles/cache-how-to-premium-clustering/#cluster-size)。
 
-有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集](/documentation/articles/cache-how-to-premium-clustering)。
+有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集](/documentation/articles/cache-how-to-premium-clustering/)。
 
 ## 缩放后，我是否需要更改缓存名称或访问密钥
 

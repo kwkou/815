@@ -26,7 +26,7 @@
 打开目录视图 **sys.remote\_data\_archive\_tables** 并检查 **filter\_predicate** 列的值。如果值为 null，则整个表符合迁移条件。有关详细信息，请参阅 [sys.remote\_data\_archive\_tables (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935003.aspx)。
 
 ## <a name="Migration"></a>检查数据迁移状态
-在 SQL Server Management Studio 中选择数据库对应的“任务 | 延伸 | 监视”，以便在SQL Server Stretch Database监视器中监视数据迁移。有关详细信息，请参阅[数据迁移的监视和故障排除（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-monitor)。
+在 SQL Server Management Studio 中选择数据库对应的“任务 | 延伸 | 监视”，以便在SQL Server Stretch Database监视器中监视数据迁移。有关详细信息，请参阅[数据迁移的监视和故障排除（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-monitor/)。
 
 或者，打开动态管理视图 **sys.dm\_db\_rda\_migration\_status** 查看已迁移的数据批数与行数。
 
@@ -37,7 +37,7 @@
 不要更改与针对SQL Server Stretch Database配置的 SQL Server 表相关联的远程 Azure 表的架构。具体而言，请不要修改列的名称或数据类型。SQL Server Stretch Database功能会在与 SQL Server 表架构关联的远程表架构方面做出多种假设。如果你更改了远程架构，所更改表的SQL Server Stretch Database将停止工作。
 
 ## <a name="Firewall"></a>数据迁移的故障排除
-有关故障排除的建议，请参阅[数据迁移的监视和故障排除（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-monitor)。
+有关故障排除的建议，请参阅[数据迁移的监视和故障排除（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-monitor/)。
 
 ## 查询性能故障排除
 **包含已启用延伸的表的查询速度缓慢。**
@@ -48,7 +48,7 @@
 -   你的网络条件可能有所退化。有关最近出现的问题或服务中断的信息，请与你的网络管理员联系。
 
 ## 另请参阅
-[监视SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-monitor)
-[备份和还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-backup)
+[监视SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-monitor/)
+[备份和还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-backup/)
 
 <!---HONumber=Mooncake_0307_2016-->

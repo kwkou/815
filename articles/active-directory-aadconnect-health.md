@@ -26,7 +26,7 @@ Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结�
 
 将本地目录与 Azure AD 集成可提供通用标识用于访问云和本地资源，从而提高用户的生产率。但是，这种集成带来的挑战是，必须确保此环境正常运行，才能让用户从任何设备可靠地访问本地和云中的资源。Azure AD Connect Health 提供简单的基于云的方法让你监视和深入分析用于访问 Office 365 或其他 Azure AD 应用程序的本地标识基础结构。这种方法就像在每个本地标识服务器上安装代理那样简单。
 
-## [适用于 AD FS 的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs)
+## [适用于 AD FS 的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs/)
 
 适用于 AD FS 的 Azure AD Connect Health 支持 Windows Server 2008 R2 中的 AD FS 2.0，以及 Windows Server 2012 和 Windows Server 2012R2 中的 AD FS。其中还包括为 Extranet 访问提供身份验证支持的 AD FS 代理或 Web 应用程序代理服务器。适用于 AD FS 的 Azure AD Connect Health 的安装非常简单且费用低廉，同时提供以下重要功能集：
 
@@ -43,7 +43,7 @@ Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结�
 ## Azure AD Connect Health 入门
 Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 
-1. [获取 Azure AD Premium](/documentation/articles/active-directory-get-started-premium) 或[开始试用](https://azure.microsoft.com/trial/get-started-active-directory/)
+1. [获取 Azure AD Premium](/documentation/articles/active-directory-get-started-premium/) 或[开始试用](https://azure.microsoft.com/trial/get-started-active-directory/)
 
 2. 在标识服务器上[下载并安装 Azure AD Connect Health 代理](#download-and-install-azure-ad-connect-health-agent)。
 
@@ -58,7 +58,7 @@ Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 
 - **快速启动** – 选择此项将打开“快速启动”边栏选项卡。在这里，你可以通过选择“获取工具”来下载 Azure AD Connect Health 代理，可以访问文档，还可以提供反馈。
 
-- **Active Directory 联合身份验证服务** – 此项表示 Azure AD Connect Health 当前监视的所有 AD FS 服务。选择其中一个实例后，就会打开一个边栏选项卡，其中包含该服务实例的相关信息。该信息包括概述、属性、警报、监视情况，以及使用情况分析。在[此处](/documentation/articles/active-directory-aadconnect-health-adfs)阅读有关功能的详细信息。
+- **Active Directory 联合身份验证服务** – 此项表示 Azure AD Connect Health 当前监视的所有 AD FS 服务。选择其中一个实例后，就会打开一个边栏选项卡，其中包含该服务实例的相关信息。该信息包括概述、属性、警报、监视情况，以及使用情况分析。在[此处](/documentation/articles/active-directory-aadconnect-health-adfs/)阅读有关功能的详细信息。
 
 - **配置** – 使用此项可打开或关闭以下功能：
 
@@ -69,9 +69,9 @@ Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 
 ## 相关链接
 
-* [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations)
-* [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs)
-* [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq)
+* [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations/)
+* [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs/)
+* [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq/)
  
 
 <!---HONumber=Mooncake_0509_2016-->

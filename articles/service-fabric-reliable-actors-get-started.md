@@ -16,7 +16,7 @@
 
 ## 安装和设置
 在开始之前，确保你的计算机上已设置 Service Fabric 开发环境。
-如果你需要设置此环境，请参阅[如何设置开发环境](/documentation/articles/service-fabric-get-started)上的详细说明。
+如果你需要设置此环境，请参阅[如何设置开发环境](/documentation/articles/service-fabric-get-started/)上的详细说明。
 
 ## 基本概念
 若要开始使用 Reliable Actors，你只需了解 4 个基本概念：
@@ -106,7 +106,7 @@
 	ActorRuntime.RegisterActorAsync<MyOtherActor>();
 
 
-> [AZURE.TIP] Service Fabric 执行组件运行时发出一些[与执行组件方法相关的事件和性能计数器](/documentation/articles/service-fabric-reliable-actors-diagnostics#actor-method-events-and-performance-counters)。它们可用于进行诊断和性能监视。
+> [AZURE.TIP] Service Fabric 执行组件运行时发出一些[与执行组件方法相关的事件和性能计数器](/documentation/articles/service-fabric-reliable-actors-diagnostics/#actor-method-events-and-performance-counters)。它们可用于进行诊断和性能监视。
 
 
 ## 调试
@@ -119,9 +119,9 @@
 
 
 ## 后续步骤
- - [Reliable Actors 如何使用 Service Fabric 平台](/documentation/articles/service-fabric-reliable-actors-platform)
- - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management)
- - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle)
+ - [Reliable Actors 如何使用 Service Fabric 平台](/documentation/articles/service-fabric-reliable-actors-platform/)
+ - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management/)
+ - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
 - [代码示例](https://github.com/Azure/servicefabric-samples)
 

@@ -15,8 +15,8 @@
 # 使用 Azure 资源管理器创建具有内部负载平衡器 (ILB) 的应用程序网关
 
 > [AZURE.SELECTOR]
-- [Azure 经典步骤](/documentation/articles/application-gateway-ilb)
-- [资源管理器 PowerShell 步骤](/documentation/articles/application-gateway-ilb-arm)
+- [Azure 经典步骤](/documentation/articles/application-gateway-ilb/)
+- [资源管理器 PowerShell 步骤](/documentation/articles/application-gateway-ilb-arm/)
 
 可以配置使用面向 Internet 的 VIP 或不向 Internet 公开的内部终结点（也称为内部负载平衡器 (ILB) 终结点）的 Azure 应用程序网关。配置使用 ILB 的网关适用于不向 Internet 公开的内部业务线应用程序。对于位于不向 Internet 公开的安全边界内的多层应用程序中的服务和层也很有用，但仍需要执行循环负载分散、会话粘性或安全套接字层 (SSL) 终止。
 
@@ -55,7 +55,7 @@
 
 ## 创建资源管理器的资源组
 
-确保切换 PowerShell 模式，以便使用 Azure 资源管理器 cmdlet。[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)中提供了详细信息。
+确保切换 PowerShell 模式，以便使用 Azure 资源管理器 cmdlet。[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)中提供了详细信息。
 
 ### 步骤 1
 
@@ -225,9 +225,9 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
+如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
+如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 

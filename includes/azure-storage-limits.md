@@ -65,9 +65,9 @@
 </tr>
 </table>
 
-<sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+<sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
-<sup>2</sup>对于基本层中的虚拟机，请不要在一个存储帐户中放置 66 个以上的频繁使用的 VHD，以免超出总请求速率 20,000 这一限制 (20,000/300)。对于标准层中的虚拟机，请不要在一个存储帐户中放置 40 个以上的频繁使用的 VHD (20,000/500)。有关详细信息，请参阅 Azure 的[虚拟机](/documentation/articles/virtual-machines-windows-sizes)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
+<sup>2</sup>对于基本层中的虚拟机，请不要在一个存储帐户中放置 66 个以上的频繁使用的 VHD，以免超出总请求速率 20,000 这一限制 (20,000/300)。对于标准层中的虚拟机，请不要在一个存储帐户中放置 40 个以上的频繁使用的 VHD (20,000/500)。有关详细信息，请参阅 Azure 的[虚拟机](/documentation/articles/virtual-machines-windows-sizes/)和[云服务大小](/documentation/articles/cloud-services-sizes-specs/)。
 
 <sup>3</sup>GRS 表示[地域冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx)。LRS 表示[本地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/08/introducing-locally-redundant-storage-for-windows-azure-storage.aspx)。请注意，GRS 也是本地冗余的。
 

@@ -21,8 +21,8 @@ Azure 应用程序网关提供基于第 7 层负载平衡的 Azure 托管 HTTP �
 
 - HTTP 负载平衡
 - 基于 Cookie 的会话相关性
-- [安全套接字层 (SSL) 卸载](/documentation/articles/application-gateway-ssl-arm)
-- [基于 URL 的内容路由](/documentation/articles/application-gateway-url-route-overview) 
+- [安全套接字层 (SSL) 卸载](/documentation/articles/application-gateway-ssl-arm/)
+- [基于 URL 的内容路由](/documentation/articles/application-gateway-url-route-overview/) 
 
 ## HTTP 第 7 层负载平衡
 
@@ -57,7 +57,7 @@ HTTP 第 7 层负载平衡适合用于：
 
 ## 运行状况监视
 
-Azure 应用程序网关自动监视后端实例的运行状况。有关详细信息，请参阅[应用程序网关运行状况监视概述](/documentation/articles/application-gateway-probe-overview)。
+Azure 应用程序网关自动监视后端实例的运行状况。有关详细信息，请参阅[应用程序网关运行状况监视概述](/documentation/articles/application-gateway-probe-overview/)。
 
 ## 配置和管理
 
@@ -66,9 +66,9 @@ Azure 应用程序网关自动监视后端实例的运行状况。有关详细�
 
 ## 后续步骤
 
-了解应用程序网关以后，你可以[创建应用程序网关](/documentation/articles/application-gateway-create-gateway)，也可以[创建应用程序网关 SSL 卸载](/documentation/articles/application-gateway-ssl)，以便对 HTTPS 连接进行负载平衡。
+了解应用程序网关以后，你可以[创建应用程序网关](/documentation/articles/application-gateway-create-gateway/)，也可以[创建应用程序网关 SSL 卸载](/documentation/articles/application-gateway-ssl/)，以便对 HTTPS 连接进行负载平衡。
 
-若要详细了解如何使用基于 URL 的内容路由创建应用程序网关，请转到[使用基于 URL 的路由创建应用程序网关](/documentation/articles/application-gateway-create-url-route-arm-ps)。
+若要详细了解如何使用基于 URL 的内容路由创建应用程序网关，请转到[使用基于 URL 的路由创建应用程序网关](/documentation/articles/application-gateway-create-url-route-arm-ps/)。
 
 
 <!---HONumber=Mooncake_0328_2016-->

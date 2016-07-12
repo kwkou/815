@@ -284,7 +284,7 @@ namespaceManager.CreateQueue(qd);
   [SubscriptionClient.PrefetchCount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.prefetchcount.aspx
   [ForcePersistence]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.forcepersistence.aspx
   [EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
-  [分区消息实体]: /documentation/articles/service-bus-partitioning
+  [分区消息实体]: /documentation/articles/service-bus-partitioning/
   
 
 <!---HONumber=74-->

@@ -16,13 +16,13 @@
 # 通过 PowerShell 为 Azure VM 部署和管理备份
 本文说明如何使用 Azure PowerShell 从恢复服务保管库备份和恢复 Azure 虚拟机 (VM)。恢复服务保管库是一种 Azure Resource Manager (ARM) 资源，用于保护 Azure 备份和 Azure Site Recovery 服务中的数据与资产。在 ARM 部署中操作时，请使用恢复服务保管库。可以使用恢复服务保管库来保护 Azure 服务管理器 ASM 部署的 VM 以及 ARM VM。
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本文的内容与使用 Resource Manager 模型创建的 VM 有关。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。本文的内容与使用 Resource Manager 模型创建的 VM 有关。
 
 本文将逐步指导你使用 PowerShell 来保护 VM，以及从恢复点还原数据。
 
 ## 概念
 
-如果你不熟悉 Azure 备份服务，请查看 [What is Azure Backup?（什么是 Azure 备份）](/documentation/articles/backup-introduction-to-azure-backup)，以获取有关该服务的概述 在开始之前，请确保你已掌握与系统必备组件相关的基础知识（这些必备组件是使用 Azure 备份所必需的），并了解当前 VM 备份解决方案的限制。
+如果你不熟悉 Azure 备份服务，请查看 [What is Azure Backup?（什么是 Azure 备份）](/documentation/articles/backup-introduction-to-azure-backup/)，以获取有关该服务的概述 在开始之前，请确保你已掌握与系统必备组件相关的基础知识（这些必备组件是使用 Azure 备份所必需的），并了解当前 VM 备份解决方案的限制。
 
 为了提高 PowerShell 使用效率，必须了解对象的层次结构以及从何处开始。
 

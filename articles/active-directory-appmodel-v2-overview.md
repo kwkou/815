@@ -27,19 +27,19 @@
 ## 新增功能
 此处提供的概念性信息可帮助你了解 v2.0 终结点的定义及其功能。
 
-- 如果你在 v2.0 终结点 2015 预览期生成应用，请务必[阅读我们最近所做的重大协议更改](/documentation/articles/active-directory-v2-preview-oidc-changes)。
-- 了解[使用 v2.0 终结点可以生成哪种类型的应用](/documentation/articles/active-directory-v2-flows)。
-- 对于熟悉 Azure Active Directory 的开发人员，则应查看[协议更新和 v2.0 终结点的差异](/documentation/articles/active-directory-v2-compare)。
-- 了解 v2.0 终结点的[限制、局限性和约束](/documentation/articles/active-directory-v2-limitations)。
+- 如果你在 v2.0 终结点 2015 预览期生成应用，请务必[阅读我们最近所做的重大协议更改](/documentation/articles/active-directory-v2-preview-oidc-changes/)。
+- 了解[使用 v2.0 终结点可以生成哪种类型的应用](/documentation/articles/active-directory-v2-flows/)。
+- 对于熟悉 Azure Active Directory 的开发人员，则应查看[协议更新和 v2.0 终结点的差异](/documentation/articles/active-directory-v2-compare/)。
+- 了解 v2.0 终结点的[限制、局限性和约束](/documentation/articles/active-directory-v2-limitations/)。
 
 ## 引用
 这些链接有助于深入地利用平台：
 
 - Build 2016：[Getting Started with Microsoft Identities: Enterprise Grade Sign In For Your Apps（开始使用 Microsoft 标识：应用的企业级登录）](https://azure.microsoft.com/documentation/videos/build-2016-getting-started-with-microsoft-identities-enterprise-grade-sign-in-for-your-apps/)
 - 使用 [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory) 或 [adal](http://stackoverflow.com/questions/tagged/adal) 标记获取有关堆栈溢出的帮助。
-- [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols)
-- [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens)
-- [v2.0 终结点中的范围和许可](/documentation/articles/active-directory-v2-scopes)
+- [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)
+- [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)
+- [v2.0 终结点中的范围和许可](/documentation/articles/active-directory-v2-scopes/)
 - [Microsoft 应用注册门户](https://apps.dev.microsoft.com)
 - [Office 365 REST API 参考](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)
 - [Microsoft Graph](https://graph.microsoft.io)

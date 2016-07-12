@@ -222,9 +222,9 @@ RENAME OBJECT [dbo].[FactInternetSales_ROUND_ROBIN] TO [FactInternetSales];
 <!--Image references-->
 
 <!--Article references-->
-[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design
-[Hash distribution]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
-[哈希分布]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
+[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[Hash distribution]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key/
+[哈希分布]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key/
 
 <!--MSDN references-->
 [DBCC PDW\_SHOWSPACEUSED()]: https://msdn.microsoft.com/zh-cn/library/mt204028.aspx

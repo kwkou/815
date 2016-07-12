@@ -21,7 +21,7 @@
 
 在本教程中，我们将演示如何识别某些会影响性能的错误，并使用 Microsoft 和 Azure 存储空间提供的工具以点对点的方式排查这些错误，以优化客户端应用程序。
 
-本教程提供了点对点故障排除方案的实践分析。有关排查 Azure 存储应用程序问题的深入化概念指南，请参阅[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
+本教程提供了点对点故障排除方案的实践分析。有关排查 Azure 存储应用程序问题的深入化概念指南，请参阅[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)。
 
 ## Azure 存储应用程序故障排除工具
 
@@ -34,15 +34,15 @@
 
 - **Azure 管理门户**。可以在[Azure 管理门户](https://manage.windowsazure.cn)中配置存储帐户的度量值和日志记录。还可以查看显示应用程序在各时间段执行情况的图表和图形，以及配置警报，以便在应用程序的特定度量值不同于预期时接收通知。
 	
-	请参阅[监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account)，了解如何在 Azure 管理门户中配置监视功能。
+	请参阅[监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)，了解如何在 Azure 管理门户中配置监视功能。
 
-- **AzCopy**。Azure 存储空间的服务器日志存储为 Blob，因此你可以使用 AzCopy 将日志 Blob 复制到本地目录，以使用 Microsoft Message Analyzer 进行分析。有关 AzCopy 的详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)。
+- **AzCopy**。Azure 存储空间的服务器日志存储为 Blob，因此你可以使用 AzCopy 将日志 Blob 复制到本地目录，以使用 Microsoft Message Analyzer 进行分析。有关 AzCopy 的详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)。
 
 - **Microsoft Message Analyzer**。Message Analyzer 是一个工具，它使用日志文件并以可视格式显示日志数据，方便你筛选、搜索日志数据，以及将日志数据组合成有用的集，用于分析错误和性能问题。有关 Message Analyzer 的详细信息，请参阅 [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)。
 
 ## 关于示例情景
 
-在本教程中，我们将介绍 Azure 存储度量值指示调用 Azure 存储空间的应用程序成功率较低的情景。低成功率度量值（在 Azure 管理门户和度量值表中显示为 **PercentSuccess**）用于跟踪已经成功，但返回的 HTTP 状态代码大于 299 的操作。在服务器端存储日志文件中，这些操作将使用事务状态 **ClientOtherErrors** 进行记录。有关低成功率度量值的详细信息，请参阅[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作](/documentation/articles/storage-monitoring-diagnosing-troubleshooting#metrics-show-low-percent-success)。
+在本教程中，我们将介绍 Azure 存储度量值指示调用 Azure 存储空间的应用程序成功率较低的情景。低成功率度量值（在 Azure 管理门户和度量值表中显示为 **PercentSuccess**）用于跟踪已经成功，但返回的 HTTP 状态代码大于 299 的操作。在服务器端存储日志文件中，这些操作将使用事务状态 **ClientOtherErrors** 进行记录。有关低成功率度量值的详细信息，请参阅[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/#metrics-show-low-percent-success)。
 
 Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能的一部分。但在某些情况下，这些错误指示你可能能够优化客户端应用程序以提高性能。
 
@@ -88,7 +88,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 **通过 Azure 管理门户**
 
-若要使用门户配置存储帐户的日志记录和度量值，请遵循[监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account)中的说明。
+若要使用门户配置存储帐户的日志记录和度量值，请遵循[监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)中的说明。
 
 > [AZURE.NOTE] 无法使用 Azure 管理门户设置分钟度量值。但是，对于本教程，我们建议你设置分钟度量值，它还可以调查应用程序的性能问题。可以使用 PowerShell（如下所示）设置分钟度量值，也可以通过编程方式或 Azure 管理门户来进行。
 >
@@ -96,7 +96,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 **通过 PowerShell**
 
-若要开始使用 PowerShell for Azure，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+若要开始使用 PowerShell for Azure，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 1. 使用 [Add-AzureAccount](http://msdn.microsoft.com/zh-cn/library/azure/dn722528.aspx) cmdlet 将 Azure 用户帐户添加到 PowerShell 窗口中：
 
@@ -176,7 +176,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 ![门户中的度量值图表](./media/storage-e2e-troubleshooting-classic-portal/portal-metrics-chart-1.png)
 
-有关将度量值添加到监视页的详细信息，请参阅[如何：向度量值表中添加度量值](/documentation/articles/storage-monitor-storage-account#how-to-add-metrics-to-the-metrics-table)。
+有关将度量值添加到监视页的详细信息，请参阅[如何：向度量值表中添加度量值](/documentation/articles/storage-monitor-storage-account/#how-to-add-metrics-to-the-metrics-table)。
 
 > [AZURE.NOTE] 在启用存储度量值后，可能需要经过一段时间，度量值数据才会显示在 Azure 管理门户中。这是因为，只有在当前小时已过后，前一个小时的小时度量值才会显示在 Azure 管理门户中。此外，分钟度量值不会显示在 Azure 管理门户中。因此，根据启用度量值的时间，最多可能需要两个小时才能看到度量值数据。
 
@@ -188,7 +188,7 @@ Azure 存储空间将服务器日志数据写入 Blob，将度量值写入表。
 
 	AzCopy.exe /Source:http://<storageaccountname>.blob.core.chinacloudapi.cn/$logs /Dest:C:\Temp\Logs\Server /Pattern:"blob/2015/01/02" /SourceKey:<storageaccountkey> /S /V
 
-可以从 [Azure 下载](/downloads/)页下载 AzCopy。有关使用 AzCopy 的详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)。
+可以从 [Azure 下载](/downloads/)页下载 AzCopy。有关使用 AzCopy 的详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)。
 
 有关下载服务器端日志的其他信息，请参阅[下载存储日志记录日志数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx#DownloadingStorageLogginglogdata)。
 
@@ -239,7 +239,7 @@ Message Analyzer 包括 Azure 存储空间的资产，可帮助你分析服务�
 
 ### 使用客户端请求 ID 关联日志文件数据
 
-Azure 存储客户端库会自动为每个请求生成唯一的客户端请求 ID。此值将写入客户端日志、服务器日志和网络跟踪，因此你可以在 Message Analyzer 中使用它在所有三个日志之间关联数据。请参阅[客户端请求 ID](/documentation/articles/storage-monitoring-diagnosing-troubleshooting#client-request-id) 以了解有关客户端请求 ID 的更多信息。
+Azure 存储客户端库会自动为每个请求生成唯一的客户端请求 ID。此值将写入客户端日志、服务器日志和网络跟踪，因此你可以在 Message Analyzer 中使用它在所有三个日志之间关联数据。请参阅[客户端请求 ID](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/#client-request-id) 以了解有关客户端请求 ID 的更多信息。
 
 以下部分介绍如何使用预配置的和自定义的布局视图，来根据客户端请求 ID 关联和分组数据。
 
@@ -361,10 +361,10 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 
 有关在 Azure 存储空间中执行点对点故障排除方案的详细信息，请参阅以下资源：
 
-- [对 Azure 存储空间进行监视、诊断和故障排除](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
+- [对 Azure 存储空间进行监视、诊断和故障排除](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)
 - [存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)
-- [监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)
  
  

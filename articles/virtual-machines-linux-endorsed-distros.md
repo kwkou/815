@@ -18,7 +18,7 @@
 
 #Azure 认可的分发中的 Linux
 
-Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)中的指南自备 Linux。
+Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)中的指南自备 Linux。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -27,7 +27,7 @@ Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与�
 
 下表列出了 Azure 支持的 Linux 分发和版本。
 
-Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序是 Microsoft 直接为上游 Linux 内核提供的内核模块。LIS 驱动程序在默认情况下内置于分发的内核中，或者作为较旧的基于 RHEL/CentOS 的分发在[此处](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)作为单独的下载提供。有关 LIS 驱动程序的详细信息，请参阅[此文](/documentation/articles/virtual-machines-linux-create-upload-generic#linux-kernel-requirements)。
+Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序是 Microsoft 直接为上游 Linux 内核提供的内核模块。LIS 驱动程序在默认情况下内置于分发的内核中，或者作为较旧的基于 RHEL/CentOS 的分发在[此处](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)作为单独的下载提供。有关 LIS 驱动程序的详细信息，请参阅[此文](/documentation/articles/virtual-machines-linux-create-upload-generic/#linux-kernel-requirements)。
 
 Azure Linux 代理已预安装在 Azure 库映像中，并通常可从分发的包存储库中获得。源代码可在 [GitHub](https://github.com/azure/walinuxagent) 上找到。
 

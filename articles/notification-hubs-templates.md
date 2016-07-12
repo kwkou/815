@@ -107,7 +107,7 @@ Windows 应用商店客户端应用的相应模板为：
 
 ##如何注册模板
 
-若要使用安装模型（首选）或注册模型来注册模板，请参阅[注册管理](/documentation/articles/notification-hubs-registration-management)。
+若要使用安装模型（首选）或注册模型来注册模板，请参阅[注册管理](/documentation/articles/notification-hubs-registration-management/)。
 
 ##模板表达式语言
 

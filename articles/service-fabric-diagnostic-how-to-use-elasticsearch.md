@@ -16,7 +16,7 @@
 ## 介绍
 本文介绍 [Azure Service Fabric](/documentation/services/service-fabric/) 应用程序如何使用 **Elasticsearch** 和 **Kibana** 来存储、索引和搜索应用程序跟踪。[Elasticsearch](https://www.elastic.co/guide/index.html) 是开源的、分布式和可缩放的实时搜索和分析引擎，很适合执行此任务。它可以安装在 Azure 中运行的 Windows 和 Linux 虚拟机上。Elasticsearch 可以非常高效地处理使用**Windows 事件跟踪 (ETW)** 之类的技术所生成的*结构化*跟踪。
 
-Service Fabric 运行时会使用 ETW 来获取诊断信息（跟踪）。它也是 Service Fabric 应用程序获取其诊断信息的建议方法。这可让运行时提供和应用程序提供的跟踪之间相互关联，使故障排除更轻松。Visual Studio 中的 Service Fabric 项目模板包含日志记录 API（基于 .NET **EventSource** 类），该 API 默认情况下会发出 ETW 跟踪。有关使用 ETW 的 Service Fabric 应用程序跟踪的一般概述，请参阅[在本地计算机开发安装过程中监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)。
+Service Fabric 运行时会使用 ETW 来获取诊断信息（跟踪）。它也是 Service Fabric 应用程序获取其诊断信息的建议方法。这可让运行时提供和应用程序提供的跟踪之间相互关联，使故障排除更轻松。Visual Studio 中的 Service Fabric 项目模板包含日志记录 API（基于 .NET **EventSource** 类），该 API 默认情况下会发出 ETW 跟踪。有关使用 ETW 的 Service Fabric 应用程序跟踪的一般概述，请参阅[在本地计算机开发安装过程中监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)。
 
 需要在 Service Fabric 群集节点上实时（当应用程序正在运行时）捕获跟踪并发送至 Elasticsearch 终结点，Elasticsearch 中才会显示跟踪。跟踪捕获有两个主要选项：
 
@@ -30,7 +30,7 @@ Service Fabric 运行时会使用 ETW 来获取诊断信息（跟踪）。它也
 
 
 ## 在 Azure 上设置 Elasticsearch
-若要在 Azure 上设置 Elasticsearch 服务，最直接的方法是通过 [**Azure Resource Manager 模板**](/documentation/articles/resource-group-overview)。Azure 快速入门模板存储库提供完整的 [Elasticsearch 快速入门 Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch)。此模板会针对缩放单位使用不同的存储帐户（节点组）。它也可以设置具有不同配置和附加各种数量的数据磁盘的个别客户端与服务器节点。
+若要在 Azure 上设置 Elasticsearch 服务，最直接的方法是通过 [**Azure Resource Manager 模板**](/documentation/articles/resource-group-overview/)。Azure 快速入门模板存储库提供完整的 [Elasticsearch 快速入门 Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch)。此模板会针对缩放单位使用不同的存储帐户（节点组）。它也可以设置具有不同配置和附加各种数量的数据磁盘的个别客户端与服务器节点。
 
 我们在此处将使用另一个模板（名为 **ES-MultiNode**，来自 [Azure 诊断工具存储库](https://github.com/Azure/azure-diagnostics-tools)）。此模板比较容易使用，会创建受 HTTP 基本身份验证保护的 Elasticsearch 群集。在继续操作之前，请先从 GitHub 将存储库下载到你的计算机（通过克隆存储库或下载 zip 文件）。ES-MultiNode 模板位于具有相同名称的文件夹中。
 
@@ -247,7 +247,7 @@ Elasticsearch 连接数据应该放在服务配置文件 (**PackageRoot\\Config\
 ![显示 PartyCluster 应用程序事件的 Kibana][2]
 
 ## 后续步骤
-- [深入了解诊断和监视 Service Fabric 服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)
+- [深入了解诊断和监视 Service Fabric 服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)
 
 <!--Image references-->
 [1]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/listener-lib-references.png

@@ -14,10 +14,10 @@
 
 # 保护 MVC Web API
 
-Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
+Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 在 ASP.NET Web API 中，你可以使用随附在 .NET Framework 4.5 中的 Microsoft OWIN 中间件来完成此操作。在此处，我们将使用 OWIN 构建可让客户端通过用户待办事项列表创建和读取任务的“待办事项列表”MVC Web API。Web API 将验证传入的请求是否包含有效的访问令牌，并拒绝受保护路由上未通过验证的所有请求。
 
@@ -35,7 +35,7 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 
 ## 注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 
@@ -153,11 +153,11 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 ## 后续步骤
 现在，你可以转到其他主题。你可能想要尝试：
 
-[从 Web 应用调用 Web API >>](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet)
+[从 Web 应用调用 Web API >>](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet/)
 
 有关更多资源，请查看：
 
-- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
+- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 

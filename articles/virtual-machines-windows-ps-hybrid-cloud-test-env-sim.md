@@ -17,7 +17,7 @@
 
 # 设置用于测试的模拟混合云环境
 
-本文将指导你逐步使用 Azure 创建模拟混合云环境，以便使用两个独立的 Azure 虚拟网络进行测试。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-base)的替代方法。这是生成的配置。
+本文将指导你逐步使用 Azure 创建模拟混合云环境，以便使用两个独立的 Azure 虚拟网络进行测试。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-base/)的替代方法。这是生成的配置。
 
 ![](./media/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/virtual-machines-windows-ps-hybrid-cloud-test-env-sim-ph4.png)
 
@@ -48,7 +48,7 @@
 
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
-按照[基本配置测试环境](/documentation/articles/virtual-machines-windows-test-config-env)中的说明，在名为 TestLab 的 Azure 虚拟网络中配置 DC1、APP1 和 CLIENT1 计算机。
+按照[基本配置测试环境](/documentation/articles/virtual-machines-windows-test-config-env/)中的说明，在名为 TestLab 的 Azure 虚拟网络中配置 DC1、APP1 和 CLIENT1 计算机。
 
 接下来，请启动 Azure PowerShell 提示符。
 
@@ -211,6 +211,6 @@
 
 ## 后续步骤
 
-- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sp)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-lob)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync)。
+- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sp/)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-lob/)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync/)。
 
 <!---HONumber=Mooncake_0425_2016-->

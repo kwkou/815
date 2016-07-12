@@ -15,8 +15,8 @@
 # 使用媒体服务 REST API 连接到媒体服务帐户
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
-- [REST](/documentation/articles/media-services-rest-connect_programmatically)
+- [.NET](/documentation/articles/media-services-dotnet-connect_programmatically/)
+- [REST](/documentation/articles/media-services-rest-connect_programmatically/)
 
 本主题介绍如何在使用媒体服务 REST API 编程时获取与 Azure 媒体服务的编程连接。
 

@@ -59,7 +59,7 @@ BGP 使多个网关可以从不同网络获知和传播前缀，而无论它们�
 
 ## 后续步骤
 
-有关为跨界连接和 VNet 到 VNet 连接配置 BGP 的步骤，请参阅[在 Azure VPN 网关上使用 BGP 入门](/documentation/articles/vpn-gateway-bgp-resource-manager-ps)。
+有关为跨界连接和 VNet 到 VNet 连接配置 BGP 的步骤，请参阅[在 Azure VPN 网关上使用 BGP 入门](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
 
 <!---HONumber=Mooncake_0613_2016-->

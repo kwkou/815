@@ -17,8 +17,8 @@
 
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-geo-replication-powershell)
-- [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql)
+- [PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)
+- [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/)
 
 
 本文说明如何使用 PowerShell 为 Azure SQL 数据库配置异地复制。
@@ -33,7 +33,7 @@
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - 一个 Azure SQL 数据库 - 你要复制到不同地理区域的主数据库。
-- Azure PowerShell 1.0 或更高版本。根据遵循[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 来下载并安装 Azure PowerShell 模块。
+- Azure PowerShell 1.0 或更高版本。根据遵循[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 来下载并安装 Azure PowerShell 模块。
 
 
 
@@ -69,7 +69,7 @@
 
 此 cmdlet 将 **Start-AzureSqlDatabaseCopy** 替换为 **-IsContinuous** 参数。它将输出可供其他 cmdlet 用于明确识别特定复制链接的 **AzureRmSqlDatabaseSecondary** 对象。创建辅助数据库并完全设定种子后，此 cmdlet 将返回。根据数据库的大小，这可能需要花费数分钟到数小时的时间。
 
-辅助服务器上的复制数据库具备与主要服务器上的数据库相同的名称，并且默认具有相同的服务级别。辅助数据库可以是可读或不可读，并且可以是单一数据库或弹性数据库。有关详细信息，请参阅 [New-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603689.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。
+辅助服务器上的复制数据库具备与主要服务器上的数据库相同的名称，并且默认具有相同的服务级别。辅助数据库可以是可读或不可读，并且可以是单一数据库或弹性数据库。有关详细信息，请参阅 [New-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603689.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。
 创建辅助数据库并设定种子之后，开始将数据从主数据库复制到新的辅助数据库。以下步骤说明如何使用 PowerShell 完成这项任务，以使用单一数据库或弹性数据库来创建不可读和可读的辅助数据库。
 
 如果伙伴数据库已存在（例如，由于终止前面的异地复制关系），命令将会失败。
@@ -116,7 +116,7 @@
 
 ## 删除辅助数据库
 
-使用 **Remove-AzureRmSqlDatabaseSecondary** cmdlet 永久终止辅助数据库与其主数据库之间的复制合作关系。终止关系后，辅助数据库将成为读写数据库。如果与辅助数据库的连接断开，命令将会成功，但辅助数据库必须等到连接恢复后才变为可读写。有关详细信息，请参阅 [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603457.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。
+使用 **Remove-AzureRmSqlDatabaseSecondary** cmdlet 永久终止辅助数据库与其主数据库之间的复制合作关系。终止关系后，辅助数据库将成为读写数据库。如果与辅助数据库的连接断开，命令将会成功，但辅助数据库必须等到连接恢复后才变为可读写。有关详细信息，请参阅 [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603457.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。
 
 此 cmdlet 取代了用于复制的 Stop-AzureSqlDatabaseCopy。
 
@@ -199,7 +199,7 @@
 
 ## 后续步骤
 
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
+- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
 
 
 
@@ -207,8 +207,8 @@
 ## 其他资源
 
 - [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
-- [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 
 <!---HONumber=Mooncake_0606_2016-->

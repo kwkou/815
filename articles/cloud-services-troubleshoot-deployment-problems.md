@@ -65,7 +65,7 @@
 
 这种情况可能指示你的应用程序代码、程序包或配置文件存在问题。在这种情况下，你应能看到状态每隔几分钟更改一次，而 Azure 门户则可能会显示“正在回收”、“忙”或“正在初始化”之类的内容。这表示应用程序存在问题，导致角色实例无法运行。
 
-有关如何解决此问题的详细信息，请参阅博客文章 [Azure PaaS 计算诊断数据](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)和[导致角色回收的常见问题](/documentation/articles/cloud-services-troubleshoot-common-issues-which-cause-roles-recycle)。
+有关如何解决此问题的详细信息，请参阅博客文章 [Azure PaaS 计算诊断数据](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)和[导致角色回收的常见问题](/documentation/articles/cloud-services-troubleshoot-common-issues-which-cause-roles-recycle/)。
 
 ## 问题：我的应用程序停止工作
 

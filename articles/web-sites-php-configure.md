@@ -154,7 +154,7 @@ Azure Web 应用可以使用提供的 PHP 运行时（而非默认 PHP 运行时
 	![保存配置设置][save-button]
 
 [PHP Developer Center Tutorials]: /develop/php/
-[How to Configure  Websites]: /documentation/articles/web-sites-configure
+[How to Configure  Websites]: /documentation/articles/web-sites-configure/
 [configure]: ./media/web-sites-php-configure/configure.png
 [app-settings]: ./media/web-sites-php-configure/app-settings.png
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png

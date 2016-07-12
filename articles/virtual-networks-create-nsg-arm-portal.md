@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。你还可以[在经典部署模型中创建 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。你还可以[在经典部署模型中创建 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps/)。
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 
@@ -98,7 +98,7 @@
 
 ## 后续步骤
 
-- 了解如何[管理现有 NSG](/documentation/articles/virtual-network-manage-nsg-arm-portal)
-- 为 NSG [启用日志记录](/documentation/articles/virtual-network-nsg-manage-log)。
+- 了解如何[管理现有 NSG](/documentation/articles/virtual-network-manage-nsg-arm-portal/)
+- 为 NSG [启用日志记录](/documentation/articles/virtual-network-nsg-manage-log/)。
 
 <!---HONumber=Mooncake_0516_2016-->

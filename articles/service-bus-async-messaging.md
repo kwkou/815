@@ -150,7 +150,7 @@ if (sendAvailabilityOptions.BacklogQueueCount < 1)
   [ServerBusyException]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.serverbusyexception.aspx
   [System.TimeoutException]: https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx
   [MessagingException]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.aspx
-  [使应用程序免受服务总线中断和灾难影响的最佳实践]: /documentation/articles/service-bus-outages-disasters
+  [使应用程序免受服务总线中断和灾难影响的最佳实践]: /documentation/articles/service-bus-outages-disasters/
   [Microsoft.ServiceBus.Messaging.MessagingFactory]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
   [MessageReceiver]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx
   [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
@@ -165,7 +165,7 @@ if (sendAvailabilityOptions.BacklogQueueCount < 1)
   [IsTransient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.istransient.aspx
   [UnauthorizedAccessException]: https://msdn.microsoft.com/zh-cn/library/azure/system.unauthorizedaccessexception.aspx
   [BacklogQueueCount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.backlogqueuecount.aspx
-  [成对命名空间和成本影响]: /documentation/articles/service-bus-paired-namespaces
-  [成对命名空间]: /documentation/articles/service-bus-paired-namespaces
+  [成对命名空间和成本影响]: /documentation/articles/service-bus-paired-namespaces/
+  [成对命名空间]: /documentation/articles/service-bus-paired-namespaces/
 
 <!---HONumber=Mooncake_0215_2016-->

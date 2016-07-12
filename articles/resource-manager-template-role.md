@@ -126,6 +126,6 @@
 
 ## 后续步骤
 
-- 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+- 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 <!---HONumber=Mooncake_0425_2016-->

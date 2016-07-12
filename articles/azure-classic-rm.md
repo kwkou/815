@@ -47,17 +47,17 @@ Azure 平台正在转换。不论你是 Azure 新手还是经验丰富的老手�
 某些资源和功能只可以在其中一个门户中创建和配置。某些资源或功能还不能在任何一个门户中创建或配置，而只能通过 PowerShell 和/或 CLI 进行配置。每种 Azure 资源的文档详述了可用于创建该资源的方法。
 
 ## PowerShell
-通过 [PowerShell](/documentation/articles/powershell-install-configure)，可以使用命令行或编写脚本，从 Windows 计算机创建和配置 Azure 资源。每个 Azure 资源都有相应的[资源管理器 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx) 和/或[服务管理 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)。某些资源和功能只能使用 PowerShell 或 CLI 来创建和配置。根据具体的资源，使用资源管理器 PowerShell cmdlet 时，你可以使用两个选项创建和配置 Azure 资源：
+通过 [PowerShell](/documentation/articles/powershell-install-configure/)，可以使用命令行或编写脚本，从 Windows 计算机创建和配置 Azure 资源。每个 Azure 资源都有相应的[资源管理器 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx) 和/或[服务管理 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)。某些资源和功能只能使用 PowerShell 或 CLI 来创建和配置。根据具体的资源，使用资源管理器 PowerShell cmdlet 时，你可以使用两个选项创建和配置 Azure 资源：
 
 - **仅限 PowerShell cmdlet：**可以使用每个资源的 cmdlet 单独创建和配置每个 Azure 资源。你可以从命令行执行此操作，或者在 PowerShell 脚本中包含可存储和设置版本的多个命令。
 
-- **将 PowerShell cmdlet 与 Azure 资源管理器模板配合使用：**你可以将 PowerShell 与 Azure 资源管理器模板配合使用来创建 Azure 资源。可以保存模板并设置其版本。<!--有关详细信息，请阅读[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)一文。你还可以下载和修改常见解决方案的多个 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)。-->
+- **将 PowerShell cmdlet 与 Azure 资源管理器模板配合使用：**你可以将 PowerShell 与 Azure 资源管理器模板配合使用来创建 Azure 资源。可以保存模板并设置其版本。<!--有关详细信息，请阅读[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)一文。你还可以下载和修改常见解决方案的多个 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)。-->
 
 ## CLI
-你可以使用 CLI 从 Windows、OS X 或 Linux 计算机创建和配置 Azure 资源。请阅读[安装 Azure CLI](/documentation/articles/xplat-cli-install) 一文，以便在所选的操作系统上安装 CLI。
+你可以使用 CLI 从 Windows、OS X 或 Linux 计算机创建和配置 Azure 资源。请阅读[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 一文，以便在所选的操作系统上安装 CLI。
 
 ## 后续步骤
 
-- 详细了解[资源管理器](/documentation/articles/resource-group-overview)。
+- 详细了解[资源管理器](/documentation/articles/resource-group-overview/)。
 
 <!---HONumber=Mooncake_0314_2016-->

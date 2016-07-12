@@ -15,10 +15,10 @@
 # 备份和还原 Azure SQL 数据仓库中的一个数据库 (PowerShell)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore)
-- [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal)
-- [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell)
-- [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api)
+- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore/)
+- [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell/)
+- [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api/)
 
 用于在 SQL 数据仓库中还原数据库的 PowerShell 任务。
 
@@ -171,10 +171,10 @@
 <!--Image references-->
 
 <!--Article references-->
-[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity
-[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize
-[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage
+[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
+[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
+[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
+[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
 
 <!--MSDN references-->
 [Create database restore request]: https://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx

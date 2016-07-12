@@ -15,9 +15,9 @@
 # 将数据从 SQL Server 载入 Azure SQL 数据仓库 (SSIS)
 
 > [AZURE.SELECTOR]
-- [SSIS](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services)
-- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-polybase)
-- [bcp](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp)
+- [SSIS](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services/)
+- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-polybase/)
+- [bcp](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp/)
 
 
 创建 SQL Server Integration Services (SSIS) 包，以将 SQL Server 的数据加载到 Azure SQL 数据仓库。可以在数据通过 SSIS 数据流进行传递时，选择性地对其进行重构、转换和清理。

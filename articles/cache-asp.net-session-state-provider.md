@@ -29,7 +29,7 @@ Azure Redis Cache 提供一个会话状态提供程序，可用于在缓存而�
 
 ![Azure Redis 缓存会话状态提供程序](./media/cache-aspnet-session-state-provider/redis-cache-session-state-provider.png)
 
-Redis 会话状态提供程序 NuGet 包依赖于 StackExchange.Redis.StrongName 包。如果你的项目中没有 StackExchange.Redis.StrongName 包，则将会安装它。请注意，除了强命名的 StackExchange.Redis.StrongName 包外，还有 StackExchange.Redis 非强命名版本。如果你的项目使用的是非强命名 StackExchange.Redis 版本，则必须在安装 Redis 会话状态提供程序 NuGet 包之前或之后将其卸载，否则你的项目中将出现命名冲突。有关这些包的详细信息，请参阅[配置 .NET 缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#configure-the-cache-clients)。
+Redis 会话状态提供程序 NuGet 包依赖于 StackExchange.Redis.StrongName 包。如果你的项目中没有 StackExchange.Redis.StrongName 包，则将会安装它。请注意，除了强命名的 StackExchange.Redis.StrongName 包外，还有 StackExchange.Redis 非强命名版本。如果你的项目使用的是非强命名 StackExchange.Redis 版本，则必须在安装 Redis 会话状态提供程序 NuGet 包之前或之后将其卸载，否则你的项目中将出现命名冲突。有关这些包的详细信息，请参阅[配置 .NET 缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#configure-the-cache-clients)。
 
 NuGet 程序包会下载并添加所需的程序集引用，并将以下部分添加到您的 web.config 文件，包含 ASP.NET 应用程序所需的配置，以使用 Redis Cache 会话状态提供程序。
 
@@ -55,7 +55,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 注释部分提供了属性及每个属性的示例设置的一个示例。
 
-你可以通过 Azure PowerShell 配置 Redis 缓存。有关访问缓存属性的说明，请参阅[使用 Azure PowerShell 管理 Azure Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell)。
+你可以通过 Azure PowerShell 配置 Redis 缓存。有关访问缓存属性的说明，请参阅[使用 Azure PowerShell 管理 Azure Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell/)。
 
 -	**host** - 指定缓存终结点。
 -	**port** - 使用非 SSL 端口或 SSL 端口，具体取决于 SSL 设置。
@@ -100,6 +100,6 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 ## 后续步骤
 
-了解 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider)。
+了解 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider/)。
 
 <!---HONumber=Mooncake_1207_2015-->

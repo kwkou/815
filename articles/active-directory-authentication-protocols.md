@@ -21,7 +21,7 @@ Azure Active Directory (Azure AD) 支持多个最广泛使用的身份验证和�
 - [有关 Azure AD 中签名密钥滚动更新的重要信息](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx) - 了解 Azure AD 的签名密钥滚动更新频率、你可以进行的自动更新密钥的更改，以及针对如何更新最常见的应用程序方案的讨论。
 
 
-- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims) - 了解 Azure AD 发布的标记中的声明。
+- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/) - 了解 Azure AD 发布的标记中的声明。
 
 
 - [联合元数据](https://msdn.microsoft.com/zh-cn/library/azure/dn195592.aspx) - 了解如何查找和解释 Azure AD 生成的元数据文档。
@@ -45,10 +45,10 @@ Azure Active Directory (Azure AD) 支持多个最广泛使用的身份验证和�
 
 ## 另请参阅 
 
-[Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide)
+[Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
 
-[使用 Azure AD 进行身份验证](/documentation/articles/web-sites-authentication-authorization)
+[使用 Azure AD 进行身份验证](/documentation/articles/web-sites-authentication-authorization/)
 
-[Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
+[Active Directory 代码示例](/documentation/articles/active-directory-code-samples/)
 
 <!---HONumber=79-->

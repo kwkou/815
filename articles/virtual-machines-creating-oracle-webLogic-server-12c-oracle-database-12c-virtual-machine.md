@@ -15,7 +15,7 @@
 
 本文演示如何在 Azure 中，基于 Windows Server 2012 上运行的由 Microsoft 提供的 Oracle WebLogic Server 12c 和 Oracle Database 12c 映像创建虚拟机。
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 ##在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c 虚拟机
 
@@ -27,7 +27,7 @@
 
 4.	指定 VM 的“虚拟机名称”。
 
-7.	选择“层”和“大小”。如果你需要 DS 系列 VM，请通过 Azure PowerShell 创建一个。有关详细信息，请参阅[使用 Powershell 和经典部署模型创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell)
+7.	选择“层”和“大小”。如果你需要 DS 系列 VM，请通过 Azure PowerShell 创建一个。有关详细信息，请参阅[使用 Powershell 和经典部署模型创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
 5.	指定 VM 的“新用户名”。请注意，此用户用于远程登录 VM；这不是 Oracle 数据库用户名。
 
@@ -46,10 +46,10 @@
 
 ##创建在此虚拟机中托管的数据库
 
-按照以**在 Azure 中使用 Oracle Database 12c 虚拟机创建数据库**部分开头的[在 Azure 中创建 Oracle Database 12c 虚拟机](/documentation/articles/virtual-machines-windows-classic-create-oracle-database)中的说明进行操作。
+按照以**在 Azure 中使用 Oracle Database 12c 虚拟机创建数据库**部分开头的[在 Azure 中创建 Oracle Database 12c 虚拟机](/documentation/articles/virtual-machines-windows-classic-create-oracle-database/)中的说明进行操作。
 
 ##配置在此虚拟机中托管的 Oracle WebLogic Server 12c
-按照以**在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机**部分开头的[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-windows-create-oracle-weblogic-server-12c)中的说明进行操作。
+按照以**在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机**部分开头的[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-windows-create-oracle-weblogic-server-12c/)中的说明进行操作。
 
 ##其他资源
 

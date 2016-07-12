@@ -15,10 +15,10 @@
 # DocumentDB SDK
 
 > [AZURE.SELECTOR]
-- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet)
-- [Node.js SDK](/documentation/articles/documentdb-sdk-node)
-- [Java SDK](/documentation/articles/documentdb-sdk-java)
-- [Python SDK](/documentation/articles/documentdb-sdk-python)
+- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet/)
+- [Node.js SDK](/documentation/articles/documentdb-sdk-node/)
+- [Java SDK](/documentation/articles/documentdb-sdk-java/)
+- [Python SDK](/documentation/articles/documentdb-sdk-python/)
 
 ##DocumentDB Java SDK
 
@@ -26,7 +26,7 @@
 <tr><td>**下载**</td><td>[Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)</td></tr>
 <tr><td>**参与**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr>
 <tr><td>**文档**</td><td>[Java SDK 参考文档](http://azure.github.io/azure-documentdb-java/)</td></tr>
-<tr><td>**入门**</td><td>[Java SDK 入门](/documentation/articles/documentdb-java-application)</td></tr>
+<tr><td>**入门**</td><td>[Java SDK 入门](/documentation/articles/documentdb-java-application/)</td></tr>
 <tr><td>**当前受支持的运行时**</td><td>[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)</td></tr>
 </table></br>
 
@@ -44,7 +44,7 @@
 - 对文档添加了生存时间 (TTL) 支持。 
 
 ### <a name="1.6.0"/>[1\.6.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.6.0)
-- 实现了[分区集合](/documentation/articles/documentdb-partition-data)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels)。 
+- 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
 
 ### <a name="1.5.1"/>[1\.5.1](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.5.1)
 - 修复了 HashPartitionResolver 中的 Bug 以生成 little-endian 格式的哈希值，以便与其他 SDK 保持一致。

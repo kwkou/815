@@ -1,5 +1,5 @@
 
-* 如果你尚未安装 Azure CLI 并连接到订阅，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install) 和[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。如果你想要使用资源管理器模式命令，请务必使用登录方法连接。
+* 如果你尚未安装 Azure CLI 并连接到订阅，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 和[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。如果你想要使用资源管理器模式命令，请务必使用登录方法连接。
 
 * 若要开始在 Azure CLI 中使用资源管理器模式，可能需要切换命令模式。默认情况下，CLI 在服务管理模式下启动。若要更改为资源管理器模式，请运行 `azure config mode arm`。若要回到服务管理模式，请运行 `azure config mode asm`。
 
@@ -12,7 +12,7 @@
 <th>任务 </th><th> 服务管理模式 </th><th> 资源管理器模式</th>
 </tr></thead>
 <tr>
-<td>创建最基本的 VM </td><td> <code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code> </td><td> <code>azure vm quick-create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt; &lt;image-urn&gt; &lt;admin-username&gt; &lt;admin-password&gt;</code><br/><br/>（从 <code>azure vm image list</code> 命令获取 <code>image-urn</code>。有关示例，请参阅 <a href="/documentation/articles/virtual-machines-windows-cli-ps-findimage">Windows</a> 或者 <a href="/documentation/articles/virtual-machines-linux-cli-ps-findimage">Linux</a>。）</td>
+<td>创建最基本的 VM </td><td> <code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code> </td><td> <code>azure vm quick-create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt; &lt;image-urn&gt; &lt;admin-username&gt; &lt;admin-password&gt;</code><br/><br/>（从 <code>azure vm image list</code> 命令获取 <code>image-urn</code>。有关示例，请参阅 <a href="/documentation/articles/virtual-machines-windows-cli-ps-findimage/\">Windows</a> 或者 <a href="/documentation/articles/virtual-machines-linux-cli-ps-findimage/\">Linux</a>。）</td>
 </tr>
 <tr>
 <td>创建 Linux VM </td><td> <code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code> </td><td> <code>azure  vm create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; -y "Linux"</code></td>
@@ -91,4 +91,4 @@
 
 ## 后续步骤
 
-* 如需 CLI 命令的其他示例，请参阅[将 Azure 命令行接口用于 Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools)和[将 Azure CLI 用于 Azure 资源管理器模式](/documentation/articles/azure-cli-arm-commands)。
+* 如需 CLI 命令的其他示例，请参阅[将 Azure 命令行接口用于 Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools/)和[将 Azure CLI 用于 Azure 资源管理器模式](/documentation/articles/azure-cli-arm-commands/)。

@@ -4,8 +4,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-migration)
-- [English](/documentation/articles/mysql-database-enus-migration)
+- [中文](/documentation/articles/mysql-database-migration/)
+- [English](/documentation/articles/mysql-database-enus-migration/)
 
 # 迁移数据库至MySQL Database on Azure
 本文概括介绍迁移用用数据库到MySQL Database on Azure的方式和需要考虑的注意事项。
@@ -13,18 +13,18 @@
 ##应用的可迁移性
 迁移前，建议您首先评估自己的应用数据库的可迁移性。
 
-MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用可以不用做任何改动可以顺利地运行在MySQL Database on Azure上。当然为了更好地在MySQL Database on Azure上运行您的应用，我们建议应用要有数据库重连机制以保证良好的容错性，避免由于数据库短暂连不上的时候应用死掉，因为即使是高可用的云端的数据库也不可避免有故障切换和服务器维护等会导致短暂数据库连不上的情况出现。另外我们也建议尽量采用连接池和长连接来访问数据库，特别是对性能要求比较高的应用，详细可以参考[如何高效连接到MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool)。 
+MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用可以不用做任何改动可以顺利地运行在MySQL Database on Azure上。当然为了更好地在MySQL Database on Azure上运行您的应用，我们建议应用要有数据库重连机制以保证良好的容错性，避免由于数据库短暂连不上的时候应用死掉，因为即使是高可用的云端的数据库也不可避免有故障切换和服务器维护等会导致短暂数据库连不上的情况出现。另外我们也建议尽量采用连接池和长连接来访问数据库，特别是对性能要求比较高的应用，详细可以参考[如何高效连接到MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool/)。 
 
-另外一个需要注意的地方是MySQL Database on Azure不支持老的MYISAM引擎，可以参考[常见问题](/documentation/articles/mysql-database-serviceinquiry)中，为什么MySQL Database on Azure不支持MYISAM格式的数据库?在大多数情况下，您可以直接在建表的代码里把MyISAM数据引擎改成InnoDB就可以正常使用。 
+另外一个需要注意的地方是MySQL Database on Azure不支持老的MYISAM引擎，可以参考[常见问题](/documentation/articles/mysql-database-serviceinquiry/)中，为什么MySQL Database on Azure不支持MYISAM格式的数据库?在大多数情况下，您可以直接在建表的代码里把MyISAM数据引擎改成InnoDB就可以正常使用。 
 
 ##方案一： 基于数据库导入导出的迁移
 如果您的系统可以接受较长时间（比如一二个小时）因系统迁移导致的downtime，您可以用比较简单的数据库导出和导入的方式进行数据库的迁移。
 具体步骤：
 
-1.登录Azure管理门户，在MySQL　Database on Azure上创建一个新的MySQL服务器并进行必要的配置比如每天的备份时间，具体步骤可以参考https://www.azure.cn/documentation/articles/mysql-database-get-started#step1 。 
+1.登录Azure管理门户，在MySQL　Database on Azure上创建一个新的MySQL服务器并进行必要的配置比如每天的备份时间，具体步骤可以参考https://www.azure.cn/documentation/articles/mysql-database-get-started/#step1 。 
 
 
-2.通过Azure管理门户在新创建的MySQL服务器上创建要迁移的目标数据库。具体步骤可以参考https://www.azure.cn/documentation/articles/mysql-database-get-started#step4 。 
+2.通过Azure管理门户在新创建的MySQL服务器上创建要迁移的目标数据库。具体步骤可以参考https://www.azure.cn/documentation/articles/mysql-database-get-started/#step4 。 
 
 
 3.如果有多个数据库账号需要访问原数据库，您需要通过Azure管理门户在新的数据库服务器上创建对应的账号。 
@@ -89,7 +89,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 
 ## 关于数据库迁移的常见问题：
 ###导入TRIGGER, PROCEDURE, VIEW, FUNCTION, 或EVENT过程中报”Access denied; you need (at least one of) the SUPER privilege(s) for this operation” 错误。
-检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=user@host， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](/documentation/articles/mysql-database-operation-limitation) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
+检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=user@host， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](/documentation/articles/mysql-database-operation-limitation/) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
 
 ###MYSQL Database on Azure 的管理门户只支持对用户设置整个数据库的读写权限，如果我现在的数据库有对用户权限更细化的设置，迁移会成功吗？
 没有问题，虽然我们的管理门户 以及PowerShell /REST API在创建用户或数据库时只支持对整个数据库设置读写权限，但您可以用“grant”语句对用户权限进行更细化的设置。

@@ -155,9 +155,9 @@
 
 ## 摘要
 
-本文重点介绍了关于 SaaS ISV 多租户应用程序使用的数据库层的灾难恢复策略。应基于应用程序的需要选择策略，例如业务模式、想要为客户提供的 SLA、预算限制等...所述的每个策略都概述了其优点和权衡，以便你做出明智的决策。此外，特定应用程序可能包括其他 Azure 组件。因此，应查看其业务连续性指南并根据指南安排数据库层的恢复。若要了解有关管理 Azure 数据库应用程序恢复的详细信息，请参阅[设计灾难恢复云解决方案](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)。
+本文重点介绍了关于 SaaS ISV 多租户应用程序使用的数据库层的灾难恢复策略。应基于应用程序的需要选择策略，例如业务模式、想要为客户提供的 SLA、预算限制等...所述的每个策略都概述了其优点和权衡，以便你做出明智的决策。此外，特定应用程序可能包括其他 Azure 组件。因此，应查看其业务连续性指南并根据指南安排数据库层的恢复。若要了解有关管理 Azure 数据库应用程序恢复的详细信息，请参阅[设计灾难恢复云解决方案](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)。
 
-每个方案所需的各个步骤涉及针对大量数据库所执行的操作。建议使用 SQL 数据库弹性作业来大规模管理这些操作。有关详细信息，请参阅[管理已扩大的云数据库](/documentation/articles/sql-database-elastic-jobs-overview)。以下页面有助于了解执行本文的各个方案所需的特定操作：
+每个方案所需的各个步骤涉及针对大量数据库所执行的操作。建议使用 SQL 数据库弹性作业来大规模管理这些操作。有关详细信息，请参阅[管理已扩大的云数据库](/documentation/articles/sql-database-elastic-jobs-overview/)。以下页面有助于了解执行本文的各个方案所需的特定操作：
 
 - [添加辅助数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt603689.aspx) 
 - [将数据库故障转移到辅助数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt619393.aspx)

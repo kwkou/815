@@ -25,7 +25,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 >[AZURE.NOTE] 建议将任何需要高 IOPS 的虚拟机磁盘迁移到 Azure 高级存储，以便你的应用程序实现最佳性能。如果你的磁盘不需要高 IOPS，你可以通过在标准存储（将虚拟机磁盘数据存储在硬盘驱动器 (HDD) 上而不是 SSD 上）中对其进行维护来限制成本。
 
-若要开始使用 Azure 高级存储，请访问[开始免费试用](/pricing/1rmb-trial/)页。有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。
+若要开始使用 Azure 高级存储，请访问[开始免费试用](/pricing/1rmb-trial/)页。有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage/)。
 
 
 ## 高级存储功能
@@ -34,7 +34,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 **高级页 Blob**：高级存储支持 Azure 页 Blob（用于保存 Azure 虚拟机 (VM) 的永久性磁盘）。高级存储目前不支持 Azure 块 Blob、Azure 追加 Blob、Azure 文件、Azure 表或 Azure 队列。
 
-**高级存储帐户**：若要开始使用高级存储，必须创建一个高级存储帐户。使用以下 SDK 库来创建“Premium_LRS”类型的存储帐户：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本（经典部署）；[Azure 存储空间资源提供程序 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)（ARM 部署）；[Azure PowerShell](/documentation/articles/powershell-install-configure) 版本 0.8.10 或更高版本。在以下有关[高级存储的可缩放性和性能目标](#premium-storage-scalability-and-performance-targets)的部分中了解高级存储帐户限制。
+**高级存储帐户**：若要开始使用高级存储，必须创建一个高级存储帐户。使用以下 SDK 库来创建“Premium_LRS”类型的存储帐户：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本（经典部署）；[Azure 存储空间资源提供程序 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)（ARM 部署）；[Azure PowerShell](/documentation/articles/powershell-install-configure/) 版本 0.8.10 或更高版本。在以下有关[高级存储的可缩放性和性能目标](#premium-storage-scalability-and-performance-targets)的部分中了解高级存储帐户限制。
 
 **高级本地冗余存储**：高级存储帐户仅支持使用本地冗余存储 (LRS) 作为复制选项，并在单个区域中保留三个数据副本。有关使用高级存储时的异地复制注意事项，请参阅本文中的[快照与复制 Blob](#snapshots-and-copy-blob) 部分。
 
@@ -50,9 +50,9 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 ## DS、DSv2 系列 VM
 
-高级存储支持 DS 系列、DSv2 系列 Azure 虚拟机 (VM)。DS 系列、DSv2 系列的 VM 可同时使用标准和高级存储磁盘。非 DS 的 VM 无法使用高级存储磁盘。有关可用 Azure VM 类型和大小的详细信息，请参阅 [Sizes for Virtual Machines（虚拟机大小）](/documentation/articles/virtual-machines-linux-sizes)。以下是 DS、DSv2 VM 的一些功能。
+高级存储支持 DS 系列、DSv2 系列 Azure 虚拟机 (VM)。DS 系列、DSv2 系列的 VM 可同时使用标准和高级存储磁盘。非 DS 的 VM 无法使用高级存储磁盘。有关可用 Azure VM 类型和大小的详细信息，请参阅 [Sizes for Virtual Machines（虚拟机大小）](/documentation/articles/virtual-machines-linux-sizes/)。以下是 DS、DSv2 VM 的一些功能。
 
-有关可用 Azure VM 类型和 Windows VM 大小的信息，请参阅 [Windows VM sizes（Windows VM 大小）](/documentation/articles/virtual-machines-windows-sizes)。有关 Linux VM 的 VM 类型和大小的信息，请参阅 [Linux VM sizes（Linux VM 大小）](/documentation/articles/virtual-machines-linux-sizes)。
+有关可用 Azure VM 类型和 Windows VM 大小的信息，请参阅 [Windows VM sizes（Windows VM 大小）](/documentation/articles/virtual-machines-windows-sizes/)。有关 Linux VM 的 VM 类型和大小的信息，请参阅 [Linux VM sizes（Linux VM 大小）](/documentation/articles/virtual-machines-linux-sizes/)。
 
 以下是 DS、DSv2 和 GS 系列 VM 的一些功能：
 
@@ -64,7 +64,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 > [AZURE.NOTE] 如果你使用[存储空间](http://technet.microsoft.com/zh-cn/library/hh831739.aspx)来条带化高级存储数据磁盘，应该以使用的每个磁盘一个列的方式来配置它。否则，条带化卷的整体性能可能会低于预期，因为磁盘之间的通信分配不平均。默认情况下，服务器管理器用户界面 (UI) 可让你设置最多包含 8 个磁盘的列。但如果磁盘超过 8 个，则你必须使用 PowerShell 来创建卷，并手动指定列数。否则，即使你有更多磁盘，服务器管理器 UI 仍会继续使用 8 个列。例如，如果在一个条带集中有 32 个磁盘，则你应该指定 32 列。可以使用 [New-VirtualDisk](http://technet.microsoft.com/zh-cn/library/hh848643.aspx) PowerShell cmdlet 的 NumberOfColumns 参数来指定虚拟磁盘使用的列数。有关详细信息，请参阅[存储空间概述](http://technet.microsoft.com/zh-cn/library/hh831739.aspx)和[存储空间常见问题](http://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)。
 
-**缓存**：DS、DSv2 系列 VM 都有独特的缓存功能，可让你获取超过基础高级存储磁盘性能的高级别吞吐量和延迟时间。可以在高级存储磁盘上将磁盘缓存策略配置为 ReadOnly、ReadWrite 或 None。所有高级数据磁盘的默认磁盘缓存策略都是 ReadOnly，而操作系统磁盘的磁盘缓存策略则是 ReadWrite。请使用正确的配置设置，以达到应用程序的最佳性能。例如，对于读取频繁或只读数据磁盘（如 SQL Server 数据文件），将磁盘缓存策略设置为“ReadOnly”。例如，对于写入频繁或只写数据磁盘（如 SQL Server 日志文件），将磁盘缓存策略设置为“None”。在 [Design for Performance with Premium Storage（使用高级存储器针对性能进行设计）](/documentation/articles/storage-premium-storage-performance)中深入了解如何优化高级存储的设计。
+**缓存**：DS、DSv2 系列 VM 都有独特的缓存功能，可让你获取超过基础高级存储磁盘性能的高级别吞吐量和延迟时间。可以在高级存储磁盘上将磁盘缓存策略配置为 ReadOnly、ReadWrite 或 None。所有高级数据磁盘的默认磁盘缓存策略都是 ReadOnly，而操作系统磁盘的磁盘缓存策略则是 ReadWrite。请使用正确的配置设置，以达到应用程序的最佳性能。例如，对于读取频繁或只读数据磁盘（如 SQL Server 数据文件），将磁盘缓存策略设置为“ReadOnly”。例如，对于写入频繁或只写数据磁盘（如 SQL Server 日志文件），将磁盘缓存策略设置为“None”。在 [Design for Performance with Premium Storage（使用高级存储器针对性能进行设计）](/documentation/articles/storage-premium-storage-performance/)中深入了解如何优化高级存储的设计。
 
 **分析**：若要分析使用高级存储帐户磁盘的 VM 性能，可以在 Azure 门户中启用 Azure VM 诊断。有关详细信息，请参阅 [Azure Virtual Machine Monitoring with Azure Diagnostics Extension（使用 Azure Diagnostics 扩展监视 Azure 虚拟机）](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。若要查看磁盘性能，请使用操作系统工具，例如适用于 Windows VM 的 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)和适用于 Linux VM 的 [IOSTAT](http://linux.die.net/man/1/iostat)。
 
@@ -74,7 +74,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 目前，DS 系列上的最大 VM 是 STANDARD_DS14，它可以跨所有磁盘最高提供每秒 512 MB。
 请注意，这些限制只适用于磁盘流量，而不包括缓存命中和网络流量。VM 网络通信可以使用单独的带宽，这不同于高级存储磁盘的专用带宽。
 
-有关 DS 系列、DSv2 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Windows VM sizes（Windows VM 大小）](/documentation/articles/virtual-machines-windows-sizes)或 [Linux VM sizes（Linux VM 大小）](/documentation/articles/virtual-machines-linux-sizes)。
+有关 DS 系列、DSv2 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Windows VM sizes（Windows VM 大小）](/documentation/articles/virtual-machines-windows-sizes/)或 [Linux VM sizes（Linux VM 大小）](/documentation/articles/virtual-machines-linux-sizes/)。
 
 若要了解高级存储磁盘及其 IOPS 和吞吐量限制，请参阅本文的[使用高级存储时的可伸缩性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分中的表格。
 
@@ -107,7 +107,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 - 入站是指发送到存储帐户的所有数据（请求）。
 - 出站是指从存储帐户接收的所有数据（响应）。
 
-有关详细信息，请参阅 [Azure 存储空间缩放性和性能目标](/documentation/articles/storage-scalability-targets)。
+有关详细信息，请参阅 [Azure 存储空间缩放性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。例如，如果要将 51 TB 的磁盘附加到多个 VM，请将它们分布在两个存储帐户中，因为 35 TB 是单个高级存储帐户的限制。请确保单个高级存储帐户永远不会超过 35 TB 的设置磁盘。
 
@@ -202,10 +202,10 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 >[AZURE.NOTE] 如果磁盘通信大多包含小型 I/O，应用程序在达到吞吐量限制前很可能会先达到 IOPS 限制。另一方面，如果磁盘通信主要包含大型 I/O，应用程序可能会达到吞吐量限制，而非 IOPS 限制。可以使用最佳的 I/O 大小和限制磁盘的挂起 I/O 请求数，来最大化应用程序的 IOPS 和吞吐量容量。
 
-若要了解如何使用高级存储设计高性能，请参阅 [Design for Performance with Premium Storage（使用高级存储器针对性能进行设计）](/documentation/articles/storage-premium-storage-performance)一文。
+若要了解如何使用高级存储设计高性能，请参阅 [Design for Performance with Premium Storage（使用高级存储器针对性能进行设计）](/documentation/articles/storage-premium-storage-performance/)一文。
 
 ##<a id="snapshots-and-copy-blob-when-using-premium-storage"></a> 快照和复制 Blob
-可以像使用标准存储时创建快照的方式来为高级存储创建快照。由于高级存储仅支持使用本地冗余存储 (LRS) 作为复制选项，因此建议你创建快照，并将那些快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅 [Azure 存储冗余选项](/documentation/articles/storage-redundancy)。
+可以像使用标准存储时创建快照的方式来为高级存储创建快照。由于高级存储仅支持使用本地冗余存储 (LRS) 作为复制选项，因此建议你创建快照，并将那些快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅 [Azure 存储冗余选项](/documentation/articles/storage-redundancy/)。
 
 如果磁盘已附加到 VM，在备份磁盘的页 Blob 上不允许某些 API 操作。例如，只要磁盘附加到 VM，你就无法在该 Blob 上执行[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 操作。此时，你必须先使用[快照 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691971.aspx) REST API 方法创建该 Blob 的快照，然后对该快照执行[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 以复制附加的磁盘。或者，可以中断附加磁盘，然后在基础 Blob 上执行任何必要的操作。
 
@@ -231,7 +231,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 </tbody>
 </table>
 
-若要维护快照的异地冗余副本，你可以使用 AzCopy 或“复制 Blob”将高级存储帐户中的快照复制到异地冗余的标准存储帐户。有关详细信息，请参阅 [Transfer data with the AzCopy Command-Line Utility（使用 AzCopy 命令行实用工具传输数据）](/documentation/articles/storage-use-azcopy) 和 [Copy Blob（复制 Blob）](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx)。
+若要维护快照的异地冗余副本，你可以使用 AzCopy 或“复制 Blob”将高级存储帐户中的快照复制到异地冗余的标准存储帐户。有关详细信息，请参阅 [Transfer data with the AzCopy Command-Line Utility（使用 AzCopy 命令行实用工具传输数据）](/documentation/articles/storage-use-azcopy/) 和 [Copy Blob（复制 Blob）](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx)。
 
 有关对高级存储帐户中的页 Blob 执行 REST 操作的详细信息，请参阅 MSDN 库中的[对 Azure 高级存储使用 Blob 服务操作](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)。
 
@@ -244,7 +244,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 	- 如果你使用的是 **XFS**，请使用装入选项“nobarrier”禁用屏障（要启用屏障，请使用“barrier”）
 
 - 对于缓存设置为“ReadWrite”的高级存储磁盘，应该启用屏障以实现写入持久性。
-- 若要在重新启动 VM 后保留卷标，你必须使用对磁盘的 UUID 引用来更新 /etc/fstab。另请参阅 [How to Attach a Data Disk to a Linux Virtual Machine（如何将数据磁盘附加到 Linux 虚拟机）](/documentation/articles/virtual-machines-linux-classic-attach-disk)
+- 若要在重新启动 VM 后保留卷标，你必须使用对磁盘的 UUID 引用来更新 /etc/fstab。另请参阅 [How to Attach a Data Disk to a Linux Virtual Machine（如何将数据磁盘附加到 Linux 虚拟机）](/documentation/articles/virtual-machines-linux-classic-attach-disk/)
 
 以下是我们使用高级存储验证过的 Linux 分发版。我们建议将 VM 升级到其中至少一个版本（或更新版本），以改进高级存储的性能和稳定性。此外，某些版本需要最新的 LIS（适用于 Azure 的 Linux Integration Services v4.0）。请使用下面提供的链接进行下载和安装。在我们完成其他验证后，将陆续在列表中添加更多映像。请注意，我们的验证表明，性能根据映像而有所不同，并且还取决于工作负荷特征和映像上的设置。不同的映像已针对不同种类的工作负荷进行优化。
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
@@ -365,7 +365,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 本 PowerShell 示例演示如何创建新的高级存储帐户并将使用该帐户的数据磁盘附加到新的 Azure 虚拟机。
 
-1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中提供的步骤设置 PowerShell 环境。
+1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中提供的步骤设置 PowerShell 环境。
 2. 启动 PowerShell 控制台，连接到订阅，并在控制台窗口中运行以下 PowerShell cmdlet。如此 PowerShell 语句中所示，当你创建高级存储帐户时，必须将 **Type** 参数指定为 **Premium_LRS**。
 
 		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China East" -Type "Premium_LRS"
@@ -406,7 +406,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 ### 通过 Azure 命令行界面使用高级存储创建 Azure 虚拟机
 
-[Azure 命令行接口](/documentation/articles/xplat-cli-install) (Azure CLI) 提供一组可在 Azure 平台上运行的开放源代码跨平台命令。以下示例演示如何使用 Azure CLI（0.8.14 和更高版本）创建高级存储帐户、新的虚拟机，以及从高级存储帐户附加新的数据磁盘。
+[Azure 命令行接口](/documentation/articles/xplat-cli-install/) (Azure CLI) 提供一组可在 Azure 平台上运行的开放源代码跨平台命令。以下示例演示如何使用 Azure CLI（0.8.14 和更高版本）创建高级存储帐户、新的虚拟机，以及从高级存储帐户附加新的数据磁盘。
 
 #### I.通过 Azure CLI 创建高级存储帐户
 
@@ -477,7 +477,7 @@ azure storage account create "premiumtestaccount" -l "China East" --type PLRS
 
 9. **如何将 D 系列 VM 转换成 DS 系列 VM？**
 
-	请参阅迁移指南 [Migrating to Azure Premium Storage（迁移到 Azure 高级存储）](/documentation/articles/storage-migration-to-premium-storage)，将工作负荷从使用标准存储帐户的 D 系列 VM 迁移到使用高级存储帐户的 DS 系列 VM。
+	请参阅迁移指南 [Migrating to Azure Premium Storage（迁移到 Azure 高级存储）](/documentation/articles/storage-migration-to-premium-storage/)，将工作负荷从使用标准存储帐户的 D 系列 VM 迁移到使用高级存储帐户的 DS 系列 VM。
 
 ## 后续步骤
 
@@ -485,12 +485,12 @@ azure storage account create "premiumtestaccount" -l "China East" --type PLRS
 
 ### 使用 Azure 高级存储进行设计和实现
 
-- [Design for Performance with Premium Storage（使用高级存储针对性能进行设计）](/documentation/articles/storage-premium-storage-performance)
+- [Design for Performance with Premium Storage（使用高级存储针对性能进行设计）](/documentation/articles/storage-premium-storage-performance/)
 - [对 Azure 高级存储使用 Blob 服务操作](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
 
 ### 操作指南
 
-- [迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)
+- [迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage/)
 
 ### 博客文章
 

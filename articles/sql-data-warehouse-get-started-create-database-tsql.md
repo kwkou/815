@@ -16,8 +16,8 @@
 # 使用 Transact-SQL (TSQL) 创建 SQL 数据仓库数据库
 
 > [AZURE.SELECTOR]
-- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
-- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)
 
 本文说明如何使用 Transact-SQL (TSQL) 创建 SQL 数据仓库数据库。
 
@@ -56,12 +56,12 @@ MAXSIZE 可以介于 250 GB 与 60 TB 之间。服务目标可以介于 DW100 �
 完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]，或[迁移][]数据。
 
 <!--Article references-->
-[如何从 Azure 门户创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
-[使用 Visual Studio 连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect
-[迁移]: /documentation/articles/sql-data-warehouse-overview-migrate
-[开发]: /documentation/articles/sql-data-warehouse-overview-develop
-[加载]: /documentation/articles/sql-data-warehouse-overview-load
-[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples
+[如何从 Azure 门户创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[使用 Visual Studio 连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[开发]: /documentation/articles/sql-data-warehouse-overview-develop/
+[加载]: /documentation/articles/sql-data-warehouse-overview-load/
+[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 
 <!--MSDN references--> 
 [CREATE DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204021.aspx

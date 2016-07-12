@@ -71,7 +71,7 @@
 
 
 <!--Article links-->
-[使用 SQL 数据仓库构建集成解决方案]: /documentation/articles/sql-data-warehouse-overview-integrate
+[使用 SQL 数据仓库构建集成解决方案]: /documentation/articles/sql-data-warehouse-overview-integrate/
 
 
 <!--External links -->

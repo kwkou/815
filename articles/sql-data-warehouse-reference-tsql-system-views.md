@@ -225,7 +225,7 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 <!--Image references-->
 
 <!--Article references-->
-[SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference
+[SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
 
 <!--MSDN references-->
 

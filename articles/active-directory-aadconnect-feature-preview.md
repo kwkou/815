@@ -35,8 +35,8 @@
 > [AZURE.IMPORTANT] Azure AD Connect 的 2015 年 8 月更新版中删除了用户写回预览版功能。如果你已启用此功能，现在应将它禁用。
 
 ## 后续步骤
-配置 [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)。
+配置 [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom/)。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

@@ -41,7 +41,7 @@ Azure 自动化提供了具有高可靠性和高可用性的工作流执行引�
 
 在了解 Azure 自动化 以及如何使用它来管理 Azure 服务总线的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
 
-* 请参阅如何[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision)
+* 请参阅如何[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision/)
  
 
 <!---HONumber=Mooncake_0104_2016-->

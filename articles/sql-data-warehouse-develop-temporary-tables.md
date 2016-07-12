@@ -244,7 +244,7 @@ SQL 数据仓库在实现临时表时确实会施加一些限制。
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 

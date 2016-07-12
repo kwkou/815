@@ -22,7 +22,7 @@
 
 若要成功管理此类应用程序，应主动监视这些应用程序，并了解如何诊断和排查这些应用程序及其相关技术的所有方面的问题。作为 Azure 存储服务的用户，你应持续监视你的应用程序所用的存储服务是否出现任何意外的行为更改（如比正常响应时间慢），并使用日志记录收集更详细的数据并深入地分析问题。从监视和日志记录获取的诊断信息将有助于确定应用程序所遇到问题的根本原因。然后，你可以排查该问题，并确定可以执行以更正该问题的相应步骤。Azure 存储空间是一项核心 Azure 服务，它是客户部署到 Azure 基础结构的大多数解决方案的重要组成部分。Azure 存储空间提供的功能可以简化监视、诊断和排查基于云的应用程序中的存储问题的过程。
 
-有关 Azure 存储空间应用程序中的端到端故障排除的动手指导，请参阅[端到端故障排除 - 使用 Azure 存储空间指标和日志记录、AzCopy 和 Message Analyzer](/documentation/articles/storage-e2e-troubleshooting)。
+有关 Azure 存储空间应用程序中的端到端故障排除的动手指导，请参阅[端到端故障排除 - 使用 Azure 存储空间指标和日志记录、AzCopy 和 Message Analyzer](/documentation/articles/storage-e2e-troubleshooting/)。
 
 + [介绍]
 	+ [本指南的组织方式]
@@ -403,7 +403,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 较高的 **AverageServerLatency** 值也可能是设计欠佳的表或查询的症状，它会导致扫描操作或执行追加/前面预置反模式。有关详细信息，请参阅“[度量值显示 PercentThrottlingError 增加]”。
 
-> [AZURE.NOTE] 你可以在此处找到一份全面的性能清单：[Azure 存储空间性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)。
+> [AZURE.NOTE] 你可以在此处找到一份全面的性能清单：[Azure 存储空间性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)。
 
 ### <a name="you-are-experiencing-unexpected-delays-in-message-delivery"></a>队列上的消息传递出现意外的延迟
 

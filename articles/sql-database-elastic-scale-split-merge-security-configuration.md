@@ -14,7 +14,7 @@
 
 # 拆分合并安全配置  
 
-若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性缩放功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
+若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性缩放功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。
 
 ## 配置证书
 

@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.SELECTOR]
-- 中文版(/documentation/articles/mysql-database-api-deletebackup)
-- [English](/documentation/articles/mysql-database-enus-api-deletebackup)
+- 中文版(/documentation/articles/mysql-database-api-deletebackup/)
+- [English](/documentation/articles/mysql-database-enus-api-deletebackup/)
 
 #Delete backup files
 

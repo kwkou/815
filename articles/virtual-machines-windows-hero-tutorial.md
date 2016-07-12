@@ -50,14 +50,14 @@
 	密码的长度必须至少为 12 到 123 个字符，并且必须至少包含 1 个小写字符、1 个大写字符、1 个数字和 1 个特殊字符。
 
 
-3. 选择现有的[资源组](/documentation/articles/resource-group-overview#resource-groups)，或键入新资源组的名称。键入 Azure 数据中心的**位置**，例如**中国北部**。
+3. 选择现有的[资源组](/documentation/articles/resource-group-overview/#resource-groups)，或键入新资源组的名称。键入 Azure 数据中心的**位置**，例如**中国北部**。
 
 4. 完成后，单击“确定”转到下一部分。
 
 	![显示用于设置 Azure VM 的“基本信息”边栏选项卡上的设置的屏幕截图](./media/virtual-machines-windows-hero-tutorial/basics-blade.png)
 
 	
-5. 选择 VM [大小](/documentation/articles/virtual-machines-windows-sizes)，然后单击“选择”以继续。
+5. 选择 VM [大小](/documentation/articles/virtual-machines-windows-sizes/)，然后单击“选择”以继续。
 
 	![显示可以选择的 Azure VM 大小的“大小”边栏选项卡的屏幕截图](./media/virtual-machines-windows-hero-tutorial/size-blade.png)
 
@@ -95,7 +95,7 @@
 	![显示有关验证 VM 标识的消息的屏幕截图。](./media/virtual-machines-windows-hero-tutorial/cert-warning.png)
 
 
-如果你在尝试连接时遇到故障，请参阅[解决远程桌面连接到基于 Windows 的 Azure 虚拟机的问题](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)。
+如果你在尝试连接时遇到故障，请参阅[解决远程桌面连接到基于 Windows 的 Azure 虚拟机的问题](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)。
 
 您现在可以像使用任何其他服务器一样使用该虚拟机。
 
@@ -110,8 +110,8 @@
 
 ## 后续步骤
 
-* 你还可以体验[将数据磁盘附加到](/documentation/articles/virtual-machines-windows-attach-disk-portal)虚拟机。数据磁盘可为虚拟机提供更多存储空间。
+* 你还可以体验[将数据磁盘附加到](/documentation/articles/virtual-machines-windows-attach-disk-portal/)虚拟机。数据磁盘可为虚拟机提供更多存储空间。
 
-* 你也可以[使用 Powershell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create) 或[使用 Azure CLI 创建 Linux 虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli)。
+* 你也可以[使用 Powershell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 或[使用 Azure CLI 创建 Linux 虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
 
 <!---HONumber=Mooncake_0613_2016-->

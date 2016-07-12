@@ -14,7 +14,7 @@
 
 # Azure 搜索层（Azure 体系结构模式）
 
-[云平台集成框架 (CPIF)](/documentation/articles/azure-architectures-cpif-overview) 提供工作负荷整合指南，将应用程序载入到 Microsoft 云解决方案中。
+[云平台集成框架 (CPIF)](/documentation/articles/azure-architectures-cpif-overview/) 提供工作负荷整合指南，将应用程序载入到 Microsoft 云解决方案中。
 
 CPIF 介绍了组织、客户和合作伙伴应该如何设计和部署使用混合云平台及 Azure、System Center 和 Windows Server 管理功能的面向云的工作负荷。
 

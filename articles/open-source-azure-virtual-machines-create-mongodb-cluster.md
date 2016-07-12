@@ -21,7 +21,7 @@
 
 ##准备步骤 
 
-- 如果你选择 Azure PowerShell 方式搭建 MongoDB，那么请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)中的说明在本地计算机上安装 Azure PowerShell。然后打开 Azure PowerShell 命令提示符，通过运行以下命令并遵循提示进行 Azure 帐户的交互式登录体验，来使用[工作或学校 ID 登录](/documentation/articles/xplat-cli-connect#use-the-log-in-method)：    
+- 如果你选择 Azure PowerShell 方式搭建 MongoDB，那么请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)中的说明在本地计算机上安装 Azure PowerShell。然后打开 Azure PowerShell 命令提示符，通过运行以下命令并遵循提示进行 Azure 帐户的交互式登录体验，来使用[工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)：    
 
 		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -29,11 +29,11 @@
 
 		New-AzureRmResourceGroup -Name "YOUR-RESOURCE-GROUP-NAME" -Location "China East"
 
-- 如果你选择 Azure CLI 方式搭建 MongoDB，那么请[安装 Azure CLI](/documentation/articles/xplat-cli-install)。然后请确保你是处于[资源管理器模式](/documentation/articles/resource-manager-deployment-model)下，可通过运行以下命令来验证：
+- 如果你选择 Azure CLI 方式搭建 MongoDB，那么请[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。然后请确保你是处于[资源管理器模式](/documentation/articles/resource-manager-deployment-model/)下，可通过运行以下命令来验证：
 		
 		azure config mode asm
 
-现在，通过运行以下命令并遵循提示进行 Azure 帐户的交互式登录体验，来使用[工作或学校 ID 登录](/documentation/articles/xplat-cli-connect#use-the-log-in-method)： 
+现在，通过运行以下命令并遵循提示进行 Azure 帐户的交互式登录体验，来使用[工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)： 
  
 		azure login -e AzureChinaCloud -u <your account>
 

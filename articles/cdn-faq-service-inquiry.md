@@ -6,7 +6,7 @@
     />
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-faq-service-inquiry/)
-- [English](/documentation/articles/cdn-enus-faq-service-inquiry) 
+- [English](/documentation/articles/cdn-enus-faq-service-inquiry/) 
 #常见问题 - 咨询
 
 

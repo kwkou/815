@@ -42,7 +42,7 @@
 
 2.  在“分析结果”边栏选项卡上的推荐表列表中，选择一个推荐表以显示“表结果”边栏选项卡。
 
-    “表结果”边栏选项卡列出了所选表的阻碍性问题。有关SQL Server Stretch Database顾问检测到的阻碍性问题的信息，请参阅[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations)。
+    “表结果”边栏选项卡列出了所选表的阻碍性问题。有关SQL Server Stretch Database顾问检测到的阻碍性问题的信息，请参阅[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations/)。
 
 3.  在“表结果”边栏选项卡上的阻碍性问题列表中，选择一个问题以显示“规则结果”边栏选项卡。
 
@@ -51,13 +51,13 @@
 ## 后续步骤
 启用SQL Server Stretch Database。
 
--   若要对**数据库**启用SQL Server Stretch Database，请参阅[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database)。
+-   若要对**数据库**启用SQL Server Stretch Database，请参阅[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database/)。
 
--   若要在已对数据库启用延伸的情况下对另一个**表**启用SQL Server Stretch Database，请参阅[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table)。
+-   若要在已对数据库启用延伸的情况下对另一个**表**启用SQL Server Stretch Database，请参阅[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)。
 
 ## 另请参阅
-[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations)
-[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database)
-[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table)
+[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations/)
+[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database/)
+[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)
 
 <!---HONumber=Mooncake_0307_2016-->

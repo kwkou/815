@@ -39,7 +39,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 
 - 使用现有（非 ARM）Azure 服务管理 (ASM) API、工具和经典管理门户创建的流量管理器配置文件无法通过 ARM 使用，反之亦然。目前不支持将配置文件从 ASM 迁移到 ARM API，除非是通过删除该配置文件然后又重新创建的方式。
 
-- “AzureEndpoints”类型的流量管理器终结点在引用 Web 应用时，只能引用默认（生产）[Web 应用槽](/documentation/articles/web-sites-staged-publishing)。尚不支持自定义槽。一种解决方法是，可以使用“ExternalEndpoints”类型配置自定义槽。
+- “AzureEndpoints”类型的流量管理器终结点在引用 Web 应用时，只能引用默认（生产）[Web 应用槽](/documentation/articles/web-sites-staged-publishing/)。尚不支持自定义槽。一种解决方法是，可以使用“ExternalEndpoints”类型配置自定义槽。
 
 ## 设置 Azure PowerShell
 
@@ -302,9 +302,9 @@ Disable-AzureRmTrafficManagerProfile cmdlet 会提示你进行确认，该提示
 
 ## 后续步骤
 
-[流量管理器监视](/documentation/articles/traffic-manager-monitoring)
+[流量管理器监视](/documentation/articles/traffic-manager-monitoring/)
 
-[流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations)
+[流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations/)
  
 
 <!---HONumber=Mooncake_0321_2016-->

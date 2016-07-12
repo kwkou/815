@@ -79,14 +79,14 @@
 
 ## 后续步骤
 
-- 若要了解有关如何在 Microsoft Azure 中控制资源访问的详细信息，请参阅 [Understanding resource access in Azure](/documentation/articles/active-directory-understanding-resource-access)（了解 Azure 中的资源访问）
+- 若要了解有关如何在 Microsoft Azure 中控制资源访问的详细信息，请参阅 [Understanding resource access in Azure](/documentation/articles/active-directory-understanding-resource-access/)（了解 Azure 中的资源访问）
 
-- 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory)
+- 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
 
-- [管理用户](/documentation/articles/active-directory-create-users)
+- [管理用户](/documentation/articles/active-directory-create-users/)
 
-- [管理密码](/documentation/articles/active-directory-manage-passwords)
+- [管理密码](/documentation/articles/active-directory-manage-passwords/)
 
-- [管理组](/documentation/articles/active-directory-manage-groups)
+- [管理组](/documentation/articles/active-directory-manage-groups/)
 
 <!---HONumber=Mooncake_0613_2016-->

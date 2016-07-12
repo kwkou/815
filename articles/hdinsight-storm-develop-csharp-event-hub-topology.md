@@ -24,13 +24,13 @@ Azure 事件中心可让你处理网站、应用程序和设备中的大量数�
 
 ## 先决条件
 
-* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
+* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)
 
-* 一个 [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
+* 一个 [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
 
 * [Azure .NET SDK](/downloads/)
 
-* [HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)
+* [HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)
 
 ## 已完成的项目
 
@@ -115,7 +115,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 在本部分中，你将要使用事件中心 Bolt 创建向事件中心写入数据的拓扑。
 
-1. 如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅 [Get started using HDInsight Tools for Visual Studio（开始使用 HDInsight Tools for Visual Studio）](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+1. 如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅 [Get started using HDInsight Tools for Visual Studio（开始使用 HDInsight Tools for Visual Studio）](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 2. 打开 Visual Studio，选择“文件”>“新建”>“项目”。
 
@@ -559,9 +559,9 @@ EventHubSpout 定期检查点其状态为 Zookeeper 节点，将保存当前的�
 
 在本文档中，你已学习如何使用 C# 拓扑中的 Java 事件中心 Spout 和 Bolt 处理 Azure 事件中心内的数据。若要了解有关创建 C# 拓扑的详细信息，请参阅以下主题。
 
-* [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
+* [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 
-* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
+* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
  
 
 <!---HONumber=Mooncake_0530_2016-->

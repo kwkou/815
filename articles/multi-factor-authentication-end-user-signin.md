@@ -14,7 +14,7 @@
 	wacn.date="06/06/2016"/>
 
 # Azure 多重身份验证的登录体验
-> [AZURE.NOTE]本页提供的文档演示了一个典型的登录体验。有关登录的帮助，请参阅[使用 Azure (MFA)多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-manage-settings)
+> [AZURE.NOTE]本页提供的文档演示了一个典型的登录体验。有关登录的帮助，请参阅[使用 Azure (MFA)多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
 
 
 

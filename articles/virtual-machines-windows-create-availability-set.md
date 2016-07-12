@@ -20,7 +20,7 @@
 
 使用门户时，如果希望 VM 属于某个可用性集，则需要先创建该可用性集。
 
-有关创建和使用可用性集的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
+有关创建和使用可用性集的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。
 
 
 ## 在创建 VM 之前使用门户创建可用性集
@@ -75,6 +75,6 @@
 
 ## 后续步骤
 
-通过添加附加[数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal)，向 VM 添加附加存储。
+通过添加附加[数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal/)，向 VM 添加附加存储。
 
 <!---HONumber=Mooncake_0704_2016-->

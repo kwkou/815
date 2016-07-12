@@ -24,15 +24,15 @@
 ### 防火墙规则
 为了确保只有已知的 IP 地址可以访问数据库，Azure SQL 数据库受到服务器和数据库级别的防火墙保护。默认情况下，防火墙受到保护 - 这意味着，你必须允许你的 IP 地址访问数据库才能建立连接。
 
-若要设置防火墙的访问权限，请遵循[预配](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)页上的[为客户端 IP 配置服务器防火墙访问权限](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/#step-4-configure-server-firewall-access-for-your-client-ip)部分中所述的步骤。
+若要设置防火墙的访问权限，请遵循[预配](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)页上的[为客户端 IP 配置服务器防火墙访问权限](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/#step-4-configure-server-firewall-access-for-your-client-ip)部分中所述的步骤。
 
 ### 使用不支持的工具/协议
-SQL 数据仓库支持使用 [Visual Studio 2013/2015](/documentation/articles/sql-data-warehouse-get-started-connect) 作为开发环境，支持使用 [SQL Server Native Client 10/11 (ODBC)](https://msdn.microsoft.com/zh-cn/library/ms131415.aspx) 来连接客户端。
+SQL 数据仓库支持使用 [Visual Studio 2013/2015](/documentation/articles/sql-data-warehouse-get-started-connect/) 作为开发环境，支持使用 [SQL Server Native Client 10/11 (ODBC)](https://msdn.microsoft.com/zh-cn/library/ms131415.aspx) 来连接客户端。
 
-有关详细信息，请参阅我们的[连接](/documentation/articles/sql-data-warehouse-get-started-connect)页。
+有关详细信息，请参阅我们的[连接](/documentation/articles/sql-data-warehouse-get-started-connect/)页。
 
 ## 查询性能
-SQL 数据仓库使用普通的 SQL Server 构造来执行查询（包括统计信息）。[统计信息](/documentation/articles/sql-data-warehouse-develop-statistics)是包含数据库列中值范围和频率相关信息的对象。查询引擎使用这些统计信息优化查询执行以及提高查询性能。你可以使用以下查询来确定上次更新统计信息的时间。
+SQL 数据仓库使用普通的 SQL Server 构造来执行查询（包括统计信息）。[统计信息](/documentation/articles/sql-data-warehouse-develop-statistics/)是包含数据库列中值范围和频率相关信息的对象。查询引擎使用这些统计信息优化查询执行以及提高查询性能。你可以使用以下查询来确定上次更新统计信息的时间。
 
 ```
 SELECT
@@ -56,7 +56,7 @@ WHERE
 	AND st.[user_created] = 1;
 ```
 
-有关详细信息，请参阅我们的[统计信息](/documentation/articles/sql-data-warehouse-develop-statistics)页。
+有关详细信息，请参阅我们的[统计信息](/documentation/articles/sql-data-warehouse-develop-statistics/)页。
 
 ## 关键性能概念
 
@@ -75,12 +75,12 @@ WHERE
 
 <!--Article references-->
 
-[性能和缩放性]: /documentation/articles/sql-data-warehouse-performance-scale
-[并发模型]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[设计表]: /documentation/articles/sql-data-warehouse-develop-table-design
-[为表选择哈希分布键]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
-[用于改善性能的统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[性能和缩放性]: /documentation/articles/sql-data-warehouse-performance-scale/
+[并发模型]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[设计表]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[为表选择哈希分布键]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key/
+[用于改善性能的统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 

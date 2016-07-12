@@ -39,7 +39,7 @@
 
 ### Ubuntu 云映像
 
-在大多数 Azure Linux 映像中，你将编辑“/etc/waagent.conf”来配置临时资源磁盘和交换文件。有关详细信息，请参阅 [Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide)。
+在大多数 Azure Linux 映像中，你将编辑“/etc/waagent.conf”来配置临时资源磁盘和交换文件。有关详细信息，请参阅 [Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide/)。
 
 但是，在 Ubuntu 云映像上，你必须使用 cloud-init 来配置资源磁盘（又称“临时”磁盘）和交换分区。有关更多详细信息，请参阅 Ubuntu wiki 上的以下页面：[AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions)。
 

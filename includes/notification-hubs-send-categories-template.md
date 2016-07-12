@@ -3,7 +3,7 @@
 
 如果你使用的是移动服务，请参阅[推送入门](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push/)教程。
 
-如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/documentation/articles/notification-hubs-java-backend-how-to)。你可使用[通知中心 REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)通过任何后端发送通知。
+如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/documentation/articles/notification-hubs-java-backend-how-to/)。你可使用[通知中心 REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)通过任何后端发送通知。
 
 如果你在完成[通知中心入门][get-started]时创建了用于发送通知的控制台应用，则跳过步骤 1-3。
 
@@ -70,7 +70,7 @@
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
+[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx

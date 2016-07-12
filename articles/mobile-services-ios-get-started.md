@@ -79,12 +79,12 @@
 
 
 <!-- URLs. -->
-[脱机数据同步入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
-[向现有应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[向现有应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+[脱机数据同步入门]: /documentation/articles/mobile-services-ios-get-started-offline-data/
+[向现有应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
+[向现有应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[.NET 后端版本]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[.NET 后端版本]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started/
 
 <!---HONumber=Mooncake_0118_2016-->

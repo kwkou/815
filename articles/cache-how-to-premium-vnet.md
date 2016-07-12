@@ -17,7 +17,7 @@ Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层）�
 
 Azure Redis 缓存高级层包括群集、暂留和虚拟网络 (VNET) 支持。VNET 是你自己的网络在云中的表示形式。使用 VNET 配置 Azure Redis 缓存实例后，该实例不可公开寻址，而只能从 VNET 中的客户端访问。本文说明如何配置高级 Azure Redis 缓存实例的虚拟网络支持。
 
-有关其他高级缓存功能的信息，请参阅[如何配置高级 Azure Redis 缓存的持久性](/documentation/articles/cache-how-to-premium-persistence)和[如何配置高级 Azure Redis 缓存的群集](/documentation/articles/cache-how-to-premium-clustering)。
+有关其他高级缓存功能的信息，请参阅[如何配置高级 Azure Redis 缓存的持久性](/documentation/articles/cache-how-to-premium-persistence/)和[如何配置高级 Azure Redis 缓存的群集](/documentation/articles/cache-how-to-premium-clustering/)。
 
 ## 为何使用 VNET？
 [Azure 虚拟网络 (VNET)](/home/features/networking/) 部署为 Azure Redis 缓存提供增强的安全性，并提供子网、访问控制策略和进一步限制访问 Azure Redis 缓存的其他功能。
@@ -91,8 +91,8 @@ Azure Redis 缓存高级层包括群集、暂留和虚拟网络 (VNET) 支持。
 ## 后续步骤
 了解如何使用更多的高级版缓存功能。
 
--	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence)
--	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering)
+-	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
+-	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
 
 
 

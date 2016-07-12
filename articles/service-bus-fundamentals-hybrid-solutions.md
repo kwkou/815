@@ -101,7 +101,7 @@
 
 ## 事件中心
 
-事件中心是一个具备高度可伸缩性的引入系统，每秒可处理大量事件，从而使你的应用程序能够处理和分析你连接的设备和应用程序所产生的海量数据。例如，可以使用事件中心收集车队的实时引擎性能数据。将数据采集到事件中心后，你可以使用任何实时分析提供程序或存储群集来转换和存储数据。有关事件中心的详细信息，请参阅[事件中心概述](/documentation/articles/event-hubs-overview)。
+事件中心是一个具备高度可伸缩性的引入系统，每秒可处理大量事件，从而使你的应用程序能够处理和分析你连接的设备和应用程序所产生的海量数据。例如，可以使用事件中心收集车队的实时引擎性能数据。将数据采集到事件中心后，你可以使用任何实时分析提供程序或存储群集来转换和存储数据。有关事件中心的详细信息，请参阅[事件中心概述](/documentation/articles/event-hubs-overview/)。
 
 ## 摘要
 
@@ -111,10 +111,10 @@
 
 现在，你已了解有关服务总线的基础知识，请单击下面的链接了解更多信息。
 
-- 如何使用[服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
-- 如何使用[服务总线主题](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)。
-- 如何使用[服务总线中继](/documentation/articles/service-bus-dotnet-how-to-use-relay)。
-- [服务总线示例](/documentation/articles/service-bus-samples)
+- 如何使用[服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
+- 如何使用[服务总线主题](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/)。
+- 如何使用[服务总线中继](/documentation/articles/service-bus-dotnet-how-to-use-relay/)。
+- [服务总线示例](/documentation/articles/service-bus-samples/)
 
 [1]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_01_architecture.png
 [2]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_02_queues.png

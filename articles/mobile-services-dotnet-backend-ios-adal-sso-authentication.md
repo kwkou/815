@@ -111,9 +111,9 @@
 
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[注册应用以使用 Azure Active Directory 帐户登录]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
-[如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started/
+[注册应用以使用 Azure Active Directory 帐户登录]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [适用于 iOS 的 Active Directory 身份验证库]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
 

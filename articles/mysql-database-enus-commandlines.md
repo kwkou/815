@@ -3,12 +3,12 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-commandlines)
-- [English](/documentation/articles/mysql-database-enus-commandlines)
+- [中文](/documentation/articles/mysql-database-commandlines/)
+- [English](/documentation/articles/mysql-database-enus-commandlines/)
 
 #Use Windows PowerShell to manage MySQL Database on Azure
 
-Use PowerShell to do more with MySQL Database on Azure, including creating, viewing, deleting, and modifying operations. For helpful background information, first read [Using Azure Resource Manager and PowerShell to deploy and use MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell). This document explains how to download and use Azure PowerShell, and how to use PowerShell to quickly create MySQL Database on Azure data services.
+Use PowerShell to do more with MySQL Database on Azure, including creating, viewing, deleting, and modifying operations. For helpful background information, first read [Using Azure Resource Manager and PowerShell to deploy and use MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell/). This document explains how to download and use Azure PowerShell, and how to use PowerShell to quickly create MySQL Database on Azure data services.
 
 
 
@@ -173,7 +173,7 @@ Using the wait\_timeout parameter as an example, edit and run the following comm
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{wait_timeout=70}} -UsePatchSemantics
 ```
-Refer to the definitions in the following JSON file for modifications to other parameters. See [Customize MySQL Database on Azure server parameters](http://www.windowsazure.cn/documentation/articles/mysql-database-advanced-settings) for valid ranges for the parameters:
+Refer to the definitions in the following JSON file for modifications to other parameters. See [Customize MySQL Database on Azure server parameters](http://www.windowsazure.cn/documentation/articles/mysql-database-advanced-settings/) for valid ranges for the parameters:
 
 ```
 	"options": {

@@ -35,9 +35,9 @@ Microsoft Online Services 登录助手 | 此登录助手是安装在客户端计
 工作或学校帐户 | 组织（工作、学校、非营利单位）为其成员（员工、学生、客户）分配的用户帐户，该帐户提供到组织的一个或多个 Microsoft 云服务订阅（如 Office 365 或 Azure）的登录访问权限。这些帐户存储在组织的云目录（也称为 Azure Active Directory）中，通常会在用户离开组织时删除。工作或学校帐户不同于 Microsoft 帐户，因为它们由组织中的管理员（而非用户）创建和管理。 
 
 ## 后续步骤
-- [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
-- [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory)
-- [Azure AD 服务限制和局限性](/documentation/articles/active-directory-service-limits-restrictions)
+- [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
+- [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
+- [Azure AD 服务限制和局限性](/documentation/articles/active-directory-service-limits-restrictions/)
 
 
 

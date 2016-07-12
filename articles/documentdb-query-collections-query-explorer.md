@@ -15,7 +15,7 @@
 
 # 使用查询资源管理器对 DocumentDB 编写、编辑和运行 SQL 查询 
 
-本文概述了 [Azure DocumentDB](/services/documentdb/) 查询资源管理器，该资源管理器是一个 Azure 门户预览工具，允许你针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection)编写、编辑和运行 SQL 查询。
+本文概述了 [Azure DocumentDB](/services/documentdb/) 查询资源管理器，该资源管理器是一个 Azure 门户预览工具，允许你针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection/)编写、编辑和运行 SQL 查询。
 
 1. 在 Azure 门户预览的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
 
@@ -29,7 +29,7 @@
 
     “数据库”和“集合”下拉列表将根据在其中启动查询资源管理器的上下文进行预填充。
 
-    提供了 `SELECT TOP 100 * FROM c` 的默认查询。你可以接受默认查询或使用 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)或[SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query)文章中所述的 SQL 查询语言构建你自己的查询。
+    提供了 `SELECT TOP 100 * FROM c` 的默认查询。你可以接受默认查询或使用 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet/)或[SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query/)文章中所述的 SQL 查询语言构建你自己的查询。
 
     单击“运行查询”查看结果。
 
@@ -69,11 +69,11 @@
 
 ## 运行门户预览外部的 DocumentDB SQL 查询
 
-Azure 门户预览中的查询资源管理器只是一种对 DocumentDB 运行 SQL 查询的方式。你还可以使用 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 运行 SQL 查询。有关使用这些其他方法的详细信息，请参阅 [执行 SQL 查询](/documentation/articles/documentdb-sql-query#executing-sql-queries)
+Azure 门户预览中的查询资源管理器只是一种对 DocumentDB 运行 SQL 查询的方式。你还可以使用 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 运行 SQL 查询。有关使用这些其他方法的详细信息，请参阅 [执行 SQL 查询](/documentation/articles/documentdb-sql-query/#executing-sql-queries)
 
 ## 后续步骤
 
-有关查询资源管理器中支持的 DocumentDB SQL 语法的详细信息，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query)一文或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)。
+有关查询资源管理器中支持的 DocumentDB SQL 语法的详细信息，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query/)一文或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet/)。
 也许你还可以尝试使用[查询板块](https://www.documentdb.com/sql/demo)，使用其中的数据集示例联机测试查询。
 
 <!---HONumber=Mooncake_0627_2016-->

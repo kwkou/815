@@ -66,7 +66,7 @@ Visual Studio Service Fabric 工具支持所有用于连接到群集来进行发
 5.	编辑其他任何所需的设置（例如升级参数和应用程序参数文件位置），然后从 Visual Studio 中的“发布 Service Fabric应用程序”对话框发布应用程序。
 
 ## 后续步骤
-有关访问 Service Fabric 群集的详细信息，请参阅[使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster)。
+有关访问 Service Fabric 群集的详细信息，请参阅[使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
 
 <!--Image references-->
 [publishdialog]: ./media/service-fabric-visualstudio-configure-secure-connections/publishdialog.png

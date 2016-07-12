@@ -15,10 +15,10 @@
 # DocumentDB SDK
 
 > [AZURE.SELECTOR]
-- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet)
-- [Node.js SDK](/documentation/articles/documentdb-sdk-node)
-- [Java SDK](/documentation/articles/documentdb-sdk-java)
-- [Python SDK](/documentation/articles/documentdb-sdk-python)
+- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet/)
+- [Node.js SDK](/documentation/articles/documentdb-sdk-node/)
+- [Java SDK](/documentation/articles/documentdb-sdk-java/)
+- [Python SDK](/documentation/articles/documentdb-sdk-python/)
 
 ##DocumentDB Python SDK
 
@@ -26,7 +26,7 @@
 <tr><td>**下载**</td><td>[PyPI](https://pypi.python.org/pypi/pydocumentdb)</td></tr>
 <tr><td>**参与**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-python)</td></tr>
 <tr><td>**文档**</td><td>[Python SDK 参考文档](http://azure.github.io/azure-documentdb-python/)</td></tr>
-<tr><td>**入门**</td><td>[Python SDK 入门](/documentation/articles/documentdb-python-application)</td></tr>
+<tr><td>**入门**</td><td>[Python SDK 入门](/documentation/articles/documentdb-python-application/)</td></tr>
 <tr><td>**当前受支持的平台**</td><td>[Python 2.7](https://www.python.org/download/releases/2.7/)</td></tr>
 </table></br>
 
@@ -42,7 +42,7 @@
 - 与服务器端分区相关的 bug 修复，以允许在 partitionkey 路径中使用特殊字符。
 
 ### <a name="1.6.0"/>[1\.6.0](https://pypi.python.org/pypi/pydocumentdb/1.6.0)
-- 已实现[分区集合](/documentation/articles/documentdb-partition-data)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels)。 
+- 已实现[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
 
 ### <a name="1.5.0"/>[1\.5.0](https://pypi.python.org/pypi/pydocumentdb/1.5.0)
 - 添加哈希和范围分区冲突解决程序以协助跨多个分区对应用程序进行分片。

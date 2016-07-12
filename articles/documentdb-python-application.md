@@ -16,10 +16,10 @@
 # 使用 DocumentDB 开发 Python Flask Web 应用程序
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/documentdb-dotnet-application)
-- [Node.js](/documentation/articles/documentdb-nodejs-application)
-- [Java](/documentation/articles/documentdb-java-application)
-- [Python](/documentation/articles/documentdb-python-application)
+- [.NET](/documentation/articles/documentdb-dotnet-application/)
+- [Node.js](/documentation/articles/documentdb-nodejs-application/)
+- [Java](/documentation/articles/documentdb-java-application/)
+- [Python](/documentation/articles/documentdb-python-application/)
 
 本教程演示了如何使用 Azure DocumentDB 来存储和访问托管于 Azure 的 Python Web 应用程序的数据，并假定你之前有过一些使用 Python 和 Azure 网站的经验。
 
@@ -195,7 +195,7 @@
 		        message='You just created a new database, collection, and document.  Your old votes have been deleted')
 
 
-> [AZURE.TIP] **CreateCollection** 方法采用可选的 **RequestOptions** 作为第三个参数。这可以用于指定集合的产品/服务类型。如果没有提供任何 offerType 值，则将使用默认的产品/服务类型创建集合。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)。
+> [AZURE.TIP] **CreateCollection** 方法采用可选的 **RequestOptions** 作为第三个参数。这可以用于指定集合的产品/服务类型。如果没有提供任何 offerType 值，则将使用默认的产品/服务类型创建集合。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 
 ### 读取数据库、集合、文档，并提交窗体
@@ -417,7 +417,7 @@
 
 我们将根据你的反馈经常更新并改进此主题。完成该教程后，请使用此页面上顶部和底部的投票按钮，并确保包括有关你想要看到的改进的反馈意见。如果你希望我们直接与你联系，欢迎将你的电子邮件地址附在评论中。
 
-若要将其他功能添加到 Web 应用程序，请查看 [DocumentDB Python SDK](/documentation/articles/documentdb-sdk-python) 中提供的 API。
+若要将其他功能添加到 Web 应用程序，请查看 [DocumentDB Python SDK](/documentation/articles/documentdb-sdk-python/) 中提供的 API。
 
 有关 Azure、Visual Studio 和 Python 的详细信息，请参阅 [Python 开发人员中心](https://azure.microsoft.com/develop/python/)。
 

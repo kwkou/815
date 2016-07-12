@@ -17,10 +17,10 @@
 
 
 > [AZURE.SELECTOR]
-- [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
-- [PowerShell](/documentation/articles/sql-database-command-line-tools)
+- [SSMS](/documentation/articles/sql-database-manage-azure-ssms/)
+- [PowerShell](/documentation/articles/sql-database-command-line-tools/)
 
-你可以使用 SQL Server Management Studio (SSMS) 来管理 Azure SQL 数据库逻辑服务器与数据库。本主题将指导你使用 SSMS 完成常见任务。在开始之前，你应该已在 Azure SQL 数据库中创建了逻辑服务器和数据库。有关如何连接并运行简单的 SELECT 查询的信息，请参阅[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)和如何[使用 SSMS 连接并查询](/documentation/articles/sql-database-connect-query-ssms)的文章。
+你可以使用 SQL Server Management Studio (SSMS) 来管理 Azure SQL 数据库逻辑服务器与数据库。本主题将指导你使用 SSMS 完成常见任务。在开始之前，你应该已在 Azure SQL 数据库中创建了逻辑服务器和数据库。有关如何连接并运行简单的 SELECT 查询的信息，请参阅[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)和如何[使用 SSMS 连接并查询](/documentation/articles/sql-database-connect-query-ssms/)的文章。
 
 建议你每当使用 Azure SQL 数据库时，都使用最新版本的 SSMS。请访问[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 以获取最新版本的 SSMS。
 
@@ -58,7 +58,7 @@
 
 ## 创建并管理登录名
 
-**master** 数据库跟踪登录名以及哪些登录名有权创建数据库或其他登录名。通过使用你在设置服务器时创建的服务器级别主体登录名连接到 **master** 数据库来管理登录名。你可以使用 **CREATE LOGIN**、**ALTER LOGIN** 或 **DROP LOGIN** 语句对将管理整个服务器上的登录的 master 数据库执行查询。有关详细信息，请参阅[在 SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)。
+**master** 数据库跟踪登录名以及哪些登录名有权创建数据库或其他登录名。通过使用你在设置服务器时创建的服务器级别主体登录名连接到 **master** 数据库来管理登录名。你可以使用 **CREATE LOGIN**、**ALTER LOGIN** 或 **DROP LOGIN** 语句对将管理整个服务器上的登录的 master 数据库执行查询。有关详细信息，请参阅[在 SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)。
 
 
 -   使用 **CREATE LOGIN** 语句可创建新的服务器级别登录名。有关详细信息，请参阅 [CREATE LOGIN（SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx)。以下语句将创建一个名为 **login1** 的新登录名。将 **password1** 替换为你选择的密码。
@@ -101,7 +101,7 @@
 
 ## 使用动态管理视图监视 SQL 数据库</h2>
 
-SQL 数据库支持多个您可用于监视单个数据库的动态管理视图。下面是您可通过这些视图检索的监视器数据类型的一些示例。有关完整的详细信息和更多用法示例，请参阅[使用动态管理视图监视 SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs)。
+SQL 数据库支持多个您可用于监视单个数据库的动态管理视图。下面是您可通过这些视图检索的监视器数据类型的一些示例。有关完整的详细信息和更多用法示例，请参阅[使用动态管理视图监视 SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs/)。
 
 -   查询动态管理视图需要 **VIEW DATABASE STATE** 权限。若要向特定数据库用户授予 **VIEW DATABASE STATE** 权限，请连接到要使用服务器级别主体登录名管理的数据库并对该数据库执行以下语句：
 

@@ -174,9 +174,9 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 
 有关 Azure 存储空间以及用于 C++ 的客户端库的更多信息，请参阅以下资源。
 
--	[如何通过 C++ 使用 Blob 存储](/documentation/articles/storage-c-plus-plus-how-to-use-blobs)
--	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables)
--	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
+-	[如何通过 C++ 使用 Blob 存储](/documentation/articles/storage-c-plus-plus-how-to-use-blobs/)
+-	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables/)
+-	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues/)
 -	[适用于 C++ 的 Azure 存储客户端库 API 文档。](http://azure.github.io/azure-storage-cpp/)
 -	[Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure 存档文档](/documentation/services/storage/)

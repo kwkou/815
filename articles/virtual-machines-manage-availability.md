@@ -14,6 +14,6 @@
 
 #管理虚拟机的可用性
 
-学习如何设置和管理多个虚拟机以确保你在 Azure 中的 Linux 应用程序的高可用性。你也可以[管理 Windows 虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
+学习如何设置和管理多个虚拟机以确保你在 Azure 中的 Linux 应用程序的高可用性。你也可以[管理 Windows 虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。
 
 [AZURE.INCLUDE [virtual-machines-common-manage-availability](../includes/virtual-machines-common-manage-availability.md)]

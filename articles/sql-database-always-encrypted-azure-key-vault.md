@@ -17,8 +17,8 @@
 # 始终加密 - 使用数据加密保护 SQL 数据库中的敏感数据并将加密密钥存储在 Azure 密钥保管库中
 
 > [AZURE.SELECTOR]
-- [Azure 密钥保管库](/documentation/articles/sql-database-always-encrypted-azure-key-vault)
-- [Windows 证书存储](/documentation/articles/sql-database-always-encrypted)
+- [Azure 密钥保管库](/documentation/articles/sql-database-always-encrypted-azure-key-vault/)
+- [Windows 证书存储](/documentation/articles/sql-database-always-encrypted/)
 
 
 本文演示如何使用 [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/hh213248.aspx) 中的[始终加密向导](https://msdn.microsoft.com/zh-cn/library/mt459280.aspx)，通过数据加密来保护 SQL 数据库中的敏感数据，以及如何将每个加密密钥存储在 Azure 密钥保管库中。
@@ -47,7 +47,7 @@
 - [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 13.0.700.242 或更高版本。
 - [.NET Framework 4.6](https://msdn.microsoft.com/zh-cn/library/w0x726c2.aspx) 或更高版本（在客户端计算机上）。
 - [Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)。
-- [Azure PowerShell](/documentation/articles/powershell-install-configure)，最低版本为 1.0。
+- [Azure PowerShell](/documentation/articles/powershell-install-configure/)，最低版本为 1.0。
     - 键入 **(Get-Module azure -ListAvailable).Version** 可查看所运行的 PowerShell 版本。
 
 
@@ -76,7 +76,7 @@
 
 现在客户端应用已配置并且你获得了客户端 id，便可以创建 Azure 密钥保管库并配置其访问策略以允许你和应用程序访问保管库的密码（始终加密密钥）。为了将密钥与 Azure 密钥保管库结合使用，需要 *create*、*get*、*list*、*sign*、*verify*、*wrapKey* 和 *unwrapKey* 权限以便用于创建新的列主密钥以及用于通过 SQL Server Management Studio 设置加密。
 
-若要快速创建 Azure 密钥保管库，可以运行以下脚本。有关这些 cmdlet 的详细说明以及有关创建和配置 Azure 密钥保管库的详细信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)
+若要快速创建 Azure 密钥保管库，可以运行以下脚本。有关这些 cmdlet 的详细说明以及有关创建和配置 Azure 密钥保管库的详细信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)
 
 
 

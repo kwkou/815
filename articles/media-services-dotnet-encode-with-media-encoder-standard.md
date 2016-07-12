@@ -19,15 +19,15 @@
 
 本主题介绍如何使用 .NET 通过媒体编码器标准 (MES) 对资产进行编码。媒体编码器标准使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)所述的编码器预设之一进行配置。
 
-建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
-如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)。
+如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)。
 
 >[AZURE.NOTE]MES 将生成一个输出文件，其名称包含输入文件名的前 32 个字符。该名称基于预设文件中指定的内容。例如，"FileName": "{Basename}\_{Index}{Extension}"。{Basename} 将替换为输入文件名的前 32 个字符。
 
 ###MES 格式
 
-[格式和编解码器](/documentation/articles/media-services-media-encoder-standard-formats)
+[格式和编解码器](/documentation/articles/media-services-media-encoder-standard-formats/)
 
 ###MES 预设
 
@@ -135,6 +135,6 @@
 
 ##另请参阅 
 
-[如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)
-[媒体服务编码概述](/documentation/articles/media-services-encode-asset)
+[如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/)
+[媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 <!---HONumber=Mooncake_0613_2016-->

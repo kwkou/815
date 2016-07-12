@@ -19,13 +19,13 @@
 
 如果在 HPC Pack 群集中部署 Azure“突发”节点，或者在 Azure VM 中创建 HPC Pack 群集，你可能希望有一种方法能够根据群集上的当前工作负荷自动增大或减小 Azure 计算资源（例如核心）的数目。这可让你更有效地使用你的 Azure 资源并控制其成本。为此，可以设置 HPC Pack 群集属性 **AutoGrowShrink**。或者，使用随 HPC Pack 一起安装的 **AzureAutoGrowShrink.ps1** HPC PowerShell 脚本。
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 设置 AutoGrowShrink 群集属性
 
 ### 先决条件
 
-* **HPC Pack 2012 R2 Update 2 或更高版群集** - 群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)（HPC Pack IaaS 部署脚本）。
+* **HPC Pack 2012 R2 Update 2 或更高版群集** - 群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster/)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)（HPC Pack IaaS 部署脚本）。
 
 
 * **对于 Azure 中包含头节点的群集** - 如果你使用 HPC Pack IaaS 部署脚本来创建群集，请通过在群集配置文件中设置 AutoGrowShrink 选项来启用 **AutoGrowShrink** 群集属性。有关详细信息，请[下载的脚本](https://www.microsoft.com/download/details.aspx?id=44949)随附的文档。
@@ -98,14 +98,14 @@
 
 ### 先决条件
 
-* **HPC Pack 2012 R2 Update 1 或更高版本群集** - **AzureAutoGrowShrink.ps1** 脚本已安装在 %CCP\_HOME%bin 文件夹中。群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)（HPC Pack IaaS 部署脚本）。
+* **HPC Pack 2012 R2 Update 1 或更高版本群集** - **AzureAutoGrowShrink.ps1** 脚本已安装在 %CCP\_HOME%bin 文件夹中。群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster/)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)（HPC Pack IaaS 部署脚本）。
 
 * **Azure PowerShell 0.8.12** - 该脚本当前依赖于此特定版本的 Azure PowerShell。如果要在头节点上运行更高版本，可能需要将 Azure PowerShell 降级到[版本 0.8.12](http://az412849.vo.msecnd.net/downloads03/azure-powershell.0.8.12.msi) 才能运行该脚本。
 
 * **对于具有 Azure 突发节点的群集** - 在安装了 HPC Pack 的客户端计算机上或在头节点上运行脚本。如果在客户端计算机上运行，请确保正确设置变量 $env:CCP\_SCHEDULER 以指向头节点。Azure“突发”节点必须已添加到群集，但是其可能处于“未部署”状态。
 
 
-* **对于 Azure VM 中部署的群集** - 请在头节点 VM 上运行脚本，因为相关的 **Start-HpcIaaSNode.ps1** 和 **Stop-HpcIaaSNode.ps1** 脚本安装在这个位置。那些脚本还需要 Azure 管理证书或发布设置文件（请参阅[管理 Azure 的 HPC Pack 群集中的计算节点](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage)）。请确保你需要的所有计算节点 VM 都已添加到群集。它们可能处于停止状态。
+* **对于 Azure VM 中部署的群集** - 请在头节点 VM 上运行脚本，因为相关的 **Start-HpcIaaSNode.ps1** 和 **Stop-HpcIaaSNode.ps1** 脚本安装在这个位置。那些脚本还需要 Azure 管理证书或发布设置文件（请参阅[管理 Azure 的 HPC Pack 群集中的计算节点](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage/)）。请确保你需要的所有计算节点 VM 都已添加到群集。它们可能处于停止状态。
 
 ### 语法
 

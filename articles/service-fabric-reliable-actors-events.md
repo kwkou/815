@@ -18,7 +18,7 @@
 
 以下代码段演示如何在你的应用程序中使用执行组件事件。
 
-定义说明由执行组件发布的事件的接口。此接口必须派生自 `IActorEvents` 接口。方法的参数必须为[数据协定可序列化](/documentation/articles/service-fabric-reliable-actors-notes-on-actor-type-serialization)。当事件通知是单向且为最佳效果时，方法必须返回 void。
+定义说明由执行组件发布的事件的接口。此接口必须派生自 `IActorEvents` 接口。方法的参数必须为[数据协定可序列化](/documentation/articles/service-fabric-reliable-actors-notes-on-actor-type-serialization/)。当事件通知是单向且为最佳效果时，方法必须返回 void。
 
 ```csharp
 public interface IGameEvents : IActorEvents
@@ -69,8 +69,8 @@ ev.GameScoreUpdated(Id.GetGuidId(), score);
 ```
 
 ## 后续步骤
- - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy)
- - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics)
+ - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)
+ - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 

@@ -180,6 +180,6 @@
 
 ## 后续步骤
 
-- 为 NSG [启用日志记录](/documentation/articles/virtual-network-nsg-manage-log)。
+- 为 NSG [启用日志记录](/documentation/articles/virtual-network-nsg-manage-log/)。
 
 <!---HONumber=Mooncake_0516_2016-->

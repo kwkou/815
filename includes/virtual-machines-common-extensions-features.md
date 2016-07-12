@@ -1,6 +1,6 @@
 
 
-有关 VM 代理以及它们如何工作以支持 VM 扩展的详细信息，请参阅 VM 代理和 VM 扩展概述：[Windows](/documentation/articles/virtual-machines-windows-classic-manage-extensions) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-manage-extensions)。
+有关 VM 代理以及它们如何工作以支持 VM 扩展的详细信息，请参阅 VM 代理和 VM 扩展概述：[Windows](/documentation/articles/virtual-machines-windows-classic-manage-extensions/) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-manage-extensions/)。
 
 ##Azure VM 扩展
 
@@ -12,7 +12,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 
 |VM 扩展名称|功能说明|更多信息
 |---|---|---|
-|VMAccessAgent (Windows)|创建、更新和重置用户信息以及 RDP 连接配置。|[Windows](/documentation/articles/virtual-machines-windows-classic-extensions-customscript)
+|VMAccessAgent (Windows)|创建、更新和重置用户信息以及 RDP 连接配置。|[Windows](/documentation/articles/virtual-machines-windows-classic-extensions-customscript/)
 |VMAccessForLinux (Linux)|创建、更新和重置用户信息以及 RDP 连接配置。|[Linux](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)
 
 ##部署和配置管理
@@ -27,7 +27,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |**CentosChefClient**|||
 |**ChefClient**|在 Windows 上创建 Chef 客户端。（也可以使用下面的 DSC 扩展。）|[Chef 与 Azure](https://www.getchef.com/solutions/azure/)|
 |**LinuxChefClient**|||
-|**DockerExtension**|安装 Docker 后台程序以支持远程 Docker 命令。|[如何使用 Docker 虚拟机扩展](/documentation/articles/virtual-machines-linux-dockerextension)有关更广泛的信息，请参阅 [Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)|
+|**DockerExtension**|安装 Docker 后台程序以支持远程 Docker 命令。|[如何使用 Docker 虚拟机扩展](/documentation/articles/virtual-machines-linux-dockerextension/)有关更广泛的信息，请参阅 [Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)|
 |**DSC**|PowerShell DSC（所需状态配置）扩展。|[Azure PowerShell DSC（所需状态配置）扩展](http://blogs.msdn.com/b/powershell/archive/2014/08/07/introducing-the-azure-powershell-dsc-desired-state-configuration-extension.aspx)|
 |**PuppetEnterpriseAgent**|实现 Puppet Enterprise 的功能。 |[Azure 上的 Puppet](http://puppetlabs.com/solutions/microsoft)|
 |**CustomScriptExtension** (Windows)**CustomScriptForLinux** (Linux)|在任何时候调用 VM 上的自定义脚本：启动时或在生存期内。|
@@ -41,7 +41,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |---|---|---|
 |**CloudLinkSecureVMWindowsAgent**|为 Azure 客户提供在多租户共享的基础结构上加密其虚拟机数据的功能，并完全控制 Azure 存储基础结构上其加密数据的加密密钥。|[利用 BitLocker 和本机 OS 加密保护 Azure 虚拟机](http://www.cloudlinktech.com/azure)|
 |**McAfeeEndpointSecurity**|保护 VM 免受恶意软件的威胁。|[McAfee](https://www.mcafeeasap.com/MarketingContent/default.aspx)|
-|**TrendMicroDSA**|启用 TrendMicro 的 Deep Security 平台支持可提供入侵检测和防护、防火墙、防恶意软件、Web 信誉评估、日志检查和完整性监视。|[如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend)|
+|**TrendMicroDSA**|启用 TrendMicro 的 Deep Security 平台支持可提供入侵检测和防护、防火墙、防恶意软件、Web 信誉评估、日志检查和完整性监视。|[如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend/)|
 |**PortalProtectExtension**|防止对你的 Microsoft SharePoint 环境构成威胁。|[保护 Azure 上的 SharePoint 部署](http://blog.trendmicro.com/securing-sharepoint-deployment-azure/)|
 |**IaaSAntimalware**|用于 Azure 云服务和虚拟机的 Microsoft 反恶意软件是一种实时保护功能，当已知恶意软件或不需要的软件试图在你的系统上安装自身或运行时，它可使用可配置的警报帮助识别和删除病毒、间谍软件和其他恶意软件。||
 
@@ -51,7 +51,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 
 |**VM 扩展名称**|功能说明|更多信息|
 |---|---|---|
-|**AzureVmLogCollector**|可以使用 **AzureVMLogCollector** 扩展按需从一个或多个云服务 VM（从 web 角色和辅助角色）执行一次性日志收集，并将收集到的文件传输到 Azure 存储帐户 - 所有这些操作都无需远程登录到任何 VM。 |[AzureLogCollector 扩展](/documentation/articles/virtual-machines-windows-log-collector-extension)|
+|**AzureVmLogCollector**|可以使用 **AzureVMLogCollector** 扩展按需从一个或多个云服务 VM（从 web 角色和辅助角色）执行一次性日志收集，并将收集到的文件传输到 Azure 存储帐户 - 所有这些操作都无需远程登录到任何 VM。 |[AzureLogCollector 扩展](/documentation/articles/virtual-machines-windows-log-collector-extension/)|
 |**IaaSDiagnostics**|启用、禁用和配置 Azure 诊断，也可由 **AzureCATExtensionHandler** 用于支持 SAP 监视。|[使用 Azure 诊断扩展监视 Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)|
 |**OSPatchingForLinux**|使 Azure VM 管理员能够使用自定义配置自动执行 VM OS 更新。可以使用 OSPatching 扩展为虚拟机配置 OS 更新，包括：指定安装 OS 修补程序的频率和时间，指定要安装哪些修补程序，并配置更新后的重新启动行为|[OS 修补扩展博客文章](http://azure.microsoft.com/blog/2014/10/23/automate-linux-vm-os-updates-using-ospatching-extension/)。另请参阅 Github 上 [OS 修补扩展](https://github.com/Azure/azure-linux-extensions)中的自述文件和源。|
 

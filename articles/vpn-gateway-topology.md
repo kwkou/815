@@ -18,7 +18,7 @@
 
 每个拓扑都包含一个表格，其中列出了拓扑适用的部署模型、可用于配置每个拓扑的部署工具，以及直接指向可用文章的链接。随着可用的新文章与部署工具的发布，我们会经常更新表格。
 
-如需有关 VPN 网关的详细信息，请参阅 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways)。
+如需有关 VPN 网关的详细信息，请参阅 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways/)。
 
 
 
@@ -92,7 +92,7 @@ ExpressRoute 可以从你的 WAN 与 Microsoft 服务（包括 Azure）直接建
 
 ## 后续步骤
 
-在继续进行连接规划和设计之前，请先熟悉 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways)和 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq)文章中的事项，以更好地了解 VPN 网关。
+在继续进行连接规划和设计之前，请先熟悉 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways/)和 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/)文章中的事项，以更好地了解 VPN 网关。
 
 
 

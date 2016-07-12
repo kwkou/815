@@ -29,7 +29,7 @@
 
 我们所提供的这些准则是专门针对高级存储的，因为在高级存储上运行的工作负荷具有高度的性能敏感性。我们根据需要提供示例。你也可以将部分此类准则应用于在标准存储磁盘的 IaaS VM 上运行的应用程序。
 
-在开始之前，如果你对高级存储不熟悉，请先阅读[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)一文和 [Azure 高级存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets#premium-storage-accounts)一文。
+在开始之前，如果你对高级存储不熟悉，请先阅读[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)一文和 [Azure 高级存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/#premium-storage-accounts)一文。
 
 ## 应用程序性能指标  
 我们评估应用程序的性能好坏时，会使用下面这样的性能指标：应用程序处理用户请求的速度如何、应用程序每个请求处理多少数据、应用程序在特定时间内处理多少请求、用户在提交其请求后必须等待多长时间才能获得响应。与这些性能指标相对应的技术术语是：IOPS、吞吐量或带宽、延迟。
@@ -175,7 +175,7 @@ IO 大小是较为重要的因素之一。IO 大小是由应用程序生成的�
 |---|---|---|---|---|---|---|---|
 | Standard_DS14 | 16 | 112 GB | OS = 1023 GB <br> 本地 SSD = 224 GB | 32 | 576 GB | 50,000 IOPS <br> 512 MB/秒 | 4,000 IOPS，33 MB/秒 |
 
-若要查看所有可用 Azure VM 大小的完整列表，请参阅 [Azure 虚拟机大小](/documentation/articles/virtual-machines-size-specs)。选择能够满足或者在扩展后能够满足所需应用程序性能要求的 VM 大小。除此之外，在选择 VM 大小时，还需考虑以下重要事项。
+若要查看所有可用 Azure VM 大小的完整列表，请参阅 [Azure 虚拟机大小](/documentation/articles/virtual-machines-size-specs/)。选择能够满足或者在扩展后能够满足所需应用程序性能要求的 VM 大小。除此之外，在选择 VM 大小时，还需考虑以下重要事项。
 
 
 规模限制  
@@ -273,14 +273,14 @@ ReadWrite
 
 重要提示：使用服务器管理器 UI，可以将列的总数设置为每个条带化卷最多 8 个。连接 8 个以上的磁盘时，可使用 PowerShell 来创建卷。使用 PowerShell，你可以将列数设置为与磁盘数相等。例如，如果一个条带集中有 16 个磁盘，可在 New-VirtualDisk PowerShell cmdlet 的 NumberOfColumns 参数中指定 16 个列。
 
-在 Linux 中，可使用 MDADM 实用工具将磁盘条带化。有关在 Linux 中对磁盘进行条带化操作的详细步骤，请参阅[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid)。
+在 Linux 中，可使用 MDADM 实用工具将磁盘条带化。有关在 Linux 中对磁盘进行条带化操作的详细步骤，请参阅[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)。
 
 条带大小  
 进行磁盘条带化操作时，一项重要配置是条带大小。条带大小或块大小是应用程序可以在条带化卷上处理的最小数据块区。你配置的条带大小取决于应用程序类型及其请求模式。如果你选择了错误的条带大小，则可能导致 IO 不一致，从而导致应用程序性能下降。
 
 例如，如果应用程序生成的 IO 请求大于磁盘条带大小，存储系统会将数据写在不止一个磁盘上，跨越条带单元的边界。在需要访问该数据时，则必须跨多个条带单元进行搜索才能完成请求。这种行为的累积效应就是性能大幅下降。另一方面，如果 IO 请求大小小于条带大小，并且其性质是随机的，则 IO 请求可能会在同一磁盘上累积起来，导致瓶颈的出现，最终导致 IO 性能下降。
 
-请根据应用程序正在运行的工作负荷的类型，选择合适的条带大小。对于随机的较小的 IO 请求，请使用较小的条带大小。而对于大型的顺序性的 IO 请求，则请使用较大的条带大小。对于要在高级存储上运行的应用程序，请找出相应的条带大小建议。对于 SQL Server，如果工作负荷为 OLTP 工作负荷，请将条带大小配置为 64KB；如果工作负荷为数据仓库型工作负荷，则请将条带大小配置为 256KB。请参阅 [Azure VM 上的 SQL Server 性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance#disks-and-performance-considerations)以了解更多信息。
+请根据应用程序正在运行的工作负荷的类型，选择合适的条带大小。对于随机的较小的 IO 请求，请使用较小的条带大小。而对于大型的顺序性的 IO 请求，则请使用较大的条带大小。对于要在高级存储上运行的应用程序，请找出相应的条带大小建议。对于 SQL Server，如果工作负荷为 OLTP 工作负荷，请将条带大小配置为 64KB；如果工作负荷为数据仓库型工作负荷，则请将条带大小配置为 256KB。请参阅 [Azure VM 上的 SQL Server 性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/#disks-and-performance-considerations)以了解更多信息。
 
 >**注意：**  
 >你可以在 DS 系列的 VM 上将最多 32 个高级存储磁盘条带化。
@@ -332,7 +332,7 @@ Azure 高级存储会预配指定数目的 IOPS 和吞吐量，具体取决于�
 
 我们使用了常见的基准测试工具 Iometer 和 FIO，分别适用于 Windows 和 Linux。这些工具会生成多个线程，这些线程模拟类似生产的工作负荷，并测量系统性能。使用这些工具还可以配置各种参数（例如块大小和队列深度），应用程序的这些参数通常无法更改。这样你就可以更灵活地在针对不同类型的应用程序工作负荷预配了高级磁盘的高规格 VM 上实现最大性能。若要详细了解每种基准测试工具，请参阅 [Iometer](http://www.iometer.org/) 和 [FIO](http://freecode.com/projects/fio)。
 
-若要按以下示例进行操作，请创建一个标准 DS14 VM，然后将 11 个高级存储磁盘连接到 VM。在这 11 个磁盘中，将 10 个磁盘的主机缓存配置为“无”，然后将它们条带化到名为 NoCacheWrites 的卷中。将剩余磁盘上的主机缓存配置为“ReadOnly”，在该磁盘上创建名为 CacheReads 的卷。进行这样的设置以后，你就可以看到标准 DS14 VM 展现出最大的读写性能。有关通过高级磁盘创建 DS14 VM 的详细步骤，请参阅[针对虚拟机数据磁盘创建和使用高级存储帐户](/documentation/articles/storage-premium-storage#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
+若要按以下示例进行操作，请创建一个标准 DS14 VM，然后将 11 个高级存储磁盘连接到 VM。在这 11 个磁盘中，将 10 个磁盘的主机缓存配置为“无”，然后将它们条带化到名为 NoCacheWrites 的卷中。将剩余磁盘上的主机缓存配置为“ReadOnly”，在该磁盘上创建名为 CacheReads 的卷。进行这样的设置以后，你就可以看到标准 DS14 VM 展现出最大的读写性能。有关通过高级磁盘创建 DS14 VM 的详细步骤，请参阅[针对虚拟机数据磁盘创建和使用高级存储帐户](/documentation/articles/storage-premium-storage/#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
 预热缓存  
 启用 ReadOnly 主机缓存的磁盘将能够提供比磁盘限制更高的 IOPS。若要通过主机缓存来实现此最大读取性能，首先必须对此磁盘的缓存进行预热。这样可确保需要通过基准测试工具在 CacheReads 卷上实现的读取 IO 实际上可以直接命中缓存而不是磁盘。命中缓存导致单个启用缓存的磁盘可以实现额外的 IOPS。
@@ -559,11 +559,11 @@ rate_iops=12500
 
 了解有关 Azure 高级存储的详细信息：
 
-- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)  
+- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)  
 
 SQL Server 用户请阅读有关 SQL Server 性能最佳实践的文章：
 
-- [Azure 虚拟机中的 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)
+- [Azure 虚拟机中的 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)
 - [Azure 高级存储为 Azure VM 中的 SQL Server 提供最高性能](http://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx) 
 
 

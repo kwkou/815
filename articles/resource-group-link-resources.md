@@ -24,7 +24,7 @@
 
 ## 模板中的链接
 
-若要在模板中的资源之间定义链接，请参阅[资源链接 - 模板架构](/documentation/articles/resource-manager-template-links)。
+若要在模板中的资源之间定义链接，请参阅[资源链接 - 模板架构](/documentation/articles/resource-manager-template-links/)。
 
 ## 使用 REST API 进行链接
 
@@ -50,7 +50,7 @@ Properties 元素包含第二个资源的标识符。
 
 ## 后续步骤
 
-- 您还可以使用标记来组织您的资源。若要了解有关标记资源的信息，请参阅[使用标记来组织你的资源](/documentation/articles/resource-group-using-tags)。
-- 有关如何创建模板并定义要部署的资源的说明，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。
+- 您还可以使用标记来组织您的资源。若要了解有关标记资源的信息，请参阅[使用标记来组织你的资源](/documentation/articles/resource-group-using-tags/)。
+- 有关如何创建模板并定义要部署的资源的说明，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 
 <!---HONumber=Mooncake_0314_2016-->

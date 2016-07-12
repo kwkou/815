@@ -158,7 +158,7 @@
 ##其他资源
 在设置虚拟机并创建数据库后，请参阅以下主题以了解更多信息。
 
--	[Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-windows-classic-oracle-considerations)
+-	[Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 -	[从 Java 应用程序连接到 Oracle 数据库](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 

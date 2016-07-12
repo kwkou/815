@@ -25,5 +25,5 @@
 ## 后续步骤
 你的 VM 已经有公共 IP 和 DNS 名称，现在可以部署通用应用程序框架或服务，例如 IIS、SQL、SharePoint 等等。
 
-你也可以深入了解[使用 Resource Manager](/documentation/articles/resource-group-overview)，以获取生成 Azure 部署的相关提示。
+你也可以深入了解[使用 Resource Manager](/documentation/articles/resource-group-overview/)，以获取生成 Azure 部署的相关提示。
 <!---HONumber=Mooncake_0704_2016-->

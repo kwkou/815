@@ -15,12 +15,12 @@
 
 # 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/azure-cli-arm-commands)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/azure-cli-arm-commands/)。
 
 本文介绍如何在服务管理模式（asm 模式）下使用 Azure CLI 在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以使用 Azure SDK 的各种库、Azure PowerShell 和 Azure 门户执行许多相同的任务。在服务管理模式下使用 Azure 服务从概念上讲类似于创建和管理各个 Azure 概念和服务（如 Web 应用、虚拟机、虚拟网络、存储器等）。
 
 > [AZURE.NOTE]
-若要开始使用，首先[安装 Azure CLI](/documentation/articles/xplat-cli-install)，并[登录以使用与你的帐户关联的 Azure 资源](/documentation/articles/xplat-cli-connect)。
+若要开始使用，首先[安装 Azure CLI](/documentation/articles/xplat-cli-install/)，并[登录以使用与你的帐户关联的 Azure 资源](/documentation/articles/xplat-cli-connect/)。
 
 ## 本文的讨论范围
 
@@ -1462,7 +1462,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ### <a name="Mobile_Scripts"></a>用于管理脚本的命令
 
-本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts)。
+本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts/)。
 
 **mobile script list [options] [servicename]**
 

@@ -16,10 +16,10 @@
 # <a name="_Toc395783175"></a>使用 DocumentDB 生成 Node.js Web 应用程序
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/documentdb-dotnet-application)
-- [Node.js](/documentation/articles/documentdb-nodejs-application)
-- [Java](/documentation/articles/documentdb-java-application)
-- [Python](/documentation/articles/documentdb-python-application)
+- [.NET](/documentation/articles/documentdb-dotnet-application/)
+- [Node.js](/documentation/articles/documentdb-nodejs-application/)
+- [Java](/documentation/articles/documentdb-java-application/)
+- [Python](/documentation/articles/documentdb-python-application/)
 
 本 Node.js 教程展示如何使用 Azure DocumentDB 服务存储和访问托管在 Azure 网站上的 Node.js Express 应用程序中的数据。
 
@@ -179,7 +179,7 @@
 				
 		module.exports = DocDBUtils;
 
-> [AZURE.TIP] createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。有关 DocumentDB Offer 类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)
+> [AZURE.TIP] createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。有关 DocumentDB Offer 类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)
 		
 3. 保存并关闭 **docdbUtils.js** 文件。
 
@@ -544,7 +544,7 @@
 
 ## <a name="_Toc395783182"></a>步骤 7：将应用程序开发项目部署到 Azure 网站
 
-1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Continuous deployment using GIT in Azure App Service（使用 GIT 在 Azure App Service 中进行连续部署）](/documentation/articles/web-sites-publish-source-control)主题中找到如何执行此操作的说明。
+1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Continuous deployment using GIT in Azure App Service（使用 GIT 在 Azure App Service 中进行连续部署）](/documentation/articles/web-sites-publish-source-control/)主题中找到如何执行此操作的说明。
 
 2. 将 Azure 网站添加为 git 远程。
 

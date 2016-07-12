@@ -43,12 +43,12 @@
 	#include "was/blob.h"
 
 ## 设置 Azure 存储连接字符串
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并使用[管理门户](https://manage.windowsazure.cn)中列出的存储帐户的存储帐户名称和存储访问密钥作为 *AccountName* 和 *AccountKey* 值。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。此示例演示如何声明一个静态字段以保存连接字符串：
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并使用[管理门户](https://manage.windowsazure.cn)中列出的存储帐户的存储帐户名称和存储访问密钥作为 *AccountName* 和 *AccountKey* 值。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。此示例演示如何声明一个静态字段以保存连接字符串：
 
 	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key;EndpointSuffix=core.chinacloudapi.cn"));
 
-若要在本地 Windows 计算机中测试您的应用程序，可以使用随同 [Azure SDK](/downloads/) 一起安装的 Azure [存储模拟器](/documentation/articles/storage-use-emulator)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
+若要在本地 Windows 计算机中测试您的应用程序，可以使用随同 [Azure SDK](/downloads/) 一起安装的 Azure [存储模拟器](/documentation/articles/storage-use-emulator/)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
@@ -161,7 +161,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 		}
 	}
 
-有关列出操作的更多详细信息，请参阅[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration)。
+有关列出操作的更多详细信息，请参阅[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration/)。
 
 ## 如何：下载 Blob
 若要下载 Blob，请首先检索 Blob 引用，然后调用 **download_to_stream** 方法。以下示例使用 **download_to_stream** 方法将 Blob 内容传输到一个流对象，然后您可以将该对象保存到本地文件。  
@@ -228,12 +228,12 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 ## 后续步骤
 既然你已了解 blob 存储的基础知识，请按照下面的链接了解有关 Azure 存储的详细信息。  
 
--	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
--	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables)
--	[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration)
+-	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues/)
+-	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables/)
+-	[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration/)
 -	[适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
 -	[Azure 存档文档](/documentation/services/storage/)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
 
 

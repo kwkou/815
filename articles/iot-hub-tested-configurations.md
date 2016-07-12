@@ -107,5 +107,5 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 
 [lnk-iot-suite]: /documentation/suites/iot-suite/
-[lnk-certified]: /documentation/articles/iot-hub-certified-devices-linux-c
+[lnk-certified]: /documentation/articles/iot-hub-certified-devices-linux-c/
 <!---HONumber=Mooncake_0418_2016-->

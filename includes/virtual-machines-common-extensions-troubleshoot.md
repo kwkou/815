@@ -7,6 +7,6 @@
 Azure 资源管理器模板可让你通过定义资源之间的依赖关系，使用 JSON 语言以声明方式指定 Azure IaaS 基础结构。
 
 
-若要了解有关使用扩展创作模板的详细信息，请单击文章[创作扩展模板](/documentation/articles/virtual-machines-windows-extensions-authoring-templates)。
+若要了解有关使用扩展创作模板的详细信息，请单击文章[创作扩展模板](/documentation/articles/virtual-machines-windows-extensions-authoring-templates/)。
 
 在本文中，我们将了解如何对一些常见的 VM 扩展故障进行故障排除。

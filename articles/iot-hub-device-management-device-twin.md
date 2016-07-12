@@ -130,11 +130,11 @@ set_device_batterylevel(0, level);
 [img-observed]: ./media/iot-hub-device-management-device-twin/image2.png
 
 [lnk-lwm2m]: http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0
-[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview
-[lnk-dm-library]: /documentation/articles/iot-hub-device-management-library
-[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started
-[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query
-[lnk-dm-jobs]: /documentation/articles/iot-hub-device-management-device-jobs
+[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
+[lnk-dm-library]: /documentation/articles/iot-hub-device-management-library/
+[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
+[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
+[lnk-dm-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
 [lnk-edison]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c/iotdm_client/samples/iotdm_edison_sample
 
 <!---HONumber=Mooncake_0523_2016-->

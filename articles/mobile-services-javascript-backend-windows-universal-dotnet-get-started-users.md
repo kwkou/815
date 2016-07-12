@@ -21,7 +21,7 @@
 
 本教程基于移动服务快速入门。此外，还必须先完成[移动服务入门]教程。
 
->[AZURE.NOTE]本教程演示了如何对 Windows 应用商店和 Windows Phone 应用商店 8.1 应用程序中的用户进行身份验证。对于 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序，请参阅此版本的[移动服务中的身份验证入门](/documentation/articles/mobile-services-windows-phone-get-started-users)。
+>[AZURE.NOTE]本教程演示了如何对 Windows 应用商店和 Windows Phone 应用商店 8.1 应用程序中的用户进行身份验证。对于 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序，请参阅此版本的[移动服务中的身份验证入门](/documentation/articles/mobile-services-windows-phone-get-started-users/)。
 
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
@@ -49,7 +49,7 @@
 
 ##  <a name="next-steps"></a>后续步骤
 
-在下一教程[移动服务用户的服务端授权](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
+在下一教程[移动服务用户的服务端授权](/documentation/articles/mobile-services-javascript-backend-service-side-authorization/)中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
 
 ## 另请参阅
 
@@ -72,13 +72,13 @@
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
-[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
+[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-users/
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
+[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts/
 
 [Azure 经典门户]: https://manage.windowsazure.cn/
-[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
+[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/
 
 <!---HONumber=Mooncake_0118_2016-->

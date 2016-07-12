@@ -16,13 +16,13 @@
 # 安装 Azure CLI
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/powershell-install-configure)
-- [Azure CLI](/documentation/articles/xplat-cli-install)
+- [PowerShell](/documentation/articles/powershell-install-configure/)
+- [Azure CLI](/documentation/articles/xplat-cli-install/)
 
 快速安装 Azure 命令行界面 (Azure CLI)，以便使用一组基于 shell 的开源命令在 Azure 中创建和管理资源。可以使用多个安装选项：使用针对不同操作系统提供的安装包之一、从 npm 包安装，或者在 Docker 主机中以容器的形式安装 Azure CLI。有关更多选项和背景信息，请参阅 [GitHub](https://github.com/azure/azure-xplat-cli) 上的项目存储库。
 
 
-安装了 Azure CLI 之后，你将能够[将它与 Azure 订阅连接](/documentation/articles/xplat-cli-connect)，并从命令行接口（Bash、终端、命令提示符等）运行 **azure** 命令，以使用 Azure 资源。
+安装了 Azure CLI 之后，你将能够[将它与 Azure 订阅连接](/documentation/articles/xplat-cli-connect/)，并从命令行接口（Bash、终端、命令提示符等）运行 **azure** 命令，以使用 Azure 资源。
 
 
 ## 使用安装程序
@@ -69,7 +69,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 azure --version
 ```
 
-你现在已准备就绪！ 若要访问所有 CLI 命令以使用自己的资源，请[从 Azure CLI 连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect)。
+你现在已准备就绪！ 若要访问所有 CLI 命令以使用自己的资源，请[从 Azure CLI 连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 >[AZURE.NOTE] 当你第一次使用 Azure CLI 版本 0.9.20 或更高版本时，会看到一条消息，询问你是否要允许 Microsoft 收集你如何使用 CLI 的相关信息。参与为自愿性质。如果你选择参与，只要运行 `azure telemetry --disable` 即可随时停止参与。若要随时启用参与，请运行 `azure telemetry --enable`。
 
@@ -84,7 +84,7 @@ npm update -g azure-cli
 
 ## 后续步骤 
 
-* [从 CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)以创建和管理 Azure 资源。
+* [从 CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)以创建和管理 Azure 资源。
 
 * 若要了解有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
 
@@ -95,7 +95,7 @@ npm update -g azure-cli
 [mac-installer]: http://aka.ms/mac-azure-cli
 [windows-installer]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=windowsazurexplatcli&mode=new
 [linux-installer]: http://aka.ms/linux-azure-cli
-[cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/azure-cli-arm-commands
+[cliasm]: /documentation/articles/virtual-machines-command-line-tools/
+[cliarm]: /documentation/articles/azure-cli-arm-commands/
 
 <!---HONumber=Mooncake_0613_2016-->

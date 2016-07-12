@@ -198,8 +198,8 @@ Azure 需要至少 2048 位采用 ssh-rsa 格式的公钥和私钥。为了创�
 
 下一步是使用新 SSH 公钥创建 Azure Linux VM。使用 SSH 公钥作为登录名创建的 Azure VM 受到的保护优于使用默认登录方法密码创建的 Azure VM。默认情况下，使用 SSH 密钥作为登录名的 Azure VM 配置为禁用密码登录，以避免暴力破解企图。
 
-- [使用 Azure 模板创建安全 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template)
-- [使用 Azure 门户预览创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal)
-- [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli)
+- [使用 Azure 模板创建安全 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
+- [使用 Azure 门户预览创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+- [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
 <!---HONumber=Mooncake_0620_2016-->

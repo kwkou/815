@@ -133,10 +133,10 @@
 [Adding a Scene to a Storyboard]: https://developer.apple.com/zh-cn/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardScene.html
 [Core Data]: https://developer.apple.com/zh-cn/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
 [Download the preview SDK here]: http://aka.ms/Gc6fex
-[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library
+[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library/
 [Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
-[脱机数据入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
-[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+[脱机数据入门]: /documentation/articles/mobile-services-ios-get-started-offline-data/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started/
  
 
 <!---HONumber=Mooncake_0118_2016-->

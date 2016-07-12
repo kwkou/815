@@ -147,11 +147,11 @@ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是�
 
 
 
-[0]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-a-cache
+[0]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache
 [1]: http://bit.ly/1t0KxBQ
 [2]: http://manage.windowsazure.cn
 [3]: http://manage.windowsazure.cn
-[4]: /documentation/articles/powershell-install-configure
+[4]: /documentation/articles/powershell-install-configure/
 [5]: /downloads
 [6]: http://pecl.php.net
 [7]: http://pecl.php.net/package/memcache

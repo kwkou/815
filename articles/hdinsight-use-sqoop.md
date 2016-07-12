@@ -95,7 +95,7 @@ HDInsight 群集带有某些示例数据。你将会使用以下两个示例：
 
         * 当你在 Azure 虚拟机上使用 SQL Server 时，如果托管 SQL Server 的虚拟机是 HDInsight 所在虚拟网络的成员，则可以使用任何虚拟网络配置。
 
-    * 若要在虚拟网络上创建 HDInsight 群集，请参阅[使用自定义选项在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
+    * 若要在虚拟网络上创建 HDInsight 群集，请参阅[使用自定义选项在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)
 
     > [AZURE.NOTE] SQL Server 还必须允许身份验证。必须使用 SQL Server 登录名来完成此文章中的步骤。
 	
@@ -106,15 +106,15 @@ HDInsight 可以使用各种方法运行 Sqoop 作业。使用下表来确定哪
 
 | **使用此方法**，如果你想要... | ...**交互式** shell | ...**批处理** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:--------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
-| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk) | &nbsp; | ✔ | Windows | Windows（暂时） |
-| [Azure PowerShell](/documentation/articles/hdinsight-hadoop-use-sqoop-powershell) | &nbsp; | ✔ | Windows | Windows |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/) | &nbsp; | ✔ | Windows | Windows（暂时） |
+| [Azure PowerShell](/documentation/articles/hdinsight-hadoop-use-sqoop-powershell/) | &nbsp; | ✔ | Windows | Windows |
 
 ##后续步骤
 
 现在你已经学习了如何使用 Sqoop。若要了解更多信息，请参阅以下文章：
 
-- [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
-- [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
+- [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
+- [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 - [将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]：在 Oozie 工作流中使用 Sqoop 操作。
 - [使用 HDInsight 分析航班延误数据][hdinsight-analyze-flight-data]：使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 Azure SQL 数据库。
 - [将数据上载到 HDInsight][hdinsight-upload-data]：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
@@ -125,7 +125,7 @@ HDInsight 可以使用各种方法运行 Sqoop 作业。使用下表来确定哪
 PowerShell 示例将执行以下步骤：
 
 1. 连接到 Azure。
-2. 创建 Azure 资源组。有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)
+2. 创建 Azure 资源组。有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)
 3. 创建一个 Azure SQL 数据库服务器、一个 Azure SQL 数据库和两个表。 
 
 	如果改用 SQL Server，请使用以下语句来创建表：
@@ -175,7 +175,7 @@ PowerShell 示例将执行以下步骤：
 	
 	> [AZURE.NOTE] 除了连接字符串信息，此节中的步骤还应适用于 Azure SQL 数据库或 SQL Server。这些步骤已使用以下配置测试过：
 	><p> * **Azure 虚拟网络点到站点配置**：虚拟网络已将 HDInsight 群集连接到专用数据中心的 SQL Server。
-	><p> * **Azure HDInsight 3.1**：有关在虚拟网络上创建群集的信息，请参阅[使用自定义选项在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
+	><p> * **Azure HDInsight 3.1**：有关在虚拟网络上创建群集的信息，请参阅[使用自定义选项在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)。
 	><p> * **SQL Server 2014**：已配置为允许身份验证和运行 VPN 客户端配置包，可以安全地连接到虚拟网络。
 
 7. 将 Hive 表导出到 Azure SQL 数据库。
@@ -558,20 +558,20 @@ PowerShell 示例将执行以下步骤：
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
-[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure/
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

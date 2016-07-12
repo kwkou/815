@@ -189,25 +189,25 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 
 ## 更多资源
 
-- [在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps)
-- [如何在 Azure 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug)
-- [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps)
+- [在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps/)
+- [如何在 Azure 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)
+- [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
 - [Azure Web Apps: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx)
 - [Node.js 开发人员中心](/develop/nodejs/)
-- [Azure 中的 Web 应用入门](/documentation/articles/app-service-web-get-started)
+- [Azure 中的 Web 应用入门](/documentation/articles/app-service-web-get-started/)
 
 <!-- URL List -->
 
-[Azure CLI]: /documentation/articles/xplat-cli-install
+[Azure CLI]: /documentation/articles/xplat-cli-install/
 [Azure Web 应用]: /documentation/services/web-sites
 [activate your Visual Studio subscriber benefits]: /pricing/1rmb-trial/
 [BOWER]: http://bower.io/
-[Create a Node.js chat application with Socket.IO in Azure Web App（在 Azure Web 应用使用 Socket.IO 创建 Node.js 聊天应用程序）]: /documentation/articles/web-sites-nodejs-chat-app-socketio
-[Deploy a Sails.js web app to Azure（将 Sails.js Web 应用部署到 Azure）]: /documentation/articles/app-service-web-nodejs-sails
+[Create a Node.js chat application with Socket.IO in Azure Web App（在 Azure Web 应用使用 Socket.IO 创建 Node.js 聊天应用程序）]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
+[Deploy a Sails.js web app to Azure（将 Sails.js Web 应用部署到 Azure）]: /documentation/articles/app-service-web-nodejs-sails/
 [探索神秘无比的 Kudu 调试控制台]: /documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/
 [适用于 Yeoman 的 Express 生成器]: https://github.com/petecoop/generator-express
 [GIT]: http://www.git-scm.com/downloads
-[How to use io.js with Azure Web Apps（如何将 io.js 与 Azure Web 应用配合使用）]: /documentation/articles/web-sites-nodejs-iojs
+[How to use io.js with Azure Web Apps（如何将 io.js 与 Azure Web 应用配合使用）]: /documentation/articles/web-sites-nodejs-iojs/
 [iisnode]: https://github.com/tjanczuk/iisnode/wiki
 [MEANJS]: http://meanjs.org/
 [NODEJS]: http://nodejs.org

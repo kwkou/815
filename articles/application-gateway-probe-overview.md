@@ -61,6 +61,6 @@
 
 ## 后续步骤
 
-在了解应用程序网关的运行状况监视之后，可以为 Azure 资源管理器配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps)，或者为 Azure 经典部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-classic-ps)。
+在了解应用程序网关的运行状况监视之后，可以为 Azure 资源管理器配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)，或者为 Azure 经典部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-classic-ps/)。
 
 <!---HONumber=Mooncake_0328_2016-->

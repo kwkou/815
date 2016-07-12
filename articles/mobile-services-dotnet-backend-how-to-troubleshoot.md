@@ -132,7 +132,7 @@
 
 使用包含 SQL 数据库的移动服务 .NET 后端时，将以实体框架作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为架构）如何随着代码中指定的模型类的更改而更改。此过程称为[代码优先迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
 
-迁移可能很复杂，只有数据库状态与 EF 模型保持同步才能成功。有关如何处理移动服务的迁移和可能发生的错误的说明，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+迁移可能很复杂，只有数据库状态与 EF 模型保持同步才能成功。有关如何处理移动服务的迁移和可能发生的错误的说明，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)。
 
 <!-- IMAGES -->
 

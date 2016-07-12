@@ -18,7 +18,7 @@
 
 本教程描述如何开始在 [Azure Web 应用](/documentation/services/web-sites/)上运行 Python。 Web 应用提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
-你将使用 Django Web 框架创建应用程序（请参阅本教程针对 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app) 的备选版本）。你将创建 Web 应用，设置 Git 部署以及在本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
+你将使用 Django Web 框架创建应用程序（请参阅本教程针对 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/) 的备选版本）。你将创建 Web 应用，设置 Git 部署以及在本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -229,7 +229,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -318,7 +318,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -468,7 +468,7 @@ Django 有收集静态文件的概念。这将从原始位置取用所有静态�
 
 应用程序随附的数据库是一个 sqlite 数据库。这是可用于开发的方便且有用的默认数据库，因为它几乎不需要任何设置。该数据库存储在项目文件夹下的 db.sqlite3 文件中。
 
-Azure 提供可以从 Django 应用程序方便地使用的数据库服务。从 Django 应用程序使用 [SQL 数据库](/documentation/articles/web-sites-python-ptvs-django-sql)和 [MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql) 的教程展示了创建数据库服务、更改 `DjangoWebProject/settings.py` 中的数据库设置所需的步骤以及安装所需的库。
+Azure 提供可以从 Django 应用程序方便地使用的数据库服务。从 Django 应用程序使用 [SQL 数据库](/documentation/articles/web-sites-python-ptvs-django-sql/)和 [MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql/) 的教程展示了创建数据库服务、更改 `DjangoWebProject/settings.py` 中的数据库设置所需的步骤以及安装所需的库。
 
 当然，如果想要管理您自己的数据库服务器，您可以使用在 Azure 上运行的 Windows 或 Linux 虚拟机来执行此操作。
 
@@ -496,10 +496,10 @@ Azure 提供可以从 Django 应用程序方便地使用的数据库服务。从
 
 
 <!--Link references-->
-[具有 Python Tools for Visual Studio 的 Azure 上的 Django 和 MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql
-[具有 Python Tools for Visual Studio 的 Azure 上的 Django 和 SQL 数据库]: /documentation/articles/web-sites-python-ptvs-django-sql
-[SQL 数据库]: /documentation/articles/web-sites-python-ptvs-django-sql
-[MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql
+[具有 Python Tools for Visual Studio 的 Azure 上的 Django 和 MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql/
+[具有 Python Tools for Visual Studio 的 Azure 上的 Django 和 SQL 数据库]: /documentation/articles/web-sites-python-ptvs-django-sql/
+[SQL 数据库]: /documentation/articles/web-sites-python-ptvs-django-sql/
+[MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql/
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

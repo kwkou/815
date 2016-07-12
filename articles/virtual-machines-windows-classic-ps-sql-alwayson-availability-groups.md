@@ -14,11 +14,11 @@
 # 在 Azure 中配置 AlwaysOn 可用性组 (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)
-- [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
-- [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
+- [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
+- [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)
+- [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
 
->[AZURE.NOTE]有关同一方案的基于 GUI 的教程，请参阅[在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)。
+>[AZURE.NOTE]有关同一方案的基于 GUI 的教程，请参阅[在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)。
 
 Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server 系统的成本。本教程介绍如何在 Azure 环境中使用端到端 SQL Server AlwaysOn 实施可用性组。完成本教程后，Azure 中的 SQL Server AlwaysOn 解决方案将包括以下要素：
 
@@ -38,7 +38,7 @@ Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server �
 
 - 你已有一个用于虚拟机订阅的 Azure 帐户。
 
-- 已安装 [Azure PowerShell cmdlet](/documentation/articles/powershell-install-configure)。
+- 已安装 [Azure PowerShell cmdlet](/documentation/articles/powershell-install-configure/)。
 
 - 你已深入了解本地解决方案的 AlwaysOn 可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 
@@ -618,8 +618,8 @@ Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server �
 		    -Database $db
 
 ## 后续步骤
-现在，你已通过在 Azure 中创建可用性组，成功实施了 SQL Server AlwaysOn。若要为此可用性组配置侦听器，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)。
+现在，你已通过在 Azure 中创建可用性组，成功实施了 SQL Server AlwaysOn。若要为此可用性组配置侦听器，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)。
 
-有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=70-->

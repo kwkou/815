@@ -222,9 +222,9 @@ class MyActor : Actor, IMyActor
 ```
 
 ## 后续步骤
- - [执行组件类型序列化](/documentation/articles/service-fabric-reliable-actors-notes-on-actor-type-serialization)
- - [执行组件多态性和面向对象的设计模式](/documentation/articles/service-fabric-reliable-actors-polymorphism)
- - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics)
+ - [执行组件类型序列化](/documentation/articles/service-fabric-reliable-actors-notes-on-actor-type-serialization/)
+ - [执行组件多态性和面向对象的设计模式](/documentation/articles/service-fabric-reliable-actors-polymorphism/)
+ - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/azure-samples/service-fabric-dotnet-getting-started)
 

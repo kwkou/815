@@ -34,7 +34,7 @@
 [AZURE.INCLUDE [创建 SQL 数据库数据库](../includes/sql-database-sql-server-management-studio-connect-user.md)]
 
 ## 后续步骤
-完成本 SQL 数据库教程、创建用户帐户并为该用户帐户授予 dbo 权限后，便可以详细了解 [SQL 数据库安全性](/documentation/articles/sql-database-manage-logins)。
+完成本 SQL 数据库教程、创建用户帐户并为该用户帐户授予 dbo 权限后，便可以详细了解 [SQL 数据库安全性](/documentation/articles/sql-database-manage-logins/)。
 
 
 <!---HONumber=Mooncake_0503_2016-->

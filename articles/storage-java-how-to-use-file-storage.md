@@ -212,6 +212,6 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 - [Azure 存储客户端 SDK 参考](http://azure.github.io/azure-storage-java/)
 - [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
 <!---HONumber=Mooncake_0530_2016-->

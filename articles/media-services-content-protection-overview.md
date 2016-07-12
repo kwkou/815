@@ -17,12 +17,12 @@
 
 使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，你可以传送使用高级加密标准（AES，使用 128 位加密密钥）和通用加密（CENC，使用 PlayReady 和/或 Widevine DRM）进行动态加密的内容。媒体服务还提供了用于向已授权客户端传送 AES 密钥和 PlayReady 许可证的服务。你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
 
-- 下图演示了“PlayReady 和/或 Widevine DRM 动态通用加密”工作流。有关详细信息，请参阅[使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm)。
+- 下图演示了“PlayReady 和/或 Widevine DRM 动态通用加密”工作流。有关详细信息，请参阅[使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm/)。
 
 ![使用 PlayReady 进行保护](./media/media-services-content-protection-overview/media-services-content-protection-with-drm.png)
 
 
-- 下图演示了“AES-128 动态加密”工作流。有关详细信息，请参阅[使用 AES-128 动态加密和密钥传送服务](/documentation/articles/media-services-protect-with-aes128)。
+- 下图演示了“AES-128 动态加密”工作流。有关详细信息，请参阅[使用 AES-128 动态加密和密钥传送服务](/documentation/articles/media-services-protect-with-aes128/)。
 
 ![使用 AES-128 提供保护](./media/media-services-content-protection-overview/media-services-content-protection-with-aes.png)
 
@@ -60,7 +60,7 @@
 
 当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或通用加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
 
->[AZURE.NOTE]若要利用动态加密，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+>[AZURE.NOTE]若要利用动态加密，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
 ###许可证和密钥传送服务
 
@@ -72,13 +72,13 @@
 
 媒体服务提供了用于传送 PlayReady 许可证的服务。当最终用户播放器（例如 Silverlight）尝试播放受 PlayReady 保护的内容时，将向许可证交付服务发送请求以获取许可证。如果许可证服务批准了该请求，则会颁发该许可证，该许可证将发送到客户端，并可用于解密和播放指定的内容。
 
-许可证包含在用户尝试播放受保护的内容时要由 PlayReady DRM 运行时强制实施的权限和限制。媒体服务提供了可让你配置 PlayReady 许可证的 API。有关详细信息，请参阅[媒体服务 PlayReady 许可证模板概述](/documentation/articles/media-services-playready-license-template-overview)。
+许可证包含在用户尝试播放受保护的内容时要由 PlayReady DRM 运行时强制实施的权限和限制。媒体服务提供了可让你配置 PlayReady 许可证的 API。有关详细信息，请参阅[媒体服务 PlayReady 许可证模板概述](/documentation/articles/media-services-playready-license-template-overview/)。
 
 ###Widevine 许可证
 
 AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Widewine 都是按通用加密 (CENC) 规范加密的。你可以通过 [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/)（从版本 3.5.1 开始）或 REST API 来配置 AssetDeliveryConfiguration 以使用 Widevine。
 
-从媒体服务 .NET SDK 版本 3.5.2 开始，媒体服务允许你配置 [Widevine 许可证模板](/documentation/articles/media-services-widevine-license-template-overview)并获取 Widevine 许可证。你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
+从媒体服务 .NET SDK 版本 3.5.2 开始，媒体服务允许你配置 [Widevine 许可证模板](/documentation/articles/media-services-widevine-license-template-overview/)并获取 Widevine 许可证。你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
 
 ###令牌限制
 
@@ -106,7 +106,7 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 
 ###与合作伙伴集成
 
-[使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration)
+[使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration/)
 
 
 [AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]

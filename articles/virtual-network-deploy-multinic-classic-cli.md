@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-network-deploy-multinic-arm-cli)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-network-deploy-multinic-arm-cli/)。
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
@@ -27,7 +27,7 @@
 
 ## <a name="Prerequisites"></a> 先决条件
 
-在部署后端服务器之前，你需要先使用此方案的所有必需资源部署主云服务。至少，你需要创建包含后端子网的虚拟网络。若要了解如何部署虚拟网络，请访问[使用 Azure CLI 创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-cli)。
+在部署后端服务器之前，你需要先使用此方案的所有必需资源部署主云服务。至少，你需要创建包含后端子网的虚拟网络。若要了解如何部署虚拟网络，请访问[使用 Azure CLI 创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-cli/)。
 
 [AZURE.INCLUDE [azure-cli-prerequisites-include.md](../includes/azure-cli-prerequisites-include.md)]
 

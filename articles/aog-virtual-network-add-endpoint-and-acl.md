@@ -62,4 +62,4 @@
 
 ## <a id="resource"></a>相关参考资料
 
-- [如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)
+- [如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)

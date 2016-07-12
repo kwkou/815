@@ -22,7 +22,7 @@
 
 > Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。可以通过 [Azure 管理门户](https://manage.windowsazure.cn)为 Azure 文件存储启用指标。
 
-> 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
+> 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)。
 
 
 ## 如何：为存储帐户配置监视

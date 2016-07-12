@@ -53,7 +53,7 @@ Azure Active Directory (Azure AD) 通过以下方式简化了对开发人员的�
 - 希望将身份验证外包给 Azure AD 的应用程序必须在 Azure AD 中进行注册，Azure AD 将在目录中注册并唯一地标识该应用程序。
 
 
-- 开发人员可以使用开源 Azure AD 身份验证库为你处理协议细节，方便你进行身份验证。有关详细信息，请参阅 [Azure Active Directory 身份验证库](/documentation/articles/active-directory-authentication-libraries)。
+- 开发人员可以使用开源 Azure AD 身份验证库为你处理协议细节，方便你进行身份验证。有关详细信息，请参阅 [Azure Active Directory 身份验证库](/documentation/articles/active-directory-authentication-libraries/)。
 
 
 • 在用户通过身份验证后，应用程序必须对用户的安全令牌进行验证以确保身份验证对于目标方是成功的。开发人员可以使用所提供的身份验证库来处理 Azure AD 提供的令牌的验证，包括 JSON Web 令牌 (JWT) 或 SAML 2.0。如果希望手动执行验证，请参阅 [JWT Token Handler](https://msdn.microsoft.com/library/dn205065.aspx)（JWT 令牌处理程序）文档。
@@ -62,7 +62,7 @@ Azure Active Directory (Azure AD) 通过以下方式简化了对开发人员的�
 > [AZURE.IMPORTANT] Azure AD 使用公钥加密对令牌进行签名以及验证它们是否有效。应用程序必须实施必要的逻辑才能确保始终使用最新密钥进行更新，此方面的详细信息，请参阅有关 [Azure AD 中签名密钥滚动更新的重要信息](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx)。
 
 
-• 身份验证过程的请求和响应流是由所使用的身份验证协议（例如 OAuth 2.0、OpenID Connect、WS-Federation 或 SAML 2.0）决定的。[Azure Active Directory 身份验证协议](/documentation/articles/active-directory-authentication-protocols)主题和下面的部分中更详细地讨论了这些协议。
+• 身份验证过程的请求和响应流是由所使用的身份验证协议（例如 OAuth 2.0、OpenID Connect、WS-Federation 或 SAML 2.0）决定的。[Azure Active Directory 身份验证协议](/documentation/articles/active-directory-authentication-protocols/)主题和下面的部分中更详细地讨论了这些协议。
 
 > [AZURE.NOTE] Azure AD 支持 OAuth 2.0 和 OpenID Connect 标准，这些标准广泛使用持有者令牌，包括表示为 JWT 的持有者令牌。持有者令牌是一种轻型安全令牌，它授予对受保护资源的“持有者”访问权限。从这个意义上来说，“持有者”是可以提供令牌的任何一方。虽然某一方必须首先通过 Azure AD 的身份验证才能收到持有者令牌，但如果不采取必要的步骤在传输过程和存储中对令牌进行保护，令牌可能会被意外的某一方拦截并使用。虽然某些安全令牌具有内置机制来防止未经授权方使用它们，但是持有者令牌没有这一机制，因此必须在安全的通道（例如传输层安全 (HTTPS)）中进行传输。如果持有者令牌以明文传输，则恶意方可以利用中间人攻击来获得令牌并使用它来对受保护资源进行未经授权的访问。当存储或缓存持有者令牌供以后使用时，也应遵循同样的安全原则。请始终确保你的应用程序以安全的方式传输和存储持有者令牌。有关持有者令牌的更多安全注意事项，请参阅 [RFC 6750 第 5 部分](http://tools.ietf.org/html/rfc6750)。
 
@@ -72,7 +72,7 @@ Azure Active Directory (Azure AD) 通过以下方式简化了对开发人员的�
 
 ## <a name="claims-in-azure-ad-security-tokens"></a>Azure AD 安全令牌中的声明
 
-Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息的声明或断言。应用程序可将这些声明用于各种任务。例如，它们可以用于验证令牌、标识使用者的目录租户、显示用户信息、确定使用者的授权等等。任何给定安全令牌中存在的声明都依赖于令牌的类型、用于验证用户身份的凭据的类型和应用程序配置。下表提供了由 Azure AD 发出的每种声明的简要说明。有关详细信息，请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)。
+Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息的声明或断言。应用程序可将这些声明用于各种任务。例如，它们可以用于验证令牌、标识使用者的目录租户、显示用户信息、确定使用者的授权等等。任何给定安全令牌中存在的声明都依赖于令牌的类型、用于验证用户身份的凭据的类型和应用程序配置。下表提供了由 Azure AD 发出的每种声明的简要说明。有关详细信息，请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。
 
 
 | 声明 | 说明 |
@@ -176,7 +176,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅 Web 浏览器到 Web 应用方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[Web 浏览器到 Web 应用](/documentation/articles/active-directory-code-samples#web-browser-to-web-application)。
+请参阅 Web 浏览器到 Web 应用方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[Web 浏览器到 Web 应用](/documentation/articles/active-directory-code-samples/#web-browser-to-web-application)。
 
 
 #### 注册
@@ -233,7 +233,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅单页面应用程序 (SPA) 方案的代码示例。请经常回来查看 - 我们会不时地添加新示例。[单页面应用程序 (SPA)](/documentation/articles/active-directory-code-samples#single-page-application-spa)。
+请参阅单页面应用程序 (SPA) 方案的代码示例。请经常回来查看 - 我们会不时地添加新示例。[单页面应用程序 (SPA)](/documentation/articles/active-directory-code-samples/#single-page-application-spa)。
 
 
 #### 注册
@@ -292,7 +292,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅本机应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[本机应用程序到 Web API](/documentation/articles/active-directory-code-samples#native-application-to-web-api)。
+请参阅本机应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[本机应用程序到 Web API](/documentation/articles/active-directory-code-samples/#native-application-to-web-api)。
 
 
 #### 注册
@@ -381,7 +381,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 #### 代码示例
 
-请参阅 Web 应用到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](/documentation/articles/active-directory-code-samples#web-application-to-web-api)。
+请参阅 Web 应用到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](/documentation/articles/active-directory-code-samples/#web-application-to-web-api)。
 
 
 #### 注册
@@ -439,7 +439,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 #### 代码示例
 
-请参阅后台或服务器应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[服务器或守护程序应用程序到 Web API](/documentation/articles/active-directory-code-samples#server-or-daemon-application-to-web-api)
+请参阅后台或服务器应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[服务器或守护程序应用程序到 Web API](/documentation/articles/active-directory-code-samples/#server-or-daemon-application-to-web-api)
 
 #### 注册
 
@@ -454,9 +454,9 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 ## 另请参阅
 
-[Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide)
+[Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
 
-[Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
+[Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples/)
 
 [有关 Azure AD 中签名密钥滚动更新的重要信息](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx)
 

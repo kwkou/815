@@ -16,40 +16,40 @@
 
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
+- [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell/)
 
 
 SQL 数据库 V12 是最新版本，因此我们建议升级到 SQL 数据库 V12。
-SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles/sql-database-v12-whats-new)，包括：
+SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles/sql-database-v12-whats-new/)，包括：
 
 - 提高了与 SQL Server 的兼容性。
 - 经过改进的高级性能和新的性能级别。
-- [弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+- [弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
 本文提供有关将现有 SQL 数据库 V11 服务器和数据库升级到 SQL 数据库 V12 的指导。
 
 在升级到 V12 的过程中，会将所有 Web 和企业数据库升级到新的服务级别，因此本文还包含了有关升级 Web 和企业数据库的说明。
 
-此外，与升级到单一数据库的单独性能级别（定价层）相比，迁移到[弹性数据库池](/documentation/articles/sql-database-elastic-pool)更具成本效益。池还可以简化数据库管理，因为你只需管理池的性能设置，而无需分开管理单个数据库的性能级别。如果你的数据库位于多台服务器上，请考虑将它们迁移到同一台服务器，并利用入池所带来的优势。
+此外，与升级到单一数据库的单独性能级别（定价层）相比，迁移到[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)更具成本效益。池还可以简化数据库管理，因为你只需管理池的性能设置，而无需分开管理单个数据库的性能级别。如果你的数据库位于多台服务器上，请考虑将它们迁移到同一台服务器，并利用入池所带来的优势。
 
 遵循本文中的步骤可以轻松地从 V11 服务器直接迁移到弹性数据库池。
 
-请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-connect-central-recommendations)，则足以防止升级结束时连接中断。
+请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-connect-central-recommendations/)，则足以防止升级结束时连接中断。
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 
 ## 准备升级
 
-- **升级所有 Web 和企业数据库**：请[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell)。
+- **升级所有 Web 和企业数据库**：请[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell/)。
 - **检查和暂停异地复制**：如果你的 Azure SQL 数据库已针对异地复制进行配置，则你应记录其当前配置并停止异地复制。升级完成后，请重新为异地复制配置数据库。
-- **如果客户端在 Azure VM 上，请打开这些端口**：如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。有关详细信息，请参阅 [SQL 数据库 V12 的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)。
+- **如果客户端在 Azure VM 上，请打开这些端口**：如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。有关详细信息，请参阅 [SQL 数据库 V12 的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)。
 
 
 ## 先决条件
 
 若要使用 PowerShell 将服务器升级到 V12，你需要安装并运行 Azure PowerShell，然后，根据具体的版本，你可能需要切换到资源管理器模式，以访问 Azure 资源管理器 PowerShell cmdlet。
 
-若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
 ## 配置你的凭据，然后选择你的订阅
@@ -151,7 +151,7 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
 升级后，建议你主动监视数据库，以确保应用程序以所需的性能运行，并根据需要优化使用方式。
 
-除了监视各个数据库之外，你还可以使用 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell) 监视弹性数据库池。
+除了监视各个数据库之外，你还可以使用 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/) 监视弹性数据库池。
 
 
 **资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 查看资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度级提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是一个用于计算过去一小时平均 DTU 消耗百分比的查询：
@@ -168,14 +168,14 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 其他监视信息：
 
 - [Azure SQL 数据库的单一数据库性能指导](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx)。
-- [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
-- [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs)
+- [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
+- [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs/)
 
 
 <!--
 **警报：**在 Azure 管理门户中设置“警报”可在升级后的数据库 DTU 消耗量接近特定的高位时接收通知。你可以针对 DTU、CPU、IO 和日志等各种性能度量值，在 Azure 管理门户中设置数据库警报。浏览到你的数据库，然后在“设置”边栏选项卡中选择“警报规则”。
 
-例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)，以了解有关如何配置警报通知的详细信息。-->
+例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)，以了解有关如何配置警报通知的详细信息。-->
 
 
 

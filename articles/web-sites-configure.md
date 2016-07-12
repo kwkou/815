@@ -165,16 +165,16 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 
 [ASP.NET SignalR]: http://www.asp.net/signalr
 [Azure Portal]: https://portal.azure.cn/
-[在 Azure Web 应用配置自定义域名]: /documentation/articles/web-sites-custom-domain-name
-[Deploy to Staging Environments for Web Apps in Azure]: /documentation/articles/web-sites-staged-publishing
-[为 Azure Web 应用启用 HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
+[在 Azure Web 应用配置自定义域名]: /documentation/articles/web-sites-custom-domain-name/
+[Deploy to Staging Environments for Web Apps in Azure]: /documentation/articles/web-sites-staged-publishing/
+[为 Azure Web 应用启用 HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate/
 [How to: Monitor web endpoint status]: http://go.microsoft.com/fwLink/?LinkID=279906
-[Azure 中的 Web Apps 的监视基础知识]: /documentation/articles/web-sites-monitor
+[Azure 中的 Web Apps 的监视基础知识]: /documentation/articles/web-sites-monitor/
 [pipeline mode]: http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
-[在 Azure 中缩放 Web 应用]: /documentation/articles/web-sites-scale
-[socket.io]: /documentation/articles/web-sites-nodejs-chat-app-socketio
+[在 Azure 中缩放 Web 应用]: /documentation/articles/web-sites-scale/
+[socket.io]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
 [Try Azure Web App]: https://tryappservice.azure.com/
-[Using Git to deploy Web Apps in Azure]: /documentation/articles/web-sites-publish-source-control
+[Using Git to deploy Web Apps in Azure]: /documentation/articles/web-sites-publish-source-control/
 
 <!-- IMG List -->
 

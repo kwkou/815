@@ -37,7 +37,7 @@ class MyActor : Actor, IMyActor
 ```
 
 ## 后续步骤
- - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics)
+ - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 

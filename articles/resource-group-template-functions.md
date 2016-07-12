@@ -52,7 +52,7 @@
 
 返回一个迭代循环的当前索引。
 
-此函数始终配合 **copy** 对象使用。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+此函数始终配合 **copy** 对象使用。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
 
 
 <a id="div"/></a>
@@ -101,7 +101,7 @@
         "count": "[length(parameters('siteNames'))]"
     }
 
-有关在数组中使用此函数的详细信息，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+有关在数组中使用此函数的详细信息，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
 
 或者，你可以在字符串中使用：
 
@@ -807,10 +807,10 @@
 
 
 ## 后续步骤
-- 有关 Azure 资源管理器模板中对各部分的说明，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
-- 若要合并多个模板，请参阅[将已链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
-- 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
-- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
+- 有关 Azure 资源管理器模板中对各部分的说明，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)
+- 若要合并多个模板，请参阅[将已链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates/)
+- 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)
+- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 
 
 <!---HONumber=Mooncake_0620_2016-->

@@ -16,7 +16,7 @@
 
 本文提供 Azure 批处理 ( Batch ) 服务的核心 API 功能的基本概述。无论是使用 [批处理 ( Batch ) REST][batch_rest_api] 还是 [批处理( Batch ) .NET][batch_net_api] API 来开发分布式计算解决方案，你都要使用下面讨论的许多实体和功能。
 
-> [AZURE.TIP]有关 Batch 的更高级技术概述，请参阅 [Azure 批处理 ( Batch ) 基础知识](/documentation/articles/batch-technical-overview)。
+> [AZURE.TIP]有关 Batch 的更高级技术概述，请参阅 [Azure 批处理 ( Batch ) 基础知识](/documentation/articles/batch-technical-overview/)。
 
 ## <a name="workflow"></a>批处理 ( Batch ) 服务的工作流
 
@@ -61,7 +61,7 @@
 
 ### <a name="account"></a>帐户
 
-批处理 ( Batch ) 帐户是批处理 ( Batch ) 服务中唯一标识的实体。所有处理都与一个批处理 ( Batch ) 帐户相关联。当你使用批处理( Batch ) 服务执行操作时，需要同时用到帐户名和帐户密钥。若要创建批处理( Batch ) 帐户，请查看[在 Azure 经典管理门户中创建和管理 Azure 批处理 ( Batch )  帐户](/documentation/articles/batch-account-create-portal)。
+批处理 ( Batch ) 帐户是批处理 ( Batch ) 服务中唯一标识的实体。所有处理都与一个批处理 ( Batch ) 帐户相关联。当你使用批处理( Batch ) 服务执行操作时，需要同时用到帐户名和帐户密钥。若要创建批处理( Batch ) 帐户，请查看[在 Azure 经典管理门户中创建和管理 Azure 批处理 ( Batch )  帐户](/documentation/articles/batch-account-create-portal/)。
 
 ### <a name="computenode"></a>计算节点
 
@@ -99,10 +99,10 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 - 应该为池提供的**节点的目标数目**
 
 - 池的**缩放策略**
-	- 除了节点数目以外，你还可以为池指定[自动缩放公式](/documentation/articles/batch-automatic-scaling)。批处理 ( Batch ) 服务将执行该公式，并根据可以指定的各个池、作业、和任务参数，调整池中的节点数目。
+	- 除了节点数目以外，你还可以为池指定[自动缩放公式](/documentation/articles/batch-automatic-scaling/)。批处理 ( Batch ) 服务将执行该公式，并根据可以指定的各个池、作业、和任务参数，调整池中的节点数目。
 
 - **任务计划**策略
-	- [每个节点的最大任务数](/documentation/articles/batch-parallel-node-tasks)配置选项确定了可以在池中每个节点上并行运行的最大任务数。
+	- [每个节点的最大任务数](/documentation/articles/batch-parallel-node-tasks/)配置选项确定了可以在池中每个节点上并行运行的最大任务数。
 	- 默认的配置是每次在一个计算节点上运行一个任务，但在某些情况下，在一个节点上同时执行多个任务可能更有利。一个示例就是当应用程序必须等待 I/O 时增大节点利用率。并行执行多个应用程序会增大 CPU 利用率。另一个示例是减少池中的节点数目。这可以减少大型引用数据集所需的数据传输量 - 如果 A1 节点大小足以供某个应用程序使用，则可以改为选择 A4 节点大小，并针对 8 个并行任务配置池，使每个任务使用一个核心。
 	- 还可以指定一个“填充类型”，用于确定批处理 ( Batch ) 是要将任务平均分散到所有节点，还是在将最大数目的任务分配给一个节点后，再将任务分配给池中的另一个节点。
 
@@ -151,7 +151,7 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 
 与任何批处理 ( Batch ) 任务一样，除了指定要执行的**命令行**以外，还可以指定 [Azure 存储空间][azure_storage]中的**资源文件**列表。Azure 批处理 ( Batch ) 将先从 Azure 存储空间复制文件，然后再运行命令行。对于池启动任务，文件列表通常包含应用程序包或文件，但它还可能包含计算节点上运行的所有任务使用的引用数据。启动任务的命令行可能会执行 PowerShell 脚本或 `robocopy` 操作，例如，将应用程序文件复制到“共享”文件夹中，然后运行 MSI 或 `setup.exe`。
 
-> [AZURE.IMPORTANT] Batch 目前“仅”支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account#create-a-storage-account)中步骤 5 所述。Batch 任务（包括标准任务、启动任务、作业准备和作业释放任务）“只能”指定位于**常规用途**存储帐户中的资源文件。
+> [AZURE.IMPORTANT] Batch 目前“仅”支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。Batch 任务（包括标准任务、启动任务、作业准备和作业释放任务）“只能”指定位于**常规用途**存储帐户中的资源文件。
 通常，批处理 ( Batch ) 服务需要等待启动任务完成，然后认为节点已准备好分配任务，但这种行为是可配置的。
 
 如果某个计算节点上的启动任务失败，则节点的状态将会更新以反映失败状态，同时，该节点不可用于要分配的任务。如果从存储中复制启动任务的资源文件时出现问题，或由其命令行执行的进程返回了非零退出代码，则启动任务可能会失败。
@@ -183,13 +183,13 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 
 作业准备和释放任务允许你指定命令行在任务被调用时运行，并提供许多功能，例如文件下载、提升权限的执行、自定义环境变量、最大执行持续时间、重试计数和文件保留时间。
 
-有关作业准备和释放任务的详细信息，请参阅[在 Azure 批处理 ( Batch ) 计算节点上运行作业准备和完成任务](/documentation/articles/batch-job-prep-release)。
+有关作业准备和释放任务的详细信息，请参阅[在 Azure 批处理 ( Batch ) 计算节点上运行作业准备和完成任务](/documentation/articles/batch-job-prep-release/)。
 
 #### <a name="multiinstance"></a>多实例任务
 
-[多实例任务](/documentation/articles/batch-mpi)是经过配置后可以在多个计算节点上同时运行的任务。通过多实例任务，你可以启用消息传递接口 (MPI) 等高性能计算方案，此类方案需要将一组计算节点分配到一起来处理单个工作负荷。
+[多实例任务](/documentation/articles/batch-mpi/)是经过配置后可以在多个计算节点上同时运行的任务。通过多实例任务，你可以启用消息传递接口 (MPI) 等高性能计算方案，此类方案需要将一组计算节点分配到一起来处理单个工作负荷。
 
-有关在 Batch 中使用 Batch .NET 库运行 MPI 作业的详细介绍，请参阅[在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序](/documentation/articles/batch-mpi)。
+有关在 Batch 中使用 Batch .NET 库运行 MPI 作业的详细介绍，请参阅[在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序](/documentation/articles/batch-mpi/)。
 
 #### <a name="taskdep"></a>任务依赖性
 
@@ -246,7 +246,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 ## <a name="scaling"></a>缩放应用程序
 
-通过[自动缩放](/documentation/articles/batch-automatic-scaling)功能，你可以让 Batch 服务根据计算方案的当前工作负荷和资源使用状况动态缩放池中的计算节点数目。这样，便可做到只使用所需资源并可释放不需要的资源，因而能够降低运行应用程序的整体成本。可以在创建池时为其指定自动缩放设置或是稍后再启用自动缩放，此外也可以更新已启用自动缩放功能的池上的缩放设置。
+通过[自动缩放](/documentation/articles/batch-automatic-scaling/)功能，你可以让 Batch 服务根据计算方案的当前工作负荷和资源使用状况动态缩放池中的计算节点数目。这样，便可做到只使用所需资源并可释放不需要的资源，因而能够降低运行应用程序的整体成本。可以在创建池时为其指定自动缩放设置或是稍后再启用自动缩放，此外也可以更新已启用自动缩放功能的池上的缩放设置。
 
 为池指定**自动缩放公式**即可执行自动缩放。Batch 服务使用此公式来确定池中下一个缩放间隔（可以指定的间隔）的目标节点数目。
 
@@ -264,7 +264,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 > [AZURE.TIP] 若要获得最大的计算资源使用率，请将节点的目标数目设置成在作业结束时降为零，但允许正在运行的任务完成。
 
-有关自动缩放应用程序的详细信息，请参阅[自动缩放 Azure Batch 池中的计算节点](/documentation/articles/batch-automatic-scaling)。
+有关自动缩放应用程序的详细信息，请参阅[自动缩放 Azure Batch 池中的计算节点](/documentation/articles/batch-automatic-scaling/)。
 
 ## <a name="cert"></a>证书的安全性
 
@@ -362,7 +362,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 ## 后续步骤
 
-- 根据[适用于 .NET 的 Azure 批处理 ( Batch ) 库入门](/documentation/articles/batch-dotnet-get-started)中的步骤创建第一个批处理 ( Batch ) 应用程序
+- 根据[适用于 .NET 的 Azure 批处理 ( Batch ) 库入门](/documentation/articles/batch-dotnet-get-started/)中的步骤创建第一个批处理 ( Batch ) 应用程序
 - 下载并构建 [批处理( Batch ) 资源管理器][batch_explorer_project]示例项目，以便在开发批处理 ( Batch ) 解决方案时使用。使用批处理( Batch ) 资源管理器可以执行以下和其他操作：
   - 监视和管理批处理 ( Batch ) 帐户中的池、作业与任务
   - 从节点下载 `stdout.txt`、`stderr.txt` 和其他文件

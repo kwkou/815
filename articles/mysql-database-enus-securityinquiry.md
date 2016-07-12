@@ -3,11 +3,11 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 #Security consulting
 > [AZURE.SELECTOR]
-- [All FAQs](/documentation/articles/mysql-database-enus-tech-faq)
-- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry)
-- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry)
-- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry)
-- [Compatibility Issues](/documentation/articles/mysql-database-enus-compatibilityinquiry)
+- [All FAQs](/documentation/articles/mysql-database-enus-tech-faq/)
+- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry/)
+- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry/)
+- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry/)
+- [Compatibility Issues](/documentation/articles/mysql-database-enus-compatibilityinquiry/)
 
 ### **I noticed that the database server address is a public endpoint. Does this mean that the access request goes through the Internet before it reaches the server if my app visits a database in the same datacenter?**
 

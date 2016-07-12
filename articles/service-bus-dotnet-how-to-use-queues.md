@@ -175,7 +175,7 @@ for (int i=0; i<5; i++)
 }
 ```
 
-服务总线队列支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas)（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning)。
+服务总线队列支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas)（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning/)。
 
 ## 如何从队列接收消息
 
@@ -240,10 +240,10 @@ Client.OnMessage((message) =>
 
   [Azure 经典门户]: http://manage.windowsazure.cn
   [7]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
-  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
-  [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet
+  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
+  [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet/
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
-  [服务总线示例概述]: /documentation/articles/service-bus-samples
+  [服务总线示例概述]: /documentation/articles/service-bus-samples/
   [GetSetting]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
   [CloudConfigurationManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager
   [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx

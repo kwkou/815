@@ -471,8 +471,8 @@ DBCC SHOW_STATISTICS (dbo.table1, stats_col1) WITH histogram, density_vector
 <!--Image references-->
 
 <!--Link references--In actual articles, you only need a single period before the slash.-->
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[临时表]: /documentation/articles/sql-data-warehouse-develop-temporary-tables
+[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[临时表]: /documentation/articles/sql-data-warehouse-develop-temporary-tables/
 
 <!-- External Links -->
 [基数估计]: https://msdn.microsoft.com/zh-cn/library/dn600374.aspx

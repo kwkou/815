@@ -15,9 +15,9 @@
 #如何：检查作业进度
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-portal-check-job-progress)
-- [.NET](/documentation/articles/media-services-check-job-progress)
-- [REST](/documentation/articles/media-services-rest-check-job-progress)
+- [门户](/documentation/articles/media-services-portal-check-job-progress/)
+- [.NET](/documentation/articles/media-services-check-job-progress/)
+- [REST](/documentation/articles/media-services-rest-check-job-progress/)
 
 当你运行作业时，通常需要采用某种方式来跟踪作业进度。你可以通过[定义 StateChanged 事件处理程序](#statechange_event_handler)或[使用 Azure 队列存储监视媒体服务作业通知](#check_progress_with_queues)，来检查进度。本主题将介绍这两种方法。
 
@@ -104,7 +104,7 @@
 
 ##<a id="check_progress_with_queues"></a>使用 Azure 队列存储监视媒体服务作业通知
 
-Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues#what-is)发送通知消息。本主题说明如何从队列存储获取这些通知消息。
+Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/#what-is)发送通知消息。本主题说明如何从队列存储获取这些通知消息。
 
 用户可以从任何位置访问已传给到队列存储中的消息。Azure 队列消息体系结构十分可靠，而且具有高度可缩放性。建议使用其他方法轮询队列存储。
 

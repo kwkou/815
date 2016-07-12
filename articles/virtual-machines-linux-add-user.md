@@ -18,7 +18,7 @@
 
 对于新启动的 Linux VM，首要任务之一就是创建新用户。在本文中，我们将逐步创建 sudo 用户帐户、设置密码、添加 SSH 公钥，最后使用 `visudo` 来允许不带密码的 sudo。
 
-先决条件：[Azure 帐户](/pricing/1rmb-trial/)、[SSH 公钥与私钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys)。
+先决条件：[Azure 帐户](/pricing/1rmb-trial/)、[SSH 公钥与私钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 
 ## 快速命令
 

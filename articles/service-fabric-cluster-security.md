@@ -25,21 +25,21 @@ Service Fabric 群集是你拥有的资源。为了防止未经授权访问资�
 
 ![节点到节点通信示意图][Node-to-Node]
 
-在 Azure 上运行的群集或在 Windows 上运行的独立群集可以使用[证书安全性](https://msdn.microsoft.com/zh-cn/library/ff649801.aspx)或 [Windows 安全性](https://msdn.microsoft.com/zh-cn/library/ff649396.aspx)。证书安全性是在创建群集（通过 Azure 门户或 ARM 模板）时，通过指定主要证书和可选的辅助证书来配置的。指定的主要证书和辅助证书应该不同于为[客户端到节点安全性](#client-to-node-security)指定的管理客户端证书和只读客户端证书。若要了解如何在 Azure 上运行的群集中配置证书安全性，请参阅 [Secure a Service Fabric cluster on Azure using certificates](/documentation/articles/service-fabric-secure-azure-cluster-with-certs)（使用证书保护 Azure 上的 Service Fabric 群集）或 [Set up a cluster by using an ARM template](/documentation/articles/service-fabric-cluster-creation-via-arm)（使用 ARM 模板设置群集）。
+在 Azure 上运行的群集或在 Windows 上运行的独立群集可以使用[证书安全性](https://msdn.microsoft.com/zh-cn/library/ff649801.aspx)或 [Windows 安全性](https://msdn.microsoft.com/zh-cn/library/ff649396.aspx)。证书安全性是在创建群集（通过 Azure 门户或 ARM 模板）时，通过指定主要证书和可选的辅助证书来配置的。指定的主要证书和辅助证书应该不同于为[客户端到节点安全性](#client-to-node-security)指定的管理客户端证书和只读客户端证书。若要了解如何在 Azure 上运行的群集中配置证书安全性，请参阅 [Secure a Service Fabric cluster on Azure using certificates](/documentation/articles/service-fabric-secure-azure-cluster-with-certs/)（使用证书保护 Azure 上的 Service Fabric 群集）或 [Set up a cluster by using an ARM template](/documentation/articles/service-fabric-cluster-creation-via-arm/)（使用 ARM 模板设置群集）。
 
 ## 客户端到节点安全性
 对客户端进行身份验证，并保护客户端与群集中单个节点之间的通信。这种类型的安全性将验证并保护客户端通信，确保只有已获授权的用户可以访问群集与群集上部署的应用程序。客户端通过其 Windows 安全性凭据或其证书安全性凭据进行唯一标识。
 
 ![客户端到节点通信示意图][Client-to-Node]
 
-在 Azure 上运行的群集或在 Windows 上运行的独立群集可以使用[证书安全性](https://msdn.microsoft.com/zh-cn/library/ff649801.aspx)或 [Windows 安全性](https://msdn.microsoft.com/zh-cn/library/ff649396.aspx)。客户端到节点证书安全性是在创建群集（通过 Azure 门户或 ARM 模板）时，通过指定管理客户端证书和/或只读客户端证书来配置的。指定的管理客户端证书和只读客户端证书应该不同于为[节点到节点安全性](#node-to-node-security)指定的主要证书和辅助证书。客户端如果使用管理证书或主要证书连接到群集，则拥有管理功能的完全访问权限。客户端如果使用只读客户端证书连接到群集，则只拥有管理功能的只读访问权限。若要了解如何在 Azure 上运行的群集中配置证书安全性，请参阅 [Secure a Service Fabric cluster on Azure using certificates](/documentation/articles/service-fabric-secure-azure-cluster-with-certs)（使用证书保护 Azure 上的 Service Fabric 群集）或 [Set up a cluster by using an ARM template](/documentation/articles/service-fabric-cluster-creation-via-arm)（使用 ARM 模板设置群集）。
+在 Azure 上运行的群集或在 Windows 上运行的独立群集可以使用[证书安全性](https://msdn.microsoft.com/zh-cn/library/ff649801.aspx)或 [Windows 安全性](https://msdn.microsoft.com/zh-cn/library/ff649396.aspx)。客户端到节点证书安全性是在创建群集（通过 Azure 门户或 ARM 模板）时，通过指定管理客户端证书和/或只读客户端证书来配置的。指定的管理客户端证书和只读客户端证书应该不同于为[节点到节点安全性](#node-to-node-security)指定的主要证书和辅助证书。客户端如果使用管理证书或主要证书连接到群集，则拥有管理功能的完全访问权限。客户端如果使用只读客户端证书连接到群集，则只拥有管理功能的只读访问权限。若要了解如何在 Azure 上运行的群集中配置证书安全性，请参阅 [Secure a Service Fabric cluster on Azure using certificates](/documentation/articles/service-fabric-secure-azure-cluster-with-certs/)（使用证书保护 Azure 上的 Service Fabric 群集）或 [Set up a cluster by using an ARM template](/documentation/articles/service-fabric-cluster-creation-via-arm/)（使用 ARM 模板设置群集）。
 
 当你创建群集时，Service Fabric 将使用指定为节点类型配置一部分的 X.509 服务器证书。本文末尾概述了这些证书是什么，以及如何获取或创建这些证书。
 
 在 Azure 上运行的群集也可以使用 Azure Active Directory (AAD) 来保护对管理终结点的访问。若要了解如何创建所需的 AAD 项目、如何在创建群集时填充这些项目，以及之后如何连接到这些群集，请参阅 [Create a Service Fabric cluster using Azure Active Directory for client authentication](service-fabric-cluster-security-client-auth-with-aad)（创建使用 Azure Active Directory 进行客户端身份验证的 Service Fabric 群集）。
 
 ## 基于角色的访问控制 (RBAC)
-访问控制可让群集管理员针对不同的用户组限制特定群集操作的访问权限，使群集更加安全。连接到群集的客户端支持两种不同的访问控制类型：管理员和用户。管理员对管理功能（包括读取/写入功能）拥有完全访问权限。默认情况下，用户只有管理功能的读取访问权限（例如查询功能），以及解析应用程序和服务的能力。可在创建群集时为每个角色提供不同的证书，以指定管理员和用户客户端角色。有关默认访问控制设置以及如何更改默认设置的详细信息，请参阅 [Role based access control for clients](/documentation/articles/service-fabric-cluster-security-roles)（客户端的基于角色的访问控制）。
+访问控制可让群集管理员针对不同的用户组限制特定群集操作的访问权限，使群集更加安全。连接到群集的客户端支持两种不同的访问控制类型：管理员和用户。管理员对管理功能（包括读取/写入功能）拥有完全访问权限。默认情况下，用户只有管理功能的读取访问权限（例如查询功能），以及解析应用程序和服务的能力。可在创建群集时为每个角色提供不同的证书，以指定管理员和用户客户端角色。有关默认访问控制设置以及如何更改默认设置的详细信息，请参阅 [Role based access control for clients](/documentation/articles/service-fabric-cluster-security-roles/)（客户端的基于角色的访问控制）。
 
 
 ## X.509 证书和 Service Fabric
@@ -73,13 +73,13 @@ X.509 数字证书通常用于验证客户端与服务器，以及对消息进�
 ## 后续步骤
 设置群集后，可以了解群集升级：
 
-- [Service Fabric Cluster upgrade process and expectations](/documentation/articles/service-fabric-cluster-upgrade)（Service Fabric 群集升级过程与期望）
+- [Service Fabric Cluster upgrade process and expectations](/documentation/articles/service-fabric-cluster-upgrade/)（Service Fabric 群集升级过程与期望）
 
 了解有关应用程序安全性的详细信息：
 
-- [Application security and RunAs](/documentation/articles/service-fabric-application-runas-security)（应用程序安全性和 RunAs）
+- [Application security and RunAs](/documentation/articles/service-fabric-application-runas-security/)（应用程序安全性和 RunAs）
 
-- [Secure service communications](/documentation/articles/service-fabric-reliable-services-secure-communication)（安全服务通信）
+- [Secure service communications](/documentation/articles/service-fabric-reliable-services-secure-communication/)（安全服务通信）
 
 <!--Image references-->
 [Node-to-Node]: ./media/service-fabric-cluster-security/node-to-node.png

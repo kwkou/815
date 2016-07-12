@@ -35,7 +35,7 @@ EXEC( @sql_fragment1 + @sql_fragment2 + @sql_fragment3);
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 [sp\_executesql]: https://msdn.microsoft.com/zh-cn/library/ms188001.aspx

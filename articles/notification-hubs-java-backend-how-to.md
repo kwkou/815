@@ -293,12 +293,12 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 	- [发送跨平台通知到经身份验证的用户]
 
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
-[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started
-[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[发送当地的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-[发送通知到经身份验证的用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[发送跨平台通知到经身份验证的用户]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
+[Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started/
+[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[发送当地的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
+[发送通知到经身份验证的用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+[发送跨平台通知到经身份验证的用户]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
 [Maven]: http://maven.apache.org/
  
 <!---HONumber=Mooncake_0503_2016-->

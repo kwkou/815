@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-api-updatedatabase)
-- [English](/documentation/articles/mysql-database-enus-api-updatedatabase)
+- [中文](/documentation/articles/mysql-database-api-updatedatabase/)
+- [English](/documentation/articles/mysql-database-enus-api-updatedatabase/)
 
 #修改数据库配置
 

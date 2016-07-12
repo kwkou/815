@@ -28,7 +28,7 @@
 ## 先决条件
 以下是开始使用媒体服务和 REST API 进行开发所要满足的先决条件。
 
-- 了解如何使用媒体服务 REST API 进行开发。有关详细信息，请参阅 [media-services-rest-overview](/documentation/articles/media-services-rest-how-to-use)。
+- 了解如何使用媒体服务 REST API 进行开发。有关详细信息，请参阅 [media-services-rest-overview](/documentation/articles/media-services-rest-how-to-use/)。
 - 可以发送 HTTP 请求和响应的所选应用程序。本教程使用 [Fiddler](http://www.telerik.com/download/fiddler)。 
 
 本快速入门教程中说明了以下任务。

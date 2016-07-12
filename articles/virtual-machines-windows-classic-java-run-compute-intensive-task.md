@@ -15,7 +15,7 @@
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 借助 Azure，您可以使用虚拟机来处理需要进行大量计算的任务。例如，虚拟机可以处理任务并将结果传送给客户端计算机或移动应用程序。阅读完本文后，你将了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的虚拟机。
 
@@ -518,6 +518,6 @@
 [namespace_list]: ./media/virtual-machines-windows-classic-java-run-compute-intensive-task/SvcBusQueues_05_NamespaceList.jpg
 [properties_pane]: ./media/virtual-machines-windows-classic-java-run-compute-intensive-task/SvcBusQueues_06_PropertiesPane.jpg
 [default_key]: ./media/virtual-machines-windows-classic-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
-[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
+[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store/
 
 <!---HONumber=Mooncake_0215_2016-->

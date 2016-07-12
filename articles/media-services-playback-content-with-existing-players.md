@@ -17,13 +17,13 @@
 
 Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 实时流和 MPEG-Dash。本主题会将你指向可用来测试流的现有播放器。
 
->[AZURE.NOTE]若要播放动态打包或动态加密的内容，请确保获取你计划从中传送内容的流式处理终结点的至少一个流式处理单元。有关缩放流式处理单元的信息，请参阅：[如何缩放流式处理单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+>[AZURE.NOTE]若要播放动态打包或动态加密的内容，请确保获取你计划从中传送内容的流式处理终结点的至少一个流式处理单元。有关缩放流式处理单元的信息，请参阅：[如何缩放流式处理单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
 ###Azure 管理门户媒体服务内容播放器
 
 **Azure 管理门户**提供了可用于测试视频的内容播放器。
 
-单击所需的视频（确保它已[发布](/documentation/articles/media-services-manage-content#publish)），然后单击门户底部的“播放”按钮。
+单击所需的视频（确保它已[发布](/documentation/articles/media-services-manage-content/#publish)），然后单击门户底部的“播放”按钮。
  
 请注意以下事项：
 
@@ -73,7 +73,7 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 ##开发视频播放器
 
-有关如何开发自己的播放器的信息，请参阅[开发视频播放器](/documentation/articles/media-services-develop-video-players)
+有关如何开发自己的播放器的信息，请参阅[开发视频播放器](/documentation/articles/media-services-develop-video-players/)
 
 ##提供反馈
 

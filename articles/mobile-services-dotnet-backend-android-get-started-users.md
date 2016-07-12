@@ -72,12 +72,12 @@
 [Next Steps]: #next-steps
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
-[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started/
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users/
 
-[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization/
 
-[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/
 
 <!---HONumber=Mooncake_0118_2016-->

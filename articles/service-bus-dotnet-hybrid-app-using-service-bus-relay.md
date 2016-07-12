@@ -609,8 +609,8 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [45]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-45.png
 
   [sbwacom]: /documentation/services/service-bus/
-  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
-  [executionmodels]: /documentation/articles/fundamentals-application-models
-  [azureweb]: /documentation/articles/app-service-web-overview
+  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
+  [executionmodels]: /documentation/articles/fundamentals-application-models/
+  [azureweb]: /documentation/articles/app-service-web-overview/
 
 <!---HONumber=Mooncake_0104_2016-->

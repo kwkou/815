@@ -14,7 +14,7 @@
 
 # 使用“将数据库部署到 Azure 数据库”向导将 SQL Server 数据库迁移到 SQL 数据库
 
-SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”向导可将[兼容的 SQL Server 数据库](/documentation/articles/sql-database-cloud-migrate)直接迁移到 Azure SQL 数据库服务器。
+SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”向导可将[兼容的 SQL Server 数据库](/documentation/articles/sql-database-cloud-migrate/)直接迁移到 Azure SQL 数据库服务器。
 
 ## 使用“将数据库部署到 Azure 数据库”向导
 
@@ -37,7 +37,7 @@ SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”�
 
 	![通过“任务”菜单部署到 Azure](./media/sql-database-cloud-migrate/MigrateUsingDeploymentWizard00.png)
 
-5.	为**新数据库名称**提供新数据库名称，设置 **Azure SQL 数据库的版本**（[服务层](/documentation/articles/sql-database-service-tiers)）、**最大数据库大小**、**服务目标**（性能级别）以及此向导将在迁移过程中创建的 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件的**临时文件名**。
+5.	为**新数据库名称**提供新数据库名称，设置 **Azure SQL 数据库的版本**（[服务层](/documentation/articles/sql-database-service-tiers/)）、**最大数据库大小**、**服务目标**（性能级别）以及此向导将在迁移过程中创建的 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件的**临时文件名**。
 
 	![导出设置](./media/sql-database-cloud-migrate/MigrateUsingDeploymentWizard02.png)
 
@@ -48,6 +48,6 @@ SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”�
 
 ## 下一步：修复兼容性问题（如果有）
 
-[修复数据库兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues)（如果有）。
+[修复数据库兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)（如果有）。
 
 <!---HONumber=Mooncake_0104_2016-->

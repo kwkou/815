@@ -157,9 +157,9 @@ __解决方法__：若要解决此错误，请使用以下步骤。
 
 现在，你已了解如何将 JDBC 与 Hive 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
 
-* [将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data)
-* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
-* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data/)
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=Mooncake_0530_2016-->

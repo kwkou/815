@@ -627,7 +627,7 @@ namespace WebService
 
 ## 运行 Web 浏览器并通过它进行连接
 
-如果尚未这样做，请[设置开发环境](/documentation/articles/service-fabric-get-started)。
+如果尚未这样做，请[设置开发环境](/documentation/articles/service-fabric-get-started/)。
 
 
 现在，你可以生成并部署你的服务。在 Visual Studio 中按 **F5** 以生成并部署应用程序。在“诊断事件”窗口中，你应看到一条消息，指示已在 http://localhost:8281/ 上打开了 Web 服务器。
@@ -664,10 +664,10 @@ New-ServiceFabricService -ApplicationName "fabric:/WebServiceApplication" -Servi
 
 
 
-有关如何创建应用程序和服务实例的详细信息，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)。
+有关如何创建应用程序和服务实例的详细信息，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)。
 
 ## 后续步骤
 
-[使用 Visual Studio 调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application)
+[使用 Visual Studio 调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
 
 <!---HONumber=Mooncake_0503_2016-->

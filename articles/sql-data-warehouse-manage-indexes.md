@@ -89,9 +89,9 @@ ALTER TABLE [dbo].[FactInternetSales_20000101_20010101] SWITCH PARTITION 2 TO  [
 <!--Image references-->
 
 <!--Article references-->
-[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas
-[表分区]: /documentation/articles/sql-data-warehouse-develop-table-partitions
-[管理]: /documentation/articles/sql-data-warehouse-manage-monitor
+[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[表分区]: /documentation/articles/sql-data-warehouse-develop-table-partitions/
+[管理]: /documentation/articles/sql-data-warehouse-manage-monitor/
 
 <!--MSDN references-->
 [ALTER INDEX]: https://msdn.microsoft.com/zh-cn/library/ms188388.aspx

@@ -43,7 +43,7 @@ Linux 诊断扩展可帮助用户监视 Azure 上运行的 Linux VM。它具有�
 - **Azure Linux Agent 2.0.6 版或更高版本**。
 请注意，大部分 Azure VM Linux 库映像都包含 2.0.6 版本或更高版本。你可以运行 **WAAgent -version** 以确认 VM 上安装的版本。如果 VM 正在运行的版本早于 2.0.6，则可以按照 [GitHub 上的这些说明](https://github.com/Azure/WALinuxAgent "说明")进行更新。
 
-- **Azure CLI**。请按照[此 CLI 安装指南](/documentation/articles/xplat-cli-install)中的说明在计算机上设置 Azure CLI 环境。安装 Azure CLI 之后，可以从命令行接口（Bash、终端或命令提示符）使用 **azure** 命令访问 Azure CLI 命令。例如：
+- **Azure CLI**。请按照[此 CLI 安装指南](/documentation/articles/xplat-cli-install/)中的说明在计算机上设置 Azure CLI 环境。安装 Azure CLI 之后，可以从命令行接口（Bash、终端或命令提示符）使用 **azure** 命令访问 Azure CLI 命令。例如：
 	- 运行 **azure vm extension set --help** 了解详细的帮助信息。
 	- 运行 **azure login** 以登录到 Azure。
 	- 运行 **vm list** 以列出你在 Azure 上拥有的所有虚拟机。
@@ -129,7 +129,7 @@ Linux 诊断扩展可帮助用户监视 Azure 上运行的 Linux VM。它具有�
 
 
 ## 查看数据
-性能和诊断数据存储在 Azure 存储表中。查看[如何通过 Ruby 使用 Azure 表存储](/documentation/articles/storage-ruby-how-to-use-table-storage)，以了解如何使用 Azure CLI 脚本访问存储表中的数据。
+性能和诊断数据存储在 Azure 存储表中。查看[如何通过 Ruby 使用 Azure 表存储](/documentation/articles/storage-ruby-how-to-use-table-storage/)，以了解如何使用 Azure CLI 脚本访问存储表中的数据。
 
 此外，可以使用以下 UI 工具来访问数据：
 

@@ -25,7 +25,7 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 ## 中继消息传送
 
-服务总线的[中继](/documentation/articles/service-bus-relay-overview)组件是一种集中式（但负载高度平衡的）服务，支持各种不同的传输协议和 Web 服务标准。包括 SOAP、WS-* 甚至 REST。[中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)提供了各种不同的中继连接选项，并且可以在有可能时帮助协商直接对等连接。服务总线针对使用 Windows Communication Foundation (WCF) 的 .NET 开发人员在性能与可用性方面进行了优化，并且通过 SOAP 和 REST 接口提供到中继服务的完全访问。这样就可以将任何 SOAP 或 REST 编程环境与服务总线进行集成。
+服务总线的[中继](/documentation/articles/service-bus-relay-overview/)组件是一种集中式（但负载高度平衡的）服务，支持各种不同的传输协议和 Web 服务标准。包括 SOAP、WS-* 甚至 REST。[中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay/)提供了各种不同的中继连接选项，并且可以在有可能时帮助协商直接对等连接。服务总线针对使用 Windows Communication Foundation (WCF) 的 .NET 开发人员在性能与可用性方面进行了优化，并且通过 SOAP 和 REST 接口提供到中继服务的完全访问。这样就可以将任何 SOAP 或 REST 编程环境与服务总线进行集成。
 
 中继服务支持传统的单向消息传送、请求/响应消息传送和对等消息传送。它还支持 Internet 范围的事件分发，以实现发布 - 订阅方案和双向套接字通信，从而提高点到点通信效率。在中继消息模式中，本地服务会通过出站端口连接至中继服务，并创建双向套接字用于绑定至特定集合地址的通信。客户端然后可以通过将消息发送到抵达会合地址的中继服务来与内部服务通信。中继服务接着通过已部署的双向套接字将消息“中继”到本地服务。客户端不需要与本地服务建立直接连接，也不需要了解服务所在的位置，并且本地服务无需在防火墙上打开任何入站端口。
 
@@ -35,9 +35,9 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 ## <a name="Brokered-messaging"></a>中转消息传送
 
-对照中继消息传送方案，可认为[中转消息传送](/documentation/articles/service-bus-fundamentals-hybrid-solutions)是异步的，或者“暂时分离的”。 消息生产者（发送者）和使用者（接收者）不必同时处于联机状态。消息传送基础结构将消息可靠地存储在“中转站”中（例如一个队列），直到使用方准备好接收它们。这将允许分布式应用程序的组件断开连接，例如，为进行维护而自动断开，或因组件故障断开连接，而不会影响整个系统。此外，接收应用程序可能仅需在一天中某个时间处于联机状态，例如库存管理系统只需在工作日结束时运行。
+对照中继消息传送方案，可认为[中转消息传送](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)是异步的，或者“暂时分离的”。 消息生产者（发送者）和使用者（接收者）不必同时处于联机状态。消息传送基础结构将消息可靠地存储在“中转站”中（例如一个队列），直到使用方准备好接收它们。这将允许分布式应用程序的组件断开连接，例如，为进行维护而自动断开，或因组件故障断开连接，而不会影响整个系统。此外，接收应用程序可能仅需在一天中某个时间处于联机状态，例如库存管理系统只需在工作日结束时运行。
 
-服务总线中转消息传送基础结构的核心组件是队列、主题和订阅。两者的主要差别在于，主题支持可用于基于内容的复杂路由和传送逻辑的发布/订阅功能，包括发送到多个接收方。这些组件启用新的异步消息传送方案，例如暂时分离、发布/订阅和负载平衡。有关消息传送实体的详细信息，请参阅[服务总线队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions)。
+服务总线中转消息传送基础结构的核心组件是队列、主题和订阅。两者的主要差别在于，主题支持可用于基于内容的复杂路由和传送逻辑的发布/订阅功能，包括发送到多个接收方。这些组件启用新的异步消息传送方案，例如暂时分离、发布/订阅和负载平衡。有关消息传送实体的详细信息，请参阅[服务总线队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)。
 
 与中继消息传送基础结构一样，中转消息传送功能是为 WCF 和 .NET Framework 程序员提供的，并且也是通过 REST 提供。
 
@@ -45,11 +45,11 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 若要了解有关服务总线消息传送的详细信息，请参阅以下主题。
 
-- [服务总线队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions)
-- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
-- [服务总线体系结构](/documentation/articles/service-bus-architecture)
-- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+- [服务总线队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)
+- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
+- [服务总线体系结构](/documentation/articles/service-bus-architecture/)
+- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
 
-- [如何使用服务总线主题](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
+- [如何使用服务总线主题](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/)
 
 <!---HONumber=Mooncake_0104_2016-->

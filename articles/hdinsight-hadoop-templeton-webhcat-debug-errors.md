@@ -25,7 +25,7 @@
 
 > [AZURE.IMPORTANT]本文档中列出的几大错误之所以发生，是因为超出了配置的最大值。当解决步骤提到你可以更改一个值时，必须使用下列选项之一来执行更改：
 
-* 对于 **Windows** 群集：使用脚本操作在群集创建过程中配置值。有关详细信息，请参阅[开发脚本操作](/documentation/articles/hdinsight-hadoop-script-actions)。
+* 对于 **Windows** 群集：使用脚本操作在群集创建过程中配置值。有关详细信息，请参阅[开发脚本操作](/documentation/articles/hdinsight-hadoop-script-actions/)。
 
 ###默认配置
 

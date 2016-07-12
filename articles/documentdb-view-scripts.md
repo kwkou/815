@@ -15,7 +15,7 @@
 
 # 使用 DocumentDB 脚本资源管理器创建并运行存储过程、触发器和用户定义的函数。
 
-本文概述了 [Azure DocumentDB](/services/documentdb/) 脚本资源管理器，它是 Azure 门户预览中的 JavaScript 编辑器，用于查看和执行 DocumentDB 服务器端的编程项目，包括存储过程、触发器和用户定义的函数。阅读[存储过程、数据库触发器和 UDF](/documentation/articles/documentdb-programming) 一文中有关 DocumentDB 服务器端编程的详细信息。
+本文概述了 [Azure DocumentDB](/services/documentdb/) 脚本资源管理器，它是 Azure 门户预览中的 JavaScript 编辑器，用于查看和执行 DocumentDB 服务器端的编程项目，包括存储过程、触发器和用户定义的函数。阅读[存储过程、数据库触发器和 UDF](/documentation/articles/documentdb-programming/) 一文中有关 DocumentDB 服务器端编程的详细信息。
 
 ## 启动脚本资源管理器
 
@@ -85,7 +85,7 @@
 
 ## 执行存储过程
 
-> [AZURE.WARNING] 对于服务器端分区的集合，尚不支持在脚本资源管理器中执行存储过程。有关详细信息，请访问 [DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data)。
+> [AZURE.WARNING] 对于服务器端分区的集合，尚不支持在脚本资源管理器中执行存储过程。有关详细信息，请访问 [DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data/)。
 
 脚本资源管理器允许你通过 Azure 门户预览执行服务器端存储过程。
 
@@ -107,10 +107,10 @@
 
 ## 在门户预览外使用脚本
 
-Azure 门户预览中的脚本资源管理器只是在 DocumentDB 中使用存储过程、触发器和用户定义的函数的一种方式。你还可以通过 REST API 和[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 使用这些脚本。REST API 文档包含有关[使用 REST 的存储过程](https://msdn.microsoft.com/library/azure/mt489092.aspx)、[使用 REST 的用户定义的函数](https://msdn.microsoft.com/library/azure/dn781481.aspx)和[使用 REST 的触发器](https://msdn.microsoft.com/library/azure/mt489116.aspx)的示例。还提供了介绍如何[使用 C# 处理脚本](/documentation/articles/documentdb-dotnet-samples#server-side-programming-examples)和[使用 Node.js 处理脚本](/documentation/articles/documentdb-nodejs-samples#server-side-programming-examples)的信息的示例。
+Azure 门户预览中的脚本资源管理器只是在 DocumentDB 中使用存储过程、触发器和用户定义的函数的一种方式。你还可以通过 REST API 和[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 使用这些脚本。REST API 文档包含有关[使用 REST 的存储过程](https://msdn.microsoft.com/library/azure/mt489092.aspx)、[使用 REST 的用户定义的函数](https://msdn.microsoft.com/library/azure/dn781481.aspx)和[使用 REST 的触发器](https://msdn.microsoft.com/library/azure/mt489116.aspx)的示例。还提供了介绍如何[使用 C# 处理脚本](/documentation/articles/documentdb-dotnet-samples/#server-side-programming-examples)和[使用 Node.js 处理脚本](/documentation/articles/documentdb-nodejs-samples/#server-side-programming-examples)的信息的示例。
 
 ## 后续步骤
 
-在[存储过程、数据库触发器和 UDF](/documentation/articles/documentdb-programming) 一文中了解有关 DocumentDB 服务器端编程的详细信息。
+在[存储过程、数据库触发器和 UDF](/documentation/articles/documentdb-programming/) 一文中了解有关 DocumentDB 服务器端编程的详细信息。
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -32,9 +32,9 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 	* Visual Studio 2015 预览版
 
-* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)
+* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)
 
-* Hadoop Tools for Visual Studio。有关安装和配置该工具的步骤，请参阅[开始使用 HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+* Hadoop Tools for Visual Studio。有关安装和配置该工具的步骤，请参阅[开始使用 HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 ##HDInsight 上的 .NET
 
@@ -189,7 +189,7 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 ###上载应用程序
 
-1. Pig 流式处理预期应用程序位于群集文件系统本地。为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)中的说明连接到该群集。
+1. Pig 流式处理预期应用程序位于群集文件系统本地。为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
 
 2. 在连接后，从你的本地计算机上 PigUDF 项目的 **bin/debug** 目录中复制 **PigUDF.exe**，并将其粘贴到群集上的 **%PIG\_HOME%** 目录中。
 
@@ -226,14 +226,14 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 ##摘要
 
-在本文档中，你已了解了如何在 HDInsight 上通过 Hive 和 Pig 使用 .NET Framework 应用程序。如果希望了解如何将 Python 与 Hive 和 Pig 配合使用，请参阅[在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python)。
+在本文档中，你已了解了如何在 HDInsight 上通过 Hive 和 Pig 使用 .NET Framework 应用程序。如果希望了解如何将 Python 与 Hive 和 Pig 配合使用，请参阅[在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python/)。
 
 若要了解使用 Pig、Hive 的其他方式以及如何使用 MapReduce，请参阅以下文章：
 
-* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=79-->

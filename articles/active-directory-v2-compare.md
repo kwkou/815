@@ -17,7 +17,7 @@
 如果你熟悉 Azure Active Directory 或过去已将应用与 Azure AD 集成，v2.0 终结点中可能有一些预料不到的差异。本文档汇总了这些差异来帮助你了解。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 
 ## Microsoft 帐户和 Azure AD 帐户
@@ -25,7 +25,7 @@ v2.0 终结点允许开发人员编写可接受使用单一身份验证终结点
 
 例如，如果应用调用 [Microsoft Graph](https://graph.microsoft.io)，则有一些额外的功能和数据可供企业用户使用，例如他们的 SharePoint 站点或目录数据。但在许多操作（例如[阅读用户的邮件](https://graph.microsoft.io/docs/api-reference/v1.0/resources/message)）中，针对 Microsoft 帐户和 Azure AD 帐户编写的代码可以完全相同。
 
-将应用与 Microsoft 帐户和 Azure AD 帐户集成现在是一个简单的过程。你可以使用一组终结点、单个资源库和单个应用注册来进入消费者和企业的世界。若要深入了解 v2.0 终结点，请查看[概述](/documentation/articles/active-directory-appmodel-v2-overview)。
+将应用与 Microsoft 帐户和 Azure AD 帐户集成现在是一个简单的过程。你可以使用一组终结点、单个资源库和单个应用注册来进入消费者和企业的世界。若要深入了解 v2.0 终结点，请查看[概述](/documentation/articles/active-directory-appmodel-v2-overview/)。
 
 
 ## 新的应用注册门户
@@ -96,7 +96,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 		...
 
 
-应用程序的上述请求权限可读取 Azure AD 用户的目录数据，以及将数据写入到其目录。如果用户过去曾针对此特定应用程序同意这些权限，他们只要输入其凭据并登录应用程序。如果用户未曾同意这些权限的任何一项，v2.0 终结点请求用户同意这些权限。若要了解详细信息，可以阅读[权限、同意和范围](/documentation/articles/active-directory-v2-scopes)。
+应用程序的上述请求权限可读取 Azure AD 用户的目录数据，以及将数据写入到其目录。如果用户过去曾针对此特定应用程序同意这些权限，他们只要输入其凭据并登录应用程序。如果用户未曾同意这些权限的任何一项，v2.0 终结点请求用户同意这些权限。若要了解详细信息，可以阅读[权限、同意和范围](/documentation/articles/active-directory-v2-scopes/)。
 
 允许应用通过 `scope` 参数动态请求权限，即可完全掌控用户的体验。如果需要，你可以选择将同意体验提前，并在一个初始授权请求中请求所有的权限。或者，如果应用程序需要大量的权限，可以选择在尝试使用应用程序的某些功能时，以递增方式向用户收集这些权限。
 
@@ -105,9 +105,9 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 #### 脱机访问
 v2.0 终结点可能需要针对应用使用新的已知权限 — `offline_access` 范围。如果应用程序需要长期表示用户访问资源，则所有应用程序都需要请求此权限，即使用户可能不主动使用此应用程序亦然。在同意对话框中，`offline_access` 范围对用户显示为“脱机访问数据”，而用户必须同意。请求 `offline_access` 权限可让 Web 应用从 v2.0 终结点接收 OAuth 2.0 refresh\_tokens。Refresh\_tokens 属于长效令牌，可用于交换新的 OAuth 2.0 access\_tokens 以延长访问期间。
 
-如果应用未请求 `offline_access` 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow)中兑换 authorization\_code 时，只从 `/token` 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 `/authorize` 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
+如果应用未请求 `offline_access` 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow)中兑换 authorization\_code 时，只从 `/token` 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 `/authorize` 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
 
-若要深入了解 OAuth 2.0、refresh\_tokens 和 access\_tokens，请查看 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols)。
+若要深入了解 OAuth 2.0、refresh\_tokens 和 access\_tokens，请查看 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
 #### OpenID、profile 和 email
 
@@ -117,15 +117,15 @@ v2.0 终结点可能需要针对应用使用新的已知权限 — `offline_acce
 
 `email` 范围非常简单，它可让应用通过 id\_token 中的 `email` 声明访问用户的主要电子邮件地址。`profile` 范围可让应用访问用户的所有其他基本信息 — 其名称、首选用户名、对象 ID 等等。
 
-这样，你就能够以最低泄漏的方式编码应用程序 – 只可以向用户请求应用程序执行其作业所需的信息集。有关这些范围的详细信息，请参阅 [v2.0 范围参考](/documentation/articles/active-directory-v2-scopes)。
+这样，你就能够以最低泄漏的方式编码应用程序 – 只可以向用户请求应用程序执行其作业所需的信息集。有关这些范围的详细信息，请参阅 [v2.0 范围参考](/documentation/articles/active-directory-v2-scopes/)。
 
 
 ## 令牌声明
 v2.0 终结点颁发的令牌中的声明与正式版 Azure AD 终结点颁发的令牌不同 - 迁移到新服务的应用程序不应假设特定的声明存在于 id\_tokens 或 access\_tokens 中。v2.0 终结点颁发的令牌与 OAuth 2.0 和 OpenID Connect 规范兼容，但可能遵循与正式版 Azure AD 服务不同的语义。
 
-若要了解 v2.0 令牌中发出的特定声明，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens)。
+若要了解 v2.0 令牌中发出的特定声明，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)。
 
 ## 限制
-使用 v2.0 终结点时有一些要注意的限制。请参阅 [v2.0 限制文档](/documentation/articles/active-directory-v2-limitations)，以了解特定的方案是否存在任何限制。
+使用 v2.0 终结点时有一些要注意的限制。请参阅 [v2.0 限制文档](/documentation/articles/active-directory-v2-limitations/)，以了解特定的方案是否存在任何限制。
 
 <!---HONumber=Mooncake_0620_2016-->

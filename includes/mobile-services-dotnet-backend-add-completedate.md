@@ -4,7 +4,7 @@
 
 2. 请注意，在 WebApiConfig.cs 文件中，默认数据库初始值设定项类是从  `DropCreateDatabaseIfModelChanges` 类派生的。这意味着，对该模型的任何更改将导致表被删除并重新创建，以适应新模型。因此表中的数据将丢失，并且表将重新植入。修改数据库初始值设定项的 Seed 方法，使得种子数据如下所示，然后保存 WebApiConfig.cs 文件。
 
-    >[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](/zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+    >[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](/zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)。
 
         List<TodoItem> todoItems = new List<TodoItem>
         {

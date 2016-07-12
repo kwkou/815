@@ -45,7 +45,7 @@ Azure 自动化还可以通过使用 PowerShell 发出 SQL 命令，来与 SQL �
 
 在了解 Azure 自动化 以及如何使用它来管理 Azure SQL 数据库的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
 
-- [Azure 自动化概述](/documentation/articles/automation-intro)
+- [Azure 自动化概述](/documentation/articles/automation-intro/)
 - [Azure 自动化学习路线图](https://azure.microsoft.com/documentation/learning-paths/automation)
 - [Azure 自动化：你在云中的 SQL 代理](https://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud) 
  

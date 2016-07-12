@@ -28,7 +28,7 @@
 5. 想要在部署期间传入的值，以及想要在模板中直接定义的值
 6. 是否需要从部署返回值
 
-为了帮助找出哪些资源类型可供部署、各类型支持的区域，以及每个类型可用的 API 版本，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
+为了帮助找出哪些资源类型可供部署、各类型支持的区域，以及每个类型可用的 API 版本，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 
 您必须将您的模版大小限制为 1 MB 以内，每个参数文件大小限制为 64 KB 以内。已完成对迭代资源定义和变量值和参数值的扩展后，1 MB 的限制将适用于该模板的最终状态。
 
@@ -70,7 +70,7 @@
        "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
     }
 
-有关模板函数的完整列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)。
+有关模板函数的完整列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)。
 
 
 ## Parameters
@@ -210,7 +210,7 @@
 
 ## 资源
 
-在 resources 节，可以定义部署或更新的资源。模板中的此位置可能比较复杂，因为你必须了解要部署哪些类型才能提供正确的值。若要进一步了解资源提供程序，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
+在 resources 节，可以定义部署或更新的资源。模板中的此位置可能比较复杂，因为你必须了解要部署哪些类型才能提供正确的值。若要进一步了解资源提供程序，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 
 使用以下结构定义资源：
 
@@ -241,7 +241,7 @@
 | 标记 | 否 | 与资源关联的标记。
 | 注释 | 否 | 用于描述模板中资源的注释
 | dependsOn | 否 | 正在定义的资源所依赖的资源。将会评估资源之间的依赖关系，并按资源的依赖顺序来部署资源。如果资源不相互依赖，则会尝试并行部署资源。该值可以是资源名称或资源唯一标识符的逗号分隔列表。
-| properties | 否 | 特定于资源的配置设置。properties 的值与你在创建资源时，在 REST API 操作（PUT 方法）的请求正文中提供的值完全相同。有关资源架构文档或 REST API 的链接，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
+| properties | 否 | 特定于资源的配置设置。properties 的值与你在创建资源时，在 REST API 操作（PUT 方法）的请求正文中提供的值完全相同。有关资源架构文档或 REST API 的链接，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 | 资源 | 否 | 依赖于所定义的资源的子资源。只能提供父资源的架构允许的资源类型。子资源类型的完全限定名称包含父资源类型，例如 **Microsoft.Web/sites/extensions**。对父资源的依赖性不是隐式的；你必须显式定义该依赖性。 
 
 
@@ -366,15 +366,15 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 ## 更高级方案。
 本主题提供了有关模板的简介。但是，你的方案可能需要更高级的任务。
 
-你可能需要将两个模板合并在一起，或者在父模板中使用子模板。有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)。
+你可能需要将两个模板合并在一起，或者在父模板中使用子模板。有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates/)。
 
-若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
 
 你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)。
 
 ## 后续步骤
-- 有关你可以使用的来自模板中的函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
-- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
+- 有关你可以使用的来自模板中的函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)
+- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 - 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)
 
 <!---HONumber=Mooncake_0425_2016-->

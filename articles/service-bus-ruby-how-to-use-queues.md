@@ -29,8 +29,8 @@ Service Bus 队列支持*中转消息*通信模型。在使用队列时，分布
 
 Service Bus 队列是一种可用于各种应用场景的通用技术：
 
--   [多层 Azure 应用程序](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues)中 Web 角色和辅助角色之间的通信。
--   [混合解决方案](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay)中本地应用程序和 Azure 托管应用程序之间的通信。
+-   [多层 Azure 应用程序](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/)中 Web 角色和辅助角色之间的通信。
+-   [混合解决方案](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)中本地应用程序和 Azure 托管应用程序之间的通信。
 -   在不同组织或组织的各部门中本地运行的分布式应用程序组件之间的通信
 
 利用队列，您可以更好地向外扩展应用程序，并增强您的体系结构的恢复能力。
@@ -59,7 +59,7 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 ## 创建 Ruby 应用程序
 
-创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/zh-cn/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app)。
+创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/zh-cn/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)。
 
 ## 配置应用程序以使用 Service Bus
 
@@ -144,9 +144,9 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。
 
--   [队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions)的概述
+-   [队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)的概述
 -   访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-有关本文中讨论的 Azure 服务总线队列与[如何使用 Azure 队列服务](/develop/ruby/)一文中讨论的 Azure 队列的比较，请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
+有关本文中讨论的 Azure 服务总线队列与[如何使用 Azure 队列服务](/develop/ruby/)一文中讨论的 Azure 队列的比较，请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
 
 <!---HONumber=Mooncake_0104_2016-->

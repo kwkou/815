@@ -80,11 +80,11 @@ Azure 网站不支持所有本机模块，并且在编译那要求具有非常�
 
 有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
-[指定 Node.js 版本]: /documentation/articles/nodejs-specify-node-version-azure-apps
-[如何使用适用于 Mac 和 Linux 的 Azure 命令行界面]: /documentation/articles/xplat-cli-install
-[生成和部署 Node.js 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Node.js Web Application with Storage on MongoDB (MongoLab)]: /documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb
-[Publishing with Git]: /documentation/articles/web-sites-publish-source-control
-[Build and deploy a Node.js application to an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+[指定 Node.js 版本]: /documentation/articles/nodejs-specify-node-version-azure-apps/
+[如何使用适用于 Mac 和 Linux 的 Azure 命令行界面]: /documentation/articles/xplat-cli-install/
+[生成和部署 Node.js 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Node.js Web Application with Storage on MongoDB (MongoLab)]: /documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/
+[Publishing with Git]: /documentation/articles/web-sites-publish-source-control/
+[Build and deploy a Node.js application to an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
 
 <!---HONumber=Mooncake_0425_2016-->

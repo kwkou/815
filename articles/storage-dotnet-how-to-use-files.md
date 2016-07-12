@@ -23,9 +23,9 @@ Azure 文件存储是一种使用标准[服务器消息块 (SMB) 协议](https:/
 
 你可以使用 Azure 存储空间 PowerShell cmdlet、Azure 存储空间客户端库或 Azure 存储空间 REST API 来创建 Azure 文件共享。此外，由于这些文件共享是 SMB 共享，因此你还可以通过标准的和熟悉的文件系统 API 来访问它们。
 
-有关通过 Linux 使用文件存储的信息，请参阅[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)。
+有关通过 Linux 使用文件存储的信息，请参阅[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux/)。
 
-有关文件存储的可伸缩性和性能目标的信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-blobs-queues-tables-and-files)。
+有关文件存储的可伸缩性和性能目标的信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/#scalability-targets-for-blobs-queues-tables-and-files)。
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -45,7 +45,7 @@ Azure 文件存储是一种使用标准[服务器消息块 (SMB) 协议](https:/
 	- 将文件复制到同一存储帐户中的一个 Blob。
 - 使用 Azure 存储空间度量值进行故障排除
 
-现在所有存储帐户均支持文件存储，因此你可以使用现有存储帐户，也可以创建新的存储帐户。请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)，了解有关创建新存储帐户的信息。
+现在所有存储帐户均支持文件存储，因此你可以使用现有存储帐户，也可以创建新的存储帐户。请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)，了解有关创建新存储帐户的信息。
 
 <!--
 ## Use the Azure preview portal to manage a file share
@@ -63,7 +63,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 为 Azure 存储空间安装 PowerShell cmdlet
 
-若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 > [AZURE.NOTE] 建议你下载并安装最新的 Azure PowerShell 模块或升级到最新模块。
 
@@ -71,7 +71,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 为存储帐户和密钥创建上下文
 
-现在，将创建存储帐户上下文。该上下文封装了存储帐户名称和帐户密钥。有关从[管理门户](https://manage.windowsazure.cn)复制帐户密钥的说明，请参阅[查看和复制存储访问密钥](/documentation/articles/storage-create-storage-account#view-and-copy-storage-access-keys)。
+现在，将创建存储帐户上下文。该上下文封装了存储帐户名称和帐户密钥。有关从[管理门户](https://manage.windowsazure.cn)复制帐户密钥的说明，请参阅[查看和复制存储访问密钥](/documentation/articles/storage-create-storage-account/#view-and-copy-storage-access-keys)。
 
 请将下面示例中的 `storage-account-name` 和 `storage-account-key` 替换为你的存储帐户名称和密钥：
 
@@ -146,8 +146,8 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 为了演示如何装载 Azure 文件共享，现在我们将创建一个运行 Windows 的 Azure 虚拟机，并远程登录到它内部以装载共享。
 
 
-1. 首先，按照[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)中的说明创建新的 Azure 虚拟机。
-2. 接下来，按照[使用 Azure 门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)中的说明远程登录到虚拟机。
+1. 首先，按照[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal/)中的说明创建新的 Azure 虚拟机。
+2. 接下来，按照[使用 Azure 门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-log-on-windows-server/)中的说明远程登录到虚拟机。
 3. 在该虚拟机上打开 PowerShell 窗口。
 
 ### 保存虚拟机的存储帐户凭据
@@ -330,13 +330,13 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
         Console.WriteLine(fileSas.DownloadText());
     }
 
-有关创建和使用共享访问签名的更多信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2)。
+有关创建和使用共享访问签名的更多信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
 ### 复制文件
 
 从 Azure 存储空间客户端库的 5.x 版开始，可以将一个文件复制到另一个文件，将一个文件复制到一个 Blob，或将一个 Blob 复制到一个文件。在后续部分中，我们将演示如何以编程方式执行这些复制操作。
 
-还可以使用 AzCopy 将一个文件复制到另一个文件或将一个 Blob 复制到一个文件，反之亦然。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+还可以使用 AzCopy 将一个文件复制到另一个文件或将一个 Blob 复制到一个文件，反之亦然。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
 > [AZURE.NOTE] 如果将一个 Blob 复制到一个文件，或将一个文件复制到一个 Blob，必须使用共享访问签名 (SAS) 对源对象进行身份验证，即使你在同一存储帐户内进行复制。
 
@@ -555,13 +555,13 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 ### 概念性文章
 
 - [Azure 文件存储：适用于 Windows 和 Linux 的顺畅的云 SMB 文件系统](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
-- [如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)
+- [如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux/)
 
 ### 文件存储的工具支持
 
-- [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full)
-- [如何对 Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)
-- [将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
+- [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/)
+- [如何对 Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy/)
+- [将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli/#create-and-manage-file-shares)
 
 ### 引用
 

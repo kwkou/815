@@ -27,7 +27,7 @@ namespaceManager.CreateSubscription(srcSubscription));
 
 创建源实体时，目标实体必须存在。如果目标实体不存在，则当创建源实体时，服务总线将返回异常。
 
-可以使用自动转发来横向扩展单个主题。服务总线将[给定主题的订阅数](/documentation/articles/service-bus-quotas)限制为 2,000。你可以通过创建二级主题来容纳其他订阅。请注意，即使订阅数并未受到服务总线限制，添加二级主题也可以提高主题的整体吞吐量。
+可以使用自动转发来横向扩展单个主题。服务总线将[给定主题的订阅数](/documentation/articles/service-bus-quotas/)限制为 2,000。你可以通过创建二级主题来容纳其他订阅。请注意，即使订阅数并未受到服务总线限制，添加二级主题也可以提高主题的整体吞吐量。
 
 ![自动转发方案][0]
 
@@ -39,7 +39,7 @@ namespaceManager.CreateSubscription(srcSubscription));
 
 ## 自动转发注意事项
 
-如果目标实体累积了多条消息并超出配额，或禁用了目标实体，则源实体会将消息添加到其[死信队列](/documentation/articles/service-bus-dead-letter-queues)，直到目标中存在可用空间（或重新启用了该实体）。这些消息将继续位于死信队列中，因此你必须从死信队列显式接收和处理它们。
+如果目标实体累积了多条消息并超出配额，或禁用了目标实体，则源实体会将消息添加到其[死信队列](/documentation/articles/service-bus-dead-letter-queues/)，直到目标中存在可用空间（或重新启用了该实体）。这些消息将继续位于死信队列中，因此你必须从死信队列显式接收和处理它们。
 
 当将单个主题链接到一起以获取包含许多订阅的复合主题时，建议设置适量的一级主题订阅和许多二级主题订阅。例如，一个包含 20 个订阅的一级主题（其中每个订阅都链接到包含 200 个订阅的二级主题）就能够比包含 200 个订阅的一级主题（其中每个订阅链接到包含 20 个订阅的二级主题）具有更高的吞吐量。
 
@@ -63,5 +63,5 @@ namespaceManager.CreateSubscription(srcSubscription));
   [SubscriptionDescription]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptiondescription.aspx
   [0]: ./media/service-bus-auto-forwarding/IC628631.gif
   [1]: ./media/service-bus-auto-forwarding/IC628632.gif
-  [分区消息实体]: /documentation/articles/service-bus-partitioning
+  [分区消息实体]: /documentation/articles/service-bus-partitioning/
 <!---HONumber=Mooncake_0620_2016-->

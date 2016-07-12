@@ -16,15 +16,15 @@
 
 若要为SQL Server Stretch Database配置某个数据库，请在 SQL Server Management Studio 中选择该数据库对应的“任务 | 延伸 | 启用”，打开“为数据库启用延伸”向导。也可以使用 Transact-SQL 为数据库启用SQL Server Stretch Database。
 
-如果你针对某个表选择了“任务 | 延伸 | 启用”但尚未为数据库启用SQL Server Stretch Database，该向导将为SQL Server Stretch Database配置数据库，并让你在此配置过程中配置表。请遵循本主题中的步骤，而不要遵循[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database)中的步骤。
+如果你针对某个表选择了“任务 | 延伸 | 启用”但尚未为数据库启用SQL Server Stretch Database，该向导将为SQL Server Stretch Database配置数据库，并让你在此配置过程中配置表。请遵循本主题中的步骤，而不要遵循[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database/)中的步骤。
 
 对数据库或表启用SQL Server Stretch Database需要有 db\_owner 权限。对数据库启用SQL Server Stretch Database还需要有 CONTROL DATABASE 权限。
 
 ## 准备工作
 
--   在为延伸配置数据库之前，我们建议你运行SQL Server Stretch Database顾问来识别符合延伸条件的数据库和表。SQL Server Stretch Database顾问还可识别阻碍性问题。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)。
+-   在为延伸配置数据库之前，我们建议你运行SQL Server Stretch Database顾问来识别符合延伸条件的数据库和表。SQL Server Stretch Database顾问还可识别阻碍性问题。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)。
 
--   请查看[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations)。
+-   请查看[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations/)。
 
 -   SQL Server Stretch Database会将数据迁移到 Azure。因此，你必须拥有一个 Azure 帐户和订阅以供计费。若要获取 Azure 帐户，请[单击此处](/pricing/1rmb-trial/)。
 
@@ -48,7 +48,7 @@ GO
 有关详细信息，请参阅[配置 remote data archive 服务器配置选项](https://msdn.microsoft.com/zh-cn/library/mt143175.aspx) 和 [sp\_configure (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188787.aspx)。
 
 ## <a name="Wizard"></a>使用向导来对数据库启用SQL Server Stretch Database
-有关“为数据库启用延伸向导”的信息，包括必须输入的信息以及必须选择的选项，请参阅[为数据库启用延伸向导](/documentation/articles/sql-server-stretch-database-wizard)。
+有关“为数据库启用延伸向导”的信息，包括必须输入的信息以及必须选择的选项，请参阅[为数据库启用延伸向导](/documentation/articles/sql-server-stretch-database-wizard/)。
 
 ## <a name="EnableTSQLDatabase"></a>使用 Transact-SQL 对数据库启用SQL Server Stretch Database
 在对各个表启用SQL Server Stretch Database之前，必须先对数据库启用SQL Server Stretch Database。
@@ -113,18 +113,18 @@ GO
 ## 后续步骤
 为SQL Server Stretch Database启用其他表。监视数据迁移与管理已启用延伸的数据库和表。
 
--   参阅[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table)来启用其他表。
+-   参阅[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)来启用其他表。
 
--   参阅[监视SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-monitor)来查看数据迁移状态。
+-   参阅[监视SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-monitor/)来查看数据迁移状态。
 
--   [暂停和恢复SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-pause)
+-   [暂停和恢复SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-pause/)
 
--   [SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)
+-   [SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage/)
 
--   [备份和还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-backup)
+-   [备份和还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-backup/)
 
 ## 另请参阅
-[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)
+[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)
 [ALTER DATABASE SET 选项 (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/bb522682.aspx)
 
 <!---HONumber=Mooncake_0307_2016-->

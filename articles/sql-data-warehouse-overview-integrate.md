@@ -25,18 +25,18 @@ Azure 流分析是复杂、完全托管的基础结构，用于处理和使用�
 
 + **作业输出**：将流分析作业的输出直接发送到 SQL 数据仓库。
 
-有关详细信息，请参阅[与 Azure 流分析集成](/documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics)或 [Azure 流分析文档](/documentation/services/stream-analytics/)。
+有关详细信息，请参阅[与 Azure 流分析集成](/documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics/)或 [Azure 流分析文档](/documentation/services/stream-analytics/)。
 
 <!--Image references-->
 
 <!--Article references-->
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
-[Azure Data Factory]: /documentation/articles/sql-data-warehouse-integrate-azure-data-factory
-[Azure Machine Learning]: /documentation/articles/sql-data-warehouse-integrate-azure-machine-learning
-[Azure Stream Analytics]: /documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics
-[Power BI]: /documentation/articles/sql-data-warehouse-integrate-power-bi
-[Partners]: /documentation/articles/sql-data-warehouse-integrate-solution-partners
+[Azure Data Factory]: /documentation/articles/sql-data-warehouse-integrate-azure-data-factory/
+[Azure Machine Learning]: /documentation/articles/sql-data-warehouse-integrate-azure-machine-learning/
+[Azure Stream Analytics]: /documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics/
+[Power BI]: /documentation/articles/sql-data-warehouse-integrate-power-bi/
+[Partners]: /documentation/articles/sql-data-warehouse-integrate-solution-partners/
 
 <!--MSDN references-->
 

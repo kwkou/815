@@ -16,7 +16,7 @@
 #使用 castLabs 将 Widevine 许可证传送到 Azure 媒体服务
 
 > [AZURE.SELECTOR]
-- [castLabs](/documentation/articles/media-services-castlabs-integration)
+- [castLabs](/documentation/articles/media-services-castlabs-integration/)
 
 ##概述
 

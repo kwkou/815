@@ -92,7 +92,7 @@
 
 
 ### 群集部署之后
-这稍微要复杂一点，并且可能会导致 VM 设置被回收。你现在必须使用 Azure PowerShell 设置新值。请确保计算机上已安装 Azure PowerShell 1.0 或更高版本。如果尚未安装，我强烈建议你根据 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)（如何安装和配置 Azure PowerShell）一文中所述的步骤安装。
+这稍微要复杂一点，并且可能会导致 VM 设置被回收。你现在必须使用 Azure PowerShell 设置新值。请确保计算机上已安装 Azure PowerShell 1.0 或更高版本。如果尚未安装，我强烈建议你根据 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）一文中所述的步骤安装。
 
 登录到你的 Azure 帐户。如果此 PowerShell 命令由于某些原因而失败，你应该检查 Azure PowerShell 是否已正确安装。
 
@@ -118,9 +118,9 @@ Set-AzureRmResource -PropertyObject $PropertiesObject -ResourceGroupName <RG nam
 
 ## 后续步骤
 
-- [“随地部署”功能的概述及其与 Azure 托管群集的比较](/documentation/articles/service-fabric-deploy-anywhere)
-- [群集安全性](/documentation/articles/service-fabric-cluster-security)
-- [Service Fabric SDK 及其入门](/documentation/articles/service-fabric-get-started)
+- [“随地部署”功能的概述及其与 Azure 托管群集的比较](/documentation/articles/service-fabric-deploy-anywhere/)
+- [群集安全性](/documentation/articles/service-fabric-cluster-security/)
+- [Service Fabric SDK 及其入门](/documentation/articles/service-fabric-get-started/)
 
 
 <!--Image references-->

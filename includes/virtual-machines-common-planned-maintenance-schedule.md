@@ -3,9 +3,9 @@
 ## 多实例和单实例 VM
 对于在 Azure 上运行的许多客户而言，在 VM 进行计划内维护时可以计划是非常重要的，因为这会导致停机约 15 分钟。可以在预配的 VM 接收计划内维护时，利用可用性集帮助控制。
 
-有两个可能的 VM 配置在 Azure 上运行。VM 可配置为多实例或单实例。如果 VM 在可用性集中，它们将配置为多实例。请注意，即使单个 VM 也可以部署在可用性集中，并被视为多实例。如果 VM 不在可用性集中，它们将配置为单实例。有关可用性集的详细信息，请参阅 [Manage the Availability of your Windows Virtual Machines（管理 Windows 虚拟机的可用性）](/documentation/articles/virtual-machines-windows-manage-availability)或 [Manage the Availability of your Linux Virtual Machines（管理 Linux 虚拟机的可用性）](/documentation/articles/virtual-machines-linux-manage-availability)。
+有两个可能的 VM 配置在 Azure 上运行。VM 可配置为多实例或单实例。如果 VM 在可用性集中，它们将配置为多实例。请注意，即使单个 VM 也可以部署在可用性集中，并被视为多实例。如果 VM 不在可用性集中，它们将配置为单实例。有关可用性集的详细信息，请参阅 [Manage the Availability of your Windows Virtual Machines（管理 Windows 虚拟机的可用性）](/documentation/articles/virtual-machines-windows-manage-availability/)或 [Manage the Availability of your Linux Virtual Machines（管理 Linux 虚拟机的可用性）](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
-单实例和多实例的 VM 计划内维护更新单独发生。通过将 VM 重新配置为单实例（如果它们是多实例），或配置为多实例（如果它们是单实例），可以控制其 VM 收到计划内维护的时间。有关 Azure VM 计划内维护的详细信息，请参阅 [Planned maintenance for Azure Linux virtual machines（Azure Linux 虚拟机的计划内维护）](/documentation/articles/virtual-machines-linux-planned-maintenance)或 [Planned maintenance for Azure Windows virtual machines（Azure Windows 虚拟机的计划内维护）](/documentation/articles/virtual-machines-windows-planned-maintenance)。
+单实例和多实例的 VM 计划内维护更新单独发生。通过将 VM 重新配置为单实例（如果它们是多实例），或配置为多实例（如果它们是单实例），可以控制其 VM 收到计划内维护的时间。有关 Azure VM 计划内维护的详细信息，请参阅 [Planned maintenance for Azure Linux virtual machines（Azure Linux 虚拟机的计划内维护）](/documentation/articles/virtual-machines-linux-planned-maintenance/)或 [Planned maintenance for Azure Windows virtual machines（Azure Windows 虚拟机的计划内维护）](/documentation/articles/virtual-machines-windows-planned-maintenance/)。
 
 ## 对于多实例配置
 可以通过将 VM 从可用性集删除，以选择计划内维护影响部署在可用性集设置中的 VM 的时间。
@@ -50,7 +50,7 @@ Get-AzureVM -ServiceName "<VmCloudServiceName>" -Name "<VmName>" | Remove-AzureA
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-classic-tutorial
-[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-linux-manage-availability#Understand-planned-versus-unplanned-maintenance
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-classic-tutorial/
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-linux-manage-availability/#Understand-planned-versus-unplanned-maintenance
 
 <!---HONumber=Mooncake_0425_2016-->

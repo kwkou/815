@@ -17,13 +17,13 @@
 
 GSM 和 LSM 跟踪分片环境中每个数据库的映射。有时，GSM 和 LSM 之间将发生中断。在这种情况下，请使用 RecoveryManager 类来检测和修复中断。
 
-RecoveryManager 类是[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的一部分。
+RecoveryManager 类是[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的一部分。
 
 
 ![分片映射][1]
 
 
-有关术语定义，请参阅[弹性数据库工具词汇表](/documentation/articles/sql-database-elastic-scale-glossary)。若要了解如何使用 **ShardMapManager** 来管理分片解决方案中的数据，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)。
+有关术语定义，请参阅[弹性数据库工具词汇表](/documentation/articles/sql-database-elastic-scale-glossary/)。若要了解如何使用 **ShardMapManager** 来管理分片解决方案中的数据，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 
 
 ## 为何使用恢复管理器？
@@ -38,10 +38,10 @@ GSM 和 LSM 可能因以下原因变得不同步：
 
 有关 Azure SQL 数据库弹性数据库工具、异地复制和还原的详细信息，请参阅以下主题：
 
-* [概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity) 
-* [业务连续性设计](/documentation/articles/sql-database-business-continuity-design)
-* [弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)  
-* [ShardMap 管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)
+* [概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity/) 
+* [业务连续性设计](/documentation/articles/sql-database-business-continuity-design/)
+* [弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)  
+* [ShardMap 管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)
 
 ## 从 ShardMapManager 检索 RecoveryManager 
 
@@ -53,7 +53,7 @@ GSM 和 LSM 可能因以下原因变得不同步：
 
 在此示例中，RecoveryManager 已从 ShardMapManager 初始化。包含 ShardMap 的 ShardMapManager 也已初始化。
 
-由于此应用程序代码会处理自身的分片映射，在工厂方法中使用的凭据（上述示例中的 smmConnectionString）应该是对连接字符串引用的 GSM 数据库拥有只读权限的凭据。这些凭据通常与用于对数据相关路由建立连接的凭据不同。有关详细信息，请参阅[在弹性数据库客户端中使用凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials)。
+由于此应用程序代码会处理自身的分片映射，在工厂方法中使用的凭据（上述示例中的 smmConnectionString）应该是对连接字符串引用的 GSM 数据库拥有只读权限的凭据。这些凭据通常与用于对数据相关路由建立连接的凭据不同。有关详细信息，请参阅[在弹性数据库客户端中使用凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials/)。
 
 ## 删除分片后从 ShardMap 中删除分片
 

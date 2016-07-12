@@ -61,9 +61,9 @@ IoT 中心提供多个度量值，使你大致了解中心的运行状况及连�
 [2]: ./media/iot-hub-metrics/enable-metrics-2.png
 [3]: ./media/iot-hub-metrics/enable-metrics-3.png
 
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[lnk-operations-monitoring]: /documentation/articles/iot-hub-operations-monitoring
-[lnk-scaling]: /documentation/articles/iot-hub-scaling
-[lnk-dr]: /documentation/articles/iot-hub-ha-dr
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[lnk-operations-monitoring]: /documentation/articles/iot-hub-operations-monitoring/
+[lnk-scaling]: /documentation/articles/iot-hub-scaling/
+[lnk-dr]: /documentation/articles/iot-hub-ha-dr/
 
 <!---HONumber=Mooncake_0307_2016-->

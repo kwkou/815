@@ -3,12 +3,12 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-etoe-powershell)
-- [English](/documentation/articles/mysql-database-enus-etoe-powershell)
+- [中文](/documentation/articles/mysql-database-etoe-powershell/)
+- [English](/documentation/articles/mysql-database-enus-etoe-powershell/)
 
 #利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure
 
-Azure 资源管理器 (ARM) 是适用于 Azure 服务的全新管理框架。现在可以使用基于 Azure 资源管理器的 API 和工具来管理 MySQL Database on Azure。若要了解有关 Azure 资源管理器的详细信息，请参阅[使用资源组管理 Azure 资源](/documentation/articles/azure-preview-portal-using-resource-groups)。MySQL Database on Azure支持您通过PowerShell脚本查询创建管理删除MySQL服务器、数据库、防火墙原则、用户等，同时支持您通过脚本更改参数设置。本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。对于更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines)。
+Azure 资源管理器 (ARM) 是适用于 Azure 服务的全新管理框架。现在可以使用基于 Azure 资源管理器的 API 和工具来管理 MySQL Database on Azure。若要了解有关 Azure 资源管理器的详细信息，请参阅[使用资源组管理 Azure 资源](/documentation/articles/azure-preview-portal-using-resource-groups/)。MySQL Database on Azure支持您通过PowerShell脚本查询创建管理删除MySQL服务器、数据库、防火墙原则、用户等，同时支持您通过脚本更改参数设置。本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。对于更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines/)。
 
 ###目录
 - [步骤1：安装Azure PowerShell](#step1)
@@ -22,7 +22,7 @@ Azure 资源管理器 (ARM) 是适用于 Azure 服务的全新管理框架。现
 - [步骤9：添加用户权限](#step9)
 
 ##<a id="step1"></a>步骤1： 安装Azure PowerShell
-运行脚本前，您需要安装并运行Azure PowerShell。您可以通过[运行Microsft Web平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装最新版本Azure PowerShell 。可参阅[如何安装和配置Azure PowerShell](/documentation/articles/powershell-install-configure)来了解更多详细步骤。
+运行脚本前，您需要安装并运行Azure PowerShell。您可以通过[运行Microsft Web平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装最新版本Azure PowerShell 。可参阅[如何安装和配置Azure PowerShell](/documentation/articles/powershell-install-configure/)来了解更多详细步骤。
 用于创建和管理MySQL Database on Azure 数据库的cmdlet位于Azure资源管理器模块中。启动Azure PowerShell时，默认情况下将导入Azure模块中的cmdlet。
 请先确认Azure PowerShell版本， 可在控制台运行以下命令：
 ```
@@ -129,6 +129,6 @@ New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -
 ```
 New-AzureRmResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='ReadWrite'}
 ```
-通过上述操作，您已经完成了服务器、数据库、用户、防火墙原则等的创建工作，可以开始使用MySQL Database on Azure的数据库服务。在使用过程中，如需更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines)。
+通过上述操作，您已经完成了服务器、数据库、用户、防火墙原则等的创建工作，可以开始使用MySQL Database on Azure的数据库服务。在使用过程中，如需更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines/)。
 
 

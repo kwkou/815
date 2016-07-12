@@ -32,7 +32,7 @@
 
 假定读者已拥有 Azure 订阅。如果没有，你可以在 [https://www.azure.cn/](/pricing/1rmb-trial/) 中注册试用版。
 
-如果你已有虚拟机，并且只想查找在不同 linux 分发上安装 LAMP 堆栈的基础知识，则除了本主题外，还可以参阅[在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)。
+如果你已有虚拟机，并且只想查找在不同 linux 分发上安装 LAMP 堆栈的基础知识，则除了本主题外，还可以参阅[在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack/)。
 
 
 ##阶段 1：创建映像

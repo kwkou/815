@@ -19,9 +19,9 @@
 
 ## 在 AAD 中为 Service Fabric 群集建模
 
-AAD 可让组织（称为租户）管理用户对应用程序的访问，这些应用程序划分为提供基于 Web 的 UI 的应用程序，以及提供本机客户端体验的应用程序。在本文中，我们假设你已创建一个租户。否则，请先阅读 [How to get an Azure Active Directory tenant](/documentation/articles/active-directory-howto-tenant)（如何获取 Azure Active Directory 租户）。
+AAD 可让组织（称为租户）管理用户对应用程序的访问，这些应用程序划分为提供基于 Web 的 UI 的应用程序，以及提供本机客户端体验的应用程序。在本文中，我们假设你已创建一个租户。否则，请先阅读 [How to get an Azure Active Directory tenant](/documentation/articles/active-directory-howto-tenant/)（如何获取 Azure Active Directory 租户）。
 
-Service Fabric 群集提供其管理功能的各种入口点（包括基于 Web 的 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster) 和 [Visual Studio](/documentation/articles/service-fabric-manage-application-in-visual-studio)）。因此，你将要创建两个 AAD 应用程序来控制对群集的访问：一个 Web 应用程序和一个本机应用程序。
+Service Fabric 群集提供其管理功能的各种入口点（包括基于 Web 的 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster/) 和 [Visual Studio](/documentation/articles/service-fabric-manage-application-in-visual-studio/)）。因此，你将要创建两个 AAD 应用程序来控制对群集的访问：一个 Web 应用程序和一个本机应用程序。
 
 为了简化涉及到配置 AAD 与 Service Fabric 群集的一些步骤，我们创建了一组 Windows PowerShell 脚本。
 
@@ -62,7 +62,7 @@ Service Fabric 群集提供其管理功能的各种入口点（包括基于 Web 
 
 现在，你已创建 AAD 应用程序，接下来可以创建 Service Fabric 群集。目前，Azure 门户不支持配置 Service Fabric 群集的 AAD 身份验证，因此，你需要在 PowerShell 或 Visual Studio 中使用 ARM 模板完成此操作。
 
-请注意，AAD 仅用于向群集进行客户端身份验证。若要创建安全群集，你还必须提供证书用于保护群集中节点之间的通信，并提供群集管理终结点的服务器身份验证。你可以查找 [Azure 快速入门库中安全群集的 ARM 模板][secure-cluster-arm-template]，也可以遵循 [Visual Studio 中 Service Fabric 资源组项目](/documentation/articles/service-fabric-cluster-creation-via-visual-studio)的自述文件中提供的说明。
+请注意，AAD 仅用于向群集进行客户端身份验证。若要创建安全群集，你还必须提供证书用于保护群集中节点之间的通信，并提供群集管理终结点的服务器身份验证。你可以查找 [Azure 快速入门库中安全群集的 ARM 模板][secure-cluster-arm-template]，也可以遵循 [Visual Studio 中 Service Fabric 资源组项目](/documentation/articles/service-fabric-cluster-creation-via-visual-studio/)的自述文件中提供的说明。
 
 将 `SetupApplication` 脚本的 ARM 模板代码段输出作为对方项添加到 fabricSettings、managementEndpoint 等。如果你关闭了窗口，也会显示如下代码：
 
@@ -91,7 +91,7 @@ clusterApplication 表示在上一部分创建的 Web 应用程序。你可以�
 
     ![将用户分配到角色][assign-users-to-roles-dialog]
 
->[AZURE.NOTE] 有关 Service Fabric 中角色的详细信息，请参阅 [Role-based access control for Service Fabric clients](/documentation/articles/service-fabric-cluster-security-roles)（适用于 Service Fabric 客户端的基于角色的访问控制）。
+>[AZURE.NOTE] 有关 Service Fabric 中角色的详细信息，请参阅 [Role-based access control for Service Fabric clients](/documentation/articles/service-fabric-cluster-security-roles/)（适用于 Service Fabric 客户端的基于角色的访问控制）。
 
 ## 连接到群集
 
@@ -139,8 +139,8 @@ Connect-ServiceFabricCluster -AzureActiveDirectory -ConnectionEndpoint <cluster_
 
 ## 后续步骤
 
-- 阅读有关 [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security)的详细信息
-- 了解如何[使用 Visual Studio 发布到远程群集](/documentation/articles/service-fabric-publish-app-remote-cluster)
+- 阅读有关 [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security/)的详细信息
+- 了解如何[使用 Visual Studio 发布到远程群集](/documentation/articles/service-fabric-publish-app-remote-cluster/)
 
 <!-- Links -->
 [sf-aad-ps-script-download]: http://servicefabricsdkstorage.blob.core.windows.net/publicrelease/MicrosoftAzureServiceFabric-AADHelpers.zip

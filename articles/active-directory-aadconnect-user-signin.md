@@ -134,7 +134,7 @@ UserPrincipalName - 属性 userPrincipalName 是用户登录 Azure AD 和 Office
 >[AZURE.NOTE] 如果你只是要暂时切换到密码同步，请选中“不要转换用户帐户”。不选中该选项会导致将每个用户转换为联合登录
   
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
-了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts)的详细信息
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
+了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/)的详细信息
 
 <!---HONumber=Mooncake_0606_2016-->

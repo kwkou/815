@@ -15,7 +15,7 @@
 
 # Azure 备份服务 - 常见问题
 > [AZURE.SELECTOR]
-- [经典模式备份常见问题](/documentation/articles/backup-azure-backup-faq)
+- [经典模式备份常见问题](/documentation/articles/backup-azure-backup-faq/)
 本文提供有关 Azure 备份服务常见问题（及相应解答）的列表。我们的社区可在短时间内提供解答，如果某个问题被经常提出，我们会将它添加到本文中。问题的解答通常提供参考或支持信息。你可以在本文或相关章的 Disqus 部分中提出有关 Azure 备份的问题。你还可以在[论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup)中发布有关 Azure 备份服务的问题。
 
 ## 安装和配置
@@ -63,7 +63,7 @@
 
 **问 10.如果我重命名了用于将数据备份到 Azure 的 Windows 服务器，会发生什么情况？**<br/>
 答 10.当你重命名服务器时，所有当前配置的备份都将停止。
-你需要向备份保管库注册服务器的新名称。当你创建新注册时，首次备份操作是完整备份而非增量备份。如果需要恢复以前备份到采用旧服务器名称的保管库的数据，可以使用“恢复数据”向导中“[**其他服务器**](/documentation/articles/backup-azure-restore-windows-server#recover-to-an-alternate-machine)”选项来恢复该数据。
+你需要向备份保管库注册服务器的新名称。当你创建新注册时，首次备份操作是完整备份而非增量备份。如果需要恢复以前备份到采用旧服务器名称的保管库的数据，可以使用“恢复数据”向导中“[**其他服务器**](/documentation/articles/backup-azure-restore-windows-server/#recover-to-an-alternate-machine)”选项来恢复该数据。
 
 
 **问 11.可以从哪些类型的驱动器备份文件和文件夹？** <br/>
@@ -109,7 +109,7 @@
 答 18：不会。备份保管库会存储截止到取消时点之前已传输的备份数据。Azure 备份使用检查点机制，在备份过程中偶尔要对备份数据添加检查点。由于备份数据中有检查点，下次备份过程可以验证文件的完整性。触发的下次备份将对以前已备份的数据执行增量备份。增量备份可以更好地利用带宽，因此你无需反复传输相同的数据。
 
 **问 19.为什么即使我之前已计划了定期备份，仍会看到警告“尚未为此服务器配置 Azure 备份”？** <br/>
-答 19：在本地服务器上存储的备份计划设置与备份保管库中存储的设置不同时，可能会出现此警告。服务器或设置恢复为已知良好状态后，备份计划可能会失去同步。如果你收到此警告，请[重新配置备份策略](/documentation/articles/backup-azure-backup-windows-server)，然后**立即运行备份**，以便将本地服务器与 Azure 重新同步。
+答 19：在本地服务器上存储的备份计划设置与备份保管库中存储的设置不同时，可能会出现此警告。服务器或设置恢复为已知良好状态后，备份计划可能会失去同步。如果你收到此警告，请[重新配置备份策略](/documentation/articles/backup-azure-backup-windows-server/)，然后**立即运行备份**，以便将本地服务器与 Azure 重新同步。
 
 **问 20.要为 Azure 备份配置哪些防火墙规则？** <br/>
 答 20.为了妥善保护本地到 Azure 以及工作负荷到 Azure 的数据，建议你允许防火墙与以下 URL 通信：
@@ -136,7 +136,7 @@
 答 25.是的。
 
 **问 26.是否可以将备份服务配置为在备份作业失败时发送邮件？** <br/>
-答 26.是，备份服务有多个可与 PowerShell 脚本配合使用的基于事件的警报。有关完整说明，请参阅 [Alert notifications（警报通知）](/documentation/articles/backup-azure-manage-vms#alert-notifications)
+答 26.是，备份服务有多个可与 PowerShell 脚本配合使用的基于事件的警报。有关完整说明，请参阅 [Alert notifications（警报通知）](/documentation/articles/backup-azure-manage-vms/#alert-notifications)
 
 
 
@@ -196,7 +196,7 @@
 答 11.备份的所有数据在传输之前都会经过压缩和加密。应用压缩和加密后，备份保管库中的数据将减少 30-40%。
 
 **问 12.是否有办法调整备份服务所用的带宽？**<br/>
-答 12.是的，可以使用备份代理中的“更改属性”选项来调整带宽。调整带宽以及使用该带宽的时间。有关详细信息，请参阅 [Network Throttling（网络限制）](/documentation/articles/backup-configure-vault#enable-network-throttling)。
+答 12.是的，可以使用备份代理中的“更改属性”选项来调整带宽。调整带宽以及使用该带宽的时间。有关详细信息，请参阅 [Network Throttling（网络限制）](/documentation/articles/backup-configure-vault/#enable-network-throttling)。
 
 **问 13.我的 Internet 带宽有限，不适用于我需要备份的数据量。是否有办法可将数据移到网络带宽较大的特定位置，然后将数据推送到 Azure？** <br/>
 答 13.可以通过标准的联机备份过程将数据备份到 Azure，或者使用 Azure 导入/导出服务将数据传输到 Azure 中的 Blob 存储。无法通过其他方法将数据备份到 Azure 存储空间。

@@ -73,7 +73,7 @@ Older Selector technique, with dynamic drop-down lists.
 
 ### SQL 数据库
 
-请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
+请参阅[入门页](/documentation/articles/sql-database-get-started/)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
 
 ## 步骤 1：获取连接详细信息

@@ -14,7 +14,7 @@
 	
 # 受支持的迁移配置
 
-你可以使用 [ARM 迁移资源 API](/documentation/articles/resource-group-move-resources) 迁移 Azure Web 应用资源。
+你可以使用 [ARM 迁移资源 API](/documentation/articles/resource-group-move-resources/) 迁移 Azure Web 应用资源。
 
 Azure Web 应用当前支持以下迁移方案：
 

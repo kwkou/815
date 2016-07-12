@@ -15,18 +15,18 @@
 # 使用 PowerShell 创建新的弹性数据库池
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell)
-- [C#](/documentation/articles/sql-database-elastic-pool-create-csharp)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/)
+- [C#](/documentation/articles/sql-database-elastic-pool-create-csharp/)
 
 
-了解如何使用 PowerShell cmdlet 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+了解如何使用 PowerShell cmdlet 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
-有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages)。
+有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
 > [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
 
 
-你需要运行 Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+你需要运行 Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 创建新池
 
@@ -71,9 +71,9 @@
 
 ## 后续步骤
 
-- [管理你的池](/documentation/articles/sql-database-elastic-pool-manage-powershell)
-- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)弹性作业可以根据池中数据库的数量来运行 T-SQL 脚本。
-- [使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction)：使用弹性数据库工具扩展。
+- [管理你的池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
+- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)弹性作业可以根据池中数据库的数量来运行 T-SQL 脚本。
+- [使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展。
 
 
 <!---HONumber=Mooncake_0530_2016-->

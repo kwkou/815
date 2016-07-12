@@ -86,8 +86,8 @@
 -   对索引创建的筛选器不会传播到远程表。
 
 ## 另请参阅
-[通过运行SQL Server Stretch Database顾问识别SQL Server Stretch Database的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)
-[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database)
-[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table)
+[通过运行SQL Server Stretch Database顾问识别SQL Server Stretch Database的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)
+[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database/)
+[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)
 
 <!---HONumber=Mooncake_0307_2016-->

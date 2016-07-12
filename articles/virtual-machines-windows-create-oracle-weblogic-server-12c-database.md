@@ -20,13 +20,13 @@
 
 ##创建在此虚拟机中托管的数据库
 
-按照以**在 Azure 中使用 Oracle Database 12c 虚拟机创建数据库**部分开头的[在 Azure 中创建 Oracle Database 12c 虚拟机](/documentation/articles/virtual-machines-windows-classic-create-oracle-database)中的说明进行操作。
+按照以**在 Azure 中使用 Oracle Database 12c 虚拟机创建数据库**部分开头的[在 Azure 中创建 Oracle Database 12c 虚拟机](/documentation/articles/virtual-machines-windows-classic-create-oracle-database/)中的说明进行操作。
 
 ##配置在此虚拟机中托管的 Oracle WebLogic Server 12c
-按照以**在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机**部分开头的[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-windows-create-oracle-weblogic-server-12c)中的说明进行操作。
+按照以**在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机**部分开头的[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-windows-create-oracle-weblogic-server-12c/)中的说明进行操作。
 
 ##其他资源
-[有关 Oracle 虚拟机映像的其他注意事项](/documentation/articles/virtual-machines-windows-classic-oracle-considerations)
+[有关 Oracle 虚拟机映像的其他注意事项](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 [从 Java 应用程序连接到 Oracle 数据库](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 

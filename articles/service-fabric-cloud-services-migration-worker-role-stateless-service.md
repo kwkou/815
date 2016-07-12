@@ -263,9 +263,9 @@ Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个�
 
 阅读有关 Service Fabric Reliable Services 的详细信息以及云服务与 Service Fabric 应用程序体系结构之间的差异，以了解如何利用 Service Fabric 的完整功能集。
 
- - [Service Fabric Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start)
+ - [Service Fabric Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start/)
 
- - [云服务与 Service Fabric 之间差异的概念指南](/documentation/articles/service-fabric-cloud-services-migration-differences)
+ - [云服务与 Service Fabric 之间差异的概念指南](/documentation/articles/service-fabric-cloud-services-migration-differences/)
  
 <!--Image references-->
 [3]: ./media/service-fabric-cloud-services-migration-worker-role-stateless-service/service-fabric-cloud-service-projects.png

@@ -32,7 +32,7 @@
 - 如果在一段时间内未使用执行组件，则会从“活动执行组件”表中将其删除。
 - 将调用 `OnDeactivateAsync` 方法（该方法可以在执行组件实现中被覆盖）。这将清除此执行组件的所有计时器。
 
-> [AZURE.TIP] Fabric 执行组件运行时发出一些[与执行组件激活和停用相关的事件](/documentation/articles/service-fabric-reliable-actors-diagnostics#actor-activation-and-deactivation-events)。它们可用于进行诊断和性能监视。
+> [AZURE.TIP] Fabric 执行组件运行时发出一些[与执行组件激活和停用相关的事件](/documentation/articles/service-fabric-reliable-actors-diagnostics/#actor-activation-and-deactivation-events)。它们可用于进行诊断和性能监视。
 
 ### 执行组件垃圾回收
 停用某个执行组件后，将释放对此执行组件对象的引用，并且通常使用公共语言运行时 (CLR) 垃圾回收器对其进行回收。垃圾回收只清除执行组件对象；它**不会**删除存储在执行组件的状态管理器中的状态。当下次激活此执行组件时，将创建一个新的执行组件对象，并还原其状态。
@@ -49,7 +49,7 @@
 - 扫描时间间隔。这是执行组件运行时为可以停用和进行垃圾回收的执行组件扫描其活动执行组件表的时间间隔。此状态的默认值为 1 分钟。
 - 空闲超时。这是在停用执行组件并对其进行垃圾回收之前，该执行组件需要保持未使用（空闲）状态的时间。此状态的默认值为 60 分钟。
 
-通常不需要更改这些默认值。但是，如果有必要，可在注册[执行组件服务](/documentation/articles/service-fabric-reliable-actors-platform)时通过 `ActorServiceSettings` 更改这些时间间隔。
+通常不需要更改这些默认值。但是，如果有必要，可在注册[执行组件服务](/documentation/articles/service-fabric-reliable-actors-platform/)时通过 `ActorServiceSettings` 更改这些时间间隔。
 
 ```csharp
 public class Program
@@ -93,7 +93,7 @@ public class Program
 
 对已停用的执行组件进行垃圾回收只会清除该执行组件对象，但是存储在执行组件的状态管理器中的数据不会被删除。重新激活执行组件后，可通过状态管理器再次使用其数据。如果执行组件将数据存储在状态管理器，并且已停用且始终不激活该执行组件，那么可能需要清理其数据。
 
-[执行组件服务](/documentation/articles/service-fabric-reliable-actors-platform)提供了一个函数，用于从远程调用方删除执行组件：
+[执行组件服务](/documentation/articles/service-fabric-reliable-actors-platform/)提供了一个函数，用于从远程调用方删除执行组件：
 
 ```csharp
 ActorId actorToDelete = new ActorId(id);
@@ -115,10 +115,10 @@ await myActorServiceProxy.DeleteActorAsync(actorToDelete, cancellationToken)
 请注意，执行组件无法使用其任何一个执行组件方法对其自身调用删除，因为在执行组件调用时执行删除将无法删除该执行组件，在此过程中，运行时已获取该执行组件的锁，用于强制实施单线程访问。
 
 ## 后续步骤
- - [执行组件计时器和提醒](/documentation/articles/service-fabric-reliable-actors-timers-reminders)
- - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events)
- - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy)
- - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics)
+ - [执行组件计时器和提醒](/documentation/articles/service-fabric-reliable-actors-timers-reminders/)
+ - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events/)
+ - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)
+ - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 

@@ -15,9 +15,9 @@
 # 在两个 Azure 虚拟网络之间配置 VPN 连接  
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
-- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication) 
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
 
 Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提供安全隧道。VNet 可在不同的订阅和不同的区域中。你甚至可以将 VNet 到 VNet 通信与多站点配置组合使用。建立 VNet 到 VNet 连接的原因有多方面：
 
@@ -75,7 +75,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 	- **DNS 服务器**：（保留空白） 
 	
-		你需要使用自己的 DNS 服务器在虚拟网络中进行名称解析。有关何时使用 Azure 提供的名称解析以及何时使用你自己的 DNS 服务器的详细信息，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)。有关在 VNet 之间配置名称解析的说明，请参阅[在两个 Azure 虚拟网络之间配置 DNS][hdinsight-hbase-dns]。
+		你需要使用自己的 DNS 服务器在虚拟网络中进行名称解析。有关何时使用 Azure 提供的名称解析以及何时使用你自己的 DNS 服务器的详细信息，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)。有关在 VNet 之间配置名称解析的说明，请参阅[在两个 Azure 虚拟网络之间配置 DNS][hdinsight-hbase-dns]。
   
 	- **配置点到站点 VPN**：（未选中）
 
@@ -241,14 +241,14 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 
 
 
-[hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
-[hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
+[hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
+[hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication/
 
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: http://manage.windowsazure.cn
 
 
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure/
 
 
 

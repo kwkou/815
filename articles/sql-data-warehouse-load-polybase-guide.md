@@ -175,12 +175,12 @@ Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name>
 <!--Image references-->
 
 <!--Article references-->
-[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp
-[使用 PolyBase 加载数据]: /documentation/articles/sql-data-warehouse-load-with-polybase
-[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
-[数据迁移概述]: /documentation/articles/sql-data-warehouse-overview-migrate
+[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
+[使用 PolyBase 加载数据]: /documentation/articles/sql-data-warehouse-load-with-polybase/
+[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[数据迁移概述]: /documentation/articles/sql-data-warehouse-overview-migrate/
 
 <!--MSDN references-->
 [supported source/sink]: https://msdn.microsoft.com/zh-cn/library/dn894007.aspx

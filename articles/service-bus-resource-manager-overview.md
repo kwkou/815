@@ -16,7 +16,7 @@
 
 本文演示如何使用 Azure Resource Manager 模板、PowerShell 和服务总线资源提供程序创建和部署服务总线和事件中心资源。
 
-Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源，以及指定可用于为不同环境输入值的参数和变量。模板中包含可用于构造部署值的 JSON 和表达式。有关编写 Azure Resource Manager 模板的详细信息，以及模板格式的讨论，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates)。
+Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源，以及指定可用于为不同环境输入值的参数和变量。模板中包含可用于构造部署值的 JSON 和表达式。有关编写 Azure Resource Manager 模板的详细信息，以及模板格式的讨论，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
 
 >[AZURE.NOTE] 本文中的示例演示如何使用 Azure Resource Manager 来创建服务总线命名空间和消息实体（队列）。有关其他模板示例，请参阅 [Azure 快速入门模板库][]并搜索“服务总线”。
 
@@ -24,11 +24,11 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 
 这些服务总线和事件中心 Azure Resource Manager 模板可供下载和部署。单击以下链接可获得有关每个链接的详细信息，其中包含指向 GitHub 上的模板的链接：
 
-- [创建服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace)
-- [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue)
-- [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic)
-- [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule)
-- [创建包含事件中心和使用者组的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-event-hub)
+- [创建服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace/)
+- [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
+- [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
+- [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
+- [创建包含事件中心和使用者组的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-event-hub/)
 
 ## 使用 PowerShell 进行部署
 
@@ -46,7 +46,7 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 
 ### 安装 PowerShell
 
-请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明安装 Azure PowerShell。
+请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明安装 Azure PowerShell。
 
 ### 创建模板
 
@@ -242,10 +242,10 @@ Parameters        :
 
 - [Azure Resource Manager 概述][]
 - [使用 Azure Resource Manager 模板部署资源][]
-- [创作模板](/documentation/articles/resource-group-authoring-templates)
+- [创作模板](/documentation/articles/resource-group-authoring-templates/)
 
 
-[Azure Resource Manager 概述]: /documentation/articles/resource-group-overview
-[使用 Azure Resource Manager 模板部署资源]: /documentation/articles/resource-group-template-deploy
+[Azure Resource Manager 概述]: /documentation/articles/resource-group-overview/
+[使用 Azure Resource Manager 模板部署资源]: /documentation/articles/resource-group-template-deploy/
 [Azure 快速入门模板库]: https://azure.microsoft.com/zh-cn/documentation/templates/?term=service+bus
 <!---HONumber=Mooncake_0620_2016-->

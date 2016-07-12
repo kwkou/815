@@ -14,8 +14,8 @@
 # 使用经典部署模型配置应用程序网关以进行 SSL 卸载
 
 > [AZURE.SELECTOR]
--[Azure 经典 PowerShell](/documentation/articles/application-gateway-ssl)
--[Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-ssl-arm)
+-[Azure 经典 PowerShell](/documentation/articles/application-gateway-ssl/)
+-[Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-ssl-arm/)
 
 可将 Azure 应用程序网关配置为在网关上终止安全套接字层 (SSL) 会话，以避免 Web 场中出现开销较高的 SSL 解密任务。SSL 卸载还简化了 Web 应用程序的前端服务器设置与管理。
 

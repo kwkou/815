@@ -15,9 +15,9 @@
 # 在两个 Azure 虚拟网络之间配置 DNS
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
-- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication) 
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs/)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
 
 
 了解如何向 Azure 虚拟网络添加和配置 DNS 服务器，以处理虚拟机内部和跨虚拟网络的名称解析。
@@ -212,8 +212,8 @@ DNS 服务器需要静态 IP 地址。不能从 Azure 经典管理门户完成�
 
 
 
-[hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
-[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
+[hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication/
+[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png
 

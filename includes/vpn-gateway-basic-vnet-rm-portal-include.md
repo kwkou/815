@@ -1,6 +1,6 @@
 <!-- Ibiza Portal: tested -->
 
-若要使用 Azure 门户预览创建 VNet，请遵循以下步骤。请注意，提供的屏幕截图用作示例。请务必替换为你自己的值。有关使用虚拟网络的详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview)（虚拟网络概述）。
+若要使用 Azure 门户预览创建 VNet，请遵循以下步骤。请注意，提供的屏幕截图用作示例。请务必替换为你自己的值。有关使用虚拟网络的详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)（虚拟网络概述）。
 
 1. 从浏览器导航到 [Azure 门户预览](https://portal.azure.cn)。如有必要，请使用 Azure 帐户登录。
 

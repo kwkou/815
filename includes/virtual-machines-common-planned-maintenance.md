@@ -16,7 +16,7 @@
 
 多实例配置可跨物理计算机、电源和网络提供冗余，若要确保应用程序的可用性，建议采用此配置。可用性集中的所有虚拟机应对应用程序具有相同的用途。
 
-有关配置虚拟机的高可用性的详细信息，请参阅[管理 Windows 虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability) 或者 [管理 Linux 虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability)。
+有关配置虚拟机的高可用性的详细信息，请参阅[管理 Windows 虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/) 或者 [管理 Linux 虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
 相反，单实例配置用于不在一个可用性集中的独立虚拟机。这些虚拟机不符合服务级别协议 (SLA) 的要求，SLA 要求在同一个可用性集下部署两个或更多虚拟机。
 
@@ -31,7 +31,7 @@
 
 基础 Azure 平台为可用性集中的每个虚拟机分配一个更新域和一个容错域。每个更新域是一组在相同时间范围内重新启动的虚拟机。每个容错域是一组共用一个通用电源和网络交换机的虚拟机。
 
-有关更新域和容错域的详细信息，请参阅配置可用性集中的多个虚拟机以实现冗余：[Windows](/documentation/articles/virtual-machines-windows-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)。
+有关更新域和容错域的详细信息，请参阅配置可用性集中的多个虚拟机以实现冗余：[Windows](/documentation/articles/virtual-machines-windows-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)。
 
 为防止更新域同时脱机，将通过以下方式执行维护：关闭某个更新域中的所有虚拟机，向主机应用更新，重新启动虚拟机，然后继续对下一个更新域执行相同操作。更新完所有更新域之后，计划内维护事件即结束。
 
@@ -66,6 +66,6 @@ Azure 会提前发送电子邮件通信，提醒你即将执行计划内维护�
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-hero-tutorial
-[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-windows-manage-availability#Understand-planned-versus-unplanned-maintenance
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-hero-tutorial/
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-windows-manage-availability/#Understand-planned-versus-unplanned-maintenance
 

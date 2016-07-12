@@ -37,7 +37,7 @@
 
 在 .NET 后端移动服务中，通过调用从 [ApiServices.Push](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) 属性获取的 [PushClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) 对象的 [SendAsync] 方法发送通知。发送的推送通知（本机或模板）取决于传递给 [SendAsync] 方法的特定 [IPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx) 派生的对象，如下表所示：
 
-|平台 |[APNS](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push)|[WNS](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) | MPNS
+|平台 |[APNS](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/)|[WNS](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/) | MPNS
 |-----|-----|----|----|-----|
 |本机|[ApplePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx) |[GooglePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx) |[WindowsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
 
@@ -72,7 +72,7 @@
 
 在 JavaScript 后端移动服务中，通过调用从全局 [push 对象]获取的特定于平台的对象的 **send** 方法发送通知，如下表所示：
 
-|平台 |[APNS](/documentation/articles/mobile-services-javascript-backend-ios-get-started-push)|[WNS](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)|
+|平台 |[APNS](/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/)|[WNS](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/) |[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/)|
 |-----|-----|----|----|-----|
 |本机|[apns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj839711.aspx) |[gcm 对象](http://msdn.microsoft.com/zh-cn/library/azure/dn126137.aspx) |[wns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx) | [mpns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj871025.aspx) |
 
@@ -153,9 +153,9 @@
 [How to use a .NET client with Mobile Services]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 [push 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554217.aspx
 [TemplatePushMessage]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
-[PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started
-[Sencha]: /documentation/articles/partner-sencha-mobile-services-get-started
-[Appcelerator]: /documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
+[PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started/
+[Sencha]: /documentation/articles/partner-sencha-mobile-services-get-started/
+[Appcelerator]: /documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started/
 [SendAsync]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
 [What's next for Windows Phone 8 developers]: http://msdn.microsoft.com/zh-cn/library/windows/apps/dn655121(v=vs.105).aspx
 [Building universal Windows apps for all Windows devices]: http://go.microsoft.com/fwlink/p/?LinkId=509905

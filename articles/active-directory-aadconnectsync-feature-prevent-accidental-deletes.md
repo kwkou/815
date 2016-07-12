@@ -19,7 +19,7 @@
 
 会遇到这种情况的常见情景包括：
 
-- 在取消选择整个 [OU](/documentation/articles/active-directory-aadconnectsync-configure-filtering#organizational-unitbased-filtering) 或[域](/documentation/articles/active-directory-aadconnectsync-configure-filtering#domain-based-filtering)的情况下更改为[筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering)。
+- 在取消选择整个 [OU](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#organizational-unitbased-filtering) 或[域](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#domain-based-filtering)的情况下更改为[筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)。
 - 已删除 OU 中的所有对象。
 - 已重命名某个 OU，因此其中的所有对象被视为超出同步范围。
 
@@ -49,8 +49,8 @@
 3. 若要重新启用保护，请运行 PowerShell cmdlet：`Enable-ADSyncExportDeletionThreshold`
 
 ## 后续步骤
-了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis)配置的详细信息。
+了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

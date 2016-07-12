@@ -20,13 +20,13 @@ Service Fabric 目前在 Linux 上以受限预览版提供，可让你在 Linux 
 
 受限预览版支持创建单机开发群集，以及在 Azure 中创建运行 Ubuntu Server 15.10 的多计算机群集。
 
-你可以使用任何语言或框架来构建[来宾可执行服务](/documentation/articles/service-fabric-deploy-existing-app)。你还可以使用 Java 来构建基于 Reliable Services 和 Reliable Actor 框架的服务。
+你可以使用任何语言或框架来构建[来宾可执行服务](/documentation/articles/service-fabric-deploy-existing-app/)。你还可以使用 Java 来构建基于 Reliable Services 和 Reliable Actor 框架的服务。
 
 >[AZURE.NOTE] Java 尚不支持可靠集合。
 
 
 ## 后续步骤
 
-熟悉 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction) 和 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction) 编程框架。
+熟悉 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/) 和 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/) 编程框架。
 
 <!---HONumber=Mooncake_0627_2016-->

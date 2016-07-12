@@ -17,12 +17,12 @@
 
 # 业务线应用程序工作负荷阶段 2：配置域控制器
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
  
 
 在 Azure 基础结构服务中部署高可用性组业务线应用程序的这个阶段，你将在 Azure 虚拟网络中配置两个副本域控制器，以便可以在 Azure 虚拟网络中对针对 Web 资源的客户端 Web 请求进行身份验证，而不必将身份验证流量通过连接发送到你的本地网络。
 
-你必须在转到[阶段 3](/documentation/articles/virtual-machines-windows-ps-lob-ph3) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview)。
+你必须在转到[阶段 3](/documentation/articles/virtual-machines-windows-ps-lob-ph3/) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview/)。
 
 ## 在 Azure 中创建域控制器虚拟机
 
@@ -40,7 +40,7 @@
 
 **表 M - Azure 中高可用性业务线应用程序的虚拟机**
 
-有关虚拟机大小的完整列表，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes)。
+有关虚拟机大小的完整列表，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes/)。
 
 使用以下 Azure PowerShell 命令块为两个域控制器创建虚拟机。为变量指定值，并删除 < and > 字符。请注意，此 PowerShell 命令块使用下表中的值：
 
@@ -50,7 +50,7 @@
 - 表 ST，用于存储帐户
 - 表 A，用于可用性集
 
-回想一下，你在[阶段 1：配置 Azure](/documentation/articles/virtual-machines-windows-ps-lob-ph1) 中定义了表 V、表 S、表 ST 和表 A。
+回想一下，你在[阶段 1：配置 Azure](/documentation/articles/virtual-machines-windows-ps-lob-ph1/) 中定义了表 V、表 S、表 ST 和表 A。
 
 > [AZURE.NOTE] 以下命令集使用 Azure PowerShell 1.0 及更高版本。有关详细信息，请参阅 [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/)。
 
@@ -193,7 +193,7 @@
 
 ## 后续步骤
 
-- 若要继续配置此工作负荷，请使用[阶段 3](/documentation/articles/virtual-machines-windows-ps-lob-ph3)。
+- 若要继续配置此工作负荷，请使用[阶段 3](/documentation/articles/virtual-machines-windows-ps-lob-ph3/)。
 
 
 <!---HONumber=Mooncake_0411_2016-->

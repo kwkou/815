@@ -16,10 +16,10 @@
 # 管理 Azure SQL 数据仓库中的计算能力（概述）
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute)
-- [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell)
-- [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api)
-- [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql)
+- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
+- [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
+- [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
 
 SQL 数据仓库的体系结构对存储和计算功能进行了分隔，允许每项功能单独进行缩放。因此，你可以在扩大性能范围的同时节省成本，只需根据需要支付相关性能费用。
 
@@ -121,22 +121,22 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 <!--Article references-->
 
-[通过 PowerShell 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-powershell#task-1-scale-performance
-[通过 REST API 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api#task-1-scale-performance
-[通过 TSQL 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tsql
+[通过 PowerShell 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#task-1-scale-performance
+[通过 REST API 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#task-1-scale-performance
+[通过 TSQL 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tsql/
 
-[容量限制]: /documentation/articles/sql-data-warehouse-service-capacity-limits
+[容量限制]: /documentation/articles/sql-data-warehouse-service-capacity-limits/
 
 [通过 PowerShell 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#scale-compute-bk
 [通过 REST API 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#scale-compute-bk
 [通过 PowerShell 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#resume-compute-bk
 [通过 REST API 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#resume-compute-bk
 
-[并发模型]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[设计表]: /documentation/articles/sql-data-warehouse-develop-table-design
-[为表选择哈希分布键]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
-[用于改善性能的统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop
+[并发模型]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[设计表]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[为表选择哈希分布键]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key/
+[用于改善性能的统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 
 

@@ -225,8 +225,8 @@
 
 ## 另请参阅
 
-- [使用 C# 创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp)
-- [通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)
+- [使用 C# 创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp/)
+- [通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication/)
 
 
 

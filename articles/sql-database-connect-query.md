@@ -17,9 +17,9 @@
 # 用 C&#x23; 编写用于查询和连接到 SQL 数据库的程序
 
 > [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-connect-query)
-- [SSMS](/documentation/articles/sql-database-connect-query-ssms)
-- [Excel](/documentation/articles/sql-database-connect-excel)
+- [C#](/documentation/articles/sql-database-connect-query/)
+- [SSMS](/documentation/articles/sql-database-connect-query-ssms/)
+- [Excel](/documentation/articles/sql-database-connect-excel/)
 
 了解如何用 C# 编写用于查询和连接到云中的 Azure SQL 数据库。
 
@@ -36,7 +36,7 @@
 
 
 - Azure SQL 数据库服务的 **AdventureWorksLT** 演示数据库。
- - 在几分钟内[创建演示数据库](/documentation/articles/sql-database-get-started)。
+ - 在几分钟内[创建演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
 - Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在免费提供 Visual Studio Community。
@@ -264,7 +264,7 @@
 
 > [AZURE.WARNING] 为了代码简短起见，我们选择在此教授示例中不包括用于异常处理的代码以及重试逻辑。但是你与云数据库进行交互的生产程序应包括这两者。
 >
-> [此处](/documentation/articles/sql-database-develop-csharp-retry-windows)是具有重试逻辑的代码示例的链接。
+> [此处](/documentation/articles/sql-database-develop-csharp-retry-windows/)是具有重试逻辑的代码示例的链接。
 
 
 ## 步骤 7：在服务器防火墙中添加允许的 IP 地址范围
@@ -291,9 +291,9 @@
 ## 相关链接
 
 
-- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
 
-- 如果你的客户端程序运行在 Azure VM 上，请参阅<br/>[适用于 ADO.NET 4.5 和 SQL 数据库 V12 的 1433 之外的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)，了解 1433 以外的 TCP 端口。
+- 如果你的客户端程序运行在 Azure VM 上，请参阅<br/>[适用于 ADO.NET 4.5 和 SQL 数据库 V12 的 1433 之外的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)，了解 1433 以外的 TCP 端口。
 
 
 

@@ -15,10 +15,10 @@
 # DocumentDB SDK
 
 > [AZURE.SELECTOR]
-- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet)
-- [Node.js SDK](/documentation/articles/documentdb-sdk-node)
-- [Java SDK](/documentation/articles/documentdb-sdk-java)
-- [Python SDK](/documentation/articles/documentdb-sdk-python)
+- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet/)
+- [Node.js SDK](/documentation/articles/documentdb-sdk-node/)
+- [Java SDK](/documentation/articles/documentdb-sdk-java/)
+- [Python SDK](/documentation/articles/documentdb-sdk-python/)
 
 ##DocumentDB .NET SDK
 
@@ -26,7 +26,7 @@
 <tr><td>**下载**</td><td>[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/)</td></tr>
 <tr><td>**文档**</td><td>[.NET SDK 参考文档](https://msdn.microsoft.com/library/azure/dn948556.aspx)</td></tr>
 <tr><td>**示例**</td><td>[.NET 代码示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples)</td></tr>
-<tr><td>**入门**</td><td>[DocumentDB .NET SDK 入门](/documentation/articles/documentdb-get-started)</td></tr>
+<tr><td>**入门**</td><td>[DocumentDB .NET SDK 入门](/documentation/articles/documentdb-get-started/)</td></tr>
 <tr><td>**当前受支持的框架**</td><td>[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)</td></tr>
 </table></br>
 
@@ -50,7 +50,7 @@
   - 修复了用于将其打包为 Azure 云服务解决方案的一部分的 .NET SDK 的 Nuget 包中的 Bug。
   
 ### <a name="1.6.2"/>[1\.6.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.6.2)
-  - 实现了[分区集合](/documentation/articles/documentdb-partition-data)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels)。 
+  - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
 
 ### <a name="1.5.3"/>[1\.5.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.3)
   - **[已修复]** 查询 DocumentDB 终结点引发：System.Net.Http.HttpRequestException：将内容复制到流时出错。

@@ -15,8 +15,8 @@
 # 使用 Resource Manager 和 PowerShell 创建和修改 ExpressRoute 线路
 
 > [AZURE.SELECTOR]
-[PowerShell - Classic](/documentation/articles/expressroute-howto-circuit-classic)
-[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-circuit-arm)
+[PowerShell - Classic](/documentation/articles/expressroute-howto-circuit-classic/)
+[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-circuit-arm/)
 
 本文介绍如何使用 Windows PowerShell cmdlet 和 Azure Resource Manager 部署模型创建 Azure ExpressRoute 线路。以下步骤还说明如何查看线路状态，以及如何更新、删除和取消预配线路。
 
@@ -27,15 +27,15 @@
 ## 开始之前
 
 
-- 获取最新版本的 Azure PowerShell 模块（至少 1.0 版）。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 上的说明操作，以便获取有关如何配置计算机以使用 PowerShell 模块的分步指导。
+- 获取最新版本的 Azure PowerShell 模块（至少 1.0 版）。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 上的说明操作，以便获取有关如何配置计算机以使用 PowerShell 模块的分步指导。
 
-- 在开始配置之前，请查看[先决条件](/documentation/articles/expressroute-prerequisites)和[工作流](/documentation/articles/expressroute-workflows)。
+- 在开始配置之前，请查看[先决条件](/documentation/articles/expressroute-prerequisites/)和[工作流](/documentation/articles/expressroute-workflows/)。
 
 ## 创建和预配 ExpressRoute 线路
 
 ### 步骤 1. 登录到你的 Azure 帐户，然后选择你的订阅
 
-若要开始你的配置，请登录到你的 Azure 帐户。有关 PowerShell 的详细信息，请参阅[将 Windows PowerShell 与 Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)。使用下面的示例来帮助你连接：
+若要开始你的配置，请登录到你的 Azure 帐户。有关 PowerShell 的详细信息，请参阅[将 Windows PowerShell 与 Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。使用下面的示例来帮助你连接：
 
 	Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
@@ -210,13 +210,13 @@ ServiceProviderProvisioningState 提供有关服务提供商端当前预配状�
 
 ### 步骤 7. 创建路由配置。
 
-如需分步说明，请参阅 [ExpressRoute 线路路由配置](/documentation/articles/expressroute-howto-routing-arm)这篇文章，了解如何创建和修改线路对等互连。
+如需分步说明，请参阅 [ExpressRoute 线路路由配置](/documentation/articles/expressroute-howto-routing-arm/)这篇文章，了解如何创建和修改线路对等互连。
 
 >[AZURE.IMPORTANT] 这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。
 
 ### 步骤 8. 将虚拟网络链接到 ExpressRoute 线路。
 
-接下来，将虚拟网络链接到 ExpressRoute 线路。在使用 Resource Manager 部署模式时，请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)这篇文章。
+接下来，将虚拟网络链接到 ExpressRoute 线路。在使用 Resource Manager 部署模式时，请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)这篇文章。
 
 ##  获取 ExpressRoute 线路的状态
 
@@ -292,7 +292,7 @@ ServiceProviderProvisioningState 提供有关服务提供商端当前预配状�
 - 在不停机的情况下，为 ExpressRoute 线路启用/禁用 ExpressRoute 高级版外接程序。
 - 在不停机的情况下，增加 ExpressRoute 线路的带宽。
 
-有关限制和局限的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
+有关限制和局限的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
 ### 启用 ExpressRoute 高级版外接程序
 
@@ -332,7 +332,7 @@ ServiceProviderProvisioningState 提供有关服务提供商端当前预配状�
 
 ### 更新 ExpressRoute 线路带宽
 
-有关你的提供商的受支持带宽选项，请查看 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。你可以选取大于现有线路大小的任何大小。
+有关你的提供商的受支持带宽选项，请查看 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。你可以选取大于现有线路大小的任何大小。
 
 >[AZURE.IMPORTANT] 但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 
@@ -362,7 +362,7 @@ ServiceProviderProvisioningState 提供有关服务提供商端当前预配状�
 
 ### 控制对经典环境和 Resource Manager 环境的访问  
 
-查看[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-howto-move-arm)中的说明。
+查看[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-howto-move-arm/)中的说明。
 
 ## 删除和取消预配 ExpressRoute 线路
 
@@ -384,7 +384,7 @@ ServiceProviderProvisioningState 提供有关服务提供商端当前预配状�
 
 创建你的线路后，请确保执行以下操作：
 
-- [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm)
-- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
+- [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm/)
+- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
 <!---HONumber=Mooncake_0215_2016-->

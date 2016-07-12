@@ -27,7 +27,7 @@
 
 * **客户端计算机** - 在部署后，需要使用一台基于 Windows 的客户端计算机来与 Azure 和 MATLAB 分布式计算服务器群集通信。 
 
-* **Azure PowerShell** - 请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)，在客户端计算机上安装该软件。
+* **Azure PowerShell** - 请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)，在客户端计算机上安装该软件。
 
 * **Azure 订阅** - 如果你没有订阅，只需要花费几分钟就能创建一个[试用帐户](/pricing/1rmb-trial/)。对于较大的群集，请考虑即用即付订阅或其他购买选项。
 

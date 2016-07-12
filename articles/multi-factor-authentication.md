@@ -54,6 +54,6 @@ Azure 多重身份验证是一个易于使用、可缩放且可靠的解决方�
 **其他资源**
 
 * [为 Office 365 设置多重身份验证](https://support.office.com/zh-cn/article/%e8%ae%be%e7%bd%ae-Office-365-%e7%9a%84%e5%a4%9a%e5%9b%a0%e7%b4%a0%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81-8f0454b2-f51a-4d9c-bcde-2c48e41621c6?omkt=zh-CN&ui=zh-CN&rs=zh-CN&ad=CN)
-* [多重身份验证对我而言有什么用途？](/documentation/articles/multi-factor-authentication-end-user)
+* [多重身份验证对我而言有什么用途？](/documentation/articles/multi-factor-authentication-end-user/)
 
 <!---HONumber=Mooncake_0530_2016-->

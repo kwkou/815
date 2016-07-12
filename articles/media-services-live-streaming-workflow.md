@@ -33,7 +33,7 @@
 		
 **Azure 媒体服务** (AMS) 提供了引入、编码、预览、存储和传送实时流式处理内容的功能。
 
-在将内容传送给客户时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。为了满足质量和网络条件的要求，使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+在将内容传送给客户时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。为了满足质量和网络条件的要求，使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
 在 Azure 媒体服务中，**频道**、**程序**和**流式处理终结点**处理所有实时流式处理功能，包括引入、格式化、DVR、安全性、缩放性和冗余。
 
@@ -52,7 +52,7 @@
 
 ![实时工作流][live-overview1]
 
-有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 
 ##使用从本地编码器接收多比特率实时流的频道
@@ -62,7 +62,7 @@
 
 ![实时工作流][live-overview2]
 
-有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
+有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)。
 
 
 
@@ -71,9 +71,9 @@
 
 ##相关主题
 
-[媒体服务概念](/documentation/articles/media-services-concepts)
+[媒体服务概念](/documentation/articles/media-services-concepts/)
 
-[Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview)
+[Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview/)
 
 
 

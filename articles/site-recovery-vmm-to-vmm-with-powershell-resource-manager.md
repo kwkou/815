@@ -18,14 +18,14 @@
 
 ## 概述
 
-Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请参阅 [Azure Site Recovery 概述](/documentation/articles/site-recovery-overview)。
+Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请参阅 [Azure Site Recovery 概述](/documentation/articles/site-recovery-overview/)。
 
 Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。它可与两种类型的模块配合工作：Azure 配置文件模块或 Azure 资源管理器 (ARM) 模块。
 
 本文介绍如何使用 Windows PowerShell® 及 ARM 来部署 Azure Site Recovery 以配置和安排两个 VMM 站点之间的虚拟机保护。位于主站点中的 VMM 私有云中的 Hyper-V 宿主服务器上运行的虚拟机会使用 Hyper-V 副本进行复制并向辅助 VMM 站点进行故障转移。
 
 你无需是一名 PowerShell 专家就可以使用本文章，但是本文假定你理解诸如模块、cmdlet 和会话等基本概念。有关 Windows PowerShell 的更多信息，请参阅 [Windows PowerShell 入门](http://technet.microsoft.com/library/hh857337.aspx)。
-- 了解有关[将 Azure PowerShell 和 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)的更多信息。
+- 了解有关[将 Azure PowerShell 和 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)的更多信息。
 
 本文包括了方案的先决条件并展示了如何设置 Azure PowerShell 以与 Site Recovery 配合使用、创建 Site Recovery 保管库、在 VMM 服务器上安装 Azure Site Recovery 提供程序及在保管库中注册服务器、为 VMM 云配置将应用于所有受保护虚拟机的保护设置，然后为这些虚拟机启用保护。最后将测试故障转移以确保一切都正常工作。
 
@@ -43,12 +43,12 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 	- 了解有关设置 VMM 云的更多信息：
 
 		- [System Center 2012 R2 VMM 中私有云的新增功能](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357#fbid=dfgvHAmYryA)及 [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)。
-		- [配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)
+		- [配置 VMM 云结构](/documentation/articles/site-recovery-best-practices/)
 		- [在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 - 至少运行 Windows Server 2012 的一个或多个 Hyper-V 服务器，具有 Hyper-V 角色并且安装了最新更新。服务器或群集必须包含在一个 VMM 云中。
 - 如果你在群集中运行 Hyper-V，请注意，如果你具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。有关说明，请参阅[配置 Hyper-V 副本代理](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。
 
-	- 你将需要 Azure PowerShell。确保你正在运行 Azure PowerShell 0.9.6 版或更高版本。阅读[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。 
+	- 你将需要 Azure PowerShell。确保你正在运行 Azure PowerShell 0.9.6 版或更高版本。阅读[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。 
 	- 安装 Azure PowerShell 会安装一个自定义控制台。你可以从这个控制台或从任何其他主机程序，例如 Windows PowerShell ISE 运行 PowerShell 命令。
 
 ## 步骤 1：设置 PowerShell

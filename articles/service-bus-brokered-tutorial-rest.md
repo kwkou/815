@@ -17,7 +17,7 @@
 
 ## 第 1 步：创建命名空间
 
-第一步是创建服务命名空间并获取[共享访问签名](/documentation/articles/service-bus-sas-overview) (SAS) 密钥。服务命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
+第一步是创建服务命名空间并获取[共享访问签名](/documentation/articles/service-bus-sas-overview/) (SAS) 密钥。服务命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
 
 ### 创建命名空间并获取共享密钥
 
@@ -35,7 +35,7 @@
 
 本教程中的代码将执行以下操作。
 
-- 使用服务命名空间和[共享访问签名](/documentation/articles/service-bus-sas-overview) (SAS) 密钥来获取对服务总线命名空间资源的访问权限。
+- 使用服务命名空间和[共享访问签名](/documentation/articles/service-bus-sas-overview/) (SAS) 密钥来获取对服务总线命名空间资源的访问权限。
 
 - 创建队列、将消息发送到队列，并读取来自队列的消息。
 
@@ -623,9 +623,9 @@ namespace Microsoft.ServiceBus.Samples
 
 请参阅以下文章以了解更多信息：
 
-- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
-- [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial)
+- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
+- [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
+- [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial/)
 [Azure 经典门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

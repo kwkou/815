@@ -49,8 +49,8 @@ ClusterManifest.xml：
 ```
 
 ## 后续步骤
-- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description)的文章
-- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics)
+- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)的文章
+- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-defragmentation-metrics/balancing-defrag-compared.png
 

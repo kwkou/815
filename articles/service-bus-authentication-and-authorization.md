@@ -19,7 +19,7 @@
 
 ## 共享访问签名身份验证
 
-通过 [SAS 身份验证](/documentation/articles/service-bus-sas-overview)，你可以向具有特定权限的用户授予对服务总线资源的访问权限。服务总线中的 SAS 身份验证涉及配置具有服务总线资源相关权限的加密密钥。客户端随后即可通过提供 SAS 令牌获取该资源的访问权限，该令牌由要访问的资源 URI 和签有已配置密钥的过期时间组成。
+通过 [SAS 身份验证](/documentation/articles/service-bus-sas-overview/)，你可以向具有特定权限的用户授予对服务总线资源的访问权限。服务总线中的 SAS 身份验证涉及配置具有服务总线资源相关权限的加密密钥。客户端随后即可通过提供 SAS 令牌获取该资源的访问权限，该令牌由要访问的资源 URI 和签有已配置密钥的过期时间组成。
 
 可以在服务总线命名空间上配置用于 SAS 的密钥。该密钥将应用到该命名空间中的所有消息传送实体。还可在服务总线队列和主题上配置密钥。服务总线中继上也支持 SAS。
 
@@ -63,9 +63,9 @@ Azure.NET SDK 2.0 版和更高版本支持服务总线的 ACS 身份验证。此
 
 ## 后续步骤
 
-请继续阅读[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication)，了解有关 SAS 的更多详细信息。
+请继续阅读[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)，了解有关 SAS 的更多详细信息。
 
-有关服务总线中的 SAS 的高级概述，请参阅[共享访问签名](/documentation/articles/service-bus-sas-overview)。
+有关服务总线中的 SAS 的高级概述，请参阅[共享访问签名](/documentation/articles/service-bus-sas-overview/)。
 
 可在以下位置找到有关 ACS 令牌的详细信息：[如何：通过 OAuth WRAP 协议从 ACS 请求令牌](https://msdn.microsoft.com/zh-cn/library/hh674475.aspx)。
 

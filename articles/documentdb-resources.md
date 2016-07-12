@@ -33,7 +33,7 @@ DocumentDB 管理的数据库实体被称为**资源**。每个资源都通过�
 ![DocumentDB 分层资源模型][1]  
 **分层资源模型**
 
-若要开始使用资源，必须使用你的 Azure 订阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)。每个数据库帐户可以包含一组**数据库**、每个数据库都包含多个**集合**，每个集合又包含**存储过程、触发器、UDF、文档**及相关**附件**（预览功能）。数据库也有关联的**用户**，每个用户都有一组**权限**，用于访问集合、存储过程、触发器、UDF、文档或附件。而数据库、用户、权限和集合就是系统定义的资源，其中已知的架构、文档和附件包含用户定义的任意 JSON 内容。
+若要开始使用资源，必须使用你的 Azure 订阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。每个数据库帐户可以包含一组**数据库**、每个数据库都包含多个**集合**，每个集合又包含**存储过程、触发器、UDF、文档**及相关**附件**（预览功能）。数据库也有关联的**用户**，每个用户都有一组**权限**，用于访问集合、存储过程、触发器、UDF、文档或附件。而数据库、用户、权限和集合就是系统定义的资源，其中已知的架构、文档和附件包含用户定义的任意 JSON 内容。
 
 |资源 |说明
 |-----------|-----------
@@ -41,7 +41,7 @@ DocumentDB 管理的数据库实体被称为**资源**。每个资源都通过�
 |数据库 |数据库是跨集合分区的文档存储的逻辑容器。它也是一个用户容器。
 |用户 |范围权限的逻辑命名空间。 
 |权限 |与用户关联用于访问特定资源的授权令牌。
-|集合 |集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。集合是一个计费实体，其中[成本](/documentation/articles/documentdb-performance-levels)由与集合关联的性能级别确定。集合可以跨一个或多个分区/服务器，并且能伸缩以处理几乎无限制增长的存储或吞吐量。
+|集合 |集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。集合是一个计费实体，其中[成本](/documentation/articles/documentdb-performance-levels/)由与集合关联的性能级别确定。集合可以跨一个或多个分区/服务器，并且能伸缩以处理几乎无限制增长的存储或吞吐量。
 |存储过程 |以 JavaScript 编写的应用程序逻辑，使用集合注册且在数据库引擎中以事务方式执行。
 |触发器 |在插入、替换或删除操作之前或之后执行的以 JavaScript 编写的应用程序逻辑。
 |UDF |用 JavaScript 编写的应用程序逻辑。UDF 让你可以建立自定义查询运算符模型，从而扩展核心 DocumentDB 查询语言。
@@ -115,7 +115,7 @@ DocumentDB REST API 支持资源寻址和由 ID 和 \_rid 属性提出的请求�
 ## 数据库帐户
 你可以使用 Azure 订阅创建一个或多个 DocumentDB 数据库帐户。将给予每个标准层数据库帐户最少一个 S1 集合的容量。
 
-你可以通过在 [http://portal.azure.cn/](https://portal.azure.cn/) 的 Azure 门户预览[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)。创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。
+你可以通过在 [http://portal.azure.cn/](https://portal.azure.cn/) 的 Azure 门户预览[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。
 
 ### 数据库帐户属性
 作为设置和管理数据库帐户的一部分，你可以配置并读取以下属性：

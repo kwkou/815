@@ -17,11 +17,11 @@
 
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-geo-replication-failover-powershell)
-- [Transact-SQL](/documentation/articles/sql-database-geo-replication-failover-transact-sql)
+- [PowerShell](/documentation/articles/sql-database-geo-replication-failover-powershell/)
+- [Transact-SQL](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)
 
 
-本文介绍了如何使用 PowerShell 为 SQL 数据库启动计划内或计划外故障转移。若要配置异地复制，请参阅[为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell)。
+本文介绍了如何使用 PowerShell 为 SQL 数据库启动计划内或计划外故障转移。若要配置异地复制，请参阅[为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/)。
 
 
 
@@ -77,9 +77,9 @@
 ## 其他资源
 
 - [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
-- [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [SQL 数据库文档](/documentation/services/sql-databases)
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
+- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
 
 <!---HONumber=Mooncake_0530_2016-->

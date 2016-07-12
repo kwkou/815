@@ -46,11 +46,11 @@
 
 - Azure 订阅。如果你还没有 Azure 订阅，你可以注册一个[试用版](/pricing/1rmb-trial)。
 
-- 每个本地位置都有兼容的 VPN 硬件。查看[关于用于虚拟网络连接的 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices)，以确认你要使用的设备是否是已知兼容的设备。
+- 每个本地位置都有兼容的 VPN 硬件。查看[关于用于虚拟网络连接的 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)，以确认你要使用的设备是否是已知兼容的设备。
 
 - 每个 VPN 设备都有一个面向外部的公共 IPv4 IP 地址。该 IP 地址不能位于 NAT 后面，必须满足这一要求。
 
-- 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 - 有人能够熟练地配置 VPN 硬件。无法在 Azure 经典管理门户中使用自动生成的 VPN 脚本来配置 VPN 设备。这意味着，你必须非常了解 VPN 设备的配置，或者与具有此能力的人员合作。
 
@@ -70,13 +70,13 @@
 
 1. 将网关类型更改为动态路由。多站点 VPN 需要动态（也称为基于路由的）路由网关。若要更改网关类型，首先需要删除现有网关，然后创建新网关。有关说明，请参阅[更改 VPN 网关路由类型](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#how-to-change-your-vpn-gateway-type)。  
 
-2. 配置新网关并创建 VPN 隧道。有关说明，请参阅[在 Azure 经典管理门户中配置 VPN 网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。首先，将网关类型更改为动态路由。
+2. 配置新网关并创建 VPN 隧道。有关说明，请参阅[在 Azure 经典管理门户中配置 VPN 网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/)。首先，将网关类型更改为动态路由。
 
 ### 如果你没有站点到站点虚拟网络：
 
-1. 按照以下说明创建站点到站点虚拟网络：[在 Azure 经典管理门户中创建使用站点到站点 VPN 连接的虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create)。  
+1. 按照以下说明创建站点到站点虚拟网络：[在 Azure 经典管理门户中创建使用站点到站点 VPN 连接的虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create/)。  
 
-2. 按照以下说明配置动态路由网关：[配置 VPN 网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。请务必为网关类型选择“动态路由”。
+2. 按照以下说明配置动态路由网关：[配置 VPN 网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/)。请务必为网关类型选择“动态路由”。
 
 ## <a name="export"></a>2.导出网络配置文件 
 
@@ -200,7 +200,7 @@
 
 ## 后续步骤
 
-若要了解有关 VPN 网关的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。
+若要了解有关 VPN 网关的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 
 
 <!---HONumber=Mooncake_0613_2016-->

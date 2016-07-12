@@ -85,7 +85,7 @@ HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 	# List the keys for a Storage account
 	Get-AzureStorageKey -StorageAccountName $storageAccountName
 
-有关使用经典管理门户获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)的“查看、复制和重新生成存储访问密钥”部分。
+有关使用经典管理门户获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)的“查看、复制和重新生成存储访问密钥”部分。
 
 **创建 Azure 存储帐户**
 
@@ -243,23 +243,23 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 **提交 MapReduce 作业**
 
-请参阅[在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例](/documentation/articles/hdinsight-run-samples)。
+请参阅[在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例](/documentation/articles/hdinsight-run-samples/)。
 
 **提交 Hive 作业**
 
-请参阅[使用 PowerShell 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell)
+请参阅[使用 PowerShell 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell/)
 
 **提交 Pig 作业**
 
-请参阅[使用 PowerShell 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-powershell)。
+请参阅[使用 PowerShell 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-powershell/)。
 
 **提交 Sqoop 作业**
 
-请参阅[将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop)。
+请参阅[将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop/)。
 
 **提交 Oozie 作业**
 
-请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie)。
+请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie/)。
 
 ##将数据上载到 Azure Blob 存储
 请参阅[将数据上载到 HDInsight][hdinsight-upload-data]。
@@ -275,27 +275,27 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 * [Azure HDInsight 入门][hdinsight-get-started]
 
 
-[hdinsight-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-hive]: /documentation/articles/hdinsight-use-hive/
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters-v1#configuration
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters-v1/#configuration
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
-[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 

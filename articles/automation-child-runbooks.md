@@ -75,7 +75,7 @@
 
 ## 后续步骤
 
-- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
-- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
+- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)
+- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
 
 <!---HONumber=Mooncake_0620_2016-->

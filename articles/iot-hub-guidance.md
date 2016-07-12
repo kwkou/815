@@ -99,15 +99,15 @@ IoT 解决方案存储有关单个设备的数据，例如：
 [img-tokenservice]: ./media/iot-hub-guidance/tokenservice.png
 
 [lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide/#identityregistry
-[lnk-devguide-opmon]: /documentation/articles/iot-hub-operations-monitoring
+[lnk-devguide-opmon]: /documentation/articles/iot-hub-operations-monitoring/
 
-[lnk-device-sdks]: /documentation/articles/iot-hub-sdks-summary
+[lnk-device-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-devguide-security]: /documentation/articles/iot-hub-devguide/#security
 [lnk-tls-psk]: https://tools.ietf.org/html/rfc4279
-[lnk-gateway]: /documentation/articles/iot-hub-protocol-gateway
+[lnk-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[lnk-what-is-hub]: /documentation/articles/iot-hub-what-is-iot-hub
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[lnk-what-is-hub]: /documentation/articles/iot-hub-what-is-iot-hub/
 [lnk-portal]: https://manage.windowsazure.cn
 [lnk-throttles-quotas]: /documentation/articles/azure-subscription-service-limits/#iot-hub-limits
 [lnk-devguide-antispoofing]: /documentation/articles/iot-hub-devguide/#antispoofing

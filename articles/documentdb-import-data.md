@@ -260,7 +260,7 @@ DocumentDB 连接字符串的格式为︰
 
 	AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[管理 DocumentDB 帐户的方法](/documentation/articles/documentdb-manage-account)中所述），但是还需要将数据库的名称追加到连接字符串中（格式如下）︰
+DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[管理 DocumentDB 帐户的方法](/documentation/articles/documentdb-manage-account/)中所述），但是还需要将数据库的名称追加到连接字符串中（格式如下）︰
 
     Database=<DocumentDB Database>;
 
@@ -313,7 +313,7 @@ HBase Stargate 连接字符串的格式为︰
 
 ##<a id="DocumentDBBulkTarget"></a>导入到 DocumentDB（批量导入）
 
-借助 DocumentDB 批量导入程序，可以使用 DocumentDB 存储的过程从所有可用的源选项中导入，以提高效率。该工具支持导入到单个 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和扩展](/documentation/articles/documentdb-partition-data)。该工具将创建、执行，然后删除目标集合中存储的过程。
+借助 DocumentDB 批量导入程序，可以使用 DocumentDB 存储的过程从所有可用的源选项中导入，以提高效率。该工具支持导入到单个 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和扩展](/documentation/articles/documentdb-partition-data/)。该工具将创建、执行，然后删除目标集合中存储的过程。
 
 ![DocumentDB 批量选项的屏幕截图](./media/documentdb-import-data/documentdbbulk.png)
 
@@ -321,7 +321,7 @@ DocumentDB 连接字符串的格式为︰
 
 	AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[管理 DocumentDB 帐户的方法](/documentation/articles/documentdb-manage-account)中所述），但是还需要将数据库的名称追加到连接字符串中（格式如下）︰
+DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[管理 DocumentDB 帐户的方法](/documentation/articles/documentdb-manage-account/)中所述），但是还需要将数据库的名称追加到连接字符串中（格式如下）︰
 
     Database=<DocumentDB Database>;
 
@@ -333,7 +333,7 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 2. 可以使用缩写的语法︰collection[3] 将生成与第 1 步相同的一组集合。
 3. 可以提供多个替代。例如，collection[0-1] [0-9] 将生成 20 个带前导零的集合名称 (collection01，...02...03)。
 
-指定集合名称后，请选择集合所需的定价层（S1、S2 或 S3）。为了获得最佳导入性能，请选择 S3。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)。
+指定集合名称后，请选择集合所需的定价层（S1、S2 或 S3）。为了获得最佳导入性能，请选择 S3。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 > [AZURE.NOTE] 性能等级设置仅适用于创建集合。如果指定的集合已经存在，将不会修改其定价层。
 
@@ -370,7 +370,7 @@ DocumentDB 批量导入程序具有下列高级附加选项︰
 
 ##<a id="DocumentDBSeqTarget"></a>导入到 DocumentDB（顺序记录导入）
 
-借助 DocumentDB 顺序记录导入程序，可以从任何可用的源选项中逐条导入记录。如果要导入到已达到存储过程配额的现有集合中，可以选择此选项。该工具支持导入到单个 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和扩展](/documentation/articles/documentdb-partition-data)。
+借助 DocumentDB 顺序记录导入程序，可以从任何可用的源选项中逐条导入记录。如果要导入到已达到存储过程配额的现有集合中，可以选择此选项。该工具支持导入到单个 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和扩展](/documentation/articles/documentdb-partition-data/)。
 
 ![DocumentDB 顺序记录导入选项的屏幕截图](./media/documentdb-import-data/documentdbsequential.png)
 
@@ -378,7 +378,7 @@ DocumentDB 连接字符串的格式为︰
 
 	AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[管理 DocumentDB 帐户的方法](/documentation/articles/documentdb-manage-account)中所述），但是还需要将数据库的名称追加到连接字符串中（格式如下）︰
+DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[管理 DocumentDB 帐户的方法](/documentation/articles/documentdb-manage-account/)中所述），但是还需要将数据库的名称追加到连接字符串中（格式如下）︰
 
     Database=<DocumentDB Database>;
 
@@ -390,7 +390,7 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 2. 可以使用缩写的语法︰collection[3] 将生成与第 1 步相同的一组集合。
 3. 可以提供多个替代。例如，collection[0-1] [0-9] 将生成 20 个带前导零的集合名称 (collection01，...02...03)。
 
-指定集合名称后，请选择集合所需的定价层（S1、S2 或 S3）。为了获得最佳导入性能，请选择 S3。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)。
+指定集合名称后，请选择集合所需的定价层（S1、S2 或 S3）。为了获得最佳导入性能，请选择 S3。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 > [AZURE.NOTE] 性能等级设置仅适用于创建集合。如果指定的集合已经存在，将不会修改其定价层。
 
@@ -435,7 +435,7 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
 ![DocumentDB 索引策略高级选项的屏幕截图](./media/documentdb-import-data/indexingpolicy2.png)
 
-> [AZURE.NOTE] 如果未指定索引策略，则将应用默认策略。有关索引策略的详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies)。
+> [AZURE.NOTE] 如果未指定索引策略，则将应用默认策略。有关索引策略的详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)。
 
 
 ## 导出到 JSON 文件

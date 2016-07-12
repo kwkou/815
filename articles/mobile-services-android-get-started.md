@@ -82,9 +82,9 @@
 
 
 <!-- URLs. -->
-[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-ec
-[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data
-[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
+[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-ec/
+[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data/
+[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users/
 
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 

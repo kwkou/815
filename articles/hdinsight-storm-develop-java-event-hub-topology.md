@@ -22,11 +22,11 @@ Azure 事件中心可让你处理 Web 应用、应用程序和设备中的大量
 
 * 一个 Apache Storm on HDInsight 群集。参考下列其中一篇入门文章来创建群集：
 
-    - 一个[基于 Windows 的群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)：若要从 Windows 客户端使用 PowerShell 来操作群集，请选择此选项
+    - 一个[基于 Windows 的群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)：若要从 Windows 客户端使用 PowerShell 来操作群集，请选择此选项
 
     > [AZURE.NOTE]两种群集类型之间的唯一差别是，是要使用 SSH 将拓扑提交到群集还是 Web 窗体。
 
-* 一个 [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
+* 一个 [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
 
 * [Oracle Java Developer Kit (JDK) 版本 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或同等版本，例如 [OpenJDK](http://openjdk.java.net/)
 
@@ -392,10 +392,10 @@ EventHubSpout 定期检查点其状态为 Zookeeper 节点，将保存当前的�
 
 有关使用 Storm UI 的详细信息，请参阅以下主题：
 
-* 如果你在 HDInsight 群集上使用__基于 Windows__ 的 Storm，请参阅[部署和管理基于 Windows 的 HDInsight 上的 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
+* 如果你在 HDInsight 群集上使用__基于 Windows__ 的 Storm，请参阅[部署和管理基于 Windows 的 HDInsight 上的 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
 
 ##后续步骤
 
-* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
+* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
 <!---HONumber=82-->

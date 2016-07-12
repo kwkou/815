@@ -25,7 +25,7 @@
 
 [AZURE.INCLUDE [resource-manager-audit-limitations](../includes/resource-manager-audit-limitations.md)]
 
-本主题着重于审核操作。 <!-- 若要了解如何使用审核日志对部署进行故障排除，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。 -->
+本主题着重于审核操作。 <!-- 若要了解如何使用审核日志对部署进行故障排除，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。 -->
 
 可以通过 Azure PowerShell、Azure CLI、Insights REST API 或 [Insights .NET 库](https://www.nuget.org/packages/Microsoft.Azure.Insights/)检索审核日志中的信息。
 
@@ -90,8 +90,8 @@
 
 ## 后续步骤
 
-- 若要了解对部署进行故障排除的命令，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
-- 若要了解如何防止对所有用户的资源执行删除操作，请参阅[使用 Azure Resource Manager 锁定资源](/documentation/articles/resource-group-lock-resources)。
+- 若要了解对部署进行故障排除的命令，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
+- 若要了解如何防止对所有用户的资源执行删除操作，请参阅[使用 Azure Resource Manager 锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
 
 <!---HONumber=Mooncake_0620_2016-->

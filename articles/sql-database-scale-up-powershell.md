@@ -17,10 +17,10 @@
 
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-scale-up-powershell)
+- [PowerShell](/documentation/articles/sql-database-scale-up-powershell/)
 
 
-服务层和性能级别描述了适用于你的 SQL 数据库的功能和资源，并且可以随着应用程序更改的需要进行更新。有关详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers)。
+服务层和性能级别描述了适用于你的 SQL 数据库的功能和资源，并且可以随着应用程序更改的需要进行更新。有关详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers/)。
 
 请注意，更改数据库的服务层和/或性能级别将在新的性能级别创建原始数据库的副本，然后将切换连接到副本。当我们切换到副本时，在此过程中不会丢失任何数据，但在短暂的瞬间，将禁用与数据库的连接，因此可能回滚某些处于进行状态的事务。此窗口会有所不同，但平均起伏少于 4 秒，而在超过 99%的情况下为不足 30 秒。极少情况下，尤其有很大数量的事务在连接禁用的瞬间正在进行中，则此窗口停留时间可能会更长。
 
@@ -29,8 +29,8 @@
 
 - 若要对数据库进行降级，数据库应小于目标服务层允许的最大大小。 
 - 在启用了异地复制的情况下升级数据库时，必须先将次要数据库升级到所需的性能层，然后再升级主数据库。
-- 从高级服务层降级时，必须先终止所有异地复制关系。你可以按照[从中断中恢复](/documentation/articles/sql-database-disaster-recovery)主题中所述的步骤停止主数据库与活动次要数据库之间的复制过程。
-- 各服务层提供的还原服务是不同的。如果进行降级，你可能无法再还原到某个时间点，或者备份保留期变短。有关详细信息，请参阅 [Azure SQL 数据库备份和还原](/documentation/articles/sql-database-business-continuity)。
+- 从高级服务层降级时，必须先终止所有异地复制关系。你可以按照[从中断中恢复](/documentation/articles/sql-database-disaster-recovery/)主题中所述的步骤停止主数据库与活动次要数据库之间的复制过程。
+- 各服务层提供的还原服务是不同的。如果进行降级，你可能无法再还原到某个时间点，或者备份保留期变短。有关详细信息，请参阅 [Azure SQL 数据库备份和还原](/documentation/articles/sql-database-business-continuity/)。
 - 所做的更改完成之前不会应用数据库的新属性。
 
 
@@ -38,11 +38,11 @@
 **若要完成本文，你需要以下各项：**
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
-- Azure SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)文章中的步骤创建一个。
+- Azure SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)文章中的步骤创建一个。
 - Azure PowerShell。
 
 
-若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
 
@@ -113,13 +113,13 @@
 
 ## 后续步骤
 
-- [扩大和缩小](/documentation/articles/sql-database-elastic-scale-get-started)
-- [使用 SSMS 连接和查询 SQL 数据库](/documentation/articles/sql-database-connect-query-ssms)
-- [导出 Azure SQL 数据库](/documentation/articles/sql-database-export-powershell)
+- [扩大和缩小](/documentation/articles/sql-database-elastic-scale-get-started/)
+- [使用 SSMS 连接和查询 SQL 数据库](/documentation/articles/sql-database-connect-query-ssms/)
+- [导出 Azure SQL 数据库](/documentation/articles/sql-database-export-powershell/)
 
 ## 其他资源
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 - [Azure SQL 数据库 Cmdlet](http://msdn.microsoft.com/zh-cn/library/mt574084.aspx)
 

@@ -29,7 +29,7 @@ ExpressRoute 线路最多可以有两个独立的对等互连：Azure 公共和A
 
 ### 配额、限制和局限性
 
-每条 ExpressRoute 线路应用默认的配额和限制。有关最新的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
+每条 ExpressRoute 线路应用默认的配额和限制。有关最新的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
 
 ## ExpressRoute 路由域
 
@@ -43,7 +43,7 @@ ExpressRoute 线路最多可以有两个独立的对等互连：Azure 公共和A
 
 可以通过专用对等域来连接虚拟网络内部署的 Azure 计算服务（即虚拟机 (IaaS) 和云服务 (PaaS)）。专用对等域被视为进入 Azure 的核心网络的受信任扩展。可以在核心网络和 Azure 虚拟网络 (VNet) 之间设置双向连接。这样，你便可以使用专用 IP 地址直接连接到虚拟机和云服务。
 
-可以将多个虚拟网络连接到专用对等域。有关限制和局限性的信息请查看[常见问题页](/documentation/articles/expressroute-faqs)。有关最新的限制信息，请访问 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。有关路由配置的详细信息，请参阅[路由](/documentation/articles/expressroute-routing)页。
+可以将多个虚拟网络连接到专用对等域。有关限制和局限性的信息请查看[常见问题页](/documentation/articles/expressroute-faqs/)。有关最新的限制信息，请访问 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。有关路由配置的详细信息，请参阅[路由](/documentation/articles/expressroute-routing/)页。
 
 ### 公共对等互连
 
@@ -51,9 +51,9 @@ Azure 存储空间、SQL 数据库和 Web 应用等服务是使用公共 IP 地�
 
 始终会从 WAN 发起到 Azure 服务的连接。Azure 服务无法通过此路由域发起到你网络的连接。启用公共对等互连后，你将能够连接到所有 Azure 服务。我们不允许选择要将路由播发到的服务。可以通过世纪互联客服来查询 Azure 通过此对等互连播发给你的前缀列表。
 
-你可以在网络中定义自定义路由筛选器，以只使用所需的路由。有关路由配置的详细信息，请参阅[路由](/documentation/articles/expressroute-routing)页。你可以在网络中定义自定义路由筛选器，以只使用所需的路由。
+你可以在网络中定义自定义路由筛选器，以只使用所需的路由。有关路由配置的详细信息，请参阅[路由](/documentation/articles/expressroute-routing/)页。你可以在网络中定义自定义路由筛选器，以只使用所需的路由。
 
-有关通过公共对等路由域支持的服务的详细信息，请参阅[常见问题页](/documentation/articles/expressroute-faqs)。
+有关通过公共对等路由域支持的服务的详细信息，请参阅[常见问题页](/documentation/articles/expressroute-faqs/)。
  
 ## 路由域比较
 
@@ -69,15 +69,15 @@ Azure 存储空间、SQL 数据库和 Web 应用等服务是使用公共 IP 地�
 
 你可以选择启用一个或多个路由域作为 ExpressRoute 线路的一部分。若要将这些路由域合并成单个路由域，可以选择将所有路由域放置在同一个 VPN 中。此外，可以如图所示，将它们放置在不同的路由域中。建议的配置是将专用对等域直接连接到核心网络，并将公共对等域连接到外围网络。
  
-如果你选择使用所有两个对等会话，必须使用两对 BGP 会话（每一对用于一个对等类型）。BGP 会话对提供高度可用的链接。如果你要通过第 2 层连接服务提供商进行连接，则需要负责配置和管理路由。可以通过查看设置 ExpressRoute 的[工作流](/documentation/articles/expressroute-workflows)来了解详细信息
+如果你选择使用所有两个对等会话，必须使用两对 BGP 会话（每一对用于一个对等类型）。BGP 会话对提供高度可用的链接。如果你要通过第 2 层连接服务提供商进行连接，则需要负责配置和管理路由。可以通过查看设置 ExpressRoute 的[工作流](/documentation/articles/expressroute-workflows/)来了解详细信息
 
 ## 后续步骤
 
-- 查找服务提供商。请参阅 [ExpressRoute 服务提供商和位置](/documentation/articles/expressroute-locations)。
-- 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites)。
+- 查找服务提供商。请参阅 [ExpressRoute 服务提供商和位置](/documentation/articles/expressroute-locations/)。
+- 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites/)。
 - 配置 ExpressRoute 连接。
-	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)
-	- [配置路由（线路对等互连）](/documentation/articles/expressroute-howto-routing-classic)
-	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
+	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)
+	- [配置路由（线路对等互连）](/documentation/articles/expressroute-howto-routing-classic/)
+	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
 
 <!---HONumber=82-->

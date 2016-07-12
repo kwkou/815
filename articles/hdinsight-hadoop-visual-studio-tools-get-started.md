@@ -24,7 +24,7 @@
 
 - Azure HDInsight 群集：基于 Windows 的群集可用于本文档中的步骤。有关创建群集的详细信息，请参阅下列主题之一：
 
-	- [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
+	- [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
 
 - 安装有以下软件的工作站：
 
@@ -258,14 +258,14 @@ HDInsight Tools for Visual Studio 支持创建 Pig 脚本并将其提交到 HDIn
 
 
 <!--Link references-->
-[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight.introduction]: /documentation/articles/hdinsight-hadoop-introduction
-[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight.hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
-[hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs
+[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight.introduction]: /documentation/articles/hdinsight-hadoop-introduction/
+[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight.hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/
+[hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs/
 
 [apache.hive]: http://hive.apache.org
 

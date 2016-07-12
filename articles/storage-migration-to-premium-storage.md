@@ -28,7 +28,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 完成整个迁移过程可能需要在执行本指南中提供的步骤前后执行其他操作。示例包括配置虚拟网络或终结点，或在应用程序本身中进行代码更改。这些操作对于每个应用程序都是唯一的，你应该随本指南中提供的步骤一起来完成这些操作，以便尽可能无缝地进行到高级存储的完全转换。
 
-你可以在[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)中找到高级存储的功能概述。
+你可以在[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)中找到高级存储的功能概述。
 
 本指南分为两个部分，介绍了以下两种迁移方案：
 
@@ -42,12 +42,12 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 ### 先决条件
 - 你将需要 Azure 订阅。如果你没有，则可以创建一个月的[试用](/pricing/1rmb-trial/)订阅或访问 [Azure 定价](/pricing/)以获得更多选项。
 - 若要执行 PowerShell cmdlet，你将需要 Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads/)。
-- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列、DSv2 系列VM。你可以将标准和高级存储磁盘同时用于 DS 系列、DSv2 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
+- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列、DSv2 系列VM。你可以将标准和高级存储磁盘同时用于 DS 系列、DSv2 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)和[云服务大小](/documentation/articles/cloud-services-sizes-specs/)。
 
 ### 注意事项
 
 #### VM 大小
-[虚拟机大小](/documentation/articles/virtual-machines-size-specs)中列出了 Azure VM 大小规范。查看适用于高级存储的虚拟机的性能特征并选择最适合你的工作负荷的最合适 VM 大小。确保 VM 上有足够的带宽来驱动磁盘通信。
+[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)中列出了 Azure VM 大小规范。查看适用于高级存储的虚拟机的性能特征并选择最适合你的工作负荷的最合适 VM 大小。确保 VM 上有足够的带宽来驱动磁盘通信。
 
 
 #### 磁盘大小
@@ -61,17 +61,17 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 #### 存储帐户的可伸缩性目标
 
-高级存储帐户除了 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)外还具有以下可伸缩性目标。如果你的应用程序需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。
+高级存储帐户除了 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)外还具有以下可伸缩性目标。如果你的应用程序需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。
 
 |总帐户容量|本地冗余存储帐户的总带宽|
 |:--|:---|
 |磁盘容量：35 TB<br />快照容量：10 TB|入站 + 出站最高每秒 50 Gbps|
 
-有关高级存储规范的详细信息，请查看[使用高级存储时的可伸缩性和性能目标](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)。
+有关高级存储规范的详细信息，请查看[使用高级存储时的可伸缩性和性能目标](/documentation/articles/storage-premium-storage/#scalability-and-performance-targets-when-using-premium-storage)。
 
 #### 附加数据磁盘
 
-根据你的工作负荷，确定你的 VM 是否需要附加数据磁盘。你可以将多个持久性数据磁盘附加到你的 VM。如有需要，可以跨磁盘条带化，以增加卷的容量与性能。如果你使用[存储空间](https://technet.microsoft.com/zh-CN/library/hh831739.aspx)来条带化高级存储数据磁盘，应该以使用的每个磁盘一个列的方式来配置它。否则，条带化卷的整体性能可能会低于预期，因为磁盘之间的通信分配不平均。对于 Linux VM，你可以使用 mdadm 实用工具来实现同一目的。有关详细信息，请参阅文章[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid)。
+根据你的工作负荷，确定你的 VM 是否需要附加数据磁盘。你可以将多个持久性数据磁盘附加到你的 VM。如有需要，可以跨磁盘条带化，以增加卷的容量与性能。如果你使用[存储空间](https://technet.microsoft.com/zh-CN/library/hh831739.aspx)来条带化高级存储数据磁盘，应该以使用的每个磁盘一个列的方式来配置它。否则，条带化卷的整体性能可能会低于预期，因为磁盘之间的通信分配不平均。对于 Linux VM，你可以使用 mdadm 实用工具来实现同一目的。有关详细信息，请参阅文章[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)。
 
 #### 磁盘缓存策略
 默认情况下，所有高级数据磁盘的磁盘缓存策略都是“只读的”，所有附加到 VM 的高级操作系统都是“读写的”。为使应用程序的 IO 达到最佳性能，建议使用此配置设置。对于频繁写入或只写的磁盘（例如 SQL Server 日志文件），禁用磁盘缓存可获得更佳的应用程序性能。可以*Set-AzureDataDisk* PowerShell命令 的 *-HostCaching* 参数更新现有数据磁盘的缓存设置。
@@ -97,7 +97,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 - Azure 订阅、存储帐户以及你将在其中复制 VHD 的存储帐户中的容器。请注意，目标存储帐户可以是标准或高级存储帐户，具体取决于你的需求。
 - 用于通用化 VHD 的工具（如果你计划从中创建多个 VM 实例）。例如，sysprep for Windows 或 virt-sysprep for Ubuntu。
-- 用于将 VHD 文件上载到存储帐户的工具。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)或者使用 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。本指南介绍使用 AzCopy 工具复制 VHD 的步骤。 
+- 用于将 VHD 文件上载到存储帐户的工具。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)或者使用 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。本指南介绍使用 AzCopy 工具复制 VHD 的步骤。 
 
 > [AZURE.NOTE] 为了获得最佳性能，请从与目标存储帐户位于同一区域的 Azure VM 运行上述工具之一。如果从其他区域中的 Azure VM 复制 VHD，性能可能会下降。
 >
@@ -178,7 +178,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 ###<a id="copy-a-vhd-with-azcopy"></a> 使用 AzCopy 复制 VHD
 
-使用 AzCopy 可轻松通过 Internet 上载 VHD。根据 VHD 的大小，这可能需要时间。请记住，在使用此选项时，检查存储帐户传入/传出限制。有关详细信息，请参阅 [Azure 存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+使用 AzCopy 可轻松通过 Internet 上载 VHD。根据 VHD 的大小，这可能需要时间。请记住，在使用此选项时，检查存储帐户传入/传出限制。有关详细信息，请参阅 [Azure 存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 1. 从此处下载并安装 AzCopy：[最新版本的 AzCopy](http://aka.ms/downloadazcopy)
 2. 打开 Azure PowerShell，并转到安装 AzCopy 的文件夹。
@@ -195,7 +195,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
  - **/BlobType: page：**指定目标是页 Blob。
  - **/Pattern: *&lt;file-name&gt;：***指定要复制的 VHD 文件名。
 
-有关使用 AzCopy 工具的详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)。
+有关使用 AzCopy 工具的详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)。
 
 ###<a id="copy-a-vhd-with-powershell"></a> 使用 PowerShell 复制 VHD
 还可以使用 PowerShell cmdlet Start-AzureStorageBlobCopy 复制 VHD 文件。在 Azure PowerShell 上使用以下命令复制 VHD。将 <> 中的值替换为你的源和目标存储帐户中的相应值。若要使用此命令，必须在目标存储帐户中有名为 vhds 的容器。如果该容器不存在，则应在运行此命令之前创建一个。
@@ -666,15 +666,15 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 有关虚拟机迁移的特定方案，请参阅以下资源：
 
 - [在存储帐户之间迁移 Azure 虚拟机](https://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/)
-- [创建 Windows Server VHD 并将其上载到 Azure。](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)  
-- [创建并上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)  
+- [创建 Windows Server VHD 并将其上载到 Azure。](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)  
+- [创建并上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)  
 - [将虚拟机从 Amazon AWS 迁移到 Azure](http://channel9.msdn.com/Series/Migrating-Virtual-Machines-from-Amazon-AWS-to-Microsoft-Azure)  
 
 另请参阅以下资源，以了解有关 Azure 存储空间和 Azure 虚拟机的详细信息：
 
 - [Azure 存储空间](/documentation/services/storage/)   
 - [Azure 虚拟机](/documentation/services/virtual-machines/)  
-- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)  
+- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)  
 
 [1]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-2.png

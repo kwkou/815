@@ -96,9 +96,9 @@
 <!-- URLs. -->
 
 [Management Portal]: https://manage.windowsazure.cn/
-[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 [Azure Notification Hubs]: /zh-cn/pricing/details/notification-hubs/
-[使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
+[使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
 [Templates]: https://msdn.microsoft.com/zh-cn/library/jj927170.aspx#BKMK_NH7
 [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx
 

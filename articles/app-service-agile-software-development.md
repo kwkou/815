@@ -17,7 +17,7 @@
 
 在本教程中，你将学习如何使用支持[灵便软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure Web 应用](/home/features/web-site/)创建高缩放性的复杂应用程序。
 
-技术流程限制通常会妨碍成功的实施灵便方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/web-sites-publish-source-control)、[过渡环境](/documentation/articles/web-sites-staged-publishing)（槽）和[监视](/documentation/articles/web-sites-monitor)等功能的 Azure Web 应用是非常适合采用灵便软件开发的开发人员的解决方案。
+技术流程限制通常会妨碍成功的实施灵便方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview/)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/web-sites-publish-source-control/)、[过渡环境](/documentation/articles/web-sites-staged-publishing/)（槽）和[监视](/documentation/articles/web-sites-monitor/)等功能的 Azure Web 应用是非常适合采用灵便软件开发的开发人员的解决方案。
 
 下表是灵便开发的相关要求以及 Azure 服务如何启用它们的简短列表。
 
@@ -34,10 +34,10 @@
 
 将图片放入文字：
 
--	部署体系结构分成三个不同的环境（或 Azure 中的[资源组](/documentation/articles/resource-group-overview)），各有其自身的 App Service 计划、[缩放](/documentation/articles/web-sites-scale)设置和 SQL 数据库。 
+-	部署体系结构分成三个不同的环境（或 Azure 中的[资源组](/documentation/articles/resource-group-overview/)），各有其自身的 App Service 计划、[缩放](/documentation/articles/web-sites-scale/)设置和 SQL 数据库。 
 -	你可以单独管理每个环境。它们甚至可以存在于不同的订阅中。
 -	过渡和生产环境实现为相同 Web 应用应用的两个槽。
--	在过渡槽（包含生产数据）上验证主分支的提交时，已验证的过渡应用将交换到生产槽，且[不会造成停机](/documentation/articles/web-sites-staged-publishing)。
+-	在过渡槽（包含生产数据）上验证主分支的提交时，已验证的过渡应用将交换到生产槽，且[不会造成停机](/documentation/articles/web-sites-staged-publishing/)。
 
 生产和过渡环境由 [*&lt;repository\_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) 中的模板定义。
 
@@ -60,7 +60,7 @@
 	><p> 3. 将 `New-AzureResourceGroup` 解构为 `New-AzureRmResourceGroup` 和 `New-AzureRmResourceGroupDeployment`，例如 `New-AzureRmResourceGroup -Name $RG_Name -Location $RG_Location` 和 `New-AzureRmResourceGroupDeployment -Verbose -name $RG_Name -ResourceGroupName $RG_Name -TemplateFile ".\$TemplateFile" -TemplateParameterFile ".\temp.json" -ErrorAction Stop`
 
 -	基本了解以下知识：
-	-	[Azure 资源管理器](/documentation/articles/resource-group-overview)模板部署
+	-	[Azure 资源管理器](/documentation/articles/resource-group-overview/)模板部署
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
@@ -230,13 +230,13 @@
 
 -	[灵便开发实践：有关现代化开发周期的提示和技巧](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
 -	[使用资源管理器模板为 Azure Web 应用制定高级部署策略](http://channel9.msdn.com/Events/Build/2015/2-620)
--	[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
+-	[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)
 -	[JSONLint – JSON 验证程序](http://jsonlint.com/)
 -	[ARMClient - 设置从 GitHub 到站点的发布](https://github.com/projectKudu/ARMClient/wiki/Setup-GitHub-publishing-to-Site)
 -	[Git 分支 - 基本分支和合并](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 -	[David Ebbo 的博客](http://blog.davidebbo.com/)
--	[Azure PowerShell](/documentation/articles/powershell-install-configure)
--	[Azure 跨平台命令行工具](/documentation/articles/xplat-cli-install)
+-	[Azure PowerShell](/documentation/articles/powershell-install-configure/)
+-	[Azure 跨平台命令行工具](/documentation/articles/xplat-cli-install/)
 -	[在 Azure AD 中创建或编辑用户](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
 
 <!---HONumber=Mooncake_0118_2016-->

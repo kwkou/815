@@ -163,7 +163,7 @@
 <!--Link references-->
 
 [Python 开发人员中心]: /develop/python/
-[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
+[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs/
 
 <!--External Link references-->
 

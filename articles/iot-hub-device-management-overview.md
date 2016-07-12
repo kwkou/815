@@ -109,9 +109,9 @@ DM 客户端库在设备管理方面主要负责以下两项任务：
 [img-client]: ./media/iot-hub-device-management-overview/image3.png
 
 [lnk-lwm2m]: http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0
-[lnk-library-c]: /documentation/articles/iot-hub-device-management-library
-[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started
-[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
+[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
+[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
 [lnk-apidocs]: http://azure.github.io/azure-iot-sdks/
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 

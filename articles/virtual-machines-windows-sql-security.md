@@ -16,7 +16,7 @@
 
 本主题包括可帮助建立对 Azure VM 中的 SQL Server 实例的安全访问的总体安全准则。但是，为了确保更好地保护你在 Azure 中的 SQL Server 数据库实例，我们建议你除了实施传统的本地安全做法外，还实施 Azure 的安全最佳做法。
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
  
 
 有关 SQL Server 安全做法的详细信息，请参阅 [SQL Server 2008 R2 安全最佳做法 - 操作和管理任务](http://download.microsoft.com/download/1/2/A/12ABE102-4427-4335-B989-5DA579A4D29D/SQL_Server_2008_R2_Security_Best_Practice_Whitepaper.docx)
@@ -38,11 +38,11 @@ Azure 遵守多个行业法规和标准，使你能够使用在虚拟机中运�
 
 ## 有关保护与 Azure 虚拟机的连接的注意事项：
 
-- 请考虑使用 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview)（而不是公共 RDP 端口）来管理虚拟机。
+- 请考虑使用 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)（而不是公共 RDP 端口）来管理虚拟机。
 
-- 使用[网络安全组](/documentation/articles/virtual-networks-nsg) (NSG) 以允许或拒绝对你的虚拟机进行网络通信。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。
+- 使用[网络安全组](/documentation/articles/virtual-networks-nsg/) (NSG) 以允许或拒绝对你的虚拟机进行网络通信。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell/)。
 
-- 如果你在使用终结点，当你不使用它们时，请删除虚拟机上的任何终结点。有关在终结点上使用 ACL 的说明，请参阅[管理终结点上的 ACL](/documentation/articles/virtual-machines-windows-classic-setup-endpoints#manage-the-acl-on-an-endpoint)。
+- 如果你在使用终结点，当你不使用它们时，请删除虚拟机上的任何终结点。有关在终结点上使用 ACL 的说明，请参阅[管理终结点上的 ACL](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/#manage-the-acl-on-an-endpoint)。
 
 - 为 Azure 虚拟机中的 SQL Server 数据库引擎实例启用加密连接选项。使用签名证书配置 SQL Server 实例。有关详细信息，请参阅[为数据库引擎启用加密连接](https://msdn.microsoft.com/zh-cn/library/ms191192.aspx)和[连接字符串语法](https://msdn.microsoft.com/zh-cn/library/ms254500.aspx)。
 
@@ -50,8 +50,8 @@ Azure 遵守多个行业法规和标准，使你能够使用在虚拟机中运�
 
 ## 后续步骤
 
-如果你还对有关性能的最佳实践感兴趣，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)。
+如果你还对有关性能的最佳实践感兴趣，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)。
 
-有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server 概述](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server 概述](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_0509_2016-->

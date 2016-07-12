@@ -18,8 +18,8 @@
 # 排查在 Azure 中重新启动或调整现有 Linux 虚拟机时遇到的经典部署问题
 
 > [AZURE.SELECTOR]
-- [经典](/documentation/articles/virtual-machines-linux-classic-restart-resize-error-troubleshooting)
-- [资源管理器](/documentation/articles/virtual-machines-linux-restart-resize-error-troubleshooting)
+- [经典](/documentation/articles/virtual-machines-linux-classic-restart-resize-error-troubleshooting/)
+- [资源管理器](/documentation/articles/virtual-machines-linux-restart-resize-error-troubleshooting/)
 
 当你尝试启动已停止的 Azure 虚拟机 (VM)，或调整现有 Azure VM 的大小时，经常遇到的错误是分配失败。当群集或区域没有可用的资源或无法支持所请求的 VM 大小时，将发生此错误。
 

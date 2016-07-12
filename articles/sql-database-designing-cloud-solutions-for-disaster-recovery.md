@@ -16,11 +16,11 @@
 # 使用 SQL 数据库中的活动异地复制功能为云灾难恢复设计应用程序
 
 
-> [AZURE.NOTE] [Active Geo-Replication](/documentation/articles/sql-database-geo-replication-overview) 现在可用于所有层中的所有数据库。
+> [AZURE.NOTE] [Active Geo-Replication](/documentation/articles/sql-database-geo-replication-overview/) 现在可用于所有层中的所有数据库。
 
 
 
-了解如何使用 SQL 数据库中的[异地复制](/documentation/articles/sql-database-geo-replication-overview)功能，设计能够在发生区域性故障和灾难性服务中断时复原的数据库应用程序。为了业务连续性规划，你要考虑的因素包括应用程序部署拓扑、要采用的服务级别协议、流量延迟和成本。在本文中我们将探讨常见的应用程序模式并讨论每个模式的优点和不足。
+了解如何使用 SQL 数据库中的[异地复制](/documentation/articles/sql-database-geo-replication-overview/)功能，设计能够在发生区域性故障和灾难性服务中断时复原的数据库应用程序。为了业务连续性规划，你要考虑的因素包括应用程序部署拓扑、要采用的服务级别协议、流量延迟和成本。在本文中我们将探讨常见的应用程序模式并讨论每个模式的优点和不足。
 
 ## 设计模式 1：使用并置数据库进行云灾难恢复的主动-被动部署
 
@@ -30,9 +30,9 @@
 + 对数据的读写 (RW) 访问具有很强依赖性
 + 由于延迟和流量成本，应用程序逻辑与数据库之间的跨区域连接是不可接受的    
 
-在这种情况下，当所有应用程序组件均受到影响并且需要作为一个单元进行故障转移时，将针对处理区域灾难对应用程序部署拓扑进行优化。对于地理冗余，应用程序逻辑和数据库将复制到另一个区域但在正常情况下不用于应用程序工作负荷。次要区域中的应用程序应配置为使用辅助数据库的 SQL 连接字符串。流量管理器设置为使用[故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)。
+在这种情况下，当所有应用程序组件均受到影响并且需要作为一个单元进行故障转移时，将针对处理区域灾难对应用程序部署拓扑进行优化。对于地理冗余，应用程序逻辑和数据库将复制到另一个区域但在正常情况下不用于应用程序工作负荷。次要区域中的应用程序应配置为使用辅助数据库的 SQL 连接字符串。流量管理器设置为使用[故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)。
 
-> [AZURE.NOTE] [Azure traffic manager](/documentation/articles/traffic-manager-overview) 在整篇文章中仅供说明之用。你可以使用任何支持故障转移路由方法的负载平衡解决方案。
+> [AZURE.NOTE] [Azure traffic manager](/documentation/articles/traffic-manager-overview/) 在整篇文章中仅供说明之用。你可以使用任何支持故障转移路由方法的负载平衡解决方案。
 
 除了主应用程序实例外，还应考虑部署一个较小的[辅助角色应用程序](/documentation/articles/cloud-services-choose-me/#tellmecs)，以通过定期发出 T-SQL 只读 (RO) 命令来监视主数据库。可使用它自动触发故障转移和/或在应用程序的管理控制台上生成警报。若要确保监视不受区域范围的停机影响，应将监视应用程序实例部署到每个区域，并将它们连接到其他区域中的数据库，但只有次要区域中的实例需要处于活动状态。
 
@@ -76,7 +76,7 @@
 + 可使用不同的连接字符串将只读逻辑与读写逻辑分开
 + 只读逻辑不依赖于正在与最新更新完全同步的数据  
 
-如果你的应用程序具有这些特征，则将最终用户连接负载平衡到不同区域中的多个应用程序实例上，可以提高性能和改善最终用户体验。若要实现这一点，每个区域应具有应用程序的活动实例，并将读写 (RW) 逻辑连接到主要区域中的主数据库。应将只读 (RO) 逻辑连接到与应用程序实例在同一区域中的辅助数据库。流量管理器应设置为使用[轮循机制路由](/documentation/articles/traffic-manager-configure-round-robin-routing-method)或[性能路由](/documentation/articles/traffic-manager-configure-performance-routing-method)，并为每个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring)。
+如果你的应用程序具有这些特征，则将最终用户连接负载平衡到不同区域中的多个应用程序实例上，可以提高性能和改善最终用户体验。若要实现这一点，每个区域应具有应用程序的活动实例，并将读写 (RW) 逻辑连接到主要区域中的主数据库。应将只读 (RO) 逻辑连接到与应用程序实例在同一区域中的辅助数据库。流量管理器应设置为使用[轮循机制路由](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)或[性能路由](/documentation/articles/traffic-manager-configure-performance-routing-method/)，并为每个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring/)。
 
 如模式 #1 中所示，你应考虑部署类似的监视应用程序。但与模式 #1 不同的是，它不负责触发终结点故障转移。
 
@@ -110,7 +110,7 @@
 + 任何数据丢失都具有高业务风险，数据库故障转移在服务中断是永久性时只能用作最后的解决措施。
 + 在一段时间内，应用程序可以在“只读模式”下运行。
 
-在此模式下，应用程序在连接到辅助数据库时将切换到只读模式。主要区域中的应用程序逻辑与主数据库共存并在读写模式 (RW) 下运行，次要区域中的应用程序逻辑与辅助数据库共存并可以在只读模式 (RO) 下运行。流量管理器应设置为使用[故障转移路由](/documentation/articles/traffic-manager-configure-failover-routing-method)，并为两个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring)。
+在此模式下，应用程序在连接到辅助数据库时将切换到只读模式。主要区域中的应用程序逻辑与主数据库共存并在读写模式 (RW) 下运行，次要区域中的应用程序逻辑与辅助数据库共存并可以在只读模式 (RO) 下运行。流量管理器应设置为使用[故障转移路由](/documentation/articles/traffic-manager-configure-failover-routing-method/)，并为两个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring/)。
 
 下图说明了在发生服务中断之前的此配置。
 ![故障转移之前的主动-被动部署。云灾难恢复。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern3-1.png)
@@ -155,10 +155,10 @@
 ## 其他资源
 
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
 
 <!---HONumber=Mooncake_0530_2016-->

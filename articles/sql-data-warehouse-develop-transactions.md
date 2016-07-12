@@ -129,8 +129,8 @@ SQL 数据仓库有一些与事务相关的其他限制。
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[事务最佳实践]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[事务最佳实践]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions/
 
 <!--MSDN references-->
 

@@ -14,9 +14,9 @@
 # 在 Azure 中配置 AlwaysOn 可用性组 - 经典
 
 > [AZURE.SELECTOR]
-- [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)
-- [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
-- [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
+- [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
+- [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)
+- [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
 
 本端到端教程介绍如何使用 Azure 虚拟机上运行的 SQL Server AlwaysOn 实施可用性组。
 
@@ -105,7 +105,7 @@
 
 1. 选择“Active Directory 域服务”和“DNS 服务器”角色。出现提示时，添加这些角色所需的任何其他功能。
 
-	>[AZURE.NOTE]你将收到无静态 IP 地址的验证警告。如果你要测试配置，请单击“继续”。对于生产方案，请[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)。
+	>[AZURE.NOTE]你将收到无静态 IP 地址的验证警告。如果你要测试配置，请单击“继续”。对于生产方案，请[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
 
 	![添加角色对话框](./media/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/IC784624.png)
 
@@ -504,7 +504,7 @@
 
 	![新建可用性组向导，选择初始数据同步](./media/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/IC665529.gif)
 
-1. 在“验证”页中，单击“下一步”。此页应与以下页类似。因为你尚未配置可用性组侦听器，会出现一个侦听器配置警告。你可以忽略此警告，因为本教程不会配置侦听器。若要在完成本教程后配置侦听器，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)。
+1. 在“验证”页中，单击“下一步”。此页应与以下页类似。因为你尚未配置可用性组侦听器，会出现一个侦听器配置警告。你可以忽略此警告，因为本教程不会配置侦听器。若要在完成本教程后配置侦听器，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)。
 
 	![新建可用性组向导，验证](./media/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/IC665530.gif)
 
@@ -529,8 +529,8 @@
 >[AZURE.WARNING]请勿尝试从故障转移群集管理器对可用性组进行故障转移。所有故障转移操作都应在 SSMS 中的 **AlwaysOn 仪表板**内进行。有关详细信息，请参阅[将 WSFC 故障转移群集管理器用于可用性组的限制](https://msdn.microsoft.com/zh-cn/library/ff929171.aspx)。
 
 ## 后续步骤
-现在，你已通过在 Azure 中创建可用性组，成功实施了 SQL Server AlwaysOn。若要为此可用性组配置侦听器，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)。
+现在，你已通过在 Azure 中创建可用性组，成功实施了 SQL Server AlwaysOn。若要为此可用性组配置侦听器，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)。
 
-有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=70-->

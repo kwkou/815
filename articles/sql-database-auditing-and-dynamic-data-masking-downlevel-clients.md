@@ -15,7 +15,7 @@
 # SQL 数据库 - 对审核的下层客户端支持
 
 
-对于支持 TDS 重定向的 SQL 客户端，可以自动使用[审核](/documentation/articles/sql-database-auditing-get-started)。
+对于支持 TDS 重定向的 SQL 客户端，可以自动使用[审核](/documentation/articles/sql-database-auditing-get-started/)。
 
 任何实现了 TDS 7.4 的客户端同样应当支持重定向。例外情况包括不完全支持重定向功能的 JDBC 4.0 以及未实现重定向的 Tedious（适用于 Node.JS）。
 

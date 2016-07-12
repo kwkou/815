@@ -19,14 +19,14 @@
 以下是完成本教程所需具备的条件：
 
 - 一个 Azure 帐户。
-- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。
-- 设置开发环境。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-set-up-computer)。
+- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。
+- 设置开发环境。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-set-up-computer/)。
 - 网络摄像机。例如，[Telestream Wirecast 编码器](http://www.telestream.net/wirecast/overview.htm)。 
 
 建议阅读以下文章：
 
 - [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
-- [使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders)
+- [使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)
  
 
 ##示例

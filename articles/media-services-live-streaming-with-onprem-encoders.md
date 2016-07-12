@@ -27,9 +27,9 @@
 
 本主题涵盖以下内容：
 
-- [常见实时流式处理方案](/documentation/articles/media-services-live-streaming-with-onprem-encoders#scenario)
-- [频道及其相关组件的说明](/documentation/articles/media-services-live-streaming-with-onprem-encoders#channel)
-- [注意事项](/documentation/articles/media-services-live-streaming-with-onprem-encoders#considerations)
+- [常见实时流式处理方案](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#scenario)
+- [频道及其相关组件的说明](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#channel)
+- [注意事项](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#considerations)
 
 ##<a id="scenario"></a>常见实时流式处理方案
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
@@ -227,9 +227,9 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 
 - 每次重新配置实时编码器后，请对频道调用**重置**方法。在重置频道之前，必须停止节目。在重置频道后，重新启动节目。
 - 只有当频道处于“正在运行”状态且频道中的所有节目都已停止时才能停止频道。
-- 默认情况下，你只能向你的媒体服务帐户添加 5 个频道。有关详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
+- 默认情况下，你只能向你的媒体服务帐户添加 5 个频道。有关详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
 - 当频道或其关联的节目正在运行时，无法更改输入协议。如果你需要不同的协议，应当针对每个输入协议创建单独的频道。
-- 仅当你的频道处于**“正在运行”**状态时才会向你收费。有关详细信息，请参阅[此](/documentation/articles/media-services-live-streaming-with-onprem-encoders#states)部分。
+- 仅当你的频道处于**“正在运行”**状态时才会向你收费。有关详细信息，请参阅[此](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#states)部分。
 
 ##如何创建从本地编码器接收多比特率实时流的频道
 
@@ -245,11 +245,11 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 
 ##相关主题
 
-[Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview)
+[Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview/)
 
-[使用 Azure 媒体服务传递实时流式处理事件](/documentation/articles/media-services-live-streaming-workflow)
+[使用 Azure 媒体服务传递实时流式处理事件](/documentation/articles/media-services-live-streaming-workflow/)
 
-[媒体服务概念](/documentation/articles/media-services-concepts)
+[媒体服务概念](/documentation/articles/media-services-concepts/)
 
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
 

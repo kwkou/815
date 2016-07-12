@@ -16,13 +16,13 @@
 #如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 管理门户创建多比特率流
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
+- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
+- [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。
 
->[AZURE.NOTE]有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+>[AZURE.NOTE]有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 ##常见的实时流方案
 
@@ -68,7 +68,7 @@
 以下是完成本教程所需具备的条件。
 
 - 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
-- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
+- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 - 可以发送单比特率实时流的摄像头和编码器。
 
 ##使用门户配置流式处理终结点
@@ -105,7 +105,7 @@
 2.	选择“频道”页。
 3.	选择“添加+”以添加新频道。
 
-选择**“标准”**编码类型。此类型指定要创建能够进行实时编码的频道。这意味着传入单比特率流将发送到频道，并使用指定的实时编码器设置编码为多比特率流。有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+选择**“标准”**编码类型。此类型指定要创建能够进行实时编码的频道。这意味着传入单比特率流将发送到频道，并使用指定的实时编码器设置编码为多比特率流。有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 ![standard0][standard0]
 
@@ -115,7 +115,7 @@
 - 单比特率 RTMP
 - RTP (MPEG-TS)：RTP 上的 MPEG-2 传输流。
 
-有关每个协议的详细说明，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关每个协议的详细说明，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 ![standard1][standard1]
 
@@ -123,7 +123,7 @@
 
 在**“广告配置”**页上，可以指定 Ad 标记信号源。使用门户时，只能选择“API”，它指示频道内的实时编码器应侦听异步 Ad 标记 API。使用门户时，只能选择“API”。
 
-有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 ![standard2][standard2]
 
@@ -144,7 +144,7 @@
 
 ![standard5][standard5]
 
-有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 
 ##获取引入 URL
@@ -236,7 +236,7 @@
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
-有关传送内容的详细信息，请参阅[传送内容](/documentation/articles/media-services-deliver-content-overview)。
+有关传送内容的详细信息，请参阅[传送内容](/documentation/articles/media-services-deliver-content-overview/)。
 
 你可以使用 [AMS 播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
 

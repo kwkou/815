@@ -16,7 +16,7 @@
 #使用 TSQL 创建 SQL 数据仓库 
 
 > [AZURE.SELECTOR]
-- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-tsql)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-tsql/)
 
 
 本文说明如何使用 Transact SQL 创建 SQL 数据仓库。若要完成本文中的步骤，你需要以下各项：
@@ -64,11 +64,11 @@ SERVICE\_OBJECTIVE 指示启动实例时使用的 DWU 数目，接受以下值�
 ## 后续步骤
 完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]，或[迁移][]数据。
 
-[连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect
-[迁移]: /documentation/articles/sql-data-warehouse-overview-migrate
-[开发]: /documentation/articles/sql-data-warehouse-overview-develop
-[加载]: /documentation/articles/sql-data-warehouse-overview-load
-[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples
+[连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[开发]: /documentation/articles/sql-data-warehouse-overview-develop/
+[加载]: /documentation/articles/sql-data-warehouse-overview-load/
+[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [定价页]: /home/features/sql-data-warehouse/#price
 
 <!---HONumber=Mooncake_0321_2016-->

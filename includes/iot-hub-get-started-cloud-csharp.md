@@ -126,13 +126,13 @@
 
 <!-- Links -->
 
-[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
 [lnk-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
-[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview
+[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
 [lnk-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
-[lnk-processd2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
+[lnk-processd2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 
 <!-- Images -->
 [10]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp1.png

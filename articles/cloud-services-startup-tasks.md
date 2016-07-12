@@ -150,9 +150,9 @@ EXIT /B 0
 
 
 ## 后续步骤
-了解如何使用云服务执行一些[常见的启动任务](/documentation/articles/cloud-services-startup-tasks-common)。
+了解如何使用云服务执行一些[常见的启动任务](/documentation/articles/cloud-services-startup-tasks-common/)。
 
-[打包](/documentation/articles/cloud-services-model-and-package)你的云服务。
+[打包](/documentation/articles/cloud-services-model-and-package/)你的云服务。
 
 
 [ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef

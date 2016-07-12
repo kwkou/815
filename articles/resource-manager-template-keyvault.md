@@ -58,10 +58,10 @@
 | ---- | ---- | 
 | type | 枚举<br />必需<br />**Microsoft.KeyVault/vaults**<br /><br />要创建的资源类型。 |
 | apiVersion | 枚举<br />必需<br />**2015-06-01** 或 **2014-12-19-preview**<br /><br />要用于创建该资源的 API 版本。 | 
-| name | 字符串<br />必需<br />在 Azure 中唯一的名称。<br /><br />要创建的密钥保管库的名称。请考虑在命名约定中使用 [uniqueString](/documentation/articles/resource-group-template-functions#uniquestring) 函数来创建唯一名称，如以下示例中所示。 |
-| location | 字符串<br />必需<br />密钥保管库的有效区域。若要确定有效的区域，请参阅[支持的区域](/documentation/articles/resource-manager-supported-services#supported-regions)。<br /><br />托管密钥保管库的区域。 |
+| name | 字符串<br />必需<br />在 Azure 中唯一的名称。<br /><br />要创建的密钥保管库的名称。请考虑在命名约定中使用 [uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数来创建唯一名称，如以下示例中所示。 |
+| location | 字符串<br />必需<br />密钥保管库的有效区域。若要确定有效的区域，请参阅[支持的区域](/documentation/articles/resource-manager-supported-services/#supported-regions)。<br /><br />托管密钥保管库的区域。 |
 | properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于指定要创建的密钥保管库的类型。 |
-| 资源 | 数组<br />可选<br />允许的值：[密钥保管库机密资源](/documentation/articles/resource-manager-template-keyvault-secret)<br /><br />密钥保管库的子资源。 |
+| 资源 | 数组<br />可选<br />允许的值：[密钥保管库机密资源](/documentation/articles/resource-manager-template-keyvault-secret/)<br /><br />密钥保管库的子资源。 |
 
 <a id="properties" /></a>
 ### 属性对象
@@ -69,7 +69,7 @@
 | 名称 | 值 |
 | ---- | ---- | 
 | enabledForDeployment | 布尔值<br />可选<br />**true** 或 **false**<br /><br />指定是否已为虚拟机或 Service Fabric 部署启用了保管库。 |
-| enabledForTemplateDeployment | 布尔值<br />可选<br />**true** 或 **false**<br /><br />指定是否在 Resource Manager 模板部署中启用了保管库。有关详细信息，请参阅 [Pass secure values during deployment（在部署期间传递安全值）](/documentation/articles/resource-manager-keyvault-parameter) |
+| enabledForTemplateDeployment | 布尔值<br />可选<br />**true** 或 **false**<br /><br />指定是否在 Resource Manager 模板部署中启用了保管库。有关详细信息，请参阅 [Pass secure values during deployment（在部署期间传递安全值）](/documentation/articles/resource-manager-keyvault-parameter/) |
 | enabledForVolumeEncryption | 布尔值<br />可选<br />**true** 或 **false**<br /><br />指定是否为卷加密启用了保管库。 |
 | tenantId | 字符串<br />必需<br />**全局唯一标识符**<br /><br />订阅的租户标识符。可以使用 [Get-AzureRMSubscription](https://msdn.microsoft.com/zh-cn/library/azure/mt619284.aspx) PowerShell cmdlet 或 **azure account show** Azure CLI 命令来检索该值。 |
 | accessPolicies | 数组<br />必需<br />[accessPolicies 对象](#accesspolicies)<br /><br />最多包含 16 个对象的数组，指定用户或服务主体的权限。 |
@@ -238,8 +238,8 @@
 
 ## 后续步骤
 
-- 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
-- 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter)。
+- 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)。
+- 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
 
 <!---HONumber=Mooncake_0425_2016-->

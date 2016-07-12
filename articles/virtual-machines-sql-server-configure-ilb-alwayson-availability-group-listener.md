@@ -15,23 +15,23 @@
 # 在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器
 
 > [AZURE.SELECTOR]
-- [内部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)
-- [外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener)
+- [内部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)
+- [外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)
 
 ## 概述
 
 本主题说明如何使用**内部负载平衡器 (ILB)** 为 AlwaysOn 可用性组配置侦听器。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
-你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)但是没有配置侦听器。
+你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)但是没有配置侦听器。
 
 ## 内部侦听器的准则和限制
 请注意有关 Azure 中使用 ILB 的可用性组侦听器的以下准则：
 
 - Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 支持可用性组侦听器。
 
-- 每个云服务只支持一个内部可用性组侦听器，因为该侦听器将配置给 ILB，而每个云服务只有一个 ILB。但是，可以创建多个外部侦听器。有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组的外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener)。
+- 每个云服务只支持一个内部可用性组侦听器，因为该侦听器将配置给 ILB，而每个云服务只有一个 ILB。但是，可以创建多个外部侦听器。有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组的外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)。
 
 - 不支持在你在其中也有使用云服务的公共 VIP 的外部侦听器的同一云服务中创建内部侦听器。
 
@@ -39,7 +39,7 @@
 
 [AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
-本文重点介绍如何创建使用**内部负载平衡器 (ILB)** 的侦听器。如果你需要一个公共/外部侦听器，请参阅本文的另一个版本，其中提供了有关设置[外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener)的步骤
+本文重点介绍如何创建使用**内部负载平衡器 (ILB)** 的侦听器。如果你需要一个公共/外部侦听器，请参阅本文的另一个版本，其中提供了有关设置[外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)的步骤
 
 ## 创建支持直接服务器返回的负载平衡 VM 终结点
 
@@ -59,7 +59,7 @@
 
 11. 选择一个可用地址，并在以下脚本的 **$ILBStaticIP** 参数中使用它。
 
-12. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。<!--有关 ILB 要求的详细信息，请参阅[内部负载平衡器](/documentation/articles/load-balancer-internal-overview)。-->此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
+12. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。<!--有关 ILB 要求的详细信息，请参阅[内部负载平衡器](/documentation/articles/load-balancer-internal-overview/)。-->此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
 
 		# Define variables
 		$ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes

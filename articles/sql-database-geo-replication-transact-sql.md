@@ -17,8 +17,8 @@
 
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-geo-replication-powershell)
-- [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql)
+- [PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)
+- [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/)
 
 
 本文说明如何使用 Transact-SQL 为 Azure SQL 数据库配置异地复制。
@@ -37,11 +37,11 @@
 - 逻辑 Azure SQL 数据库服务器 <MyLocalServer> 和 SQL 数据库 <MyDB> - 你要复制到不同地理区域的主数据库。
 - 一个或多个逻辑 Azure SQL 数据库服务器 <MySecondaryServer(n)> - 将在其中创建异地复制辅助数据库的伙伴服务器的逻辑服务器。
 - 主数据库上 DBManager 的登录信息，拥有你要异地复制的本地数据库的 db\_ownership，以及你要配置异地复制的伙伴服务器上的 DBManager。
-- 最新版本的 SQL Server Management Studio - 若要获取最新版本的 SQL Server Management Studio (SSMS)，请转到[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。有关使用 SQL Server Management Studio 管理 Azure SQL 数据库逻辑服务器和数据库的详细信息，请参阅[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms)
+- 最新版本的 SQL Server Management Studio - 若要获取最新版本的 SQL Server Management Studio (SSMS)，请转到[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。有关使用 SQL Server Management Studio 管理 Azure SQL 数据库逻辑服务器和数据库的详细信息，请参阅[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)
 
 ## 添加辅助数据库
 
-可以使用 **ALTER DATABASE** 语句在伙伴服务器上创建异地复制的辅助数据库。在包含要复制的数据库服务器的 master 数据库上执行此语句。异地复制数据库（“主数据库”）具备与要复制的数据库相同的名称，并且默认与主数据库具有相同的服务级别。辅助数据库可以是可读或不可读，并且可以是单一数据库或弹性数据库。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。
+可以使用 **ALTER DATABASE** 语句在伙伴服务器上创建异地复制的辅助数据库。在包含要复制的数据库服务器的 master 数据库上执行此语句。异地复制数据库（“主数据库”）具备与要复制的数据库相同的名称，并且默认与主数据库具有相同的服务级别。辅助数据库可以是可读或不可读，并且可以是单一数据库或弹性数据库。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。
 创建辅助数据库并设定种子之后，数据将开始以异步方式从主数据库复制。以下步骤说明如何使用 Management Studio 配置异地复制。提供使用单一数据库或弹性数据库创建不可读和可读辅助副本的步骤。
 
 > [AZURE.NOTE] 如果指定的伙伴服务器上存在辅助数据库（例如，由于当前存在或以前存在异地复制关系），命令将会失败。
@@ -118,7 +118,7 @@
 
 ## 删除辅助数据库
 
-可以使用 **ALTER DATABASE** 语句永久终止辅助数据库与其主数据库之间的复制关系。此语句将在主数据库所在的 master 数据库上运行。终止关系后，辅助数据库将成为常规读写数据库。如果与辅助数据库的连接断开，命令将会成功，但辅助数据库必须等到连接恢复后才变为可读写。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。
+可以使用 **ALTER DATABASE** 语句永久终止辅助数据库与其主数据库之间的复制关系。此语句将在主数据库所在的 master 数据库上运行。终止关系后，辅助数据库将成为常规读写数据库。如果与辅助数据库的连接断开，命令将会成功，但辅助数据库必须等到连接恢复后才变为可读写。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。
 
 使用以下步骤从异地复制合作关系中删除异地复制的辅助数据库。
 
@@ -144,7 +144,7 @@
 
 2. 切换异地复制合作关系中两个数据库的角色。
 
-此顺序可确保不发生任何数据丢失。切换角色时，有一小段时间无法使用这两个数据库（大约为 0 到 25 秒）。在正常情况下，完成整个操作所需的时间应该少于一分钟。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。
+此顺序可确保不发生任何数据丢失。切换角色时，有一小段时间无法使用这两个数据库（大约为 0 到 25 秒）。在正常情况下，完成整个操作所需的时间应该少于一分钟。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。
 
 
 > [AZURE.NOTE] 发出该命令时，如果主数据库不可用，则命令将会失败并出现一条错误消息，指出没有可用的主服务器。在少数情况下，操作无法完成并且可能会出现停滞。在此情况下，用户可以执行强制故障转移命令并接受数据丢失。
@@ -219,14 +219,14 @@
 
 ## 后续步骤
 
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
+- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
 
 
 ## 其他资源
 
 - [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
-- [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [SQL 数据库文档](/home/features/sql-database)
 
 <!---HONumber=Mooncake_0606_2016-->

@@ -22,90 +22,90 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ## 入门
-- [Azure 上的 Linux 简介](/documentation/articles/virtual-machines-linux-intro-on-azure)
-- [使用经典部署模型创建的 Azure 虚拟机的常见问题](/documentation/articles/virtual-machines-linux-classic-faq)
-- [关于虚拟机的映像](/documentation/articles/virtual-machines-linux-classic-about-images)
-- [上载自己的发行版映像](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)（以及使用 [Azure 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros)的说明）
-- [使用 Azure 经典管理门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-classic-log-on)
+- [Azure 上的 Linux 简介](/documentation/articles/virtual-machines-linux-intro-on-azure/)
+- [使用经典部署模型创建的 Azure 虚拟机的常见问题](/documentation/articles/virtual-machines-linux-classic-faq/)
+- [关于虚拟机的映像](/documentation/articles/virtual-machines-linux-classic-about-images/)
+- [上载自己的发行版映像](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)（以及使用 [Azure 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)的说明）
+- [使用 Azure 经典管理门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-classic-log-on/)
 
 ## 设置
 
-- [安装 Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install)
+- [安装 Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install/)
 
 
 ## 教程
 
-- [在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)
-- [Azure 虚拟机上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app)
-- [如何：为 AMQP 和 Service Bus 安装 Apache Qpid Proton-C](/documentation/articles/service-bus-amqp-apache)
+- [在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack/)
+- [Azure 虚拟机上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)
+- [如何：为 AMQP 和 Service Bus 安装 Apache Qpid Proton-C](/documentation/articles/service-bus-amqp-apache/)
 
 ### 数据库
-- [优化 Azure 上的 MySQL 的性能](/documentation/articles/virtual-machines-linux-classic-optimize-mysql)
-- [MySQL 群集](/documentation/articles/virtual-machines-linux-classic-mysql-cluster)
-- [在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问](/documentation/articles/virtual-machines-linux-classic-cassandra-nodejs)
-- [创建多主的 MariaDb 群集](/documentation/articles/virtual-machines-linux-classic-mariadb-mysql-cluster)
+- [优化 Azure 上的 MySQL 的性能](/documentation/articles/virtual-machines-linux-classic-optimize-mysql/)
+- [MySQL 群集](/documentation/articles/virtual-machines-linux-classic-mysql-cluster/)
+- [在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问](/documentation/articles/virtual-machines-linux-classic-cassandra-nodejs/)
+- [创建多主的 MariaDb 群集](/documentation/articles/virtual-machines-linux-classic-mariadb-mysql-cluster/)
 
 ### Docker
-- [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)
-- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine)
+- [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)
+- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine/)
 
 ### Ubuntu
-- [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-classic-mysql-cluster)
-- [如何：Node.js 和 Cassandra](/documentation/articles/virtual-machines-linux-classic-cassandra-nodejs)
+- [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-classic-mysql-cluster/)
+- [如何：Node.js 和 Cassandra](/documentation/articles/virtual-machines-linux-classic-cassandra-nodejs/)
 
 ### OpenSUSE
-- [如何：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse)
+- [如何：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse/)
 
 ### CoreOS
 - [如何：在 Azure 上使用 CoreOS](https://coreos.com/os/docs/latest/booting-on-azure.html)
 
 ## 规划
-- [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines)
-- [选择 Linux 用户名](/documentation/articles/virtual-machines-linux-usernames)
-- [如何在经典部署模型中为虚拟机配置可用性集](/documentation/articles/virtual-machines-linux-classic-configure-availability)
-- [如何在 Azure VM 上安排计划内的维护](/documentation/articles/virtual-machines-linux-planned-maintenance-schedule)
-- [管理虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability)
-- [Azure 中 Linux 虚拟机的计划内维护](/documentation/articles/virtual-machines-linux-planned-maintenance)
+- [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines/)
+- [选择 Linux 用户名](/documentation/articles/virtual-machines-linux-usernames/)
+- [如何在经典部署模型中为虚拟机配置可用性集](/documentation/articles/virtual-machines-linux-classic-configure-availability/)
+- [如何在 Azure VM 上安排计划内的维护](/documentation/articles/virtual-machines-linux-planned-maintenance-schedule/)
+- [管理虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability/)
+- [Azure 中 Linux 虚拟机的计划内维护](/documentation/articles/virtual-machines-linux-planned-maintenance/)
 
 
 ## 部署
-- [创建运行 Linux 的自定义虚拟机](/documentation/articles/virtual-machines-linux-classic-createportal)
-- [基础知识：捕获 Linux VM 来创建模板](/documentation/articles/virtual-machines-linux-classic-capture-image)
-- [有关未认可分发版的信息](/documentation/articles/virtual-machines-linux-create-upload-generic)
+- [创建运行 Linux 的自定义虚拟机](/documentation/articles/virtual-machines-linux-classic-createportal/)
+- [基础知识：捕获 Linux VM 来创建模板](/documentation/articles/virtual-machines-linux-classic-capture-image/)
+- [有关未认可分发版的信息](/documentation/articles/virtual-machines-linux-create-upload-generic/)
 
 
 ## 管理
 
-- [SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux)
-- [如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-classic-reset-access)
-- [使用 Root](/documentation/articles/virtual-machines-linux-use-root-privileges)
+- [SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+- [如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-classic-reset-access/)
+- [使用 Root](/documentation/articles/virtual-machines-linux-use-root-privileges/)
 
 
 ## Azure 资源
 
-- [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)
-- [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)
-- [将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-windows-classic-inject-custom-data)
+- [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/)
+- [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features/)
+- [将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-windows-classic-inject-custom-data/)
 
 
 ## 存储
 
-- [将数据磁盘附加到 Linux VM](/documentation/articles/virtual-machines-linux-classic-attach-disk)
-- [从 Linux VM 分离数据磁盘](/documentation/articles/virtual-machines-linux-classic-detach-disk)
-- [RAID](/documentation/articles/virtual-machines-linux-configure-raid)
+- [将数据磁盘附加到 Linux VM](/documentation/articles/virtual-machines-linux-classic-attach-disk/)
+- [从 Linux VM 分离数据磁盘](/documentation/articles/virtual-machines-linux-classic-detach-disk/)
+- [RAID](/documentation/articles/virtual-machines-linux-configure-raid/)
 
 
 ## 联网
-- [如何在 Azure 中的经典虚拟机上设置终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints)
+- [如何在 Azure 中的经典虚拟机上设置终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
 
 ## 故障排除
-- [对基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)
+- [对基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)
 
 
 ## 引用
 
-- [Azure 服务管理 (asm) 模式下的 Azure CLI 命令](/documentation/articles/virtual-machines-command-line-tools)
+- [Azure 服务管理 (asm) 模式下的 Azure CLI 命令](/documentation/articles/virtual-machines-command-line-tools/)
 - [Azure 服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 
 

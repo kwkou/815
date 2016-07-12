@@ -30,12 +30,12 @@
 
 
 ## 开发
-1. 服务开发人员 [Reliable Actors ](/documentation/articles/service-fabric-reliable-actors-introduction)或 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction) 编程模型开发不同类型的服务。
+1. 服务开发人员 [Reliable Actors ](/documentation/articles/service-fabric-reliable-actors-introduction/)或 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/) 编程模型开发不同类型的服务。
 2. 服务开发人员以声明的方式描述包含一个或多个代码、配置和数据包的服务清单文件中的开发服务类型。
 3. 随后，应用程序开发人员构建使用不同服务类型的应用程序。
 4. 应用程序开发人员以声明的方式，通过引用构成服务的服务清单并相应地重写并参数化构成服务的不同配置与部署设置，描述了应用程序清单中的应用程序类型。
 
-有关示例，请参阅 [Reliable Actors 入门](/documentation/articles/service-fabric-reliable-actors-get-started)和 [Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start)。
+有关示例，请参阅 [Reliable Actors 入门](/documentation/articles/service-fabric-reliable-actors-get-started/)和 [Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start/)。
 
 ## 部署
 1. 应用程序管理员通过在应用程序清单中指定相应的 **ApplicationType** 元素的参数，将定制应用程序类型定制为将被部署到 Service Fabric 群集的特定应用程序。
@@ -50,16 +50,16 @@
 
 6. 该应用程序现在在 Service Fabric 群集中运行。
 
-有关示例，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)。
+有关示例，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)。
 
 ## 测试
 1. 部署到本地开发群集或测试群集后，服务开发人员使用 [**FailoverTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenarioparameters.aspx) 和 [**FailoverTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenario.aspx) 类或 [**Invoke ServiceFabricFailoverTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125935.aspx) 运行内置的故障转移测试方案。故障转移测试方案在重要转换和故障转移中运行指定的服务，以确保其仍然可用并正在工作。
 
 2. 然后，服务开发人员使用 [**ChaosTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenarioparameters.aspx) 和 [**ChaosTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenario.aspx) 类，或 [**Invoke ServiceFabricChaosTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt126036.aspx) 运行内置的混乱测试方案。任意混合测试方案会将多个节点、代码包和副本错误包括到群集中。
 
-3. 服务开发人员通过创建围绕群集移动主副本的测试方案，来[测试服务之间的通信](/documentation/articles/service-fabric-testability-scenarios-service-communication)。
+3. 服务开发人员通过创建围绕群集移动主副本的测试方案，来[测试服务之间的通信](/documentation/articles/service-fabric-testability-scenarios-service-communication/)。
 
-有关详细信息，请参阅 [Introduction to the Fault Analysis Service](/documentation/articles/service-fabric-testability-overview)（故障分析服务简介）。
+有关详细信息，请参阅 [Introduction to the Fault Analysis Service](/documentation/articles/service-fabric-testability-overview/)（故障分析服务简介）。
 
 ## 升级
 1. 服务开发人员将更新实例化应用程序的构成服务并/或修复 bug，并提供服务清单的新版本。
@@ -82,7 +82,7 @@
 
 10. Service Fabric 对在群集中运行的目标应用程序进行升级，并且不会丢失其任何构成服务的可用性。
 
-有关示例，请参阅[应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial)。
+有关示例，请参阅[应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial/)。
 
 ## 维护
 1. 对于操作系统升级和修补程序，Service Fabric 与 Azure 基础结构连接，以确保所有在群集中运行的应用程序的可用性。
@@ -104,17 +104,17 @@
 
 4. 操作员使用 [**RemoveApplicationPackage** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.removeapplicationpackage.aspx)或 [**Remove-ServiceFabricApplicationPackage** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt163532.aspx) 从 ImageStore 中删除应用程序包。
 
-有关示例，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)。
+有关示例，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)。
 
 ## 后续步骤
 
 有关开发、测试和管理 Service Fabric 应用程序与服务的详细信息，请参阅：
 
-- [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction)
-- [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction)
-- [部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)
-- [应用程序升级](/documentation/articles/service-fabric-application-upgrade)
-- [可测试性概述](/documentation/articles/service-fabric-testability-overview)
-- [基于 REST 的应用程序生命周期示例](/documentation/articles/service-fabric-rest-based-application-lifecycle-sample)
+- [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/)
+- [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/)
+- [部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)
+- [应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
+- [可测试性概述](/documentation/articles/service-fabric-testability-overview/)
+- [基于 REST 的应用程序生命周期示例](/documentation/articles/service-fabric-rest-based-application-lifecycle-sample/)
 
 <!---HONumber=Mooncake_0425_2016-->

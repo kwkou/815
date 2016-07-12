@@ -21,7 +21,7 @@
 
 本主题介绍为何以及如何创建和配置资产传送策略。
 
->[AZURE.NOTE]若要使用动态打包和动态加密，必须确保至少有一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+>[AZURE.NOTE]若要使用动态打包和动态加密，必须确保至少有一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 >
 >此外，你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。
 
@@ -49,7 +49,7 @@ HDS
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=f4m-f4f)
 
-有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content)。
+有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content/)。
 
 ##注意事项
 
@@ -78,7 +78,7 @@ HDS
 ##DynamicCommonEncryption 资产传送策略 
 
 
-以下 **CreateAssetDeliveryPolicy** 方法将创建 **AssetDeliveryPolicy**，该策略配置为将动态常用加密 (**DynamicCommonEncryption**) 应用到平滑流式处理协议（将阻止流式处理其他协议）。该方法采用以下两种参数：**Asset**（要将传送策略应用到的资产）和 **IContentKey**（**CommonEncryption** 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey#common_contentkey)）。
+以下 **CreateAssetDeliveryPolicy** 方法将创建 **AssetDeliveryPolicy**，该策略配置为将动态常用加密 (**DynamicCommonEncryption**) 应用到平滑流式处理协议（将阻止流式处理其他协议）。该方法采用以下两种参数：**Asset**（要将传送策略应用到的资产）和 **IContentKey**（**CommonEncryption** 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey/#common_contentkey)）。
 
 有关创建 AssetDeliveryPolicy 时可以指定哪些值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)部分。
 
@@ -153,7 +153,7 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
 
 ##DynamicEnvelopeEncryption 资产传送策略 
 
-以下 **CreateAssetDeliveryPolicy** 方法将创建 **AssetDeliveryPolicy**，该策略配置为将动态信封加密 (**DynamicEnvelopeEncryption**) 应用到 HLS 和 DASH 协议（将阻止流式处理的其他协议）。该方法采用以下两种参数：**Asset**（要将传送策略应用到的资产）和 **IContentKey**（**EnvelopeEncryption** 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey#envelope_contentkey)）。
+以下 **CreateAssetDeliveryPolicy** 方法将创建 **AssetDeliveryPolicy**，该策略配置为将动态信封加密 (**DynamicEnvelopeEncryption**) 应用到 HLS 和 DASH 协议（将阻止流式处理的其他协议）。该方法采用以下两种参数：**Asset**（要将传送策略应用到的资产）和 **IContentKey**（**EnvelopeEncryption** 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey/#envelope_contentkey)）。
 
 
 有关创建 AssetDeliveryPolicy 时可以指定哪些值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)部分。

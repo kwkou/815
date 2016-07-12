@@ -19,7 +19,7 @@
 
 本文说明如何在 Azure AD 中添加、更新或删除应用程序。你将了解有关可与 Azure AD 集成的不同类型的应用程序，以及如何将应用程序配置为访问其他资源（如 Web API 等等）。
 
-若要详细了解代表已注册应用程序的两个 Azure AD 对象及其关系，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)；若要详细了解利用 Azure Active Directory 开发应用程序时应使用的品牌准则，请参阅[适用于集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines)。
+若要详细了解代表已注册应用程序的两个 Azure AD 对象及其关系，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)；若要详细了解利用 Azure Active Directory 开发应用程序时应使用的品牌准则，请参阅[适用于集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines/)。
 
 ## 添加应用程序
 
@@ -47,7 +47,7 @@
 
 ## 更新应用程序
 
-将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍如何进一步配置你的应用程序。有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)。
+将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍如何进一步配置你的应用程序。有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
 ### 同意框架概述
 
@@ -57,7 +57,7 @@
 
 同意框架使用公共或机密客户端，建立在 OAuth 2.0 及其各种流程的基础之上，例如，代码授权和客户端凭据授权。通过使用 OAuth 2.0，可以在 Azure AD 中生成多种不同类型的客户端应用程序（例如手机、平板电脑、服务器或 Web 应用程序），并获取对所需资源的访问权限。
 
-有关同意框架的更多详细信息，请参阅 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx)、[Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)和 Office 365 主题 [Understanding authentication with Office 365 APIs（了解如何使用 Office 365 API 进行身份验证）](https://msdn.microsoft.com/office/office365/howto/common-app-authentication-tasks)。
+有关同意框架的更多详细信息，请参阅 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx)、[Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)和 Office 365 主题 [Understanding authentication with Office 365 APIs（了解如何使用 Office 365 API 进行身份验证）](https://msdn.microsoft.com/office/office365/howto/common-app-authentication-tasks)。
 
 #### 同意体验示例
 
@@ -77,7 +77,7 @@
 
     ![用户同意体验](./media/active-directory-integrating-applications/userconsent.png)
 
-1. 用户授予许可后，授权代码将返回到你的应用程序，应用程序可凭此获取访问令牌和刷新令牌。有关此流程的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)主题中的[从 Web 应用程序到 Web API](/documentation/articles/active-directory-authentication-scenarios#web-application-to-web-api) 部分。
+1. 用户授予许可后，授权代码将返回到你的应用程序，应用程序可凭此获取访问令牌和刷新令牌。有关此流程的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)主题中的[从 Web 应用程序到 Web API](/documentation/articles/active-directory-authentication-scenarios/#web-application-to-web-api) 部分。
 
 ### 将客户端应用程序配置为访问 Web API
 
@@ -152,7 +152,7 @@
 - appRoles 成员，可用于定义 Web API 的**应用程序权限**的 [AppRole](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#AppRoleType) 实体集合  
 - oauth2Permissions 成员，可用于定义 Web API 的**委托的权限**的 [OAuth2Permission](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#OAuth2PermissionType) 实体集合
 
-有关应用程序清单概念的更多一般信息，请参阅[了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest)。
+有关应用程序清单概念的更多一般信息，请参阅[了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)。
 
 ### 访问 Azure AD Graph 和 Office 365 API
 
@@ -178,7 +178,7 @@
 
 如果你正在编写一个要供组织外部的客户或合作伙伴使用的应用程序，则需要在 Azure 经典管理门户中更新应用程序定义。
 
->[AZURE.NOTE] 在启用多租户时，必须确保应用程序的应用 ID URI 属于已验证的域。此外，返回 URL 必须以 https:// 开头。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)。
+>[AZURE.NOTE] 在启用多租户时，必须确保应用程序的应用 ID URI 属于已验证的域。此外，返回 URL 必须以 https:// 开头。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 
 ##### 为外部用户启用对你的应用程序的访问权限
 
@@ -204,7 +204,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 #### 为单页面应用程序启用 OAuth 2.0 隐式授权
 
-单页面应用程序 (SPA) 通常利用浏览器中运行的 JavaScript 重型前端进行构建，该前端调用应用程序的 Web API 后端来执行其业务逻辑。对于托管在 Azure AD 中的 SPA，可以使用 OAuth 2.0 隐式授权向 Azure AD 验证用户身份，并获取可用来保护从应用程序 JavaScript 客户端到其后端 Web API 的调用的令牌。用户授予同意之后，可以使用同一个身份验证协议来获取令牌以保护客户端与针对应用程序配置的其他 Web API 资源之间的调用。默认情况下，为应用程序禁用了 OAuth 2.0 隐式授权。你也可以通过在[应用程序清单](/documentation/articles/active-directory-application-manifest)（表示应用程序标识配置的 JSON 文件）中设置 `oauth2AllowImplicitFlow`”` 值，来为应用程序启用 OAuth 2.0 隐式授权。
+单页面应用程序 (SPA) 通常利用浏览器中运行的 JavaScript 重型前端进行构建，该前端调用应用程序的 Web API 后端来执行其业务逻辑。对于托管在 Azure AD 中的 SPA，可以使用 OAuth 2.0 隐式授权向 Azure AD 验证用户身份，并获取可用来保护从应用程序 JavaScript 客户端到其后端 Web API 的调用的令牌。用户授予同意之后，可以使用同一个身份验证协议来获取令牌以保护客户端与针对应用程序配置的其他 Web API 资源之间的调用。默认情况下，为应用程序禁用了 OAuth 2.0 隐式授权。你也可以通过在[应用程序清单](/documentation/articles/active-directory-application-manifest/)（表示应用程序标识配置的 JSON 文件）中设置 `oauth2AllowImplicitFlow`”` 值，来为应用程序启用 OAuth 2.0 隐式授权。
 
 ##### 启用 OAuth 2.0 隐式授权
 
@@ -233,7 +233,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 #### 生成为外部用户授予访问权限的链接（旧）
 
-为了让外部用户使用其组织帐户注册你的应用程序，你需要更新你的应用程序，以显示一个可以链接到 Azure AD 上的页面的按钮，使他们能够授予访问权限。[适用于集成应用程序的品牌准则](/documentation/articles/active-directory-branding-guidelines)主题中介绍了有关此注册按钮的品牌指导。在用户授予或拒绝访问权限后，Azure AD 访问授权页会将浏览器重定向回你的应用程序并返回响应。有关应用程序属性的详细信息，请参阅[应用程序对象和服务主体](/documentation/articles/active-directory-application-objects)。
+为了让外部用户使用其组织帐户注册你的应用程序，你需要更新你的应用程序，以显示一个可以链接到 Azure AD 上的页面的按钮，使他们能够授予访问权限。[适用于集成应用程序的品牌准则](/documentation/articles/active-directory-branding-guidelines/)主题中介绍了有关此注册按钮的品牌指导。在用户授予或拒绝访问权限后，Azure AD 访问授权页会将浏览器重定向回你的应用程序并返回响应。有关应用程序属性的详细信息，请参阅[应用程序对象和服务主体](/documentation/articles/active-directory-application-objects/)。
 
 访问授权页由 Azure AD 创建，你可以在 Azure 经典管理门户中应用的“配置”页上找到访问授权页的链接。若要转到“配置”页，请单击 Azure AD 租户的顶部菜单中的“应用程序”链接，单击要配置的应用，然后在“快速启动”页的顶部菜单中单击“配置”。
 
@@ -301,7 +301,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 本部分说明如何从 Azure AD 租户中删除应用程序。
 
 ### 删除组织编写的应用程序
-这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司拥有的应用程序”筛选器下显示的应用程序。从技术层面讲，这些是通过 Azure 经典管理门户以手动方式注册的应用程序，或者通过 PowerShell 或图形 API 以编程方式注册的应用程序。更具体地说，它们由租户中的应用程序与服务主体对象表示。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)。
+这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司拥有的应用程序”筛选器下显示的应用程序。从技术层面讲，这些是通过 Azure 经典管理门户以手动方式注册的应用程序，或者通过 PowerShell 或图形 API 以编程方式注册的应用程序。更具体地说，它们由租户中的应用程序与服务主体对象表示。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 
 #### 从目录中删除单租户应用程序
 
@@ -330,20 +330,20 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 6. 在确认消息中单击“是”。
 
 ### 删除其他组织授权的多租户应用程序
-这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司使用的应用程序”筛选器下显示的一部分应用程序，特别是未列在“我的公司拥有的应用程序”列表下的应用程序。在技术层面讲，它们是在同意处理期间注册的多租户应用程序。更具体地说，它们仅由租户中的服务主体对象表示。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)。
+这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司使用的应用程序”筛选器下显示的一部分应用程序，特别是未列在“我的公司拥有的应用程序”列表下的应用程序。在技术层面讲，它们是在同意处理期间注册的多租户应用程序。更具体地说，它们仅由租户中的服务主体对象表示。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 
 公司管理员若要删除多租户应用程序对你目录的访问权限（在授予许可后），必须使用一个 Azure 订阅来通过 Azure 经典管理门户删除访问权限。只需导航到应用程序的配置页，然后单击底部的“管理访问权限”按钮。公司管理员也可以使用 [Azure AD PowerShell Cmdlet](http://go.microsoft.com/fwlink/?LinkId=294151) 删除访问权限。
 
 ## 后续步骤
 
 
-- 请参阅[适用于集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines)
+- 请参阅[适用于集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines/)
 
-- 了解[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)
+- 了解[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)
 
-- 了解 [Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest)
+- 了解 [Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
 
-- 访问 [Active Directory 开发人员指南](/documentation/articles/active-directory-developer's guide)
+- 访问 [Active Directory 开发人员指南](/documentation/articles/active-directory-developer/'s guide)
 
 
 <!---HONumber=Mooncake_0613_2016-->

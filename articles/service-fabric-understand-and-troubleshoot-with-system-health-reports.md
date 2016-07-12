@@ -14,9 +14,9 @@
 
 # 使用系统运行状况报告进行故障排除
 
-Azure Service Fabric 组件报告包含群集中的所有实体。[运行状况存储](/documentation/articles/service-fabric-health-introduction#health-store)根据系统报告来创建和删除实体。它还将这些实体组织为层次结构以捕获实体交互。
+Azure Service Fabric 组件报告包含群集中的所有实体。[运行状况存储](/documentation/articles/service-fabric-health-introduction/#health-store)根据系统报告来创建和删除实体。它还将这些实体组织为层次结构以捕获实体交互。
 
-> [AZURE.NOTE] 请阅读 [Service Fabric 运行状况模型](/documentation/articles/service-fabric-health-introduction)以了解与运行状况相关的概念。
+> [AZURE.NOTE] 请阅读 [Service Fabric 运行状况模型](/documentation/articles/service-fabric-health-introduction/)以了解与运行状况相关的概念。
 
 系统运行状况报告提供有关群集和应用程序功能的可见性，并且通过运行状况标记问题。对于应用程序和服务，系统运行状况报告从 Service Fabric 的角度验证实体得到实现并且正常运行。报告不对服务的业务逻辑进行任何运行状况监视，也不检测暂停的进程。用户服务可以使用其逻辑的特有信息来丰富运行状况数据。
 
@@ -596,10 +596,10 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 - **说明**：指向遇到的错误
 
 ## 后续步骤
-[查看 Service Fabric 运行状况报告](/documentation/articles/service-fabric-view-entities-aggregated-health)
+[查看 Service Fabric 运行状况报告](/documentation/articles/service-fabric-view-entities-aggregated-health/)
 
-[在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)
+[在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)
 
-[Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade)
+[Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
  
 <!---HONumber=Mooncake_0523_2016-->

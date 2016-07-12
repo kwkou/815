@@ -4,6 +4,6 @@
 |-----------------------------------------|-------------|---------------------|
 | **经典管理门户** | 不支持 | 不支持 |
 | **Azure 门户预览** | 不支持 | 不支持 |
-| **PowerShell** | [文章](/documentation/articles/vpn-gateway-multi-site) | 是 |
+| **PowerShell** | [文章](/documentation/articles/vpn-gateway-multi-site/) | 是 |
 
 <!---HONumber=Mooncake_0425_2016-->

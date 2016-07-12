@@ -15,9 +15,9 @@
 #如何：检查作业进度
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-portal-check-job-progress)
-- [.NET](/documentation/articles/media-services-check-job-progress)
-- [REST](/documentation/articles/media-services-rest-check-job-progress)
+- [门户](/documentation/articles/media-services-portal-check-job-progress/)
+- [.NET](/documentation/articles/media-services-check-job-progress/)
+- [REST](/documentation/articles/media-services-rest-check-job-progress/)
 
 当你运行作业时，通常需要采用某种方式来跟踪作业进度。你可以使用作业的 State 属性来查看该作业的状态。有关 State 属性的详细信息，请参阅[作业实体属性](https://msdn.microsoft.com/zh-cn/library/azure/5100ddd7-92ff-4c37-84d2-4f84fee250a7#job_entity_properties)。
 

@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-timezone-config)
-- [English](/documentation/articles/mysql-database-enus-timezone-config)
+- [中文](/documentation/articles/mysql-database-timezone-config/)
+- [English](/documentation/articles/mysql-database-enus-timezone-config/)
 
 ## Time zone configuration on MySQL on Azure
 
@@ -22,6 +22,6 @@ For example, if you are changing to Beijing time, you can set the time\_zone par
 >[AZURE.NOTE] **Named time zones such as "Europe/Helsinki", "US/Eastern" or "MET" are not currently supported.**
 *
 
-See [Setting MySQL Database on Azure server parameters](/documentation/articles/mysql-database-advanced-settings) for the specific intervals and details of other parameters.
+See [Setting MySQL Database on Azure server parameters](/documentation/articles/mysql-database-advanced-settings/) for the specific intervals and details of other parameters.
 
 <!---HONumber=Acom_0218_2016_MySql-->

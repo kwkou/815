@@ -176,7 +176,7 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 [此处][retirepolicy]解释了来宾 OS 可支持性和停用策略。
 
 [Install .NET on a Cloud Service Role]: /documentation/articles/cloud-services-dotnet-install-dotnet/?WT.mc_id=azurebg_email_Trans_963_RevisedNET_Update
-[Azure 来宾 OS 更新设置]: /documentation/articles/cloud-services-how-to-configure
+[Azure 来宾 OS 更新设置]: /documentation/articles/cloud-services-how-to-configure/
 [rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
 [Microsoft Security Advisory 3009008]: https://technet.microsoft.com/zh-cn/library/security/3009008.aspx
@@ -191,9 +191,9 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 [update guest os portal]: https://msdn.microsoft.com/zh-cn/library/gg433101.aspx
 [update guest os svc]: https://msdn.microsoft.com/zh-cn/library/gg456324.aspx
 [restarts]: http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
-[patches]: /documentation/articles/cloud-services-guestos-msrc-releases
-[retirepolicy]: /documentation/articles/cloud-services-guestos-retirement-policy
-[fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement
+[patches]: /documentation/articles/cloud-services-guestos-msrc-releases/
+[retirepolicy]: /documentation/articles/cloud-services-guestos-retirement-policy/
+[fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement/
  
 
 <!---HONumber=Mooncake_0523_2016-->

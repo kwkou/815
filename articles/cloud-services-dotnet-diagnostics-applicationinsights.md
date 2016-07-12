@@ -28,7 +28,7 @@
 
 ![角色设计器将诊断数据发送到 Application Insights][2]
 
-3) 在弹出的对话框中，选择要向其发送 Azure 诊断数据的 Application Insights 资源。该对话框可让你从订阅中选择现有的 Application Insights 资源，或者为 Application Insights 资源手动指定检测键。如果你没有 Application Insights 资源，可以通过单击“创建新资源”链接创建一个，这会在浏览器窗口中打开 Azure 经典门户，你可以在其中创建 Application Insights 资源。有关创建 Application Insights 资源的详细信息，请参阅[创建新的 Application Insights 资源](/documentation/articles/app-insights-create-new-resource)
+3) 在弹出的对话框中，选择要向其发送 Azure 诊断数据的 Application Insights 资源。该对话框可让你从订阅中选择现有的 Application Insights 资源，或者为 Application Insights 资源手动指定检测键。如果你没有 Application Insights 资源，可以通过单击“创建新资源”链接创建一个，这会在浏览器窗口中打开 Azure 经典门户，你可以在其中创建 Application Insights 资源。有关创建 Application Insights 资源的详细信息，请参阅[创建新的 Application Insights 资源](/documentation/articles/app-insights-create-new-resource/)
 
 ![选择 Application Insights 资源][3]
 
@@ -38,9 +38,9 @@
 	
 在发布期间，Visual Studio 将使用 **APPINSIGHTS\_INSTRUMENTATIONKEY** 配置设置来配置诊断扩展模块的相应 Application Insights 资源信息。配置设置是为不同服务配置定义不同检测键的便利方式。发布时，Visual Studio 将转换该设置，并将它插入诊断扩展模块公共配置。为了简化使用 PowerShell 配置诊断扩展的过程，Visual Studio 的程序包输出还包含公共配置 XML 以及相应的 Application Insights 检测键。公共配置文件在 Extensions 文件夹中创建，并遵循模式 PaaSDiagnostics.<RoleName>.PubConfig.xml。任何基于 PowerShell 的部署都可以使用此模式将每个配置映射到角色。
 
-5) 启用“将诊断数据发送到 Application Insights”会自动将 Azure 诊断配置为向 Application Insights 发送 Azure 诊断代理程序收集的所有性能计数器和错误级别日志。如果你想进一步配置要将哪些数据发送到 Application Insights，必须手动编辑每个角色的 *diagnostics.wadcfgx* 文件。若要了解有关手动更新配置的详细信息，请参阅[配置 Azure 诊断以将数据发送到 Application Insights](/documentation/articles/azure-diagnostics-configure-applicationinsights)。
+5) 启用“将诊断数据发送到 Application Insights”会自动将 Azure 诊断配置为向 Application Insights 发送 Azure 诊断代理程序收集的所有性能计数器和错误级别日志。如果你想进一步配置要将哪些数据发送到 Application Insights，必须手动编辑每个角色的 *diagnostics.wadcfgx* 文件。若要了解有关手动更新配置的详细信息，请参阅[配置 Azure 诊断以将数据发送到 Application Insights](/documentation/articles/azure-diagnostics-configure-applicationinsights/)。
 
-将云服务配置为向 Application Insights 发送 Azure 诊断数据后，可以像平时一样将云服务部署到 Azure，并确保 Azure 诊断扩展已启用。请参阅[使用 Visual Studio 发布云服务](/documentation/articles/vs-azure-tools-publishing-a-cloud-service)。
+将云服务配置为向 Application Insights 发送 Azure 诊断数据后，可以像平时一样将云服务部署到 Azure，并确保 Azure 诊断扩展已启用。请参阅[使用 Visual Studio 发布云服务](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)。
 
 ## 在 Application Insights 中查看 Azure 诊断数据
 Azure 诊断遥测数据会显示在为云服务配置的 Application Insights 资源中。
@@ -53,17 +53,17 @@ Azure 诊断遥测数据会显示在为云服务配置的 Application Insights �
 
 若要在 Application Insights 中查看 Azure 诊断数据，请执行以下操作：
 
-- 使用“[指标资源管理器](/documentation/articles/app-insights-metrics-explorer)”可视化任何自定义性能计数器，或不同类型的 Windows 事件日志事件的计数。
+- 使用“[指标资源管理器](/documentation/articles/app-insights-metrics-explorer/)”可视化任何自定义性能计数器，或不同类型的 Windows 事件日志事件的计数。
 
 ![指标资源管理器中的自定义指标][5]
 
-- 使用“[搜索](/documentation/articles/app-insights-diagnostic-search)”在 Azure 诊断发送的各种跟踪日志中搜索。例如，如果角色中有未处理的异常造成该角色崩溃和回收，该信息会显示在 *Windows 事件日志* 的 *应用程序* 通道中。你可以使用搜索功能查看 Windows 事件日志错误并获取异常的完整堆栈跟踪，以便找出问题的根本原因。 
+- 使用“[搜索](/documentation/articles/app-insights-diagnostic-search/)”在 Azure 诊断发送的各种跟踪日志中搜索。例如，如果角色中有未处理的异常造成该角色崩溃和回收，该信息会显示在 *Windows 事件日志* 的 *应用程序* 通道中。你可以使用搜索功能查看 Windows 事件日志错误并获取异常的完整堆栈跟踪，以便找出问题的根本原因。 
 
 ![搜索跟踪][6]
 
 ## 后续步骤
 
-- [将 Application Insights SDK 添加到云服务](/documentation/articles/app-insights-cloudservices)，以便从应用程序发送有关请求、异常、依赖性和任何自定义遥测的数据。与 Azure 诊断数据相结合可以在相同的 Application Insight 资源中获取应用程序和系统的完整视图。  
+- [将 Application Insights SDK 添加到云服务](/documentation/articles/app-insights-cloudservices/)，以便从应用程序发送有关请求、异常、依赖性和任何自定义遥测的数据。与 Azure 诊断数据相结合可以在相同的 Application Insight 资源中获取应用程序和系统的完整视图。  
 
 
 <!--Image references-->

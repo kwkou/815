@@ -20,7 +20,7 @@
 
 一个[事务](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/AtomicTransactions#what-are-transactions)将两个或更多操作组合成执行作用域。就本质而言，此类事务必须确保所有操作属于给定的操作组，无论联合成功还是失败。在这方面，事务作为一个单元进行操作，通常称为原子性。
 
-服务总线是事务性消息代理，并确保针对其消息存储的所有内部操作的事务完整性。服务总线内部的所有消息传输，如将消息移到[死信队列](/documentation/articles/service-bus-dead-letter-queues)或在实体之间[自动转发](/documentation/articles/service-bus-auto-forwarding)消息，都是事务性的。因此，如果服务总线接受一条消息，则该消息已存储并标有一个序列号。从那时起，服务总线内的任何消息传输都是实体之间协调的操作，将从不会导致消息丢失（源成功而目标失败）或重复（源失败而目标成功）。
+服务总线是事务性消息代理，并确保针对其消息存储的所有内部操作的事务完整性。服务总线内部的所有消息传输，如将消息移到[死信队列](/documentation/articles/service-bus-dead-letter-queues/)或在实体之间[自动转发](/documentation/articles/service-bus-auto-forwarding/)消息，都是事务性的。因此，如果服务总线接受一条消息，则该消息已存储并标有一个序列号。从那时起，服务总线内的任何消息传输都是实体之间协调的操作，将从不会导致消息丢失（源成功而目标失败）或重复（源失败而目标成功）。
 
 服务总线支持针对事务作用域内的单个消息实体（队列、主题、订阅）进行分组操作。例如，可以从事务作用域内将多条消息发送到一个队列，在事务成功完成时，这些消息将仅提交到该队列的日志。
 
@@ -73,10 +73,10 @@ using (scope = new TransactionScope())
 
 有关服务总线队列的详细信息，请参阅以下文章：
 
-- [使用自动转发链接服务总线实体](/documentation/articles/service-bus-auto-forwarding)
+- [使用自动转发链接服务总线实体](/documentation/articles/service-bus-auto-forwarding/)
 - [自动转发示例](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/AutoForward)
 - [服务总线中的原子事务示例](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/AtomicTransactions)
-- [比较 Azure 队列和服务总线队列](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
-- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+- [比较 Azure 队列和服务总线队列](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
+- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
 
 <!---HONumber=Mooncake_0620_2016-->

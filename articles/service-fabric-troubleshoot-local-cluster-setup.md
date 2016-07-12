@@ -91,7 +91,7 @@
 
 ## 后续步骤
 
-- [使用系统运行状况报告了解群集并排除故障](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
-- [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster)
+- [使用系统运行状况报告了解群集并排除故障](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports/)
+- [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)
 
 <!---HONumber=Mooncake_0503_2016-->

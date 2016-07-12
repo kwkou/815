@@ -43,7 +43,7 @@
 执行组件项目提供所需的方法用于设置和获取可靠保存在执行组件状态中的计数器的值。接口项目提供其他服务可用来调用执行组件的接口。
 
 ### 无状态 Web API
-无状态 Web API 项目提供一个基本 Web 服务，可用于向外部客户端打开你的应用程序。有关如何构建该项目的信息，请参阅 [Service Fabric Web API services with OWIN self-hosting（Service Fabric Web API 服务与 OWIN 自托管）](/documentation/articles/service-fabric-reliable-services-communication-webapi)。
+无状态 Web API 项目提供一个基本 Web 服务，可用于向外部客户端打开你的应用程序。有关如何构建该项目的信息，请参阅 [Service Fabric Web API services with OWIN self-hosting（Service Fabric Web API 服务与 OWIN 自托管）](/documentation/articles/service-fabric-reliable-services-communication-webapi/)。
 
 ## 后续步骤
 ### 创建 Azure 群集
@@ -68,12 +68,12 @@ Service Fabric 支持单独对应用程序中的独立服务进行版本控制�
 
 
 <!-- Links -->
-[add-web-frontend]: /documentation/articles/service-fabric-add-a-web-frontend
-[create-cluster-in-portal]: /documentation/articles/service-fabric-cluster-creation-via-arm
-[publish-app-to-azure]: /documentation/articles/service-fabric-publish-app-remote-cluster
-[visualize-with-sfx]: /documentation/articles/service-fabric-visualizing-your-cluster
-[ci-with-vso]: /documentation/articles/service-fabric-set-up-continuous-integration
-[reliable-services-webapi]: /documentation/articles/service-fabric-reliable-services-communication-webapi
-[app-upgrade-tutorial]: /documentation/articles/service-fabric-application-upgrade-tutorial
+[add-web-frontend]: /documentation/articles/service-fabric-add-a-web-frontend/
+[create-cluster-in-portal]: /documentation/articles/service-fabric-cluster-creation-via-arm/
+[publish-app-to-azure]: /documentation/articles/service-fabric-publish-app-remote-cluster/
+[visualize-with-sfx]: /documentation/articles/service-fabric-visualizing-your-cluster/
+[ci-with-vso]: /documentation/articles/service-fabric-set-up-continuous-integration/
+[reliable-services-webapi]: /documentation/articles/service-fabric-reliable-services-communication-webapi/
+[app-upgrade-tutorial]: /documentation/articles/service-fabric-application-upgrade-tutorial/
 
 <!---HONumber=Mooncake_0425_2016-->

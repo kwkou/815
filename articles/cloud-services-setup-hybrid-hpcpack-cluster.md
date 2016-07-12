@@ -22,7 +22,7 @@
 
 本教程展示了一种方法（有时称作群集“迸发至云”）来使用 Azure 中可伸缩的按需计算资源运行计算密集型应用程序。
 
-本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。有关使用 HPC Pack 的其他方案，包括在 Azure 虚拟机中自动执行群集部署，请参阅 [HPC cluster options with Microsoft HPC Pack in Azure（Azure 中 Microsoft HPC Pack 的 HPC 群集选项）](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)。
+本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。有关使用 HPC Pack 的其他方案，包括在 Azure 虚拟机中自动执行群集部署，请参阅 [HPC cluster options with Microsoft HPC Pack in Azure（Azure 中 Microsoft HPC Pack 的 HPC 群集选项）](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)。
 
 
 ## 先决条件
@@ -203,7 +203,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![指定节点][add_node2]
 
-	有关可用大小的详细信息，请参阅 [Sizes for Cloud Services](/documentation/articles/cloud-services-sizes-specs)（云服务的大小）。
+	有关可用大小的详细信息，请参阅 [Sizes for Cloud Services](/documentation/articles/cloud-services-sizes-specs/)（云服务的大小）。
 
 4. 在“完成添加节点向导”页上，单击“完成”。
 
@@ -304,8 +304,8 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 * 若要以更大的规模设置混合 HPC Pack 群集部署，请参阅 [Burst to Azure Worker Role Instances with Microsoft HPC Pack（使用 Microsoft HPC Pack 迸发到 Azure 辅助角色实例）](http://go.microsoft.com/fwlink/p/?LinkID=200493)。
 
-* 有关在 Azure 中创建 HPC Pack 群集的其他方法，包括使用 Azure 资源管理器模板，请参阅 [HPC cluster options with Microsoft HPC Pack in Azure（在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项）](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)。
-* 有关 Azure 中的大型计算和 HPC 云解决方案范围的详细信息，请参阅 [Big Compute in Azure: Technical Resources for Batch and High Performance Computing (HPC)（Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源）](/documentation/articles/big-compute-resources)。
+* 有关在 Azure 中创建 HPC Pack 群集的其他方法，包括使用 Azure 资源管理器模板，请参阅 [HPC cluster options with Microsoft HPC Pack in Azure（在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项）](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)。
+* 有关 Azure 中的大型计算和 HPC 云解决方案范围的详细信息，请参阅 [Big Compute in Azure: Technical Resources for Batch and High Performance Computing (HPC)（Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源）](/documentation/articles/big-compute-resources/)。
 
 
 [Overview]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/hybrid_cluster_overview.png

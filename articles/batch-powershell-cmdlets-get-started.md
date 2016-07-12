@@ -20,7 +20,7 @@
 
 ## 先决条件
 
-* **Azure PowerShell** - 有关 Azure PowerShell 的下载和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。 
+* **Azure PowerShell** - 有关 Azure PowerShell 的下载和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。 
    
     * 由于 Azure Batch cmdlet 随附在 Azure Resource Manager 模块中，因此需要运行 **Login-AzureRmAccount** cmdlet 才能连接到订阅。 
     

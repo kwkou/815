@@ -138,11 +138,11 @@
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started
-[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
-[Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
-[Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
-[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started/
+[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data/
+[Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users/
+[Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push/
+[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin Studio]: http://xamarin.com/download

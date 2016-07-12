@@ -28,11 +28,11 @@
 弹性池的 eDTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
 
 
-若要了解 eDTU 和服务层，请参阅 [SQL Database options and performance（SQL 数据库选项和性能）](/documentation/articles/sql-database-service-tiers)。
+若要了解 eDTU 和服务层，请参阅 [SQL Database options and performance（SQL 数据库选项和性能）](/documentation/articles/sql-database-service-tiers/)。
 
 ## 后续步骤
 
-- [SQL 数据库选项和性能：了解每个服务层中可用的功能](/documentation/articles/sql-database-service-tiers)
-- [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell)
+- [SQL 数据库选项和性能：了解每个服务层中可用的功能](/documentation/articles/sql-database-service-tiers/)
+- [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/)
 
 <!---HONumber=Mooncake_0503_2016-->

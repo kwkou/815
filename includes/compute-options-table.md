@@ -6,5 +6,5 @@
 | [虚拟机] | 可完全控制操作系统的自定义 Windows 和 Linux VM |
 
 [web 应用]: /documentation/services/web-sites
-[虚拟机]: /documentation/articles/virtual-machines-windows-about
+[虚拟机]: /documentation/articles/virtual-machines-windows-about/
 [云服务]: /documentation/articles/cloud-services-choose-me

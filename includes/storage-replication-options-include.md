@@ -11,7 +11,7 @@
 
 	> [AZURE.IMPORTANT] 创建存储帐户后，你可以更改复制数据的方式，除非你在创建该帐户时指定了 ZRS。但请注意，如果你从 LRS 切换到 GRS 或 RA-GRS，可能会产生额外的一次性数据传输费用。
  
-有关存储复制选项的其他详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy)。
+有关存储复制选项的其他详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy/)。
 
 有关存储帐户复制的定价信息，请参阅[存储定价详细信息](/home/features/storage#price)。
 

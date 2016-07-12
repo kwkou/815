@@ -48,9 +48,9 @@
 **其他资源**
 
 
-* [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)
-* [从具有可疑活动的 IP 地址登录](/documentation/articles/active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity)
-* [来自多个地理区域的登录](/documentation/articles/active-directory-reporting-sign-ins-from-multiple-geographies)
+* [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports/)
+* [从具有可疑活动的 IP 地址登录](/documentation/articles/active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity/)
+* [来自多个地理区域的登录](/documentation/articles/active-directory-reporting-sign-ins-from-multiple-geographies/)
 
 
 

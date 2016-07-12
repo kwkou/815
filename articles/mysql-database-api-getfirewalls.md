@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-api-getfirewalls)
-- [English](/documentation/articles/mysql-database-enus-api-getfirewalls)
+- [中文](/documentation/articles/mysql-database-api-getfirewalls/)
+- [English](/documentation/articles/mysql-database-enus-api-getfirewalls/)
 
 #查看服务器防火墙规则
 

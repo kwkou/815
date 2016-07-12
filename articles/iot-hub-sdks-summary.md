@@ -66,7 +66,7 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 [适用于 Node.js 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/node/device/readme.md
 [适用于 Node.js 的 Azure IoT 服务 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/node/service/README.md
 [适用于 Python 2.7 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/python/device/readme.md
-[OS Platforms and hardware compatibility]: /documentation/articles/iot-hub-tested-configurations
+[OS Platforms and hardware compatibility]: /documentation/articles/iot-hub-tested-configurations/
 
 [Azure IoT Gateway SDK]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/README.md
 

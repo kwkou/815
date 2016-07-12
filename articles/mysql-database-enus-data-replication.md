@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-data-replication)
-- [English](/documentation/articles/mysql-database-enus-data-replication)
+- [中文](/documentation/articles/mysql-database-data-replication/)
+- [English](/documentation/articles/mysql-database-enus-data-replication/)
 
 #Configure SQL Data Sync to replicate to MySQL Database on Azure
 

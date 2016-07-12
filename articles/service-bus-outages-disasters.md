@@ -96,9 +96,9 @@
 - [Azure SQL 数据库业务连续性][]
 - [Azure 业务连续性技术指南][]
 
-  [服务总线身份验证]: /documentation/articles/service-bus-authentication-and-authorization
-  [分区消息实体]: /documentation/articles/service-bus-partitioning
-  [异步消息传送模式和高可用性]: /documentation/articles/service-bus-async-messaging
+  [服务总线身份验证]: /documentation/articles/service-bus-authentication-and-authorization/
+  [分区消息实体]: /documentation/articles/service-bus-partitioning/
+  [异步消息传送模式和高可用性]: /documentation/articles/service-bus-async-messaging/
   [使用服务总线中继消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-16dbfecd
   [BrokeredMessage.MessageId]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx
   [BrokeredMessage.Label]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx

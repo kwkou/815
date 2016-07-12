@@ -17,7 +17,7 @@
 若要生成同时接受 MSA 与 Azure AD 登录的应用，你必须先向 Microsoft 注册应用。你目前无法使用任何现有的应用搭配 Azure AD 或 MSA — 你需要创建一个全新的应用。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 ## 访问 Microsoft 应用注册门户
 第一件事就是先浏览到 [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com)。这是新的应用注册门户，可供你管理 Microsoft 应用。

@@ -42,11 +42,11 @@ Azure DocumentDB 具有以下主要功能和优势：
 
 -	**可灵活增减的吞吐量和存储：**轻松增大或减小 DocumentDB JSON 数据库规模来满足你的应用程序的需求。你的数据存储在固态硬盘 (SSD) 上，以实现可预测的低延迟。DocumentDB 支持使用容器来存储称为集合的 JSON 数据，这些数据可以扩展到几乎无限的存储大小和设置的吞吐量。随着应用程序规模的增长，你可以灵活无缝地扩展具有可预测的性能的 DocumentDB。 
 
--	**使用熟悉的 SQL 语法进行即席查询：**在 DocumentDB 中存储异类 JSON 文档，并通过熟悉的 SQL 语法查询这些文档。DocumentDB 使用高并发、无锁、日志结构化索引技术为所有文档内容自动创建索引。这样可以实现各种实时查询，而无需指定架构提示、二级索引或视图。要了解更多信息，请参阅[查询 DocumentDB](/documentation/articles/documentdb-sql-query)。
+-	**使用熟悉的 SQL 语法进行即席查询：**在 DocumentDB 中存储异类 JSON 文档，并通过熟悉的 SQL 语法查询这些文档。DocumentDB 使用高并发、无锁、日志结构化索引技术为所有文档内容自动创建索引。这样可以实现各种实时查询，而无需指定架构提示、二级索引或视图。要了解更多信息，请参阅[查询 DocumentDB](/documentation/articles/documentdb-sql-query/)。
 
--	**在数据库中执行 JavaScript：**使用标准 JavaScript 将应用程序逻辑表示为存储过程、触发器和用户定义函数 (UDF)。这样，你的应用程序逻辑可基于数据进行运作，而无需担心应用程序和数据库架构之间的不匹配。DocumentDB 支持在数据库引擎内部直接进行 JavaScript 应用程序逻辑的完全事务执行。对 JavaScript 的深度集成支持在一个 JavaScript 程序中将 INSERT、REPLACE、DELETE 和 SELECT 操作作为独立的事务来执行。要了解更多信息，请参阅 [DocumentDB 服务器端编程](/documentation/articles/documentdb-programming)。
+-	**在数据库中执行 JavaScript：**使用标准 JavaScript 将应用程序逻辑表示为存储过程、触发器和用户定义函数 (UDF)。这样，你的应用程序逻辑可基于数据进行运作，而无需担心应用程序和数据库架构之间的不匹配。DocumentDB 支持在数据库引擎内部直接进行 JavaScript 应用程序逻辑的完全事务执行。对 JavaScript 的深度集成支持在一个 JavaScript 程序中将 INSERT、REPLACE、DELETE 和 SELECT 操作作为独立的事务来执行。要了解更多信息，请参阅 [DocumentDB 服务器端编程](/documentation/articles/documentdb-programming/)。
 
--	**可调优的一致性级别：**从 4 个定义完好的一致性级别中选择，以实现一致性和性能之间的最佳平衡。对于查询和读取操作，DocumentDB 提供了四种不同的一致性级别：强、有限过时、会话和最终。通过这些细化的定义完好的一致性级别，你可以在一致性、可用性和延迟之间实现合理的平衡。要了解更多信息，请参阅[使用一致性级别最大化 DocumentDB 中的可用性和性能](/documentation/articles/documentdb-consistency-levels)。
+-	**可调优的一致性级别：**从 4 个定义完好的一致性级别中选择，以实现一致性和性能之间的最佳平衡。对于查询和读取操作，DocumentDB 提供了四种不同的一致性级别：强、有限过时、会话和最终。通过这些细化的定义完好的一致性级别，你可以在一致性、可用性和延迟之间实现合理的平衡。要了解更多信息，请参阅[使用一致性级别最大化 DocumentDB 中的可用性和性能](/documentation/articles/documentdb-consistency-levels/)。
 
 -	**完全托管：**无需管理数据库和计算机资源。作为一种完全托管的 Azure 服务，你无需管理虚拟机、部署并配置软件、管理数据库和资源的增减，或处理复杂的数据层升级。每个数据库都将自动备份，以防受到区域故障的影响。你可以轻松添加 DocumentDB 帐户并按照你的需求设置容量，从而使你专注于你的应用程序而不是操作和管理你的数据库。
 
@@ -94,7 +94,7 @@ DocumentDB 允许将应用程序逻辑编写为完全使用 JavaScript 编写的
 DocumentDB 中的 JavaScript 执行是在关系型数据库系统所支持的概念的基础之上建立的，只是现代性的将 Transact-SQL 换成了 JavaScript。所有 JavaScript 逻辑都在使用快照隔离的环境 ACID 事务内执行。在其执行过程中，如果 JavaScript 引发异常，则整个事务将被中止。
 
 ## <a name="next-steps"></a>后续步骤
-如果你已经有 Azure 帐户，则可以在 [Azure 门户预览](https://portal.azure.cn/#gallery/Microsoft.DocumentDB)中通过[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)开始使用 DocumentDB。
+如果你已经有 Azure 帐户，则可以在 [Azure 门户预览](https://portal.azure.cn/#gallery/Microsoft.DocumentDB)中通过[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)开始使用 DocumentDB。
 
 如果你没有 Azure 帐户，则可以：
 

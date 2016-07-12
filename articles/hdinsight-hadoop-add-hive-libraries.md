@@ -51,7 +51,7 @@ __要求__
 
 ##使用脚本创建群集。
 
-1. 使用[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)中的步骤开始预配群集，但不要完成预配。
+1. 使用[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/#portal)中的步骤开始预配群集，但不要完成预配。
 
 2. 在“可选配置”边栏选项卡上，选择“脚本操作”，并提供如下所示信息：
 
@@ -68,11 +68,11 @@ __要求__
 
 5. 使用“可选配置”边栏选项卡底部的“选择”按钮以保存可选配置信息。
 
-6. 按[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)中所述，继续预配群集。
+6. 按[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/#portal)中所述，继续预配群集。
 
 群集创建完成后，你将能够使用通过此脚本从 Hive 添加的 jar，而无需使用 `ADD JAR` 语句。
 
 ##后续步骤
 
-在本文档中，你已学习如何在群集创建过程中将 jar 文件中包含的 Hive 库添加到 HDInsight 群集中。有关使用 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
+在本文档中，你已学习如何在群集创建过程中将 jar 文件中包含的 Hive 库添加到 HDInsight 群集中。有关使用 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 <!---HONumber=Mooncake_0405_2016-->

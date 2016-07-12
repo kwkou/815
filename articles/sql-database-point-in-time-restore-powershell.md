@@ -15,11 +15,11 @@
 # 使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell)
+- [PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell/)
 
 本文将向你说明如何使用 PowerShell 将数据库还原到以前的时间点。
 
-[**时间点还原**](/documentation/articles/sql-database-point-in-time-restore)是自助服务功能，允许你将数据库从我们为所有数据库进行的自动备份还原到数据库保留期内的任何时间点。若要了解有关自动备份和数据库保留期的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+[**时间点还原**](/documentation/articles/sql-database-point-in-time-restore/)是自助服务功能，允许你将数据库从我们为所有数据库进行的自动备份还原到数据库保留期内的任何时间点。若要了解有关自动备份和数据库保留期的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
 
@@ -46,13 +46,13 @@
 
 ## 后续步骤
 
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)
-- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
+- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
 
 
 ## 其他资源
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 
 <!---HONumber=Mooncake_0530_2016-->

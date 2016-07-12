@@ -23,7 +23,7 @@
 
 ![错误的属性](./media/active-directory-aadconnectsync-attributes-synchronized/badextensionattribute.png)
 
-在此情况下，请从以下属性列表着手，并标识包含敏感数据或 PII 数据、因而不能同步的属性。然后在安装期间使用 [Azure AD 应用程序和属性筛选](/documentation/articles/active-directory-aadconnect-get-started-custom#azure-ad-app-and-attribute-filtering)将它们取消选择。
+在此情况下，请从以下属性列表着手，并标识包含敏感数据或 PII 数据、因而不能同步的属性。然后在安装期间使用 [Azure AD 应用程序和属性筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#azure-ad-app-and-attribute-filtering)将它们取消选择。
 
 >[AZURE.WARNING] 取消选择属性时，应该小心，只取消选择那些绝对不能同步的属性。取消选择其他属性可能会对功能造成负面影响。
 
@@ -462,8 +462,8 @@
 - 在上述列表中，对象类型 **User** 也适用于对象类型 **iNetOrgPerson**。
 
 ## 后续步骤
-了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis)配置的详细信息。
+了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0509_2016-->

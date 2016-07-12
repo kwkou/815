@@ -60,7 +60,7 @@
 
 首先，请将你的 Web 应用注册到 Azure Active Directory (AD)。应用注册将在 Azure AD 中为你的应用创建一个中心标识。该标识保留有关应用程序的基本信息，例如应用程序用来进行身份验证和访问 Azure Resource Manager API 的 OAuth 客户端 ID、回复 URL 和凭据。应用注册还会记录应用程序在代表用户访问 Microsoft API 时所需的各种委派权限。
 
-[Create Active Directory application and service principal using portal](/documentation/articles/resource-group-create-service-principal-portal)（使用门户创建 Active Directory 应用程序和服务主体）主题说明了设置应用程序所要执行的所有步骤。请参阅该主题来创建具有以下属性的应用程序：
+[Create Active Directory application and service principal using portal](/documentation/articles/resource-group-create-service-principal-portal/)（使用门户创建 Active Directory 应用程序和服务主体）主题说明了设置应用程序所要执行的所有步骤。请参阅该主题来创建具有以下属性的应用程序：
 
 - 名为 **CloudSense** 的 Web 应用程序
 - 采用 **http://{domain_name_of_your_directory}/{name_of_the_app}** 格式的登录 URL 和应用 ID URI。
@@ -72,7 +72,7 @@
 
 Azure AD 还支持应用程序的证书凭据：创建自签名证书、保留私钥，以及将公钥添加到 Azure AD 应用程序注册。对于身份验证，应用程序会使用你的私钥将小负载发送到签名的 Azure AD，然后 Azure AD 使用注册的公钥来验证签名。
 
-有关配置证书的信息，请参阅 [Build service and daemon apps in Office 365](https://msdn.microsoft.com/office/office365/howto/building-service-apps-in-office-365)（在 Office 365 中构建服务和守护程序应用）。标题为“配置应用程序的 X.509 公共证书”部分提供了有关设置证书的分步说明。或者，请参阅 [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal)（通过 Azure 资源管理器对服务主体进行身份验证），获取有关通过 Azure PowerShell 或 Azure CLI 配置证书的示例。
+有关配置证书的信息，请参阅 [Build service and daemon apps in Office 365](https://msdn.microsoft.com/office/office365/howto/building-service-apps-in-office-365)（在 Office 365 中构建服务和守护程序应用）。标题为“配置应用程序的 X.509 公共证书”部分提供了有关设置证书的分步说明。或者，请参阅 [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal/)（通过 Azure 资源管理器对服务主体进行身份验证），获取有关通过 Azure PowerShell 或 Azure CLI 配置证书的示例。
 
 ## 对用户进行身份验证和获取访问令牌
 

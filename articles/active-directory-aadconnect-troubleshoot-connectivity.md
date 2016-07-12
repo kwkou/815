@@ -20,7 +20,7 @@ Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验
 
 在本文中，我们将说明 Fabrikam 如何通过其代理连接到 Azure AD。代理服务器名为 fabrikamproxy，并使用端口 8080。
 
-首先，我们需要确保正确配置 [**machine.config**](/documentation/articles/active-directory-aadconnect-prerequisites#connectivity)。  
+首先，我们需要确保正确配置 [**machine.config**](/documentation/articles/active-directory-aadconnect-prerequisites/#connectivity)。  
 ![machineconfig](./media/active-directory-aadconnect-troubleshoot-connectivity/machineconfig.png)
 
 > [AZURE.NOTE] 某些非 Microsoft 博客提到，应该对 miiserver.exe.config 进行更改。但是，每次升级都会覆盖此文件，因此，尽管系统在初始安装期间可正常工作，但首次升级时将停止工作。出于此原因，建议改为更新 machine.config。
@@ -41,7 +41,7 @@ Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验
 | *.microsoftonline.com | HTTPS/443 | 用于配置 Azure AD 目录和导入/导出数据。|
 
 ## 向导中的错误
-安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions#azure-ad-connect-sync-service-accounts)。我们要做的是计算机的全局代理配置，因此如果出现问题，该问题很有可能已出现在向导的“连接到 Azure AD”页中。
+安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-connect-sync-service-accounts)。我们要做的是计算机的全局代理配置，因此如果出现问题，该问题很有可能已出现在向导的“连接到 Azure AD”页中。
 
 下面是在安装向导中看到的最常见错误。
 
@@ -49,7 +49,7 @@ Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验
 当向导本身无法访问代理时，将出现此错误。
 ![nomachineconfig](./media/active-directory-aadconnect-troubleshoot-connectivity/nomachineconfig.png)
 
-- 如果你看到此错误，请验证是否已正确配置 [machine.config](/documentation/articles/active-directory-aadconnect-prerequisites#connectivity)。
+- 如果你看到此错误，请验证是否已正确配置 [machine.config](/documentation/articles/active-directory-aadconnect-prerequisites/#connectivity)。
 - 如果配置看起来正确，请遵循[验证代理连接](#verify-proxy-connectivity)中的步骤，查看问题是否也出现在向导外部的位置。
 
 ### 无法访问 MFA 终结点
@@ -133,18 +133,18 @@ PowerShell 使用 machine.config 中的配置来联系代理。winhttp/netsh 中
 ## 旧版疑难解答步骤
 从内部版本号 1.1.105.0（于 2016 年 2 月发行）开始已停用登录助理。你不再需要用到本部分所述的配置，这些内容仅供参考。
 
-要使单一登录助理正常工作，必须配置 winhttp。使用 [**netsh**](/documentation/articles/active-directory-aadconnect-prerequisites#connectivity) 可以实现此目的。  
+要使单一登录助理正常工作，必须配置 winhttp。使用 [**netsh**](/documentation/articles/active-directory-aadconnect-prerequisites/#connectivity) 可以实现此目的。  
 ![netsh](./media/active-directory-aadconnect-troubleshoot-connectivity/netsh.png)
 
 ### 未正确配置登录助理
 当登录助理无法访问代理或代理不允许该请求时，将出现此错误。
 ![nonetsh](./media/active-directory-aadconnect-troubleshoot-connectivity/nonetsh.png)
 
-- 如果看到此错误，请在 [netsh](/documentation/articles/active-directory-aadconnect-prerequisites#connectivity) 中查看代理配置并确认配置是否正确。
+- 如果看到此错误，请在 [netsh](/documentation/articles/active-directory-aadconnect-prerequisites/#connectivity) 中查看代理配置并确认配置是否正确。
 ![netshshow](./media/active-directory-aadconnect-troubleshoot-connectivity/netshshow.png)
 - 如果配置看起来正确，请遵循[验证代理连接](#verify-proxy-connectivity)中的步骤，查看问题是否也出现在向导外部的位置。
 
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0503_2016-->

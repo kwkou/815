@@ -13,7 +13,7 @@
 
 ## 做好准备
 
-必须拥有正确的 Azure CLI 版本和 Azure 帐户，才能将 Azure CLI 与 Azure 资源组配合使用。如果没有 Azure CLI，[请安装](/documentation/articles/xplat-cli-install)。
+必须拥有正确的 Azure CLI 版本和 Azure 帐户，才能将 Azure CLI 与 Azure 资源组配合使用。如果没有 Azure CLI，[请安装](/documentation/articles/xplat-cli-install/)。
 
 ### 将 Azure CLI 版本更新到 0.9.0 或更高
 
@@ -32,9 +32,9 @@
 
 如果你还没有 Azure 订阅，你可以注册[试用版](/pricing/1rmb-trial/)。
 
-现在，键入 `azure login -e AzureChinaCloud` 并遵循提示来进行 Azure 帐户的交互式登录体验，[以交互方式登录你的 Azure 帐户](/documentation/articles/xplat-cli-connect#use-the-log-in-method)。
+现在，键入 `azure login -e AzureChinaCloud` 并遵循提示来进行 Azure 帐户的交互式登录体验，[以交互方式登录你的 Azure 帐户](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)。
 
-> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，那么，**也**可以使用 `azure login -e AzureChinaCloud -u` 以及工作或学校 ID，在“没有” 交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id)，以相同方式进行登录。
+> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，那么，**也**可以使用 `azure login -e AzureChinaCloud -u` 以及工作或学校 ID，在“没有” 交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id/)，以相同方式进行登录。
 
 你的帐户可能有多个订阅。可以通过键入 `azure account list` 列出订阅，如下所示：
 
@@ -72,7 +72,7 @@
 - 审核操作。
 - 使用其他元数据标记资源以方便跟踪。
 
-可在 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)中了解有关 Azure 资源组及其功能的详细信息。如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+可在 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)中了解有关 Azure 资源组及其功能的详细信息。如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 ## <a id="quick-create-a-vm-in-azure"></a>任务：在 Azure 中快速创建 VM
 
@@ -94,7 +94,7 @@
     info:    group create command OK
 
 
-其次，你需要一个映像。若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。不过，本文只列出了以下常用映像的简短列表。我们将使用 CoreOS 的 Stable 映像来完成这个快速创建过程。
+其次，你需要一个映像。若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。不过，本文只列出了以下常用映像的简短列表。我们将使用 CoreOS 的 Stable 映像来完成这个快速创建过程。
 
 > [AZURE.NOTE] 对于 ComputeImageVersion，你也可以简单地在模板语言和 Azure CLI 中提供“latest”作为参数。这样，你无需修改脚本或模板，就始终都能使用映像的最新修补版本。如下所示。
 
@@ -662,9 +662,9 @@
 
 显然，为此你需要一个 .vhd。你可以使用 Azure 中现有的 .vhd，或者上载一个 .vhd。
 
-对于基于 Windows 的虚拟机，请参阅[创建 Windows Server VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)。
+对于基于 Windows 的虚拟机，请参阅[创建 Windows Server VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)。
 
-有关基于 Linux 的虚拟机，请参阅[创建和上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)。
+有关基于 Linux 的虚拟机，请参阅[创建和上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)。
 
 ### 步骤 3：使用模板创建虚拟机
 
@@ -1235,7 +1235,7 @@
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>任务：登录到基于 Linux 的虚拟机
 
-通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
+通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。
 
 ## <a id="stop-a-virtual-machine"></a>任务：停止 VM
 
@@ -1268,4 +1268,4 @@
 
 ## 后续步骤
 
-若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
+若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)。

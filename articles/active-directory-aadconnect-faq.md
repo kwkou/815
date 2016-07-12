@@ -38,10 +38,10 @@ Azure AD Connect 不支持 NetBios 名称包含句点“.”的本地林/域。
 
 ## 联合
 **问：如果我收到一封电子邮件，要求我续订 Office 365 证书，我该怎么办？**  
-请根据[续订证书](/documentation/articles/active-directory-aadconnect-o365-certs)主题中所述的指导来续订证书。
+请根据[续订证书](/documentation/articles/active-directory-aadconnect-o365-certs/)主题中所述的指导来续订证书。
 
 **问：我为 O365 信赖方设置了“自动更新信赖方”。当我的令牌签名证书自动滚动更新时，我是否需要采取任何措施？**  
-请参考[续订证书](/documentation/articles/active-directory-aadconnect-o365-certs)一文中所述的指导。
+请参考[续订证书](/documentation/articles/active-directory-aadconnect-o365-certs/)一文中所述的指导。
 
 ## 环境
 **问：安装 Azure AD Connect 之后，是否支持重命名服务器？**  

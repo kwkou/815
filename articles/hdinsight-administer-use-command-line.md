@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
 
-了解如何使用 [Azure 命令行界面](/documentation/articles/xplat-cli-install)管理 Azure HDInsight 中的 Hadoop 群集。Azure CLI 是以 Node.js 实现的。可以在支持 Node.js 的任意平台上使用它。
+了解如何使用 [Azure 命令行界面](/documentation/articles/xplat-cli-install/)管理 Azure HDInsight 中的 Hadoop 群集。Azure CLI 是以 Node.js 实现的。可以在支持 Node.js 的任意平台上使用它。
 
 本文仅介绍如何将 Azure CLI 与 HDInsight 配合使用。有关如何使用 Azure CLI 的常规指南，请参阅[安装和配置 Azure CLI][azure-command-line-tools]。
 
@@ -28,12 +28,12 @@
 在开始阅读本文前，你必须具有：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+- **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 - 使用以下命令**连接到 Azure**：
 
 		azure login -e AzureChinaCloud -u <your account>
 
-	有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。
+	有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 	
 
 若要获得帮助，请使用 **-h** 开关。例如：
@@ -42,7 +42,7 @@
 	
 ##创建群集
 
-参阅[使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)。
+参阅[使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli/)。
 
 ##列出并显示群集详细信息
 使用以下命令来列出和显示群集详细信息：
@@ -67,16 +67,16 @@
 * [如何使用 Azure CLI][azure-command-line-tools]
 
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli-install
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install/
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
 [image-cli-account-download-import]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
 [image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png

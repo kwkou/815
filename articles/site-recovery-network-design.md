@@ -28,11 +28,11 @@ BCDR 规划的关键在于必须为灾难恢复计划定义恢复时间目标 (R
 
 ASR 让故障转移变为可能，第一步是将指定的虚拟机从主要数据中心复制到辅助数据中心或 Azure（视方案而定），然后定期刷新副本。规划基础结构时，应将网络设计视为可能会让你无法达成公司 RTO 和 RPO 目标的潜在瓶颈。
 
-当管理员计划部署灾难恢复解决方案时，脑海中浮现的一个重要问题是，如何在故障转移完成后使虚拟机可供访问。ASR 允许管理员选择在故障转移之后虚拟机连接的网络。如果主站点由 VMM 服务器管理，则可以使用网络映射来实现。有关更多详细信息，请参阅[准备网络映射](/documentation/articles/site-recovery-network-mapping)。
+当管理员计划部署灾难恢复解决方案时，脑海中浮现的一个重要问题是，如何在故障转移完成后使虚拟机可供访问。ASR 允许管理员选择在故障转移之后虚拟机连接的网络。如果主站点由 VMM 服务器管理，则可以使用网络映射来实现。有关更多详细信息，请参阅[准备网络映射](/documentation/articles/site-recovery-network-mapping/)。
 
 设计恢复站点的网络时，管理员有两种选择：
 
-- 对恢复站点的网络使用不同的 IP 地址范围。在这种情况下，虚拟机在故障转移之后会获取新的 IP 地址，管理员必须进行 DNS 更新。在[此处](/documentation/articles/site-recovery-vmm-to-vmm#test-your-deployment)详细了解如何进行 DNS 更新 
+- 对恢复站点的网络使用不同的 IP 地址范围。在这种情况下，虚拟机在故障转移之后会获取新的 IP 地址，管理员必须进行 DNS 更新。在[此处](/documentation/articles/site-recovery-vmm-to-vmm/#test-your-deployment)详细了解如何进行 DNS 更新 
 - 对恢复站点的网络使用相同的 IP 地址范围。在某些情况下，即使在故障转移之后，管理员也想在主站点上保留他们的 IP 地址。在正常情况下，管理员必须更新路由以指示 IP 地址的新位置。但是，对于在主站点和恢复站点之间部署了延伸 VLAN 的情况，保留虚拟机的 IP 地址会变成一个不错的选择。保留相同 IP 地址可省去故障转移后的所有网络相关步骤，从而简化了恢复过程。
 
 
@@ -173,6 +173,6 @@ Woodgrove 决定将来自 IP 地址范围（172.16.1.0/24、172.16.2.0/24）的 
 
 ## 后续步骤
 
-[了解](/documentation/articles/site-recovery-network-mapping)当 VMM 服务器用于管理主站点时，Site Recovery 如何映射源和目标网络。
+[了解](/documentation/articles/site-recovery-network-mapping/)当 VMM 服务器用于管理主站点时，Site Recovery 如何映射源和目标网络。
 
 <!---HONumber=Mooncake_0328_2016-->

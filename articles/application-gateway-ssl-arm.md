@@ -14,8 +14,8 @@
 # 使用 Azure 资源管理器配置应用程序网关以进行 SSL 卸载
 
 > [AZURE.SELECTOR]
--[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl)
--[Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-ssl-arm)
+-[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl/)
+-[Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-ssl-arm/)
 
  可将 Azure 应用程序网关配置为在网关上终止安全套接字层 (SSL) 会话，以避免 Web 场中出现开销较高的 SSL 解密任务。SSL 卸载还简化了 Web 应用程序的前端服务器设置与管理。
 
@@ -59,7 +59,7 @@
 
 ## 创建资源管理器的资源组
 
-确保切换 PowerShell 模式，以便使用 Azure Resource Manager cmdlet。[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)中提供了详细信息。
+确保切换 PowerShell 模式，以便使用 Azure Resource Manager cmdlet。[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)中提供了详细信息。
 
 ### 步骤 1
 
@@ -188,7 +188,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 后续步骤
 
-如果你想要将应用程序网关配置为与内部负载平衡器 (ILB) 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
+如果你想要将应用程序网关配置为与内部负载平衡器 (ILB) 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 

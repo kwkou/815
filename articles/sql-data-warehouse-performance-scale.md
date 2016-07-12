@@ -84,8 +84,8 @@ SQL 数据仓库的独到之处就是能够根据需要暂停和恢复计算。�
 <!--Image references-->
 
 <!--Article references-->
-[性能概述]: /documentation/articles/sql-data-warehouse-overview-performance
-[在 SQL 数据仓库中使用 PowerShell cmdlet 和 REST API]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets
+[性能概述]: /documentation/articles/sql-data-warehouse-overview-performance/
+[在 SQL 数据仓库中使用 PowerShell cmdlet 和 REST API]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 
 <!--MSDN references-->
 

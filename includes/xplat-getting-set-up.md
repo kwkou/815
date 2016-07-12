@@ -7,7 +7,7 @@
 
 ## 使用 Azure CLI
 
-完成以下步骤即可轻松使用包含相应订阅的最新版 Azure CLI。如果你需要安装 Azure CLI 并首先连接到你的帐户，请参阅[Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install)。
+完成以下步骤即可轻松使用包含相应订阅的最新版 Azure CLI。如果你需要安装 Azure CLI 并首先连接到你的帐户，请参阅[Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install/)。
 
 ### 步骤 1：更新 Azure CLI 版本
 

@@ -80,7 +80,7 @@
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 
 #### 高级存储限制
@@ -174,12 +174,12 @@
 <a id="sql-database-limits"></a>
 ### SQL 数据库限制
 
-有关 Azure SQL 数据库限制，请参阅 [SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
+有关 Azure SQL 数据库限制，请参阅 [SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。
 
 ## 另请参阅
 
-[Azure虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)
+[Azure虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)
 
-[云服务的大小](/documentation/articles/cloud-services-sizes-specs)
+[云服务的大小](/documentation/articles/cloud-services-sizes-specs/)
 
 <!---HONumber=Mooncake_0328_2016-->

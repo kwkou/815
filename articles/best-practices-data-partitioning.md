@@ -465,29 +465,29 @@ Redis 网站上的 [Partitioning: how to split data among multiple Redis instanc
 - Redis 网站上的 [Data types]（数据类型）页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
 
 [Azure Redis Cache]: /services/redis-cache/
-[Azure Storage Scalability and Performance Targets]: /documentation/articles/storage-scalability-targets
-[Azure Storage Table Design Guide]: /documentation/articles/storage-table-design-guide
+[Azure Storage Scalability and Performance Targets]: /documentation/articles/storage-scalability-targets/
+[Azure Storage Table Design Guide]: /documentation/articles/storage-table-design-guide/
 [Building a Polyglot Solution]: https://msdn.microsoft.com/zh-cn/library/dn313279.aspx
 [Data Access for Highly-Scalable Solutions: Using SQL, NoSQL, and Polyglot Persistence]: https://msdn.microsoft.com/zh-cn/library/dn271399.aspx
 [Data consistency primer]: http://aka.ms/Data-Consistency-Primer
 [Data Partitioning Guidance]: https://msdn.microsoft.com/zh-cn/library/dn589795.aspx
 [Data Types]: http://redis.io/topics/data-types
-[Elastic Database features overview]: /documentation/articles/sql-database-elastic-scale-introduction
+[Elastic Database features overview]: /documentation/articles/sql-database-elastic-scale-introduction/
 [Federations Migration Utility]: https://code.msdn.microsoft.com/vstudio/Federations-Migration-ce61e9c1
 [索引表模式]: http://aka.ms/Index-Table-Pattern
 [具体化视图模式]: http://aka.ms/Materialized-View-Pattern
-[Multi-shard querying]: /documentation/articles/sql-database-elastic-scale-multishard-querying.md
+[Multi-shard querying]: /documentation/articles/sql-database-elastic-scale-multishard-querying.md/
 [Partitioning: how to split data among multiple Redis instances]: http://redis.io/topics/partitioning
 [Performing Entity Group Transactions]: https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
 [Redis 群集教程]: http://redis.io/topics/cluster-tutorial
 [Running Redis on a CentOS Linux VM in Azure]: http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx
-[Scaling using the Elastic Database split-merge tool]: /documentation/articles/sql-database-elastic-scale-overview-split-and-merge
-[Using CDN for Azure]: /documentation/articles/cdn-how-to-use-cdn
-[Service Bus quotas]: /documentation/articles/service-bus-quotas
-[Service limits in Azure Search]: /documentation/articles/search-limits-quotas-capacity
+[Scaling using the Elastic Database split-merge tool]: /documentation/articles/sql-database-elastic-scale-overview-split-and-merge/
+[Using CDN for Azure]: /documentation/articles/cdn-how-to-use-cdn/
+[Service Bus quotas]: /documentation/articles/service-bus-quotas/
+[Service limits in Azure Search]: /documentation/articles/search-limits-quotas-capacity/
 [分片模式]: http://aka.ms/Sharding-Pattern
 [Supported data types (Azure Search)]: https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx
 [Transactions]: http://redis.io/topics/transactions
-[What is Azure Search?]: /documentation/articles/search-what-is-azure-search
-[What is Azure SQL Database?]: /documentation/articles/sql-database-technical-overview
+[What is Azure Search?]: /documentation/articles/search-what-is-azure-search/
+[What is Azure SQL Database?]: /documentation/articles/sql-database-technical-overview/
 <!---HONumber=Mooncake_0530_2016-->

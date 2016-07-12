@@ -18,7 +18,7 @@
 
 ## <a name="overview"></a>Azure Web 应用部署概述
 
-Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）。某些框架在默认情况下已启用，而其他框架（如 Java 和 Python）可能需要进行简单的复选标记配置才能启用它。此外，你还可以自定义应用程序框架，如运行时的 PHP 版本或位元。有关详细信息，请参阅[在 Azure Web 应用中配置你的应用](/documentation/articles/web-sites-configure)。
+Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）。某些框架在默认情况下已启用，而其他框架（如 Java 和 Python）可能需要进行简单的复选标记配置才能启用它。此外，你还可以自定义应用程序框架，如运行时的 PHP 版本或位元。有关详细信息，请参阅[在 Azure Web 应用中配置你的应用](/documentation/articles/web-sites-configure/)。
 
 由于你无需担心 Web 服务器或应用程序框架，因此将你的应用部署到 Azure Web 应用只需将你的代码、二进制文件、内容文件及其各自的目录结构部署到 Azure 中的 **/site/wwwroot** 目录（或将 Web 作业部署到 **/site/wwwroot/App\_Data/Jobs/** 目录）。Azure Web 应用支持以下部署选项：
 
@@ -57,7 +57,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 
 有关详细信息，请参阅以下资源：
 
-* [创建 PHP-MySQL Web 应用并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)。
+* [创建 PHP-MySQL Web 应用并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)。
 
 ## <a name="localgitdeployment"></a>从本地 Git 部署
 如果你的开发团队使用基于 Git 的本地源代码管理 (SCM) 服务，可将它配置为 Azure Web 应用的部署源。
@@ -65,7 +65,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 从本地 Git 进行部署的优点是：
 
 - 版本控制支持回滚。
-- 分支特定的部署，可以将不同分支部署到不同的[槽](/documentation/articles/web-sites-staged-publishing)。
+- 分支特定的部署，可以将不同分支部署到不同的[槽](/documentation/articles/web-sites-staged-publishing/)。
 
 从本地 Git 进行部署的缺点是：
 
@@ -75,7 +75,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 ###<a name="vsts"></a>如何从本地 Git 部署
 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，可以配置本地 Git 部署。
 
-* [从本地 Git 部署到 Azure Web 应用](/documentation/articles/app-service-deploy-local-git)。 
+* [从本地 Git 部署到 Azure Web 应用](/documentation/articles/app-service-deploy-local-git/)。 
 * [从任何 git/hg 存储库发布到 Web Apps](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。  
 
 ## 使用 IDE 进行部署
@@ -102,9 +102,9 @@ Visual Studio 支持所有这三种部署过程（FTP、Git 和 Web 部署），
 
 ###<a name="vs"></a>如何直接从 Visual Studio 部署
 
-* [Azure 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。如何使用 Visual Studio 和 Web 部署来创建和部署一个简单的 ASP.NET MVC Web 项目。
-* [如何使用 Visual Studio 部署 Azure Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs)。如何配置控制台应用程序项目，以便它们部署为 Web 作业。  
-* [将包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用程序部署到 Web Apps](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。如何使用 Visual Studio、Web 部署和 Entity Framework Code First 迁移通过 SQL 数据库来创建和部署 ASP.NET MVC Web 项目。
+* [Azure 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started/)。如何使用 Visual Studio 和 Web 部署来创建和部署一个简单的 ASP.NET MVC Web 项目。
+* [如何使用 Visual Studio 部署 Azure Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)。如何配置控制台应用程序项目，以便它们部署为 Web 作业。  
+* [将包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用程序部署到 Web Apps](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。如何使用 Visual Studio、Web 部署和 Entity Framework Code First 迁移通过 SQL 数据库来创建和部署 ASP.NET MVC Web 项目。
 * [使用 Visual Studio 的 ASP.NET Web 部署](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction)。共 12 篇的系列教程涵盖了比此列表中其他部署任务更完整的部署任务。自编写本教程以来添加了一些 Azure 部署功能，但注释是后来添加的，说明缺少哪些内容。
 * [在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881)。说明如何在 Visual Studio 中部署 ASP.NET Web 项目（使用 Git 插件将代码提交到 Git 并将 Azure 连接到 Git 存储库）。从 Visual Studio 2013 开始，Git 支持是内置的，不需要安装插件。
 
@@ -166,9 +166,9 @@ Visual Studio 支持所有这三种部署过程（FTP、Git 和 Web 部署），
 
 ##<a name="nextsteps"></a>后续步骤
 
-在某些情况下，你可能想要能够轻松地在应用的过渡版本和生产版本之间来回切换。有关详细信息，请参阅 [Web Apps 上的过渡部署](/documentation/articles/web-sites-staged-publishing)。
+在某些情况下，你可能想要能够轻松地在应用的过渡版本和生产版本之间来回切换。有关详细信息，请参阅 [Web Apps 上的过渡部署](/documentation/articles/web-sites-staged-publishing/)。
 
-准备好备份和还原计划是任何部署工作流的一个重要部分。有关 Azure 备份和还原功能的信息，请参阅 [Web Apps Backups（Web 应用备份）](/documentation/articles/web-sites-backup)。
+准备好备份和还原计划是任何部署工作流的一个重要部分。有关 Azure 备份和还原功能的信息，请参阅 [Web Apps Backups（Web 应用备份）](/documentation/articles/web-sites-backup/)。
 
 
  

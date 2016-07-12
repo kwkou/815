@@ -16,8 +16,8 @@
 #如何在 Azure 上结合使用 SSH 和 Windows
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows)
-- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux)
+- [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/)
+- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
 
 本主题介绍了如何在 Windows 上创建和使用 **ssh-rsa** 与 **.pem** 格式的公钥和私钥文件，并且你可以使用这些文件通过 **ssh** 命令连接到 Azure 上的 Linux VM。如果你已经创建了 **.pem** 文件，则可以使用那些文件创建 Linux VM，并且可以使用 **ssh** 连接到这些 VM。其他几个命令使用 **SSH** 协议和密钥文件来安全地执行工作。其中值得注意的是 **scp** 或 [安全复制](https://en.wikipedia.org/wiki/Secure_copy)，通过这两个命令可以安全地将文件复制到支持 **SSH** 连接的计算机或从该计算机中复制文件。
 
@@ -41,7 +41,7 @@
 
 Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与经典管理门户的经典部署模型一起使用。
 
-使用[经典管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署中也支持.pem 文件。
+使用[经典管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 的经典部署中也支持.pem 文件。
 
 > [AZURE.NOTE] 如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户预览，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 windows 上创建那些文件，请键入<br />openssl.exe x509 -outform der -in myCert.pem -out myCert.cer
 

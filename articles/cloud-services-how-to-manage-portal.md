@@ -16,8 +16,8 @@
 # 如何管理云服务
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-how-to-manage-portal)
-- [Azure 管理门户](/documentation/articles/cloud-services-how-to-manage)
+- [Azure 门户](/documentation/articles/cloud-services-how-to-manage-portal/)
+- [Azure 管理门户](/documentation/articles/cloud-services-how-to-manage/)
 
 
 在 Azure 门户的“云服务”区域中，可以更新服务角色或部署、将预留部署升级到生产环境、将资源链接到云服务，以便可以查看资源依赖关系并对资源进行整体缩放，以及删除云服务或部署。
@@ -98,15 +98,15 @@ Azure 门户不会像当前 Azure 管理门户一样将资源链接在一起。�
 5. 要删除云服务，则单击“删除云服务”。然后在出现确认提示时单击“是”。
 
 > [AZURE.NOTE]
-如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅[此](/documentation/articles/cloud-services-how-to-monitor)文章。
+如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅[此](/documentation/articles/cloud-services-how-to-monitor/)文章。
 
 [Azure 门户]: https://portal.azure.cn
 
 ## 后续步骤
 
-* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)。
-* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
-* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
-* 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal/)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal/)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal/)。
+* 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal/)。
 
 <!---HONumber=Mooncake_0523_2016-->

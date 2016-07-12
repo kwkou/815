@@ -13,7 +13,7 @@
    wacn.date="07/04/2016"/>
 
 # 连接到安全群集
-当客户端连接到 Service Fabric 群集节点时，可以使用证书安全性来与客户端建立经过身份验证的安全通信。这可确保只有经过授权的用户才能访问该群集和部署的应用程序，以及执行管理任务。创建群集时，必须事先在该群集上启用证书安全性。有关群集安全方案的详细信息，请参阅 [Cluster security](/documentation/articles/service-fabric-cluster-security)（群集安全性）。
+当客户端连接到 Service Fabric 群集节点时，可以使用证书安全性来与客户端建立经过身份验证的安全通信。这可确保只有经过授权的用户才能访问该群集和部署的应用程序，以及执行管理任务。创建群集时，必须事先在该群集上启用证书安全性。有关群集安全方案的详细信息，请参阅 [Cluster security](/documentation/articles/service-fabric-cluster-security/)（群集安全性）。
 
 若要使用证书安全性来保护客户端与与群集节点之间的通信，必须先获取客户端证书，并将其安装到本地计算机上的个人（我的）存储或当前用户的个人存储。
 
@@ -100,9 +100,9 @@ static X509Credentials GetCredentials(string thumb, string name)
 
 ## 后续步骤
 
-- [Service Fabric 群集升级过程与期望](/documentation/articles/service-fabric-cluster-upgrade)
-- [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio)。
-- [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction)
-- [应用程序安全性和 RunAs](/documentation/articles/service-fabric-application-runas-security)
+- [Service Fabric 群集升级过程与期望](/documentation/articles/service-fabric-cluster-upgrade/)
+- [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio/)。
+- [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction/)
+- [应用程序安全性和 RunAs](/documentation/articles/service-fabric-application-runas-security/)
 
 <!---HONumber=Mooncake_0627_2016-->

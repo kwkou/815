@@ -491,7 +491,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 [ASP.NET]: http://www.asp.net/
 [MongoConnectionStrings]: http://www.mongodb.org/display/DOCS/Connections
 [MongoDB]: http://www.mongodb.org
-[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-windows-classic-install-mongodb
+[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-windows-classic-install-mongodb/
 [VSEWeb]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs#d-2013-express
 [VSUlt]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 

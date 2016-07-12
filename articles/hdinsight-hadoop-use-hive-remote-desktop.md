@@ -19,7 +19,7 @@
 
 在本文中，你将学习如何通过使用远程桌面连接到 HDInsight 群集，然后通过使用 Hive 命令行界面 (CLI) 运行 Hive 查询。
 
-> [AZURE.NOTE] 本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的详细信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)。
+> [AZURE.NOTE] 本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的详细信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)。
 
 ##<a id="prereq"></a>先决条件
 
@@ -31,7 +31,7 @@
 
 ##<a id="connect"></a>使用远程桌面进行连接
 
-为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)中的说明连接到该群集。
+为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
 
 ##<a id="hive"></a>使用 Hive 命令
 
@@ -101,19 +101,19 @@
 
 有关 HDInsight 中的 Hive 的一般信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 如果将 Tez 与 Hive 配合使用，请参阅以下文档以了解调试信息：
 
-* [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui)
+* [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
 
-[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
@@ -128,19 +128,19 @@
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 
 
 
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 

@@ -806,18 +806,18 @@ HiveQL 脚本将执行以下操作：
 
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 [hadoop-shell-commands]: http://hadoop.apache.org/docs/r0.18.3/hdfs_shell.html

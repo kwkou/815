@@ -31,6 +31,6 @@
  
 - [Redis Azure 缓存文档](/documentation/services/redis-cache/)：此页提供有关使用 Redis Azure 缓存的许多优秀文章链接。
 - [15 分钟学会创建包含 Azure Redis 缓存的 MVC 影片应用程序](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/)：该博客文章提供有关在 ASP.NET MVC 应用程序中使用 Azure Redis 缓存的快速入门。
-- [如何将 ASP.NET 会话状态用于 Azure Web 应用](/documentation/articles/web-sites-dotnet-session-state-caching)：此主题说明如何为会话状态使用 Azure Redis 缓存服务。
+- [如何将 ASP.NET 会话状态用于 Azure Web 应用](/documentation/articles/web-sites-dotnet-session-state-caching/)：此主题说明如何为会话状态使用 Azure Redis 缓存服务。
 
 <!---HONumber=71-->

@@ -3,11 +3,11 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 #安全性咨询
 > [AZURE.SELECTOR]
-- [全部问题](/documentation/articles/mysql-database-tech-faq)
-- [服务咨询](/documentation/articles/mysql-database-serviceinquiry)
-- [连接问题](/documentation/articles/mysql-database-connectioninquiry)
-- [安全性咨询](/documentation/articles/mysql-database-securityinquiry)
-- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry)
+- [全部问题](/documentation/articles/mysql-database-tech-faq/)
+- [服务咨询](/documentation/articles/mysql-database-serviceinquiry/)
+- [连接问题](/documentation/articles/mysql-database-connectioninquiry/)
+- [安全性咨询](/documentation/articles/mysql-database-securityinquiry/)
+- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry/)
 
 ### **我看到数据库服务器的地址是一个公共的endpoint?我的应用在同一个数据中心访问数据库时?访问请求是否会先经过Internet再到服务器地址?**
 

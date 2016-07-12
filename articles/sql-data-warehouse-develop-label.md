@@ -44,7 +44,7 @@ SQL 数据仓库支持称为查询标签的概念。在继续之前，让我们�
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 

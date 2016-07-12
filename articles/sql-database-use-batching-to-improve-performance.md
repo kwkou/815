@@ -37,7 +37,7 @@
 ## 批处理策略
 
 ### 有关本主题中计时结果的注意事项
->[AZURE.NOTE] 结果并不是基准，而是用于显示**相对性能**。计时基于至少运行 10 次测试后的平均值。操作将插入空表。这些测试将在 V12 以前的版本中测量，不一定对应于在使用新[服务层](/documentation/articles/sql-database-service-tiers)的 V12 数据库中可能会获得的吞吐量。批处理技术的相对优势应该类似。
+>[AZURE.NOTE] 结果并不是基准，而是用于显示**相对性能**。计时基于至少运行 10 次测试后的平均值。操作将插入空表。这些测试将在 V12 以前的版本中测量，不一定对应于在使用新[服务层](/documentation/articles/sql-database-service-tiers/)的 V12 数据库中可能会获得的吞吐量。批处理技术的相对优势应该类似。
 
 ### 事务
 通过讨论事务来开始讲述批处理似乎有点奇怪。但是使用客户端事务具有提高性能的微妙服务器端批处理效果。可以使用几行代码来添加事务，因此这提供了一个快速提高顺序操作的性能的方法。
@@ -598,6 +598,6 @@ OrderID 表中的 PurchaseOrderDetail 列必须引用 PurchaseOrder 表的订单
 
 ## 后续步骤
 
-本文着重于与批处理相关的数据库设计和代码编写技术，以及如何改善应用程序的性能和缩放性。但这只是整体策略中的一个因素。关于其他可改善性能和缩放性的方式，请参阅 [Azure SQL 数据库的单一数据库性能指导](/documentation/articles/sql-database-performance-guidance)及[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
+本文着重于与批处理相关的数据库设计和代码编写技术，以及如何改善应用程序的性能和缩放性。但这只是整体策略中的一个因素。关于其他可改善性能和缩放性的方式，请参阅 [Azure SQL 数据库的单一数据库性能指导](/documentation/articles/sql-database-performance-guidance/)及[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
 <!---HONumber=Mooncake_0321_2016-->

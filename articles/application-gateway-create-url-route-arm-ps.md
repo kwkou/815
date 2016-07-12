@@ -60,7 +60,7 @@
 
 ## 为 Resource Manager 创建资源组
 
-确保使用最新版本的 Azure PowerShell。[将 Windows PowerShell 与 Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)中提供了详细信息。
+确保使用最新版本的 Azure PowerShell。[将 Windows PowerShell 与 Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)中提供了详细信息。
 
 ### 步骤 1
 登录到 Azure
@@ -92,7 +92,7 @@ Azure Resource Manager 要求所有资源组指定一个位置。此位置将用
 
 在上面的示例中，我们在位置“中国北部”创建了名为“appgw-RG”的资源组。
 
->[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅[使用 PowerShell 创建带自定义探测的应用程序网关](/documentation/articles/application-gateway-create-probe-ps)。有关详细信息，请查看[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview)。
+>[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅[使用 PowerShell 创建带自定义探测的应用程序网关](/documentation/articles/application-gateway-create-probe-ps/)。有关详细信息，请查看[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview/)。
 
 ## 为应用程序网关创建虚拟网络和子网
 

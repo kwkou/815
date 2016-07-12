@@ -126,8 +126,8 @@
 
 有关服务总线的概念性概述，请参阅以下主题。
 
-- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [服务总线体系结构](/documentation/articles/service-bus-architecture)
-- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
+- [服务总线体系结构](/documentation/articles/service-bus-architecture/)
+- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 
 <!---HONumber=Mooncake_0307_2016-->

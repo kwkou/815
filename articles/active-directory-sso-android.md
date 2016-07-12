@@ -28,7 +28,7 @@ Microsoft 标识平台以及 Microsoft 标识 SDK 能够为你完成所有这些
 
 * Azure Active Directory
 * Azure Active Directory B2C
-* Azure Active Directory B2B。请注意，以下文档假设你已了解如何[在旧版门户中为 Azure Active Directory 预配应用程序](/documentation/articles/active-directory-how-to-integrate)，并且你已将应用程序与 [Microsoft Identity Android SDK](https://github.com/AzureAD/azure-activedirectory-library-for-android) 集成。
+* Azure Active Directory B2B。请注意，以下文档假设你已了解如何[在旧版门户中为 Azure Active Directory 预配应用程序](/documentation/articles/active-directory-how-to-integrate/)，并且你已将应用程序与 [Microsoft Identity Android SDK](https://github.com/AzureAD/azure-activedirectory-library-for-android) 集成。
 
 ## Microsoft 标识平台中的 SSO 概念
 
@@ -236,7 +236,7 @@ AuthenticationSettings.Instance.setUseBroker(true);
 
 例如：msauth://com.example.userapp/IcB5PxIyvbLkbFVtBI%2FitkW%2Fejk%3D
 
-需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate)。
+需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
 
 
 #### 步骤 3：在应用程序中设置正确的权限

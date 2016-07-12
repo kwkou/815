@@ -53,9 +53,9 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 暂时性故障错误应该提示客户端程序运行你设计的重试逻辑来重试操作。有关重试逻辑的代码示例，请参阅：
 
 
-- [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+- [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
 
-- [修复 SQL 数据库中的连接错误和暂时性错误的操作](/documentation/articles/sql-database-connectivity-issues)
+- [修复 SQL 数据库中的连接错误和暂时性错误的操作](/documentation/articles/sql-database-connectivity-issues/)
 
 
 ### 暂时性故障错误代码
@@ -65,7 +65,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 | ---: | ---: | :--- |
 | 4060 | 16 | 无法打开该登录请求的数据库“%.&#x2a;ls”。登录失败。 |
 |40197|17|该服务在处理你的请求时遇到错误。请稍后重试。错误代码 %d。<br/><br/>当服务由于软件或硬件升级、硬件故障或任何其他故障转移问题而关闭时，你将收到此错误。错误 40197 的消息中嵌入的错误代码 (%d) 提供有关所发生的故障或故障转移类型的其他信息。错误 40197 的消息中嵌入的错误代码的一些示例为 40020、40143、40166 和 40540。<br/><br/>重新连接到 SQL 数据库服务器会自动将你连接到数据库的正常运行的副本。应用程序必须捕获错误 40197，记录该消息中嵌入的错误代码 (%d) 以供进行故障排除，然后尝试重新连接到 SQL 数据库，直到资源可用且再次建立连接为止。|
-|40501|20|服务当前正忙。请在 10 秒钟后重试请求。事件 ID: %ls。代码: %d。<br/><br/>注意：<br/>有关一般信息，请参阅<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
+|40501|20|服务当前正忙。请在 10 秒钟后重试请求。事件 ID: %ls。代码: %d。<br/><br/>注意：<br/>有关一般信息，请参阅<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。
 |40613|17|数据库“%.&#x2a;ls”（在服务器“%.&#x2a;ls”上）当前不可用。请稍后重试连接。如果问题仍然存在，请与客户支持人员联系，并向其提供“%.&#x2a;ls”的会话追踪 ID。|
 |49918|16|无法处理请求。没有足够的资源，无法处理该请求。<br/><br/>服务当前正忙。请稍后重试请求。 |
 |49919|16|无法处理创建或更新请求。为订阅“%ld”处理的创建或更新请求过多。<br/><br/>服务正忙于处理订阅或服务器的多个创建或更新请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation\_stats](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解挂起的操作。请等到挂起的创建或更新请求完成，或删除其中一个挂起的请求，然后重试请求。 |
@@ -114,13 +114,13 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 **提示：**以下链接提供适用于本部分中的大多数或所有错误的详细信息：
 
 
-- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)
+- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)
 
 
 |错误代码|严重性|说明|
 |---:|---:|:---|
-|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。 |
-|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。|
+|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。 |
+|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。|
 |40544|20|数据库已达到大小配额。请将数据分区或删除、删除索引或查阅文档以找到可能的解决方案。|
 |40549|16|由于你有长时间运行的事务，已终止会话。请尝试缩短事务运行时间。|
 |40550|16|由于会话获取的锁过多，已终止该会话。请尝试在单个事务中读取或修改更少的行。|
@@ -132,7 +132,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 有关此错误以及如何解决它的详细信息，请参阅：
 
 
-- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
+- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。
 
 
 <a id="bkmk_e_general_errors" name="bkmk_e_general_errors">&nbsp;</a>
@@ -141,10 +141,10 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 相关主题：
 
-* [创建弹性数据库池 (C#)](/documentation/articles/sql-database-elastic-pool-create-csharp) 
-* [管理弹性数据库池 (C#)](/documentation/articles/sql-database-elastic-pool-manage-csharp)。 
-* [创建弹性数据库池 (PowerShell)](/documentation/articles/sql-database-elastic-pool-create-powershell) 
-* [监视和管理弹性数据库池 (PowerShell)](/documentation/articles/sql-database-elastic-pool-manage-powershell)。
+* [创建弹性数据库池 (C#)](/documentation/articles/sql-database-elastic-pool-create-csharp/) 
+* [管理弹性数据库池 (C#)](/documentation/articles/sql-database-elastic-pool-manage-csharp/)。 
+* [创建弹性数据库池 (PowerShell)](/documentation/articles/sql-database-elastic-pool-create-powershell/) 
+* [监视和管理弹性数据库池 (PowerShell)](/documentation/articles/sql-database-elastic-pool-manage-powershell/)。
 
 | ErrorNumber | ErrorSeverity | ErrorFormat | ErrorInserts | ErrorCause | ErrorCorrectiveAction |
 | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -246,7 +246,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 ## 相关链接
 
-- [Azure SQL 数据库的一般性限制和指导原则](/documentation/articles/sql-database-general-limitations)
-- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)
+- [Azure SQL 数据库的一般性限制和指导原则](/documentation/articles/sql-database-general-limitations/)
+- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)
 
 <!---HONumber=Mooncake_0509_2016-->

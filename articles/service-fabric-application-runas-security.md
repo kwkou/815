@@ -23,7 +23,7 @@ Azure Service Fabric 能够保护群集中以不同用户帐户（名为 **RunAs
 
 ## 为 SetupEntryPoint 设置 RunAs 策略
 
-如[应用程序模型](/documentation/articles/service-fabric-application-model)中所述，**SetupEntryPoint** 是特权入口点，以与 Service Fabric 相同的凭据（通常是 NetworkService 帐户）先于任何其他入口点运行。由 **EntryPoint** 指定的可执行文件通常是长时间运行的服务主机，因此具有单独的安装入口点，不必长时间运行具有高特权的服务主机可执行文件。由 **EntryPoint** 指定的可执行文件在 **SetupEntryPoint** 成功退出后运行。如果总是终止或出现故障，则将监视并重启所产生的过程（再次从 **SetupEntryPoint** 开始）。
+如[应用程序模型](/documentation/articles/service-fabric-application-model/)中所述，**SetupEntryPoint** 是特权入口点，以与 Service Fabric 相同的凭据（通常是 NetworkService 帐户）先于任何其他入口点运行。由 **EntryPoint** 指定的可执行文件通常是长时间运行的服务主机，因此具有单独的安装入口点，不必长时间运行具有高特权的服务主机可执行文件。由 **EntryPoint** 指定的可执行文件在 **SetupEntryPoint** 成功退出后运行。如果总是终止或出现故障，则将监视并重启所产生的过程（再次从 **SetupEntryPoint** 开始）。
 
 下面是一个简单的服务清单示例，其中显示服务的 SetupEntryPoint 和主要 EntryPoint。
 
@@ -340,9 +340,9 @@ Echo "Test console redirection which writes to the application log folder on the
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
 
-* [了解应用程序模型](/documentation/articles/service-fabric-application-model)
-* [在服务清单中指定资源](/documentation/articles/service-fabric-service-manifest-resources)
-* [部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)
+* [了解应用程序模型](/documentation/articles/service-fabric-application-model/)
+* [在服务清单中指定资源](/documentation/articles/service-fabric-service-manifest-resources/)
+* [部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)
 
 [image1]: ./media/service-fabric-application-runas-security/copy-to-output.png
 

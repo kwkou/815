@@ -237,7 +237,7 @@ MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" applicatio
 
 ##<a name="#custom-api"></a>如何：调用自定义 API
 
-自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)。
+自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api/)。
 
 [AZURE.INCLUDE [mobile-services-ios-call-custom-api](../includes/mobile-services-ios-call-custom-api.md)]
 
@@ -313,8 +313,8 @@ Azure 移动服务支持两种身份验证工作流：
 <!-- Images. -->
 
 <!-- URLs. -->
-[移动服务快速入门]: /documentation/articles/mobile-services-ios-get-started
-[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+[移动服务快速入门]: /documentation/articles/mobile-services-ios-get-started/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started/
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [iOS SDK]: https://developer.apple.com/xcode
@@ -322,7 +322,7 @@ Azure 移动服务支持两种身份验证工作流：
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [权限]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193161.aspx
-[服务器端授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[服务器端授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
 [创建表]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965

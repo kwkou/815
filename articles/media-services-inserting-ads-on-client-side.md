@@ -17,7 +17,7 @@
 
 此主题涵盖有关如何在客户端上插入多种类型的广告的信息。
 
-有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](/documentation/articles/media-services-live-streaming-with-onprem-encoders#cc_and_ads)。
+有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#cc_and_ads)。
 
 >[AZURE.NOTE] Azure Media Player 目前不支持广告。
 
@@ -810,6 +810,6 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
  
 ##另请参阅
 
-[开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players)
+[开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players/)
 
 <!---HONumber=Mooncake_0620_2016-->

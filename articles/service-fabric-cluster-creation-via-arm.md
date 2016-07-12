@@ -20,7 +20,7 @@
 ## 先决条件
 
 - 若要设置安全群集，必须先将 X.509 证书上载到你的密钥保管库。你将需要源保管库 URL、证书 URL，以及证书指纹。
-- 有关如何设置安全群集的详细信息，请参阅 [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security)。
+- 有关如何设置安全群集的详细信息，请参阅 [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security/)。
 
 ## 获取示例 Resource Manager 模板
 
@@ -40,21 +40,21 @@
 
     a.登录到 [Azure 门户预览](https://portal.azure.cn/)。
 
-    b.完成[通过 Azure 门户预览创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal)一文中所述的群集创建过程，但不要单击“创建”，而是转到“摘要”并下载模板，如以下屏幕截图所示。
+    b.完成[通过 Azure 门户预览创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)一文中所述的群集创建过程，但不要单击“创建”，而是转到“摘要”并下载模板，如以下屏幕截图所示。
 
  ![Service Fabric 群集页的屏幕截图，其中显示了用于下载 Resource Manager 模板的链接][DownloadTemplate]
 -->
 ## 使用 Azure PowerShell 将 Resource Manager 模板部署到 Azure
 
-有关如何使用 PowerShell 部署模板的详细说明，请参阅[使用 PowerShell 部署 Resource Manager 模板](/documentation/articles/resource-group-template-deploy)。
+有关如何使用 PowerShell 部署模板的详细说明，请参阅[使用 PowerShell 部署 Resource Manager 模板](/documentation/articles/resource-group-template-deploy/)。
 
->[AZURE.NOTE] Service Fabric 群集需要有一定数量的节点可随时启动，以保持可用性和状态 - 称为“维持仲裁”。因此，除非你已事先执行[状态的完整备份](/documentation/articles/service-fabric-reliable-services-backup-restore)，否则关闭群集中的所有计算机通常是不安全的做法。
+>[AZURE.NOTE] Service Fabric 群集需要有一定数量的节点可随时启动，以保持可用性和状态 - 称为“维持仲裁”。因此，除非你已事先执行[状态的完整备份](/documentation/articles/service-fabric-reliable-services-backup-restore/)，否则关闭群集中的所有计算机通常是不安全的做法。
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
-- [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security)
-- [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio)。
-- [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction)
+- [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security/)
+- [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio/)。
+- [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction/)
 
 <!--Image references-->
 [DownloadTemplate]: ./media/service-fabric-cluster-creation-via-arm/DownloadTemplate.png

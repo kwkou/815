@@ -3,12 +3,12 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-commandlines)
-- [English](/documentation/articles/mysql-database-enus-commandlines)
+- [中文](/documentation/articles/mysql-database-commandlines/)
+- [English](/documentation/articles/mysql-database-enus-commandlines/)
 
 #使用PowerShell管理MySQL Database on Azure
 
-本文主要介绍如何通过PowerShell实现更多MySQL Database on Azure的创建、查看、删除、更改等操作。建议您先阅读[利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell),该文介绍了如何下载使用Azure PowerShell, 如何利用PowerShell来快速创建MySQL Database on Azure数据服务。
+本文主要介绍如何通过PowerShell实现更多MySQL Database on Azure的创建、查看、删除、更改等操作。建议您先阅读[利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell/),该文介绍了如何下载使用Azure PowerShell, 如何利用PowerShell来快速创建MySQL Database on Azure数据服务。
 
 在开始之前，请确保已将 Azure PowerShell 准备就绪。
 
@@ -179,7 +179,7 @@ Set-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -Resourc
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{wait_timeout=70}} -UsePatchSemantics
 ```
-对其他参数的修改，可以参考下面Json文件的定义，参数的有效值范围可参考[定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)：
+对其他参数的修改，可以参考下面Json文件的定义，参数的有效值范围可参考[定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings/)：
 
 ```
 	"options": {

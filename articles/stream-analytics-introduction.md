@@ -44,8 +44,8 @@ Azure 流分析 (ASA) 是一种完全托管的、经济高效的实时事件处�
 ## 后续步骤
 我们已经向你介绍了流分析，这是一种托管服务，适用于对物联网的数据进行流式分析。若要了解有关此服务的详细信息，请参阅：
 
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 

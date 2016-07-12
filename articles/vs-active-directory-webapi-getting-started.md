@@ -15,8 +15,8 @@
 # 开始使用 Azure Active Directory 和 Visual Studio 连接服务（WebApi 项目）
 
 > [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-active-directory-webapi-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-active-directory-webapi-what-happened)
+> - [入门](/documentation/articles/vs-active-directory-webapi-getting-started/)
+> - [发生了什么情况](/documentation/articles/vs-active-directory-webapi-what-happened/)
 
 ##访问控制器需要身份验证
  

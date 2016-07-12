@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 [AZURE.INCLUDE [virtual-machines-common-extensions-authoring-templates](../includes/virtual-machines-common-extensions-authoring-templates.md)]
 
@@ -41,7 +41,7 @@
 
 创作扩展模板的下一个步骤是确定提供配置参数的格式。每个扩展均支持其自己的参数集。
 
-若要查看 Linux 扩展的示例配置，请单击文档 [Linux 扩展示例](/documentation/articles/virtual-machines-linux-extensions-configuration-samples)。
+若要查看 Linux 扩展的示例配置，请单击文档 [Linux 扩展示例](/documentation/articles/virtual-machines-linux-extensions-configuration-samples/)。
 
 请参阅以下 VM 模板链接，以获取完整的 VM 扩展模板。
 

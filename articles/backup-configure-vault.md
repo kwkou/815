@@ -48,9 +48,9 @@
 
     >[AZURE.IMPORTANT] 确定存储冗余选项的最佳时机是在创建保管库之后，并且是在将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
 
-    如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），请考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy#geo-redundant-storage)选项。
+    如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），请考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy/#geo-redundant-storage)选项。
 
-    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 SCDPM 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
+    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 SCDPM 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy/#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
 
     **选择存储冗余选项：**
 
@@ -69,7 +69,7 @@
 ## 步骤 2：下载保管库凭据文件
 本地计算机需要先在备份保存库中通过身份验证才能将数据备份到 Azure。身份验证是通过保管库凭据实现的。从 Azure 经典管理门户通过安全通道下载保管库凭据文件。证书私钥不会在经典管理门户或服务中持久保存。
 
-详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup#what-is-the-vault-credential-file)。
+详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup/#what-is-the-vault-credential-file)。
 
 ### 将保管库凭据文件下载到本地计算机
 
@@ -160,7 +160,7 @@
 
     ![Windows Server 备份项](./media/backup-configure-vault/specify-backup-schedule-close.png)
 
-    >[AZURE.NOTE] 有关如何指定备份计划的详细信息，请参阅 [Use Azure Backup to replace your tape infrastructure（使用 Azure 备份来取代磁带基础结构）](/documentation/articles/backup-azure-backup-cloud-as-tape) 一文。
+    >[AZURE.NOTE] 有关如何指定备份计划的详细信息，请参阅 [Use Azure Backup to replace your tape infrastructure（使用 Azure 备份来取代磁带基础结构）](/documentation/articles/backup-azure-backup-cloud-as-tape/) 一文。
 
 8. 在“选择保留策略”页上，为备份复制选择“保留策略”。
 
@@ -210,8 +210,8 @@
 
 ## 后续步骤
 - 注册[免费 Azure 试用帐户](/pricing/free-trial/)
-- [备份 Windows 服务器或客户端计算机](/documentation/articles/backup-azure-backup-windows-server)。
-- 如果仍有疑问，请查看 [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)。
+- [备份 Windows 服务器或客户端计算机](/documentation/articles/backup-azure-backup-windows-server/)。
+- 如果仍有疑问，请查看 [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)。
 - 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
 <!---HONumber=Mooncake_0503_2016-->

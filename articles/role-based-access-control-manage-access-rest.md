@@ -15,9 +15,9 @@
 # Managing Role-Based Access Control with the REST API（使用 REST API 管理基于角色的访问控制）
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell)
-- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli)
-- [REST API](/documentation/articles/role-based-access-control-manage-access-rest)
+- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
+- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)
+- [REST API](/documentation/articles/role-based-access-control-manage-access-rest/)
 
 使用 Azure 门户中基于角色的访问控制 (RBAC) 和 Azure Resource Manager API 可以精细地管理对订阅和资源的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
 
@@ -26,7 +26,7 @@
 
 列出所有指定范围和子范围内的角色分配。
 
-要列出角色分配，必须对 `Microsoft.Authorization/roleAssignments/read` 操作具有范围内的访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+要列出角色分配，必须对 `Microsoft.Authorization/roleAssignments/read` 操作具有范围内的访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -88,7 +88,7 @@
 
 获取有关角色分配标识符指定的单个角色分配的信息。
 
-若要获取有关角色分配的信息，必须对 `Microsoft.Authorization/roleAssignments/read` 操作具有访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要获取有关角色分配的信息，必须对 `Microsoft.Authorization/roleAssignments/read` 操作具有访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -136,7 +136,7 @@
 
 在指定范围内，为授予指定角色的指定主体创建角色分配。
 
-若要创建角色分配，必须对 `Microsoft.Authorization/roleAssignments/write` 操作具有访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要创建角色分配，必须对 `Microsoft.Authorization/roleAssignments/write` 操作具有访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -201,7 +201,7 @@
 
 删除指定范围的角色分配。
 
-若要删除角色分配，必须对 `Microsoft.Authorization/roleAssignments/delete` 操作具有访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要删除角色分配，必须对 `Microsoft.Authorization/roleAssignments/delete` 操作具有访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -249,7 +249,7 @@
 
 列出指定范围内可用于分配的所有角色。
 
-若要列出角色，必须对 `Microsoft.Authorization/roleDefinitions/read` 操作具有范围内的访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要列出角色，必须对 `Microsoft.Authorization/roleDefinitions/read` 操作具有范围内的访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -343,7 +343,7 @@
 
 获取有关角色定义标识符指定的单个角色的信息。若要获取有关使用显示名称的单个角色的信息，请参阅“列出所有角色和 roleName 筛选器”。
 
-若要获取有关角色的信息，必须对 `Microsoft.Authorization/roleDefinitions/read` 操作具有访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要获取有关角色的信息，必须对 `Microsoft.Authorization/roleDefinitions/read` 操作具有访问权限。所有内置角色均具有对此操作的访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -428,7 +428,7 @@
 ## 创建自定义角色
 创建自定义角色。
 
-若要创建自定义角色，必须对其所有 `AssignableScopes` 具有 `Microsoft.Authorization/roleDefinitions/write` 操作的访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要创建自定义角色，必须对其所有 `AssignableScopes` 具有 `Microsoft.Authorization/roleDefinitions/write` 操作的访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -538,7 +538,7 @@
 
 修改自定义角色。
 
-若要修改自定义角色，必须对其所有 `AssignableScopes` 具有 `Microsoft.Authorization/roleDefinitions/write` 操作的访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要修改自定义角色，必须对其所有 `AssignableScopes` 具有 `Microsoft.Authorization/roleDefinitions/write` 操作的访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 
@@ -648,7 +648,7 @@
 
 删除自定义角色。
 
-若要删除自定义角色，必须对其所有 `AssignableScopes` 具有 `Microsoft.Authorization/roleDefinitions/delete` 操作的访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要删除自定义角色，必须对其所有 `AssignableScopes` 具有 `Microsoft.Authorization/roleDefinitions/delete` 操作的访问权限。在内置角色中，只有所有者和用户访问管理员对此操作有访问权限。有关角色分配和管理 Azure 资源的访问权限的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 ### 请求
 

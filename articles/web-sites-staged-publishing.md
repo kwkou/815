@@ -24,7 +24,7 @@
 
 - 交换后，具有以前分阶段 Web 应用的槽现在具有以前的生产 Web 应用。如果交换到生产槽的更改与您的预期不同，您可以立即执行同一交换来收回“上一已知的良好站点”。
 
-仅“标准”App Service 计划模式支持分阶段部署。若要缩放你的 Web 应用，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale)。
+仅“标准”App Service 计划模式支持分阶段部署。若要缩放你的 Web 应用，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale/)。
 
 - 如果你的 Web 应用具有多个槽，则你无法更改模式。
 
@@ -64,7 +64,7 @@ Web 应用必须在“标准”模式下运行才能启用多个部署槽。
 	![部署槽标题][StagingTitle]
 	
 
-创建部署槽后没有任何内容。您可以从其他存储库分支或完全不同的存储库部署到槽。您还可以更改此槽的配置。使用与内容更新部署槽关联的发布配置文件或部署凭证。例如，你可以[使用 git 发布到此槽](/documentation/articles/web-sites-publish-source-control)。
+创建部署槽后没有任何内容。您可以从其他存储库分支或完全不同的存储库部署到槽。您还可以更改此槽的配置。使用与内容更新部署槽关联的发布配置文件或部署凭证。例如，你可以[使用 git 发布到此槽](/documentation/articles/web-sites-publish-source-control/)。
 
 <a name="AboutConfiguration"></a>
 ## 部署槽的配置 ##
@@ -135,7 +135,7 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 
 [AZURE.INCLUDE [AzureRm PowerShell 与中国 Azure 云](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-- 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。  
+- 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。  
 
 
 ----------
@@ -187,7 +187,7 @@ Azure CLI 提供了适用于 Azure 的跨平台命令，包括对 Web 应用部�
 
 [AZURE.INCLUDE [Azure CLI 与中国 Azure 云](../includes/azure-cli-azurechinacloud-environment-parameter.md)]
 
-- 有关安装和配置 Azure CLI 的说明（包括有关如何将 Azure CLI 连接到 Azure 订阅的信息），请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+- 有关安装和配置 Azure CLI 的说明（包括有关如何将 Azure CLI 连接到 Azure 订阅的信息），请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 -  若要在 Azure CLI 中列出可用于 Azure 的命令，请调用 `azure site -h`。
 

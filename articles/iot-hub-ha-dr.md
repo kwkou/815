@@ -53,7 +53,7 @@ IoT 解决方案中部署拓扑的完整处理已超出本文的范围，但为�
 [Azure 流量管理器]: /documentation/services/traffic-manager/
 [IoT 中心开发人员指南 - 标识注册表]: /documentation/articles/iot-hub-devguide/#identityregistry
 
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/
 
 <!---HONumber=Mooncake_0307_2016-->

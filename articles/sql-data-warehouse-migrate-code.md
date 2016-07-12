@@ -110,19 +110,19 @@ AND     request_id IN
 <!--Image references-->
 
 <!--Article references-->
-[Update 中的 ANSI Join]: /documentation/articles/sql-data-warehouse-develop-ctas
-[Delete 中的 ANSI Join]: /documentation/articles/sql-data-warehouse-develop-ctas
-[Merge 语句]: /documentation/articles/sql-data-warehouse-develop-ctas
-[INSERT..EXEC]: /documentation/articles/sql-data-warehouse-develop-temporary-tables
+[Update 中的 ANSI Join]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[Delete 中的 ANSI Join]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[Merge 语句]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[INSERT..EXEC]: /documentation/articles/sql-data-warehouse-develop-temporary-tables/
 
-[游标]: /documentation/articles/sql-data-warehouse-develop-loops
-[SELECT..INTO]: /documentation/articles/sql-data-warehouse-develop-ctas
-[结合 rollup / cube / grouping sets 选项的 Group By 子句]: /documentation/articles/sql-data-warehouse-develop-group-by-options
-[嵌套级别超过 8]: /documentation/articles/sql-data-warehouse-develop-transactions
-[通过视图更新]: /documentation/articles/sql-data-warehouse-develop-views
-[使用 select 分配变量]: /documentation/articles/sql-data-warehouse-develop-variable-assignment
-[动态 SQL 字符串没有 MAX 数据类型]: /documentation/articles/sql-data-warehouse-develop-dynamic-sql
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[游标]: /documentation/articles/sql-data-warehouse-develop-loops/
+[SELECT..INTO]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[结合 rollup / cube / grouping sets 选项的 Group By 子句]: /documentation/articles/sql-data-warehouse-develop-group-by-options/
+[嵌套级别超过 8]: /documentation/articles/sql-data-warehouse-develop-transactions/
+[通过视图更新]: /documentation/articles/sql-data-warehouse-develop-views/
+[使用 select 分配变量]: /documentation/articles/sql-data-warehouse-develop-variable-assignment/
+[动态 SQL 字符串没有 MAX 数据类型]: /documentation/articles/sql-data-warehouse-develop-dynamic-sql/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 

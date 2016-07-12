@@ -18,9 +18,9 @@
 
 
 ## 探究
-- [事件中心](/documentation/articles/event-hubs-overview)
+- [事件中心](/documentation/articles/event-hubs-overview/)
 - [事件中心定价详细信息](/home/features/event-hubs/#price)
-- [事件中心可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq)
+- [事件中心可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq/)
 - [事件寻源模式](http://msdn.microsoft.com/zh-cn/library/dn589792.aspx)
  
 ## 构建

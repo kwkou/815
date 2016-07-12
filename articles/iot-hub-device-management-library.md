@@ -206,8 +206,8 @@ LWM2M 数据模型引入了对象和资源的概念：
 
 
 [img-library-overview]: ./media/iot-hub-device-management-library/library.png
-[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview
-[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started
+[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
+[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-simple-sample]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c/iotdm_client/samples/iotdm_simple_sample
 [lnk-edison-sample]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c/iotdm_client/samples/iotdm_edison_sample
 [Azure IoT Hub device SDK]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c

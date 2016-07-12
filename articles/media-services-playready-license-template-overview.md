@@ -25,7 +25,7 @@ Azure 媒体服务现在提供有用于传送 Microsoft PlayReady 许可证的�
 - 音频\\视频内容的输入控件的输出保护级别。 
 - 有关详细信息，请参阅 [PlayReady 符合性规则](https://www.microsoft.com/playready/licensing/compliance/)文档中的输出控件部分 (3.5)。
 
->[AZURE.NOTE]目前，只能配置 PlayReady 许可证（此权限是必需的）的 PlayRight。PlayRight 赋予客户端播放内容的权限。PlayRight 还允许配置特定于播放的限制。有关详细信息，请参阅 [PlayReadyPlayRight](/documentation/articles/media-services-playready-license-template-overview#PlayReadyPlayRight)。
+>[AZURE.NOTE]目前，只能配置 PlayReady 许可证（此权限是必需的）的 PlayRight。PlayRight 赋予客户端播放内容的权限。PlayRight 还允许配置特定于播放的限制。有关详细信息，请参阅 [PlayReadyPlayRight](/documentation/articles/media-services-playready-license-template-overview/#PlayReadyPlayRight)。
 
 若要使用媒体服务配置 PlayReady 许可证，必须配置媒体服务 PlayReady 许可证模板。该模板在 XML 中定义。
 
@@ -44,13 +44,13 @@ Azure 媒体服务现在提供有用于传送 Microsoft PlayReady 许可证的�
 
 XML 符合 PlayReady 许可证模板 XML 架构部分中定义的 PlayReady 许可证模板 XML 架构。
 
-媒体服务还可定义一组可用于序列化到 XML 和从 XML 反序列化的 .NET 类。有关主类的描述，请参阅用于配置许可证模板的[媒体服务 .NET 类](/documentation/articles/media-services-playready-license-template-overview#classes)。
+媒体服务还可定义一组可用于序列化到 XML 和从 XML 反序列化的 .NET 类。有关主类的描述，请参阅用于配置许可证模板的[媒体服务 .NET 类](/documentation/articles/media-services-playready-license-template-overview/#classes)。
 
-有关使用 .NET 类来配置 PlayReady 许可证模板的端到端示例，请参阅[使用 PlayReady 动态加密和许可证传送服务](/documentation/articles/media-services-protect-with-drm)。
+有关使用 .NET 类来配置 PlayReady 许可证模板的端到端示例，请参阅[使用 PlayReady 动态加密和许可证传送服务](/documentation/articles/media-services-protect-with-drm/)。
 
 ##<a id="classes"></a>用于配置许可证模板的媒体服务 .NET 类
 
-以下是用于配置媒体服务 PlayReady 许可证模板的主要 .NET 类。这些类映射到 [PlayReady 许可证模板 XML 架构](/documentation/articles/media-services-playready-license-template-overview#schema)中定义的类型。
+以下是用于配置媒体服务 PlayReady 许可证模板的主要 .NET 类。这些类映射到 [PlayReady 许可证模板 XML 架构](/documentation/articles/media-services-playready-license-template-overview/#schema)中定义的类型。
 
 [MediaServicesLicenseTemplateSerializer](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.mediaserviceslicensetemplateserializer.aspx) 类用于序列化到媒体服务许可证模板 XML 序列化和从该 XML 进行反序列化。
 

@@ -28,6 +28,6 @@
   [了解详细信息]: http://windows.microsoft.com/zh-cn/windows-live/sign-in-what-is-microsoft-account
   [1]: http://technet.microsoft.com/zh-cn/library/jj573650
   [**立即注册**]: https://account.windowsazure.cn/organization
-  [Azure AD 是什么？]: /documentation/articles/active-directory-whatis
+  [Azure AD 是什么？]: /documentation/articles/active-directory-whatis/
   [TechNet 上的 Azure AD 库]: http://technet.microsoft.com/zh-cn/library/hh967619.aspx
   [MSDN 上的 Azure AD 库]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj673460.aspx

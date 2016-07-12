@@ -114,7 +114,7 @@
 
         New-AzureRmResourceGroupDeployment -Name ExampleDeployment -DeploymentDebugLogLevel All -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate>
         
-     有关使用此调试内容解决部署问题的详细信息，请参阅[使用 Azure PowerShell 对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-powershell)。
+     有关使用此调试内容解决部署问题的详细信息，请参阅[使用 Azure PowerShell 对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)。
        
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。
 
@@ -266,11 +266,11 @@
 参数文件的大小不能超过 64 KB。
 
 有关如何在模板中定义参数，请参阅 [Authoring templates（创作模板](/documentation/articles/resource-group-authoring-templates/#parameters)）。
-有关用于传递安全值的 KeyVault 引用的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter)
+有关用于传递安全值的 KeyVault 引用的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)
 
 ## 后续步骤
-- 若要了解 Azure 资源管理器模板的节，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。
-- 有关可在 Azure 资源管理器模板中使用的函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions)。
+- 若要了解 Azure 资源管理器模板的节，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
+- 有关可在 Azure 资源管理器模板中使用的函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
  
 

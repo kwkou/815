@@ -80,10 +80,10 @@
 <!--Image references-->
 
 <!--Article references-->
-[How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）]: /documentation/articles/powershell-install-configure
-[Create a SQL Data Warehouse using PowerShell（使用 PowerShell 创建 SQL 数据仓库）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
-[Restore from snapshot（从快照还原）]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-snapshot
-[Geo-restore from snapshot（从快照异地还原）]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-geo-restore-snapshot
+[How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）]: /documentation/articles/powershell-install-configure/
+[Create a SQL Data Warehouse using PowerShell（使用 PowerShell 创建 SQL 数据仓库）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[Restore from snapshot（从快照还原）]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-snapshot/
+[Geo-restore from snapshot（从快照异地还原）]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-geo-restore-snapshot/
 
 <!--MSDN references-->
 [Azure SQL 数据库 Cmdlet]: https://msdn.microsoft.com/zh-cn/library/mt574084.aspx

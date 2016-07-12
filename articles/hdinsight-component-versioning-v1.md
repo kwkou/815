@@ -43,7 +43,7 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 **发行说明**
 
-请参阅 [HDInsight 发行说明](/documentation/articles/hdinsight-release-notes)，了解 HDInsight 最新版本的更多发行说明。
+请参阅 [HDInsight 发行说明](/documentation/articles/hdinsight-release-notes/)，了解 HDInsight 最新版本的更多发行说明。
 
 ### 设置 HDInsight 群集时选择一个版本
 
@@ -114,7 +114,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 **弃用日期**是在该日期后，不能在 HDInsight 上创建此群集版本的日期。
 
-> [AZURE.NOTE]HDInsight 2.1 和 3.0 群集均运行在 Azure 来宾 OS [系列 4](/documentation/articles/cloud-services-guestos-update-matrix) 上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
+> [AZURE.NOTE]HDInsight 2.1 和 3.0 群集均运行在 Azure 来宾 OS [系列 4](/documentation/articles/cloud-services-guestos-update-matrix/) 上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
 
 ## 与 HDInsight 版本相关的 Hortonworks 发行说明##
 
@@ -136,7 +136,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 [wa-forums]: /support/forums/
 
-[connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
 
 [hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/bk_HDP_RelNotes/content/ch_relnotes_v220.html
 

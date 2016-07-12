@@ -45,7 +45,7 @@
 
 >[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成。有关详细信息，请参阅[定价 - 虚拟网络](/home/features/networking/#price)。为了将运行 VPN 网关的费用降到最低，请创建测试环境，并尽可能快地执行所需的测试和演示。
 
-此配置要求使用一个由最多四台计算机组成的测试子网，这些计算机使用公共 IP 地址直接连接到 Internet。如果没有这些资源，你也可以[设置用于测试的模拟混合云环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim)。模拟混合云测试环境只需要 Azure 订阅。
+此配置要求使用一个由最多四台计算机组成的测试子网，这些计算机使用公共 IP 地址直接连接到 Internet。如果没有这些资源，你也可以[设置用于测试的模拟混合云环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)。模拟混合云测试环境只需要 Azure 订阅。
 
 ## 阶段 1：在 Corpnet 子网上配置计算机
 
@@ -327,6 +327,6 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
  
 ## 后续步骤
 
-- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sp)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-lob)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync)。
+- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sp/)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-lob/)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync/)。
 
 <!---HONumber=Mooncake_0425_2016-->

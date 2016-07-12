@@ -117,6 +117,6 @@ VMNetwork1-Shanghai 的网络映射已更改 | VM-1 将连接到现映射到 VMN
 
 ## 后续步骤
 
-现在，你已经对网络映射有了更好的了解，因此可以[开始 Site Recovery 部署](/documentation/articles/site-recovery-best-practices)了。
+现在，你已经对网络映射有了更好的了解，因此可以[开始 Site Recovery 部署](/documentation/articles/site-recovery-best-practices/)了。
 
 <!---HONumber=Mooncake_0328_2016-->

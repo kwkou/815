@@ -32,7 +32,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 - [Microsoft Visual Studio](https://www.visualstudio.com/zh-cn/visual-studio-homepage-vs.aspx)
 - [适用于 .NET 的 Azure 存储空间客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)
 - [适用于 .NET 的 Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
-- [Azure 存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)。
+- [Azure 存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
@@ -355,14 +355,14 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 默认情况下，你的存储帐户中的 Blob 数据仅供存储帐户所有者访问。默认情况下，验证对 Blob 存储的请求需要帐户访问密钥。不过，你可能想要让特定的 Blob 数据可供其他用户使用。可以使用两个选项：
 
-- **匿名访问**：你可让容器或其 Blob 公开供匿名访问。有关详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources)。
-- **共享访问签名**：你可以为客户端提供共享访问签名 (SAS)，该共享访问签名可利用所指定的权限在所指定的时间间隔内，针对存储帐户中的资源提供委派访问权限。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+- **匿名访问**：你可让容器或其 Blob 公开供匿名访问。有关详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)。
+- **共享访问签名**：你可以为客户端提供共享访问签名 (SAS)，该共享访问签名可利用所指定的权限在所指定的时间间隔内，针对存储帐户中的资源提供委派访问权限。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 ### 加密 Blob 数据
 
 Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
 
-- **客户端加密**：用于 .NET 的存储客户端库支持在上传到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 Azure 密钥保管库集成，以便管理存储帐户密钥。有关详细信息，请参阅 [Microsoft Azure 存储空间的使用 .NET 客户端加密](/documentation/articles/storage-client-side-encryption)。另请参阅[教程：在 Microsoft Azure 存储空间中使用 Azure 密钥保管库加密和解密 Blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault)。
+- **客户端加密**：用于 .NET 的存储客户端库支持在上传到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 Azure 密钥保管库集成，以便管理存储帐户密钥。有关详细信息，请参阅 [Microsoft Azure 存储空间的使用 .NET 客户端加密](/documentation/articles/storage-client-side-encryption/)。另请参阅[教程：在 Microsoft Azure 存储空间中使用 Azure 密钥保管库加密和解密 Blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/)。
 
 ## 后续步骤
 
@@ -375,8 +375,8 @@ Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
 
 ### 概念性指南
 
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
-- [开始使用适用于 .NET 的文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
+- [开始使用适用于 .NET 的文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
 - [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
 
   [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png

@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-本文说明如何使用 Azure 模板在 Azure 上快速部署 Linux 虚拟机。本文中的操作需要一个 Azure 帐户（[获取试用帐户](/pricing/1rmb-trial/)）、已登录 (`azure login -e AzureChinaCloud`) 且处于 Resource Manager 模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal)或 [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli) 快速部署 Linux VM。
+本文说明如何使用 Azure 模板在 Azure 上快速部署 Linux 虚拟机。本文中的操作需要一个 Azure 帐户（[获取试用帐户](/pricing/1rmb-trial/)）、已登录 (`azure login -e AzureChinaCloud`) 且处于 Resource Manager 模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install/)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)或 [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/) 快速部署 Linux VM。
 
 
 ## 快速命令

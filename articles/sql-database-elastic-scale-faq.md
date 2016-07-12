@@ -20,7 +20,7 @@
 
 #### 我已经置了一个数据库，并且已安装分片映射管理器，我应如何将此新数据库注册为分片？
 
-请参阅**[使用弹性数据库客户端库将分片添加到应用程序](/documentation/articles/sql-database-elastic-scale-add-a-shard)**。
+请参阅**[使用弹性数据库客户端库将分片添加到应用程序](/documentation/articles/sql-database-elastic-scale-add-a-shard/)**。
 
 #### 弹性数据库工具的费用如何？
 

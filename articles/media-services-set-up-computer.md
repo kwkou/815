@@ -15,8 +15,8 @@
 # 设置你的环境
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-create-account)
-- [PowerShell](/documentation/articles/media-services-manage-with-powershell)
+- [门户](/documentation/articles/media-services-create-account/)
+- [PowerShell](/documentation/articles/media-services-manage-with-powershell/)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx)
 <a id="create_account"></a>
 

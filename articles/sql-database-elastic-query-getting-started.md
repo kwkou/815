@@ -13,12 +13,12 @@
 
 # 用于分片的弹性查询（水平分区）入门
 
-Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-query-overview)。
+Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-query-overview/)。
 
-本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中的示例做了延伸。完成时，你将会：了解如何配置和使用 Azure SQL 数据库执行跨多个相关数据库的查询。
+本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中的示例做了延伸。完成时，你将会：了解如何配置和使用 Azure SQL 数据库执行跨多个相关数据库的查询。
 ## 先决条件
 
-下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started)。
+下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
 ## 使用示例应用程序创建分片映射管理器
 
@@ -62,7 +62,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 		WITH IDENTITY = '<username>',
 		SECRET = '<password>';
 
-	“username”和“password”应该与[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)的步骤 6 中使用的登录信息相同。
+	“username”和“password”应该与[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)的步骤 6 中使用的登录信息相同。
 
 ### 外部数据源
 

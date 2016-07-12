@@ -41,7 +41,7 @@
 
 
 - 可以在其中创建表的任何数据库。
- - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started)。
+ - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
 - SQL Server Management Studio (ssms.exe) 2015 年 8 月预览版或更高版本。可从以下位置下载最新的 ssms.exe：
@@ -553,16 +553,16 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 
 有关 Azure SQL 数据库中扩展事件的主要主题是：
 
-- [SQL 数据库中的扩展事件](/documentation/articles/sql-database-xevent-db-diff-from-svr) - 有关 Azure SQL 数据库中扩展事件的主要主题。
+- [SQL 数据库中的扩展事件](/documentation/articles/sql-database-xevent-db-diff-from-svr/) - 有关 Azure SQL 数据库中扩展事件的主要主题。
  - 对比 Azure SQL 数据库与 Microsoft SQL Server 的扩展事件的不同方面。
 
 
-- [SQL 数据库中扩展事件的环形缓冲区目标代码](/documentation/articles/sql-database-xevent-code-ring-buffer) - 提供一个可以快速方便上手的辅助代码示例，但该示例主要适用于简单测试，而对于大型活动则不够可靠。
+- [SQL 数据库中扩展事件的环形缓冲区目标代码](/documentation/articles/sql-database-xevent-code-ring-buffer/) - 提供一个可以快速方便上手的辅助代码示例，但该示例主要适用于简单测试，而对于大型活动则不够可靠。
 
 
 有关 Azure 存储空间服务中帐户和容器的详细信息，请参阅：
 
-- [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
+- [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 - [命名和引用容器、Blob 与元数据](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)
 - [使用根容器](http://msdn.microsoft.com/zh-cn/library/azure/ee395424.aspx)
 

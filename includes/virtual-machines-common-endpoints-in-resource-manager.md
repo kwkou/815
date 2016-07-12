@@ -17,9 +17,9 @@ Azure 终结点的工作方法在经典部署模型和 Resource Manager 部署�
 
 
 ## 网络安全组概述
-网络安全组是一项新功能，它提供一个安全层，以允许特定端口和子网访问你的 VM。你通常始终设有网络安全组，在 VM 和外界之间提供此安全层。可以将网络安全组应用于虚拟网络子网或 VM 的特定网络接口。你现在可以不用创建终结点 ACL 规则，而是创建网络安全组 ACL 规则。与只是创建用于转发给定端口的终结点相比，这些 ACL 规则提供更多的控制。你可以[阅读有关网络安全组的更多内容](/documentation/articles/virtual-networks-nsg)。
+网络安全组是一项新功能，它提供一个安全层，以允许特定端口和子网访问你的 VM。你通常始终设有网络安全组，在 VM 和外界之间提供此安全层。可以将网络安全组应用于虚拟网络子网或 VM 的特定网络接口。你现在可以不用创建终结点 ACL 规则，而是创建网络安全组 ACL 规则。与只是创建用于转发给定端口的终结点相比，这些 ACL 规则提供更多的控制。你可以[阅读有关网络安全组的更多内容](/documentation/articles/virtual-networks-nsg/)。
 
-> [AZURE.TIP] 可以将网络安全组分配给多个子网或网络接口。没有 1:1 映射，意味着你可以使用一组常见的 ACL 规则创建网络安全组，并该网络安全组将应用于多个子网或网络接口。而且，可以将网络安全组应用于订阅中的资源（基于[基于角色的访问控制](/documentation/articles/role-based-access-control-what-is)）。
+> [AZURE.TIP] 可以将网络安全组分配给多个子网或网络接口。没有 1:1 映射，意味着你可以使用一组常见的 ACL 规则创建网络安全组，并该网络安全组将应用于多个子网或网络接口。而且，可以将网络安全组应用于订阅中的资源（基于[基于角色的访问控制](/documentation/articles/role-based-access-control-what-is/)）。
 
 
 ## 负载平衡器概述
@@ -41,7 +41,7 @@ ACL 规则将基于你指定的优先级指标（值越大，优先级越低）�
 
 ![将 NSG 应用于网络接口或子网](./media/virtual-machines-common-endpoints-in-resource-manager/apply-nsg-to-resources.png)
 
-网络安全组的行为不会根据是分配给子网还是分配给网络接口而发生更改。常见部署方案将网络安全组分配给子网，以确保附加到该子网的所有 VM 合规。你可以阅读更多有关[将网络安全组应用于资源](/documentation/articles/virtual-networks-nsg#associating-nsgs)的内容。
+网络安全组的行为不会根据是分配给子网还是分配给网络接口而发生更改。常见部署方案将网络安全组分配给子网，以确保附加到该子网的所有 VM 合规。你可以阅读更多有关[将网络安全组应用于资源](/documentation/articles/virtual-networks-nsg/#associating-nsgs)的内容。
 
 
 ## 网络安全组的默认行为

@@ -183,6 +183,6 @@ wacn.date="04/06/2016"/>
 
 创建 [ServicePackage.cspkg](/documentation/articles/cloud-services-model-and-package/#servicepackagecspkg) 包。
 
-为角色启用[远程桌面](/documentation/articles/cloud-services-role-enable-remote-desktop)。
+为角色启用[远程桌面](/documentation/articles/cloud-services-role-enable-remote-desktop/)。
 
 <!---HONumber=Mooncake_0328_2016-->

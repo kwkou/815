@@ -21,7 +21,7 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 执行“添加连接服务”操作会安装相应的 NuGet 程序包，以访问项目中的 Azure 存储，并将存储帐户的连接字符串添加到项目配置文件中。
 
-有关使用 Azure 表存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
+有关使用 Azure 表存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。
 
 若要开始，首先需要在存储帐户中创建表。我们将向你展示如何使用代码创建 Azure 表。此外，我们将展示如何执行基本的表和实体操作，例如添加、修改、读取和删除表实体。示例是使用 C# 代码编写的，并使用了 .NET 的 Azure 存储客户端库。
 

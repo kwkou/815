@@ -17,13 +17,13 @@
 
 在 Azure 管理门户的“缩放”页中，你可以手动缩放 Web 角色或辅助角色，或者根据 CPU 负载或消息队列启用自动缩放。
 
->[AZURE.NOTE] 本文着重于云服务 Web 和辅助角色。如果你直接创建虚拟机，该虚拟机将托管在云服务中。其中有些信息适用于这些类型的虚拟机。缩放虚拟机的可用性集其实只是根据配置的缩放规则将其关闭或打开。有关虚拟机和可用性集的详细信息，请参阅 [Manage the Availability of Virtual Machines（管理虚拟机的可用性）](/documentation/articles/virtual-machines-windows-classic-configure-availability)
+>[AZURE.NOTE] 本文着重于云服务 Web 和辅助角色。如果你直接创建虚拟机，该虚拟机将托管在云服务中。其中有些信息适用于这些类型的虚拟机。缩放虚拟机的可用性集其实只是根据配置的缩放规则将其关闭或打开。有关虚拟机和可用性集的详细信息，请参阅 [Manage the Availability of Virtual Machines（管理虚拟机的可用性）](/documentation/articles/virtual-machines-windows-classic-configure-availability/)
 
 在配置应用程序的缩放之前，应考虑以下信息：
 
-- 缩放受内核使用情况影响。角色实例越大，使用的核心越多。你只能在你的订阅的内核限制内缩放应用程序。例如，如果你的订阅的上限是二十个内核，并且你通过两个中等规模的云服务（一共四个内核）运行某个应用程序，则对于订阅中的其他云服务部署，你只能扩展十六个内核。有关大小的详细信息，请参阅 [Cloud Service Sizes（云服务的大小）](/documentation/articles/cloud-services-sizes-specs)。
+- 缩放受内核使用情况影响。角色实例越大，使用的核心越多。你只能在你的订阅的内核限制内缩放应用程序。例如，如果你的订阅的上限是二十个内核，并且你通过两个中等规模的云服务（一共四个内核）运行某个应用程序，则对于订阅中的其他云服务部署，你只能扩展十六个内核。有关大小的详细信息，请参阅 [Cloud Service Sizes（云服务的大小）](/documentation/articles/cloud-services-sizes-specs/)。
 
-- 你必须先创建队列并使其与角色关联，然后才能基于消息阈值缩放应用程序。有关详细信息，请参阅[如何使用队列存储服务](/documentation/articles/storage-dotnet-how-to-use-queues)。
+- 你必须先创建队列并使其与角色关联，然后才能基于消息阈值缩放应用程序。有关详细信息，请参阅[如何使用队列存储服务](/documentation/articles/storage-dotnet-how-to-use-queues/)。
 
 - 你可以缩放链接到云服务的资源。有关链接资源的更多信息，请参见[如何：将资源链接到云服务](/documentation/articles/cloud-services-how-to-manage/#how-to-link-a-resource-to-a-cloud-service)。
 
@@ -68,7 +68,7 @@
 
     ![手动缩放云服务角色][manual_scale]
 
-    如果需要更多实例，你可能需要更改[云服务虚拟机大小](/documentation/articles/cloud-services-sizes-specs)。
+    如果需要更多实例，你可能需要更改[云服务虚拟机大小](/documentation/articles/cloud-services-sizes-specs/)。
 
 6. 单击“保存”。  
 将基于你的选择添加或删除角色实例。

@@ -15,15 +15,15 @@
 # 使用 Visual Studio 连接到 SQL 数据仓库
 
 > [AZURE.SELECTOR]
-- [Visual Studio](/documentation/articles/sql-data-warehouse-get-started-connect)
-- [SQLCMD](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd)
+- [Visual Studio](/documentation/articles/sql-data-warehouse-get-started-connect/)
+- [SQLCMD](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
 
 本演练说明如何使用 Visual Studio 中的 SQL Server Data Tools (SSDT) 在短时间内连接到 Azure SQL 数据仓库数据库。连接后，你将运行一个简单的查询。
 
 ## 先决条件
 
-+ SQL 数据仓库中的 AdventureWorksDW 示例数据库。若要创建此数据库，请参阅[创建 SQL 数据仓库数据库](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)。 
-+ SQL Server Data Tools for Visual Studio。有关安装指说明和选项，请参阅[安装 Visual Studio 和/或 SSDT](/documentation/articles/sql-data-warehouse-install-visual-studio)
++ SQL 数据仓库中的 AdventureWorksDW 示例数据库。若要创建此数据库，请参阅[创建 SQL 数据仓库数据库](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)。 
++ SQL Server Data Tools for Visual Studio。有关安装指说明和选项，请参阅[安装 Visual Studio 和/或 SSDT](/documentation/articles/sql-data-warehouse-install-visual-studio/)
 
 ## 步骤 1：查找完全限定的 Azure SQL 服务器名称
 

@@ -15,7 +15,7 @@
 
 Redis 输出缓存提供程序是用于输出缓存数据的进程外存储机制。此数据专门用于完整 HTTP 响应（页面输出缓存）。此提供程序会插入 ASP.NET 4 中引入的新输出缓存提供程序扩展点。
 
-要使用 Redis 输出缓存提供程序，首先配置你的缓存，然后使用 Redis 输出缓存提供程序 NuGet 包配置 ASP.NET 应用程序。本主题提供有关配置应用程序以使用 Redis 输出缓存提供程序的指南。有关创建和配置 Azure Redis 缓存实例的详细信息，请参阅[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-a-cache)。
+要使用 Redis 输出缓存提供程序，首先配置你的缓存，然后使用 Redis 输出缓存提供程序 NuGet 包配置 ASP.NET 应用程序。本主题提供有关配置应用程序以使用 Redis 输出缓存提供程序的指南。有关创建和配置 Azure Redis 缓存实例的详细信息，请参阅[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)。
 
 ## 在缓存中存储 ASP.NET 页面输出
 
@@ -27,7 +27,7 @@ Redis 输出缓存提供程序是用于输出缓存数据的进程外存储机�
 
 ![Azure Redis 缓存输出缓存提供程序](./media/cache-aspnet-output-cache-provider/redis-cache-page-output-provider.png)
 
-Redis 输出缓存提供程序 NuGet 包依赖于 StackExchange.Redis.StrongName 包。如果你的项目中没有 StackExchange.Redis.StrongName 包，则将会安装它。请注意，除了强命名的 StackExchange.Redis.StrongName 包外，还有 StackExchange.Redis 非强命名版本。如果你的项目使用的是非强命名 StackExchange.Redis 版本，则必须在安装 Redis 输出缓存提供程序 NuGet 包之前或之后将其卸载，否则你的项目中将出现命名冲突。有关这些包的详细信息，请参阅[配置 .NET 缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#configure-the-cache-clients)。
+Redis 输出缓存提供程序 NuGet 包依赖于 StackExchange.Redis.StrongName 包。如果你的项目中没有 StackExchange.Redis.StrongName 包，则将会安装它。请注意，除了强命名的 StackExchange.Redis.StrongName 包外，还有 StackExchange.Redis 非强命名版本。如果你的项目使用的是非强命名 StackExchange.Redis 版本，则必须在安装 Redis 输出缓存提供程序 NuGet 包之前或之后将其卸载，否则你的项目中将出现命名冲突。有关这些包的详细信息，请参阅[配置 .NET 缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#configure-the-cache-clients)。
 
 NuGet 包会下载并添加所需的程序集引用，并将以下部分添加到你的 web.config 文件，包含 ASP.NET 应用程序所需的配置，以使用 Redis 输出缓存提供程序。
 
@@ -53,7 +53,7 @@ NuGet 包会下载并添加所需的程序集引用，并将以下部分添加�
 
 注释部分提供了属性及每个属性的示例设置的一个示例。
 
-你可以通过 Azure PowerShell 配置 Redis 缓存。有关访问缓存属性的说明，请参阅[使用 Azure PowerShell 管理 Azure Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell)。
+你可以通过 Azure PowerShell 配置 Redis 缓存。有关访问缓存属性的说明，请参阅[使用 Azure PowerShell 管理 Azure Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell/)。
 
 -	**host** - 指定缓存终结点。
 -	**port** - 使用非 SSL 端口或 SSL 端口，具体取决于 SSL 设置。
@@ -75,6 +75,6 @@ NuGet 包会下载并添加所需的程序集引用，并将以下部分添加�
 
 ## 后续步骤
 
-了解 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider)。
+了解 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider/)。
 
 <!---HONumber=Mooncake_1207_2015-->

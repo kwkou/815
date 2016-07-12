@@ -33,14 +33,14 @@
 
 使用了两种不同的清单文件来描述应用程序和服务，即服务清单和应用程序清单。后续部分将详细介绍这两种清单。
 
-群集中可以有一个或多个服务类型实例处于活动状态。例如，有状态服务实例或副本通过复制位于群集中不同节点上的副本之间的状态实现高可靠性。这种复制本质上是提供冗余，使服务即使在群集中的一个节点失败时也可用。[分区服务](/documentation/articles/service-fabric-concepts-partitioning)进一步跨群集中的节点划分其状态（和该状态的访问模式）。
+群集中可以有一个或多个服务类型实例处于活动状态。例如，有状态服务实例或副本通过复制位于群集中不同节点上的副本之间的状态实现高可靠性。这种复制本质上是提供冗余，使服务即使在群集中的一个节点失败时也可用。[分区服务](/documentation/articles/service-fabric-concepts-partitioning/)进一步跨群集中的节点划分其状态（和该状态的访问模式）。
 
 下图显示应用程序和服务实例、分区与副本之间的关系。
 
 ![服务中的分区和副本][cluster-application-instances]
 
 
->[AZURE.TIP] 可以使用 http://&lt;yourclusteraddress&gt;:19080/Explorer 上提供的 Service Fabric Explorer 工具查看群集中应用程序的布局。有关详细信息，请参阅[使用 Service Fabric Explorer 可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster)。
+>[AZURE.TIP] 可以使用 http://&lt;yourclusteraddress&gt;:19080/Explorer 上提供的 Service Fabric Explorer 工具查看群集中应用程序的布局。有关详细信息，请参阅[使用 Service Fabric Explorer 可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
 
 ## 描述服务
 
@@ -137,7 +137,7 @@ For more information about other features supported by service manifests, refer 
 
 > [AZURE.NOTE] 应用程序清单可以包含多个服务清单导入和默认服务。可对每个服务清单导入进行独立的版本控制。
 
-若要了解如何维护不同的应用程序和用于单个环境的服务参数，请参阅[管理多个环境的应用程序参数](/documentation/articles/service-fabric-manage-multiple-environment-app-configuration)。
+若要了解如何维护不同的应用程序和用于单个环境的服务参数，请参阅[管理多个环境的应用程序参数](/documentation/articles/service-fabric-manage-multiple-environment-app-configuration/)。
 
 <!--
 For more information about other features supported by application manifests, refer to the following articles:
@@ -246,8 +246,8 @@ PS D:\temp>
 [vs-package-command]: ./media/service-fabric-application-model/vs-package-command.png
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
-[10]: /documentation/articles/service-fabric-deploy-remove-applications
-[11]: /documentation/articles/service-fabric-manage-multiple-environment-app-configuration
-[12]: /documentation/articles/service-fabric-application-runas-security
+[10]: /documentation/articles/service-fabric-deploy-remove-applications/
+[11]: /documentation/articles/service-fabric-manage-multiple-environment-app-configuration/
+[12]: /documentation/articles/service-fabric-application-runas-security/
 
 <!---HONumber=Mooncake_0627_2016-->

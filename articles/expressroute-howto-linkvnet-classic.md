@@ -15,8 +15,8 @@
 # 将 VNet 链接到 ExpressRoute 线路
 
 > [AZURE.SELECTOR]
-- [PowerShell - Resource Manager] (/documentation/articles/expressroute-howto-linkvnet-arm)  
-- [PowerShell - Classic](/documentation/articles/expressroute-howto-linkvnet-classic)
+- [PowerShell - Resource Manager] (/documentation/articles/expressroute-howto-linkvnet-arm/)  
+- [PowerShell - Classic](/documentation/articles/expressroute-howto-linkvnet-classic/)
 
 
 
@@ -28,15 +28,15 @@
 
 ## 配置先决条件
 
-1. 你需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
-2. 在开始配置之前，需查看[先决条件](/documentation/articles/expressroute-prerequisites)、[路由要求](/documentation/articles/expressroute-routing)和[工作流](/documentation/articles/expressroute-workflows)。
+1. 你需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
+2. 在开始配置之前，需查看[先决条件](/documentation/articles/expressroute-prerequisites/)、[路由要求](/documentation/articles/expressroute-routing/)和[工作流](/documentation/articles/expressroute-workflows/)。
 3. 你必须有一个活动的 ExpressRoute 线路。 
-	- 请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并通过连接服务提供商启用该线路。
-	- 请确保为线路配置 Azure 专用对等互连。如需路由说明，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-classic)一文。 
+	- 请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)，并通过连接服务提供商启用该线路。
+	- 请确保为线路配置 Azure 专用对等互连。如需路由说明，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-classic/)一文。 
 	- 确保配置 Azure 专用对等互连并运行你的网络和 Microsoft 之间的 BGP 对等互连，以便启用端到端连接。
-    - 必须已创建并完全预配一个虚拟网络和一个虚拟网络网关。请按说明[为 ExpressRoute 配置虚拟网络](/documentation/articles/expressroute-howto-vnet-portal-classic)。
+    - 必须已创建并完全预配一个虚拟网络和一个虚拟网络网关。请按说明[为 ExpressRoute 配置虚拟网络](/documentation/articles/expressroute-howto-vnet-portal-classic/)。
 
-最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。如果你启用了 ExpressRoute 高级版外接程序，则可将更多数量的虚拟网络连接到 ExpressRoute 线路。有关高级版外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute-faqs)。
+最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。如果你启用了 ExpressRoute 高级版外接程序，则可将更多数量的虚拟网络连接到 ExpressRoute 线路。有关高级版外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute-faqs/)。
 
 ## 将同一订阅中的虚拟网络连接到线路
 
@@ -150,6 +150,6 @@
 
 ## 后续步骤
 
-有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
+有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
 <!---HONumber=Mooncake_0104_2016-->

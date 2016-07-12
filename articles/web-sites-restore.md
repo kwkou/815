@@ -18,7 +18,7 @@
 
 利用 Web 应用还原功能，可将 Web 应用还原到以前某个你自己需要的状态，或基于原有 Web 应用备份之一创建新的 Web 应用。创建与最新版本并行运行的新 Web 应用对于 A/B 测试会很有用。
 
-Web 应用还原功能在 [Azure 经典管理门户](http://manage.windowsazure.cn)中的“备份”边栏选项卡上，只能用于“标准”模式。有关使用“标准”模式缩放应用的信息，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale)。
+Web 应用还原功能在 [Azure 经典管理门户](http://manage.windowsazure.cn)中的“备份”边栏选项卡上，只能用于“标准”模式。有关使用“标准”模式缩放应用的信息，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale/)。
 
 <a name="PreviousBackup"></a>
 ## 从以前制作的备份中还原 Web 应用

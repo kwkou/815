@@ -32,7 +32,7 @@
 
 ####已知问题
 
-Azure.NET SDK 2.8 可让你创建 .NET 4.5.2 云服务包。不过，.NET 4.5.2 Framework 要在 2016 年 1 月来宾 OS 版本发布后，才会安装在默认的来宾 OS 映像上。在此之前，可以通过独立的来宾 OS 版本 November 2015-02 获取 .NET 4.5.2 Framework。请参阅 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix)页跟踪该映像的发布时间。November 2015-02 映像发布后，你可以选择通过更新云服务配置文件 (.cscfg) 来使用该映像。在服务配置文件中，将 ServiceConfiguration 元素的 osVersion 属性设置为字符串“WA-GUEST-OS-4.26\_201511-02”。如果你选择使用此映像，将不再获得来宾 OS 的自动更新。若要获取自动更新，osVersion 必须设置为“\*”，并且只能在 2016 年 1 月通过自动更新获取 .NET 4.5.2。
+Azure.NET SDK 2.8 可让你创建 .NET 4.5.2 云服务包。不过，.NET 4.5.2 Framework 要在 2016 年 1 月来宾 OS 版本发布后，才会安装在默认的来宾 OS 映像上。在此之前，可以通过独立的来宾 OS 版本 November 2015-02 获取 .NET 4.5.2 Framework。请参阅 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix/)页跟踪该映像的发布时间。November 2015-02 映像发布后，你可以选择通过更新云服务配置文件 (.cscfg) 来使用该映像。在服务配置文件中，将 ServiceConfiguration 元素的 osVersion 属性设置为字符串“WA-GUEST-OS-4.26\_201511-02”。如果你选择使用此映像，将不再获得来宾 OS 的自动更新。若要获取自动更新，osVersion 必须设置为“\*”，并且只能在 2016 年 1 月通过自动更新获取 .NET 4.5.2。
 
 ###Azure 数据工厂
 

@@ -350,6 +350,6 @@ namespace WorkerRole1
 可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/gg557551.aspx)找到上面所用元素的 XML 架构参考。
 
 ## 后续步骤
-阅读有关云服务[模型](/documentation/articles/cloud-services-model-and-package)的详细信息。
+阅读有关云服务[模型](/documentation/articles/cloud-services-model-and-package/)的详细信息。
 
 <!---HONumber=Mooncake_0104_2016-->

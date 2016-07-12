@@ -48,7 +48,7 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 ##在 Azure 经典管理门户中预配 Storm 群集
 
-当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 经典管理门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
+当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 经典管理门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1/)页。
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
@@ -194,7 +194,7 @@ Storm UI 可以用于监视拓扑。
 
 * **HDInsight Tools for Visual Studio** - HDInsight Tools 允许你使用 Visual Studio 提交、监视和管理 Storm 拓扑，就像在前面提到的 Storm 仪表板中一样。HDInsight Tools 可让你创建 C# Storm 拓扑，并包含可在群集上部署和运行的示例拓扑。
 
-	有关详细信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+	有关详细信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 * **示例文件** - HDInsight Storm 群集在 **%STORM\_HOME%\\contrib** 目录中提供了多个示例。每个示例都会包含以下内容：
 
@@ -212,13 +212,13 @@ Storm UI 可以用于监视拓扑。
 
 * 以下文档包含可与 Storm on HDInsight 配合使用的其他示例的列表：
 
-	* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
+	* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
 [apachestorm]: https://storm.incubator.apache.org
 [stormdocs]: http://storm.incubator.apache.org/documentation/Documentation.html
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 
 <!---HONumber=79-->

@@ -21,7 +21,7 @@
 
 ## 安装 Azure PowerShell
  
-有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。选择要使用的订阅，然后登录到你的 Azure 帐户。
+有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。
 
 ## 设置变量
 
@@ -181,7 +181,7 @@
         $vm.HardwareProfile.vmSize = $vmSize
         Update-AzureRmVM -ResourceGroupName $rgName -VM $vm
     
-    See [Sizes for virtual machines in Azure](/documentation/articles/virtual-machines-windows-sizes) for a list of available sizes for a virtual machine.
+    See [Sizes for virtual machines in Azure](/documentation/articles/virtual-machines-windows-sizes/) for a list of available sizes for a virtual machine.
 
 它会返回类似于下面的内容：
 

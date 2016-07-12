@@ -28,7 +28,7 @@
 
 ## 已验证的 VPN 设备 
 
-我们在与设备供应商合作的过程中验证了一系列的标准 VPN 设备。下面的列表中包含的设备系列中的所有设备都应适用于 Azure VPN 网关。请参阅 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)这一文章，以确定你需要为所要配置的解决方案创建哪种网关类型。
+我们在与设备供应商合作的过程中验证了一系列的标准 VPN 设备。下面的列表中包含的设备系列中的所有设备都应适用于 Azure VPN 网关。请参阅 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)这一文章，以确定你需要为所要配置的解决方案创建哪种网关类型。
 
 若要获取配置 VPN 设备的帮助，请参考对应于各设备系列的链接。
 

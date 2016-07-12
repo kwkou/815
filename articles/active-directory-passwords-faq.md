@@ -148,7 +148,7 @@
 
  - **问：密码写回是否安全？ 如何确保我不会受到黑客攻击？**
  
- > **答：**是的。密码写回具有极高的安全性。若要阅读有关密码写回服务实施的 4 个安全层的详细信息，请查看“密码写回的工作原理”中的[密码写回安全模型](/documentation/articles/active-directory-passwords-learn-more#password-writeback-security-model)。
+ > **答：**是的。密码写回具有极高的安全性。若要阅读有关密码写回服务实施的 4 个安全层的详细信息，请查看“密码写回的工作原理”中的[密码写回安全模型](/documentation/articles/active-directory-passwords-learn-more/#password-writeback-security-model)。
 
 
 <br/> <br/> <br/>
@@ -156,13 +156,13 @@
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) - 了解如何以系统用户的身份重置或更改自己的密码
-* [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works) - 了解六个不同的服务组件及其功能
-* [**入门**](/documentation/articles/active-directory-passwords-getting-started) - 了解如何让用户重置及更改云密码或本地密码
-* [**自定义**](/documentation/articles/active-directory-passwords-customize) - 了解如何根据组织的需求自定义服务的外观和行为
-* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices) - 了解如何快速部署且有效管理组织的密码
-* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
-* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more) - 深入探索服务工作原理的技术细节
+* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password/) - 了解如何以系统用户的身份重置或更改自己的密码
+* [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works/) - 了解六个不同的服务组件及其功能
+* [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
+* [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
+* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices/) - 了解如何快速部署且有效管理组织的密码
+* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot/) - 了解如何快速排查服务的问题
+* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more/) - 深入探索服务工作原理的技术细节
 
 
 [001]: ./media/active-directory-passwords-faq/001.jpg "Image_001.jpg"

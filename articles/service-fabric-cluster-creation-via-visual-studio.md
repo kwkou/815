@@ -39,7 +39,7 @@
 |sourceVaultResourceId |存储用于保护群集的证书的密钥保管库的资源 ID。|
 |certificateUrlValue |群集安全证书的 URL。|
 
-Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保护的安全群集。此证书以最后三个模板参数标识（`certificateThumbprint`、`sourceVaultValue` 和 `certificateUrlValue`），并且必须在 **Azure 密钥保管库**中存在。有关如何创建群集安全证书的详细信息，请参阅[如何使用证书保护 Service Fabric 群集](/documentation/articles/service-fabric-cluster-security#secure-a-service-fabric-cluster-by-using-certificates)一文。
+Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保护的安全群集。此证书以最后三个模板参数标识（`certificateThumbprint`、`sourceVaultValue` 和 `certificateUrlValue`），并且必须在 **Azure 密钥保管库**中存在。有关如何创建群集安全证书的详细信息，请参阅[如何使用证书保护 Service Fabric 群集](/documentation/articles/service-fabric-cluster-security/#secure-a-service-fabric-cluster-by-using-certificates)一文。
 
 ## 可选：更改群集名称
 每个 Service Fabric 群集都有一个名称。在 Azure 中创建结构群集时，群集名称（连同 Azure 区域）确定了群集的域名系统 (DNS) 名称。例如，如果将群集命名为 `myBigCluster`，将 `clusterLocation` 参数设置为 East US，则群集的 DNS 名称将是 `myBigCluster.chinaeast.chinacloudapp.cn`。
@@ -111,11 +111,11 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 
 如果出现任何错误，请转到 [Azure 门户预览](https://portal.azure.cn/)并打开你已部署到的资源组。单击“所有设置”，然后在设置边栏选项卡上单击“部署”。失败的资源组部署会在“通知”中留下详细的诊断信息。
 
->[AZURE.NOTE] Service Fabric 群集需要有一定数量的节点可随时启动，以保持可用性和状态 - 称为“维持仲裁”。因此，除非你已事先执行[状态的完整备份](/documentation/articles/service-fabric-reliable-services-backup-restore)，否则关闭群集中的所有计算机通常是不安全的做法。
+>[AZURE.NOTE] Service Fabric 群集需要有一定数量的节点可随时启动，以保持可用性和状态 - 称为“维持仲裁”。因此，除非你已事先执行[状态的完整备份](/documentation/articles/service-fabric-reliable-services-backup-restore/)，否则关闭群集中的所有计算机通常是不安全的做法。
 
 ## 后续步骤
 
-- [了解如何使用 Visual Studio 管理和部署 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio)
+- [了解如何使用 Visual Studio 管理和部署 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio/)
 
 <!--Image references-->
 [1]: ./media/service-fabric-cluster-creation-via-visual-studio/azure-resource-group-project-creation.png

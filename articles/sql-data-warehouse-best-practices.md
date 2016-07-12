@@ -104,29 +104,29 @@ SQL 数据仓库有多个 DMV 可用于监视查询执行。以下监视相关�
 <!--Image references-->
 
 <!--Article references-->
-[create a support ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket
-[Concurrency and workload management in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[Create Table As Select (CTAS) in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-ctas
-[Guide for using PolyBase in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-load-polybase-guide
-[Hash distribution and its effect on query performance in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
-[Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load
-[Load data with Azure Data Factory]: /documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory
-[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp
-[Load data with PolyBase in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase
-[Manage columnstore indexes in Azure SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-manage-columnstore-indexes
-[Manage statistics in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-statistics
-[Monitor your workload using DMVs]: /documentation/articles/sql-data-warehouse-manage-monitor
-[Move data to and from Azure SQL Data Warehouse using Azure Data Factory]: /documentation/articles/data-factory-azure-sql-data-warehouse-connector
-[Optimizing transactions for SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions
+[create a support ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
+[Concurrency and workload management in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[Create Table As Select (CTAS) in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[Guide for using PolyBase in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
+[Hash distribution and its effect on query performance in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key/
+[Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
+[Load data with Azure Data Factory]: /documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory/
+[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
+[Load data with PolyBase in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
+[Manage columnstore indexes in Azure SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-manage-columnstore-indexes/
+[Manage statistics in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[Monitor your workload using DMVs]: /documentation/articles/sql-data-warehouse-manage-monitor/
+[Move data to and from Azure SQL Data Warehouse using Azure Data Factory]: /documentation/articles/data-factory-azure-sql-data-warehouse-connector/
+[Optimizing transactions for SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions/
 [Pause compute resources]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#pause-compute-bk
 [Resume compute resources]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#resume-compute-bk
 [Scale compute resources]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#scale-performance-bk
-[Table design in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-table-design
-[Table partitions in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-table-partitions
-[Temporary tables in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-temporary-tables
-[Transactions in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-transactions
-[Troubleshooting]: /documentation/articles/sql-data-warehouse-troubleshoot
-[Use labels to instrument queries in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-label
+[Table design in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[Table partitions in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-table-partitions/
+[Temporary tables in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-temporary-tables/
+[Transactions in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-transactions/
+[Troubleshooting]: /documentation/articles/sql-data-warehouse-troubleshoot/
+[Use labels to instrument queries in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-label/
 
 <!--MSDN references-->
 [ALTER TABLE (Transact-SQL)]: https://msdn.microsoft.com/zh-cn/library/ms190273.aspx

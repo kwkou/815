@@ -32,7 +32,7 @@
 	</Resources>
 
 
-请参阅[配置有状态 Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration)以了解有关从配置包设置文件 (settings.xml) 引用终结点的更多信息。
+请参阅[配置有状态 Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration/)以了解有关从配置包设置文件 (settings.xml) 引用终结点的更多信息。
 
 ## 示例：为服务指定 HTTP 终结点
 

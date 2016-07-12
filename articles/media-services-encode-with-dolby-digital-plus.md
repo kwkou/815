@@ -21,7 +21,7 @@ Azure 媒体编码器支持 **Dolby® Digital Plus** 编码。Dolby® Digital Pl
 
 ###获取 Azure Media Encoder 处理器 
 
-Azure Media Encoder 支持 Dolby Digital Plus。若要获取对 **Azure 媒体编码器**的引用，请参阅[获取媒体处理器](/documentation/articles/media-services-get-media-processor)主题。
+Azure Media Encoder 支持 Dolby Digital Plus。若要获取对 **Azure 媒体编码器**的引用，请参阅[获取媒体处理器](/documentation/articles/media-services-get-media-processor/)主题。
 
 ###<a id="configure_preset"></a>配置 Azure 媒体编码器设置
 
@@ -42,7 +42,7 @@ Azure Media Encoder 支持 Dolby Digital Plus。若要获取对 **Azure 媒体�
 
 以下 XML 预设包含一个完整的 Azure Media Encoder XML 预设，该预设可使用 H264 宽带 1080p 视频和 Dolby Digital Plus 5.1 多声道音频生成 MP4 文件。此预设还指定编码低频效果 (LFE) 通道，这是通过将 LFEOn 属性设置为 true 来指定的。任何未指定的属性将使用其默认值。
 
-此 XML 预设应传递到 **Azure 媒体编码器**，以创建[本](/documentation/articles/media-services-dotnet-encode-asset)主题中所述的编码作业（只不过，你应该传递整个 XML 预设，而不是预定义的预设字符串，如[此处](#configure_preset)所述）。
+此 XML 预设应传递到 **Azure 媒体编码器**，以创建[本](/documentation/articles/media-services-dotnet-encode-asset/)主题中所述的编码作业（只不过，你应该传递整个 XML 预设，而不是预定义的预设字符串，如[此处](#configure_preset)所述）。
 
 
 	<?xml version="1.0" encoding="utf-16"?>
@@ -125,7 +125,7 @@ Azure Media Encoder 支持 Dolby Digital Plus。若要获取对 **Azure 媒体�
 
 若要编码为 Dolby Digital Plus 立体声，请将 Codec 和 EncoderMode 属性设置为“DolbyDigitalPlus”。所编码的通道数使用 AudioCodingMode 属性指定。对于立体声编码，请将 AudioCodingMode 设置为“Mode20”。以下 XML 预设示例显示了用于编码为 5.1 音频的 <DolbyDigitalPlusAudioProfile>。任何未指定的属性将使用其默认值。
 
-此 XML 预设应传递到 **Azure 媒体编码器**，以创建[本](/documentation/articles/media-services-dotnet-encode-asset)主题中所述的编码作业（只不过，你应该传递整个 XML 预设，而不是预定义的预设字符串，如[此处](#configure_preset)所述）。
+此 XML 预设应传递到 **Azure 媒体编码器**，以创建[本](/documentation/articles/media-services-dotnet-encode-asset/)主题中所述的编码作业（只不过，你应该传递整个 XML 预设，而不是预定义的预设字符串，如[此处](#configure_preset)所述）。
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<!--Created for Azure Media Encoder, May 26 2013 -->

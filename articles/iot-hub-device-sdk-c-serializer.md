@@ -14,7 +14,7 @@
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 
-本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。下一篇文章提供 [**IoTHubClient**](/documentation/articles/iot-hub-device-sdk-c-iothubclient) 的更详细介绍。本文最后的部分将提供该 SDK 的剩余组件**序列化程序**库的更详细说明。
+本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。下一篇文章提供 [**IoTHubClient**](/documentation/articles/iot-hub-device-sdk-c-iothubclient/) 的更详细介绍。本文最后的部分将提供该 SDK 的剩余组件**序列化程序**库的更详细说明。
 
 本简介文章介绍如何使用**序列化程序**库将事件发送到 IoT 中心，以及接收来自 IoT 中心的消息。在本文中，我们将更完整说明如何利用**序列化程序**宏语言来创建数据模型，以延伸该项讨论。本文还包含更多有关该库如何序列化消息（以及在某些情况下，如何控制序列化行为）的详细信息。此外，将介绍可以修改以判断所要创建的模型大小的某些参数。
 
@@ -24,7 +24,7 @@
 
 ## 建模语言
 
-本系列教程中的[简介文章](/documentation/articles/iot-hub-device-sdk-c-intro)通过 **simplesample\_amqp** 应用程序提供的示例介绍了**适用于 C 语言的 Azure IoT 设备 SDK** 建模语言：
+本系列教程中的[简介文章](/documentation/articles/iot-hub-device-sdk-c-intro/)通过 **simplesample\_amqp** 应用程序提供的示例介绍了**适用于 C 语言的 Azure IoT 设备 SDK** 建模语言：
 
 ```
 BEGIN_NAMESPACE(WeatherStation);
@@ -438,7 +438,7 @@ if (SERIALIZE(&destination, &destinationSize, thermostat->Temperature, thermosta
 
 ## 消息处理
 
-到目前为止，本文只讨论了如何将事件发送到 IoT 中心，而尚未涉及到消息接收。这是因为有关接收消息的知识大多数在[以前的文章](/documentation/articles/iot-hub-device-sdk-c-intro)中都已涵盖。回顾那篇文章，我们知道是通过注册消息回调函数来处理消息的：
+到目前为止，本文只讨论了如何将事件发送到 IoT 中心，而尚未涉及到消息接收。这是因为有关接收消息的知识大多数在[以前的文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中都已涵盖。回顾那篇文章，我们知道是通过注册消息回调函数来处理消息的：
 
 ```
 IoTHubClient_SetMessageCallback(iotHubClientHandle, IoTHubMessage, myWeather)
@@ -626,7 +626,7 @@ WITH_DATA(int, MyData)
 
 ## 其他主题
 
-值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些都是[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient)中所涵盖的主题。重点在于，所有这些功能不论是与**序列化程序**库配合，还是与 **IoTHubClient** 库配合，其运行方式都相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
+值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些都是[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)中所涵盖的主题。重点在于，所有这些功能不论是与**序列化程序**库配合，还是与 **IoTHubClient** 库配合，其运行方式都相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
 
 ```
 MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);
@@ -654,7 +654,7 @@ serializer_init(NULL);
 serializer_deinit();
 ```
 
-除此之外，上面列出的所有其他功能在**序列化程序**库中的运行方式均与在 **IoTHubClient** 库中的运行方式相同。有关这些主题中任何一个主题的详细信息，请参阅本系列教程中的[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient)。
+除此之外，上面列出的所有其他功能在**序列化程序**库中的运行方式均与在 **IoTHubClient** 库中的运行方式相同。有关这些主题中任何一个主题的详细信息，请参阅本系列教程中的[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)。
 
 ## 后续步骤
 

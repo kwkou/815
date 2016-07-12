@@ -115,7 +115,7 @@
 
 
 
-	此类使用本地存储区存储和检索此设备将要接收的新闻类别。此外，它还包含了一个方法用于通过[模板](/documentation/articles/notification-hubs-templates)注册来注册这些类别。
+	此类使用本地存储区存储和检索此设备将要接收的新闻类别。此外，它还包含了一个方法用于通过[模板](/documentation/articles/notification-hubs-templates/)注册来注册这些类别。
 
 7. 在 AppDelegate.h 文件中，添加 Notifications.h 的导入语句，并添加 Notifications 类实例的属性：
 
@@ -229,7 +229,7 @@
 通常，通知将由后端服务发送，但你也可以直接从应用发送突发新闻通知。为此，我们需要更新[通知中心入门][get-started]教程中所定义的 `SendNotificationRESTAPI` 方法。
 
 
-1. 在 ViewController.m 中，按如下所示更新 `SendNotificationRESTAPI` 方法，使其接受类别标记的参数并发送适当的[模板](/documentation/articles/notification-hubs-templates)通知。
+1. 在 ViewController.m 中，按如下所示更新 `SendNotificationRESTAPI` 方法，使其接受类别标记的参数并发送适当的[模板](/documentation/articles/notification-hubs-templates/)通知。
 
 		- (void)SendNotificationRESTAPI:(NSString*)categoryTag
 		{
@@ -356,12 +356,12 @@
 
 <!-- URLs. -->
 [How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
-[使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
-[Mobile Service]: /documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications
-[使用通知中心通知用户]: /documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications
+[使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news/
+[Mobile Service]: /documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/
+[使用通知中心通知用户]: /documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
-[get-started]: /documentation/articles/notification-hubs-ios-get-started
+[get-started]: /documentation/articles/notification-hubs-ios-get-started/
 [Azure 经典管理门户]: https://manage.windowsazure.cn
 <!---HONumber=Mooncake_0503_2016-->

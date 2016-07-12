@@ -375,7 +375,7 @@
 
 有关详细信息，另请参阅 [PHP 开发人员中心](/develop/php/)。
 
-[下载]: /documentation/articles/php-download-sdk
+[下载]: /documentation/articles/php-download-sdk/
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure 管理门户]: http://manage.windowsazure.cn/
 

@@ -63,9 +63,9 @@
 ## 后续步骤
 
 
-[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)
+[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)
 
-[什么是流量管理器](/documentation/articles/traffic-manager-overview)
+[什么是流量管理器](/documentation/articles/traffic-manager-overview/)
 
 [云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 

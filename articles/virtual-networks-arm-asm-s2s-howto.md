@@ -23,7 +23,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 在本文中，你将了解如何在经典 VNet 和 ARM VNet 之间创建站点到站点 (S2S) 的 VPN 连接。
 
->[AZURE.NOTE] 本文假设你已拥有经典 VNet 和 ARM VNet，并且已熟悉了解如何为经典 VNet 配置 S2S VPN 连接。有关经典 VNet 与 ARM VNet 之间 S2S VPN 连接的详细端到端解决方案，请访问[解决方案指南 - 使用 S2S VPN 将经典 VNet 连接到 ARM VNet](/documentation/articles/virtual-networks-arm-asm-s2s)。
+>[AZURE.NOTE] 本文假设你已拥有经典 VNet 和 ARM VNet，并且已熟悉了解如何为经典 VNet 配置 S2S VPN 连接。有关经典 VNet 与 ARM VNet 之间 S2S VPN 连接的详细端到端解决方案，请访问[解决方案指南 - 使用 S2S VPN 将经典 VNet 连接到 ARM VNet](/documentation/articles/virtual-networks-arm-asm-s2s/)。
 
 你会看到使用以下 Azure 网关在经典 VNet 与 ARM VNet 之间创建 S2S VPN 连接所需完成的任务概述。
 
@@ -115,5 +115,5 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ## 后续步骤
 
-- 创建[使用 S2S VPN 以将经典 VNet 连接到 ARM VNet 的端到端解决方案](/documentation/articles/virtual-networks-arm-asm-s2s)。
+- 创建[使用 S2S VPN 以将经典 VNet 连接到 ARM VNet 的端到端解决方案](/documentation/articles/virtual-networks-arm-asm-s2s/)。
 <!---HONumber=Mooncake_0516_2016-->

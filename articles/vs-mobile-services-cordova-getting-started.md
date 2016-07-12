@@ -30,7 +30,7 @@
 
 var todoTable = mobileServiceClient.getTable('TodoItem');
 
-要使这些示例工作，表的权限必须设置为**具有应用程序密钥的任何人**。稍后，您可以设置身份验证。请参阅[身份验证入门](/documentation/articles/mobile-services-html-get-started-users)。
+要使这些示例工作，表的权限必须设置为**具有应用程序密钥的任何人**。稍后，您可以设置身份验证。请参阅[身份验证入门](/documentation/articles/mobile-services-html-get-started-users/)。
 
 ##向表中添加项
 

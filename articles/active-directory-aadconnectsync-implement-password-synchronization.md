@@ -44,7 +44,7 @@
 - 启用密码同步
 
 
-有关详细信息，请参阅 [Integrating your on-premises identities with Azure Active Directory（将本地标识与 Azure Active Directory 集成）](/documentation/articles/active-directory-aadconnect)
+有关详细信息，请参阅 [Integrating your on-premises identities with Azure Active Directory（将本地标识与 Azure Active Directory 集成）](/documentation/articles/active-directory-aadconnect/)
 
 
 
@@ -104,9 +104,9 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
 ## 启用密码同步
 
-当你使用“快速设置”安装 Azure AD Connect 时，便会自动启用密码同步。有关详细信息，请参阅 [Getting started with Azure AD Connect using express settings（通过快速设置开始使用 Azure AD Connect）](/documentation/articles/active-directory-aadconnect-get-started-express)。
+当你使用“快速设置”安装 Azure AD Connect 时，便会自动启用密码同步。有关详细信息，请参阅 [Getting started with Azure AD Connect using express settings（通过快速设置开始使用 Azure AD Connect）](/documentation/articles/active-directory-aadconnect-get-started-express/)。
 
-如果在安装 Azure AD Connect 时使用了自定义设置，则必须在用户登录页上启用密码同步。有关详细信息，请参阅 [Custom installation of Azure AD Connect（Azure AD Connect 的自定义安装）](/documentation/articles/active-directory-aadconnect-get-started-custom)
+如果在安装 Azure AD Connect 时使用了自定义设置，则必须在用户登录页上启用密码同步。有关详细信息，请参阅 [Custom installation of Azure AD Connect（Azure AD Connect 的自定义安装）](/documentation/articles/active-directory-aadconnect-get-started-custom/)
 
 
 ![启用密码同步](./media/active-directory-aadconnectsync-implement-password-synchronization/usersignin.png)
@@ -155,7 +155,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
     ![有关用户的沿袭信息](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync.png)
 
-7. 此外，你应该在 Azure AD 连接器空间中通过 Metaverse [跟踪用户](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors#follow-an-object-and-its-data-through-the-system)。连接器空间对象应存在一个“密码同步”设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。
+7. 此外，你应该在 Azure AD 连接器空间中通过 Metaverse [跟踪用户](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#follow-an-object-and-its-data-through-the-system)。连接器空间对象应存在一个“密码同步”设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。
 
     ![用户的连接器空间属性](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync2.png)
 
@@ -197,8 +197,8 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
 ## 后续步骤
 
-* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
+* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
+* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
 
 <!---HONumber=Mooncake_0606_2016-->

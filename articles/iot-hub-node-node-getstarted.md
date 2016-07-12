@@ -294,18 +294,18 @@
 <!-- Links -->
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
-[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
-[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview
+[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
-[lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d
-[lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
-[lnk-upload-tutorial]: /documentation/articles/iot-hub-csharp-csharp-file-upload
+[lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
+[lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
+[lnk-upload-tutorial]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 
-[lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary
+[lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-free-trial]: /pricing/1rmb-trial/
-[lnk-resource-groups]: /documentation/articles/resource-group-portal
+[lnk-resource-groups]: /documentation/articles/resource-group-portal/
 [lnk-portal]: https://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0307_2016-->

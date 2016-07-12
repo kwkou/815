@@ -259,17 +259,17 @@
 [12]: ./media/iot-hub-csharp-csharp-getstarted/create-identity-csharp3.png
 
 <!-- Links -->
-[lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d
-[lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
-[lnk-upload-tutorial]: /documentation/articles/iot-hub-csharp-csharp-file-upload
+[lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
+[lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
+[lnk-upload-tutorial]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 
-[lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary
+[lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-portal]: https://manage.windowsazure.cn
-[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
 [lnk-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
-[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview
+[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
 [lnk-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/

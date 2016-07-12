@@ -21,11 +21,11 @@ HDInsight Tools 中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API�
 
 ##先决条件
 
-* **Apache Storm on HDInsight** - 参阅 <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started" target="_blank">Apache Storm on HDInsight 入门</a>获取群集创建步骤
+* **Apache Storm on HDInsight** - 参阅 <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started/\" target="_blank">Apache Storm on HDInsight 入门</a>获取群集创建步骤
 
 * **对于 Storm 仪表板**：支持 HTML5 的现代 Web 浏览器
 
-* 对于 **Visual Studio** - Azure SDK 2.5.1 或更高版本，以及 HDInsight Tools for Visual Studio。请参阅<a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">开始使用 HDInsight Tools for Visual Studio</a> 安装并配置 HDInsight Tools for Visual Studio。
+* 对于 **Visual Studio** - Azure SDK 2.5.1 或更高版本，以及 HDInsight Tools for Visual Studio。请参阅<a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/\" target="_blank">开始使用 HDInsight Tools for Visual Studio</a> 安装并配置 HDInsight Tools for Visual Studio。
 
 	下列其中一个版本的 Visual Studio：
 
@@ -109,11 +109,11 @@ Storm UI 的主页面提供以下信息：
 
 ##HDInsight Tools for Visual Studio
 
-HDInsight Tools 可用于将 C# 或混合拓扑提交到 Storm 群集。以下步骤使用了一个示例应用程序。有关使用 HDInsight Tools 创建自己的拓扑的详细信息，请参阅[使用 HDInsight Tools for Visual Studio 开发 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)。
+HDInsight Tools 可用于将 C# 或混合拓扑提交到 Storm 群集。以下步骤使用了一个示例应用程序。有关使用 HDInsight Tools 创建自己的拓扑的详细信息，请参阅[使用 HDInsight Tools for Visual Studio 开发 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)。
 
 使用以下步骤将示例部署到 Storm on HDInsight 群集，然后查看和管理拓扑。
 
-1. 如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅<a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">开始使用 HDInsight Tools for Visual Studio</a>。
+1. 如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅<a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/\" target="_blank">开始使用 HDInsight Tools for Visual Studio</a>。
 
 2. 打开 Visual Studio，选择“文件”>“新建”>“项目”。
 
@@ -165,11 +165,11 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 
 现在，你已经了解如何使用 Storm 仪表板部署和监视拓扑，接下来请学习：
 
-* [使用 HDInsight Tools for Visual Studio 开发 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
+* [使用 HDInsight Tools for Visual Studio 开发 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 
-* [使用 Maven 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [使用 Maven 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology/)
 
-有关更多示例拓扑的列表，请参阅 [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)。
+有关更多示例拓扑的列表，请参阅 [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)。
 
 [hdinsight-dashboard]: ./media/hdinsight-storm-deploy-monitor-topology/dashboard-link.png
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png

@@ -23,7 +23,7 @@
 
 ### 站点恢复的功能是什么？
 
-站点恢复可通过协调和自动运行本地虚拟机与物理服务器到 Azure 或辅助数据中心的复制，来帮助实现业务连续性与灾难恢复 (BCDR)。[了解详细信息](/documentation/articles/site-recovery-overview)。
+站点恢复可通过协调和自动运行本地虚拟机与物理服务器到 Azure 或辅助数据中心的复制，来帮助实现业务连续性与灾难恢复 (BCDR)。[了解详细信息](/documentation/articles/site-recovery-overview/)。
 
 ### Site Recovery 可以复制什么？
 
@@ -36,9 +36,9 @@
 
 对于 Hyper-V 主机服务器，你的所需取决于部署方案。在以下内容中查看 Hyper-V 先决条件：
 
-- [将 Hyper-V VM 复制到 Azure（不使用 VMM）](/documentation/articles/site-recovery-hyper-v-site-to-azure#before-you-start)
-- [将 Hyper-V VM 复制到 Azure（使用 VMM）](/documentation/articles/site-recovery-vmm-to-azure#before-you-start)
-- [将 Hyper-V VM 复制到辅助数据中心](/documentation/articles/site-recovery-vmm-to-vmm#before-you-start)
+- [将 Hyper-V VM 复制到 Azure（不使用 VMM）](/documentation/articles/site-recovery-hyper-v-site-to-azure/#before-you-start)
+- [将 Hyper-V VM 复制到 Azure（使用 VMM）](/documentation/articles/site-recovery-vmm-to-azure/#before-you-start)
+- [将 Hyper-V VM 复制到辅助数据中心](/documentation/articles/site-recovery-vmm-to-vmm/#before-you-start)
 
 对于运行在 Hyper-V 主机服务器上的来宾：
 
@@ -48,21 +48,21 @@
 
 ### 如果 Hyper-V 在客户端操作系统上运行，我可以保护 VM 吗？
 
-不可以。VM 必须位于在受支持的 Windows 服务器计算机上运行的 Hyper-V 主机服务器上。如果需要保护客户端计算机，可以将其作为物理计算机复制[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware)。
+不可以。VM 必须位于在受支持的 Windows 服务器计算机上运行的 Hyper-V 主机服务器上。如果需要保护客户端计算机，可以将其作为物理计算机复制[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware/)。
 
 
 ### 我可以使用站点恢复来保护哪些工作负荷？
 
-Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工作负荷。Site Recovery 为应用程序感知型复制提供支持，因此，应用可以恢复为智能状态。它除了与 Microsoft 应用程序（例如 SharePoint、Exchange、Dynamics、SQL Server 及 Active Directory）集成之外，还能与行业领先的供应商（包括 Oracle、SAP、IBM 及 Red Hat）紧密配合。[详细了解](/documentation/articles/site-recovery-workload)工作负荷保护。
+Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工作负荷。Site Recovery 为应用程序感知型复制提供支持，因此，应用可以恢复为智能状态。它除了与 Microsoft 应用程序（例如 SharePoint、Exchange、Dynamics、SQL Server 及 Active Directory）集成之外，还能与行业领先的供应商（包括 Oracle、SAP、IBM 及 Red Hat）紧密配合。[详细了解](/documentation/articles/site-recovery-workload/)工作负荷保护。
 
 
 ### Hyper-V 主机必须位于 System Center VMM 云中以便使用 Site Recovery 复制它们吗？ 
 
-如果要复制到辅助数据中心，那么 Hyper-V VM 就必须位于 VMM 云中的 Hyper-V 主机服务器上。如果想要复制到 Azure，那么可以复制 Hyper-V 主机服务器（无论是否位于 VMM 云中）上的 VM。[了解详细信息](/documentation/articles/site-recovery-hyper-v-site-to-azure)。
+如果要复制到辅助数据中心，那么 Hyper-V VM 就必须位于 VMM 云中的 Hyper-V 主机服务器上。如果想要复制到 Azure，那么可以复制 Hyper-V 主机服务器（无论是否位于 VMM 云中）上的 VM。[了解详细信息](/documentation/articles/site-recovery-hyper-v-site-to-azure/)。
 
 ### 如果我只有一个 VMM 服务器，可以部署站点恢复来配合 VMM 吗？ 
 
-是的。你可以将 VMM 云中 Hyper-V 服务器上的 VM 复制到 Azure，或者在同一台服务器上的 VMM 云之间进行复制。对于本地到本地复制，我们建议在主站点与辅助站点中都部署一个 VMM 服务器。[了解详细信息](/documentation/articles/site-recovery-single-vmm)
+是的。你可以将 VMM 云中 Hyper-V 服务器上的 VM 复制到 Azure，或者在同一台服务器上的 VMM 云之间进行复制。对于本地到本地复制，我们建议在主站点与辅助站点中都部署一个 VMM 服务器。[了解详细信息](/documentation/articles/site-recovery-single-vmm/)
 <!--
 ### 我可以保护哪些物理服务器？
 
@@ -101,7 +101,7 @@ Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工�
 
 ### 将虚拟机复制到 Azure 需要满足任何先决条件吗？
 
-要复制到 Azure 的虚拟机应符合 [Azure 要求](/documentation/articles/site-recovery-best-practices#azure-virtual-machine-requirements)。
+要复制到 Azure 的虚拟机应符合 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。
 
 ### 我可以将 Hyper-V 第 2 代虚拟机复制到 Azure 吗？
 
@@ -115,7 +115,7 @@ Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工�
 
 ### 如果要复制到 Azure，我需要哪种存储帐户？
 
-你需要具有[标准异地冗余存储](/documentation/articles/storage-introduction#replication-for-durability-and-high-availability)的存储帐户。当前不支持高级存储。
+你需要具有[标准异地冗余存储](/documentation/articles/storage-introduction/#replication-for-durability-and-high-availability)的存储帐户。当前不支持高级存储。
 
 ### 我可以多久复制数据一次？
 
@@ -211,8 +211,8 @@ Azure 具有复原能力。站点恢复已经能够根据需要故障转移到�
 
 ## 后续步骤
 
-- 阅读 [Site Recovery 概述](/documentation/articles/site-recovery-overview)
-- 了解有关 [Site Recovery 体系结构](/documentation/articles/site-recovery-components)的信息  
+- 阅读 [Site Recovery 概述](/documentation/articles/site-recovery-overview/)
+- 了解有关 [Site Recovery 体系结构](/documentation/articles/site-recovery-components/)的信息  
 
  
 

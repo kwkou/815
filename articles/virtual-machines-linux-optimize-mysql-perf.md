@@ -17,7 +17,7 @@
 
 影响 Azure 上 MySQL 性能的因素有很多，主要体现在虚拟硬件选择和软件配置两个方面。本文重点介绍如何通过存储、系统和数据库配置优化性能。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ##利用 Azure 虚拟机上的 RAID
 存储是影响云环境中的数据库性能的关键因素。与单个磁盘相比，RAID 可以通过并发访问提供更快的访问速度。有关更多详细信息，请参阅[标准 RAID 级别](http://en.wikipedia.org/wiki/Standard_RAID_levels)。
@@ -28,7 +28,7 @@
 
 你可能还要考虑区块大小。通常，区块越大，获得的开销就越低，对于大型写入操作尤其如此。不过，区块太大时，它可能会添加额外的开销，并且你无法利用 RAID。当前的默认大小为 512KB，经证实，它是大多数常见生产环境的最佳大小。有关详细信息，请参阅[附录 C](#AppendixC)。
 
-请注意，对于不同的虚拟机类型，可添加的磁盘数量是有限制的。[Azure 的虚拟机和云服务大小](/documentation/articles/cloud-services-sizes-specs)中详细介绍了这些限制。你可以选择设置磁盘较少的 RAID，不过，在本文的 RAID 示例中，你需要附加 4 个数据磁盘。
+请注意，对于不同的虚拟机类型，可添加的磁盘数量是有限制的。[Azure 的虚拟机和云服务大小](/documentation/articles/cloud-services-sizes-specs/)中详细介绍了这些限制。你可以选择设置磁盘较少的 RAID，不过，在本文的 RAID 示例中，你需要附加 4 个数据磁盘。
 
 本文假定你已经创建 Linux 虚拟机，并且安装和配置了 MYSQL。有关入门的详细信息，请参阅“如何在 Azure 上安装 MySQL”。
 
@@ -66,7 +66,7 @@
 ####步骤 2：创建具有更多磁盘的 RAID
 有关详细的 RAID 设置步骤，请参照本文：
 
-[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid)
+[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)
 
 >[AZURE.NOTE]如果使用的是 XFS 文件系统，创建 RAID 后请按照下面的步骤操作。
 

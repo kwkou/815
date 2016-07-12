@@ -51,7 +51,7 @@
 
 此外，多实例任务只在 **2015 年 12 月 14 日之后创建的池**中的节点上执行。
 
-> [AZURE.TIP] 当你在 Batch 池中使用大小时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。[云服务的大小](/documentation/articles/cloud-services-sizes-specs)提供了 Batch 池中可用的计算节点大小的完整列表。
+> [AZURE.TIP] 当你在 Batch 池中使用大小时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。[云服务的大小](/documentation/articles/cloud-services-sizes-specs/)提供了 Batch 池中可用的计算节点大小的完整列表。
 
 ### 使用 StartTask 安装 MPI 应用程序
 
@@ -136,7 +136,7 @@
 
 多实例任务需要考虑两组资源文件：所有任务（主要任务和子任务）下载的**一般资源文件**，以及为多实例任务本身指定的**资源文件**（只有主要任务下载）。
 
-可以在任务的多实例设置中指定一个或多个**通用资源文件**。主要任务及所有子任务从 [Azure 存储空间](/documentation/articles/storage-introduction)将这些通用资源文件下载到每个节点的任务共享目录。可以使用 `AZ_BATCH_TASK_SHARED_DIR` 环境变量从应用程序命令和协调命令行访问任务共享目录。
+可以在任务的多实例设置中指定一个或多个**通用资源文件**。主要任务及所有子任务从 [Azure 存储空间](/documentation/articles/storage-introduction/)将这些通用资源文件下载到每个节点的任务共享目录。可以使用 `AZ_BATCH_TASK_SHARED_DIR` 环境变量从应用程序命令和协调命令行访问任务共享目录。
 
 只有主要任务将为多实例任务本身指定的资源文件，下载到任务的任务目录 `AZ_BATCH_TASK_WORKING_DIR` -- 子任务不下载为多实例任务指定的资源文件。
 

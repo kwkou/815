@@ -17,7 +17,7 @@
 通过 v2.0 终结点，可以快速地将身份验证添加 Web 应用，同时支持个人 Microsoft 帐户以及工作或学校帐户。在 ASP.NET Web 应用中，你可以使用随附在 .NET Framework 4.5 中的 Microsoft OWIN 中间件来完成此操作。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
  此处，我们将构建一个可以使用 OWIN 来将用户登录、显示有关用户的某些信息以及将用户从应用中注销的 Web 应用。
  
@@ -29,7 +29,7 @@
 本教程末尾也提供完成的应用。
 
 ## 注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 - 为应用程序添加 **Web** 平台。
@@ -162,7 +162,7 @@
 
 
 ## 显示用户信息
-使用 OpenID Connect 对用户进行身份验证时，v2.0 终结点将向应用返回 id\_token，其中包含有关用户的[声明](/documentation/articles/active-directory-v2-tokens#id_tokens)或断言。你可以使用这些声明来个性化应用程序：
+使用 OpenID Connect 对用户进行身份验证时，v2.0 终结点将向应用返回 id\_token，其中包含有关用户的[声明](/documentation/articles/active-directory-v2-tokens/#id_tokens)或断言。你可以使用这些声明来个性化应用程序：
 
 - 打开 `Controllers\HomeController.cs` 文件。可以通过 `ClaimsPrincipal.Current` 安全主体对象访问控制器中的用户声明。
 
@@ -198,11 +198,11 @@
 
 现在，可以转到更高级的主题。你可能想要尝试：
 
-[使用 v2.0 终结点保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
+[使用 v2.0 终结点保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet/)
 
 有关更多资源，请查看：
 
-- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
+- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 

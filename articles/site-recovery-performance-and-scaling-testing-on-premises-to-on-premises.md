@@ -202,7 +202,7 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 ## 后续步骤
 
-- [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm)
+- [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm/)
 
  
 

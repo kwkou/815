@@ -13,11 +13,11 @@
 
 # 创建使用服务总线主题和订阅的应用程序
 
-Azure 服务总线支持一组基于云的、面向消息的中间件技术，包括可靠的消息队列和持久发布/订阅消息。本文以[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)中提供的信息为基础，并介绍了服务总线主题提供的发布/订阅功能。
+Azure 服务总线支持一组基于云的、面向消息的中间件技术，包括可靠的消息队列和持久发布/订阅消息。本文以[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues/)中提供的信息为基础，并介绍了服务总线主题提供的发布/订阅功能。
 
 ## 演变零售方案
 
-本文将继续[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)中使用的零售方案。回顾来自各销售点 (POS) 终端的销售数据必须路由到库存管理系统，该系统使用此数据来确定何时需要补充库存。每个 POS 终端通过向 **DataCollectionQueue** 队列发送消息来报告其销售数据，这些数据将保留在该队列中，直到库存管理系统接收它们，如下所示：
+本文将继续[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues/)中使用的零售方案。回顾来自各销售点 (POS) 终端的销售数据必须路由到库存管理系统，该系统使用此数据来确定何时需要补充库存。每个 POS 终端通过向 **DataCollectionQueue** 队列发送消息来报告其销售数据，这些数据将保留在该队列中，直到库存管理系统接收它们，如下所示：
 
 ![Service-Bus1](./media/service-bus-create-topics-subscriptions/IC657161.gif)
 
@@ -43,11 +43,11 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 ## 显示相关代码
 
-[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)介绍了如何注册服务总线帐户以及如何创建服务命名空间。若要使用服务总线命名空间，应用程序必须引用服务总线程序集，特别是 Microsoft.ServiceBus.dll。引用服务总线依赖项的最简单方法是安装服务总线 [Nuget 程序包](https://www.nuget.org/packages/WindowsAzure.ServiceBus/)。还可以作为 Azure SDK 的一部分查找该程序集。可从 [Azure SDK 下载页](/downloads/)下载。
+[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues/)介绍了如何注册服务总线帐户以及如何创建服务命名空间。若要使用服务总线命名空间，应用程序必须引用服务总线程序集，特别是 Microsoft.ServiceBus.dll。引用服务总线依赖项的最简单方法是安装服务总线 [Nuget 程序包](https://www.nuget.org/packages/WindowsAzure.ServiceBus/)。还可以作为 Azure SDK 的一部分查找该程序集。可从 [Azure SDK 下载页](/downloads/)下载。
 
 ### 创建主题和订阅
 
-服务总线消息传送实体（队列和发布/订阅主题）的管理操作通过 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类执行。需要适当的凭据才能为特定命名空间创建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例。服务总线使用基于安全模型的[共享访问签名 (SAS)](/documentation/articles/service-bus-sas-overview)。[TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) 类代表具有内置工厂方法的安全令牌提供程序，这些方法可返回一些众所周知的令牌提供程序。我们将使用 [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) 方法来保留 SAS 凭据。然后使用服务总线命名空间和令牌提供程序的基址构建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例。
+服务总线消息传送实体（队列和发布/订阅主题）的管理操作通过 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类执行。需要适当的凭据才能为特定命名空间创建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例。服务总线使用基于安全模型的[共享访问签名 (SAS)](/documentation/articles/service-bus-sas-overview/)。[TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) 类代表具有内置工厂方法的安全令牌提供程序，这些方法可返回一些众所周知的令牌提供程序。我们将使用 [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) 方法来保留 SAS 凭据。然后使用服务总线命名空间和令牌提供程序的基址构建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例。
 
 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类提供了创建、枚举和删除消息传送实体的方法。此处显示的代码介绍了创建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例并用它创建 **DataCollectionTopic** 主题的方法。
 
@@ -95,7 +95,7 @@ sender.Send(bm);
 
 ### 从订阅接收消息
 
-类似于使用队列，若要从订阅接收消息，可以使用 [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) 对象，可使用 [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx) 从 [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) 直接创建它。可以使用两种不同接收模式之一（**ReceiveAndDelete** 和 **PeekLock**），如[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)中所述。
+类似于使用队列，若要从订阅接收消息，可以使用 [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) 对象，可使用 [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx) 从 [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) 直接创建它。可以使用两种不同接收模式之一（**ReceiveAndDelete** 和 **PeekLock**），如[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues/)中所述。
 
 请注意，为订阅创建 [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) 时，*entityPath* 参数的形式为 `topicPath/subscriptions/subscriptionName`。因此，若要为 **DataCollectionTopic** 主题的“库存”订阅创建 [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx)，必须将 *entityPath* 设置为 `DataCollectionTopic/subscriptions/Inventory`。代码将如下所示：
 
@@ -132,7 +132,7 @@ namespaceManager.CreateSubscription("DataCollectionTopic", "Dashboard", dashboar
 
 ## 摘要
 
-[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)中所述所有使用队列的理由也适用于主题，具体如下：
+[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues/)中所述所有使用队列的理由也适用于主题，具体如下：
 
 - 暂时分离 – 消息创建方和使用方不必同时处于联机状态。
 
@@ -144,6 +144,6 @@ namespaceManager.CreateSubscription("DataCollectionTopic", "Dashboard", dashboar
 
 ## 后续步骤
 
-请参阅[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)，以了解有关如何在 POS 零售方案中使用队列的信息。
+请参阅[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues/)，以了解有关如何在 POS 零售方案中使用队列的信息。
 
 <!---HONumber=Mooncake_0215_2016-->

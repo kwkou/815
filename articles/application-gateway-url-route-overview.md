@@ -81,6 +81,6 @@ PathBasedRouting 类型的 RequestRoutingRule 可用于将侦听器绑定到 url
 	
 ## 后续步骤 
 
-了解基于 URL 的内容路由之后，请转到[使用基于 URL 的路由创建应用程序网关](/documentation/articles/application-gateway-create-url-route-arm-ps)，以使用 URL 路由规则创建应用程序网关。
+了解基于 URL 的内容路由之后，请转到[使用基于 URL 的路由创建应用程序网关](/documentation/articles/application-gateway-create-url-route-arm-ps/)，以使用 URL 路由规则创建应用程序网关。
 
 <!---HONumber=Mooncake_0328_2016-->

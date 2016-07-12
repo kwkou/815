@@ -16,8 +16,8 @@
 # 使用 Azure 资源管理器和 PowerShell 配置 VNet 到 VNet 连接
 
 > [AZURE.SELECTOR]
-- [Azure 经典管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
-- [PowerShell - Azure 资源管理器](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)
+- [Azure 经典管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)
+- [PowerShell - Azure 资源管理器](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
 
 本文将引导你使用资源管理器部署模型和 PowerShell 来创建虚拟网络间的连接。虚拟网络可以位于来自相同或不同订阅的相同或不同区域中。
 
@@ -101,7 +101,7 @@
 
 - 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，你可以注册一个[试用版](/pricing/1rmb-trial)。
 	
-- 你需要安装 Azure 资源管理器 PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- 你需要安装 Azure 资源管理器 PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ### <a name="Step1"></a>步骤 1 - 规划 IP 地址范围
 
@@ -175,7 +175,7 @@
 
 2. 连接到订阅 1
 
-	确保切换到 PowerShell 模式，以便使用资源管理器 cmdlet。有关详细信息，请参阅[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
+	确保切换到 PowerShell 模式，以便使用资源管理器 cmdlet。有关详细信息，请参阅[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
 	打开 PowerShell 控制台并连接到你的帐户。使用下面的示例来帮助你连接：
 
@@ -524,8 +524,8 @@ cmdlet 运行完毕后，通过滚动查看该值。在下面的 PowerShell 输�
 
 ## 后续步骤
 
-- 连接完成后，即可将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-creation-choices)以获取相关步骤。
-- 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps)。 
+- 连接完成后，即可将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-creation-choices/)以获取相关步骤。
+- 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。 
 
 
 <!---HONumber=Mooncake_0613_2016-->

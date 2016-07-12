@@ -39,8 +39,8 @@ MoveCost 有四个级别：零、低、中和高。再次提醒 – 这些只是
 3.	中断某些正在运行操作的成本（某些数据存储级别操作的成本较高，而在某个特计时点之后，不希望丢弃它们（如果不必这样做））。因此，在操作持续期间，可以提高成本以降低服务副本或实例移动的可能性，然后，当操作完成之后，可以让它恢复正常。
 
 ## 后续步骤
-- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics)
-- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing)的文章
+- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)
+- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing/)的文章
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-movement-cost/service-most-cost-example.png
 

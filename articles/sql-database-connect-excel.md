@@ -18,13 +18,13 @@
 # SQL 数据库教程：将 Excel 连接到 Azure SQL 数据库并创建报表
 
 > [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-connect-query)
-- [SSMS](/documentation/articles/sql-database-connect-query-ssms)
-- [Excel](/documentation/articles/sql-database-connect-excel)
+- [C#](/documentation/articles/sql-database-connect-query/)
+- [SSMS](/documentation/articles/sql-database-connect-query-ssms/)
+- [Excel](/documentation/articles/sql-database-connect-excel/)
 
 了解如何将 Excel 连接到云中的 SQL 数据库，以便导入数据并根据数据库中的值来创建表和图表。在本教程中，你将设置 Excel 与数据库表之间的连接，保存用于存储 Excel 的数据和连接信息的文件，然后根据数据库值创建分析数据透视图。
 
-在开始之前，需要在 Azure 中创建一个 SQL 数据库。如果你没有，请参阅[创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started)，以在几分钟内获取数据库，并让其中的示例数据正常运行。在本文中，你可以从那篇文章中的示例数据导入 Excel，但你可以对自己的数据执行类似的步骤。
+在开始之前，需要在 Azure 中创建一个 SQL 数据库。如果你没有，请参阅[创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started/)，以在几分钟内获取数据库，并让其中的示例数据正常运行。在本文中，你可以从那篇文章中的示例数据导入 Excel，但你可以对自己的数据执行类似的步骤。
 
 你还需要 Excel 的副本。本文使用 [Microsoft Excel 2016](https://products.office.com/zh-cn)。
 
@@ -76,8 +76,8 @@
 
 ## 后续步骤
 
-- 了解如何[使用 SQL Server Management Studio 连接到 SQL 数据库](/documentation/articles/sql-database-connect-query-ssms)，以进行高级查询和分析。
-- 了解[弹性池](/documentation/articles/sql-database-elastic-pool)的优点。
-- 了解如何[创建与后端 SQL 数据库连接的 Web 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+- 了解如何[使用 SQL Server Management Studio 连接到 SQL 数据库](/documentation/articles/sql-database-connect-query-ssms/)，以进行高级查询和分析。
+- 了解[弹性池](/documentation/articles/sql-database-elastic-pool/)的优点。
+- 了解如何[创建与后端 SQL 数据库连接的 Web 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。
 
 <!---HONumber=Mooncake_0503_2016-->

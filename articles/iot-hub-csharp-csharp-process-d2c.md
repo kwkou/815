@@ -103,14 +103,14 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 
 
-[使用 IoT 中心发送云到设备的消息]: /documentation/articles/iot-hub-csharp-csharp-c2d
-[从设备上传文件]: /documentation/articles/iot-hub-csharp-csharp-file-upload
+[使用 IoT 中心发送云到设备的消息]: /documentation/articles/iot-hub-csharp-csharp-c2d/
+[从设备上传文件]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 
-[IoT 中心概述]: /documentation/articles/iot-hub-what-is-iot-hub
-[IoT 中心指南]: /documentation/articles/iot-hub-guidance
-[IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide
-[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[Supported devices]: /documentation/articles/iot-hub-tested-configurations
+[IoT 中心概述]: /documentation/articles/iot-hub-what-is-iot-hub/
+[IoT 中心指南]: /documentation/articles/iot-hub-guidance/
+[IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide/
+[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[Supported devices]: /documentation/articles/iot-hub-tested-configurations/
 [Azure IoT 开发人员中心]: /develop/iot
 [lnk-service-fabric]: https://azure.microsoft.com/documentation/services/service-fabric/
 [lnk-stream-analytics]: https://azure.microsoft.com/documentation/services/stream-analytics/

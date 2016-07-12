@@ -157,7 +157,7 @@
 * **[向应用程序添加推送通知](https://msdn.microsoft.com/magazine/dn879353.aspx)**
 了解如何向应用程序注册和发送推送通知。
 
-* **[移动服务 HTML/JavaScript 操作方法概念性参考](/documentation/articles/mobile-services-html-how-to-use-client-library)**
+* **[移动服务 HTML/JavaScript 操作方法概念性参考](/documentation/articles/mobile-services-html-how-to-use-client-library/)**
 了解如何使用 JavaScript 客户端库来访问数据、调用自定义 API 和执行身份验证。
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
@@ -170,7 +170,7 @@
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users/
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532

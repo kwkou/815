@@ -47,7 +47,7 @@
 
 	> [AZURE.NOTE] 如果你不提供“id”属性，文档资源管理器将自动添加 id 属性并生成一个 GUID 作为 id 值。
 
-    如果已有来自 JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB、HBase 或其他 DocumentDB 集合的数据，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data)快速导入数据。
+    如果已有来自 JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB、HBase 或其他 DocumentDB 集合的数据，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data/)快速导入数据。
 
 ## 编辑文档
 
@@ -100,7 +100,7 @@
 
 	![文档资源管理器“设置”边栏选项卡的屏幕截图](./media/documentdb-view-JSON-document-explorer/documentexplorerfiltersettings2.png)
 
-	文档资源管理器将自动刷新与筛选查询匹配的文档结果。阅读关于 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query)一文中的 DocumentDB SQL 语法信息或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)的副本。
+	文档资源管理器将自动刷新与筛选查询匹配的文档结果。阅读关于 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query/)一文中的 DocumentDB SQL 语法信息或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet/)的副本。
 
     可使用“数据库”和“集合”下拉列表框轻松更改当前查看其中文档的集合，而无需关闭并重新启动文档资源管理器。
 
@@ -144,12 +144,12 @@
 
 ## 在门户预览外使用 JSON 文档
 
-Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。你还可以通过 [REST API](https://msdn.microsoft.com/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 使用文档。有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples#document-examples)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples#document-examples)。
+Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。你还可以通过 [REST API](https://msdn.microsoft.com/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 使用文档。有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples/#document-examples)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples/#document-examples)。
 
-如果需要从其他源（JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB 或 HBase）导入或迁移文件，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data)将数据快速导入到 DocumentDB。
+如果需要从其他源（JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB 或 HBase）导入或迁移文件，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data/)将数据快速导入到 DocumentDB。
 
 ## 后续步骤
 
-有关文档资源管理器中支持的 DocumentDB SQL 语法的详细信息，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query)一文或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)。
+有关文档资源管理器中支持的 DocumentDB SQL 语法的详细信息，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query/)一文或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet/)。
 
 <!---HONumber=Mooncake_0425_2016-->

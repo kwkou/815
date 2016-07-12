@@ -20,7 +20,7 @@
 
 共享访问签名是基于 SHA-256 安全哈希或 URI 的身份验证机制。SAS 是所有服务总线服务使用的非常强大的机制。在实际应用中，SAS 有两个组件：*共享访问策略*和*共享访问签名*（通常称为*令牌*）。
 
-你可以在[对服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication)中找到有关共享访问签名与服务总线的更详细信息。
+你可以在[对服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)中找到有关共享访问签名与服务总线的更详细信息。
 
 ## 共享访问策略
 
@@ -249,7 +249,7 @@ AMQP 消息包含一组属性，比简单消息包含更多信息。SAS 令牌�
 
 有关如何使用这些 SAS 令牌的详细信息，请参阅[服务总线 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)。
 
-有关服务总线身份验证的详细信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization)。
+有关服务总线身份验证的详细信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)。
 
 此[博客文章](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx)中介绍了更多关于 C# 和 Java 脚本中的 SAS 的示例。
 

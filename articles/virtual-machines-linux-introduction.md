@@ -22,8 +22,8 @@
 在使用 Azure 经典管理门户创建 Linux 虚拟机时，系统会要求你提供用户名、密码或 SSH 公钥。在 Azure 上部署 Linux 虚拟机时，用户名的选择受到以下限制：不允许使用虚拟机中已经存在的系统帐户 (UID <100) 的名称，例如，“根”。
 
 
- - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli)
- - 请参阅[如何在 Azure 上将 SSH 用于 Linux 和 Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux)
+ - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli/)
+ - 请参阅[如何在 Azure 上将 SSH 用于 Linux 和 Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
 
 ## 使用 `sudo` 获取超级用户特权
 
@@ -33,7 +33,7 @@
 
 可以选择使用 **sudo -s** 获取根 shell。
 
-- 请参阅[在 Azure 中对 Linux 虚拟机使用根特权](/documentation/articles/virtual-machines-linux-use-root-privileges)
+- 请参阅[在 Azure 中对 Linux 虚拟机使用根特权](/documentation/articles/virtual-machines-linux-use-root-privileges/)
 
 ## 防火墙配置
 
@@ -59,7 +59,7 @@ Azure Linux 代理包含自动检测此名称更改的功能，并会相应地�
 ### Cloud-Init
 **Ubuntu** 和 **CoreOS** 映像利用 cloud-init pn Azure 为启动虚拟机提供附加功能。
 
- - [如何插入自定义数据](/documentation/articles/virtual-machines-linux-classic-inject-custom-data)
+ - [如何插入自定义数据](/documentation/articles/virtual-machines-linux-classic-inject-custom-data/)
  - [Azure 上的自定义数据和 Cloud-Init](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
  - [使用 Cloud-Init 创建 Azure 交换分区](https://wiki.ubuntu.com/AzureSwapPartitions)
  - [如何在 Azure 上使用 CoreOS](https://coreos.com/os/docs/latest/booting-on-azure.html)
@@ -75,7 +75,7 @@ Azure Linux 代理包含自动检测此名称更改的功能，并会相应地�
 
 3. 在经典管理门户中单击“捕获”或者使用 Powershell 或 CLI 工具将虚拟机作为映像捕获。
 
- - 请参阅：[如何捕获 Linux 虚拟机以用作模板](/documentation/articles/virtual-machines-linux-classic-capture-image)
+ - 请参阅：[如何捕获 Linux 虚拟机以用作模板](/documentation/articles/virtual-machines-linux-classic-capture-image/)
 
 
 ## 附加磁盘
@@ -87,8 +87,8 @@ Azure Linux 代理包含自动检测此名称更改的功能，并会相应地�
 
 >[AZURE.NOTE]请注意，资源磁盘是**临时**磁盘，并可能在重新启动 VM 时被删除或重新格式化。
 
-在 Linux 上，数据磁盘可能由内核命名为 `/dev/sdc`，并且用户需要对该资源进行分区、格式化和装载。在[如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-linux-classic-attach-disk)的教程中对此进行了分步说明。
+在 Linux 上，数据磁盘可能由内核命名为 `/dev/sdc`，并且用户需要对该资源进行分区、格式化和装载。在[如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-linux-classic-attach-disk/)的教程中对此进行了分步说明。
 
- - **另请参阅：**[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid)
+ - **另请参阅：**[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)
 
 <!---HONumber=Mooncake_1207_2015-->

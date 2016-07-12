@@ -15,10 +15,10 @@
 # 备份和还原 Azure SQL 数据仓库中的一个数据库 (REST API)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore)
-- [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal)
-- [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell)
-- [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api)
+- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore/)
+- [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell/)
+- [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api/)
 
 用于在 SQL 数据仓库中还原数据库的 REST API 任务。
 
@@ -79,9 +79,9 @@
 <!--Image references-->
 
 <!--Article references-->
-[Azure SQL Database business continuity overview]: /documentation/articles/sql-database-business-continuity
-[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize
-[How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure
+[Azure SQL Database business continuity overview]: /documentation/articles/sql-database-business-continuity/
+[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
+[How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure/
 
 <!--MSDN references-->
 [创建数据库还原请求]: https://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx

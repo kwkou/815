@@ -29,7 +29,7 @@
 本教程需要的内容如下：
 
 + Microsoft Visual Studio 2013 Update 3 或更高版本
-+ [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
++ [Azure 存储帐户](/documentation/articles/storage-create-storage-account/)
 + 连接到你的计算机的照相机或其他图像捕获设备。
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先[完成移动服务入门]。
@@ -67,16 +67,16 @@
 
 
 <!-- URLs. -->
-[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
+[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
 
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
-[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 
 [Azure Management Portal]: https://manage.windowsazure.cn
-[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
+[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account/
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
-[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library
+[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library/
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 

@@ -110,7 +110,7 @@
 
 ## 后续步骤
 
-如有兴趣，你可以试用 [Azure Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension)，通过 Azure CLI 或 Azure Resource Manager 模板执行相同的操作。
+如有兴趣，你可以试用 [Azure Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension/)，通过 Azure CLI 或 Azure Resource Manager 模板执行相同的操作。
 
 
 <!---HONumber=Mooncake_0606_2016-->

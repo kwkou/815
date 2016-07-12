@@ -120,7 +120,7 @@
   [TopicClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx
   [ContentType]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx
   [TimeToLive]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx
-  [异步消息传递模式和高可用性]: /documentation/articles/service-bus-async-messaging
+  [异步消息传递模式和高可用性]: /documentation/articles/service-bus-async-messaging/
   [0]: ./media/service-bus-paired-namespaces/IC673405.png
   [1]: ./media/service-bus-paired-namespaces/IC673406.png
   [2]: ./media/service-bus-paired-namespaces/IC673407.png

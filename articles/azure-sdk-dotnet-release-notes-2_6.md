@@ -58,7 +58,7 @@
 
 	目前已计划在 2016 年 8 月 1 日删除 Azure 存储空间版本 2011-08-18。从 Azure SDK 2.5 或更低版本到 2.6 的任何角色中缓存迁移必须在该日期之前完成。有关停用 Azure 存储空间版本 2011-08-18 的详细信息，请参阅[有关删除 Azure 存储服务版本的最新信息：延期到 2016 年](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx)。
 
->[AZURE.IMPORTANT] 我们特此宣布将在 2016 年 11 月 30 日停用 Azure 托管缓存服务和 Azure 角色中缓存。我们建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。有关日期和迁移指导的详细信息，请参阅[哪种 Azure 缓存产品适合我？](/documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me)
+>[AZURE.IMPORTANT] 我们特此宣布将在 2016 年 11 月 30 日停用 Azure 托管缓存服务和 Azure 角色中缓存。我们建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。有关日期和迁移指导的详细信息，请参阅[哪种 Azure 缓存产品适合我？](/documentation/articles/cache-faq/#which-azure-cache-offering-is-right-for-me)
 
 ##Azure Web 应用工具
 

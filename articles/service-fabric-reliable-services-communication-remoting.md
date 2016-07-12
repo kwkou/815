@@ -72,10 +72,10 @@ class MyService : StatelessService, IMyService
 
 ## 后续步骤
 
-* [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+* [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
-* [通过 Reliable Services 进行 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf)
+* [通过 Reliable Services 进行 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf/)
 
-* [确保 Reliable Services 的通信安全](/documentation/articles/service-fabric-reliable-services-secure-communication)
+* [确保 Reliable Services 的通信安全](/documentation/articles/service-fabric-reliable-services-secure-communication/)
 
 <!---HONumber=Mooncake_0503_2016-->

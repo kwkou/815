@@ -20,7 +20,7 @@
 
 ## 关于 Azure 表服务
 
-本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果你不熟悉 Azure 存储和表服务，在阅读本文的其他部分之前，请先阅读 [Azure 存储简介](/documentation/articles/storage-introduction) 和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
+本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果你不熟悉 Azure 存储和表服务，在阅读本文的其他部分之前，请先阅读 [Azure 存储简介](/documentation/articles/storage-introduction/) 和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
 
 什么是表服务？ 从名称可以推测出，表服务将使用表格格式来存储数据。在标准术语中，表的每一行表示一个实体，而列存储该实体的各种属性。每个实体都有一对密钥来唯一标识它，并具有一个时间戳列，表服务使用该列来跟踪上次更新实体的时间（此操作是自动发生的，无法手动使用任意值来覆盖时间戳）。表服务使用此上次修改时间戳 (LMT) 来管理开放式并发。
 
@@ -123,7 +123,7 @@
 表由一个或多个分区组成，正如你将看到的，你所做的很多设计决策都将围绕选择合适的 **PartitionKey** 和 **RowKey** 进行，以便优化你的解决方案。一个解决方案可以仅由单个表构成，该表包含组织成分区的所有实体，但通常一个解决方案将具有多个表。表可帮助你在逻辑上组织你的实体，帮助你使用访问控制列表管理对数据的访问，并且你可以使用单个存储操作删除整个表。
 
 ### 表分区  
-帐户名称、表名称和 **PartitionKey** 共同标识表服务用于存储实体的存储服务中的分区。作为实体寻址方案的一部分，分区定义事务的作用域（请参阅下面的[实体组事务](#entity-group-transactions)），并形成表服务如何缩放的基础。有关分区的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+帐户名称、表名称和 **PartitionKey** 共同标识表服务用于存储实体的存储服务中的分区。作为实体寻址方案的一部分，分区定义事务的作用域（请参阅下面的[实体组事务](#entity-group-transactions)），并形成表服务如何缩放的基础。有关分区的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 在表服务中，单个节点为一个或多个完整的分区提供服务，并且该服务可通过对节点上的分区进行动态负载平衡来进行缩放。如果某个节点负载过轻，表服务可以将该节点提供服务的分区范围拆分为不同节点；当流量下降时，该服务可将无操作的节点的分区范围合并为单个节点。
 
@@ -301,7 +301,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 
 请注意，当前不支持合并。由于属性的子集可能以前已使用不同的密钥加密，因此只合并新属性和更新元数据将导致数据丢失。合并需要进行额外的服务调用以从服务中读取预先存在的实体，或者需要为属性使用一个新密钥，由于性能方面的原因，这两种方案都不适用。
 
-有关对表数据进行加密的信息，请参阅 [Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)。
+有关对表数据进行加密的信息，请参阅 [Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)。
 
 ##<a id="modelling-relationships"></a> 为关系建模
 
@@ -1129,7 +1129,7 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 
 #### 管理并发  
 
-默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Azure Web 应用上的[在 Azure 存储空间中管理并发](/documentation/articles/storage-concurrency) 。  
+默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Azure Web 应用上的[在 Azure 存储空间中管理并发](/documentation/articles/storage-concurrency/) 。  
 
 ####<a id="merge-or-replace"></a> 合并或替换  
 
@@ -1445,7 +1445,7 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 -	可以卸下 Web 角色和辅助角色在管理传递到客户端设备（如最终用户计算机和移动设备）的实体时执行的一些工作负荷。  
 -	可以向客户端分配一组受约束且有时间限制的权限（如允许对特定资源进行只读访问）。  
 
-有关在表服务中使用 SAS 令牌的详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+有关在表服务中使用 SAS 令牌的详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 但是，仍必须生成授权客户端应用程序访问表服务中的实体的 SAS 令牌：应在可安全地访问存储帐户密钥的环境中执行此操作。通常，使用 Web 角色或辅助角色生成 SAS 令牌并将其传递给需要访问你的实体的客户端应用程序。由于生成 SAS 令牌并将其传递到客户端仍有开销，你应考虑如何最有效地减少此开销，尤其是在大容量方案中。
 

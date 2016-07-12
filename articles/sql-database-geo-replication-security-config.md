@@ -16,10 +16,10 @@
 # 标准异地复制或活动异地复制的安全性配置
 
 ## 概述
-本主题介绍配置和控制[标准与活动异地复制](/documentation/articles/sql-database-geo-replication-overview)时所要满足的身份验证要求，以及设置用户对辅助数据库的访问权限所要执行的步骤。有关使用异地复制的详细信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery)。
+本主题介绍配置和控制[标准与活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)时所要满足的身份验证要求，以及设置用户对辅助数据库的访问权限所要执行的步骤。有关使用异地复制的详细信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery/)。
 
 ## 使用包含的用户
-借助 [V12 版的 Azure SQL 数据库](/documentation/articles/sql-database-v12-whats-new)，SQL 数据库现在可以支持包含的用户。不同于必须映射到 master 数据库中登录名的传统用户，包含的用户完全由数据库自身管理。这带来了两个好处。在异地复制方案中，用户无需进行任何附加配置就能继续连接到辅助数据库，因为数据库会管理用户。从登录的立场来看，此配置还有潜在的缩放性和性能优势。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
+借助 [V12 版的 Azure SQL 数据库](/documentation/articles/sql-database-v12-whats-new/)，SQL 数据库现在可以支持包含的用户。不同于必须映射到 master 数据库中登录名的传统用户，包含的用户完全由数据库自身管理。这带来了两个好处。在异地复制方案中，用户无需进行任何附加配置就能继续连接到辅助数据库，因为数据库会管理用户。从登录的立场来看，此配置还有潜在的缩放性和性能优势。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
 
 对于包含的用户，如果有多个数据库使用相同的登录名，则你必须为每个数据库单独管理该用户（例如密码更改），而不是在服务器级管理登录名。
 
@@ -79,7 +79,7 @@
 >DISABLE 不会更改密码，因此你始终可以根据需要启用该登录名。
 
 ## 设置终止连续复制关系后的用户访问权限
-发生故障转移时，必须停止主数据库与活动辅助数据库之间的连续复制关系。有关此过程的信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery)。
+发生故障转移时，必须停止主数据库与活动辅助数据库之间的连续复制关系。有关此过程的信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery/)。
 
 在使用标准异地复制时，用户无法访问脱机辅助数据库，因此，在终止连续复制关系后，必须更改用户帐户。
 
@@ -89,9 +89,9 @@
 
 用于启动终止操作的用户帐户和关联的登录名应该在目标服务器与数据库中存在，以确保在完成终止后，该用户帐户能够访问辅助数据库。
 
-有关故障转移后需要执行的步骤的详细信息，请参阅[确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)。
+有关故障转移后需要执行的步骤的详细信息，请参阅[确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)。
 
 ## 后续步骤
-有关 SQL 数据库的异地复制和其他业务连续性功能的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+有关 SQL 数据库的异地复制和其他业务连续性功能的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 <!---HONumber=Mooncake_0606_2016-->

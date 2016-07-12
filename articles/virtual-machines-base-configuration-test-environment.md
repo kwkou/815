@@ -15,14 +15,14 @@
 
 # 基本配置测试环境
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-test-config-env)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-test-config-env/)。
 
 本文为你提供在 Azure 虚拟网络中创建基本配置测试环境的分步说明。
 
 可以使用生成的测试环境：
 
 - 进行应用程序开发和测试。
-- 适用于[模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
+- 适用于[模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)。
 - 对于你自己设计的测试环境，使用其他虚拟机和 Azure 服务对其进行扩展。
 
 基本配置测试环境由名为 TestLab 的仅限云虚拟网络中的公司网络子网组成，它模拟连接到 Internet 的简化专用 Intranet。
@@ -64,7 +64,7 @@
 7.	在 Corpnet 子网的**“CIDR (地址计数)”**列中，单击**“/24 (256)”**。
 8.	单击“完成”图标。请等到虚拟网络创建完以后再继续。
 
-接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 命令提示符。
+接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 命令提示符。
 
 首先，使用以下命令选择相应的 Azure 订阅。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 
@@ -250,7 +250,7 @@ Azure 中的基本配置现已可用于应用程序开发和测试或其他测�
 
 ## 后续步骤
 
-- 设置[模拟的混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)以测试混合配置。
+- 设置[模拟的混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)以测试混合配置。
 
 ## <a id="costs"></a>将 Azure 中的测试环境虚拟机的成本降至最低
 

@@ -13,7 +13,7 @@
 
 # 事件中心编程指南
 
-本主题介绍如何使用 Azure.NET SDK 进行 Azure 事件中心编程。内容假设你对事件中心已有初步的了解。有关事件中心的概念概述，请参阅[事件中心概述](/documentation/articles/event-hubs-overview)。
+本主题介绍如何使用 Azure.NET SDK 进行 Azure 事件中心编程。内容假设你对事件中心已有初步的了解。有关事件中心的概念概述，请参阅[事件中心概述](/documentation/articles/event-hubs-overview/)。
 
 ## 事件发布者
 
@@ -176,8 +176,8 @@ while(receive)
 
 若要了解有关事件中心方案的详细信息，请访问以下链接：
 
-- [事件中心 API 概述](/documentation/articles/event-hubs-api-overview)
-- [事件中心概述](/documentation/articles/event-hubs-overview)
+- [事件中心 API 概述](/documentation/articles/event-hubs-api-overview/)
+- [事件中心概述](/documentation/articles/event-hubs-overview/)
 - [事件中心代码示例](https://code.msdn.microsoft.com/site/search?query=event%20hub&f%5B0%5D.Value=event%20hub&f%5B0%5D.Type=SearchText&ac=5)
 - [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 

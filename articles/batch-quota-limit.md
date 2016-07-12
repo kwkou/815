@@ -76,9 +76,9 @@ Azure 支持人员将与你联系。完成请求最长需要 2 个工作日。
 
 ## 相关主题
 
-* [Azure Batch 功能概述](/documentation/articles/batch-api-basics)
+* [Azure Batch 功能概述](/documentation/articles/batch-api-basics/)
 
-* [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)
+* [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 

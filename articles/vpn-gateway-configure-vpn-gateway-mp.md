@@ -20,7 +20,7 @@
 
 例如，某些连接选项（如点到站点连接）需要动态路由网关。如果你想要将网关配置为同时支持点到站点 (P2S) 连接和站点到站点 (S2S) 连接，则必须配置动态路由网关，即使站点到站点可以使用其中一种网关路由类型进行配置。
 
-此外，你必须确保用于连接的设备支持所要创建的 VPN 类型。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices)。
+此外，你必须确保用于连接的设备支持所要创建的 VPN 类型。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 
 **关于本文**
@@ -33,7 +33,7 @@
 
 ## 配置概述
 
-以下过程将引导你在 Azure 经典管理门户中配置 VPN 网关。这些步骤适用于使用服务管理模式创建并显示在 Azure 经典管理门户中的 VNet 网关。这些步骤不适合使用经典管理门户来完成，也不适用于使用资源管理器 模式配置的 VNet。在 [Create a virtual network with a site-to-site connection using Azure Resource Manager and PowerShell（使用 Azure 资源管理器 和 PowerShell 创建具有站点到站点连接的虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)中，可以找到使用资源管理器 模式为虚拟网络创建 VNet 网关的相关信息。
+以下过程将引导你在 Azure 经典管理门户中配置 VPN 网关。这些步骤适用于使用服务管理模式创建并显示在 Azure 经典管理门户中的 VNet 网关。这些步骤不适合使用经典管理门户来完成，也不适用于使用资源管理器 模式配置的 VNet。在 [Create a virtual network with a site-to-site connection using Azure Resource Manager and PowerShell（使用 Azure 资源管理器 和 PowerShell 创建具有站点到站点连接的虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)中，可以找到使用资源管理器 模式为虚拟网络创建 VNet 网关的相关信息。
 
 
 1. [为 VNet 创建 VPN 网关](#create-a-vpn-gateway)
@@ -46,7 +46,7 @@
 
 ### 开始之前
 
-配置网关之前，必须先创建虚拟网络。有关为跨界连接创建虚拟网络的步骤，请参阅 [Configure a virtual network with a site-to-site VPN connection（使用站点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-site-to-site-create)或 [Configure a virtual network with a point-to-site VPN connection（使用点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-point-to-site-create)。然后，使用以下步骤来配置 VPN 网关，并收集配置 VPN 设备所需的信息。
+配置网关之前，必须先创建虚拟网络。有关为跨界连接创建虚拟网络的步骤，请参阅 [Configure a virtual network with a site-to-site VPN connection（使用站点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-site-to-site-create/)或 [Configure a virtual network with a point-to-site VPN connection（使用点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-point-to-site-create/)。然后，使用以下步骤来配置 VPN 网关，并收集配置 VPN 设备所需的信息。
 
 如果你已有一个 VPN 网关并想要更改路由类型，请参阅 [How to change your VPN gateway routing type（如何更改 VPN 网关路由类型）](#how-to-change-your-vpn-gateway-type)。
 
@@ -61,7 +61,7 @@
 ![未创建网关](./media/vpn-gateway-configure-vpn-gateway-mp/IC717025.png)
 
 
-接下来，在页面底部单击“创建网关”。可以选择“静态路由”或“动态路由”。选择的路由类型取决于许多因素。例如，VPN 设备支持的类型，以及是否需要支持点到站点连接。请参阅 [About VPN Devices for Virtual Network Connectivity（关于用于虚拟网络连接的 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices)以确认所需的路由类型。创建网关后，必须先删除并重新创建网关才能更改网关 VPN 路由类型。系统提示你确认要创建网关时，单击“是”。
+接下来，在页面底部单击“创建网关”。可以选择“静态路由”或“动态路由”。选择的路由类型取决于许多因素。例如，VPN 设备支持的类型，以及是否需要支持点到站点连接。请参阅 [About VPN Devices for Virtual Network Connectivity（关于用于虚拟网络连接的 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices/)以确认所需的路由类型。创建网关后，必须先删除并重新创建网关才能更改网关 VPN 路由类型。系统提示你确认要创建网关时，单击“是”。
 
 ![网关 VPN 路由类型](./media/vpn-gateway-configure-vpn-gateway-mp/IC717026.png)
 
@@ -86,7 +86,7 @@
 
 ##<a name="configure-your-vpn-device"></a> 配置 VPN 设备
 
-完成前面的步骤之后，你或网络管理员需要配置 VPN 设备以创建连接。有关 VPN 设备的详细信息，请参阅 [About VPN Devices for Virtual Network Connectivity（关于用于虚拟网络连接的 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices)。
+完成前面的步骤之后，你或网络管理员需要配置 VPN 设备以创建连接。有关 VPN 设备的详细信息，请参阅 [About VPN Devices for Virtual Network Connectivity（关于用于虚拟网络连接的 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 配置 VPN 设备之后，可以在 VNet 的“仪表板”页上查看更新的连接信息。
 
@@ -143,7 +143,7 @@
 
 如果需要更改网关 VPN 路由类型，需要删除现有网关，然后使用新的路由类型重新创建网关。若要更改网关路由类型，你不需要删除整个虚拟网络。
 
-在更改网关 VPN 类型之前，请确保并验证 VPN 设备可支持所要使用的路由类型。若要下载新的路由配置示例并检查 VPN 设备要求，请参阅 [About VPN Devices for Virtual Network Connectivity（关于用于虚拟网络连接的 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices)。
+在更改网关 VPN 类型之前，请确保并验证 VPN 设备可支持所要使用的路由类型。若要下载新的路由配置示例并检查 VPN 设备要求，请参阅 [About VPN Devices for Virtual Network Connectivity（关于用于虚拟网络连接的 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 >[AZURE.IMPORTANT] 删除虚拟网络 VPN 网关时，将释放分配给该网关的 VIP。重新创建网关时，系统会将新的 VIP 分配给它。
 
@@ -158,9 +158,9 @@
 
 ## 后续步骤
 
-你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
+你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)。
 
-如果要配置点到站点 VPN 连接，请参阅[配置点到站点 VPN 连接](/documentation/articles/vpn-gateway-point-to-site-create)。
+如果要配置点到站点 VPN 连接，请参阅[配置点到站点 VPN 连接](/documentation/articles/vpn-gateway-point-to-site-create/)。
 
  
 <!---HONumber=Mooncake_0613_2016-->

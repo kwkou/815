@@ -167,10 +167,10 @@ Azure AD 目录在设计上是隔离的。它不支持将 Azure AD Connect 同�
 支持使用本地 FIM2010/MIM2016 在两个 Exchange 组织之间 GALsync 用户。一个组织中的用户将显示为另一组织中的外部用户/联系人。这些不同的本地 AD 可同步到它们自身的 Azure AD 目录。
 
 ## 后续步骤
-若要了解如何为这些方案安装 Azure AD Connect，请参阅[Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)。
+若要了解如何为这些方案安装 Azure AD Connect，请参阅[Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom/)。
 
-了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis)配置的详细信息。
+了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0509_2016-->

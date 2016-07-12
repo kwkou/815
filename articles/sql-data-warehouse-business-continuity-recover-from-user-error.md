@@ -125,8 +125,8 @@ Get-AzureSqlDatabaseOperation –ServerName "<YourServerName>" –OperationGuid 
 <!--Image references-->
 
 <!--Article references-->
-[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity
-[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize
+[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
+[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
 
 <!--MSDN references-->
 [创建数据库还原请求]: http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx

@@ -21,10 +21,10 @@
 - **专用 IP 地址**：用于在 Azure 虚拟网络 (VNet) 中通信，以及在本地网络中通信（当你使用 VPN 网关或 ExpressRoute 线路将网络扩展到 Azure 时）。
 
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-network-ip-addresses-overview-classic)。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-network-ip-addresses-overview-classic/)。
 
 ## 公共 IP 地址
-公共 IP 地址可允许 Azure 资源与 Internet 以及面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/redis-cache/)、[Azure 事件中心](/home/features/event-hubs/)、[SQL 数据库](/documentation/articles/sql-database-technical-overview)和 [Azure 存储空间](/documentation/articles/storage-introduction)）通信。
+公共 IP 地址可允许 Azure 资源与 Internet 以及面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/redis-cache/)、[Azure 事件中心](/home/features/event-hubs/)、[SQL 数据库](/documentation/articles/sql-database-technical-overview/)和 [Azure 存储空间](/documentation/articles/storage-introduction/)）通信。
 
 在 Azure Resource Manager 中，公共 IP 地址是具有其自身属性的资源。你可以将公共 IP 地址资源与以下任何资源相关联：
 
@@ -55,16 +55,16 @@
 >[AZURE.IMPORTANT] 所创建的每个域名标签在其 Azure 位置中必须是唯一的。
 
 ### 虚拟机
-可以将公共 IP 地址与 [Windows](/documentation/articles/virtual-machines-windows-about) 或 [Linux](/documentation/articles/virtual-machines-linux-about) VM 相关联，只需将它分配到其**网络接口**即可。对于多网络接口 VM，只能将它分配到主要网络接口。你可以向 VM 分配动态或静态公共 IP 地址。
+可以将公共 IP 地址与 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 相关联，只需将它分配到其**网络接口**即可。对于多网络接口 VM，只能将它分配到主要网络接口。你可以向 VM 分配动态或静态公共 IP 地址。
 
 ### 面向 Internet 的负载平衡器
 你可以将公共 IP 地址与 Azure Load Balancer 相关联，只需将其分配给负载平衡器**前端**配置即可。此公共 IP 地址充当负载平衡型虚拟 IP 地址 (VIP)。你可以向负载平衡器前端分配动态或静态公共 IP 地址。你还可以为负载平衡器前端分配多个公共 IP 地址，从而启用多 VIP 方案，如包含基于 SSL 的网站的多租户环境。
 
 ### VPN 网关
-[Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)用于将 Azure 虚拟网络 (VNet) 连接到其他 Azure VNet 或本地网络。必须将公共 IP 地址分配给其 **IP 配置**，才能与远程网络通信。目前只能向 VPN 网关分配动态公共 IP 地址。
+[Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)用于将 Azure 虚拟网络 (VNet) 连接到其他 Azure VNet 或本地网络。必须将公共 IP 地址分配给其 **IP 配置**，才能与远程网络通信。目前只能向 VPN 网关分配动态公共 IP 地址。
 
 ### 应用程序网关数
-你可以将公共 IP 地址与 Azure [应用程序网关](/documentation/articles/application-gateway-introduction)相关联，只需将其分配给网关的**前端**配置即可。此公共 IP 地址充当负载平衡型 VIP。目前，你只能将动态公共 IP 地址分配给应用程序网关前端配置。
+你可以将公共 IP 地址与 Azure [应用程序网关](/documentation/articles/application-gateway-introduction/)相关联，只需将其分配给网关的**前端**配置即可。此公共 IP 地址充当负载平衡型 VIP。目前，你只能将动态公共 IP 地址分配给应用程序网关前端配置。
 
 ### 概览
 下表显示了将公共 IP 地址关联到顶级资源时所依据的特定属性，以及能够使用的可能分配方法（动态或静态）。
@@ -77,7 +77,7 @@
 |应用程序网关|前端配置|是|否|
 
 ## 专用 IP 地址
-专用 IP 地址能够让 Azure 资源在不使用可访问 Internet 的 IP 地址的情况下，与[虚拟网络](/documentation/articles/virtual-networks-overview)或本地网络中的其他资源（通过 VPN 网关或 ExpressRoute 线路）通信。
+专用 IP 地址能够让 Azure 资源在不使用可访问 Internet 的 IP 地址的情况下，与[虚拟网络](/documentation/articles/virtual-networks-overview/)或本地网络中的其他资源（通过 VPN 网关或 ExpressRoute 线路）通信。
 
 在 Azure Resource Manager 部署模型中，可将专用 IP 地址关联到以下类型的 Azure 资源：
 
@@ -99,17 +99,17 @@
 - 其他应用/资源通过 IP 地址访问的资源。
 
 ### 虚拟机
-可将专用 IP 地址分配到 [Windows](/documentation/articles/virtual-machines-windows-about) 或 [Linux](/documentation/articles/virtual-machines-linux-about) VM 的**网络接口**。对于多网络接口 VM，将为每个接口分配一个专用 IP 地址。可将网络接口的分配方法指定为动态或静态。
+可将专用 IP 地址分配到 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 的**网络接口**。对于多网络接口 VM，将为每个接口分配一个专用 IP 地址。可将网络接口的分配方法指定为动态或静态。
 
 #### 内部 DNS 主机名解析（针对 VM）
-默认情况下，所有 Azure VM 都配置了 [Azure 托管的 DNS 服务器](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances#azure-provided-name-resolution)（除非你显式配置了自定义 DNS 服务器）。这些 DNS 服务器为驻留在同一个 VNet 内的 VM 提供内部名称解析。
+默认情况下，所有 Azure VM 都配置了 [Azure 托管的 DNS 服务器](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/#azure-provided-name-resolution)（除非你显式配置了自定义 DNS 服务器）。这些 DNS 服务器为驻留在同一个 VNet 内的 VM 提供内部名称解析。
 
 创建 VM 时，主机名到其专用 IP 地址的映射将添加到 Azure 托管的 DNS 服务器。使用多网络接口 VM 时，主机名将映射到主要网络接口的专用 IP 地址。
 
 使用 Azure 托管的 DNS 服务器配置的 VM 可以将 VNet 中的所有 VM 的主机名解析为其专用 IP 地址。
 
 ### 内部负载平衡器 (ILB) 和应用程序网关
-你可以将专用 IP 地址分配给 Azure 内部负载平衡器 (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
+你可以将专用 IP 地址分配给 Azure 内部负载平衡器 (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction/)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
 
 ### 概览
 下表显示了将专用 IP 地址关联到顶级资源时所依据的特定属性，以及能够使用的可能分配方法（动态或静态）。
@@ -122,7 +122,7 @@
 
 ## 限制
 
-Azure 中的[网络限制](/documentation/articles/azure-subscription-service-limits#networking-limits)全面阐述了对 IP 寻址施加的限制。这些限制是根据区域和订阅设置的。
+Azure 中的[网络限制](/documentation/articles/azure-subscription-service-limits/#networking-limits)全面阐述了对 IP 寻址施加的限制。这些限制是根据区域和订阅设置的。
 
 ## 定价
 

@@ -139,11 +139,11 @@
 
 ## 后续步骤
 
-* [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring)以确保你的服务可用且响应迅速。
-* [启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics)以收集有关服务的详细高频率指标。
-* 每当操作事件发生或指标超过阈值时[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。
-* 在要确切了解代码在云中的执行情况时[监视应用程序性能](/documentation/articles/insights-perf-analytics)
-* [查看事件并审核日志](/documentation/articles/insights-debugging-with-events)以了解在服务中发生的所有事件。
+* [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
+* [启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics/)以收集有关服务的详细高频率指标。
+* 每当操作事件发生或指标超过阈值时[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)。
+* 在要确切了解代码在云中的执行情况时[监视应用程序性能](/documentation/articles/insights-perf-analytics/)
+* [查看事件并审核日志](/documentation/articles/insights-debugging-with-events/)以了解在服务中发生的所有事件。
 
  
 <!---HONumber=Mooncake_0503_2016-->

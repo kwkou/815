@@ -19,7 +19,7 @@
 
 ### 先决条件
 
-- 基于 Windows 的 HDInsight 群集。请参阅[在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
+- 基于 Windows 的 HDInsight 群集。请参阅[在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)。
 
 
 ## YARN Timeline Server

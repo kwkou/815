@@ -18,7 +18,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 可以完全使用媒体服务构建端到端工作流。也可以选择使用第三方组件来构建工作流的某些组成部分。例如，使用第三方编码器进行编码。然后，使用媒体服务进行上载、保护、打包和传送。
 
-你可以选择实时流式播放你的内容，或者根据点播情况交付内容。本主题演示了在哪些常见情况下，你会[实时](/documentation/articles/media-services-overview#live_scenarios)交付内容或按[点播](/documentation/articles/media-services-overview#vod_scenarios)交付内容。本主题还提供了其他相关主题的链接。
+你可以选择实时流式播放你的内容，或者根据点播情况交付内容。本主题演示了在哪些常见情况下，你会[实时](/documentation/articles/media-services-overview/#live_scenarios)交付内容或按[点播](/documentation/articles/media-services-overview/#vod_scenarios)交付内容。本主题还提供了其他相关主题的链接。
 
 ## SDK 和工具 
 
@@ -39,15 +39,15 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 若要开始使用 Azure 媒体服务，你应该具备以下条件：
  
 3. 一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
-2. Azure 媒体服务帐户。使用 Azure 管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
-3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use)。 
+2. Azure 媒体服务帐户。使用 Azure 管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
+3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use/)。 
 
-	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect_programmatically)。
-4. （推荐）分配一个或多个缩放单位。建议为生产环境中的应用程序分配一个或多个扩展单元。有关详细信息，请参阅[管理流式处理终结点](/documentation/articles/media-services-manage-origins)。
+	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect_programmatically/)。
+4. （推荐）分配一个或多个缩放单位。建议为生产环境中的应用程序分配一个或多个扩展单元。有关详细信息，请参阅[管理流式处理终结点](/documentation/articles/media-services-manage-origins/)。
 
 ##概念和概述
 
-有关 Azure 媒体服务的概念，请参阅[概念](/documentation/articles/media-services-concepts)。
+有关 Azure 媒体服务的概念，请参阅[概念](/documentation/articles/media-services-concepts/)。
 
 有关介绍 Azure 媒体服务所有主要组件的操作说明系列文章，请参阅 [Azure 媒体服务分步教程](https://docs.com/fukushima-shigeyuki/3439/english-azure-media-services-step-by-step-series)。此系列文章全面概述了各个概念，并使用 AMSE 工具演示了 AME 任务。请注意 AMSE 工具是一种 Windows 工具。可以使用 [AMS SDK for.NET](https://github.com/Azure/azure-sdk-for-media-services)、[Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java) 或 [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php) 以编程方式完成的大多数任务也可以使用此工具来完成。
 
@@ -114,14 +114,14 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 ###另请参阅
 
-- [如何上载内容](/documentation/articles/media-services-manage-content#upload)
-- [如何获取媒体处理器](/documentation/articles/media-services-get-media-processor)
-- [如何对内容进行编码](/documentation/articles/media-services-manage-content#encode)
-- [如何监视作业](/documentation/articles/media-services-portal-check-job-progress)
-- [如何为内容编制索引](/documentation/articles/media-services-manage-content#index)
-- [如何保护内容](/documentation/articles/media-services-manage-content#encrypt)
-- [如何保护发布](/documentation/articles/media-services-manage-content#publish)
-- [如何缩放编码](/documentation/articles/media-services-portal-encoding-units)
+- [如何上载内容](/documentation/articles/media-services-manage-content/#upload)
+- [如何获取媒体处理器](/documentation/articles/media-services-get-media-processor/)
+- [如何对内容进行编码](/documentation/articles/media-services-manage-content/#encode)
+- [如何监视作业](/documentation/articles/media-services-portal-check-job-progress/)
+- [如何为内容编制索引](/documentation/articles/media-services-manage-content/#index)
+- [如何保护内容](/documentation/articles/media-services-manage-content/#encrypt)
+- [如何保护发布](/documentation/articles/media-services-manage-content/#publish)
+- [如何缩放编码](/documentation/articles/media-services-portal-encoding-units/)
 
 ##<a id="live_scenarios"></a>使用 Azure 媒体服务传送实时流式处理事件
 
@@ -141,7 +141,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 		
 **Azure 媒体服务** (AMS) 提供了引入、编码、预览、存储和传送实时流式处理内容的功能。
 
-在将内容传送给客户时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。为了满足质量和网络条件的要求，使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+在将内容传送给客户时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。为了满足质量和网络条件的要求，使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
 在 Azure 媒体服务中，**频道**、**程序**和**流式处理终结点**处理所有实时流式处理功能，包括引入、格式化、DVR、安全性、缩放性和冗余。
 
@@ -161,7 +161,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 ![实时工作流][live-overview1]
 
-有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 
 ###使用从本地编码器接收多比特率实时流的频道
@@ -171,17 +171,17 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 ![实时工作流][live-overview2]
 
-有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
+有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)。
 
 ##使用内容
 
 Azure 媒体服务提供你所需的工具，以便你创建适用于大多数平台的丰富、动态的客户端播放器应用程序，这些平台包括：iOS 设备、Android 设备、Windows、Windows Phone、Xbox 和机顶盒。以下主题提供了可用来开发自己的客户端应用程序（这些应用程序使用媒体服务中的流媒体）的 SDK 和播放器框架的链接。
 
-[开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players)
+[开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players/)
 
 ##启用 Azure CDN
 
-媒体服务支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信息，请参阅[如何在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins#enable_cdn)。
+媒体服务支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信息，请参阅[如何在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins/#enable_cdn)。
 
 ##缩放媒体服务帐户
 
@@ -189,7 +189,7 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 
 也可以通过向媒体服务帐户添加存储帐户来缩放该帐户。每个存储帐户大小限制为 500 TB。若要在默认限制之外扩展存储，可选择将多个存储帐户附加到单个媒体服务帐户。
 
-[本](/documentation/articles/media-services-how-to-scale)主题链接到相关的主题。
+[本](/documentation/articles/media-services-how-to-scale/)主题链接到相关的主题。
 
 ##支持
 

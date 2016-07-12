@@ -23,7 +23,7 @@
 
 本教程是在 TodoList 示例应用程序的基础上制作的。在开始本教程之前，必须先完成主题[将移动服务添加到现有应用程序]以将项目连接到移动服务。如果尚未连接移动服务，“添加推送通知”向导可为你创建此连接。
 
->[AZURE.NOTE]若要向 Windows Phone 8.1 应用商店应用程序发送推送通知，请遵照本教程的 [Windows 应用商店应用程序](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push)版本。
+>[AZURE.NOTE]若要向 Windows Phone 8.1 应用商店应用程序发送推送通知，请遵照本教程的 [Windows 应用商店应用程序](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push/)版本。
 
 ## <a id="update-app"></a>更新应用程序以注册通知
 
@@ -136,16 +136,16 @@
 
 本教程演示了启用 Windows 应用商店应用程序以便使用移动服务和通知中心发送推送通知的基础知识。接下来，请考虑完成以下教程之一：
 
-+ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-phone-send-breaking-news)
++ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-phone-send-breaking-news/)
 	<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
-+ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users)
++ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/)
 	<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
 
 
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing)
+* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing/)
   <br/>了解如何排查推送通知问题。
 
 * [身份验证入门]
@@ -170,15 +170,15 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data
-[身份验证入门]: /documentation/articles/mobile-services-windows-phone-get-started-users
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data/
+[身份验证入门]: /documentation/articles/mobile-services-windows-phone-get-started-users/
 
 [设置已经过身份验证的 Web 服务以便为 Windows Phone 发送推送通知]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
 
-[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library/
 
-[什么是通知中心？]: /documentation/articles/notification-hubs-overview
+[什么是通知中心？]: /documentation/articles/notification-hubs-overview/
 
  
 

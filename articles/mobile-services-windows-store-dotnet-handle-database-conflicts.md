@@ -365,13 +365,13 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 [乐观并发控制]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 [Azure 帐户]: /pricing/1rmb-trial/
-[Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
-[Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
-[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-[Get started with data]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-data
-[向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-[向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
+[Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data/
+[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
+[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
+[Get started with data]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
+[向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
 
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374

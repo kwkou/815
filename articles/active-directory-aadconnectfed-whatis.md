@@ -24,23 +24,23 @@
 | 主题 | 涵盖的内容和阅读时机 |
 |:------|:-----------|
 | **Azure AD Connect 用户登录选项** ||
-| [了解用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin) | 各种用户登录选项以及它们如何影响 Azure 登录的用户体验的说明 |
+| [了解用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/) | 各种用户登录选项以及它们如何影响 Azure 登录的用户体验的说明 |
 | **使用 Azure AD Connect 安装 AD FS**||
-| [先决条件](/documentation/articles/active-directory-aadconnect-get-started-custom#ad-fs-configuration-pre-requisites) | 通过 Azure AD Connect 成功安装 AD FS 的前提条件|
-| [配置 AD FS 场](/documentation/articles/active-directory-aadconnect-get-started-custom#configuring-federation-with-ad-fs) | 如何使用 Azure AD Connect 安装新的 AD FS 场 |
+| [先决条件](/documentation/articles/active-directory-aadconnect-get-started-custom/#ad-fs-configuration-pre-requisites) | 通过 Azure AD Connect 成功安装 AD FS 的前提条件|
+| [配置 AD FS 场](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs) | 如何使用 Azure AD Connect 安装新的 AD FS 场 |
 | **修改 AD FS 配置** | |
-| [修复信任](/documentation/articles/active-directory-aadconnect-federation-management#reparing-the-trust) | 如何修复当前本地 AD FS 和 Office 365/Azure 之间的信任 |
-| [添加新的 AD FS 服务器](/documentation/articles/active-directory-aadconnect-federation-management#adding-a-new-ad-fs-server) | 初始安装后，使用其他 AD FS 服务器扩展 AD FS 场 |
-| [添加新的 AD FS WAP 服务器](/documentation/articles/active-directory-aadconnect-federation-management#adding-a-new-wap-server) | 初始安装后，使用其他 WAP 服务器扩展 AD FS 场 |
-| [添加新的联合域](/documentation/articles/active-directory-aadconnect-federation-management#add-a-new-federated-domain) | 添加另一个域来与 Azure AD 联合 |
+| [修复信任](/documentation/articles/active-directory-aadconnect-federation-management/#reparing-the-trust) | 如何修复当前本地 AD FS 和 Office 365/Azure 之间的信任 |
+| [添加新的 AD FS 服务器](/documentation/articles/active-directory-aadconnect-federation-management/#adding-a-new-ad-fs-server) | 初始安装后，使用其他 AD FS 服务器扩展 AD FS 场 |
+| [添加新的 AD FS WAP 服务器](/documentation/articles/active-directory-aadconnect-federation-management/#adding-a-new-wap-server) | 初始安装后，使用其他 WAP 服务器扩展 AD FS 场 |
+| [添加新的联合域](/documentation/articles/active-directory-aadconnect-federation-management/#add-a-new-federated-domain) | 添加另一个域来与 Azure AD 联合 |
 |**安装后任务**||
-| [添加自定义公司徽标/插图](/documentation/articles/active-directory-aadconnect-federation-management#add-custom-company-logo-or-illustration)| 通过指定将在 AD FS 登录页显示的自定义徽标来调整登录体验 |
+| [添加自定义公司徽标/插图](/documentation/articles/active-directory-aadconnect-federation-management/#add-custom-company-logo-or-illustration)| 通过指定将在 AD FS 登录页显示的自定义徽标来调整登录体验 |
 | [添加登录说明](active-directory-aadconnect-federation-management#add-sign-in-description) | 更改 AD FS 登录页上的登录说明 | 
-| [修改 AD FS 声明规则](/documentation/articles/active-directory-aadconnect-federation-management#modifying-ad-fs-claim-rules) | 对应于 Azure AD Connect 同步配置修改/添加 AD FS 中的声明规则 |
+| [修改 AD FS 声明规则](/documentation/articles/active-directory-aadconnect-federation-management/#modifying-ad-fs-claim-rules) | 对应于 Azure AD Connect 同步配置修改/添加 AD FS 中的声明规则 |
 
 
 ## 其他资源
 
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
+* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
 <!---HONumber=Mooncake_0613_2016-->

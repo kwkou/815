@@ -421,8 +421,8 @@ OPTION (LABEL = 'CTAS : Partition IN table : Create');
 [1]: ./media/sql-data-warehouse-develop-ctas/ctas-results.png
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
 
 <!--MSDN references-->
 [CTAS]: https://msdn.microsoft.com/zh-cn/library/mt204041.aspx

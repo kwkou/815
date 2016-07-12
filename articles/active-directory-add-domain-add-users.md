@@ -18,7 +18,7 @@
 
 ## 从企业网络上的目录同步的用户
 
-如果你已经设定本地 Active Directory 与 Azure Active Directory 之间的连接，则同步可以填充帐户。如需有关如何同步 Azure Active Directory 与本地 Active Directory 的详细信息，请参阅[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)。
+如果你已经设定本地 Active Directory 与 Azure Active Directory 之间的连接，则同步可以填充帐户。如需有关如何同步 Azure Active Directory 与本地 Active Directory 的详细信息，请参阅[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)。
 
 ## 在云中添加和管理的用户
 
@@ -52,10 +52,10 @@
 
 ## 后续步骤
 
--   [使用自定义域名来简化用户登录体验](/documentation/articles/active-directory-add-domain)
+-   [使用自定义域名来简化用户登录体验](/documentation/articles/active-directory-add-domain/)
 
--   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names)
+-   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)
 
--   [了解 Azure AD 中的域管理概念](/documentation/articles/active-directory-add-domain-concepts)
+-   [了解 Azure AD 中的域管理概念](/documentation/articles/active-directory-add-domain-concepts/)
 
 <!---HONumber=Mooncake_0606_2016-->

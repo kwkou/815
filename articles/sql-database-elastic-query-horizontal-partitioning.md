@@ -13,15 +13,15 @@
 
 # 用于分片的弹性数据库查询（水平分区）
 
-本文档说明如何为水平分区方案设置弹性数据库查询以及如何执行查询。有关水平分区方案的定义，请参阅[弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview)。
+本文档说明如何为水平分区方案设置弹性数据库查询以及如何执行查询。有关水平分区方案的定义，请参阅[弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview/)。
 
 ![跨分片进行查询][1]
 
-该功能是 Azure SQL [数据库弹性数据库功能集](/documentation/articles/sql-database-elastic-scale-introduction)的一部分。
+该功能是 Azure SQL [数据库弹性数据库功能集](/documentation/articles/sql-database-elastic-scale-introduction/)的一部分。
  
 ## 创建数据库对象
 
-弹性数据库查询扩展 T-SQL 语法以引用数据层，这些数据层使用分片（或水平分区）将数据分布到多个数据库上。本部分概述了与分片表上的弹性查询关联的 DDL 语句。这些语句在弹性查询数据库中创建元数据表示形式的分片数据层。运行这些语句的先决条件是使用弹性数据库客户端库创建分片映射。有关详细信息，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)；或使用以下主题中的示例创建一个分片映射：[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)。
+弹性数据库查询扩展 T-SQL 语法以引用数据层，这些数据层使用分片（或水平分区）将数据分布到多个数据库上。本部分概述了与分片表上的弹性查询关联的 DDL 语句。这些语句在弹性查询数据库中创建元数据表示形式的分片数据层。运行这些语句的先决条件是使用弹性数据库客户端库创建分片映射。有关详细信息，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)；或使用以下主题中的示例创建一个分片映射：[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
 定义弹性数据库查询的数据库对象依赖于以下 T-SQL 语句，下面将针对水平分区方案对这些语句进行进一步说明：
 
@@ -196,7 +196,7 @@ DISTRIBUTION 子句指定用于此表的数据分布：
 * 分片映射数据库名称 (nvarchar)：分片映射数据库的名称。 
 * 用户名 (nvarchar)：用于登录到分片映射数据库的用户名。 
 * 密码 (nvarchar)：用户的密码。 
-* 分片映射名称 (nvarchar)：要用于查询的分片映射的名称。可以在 \_ShardManagement.ShardMapsGlobal 表中找到该名称，它是使用[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中的示例应用创建数据库时使用的默认名称。应用中的默认名称为“CustomerIDShardMap”。
+* 分片映射名称 (nvarchar)：要用于查询的分片映射的名称。可以在 \_ShardManagement.ShardMapsGlobal 表中找到该名称，它是使用[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中的示例应用创建数据库时使用的默认名称。应用中的默认名称为“CustomerIDShardMap”。
 *  查询：要在每个分片上执行的 T-SQL 查询。 
 *  参数声明 (nvarchar) - 可选：在查询参数（如 sp\_executesql）中使用的参数的字符串（包含数据类型定义）。 
 *  参数值列表 - 可选：以逗号分隔的参数值（如 sp\_executesql）的列表  

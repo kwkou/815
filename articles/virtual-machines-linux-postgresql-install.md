@@ -26,11 +26,11 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 ## 安装 PostgreSQL
 
-> [AZURE.NOTE]你必须已经有一个运行 Linux 的 Azure 虚拟机，才能完成本教程。在继续操作前，若要创建并设置 Linux VM，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-quick-create-cli)。
+> [AZURE.NOTE]你必须已经有一个运行 Linux 的 Azure 虚拟机，才能完成本教程。在继续操作前，若要创建并设置 Linux VM，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
 
 在此示例中，使用端口 1999 作为 PostgreSQL 端口。
 
-通过 PuTTY 连接到你创建的 Linux VM。如果这是你首次使用 Azure Linux VM，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux)，以了解如何使用 PuTTY 连接到 Linux VM。
+通过 PuTTY 连接到你创建的 Linux VM。如果这是你首次使用 Azure Linux VM，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)，以了解如何使用 PuTTY 连接到 Linux VM。
 
 1. 运行以下命令切换成根用户（管理员）：
 

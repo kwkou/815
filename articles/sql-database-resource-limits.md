@@ -35,7 +35,7 @@ Azure SQL 数据库使用两种不同的机制管理可用于数据库的资源�
 3.	优化查询，以减少每个查询的资源利用率。有关详细信息，请参阅“Azure SQL 数据库性能指南”一文中的“查询优化/提示”部分。
 
 ## 强制实施限制
-CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将通过拒绝新请求来强制实施。客户端将根据已达到的限制收到[错误消息](/documentation/articles/sql-database-develop-error-messages)。
+CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将通过拒绝新请求来强制实施。客户端将根据已达到的限制收到[错误消息](/documentation/articles/sql-database-develop-error-messages/)。
 
 例如，会限制与 SQL 数据库的连接数以及可处理的并发请求数。SQL 数据库允许与数据库的连接数大于并发请求数以支持连接池。虽然应用程序可以轻松地控制可用的连接数，但并行请求数通常难于估计和控制。特别是在负载峰值期间，那时应用程序发送太多请求或数据库达到其资源限制，并且由于长时间运行查询，开始堆积工作线程，可能会遇到错误。
 
@@ -45,11 +45,11 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 
 [AZURE.INCLUDE [SQL 数据库服务层表](../includes/sql-database-service-tiers-table.md)]
 
-[弹性数据库池](/documentation/articles/sql-database-elastic-pool)共享池中的数据库中的资源。下表描述了基本、标准和高级弹性数据库池的特征。
+[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)共享池中的数据库中的资源。下表描述了基本、标准和高级弹性数据库池的特征。
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-有关上述表中列出的每个资源的扩展定义，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance/#service-tier-capabilities-and-limits)中的描述。有关服务层的概述，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
+有关上述表中列出的每个资源的扩展定义，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance/#service-tier-capabilities-and-limits)中的描述。有关服务层的概述，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)。
 
 ## 其他 SQL 数据库限制
 
@@ -59,10 +59,10 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 
 ## 资源
 
-[Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)
+[Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
 
-[Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)
+[Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)
 
-[SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages)
+[SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages/)
 
 <!---HONumber=Mooncake_0606_2016-->

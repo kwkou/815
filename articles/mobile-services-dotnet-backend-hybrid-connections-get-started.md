@@ -49,7 +49,7 @@
 
 1. 在 Visual Studio 2013 中，打开用于定义 .NET 后端移动服务的项目。 
 
-	若要了解如何下载 .NET 后端项目，请参阅[移动服务入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started)。
+	若要了解如何下载 .NET 后端项目，请参阅[移动服务入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/)。
 
 2. 在“解决方案资源管理器”中打开 Web.config 文件，找到 **connectionStrings** 节，添加类似于以下内容的新 SqlClient 项目，此项目指向本地 SQL Server 数据库：
 	
@@ -122,13 +122,13 @@
 ##另请参阅##
  
 + [混合连接网站](http://azure.microsoft.com/zh-cn/services/biztalk-services/)
-<!--+ [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)-->
-+ [如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)
+<!--+ [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡](/documentation/articles/biztalk-dashboard-monitor-scale-tabs/)-->
++ [如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)
 
 <!-- IMAGES -->
 
 <!-- Links -->
 [Azure 经典门户]: http://manage.windowsazure.cn
-[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
 
 <!---HONumber=Mooncake_0118_2016-->

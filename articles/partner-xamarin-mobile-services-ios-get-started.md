@@ -115,9 +115,9 @@
 
 
 <!-- URLs. -->
-[脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
-[身份验证入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
-[推送通知入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
+[脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data/
+[身份验证入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users/
+[推送通知入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push/
 
 [Xamarin Studio]: http://xamarin.com/download
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533

@@ -18,7 +18,7 @@
 
 ## 概述
 
-构建集成 Azure AD 的应用程序可让组织的用户使用 Office 365 单一登录。在 Azure AD 中拥有应用程序可让你控制为应用程序设置的身份验证策略。若要详细了解条件性访问以及如何使用 Multi-Factor Authentication (MFA) 保护应用程序，请参阅以下文档：[Configuring access rules（配置访问规则）](/documentation/articles/active-directory-conditional-access-azuread-connected-apps)。
+构建集成 Azure AD 的应用程序可让组织的用户使用 Office 365 单一登录。在 Azure AD 中拥有应用程序可让你控制为应用程序设置的身份验证策略。若要详细了解条件性访问以及如何使用 Multi-Factor Authentication (MFA) 保护应用程序，请参阅以下文档：[Configuring access rules（配置访问规则）](/documentation/articles/active-directory-conditional-access-azuread-connected-apps/)。
 
 应用程序需要经过注册才能使用 Azure Active Directory。注册应用程序可让组织的开发人员使用 Azure AD 身份验证组织的成员，以及请求访问他们的用户资源，例如电子邮件、日历和文档等。
 
@@ -41,7 +41,7 @@
 	    - (Exchange) 读取邮件、发送邮件
 	    - (SharePoint) 读取
 
-> [AZURE.NOTE]默认情况下，任何成员都可以注册应用程序。若要了解如何限定只有特定成员拥有注册应用程序的权限，请参阅 [How applications are added to Azure AD（如何将应用程序添加到 Azure AD）](/documentation/articles/active-directory-how-applications-are-added#who-has-permission-to-add-applications-to-my-azure-ad-instance)文档。
+> [AZURE.NOTE]默认情况下，任何成员都可以注册应用程序。若要了解如何限定只有特定成员拥有注册应用程序的权限，请参阅 [How applications are added to Azure AD（如何将应用程序添加到 Azure AD）](/documentation/articles/active-directory-how-applications-are-added/#who-has-permission-to-add-applications-to-my-azure-ad-instance)文档。
 
 下面是全局管理员需要执行哪些操作，才能帮助开发人员将其应用程序投放到生产环境：
 
@@ -57,11 +57,11 @@
 
 默认情况下，不需要进行用户分配就能让用户访问应用程序。不过，如果应用程序公开角色或希望应用程序出现在用户的访问面板上，则你应该要求用户分配，并分配用户和/或组。
 
-[要求用户分配](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment)
+[要求用户分配](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment/)
 
 如果你是 Azure AD Premium 或 Enterprise Mobility Suite (EMS) 的订阅者，我们强烈建议利用组。将组分配到应用程序可让你将持续进行的访问管理委派给组所有者。你可以创建组，或使用组管理功能请求组织中负责人创建组。
 
-[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users)  
+[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)  
 
 
 ## 抑制用户同意
@@ -70,10 +70,10 @@
 
 对于你信任的应用程序，你可以代表组织来同意应用程序，以简化用户体验。
 
-有关 Azure 中的用户同意和同意体验的详细信息，请参阅 [Integrating Applications with Azure Active Directory（将应用程序与 Azure Active Directory 集成）](/documentation/articles/active-directory-integrating-applications)。
+有关 Azure 中的用户同意和同意体验的详细信息，请参阅 [Integrating Applications with Azure Active Directory（将应用程序与 Azure Active Directory 集成）](/documentation/articles/active-directory-integrating-applications/)。
 
 ##相关文章
 
-- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
 <!---HONumber=Mooncake_0606_2016-->

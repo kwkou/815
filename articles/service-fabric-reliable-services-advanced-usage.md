@@ -13,7 +13,7 @@
    wacn.date="07/04/2016"/>
 
 # Reliable Services 编程模型的高级用法
-Azure Service Fabric 可简化可靠的无状态服务和有状态服务的编写与管理。本指南讨论 Reliable Services 的高级用法，以便针对服务获得更多控制和灵活性。阅读本指南之前，你自己应熟悉 [Reliable Services 编程模型](/documentation/articles/service-fabric-reliable-services-introduction)。
+Azure Service Fabric 可简化可靠的无状态服务和有状态服务的编写与管理。本指南讨论 Reliable Services 的高级用法，以便针对服务获得更多控制和灵活性。阅读本指南之前，你自己应熟悉 [Reliable Services 编程模型](/documentation/articles/service-fabric-reliable-services-introduction/)。
 
 有状态服务和无状态服务针对用户代码都有两个主要入口点：
 
@@ -59,12 +59,12 @@ Azure Service Fabric 可简化可靠的无状态服务和有状态服务的编�
 ## 后续步骤
 有关与 Service Fabric 相关的更高级主题，请参阅以下文章：
 
-- [配置有状态 Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration)
+- [配置有状态 Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration/)
 
-- [Service Fabric 运行状况简介](/documentation/articles/service-fabric-health-introduction)
+- [Service Fabric 运行状况简介](/documentation/articles/service-fabric-health-introduction/)
 
-- [使用系统运行状况报告进行故障排除](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
+- [使用系统运行状况报告进行故障排除](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports/)
 
-- [使用 Service Fabric 群集资源管理器配置服务](/documentation/articles/service-fabric-cluster-resource-manager-configure-services)
+- [使用 Service Fabric 群集资源管理器配置服务](/documentation/articles/service-fabric-cluster-resource-manager-configure-services/)
 
 <!---HONumber=Mooncake_0503_2016-->

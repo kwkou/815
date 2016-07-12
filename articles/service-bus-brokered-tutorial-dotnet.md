@@ -17,7 +17,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 第二个消息传送解决方案启用了“中转”消息传送功能。可将它们视为异步或分离式消息传送功能，支持使用服务总线消息传送基础结构的发布-订阅、临时分离和负载平衡方案。分离式通信具有很多优点；例如，客户端和服务器可以根据需要进行连接并以异步方式执行其操作。
 
-本教程旨在提供有关队列的概述和实践经验，队列是服务总线中转消息传送的一个核心组件。完成本教程中的一系列主题后，你将获得一个应用程序，它能填充消息列表、创建队列和向队列发送消息。最后，该应用程序从队列接收消息并将其显示出来，然后清理其资源并退出。有关介绍如何构建使用“中继”消息传送功能的应用程序的相应教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial)。
+本教程旨在提供有关队列的概述和实践经验，队列是服务总线中转消息传送的一个核心组件。完成本教程中的一系列主题后，你将获得一个应用程序，它能填充消息列表、创建队列和向队列发送消息。最后，该应用程序从队列接收消息并将其显示出来，然后清理其资源并退出。有关介绍如何构建使用“中继”消息传送功能的应用程序的相应教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial/)。
 
 ## 简介和先决条件
 
@@ -638,13 +638,13 @@ namespace Microsoft.ServiceBus.Samples
 
 ## 后续步骤
 
-本教程介绍了如何使用服务总线中转消息传送功能构建服务总线客户端应用程序和服务。有关使用服务总线[中继消息传送](/documentation/articles/service-bus-messaging-overview/#Relayed-messaging)的类似教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial)。
+本教程介绍了如何使用服务总线中转消息传送功能构建服务总线客户端应用程序和服务。有关使用服务总线[中继消息传送](/documentation/articles/service-bus-messaging-overview/#Relayed-messaging)的类似教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial/)。
 
 若要了解有关[服务总线](/home/features/messaging)的详细信息，请参阅以下主题。
 
-- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
-- [服务总线体系结构](/documentation/articles/service-bus-architecture)
+- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
+- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
+- [服务总线体系结构](/documentation/articles/service-bus-architecture/)
 
 [Azure 经典门户]: http://manage.windowsazure.cn
 

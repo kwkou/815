@@ -27,7 +27,7 @@
 
 1. 选择你要启用的配置文件。若要选择配置文件，请在“流量管理器”页面上，通过单击配置文件名称旁边的列突出显示该配置文件。不要单击配置文件的名称或名称旁边的箭头，因为这会将你带到配置文件的设置页面。
 1. 在选择配置文件后，单击页面底部的启用。
-1. 修改你的 Internet DNS 服务器上的 DNS 资源记录以使用 CNAME 记录类型，这会将你的公司域名映射到你的流量管理器配置文件的域名。有关详细信息，请参阅[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain)。
+1. 修改你的 Internet DNS 服务器上的 DNS 资源记录以使用 CNAME 记录类型，这会将你的公司域名映射到你的流量管理器配置文件的域名。有关详细信息，请参阅[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain/)。
 1. 流量将重新开始定向到终结点。
 
 ## 删除配置文件
@@ -40,14 +40,14 @@
 
 ## 后续步骤
 
-[流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint)
+[流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint/)
 
-[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)
+[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)
 
-[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
+[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)
 
-[配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method)
+[配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method/)
 
-[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 
 <!---HONumber=Mooncake_1221_2015-->

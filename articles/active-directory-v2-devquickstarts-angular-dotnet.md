@@ -20,7 +20,7 @@
 本示例是一个可在后端 REST API 存储任务的简单待办事项列表单页应用，它是使用 .NET 4.5 MVC Framework 编写的，并使用 Azure AD 的 OAuth 持有者令牌进行保护。AngularJS 应用使用我们的开源 JavaScript 身份验证库 [adal.js](https://github.com/AzureAD/azure-activedirectory-library-for-js) 来处理整个登录过程，并获取用于调用 REST API 的令牌。可以应用与此相同的模式来验证其他 REST API，例如 [Microsoft Graph](https://graph.microsoft.com)。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 ## 下载
 
@@ -38,7 +38,7 @@
 
 ## 注册应用程序
 
-首先，在[应用注册门户](https://apps.dev.microsoft.com)中创建应用，或者遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration)。请确保：
+首先，在[应用注册门户](https://apps.dev.microsoft.com)中创建应用，或者遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 为应用程序添加 **Web** 平台。
 - 输入正确的**重定向 URI**。本示例的默认值为 `https://localhost:44326/`。
@@ -83,7 +83,7 @@
 		...
 
 
-有关 REST API 工作方式的讨论到此为止。你可以自由摸索代码，但是如果想要深入了解如何使用 Azure AD 保护 Web API，请参阅[此文](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api)。
+有关 REST API 工作方式的讨论到此为止。你可以自由摸索代码，但是如果想要深入了解如何使用 Azure AD 保护 Web API，请参阅[此文](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api/)。
 
 ## 登录用户
 编写一些标识代码。你可能已发现 adal.js 包含 AngularJS 提供程序，该程序可以顺畅使用 Angular 路由机制。首先，将 adal 模块添加到应用：
@@ -217,9 +217,9 @@
 		...
 
 
-祝贺你！ 你现已完成创建 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果你需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant)（免费）。
+祝贺你！ 你现已完成创建 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果你需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)（免费）。
 
-如果要继续了解 v2.0 终结点，请返回到 [v2.0 开发人员指南](/documentation/articles/active-directory-appmodel-v2-overview)。有关更多资源，请查看：
+如果要继续了解 v2.0 终结点，请返回到 [v2.0 开发人员指南](/documentation/articles/active-directory-appmodel-v2-overview/)。有关更多资源，请查看：
 
 - [GitHub 上的 Azure 示例 >>](https://github.com/Azure-Samples)
 - [堆栈溢出网站上的 Azure AD >>](http://stackoverflow.com/questions/tagged/azure-active-directory)

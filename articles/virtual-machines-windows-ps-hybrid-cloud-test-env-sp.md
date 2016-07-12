@@ -43,13 +43,13 @@
 
 ## 阶段 1：设置混合云环境
 
-使用[设置用于测试的混合云环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-base)主题中的说明。由于此测试环境不需要 Corpnet 子网上存在 APP1 服务器，因此现在即可将其关闭。
+使用[设置用于测试的混合云环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-base/)主题中的说明。由于此测试环境不需要 Corpnet 子网上存在 APP1 服务器，因此现在即可将其关闭。
 
 这是你当前的配置。
 
 ![](./media/virtual-machines-windows-ps-hybrid-cloud-test-env-sp/virtual-machines-windows-ps-hybrid-cloud-test-env-sp-ph1.png)
 
-> [AZURE.NOTE] 就阶段 1 来说，你也可以设置[模拟混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim)。
+> [AZURE.NOTE] 就阶段 1 来说，你也可以设置[模拟混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)。
  
 ## 阶段 2：配置 SQL Server 计算机 (SQL1)
 

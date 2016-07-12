@@ -20,7 +20,7 @@
 
 本主题介绍为何以及如何创建和配置资产传送策略。
 
->[AZURE.NOTE]若要使用动态打包和动态加密，必须确保至少有一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+>[AZURE.NOTE]若要使用动态打包和动态加密，必须确保至少有一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 >
 >此外，你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。
 
@@ -48,7 +48,7 @@ HDS
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=f4m-f4f)
 
-有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content)。
+有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content/)。
 
 
 ##注意事项
@@ -60,9 +60,9 @@ HDS
  
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
->访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
+>访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
+>在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
 
 
 ##清除资产传送策略 
@@ -145,7 +145,7 @@ HDS
 
 ###创建 EnvelopeEncryption 类型的内容密钥，并将其链接到资产
 
-在指定 DynamicEnvelopeEncryption 传送策略时，需要确保将你的资产链接到 EnvelopeEncryption 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey)。
+在指定 DynamicEnvelopeEncryption 传送策略时，需要确保将你的资产链接到 EnvelopeEncryption 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey/)。
 
 
 ###<a id="get_delivery_url"></a>获取传送 URL
@@ -238,7 +238,7 @@ HDS
 
 ###创建 CommonEncryption 类型的内容密钥，并将其链接到资产
 
-在指定 DynamicCommonEncryption 传送策略时，需要确保将你的资产链接到 CommonEncryption 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey)。
+在指定 DynamicCommonEncryption 传送策略时，需要确保将你的资产链接到 CommonEncryption 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey/)。
 
 
 ###获取传送 URL

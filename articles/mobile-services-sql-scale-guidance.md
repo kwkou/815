@@ -190,8 +190,8 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 假设您要向所有客户发送推送通知，提醒他们查看应用中的新内容。他们点击该通知时，该应用将启动，这样可能会触发调用您的移动服务，并根据 SQL 数据库执行查询。由于可能会有数百万客户在仅仅几分钟的跨度内执行该操作，将形成 SQL 负载高峰，该峰值大大高于您应用的稳定状态负载。通过在峰值期间将应用扩展到更高版本的 SQL 层，然后再回缩可解决这种问题，但这种解决方法需要手动干预，并且会导致成本上升。通常，细微调整移动服务体系结构可显著平衡访问 SQL 数据库的负载客户端，并消除问题需求峰值。这些调整通常可以轻松执行，而对客户体验的影响可降至最低。下面是一些示例：
 
-- **将负载分散到不同时间。** 如果你对特定事件（例如广播推送通知）的执行时间进行控制，并预期这些事件会产生需求上的高峰，且这些事件的执行时间并不重要，请考虑将其分散到不同时间。在上述示例中，或许你的应用程序客户可以在一天的不同时间分批获取新应用程序内容的通知，而无需在几乎相同的时间获取。请考虑将客户分成允许交错传送到每个批的组。使用通知中心时，应用附加标记以跟踪批，然后将推送通知传送到该标记，这样便可提供实现此策略的简单途径。有关标记的详细信息，请参阅[使用通知中心发送突发新闻](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)。
-- **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-upload-data-blob-storage)。
+- **将负载分散到不同时间。** 如果你对特定事件（例如广播推送通知）的执行时间进行控制，并预期这些事件会产生需求上的高峰，且这些事件的执行时间并不重要，请考虑将其分散到不同时间。在上述示例中，或许你的应用程序客户可以在一天的不同时间分批获取新应用程序内容的通知，而无需在几乎相同的时间获取。请考虑将客户分成允许交错传送到每个批的组。使用通知中心时，应用附加标记以跟踪批，然后将推送通知传送到该标记，这样便可提供实现此策略的简单途径。有关标记的详细信息，请参阅[使用通知中心发送突发新闻](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/)。
+- **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-upload-data-blob-storage/)。
 - **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure 缓存](/documentaiton/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
 
 <a name="Advanced"></a>
@@ -201,7 +201,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 ### 先决条件
 若要执行本部分的诊断任务，你需要访问 SQL 数据库的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 经典门户**的管理功能。
 
-SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
+SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial/)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
 
 Azure 经典门户提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
 

@@ -16,7 +16,7 @@
 
 ## 概述
 
-你可以使用[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)创建分片数据库解决方案。**多分片查询**用于诸如数据收集/报告等需要跨多个分片运行查询的任务。（相比之下，[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)会在单个分片上执行所有操作。）
+你可以使用[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction/)创建分片数据库解决方案。**多分片查询**用于诸如数据收集/报告等需要跨多个分片运行查询的任务。（相比之下，[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)会在单个分片上执行所有操作。）
 
 ## 概述
 
@@ -64,7 +64,7 @@
 
 ## 多分片查询和拆分/合并操作
 
-多分片查询不会验证查询的分片上的 shardlet 是否参与了正在进行的拆分/合并操作。（请参阅[使用弹性数据库拆分/合并工具进行缩放](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。） 这可能会导致不一致问题，即为同一多分片查询中的多个分片显示同一 shardlet 中的行。请注意这些限制并在执行多分片查询时，考虑关闭正在进行的合拆分操作以及对分片映射的更改。
+多分片查询不会验证查询的分片上的 shardlet 是否参与了正在进行的拆分/合并操作。（请参阅[使用弹性数据库拆分/合并工具进行缩放](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。） 这可能会导致不一致问题，即为同一多分片查询中的多个分片显示同一 shardlet 中的行。请注意这些限制并在执行多分片查询时，考虑关闭正在进行的合拆分操作以及对分片映射的更改。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -72,7 +72,7 @@
 [System.Data.SqlClient](http://msdn.microsoft.com/zh-cn/library/System.Data.SqlClient.aspx) 类和方法。
 
 
-使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)管理分片。包括名为 [Microsoft.Azure.SqlDatabase.ElasticScale.Query](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.query.aspx) 的命名空间，你可以通过该空间使用单个查询和结果来查询多个分片。它提供对分片集合进行查询抽象的功能。它还提供了备用执行策略，尤其是部分结果，以处理在对多个分片进行查询时所出现的故障。
+使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)管理分片。包括名为 [Microsoft.Azure.SqlDatabase.ElasticScale.Query](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.query.aspx) 的命名空间，你可以通过该空间使用单个查询和结果来查询多个分片。它提供对分片集合进行查询抽象的功能。它还提供了备用执行策略，尤其是部分结果，以处理在对多个分片进行查询时所出现的故障。
 
  
 

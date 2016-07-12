@@ -122,7 +122,7 @@ Azure Web 应用允许创建这种 Web 应用，但有一些约束。例如，�
 
 ####选择计算模型###  
 
-[Azure Web 应用、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm) 页面提供了有关如何选择计算模型的更多详细信息。
+[Azure Web 应用、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/) 页面提供了有关如何选择计算模型的更多详细信息。
 
 
 

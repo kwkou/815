@@ -74,7 +74,7 @@ SharedLogSizeInMB 指定要预先分配给所有节点上的默认共享日志�
 |Name|计价单位|默认值|备注|
 |----|----|-------------|-------|
 |BatchAcknowledgementInterval|秒|0\.05|收到操作后，在向主要复制器送回确认之前，辅助复制器等待的时间段。为在此间隔内处理的操作发送的任何其他确认都作为响应发送。||
-|ReplicatorEndpoint|不适用|无默认值--必选参数|主要/辅助复制器用于与副本集中其他复制器通信的 IP 地址和端口。这应该引用服务清单中的 TCP 资源终结点。若要了解有关在服务清单中定义终结点资源的详细信息，请参阅[服务清单资源](/documentation/articles/service-fabric-service-manifest-resources)。 |
+|ReplicatorEndpoint|不适用|无默认值--必选参数|主要/辅助复制器用于与副本集中其他复制器通信的 IP 地址和端口。这应该引用服务清单中的 TCP 资源终结点。若要了解有关在服务清单中定义终结点资源的详细信息，请参阅[服务清单资源](/documentation/articles/service-fabric-service-manifest-resources/)。 |
 |MaxReplicationMessageSize|字节|50 MB|可以在单个消息中传输的复制数据的最大大小。|
 |MaxPrimaryReplicationQueueSize|操作的数量|8192|主要队列中的操作的最大数目。主复制器接收到来自所有辅助复制器的确认之后，将释放一个操作。此值必须大于 64 和 2 的幂。|
 |MaxSecondaryReplicationQueueSize|操作的数量|16384|辅助队列中的操作的最大数目。将在使操作的状态在暂留期间高度可用后释放该操作。此值必须大于 64 和 2 的幂。|

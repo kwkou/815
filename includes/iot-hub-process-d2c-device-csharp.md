@@ -34,6 +34,6 @@
 
 <!-- Links -->
 [暂时性故障处理]: https://msdn.microsoft.com/zh-cn/library/hh675232.aspx
-[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 
 <!---HONumber=Mooncake_0321_2016-->

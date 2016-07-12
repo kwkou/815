@@ -46,11 +46,11 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 ## 后续步骤
 设置开发环境之后，你可以开始构建和运行应用。
 
-- [在 Visual Studio 中创建你的第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio)
-- [了解如何在本地群集上部署和管理应用程序](/documentation/articles/service-fabric-get-started-with-a-local-cluster)
-- [了解编程模型：Reliable Services 和 Reliable Actors](/documentation/articles/service-fabric-choose-framework)
+- [在 Visual Studio 中创建你的第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)
+- [了解如何在本地群集上部署和管理应用程序](/documentation/articles/service-fabric-get-started-with-a-local-cluster/)
+- [了解编程模型：Reliable Services 和 Reliable Actors](/documentation/articles/service-fabric-choose-framework/)
 
-- [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster)
+- [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)
 
 [1]: /home/features/service-fabric "Service Fabric 活动页"
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"

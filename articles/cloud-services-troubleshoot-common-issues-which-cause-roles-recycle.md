@@ -54,7 +54,7 @@ Azure 是一个 64 位的环境。因此，针对 32 位目标编译的 .NET 程
 
 - `DiagnosticsConnectionString` 设置指向 Azure 中的有效存储帐户。默认情况下，此设置指向模拟的存储帐户中，因此必须在部署应用程序包之前显式更改此设置。如果不更改此设置，则当角色实例尝试启动诊断监视器时，将引发异常。这可能导致角色实例无限期回收。
 
-- 连接字符串是使用以下[格式](/documentation/articles/storage-configure-connection-string)指定的。（协议必须指定为 HTTPS。） 将 *MyAccountName* 替换为你的存储帐户名称，将 *MyAccountKey* 替换为你的访问密钥：
+- 连接字符串是使用以下[格式](/documentation/articles/storage-configure-connection-string/)指定的。（协议必须指定为 HTTPS。） 将 *MyAccountName* 替换为你的存储帐户名称，将 *MyAccountKey* 替换为你的访问密钥：
 
         DefaultEndpointsProtocol=https;AccountName=MyAccountName;AccountKey=MyAccountKey;EndpointSuffix=core.chinacloudapi.cn
 

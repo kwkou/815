@@ -151,10 +151,10 @@ Polybase 易于使用，可让你通过使用熟悉的 T-SQL 命令来利用不�
 [1]: ./media/sql-data-warehouse-overview-what-is/dwarchitecture.png
 
 <!--Article references-->
-[Create Support Ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket
-[数据仓库工作负荷]: /documentation/articles/sql-data-warehouse-overview-workload
-[如何加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples
-[如何预配]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
+[Create Support Ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
+[数据仓库工作负荷]: /documentation/articles/sql-data-warehouse-overview-workload/
+[如何加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[如何预配]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 
 <!--MSDN references-->
 

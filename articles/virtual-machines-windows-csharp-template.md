@@ -23,17 +23,17 @@
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
-- [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal)
+- [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal/)
 
 完成这些步骤大约需要 30 分钟。
 
 ## 步骤 1：安装 Azure PowerShell
 
-有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。选择要使用的订阅，然后登录到你的 Azure 帐户。
+有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。
     
 ## 步骤 2：为模板存储创建资源组
 
-必须在资源组中部署所有资源。有关详细信息，请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview)。
+必须在资源组中部署所有资源。有关详细信息，请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview/)。
 
 1. 获取可以创建资源的可用位置列表。
 
@@ -100,7 +100,7 @@
           "contentVersion": "1.0.0.0",
         }
 
-6. [参数](/documentation/articles/resource-group-authoring-templates#parameters)并不总是必需的，但它们有助于简化模板管理。它们描述了值的类型、所需的默认值，有时还描述参数的允许值。对于本教程，用于创建虚拟机、存储帐户和虚拟网络的参数已添加到模板中。在 ContentVersion 元素后面添加 parameters 元素及其子元素：
+6. [参数](/documentation/articles/resource-group-authoring-templates/#parameters)并不总是必需的，但它们有助于简化模板管理。它们描述了值的类型、所需的默认值，有时还描述参数的允许值。对于本教程，用于创建虚拟机、存储帐户和虚拟网络的参数已添加到模板中。在 ContentVersion 元素后面添加 parameters 元素及其子元素：
 
         {
           "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
@@ -113,7 +113,7 @@
           },
         }
 
-7. 可以在模板中使用[变量](/documentation/articles/resource-group-authoring-templates#variables)来指定可能经常发生变化的值，或者需要从参数值的组合创建的值。在 parameters 节的后面添加 variables 元素：
+7. 可以在模板中使用[变量](/documentation/articles/resource-group-authoring-templates/#variables)来指定可能经常发生变化的值，或者需要从参数值的组合创建的值。在 parameters 节的后面添加 variables 元素：
 
         {
           "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
@@ -146,7 +146,7 @@
           },
         }
 
-8. 接下来将在模板中定义[资源](/documentation/articles/resource-group-authoring-templates#resources)，例如虚拟机、虚拟网络和存储帐户。在 variables 节的后面添加 resources 节：
+8. 接下来将在模板中定义[资源](/documentation/articles/resource-group-authoring-templates/#resources)，例如虚拟机、虚拟网络和存储帐户。在 variables 节的后面添加 resources 节：
 
         {
           "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
@@ -306,7 +306,7 @@
           }
         }
 
-    >[AZURE.NOTE] 本文创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
+    >[AZURE.NOTE] 本文创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
 
 4. 保存创建的参数文件。
 
@@ -492,6 +492,6 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 ## 后续步骤
 
-- 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)，了解如何管理刚创建的虚拟机。
+- 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage/)，了解如何管理刚创建的虚拟机。
 
 <!---HONumber=Mooncake_0613_2016-->

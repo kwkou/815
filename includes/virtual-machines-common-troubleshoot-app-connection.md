@@ -2,10 +2,10 @@
 
 如果你在使用 RDP 或 SSH 连接到 VM 时发生问题，请先参阅以下文章之一：
 
- - [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
- - [对于基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)。
+ - [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
+ - [对于基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用这两种模型，但 Azure 建议大多数最新部署使用资源管理器模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用这两种模型，但 Azure 建议大多数最新部署使用资源管理器模型。
 
 如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
 
@@ -15,12 +15,12 @@
 
 - 重启虚拟机
 - 重新创建终结点/防火墙规则/网络安全组 (NSG) 规则
-	- [经典模型 - 管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
-	- [Resource Manager 模型 - 管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
+	- [经典模型 - 管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances/)
+	- [Resource Manager 模型 - 管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal/)
 - 从不同的位置（例如不同的 Azure 虚拟网络）进行连接
 - 重新部署虚拟机
-	- [重新部署 Windows VM](/documentation/articles/virtual-machines-windows-redeploy-to-new-node)
-	- [重新部署 Linux VM](/documentation/articles/virtual-machines-linux-redeploy-to-new-node)
+	- [重新部署 Windows VM](/documentation/articles/virtual-machines-windows-redeploy-to-new-node/)
+	- [重新部署 Linux VM](/documentation/articles/virtual-machines-linux-redeploy-to-new-node/)
 - 重新创建虚拟机
 
 有关详细信息，请参阅[终结点连接（RDP/SSH/HTTP 等故障）疑难解答](https://social.msdn.microsoft.com/Forums/azure/538a8f18-7c1f-4d6e-b81c-70c00e25c93d/troubleshooting-endpoint-connectivity-rdpsshhttp-etc-failures?forum=WAVirtualMachinesforWindows)。
@@ -74,8 +74,8 @@
 - 目标 VM 上的主机防火墙允许入站请求和出站响应流量。
 - 目标 VM 上运行的入侵检测或网络监视软件允许流量。
 - 云服务终结点或网络安全组允许流量
-	- [经典模型 - 管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
-	- [Resource Manager 模型 - 管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
+	- [经典模型 - 管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances/)
+	- [Resource Manager 模型 - 管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal/)
 - VM 中在测试 VM 和你的 VM 之间的路径运行的单独组件（例如负载平衡器或防火墙）允许流量。
 
 在基于 Windows 的虚拟机上，使用具有高级安全性的 Windows 防火墙确定防火墙规则是否排除应用程序的入站和出站流量。
@@ -93,12 +93,12 @@
 - 对于使用经典部署模型创建的 VM：
 	- VM 的终结点配置允许传入流量，尤其是协议（TCP 或 UDP）及公用和专用端口号。
 	- 终结点上的访问控制列表 (ACL) 不会阻止来自 Internet 的传入流量。
-	- 有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+	- 有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 	
 - 对于使用 Resource Manager 部署模型创建的 VM：
 	- VM 的入站 NAT 规则配置允许传入流量，尤其是协议（TCP 或 UDP）及公用和专用端口号。
 	- 网络安全组允许入站请求和出站响应流量。
-	- 有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg)。
+	- 有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)。
 
 如果虚拟机或终结点是负载平衡集的成员，则：
 
@@ -114,8 +114,8 @@
 
 ## 其他资源
 
-[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
+[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 
-[对基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)
+[对基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)
 
 <!---HONumber=Mooncake_0627_2016-->

@@ -18,15 +18,15 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-get-started)
-- [C#](/documentation/articles/sql-database-get-started-csharp)
-- [PowerShell](/documentation/articles/sql-database-get-started-powershell)
+- [Azure 门户](/documentation/articles/sql-database-get-started/)
+- [C#](/documentation/articles/sql-database-get-started-csharp/)
+- [PowerShell](/documentation/articles/sql-database-get-started-powershell/)
 
 
 了解如何使用 PowerShell cmdlet 创建新的 SQL 数据库并执行常见的数据库设置任务。
 
 
-若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 - 如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 
@@ -81,7 +81,7 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 
 若要允许其他 Azure 服务访问该服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自任何 Azure 订阅的 Azure 流量访问该服务器。
 
-有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
+有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。
 
 
 ## 创建新的 SQL 数据库
@@ -131,7 +131,7 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 ## 后续步骤
 创建新的 SQL 数据库并执行基本的数据库设置任务后，可以执行以下操作：
 
-- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)
+- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
 
 
 ## 其他资源

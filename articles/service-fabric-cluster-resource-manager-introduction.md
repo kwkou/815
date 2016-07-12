@@ -48,11 +48,11 @@
 尽管其中有些策略很有作用，但 Service Fabric 群集资源管理器的功能并不像网络负载平衡器或缓存一样。尽管网络负载平衡器可确保前端能够通过将流量移到服务运行所在的位置来实现平衡，但 Service Fabric 群集资源管理器采取完全不同的策略 – 本质上，Service Fabric 会将*服务*移到最有利的位置（流量或负载随之也会如此）。例如，该位置可能是当前较冷的节点，因为服务目前并未执行很多工作。该位置也有可能远离即将升级的节点，或者因为在其上运行的服务消耗量突然增加而导致超载的节点。因为它负责移动服务（不是将网络流量传送到服务所在的位置），因此 Service Fabric 资源管理器更加灵活，同时包含其他功能用于控制移动服务的位置与方式。
 
 ## 后续步骤
-- 有关群集资源管理器中的体系结构和信息流的信息，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-architecture)
-- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description)的文章
-- 有关可用于配置服务的其他选项的详细信息，请查看 [Learn about configuring Services](/documentation/articles/service-fabric-cluster-resource-manager-configure-services)（了解如何配置服务）中提供的其他群集资源管理器配置的相关主题
-- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics)
-- 群集资源管理器可与 Service Fabric 的管理功能配合使用。若要了解有关这种集成的详细信息，请阅读[此文](/documentation/articles/service-fabric-cluster-resource-manager-management-integration)
-- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing)的文章
+- 有关群集资源管理器中的体系结构和信息流的信息，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-architecture/)
+- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)的文章
+- 有关可用于配置服务的其他选项的详细信息，请查看 [Learn about configuring Services](/documentation/articles/service-fabric-cluster-resource-manager-configure-services/)（了解如何配置服务）中提供的其他群集资源管理器配置的相关主题
+- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)
+- 群集资源管理器可与 Service Fabric 的管理功能配合使用。若要了解有关这种集成的详细信息，请阅读[此文](/documentation/articles/service-fabric-cluster-resource-manager-management-integration/)
+- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing/)的文章
 
 <!---HONumber=Mooncake_0627_2016-->

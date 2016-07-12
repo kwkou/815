@@ -3,11 +3,11 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 #客户端兼容性问题
 > [AZURE.SELECTOR]
-- [全部问题](/documentation/articles/mysql-database-tech-faq)
-- [服务咨询](/documentation/articles/mysql-database-serviceinquiry)
-- [连接问题](/documentation/articles/mysql-database-connectioninquiry)
-- [安全性咨询](/documentation/articles/mysql-database-securityinquiry)
-- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry)
+- [全部问题](/documentation/articles/mysql-database-tech-faq/)
+- [服务咨询](/documentation/articles/mysql-database-serviceinquiry/)
+- [连接问题](/documentation/articles/mysql-database-connectioninquiry/)
+- [安全性咨询](/documentation/articles/mysql-database-securityinquiry/)
+- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry/)
 
 MySQL Database on Azure采用MySQL 社区版本，兼容MYSQL常见的管理工具。在实际运维当中，我们也发现对于某些客户端的某个版本存在一定的兼容性问题，归纳如下：
 

@@ -232,7 +232,7 @@ for (int i=0; i<5; i++)
 }
 ```
 
-服务总线主题支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-quotas)（标头最大为 64 Kb，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning)。
+服务总线主题支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-quotas/)（标头最大为 64 Kb，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning/)。
 
 ## 如何从订阅接收消息
 
@@ -312,17 +312,17 @@ namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
 -   [主题筛选器示例][]
 -   [SqlFilter][] 的 API 参考。
 -   构建向服务总线队列发送消息以及从中接收消息的工作应用程序：[服务总线中转消息传送 .NET 教程][]。
--   服务总线示例：从 [Azure 示例][]下载，或参阅[概述](/documentation/articles/service-bus-samples)。
+-   服务总线示例：从 [Azure 示例][]下载，或参阅[概述](/documentation/articles/service-bus-samples/)。
 
   [Azure 管理门户]: http://manage.windowsazure.cn
 
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
   
-  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [主题筛选器示例]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-  [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet
+  [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet/
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
 
 <!---HONumber=Mooncake_0215_2016-->

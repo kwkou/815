@@ -192,10 +192,10 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [Azure 经典门户]: http://manage.windowsazure.cn
   
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-  [使用存储构建 Node.js 云服务]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-  [使用存储构建 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-how-to-use-table-storage
-  [服务总线配额]: /documentation/articles/service-bus-quotas
+  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [使用存储构建 Node.js 云服务]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
+  [使用存储构建 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-how-to-use-table-storage/
+  [服务总线配额]: /documentation/articles/service-bus-quotas/
 
 <!---HONumber=Mooncake_0104_2016-->

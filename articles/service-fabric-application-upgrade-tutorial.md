@@ -30,7 +30,7 @@ Azure Service Fabric 确保只升级已更改的服务，并在整个升级过�
 
 ![发布 Service Fabric 应用程序][image2]
 
-现在，可在对话框中单击“发布”。可以使用 [Service Fabric 资源管理器查看群集和应用程序](/documentation/articles/service-fabric-visualizing-your-cluster)。“可视对象”应用程序有一个 Web 服务，在浏览器的地址栏中输入 [http://localhost:8082/visualobjects/](http://localhost:8082/visualobjects/) 即可转到该服务。你应会在屏幕上看到 10 个四处移动的浮动可视对象。
+现在，可在对话框中单击“发布”。可以使用 [Service Fabric 资源管理器查看群集和应用程序](/documentation/articles/service-fabric-visualizing-your-cluster/)。“可视对象”应用程序有一个 Web 服务，在浏览器的地址栏中输入 [http://localhost:8082/visualobjects/](http://localhost:8082/visualobjects/) 即可转到该服务。你应会在屏幕上看到 10 个四处移动的浮动可视对象。
 
 ## 步骤 2：更新可视对象示例
 
@@ -53,7 +53,7 @@ Azure Service Fabric 确保只升级已更改的服务，并在整个升级过�
 
 ## 步骤 3：升级应用程序
 
-请熟悉[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)和[升级过程](/documentation/articles/service-fabric-application-upgrade)，以充分了解可应用的各种升级参数、超时和运行状况标准。在本演练中，请将服务运行状况评估标准保留为默认设置（不受监视模式）。若要配置这些设置，可以选择“配置升级设置”，然后视需要修改参数。
+请熟悉[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)和[升级过程](/documentation/articles/service-fabric-application-upgrade/)，以充分了解可应用的各种升级参数、超时和运行状况标准。在本演练中，请将服务运行状况评估标准保留为默认设置（不受监视模式）。若要配置这些设置，可以选择“配置升级设置”，然后视需要修改参数。
 
 现在，我们已经准备好选择“发布”来开始升级应用程序。这会将应用程序升级到对象会旋转的版本 2.0.0。你将发现，Service Fabric 每次会升级一个更新域（先更新一些对象，再更新另一些对象），在此期间你可以通过客户端（浏览器）访问服务。
 
@@ -67,15 +67,15 @@ Azure Service Fabric 确保只升级已更改的服务，并在整个升级过�
 
 ## 后续步骤
 
-[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell)将逐步指导你使用 PowerShell 进行应用程序升级。
+[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell/)将逐步指导你使用 PowerShell 进行应用程序升级。
 
-使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)来控制应用程序的升级方式。
+使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)来控制应用程序的升级方式。
 
-了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization)，使应用程序在升级后保持兼容。
+了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization/)，使应用程序在升级后保持兼容。
 
-参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced)，了解如何在升级应用程序时使用高级功能。
+参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced/)，了解如何在升级应用程序时使用高级功能。
 
-参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting)中的步骤来解决应用程序升级时的常见问题。
+参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
 
 
 

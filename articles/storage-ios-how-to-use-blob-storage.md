@@ -86,7 +86,7 @@
 
 以下示例演示如何使用 Azure CLI 来生成 SAS 令牌，该令牌授予对容器 sascontainer 的读取和写入权限，这些权限截止于 2015 年 9 月 5 日上午 12:00 (UTC)。
 
-1. 首先，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install) 以了解如何安装 Azure CLI 并连接到 Azure 订阅。
+1. 首先，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 以了解如何安装 Azure CLI 并连接到 Azure 订阅。
 
 2. 接下来，在 Azure CLI 中键入以下命令以获得帐户的连接字符串：
 
@@ -109,7 +109,7 @@
 		// Get a reference to a container in your Storage account
     	AZSCloudBlobContainer *blobContainer = [[AZSCloudBlobContainer alloc] initWithUrl:[NSURL URLWithString:@" your SAS URL"]];
 
-如你所见，使用 SAS 令牌时，不会在 iOS 应用程序中公开你的帐户名和帐户密钥。你可以通过查阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)了解有关 SAS 的详细信息。
+如你所见，使用 SAS 令牌时，不会在 iOS 应用程序中公开你的帐户名和帐户密钥。你可以通过查阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)了解有关 SAS 的详细信息。
 
 ##异步操作
 > [AZURE.NOTE] 执行对服务的请求的所有方法都是异步操作。在代码示例中，你会发现这些方法都有完成处理程序。请求完成**后**，将运行完成处理程序内的代码。正在发出请求**时**，将运行完成处理程序后的代码。
@@ -348,7 +348,7 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 
 - [Azure Storage Client Library for iOS（适用于 iOS 的 Azure 存储客户端库）](https://github.com/azure/azure-storage-ios)
 - [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage)
 
 如果你对此库有任何疑问，请随意将问题发布到我们的 [MSDN Azure 论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazuredata)或[堆栈溢出](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files)。如果你有 Azure 存储空间的功能建议，请将建议发布到 [Azure 存储空间反馈](/product-feedback)。

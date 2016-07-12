@@ -3,24 +3,24 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-migration)
-- [English](/documentation/articles/mysql-database-enus-migration)
+- [中文](/documentation/articles/mysql-database-migration/)
+- [English](/documentation/articles/mysql-database-enus-migration/)
 
 # Migrate a database to MySQL Database on Azure
 
 Before you migrate to MySQL Database on Azure, evaluate whether your application database can do so successfully.
 
-MySQL Database on Azure is compatible with MySQL 5.5 and MySQL 5.6, so the vast majority of applications will run successfully on MySQL Database on Azure without any changes. Applications should have a database reconnection mechanism to ensure a good level of fault tolerance and avoid the application crashing as a result of temporary inability to connect to the database. This is because even highly available cloud databases inevitably encounter situations where failover or server maintenance causes temporary inability to connect to the database. You should also use connection pooling and persistent connections to access the database whenever possible, particularly for applications with higher performance requirements. For more information, see [How to efficiently connect to MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool).
+MySQL Database on Azure is compatible with MySQL 5.5 and MySQL 5.6, so the vast majority of applications will run successfully on MySQL Database on Azure without any changes. Applications should have a database reconnection mechanism to ensure a good level of fault tolerance and avoid the application crashing as a result of temporary inability to connect to the database. This is because even highly available cloud databases inevitably encounter situations where failover or server maintenance causes temporary inability to connect to the database. You should also use connection pooling and persistent connections to access the database whenever possible, particularly for applications with higher performance requirements. For more information, see [How to efficiently connect to MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool/).
 
-Note also that MySQL Database on Azure does not support MyISAM format. (For more details, see “Why doesn’t MySQL Database on Azure support databases in MyISAM format?” in the [FAQs](/documentation/articles/mysql-database-serviceinquiry).) In most situations, you can use the database normally by simply replacing the MyISAM database engine with InnoDB in the table creation code.
+Note also that MySQL Database on Azure does not support MyISAM format. (For more details, see “Why doesn’t MySQL Database on Azure support databases in MyISAM format?” in the [FAQs](/documentation/articles/mysql-database-serviceinquiry/).) In most situations, you can use the database normally by simply replacing the MyISAM database engine with InnoDB in the table creation code.
 
 ## Solution 1: Migration based on database import/export
 If your system can accept a relatively long period of downtime (for example, 1-2 hours) caused by migration, you can use the relatively simple import/export method to carry out database migration.
 
-1\. Sign in to the Azure Management Portal, and create a new MySQL server on MySQL Database on Azure. Complete the necessary configuration steps, such as the daily backup time. For the specific steps involved, see: http://www.windowsazure.cn/documentation/articles/mysql-database-get-started#step1.
+1\. Sign in to the Azure Management Portal, and create a new MySQL server on MySQL Database on Azure. Complete the necessary configuration steps, such as the daily backup time. For the specific steps involved, see: http://www.windowsazure.cn/documentation/articles/mysql-database-get-started/#step1.
 
 
-2\. Use the Azure Management Portal to create the target database that you want to migrate to on the newly created MySQL server. For the specific steps involved, see http://www.windowsazure.cn/documentation/articles/mysql-database-get-started#step4.
+2\. Use the Azure Management Portal to create the target database that you want to migrate to on the newly created MySQL server. For the specific steps involved, see http://www.windowsazure.cn/documentation/articles/mysql-database-get-started/#step4.
 
 
 3\. If you have multiple database accounts that need to access the original database, you must create the corresponding accounts on the new database server using Azure Management Portal.
@@ -84,7 +84,7 @@ Database import and export is relatively simple, but involves a relatively long 
 
 ## Common issues with database migration:
 ### An error message saying “Access denied; you need (at least one of) the SUPER privilege(s) for this operation” is reported during the TRIGGER, PROCEDURE, VIEW, FUNCTION, or EVENT import process.
-Check whether the statement reporting the error uses DEFINER and uses users other than the current user (for example DEFINER=user@host). If this is the case, MySQL requires SUPER privileges to execute this statement. MySQL Database on Azure does not provide user SUPER privileges (see [Service limitations](http://www.windowsazure.cn/documentation/articles/mysql-database-operation-limitation)), causing an error. To resolve this error, delete DEFINER from the statement and use the default current user.
+Check whether the statement reporting the error uses DEFINER and uses users other than the current user (for example DEFINER=user@host). If this is the case, MySQL requires SUPER privileges to execute this statement. MySQL Database on Azure does not provide user SUPER privileges (see [Service limitations](http://www.windowsazure.cn/documentation/articles/mysql-database-operation-limitation/)), causing an error. To resolve this error, delete DEFINER from the statement and use the default current user.
 
 ### Given that MySQL Database on Azure’s Management Portal only supports configuring user read/write privileges for the entire database, will the migration still succeed if my existing database has more detailed user privilege settings?
 Yes. Although the Azure Management Portal and Windows PowerShell/REST API only supports setting read/write privileges for the entire database when you create users or databases, you can use the **grant** command to fine-tune user privilege settings.

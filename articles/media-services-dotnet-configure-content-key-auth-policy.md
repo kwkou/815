@@ -23,7 +23,7 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 
 媒体服务还提供了一个**密钥\\许可证传送服务**，客户端可从中获取 AES 密钥或 PlayReady/Widevine 许可证，以用于播放加密的内容。
 
-如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-dotnet-create-contentkey)所述），并且配置密钥的授权策略（如本文所述）。
+如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-dotnet-create-contentkey/)所述），并且配置密钥的授权策略（如本文所述）。
 
 当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 DRM 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
 
@@ -41,8 +41,8 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 
 ###请注意以下事项：
 
-- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。 
-- 你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset)。  
+- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。 
+- 你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。  
 - 使用 **AssetCreationOptions.StorageEncrypted** 选项上载资产并对其进行编码。
 - 如果你打算创建需要相同策略配置的多个内容密钥，我们强烈建议你创建单个授权策略，并将其重复用于多个内容密钥。
 - 密钥传送服务将 ContentKeyAuthorizationPolicy 及其相关对象（策略选项和限制）缓存 15 分钟。如果你创建 ContentKeyAuthorizationPolicy 并指定使用“令牌”限制，然后对其进行测试，再将策略更新为“开放”限制，则现有策略切换到“开放”版本的策略需要大约 15 分钟。
@@ -234,9 +234,9 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 
 媒体服务允许你配置相应的权限和限制，以便在用户尝试播放受保护的内容时，PlayReady DRM 运行时会强制实施这些权限和限制。
 
-使用 PlayReady 保护你的内容时，需要在授权策略中指定的项目之一是用于定义 [PlayReady 许可证模板](/documentation/articles/media-services-playready-license-template-overview)的 XML 字符串。在适用于 .NET 的媒体服务 SDK 中，**PlayReadyLicenseResponseTemplate** 和 **PlayReadyLicenseTemplate** 类将帮助你定义 PlayReady 许可证模板。
+使用 PlayReady 保护你的内容时，需要在授权策略中指定的项目之一是用于定义 [PlayReady 许可证模板](/documentation/articles/media-services-playready-license-template-overview/)的 XML 字符串。在适用于 .NET 的媒体服务 SDK 中，**PlayReadyLicenseResponseTemplate** 和 **PlayReadyLicenseTemplate** 类将帮助你定义 PlayReady 许可证模板。
 
-[本主题](/documentation/articles/media-services-protect-with-drm)演示如何使用 **PlayReady** 和 **Widevine** 加密你的内容。
+[本主题](/documentation/articles/media-services-protect-with-drm/)演示如何使用 **PlayReady** 和 **Widevine** 加密你的内容。
 
 ###开放限制
 	
@@ -430,7 +430,7 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 
 
 ##后续步骤
-在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)主题。
+在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)主题。
  
 
 <!---HONumber=Mooncake_0509_2016-->

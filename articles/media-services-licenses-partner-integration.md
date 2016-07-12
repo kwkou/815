@@ -22,12 +22,12 @@ Azure 媒体服务可让你传送使用 Widevine DRM 保护的 MPEG DASH，这�
 
 ##castLabs
 
-可以使用 [castLabs](http://castlabs.com/company/partners/azure/) 来传送 Widevine 许可证。有关详细信息，请参阅[使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration)
+可以使用 [castLabs](http://castlabs.com/company/partners/azure/) 来传送 Widevine 许可证。有关详细信息，请参阅[使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration/)
 
 
 ##另请参阅
 
-[使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm)
+[使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm/)
 
 [Mingfei 的博客](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
 

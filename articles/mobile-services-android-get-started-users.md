@@ -89,7 +89,7 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[移动服务入门]: /documentation/articles/mobile-services-android-get-started
+[移动服务入门]: /documentation/articles/mobile-services-android-get-started/
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 
 <!---HONumber=Mooncake_0118_2016-->

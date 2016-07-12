@@ -29,7 +29,7 @@
 
 **读取访问地域冗余(RA-GRS)**：读取访问地域冗余存储将你的数据复制到一个辅助地理位置，同时提供对你在辅助位置中的数据的读访问权限。读取访问地域冗余存储允许你从主位置或辅助位置访问数据，以防其中一个位置不可用。
 
-更多详细请阅读[这篇文章](/documentation/articles/storage-redundancy)
+更多详细请阅读[这篇文章](/documentation/articles/storage-redundancy/)
 
 ###存储和容器的命名规则###
 Azure存储的命名规则可以阅读[这篇文章](http://blogs.msdn.com/b/jmstall/archive/2014/06/12/azure-storage-naming-rules.aspx)，文章包含了Azure存储中所涉及的Blob、Table、Queue的命名规则。

@@ -15,8 +15,8 @@
 # Azure 通知中心安全推送
 
 > [AZURE.SELECTOR]
-- [Windows Universal](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push)
-- [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push)
+- [Windows Universal](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push/)
+- [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/)
 
 
 
@@ -37,9 +37,9 @@
 
 请务必注意，在之前的流程（以及本教程中）中，我们假设此设备会在用户登录后在本地存储中存储身份验证令牌。这可以保证完全无缝的体验，因为该设备可以使用此令牌检索通知的安全有效负载。如果您的应用程序未在设备上存储身份验证令牌，或者如果这些令牌可能已过期，此设备应用在收到通知时应显示提示用户启动应用的通用通知。然后，应用对用户进行身份验证并显示通知有效负载。
 
-本安全推送教程演示如何安全地发送推送通知。本教程以[通知用户](/documentation/articles/notification-hubs-aspnet-backend-ios-notify-users)教程为基础，因此您应该先完成该教程中的步骤。
+本安全推送教程演示如何安全地发送推送通知。本教程以[通知用户](/documentation/articles/notification-hubs-aspnet-backend-ios-notify-users/)教程为基础，因此您应该先完成该教程中的步骤。
 
-> [AZURE.NOTE]本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-get-started) 中所述创建并配置了通知中心。
+> [AZURE.NOTE]本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-get-started/) 中所述创建并配置了通知中心。
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush.md)]
 

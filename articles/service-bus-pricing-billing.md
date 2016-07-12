@@ -13,9 +13,9 @@
 
 # 服务总线定价和计费
 
-服务总线推出基本、标准和[高级](/documentation/articles/service-bus-premium-messaging)三种层级。你可以为你创建的每个服务总线服务命名空间选择一个服务层，所选的服务层可应用于在该命名空间中创建的所有队列、主题/订阅、中继和事件中心。
+服务总线推出基本、标准和[高级](/documentation/articles/service-bus-premium-messaging/)三种层级。你可以为你创建的每个服务总线服务命名空间选择一个服务层，所选的服务层可应用于在该命名空间中创建的所有队列、主题/订阅、中继和事件中心。
 
->[AZURE.NOTE] 有关当前服务总线定价的详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/service-bus/)和[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq)。
+>[AZURE.NOTE] 有关当前服务总线定价的详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/service-bus/)和[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq/)。
 
 服务总线使用以下两种测定仪用于队列和主题/订阅：
 
@@ -140,7 +140,7 @@
 
 - 有关服务总线定价的更多详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/service-bus/)。
 
-- 有关服务总线定价和计费的一些常见问题，请参阅[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq)。
+- 有关服务总线定价和计费的一些常见问题，请参阅[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq/)。
 
 [Azure 管理门户]: http://manage.windowsazure.cn
 

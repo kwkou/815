@@ -33,7 +33,7 @@ Blob 快照是在某个时间点捕获的 Blob 只读版本。在创建快照后
 
 ### 使用快照备份磁盘
 
-作为虚拟机磁盘的备份策略，你可以创建磁盘或页 Blob 的定期快照，并使用[复制 Blob](https://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 操作或 [AzCopy](/documentation/articles/storage-use-azcopy) 之类的工具将其复制到另一个存储帐户。你可将快照复制到具有不同名称的目标页 Blob。生成的目标页 Blob 是可编写的页 Blob，而不是快照。本文稍后将介绍使用快照创建虚拟机磁盘备份的步骤。
+作为虚拟机磁盘的备份策略，你可以创建磁盘或页 Blob 的定期快照，并使用[复制 Blob](https://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 操作或 [AzCopy](/documentation/articles/storage-use-azcopy/) 之类的工具将其复制到另一个存储帐户。你可将快照复制到具有不同名称的目标页 Blob。生成的目标页 Blob 是可编写的页 Blob，而不是快照。本文稍后将介绍使用快照创建虚拟机磁盘备份的步骤。
 
 ### 使用快照还原磁盘
 
@@ -85,7 +85,7 @@ Blob 快照是在某个时间点捕获的 Blob 只读版本。在创建快照后
 
 假设在某个 DS 系列 Azure VM 上附加了一个高级存储 P30 磁盘。名为 mypremiumdisk 的 P30 磁盘存储在名为 mypremiumaccount 的高级存储帐户中。名为 mybackupstdaccount 的标准存储帐户用于存储 mypremiumdisk 的备份。我们希望每隔 12 小时保留 mypremiumdisk 的一个快照。
 
-若要了解如何创建存储帐户和磁盘，请参阅 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)。
+若要了解如何创建存储帐户和磁盘，请参阅 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)。
 
 若要了解如何备份 Azure VM，请参阅 [Plan Azure VM backups（规划 Azure VM 备份）](/documentation/articles//backup-azure-vms-introduction)。
 

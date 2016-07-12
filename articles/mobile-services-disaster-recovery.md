@@ -107,10 +107,10 @@
 [SQL 数据库业务连续性指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
 [Github]: https://github.com/
-[源代码管理功能]: /documentation/articles/mobile-services-store-scripts-source-control
-[使用 Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface
+[源代码管理功能]: /documentation/articles/mobile-services-store-scripts-source-control/
+[使用 Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface/
 [Azure 经典门户]: http://manage.windowsazure.cn/
 [Azure 服务仪表板]: /zh-cn/support/service-dashboard/
-[使用 Azure CLI 自动操作移动服务]: /documentation/articles/mobile-services-manage-command-line-interface
+[使用 Azure CLI 自动操作移动服务]: /documentation/articles/mobile-services-manage-command-line-interface/
 
 <!---HONumber=Mooncake_0118_2016-->

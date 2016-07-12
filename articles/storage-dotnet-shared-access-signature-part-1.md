@@ -18,7 +18,7 @@
 
 ## 概述
 
-使用共享访问签名 (SAS) 是将对你的存储帐户中对象的受限访问权限授予其他客户端且不必公开帐户密钥的一种强大方法。在有关共享访问签名的教程的第 1 部分中，我们将概要介绍 SAS 模型并复习 SAS 最佳实践。本教程的[第 2 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-2)将逐步引导你完成使用 Blob 服务创建共享访问签名的过程。
+使用共享访问签名 (SAS) 是将对你的存储帐户中对象的受限访问权限授予其他客户端且不必公开帐户密钥的一种强大方法。在有关共享访问签名的教程的第 1 部分中，我们将概要介绍 SAS 模型并复习 SAS 最佳实践。本教程的[第 2 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)将逐步引导你完成使用 Blob 服务创建共享访问签名的过程。
 
 ## 什么是共享访问签名？
 
@@ -68,7 +68,7 @@ Azure 存储空间的版本 2015-04-05 引入了一种新的共享访问签名�
 - **开始时间。** 这是 SAS 生效的时间。共享访问签名的开始时间是可选的；如果省略，SAS 将立即生效。 
 - **到期时间。** 这是之后 SAS 将不再有效的时间。最佳实践建议你或者为 SAS 指定到期时间，或者将其与某一存储访问策略相关联（有关更多信息，请参见下文）。
 - **权限。** 对 SAS 指定的权限指示客户端可使用 SAS 对存储资源执行哪些操作。帐户 SAS 和服务 SAS 提供的权限不同。
-- **IP。** 一个可选参数，它指定 Azure 外部要从中接受请求的一个 IP 地址或 IP 地址范围（有关 Express Route，请参阅[路由会话配置状态](/documentation/articles/expressroute-workflows#routing-session-configuration-state)部分）。 
+- **IP。** 一个可选参数，它指定 Azure 外部要从中接受请求的一个 IP 地址或 IP 地址范围（有关 Express Route，请参阅[路由会话配置状态](/documentation/articles/expressroute-workflows/#routing-session-configuration-state)部分）。 
 - **协议。** 一个可选参数，它指定请求允许的协议。可能的值包括“HTTPS 和 HTTP”(https,http)（它是默认值）或者“仅限 HTTPS”(https)。请注意，“仅限 HTTP”是不允许的值。
 - **签名。** 签名由指定为部分令牌的其他参数构造，然后进行加密。它用于对 SAS 进行身份验证。
 
@@ -306,9 +306,9 @@ Name|SAS 部分|说明
 
 ## 后续步骤 ##
 
-- [共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2)
-- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
-- [管理对容器和 blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources)
+- [共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)
+- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
+- [管理对容器和 blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)
 - [使用共享的访问签名委托访问](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 - [介绍表和队列 SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
 [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png

@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-dotnet-backend-ios-get-started)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
+本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-dotnet-backend-ios-get-started/)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
 
 [AZURE.INCLUDE [启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
 
@@ -114,13 +114,13 @@
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
-[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
-[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
+[Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview/
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news/
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news/
 
 <!---HONumber=Mooncake_0215_2016-->

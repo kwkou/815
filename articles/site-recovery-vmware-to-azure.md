@@ -26,11 +26,11 @@
 
 ## 什么是 Azure Site Recovery？
 
-Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。阅读有关 [Azure Site Recovery](/documentation/articles/site-recovery-overview) 的详细信息。
+Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。阅读有关 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 的详细信息。
 
 ## 它如何保护本地资源？
 
-站点恢复可以通过在许多[部署方案](/documentation/articles/site-recovery-overview)中协调、简化复制、故障转移和故障回复，来帮助保护本地资源。如果你想要保护本地 VMware 虚拟机或者 Windows 或 Linux 物理服务器，站点恢复可为你提供以下帮助：
+站点恢复可以通过在许多[部署方案](/documentation/articles/site-recovery-overview/)中协调、简化复制、故障转移和故障回复，来帮助保护本地资源。如果你想要保护本地 VMware 虚拟机或者 Windows 或 Linux 物理服务器，站点恢复可为你提供以下帮助：
 
 - 允许 VMware 用户将虚拟机复制到 Azure。
 - 允许将本地物理服务器复制到 Azure。
@@ -58,9 +58,9 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 **本地计算机** | 本地虚拟机是在 VMware 虚拟机监控程序上运行的虚拟机，或是运行 Windows 或 Linux 的物理服务器。 | 你可以设置应用于虚拟机和服务器的复制设置。你可以故障转移单个计算机，或更常见地，随着包含多个虚拟机的恢复方案一起故障转移。
 **移动服务** | <p>在想要保护的每个虚拟机或物理服务器上安装</p><p>为服务器启用保护时，可以手动安装或推送并由进程服务器自动安装。</p> | 移动服务随着初始复制（重新同步处理）将数据发送到进程服务器。 一旦服务器进入受保护状态（重新同步处理完成之后），移动服务将执行写入磁盘的内存中捕获，并将其发送到进程服务器。Windows 服务器的应用程序一致性是使用 VSS 框架实现的。
 **Azure Site Recovery 保管库** | 在订阅站点恢复服务之后设置。 | 在站点恢复保管库中注册服务器。保管库可协调和安排本地站点与 Azure 之间的数据复制、故障转移和恢复。
-**复制机制** | <p>**通过 Internet** — 通过公共 Internet 连接使用安全 SSL/TLS 通信通信并从受保护的本地服务器和 Azure 复制数据。这是默认选项。</p><p>VPN/ExpressRoute — 通过 VPN 连接通信并在本地服务器与 Azure 之间复制数据。你将需要在本地站点与 Azure 网络之间设置站点到站点 VPN 或 [ExpressRoute](/documentation/articles/expressroute-introduction) 连接。</p><p>需选择要在站点恢复部署期间复制的方式。配置机制后，你无法在不影响已受保护服务器上的保护的前提下更改该机制。</p>| <p>无论是哪个选项，都不需要你在受保护的计算机上打开任何入站网络端口。所有网络通信都从本地站点启动。</p> 
+**复制机制** | <p>**通过 Internet** — 通过公共 Internet 连接使用安全 SSL/TLS 通信通信并从受保护的本地服务器和 Azure 复制数据。这是默认选项。</p><p>VPN/ExpressRoute — 通过 VPN 连接通信并在本地服务器与 Azure 之间复制数据。你将需要在本地站点与 Azure 网络之间设置站点到站点 VPN 或 [ExpressRoute](/documentation/articles/expressroute-introduction/) 连接。</p><p>需选择要在站点恢复部署期间复制的方式。配置机制后，你无法在不影响已受保护服务器上的保护的前提下更改该机制。</p>| <p>无论是哪个选项，都不需要你在受保护的计算机上打开任何入站网络端口。所有网络通信都从本地站点启动。</p> 
 
-可以在[站点恢复组件](/documentation/articles/site-recovery-components)中深入了解站点恢复组件、提供程序和代理。
+可以在[站点恢复组件](/documentation/articles/site-recovery-components/)中深入了解站点恢复组件、提供程序和代理。
 
 ##<a id="capacity-planning"></a> 容量规划
 
@@ -76,8 +76,8 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 - **每个主目标服务器的源数目** — 可以使用单个主目标服务器保护多个源计算机。但是，无法通过多个主目标服务器保护单个计算机，因为在磁盘复制时，镜像磁盘大小的 VHD 在 Azure Blob 存储上创建，并作为数据磁盘附加到主目标服务器。  
 - **每个源的每日更改率上限** — 考虑每个源建议的更改率时，有三个需要考虑的因素。对于基于目标的考虑因素，源上每个操作的目标磁盘需要两个 IOPS。这是因为目标磁盘上会发生旧数据的读取和新数据的写入。 
 	- **进程服务器支持的每日更改率** — 一个源计算机不能跨多个进程服务器。单个进程服务器可以支持多达 1 TB 的每日更改率。因此 1 TB 是源计算机支持的每日数据更改率上限。 
-	- **目标磁盘支持的最大吞吐量** — 每个源磁盘的最大变换不能超过 144 GB/天（8K 写入大小）。请参阅主目标部分中的表，以获取各种写入大小的目标的吞吐量与 IOPS。必须将此数字除以 2，因为每个源 IOP 在目标磁盘上生成 2 个 IOPS。配置高级存储帐户的目标时，请参阅[使用高级存储时的缩放性和性能目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)。
-	- **存储帐户支持的最大吞吐量** — 一个源不能跨越多个存储帐户。假设某个存储帐户每秒可接受最多 20,000 个请求，并且每个源 IOP 在主目标服务器上生成 2 个 IOPS，则建议将源的 IOPS 数目保留为 10,000。配置高级存储帐户的源时，请参阅[使用高级存储时的缩放性和性能目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)。
+	- **目标磁盘支持的最大吞吐量** — 每个源磁盘的最大变换不能超过 144 GB/天（8K 写入大小）。请参阅主目标部分中的表，以获取各种写入大小的目标的吞吐量与 IOPS。必须将此数字除以 2，因为每个源 IOP 在目标磁盘上生成 2 个 IOPS。配置高级存储帐户的目标时，请参阅[使用高级存储时的缩放性和性能目标](/documentation/articles/storage-scalability-targets/#scalability-targets-for-premium-storage-accounts)。
+	- **存储帐户支持的最大吞吐量** — 一个源不能跨越多个存储帐户。假设某个存储帐户每秒可接受最多 20,000 个请求，并且每个源 IOP 在主目标服务器上生成 2 个 IOPS，则建议将源的 IOPS 数目保留为 10,000。配置高级存储帐户的源时，请参阅[使用高级存储时的缩放性和性能目标](/documentation/articles/storage-scalability-targets/#scalability-targets-for-premium-storage-accounts)。
 
 ### 有关组件服务器的注意事项
 
@@ -138,7 +138,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 主目标服务器的容量规划取决于：
 
 - Azure 存储空间性能和限制
-	- 单个存储帐户中标准层 VM 的高度使用的磁盘数目上限约为 40（每个磁盘 20,000/500 IOPS）。有关详细信息，请参阅[标准存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-standard-storage-accounts)。有关高级存储帐户的详细信息，请参阅[高级存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)。
+	- 单个存储帐户中标准层 VM 的高度使用的磁盘数目上限约为 40（每个磁盘 20,000/500 IOPS）。有关详细信息，请参阅[标准存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets/#scalability-targets-for-standard-storage-accounts)。有关高级存储帐户的详细信息，请参阅[高级存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets/#scalability-targets-for-premium-storage-accounts)。
 -	每日更改率 
 -	保留卷存储。
 
@@ -159,10 +159,10 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 **组件** | **要求** | **详细信息**
 --- | --- | --- 
 **Azure 帐户** | 你将需要一个 [Azure](/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
-**Azure 存储空间** | <p>需要使用 Azure 存储帐户来存储复制的数据</p><p>该帐户应该是[标准异地冗余存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)或[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal)。</p><p>它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。</p><p>若要了解详细信息，请阅读 [Azure 存储简介](/documentation/articles/storage-introduction)</p>
+**Azure 存储空间** | <p>需要使用 Azure 存储帐户来存储复制的数据</p><p>该帐户应该是[标准异地冗余存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)或[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal/)。</p><p>它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。</p><p>若要了解详细信息，请阅读 [Azure 存储简介](/documentation/articles/storage-introduction/)</p>
 **Azure 虚拟网络** | 你将需要 Azure 虚拟网络，配置服务器和主目标服务器将部署在该网络上。它应该位于 Azure Site Recovery 保管库所在的订阅和区域中。如果你要通过 ExpressRoute 或 VPN 连接复制数据，Azure 虚拟网络必须通过 ExpressRoute 连接或站点到站点 VPN 连接到本地网络。
-**Azure 资源** | 确保你有足够的 Azure 资源用于部署所有组件。在 [Azure 订阅限制](/documentation/articles/azure-subscription-service-limits)中阅读更多内容。
-**Azure 虚拟机** | <p>要保护的虚拟机应该符合 [Azure 先决条件](/documentation/articles/site-recovery-best-practices)。</p><p>磁盘计数 — 单个受保护的服务器最多可以支持 31 个磁盘</p><p>**磁盘大小** — 单个磁盘的容量不能超过 1023 GB</p><p>**群集** — 不支持群集服务器</p><p>**启动** — 不支持统一可扩展固件接口 (UEFI)/可扩展固件接口 (EFI)</p><p>**卷** — 不支持 Bitlocker 加密卷</p><p>**服务器名称** — 名称应包含 1 到 63 个字符（字母、数字和连字符）。名称必须以字母或数字开头，并以字母或数字结尾。在计算机受到保护后，你可以修改 Azure 名称。</p>
+**Azure 资源** | 确保你有足够的 Azure 资源用于部署所有组件。在 [Azure 订阅限制](/documentation/articles/azure-subscription-service-limits/)中阅读更多内容。
+**Azure 虚拟机** | <p>要保护的虚拟机应该符合 [Azure 先决条件](/documentation/articles/site-recovery-best-practices/)。</p><p>磁盘计数 — 单个受保护的服务器最多可以支持 31 个磁盘</p><p>**磁盘大小** — 单个磁盘的容量不能超过 1023 GB</p><p>**群集** — 不支持群集服务器</p><p>**启动** — 不支持统一可扩展固件接口 (UEFI)/可扩展固件接口 (EFI)</p><p>**卷** — 不支持 Bitlocker 加密卷</p><p>**服务器名称** — 名称应包含 1 到 63 个字符（字母、数字和连字符）。名称必须以字母或数字开头，并以字母或数字结尾。在计算机受到保护后，你可以修改 Azure 名称。</p>
 **配置服务器** | <p>将在你的订阅中针对配置服务器创建基于 Azure Site Recovery Windows Server 2012 R2 库映像的标准 A3 虚拟机。它将作为第一个实例在新的云服务中创建。如果你选择“公共 Internet”作为配置服务器的连接类型，将使用保留的公共 IP 地址创建云服务。</p><p>安装路径应该只包含英文字符。</p>
 **主目标服务器** | <p>标准 A4、D14 或 DS4 Azure 虚拟机。</p><p>安装路径应该只包含英文字符。例如，对于运行 Linux 的主目标服务器，路径应为 **/usr/local/ASR**。</p>
 **进程服务器** | <p>你可以在运行带有最新更新的 Windows Server 2012 R2 的物理或虚拟机上部署进程服务器。在 C:/ 上安装。</p><p>我们建议你将该服务器放置在你要保护的计算机所在的网络和子网上。</p><p>在进程服务器上安装 VMware vSphere CLI 5.5.0。进程服务器上需要有 VMware vSphere CLI 组件才能发现 vCenter 服务器管理的虚拟机或 ESXi 主机上运行的虚拟机。</p><p>安装路径应该只包含英文字符。</p><p>不支持 ReFS 文件系统。</p>
@@ -249,7 +249,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
     >[AZURE.WARNING]请勿删除在配置服务器部署期间创建的任何终结点的公用或专用端口号。
 
-配置服务器使用保留的 IP 地址部署在自动创建的 Azure 云服务中。需要使用保留的地址确保云服务上的虚拟机（包括配置服务器）在重新启动后，配置服务器云服务 IP 地址仍然相同。在停用配置服务器后，必须手动将保留的公共 IP 地址取消保留，否则会继续保留。每个订阅保留的公共 IP 地址数默认限制为 20 个。[详细了解](/documentation/articles/virtual-networks-reserved-private-ip)有关保留 IP 地址的信息。
+配置服务器使用保留的 IP 地址部署在自动创建的 Azure 云服务中。需要使用保留的地址确保云服务上的虚拟机（包括配置服务器）在重新启动后，配置服务器云服务 IP 地址仍然相同。在停用配置服务器后，必须手动将保留的公共 IP 地址取消保留，否则会继续保留。每个订阅保留的公共 IP 地址数默认限制为 20 个。[详细了解](/documentation/articles/virtual-networks-reserved-private-ip/)有关保留 IP 地址的信息。
 
 ### 在保管库中注册配置服务器
 
@@ -345,7 +345,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 请注意，任何子网中的前四个 IP 地址保留给 Azure 内部使用。请指定任何其他可用的 IP 地址。
 
->[AZURE.NOTE]使用[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal)为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“标准 DS4”。
+>[AZURE.NOTE]使用[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal/)为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“标准 DS4”。
 
 
 3. Windows 主目标服务器虚拟机使用以下终结点创建：（仅当部署类型是“公共 Internet”时，才创建公开终结点）：
@@ -663,7 +663,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 	![添加 V-Center 服务器](./media/site-recovery-vmware-to-azure/ASRVMWare_SelectVMs.png)
 
-4. 在“指定目标资源”中选择用于复制的主目标服务器和存储，并选择是否应将设置用于所有工作负荷。为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“高级存储帐户”。[](/documentation/articles/storage-premium-storage-preview-portal)如果你希望工作负荷磁盘使用高级存储帐户，则需使用 DS 系列的主目标。非 DS 系列的主目标无法使用高级存储磁盘。
+4. 在“指定目标资源”中选择用于复制的主目标服务器和存储，并选择是否应将设置用于所有工作负荷。为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“高级存储帐户”。[](/documentation/articles/storage-premium-storage-preview-portal/)如果你希望工作负荷磁盘使用高级存储帐户，则需使用 DS 系列的主目标。非 DS 系列的主目标无法使用高级存储磁盘。
 
 	![vCenter 服务器](./media/site-recovery-vmware-to-azure/ASRVMWare_MachinesResources.png)
 
@@ -717,11 +717,11 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 	![配置恢复计划](./media/site-recovery-vmware-to-azure/ASRVMWare_RP1.png)
 
-2. 在“选择虚拟机”中，选择保护组，然后选择该组中要添加到恢复计划的计算机。[详细了解](/documentation/articles/site-recovery-create-recovery-plans)恢复计划。
+2. 在“选择虚拟机”中，选择保护组，然后选择该组中要添加到恢复计划的计算机。[详细了解](/documentation/articles/site-recovery-create-recovery-plans/)恢复计划。
 
 	![添加虚拟机](./media/site-recovery-vmware-to-azure/ASRVMWare_RP2.png)
 
-3. 如果需要，你可以自定义该计划以创建组，并排列顺序，恢复计划中的计算机以该顺序进行故障转移。你还可以添加手动操作和脚本的提示。在恢复到 Azure 时，可以使用 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation) 添加脚本。
+3. 如果需要，你可以自定义该计划以创建组，并排列顺序，恢复计划中的计算机以该顺序进行故障转移。你还可以添加手动操作和脚本的提示。在恢复到 Azure 时，可以使用 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation/) 添加脚本。
 
 4. 在“恢复计划”页中，选择该计划，然后单击“非计划的故障转移”。
 5. 在“确认故障转移”中，验证故障转移方向（到 Azure），然后选择要故障转移到的恢复点。
@@ -732,7 +732,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 ## 步骤 11：故障回复 Azure 中已故障转移的计算机
 
-[详细了解](/documentation/articles/site-recovery-failback-azure-to-vmware-classic-legacy)如何将 Azure 中运行的已故障转移的计算机恢复到本地环境。
+[详细了解](/documentation/articles/site-recovery-failback-azure-to-vmware-classic-legacy/)如何将 Azure 中运行的已故障转移的计算机恢复到本地环境。
 
 
 ## 管理进程服务器

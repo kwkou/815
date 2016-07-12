@@ -72,7 +72,7 @@
    
 ##另请参阅 
 
-[交付流内容](/documentation/articles/media-services-deliver-streaming-content)
+[交付流内容](/documentation/articles/media-services-deliver-streaming-content/)
 
 
 <!---HONumber=Mooncake_0613_2016-->

@@ -18,24 +18,24 @@
 # Azure Windows VM 扩展配置示例
 
 > [AZURE.SELECTOR]
-- [PowerShell - Template](/documentation/articles/virtual-machines-windows-extensions-configuration-samples)
-- [CLI - Template](/documentation/articles/virtual-machines-linux-extensions-configuration-samples)
+- [PowerShell - Template](/documentation/articles/virtual-machines-windows-extensions-configuration-samples/)
+- [CLI - Template](/documentation/articles/virtual-machines-linux-extensions-configuration-samples/)
 
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 <br>
 
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
 
 
 本文提供为 Windows VM 配置 Azure VM 扩展的示例配置。
 
 
-若要了解有关这些扩展的详细信息，请参阅 [Azure VM 扩展概述。](/documentation/articles/virtual-machines-windows-extensions-features)
+若要了解有关这些扩展的详细信息，请参阅 [Azure VM 扩展概述。](/documentation/articles/virtual-machines-windows-extensions-features/)
 
-若要了解有关创作扩展模板的详细信息，请参阅[创作扩展模板。](/documentation/articles/virtual-machines-windows-extensions-authoring-templates)
+若要了解有关创作扩展模板的详细信息，请参阅[创作扩展模板。](/documentation/articles/virtual-machines-windows-extensions-authoring-templates/)
 
 本文列出了一些 Windows 扩展的预期配置值。
 
@@ -339,7 +339,7 @@
 
 ### Azure 诊断
 
-有关如何配置诊断的更多详细信息，请参阅 [Azure 诊断扩展](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)
+有关如何配置诊断的更多详细信息，请参阅 [Azure 诊断扩展](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
 
           {
             "publisher": "Microsoft.Azure.Diagnostics",

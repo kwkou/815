@@ -28,17 +28,17 @@
 
 支持以下跨界连接：
 
-- [站点到站点](/documentation/articles/vpn-gateway-site-to-site-create) – 基于 IPsec（IKE v1 和 IKE v2）的 VPN 连接。此类型的连接需要 VPN 设备或 RRAS。
+- [站点到站点](/documentation/articles/vpn-gateway-site-to-site-create/) – 基于 IPsec（IKE v1 和 IKE v2）的 VPN 连接。此类型的连接需要 VPN 设备或 RRAS。
 
-- [点到站点](/documentation/articles/vpn-gateway-point-to-site-create) – 基于 SSTP（安全套接字隧道协议）的 VPN 连接。此连接不需要 VPN 设备。
+- [点到站点](/documentation/articles/vpn-gateway-point-to-site-create/) – 基于 SSTP（安全套接字隧道协议）的 VPN 连接。此连接不需要 VPN 设备。
 
-- [VNet 到 VNet](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection) – 这种连接类型与站点到站点配置相同。VNet 到 VNet 是一种基于 IPsec（IKE v1 和 IKE v2）的 VPN 连接。它不需要 VPN 设备。
+- [VNet 到 VNet](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/) – 这种连接类型与站点到站点配置相同。VNet 到 VNet 是一种基于 IPsec（IKE v1 和 IKE v2）的 VPN 连接。它不需要 VPN 设备。
 
-- [多站点](/documentation/articles/vpn-gateway-multi-site) – 这是站点到站点配置的变体，可以让你将多个本地站点连接到虚拟网络。
+- [多站点](/documentation/articles/vpn-gateway-multi-site/) – 这是站点到站点配置的变体，可以让你将多个本地站点连接到虚拟网络。
 
-- [ExpressRoute](/documentation/articles/expressroute-introduction) – ExpressRoute 可以从你的 WAN 直接连接到 Azure，不需要通过公共 Internet。有关详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)和 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
+- [ExpressRoute](/documentation/articles/expressroute-introduction/) – ExpressRoute 可以从你的 WAN 直接连接到 Azure，不需要通过公共 Internet。有关详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)和 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
-有关跨界连接的详细信息，请参阅[关于安全跨界连接](/documentation/articles/vpn-gateway-cross-premises-options)。
+有关跨界连接的详细信息，请参阅[关于安全跨界连接](/documentation/articles/vpn-gateway-cross-premises-options/)。
 
 ### 站点到站点连接和点到站点连接的区别是什么？
 
@@ -48,7 +48,7 @@
 
 你可以将虚拟网络配置为同时使用站点到站点连接和点到站点连接，前提是使用基于路由的 VPN 类型为网关创建站点到站点连接。在经典部署模型中，基于路由的 VPN 类型称为动态网关。
 
-有关详细信息，请参阅[关于虚拟网络的安全跨界连接](/documentation/articles/vpn-gateway-cross-premises-options)。
+有关详细信息，请参阅[关于虚拟网络的安全跨界连接](/documentation/articles/vpn-gateway-cross-premises-options/)。
 
 ### 什么是 ExpressRoute？
 
@@ -56,13 +56,13 @@
 
 与通过 Internet 的典型连接相比，ExpressRoute 连接提供更好的安全性、更多的可靠性、更高的带宽和更少的延迟。在某些情况下，使用 ExpressRoute 连接在本地网络和 Azure 之间传输数据还可以产生显著的成本效益。如果你已创建从本地网络到 Azure 的跨界连接，则可以在不改动虚拟网络的情况下迁移到 ExpressRoute 连接。
 
-有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
+有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
 ## 站点到站点连接和 VPN 设备
 
 ### 选择 VPN 设备时应考虑什么？
 
-我们在与设备供应商合作的过程中验证了一系列的标准站点到站点 VPN 设备。可在[此处](/documentation/articles/vpn-gateway-about-vpn-devices)找到已知兼容的 VPN 设备及其相应的配置说明/示例和设备规范的列表。设备系列中列为已知兼容设备的所有设备都应适用于虚拟网络。若要获取配置 VPN 设备的帮助，请参考对应于各设备系列的设备配置示例或链接。
+我们在与设备供应商合作的过程中验证了一系列的标准站点到站点 VPN 设备。可在[此处](/documentation/articles/vpn-gateway-about-vpn-devices/)找到已知兼容的 VPN 设备及其相应的配置说明/示例和设备规范的列表。设备系列中列为已知兼容设备的所有设备都应适用于虚拟网络。若要获取配置 VPN 设备的帮助，请参考对应于各设备系列的设备配置示例或链接。
 
 ### 如果已知兼容设备的列表中没有我的 VPN 设备，该怎么办？
 
@@ -174,7 +174,7 @@ Azure VPN 使用 PSK（预共享密钥）身份验证。我们在创建 VPN 网�
 
 ### 能否配置强制隧道？
 
-是的。请参阅[配置强制隧道](/documentation/articles/vpn-gateway-about-forced-tunneling)。
+是的。请参阅[配置强制隧道](/documentation/articles/vpn-gateway-about-forced-tunneling/)。
 
 ### 能否在 Azure 中设置我自己的 VPN 服务器，然后使用它来连接到我的本地网络？
 
@@ -189,7 +189,7 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 
 ### 有关网关类型、要求和吞吐量的详细信息
 
-有关更多信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。
+有关更多信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 
 ##<a name="multi-site-and-vnet-to-vnet-connectivity"></a> 多站点连接和 VNet 到 VNet 连接
 
@@ -244,7 +244,7 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 
 ### 能否将使用 IPsec VPN 的虚拟网络连接到我的 ExpressRoute 线路？
 
-能，系统支持该操作。有关详细信息，请参阅[配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接](/documentation/articles/expressroute-howto-coexist-classic)。
+能，系统支持该操作。有关详细信息，请参阅[配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接](/documentation/articles/expressroute-howto-coexist-classic/)。
 
 ## 跨界连接和 VM
 
@@ -261,7 +261,7 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 
 ## 虚拟网络常见问题解答
 
-请在[虚拟网络常见问题](/documentation/articles/virtual-networks-faq)中查看更多虚拟网络信息。
+请在[虚拟网络常见问题](/documentation/articles/virtual-networks-faq/)中查看更多虚拟网络信息。
 
 ## 后续步骤
 

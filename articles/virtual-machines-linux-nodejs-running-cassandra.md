@@ -15,7 +15,7 @@
 
 # 在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问 
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 概述
 Azure 是一种开放式的云平台，该平台运行 Microsoft 软件和非 Microsoft 软件，其中包括：操作系统、应用程序服务器、消息传递中间件，以及 SQL 数据库和 NoSQL 数据库，采用商业模型和开源模型。在包括 Azure 在内的公共云上构建可复原的服务需要针对应用程序服务器和存储层进行仔细的规划和周到的体系结构设计。Cassandra 具有分布式的存储体系结构，这自然有助于构建可用性高的系统，此类系统在发生群集故障时容错性很强。Cassandra 是云级别的 NoSQL 数据库，由 Apache Software Foundation 在 cassandra.apache.org 上进行维护；Cassandra 是以 Java 编写的，因此可以运行在 Windows 和 Linux 平台上。
@@ -284,7 +284,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 执行以下顺序的操作以捕获映像：
 #####1\.预配
-使用命令“sudo waagent -deprovision+user”删除特定于虚拟机实例的信息。请参阅[如何捕获将用作模板的 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-capture-image)，了解映像捕获过程的详细信息。
+使用命令“sudo waagent -deprovision+user”删除特定于虚拟机实例的信息。请参阅[如何捕获将用作模板的 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-capture-image/)，了解映像捕获过程的详细信息。
 
 #####2：关闭 VM
 确保突出显示该虚拟机，然后单击底部命令栏中的“关闭”链接。
@@ -296,7 +296,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 ##单区域部署过程
 **步骤 1：创建虚拟网络**
-登录到 Azure 经典管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 经典管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
+登录到 Azure 经典管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 经典管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)，以了解此过程的详细步骤。
 
 <table>
 <tr><th>VM 属性名称</th><th>值</th><th>备注</th></tr>
@@ -463,7 +463,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 将利用已完成的单区域部署，并在安装第二个区域时重复相同的过程。单区域部署和多区域部署的主要区别是 VPN 隧道，设置该隧道是为了进行区域间通信；我们一开始将进行网络安装，并完成 VM 预配和 Cassandra 配置。
 
 ###步骤 1：在第二个区域创建虚拟网络
-登录到 Azure 经典管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 经典管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
+登录到 Azure 经典管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 经典管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)，以了解此过程的详细步骤。
 
 <table>
 <tr><th>属性名称    </th><th>值	</th><th>备注</th></tr>
@@ -481,7 +481,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 
 ###步骤 2：创建本地网络
-Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映射到包括私有云或其他 Azure 区域在内的远程站点。此代理地址空间绑定到远程网关，可以将网络路由到正确的网络目标。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)，以获取建立 VNET 到 VNET 连接的说明。
+Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映射到包括私有云或其他 Azure 区域在内的远程站点。此代理地址空间绑定到远程网关，可以将网络路由到正确的网络目标。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)，以获取建立 VNET 到 VNET 连接的说明。
 
 按照以下详细信息创建两个本地网络：
 

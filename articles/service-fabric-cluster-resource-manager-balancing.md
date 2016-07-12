@@ -94,9 +94,9 @@ ClusterManifest.xml
 ![一起平衡服务][Image5]
 
 ## 后续步骤
-- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics)
-- 移动成本是向群集资源管理器发出信号，表示移动某些服务比移动其他服务会产生更高成本的方式之一。若要了解有关移动成本的详细信息，请参阅[此文](/documentation/articles/service-fabric-cluster-resource-manager-movement-cost)
-- 群集资源管理器提供多个限制机制，你可以配置这些限制机制，以减慢群集中的流动。这些限制通常不是必要的，但如果需要，你可以在[此处](/documentation/articles/service-fabric-cluster-resource-manager-advanced-throttling)了解其相关信息
+- 指标是 Service Fabric 群集资源管理器在群集中管理消耗和容量的方式。若要详细了解指标及其配置方式，请查看[此文](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)
+- 移动成本是向群集资源管理器发出信号，表示移动某些服务比移动其他服务会产生更高成本的方式之一。若要了解有关移动成本的详细信息，请参阅[此文](/documentation/articles/service-fabric-cluster-resource-manager-movement-cost/)
+- 群集资源管理器提供多个限制机制，你可以配置这些限制机制，以减慢群集中的流动。这些限制通常不是必要的，但如果需要，你可以在[此处](/documentation/articles/service-fabric-cluster-resource-manager-advanced-throttling/)了解其相关信息
 
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-balancing/cluster-resrouce-manager-balancing-thresholds.png

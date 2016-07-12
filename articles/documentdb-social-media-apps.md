@@ -58,7 +58,7 @@
 
 可以使用单个查询获得，且无需联接。这种方法更简单且更直观，且在预算方面，它所需要的资源更少，但得到的结果更好。
 
-Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/articles/documentdb-indexing)功能进行索引，此功能甚至可以进行[自定义](/documentation/articles/documentdb-indexing-policies)。非结构化数据的方式可以让我们存储具有不同和动态结构的文档，也许明天我们希望帖子上显示一系列类别或与其关联的哈希标记，我们不需要执行任何额外操作，DocumentDB 将自行使用添加的属性处理新文档。
+Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/articles/documentdb-indexing/)功能进行索引，此功能甚至可以进行[自定义](/documentation/articles/documentdb-indexing-policies/)。非结构化数据的方式可以让我们存储具有不同和动态结构的文档，也许明天我们希望帖子上显示一系列类别或与其关联的哈希标记，我们不需要执行任何额外操作，DocumentDB 将自行使用添加的属性处理新文档。
 
 可以将对帖子的评论视为具有父属性的其他帖子（这可以简化我们的对象映射）。
 
@@ -96,9 +96,9 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
         {"relevance":7, "post":"w34r-qeg6-ref6-8565"}
     ]
 
-我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query#where-clause) 向 DocumentDB 发布单个查询以一次性获取帖子的所有页面。
+我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query/#where-clause) 向 DocumentDB 发布单个查询以一次性获取帖子的所有页面。
 
-可以使用 [Azure App Service](/services/app-service/) 的后台处理程序 [Webjobs](/documentation/articles/web-sites-create-web-jobs) 创建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/services/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues)和 Webjobs（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
+可以使用 [Azure App Service](/services/app-service/) 的后台处理程序 [Webjobs](/documentation/articles/web-sites-create-web-jobs/) 创建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/services/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Webjobs（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
 
 通过使用这种相同的技术创建最终一致性环境还可以以延迟方式处理评分和点赞。
 
@@ -164,7 +164,7 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
 
 为什么会这么简单？
 
-Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/library/azure/dn946891.aspx)的内容，这是在数据存储库中挂钩的后台处理程序，可以自动添加、更新或删除索引中的对象。它们支持 [Azure SQL 数据库索引器](https://blogs.msdn.microsoft.com/kaevans/2015/03/06/indexing-azure-sql-database-with-azure-search/)、[Azure Blob 索引器](/documentation/articles/search-howto-indexing-azure-blob-storage)和 [Azure DocumentDB 索引器](/documentation/articles/documentdb-search-indexer)。将信息从 DocumentDB 转换至 Azure 搜索比较简单，因为这两者都采用 JSON 格式存储数据，我们只需[创建索引](/documentation/articles/search-create-index-portal)并映射我们想要编制索引的文档的属性即可，几分钟后（取决于数据的大小），便可通过云基础结构中最好的搜索即服务解决方案搜索所有内容。
+Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/library/azure/dn946891.aspx)的内容，这是在数据存储库中挂钩的后台处理程序，可以自动添加、更新或删除索引中的对象。它们支持 [Azure SQL 数据库索引器](https://blogs.msdn.microsoft.com/kaevans/2015/03/06/indexing-azure-sql-database-with-azure-search/)、[Azure Blob 索引器](/documentation/articles/search-howto-indexing-azure-blob-storage/)和 [Azure DocumentDB 索引器](/documentation/articles/documentdb-search-indexer/)。将信息从 DocumentDB 转换至 Azure 搜索比较简单，因为这两者都采用 JSON 格式存储数据，我们只需[创建索引](/documentation/articles/search-create-index-portal/)并映射我们想要编制索引的文档的属性即可，几分钟后（取决于数据的大小），便可通过云基础结构中最好的搜索即服务解决方案搜索所有内容。
 
 有关 Azure 搜索的详细信息，请访问[Hitchhiker’s Guide to Search（搜索漫游指南）](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/02/02/a-hitchhikers-guide-to-search/)。
 
@@ -190,7 +190,7 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/libra
 
 ## 后续步骤
 
-阅读[对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data)一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases)。
+阅读[对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data/)一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases/)。
 
 
 <!---HONumber=Mooncake_0627_2016-->

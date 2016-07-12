@@ -53,10 +53,10 @@
 
 
 
-[Azure CLI 环境]: /documentation/articles/xplat-cli-azure-resource-manager
-[Azure Resource Manager Overview（Azure Resource Manager 概述）]: /documentation/articles/resource-group-overview
-[Using Tags to organize your Azure Resources（使用标记来组织 Azure 资源）]: /documentation/articles/resource-group-using-tags
-[Understanding your Azure Bill（了解你的 Azure 帐单）]: /documentation/articles/billing-understand-your-bill
-[Gain insights into your Azure resource consumption（深入了解你的 Azure 资源消耗）]: /documentation/articles/billing-usage-rate-card-overview
+[Azure CLI 环境]: /documentation/articles/xplat-cli-azure-resource-manager/
+[Azure Resource Manager Overview（Azure Resource Manager 概述）]: /documentation/articles/resource-group-overview/
+[Using Tags to organize your Azure Resources（使用标记来组织 Azure 资源）]: /documentation/articles/resource-group-using-tags/
+[Understanding your Azure Bill（了解你的 Azure 帐单）]: /documentation/articles/billing-understand-your-bill/
+[Gain insights into your Azure resource consumption（深入了解你的 Azure 资源消耗）]: /documentation/articles/billing-usage-rate-card-overview/
 
 <!---HONumber=Mooncake_0613_2016-->

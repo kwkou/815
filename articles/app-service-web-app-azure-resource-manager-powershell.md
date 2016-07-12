@@ -16,7 +16,7 @@
 
 发行的 Azure PowerShell 版本 1.0.0 中添加了新新命令，可让用户使用基于 Azure Resource Manager 的 PowerShell 命令来管理 Web Apps。
 
-若要了解如何管理资源组，请参阅[将 Azure PowerShell 与 Azure Resource Manager 搭配使用](/documentation/articles/powershell-azure-resource-manager)。
+若要了解如何管理资源组，请参阅[将 Azure PowerShell 与 Azure Resource Manager 搭配使用](/documentation/articles/powershell-azure-resource-manager/)。
 
 若要了解 Web 应用 Azure Resource Manager PowerShell cmdlet 的完整参数和选项列表，请参阅 [Web 应用基于 Azure Resource Manager 的 PowerShell Cmdlet 的完整 Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/mt619237.aspx)
 
@@ -184,13 +184,13 @@
 
 ### 管理 Web 应用证书 ###
 
-若要了解如何管理 Web 应用证书，请参阅[使用 PowerShell 创建 SSL 证书绑定](/documentation/articles/app-service-web-app-powershell-ssl-binding)
+若要了解如何管理 Web 应用证书，请参阅[使用 PowerShell 创建 SSL 证书绑定](/documentation/articles/app-service-web-app-powershell-ssl-binding/)
 
 
 
 ### 后续步骤 ###
-- 若要了解 Azure Resource Manager PowerShell 支持，请参阅[将 Azure PowerShell 与 Azure Resource Manager 搭配使用](/documentation/articles/powershell-azure-resource-manager)。
-- 若要了解如何使用 PowerShell 管理 Azure SSL 证书，请参阅[使用 PowerShell 创建 SSL 证书绑定](/documentation/articles/app-service-web-app-powershell-ssl-binding)。
+- 若要了解 Azure Resource Manager PowerShell 支持，请参阅[将 Azure PowerShell 与 Azure Resource Manager 搭配使用](/documentation/articles/powershell-azure-resource-manager/)。
+- 若要了解如何使用 PowerShell 管理 Azure SSL 证书，请参阅[使用 PowerShell 创建 SSL 证书绑定](/documentation/articles/app-service-web-app-powershell-ssl-binding/)。
 - 若要了解适用于 Azure Web Apps 的基于 Azure Resource Manager 的 PowerShell cmdlet 的完整列表，请参阅 [Web Apps Azure Resource Manager PowerShell Cmdlet 的 Azure Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/mt619237.aspx)。
 
 <!---HONumber=Mooncake_0627_2016-->

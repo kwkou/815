@@ -179,7 +179,7 @@ ORDER BY 1,2,3
 [1]: ./media/sql-data-warehouse-develop-group-by-options/sql-data-warehouse-develop-group-by-cube.png
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 [GROUP BY]: https://msdn.microsoft.com/zh-cn/library/ms177673.aspx

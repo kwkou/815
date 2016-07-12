@@ -23,7 +23,7 @@
 
 ## 先决条件
 
-这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create)。你可以同样轻松地使用 [Azure 门户预览](https://portal.azure.cn)创建 Windows 虚拟机。请阅读[如何在 Azure 门户预览中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。
+这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/)。你可以同样轻松地使用 [Azure 门户预览](https://portal.azure.cn)创建 Windows 虚拟机。请阅读[如何在 Azure 门户预览中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial/)。
 
 
 ## 准备要进行映像捕获的 VM
@@ -58,7 +58,7 @@
 
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
-本文假定你已安装 Azure PowerShell 1.0.x 版。我们建议你使用此版本，因为新的 Resource Manager 功能将不会添加到旧的 PowerShell 版本中。如果你还没有安装 PowerShell，请参阅[如何安装配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，查看安装步骤。
+本文假定你已安装 Azure PowerShell 1.0.x 版。我们建议你使用此版本，因为新的 Resource Manager 功能将不会添加到旧的 PowerShell 版本中。如果你还没有安装 PowerShell，请参阅[如何安装配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，查看安装步骤。
 
 1. 打开 Azure PowerShell 并登录到你的 Azure 帐户。
 
@@ -152,6 +152,6 @@
 
 ## 后续步骤
 
-若要使用 Azure PowerShell 管理新虚拟机，请阅读[使用 Azure Resource Manager 和 PowerShell 管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)。
+若要使用 Azure PowerShell 管理新虚拟机，请阅读[使用 Azure Resource Manager 和 PowerShell 管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/)。
 
 <!---HONumber=Mooncake_0411_2016-->

@@ -13,13 +13,13 @@
 
 # 弹性数据库作业入门
 
-Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数据库可靠执行 T-SQL 脚本，同时自动重试并提供最终完成保证。有关弹性数据库作业功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-jobs-overview)。
+Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数据库可靠执行 T-SQL 脚本，同时自动重试并提供最终完成保证。有关弹性数据库作业功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
-本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中的示例做了延伸。完成本主题后，你将学会如何创建和管理用于管理一组相关数据库的作业。
+本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中的示例做了延伸。完成本主题后，你将学会如何创建和管理用于管理一组相关数据库的作业。
 
 ## 先决条件
 
-下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started)。
+下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
 ## 使用示例应用程序创建分片映射管理器
 

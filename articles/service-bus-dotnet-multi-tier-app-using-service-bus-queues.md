@@ -485,12 +485,12 @@
 
 3. 你可以分别测试前端和后端，也可以在单独的 Visual Studio 实例中同时运行这二者。
 
-若要了解如何将前端部署到 Azure Web 应用，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用]](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
+若要了解如何将前端部署到 Azure Web 应用，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用]](/documentation/articles/web-sites-dotnet-get-started/)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
   [1]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-100.png
-  [sbqueuecomparison]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted
+  [sbqueuecomparison]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/
   [2]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-101.png
   [获取工具和 SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
   [3]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-3.png
@@ -536,7 +536,7 @@
   [35]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/multi-web-45.png
   [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx
   [sbwacom]: /documentation/services/service-bus/
-  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
+  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   
 <!---HONumber=Mooncake_0516_2016-->

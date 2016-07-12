@@ -25,7 +25,7 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 
 - 本地现有 AlwaysOn 可用性组。有关可用性组的详细信息，请参阅 [AlwaysOn 可用性组](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 添加 Azure 副本向导
 
@@ -59,7 +59,7 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 |**VM 用户名**|指定将成为 VM 上的管理员帐户的用户名|
 |**VM 管理员密码**|指定新帐户的密码|
 |**确认密码**|确认新帐户的密码|
-|**虚拟网络**|指定新 VM 应使用的 Azure 虚拟网络。有关虚拟网络的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview)。|
+|**虚拟网络**|指定新 VM 应使用的 Azure 虚拟网络。有关虚拟网络的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview/)。|
 |**虚拟网络子网**|指定新 VM 应使用的虚拟网络子网|
 |**域**|确认域的预填充值正确|
 |**域用户名**|指定本地群集节点上的本地管理员组中的一个帐户|
@@ -89,12 +89,12 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 
 ## 创建可用性组侦听器
 
-创建可用性组之后，你应该为客户端创建侦听器，以便连接到副本。侦听器将传入连接定向至主副本或只读辅助副本。有关侦听器的详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)。
+创建可用性组之后，你应该为客户端创建侦听器，以便连接到副本。侦听器将传入连接定向至主副本或只读辅助副本。有关侦听器的详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)。
 
 ## 后续步骤
 
-除了使用“添加 Azure 副本向导”将 AlwaysOn 可用性组扩展到 Azure 以外，你还可以将某些 SQL Server 工作负荷完全移到 Azure。若要开始，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。
+除了使用“添加 Azure 副本向导”将 AlwaysOn 可用性组扩展到 Azure 以外，你还可以将某些 SQL Server 工作负荷完全移到 Azure。若要开始，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)。
 
-有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_1221_2015-->

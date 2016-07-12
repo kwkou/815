@@ -15,8 +15,8 @@
 #  移动服务中的用户服务端授权
 
 > [AZURE.SELECTOR]
-- [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
-- [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization) 
+- [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization/)
+- [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization/) 
 
 本主题说明如何使用服务器端脚本为用户授权。在本教程中，你将在 Azure 移动服务中注册脚本，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。根据用户 ID 筛选用户的查询结果是最基本的授权形式。根据具体的方案，你可能还需要创建“用户”或“角色”表，以跟踪更详细的用户授权信息，例如，给定的用户有权访问哪些终结点。
 
@@ -62,9 +62,9 @@
 
 
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
-[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts/
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[向现有移动服务应用添加身份验证]: /documentation/articles/mobile-services-ios-get-started-users
+[向现有移动服务应用添加身份验证]: /documentation/articles/mobile-services-ios-get-started-users/
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
  

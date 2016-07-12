@@ -25,7 +25,7 @@
 
 * [Maven](http://maven.apache.org/)
 
-* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1#create-hbase-cluster)
+* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/#create-hbase-cluster)
 
 ##创建项目
 
@@ -152,7 +152,7 @@
 
 	此文件将用于加载 HDInsight 群集的 HBase 配置。
 
-	> [AZURE.NOTE]这是极小的 hbase-site.xml 文件，其中包含 HDInsight 群集的基本最低设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-&lt;version number>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
+	> [AZURE.NOTE]这是极小的 hbase-site.xml 文件，其中包含 HDInsight 群集的基本最低设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-&lt;version number>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
 
 3. 保存 __hbase-site.xml__ 文件。
 
@@ -347,7 +347,7 @@
 
 ##上载 JAR 文件并启动作业
 
-> [AZURE.NOTE]你可以使用多种方法将文件上载到 HDInsight 群集，如[在 HDInsight 中为 Hadoop 作业上载数据](/documentation/articles/hdinsight-upload-data)中所述。以下步骤使用 [Azure PowerShell](/documentation/articles/powershell-install-configure)。
+> [AZURE.NOTE]你可以使用多种方法将文件上载到 HDInsight 群集，如[在 HDInsight 中为 Hadoop 作业上载数据](/documentation/articles/hdinsight-upload-data/)中所述。以下步骤使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 1. 安装并配置 Azure PowerShell 后，请创建名为 __hbase-runner.psm1__ 的新文件。使用以下项作为此文件的内容：
 

@@ -24,7 +24,7 @@
 
 ## 服务分层
 
-因为执行组件服务本身是一种 Reliable Service，Reliable Services 的所有[应用程序模型](/documentation/articles/service-fabric-application-model)、生命周期、[打包](/documentation/articles/service-fabric-application-model#package-an-application)、[部署](/documentation/articles/service-fabric-deploy-remove-applications#deploy-an-application)、升级和伸缩概念同样适用于执行组件服务。
+因为执行组件服务本身是一种 Reliable Service，Reliable Services 的所有[应用程序模型](/documentation/articles/service-fabric-application-model/)、生命周期、[打包](/documentation/articles/service-fabric-application-model/#package-an-application)、[部署](/documentation/articles/service-fabric-deploy-remove-applications/#deploy-an-application)、升级和伸缩概念同样适用于执行组件服务。
 
 ![执行组件服务分层][1]
 
@@ -121,7 +121,7 @@ IActorService myActorServiceProxy = ActorServiceProxy.Create(
 await myActorServiceProxy.DeleteActorAsync(actorToDelete, cancellationToken)
 ```
 
-有关删除执行组件及其状态的详细信息，请参阅[执行组件生命周期文档](/documentation/articles/service-fabric-reliable-actors-lifecycle)。
+有关删除执行组件及其状态的详细信息，请参阅[执行组件生命周期文档](/documentation/articles/service-fabric-reliable-actors-lifecycle/)。
 
 ### 自定义执行组件服务
 
@@ -231,8 +231,8 @@ ActorProxy.Create<IMyActor>(new ActorId(1234));
 使用 GUID 和字符串时，这些值将经过哈希算法转换为 Int64。但是，如果向 `ActorId` 显式提供 Int64，此 Int64 将直接映射到分区，而无需进行哈希转换。这可用来控制将执行组件放入哪些分区。
 
 ## 后续步骤
- - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management)
- - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle)
+ - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management/)
+ - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 

@@ -14,7 +14,7 @@
 
 # 密钥保管库机密模板架构
 
-创建存储于密钥保管库中的机密。此资源类型通常部署为[密钥保管库](/documentation/articles/resource-manager-template-keyvault)的子资源。
+创建存储于密钥保管库中的机密。此资源类型通常部署为[密钥保管库](/documentation/articles/resource-manager-template-keyvault/)的子资源。
 
 ## 架构格式
 
@@ -220,8 +220,8 @@
 
 ## 后续步骤
 
-- 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
-- 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter)。
+- 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)。
+- 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
 
 

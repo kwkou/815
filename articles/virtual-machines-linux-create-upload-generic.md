@@ -18,21 +18,21 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 
-**重要提示**：仅当使用某个[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros)时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要提示**：仅当使用某个[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
 
-- [Azure 上的 Linux - 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros)
+- [Azure 上的 Linux - 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)
 - [Azure 中对 Linux 映像的支持](http://support2.microsoft.com/kb/2941892)
 
 所有正在 Azure 上运行的分发都需要满足多个先决条件才能在平台上正常运行。本文并未涵盖所有信息，因为每个分发都是不同的；即使你满足以下所有条件，你也可能仍需显著调整你的 Linux 系统以确保其在平台上正常运行。
 
-正是出于这个原因，建议你如果可能，从某个我们的 [Azure 上的 Linux - 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros)开始操作。以下文章将指导你完成如何准备 Azure 上支持的各种认可的 Linux 分发：
+正是出于这个原因，建议你如果可能，从某个我们的 [Azure 上的 Linux - 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)开始操作。以下文章将指导你完成如何准备 Azure 上支持的各种认可的 Linux 分发：
 
-- **[基于 CentOS 的分发](/documentation/articles/virtual-machines-linux-create-upload-centos)**
-- **[Debian Linux](/documentation/articles/virtual-machines-linux-debian-create-upload-vhd)**
-- **[Oracle Linux](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd)**
-- **[Red Hat Enterprise Linux](/documentation/articles/virtual-machines-linux-redhat-create-upload-vhd)**
-- **[SLES 和 openSUSE](/documentation/articles/virtual-machines-linux-suse-create-upload-vhd)**
-- **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-ubuntu)**
+- **[基于 CentOS 的分发](/documentation/articles/virtual-machines-linux-create-upload-centos/)**
+- **[Debian Linux](/documentation/articles/virtual-machines-linux-debian-create-upload-vhd/)**
+- **[Oracle Linux](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd/)**
+- **[Red Hat Enterprise Linux](/documentation/articles/virtual-machines-linux-redhat-create-upload-vhd/)**
+- **[SLES 和 openSUSE](/documentation/articles/virtual-machines-linux-suse-create-upload-vhd/)**
+- **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-ubuntu/)**
 
 本文的其余部分将重点介绍有关在 Azure 上运行 Linux 分发的一般准则。
 
@@ -41,7 +41,7 @@
 
 - Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。如果你使用 VirtualBox，则意味着选择的是“固定大小”，而不是在创建磁盘时动态分配默认大小。
 
-- 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果需要，可以在数据磁盘上使用 [LVM](/documentation/articles/virtual-machines-linux-configure-lvm) 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid)。
+- 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果需要，可以在数据磁盘上使用 [LVM](/documentation/articles/virtual-machines-linux-configure-lvm/) 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid/)。
 
 - 由于低于 2.6.37 的 Linux 内核版本中的 bug，更大的 VM 不支持 NUMA。此问题主要影响使用上游 Red Hat 2.6.32 内核的分发。手动安装的 Azure Linux 代理 (waagent) 将自动在 Linux 内核的 GRUB 配置中禁用 NUMA。
 
@@ -105,7 +105,7 @@ Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下�
 
 ##<a name="linux-kernel-requirements"></a> Linux 内核要求 ##
 
-Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游 Linux 内核。包括最新 Linux 内核版本（即 3.x）在内的许多分发已提供这些驱动程序，或以其他方式为其内核提供了这些驱动程序的向后移植版本。这些驱动程序会不断地在上游内核中使用新的修补程序和功能进行更新，因此，如果可能，请运行[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros)以包含这些修补程序和更新。
+Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游 Linux 内核。包括最新 Linux 内核版本（即 3.x）在内的许多分发已提供这些驱动程序，或以其他方式为其内核提供了这些驱动程序的向后移植版本。这些驱动程序会不断地在上游内核中使用新的修补程序和功能进行更新，因此，如果可能，请运行[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)以包含这些修补程序和更新。
 
 如果你正在运行 Red Hat Enterprise Linux 版本 **6.0-6.3** 的一个变体，则需要为 Hyper-V 安装最新的 LIS 驱动程序。可[在此处](http://www.microsoft.com/zh-cn/download/search.aspx?q=linux%20integration%20services)找到这些驱动程序。从 RHEL **6.4+**（和派生产品）开始，LIS 驱动程序已包含在内核中，因此，无需其他安装包即在 Azure 上运行这些系统。
 
@@ -135,7 +135,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 ## Azure Linux 代理 ##
 
-[Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide) (waagent) 是在 Azure 中正确设置 Linux 虚拟机所必需的。你可以在 [Linux 代理 GitHub 存储库](https://github.com/Azure/WALinuxAgent)中获取最新版本、文件问题或提交拉取请求。
+[Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/) (waagent) 是在 Azure 中正确设置 Linux 虚拟机所必需的。你可以在 [Linux 代理 GitHub 存储库](https://github.com/Azure/WALinuxAgent)中获取最新版本、文件问题或提交拉取请求。
 
 - 根据 Apache 2.0 许可证发布 Linux 代理。许多分发已为该代理提供 RPM 或 deb 包，因此，在某些情况下不费吹灰之力即可安装和更新该代理。
 
@@ -164,7 +164,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 - 安装 Azure Linux 代理
 
-	Azure Linux 代理是在 Azure 上设置 Linux 映像所必需的。许多分发将该代理提供为 RPM 或 Deb 包（该包通常称为“WALinuxAgent”或“walinuxagent”）。还可以按照 [Linux 代理指南](/documentation/articles/virtual-machines-linux-agent-user-guide)中的步骤手动安装该代理。
+	Azure Linux 代理是在 Azure 上设置 Linux 映像所必需的。许多分发将该代理提供为 RPM 或 Deb 包（该包通常称为“WALinuxAgent”或“walinuxagent”）。还可以按照 [Linux 代理指南](/documentation/articles/virtual-machines-linux-agent-user-guide/)中的步骤手动安装该代理。
 
 - 请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 

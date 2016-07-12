@@ -16,7 +16,7 @@
 # 何时使用弹性数据库池？
 根据弹性数据库池和单一数据库之间的数据使用模式和定价区别，评估使用弹性数据库池是否具有成本效益。此外，还提供了其他指导来帮助你确定一组现有 SQL 数据库所需的当前池大小。
 
-- 有关池的概述，请参阅 [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+- 有关池的概述，请参阅 [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
 > [AZURE.NOTE] 弹性数据库池为预览版，仅适用于 SQL 数据库 V12 服务器。
 
@@ -96,7 +96,7 @@ Azure SQL 数据库中的弹性池可使 SaaS 开发人员将一组数据库的�
 
 SQL数据库自动评估现有 SQL 数据库服务器中数据库的历史资源使用率，并在 Azure 门户中推荐适当的池配置。除推荐外，内置体验还估算服务器上自定义组数据库的 eDTU 使用率。这使你可以执行“假设”分析，其方法为：通过交互方式将数据库添加到池并删除它们以在提交所做的更改之前获取资源使用率分析和调整建议。
 
-灵活的资源使用率评估可以对早于 V12 的服务器进行临时大小调整估算以及对不同服务器中的数据库进行大小调整估算，要获得更多的评估，请参阅[用于识别适用于弹性数据库池的数据库的 Powershell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell)。
+灵活的资源使用率评估可以对早于 V12 的服务器进行临时大小调整估算以及对不同服务器中的数据库进行大小调整估算，要获得更多的评估，请参阅[用于识别适用于弹性数据库池的数据库的 Powershell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/)。
 
 | 功能 | 门户体验|	PowerShell 脚本|
 |:---------------|:----------|:----------|
@@ -125,7 +125,7 @@ SQL数据库自动评估现有 SQL 数据库服务器中数据库的历史资源
 
 ## 后续步骤
 
-- [SQL 数据库选项和性能：了解每个服务层中可用的功能](/documentation/articles/sql-database-service-tiers)
-- [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell)
+- [SQL 数据库选项和性能：了解每个服务层中可用的功能](/documentation/articles/sql-database-service-tiers/)
+- [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/)
 
 <!---HONumber=Mooncake_0509_2016-->

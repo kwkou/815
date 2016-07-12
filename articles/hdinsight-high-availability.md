@@ -46,7 +46,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 
 ## 检查活动头节点服务的状态
-若要确定哪个头节点处于活动状态，并检查该头节点上运行的服务状态，你必须通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。有关 RDP 说明，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
+若要确定哪个头节点处于活动状态，并检查该头节点上运行的服务状态，你必须通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。有关 RDP 说明，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp)。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 
@@ -64,7 +64,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 超大 VM 可通过使用 Azure PowerShell cmdlet 或 HDInsight SDK 来配置。
 
-通过使用 Azure PowerShell 创建和预配群集的过程记录在[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell) 中。配置超大头节点需要将 `-HeadNodeVMSize ExtraLarge` 参数添加到此代码中使用的 `New-AzureHDInsightcluster` cmdlet。
+通过使用 Azure PowerShell 创建和预配群集的过程记录在[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell/) 中。配置超大头节点需要将 `-HeadNodeVMSize ExtraLarge` 参数添加到此代码中使用的 `New-AzureHDInsightcluster` cmdlet。
 
     # Create a new HDInsight cluster in Azure PowerShell
 	# Configured with an ExtraLarge head-node VM
@@ -77,7 +77,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 				-DefaultStorageContainerName $containerName  `
 				-ClusterSizeInNodes $clusterNodes
 
-对于 SDK，情况也是如此。通过使用 SDK 创建和预配群集的过程记录在[使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk) 中。配置超大头节点需要将 `HeadNodeSize = NodeVMSize.ExtraLarge` 参数添加到此代码中使用的 `ClusterCreateParameters()` 方法。
+对于 SDK，情况也是如此。通过使用 SDK 创建和预配群集的过程记录在[使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1/#sdk) 中。配置超大头节点需要将 `HeadNodeSize = NodeVMSize.ExtraLarge` 参数添加到此代码中使用的 `ClusterCreateParameters()` 方法。
 
     # Create a new HDInsight cluster with the HDInsight SDK
 	# Configured with an ExtraLarge head-node VM
@@ -98,7 +98,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 ## 后续步骤
 
 - [Apache ZooKeeper](http://zookeeper.apache.org/)
-- [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)
-- [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk)
+- [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)
+- [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1/#sdk)
 
 <!---HONumber=Mooncake_0307_2016-->

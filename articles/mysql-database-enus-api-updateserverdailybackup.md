@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-api-updateserverdailybackup)
-- [English](/documentation/articles/mysql-database-enus-api-updateserverdailybackup)
+- [中文](/documentation/articles/mysql-database-api-updateserverdailybackup/)
+- [English](/documentation/articles/mysql-database-enus-api-updateserverdailybackup/)
 
 #Update servers - Default daily backup times
 

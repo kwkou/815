@@ -15,9 +15,9 @@
 # 使用 Transact-SQL 监视和管理弹性数据库池  
 
 > [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp)
-- [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell)
-- [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql)
+- [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
+- [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
 
 使用 [Create Database（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)和 [Alter Database（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx)命令可以创建数据库并将它移入和移出弹性池。必须先有弹性池才可以使用这些命令。这些命令只影响数据库。无法使用 T-SQL 命令更改新池的创建和池属性（例如最小和最大 eDTU）的设置。
 
@@ -83,6 +83,6 @@
 
 ## 后续步骤
 
-创建弹性数据库池后，你可以通过创建弹性作业来管理池中的弹性数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。有关详细信息，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview)。
+创建弹性数据库池后，你可以通过创建弹性作业来管理池中的弹性数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。有关详细信息，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
 <!---HONumber=Mooncake_0606_2016-->

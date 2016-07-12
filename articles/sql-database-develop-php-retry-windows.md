@@ -28,7 +28,7 @@
 
 ## 步骤 2：创建 SQL 数据库
 
-请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
+请参阅[入门页](/documentation/articles/sql-database-get-started/)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
 
 ## 步骤 3：获取连接详细信息
@@ -39,7 +39,7 @@
 
 设计该演示程序的目的是在尝试连接期间发生暂时性故障时导致重试。但是，在执行查询命令期间发生暂时性故障时会导致程序丢弃连接并创建新的连接，然后重试查询命令。我们既不建议也不反对这种设计。演示程序演示了一些可供你使用的设计弹性。
 
-<br>此代码示例的长度多半是因为捕获异常的逻辑。[此处](/documentation/articles/sql-database-develop-php-simple-windows)提供了此 Program.cs 文件的简短版本。
+<br>此代码示例的长度多半是因为捕获异常的逻辑。[此处](/documentation/articles/sql-database-develop-php-simple-windows/)提供了此 Program.cs 文件的简短版本。
 <br>Main 方法在 Program.cs 中。调用堆栈的运行如下：
 * Main 调用 ConnectAndQuery。
 * ConnectAndQuery 调用 EstablishConnection。

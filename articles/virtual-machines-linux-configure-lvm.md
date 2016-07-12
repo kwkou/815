@@ -27,7 +27,7 @@ LVM 可用于将多个物理磁盘合并成单个存储卷。默认情况下，L
 
 
 ## 附加数据磁盘
-使用 LVM 时，通常一开始用二个或更多的空数据磁盘。根据 IO 需求，可以选择附加存储在标准存储且一个磁盘最多具有 500 IO/ps 的磁盘，或高级存储且一个磁盘最多具有 5000 IO/ps 的磁盘。本文将不详细介绍如何为 Linux 虚拟机预配和附加数据磁盘。请参阅 Azure 文章[附加磁盘](/documentation/articles/virtual-machines-linux-add-disk)，以详细了解如何在 Azure 上为 Linux 虚拟机附加空数据磁盘。
+使用 LVM 时，通常一开始用二个或更多的空数据磁盘。根据 IO 需求，可以选择附加存储在标准存储且一个磁盘最多具有 500 IO/ps 的磁盘，或高级存储且一个磁盘最多具有 5000 IO/ps 的磁盘。本文将不详细介绍如何为 Linux 虚拟机预配和附加数据磁盘。请参阅 Azure 文章[附加磁盘](/documentation/articles/virtual-machines-linux-add-disk/)，以详细了解如何在 Azure 上为 Linux 虚拟机附加空数据磁盘。
 
 ## 安装 LVM 实用工具
 

@@ -53,7 +53,7 @@ SQL 数据库审核可让你：
 
 可以为特定数据库定义审核策略，也可以将审核策略定义为默认服务器策略。默认服务器审核策略将应用于服务器上所有未定义特定重写数据库审核策略的数据库。
 
-在设置审核之前，请检查是否正在使用[“下层客户端”](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients)。
+在设置审核之前，请检查是否正在使用[“下层客户端”](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients/)。
 
 ##<a id="subheading-3"></a>分析审核日志和报告
 

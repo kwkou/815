@@ -117,7 +117,7 @@ SQL 数据库在 Azure 上提供关系数据存储、访问和管理服务。若
 本节介绍如何使用不同的 .NET Framework 数据提供程序连接到 SQL 数据库实例。有关连接到 SQL 数据库服务器和数据库的中心建议，请参阅：
 
 
-- [到 SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations)。
+- [到 SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations/)。
 
 
 如果你选择使用 Visual Studio 并且你的配置没有将 Azure Web 应用程序包含为前端，则无需在开发计算机上安装其他工具或 SDK。你现在即可开始开发应用程序。

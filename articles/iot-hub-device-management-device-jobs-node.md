@@ -115,11 +115,11 @@ Azure IoT 中心设备管理客户端库处理设备与服务之间的通信，�
 [img-output2]: ./media/iot-hub-device-management-device-jobs/image3.png
 [img-properties]: ./media/iot-hub-device-management-device-jobs/image4.png
 
-[lnk-apidocs]: /documentation/articles/iot-hub-sdks-summary
-[lnk-twin-tutorial]: /documentation/articles/iot-hub-device-management-device-twin
-[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query
+[lnk-apidocs]: /documentation/articles/iot-hub-sdks-summary/
+[lnk-twin-tutorial]: /documentation/articles/iot-hub-device-management-device-twin/
+[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
 [lnk-edison]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c/iotdm_client/samples/iotdm_edison_sample
-[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started
+[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-github-firmware]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/c/iotdm_client/samples/iotdm_simple_sample/iotdm_simple_sample.c
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 

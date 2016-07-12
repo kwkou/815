@@ -64,20 +64,20 @@ public class Circle : Shape, ICircle
 
 ## 后续步骤
 
-- 请参阅 [Reliable Actors 框架如何使用 Service Fabric 平台](/documentation/articles/service-fabric-reliable-actors-platform)，以提供可靠性、可伸缩性和一致状态。
-- 了解有关[执行组件生命周期](/documentation/articles/service-fabric-reliable-actors-lifecycle)的信息。
+- 请参阅 [Reliable Actors 框架如何使用 Service Fabric 平台](/documentation/articles/service-fabric-reliable-actors-platform/)，以提供可靠性、可伸缩性和一致状态。
+- 了解有关[执行组件生命周期](/documentation/articles/service-fabric-reliable-actors-lifecycle/)的信息。
 
 <!-- Image references -->
 
 [shapes-interface-hierarchy]: ./media/service-fabric-reliable-actors-polymorphism/Shapes-Interface-Hierarchy.png
 
 ## 后续步骤
- - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management)
- - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle)
- - [执行组件计时器和提醒](/documentation/articles/service-fabric-reliable-actors-timers-reminders)
- - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events)
- - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy)
- - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics)
+ - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management/)
+ - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
+ - [执行组件计时器和提醒](/documentation/articles/service-fabric-reliable-actors-timers-reminders/)
+ - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events/)
+ - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)
+ - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
 
 
 <!---HONumber=Mooncake_0503_2016-->

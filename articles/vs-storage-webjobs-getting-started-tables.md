@@ -16,7 +16,7 @@
 
 ## 概述
 
-本文章提供了 C# 代码示例，用于演示如何在 Azure 表存储服务中使用 Azure WebJobs SDK 版本 1.x。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 版本 1.x。
+本文章提供了 C# 代码示例，用于演示如何在 Azure 表存储服务中使用 Azure WebJobs SDK 版本 1.x。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 版本 1.x。
 
 Azure 表存储服务使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。有关详细信息，请参阅[通过 .NET 开始使用 Azure 表存储](storage-dotnet-how-to-use-tables.md#create-a-table)。
 
@@ -137,16 +137,16 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 		    tableBinding.Execute(insertOperation);
 		}
 
-有关如何使用 **CloudTable** 对象的详细信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
+有关如何使用 **CloudTable** 对象的详细信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。
 
 ## 队列操作指南文章涵盖的相关主题
 
-有关如何处理队列消息触发的表处理，或者不特定于表处理的 WebJobs SDK 方案的信息，请参阅[开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）](/documentation/articles/vs-storage-webjobs-getting-started-queues)。
+有关如何处理队列消息触发的表处理，或者不特定于表处理的 WebJobs SDK 方案的信息，请参阅[开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）](/documentation/articles/vs-storage-webjobs-getting-started-queues/)。
 
 
 
 ## 后续步骤
 
-本文章提供了代码示例，演示如何处理用于操作 Azure 表的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources)。
+本文章提供了代码示例，演示如何处理用于操作 Azure 表的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources/)。
  
 <!---HONumber=Mooncake_0606_2016-->

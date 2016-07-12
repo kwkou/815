@@ -18,7 +18,7 @@
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
-若要了解如何使用基于 Azure Resource Manager 的 Azure PowerShell cmdlet 来管理 Web Apps，请查看[适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell)
+若要了解如何使用基于 Azure Resource Manager 的 Azure PowerShell cmdlet 来管理 Web Apps，请查看[适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
 
 ## 上载和绑定新的 SSL 证书 ##
 
@@ -64,7 +64,7 @@
 	Remove-AzureRmWebAppSSLBinding -ResourceGroupName myresourcegroup -WebAppName mytestapp -Name www.contoso.com -DeleteCertificate $false
 
 ### 参考 ###
-- [适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell)
-- [将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)
+- [适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
+- [将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)
 
 <!---HONumber=Mooncake_0627_2016-->

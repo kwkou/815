@@ -55,7 +55,7 @@ SQL Server Stretch Database完全支持时间点还原。将 SQL Server 数据�
 ![备份后的SQL Server Stretch Database][StretchBackupImage4]
 
 ## 另请参阅
-[SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)
+[SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage/)
 [sys.sp\_rda\_reauthorize\_db (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt131016.aspx)
 [备份和还原 SQL Server 数据库](https://msdn.microsoft.com/zh-cn/library/ms187048.aspx)
 

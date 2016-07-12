@@ -22,11 +22,11 @@ DataFu 是适用于 Hadoop 的开放源代码库的集合。在本文档中，�
 
 * Azure HDInsight 群集（基于 Windows）
 
-* 基本熟悉[在 HDInsight 上使用 Pig](/documentation/articles/hdinsight-use-pig)
+* 基本熟悉[在 HDInsight 上使用 Pig](/documentation/articles/hdinsight-use-pig/)
 
 ##通过 Pig 使用 DataFu
 
-本部分中的步骤假定你熟悉在 HDInsight 上使用 Pig，并仅向提供 Pig Latin 语句，而不是如何在群集上使用它们的步骤。有关在 HDInsight 上使用 Pig 的详细信息，请参阅[将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)。
+本部分中的步骤假定你熟悉在 HDInsight 上使用 Pig，并仅向提供 Pig Latin 语句，而不是如何在群集上使用它们的步骤。有关在 HDInsight 上使用 Pig 的详细信息，请参阅[将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)。
 
 通常，你将为 DataFu 函数定义别名。例如：
 
@@ -74,6 +74,6 @@ DataFu 是适用于 Hadoop 的开放源代码库的集合。在本文档中，�
 
 * [Apache DataFu Pig 指南](http://datafu.incubator.apache.org/docs/datafu/guide.html)。
 
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 
 <!---HONumber=Mooncake_1207_2015-->

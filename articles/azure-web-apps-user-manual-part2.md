@@ -14,8 +14,8 @@
 
 # Azure Web 应用用户手册 - 第二部分
 
-- [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1)
-- [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3)
+- [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1/)
+- [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3/)
 
 ##<a name="section_4"></a> 2. 开始创建 Azure Web 应用
 ###<a name="section_4_1"></a> 2.1 规划好 Azure 订阅
@@ -173,13 +173,13 @@ Contoso 公司已经采购了 Azure 中国的服务，并且开发部门使用 V
 
 ###<a name="section_4_9"></a> 2.9 缩放 Azure Web 应用
 ####<a name="section_4_9_1"></a> 2.9.1 横向扩展 Azure Web 应用
-在[第 1.8 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_8)中，已经介绍了 Azure Web 应用单个实例大小，如下：
+在[第 1.8 节](/documentation/articles/azure-web-apps-user-manual-part1/#section_3_8)中，已经介绍了 Azure Web 应用单个实例大小，如下：
 
 * (1)	小型，配置为：单核心，1.75GB 内存
 * (2)	中型，配置为：双核心，3.5GB 内存
 * (3)	大型，配置为：四核心，7GB 内存
 
-在[第 1.9 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_9)中，介绍了 Azure Web 应用提供不同的服务类型，如下图所示：
+在[第 1.9 节](/documentation/articles/azure-web-apps-user-manual-part1/#section_3_9)中，介绍了 Azure Web 应用提供不同的服务类型，如下图所示：
 
 <table border="1">
 <thead>

@@ -25,7 +25,7 @@
 
 ##OpenID Connect 集成
 
-若要将你的应用程序与 Azure AD 集成，请遵循[开发人员说明](/documentation/articles/active-directory-authentication-scenarios)。然后回答以下问题并发送到 waadpartners at microsoft dot com。
+若要将你的应用程序与 Azure AD 集成，请遵循[开发人员说明](/documentation/articles/active-directory-authentication-scenarios/)。然后回答以下问题并发送到 waadpartners at microsoft dot com。
 
 * 提供应用程序测试租户或帐户的凭据，使 Azure AD 团队可以测试集成。  
 

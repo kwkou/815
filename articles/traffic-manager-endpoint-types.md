@@ -15,7 +15,7 @@
 
 使用 Azure 流量管理器，你可以控制用户流量在应用程序部署中的分布方式，这些应用程序部署运行在世界各地的不同数据中心或位置。
 
-需要在流量管理器中将每个应用程序部署配置为一个“终结点”。收到 DNS 请求时，流量管理器会根据当前的终结点可用性以及所选流量路由方法，从这些终结点中选择一个要在 DNS 响应中返回的终结点。有关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works)。
+需要在流量管理器中将每个应用程序部署配置为一个“终结点”。收到 DNS 请求时，流量管理器会根据当前的终结点可用性以及所选流量路由方法，从这些终结点中选择一个要在 DNS 响应中返回的终结点。有关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)。
 
 此页介绍流量管理器如何支持不同类型的终结点。
 
@@ -41,7 +41,7 @@ Azure 终结点用于在流量管理器中配置基于 Azure 的服务。Azure �
 
 PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理 API 中不存在。因此，这些资源仅在流量管理器的 Azure Resource Manager 体验中受支持。其他终结点类型可以在流量管理器中通过 Resource Manager 和服务管理体验获得支持。
 
-使用 Azure 终结点时，流量管理器将检测“经典”IaaS VM 或 PaaS 云服务或 Web 应用的停止和启动时间。检测结果反映在终结点状态中（有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring#endpoint-and-profile-status)）。 基础服务停止后，流量管理器将不再对终结点运行状况检查收费，不会将流量引导到终结点；当服务重新启动后，将恢复计费，然后终结点即可接收流量。这不适用于 PublicIpAddress 终结点。
+使用 Azure 终结点时，流量管理器将检测“经典”IaaS VM 或 PaaS 云服务或 Web 应用的停止和启动时间。检测结果反映在终结点状态中（有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/#endpoint-and-profile-status)）。 基础服务停止后，流量管理器将不再对终结点运行状况检查收费，不会将流量引导到终结点；当服务重新启动后，将恢复计费，然后终结点即可接收流量。这不适用于 PublicIpAddress 终结点。
 
 ### 外部终结点
 
@@ -50,7 +50,7 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 外部终结点可以单独使用，也可以在同一流量管理器配置文件中与 Azure 终结点组合使用。可以将 Azure 终结点与外部终结点组合用于多种方案：
 
 - 在主动-主动或主动-被动故障转移模型中使用 Azure 为现有的本地应用程序提供增强的冗余性。
-- 使用 Azure 与[流量管理器“性能”流量路由](/documentation/articles/traffic-manager-routing-methods#performance-traffic-routing-method)将现有的本地应用程序扩展到其他地理位置，以便降低应用程序延迟并改进最终用户所能体验到的性能。
+- 使用 Azure 与[流量管理器“性能”流量路由](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)将现有的本地应用程序扩展到其他地理位置，以便降低应用程序延迟并改进最终用户所能体验到的性能。
 - 使用 Azure 为现有的本地应用程序提供额外的容量，既可以持续提供，也可以通过“云爆发”的方式提供以应对尖峰需求。
 
 在某些情况下，可以使用外部终结点来引用 Azure 服务（如需示例，请参阅[常见问题](#faq)）。在本示例中，针对运行状况检查的计费是按照 Azure 终结点费率而非外部终结点费率进行的。但与 Azure 终结点不同，如果你停止或删除基础服务，我们会继续向你收取相应运行状况检查的费用，直到你在流量管理器中显式禁用或删除该终结点。
@@ -61,7 +61,7 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 使用嵌套式终结点时，会将“子”配置文件作为终结点添加到“父”配置文件以创建层次结构。子配置文件和父配置文件均可包含任何类型的其他终结点，包括其他嵌套式配置文件。
 
-如需更多详细信息，请参阅[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles)。
+如需更多详细信息，请参阅[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles/)。
 
 ## Web Apps 作为终结点
 
@@ -81,11 +81,11 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 可以通过流量管理器门户预览、PowerShell、CLI 或 REST API 来启用和禁用终结点，Resource Manager 和服务管理体验中均支持所有这些操作。
 
->[AZURE.NOTE] 禁用某个 Azure 终结点对其在 Azure 中的部署状态没有任何影响。即使在流量管理器中禁用 Azure 服务（例如 VM 或 Web 应用）后，将服务仍会处于运行状态，并且能够接收流量，前提是流量是直接引导到该服务的，而不是通过流量管理器配置文件 DNS 名称来引导的。有关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works)。
+>[AZURE.NOTE] 禁用某个 Azure 终结点对其在 Azure 中的部署状态没有任何影响。即使在流量管理器中禁用 Azure 服务（例如 VM 或 Web 应用）后，将服务仍会处于运行状态，并且能够接收流量，前提是流量是直接引导到该服务的，而不是通过流量管理器配置文件 DNS 名称来引导的。有关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)。
 
 禁用某个终结点以后，该终结点将不再在 DNS 响应中返回，因此不会将流量引导到该终结点。此外还会停止对该终结点进行的运行状况检查，因此也不再进行相应的运行状况计费。禁用终结点相当于删除终结点，区别是前者更容易再次重新启用终结点。
 
-每个终结点当前能否接收流量取决于配置文件状态（已启用/已禁用）、终结点状态（已启用/已禁用），以及针对该终结点进行的运行状况检查的结果。有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring#endpoint-and-profile-status)。
+每个终结点当前能否接收流量取决于配置文件状态（已启用/已禁用）、终结点状态（已启用/已禁用），以及针对该终结点进行的运行状况检查的结果。有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/#endpoint-and-profile-status)。
 
 >[AZURE.NOTE] 由于流量管理器是在 DNS 级别工作的，因此不可能影响任何终结点的现有连接。在终结点之间引导流量时（不管是通过更改配置文件设置来进行，还是在故障转移或故障回复期间进行），流量管理器都会将新连接引导到可用的终结点。不过，其他终结点可能仍会通过现有连接继续接收流量，直至相关会话被终止。若要耗尽现有连接的流量，应通过应用程序来限制适用于每个终结点的会话持续时间。
 
@@ -132,11 +132,11 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 ## 后续步骤
 
-- 了解[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works)。
+- 了解[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)。
 
-- 了解流量管理器[终结点监视和自动故障转移](/documentation/articles/traffic-manager-monitoring)。
+- 了解流量管理器[终结点监视和自动故障转移](/documentation/articles/traffic-manager-monitoring/)。
 
-- 了解流量管理器[流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
+- 了解流量管理器[流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
 
 
 

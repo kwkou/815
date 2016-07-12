@@ -14,8 +14,8 @@
 
 # Azure Web 应用用户手册 - 第三部分
 
-- [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1)
-- [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2)
+- [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1/)
+- [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2/)
 
 ##<a name="section_5"></a> 3. 高级内容
 ###<a name="section_5_1"></a> 3.1 使用源代码管理器管理 Azure Web 应用
@@ -76,7 +76,7 @@
 * (3)	使用自定义 PHP 运行时
 
 ####<a name="section_5_3_2"></a> 3.3.2 PHP 使用 Azure 存储
-在[第 1.10 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_10)中，建议把 Web 项目文件的静态资源，比如图片、照片、视频等都保存在 Azure 存储里。
+在[第 1.10 节](/documentation/articles/azure-web-apps-user-manual-part1/#section_3_10)中，建议把 Web 项目文件的静态资源，比如图片、照片、视频等都保存在 Azure 存储里。
 
 
 ###<a name="section_5_4"></a> 3.4 Java 开发者必读

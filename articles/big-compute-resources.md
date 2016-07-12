@@ -19,7 +19,7 @@
 
 了解 Azure 中的大型计算选项，并根据工作负荷和业务需要选择适当的方法。
 
-* [Batch 和 HPC 解决方案](/documentation/articles/batch-hpc-solutions)
+* [Batch 和 HPC 解决方案](/documentation/articles/batch-hpc-solutions/)
 
 
 ## Azure 批处理
@@ -30,7 +30,7 @@
 
 * [API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn820177.aspx)
 
-* [教程：适用于 .NET 的 Azure Batch 库入门](/documentation/articles/batch-dotnet-get-started)
+* [教程：适用于 .NET 的 Azure Batch 库入门](/documentation/articles/batch-dotnet-get-started/)
 
 * [Batch 论坛](https://social.msdn.microsoft.com/Forums/home?forum=azurebatch)
 
@@ -47,7 +47,7 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 * [文档](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
 
 
-* [在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)
+* [在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)
 
 * [使用 HPC Pack 迸发到 Azure 辅助角色实例](https://technet.microsoft.com/library/gg481749.aspx)
 
@@ -78,9 +78,9 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 ## 计算密集型实例
 
-Azure 提供一[系列大小](/documentation/articles/virtual-machines-windows-sizes)，包括能够连接到后端 RDMA 网络的计算密集型 [A8 和 A9](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs) 实例，以运行 Linux 和 Windows HPC 工作负荷。
+Azure 提供一[系列大小](/documentation/articles/virtual-machines-windows-sizes/)，包括能够连接到后端 RDMA 网络的计算密集型 [A8 和 A9](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs/) 实例，以运行 Linux 和 Windows HPC 工作负荷。
 
-* [通过 Microsoft HPC Pack 设置 Windows RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-windows-classic-hpcpack-rdma-cluster)
+* [通过 Microsoft HPC Pack 设置 Windows RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-windows-classic-hpcpack-rdma-cluster/)
 
 ## 体系结构蓝图
 

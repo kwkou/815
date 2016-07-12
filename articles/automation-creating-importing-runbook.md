@@ -13,11 +13,11 @@
 
 # 在 Azure 自动化中创建或导入 Runbook
 
-你可以通过以下方法将 Runbook 添加到 Azure 自动化：[创建新的 Runbook](#creating-a-new-runbook)；从文件或 [Runbook 库](/documentation/articles/automation-runbook-gallery)导入现有 Runbook。本文介绍如何通过文件创建和导入 Runbook。你可以在 [Azure 自动化的 Runbook 和模块库](/documentation/articles/automation-runbook-gallery)中获取有关如何访问社区 Runbook 和模块的所有详细信息。
+你可以通过以下方法将 Runbook 添加到 Azure 自动化：[创建新的 Runbook](#creating-a-new-runbook)；从文件或 [Runbook 库](/documentation/articles/automation-runbook-gallery/)导入现有 Runbook。本文介绍如何通过文件创建和导入 Runbook。你可以在 [Azure 自动化的 Runbook 和模块库](/documentation/articles/automation-runbook-gallery/)中获取有关如何访问社区 Runbook 和模块的所有详细信息。
 
 ##<a name="creating-a-new-runbook"></a> 创建新的 Runbook
 
-你可以使用其中一个 Azure 经典管理门户或 Windows PowerShell 在 Azure 自动化中创建一个新的 Runbook。一旦创建 Runbook，你就可以利用[了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)中的信息对其进行编辑。
+你可以使用其中一个 Azure 经典管理门户或 Windows PowerShell 在 Azure 自动化中创建一个新的 Runbook。一旦创建 Runbook，你就可以利用[了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow/)中的信息对其进行编辑。
 
 ### 使用 Azure 经典管理门户创建新的 Azure 自动化 Runbook
 
@@ -94,7 +94,7 @@
 
 ## 相关文章
 
-- [Azure 自动化的 Runbook 和模块库](/documentation/articles/automation-runbook-gallery)
-- [在 Azure 自动化中编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook)
+- [Azure 自动化的 Runbook 和模块库](/documentation/articles/automation-runbook-gallery/)
+- [在 Azure 自动化中编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook/)
 
 <!---HONumber=Mooncake_0411_2016-->

@@ -71,7 +71,7 @@ Azure 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook �
 
 ## 相关文章
 
-- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
-- [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)
+- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
+- [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow/)
 
 <!---HONumber=Mooncake_0411_2016-->

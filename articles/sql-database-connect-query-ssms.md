@@ -17,9 +17,9 @@
 # 使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询
 
 > [AZURE.SELECTOR]
-- [SSMS](/documentation/articles/sql-database-connect-query-ssms)
-- [C#](/documentation/articles/sql-database-connect-query)
-- [Excel](/documentation/articles/sql-database-connect-excel)
+- [SSMS](/documentation/articles/sql-database-connect-query-ssms/)
+- [C#](/documentation/articles/sql-database-connect-query/)
+- [Excel](/documentation/articles/sql-database-connect-excel/)
 
 本文介绍如何使用最新版本的 SQL Server Management Studio (SSMS) 连接到 Azure SQL 数据库并使用 Transact-SQL (T-SQL) 语句执行简单查询。
 
@@ -54,10 +54,10 @@
 
 ## 后续步骤
 
-可以按照与 SQL Server 基本相同的方法，使用 T-SQL 语句来创建和管理 Azure 中的数据库。如果你熟悉如何使用 SQL Server 的 T-SQL，请参阅 [Azure SQL 数据库 Transact-SQL 信息](/documentation/articles/sql-database-transact-sql-information)，了解差异摘要。
+可以按照与 SQL Server 基本相同的方法，使用 T-SQL 语句来创建和管理 Azure 中的数据库。如果你熟悉如何使用 SQL Server 的 T-SQL，请参阅 [Azure SQL 数据库 Transact-SQL 信息](/documentation/articles/sql-database-transact-sql-information/)，了解差异摘要。
 
 如果你不熟悉 T-SQL，请参阅[教程：编写 Transact-SQL 语句](https://msdn.microsoft.com/zh-cn/library/ms365303.aspx)和 [Transact-SQL 参考（数据库引擎）](https://msdn.microsoft.com/zh-cn/library/bb510741.aspx)。
 
-若要开始创建数据库用户和数据库用户管理员，请参阅 [Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security)
+若要开始创建数据库用户和数据库用户管理员，请参阅 [Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security/)
 
 <!---HONumber=Mooncake_0530_2016-->

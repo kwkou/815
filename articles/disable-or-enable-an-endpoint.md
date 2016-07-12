@@ -34,10 +34,10 @@
 
 ## 后续步骤
 
-[流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile)
+[流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile/)
 
-[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 
-[流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations)
+[流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations/)
 
 <!---HONumber=Mooncake_1221_2015-->

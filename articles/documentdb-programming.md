@@ -42,7 +42,7 @@
 	-	它会在原始数据之上添加抽象层，这使得数据架构师能够从数据独立发展他们的应用程序。当数据无架构时，如果他们必须直接处理数据，则由于可能需要兼并到应用程序中的脆性假设，使得这样做尤其有益。  
 	-	这种抽象使企业通过从脚本简化访问来保证他们的数据安全。  
 
-数据库触发器、存储过程和自定义查询运算符的创建和执行通过许多平台（包括 .NET、Node.js 和 JavaScript）中的 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx)、[DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio/releases) 和[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 得到支持。
+数据库触发器、存储过程和自定义查询运算符的创建和执行通过许多平台（包括 .NET、Node.js 和 JavaScript）中的 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx)、[DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio/releases) 和[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 得到支持。
 
 **本教程使用 [具有 Q Promises 的 Node.js SDK](http://azure.github.io/azure-documentdb-node-q/)** 来阐明存储过程、触发器和 UDF 的语法和用法。
 
@@ -214,7 +214,7 @@
 
 此存储过程使用游戏应用内的事务在单个操作中的两个玩家之间交易项。该存储过程尝试读取两个分别与作为参数传递的玩家 ID 对应的文档。如果两个玩家文档都被找到，那么存储过程将通过交换它们的项来更新文档。如果在此过程中遇到了任何错误，它将引发隐式终止事务的 JavaScript 异常。
 
-如果存储过程针对其注册的集合是单区集合，那么该事务的范围为该集合内的所有文档。如果集合已分区，那么存储过程将在单个分区键的事务范围中执行。每个存储过程执行必须包含对应于事务在其下运行的范围的分区键值。有关更多详细信息，请参阅 [DocumentDB 分区](/documentation/articles/documentdb-partition-data)。
+如果存储过程针对其注册的集合是单区集合，那么该事务的范围为该集合内的所有文档。如果集合已分区，那么存储过程将在单个分区键的事务范围中执行。每个存储过程执行必须包含对应于事务在其下运行的范围的分区键值。有关更多详细信息，请参阅 [DocumentDB 分区](/documentation/articles/documentdb-partition-data/)。
 
 ### 提交和回滚
 事务将在本机深入集成到 DocumentDB 的 JavaScript 编程模型中。在 JavaScript 函数内，所有操作都在单个事务下自动包装。如果 JavaScript 在没有任何异常的情况下完成，将提交针对数据库的操作。实际上，关系数据库中的“BEGIN TRANSACTION”和“COMMIT TRANSACTION”语句在 DocumentDB 中是隐式的。
@@ -754,7 +754,7 @@ JavaScript 存储过程和触发器经过沙盒处理，以使一个脚本的效
 存储过程、触发器和 UDF 是隐式预编译到字节代码格式的，这是为了避免每次脚本调用时产生的编译成本。这可确保存储过程的调用迅速且痕迹较少。
 
 ## 客户端 SDK 支持
-除了 [Node.js](/documentation/articles/documentdb-sdk-node) 客户端之外，DocumentDB 还支持 [.NET](/documentation/articles/documentdb-sdk-dotnet)、[Java](/documentation/articles/documentdb-sdk-java)、[JavaScript](http://azure.github.io/azure-documentdb-js/) 和 [Python SDK](/documentation/articles/documentdb-sdk-python)。也可以使用这些 SDK 来创建和执行存储过程、触发器和 UDF。以下示例演示如何使用 .NET 客户端创建和执行存储过程。请注意 .NET 类型是如何以 JSON 传递到存储过程中并从中读回的。
+除了 [Node.js](/documentation/articles/documentdb-sdk-node/) 客户端之外，DocumentDB 还支持 [.NET](/documentation/articles/documentdb-sdk-dotnet/)、[Java](/documentation/articles/documentdb-sdk-java/)、[JavaScript](http://azure.github.io/azure-documentdb-js/) 和 [Python SDK](/documentation/articles/documentdb-sdk-python/)。也可以使用这些 SDK 来创建和执行存储过程、触发器和 UDF。以下示例演示如何使用 .NET 客户端创建和执行存储过程。请注意 .NET 类型是如何以 JSON 传递到存储过程中并从中读回的。
 
 	var markAntiquesSproc = new StoredProcedure
 	{
@@ -808,7 +808,7 @@ JavaScript 存储过程和触发器经过沙盒处理，以使一个脚本的效
 	    });
 
 
-下面的示例则演示如何创建用户定义的函数 (UDF) 并在 [DocumentDB SQL 查询](/documentation/articles/documentdb-sql-query)中使用它。
+下面的示例则演示如何创建用户定义的函数 (UDF) 并在 [DocumentDB SQL 查询](/documentation/articles/documentdb-sql-query/)中使用它。
 
 	UserDefinedFunction function = new UserDefinedFunction()
 	{
@@ -903,7 +903,7 @@ JavaScript 存储过程和触发器经过沙盒处理，以使一个脚本的效
 
 ## 后续步骤
 
-在你创建了一个或多个存储过程、触发器和用户定义的函数之后，可以使用脚本资源管理器在 Azure 门户预览中加载和查看它们。有关详细信息，请参阅[使用 DocumentDB 脚本资源管理器查看存储过程、触发器和用户定义的函数](/documentation/articles/documentdb-view-scripts)。
+在你创建了一个或多个存储过程、触发器和用户定义的函数之后，可以使用脚本资源管理器在 Azure 门户预览中加载和查看它们。有关详细信息，请参阅[使用 DocumentDB 脚本资源管理器查看存储过程、触发器和用户定义的函数](/documentation/articles/documentdb-view-scripts/)。
 
 还可以查找以下参考和资源，可帮助你了解更多有关 DocumentDB 服务器端编程的信息：
 

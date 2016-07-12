@@ -70,7 +70,7 @@ DROP TABLE #tbl;
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 [WHILE]: https://msdn.microsoft.com/zh-cn/library/ms178642.aspx

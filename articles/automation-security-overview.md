@@ -33,7 +33,7 @@ Azure 自动化让你可以通过其他云提供程序针对 Azure、本地中�
 
 方法 | 环境 | 文章
 ----------|----------|----------
-Azure AD 用户帐户 | Azure 资源管理器和 Azure 服务管理 | [Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-sec-configure-aduser-account)
+Azure AD 用户帐户 | Azure 资源管理器和 Azure 服务管理 | [Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-sec-configure-aduser-account/)
 Azure AD 服务主体对象 | Azure 资源管理器 | -
 
 <!---HONumber=Mooncake_0620_2016-->

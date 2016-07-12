@@ -26,7 +26,7 @@
 
 ## 后续步骤
 
-在创建云服务容器后，你可以[创建和部署](/documentation/articles/cloud-services-how-to-create-deploy)云服务。
+在创建云服务容器后，你可以[创建和部署](/documentation/articles/cloud-services-how-to-create-deploy/)云服务。
  
 
 <!---HONumber=79-->

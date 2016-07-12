@@ -190,8 +190,8 @@
 <!--Image references-->
 
 <!--Article references-->
-[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design
-[哈希分布]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
+[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[哈希分布]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key/
 
 <!--MSDN references-->
 

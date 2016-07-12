@@ -18,7 +18,7 @@
 
 ##概述
 
-本教程演示如何使用 Azure 通知中心将推送通知发送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。如果你要以 Windows Phone 8.1 Silverlight 为目标，请参阅 [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started) 版本。
+本教程演示如何使用 Azure 通知中心将推送通知发送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。如果你要以 Windows Phone 8.1 Silverlight 为目标，请参阅 [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started/) 版本。
 在本教程中，你将创建一个空白 Windows 应用商店应用，它使用 Windows 推送通知服务 (WNS) 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。
 
 
@@ -187,11 +187,11 @@
 
 * **Microsoft Azure 通知中心 .NET SDK**：在 Visual Studio 的 Nuget 包管理器中，运行 [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
 
-* **Node.js**：[如何通过 Node.js 使用通知中心](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)。
+* **Node.js**：[如何通过 Node.js 使用通知中心](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs/)。
 
-* **Azure 移动服务**：有关如何从与通知中心集成的 Azure 移动服务后端发送通知的示例，请参阅“移动服务中的推送通知入门”（[.NET 后端](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push) | [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push/)）。
+* **Azure 移动服务**：有关如何从与通知中心集成的 Azure 移动服务后端发送通知的示例，请参阅“移动服务中的推送通知入门”（[.NET 后端](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push/) | [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push/)）。
 
-* **Java/PHP**：有关如何使用 REST API 发送通知的示例，请参阅“如何通过 Java/PHP 使用通知中心”([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to))。
+* **Java/PHP**：有关如何使用 REST API 发送通知的示例，请参阅“如何通过 Java/PHP 使用通知中心”([Java](/documentation/articles/notification-hubs-java-backend-how-to/) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to/))。
 
 
 ## （可选）通过控制台应用发送通知
@@ -290,8 +290,8 @@
 
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 
-[使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
-[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 [toast 目录]: http://msdn.microsoft.com/library/windows/apps/hh761494.aspx
 [磁贴目录]: http://msdn.microsoft.com/library/windows/apps/hh761491.aspx
 [锁屏提醒]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx

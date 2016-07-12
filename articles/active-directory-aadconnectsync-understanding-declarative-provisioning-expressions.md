@@ -38,7 +38,7 @@ Azure AD Connect 同步构建在声明性预配的基础之上。该声明性预
 
 函数还可以处理多值属性。在这种情况下，函数将处理各个值，并向每个值应用同一个函数。例如，`Trim([proxyAddresses])` 将对 proxyAddress 属性中的每个值执行 Trim。
 
-有关函数的完整列表，请参阅[函数参考](/documentation/articles/active-directory-aadconnectsync-functions-reference)。
+有关函数的完整列表，请参阅[函数参考](/documentation/articles/active-directory-aadconnectsync-functions-reference/)。
 
 ### Parameters
 
@@ -117,13 +117,13 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
 
 `proxyAddresses` <- `RemoveDuplicates(Trim(ImportedValues("proxyAddresses")))`
 
-有关函数的完整列表，请参阅 [Azure AD Connect Sync：函数引用](/documentation/articles/active-directory-aadconnectsync-functions-reference)
+有关函数的完整列表，请参阅 [Azure AD Connect Sync：函数引用](/documentation/articles/active-directory-aadconnectsync-functions-reference/)
 
 
 ## 其他资源
 
-* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
+* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
+* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
  
 <!--Image references-->
 

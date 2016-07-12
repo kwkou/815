@@ -14,8 +14,8 @@ wacn.date="11/12/2015"/>
 # 为 Azure 云服务中的角色设置远程桌面连接
 
 >[AZURE.SELECTOR]
-- [Azure 管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop)
-- [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell)
+- [Azure 管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)
+- [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/)
 - [Visual Studio](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)
 
 
@@ -141,6 +141,6 @@ wacn.date="11/12/2015"/>
 
 ## 其他资源
 
-[如何配置云服务](/documentation/articles/cloud-services-how-to-configure)
+[如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)
 
 <!---HONumber=79-->

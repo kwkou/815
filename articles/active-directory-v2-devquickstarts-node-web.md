@@ -16,7 +16,7 @@
 
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 
 我们将在此处使用 Passport 来执行以下操作：
@@ -36,7 +36,7 @@
 本教程末尾也提供完成的应用程序。
 
 ## 1\.注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 - 为应用程序添加 **Web** 平台。
@@ -410,11 +410,11 @@ app.listen(3000);
 
 现在，可以转到更高级的主题。你可能想要尝试：
 
-[使用 v2.0 终结点保护 node.js Web API >>](/documentation/articles/active-directory-v2-devquickstarts-node-api)
+[使用 v2.0 终结点保护 node.js Web API >>](/documentation/articles/active-directory-v2-devquickstarts-node-api/)
 
 有关更多资源，请查看：
 
-- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
+- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
 <!---HONumber=Mooncake_0516_2016-->

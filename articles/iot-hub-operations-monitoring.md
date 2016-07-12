@@ -130,9 +130,9 @@ IoT 中心监视四种类别的事件：
 [1]: ./media/iot-hub-operations-monitoring/enable-OM-1.png
 [2]: ./media/iot-hub-operations-monitoring/enable-OM-2.png
 
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[lnk-diagnostic-metrics]: /documentation/articles/iot-hub-metrics
-[lnk-scaling]: /documentation/articles/iot-hub-scaling
-[lnk-dr]: /documentation/articles/iot-hub-ha-dr
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[lnk-diagnostic-metrics]: /documentation/articles/iot-hub-metrics/
+[lnk-scaling]: /documentation/articles/iot-hub-scaling/
+[lnk-dr]: /documentation/articles/iot-hub-ha-dr/
 
 <!---HONumber=Mooncake_0425_2016-->

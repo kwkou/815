@@ -5,7 +5,7 @@
 Latest Freshness check:  2016-03-21 , daleche.
 
 As of circa 2015-09-04, the following topics might include this include:
-/documentation/articles/sql-database-configure-firewall-settings
+/documentation/articles/sql-database-configure-firewall-settings/
 /documentation/articles/sql-database-connect-query
 
 

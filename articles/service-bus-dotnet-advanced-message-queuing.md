@@ -18,11 +18,11 @@
 
 在服务总线中支持 AMQP 1.0 意味着可以通过一系列使用有效的二进制协议的平台利用队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
 
-本文说明如何使用服务总线 .NET API 通过 .NET 应用程序来使用服务总线中转消息传送功能（队列和发布/订阅主题）。有一个[配套文章](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)，该文说明如何使用标准 Java 消息服务 (JMS) API 执行相同的操作。使用 AMQP 1.0，可以同时使用以下两个指南来了解跨平台消息。
+本文说明如何使用服务总线 .NET API 通过 .NET 应用程序来使用服务总线中转消息传送功能（队列和发布/订阅主题）。有一个[配套文章](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/)，该文说明如何使用标准 Java 消息服务 (JMS) API 执行相同的操作。使用 AMQP 1.0，可以同时使用以下两个指南来了解跨平台消息。
 
 ## 服务总线入门
 
-本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
+本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
 
 ## 下载服务总线 SDK
 
@@ -221,9 +221,9 @@ exit
 
 本主题说明了如何使用 .NET 将消息发送到服务总线以及如何使用 .NET 接收这些消息。但是，AMQP 1.0 的关键优势之一是它支持通过以不同语言编写的组件生成应用程序，从而能够可靠和完全无损地交换消息。
 
-使用上面的 .NET 应用程序示例，以及从随附的[如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp) 指南中选取的类似 Java 应用程序，可以在 .NET 和 Java 之间交换消息。
+使用上面的 .NET 应用程序示例，以及从随附的[如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/) 指南中选取的类似 Java 应用程序，可以在 .NET 和 Java 之间交换消息。
 
-有关使用服务总线和 AMQP 1.0 的跨平台消息传送的详细信息，请参阅[服务总线 AMQP 1.0 概述](/documentation/articles/service-bus-amqp-overview)。
+有关使用服务总线和 AMQP 1.0 的跨平台消息传送的详细信息，请参阅[服务总线 AMQP 1.0 概述](/documentation/articles/service-bus-amqp-overview/)。
 
 ### JMS 到 .NET
 
@@ -302,23 +302,23 @@ exit
 * 会话锁定续订
 * 一些微小的行为差异
 
-有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet)。本文包括不受支持的 API 的详细列表。
+有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet/)。本文包括不受支持的 API 的详细列表。
 
 ## 摘要
 
 本文介绍了如何使用 AMQP 1.0 和服务总线 .NET API 通过 .NET 访问服务总线中转消息传送功能（队列和发布/订阅主题）。
 
-也可以通过其他语言（包括 Java、C、Python 和 PHP）使用服务总线 AMQP 1.0。使用这些语言构建的组件可以使用服务总线中的 AMQP 1.0 可靠且完全无损地交换消息。有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet)。
+也可以通过其他语言（包括 Java、C、Python 和 PHP）使用服务总线 AMQP 1.0。使用这些语言构建的组件可以使用服务总线中的 AMQP 1.0 可靠且完全无损地交换消息。有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet/)。
 
 ## 后续步骤
 
 现在，你已阅读服务总线和 AMQP 与 .NET 的概述，请参阅以下链接了解详细信息。
 
-* [Azure 服务总线中的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview)
-* [如何将 Java 消息服务 (JMS) API 用于服务总线 和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
-* [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+* [Azure 服务总线中的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview/)
+* [如何将 Java 消息服务 (JMS) API 用于服务总线 和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/)
+* [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
  
 [Azure 管理门户]: http://manage.windowsazure.cn
-[如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues
+[如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
 
 <!---HONumber=Mooncake_0104_2016-->

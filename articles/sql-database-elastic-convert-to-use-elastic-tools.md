@@ -14,19 +14,19 @@
 
 # 迁移要扩展的现有数据库
 
-使用 Azure SQL 数据库数据库工具（例如[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)）轻松管理现有的扩展共享数据库。必须先转换现有数据库集，以使用[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)。
+使用 Azure SQL 数据库数据库工具（例如[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)）轻松管理现有的扩展共享数据库。必须先转换现有数据库集，以使用[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 
 ## 概述
 迁移现有分片数据库：
 
-1. 准备[分片映射管理器数据库](/documentation/articles/sql-database-elastic-scale-shard-map-management)。
+1. 准备[分片映射管理器数据库](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 2. 创建分片映射。
 3. 准备各个分片。  
 2. 将映射添加到分片映射。
 
 你可以使用 [.NET Framework 客户端库](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)或者 [Azure SQL DB - 弹性数据库工具脚本](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db)中提供的 PowerShell 脚本来实现这些技巧。以下示例使用 PowerShell 脚本。
 
-有关 ShardMapManager 的详细信息，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)。有关弹性数据库工具的概述，请参阅[弹性数据库功能概述](/documentation/articles/sql-database-elastic-scale-introduction)。
+有关 ShardMapManager 的详细信息，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。有关弹性数据库工具的概述，请参阅[弹性数据库功能概述](/documentation/articles/sql-database-elastic-scale-introduction/)。
 
 ## 准备分片映射管理器数据库
 
@@ -58,7 +58,7 @@
 
 必须选择要创建的分片映射类型。选择取决于数据库架构：
 
-1. 每个数据库一个租户（有关术语，请参阅[词汇表](/documentation/articles/sql-database-elastic-scale-glossary)。） 
+1. 每个数据库一个租户（有关术语，请参阅[词汇表](/documentation/articles/sql-database-elastic-scale-glossary/)。） 
 2. 每个数据库多个租户（两种类型）：
 	3. 列表映射
 	4. 范围映射
@@ -158,7 +158,7 @@
 
 ## 摘要
 
-完成设置后，可以开始使用弹性数据库客户端库。你还可以使用[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)和[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)。
+完成设置后，可以开始使用弹性数据库客户端库。你还可以使用[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)和[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying/)。
 
 ## 后续步骤
 
@@ -167,7 +167,7 @@
 
 GitHub 上也提供了这些工具：[Azure/elastic-db-tools](https://github.com/Azure/elastic-db-tools)。
 
-使用拆分/合并工具在多租户模型与单租户模型之间来回移动数据。请参阅[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-get-started)。
+使用拆分/合并工具在多租户模型与单租户模型之间来回移动数据。请参阅[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

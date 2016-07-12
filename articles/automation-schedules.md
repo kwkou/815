@@ -17,7 +17,7 @@
 
 ## Windows PowerShell Cmdlet
 
-下表中的 cmdlet 用于在 Azure 自动化中通过 Windows PowerShell 创建和管理计划。它们作为 [Azure PowerShell 模块](/documentation/articles/powershell-install-configure)的一部分提供。
+下表中的 cmdlet 用于在 Azure 自动化中通过 Windows PowerShell 创建和管理计划。它们作为 [Azure PowerShell 模块](/documentation/articles/powershell-install-configure/)的一部分提供。
 
 |Cmdlet|说明|
 |:---|:---|
@@ -52,7 +52,7 @@
 
 
 ## 另请参阅
-- [在 Azure 自动化中计划 Runbook](/documentation/articles/automation-scheduling-a-runbook)
+- [在 Azure 自动化中计划 Runbook](/documentation/articles/automation-scheduling-a-runbook/)
  
 
 <!---HONumber=Mooncake_0411_2016-->

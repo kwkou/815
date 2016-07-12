@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-point-in-time-restore)
-- [English](/documentation/articles/mysql-database-enus-point-in-time-restore)
+- [中文](/documentation/articles/mysql-database-point-in-time-restore/)
+- [English](/documentation/articles/mysql-database-enus-point-in-time-restore/)
 
 # MySQL Database on Azure备份和恢复
 

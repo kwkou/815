@@ -16,7 +16,7 @@
 
 #使用远程桌面连接到 Azure Linux VM
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ##概述
 
@@ -27,7 +27,7 @@ RDP（远程桌面协议）是用于 Windows 的专用协议。我们如何使�
 Xrdp 是一个开源 RDP 服务器，支持你从 Windows 计算机通过远程桌面连接连接到 Linux 服务器。它比 VNC（虚拟网络计算）表现得更好。VNC 具有“JPEG”质量和行为慢的特征，而 RDP 则快速清晰。
 
 
-> [AZURE.NOTE]你必须已有运行 Linux 的 Azure VM。若要创建和设置 Linux VM，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-classic-createportal)。
+> [AZURE.NOTE]你必须已有运行 Linux 的 Azure VM。若要创建和设置 Linux VM，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-classic-createportal/)。
 
 
 ##为远程桌面创建终结点
@@ -37,7 +37,7 @@ Xrdp 是一个开源 RDP 服务器，支持你从 Windows 计算机通过远程�
 ![图像](./media/virtual-machines-linux-classic-remote-desktop/no1.png)
 
 
-如果你不知道如何设置 VM 的终结点，请参阅[指南](/documentation/articles/virtual-machines-linux-classic-setup-endpoints)。
+如果你不知道如何设置 VM 的终结点，请参阅[指南](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
 
 
 ##安装 Gnome 桌面

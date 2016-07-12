@@ -17,6 +17,6 @@
 适用于 Android 的快速入门教程并未完全准备好...稍后返回检查并在 Twitter 的 @AzureAD 中查找更新。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 <!---HONumber=Mooncake_0620_2016-->

@@ -14,7 +14,7 @@
 
 # 有状态和无状态 Reliable Services 的体系结构
 
-Azure Service Fabric 可靠服务可能有状态，也可能无状态。每种类型的服务都在特定的体系结构中运行。本文将介绍这些体系结构。有关有状态服务和无状态服务之间的区别的详细信息，请参阅 [Reliable Services 概述](/documentation/articles/service-fabric-reliable-services-introduction)。
+Azure Service Fabric 可靠服务可能有状态，也可能无状态。每种类型的服务都在特定的体系结构中运行。本文将介绍这些体系结构。有关有状态服务和无状态服务之间的区别的详细信息，请参阅 [Reliable Services 概述](/documentation/articles/service-fabric-reliable-services-introduction/)。
 
 ## 有状态的 Reliable Services
 
@@ -26,12 +26,12 @@ Azure Service Fabric 可靠服务可能有状态，也可能无状态。每种�
 有状态可靠服务可以从 StatefulService 或 StatefulServiceBase 类派生。这两个基类都由 Service Fabric 提供。它们可为有状态服务提供各种支持和抽象层级，以便与 Service Fabric 进行交互，并作为服务加入 Service Fabric 群集。
 
 StatefulService 派生自 StatefulServiceBase。StatefulServiceBase 为服务提供更大的灵活性，但需要对 Service Fabric 内部运作有更多了解。
-有关使用 StatefulService 和 StatefulServiceBase 类编写服务的细节的详细信息，请参阅 [Reliable Services 概述](/documentation/articles/service-fabric-reliable-services-introduction)和 [Reliable Services 高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage)。
+有关使用 StatefulService 和 StatefulServiceBase 类编写服务的细节的详细信息，请参阅 [Reliable Services 概述](/documentation/articles/service-fabric-reliable-services-introduction/)和 [Reliable Services 高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)。
 
 这两个基类可管理服务实现的生存期和角色。如果服务实现需要在服务实现生命周期中的那些阶段执行操作或者想要创建通信侦听器对象，服务实现可能会重写任一基类的虚拟方法。请注意，尽管服务实现可以实现自己的通信侦听器对象来公开 ICommunicationListener，但在上图中，通信侦听器仍由 Service Fabric 实现，因为服务实现使用由 Service Fabric 实现的通信侦听器。
 
 有状态可靠服务使用可靠状态管理器来利用可靠集合。可靠集合是对服务高度可用的本地数据结构，即，无论是否进行服务故障转移，一律可以使用。每种类型的 Reliable Collection 都由可靠状态提供程序实现。
-有关可靠集合的详细信息，请参阅[可靠集合概述](/documentation/articles/service-fabric-reliable-services-reliable-collections)。
+有关可靠集合的详细信息，请参阅[可靠集合概述](/documentation/articles/service-fabric-reliable-services-reliable-collections/)。
 
 ### 可靠状态管理器和状态提供程序
 
@@ -65,7 +65,7 @@ StatefulService 派生自 StatefulServiceBase。StatefulServiceBase 为服务提
 
 除了为日志提供最精简的用户模式接口，还将以内核模式驱动程序的形式编写日志。通过以内核模式驱动程序的形式运行，日志可以为所有使用它的服务提供最高的性能。
 
-有关配置日志的详细信息，请参阅[配置有状态 Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration)。
+有关配置日志的详细信息，请参阅[配置有状态 Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration/)。
 
 ## 无状态的 Reliable Service
 
@@ -79,21 +79,21 @@ StatefulService 派生自 StatefulServiceBase。StatefulServiceBase 为服务提
 
 如果服务需要在服务生命周期中的那些阶段执行操作或者想要创建通信侦听器对象，服务实现可能会重写任一基类的虚拟方法。请注意，尽管服务可以实现自己的通信侦听器对象来公开 ICommunicationListener，但在上图中，通信侦听器仍由 Service Fabric 实现，因为该服务实现使用由 Service Fabric 实现的通信侦听器。
 
-有关使用 StatelessService 和 StatelessServiceBase 类编写服务的详细信息，请参阅[可靠服务概述](/documentation/articles/service-fabric-reliable-services-introduction)和[可靠服务高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage)。
+有关使用 StatelessService 和 StatelessServiceBase 类编写服务的详细信息，请参阅[可靠服务概述](/documentation/articles/service-fabric-reliable-services-introduction/)和[可靠服务高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)。
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
 
 有关 Service Fabric 的详细信息，请参阅：
 
-[Reliable Services 概述](/documentation/articles/service-fabric-reliable-services-introduction)
+[Reliable Services 概述](/documentation/articles/service-fabric-reliable-services-introduction/)
 
-[快速启动](/documentation/articles/service-fabric-reliable-services-quick-start)
+[快速启动](/documentation/articles/service-fabric-reliable-services-quick-start/)
 
-[可靠集合概述](/documentation/articles/service-fabric-reliable-services-reliable-collections)
+[可靠集合概述](/documentation/articles/service-fabric-reliable-services-reliable-collections/)
 
-[Reliable Services 高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage)
+[Reliable Services 高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)
 
-[Reliable Services 配置](/documentation/articles/service-fabric-reliable-services-configuration)
+[Reliable Services 配置](/documentation/articles/service-fabric-reliable-services-configuration/)
 
 <!---HONumber=Mooncake_0503_2016-->

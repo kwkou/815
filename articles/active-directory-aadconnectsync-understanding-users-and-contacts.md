@@ -50,8 +50,8 @@
 
 ## 其他资源
 
-* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
+* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
+* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
  
 <!--Image references-->

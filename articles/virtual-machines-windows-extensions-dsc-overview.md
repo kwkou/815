@@ -136,5 +136,5 @@ C:\\WindowsAzure\\Logs\\Plugins\\Microsoft.Powershell.DSC[Version Number]
 
 若要查找可以使用 PowerShell DSC 管理的其他功能，请[浏览 PowerShell 库](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0)以获取更多 DSC 资源。
 
-有关将敏感参数传入配置的详细信息，请参阅 [Manage credentials securely with the DSC extension handler（使用 DSC 扩展处理程序安全管理凭据）](/documentation/articles/virtual-machines-windows-extensions-dsc-credentials)。
+有关将敏感参数传入配置的详细信息，请参阅 [Manage credentials securely with the DSC extension handler（使用 DSC 扩展处理程序安全管理凭据）](/documentation/articles/virtual-machines-windows-extensions-dsc-credentials/)。
 <!---HONumber=Mooncake_0503_2016-->

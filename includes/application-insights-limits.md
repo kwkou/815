@@ -19,6 +19,6 @@
 
 <sup>2</sup> 你可以购买更多的容量以扩展到 5000 万个以上。
  
-[关于 Application Insights 中的定价和配额](/documentation/articles/app-insights-pricing)
+[关于 Application Insights 中的定价和配额](/documentation/articles/app-insights-pricing/)
 
 <!---HONumber=71-->

@@ -31,7 +31,7 @@
 
 *   **Azure 订阅** - 如果你没有 Azure 订阅，只需要花费几分钟就能创建一个[试用帐户](/pricing/1rmb-trial/)。
 
-* **内核配额** - 你可能需要增加内核配额，尤其是在你部署具有多核 VM 大小的多个群集节点时需要。如果你使用的是 Azure 快速入门模板，请注意资源管理器中的内核配额是按 Azure 区域设定的，你可能需要增加特定区域中的配额。请参阅 [Azure 订阅限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
+* **内核配额** - 你可能需要增加内核配额，尤其是在你部署具有多核 VM 大小的多个群集节点时需要。如果你使用的是 Azure 快速入门模板，请注意资源管理器中的内核配额是按 Azure 区域设定的，你可能需要增加特定区域中的配额。请参阅 [Azure 订阅限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
 
 *   **Microsoft Office 许可证** - 如果你使用包含 Microsoft Excel 的 Marketplace HPC Pack VM 映像部署计算节点，将在计算节点上安装 Microsoft Excel Professional Plus 2013 的 30 天评估版。评估期结束后，需要提供有效的 Microsoft Office 许可证来激活 Excel，才能继续运行工作负荷。请参阅在本文稍后的 [Excel 激活](#excel-activation)。
 
@@ -58,13 +58,13 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
 **其他先决条件**
 
-* **Azure PowerShell** - 在客户端计算机上[安装并配置 Azure PowerShell](/documentation/articles/powershell-install-configure)（版本 0.8.10 或更高版本）。
+* **Azure PowerShell** - 在客户端计算机上[安装并配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)（版本 0.8.10 或更高版本）。
 
 * **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=44949)下载并解压缩最新版本的脚本。通过运行 `New-HPCIaaSCluster.ps1 -Version` 检查脚本的版本。本文基于版本 4.5.0 或更高版本的脚本。
 
 **创建配置文件**
 
- HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。
+ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)。
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<IaaSClusterConfig>

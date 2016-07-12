@@ -15,8 +15,8 @@
 # 使用 Windows PowerShell 管理基于角色的访问控制 #
 
 > [AZURE.SELECTOR]
-- [Windows PowerShell](/documentation/articles/role-based-access-control-powershell)
-- [Azure CLI](/documentation/articles/role-based-access-control-xplat-cli)
+- [Windows PowerShell](/documentation/articles/role-based-access-control-powershell/)
+- [Azure CLI](/documentation/articles/role-based-access-control-xplat-cli/)
 
 
 使用 Azure 门户中基于角色的访问控制 (RBAC) 和 Azure 资源管理器 API 可以精细地管理对订阅的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
@@ -31,7 +31,7 @@
 
 - Windows PowerShell 3.0 版或 4.0 版。若要查找 Windows PowerShell 版本，请键入：`$PSVersionTable` 并验证 `PSVersion` 的值是 3.0 或 4.0。若要安装兼容版本，请参阅 [Windows Management Framework 3.0 ](http://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](https://www.microsoft.com/zh-CN/download/details.aspx?id=40855)。
 
-- Azure PowerShell 0.8.8 版或更高版本。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- Azure PowerShell 0.8.8 版或更高版本。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
 
 本教程专为 Windows PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。有关 Windows PowerShell 的详细信息，请参阅 [Windows PowerShell 入门](http://technet.microsoft.com/zh-cn/library/hh857337.aspx)。
 
@@ -45,8 +45,8 @@
 
 另请阅读以下教程以熟悉如何在 Windows PowerShell 中设置和使用 Azure 资源管理器：
 
-- [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
-- [将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)
+- [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/)
+- [将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)
 
 
 ## 连接到订阅
@@ -55,7 +55,7 @@
 
     PS C:\> Switch-AzureMode -Name AzureResourceManager
 
-有关详细信息，请参阅[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
+有关详细信息，请参阅[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
 若要连接到 Azure 订阅，请键入：
 
@@ -70,7 +70,7 @@
     # Use the subscription name to select the one you want to work on.
     PS C:\> Select-AzureSubscription -SubscriptionName <subscription name>
 
-有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
 
 ## 检查现有的角色分配
 
@@ -157,7 +157,7 @@
 - [Azure 博客](http://blogs.msdn.com/windowsazure)：了解 Azure 中的新功能。
 - [Windows PowerShell 博客](http://blogs.msdn.com/powershell)：了解 Windows PowerShell 中的新功能。
 - [“你好，脚本编写专家！” 博客](http://blogs.technet.com/b/heyscriptingguy/)：从 Windows PowerShell 社区获取实用提示和技巧。
-- [使用 Azure CLI 配置基于角色的访问控制](/documentation/articles/role-based-access-control-xplat-cli)
-- [故障排除基于角色的访问控制](/documentation/articles/role-based-access-control-troubleshooting)
+- [使用 Azure CLI 配置基于角色的访问控制](/documentation/articles/role-based-access-control-xplat-cli/)
+- [故障排除基于角色的访问控制](/documentation/articles/role-based-access-control-troubleshooting/)
 
 <!---HONumber=71-->

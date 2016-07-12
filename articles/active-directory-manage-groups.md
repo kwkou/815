@@ -59,7 +59,7 @@ Azure AD 访问管理解决方案的核心是安全组。使用安全组管理�
 ## 访问管理入门
 已准备就绪？ 你可以尝试一些可以使用 Azure AD 组完成的基本任务。使用这些功能可向不同的人员组提供对组织中不同资源的特定访问权限。下面是基本的首要步骤列表。
 
-* [使用 Azure AD Connect 将本地组同步到 Azure](/documentation/articles/active-directory-aadconnect)
+* [使用 Azure AD Connect 将本地组同步到 Azure](/documentation/articles/active-directory-aadconnect/)
 
 
 
@@ -71,9 +71,9 @@ Azure AD 访问管理解决方案的核心是安全组。使用安全组管理�
 ## 了解详细信息
 这些文章提供了有关 Azure Active Directory 的更多信息。
 
-* [什么是 Azure Active Directory？](/documentation/articles/active-directory-whatis)
+* [什么是 Azure Active Directory？](/documentation/articles/active-directory-whatis/)
 
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
+* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
 * [适用于组的图形 API 参考](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#GroupFunctions)
 

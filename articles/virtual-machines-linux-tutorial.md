@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-本文说明如何使用 Azure CLI 的 `azure vm quick-create` 命令在 Azure 上快速部署 Linux 虚拟机。`quick-create` 命令部署周围具有基本基础结构的 VM，可让你快速创建原型或测试概念（可以将它视为实现 Linux bash shell 的最快方式）。本文中的操作需要一个 Azure 帐户（[获取试用帐户](/pricing/1rmb-trial/)）、已登录 (`azure login -e AzureChinaCloud`) 且处于 Resource Manager 模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal)快速部署 Linux VM。
+本文说明如何使用 Azure CLI 的 `azure vm quick-create` 命令在 Azure 上快速部署 Linux 虚拟机。`quick-create` 命令部署周围具有基本基础结构的 VM，可让你快速创建原型或测试概念（可以将它视为实现 Linux bash shell 的最快方式）。本文中的操作需要一个 Azure 帐户（[获取试用帐户](/pricing/1rmb-trial/)）、已登录 (`azure login -e AzureChinaCloud`) 且处于 Resource Manager 模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install/)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)快速部署 Linux VM。
 
 ## 快速命令摘要
 
@@ -43,7 +43,7 @@
 
 
 
-对于 **ImageURN** 选项 (`-Q`)，我们将使用 `Canonical:UbuntuServer:14.04.3-LTS:latest` 来部署 Canonical Ubuntu 14.04.3-LTS。（这 3 个映像代表 Azure 上可用 OS 的一小部分；通过在应用商店中[搜索映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage)来查找更多映像，或者[上载自己的自定义映像](/documentation/articles/virtual-machines-linux-create-upload-generic)。）
+对于 **ImageURN** 选项 (`-Q`)，我们将使用 `Canonical:UbuntuServer:14.04.3-LTS:latest` 来部署 Canonical Ubuntu 14.04.3-LTS。（这 3 个映像代表 Azure 上可用 OS 的一小部分；通过在应用商店中[搜索映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)来查找更多映像，或者[上载自己的自定义映像](/documentation/articles/virtual-machines-linux-create-upload-generic/)。）
 
 在下面的命令演练中，请将提示替换为你自己环境中的值。我们将使用“示例”值。
 
@@ -152,9 +152,9 @@
 
 `azure vm quick-create` 是一种快速部署 VM 的方法，因此你可以登录到 bash shell 并开始使用。使用 `vm quick-create` 不会在复杂的环境中带来其他好处。若要部署针对基础结构自定义的 Linux VM，可以遵循下列任一文章操作。
 
-- [Use an Azure resource manager template to create a specific deployment（使用 Azure Resource Manager 模板创建特定部署）](/documentation/articles/virtual-machines-linux-cli-deploy-templates)
-- [Create your own custom environment for a Linux VM using Azure CLI commands directly（直接使用 Azure CLI 命令为 Linux VM 创建自定义环境）](/documentation/articles/virtual-machines-linux-create-cli-complete)
-- [Create a SSH Secured Linux VM on Azure using Templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template)
+- [Use an Azure resource manager template to create a specific deployment（使用 Azure Resource Manager 模板创建特定部署）](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)
+- [Create your own custom environment for a Linux VM using Azure CLI commands directly（直接使用 Azure CLI 命令为 Linux VM 创建自定义环境）](/documentation/articles/virtual-machines-linux-create-cli-complete/)
+- [Create a SSH Secured Linux VM on Azure using Templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
 这些文章可帮助你开始构建 Azure 基础结构，并介绍多种专属和开源基础结构部署、配置与协调工具。
 

@@ -34,7 +34,7 @@ Azure RBAC 有三种适用于所有资源类型的基本角色：
 
 Azure 中的其他 RBAC 角色允许对特定的 Azure 资源进行管理。例如，虚拟机参与者角色允许用户创建和管理虚拟机。它并不授予其访问虚拟机连接的虚拟网络或子网的权限。
 
-[RBAC 内置角色](/documentation/articles/role-based-access-built-in-roles)列出了 Azure 中可用的角色。它指定每个内置角色向用户授予的操作和范围。若要定义自己的角色以便进一步控制，请参阅如何生成 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles)。
+[RBAC 内置角色](/documentation/articles/role-based-access-built-in-roles/)列出了 Azure 中可用的角色。它指定每个内置角色向用户授予的操作和范围。若要定义自己的角色以便进一步控制，请参阅如何生成 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)。
 
 ## 资源层次结构和访问权限继承
 - Azure 中的每个**订阅**仅属于一个目录。
@@ -55,8 +55,8 @@ Azure 中的其他 RBAC 角色允许对特定的 Azure 资源进行管理。例�
 Azure RBAC 仅支持 Azure 门户和 Azure Resource Manager API 中的 Azure 资源的管理操作。并不是 Azure 资源的所有数据级别操作都可通过 RBAC 授权。例如，可以使用 RBAC 对存储帐户进行管理，但是不能使用 RBAC 管理存储帐户中的 blob 或表。同样，可以管理SQL 数据库，但是不能管理其中的表。
 
 ## 后续步骤
-- [Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)入门。
-- 请参阅 [RBAC 内置角色](/documentation/articles/role-based-access-built-in-roles)
-- 定义你在 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles)
+- [Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)入门。
+- 请参阅 [RBAC 内置角色](/documentation/articles/role-based-access-built-in-roles/)
+- 定义你在 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)
 
 <!---HONumber=Mooncake_0627_2016-->

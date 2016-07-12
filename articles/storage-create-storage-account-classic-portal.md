@@ -24,7 +24,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 有两种类型的存储帐户：
 
 - 标准存储帐户包括 Blob、表、队列和文件存储。
-- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。有关高级存储的详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
+- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。有关高级存储的详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
 ## 存储帐户计费
 
@@ -37,7 +37,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 [存储定价](/home/features/storage#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfers/)页提供了针对数据流出量的详细定价信息。
 
-有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 > [AZURE.NOTE] 当你创建 Azure 虚拟机时，如果在部署位置中还没有存储帐户，则会在该位置自动创建一个存储帐户。因此，没有必要按照下面的步骤来创建虚拟机磁盘的存储帐户。存储帐户名称将基于虚拟机名称。请参阅 [Azure 虚拟机文档](/documentation/services/virtual-machines/)以了解更多详细信息。
 
@@ -68,7 +68,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 5. 如果你有多个 Azure 订阅，则会显示“订阅”字段。在“订阅”中，输入要使用存储帐户的 Azure 订阅。
 
-6. 在“复制”中，选择你的存储帐户的所需复制级别。建议的复制选项为地域冗余复制，可为你的数据提供最大耐用性。有关 Azure 存储空间复制选项的详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy)。
+6. 在“复制”中，选择你的存储帐户的所需复制级别。建议的复制选项为地域冗余复制，可为你的数据提供最大耐用性。有关 Azure 存储空间复制选项的详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy/)。
 
 6. 单击“创建存储帐户”。
 
@@ -95,7 +95,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*。
 
-此外还可以配置用于存储帐户的自定义域名称。请参阅[为 Blob 存储终结点配置自定义域名称](/documentation/articles/storage-custom-domain-name)以了解详细信息。
+此外还可以配置用于存储帐户的自定义域名称。请参阅[为 Blob 存储终结点配置自定义域名称](/documentation/articles/storage-custom-domain-name/)以了解详细信息。
 
 ### 服务与地缘组的归置
 
@@ -107,13 +107,13 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
-> [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用共享访问签名。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+> [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用共享访问签名。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 在 [Azure 管理门户](https://manage.windowsazure.cn)中，可使用仪表板或“存储”页上的“管理密钥”查看、复制和重新生成用于访问 Blob、表和队列服务的存储访问密钥。
 
 ### 复制存储访问密钥  
 
-你可以使用“管理密钥”复制要在连接字符串中使用的存储访问密钥。连接字符串需要在进行身份验证时使用存储帐户名称和密钥。有关配置连接字符串以访问 Azure 存储服务的信息，请参阅[配置 Azure 存储连接字符串](/documentation/articles/storage-configure-connection-string)。
+你可以使用“管理密钥”复制要在连接字符串中使用的存储访问密钥。连接字符串需要在进行身份验证时使用存储帐户名称和密钥。有关配置连接字符串以访问 Azure 存储服务的信息，请参阅[配置 Azure 存储连接字符串](/documentation/articles/storage-configure-connection-string/)。
 
 1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
 
@@ -135,7 +135,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 **应用程序** - 如果你拥有使用存储帐户的 Web 应用程序或云服务，则重新生成密钥将失去连接，除非你滚动使用密钥。
 
-**存储资源管理器** - 如果你使用任何[存储资源管理器应用程序](/documentation/articles/storage-explorers)，可能需要更新这些应用程序所使用的存储密钥。
+**存储资源管理器** - 如果你使用任何[存储资源管理器应用程序](/documentation/articles/storage-explorers/)，可能需要更新这些应用程序所使用的存储密钥。
 
 下面是轮换存储访问密钥的过程：
 
@@ -169,6 +169,6 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 - 若要了解有关 Azure 存储空间的详细信息，请参阅 [Azure 存储空间文档](/documentation/services/storage/)。
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
 <!---HONumber=Mooncake_0530_2016-->

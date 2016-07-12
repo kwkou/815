@@ -18,7 +18,7 @@
 
 ## 概述
 
-本指南说明如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端（包括 Windows 应用商店 JavaScript 和 PhoneGap/Cordova 应用程序）执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-html-get-started)。快速入门教程可帮助你配置帐户并创建第一个移动服务。
+本指南说明如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端（包括 Windows 应用商店 JavaScript 和 PhoneGap/Cordova 应用程序）执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-html-get-started/)。快速入门教程可帮助你配置帐户并创建第一个移动服务。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -363,7 +363,7 @@
 
 ##<a name="custom-api"></a>如何：调用自定义 API
 
-自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)。
+自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api/)。
 
 通过对 **MobileServiceClient** 调用 [invokeApi](https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L337) 方法，从客户端调用自定义 API。例如，以下代码行向移动服务上的 **completeAll** API 发送 POST 请求：
 
@@ -394,7 +394,7 @@
 支持两种身份验证流：_服务器流_和_客户端流_。服务器流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能（例如单一登录）进行更深入的集成。
 
 ###服务器流
-若要让移动服务管理 Windows 应用商店或 HTML5 应用程序中的身份验证过程，必须将你的应用程序注册到标识提供者。然后，需要在移动服务中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅[向应用程序添加身份验证](/documentation/articles/mobile-services-html-get-started-users)教程。
+若要让移动服务管理 Windows 应用商店或 HTML5 应用程序中的身份验证过程，必须将你的应用程序注册到标识提供者。然后，需要在移动服务中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅[向应用程序添加身份验证](/documentation/articles/mobile-services-html-get-started-users/)教程。
 
 注册标识提供者后，只需结合提供者的 [MobileServiceAuthenticationProvider] 值调用 [LoginAsync 方法]。例如，若要使用 microsoftaccount 登录，请使用以下代码。
 

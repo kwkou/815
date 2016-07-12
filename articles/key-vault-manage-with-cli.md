@@ -22,16 +22,16 @@
 
 >[AZURE.NOTE]  本教程未说明如何编写其中一个步骤所包括的 Azure 应用程序，但说明了如何授权应用程序使用密钥保管库中的密钥或机密。
 >
->目前，无法在 Azure 门户中配置 Azure 密钥保管库。请改用这些跨平台命令行接口说明。或者，有关 Azure PowerShell 说明，请参阅[此对应教程](/documentation/articles/key-vault-get-started)。
+>目前，无法在 Azure 门户中配置 Azure 密钥保管库。请改用这些跨平台命令行接口说明。或者，有关 Azure PowerShell 说明，请参阅[此对应教程](/documentation/articles/key-vault-get-started/)。
 
-有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis)
+有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)
 
 ## 先决条件
 
 若要完成本教程，你必须准备好以下各项：
 
 - Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial)。
-- 命令行接口版本 0.9.1 或更高版本。若要安装最新版本并连接到 Azure 订阅，请参阅[安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)。
+- 命令行接口版本 0.9.1 或更高版本。若要安装最新版本并连接到 Azure 订阅，请参阅[安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install/)。
 - 配置为使用你在本教程中所创建的密钥或密码的应用程序。你可以从 [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=45343)获取示例应用程序。有关说明，请参阅随附的自述文件。
 
 ## 获得 Azure 跨平台命令行接口帮助
@@ -50,8 +50,8 @@
 
 还可阅读以下教程以熟悉如何在 Azure 跨平台命令行接口中使用 Azure 资源管理器：
 
-- [如何安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)
-- [将 Azure 跨平台命令行接口用于 Azure 资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
+- [如何安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install/)
+- [将 Azure 跨平台命令行接口用于 Azure 资源管理器](/documentation/articles/xplat-cli-azure-resource-manager/)
 
 
 ## 连接到订阅
@@ -75,7 +75,7 @@
 4.	从门户中，选择“设置”，然后选择“管理员”。选择“添加”，并将新用户添加为共同管理员。这样组织帐户即可管理 Azure 订阅。
 5.	最后，从 Azure 门户注销，然后使用新的组织帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
 
-有关在 Azure 中使用组织帐户的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization)。
+有关在 Azure 中使用组织帐户的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization/)。
 
 如果你有多个订阅，并想要指定其中一个订阅供 Azure 密钥保管库使用，请键入以下内容以查看帐户的订阅：
 
@@ -85,7 +85,7 @@
 
     azure account set <subscription name>
 
-有关配置 Azure 跨平台命令行接口的详细信息，请参阅[如何安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)。
+有关配置 Azure 跨平台命令行接口的详细信息，请参阅[如何安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install/)。
 
 
 ## 切换到使用 Azure 资源管理器
@@ -234,6 +234,6 @@
 
 ## 后续步骤
 
-有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide)。
+有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide/)。
 
 <!---HONumber=Mooncake_0620_2016-->

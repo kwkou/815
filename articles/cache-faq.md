@@ -25,9 +25,9 @@
 -	**网络性能**：如果你的工作负荷需要高的吞吐量，则可使用高级级别，该级别提供比标准级别或基本级别更高的带宽。另外，在每个级别中，缓存大小越大，带宽越高，因为是由基础 VM 托管缓存。有关详细信息，请参阅[下表](#cache-performance)。
 -	**吞吐量**：高级级别提供的可用吞吐量最大。如果缓存服务器或客户端达到带宽限制，客户端上会出现超时。有关详细信息，请参阅下表。
 -	**高可用性/SLA**：Azure Redis 缓存保证标准/高级缓存在至少 99.9% 的时间内都可用。若要了解有关 SLA 的详细信息，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/#price)。SLA 仅涉及与缓存终结点的连接。SLA 不涉及对数据丢失的防护。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。
--	**Redis 数据持久性**：高级级别允许你将缓存数据暂留在 Azure 存储帐户中。在基本/标准缓存中，所有数据只存储在内存中。如果底层基础结构出现问题，可能会导致数据丢失。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。Azure Redis 缓存提供可在 Redis 暂留中使用的 RDB 和 AOF（即将推出）选项。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置持久性](/documentation/articles/cache-how-to-premium-persistence)。
--	**Redis 群集**：如果你想要创建大于 53 GB 的缓存，或者想要将数据通过分片的方式分散到多个 Redis 节点中，则可以使用在高级级别中提供的 Redis 群集功能。每个节点都包含一个主/副缓存对，目的是提高可用性。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering)。
--	**增强的安全性和独立性**：Azure 虚拟网络 (VNET) 部署为 Azure Redis 缓存提供增强的安全性和隔离性，并提供子网、访问控制策略和进一步限制访问的其他功能。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet)。
+-	**Redis 数据持久性**：高级级别允许你将缓存数据暂留在 Azure 存储帐户中。在基本/标准缓存中，所有数据只存储在内存中。如果底层基础结构出现问题，可能会导致数据丢失。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。Azure Redis 缓存提供可在 Redis 暂留中使用的 RDB 和 AOF（即将推出）选项。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置持久性](/documentation/articles/cache-how-to-premium-persistence/)。
+-	**Redis 群集**：如果你想要创建大于 53 GB 的缓存，或者想要将数据通过分片的方式分散到多个 Redis 节点中，则可以使用在高级级别中提供的 Redis 群集功能。每个节点都包含一个主/副缓存对，目的是提高可用性。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)。
+-	**增强的安全性和独立性**：Azure 虚拟网络 (VNET) 部署为 Azure Redis 缓存提供增强的安全性和隔离性，并提供子网、访问控制策略和进一步限制访问的其他功能。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)。
 -	**配置 Redis**：在标准级别和高级级别，你都可以针对 Keyspace 通知来配置 Redis。
 -	**客户端连接的最大数量**：高级级别提供的可以连接到 Redis 的客户端数量是最大的，缓存大小越大，连接数量越大。[有关详细信息，请参阅定价页](/home/features/redis-cache/#price)。
 -	**专用 Redis 服务器核心**：高级级别的所有缓存大小都有针对 Redis 的专用核心。在基本级别/标准级别，C1 大小及以上有针对 Redis 服务器的专用核心。
@@ -211,7 +211,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 
 -	Azure.cn 模式和实践小组制定了以下指导原则。
 	-	[Azure 云应用程序设计和实施指导原则](https://github.com/mspnp/azure-guidance)
--	[使用 Azure Redis 缓存的常见缓存模式](/documentation/articles/cache-howto-common-cache-patterns)
+-	[使用 Azure Redis 缓存的常见缓存模式](/documentation/articles/cache-howto-common-cache-patterns/)
 
 ##<a name="cache-reference"></a> Azure Redis 缓存为何不像某些其他 Azure 服务一样提供 MSDN 类库参考？
 
@@ -237,7 +237,7 @@ Azure 缓存当前具有三种产品：
 ><p>在此期间，我们建议所有现有托管缓存服务和角色中缓存服务客户迁移到 Azure Redis 缓存。Azure Redis 缓存提供更多的功能以及更高的总体价值。
 
 ### Azure Redis Cache
-Azure Redis 缓存已正式发布，最大大小为 53 GB，且其可用性 SLA 为 99.9%。全新[高级层](/documentation/articles/cache-premium-tier-intro)提供的最大大小为 530 GB，且支持群集、VNET 和持久性，并附带 99.9% SLA。
+Azure Redis 缓存已正式发布，最大大小为 53 GB，且其可用性 SLA 为 99.9%。全新[高级层](/documentation/articles/cache-premium-tier-intro/)提供的最大大小为 530 GB，且支持群集、VNET 和持久性，并附带 99.9% SLA。
 
 Azure Redis 缓存使客户能够使用 Azure.cn 管理的安全专用 Redis 缓存。有了此产品，你可以利用 Redis 提供的丰富功能集和生态系统，并可以从 Azure.cn 获得可靠的托管和监控。
 
@@ -245,7 +245,7 @@ Azure Redis 缓存使客户能够使用 Azure.cn 管理的安全专用 Redis 缓
 
 Redis 取得成功的另一个重要方面是围绕它构建了健康而充满活力的开放源生态系统。这反映在可通过多种语言使用各种不同的 Redis 客户端。这样一来，在 Azure 内部生成的几乎任何工作负荷都可以使用此缓存。
 
-有关如何开始使用 Azure Redis 缓存的详细信息，请参阅[如何使用 Azure Redis 缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)和 [Azure Redis 缓存文档](/documentation/services/redis-cache/)。
+有关如何开始使用 Azure Redis 缓存的详细信息，请参阅[如何使用 Azure Redis 缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)和 [Azure Redis 缓存文档](/documentation/services/redis-cache/)。
 
 ### 托管缓存服务
 托管缓存服务已安排在 2016 年 11 月 30 日停用。

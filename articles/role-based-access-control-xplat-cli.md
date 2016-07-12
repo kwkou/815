@@ -15,8 +15,8 @@
 # 使用 Azure 命令行界面 (Azure CLI) 管理基于角色的访问控制 #
 
 > [AZURE.SELECTOR]
-- [Windows PowerShell](/documentation/articles/role-based-access-control-powershell)
-- [Azure CLI](/documentation/articles/role-based-access-control-xplat-cli)
+- [Windows PowerShell](/documentation/articles/role-based-access-control-powershell/)
+- [Azure CLI](/documentation/articles/role-based-access-control-xplat-cli/)
 
 使用 Azure 门户预览中基于角色的访问控制 (RBAC) 和 Azure 资源管理器 API 可以精细地管理对订阅和资源的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
 
@@ -28,7 +28,7 @@
 
 在使用 Azure CLI 管理 RBAC 之前，必须具备以下条件：
 
-- Azure CLI 0.8.8 版或更高。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+- Azure CLI 0.8.8 版或更高。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 
 ## 本教程的内容 ##
@@ -58,7 +58,7 @@
     # Use the subscription name to select the one you want to work on.
     azure account set <subscription name>
 
-有关详细信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+有关详细信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 ## <a id="check"></a>检查现有的角色分配 ##
 
@@ -138,11 +138,11 @@
 若要了解有关使用 Azure CLI 管理基于角色的访问控制及相关主题的详细信息，请执行以下操作：
 
 
-- [安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)
+- [安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)
 
 
 - [Azure 博客](http://blogs.msdn.com/windowsazure)：了解 Azure 中的新功能。
-- [使用 Windows PowerShell 配置基于角色的访问控制](/documentation/articles/role-based-access-control-powershell)
-- [故障排除基于角色的访问控制](/documentation/articles/role-based-access-control-troubleshooting)
+- [使用 Windows PowerShell 配置基于角色的访问控制](/documentation/articles/role-based-access-control-powershell/)
+- [故障排除基于角色的访问控制](/documentation/articles/role-based-access-control-troubleshooting/)
 
 <!---HONumber=71-->

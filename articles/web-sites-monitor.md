@@ -48,7 +48,7 @@
 
 从[经典管理门户](https://manage.windowsazure.cn)中 Web 应用的“缩放”管理页可将 Web 应用配置为以“共享”或“标准” Web 应用模式运行。每个 Azure 订阅均有权访问为在“共享”模式中每个区域运行最多 100 个 Web 应用所提供的资源池。对于为此目的而向每个 Web 应用订阅提供的资源池可由同一地理区域中配置为在“共享”模式中运行的其他 Web 应用共享。由于共享这些资源是为了供其他 Web 应用使用，因此所有订阅对这些资源的使用是受限的。订阅使用这些资源存在限制，该限制以各 Web 应用“仪表板”管理页的使用率概述部分下列出的使用率配额形式表示。
 
->[AZURE.NOTE] 当 Web 应用配置为以“标准”模式运行时，会被分配专用资源，资源大小等同于 Azure 的[虚拟机](/documentation/articles/virtual-machines-windows-sizes)和[云服务](/documentation/articles/cloud-services-sizes-specs)大小表中的“小型”（默认值）、“中型”或“大型”虚拟机大小。对于可用于在“标准”模式下运行 Web 应用的订阅，没有针对资源的限制。但是，每个区域可创建的“标准”模式 Web 应用的数量是 500。
+>[AZURE.NOTE] 当 Web 应用配置为以“标准”模式运行时，会被分配专用资源，资源大小等同于 Azure 的[虚拟机](/documentation/articles/virtual-machines-windows-sizes/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小表中的“小型”（默认值）、“中型”或“大型”虚拟机大小。对于可用于在“标准”模式下运行 Web 应用的订阅，没有针对资源的限制。但是，每个区域可创建的“标准”模式 Web 应用的数量是 500。
 
 ### 如何：查看配置为共享模式的 Web 应用的使用率配额 ###
 若要确定 Web 应用对资源使用率配额的影响程度，请执行下列步骤：
@@ -103,7 +103,7 @@
 也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 > [AZURE.NOTE] 应用程序日志记录依赖于你的应用程序生成的日志信息。用于生成日志信息的方法以及信息格式是特定于编写你的应用程序所使用的语言的。有关使用应用程序日志记录的语言特定的信息，请参见以下文章：
-><p> - **Node.js** - [如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug)
+><p> - **Node.js** - [如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug/)
 ><p> 只有 .NET 应用程序支持到表或 Blob 存储中的应用程序日志记录。
 
 #### 网站诊断 ####
@@ -192,7 +192,7 @@
 
 这会将日志信息显示给从其运行命令的命令提示符、PowerShell、bash 或终端会话。
 
-> [AZURE.NOTE] 如果未安装 **azure** 命令，请参阅[如何使用 Azure CLI](/documentation/articles/virtual-machines-command-line-tools) 以了解安装和配置信息。
+> [AZURE.NOTE] 如果未安装 **azure** 命令，请参阅[如何使用 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/) 以了解安装和配置信息。
 
 ### 读取日志文件 ###
 

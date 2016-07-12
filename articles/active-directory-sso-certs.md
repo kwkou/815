@@ -74,8 +74,8 @@
 <!--
 ## 相关文章
 
-- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
-- [Azure Active Directory 的应用程序访问与单一登录](/documentation/articles/active-directory-appssoaccess-whatis)
-- [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging)
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
+- [Azure Active Directory 的应用程序访问与单一登录](/documentation/articles/active-directory-appssoaccess-whatis/)
+- [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/)
 -->
 <!---HONumber=Mooncake_0620_2016-->

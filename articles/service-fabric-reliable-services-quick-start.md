@@ -14,7 +14,7 @@
 
 # Service Fabric Reliable Services 入门
 
-Azure Service Fabric 应用程序包含一个或多个运行你的代码的服务。本指南说明如何使用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction) 同时创建无状态与有状态的 Service Fabric 应用程序。
+Azure Service Fabric 应用程序包含一个或多个运行你的代码的服务。本指南说明如何使用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/) 同时创建无状态与有状态的 Service Fabric 应用程序。
 
 ## 创建无状态服务
 
@@ -59,7 +59,7 @@ Azure Service Fabric 应用程序包含一个或多个运行你的代码的服�
 在本教程中，我们将重点放在 `RunAsync()` 入口点方法上。这是你可以立即开始运行代码的位置。
 项目模板包括 `RunAsync()` 的示例实现，该实现递增滚动计数。
 
-> [AZURE.NOTE] 有关如何使用通信堆栈的详细信息，请参阅 [Service Fabric Web API 服务与 OWIN 自托管](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+> [AZURE.NOTE] 有关如何使用通信堆栈的详细信息，请参阅 [Service Fabric Web API 服务与 OWIN 自托管](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
 
 ### RunAsync
@@ -112,7 +112,7 @@ Service Fabric 引入了一种新的有状态服务。有状态服务能够可�
 
 你的应用程序现在应有两个服务：无状态服务 HelloWorldStateless 和有状态服务 HelloWorldStateful。
 
-有状态服务具有与无状态服务相同的入口点。主要差异在于可以可靠地存储状态的状态提供程序的可用性。Service Fabric 附带一个称为[可靠集合](/documentation/articles/service-fabric-reliable-services-reliable-collections)的状态提供程序实现，它可让你通过可靠状态管理器创建复制的数据结构。有状态可靠服务默认使用此状态提供程序。
+有状态服务具有与无状态服务相同的入口点。主要差异在于可以可靠地存储状态的状态提供程序的可用性。Service Fabric 附带一个称为[可靠集合](/documentation/articles/service-fabric-reliable-services-reliable-collections/)的状态提供程序实现，它可让你通过可靠状态管理器创建复制的数据结构。有状态可靠服务默认使用此状态提供程序。
 
 打开 HelloWorldStateful 中的 **HelloWorldStateful.cs**，该文件包含以下 RunAsync 方法：
 
@@ -191,22 +191,22 @@ using (ITransaction tx = this.StateManager.CreateTransaction())
 
 服务开始运行之后，可以在“诊断事件”窗口中查看生成的 Windows 事件跟踪 (ETW) 事件。请注意，应用程序中会同时显示无状态服务和有状态服务的事件。可以通过单击“暂停”按钮来暂停流。然后，可以通过展开该消息来检查消息的详细信息。
 
->[AZURE.NOTE] 在运行应用程序之前，请确保正在运行本地开发群集。有关设置本地环境的信息，请查看[入门指南](/documentation/articles/service-fabric-get-started)。
+>[AZURE.NOTE] 在运行应用程序之前，请确保正在运行本地开发群集。有关设置本地环境的信息，请查看[入门指南](/documentation/articles/service-fabric-get-started/)。
 
 ![在 Visual Studio 中查看诊断事件](./media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)
 
 
 ## 后续步骤
 
-[在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application)
+[在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
 
-[入门：Service Fabric Web API 服务与 OWIN 自托管 | Azure](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+[入门：Service Fabric Web API 服务与 OWIN 自托管 | Azure](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
-[深入了解 Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections)
+[深入了解 Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections/)
 
-[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)
+[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)
 
-[应用程序升级](/documentation/articles/service-fabric-application-upgrade)
+[应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
 [Reliable Services 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)
 

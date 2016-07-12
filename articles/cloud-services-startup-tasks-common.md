@@ -15,7 +15,7 @@ editor=""/>
 
 本文提供了一些你可能需要在云服务中执行的常见启动任务示例。在角色启动之前，可以使用启动任务执行操作。你可能需要执行的操作包括安装组件、注册 COM 组件、设置注册表项或启动长时间运行的进程。
 
-参阅[本文](/documentation/articles/cloud-services-startup-tasks)可了解启动任务的工作方式，特别是如何创建定义启动任务的条目。
+参阅[本文](/documentation/articles/cloud-services-startup-tasks/)可了解启动任务的工作方式，特别是如何创建定义启动任务的条目。
 
 此处的许多任务使用
 
@@ -476,9 +476,9 @@ Startup2.cmd：
 
 ## 后续步骤
 
-查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package)
+查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package/)
 
-详细了解[任务](/documentation/articles/cloud-services-startup-tasks)的工作方式。
+详细了解[任务](/documentation/articles/cloud-services-startup-tasks/)的工作方式。
 
 
 [ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef

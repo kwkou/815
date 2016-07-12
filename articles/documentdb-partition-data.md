@@ -84,7 +84,7 @@ DocumentDB 支持创建单个分区和已分区的集合。
 
 对于不需要大容量存储或大吞吐量的情形，单个分区集合非常适合。请注意，单个分区集合拥有单个分区的可扩展性和存储限制，即最多 10 GB 的存储和每秒多达 10,000 个的请求单位。
 
-已分区集合可以支持数量非常大的存储和吞吐量。但是，默认的产品/服务将配置为最多 250 GB 的存储和增加到 250,000 个请求单位/秒。如果每个集合都需要更高的存储或吞吐量，请联系 [Azure 支持](/documentation/articles/documentdb-increase-limits)为你的帐户增加这些配额。
+已分区集合可以支持数量非常大的存储和吞吐量。但是，默认的产品/服务将配置为最多 250 GB 的存储和增加到 250,000 个请求单位/秒。如果每个集合都需要更高的存储或吞吐量，请联系 [Azure 支持](/documentation/articles/documentdb-increase-limits/)为你的帐户增加这些配额。
 
 下表列出使用单个分区和已分区集合的区别：
 
@@ -161,7 +161,7 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
 
 > [AZURE.NOTE] 为了创建已分区集合，必须指定 > 10,000 个请求单位/秒的吞吐量值。由于吞吐量是 100 的倍数，因此必须是 10,100 或更多。
 
-此方法可对 DocumentDB 调用 REST API，且该服务将基于所请求的吞吐量设置分区数。根据你的性能需求的发展，可以更改集合的吞吐量。有关详细信息，请参阅[性能级别](/documentation/articles/documentdb-performance-levels)。
+此方法可对 DocumentDB 调用 REST API，且该服务将基于所请求的吞吐量设置分区数。根据你的性能需求的发展，可以更改集合的吞吐量。有关详细信息，请参阅[性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ### 读取和写入文档
 
@@ -261,8 +261,8 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
 
 从单个分区集合迁移到已分区集合
 
-1. 将单个分区集合中的数据导出到 JSON。有关其他信息，请参阅[导出到 JSON 文件](/documentation/articles/documentdb-import-data#export-to-json-file)。
-2. 将数据导入到使用分区键定义创建的、吞吐量超过 10,000 个请求单位/秒的已分区集合，如下例所示。有关其他信息，请参阅[导入到 DocumentDB](/documentation/articles/documentdb-import-data#DocumentDBSeqTarget)。
+1. 将单个分区集合中的数据导出到 JSON。有关其他信息，请参阅[导出到 JSON 文件](/documentation/articles/documentdb-import-data/#export-to-json-file)。
+2. 将数据导入到使用分区键定义创建的、吞吐量超过 10,000 个请求单位/秒的已分区集合，如下例所示。有关其他信息，请参阅[导入到 DocumentDB](/documentation/articles/documentdb-import-data/#DocumentDBSeqTarget)。
 
 ![将数据迁移到 DocumentDB 中的已分区集合][3]
 
@@ -307,9 +307,9 @@ DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分
 ## 后续步骤
 在本文中，我们已经介绍了分区在 Azure DocumentDB 中的工作原理，如何创建已分区的集合和如何为应用程序选取适当的分区键。
 
--   使用 [SDK](/documentation/articles/documentdb-sdk-dotnet) 或 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 的编码入门
--   了解 [DocumentDB 中设置的吞吐量](/documentation/articles/documentdb-performance-levels)
--   如果你想要自定义应用程序执行分区的方式，可以插入自己的客户端分区实现。请参阅[客户端分区支持](/documentation/articles/documentdb-sharding)。
+-   使用 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 的编码入门
+-   了解 [DocumentDB 中设置的吞吐量](/documentation/articles/documentdb-performance-levels/)
+-   如果你想要自定义应用程序执行分区的方式，可以插入自己的客户端分区实现。请参阅[客户端分区支持](/documentation/articles/documentdb-sharding/)。
 
 [1]: ./media/documentdb-partition-data/partitioning.png
 [2]: ./media/documentdb-partition-data/single-and-partitioned.png

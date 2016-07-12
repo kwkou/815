@@ -62,12 +62,12 @@ SQL 数据仓库引入了数据仓库单位 (DWU) 作为许多节点的聚合计
 
 <!--Article references-->
 
-[性能和缩放性]: /documentation/articles/sql-data-warehouse-performance-scale
-[并发模型]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[设计表]: /documentation/articles/sql-data-warehouse-develop-table-design
-[为表选择哈希分布键]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
-[用于改善性能的统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[性能和缩放性]: /documentation/articles/sql-data-warehouse-performance-scale/
+[并发模型]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[设计表]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[为表选择哈希分布键]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key/
+[用于改善性能的统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 

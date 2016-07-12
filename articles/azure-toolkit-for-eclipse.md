@@ -72,7 +72,7 @@
 [Azure 服务终结点]: /documentation/articles/azure-toolkit-for-eclipse-azure-service-endpoints/
 [Azure 存储帐户列表]: /documentation/articles/azure-toolkit-for-eclipse-azure-storage-account-list/
 [在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
-[在 Eclipse 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/create-a-hello-world-web-app-for-azure-in-eclipse
+[在 Eclipse 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/create-a-hello-world-web-app-for-azure-in-eclipse/
 [在 Eclipse 中调试 Azure 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-debugging-azure-applications/
 [实施大型部署]: /documentation/articles/azure-toolkit-for-eclipse-deploying-large-deployments/
 [在 Eclipse 中显示 Package for Azure Libraries for Java 的 Javadoc 内容]: /documentation/articles/azure-toolkit-for-eclipse-displaying-javadoc-content-for-azure-libraries/

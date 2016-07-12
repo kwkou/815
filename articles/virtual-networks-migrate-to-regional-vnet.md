@@ -51,7 +51,7 @@
 
 3. 先决条件：必须已为你的 VNet 启用迁移，才能执行以下步骤。如果你收到确认（如果是提前迁移请求），或此页已更新可反映启用了所有 VNet 以进行迁移，则会知道 VNet 已启用。
 
-4. 导出网络配置文件。可以使用 PowerShell 或经典管理门户。有关使用经典管理门户的说明，请参阅[使用网络配置文件配置 VNet](/documentation/articles/virtual-networks-using-network-configuration-file)。
+4. 导出网络配置文件。可以使用 PowerShell 或经典管理门户。有关使用经典管理门户的说明，请参阅[使用网络配置文件配置 VNet](/documentation/articles/virtual-networks-using-network-configuration-file/)。
 
 5. 编辑网络配置文件，将旧值替换为新值。
 
@@ -63,7 +63,7 @@
 
 	**新值：** \<VirtualNetworkSitename="VNetChinsNorth" Location="China North"\>
 
-6. 保存所做的更改，并将网络配置[导入](/documentation/articles/virtual-networks-using-network-configuration-file)到 Azure。
+6. 保存所做的更改，并将网络配置[导入](/documentation/articles/virtual-networks-using-network-configuration-file/)到 Azure。
 
 >[AZURE.NOTE]此迁移不会导致你的服务出现任何停机情况。
 

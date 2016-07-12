@@ -14,7 +14,7 @@
 
 # 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点
 
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)。
+Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)。
 
 ## 概述
 
@@ -39,8 +39,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 **Azure**| 需要一个 [Azure](https://azure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/home/features/site-recovery#price) Site Recovery 定价。 
 **VMM** | 你将需要至少一个 VMM 服务器。<br/><br/>VMM 服务器应至少运行安装了最新累积更新的 System Center 2012 SP1。<br/><br/>如果你需要对单个 VMM 服务器设置保护，则需在服务器上至少配置两个云。<br/><br/>如果你需要为两个 VMM 服务器部署保护，则每个服务器都必须将至少一个云配置在所要保护的主 VMM 服务器上，一个云配置在需要用于保护和恢复的辅助 VMM 服务器上<br/><br/>所有 VMM 云都必须设置 Hyper-V 容量配置文件。<br/><br/>要保护的源云必须包含一个或多个 VMM 主机组。<br/><br/>若要详细了解如何设置 VMM 云，请参阅 Keith Mayer 的博客中的[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)。
 **Hyper-V** | 你需要在主 VMM 主机组和辅助 VMM 主机组中有一个或多个 Hyper-V 主机服务器，在每个 Hyper-V 主机服务器中有一个或多个虚拟机。<br/><br/>主机和目标 Hyper-V 服务器必须至少运行包含 Hyper-V 角色的 Windows Server 2012，并安装了最新更新。<br/><br/>任何包含你所要保护的 VM 的 Hyper-V 服务器都必须位于 VMM 云中。<br/><br/>如果你要在群集中运行 Hyper-V，请注意，如果你的群集是静态的基于 IP 地址的群集，则不会自动创建群集中转站。你需要手动配置群集代理。在 Aidan Finn 的博客文章中[了解详细信息](https://www.petri.com/use-hyper-v-replica-broker-prepare-host-clusters)。
-**网络映射** | 你可以配置网络映射，以确保在故障转移后以最佳方式将复制的虚拟机放置在辅助 Hyper-V 主机服务器上，并确保它们连接到适当的 VM 网络。如果不配置网络映射，则在故障转移后，副本 VM 将不会连接到任何网络。<br/><br/>若要在部署期间设置网络映射，请确保源 Hyper-V 主机服务器上的虚拟机连接到 VMM VM 网络。该网络应链接到与云关联的逻辑网络。<br/<br/>辅助 VMM 服务器上用于恢复的目标云应当配置了相应的 VM 网络，并且该网络应当链接到与目标云关联的相应逻辑网络。<br/><br/>[详细了解](/documentation/articles/site-recovery-network-mapping)网络映射。
-**存储映射** | 默认情况下，将源 Hyper-V 主机服务器上的虚拟机复制到目标 Hyper-V 主机服务器时，复制的数据存储到在 Hyper-V 管理器中为目标 Hyper-V 主机指定的默认位置。若要对存储已复制数据的位置进行更多的控制，可以配置存储映射<br/><br/>若要配置存储映射，需要在开始部署之前先在源和目标 VMM 服务器上设置存储分类。[了解详细信息](/documentation/articles/site-recovery-storage-mapping)。
+**网络映射** | 你可以配置网络映射，以确保在故障转移后以最佳方式将复制的虚拟机放置在辅助 Hyper-V 主机服务器上，并确保它们连接到适当的 VM 网络。如果不配置网络映射，则在故障转移后，副本 VM 将不会连接到任何网络。<br/><br/>若要在部署期间设置网络映射，请确保源 Hyper-V 主机服务器上的虚拟机连接到 VMM VM 网络。该网络应链接到与云关联的逻辑网络。<br/<br/>辅助 VMM 服务器上用于恢复的目标云应当配置了相应的 VM 网络，并且该网络应当链接到与目标云关联的相应逻辑网络。<br/><br/>[详细了解](/documentation/articles/site-recovery-network-mapping/)网络映射。
+**存储映射** | 默认情况下，将源 Hyper-V 主机服务器上的虚拟机复制到目标 Hyper-V 主机服务器时，复制的数据存储到在 Hyper-V 管理器中为目标 Hyper-V 主机指定的默认位置。若要对存储已复制数据的位置进行更多的控制，可以配置存储映射<br/><br/>若要配置存储映射，需要在开始部署之前先在源和目标 VMM 服务器上设置存储分类。[了解详细信息](/documentation/articles/site-recovery-storage-mapping/)。
 
 ##<a id="step-1-create-a-site-recovery-vault"></a> 步骤 1：创建站点恢复保管库
 
@@ -278,7 +278,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 ###运行测试故障转移
 
 1. 在“恢复计划”选项卡上，选择该计划并单击“测试故障转移”。
-2. 在“确认测试故障转移”页面上，选择“无”。请注意，当启用了此选项时，故障转移后的副本虚拟机不会连接到任何网络。这将测试虚拟机是否按预期进行故障转移，但是不会测试你的复制网络环境。有关如何使用不同网络选项的详细信息，请查看[如何运行测试性故障转移](/documentation/articles/site-recovery-failover#run-a-test-failover)。
+2. 在“确认测试故障转移”页面上，选择“无”。请注意，当启用了此选项时，故障转移后的副本虚拟机不会连接到任何网络。这将测试虚拟机是否按预期进行故障转移，但是不会测试你的复制网络环境。有关如何使用不同网络选项的详细信息，请查看[如何运行测试性故障转移](/documentation/articles/site-recovery-failover/#run-a-test-failover)。
 3. 将在副本虚拟机所在的同一主机上创建测试虚拟机。它将被添加到副本虚拟机所在的同一个云中。
 
 ### 运行恢复计划
@@ -306,7 +306,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ## 后续步骤
 
-运行测试性故障转移以确保环境功能正常以后，请[了解](/documentation/articles/site-recovery-failover)不同类型的故障转移。
+运行测试性故障转移以确保环境功能正常以后，请[了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
 
 <a name="privacy"></a><h2>站点恢复的隐私信息</h2>

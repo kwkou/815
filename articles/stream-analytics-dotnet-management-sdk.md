@@ -28,7 +28,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 - 安装 Visual Studio 2012 或 2013
 - 下载和安装 [Azure .NET SDK](/downloads/)。 
-- 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)；  
+- 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)；  
 
 
 		# Log in to your Azure account
@@ -44,7 +44,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 		New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
 
 
--	设置要使用的输入源和输出目标。有关进一步的说明，请参阅[添加输入](/documentation/articles/stream-analytics-add-inputs)以设置示例输入，参阅[添加输出](/documentation/articles/stream-analytics-add-outputs)以设置示例输出。
+-	设置要使用的输入源和输出目标。有关进一步的说明，请参阅[添加输入](/documentation/articles/stream-analytics-add-inputs/)以设置示例输入，参阅[添加输出](/documentation/articles/stream-analytics-add-outputs/)以设置示例输出。
 
 
 ## 设置项目
@@ -147,7 +147,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 **resourceGroupName** 变量的值应该与你在先决条件步骤中创建或选取的资源组的名称相同。
 
-若要自动执行凭据演示方面的作业创建，请参阅[使用 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
+若要自动执行凭据演示方面的作业创建，请参阅[使用 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
 
 本文的剩余部分假定此代码位于 **Main** 方法的开头。
 
@@ -272,7 +272,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 ## 创建流分析转换
 
-下面的代码将使用查询“select * from Input”创建流分析转换，并通过指定的方式为流分析作业分配一个流式处理单位。有关如何调整流式处理单位的详细信息，请参阅[缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)。
+下面的代码将使用查询“select * from Input”创建流分析转换，并通过指定的方式为流分析作业分配一个流式处理单位。有关如何调整流式处理单位的详细信息，请参阅[缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)。
 
 
 	// Create a Stream Analytics transformation
@@ -331,9 +331,9 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 你已经学习了使用 .NET SDK 来创建和运行分析作业的基础知识。若要了解更多信息，请参阅下列文章：
 
-- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
 - [Azure 流分析管理 .NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn889315.aspx)。
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
@@ -355,10 +355,10 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.forum]: http://go.microsoft.com/fwlink/?LinkId=512151
 
-[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction
-[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started
-[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
-[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
+[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction/
+[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started/
+[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide/
+[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs/
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 

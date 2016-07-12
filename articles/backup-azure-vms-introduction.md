@@ -14,7 +14,7 @@
 	wacn.date="06/06/2016"/>
 
 # 在 Azure 中计划 VM 备份基础结构
-本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](/documentation/articles/backup-azure-vms-prepare)，则在开始[备份 VM](/documentation/articles/backup-azure-vms) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
+本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](/documentation/articles/backup-azure-vms-prepare/)，则在开始[备份 VM](/documentation/articles/backup-azure-vms/) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
 
 ## <a name="how-does-azure-back-up-virtual-machines"></a>Azure 虚拟机备份原理
 当 Azure 备份服务在计划的时间启动备份作业时，它将触发进行时间点快照拍摄所需的备份扩展。创建此快照时，将借助卷影复制服务 (VSS) 来获取虚拟机中磁盘的一致性快照，不必关闭该虚拟机。
@@ -48,7 +48,7 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 
 
 ## 性能和资源利用率
-与本地部署的备份软件一样，Azure 中 VM 的备份也需要在容量和资源利用率方面进行规划。[Azure 存储空间限制](/documentation/articles/azure-subscription-service-limits#storage-limits)定义如何构建 VM 部署，以获得最大性能，同时对运行中的工作负荷造成最小的影响。
+与本地部署的备份软件一样，Azure 中 VM 的备份也需要在容量和资源利用率方面进行规划。[Azure 存储空间限制](/documentation/articles/azure-subscription-service-limits/#storage-limits)定义如何构建 VM 部署，以获得最大性能，同时对运行中的工作负荷造成最小的影响。
 
 有两个主要 Azure 存储空间限制会影响备份性能：
 
@@ -78,13 +78,13 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 ### VM 备份总时间
 尽管大部分备份时间花在读取和复制数据上，但其他一些操作也会影响备份 VM 所用的总时间：
 
-- 花费在[安装或更新备份扩展](/documentation/articles/backup-azure-vms#offline-vms)上的时间。
+- 花费在[安装或更新备份扩展](/documentation/articles/backup-azure-vms/#offline-vms)上的时间。
 - 快照时间，即触发某个快照所花费的时间。在接近计划的备份时间时，将会触发快照。
 - 队列等待时间。由于备份服务要处理来自多个客户的备份，可能不会立即将备份数据从快照复制到 Azure 备份保管库。在负载高峰期，由于要处理的备份数过多，等待时间可能会长达 8 小时。但是，每日备份策略规定的 VM 备份总时间不会超过 24 小时。
 
 ## 数据加密
 
-在备份过程中，Azure 备份不会加密数据。但是，你可以在 VM 中加密数据，然后无缝备份保护的数据（阅读有关[备份加密数据](/documentation/articles/backup-azure-vms-encryption)的详细信息）。
+在备份过程中，Azure 备份不会加密数据。但是，你可以在 VM 中加密数据，然后无缝备份保护的数据（阅读有关[备份加密数据](/documentation/articles/backup-azure-vms-encryption/)的详细信息）。
 
 
 ## 如何计算受保护的实例？
@@ -112,9 +112,9 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 
 ## 后续步骤
 
-- [备份虚拟机](/documentation/articles/backup-azure-vms)
-- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms)
-- [恢复虚拟机](/documentation/articles/backup-azure-restore-vms)
-- [解决 VM 备份问题](/documentation/articles/backup-azure-vms-troubleshoot)
+- [备份虚拟机](/documentation/articles/backup-azure-vms/)
+- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms/)
+- [恢复虚拟机](/documentation/articles/backup-azure-restore-vms/)
+- [解决 VM 备份问题](/documentation/articles/backup-azure-vms-troubleshoot/)
 
 <!---HONumber=Mooncake_0405_2016-->

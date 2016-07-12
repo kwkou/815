@@ -17,16 +17,16 @@
 #<a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/documentdb-dotnet-application)
-- [Node.js](/documentation/articles/documentdb-nodejs-application)
-- [Java](/documentation/articles/documentdb-java-application)
-- [Python](/documentation/articles/documentdb-python-application) 
+- [.NET](/documentation/articles/documentdb-dotnet-application/)
+- [Node.js](/documentation/articles/documentdb-nodejs-application/)
+- [Java](/documentation/articles/documentdb-java-application/)
+- [Python](/documentation/articles/documentdb-python-application/) 
 
 为了特别说明你可以如何有效地利用 Azure DocumentDB 来存储和查询 JSON 文档，本文提供了演示如何使用 Azure DocumentDB 构建待办事项应用的完整演练。任务将存储为 Azure DocumentDB 中的 JSON 文档。
 
 ![屏幕截图：“ASP NET MVC 教程分步说明”教程创建的待办事项列表 MVC Web 应用程序](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image1.png)
 
-本演练演示如何使用 Azure 提供的 DocumentDB 服务来存储和访问 Azure 上托管的 ASP.NET MVC Web 应用程序的数据。如果你正在寻找只侧重于 DocumentDB 而不是 ASP.NET MVC 组件的教程，请参阅 [Build a DocumentDB C# console application](/documentation/articles/documentdb-get-started)（构建 DocumentDB C# 控制台应用程序）。
+本演练演示如何使用 Azure 提供的 DocumentDB 服务来存储和访问 Azure 上托管的 ASP.NET MVC Web 应用程序的数据。如果你正在寻找只侧重于 DocumentDB 而不是 ASP.NET MVC 组件的教程，请参阅 [Build a DocumentDB C# console application](/documentation/articles/documentdb-get-started/)（构建 DocumentDB C# 控制台应用程序）。
 
 > [AZURE.TIP] 本教程假定你先前有使用 ASP.NET MVC 和 Azure 网站的经验。如果你不熟悉 ASP.NET 或[必备工具](#_Toc395637760)，我们建议从 [GitHub][] 下载完整的示例项目，并按照此示例中的说明操作。构建之后，你可以回顾本文以深入了解项目上下文中的代码。
 
@@ -328,7 +328,7 @@
 			}
 		}
 
-	> [AZURE.TIP] 创建新的 DocumentCollection 时，你可以提供 OfferType 的可选 RequestOptions 参数，此参数可让你指定新集合的性能级别。如果未传递此参数，系统将使用默认的产品/服务类型。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 性能级别](/documentation/articles/documentdb-performance-levels)
+	> [AZURE.TIP] 创建新的 DocumentCollection 时，你可以提供 OfferType 的可选 RequestOptions 参数，此参数可让你指定新集合的性能级别。如果未传递此参数，系统将使用默认的产品/服务类型。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 性能级别](/documentation/articles/documentdb-performance-levels/)
 
 3. 我们打算从配置中读取部分值，因此请打开应用程序的 **Web.config** 文件，并在 `<AppSettings>` 节下面添加下列几行。
 	

@@ -24,7 +24,7 @@
   - [如何访问用户的密码重置数据](#how-to-access-password-reset-data-for-your-users)
 
 ## <a name="password-writeback-overview"></a>密码写回概述
-密码写回是一个 [Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect) 组件，Azure Active Directory Premium 的当前订户可以启用和使用该组件。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
+密码写回是一个 [Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect/) 组件，Azure Active Directory Premium 的当前订户可以启用和使用该组件。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
 
 使用此功能，你可将云租户配置为将密码写回本地 Active Directory。有了此功能，你无需再设置和管理复杂的本地自助服务密码重置解决方案。此功能提供了一种基于云的便利方法，让你的用户能够在任何位置重置本地密码。有关密码写回的一些主要功能，请继续阅读以下内容：
 
@@ -62,7 +62,7 @@
 10.	如果密码设置操作失败，我们会将错误返回给用户，让他们再试一次。操作失败的可能原因是服务已关闭、用户选择的密码不符合组织策略、我们在本地 AD 中找不到该用户等。我们对于许多这类情况都有一个特定消息，并告知用户他们可以执行哪些操作来解决问题。
 
 ### <a name="scenarios-supported-for-password-writeback"></a>密码写回支持的方案
-下表介绍同步功能的各个版本支持哪些方案。通常情况下，如果要使用密码写回，我们强烈建议安装最新版本的 [Azure AD Connect](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect)。
+下表介绍同步功能的各个版本支持哪些方案。通常情况下，如果要使用密码写回，我们强烈建议安装最新版本的 [Azure AD Connect](/documentation/articles/active-directory-aadconnect/#download-azure-ad-connect)。
 
   ![][002]
 
@@ -92,7 +92,7 @@
        - 如果未部署写回且在本地管理用户密码，则要求用户联系其管理员重置其密码。
 4.	如果确定用户能够成功重置其密码，则将指导用户完成重置过程。
 
-有关如何部署密码写回的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
+有关如何部署密码写回的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
 ### <a name="what-data-is-used-by-password-reset"></a>密码重置使用哪些数据？
 - 下表概述密码重置期间此数据使用的位置和方式，旨在帮助你决定哪些身份验证选项适合你的组织。此表还显示当你代表用户从未验证此数据的输入路径提供数据时的格式要求。
@@ -361,14 +361,14 @@ Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthentic
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) - 了解如何以系统用户的身份重置或更改自己的密码
-* [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works) - 了解六个不同的服务组件及其功能
-* [**入门**](/documentation/articles/active-directory-passwords-getting-started) - 了解如何让用户重置及更改云密码或本地密码
-* [**自定义**](/documentation/articles/active-directory-passwords-customize) - 了解如何根据组织的需求自定义服务的外观和行为
-* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices) - 了解如何快速部署且有效管理组织的密码
-* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights) - 了解集成式报告功能
-* [**常见问题**](/documentation/articles/active-directory-passwords-faq) - 获取常见问题的解答
-* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
+* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password/) - 了解如何以系统用户的身份重置或更改自己的密码
+* [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works/) - 了解六个不同的服务组件及其功能
+* [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
+* [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
+* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices/) - 了解如何快速部署且有效管理组织的密码
+* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights/) - 了解集成式报告功能
+* [**常见问题**](/documentation/articles/active-directory-passwords-faq/) - 获取常见问题的解答
+* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot/) - 了解如何快速排查服务的问题
 
 
 

@@ -15,8 +15,8 @@
 # 使用 SQLCMD 进行连接和查询
 
 > [AZURE.SELECTOR]
-- [Visual Studio](/documentation/articles/sql-data-warehouse-get-started-connect)
-- [SQLCMD](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd)
+- [Visual Studio](/documentation/articles/sql-data-warehouse-get-started-connect/)
+- [SQLCMD](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
 
 本演练说明如何使用 sqlcmd.exe 实用程序在短时间内连接和查询 Azure SQL 数据仓库数据库。在本演练中，你将：
 

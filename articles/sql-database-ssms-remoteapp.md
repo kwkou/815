@@ -20,7 +20,7 @@
 
 ## Azure RemoteApp 中的 SSMS
 
-Azure RemoteApp 是 Azure 中的 RDS 服务，用于交付应用程序。你可以在此处了解其详细信息：[什么是 RemoteApp？](/documentation/articles/remoteapp-whatis)
+Azure RemoteApp 是 Azure 中的 RDS 服务，用于交付应用程序。你可以在此处了解其详细信息：[什么是 RemoteApp？](/documentation/articles/remoteapp-whatis/)
 
 在 Azure RemoteApp 中运行 SSMS 所获得的体验与在本地运行 SSMS 相同。
 
@@ -76,7 +76,7 @@ sysprep 在完成后会关闭 VM。
 
 当 VM 停止运行以后，可在当前门户中查找并捕获它。
 
-若要详细了解如何捕获映像，请参阅[捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像](/documentation/articles/virtual-machines-windows-classic-capture-image)
+若要详细了解如何捕获映像，请参阅[捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像](/documentation/articles/virtual-machines-windows-classic-capture-image/)
 
 
 ### 5\.添加到 Azure RemoteApp 模板映像
@@ -140,7 +140,7 @@ sysprep 在完成后会关闭 VM。
 
 完成所有上述步骤以后，你就能够运行 Azure RemoteApp 客户端并使用分配的用户登录。你会看到作为应用程序之一显示的 SSMS，并可根据需要来运行它，就像它是安装在你的计算机上且具有 Azure SQL Server 访问权限一样。
 
-有关如何连接到 SQL 数据库的详细信息，请参阅[使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例性的 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)。
+有关如何连接到 SQL 数据库的详细信息，请参阅[使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例性的 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)。
 
 
 这就是本文的全部内容。请尽情享受其中的乐趣！

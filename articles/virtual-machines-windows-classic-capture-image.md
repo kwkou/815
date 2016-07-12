@@ -16,18 +16,18 @@
 
 #捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-capture-image)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-capture-image/)。
 
 本文将演示如何捕获运行 Windows 的 Azure 虚拟机，你可以将它用作映像来创建其他虚拟机。此映像包含操作系统磁盘和任何附加到虚拟机的数据磁盘。由于它不包括网络配置，因此你在使用此映像创建其他虚拟机时，需要进行相关配置。
 
-Azure 将映像存储在**“我的映像”**下。你上载的任何映像都会存储在同一位置。有关映像的详细信息，请参阅[关于虚拟机的映像](/documentation/articles/virtual-machines-windows-classic-about-images)。
+Azure 将映像存储在**“我的映像”**下。你上载的任何映像都会存储在同一位置。有关映像的详细信息，请参阅[关于虚拟机的映像](/documentation/articles/virtual-machines-windows-classic-about-images/)。
 
 ##开始之前##
 
 这些步骤假定你已创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘。如果你尚未执行此操作，请参阅以下说明：
 
-- [从映像创建虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)
-- [如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk)
+- [从映像创建虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)
+- [如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
 
 > [AZURE.WARNING]此过程会在捕获原始虚拟机后将其删除。
 
@@ -72,11 +72,11 @@ Azure 将映像存储在**“我的映像”**下。你上载的任何映像都�
 
 ##后续步骤
 
-该映像已就绪，可用于创建虚拟机了。为此，你将通过使用**“从库中”**菜单项并选择你刚创建的映像来创建一个虚拟机。有关说明，请参阅[从映像创建虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
+该映像已就绪，可用于创建虚拟机了。为此，你将通过使用**“从库中”**菜单项并选择你刚创建的映像来创建一个虚拟机。有关说明，请参阅[从映像创建虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)。
 
 
 
-[如何登录到运行 Windows Server 的虚拟机]: /documentation/articles/virtual-machines-windows-classic-connect-logon
+[如何登录到运行 Windows Server 的虚拟机]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
 [如何使用 Sysprep：简介]: http://technet.microsoft.com/zh-cn/library/bb457073.aspx
 [Run Sysprep.exe]: ./media/virtual-machines-windows-classic-capture-image/SysprepCommand.png
 [Enter Sysprep.exe options]: ./media/virtual-machines-windows-classic-capture-image/SysprepGeneral.png

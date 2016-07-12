@@ -14,7 +14,7 @@
 
 # 基于 REST 的应用程序生命周期示例
 
-此示例通过 REST API 调用演示 Service Fabric 应用程序生命周期。有关 Service Fabric 应用程序生命周期的更多信息，请参阅 [Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle)。
+此示例通过 REST API 调用演示 Service Fabric 应用程序生命周期。有关 Service Fabric 应用程序生命周期的更多信息，请参阅 [Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle/)。
 
 此示例执行下列过程：
 
@@ -703,6 +703,6 @@ namespace ServiceFabricRestCaller
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
 
-[Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle)
+[Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle/)
 
 <!---HONumber=Mooncake_0627_2016-->

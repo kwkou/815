@@ -33,7 +33,7 @@
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
+[Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication/
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [应用设置]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 

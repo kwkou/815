@@ -158,11 +158,11 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 
 <!-- URLs. -->
-[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
-[处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
+[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/
+[处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/
 [Get started with Mobile Services（移动服务入门）]: /documentation/articles/partner-xamarin-mobile-services-android-get-started/
-[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started
-[软删除]: /documentation/articles/mobile-services-using-soft-delete
+[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started/
+[软删除]: /documentation/articles/mobile-services-using-soft-delete/
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
 [Azure 管理门户]: https://manage.windowsazure.cn

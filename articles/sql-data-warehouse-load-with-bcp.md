@@ -16,8 +16,8 @@
 # 使用 bcp 加载数据
 
 > [AZURE.SELECTOR]
-- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase)
-- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp)
+- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase/)
+- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp/)
 
 
 **[bcp][]** 是一个命令行批量加载实用程序，可让你在 SQL Server、数据文件和 SQL 数据仓库之间复制数据。使用 bcp 实用程序可将大量的行导入 SQL 数据仓库表，或将 SQL Server 表中的数据导出到数据文件。除非与 queryout 选项一起使用，否则 bcp 不需要 Transact-SQL 方面的知识。
@@ -172,10 +172,10 @@ bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name>
 
 <!--Article references-->
 
-[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[Table Design]: /documentation/articles/sql-data-warehouse-develop-table-design
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
+[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load/
+[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[Table Design]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
 
 
 <!--MSDN references-->

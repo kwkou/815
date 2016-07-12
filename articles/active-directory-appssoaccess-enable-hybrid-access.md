@@ -36,7 +36,7 @@
 7. 响应通过应用程序代理发送到用户。
 
 ## 相关文章
-- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
 
 <!---HONumber=Mooncake_0411_2016-->

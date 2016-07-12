@@ -16,7 +16,7 @@
 
 # 从 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅
 
-Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本文介绍如何通过 Azure CLI 连接到 Azure 订阅以使用所有 CLI 命令。如果你尚未安装 CLI，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
+Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本文介绍如何通过 Azure CLI 连接到 Azure 订阅以使用所有 CLI 命令。如果你尚未安装 CLI，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 
 
@@ -63,7 +63,7 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 ## 使用非交互式登录（使用工作或学校帐户）
 
 
-非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id)。这需要在 `azure login -e AzureChinaCloud` 命令中指定用户名或用户名和密码，如下所示：
+非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id/)。这需要在 `azure login -e AzureChinaCloud` 命令中指定用户名或用户名和密码，如下所示：
 
 	azure login -e AzureChinaCloud -u ahmet@contoso.partner.onmschina.cn
 	info:    Executing command login
@@ -148,7 +148,7 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 [authandsub]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
 [free-trial]: /pricing/1rmb-trial/
 [portal]: https://manage.windowsazure.cn
-[signuporg]: /documentation/articles/sign-up-organization
-[cliasm]: /documentation/articles/virtual-machines-command-line-tools
+[signuporg]: /documentation/articles/sign-up-organization/
+[cliasm]: /documentation/articles/virtual-machines-command-line-tools/
 
 <!---HONumber=Mooncake_0314_2016-->

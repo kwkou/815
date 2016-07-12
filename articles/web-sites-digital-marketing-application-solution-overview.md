@@ -20,7 +20,7 @@
 <object type="image/svg+xml" data="./media/web-sites-digital-marketing-application-solution-overview/digital-marketing-notitle.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]
-> 本指南介绍了一些与在 Azure 中运行数字市场营销活动一致的最常见领域和任务。但是，还有其他你可以在 Azure 中实现的常见解决方案。若要查看这些解决方案，请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview)中的其他指南。
+> 本指南介绍了一些与在 Azure 中运行数字市场营销活动一致的最常见领域和任务。但是，还有其他你可以在 Azure 中实现的常见解决方案。若要查看这些解决方案，请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview/)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview/)中的其他指南。
 
 ## 从头开始创建或引入现有资产
 
@@ -84,21 +84,21 @@ Azure Web 应用的增加和扩大功能非常适用于不可预测的工作负�
 
 [Azure Websites]: /home/features/web-site/
 
-[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
-[Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-[Git]: /documentation/articles/web-sites-publish-source-control
-[将其部署到过渡槽]: /documentation/articles/web-sites-staged-publishing
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
+[Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+[FTP]: /documentation/articles/web-sites-deploy/#ftp
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started/
+[Git]: /documentation/articles/web-sites-publish-source-control/
+[将其部署到过渡槽]: /documentation/articles/web-sites-staged-publishing/
 [连续发布]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [运行 A/B 测试]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[创建包含身份验证和 SQL DB 的 ASP.NET MVC 应用并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[创建包含身份验证和 SQL DB 的 ASP.NET MVC 应用并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
 [Azure 媒体服务]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[通知中心]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+[通知中心]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn
+[将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn/
 
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx

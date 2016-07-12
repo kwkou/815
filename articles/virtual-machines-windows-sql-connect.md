@@ -17,8 +17,8 @@
 # 连接到 Azure (Resource Manager) 上的 SQL Server 虚拟机
 
 > [AZURE.SELECTOR]
-- [资源管理器](/documentation/articles/virtual-machines-windows-sql-connect)
-- [经典](/documentation/articles/virtual-machines-windows-classic-sql-connect)
+- [资源管理器](/documentation/articles/virtual-machines-windows-sql-connect/)
+- [经典](/documentation/articles/virtual-machines-windows-classic-sql-connect/)
 
 ## 概述
 
@@ -26,7 +26,7 @@
 
 但在 SQL Server 连接方面，有一些 Azure VM 特定的设置。本文将介绍一些[常规连接方案](#connection-scenarios)，并提供[在 Azure VM 中配置 SQL Server 连接的详细步骤](#steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm)。
 
-本文的重点在于如何连接已存在的使用资源管理器模型部署的 SQL 服务器 VM。关于预配和连接的完整演练，请参阅[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create)。
+本文的重点在于如何连接已存在的使用资源管理器模型部署的 SQL 服务器 VM。关于预配和连接的完整演练，请参阅[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 
@@ -55,7 +55,7 @@
 
 ###<a name="connect-to-sql-server-in-the-same-virtual-network"></a> 连接到同一虚拟网络中的 SQL Server
 
-[虚拟网络](/documentation/articles/virtual-networks-overview)支持其他方案。你可以连接同一虚拟网络中的 VM，即使这些 VM 位于不同的资源组中。使用[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)，可以创建连接 VM 与本地网络和计算机的混合体系结构。
+[虚拟网络](/documentation/articles/virtual-networks-overview/)支持其他方案。你可以连接同一虚拟网络中的 VM，即使这些 VM 位于不同的资源组中。使用[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)，可以创建连接 VM 与本地网络和计算机的混合体系结构。
 
 虚拟网络还可让你将 Azure VM 加入域。这是对 SQL Server 使用 Windows 身份验证的唯一方式。其他连接方案需要使用用户名和密码进行 SQL 身份验证。
 
@@ -88,10 +88,10 @@
 
 ## 后续步骤
 
-若要查看预配说明以及这些连接步骤，请参阅 [使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create)。
+若要查看预配说明以及这些连接步骤，请参阅 [使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)。
 
-请务必查看 Azure 虚拟机上运行的 SQL Server 的所有安全最佳实践。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的安全注意事项](/documentation/articles/virtual-machines-windows-sql-security)。
+请务必查看 Azure 虚拟机上运行的 SQL Server 的所有安全最佳实践。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的安全注意事项](/documentation/articles/virtual-machines-windows-sql-security/)。
 
-有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_0411_2016-->

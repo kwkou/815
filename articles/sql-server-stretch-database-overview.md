@@ -61,19 +61,19 @@ SQL Server Stretch Database面向包含大量历史数据的事务数据库，�
 
 如果使用 SQL Server 2016 的历史表功能，则可以使用SQL Server Stretch Database将关联的所有或部分历史记录表迁移到 Azure 上的高性价比存储中。有关详细信息，请参阅[管理版本由系统控制的临时表中历史数据的保留期](https://msdn.microsoft.com/zh-cn/library/mt637341.aspx)。
 
-使用 SQL Server 2016 升级顾问的一项功能 - SQL Server Stretch Database顾问 - 可以识别符合SQL Server Stretch Database条件的数据库和表。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)。若要详细了解潜在的阻碍性问题，请参阅[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations)。
+使用 SQL Server 2016 升级顾问的一项功能 - SQL Server Stretch Database顾问 - 可以识别符合SQL Server Stretch Database条件的数据库和表。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)。若要详细了解潜在的阻碍性问题，请参阅[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations/)。
 
 ## <a name="FAQ"></a>有关SQL Server Stretch Database的常见问题
 **SQL Server Stretch Database是否能够配合 &lt;SQL Server 功能名称&gt; 工作？**
--   关能使某个表符合延伸条件的 SQL Server 功能的列表，请参阅[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations)。
+-   关能使某个表符合延伸条件的 SQL Server 功能的列表，请参阅[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations/)。
 
--   （可选）下载 SQL Server 2016 升级顾问并运行SQL Server Stretch Database顾问，以识别符合SQL Server Stretch Database条件的数据库和表。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)。
+-   （可选）下载 SQL Server 2016 升级顾问并运行SQL Server Stretch Database顾问，以识别符合SQL Server Stretch Database条件的数据库和表。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)。
 
 **我是否可以针对另一个本地 SQL Server 实例使用SQL Server Stretch Database？**
 不可以。SQL Server Stretch Database不支持使用另一个本地 SQL Server 实例作为远程终结点。
 
 **我是否可以禁用延伸并将迁移的数据移回到本地表？**
-是的。有关详细信息，请参阅[禁用SQL Server Stretch Database和移回远程数据](/documentation/articles/sql-server-stretch-database-disable)。
+是的。有关详细信息，请参阅[禁用SQL Server Stretch Database和移回远程数据](/documentation/articles/sql-server-stretch-database-disable/)。
 
 ## 术语
 **本地数据库**。本地 SQL Server 数据库。
@@ -116,7 +116,7 @@ SQL Server Stretch Database不会更改现有数据库的权限模型。用户�
 **借助 AdventureWorks 示例数据库体验SQL Server Stretch Database。** 若要获取 AdventureWorks 示例数据库，请从[此处](https://www.microsoft.com/download/details.aspx?id=49502)至少下载数据库文件以及示例和脚本文件。将示例数据库还原到 SQL Server 2016 实例后，解压缩示例文件，然后从 Stretch DB 文件夹打开 Stretch DB Samples 文件。运行此文件中的脚本可以查看启用SQL Server Stretch Database之前和之后数据所用的空间，跟踪数据迁移的进度，以及确认在数据迁移期间和之后是否可以继续查询现有数据和插入新数据。
 
 ## 后续步骤
-**识别符合SQL Server Stretch Database条件的数据库和表。** 下载 SQL Server 2016 升级顾问并运行SQL Server Stretch Database顾问，以识别符合SQL Server Stretch Database条件的数据库和表。SQL Server Stretch Database顾问还可识别阻碍性问题。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)。
+**识别符合SQL Server Stretch Database条件的数据库和表。** 下载 SQL Server 2016 升级顾问并运行SQL Server Stretch Database顾问，以识别符合SQL Server Stretch Database条件的数据库和表。SQL Server Stretch Database顾问还可识别阻碍性问题。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)。
 
 <!--Image references-->
 [StretchOverviewImage1]: ./media/sql-server-stretch-database-overview/StretchDBOverview.png

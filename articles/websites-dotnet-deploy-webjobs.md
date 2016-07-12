@@ -16,7 +16,7 @@
 
 ## 概述
 
-本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources/)部署到 [Azure Web 应用](/documentation/services/web-sites/)中。有关如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn)部署 Web 作业的信息，请参阅[使用 Web 作业运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
+本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources/)部署到 [Azure Web 应用](/documentation/services/web-sites/)中。有关如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn)部署 Web 作业的信息，请参阅[使用 Web 作业运行后台任务](/documentation/articles/web-sites-create-web-jobs/)。
 
 当 Visual Studio 部署启用 Web 作业的控制台应用程序项目时，它会执行两个任务：
 
@@ -94,7 +94,7 @@
 
 	创建一个项目，该项目配置为在针对位于相同解决方案中的 Web 项目进行部署时，自动以 Web 作业的方式部署。当你要在与运行相关 Web 应用程序相同的 Web 应用中运行 Web 作业时，请使用此选项。
 
-> [AZURE.NOTE] Web 作业新建项目模板会自动安装 NuGet 包，并在 *Program.cs* 中包含 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) 的代码。如果你不想使用 WebJobs SDK，或者想要使用计划 Web 作业（而不是连续 Web 作业），请删除或更改 *Program.cs* 中的 `host.RunAndBlock` 语句。
+> [AZURE.NOTE] Web 作业新建项目模板会自动安装 NuGet 包，并在 *Program.cs* 中包含 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/) 的代码。如果你不想使用 WebJobs SDK，或者想要使用计划 Web 作业（而不是连续 Web 作业），请删除或更改 *Program.cs* 中的 `host.RunAndBlock` 语句。
 
 ### <a id="createnolink"></a>为独立的 Web 作业使用 Web 作业新建项目模板
   
@@ -120,7 +120,7 @@
 
 ![“添加 Azure Web 作业”对话框](./media/websites-dotnet-deploy-webjobs/aaw2.png)
 
-此对话框中的字段对应于 Azure 经典管理门户中“新建作业”对话框上的字段。有关详细信息，请参阅[使用 Web 作业运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
+此对话框中的字段对应于 Azure 经典管理门户中“新建作业”对话框上的字段。有关详细信息，请参阅[使用 Web 作业运行后台任务](/documentation/articles/web-sites-create-web-jobs/)。
 
 对于计划的 Web 作业（而不是连续 Web 作业），Visual Studio 将创建 [Azure 计划程序](/home/features/scheduler/)作业集合（如果尚不存在），然后在该集合中创建一个作业：
 
@@ -171,7 +171,7 @@
   
 ## <a id="deploy"></a>部署 Web 作业项目
 
-已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署到 Web 应用](/documentation/articles/web-sites-deploy)。
+已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署到 Web 应用](/documentation/articles/web-sites-deploy/)。
 
 若要自动部署某个 Web 作业项目，请在“解决方案资源管理器”中右键单击该项目，然后单击“发布为 Azure Web 作业”。
 
@@ -181,6 +181,6 @@
 
 ## <a id="nextsteps"></a>后续步骤
 
-本文介绍了如何使用 Visual Studio 部署 Web 作业。有关如何在 Visual Studio 中使用连续传送过程部署 Azure Web 作业的信息，请参阅 [Azure Web 作业 - 推荐的资源 - 部署](/documentation/articles/websites-webjobs-resources#deploying)。
+本文介绍了如何使用 Visual Studio 部署 Web 作业。有关如何在 Visual Studio 中使用连续传送过程部署 Azure Web 作业的信息，请参阅 [Azure Web 作业 - 推荐的资源 - 部署](/documentation/articles/websites-webjobs-resources/#deploying)。
 
 <!---HONumber=Mooncake_0215_2016-->

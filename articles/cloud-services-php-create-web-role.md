@@ -22,11 +22,11 @@
 
 Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azure 虚拟机和 Azure 云服务。这三种模型都支持 PHP。云服务（包括 Web 角色和辅助角色）提供了*平台即服务 (PaaS)*。在云服务中，Web 角色提供专门用于托管前端 Web 应用程序的 Internet Information Services (IIS) Web 服务器。辅助角色可运行独立于用户交互或输入的异步任务、运行时间较长的任务或永久性任务。
 
-有关这些选项的详细信息，请参阅 [Azure 提供的计算托管选项](/documentation/articles/fundamentals-application-models)。
+有关这些选项的详细信息，请参阅 [Azure 提供的计算托管选项](/documentation/articles/fundamentals-application-models/)。
 
 ## 下载 Azure SDK for PHP
 
-[Azure SDK for PHP] 由多个组件构成。本文将使用其中两个：Azure PowerShell 和 Azure 模拟器。可以通过 Microsoft Web 平台安装程序安装这两个组件。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+[Azure SDK for PHP] 由多个组件构成。本文将使用其中两个：Azure PowerShell 和 Azure 模拟器。可以通过 Microsoft Web 平台安装程序安装这两个组件。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 创建云服务项目
 
@@ -181,7 +181,7 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 ## 在计算和存储模拟器中运行你的应用程序  
   
-Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署到云之前在该本地环境中测试此应用程序。模拟器与 Azure 环境之间存在一些差异。若要更好地了解该模拟器，请参阅[使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator)。  
+Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署到云之前在该本地环境中测试此应用程序。模拟器与 Azure 环境之间存在一些差异。若要更好地了解该模拟器，请参阅[使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator/)。  
 
 请注意，你必须本地安装 PHP 才能使用计算模拟器。计算模拟器将使用本地 PHP 安装来运行应用程序。  
 
@@ -204,7 +204,7 @@ Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署�
 
 ## 发布应用程序  
 
-若要发布应用程序，需要先使用 [Import-AzurePublishSettingsFile](https://msdn.microsoft.com/zh-cn/library/azure/dn790370.aspx) cmdlet 导入发布设置。然后使用 [Publish-AzureServiceProject](https://msdn.microsoft.com/zh-cn/library/azure/dn495166.aspx) cmdlet 发布你的应用程序。有关登录的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+若要发布应用程序，需要先使用 [Import-AzurePublishSettingsFile](https://msdn.microsoft.com/zh-cn/library/azure/dn790370.aspx) cmdlet 导入发布设置。然后使用 [Publish-AzureServiceProject](https://msdn.microsoft.com/zh-cn/library/azure/dn495166.aspx) cmdlet 发布你的应用程序。有关登录的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 后续步骤  
   

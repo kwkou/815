@@ -79,7 +79,7 @@
 
 4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在这种情况下为 **wasb:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
 
-可以使用 [Azure CLI](/documentation/articles/xplat-cli-install) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
+可以使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
 
 	azure storage blob list <container-name> example/curl
 
@@ -87,7 +87,7 @@
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。有关详细信息，请参阅[如何将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data)。
+> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。有关详细信息，请参阅[如何将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data/)。
 
 ##<a id="summary"></a>摘要
 
@@ -99,12 +99,12 @@
 
 有关 HDInsight 中的 MapReduce 作业的一般信息：
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
 <!---HONumber=79-->

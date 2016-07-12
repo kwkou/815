@@ -18,14 +18,14 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 
 > [AZURE.SELECTOR]
-- [Azure 经典 PowerShell 步骤](/documentation/articles/application-gateway-create-gateway)
-- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template)
+- [Azure 经典 PowerShell 步骤](/documentation/articles/application-gateway-create-gateway/)
+- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
+- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
 
 本文将指导你完成创建、配置、启动和删除应用程序网关的步骤。
 
 
->[AZURE.IMPORTANT] 在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文档将介绍如何使用 Azure 资源管理器创建应用程序网关。若要使用经典版本，请转到[使用 PowerShell 创建应用程序网关经典部署](/documentation/articles/application-gateway-create-gateway)。
+>[AZURE.IMPORTANT] 在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文档将介绍如何使用 Azure 资源管理器创建应用程序网关。若要使用经典版本，请转到[使用 PowerShell 创建应用程序网关经典部署](/documentation/articles/application-gateway-create-gateway/)。
 
 
 
@@ -63,7 +63,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 ## 创建资源管理器的资源组
 
-确保使用最新版本的 Azure PowerShell。[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)中提供了详细信息。
+确保使用最新版本的 Azure PowerShell。[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)中提供了详细信息。
 
 ### 步骤 1
 登录到 Azure。
@@ -90,7 +90,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 在上面的示例中，我们在位置“中国北部”创建了名为“appgw-RG”的资源组。
 
->[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅[使用 PowerShell 创建带自定义探测的应用程序网关](/documentation/articles/application-gateway-create-probe-ps)。有关详细信息，请查看[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview)。
+>[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅[使用 PowerShell 创建带自定义探测的应用程序网关](/documentation/articles/application-gateway-create-probe-ps/)。有关详细信息，请查看[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview/)。
 
 
 
@@ -231,9 +231,9 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
+如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
+如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 

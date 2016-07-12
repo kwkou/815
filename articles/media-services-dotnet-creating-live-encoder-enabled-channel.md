@@ -16,8 +16,8 @@
 #如何使用 Azure 媒体服务执行实时流式处理以通过 .NET 创建多比特率流
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
+- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
+- [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 >[AZURE.NOTE]
@@ -27,7 +27,7 @@
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。
 
-有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 
 ##常见的实时流方案
@@ -88,7 +88,7 @@
 - 若要完成本教程，你需要一个 Azure 帐户。 
 	
 	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure Web 应用中的 Web Apps 功能。
-- 一个媒体服务 帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
+- 一个媒体服务 帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
 - 必须使用适用于 .NET 的媒体服务 SDK 版本 3.2.0.0 或更高版本。
 - 可以发送单比特率实时流的摄像头和编码器。

@@ -27,6 +27,6 @@
 - 确保将保管库凭据保存可从计算机访问的位置。如果将它存储在文件共享/SMB 中，请检查访问权限。
 - 保管库凭据文件仅在注册工作流中使用。
 - 保管库凭据文件在 48 小时后过期，可从门户下载。
-- 如有工作流方面的任何问题，请参阅 Azure 备份[常见问题](/documentation/articles/backup-azure-backup-faq)。
+- 如有工作流方面的任何问题，请参阅 Azure 备份[常见问题](/documentation/articles/backup-azure-backup-faq/)。
 
 <!---HONumber=76-->

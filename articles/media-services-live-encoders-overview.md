@@ -20,22 +20,22 @@
 
 ##Elemental Live
 
-有关如何配置 [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live) 编码器以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 Elemental Live](/documentation/articles/media-services-configure-elemental-live-encoder)。
+有关如何配置 [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live) 编码器以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 Elemental Live](/documentation/articles/media-services-configure-elemental-live-encoder/)。
  
 ##Flash 媒体实时编码器
 
-有关如何配置 [Flash 媒体实时编码器](http://www.adobe.com/products/flash-media-encoder.html) (FMLE) 以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 FMLE](/documentation/articles/media-services-configure-fmle-live-encoder)。
+有关如何配置 [Flash 媒体实时编码器](http://www.adobe.com/products/flash-media-encoder.html) (FMLE) 以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 FMLE](/documentation/articles/media-services-configure-fmle-live-encoder/)。
 
 ##Telestream Wirecast
 
-有关如何配置 [Telestream Wirecast](http://www.telestream.net/wirecast/overview.htm) 编码器以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 Wirecast](/documentation/articles/media-services-configure-wirecast-live-encoder)。
+有关如何配置 [Telestream Wirecast](http://www.telestream.net/wirecast/overview.htm) 编码器以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 Wirecast](/documentation/articles/media-services-configure-wirecast-live-encoder/)。
 
 ##NewTek TriCaster
 
-有关如何配置 [Tricaster](http://newtek.com/products/tricaster-40.html) 编码器以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 Tricaster](/documentation/articles/media-services-configure-tricaster-live-encoder)。
+有关如何配置 [Tricaster](http://newtek.com/products/tricaster-40.html) 编码器以将单比特率实时流发送到 AMS 通道的信息，请参阅[配置 Tricaster](/documentation/articles/media-services-configure-tricaster-live-encoder/)。
 
 
 ## 另请参阅
 
-[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 <!---HONumber=Mooncake_0620_2016-->

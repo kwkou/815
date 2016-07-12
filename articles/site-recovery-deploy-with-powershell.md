@@ -17,7 +17,7 @@
 
 ## 概述
 
-Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请参阅 [Azure Site Recovery 概述](/documentation/articles/site-recovery-overview)。
+Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请参阅 [Azure Site Recovery 概述](/documentation/articles/site-recovery-overview/)。
 
 本文说明当你设置 Azure Site Recovery 以便将 System Center VMM 云中的 Hyper-V 虚拟机复制到 Azure 存储空间时，如何使用 PowerShell 来自动完成所要执行的常见任务。
 
@@ -33,8 +33,8 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 ### Azure 先决条件
 
 - 需要一个 [Azure](http://www.azure.cn) 帐户。你可以从[试用版](/price/1rmb-trial)开始。
-- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction)。
-- 需要确保你要保护的虚拟机符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices#virtual-machines)。
+- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction/)。
+- 需要确保你要保护的虚拟机符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
 
 ### VMM 先决条件
 - 你需要具有运行 System Center 2012 R2 的 VMM 服务器。
@@ -60,10 +60,10 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 - 源 VMM 服务器上你要保护的虚拟机应当连接到某个 VM 网络。该网络应当该链接到与该云相关联的逻辑网络。
 - 具有在故障转移后复制的虚拟机可以连接到的 Azure 网络。你将在故障转移时选择此网络。此网络应当与你的 Azure Site Recovery 订阅位于同一区域中。
-- [详细了解](/documentation/articles/site-recovery-network-mapping)网络映射：
+- [详细了解](/documentation/articles/site-recovery-network-mapping/)网络映射：
 
 ###PowerShell 必决条件
-确保已将 Azure PowerShell 准备就绪。如果你已使用 PowerShell，则升级到 0.8.10 或更高版本。如需设置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。安装并配置 PowerShell 后，可在[此处](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx)查看该服务的所有可用 cmdlet。
+确保已将 Azure PowerShell 准备就绪。如果你已使用 PowerShell，则升级到 0.8.10 或更高版本。如需设置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。安装并配置 PowerShell 后，可在[此处](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx)查看该服务的所有可用 cmdlet。
 
 若要了解可帮助你使用 cmdlet 的提示（如在 Azure PowerShell 中通常如何处理参数值、输入和输出），请参阅 [Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
 
@@ -303,7 +303,7 @@ PS C:\> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureS
 
 在正确配置服务器、云和网络后，可以在云中为虚拟机启用保护。注意以下事项：
 
-虚拟机必须符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices.md#virtual-machines)。
+虚拟机必须符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices.md/#virtual-machines)。
 
 若要启用保护，必须为虚拟机设置操作系统和操作系统磁盘属性。当你使用虚拟机模板在 VMM 中创建虚拟机时，可以设置属性。也可以在虚拟机属性的“常规”和“硬件配置”选项卡中为现有虚拟机设置这些属性。如果未在 VMM 中设置这些属性，可以在 Azure Site Recovery 门户中配置它们。
 

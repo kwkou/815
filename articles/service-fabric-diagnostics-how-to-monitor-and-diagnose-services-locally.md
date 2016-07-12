@@ -27,7 +27,7 @@
 
 ## 在 Visual Studio 中查看 Service Fabric 系统事件
 
-Service Fabric 发出 ETW 事件以帮助应用程序开发人员了解平台中发生的情况。如果你还没有这么做，请继续遵循[在 Visual Studio 中创建第一个应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio)中的步骤。此信息将帮助你启动应用程序，并运行可显示跟踪消息的诊断事件查看器。
+Service Fabric 发出 ETW 事件以帮助应用程序开发人员了解平台中发生的情况。如果你还没有这么做，请继续遵循[在 Visual Studio 中创建第一个应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)中的步骤。此信息将帮助你启动应用程序，并运行可显示跟踪消息的诊断事件查看器。
 
 1. 如果诊断事件窗口未自动显示，请在 Visual Studio 中转到“视图”选项卡上，选择“其他窗口”，然后选择“诊断事件查看器”。
 
@@ -54,7 +54,7 @@ Service Fabric Visual Studio 项目模板包含示例代码。该代码演示如
 ## 后续步骤
 你添加到上述应用程序用于进行本地诊断的相同跟踪代码将与工具一起工作，在 Azure 群集上运行应用程序时，你可以使用这些工具查看这些事件。请查看以下文章，其中介绍了不同的工具选项，以及如何设置这些选项。
 
-* [如何使用 Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad)  
-* [Using ElasticSearch as a Service Fabric application trace store（将 ElasticSearch 用作 Service Fabric 应用程序跟踪存储）](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch)
+* [如何使用 Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad/)  
+* [Using ElasticSearch as a Service Fabric application trace store（将 ElasticSearch 用作 Service Fabric 应用程序跟踪存储）](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)
 
 <!---HONumber=Mooncake_0425_2016-->

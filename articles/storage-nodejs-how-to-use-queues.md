@@ -310,9 +310,9 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
   [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
   [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
-  [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+  [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site/
 
   
   [Queue1]: ./media/storage-nodejs-how-to-use-queues/queue1.png
@@ -321,8 +321,8 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   
   
   
-  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-  [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: /documentation/articles/web-sites-nodejs-use-webmatrix
+  [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: /documentation/articles/web-sites-nodejs-use-webmatrix/
 
 <!---HONumber=Mooncake_0516_2016-->

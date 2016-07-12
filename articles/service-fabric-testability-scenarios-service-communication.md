@@ -89,8 +89,8 @@ PS > Invoke-ServiceFabricPartitionQuorumLoss -ServiceName fabric:/Myapplication/
 
 ## 后续步骤
 
-[了解有关可测试性操作的详细信息](/documentation/articles/service-fabric-testability-actions)
+[了解有关可测试性操作的详细信息](/documentation/articles/service-fabric-testability-actions/)
 
-[了解有关可测试性方案的详细信息](/documentation/articles/service-fabric-testability-scenarios)
+[了解有关可测试性方案的详细信息](/documentation/articles/service-fabric-testability-scenarios/)
 
 <!---HONumber=Mooncake_0503_2016-->

@@ -24,7 +24,7 @@
 
 暂时性错误（也称为暂时性故障）存在很快解决自身问题的根本原因。当 Azure 系统快速地将硬件资源转移到负载平衡更好的各种工作负荷时，偶尔会发生暂时性错误。大多数这些重新配置事件通常在 60 秒内就能完成。在进行这种重新配置的过程中，可能会遇到与 Azure SQL 数据库的连接性问题。连接到 Azure SQL 数据库的应用程序应当构建为能预见这些暂时性错误，并能通过在它们的代码内实现重试逻辑来处理它们，而不是以应用程序错误的形式呈现给用户。
 
-如果客户端程序使用 ADO.NET，系统将会引发 **SqlException**，使你的程序知道已发生暂时性错误。你可以将 **Number** 属性与 [SQL 数据库客户端应用程序的 SQL 错误代码](/documentation/articles/sql-database-develop-error-messages)主题顶部附近的暂时性错误列表进行比较。
+如果客户端程序使用 ADO.NET，系统将会引发 **SqlException**，使你的程序知道已发生暂时性错误。你可以将 **Number** 属性与 [SQL 数据库客户端应用程序的 SQL 错误代码](/documentation/articles/sql-database-develop-error-messages/)主题顶部附近的暂时性错误列表进行比较。
 
 <a id="connection-versus-command" name="connection-versus-command"></a>
 
@@ -89,7 +89,7 @@
 
 以下位置提供了采用各种编程语言的重试逻辑代码示例：
 
-- [快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+- [快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
 
 
 <a id="k-test-retry-logic" name="k-test-retry-logic"></a>
@@ -231,11 +231,11 @@
 7. &gt;“新建规则”
 
 
-如果你的客户端程序托管在 Azure 虚拟机 (VM) 上，你应该阅读：<br/>[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)。
+如果你的客户端程序托管在 Azure 虚拟机 (VM) 上，你应该阅读：<br/>[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)。
 
 
 有关配置端口和 IP 地址的背景信息，请参阅：
-[Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)
+[Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)
 
 
 <a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
@@ -410,7 +410,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 在其重试逻辑中使用 EntLib60 的简短 C# 代码示例可从以下链接中找到：
 
-- [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
+- [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows/)
 
 
 > [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。
@@ -449,7 +449,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 - 免费[书籍下载：Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/en-us/download/details.aspx?id=41145)
 
-- 最佳实践：[有关重试的一般性指南](/documentation/articles/best-practices-retry-general)深入探讨了重试逻辑。
+- 最佳实践：[有关重试的一般性指南](/documentation/articles/best-practices-retry-general/)深入探讨了重试逻辑。
 
 - [Enterprise Library - 暂时性故障处理应用程序块 6.0](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling) 的 NuGet 下载
 
@@ -551,7 +551,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 ## 后续步骤
 
-- 有关其他常见的 Azure SQL 数据库连接问题的疑难解答，请访问 [Azure SQL 数据库的常见连接问题疑难解答](/documentation/articles/sql-database-troubleshoot-common-connection-issues)。
+- 有关其他常见的 Azure SQL 数据库连接问题的疑难解答，请访问 [Azure SQL 数据库的常见连接问题疑难解答](/documentation/articles/sql-database-troubleshoot-common-connection-issues/)。
 
 - [SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx)
 

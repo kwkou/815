@@ -78,7 +78,7 @@
 
 - **Windows 身份验证**：身份验证数据库将使用 Windows 凭据来验证用户。指定的用户名/密码将用于向数据库进行身份验证。此帐户需要数据库的权限。
 - **SQL 身份验证**：身份验证数据库使用“连接”屏幕上定义的用户名/密码连接到数据库。如果在 DSN 文件中存储用户名/密码，则优先使用在“连接”屏幕上提供的凭据。
-- **Azure SQL 数据库身份验证**：有关详细信息，请参阅[使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。
+- **Azure SQL 数据库身份验证**：有关详细信息，请参阅[使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication/)。
 
 **DN 是定位点**：如果选择此选项，DN 也用作定位点属性。它可用于简单实现，但也有以下限制：
 

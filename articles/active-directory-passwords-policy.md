@@ -46,15 +46,15 @@
 
 ## 后续步骤
 
-* [从任意位置管理密码](/documentation/articles/active-directory-passwords)
-* [密码管理的工作原理](/documentation/articles/active-directory-passwords-how-it-works)
-* [密码管理入门](/documentation/articles/active-directory-passwords-getting-started)
-* [自定义密码管理](/documentation/articles/active-directory-passwords-customize)
-* [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [如何使用密码管理报告获取 Operational Insights](/documentation/articles/active-directory-passwords-get-insights)
-* [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
-* [排查密码管理问题](/documentation/articles/active-directory-passwords-troubleshoot)
-* [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)
+* [从任意位置管理密码](/documentation/articles/active-directory-passwords/)
+* [密码管理的工作原理](/documentation/articles/active-directory-passwords-how-it-works/)
+* [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)
+* [自定义密码管理](/documentation/articles/active-directory-passwords-customize/)
+* [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices/)
+* [如何使用密码管理报告获取 Operational Insights](/documentation/articles/active-directory-passwords-get-insights/)
+* [密码管理常见问题](/documentation/articles/active-directory-passwords-faq/)
+* [排查密码管理问题](/documentation/articles/active-directory-passwords-troubleshoot/)
+* [了解详细信息](/documentation/articles/active-directory-passwords-learn-more/)
 
 
 <!---HONumber=Mooncake_0620_2016-->

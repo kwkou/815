@@ -27,7 +27,7 @@
 
 ## 创建 Ruby 应用程序
 
-创建 Ruby 应用程序。有关说明，请参阅[Azure VM 上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app)。
+创建 Ruby 应用程序。有关说明，请参阅[Azure VM 上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)。
 
 ## 配置应用程序以访问存储
 
@@ -146,7 +146,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - 访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-有关本文中讨论的 Azure 队列服务与[如何使用服务总线队列](/documentation/articles/service-bus-ruby-how-to-use-queues)一文中讨论的 Azure 服务总线队列的比较，请参阅 [Azure 队列和服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
+有关本文中讨论的 Azure 队列服务与[如何使用服务总线队列](/documentation/articles/service-bus-ruby-how-to-use-queues/)一文中讨论的 Azure 服务总线队列的比较，请参阅 [Azure 队列和服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
  
 
 <!---HONumber=Mooncake_0606_2016-->

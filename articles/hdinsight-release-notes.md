@@ -876,8 +876,8 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 </tr>
 
 <tr>
-<td><a href = "/documentation/articles/hdinsight-hadoop-customize-cluster-v1" target="_blank">群集自定义正式发布</a></td>
-<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，你现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这是通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了安装流行的 <a href = "/documentation/articles/hdinsight-hadoop-r-scripts" target="_blank">R</a>、<a href = "/documentation/articles/hdinsight-hadoop-solr-install-v1" target="_blank">Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install-v1" target="_blank">Giraph</a> 模块的过程。这个版本也添加让客户通过 Azure 经典管理门户指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导方针最佳作法和最佳作法，并提供有关如何测试脚本操作的指导方针。</p></td>
+<td><a href = "/documentation/articles/hdinsight-hadoop-customize-cluster-v1/\" target="_blank">群集自定义正式发布</a></td>
+<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，你现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这是通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了安装流行的 <a href = "/documentation/articles/hdinsight-hadoop-r-scripts/\" target="_blank">R</a>、<a href = "/documentation/articles/hdinsight-hadoop-solr-install-v1/\" target="_blank">Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install-v1/\" target="_blank">Giraph</a> 模块的过程。这个版本也添加让客户通过 Azure 经典管理门户指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导方针最佳作法和最佳作法，并提供有关如何测试脚本操作的指导方针。</p></td>
 <td>功能正式发布</td>
 <td>全部</td>
 <td>不适用</td>
@@ -1041,7 +1041,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 **注意：**为了演示群集自定义所提供的新功能，此过程使用脚本操作在所述的群集上安装 R 模块。有关详细信息，请参阅：
 
-* [在 HDInsight Hadoop 群集上安装并使用 R](/documentation/articles/hdinsight-hadoop-r-scripts)
+* [在 HDInsight Hadoop 群集上安装并使用 R](/documentation/articles/hdinsight-hadoop-r-scripts/)
 
 
 
@@ -1114,7 +1114,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 * 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，起因于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。但旧版的 HDInsight SDK 或 Azure PowerShell 无法正确解释此功能。结果造成某些作业提交操作失败。如果你使用 HDInsight SDK API 或 Azure PowerShell cmdlet 来提交作业（**Use-AzureHDInsightCluster** 或 **Invoke-Hive**），这些作业可能失败并返回错误消息“群集 <clustername> 未配置 HTTP 服务访问”。 或者（根据具体的操作），你可能会收到其他错误消息，例如“无法连接到群集”。
 
-* 在最新版 HDInsight SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 获取最新的 HDInsight SDK，从[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 获取 Azure PowerShell 工具。
+* 在最新版 HDInsight SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 获取最新的 HDInsight SDK，从[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 获取 Azure PowerShell 工具。
 
 
 
@@ -1154,7 +1154,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 * **HDInsight 已在新区域推出：**我们已将 HDInsight 的地理位置据点扩展到三个新的区域。HDInsight 客户可以在这些区域创建群集。
 	* 中国北部
 	* 中国东部
-* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 经典管理门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
+* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 经典管理门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1/)页。
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改：
 
 <table border="1"> <tr><th>HDP</th><th>更改</th></tr> <tr><td>HDP 1.3 / HDI 2.1</td><td>无更改</td></tr> <tr><td>HDP 2.0 / HDI 3.0</td><td>无更改</td></tr> <tr><td>HDP 2.1 / HDI 3.1</td><td>zookeeper：['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
@@ -1319,7 +1319,7 @@ HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
 
 
 ### 驱动程序
-SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver)。
+SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/)。
 
 
 ### Bug 修复
@@ -1357,7 +1357,7 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 
 [webpi-link]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
 
-[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
  
 
 <!---HONumber=Mooncake_0104_2016-->

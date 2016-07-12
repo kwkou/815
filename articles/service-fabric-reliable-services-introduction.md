@@ -19,11 +19,11 @@ Azure Service Fabric 可简化无状态和有状态 Reliable Services 的编写�
 - 编写 Reliable Services 时必须做出选择。
 - 有关 Reliable Services 的使用方案及编写方式的一些方案和示例。
 
-Reliable Services 是 Service Fabric 上可用的编程模型之一。有关 Reliable Actors 编程模型的详细信息，请参阅 [Service Fabric Reliable Actors 简介](/documentation/articles/service-fabric-reliable-actors-introduction)。
+Reliable Services 是 Service Fabric 上可用的编程模型之一。有关 Reliable Actors 编程模型的详细信息，请参阅 [Service Fabric Reliable Actors 简介](/documentation/articles/service-fabric-reliable-actors-introduction/)。
 
 在 Service Fabric 中，服务由配置、应用程序代码和状态（可选）组成。
 
-Service Fabric 通过 [Service Fabric 应用程序管理](/documentation/articles/service-fabric-deploy-remove-applications)管理服务的生存期，从预配和部署一直到升级和删除。
+Service Fabric 通过 [Service Fabric 应用程序管理](/documentation/articles/service-fabric-deploy-remove-applications/)管理服务的生存期，从预配和部署一直到升级和删除。
 
 ## 什么是 Reliable Services？
 Reliable Services 为你提供简单且功能强大的顶级编程模型，以帮助你表达对你的应用程序至关重要的内容。借助 Reliable Services 编程模型，你将获得：
@@ -32,7 +32,7 @@ Reliable Services 为你提供简单且功能强大的顶级编程模型，以�
 
 - 类似于你习惯使用的编程模型的简单模型，用于运行你自己的代码。代码具有定义完善的入口点和易于管理的生命周期。
 
-- 可插式通信模型。使用你选择的传输方式，如包含 [Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi) 的 HTTP、WebSockets、自定义 TCP 协议等等。Reliable Services 提供一些极佳的自带选项供你使用，你也可以提供自己的选项。
+- 可插式通信模型。使用你选择的传输方式，如包含 [Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/) 的 HTTP、WebSockets、自定义 TCP 协议等等。Reliable Services 提供一些极佳的自带选项供你使用，你也可以提供自己的选项。
 
 ## Reliable Services 有何不同之处？
 Service Fabric 中的 Reliable Services 与你以前编写的服务不同。Service Fabric 提供可靠性、可用性、一致性和可伸缩性。
@@ -48,7 +48,7 @@ Service Fabric 中的 Reliable Services 与你以前编写的服务不同。Serv
 ## 服务生命周期
 无论你的服务有状态还是无状态，Reliable Services 都会提供简单的生命周期，可让你快速插入代码并开始执行。你只需要实现一种或两种方法，即可启动并运行服务。
 
-- **CreateServiceReplicaListeners/CreateServiceInstanceListeners** - 这是服务定义它要使用的通信堆栈的位置。通信堆栈（例如 [Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi)）可定义服务的一个或多个侦听终结点（客户端将如何访问它）。它还定义所显示的消息最终如何与服务代码的其余部分交互。
+- **CreateServiceReplicaListeners/CreateServiceInstanceListeners** - 这是服务定义它要使用的通信堆栈的位置。通信堆栈（例如 [Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)）可定义服务的一个或多个侦听终结点（客户端将如何访问它）。它还定义所显示的消息最终如何与服务代码的其余部分交互。
 
 - **RunAsync** - 服务将在其中运行自己的业务逻辑。所提供的取消标记是指示该操作何时应停止的信号。例如，如果你的服务需要不断地从可靠队列中提取消息并进行处理，这是开始该操作的位置。
 
@@ -85,7 +85,7 @@ Reliable Service 的生命周期中的主要事件如下：
 
 以没有内存的计算器为例，它会接收所有项并同时执行运算。
 
-在这种情况下，由于服务无需处理任何后台任务，因此，服务的 RunAsync() 可以为空。创建计算器服务时，它将返回 CommunicationListener（例如 [Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi)），CommunicationListener 将在某个端口上打开侦听终结点。此侦听终结点将挂接到不同的方法（例如： "Add(n1, n2)"），这些方法将定义计算器的公共 API。
+在这种情况下，由于服务无需处理任何后台任务，因此，服务的 RunAsync() 可以为空。创建计算器服务时，它将返回 CommunicationListener（例如 [Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)），CommunicationListener 将在某个端口上打开侦听终结点。此侦听终结点将挂接到不同的方法（例如： "Add(n1, n2)"），这些方法将定义计算器的公共 API。
 
 从客户端进行调用时，将调用相应的方法，并且计算器服务会对所提供的数据执行运算并返回结果。它不存储任何状态。
 
@@ -131,9 +131,9 @@ Service Fabric 中常见的无状态服务使用示例是作为前端，它公�
 
 
 ## 后续步骤
-+ [Reliable Services 快速启动](/documentation/articles/service-fabric-reliable-services-quick-start)
-+ [Reliable Services 高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage)
-+ [Reliable Actors 编程模型](/documentation/articles/service-fabric-reliable-actors-introduction)
++ [Reliable Services 快速启动](/documentation/articles/service-fabric-reliable-services-quick-start/)
++ [Reliable Services 高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)
++ [Reliable Actors 编程模型](/documentation/articles/service-fabric-reliable-actors-introduction/)
  
 
 <!---HONumber=Mooncake_0503_2016-->

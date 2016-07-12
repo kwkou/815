@@ -174,23 +174,23 @@ Azure 计划程序作业中的日期时间引用遵循 [ISO-8601 规范](http://
 
 ## 另请参阅
  
- [计划程序是什么？](/documentation/articles/scheduler-intro)
+ [计划程序是什么？](/documentation/articles/scheduler-intro/)
  
- [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
+ [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms/)
  
- [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
+ [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal/)
  
- [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing)
+ [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing/)
  
  [计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
  
- [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference)
+ [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
  
- [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
+ [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability/)
  
- [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
+ [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors/)
  
- [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
+ [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
  
   
 

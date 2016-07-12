@@ -23,7 +23,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ![](./media/virtual-networks-arm-asm-s2s/figure01.png)
 
->[AZURE.NOTE] 本文档将指导你完成一个端到端解决方案，以用于测试目的。如果 VNet 已经设置完毕，并且你已熟悉 VPN 网关和 Azure 中的站点到站点连接，请访问[在 ARM VNet 和经典 VNet 之间配置 S2S VPN](/documentation/articles/virtual-networks-arm-asm-s2s-howto)。
+>[AZURE.NOTE] 本文档将指导你完成一个端到端解决方案，以用于测试目的。如果 VNet 已经设置完毕，并且你已熟悉 VPN 网关和 Azure 中的站点到站点连接，请访问[在 ARM VNet 和经典 VNet 之间配置 S2S VPN](/documentation/articles/virtual-networks-arm-asm-s2s-howto/)。
 
 要测试此方案，你将要：
 
@@ -199,7 +199,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ### 步骤 2：在 ARM 中创建新 VM
 
-请参考[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-create)或者[使用 Azure CLI 从头开始创建 Linux VM](/documentation/articles/virtual-machines-linux-create-cli-complete)。
+请参考[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-create/)或者[使用 Azure CLI 从头开始创建 Linux VM](/documentation/articles/virtual-machines-linux-create-cli-complete/)。
 
 ##<a name="Connect-the-two-VNets"></a> 连接两个 VNet
 
@@ -319,6 +319,6 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ## 后续步骤
 
-- 查看有关如何[在经典 VNet 和 ARM VNet 之间创建 S2S VPN 连接](/documentation/articles/virtual-networks-arm-asm-s2s-howto)的通用准则。
+- 查看有关如何[在经典 VNet 和 ARM VNet 之间创建 S2S VPN 连接](/documentation/articles/virtual-networks-arm-asm-s2s-howto/)的通用准则。
 
 <!---HONumber=Mooncake_0418_2016-->

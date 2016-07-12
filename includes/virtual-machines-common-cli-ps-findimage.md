@@ -103,7 +103,7 @@
 
 ##<a name="powershell"></a> PowerShell
 
-使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
+使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
 > [AZURE.NOTE] 在版本高于 1.0 的 Azure PowerShell 模块中，已删除 `Switch-AzureMode` cmdlet。如果使用 1.0 或更高版本，请将以下命令中的 `Azure` 部分替换为 `AzureRm`。如果使用低于 1.0 版本的 Azure PowerShell 模块，请使用以下命令，但必须先执行 `Switch-AzureMode AzureResourceManager`。
 

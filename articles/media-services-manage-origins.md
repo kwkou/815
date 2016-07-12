@@ -17,13 +17,13 @@
 #<a id="managemediaservicesorigins"></a>如何在媒体服务帐户中管理流式处理终结点
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-manage-origins)
+- [门户](/documentation/articles/media-services-manage-origins/)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
 
 在 Azure 媒体服务中，**流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容传送网络 (CDN) 以进一步分发。媒体服务还提供无缝 Azure CDN 集成。StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。
 
-此外，还可以通过调整扩展单元（也称为流单元）来控制流式处理终结点服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单位为你提供了可按照 200 Mbps 的增量购买的专用出口容量和包括[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)、CDN 集成和高级配置在内的其他功能。
+此外，还可以通过调整扩展单元（也称为流单元）来控制流式处理终结点服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单位为你提供了可按照 200 Mbps 的增量购买的专用出口容量和包括[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)、CDN 集成和高级配置在内的其他功能。
 
 请注意，仅当 StreamingEndpoint 处于运行状态时才进行计费。
 
@@ -45,11 +45,11 @@
 ![“流式处理终结点”页][streaming-endpoint]
 
 
-默认情况下可以具有最多两个流式处理终结点。如果需要请求详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
+默认情况下可以具有最多两个流式处理终结点。如果需要请求详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
 
 ##<a name="scale_streaming_endpoints"></a>缩放流式处理终结点
 
-流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态打包功能](/documentation/articles/media-services-dynamic-packaging-overview)）默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
+流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态打包功能](/documentation/articles/media-services-dynamic-packaging-overview/)）默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
 
 可以使用 .NET SDK、REST API 或 Azure 管理门户进行缩放。
 

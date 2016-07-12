@@ -14,7 +14,7 @@
 
 #RBAC：内置角色
 
-Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和服务的内置角色。不能修改内置角色的定义。但是，可以创建 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles)，以满足你组织的特定需要。
+Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和服务的内置角色。不能修改内置角色的定义。但是，可以创建 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)，以满足你组织的特定需要。
 
 ## Azure 中的角色
 
@@ -509,9 +509,9 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Web/sites/* | 创建和管理网站 |
 
 ## 另请参阅
-- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure)：在 Azure 门户中开始使用 RBAC。
-- [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles)：了解如何创建自定义角色，以满足访问需要。
-- [创建访问权限更改历史记录报告](/documentation/articles/role-based-access-control-access-change-history-report)：记录 RBAC 中的角色分配更改。
-- [基于角色的访问控制故障排除](/documentation/articles/role-based-access-control-troubleshooting)：获取解决常见问题的建议。
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：在 Azure 门户中开始使用 RBAC。
+- [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)：了解如何创建自定义角色，以满足访问需要。
+- [创建访问权限更改历史记录报告](/documentation/articles/role-based-access-control-access-change-history-report/)：记录 RBAC 中的角色分配更改。
+- [基于角色的访问控制故障排除](/documentation/articles/role-based-access-control-troubleshooting/)：获取解决常见问题的建议。
 
 <!---HONumber=Mooncake_0627_2016-->

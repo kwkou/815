@@ -60,7 +60,7 @@ HDInsight 使用 Azure 存储空间 Blob 来存储数据。HDInsight 必须对�
 
 建议始终使用存储访问策略，以便可以根据需要吊销签名或延长过期日期。本文档中的步骤使用存储访问策略生成 SAS。
 
-有关共享访问签名的详细信息，请参阅[了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+有关共享访问签名的详细信息，请参阅[了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 ##创建存储策略并生成 SAS
 
@@ -173,7 +173,7 @@ HDInsight 使用 Azure 存储空间 Blob 来存储数据。HDInsight 必须对�
 
 若要验证已限制的访问，请使用以下方法：
 
-* 对于__基于 Windows__ 的 HDInsight 群集，请使用远程桌面连接到群集。有关详细信息，请参阅[使用 RDP 连接到 HDInsight](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-clusters-using-rdp)。
+* 对于__基于 Windows__ 的 HDInsight 群集，请使用远程桌面连接到群集。有关详细信息，请参阅[使用 RDP 连接到 HDInsight](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-clusters-using-rdp)。
 
     连接之后，请使用桌面上的“Hadoop 命令行”图标打开命令提示符。
 
@@ -237,12 +237,12 @@ __解决方法__：使用符合以下条件的密码：
 
 现在你已了解如何将访问受限的存储添加到 HDInsight 群集，接下来请了解在群集上处理数据的其他方法：
 
-* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-[powershell]: /documentation/articles/powershell-install-configure
+[powershell]: /documentation/articles/powershell-install-configure/
 
 <!---HONumber=Mooncake_0215_2016-->

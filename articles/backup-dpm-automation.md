@@ -103,7 +103,7 @@
 | /pw | 代理密码 | - |
 
 ### 注册到 Azure 备份服务
-在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-azure-dpm-introduction)。你必须：
+在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-azure-dpm-introduction/)。你必须：
 
 - 具备有效的 Azure 订阅
 - 有一个备份保管库
@@ -243,7 +243,7 @@ DPM 服务器在注册到 Azure 备份保管库后，将使用默认的订阅设
 		PS C:\> Set-DPMPolicyObjective –ProtectionGroup $MPG -RetentionRangeInDays 10 -SynchronizationFrequencyMinutes 360
 
 
-为了将备份转移到 Azure（DPM 将此称为联机备份），可将保留范围配置为[使用祖父-父-子方案 (GFS) 的长期保留](/documentation/articles/backup-azure-backup-cloud-as-tape)。也就是说，你可以定义组合保留策略，其中包括每日、每周、每月和每年保留策略。在此示例中，我们将创建一个用于表示所需复杂保留配置的数组，然后使用 [Set-DPMPolicyObjective](https://technet.microsoft.com/zh-cn/library/hh881762) cmdlet 配置保留范围。
+为了将备份转移到 Azure（DPM 将此称为联机备份），可将保留范围配置为[使用祖父-父-子方案 (GFS) 的长期保留](/documentation/articles/backup-azure-backup-cloud-as-tape/)。也就是说，你可以定义组合保留策略，其中包括每日、每周、每月和每年保留策略。在此示例中，我们将创建一个用于表示所需复杂保留配置的数组，然后使用 [Set-DPMPolicyObjective](https://technet.microsoft.com/zh-cn/library/hh881762) cmdlet 配置保留范围。
 
 
 		PS C:\> $RRlist = @()
@@ -327,6 +327,6 @@ DPM 服务器在注册到 Azure 备份保管库后，将使用默认的订阅设
 
 ## 后续步骤
 
-- 有关适用于 DPM 的 Azure 备份的详细信息，请参阅 [DPM 备份简介](/documentation/articles/backup-azure-dpm-introduction)
+- 有关适用于 DPM 的 Azure 备份的详细信息，请参阅 [DPM 备份简介](/documentation/articles/backup-azure-dpm-introduction/)
 
 <!---HONumber=Mooncake_0503_2016-->

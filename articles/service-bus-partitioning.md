@@ -123,7 +123,7 @@ Azure 服务总线支持从分区实体、向分区的实体或在分区的实�
 
 请参阅[针对服务总线分区队列和主题的 AMQP 1.0 支持][]的讨论，了解有关分区消息传送实体的详细信息。
 
-  [服务总线体系结构]: /documentation/articles/service-bus-architecture
+  [服务总线体系结构]: /documentation/articles/service-bus-architecture/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [QueueDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
   [TopicDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx
@@ -138,6 +138,6 @@ Azure 服务总线支持从分区实体、向分区的实体或在分区的实�
   [MessagingFactorySettings.OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [QueueDescription.ForwardTo]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.forwardto.aspx
-  [针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview
+  [针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/
 
 <!---HONumber=Mooncake_0215_2016-->

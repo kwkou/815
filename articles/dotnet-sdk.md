@@ -44,9 +44,9 @@ Azure SDK for .NET 将安装以下产品：
 
 这使你可以使用 Azure 网站：
 
-* [将 Web 项目发布到 Azure 网站](/documentation/articles/web-sites-dotnet-get-started)。
-* [将控制台应用程序项目发布到 Azure WebJobs](/documentation/articles/websites-dotnet-deploy-webjobs)。
-* [在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库资源](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+* [将 Web 项目发布到 Azure 网站](/documentation/articles/web-sites-dotnet-get-started/)。
+* [将控制台应用程序项目发布到 Azure WebJobs](/documentation/articles/websites-dotnet-deploy-webjobs/)。
+* [在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库资源](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。
 * [在创建新网站时创建 PowerShell 部署脚本](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx)。
 
 >[AZURE.NOTE] 无需安装 Azure SDK for .NET 即可使用这些功能；它们还包括在 Visual Studio 更新中。
@@ -55,9 +55,9 @@ Azure SDK for .NET 将安装以下产品：
 
 这使您可以使用 Azure 资源，主要是云服务和虚拟机：
 
-* [创建、打开和发布云服务项目](/documentation/articles/cloud-services-dotnet-get-started)。
+* [创建、打开和发布云服务项目](/documentation/articles/cloud-services-dotnet-get-started/)。
 * [创建云服务项目的部署包](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx)。
-* [在创建新的 Web 项目时创建 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio)。
+* [在创建新的 Web 项目时创建 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio/)。
 * [在创建新的虚拟机时创建 PowerShell 脚本](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx)。
 * [查看和管理 Visual Studio 项目属性窗口中的云服务项目设置](http://msdn.microsoft.com/zh-cn/library/ee405486.aspx)。
 * 在服务器资源管理器中查看和管理[云服务](http://msdn.microsoft.com/zh-cn/library/ff683675.aspx)、[虚拟机](http://msdn.microsoft.com/zh-cn/library/jj131259.aspx)和[服务总线](http://msdn.microsoft.com/zh-cn/library/jj149828.aspx)。 
@@ -93,11 +93,11 @@ Azure SDK for .NET 将安装以下产品：
 
 ### <a id="hdinsight"></a>HDInsight Tools for Visual Studio，和 Microsoft Hive ODBC 驱动程序
 
-在服务器资源管理器中的 HDInsight 工具，可以导航 Hive 数据库和 HDInsight 群集的链接存储帐户、创建表，并创建和提交 Hive 查询。有关详细信息，请参阅 [HDInsight Hadoop Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+在服务器资源管理器中的 HDInsight 工具，可以导航 Hive 数据库和 HDInsight 群集的链接存储帐户、创建表，并创建和提交 Hive 查询。有关详细信息，请参阅 [HDInsight Hadoop Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 ### <a id="mobile">Azure Mobile App SDK
 
-用于 [Azure App Service Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview) 的工具。
+用于 [Azure App Service Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview/) 的工具。
 
 ### <a id="ps"></a>Azure PowerShell
 
@@ -113,9 +113,9 @@ Azure SDK for .NET 将安装以下产品：
 
   	**客户端库的本地副本。** Azure SDK for.NET 将某些 Azure 客户端库的 NuGet 包（如存储空间、服务总线和 Caching）复制到您的计算机上。这些客户端库将自动包括在新的云服务项目中，因此本地的 NuGet 程序包会启用 Visual Studio 来创建项目，即使您未连接到 Internet 也是如此。通常，客户端库的更新频率比 SDK 新版本的发布频率更为频繁，因此 NuGet.org 上的客户端库通常比您所获得的 SDK 更新。
 
-	**包括客户端库的项目模板。** 只有 [Azure 云服务](/documentation/articles/cloud-services-dotnet-get-started)和 [Azure 移动服务](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard)项目模板会自动包含一些客户端库。对于其他库或其他模板，安装您所需的[客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
+	**包括客户端库的项目模板。** 只有 [Azure 云服务](/documentation/articles/cloud-services-dotnet-get-started/)和 [Azure 移动服务](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)项目模板会自动包含一些客户端库。对于其他库或其他模板，安装您所需的[客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
 
-* [Azure 移动服务项目模板](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard)。
+* [Azure 移动服务项目模板](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)。
 
 	移动服务模板仅在 Visual Studio 2013 Update 2 及更高版本中提供。这些模板在 Visual Studio 2012 或更早的版本中不提供，在 Visual Studio 2013 Update 1 或更早的版本中也不提供，即使你安装了 Azure SDK for .NET。
 

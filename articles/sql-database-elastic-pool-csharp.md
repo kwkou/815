@@ -16,13 +16,13 @@
 # C&#x23; 数据库开发：为 SQL 数据库创建和配置弹性数据库池
 
 > [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-elastic-pool-csharp)
-- [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
+- [C#](/documentation/articles/sql-database-elastic-pool-csharp/)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/)
 
 
-本文说明如何为来自使用 C# 数据库开发技术的应用程序 SQL 数据库创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+本文说明如何为来自使用 C# 数据库开发技术的应用程序 SQL 数据库创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell)。
+> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 这些示例使用了[适用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
 为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
@@ -170,9 +170,9 @@
 
 ## 创建服务器防火墙规则，以允许对服务器进行访问
 
-默认情况下，服务器没有防火墙规则，因此无法从任何位置连接到服务器。为了连接到服务器或者服务器上的任何数据库，必须定义[防火墙规则](/documentation/articles/sql-database-firewall-configure)以允许从客户端 IP 地址进行访问。
+默认情况下，服务器没有防火墙规则，因此无法从任何位置连接到服务器。为了连接到服务器或者服务器上的任何数据库，必须定义[防火墙规则](/documentation/articles/sql-database-firewall-configure/)以允许从客户端 IP 地址进行访问。
 
-以下示例将创建一个服务器防火墙规则，用于实现从任何 IP 地址对服务器进行访问。建议你创建适当的 SQL 登录名和密码来保护数据库，并且不要依赖防火墙规则作为防范入侵的主要防御机制。有关详细信息，请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins)。
+以下示例将创建一个服务器防火墙规则，用于实现从任何 IP 地址对服务器进行访问。建议你创建适当的 SQL 登录名和密码来保护数据库，并且不要依赖防火墙规则作为防范入侵的主要防御机制。有关详细信息，请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins/)。
 
 
     // Create a firewall rule on the server to allow TDS connection
@@ -269,7 +269,7 @@
 
 ## 将现有数据库移入弹性数据库池
 
-创建池后，还可以使用 Transact-SQL 将现有数据库移入和移出池。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql)。*
+创建池后，还可以使用 Transact-SQL 将现有数据库移入和移出池。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql/)。*
 
 以下示例将现有的 Azure SQL 数据库移到池中：
 
@@ -301,7 +301,7 @@
 
 ## 在弹性数据库池中创建新数据库
 
-创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql)。
+创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql/)。
 
 以下示例将直接在池中创建一个新的数据库：
 

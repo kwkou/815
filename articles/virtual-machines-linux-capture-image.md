@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-machines-linux-classic-capture-image)。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-machines-linux-classic-capture-image/)。
 
 
 使用 Azure 命令行界面 (CLI) 来捕获运行 Linux 的 Azure 虚拟机，以便你可以将其用作 Azure 资源管理器模板来创建其他虚拟机。此模板包括操作系统磁盘和附加到虚拟机的数据磁盘，但不包括创建 Azure 资源管理器 VM 所需的虚拟网络资源，因此大多数情况下，你需要在创建另一个使用此模板的虚拟机之前，先单独设定。
@@ -29,13 +29,13 @@
 
 这些步骤假定你已使用 Azure 资源管理器部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。你可以通过几种方式实现，如 Azure CLI。如果尚未执行此操作，请参阅以下在 Azure 资源管理器模式下使用 Azure CLI 的说明:
 
-- [使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates)
+- [使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)
 
 例如，可以在中国北部地区创建一个名为 *MyResourceGroup* 的资源组。然后，使用类似于下方指令的 **azure vm quick-create** 命令在资源组中部署 Ubuntu 14.04 LTS VM。
 
  	azure vm quick-create -g MyResourceGroup -n <your-virtual-machine-name> "chinanorth" -y Linux -Q canonical:ubuntuserver:14.04.2-LTS:latest -u <your-user-name> -p <your-password>
 
-VM 预配完成并运行后，你可能想要连接和安装数据磁盘。请参阅[此处](/documentation/articles/virtual-machines-linux-add-disk)的说明。
+VM 预配完成并运行后，你可能想要连接和安装数据磁盘。请参阅[此处](/documentation/articles/virtual-machines-linux-add-disk/)的说明。
 
 
 ## 捕获 VM
@@ -61,9 +61,9 @@ VM 预配完成并运行后，你可能想要连接和安装数据磁盘。请�
 
 4. 键入 **exit** 关闭 SSH 客户端。
 
-	>[AZURE.NOTE]后续步骤假定你已在客户端计算机上[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
+	>[AZURE.NOTE]后续步骤假定你已在客户端计算机上[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
-5. 从客户端计算机中打开 Azure CLI 并登录到你的 Azure 订阅。有关详细信息，请阅读[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。
+5. 从客户端计算机中打开 Azure CLI 并登录到你的 Azure 订阅。有关详细信息，请阅读[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 6. 请确保你在资源管理器模式下：
 
@@ -198,6 +198,6 @@ VM 预配完成并运行后，你可能想要连接和安装数据磁盘。请�
 
 ## 后续步骤
 
-要使用 CLI 管理 VM，请参阅[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates)中的任务。
+要使用 CLI 管理 VM，请参阅[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)中的任务。
 
 <!---HONumber=Mooncake_1207_2015-->

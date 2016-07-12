@@ -84,7 +84,7 @@
 
 ##概念
 
-有关与按需交付内容相关的概念，请参阅[媒体服务概念](/documentation/articles/media-services-concepts)。
+有关与按需交付内容相关的概念，请参阅[媒体服务概念](/documentation/articles/media-services-concepts/)。
 
 
 

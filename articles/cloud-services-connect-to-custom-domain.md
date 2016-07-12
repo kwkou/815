@@ -18,7 +18,7 @@
 
 在开始之前，请特别注意以下几点：
 
-1.	本教程使用 Powershell，因此请确保已安装 Azure Powershell 并已准备就绪。有关设置 Azure Powershell 的帮助，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+1.	本教程使用 Powershell，因此请确保已安装 Azure Powershell 并已准备就绪。有关设置 Azure Powershell 的帮助，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 2.	AD 域控制器和 Web/辅助角色实例需要在 VNET 中。
 
@@ -26,7 +26,7 @@
 
 ## 创建虚拟网络
 
-你可以使用 Azure 管理门户或 Powershell 在 Azure 中创建虚拟网络。在本教程中，我们将使用 Powershell。若要使用 Azure 管理门户创建虚拟网络，请参阅[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)。
+你可以使用 Azure 管理门户或 Powershell 在 Azure 中创建虚拟网络。在本教程中，我们将使用 Powershell。若要使用 Azure 管理门户创建虚拟网络，请参阅[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)。
 
 #创建虚拟网络
 

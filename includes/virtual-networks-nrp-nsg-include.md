@@ -71,11 +71,11 @@
 
 ###<a name="Default-security-rules"></a> 默认安全规则
 
-默认安全规则的属性与安全规则中提供的属性相同。默认安全规则的用途是在应用了 NSG 的资源之间提供基本连接。请确保知道存在哪些[默认安全规则](/documentation/articles/virtual-networks-nsg#Default-Rules)。
+默认安全规则的属性与安全规则中提供的属性相同。默认安全规则的用途是在应用了 NSG 的资源之间提供基本连接。请确保知道存在哪些[默认安全规则](/documentation/articles/virtual-networks-nsg/#Default-Rules)。
 
 ### 其他资源
 
-- 获取有关 [NSG](/documentation/articles/virtual-networks-nsg) 的详细信息。
+- 获取有关 [NSG](/documentation/articles/virtual-networks-nsg/) 的详细信息。
 - 阅读 NSG 的[ REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt163615.aspx)
 - 阅读 NSG 的[ REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt163580.aspx)
 

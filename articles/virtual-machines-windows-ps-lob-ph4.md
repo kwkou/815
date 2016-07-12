@@ -17,12 +17,12 @@
 
 # 业务线应用程序工作负荷阶段 4：配置 web 服务器
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
  
 
 在 Azure 基础结构服务中部署高可用性业务线应用程序的这个阶段，你将构建 web 服务器并在其上加载业务线应用程序。
 
-你必须在转到[阶段 5](/documentation/articles/virtual-machines-windows-ps-lob-ph5) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview)。
+你必须在转到[阶段 5](/documentation/articles/virtual-machines-windows-ps-lob-ph5/) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview/)。
 
 ## 在 Azure 中创建 web 服务器虚拟机
 
@@ -40,7 +40,7 @@
 - 表 ST，用于存储帐户
 - 表 A，用于可用性集
 
-回想一下，你在[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2) 中定义了表 M，并在[阶段 1](/documentation/articles/virtual-machines-windows-ps-lob-ph1) 中定义了表 V、表 S、表 ST 和表 A。
+回想一下，你在[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2/) 中定义了表 M，并在[阶段 1](/documentation/articles/virtual-machines-windows-ps-lob-ph1/) 中定义了表 V、表 S、表 ST 和表 A。
 
 如果已提供所有适当的值，请在 Azure PowerShell 命令提示符下运行生成的块。
 
@@ -148,6 +148,6 @@
 
 ## 后续步骤
 
-- 使用[阶段 5](/documentation/articles/virtual-machines-windows-ps-lob-ph5) 完成此工作负荷的配置。
+- 使用[阶段 5](/documentation/articles/virtual-machines-windows-ps-lob-ph5/) 完成此工作负荷的配置。
 
 <!---HONumber=Mooncake_0411_2016-->

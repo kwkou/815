@@ -103,7 +103,7 @@
 
 - [服务总线 AMQP 概述]
 
-[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview
+[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 [0]: ./media/service-bus-amqp-apache/amqp-apache-1.png
 [1]: ./media/service-bus-amqp-apache/amqp-apache-2.png
 [2]: ./media/service-bus-amqp-apache/amqp-apache-3.png

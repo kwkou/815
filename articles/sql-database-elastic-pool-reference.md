@@ -16,12 +16,12 @@
 
 # SQL 数据库弹性数据库池参考
 
-对于拥有数十、数百甚至数千数据库的 SaaS 开发人员，则可以通过[弹性数据库池](/documentation/articles/sql-database-elastic-pool)来简化整个数据库组的创建、维护以及性能和成本管理流程。
+对于拥有数十、数百甚至数千数据库的 SaaS 开发人员，则可以通过[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)来简化整个数据库组的创建、维护以及性能和成本管理流程。
 
 ## 创建和管理弹性数据库池的先决条件
 
-- 弹性数据库池只能在 Azure SQL 数据库 V12 服务器中使用。若要升级到 V12 并将数据库迁移直接到池中，请参阅[升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell)。
-- 在使用 [Azure 管理门户](https://manage.windowsazure.cn)、[PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell) 和 .NET 客户端库（仅限 Azure 资源管理器）时，支持创建和管理弹性数据库池；而[管理门户](https://manage.windowsazure.cn)和服务管理命令不受支持。
+- 弹性数据库池只能在 Azure SQL 数据库 V12 服务器中使用。若要升级到 V12 并将数据库迁移直接到池中，请参阅[升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell/)。
+- 在使用 [Azure 管理门户](https://manage.windowsazure.cn)、[PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/) 和 .NET 客户端库（仅限 Azure 资源管理器）时，支持创建和管理弹性数据库池；而[管理门户](https://manage.windowsazure.cn)和服务管理命令不受支持。
 - 此外，还支持使用 [Transact-SQL](#transact-sql) 创建新的弹性数据库，以及将现有数据库移入和移出弹性数据库池。
 
 
@@ -31,14 +31,14 @@
 
 | 文章 | 说明 |
 | :-- | :-- |
-| [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool) | 弹性数据库池的概述 |
-| [价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance) | 如果评估使用弹性数据库池是否符合成本效益 |
-| [使用 PowerShell 创建和管理 SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool-powershell) | 如何使用 PowerShell cmdlet 创建和管理弹性数据库池 |
-| [使用适用于 .NET 的 Azure SQL 数据库库创建和管理 SQL 数据库](/documentation/articles/sql-database-elastic-pool-csharp) | 如何使用 C# 创建和管理弹性数据库池 |
-| [弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |
-| [安装弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation) | 如何安装弹性数据库作业服务 |
-| [保护你的 SQL 数据库](/documentation/articles/sql-database-security) | 若要运行弹性数据库作业脚本，必须将具有相应权限的用户添加到池中的每个数据库。 |
-| [如何卸载弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-uninstall) | 尝试安装弹性数据库作业服务时从故障中进行恢复 |
+| [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool/) | 弹性数据库池的概述 |
+| [价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/) | 如果评估使用弹性数据库池是否符合成本效益 |
+| [使用 PowerShell 创建和管理 SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool-powershell/) | 如何使用 PowerShell cmdlet 创建和管理弹性数据库池 |
+| [使用适用于 .NET 的 Azure SQL 数据库库创建和管理 SQL 数据库](/documentation/articles/sql-database-elastic-pool-csharp/) | 如何使用 C# 创建和管理弹性数据库池 |
+| [弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview/) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |
+| [安装弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation/) | 如何安装弹性数据库作业服务 |
+| [保护你的 SQL 数据库](/documentation/articles/sql-database-security/) | 若要运行弹性数据库作业脚本，必须将具有相应权限的用户添加到池中的每个数据库。 |
+| [如何卸载弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-uninstall/) | 尝试安装弹性数据库作业服务时从故障中进行恢复 |
 
 
 
@@ -79,10 +79,10 @@
 
 有关演示如何使用 PowerShell 和 C# 使用池的详细信息和代码示例如下：
 
-- [使用 PowerShell 创建弹性池](/documentation/articles/sql-database-elastic-pool-create-powershell)
-- [使用 C# 创建弹性池](/documentation/articles/sql-database-elastic-pool-create-csharp)
-- [使用 PowerShell 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell)
-- [使用 C# 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-csharp)
+- [使用 PowerShell 创建弹性池](/documentation/articles/sql-database-elastic-pool-create-powershell/)
+- [使用 C# 创建弹性池](/documentation/articles/sql-database-elastic-pool-create-csharp/)
+- [使用 PowerShell 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
+- [使用 C# 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
 
 下面是与弹性池相关的 cmdlet 和等效 REST API 操作的快速参考：
 

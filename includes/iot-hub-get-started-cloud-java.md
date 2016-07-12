@@ -225,9 +225,9 @@
 
 <!-- Links -->
 
-[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
-[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview
-[lnk-processd2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
+[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
+[lnk-processd2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 
 <!---HONumber=Mooncake_0321_2016-->

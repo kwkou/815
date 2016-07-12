@@ -18,8 +18,8 @@
 
 流量管理器具有两大优势：
 
-1. 根据某个[流量路由方法](/documentation/articles/traffic-manager-routing-methods)对流量进行分布
-2. [连续监视终结点运行状况](/documentation/articles/traffic-manager-monitoring)，在终结点发生故障时自动进行故障转移
+1. 根据某个[流量路由方法](/documentation/articles/traffic-manager-routing-methods/)对流量进行分布
+2. [连续监视终结点运行状况](/documentation/articles/traffic-manager-monitoring/)，在终结点发生故障时自动进行故障转移
 
 当最终用户尝试连接到服务终结点时，其客户端（电脑、手机等）必须首先将该终结点中的 DNS 名称解析为 IP 地址。然后，客户端就可以连接到该 IP 地址以访问相关服务。
 
@@ -89,7 +89,7 @@ c.	所选的流量路由方法。有关详细信息，请参阅“流量管理�
 
 常见问题是，在使用流量管理器时，由浏览器传递给应用程序的“host”HTTP 标头将显示浏览器中使用的域名。该域名可能是流量管理器域名（例如 myprofile.trafficmanager.cn，如果你在测试中使用该域名），也可能是配置为指向流量管理器域名的虚构域 CNAME。不管是哪种情况，请确保将应用程序配置为接受该主机头。
 
-如果你的应用程序是托管在 Azure Web 应用中的，请参阅[在 Azure 中使用流量管理器为 Web 应用配置自定义域名](/documentation/articles/web-sites-traffic-manager-custom-domain-name)。
+如果你的应用程序是托管在 Azure Web 应用中的，请参阅[在 Azure 中使用流量管理器为 Web 应用配置自定义域名](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)。
 
 ### 使用流量管理器对性能有什么影响？
 
@@ -101,7 +101,7 @@ c.	所选的流量路由方法。有关详细信息，请参阅“流量管理�
 
 最终结果是，将流量管理器加入应用程序中带来的总体性能影响将是微乎其微的。
 
-此外，在使用流量管理器的[“性能”流量路由方法](/documentation/articles/traffic-manager-routing-methods#performance-traffic-routing-method)时，可以通过将最终用户路由到最靠近的可用终结点来改进性能，从而部分抵消因 DNS 延迟增加而带来的影响。
+此外，在使用流量管理器的[“性能”流量路由方法](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)时，可以通过将最终用户路由到最靠近的可用终结点来改进性能，从而部分抵消因 DNS 延迟增加而带来的影响。
 
 ### 流量管理器允许使用什么应用程序协议？
 如[上](#how-clients-connect-using-traffic-manager)所述，流量管理器在 DNS 级别工作。完成 DNS 查找以后，客户端会直接连接到应用程序终结点，不通过流量管理器进行连接。因此，在进行这样的连接时，可以使用任何应用程序协议。
@@ -122,9 +122,9 @@ DNS 标准不允许 CNAME 与同一类型的其他 DNS 记录共存。由于 DNS
 
 ## 后续步骤
 
-详细了解流量管理器[终结点监视和自动故障转移](/documentation/articles/traffic-manager-monitoring)。
+详细了解流量管理器[终结点监视和自动故障转移](/documentation/articles/traffic-manager-monitoring/)。
 
-详细了解流量管理器[流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
+详细了解流量管理器[流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
 
 <!--Image references-->
 [1]: ./media/traffic-manager-how-traffic-manager-works/dns-configuration.png

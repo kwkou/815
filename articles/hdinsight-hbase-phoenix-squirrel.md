@@ -85,7 +85,7 @@
 
 - 已将一个 HBase 群集部署到包含 DNS 虚拟机的 Azure 虚拟网络。有关说明，请参阅[在 Azure 虚拟网络上预配 HBase 群集][hdinsight-hbase-provision-vnet-v1]。 
 
-	>[AZURE.IMPORTANT]必须在虚拟网络中安装一个 DNS 服务器。有关说明，请参阅[在两个 Azure 虚拟网络之间配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+	>[AZURE.IMPORTANT]必须在虚拟网络中安装一个 DNS 服务器。有关说明，请参阅[在两个 Azure 虚拟网络之间配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
 
 - 获取 HBase 群集的特定于连接的 DNS 后缀。若要获取该后缀，请与群集建立连接桌面连接 (RDP)，然后运行 IPConfig。DNS 后缀类似于：
 
@@ -167,15 +167,15 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 
 - [HDInsight HBase 概述][hdinsight-hbase-overview]：HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 - [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet-v1]：通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
-- [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication)：了解如何跨两个 Azure 数据中心配置 HBase 复制。 
+- [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication/)：了解如何跨两个 Azure 数据中心配置 HBase 复制。 
 
 [azure-portal]: https://manage.windowsazure.cn
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
-[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png
 [img-vnet-diagram]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vnet-point-to-site.png

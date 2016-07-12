@@ -84,7 +84,7 @@ UpgradeReplicaSetCheckTimeout  : 00:00:00
 
 ### 调查运行状况检查失败
 
-运行状况检查失败可能由各种其他问题触发，这些问题可能发生在升级域中所有节点完成升级、通过所有安全检查之后。以下输出是升级因运行状况检查失败而失败时的典型输出。**UnhealthyEvaluations** 字段根据用户指定的[运行状况策略](/documentation/articles/service-fabric-health-introduction)，捕获升级失败时所有失败的运行状况检查的快照。
+运行状况检查失败可能由各种其他问题触发，这些问题可能发生在升级域中所有节点完成升级、通过所有安全检查之后。以下输出是升级因运行状况检查失败而失败时的典型输出。**UnhealthyEvaluations** 字段根据用户指定的[运行状况策略](/documentation/articles/service-fabric-health-introduction/)，捕获升级失败时所有失败的运行状况检查的快照。
 
 ~~~
 PS D:\temp> Get-ServiceFabricApplicationUpgrade fabric:/DemoApp
@@ -216,13 +216,13 @@ Service Fabric 将所有百分比转换为实际实体（如副本、分区和�
 
 ## 后续步骤
 
-[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial)将逐步指导你使用 Visual Studio 进行应用程序升级。
+[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial/)将逐步指导你使用 Visual Studio 进行应用程序升级。
 
-[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell)将逐步指导你使用 PowerShell 进行应用程序升级。
+[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell/)将逐步指导你使用 PowerShell 进行应用程序升级。
 
-使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)来控制应用程序的升级方式。
+使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)来控制应用程序的升级方式。
 
-了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization)，使应用程序在升级后保持兼容。参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced)，了解如何在升级应用程序时使用高级功能。参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting)中的步骤来解决应用程序升级时的常见问题。
+了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization/)，使应用程序在升级后保持兼容。参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced/)，了解如何在升级应用程序时使用高级功能。参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
  
 
 <!---HONumber=Mooncake_0627_2016-->

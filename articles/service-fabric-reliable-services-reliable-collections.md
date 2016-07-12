@@ -136,9 +136,9 @@ Reliable Collections 始终采用排他锁。
 
 ## 后续步骤
 
-- [Reliable Services 快速启动](/documentation/articles/service-fabric-reliable-services-quick-start)
-- [Service Fabric Web API 服务入门](/documentation/articles/service-fabric-reliable-services-communication-webapi)
-- [Reliable Services 编程模型的高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage)
+- [Reliable Services 快速启动](/documentation/articles/service-fabric-reliable-services-quick-start/)
+- [Service Fabric Web API 服务入门](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
+- [Reliable Services 编程模型的高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)
 
 
 <!---HONumber=Mooncake_0503_2016-->

@@ -4,8 +4,8 @@
 
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-android-get-started
-[将移动服务添加到现有应用]: /documentation/articles/mobile-services-android-get-started-data
+[移动服务入门]: /documentation/articles/mobile-services-android-get-started/
+[将移动服务添加到现有应用]: /documentation/articles/mobile-services-android-get-started-data/
 
 
 <!---HONumber=71-->

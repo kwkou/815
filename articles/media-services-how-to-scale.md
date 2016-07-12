@@ -25,7 +25,7 @@
 
 ##<a id="streaming_endpoins"></a>流式处理保留单位
 
-有关详细信息，请参阅[缩放流式处理单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+有关详细信息，请参阅[缩放流式处理单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
 ##<a id="encoding_reserved_units"></a>编码保留单位
 
@@ -37,7 +37,7 @@
 
 ##<a id="storage"></a>缩放存储
 
-有关详细信息，请参阅[跨多个存储帐户管理媒体服务资产](/documentation/articles/meda-services-managing-multiple-storage-accounts)和[使用 Azure 存储空间](/documentation/services/storage/)。
+有关详细信息，请参阅[跨多个存储帐户管理媒体服务资产](/documentation/articles/meda-services-managing-multiple-storage-accounts/)和[使用 Azure 存储空间](/documentation/services/storage/)。
 
 
 

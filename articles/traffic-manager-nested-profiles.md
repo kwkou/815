@@ -15,7 +15,7 @@
 
 # 嵌套式流量管理器配置文件
 
-流量管理器包含一系列流量路由方法，你可以控制流量管理器如何选择具体的终结点来从每个最终用户处接收流量。这些内容均在[流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)中进行了介绍，可以让流量管理器满足最常见的流量路由要求。
+流量管理器包含一系列流量路由方法，你可以控制流量管理器如何选择具体的终结点来从每个最终用户处接收流量。这些内容均在[流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)中进行了介绍，可以让流量管理器满足最常见的流量路由要求。
 
 每个流量管理器配置文件都会指定一个流量路由方法。但有时候，那些更复杂应用程序所要求的流量路由复杂程度超出了单个流量管理器配置文件所能提供的复杂程度。
 
@@ -41,11 +41,11 @@
 
 使用这种方案，通过父配置文件定向的流量将像正常一样跨区域分布。在中国东部站点 1 中，流量将根据分配的权重在生产部署和试用部署之间进行定向。
 
-请注意，当父配置文件使用“性能”流量路由方法时，每个终结点的位置必须是已知的。对于嵌套式终结点，必须在终结点配置中指定该位置，这一点与外部终结点一样。选择最靠近你的部署的 Azure 区域--可用选项为 Azure 区域，因为这些区域是 Internet 延迟表所支持的位置。如需更多详细信息，请参阅[流量管理器“性能”流量路由方法](/documentation/articles/traffic-manager-routing-methods#performance-traffic-routing-method)。
+请注意，当父配置文件使用“性能”流量路由方法时，每个终结点的位置必须是已知的。对于嵌套式终结点，必须在终结点配置中指定该位置，这一点与外部终结点一样。选择最靠近你的部署的 Azure 区域--可用选项为 Azure 区域，因为这些区域是 Internet 延迟表所支持的位置。如需更多详细信息，请参阅[流量管理器“性能”流量路由方法](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)。
 
 ## 示例 2：嵌套式配置文件中的终结点监视
 
-流量管理器会主动监视每个服务终结点的运行状况。如果确定某个终结点运行状况不正常，流量管理器会将用户引导到替代终结点，从而确保服务的总体可用性。这种终结点监视和故障转移行为适用于所有流量路由方法。如需更多详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring)。
+流量管理器会主动监视每个服务终结点的运行状况。如果确定某个终结点运行状况不正常，流量管理器会将用户引导到替代终结点，从而确保服务的总体可用性。这种终结点监视和故障转移行为适用于所有流量路由方法。如需更多详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/)。
 
 对于嵌套式配置文件，需遵循某些特殊的终结点监视规则。对父配置文件进行配置时，如果让子配置文件作为嵌套式终结点，则父配置文件不会对子配置文件直接执行运行状况检查。与之相反，子配置文件的终结点的运行状况用于计算子配置文件的总体运行状况，而该信息会在嵌套式配置文件层次结构中向上传播，以便确定父配置文件中嵌套式终结点的运行状况。这决定了父配置文件是否会将流量定向到子配置文件。如需详细且完整地了解如何根据子配置文件的运行状况来计算父配置文件中嵌套式终结点的运行状况，请参阅[以下内容](#faq)。
 
@@ -143,9 +143,9 @@
 
 ## 后续步骤
 
-详细了解[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works)
+详细了解[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)
 
-了解如何[创建流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)
+了解如何[创建流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)
 
 <!--Image references-->
 [1]: ./media/traffic-manager-nested-profiles/figure-1.png

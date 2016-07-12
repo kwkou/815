@@ -210,10 +210,10 @@ var foundDevices = await registryManager.QueryDevicesAsync(new[] { "bacon" }, 10
 
 <!-- images and links -->
 
-[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview
-[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started
-[lnk-twin-tutorial]: /documentation/articles/iot-hub-device-management-device-twin
-[lnk-jobs-tutorial]: /documentation/articles/iot-hub-device-management-device-jobs
+[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
+[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
+[lnk-twin-tutorial]: /documentation/articles/iot-hub-device-management-device-twin/
+[lnk-jobs-tutorial]: /documentation/articles/iot-hub-device-management-device-jobs/
 [lnk-query-spec]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/node/service/devdoc/query_expression_requirements.md
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 [lnk-query-expression-guide]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/node/service/devdoc/query_expression_requirements.md

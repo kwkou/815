@@ -19,20 +19,20 @@
 
 最常用的推荐升级方法是受监控的滚动升级。Azure Service Fabric 基于一组运行状况策略监视正在升级的应用程序的运行状况。当更新域 (UD) 中的应用程序已升级时，Service Fabric 评估应用程序运行状况，并确定是转到下一个更新域还是基于运行状况策略判定升级失败。
 
-可使用托管或本机 API、PowerShell 或 REST 执行应用程序的受监控升级。有关使用 Visual Studio 执行升级的说明，请参阅[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial)。
+可使用托管或本机 API、PowerShell 或 REST 执行应用程序的受监控升级。有关使用 Visual Studio 执行升级的说明，请参阅[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial/)。
 
 使用 Service Fabric 监视的滚动升级，应用程序管理员可以配置 Service Fabric 用于确定应用程序运行状况是否正常的运行状况评估策略。此外，管理员还可以配置当运行状况评估失败时要采取的措施（例如，执行自动回滚）。 本部分将演练使用 PowerShell 对其中一个 SDK 示例进行受监视的升级。
 
 ## 步骤 1：构建和部署视觉对象示例
 
 
-在应用程序项目 **VisualObjectsApplication** 上单击右键，然后从 Service Fabric 菜单项中选择“发布”命令以构建和发布应用程序，如以下所示。有关详细信息，请参阅 [Service Fabric 应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial)。或者，也可以使用 PowerShell 来部署应用程序。
+在应用程序项目 **VisualObjectsApplication** 上单击右键，然后从 Service Fabric 菜单项中选择“发布”命令以构建和发布应用程序，如以下所示。有关详细信息，请参阅 [Service Fabric 应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial/)。或者，也可以使用 PowerShell 来部署应用程序。
 
-> [AZURE.NOTE] 要在 PowerShell 中使用任何 Service Fabric 命令，必须先使用 `Connect-ServiceFabricCluster` cmdlet 连接到群集。同样，假设已在本地计算机上设置了群集。请参阅[设置 Service Fabric 部署环境](/documentation/articles/service-fabric-get-started)上的文章。
+> [AZURE.NOTE] 要在 PowerShell 中使用任何 Service Fabric 命令，必须先使用 `Connect-ServiceFabricCluster` cmdlet 连接到群集。同样，假设已在本地计算机上设置了群集。请参阅[设置 Service Fabric 部署环境](/documentation/articles/service-fabric-get-started/)上的文章。
 
 在 Visual Studio 中构建项目后，可以使用 PowerShell 命令 **Copy-ServiceFabricApplicationPackage** 将应用程序包复制到 ImageStore。完成此步骤后，接着使用 **Register-ServiceFabricApplicationPackage** cmdlet 将应用程序注册到 Service Fabric 运行时。最后一个步骤是使用 **New-ServiceFabricApplication** cmdlet 来启动应用程序的实例。这三个步骤类似于使用 Visual Studio 中的“部署”菜单项。
 
-现在可以使用 [Service Fabric 资源管理器查看群集和应用程序](/documentation/articles/service-fabric-visualizing-your-cluster)。应用程序具有一个 Web 服务，可通过在 Internet Explorer 地址栏中键入 [http://localhost:8081/visualobjects](http://localhost:8081/visualobjects) 导航到该 Web 服务。你应在屏幕上看到一些四处移动的浮动视觉对象。此外，可使用 **Get-ServiceFabricApplication** 检查应用程序状态。
+现在可以使用 [Service Fabric 资源管理器查看群集和应用程序](/documentation/articles/service-fabric-visualizing-your-cluster/)。应用程序具有一个 Web 服务，可通过在 Internet Explorer 地址栏中键入 [http://localhost:8081/visualobjects](http://localhost:8081/visualobjects) 导航到该 Web 服务。你应在屏幕上看到一些四处移动的浮动视觉对象。此外，可使用 **Get-ServiceFabricApplication** 检查应用程序状态。
 
 ## 步骤 2：更新可视对象示例
 
@@ -65,7 +65,7 @@
 
 ## 步骤 3：确定运行状况策略和升级参数
 
-请熟悉[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)和[升级过程](/documentation/articles/service-fabric-application-upgrade)，以充分了解所应用的各种升级参数、超时和运行状况标准。对于本演练，我们将服务运行状况评估标准保留为默认值（即推荐值），这意味着在升级后所有服务和实例均应为运行状况正常。
+请熟悉[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)和[升级过程](/documentation/articles/service-fabric-application-upgrade/)，以充分了解所应用的各种升级参数、超时和运行状况标准。对于本演练，我们将服务运行状况评估标准保留为默认值（即推荐值），这意味着在升级后所有服务和实例均应为运行状况正常。
 
 但是，我们将 *HealthCheckStableDuration* 增加到 60 秒（这样该服务在进行下一个更新域的升级之前将至少保持 20 秒的运行状况正常）。我们还将 *UpgradeDomainTimeout* 设置为 1200 秒，将 *UpgradeTimeout* 设置为 3000 秒。
 
@@ -121,14 +121,14 @@ Start-ServiceFabricApplicationUpgrade -ApplicationName fabric:/VisualObjects -Ap
 
 ## 后续步骤
 
-[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial)将逐步指导你使用 Visual Studio 进行应用程序升级。
+[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial/)将逐步指导你使用 Visual Studio 进行应用程序升级。
 
-使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)来控制应用程序的升级方式。
+使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)来控制应用程序的升级方式。
 
-了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization)，使应用程序在升级后保持兼容
+了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization/)，使应用程序在升级后保持兼容
 
-参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced)，了解如何在升级应用程序时使用高级功能。
+参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced/)，了解如何在升级应用程序时使用高级功能。
 
-参考 [Troubleshooting Application Upgrades](/documentation/articles/service-fabric-application-upgrade-troubleshooting)（对应用程序升级进行故障排除）中的步骤来解决应用程序升级时的常见问题。
+参考 [Troubleshooting Application Upgrades](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)（对应用程序升级进行故障排除）中的步骤来解决应用程序升级时的常见问题。
 
 <!---HONumber=Mooncake_0627_2016-->

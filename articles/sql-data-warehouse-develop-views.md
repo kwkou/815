@@ -64,7 +64,7 @@ SQL 数据仓库中的视图只是元数据。
 <!--Image references-->
 
 <!--Article references-->
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 

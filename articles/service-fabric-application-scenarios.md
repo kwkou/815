@@ -35,7 +35,7 @@ Azure 中的 Service Fabric 平台非常适合以下类别的应用程序和服�
 
 生成包含微服务的应用程序时，通常有一个无状态 Web 应用（ASP.NET 和 node.js 等）组合调用应用于无状态和有状态业务中间层服务，这些服务使用 Service Fabric 部署命令全部部署到了同一 Service Fabric 群集中。在规模、可靠性和资源使用情况方面，每种这些服务都是独立的，从而大大提高了开发和生命周期管理的灵活性。
 
-有状态微服务将简化应用程序设计，因为它们不再需要传统上需要用来处理纯无状态应用程序的可用性和延迟需求的附加队列和缓存。由于有状态服务原本就具有高可用性和低延迟，这意味着在应用程序中要作为一个整体进行管理的移动部件更少。下图说明了设计有状态应用程序与无状态应用程序之间的差异。通过利用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction) 和 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction) 编程模型，有状态服务降低了应用程序的复杂性，同时实现了高吞吐量和低延迟。
+有状态微服务将简化应用程序设计，因为它们不再需要传统上需要用来处理纯无状态应用程序的可用性和延迟需求的附加队列和缓存。由于有状态服务原本就具有高可用性和低延迟，这意味着在应用程序中要作为一个整体进行管理的移动部件更少。下图说明了设计有状态应用程序与无状态应用程序之间的差异。通过利用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/) 和 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/) 编程模型，有状态服务降低了应用程序的复杂性，同时实现了高吞吐量和低延迟。
 
 ## 使用无状态服务生成的应用程序##
 ![使用无状态服务的应用程序][Image1]
@@ -47,19 +47,19 @@ Azure 中的 Service Fabric 平台非常适合以下类别的应用程序和服�
 ## 后续步骤
 
 
-使用 Service Fabric [Reliable Services](/documentation/articles/service-fabric-reliable-services-quick-start) 和 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-get-started) 编程模型，开始生成无状态和有状态服务。
+使用 Service Fabric [Reliable Services](/documentation/articles/service-fabric-reliable-services-quick-start/) 和 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-get-started/) 编程模型，开始生成无状态和有状态服务。
 
 此外，请参阅以下主题：
 
-[介绍微服务](/documentation/articles/service-fabric-overview-microservices)
+[介绍微服务](/documentation/articles/service-fabric-overview-microservices/)
 
-[定义和管理服务状态](/documentation/articles/service-fabric-concepts-state)
+[定义和管理服务状态](/documentation/articles/service-fabric-concepts-state/)
 
-[Service Fabric 服务的可用性](/documentation/articles/service-fabric-availability-services)
+[Service Fabric 服务的可用性](/documentation/articles/service-fabric-availability-services/)
 
-[缩放 Service Fabric 服务](/documentation/articles/service-fabric-concepts-scalability)
+[缩放 Service Fabric 服务](/documentation/articles/service-fabric-concepts-scalability/)
 
-[Service Fabric 服务分区](/documentation/articles/service-fabric-concepts-partitioning)
+[Service Fabric 服务分区](/documentation/articles/service-fabric-concepts-partitioning/)
 
 [Image1]: ./media/service-fabric-application-scenarios/AppwithStatelessServices.jpg
 [Image2]: ./media/service-fabric-application-scenarios/AppwithStatefulServices.jpg

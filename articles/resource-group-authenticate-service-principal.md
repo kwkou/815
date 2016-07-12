@@ -16,16 +16,16 @@
 
 本主题说明如何允许服务主体（例如自动化的过程、应用程序或服务）访问订阅中的其他资源。借助 Azure 资源管理器，可以使用基于角色的访问控制向服务主体授予允许的操作，并对该服务主体进行身份验证。
 
-本主题演示如何使用适用于 Mac、Linux 和 Windows 的 Azure PowerShell 或 Azure CLI 来创建应用程序和服务主体，为服务主体分配角色，以及以服务主体身份进行验证。如果你未安装 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
-如果你未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。有关使用门户执行这些步骤的信息，请参阅[使用门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)
+本主题演示如何使用适用于 Mac、Linux 和 Windows 的 Azure PowerShell 或 Azure CLI 来创建应用程序和服务主体，为服务主体分配角色，以及以服务主体身份进行验证。如果你未安装 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+如果你未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。有关使用门户执行这些步骤的信息，请参阅[使用门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal/)
 
 ## 概念
-1. Azure Active Directory - 云的标识与访问管理服务。有关详细信息，请参阅[什么是 Azure Active Directory](/documentation/articles/active-directory-whatis)
+1. Azure Active Directory - 云的标识与访问管理服务。有关详细信息，请参阅[什么是 Azure Active Directory](/documentation/articles/active-directory-whatis/)
 2. 服务主体 - 目录中需要访问其他资源的应用程序实例。
 3. Active Directory 应用程序 - 向 AAD 标识某个应用程序的目录记录。
 
-有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)。
-有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)。
+有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
+有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
 本主题说明用于创建 Active Directory 应用程序以及对该应用程序进行验证的 4 个途径。这些途径会因你想要使用密码还是证书进行身份验证，以及想要使用 PowerShell 还是 Azure CLI 而有所不同。这些途径是：
 
@@ -66,7 +66,7 @@
      现在你已在目录中创建服务主体，但未将任何权限或范围分配给服务。
      需要显式向服务主体授予权限，才能在某个范围执行操作。
 
-3. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。<!--有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)-->
+3. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。<!--有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac/)-->
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -113,7 +113,7 @@
 
 > [AZURE.NOTE] 直接在 PowerShell 脚本中包含密码不安全，因为密码将以文本的形式公开。请改用密钥保管库等服务来存储密码，并在执行脚本时检索它。
 
-这些步骤假定你已设置密码存储的密钥保管库和机密。若要通过模板部署密钥保管库和机密，请参阅[密钥保管库模板格式]()。若要了解有关密钥保管库的信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
+这些步骤假定你已设置密码存储的密钥保管库和机密。若要通过模板部署密钥保管库和机密，请参阅[密钥保管库模板格式]()。若要了解有关密钥保管库的信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)。
 
 1. 从密钥保管库中检索密码（在下面的示例中，使用名称 **appPassword** 存储为机密）。
 
@@ -220,7 +220,7 @@
     现在你已在目录中创建服务主体，但未将任何权限或范围分配给服务。
     需要显式向服务主体授予权限，才能在某个范围执行操作。
 
-5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -324,7 +324,7 @@
     现在你已在目录中创建服务主体，但未将任何权限或范围分配给服务。
     需要显式向服务主体授予权限，才能在某个范围执行操作。
 
-4. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+4. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
         azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -366,7 +366,7 @@
 
 > [AZURE.NOTE] 在 Azure CLI 脚本中包含密码不安全，因为密码将以文本的形式公开。请改用密钥保管库等服务来存储密码，并在执行脚本时检索它。
 
-这些步骤假定你已设置密码存储的密钥保管库和机密。若要通过模板部署密钥保管库和机密，请参阅[密钥保管库模板格式]()。若要了解有关密钥保管库的信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
+这些步骤假定你已设置密码存储的密钥保管库和机密。若要通过模板部署密钥保管库和机密，请参阅[密钥保管库模板格式]()。若要了解有关密钥保管库的信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)。
 
 1. 从密钥保管库中检索密码（在下面的示例中，使用名称 **appPassword** 存储为机密）。包括 **-r** 开关可删除从 json 输出返回的起始和结束双引号。
 
@@ -445,7 +445,7 @@
         data:                      https://www.contoso.org/example
         info:    ad sp create command OK
         
-5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
         azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -515,8 +515,8 @@
 
 ## 后续步骤
   
-- 若要了解有关使用服务主体的门户的信息，请参阅[使用 Azure 门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)  
-- 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
+- 若要了解有关使用服务主体的门户的信息，请参阅[使用 Azure 门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal/)  
+- 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security/)
 
 
 <!-- Images. -->

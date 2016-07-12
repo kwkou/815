@@ -39,6 +39,6 @@
 
 > [AZURE.NOTE]   与其他 Azure 资源不同，你的目录不是 Azure 订阅的子资源。如果你取消 Azure 订阅或让其过期，则仍可以使用 Azure PowerShell、Azure 图形 API 或其他界面（例如 Office 365 管理中心）访问目录数据。还可以将其他订阅与目录相关联。
 
-有关 Azure AD 许可问题和最佳实践的一般概述，请参阅[什么是 Azure Active Directory 许可？](/documentation/articles/active-directory-licensing-what-is)。
+有关 Azure AD 许可问题和最佳实践的一般概述，请参阅[什么是 Azure Active Directory 许可？](/documentation/articles/active-directory-licensing-what-is/)。
 
 <!---HONumber=Mooncake_0613_2016-->

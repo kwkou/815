@@ -15,14 +15,14 @@
 
 # 如何从 Linux 虚拟机分离磁盘
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../includes/howto-detach-disk-linux.md)]
 
 ## 其他资源
 
-[如何将数据磁盘附加到 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-attach-disk)
+[如何将数据磁盘附加到 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-attach-disk/)
 
-[使用带服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)
+[使用带服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/)
 
 <!---HONumber=Mooncake_0215_2016-->

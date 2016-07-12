@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
 [AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
 
@@ -29,7 +29,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。以下链接包含有关要遵循的过程的详细信息。
 
-[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)
+[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
@@ -55,7 +55,7 @@
 
 **解决方法**
 
-若要解决这两个错误，请在门户预览中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-windows-capture-image)，该映像将带有与该 OS（通用/专用）相同的设置。
+若要解决这两个错误，请在门户预览中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-windows-capture-image/)，该映像将带有与该 OS（通用/专用）相同的设置。
 
 ## 问题：自定义/库/应用商店映像；分配失败
 当新的 VM 请求被固定到不支持所请求的 VM 大小、或没有可用空间可处理请求的群集时，便会发生此错误。

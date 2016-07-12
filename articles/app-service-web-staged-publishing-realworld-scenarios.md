@@ -24,7 +24,7 @@
 2. 首先将 Web 应用部署到槽，然后将其交换到生产，这确保槽的所有实例都预热，然后交换到生产。部署你的 Web 应用时，这消除了停机时间。流量重定向是无缝的，且不会因交换操作而删除任何请求。 
 3. 交换后，具有以前分阶段 Web 应用的槽现在具有以前的生产 Web 应用。如果交换到生产槽的更改与你的预期不同，你可以立即执行同一交换来收回“上一已知的良好 Web 应用”。
 
-若要设置过渡部署槽，请参阅[为 Azure 中的 Web 应用设置过渡环境](/documentation/articles/web-sites-staged-publishing)。每个环境应该包含自身的一组资源，例如，如果 Web 应用使用数据库，则生产和过渡 Web 应用应该使用不同的数据库。添加过渡开发环境资源，例如数据库、存储或缓存，用于设置过渡开发环境。
+若要设置过渡部署槽，请参阅[为 Azure 中的 Web 应用设置过渡环境](/documentation/articles/web-sites-staged-publishing/)。每个环境应该包含自身的一组资源，例如，如果 Web 应用使用数据库，则生产和过渡 Web 应用应该使用不同的数据库。添加过渡开发环境资源，例如数据库、存储或缓存，用于设置过渡开发环境。
 
 ## 使用多个开发环境的示例
 
@@ -336,9 +336,9 @@
 9. 重复步骤 4 至 6
 
 ## 参考
-[使用 Azure Web 应用进行灵便软件开发](/documentation/articles/app-service-agile-software-development)
+[使用 Azure Web 应用进行灵便软件开发](/documentation/articles/app-service-agile-software-development/)
 
-[为 Azure 中的 Web 应用设置过渡环境](/documentation/articles/web-sites-staged-publishing)
+[为 Azure 中的 Web 应用设置过渡环境](/documentation/articles/web-sites-staged-publishing/)
 
 [如何阻止对非生产部署槽的 Web 访问](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 

@@ -17,7 +17,7 @@
 
 在 Azure 中使用的证书是 x.509 v3 证书，且可由另一个受信任的证书进行签名或可进行自签名。自签名的证书由其自己的创建者进行签名，因此，默认情况下不受信任。大多数浏览器可以忽略这一点。自签名的证书仅应由自己在开发和测试云服务时使用。
 
-Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，它提供了一种可对证书进行明确识别的方法。该指纹用于在 Azure [配置文件](/documentation/articles/cloud-services-configure-ssl-certificate)中识别云服务应使用的证书。
+Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，它提供了一种可对证书进行明确识别的方法。该指纹用于在 Azure [配置文件](/documentation/articles/cloud-services-configure-ssl-certificate/)中识别云服务应使用的证书。
 
 ## 什么是服务证书？
 服务证书被附加到云服务，可实现与服务之间的安全通信。例如，如果你部署了 Web 角色，将需要提供可对公开的 HTTPS 终结点进行身份验证的证书。在你的服务定义中定义的服务证书会自动部署到运行你的角色实例的虚拟机。
@@ -66,12 +66,12 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 你可以使用 Java [创建证书](/documentation/articles/java-create-azure-website-using-java-sdk/#create-a-certificate)。
 
 ### Linux
-[本文](/documentation/articles/virtual-machines-linux-ssh-from-linux)介绍如何通过 SSH 创建证书。
+[本文](/documentation/articles/virtual-machines-linux-ssh-from-linux/)介绍如何通过 SSH 创建证书。
 
 ## 后续步骤
 
-[上载服务证书到 Azure 管理门户](/documentation/articles/cloud-services-configure-ssl-certificate)。
+[上载服务证书到 Azure 管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)。
 
-将[管理 API 证书](/documentation/articles/azure-api-management-certs)上载到 Azure 管理门户。
+将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 管理门户。
 
 <!---HONumber=Mooncake_0523_2016-->

@@ -18,15 +18,15 @@
 
 Azure 服务总线现在支持用于服务总线**分区队列和主题**的高级消息队列协议 (**AMQP**) 1.0。
 
-**AMQP** 是一种开放标准消息队列协议，它允许使用不同的编程语言开发跨平台应用程序。有关服务总线的 AMQP 支持的常规信息，请参阅[服务总线的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview)。
+**AMQP** 是一种开放标准消息队列协议，它允许使用不同的编程语言开发跨平台应用程序。有关服务总线的 AMQP 支持的常规信息，请参阅[服务总线的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview/)。
 
-**分区队列和主题**也称为*分区实体*，相比传统的非分区队列和主题，提供更高可用性、可靠性和吞吐量。有关分区实体的详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning)。
+**分区队列和主题**也称为*分区实体*，相比传统的非分区队列和主题，提供更高可用性、可靠性和吞吐量。有关分区实体的详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning/)。
 
 添加 AMQP 1.0 作为与分区队列和主题通信的协议使你能够构建相互间可操作的应用程序，这些应用程序可利用服务总线分区实体提供的更高可用性、可靠性和吞吐量。
 
 ## 将 AMQP 用于分区队列
 
-对于需要临时分离、负载调配、负载平衡和松散耦合的应用场景，队列十分有用。在队列中，发布服务器将消息发送到队列，使用者从该队列接收消息，在这种情况下一条消息仅能被接收一次。此类的一个很好例子是库存系统，其中销售点终端将数据发布到一个队列而不是直接发送到库存管理系统。然后库存管理系统将随时使用该数据管理库存补货。这样做有几个好处，包括库存管理系统无需在所有时间都必须处于联机状态。有关服务总线队列的更多详细信息，请参阅[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)
+对于需要临时分离、负载调配、负载平衡和松散耦合的应用场景，队列十分有用。在队列中，发布服务器将消息发送到队列，使用者从该队列接收消息，在这种情况下一条消息仅能被接收一次。此类的一个很好例子是库存系统，其中销售点终端将数据发布到一个队列而不是直接发送到库存管理系统。然后库存管理系统将随时使用该数据管理库存补货。这样做有几个好处，包括库存管理系统无需在所有时间都必须处于联机状态。有关服务总线队列的更多详细信息，请参阅[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues/)
 
 分区队列会进一步提高应用程序的可用性、可靠性和吞吐量，因为这些队列是跨多个消息中转站和消息存储分区的。
 
@@ -64,7 +64,7 @@ receivedMessage.Complete();
 
 ## 将 AMQP 用于分区主题
 
-主题在概念上类似于队列，但主题可以将同一消息的副本路由到多个订阅服务器。在主题中，发布服务器将消息发送到主题，使用者从订阅接收消息。在库存系统销售点方案中，终端会将数据发布到主题。然后，库存管理系统会从订阅接收消息。此外，监视系统可以从不同的订阅接收同一消息。有关服务总线主题和订阅的更多详细信息，请参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions)
+主题在概念上类似于队列，但主题可以将同一消息的副本路由到多个订阅服务器。在主题中，发布服务器将消息发送到主题，使用者从订阅接收消息。在库存系统销售点方案中，终端会将数据发布到主题。然后，库存管理系统会从订阅接收消息。此外，监视系统可以从不同的订阅接收同一消息。有关服务总线主题和订阅的更多详细信息，请参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions/)
 
 分区主题会进一步提高应用程序的可用性、可靠性和吞吐量，因为这些主题及其订阅是跨多个消息中转站和消息存储分区的。
 
@@ -108,11 +108,11 @@ receivedMessage.Complete();
 
 请参阅以下附加信息来了解有关分区消息实体的更多信息。
 
-*    [分区消息实体](/documentation/articles/service-bus-partitioning)
+*    [分区消息实体](/documentation/articles/service-bus-partitioning/)
 *    [OASIS 高级消息队列协议 (AMQP) 1.0 版](http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf)
-*    [服务总线的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview)
-*    [如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
-*    [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
+*    [服务总线的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview/)
+*    [如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/)
+*    [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing/)
 
 [Azure 管理门户]: http://manage.windowsazure.cn
 

@@ -129,8 +129,8 @@
 [15]: ./media/partner-xamarin-mobile-services-android-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started
-[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started/
+[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 

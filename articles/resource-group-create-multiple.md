@@ -480,8 +480,8 @@
 ```
 
 ## 后续步骤
-- 若要了解有关模板区段的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 有关可在模板中使用的函数列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
-- 若要了解如何部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+- 若要了解有关模板区段的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
+- 有关可在模板中使用的函数列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)
+- 若要了解如何部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
 <!---HONumber=Mooncake_0411_2016-->

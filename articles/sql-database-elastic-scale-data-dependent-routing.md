@@ -16,7 +16,7 @@
 
 数据相关的路由是使用查询中的数据将请求路由到相应数据库的功能。在使用分片数据库时，它是一种基础模式。请求上下文也可用于路由请求，尤其是当分片键不是查询的一部分时。将应用程序中使用数据依赖路由的每个特定查询和事务限制为针对每个请求访问单一数据库。对于 SQL Azure 数据库弹性工具，这种路由是通过 ADO.NET 应用程序中的 **[ShardMapManager 类](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx)** 实现的。
 
-应用程序无需在分片环境中跟踪与不同的数据片相关联的各种连接字符串或数据库位置。但是，[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)在需要时基于分片映射中的数据以及作为应用程序请求目标的分片键值，将开放连接分发给正确的数据库。（该键通常为 *customer\_id*、*tenant\_id*、*date\_key* 或一些作为数据库请求的基础参数的其他特定标识符）。
+应用程序无需在分片环境中跟踪与不同的数据片相关联的各种连接字符串或数据库位置。但是，[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)在需要时基于分片映射中的数据以及作为应用程序请求目标的分片键值，将开放连接分发给正确的数据库。（该键通常为 *customer\_id*、*tenant\_id*、*date\_key* 或一些作为数据库请求的基础参数的其他特定标识符）。
 
 有关详细信息，请参阅[使用数据相关的路由缩放 SQL Server](https://technet.microsoft.com/zh-cn/library/cc966448.aspx)。
 
@@ -34,7 +34,7 @@
 
 ### 尽可能使用最低特权凭据来获取分片映射
 
-如果应用程序本身无法处理分片映射，在工厂方法中使用的凭据应该对全局分片映射数据库仅有只读权限。这些凭据通常与用于到分片映射管理器的开放连接的凭据不同。另请参阅[用于访问弹性数据库客户端库的凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials)。
+如果应用程序本身无法处理分片映射，在工厂方法中使用的凭据应该对全局分片映射数据库仅有只读权限。这些凭据通常与用于到分片映射管理器的开放连接的凭据不同。另请参阅[用于访问弹性数据库客户端库的凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials/)。
 
 ## 调用 OpenConnectionForKey 方法
 
@@ -124,7 +124,7 @@ int newPersonId = 4321;
 确保分片的所有局部操作的事务属性。例如，通过数据依赖路由提交的事务将在目标分片范围内执行以供连接。此时，没有提供用于将多个连接包含在一个事务中的功能，因此对于在分片上执行的操作，没有事务保证。
 
 ## 后续步骤
-若要分离分片或重新附加分片，请参阅[使用 RecoveryManager 类解决分片映射问题](/documentation/articles/sql-database-elastic-database-recovery-manager)
+若要分离分片或重新附加分片，请参阅[使用 RecoveryManager 类解决分片映射问题](/documentation/articles/sql-database-elastic-database-recovery-manager/)
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  

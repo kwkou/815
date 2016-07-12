@@ -194,7 +194,7 @@
 有关 SQL 数据库和 SQL 数据同步的其他信息，请参阅：
 
 * [下载完整的 SQL 数据同步技术文档](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)
-* [SQL 数据库概述](/documentation/articles/sql-database-technical-overview)
+* [SQL 数据库概述](/documentation/articles/sql-database-technical-overview/)
 * [数据库生命周期管理](https://msdn.microsoft.com/zh-cn/library/jj907294.aspx)
  
 

@@ -98,6 +98,6 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 
 ## 后续步骤
 
-- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
+- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)
 
 <!---HONumber=Mooncake_0411_2016-->

@@ -18,7 +18,7 @@ Service Fabric 资源管理器是一个用于检验和管理 Azure Service Fabri
 
 ## 连接到 Service Fabric 资源管理器
 
-如果你已根据说明[准备开发环境](/documentation/articles/service-fabric-get-started)，则可以通过导航到 http://localhost:19080/Explorer 来启动本地群集上的 Service Fabric 资源管理器。
+如果你已根据说明[准备开发环境](/documentation/articles/service-fabric-get-started/)，则可以通过导航到 http://localhost:19080/Explorer 来启动本地群集上的 Service Fabric 资源管理器。
 
 >[AZURE.NOTE] 如果你使用 Internet Explorer 配合 Service Fabric 资源管理器来管理远程群集，则需要配置一些 Internet Explorer 设置。转到“工具”>“兼容性视图设置”，然后取消选中“在兼容性视图中显示 Intranet 站点”，以确保正确加载所有信息。
 
@@ -101,9 +101,9 @@ Azure 门户的群集基本信息窗格中也提供了完整 URL。
 
 ## 后续步骤
 
-- [可测试性概述](/documentation/articles/service-fabric-testability-overview)。
-- [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio)。
-- [使用 PowerShell 部署 Service Fabric 应用程序](/documentation/articles/service-fabric-deploy-remove-applications)
+- [可测试性概述](/documentation/articles/service-fabric-testability-overview/)。
+- [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio/)。
+- [使用 PowerShell 部署 Service Fabric 应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)
 
 <!--Image references-->
 [sfx-cluster-dashboard]: ./media/service-fabric-visualizing-your-cluster/SfxClusterDashboard.png

@@ -59,7 +59,7 @@
 我们针对 .NET、Java、PHP、Python、Node.js 提供有 SDK 和[完整的示例]，因此，你可设置应用后端以使用这些平台中的任一个与通知中心通信。通知中心 API 以 REST 接口为基础，因此，如果你不想增加额外的依赖项，可以选择直接与其通信。你可以在 [NH — REST API] 页面找到更多详细信息。
 
 ###2.支持哪些客户端平台？
-我们支持将推送通知发送到 [Apple iOS](/documentation/articles/notification-hubs-ios-get-started)、[Android](/documentation/articles/notification-hubs-android-get-started)、[Windows 通用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)、[Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started)、[Kindle](/documentation/articles/notification-hubs-kindle-get-started)、[Android China（通过百度）](/documentation/articles/notification-hubs-baidu-get-started)、Xamarin（[iOS](/documentation/articles/partner-xamarin-notification-hubs-ios-get-started) 和 [Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started)）、[Chrome 应用](/documentation/articles/notification-hubs-chrome-get-started)和 [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari) 平台。有关在这些平台上发送推送通知的入门教程完整列表，请访问 [NH — 入门教程]页面。
+我们支持将推送通知发送到 [Apple iOS](/documentation/articles/notification-hubs-ios-get-started/)、[Android](/documentation/articles/notification-hubs-android-get-started/)、[Windows 通用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)、[Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started/)、[Kindle](/documentation/articles/notification-hubs-kindle-get-started/)、[Android China（通过百度）](/documentation/articles/notification-hubs-baidu-get-started/)、Xamarin（[iOS](/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/) 和 [Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)）、[Chrome 应用](/documentation/articles/notification-hubs-chrome-get-started/)和 [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari) 平台。有关在这些平台上发送推送通知的入门教程完整列表，请访问 [NH — 入门教程]页面。
 
 ###3.是否支持 SMS/电子邮件/Web 通知？
 通知中心主要针对使用上面列出的平台将通知发送到移动应用而设计。我们目前不提供发送电子邮件或短信提示的功能；但提供这些功能的第三方平台可以与通知中心进行集成，以通过使用 [Azure Mobile Apps] 发送原生推送通知。
@@ -124,7 +124,7 @@ PNS 对于传递通知不保证任何 SLA；但是，一般情况下，绝大多
 在创建注册之前，当你必须进行客户端身份验证时，或者，当你拥有必须根据某些应用逻辑由应用后端创建或修改的标记时，从应用后端进行注册很有用。有关详细信息，你可以通过[后端注册指南]与[后端注册指南 — 2] 页面深入了解。
 
 ###11.什么是推送通知传递安全模型？
-Azure 通知中心使用基于[共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1) 的安全模型。你可以在根命名空间级别或细粒度通知中心级别使用 SAS 令牌。这些 SAS 令牌可以使用不同的授权规则进行设置，如发送消息权限、侦听通知权限等。你可以在 [NH 安全模型]文档中找到更多详细信息。
+Azure 通知中心使用基于[共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/) 的安全模型。你可以在根命名空间级别或细粒度通知中心级别使用 SAS 令牌。这些 SAS 令牌可以使用不同的授权规则进行设置，如发送消息权限、侦听通知权限等。你可以在 [NH 安全模型]文档中找到更多详细信息。
 
 ###12.我如何处理推送通知中的敏感负载？
 所有通知都由平台的推送通知服务 (PNS) 传递到目标设备。当发件人将通知发送到 Azure 通知中心后，我们会对通知进行处理并传递到各自的 PNS。
@@ -179,13 +179,13 @@ Azure 通知中心支持在 [Azure 经典管理门户]中查看遥测数据。�
 [案例研究 -Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
 [案例研究 - 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [NH - REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn530746.aspx
-[NH - 入门教程]: /documentation/articles/notification-hubs-ios-get-started
+[NH - 入门教程]: /documentation/articles/notification-hubs-ios-get-started/
 [移动服务定价]: /home/features/mobile-services/#price
 [后端注册指南]:https://msdn.microsoft.com/library/azure/dn743807.aspx
 [后端注册指南 - 2]:https://msdn.microsoft.com/library/azure/dn530747.aspx
 [NH 安全模型]: https://msdn.microsoft.com/zh-cn/library/azure/dn495373.aspx
-[NH - 安全推送教程]: /documentation/articles/notification-hubs-aspnet-backend-ios-secure-push
-[NH - 故障排除]: /documentation/articles/notification-hubs-diagnosing
+[NH - 安全推送教程]: /documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
+[NH - 故障排除]: /documentation/articles/notification-hubs-diagnosing/
 [NH — 指标]: https://msdn.microsoft.com/library/dn458822.aspx
 [NH — 指标示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 [注册信息导出/导入]: https://msdn.microsoft.com/library/dn790624.aspx

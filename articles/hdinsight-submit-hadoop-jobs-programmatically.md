@@ -18,24 +18,24 @@
 学习如何使用 Azure PowerShell 提交 MapReduce 和 Hive 作业，以及如何使用 HDInsight .NET SDK 提交 MapReduce、Hadoop 流式处理和 Hive 作业。
 
 > [AZURE.NOTE] 这篇文章的步骤必须在 Windows 客户端使用。关于在 HDInsight 把 Linux, OS X 或者 Unix 客户端与 MapReduce, Hive 或者 Pig 一起使用，请查看以下文章，并选择 “Curl” 链接。
-><p> - [在 HDInsight 使用 Hive](/documentation/articles/hdinsight-use-hive)
-><p> - [在 HDInsight 使用 Pig](/documentation/articles/hdinsight-use-pig)
-><p> - [在 HDInsight 使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce)
+><p> - [在 HDInsight 使用 Hive](/documentation/articles/hdinsight-use-hive/)
+><p> - [在 HDInsight 使用 Pig](/documentation/articles/hdinsight-use-pig/)
+><p> - [在 HDInsight 使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)
 
 ##先决条件
 
 在开始阅读本文前，你必须具有：
 
 * **一个 Azure HDInsight 群集**。有关说明，请参阅 [HDInsight 入门][hdinsight-get-started]或[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision]。
-- **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 或更新](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater)。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 或更新](/documentation/articles/hdinsight-administer-use-powershell/#install-azure-powershell-10-and-greater)。
 
 ##使用 PowerShell 提交 MapReduce 作业
 
-请参阅[在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例](/documentation/articles/hdinsight-run-samples)。
+请参阅[在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例](/documentation/articles/hdinsight-run-samples/)。
 
 ##使用 PowerShell 提交 Hive 作业
 
-请参阅[使用 PowerShell 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell)
+请参阅[使用 PowerShell 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell/)
 
 ## 使用 Visual Studio 提交 Hive 作业
 
@@ -183,7 +183,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 ##使用适用于 Visual Studio 的 HDInsight 工具提交作业
 
-你可以使用适用于 Visual Studio 的 HDInsight 工具来运行 Hive 查询和 Pig 脚本。请参阅[适用于 HDInsight 的 Visual Studio Hadoop 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+你可以使用适用于 Visual Studio 的 HDInsight 工具来运行 Hive 查询和 Pig 脚本。请参阅[适用于 HDInsight 的 Visual Studio Hadoop 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 ##后续步骤
 在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
@@ -199,20 +199,20 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 [azure-certificate]: /documentation/articles/cloud-services-certs-create/
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png

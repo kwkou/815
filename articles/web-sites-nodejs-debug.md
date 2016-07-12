@@ -59,7 +59,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 
 	npm install azure-cli -g
 
-安装后，可以使用“azure”命令访问这些工具。必须首先将这些命令行工具配置为使用你的 Azure 订阅。有关如何实现此任务的信息，请参阅[如何使用Azure 命令行工具](/documentation/articles/xplat-cli-connect)一文的 **如何下载和导入发布设置** 部分。
+安装后，可以使用“azure”命令访问这些工具。必须首先将这些命令行工具配置为使用你的 Azure 订阅。有关如何实现此任务的信息，请参阅[如何使用Azure 命令行工具](/documentation/articles/xplat-cli-connect/)一文的 **如何下载和导入发布设置** 部分。
 
 ###FTP
 
@@ -69,7 +69,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 
 在仪表板中返回的 FTP URL 针对 **LogFiles** 目录，该目录中将包含以下子目录：
 
-* [部署方法](/documentation/articles/web-sites-deploy) - 如果你使用 Git 之类的部署方法，将创建同名的目录并且将包含与部署相关的信息。
+* [部署方法](/documentation/articles/web-sites-deploy/) - 如果你使用 Git 之类的部署方法，将创建同名的目录并且将包含与部署相关的信息。
 
 * nodejs - 从你的所有应用程序实例捕获的 Stdout 和 stderr 信息（在 loggingEnabled 为 true 时）。
 
@@ -85,7 +85,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 
 * LogFiles
 
-	* [部署方法](/documentation/articles/web-sites-deploy) - 如果你使用 Git 之类的部署方法，将创建同名的目录并且将包含与部署相关的信息。
+	* [部署方法](/documentation/articles/web-sites-deploy/) - 如果你使用 Git 之类的部署方法，将创建同名的目录并且将包含与部署相关的信息。
 
 	* nodejs - 从你的所有应用程序实例捕获的 Stdout 和 stderr 信息（在 loggingEnabled 为 true 时）。
 
@@ -102,7 +102,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 
 在本文中，你学习了如何启用和访问 Azure 的诊断信息。尽管此信息对于理解你的应用程序发生的问题很有用，但它可能会指出与你正使用的模块有关的问题或者 Azure Web Apps 所用的 Node.js 版本不同于在你的部署环境中使用的版本。
 
-有关使用 Azure 上的模块的信息，请参阅[将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps)。
+有关使用 Azure 上的模块的信息，请参阅[将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)。
 
 有关为你的应用程序指定 Node.js 版本的信息，请参阅[在 Azure 应用程序中指定 Node.js 版本]。
 
@@ -110,9 +110,9 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode 自述文件]: https://github.com/tjanczuk/iisnode#readme
-[How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install
-[Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps
-[在 Azure 应用程序中指定 Node.js 版本]: /documentation/articles/nodejs-specify-node-version-azure-apps
+[How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install/
+[Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps/
+[在 Azure 应用程序中指定 Node.js 版本]: /documentation/articles/nodejs-specify-node-version-azure-apps/
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  
 

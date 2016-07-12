@@ -31,9 +31,9 @@
 
 	媒体服务为资产提供磁盘上的存储加密，而不是通过数字权限管理器 (DRM) 等线路提供加密。
 
-	如果你的资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)。
+	如果你的资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)。
 
-如果指定使用 **CommonEncrypted** 选项或 **EnvelopeEncypted** 选项加密资产，则需要将资产关联到 **ContentKey**。有关详细信息，请参阅[如何创建 ContentKey](/documentation/articles/media-services-dotnet-create-contentkey)。
+如果指定使用 **CommonEncrypted** 选项或 **EnvelopeEncypted** 选项加密资产，则需要将资产关联到 **ContentKey**。有关详细信息，请参阅[如何创建 ContentKey](/documentation/articles/media-services-dotnet-create-contentkey/)。
 
 如果指定使用 **StorageEncrypted** 选项加密资产，适用于 .NET 的媒体服务 SDK 将为资产创建 **StorateEncrypted** **ContentKey**。
 
@@ -300,7 +300,7 @@
 ##后续步骤
 将资产上载到媒体服务后，请转到[如何获取媒体处理器][]主题。
 
-[如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor
+[如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor/
  
 
 <!---HONumber=Mooncake_0613_2016-->

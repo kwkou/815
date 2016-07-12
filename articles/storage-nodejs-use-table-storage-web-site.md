@@ -613,7 +613,7 @@
 [Git remote]: http://git-scm.com/docs/git-remote
 
 [使用 MongoDB 的 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
-[Azure CLI]: /documentation/articles/xplat-cli-install
+[Azure CLI]: /documentation/articles/xplat-cli-install/
 
 [使用 Git 发布到 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control/
 [azure]: https://github.com/Azure/azure-sdk-for-node

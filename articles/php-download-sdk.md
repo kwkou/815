@@ -99,7 +99,7 @@ Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服�
 
 ##Azure CLI
 
-Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
+Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 ## 后续步骤
 

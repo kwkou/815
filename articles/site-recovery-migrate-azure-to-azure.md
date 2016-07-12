@@ -51,10 +51,10 @@
 	
 	向组添加计算机之后，系统将启用保护，并且依据保护组设置运行初始复制。
 
-10. [运行非计划的故障转移](/documentation/articles/site-recovery-failover#run-an-unplanned-failover)。在初始复制完成之后，可以运行非计划的从一个 Azure 区域到另一个 Azure 区域的故障转移。（可选）你可以创建一个恢复计划并运行非计划的故障转移，在区域之间迁移多个虚拟机。[详细了解](/documentation/articles/site-recovery-create-recovery-plans)恢复计划。
+10. [运行非计划的故障转移](/documentation/articles/site-recovery-failover/#run-an-unplanned-failover)。在初始复制完成之后，可以运行非计划的从一个 Azure 区域到另一个 Azure 区域的故障转移。（可选）你可以创建一个恢复计划并运行非计划的故障转移，在区域之间迁移多个虚拟机。[详细了解](/documentation/articles/site-recovery-create-recovery-plans/)恢复计划。
 		
 ## 后续步骤
 
-若要详细了解其他复制方案，请参阅[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)
+若要详细了解其他复制方案，请参阅[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
 
 <!---HONumber=Mooncake_0328_2016-->

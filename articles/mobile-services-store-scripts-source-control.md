@@ -15,8 +15,8 @@
 # 在源代码管理中存储移动服务项目代码
 
 > [AZURE.SELECTOR]
-- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
-- [Javascript backend](/documentation/articles/mobile-services-store-scripts-source-control)
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/)
+- [Javascript backend](/documentation/articles/mobile-services-store-scripts-source-control/)
 
 本主题向您展示了如何使用 Azure 移动服务提供的源代码管理来存储服务器脚本。脚本和其他 JavaScript 后端代码文件可从您的本地 Git 存储库提升到生产移动服务。另外，本主题还说明了如何定义可在多个脚本之间使用的共享代码，以及如何使用 package.json 文件来为您的移动服务添加 Node.js 模块。
 
@@ -145,8 +145,8 @@
 [Git website]: http://git-scm.com
 [源代码管理]: http://msdn.microsoft.com/zh-cn/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[移动服务入门]: /documentation/articles/mobile-services-ios-get-started
-[在移动服务中使用服务器脚本]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[移动服务入门]: /documentation/articles/mobile-services-ios-get-started/
+[在移动服务中使用服务器脚本]: /documentation/articles/mobile-services-how-to-use-server-scripts/
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [模块]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid

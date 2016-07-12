@@ -17,7 +17,7 @@
 
 本文介绍如何使用 Azure 备份将 Windows Server（或 Windows 客户端）文件和文件夹备份到 Azure。本教程旨在引导你完成基本操作。如果想要开始使用 Azure 备份，本文的内容非常合适。
 
-如果想要深入了解 Azure 备份，请阅读此[概述](/documentation/articles/backup-introduction-to-azure-backup)。
+如果想要深入了解 Azure 备份，请阅读此[概述](/documentation/articles/backup-introduction-to-azure-backup/)。
 
 将文件和文件夹备份到 Azure 需要进行以下活动：
 
@@ -62,9 +62,9 @@
 
     选择存储冗余选项的最佳时机是在创建保管库之后、将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
 
-    如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），应考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy#geo-redundant-storage)选项。
+    如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），应考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy/#geo-redundant-storage)选项。
 
-    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 SCDPM 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
+    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 SCDPM 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy/#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
 
     a.单击刚刚创建的保管库。
 
@@ -200,7 +200,7 @@
 
 5. 选择备份副本的“保留策略”。你可以根据需要修改每日、每周、每月和每年保留策略。
 
-    >[AZURE.NOTE] [此文](/documentation/articles/backup-azure-backup-cloud-as-tape)中详细介绍了备份计划。
+    >[AZURE.NOTE] [此文](/documentation/articles/backup-azure-backup-cloud-as-tape/)中详细介绍了备份计划。
 
      单击“下一步”
 
@@ -241,8 +241,8 @@
 祝贺你，你已将文件和文件夹成功备份到 Azure 备份。
 
 ## 后续步骤
-+ 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup)。
-- [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
++ 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)。
+- [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server/)
 + 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
 <!---HONumber=Mooncake_0503_2016-->

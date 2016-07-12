@@ -55,7 +55,7 @@ DocumentDB 的一个常见用例就是存储和查询 Web 和移动应用程序�
    
 与事件日志数据相关的主要用例通常有两个。第一个用例是对数据的子集执行即席查询以进行故障排除。在故障排除期间，通常将按时间顺序从日志中检索数据的子集。然后，通过筛选包含错误级别或错误消息的数据集进行深入探究。这就是在 DocumentDB 中存储事件日志的优越之处。由于 DocumentDB 中存储的日志数据默认自动编制索引，因此可以随时进行查询。此外，还可以按时间顺序在多个数据分区中保存日志数据。根据保留策略，可以将较旧的日志滚动到不常访问的存储区。
 
-第二个用例是对大型日志数据脱机执行长时间运行数据分析作业。此用例的示例包括服务器可用性分析、应用程序错误分析和点击流数据分析。通常使用 Hadoop 执行这些类型的分析。使用 DocumentDB 的 Hadoop 连接器，DocumentDB 数据库可用作 Pig、Hive 和 Map/Reduce 作业的数据源和接收器。有关 DocumentDB 的 Hadoop 连接器的详细信息，请参阅[使用 DocumentDB 和 HDInsight 运行 Hadoop 作业](/documentation/articles/documentdb-run-hadoop-with-hdinsight)。
+第二个用例是对大型日志数据脱机执行长时间运行数据分析作业。此用例的示例包括服务器可用性分析、应用程序错误分析和点击流数据分析。通常使用 Hadoop 执行这些类型的分析。使用 DocumentDB 的 Hadoop 连接器，DocumentDB 数据库可用作 Pig、Hive 和 Map/Reduce 作业的数据源和接收器。有关 DocumentDB 的 Hadoop 连接器的详细信息，请参阅[使用 DocumentDB 和 HDInsight 运行 Hadoop 作业](/documentation/articles/documentdb-run-hadoop-with-hdinsight/)。
 
 ## 游戏
 数据库层是游戏应用程序的关键组件。新式游戏可在移动/控制台客户端执行图形处理，但需依赖云传输自定义的个性化内容，例如游戏中的统计数据、社交媒体集成以及高分排行榜。游戏要求读取和写入具有极低的延迟，以提供具有吸引力的游戏内体验，并且数据库层需要在新游戏发布和功能更新期间处理请求率的高峰和低谷。

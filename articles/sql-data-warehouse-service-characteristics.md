@@ -224,7 +224,7 @@ An internal DMS error occurred that caused this operation to fail. Details: Exce
 <!--Image references-->
 
 <!--Article references-->
-[SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference
+[SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
 
 <!--MSDN references-->
 

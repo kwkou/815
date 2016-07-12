@@ -14,14 +14,14 @@
 
 # 使用 PowerShell 自动化应用程序生命周期
 
-可以对 [Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle)的许多层面进行自动化。本文说明如何使用 PowerShell 来自动完成部署、升级、删除和测试 Azure Service Fabric 应用程序的常见任务。还提供了用于应用管理的托管和 HTTP API，有关详细信息，请参阅[应用生命周期](/documentation/articles/service-fabric-application-lifecycle)。
+可以对 [Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle/)的许多层面进行自动化。本文说明如何使用 PowerShell 来自动完成部署、升级、删除和测试 Azure Service Fabric 应用程序的常见任务。还提供了用于应用管理的托管和 HTTP API，有关详细信息，请参阅[应用生命周期](/documentation/articles/service-fabric-application-lifecycle/)。
 
 ## 先决条件
 在进一步讨论文章中的任务之前，请务必：
 
-+ 熟悉 [Service Fabric 技术概述](/documentation/articles/service-fabric-technical-overview)中所述的 Service Fabric 概念。
-+ [安装运行时、SDK 和工具](/documentation/articles/service-fabric-get-started)，它还将安装 **ServiceFabric** PowerShell 模块。
-+ [启用 PowerShell 脚本执行](/documentation/articles/service-fabric-get-started#enable-powershell-script-execution)。
++ 熟悉 [Service Fabric 技术概述](/documentation/articles/service-fabric-technical-overview/)中所述的 Service Fabric 概念。
++ [安装运行时、SDK 和工具](/documentation/articles/service-fabric-get-started/)，它还将安装 **ServiceFabric** PowerShell 模块。
++ [启用 PowerShell 脚本执行](/documentation/articles/service-fabric-get-started/#enable-powershell-script-execution)。
 + 启动本地群集。以管理员身份启动新的 PowerShell 窗口，然后从 SDK 文件夹运行群集设置脚本：`& "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1"`
 + 在运行本文中的任何 PowerShell 命令之前，请先使用 [**Connect-ServiceFabricCluster**](https://msdn.microsoft.com/zh-cn/library/azure/mt125938.aspx) 连接到本地 Service Fabric 群集：`Connect-ServiceFabricCluster localhost:19000`
 + 以下任务需要用于部署的 v1 应用程序包和用于升级的 v2 应用程序包。下载 [**WordCount** 示例应用程序](http://aka.ms/servicefabricsamples)（位于“入门”示例中）。在 Visual Studio 中生成和打包应用程序（右键单击解决方案资源管理器中的 **WordCount**，然后选择“打包”）。将 `C:\ServiceFabricSamples\Services\WordCount\WordCount\pkg\Debug` 中的 v1 包复制到 `C:\Temp\WordCount`。将 `C:\Temp\WordCount` 复制到 `C:\Temp\WordCountV2`，创建用于升级的 v2 应用程序包。在文本编辑器中打开 `C:\Temp\WordCountV2\ApplicationManifest.xml`。在 **ApplicationManifest** 元素中，将 **ApplicationTypeVersion** 属性从“1.0.0”更改为“2.0.0”。这将更新应用程序的版本号。保存更改后的 ApplicationManifest.xml 文件。
@@ -66,7 +66,7 @@ Get-ServiceFabricApplication | Get-ServiceFabricService
 
 ## 任务：升级 Service Fabric 应用程序
 
-可以使用已更新的应用程序包升级以前部署的 Service Fabric 应用程序。此任务将升级以前在“任务：部署 Service Fabric 应用程序”中部署的 WordCount 应用程序。 有关详细信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade)。
+可以使用已更新的应用程序包升级以前部署的 Service Fabric 应用程序。此任务将升级以前在“任务：部署 Service Fabric 应用程序”中部署的 WordCount 应用程序。 有关详细信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)。
 
 为简单起见，此示例仅在系统必备组件中创建的 WordCountV2 应用程序包中更新了应用程序版本号。更加实际的方案则包括更新服务代码、配置或数据文件，然后使用已更新的版本号重新生成并打包应用程序。
 
@@ -87,7 +87,7 @@ Register-ServiceFabricApplicationType WordCountV2
 ```
 
 ### 步骤 3：开始升级
-可将各种升级参数、超时和运行状况标准应用到应用程序升级。若要了解详细信息，请参阅[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)和[升级过程](/documentation/articles/service-fabric-application-upgrade)文档。所有服务和实例在升级之后都应该运行正常。将 **HealthCheckStableDuration** 设置为 60 秒（这样该服务在进行下一个升级域的升级之前将至少保持 20 秒的运行状况正常）。同时，请将 **UpgradeDomainTimeout** 设置为 1200 秒，将 **UpgradeTimeout** 设置为 3000 秒。最后，将 **UpgradeFailureAction** 设置为 **rollback**，以便在升级期间遇到任何错误时，请求 Service Fabric 将应用程序回滚到前一版本。
+可将各种升级参数、超时和运行状况标准应用到应用程序升级。若要了解详细信息，请参阅[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)和[升级过程](/documentation/articles/service-fabric-application-upgrade/)文档。所有服务和实例在升级之后都应该运行正常。将 **HealthCheckStableDuration** 设置为 60 秒（这样该服务在进行下一个升级域的升级之前将至少保持 20 秒的运行状况正常）。同时，请将 **UpgradeDomainTimeout** 设置为 1200 秒，将 **UpgradeTimeout** 设置为 3000 秒。最后，将 **UpgradeFailureAction** 设置为 **rollback**，以便在升级期间遇到任何错误时，请求 Service Fabric 将应用程序回滚到前一版本。
 
 现在你可以使用 [**Start-ServiceFabricApplicationUpgrade**](https://msdn.microsoft.com/zh-cn/library/azure/mt125975.aspx) cmdlet 开始升级应用程序：
 
@@ -95,10 +95,10 @@ Register-ServiceFabricApplicationType WordCountV2
 Start-ServiceFabricApplicationUpgrade -ApplicationName fabric:/WordCount -ApplicationTypeVersion 2.0.0 -HealthCheckStableDurationSec 60 -UpgradeDomainTimeoutSec 1200 -UpgradeTimeout 3000  -FailureAction Rollback -Monitored
 ```
 
-请注意，应用程序名称与以前部署的 v1.0.0 应用程序名称相同 (fabric:/WordCount)。Service Fabric 使用此名称来确定升级的应用程序。如果设置的超时太短，则可能遇到一条说明该问题的超时失败消息。请参阅[应用程序升级故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting)，或增大超时。
+请注意，应用程序名称与以前部署的 v1.0.0 应用程序名称相同 (fabric:/WordCount)。Service Fabric 使用此名称来确定升级的应用程序。如果设置的超时太短，则可能遇到一条说明该问题的超时失败消息。请参阅[应用程序升级故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)，或增大超时。
 
 ### 步骤 4 ：查看升级进度
-可以使用 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster) 或 [**Get-ServiceFabricApplicationUpgrade**](https://msdn.microsoft.com/zh-cn/library/azure/mt125988.aspx) cmdlet 来监视应用程序升级的进度：
+可以使用 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster/) 或 [**Get-ServiceFabricApplicationUpgrade**](https://msdn.microsoft.com/zh-cn/library/azure/mt125988.aspx) cmdlet 来监视应用程序升级的进度：
 
 ```powershell
 Get-ServiceFabricApplicationUpgrade fabric:/WordCount
@@ -108,7 +108,7 @@ Get-ServiceFabricApplicationUpgrade fabric:/WordCount
 
 ## 任务：测试 Service Fabric 应用程序
 
-若要编写高质量的服务，开发人员需要能够引入不可靠的基础结构故障来测试其服务的稳定性。Service Fabric 使开发人员能够引入故障操作，并使用混沌和故障转移测试方案来测试故障情况下服务的运行情况。请参阅[可测试性概述](/documentation/articles/service-fabric-testability-overview)获取详细信息。
+若要编写高质量的服务，开发人员需要能够引入不可靠的基础结构故障来测试其服务的稳定性。Service Fabric 使开发人员能够引入故障操作，并使用混沌和故障转移测试方案来测试故障情况下服务的运行情况。请参阅[可测试性概述](/documentation/articles/service-fabric-testability-overview/)获取详细信息。
 
 ### 步骤 1：运行混沌测试方案
 混沌测试方案跨整个 Service Fabric 群集生成故障。一般而言，该方案将几个月或几年经历的故障压缩到几小时。各种交叉故障的组合并具有高故障率，能够找出很有可能被忽视的极端状况。以下示例运行了 60 分钟的混沌测试方案。
@@ -159,11 +159,11 @@ Remove-ServiceFabricApplicationPackage -ImageStoreConnectionString file:C:\SfDev
 ```
 
 ## 后续步骤
-[Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle)
+[Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle/)
 
-[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)
+[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)
 
-[应用程序升级](/documentation/articles/service-fabric-application-upgrade)
+[应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
 [Azure Service Fabric cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125965.aspx)
 

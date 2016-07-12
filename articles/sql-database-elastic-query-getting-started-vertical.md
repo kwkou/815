@@ -13,11 +13,11 @@
 
 # 跨数据库查询（垂直分区）入门 
 
-Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。本主题适用于[垂直分区数据库](/documentation/articles/sql-database-elastic-query-vertical-partitioning)。
+Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。本主题适用于[垂直分区数据库](/documentation/articles/sql-database-elastic-query-vertical-partitioning/)。
 
 完成时，你将会：了解如何配置和使用 Azure SQL 数据库执行跨多个相关数据库的查询。
 
-有关弹性数据库查询功能的详细信息，请参阅 [Azure SQL 数据库弹性数据库查询概述](/documentation/articles/sql-database-elastic-query-overview)。
+有关弹性数据库查询功能的详细信息，请参阅 [Azure SQL 数据库弹性数据库查询概述](/documentation/articles/sql-database-elastic-query-overview/)。
 
 ## 创建示例数据库
 

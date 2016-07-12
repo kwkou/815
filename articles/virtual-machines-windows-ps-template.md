@@ -25,7 +25,7 @@
 
 ## 步骤 1：创建模板文件
 
-你可以使用 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)中的信息来创建自己的模板。也可以从 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)部署创建的模板。
+你可以使用 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates/)中的信息来创建自己的模板。也可以从 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)部署创建的模板。
 
 1. 打开偏好的文本编辑器，并将以下 JSON 信息复制到名为 *VirtualMachineTemplate.json* 的新文件中：
 
@@ -193,7 +193,7 @@
           ]
         }
         
-    >[AZURE.NOTE] 本文创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
+    >[AZURE.NOTE] 本文创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
     
 2. 保存模板文件。
 
@@ -218,11 +218,11 @@
 
 ## 步骤 3：安装 Azure PowerShell
 
-有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。选择要使用的订阅，然后登录到你的 Azure 帐户。
+有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。
 
 ## 步骤 4：创建资源组
 
-必须在资源组中部署所有资源。有关详细信息，请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview)。
+必须在资源组中部署所有资源。有关详细信息，请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview/)。
 
 1. 获取可以创建资源的可用位置列表。
 
@@ -275,10 +275,10 @@
 
         Outputs           :
 
-    >[AZURE.NOTE] 也可以从 Azure 存储帐户部署模板和参数。有关详细信息，请参阅 [Using Azure PowerShell with Azure Storage（对 Azure 存储空间使用 Azure PowerShell）](/documentation/articles/storage-powershell-guide-full)。
+    >[AZURE.NOTE] 也可以从 Azure 存储帐户部署模板和参数。有关详细信息，请参阅 [Using Azure PowerShell with Azure Storage（对 Azure 存储空间使用 Azure PowerShell）](/documentation/articles/storage-powershell-guide-full/)。
 
 ## 后续步骤
 
-- 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)，了解如何管理刚创建的虚拟机。
+- 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage/)，了解如何管理刚创建的虚拟机。
 
 <!---HONumber=Mooncake_0613_2016-->

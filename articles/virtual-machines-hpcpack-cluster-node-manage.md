@@ -16,11 +16,11 @@
 
 如果你在 Azure VM 中创建了一个 HPC Pack 群集，你可能希望有轻松添加、删除、启动（设置）或停止（取消设置）群集中大量计算节点 VM 的方法。若要执行这些任务，请运行头节点 VM 中安装的 Azure PowerShell 脚本。这些脚本可帮助你控制 HPC Pack 群集资源的数量和可用性，以便你可以控制成本。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 先决条件
 
-* **Azure VM 中的 HPC Pack 群集** - 在经典部署模型中，使用 HPC Pack 2012 R2 Update 1 以上版本创建一个 HPC Pack 群集。例如，可以通过使用 Azure 库中的 HPC Pack VM 映像和 Azure PowerShell 脚本，自动执行部署。有关信息和先决条件，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。
+* **Azure VM 中的 HPC Pack 群集** - 在经典部署模型中，使用 HPC Pack 2012 R2 Update 1 以上版本创建一个 HPC Pack 群集。例如，可以通过使用 Azure 库中的 HPC Pack VM 映像和 Azure PowerShell 脚本，自动执行部署。有关信息和先决条件，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)。
 
 * **Azure 发布设置文件或管理证书** - 你需要在头节点上执行下列操作之一：
 
@@ -155,6 +155,6 @@
 
 ## 后续步骤
 
-* 如果你想要有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少群集节点，请参阅[根据集群工作流自动增加和减少 Azure 中的 HPC Pack 群集资源](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink)。
+* 如果你想要有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少群集节点，请参阅[根据集群工作流自动增加和减少 Azure 中的 HPC Pack 群集资源](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)。
 
 <!---HONumber=Mooncake_0215_2016-->

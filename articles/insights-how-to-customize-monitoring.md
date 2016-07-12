@@ -16,7 +16,7 @@ documentationCenter=""/>
 
 所有 Azure 服务都会跟踪使你可以监视你服务的运行状况、性能、可用性和使用情况的关键指标。可以在 Azure 门户预览中查看这些指标，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931930.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式访问完整的指标集。
 
-对于某些服务，可能需要打开诊断以便查看任何指标。对于其他服务（如虚拟机），你会获得基本指标集，但需要启用完整高频率指标集。请参阅[启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics)以了解详细信息。
+对于某些服务，可能需要打开诊断以便查看任何指标。对于其他服务（如虚拟机），你会获得基本指标集，但需要启用完整高频率指标集。请参阅[启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics/)以了解详细信息。
 
 ## 使用监视图表 
 
@@ -75,10 +75,10 @@ documentationCenter=""/>
 
 ## 后续步骤
 
-* 每当指标超过阈值时[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。
-* [启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics)以收集有关服务的详细高频率指标。
-* [自动缩放实例计数](/documentation/articles/insights-how-to-scale)以确保服务可用且响应迅速。
-* 在要确切了解代码在云中的执行情况时[监视应用程序性能](/documentation/articles/insights-perf-analytics)。
+* 每当指标超过阈值时[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)。
+* [启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics/)以收集有关服务的详细高频率指标。
+* [自动缩放实例计数](/documentation/articles/insights-how-to-scale/)以确保服务可用且响应迅速。
+* 在要确切了解代码在云中的执行情况时[监视应用程序性能](/documentation/articles/insights-perf-analytics/)。
 
 
  

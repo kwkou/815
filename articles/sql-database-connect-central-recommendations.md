@@ -78,7 +78,7 @@
 - 在托管你的客户端程序的计算机上，确保防火墙允许端口 1433 上的传出 TCP 通信。
 
 
-- 如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。请单击[此处](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)了解详细信息。
+- 如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。请单击[此处](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)了解详细信息。
 
 
 - 若要处理*暂时性故障*，请将[*重试*逻辑](#TransientFaultsAndRetryLogicGm)添加到与 Azure SQL 数据库交互的客户端程序。
@@ -100,7 +100,7 @@
 
 
 与 Azure SQL 数据库 V12 建立的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。有关详细信息，请参阅：<br/>
-[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
+[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)
 
 
 下一部分更详细说明了重试逻辑和暂时性故障处理。
@@ -127,7 +127,7 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 
 如需演示重试逻辑的代码示例，请参阅：
 
-- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
 
 
 ### 暂时性故障的错误编号
@@ -161,17 +161,17 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 针对在 Windows、Linux 和 Mac OS X 上运行的客户端提供各种代码示例。
 
 
-**一般示例：**有各种不同程序设计语言的[代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)，包括 PHP、Python、Node.js 和 .NET CSharp。此外，还提供在 Windows、Linux 和 Mac OS X 上运行的客户端示例。
+**一般示例：**有各种不同程序设计语言的[代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)，包括 PHP、Python、Node.js 和 .NET CSharp。此外，还提供在 Windows、Linux 和 Mac OS X 上运行的客户端示例。
 
 
 **弹性缩放：**有关连接到弹性缩放数据库的信息，请参阅：
 
-- [Azure SQL 数据库 Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
-- [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
+- [Azure SQL 数据库 Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started/)
+- [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)
 
 
 **驱动程序库：**有关连接驱动程序库的信息（包括建议的版本），请参阅：
 
-- [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)
+- [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)
 
 <!---HONumber=Mooncake_0215_2016-->

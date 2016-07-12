@@ -78,7 +78,7 @@
 
 ###<a name="topologies"></a> 连接拓扑
 
-首先请阅读[Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology)一文。该文章包含基本原理图、每种拓扑的部署模型（资源管理器或经典）和可用来部署配置的部署工具。
+首先请阅读[Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology/)一文。该文章包含基本原理图、每种拓扑的部署模型（资源管理器或经典）和可用来部署配置的部署工具。
 
 ###<a name="designbasics"></a> 设计基础知识
 
@@ -139,13 +139,13 @@
 - 与 Azure VPN 网关兼容的 VPN 设备
 - 不在 NAT 后面的面向公众的 IPv4 IP 地址
 
-你需要有配置 VPN 设备的经验。有关 VPN 设备的详细信息，请参阅 [About VPN devices（关于 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices)。“VPN 设备”一文包含有关已验证的设备的信息、未验证的设备的要求，以及每个设备的设备配置文档（如果有）的链接。
+你需要有配置 VPN 设备的经验。有关 VPN 设备的详细信息，请参阅 [About VPN devices（关于 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices/)。“VPN 设备”一文包含有关已验证的设备的信息、未验证的设备的要求，以及每个设备的设备配置文档（如果有）的链接。
 
 ### <a name="forcedtunnel"></a> 考虑强制隧道路由
 
 对于大多数配置，你可以配置强制隧道。借助强制隧道，你可以通过站点到站点 VPN 隧道，将全部 Internet 绑定流量重定向或“强制”返回到本地位置，以进行检查和审核。这是很多企业 IT 策略的关键安全要求。
 
-没有强制隧道，来自 Azure 中虚拟机的 Internet 绑定流量会始终通过 Azure 网络基础设施直接连接到 Internet。没有该选项，您无法对流量进行检查或审核。未经授权的 Internet 访问可能会导致信息泄漏或其他类型的安全漏洞。有关配置强制隧道的详细信息，请参阅 [About forced tunneling for the classic deployment model（关于经典部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling)和 [About forced tunneling for the Resource Manager deployment model（关于资源管理器部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling)。
+没有强制隧道，来自 Azure 中虚拟机的 Internet 绑定流量会始终通过 Azure 网络基础设施直接连接到 Internet。没有该选项，您无法对流量进行检查或审核。未经授权的 Internet 访问可能会导致信息泄漏或其他类型的安全漏洞。有关配置强制隧道的详细信息，请参阅 [About forced tunneling for the classic deployment model（关于经典部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling/)和 [About forced tunneling for the Resource Manager deployment model（关于资源管理器部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling/)。
 
 **强制隧道示意图**
 
@@ -160,7 +160,7 @@
 
 ## 后续步骤
 
-请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq)和 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways)，以获取可帮助你进行设计的详细信息。有关连接拓扑的详细信息，请参阅 [Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology)。
+请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/)和 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways/)，以获取可帮助你进行设计的详细信息。有关连接拓扑的详细信息，请参阅 [Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology/)。
 
 
 

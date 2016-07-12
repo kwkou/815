@@ -123,12 +123,12 @@
 [7]: ./media/iot-hub-device-management-ui-sample/image7.png
 [8]: ./media/iot-hub-device-management-ui-sample/image8.png
 
-[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview
-[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started
+[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
+[lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management/
-[lnk-library-c]: /documentation/articles/iot-hub-device-management-library
-[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin
-[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query
-[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
+[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
+[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
+[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
 
 <!---HONumber=Mooncake_0627_2016-->

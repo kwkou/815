@@ -428,7 +428,7 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可以使用 [
 <!-- Links -->
 [lnk-ble-samplecode]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/samples/ble_gateway_hl
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
-[lnk-create-hub]: /documentation/articles/iot-hub-manage-through-portal
+[lnk-create-hub]: /documentation/articles/iot-hub-manage-through-portal/
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-explorer-tools]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/

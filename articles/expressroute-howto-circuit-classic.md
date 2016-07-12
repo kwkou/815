@@ -15,18 +15,18 @@
 # 创建和修改 ExpressRoute 线路
 
 > [AZURE.SELECTOR]
-[PowerShell - 经典](/documentation/articles/expressroute-howto-circuit-classic)
-[PowerShell - 资源管理器](/documentation/articles/expressroute-howto-circuit-arm)
+[PowerShell - 经典](/documentation/articles/expressroute-howto-circuit-classic/)
+[PowerShell - 资源管理器](/documentation/articles/expressroute-howto-circuit-arm/)
 
-本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 **经典** 部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。如果要使用 **资源管理器** 部署模型创建和修改 ExpressRoute 线路，请参阅[使用资源管理器部署模型创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)。
+本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 **经典** 部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。如果要使用 **资源管理器** 部署模型创建和修改 ExpressRoute 线路，请参阅[使用资源管理器部署模型创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)。
 
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
 
 
 ## 开始之前
 
-- 你需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
-- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)和[工作流](/documentation/articles/expressroute-workflows)。
+- 你需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
+- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites/)和[工作流](/documentation/articles/expressroute-workflows/)。
 
 ## 创建和预配 ExpressRoute 线路
 
@@ -64,7 +64,7 @@
 
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard -BillingType MeteredData 
 
-	或者，如果你想要通过高级版外接程序创建 ExpressRoute 线路，则可使用下述示例。请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页，了解有关高级版外接程序的更多详细信息。
+	或者，如果你想要通过高级版外接程序创建 ExpressRoute 线路，则可使用下述示例。请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)页，了解有关高级版外接程序的更多详细信息。
 
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium - BillingType MeteredData
 	
@@ -146,11 +146,11 @@
 
 7. **创建路由配置。**
 	
-	如需分步说明，请参阅 [ExpressRoute 线路路由配置（创建和修改线路对等互连）](/documentation/articles/expressroute-howto-routing-classic)页。
+	如需分步说明，请参阅 [ExpressRoute 线路路由配置（创建和修改线路对等互连）](/documentation/articles/expressroute-howto-routing-classic/)页。
 
 8. **将 VNet 链接到 ExpressRoute 线路。**
 
-	接下来，将 VNet 链接到 ExpressRoute 线路。如需分步说明，请参阅[将 ExpressRoute 线路链接到 VNet](/documentation/articles/expressroute-howto-linkvnet-classic)。
+	接下来，将 VNet 链接到 ExpressRoute 线路。如需分步说明，请参阅[将 ExpressRoute 线路链接到 VNet](/documentation/articles/expressroute-howto-linkvnet-classic/)。
 
 ##  获取 ExpressRoute 线路的状态
 
@@ -192,7 +192,7 @@
 
 - 在不停机的情况下，增加 ExpressRoute 线路的带宽。
 
-有关限制的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页。
+有关限制的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)页。
 
 ### 启用 ExpressRoute 高级版外接程序
 
@@ -239,7 +239,7 @@
 
 ### 如何更新 ExpressRoute 线路带宽
 
-有关你的提供商的受支持带宽选项，请查看 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。你可以选取大于现有线路大小的任何大小。
+有关你的提供商的受支持带宽选项，请查看 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。你可以选取大于现有线路大小的任何大小。
 
 >[AZURE.IMPORTANT] 但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 确定所需的大小后，即可使用以下命令调整线路的大小：
@@ -276,7 +276,7 @@
 
 创建你的线路后，请确保执行以下操作：
 
-- [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-classic)
-- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
+- [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-classic/)
+- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
 
 <!---HONumber=Mooncake_0104_2016-->

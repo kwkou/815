@@ -21,7 +21,7 @@ Runbook 输入参数可让你将数据传递到启动的 Runbook，以增加 Run
 
 ## 在 PowerShell 工作流 Runbook 中配置输入参数
 
-Azure 自动化中的 [PowerShell 工作流 Runbook](/documentation/articles/automation-first-runbook-textual) 支持通过以下属性定义的输入参数。
+Azure 自动化中的 [PowerShell 工作流 Runbook](/documentation/articles/automation-first-runbook-textual/) 支持通过以下属性定义的输入参数。
 
 | **属性** | **说明** |
 |:--- |:---|
@@ -71,7 +71,7 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户 UI、PowerShell 
 
 - **使用 Azure 经典管理门户启动已发布的 Runbook 并分配参数**
 
-当你[启动 Runbook](/documentation/articles/automation-starting-a-runbook#starting-a-runbook-with-the-azure-portal) 时，“启动 Runbook”边栏选项卡将会打开，你可以为刚刚创建的参数配置值。
+当你[启动 Runbook](/documentation/articles/automation-starting-a-runbook/#starting-a-runbook-with-the-azure-portal) 时，“启动 Runbook”边栏选项卡将会打开，你可以为刚刚创建的参数配置值。
 
  
 在输入框下面的标签中，可以查看为参数设置的属性。属性包括必需或可选状态、类型和默认值。在参数名称旁边的帮助气球中，可以查看做出参数输入值相关决策时所需的所有关键信息。此信息包括参数是必需还是可选的。此外还包括类型和默认值（如果有）及其他有用的说明。
@@ -192,19 +192,19 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户 UI、PowerShell 
 
 ### 测试 Runbook 并分配参数
 
-使用测试选项[测试 Runbook 的草稿版本](/documentation/articles/automation-testing-runbook)时，将打开“测试”边栏选项卡，你可以在其中为刚刚创建的参数设置值。
+使用测试选项[测试 Runbook 的草稿版本](/documentation/articles/automation-testing-runbook/)时，将打开“测试”边栏选项卡，你可以在其中为刚刚创建的参数设置值。
 
  
 ### 将计划链接到 Runbook 并分配参数
 
-可以将[计划链接](/documentation/articles/automation-scheduling-a-runbook)到 Runbook，以便在特定的时间启动 Runbook。可以在创建计划时分配输入参数，Runbook 在按计划启动时，将使用这些值。只有在提供所有必需参数值之后，才可以保存计划。
+可以将[计划链接](/documentation/articles/automation-scheduling-a-runbook/)到 Runbook，以便在特定的时间启动 Runbook。可以在创建计划时分配输入参数，Runbook 在按计划启动时，将使用这些值。只有在提供所有必需参数值之后，才可以保存计划。
 
  
 
 ## 后续步骤
 
 - 有关 Runbook 输入和输出的详细信息，请参阅 [Azure 自动化：Runbook 输入、输出和嵌套 Runbook](https://azure.microsoft.com/blog/azure-automation-runbook-input-output-and-nested-runbooks)。
-- 有关以不同方式启动 Runbook 的详细信息，请参阅[启动 Runbook](/documentation/articles/automation-starting-a-runbook)。
-- 若要编辑文本 Runbook，请参阅[编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook)。
+- 有关以不同方式启动 Runbook 的详细信息，请参阅[启动 Runbook](/documentation/articles/automation-starting-a-runbook/)。
+- 若要编辑文本 Runbook，请参阅[编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook/)。
 
 <!---HONumber=Mooncake_0215_2016-->

@@ -71,9 +71,9 @@ http://www.digwebinterface.com - 类似于 Watchmouse 站点，但此站点显�
 ## 后续步骤
 
 
-[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)
+[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)
 
-[测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings)
+[测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings/)
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 

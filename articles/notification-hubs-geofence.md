@@ -372,7 +372,7 @@
 
 首先，你可能需要确保地域隔离区是动态的。需要对必应 API 进行一些额外的处理，才能在现有数据源内上载新边界。有关该主题的详细信息，请参阅[必应空间数据服务 API 文档](https://msdn.microsoft.com/library/ff701734.aspx)。
 
-其次，由于你要确保向正确的参与者执行传送，因此可以通过[标记](/documentation/articles/notification-hubs-routing-tag-expressions)来锁定这些人。
+其次，由于你要确保向正确的参与者执行传送，因此可以通过[标记](/documentation/articles/notification-hubs-routing-tag-expressions/)来锁定这些人。
 
 上面所示的解决方案描述了一种方案，其中可能有各种不同的目标平台，因此我们并未限制只有系统特定的功能才能使用地域隔离。也就是说，通用 Windows 平台提供现成的功能用于[检测地域隔离](https://msdn.microsoft.com/zh-cn/windows/uwp/maps-and-location/set-up-a-geofence)。
 

@@ -16,9 +16,9 @@
 
 ## 概述
 
-本指南提供 C# 代码示例，用于演示如何在创建或更新 Azure Blob 后触发进程。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 版本 1.x。
+本指南提供 C# 代码示例，用于演示如何在创建或更新 Azure Blob 后触发进程。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 版本 1.x。
 
-本指南假设您了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
+本指南假设您了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)。
 
 代码段只显示函数，不同于创建 `JobHost` 对象的代码（如以下示例所示）：
 
@@ -49,7 +49,7 @@
 
 有关在 App.config 文件中包含服务总线连接字符串设置的示例项目，请参阅[服务总线示例](https://github.com/Azure/azure-webjobs-sdk-samples/tree/master/BasicSamples/ServiceBus)。
 
-也可以在 Azure 运行时环境中设置连接字符串，当 Web 作业在 Azure 中运行时，这些设置将覆盖 App.config 设置；有关详细信息，请参阅 [WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started#configure-the-web-app-to-use-your-azure-sql-database-and-storage-account)。
+也可以在 Azure 运行时环境中设置连接字符串，当 Web 作业在 Azure 中运行时，这些设置将覆盖 App.config 设置；有关详细信息，请参阅 [WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/#configure-the-web-app-to-use-your-azure-sql-database-and-storage-account)。
 
 ## <a id="trigger"></a>如何在接收服务总线队列消息时触发函数
 
@@ -83,7 +83,7 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 		    logger.WriteLine("Queue message refers to blob: " + blobInfo.BlobName);
 		}
 
-有关展示如何使用 POCO 属性在同一函数中处理 blob 和表的代码示例，请参阅[这篇文章的存储队列版本](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#pocoblobs)。
+有关展示如何使用 POCO 属性在同一函数中处理 blob 和表的代码示例，请参阅[这篇文章的存储队列版本](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#pocoblobs)。
 
 如果创建队列消息的代码不使用 WebJobs SDK，请使用类似于以下示例的代码：
 
@@ -162,7 +162,7 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 
 ## <a id="queues"></a>存储队列操作说明文章涉及的相关主题
 
-若要了解非服务总线专用 WebJobs SDK 方案，请参阅[如何结合使用 Azure 队列存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)。
+若要了解非服务总线专用 WebJobs SDK 方案，请参阅[如何结合使用 Azure 队列存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/)。
 
 该文章涵盖的主题包括：
 

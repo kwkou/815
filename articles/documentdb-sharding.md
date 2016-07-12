@@ -14,7 +14,7 @@
 
 # 如何在 DocumentDB 中使用 .NET SDK 对数据进行分区
 
-Azure DocumentDB 支持可扩大到[大容量存储和吞吐量](/documentation/articles/documentdb-partition-data)的集合。但是，也存在对分区行为进行精细控制更有利的用例。为了减少分区任务所需的重复代码，我们在 .NET、Node.js 和 Java SDK 中添加了相应的功能，可使构建跨多个集合的应用程序变得更为简单。
+Azure DocumentDB 支持可扩大到[大容量存储和吞吐量](/documentation/articles/documentdb-partition-data/)的集合。但是，也存在对分区行为进行精细控制更有利的用例。为了减少分区任务所需的重复代码，我们在 .NET、Node.js 和 Java SDK 中添加了相应的功能，可使构建跨多个集合的应用程序变得更为简单。
 
 在本文中，我们将了解 .NET SDK 中的类和接口，以及如何使用它们来开发已分区的应用程序。Java、Node.js 和 Python 等其他 SDK 支持使用类似方法和接口进行客户端侧分区。
 
@@ -26,9 +26,9 @@ Azure DocumentDB 支持可扩大到[大容量存储和吞吐量](/documentation/
 - ACID 事务（即存储过程和触发器）不能跨越集合。事务的作用域在集合内的单个分区键值内。
 - 集合对数据的结构/模型没有要求，因此它们可以用于相同类型或不同类型的 JSON 文档。
 
-从 [Azure DocumentDB SDK 1.5.x](/documentation/articles/documentdb-sdk-dotnet) 版本开始，你可以直接对数据库进行文档操作。在内部，[DocumentClient](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.aspx) 使用为数据库指定的 PartitionResolver 将请求路由到相应的集合。
+从 [Azure DocumentDB SDK 1.5.x](/documentation/articles/documentdb-sdk-dotnet/) 版本开始，你可以直接对数据库进行文档操作。在内部，[DocumentClient](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.aspx) 使用为数据库指定的 PartitionResolver 将请求路由到相应的集合。
 
->[AZURE.NOTE] [Server-side partitioning](/documentation/articles/documentdb-partition-data) REST API 2015-12-16 和 SDK 1.6.0+ 中引入的服务器端的分区功能取代了用于简单用例的客户端分区程序。但是，客户端分区更灵活，并可让你跨分区键控制性能隔离，在读取多个分区中的结果时控制并行度，并使用范围/空间分区方法与哈希。
+>[AZURE.NOTE] [Server-side partitioning](/documentation/articles/documentdb-partition-data/) REST API 2015-12-16 和 SDK 1.6.0+ 中引入的服务器端的分区功能取代了用于简单用例的客户端分区程序。但是，客户端分区更灵活，并可让你跨分区键控制性能隔离，在读取多个分区中的结果时控制并行度，并使用范围/空间分区方法与哈希。
 
 例如，在 .NET 中，每个 PartitionResolver 类都是 [IPartitionResolver](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.aspx) 接口的具体实现，它拥有三种方法 - [GetPartitionKey](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.getpartitionkey.aspx)、[ResolveForCreate](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.resolveforcreate.aspx) 和 [ResolveForRead](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.resolveforread.aspx)。LINQ 查询和 ReadFeed 迭代器在内部使用 ResolveForRead 方法来循环访问与请求的分区键匹配的所有集合。类似地，创建操作使用 ResolveForCreate 方法来将创建路由到正确的分区。进行替换、删除和读取无需任何更改，因为它们使用已包含对相应集合的引用的文档。
 
@@ -136,7 +136,7 @@ SDK 还包括两个类，通过 [HashPartitionResolver](https://msdn.microsoft.c
 ##常见问题
 **DocumentDB 支持服务器端分区吗？**
 
-是的，DocumentDB 支持 [服务器端分区](/documentation/articles/documentdb-partition-data)。DocumentDB 还支持通过客户端分区解析程序进行客户端分区，以实现更高级的用例。
+是的，DocumentDB 支持 [服务器端分区](/documentation/articles/documentdb-partition-data/)。DocumentDB 还支持通过客户端分区解析程序进行客户端分区，以实现更高级的用例。
 
 **在什么情况下应使用服务器端与客户端分区？** 
 对于大多数用例，我们建议使用服务器端分区，因为它可处理分区数据和路由请求的管理任务。但是，如果需要范围分区，或使用专用用例实现对不同分区键值间的性能隔离，那么客户端分区可能是最好的方法。
@@ -154,12 +154,12 @@ SDK 还包括两个类，通过 [HashPartitionResolver](https://msdn.microsoft.c
 你可以通过实现在内部使用一个或多个现有解析程序的 IPartitionResolver 来链接 PartitionResolver。有关示例，请查看 TransitionHashPartitionResolver 示例项目。
 
 ##参考
-* [ DocumentDB 中的服务器端分区](/documentation/articles/documentdb-partition-data)
-* [DocumentDB 集合和性能级别](/documentation/articles/documentdb-performance-levels)
+* [ DocumentDB 中的服务器端分区](/documentation/articles/documentdb-partition-data/)
+* [DocumentDB 集合和性能级别](/documentation/articles/documentdb-performance-levels/)
 * [Github 上的分区代码示例](https://github.com/Azure/azure-documentdb-dotnet/tree/287acafef76ad223577759b0170c8f08adb45755/samples/code-samples/Partitioning)
 * [MSDN 中的 DocumentDB .NET SDK 文档](https://msdn.microsoft.com/library/azure/dn948556.aspx)
 * [DocumentDB .NET samples（DocumentDB .NET 示例）](https://github.com/Azure/azure-documentdb-net)
-* [DocumentDB 限制](/documentation/articles/documentdb-limits)
+* [DocumentDB 限制](/documentation/articles/documentdb-limits/)
 * [DocumentDB 性能提示博客](https://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
  
 

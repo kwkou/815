@@ -131,8 +131,8 @@ Message: The maximum entity size has been reached or exceeded for Topic: ¡®xxx
 
 若要了解有关[服务总线](/home/features/messaging/)的详细信息，请参阅以下主题。
 
-- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
-- [服务总线体系结构](/documentation/articles/service-bus-architecture)
+- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
+- [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
+- [服务总线体系结构](/documentation/articles/service-bus-architecture/)
 
 <!---HONumber=Mooncake_0307_2016-->

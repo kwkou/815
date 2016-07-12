@@ -72,7 +72,7 @@ VNet 包含以下属性。
 
 ### 其他资源
 
-- 获取有关 [VNet](/documentation/articles/virtual-networks-overview) 的详细信息。
+- 获取有关 [VNet](/documentation/articles/virtual-networks-overview/) 的详细信息。
 - 阅读 VNet 的 [REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt163650.aspx)。
 - 阅读子网的 [REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt163618.aspx)。
 

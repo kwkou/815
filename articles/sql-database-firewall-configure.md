@@ -109,7 +109,7 @@ Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提供关�
 
 在对 Azure SQL 数据库服务的访问与你的期望不符时，请考虑以下几点：
 
-- **本地防火墙配置：**在你的计算机可以访问 Azure SQL 数据库之前，可能需要在你的计算机上创建针对 TCP 端口 1433 的防火墙例外。如果要在 Azure 云边界内部建立连接，可能需要打开其他端口。有关详细信息，请参阅[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)中的 **SQL 数据库 V12：内部与外部**部分。
+- **本地防火墙配置：**在你的计算机可以访问 Azure SQL 数据库之前，可能需要在你的计算机上创建针对 TCP 端口 1433 的防火墙例外。如果要在 Azure 云边界内部建立连接，可能需要打开其他端口。有关详细信息，请参阅[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)中的 **SQL 数据库 V12：内部与外部**部分。
 
 - **网络地址转换 (NAT)：**由于 NAT 的原因，计算机用来连接到 Azure SQL 数据库的 IP 地址可能不同于计算机 IP 配置设置中显示的 IP 地址。若要查看你的计算机用于连接到 Azure 的 IP 地址，请登录门户并导航到承载你的数据库的服务器上的“配置”选项卡。在“允许的 IP 地址”部分下，显示了“当前客户端 IP 地址”。单击“添加到允许的 IP 地址”以允许此计算机访问服务器。
 

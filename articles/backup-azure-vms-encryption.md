@@ -24,7 +24,7 @@
 
 ![Bitlocker 加密和 Azure VM 备份如何共存](./media/backup-azure-vms-encryption/how-it-works.png)
 
-整个数据加密以透明方式在 VM 层中无缝进行。因此，写入附加到 VM 的页 Blob 的数据是加密的数据。当 [Azure 备份创建 VM 的磁盘快照和传输数据](/documentation/articles/backup-azure-vms-introduction#how-does-azure-back-up-virtual-machines)时，将复制页 Blob 上的加密数据。
+整个数据加密以透明方式在 VM 层中无缝进行。因此，写入附加到 VM 的页 Blob 的数据是加密的数据。当 [Azure 备份创建 VM 的磁盘快照和传输数据](/documentation/articles/backup-azure-vms-introduction/#how-does-azure-back-up-virtual-machines)时，将复制页 Blob 上的加密数据。
 
 ## 解决方案组件
 

@@ -53,10 +53,10 @@
 
 ## 另请参阅
 
-[Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide)
+[Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
 
-[Azure Active directory 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)
+[Azure Active directory 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)
 
-[Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
+[Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples/)
 
 <!---HONumber=Mooncake_0613_2016-->

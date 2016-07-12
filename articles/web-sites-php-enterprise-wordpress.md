@@ -100,7 +100,7 @@ Azure 为大规模的关键任务 [WordPress][wordpress] 网站提供了一个�
 
 ###<a name="Create-a-new-WordPress-site"></a> 创建一个新的 WordPress 网站
 
-请遵照[在 Azure 中创建 PHP-MySQL Web 应用并使用 Git 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-git)中的步骤创建新的 PHP Web 应用。
+请遵照[在 Azure 中创建 PHP-MySQL Web 应用并使用 Git 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-git/)中的步骤创建新的 PHP Web 应用。
 
 在本地将 PHP Web 应用配置到 WordPress 站点，并将其推送到 Azure。
 
@@ -181,8 +181,8 @@ Azure 为大规模的关键任务 [WordPress][wordpress] 网站提供了一个�
 ------------- | -----------
 **设置 App Service 计划模式、大小和启用缩放** | [在 Azure 中缩放 Web 应用][websitescale]
 <p>默认情况下 **启用持久的数据库连接**，WordPress 不使用持久的数据库连接，这可能导致数据库的连接在多次连接后成为限制。</p> | <ol><li><p>编辑 <strong>wp-includes/wp-db.php</strong> 文件。</p></li><li><p>查找以下行。</p><code>$this->dbh = mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；<br/>如果 ( false !== $error\_reporting ) { /br/>&nbsp;&nbsp;error\_reporting( $error\_reporting )；<br/>} </code></li><li><p>查找以下行。</p><code>$this->dbh = @mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = @mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；</code></li><li><p>保存文件 <strong>wp-includes/wp-db.php</strong> 文件并重新部署网站。</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><p>更新 WordPress 后，可以覆盖这些更改。</p><p>WordPress 默认自动更新，通过编辑 <strong>wp-config.php</strong> 文件并添加 <code>define ( 'WP\_AUTO\_UPDATE\_CORE', false ) 可以禁用；</code></p><p>处理更新的另一个方法是使用监视 <strong>wp-db.php</strong> 文件的 WebJob 并在每次更新文件时执行上述修改。有关详细信息，请参阅 <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx">WebJobs 简介</a>。</p></div>
-**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="/documentation/services/redis-cache">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web Apps，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale">在 Azure 中缩放 Web 应用</a>并用 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
-**使用 blob 进行存储处理** | <ol><li><p><a href="/documentation/articles/storage-create-storage-account">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="/documentation/articles/cdn-how-to-use">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
+**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="/documentation/services/redis-cache">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web Apps，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale/\">在 Azure 中缩放 Web 应用</a>并用 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
+**使用 blob 进行存储处理** | <ol><li><p><a href="/documentation/articles/storage-create-storage-account/\">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="/documentation/articles/cdn-how-to-use/\">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
 **配置自定义域名** | [在 Azure Web 应用中配置自定义域名][customdomain]
 **启用自定义域名的 HTTPS** | [在 Azure 中启用 Web 应用的 HTTPS][httpscustomdomain]
 **负载平衡或地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]。如果你使用自定义域，请参阅[在 Azure Web 应用中使用自定义域名][customdomain]，了解有关使用含自定义域名的流量管理器的信息
@@ -193,7 +193,7 @@ Azure 为大规模的关键任务 [WordPress][wordpress] 网站提供了一个�
 
 * [WordPress 优化](http://codex.wordpress.org/WordPress_Optimization)
 
-* [在 Azure Web 应用中将 WordPress 转换为多站点](/documentation/articles/web-sites-php-convert-wordpress-multisite)
+* [在 Azure Web 应用中将 WordPress 转换为多站点](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
 
 * [在 Azure 上的 Web 应用子文件夹中托管 WordPress](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx)
 
@@ -231,21 +231,21 @@ Azure 为大规模的关键任务 [WordPress][wordpress] 网站提供了一个�
 [bingblog]: http://blogs.bing.com/
 [storageplugin]: https://wordpress.org/plugins/windows-azure-storage/
 [sendgridplugin]: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
-[phpwebsite]: /documentation/articles/web-sites-php-configure
-[customdomain]: /documentation/articles/web-sites-custom-domain-name
-[trafficmanager]: /documentation/articles/traffic-manager-overview
-[backup]: /documentation/articles/web-sites-backup
-[restore]: /documentation/articles/web-sites-restore
+[phpwebsite]: /documentation/articles/web-sites-php-configure/
+[customdomain]: /documentation/articles/web-sites-custom-domain-name/
+[trafficmanager]: /documentation/articles/traffic-manager-overview/
+[backup]: /documentation/articles/web-sites-backup/
+[restore]: /documentation/articles/web-sites-restore/
 [rediscache]: /documentation/services/redis-cache/
 [managedcache]: http://msdn.microsoft.com/zh-cn/library/azure/dn386122.aspx
-[websitescale]: /documentation/articles/web-sites-scale
+[websitescale]: /documentation/articles/web-sites-scale/
 [managedcachescale]: http://msdn.microsoft.com/zh-cn/library/azure/dn386113.aspx
-[staging]: /documentation/articles/web-sites-staged-publishing
-[monitor]: /documentation/articles/web-sites-monitor
-[log]: /documentation/articles/web-sites-enable-diagnostic-log
-[httpscustomdomain]: /documentation/articles/web-sites-configure-ssl-certificate
-[mysqlwindows]: /documentation/articles/virtual-machines-windows-classic-mysql-2008r2
-[mysqllinux]: /documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse
+[staging]: /documentation/articles/web-sites-staged-publishing/
+[monitor]: /documentation/articles/web-sites-monitor/
+[log]: /documentation/articles/web-sites-enable-diagnostic-log/
+[httpscustomdomain]: /documentation/articles/web-sites-configure-ssl-certificate/
+[mysqlwindows]: /documentation/articles/virtual-machines-windows-classic-mysql-2008r2/
+[mysqllinux]: /documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse/
 [cge]: http://www.mysql.com/products/cluster/
 [websitepricing]: /home/features/web-site/#price
 [export]: http://en.support.wordpress.com/export/
@@ -258,11 +258,11 @@ Azure 为大规模的关键任务 [WordPress][wordpress] 网站提供了一个�
 [wordpressdbbackup]: http://codex.wordpress.org/Backing_Up_Your_Database
 [workbench]: http://www.mysql.com/products/workbench/
 [searchandreplace]: http://interconnectit.com/124/search-and-replace-for-wordpress-databases/
-[deploy]: /documentation/articles/web-sites-deploy
-[posh]: /documentation/articles/powershell-install-configure
-[Azure CLI]: /documentation/articles/xplat-cli-install
+[deploy]: /documentation/articles/web-sites-deploy/
+[posh]: /documentation/articles/powershell-install-configure/
+[Azure CLI]: /documentation/articles/xplat-cli-install/
 [storesendgrid]: https://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/
-[cdn]: /documentation/articles/cdn-how-to-use
+[cdn]: /documentation/articles/cdn-how-to-use/
  
 
 <!---HONumber=Mooncake_0307_2016-->

@@ -72,7 +72,7 @@ Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密
 
     ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
-你也可以通过 [Azure 门户][]中的数据库设置启用透明数据加密。有关详细信息，请参阅[透明数据加密 (TDE) 入门](/documentation/articles/sql-data-warehouse-encryption-tde-tsql)。
+你也可以通过 [Azure 门户][]中的数据库设置启用透明数据加密。有关详细信息，请参阅[透明数据加密 (TDE) 入门](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)。
 
 ## 审核
 
@@ -84,8 +84,8 @@ Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密
 <!--Image references-->
 
 <!--Article references-->
-[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-develop-connections
-[SQL 数据库审核入门]: /documentation/articles/sql-database-auditing-get-started
+[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-develop-connections/
+[SQL 数据库审核入门]: /documentation/articles/sql-database-auditing-get-started/
 
 <!--MSDN references-->
 [Azure SQL 数据库防火墙]: /documentation/articles/sql-database-firewall-configure/

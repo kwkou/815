@@ -17,15 +17,15 @@
 
 
 > [AZURE.SELECTOR]
-- [REST](/documentation/articles/media-services-rest-create-contentkey)
-- [.NET](/documentation/articles/media-services-dotnet-create-contentkey)
+- [REST](/documentation/articles/media-services-rest-create-contentkey/)
+- [.NET](/documentation/articles/media-services-dotnet-create-contentkey/)
 
 
 媒体服务允许你创建新资产和传送加密的资产。**ContentKey** 提供对**资产**的安全访问。
 
-创建新资产时（例如，[上载文件](/documentation/articles/media-services-rest-upload-files)之前），可以指定以下加密选项：**StorageEncrypted**、**CommonEncryptionProtected** 或 **EnvelopeEncryptionProtected**。
+创建新资产时（例如，[上载文件](/documentation/articles/media-services-rest-upload-files/)之前），可以指定以下加密选项：**StorageEncrypted**、**CommonEncryptionProtected** 或 **EnvelopeEncryptionProtected**。
 
-将资产传送到你的客户端时，可以使用以下两个加密选项之一[将资产配置为动态加密](/documentation/articles/media-services-rest-configure-asset-delivery-policy)：**DynamicEnvelopeEncryption** 或 **DynamicCommonEncryption**。
+将资产传送到你的客户端时，可以使用以下两个加密选项之一[将资产配置为动态加密](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)：**DynamicEnvelopeEncryption** 或 **DynamicCommonEncryption**。
 
 加密的资产必须与 **ContentKey** 关联。本文介绍如何创建内容密钥。
 
@@ -67,7 +67,7 @@
 
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
->访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
+>访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。
 
 >在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
 

@@ -44,9 +44,9 @@
 
 ## 后续步骤
 
-若要重新安装弹性数据库作业，请参阅[安装弹性数据库作业服务](/documentation/articles/sql-database-elastic-jobs-service-installation)
+若要重新安装弹性数据库作业，请参阅[安装弹性数据库作业服务](/documentation/articles/sql-database-elastic-jobs-service-installation/)
 
-有关弹性数据库作业的概述，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview)。
+有关弹性数据库作业的概述，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
 <!--Image references-->
 

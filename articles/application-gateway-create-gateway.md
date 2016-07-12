@@ -16,9 +16,9 @@
 Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载平衡、基于 Cookie 的会话相关性和安全套接字层 (SSL) 卸载。
 
 > [AZURE.SELECTOR]
-- [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway)
-- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template)
+- [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway/)
+- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
+- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
 
 
 本文将指导你完成创建、配置、启动和删除应用程序网关的步骤。
@@ -53,7 +53,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 2. 创建配置 XML 文件或配置对象。
 3. 将配置提交到新建的应用程序网关资源。
 
->[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅[使用 PowerShell 创建带自定义探测的应用程序网关](/documentation/articles/application-gateway-create-probe-classic-ps)。有关详细信息，请查看[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview)。
+>[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅[使用 PowerShell 创建带自定义探测的应用程序网关](/documentation/articles/application-gateway-create-probe-classic-ps/)。有关详细信息，请查看[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview/)。
 
 
 ### 创建应用程序网关资源
@@ -398,9 +398,9 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
+如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
+如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 

@@ -20,7 +20,7 @@
 
 -   如果表包含历史数据和当前数据，你可以指定筛选器谓词来选择要迁移的行。在 CTP 3.1 到 RC1 版本中，用于指定筛选器谓词的选项在“为数据库启用延伸”向导中不可用。必须将 CREATE TABLE 或 ALTER TABLE 语句与此选项结合使用才能为SQL Server Stretch Database配置表。
 
-**先决条件**。如果你针对某个表选择了“延伸 | 启用”但尚未为数据库启用SQL Server Stretch Database，该向导将先为SQL Server Stretch Database配置数据库。请遵循[为延伸向导启用数据库](/documentation/articles/sql-server-stretch-database-wizard)中的步骤，而不要遵循本主题中的步骤。
+**先决条件**。如果你针对某个表选择了“延伸 | 启用”但尚未为数据库启用SQL Server Stretch Database，该向导将先为SQL Server Stretch Database配置数据库。请遵循[为延伸向导启用数据库](/documentation/articles/sql-server-stretch-database-wizard/)中的步骤，而不要遵循本主题中的步骤。
 
 **权限**。对数据库或表启用SQL Server Stretch Database需要有 db\_owner 权限。对某个表启用SQL Server Stretch Database还要求对该表拥有 ALTER 权限。
 
@@ -55,7 +55,7 @@
 ### 常用选项
 在运行 CREATE TABLE 或 ALTER TABLE 来对表启用 Stretch Database 时，请使用以下选项。
 
-1.  （可选）如果表包含历史数据和当前数据，请使用 `FILTER_PREDICATE = <predicate>` 子句指定一个谓词来选择要迁移的行。该谓词必须调用内联表值函数。有关详细信息，请参阅[编写内联表值函数以选择行（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-predicate-function)。如果未指定筛选器谓词，则会迁移整个表。
+1.  （可选）如果表包含历史数据和当前数据，请使用 `FILTER_PREDICATE = <predicate>` 子句指定一个谓词来选择要迁移的行。该谓词必须调用内联表值函数。有关详细信息，请参阅[编写内联表值函数以选择行（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-predicate-function/)。如果未指定筛选器谓词，则会迁移整个表。
 
     > 如果提供的筛选器谓词性能不佳，则数据迁移的性能也会不佳。SQL Server Stretch Database将使用 CROSS APPLY 运算符对表应用筛选器谓词。
 
@@ -72,7 +72,7 @@
 ALTER TABLE <table name>
     SET ( REMOTE_DATA_ARCHIVE = ON ( MIGRATION_STATE = OUTBOUND ) ) ;
 ```
-以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-predicate-function)。
+以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-predicate-function/)。
 
 ```tsql
 ALTER TABLE <table name>
@@ -92,7 +92,7 @@ ALTER TABLE <table name>
 CREATE TABLE <table name> ...
     WITH ( REMOTE_DATA_ARCHIVE = ON ( MIGRATION_STATE = OUTBOUND ) ) ;
 ```
-以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（延伸数据库）](/documentation/articles/sql-server-stretch-database-predicate-function)。
+以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（延伸数据库）](/documentation/articles/sql-server-stretch-database-predicate-function/)。
 
 ```tsql
 CREATE TABLE <table name> ...

@@ -40,14 +40,14 @@
 - 当前版本的媒体服务 SDK 不支持使用指定的定位器 ID 创建定位器。若要完成此任务，我们将使用媒体服务 REST API。
 - 当前版本的媒体服务 SDK 不支持以编程方式生成会将资产与资产文件关联的 IAssetFile 信息。若要完成此任务，我们将使用 CreateFileInfos 媒体服务 REST API。 
 - 不支持使用存储加密资产 (AssetCreationOptions.StorageEncrypted) 进行复制（因为两个媒体服务帐户中的加密密钥将会有所不同）。 
-- 如果你想要利用动态打包，则必须先获取至少一个按需流式处理保留单位。有关详细信息，请参阅[动态打包资产](/documentation/articles/media-services-dynamic-packaging-overview)。
+- 如果你想要利用动态打包，则必须先获取至少一个按需流式处理保留单位。有关详细信息，请参阅[动态打包资产](/documentation/articles/media-services-dynamic-packaging-overview/)。
  
 
 >[AZURE.NOTE]请考虑将媒体服务[复制器工具](http://replicator.codeplex.com/)用作备用选项，以手动实现故障转移流式处理方案。此工具可用于在两个媒体服务帐户之间复制资产。
 
 ##先决条件
  
-- 在新的或现有的 Azure 订阅中拥有两个媒体服务帐户。请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。
+- 在新的或现有的 Azure 订阅中拥有两个媒体服务帐户。请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。
 - 操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
 - .NET Framework 4.5 或 .NET Framework 4。
 - Visual Studio 2010 SP1 或更高版本（专业版、高级专业版、旗舰版或学习版）。

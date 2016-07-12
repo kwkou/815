@@ -18,8 +18,8 @@
 
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-manage-entities)
-- [REST](/documentation/articles/media-services-rest-manage-entities)
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities/)
+- [REST](/documentation/articles/media-services-rest-manage-entities/)
 
 
 本主题演示了如何完成以下媒体服务管理任务：
@@ -37,7 +37,7 @@
 
 ##先决条件 
 
-请参阅[设置你的环境](/documentation/articles/media-services-set-up-computer)
+请参阅[设置你的环境](/documentation/articles/media-services-set-up-computer/)
 
 ##<a id="Get-an-asset-reference"></a>获取资产引用
 
@@ -121,7 +121,7 @@
 
 在媒体服务中列出资产及其关联作业是一项重要的相关任务。以下代码示例演示了如何列出每个 IJob 对象，然后，针对每个作业，它会显示作业的相关属性、所有相关的任务、所有输入资产和所有输出资产。本示例中的代码对各种其他任务也有所帮助。例如，如果想要列出你先前运行的一个或多个编码作业的输出资产，本代码将演示如何访问输出资产。如果拥有对某个输出资产的引用，你可以通过下载或提供 URL 的方式，将内容传递给其他用户或应用程序。
 
-有关传递资产选项的详细信息，请参阅[使用适用于 .NET 的媒体服务 SDK 传递资产](/documentation/articles/media-services-deliver-streaming-content)。
+有关传递资产选项的详细信息，请参阅[使用适用于 .NET 的媒体服务 SDK 传递资产](/documentation/articles/media-services-deliver-streaming-content/)。
 
 	// List all jobs on the server, and for each job, also list 
 	// all tasks, all input assets, all output assets.
@@ -223,7 +223,7 @@
 
 以下代码示例列出了服务器上的所有定位符。对于每个定位符，它将显示相关资产和访问策略的 ID。它也显示权限的类型、到期日期和访问资产的完整路径。
 
-请注意，访问资产的定位符路径仅仅是访问资产的基本 URL。若要创建用户或应用程序可以浏览到的单个文件的直接路径，你的代码必须将特定文件路径添加到定位符路径。有关如何进行操作的详细信息，请参阅主题[使用适用于 .NET 的媒体服务 SDK 传递资产](/documentation/articles/media-services-deliver-streaming-content)。
+请注意，访问资产的定位符路径仅仅是访问资产的基本 URL。若要创建用户或应用程序可以浏览到的单个文件的直接路径，你的代码必须将特定文件路径添加到定位符路径。有关如何进行操作的详细信息，请参阅主题[使用适用于 .NET 的媒体服务 SDK 传递资产](/documentation/articles/media-services-deliver-streaming-content/)。
 
 	static void ListAllLocators()
 	{

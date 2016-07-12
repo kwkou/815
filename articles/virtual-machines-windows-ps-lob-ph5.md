@@ -17,11 +17,11 @@
 
 # 业务线应用程序工作负荷阶段 5：创建可用性组并添加应用程序数据库
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 在 Azure 基础结构服务中部署高可用性组业务线应用程序的这个最后阶段，你将创建新的 SQL Server AlwaysOn 可用性组，并添加应用程序数据库。
 
-有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview)。
+有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview/)。
 
 ## 创建可用性组并添加数据库
 
@@ -109,12 +109,12 @@
 
 ## 为 AlwaysOn 可用性组配置侦听器
 
-你可以选择性地为 AlwaysOn 可用性组创建侦听器配置。相关步骤请参阅[教程：AlwaysOn 可用性组的侦听器配置](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)。这些说明将指导你逐步完成只创建一个侦听器（推荐），并使用内部负载平衡实例的静态 IP 地址。
+你可以选择性地为 AlwaysOn 可用性组创建侦听器配置。相关步骤请参阅[教程：AlwaysOn 可用性组的侦听器配置](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)。这些说明将指导你逐步完成只创建一个侦听器（推荐），并使用内部负载平衡实例的静态 IP 地址。
 
 配置侦听器以后，你需要将所有 web 服务器虚拟机配置为使用侦听器而非群集中第一个 SQL Server 的名称。不是使用映射到内部负载平衡实例的虚拟 IP 地址的新 DNS 名称和记录，而是将 web 服务器虚拟机配置为使用 SQL 别名。有关详细信息和步骤，请参阅 [SharePoint 的 SQL 别名](http://blogs.msdn.com/b/priyo/archive/2013/09/13/sql-alias-for-sharepoint.aspx)。
 
 ## 后续步骤
 
-- 如果要在 Azure 中部署你自己的 IT 工作负荷，请参阅这些[准则](/documentation/articles/virtual-machines-windows-infrastructure-service-guidelines)。
+- 如果要在 Azure 中部署你自己的 IT 工作负荷，请参阅这些[准则](/documentation/articles/virtual-machines-windows-infrastructure-service-guidelines/)。
 
 <!---HONumber=Mooncake_0411_2016-->

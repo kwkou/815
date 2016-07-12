@@ -81,7 +81,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 ![所有设置，密钥边栏选项卡](./media/documentdb-manage-account/allsettingskeys.png)
 
-请注意，“密钥”边栏选项卡还包括可用来从[数据迁移工具](/documentation/articles/documentdb-import-data)连接到你的帐户的主要和辅助连接字符串。
+请注意，“密钥”边栏选项卡还包括可用来从[数据迁移工具](/documentation/articles/documentdb-import-data/)连接到你的帐户的主要和辅助连接字符串。
 
 它还包括为用户提供 DocumentDB 的只读访问权限的只读密钥。读取和查询为只读操作，而创建、删除和替换则不是。
 

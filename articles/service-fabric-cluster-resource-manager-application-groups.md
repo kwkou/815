@@ -154,11 +154,11 @@ Update-ServiceFabricApplication –Name fabric:/MyApplication1 6 –MinimumNodes
 -	不要使用应用程序容量来确保相同应用程序的两个服务始终放在一起。这可通过使用服务之间的相关性关系来实现，相关性可以限制为实际应该放在一起的服务。
 
 ## 后续步骤
-- 有关可用于配置服务的其他选项的详细信息，请查看 [Learn about configuring Services](/documentation/articles/service-fabric-cluster-resource-manager-configure-services)（了解如何配置服务）中提供的其他群集资源管理器配置的相关主题
-- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing)的文章
-- [获取有关 Service Fabric 群集资源管理器的简介](/documentation/articles/service-fabric-cluster-resource-manager-introduction)以帮助自己入门
-- 有关在一般情况下指标的工作原理的详细信息，请阅读 [Service Fabric Load Metrics](/documentation/articles/service-fabric-cluster-resource-manager-metrics)（Service Fabric 负载指标）
-- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description)的文章
+- 有关可用于配置服务的其他选项的详细信息，请查看 [Learn about configuring Services](/documentation/articles/service-fabric-cluster-resource-manager-configure-services/)（了解如何配置服务）中提供的其他群集资源管理器配置的相关主题
+- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing/)的文章
+- [获取有关 Service Fabric 群集资源管理器的简介](/documentation/articles/service-fabric-cluster-resource-manager-introduction/)以帮助自己入门
+- 有关在一般情况下指标的工作原理的详细信息，请阅读 [Service Fabric Load Metrics](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)（Service Fabric 负载指标）
+- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)的文章
 
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-application-groups/application-groups-max-nodes.png

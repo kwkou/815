@@ -64,7 +64,7 @@ Azure 备份和 System Center Data Protection Manager 客户可以：
 ## 后续步骤
 关于 Azure 备份的详细信息，请参阅
 
-- [Azure 备份简介](/documentation/articles/backup-introduction-to-azure-backup)
-- [尝试 Azure 备份](/documentation/articles/backup-try-azure-backup-in-10-mins)
+- [Azure 备份简介](/documentation/articles/backup-introduction-to-azure-backup/)
+- [尝试 Azure 备份](/documentation/articles/backup-try-azure-backup-in-10-mins/)
 
 <!---HONumber=Mooncake_0627_2016-->

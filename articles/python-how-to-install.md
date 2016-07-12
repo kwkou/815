@@ -181,23 +181,23 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [Django 项目 - 成熟的 Web 框架/CMS]: http://www.djangoproject.com
 [IPython - Python 的高级 REPL/Notebook]: http://ipython.org
 [IPython]: http://ipython.org
-[Azure 上的 IPython Notebook]: /documentation/articles/virtual-machines-linux-jupyter-notebook
-[云服务]: /documentation/articles/cloud-services-python-ptvs
-[ Web 应用]: /documentation/articles/web-sites-python-ptvs-django-mysql
+[Azure 上的 IPython Notebook]: /documentation/articles/virtual-machines-linux-jupyter-notebook/
+[云服务]: /documentation/articles/cloud-services-python-ptvs/
+[ Web 应用]: /documentation/articles/web-sites-python-ptvs-django-mysql/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [GitHub 上的 Python Tools for Visual Studio]: http://microsoft.github.io/PTVS/
 [Python 包索引]: http://pypi.python.org/pypi
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281&clcid=0x409
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409
-[Setting up a Linux VM via the Azure portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
-[How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
-[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-quick-create-portal
-[使用 Django 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-django-app
-[使用 Bottle 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-bottle-app
-[使用 Flask 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-flask-app
-[使用 Azure Web 应用配置 Python]: /documentation/articles/web-sites-python-configure
-[表存储]: /documentation/articles/storage-python-how-to-use-table-storage
-[队列存储]: /documentation/articles/storage-python-how-to-use-queue-storage
-[Blob 存储]: /documentation/articles/storage-python-how-to-use-blob-storage
+[Setting up a Linux VM via the Azure portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal/
+[How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools/
+[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-quick-create-portal/
+[使用 Django 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-django-app/
+[使用 Bottle 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-bottle-app/
+[使用 Flask 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-flask-app/
+[使用 Azure Web 应用配置 Python]: /documentation/articles/web-sites-python-configure/
+[表存储]: /documentation/articles/storage-python-how-to-use-table-storage/
+[队列存储]: /documentation/articles/storage-python-how-to-use-queue-storage/
+[Blob 存储]: /documentation/articles/storage-python-how-to-use-blob-storage/
 
 <!---HONumber=Mooncake_1221_2015-->

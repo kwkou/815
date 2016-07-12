@@ -20,7 +20,7 @@
 
 你可以使用 Azure Resource Manager (ARM) 以编程方式创建和管理 Azure IoT 中心。本教程说明如何使用 Resource Manager 模板从 C# 程序创建 IoT 中心。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用资源管理器部署模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用资源管理器部署模型。
 
 为了完成本教程，你需要有：
 
@@ -206,9 +206,9 @@
 <!-- Links -->
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-azure-portal]: https://manage.windowsazure.cn
-[lnk-powershell-install]: /documentation/articles/powershell-install-configure
+[lnk-powershell-install]: /documentation/articles/powershell-install-configure/
 [lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
-[lnk-azure-rm-overview]: /documentation/articles/resource-group-overview
-[lnk-storage-account]: /documentation/articles/storage-create-storage-account
+[lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
+[lnk-storage-account]: /documentation/articles/storage-create-storage-account/
 
 <!---HONumber=Mooncake_0307_2016-->

@@ -19,7 +19,7 @@
 
 本教程描述如何开始在 [Azure Web 应用](/documentation/services/web-sites/)中运行 Python。 Web 应用提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
-您将使用 Flask web 框架创建应用程序（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app) 的备选版本。你将创建 Web 应用，设置 Git 部署以及在本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
+您将使用 Flask web 框架创建应用程序（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/) 的备选版本。你将创建 Web 应用，设置 Git 部署以及在本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -138,7 +138,7 @@ Python 虚拟环境。如果在应用上尚不存在兼容的虚拟环境，请�
 
 ### 克隆存储库
 
-首先，使用 Azure 经典管理门户 Web 应用上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用 Azure 经典管理门户 Web 应用上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -205,7 +205,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -284,7 +284,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -385,7 +385,7 @@ Visual Studio 不会显示部署的进度。
 
 <!--Link references-->
 [具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 MongoDB]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
-[具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
+[具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储]: /documentation/articles/web-sites-python-ptvs-flask-table-storage/
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990

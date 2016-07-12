@@ -18,7 +18,7 @@
 
 AzCopy 是一个 Windows 命令行实用程序，专用于将数据复制到 Azure Blob、文件和表存储以及从这些位置复制数据。你可以在存储帐户中将一个对象的数据复制到另一个对象，或者在存储帐户之间复制数据。
 
-> [AZURE.NOTE] 本指南假定你已熟悉 [Azure 存储空间](/home/features/storage/)。如果不熟悉，请阅读 [Azure 存储空间简介](/documentation/articles/storage-introduction)文档获取帮助信息。最重要的是，需要[创建一个存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)一边开始使用 AzCopy。
+> [AZURE.NOTE] 本指南假定你已熟悉 [Azure 存储空间](/home/features/storage/)。如果不熟悉，请阅读 [Azure 存储空间简介](/documentation/articles/storage-introduction/)文档获取帮助信息。最重要的是，需要[创建一个存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)一边开始使用 AzCopy。
 
 ## 下载并安装 AzCopy
 
@@ -28,7 +28,7 @@ AzCopy 是一个 Windows 命令行实用程序，专用于将数据复制到 Azu
 
 ### Mac/Linux
 
-AzCopy 不可用于 Mac/Linux 操作系统。但是，Azure CLI 可用作将数据复制 Azure 存储空间以及从其中复制数据的替代方法。有关详细信息，请参阅[将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli)。
+AzCopy 不可用于 Mac/Linux 操作系统。但是，Azure CLI 可用作将数据复制 Azure 存储空间以及从其中复制数据的替代方法。有关详细信息，请参阅[将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli/)。
 
 ## 编写你的第一条 AzCopy 命令
 
@@ -477,7 +477,7 @@ AzCopy 会像在命令行上包括了所有个体参数一样来处理此命令�
 
 ### 对 Azure 存储模拟器运行 AzCopy
 
-你可以对 blob 的 [Azure 存储模拟器](/documentation/articles/storage-use-emulator)运行 AzCopy：
+你可以对 blob 的 [Azure 存储模拟器](/documentation/articles/storage-use-emulator/)运行 AzCopy：
 
 	AzCopy /Source:https://127.0.0.1:10000/myaccount/mycontainer/ /Dest:C:\myfolder /SourceKey:key /SourceType:Blob /S
 
@@ -844,11 +844,11 @@ AzCopy 旨在最大限度地利用计算机资源来加快数据传输，如果�
 
 ### Azure 存储文档：
 
-- [Azure 存储简介](/documentation/articles/storage-introduction)
-- [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
-- [如何通过 .NET 使用文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
-- [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
-- [如何创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)
+- [Azure 存储简介](/documentation/articles/storage-introduction/)
+- [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
+- [如何通过 .NET 使用文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
+- [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
+- [如何创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/)
 
 ### Azure 存储博客文章：
 - [AzCopy：引入了同步复制和自定义内容类型](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)

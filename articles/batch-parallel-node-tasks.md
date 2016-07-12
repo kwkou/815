@@ -36,9 +36,9 @@
 
 你可以在Batch 解决方案中进行池级别的计算节点配置，以便并行执行任务。在创建池时，可以通过 Batch .NET 库设置 [CloudPool.MaxTasksPerComputeNode][maxtasks_net] 属性。如果你使用的是 Batch REST API，则可在创建池时在请求正文中设置 [maxTasksPerNode][maxtasks_rest] 元素。
 
-使用 Azure Batch 时，可以通过节点设置来设置多达四倍 (4x) 的节点核心数，从而最大限度地提高任务数。例如，如果将池的节点大小配置为“大型”（四核），则可将 `maxTasksPerNode` 设置为 16。有关每个节点大小的核心数的详细信息，请参阅[云服务的大小](/documentation/articles/cloud-services-sizes-specs)。有关服务限制的详细信息，请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)。
+使用 Azure Batch 时，可以通过节点设置来设置多达四倍 (4x) 的节点核心数，从而最大限度地提高任务数。例如，如果将池的节点大小配置为“大型”（四核），则可将 `maxTasksPerNode` 设置为 16。有关每个节点大小的核心数的详细信息，请参阅[云服务的大小](/documentation/articles/cloud-services-sizes-specs/)。有关服务限制的详细信息，请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit/)。
 
-> [AZURE.TIP] 为池构造[自动缩放公式][enable_autoscaling]时，请务必考虑 `maxTasksPerNode` 值。例如，如果增加每个节点的任务数，则可能会极大地影响对 `$RunningTasks` 求值的公式。有关详细信息，请参阅[自动缩放 Azure Batch 池中的计算节点](/documentation/articles/batch-automatic-scaling)。
+> [AZURE.TIP] 为池构造[自动缩放公式][enable_autoscaling]时，请务必考虑 `maxTasksPerNode` 值。例如，如果增加每个节点的任务数，则可能会极大地影响对 `$RunningTasks` 求值的公式。有关详细信息，请参阅[自动缩放 Azure Batch 池中的计算节点](/documentation/articles/batch-automatic-scaling/)。
 
 ## 任务分发
 
@@ -46,7 +46,7 @@
 
 你可以通过 [CloudPool.TaskSchedulingPolicy][task_schedule] 属性来指定任务，即让任务在池中所有节点之间平均分配（“散布式”）。或者，先给池中的每个节点分配尽量多的任务，然后再将任务分配给池中的其他节点（“装箱式”）。
 
-此功能十分重要，如需示例，请参阅上面示例中节点数为 Standard\_D14 的池，该池配置后的 [CloudPool.MaxTasksPerComputeNode][maxtasks_net] 值为 16。如果对 [CloudPool.TaskSchedulingPolicy][task_schedule] 进行配置时，将 [ComputeNodeFillType][fill_type] 设置为 *Pack*，则会充分使用每个节点的所有 16 个核心，并可通过[自动缩放池](/documentation/articles/batch-automatic-scaling)将不使用的节点（没有分配任何任务的节点）从池中删除。这可以最大程度地减少资源使用量并节省资金。
+此功能十分重要，如需示例，请参阅上面示例中节点数为 Standard\_D14 的池，该池配置后的 [CloudPool.MaxTasksPerComputeNode][maxtasks_net] 值为 16。如果对 [CloudPool.TaskSchedulingPolicy][task_schedule] 进行配置时，将 [ComputeNodeFillType][fill_type] 设置为 *Pack*，则会充分使用每个节点的所有 16 个核心，并可通过[自动缩放池](/documentation/articles/batch-automatic-scaling/)将不使用的节点（没有分配任何任务的节点）从池中删除。这可以最大程度地减少资源使用量并节省资金。
 
 ## Batch .NET 示例
 

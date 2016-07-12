@@ -147,8 +147,8 @@ WHERE   s.[session_id] <> SESSION_ID()
 <!--Image references-->
 
 <!--Azure.com references-->
-[连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect
-[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design
+[连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design/
 
 <!--MSDN references-->
 

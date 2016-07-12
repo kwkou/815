@@ -5,7 +5,7 @@
 
 Azure 资源管理器模板可让你通过定义资源之间的依赖关系，使用 JSON 语言以声明方式指定 Azure IaaS 基础结构。有关 Azure 资源管理器模板的详细概述，请参阅以下文章：
 
-[资源组概述](/documentation/articles/resource-group-overview)
+[资源组概述](/documentation/articles/resource-group-overview/)
 
 ## VM 扩展的示例模板代码段。
 将 VM 扩展部署为 Azure 资源管理器模板的一部分要求你在模板中以声明方式指定扩展配置。以下是指定扩展配置的格式。

@@ -175,9 +175,9 @@ public class SimpleEventProcessor : IEventProcessor
 
 若要了解有关事件中心方案的详细信息，请访问以下链接：
 
-- [什么是 Azure 事件中心？](/documentation/articles/event-hubs-what-is-event-hubs)
-- [事件中心概述](/documentation/articles/event-hubs-overview)
-- [事件中心编程指南](/documentation/articles/event-hubs-programming-guide)
+- [什么是 Azure 事件中心？](/documentation/articles/event-hubs-what-is-event-hubs/)
+- [事件中心概述](/documentation/articles/event-hubs-overview/)
+- [事件中心编程指南](/documentation/articles/event-hubs-programming-guide/)
 - [事件中心代码示例](https://code.msdn.microsoft.com/site/search?query=event%20hub&f%5B0%5D.Value=event%20hub&f%5B0%5D.Type=SearchText&ac=5)
 
 下面提供了 .NET API 参考：

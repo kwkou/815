@@ -14,7 +14,7 @@
 
 # 使用 Visual Studio 简化 Service Fabric 应用程序的编写和管理
 
-你可以通过 Visual Studio 管理 Azure Service Fabric 应用程序和服务。[设置开发环境](/documentation/articles/service-fabric-get-started)之后，你可以使用 Visual Studio 创建 Service Fabric 应用程序、添加服务，或在本地开发群集中打包、注册和部署应用程序。
+你可以通过 Visual Studio 管理 Azure Service Fabric 应用程序和服务。[设置开发环境](/documentation/articles/service-fabric-get-started/)之后，你可以使用 Visual Studio 创建 Service Fabric 应用程序、添加服务，或在本地开发群集中打包、注册和部署应用程序。
 
 若要管理应用程序，请在解决方案资源管理器中右键单击你的应用程序项目。
 
@@ -30,7 +30,7 @@
 4. 删除任何正在运行的应用程序实例
 5. 创建新的应用程序实例
 
-在 Visual Studio 中按 **F5** 还可以部署应用程序，并将调试器附加到所有应用程序实例。你可以使用 **Ctrl + F5** 部署应用程序而不进行调试，或者使用发布配置文件将应用程序发布到本地或远程群集。有关详细信息，请参阅[使用 Visual Studio 将应用程序发布到远程群集](/documentation/articles/service-fabric-publish-app-remote-cluster)。
+在 Visual Studio 中按 **F5** 还可以部署应用程序，并将调试器附加到所有应用程序实例。你可以使用 **Ctrl + F5** 部署应用程序而不进行调试，或者使用发布配置文件将应用程序发布到本地或远程群集。有关详细信息，请参阅[使用 Visual Studio 将应用程序发布到远程群集](/documentation/articles/service-fabric-publish-app-remote-cluster/)。
 
 ### 保留测试运行之间的数据
 
@@ -47,7 +47,7 @@
 
 ![附加了日期的新应用程序版本的示例][preservedate]
 
-通过在 Service Fabric 平台中使用升级功能保留了数据。有关升级应用程序的详细信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade)。
+通过在 Service Fabric 平台中使用升级功能保留了数据。有关升级应用程序的详细信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)。
 
 ## 向 Service Fabric 应用程序添加服务
 
@@ -55,7 +55,7 @@
 
 ![将新的 Fabric 服务添加到你的应用程序中][newservice]
 
-选择要添加到你的应用程序的 Service Fabric 项目类型，并指定服务的名称。请参阅[为你的服务选择框架](/documentation/articles/service-fabric-choose-framework)，以帮助你确定要使用的服务类型。
+选择要添加到你的应用程序的 Service Fabric 项目类型，并指定服务的名称。请参阅[为你的服务选择框架](/documentation/articles/service-fabric-choose-framework/)，以帮助你确定要使用的服务类型。
 
 ![选择要添加到你的应用程序的 Fabric 服务项目类型][addserviceproject]
 
@@ -79,11 +79,11 @@
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
 
-- [Service Fabric 应用程序模型](/documentation/articles/service-fabric-application-model)
-- [Service Fabric 应用程序部署](/documentation/articles/service-fabric-deploy-remove-applications)
-- [管理多个环境的应用程序参数](/documentation/articles/service-fabric-manage-multiple-environment-app-configuration)
-- [调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application)
-- [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster)
+- [Service Fabric 应用程序模型](/documentation/articles/service-fabric-application-model/)
+- [Service Fabric 应用程序部署](/documentation/articles/service-fabric-deploy-remove-applications/)
+- [管理多个环境的应用程序参数](/documentation/articles/service-fabric-manage-multiple-environment-app-configuration/)
+- [调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
+- [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)
 
 <!--Image references-->
 [addserviceproject]: ./media/service-fabric-manage-application-in-visual-studio/addserviceproject.png

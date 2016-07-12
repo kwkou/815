@@ -21,9 +21,9 @@
 
 [用于 .NET Nuget 包的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
 
-有关使用客户端的加密和 Azure 密钥保管库引导你完成加密 blob 的过程的分步教程，请参阅[使用 Azure 密钥保管库在 Azure 存储中加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault)。
+有关使用客户端的加密和 Azure 密钥保管库引导你完成加密 blob 的过程的分步教程，请参阅[使用 Azure 密钥保管库在 Azure 存储中加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/)。
 
-有关使用 Java 的客户端加密，请参阅 [Azure 存储空间的使用 Java 客户端加密](/documentation/articles/storage-client-side-encryption-java)。
+有关使用 Java 的客户端加密，请参阅 [Azure 存储空间的使用 Java 客户端加密](/documentation/articles/storage-client-side-encryption-java/)。
 
 ## 通过信封技术加密和解密
 
@@ -105,7 +105,7 @@
 
 ## Azure 密钥保管库
 
-Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密钥和机密。通过 Azure 密钥保管库，用户可以使用受硬件安全模块 (HSM) 保护的密钥，来加密密钥和机密（例如身份验证密钥、存储帐户密钥、数据加密密钥、.PFX 文件和密码）。有关详细信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis)。
+Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密钥和机密。通过 Azure 密钥保管库，用户可以使用受硬件安全模块 (HSM) 保护的密钥，来加密密钥和机密（例如身份验证密钥、存储帐户密钥、数据加密密钥、.PFX 文件和密码）。有关详细信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)。
 
 存储客户端库使用密钥保管库核心库，以便在整个 Azure 上提供一个通用框架进行管理密钥。用户还可以从使用密钥保管库扩展库中获得其他好处。扩展库围绕简单无缝的对称/RSA 本地和云密钥提供程序以及使用聚合和缓存提供有用的功能。
 
@@ -242,9 +242,9 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 
 ## 后续步骤
 
-- [教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault)
+- [教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/)
 - 下载[适用于 .NET NuGet 包的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)
 - 下载 Azure 密钥保管库 NuGet [核心](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[客户端](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/)和[扩展](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/)包  
-- 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis) 
+- 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/) 
 
 <!---HONumber=Mooncake_0530_2016-->

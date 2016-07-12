@@ -541,7 +541,7 @@
 [1]: ./media/virtual-networks-dmz-nsg-asm/example1design.png "使用 NSG 的入站外围网络"
 
 <!--Link References-->
-[HOME]: /documentation/articles/best-practices-network-security
-[SampleApp]: /documentation/articles/virtual-networks-sample-app
+[HOME]: /documentation/articles/best-practices-network-security/
+[SampleApp]: /documentation/articles/virtual-networks-sample-app/
 
 <!---HONumber=82-->

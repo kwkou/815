@@ -22,7 +22,7 @@
 
 组织需要制定业务连续性和灾难恢复 (BCDR) 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略的重点在于，发生灾难时提供确保业务数据的安全性和可恢复性以及工作负荷的持续可用性的解决方案。
 
-站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)中了解详细信息。
+站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息。
 
 
 ## 复制 Hyper-V 虚拟机的要求
@@ -33,14 +33,14 @@
 **Hyper-V** | 本地数据中心内有一个或多个 Hyper-V 主机服务器至少运行 Windows Server 2012 R2。Hyper-V 服务器必须位于 VMM 云中的主机组中。 | 源和目标站点中有一个或多个至少运行 Windows Server 2012 R2 的 Hyper-V 服务器。 | 源和目标站点中有一个或多个至少运行 Windows Server 2012（装有最新更新）的 Hyper-V 服务器。Hyper-V 服务器必须位于 VMM 云中的主机组中。
 **虚拟机** | 源 Hyper-V 服务器上至少需要一个 VM。复制到 Azure 的 VM 必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)。<br>使用[此处](https://technet.microsoft.com/zh-cn/library/hh846766.aspx#BKMK_step4)提供的步骤，在 VM 中安装或升级[集成服务](https://technet.microsoft.com/zh-cn/library/dn798297.aspx)。 | 源 Hyper-V 服务器上至少有一个 VM。复制到 Azure 的 VM 必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)。<br>使用[此处](https://technet.microsoft.com/zh-cn/library/hh846766.aspx#BKMK_step4)提供的步骤，在 VM 中安装或升级[集成服务](https://technet.microsoft.com/zh-cn/library/dn798297.aspx)。 | 源 VMM 云中至少有一个 VM。<br>使用[此处](https://technet.microsoft.com/zh-cn/library/hh846766.aspx#BKMK_step4)提供的步骤，在 VM 中安装或升级[集成服务](https://technet.microsoft.com/zh-cn/library/dn798297.aspx)。
 **Azure 帐户** | 需要一个 [Azure](https://azure.cn/) 帐户和订阅。 | 不适用 | 需要一个 [Azure](https://azure.cn/) 帐户和订阅。
-**Azure 存储空间** | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用 | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。
+**Azure 存储空间** | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用 | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。
 **提供程序/代理** | 在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，并在 Hyper-V 主机服务器上安装 Azure 恢复服务代理。该提供程序将与 Azure Site Recovery 进行通信。该代理将处理源和目标 Hyper-V 服务器之间的复制。不会在 VM 上安装任何软件。 | 在部署期间，将在 Hyper-V 主机服务器或群集上安装 Azure Site Recovery 提供程序和 Azure 恢复服务代理。不会在 VM 上安装任何软件。 | 在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，以便与 Azure Site Recovery 通信。通过 LAN/VPN 在 Hyper-V 源和目标服务器之间进行复制。
 **提供程序/代理连接** | 如果提供程序将通过代理连接到站点恢复服务，则需要确保该代理可以访问站点恢复 URL。 | 如果提供程序将通过代理连接到站点恢复，则需要确保该代理可以访问站点恢复 URL。 | 如果提供程序将通过代理连接到站点恢复，则需要确保该代理可以访问站点恢复 URL。
 **Internet 连接** | 从 VMM 服务器和 Hyper-V 主机连接。 | 从 Hyper-V 主机连接。 | 仅在 VMM 服务器上。
 **网络映射** | 设置网络映射，以便同一 Azure 网络上执行故障转移的所有虚拟机都能彼此互连，与这些虚拟机所属的恢复计划无关。如果目标 Azure 网络上有网关，虚拟机还可以连接到本地虚拟机。如果不设置网络映射，则只有同一个恢复计划中故障转移的计算机才能进行连接。 | 不适用 | 设置网络映射，以使虚拟机在故障转移之后连接到适当的网络，并以最佳方式将副本虚拟机放置在目标 Hyper-V 主机服务器上。如果不配置网络映射，则故障转移之后，复制的计算机将不会连接到任何 VM 网络。
 **存储映射** | 不适用 | 不适用 | 可以选择设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储（默认情况下，副本 VM 将存储在目标 Hyper-V 服务器上所指示的位置中）。
 **SAN 复制** | 不适用 | 不适用 | 如果你要使用 SAN 复制在两个在本地 VMM 站点之间复制，可以使用现有的 SAN 环境。请查看[支持的 SAN 阵列](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)。
-**详细信息** | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-azure#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-hyper-v-site-to-azure#before-you-start#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-vmm#before-you-start)
+**详细信息** | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-azure/#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-hyper-v-site-to-azure/#before-you-start#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-vmm/#before-you-start)
 
 
 
@@ -49,16 +49,16 @@
 
 此表汇总了将 VMware VM 和 Windows/Linux 物理服务器复制到 Azure 和辅助站点的要求。
 
->[AZURE.NOTE] 可以使用[增强的](/documentation/articles/site-recovery-vmware-to-azure-classic)部署模型或用于较旧部署的[旧版](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy)模型将 VMware VM 和物理服务器复制到 Azure。下表包含每个增强模型的部署要求。
+>[AZURE.NOTE] 可以使用[增强的](/documentation/articles/site-recovery-vmware-to-azure-classic/)部署模型或用于较旧部署的[旧版](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/)模型将 VMware VM 和物理服务器复制到 Azure。下表包含每个增强模型的部署要求。
 
 **组件** | **复制到 Azure（增强型）** | **复制到辅助站点**
 ---|---|---
 **本地主站点** | 安装可运行所有站点恢复组件（配置、过程、主目标）的管理服务器。 | 安装进程服务器，以便在复制数据发送到辅助角色站点之前缓存、压缩和加密复制数据。可以安装其他进程服务器来实现负载平衡或容错。 
 **本地辅助站点** | 不适用 | 安装用于配置、管理和监视部署的单个配置服务器。<br/><br>我们建议安装 vContinuum 服务器来方便进行配置服务器管理。<br/><br/>你需要将主目标服务器设置为在辅助 vSphere 服务器上运行的 VM。 
 **VMware vCenter/ESXi** | 如果要在主站点中复制 VMware VM（或要故障回复物理服务器），主站点中需要有 vSphere ESX/ESXi。我们还建议使用 vCenter 服务器来管理 ESXi 主机。 | 主站点和辅助站点中需要一个或多个 VMware ESXi 主机（并根据需要配置 vCenter 服务器）。 
-**故障回复** | 即使复制的是物理服务器，也需要有 VMware 环境才能从 Azure 故障回复。<br/><br/>需要将某个进程服务器设置为 Azure VM<br/><br/>配置服务器充当主目标服务器，但如果要故障回复大量流量，可以设置更多的本地主目标服务器。[了解详细信息](/documentation/articles/site-recovery-failback-azure-to-vmware-classic)| 即使你要故障转移物理机，从辅助站点到主要站台的故障回复也仍仅限于 VMware。对于故障回复，需要将主目标服务器设置为主 vSphere 服务器上的 VM。
+**故障回复** | 即使复制的是物理服务器，也需要有 VMware 环境才能从 Azure 故障回复。<br/><br/>需要将某个进程服务器设置为 Azure VM<br/><br/>配置服务器充当主目标服务器，但如果要故障回复大量流量，可以设置更多的本地主目标服务器。[了解详细信息](/documentation/articles/site-recovery-failback-azure-to-vmware-classic/)| 即使你要故障转移物理机，从辅助站点到主要站台的故障回复也仍仅限于 VMware。对于故障回复，需要将主目标服务器设置为主 vSphere 服务器上的 VM。
 **Azure 帐户** | 需要一个 [Azure](https://azure.cn/) 帐户和订阅。 | 不适用
-**Azure 存储空间** | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用
+**Azure 存储空间** | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用
 **Azure 虚拟网络** | 你需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。若要在故障转移后进行故障回复，需要设置从 Azure 网络到本地站点的 VPN 连接（或 Azure ExpressRoute）。 | 不适用
 **受保护的计算机** | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装移动服务。 | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装统一代理。
 **连接** | 如果管理服务器将通过代理连接到站点恢复，则需要确保代理服务器可以连接到特定 URL。 | 配置服务器需要访问 Internet。
@@ -98,7 +98,7 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 - **数据磁盘大小**：如果要复制到 Azure，一个虚拟机中最多可以包含 32 个数据磁盘，每个磁盘的最大大小为 1 TB。可以有效地复制和故障转移约 32 TB 的虚拟机。
 - **恢复计划限制**：Site Recovery 可以扩展到数千个虚拟机。恢复计划旨在用作应一起故障转移的应用程序的模型，因此，我们可以将一个恢复计划中的计算机数目限制为 50。
 - **Azure 服务限制**：每个 Azure 订阅在核心、云服务等方面附带了一组默认限制。我们建议你运行测试故障转移，以验证你的订阅中资源的可用性。可以通过 Azure 支持人员修改这些限制。
-- **容量规划**：阅读站点恢复的[容量规划](/documentation/articles/site-recovery-capacity-planner)的相关信息。
+- **容量规划**：阅读站点恢复的[容量规划](/documentation/articles/site-recovery-capacity-planner/)的相关信息。
 - **复制带宽**：如果你的复制带宽不足，请注意：
 	- **ExpressRoute**：可以配合 Azure ExpressRoute 和 WAN 优化器（如 Riverbed）来使用 Site Recovery。[详细了解](http://blogs.technet.com/b/virtualization/archive/2014/07/20/expressroute-and-azure-site-recovery.aspx)有关 ExpressRoute 的信息。
 	- **复制流量**：Site Recovery 用户只能使用数据块（而不是整个 VHD）执行智能初始复制。在复制过程中，只会复制更改。
@@ -115,10 +115,10 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 了解并比较常规部署要求后，你可以阅读详细的先决条件并开始部署每个方案。
 
 
-- [将 VMM 云中的 Hyper-V 服务器复制到 Azure](/documentation/articles/site-recovery-vmm-to-azure)
-- [将 Hyper-V 虚拟机（不使用 VMM）复制到 Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure)
-- [将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-to-vmm)
-- [使用 SAN 将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-san)
-- [复制 Hyper-V VM（带单个 VMM 服务器）](/documentation/articles/site-recovery-single-vmm)
+- [将 VMM 云中的 Hyper-V 服务器复制到 Azure](/documentation/articles/site-recovery-vmm-to-azure/)
+- [将 Hyper-V 虚拟机（不使用 VMM）复制到 Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
+- [将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-to-vmm/)
+- [使用 SAN 将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-san/)
+- [复制 Hyper-V VM（带单个 VMM 服务器）](/documentation/articles/site-recovery-single-vmm/)
 
 <!---HONumber=Mooncake_0509_2016-->
