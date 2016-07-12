@@ -7,6 +7,6 @@
 - 事务指的是对 Azure 存储空间的所有读取和写入操作。
 - 数据流出量指的是传出某个 Azure 区域的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，你需要为数据流出量付费。（对于 Azure 服务，你可以采取措施将你的数据和服务通过分组分到相同的数据中心内，从而降低或避免数据流出量费用。）
 
-[Azure 存储空间定价](/home/features/storage#price)页提供了基于帐户类型、存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfers/)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储空间定价计算器](/pricing/calculator/?scenario=data-management)来帮助估算成本。
+[Azure 存储空间定价](/home/features/storage/pricing/)页提供了基于帐户类型、存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfers/)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储空间定价计算器](/pricing/calculator/?scenario=data-management)来帮助估算成本。
 
 <!---HONumber=Mooncake_0530_2016-->

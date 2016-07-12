@@ -66,7 +66,7 @@
 
 例如，示例应用程序会创建新的数据库。这种费用取决于你选择的 Azure SQL DB 数据库版本，以及你的应用程序的 Azure 使用情况。
 
-有关价格信息，请参阅 [SQL 数据库定价详细信息](/home/features/sql-database/#price)。
+有关价格信息，请参阅 [SQL 数据库定价详细信息](/home/features/sql-database/pricing/)。
 
 ## 后续步骤
 有关弹性数据库工具的详细信息，请参阅：

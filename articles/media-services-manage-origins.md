@@ -66,7 +66,7 @@
 	 
 	>[AZURE.NOTE] 当前，将流式处理单位的任何正值设置回“无”可将按需流式处理功能禁用最多 1 小时。
 
-	>[AZURE.NOTE] 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
+	>[AZURE.NOTE] 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/pricing/)。
 	
 ##<a name="configure_streaming_endpoints"></a>配置流式处理终结点
 

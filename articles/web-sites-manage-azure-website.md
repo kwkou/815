@@ -24,7 +24,7 @@
 
 ### 选择层级
 
-提供四个级别的 Azure Web 应用：免费、共享、基本和标准。有关各级别的特性与定价的信息，请参阅[定价详情](/home/features/web-site/#price)。
+提供四个级别的 Azure Web 应用：免费、共享、基本和标准。有关各级别的特性与定价的信息，请参阅[定价详情](/home/features/web-site/pricing/)。
 
 - 您可以在创建 Web 应用之后经常[切换层](/documentation/articles/web-sites-scale/)。
 

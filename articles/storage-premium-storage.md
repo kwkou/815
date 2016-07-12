@@ -344,8 +344,8 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 有关高级存储、DS 系列、DSv2 系列 VM 定价的详细信息，请参阅：
 
-- [Azure 存储定价](/home/features/storage#price)
-- [虚拟机定价](/home/features/virtual-machines#price)
+- [Azure 存储定价](/home/features/storage/pricing/)
+- [虚拟机定价](/home/features/virtual-machines/pricing/)
 
 ##<a id="quick-start"></a> 快速启动
 

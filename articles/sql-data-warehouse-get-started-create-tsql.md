@@ -69,6 +69,6 @@ SERVICE\_OBJECTIVE 指示启动实例时使用的 DWU 数目，接受以下值�
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-overview-load/
 [加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[定价页]: /home/features/sql-data-warehouse/#price
+[定价页]: /home/features/sql-data-warehouse/pricing/
 
 <!---HONumber=Mooncake_0321_2016-->

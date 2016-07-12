@@ -65,7 +65,7 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 
 下表显示网关类型和估计的聚合吞吐量。
-网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway#price)。此表适用于 资源管理器 与经典部署模型。
+网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway/pricing/)。此表适用于 资源管理器 与经典部署模型。
 
 [AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
 

@@ -622,7 +622,7 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 <!-- URLs. -->
 [Azure 媒体服务 MSDN 论坛]: http://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
 [Azure 媒体服务 REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx
-[媒体服务定价详细信息]: /home/features/media-services/#price
+[媒体服务定价详细信息]: /home/features/media-services/pricing/
 [输入元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx
 [输出元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx
 [交付内容]: /documentation/articles/media-services-deliver-content-overview/

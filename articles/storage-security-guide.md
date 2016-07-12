@@ -414,7 +414,7 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 -   与 Azure 密钥保管库集成
 
--   标准 [A、D 和 G 系列 IaaS VM](/home/features/virtual-machines/#price)
+-   标准 [A、D 和 G 系列 IaaS VM](/home/features/virtual-machines/pricing/)
 
 -   在使用 [Azure 资源管理器](/documentation/articles/resource-group-overview/)模型创建的 IaaS VM 上启用加密
 

@@ -229,6 +229,6 @@ TransientError|涵盖暂时性问题（例如 Azure 存储空间发生暂时性�
 
  
 <!--Reference links in article-->
-[1]: /home/features/media-services/#price
+[1]: /home/features/media-services/pricing/
 
 <!---HONumber=Mooncake_0328_2016-->

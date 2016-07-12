@@ -23,7 +23,7 @@ Azure Resource Manager 部署模型和 Azure 门户预览已弃用地缘组功�
 
 每个数据磁盘的容量高达 1 TB。你可以使用的数据磁盘的数目取决于虚拟机的大小。有关详细信息，请查看 [Windows](/documentation/articles/virtual-machines-windows-sizes/) 或 [Linux](/documentation/articles/virtual-machines-linux-sizes/) 虚拟机的大小。
 
-Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存储。每个磁盘都是一个 .vhd 文件，以页 blob 形式存储。有关定价详细信息，请参阅 [Storage Pricing Details（存储定价详细信息）](/home/features/storage/#price)。
+Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存储。每个磁盘都是一个 .vhd 文件，以页 blob 形式存储。有关定价详细信息，请参阅 [Storage Pricing Details（存储定价详细信息）](/home/features/storage/pricing/)。
 
 ## 我可以使用哪些虚拟硬盘类型？
 
@@ -121,7 +121,7 @@ Azure 根据 VM 的大小和操作系统按小时价格进行计费。对于不�
 - 使用 Azure PowerShell 模块中提供的 Stop-AzureVM cmdlet。
 - 使用服务管理 REST API 中的关闭角色操作，并为 PostShutdownAction 元素指定 StoppedDeallocated。
 
-有关更多详细信息，请参阅[虚拟机定价](/home/features/virtual-machines/#price)。
+有关更多详细信息，请参阅[虚拟机定价](/home/features/virtual-machines/pricing/)。
 
 ## Azure 是否会重新启动我的 VM 进行维护？
 

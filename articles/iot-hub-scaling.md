@@ -54,7 +54,7 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 - [IoT 中心入门（教程）][lnk-get-started]
 - [Azure IoT 中心是什么？][]
 
-[lnk-pricing]: /home/features/iot-hub/#price
+[lnk-pricing]: /home/features/iot-hub/pricing/
 [IoT 中心配额和限制]: /documentation/articles/iot-hub-devguide/#throttling
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/

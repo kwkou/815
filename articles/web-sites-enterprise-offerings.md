@@ -94,7 +94,7 @@ Azure 平台支持基于角色的身份验证控制，从而支持对 Azure Web 
 
 考虑完这些主题之后，您的 Web 应用已准备好支持云。如果一些主题没有完全被满足也不用担心，迁移工具将为迁移提供最佳支持。
 
-迁移流程中的后续步骤是创建 Azure Web 应用和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Azure Web 应用实例可供您根据 Web 应用需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/home/features/sql-database/#price)。创建完成后，应用程序被上传到 Azure Web 应用（通过 FTP 或 WebDeploy），然后再迁移到数据库。
+迁移流程中的后续步骤是创建 Azure Web 应用和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Azure Web 应用实例可供您根据 Web 应用需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/pricing/)。同样，Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/home/features/sql-database/pricing/)。创建完成后，应用程序被上传到 Azure Web 应用（通过 FTP 或 WebDeploy），然后再迁移到数据库。
 
 在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](/documentation/articles/sql-database-cloud-migrate/)。
 

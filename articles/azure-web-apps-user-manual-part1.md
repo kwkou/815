@@ -148,7 +148,7 @@ Azure Web 应用提供四种不同的服务类型，如下图：
 </tbody>
 </table>
 
-更详细的服务类型比较，请参考 Azure 中国 [官网](/home/features/web-site/#price) 
+更详细的服务类型比较，请参考 Azure 中国 [官网](/home/features/web-site/pricing/) 
 
 这四种服务类型的区别如下：
 
@@ -286,7 +286,7 @@ Azure Web 应用提供四种不同的服务类型：
 
 ![price](./media/azure-web-apps-user-manual-part1/price.png)
 
-以上价格参考 Azure 中国 [官方价格信息](http://www.azure.cn/home/features/web-site/#price)
+以上价格参考 Azure 中国 [官方价格信息](http://www.azure.cn/home/features/web-site/pricing/)
 
 * (1)	在基本模式下，单个小型，中型，大型的 Web 应用实例价格分别为 0.45 元/小时，0.89 元/小时，1.79 元/小时。
 * (2)	在基本模式下，如果用多个实例进行横向扩展，则每小时单价会按照实例个数增加。

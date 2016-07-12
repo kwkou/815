@@ -16,7 +16,7 @@
 
 # 什么是 Azure 密钥保管库？
 
-在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/home/features/key-vault/#price)。
+在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/home/features/key-vault/pricing/)。
 
 ## 介绍
 

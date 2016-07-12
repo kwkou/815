@@ -89,7 +89,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 > [AZURE.NOTE] 视你在创建存储帐户时选择的性能层而定，可能无法使用某些复制选项。
 
-更改复制选项将更改你的定价。有关更多详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/#price)页。
+更改复制选项将更改你的定价。有关更多详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)页。
 
 对于 Blob 存储帐户，更改访问层除了会更改你的定价之外，可能还会产生更改费用。有关更多详细信息，请参阅 [Blob 存储帐户 — 定价和计费](/documentation/articles/storage-blob-storage-tiers/#pricing-and-billing)。
 

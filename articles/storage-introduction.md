@@ -51,7 +51,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储服�
 - 标准存储帐户包括 Blob、表、队列和文件存储。
 - 高级存储帐户当前仅支持 Azure 虚拟机磁盘。
 
-你必须具有 Azure 订阅（这是允许你访问各种 Azure 服务的计划），然后才能创建存储帐户。通过单个订阅，你最多可以创建 100 个唯一的命名存储帐户。有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。有关批量定价的详细信息，请参阅 [Azure 存储空间定价](/home/features/storage#price)。
+你必须具有 Azure 订阅（这是允许你访问各种 Azure 服务的计划），然后才能创建存储帐户。通过单个订阅，你最多可以创建 100 个唯一的命名存储帐户。有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。有关批量定价的详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)。
 
 你可以从[试用版](/pricing/1rmb-trial/)开始使用 Azure。一旦决定购买某个计划，你可以从各种[购买选项](/pricing/purchase-options/)进行选择。
 
@@ -159,7 +159,7 @@ AzCopy 在 [Azure 数据移动库](https://www.nuget.org/packages/Microsoft.Azur
 
 存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储服务的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将数据和服务通过分组分到相同的数据中心内，从而降低或避免处理和数据流出量费用。） 
 
-[Azure 存储空间定价](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfer)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储服务定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
+[Azure 存储空间定价](/home/features/storage/pricing/)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfer)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储服务定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
 
 ## 存储 API、库和工具
 

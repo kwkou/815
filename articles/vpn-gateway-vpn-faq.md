@@ -239,7 +239,7 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 
 ### Azure 会对虚拟网络之间的流量收费吗？
 
-对于不同 Azure 虚拟网络之间的流量，Azure 只对从一个 Azure 区域跨越到另一个 Azure 区域的流量收费。费率列在 Azure [VPN 网关定价](/home/features/vpn-gateway/#price)页。
+对于不同 Azure 虚拟网络之间的流量，Azure 只对从一个 Azure 区域跨越到另一个 Azure 区域的流量收费。费率列在 Azure [VPN 网关定价](/home/features/vpn-gateway/pricing/)页。
 
 
 ### 能否将使用 IPsec VPN 的虚拟网络连接到我的 ExpressRoute 线路？

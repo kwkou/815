@@ -57,7 +57,7 @@
 ###<a name="aggthroughput"></a> 网关类型和聚合吞吐量估计
 
 下表显示网关类型和估计的聚合吞吐量。估计的聚合吞吐量可能是设计时的决定因素。
-网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway#price)。此表适用于资源管理器与经典部署模型。
+网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway/pricing/)。此表适用于资源管理器与经典部署模型。
 
 [AZURE.INCLUDE [vpn-gateway-table-gwtype-aggtput](../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
 

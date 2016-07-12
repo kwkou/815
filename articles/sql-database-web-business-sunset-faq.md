@@ -35,7 +35,7 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 ## 我可以在哪里了解有关新服务层的详细信息？
 
-有关新服务层和性能模型的详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers/)。有关新服务层的详细定价信息，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
+有关新服务层和性能模型的详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers/)。有关新服务层的详细定价信息，请参阅 [SQL 数据库定价](/home/features/sql-database/pricing/)。
 
 ## 基本、标准和高级版中将不会提供哪些特性或功能？
 
@@ -45,14 +45,14 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 ## 基本、标准和高级版如何改进我的计费体验？
 
-基本、标准和高级版 Azure SQL 数据库按小时计费，在 24 小时内，你可以扩展或收缩每个数据库 4 次。我们将会根据你为每个小时选择的最高服务层和性能级别，以固定的费率向你计费。此外，帐单中会细分性能级别（例如：“基本”、“S1”和“P2”），让你更轻松地查看在单个月份中每个性能级别使用数据库天数/小时数。Web 和企业数据库仍然根据数据库大小，使用数据库单元进行计费。请访问 [SQL 数据库定价页](/home/features/sql-database/#price)，以了解有关新服务层的定价及其差异的详细信息。
+基本、标准和高级版 Azure SQL 数据库按小时计费，在 24 小时内，你可以扩展或收缩每个数据库 4 次。我们将会根据你为每个小时选择的最高服务层和性能级别，以固定的费率向你计费。此外，帐单中会细分性能级别（例如：“基本”、“S1”和“P2”），让你更轻松地查看在单个月份中每个性能级别使用数据库天数/小时数。Web 和企业数据库仍然根据数据库大小，使用数据库单元进行计费。请访问 [SQL 数据库定价页](/home/features/sql-database/pricing/)，以了解有关新服务层的定价及其差异的详细信息。
 
 
 ## 另请参阅
 
 [Azure SQL 数据库](/documentation/services/sql-databases)
 
-[Web 版和企业版定价](/home/features/sql-database/#price/web-business)
+[Web 版和企业版定价](/home/features/sql-database/pricing//web-business)
 
 [服务层](/documentation/articles/sql-database-service-tiers/)
 

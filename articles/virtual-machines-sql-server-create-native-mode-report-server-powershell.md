@@ -65,7 +65,7 @@
 	
 	- **层**：标准
 	
-	- **大小：A3** 是 SQL Server 工作负荷的建议 VM 大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关 VM 定价信息，请参阅[虚拟机定价](/home/features/virtual-machines/#price)。
+	- **大小：A3** 是 SQL Server 工作负荷的建议 VM 大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关 VM 定价信息，请参阅[虚拟机定价](/home/features/virtual-machines/pricing/)。
 	
 	- **新用户名**：将你提供的名称创建为 VM 上的管理员。
 	
@@ -677,7 +677,7 @@
 
 ## 如果使用的不是 VM，将成本降到最低
 
->[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 经典管理门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 经典管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)中的常见问题部分。
+>[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 经典管理门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 经典管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/pricing/)中的常见问题部分。
 
 ## 更多信息
 
