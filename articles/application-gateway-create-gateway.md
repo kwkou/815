@@ -357,7 +357,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 	DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.chinacloudapp.cn
 
 
-## 删除应用程序网关
+##<a name="delete-an-application-gateway"></a> 删除应用程序网关
 
 若要删除应用程序网关，请执行以下操作：
 
