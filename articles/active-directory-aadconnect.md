@@ -17,7 +17,9 @@
 # 将本地标识与 Azure Active Directory 集成
 Azure AD Connect 会将你的本地目录与 Azure Active Directory 集成。这样，你便可以为集成到 Azure AD 的 Office 365、Azure 和 SaaS 应用程序的用户提供一个通用标识。本主题将指导你完成规划、部署和操作步骤。其中统合了与这些操作相关的主题的链接。
 
-> [AZURE.IMPORTANT] [Azure AD Connect 是连接本地目录与 Azure AD 和 Office 365 的最佳方式。这是将 Azure AD Connect 从 Microsoft Azure Active Directory Sync (DirSync) 或 Azure AD Sync 升级的最佳时机，由于这些工具现在已弃用，并在 2017 年 4 月 13 日结束支持。](/documentation/articles/active-directory-aadconnect-dirsync-deprecated/?WT.mc_id=DirSyncDepACOM) 
+> [AZURE.IMPORTANT] [Azure AD Connect 是连接本地目录与 Azure AD 和 Office 365 的最佳方式。这是将 Azure AD Connect 从 Microsoft Azure Active Directory Sync (DirSync) 或 Azure AD Sync 升级的最佳时机，由于这些工具现在已弃用，并在 2017 年 4 月 13 日结束支持。](/documentation/articles/active-directory-aadconnect-dirsync-deprecated/?WT.mc_id=DirSyncDepACOM)
+ 
+
 ![什么是 Azure AD Connect](./media/active-directory-aadconnect/arch.png)
 
 ## 为何使用 Azure AD Connect
@@ -87,7 +89,6 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 
 [密码写回](/documentation/articles/active-directory-passwords-getting-started/)可让用户在云中更改和重置其密码，及应用本地密码策略。
 
-[设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback/)可将 Azure AD 中注册的设备写回到本地 Active Directory，以便可以使用该设备进行条件性访问。
 
 [防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/)功能默认为打开，它可以保护云目录，避免同时进行多次删除。默认情况下，它允许每次执行 500 次删除，你可以根据组织的大小更改此值。
 
@@ -100,11 +101,10 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 | 配置筛选 | [Azure AD Connect 同步：配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/) |
 | 密码同步 | [Azure AD Connect 同步：实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/) |
 | 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/) |
-| 设备写回 | [在 Azure AD Connect 中启用设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback/) |
 | 防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/) |
 | 自动升级 | [Azure AD Connect：自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)|
 
-## 自定义 Azure AD Connect 同步
+## 自定义 Azure AD Connect 同步errors/500?aspxerrorpath=
 Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配置。但总会有一些情况使得默认配置不适用，因此你必须进行调整。你可以根据本部分和链接主题中所述进行更改。
 
 如果你以前没有用过同步拓扑，请先了解基本概念和术语。Azure AD Connect 是在 MIIS2003、ILM2007 和 FIM2010 基础上演进而来的。即使有些功能相同，但改变的部分也有很多。
@@ -127,7 +127,6 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 主题 | |
 | --------- | --------- |
 | 版本历史记录 | [版本历史记录](/documentation/articles/active-directory-aadconnect-version-history/) |
-| 比较 DirSync、Azure ADSync 和 Azure AD Connect | [目录集成工具比较](/documentation/articles/active-directory-aadconnect-get-started-tools-comparison/) |
 | 同步的属性 | [同步的属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/) |
 | 使用 Azure AD Connect Health 进行监视 | [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/) |
 | 常见问题 | [Azure AD Connect 常见问题](/documentation/articles/active-directory-aadconnect-faq/) |

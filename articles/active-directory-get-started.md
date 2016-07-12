@@ -27,7 +27,7 @@
 已准备就绪？ 建议你试用一些随 Azure Active Directory 发布的超棒功能。使用这些功能来为组织的标识和访问管理带来更多价值。阅读文档以了解如何配置这些功能。接着查看如何开始着手以及向管理员和用户分配试用版许可证，以开始测试这些功能。
 
 
-> [AZURE.NOTE] Azure AD 免费提供给任何人使用。你现在就可以注册 Azure 试用订阅，然后我们会准备好你的目录。不管你是否购买了任何服务，该目录始终归你所有。[立即试用 Azure AD](/trial/get-started-active-directory/)
+> [AZURE.NOTE] Azure AD 免费提供给任何人使用。你现在就可以注册 Azure 试用订阅，然后我们会准备好你的目录。不管你是否购买了任何服务，该目录始终归你所有。[立即试用 Azure AD](/pricing/1rmb-trial/)
 
 ##保护组织的访问
 使用 Multi-Factor Authentication 保护组织在云中的标识数据，以确保本地和远程访问的安全。[了解有关 Multi-Factor Authentication 的详细信息](/documentation/articles/multi-factor-authentication/)

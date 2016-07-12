@@ -75,9 +75,11 @@ Windows PowerShell 连接器用于存储同步服务数据库中的每个脚本�
 对于导入、导出和密码同步脚本，会将通用模块提取到连接器的 MAData 文件夹。对于架构、验证、层次结构和分区发现脚本，则将通用模块提取到 %TEMP% 文件夹。在这两种情况下，所提取的通用模块脚本根据通用模块脚本名称设置进行命名。
 
 若要从 MAData 文件夹加载名为 FIMPowerShellConnectorModule.psm1 的模块，请使用以下语句：
+
 `Import-Module (Join-Path -Path [Microsoft.MetadirectoryServices.MAUtils]::MAFolder -ChildPath "FIMPowerShellConnectorModule.psm1")`
 
 若要从 %TEMP% 文件夹加载名为 FIMPowerShellConnectorModule.psm1 的模块，请使用以下语句：
+
 `Import-Module (Join-Path -Path $env:TEMP -ChildPath "FIMPowerShellConnectorModule.psm1")`
 
 **参数验证**
@@ -227,6 +229,7 @@ Windows PowerShell 连接器用于存储同步服务数据库中的每个脚本�
 | CloseImportConnectionRunStep | [CloseImportConnectionRunStep][cecrs] | 告知脚本导入结束的原因。 |
 
 脚本必须将单个 [CloseImportConnectionResults][cicres] 对象返回到管道中。以下示例代码演示如何将 CloseImportConnectionResults 对象返回到管道：
+
 `Write-Output (New-Object Microsoft.MetadirectoryServices.CloseImportConnectionResults)`
 
 #### 导出
@@ -265,6 +268,7 @@ Windows PowerShell 连接器用于存储同步服务数据库中的每个脚本�
 导出数据脚本必须将 [PutExportEntriesResults][peeres] 对象返回到管道中。此对象不需要包含每个导出连接器的结果信息，除非发生定位点属性错误或更改。
 
 以下示例代码演示如何将 PutExportEntriesResults 对象返回到管道：
+
 `Write-Output (New-Object Microsoft.MetadirectoryServices.PutExportEntriesResults)`
 
 **结束导出**

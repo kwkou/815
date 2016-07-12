@@ -198,7 +198,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 若要限制流量，需要对 Azure 内部负载平衡器的负载平衡集进行配置，以仅只向 TCP 端口 80 和 443 传送流量，并丢弃传送到负载平衡集内部动态 IP 地址的所有其他流量
 
-![允许 TCP 443 和 80 的 ADFS 网络 ACL 示意图](media/active-directory-deploying-ws-ad-guidelines/ADFS_ACLs.png)
+![允许 TCP 443 和 80 的 ADFS 网络 ACL 示意图](./media/active-directory-deploying-ws-ad-guidelines/ADFS_ACLs.png)
 
 只允许以下源向 AD FS 服务器传送流量：
 
@@ -209,7 +209,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 这种做法的一个缺点是需要为多个设备（包括内部负载平衡器、AD FS 服务器，以及添加到虚拟网络中的其他任何服务器）配置网络 ACL。如果在部署中添加了任何设备但未将网络 ACL 配置为限制向该设备传送流量，则整个部署可能会面临风险。如果 Web 应用程序代理节点的 IP 地址发生变化，则必须重置网络 ACL（这意味着，应该将代理配置为使用[静态动态 IP 地址](http://azure.microsoft.com/blog/static-internal-ip-address-for-virtual-machines/)）。
 
-![Azure 上具有网络 ACLS 的 ADFS。](media/active-directory-deploying-ws-ad-guidelines/ADFS_Azure.png)
+![Azure 上具有网络 ACLS 的 ADFS。](./media/active-directory-deploying-ws-ad-guidelines/ADFS_Azure.png)
 
 另一种做法是使用 [Barracuda NG 防火墙](https://www.barracuda.com/products/ngfirewall)设备控制 AD FS 代理服务器与 AD FS 服务器之间的流量。这种做法符合安全性和高可用性的最佳实践，在完成初始设置后需要更少的管理，因为 Barracuda NG 防火墙设备提供允许列表防火墙管理模式，并且可以直接在 Azure 虚拟网络中安装。这样，便不需要在每次向部署中添加新服务器后都要配置网络 ACL。但这种做法加大了初始部署的复杂性和成本。
 
@@ -269,7 +269,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 ### <a name="BKMK_CloudOnly"></a>1.AD DS：部署不需连接企业网络的 AD DS 感知应用程序
 
-![仅限云的 AD DS 部署](media/active-directory-deploying-ws-ad-guidelines/ADDS_cloud.png)
+![仅限云的 AD DS 部署](./media/active-directory-deploying-ws-ad-guidelines/ADDS_cloud.png)
 **图 1**
 
 #### 说明
@@ -298,7 +298,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
 ### <a name="BKMK_CloudOnlyFed"></a>2 AD FS：将声明感知本地前端应用程序扩展到 Internet
 
-![使用跨界连接的联合](media/active-directory-deploying-ws-ad-guidelines/Federation_xprem.png)
+![使用跨界连接的联合](./media/active-directory-deploying-ws-ad-guidelines/Federation_xprem.png)
 **图 2**
 
 #### 说明
@@ -326,7 +326,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
 ### <a name="BKMK_HybridExt"></a>3.AD DS：部署需要连接到企业网络的 Windows Server AD DS 感知应用程序
 
-![跨界 AD DS 部署](media/active-directory-deploying-ws-ad-guidelines/ADDS_xprem.png)
+![跨界 AD DS 部署](./media/active-directory-deploying-ws-ad-guidelines/ADDS_xprem.png)
 **图 3**
 
 #### 说明

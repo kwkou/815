@@ -27,10 +27,10 @@ v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些
 
 注册后，应用将向 Azure Active Directory v2.0 终结点发送请求，以便与 Azure AD 通信。我们提供了用于处理这些请求详细信息的开源框架和库，你也可以自行编写对这些终结点的请求，来实现身份验证逻辑：
 
-```
-https://login.microsoftonline.com/common/oauth2/v2.0/authorize
-https://login.microsoftonline.com/common/oauth2/v2.0/token
-```
+
+		https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+		https://login.microsoftonline.com/common/oauth2/v2.0/token
+
 <!-- TODO: Need a page for libraries to link to -->
 
 ## Web 应用
@@ -53,7 +53,7 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 在 Web 服务器应用中，登录身份验证流采用以下高级步骤：
 
-![Web 应用泳道图像](../media/active-directory-v2-flows/convergence_scenarios_webapp.png)
+![Web 应用泳道图像](./media/active-directory-v2-flows/convergence_scenarios_webapp.png)
 
 使用从 v2.0 终结点收到的公共签名密钥验证 id\_token 便足以确保用户的标识正确，以及设置可在后续页面请求中用来识别用户的会话 Cookie。
 
@@ -64,13 +64,13 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 ## Web API
 你可以使用 v2.0 终结点来保护 Web 服务，例如应用的 RESTful Web API。Web API 使用 OAuth 2.0 access\_token 而不是 id\_token 和会话 Cookie 来保护数据以及对传入的请求进行身份验证。Web API 调用方会在 HTTP 请求的授权标头中附加一个 access\_token：
 
-```
-GET /api/items HTTP/1.1
-Host: www.mywebapi.com
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6...
-Accept: application/json
-...
-```
+
+		GET /api/items HTTP/1.1
+		Host: www.mywebapi.com
+		Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6...
+		Accept: application/json
+		...
+
 
 然后 Web API 使用此 access\_token 来验证 API 调用方的标识，并从 access\_token 中编码的声明提取调用方的相关信息。你可以在 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)中了解提供给应用的各种令牌和声明。
 
@@ -78,7 +78,7 @@ Web API 可让用户通过公开权限来选择添加/排除特定的功能或�
 
 Web API 可以从各种应用接收 access\_token，其中包括 Web 服务器应用、桌面和移动应用、单页应用、服务器端守护程序，甚至其他 Web API。Web API 身份验证的高级流如下所示：
 
-![Web API 泳道图像](../media/active-directory-v2-flows/convergence_scenarios_webapi.png)
+![Web API 泳道图像](./media/active-directory-v2-flows/convergence_scenarios_webapi.png)
 
 若要了解 authorization\_codes、refresh\_tokens 和获取 access\_tokens 的详细步骤，请参阅 [OAuth 2.0 协议](/documentation/articles/active-directory-v2-protocols-oauth-code/)。
 

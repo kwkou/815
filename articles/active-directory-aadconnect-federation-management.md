@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/04/2016"
-	wacn.date="06/24/2016"/>
+	wacn.date="07/11/2016"/>
 
 # 使用 Azure AD Connect 进行 Active Directory 联合身份验证服务的管理和自定义
 
@@ -26,23 +26,23 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 从可用任务列表选择“修复 AAD 和 ADFS 信任”。
 
-![](media\active-directory-aadconnect-federation-management\RepairADTrust1.PNG)
+![](.\media\active-directory-aadconnect-federation-management\RepairADTrust1.PNG)
 
 在“连接到 Azure AD”页上，提供 Azure AD 的全局管理员凭据，然后单击“下一步”。
 
-![](media\active-directory-aadconnect-federation-management\RepairADTrust2.PNG)
+![](.\media\active-directory-aadconnect-federation-management\RepairADTrust2.PNG)
 
 在“远程访问凭据”页上，提供域管理员的凭据
 
-![](media\active-directory-aadconnect-federation-management\RepairADTrust3.PNG)
+![](.\media\active-directory-aadconnect-federation-management\RepairADTrust3.PNG)
 
 单击“下一步”时，Azure AD Connect 将检查证书运行状况，如果存在问题将显示出来。
 
-![](media\active-directory-aadconnect-federation-management\RepairADTrust4.PNG)
+![](.\media\active-directory-aadconnect-federation-management\RepairADTrust4.PNG)
 
 “准备好配置”页将显示为修复信任将执行的操作的列表。
 
-![](media\active-directory-aadconnect-federation-management\RepairADTrust5.PNG)
+![](.\media\active-directory-aadconnect-federation-management\RepairADTrust5.PNG)
 
 单击“安装”以继续操作并修复信任。
 
@@ -54,31 +54,31 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 选择“部署其他联合服务器”，然后单击“下一步”。
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer1.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer1.PNG)
 
 在“连接到 Azure AD”页上，提供 Azure AD 的全局管理员凭据，然后单击“下一步”。
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer2.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer2.PNG)
 
 在下一页上，提供域管理员凭据。
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer3.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer3.PNG)
 
 在下一页上，Azure AD Connect 将要求你提供在使用 Azure AD Connect 配置新的 AD FS 场时提供的 pfx 文件的密码。单击“输入密码”来输入 PFX 文件的密码。
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer4.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer4.PNG)
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer5.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer5.PNG)
 
 在下一页上，提供其他服务器的名称或要添加到 AD FS 场的 IP 地址。
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer6.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer6.PNG)
 
 单击“下一步”并检查最终的“配置”页。Azure AD Connect 完成将服务器添加到 AD FS 场后，将提供验证连接性的选项。
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer7.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer7.PNG)
 
-![](media\active-directory-aadconnect-federation-management\AddNewADFSServer8.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AddNewADFSServer8.PNG)
 
 ### 添加新的 AD FS Web 应用程序代理服务器
 
@@ -86,33 +86,33 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 从可用任务列表中选择“部署 Web 应用程序代理”。
 
-![](media\active-directory-aadconnect-federation-management\WapServer1.PNG)
+![](.\media\active-directory-aadconnect-federation-management\WapServer1.PNG)
 
 在下一页上，提供 Azure 全局管理员凭据。
 
-![](media\active-directory-aadconnect-federation-management\wapserver2.PNG)
+![](.\media\active-directory-aadconnect-federation-management\wapserver2.PNG)
 
 接下来，你将看到“指定 SSL 证书”页，你需要在其中提供在使用 Azure AD Connect 配置 AD FS 场时所提供的 PFX 文件的密码。
 
-![](media\active-directory-aadconnect-federation-management\WapServer3.PNG)
+![](.\media\active-directory-aadconnect-federation-management\WapServer3.PNG)
 
-![](media\active-directory-aadconnect-federation-management\WapServer4.PNG)
+![](.\media\active-directory-aadconnect-federation-management\WapServer4.PNG)
 
 在下一页上，添加将作为 Web 应用程序代理添加的服务器。因为 Web 应用程序代理服务器可能加入或可能未加入到域，因此向导将要求向正被添加的服务器添加管理凭据。
 
-![](media\active-directory-aadconnect-federation-management\WapServer5.PNG)
+![](.\media\active-directory-aadconnect-federation-management\WapServer5.PNG)
 
 在“代理信任凭据”页上，提供管理凭据以配置代理信任并访问 AD FS 场中的主服务器。
 
-![](media\active-directory-aadconnect-federation-management\WapServer6.PNG)
+![](.\media\active-directory-aadconnect-federation-management\WapServer6.PNG)
 
 在“准备好配置”页上，向导显示了将执行的操作的列表。
 
-![](media\active-directory-aadconnect-federation-management\WapServer7.PNG)
+![](.\media\active-directory-aadconnect-federation-management\WapServer7.PNG)
 
 单击“安装”以完成配置。完成配置后，向导将提供验证到服务器的连接性的选项。单击“验证”以检查连接性。
 
-![](media\active-directory-aadconnect-federation-management\WapServer8.PNG)
+![](.\media\active-directory-aadconnect-federation-management\WapServer8.PNG)
 
 ### 添加新的联合域
 
@@ -120,25 +120,25 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 若要添加的新的联合域，请选择任务“添加其他 Azure AD 域”。
 
-![](media\active-directory-aadconnect-federation-management\AdditionalDomain1.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AdditionalDomain1.PNG)
 
 在向导的下一页上，提供 Azure AD 的全局管理员凭据。
 
-![](media\active-directory-aadconnect-federation-management\AdditionalDomain2.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AdditionalDomain2.PNG)
 
 在远程访问凭据上提供域管理员凭据。
 
-![](media\active-directory-aadconnect-federation-management\additionaldomain3.PNG)
+![](.\media\active-directory-aadconnect-federation-management\additionaldomain3.PNG)
 
 在下一页上，向导将提供你想要与之联合本地目录的 Azure AD 域的列表。从列表中选择域。
 
-![](media\active-directory-aadconnect-federation-management\AdditionalDomain4.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AdditionalDomain4.PNG)
 
 选择域后，向导将为你提供有关向导将采取的进一步操作以及配置产生的影响的适当信息。在某些情况下，如果你选择的域尚未在 Azure AD 中进行验证，则向导将为你提供帮助验证域的信息。有关验证域的详细信息，请参阅 [Add your custom domain name to Azure Active Directory（将自定义域名添加到 Azure Active Directory）](/documentation/articles/active-directory-add-domain/)。
 
 单击“下一步”，“准备好配置”页将显示 Azure AD Connect 将执行的操作的列表。单击“安装”以完成配置。
 
-![](media\active-directory-aadconnect-federation-management\AdditionalDomain5.PNG)
+![](.\media\active-directory-aadconnect-federation-management\AdditionalDomain5.PNG)
 
 ## AD FS 自定义
 
@@ -216,7 +216,7 @@ AD FS 提供指定用于发布声明的自定义规则的选项。它支持丰�
 
 	=> issue(Type = “http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid“, Value = regexreplace(c.Value, “.+@(?<domain>.+)“, “http://${domain}/adfs/services/trust/“));
 
-![默认发布者 ID 声明](media\active-directory-aadconnect-federation-management\issuer_id_default.png)
+![默认发布者 ID 声明](.\media\active-directory-aadconnect-federation-management\issuer_id_default.png)
 
 默认规则只需使用 UPN 后缀，并将其用于发布者 ID 声明中。例如，John 是 sub.contoso.com 中的用户，而 contoso.com 与 Azure AD 联合。John 在登录 Azure AD 时输入 john@sub.contoso.com 作为用户名，则 AD FS 中的默认发布者 ID 声明规则将按以下方式对其进行处理：
 

@@ -242,7 +242,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 8. 单击“保存”。
 9. 若要完成配置设置，请参阅[应用并验证更改](#apply-and-verify-changes)。
 
-## <a name="apply-and-verify-changes></a>应用并验证更改
+## <a name="apply-and-verify-changes"></a> 应用并验证更改
 在更改配置后，必须将这些更改应用到系统中现有的对象。也有可能需要处理同步引擎中当前不存在的对象，因此我们需要再次读取源系统以验证其内容。
 
 如果使用**域**或**组织单位**筛选更改了配置，则需要执行**完全导入**，接着执行**增量同步**。
@@ -276,6 +276,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 2. 在“任务计划程序库”正下方找到名为“Azure AD 同步计划程序”的任务，单击右键，然后选择“启用”。
 
 ## 后续步骤
+
 了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。

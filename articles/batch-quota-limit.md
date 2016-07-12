@@ -3,22 +3,22 @@
 	description="了解使用 Azure Batch 服务时的配额、限制和约束"
 	services="batch"
 	documentationCenter=""
-	authors="dlepow"
+	authors="mmacy"
 	manager="timlt"
 	editor=""/>
 
 <tags
 	ms.service="batch"
-	ms.date="03/11/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="06/10/2016"
+	wacn.date="07/11/2016"/>
 
 
 
 # Azure Batch 服务的配额和限制
 
-本文列出可在 Azure Batch 服务中使用的特定资源的默认值和最大限制。其中的大多数限制都是 Azure 应用于订阅或 Batch 帐户的配额。
+与其他 Azure 服务一样，与 Batch 服务关联的某些资源存在限制。其中的许多限制是 Azure 在订阅或帐户级别应用的默认配额。本文将描述这些默认值，以及如何请求提高配额。
 
-如果你打算运行生产 Batch 工作负荷，则可能需要增加一个或多个高于默认值的配额。如果需要提高配额，可以免费提出在线客户支持请求。
+如果你打算在 Batch 中运行生产工作负荷，可能需要将一个或多个配额提高到默认值以上。如果需要提高配额，可以免费提出在线[客户支持请求](#increase-a-quota)。
 
 >[AZURE.NOTE] 配额是一种信用限制，不附带容量保证。如果你有大规模的容量需求，请联系 Azure 支持。
 
@@ -40,39 +40,43 @@
 
 <sup>1</sup> 最大的块 Blob 大小的 Azure 存储空间限制
 
-## 增加配额
+## <a name="increase-a-quota"></a>增加配额
 
 在 Azure 门户中使用以下步骤请求增加配额（也可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中请求增加）。
 
-1. 在门户的仪表板中，单击“帮助 + 支持”。
+1. 在门户仪表板上选择“帮助 + 支持”磁贴，或单击门户右上角的问号 (**?**)。
 
-2. 单击“新建支持请求”>“基本”。
+2. 选择“新建支持请求”>“基本”。
 
-3. 在“基本”边栏选项卡中执行以下操作：
+3. 在“基本”边栏选项卡上：
 
-	a.在“问题类型”中，选择“配额”。
+	a.“问题类型”>“配额”
 
 	b.选择你的订阅。
 
-	c.在“配额类型”中，选择“Batch”。
+	c.“配额类型”>“Batch”
 
-	d.在“支持计划”中，选择“Azure 支持计划 - 开发人员”。
+	d.“支持计划”>“配额支持 - 已包括”
 
-	单击“下一步”。
+	单击**“下一步”**。
 
-4. 在“问题”边栏选项卡中执行以下操作：
+4. 在“问题”边栏选项卡上：
 
-	a.根据业务影响情况选择“严重性”。
+	a.根据[业务影响情况][support_sev]选择“严重性”。
 
-	b.在“详细信息”中，列出要在特定帐户中更改的配额和所需的新限制。
+	b.在“详细信息”中，指定想要更改的每个配额、Batch 帐户名和新限制。
 
-	单击“下一步”。
+	单击**“下一步”**。
 
-5. 在“联系信息”边栏选项卡中输入你的详细联系信息，然后单击“下一步”。
+5. 在“联系信息”边栏选项卡上：
 
-6. 单击“创建”提交新的支持请求。
+	a.选择“首选联系方法”。
 
-Azure 支持人员将与你联系。完成请求最长需要 2 个工作日。
+	b.输入并确认所需的联系人详细信息。
+
+	单击“创建”提交支持请求。
+
+提交支持请求后，Azure 支持人员将与你取得联系。请注意，完成该请求最多需要 2 个工作日。
 
 ## 相关主题
 
@@ -80,6 +84,10 @@ Azure 支持人员将与你联系。完成请求最长需要 2 个工作日。
 
 * [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
 
+[portal]: https://portal.azure.cn
+[portal_classic_increase]: https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/
+[support_sev]: http://aka.ms/supportseverity
+
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->

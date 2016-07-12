@@ -15,7 +15,7 @@
 
 # Azure AD Connect：帐户和权限
 
-<a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导提供提供两种不同的路径：
+<a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导设备写回提供提供两种不同的路径：
 
 - 在“快速设置”中，我们需要更多权限，以便轻松设置配置，而无需创建用户或单独配置权限。
 

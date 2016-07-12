@@ -218,7 +218,7 @@ role 参数目前可接受以下值：
 
     Test-AzureADConnectHealthConnectivity -Role Sync -ShowResult
 
->[AZURE.NOTE]若要使用连接工具，必须先完成代理注册。如果无法完成代理注册，请确保符合 Azure AD Connect Health 的所有[要求](/documentation/articles/active-directory-aadconnect-health-agent-instal/#requirements)。默认情况下，此连接测试将在代理注册期间执行。
+>[AZURE.NOTE]若要使用连接工具，必须先完成代理注册。如果无法完成代理注册，请确保符合 Azure AD Connect Health 的所有[要求](/documentation/articles/active-directory-aadconnect-health-agent-install/#requirements)。默认情况下，此连接测试将在代理注册期间执行。
 
 
 
@@ -227,7 +227,6 @@ role 参数目前可接受以下值：
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/)
 * [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations/)
 * [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs/)
-* [使用用于同步的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-sync/)
 * [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq/)
 
 <!---HONumber=Mooncake_0606_2016-->

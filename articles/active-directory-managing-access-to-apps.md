@@ -53,7 +53,6 @@
 
 支持帐户共享的 Azure AD 功能包括：
 
-- [组分配](/documentation/articles/active-directory-accessmanagement-self-service-group-management/)
 - 将应用程序添加到 Azure AD
 - 分配入门
 - 应用程序分配常见问题

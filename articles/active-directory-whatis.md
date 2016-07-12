@@ -71,13 +71,9 @@ Azure AD 的多租户、地理分布、高可用性设计意味着你可以依�
 
 - [在互联世界中提高安全性](/documentation/articles/multi-factor-authentication/)
 
-- [Azure Active Directory SaaS 应用程序的自动化用户设置和取消设置](/documentation/articles/active-directory-saas-app-provisioning/)
-
 - [从任意位置管理密码](/documentation/articles/active-directory-passwords/)
 
 - [Azure Active Directory 的应用程序访问与单一登录是什么？](/documentation/articles/active-directory-appssoaccess-whatis/)
-
-- [Azure Active Directory SaaS 应用程序的自动化用户设置和取消设置](/documentation/articles/active-directory-saas-app-provisioning/)
 
 - [使用 Azure Active Directory 组管理对资源的访问](/documentation/articles/active-directory-manage-groups/)
 

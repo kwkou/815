@@ -18,7 +18,7 @@
 
 ## 概述
 
-构建集成 Azure AD 的应用程序可让组织的用户使用 Office 365 单一登录。在 Azure AD 中拥有应用程序可让你控制为应用程序设置的身份验证策略。若要详细了解条件性访问以及如何使用 Multi-Factor Authentication (MFA) 保护应用程序，请参阅以下文档：[Configuring access rules（配置访问规则）](/documentation/articles/active-directory-conditional-access-azuread-connected-apps/)。
+构建集成 Azure AD 的应用程序可让组织的用户使用 Office 365 单一登录。在 Azure AD 中拥有应用程序可让你控制为应用程序设置的身份验证策略。
 
 应用程序需要经过注册才能使用 Azure Active Directory。注册应用程序可让组织的开发人员使用 Azure AD 身份验证组织的成员，以及请求访问他们的用户资源，例如电子邮件、日历和文档等。
 

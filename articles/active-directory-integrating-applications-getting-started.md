@@ -53,10 +53,9 @@
 
 ## 将应用程序与 Azure AD 集成
 ### 使用 Cloud App Discovery 查找未经认可的云应用程序
-如上所述，可能有些应用程序到目前为止仍不受你组织的管理。在盘点过程中，你可以查找未经认可的云应用程序。请参阅[使用 Cloud App Discovery 查找未经认可的云应用程序](/documentation/articles/active-directory-cloudappdiscovery-whatis/)。
-
+如上所述，可能有些应用程序到目前为止仍不受你组织的管理。在盘点过程中，你可以查找未经认可的云应用程序。
 ### 身份验证类型
-每个应用程序可能有不同的身份验证要求。借助 Azure AD，可对使用 SAML 2.0、WS 联合身份验证或 OpenID Connect 协议以及密码单一登录的应用程序使用签名证书。有关可用于 Azure AD 的应用程序身份验证类型的详细信息，请参阅[在 Azure Active Directory 中管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/)和[基于密码的单一登录](/documentation/articles/active-directory-appssoaccess-whatis/)。
+每个应用程序可能有不同的身份验证要求。借助 Azure AD，可对使用 SAML 2.0、WS 联合身份验证或 OpenID Connect 协议以及密码单一登录的应用程序使用签名证书。有关可用于 Azure AD 的应用程序身份验证类型的详细信息，请参阅[在 Azure Active Directory 中管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/)。
 
 ### 使用 Azure AD 应用代理启用 SSO
 使用 Microsoft Azure AD 应用程序代理，可以从任何位置和任何设备安全访问专用网络中的应用程序。在环境中安装应用程序代理连接器后，可以使用 Azure AD 轻松配置该连接器。
@@ -66,16 +65,16 @@
 
 - [确定要使用的 Active Directory](/documentation/articles/active-directory-administer/)
 - [使用 Azure 应用程序库中的应用程序](/documentation/articles/active-directory-appssoaccess-whatis/)
-- [集成 SaaS 应用程序教程列表](/documentation/articles/active-directory-saas-tutorial-list/)
+
 
 
 ## 管理对应用程序的访问
 以下文章介绍了在使用 Azure AD 连接器和 Azure AD 将应用程序与 Azure AD 集成之后，如何管理对应用程序的访问。
 
 - [使用 Azure AD 管理对应用的访问](/documentation/articles/active-directory-managing-access-to-apps/)
-- [使用 Azure AD 连接器自动化](/documentation/articles/active-directory-saas-app-provisioning/)
+
 - 使用 Azure 经典管理门户[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)。
-- 使用 Azure 经典管理门户[将组分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups/)。
+
 - [共享帐户](/documentation/articles/active-directory-sharing-accounts/)
 
 ## 集成自定义应用程序

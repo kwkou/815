@@ -220,10 +220,6 @@ Azure Active Directory 提供多个报告和警报，以帮助你监视组织对
 
 [什么是 Azure Active Directory？](/documentation/articles/active-directory-whatis/)
 
-[Azure Active Directory B2C](/services/active-directory-b2c/)
-
-[Azure Active Directory 域服务](/services/active-directory-ds/)
-
 [Azure Multi-Factor Authentication](/services/multi-factor-authentication/)
 
 <!---HONumber=Mooncake_0613_2016-->

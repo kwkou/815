@@ -196,9 +196,6 @@
 
 ## 后续步骤
 
-现在，可以转到更高级的主题。你可能想要尝试：
-
-[使用 v2.0 终结点保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet/)
 
 有关更多资源，请查看：
 

@@ -42,14 +42,6 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 **Azure AD 是 Office 365 和其他 Microsoft 业务服务的授权服务器。** 如果你支持使用 Azure AD 登录到你的应用程序，或者支持将当前用户帐户链接到使用 OAuth 2.0 的 Azure AD 用户帐户，则你可以请求对用户配置文件、日历、电子邮件、联系人、文件和其他信息的读取和写入访问权限。你可以顺利地将事件写入用户日历，以及在其 OneDrive 中读取或写入文件。了解有关[访问 Office 365 API](https://msdn.microsoft.com/office/office365/howto/platform-development-overview) 的详细信息。
 
-<!--
-### Promote Your Application in the Azure and Office 365 Marketplaces
-
-**Promote your application to the millions of organizations who are already using Azure AD.**  Users who search and browse these marketplaces are already using one or more cloud services, making them qualified cloud service customers.  Learn more about promoting your application in [the Azure Marketplace](http://azure.microsoft.com/marketplace/partner-program/).
-
-**When users sign up for your application, it will appear in their Azure AD access panel and Office 365 app launcher.**  Users will be able to quickly and easily return to your application later, improving user engagement.  Learn more about the [Azure AD access panel](/documentation/articles/active-directory-saas-access-panel-introduction/).
--->
-
 ### 保护设备与服务之间以及服务与服务之间的通信
 
 **使用 Azure AD 进行服务和设备的标识管理可以减少编写代码以及让 IT 人员管理访问权限产生的成本。** 服务和设备可以使用 OAuth 从 Azure AD 获取令牌，并使用这些令牌来访问 Web API。使用 Azure AD 可以避免编写复杂的身份验证代码。由于服务和设备的标识存储在 Azure AD 中，IT 人员可以在一个位置管理密钥和吊销，而无需单独在应用程序中执行此操作。
@@ -70,7 +62,7 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 **异常登录检测。** Azure AD 每天要处理十亿次以上的登录，同时，使用机器学习算法来检测可疑活动，并通知 IT 管理员可能存在的问题。通过支持 Azure AD 登录，你的应用程序将从这种保护中受益。
 
-**条件性访问。** 除了多重身份验证以外，管理员可以要求用户在登录应用程序之前满足特定的条件。可设置的条件包括客户端设备的 IP 地址范围、指定的组中的成员资格，以及用于访问的设备的状态。了解有关 [Azure Active Directory 条件性访问](/documentation/articles/active-directory-conditional-access/)的详细信息。
+**条件性访问。** 除了多重身份验证以外，管理员可以要求用户在登录应用程序之前满足特定的条件。可设置的条件包括客户端设备的 IP 地址范围、指定的组中的成员资格，以及用于访问的设备的状态。
 
 ### 易于开发
 

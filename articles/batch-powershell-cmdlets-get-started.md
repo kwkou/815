@@ -107,12 +107,12 @@
 
 ## 查询池、作业、任务以及其他详细信息
 
-使用 cmdlet（例如 **Get-AzureBatchPool**、**Get-AzureBatchJob** 和 **Get-AzureBatchTask**）查询在 Batch 帐户下创建的实体。
+使用 **Get-AzureBatchPool**、**Get-AzureBatchJob** 和 **Get-AzureBatchTask** 等 cmdlet 查询在 Batch 帐户下创建的实体。
 
 
 ### 查询数据
 
-例如，使用 **Get-AzureBatchPools** 可查找池。假设你已将 BatchAccountContext 对象存储在 $context 中，则默认情况下，此 cmdlet 将查询帐户下的所有池：
+例如，使用 **Get-AzureBatchPools** 可查找池。假设你已将 BatchAccountContext 对象存储在 *$context* 中，则默认情况下，此 cmdlet 将查询帐户下的所有池：
 
 
 		Get-AzureBatchPool -BatchContext $context
@@ -160,6 +160,6 @@ OData 筛选器的替代方法是使用 **Id** 参数。若要查询 ID 为“my
 ## 后续步骤
 * 有关详细的 cmdlet 语法和示例，请参阅 [Azure Batch cmdlet reference（Azure Batch cmdlet 参考）](https://msdn.microsoft.com/library/azure/mt125957.aspx)。
 
-* 有关如何减少项数和有关针对 Batch 查询返回的信息类型的详细信息，请参阅 [Query the Batch service efficiently（有效地查询 Batch 服务）](batch-efficient-list-queries.md)。
+* 有关如何减少项数和有关针对 Batch 查询返回的信息类型的详细信息，请参阅 [Query the Batch service efficiently（有效地查询 Batch 服务）](/documentation/articles/batch-efficient-list-queries/)。
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->
