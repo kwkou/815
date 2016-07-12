@@ -87,7 +87,7 @@ NuGet 程序包会给客户端应用程序下载并添加所需的程序集引�
 -   [添加和从缓存检索对象][]
 -   [处理缓存中的 .NET 对象](#work-with-net-objects-in-the-cache)
 
-##<a name="connect-to-cache"></a>连接到缓存
+##<a name="connect-to-cache" id="connect-to-the-cache"></a>连接到缓存
 
 若要以编程方式使用缓存，你需要引用该缓存。以下代码添加到你想使用 StackExchange.Redis 客户端的任何文件的顶部，以访问 Azure Redis 缓存。
 
@@ -145,7 +145,7 @@ NuGet 程序包会给客户端应用程序下载并添加所需的程序集引�
 
 现在您知道如何连接到 Azure Redis Cache 实例并将引用返回缓存数据库，让我们看看如何使用缓存。
 
-##<a name="add-object"></a>添加和从缓存检索对象
+##<a name="add-object" id="add-and-retrieve-objects-from-the-cache"></a>添加和从缓存检索对象
 
 可以使用 `StringSet` 和 `StringGet` 方法在缓存中存储和检索项。
 
