@@ -32,11 +32,11 @@
 本演练的其余部分侧重于有状态服务。
 
 ### 对 Service Fabric 有状态服务进行分区
-通过 Service Fabric 可以提供到一流的状态（数据）分区方式，从而方便地开发可缩放有状态服务。从概念上讲，可以将有状态服务的分区视为通过在群集中的节点间进行分布和平衡的[副本](/documentation/articles/service-fabric-availability-services)而高度可用的缩放单位。
+通过 Service Fabric 可以提供到一流的状态（数据）分区方式，从而方便地开发可缩放有状态服务。从概念上讲，可以将有状态服务的分区视为通过在群集中的节点间进行分布和平衡的[副本](/documentation/articles/service-fabric-availability-services/)而高度可用的缩放单位。
 
-在 Service Fabric 有状态服务的上下文中进行分区是指确定特定服务分区负责服务完整状态的某个部分的过程。（如前所述，分区是一组[副本](/documentation/articles/service-fabric-availability-services)）。Service Fabric 的一大优点是它将分区置于不同节点上。这使它们可以按照节点的资源限制来增长。随着数据需求的增长，分区也会增长，Service Fabric 会在节点间重新平衡分区。这可确保硬件资源的持续高效使用。
+在 Service Fabric 有状态服务的上下文中进行分区是指确定特定服务分区负责服务完整状态的某个部分的过程。（如前所述，分区是一组[副本](/documentation/articles/service-fabric-availability-services/)）。Service Fabric 的一大优点是它将分区置于不同节点上。这使它们可以按照节点的资源限制来增长。随着数据需求的增长，分区也会增长，Service Fabric 会在节点间重新平衡分区。这可确保硬件资源的持续高效使用。
 
-为了提供一个示例，假设你开始时具有一个 5 节点群集，以及一个配置为具有 10 个分区并且目标为 3 个副本的服务。在这种情况下，Service Fabric 会在群集间平衡和分布副本 — 最后每个节点会有两个主[副本](/documentation/articles/service-fabric-availability-services)。如果现在需要将群集扩大到 10 个节点，则 Service Fabric 会在所有 10 个节点间重新平衡主[副本](/documentation/articles/service-fabric-availability-services)。同样，如果重新缩小为 5 个节点，则 Service Fabric 会在 5 个节点间重新平衡所有副本。
+为了提供一个示例，假设你开始时具有一个 5 节点群集，以及一个配置为具有 10 个分区并且目标为 3 个副本的服务。在这种情况下，Service Fabric 会在群集间平衡和分布副本 — 最后每个节点会有两个主[副本](/documentation/articles/service-fabric-availability-services/)。如果现在需要将群集扩大到 10 个节点，则 Service Fabric 会在所有 10 个节点间重新平衡主[副本](/documentation/articles/service-fabric-availability-services/)。同样，如果重新缩小为 5 个节点，则 Service Fabric 会在 5 个节点间重新平衡所有副本。
 
 图 2 显示缩放群集之前和之后的 10 个分区的分布。
 
@@ -60,7 +60,7 @@
 为避免出现这种情况，从分区的角度来看，你应做两件事：
 
 - 尝试对状态进行分区，以便状态在所有分区间均匀分布。
-- 从服务的每个副本报告负载。（有关操作方法的信息，请查看这篇有关[指标和负载](/documentation/articles/service-fabric-cluster-resource-manager-metrics)的文章）。Service Fabric 可以报告服务消耗的负载，例如内存量或记录数。根据报告的指标，Service Fabric 会检测到某些分区处理的负载高于其他分区，并通过将副本移动到更合适的节点来重新平衡群集，以便在整体上不会有节点过载。
+- 从服务的每个副本报告负载。（有关操作方法的信息，请查看这篇有关[指标和负载](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)的文章）。Service Fabric 可以报告服务消耗的负载，例如内存量或记录数。根据报告的指标，Service Fabric 会检测到某些分区处理的负载高于其他分区，并通过将副本移动到更合适的节点来重新平衡群集，以便在整体上不会有节点过载。
 
 有时，无法知道将处于给定分区中的数据量。因此，常规建议是执行以下两种操作：首先是采用在分区间均匀分布数据的分区策略，其次是报告负载。第一种方法可防止投票示例中描述的情况，而第二种方法可帮助随时间推移而消除访问或负载的中的临时差异。
 
@@ -76,7 +76,7 @@
 
 那么，如果在正在运行的群集中遇到资源限制时会发生什么情况呢？ 答案是可以只需扩大群集以适应新需求。
 
-[容量规划指南](/documentation/articles/service-fabric-capacity-planning)提供有关如何确定群集需要的节点数的指导。
+[容量规划指南](/documentation/articles/service-fabric-capacity-planning/)提供有关如何确定群集需要的节点数的指导。
 
 ## 开始进行分区
 本部分介绍如何开始对服务进行分区。
@@ -144,7 +144,7 @@ Service Fabric 提供了三个分区方案可供选择：
 
 7. 接下来，需要重写 Processing 类的 `CreateServiceReplicaListeners()` 方法。
 
-    >[AZURE.NOTE] 对于此示例，我们假定你使用一个简单 HttpCommunicationListener。有关 Reliable Service 通信的详细信息，请参阅 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication)。
+    >[AZURE.NOTE] 对于此示例，我们假定你使用一个简单 HttpCommunicationListener。有关 Reliable Service 通信的详细信息，请参阅 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication/)。
 
 8. 副本所侦听的 URL 的建议模式是以下格式：`{scheme}://{nodeIp}:{port}/{partitionid}/{replicaid}/{guid}`。因此，你要将通信侦听器配置为侦听正确的终结点以及使用此模式。
 
@@ -356,11 +356,11 @@ Service Fabric 提供了三个分区方案可供选择：
 
 有关 Service Fabric 概念的信息，请参阅以下内容：
 
-- [Service Fabric 服务的可用性](/documentation/articles/service-fabric-availability-services)
+- [Service Fabric 服务的可用性](/documentation/articles/service-fabric-availability-services/)
 
-- [Service Fabric 服务的可伸缩性](/documentation/articles/service-fabric-concepts-scalability)
+- [Service Fabric 服务的可伸缩性](/documentation/articles/service-fabric-concepts-scalability/)
  
-- [Service Fabric 应用程序的容量规划](/documentation/articles/service-fabric-capacity-planning)
+- [Service Fabric 应用程序的容量规划](/documentation/articles/service-fabric-capacity-planning/)
 
 [wikipartition]: https://en.wikipedia.org/wiki/Partition_(database)
 

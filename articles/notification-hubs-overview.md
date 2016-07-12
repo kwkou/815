@@ -154,16 +154,16 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [1]: ./media/notification-hubs-overview/notification-hub-diagram.png
   [客户如何使用通知中心]: /zh-cn/services/notification-hubs
   [通知中心教程和指南]: /documentation/services/notification-hubs
-  [iOS]: /documentation/articles/notification-hubs-ios-get-started
-  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-  [Windows Phone]: /documentation/articles/notification-hubs-windows-phone-get-started
-  [Kindle]: /documentation/articles/notification-hubs-kindle-get-started
-  [Xamarin.iOS]: /documentation/articles/partner-xamarin-notification-hubs-ios-get-started
-  [Xamarin.Android]: /documentation/articles/partner-xamarin-notification-hubs-android-get-started
+  [iOS]: /documentation/articles/notification-hubs-ios-get-started/
+  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+  [Windows Phone]: /documentation/articles/notification-hubs-windows-phone-get-started/
+  [Kindle]: /documentation/articles/notification-hubs-kindle-get-started/
+  [Xamarin.iOS]: /documentation/articles/partner-xamarin-notification-hubs-ios-get-started/
+  [Xamarin.Android]: /documentation/articles/partner-xamarin-notification-hubs-android-get-started/
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx
   [App Service Mobile Apps]: https://azure.microsoft.com/zh-cn/documentation/articles/app-service-mobile-value-prop/
-  [模板]: /documentation/articles/notification-hubs-templates
+  [模板]: /documentation/articles/notification-hubs-templates/
 
   [标记]: (http://msdn.microsoft.com/library/azure/dn530749.aspx)
 

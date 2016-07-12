@@ -98,7 +98,7 @@
 
     **最佳做法**：确保在使用 DPM 完成本地磁盘备份后安排好 Azure 备份。这样就可以将最新磁盘备份复制到 Azure。
 
-13. 选择保留策略计划。有关保留策略工作原理的详细信息，请参阅[使用 Azure 备份来取代磁带基础结构文章](/documentation/articles/backup-azure-backup-cloud-as-tape)。
+13. 选择保留策略计划。有关保留策略工作原理的详细信息，请参阅[使用 Azure 备份来取代磁带基础结构文章](/documentation/articles/backup-azure-backup-cloud-as-tape/)。
 
     ![保留策略](./media/backup-azure-backup-sql/pg-retentionschedule.png)
 
@@ -168,6 +168,6 @@
 
 ### 后续步骤：
 
-• [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
+• [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)
 
 <!---HONumber=Mooncake_0530_2016-->

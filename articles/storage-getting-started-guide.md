@@ -35,7 +35,7 @@
 4. 你将需要 Azure 订阅和 Azure 存储帐户。
 
     - 若要获取 Azure 订阅，请参阅 [1rmb 试用版](/pricing/1rmb-trial/)、[购买选项](/pricing/purchase-options/)。
-    - 若要在 Azure 中创建存储帐户，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)。
+    - 若要在 Azure 中创建存储帐户，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 
 ##<a id="run-your-first-azure-storage-application-against-azure-storage-in-the-cloud"></a> 使用 Azure 存储模拟器在云中运行你的第一个 Azure 存储空间应用程序
 
@@ -61,7 +61,7 @@
 2.	取消 Azure 存储服务的连接字符串的注释，并在 App.config 文件中提供存储帐户名称和访问密钥：
 	`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey];EndpointSuffix=core.chinacloudapi.cn"`
 
-	若要检索存储帐户访问密钥，请参阅[管理存储访问密钥](/documentation/articles/storage-create-storage-account#manage-your-storage-access-keys)。
+	若要检索存储帐户访问密钥，请参阅[管理存储访问密钥](/documentation/articles/storage-create-storage-account/#manage-your-storage-access-keys)。
 
 3.	在 App.config 文件中提供存储帐户名称和访问密钥后,在“文件” 菜单中，单击“全部保存”以保存所有项目文件。
 4.	在“生成”菜单中，单击“生成解决方案”。
@@ -70,7 +70,7 @@
 
 ##<a id="run-your-first-azure-storage-application-locally-against-the-azure-storage-emulator"></a> 使用 Azure 存储模拟器在本地运行你的第一个 Azure 存储空间应用程序
 
-[Azure 存储模拟器](/documentation/articles/storage-use-emulator)提供了一个针对开发目的模拟 Azure Blob、队列和表服务的本地环境。你可以使用存储模拟器在本地测试你的应用程序，而无需创建 Azure 订阅或存储帐户，并且不会产生任何费用。
+[Azure 存储模拟器](/documentation/articles/storage-use-emulator/)提供了一个针对开发目的模拟 Azure Blob、队列和表服务的本地环境。你可以使用存储模拟器在本地测试你的应用程序，而无需创建 Azure 订阅或存储帐户，并且不会产生任何费用。
 
 若要尝试，让我们在 Visual Studio 中使用 Azure 快速启动示例项目之一创建一个简单的 Azure 存储空间应用程序。本教程重点介绍 **Azure Blob 存储**、**Azure 表存储**和 **Azure 队列存储**示例项目：
 
@@ -100,12 +100,12 @@
 
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 
-* [Azure 存储空间简介](/documentation/articles/storage-introduction)
-* [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
-* [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
-* [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
-* [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
-* [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+* [Azure 存储空间简介](/documentation/articles/storage-introduction/)
+* [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
+* [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
+* [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)
+* [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
+* [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 * [Azure 存档文档](/documentation/services/storage/)
 * [适用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)
 * [Azure 存储 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)

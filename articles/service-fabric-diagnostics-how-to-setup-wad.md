@@ -15,14 +15,14 @@
 
 # 如何使用 Azure 诊断收集日志
 
-当你运行 Azure Service Fabric 群集时，最好是从一个中心位置的所有节点中收集日志。从日志放在中心位置可轻松分析和排查群集或该群集中运行的应用程序与服务的问题。上载和收集日志的方式之一是使用可将日志上载到 Azure 存储空间的 Azure 诊断扩展。实际上无法直接在存储中使用这些日志，但可以使用外部进程读取存储中的事件，并将它们放在[弹性搜索](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch)等产品或或其他日志分析解决方案中。
+当你运行 Azure Service Fabric 群集时，最好是从一个中心位置的所有节点中收集日志。从日志放在中心位置可轻松分析和排查群集或该群集中运行的应用程序与服务的问题。上载和收集日志的方式之一是使用可将日志上载到 Azure 存储空间的 Azure 诊断扩展。实际上无法直接在存储中使用这些日志，但可以使用外部进程读取存储中的事件，并将它们放在[弹性搜索](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)等产品或或其他日志分析解决方案中。
 
 ## 先决条件
 以下工具将用来运行本文档中的某些操作：
 
-* [Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics)（与 Azure 云服务相关，但包含有用的信息和示例）
-* [Azure 资源管理器](/documentation/articles/resource-group-overview)
-* [Azure PowerShell](/documentation/articles/powershell-install-configure)
+* [Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)（与 Azure 云服务相关，但包含有用的信息和示例）
+* [Azure 资源管理器](/documentation/articles/resource-group-overview/)
+* [Azure PowerShell](/documentation/articles/powershell-install-configure/)
 * [Azure Resource Manager 客户端](https://github.com/projectkudu/ARMClient)
 * [使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles//virtual-machines-windows-extensions-diagnostics-template)
 
@@ -30,9 +30,9 @@
 ## 可以收集的不同日志源
 1. **Service Fabric 日志：**由平台发送到标准 ETW 和 EventSource 通道。日志有以下几种类型：
   - 操作事件：Service Fabric 平台执行的操作的日志。示例包括创建应用程序和服务、节点状态更改和升级信息。
-  - [执行组件编程模型事件](/documentation/articles/service-fabric-reliable-actors-diagnostics)
-  - [Reliable Services 编程模型事件](/documentation/articles/service-fabric-reliable-services-diagnostics)
-2. **应用程序事件：**从服务代码发出，使用 Visual Studio 模板提供的 EventSource 帮助器类写出的事件。有关如何从应用程序写入日志的详细信息，请参阅[这篇有关监视和诊断本地计算机安装中的服务的文章](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)。
+  - [执行组件编程模型事件](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
+  - [Reliable Services 编程模型事件](/documentation/articles/service-fabric-reliable-services-diagnostics/)
+2. **应用程序事件：**从服务代码发出，使用 Visual Studio 模板提供的 EventSource 帮助器类写出的事件。有关如何从应用程序写入日志的详细信息，请参阅[这篇有关监视和诊断本地计算机安装中的服务的文章](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)。
 
 
 ## 部署诊断扩展
@@ -43,9 +43,9 @@
 
 ![门户中有关创建群集的 Azure 诊断设置](./media/service-fabric-diagnostics-how-to-setup-wad/portal-cluster-creation-diagnostics-setting.png)
 
-Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请求。这些日志实时收集，并存储在创建于资源组中的其中一个存储帐户。诊断设置将配置应用程序级别事件，包括[执行组件](/documentation/articles/service-fabric-reliable-actors-diagnostics)事件、[可靠服务](/documentation/articles/service-fabric-reliable-services-diagnostics)事件和某些系统级别 Service Fabric 事件设置为存储到 Azure 存储空间。[弹性搜索](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch)等产品或自己的进程可以从存储帐户中选择事件。目前没有任何方法可以筛选或清理已发送到表的事件。如果未实现从表删除事件的进程，表将继续增长。
+Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请求。这些日志实时收集，并存储在创建于资源组中的其中一个存储帐户。诊断设置将配置应用程序级别事件，包括[执行组件](/documentation/articles/service-fabric-reliable-actors-diagnostics/)事件、[可靠服务](/documentation/articles/service-fabric-reliable-services-diagnostics/)事件和某些系统级别 Service Fabric 事件设置为存储到 Azure 存储空间。[弹性搜索](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)等产品或自己的进程可以从存储帐户中选择事件。目前没有任何方法可以筛选或清理已发送到表的事件。如果未实现从表删除事件的进程，表将继续增长。
 
-使用门户创建群集时，强烈建议先下载模板，然后单击“确定”以创建群集。有关详细信息，请参阅 [Setup a Service Fabric cluster by using an Azure Resource Manager template](/documentation/articles/service-fabric-cluster-creation-via-arm)（使用 Azure Resource Manager 模板设置 Service Fabric 群集）。这样，便可以获得一个可用的 ARM 模板来创建群集。稍后需要使用此模板来进行更改，因为并非所有更改都可以使用门户来完成。可以使用以下步骤从门户导出模板，但是，这些模板可能更难以使用，因为它们可能包含许多 null 值，而这些位置本应有值，否则会缺少所有必需的信息。
+使用门户创建群集时，强烈建议先下载模板，然后单击“确定”以创建群集。有关详细信息，请参阅 [Setup a Service Fabric cluster by using an Azure Resource Manager template](/documentation/articles/service-fabric-cluster-creation-via-arm/)（使用 Azure Resource Manager 模板设置 Service Fabric 群集）。这样，便可以获得一个可用的 ARM 模板来创建群集。稍后需要使用此模板来进行更改，因为并非所有更改都可以使用门户来完成。可以使用以下步骤从门户导出模板，但是，这些模板可能更难以使用，因为它们可能包含许多 null 值，而这些位置本应有值，否则会缺少所有必需的信息。
 
 1. 打开资源组
 2. 选择“设置”可显示“设置”面板
@@ -65,7 +65,7 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 ### 使用 Azure Resource Manager 在创建群集过程中部署诊断扩展
 若要使用 Resource Manager 创建群集，需要在创建群集之前，将诊断配置 JSON 添加到整个 Resource Manager 模板。我们将在 Resource Manager 模板示例中提供包含五个 VM 的群集 Resource Manager 模板，并在演示 Resource Manager 模板示例的过程中添加诊断配置。你可以在 Azure 示例库中的以下位置找到该示例：[包含五节点群集的诊断 Resource Manager 模板示例](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype-wad)。若要查看 Resource Manager 模板中的诊断设置，请打开 **azuredeploy.json** 文件并搜索 **IaaSDiagnostics**。若要使用此模板创建群集，只要按上述链接提供的“部署到 Azure”按钮即可。
 
-或者，也可以下载 Resource Manager 示例，进行更改，然后在 Azure PowerShell 窗口中输入 `New-AzureRmResourceGroupDeployment` 命令，使用修改后的模板创建群集。请参阅以下信息获取需要传入命令的参数。有关如何使用 PowerShell 部署资源组的详细信息，请参阅 [Deploy a Resource Group with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy)（使用 Azure Resource Manager 模板部署资源组）一文
+或者，也可以下载 Resource Manager 示例，进行更改，然后在 Azure PowerShell 窗口中输入 `New-AzureRmResourceGroupDeployment` 命令，使用修改后的模板创建群集。请参阅以下信息获取需要传入命令的参数。有关如何使用 PowerShell 部署资源组的详细信息，请参阅 [Deploy a Resource Group with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署资源组）一文
 
 ```powershell
 
@@ -183,10 +183,10 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $
 
 
 ## 后续步骤
-查看针对 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-diagnostics) 和 [Reliable Services](/documentation/articles/service-fabric-reliable-services-diagnostics) 发出的诊断事件，以更详细地了解排查问题时应该调查哪些事件。
+查看针对 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-diagnostics/) 和 [Reliable Services](/documentation/articles/service-fabric-reliable-services-diagnostics/) 发出的诊断事件，以更详细地了解排查问题时应该调查哪些事件。
 
 
 ## 相关文章
-* [了解如何使用诊断扩展收集性能计数器或日志](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)
+* [了解如何使用诊断扩展收集性能计数器或日志](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
 
 <!---HONumber=Mooncake_0627_2016-->

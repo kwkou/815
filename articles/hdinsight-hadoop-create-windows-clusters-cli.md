@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [选择器](../includes/hdinsight-selector-create-clusters.md)]
 
-了解如何使用 Azure CLI 创建 HDInsight 群集。有关其他群集创建工具和功能，请单击本页面顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters-v1#cluster-creation-methods)。
+了解如何使用 Azure CLI 创建 HDInsight 群集。有关其他群集创建工具和功能，请单击本页面顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters-v1/#cluster-creation-methods)。
 
 ###先决条件：
 
@@ -26,7 +26,7 @@
 在开始按照本文中的说明操作之前，你必须具有以下内容：
 
 - **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+- **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 ##连接到 Azure
 
@@ -34,7 +34,7 @@
 
 	azure login -e AzureChinaCloud -u <your account>
 
-有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。
+有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 若要获得帮助，请使用 **-h** 开关。例如：
 
@@ -80,9 +80,9 @@
 
 ## 另请参阅
 
-- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1) - 了解如何开始使用你的 HDInsight 群集
-- [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically) - 了解如何以编程方式将作业提交到 HDInsight
-- [使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-command-line)
-- [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)
+- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/) - 了解如何开始使用你的 HDInsight 群集
+- [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) - 了解如何以编程方式将作业提交到 HDInsight
+- [使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-command-line/)
+- [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools/)
 
 <!---HONumber=Mooncake_0215_2016-->

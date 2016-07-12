@@ -1,6 +1,6 @@
 > [AZURE.SELECTOR]
-- [Linux](/documentation/articles/iot-hub-linux-gateway-sdk-get-started)
-- [Windows](/documentation/articles/iot-hub-windows-gateway-sdk-get-started)
+- [Linux](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/)
+- [Windows](/documentation/articles/iot-hub-windows-gateway-sdk-get-started/)
 
 本文详细介绍了 [Hello World sample code（Hello World 示例代码）][lnk-helloworld-sample]，说明了 [Azure IoT Gateway SDK（Azure IoT 网关 SDK）][lnk-gateway-sdk]体系结构的基本组件。该示例使用网关 SDK 生成一个简单的网关，每隔 5 秒将“hello world”消息记录到文件中。
 

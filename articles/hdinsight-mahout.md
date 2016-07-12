@@ -346,7 +346,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ###运行作业
 
-1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后按照[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)中的说明连接到该群集。
+1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后按照[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
 
 3. 建立连接后，使用“Hadoop 命令行”图标打开 Hadoop 命令行：
 
@@ -481,16 +481,16 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 
 现在，你已经学习了如何使用 Mahout，因此可以探索通过其他方式来使用 HDInsight 上的数据：
 
-* [Hive 和 HDInsight](/documentation/articles/hdinsight-use-hive)
-* [Pig 和 HDInsight](/documentation/articles/hdinsight-use-pig)
-* [MapReduce 和 HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Hive 和 HDInsight](/documentation/articles/hdinsight-use-hive/)
+* [Pig 和 HDInsight](/documentation/articles/hdinsight-use-pig/)
+* [MapReduce 和 HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: /documentation/articles/powershell-install-configure
+[aps]: /documentation/articles/powershell-install-configure/
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[upload]: /documentation/articles/hdinsight-upload-data
+[getstarted]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[upload]: /documentation/articles/hdinsight-upload-data/
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.cn/

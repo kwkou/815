@@ -44,7 +44,7 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 - 其他管理员重置管理员自己的密码时向管理员发送电子邮件通知（在 [Azure 经典管理门户](https://manage.windowsazure.cn)的“通知”部分）
 - 通过使用租户品牌自定义功能在用户密码重置门户和密码重置电子邮件中标注你所在组织的徽标和名称（在 [Azure 经典管理门户](https://manage.windowsazure.cn)的“目录属性”部分）
 
-若要详细了解有关在组织中配置密码管理的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
+若要详细了解有关在组织中配置密码管理的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
 ## <a name="user-registration-portal"></a>用户注册门户
 在用户可以使用密码重置之前，必须使用正确的身份验证数据更新其云用户帐户，以确保他们可以通过其管理员定义的适当数量的密码重置质询。管理员还可以使用 Azure 或 Office 网络门户、DirSync/Azure AD Connect 或 Windows PowerShell 代表其用户定义此身份验证信息。
@@ -53,7 +53,7 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 
   ![][001]
 
-有关详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices)。
+有关详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices/)。
 
 ## <a name="user-password-reset-portal"></a> 用户密码重置门户
 一旦启用了自助密码重置、设置了你所在组织的自助密码重置策略并确保了你的用户在目录中具有适当的联系人数据，你所在组织中的用户将可以从使用工作或学校帐户进行登录的任何网页（如 [portal.microsoftonline.com](https://portal.partner.microsoftonline.cn)）自动重置他们自己的密码。在这些网页上，用户将看到“无法访问你的帐户?”链接。
@@ -64,7 +64,7 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 
   ![][003]
 
-若要详细了解有关用户如何重置其密码的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
+若要详细了解有关用户如何重置其密码的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
 ## <a name="user-password-change-portal"></a>用户密码更改门户
 如果用户想要更改其密码，可以随时使用密码更改门户实现此目的。用户可以通过访问面板配置文件页来访问密码更改门户，也可以通过单击 Office 365 应用程序内的“更改密码”链接进行访问。如果用户的密码过期，用户登录时会自动收到更改其密码的请求。
@@ -75,14 +75,14 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 
   ![][005]
 
-若要详细了解有关用户如何更改自己的本地 Active Directory 密码的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
+若要详细了解有关用户如何更改自己的本地 Active Directory 密码的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
 ## <a name="password-writeback-component-of-azure-ad-connect"></a>Azure AD Connect 的密码写回组件
 如果你所在组织中的用户密码源自你的本地环境（通过联合或密码同步），你可以安装 Azure AD Connect 的最新版本以便直接从云中更新这些密码。这意味着，当你的用户忘记或要修改其 AD 密码时，他们可以直接从 Web 执行此操作。密码写回在 Azure AD Connect 安装向导中的位置如下：
 
   ![][007]
 
-有关 Azure AD Connect 的详细信息，请参阅[入门：Azure AD Connect](/documentation/articles/active-directory-aadconnect)。有关“密码写回”功能的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
+有关 Azure AD Connect 的详细信息，请参阅[入门：Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。有关“密码写回”功能的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
 
 <br/> <br/> <br/>
@@ -90,14 +90,14 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) - 了解如何以系统用户的身份重置或更改自己的密码
-* [**入门**](/documentation/articles/active-directory-passwords-getting-started) - 了解如何让用户重置及更改云密码或本地密码
-* [**自定义**](/documentation/articles/active-directory-passwords-customize) - 了解如何根据组织的需求自定义服务的外观和行为
-* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices) - 了解如何快速部署且有效管理组织的密码
-* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights) - 了解集成式报告功能
-* [**常见问题**](/documentation/articles/active-directory-passwords-faq) - 获取常见问题的解答
-* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
-* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more) - 深入探索服务工作原理的技术细节
+* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password/) - 了解如何以系统用户的身份重置或更改自己的密码
+* [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
+* [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
+* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices/) - 了解如何快速部署且有效管理组织的密码
+* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights/) - 了解集成式报告功能
+* [**常见问题**](/documentation/articles/active-directory-passwords-faq/) - 获取常见问题的解答
+* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot/) - 了解如何快速排查服务的问题
+* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more/) - 深入探索服务工作原理的技术细节
 
 
 

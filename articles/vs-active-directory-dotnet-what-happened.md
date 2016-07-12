@@ -15,8 +15,8 @@
 # 我的 MVC 项目（Visual Studio Azure Active Directory 连接服务）发生了什么情况？
 
 > [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-active-directory-dotnet-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-active-directory-dotnet-what-happened)
+> - [入门](/documentation/articles/vs-active-directory-dotnet-getting-started/)
+> - [发生了什么情况](/documentation/articles/vs-active-directory-dotnet-what-happened/)
 
 
 

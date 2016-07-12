@@ -241,10 +241,10 @@ ALTER TABLE [dbo].[FactInternetSales_20000101_20010101] SWITCH PARTITION 2 TO  [
 <!--Image references-->
 
 <!--Article references-->
-[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas
-[Table partitioning]: /documentation/articles/sql-data-warehouse-develop-table-partitions
-[Concurrency]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[管理]: /documentation/articles/sql-data-warehouse-manage-monitor
+[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[Table partitioning]: /documentation/articles/sql-data-warehouse-develop-table-partitions/
+[Concurrency]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[管理]: /documentation/articles/sql-data-warehouse-manage-monitor/
 
 <!--MSDN references-->
 [ALTER INDEX]: https://msdn.microsoft.com/zh-cn/library/ms188388.aspx

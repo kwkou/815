@@ -26,8 +26,8 @@
 
 ## 相关文章
 
-- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
-- [在 Azure 自动化中编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook)
-- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
+- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
+- [在 Azure 自动化中编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook/)
+- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
 
 <!---HONumber=Mooncake_0307_2016-->

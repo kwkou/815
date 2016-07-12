@@ -14,9 +14,9 @@
 # 实例级公共 IP 概述
 实例级公共 IP (ILPIP) 是可直接向 VM 或角色实例而非 VM 或角色实例所在的云服务分配的公共 IP 地址。它不是用来代替分配给云服务的 VIP（虚拟 IP），而是可以用来直接连接到 VM 或角色实例的其他 IP 地址。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-network-ip-addresses-overview-arm)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-network-ip-addresses-overview-arm/)。
 
-请确保你了解 [IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-classic)在 Azure 中的工作原理。
+请确保你了解 [IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-classic/)在 Azure 中的工作原理。
 
 >[AZURE.NOTE] 在过去，ILPIP 称为 PIP，表示公共 IP。
 
@@ -120,9 +120,9 @@
 
 ## 后续步骤
 
-- 了解 [IP 寻址](/documentation/articles/virtual-network-ip-addresses-overview-classic)在经典部署模型中的工作原理。
+- 了解 [IP 寻址](/documentation/articles/virtual-network-ip-addresses-overview-classic/)在经典部署模型中的工作原理。
 
-- 了解[保留 IP](/documentation/articles/virtual-networks-reserved-public-ip)。
+- 了解[保留 IP](/documentation/articles/virtual-networks-reserved-public-ip/)。
  
 
 <!---HONumber=Mooncake_0307_2016-->

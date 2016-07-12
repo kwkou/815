@@ -27,7 +27,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 在本教程最后，你将运行两个 Windows 控制台应用程序：
 
 * **SimulatedDevice**，这是[使用 IoT 中心发送云到设备的消息]中创建的应用的修改版本，可连接到 IoT 中心、接收包含 Azure Blob URI 的云到设备消息。对于每个收到的云到设备消息，它会触发将文件上载到指定 Blob URI 的操作。
-* **SendCloudToDevice**，构建 Azure Blob URI（如[创建 SAS 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2)中所述），在云到设备消息中通过 IoT 中心将 Azure Blob URI 发送到模拟设备，然后接收其传送确认。
+* **SendCloudToDevice**，构建 Azure Blob URI（如[创建 SAS 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)中所述），在云到设备消息中通过 IoT 中心将 Azure Blob URI 发送到模拟设备，然后接收其传送确认。
 
 > [AZURE.NOTE] IoT 中心通过 Azure IoT 设备 SDK 对许多设备平台和语言（包括 C、Java 和 Javascript）提供 SDK 支持。有关如何将设备连接到本教程中的代码（通常是连接到 Azure IoT 中心）的逐步说明，请参阅 [Azure IoT 开发人员中心]。适用于 Java 和 Node 的 Azure IoT 服务 SDK 即将推出。
 
@@ -73,24 +73,24 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 <!-- Links -->
 
-[Send Cloud-to-Device messages with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-c2d
+[Send Cloud-to-Device messages with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 
 [Azure 门户]: https://manage.windowsazure.cn
 
 
 [Hadoop]: /documentation/services/hdinsight/
 
-[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[使用 IoT 中心发送云到设备的消息]: /documentation/articles/iot-hub-csharp-csharp-c2d
-[处理设备到云的消息]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
-[Uploading files from devices]: /documentation/articles/iot-hub-csharp-csharp-file-upload
+[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[使用 IoT 中心发送云到设备的消息]: /documentation/articles/iot-hub-csharp-csharp-c2d/
+[处理设备到云的消息]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
+[Uploading files from devices]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 
-[IoT 中心概述]: /documentation/articles/iot-hub-what-is-iot-hub
-[IoT 中心指南]: /documentation/articles/iot-hub-guidance
-[ IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide
-[IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide
-[IoT Hub Supported Devices]: /documentation/articles/iot-hub-supported-devices
-[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[IoT 中心概述]: /documentation/articles/iot-hub-what-is-iot-hub/
+[IoT 中心指南]: /documentation/articles/iot-hub-guidance/
+[ IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide/
+[IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide/
+[IoT Hub Supported Devices]: /documentation/articles/iot-hub-supported-devices/
+[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [Azure IoT 开发人员中心]: /develop/iot
 

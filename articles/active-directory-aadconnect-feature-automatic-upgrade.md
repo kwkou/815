@@ -71,10 +71,10 @@
 | UpgradeNotSupportedCustomizedSyncRules | 你已将自己的自定义规则添加到配置中。 |
 | UpgradeNotSupportedMetaverseSizeExceeeded | Metaverse 中的对象超过 100,000 个。 |
 | UpgradeNotSupportedMultiForestSetup | 你正在连接到多个林。快速安装只会连接到一个林。 |
-| UpgradeNotSupportedNonMsolAccount | [AD 连接器帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions#active-directory-account)不再是默认的 MSOL\_ 帐户。
-| UpgradeNotSupportedStagingModeEnabled | 服务器已设置为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)。 |
+| UpgradeNotSupportedNonMsolAccount | [AD 连接器帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#active-directory-account)不再是默认的 MSOL\_ 帐户。
+| UpgradeNotSupportedStagingModeEnabled | 服务器已设置为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)。 |
 
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

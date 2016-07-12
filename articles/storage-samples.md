@@ -20,7 +20,7 @@
 
 若要浏览 .NET 示例，请从 NuGet 下载 [.NET 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。同时也在 [Azure SDK for.NET](/downloads/) 中提供 .NET 存储客户端库。 
 
-* [五分钟内开始使用 Azure 存储空间](/documentation/articles/storage-getting-started-guide)
+* [五分钟内开始使用 Azure 存储空间](/documentation/articles/storage-getting-started-guide/)
 * [使用 Azure 存储管理并发 - 示例应用程序](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)
 * [Blob 使用入门](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataBlobStorage)
 * [表使用入门](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataTableStorage)

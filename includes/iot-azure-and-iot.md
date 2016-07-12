@@ -54,7 +54,7 @@ IoT 解决方案可以包含自动反馈循环。例如，后端中的分析模�
 
 [lnk-machinelearning]: /services/machine-learning/
 [Azure IoT Suite]: http://azure.microsoft.com/solutions/iot
-[lnk-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway
+[lnk-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 
 <!---HONumber=Mooncake_0321_2016-->

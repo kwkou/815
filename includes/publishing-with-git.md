@@ -2,7 +2,7 @@
 
 在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Web Apps（在 Azure 中，此发布方法称为**本地 Git**）。你还将了解如何启用从存储库站点（例如，GitHub 或 Mercurial）进行的部署。
 
-> [AZURE.NOTE] 在使用[适用于 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/xplat-cli-install)创建 Web 应用时，将自动执行本文中所述的许多 Git 命令。
+> [AZURE.NOTE] 在使用[适用于 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/xplat-cli-install/)创建 Web 应用时，将自动执行本文中所述的许多 Git 命令。
 
 ## <a id="Step1"></a>步骤 1：安装 Git
 
@@ -259,8 +259,8 @@ Web Apps 支持用各种编程语言创建的应用程序。对于此示例，�
 [Azure 经典管理门户]: https://manage.windowsazure.cn
 [Git website]: http://git-scm.com
 [安装 Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
-[如何使用适用于 Azure 的 PowerShell]: /documentation/articles/powershell-install-configure
-[如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli-install
+[如何使用适用于 Azure 的 PowerShell]: /documentation/articles/powershell-install-configure/
+[如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli-install/
 [Git 文档]: http://git-scm.com/documentation
 
 [portal-select-website]: ./media/publishing-with-git/git-select-website.png

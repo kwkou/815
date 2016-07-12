@@ -41,6 +41,6 @@
 
 ## 后续步骤
 
-[如何管理 VNet 使用的 DNS 服务器](/documentation/articles/virtual-networks-manage-dns-in-vnet)
+[如何管理 VNet 使用的 DNS 服务器](/documentation/articles/virtual-networks-manage-dns-in-vnet/)
 
 <!---HONumber=Mooncake_0523_2016-->

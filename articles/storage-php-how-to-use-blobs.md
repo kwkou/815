@@ -288,12 +288,12 @@
 - 访问 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - 参阅 [PHP 块 Blob 示例](https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/BlockBlobExample.php)。
 - 参阅 [PHP 页 Blob 示例](https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php)。
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
  
 有关详细信息，另请参阅 [PHP 开发人员中心](/develop/php/)。
 
 
-[download]: /documentation/articles/php-download-sdk
+[download]: /documentation/articles/php-download-sdk/
 [container-acl]: http://msdn.microsoft.com/zh-cn/library/azure/dd179391.aspx
 [error-codes]: http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 [file_get_contents]: http://php.net/file_get_contents

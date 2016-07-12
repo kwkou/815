@@ -26,7 +26,7 @@
 2. **登录到 Azure 经典管理门户。** 若要创建新的流量管理器配置文件，请单击经典管理门户左下角的“新建”，单击“网络服务”>“流量管理器”，然后单击“快速创建”，以开始配置你的配置文件。
 3. **配置 DNS 前缀。** 为流量管理器配置文件提供唯一的 DNS 前缀名称。可以只为流量管理器域名指定前缀。
 4. **选择订阅。** 选择相应的 Azure 订阅。每个配置文件都与单个订阅关联。如果你只有一个订阅，则不会显示此选项。
-5. **选择流量路由方法。** 在“流量路由策略”中选择流量路由方法。有关流量路由方法的详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
+5. **选择流量路由方法。** 在“流量路由策略”中选择流量路由方法。有关流量路由方法的详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
 6. **单击“创建”以创建新的配置文件**。完成配置文件配置后，你可以在 Azure 经典管理门户中的“流量管理器”窗格中找到你的配置文件。
 7. **在 Azure 经典管理门户中配置终结点、监视和其他设置。** 由于使用“快速创建”只能配置基本设置，因此需要配置其他设置（例如终结点列表和终结点故障转移顺序）来完成所需的配置。 
 
@@ -46,7 +46,7 @@
 
 1. 选择你要启用的配置文件。若要选择配置文件，请在“流量管理器”页面上，通过单击配置文件名称旁边的列突出显示该配置文件。不要单击配置文件的名称或名称旁边的箭头，因为这会将你带到配置文件的设置页面。
 2. 在选择配置文件后，单击页面底部的“启用”。
-3. 修改你的 Internet DNS 服务器上的 DNS 资源记录以使用 CNAME 记录类型，这会将你的公司域名映射到你的流量管理器配置文件的域名。有关详细信息，请参阅[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain)。
+3. 修改你的 Internet DNS 服务器上的 DNS 资源记录以使用 CNAME 记录类型，这会将你的公司域名映射到你的流量管理器配置文件的域名。有关详细信息，请参阅[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain/)。
 4. 流量将重新开始定向到终结点。
 
 ### 删除配置文件
@@ -71,14 +71,14 @@
 
 ## 后续步骤
 
-[添加终结点](/documentation/articles/traffic-manager-endpoints)
+[添加终结点](/documentation/articles/traffic-manager-endpoints/)
 
-[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)
+[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)
 
-[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
+[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)
 
-[配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method)
+[配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method/)
 
-[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 
 <!---HONumber=Mooncake_1221_2015-->

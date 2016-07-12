@@ -32,12 +32,12 @@ Service Fabric 适用于创建“基于云开发”的服务，该服务可以�
 
 Service Fabric 为由这些微服务组成的应用程序提供全面的运行时和生命周期管理功能。它在 Service Fabric 群集间部署和激活的容器内部托管微服务。就像通过从 VM 移动到容器可能出现的密度的数量级增长一样，当从容器移动到微服务时，也可能出现类似的密度数量级增长。例如，在 Service Fabric 上构建的单个 Azure SQL 数据库群集包含数百台计算机，这些计算机运行数以万计的容器，这些容器总共托管数十万个数据库。（每个数据库都是一个 Service Fabric 有状态微服务。） 这同样适用于事件中心和上面提到的其他服务。这就是可使用“超大规模”一词来描述 Service Fabric 功能的原因。如果容器为你提供了高密度，那么微服务可为你提供超大规模。
 
-有关微服务方法的详细信息，请阅读 [Why a microservices approach to building applications?（为什么通过微服务的方法生成应用程序？）](/documentation/articles/service-fabric-overview-microservices)
+有关微服务方法的详细信息，请阅读 [Why a microservices approach to building applications?（为什么通过微服务的方法生成应用程序？）](/documentation/articles/service-fabric-overview-microservices/)
 
 ## 随地创建 Service Fabric 群集
 你可以在要部署应用程序的许多环境中创建 Service Fabric 群集。该环境可以是 Azure、本地、Windows Server 或 Linux。此外，SDK 中的开发环境与不包括模拟器的生产环境相同。换而言之，如果 SDK 在本地开发群集上运行，将部署到其他环境中的相同群集。
 
-有关详细信息，请阅读 [Deploy anywhere on Windows Server or Linux with Service Fabric（使用 Service Fabric 在 Windows Server 和 Linux 上进行随地部署）](/documentation/articles/service-fabric-deploy-anywhere)
+有关详细信息，请阅读 [Deploy anywhere on Windows Server or Linux with Service Fabric（使用 Service Fabric 在 Windows Server 和 Linux 上进行随地部署）](/documentation/articles/service-fabric-deploy-anywhere/)
 
 ![Service Fabric 平台][Image1]
 
@@ -51,7 +51,7 @@ Service Fabric 允许你构建包含微服务的应用程序。无状态微服�
 
 2. 简化应用程序设计，因为有状态微服务无需额外的队列和缓存。解决纯无状态应用程序的可用性和延迟需求时通常需要这些功能。由于有状态服务原本就具有高可用性和低延迟，这意味着在应用程序中要作为一个整体进行管理的移动部件更少。
 
-有关使用 Service Fabric 的应用程序模式的详细信息，请阅读适用于你服务的 [Application scenarios（应用程序方案）](/documentation/articles/service-fabric-application-scenarios) 和 [Choosing a programming model framework（选择编程模型框架）](/documentation/articles/service-fabric-choose-framework)。
+有关使用 Service Fabric 的应用程序模式的详细信息，请阅读适用于你服务的 [Application scenarios（应用程序方案）](/documentation/articles/service-fabric-application-scenarios/) 和 [Choosing a programming model framework（选择编程模型框架）](/documentation/articles/service-fabric-choose-framework/)。
 
 ## 应用程序生命周期管理
 Service Fabric 为云应用程序的整个应用程序生命周期管理 (ALM) 提供一流的支持：从开发到部署、到日常管理和维护，再到最终解除授权。
@@ -60,7 +60,7 @@ Service Fabric 为云应用程序的整个应用程序生命周期管理 (ALM) �
 
 大多数应用程序包含无状态和有状态微服务的组合，以及一起部署的其他可执行文件/运行时。通过在应用程序和已打包微服务上采用强类型，使用 Service Fabric 能够部署多个应用程序实例，并且每个都可以单独进行管理和升级。重要的是，Service Fabric 能够部署任何可执行文件或运行时并使其可靠。例如，它可以用于部署 ASP.NET Core 1、node.js、Java VM、脚本或组成你的应用程序的任何其他内容。
 
-有关应用程序生命周期管理的详细信息，请阅读 [Application lifecycle（应用程序生命周期）](/documentation/articles/service-fabric-application-lifecycle)；有关部署任何代码的详细信息，请参阅 [Deploy a guest executable（部署来宾可执行文件）](/documentation/articles/service-fabric-deploy-existing-app)
+有关应用程序生命周期管理的详细信息，请阅读 [Application lifecycle（应用程序生命周期）](/documentation/articles/service-fabric-application-lifecycle/)；有关部署任何代码的详细信息，请参阅 [Deploy a guest executable（部署来宾可执行文件）](/documentation/articles/service-fabric-deploy-existing-app/)
 
 ## 关键功能
 通过使用 Service Fabric，你可以：
@@ -99,10 +99,10 @@ Service Fabric 为云应用程序的整个应用程序生命周期管理 (ALM) �
 ## 后续步骤
 
 * 更多相关信息：
-	* [为什么通过微服务的方法构建应用程序？](/documentation/articles/service-fabric-overview-microservices)
-	* [术语概述](/documentation/articles/service-fabric-technical-overview)
-* 设置 Service Fabric [开发环境](/documentation/articles/service-fabric-get-started)  
-* 为服务[选择编程模型框架](/documentation/articles/service-fabric-choose-framework)
+	* [为什么通过微服务的方法构建应用程序？](/documentation/articles/service-fabric-overview-microservices/)
+	* [术语概述](/documentation/articles/service-fabric-technical-overview/)
+* 设置 Service Fabric [开发环境](/documentation/articles/service-fabric-get-started/)  
+* 为服务[选择编程模型框架](/documentation/articles/service-fabric-choose-framework/)
 
 [Image1]: ./media/service-fabric-overview/Service-Fabric-Overview.png
 

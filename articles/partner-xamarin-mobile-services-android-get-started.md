@@ -123,9 +123,9 @@
 
 
 <!-- URLs. -->
-[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-data
-[脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data
-[身份验证入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-users
+[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-data/
+[脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data/
+[身份验证入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-users/
 
 [Xamarin.Android]: http://xamarin.com/download
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533

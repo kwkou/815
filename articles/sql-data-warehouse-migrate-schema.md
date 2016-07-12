@@ -126,9 +126,9 @@ SQL 数据仓库支持常见的业务数据类型：
 <!--Image references-->
 
 <!--Article references-->
-[迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code
-[迁移数据]: /documentation/articles/sql-data-warehouse-migrate-data
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code/
+[迁移数据]: /documentation/articles/sql-data-warehouse-migrate-data/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 

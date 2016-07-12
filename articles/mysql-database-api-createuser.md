@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-api-createuser)
-- [English](/documentation/articles/mysql-database-enus-api-createuser)
+- [中文](/documentation/articles/mysql-database-api-createuser/)
+- [English](/documentation/articles/mysql-database-enus-api-createuser/)
 
 #创建用户
 

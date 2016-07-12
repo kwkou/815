@@ -16,7 +16,7 @@
 作为 Azure Site Recovery 部署的一部分，你需要确定复制和带宽要求。站点恢复的 Hyper-V Capacity Planner 工具可帮助你确定 Hyper-V 虚拟机复制的复制要求和带宽要求。
 
 
-本文介绍如何运行 Hyper-V Capacity Planner 工具。此工具应与[站点恢复容量计划](/documentation/articles/site-recovery-capacity-planner)中所述的其他容量计划工具和信息一起使用。
+本文介绍如何运行 Hyper-V Capacity Planner 工具。此工具应与[站点恢复容量计划](/documentation/articles/site-recovery-capacity-planner/)中所述的其他容量计划工具和信息一起使用。
 
 
 ## 开始之前
@@ -127,7 +127,7 @@
 
 - 有关该工具的详细信息，请阅读随工具下载的文档。
 - 观看 Keith Mayer 的 [TechNet 博客](http://blogs.technet.com/b/keithmayer/archive/2014/02/27/guided-hands-on-lab-capacity-planner-for-windows-server-2012-hyper-v-replica.aspx)中的工具演练。
-- 获取本地到本地 Hyper-V 复制的性能测试[结果](/documentation/articles/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises)
+- 获取本地到本地 Hyper-V 复制的性能测试[结果](/documentation/articles/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises/)
 
 
 
@@ -135,10 +135,10 @@
 
 你已完成容量计划，可以开始部署站点恢复了：
 
-- [设置本地 VMM 站点与 Azure 之间的保护](/documentation/articles/site-recovery-vmm-to-azure)
-- [在本地 Hyper-V 站点与 Azure 之间设置保护](/documentation/articles/site-recovery-hyper-v-site-to-azure)
-- [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm)
-- [使用 SAN 在两个本地 VMM 站点之间设置保护](/documentation/articles/site-recovery-vmm-san)
-- [使用单个 VMM 服务器设置保护](/documentation/articles/site-recovery-single-vmm)
+- [设置本地 VMM 站点与 Azure 之间的保护](/documentation/articles/site-recovery-vmm-to-azure/)
+- [在本地 Hyper-V 站点与 Azure 之间设置保护](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
+- [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm/)
+- [使用 SAN 在两个本地 VMM 站点之间设置保护](/documentation/articles/site-recovery-vmm-san/)
+- [使用单个 VMM 服务器设置保护](/documentation/articles/site-recovery-single-vmm/)
 
 <!---HONumber=Mooncake_0328_2016-->

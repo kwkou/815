@@ -365,5 +365,5 @@ LAMP 通常表示 Linux+Apache+MySQL/MariaDB+Perl/PHP/Python，LAMP 的各个组
 
 
 
-如果您想使用您自己的域名作为网站的 URL，而不是用虚拟机的云服务名字的话，请参考[使用自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
+如果您想使用您自己的域名作为网站的 URL，而不是用虚拟机的云服务名字的话，请参考[使用自定义域名](/documentation/articles/cloud-services-custom-domain-name/)。
 

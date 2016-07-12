@@ -26,7 +26,7 @@
 - 当用户状态设置为已禁用时，该用户将不使用多重身份验证。这是默认状态。
 - 当用户状态设置为已启用时，表示该用户已启用但尚未完成注册过程。这些用户在下次登录时，系统将提示其完成注册过程。此设置不会影响非浏览器应用。所有应用将继续工作，直到注册过程完成。
 - 当用户状态设置为强制时，表示该用户可能（但不一定）已完成注册。如果他们已完成注册过程，表示他们正在使用多重身份验证。否则，在他们下次登录时，系统将提示其完成注册过程。此设置不会影响非浏览器应用。在创建并使用应用密码之前，这些应用无法工作。
-- 使用[云中的多重身份验证入门](/documentation/articles/multi-factor-authentication-get-started-cloud)一文中所述的用户通知模板，向用户发送有关采用 MFA 的电子邮件。
+- 使用[云中的多重身份验证入门](/documentation/articles/multi-factor-authentication-get-started-cloud/)一文中所述的用户通知模板，向用户发送有关采用 MFA 的电子邮件。
 
 ### 可支持性
 
@@ -47,7 +47,7 @@
 
 ## 其他资源
 尽管本文重点介绍了 Azure MFA(多重身份验证)的一些最佳实践，但其他一些资源也可以帮助你规划MFA(多重身份验证)的部署。以下列表提供了在此过程中也许能够帮到你的一些重要文章：
-- [Azure 多重身份验证的设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)
-- [Azure 多重身份验证常见问题](/documentation/articles/multi-factor-authentication-faq)
+- [Azure 多重身份验证的设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time/)
+- [Azure 多重身份验证常见问题](/documentation/articles/multi-factor-authentication-faq/)
 
 <!---HONumber=82-->

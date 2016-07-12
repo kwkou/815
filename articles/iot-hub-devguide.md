@@ -79,8 +79,8 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 以下是可以配合 IoT 中心公开的事件中心兼容终结点使用的 SDK 和集成项目列表：
 
 * [Java 事件中心客户端](https://github.com/hdinsight/eventhubs-client)
-* [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
-* [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-eventhub-streaming)
+* [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
+* [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
 
 ## 设备标识注册表
 
@@ -579,43 +579,43 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 [img-lifecycle]: ./media/iot-hub-devguide/lifecycle.png
 [img-eventhubcompatible]: ./media/iot-hub-devguide/eventhubcompatible.png
 
-[lnk-compatibility]: /documentation/articles/iot-hub-tested-configurations
-[lnk-apis-sdks]: /documentation/articles/iot-hub-sdks-summary
+[lnk-compatibility]: /documentation/articles/iot-hub-tested-configurations/
+[lnk-apis-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-pricing]: /pricing/details/iot-hub
 [lnk-resource-provider-apis]: https://msdn.microsoft.com/zh-cn/library/mt548492.aspx
 
-[lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens
+[lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens/
 [lnk-azure-gateway-guidance]: /documentation/articles/iot-hub-guidance/#field-gateways
 [lnk-guidance-provisioning]: /documentation/articles/iot-hub-guidance/#provisioning
-[lnk-guidance-scale]: /documentation/articles/iot-hub-scaling
+[lnk-guidance-scale]: /documentation/articles/iot-hub-scaling/
 [lnk-guidance-security]: /documentation/articles/iot-hub-guidance/#customauth
 [lnk-guidance-heartbeat]: /documentation/articles/iot-hub-guidance/#heartbeat
 
-[lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[lnk-guidance]: /documentation/articles/iot-hub-guidance
-[lnk-getstarted-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d
+[lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[lnk-guidance]: /documentation/articles/iot-hub-guidance/
+[lnk-getstarted-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 
 [lnk-amqp]: https://www.amqp.org/
 [lnk-mqtt]: http://mqtt.org/
 [lnk-websockets]: https://tools.ietf.org/html/rfc6455
-[lnk-arm]: /documentation/articles/resource-group-overview
+[lnk-arm]: /documentation/articles/resource-group-overview/
 [lnk-azure-resource-manager]: /documentation/articles/resource-group-overview/
 [lnk-cbs]: https://www.oasis-open.org/committees/download.php/50506/amqp-cbs-v1%200-wd02%202013-08-12.doc
 [lnk-createuse-sas]: /documentation/articles/storage-dotnet-shared-access-signature-part-2/
 [lnk-event-hubs-publisher-policy]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab
 [lnk-event-hubs]: /documentation/services/event-hubs/
 [lnk-event-hubs-consuming-events]: /documentation/articles/event-hubs-programming-guide/#event-consumers
-[lnk-guidance-d2c-processing]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
+[lnk-guidance-d2c-processing]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [lnk-management-portal]: https://manage.windowsazure.cn
 [lnk-rfc7232]: https://tools.ietf.org/html/rfc7232
 [lnk-sasl-plain]: http://tools.ietf.org/html/rfc4616
 [lnk-servicebus]: /documentation/services/service-bus/
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
 [lnk-iotdev]: /develop/iot/
-[lnk-bulk-identity]: /documentation/articles/iot-hub-bulk-identity-mgmt
+[lnk-bulk-identity]: /documentation/articles/iot-hub-bulk-identity-mgmt/
 [lnk-eventhub-partitions]: /documentation/articles/event-hubs-overview/#partitions
-[lnk-manage]: /documentation/articles/iot-hub-manage-through-portal
-[lnk-mqtt-support]: /documentation/articles/iot-hub-mqtt-support
+[lnk-manage]: /documentation/articles/iot-hub-manage-through-portal/
+[lnk-mqtt-support]: /documentation/articles/iot-hub-mqtt-support/
 [lnk-throttle-blog]: https://azure.microsoft.com/blog/iot-hub-throttling-and-you/
 <!---HONumber=Mooncake_0627_2016-->

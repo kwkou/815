@@ -186,7 +186,7 @@
 
 <!--Link references-->
 [Python 开发人员中心]: /develop/python/
-[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
+[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs/
 <!--External Link references-->
 [Azure 经典管理门户]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs

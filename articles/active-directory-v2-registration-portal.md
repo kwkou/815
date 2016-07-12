@@ -16,7 +16,7 @@
 本文档提供可在 Microsoft 应用注册门户 [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中找到的各种功能的上下文和说明。
 
 ## 我的应用程序
-此列表包含所有已注册且可与 Azure AD v2.0 终结点搭配使用的应用程序。这些应用程序能够让用户使用个人的 Microsoft 帐户和工作/学校帐户从 Azure Active Directory 登录。若要了解有关 Azure AD v2.0 终结点的详细信息，请参阅我们的 [v2.0 概述](/documentation/articles/active-directory-appmodel-v2-overview)。这些应用程序也可以用来与 Microsoft 帐户身份验证终结点 https://login.live.com 集成。
+此列表包含所有已注册且可与 Azure AD v2.0 终结点搭配使用的应用程序。这些应用程序能够让用户使用个人的 Microsoft 帐户和工作/学校帐户从 Azure Active Directory 登录。若要了解有关 Azure AD v2.0 终结点的详细信息，请参阅我们的 [v2.0 概述](/documentation/articles/active-directory-appmodel-v2-overview/)。这些应用程序也可以用来与 Microsoft 帐户身份验证终结点 https://login.live.com 集成。
 
 ## Live SDK 应用程序
 此列表包含所有已注册且只能与 Microsoft 帐户搭配使用的应用程序。在任何情况下，它们都不能与 Azure Active Directory 搭配使用。你可以在此处找到之前已向 MSA 开发人员门户 (https://account.live.com/developers/applications) 注册的所有应用程序。你之前曾在 https://account.live.com/developers/applications 执行的所有函数现在均可在此新门户 https://apps.dev.microsoft.com 中执行。如果你对 Microsoft 帐户应用程序还有别的疑问，请与我们联系。

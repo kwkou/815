@@ -18,23 +18,23 @@
 # 在使用经典部署模型创建的运行 Windows Server 2012 R2 的虚拟机上安装 MySQL
 
 
-[MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 经典管理门户](http://manage.windowsazure.cn)，你可以从映像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。有关如何在 Linux 上安装 MySQL 的说明，请参阅：[如何在 Azure 上安装 MySQL](/documentation/articles/virtual-machines-linux-mysql-install)。
+[MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 经典管理门户](http://manage.windowsazure.cn)，你可以从映像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。有关如何在 Linux 上安装 MySQL 的说明，请参阅：[如何在 Azure 上安装 MySQL](/documentation/articles/virtual-machines-linux-mysql-install/)。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 创建运行 Windows Server 2012 R2 的虚拟机
 
-如果你还没拥有运行 Windows Server 2012 R2 的虚拟机，你可以使用这个[教程](/documentation/articles/virtual-machines-windows-classic-tutorial)来创建虚拟机。
+如果你还没拥有运行 Windows Server 2012 R2 的虚拟机，你可以使用这个[教程](/documentation/articles/virtual-machines-windows-classic-tutorial/)来创建虚拟机。
 
 ## 附加数据磁盘
 
 创建虚拟机后，你可以选择性地附加其他数据磁盘。生产型负荷建议执行此操作，这样做还可以避免包含操作系统的 OS 驱动器 (C:) 空间不足。
 
-请参阅[如何将数据磁盘附加到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk)，然后按说明附加一个空磁盘。将主机缓存设置设置为“无”或“只读”。
+请参阅[如何将数据磁盘附加到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk/)，然后按说明附加一个空磁盘。将主机缓存设置设置为“无”或“只读”。
 
 ## 登录到虚拟机
 
-接下来，你将[登录到虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon)，以便安装 MySQL。
+接下来，你将[登录到虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon/)，以便安装 MySQL。
 
 ##在虚拟机上安装和运行 MySQL Community Server
 
@@ -82,7 +82,7 @@
 如果你希望 MySQL Server 服务可供 Internet 上的 MySQL 客户端计算机使用，则必须为 MySQL Server 服务所侦听的 TCP 端口配置一个终结点，并创建更多 Windows 防火墙规则。该端口为 TCP 端口 3306，除非你在“类型和网络”页上指定了其他端口（前一过程的步骤 10）。
 
 
-> [AZURE.NOTE]你应该仔细考虑这样做的安全隐患，因为这会使 MySQL Server 服务可供 Internet 上的所有计算机使用。你可以通过访问控制列表 (ACL) 定义一组允许使用终结点的源 IP 地址。有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+> [AZURE.NOTE]你应该仔细考虑这样做的安全隐患，因为这会使 MySQL Server 服务可供 Internet 上的所有计算机使用。你可以通过访问控制列表 (ACL) 定义一组允许使用终结点的源 IP 地址。有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
 
 若要配置 MySQL Server 服务终结点，请执行以下操作：

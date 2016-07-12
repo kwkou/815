@@ -87,7 +87,7 @@ Azure 缓存性能计数器数据和其他诊断信息。此数据适用于在�
 
 ## 先决条件
 
-本部分假定你已将诊断监视器导入应用程序中，并且已将诊断配置文件（SDK 2.4 及更低版本中的 diagnostics.wadcfg，或 SDK 2.5 及更高版本中的 diagnostics.wadcfgx）添加到 Visual Studio 解决方案中。请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)中的步骤 1 和 2 以获取详细信息。
+本部分假定你已将诊断监视器导入应用程序中，并且已将诊断配置文件（SDK 2.4 及更低版本中的 diagnostics.wadcfg，或 SDK 2.5 及更高版本中的 diagnostics.wadcfgx）添加到 Visual Studio 解决方案中。请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)中的步骤 1 和 2 以获取详细信息。
 
 ## 步骤 1：通过性能计数器收集和存储数据
 
@@ -236,7 +236,7 @@ Azure 诊断代理会在启动后一分钟刷新 .wadcfg 文件中的性能计�
 
 ## 步骤 3：查询性能计数器数据
 
-在应用程序部署完成并运行后，诊断监视器将开始收集性能计数器并将该数据保存到 Azure 存储空间。你使用 Cerebrata 提供的工具（例如 Visual Studio 中的服务器资源管理器、[Azure 存储资源管理器](http://azurestorageexplorer.codeplex.com)或 [Azure 诊断管理器](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx)）查看 WADPerformanceCountersTable 表中的性能计数器数据。你还可以使用 [C#](/documentation/articles/storage-dotnet-how-to-use-tables)、[Java](/documentation/articles/storage-java-how-to-use-table-storage)、[Node.js](/documentation/articles/storage-nodejs-how-to-use-table-storage)、[Python](/documentation/articles/storage-python-how-to-use-table-storage)、[Ruby](/documentation/articles/storage-ruby-how-to-use-table-storage) 或 [PHP](/documentation/articles/storage-php-how-to-use-table-storage) 以编程方式查询表服务。
+在应用程序部署完成并运行后，诊断监视器将开始收集性能计数器并将该数据保存到 Azure 存储空间。你使用 Cerebrata 提供的工具（例如 Visual Studio 中的服务器资源管理器、[Azure 存储资源管理器](http://azurestorageexplorer.codeplex.com)或 [Azure 诊断管理器](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx)）查看 WADPerformanceCountersTable 表中的性能计数器数据。你还可以使用 [C#](/documentation/articles/storage-dotnet-how-to-use-tables/)、[Java](/documentation/articles/storage-java-how-to-use-table-storage/)、[Node.js](/documentation/articles/storage-nodejs-how-to-use-table-storage/)、[Python](/documentation/articles/storage-python-how-to-use-table-storage/)、[Ruby](/documentation/articles/storage-ruby-how-to-use-table-storage/) 或 [PHP](/documentation/articles/storage-php-how-to-use-table-storage/) 以编程方式查询表服务。
 
 以下 C# 示例显示针对 WADPerformanceCountersTable 表的简单查询并将诊断数据保存到 CSV 文件中。将性能计数器保存到 CSV 文件后，你可以使用 Microsoft Excel 中的图形功能或使用其他一些工具来使数据可视化。请务必添加对 Microsoft.WindowsAzure.Storage.dll（它包含在 2012 年 10 月版的 Azure SDK for .NET 和更高版本中）的引用。程序集安装在 %Program Files%\\Microsoft SDKs\\Azure.NET SDK\\version-num\\ref\\ 目录中。
 
@@ -312,6 +312,6 @@ Azure 诊断代理会在启动后一分钟刷新 .wadcfg 文件中的性能计�
 
 
 ## 后续步骤
-[查看有关 Azure 诊断的其他文章](/documentation/articles/azure-diagnostics)
+[查看有关 Azure 诊断的其他文章](/documentation/articles/azure-diagnostics/)
 
 <!---HONumber=Mooncake_0328_2016-->

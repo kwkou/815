@@ -93,7 +93,7 @@
 
 ## 参考
 
-- [删除存储帐户](/documentation/articles/storage-create-storage-account#delete-a-storage-account)
+- [删除存储帐户](/documentation/articles/storage-create-storage-account/#delete-a-storage-account)
 - [如何在 Azure（PowerShell）中中断 Blob 存储的锁定租约](https://gallery.technet.microsoft.com/scriptcenter/How-to-break-the-locked-c2cd6492)
 
 <!---HONumber=Mooncake_0405_2016-->

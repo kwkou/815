@@ -123,9 +123,9 @@ ClusterManifest.xml
 升级期间还会发生另一种情况，那就是群集资源管理器对正在升级的实体关闭平衡。因此，如果你有两个不同的应用程序实例并在其中一个实例上开始升级，则该应用程序实例的平衡将会暂停，但另一个不会。阻止反应式平衡可防止对升级本身做出不必要的反应（“哎呀！ 这是一个空节点！ 最好在其中填充各种内容！”），因此会阻止群集中的服务额外进行大量的移动，而这种移动必须在完成升级后服务需要移回节点时撤消。如果有问题的升级是群集升级，则整个群集在升级期间将暂停平衡（约束检查 – 确保强制实施规则 – 保持活动）。
 
 ### 宽松规则
-在升级期间，即使群集整体相当受限或已满，通常你还是想要完成升级。实际上，我们已讨论过处理方式，但这在升级期间甚至更加重要，因为随着升级延伸到整个群集，每次通常有 5% 到 20% 的群集停机，而该工作负荷必须迁移到某处。这就是[缓冲容量](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description#buffered-capacity)概念真正派上用场的地方 – 尽管在正常操作期间遵守缓冲容量（留出一些可用空间），但资源管理器将在升级期间填满总容量（占用缓冲区）。
+在升级期间，即使群集整体相当受限或已满，通常你还是想要完成升级。实际上，我们已讨论过处理方式，但这在升级期间甚至更加重要，因为随着升级延伸到整个群集，每次通常有 5% 到 20% 的群集停机，而该工作负荷必须迁移到某处。这就是[缓冲容量](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/#buffered-capacity)概念真正派上用场的地方 – 尽管在正常操作期间遵守缓冲容量（留出一些可用空间），但资源管理器将在升级期间填满总容量（占用缓冲区）。
 
 ## 后续步骤
-- [获取有关 Service Fabric 群集资源管理器的简介](/documentation/articles/service-fabric-cluster-resource-manager-introduction)以帮助自己入门
+- [获取有关 Service Fabric 群集资源管理器的简介](/documentation/articles/service-fabric-cluster-resource-manager-introduction/)以帮助自己入门
 
 <!---HONumber=Mooncake_0627_2016-->

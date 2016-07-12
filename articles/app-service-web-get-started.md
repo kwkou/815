@@ -30,7 +30,7 @@
 ##<a name="Prerequisites"></a> 先决条件
 
 - [安装 Git](http://www.git-scm.com/downloads)。 
-- [安装 Azure CLI](/documentation/articles/xplat-cli-install)。 
+- [安装 Azure CLI](/documentation/articles/xplat-cli-install/)。 
 - 获取 Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 部署 Web 应用
@@ -120,6 +120,6 @@ Azure Web 应用的经典管理门户页提供了一组丰富的设置和工具�
 
 ## 后续步骤
 
-- 除了使用 Git 和 Azure CLI 以外，还可以使用其他方式将 Web 应用部署到 Azure（请参阅 [Deploy your app to Azure Web App（将你的应用部署到 Azure Web 应用）](/documentation/articles/web-sites-deploy)）。根据你的语言框架找到所需的开发和部署步骤，只需在本文顶部选择你的框架即可。
+- 除了使用 Git 和 Azure CLI 以外，还可以使用其他方式将 Web 应用部署到 Azure（请参阅 [Deploy your app to Azure Web App（将你的应用部署到 Azure Web 应用）](/documentation/articles/web-sites-deploy/)）。根据你的语言框架找到所需的开发和部署步骤，只需在本文顶部选择你的框架即可。
 
 <!---HONumber=Mooncake_0523_2016-->

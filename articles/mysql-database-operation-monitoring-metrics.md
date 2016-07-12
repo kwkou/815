@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-operation-monitoring-metrics)
-- [English](/documentation/articles/mysql-database-enus-operation-monitoring-metrics)
+- [中文](/documentation/articles/mysql-database-operation-monitoring-metrics/)
+- [English](/documentation/articles/mysql-database-enus-operation-monitoring-metrics/)
 
 #监视MySQL 数据库 on Azure数据库
 

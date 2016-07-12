@@ -41,7 +41,7 @@
 
     ![选择日期](./media/backup-azure-restore-vms/select-date.png)
 
-    在你单击日历控件中的日期后，该日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](/documentation/articles/backup-azure-vms#consistency-of-recovery-points)。表标题在括号中显示该日期可用的恢复点数目。
+    在你单击日历控件中的日期后，该日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](/documentation/articles/backup-azure-vms/#consistency-of-recovery-points)。表标题在括号中显示该日期可用的恢复点数目。
 
     ![恢复点](./media/backup-azure-restore-vms/recovery-points.png)
 
@@ -56,7 +56,7 @@
 
         无论选取怎样的云服务名称，云服务名称都应是全局唯一的。通常，云服务名称与 [cloudservice].chinacloudapp.net 形式的面向公众的 URL 关联。如果该名称已被使用，Azure 不会允许你创建新的云服务。如果你选择创建新的云服务，它将被提供与虚拟机相同的名称，在这种情况下，选取的 VM 名称应具有充分的唯一性才能应用到关联的云服务。
 
-        我们仅在还原实例详细信息中显示与任何地缘组未关联的云服务和虚拟网络。[了解详细信息](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。
+        我们仅在还原实例详细信息中显示与任何地缘组未关联的云服务和虚拟网络。[了解详细信息](/documentation/articles/virtual-networks-migrate-to-regional-vnet/)。
 
 2. 选择 VM 的存储帐户：这是创建 VM 的必要步骤。你可以选择与 Azure 备份保管库位于相同区域的现有存储帐户。不支持区域冗余或高级存储类型的存储帐户。
 
@@ -89,7 +89,7 @@
 
 ![还原作业已完成](./media/backup-azure-restore-vms/restore-job-complete.png)
 
-还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 经典管理门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
+还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 经典管理门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
 
 ## 备份已还原的 VM
 如果将 VM 还原到的云服务与最初备份 VM 时所在的云服务同名，则还原之后，会继续备份该 VM。如果将 VM 还原到了不同的云服务或者为还原的 VM 指定了不同的名称，则系统会将此 VM 视为新 VM，因此你需要为还原的 VM 设置备份。
@@ -131,15 +131,15 @@ PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还�
 
 若要在还原磁盘后完全重新创建虚拟机，请执行以下步骤：
 
-1. 使用 [Azure 备份 PowerShell](/documentation/articles/backup-azure-vms-automation#restore-an-azure-vm) 从备份保管库还原磁盘
+1. 使用 [Azure 备份 PowerShell](/documentation/articles/backup-azure-vms-automation/#restore-an-azure-vm) 从备份保管库还原磁盘
 
 2. 使用 PowerShell cmdlet 创建负载平衡器/多个 NIC/多个保留 IP 所需的 VM 配置，并使用该配置创建具有所需配置的 VM。
-	- 创建具有[多个 NIC](/documentation/articles/virtual-networks-multiple-nics) 的 VM
+	- 创建具有[多个 NIC](/documentation/articles/virtual-networks-multiple-nics/) 的 VM
 	- 具有[多个保留 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 的 VM
   
 
 ## 后续步骤
-- [排查错误](/documentation/articles/backup-azure-vms-troubleshoot#restore)
-- [管理虚拟机](/documentation/articles/backup-azure-manage-vms)
+- [排查错误](/documentation/articles/backup-azure-vms-troubleshoot/#restore)
+- [管理虚拟机](/documentation/articles/backup-azure-manage-vms/)
 
 <!---HONumber=Mooncake_0530_2016-->

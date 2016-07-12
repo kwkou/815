@@ -113,18 +113,18 @@ Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到�
 ## 内置通信 API 选项
 Reliable Services 框架附带几个预建的通信选项。你可以根据所选的编程模型、通信框架和编写服务时使用的编程语言来决定哪个选项最适合自己。
 
-* **无特定协议：**如果没有特定的通信框架选择，但需要可以快速启动并运行协议，则你理想之选是[服务远程处理](/documentation/articles/service-fabric-reliable-services-communication-remoting)，此协议可对 Reliable Services 和 Reliable Actors 实现强类型远程过程调用。这是服务通信入门最简单、最快捷的方法。服务远程处理可处理服务地址的解析、连接、重试和错误处理。请注意，服务远程处理只能用于 C# 应用程序。
+* **无特定协议：**如果没有特定的通信框架选择，但需要可以快速启动并运行协议，则你理想之选是[服务远程处理](/documentation/articles/service-fabric-reliable-services-communication-remoting/)，此协议可对 Reliable Services 和 Reliable Actors 实现强类型远程过程调用。这是服务通信入门最简单、最快捷的方法。服务远程处理可处理服务地址的解析、连接、重试和错误处理。请注意，服务远程处理只能用于 C# 应用程序。
 
-* **HTTP**：对于与语言无关的通信，HTTP 为行业标准选择提供了在许多不同语言（Service Fabric 全都支持）中可用的工具和 HTTP 服务器。服务可以使用可用的任何 HTTP 堆栈，包括 [ASP.NET Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi)。以 C# 编写的客户端可以利用 [`ICommunicationClient` 和 `ServicePartitionClient` 类](/documentation/articles/service-fabric-reliable-services-communication)来进行服务解析、HTTP 连接和重试循环。
+* **HTTP**：对于与语言无关的通信，HTTP 为行业标准选择提供了在许多不同语言（Service Fabric 全都支持）中可用的工具和 HTTP 服务器。服务可以使用可用的任何 HTTP 堆栈，包括 [ASP.NET Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)。以 C# 编写的客户端可以利用 [`ICommunicationClient` 和 `ServicePartitionClient` 类](/documentation/articles/service-fabric-reliable-services-communication/)来进行服务解析、HTTP 连接和重试循环。
 
-* **WCF**：如果具备将 WCF 用作通信框架的现有代码，则可将 `WcfCommunicationListener` 用于服务器端，并将 `WcfCommunicationClient` 和 `ServicePartitionClient` 类用于客户端。有关更多详细信息，请参阅有关[通信堆栈的基于 WCF 的实现](/documentation/articles/service-fabric-reliable-services-communication-wcf)的此文章。
+* **WCF**：如果具备将 WCF 用作通信框架的现有代码，则可将 `WcfCommunicationListener` 用于服务器端，并将 `WcfCommunicationClient` 和 `ServicePartitionClient` 类用于客户端。有关更多详细信息，请参阅有关[通信堆栈的基于 WCF 的实现](/documentation/articles/service-fabric-reliable-services-communication-wcf/)的此文章。
 
 ## 使用自定义协议和其他通信框架
-服务可以使用任何协议或框架进行通信，无论它是 TCP 套接字上的自定义二进制协议，还是通过 [Azure 事件中心](/home/features/event-hubs/)或 [Azure IoT 中心](/home/features/iot-hub/)实现的流式处理事件。Service Fabric 提供了通信 API，你可以将通信堆栈插入其中，同时将用于发现和连接的所有工作与你分离。有关更多详细信息，请参阅有关 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication)的此文章。
+服务可以使用任何协议或框架进行通信，无论它是 TCP 套接字上的自定义二进制协议，还是通过 [Azure 事件中心](/home/features/event-hubs/)或 [Azure IoT 中心](/home/features/iot-hub/)实现的流式处理事件。Service Fabric 提供了通信 API，你可以将通信堆栈插入其中，同时将用于发现和连接的所有工作与你分离。有关更多详细信息，请参阅有关 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication/)的此文章。
 
 ## 后续步骤
 
-了解有关 [Reliable Services 通信模型](/documentation/articles/service-fabric-reliable-services-communication)中可用的概念和 API 的详细信息，然后快速开始使用[服务远程处理](/documentation/articles/service-fabric-reliable-services-communication-remoting)或深入了解如何使用[具有 OWIN 自承载的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi) 编写通信侦听器。
+了解有关 [Reliable Services 通信模型](/documentation/articles/service-fabric-reliable-services-communication/)中可用的概念和 API 的详细信息，然后快速开始使用[服务远程处理](/documentation/articles/service-fabric-reliable-services-communication-remoting/)或深入了解如何使用[具有 OWIN 自承载的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/) 编写通信侦听器。
 
 [1]: ./media/service-fabric-connect-and-communicate-with-services/serviceendpoints.png
 [2]: ./media/service-fabric-connect-and-communicate-with-services/namingservice.png

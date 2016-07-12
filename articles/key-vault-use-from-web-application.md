@@ -20,7 +20,7 @@
 **估计完成时间：**15 分钟
 
 
-有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis)
+有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)
 
 ## 先决条件 
 
@@ -30,7 +30,7 @@
 - 已在 Azure Active Directory 中注册的、有权访问你的密钥保管库的 Web 应用程序的客户端 ID 和客户端密码
 - Web 应用程序。我们将演示针对 Azure 中作为 Web 应用程序部署的 ASP.NET MVC 应用程序的步骤。 
 
-> [AZURE.NOTE] 你必须已完成 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)中列出的适用于本教程的步骤，以便获取 Web 应用程序的机密、客户端 ID 和客户端密钥的 URI。
+> [AZURE.NOTE] 你必须已完成 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)中列出的适用于本教程的步骤，以便获取 Web 应用程序的机密、客户端 ID 和客户端密钥的 URI。
 
 要访问密钥保管库的 Web 应用程序已在 Azure Active Directory 中注册，因此有权访问你的密钥保管库。如果这不是这样，请返回入门教程中的“注册应用程序”，并重复列出的步骤。
 
@@ -156,7 +156,7 @@
 
 运行这些命令后，你可以在 Azure AD 中看到该应用程序。如果你最初未看到该应用程序，可搜索“我的公司拥有的应用程序”，而不是“我的公司使用的应用程序”。
 
-若要了解有关 Azure AD 应用程序对象和 ServicePrincipal 对象的详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)
+若要了解有关 Azure AD 应用程序对象和 ServicePrincipal 对象的详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)
 
 
 

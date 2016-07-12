@@ -21,7 +21,7 @@ Azure Resource Manager 部署模型和 Azure 门户预览已弃用地缘组功�
 
 ## 使用虚拟机时，我可以使用多少存储？
 
-每个数据磁盘的容量高达 1 TB。你可以使用的数据磁盘的数目取决于虚拟机的大小。有关详细信息，请查看 [Windows](/documentation/articles/virtual-machines-windows-sizes) 或 [Linux](/documentation/articles/virtual-machines-linux-sizes) 虚拟机的大小。
+每个数据磁盘的容量高达 1 TB。你可以使用的数据磁盘的数目取决于虚拟机的大小。有关详细信息，请查看 [Windows](/documentation/articles/virtual-machines-windows-sizes/) 或 [Linux](/documentation/articles/virtual-machines-linux-sizes/) 虚拟机的大小。
 
 Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存储。每个磁盘都是一个 .vhd 文件，以页 blob 形式存储。有关定价详细信息，请参阅 [Storage Pricing Details（存储定价详细信息）](/home/features/storage/#price)。
 
@@ -29,21 +29,21 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 Azure 只支持固定的 VHD 格式的虚拟硬盘。如果你想在 Azure 中使用 VHDX，需先使用 Hyper-V 管理器或 [convert-VHD](https://technet.microsoft.com/zh-cn/library/hh848454.aspx) cmdlet 对其进行转换。完成该操作后，使用 [Add-AzureVHD](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet（在服务管理模式下）将 VHD 上传到 Azure 中的存储帐户，以便将其用于虚拟机。
 
-- 有关 Linux 说明，请参阅 [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System（创建并上传包含 Linux 操作系统的虚拟硬盘）](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)。
+- 有关 Linux 说明，请参阅 [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System（创建并上传包含 Linux 操作系统的虚拟硬盘）](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)。
 
-- 有关 Windows 说明，请参阅 [Create and upload a Windows Server VHD to Azure（创建 Windows Server VHD 并将其上传到 Azure）](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)。
+- 有关 Windows 说明，请参阅 [Create and upload a Windows Server VHD to Azure（创建 Windows Server VHD 并将其上传到 Azure）](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)。
 
 ## 这些虚拟机与 Hyper-V 虚拟机相同吗？
 
 它们在很多方面与“第 1 代”Hyper-V VM 类似，但并非完全相同。两种类型都提供虚拟化的硬件，而 VHD 格式的虚拟硬盘是兼容的。这意味着你可以在 Hyper-V 与 Azure 之间移动它们。存在以下三大区别，这有时会令 Hyper-V 用户感到惊讶：
 
 - Azure 不提供对虚拟机的控制台访问。在 VM 完成启动之前，无法对其进行访问。
-- 大多数[大小](/documentation/articles/virtual-machines-linux-sizes)的 Azure VM 只有一个虚拟网络适配器，这意味着它们也只能有一个外部 IP 地址。
+- 大多数[大小](/documentation/articles/virtual-machines-linux-sizes/)的 Azure VM 只有一个虚拟网络适配器，这意味着它们也只能有一个外部 IP 地址。
 - Azure VM 不支持第 2 代 Hyper-V VM 功能。有关这些功能的详细信息，请参阅 [Virtual Machine Specifications for Hyper-V（Hyper-V 虚拟机规范）](http://technet.microsoft.com/zh-cn/library/dn592184.aspx)和[第 2 代虚拟机概述](https://technet.microsoft.com/zh-cn/library/dn282285.aspx)。
 
 ## 这些虚拟机能否使用我现有的本地网络基础结构？
 
-对于通过经典部署模型创建的虚拟机，你可以使用 Azure 虚拟网络来扩展现有的基础结构。该方法类似于设置一个分支机构。你可以预配和管理 Azure 中的虚拟专用网络 (VPN)，并将其安全地连接到本地 IT 基础结构。有关详细信息，请参阅 [Virtual Network Overview（虚拟网络概述）](/documentation/articles/virtual-networks-overview)。
+对于通过经典部署模型创建的虚拟机，你可以使用 Azure 虚拟网络来扩展现有的基础结构。该方法类似于设置一个分支机构。你可以预配和管理 Azure 中的虚拟专用网络 (VPN)，并将其安全地连接到本地 IT 基础结构。有关详细信息，请参阅 [Virtual Network Overview（虚拟网络概述）](/documentation/articles/virtual-networks-overview/)。
 
 在创建虚拟机时，需根据需要指定虚拟机所属的网络。不能将现有虚拟机加入虚拟网络。不过，将虚拟硬盘 (VHD) 与现有虚拟机分离即可解决此问题，然后你就可以使用它来创建具有所需网络配置的新虚拟机。
 
@@ -51,17 +51,17 @@ Azure 只支持固定的 VHD 格式的虚拟硬盘。如果你想在 Azure 中�
 
 你需要通过适用于 Windows VM 的远程桌面连接或适用于 Linux VM 的安全外壳 (SSH) 建立登录虚拟机所需的远程连接。有关说明，请参阅：
 
-- [如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon)。除非将服务器配置为远程桌面服务会话主机，否则最多支持 2 个并发连接。  
-- [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-log-on)。默认情况下，SSH 允许的并发连接最多为 10 个。通过编辑配置文件，可以增大此数目。
+- [如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon/)。除非将服务器配置为远程桌面服务会话主机，否则最多支持 2 个并发连接。  
+- [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-log-on/)。默认情况下，SSH 允许的并发连接最多为 10 个。通过编辑配置文件，可以增大此数目。
 
 
-如果你遇到远程桌面或 SSH 方面的问题，请安装和使用 [VMAccess](/documentation/articles/virtual-machines-windows-extensions-features) 扩展来帮助解决问题。
+如果你遇到远程桌面或 SSH 方面的问题，请安装和使用 [VMAccess](/documentation/articles/virtual-machines-windows-extensions-features/) 扩展来帮助解决问题。
 
 Windows VM 的其他选项包括：
 
 - 在 Azure 经典管理门户中找到 VM，然后单击命令栏中的“重置远程访问”。
-- 查看 [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine（解决远程桌面连接到基于 Windows 的 Azure 虚拟机的问题）](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)。
-- 使用 Windows PowerShell 远程处理连接到 VM，或创建其他终结点以方便其他资源连接到 VM。有关详细信息，请参阅 [How to Set Up Endpoints to a Virtual Machine（如何设置虚拟机的终结点）](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+- 查看 [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine（解决远程桌面连接到基于 Windows 的 Azure 虚拟机的问题）](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)。
+- 使用 Windows PowerShell 远程处理连接到 VM，或创建其他终结点以方便其他资源连接到 VM。有关详细信息，请参阅 [How to Set Up Endpoints to a Virtual Machine（如何设置虚拟机的终结点）](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
 如果你熟悉 Hyper-V，可以寻找类似于 VMConnect 的工具。Azure 不提供类似的工具，因为不支持通过控制台来访问虚拟机。
 
@@ -71,7 +71,7 @@ Windows VM 的其他选项包括：
 
 ## 如何更改临时磁盘的驱动器号？
 
-在 Windows 虚拟机中，你可以通过移动页面文件和重新分配驱动器号来更改驱动器号，但需确保按特定顺序执行这些步骤。有关说明，请参阅 [Change the drive letter of the Windows temporary disk（更改 Windows 临时磁盘的驱动器号）](/documentation/articles/virtual-machines-windows-classic-change-drive-letter)。
+在 Windows 虚拟机中，你可以通过移动页面文件和重新分配驱动器号来更改驱动器号，但需确保按特定顺序执行这些步骤。有关说明，请参阅 [Change the drive letter of the Windows temporary disk（更改 Windows 临时磁盘的驱动器号）](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)。
 
 ## 如何升级来宾操作系统？
 
@@ -88,7 +88,7 @@ Windows VM 的其他选项包括：
 
 由 Azure 提供的映像没有预先配置的用户名和密码。当你使用这些映像之一创建虚拟机时，需提供用户名和密码，你可以使用该用户名和密码登录到虚拟机。
 
-如果你忘记了用户名或密码，并且你已安装了 VM 代理，则可安装并使用 [VMAccess](/documentation/articles/virtual-machines-windows-extensions-features) 扩展来解决该问题。
+如果你忘记了用户名或密码，并且你已安装了 VM 代理，则可安装并使用 [VMAccess](/documentation/articles/virtual-machines-windows-extensions-features/) 扩展来解决该问题。
 
 其他详细信息：
 
@@ -107,7 +107,7 @@ Azure 针对防病毒解决方案提供了多种选项，但需要用户自行�
 
 ## 有哪些选项可用于备份和恢复？
 
-在某些区域，Azure 备份提供预览版。有关详细信息，请参阅[备份 Azure 虚拟机](/documentation/articles/backup-azure-vms)。认证合作伙伴提供了其他解决方案。若要了解目前提供的内容，请搜索 Azure 库。
+在某些区域，Azure 备份提供预览版。有关详细信息，请参阅[备份 Azure 虚拟机](/documentation/articles/backup-azure-vms/)。认证合作伙伴提供了其他解决方案。若要了解目前提供的内容，请搜索 Azure 库。
 
 另一个选项是使用 blob 存储的快照功能。为此，需要在进行任何依赖于 blob 快照的操作之前关闭 VM。这会保存挂起数据写入并保持文件系统的一致状态。
 
@@ -133,14 +133,14 @@ Azure 根据 VM 的大小和操作系统按小时价格进行计费。对于不�
 
 因计划内维护而重新启动时，你还可以使用 Azure 经典管理门户或 Azure PowerShell 查看重新启动日志。有关详细信息，请参阅 [Viewing VM Reboot Logs（查看 VM 重新启动日志）](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/)。
 
-若要提供冗余，请将两个或更多个采用类似配置的 VM 放到同一个可用性集中。这可以确保在计划内或计划外维护期间至少有一个 VM 可用。对于此配置，Azure 可以保证一定级别的 VM 可用性。有关详细信息，请参阅管理 [Windows](/documentation/articles/virtual-machines-windows-manage-availability) 或 [Linux](/documentation/articles/virtual-machines-linux-manage-availability) 虚拟机的可用性。
+若要提供冗余，请将两个或更多个采用类似配置的 VM 放到同一个可用性集中。这可以确保在计划内或计划外维护期间至少有一个 VM 可用。对于此配置，Azure 可以保证一定级别的 VM 可用性。有关详细信息，请参阅管理 [Windows](/documentation/articles/virtual-machines-windows-manage-availability/) 或 [Linux](/documentation/articles/virtual-machines-linux-manage-availability/) 虚拟机的可用性。
 
 ## 其他资源
 
-关于 [Windows](/documentation/articles/virtual-machines-windows-about) 或 [Linux](/documentation/articles/virtual-machines-linux-about) 虚拟机
+关于 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) 虚拟机
 
-[创建 Linux 虚拟机的不同方式](/documentation/articles/virtual-machines-linux-creation-choices)
+[创建 Linux 虚拟机的不同方式](/documentation/articles/virtual-machines-linux-creation-choices/)
 
-[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-creation-choices)
+[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-creation-choices/)
 
 <!---HONumber=Mooncake_0530_2016-->

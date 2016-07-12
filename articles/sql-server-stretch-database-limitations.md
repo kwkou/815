@@ -86,10 +86,10 @@
 
 ## 另请参阅
 
-[通过运行延伸数据库顾问来识别符合延伸数据库条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)
+[通过运行延伸数据库顾问来识别符合延伸数据库条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)
 
-[为数据库启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-database)
+[为数据库启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-database/)
 
-[为表启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-table)
+[为表启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-table/)
 
 <!---HONumber=Mooncake_0307_2016-->

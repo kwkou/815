@@ -38,7 +38,7 @@
 
     >[AZURE.NOTE] 如果你选择大一点的虚拟机，将会产生额外的费用。详情请参阅[虚拟机价格详情](/home/features/virtual-machines/#price)
 
-1. 在 Visual Studio 中创建的虚拟机需要云服务。在“云服务设置”页上，选择虚拟机的云服务，如果你还没有云服务或想要使用新的云服务，请单击下拉列表中的“<新建...>”。还需要一个存储帐户，因此请在“存储帐户”下拉列表框中选择存储帐户（或创建新的存储帐户）。有关详细信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
+1. 在 Visual Studio 中创建的虚拟机需要云服务。在“云服务设置”页上，选择虚拟机的云服务，如果你还没有云服务或想要使用新的云服务，请单击下拉列表中的“<新建...>”。还需要一个存储帐户，因此请在“存储帐户”下拉列表框中选择存储帐户（或创建新的存储帐户）。有关详细信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction/)。
 
 1. 如果你想要指定虚拟网络（可选操作），请在“虚拟网络”和“子网”下拉列表框中进行选择。
 
@@ -150,6 +150,6 @@
 
 ## 后续步骤
 
-若要了解有关创建虚拟机的详细信息，请参阅 [Create a Virtual Machine Running Linux（创建运行 Linux 的虚拟机）](/documentation/articles/virtual-machines-linux-quick-create-cli)和 [Create a virtual machine running Windows in the Azure preview portal（在 Azure 门户预览中创建运行 Windows 的虚拟机）](/documentation/articles/virtual-machines-windows-hero-tutorial)。
+若要了解有关创建虚拟机的详细信息，请参阅 [Create a Virtual Machine Running Linux（创建运行 Linux 的虚拟机）](/documentation/articles/virtual-machines-linux-quick-create-cli/)和 [Create a virtual machine running Windows in the Azure preview portal（在 Azure 门户预览中创建运行 Windows 的虚拟机）](/documentation/articles/virtual-machines-windows-hero-tutorial/)。
 
 <!---HONumber=Mooncake_0425_2016-->

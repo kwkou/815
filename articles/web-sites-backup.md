@@ -17,7 +17,7 @@
 
 利用 [Azure Web Apps](/documentation/services/web-sites/) 中的备份和还原功能，可以轻松地手动或自动创建 Web 应用备份。你可以将 Web 应用还原到以前的状态，或者基于原始应用的备份之一创建新的 Web 应用。 
 
-有关从备份中还原 Azure Web 应用的信息，请参阅[还原 Web 应用](/documentation/articles/web-sites-restore)。
+有关从备份中还原 Azure Web 应用的信息，请参阅[还原 Web 应用](/documentation/articles/web-sites-restore/)。
 
 <a name="whatsbackedup"></a>
 ## 备份的内容 
@@ -34,7 +34,7 @@ Web Apps 可以备份以下信息：
 <a name="requirements"></a>
 ## 要求和限制
 
-* 备份和还原功能要求 App Service 计划位于“标准”层中。有关缩放 App Service 计划以使用更高层的详细信息，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale)。 
+* 备份和还原功能要求 App Service 计划位于“标准”层中。有关缩放 App Service 计划以使用更高层的详细信息，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale/)。 
 
 * 备份和还原功能要求 Azure 存储帐户和容器必须与要备份的 Web 应用同属一个订阅。如果你还没有存储帐户，可以创建一个，方法是：单击 Azure 经典管理门户左窗格中的“存储”按钮（网格图标），然后选择底部命令栏中的“新建”。
 
@@ -111,7 +111,7 @@ Web Apps 可以备份以下信息：
 
 有时你不想备份 Web 应用中的所有内容。以下是一些示例：
 
--	你[设置每周备份](/documentation/articles/web-sites-backup#configure-automated-backups) Web 应用，其中包含永远不会更改的静态内容，例如旧的博客文章或映像。
+-	你[设置每周备份](/documentation/articles/web-sites-backup/#configure-automated-backups) Web 应用，其中包含永远不会更改的静态内容，例如旧的博客文章或映像。
 -	Web 应用的内容超过 10GB（这是一次可以备份的最大数量）。
 -	你不想备份日志文件。
 
@@ -143,13 +143,13 @@ Web Apps 可以备份以下信息：
 		\site\wwwroot\Images\2014
 		\site\wwwroot\Images\brand.png
 
-3. 使用 [ftp](/documentation/articles/web-sites-deploy#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。
+3. 使用 [ftp](/documentation/articles/web-sites-deploy/#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。
 
 4. 采用通常使用的相同方式运行备份，即[手动](#create-a-manual-backup)或[自动](#configure-automated-backups)。
 
 现在，`_backup.filter` 中指定的所有文件和文件夹都会从备份中排除。在此示例中，日志文件和 2013 年以及 2014 年的映像文件以及 brand.png 将不再进行备份。
 
->[AZURE.NOTE] 采用[还原定期备份](/documentation/articles/web-sites-restore)的相同方式还原站点的部分备份。还原过程会执行正确的操作。
+>[AZURE.NOTE] 采用[还原定期备份](/documentation/articles/web-sites-restore/)的相同方式还原站点的部分备份。还原过程会执行正确的操作。
 ><p>还原完整备份后，站点上的所有内容都被替换为备份中的任何内容。如果文件在站点上但不在备份中，则会将其删除。但是当部分备份还原时，位于其中一个黑名单目录或任何黑名单文件中的任何内容都保持不变。
 
 <a name="aboutbackups"></a>
@@ -164,7 +164,7 @@ Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL �
 
 <a name="nextsteps"></a>
 ## 后续步骤
-有关从备份中还原 Web 应用的信息，请参阅[在 Azure 中还原 Web 应用](/documentation/articles/web-sites-restore)。你还可以使用 REST API 备份和还原 Azure Web Apps（请参阅[使用 REST 备份和还原 Azure Web Apps](/documentation/articles/websites-csm-backup)）。
+有关从备份中还原 Web 应用的信息，请参阅[在 Azure 中还原 Web 应用](/documentation/articles/web-sites-restore/)。你还可以使用 REST API 备份和还原 Azure Web Apps（请参阅[使用 REST 备份和还原 Azure Web Apps](/documentation/articles/websites-csm-backup/)）。
 
 若要开始使用 Azure，请参阅 [Azure 试用版](/pricing/1rmb-trial/)。
 

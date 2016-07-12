@@ -2,7 +2,7 @@
 
 从 PowerShell 库安装时，你的文件将默认位于 *%ProgramFiles%\\WindowsPowerShell\\Modules* 中。从 Web 平台安装程序安装时，你的文件将默认位于 *%ProgramFiles%\\Microsoft SDKs\\Azure\\PowerShell* 中。因此，你需要坚持使用其中一种方式，以免今后更新 cmdlet 时遇到错误。Web 平台安装程序每月都会收到更新的 cmdlet。库会在更新版本的 cmdlet 发布时即时收到它们。由于这个原因，有些人更愿意使用库。
 
-有关安装 Azure PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+有关安装 Azure PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 **从 PowerShell 库安装模块**
 

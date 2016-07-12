@@ -13,11 +13,11 @@
 
 # 如何为云服务保留固定的虚拟 IP 地址
 
-更新托管于 Azure 中的云服务时，可能需要确保该服务的虚拟 IP 地址 (VIP) 不发生更改。许多域管理服务使用域名系统 (DNS) 注册域名。仅当 VIP 保持不变时，DNS 才适用。可使用 Azure Tools 中的“发布向导”来确保云服务的 VIP 在更新时不更改。有关如何将 DNS 域管理用于云服务的详细信息，请参阅[为 Azure 云服务配置自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
+更新托管于 Azure 中的云服务时，可能需要确保该服务的虚拟 IP 地址 (VIP) 不发生更改。许多域管理服务使用域名系统 (DNS) 注册域名。仅当 VIP 保持不变时，DNS 才适用。可使用 Azure Tools 中的“发布向导”来确保云服务的 VIP 在更新时不更改。有关如何将 DNS 域管理用于云服务的详细信息，请参阅[为 Azure 云服务配置自定义域名](/documentation/articles/cloud-services-custom-domain-name/)。
 
 ## 发布云服务而不更改其 VIP
 
-当你在特定环境（如生产环境）中第一次将云服务部署到 Azure 时，其 VIP 就已分配。VIP 不会更改，除非你显式删除部署或部署更新过程将其隐式删除。若要保留 VIP，则切勿删除部署，且务必确保 Visual Studio 不自动删除部署。可以通过在“发布向导”中指定部署设置来控制行为，该向导支持多个部署选项。可以指定全新部署或更新部署，后者可以是增量更新或同时更新，这两种更新部署都将保留 VIP。有关这些不同类型的部署的定义，请参阅[发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard)。此外，你可以控制出错时是否删除云服务以前的部署。如果未正确设置该选项，VIP 可能意外改变。
+当你在特定环境（如生产环境）中第一次将云服务部署到 Azure 时，其 VIP 就已分配。VIP 不会更改，除非你显式删除部署或部署更新过程将其隐式删除。若要保留 VIP，则切勿删除部署，且务必确保 Visual Studio 不自动删除部署。可以通过在“发布向导”中指定部署设置来控制行为，该向导支持多个部署选项。可以指定全新部署或更新部署，后者可以是增量更新或同时更新，这两种更新部署都将保留 VIP。有关这些不同类型的部署的定义，请参阅[发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/)。此外，你可以控制出错时是否删除云服务以前的部署。如果未正确设置该选项，VIP 可能意外改变。
 
 ### 更新云服务，而不更改其 VIP
 
@@ -39,6 +39,6 @@
 
 ## 后续步骤
 
-若要了解如何从 Visual Studio 发布到 Azure，请参阅[发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard)。
+若要了解如何从 Visual Studio 发布到 Azure，请参阅[发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/)。
 
 <!---HONumber=Mooncake_0516_2016-->

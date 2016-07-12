@@ -104,7 +104,7 @@
 
 ## 将应用配置为使用存储帐户提供的服务
 
-必须配置访问存储服务以使用你创建的 Azure 存储空间服务的任何角色。为此，可为 Azure 项目使用多个服务配置。默认情况下，其中两个配置是在 Azure 项目中创建的。通过使用多个服务配置，你可以在代码中使用相同的连接字符串，但在每个服务配置中为连接字符串使用不同的值。例如，你可以使用一个服务配置通过本地 Azure 存储模拟器来运行和调试应用程序，并使用另一个服务配置将应用程序发布到 Azure。有关服务配置的详细信息，请参阅 [Configuring Your Azure Project Using Multiple Service Configurations（使用多种服务配置来配置 Azure 项目）](/documentation/articles/vs-azure-tools-multiple-services-project-configurations)。
+必须配置访问存储服务以使用你创建的 Azure 存储空间服务的任何角色。为此，可为 Azure 项目使用多个服务配置。默认情况下，其中两个配置是在 Azure 项目中创建的。通过使用多个服务配置，你可以在代码中使用相同的连接字符串，但在每个服务配置中为连接字符串使用不同的值。例如，你可以使用一个服务配置通过本地 Azure 存储模拟器来运行和调试应用程序，并使用另一个服务配置将应用程序发布到 Azure。有关服务配置的详细信息，请参阅 [Configuring Your Azure Project Using Multiple Service Configurations（使用多种服务配置来配置 Azure 项目）](/documentation/articles/vs-azure-tools-multiple-services-project-configurations/)。
 
 ### 将应用程序配置为使用存储帐户提供的服务
 
@@ -112,7 +112,7 @@
 
 1. 在角色的属性页中，选择“设置”。
 
-1. 在“服务配置”列表中，选择你要编辑的服务配置名称。如果要对角色的所有服务配置进行更改，则可选择“所有配置”。有关如何更新服务配置的详细信息，请参阅主题 [Configure the Roles for an Azure Cloud Service with Visual Studio](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service)（使用 Visual Studio 配置 Azure 云服务的角色）中的 **Manage Connection Strings for Storage Accounts**（管理存储帐户的连接字符串）部分。
+1. 在“服务配置”列表中，选择你要编辑的服务配置名称。如果要对角色的所有服务配置进行更改，则可选择“所有配置”。有关如何更新服务配置的详细信息，请参阅主题 [Configure the Roles for an Azure Cloud Service with Visual Studio](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)（使用 Visual Studio 配置 Azure 云服务的角色）中的 **Manage Connection Strings for Storage Accounts**（管理存储帐户的连接字符串）部分。
 
 1. 若要修改任何连接字符串设置，请选择该设置旁边的“…”按钮。此时将显示“创建存储连接字符串”对话框。
 
@@ -147,6 +147,6 @@
 
 ## 后续步骤
 
-若要详细了解如何将应用从 Visual Studio 发布到 Azure，请参阅 [Publishing a Cloud Service using the Azure Tools（使用 Azure Tools 发布云服务）](/documentation/articles/vs-azure-tools-publishing-a-cloud-service)。
+若要详细了解如何将应用从 Visual Studio 发布到 Azure，请参阅 [Publishing a Cloud Service using the Azure Tools（使用 Azure Tools 发布云服务）](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)。
 
 <!---HONumber=Mooncake_0516_2016-->

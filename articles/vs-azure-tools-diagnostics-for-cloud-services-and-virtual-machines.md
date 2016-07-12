@@ -13,7 +13,7 @@
 
 # 为 Azure 云服务和虚拟机配置诊断
 
-如果需要对 Azure 云服务或 Azure 虚拟机进行故障排除，使用 Visual Studio 可以更轻松地配置 Azure 诊断。Azure 诊断可以在运行云服务的虚拟机和虚拟机实例上捕获系统数据和日志记录数据，并将这些数据传输到所选的存储帐户中。有关 Azure 中诊断日志记录的详细信息，请参阅[在 Azure App Service 中启用网站的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
+如果需要对 Azure 云服务或 Azure 虚拟机进行故障排除，使用 Visual Studio 可以更轻松地配置 Azure 诊断。Azure 诊断可以在运行云服务的虚拟机和虚拟机实例上捕获系统数据和日志记录数据，并将这些数据传输到所选的存储帐户中。有关 Azure 中诊断日志记录的详细信息，请参阅[在 Azure App Service 中启用网站的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)。
 
 本主题演示如何在部署前后在 Visual Studio 和 Azure 虚拟机中启用和配置 Azure 诊断。它还演示如何选择要收集的诊断信息的类型以及如何在收集信息后查看这些信息。
 
@@ -165,7 +165,7 @@ Azure 诊断的配置方法有如下数种：
 
   ![应用程序日志](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758145.png)
 
-  有关应用程序日志的详细信息，请参阅[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
+  有关应用程序日志的详细信息，请参阅[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)。
 
 ### Windows 事件日志
 
@@ -217,7 +217,7 @@ Azure 诊断的配置方法有如下数种：
 
   ![ETW 日志](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC766025.png)
 
-  支持在 ASP.NET 中通过 [System.Diagnostics.aspx](https://msdn.microsoft.com/library/system.diagnostics(v=vs.110) 命名空间中的类来使用 ETW 框架。Microsoft.WindowsAzure.Diagnostics 命名空间继承自标准 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110) 类并对其进行了扩展，在 Azure 环境中，可以通过该命名空间将 [System.Diagnostics.aspx](https://msdn.microsoft.com/library/system.diagnostics(v=vs.110) 用作日志记录框架。有关详细信息，请参阅[在 Microsoft Azure 中控制日志记录和跟踪](https://msdn.microsoft.com/magazine/ff714589.aspx)以及[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
+  支持在 ASP.NET 中通过 [System.Diagnostics.aspx](https://msdn.microsoft.com/library/system.diagnostics(v=vs.110) 命名空间中的类来使用 ETW 框架。Microsoft.WindowsAzure.Diagnostics 命名空间继承自标准 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110) 类并对其进行了扩展，在 Azure 环境中，可以通过该命名空间将 [System.Diagnostics.aspx](https://msdn.microsoft.com/library/system.diagnostics(v=vs.110) 用作日志记录框架。有关详细信息，请参阅[在 Microsoft Azure 中控制日志记录和跟踪](https://msdn.microsoft.com/magazine/ff714589.aspx)以及[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 ### 故障转储
 
@@ -267,7 +267,7 @@ Azure 诊断的配置方法有如下数种：
 
 1. （可选）间或清除存储帐户中的数据，降低整体存储开销。
 
-1. 进行完整部署时，diagnostics.cscfg 文件（Azure SDK 2.5 中为 .wadcfgx）将在 Azure 中更新，云服务将拾取对诊断配置的所有更改。如果你改为更新现有部署，则不会在 Azure 中更新 .cscfg 文件。但仍可按照下一部分中的步骤更改诊断设置。有关执行完整部署和更新现有部署的详细信息，请参阅[发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard)。
+1. 进行完整部署时，diagnostics.cscfg 文件（Azure SDK 2.5 中为 .wadcfgx）将在 Azure 中更新，云服务将拾取对诊断配置的所有更改。如果你改为更新现有部署，则不会在 Azure 中更新 .cscfg 文件。但仍可按照下一部分中的步骤更改诊断设置。有关执行完整部署和更新现有部署的详细信息，请参阅[发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/)。
 
 ### 查看虚拟机的诊断数据
 
@@ -351,6 +351,6 @@ RoleEntryPoint 的方法在 WAIISHost.exe 上下文中调用，而非 IIS。因�
 
 ## 后续步骤
 
-若要详细了解 Azure 中的诊断日志记录，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)和[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
+若要详细了解 Azure 中的诊断日志记录，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)和[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)。
 
 <!---HONumber=Mooncake_0509_2016-->

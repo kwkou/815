@@ -23,7 +23,7 @@
 
 媒体服务支持动态和静态打包。使用静态打包时，需要以客户要求的各种格式创建内容副本。使用动态打包，你只需要创建一个包含一组自适应比特率 MP4 或平滑流文件的资产。然后，按需流式处理服务器会确保你的用户以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。
 
->[AZURE.NOTE]建议使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)。
+>[AZURE.NOTE]建议使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)。
 
 但是，有的方案需要静态打包：
 
@@ -66,7 +66,7 @@
 	  </body>
 	</smil>
 
-创建自适应比特率 MP4 集后，便可以利用动态打包功能。动态打包允许你通过指定的协议传送流，而不需要进一步地打包。有关详细信息，请参阅[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)。
+创建自适应比特率 MP4 集后，便可以利用动态打包功能。动态打包允许你通过指定的协议传送流，而不需要进一步地打包。有关详细信息，请参阅[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)。
 
 以下代码示例使用 Azure 媒体服务 .NET SDK 扩展。请确保更新代码，以指向输入 MP4 文件和 .ism 文件所在的文件夹，并指向 MediaPackager\_ValidateTask.xml 文件所在的位置。此 XML 文件在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx)主题中定义。
 	
@@ -236,11 +236,11 @@
 
 ## 通过静态加密使用 PlayReady 来保护平滑流和 MPEG DASH
 
-如果你想要通过 PlayReady 来保护你的内容，则可选择使用[动态加密](/documentation/articles/media-services-protect-with-drm)（推荐选项）或静态加密（如本部分所述）。
+如果你想要通过 PlayReady 来保护你的内容，则可选择使用[动态加密](/documentation/articles/media-services-protect-with-drm/)（推荐选项）或静态加密（如本部分所述）。
 
 本部分的示例将夹层文件（在本例中为 MP4）编码为自适应比特率 MP4 文件。然后，它将 MP4 打包为平滑流，并使用 PlayReady 对平滑流进行加密。因此，你能对平滑流或 MPEG DASH 进行流式处理。
 
-媒体服务现在提供有用于传送 Microsoft PlayReady 许可证的服务。本文中的示例显示如何配置媒体服务 PlayReady 许可证传送服务（请参见以下代码中定义的 ConfigureLicenseDeliveryService 方法）。有关媒体服务 PlayReady 许可证传送服务的详细信息，请参阅[使用 PlayReady 动态加密和许可证传递服务](/documentation/articles/media-services-protect-with-drm)。
+媒体服务现在提供有用于传送 Microsoft PlayReady 许可证的服务。本文中的示例显示如何配置媒体服务 PlayReady 许可证传送服务（请参见以下代码中定义的 ConfigureLicenseDeliveryService 方法）。有关媒体服务 PlayReady 许可证传送服务的详细信息，请参阅[使用 PlayReady 动态加密和许可证传递服务](/documentation/articles/media-services-protect-with-drm/)。
 
 >[AZURE.NOTE]若要传送使用 PlayReady 加密的 MPEG DASH，请确保通过将 useSencBox 和 adjustSubSamples 属性（在 [Azure 媒体加密器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973610.aspx)主题中说明）设为 true 来使用 CENC 选项。
 
@@ -685,7 +685,7 @@
 
 ## 通过静态加密使用 AES-128 来保护 HLSv3
 
-如果你要使用 AES-128 加密 HLS，可以选择使用动态加密（推荐选项）或静态加密（如本部分所述）。如果你决定使用动态加密，请参阅[使用 AES-128 动态加密和密钥传递服务](/documentation/articles/media-services-protect-with-aes128)。
+如果你要使用 AES-128 加密 HLS，可以选择使用动态加密（推荐选项）或静态加密（如本部分所述）。如果你决定使用动态加密，请参阅[使用 AES-128 动态加密和密钥传递服务](/documentation/articles/media-services-protect-with-aes128/)。
 
 >[AZURE.NOTE]若要将内容转换为 HLS，必须先将内容转换/编码为平滑流。此外，对于使用 AES 加密的 HLS，请确保在 MediaPackager\_SmoothToHLS.xml 文件中设置以下属性：将加密属性设置为 true，将密钥值和 keyuri 值设置为指向身份验证\\授权服务器。媒体服务将创建密钥文件，并将其放置在资产容器中。你应该将 /asset-containerguid/*.key 文件复制到服务器（或创建你自己的密钥文件），然后从资产容器中删除 *.key 文件。
 
@@ -962,7 +962,7 @@
 
 ## 通过静态加密使用 PlayReady 来保护 HLSv3
 
-如果你想要通过 PlayReady 来保护你的内容，则可选择使用[动态加密](/documentation/articles/media-services-protect-with-drm)（推荐选项）或静态加密（如本部分所述）。
+如果你想要通过 PlayReady 来保护你的内容，则可选择使用[动态加密](/documentation/articles/media-services-protect-with-drm/)（推荐选项）或静态加密（如本部分所述）。
 
 >[AZURE.NOTE] 若要使用 PlayReady 保护你的内容，必须先将内容转换/编码为平滑流格式。
 

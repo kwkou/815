@@ -49,7 +49,7 @@
 
 ## 另请参阅
 
-[SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)
+[SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage/)
 
 <!--Image references-->
 [StretchMonitorImage1]: ./media/sql-server-stretch-database-monitor/StretchDBMonitor.png

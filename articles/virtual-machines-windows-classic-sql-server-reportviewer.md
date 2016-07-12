@@ -14,7 +14,7 @@
 
 # 在 Azure 中托管的 Web 应用中使用 ReportViewer
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 你可以使用 Visual Studio ReportViewer 控件构建 Azure Web 应用，该控件用于显示存储在 Azure 虚拟机上的报表。ReportViewer 控件位于使用 ASP.NET Web 应用模板生成的 Web 应用中。
 
@@ -30,7 +30,7 @@
 
 ## 先决条件
 
-查看 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi) 中的“常规建议和最佳实践”部分。
+查看 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/) 中的“常规建议和最佳实践”部分。
 
 >[AZURE.NOTE]ReportViewer 控件随 Visual Studio Standard Edition 或更高版本提供。如果你使用的是 Web Developer Express Edition，则必须安装 [MICROSOFT REPORT VIEWER 2012 RUNTIME](https://www.microsoft.com/download/details.aspx?id=35747) 才能使用 ReportViewer 运行时功能。
 ><p>在 Azure 中不支持在本地处理模式下配置的 ReportViewer。
@@ -86,7 +86,7 @@ ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，�
 
 ## 发布 ASP.NET Web 应用程序到 Azure
 
-有关将 ASP.NET Web 应用程序发布到 Azure 的说明，请参阅 [Web Apps 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。
+有关将 ASP.NET Web 应用程序发布到 Azure 的说明，请参阅 [Web Apps 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started/)。
 
 >[AZURE.IMPORTANT]如果在解决方案资源管理器中的快捷菜单中未显示添加Azure 部署项目或添加 Azure 云服务项目命令，你可能需要将该项目的目标框架更改为 .NET Framework 4。
 ><p>两个命令提供基本相同的功能。其中一个命令将显示在快捷菜单中，这取决于已安装的 Azure SDK 版本。
@@ -95,9 +95,9 @@ ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，�
 
 [Microsoft 报表](https://msdn.microsoft.com/zh-cn/library/bb885185.aspx)
 
-[Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi)
+[Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/)
 
-[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-windows-classic-ps-sql-report)
+[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-windows-classic-ps-sql-report/)
 
 [Reporting Services 报表查看器控件和基于 Azure 虚拟机的报表服务器](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)
 

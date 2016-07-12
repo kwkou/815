@@ -82,7 +82,7 @@
 
 	![Power BI Desktop 获取数据 - Power BI 连接器](./media/documentdb-powerbi-visualize/power_bi_connector_pbigetdata.png)
 
-6. 如下所示指定你想要从其中检索数据的 DocumentDB 帐户终结点 URL，然后单击“确定”。可以在 Azure 门户预览的“密钥”边栏选项卡中的 URI 框检索 URL，或者可以使用上文提供的演示帐户信息。有关详细信息，请参阅[密钥](/documentation/articles/documentdb-manage-account#keys)。
+6. 如下所示指定你想要从其中检索数据的 DocumentDB 帐户终结点 URL，然后单击“确定”。可以在 Azure 门户预览的“密钥”边栏选项卡中的 URI 框检索 URL，或者可以使用上文提供的演示帐户信息。有关详细信息，请参阅[密钥](/documentation/articles/documentdb-manage-account/#keys)。
 
 
 	*注意。在本教程中，我们不会指定数据库名称、集合名称或 SQL 语句，因为这些字段都为可选。相反，我们将使用导航器来选择数据库和集合以指定数据来源。*

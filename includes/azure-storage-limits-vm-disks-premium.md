@@ -24,6 +24,6 @@
 每个 VM 的最大 IOPS|GS5 VM 为 80,000 IOPS<sup>1</sup>
 每个 VM 的最大吞吐量|GS5 VM 为 2,000 MB/秒<sup>1</sup>
 
-有关其他 VM 大小的限制，<sup>1</sup>指 [VM 大小](/documentation/articles/virtual-machines-linux-sizes)。
+有关其他 VM 大小的限制，<sup>1</sup>指 [VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。
 
 <!---HONumber=Mooncake_0627_2016-->

@@ -17,11 +17,11 @@
 与 Azure AD 集成的应用程序遵循可让用户控制应用程序如何访问其数据的特定授权模型。此授权模型的 v2.0 实现已更新，其中更改了应用程序必须与 Azure AD 交互的方式。本主题涵盖此授权模型的基本概念，包括范围、权限和同意。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 ## 范围和权限
 
-Azure AD 实施 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols) 授权协议，此方法允许第三方应用程序代表用户访问 Web 托管的资源。任何与 Azure AD 集成的 Web 托管资源都有资源标识符或**应用程序 ID URI**。例如，Microsoft 的某些 Web 托管资源包括：
+Azure AD 实施 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/) 授权协议，此方法允许第三方应用程序代表用户访问 Web 托管的资源。任何与 Azure AD 集成的 Web 托管资源都有资源标识符或**应用程序 ID URI**。例如，Microsoft 的某些 Web 托管资源包括：
 
 - Office 365 统一邮件 API：`https://outlook.office.com`
 - Azure AD 图形 API：`https://graph.windows.net`
@@ -47,7 +47,7 @@ Azure AD 实施 [OAuth 2.0](/documentation/articles/active-directory-v2-protocol
 
 ## Consent
 
-在 [OpenID Connect 或 OAuth 2.0](/documentation/articles/active-directory-v2-protocols) 授权请求中，应用程序可以使用 **scope** 查询参数来请求它所需的权限。例如，当用户登录应用程序时，应用程序发送如下所示的请求（包含换行符以便于阅读）：
+在 [OpenID Connect 或 OAuth 2.0](/documentation/articles/active-directory-v2-protocols/) 授权请求中，应用程序可以使用 **scope** 查询参数来请求它所需的权限。例如，当用户登录应用程序时，应用程序发送如下所示的请求（包含换行符以便于阅读）：
 
 
 		GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
@@ -90,7 +90,7 @@ Azure AD 实施 [OAuth 2.0](/documentation/articles/active-directory-v2-protocol
 
 然后，生成的访问令牌可用于资源的 HTTP 请求 - 它可靠地指示应用程序具有适当权限可执行给定任务的资源。
 
-有关 OAuth 2.0 协议以及如何获取访问令牌的详细信息，请参阅 [v2.0 终结点协议参考](/documentation/articles/active-directory-v2-protocols)。
+有关 OAuth 2.0 协议以及如何获取访问令牌的详细信息，请参阅 [v2.0 终结点协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
 ## OpenId Connect 范围
 
@@ -98,7 +98,7 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 #### OpenId
 
-如果应用程序使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols#openid-connect-sign-in-flow) 执行登录，则必须请求 **openid** 范围。**openid** 范围在工作帐户同意屏幕上显示为“登录”权限，而在个人 Microsoft 帐户同意屏幕上显示为“查看你的配置文件并使用你的 Microsoft 帐户连接到应用程序和服务”权限。此权限可让应用程序访问 OpenID Connect 用户信息终结点，因此需要用户批准。 **openid** 范围还可用于 v2.0 令牌终结点来获取 id\_tokens，该令牌可用于保护应用程序的不同组件之间的 HTTP 调用。
+如果应用程序使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow) 执行登录，则必须请求 **openid** 范围。**openid** 范围在工作帐户同意屏幕上显示为“登录”权限，而在个人 Microsoft 帐户同意屏幕上显示为“查看你的配置文件并使用你的 Microsoft 帐户连接到应用程序和服务”权限。此权限可让应用程序访问 OpenID Connect 用户信息终结点，因此需要用户批准。 **openid** 范围还可用于 v2.0 令牌终结点来获取 id\_tokens，该令牌可用于保护应用程序的不同组件之间的 HTTP 调用。
 
 #### 电子邮件
 
@@ -106,14 +106,14 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 #### 配置文件
 
-**profile** 范围可以连同 **openid** 范围和任何其他范围一起包含。它提供大量用户信息的应用程序访问权限。这包括但不限于用户的名字、姓氏、首选用户名、对象 ID 等等。有关指定用户的 id\_tokens 中可用的配置文件声明的完整列表，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens)。
+**profile** 范围可以连同 **openid** 范围和任何其他范围一起包含。它提供大量用户信息的应用程序访问权限。这包括但不限于用户的名字、姓氏、首选用户名、对象 ID 等等。有关指定用户的 id\_tokens 中可用的配置文件声明的完整列表，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)。
 
 #### Offline\_access
 
 [`offline_access`范围](http://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess)允许应用程序在较长时间内代表用户访问资源。在公司帐户同意屏幕上，此范围显示为“随时访问你的数据”权限。在个人 Microsoft 帐户同意屏幕上，则显示为“随时访问你的信息”权限。用户批准 **offline_access** 范围后，应用程序将能够接收来自 v2.0 令牌终结点的刷新令牌。刷新令牌属于长效令牌，可让应用程序在旧的访问令牌过期时获取新的访问令牌。
 
-如果应用未请求 **offline_access** 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow)中兑换 authorization\_code 时，只从 /**token** 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 /**authorize** 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
+如果应用未请求 **offline_access** 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow)中兑换 authorization\_code 时，只从 /**token** 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 /**authorize** 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
 
-有关如何获取及使用刷新令牌的详细信息，请参阅 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols)。
+有关如何获取及使用刷新令牌的详细信息，请参阅 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
 <!---HONumber=Mooncake_0418_2016-->

@@ -16,7 +16,7 @@
 
 ## 介绍
 
-[基于角色的访问控制](/documentation/articles/role-based-access-control-configure)是强大的功能，允许你委托 Azure 中的资源的精细访问权限。这意味着你可以确信授予特定人员他们刚好所需的权限，但仅此而已。但是，有时 Azure 资源的资源模型可能十分复杂，并且可能难于完全了解要授予对什么的权限。
+[基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)是强大的功能，允许你委托 Azure 中的资源的精细访问权限。这意味着你可以确信授予特定人员他们刚好所需的权限，但仅此而已。但是，有时 Azure 资源的资源模型可能十分复杂，并且可能难于完全了解要授予对什么的权限。
 
 本文档会让你了解在 Azure 门户中使用一些角色时的预期步骤。以下三种角色涵盖了所有的资源类型：
 
@@ -24,7 +24,7 @@
 - 参与者  
 - 读取器  
 
-所有者和参与者对管理体验具有完全访问权限，但是参与者无法向其他用户或组授予访问权限。具有读者角色事情会变得更加有趣，因此，我们将着重介绍读者角色。有关如何授予访问权限的详细信息，请参阅 [基于角色的访问控制入门文章](/documentation/articles/role-based-access-control-configure)。
+所有者和参与者对管理体验具有完全访问权限，但是参与者无法向其他用户或组授予访问权限。具有读者角色事情会变得更加有趣，因此，我们将着重介绍读者角色。有关如何授予访问权限的详细信息，请参阅 [基于角色的访问控制入门文章](/documentation/articles/role-based-access-control-configure/)。
 
 ## App Service 工作负荷
 
@@ -89,9 +89,9 @@
 如果你不能访问以上任何磁贴，则需要让管理员为你提供对资源组的“参与者”访问权限。
 
 ## 另请参阅
-- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure)：Azure 门户中的 RBAC 入门。
-- [内置角色](/documentation/articles/role-based-access-built-in-roles)：获取有关 RBAC 中的标准角色的详细信息。
-- [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles)：了解如何创建自定义角色，以满足访问需要。
-- [创建访问权限更改历史记录报告](/documentation/articles/role-based-access-control-access-change-history-report)：记录 RBAC 中的角色分配更改。
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户中的 RBAC 入门。
+- [内置角色](/documentation/articles/role-based-access-built-in-roles/)：获取有关 RBAC 中的标准角色的详细信息。
+- [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)：了解如何创建自定义角色，以满足访问需要。
+- [创建访问权限更改历史记录报告](/documentation/articles/role-based-access-control-access-change-history-report/)：记录 RBAC 中的角色分配更改。
 
 <!---HONumber=Mooncake_0627_2016-->

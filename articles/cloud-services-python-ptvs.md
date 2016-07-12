@@ -110,17 +110,17 @@ Azure 提供了三种计算模型用于运行应用程序：[Azure App Service �
 
 <!--Link references-->
 
-[什么是云服务？]: /documentation/articles/fundamentals-application-models
+[什么是云服务？]: /documentation/articles/fundamentals-application-models/
 [execution model-web sites]: /documentation/articles/fundamentals-application-models/#WebSites
 [execution model-vms]: /documentation/articles/fundamentals-application-models/#VMachine
 [execution model-cloud services]: /documentation/articles/fundamentals-application-models/#CloudServices
 [Python Developer Center]: /develop/python/
 
-[Blob 服务]: /documentation/articles/storage-python-how-to-use-blob-storage
-[队列服务]: /documentation/articles/storage-python-how-to-use-queue-storage
-[表服务]: /documentation/articles/storage-python-how-to-use-table-storage
-[Service Bus 队列]: /documentation/articles/service-bus-python-how-to-use-queues
-[Service Bus 主题]: /documentation/articles/service-bus-python-how-to-use-topics-subscriptions
+[Blob 服务]: /documentation/articles/storage-python-how-to-use-blob-storage/
+[队列服务]: /documentation/articles/storage-python-how-to-use-queue-storage/
+[表服务]: /documentation/articles/storage-python-how-to-use-table-storage/
+[Service Bus 队列]: /documentation/articles/service-bus-python-how-to-use-queues/
+[Service Bus 主题]: /documentation/articles/service-bus-python-how-to-use-topics-subscriptions/
 
 
 <!--External Link references-->

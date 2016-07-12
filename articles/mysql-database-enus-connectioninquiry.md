@@ -4,11 +4,11 @@
 
 #Connection issues
 > [AZURE.SELECTOR]
-- [All FAQs](/documentation/articles/mysql-database-enus-tech-faq)
-- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry)
-- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry)
-- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry)
-- [Compatibility Issues](/documentation/articles/mysql-database-enus-compatibilityinquiry)
+- [All FAQs](/documentation/articles/mysql-database-enus-tech-faq/)
+- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry/)
+- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry/)
+- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry/)
+- [Compatibility Issues](/documentation/articles/mysql-database-enus-compatibilityinquiry/)
 
 ### **I can’t connect to MySQL Database on Azure after I create a database. What should I do?**
 

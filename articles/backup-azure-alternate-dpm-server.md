@@ -97,6 +97,6 @@
     ![清除外部 DPM](./media/backup-azure-alternate-dpm-server/external-dpm-azurebackupagentversion.png)
 
 ## 后续步骤：
-• [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
+• [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)
 
 <!---HONumber=Mooncake_0530_2016-->

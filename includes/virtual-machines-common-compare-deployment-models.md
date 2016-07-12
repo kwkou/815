@@ -52,7 +52,7 @@ Azure 门户预览将继续提供相关选项，使用户既能使用经典部�
 
 ### Azure PowerShell
 
-Azure PowerShell 将拥有两种部署模式 - **AzureServiceManagement** 模式和 **AzureResourceManager** 模式。AzureResourceManager 模式现在同时包含用于管理虚拟机、虚拟网络和存储帐户的 cmdlet。你可以在[此处](/documentation/articles/powershell-azure-resource-manager)阅读详细内容。
+Azure PowerShell 将拥有两种部署模式 - **AzureServiceManagement** 模式和 **AzureResourceManager** 模式。AzureResourceManager 模式现在同时包含用于管理虚拟机、虚拟网络和存储帐户的 cmdlet。你可以在[此处](/documentation/articles/powershell-azure-resource-manager/)阅读详细内容。
 
 ### Azure CLI
 
@@ -78,7 +78,7 @@ Azure 命令行接口 (Azure CLI) 将拥有两种部署模式 - **AzureServiceMa
 
 **对我的订阅的配额有何影响？**
 
-通过新的 Azure 资源管理器 API 创建的虚拟机、虚拟网络和存储帐户的配额是你目前拥有的配额是分开的。每个订阅获取新的配额，以使用新的 API 创建资源。你可以在[此处](/documentation/articles/azure-subscription-service-limits)了解有关额外配额的详细信息。
+通过新的 Azure 资源管理器 API 创建的虚拟机、虚拟网络和存储帐户的配额是你目前拥有的配额是分开的。每个订阅获取新的配额，以使用新的 API 创建资源。你可以在[此处](/documentation/articles/azure-subscription-service-limits/)了解有关额外配额的详细信息。
 
 **我能通过新的 Azure 资源管理器 API 继续使用我的自动化脚本来预配虚拟机、虚拟网络、存储帐户等资源吗？**
 

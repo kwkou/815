@@ -19,7 +19,7 @@
 
 我已使用 BizTalk 服务器许多年，这是使用 [WCF LOB 适配器](https://msdn.microsoft.com/library/bb798128.aspx)时非常常见的案例。因此，我决定试试看能否在 DocumentDB 中对新增和/或已修改的文档重现此功能。
 
-本文概述了更改通知解决方案的组件，其中包括[触发器](/documentation/articles/documentdb-programming#trigger)。重要代码段以内联方式提供，你可以在 [GitHub](https://github.com/HEDIDIN/DocDbNotifications) 上获取整个解决方案。
+本文概述了更改通知解决方案的组件，其中包括[触发器](/documentation/articles/documentdb-programming/#trigger)。重要代码段以内联方式提供，你可以在 [GitHub](https://github.com/HEDIDIN/DocDbNotifications) 上获取整个解决方案。
 
 ## 使用案例
 
@@ -64,7 +64,7 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 4. 如果找到文档，则会将响应正文发送到 Azure Blob 存储。
 
-> [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)和[开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
+> [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)和[开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 
 5. 最后会发送电子邮件，通知收件人已找到的文档数目。如果找不到任何文档，电子邮件正文将为“0 Documents Found”。
 
@@ -543,7 +543,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 下一个操作是将文档保存到 [Azure Blog 存储](/documentation/services/storage/)。
 
-> [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
+> [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 
 ### 创建文件
 
@@ -1073,7 +1073,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 
 
-此操作会使用 [DocumentDB .NET SDK](/documentation/articles/documentdb-sdk-dotnet) 创建文档查询。
+此操作会使用 [DocumentDB .NET SDK](/documentation/articles/documentdb-sdk-dotnet/) 创建文档查询。
 
 		C#
 		     CreateDocumentQuery<Document>(collectionLink, filterQuery, options).AsEnumerable();

@@ -20,7 +20,7 @@
 * 建议使用在虚拟网络内。
 
 ## <a id="operation"></a>操作步骤
-1. 下载并安装最新版的 Azure PowerShell，配置 Azure 管理账户。参考链接：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 
+1. 下载并安装最新版的 Azure PowerShell，配置 Azure 管理账户。参考链接：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 
 2.	查看需要固定 VIP 的云服务信息
 
 	命令行：`PS C:\> get-azuredeployment -ServiceName` 其中 sh3prd 为云服务名称，可以看到当前的云服务 ReservedIPName 为空。

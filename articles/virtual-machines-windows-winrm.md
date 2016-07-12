@@ -17,10 +17,10 @@
 
 ## Azure Service Management 中的 WinRM 与 Azure Resource Manager
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型
 
-* 有关 Azure Resource Manager 的概述，请参阅此[文章](/documentation/articles/resource-group-overview)
-* 有关 Azure Service Management 和 Azure Resource Manager 之间的差异，请参阅此[文章](/documentation/articles/resource-manager-deployment-model)
+* 有关 Azure Resource Manager 的概述，请参阅此[文章](/documentation/articles/resource-group-overview/)
+* 有关 Azure Service Management 和 Azure Resource Manager 之间的差异，请参阅此[文章](/documentation/articles/resource-manager-deployment-model/)
 
 在两个堆栈之间设置 WinRM 配置的主要差异是将证书安装到 VM 的方式。在 Azure Resource Manager 堆栈中，证书被建模为由密钥保管库资源提供程序管理的资源。因此，在 VM 中使用自己的证书之前，用户需要提供这些证书并将其上传到密钥保管库。
 

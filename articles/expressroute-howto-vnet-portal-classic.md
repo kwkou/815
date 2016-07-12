@@ -17,7 +17,7 @@
 
 本文中的步骤将指导你通过经典部署模型和管理门户配置用于 ExpressRoute 的虚拟网络和网关。
 
-有关 Resource Manager 部署模型的说明，请参阅以下文章，其中将会指导你使用 PowerShell 创建虚拟网络，以及[将 VPN 网关添加到 ExpressRoute 的 Resource Manager VNet](/documentation/articles/expressroute-howto-add-gateway-resource-manager)。
+有关 Resource Manager 部署模型的说明，请参阅以下文章，其中将会指导你使用 PowerShell 创建虚拟网络，以及[将 VPN 网关添加到 ExpressRoute 的 Resource Manager VNet](/documentation/articles/expressroute-howto-add-gateway-resource-manager/)。
 
 **关于 Azure 部署模型**
 
@@ -62,12 +62,12 @@
 
 10. 开始创建网关时，你将看到一条消息，告知网关已经开始创建。创建网关最多可能需要 15 分钟。
 
-11. 将你的网络连接到线路。遵循[如何将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)一文中的说明。
+11. 将你的网络连接到线路。遵循[如何将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)一文中的说明。
 
 ## 后续步骤
 
 - 如果要将虚拟机添加到虚拟网络，请参阅[虚拟机学习路径](/documentation/services/virtual-machines/)。
-- 如果要了解有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
+- 如果要了解有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。
 
 
  

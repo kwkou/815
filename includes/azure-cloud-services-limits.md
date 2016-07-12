@@ -1,6 +1,6 @@
 资源|默认限制|最大限制
 ---|---|---
-[每个部署的 Web/辅助角色数](/documentation/articles/cloud-services-choose-me)<sup>1</sup>|25|25
+[每个部署的 Web/辅助角色数](/documentation/articles/cloud-services-choose-me/)<sup>1</sup>|25|25
 每个部署的[实例输入终结点数](http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InstanceInputEndpoint)|25|25
 每个部署的[输入终结点数](http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InputEndpoint)|25|25
 每个部署的[内部终结点数](http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InternalEndpoint)|25|25

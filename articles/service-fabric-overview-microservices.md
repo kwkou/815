@@ -125,7 +125,7 @@ Service Fabric 提供两个广泛的领域，帮助你使用微服务方法来�
 
 - 由一套系统服务组成的平台，这些系统服务负责部署、升级、检测和重新启动失败的服务、发现当前运行服务的位置、状态管理、运行状况监视等等。这些系统服务实际上具备上述微服务的许多特性。
 
--  编程 API 或框架，帮助你将应用程序构建成微服务。提供的编程 API 称为 [Reliable Actors 和 Reliable Services](/documentation/articles/service-fabric-choose-framework)。当然，你可以使用所选的任何代码来构建微服务。但使用这些 API 不仅可让作业变得更简单，也能更深入地与平台集成。例如，你可以获取运行状况和诊断信息，或利用内置的高可用性。
+-  编程 API 或框架，帮助你将应用程序构建成微服务。提供的编程 API 称为 [Reliable Actors 和 Reliable Services](/documentation/articles/service-fabric-choose-framework/)。当然，你可以使用所选的任何代码来构建微服务。但使用这些 API 不仅可让作业变得更简单，也能更深入地与平台集成。例如，你可以获取运行状况和诊断信息，或利用内置的高可用性。
 
 **Service Fabric 不限制构建服务的方式，你可以使用任何技术。
 不过，它提供可让你轻松构建微服务的内置编程 API。**
@@ -139,7 +139,7 @@ Service Fabric 的目标是将使用微服务方法构建应用程序时的复�
 ## 后续步骤
 
 * 更多相关信息：
-	* [Service Fabric 概述](/documentation/articles/service-fabric-overview)
+	* [Service Fabric 概述](/documentation/articles/service-fabric-overview/)
 
 
 [Image1]: ./media/service-fabric-overview-microservices/monolithic-vs-micro.png

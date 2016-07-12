@@ -54,17 +54,17 @@
 ##列出 
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-manage-entities#list-jobs-and-assets)
-- [REST](/documentation/articles/media-services-rest-manage-entities#querying-entities)
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities/#list-jobs-and-assets)
+- [REST](/documentation/articles/media-services-rest-manage-entities/#querying-entities)
 
 ##删除作业
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-manage-entities#delete-a-job)
-- [REST](/documentation/articles/media-services-rest-manage-entities##deleting-entities)
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities/#delete-a-job)
+- [REST](/documentation/articles/media-services-rest-manage-entities/##deleting-entities)
 
 ##相关链接
 
-[配额与限制](/documentation/articles/media-services-quotas-and-limitations) - 介绍媒体服务编码器的使用配额和限制
+[配额与限制](/documentation/articles/media-services-quotas-and-limitations/) - 介绍媒体服务编码器的使用配额和限制
 
 <!---HONumber=Mooncake_0314_2016-->

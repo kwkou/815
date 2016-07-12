@@ -96,7 +96,7 @@ Azure 平台支持基于角色的身份验证控制，从而支持对 Azure Web 
 
 迁移流程中的后续步骤是创建 Azure Web 应用和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Azure Web 应用实例可供您根据 Web 应用需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/home/features/sql-database/#price)。创建完成后，应用程序被上传到 Azure Web 应用（通过 FTP 或 WebDeploy），然后再迁移到数据库。
 
-在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](/documentation/articles/sql-database-cloud-migrate)。
+在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](/documentation/articles/sql-database-cloud-migrate/)。
 
 创建一个新的 Azure SQL 数据库，使用 SQL Server Management Studio 连接到数据库，然后运行脚本构建数据库架构并用来自本地数据库的数据对其进行填充，此时开支应用程序数据库创建完成。
 
@@ -110,7 +110,7 @@ Azure 平台提供了一些替代方法，可以将 Azure SQL 数据库用作 We
 
 随着企业的成长，其员工数量也会增长（通过收购或自然的有机增长），因此也必须对 Web 应用进行扩展以满足这些新需求。事实上，现在经常可以看到同地协同团队和远程办公员工的快速扩展，例如在美国、欧洲和亚洲设有办事处的公司，以及在很多地区组建移动销售团队的公司。Azure Web 应用能够方便、自动处理弹性缩放比例的更改。
 
-Azure Web 应用允许通过 Azure 经典管理门户将 Web 应用配置为可自动进行缩放，具体取决于以下两个矢量：计划时间或按 CPU 使用率。Azure Web 应用自动缩放提供了一种经济高效而又极其灵活的方式来满足所有业务应用程序（从诸如我们的支出报表系统之类的 Web 应用到市场营销 Web 应用）在使用上不断变化的要求，而这会在短时升级过程中带来流量的显著提高。有关使用 Azure Web 应用扩展 Web 应用的详细信息和指南，请参阅[如何扩展 Web 应用](/documentation/articles/web-sites-scale)。
+Azure Web 应用允许通过 Azure 经典管理门户将 Web 应用配置为可自动进行缩放，具体取决于以下两个矢量：计划时间或按 CPU 使用率。Azure Web 应用自动缩放提供了一种经济高效而又极其灵活的方式来满足所有业务应用程序（从诸如我们的支出报表系统之类的 Web 应用到市场营销 Web 应用）在使用上不断变化的要求，而这会在短时升级过程中带来流量的显著提高。有关使用 Azure Web 应用扩展 Web 应用的详细信息和指南，请参阅[如何扩展 Web 应用](/documentation/articles/web-sites-scale/)。
 
 除 Azure Web 应用的缩放灵活性之外，整个平台可通过 Web 应用及其资产跨多个数据中心和地理区域的可能分布，来启用业务连续性和复原功能。
 

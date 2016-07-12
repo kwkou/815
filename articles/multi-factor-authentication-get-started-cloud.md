@@ -150,7 +150,7 @@ Enabled |用户已加入多重身份验证。|否。它们继续工作，直到�
 		管理员
 
 ## 后续步骤
-现在你已在云中安装 Multi-Factor Authentication，可以配置和设置部署。请参阅[配置 Azure Multi-Factor Authentication。](/documentation/articles/multi-factor-authentication-whats-next)
+现在你已在云中安装 Multi-Factor Authentication，可以配置和设置部署。请参阅[配置 Azure Multi-Factor Authentication。](/documentation/articles/multi-factor-authentication-whats-next/)
 
 
 <!---HONumber=Mooncake_0509_2016-->

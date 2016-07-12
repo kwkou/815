@@ -352,7 +352,7 @@ VPN 网关的关键属性包括：
 
 
 
-[Azure 资源管理器概述](/documentation/articles/resource-group-overview)
+[Azure 资源管理器概述](/documentation/articles/resource-group-overview/)
 
 [Azure 资源管理器中基于角色的访问控制](https://msdn.microsoft.com/zh-cn/library/azure/dn906885.aspx)
 

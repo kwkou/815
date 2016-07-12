@@ -36,11 +36,11 @@
 
     或者
 
-* Azure 租户至少有一个 Azure Multi-Factor Authentication 提供程序。有关详细信息，请参阅[管理 Azure Multi-Factor Authentication 提供程序](/documentation/articles/multi-factor-authentication-get-started-cloud)。
+* Azure 租户至少有一个 Azure Multi-Factor Authentication 提供程序。有关详细信息，请参阅[管理 Azure Multi-Factor Authentication 提供程序](/documentation/articles/multi-factor-authentication-get-started-cloud/)。
 
 若要创建访问控制命名空间或 Multi-Factor Authentication 提供程序，请单击“+新建”>“应用程序服务”>“Active Directory”。
 
-要获取对目录的管理权限，请让管理员为你的帐户分配管理员角色。有关详细信息，请参阅[分配管理员角色](/documentation/articles/active-directory-assign-admin-roles)。
+要获取对目录的管理权限，请让管理员为你的帐户分配管理员角色。有关详细信息，请参阅[分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。
 
 ## Active Directory 不可用
 

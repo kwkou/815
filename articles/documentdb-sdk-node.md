@@ -15,10 +15,10 @@
 # DocumentDB SDK
 
 > [AZURE.SELECTOR]
-- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet)
-- [Node.js SDK](/documentation/articles/documentdb-sdk-node)
-- [Java SDK](/documentation/articles/documentdb-sdk-java)
-- [Python SDK](/documentation/articles/documentdb-sdk-python)
+- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet/)
+- [Node.js SDK](/documentation/articles/documentdb-sdk-node/)
+- [Java SDK](/documentation/articles/documentdb-sdk-java/)
+- [Python SDK](/documentation/articles/documentdb-sdk-python/)
 
 ##DocumentDB Node.js SDK
 
@@ -27,7 +27,7 @@
 <tr><td>**参与**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)</td></tr>
 <tr><td>**文档**</td><td>[Node.js SDK 参考文档](http://azure.github.io/azure-documentdb-node/)</td></tr>
 <tr><td>**示例**</td><td>[Node.js 代码示例](https://github.com/Azure/azure-documentdb-node/tree/master/samples)</td></tr>
-<tr><td>**入门**</td><td>[Node.js SDK 入门](/documentation/articles/documentdb-nodejs-get-started)</td></tr>
+<tr><td>**入门**</td><td>[Node.js SDK 入门](/documentation/articles/documentdb-nodejs-get-started/)</td></tr>
 <tr><td>**当前受支持的平台**</td><td>[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr>
 </table></br>
 
@@ -42,7 +42,7 @@
 - 在文档中添加了对生存时间 (TTL) 的支持。
 
 ###<a name="1.6.0"/>1.6.0</a>
-- 已实现[分区集合](/documentation/articles/documentdb-partition-data)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels)。 
+- 已实现[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
 
 ###<a name="1.5.6"/>1.5.6</a>
 

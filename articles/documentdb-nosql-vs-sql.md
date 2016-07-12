@@ -61,7 +61,7 @@ NoSQL 是一种与 SQL 数据库截然不同的数据库。NoSQL 常用来指代
 - [Azure SQL 数据库](/documentation/services/sql-databases/)可用来存储大量数据，例如登录信息和使用情况分析数据。
 
 
-此社交网站只是 NoSQL 数据库是针对作业的适当数据模型的其中一种方案。如果你对阅读有关此方案以及如何在社交媒体应用程序中对 DocumentDB 的数据建模的详细信息感兴趣，请参阅 [Going social with DocumentDB（使用 DocumentDB 进行社交）](/documentation/articles/documentdb-social-media-apps)。
+此社交网站只是 NoSQL 数据库是针对作业的适当数据模型的其中一种方案。如果你对阅读有关此方案以及如何在社交媒体应用程序中对 DocumentDB 的数据建模的详细信息感兴趣，请参阅 [Going social with DocumentDB（使用 DocumentDB 进行社交）](/documentation/articles/documentdb-social-media-apps/)。
 
 ## NoSQL 与 SQL 比较
 
@@ -86,8 +86,8 @@ Azure 具有以下四种完全托管的 NoSQL 服务：
 
 如果这些服务中的一个或多个可能满足你应用程序的需要，可使用以下资源了解详细信息：
 
-- [Azure 表存储入门](/documentation/articles/storage-dotnet-how-to-use-tables)
-- [HDInsight 中的 HBase 是什么](/documentation/articles/hdinsight-hbase-overview)
+- [Azure 表存储入门](/documentation/articles/storage-dotnet-how-to-use-tables/)
+- [HDInsight 中的 HBase 是什么](/documentation/articles/hdinsight-hbase-overview/)
 
 
 然后转到[后续步骤](#next-steps)，获取免费试用版信息。
@@ -101,7 +101,7 @@ Microsoft 提供了五种 SQL 产品/服务：
 - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse)
 - [分析平台系统（本地设备）](https://www.microsoft.com/zh-cn/server-cloud/products/analytics-platform-system/)
 
-如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)，了解两者区别的详细信息。
+如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)，了解两者区别的详细信息。
 
 如果 SQL 听起来像是最佳选择，然后转到 [SQL Server](https://www.microsoft.com/server-cloud/products/) 了解有关 Microsoft SQL 产品和服务所提供内容的详细信息。
 

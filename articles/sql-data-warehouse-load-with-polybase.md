@@ -329,11 +329,11 @@ Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name>
 <!--Image references-->
 
 <!--Article references-->
-[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp
-[Load with PolyBase]: /documentation/articles/sql-data-warehouse-load-with-polybase
-[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
+[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
+[Load with PolyBase]: /documentation/articles/sql-data-warehouse-load-with-polybase/
+[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
 
 <!--MSDN references-->
 [supported source/sink]: https://msdn.microsoft.com/zh-cn/library/dn894007.aspx

@@ -14,13 +14,13 @@
 # 使用通知中心将本地化的突发新闻发送到 iOS 设备
 
 > [AZURE.SELECTOR]
-- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
-- [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news)
+- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/)
+- [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news/)
 
 
 ##概述
 
-本主题演示如何使用 Azure 通知中心的[模板](/documentation/articles/notification-hubs-templates)功能广播已按语言和设备本地化的突发新闻通知。在本教程中，你从在[使用通知中心发送突发新闻]中创建的 iOS 应用开始操作。完成时，你将可以注册感兴趣的突发新闻类别，指定要接收通知的语言并仅接收采用该语言的这些类别的推送通知。
+本主题演示如何使用 Azure 通知中心的[模板](/documentation/articles/notification-hubs-templates/)功能广播已按语言和设备本地化的突发新闻通知。在本教程中，你从在[使用通知中心发送突发新闻]中创建的 iOS 应用开始操作。完成时，你将可以注册感兴趣的突发新闻类别，指定要接收通知的语言并仅接收采用该语言的这些类别的推送通知。
 
 
 此方案包含两个部分：
@@ -63,7 +63,7 @@
 		}
 	}
 
-模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates)一文中了解其更多信息。
+模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates/)一文中了解其更多信息。
 
 ##应用程序用户界面
 
@@ -260,9 +260,9 @@
 
 <!-- URLs. -->
 [操作方法：服务总线通知中心（iOS 应用）]: https://msdn.microsoft.com/zh-cn/library/dn530748.aspx
-[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/
 [使用通知中心通知用户：移动服务]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
-[适用于 iOS 的通知中心操作方法]: /documentation/articles/notification-hubs-ios-get-started
+[适用于 iOS 的通知中心操作方法]: /documentation/articles/notification-hubs-ios-get-started/
 <!---HONumber=Mooncake_0523_2016-->

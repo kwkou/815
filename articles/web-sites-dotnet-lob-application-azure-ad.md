@@ -18,7 +18,7 @@
 
 使用的 Azure Active Directory 租户可以是仅限 Azure 的目录，或者与本地 Active Directory (AD) 进行目录同步，以便为本地或远程的辅助角色创建单一登录体验。
 
->[AZURE.NOTE]对于 Azure Web 应用，只需单击几下鼠标，就能配置针对 Azure Active Directory 租户的身份验证。有关详细信息，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
+>[AZURE.NOTE]对于 Azure Web 应用，只需单击几下鼠标，就能配置针对 Azure Active Directory 租户的身份验证。有关详细信息，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)。
 
 ##<a name="bkmk_build"></a> 要生成的项目 ##
 
@@ -340,9 +340,9 @@
 
 ##<a name="bkmk_resources"></a> 其他资源
 
-- [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
-- [在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs)
+- [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/#protect-the-application-with-ssl-and-the-authorize-attribute)
+- [使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)
+- [在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs/)
 - [Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

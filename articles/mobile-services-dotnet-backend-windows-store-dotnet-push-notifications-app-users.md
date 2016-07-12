@@ -55,8 +55,8 @@
 
 
 <!-- URLs. -->
-[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push
-[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push/
+[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push/
 
 <!---HONumber=Mooncake_0215_2016-->

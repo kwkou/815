@@ -47,6 +47,6 @@
 - 密码
 
 [lnk-authenticate-arm]: https://msdn.microsoft.com/zh-cn/library/azure/dn790557.aspx
-[lnk-powershell-install]: /documentation/articles/powershell-install-configure
+[lnk-powershell-install]: /documentation/articles/powershell-install-configure/
 
 <!---HONumber=Mooncake_0321_2016-->

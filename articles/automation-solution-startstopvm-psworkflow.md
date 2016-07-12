@@ -36,7 +36,7 @@
 
 ### 1\.安装 Runbook
 
-下载 Runbook 之后，你可以使用[导入 Runbook](/documentation/articles/automation-creating-importing-runbook#ImportRunbook) 中的流程来导入它们。
+下载 Runbook 之后，你可以使用[导入 Runbook](/documentation/articles/automation-creating-importing-runbook/#ImportRunbook) 中的流程来导入它们。
 
 ### 2\.查看说明和要求
 Runbook 包括带注释的帮助文本，其中包括说明和所需的资产。你也可以从本文中获取相同的信息。
@@ -63,7 +63,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 ### 启动 Runbook
 
-你可以使用[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook) 中的任何方法来启动此解决方案中的任一 Runbook。
+你可以使用[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/) 中的任何方法来启动此解决方案中的任一 Runbook。
 
 以下示例命令使用 Windows PowerShell 来运行 **StartAzureVMs**，以便启动服务名称为 *MyVMService* 的所有虚拟机。
 
@@ -72,7 +72,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 ### 输出
 
-这些 Runbook 会为每个虚拟机[输出一条消息](/documentation/articles/automation-runbook-output-and-messages)，指示是否已成功提交启动或停止指令。你可以在输出中查找特定字符串，以确定每个 Runbook 的结果。可能的输出字符串列在下表中。
+这些 Runbook 会为每个虚拟机[输出一条消息](/documentation/articles/automation-runbook-output-and-messages/)，指示是否已成功提交启动或停止指令。你可以在输出中查找特定字符串，以确定每个 Runbook 的结果。可能的输出字符串列在下表中。
 
 | Runbook | 条件 | 消息 |
 |:---|:---|:---|
@@ -120,7 +120,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
     # Returns strings with status messages
     [OutputType([String])]
 
-此行声明 Runbook 的输出将是一个字符串。这不是必需的，但在将 Runbook 用作[子 Runbook](/documentation/articles/automation-child-runbooks) 的情况下，这是一种最佳做法，可以让父 Runbook 了解应该期望哪种输出类型。
+此行声明 Runbook 的输出将是一个字符串。这不是必需的，但在将 Runbook 用作[子 Runbook](/documentation/articles/automation-child-runbooks/) 的情况下，这是一种最佳做法，可以让父 Runbook 了解应该期望哪种输出类型。
 
 ### 身份验证
 
@@ -182,7 +182,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 ## 相关文章
 
-- [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks) 
-- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
+- [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/) 
+- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
 
 <!---HONumber=Mooncake_0307_2016-->

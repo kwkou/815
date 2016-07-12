@@ -88,7 +88,7 @@ Makecert 是创建自签名根证书的方式之一。以下步骤将引导你�
 
 继续使用点到站点配置。
 
-- 有关 **Resource Manager** 部署模型步骤，请参阅 [Configure a Point-to-Site connection to a virtual network using PowerShell（使用 PowerShell 配置与虚拟网络的点到站点连接）](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps)。 
-- 有关**经典**部署模型步骤，请参阅 [Configure a Point-to-Site VPN connection to a VNet（配置连接到 VNet 的点到站点 VPN 连接）](/documentation/articles/vpn-gateway-point-to-site-create)。
+- 有关 **Resource Manager** 部署模型步骤，请参阅 [Configure a Point-to-Site connection to a virtual network using PowerShell（使用 PowerShell 配置与虚拟网络的点到站点连接）](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)。 
+- 有关**经典**部署模型步骤，请参阅 [Configure a Point-to-Site VPN connection to a VNet（配置连接到 VNet 的点到站点 VPN 连接）](/documentation/articles/vpn-gateway-point-to-site-create/)。
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -162,10 +162,10 @@ namespaceManager.CreateSubscription("IssueTrackingTopic", "Dashboard", new SqlFi
 
 有关使用服务总线中转消息传送实例的详细信息，请参阅以下高级主题。
 
-- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet)
-- [服务总线中转消息传送 REST 教程](/documentation/articles/service-bus-brokered-tutorial-rest)
-- [事件中心开发人员指南](/documentation/articles/event-hubs-programming-guide)
+- [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
+- [服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet/)
+- [服务总线中转消息传送 REST 教程](/documentation/articles/service-bus-brokered-tutorial-rest/)
+- [事件中心开发人员指南](/documentation/articles/event-hubs-programming-guide/)
 - [中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 
 <!---HONumber=Mooncake_0104_2016-->

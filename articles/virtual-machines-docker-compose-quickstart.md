@@ -19,11 +19,11 @@
 
 作为示例，本文展示了怎么使用后台 MariaDB SQL 数据库快速设置 WordPress 博客，然而你也可以使用 Compose 来设置更加复杂的应用程序。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql)。
 
 ## 步骤 1：将 Linux VM 设置为 Docker 主机
 
-可以使用各种 Azure 过程和 Azure 应用商店中提供的映像创建 Linux VM 并将其设置为 Docker 主机。有关示例，请参阅[从 Azure 命令行界面使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)，了解使用 Docker VM 扩展创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，你的 VM 将自动设置为 Docker 主机。该文中的示例演示如何在服务管理模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行界面](/documentation/articles/xplat-cli-install) (Azure CLI) 创建 VM。
+可以使用各种 Azure 过程和 Azure 应用商店中提供的映像创建 Linux VM 并将其设置为 Docker 主机。有关示例，请参阅[从 Azure 命令行界面使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)，了解使用 Docker VM 扩展创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，你的 VM 将自动设置为 Docker 主机。该文中的示例演示如何在服务管理模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行界面](/documentation/articles/xplat-cli-install/) (Azure CLI) 创建 VM。
 
 ## 步骤 2：安装 Compose
 
@@ -98,7 +98,7 @@
 
 * 到 [Docker VM 扩展用户指引](https://github.com/Azure/azure-docker-extension/blob/master/README.md)中查看你的 Docker VM 中更多配置 Docker 和 Compose 的选项。
 * 有关构建和部署多容器应用的更多示例，请查阅 [Compose CLI 参考](http://docs.docker.com/compose/reference/)和[用户指南](http://docs.docker.com/compose/)。
-* 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-linux-docker-swarm) 群集集成。有关方案，请参阅 [使用 Swarm 配合 Compose](https://docs.docker.com/compose/swarm/)。
+* 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-linux-docker-swarm/) 群集集成。有关方案，请参阅 [使用 Swarm 配合 Compose](https://docs.docker.com/compose/swarm/)。
 
 <!--Image references-->
 

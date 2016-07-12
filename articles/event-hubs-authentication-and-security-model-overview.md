@@ -21,7 +21,7 @@
 
 ## 设备身份验证
 
-事件中心安全模型基于[共享访问签名 (SAS)](/documentation/articles/service-bus-shared-access-signature-authentication) 令牌与发布者的组合。事件发布者定义事件中心的虚拟终结点。发布者只能用于将消息发送到事件中心。无法从发布者接收消息。
+事件中心安全模型基于[共享访问签名 (SAS)](/documentation/articles/service-bus-shared-access-signature-authentication/) 令牌与发布者的组合。事件发布者定义事件中心的虚拟终结点。发布者只能用于将消息发送到事件中心。无法从发布者接收消息。
 
 通常，事件中心为每个设备使用一个发布者。发送到事件中心的任何发布者的所有消息都将在该事件中心内排队。发布者允许进行精细的访问控制和限制。
 
@@ -145,9 +145,9 @@ ACS 支持通过多种方法创建服务标识、信赖方和规则，但最简�
 - [使用事件中心的完整示例应用程序]
 - 使用服务总线队列的[队列消息解决方案]
 
-[事件中心概述]: /documentation/articles/event-hubs-overview
+[事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
 <!---HONumber=Mooncake_0523_2016-->

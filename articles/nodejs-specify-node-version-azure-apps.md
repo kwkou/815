@@ -93,9 +93,9 @@
 
 有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
-[如何使用适用于 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli-install
-[Azure 命令行工具]: /documentation/articles/xplat-cli-install
-[如何使用模块]: /documentation/articles/nodejs-use-node-modules-azure-apps
-[生成和部署 Node.js 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+[如何使用适用于 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli-install/
+[Azure 命令行工具]: /documentation/articles/xplat-cli-install/
+[如何使用模块]: /documentation/articles/nodejs-use-node-modules-azure-apps/
+[生成和部署 Node.js 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
 <!---HONumber=Mooncake_0215_2016-->

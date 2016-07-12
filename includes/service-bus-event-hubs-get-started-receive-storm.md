@@ -6,7 +6,7 @@
 
 本教程使用安装的 [HDInsight Storm][]，其中随附了现成可用的事件中心 Spout。
 
-1. 请按照 [HDInsight Storm - 入门](/documentation/articles/hdinsight-storm-overview)过程创建新 HDInsight 群集，并通过远程桌面连接该群集。
+1. 请按照 [HDInsight Storm - 入门](/documentation/articles/hdinsight-storm-overview/)过程创建新 HDInsight 群集，并通过远程桌面连接该群集。
 
 2. 将 `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` 文件复制到本地开发环境。其中包含 events-storm-spout。
 
@@ -220,9 +220,9 @@
 	此类创建新事件中心喷管，并使用配置文件中的属性对它进行实例化。请务必注意：此示例创建喷管的数量与事件中心中分区的数量相同，以便使用该事件中心允许的最大并行度。
 
 <!-- Links -->
-[事件中心概述]: /documentation/articles/event-hubs-overview
-[HDInsight Storm]: /documentation/articles/hdinsight-storm-overview
-[HDInsight 传感器分析教程]: /documentation/articles/hdinsight-storm-sensor-data-analysis
+[事件中心概述]: /documentation/articles/event-hubs-overview/
+[HDInsight Storm]: /documentation/articles/hdinsight-storm-overview/
+[HDInsight 传感器分析教程]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
 
 <!-- Images -->
 

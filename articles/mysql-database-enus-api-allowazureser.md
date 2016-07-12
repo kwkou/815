@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-api-allowazureser)
-- [English](/documentation/articles/mysql-database-enus-api-allowazureser)
+- [中文](/documentation/articles/mysql-database-api-allowazureser/)
+- [English](/documentation/articles/mysql-database-enus-api-allowazureser/)
 
 #Update servers: Allow Azure service access
 

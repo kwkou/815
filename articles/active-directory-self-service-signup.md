@@ -220,7 +220,7 @@
 
 ## 另请参阅
 
--  [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
+-  [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)
 
 -  [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 

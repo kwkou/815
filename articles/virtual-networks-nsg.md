@@ -24,7 +24,7 @@ NSG 包含以下属性。
 |Name|NSG 的名称|必须在区域内唯一<br/>可以包含字母、数字、下划线、句点和连字符<br/>必须以字母或数字开头<br/>必须以字母、数字或下划线结尾<br/>最多可以有 80 个字符|由于你可能需要创建多个 NSG，因此请确保设置命名约定，以便轻松标识 NSG 的功能。|
 |规则|规则用于定义允许或拒绝的具体流量||请参阅下面的 [NSG 规则](#Nsg-rules)| 
 
->[AZURE.NOTE] 不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。
+>[AZURE.NOTE] 不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell/)。
 
 ###<a name="Nsg-rules"></a> NSG 规则
 
@@ -109,8 +109,8 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 |部署工具|经典|
 |---|---|---|
 |经典管理门户|![否][red]|
-|PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps">![是][green]</a>|
-|Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli">![是][green]</a>|
+|PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps/\">![是][green]</a>|
+|Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli/\">![是][green]</a>|
 
 |**键**|支持 ![是][green]。单击项目。|不支持 ![否][red]。|
 |---|---|---|
@@ -123,7 +123,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 2. 你要过滤其进出流量的资源是连接到现有 VNet 中的子网，还是连接到新的 VNet 或其子网？
  
-有关如何针对 Azure 中的网络安全进行规划的详细信息，请参阅[云服务和网络安全最佳实践](/documentation/articles/best-practices-network-security)。
+有关如何针对 Azure 中的网络安全进行规划的详细信息，请参阅[云服务和网络安全最佳实践](/documentation/articles/best-practices-network-security/)。
 
 ## 设计注意事项
 
@@ -139,7 +139,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 |每个区域每个订阅的 NSG 数目|100|默认情况下，你在 Azure 经典管理门户中创建的每个 VM 都会创建一个新的 NSG。如果你允许此默认行为，则会很快用光 NSG。请确保在设计时牢记此限制，根据需要将资源分成多个区域或订阅。 |
 |每个 NSG 的 NSG 规则数|200|使用各种 IP 和端口，确保不超过此限制。 |
 
->[AZURE.IMPORTANT] 在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits#networking-limits)。可以通过开具支持票证增加某些限制。
+>[AZURE.IMPORTANT] 在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits/#networking-limits)。可以通过开具支持票证增加某些限制。
 
 ### VNet 和子网设计
 
@@ -161,11 +161,11 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 - 考虑工作负荷所需的层数。可以通过使用子网来隔离每个层，并可将 NSG 应用到该子网。 
 - 如果你需要针对 VPN 网关或 ExpressRoute 线路实现一个子网，请确保**不**将 NSG 应用到该子网。否则，跨 VNet 或跨界连接将不起作用。
-- 如果你需要实现一个虚拟设备，请确保将该虚拟设备部署在自己的子网上，以便用户定义路由 (UDR) 能够正常工作。你可以实现一个子网级 NSG，以便筛选进出该子网的流量。详细了解[如何控制流量和使用虚拟设备](/documentation/articles/virtual-networks-udr-overview)。
+- 如果你需要实现一个虚拟设备，请确保将该虚拟设备部署在自己的子网上，以便用户定义路由 (UDR) 能够正常工作。你可以实现一个子网级 NSG，以便筛选进出该子网的流量。详细了解[如何控制流量和使用虚拟设备](/documentation/articles/virtual-networks-udr-overview/)。
 
 ### 其他
 
-- 不支持将基于终结点的 ACL 和 NSG 置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[管理终结点 ACL](/documentation/articles/virtual-networks-acl-powershell)。
+- 不支持将基于终结点的 ACL 和 NSG 置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[管理终结点 ACL](/documentation/articles/virtual-networks-acl-powershell/)。
 - 与使用负载平衡器类似，在筛选来自其他 VNet 的流量时，你必须使用远程计算机的源地址范围，而不能使用连接 VNet 的网关。
 - 许多 Azure 服务不能连接到 Azure 虚拟网络，因此，进出这些服务的流量不能通过 NSG 进行筛选。请阅读所用服务的文档，以确定这些服务能否连接到 VNet。
 
@@ -230,8 +230,8 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 ## 后续步骤
 
-- [在经典部署模型中部署 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
-- [管理 NSG 日志](/documentation/articles/virtual-network-nsg-manage-log)。
+- [在经典部署模型中部署 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps/)。
+- [管理 NSG 日志](/documentation/articles/virtual-network-nsg-manage-log/)。
 
 [green]: ./media/virtual-network-nsg-overview/green.png
 [yellow]: ./media/virtual-network-nsg-overview/yellow.png

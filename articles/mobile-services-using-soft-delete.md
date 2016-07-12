@@ -156,7 +156,7 @@
 <!-- URLs. -->
 
 [SQL 位类型]: http://msdn.microsoft.com/zh-cn/library/ms177603.aspx
-[移动服务的脱机数据同步]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
+[移动服务的脱机数据同步]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

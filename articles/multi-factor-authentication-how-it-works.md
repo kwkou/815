@@ -157,7 +157,7 @@ Azure 多重身份验证有两个不同的版本。下表较详细地描述了�
 如果你没有上述任何产品并想要使用多重身份验证，首先你需要一个 Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。
 
 
-选择最适合你的组织的按用户或按使用量模式。接下来，若要开始使用，请参阅[入门](/documentation/articles/multi-factor-authentication-get-started-cloud)
+选择最适合你的组织的按用户或按使用量模式。接下来，若要开始使用，请参阅[入门](/documentation/articles/multi-factor-authentication-get-started-cloud/)
 
 
 

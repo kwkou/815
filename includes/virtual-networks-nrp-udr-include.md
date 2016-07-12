@@ -56,7 +56,7 @@ UDR 包含以下属性。
 
 ### 其他资源
 
-- 获取有关 [UDR](/documentation/articles/virtual-networks-udr-overview) 的详细信息。
+- 获取有关 [UDR](/documentation/articles/virtual-networks-udr-overview/) 的详细信息。
 - 阅读路由表的 [REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt502549.aspx)
 - 阅读用户定义的路由 (UDR) 的 [REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt502539.aspx)。
 

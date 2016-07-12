@@ -19,7 +19,7 @@
 
 了解如何创建端到端解决方案，以便通过 Azure 流分析实时检测欺诈行为。将事件引入 Azure 事件中心、编写用于聚合或提醒的流分析查询，以及将结果发送到输出接收器，以便通过实时处理来分析数据。虽然介绍的是电信方面的实时异常检测，但作为示例的技术同样适用于其他类型的欺诈检测，例如盗窃信用卡或身份的情况。
 
-流分析是一种完全托管的服务，可以在云中通过流式数据进行低延迟、高度可用、可伸缩且复杂的事件处理。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)。
+流分析是一种完全托管的服务，可以在云中通过流式数据进行低延迟、高度可用、可伸缩且复杂的事件处理。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)。
 
 
 ## 方案：实时进行远程通信和 SIM 欺诈行为检测
@@ -249,9 +249,9 @@
 
 ## 后续步骤
 
-- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 

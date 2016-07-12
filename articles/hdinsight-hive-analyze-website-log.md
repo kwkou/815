@@ -46,10 +46,10 @@
 3. 按照网页上提供的说明完成该示例。
 
 ##后续步骤
-尝试以下示例：[通过将 Hive 与 HDInsight 配合使用分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)。
+尝试以下示例：[通过将 Hive 与 HDInsight 配合使用分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data/)。
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
 
 <!---HONumber=Mooncake_0411_2016-->

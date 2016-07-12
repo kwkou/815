@@ -21,12 +21,12 @@
 
 对于这些应用程序（AngularJS、Ember.js、React.js 等），Azure AD 支持 OAuth 2.0 隐式授权流。有关隐式流的说明，请参阅 [OAuth 2.0 规范](http://tools.ietf.org/html/rfc6749#section-4.2)。其主要优点是它可让应用程序从 Azure AD 获取令牌，无需要执行后端服务器凭据交换。这可让应用登录用户、维护会话，并获取客户端 JavaScript 代码中所有其他 Web API 的令牌。使用隐式流时有几个重要的安全注意事项 - 特别是关于[客户端](http://tools.ietf.org/html/rfc6749#section-10.3)和[用户模拟](http://tools.ietf.org/html/rfc6749#section-10.3)。
 
-如果你想要使用隐式流与 Azure AD 将身份验证添加到 JavaScript 应用，建议使用我们的开放源代码 JavaScript 库 [adal.js](https://github.com/AzureAD/azure-activedirectory-library-for-js)。[此处](/documentation/articles/active-directory-appmodel-v2-overview#getting-started)有几篇 AngularJS 教程可以帮助你入门。
+如果你想要使用隐式流与 Azure AD 将身份验证添加到 JavaScript 应用，建议使用我们的开放源代码 JavaScript 库 [adal.js](https://github.com/AzureAD/azure-activedirectory-library-for-js)。[此处](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started)有几篇 AngularJS 教程可以帮助你入门。
 
 但是，如果你不想要使用单一页面应用程序中的库，而是自行发送协议消息，请遵循下面的常规步骤。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
     
 ## 协议图
 整个隐式登录流如下所示 - 下面将详细描述每个步骤。
@@ -35,7 +35,7 @@
 
 ## 发送登录请求
 
-若要一开始将用户登录应用程序，可以发送 [OpenID Connect](/documentation/articles/active-directory-v2-protocols-oidc) 授权请求，以及从 v2.0 终结点获取 `id_token`：
+若要一开始将用户登录应用程序，可以发送 [OpenID Connect](/documentation/articles/active-directory-v2-protocols-oidc/) 授权请求，以及从 v2.0 终结点获取 `id_token`：
 
 
 		// Line breaks for legibility only
@@ -54,11 +54,11 @@
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols#endpoints)。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints)。 |
 | client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
 | response\_type | 必填 | 必须包含 OpenID Connect 登录的 `id_token`。也可以包含 response\_type `token`。此处使用 `token`，让应用能够立即从授权终结点接收访问令牌，而无需向授权终结点发出第二次请求。如果使用 `token` response\_type，`scope` 参数必须包含范围，以指出要对哪个资源发出令牌。 |
 | redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
-| 作用域 | 必填 | 范围的空格分隔列表。对于 OpenID Connect，它必须包含范围 `openid`，该范围在同意 UI 中将转换为“将你登录”权限。（可选）你可能还想要包含 `email` 或 `profile` [范围](/documentation/articles/active-directory-v2-scopes)，以获取对其他用户数据的访问权限。也可以在此请求中包含其他范围，以请求同意各种资源。 |
+| 作用域 | 必填 | 范围的空格分隔列表。对于 OpenID Connect，它必须包含范围 `openid`，该范围在同意 UI 中将转换为“将你登录”权限。（可选）你可能还想要包含 `email` 或 `profile` [范围](/documentation/articles/active-directory-v2-scopes/)，以获取对其他用户数据的访问权限。也可以在此请求中包含其他范围，以请求同意各种资源。 |
 | response\_mode | 建议 | 指定将生成的令牌送回到应用程序所应该使用的方法。对于隐式流应该是 `fragment`。 |
 | state | 建议 | 同样随令牌响应返回的请求中所包含的值。其可以是你想要的任何内容的字符串。随机生成的唯一值通常用于[防止跨站点请求伪造攻击](http://tools.ietf.org/html/rfc6749#section-10.12)。该状态也用于在身份验证请求出现之前，于应用程序中编码用户的状态信息，例如之前所在的网页或视图。 |
 | nonce | 必填 | 由应用程序生成且包含在请求中的值，以声明方式包含在生成的 id\_token 中。应用程序接着便可确认此值，以减少令牌重新执行攻击。此值通常是随机的唯一字符串，可用以识别请求的来源。 |
@@ -66,7 +66,7 @@
 | login\_hint | 可选 | 如果事先知道其用户名称，可用于预先填充用户登录页面的用户名称/电子邮件地址字段。通常，应用将在重新身份验证期间使用此参数，并且已经使用 `preferred_username` 声明从前次登录提取用户名。 |
 | domain\_hint | 可选 | 可以是 `consumers` 或 `organizations` 之一。如果包含，它跳过用户在 v2.0 登录页面上经历的基于电子邮件的发现过程，导致稍微更加流畅的用户体验。通常，应用将在重新身份验证期间使用此参数，方法是从 id\_token 提取 `tid` 声明。如果 `tid` 声明值是 `9188040d-6c67-4c5b-b112-36a304b66dad`，应该使用 `domain_hint=consumers`。否则使用 `domain_hint=organizations`。 |
 
-此时，请求用户输入其凭据并完成身份验证。v2.0 终结点也将确保用户已经同意 `scope` 查询参数中指示的权限。如果用户未曾同意这些权限的任何一项，就请求用户同意请求的权限。[此处提供了权限、同意与多租户应用](/documentation/articles/active-directory-v2-scopes)的详细信息。
+此时，请求用户输入其凭据并完成身份验证。v2.0 终结点也将确保用户已经同意 `scope` 查询参数中指示的权限。如果用户未曾同意这些权限的任何一项，就请求用户同意请求的权限。[此处提供了权限、同意与多租户应用](/documentation/articles/active-directory-v2-scopes/)的详细信息。
 
 用户经过身份验证并同意后，v2.0 终结点将使用 `response_mode` 参数中指定的方法，将响应返回到位于所指示的 `redirect_uri` 的应用。
 
@@ -90,7 +90,7 @@
 | token\_type | 如果 `response_type` 包含 `token`，则包含该参数。始终为 `Bearer`。 |
 | expires\_in | 如果 `response_type` 包含 `token`，则包含该参数。表示令牌有效的秒数（针对缓存目的）。 |
 | 作用域 | 如果 `response_type` 包含 `token`，则包含该参数。表示 access\_token 的有效范围。 |
-| id\_token | 应用程序请求的 id\_token。可以使用 id\_token 验证用户的标识，并以用户身份开始会话。有关 id\_token 及其内容的更多详细信息，请参阅 [v2.0 终结点令牌参考](/documentation/articles/active-directory-v2-tokens)。 |
+| id\_token | 应用程序请求的 id\_token。可以使用 id\_token 验证用户的标识，并以用户身份开始会话。有关 id\_token 及其内容的更多详细信息，请参阅 [v2.0 终结点令牌参考](/documentation/articles/active-directory-v2-tokens/)。 |
 | state | 如果请求中包含状态参数，响应中就应该出现相同的值。应用程序应该验证请求和响应中的状态值是否完全相同。 |
 
 
@@ -111,7 +111,7 @@
 ## 验证 id\_token
 仅接收 id\_token 不足以验证用户，必须身份验证 id\_token 签名，并按照应用的要求验证令牌中的声明。v2.0 终结点使用 [JSON Web 令牌 (JWT)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) 和公钥加密对令牌进行签名并验证其是否有效。
 
-可以选择验证客户端代码中的 `id_token`，但是常见的做法是将 `id_token` 发送到后端服务器，并在那里执行验证。验证 id\_token 的签名后，就有几项声明需要验证。有关详细信息，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens)，包括[验证令牌](/documentation/articles/active-directory-v2-tokens#validating-tokens)和[有关签名密钥滚动更新的重要信息](/documentation/articles/active-directory-v2-tokens#validating-tokens)。我们建议利用库来分析和验证令牌 - 对于大多数语言和平台至少有一个可用。
+可以选择验证客户端代码中的 `id_token`，但是常见的做法是将 `id_token` 发送到后端服务器，并在那里执行验证。验证 id\_token 的签名后，就有几项声明需要验证。有关详细信息，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)，包括[验证令牌](/documentation/articles/active-directory-v2-tokens/#validating-tokens)和[有关签名密钥滚动更新的重要信息](/documentation/articles/active-directory-v2-tokens/#validating-tokens)。我们建议利用库来分析和验证令牌 - 对于大多数语言和平台至少有一个可用。
 <!--TODO: Improve the information on this-->
 
 你可能还希望根据自己的方案验证其他声明。一些常见的验证包括：
@@ -120,7 +120,7 @@
 - 确保用户拥有正确的授权/权限
 - 确保身份验证具有一定的强度，例如多重身份验证。
 
-有关 id\_token 中声明的详细信息，请参阅 [v2.0 应用模型令牌参考](/documentation/articles/active-directory-v2-tokens)。
+有关 id\_token 中声明的详细信息，请参阅 [v2.0 应用模型令牌参考](/documentation/articles/active-directory-v2-tokens/)。
 
 完全验证 id\_token 后，即可开始与用户的会话，并使用 id\_token 中的声明来获取应用中的用户相关信息。此信息可以用于显示、记录和授权，等等。
 
@@ -152,11 +152,11 @@
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols#endpoints)。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints)。 |
 | client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
 | response\_type | 必填 | 必须包含 OpenID Connect 登录的 `id_token`。还可以包含其他 response\_type，例如 `code`。 |
 | redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
-| 作用域 | 必填 | 范围的空格分隔列表。若要获取令牌，请包含相应资源请求的所有[范围](/documentation/articles/active-directory-v2-scopes)。 |
+| 作用域 | 必填 | 范围的空格分隔列表。若要获取令牌，请包含相应资源请求的所有[范围](/documentation/articles/active-directory-v2-scopes/)。 |
 | response\_mode | 建议 | 指定将生成的令牌送回到应用程序所应该使用的方法。可以是 `query`、`form_post` 或 `fragment` 之一。 |
 | state | 建议 | 同样随令牌响应返回的请求中所包含的值。其可以是你想要的任何内容的字符串。随机生成的唯一值通常用于防止跨站点请求伪造攻击。该状态也用于在身份验证请求出现之前，于应用程序中编码用户的状态信息，例如之前所在的网页或视图。 |
 | nonce | 必填 | 由应用程序生成且包含在请求中的值，以声明方式包含在生成的 id\_token 中。应用程序接着便可确认此值，以减少令牌重新执行攻击。此值通常是随机的唯一字符串，可用以识别请求的来源。 |

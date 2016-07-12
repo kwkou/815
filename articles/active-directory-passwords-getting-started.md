@@ -42,7 +42,7 @@
 你必须先完成以下先决条件才能启用和使用自助密码重置：
 
 - 创建 AAD 租户。有关详细信息，请参阅 [Azure AD 入门](/trial/get-started-active-directory/)。
-- 获取 Azure 订阅。有关详细信息，请参阅[什么是 Azure AD 租户？](/documentation/articles/active-directory-administer#what-is-an-azure-ad-tenant)
+- 获取 Azure 订阅。有关详细信息，请参阅[什么是 Azure AD 租户？](/documentation/articles/active-directory-administer/#what-is-an-azure-ad-tenant)
 - 将你的 AAD 租户与 Azure 订阅相关联。有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx)。
 - 升级到 Azure AD Premium、Basic 或使用 O365 付费许可证。有关详细信息，请参阅 [Azure Active Directory 版本](/pricing/details/active-directory/)。
 
@@ -73,7 +73,7 @@
 
     ![][004]
 
-6.	若要配置用户密码重置策略，请将“可进行密码重置的用户”开关滑动到“是”设置。这将显示更多控件，通过这些控件你可以配置此功能如何在你目录中工作。根据需要随意自定义密码重置。如果你想详细了解每个密码重置策略控件的作用，请参阅[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize)。
+6.	若要配置用户密码重置策略，请将“可进行密码重置的用户”开关滑动到“是”设置。这将显示更多控件，通过这些控件你可以配置此功能如何在你目录中工作。根据需要随意自定义密码重置。如果你想详细了解每个密码重置策略控件的作用，请参阅[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize/)。
 
     ![][005]
 
@@ -92,7 +92,7 @@
 -	通过将用户引导至位于 [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) 的注册门户，使用户能够注册其自己的数据
 -	要求用户在登录到位于 [http://myapps.microsoft.com](http://myapps.microsoft.com) 的访问面板时注册以进行密码重置，方法是将“登录到访问面板时要求用户注册”SSPR 配置选项设置为“是”。
 
-如果你想要详细了解密码重置使用哪些数据，以及此数据的任何格式要求，请参阅[密码重置使用哪些数据？](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)
+如果你想要详细了解密码重置使用哪些数据，以及此数据的任何格式要求，请参阅[密码重置使用哪些数据？](/documentation/articles/active-directory-passwords-learn-more/#what-data-is-used-by-password-reset)
 
 #### 通过用户注册门户添加用户联系人数据
 1.	为使用密码重置注册门户，你必须为你所在组织的用户提供指向此页面的链接 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup))，或者启用要求用户自动注册的选项。一旦他们单击此链接，将要求他们使用组织帐户登录。这样做之后，他们将看到以下页面：
@@ -171,9 +171,9 @@
 ### <a name="writeback-prerequisites"></a>写回先决条件
 在能够启用和使用密码写回之前，你必须确保满足以下先决条件：
 
-- 必须拥有已启用 Azure AD Premium 的 Azure AD 租户。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
+- 必须拥有已启用 Azure AD Premium 的 Azure AD 租户。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
 - 已在你的租户中配置和启用了密码重置。有关详细信息，请参阅[让用户重置其 Azure AD 密码](#enable-users-to-reset-their-azure-ad-passwords)
-- 你拥有至少一个管理员帐户和一个测试用户帐户，还有一个可用于测试此功能的 Azure AD Premium 许可证。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
+- 你拥有至少一个管理员帐户和一个测试用户帐户，还有一个可用于测试此功能的 Azure AD Premium 许可证。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
 
   > [AZURE.NOTE] 确保用于启用密码回写的管理员帐户是云管理员帐户（在 Azure AD 中创建），而不是联合帐户（在本地 AD 中创建并同步到 Azure AD 中）。
   
@@ -181,7 +181,7 @@
 
   > [AZURE.NOTE] 如果你运行的是旧版 Windows Server 2008 或 2008 R2，则你仍然可以使用此功能，但在云中实施本地 AD 密码策略之前，需要先[下载并安装 KB 2386717](https://support.microsoft.com/kb/2386717)。
   
-- 已安装了 Azure AD 同步工具，并已准备好 AD 环境，可随时同步到云。有关详细信息，请参阅[在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)。
+- 已安装了 Azure AD 同步工具，并已准备好 AD 环境，可随时同步到云。有关详细信息，请参阅[在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect/)。
 
   > [AZURE.NOTE] 测试密码写回之前，请确保完成完整导入，并在 Azure AD Connect 中从本地 AD 与 Azure AD 执行完全同步。
 
@@ -191,7 +191,7 @@
   
 
 ### <a name="step-1-download-the-latest-version-of-azure-ad-connect"></a>步骤 1：下载最新版本的 Azure AD Connect
-Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure AD Sync 工具中提供了密码写回功能。Azure AD Connect 发行版或版本号为 **1.0.0485.0222** 或更高的 Azure AD Sync 工具中提供了支持自动帐户解锁的密码写回功能。如果你运行的是较旧版本，请在继续操作之前至少升级到此版本。[单击此处下载最新版本的 Azure AD Connect](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect)。
+Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure AD Sync 工具中提供了密码写回功能。Azure AD Connect 发行版或版本号为 **1.0.0485.0222** 或更高的 Azure AD Sync 工具中提供了支持自动帐户解锁的密码写回功能。如果你运行的是较旧版本，请在继续操作之前至少升级到此版本。[单击此处下载最新版本的 Azure AD Connect](/documentation/articles/active-directory-aadconnect/#download-azure-ad-connect)。
 
 #### 查看 Azure AD Sync 的版本
 1.	导航到 **%ProgramFiles%\Azure Active Directory Sync\**。
@@ -204,7 +204,7 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 
 如果此版本号大于或等于 **1.0.0419.0911**，或者你要安装 Azure AD Connect，则你可以跳至[步骤 2：通过 UI 或 powershell 在 Azure AD Connect 中启用密码写回并验证](#step-2-enable-password-writeback-in-azure-ad-connect)。
 
- > [AZURE.NOTE] 如果是首次安装 Azure AD Connect 工具，建议遵循一些最佳实践，为目录同步准备好环境。在安装 Azure AD Connect 工具之前，必须在 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)或 [Azure 经典管理门户](https://manage.windowsazure.cn)中激活目录同步。有关详细信息，请参阅[管理 Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)。
+ > [AZURE.NOTE] 如果是首次安装 Azure AD Connect 工具，建议遵循一些最佳实践，为目录同步准备好环境。在安装 Azure AD Connect 工具之前，必须在 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)或 [Azure 经典管理门户](https://manage.windowsazure.cn)中激活目录同步。有关详细信息，请参阅[管理 Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next/)。
 
 
 ### <a name="step-2-enable-password-writeback-in-azure-ad-connect"></a>步骤 2：在 Azure AD Connect 中启用密码写回
@@ -219,7 +219,7 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 
 4.	完成向导，最后一页将汇总更改并包括密码写回配置更改。
 
-> [AZURE.NOTE] 你随时可以禁用密码写回，方法是重新运行此向导并取消选择该功能，或者在 [Azure 经典管理门户](https://manage.windowsazure.cn)上你目录的“配置”选项卡的“用户密码重置策略”部分中，将“密码写回到本地目录”设置设为“否”。有关自定义密码重置体验的详细信息，请查看[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize)。
+> [AZURE.NOTE] 你随时可以禁用密码写回，方法是重新运行此向导并取消选择该功能，或者在 [Azure 经典管理门户](https://manage.windowsazure.cn)上你目录的“配置”选项卡的“用户密码重置策略”部分中，将“密码写回到本地目录”设置设为“否”。有关自定义密码重置体验的详细信息，请查看[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize/)。
 
 #### 使用 Windows PowerShell 启用密码写回
 1.	在你的**目录同步计算机**上，打开一个新的**权限提升的 Windows PowerShell 窗口**。
@@ -306,14 +306,14 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) — 了解如何以系统用户的身份重置或更改自己的密码
-* [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works) - 了解六个不同的服务组件及其功能
-* [**自定义**](/documentation/articles/active-directory-passwords-customize) - 了解如何根据组织的需求自定义服务的外观和行为
-* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices) - 了解如何快速部署且有效管理组织的密码
-* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights) - 了解集成式报告功能
-* [**常见问题**](/documentation/articles/active-directory-passwords-faq) - 获取常见问题的解答
-* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
-* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more) - 深入探索服务工作原理的技术细节
+* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password/) — 了解如何以系统用户的身份重置或更改自己的密码
+* [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works/) - 了解六个不同的服务组件及其功能
+* [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
+* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices/) - 了解如何快速部署且有效管理组织的密码
+* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights/) - 了解集成式报告功能
+* [**常见问题**](/documentation/articles/active-directory-passwords-faq/) - 获取常见问题的解答
+* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot/) - 了解如何快速排查服务的问题
+* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more/) - 深入探索服务工作原理的技术细节
 
 
 

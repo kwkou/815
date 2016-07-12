@@ -18,7 +18,7 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 用于创建 VPN 网关的说明取决于用于创建虚拟网络的部署模型。例如，如果你使用经典部署模型创建 VNet，将使用经典部署模型的指导原则和说明来创建及配置 VPN 网关。你无法为经典部署模型虚拟网络创建 资源管理器 VPN 网关。
 
-有关部署模型的详细信息，请参阅 [Understanding Resource Manager and classic deployment models（了解 资源管理器 和经典部署模型）](/documentation/articles/resource-manager-deployment-model)。
+有关部署模型的详细信息，请参阅 [Understanding Resource Manager and classic deployment models（了解 资源管理器 和经典部署模型）](/documentation/articles/resource-manager-deployment-model/)。
 
 
 ## <a name="gwsub"></a>网关子网
@@ -118,7 +118,7 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 ## VPN 设备
 
-必须确保你要使用的 VPN 设备支持配置所需的 VPN 类型。有关兼容的 VPN 设备的详细信息，请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices)。
+必须确保你要使用的 VPN 设备支持配置所需的 VPN 类型。有关兼容的 VPN 设备的详细信息，请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 ##<a name="gateway-requirements"></a> 网关要求
 
@@ -128,7 +128,7 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 ## 后续步骤
 
-请参阅 [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq)了解详细信息之后，再继续规划和设计你的配置。
+请参阅 [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq/)了解详细信息之后，再继续规划和设计你的配置。
 
 
 

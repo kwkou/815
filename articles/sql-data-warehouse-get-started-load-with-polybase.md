@@ -247,14 +247,14 @@ CREATE STATISTICS [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 [1]: ./media/sql-data-warehouse-get-started-load-with-polybase/external-table.png
 
 <!--Article references-->
-[PolyBase in SQL Data Warehouse Tutorial]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase
-[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp
-[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
-[PolyBase 指南]: /documentation/articles/sql-data-warehouse-load-polybase-guide
-[AzCopy 命令行实用程序入门]: /documentation/articles/storage-use-azcopy
-[最新版本的 AzCopy]: /documentation/articles/storage-use-azcopy
+[PolyBase in SQL Data Warehouse Tutorial]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
+[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
+[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[PolyBase 指南]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
+[AzCopy 命令行实用程序入门]: /documentation/articles/storage-use-azcopy/
+[最新版本的 AzCopy]: /documentation/articles/storage-use-azcopy/
 
 <!--External references-->
 [supported source/sink]: https://msdn.microsoft.com/zh-cn/library/dn894007.aspx

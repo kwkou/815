@@ -32,7 +32,7 @@
 <object type="image/svg+xml" data="./media/web-sites-business-application-solution-overview/web-app-notitle.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]
-> 本指南演示了与业务线应用程序相关的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure Web 应用功能。若要查看这些功能，另请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview)和[数字市场营销活动](/documentation/articles/web-sites-digital-marketing-application-solution-overview)中的其他指导。
+> 本指南演示了与业务线应用程序相关的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure Web 应用功能。若要查看这些功能，另请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview/)和[数字市场营销活动](/documentation/articles/web-sites-digital-marketing-application-solution-overview/)中的其他指导。
 
 ## 引入现有资产
 
@@ -81,18 +81,18 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 
 [Azure Websites]: /home/features/web-site/
 
-[FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-[Git]: /documentation/articles/web-sites-publish-source-control
-[HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
+[FTP]: /documentation/articles/web-sites-deploy/#ftp
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started/
+[Git]: /documentation/articles/web-sites-publish-source-control/
+[HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate/
 [Azure Web 应用定价详细信息]: /home/features/web-site#price
-[对用户进行身份验证]: /documentation/articles/web-sites-authentication-authorization
+[对用户进行身份验证]: /documentation/articles/web-sites-authentication-authorization/
 [简易身份验证]: https://azure.microsoft.com/zh-cn/blog/2014/11/13/azure-websites-authentication-authorization/
-[为用户授权]: /documentation/articles/web-sites-authentication-authorization
+[为用户授权]: /documentation/articles/web-sites-authentication-authorization/
 [Azure 信任中心]: /support/trust-center/
-[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
-[Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[向上和向外缩放]: /documentation/articles/web-sites-scale
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
+[Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+[向上和向外缩放]: /documentation/articles/web-sites-scale/
 [Azure 经典管理门户]: http://manage.windowsazure.cn/
 [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell 脚本]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
@@ -100,7 +100,7 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 [我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis 缓存]: https://azure.microsoft.com/zh-cn/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
 
-[quick glance]: /documentation/articles/web-sites-monitor
+[quick glance]: /documentation/articles/web-sites-monitor/
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 
  

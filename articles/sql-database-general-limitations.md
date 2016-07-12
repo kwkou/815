@@ -17,7 +17,7 @@
 
 ## 连接性和身份验证
 
-  - 不支持 Windows 身份验证。请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins)。但是，对 Azure Active Directory 身份验证的支持存在某些限制。请参阅[使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。
+  - 不支持 Windows 身份验证。请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins/)。但是，对 Azure Active Directory 身份验证的支持存在某些限制。请参阅[使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication/)。
 
   - Azure SQL 数据库支持表格格式数据流 (TDS) 协议客户端版本 7.3 或更高版本。
 
@@ -49,14 +49,14 @@ Azure SQL 数据库使用的默认数据库排序规则是 SQL\_LATIN1\_GENERAL\
 
 ## 其他指导原则
 
-- 除了本文所述的一般性限制外，SQL 数据库还会根据**服务层**实施特定的配额与限制。有关服务层的概述，请参阅 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers)。
+- 除了本文所述的一般性限制外，SQL 数据库还会根据**服务层**实施特定的配额与限制。有关服务层的概述，请参阅 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/)。
 
-- 有关其他 Azure SQL 数据库限制，请参阅 [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
+- 有关其他 Azure SQL 数据库限制，请参阅 [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。
 
-- 有关与安全相关的指导原则，请参阅 [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines)。
+- 有关与安全相关的指导原则，请参阅 [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines/)。
 
-- 与兼容性相关的另一个方面是，Azure SQL 数据库有本地版本的 SQL Server，例如 SQL Server 2014 和 SQL Server 2016。Azure SQL 数据库的最新版本 V12 已在此方面做出诸多改善。有关详细信息，请参阅 [SQL 数据库 V12 的新增功能](/documentation/articles/sql-database-v12-whats-new)。
+- 与兼容性相关的另一个方面是，Azure SQL 数据库有本地版本的 SQL Server，例如 SQL Server 2014 和 SQL Server 2016。Azure SQL 数据库的最新版本 V12 已在此方面做出诸多改善。有关详细信息，请参阅 [SQL 数据库 V12 的新增功能](/documentation/articles/sql-database-v12-whats-new/)。
 
-- 有关驱动程序可用性和 SQL 数据库支持的信息，请参阅 [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)。
+- 有关驱动程序可用性和 SQL 数据库支持的信息，请参阅 [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)。
 
 <!---HONumber=Mooncake_0509_2016-->

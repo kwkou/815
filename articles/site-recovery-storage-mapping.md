@@ -94,6 +94,6 @@ VM5 | C:\ClusterStorage\SourceVolume3 | 不适用 | 无映射，因此将使用 
 
 ## 后续步骤
 
-现在，你已经对存储映射有了更好的了解，因此可以[准备部署 Azure Site Recovery](/documentation/articles/site-recovery-best-practices) 了。
+现在，你已经对存储映射有了更好的了解，因此可以[准备部署 Azure Site Recovery](/documentation/articles/site-recovery-best-practices/) 了。
 
 <!---HONumber=Mooncake_0328_2016-->

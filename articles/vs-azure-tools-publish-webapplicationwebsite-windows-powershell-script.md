@@ -121,6 +121,6 @@ JSON 配置文件指定要部署的内容的详细信息。它包括当你创建
 
 ## 后续步骤
 
-有关详细信息，请参阅[Publish-WebApplicationVM（Windows PowerShell 脚本）](/documentation/articles/vs-azure-tools-publish-webapplicationvm)
+有关详细信息，请参阅[Publish-WebApplicationVM（Windows PowerShell 脚本）](/documentation/articles/vs-azure-tools-publish-webapplicationvm/)
 
 <!---HONumber=Mooncake_0509_2016-->

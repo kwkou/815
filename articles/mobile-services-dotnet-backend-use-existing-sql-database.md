@@ -20,7 +20,7 @@
 <a name="ExistingModel"></a>
 ## 探索现有的数据库模型
 
-在本教程中，我们将使用以你的移动服务创建的数据库，但不使用创建的默认模型。我们将手动创建任意模型，以代表你可能具有的现有应用程序。有关如何改为连接到本地数据库的完整详细信息，请查看[使用混合连接从 Azure 移动服务连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)。
+在本教程中，我们将使用以你的移动服务创建的数据库，但不使用创建的默认模型。我们将手动创建任意模型，以代表你可能具有的现有应用程序。有关如何改为连接到本地数据库的完整详细信息，请查看[使用混合连接从 Azure 移动服务连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/)。
 
 1. 首先，请在 **Visual Studio 2013 Update 2** 中创建移动服务服务器项目，或使用可在 [Azure 经典管理门户](http://manage.windowsazure.cn)中从服务的“移动服务”选项卡下载的快速入门项目。对于本教程，我们假设你的服务器项目名称为 **ShoppingService**。
 

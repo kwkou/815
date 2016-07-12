@@ -95,7 +95,7 @@
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
 [Azure IoT - 服务 SDK NuGet 包]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [暂时性故障处理]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
-[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 
 <!-- Images -->
 [20]: ./media/iot-hub-c2d-cloud-csharp/create-identity-csharp1.png

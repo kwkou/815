@@ -16,7 +16,7 @@
 
 # DocumentDB 索引策略
 
-尽管许多客户都愿意让 DocumentDB 自动处理[索引的方方面面](/documentation/articles/documentdb-indexing)，但 DocumentDB 还支持在创建过程中为集合指定自定义**索引策略**。与其他数据库平台中提供的辅助索引相比，DocumentDB 中的索引策略更加灵活且功能强大，因为它允许你设计和自定义索引形状，而无需牺牲架构的灵活性。若要了解 DocumentDB 中的索引工作原理，就必须通过管理索引策略来了解它，你可以在索引存储开销、写入和查询吞吐量以及查询一致性之间进行详细权衡。
+尽管许多客户都愿意让 DocumentDB 自动处理[索引的方方面面](/documentation/articles/documentdb-indexing/)，但 DocumentDB 还支持在创建过程中为集合指定自定义**索引策略**。与其他数据库平台中提供的辅助索引相比，DocumentDB 中的索引策略更加灵活且功能强大，因为它允许你设计和自定义索引形状，而无需牺牲架构的灵活性。若要了解 DocumentDB 中的索引工作原理，就必须通过管理索引策略来了解它，你可以在索引存储开销、写入和查询吞吐量以及查询一致性之间进行详细权衡。
 
 在本文中，我们将仔细研究 DocumentDB 索引策略、自定义索引策略的方法和相关的权衡方案。
 
@@ -288,7 +288,7 @@ DocumentDB 返回在“无”索引模式下对集合进行查询的错误。查
 
 ### 索引路径
 
-DocumentDB 将 JSON 文档和索引建立为树形，从而可以针对树中的路径调整策略。你可以在本 [DocumentDB 索引介绍](/documentation/articles/documentdb-indexing)中找到更多详细信息。在这些文档中，你可以选择必须包括在索引中或从索引中排除的路径。如果事先已知查询模式，这可以提高写入性能并减少方案所需的索引存储。
+DocumentDB 将 JSON 文档和索引建立为树形，从而可以针对树中的路径调整策略。你可以在本 [DocumentDB 索引介绍](/documentation/articles/documentdb-indexing/)中找到更多详细信息。在这些文档中，你可以选择必须包括在索引中或从索引中排除的路径。如果事先已知查询模式，这可以提高写入性能并减少方案所需的索引存储。
 
 索引路径以根 (/) 开头，通常以通配符“?”结尾，表示前缀有多个可能值。例如，对于 SELECT * FROM Families F WHERE F.familyName = "Andersen"，必须在集合的索引策略中包含 /familyName/? 的索引路径。
 
@@ -751,7 +751,7 @@ JSON 规范中实现了以下更改︰
 
 1.	[DocumentDB .NET 索引管理代码示例](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/IndexManagement/Program.cs)
 2.	[DocumentDB REST API 集合操作](https://msdn.microsoft.com/library/azure/dn782195.aspx)
-3.	[使用 DocumentDB SQL 进行查询](/documentation/articles/documentdb-sql-query)
+3.	[使用 DocumentDB SQL 进行查询](/documentation/articles/documentdb-sql-query/)
 
  
 

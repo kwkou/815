@@ -17,9 +17,9 @@
 # 备份 Azure 虚拟机
 本文介绍备份 Azure 虚拟机 (VM) 的过程。
 
-首先，在备份 Azure 虚拟机之前，需要注意一些事项。如果你尚未这样做，请完成[先决条件](/documentation/articles/backup-azure-vms-prepare)部分，在环境中做好 VM 备份的准备。
+首先，在备份 Azure 虚拟机之前，需要注意一些事项。如果你尚未这样做，请完成[先决条件](/documentation/articles/backup-azure-vms-prepare/)部分，在环境中做好 VM 备份的准备。
 
-有关其他信息，请参阅[在 Azure 中规划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction)和 [Azure 虚拟机](/documentation/services/virtual-machines/)。
+有关其他信息，请参阅[在 Azure 中规划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)和 [Azure 虚拟机](/documentation/services/virtual-machines/)。
 
 备份 Azure 虚拟机的过程包括三个主要步骤：
 
@@ -170,11 +170,11 @@
 仪表板中的值每 24 小时刷新一次。
 
 ## 排查错误
-如果你在备份虚拟机时遇到问题，请参阅 [VM 故障排除文章](/documentation/articles/backup-azure-vms-troubleshoot)以获取帮助。
+如果你在备份虚拟机时遇到问题，请参阅 [VM 故障排除文章](/documentation/articles/backup-azure-vms-troubleshoot/)以获取帮助。
 
 ## 后续步骤
 
-- [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms)
-- [恢复虚拟机](/documentation/articles/backup-azure-restore-vms)
+- [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms/)
+- [恢复虚拟机](/documentation/articles/backup-azure-restore-vms/)
 
 <!---HONumber=Mooncake_0503_2016-->

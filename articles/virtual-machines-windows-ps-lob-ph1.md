@@ -17,9 +17,9 @@
 
 # 业务线应用程序工作负荷阶段 1：配置 Azure
  
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
  
-在 Azure 基础结构服务中部署仅限 Intranet 的高可用性业务线应用程序的这个阶段，你将构建出 Azure 网络和存储基础结构。你必须在转到[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview)。
+在 Azure 基础结构服务中部署仅限 Intranet 的高可用性业务线应用程序的这个阶段，你将构建出 Azure 网络和存储基础结构。你必须在转到[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2/) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview/)。
 
 必须使用这些基本网络组件设置 Azure：
 
@@ -60,7 +60,7 @@
 
 **表 S：虚拟网络中的子网**
 
-> [AZURE.NOTE] 为简单起见，此预定义的体系结构使用单个子网。如果要覆盖一组流量筛选器来模拟子网隔离，则可以使用 Azure [网络安全组](/documentation/articles/virtual-networks-nsg)。
+> [AZURE.NOTE] 为简单起见，此预定义的体系结构使用单个子网。如果要覆盖一组流量筛选器来模拟子网隔离，则可以使用 Azure [网络安全组](/documentation/articles/virtual-networks-nsg/)。
 
 对于你最初在虚拟网络中设置域控制器时要使用的两个本地 DNS 服务器，填写表 D。为每个 DNS 服务器提供一个友好名称和单个 IP 地址。此友好名称无需与 DNS 服务器的主机名或计算机名称相匹配。请注意，列出了两个空白条目，但你可以添加更多。与你的 IT 部门协作来确定此列表。
 
@@ -178,7 +178,7 @@
 	$vnetConnectionKey="<Table V - Item 8 - Value column>"
 	$vnetConnection=New-AzureRMVirtualNetworkGatewayConnection -Name $vnetConnectionName -ResourceGroupName $rgName -Location $locName -ConnectionType IPsec -SharedKey $vnetConnectionKey -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localGateway
 
-接下来，配置用于连接到 Azure VPN 网关的本地 VPN 设备。有关详细信息，请参阅[配置 VPN 设备](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp#configure-your-vpn-device)。
+接下来，配置用于连接到 Azure VPN 网关的本地 VPN 设备。有关详细信息，请参阅[配置 VPN 设备](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#configure-your-vpn-device)。
 
 若要配置本地 VPN 设备，需要以下项：
 
@@ -216,7 +216,7 @@
 
 ## 后续步骤
 
-- 若要继续配置此工作负荷，请使用[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2)。
+- 若要继续配置此工作负荷，请使用[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2/)。
 
 
 <!---HONumber=Mooncake_0411_2016-->

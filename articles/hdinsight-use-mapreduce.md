@@ -50,7 +50,7 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 
 有关将 Hadoop 流式处理与 hdinsight 配合使用的示例，请参阅：
 
-* [开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
+* [开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
 
 ##<a id="data"></a>关于示例数据
 
@@ -142,7 +142,7 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 	  }
 	}
 
-有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)。
+有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)。
 
 ##<a id="run"></a>运行 MapReduce
 
@@ -150,15 +150,15 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 | **使用此方法**... | **...实现此目的** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:-------------------------------------------------------------------|:--------------------------------------------------------|:------------------------------------------|:-----------------------------------------|
-| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl) | 使用 **REST** 远程提交作业 | Windows | Windows |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | 使用 **Windows PowerShell** 远程提交作业 | Windows | Windows |
-| [远程桌面](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop) | 通过**远程桌面**使用 Hadoop 命令 | Windows | Windows |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl/) | 使用 **REST** 远程提交作业 | Windows | Windows |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell/) | 使用 **Windows PowerShell** 远程提交作业 | Windows | Windows |
+| [远程桌面](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop/) | 通过**远程桌面**使用 Hadoop 命令 | Windows | Windows |
 
 ##<a id="nextsteps"></a>后续步骤
 
 虽然 MapReduce 提供了强大的诊断功能，但掌握起来可能会比较困难。有多个基于 Java 的框架可让你更轻松地定义 MapReduce 应用程序，还有一些技术（例如 Pig 和 Hive）可让你更方便地在 HDInsight 中处理数据。若要了解更多信息，请参阅下列文章：
 
-* [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
+* [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
 
 * [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 
@@ -167,16 +167,16 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 * [运行 HDInsight 示例][hdinsight-samples]
 
 
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-develop-mapreduce-jobs]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-develop-mapreduce-jobs]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 

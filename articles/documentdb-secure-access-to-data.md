@@ -158,7 +158,7 @@ DocumentDB 权限资源与 DocumentDB 用户关联。每个用户可能包含零
 ## 后续步骤
 
 - 若要了解有关 DocumentDB 的详细信息，请单击[此处](http://azure.com/docdb)。
-- 若要了解有关管理主密钥和只读密钥的信息，请单击[此处](/documentation/articles/documentdb-manage-account)。
+- 若要了解有关管理主密钥和只读密钥的信息，请单击[此处](/documentation/articles/documentdb-manage-account/)。
 - 若要了解如何构造 DocumentDB 授权令牌的信息，请单击[此处](https://msdn.microsoft.com/library/azure/dn783368.aspx)
  
 

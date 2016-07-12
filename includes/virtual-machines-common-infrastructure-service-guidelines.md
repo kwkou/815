@@ -6,7 +6,7 @@ Azure 是一个实现开发/测试或概念证明配置的极好平台，因为�
 
 本文改编自 [Azure 实现指导原则](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx)这篇博客文章中的内容。感谢 Santiago Cánepa（Microsoft 应用程序开发经理）和 Hugo Salcedo（Microsoft 应用程序开发经理）提供的原创内容。
 
-> [AZURE.NOTE]地缘组已弃用。此处不介绍其用法。有关详细信息，请参阅[关于区域虚拟网络和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。
+> [AZURE.NOTE]地缘组已弃用。此处不介绍其用法。有关详细信息，请参阅[关于区域虚拟网络和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet/)。
 
 ## 1\.命名约定
 
@@ -75,7 +75,7 @@ Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet
 
 ### 存储帐户名称
 
-存储帐户具有适用于其名称的特殊规则。你只能使用小写字母和数字。有关详细信息，请参阅[创建存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)。此外，存储帐户名称与 core.chinacloudapi.cn 组合在一起应该是一个全局有效的唯一 DNS 名称。例如，如果存储帐户名为 mystorageaccount，则下面生成的 DNS 名称应该是唯一的：
+存储帐户具有适用于其名称的特殊规则。你只能使用小写字母和数字。有关详细信息，请参阅[创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。此外，存储帐户名称与 core.chinacloudapi.cn 组合在一起应该是一个全局有效的唯一 DNS 名称。例如，如果存储帐户名为 mystorageaccount，则下面生成的 DNS 名称应该是唯一的：
 
 - mystorageaccount.blob.core.chinacloudapi.cn
 - mystorageaccount.table.core.chinacloudapi.cn
@@ -140,7 +140,7 @@ Azure 存储空间是许多 Azure 解决方案不可或缺的组成部分。Azur
 
 Azure 提供两种类型的存储帐户。标准存储帐户可以访问 Blob 存储（用于存储 Azure 虚拟机磁盘）、表存储、队列存储和文件存储。高级存储专为高性能应用程序（例如 AlwaysOn 群集中的 SQL Server）设计，当前仅支持 Azure 虚拟机磁盘。
 
-存储帐户将绑定到可伸缩性目标。要熟悉当前 Azure 存储空间限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)。另请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+存储帐户将绑定到可伸缩性目标。要熟悉当前 Azure 存储空间限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/#storage-limits)。另请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 Azure 使用一个操作系统磁盘、一个临时磁盘和零个或更多可选数据磁盘创建虚拟机。操作系统磁盘和数据磁盘是 Azure 页 blob，而临时磁盘则通过本地方式存储在计算机所在的节点上。这使得临时磁盘不适用于在系统回收过程中必须保留的数据，因为计算机可能会以无提示方式从一个节点迁移到另一个节点，从而丢失该磁盘中的任何数据。不要在临时驱动器上存储任何内容。
 
@@ -149,7 +149,7 @@ Azure 使用一个操作系统磁盘、一个临时磁盘和零个或更多可�
 ### 条带化的磁盘
 除了提供相关功能来创建大于 1023 GB 的磁盘外，在许多情况下，对数据磁盘使用条带化还可增强性能，因为允许多个 blob 支持单个卷的存储。使用条带化时，将会并行处理针对单个逻辑磁盘写入和读取数据所需的 I/O。
 
-Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚拟机大小。有关详细信息，请参阅 [Windows](/documentation/articles/virtual-machines-windows-sizes) 或者 [Linux](/documentation/articles/virtual-machines-linux-sizes)虚拟机大小。
+Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚拟机大小。有关详细信息，请参阅 [Windows](/documentation/articles/virtual-machines-windows-sizes/) 或者 [Linux](/documentation/articles/virtual-machines-linux-sizes/)虚拟机大小。
 
 如果要对 Azure 数据磁盘使用磁盘条带化，请考虑以下准则：
 
@@ -409,13 +409,13 @@ Contoso 决定将以下名称用于其 Azure 虚拟机：
 
 ## 其他资源
 
-[Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)
+[Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/#storage-limits)
 
-[Windows](/documentation/articles/virtual-machines-windows-sizes) 或者 [linux](/documentation/articles/virtual-machines-linux-sizes) 虚拟机的大小
+[Windows](/documentation/articles/virtual-machines-windows-sizes/) 或者 [linux](/documentation/articles/virtual-machines-linux-sizes/) 虚拟机的大小
 
-[Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)
+[Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)
 
-[云平台集成框架（Azure 体系结构模式）](/documentation/articles/azure-architectures-cpif-overview)
+[云平台集成框架（Azure 体系结构模式）](/documentation/articles/azure-architectures-cpif-overview/)
 
 [数据中心扩展参考体系结构关系图](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
 

@@ -35,19 +35,19 @@
 
 通过有保证的资源、相关教程（如创建你的第一个 SQL 数据库、排查查询问题和快速入门代码示例），获取数据库问题的正确答案永远不会遥不可及。
 
-[阅读文档](/documentation/articles/sql-database-connect-central-recommendations)
+[阅读文档](/documentation/articles/sql-database-connect-central-recommendations/)
 
 转到主页以查看 SQL 数据库可提供的其他功能。
 [请查看](/home/features/sql-database)
 
 ## 后续步骤
 
-获取 [Azure 订阅](/pricing/1rmb-trial)，并[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
+获取 [Azure 订阅](/pricing/1rmb-trial)，并[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
 
 ## 了解详细信息
 
 浏览所有 [SQL 数据库的功能](/home/features/sql-database)。
  
-查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview)。
+查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 
 <!---HONumber=Mooncake_0620_2016-->

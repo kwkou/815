@@ -22,7 +22,7 @@
 - Sails.js。[此处](http://sailsjs.org/get-started)提供了安装说明。
 - Sails.js 的实践知识。本教程并非旨在帮助你解决运行 Sail.js 相关的一般性问题。
 - Git。安装二进制文件可从[此处](http://www.git-scm.com/downloads)获取。
-- Azure CLI。[此处](/documentation/articles/xplat-cli-install)提供了安装说明。
+- Azure CLI。[此处](/documentation/articles/xplat-cli-install/)提供了安装说明。
 - 一个 Azure 帐户。如果你没有帐户，可以[注册1元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 步骤 1：在开发环境中创建 Sails.js 应用
@@ -76,7 +76,7 @@
         loggingEnabled: true
         logDirectory: iisnode
 
-    现在已针对 iisnode 启用日志记录。有关具体操作的详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-get-started#iisnodelog)。
+    现在已针对 iisnode 启用日志记录。有关具体操作的详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-get-started/#iisnodelog)。
 
 2. 打开 config/env/production.js 来配置生产环境，并设置 `port` 和 `hookTimeout`：
 
@@ -142,7 +142,7 @@
 ## 排查部署问题
 
 如果 Sails.js 应用程序在 Azure Web 应用中由于某种原因而失败，请查找 stderr 日志，以帮助进行故障排除。
-有关详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-get-started#iisnodelog)。
+有关详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-get-started/#iisnodelog)。
 如果应用成功启动，stdout 日志应显示你熟悉的消息：
 
                 .-..-.
@@ -165,7 +165,7 @@
 
 若要连接到 Azure 中的数据库，可以在 Azure 中创建所选的数据库，例如 Azure SQL 数据库、MySQL、MongoDB、Azure (Redis) 缓存等，并使用相应的[数据存储适配器](https://github.com/balderdashy/sails#compatibility)连接到该数据库。本部分中的步骤说明如何连接到 Azure SQL 数据库。
 
-1. 遵循[此处](/documentation/articles/sql-database-get-started)的教程，在新的 SQL Server 中创建空白的 Azure SQL 数据库。默认防火墙设置将允许 Azure 服务（例如 Azure Web 应用）连接到该数据库。
+1. 遵循[此处](/documentation/articles/sql-database-get-started/)的教程，在新的 SQL Server 中创建空白的 Azure SQL 数据库。默认防火墙设置将允许 Azure 服务（例如 Azure Web 应用）连接到该数据库。
 
 2. 从命令行终端安装 SQL Server 适配器：
 
@@ -229,7 +229,7 @@
 
 ## 更多资源
 
-- [Azure 中的 Node.js Web 应用入门](/documentation/articles/app-service-web-nodejs-get-started)
-- [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps)
+- [Azure 中的 Node.js Web 应用入门](/documentation/articles/app-service-web-nodejs-get-started/)
+- [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
 
 <!---HONumber=Mooncake_0509_2016-->

@@ -54,7 +54,7 @@ Azure 数据库备份存储在异地冗余的 Azure 存储空间 (RA-GRS) 中，
 
 ## 另请参阅
 
-[延伸数据库的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)
+[延伸数据库的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage/)
 
 [sys.sp\_rda\_reauthorize\_db (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt131016.aspx)
 

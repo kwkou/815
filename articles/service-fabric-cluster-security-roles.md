@@ -21,7 +21,7 @@ Azure Service Fabric 针对连接到 Service Fabric 群集的客户端支持两�
 
 管理员对管理功能（包括读取/写入功能）拥有完全访问权限。默认情况下，用户只有管理功能的读取访问权限（例如查询功能），以及解析应用程序和服务的能力。
 
-可在创建群集时为每个角色提供不同的证书，以指定两个客户端角色（管理员和客户端）。有关设置安全 Service Fabric 群集的详细信息，请参阅 [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security)。
+可在创建群集时为每个角色提供不同的证书，以指定两个客户端角色（管理员和客户端）。有关设置安全 Service Fabric 群集的详细信息，请参阅 [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security/)。
 
 
 ## 默认访问控制设置
@@ -104,8 +104,8 @@ Azure Service Fabric 针对连接到 Service Fabric 群集的客户端支持两�
 
 ## 后续步骤
 
-[Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security)
+[Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security/)
 
-[创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal)
+[创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)
 
 <!---HONumber=Mooncake_0627_2016-->

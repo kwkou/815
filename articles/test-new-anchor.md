@@ -15,8 +15,8 @@
 V.0625.1
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
 - [portal](http://www.azure.cn)
  
 

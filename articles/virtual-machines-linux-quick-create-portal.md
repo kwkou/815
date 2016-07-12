@@ -18,7 +18,7 @@
 
 # 使用门户预览在 Azure 上创建 Linux VM
 
-本文说明如何使用 [Azure 门户预览](https://portal.azure.cn/)快速创建 Linux 虚拟机。唯一的要求是 [Azure 帐户](/pricing/1rmb-trial/)和 [SSH 公钥与私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys)。
+本文说明如何使用 [Azure 门户预览](https://portal.azure.cn/)快速创建 Linux 虚拟机。唯一的要求是 [Azure 帐户](/pricing/1rmb-trial/)和 [SSH 公钥与私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 
 
 1. 使用你的 Azure 帐户标识登录到 Azure 门户预览，然后单击左上角的“+ 新建”：
@@ -68,9 +68,9 @@ ssh -i ~/.ssh/azure_id_rsa centos@13.91.99.206
 
 现在，你已快速创建了一个用于测试或演示的 Linux VM。若要创建针对基础结构自定义的 Linux VM，可以遵循下列任一文章操作。
 
-- [Create a Linux VM on Azure using Templates（使用模板在 Azure 上创建 Linux VM）](/documentation/articles/virtual-machines-linux-cli-deploy-templates)
-- [Create a SSH Secured Linux VM on Azure using Templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template)
-- [Create a Linux VM using the Azure CLI（使用 Azure CLI 创建 Linux VM）](/documentation/articles/virtual-machines-linux-create-cli-complete)
+- [Create a Linux VM on Azure using Templates（使用模板在 Azure 上创建 Linux VM）](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)
+- [Create a SSH Secured Linux VM on Azure using Templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
+- [Create a Linux VM using the Azure CLI（使用 Azure CLI 创建 Linux VM）](/documentation/articles/virtual-machines-linux-create-cli-complete/)
 
 这些文章可帮助你开始构建 Azure 基础结构，并介绍多种专属和开源基础结构部署、配置与协调工具。
 

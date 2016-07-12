@@ -28,7 +28,7 @@
 - 您可以将标记应用到资源，以按照逻辑组织订阅中的所有资源。
 - 你可以通过查看整个组或共享相同标记的资源组的累积费用，明确组织的帐单开支。  
 
-资源管理器提供了一种新方法来部署和管理您的解决方案。如果你使用早期的部署模型并想要了解这些更改，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model)。
+资源管理器提供了一种新方法来部署和管理您的解决方案。如果你使用早期的部署模型并想要了解这些更改，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
 ## 指南
 
@@ -48,26 +48,26 @@
 1. 组中的所有资源应该共享相同的生命周期。一起部署、更新和删除这些资源。如果某个资源（例如数据库服务器）需要采用不同的部署周期，则它应在另一个资源组中。
 2. 每个资源只能在一个资源组中。
 3. 你随时可以在资源组添加或删除资源。
-4. 可以将资源从一个资源组移到另一个组。有关详细信息，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources)。
+4. 可以将资源从一个资源组移到另一个组。有关详细信息，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 4. 资源组可以包含位于不同区域的资源。
 5. 资源组可用于划分对管理操作的访问控制。
-6. 资源可以链接到另一个资源组中的资源，前提是两个资源必须彼此交互，但不共享相同的生命周期（例如，多个应用连接到一个数据库）。有关详细信息，请参阅[在 Azure 资源管理器中链接资源](/documentation/articles/resource-group-link-resources)。
+6. 资源可以链接到另一个资源组中的资源，前提是两个资源必须彼此交互，但不共享相同的生命周期（例如，多个应用连接到一个数据库）。有关详细信息，请参阅[在 Azure 资源管理器中链接资源](/documentation/articles/resource-group-link-resources/)。
 
 ## 资源提供程序
 
 资源提供程序是一种服务，提供可以通过资源管理器进行部署和管理的资源。每个资源提供程序提供 REST API 操作用于处理资源。例如，如果你想要部署 Azure 密钥保管库来存储密钥和机密，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型用于创建密钥保管库，提供名为 **vaults/secrets** 的资源类型用于在密钥保管库中创建机密，并提供一组 [REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)。
 
-若要部署和管理基础结构，需要了解有关资源提供程序的详细信息；例如，它提供的资源类型、REST API 操作的版本号码、它支持的操作以及设置要创建的资源类型值时要使用的架构。若要了解支持的资源提供程序，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
+若要部署和管理基础结构，需要了解有关资源提供程序的详细信息；例如，它提供的资源类型、REST API 操作的版本号码、它支持的操作以及设置要创建的资源类型值时要使用的架构。若要了解支持的资源提供程序，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 
 ## 模板部署
 
 使用资源管理器可以创建一个简单的模板（采用 JSON 格式），用于定义应用程序的部署和配置。此模板称为资源管理器模板，让你以声明性方式定义部署。使用模板可以在整个应用程序生命周期内反复部署该应用程序，并确保以一致的状态部署资源。
 
-在模板中，可以定义应用程序的基础结构、如何配置该基础结构，以及如何将应用程序代码发布到该基础结构。你无需担心部署的顺序，因为 Azure 资源管理器会分析依赖关系，以确保按正确的顺序创建资源。有关详细信息，请参阅[在 Azure 资源管理器模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies)。
+在模板中，可以定义应用程序的基础结构、如何配置该基础结构，以及如何将应用程序代码发布到该基础结构。你无需担心部署的顺序，因为 Azure 资源管理器会分析依赖关系，以确保按正确的顺序创建资源。有关详细信息，请参阅[在 Azure 资源管理器模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies/)。
 
-无需在单个模板中定义整个基础结构。通常，合理的做法是将部署要求划分成一组有针对性的模板。你可以轻松地将这些模板重复用于不同的解决方案。若要部署特定的解决方案，请创建链接所有所需模板的主模板。有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)。
+无需在单个模板中定义整个基础结构。通常，合理的做法是将部署要求划分成一组有针对性的模板。你可以轻松地将这些模板重复用于不同的解决方案。若要部署特定的解决方案，请创建链接所有所需模板的主模板。有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates/)。
 
-还可以使用模板对基础结构进行更新。例如，可以将新的资源添加到应用程序，并为已部署的资源添加配置规则。如果模板指定要创建新的资源，但该资源已存在，则 Azure 资源管理器将执行更新而不是创建新资产。Azure 资源管理器会将现有资产更新到相同状态，就如同该资产是新建的一样。或者，你可以指定要让资源管理器删除模板中未指定的所有资源。若要了解部署时的不同选项，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+还可以使用模板对基础结构进行更新。例如，可以将新的资源添加到应用程序，并为已部署的资源添加配置规则。如果模板指定要创建新的资源，但该资源已存在，则 Azure 资源管理器将执行更新而不是创建新资产。Azure 资源管理器会将现有资产更新到相同状态，就如同该资产是新建的一样。或者，你可以指定要让资源管理器删除模板中未指定的所有资源。若要了解部署时的不同选项，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
 你可以在模板中指定参数，以进行自定义并提高部署灵活性。例如，可以传递相应的参数值，以便根据测试环境定制部署。通过指定参数，可以使用同一个模板部署到应用程序的所有环境。
 
@@ -79,7 +79,7 @@
 
 最后，该模板将成为应用程序源代码的一部分。你可以将它签入源代码存储库，并随着应用程序的发展更新该模板。你可以通过 Visual Studio 编辑模板。
 
-有关定义模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+有关定义模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 
 ## 标记
@@ -88,16 +88,16 @@
 
 资源不需要驻留在同一个资源组中就能共享一个标记。你可以创建自己的标记分类，以确保组织中的所有用户使用公用的标记，避免用户无意中应用稍有不同的标记（如“dept”而不是“department”）。
 
-有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags)。你可以创建[自定义策略](#manage-resources-with-customized-policies)，要求在部署期间将标记添加到资源。
+有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。你可以创建[自定义策略](#manage-resources-with-customized-policies)，要求在部署期间将标记添加到资源。
 
 ## 访问控制
 
 资源管理器可让你控制谁有权访问组织的特定操作。Azure 资源管理器原生地在管理平台中集成了 OAuth 和基于角色的访问控制 (RBAC)，并向资源组中的所有服务应用该访问控制。你可以将用户添加到预定义的平台和特定于资源的角色，并将这些角色应用到订阅、资源组或资源以限制访问。例如，你可以利用名为 SQL DB Contributor 的预定义角色，以允许用户管理数据库，但不允许管理数据库服务器或安全策略。为此，可将组织中需要此类访问权限的用户添加到 SQL DB Contributor 角色，并将该角色应用到订阅、资源组或资源。
 
-资源管理器会自动记录用户操作以供审核。有关使用审核日志的信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)。
+资源管理器会自动记录用户操作以供审核。有关使用审核日志的信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)。
 
 
-你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
+你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
 
 ## 使用自定义策略管理资源
@@ -108,7 +108,7 @@
 
 资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows 的 Azure CLI、Azure 门户预览或 REST API 提供完全兼容的操作。你可以使用最适合自己的界面，并快速切换不同的界面，而不会造成任何混淆。门户预览甚至还会针对门户预览外部执行的操作显示通知。
 
-有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)和 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
+有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager/)和 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
 
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
 
@@ -116,9 +116,9 @@ Azure 资源管理器支持跨域资源共享 (CORS)。使用 CORS 时，你可�
 
 ## 后续步骤
 
-- 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
-- 若要部署你创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
-- 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
-- 有关如何设计你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
+- 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)
+- 若要部署你创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy/)
+- 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)
+- 有关如何设计你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates/)
 
 <!---HONumber=Mooncake_0425_2016-->

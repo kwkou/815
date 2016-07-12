@@ -17,7 +17,7 @@ Azure SDK 开发环境包含存储模拟器，这是一个用于模拟本地开�
 
 有关存储模拟器的详细信息，包括系统要求和自定义配置说明，请参阅 [使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator/)。
 
->[AZURE.NOTE] 存储模拟器的模拟与 Azure 存储空间服务之间在功能上存在一些差异。有关具体差异的信息，请参阅 Azure SDK 文档中的 [存储模拟器与 Azure 存储空间服务之间的差异](/documentation/articles/storage-use-emulator)。
+>[AZURE.NOTE] 存储模拟器的模拟与 Azure 存储空间服务之间在功能上存在一些差异。有关具体差异的信息，请参阅 Azure SDK 文档中的 [存储模拟器与 Azure 存储空间服务之间的差异](/documentation/articles/storage-use-emulator/)。
 
 ## 为存储模拟器配置连接字符串
 
@@ -31,7 +31,7 @@ Azure SDK 开发环境包含存储模拟器，这是一个用于模拟本地开�
 
 当你第一次从 Visual Studio 中运行或调试服务时，存储模拟器将启动一个初始化过程。此过程保留用于存储模拟器的本地端口，并创建存储模拟器数据库。完成后，除非删除存储模拟器数据库，否则将不需要再次运行此过程。
 
->[AZURE.NOTE] 从 2012 年 6 月版的 Azure Tools 开始，存储模拟器默认在 SQL Express LocalDB 中运行。在 Azure Tools 此前的版本中，存储模拟器针对 SQL Express 2005 或 2008 的默认实例运行。你必须先安装该实例，然后才能安装 Azure SDK。你也可以针对 SQL Express 的命名实例或 Microsoft SQL Server 的命名实例或默认实例运行存储模拟器。如果你需要配置存储模拟器来运行默认实例以外的一个实例，请参阅 [使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator)。
+>[AZURE.NOTE] 从 2012 年 6 月版的 Azure Tools 开始，存储模拟器默认在 SQL Express LocalDB 中运行。在 Azure Tools 此前的版本中，存储模拟器针对 SQL Express 2005 或 2008 的默认实例运行。你必须先安装该实例，然后才能安装 Azure SDK。你也可以针对 SQL Express 的命名实例或 Microsoft SQL Server 的命名实例或默认实例运行存储模拟器。如果你需要配置存储模拟器来运行默认实例以外的一个实例，请参阅 [使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator/)。
 
 存储模拟器提供一个用户界面，用于查看本地存储服务的状态以及启动、停止和重置这些服务。启动存储模拟器服务之后，可以通过在 Windows 任务栏中右键单击“Microsoft Azure 模拟器”的通知区域图标，来显示用户界面或者启动或停止服务。
 

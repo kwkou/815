@@ -29,7 +29,7 @@
 
 ##<a id="connect"></a>使用远程桌面进行连接
 
-为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)中的说明连接到该群集。
+为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
 
 ##<a id="hadoop"></a>使用 Hadoop 命令
 
@@ -45,7 +45,7 @@
 
 	这将启动 **wordcount** 类（包含在当前目录中的 **hadoop-mapreduce-examples.jar** 文件内）。它使用 **wasb://example/data/gutenberg/davinci.txt** 文档作为输入，输出将存储到 **wasb:///example/data/WordCountOutput**。
 
-	> [AZURE.NOTE]有关此 MapReduce 作业和示例数据的详细信息，请参阅<a href="/documentation/articles/hdinsight-use-mapreduce">在 HDInsight Hadoop 中使用 MapReduce</a>。
+	> [AZURE.NOTE]有关此 MapReduce 作业和示例数据的详细信息，请参阅<a href="/documentation/articles/hdinsight-use-mapreduce/\">在 HDInsight Hadoop 中使用 MapReduce</a>。
 
 2. 作业在处理时提供详细信息，并在完成时返回如下信息：
 
@@ -84,12 +84,12 @@
 
 有关 HDInsight 中的 MapReduce 作业的一般信息：
 
-* [在 HDInsight Hadoop 上使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce)
+* [在 HDInsight Hadoop 上使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
 <!---HONumber=79-->

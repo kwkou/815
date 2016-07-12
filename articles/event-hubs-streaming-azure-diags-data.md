@@ -33,8 +33,8 @@ Azure 诊断提供了灵活的方法用于收集来自计算 VM 的指标和日�
 - Azure 诊断扩展 1.6（[Azure SDK for.NET 2.9 或更高版本](/downloads/)默认以此为目标）
 - [Visual Studio 2013 或更高版本](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
 - 在使用以下方法通过 .wadcfgx 文件在应用程序中成功配置 Azure 诊断之前：
-	- Windows PowerShell：[使用 PowerShell 在 Azure 云服务中启用诊断](/documentation/articles/cloud-services-diagnostics-powershell)
-- 根据文章[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted)预配的事件中心命名空间
+	- Windows PowerShell：[使用 PowerShell 在 Azure 云服务中启用诊断](/documentation/articles/cloud-services-diagnostics-powershell/)
+- 根据文章[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)预配的事件中心命名空间
 
 ## 将 Azure 诊断连接到事件中心接收器
 默认情况下，Azure 诊断始终将日志和指标接收到 Azure 存储帐户。应用程序可能会额外接收到事件中心，方法是将 **Sinks** 节添加到 .wadcfgx 文件的 **PublicConfig** 节中的 **WadCfg** 元素。在 Visual Studio 中，.wadcfgx 文件存储在“云服务项目”>“角色”>“(RoleName)”>“diagnostics.wadcfgx”文件中。
@@ -121,7 +121,7 @@ Azure 诊断提供了灵活的方法用于收集来自计算 VM 的指标和日�
 
 如前文所述，侦听和处理事件中心数据有许多用例。
   
-一种简单的方法是创建小型测试控制台应用程序用于侦听事件中心并列显输出流。可在控制台应用程序中插入以下代码（[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted)一文中已详细说明）。
+一种简单的方法是创建小型测试控制台应用程序用于侦听事件中心并列显输出流。可在控制台应用程序中插入以下代码（[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)一文中已详细说明）。
 
 请注意，控制台应用程序必须包含 [EventProcessor Nuget 包](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/)。
 

@@ -43,7 +43,7 @@ Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它�
 
 在了解 Azure 自动化 以及如何使用它来管理 Azure 存储 Blob、表和队列的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
 
-请参阅 Azure 自动化教程[在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
+请参阅 Azure 自动化教程[在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
  
 
 <!---HONumber=Mooncake_0405_2016-->

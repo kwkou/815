@@ -13,7 +13,7 @@
 
 # 监视 Azure 网站性能
 
-在 [Azure 门户预览](http://portal.azure.cn)中，可以设置监视以收集有关 Azure 网站或[虚拟机](/documentation/articles/virtual-machines-about)中的应用程序依赖项的统计信息和详细信息。
+在 [Azure 门户预览](http://portal.azure.cn)中，可以设置监视以收集有关 Azure 网站或[虚拟机](/documentation/articles/virtual-machines-about/)中的应用程序依赖项的统计信息和详细信息。
 
 Azure 通过利用扩展来支持应用程序性能监视（即 APM）。这些扩展会安装到应用程序中，收集数据并报告回给监视服务。
 
@@ -75,9 +75,9 @@ Application Insights 可以通过将 SDK 安装到应用中来提供更详细的
 
 ## 后续步骤
 
-* [监视服务运行状况指标](/documentation/articles/insights-how-to-customize-monitoring)以确保你的服务可用且响应迅速。
-* [启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics)以收集有关服务的详细高频率指标。
-* 每当操作事件发生或指标超过阈值时[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。
+* [监视服务运行状况指标](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
+* [启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics/)以收集有关服务的详细高频率指标。
+* 每当操作事件发生或指标超过阈值时[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)。
 
 
  

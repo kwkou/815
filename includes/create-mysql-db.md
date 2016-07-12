@@ -80,5 +80,5 @@
 [waws]: /zh-cn/documentation/services/web-sites/
 [Azure 应用商店]: /zh-cn/gallery/store/
 [门户]: http://manage.windowsazure.cn
-[配置]: /documentation/articles/web-sites-configure
+[配置]: /documentation/articles/web-sites-configure/
 <!--HONumber=41-->

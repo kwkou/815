@@ -38,7 +38,7 @@
 
 ## 将自定义域名添加到你的 Azure AD
 
-可以将最多 900 个自定义域名添加到每个 Azure AD 目录。[添加其他自定义域名](/documentation/articles/active-directory-add-domain)的过程与第一个自定义域名的相同。
+可以将最多 900 个自定义域名添加到每个 Azure AD 目录。[添加其他自定义域名](/documentation/articles/active-directory-add-domain/)的过程与第一个自定义域名的相同。
 
 ## 添加自定义域的子域
 
@@ -72,8 +72,8 @@
 
 ## 后续步骤
 
--   [了解 Azure AD 中的域名](/documentation/articles/active-directory-add-domain-concepts)
+-   [了解 Azure AD 中的域名](/documentation/articles/active-directory-add-domain-concepts/)
 
--   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names)
+-   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)
 
 <!---HONumber=Mooncake_0613_2016-->

@@ -20,7 +20,7 @@
 
 ## 先决条件
 
-本主题假设你已有一个有效的 Azure 订阅（[注册试用版](/pricing/1rmb-trial/)），[已安装 Azure CLI](/documentation/articles/xplat-cli-install) 并已在 Azure 订阅中预配 VM。在使用 Azure 执行任何操作之前，必须向订阅进行身份验证。若要使用 Azure CLI 进行身份验证，只需键入 `azure login -e AzureChinaCloud` 启动交互式过程。
+本主题假设你已有一个有效的 Azure 订阅（[注册试用版](/pricing/1rmb-trial/)），[已安装 Azure CLI](/documentation/articles/xplat-cli-install/) 并已在 Azure 订阅中预配 VM。在使用 Azure 执行任何操作之前，必须向订阅进行身份验证。若要使用 Azure CLI 进行身份验证，只需键入 `azure login -e AzureChinaCloud` 启动交互式过程。
 
 ## Azure OS 磁盘
 
@@ -28,7 +28,7 @@
 
 ## 添加磁盘以实现大小和性能目标 
 
-根据所选的 VM 大小，你可以分别在 A 系列、D 系列和 G 系列计算机上额外附加最多 16 个、32 个和 64 个磁盘，每个磁盘的大小最高可为 1 TB。建议根据空间和 IOps 要求添加额外的磁盘。标准存储的每个磁盘的性能目标为 500 IOps，高级存储的每个磁盘的性能目标最高为 5000 IOps。有关高级存储磁盘的详细信息，请参阅 [Premium Storage: High-Performance Storage for Azure VMs（高级存储：适用于 Azure VM 的高性能存储）](/documentation/articles/storage-premium-storage)
+根据所选的 VM 大小，你可以分别在 A 系列、D 系列和 G 系列计算机上额外附加最多 16 个、32 个和 64 个磁盘，每个磁盘的大小最高可为 1 TB。建议根据空间和 IOps 要求添加额外的磁盘。标准存储的每个磁盘的性能目标为 500 IOps，高级存储的每个磁盘的性能目标最高为 5000 IOps。有关高级存储磁盘的详细信息，请参阅 [Premium Storage: High-Performance Storage for Azure VMs（高级存储：适用于 Azure VM 的高性能存储）](/documentation/articles/storage-premium-storage/)
 
 对于缓存设置为“ReadOnly”或“None”的高级存储磁盘，必须在 Linux 中装入文件系统时禁用“barrier”（屏障）才能达到最高 IOps。你不需要屏障，因为写入高级存储支持的磁盘对于这些缓存设置是持久的。
 
@@ -108,7 +108,7 @@
 
 ## 使用软件 RAID 来实现更高的 I/Ops
 
-如果工作负荷所需的 IOps 超过单个磁盘的极限，则你需要使用包含多个磁盘的软件 RAID 配置。由于 Azure 已在本地结构层执行磁盘复原，因此你可以通过 RAID-0 条带化配置获得最高级别的性能。你需要在 Azure 环境中预配和创建新磁盘，将这些磁盘附加到 Linux VM，然后分区、格式化并装入驱动器。有关在 Azure 中针对 Linux VM 配置软件 RAID 设置的详细信息，请参阅 **[Configuring Software RAID on Linux（在 Linux 上配置软件 RAID）](/documentation/articles/virtual-machines-linux-configure-raid)**文档。
+如果工作负荷所需的 IOps 超过单个磁盘的极限，则你需要使用包含多个磁盘的软件 RAID 配置。由于 Azure 已在本地结构层执行磁盘复原，因此你可以通过 RAID-0 条带化配置获得最高级别的性能。你需要在 Azure 环境中预配和创建新磁盘，将这些磁盘附加到 Linux VM，然后分区、格式化并装入驱动器。有关在 Azure 中针对 Linux VM 配置软件 RAID 设置的详细信息，请参阅 **[Configuring Software RAID on Linux（在 Linux 上配置软件 RAID）](/documentation/articles/virtual-machines-linux-configure-raid/)**文档。
 
 
 ## 后续步骤
@@ -117,9 +117,9 @@
 
 其他有用资源的链接：
 
-- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)
-- [Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide)
-- [优化 Azure Linux VM 上的 MySQL 性能](/documentation/articles/virtual-machines-linux-classic-optimize-mysql)
-- [在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid)
+- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)
+- [Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide/)
+- [优化 Azure Linux VM 上的 MySQL 性能](/documentation/articles/virtual-machines-linux-classic-optimize-mysql/)
+- [在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)
 
 <!---HONumber=Mooncake_0503_2016-->

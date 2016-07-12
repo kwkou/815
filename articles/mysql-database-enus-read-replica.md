@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-read-replica)
-- [English](/documentation/articles/mysql-database-enus-read-replica)
+- [中文](/documentation/articles/mysql-database-read-replica/)
+- [English](/documentation/articles/mysql-database-enus-read-replica/)
 
 # MySQL master-subordinate replication and read-only instances
 

@@ -146,10 +146,10 @@ DBCC PDW_SHOWEXECUTIONPLAN(55, 238);
 <!--Image references-->
 
 <!--Article references-->
-[manage data skew for distributed tables]: /documentation/articles/sql-data-warehouse-manage-distributed-data-skew
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage
-[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices
-[系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views
+[manage data skew for distributed tables]: /documentation/articles/sql-data-warehouse-manage-distributed-data-skew/
+[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
+[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
+[系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
 
 <!--MSDN references-->
 [sys.dm\_pdw\_dms\_workers]: http://msdn.microsoft.com/zh-cn/library/mt203878.aspx

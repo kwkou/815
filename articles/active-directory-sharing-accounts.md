@@ -44,7 +44,7 @@ Azure AD 支持任何 Enterprise Mobility Suite (EMS)、高级或基本许可用
 
 支持帐户共享的 Azure AD 功能包括：
 
-- [密码单一登录](/documentation/articles/active-directory-appssoaccess-whatis#password-based-single-sign-on)
+- [密码单一登录](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on)
 - 密码单一登录代理
 
 
@@ -55,11 +55,11 @@ Azure AD 支持任何 Enterprise Mobility Suite (EMS)、高级或基本许可用
 - 使用基于组的分配，并选择输入共享凭据的选项
 - 可选：在某些应用程序（例如 Facebook、Twitter 或 LinkedIn）中，你可以启用 [Azure AD 自动轮换密码](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)的选项
 
-你还可以使用 Multi-Factor Authentication (MFA) 提高共享帐户的安全性（了解有关[使用 Azure AD 保护应用程序](/documentation/articles/multi-factor-authentication-get-started-cloud)的信息），并可以使用Azure AD 自助服务组管理来委派有关谁有权访问应用程序的管理权。
+你还可以使用 Multi-Factor Authentication (MFA) 提高共享帐户的安全性（了解有关[使用 Azure AD 保护应用程序](/documentation/articles/multi-factor-authentication-get-started-cloud/)的信息），并可以使用Azure AD 自助服务组管理来委派有关谁有权访问应用程序的管理权。
 
 ## 相关文章
 
-- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
 
 <!---HONumber=Mooncake_0620_2016-->

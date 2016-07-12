@@ -1,5 +1,5 @@
 
-本文介绍如何在 Azure 中为 Web 应用配置 HTTPS。其中不涉及客户端证书身份验证；有关该方面的信息，请参阅[如何为 Web 应用配置 TLS 相互身份验证](/documentation/articles/app-service-web-configure-tls-mutual-auth)。
+本文介绍如何在 Azure 中为 Web 应用配置 HTTPS。其中不涉及客户端证书身份验证；有关该方面的信息，请参阅[如何为 Web 应用配置 TLS 相互身份验证](/documentation/articles/app-service-web-configure-tls-mutual-auth/)。
 
 默认情况下，Azure 已使用 *.chinacloudsites.cn 域的通配符证书为你的应用启用 HTTP。如果不打算配置自定义域，可以直接利用默认的 HTTPS 证书。但是，就像[所有通配符域](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/)一样，这并不如将自定义域与自己的证书搭配使用那么安全。
 
@@ -7,7 +7,7 @@
 
 ##<a name="bkmk_domainname"></a> 为自定义域启用 SSL
 
-若要为自定义域启用 HTTPS（例如 **contoso.com**），必须先[在 Azure Web 应用中配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。然后，执行下列操作：
+若要为自定义域启用 HTTPS（例如 **contoso.com**），必须先[在 Azure Web 应用中配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。然后，执行下列操作：
 
 1. [获取 SSL 证书](#bkmk_getcert)
 2. [配置标准定价层](#bkmk_standardmode)
@@ -428,7 +428,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 Azure Web 应用*不* 强制实施 HTTPS。访问者可能仍使用 HTTP 访问应用，这可能危及应用的安全。如果想为应用强制实施 HTTPS，可以使用 **URL 重写**模块。URL 重写模块包含在 Azure Web 应用中，你能够用它定义将请求传递给应用程序之前应用于传入请求的规则。**该模块可用于以 Azure 支持的任何编程语言编写的应用程序。**
 
-> [AZURE.NOTE] .NET MVC 应用程序应使用 [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) 筛选器而不是 URL 重写。有关使用 RequireHttps 的详细信息，请参阅[将安全的 ASP.NET MVC 5 应用部署到 Web 应用](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+> [AZURE.NOTE] .NET MVC 应用程序应使用 [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) 筛选器而不是 URL 重写。有关使用 RequireHttps 的详细信息，请参阅[将安全的 ASP.NET MVC 5 应用部署到 Web 应用](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。
 > <p>有关使用其他编程语言和框架以编程方式重定向请求的信息，请参阅这些技术的文档。
 
 URL 重写规则在存储于应用程序根目录中的 **web.config** 文件内定义。以下示例包含可强制所有传入流量使用 HTTPS 的基本 URL 重写规则。
@@ -495,11 +495,11 @@ URL 重写规则在存储于应用程序根目录中的 **web.config** 文件内
 ## 更多资源 ##
 - [Azure 信任中心](/support/trust-center/security/)
 - [Azure 网站中解锁的设置选项](https://azure.microsoft.com/zh-cn/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
-- [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)
-- [在 Azure 中配置 Web 应用](/documentation/articles/web-sites-configure)
+- [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)
+- [在 Azure 中配置 Web 应用](/documentation/articles/web-sites-configure/)
 - [Azure 经典管理门户](https://manage.windowsazure.cn)
 
-[customdomain]: /documentation/articles/web-sites-custom-domain-name
+[customdomain]: /documentation/articles/web-sites-custom-domain-name/
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx
 [cas]: http://go.microsoft.com/fwlink/?LinkID=269988
 [installcertiis]: http://technet.microsoft.com/zh-cn/library/cc771816(WS.10).aspx

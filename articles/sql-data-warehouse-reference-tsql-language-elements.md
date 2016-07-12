@@ -279,7 +279,7 @@
 <!--Image references-->
 
 <!--Article references-->
-[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-reference
+[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-reference/
 
 <!--MSDN references-->
 

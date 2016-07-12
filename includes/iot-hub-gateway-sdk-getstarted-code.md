@@ -205,6 +205,6 @@ static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHan
 [lnk-helloworld-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/hello_world/src/hello_world.c
 [lnk-logger-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/logger/src/logger.c
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
-[lnk-gateway-simulated]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview
+[lnk-gateway-simulated]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/
 <!---HONumber=Mooncake_0523_2016-->

@@ -20,7 +20,7 @@ Service Fabric 提供了多种方法来编写和管理服务。服务可以选�
 
 来宾可执行文件是采用任何语言编写的任意可执行文件，因此可以将现有应用程序托管在 Service Fabric 群集上。来宾可执行文件可在应用程序中打包，并且和其他服务一起托管。Service Fabric 可处理可执行文件的业务流程和简单的执行管理，确保其始终按照服务说明启动并运行。但是，因为来宾可执行文件不直接与 Service Fabric API 集成，所以它们不会从平台所提供的完整功能集中获益，例如自定义健康和负载报告、服务终结点注册和有状态计算。
 
-从部署第一个[来宾可执行文件应用程序](/documentation/articles/service-fabric-deploy-existing-app)开始使用来宾可执行文件。
+从部署第一个[来宾可执行文件应用程序](/documentation/articles/service-fabric-deploy-existing-app/)开始使用来宾可执行文件。
 
 ## Reliable Services
 
@@ -30,7 +30,7 @@ Reliable Services 可以是无状态的，类似于大多数服务平台，例�
 
 Reliable Services 也可以是有状态的，专门用于 Service Fabric，其状态使用 Reliable Collections 直接保存在服务中。通过复制使状态具有高可用性，以及通过分区来分布状态，所有状态由 Service Fabric 自动管理。
 
-[了解有关 Reliable Services 的详细信息](/documentation/articles/service-fabric-reliable-services-introduction)或者通过[编写第一个 Reliable Service](/documentation/articles/service-fabric-reliable-services-quick-start) 帮助你入门
+[了解有关 Reliable Services 的详细信息](/documentation/articles/service-fabric-reliable-services-introduction/)或者通过[编写第一个 Reliable Service](/documentation/articles/service-fabric-reliable-services-quick-start/) 帮助你入门
 
 ## Reliable Actors
 
@@ -39,6 +39,6 @@ Reliable Actor 框架在 Reliable Services 的基础上构建，是根据执行�
 由于 Reliable Actors 自身是在 Reliable Services 基础上构建的应用程序框架，所以它完全与 Service Fabric 平台集成，并且获益于平台所提供的完整功能集。
 
 ## 后续步骤
-[了解有关 Reliable Actors 的详细信息](/documentation/articles/service-fabric-reliable-actors-introduction)或通过[编写第一个 Reliable Actor 服务](/documentation/articles/service-fabric-reliable-actors-get-started)帮助你入门
+[了解有关 Reliable Actors 的详细信息](/documentation/articles/service-fabric-reliable-actors-introduction/)或通过[编写第一个 Reliable Actor 服务](/documentation/articles/service-fabric-reliable-actors-get-started/)帮助你入门
 
 <!---HONumber=Mooncake_0523_2016-->

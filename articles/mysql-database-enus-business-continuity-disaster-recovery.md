@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-business-continuity-disaster-recovery)
-- [English](/documentation/articles/mysql-database-enus-business-continuity-disaster-recovery)
+- [中文](/documentation/articles/mysql-database-business-continuity-disaster-recovery/)
+- [English](/documentation/articles/mysql-database-enus-business-continuity-disaster-recovery/)
 
 # MySQL on Azure service continuity solutions
 
@@ -42,7 +42,7 @@ Following are common scenarios and corresponding solutions.
 			An operational error by a database administrator in a production environment that causes the loss of some important data and requires rapid recovery.
 		</td>
 		<td>
-			Backup and restore -- point-in-time restore feature of MySQL can roll back to any point in time during the last seven days. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore" target="_blank">MySQL on Azure backup and restore—restore the database to any point in time</a>.
+			Backup and restore -- point-in-time restore feature of MySQL can roll back to any point in time during the last seven days. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">MySQL on Azure backup and restore—restore the database to any point in time</a>.
 		</td>
 	</tr>
 	<tr>
@@ -53,7 +53,7 @@ Following are common scenarios and corresponding solutions.
 			In a production environment, the failure of a particular upgrade causes compatibility problems that make it impossible for the service to be performed normally.
 		</td>
 		<td>
-			Create a snapshot backup of the database before you upgrade. If the upgrade encounters a problem, you can then quickly restore the entire backup to the original instance or to a new instance. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore" target="_blank">Backup and restore</a>.
+			Create a snapshot backup of the database before you upgrade. If the upgrade encounters a problem, you can then quickly restore the entire backup to the original instance or to a new instance. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">Backup and restore</a>.
 		</td>
 	</tr>
 	<tr>
@@ -91,7 +91,7 @@ ERT<3 hours，RPO< 1 hour. <br>
 >[AZURE.NOTE] ERT, RTO, and RPO are project indicators that are intended only for reference purposes. These indicators only appear in regional disasters and are not part of the MySQL database service’s service level agreement (SLA).
 
 ### User self-service process: ###
-If a disaster occurs and you can use the Azure portal, you can use the offsite restore process in [backup and restore](/documentation/articles/mysql-database-point-in-time-restore) to perform the operation. However, if regional disasters occur frequently, it will not be possible to obtain correct information on the instance in the Azure portal. In such a situation, we recommend that you perform an offsite restore operation on the instance by using PowerShell:
+If a disaster occurs and you can use the Azure portal, you can use the offsite restore process in [backup and restore](/documentation/articles/mysql-database-point-in-time-restore/) to perform the operation. However, if regional disasters occur frequently, it will not be possible to obtain correct information on the instance in the Azure portal. In such a situation, we recommend that you perform an offsite restore operation on the instance by using PowerShell:
 
 ```
 New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName <ResourceName> -ApiVersion 2015-09-01 -ResourceGroupName <ResourceGroupName> -Location <TargetLocation> -SkuObject @{name=<targetSKU>} -Properties @{creationSource=@{server='<SourceServerName>';region='<SourceLocation>';timepoint='<TimeTag>'};version = '<version number>'}

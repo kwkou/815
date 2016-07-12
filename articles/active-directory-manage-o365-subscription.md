@@ -65,6 +65,6 @@
 3.	添加 John Doe 作为订阅的协同管理员：单击“设置”>“管理员”> 选择订阅 >“添加”> 键入 **JohnDoe@Contoso.com**。
 
 ##后续步骤
-有关订阅与目录之间关系的详细信息，请参阅[订阅如何与目录关联](/documentation/articles/active-directory-how-subscriptions-associated-directory)。
+有关订阅与目录之间关系的详细信息，请参阅[订阅如何与目录关联](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
 <!---HONumber=Mooncake_0613_2016-->

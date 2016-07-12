@@ -15,11 +15,11 @@
 
 # Resource Manager 模式下的 Azure CLI 命令
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-machines-command-line-tools)。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-machines-command-line-tools/)。
 
 本文提供经常用于在 Azure Resource Manager 部署模型中创建和管理 Azure 资源的 Azure 命令行界面 (CLI) 命令的语法和选项。通过在 Resource Manager (arm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，你的 CLI 版本可能会显示略微不同的命令或参数。
 
-若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install)，然后使用工作或学校帐户[连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect)。
+若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install/)，然后使用工作或学校帐户[连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 要在资源管理器模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；要显示某个命令的帮助，请键入 `azure help [command]`。你还可以在创建和管理具体 Azure 服务的说明文档中找到 CLI 示例。
 
@@ -37,9 +37,9 @@
 
 ## 命令性和声明性方法
 
-与 [Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools)一样，Azure CLI 的 Resource Manager 模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
+与 [Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools/)一样，Azure CLI 的 Resource Manager 模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
 
-但是，使用用于描述资源组的资源组模板是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。
+但是，使用用于描述资源组的资源组模板是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview/)。
 
 
 ## azure account：管理你的帐户信息

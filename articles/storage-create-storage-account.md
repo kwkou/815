@@ -47,7 +47,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*。
 
-此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name)。对于 ARM 存储帐户，此功能尚未添加到 [Azure 门户预览](https://portal.azure.cn)，但你可以使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
+此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name/)。对于 ARM 存储帐户，此功能尚未添加到 [Azure 门户预览](https://portal.azure.cn)，但你可以使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
 
 ## 创建存储帐户
 
@@ -61,21 +61,21 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 	>  
 	> 你的存储帐户名称在 Azure 中必须是唯一的。Azure 门户预览将指出你选择的存储帐户名称是否已被使用。
 
-4. 指定要使用的部署模型：“Resource Manager”或“经典”。建议使用“Resource Manager”部署模型。有关详细信息，请参阅[了解 Resource Manager 部署和经典部署](/documentation/articles/resource-manager-deployment-model)。
+4. 指定要使用的部署模型：“Resource Manager”或“经典”。建议使用“Resource Manager”部署模型。有关详细信息，请参阅[了解 Resource Manager 部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
 	> [AZURE.NOTE] 仅可使用 Resource Manager 部署模型来创建 Blob 存储帐户。
 
 5. 选择存储帐户的类型：“常规用途”或“Blob 存储”。“常规用途”是默认值。
 
-	如果已选择“常规用途”，则指定性能层：“标准”或“高级”。默认值为“标准”。有关标准和高级存储帐户的更多详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction)和[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
+	如果已选择“常规用途”，则指定性能层：“标准”或“高级”。默认值为“标准”。有关标准和高级存储帐户的更多详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)和[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
-	如果已选择“Blob 存储”，则指定访问层：“经常访问”或“不常访问”。默认值为“经常访问”。有关更多详细信息，请参阅 [Azure Blob 存储：不常访问和经常访问的层](/documentation/articles/storage-blob-storage-tiers)。
+	如果已选择“Blob 存储”，则指定访问层：“经常访问”或“不常访问”。默认值为“经常访问”。有关更多详细信息，请参阅 [Azure Blob 存储：不常访问和经常访问的层](/documentation/articles/storage-blob-storage-tiers/)。
 
-6. 选择存储帐户的复制选项：“LRS”、“GRS”、“RA-GRS”。默认值为“RA-GRS”。有关 Azure 存储空间复制选项的详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy)。
+6. 选择存储帐户的复制选项：“LRS”、“GRS”、“RA-GRS”。默认值为“RA-GRS”。有关 Azure 存储空间复制选项的详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy/)。
 
 7. 选择想在其中创建新存储帐户的订阅。
 
-8. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal)。
+8. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
 
 9. 选择存储帐户的地理区域。
 
@@ -91,13 +91,13 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 更改复制选项将更改你的定价。有关更多详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/#price)页。
 
-对于 Blob 存储帐户，更改访问层除了会更改你的定价之外，可能还会产生更改费用。有关更多详细信息，请参阅 [Blob 存储帐户 — 定价和计费](/documentation/articles/storage-blob-storage-tiers#pricing-and-billing)。
+对于 Blob 存储帐户，更改访问层除了会更改你的定价之外，可能还会产生更改费用。有关更多详细信息，请参阅 [Blob 存储帐户 — 定价和计费](/documentation/articles/storage-blob-storage-tiers/#pricing-and-billing)。
 
 ### 管理存储访问密钥
 
 当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
-> [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用共享访问签名。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+> [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用共享访问签名。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 #### 查看和复制存储访问密钥
 
@@ -113,7 +113,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 **应用程序** - 如果你拥有使用存储帐户的 Web 应用程序或云服务，则重新生成密钥将失去连接，除非你滚动使用密钥。
 
-**存储资源管理器** - 如果你使用任何[存储资源管理器应用程序](/documentation/articles/storage-explorers)，可能需要更新这些应用程序所使用的存储密钥。
+**存储资源管理器** - 如果你使用任何[存储资源管理器应用程序](/documentation/articles/storage-explorers/)，可能需要更新这些应用程序所使用的存储密钥。
 
 下面是轮换存储访问密钥的过程：
 
@@ -147,10 +147,10 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 ## 后续步骤
 
-- [Azure Blob 存储：不常访问和经常访问的层](/documentation/articles/storage-blob-storage-tiers)
-- [Azure 存储空间复制](/documentation/articles/storage-redundancy)
-- [配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [Azure Blob 存储：不常访问和经常访问的层](/documentation/articles/storage-blob-storage-tiers/)
+- [Azure 存储空间复制](/documentation/articles/storage-redundancy/)
+- [配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
 <!---HONumber=Mooncake_0530_2016-->

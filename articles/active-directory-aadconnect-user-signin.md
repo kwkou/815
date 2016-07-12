@@ -71,7 +71,7 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
 
 Azure AD Connect 向导将使用 userPrincipalName 属性，或让你指定要从本地用作 Azure AD 中的用户主体名的属性（在自定义安装中）。这是要用于登录 Azure AD 的值。如果用户主体名属性的值不对应于 Azure AD 中已验证的域，则 Azure AD 会将该值替换为默认的 .partner.onmschina.cn 值。
 
-Azure Active Directory 中的每个目录随附内置域名，格式为 contoso.partner.onmschina.cn，可让你开始使用 Azure 或其他 Microsoft 服务。你可以使用自定义域来改善和简化登录体验。有关 Azure AD 中的自定义域名以及如何验证域的信息，请阅读 [Add your custom domain name to Azure Active Directory（将自定义域名添加到 Azure Active Directory）](/documentation/articles/active-directory-add-domain#add-your-custom-domain-name-to-azure-active-directory)
+Azure Active Directory 中的每个目录随附内置域名，格式为 contoso.partner.onmschina.cn，可让你开始使用 Azure 或其他 Microsoft 服务。你可以使用自定义域来改善和简化登录体验。有关 Azure AD 中的自定义域名以及如何验证域的信息，请阅读 [Add your custom domain name to Azure Active Directory（将自定义域名添加到 Azure Active Directory）](/documentation/articles/active-directory-add-domain/#add-your-custom-domain-name-to-azure-active-directory)
 
 ## Azure AD 登录配置
 
@@ -107,7 +107,7 @@ UserPrincipalName - 属性 userPrincipalName 是用户登录 Azure AD 和 Office
 | 已验证 | 在这种情况下，我们已在 Azure AD 中为 UPN 后缀添加并验证自定义域 contoso.com。用户可以使用其本地用户主体名（例如 user@contoso.com），在其同步到 Azure AD 之后登录到 Azure|
 
 ###### AD FS 联合
-你无法与 Azure AD 中的默认 .partner.onmschina.cn 域或 Azure AD 中未验证的自定义域创建联合。当你运行 Azure AD Connect 向导时，如果选择要与未验证的域创建联合，Azure AD Connect 将发出提示，并提供要创建的、包含域 DNS 托管位置的所需记录。有关详细信息，请参阅[此文](/documentation/articles/active-directory-aadconnect-get-started-custom#verify-the-azure-ad-domain-selected-for-federation)。
+你无法与 Azure AD 中的默认 .partner.onmschina.cn 域或 Azure AD 中未验证的自定义域创建联合。当你运行 Azure AD Connect 向导时，如果选择要与未验证的域创建联合，Azure AD Connect 将发出提示，并提供要创建的、包含域 DNS 托管位置的所需记录。有关详细信息，请参阅[此文](/documentation/articles/active-directory-aadconnect-get-started-custom/#verify-the-azure-ad-domain-selected-for-federation)。
 
 如果选择的用户登录选项为“与 AD FS 联合”，则必须有一个自定义域才能继续在 Azure AD 中创建联合。在我们的介绍中，这意味着应在 Azure AD 目录中添加自定义域 contoso.com。
 
@@ -134,7 +134,7 @@ UserPrincipalName - 属性 userPrincipalName 是用户登录 Azure AD 和 Office
 >[AZURE.NOTE] 如果你只是要暂时切换到密码同步，请选中“不要转换用户帐户”。不选中该选项会导致将每个用户转换为联合登录
   
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
-了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts)的详细信息
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
+了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/)的详细信息
 
 <!---HONumber=Mooncake_0606_2016-->

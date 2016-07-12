@@ -17,15 +17,15 @@
 若要管理扩大的分区数据库，可使用**弹性数据库作业**功能（预览版）在一组数据库中可靠地执行 Transact-SQL (T-SQL) 脚本或应用 DACPAC（[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)），这些数据库包括：
 
 * 自定义的数据库集合（下面将会介绍）
-* [弹性数据库池](/documentation/articles/sql-database-elastic-pool)中的所有数据库
-* 分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)创建） 
+* [弹性数据库池](/documentation/articles/sql-database-elastic-pool/)中的所有数据库
+* 分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)创建） 
  
 ## 文档
 
-* [安装弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation)。 
-* [弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
-* [使用 Powershell 创建和管理作业](/documentation/articles/sql-database-elastic-jobs-powershell)。
-* [创建和管理扩大的 SQL Azure 数据库](/documentation/articles/sql-database-elastic-jobs-getting-started)
+* [安装弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation/)。 
+* [弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
+* [使用 Powershell 创建和管理作业](/documentation/articles/sql-database-elastic-jobs-powershell/)。
+* [创建和管理扩大的 SQL Azure 数据库](/documentation/articles/sql-database-elastic-jobs-getting-started/)
 
 **弹性数据库作业**是当前的客户托管 Azure 云服务，可以让你执行即席任务和计划的管理任务，称为**作业**。使用作业可以通过运行 Transact-SQL 脚本来执行管理操作，从而轻松可靠地管理大型 Azure SQL 数据库组。
 
@@ -67,11 +67,11 @@
 * 对大量的数据库执行长时间运行的数据处理查询，例如，收集客户遥测数据。结果将收集到单个目标表以供进一步分析。
 
 ## 弹性数据库作业：端到端 
-1.	安装**弹性数据库作业**组件。有关详细信息，请参阅[安装弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-service-installation)。如果安装失败，请参阅[如何卸载](/documentation/articles/sql-database-elastic-jobs-uninstall)。
+1.	安装**弹性数据库作业**组件。有关详细信息，请参阅[安装弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-service-installation/)。如果安装失败，请参阅[如何卸载](/documentation/articles/sql-database-elastic-jobs-uninstall/)。
 2.	使用 PowerShell API 可以访问更多功能，例如创建自定义数据库集合、添加计划和/或收集结果集。使用门户可以方便安装和创建/监视限制为针对**弹性数据库池**执行的作业。 
-3.	针对作业执行创建加密的凭据，并[将用户（或角色）添加到组中的每个数据库](/documentation/articles/sql-database-security)。
+3.	针对作业执行创建加密的凭据，并[将用户（或角色）添加到组中的每个数据库](/documentation/articles/sql-database-security/)。
 4.	创建可针对组中每个数据库运行的幂等 T-SQL 脚本。 
-5.	使用 PowerShell 脚本：[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell)。
+5.	使用 PowerShell 脚本：[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell/)。
 
 ## 幂等脚本
 
@@ -96,7 +96,7 @@
 1. 分片集
 2. 自定义组
 
-分片集组是使用[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)创建的。当你创建分片集组时，将在组中自动添加或删除数据库。例如，当你将新分片添加到分片映射中时，该分片会自动出现在组中。然后就可以对组运行作业。
+分片集组是使用[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction/)创建的。当你创建分片集组时，将在组中自动添加或删除数据库。例如，当你将新分片添加到分片映射中时，该分片会自动出现在组中。然后就可以对组运行作业。
 
 另一方面，自定义组的定义方式很严格。你必须在自定义组中显式添加或删除数据库。如果组中的数据库已被删除，作业将尝试对最终导致失败的数据库运行脚本。
 
@@ -108,7 +108,7 @@
 * **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。从门户开始，服务部署并托管在你的 Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。 
 * **Azure SQL 数据库**：服务使用名为**控制数据库**的 Azure SQL 数据库来存储所有的作业元数据。默认的服务层是 S0。有关价格，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
 * **Azure Service Bus**：Azure Service Bus 用于协调 Azure 云服务中的工作。请参阅 [Service Bus 定价](/home/features/messaging/#price)。
-* **Azure 存储空间**：在某个问题需要进一步调试时，使用 Azure 存储帐户来存储诊断输出日志记录（请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。
+* **Azure 存储空间**：在某个问题需要进一步调试时，使用 Azure 存储帐户来存储诊断输出日志记录（请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。
 
 ## 弹性数据库作业的工作原理
 
@@ -136,7 +136,7 @@
 4.	完成所有作业任务后，控制器会将作业更新为已完成状态。在作业执行期间，可以随时使用 PowerShell API 来查看作业执行的当前状态。PowerShell API 返回的所有时间都以 UTC 表示。如果需要，你可以启动取消请求来停止作业。 
 
 ## 后续步骤
-[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security)。另请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
+[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation/)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security/)。另请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

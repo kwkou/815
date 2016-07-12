@@ -15,11 +15,11 @@
 # 如何使用 Redis 缓存创建 Web 应用
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
-- [ASP.NET](/documentation/articles/cache-web-app-howto)
-- [Node.js](/documentation/articles/cache-nodejs-get-started)
-- [Java](/documentation/articles/cache-java-get-started)
-- [Python](/documentation/articles/cache-python-get-started)
+- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
+- [ASP.NET](/documentation/articles/cache-web-app-howto/)
+- [Node.js](/documentation/articles/cache-nodejs-get-started/)
+- [Java](/documentation/articles/cache-java-get-started/)
+- [Python](/documentation/articles/cache-python-get-started/)
 
 本教程将向你介绍如何使用 Visual Studio 2015 创建 ASP.NET Web 应用程序并将其部署到 Azure 中的 Web 应用。该示例应用程序显示了数据库中的团队统计信息列表，并显示了使用 Azure Redis 缓存通过缓存存储和检索数据的不同方式。完成本教程后，你将有一个运行的 Web 应用，该应用可以对数据库执行读写操作，已通过 Azure Redis 缓存进行优化，并且托管在 Azure 中。
 
@@ -47,7 +47,7 @@
 
 ###<a name="visual-studio-2015-with-the-azure-sdk-for-net"></a> 带有用于 .NET 的 Azure SDK 的 Visual Studio 2015
 
-本教程专为带有用于 [.NET 2.8.2 的 Azure SDK](/documentation/articles/dotnet-sdk) 的 Visual Studio 2015 或更高版而编写。[单击此处下载最新的用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
+本教程专为带有用于 [.NET 2.8.2 的 Azure SDK](/documentation/articles/dotnet-sdk/) 的 Visual Studio 2015 或更高版而编写。[单击此处下载最新的用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
 
 如果有 Visual Studio 2013，则可以[下载最新的 Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322)。某些屏幕看起来可能与本教程中显示的插图不同。
 
@@ -61,7 +61,7 @@
  
     ![创建项目][cache-create-project]
 
-3. 选择“MVC”作为项目类型。清除“在云中托管”复选框。在本教程的后续步骤中，你需要[预配 Azure 资源](#provision-the-azure-resources)以及[将应用程序发布到 Azure](#publish-the-application-to-azure)。勾选“在云中托管”即可通过 Visual Studio 预配 Azure Web 应用，如需此方面的示例，请参阅[配合 ASP.NET 和 Visual Studio 使用 Azure 中的 Web Apps 入门](/documentation/articles/web-sites-dotnet-get-started)。
+3. 选择“MVC”作为项目类型。清除“在云中托管”复选框。在本教程的后续步骤中，你需要[预配 Azure 资源](#provision-the-azure-resources)以及[将应用程序发布到 Azure](#publish-the-application-to-azure)。勾选“在云中托管”即可通过 Visual Studio 预配 Azure Web 应用，如需此方面的示例，请参阅[配合 ASP.NET 和 Visual Studio 使用 Azure 中的 Web Apps 入门](/documentation/articles/web-sites-dotnet-get-started/)。
 
     ![选择项目模板][cache-select-template]
 
@@ -451,7 +451,7 @@
 	    }
 
 
-    `GetFromList` 方法以序列化 `List<Team>` 的形式从缓存读取团队统计信息。如果缓存未命中，则会从数据库读取团队统计信息，然后将该信息存储在缓存中留待下次使用。在此示例中，我们将通过 JSON.NET 序列化来序列化进出缓存的 .NET 对象。有关详细信息，请参阅[如何处理 Azure Redis 缓存中的 .NET 对象](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#work-with-net-objects-in-the-cache)。
+    `GetFromList` 方法以序列化 `List<Team>` 的形式从缓存读取团队统计信息。如果缓存未命中，则会从数据库读取团队统计信息，然后将该信息存储在缓存中留待下次使用。在此示例中，我们将通过 JSON.NET 序列化来序列化进出缓存的 .NET 对象。有关详细信息，请参阅[如何处理 Azure Redis 缓存中的 .NET 对象](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#work-with-net-objects-in-the-cache)。
 
         List<Team> GetFromList()
         {
@@ -750,7 +750,7 @@
 
 -	如果你已根据上一部分所述将应用程序发布到 Azure，则可使用在该步骤中预配的 Azure Redis 缓存实例。
 -	如果你有另一个现成的 Azure Redis 缓存实例，则可使用该实例在本地运行此示例。
--	如果你需要创建 Azure Redis 缓存实例，则可按[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-a-cache)中的步骤来执行操作。
+-	如果你需要创建 Azure Redis 缓存实例，则可按[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)中的步骤来执行操作。
 
 选定或创建要使用的缓存以后，即可使用以下 PowerShell 命令来获取缓存的属性和访问密钥。
 
@@ -779,10 +779,10 @@
 -	详细了解 [Azure 中的 Web 应用](/home/features/web-site)。
 
 -	了解 Azure Redis 缓存高级功能
-	-	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence)
-	-	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering)
-	-	[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet)
-	-	有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
+	-	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
+	-	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
+	-	[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)
+	-	有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
 
 
 <!-- IMAGES -->

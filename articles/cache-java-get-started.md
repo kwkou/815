@@ -15,11 +15,11 @@
 # 如何将 Azure Redis 缓存与 Java 配合使用
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
-- [ASP.NET](/documentation/articles/cache-web-app-howto)
-- [Node.js](/documentation/articles/cache-nodejs-get-started)
-- [Java](/documentation/articles/cache-java-get-started)
-- [Python](/documentation/articles/cache-python-get-started)
+- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
+- [ASP.NET](/documentation/articles/cache-web-app-howto/)
+- [Node.js](/documentation/articles/cache-nodejs-get-started/)
+- [Java](/documentation/articles/cache-java-get-started/)
+- [Python](/documentation/articles/cache-python-get-started/)
 
 Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问你的缓存。
 

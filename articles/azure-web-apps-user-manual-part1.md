@@ -14,8 +14,8 @@
 
 # Azure Web 应用用户手册 - 第一部分
 
-- [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2)
-- [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3)
+- [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2/)
+- [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3/)
 
 
 ##<a name="section_3"></a> 1. Azure Web 应用相关服务

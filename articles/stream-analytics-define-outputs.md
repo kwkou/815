@@ -35,7 +35,7 @@
 
 ## Blob 存储
 
-Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在云中存储大量非结构化数据。如需 Azure Blob 存储及其用法的简介，请参阅文档：[如何使用 Blob](/documentation/articles/storage-dotnet-how-to-use-blobs)。
+Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在云中存储大量非结构化数据。如需 Azure Blob 存储及其用法的简介，请参阅文档：[如何使用 Blob](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 
 下表列出了属性名称和用于创建 blob 输出的属性说明。
 
@@ -113,7 +113,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 
 ## 表存储
 
-[Azure 表存储](/documentation/articles/storage-introduction)提供了具有高可用性且可大规模缩放的存储，因此应用程序可以自动缩放以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
+[Azure 表存储](/documentation/articles/storage-introduction/)提供了具有高可用性且可大规模缩放的存储，因此应用程序可以自动缩放以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
 
 下表列出了属性名称和用于创建表输出的属性说明。
 
@@ -169,16 +169,16 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 ## 后续步骤
 我们已经向你介绍了流分析，这是一种托管服务，适用于对物联网的数据进行流式分析。若要了解有关此服务的详细信息，请参阅：
 
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!--Link references-->
-[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
-[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
-[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction
-[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started
+[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide/
+[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs/
+[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction/
+[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started/
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 

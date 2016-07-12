@@ -22,14 +22,14 @@
 
 本教程演示如何使用 Azure PowerShell cmdlet 创建采用 **Azure Resource Manager** 部署模型的单个 Azure 虚拟机。在本教程中，我们将从 SQL 库中的映像创建使用单个磁盘驱动器的单个虚拟机。我们将为虚拟机要使用的存储、网络和计算资源创建新的提供程序。如果上述任何资源存在现有的提供程序，你可以改用这些提供程序。
 
-如果需要阅读本主题的经典版本，请参阅 [Provision a SQL Server virtual machine using Azure PowerShell Classic（使用 Azure PowerShell Classic 预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。
+如果需要阅读本主题的经典版本，请参阅 [Provision a SQL Server virtual machine using Azure PowerShell Classic（使用 Azure PowerShell Classic 预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)。
 
 ## 先决条件
 
 在本教程中，你需要：
 
 - 在开始之前，你需要有 Azure 帐户和订阅。如果没有，请注册[试用版](/pricing/1rmb-trial/)。
-- [Azure PowerShell](/documentation/articles/powershell-install-configure)，最低版本 1.0.0 或以上（本教程使用 1.0.4 版编写）。
+- [Azure PowerShell](/documentation/articles/powershell-install-configure/)，最低版本 1.0.0 或以上（本教程使用 1.0.4 版编写）。
     - 若要检索你的版本，请键入 **Get-Module Azure -ListAvailable**。
 
 ## 配置你的订阅
@@ -62,7 +62,7 @@
 
 使用以下变量来定义存储帐户和虚拟机所要使用的存储类型。
 
-根据需要修改并执行以下 cmdlet 来初始化这些变量。请注意，在本示例中，我们将使用建议用于生产工作负荷的[高级存储](/documentation/articles/storage-premium-storage)。有关指导和其他建议的详细信息，请参阅 [Performance best practices for SQL Server in Azure Virtual Machines（Azure 虚拟机中 SQL Server 的性能最佳实践）](/documentation/articles/virtual-machines-windows-sql-performance)。
+根据需要修改并执行以下 cmdlet 来初始化这些变量。请注意，在本示例中，我们将使用建议用于生产工作负荷的[高级存储](/documentation/articles/storage-premium-storage/)。有关指导和其他建议的详细信息，请参阅 [Performance best practices for SQL Server in Azure Virtual Machines（Azure 虚拟机中 SQL Server 的性能最佳实践）](/documentation/articles/virtual-machines-windows-sql-performance/)。
 
     $StorageName = $ResourceGroupName + "storage"
     $StorageType = "Premium_LRS"
@@ -193,7 +193,7 @@
 
 ### 设置虚拟机的操作系统属性
 
-现在，我们已准备好设置虚拟机的操作系统属性。我们使用 [Set-AzureRmVMOperatingSystem](https://msdn.microsoft.com/zh-cn/library/mt603843.aspx) cmdlet 将操作系统的类型设置为 Windows，要求安装[虚拟机代理](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions)，指定该 cmdlet 允许使用前面初始化的变量自动更新和设置虚拟机名称、计算机名称和凭据。
+现在，我们已准备好设置虚拟机的操作系统属性。我们使用 [Set-AzureRmVMOperatingSystem](https://msdn.microsoft.com/zh-cn/library/mt603843.aspx) cmdlet 将操作系统的类型设置为 Windows，要求安装[虚拟机代理](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)，指定该 cmdlet 允许使用前面初始化的变量自动更新和设置虚拟机名称、计算机名称和凭据。
 
 执行以下 cmdlet 来设置虚拟机的操作系统属性。
 
@@ -304,6 +304,6 @@
     New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualMachine
 
 ## 后续步骤
-创建虚拟机后，你可以使用 RDP 和设置连接来连接虚拟机。有关详细信息，请参阅 [Connect to a SQL Server Virtual Machine on Azure (Resource Manager)（连接到 Azure 上的 SQL Server 虚拟机 (Resource Manager)）](/documentation/articles/virtual-machines-windows-sql-connect)。
+创建虚拟机后，你可以使用 RDP 和设置连接来连接虚拟机。有关详细信息，请参阅 [Connect to a SQL Server Virtual Machine on Azure (Resource Manager)（连接到 Azure 上的 SQL Server 虚拟机 (Resource Manager)）](/documentation/articles/virtual-machines-windows-sql-connect/)。
 
 <!---HONumber=Mooncake_0613_2016-->

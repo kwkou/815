@@ -18,9 +18,9 @@
 # 使用 Azure 门户预览和 Azure Resource Manager 创建具有站点到站点 VPN 连接的 VNet
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
-- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
+- [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
+- [Azure 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
+- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 
 
 本文将指导你使用 Azure Resource Manager 部署模型和 Azure 门户预览创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。在以下步骤中，你将创建 VNet、添加网关子网、网关、本地站点及连接。此外，还需要配置 VPN 设备。
@@ -39,13 +39,13 @@
 
 [AZURE.INCLUDE [vpn-gateway-table-site-to-site-table](../includes/vpn-gateway-table-site-to-site-include.md)]
 
-如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology)一文。
+如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology/)一文。
 
 ## 开始之前
 
 在开始配置之前，请确认你具有以下各项。
 
-- 一台兼容的 VPN 设备和能够对其进行配置的人员。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices)。如果你不熟悉 VPN 设备的配置，或者不熟悉本地网络配置中的 IP 地址范围，则需咨询能够为你提供此类详细信息的人员。
+- 一台兼容的 VPN 设备和能够对其进行配置的人员。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。如果你不熟悉 VPN 设备的配置，或者不熟悉本地网络配置中的 IP 地址范围，则需咨询能够为你提供此类详细信息的人员。
 
 - 一个用于 VPN 设备的面向外部的公共 IP 地址。此 IP 地址不得位于 NAT 之后。
 	
@@ -154,6 +154,6 @@
 
 - 连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅虚拟机[学习路径](https://azure.microsoft.com/documentation/learning-paths/virtual-machines)。
 
-- 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps)。
+- 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
 <!---HONumber=Mooncake_0613_2016-->

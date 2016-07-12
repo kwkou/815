@@ -274,19 +274,19 @@
 <!-- Links -->
 [关于 Azure 存储空间]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
-[事件中心入门]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
+[事件中心入门]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [IoT Hub Developer Guide - Identity Registry]: /documentation/articles/iot-hub-devguide/#identityregistry
-[Azure 存储空间可缩放性指导原则]: /documentation/articles/storage-scalability-targets
+[Azure 存储空间可缩放性指导原则]: /documentation/articles/storage-scalability-targets/
 [Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
-[事件中心]: /documentation/articles/event-hubs-overview
+[事件中心]: /documentation/articles/event-hubs-overview/
 [Scaled out event processing]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
-[事件中心编程指南]: /documentation/articles/event-hubs-programming-guide
+[事件中心编程指南]: /documentation/articles/event-hubs-programming-guide/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [Azure 门户]: https://manage.windowsazure.cn/
-[Service Bus Queue]: /documentation/articles/service-bus-dotnet-how-to-use-queues
-[使用服务总线构建多层应用程序]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
-[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[Service Bus Queue]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
+[使用服务总线构建多层应用程序]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
+[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [服务总线文档]: /documentation/services/service-bus/
 
 <!-- Images -->

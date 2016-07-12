@@ -114,7 +114,7 @@ Azure Web 应用是用于托管公司网站的理想解决方案。通过 Web �
 
 ### <a id="lob"></a>我有一个需要连接到公司网络的业务线应用程序
 
-如果你想要创建业务线应用程序，你的网站可能需要直接访问公司网络上的服务或数据。可以在 Azure Web 应用、Service Fabric 和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)实现这个目的。在 Azure 上，可以使用 [VNET 集成功能](/documentation/articles/app-service-vnet-integration-powershell)，通过此功能，你的 Azure 应用程序能够像在公司网络上一样运行。
+如果你想要创建业务线应用程序，你的网站可能需要直接访问公司网络上的服务或数据。可以在 Azure Web 应用、Service Fabric 和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)实现这个目的。在 Azure 上，可以使用 [VNET 集成功能](/documentation/articles/app-service-vnet-integration-powershell/)，通过此功能，你的 Azure 应用程序能够像在公司网络上一样运行。
 
 ##<a name="features"></a>功能比较
 
@@ -135,23 +135,23 @@ WebMatrix 支持|X||X||
 托管多层体系结构的 web 或 web 服务层|X|X|X|X|
 托管多层体系结构的中间层|X|X|X|X|Azure Web Apps 可以轻松地托管 REST API 中间层，而 [WebJobs](/documentation/articles/websites-webjobs-resources/) 功能可以托管后台处理作业。你可以在专用网站中运行 WebJobs，以实现层的独立可扩展性。
 集成的 MySQL-as-a-service 支持|X|X|X||云服务可以通过 ClearDB 的产品集成“MySQL 即服务”，但不作为 Azure 经典管理门户工作流的一部分。
-支持 ASP.NET、经典 ASP、Node.js、PHP、Python|X|X|X|X|Service Fabric 支持使用 [ASP.NET 5](/documentation/articles/service-fabric-add-a-web-frontend) 创建 Web 前端，或者，你也可以通过[来宾可执行文件](/documentation/articles/service-fabric-deploy-existing-app)的形式部署任何类型的应用程序（Node.js、Java 等）。
+支持 ASP.NET、经典 ASP、Node.js、PHP、Python|X|X|X|X|Service Fabric 支持使用 [ASP.NET 5](/documentation/articles/service-fabric-add-a-web-frontend/) 创建 Web 前端，或者，你也可以通过[来宾可执行文件](/documentation/articles/service-fabric-deploy-existing-app/)的形式部署任何类型的应用程序（Node.js、Java 等）。
 向外扩展到多个实例且无需重新部署|X|X|X|X|虚拟机可以扩大到多个实例，但必须编写这些虚拟机上运行的服务，来处理向外扩展。你需要配置负载平衡器，跨计算机路由请求；还需要创建地缘组，防止因维护或硬件故障导致同时重新启动所有实例。
-支持 SSL|X|X|X|X|对于 Azure Web 应用，只有基本和标准模式支持自定义域名称的 SSL。有关结合使用 SSL 和 Web Apps 的信息，请参阅[为 Azure 网站配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate)。
+支持 SSL|X|X|X|X|对于 Azure Web 应用，只有基本和标准模式支持自定义域名称的 SSL。有关结合使用 SSL 和 Web Apps 的信息，请参阅[为 Azure 网站配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate/)。
 Visual Studio 集成|X|X|X|X|
 远程调试|X|X|X||
 使用 TFS 部署代码|X|X|X|X|
-使用 [Azure 虚拟网络](/home/features/networking/)进行网络隔离|X|X|X|X|另请参阅 [Azure 网站的虚拟网络集成](/documentation/articles/app-service-vnet-integration-powershell)
+使用 [Azure 虚拟网络](/home/features/networking/)进行网络隔离|X|X|X|X|另请参阅 [Azure 网站的虚拟网络集成](/documentation/articles/app-service-vnet-integration-powershell/)
 支持 [Azure 流量管理器](/home/features/traffic-manager/)|X|X|X|X|
 集成的端点监视|X|X|X||
 对服务器的远程桌面访问||X|X|X|
-安装任何自定义 MSI||X|X|X|Service Fabric 可让你以[来宾可执行文件](/documentation/articles/service-fabric-deploy-existing-app)的形式托管任何可执行文件，你也可以在 VM 上安装任何应用。
+安装任何自定义 MSI||X|X|X|Service Fabric 可让你以[来宾可执行文件](/documentation/articles/service-fabric-deploy-existing-app/)的形式托管任何可执行文件，你也可以在 VM 上安装任何应用。
 能够定义/执行启动任务||X|X|X|
 可以侦听 ETW 事件||X|X|X|
 
 ## <a id="nextsteps"></a>后续步骤
 
-有关三个 Web 托管选项的详细信息，请参阅 [Azure 简介](/documentation/articles/fundamentals-introduction-to-azure)。
+有关三个 Web 托管选项的详细信息，请参阅 [Azure 简介](/documentation/articles/fundamentals-introduction-to-azure/)。
 
 若要开始使用为应用程序选择的选项，请参阅以下资源：
 

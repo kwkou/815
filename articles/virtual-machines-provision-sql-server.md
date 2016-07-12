@@ -18,13 +18,13 @@
 
 本文提供了有关如何通过使用 PowerShell cmdlet 在 Azure 中创建 SQL Server 虚拟机的步骤。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-classic-extensions-customscript)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-classic-extensions-customscript/)。
 
 ## 安装和配置 PowerShell
 
 1. 如果你没有 Azure 帐户，请访问 [Azure 试用](/pricing/1rmb-trial/)。
 
-2. [安装最新的 Azure PowerShell cmdlet](/documentation/articles/powershell-install-configure)。
+2. [安装最新的 Azure PowerShell cmdlet](/documentation/articles/powershell-install-configure/)。
 
 3. 安装完毕之后，打开 Windows PowerShell。
 
@@ -90,7 +90,7 @@
 		$svcname = "<cloud service name>"
 		New-AzureService -ServiceName $svcname -Label $svcname -Location $dcLocation
 
-2. 指定虚拟机名称和大小。有关虚拟机大小的更多信息，请参见[适用于 Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
+2. 指定虚拟机名称和大小。有关虚拟机大小的更多信息，请参见[适用于 Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)。
 
 		$vmname="<machine name>"
 		$vmsize="<Specify a valid machine size>" # see the link to virtual machine sizes
@@ -105,7 +105,7 @@
 
 		New-AzureVM -ServiceName $svcname -VMs $vm1
 
->[AZURE.NOTE] 有关更多说明和配置选项，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell)中的**构建你的命令集**部分。
+>[AZURE.NOTE] 有关更多说明和配置选项，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)中的**构建你的命令集**部分。
 
 ## PowerShell 脚本示例
 
@@ -156,14 +156,14 @@
 
 ## 为远程访问完成 SQL Server 计算机的配置
 
-在通过远程桌面登录计算机之后，根据[在 Azure VM 中配置 SQL Server 连接的步骤](/documentation/articles/virtual-machines-windows-classic-sql-connect#steps-for-configuring-sql-server-connectivity-in-an-azure-vm)中的说明配置 SQL Server。
+在通过远程桌面登录计算机之后，根据[在 Azure VM 中配置 SQL Server 连接的步骤](/documentation/articles/virtual-machines-windows-classic-sql-connect/#steps-for-configuring-sql-server-connectivity-in-an-azure-vm)中的说明配置 SQL Server。
 
 ## 后续步骤
 
-你可以在[虚拟机文档](/documentation/articles/virtual-machines-windows-classic-create-powershell)中找到使用 PowerShell 设置虚拟机的其他说明。有关与 SQL Server 和高级存储相关的其他脚本，请参阅[将 Azure 高级存储用于虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-classic-sql-server-premium-storage)。
+你可以在[虚拟机文档](/documentation/articles/virtual-machines-windows-classic-create-powershell/)中找到使用 PowerShell 设置虚拟机的其他说明。有关与 SQL Server 和高级存储相关的其他脚本，请参阅[将 Azure 高级存储用于虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-classic-sql-server-premium-storage/)。
 
-在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql)。
+在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql/)。
 
-除了这些资源外，我们还建议你查看[与在 Azure 虚拟机中运行 SQL Server 相关的其他主题](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+除了这些资源外，我们还建议你查看[与在 Azure 虚拟机中运行 SQL Server 相关的其他主题](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_0215_2016-->

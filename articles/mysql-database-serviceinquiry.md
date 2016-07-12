@@ -4,11 +4,11 @@
 
 #服务咨询
 > [AZURE.SELECTOR]
-- [全部问题](/documentation/articles/mysql-database-tech-faq)
-- [服务咨询](/documentation/articles/mysql-database-serviceinquiry)
-- [连接问题](/documentation/articles/mysql-database-connectioninquiry)
-- [安全性咨询](/documentation/articles/mysql-database-securityinquiry)
-- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry)
+- [全部问题](/documentation/articles/mysql-database-tech-faq/)
+- [服务咨询](/documentation/articles/mysql-database-serviceinquiry/)
+- [连接问题](/documentation/articles/mysql-database-connectioninquiry/)
+- [安全性咨询](/documentation/articles/mysql-database-securityinquiry/)
+- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry/)
 
 ### **数据备份占用存储限额吗?**
   
@@ -41,4 +41,4 @@
 支持,虽然我们的[管理门户](https://manage.windowsazure.cn/) 以及PowerShell 命令行在创建用户或数据库时只支持对整个数据库设置读写权限，但你可以用“grant”命令对用户权限进行更细化的设置。
 
 ### **MySQL Database on Azure 现在使用什么系统时间？ 如何变更？**
-MySQL on Azure目前默认采用UTC 协调世界时作为系统时间System， 用户可以通过在管理门户上或PowerShell等途径配置补偿值(offsite)来进行时间更新。具体配置方法请参考：[MySQL on Azure上的时区更改](/documentation/articles/mysql-database-timezone-config).
+MySQL on Azure目前默认采用UTC 协调世界时作为系统时间System， 用户可以通过在管理门户上或PowerShell等途径配置补偿值(offsite)来进行时间更新。具体配置方法请参考：[MySQL on Azure上的时区更改](/documentation/articles/mysql-database-timezone-config/).

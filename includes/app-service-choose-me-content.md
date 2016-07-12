@@ -9,7 +9,7 @@ Azure 虚拟机可以处理各种云托管任务。但是，创建和管理 VM �
  
 **图：Azure App Service 支持通过各种技术构建的静态网页、常用 Web 应用和自定义 Web 应用。你还可以运行移动后端、API 应用和非 Web 计算工作负荷（使用 Web 作业）。**
 
-借助 Azure App Service，你还可以使用 [WebJobs](/documentation/articles/websites-webjobs-resources) 功能运行任何类型的计算工作负荷。
+借助 Azure App Service，你还可以使用 [WebJobs](/documentation/articles/websites-webjobs-resources/) 功能运行任何类型的计算工作负荷。
 
 Azure App Service 允许你选择在包含多个用户所创建的多个应用的共享 VM 上运行，或者在仅由你使用的 VM 上运行。VM 是通过 Azure App Service 管理的资源池的一部分，因此允许获得高可靠性和容错能力。
 

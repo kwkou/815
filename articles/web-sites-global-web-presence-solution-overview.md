@@ -26,7 +26,7 @@
 
 <object type="image/svg+xml" data="./media/web-sites-global-web-presence-solution-overview/corp-website-visio.svg" width="100%" height="100%"></object>
 
-> [AZURE.NOTE]本指南介绍了一些与在 Azure 中运行面向公众的 .COM 站点相一致的最常见领域和任务。但是，还有其他你可以在 Azure 中实现的常见解决方案。若要查看这些解决方案，请参阅[数字市场营销活动](/documentation/articles/web-sites-digital-marketing-application-solution-overview)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview)中的其他指导。
+> [AZURE.NOTE]本指南介绍了一些与在 Azure 中运行面向公众的 .COM 站点相一致的最常见领域和任务。但是，还有其他你可以在 Azure 中实现的常见解决方案。若要查看这些解决方案，请参阅[数字市场营销活动](/documentation/articles/web-sites-digital-marketing-application-solution-overview/)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview/)中的其他指导。
 
 ## 从头开始创建或引入现有资产
 
@@ -94,25 +94,25 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 
 [Azure Websites]: /home/features/web-site/
 
-[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
-[Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-[Git]: /documentation/articles/web-sites-publish-source-control
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
+[Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+[FTP]: /documentation/articles/web-sites-deploy/#ftp
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started/
+[Git]: /documentation/articles/web-sites-publish-source-control/
 
-[将其部署到 Azure Web 应用上你的站点的过渡槽]: /documentation/articles/web-sites-staged-publishing
+[将其部署到 Azure Web 应用上你的站点的过渡槽]: /documentation/articles/web-sites-staged-publishing/
 [连续发布]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [运行 A/B 测试]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[自定义域]: /documentation/articles/web-sites-custom-domain-name
-[HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
+[自定义域]: /documentation/articles/web-sites-custom-domain-name/
+[HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate/
 [Azure Web 应用定价详细信息]: /home/features/web-site#price
 
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn
+[将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn/
 [CDN 节点]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
-[向上和向外缩放]: /documentation/articles/web-sites-scale
+[向上和向外缩放]: /documentation/articles/web-sites-scale/
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [服务管理 API]: https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell 脚本]: https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
@@ -122,7 +122,7 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 [ASP.NET 会话状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [输出缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[快速浏览]: /documentation/articles/web-sites-monitor
+[快速浏览]: /documentation/articles/web-sites-monitor/
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 

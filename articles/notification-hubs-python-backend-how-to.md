@@ -27,7 +27,7 @@
 * 使用 Python 接口发送通知到通知中心 REST API。 
 * 获取 HTTP REST 请求/响应的转储以进行调试/培训。 
 
-你可以按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)以 Python 实现后端部分。
+你可以按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)以 Python 实现后端部分。
 
 > [AZURE.NOTE] 该示例仅限于发送通知，并不执行任何注册管理操作。
 
@@ -378,9 +378,9 @@
 
 <!-- URLs -->
 [Python REST 包装器示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
-[入门教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[突发新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[本地化新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[入门教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[突发新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[本地化新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
 
 <!-- Images. -->
 [1]: ./media/notification-hubs-python-backend-how-to/DetailedLoggingInfo.png

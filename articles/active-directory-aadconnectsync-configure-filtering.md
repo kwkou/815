@@ -18,7 +18,7 @@
 
 有某些情况下，需要对默认配置进行一些更改。下面是一些示例：
 
-- 你打算使用[多重 Azure AD 目录拓扑](/documentation/articles/active-directory-aadconnect-topologies#each-object-only-once-in-an-azure-ad-directory)。然后，你需要应用筛选器以控制要将哪些对象同步到特定的 Azure AD 目录。
+- 你打算使用[多重 Azure AD 目录拓扑](/documentation/articles/active-directory-aadconnect-topologies/#each-object-only-once-in-an-azure-ad-directory)。然后，你需要应用筛选器以控制要将哪些对象同步到特定的 Azure AD 目录。
 - 你要试用 Azure 或 Office 365，因此只想在 Azure AD 中创建少量的用户。在进行小规模试用时，无需使用完整全局地址列表即可演示功能。
 - Azure AD 中有很多你不需要的服务帐户和其他非个人帐户。
 - 出于合规性的原因，你不能删除任何本地用户帐户，而只能禁用它们。但是，在 Azure AD 中，你只希望存在活动的帐户。
@@ -34,9 +34,9 @@
 
 由于筛选操作可能会同时删除非常多的对象，因此请先确保新的筛选器正确无误，然后再开始将更改导出到 Azure AD。在完成配置步骤后，强烈建议你执行[验证步骤](#apply-and-verify-changes)，然后才对 Azure AD 进行导出和更改操作。
 
-为了防止意外删除许多对象，默认情况下已打开[防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes)功能。如果由于筛选而删除了许多对象（默认为 500 个），则需要遵循本文中的步骤来允许将删除结果传播到 Azure AD。
+为了防止意外删除许多对象，默认情况下已打开[防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/)功能。如果由于筛选而删除了许多对象（默认为 500 个），则需要遵循本文中的步骤来允许将删除结果传播到 Azure AD。
 
-如果你使用 2015 年 11 月 ([1\.0.9125](/documentation/articles/active-directory-aadconnect-version-history#1091250)) 之前的内部版本、更改筛选器配置或使用密码同步，则在完成配置之后，需要触发所有密码的完全同步。有关如何触发密码完全同步的步骤，请参阅[触发所有密码的完全同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization#trigger-a-full-sync-of-all-passwords)。如果使用 1.0.9125 或更高版本，则常规的**完全同步**操作也会计算是否应同步密码，因此你不再需要执行这个额外的步骤。
+如果你使用 2015 年 11 月 ([1\.0.9125](/documentation/articles/active-directory-aadconnect-version-history/#1091250)) 之前的内部版本、更改筛选器配置或使用密码同步，则在完成配置之后，需要触发所有密码的完全同步。有关如何触发密码完全同步的步骤，请参阅[触发所有密码的完全同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#trigger-a-full-sync-of-all-passwords)。如果使用 1.0.9125 或更高版本，则常规的**完全同步**操作也会计算是否应同步密码，因此你不再需要执行这个额外的步骤。
 
 如果在 Azure AD 中由于筛选错误导致**用户**对象被无意中删除，你可以通过删除筛选配置，然后再次同步目录，在 Azure AD 中重新创建用户对象。这样就可以从 Azure AD 的回收站中还原用户。但是，你无法取消删除其他对象类型。例如，如果你意外删除了某个安全组，而该组用于将资源加入 ACL，则无法恢复该组及其 ACL。
 
@@ -66,7 +66,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 ## 筛选选项
 可将以下筛选配置类型应用到目录同步工具：
 
-- [**基于组**](/documentation/articles/active-directory-aadconnect-get-started-custom##sync-filtering-based-on-groups)：初始安装时只能使用安装向导配置基于单个组的筛选。本主题不会进一步讨论此类型。
+- [**基于组**](/documentation/articles/active-directory-aadconnect-get-started-custom/##sync-filtering-based-on-groups)：初始安装时只能使用安装向导配置基于单个组的筛选。本主题不会进一步讨论此类型。
 
 - [**基于域**](#domain-based-filtering)：此选项可让你选择要将哪些域同步到 Azure AD。如果在安装 Azure AD Connect 同步之后对本地基础结构进行更改，此选项还可让你在同步引擎配置中添加和删除域。
 
@@ -79,7 +79,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 ## <a name="domain-based-filtering"></a>基于域的筛选
 本部分为你提供配置域筛选器需要执行的步骤。如果安装 Azure AD Connect 之后在林中添加或删除域，则也必须更新筛选配置。
 
-更改基于域的筛选的首选方法是运行安装向导并更改[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom#domain-and-ou-filtering)。使用安装向导可以自动执行本主题中所述的所有任务。
+更改基于域的筛选的首选方法是运行安装向导并更改[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#domain-and-ou-filtering)。使用安装向导可以自动执行本主题中所述的所有任务。
 
 仅当你出于某种原因而无法运行安装向导时，才遵循以下步骤。
 
@@ -140,7 +140,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 - 若要完成配置设置，请参阅[应用并验证更改](#apply-and-verify-changes)。
 
 ## 基于组织单位的筛选
-更改基于 OU 的筛选的首选方法是运行安装向导并更改[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom#domain-and-ou-filtering)。使用安装向导可以自动执行本主题中所述的所有任务。
+更改基于 OU 的筛选的首选方法是运行安装向导并更改[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#domain-and-ou-filtering)。使用安装向导可以自动执行本主题中所述的所有任务。
 
 仅当你出于某种原因而无法运行安装向导时，才遵循以下步骤。
 
@@ -162,9 +162,9 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 8. 若要完成配置设置，请参阅[应用并验证更改](#apply-and-verify-changes)。
 
 ## <a name="attribute-based-filtering"></a>基于属性的筛选
-为了正常执行这些步骤，请确保使用 2015 年 11 月 ([1\.0.9125](/documentation/articles/active-directory-aadconnect-version-history#1091250)) 或更高版本。
+为了正常执行这些步骤，请确保使用 2015 年 11 月 ([1\.0.9125](/documentation/articles/active-directory-aadconnect-version-history/#1091250)) 或更高版本。
 
-基于属性的筛选是最灵活的对象筛选方式。将对象同步到 Azure AD 时，你可以使用[声明性预配](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions)的能力来控制几乎每个方面的问题。
+基于属性的筛选是最灵活的对象筛选方式。将对象同步到 Azure AD 时，你可以使用[声明性预配](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions/)的能力来控制几乎每个方面的问题。
 
 筛选可以应用于从 Active Directory 到 Metaverse 的[入站](#inbound-filtering)传输和从 Metaverse 到 Azure AD 的[出站](#outbound-filtering)传输。建议对入站传输应用筛选，因为这样做最容易进行维护。仅当需要先要从多个林加入对象再进行评估时，才使用出站筛选。
 
@@ -268,7 +268,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 
 1. 选择“连接器”，然后在“连接器”列表中选择“Azure AD 连接器”。从“操作”中选择“运行”。
 2. 在“运行配置文件”中，选择“导出”。
-3. 如果配置更改将会删除许多对象，且数目超过配置的阈值（默认为 500），则在导出时你会看到错误。如果看到了错误，则需要暂时禁用[防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes)功能。
+3. 如果配置更改将会删除许多对象，且数目超过配置的阈值（默认为 500），则在导出时你会看到错误。如果看到了错误，则需要暂时禁用[防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/)功能。
 
 现在，需要再次启用计划程序。
 
@@ -277,8 +277,8 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 
 ## 后续步骤
 
-了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis)配置的详细信息。
+了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

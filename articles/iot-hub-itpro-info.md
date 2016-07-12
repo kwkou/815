@@ -45,8 +45,8 @@
 
 - [通过 Azure 门户预览管理 IoT 中心][lnk-manage-portal]介绍了如何使用 Azure 门户预览来管理 IoT 中心。
 
-[lnk-iothub]: /documentation/articles/iot-hub-what-is-iot-hub
+[lnk-iothub]: /documentation/articles/iot-hub-what-is-iot-hub/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/#security
-[lnk-manage-portal]: /documentation/articles/iot-hub-manage-through-portal
+[lnk-manage-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0307_2016-->

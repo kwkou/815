@@ -26,11 +26,11 @@
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[Transact-SQL 语言元素]: /documentation/articles/sql-data-warehouse-reference-tsql-language-elements
-[Transact-SQL 语句]: /documentation/articles/sql-data-warehouse-reference-tsql-statements
-[Transact-SQL 系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views
-[PowerShell cmdlet]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[Transact-SQL 语言元素]: /documentation/articles/sql-data-warehouse-reference-tsql-language-elements/
+[Transact-SQL 语句]: /documentation/articles/sql-data-warehouse-reference-tsql-statements/
+[Transact-SQL 系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
+[PowerShell cmdlet]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 
 
 <!--MSDN references-->

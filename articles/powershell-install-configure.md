@@ -16,8 +16,8 @@
 # 如何安装和配置 Azure PowerShell#
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/powershell-install-configure)
-- [Azure CLI](/documentation/articles/xplat-cli-install)
+- [PowerShell](/documentation/articles/powershell-install-configure/)
+- [Azure CLI](/documentation/articles/xplat-cli-install/)
 
 ##什么是 Azure PowerShell？
 Azure PowerShell 是一组模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 经典管理门户中可以执行的任务，例如，创建和配置云服务、虚拟机、虚拟网络和 Web 应用。
@@ -143,7 +143,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 > 5. 最后，从 Azure 门户预览注销，然后使用工作或学校帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
 
-> 有关使用工作或学校帐户注册 Azure 的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization)。
+> 有关使用工作或学校帐户注册 Azure 的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization/)。
 
 ### 查看帐户和订阅详细信息
 

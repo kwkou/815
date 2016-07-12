@@ -39,7 +39,7 @@ Microsoft 运行的使用者标识系统 | Microsoft 运行的企业标识系统
 
 ## Azure 订阅与 Azure AD 的关系
 
-每个 Azure 订阅都与某个 Azure AD 实例存在信任关系。这意味着，此订阅信任该目录对用户、服务和设备执行身份验证。多个订阅可以信任同一个目录，但一个订阅只能信任一个目录。可以在“设置”选项卡下查看你的订阅信任的目录。可以[编辑订阅设置](/documentation/articles/active-directory-understanding-resource-access)以更改它信任的目录。
+每个 Azure 订阅都与某个 Azure AD 实例存在信任关系。这意味着，此订阅信任该目录对用户、服务和设备执行身份验证。多个订阅可以信任同一个目录，但一个订阅只能信任一个目录。可以在“设置”选项卡下查看你的订阅信任的目录。可以[编辑订阅设置](/documentation/articles/active-directory-understanding-resource-access/)以更改它信任的目录。
 
 订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（网站、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将被终止。但是，目录将保留在 Azure 中，并且你可以将另一个订阅与该目录相关联，然后继续管理目录用户。
 
@@ -52,13 +52,13 @@ Microsoft 运行的使用者标识系统 | Microsoft 运行的企业标识系统
 ![][2]
 
 ## 如何管理订阅和目录
-Azure 订阅的管理角色可以管理与 Azure 订阅绑定的资源。[在 Azure Active Directory 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles)中介绍了这些角色以及订阅管理最佳实践。
+Azure 订阅的管理角色可以管理与 Azure 订阅绑定的资源。[在 Azure Active Directory 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)中介绍了这些角色以及订阅管理最佳实践。
 
 默认情况下，当你注册时，系统将为你分配服务管理员角色。如果其他人需要使用同一个订阅登录和访问服务，则你可以将他们添加为协同管理员。服务管理员和协同管理员可以是 Microsoft 帐户，也可以是 Azure 订阅信任的 Azure AD 组织内部的工作或学校帐户。
 
 Azure AD 提供一组不同的管理角色，用于管理目录和标识相关的功能。例如，目录的全局管理员可以将用户和组添加到目录，或者要求对用户执行多重身份验证。将为创建目录的用户分配全局管理员角色，而他们又可以向其他用户分配管理员角色。
 
-与订阅管理员一样，Azure AD 管理角色可以是 Microsoft 帐户，也可以是工作或学校帐户。Office 365 和 Microsoft Intune 等其他服务也会使用 Azure AD 管理角色。有关详细信息，请参阅[分配管理员角色](/documentation/articles/active-directory-assign-admin-roles)。
+与订阅管理员一样，Azure AD 管理角色可以是 Microsoft 帐户，也可以是工作或学校帐户。Office 365 和 Microsoft Intune 等其他服务也会使用 Azure AD 管理角色。有关详细信息，请参阅[分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。
 
 必须注意，Azure 订阅管理员和 Azure AD 目录管理员是两个不同的概念。Azure 订阅管理员可以管理 Azure 中的资源，还可以在 Azure 经典管理门户中查看 Active Directory 扩展（因为 Azure 经典管理门户是一种 Azure 资源）。Directory 管理员可以管理目录中的属性。
 
@@ -72,7 +72,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 ## 使用工作或学校帐户管理使用 Microsoft 帐户创建的 Azure 订阅
 
-最佳实践是，你应该[以组织身份注册 Azure](/documentation/articles/sign-up-organization) 并使用工作或学校帐户来管理 Azure 中的资源。之所以首选工作或学校帐户，是因为它们由颁发它们的组织集中管理，比 Microsoft 帐户的功能更多，并且直接由 Azure AD 进行身份验证。使用同一个帐户可以访问提供给企业和组织的其他 Microsoft Online Services，例如 Office 365 或 Microsoft Intune。如果你已经拥有了一个与其他属性配合使用的帐户，则可能想要对 Azure 使用这同一个帐户。在这种情况下，你还会获得一个 Active Directory 实例，该实例可以支持你希望 Azure 订阅信任的那些属性。
+最佳实践是，你应该[以组织身份注册 Azure](/documentation/articles/sign-up-organization/) 并使用工作或学校帐户来管理 Azure 中的资源。之所以首选工作或学校帐户，是因为它们由颁发它们的组织集中管理，比 Microsoft 帐户的功能更多，并且直接由 Azure AD 进行身份验证。使用同一个帐户可以访问提供给企业和组织的其他 Microsoft Online Services，例如 Office 365 或 Microsoft Intune。如果你已经拥有了一个与其他属性配合使用的帐户，则可能想要对 Azure 使用这同一个帐户。在这种情况下，你还会获得一个 Active Directory 实例，该实例可以支持你希望 Azure 订阅信任的那些属性。
 
 此外，与 Microsoft 帐户相比，工作或学校帐户可通过更多方式进行管理。例如，管理员可以重置工作或学校帐户的密码，或者要求对它进行多重身份验证。
 
@@ -93,7 +93,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 ### 我没有订阅 Azure
 
-在这种情况下，你只需使用登录 Office 365 时所用的同一个工作帐户或学校帐户来[注册 Azure](/documentation/articles/sign-up-organization)。Office 365 帐户中的相关信息将预填充到 Azure 注册表单中。你的帐户将被指定为订阅的服务管理员角色。
+在这种情况下，你只需使用登录 Office 365 时所用的同一个工作帐户或学校帐户来[注册 Azure](/documentation/articles/sign-up-organization/)。Office 365 帐户中的相关信息将预填充到 Azure 注册表单中。你的帐户将被指定为订阅的服务管理员角色。
 
 ### 我已使用我的 Microsoft 帐户订阅了 Azure
 
@@ -116,7 +116,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 
 ## 后续步骤
-[以组织身份注册 Azure](/documentation/articles/sign-up-organization)
+[以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
 
 
 <!--Image references-->

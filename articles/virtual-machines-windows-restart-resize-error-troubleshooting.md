@@ -18,12 +18,12 @@
 # 排查在 Azure 中重新启动或调整现有 Windows 虚拟机时遇到的 Resource Manager 部署问题
 
 > [AZURE.SELECTOR]
-- [经典](/documentation/articles/virtual-machines-windows-classic-restart-resize-error-troubleshooting)
-- [资源管理器](/documentation/articles/virtual-machines-windows-restart-resize-error-troubleshooting)
+- [经典](/documentation/articles/virtual-machines-windows-classic-restart-resize-error-troubleshooting/)
+- [资源管理器](/documentation/articles/virtual-machines-windows-restart-resize-error-troubleshooting/)
 
 当你尝试启动已停止的 Azure 虚拟机 (VM)，或调整现有 Azure VM 的大小时，经常遇到的错误是分配失败。当群集或区域没有可用的资源或无法支持所请求的 VM 大小时，将发生此错误。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
 [AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
 
@@ -31,7 +31,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。以下链接包含有关过程的详细信息：
 
-[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)
+[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)
 
 ## 问题：启动已停止的 VM 时发生错误
 

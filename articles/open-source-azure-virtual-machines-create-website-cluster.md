@@ -43,7 +43,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	不管是 MySQL 的主从，还是 Redis 的主从，建议让主从这两台服务器处于同一个子网下。比较好的一种网络划分方式是1台LB + 3台WEB + 2台MYSQL + 2台Redis 都处于同一个虚拟网络下，但是各自位于不同的子网。比如3台 WEB 位于子网A，2台 MYSQL 位于子网B，2台 Redis 位于子网C，1台 LB 位于子网D。
 
-	Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一个子网下。请参考[虚拟网络链接](/documentation/articles/virtual-networks-create-vnet-classic-portal)创建虚拟网络，并创建四个子网。
+	Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一个子网下。请参考[虚拟网络链接](/documentation/articles/virtual-networks-create-vnet-classic-portal/)创建虚拟网络，并创建四个子网。
 
 	创建好虚拟网络后，在创建3台 WEB 虚拟机时选择同一个虚拟网络的子网A，在创建 MYSQL 主从虚拟机时选择同一个虚拟网络的子网B，在创建 Redis 主从虚拟机时选择同一个虚拟网络的子网C，创建 LB 虚拟机时选择同一个虚拟网络的子网D。如下图即为创建虚拟机时选择虚拟网络和子网的界面。
 
@@ -128,14 +128,14 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 2. 创建虚拟机
 
-	创建虚拟机和连接虚拟机的操作请参考[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。
+	创建虚拟机和连接虚拟机的操作请参考[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/)。
 
 
 3. LB的安装配置
 
 	我们使用 haproxy 来作负载均衡，下面的步骤演示 haproxy 的安装配置过程。 
 
-	3.1 打开此 LB 虚拟机的访问端口80。请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
+	3.1 打开此 LB 虚拟机的访问端口80。请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
 
 	3.2 下载软件包[http://www.haproxy.org/download/1.6/src/haproxy-1.6.3.tar.gz](http://www.haproxy.org/download/1.6/src/haproxy-1.6.3.tar.gz) 并上传至 LB 虚拟机。然后 SSH 连接到此 LB 虚拟机，去到此软件包所在目录下，执行如下命令： 
 
@@ -315,7 +315,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 5. MySQL的安装和主从设置
 
-	如果使用 Azure 提供的 MySQL 服务，请参考文档[Azure MySQL tutorial](/documentation/articles/mysql-database-get-started)。
+	如果使用 Azure 提供的 MySQL 服务，请参考文档[Azure MySQL tutorial](/documentation/articles/mysql-database-get-started/)。
 
 	如果是自己搭建，请参考下面步骤。
 
@@ -473,7 +473,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	我们使用 apache+php。
 
-	6.1 首先打开每台 web 的访问端口80。 请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
+	6.1 首先打开每台 web 的访问端口80。 请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
 
 	6.2 每台 web 的操作步骤都是一样的，下面以一台 web 为例。SSH 连接到 centosweb1, 编辑文件 install_apache.sh, 确保文件内容和下面一致： 
 		
@@ -607,7 +607,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 9. 域名设置
 
-	如果在访问时想要使用自己的域名，请参考[使用自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
+	如果在访问时想要使用自己的域名，请参考[使用自定义域名](/documentation/articles/cloud-services-custom-domain-name/)。
 
 
 10. 注意事项

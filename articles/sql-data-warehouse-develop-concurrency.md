@@ -444,10 +444,10 @@ FROM	sys.dm_pdw_wait_stats w
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
-[在 Azure SQL 数据库中管理数据库和登录名]: /documentation/articles/sql-database-manage-logins
+[在 Azure SQL 数据库中管理数据库和登录名]: /documentation/articles/sql-database-manage-logins/
 
 <!--Other Web references-->
 

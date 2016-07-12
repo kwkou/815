@@ -104,7 +104,7 @@ Azure 诊断使您能够从云服务辅助角色或 Web 角色，或者从 Azure
 
 ![][1]
 
-Azure 诊断将日志从客户云服务应用程序和 [Azure 虚拟机](/documentation/articles/virtual-machines-linux-about)移动到 Azure 存储空间。基于一种日志格式将一部分数据存储在 Azure 表中，另一部分存储在 blob 中。使用 Azure 存储空间客户端库将在 [Azure 存储空间](/documentation/articles/storage-introduction)中收集的数据下载到本地 SIEM 系统，以便进行监视和分析。
+Azure 诊断将日志从客户云服务应用程序和 [Azure 虚拟机](/documentation/articles/virtual-machines-linux-about/)移动到 Azure 存储空间。基于一种日志格式将一部分数据存储在 Azure 表中，另一部分存储在 blob 中。使用 Azure 存储空间客户端库将在 [Azure 存储空间](/documentation/articles/storage-introduction/)中收集的数据下载到本地 SIEM 系统，以便进行监视和分析。
 
 此外，HDInsight 可以用于进一步分析云中的数据。以下是一些使用 Azure 诊断的安全数据收集示例。
 
@@ -119,7 +119,7 @@ Azure 诊断将日志从客户云服务应用程序和 [Azure 虚拟机](/docume
 在本示例中，我们设置了使用 Azure 诊断的安全日志收集管道的新实例，并检测到虚拟机中的登录失败事件（事件 ID 为 4624 和 4625）。您可以从您的开发环境中实现以下步骤，也可以使用远程桌面会话通过远程桌面协议 (RDP) 连接到云中的节点。
 
 ##### 步骤 1：安装 Azure PowerShell SDK
-Azure PowerShell SDK 提供用于配置 Azure 虚拟机上的 Azure 诊断的 cmdlet。Azure PowerShell 版本 0.8.7 或更高版本中提供这些必要的 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+Azure PowerShell SDK 提供用于配置 Azure 虚拟机上的 Azure 诊断的 cmdlet。Azure PowerShell 版本 0.8.7 或更高版本中提供这些必要的 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ##### 步骤 2：准备配置文件
 根据您想要收集的事件准备配置文件。下面举例说明 Azure 诊断配置文件通过添加筛选器仅收集登录成功和失败事件，来从**安全**通道收集 Windows 事件。有关详细信息，请参阅 [Azure Diagnostics 1.2 配置架构](http://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx)。
@@ -457,7 +457,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 ![][14]
 
 ### 安全事件分发和峰值检测
-在事件都位于客户的存储帐户后，应用程序可以使用存储客户端库来访问和执行事件聚合。有关访问表数据的示例代码，请参阅[操作说明：检索表数据](/documentation/articles/storage-dotnet-how-to-use-tables)。
+在事件都位于客户的存储帐户后，应用程序可以使用存储客户端库来访问和执行事件聚合。有关访问表数据的示例代码，请参阅[操作说明：检索表数据](/documentation/articles/storage-dotnet-how-to-use-tables/)。
 
 下面是一个事件聚合示例。可进一步调查事件分发中的任何峰值以查找异常活动。
 
@@ -544,9 +544,9 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 - 基于组织的合规性策略、数据分析和监视要求选择日志保留期。
 
 ## 将安全日志导出到其他系统
-可以使用 Azure 存储空间客户端库下载 blob 数据，然后将其导出到您的本地系统进行处理。有关管理 blob 数据的示例代码，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
+可以使用 Azure 存储空间客户端库下载 blob 数据，然后将其导出到您的本地系统进行处理。有关管理 blob 数据的示例代码，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 
-同样，您可以使用 Azure 存储空间客户端库下载存储在 Azure 表中的安全数据。若要了解有关访问存储在表中的数据的详细信息，请参阅[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
+同样，您可以使用 Azure 存储空间客户端库下载存储在 Azure 表中的安全数据。若要了解有关访问存储在表中的数据的详细信息，请参阅[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。
 
 ## Azure Active Directory 报告
 Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日志报告，让您清楚地了解 Azure AD 租户的完整性和安全性。例如，Azure AD 能够自动分析用户活动和显示异常访问，然后通过客户可见的报告提供这一功能。

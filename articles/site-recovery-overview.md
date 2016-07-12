@@ -16,7 +16,7 @@
 
 欢迎使用 Azure Site Recovery！ 请以此文章作为开端，快速了解 Site Recovery 服务以及它如何有助于业务连续性和灾难恢复 (BCDR) 策略。
 
-Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文同时适用于这两种模型。Azure 建议大多数新部署使用资源管理器模型。
+Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文同时适用于这两种模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 概述
 
@@ -43,13 +43,13 @@ Site Recovery 可帮助做到这一点，因为它能协调工作负荷和应用
 **REPLICATE** | **REPLICATE FROM** | **REPLICATE TO** | **ARTICLE**
 ---|---|---|---
 VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | Azure 存储空间 | 部署
-VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | 辅助 VMware 站点 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
-Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmm-to-azure)
-Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | 辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-to-vmm)
-Hyper-V VM 上运行的工作负荷 | 使用 SAN 存储的 VMM 云中的本地 Hyper-V 主机服务器| 具有 SAN 存储的辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-san)
-Hyper-V VM 上运行的工作负荷 | 本地 Hyper-V 站点（无 VMM） | Azure 存储空间 | [部署](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | 辅助 VMware 站点 | [部署](/documentation/articles/site-recovery-vmware-to-vmware/) 
+Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmm-to-azure/)
+Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | 辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-to-vmm/)
+Hyper-V VM 上运行的工作负荷 | 使用 SAN 存储的 VMM 云中的本地 Hyper-V 主机服务器| 具有 SAN 存储的辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-san/)
+Hyper-V VM 上运行的工作负荷 | 本地 Hyper-V 站点（无 VMM） | Azure 存储空间 | [部署](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
 物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | Azure 存储空间 | 部署
-物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | 辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
+物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | 辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware/) 
 
 
 ## 我可以保护哪些工作负荷？
@@ -66,7 +66,7 @@ Site Recovery 有助于应用程序感知 BCDR，让工作负荷和应用在发�
 
 ## 后续步骤
 
-- 详细信息请参阅 [Site Recovery 可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload)
-- 若要详细了解 Site Recovery 体系结构，请参阅 [Site Recovery 的工作原理](/documentation/articles/site-recovery-components)
+- 详细信息请参阅 [Site Recovery 可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload/)
+- 若要详细了解 Site Recovery 体系结构，请参阅 [Site Recovery 的工作原理](/documentation/articles/site-recovery-components/)
 
 <!---HONumber=Mooncake_0328_2016-->

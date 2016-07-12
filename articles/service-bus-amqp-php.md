@@ -226,6 +226,6 @@ if ($message->properties != null)
 
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
-[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview
+[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 
 <!---HONumber=82-->

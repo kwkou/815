@@ -16,7 +16,7 @@
 # Azure RBAC 中的自定义角色
 
 
-如果没有符合你特定访问需求的内置角色，可在 Azure 基于角色的访问控制 (RBAC) 中创建自定义角色。可以使用 [Azure PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell)、[Azure 命令行接口](/documentation/articles/role-based-access-control-manage-access-azure-cli) (CLI) 和 [REST API](/documentation/articles/role-based-access-control-manage-access-rest) 创建自定义角色。与内置角色一样，可以将自定义角色分配到订阅、资源组和资源范围内的用户、组和应用程序。自定义角色存储在 Azure AD 租户中，并且可以在将该租户用作其 Azure AD 目录的所有订阅之间共享。
+如果没有符合你特定访问需求的内置角色，可在 Azure 基于角色的访问控制 (RBAC) 中创建自定义角色。可以使用 [Azure PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)、[Azure 命令行接口](/documentation/articles/role-based-access-control-manage-access-azure-cli/) (CLI) 和 [REST API](/documentation/articles/role-based-access-control-manage-access-rest/) 创建自定义角色。与内置角色一样，可以将自定义角色分配到订阅、资源组和资源范围内的用户、组和应用程序。自定义角色存储在 Azure AD 租户中，并且可以在将该租户用作其 Azure AD 目录的所有订阅之间共享。
 
 下面是用于监视和重新启动虚拟机的自定义角色的一个示例：
 
@@ -92,11 +92,11 @@
 	Azure RBAC 中的所有内置角色都允许查看可以进行分配的角色。范围中能够执行 `Microsoft.Authorization/roleDefinition/read` 操作的用户可以查看能在该范围中进行分配的 RBAC 角色。
 
 ## 另请参阅
-- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure)：Azure 门户中的 RBAC 入门。
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户中的 RBAC 入门。
 - 了解如何通过以下方式管理访问权限：
-	- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell)
-	- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli)
-	- [REST API](/documentation/articles/role-based-access-control-manage-access-rest)
-- [内置角色](/documentation/articles/role-based-access-built-in-roles)：获取有关 RBAC 中的标准角色的详细信息。
+	- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
+	- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)
+	- [REST API](/documentation/articles/role-based-access-control-manage-access-rest/)
+- [内置角色](/documentation/articles/role-based-access-built-in-roles/)：获取有关 RBAC 中的标准角色的详细信息。
 
 <!---HONumber=Mooncake_0627_2016-->

@@ -30,7 +30,7 @@
 
 这种情况下，你有多种选择：
 
-- 将 VMM 云中的 Hyper-V VM 复制到 Azure。[详细了解](/documentation/articles/site-recovery-vmm-to-azure)此方案。
+- 将 VMM 云中的 Hyper-V VM 复制到 Azure。[详细了解](/documentation/articles/site-recovery-vmm-to-azure/)此方案。
 - 在单个 VMM 服务器上的云之间复制。
 
 我们建议你采用第一种选择，因为在第二种选择中，故障转移和恢复不是无缝的，需要执行许多手动步骤。如果要在站点之间复制而不是复制到 Azure，你可以使用多个选项。
@@ -52,7 +52,7 @@
 4. 在 Hyper-V 管理器控制台中，在包含 VMM VM 的 Hyper-V 主机上启用 Hyper-V 副本，在 VM 上启用复制。请确保不将 VMM 虚拟机添加到受 Site Recovery 保护的云中，使得 Hyper-V 副本设置不会被 Site Recovery 重写。
 5. 如果需要创建恢复计划，则请为源和目标指定同一 VMM 服务器。
 
-按照[此文](/documentation/articles/site-recovery-vmm-to-vmm)中的说明创建保管库、获取密钥、注册服务器并设置保护。
+按照[此文](/documentation/articles/site-recovery-vmm-to-vmm/)中的说明创建保管库、获取密钥、注册服务器并设置保护。
 
 ### 中断后
 
@@ -82,7 +82,7 @@
 
 ## 后续步骤
 
-[详细了解](/documentation/articles/site-recovery-vmm-to-vmm)有关 VMM 到 VMM 复制的站点恢复部署信息。
+[详细了解](/documentation/articles/site-recovery-vmm-to-vmm/)有关 VMM 到 VMM 复制的站点恢复部署信息。
 
 
 

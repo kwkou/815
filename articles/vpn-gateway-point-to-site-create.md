@@ -16,12 +16,12 @@
 # 使用经典管理门户配置与 VNet 的点到站点 VPN 连接
 
 > [AZURE.SELECTOR]
-- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps)
-- [Azure 经典管理门户](/documentation/articles/vpn-gateway-point-to-site-create)
+- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
+- [Azure 经典管理门户](/documentation/articles/vpn-gateway-point-to-site-create/)
 
 点到站点设置可让你从客户端计算机单独创建与虚拟网络的安全连接。可通过从客户端计算机启动连接来建立 VPN 连接。如果你要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则点到站点连接是绝佳的解决方案。
 
-点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)和 [About cross-premises connections（关于跨界连接）](/documentation/articles/vpn-gateway-cross-premises-options)。
+点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)和 [About cross-premises connections（关于跨界连接）](/documentation/articles/vpn-gateway-cross-premises-options/)。
 
 本文适用于点到站点 VPN 网关连接，此类连接可连接到使用**经典部署模型**（服务管理）和经典管理门户创建的虚拟网络。在 Azure 经典管理门户中完成相应的步骤后，我们将从此页链接到该篇文章。
 
@@ -98,7 +98,7 @@
 
 ### 第 1 部分：标识或生成根证书
 
-如果你使用的不是企业证书解决方案，则需生成自签名根证书。本部分中的步骤是针对 Windows 8 编写的。有关适用于 Windows 10 的步骤，请参阅 [Working with self-signed root certificates for Point-to-Site configurations（为点到站点配置使用自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site)。
+如果你使用的不是企业证书解决方案，则需生成自签名根证书。本部分中的步骤是针对 Windows 8 编写的。有关适用于 Windows 10 的步骤，请参阅 [Working with self-signed root certificates for Point-to-Site configurations（为点到站点配置使用自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site/)。
 
 若要创建 X.509 证书，一种方法是使用证书创建工具 (makecert.exe)。若要使用 makecert，请下载并安装免费的 [Microsoft Visual Studio Express](https://www.visualstudio.com/products/visual-studio-express-vs.aspx)。
 
@@ -124,7 +124,7 @@
 
 ### 第 3 部分：生成客户端证书
 
-以下步骤用于从自签名根证书生成客户端证书。本部分中的步骤是针对 Windows 8 编写的。有关适用于 Windows 10 的步骤，请参阅 [Working with self-signed root certificates for Point-to-Site configurations（为点到站点配置使用自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site)。如果你使用的是企业证书解决方案，则请遵循所用解决方案的指导原则。
+以下步骤用于从自签名根证书生成客户端证书。本部分中的步骤是针对 Windows 8 编写的。有关适用于 Windows 10 的步骤，请参阅 [Working with self-signed root certificates for Point-to-Site configurations（为点到站点配置使用自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site/)。如果你使用的是企业证书解决方案，则请遵循所用解决方案的指导原则。
 
 1. 在用于创建自签名根证书的同一台计算机上，以管理员身份打开 Visual Studio 命令提示窗口。
 
@@ -201,7 +201,7 @@
 
 ## 后续步骤
 
-你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
+你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)。
 
 如果你需要有关虚拟网络的更多信息，请参阅[虚拟网络文档](/documentation/services/networking/)页。
 

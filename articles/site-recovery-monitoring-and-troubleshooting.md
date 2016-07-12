@@ -31,14 +31,14 @@
 
 ### 用于在本地与 Azure 之间复制的 VMM 站点部署。
 
-在本地和 Azure 之间设置 DR 的一部分操作；下载 Azure Site Recovery 提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection)。
+在本地和 Azure 之间设置 DR 的一部分操作；下载 Azure Site Recovery 提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
 需要下载恢复提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。
 
 ![用于在本地与 Azure 之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image2.png)
 
 ### 用于在本地与 Azure 之间复制的 Hyper-V 站点部署
 
-与 VMM 部署相同 – 不同的是提供者和代理都安装在 Hyper-V 主机本身上。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection)。
+与 VMM 部署相同 – 不同的是提供者和代理都安装在 Hyper-V 主机本身上。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
 
 ## 监视配置、保护和恢复操作
 

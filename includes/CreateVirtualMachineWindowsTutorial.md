@@ -40,7 +40,7 @@
 
 	![配置虚拟机的连接资源](./media/CreateVirtualMachineWindowsTutorial/resourceconfiguration.png)
 
-	请注意，**云服务 DNS 名称**是全局 DNS 名称，是用于联系虚拟机的 URI 的一部分。由于云服务名称必须是全局唯一的，因此您必须创建自己的云服务名称。在本教程中，我们将使用 MyTestService 作为服务名称。对于使用[多个虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-classic-connect-vms)的更复杂方案而言，云服务非常重要。
+	请注意，**云服务 DNS 名称**是全局 DNS 名称，是用于联系虚拟机的 URI 的一部分。由于云服务名称必须是全局唯一的，因此您必须创建自己的云服务名称。在本教程中，我们将使用 MyTestService 作为服务名称。对于使用[多个虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-classic-connect-vms/)的更复杂方案而言，云服务非常重要。
  
 	对于"区域/地缘组/虚拟网络"，我们将使用"美国东部"，但您可以使用更适合您所在位置的区域。您也可以选择指定一个虚拟网络。
  
@@ -51,7 +51,7 @@
 
 	![配置虚拟机的 VM 代理和终结点](./media/CreateVirtualMachineWindowsTutorial/endpointconfiguration.png)
 
-	>[WACOM.NOTE] VM 代理为您提供安装扩展的环境，可帮助您与虚拟机交互。有关详细信息，请参见[使用扩展](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。有关配置终结点的详细信息，请参阅[如何设置虚拟机的终结点](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+	>[WACOM.NOTE] VM 代理为您提供安装扩展的环境，可帮助您与虚拟机交互。有关详细信息，请参见[使用扩展](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。有关配置终结点的详细信息，请参阅[如何设置虚拟机的终结点](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
     
 8. 创建虚拟机之后，经典管理门户将在"虚拟机"下列出新虚拟机。相应的云服务和存储帐户也在相应部分创建。创建完成之后，虚拟机和云服务都会自动启动，其状态将显示为"正在运行"。 
 
@@ -89,7 +89,7 @@
 
 ## <a id="attachdisk"> </a>如何将数据磁盘附加到新虚拟机 ##
 
-本部分将演示如何将空数据磁盘附加到虚拟机。请参阅[附加数据磁盘教程](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-attach-disk)。
+本部分将演示如何将空数据磁盘附加到虚拟机。请参阅[附加数据磁盘教程](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-attach-disk/)。
 
 1. 登录到 Azure [经典管理门户](http://manage.windowsazure.cn)。
 
@@ -149,13 +149,13 @@
 
 若要了解有关 Azure 上 Windows 虚拟机的详细信息，请参阅以下文章：
 
-[如何连接云服务中的虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-classic-connect-vms)
+[如何连接云服务中的虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-classic-connect-vms/)
 
-[如何创建和上载您自己的包含 Windows Server 操作系统的虚拟硬盘](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-createupload-vhd)
+[如何创建和上载您自己的包含 Windows Server 操作系统的虚拟硬盘](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)
 
-[将数据磁盘附加到虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-attach-disk)
+[将数据磁盘附加到虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-attach-disk/)
 
-[管理虚拟机的可用性](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-manage-availability)
+[管理虚拟机的可用性](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-manage-availability/)
 
 [有关 Azure 中的虚拟机]: #virtualmachine
 [如何创建虚拟机]: #custommachine

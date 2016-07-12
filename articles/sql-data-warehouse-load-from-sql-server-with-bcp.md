@@ -16,9 +16,9 @@
 # 将数据从 SQL Server 载入 Azure SQL 数据仓库（平面文件）
 
 > [AZURE.SELECTOR]
-- [SSIS](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services)
-- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-polybase)
-- [bcp](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp)
+- [SSIS](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services/)
+- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-polybase/)
+- [bcp](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp/)
 
 对于小型数据集，可以使用 bcp 命令行实用工具从 SQL Server 导出数据，然后将其直接加载到 Azure SQL 数据仓库。
 
@@ -184,10 +184,10 @@ bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name>
 
 <!--Article references-->
 
-[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[Table Design]: /documentation/articles/sql-data-warehouse-develop-table-design
-[Statistics]: /documentation/articles/sql-data-warehouse-develop-statistics
+[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load/
+[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[Table Design]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[Statistics]: /documentation/articles/sql-data-warehouse-develop-statistics/
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/zh-cn/library/ms162802.aspx

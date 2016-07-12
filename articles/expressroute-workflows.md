@@ -18,20 +18,20 @@
 
 上图和以下对应的步骤显示预配端到端 ExpressRoute 线路所要执行的操作。
 
-1. 使用 PowerShell 配置 ExpressRoute 线路。有关更多详细信息，请遵循[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)一文中的说明。
+1. 使用 PowerShell 配置 ExpressRoute 线路。有关更多详细信息，请遵循[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)一文中的说明。
 
 2. 从服务提供商订购连接。此过程根据情况而有所不同。有关如何订购连接的详细信息，请联系你的连接服务提供商。
 
 3. 通过 PowerShell 验证 ExpressRoute 线路预配状态，以确保线路预配成功。
 
-4. 配置路由域。如果连接服务提供商管理第 3 层，则他们将为你的线路配置路由。如果连接服务提供商只提供第 2 层服务，则你必须根据[路由要求](/documentation/articles/expressroute-routing)和[路由配置](/documentation/articles/expressroute-howto-routing-classic)页中所述的指导原则来配置路由。
+4. 配置路由域。如果连接服务提供商管理第 3 层，则他们将为你的线路配置路由。如果连接服务提供商只提供第 2 层服务，则你必须根据[路由要求](/documentation/articles/expressroute-routing/)和[路由配置](/documentation/articles/expressroute-howto-routing-classic/)页中所述的指导原则来配置路由。
 
 	-  启用 Azure 专用对等互连 - 只有启用此对等互连才能连接到部署在虚拟网络中的 VM/云服务。
 	-  启用 Azure 公共对等互连 - 如果你想要连接到托管在公共 IP 地址上的 Azure 服务，则必须启用 Azure 公共对等互连。如果你已选择为 Azure 专用对等互连启用默认路由并想要访问 Azure 资源，则必须执行上述操作。
 
 	![](./media/expressroute-workflows/expressroute-routing-workflow.png)
 
-5. 将虚拟网络链接到 ExpressRoute 线路 - 可以将虚拟网络链接到 ExpressRoute 线路。请按照说明[将 VNet 链接](/documentation/articles/expressroute-howto-linkvnet-arm)到你的线路。这些 VNet 可以位于 ExpressRoute 线路所在的同一 Azure 订阅中，也可以位于不同的订阅中。
+5. 将虚拟网络链接到 ExpressRoute 线路 - 可以将虚拟网络链接到 ExpressRoute 线路。请按照说明[将 VNet 链接](/documentation/articles/expressroute-howto-linkvnet-arm/)到你的线路。这些 VNet 可以位于 ExpressRoute 线路所在的同一 Azure 订阅中，也可以位于不同的订阅中。
 
 
 ## ExpressRoute 线路预配状态
@@ -108,8 +108,8 @@ BGP 预配状态可让你知道  Azure 边缘是否已启用 BGP 会话。必须
 
 - 配置 ExpressRoute 连接。
 
-	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)
-	- [配置路由](/documentation/articles/expressroute-howto-routing-arm)
-	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
+	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)
+	- [配置路由](/documentation/articles/expressroute-howto-routing-arm/)
+	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
 <!---HONumber=Mooncake_0104_2016-->

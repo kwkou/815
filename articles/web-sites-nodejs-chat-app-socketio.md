@@ -65,7 +65,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 > [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure 试用</a>。
 
-1. 安装 Azure 命令行界面 (Azure CLI) 并连接到 Azure 订阅。请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+1. 安装 Azure 命令行界面 (Azure CLI) 并连接到 Azure 订阅。请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 2. 如果这是你第一次在 Azure 中设置存储库，则需要创建登录凭据。从 Azure CLI 输入以下命令：
 

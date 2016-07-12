@@ -21,7 +21,7 @@
 
 增加群集中的辅助节点数目，即可利用更多并行运行的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
 
-- 在预配时，可以使用 Azure 经典管理门户、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)。以下屏幕显示了 Azure 门户预览上的辅助节点配置：
+- 在预配时，可以使用 Azure 经典管理门户、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)。以下屏幕显示了 Azure 门户预览上的辅助节点配置：
 
 	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
 - 在运行时，你也可以向外缩放群集，而无需重建群集。如下所示。![scaleout\_1][image-hdi-optimize-hive-scaleout_2]
@@ -198,8 +198,8 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 ##<a id="nextsteps"></a>后续步骤
 在本文中，你已学习了几种常见的 Hive 查询优化方法。若要了解更多信息，请参阅下列文章：
 
-- [使用 HDInsight 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)
-- [使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)
+- [使用 HDInsight 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data/)
+- [使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data/)
 
 
 [image-hdi-optimize-hive-scaleout_1]: ./media/hdinsight-hadoop-optimize-hive-query-v1/scaleout_1.png

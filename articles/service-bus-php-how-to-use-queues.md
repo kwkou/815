@@ -16,13 +16,13 @@
 
 [AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
-本指南说明如何使用服务总线队列。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk)。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
+本指南说明如何使用服务总线队列。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk/)。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
 
 [AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
 ## 创建 PHP 应用程序
 
-创建访问 Azure Blob 服务的 PHP 应用程序的唯一要求是从代码中引用 [Azure SDK for PHP](/documentation/articles/php-download-sdk) 中的类。你可以使用任何开发工具或记事本创建应用程序。
+创建访问 Azure Blob 服务的 PHP 应用程序的唯一要求是从代码中引用 [Azure SDK for PHP](/documentation/articles/php-download-sdk/) 中的类。你可以使用任何开发工具或记事本创建应用程序。
 
 > [AZURE.NOTE]你的 PHP 安装还必须已安装并启用 [OpenSSL 扩展](http://php.net/openssl)。
 
@@ -211,7 +211,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 有关详细信息，请参阅 [PHP 开发人员中心](/develop/php/)。
 
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [require_once]: http://php.net/require_once
 
 <!---HONumber=82-->

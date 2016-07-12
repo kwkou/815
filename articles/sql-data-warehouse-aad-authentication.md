@@ -36,7 +36,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 5. 在映射到 Azure AD 标识的数据库中创建包含的数据库用户
 6. 使用 Azure AD 标识连接到数据仓库
 
-配置和使用 Azure Active Directory 身份验证的详细步骤与适用于 Azure SQL 数据库和 Azure SQL 数据仓库的步骤几乎完全相同。请遵循主题 [Connecting to SQL Database or SQL Data Warehouse By Using Azure Active Directory Authentication](/documentation/articles/sql-database-aad-authentication)（使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库）中的详细步骤。
+配置和使用 Azure Active Directory 身份验证的详细步骤与适用于 Azure SQL 数据库和 Azure SQL 数据仓库的步骤几乎完全相同。请遵循主题 [Connecting to SQL Database or SQL Data Warehouse By Using Azure Active Directory Authentication](/documentation/articles/sql-database-aad-authentication/)（使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库）中的详细步骤。
 
 对 Azure SQL 数据库与 Azure SQL 数据仓库使用 Azure Active Directory 身份验证的主要差别在于，必须使用 SQL Server Data Tools 而不是 SQL Server Management Studio 连接到 SQL 数据仓库。SQL 数据仓库要求至少安装 SQL Server Data Tools for Visual Studio 2015 的 2016 年 4 月版（版本 14.0.60311.1）。目前，Azure Active Directory 用户不会显示在 SSDT 对象资源管理器中。解决方法是在 [sys.database\_principals](https://msdn.microsoft.com/zh-cn/library/ms187328.aspx) 中查看这些用户。
 

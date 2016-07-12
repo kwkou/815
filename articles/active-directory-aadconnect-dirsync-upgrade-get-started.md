@@ -17,13 +17,13 @@
 以下文档可帮助你将现有 DirSync 安装升级到 Azure AD Connect。
 
 ## 相关文档
-如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的文档，下表提供了相关主题的链接。开始从 DirSync 升级之前，需要完成以粗体显示的前两个主题。
+如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的文档，下表提供了相关主题的链接。开始从 DirSync 升级之前，需要完成以粗体显示的前两个主题。
 
 | 主题 | |
 | --------- | --------- |
 | **下载 Azure AD Connect** | [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) |
-| **硬件和先决条件** | [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites) |
-| **用于安装的帐户** | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions) |
+| **硬件和先决条件** | [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/) |
+| **用于安装的帐户** | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions/) |
 
 ## 从 DirSync 升级
 根据当前的 DirSync 部署，可以使用不同的升级选项。如果预期的升级时间少于 3 小时，则我们建议执行就地升级。如果预期的升级时间超过 3 小时，则我们建议在另一台服务器上进行并行部署。如果对象数目超过 50,000 个，预计需要花费 3 个多小时才能完成升级。
@@ -60,7 +60,7 @@
 
 ![已阻止升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/analysisblocked.png)
 
-在这种情况下，建议在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)下安装新的 Azure AD Connect 服务器，并验证旧的 DirSync 及新的 Azure AD Connect 配置。使用自定义配置重新应用所有更改，如 [Azure AD Connect 同步自定义配置](/documentation/articles/active-directory-aadconnectsync-whatis)中所述。
+在这种情况下，建议在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)下安装新的 Azure AD Connect 服务器，并验证旧的 DirSync 及新的 Azure AD Connect 配置。使用自定义配置重新应用所有更改，如 [Azure AD Connect 同步自定义配置](/documentation/articles/active-directory-aadconnectsync-whatis/)中所述。
 
 
 无法检索且不会迁移 DirSync 用于服务帐户的密码。这些密码将在升级期间重置。
@@ -100,7 +100,7 @@
 若要改为执行[并行部署](#parallel-deployment)，请导出 DirSync 配置设置并将其转移到新服务器。
 5. 提供当前用于连接 Azure AD 的帐户的密码。这必须是 DirSync 当前使用的帐户。
 ![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToAzureAD.png)  
-如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity)。
+如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity/)。
 6. 提供 Active Directory 的企业管理员帐户。
 ![输入你的 ADDS 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToADDS.png)
 7. 你现在可以开始配置。单击“升级”后，将会卸载 DirSync 并配置 Azure AD Connect，然后开始同步。
@@ -157,11 +157,11 @@
 可以在此屏幕上看到以下选项：
 ![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/advancedsettings.png)
 7. 单击“下一步”。
-8. 在“已准备好配置”页上，保留选中“配置完成后立即开始同步过程”。服务器将进入[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)，因此暂时不会将更改导出到 Azure AD。
+8. 在“已准备好配置”页上，保留选中“配置完成后立即开始同步过程”。服务器将进入[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)，因此暂时不会将更改导出到 Azure AD。
 9. 单击“安装”。
 10. 安装完成后，请注销并再次登录到 Windows，然后即可使用同步服务管理器或同步规则编辑器，或者尝试进行其他任何配置更改。
 
->[AZURE.NOTE] 将会开始 Windows Server Active Directory 和 Azure Active Directory 之间的同步，但不会将任何更改导出到 Azure AD。每次只能有一个同步工具在主动导出更改。这称为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)。
+>[AZURE.NOTE] 将会开始 Windows Server Active Directory 和 Azure Active Directory 之间的同步，但不会将任何更改导出到 Azure AD。每次只能有一个同步工具在主动导出更改。这称为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)。
 
 ### 验证 Azure AD Connect 是否已准备好开始同步
 
@@ -178,7 +178,7 @@
 
 检查这些操作的结果，并确保没有任何错误。
 
-如果你想要查看并检查哪些更改即将导出到 Azure AD，请阅读有关如何在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)下验证配置的主题。进行所需的配置更改，直到没有任何意外的错误。
+如果你想要查看并检查哪些更改即将导出到 Azure AD，请阅读有关如何在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)下验证配置的主题。进行所需的配置更改，直到没有任何意外的错误。
 
 完成这 4 项操作之后，如果没有任何错误，并且你对即将导出的更改感到满意，即表示已准备好卸载 DirSync 并启用 Azure AD Connect 同步。完成以下两个步骤以完成迁移。
 
@@ -208,8 +208,8 @@
 Azure AD Connect 现为你的活动服务器。
 
 ## 后续步骤
-安装 Azure AD Connect 后，可以[验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next)。
+安装 Azure AD Connect 后，可以[验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next/)。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

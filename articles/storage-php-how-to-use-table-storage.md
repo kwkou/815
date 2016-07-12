@@ -466,7 +466,7 @@
 
 有关详细信息，另请参阅 [PHP 开发人员中心](/develop/php/)。
 
-[download]: /documentation/articles/php-download-sdk
+[download]: /documentation/articles/php-download-sdk/
 [require_once]: http://php.net/require_once
 [table-service-timeouts]: http://msdn.microsoft.com/zh-cn/library/azure/dd894042.aspx
 

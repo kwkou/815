@@ -37,7 +37,7 @@ wacn.date="01/15/2016"
 
 ## OnStart 方法
 
-当 Azure 使角色实例联机时，就会调用 **OnStart** 方法。OnStart 代码执行时，角色实例被标记为 **Busy**，并且负载平衡器不会将外部通信引导到该角色。你可以重写此方法以执行初始化工作，例如实现事件处理程序和启动 [Azure Diagnostics](/documentation/articles/cloud-services-how-to-monitor)。
+当 Azure 使角色实例联机时，就会调用 **OnStart** 方法。OnStart 代码执行时，角色实例被标记为 **Busy**，并且负载平衡器不会将外部通信引导到该角色。你可以重写此方法以执行初始化工作，例如实现事件处理程序和启动 [Azure Diagnostics](/documentation/articles/cloud-services-how-to-monitor/)。
 
 如果 **OnStart** 返回 **true**，则该实例已成功初始化，并且 Azure 已调用 **RoleEntryPoint.Run** 方法。如果 **OnStart** 返回 **false**，则角色将立即终止，而不执行任何计划中的关闭序列。
 
@@ -75,6 +75,6 @@ wacn.date="01/15/2016"
 除了 **RoleEntryPoint** 类提供的方法以外，还可以使用 ASP.NET 生命周期方法来管理 Web 角色的初始化和关闭序列。如果要将现有的 ASP.NET 应用程序迁移到 Azure，此方法可能有利于解决兼容性问题。ASP.NET 生命周期方法将从 **RoleEntryPoint** 方法中调用。**Application\_Start** 方法将在 **RoleEntryPoint.OnStart** 方法结束后调用。**Application\_End** 方法将在 **RoleEntryPoint.OnStop** 方法调用前调用。
 
 ## 后续步骤
-了解如何[创建云服务包](/documentation/articles/cloud-services-model-and-package)。
+了解如何[创建云服务包](/documentation/articles/cloud-services-model-and-package/)。
 
 <!---HONumber=Mooncake_0104_2016-->

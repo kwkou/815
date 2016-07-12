@@ -64,6 +64,6 @@
 
 ## 后续步骤
 
-[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)[流量管理器](/documentation/articles/traffic-manager-overview)
+[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)[流量管理器](/documentation/articles/traffic-manager-overview/)
 
 <!---HONumber=Mooncake_0411_2016-->

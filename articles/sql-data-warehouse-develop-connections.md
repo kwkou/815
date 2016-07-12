@@ -137,9 +137,9 @@ SQL 数据仓库在连接和创建对象期间标准化一些设置。无法重�
 <!--Image references-->
 
 <!--Azure.com references-->
-[连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect
-[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design
-[保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-security
+[连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[表设计]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-security/
 
 <!--MSDN references-->
 

@@ -39,14 +39,14 @@ Azure IoT 中心的主要用例之一是从设备收集遥测数据。因此，�
 - [Azure IoT 中心入门（教程）][lnk-get-started]
 - [Azure IoT 中心是什么？][]
 
-[Azure 事件中心]: /documentation/articles/event-hubs-what-is-event-hubs
+[Azure 事件中心]: /documentation/articles/event-hubs-what-is-event-hubs/
 [IoT 中心开发人员指南的“安全性”部分]: /documentation/articles/iot-hub-devguide/#security
-[Event Hub - security]: /documentation/articles/event-hubs-authentication-and-security-model-overview
+[Event Hub - security]: /documentation/articles/event-hubs-authentication-and-security-model-overview/
 [Event Hub publisher policies]: /documentation/articles/event-hubs-overview/#common-publisher-tasks
-[Azure 服务总线配额]: /documentation/articles/service-bus-quotas
+[Azure 服务总线配额]: /documentation/articles/service-bus-quotas/
 [Azure IoT Hub SDKs]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub
-[lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/
+[lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 
 <!---HONumber=Mooncake_0307_2016-->

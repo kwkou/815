@@ -196,6 +196,6 @@ override_provider_client_token | 布尔值。true 或 false |如果为 false 并
 
 ##另请参阅
 
-[使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm)
+[使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm/)
 
 <!---HONumber=Mooncake_0620_2016-->

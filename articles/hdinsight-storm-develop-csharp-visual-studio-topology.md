@@ -31,11 +31,11 @@
 
 -	Azure SDK 2.5.1 或更高版本
 
--	HDInsight Tools for Visual Studio - 参阅[开始使用 HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) 安装并配置 HDInsight Tools for Visual Studio。
+-	HDInsight Tools for Visual Studio - 参阅[开始使用 HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/) 安装并配置 HDInsight Tools for Visual Studio。
 
     > [AZURE.NOTE]Visual Studio Express 不支持 HDInsight Tools for Visual Studio
 
--	Apache Storm on HDInsight 群集：参阅 [Apache Storm on HDInsight 入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)了解创建群集的步骤。
+-	Apache Storm on HDInsight 群集：参阅 [Apache Storm on HDInsight 入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)了解创建群集的步骤。
 
 	> [AZURE.NOTE]HDInsight Tools for Visual Studio 目前只支持 Storm on HDInsight 版本 3.2 群集。
 
@@ -62,7 +62,7 @@ HDInsight Tools for Visual Studio 提供以下模板：
 
 ##创建 C# 拓扑
 
-1.	如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅[开始使用 HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+1.	如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅[开始使用 HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 2.	打开 Visual Studio，选择“文件”>“新建”>“项目”。
 
@@ -610,7 +610,7 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 ##后续步骤
 
-在了解如何使用 HDInsight Tools for Visual Studio 开发和部署 Storm 拓扑后，请了解如何[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)。
+在了解如何使用 HDInsight Tools for Visual Studio 开发和部署 Storm 拓扑后，请了解如何[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。
 
 有关将流数据拆分为多个流的 C# 拓扑示例，请参阅 [C# Storm 示例](https://github.com/Blackmist/csharp-storm-example)。
 
@@ -620,24 +620,24 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 **Microsoft SCP.NET**
 
-* [SCP 编程指引](/documentation/articles/hdinsight-storm-scp-programming-guide)
+* [SCP 编程指引](/documentation/articles/hdinsight-storm-scp-programming-guide/)
 
 **Apache Storm on HDInsight**
 
--	[使用 Apache Storm on HDInsight 部署和监视拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
+-	[使用 Apache Storm on HDInsight 部署和监视拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
 
--	[Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
+-	[Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
 **Apache HDInsight 上的 Hadoop**
 
--	[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+-	[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
--	[将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+-	[将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
--	[将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+-	[将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 **Apache HBase on HDInsight**
 
--	[HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
+-	[HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/)
 
 <!---HONumber=82-->

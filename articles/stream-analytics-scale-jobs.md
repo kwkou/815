@@ -20,7 +20,7 @@
 ## 流分析作业的组成部分有哪些？
 流分析作业定义包括输入、查询和输出。输入是作业读取数据流的地方，查询是用于转换数据输入流的一种方式，而输出则是作业将作业结果发送到的地方。
 
-若要对数据进行流式处理，作业需要至少一个输入源。可以将数据流输入源存储在 Azure Service Bus 事件中心或 Azure Blob 存储中。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)、[Azure 流分析入门](/documentation/articles/stream-analytics-get-started)<!--和 [Azure 流分析开发人员指南](/documentation/articles/stream-analytics-developer-guide)-->。
+若要对数据进行流式处理，作业需要至少一个输入源。可以将数据流输入源存储在 Azure Service Bus 事件中心或 Azure Blob 存储中。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)、[Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)<!--和 [Azure 流分析开发人员指南](/documentation/articles/stream-analytics-developer-guide/)-->。
 
 ## 配置流式处理单位
 流式处理单位 (SU) 代表执行 Azure 流分析作业的资源和能力。在已经对 CPU、内存以及读取和写入速率进行测量的情况下，可以使用 SU 来描述相对的事件处理能力。每个流式处理单位大致相当于 1MB/秒的吞吐量。
@@ -144,7 +144,7 @@ PowerBI 输出当前不支持分区。
 
 对步骤进行分区需要下列条件：
 
-- 输入源必须进行分区。有关详细信息，请参阅 <!--[-->Azure 流分析开发人员指南<!--](/documentation/articles/stream-analytics-developer-guide)-->和<!--[-->事件中心编程指南<!--](/documentation/articles/azure-event-hubs-developer-guide)-->。
+- 输入源必须进行分区。有关详细信息，请参阅 <!--[-->Azure 流分析开发人员指南<!--](/documentation/articles/stream-analytics-developer-guide/)-->和<!--[-->事件中心编程指南<!--](/documentation/articles/azure-event-hubs-developer-guide/)-->。
 - 查询的 SELECT 语句必须从进行了分区的输入源读取。
 - 步骤中的查询必须有 **Partition By** 关键字
 
@@ -318,9 +318,9 @@ PowerBI 输出当前不支持分区。
 
 ## 后续步骤
 
-- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
@@ -339,9 +339,9 @@ PowerBI 输出当前不支持分区。
 [azure.management.portal]: http://manage.windowsazure.cn
 [azure.event.hubs.developer.guide]: http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx
 
-[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
-[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction
-[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started
+[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide/
+[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction/
+[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started/
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  

@@ -39,7 +39,7 @@
 
 ##  <a name="next-steps"></a>后续步骤
 
-接下来，请学习[如何使用用户 ID 值来筛选返回的数据](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)。
+接下来，请学习[如何使用用户 ID 值来筛选返回的数据](/documentation/articles/mobile-services-javascript-backend-service-side-authorization/)。
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -68,16 +68,16 @@
 
 
 <!-- URLs. -->
-[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
-[移动服务快速入门教程]: /documentation/articles/mobile-services-ios-get-started
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
-[Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
+[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
+[移动服务快速入门教程]: /documentation/articles/mobile-services-ios-get-started/
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios/
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios/
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+[Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts/
 
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 

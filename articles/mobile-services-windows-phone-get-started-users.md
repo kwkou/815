@@ -37,7 +37,7 @@
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;3. 在 Visual Studio 中，打开在完成教程[将移动服务添加到现有应用](/documentation/articles/mobile-services-windows-phone-get-started-data)时创建的项目。
+&nbsp;&nbsp;&nbsp;&nbsp;3. 在 Visual Studio 中，打开在完成教程[将移动服务添加到现有应用](/documentation/articles/mobile-services-windows-phone-get-started-data/)时创建的项目。
 
 &nbsp;&nbsp;&nbsp;&nbsp;4.按 F5 键运行这个基于快速入门的应用程序；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 *TodoItem* 表现在要求身份验证。
 
@@ -53,7 +53,7 @@
 
 ##  <a name="next-steps"></a>后续步骤
 
-在下一教程[移动服务用户的服务端授权](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
+在下一教程[移动服务用户的服务端授权](/documentation/articles/mobile-services-javascript-backend-service-side-authorization/)中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -71,8 +71,8 @@
 
 <!-- URLs. -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data
-[Authorize users with scripts]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data/
+[Authorize users with scripts]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts/
  
 
 <!---HONumber=Mooncake_0118_2016-->

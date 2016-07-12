@@ -1,7 +1,7 @@
 
 验证用户提交的数据的长度总不失为一种良好做法。在本部分中，你将向移动服务添加代码，用于验证发送至移动服务的字符串数据的长度，并且拒绝过长的字符串，在本例中，它将拒绝长于 10 个字符的字符串。
 
-1. 使用“以管理员身份运行”选项启动 Visual Studio，并打开包含你在[入门]或[数据处理入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data)教程中使用的移动服务项目的解决方案。
+1. 使用“以管理员身份运行”选项启动 Visual Studio，并打开包含你在[入门]或[数据处理入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/)教程中使用的移动服务项目的解决方案。
 
 2. 在 Solution Explorer 窗口中，展开 Todo 列表服务项目并展开“控制器”。打开 TodoItemController.cs 文件，它是移动服务项目的一部分。
 

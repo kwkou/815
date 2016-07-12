@@ -100,16 +100,16 @@
 <!--Image references-->
 
 <!--Article references-->
-[将数据从 Azure Blob 存储载入 SQL 数据仓库 (PolyBase)]: /documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-polybase
-[将数据从 SQL Server 加载到 Azure SQL 数据仓库 (SSIS)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services
-[将数据从 SQL Server 加载到 Azure SQL 数据仓库 (bcp)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp
-[Load data from SQL Server to Azure SQL Data Warehouse (AZCopy)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-azcopy
+[将数据从 Azure Blob 存储载入 SQL 数据仓库 (PolyBase)]: /documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-polybase/
+[将数据从 SQL Server 加载到 Azure SQL 数据仓库 (SSIS)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services/
+[将数据从 SQL Server 加载到 Azure SQL 数据仓库 (bcp)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp/
+[Load data from SQL Server to Azure SQL Data Warehouse (AZCopy)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-azcopy/
 
-[加载示例数据库]: /documentation/articles/sql-data-warehouse-load-sample-databases
-[迁移概述]: /documentation/articles/sql-data-warehouse-overview-migrate
-[解决方案合作伙伴]: /documentation/articles/sql-data-warehouse-solution-partners
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
+[加载示例数据库]: /documentation/articles/sql-data-warehouse-load-sample-databases/
+[迁移概述]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[解决方案合作伙伴]: /documentation/articles/sql-data-warehouse-solution-partners/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
 
 <!--MSDN references-->
 

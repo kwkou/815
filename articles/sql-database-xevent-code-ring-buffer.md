@@ -51,7 +51,7 @@
 
 
 - 可以在其中创建表的任何数据库。
- - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started)。
+ - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
 - SQL Server Management Studio (ssms.exe) 2015 年 8 月预览版或更高版本。可从以下位置下载最新的 ssms.exe：
@@ -353,13 +353,13 @@
 有关 Azure SQL 数据库中扩展事件的主要主题是：
 
 
-- [SQL 数据库中扩展事件的注意事项](/documentation/articles/sql-database-xevent-db-diff-from-svr)，对比 Azure SQL 数据库与 Microsoft SQL Server 的扩展事件的某些方面。
+- [SQL 数据库中扩展事件的注意事项](/documentation/articles/sql-database-xevent-db-diff-from-svr/)，对比 Azure SQL 数据库与 Microsoft SQL Server 的扩展事件的某些方面。
 
 
 可通过以下链接访问有关扩展事件的其他代码示例主题。不过，你必须定期检查所有示例，以确定这些示例是针对 Microsoft SQL Server 还是 Azure SQL 数据库。然后，你可以在运行示例时确定是否要做出细微的更改。
 
 
-- Azure SQL 数据库的代码示例：[SQL 数据库中扩展事件的事件文件目标代码](/documentation/articles/sql-database-xevent-code-event-file)
+- Azure SQL 数据库的代码示例：[SQL 数据库中扩展事件的事件文件目标代码](/documentation/articles/sql-database-xevent-code-event-file/)
 
 
 <!--

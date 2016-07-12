@@ -10,7 +10,7 @@
 
 #如何为Azure存储的Blob创建SAS（共享访问签名）令牌
 
-存储账号名称和存储账号密钥是操作存储账号的重要的信息，一旦存储账号外泄，存储账号内的资源将会完全暴露。SAS可以帮助我们避免存储账户密钥的泄露，请阅读[这篇文章](/documentation/articles/storage-dotnet-shared-access-signature-part-1)了解SAS的详细的概念，文章中也包含了令牌中各个参数的含义。
+存储账号名称和存储账号密钥是操作存储账号的重要的信息，一旦存储账号外泄，存储账号内的资源将会完全暴露。SAS可以帮助我们避免存储账户密钥的泄露，请阅读[这篇文章](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)了解SAS的详细的概念，文章中也包含了令牌中各个参数的含义。
 
 这篇文章将帮助我们创建SAS令牌
 
@@ -23,11 +23,11 @@
 
 关于.Net的方式创建SAS令牌请阅读下面的文章：
 
-[创建SAS并将SAS用于Blob服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2)
+[创建SAS并将SAS用于Blob服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)
 
 ##PowerShell的方式创建SAS 令牌
 
->使用Powershell前有关Azure PowerShell的安装、配置和连接到订阅请阅读[这篇文章](/documentation/articles/powershell-install-configure)
+>使用Powershell前有关Azure PowerShell的安装、配置和连接到订阅请阅读[这篇文章](/documentation/articles/powershell-install-configure/)
 
 下面内容包含：
 
@@ -61,7 +61,7 @@
 	New-AzureStorageBlobSASToken -Container 'sastest' -Blob 'test.txt' -Context $storageContext -Permission rw		
 	
 
-参考文档： [临时SAS和具有存储访问策略的SAS](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
+参考文档： [临时SAS和具有存储访问策略的SAS](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 
 PowerShell指令：[New-AzureStorageContainerSASToken](https://msdn.microsoft.com/zh-cn/library/azure/dn584416.aspx)、
 [New-AzureStorageBlobSASToken](https://msdn.microsoft.com/zh-cn/library/f3833d85-ef4e-449e-8e81-1a2367e39026)		

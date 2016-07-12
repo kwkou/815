@@ -15,7 +15,7 @@
 # 使用 REST 来备份和还原 Azure 网站应用
 [Azure 网站应用](/home/features/web-site/)可以备份为 Azure 存储空间中的 blob。备份还可以包含该应用的数据库。如果曾经意外地删除了该应用，或者该应用需要还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
 
-本文将介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 经典管理门户以图形方式创建和管理应用备份，请参阅[在 Azure 网站中备份网站](/documentation/articles/web-sites-backup)
+本文将介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 经典管理门户以图形方式创建和管理应用备份，请参阅[在 Azure 网站中备份网站](/documentation/articles/web-sites-backup/)
 
 <a name="gettingstarted"></a>
 ## 入门
@@ -36,7 +36,7 @@
 
 使用我们的示例网站时，URL 如下所示。**https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backup/**
 
-必须在请求的正文中提供 JSON 对象，以指定要使用哪个存储帐户存储备份。JSON 对象必须具有一个名为 **storageAccountUrl** 的属性，其中存储 [SAS URL](/documentation/articles/storage-dotnet-shared-access-signature-part-1) 以授予对将存储备份 blob 的 Azure 存储容器的写访问权限。如果要备份数据库，还必须提供一个包含要备份的数据库的名称、类型和连接字符串的列表。
+必须在请求的正文中提供 JSON 对象，以指定要使用哪个存储帐户存储备份。JSON 对象必须具有一个名为 **storageAccountUrl** 的属性，其中存储 [SAS URL](/documentation/articles/storage-dotnet-shared-access-signature-part-1/) 以授予对将存储备份 blob 的 Azure 存储容器的写访问权限。如果要备份数据库，还必须提供一个包含要备份的数据库的名称、类型和连接字符串的列表。
 
 	{
     	"properties":

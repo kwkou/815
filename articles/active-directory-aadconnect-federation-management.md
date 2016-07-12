@@ -134,7 +134,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 ![](.\media\active-directory-aadconnect-federation-management\AdditionalDomain4.PNG)
 
-选择域后，向导将为你提供有关向导将采取的进一步操作以及配置产生的影响的适当信息。在某些情况下，如果你选择的域尚未在 Azure AD 中进行验证，则向导将为你提供帮助验证域的信息。有关验证域的详细信息，请参阅 [Add your custom domain name to Azure Active Directory（将自定义域名添加到 Azure Active Directory）](/documentation/articles/active-directory-add-domain)。
+选择域后，向导将为你提供有关向导将采取的进一步操作以及配置产生的影响的适当信息。在某些情况下，如果你选择的域尚未在 Azure AD 中进行验证，则向导将为你提供帮助验证域的信息。有关验证域的详细信息，请参阅 [Add your custom domain name to Azure Active Directory（将自定义域名添加到 Azure Active Directory）](/documentation/articles/active-directory-add-domain/)。
 
 单击“下一步”，“准备好配置”页将显示 Azure AD Connect 将执行的操作的列表。单击“安装”以完成配置。
 
@@ -206,7 +206,7 @@ AD FS 提供指定用于发布声明的自定义规则的选项。它支持丰�
 
 #### 具有子域 UPN 的 SSO
 
-你可以添加多个域，以使用 Azure AD Connect 进行联合（[添加新的联合域](/documentation/articles/active-directory-aadconnect-federation-management#add-a-new-federated-domain)）。UPN 声明将需要进行修改，以便发布者 ID 对应于根域而非子域，因为联合根域也涵盖子级。
+你可以添加多个域，以使用 Azure AD Connect 进行联合（[添加新的联合域](/documentation/articles/active-directory-aadconnect-federation-management/#add-a-new-federated-domain)）。UPN 声明将需要进行修改，以便发布者 ID 对应于根域而非子域，因为联合根域也涵盖子级。
 
 默认情况下，发布者 ID 的声明规则设置为：
 
@@ -234,7 +234,7 @@ c:[Type == “http://schemas.xmlsoap.org/claims/UPN“]
 
 ## 后续步骤
 
-请了解[用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin)的详细信息
+请了解[用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/)的详细信息
 
 
 <!---HONumber=Mooncake_0613_2016-->

@@ -30,7 +30,7 @@
 	- 该云服务中的所有 VM 都必须启用多 NIC，否则 
 	- 该云服务中的所有 VM 都必须使用单个 NIC 
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
  
 - 仅在“默认”NIC 上支持面向 Internet 的 VIP（经典部署）。默认 NIC 的 IP 只有一个对应的 VIP。 
 - 多 NIC VM 目前不支持实例级公共 IP (LPIP) 地址（经典部署）。 
@@ -96,8 +96,8 @@
 在尝试运行示例中的 PowerShell 命令之前，你需要满足以下先决条件。
 
 - Azure 订阅。
-- 已配置虚拟网络。有关 VNet 的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
-- 已下载和安装最新版本的 Azure PowerShell。请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- 已配置虚拟网络。有关 VNet 的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
+- 已下载和安装最新版本的 Azure PowerShell。请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 若要创建具有多个 NIC 的 VM，请执行以下步骤：
 
@@ -230,6 +230,6 @@ Azure 中的当前模型是虚拟机中的所有 NIC 都设置有默认网关。
 
 ## 后续步骤
 
-- [在经典部署的 2 层应用程序方案中部署多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-classic-ps)。
+- [在经典部署的 2 层应用程序方案中部署多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-classic-ps/)。
 
 <!---HONumber=Mooncake_1221_2015-->

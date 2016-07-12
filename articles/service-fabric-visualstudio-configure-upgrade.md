@@ -22,7 +22,7 @@ Azure Service Fabric 的 Visual Studio 工具提供发布到本地或远程群�
 
 ## 升级所需的参数
 
-可以选择的部署类型有两种：常规或升级。常规部署会将群集上所有先前的部署信息和数据都清除，而升级部署则将其保留。当你在 Visual Studio 中升级 Service Fabric应用程序时，需要提供应用程序升级参数和运行状况检查策略。应用程序升级参数可帮助控制升级，而运行状况检查策略可确定升级是否成功。有关详细信息，请参阅 [Service Fabric应用程序升级：升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)。
+可以选择的部署类型有两种：常规或升级。常规部署会将群集上所有先前的部署信息和数据都清除，而升级部署则将其保留。当你在 Visual Studio 中升级 Service Fabric应用程序时，需要提供应用程序升级参数和运行状况检查策略。应用程序升级参数可帮助控制升级，而运行状况检查策略可确定升级是否成功。有关详细信息，请参阅 [Service Fabric应用程序升级：升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)。
 
 有三种升级模式：Monitored、UnmonitoredAuto 和 UnmonitoredManual。
 
@@ -32,7 +32,7 @@ Azure Service Fabric 的 Visual Studio 工具提供发布到本地或远程群�
 
   - 执行 UnmonitoredManual 升级时，必须手动升级每个升级域。
 
-每种升级模式都需要不同的参数集。若要深入了解可用的升级选项，请参阅[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)。
+每种升级模式都需要不同的参数集。若要深入了解可用的升级选项，请参阅[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)。
 
 ## 在 Visual Studio 中升级 Service Fabric 应用程序
 
@@ -62,11 +62,11 @@ Azure Service Fabric 的 Visual Studio 工具提供发布到本地或远程群�
 	@{ "ServiceTypeName01" = "5,10,5"; "ServiceTypeName02" = "5,5,5" }
 	```
 
-3. 如果选择 UnmonitoredManual 升级模式，则必须手动启动 PowerShell 控制台才能继续并完成升级过程。若要了解手动升级的工作方式，请参阅 [Service Fabric应用程序升级：高级主题](/documentation/articles/service-fabric-application-upgrade-advanced)。
+3. 如果选择 UnmonitoredManual 升级模式，则必须手动启动 PowerShell 控制台才能继续并完成升级过程。若要了解手动升级的工作方式，请参阅 [Service Fabric应用程序升级：高级主题](/documentation/articles/service-fabric-application-upgrade-advanced/)。
 
 ## 使用 PowerShell 升级应用程序
 
-可以使用 PowerShell cmdlet 来升级 Service Fabric 应用程序。有关详细信息，请参阅 [Service Fabric 应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial)和 [Start-ServiceFabricApplicationUpgrade](https://msdn.microsoft.com/zh-cn/library/mt125975.aspx)。
+可以使用 PowerShell cmdlet 来升级 Service Fabric 应用程序。有关详细信息，请参阅 [Service Fabric 应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial/)和 [Start-ServiceFabricApplicationUpgrade](https://msdn.microsoft.com/zh-cn/library/mt125975.aspx)。
 
 ## 在应用程序清单文件中指定运行状况状态检查策略
 
@@ -88,6 +88,6 @@ Service Fabric 应用程序中的每个服务可能有自身的运行状况策�
 </Policies>
 ```
 ## 后续步骤
-有关部署应用程序的详细信息，请参阅[在 Azure Service Fabric 中部署现有应用程序](/documentation/articles/service-fabric-deploy-existing-app)。
+有关部署应用程序的详细信息，请参阅[在 Azure Service Fabric 中部署现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 
 <!---HONumber=Mooncake_0503_2016-->

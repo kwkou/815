@@ -549,7 +549,7 @@
 
 ## 后续步骤
 
-若要在使用持续交付时启用远程调试，请参阅[使用连续交付功能发布到 Azure 时如何启用远程调试](/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging)。
+若要在使用持续交付时启用远程调试，请参阅[使用连续交付功能发布到 Azure 时如何启用远程调试](/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging/)。
 
   [Team Foundation 生成服务]: https://msdn.microsoft.com/zh-cn/library/ee259687.aspx
   [.NET Framework 4]: https://www.microsoft.com/zh-cn/download/details.aspx?id=17851
@@ -557,7 +557,7 @@
   [.NET Framework 4.5.2]: https://www.microsoft.com/zh-cn/download/details.aspx?id=42643
   [扩大生成系统]: https://msdn.microsoft.com/zh-cn/library/dd793166.aspx
   [部署和配置生成服务器]: https://msdn.microsoft.com/zh-cn/library/ms181712.aspx
-  [Azure PowerShell cmdlet]: /documentation/articles/powershell-install-configure
+  [Azure PowerShell cmdlet]: /documentation/articles/powershell-install-configure/
   [the .publishsettings file]: https://manage.windowsazure.cn/download/publishprofile.aspx?wa=wsignin1.0
   [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01bc.png
   [2]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png

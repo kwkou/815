@@ -22,8 +22,8 @@ Azure SQL 数据库服务通过自动备份保护所有数据库，自动备份�
 
 |任务（门户） | PowerShell | REST |
 |:--|:--|:--|
-| 将 SQL 数据库还原到之前的时间点 | [PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell) | [REST (createMode=PointInTimeRestore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx) |
-| 还原已删除的 SQL 数据库 | [PowerShell](/documentation/articles/sql-database-restore-deleted-database-powershell) | [REST (createMode=Restore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)|
+| 将 SQL 数据库还原到之前的时间点 | [PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell/) | [REST (createMode=PointInTimeRestore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx) |
+| 还原已删除的 SQL 数据库 | [PowerShell](/documentation/articles/sql-database-restore-deleted-database-powershell/) | [REST (createMode=Restore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)|
 
 
 
@@ -60,11 +60,11 @@ Azure SQL 数据库服务通过自动备份保护所有数据库，自动备份�
 
 ## 其他资源
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
-- [异地还原](/documentation/articles/sql-database-geo-restore)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- [异地还原](/documentation/articles/sql-database-geo-restore/)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
 
 
 

@@ -74,6 +74,6 @@
     
 	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/14MigrateSSDT.png)
     
-6.	选择部署方法。请参阅 [Migrate a compatible SQL Server database to SQL Database（将兼容的 SQL Server 数据库迁移到 SQL 数据库）](/documentation/articles/sql-database-cloud-migrate)。  
+6.	选择部署方法。请参阅 [Migrate a compatible SQL Server database to SQL Database（将兼容的 SQL Server 数据库迁移到 SQL 数据库）](/documentation/articles/sql-database-cloud-migrate/)。  
 
 <!---HONumber=Mooncake_0503_2016-->

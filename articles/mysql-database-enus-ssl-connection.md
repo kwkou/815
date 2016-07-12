@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-ssl-connection)
-- [English](/documentation/articles/mysql-database-enus-ssl-connection)
+- [中文](/documentation/articles/mysql-database-ssl-connection/)
+- [English](/documentation/articles/mysql-database-enus-ssl-connection/)
 
 # Use SSL to securely access MySQL Database on Azure
 
@@ -51,7 +51,7 @@ Configure the SSL certificate by using the fields in the **SSL** tab.
 > ![errormessage][4]
 >
 
-> MySQL Workbench 6.3.5 uses SSL encryption by default, but involves certain compatibility issues. For specific solutions, see [Common client compatibility issues](/documentation/articles/mysql-database-compatibilityinquiry).
+> MySQL Workbench 6.3.5 uses SSL encryption by default, but involves certain compatibility issues. For specific solutions, see [Common client compatibility issues](/documentation/articles/mysql-database-compatibilityinquiry/).
 
 > **Tip:** The current certificate supports MySQL.exe 5.5.44 and 5.6.25 and subsequent versions.
 > 

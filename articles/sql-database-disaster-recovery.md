@@ -16,10 +16,10 @@
 
 Azure SQL 数据库提供以下功能，以便在服务中断后进行恢复：
 
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)
-- [异地还原](/documentation/articles/sql-database-geo-restore)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- [异地还原](/documentation/articles/sql-database-geo-restore/)
 
-若要了解有关应对灾难以及何时恢复数据库的信息，请访问[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)页。
+若要了解有关应对灾难以及何时恢复数据库的信息，请访问[业务连续性设计](/documentation/articles/sql-database-business-continuity-design/)页。
 
 ## 何时启动恢复
 
@@ -44,8 +44,8 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 
 请参考下列指南之一，故障转移到异地复制的辅助数据库：
 
-- [使用 PowerShell 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-powershell)
-- [使用 T-SQL 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-transact-sql) 
+- [使用 PowerShell 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-powershell/)
+- [使用 T-SQL 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-transact-sql/) 
 
 
 
@@ -55,7 +55,7 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 
 请参考下列指南之一，将数据库异地还原到新的区域：
 
-- [使用 PowerShell 将数据库异地还原到新的区域](/documentation/articles/sql-database-geo-restore-powershell) 
+- [使用 PowerShell 将数据库异地还原到新的区域](/documentation/articles/sql-database-geo-restore-powershell/) 
 
 
 ## 恢复后配置数据库
@@ -66,28 +66,28 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 
 因为恢复的数据库将位于不同的服务器中，所以必须更新应用程序的连接字符串以指向该服务器。
 
-有关更改连接字符串的详细信息，请参阅[与 Azure SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations)。
+有关更改连接字符串的详细信息，请参阅[与 Azure SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations/)。
 
 ### 配置防火墙规则
 
-需确保服务器和数据库上配置的防火墙规则与主服务器和主数据库上配置的防火墙规则匹配。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings-powershell)。
+需确保服务器和数据库上配置的防火墙规则与主服务器和主数据库上配置的防火墙规则匹配。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings-powershell/)。
 
 
 ### 配置登录名和数据库用户
 
-需确保应用程序使用的所有登录名都存在于托管已恢复数据库的服务器上。有关详细信息，请参阅“如何在灾难恢复期间管理安全性”。有关详细信息，请参阅[异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config)
+需确保应用程序使用的所有登录名都存在于托管已恢复数据库的服务器上。有关详细信息，请参阅“如何在灾难恢复期间管理安全性”。有关详细信息，请参阅[异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
 
->[AZURE.NOTE] 如果使用异地还原选项在服务中断后恢复，应在 DR 演练期间配置服务器防火墙规则和登录，以确保主服务器仍可用于检索其配置。因为异地还原会使用数据库备份，所以在服务中断期间可能无法使用此服务器级别配置。演练之后，可以删除已还原的数据库，但保留服务器及其配置，以供恢复过程使用。有关 DR 演练的详细信息，请参阅[执行灾难恢复演练](/documentation/articles/sql-database-disaster-recovery-drills)。
+>[AZURE.NOTE] 如果使用异地还原选项在服务中断后恢复，应在 DR 演练期间配置服务器防火墙规则和登录，以确保主服务器仍可用于检索其配置。因为异地还原会使用数据库备份，所以在服务中断期间可能无法使用此服务器级别配置。演练之后，可以删除已还原的数据库，但保留服务器及其配置，以供恢复过程使用。有关 DR 演练的详细信息，请参阅[执行灾难恢复演练](/documentation/articles/sql-database-disaster-recovery-drills/)。
 
 ### 设置遥测警报
 
 需确保更新现有的警报规则设置，以便映射到恢复的数据库和不同的服务器。
 
-有关数据库警报规则的详细信息，请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)和[跟踪服务运行状况](/documentation/articles/insights-service-health)。
+有关数据库警报规则的详细信息，请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)和[跟踪服务运行状况](/documentation/articles/insights-service-health/)。
 
 ### 启用审核
 
-如果需要通过审核来访问数据库，你需要在恢复数据库后启用审核。如果客户端应用程序使用 *.database.secure.chinacloudapi.cn 模式的安全连接字符串，就充分表明需要审核。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started)。
+如果需要通过审核来访问数据库，你需要在恢复数据库后启用审核。如果客户端应用程序使用 *.database.secure.chinacloudapi.cn 模式的安全连接字符串，就充分表明需要审核。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started/)。
 
 
 
@@ -95,13 +95,13 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 ## 其他资源
 
 
-- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity)
-- [时间点还原](/documentation/articles/sql-database-point-in-time-restore)
-- [异地还原](/documentation/articles/sql-database-geo-restore)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)
-- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq)
+- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity/)
+- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
+- [异地还原](/documentation/articles/sql-database-geo-restore/)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
+- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
 
 <!---HONumber=Mooncake_0530_2016-->

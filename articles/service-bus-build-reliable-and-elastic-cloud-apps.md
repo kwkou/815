@@ -18,7 +18,7 @@
  
 ## 探究
 
-- [Azure 服务总线基础](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [Azure 服务总线基础](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [基于队列的负载均衡模式](http://msdn.microsoft.com/zh-cn/library/dn589783.aspx)
 - [使用者竞争](http://msdn.microsoft.com/zh-cn/library/dn568101.aspx)
 - [客户案例](https://customers.microsoft.com/Pages/Home.aspx)
@@ -26,12 +26,12 @@
 ## 构建
 - [如何使用服务总线队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/) 
 - [服务总线中转消息传送中的死信（2011 年 10 月 21 日博客文章）](http://geekswithblogs.net/asmith/articles/147398.aspx) 
-- [使服务总线应用程序免受服务总线服务中断和灾难影响的最佳实践](/documentation/articles/service-bus-outages-disasters)
+- [使服务总线应用程序免受服务总线服务中断和灾难影响的最佳实践](/documentation/articles/service-bus-outages-disasters/)
 - [中转消息传送：请求响应示例](https://code.msdn.microsoft.com/Brokered-Messaging-Request-0ce8fcaf) 
-- [使用 Azure 服务总线的多层应用程序](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues)
+- [使用 Azure 服务总线的多层应用程序](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/)
  
 ## 热门
-- [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
+- [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
 - [服务总线 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
 - [服务总线 RP REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt639375.aspx)
 

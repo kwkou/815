@@ -386,9 +386,9 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 		role_size='Small',
 		vm_image_name = image_name)
 
-若要了解有关如何捕获 Linux 虚拟机的详细信息，请参阅[如何捕获 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-capture-image)。
+若要了解有关如何捕获 Linux 虚拟机的详细信息，请参阅[如何捕获 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-capture-image/)。
 
-若要了解有关如何捕获 Windows 虚拟机的详细信息，请参阅[如何捕获 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-capture-image)。
+若要了解有关如何捕获 Windows 虚拟机的详细信息，请参阅[如何捕获 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-capture-image/)。
 
 ## <a name="What's Next"></a>后续步骤
 
@@ -418,16 +418,16 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 [svc-mgmt-rest-api]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460799.aspx
 
 
-[download-SDK-Python]: /documentation/articles/python-how-to-install
-[云服务]: /documentation/articles/cloud-services-what-is
+[download-SDK-Python]: /documentation/articles/python-how-to-install/
+[云服务]: /documentation/articles/cloud-services-what-is/
 [service package]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
-[Azure PowerShell cmdlets]: /documentation/articles/powershell-install-configure
+[Azure PowerShell cmdlets]: /documentation/articles/powershell-install-configure/
 [cspack commandline tool]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg432988.aspx
 [Deploying an Azure Service]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433027.aspx
-[存储服务]: /documentation/articles/storage-introduction
-[azure-blobs]: /documentation/articles/storage-python-how-to-use-blob-storage
-[azure-tables]: /documentation/articles/storage-python-how-to-use-table-storage
-[azure-queues]: /documentation/articles/storage-python-how-to-use-queue-storage
+[存储服务]: /documentation/articles/storage-introduction/
+[azure-blobs]: /documentation/articles/storage-python-how-to-use-blob-storage/
+[azure-tables]: /documentation/articles/storage-python-how-to-use-table-storage/
+[azure-queues]: /documentation/articles/storage-python-how-to-use-queue-storage/
 [Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx
 [Cloud Services]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
 [Virtual Machines]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156003.aspx

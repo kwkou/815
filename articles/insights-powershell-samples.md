@@ -17,7 +17,7 @@
 本文章演示了示例 PowerShell 命令，以帮助你快速访问 Azure Insights 监视功能。Azure Insights 允许你基于配置的遥测数据值自动缩放云服务、虚拟机和 Web Apps 以及发送警报通知或调用 Web URL。
 
 ## 设置 PowerShell
-如果尚未安装，请在你的计算机上安装要运行的 PowerShell。有关详细信息，请参阅[如何安装和配置 PowerShell](/documentation/articles/powershell-install-configure)。
+如果尚未安装，请在你的计算机上安装要运行的 PowerShell。有关详细信息，请参阅[如何安装和配置 PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 本文中的示例
 
@@ -227,7 +227,7 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 
 
 ## 创建和管理自动缩放设置
-资源（例如 Web 应用、虚拟机、云服务或 VM 缩放设置）只能有一种为其配置的自动缩放设置。但是，每个自动缩放设置可具有多个配置文件。例如，一个用于基于性能的缩放配置文件，另一个用于基于计划的配置文件。每个配置文件可以为其配置多个规则。有关自动缩放的详细信息，请参阅[如何自动缩放应用程序](/documentation/articles/cloud-services-how-to-scale)。
+资源（例如 Web 应用、虚拟机、云服务或 VM 缩放设置）只能有一种为其配置的自动缩放设置。但是，每个自动缩放设置可具有多个配置文件。例如，一个用于基于性能的缩放配置文件，另一个用于基于计划的配置文件。每个配置文件可以为其配置多个规则。有关自动缩放的详细信息，请参阅[如何自动缩放应用程序](/documentation/articles/cloud-services-how-to-scale/)。
 
 下面列出了要使用的步骤：
 

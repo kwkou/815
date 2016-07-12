@@ -100,13 +100,13 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 
 
 [img-architecture]: ./media/iot-hub-what-is-iot-hub/hubarchitecture.png
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-connect-device]: /develop/iot/
-[lnk-d2c]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
+[lnk-d2c]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [protocol-gateway]: https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md
 [lnk-service-assisted-pattern]: http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx "服务辅助通信，博客作者 Clemens Vasters"
-[lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs
-[lnk-gateway]: /documentation/articles/iot-hub-protocol-gateway
+[lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
+[lnk-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 [lnk-field-gateway]: /documentation/articles/iot-hub-guidance/#field-gateways
 [lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide/#identityregistry
 [lnk-devguide-security]: /documentation/articles/iot-hub-devguide/#security

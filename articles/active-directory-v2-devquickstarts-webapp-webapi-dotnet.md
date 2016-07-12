@@ -17,9 +17,9 @@
 通过 v2.0 终结点，可以快速地将身份验证添加 Web 应用和 Web API，同时支持个人 Microsoft 帐户以及工作或学校帐户。此外，我们将构建一个借助 Microsoft OWIN 中间件使用 OpenID Connect 将用户登录的 MVC Web 应用。该 Web 应用程序将获取受 OAuth 2.0 保护的 Web API 的 OAuth 2.0 访问令牌，用于创建、读取和删除给定用户的“待办事项列表”。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-本教程着重介绍如何通过 ADAL 来获取和使用 Web 应用中的访问令牌，在[此处](/documentation/articles/active-directory-v2-flows#web-apps)可找到完整介绍。你可能必须先了解如何[将基本登录添加到 Web 应用](/documentation/articles/active-directory-v2-devquickstarts-dotnet-web)，或者如何[正确保护 Web API](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api)。
+本教程着重介绍如何通过 ADAL 来获取和使用 Web 应用中的访问令牌，在[此处](/documentation/articles/active-directory-v2-flows/#web-apps)可找到完整介绍。你可能必须先了解如何[将基本登录添加到 Web 应用](/documentation/articles/active-directory-v2-devquickstarts-dotnet-web/)，或者如何[正确保护 Web API](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api/)。
 
 ## 下载示例代码
 
@@ -32,7 +32,7 @@
 		git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet.git
 
 ## 注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 - 创建**密码**类型的**应用机密**，并复制其值以备后用。
@@ -50,7 +50,7 @@
 
 
 ## 登录用户
-现在，我们要将 OWIN 中间件配置为使用 [OpenID Connect 身份验证协议](/documentation/articles/active-directory-v2-protocols#openid-connect-sign-in-flow)。
+现在，我们要将 OWIN 中间件配置为使用 [OpenID Connect 身份验证协议](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow)。
 
 -	打开位于 `TodoList-WebApp` 项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入应用程序的配置值。
     -	`ida:ClientId` 是在注册门户中为应用分配的**应用程序 ID**。
@@ -101,7 +101,7 @@
 
 
 ## 使用 ADAL 获取访问令牌
-在 `AuthorizationCodeReceived` 通知中，我们想要使用[与 OpenID Connect 串联的 OAuth 2.0](/documentation/articles/active-directory-v2-protocols#openid-connect-with-oauth-code-flow)，以兑换待办事项列表服务的访问令牌的 authorization\_code。ADAL 可以简化此过程：
+在 `AuthorizationCodeReceived` 通知中，我们想要使用[与 OpenID Connect 串联的 OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#openid-connect-with-oauth-code-flow)，以兑换待办事项列表服务的访问令牌的 authorization\_code。ADAL 可以简化此过程：
 
 - 首先，安装 ADAL 预览版：
 
@@ -191,7 +191,7 @@ catch (AdalException ee)
 
 有关更多资源，请查看：
 
-- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
+- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [堆栈溢出“adal”标记 >>](http://stackoverflow.com/questions/tagged/adal)
 
 <!---HONumber=Mooncake_0516_2016-->

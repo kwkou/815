@@ -19,8 +19,8 @@
 # Django Hello World Web 应用
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-windows-classic-python-django-web-app)
-- [Mac/Linux](/documentation/articles/virtual-machines-linux-python-django-web-app)
+- [Windows](/documentation/articles/virtual-machines-windows-classic-python-django-web-app/)
+- [Mac/Linux](/documentation/articles/virtual-machines-linux-python-django-web-app/)
 
 本教程介绍如何在 Azure 中使用 Windows Server 虚拟机托管基于 Django 的 Web 应用。本教程假定您之前未使用过 Azure。完成本教程之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
@@ -39,7 +39,7 @@
 
 ## 创建并配置 Azure 虚拟机以托管 Django
 
-1. 按照[此处](/documentation/articles/virtual-machines-windows-classic-tutorial)提供的说明可创建 Windows Server 2012 R2 Datacenter 分发的 Azure 虚拟机。
+1. 按照[此处](/documentation/articles/virtual-machines-windows-classic-tutorial/)提供的说明可创建 Windows Server 2012 R2 Datacenter 分发的 Azure 虚拟机。
 
 1. 指示 Azure 将来自 Web 的端口 80 通信定向到虚拟机上的端口 80：
  - 在 Azure 经典管理门户中导航到你新创建的虚拟机，然后单击“终结点”。

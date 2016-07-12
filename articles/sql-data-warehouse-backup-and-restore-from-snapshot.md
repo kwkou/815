@@ -131,9 +131,9 @@ Azure SQL 数据仓库在删除数据库之前会创建数据库快照，并将�
 <!--Image references-->
 
 <!--Article references-->
-[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity
-[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize
-[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
+[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
+[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
+[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 
 <!--MSDN references-->
 [创建数据库还原请求]: http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx

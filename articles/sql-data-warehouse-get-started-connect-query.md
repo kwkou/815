@@ -14,6 +14,6 @@
 
 # 使用 Visual Studio 进行连接和查询
 
-本文已由[使用 Visual Studio 连接到 SQL 数据仓库](/documentation/articles/sql-data-warehouse-get-started-connect)取代
+本文已由[使用 Visual Studio 连接到 SQL 数据仓库](/documentation/articles/sql-data-warehouse-get-started-connect/)取代
 
 <!---HONumber=Mooncake_0530_2016-->

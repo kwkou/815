@@ -56,6 +56,6 @@
 
 ## 部署
 
-生成包后，即可将其部署到 Azure。有关演示该过程的教程，请参阅 Azure 网站。有关如何自动化该过程的信息，请参阅[在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery)。
+生成包后，即可将其部署到 Azure。有关演示该过程的教程，请参阅 Azure 网站。有关如何自动化该过程的信息，请参阅[在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery/)。
 
 <!---HONumber=Mooncake_0516_2016-->

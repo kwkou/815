@@ -16,8 +16,8 @@
 # 创建 Azure 媒体服务帐户
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-create-account)
-- [PowerShell](/documentation/articles/media-services-manage-with-powershell)
+- [门户](/documentation/articles/media-services-create-account/)
+- [PowerShell](/documentation/articles/media-services-manage-with-powershell/)
 - [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn194267.aspx)
 
 
@@ -73,9 +73,9 @@
 
 ## 后续步骤
 
-- [使用 .NET SDK 开始传送点播视频 (VoD) 内容](/documentation/articles/media-services-dotnet-get-started)
+- [使用 .NET SDK 开始传送点播视频 (VoD) 内容](/documentation/articles/media-services-dotnet-get-started/)
 
-- [使用 .NET SDK 可创建频道，以执行从单比特率流到多比特率流的实时编码](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
+- [使用 .NET SDK 可创建频道，以执行从单比特率流到多比特率流的实时编码](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
 
 <!-- Reusable paths. -->
 

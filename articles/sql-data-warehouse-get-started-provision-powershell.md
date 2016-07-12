@@ -15,8 +15,8 @@
 # 使用 PowerShell 创建 SQL 数据仓库
 
 > [AZURE.SELECTOR]
-- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
-- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)
 
 ### 先决条件
 在开始之前，请确保符合以下先决条件。
@@ -72,8 +72,8 @@
 [加载]: /documentation/articles/sql-data-warehouse-load-with-bcp/
 [load sample data]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [Powershell]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
-[firewall rules]: /documentation/articles/sql-database-configure-firewall-settings
-[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
+[firewall rules]: /documentation/articles/sql-database-configure-firewall-settings/
+[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 
 <!--MSDN references--> 
 [MSDN]: https://msdn.microsoft.com/zh-cn/library/azure/dn546722.aspx

@@ -15,8 +15,8 @@
 # 为 Resource Manager 部署模型配置 ExpressRoute 和站点到站点共存的连接
 
 > [AZURE.SELECTOR]
-- [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-coexist-resource-manager)
-- [PowerShell - Classic](/documentation/articles/expressroute-howto-coexist-classic)
+- [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-coexist-resource-manager/)
+- [PowerShell - Classic](/documentation/articles/expressroute-howto-coexist-classic/)
 
 能够配置站点到站点 VPN 和 ExpressRoute 具有多项优势。你可以将站点到站点 VPN 配置为 ExressRoute 的安全故障转移路径，或者使用站点到站点 VPN 连接到不是通过 ExpressRoute 进行连接的站点。我们将在本文中介绍这两种方案的配置步骤。本文适用于 Resource Manager 部署模型。此配置在 Azure 门户中不可用。
 
@@ -25,14 +25,14 @@
 
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
 
->[AZURE.IMPORTANT] 按以下说明进行操作之前，必须预先配置ExpressRoute 线路。在按以下步骤操作之前，请务必遵循相关指南来[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)和[配置路由](/documentation/articles/expressroute-howto-routing-arm)。
+>[AZURE.IMPORTANT] 按以下说明进行操作之前，必须预先配置ExpressRoute 线路。在按以下步骤操作之前，请务必遵循相关指南来[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)和[配置路由](/documentation/articles/expressroute-howto-routing-arm/)。
 
 ## 限制和局限性
 
 - **不支持转换性路由：**你将不能（通过 Azure）在通过站点到站点 VPN 连接的本地网络与通过 ExpressRoute 连接的本地网络之间进行路由。
 - **无法在站点到站点 VPN 网关上启用强制隧道：**你只能通过 ExpressRoute 将所有面向 Internet 的流量“强制”返回到本地网络。 
-- **仅限标准或高性能网关：**ExpressRoute 网关和站点到站点 VPN 网关必须使用标准或高性能网关。有关网关 SKU 的信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways)。
-- **仅限基于路由的 VPN 网关：**必须使用基于路由的 VPN 网关。有关基于路由的 VPN 网关的信息，请参阅 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。
+- **仅限标准或高性能网关：**ExpressRoute 网关和站点到站点 VPN 网关必须使用标准或高性能网关。有关网关 SKU 的信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways/)。
+- **仅限基于路由的 VPN 网关：**必须使用基于路由的 VPN 网关。有关基于路由的 VPN 网关的信息，请参阅 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 - **静态路由要求：**如果你的本地网络同时连接到 ExpressRoute 和站点到站点 VPN，则必须在本地网络中配置静态路由，以便将站点到站点 VPN 连接路由到公共 Internet。
 - **必须先配置 ExpressRoute 网关：**必须先创建 ExpressRoute 网关，然后再添加站点到站点 VPN 网关。
 
@@ -73,7 +73,7 @@
 
 本过程将指导你创建 VNet，以及创建将共存的站点到站点连接和 ExpressRoute 连接。
 	
-1. 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。请注意，针对此配置使用的 cmdlet 可能与你熟悉的 cmdlet 稍有不同。请务必使用说明内容中指定的 cmdlet。
+1. 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。请注意，针对此配置使用的 cmdlet 可能与你熟悉的 cmdlet 稍有不同。请务必使用说明内容中指定的 cmdlet。
 
 2. 登录你的帐户并设置环境。
 	
@@ -82,7 +82,7 @@
 		$location = "China East"
 		$resgrp = New-AzureRmResourceGroup -Name "ErVpnCoex" -Location $location
 
-3. 创建包括网关子网的虚拟网络。有关虚拟网络配置的详细信息，请参阅 [Azure 虚拟网络配置](/documentation/articles/virtual-networks-create-vnet-arm-ps)。
+3. 创建包括网关子网的虚拟网络。有关虚拟网络配置的详细信息，请参阅 [Azure 虚拟网络配置](/documentation/articles/virtual-networks-create-vnet-arm-ps/)。
 
 	>[AZURE.IMPORTANT] 网关子网必须是 /27 或更短的前缀（例如 /26 或 /25）。
 	
@@ -99,19 +99,19 @@
 
 		$vnet = Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
-4. <a name="gw"></a>创建 ExpressRoute 网关。有关 ExpressRoute 网关配置的详细信息，请参阅 [ExpressRoute 网关配置](/documentation/articles/expressroute-howto-add-gateway-resource-manager)。GatewaySKU 必须是 Standard 或 HighPerformance。
+4. <a name="gw"></a>创建 ExpressRoute 网关。有关 ExpressRoute 网关配置的详细信息，请参阅 [ExpressRoute 网关配置](/documentation/articles/expressroute-howto-add-gateway-resource-manager/)。GatewaySKU 必须是 Standard 或 HighPerformance。
 
 		$gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
 		$gwIP = New-AzureRmPublicIpAddress -Name "ERGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
 		$gwConfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name "ERGatewayIpConfig" -SubnetId $gwSubnet.Id -PublicIpAddressId $gwIP.Id
 		$gw = New-AzureRmVirtualNetworkGateway -Name "ERGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "ExpressRoute" -GatewaySku Standard 
 
-5. 将 ExpressRoute 网关连接到 ExpressRoute 线路。完成此步骤后，则已通过 ExpressRoute 建立本地网络与 Azure 之间的连接。有关链接操作的详细信息，请参阅[将 VNet 链接到 ExpressRoute](/documentation/articles/expressroute-howto-linkvnet-arm)。
+5. 将 ExpressRoute 网关连接到 ExpressRoute 线路。完成此步骤后，则已通过 ExpressRoute 建立本地网络与 Azure 之间的连接。有关链接操作的详细信息，请参阅[将 VNet 链接到 ExpressRoute](/documentation/articles/expressroute-howto-linkvnet-arm/)。
 
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "YourCircuit" -ResourceGroupName "YourCircuitResourceGroup"
 		New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -VirtualNetworkGateway1 $gw -PeerId $ckt.Id -ConnectionType ExpressRoute
 
-6. <a name="vpngw"></a>接下来，创建站点到站点 VPN 网关。有关 VPN 网关配置的详细信息，请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)。GatewaySKU 必须是 Standard 或 HighPerformance。VpnType 必须为 RouteBased。
+6. <a name="vpngw"></a>接下来，创建站点到站点 VPN 网关。有关 VPN 网关配置的详细信息，请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。GatewaySKU 必须是 Standard 或 HighPerformance。VpnType 必须为 RouteBased。
 
 		$gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
 		$gwIP = New-AzureRmPublicIpAddress -Name "VPNGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
@@ -123,7 +123,7 @@
 
 		$localVpn = New-AzureRmLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress *<Public IP>* -AddressPrefix '10.100.0.0/16'
 
-8. 配置本地 VPN 设备以连接到新的 Azure VPN 网关。有关 VPN 设备配置的详细信息，请参阅 [VPN 设备配置](/documentation/articles/vpn-gateway-about-vpn-devices)。
+8. 配置本地 VPN 设备以连接到新的 Azure VPN 网关。有关 VPN 设备配置的详细信息，请参阅 [VPN 设备配置](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 9. 将 Azure 上的站点到站点 VPN 网关连接到本地网关。
 
@@ -139,7 +139,7 @@
 
 >[AZURE.NOTE] 如果你删除的是现有网关，则当你进行此配置时，本地系统将失去与虚拟网络建立的连接。
 
-1. 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。请注意，针对此配置使用的 cmdlet 可能与你熟悉的 cmdlet 稍有不同。请务必使用说明内容中指定的 cmdlet。 
+1. 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。请注意，针对此配置使用的 cmdlet 可能与你熟悉的 cmdlet 稍有不同。请务必使用说明内容中指定的 cmdlet。 
 
 2. 删除现有的 ExpressRoute 或站点到站点 VPN 网关。
 
@@ -184,10 +184,10 @@
 		$p2sCertData = [System.Convert]::ToBase64String($p2sCertToUpload.RawData)
 		Add-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $p2sCertFullName -VirtualNetworkGatewayname $azureVpn.Name -ResourceGroupName $resgrp.ResourceGroupName -PublicCertData $p2sCertData
 
-有关点到站点 VPN 的详细信息，请参阅[配置点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps)。
+有关点到站点 VPN 的详细信息，请参阅[配置点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)。
 
 ## 后续步骤
 
-有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
+有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
 <!---HONumber=Mooncake_0509_2016-->

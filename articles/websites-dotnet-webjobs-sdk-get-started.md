@@ -14,9 +14,9 @@
 
 # 在 Azure Web 应用中创建 .NET Web 作业
 
-本教程说明了如何为使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 的简单多层 ASP.NET MVC 5 应用程序编写代码。
+本教程说明了如何为使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 的简单多层 ASP.NET MVC 5 应用程序编写代码。
 
-[WebJobs SDK](/documentation/articles/websites-webjobs-resources) 的用途是简化针对 Web 作业可以执行的常见任务（例如，图像处理、队列处理、RSS 聚合、文件维护和发送电子邮件）编写的代码。WebJobs SDK 中的内置功能使用 Azure 存储空间和 Service Bus，用于计划任务和处理错误，以及用于许多其他常见方案。此外，它还设计为可扩展并且有[用于扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。
+[WebJobs SDK](/documentation/articles/websites-webjobs-resources/) 的用途是简化针对 Web 作业可以执行的常见任务（例如，图像处理、队列处理、RSS 聚合、文件维护和发送电子邮件）编写的代码。WebJobs SDK 中的内置功能使用 Azure 存储空间和 Service Bus，用于计划任务和处理错误，以及用于许多其他常见方案。此外，它还设计为可扩展并且有[用于扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。
 
 示例应用程序是一个广告公告板。用户可以上载广告的图像，后端进程会将图像转换成缩略图。广告列表页将显示缩略图，而广告详细信息页则显示完整大小的图像。下面是屏幕快照：
 
@@ -93,7 +93,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 6. 将“复制”下拉列表设置为“本地冗余”。
 
-	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account#replication-options)。
+	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/#replication-options)。
 
 5. 单击“创建”。
 
@@ -159,7 +159,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 	&lt;/startup>
 	&lt;/configuration></pre>
 
-	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以根据需要[存储该连接字符串，并显式将它传递给 `JobHost` 对象](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#config)。
+	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以根据需要[存储该连接字符串，并显式将它传递给 `JobHost` 对象](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#config)。
 
 7. 将两个存储连接字符串替换为先前复制的连接字符串。
 
@@ -380,7 +380,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 	* 在 Web 项目的 Properties 文件夹中添加一个 *webjobs-list.json* 文件。
 	* 在 Web 作业项目中安装 Microsoft.Web.WebJobs.Publish NuGet 包。
 
-	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs)。
+	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
 ### 添加 NuGet 包
 
@@ -735,14 +735,14 @@ HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选�
 
 有关如何编写使用 WebJobs SDK 属性的函数的详细信息，请参阅以下资源：
 
-* [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
-* [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
-* [如何通过 WebJobs SDK 使用 Azure 表存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to)
-* [如何通过 WebJobs SDK 使用 Azure Service Bus](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus)
+* [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/)
+* [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/)
+* [如何通过 WebJobs SDK 使用 Azure 表存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to/)
+* [如何通过 WebJobs SDK 使用 Azure Service Bus](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus/)
 
 > [AZURE.NOTE]
 > * 如果在多个 VM 上运行 Web 应用，多个 Web 作业将同时运行，在某些情况下，这可能会导致相同的数据被处理多次。如果使用内置队列、Blob 和服务总线触发器，则这不会造成问题。SDK 可确保只会针对每个消息或 Blob 处理函数一次。
-><p>* 有关如何实现正常关闭的信息，请参阅[正常关闭](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful)。
+><p>* 有关如何实现正常关闭的信息，请参阅[正常关闭](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#graceful)。
 ><p>*为方便起见，`ConvertImageToThumbnailJPG`方法中的代码（未显示）使用 `System.Drawing` 命名空间中的类。但是，此命名空间中的类已设计用于 Windows 窗体。不支持在 Windows 或 ASP.NET 服务中使用。有关图像处理选项的详细信息，请参阅[动态图像生成](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx)和[深入学习图像大小调整](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na)。
 
 ## 后续步骤
@@ -759,7 +759,7 @@ Web 作业在 Web 应用的上下文中运行，并且不可单独缩放。例�
 
 如果流量根据一天的时间或者星期变化，并且你需要执行的后端处理可以等待，则你可以将 Web 作业安排为在低流量期间运行。如果该解决方案的负载仍然太高，可以在针对该用途专用的 Web 应用中以 Web 作业形式运行后端。然后，可以独立于前端 Web 应用缩放你的后端 Web 应用。
 
-有关详细信息，请参阅[缩放 Web 作业](/documentation/articles/websites-webjobs-resources#scale)。
+有关详细信息，请参阅[缩放 Web 作业](/documentation/articles/websites-webjobs-resources/#scale)。
 
 ### 避免因 Web 应用超时而导致其关闭
 

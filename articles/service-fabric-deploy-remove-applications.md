@@ -205,16 +205,16 @@ PS D:\temp>
 
 ## 后续步骤
 
-[Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade)
+[Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
-[Service Fabric 运行状况简介](/documentation/articles/service-fabric-health-introduction)
+[Service Fabric 运行状况简介](/documentation/articles/service-fabric-health-introduction/)
 
-[对 Service Fabric 进行诊断和故障排除](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)
+[对 Service Fabric 进行诊断和故障排除](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)
 
-[在 Service Fabric 中对应用程序建模](/documentation/articles/service-fabric-application-model)
+[在 Service Fabric 中对应用程序建模](/documentation/articles/service-fabric-application-model/)
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
-[10]: /documentation/articles/service-fabric-application-model
-[11]: /documentation/articles/service-fabric-application-upgrade
+[10]: /documentation/articles/service-fabric-application-model/
+[11]: /documentation/articles/service-fabric-application-upgrade/
  
 <!---HONumber=Mooncake_0627_2016-->

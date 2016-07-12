@@ -30,7 +30,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 在本指南中，我们将使用 Azure PowerShell 来生成 SAS 令牌。然后，我们将创建一个使用生成的 SAS 的 Xamarin 应用程序。
 
-首先，你需要安装 Azure PowerShell请查看[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure#Install) 以获取相关说明。
+首先，你需要安装 Azure PowerShell请查看[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/#Install) 以获取相关说明。
 
 接下来，请打开 Azure PowerShell 并运行以下命令：请记住将 `ACCOUNT_NAME` 和 `ACCOUNT_KEY== ` 替换为你的存储帐户凭据。将 `CONTAINER_NAME` 替换为你选择的名称。
 
@@ -45,7 +45,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 你在容器上创建的共享访问签名将在接下来的一天内有效。该签名将授予对容器内 blob 的完整权限（例如，读取、写入、删除和列表）。
 
-有关共享访问签名的详细信息，请参阅[共享访问签名：创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2)。
+有关共享访问签名的详细信息，请参阅[共享访问签名：创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
 ## 创建新的 Xamarin 应用程序
 
@@ -169,12 +169,12 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 查看以下链接，了解有关 blob、表和队列的详细信息：
 
-[Azure 存储空间简介](/documentation/articles/storage-introduction)  
+[Azure 存储空间简介](/documentation/articles/storage-introduction/)  
 
-- [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
-- [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
-- [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
-- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
+- [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
+- [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)
+- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
 <!---HONumber=Mooncake_0411_2016-->

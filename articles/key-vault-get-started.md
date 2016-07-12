@@ -22,16 +22,16 @@
 
 >[AZURE.NOTE]  本教程未说明如何编写其中一个步骤所包括的 Azure 应用程序，但说明了如何授权应用程序使用密钥保管库中的密钥或机密。
 >
->目前，无法在 Azure 门户中配置 Azure 密钥保管库。请改用这些 Azure PowerShell 说明。或者，有关跨平台命令行接口说明，请参阅[此对应教程](/documentation/articles/key-vault-manage-with-cli)。
+>目前，无法在 Azure 门户中配置 Azure 密钥保管库。请改用这些 Azure PowerShell 说明。或者，有关跨平台命令行接口说明，请参阅[此对应教程](/documentation/articles/key-vault-manage-with-cli/)。
 
-有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis)
+有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)
 
 ## 先决条件
 
 若要完成本教程，你必须准备好以下各项：
 
 - Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial)。
-- Azure PowerShell，**最低版本为 1.1.0**。若要安装 Azure PowerShell 并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。如果你已安装了 Azure PowerShell，但不知道版本，请在 Azure PowerShell 控制台中键入 `(Get-Module azure -ListAvailable).Version`。如果已安装 Azure PowerShell 版本 0.9.1 到 0.9.8，仍可以使用本教程，但需要进行一些细微更改。例如，必须使用 `Switch-AzureMode AzureResourceManager` 命令，并且某些 Azure 密钥保管库命令已更改。有关版本 0.9.1 到 0.9.8 的密钥保管库 cmdlet 的列表，请参阅 [Azure 密钥保管库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn868052(v=azure.98).aspx)。 
+- Azure PowerShell，**最低版本为 1.1.0**。若要安装 Azure PowerShell 并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。如果你已安装了 Azure PowerShell，但不知道版本，请在 Azure PowerShell 控制台中键入 `(Get-Module azure -ListAvailable).Version`。如果已安装 Azure PowerShell 版本 0.9.1 到 0.9.8，仍可以使用本教程，但需要进行一些细微更改。例如，必须使用 `Switch-AzureMode AzureResourceManager` 命令，并且某些 Azure 密钥保管库命令已更改。有关版本 0.9.1 到 0.9.8 的密钥保管库 cmdlet 的列表，请参阅 [Azure 密钥保管库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn868052(v=azure.98).aspx)。 
 - 配置为使用你在本教程中所创建的密钥或密码的应用程序。你可以从 [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=45343)获取示例应用程序。有关说明，请参阅随附的自述文件。
 
 
@@ -47,8 +47,8 @@
 
 还可阅读以下教程以熟悉如何在 Azure PowerShell 中使用 Azure 资源管理器：
 
-- [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
-- [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
+- [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)
+- [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager/)
 
 
 ## <a id="connect"></a>连接到订阅 ##
@@ -69,7 +69,7 @@
 
     Set-AzureRmContext -SubscriptionId <subscription ID>
 
-有关配置 Azure PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+有关配置 Azure PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
 ## <a id="resource"></a>创建新的资源组 ##
@@ -204,11 +204,11 @@
 
 ## <a id="next"></a>后续步骤 ##
 
-有关在 web 应用程序中使用 Azure 密钥保管库的后续教程，请参阅[从 Web 应用程序使用 Azure 密钥保管库](/documentation/articles/key-vault-use-from-web-application)。
+有关在 web 应用程序中使用 Azure 密钥保管库的后续教程，请参阅[从 Web 应用程序使用 Azure 密钥保管库](/documentation/articles/key-vault-use-from-web-application/)。
 
 有关 Azure 密钥保管库的最新 Azure PowerShell cmdlet 列表，请参阅 [Azure 密钥保管库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn868052.aspx)。
  
 
-有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide)。
+有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide/)。
 
 <!---HONumber=Mooncake_0411_2016-->

@@ -25,7 +25,7 @@ Azure Media Hyperlapse 作业接受输入 MP4、MOV 或 WMV 资产文件以及�
 
 ## 将资产进行 Hyperlapse 处理
 
-首先，请将所需的输入文件上载到 Azure 媒体服务。若要深入了解有关上载和管理内容的概念，请阅读[内容管理文章](/documentation/articles/media-services-manage-content#upload)。
+首先，请将所需的输入文件上载到 Azure 媒体服务。若要深入了解有关上载和管理内容的概念，请阅读[内容管理文章](/documentation/articles/media-services-manage-content/#upload)。
 
 ###  <a id="configuration"></a>Hyperlapse 的配置预设
 
@@ -71,7 +71,7 @@ Speed|用于加速输入视频的倍数。
 
 以下方法将媒体文件上载为资产，然后使用 Azure Media Hyperlapse 媒体处理器来创建作业。
 
-> [AZURE.NOTE] 为了使代码正常工作，你应该事先在名为“context”的作用域中创建 CloudMediaContext。若要了解详细信息，请阅读[内容管理文章](/documentation/articles/media-services-manage-content)。
+> [AZURE.NOTE] 为了使代码正常工作，你应该事先在名为“context”的作用域中创建 CloudMediaContext。若要了解详细信息，请阅读[内容管理文章](/documentation/articles/media-services-manage-content/)。
 
 > [AZURE.NOTE] 字符串参数“hyperConfig”应是上述采用 JSON 或 XML 格式且符合要求的配置预设。
 
@@ -207,7 +207,7 @@ Speed|用于加速输入视频的倍数。
 
 ##相关链接
 
-[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview)
+[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)
 
 [Azure 媒体分析演示](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 

@@ -21,11 +21,11 @@
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。你还可以[管理经典部署模型中的静态专用 IP 地址](/documentation/articles/virtual-networks-static-private-ip-classic-pportal)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。你还可以[管理经典部署模型中的静态专用 IP 地址](/documentation/articles/virtual-networks-static-private-ip-classic-pportal/)。
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
 
-下面的示例步骤需要已创建简单的环境。如果你想要运行本文档中所显示的步骤，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-pportal) 中所述的测试环境。
+下面的示例步骤需要已创建简单的环境。如果你想要运行本文档中所显示的步骤，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-pportal/) 中所述的测试环境。
 
 ## 如何创建用于测试静态专用 IP 地址的 VM
 
@@ -91,8 +91,8 @@
 
 ## 后续步骤
 
-- 了解[保留公共 IP](/documentation/articles/virtual-networks-reserved-public-ip) 地址。
-- 了解[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip) 地址。
+- 了解[保留公共 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 地址。
+- 了解[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) 地址。
 - 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
 <!---HONumber=Mooncake_0418_2016-->

@@ -30,9 +30,9 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 还可以通过**用户定义函数的 (UDF)** 扩展 Hive。UDF 允许你实现 HiveQL 中不容易建模的功能或逻辑。有关将 UDF 与 Hive 配合使用的示例，请参阅：
 
-* [在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python)
+* [在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python/)
 
-* [在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
+* [在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/)
 
 * [如何将自定义 Hive UDF 添加到 HDInsight](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx)
 
@@ -58,7 +58,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 在前面的示例中，日志级别为 ERROR。
 
-> [AZURE.NOTE] 你也可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
+> [AZURE.NOTE] 你也可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data/) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage/)。
 
 示例数据存储在 HDInsight 用作默认文件系统的 Azure Blob 存储中。HDInsight 可以使用 **wasb** 前缀来访问存储在 Blob 中的文件。例如，若要访问 sample.log 文件，可使用以下语法：
 
@@ -108,12 +108,12 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 [Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。
 
-> [AZURE.NOTE] 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：<p>```set hive.execution.engine=tez;``` <p>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)中找到详细信息。
+> [AZURE.NOTE] 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：<p>```set hive.execution.engine=tez;``` <p>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)中找到详细信息。
 
 [Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
 为了帮助使用 Tez 调试运行的作业，HDInsight 提供了以下 Web UI，使你可以查看 Tez 作业的详细信息：
-* [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui)
+* [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
 
 ##<a id="run"></a>选择如何运行 HiveQL 作业
 
@@ -121,11 +121,11 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 | **使用此方法**，如果你想要... | ...**交互式** shell | ...**批处理** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:--------------------------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
-| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl) | &nbsp; | ✔ | Windows | Windows |
-| [查询控制台](/documentation/articles/hdinsight-hadoop-use-hive-query-console) | &nbsp; | ✔ | Windows | 任何（基于浏览器） |
-| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) | &nbsp; | ✔ | Windows | Windows |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell) | &nbsp; | ✔ | Windows | Windows |
-| [远程桌面](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop) | ✔ | ✔ | Windows | Windows |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl/) | &nbsp; | ✔ | Windows | Windows |
+| [查询控制台](/documentation/articles/hdinsight-hadoop-use-hive-query-console/) | &nbsp; | ✔ | Windows | 任何（基于浏览器） |
+| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio/) | &nbsp; | ✔ | Windows | Windows |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell/) | &nbsp; | ✔ | Windows | Windows |
+| [远程桌面](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop/) | ✔ | ✔ | Windows | Windows |
 
 ## 使用本地 SQL Server Integration Services 在 Azure HDInsight 上运行 Hive 作业
 
@@ -150,7 +150,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
-[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
@@ -166,20 +166,20 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [connectionmanager]: http://msdn.microsoft.com/zh-cn/library/mt146773(v=sql.120).aspx
 [ssispack]: http://msdn.microsoft.com/zh-cn/library/mt146770(v=sql.120).aspx
 
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
 
 
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png

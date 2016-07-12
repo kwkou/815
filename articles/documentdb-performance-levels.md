@@ -84,7 +84,7 @@ DocumentDB 允许一组丰富的数据库操作，包括查询、利用用户定
 DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对数据进行分组。利用 DocumentDB 的自动索引和查询支持，在同一集合内并置异类文档是相当常见的做法。决定是否应该使用单独集合的关键注意事项包括：
 
 - 查询 – 集合是查询执行的范围。如果需要在一组文档间进行查询，最有效的读取模式就是在单个集合中并置文档。
-- 事务 – 所有事务都处于单个集合的范围内。如果你有文档必须在单个存储过程或触发器内进行更新，则它们必须存储在相同的集合内。更具体地说，集合内的分区键就是事务边界。有关更多详细信息，请参阅 [DocumentDB 中的分区](/documentation/articles/documentdb-partition-data)。
+- 事务 – 所有事务都处于单个集合的范围内。如果你有文档必须在单个存储过程或触发器内进行更新，则它们必须存储在相同的集合内。更具体地说，集合内的分区键就是事务边界。有关更多详细信息，请参阅 [DocumentDB 中的分区](/documentation/articles/documentdb-partition-data/)。
 - 性能隔离 – 一个集合具有关联的性能级别。这可确保每个集合通过保留的 RU 都有可预测的性能。可以根据访问频率将数据分配到具有不同性能级别的不同集合。
 
 > [AZURE.IMPORTANT] 重要的是，要了解将基于你的应用程序所创建的集合数，以全标准费率向你收费。
@@ -111,19 +111,19 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 10. 回到“管理集合”边栏选项卡中，“定价层”被更改为了“标准”，且显示了“吞吐量 (RU/s)”框。
 
-    将“吞吐量”框中的值更改为 400 到 10,000 [请求单位](/documentation/articles/documentdb-request-units)/秒 (RU/s) 之间的值。页面底部的“定价摘要”将自动更新以提供月度成本估算。
+    将“吞吐量”框中的值更改为 400 到 10,000 [请求单位](/documentation/articles/documentdb-request-units/)/秒 (RU/s) 之间的值。页面底部的“定价摘要”将自动更新以提供月度成本估算。
 
     ![显示在何处更改集合的吞吐量值的“管理集合”边栏选项卡的屏幕截图][2]
 
 9. 在“管理集合”边栏选项卡上，单击“确定”以将你的集合更新为用户定义的性能。
 
-如果你确定需要更多吞吐量（大于 10,000 RU/s）或更多存储（大于 10GB），可以创建分区集合。若要创建分区集合，请参阅[创建集合](/documentation/articles/documentdb-create-collection)。
+如果你确定需要更多吞吐量（大于 10,000 RU/s）或更多存储（大于 10GB），可以创建分区集合。若要创建分区集合，请参阅[创建集合](/documentation/articles/documentdb-create-collection/)。
 
 >[AZURE.NOTE] 更改集合的性能级别可能会花费 2 分钟。
 
 ## 使用 .NET SDK 更改性能级别
 
-另一个更改集合的性能级别的选项便是通过我们的 SDK 进行操作。本节只涵盖使用我们的 [.NET SDK](https://msdn.microsoft.com/library/azure/dn948556.aspx) 更改集合的性能级别，但对于其他的 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，过程也是相似的。如果你对我们的 .NET SDK 还不熟悉的话，请访问我们的[入门教程](/documentation/articles/documentdb-get-started)。
+另一个更改集合的性能级别的选项便是通过我们的 SDK 进行操作。本节只涵盖使用我们的 [.NET SDK](https://msdn.microsoft.com/library/azure/dn948556.aspx) 更改集合的性能级别，但对于其他的 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，过程也是相似的。如果你对我们的 .NET SDK 还不熟悉的话，请访问我们的[入门教程](/documentation/articles/documentdb-get-started/)。
 
 此为将服务吞吐量更改为每秒 50,000 请求单位的代码片段：
 
@@ -161,9 +161,9 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 若要了解更多有关 Azure DocumentDB 的定价和管理数据的信息，请浏览以下资源：
  
-- [管理 DocumentDB 容量](/documentation/articles/documentdb-manage) 
-- [对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data)
-- [对 DocumentDB 中的数据进行分区](/documentation/articles/documentdb-partition-data)
+- [管理 DocumentDB 容量](/documentation/articles/documentdb-manage/) 
+- [对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data/)
+- [对 DocumentDB 中的数据进行分区](/documentation/articles/documentdb-partition-data/)
 - [请求单位](http://go.microsoft.com/fwlink/?LinkId=735027)
 
 若要了解有关 DocumentDB 的详细信息，请参阅 Azure DocumentDB [文档](/documentation/services/documentdb/)。

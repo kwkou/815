@@ -934,7 +934,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 [18]: ./media/virtual-networks-dmz-nsg-fw-udr-asm/firewallruleactivate.png "防火墙规则激活"
 
 <!--Link References-->
-[HOME]: /documentation/articles/best-practices-network-security
-[SampleApp]: /documentation/articles/virtual-networks-sample-app
+[HOME]: /documentation/articles/best-practices-network-security/
+[SampleApp]: /documentation/articles/virtual-networks-sample-app/
 
 <!---HONumber=Mooncake_0307_2016-->

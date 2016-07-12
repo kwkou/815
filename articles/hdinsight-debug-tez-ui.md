@@ -18,7 +18,7 @@ Tez UI 是一个网页，可用于了解和调试在基于 Windows 的 HDInsight
 
 ##先决条件
 
-* 基于 Windows 的 HDInsight 群集。有关创建新群集的步骤，请参阅[开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)。
+* 基于 Windows 的 HDInsight 群集。有关创建新群集的步骤，请参阅[开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)。
 
     > [AZURE.IMPORTANT] Tez UI 只在 2016 年 2 月 8 日以后创建的基于 Windows 的 HDInsight 群集上提供。
 
@@ -133,7 +133,7 @@ Tez UI 包含数据的前提是使用 Tez 引擎的作业当前正在运行或�
 
 ##后续步骤
 
-现在，你已了解如何使用 Tez 视图，因此可以详细了解如何[使用 Hive on HDInsight](/documentation/articles/hdinsight-use-hive)。
+现在，你已了解如何使用 Tez 视图，因此可以详细了解如何[使用 Hive on HDInsight](/documentation/articles/hdinsight-use-hive/)。
 
 有关 Tez 的更多详细的技术信息，请参阅 [Hortonworks 的 Tez 页](http://hortonworks.com/hadoop/tez/)。
 <!---HONumber=Mooncake_0405_2016-->

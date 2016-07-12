@@ -18,7 +18,7 @@
 
 带有 SQL Server 的 Azure 虚拟机 (VM) 有助于降低高可用性和灾难恢复 (HADR) 数据库解决方案的成本。Azure 虚拟机支持大多数充当云解决方案和混合解决方案的 SQL Server HADR 解决方案。在仅包含 Azure 的解决方案中，整个 HADR 系统都在 Azure 中运行。而在混合配置中，解决方案的一部分在 Azure 中运行，另一部分则在组织的本地运行。Azure 环境具有灵活性，允许你部分或完全迁移至 Azure，以满足 SQL Server 数据库系统对于预算和 HADR 的要求。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 了解对 HADR 解决方案的需求
 
@@ -44,7 +44,7 @@ Azure 支持的 SQL Server HADR 技术包括：
 
 |技术|示例体系结构|
 |---|---|
-|**AlwaysOn 可用性组**|所有可用性副本均在同一区域内的 Azure VM 中运行以获得高可用性。你需要配置域控制器 VM，因为 Windows Server 故障转移群集 (WSFC) 需要 Active Directory 域。<br/> ![AlwaysOn 可用性组](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_ha_always_on.gif)<br/>有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)。|
+|**AlwaysOn 可用性组**|所有可用性副本均在同一区域内的 Azure VM 中运行以获得高可用性。你需要配置域控制器 VM，因为 Windows Server 故障转移群集 (WSFC) 需要 Active Directory 域。<br/> ![AlwaysOn 可用性组](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_ha_always_on.gif)<br/>有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)。|
 |**数据库镜像**|主体、镜像和见证服务器均在同一 Azure 数据中心内运行以获得高可用性。可使用域控制器进行部署。<br/>![数据库镜像](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_ha_dbmirroring1.gif)<br/>如果没有域控制器，也可改用服务器证书部署同一数据库镜像配置。<br/>![数据库镜像](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_ha_dbmirroring2.gif)|
 |**AlwaysOn 故障转移群集实例**|需要共享存储的故障转移群集实例 (FCI)，可以通过 2 种不同方式创建。<br/><br/>1.在使用第三方群集解决方案支持的存储的 Azure VM 中运行的双节点 WSFC 上的 FCI。有关使用 SIOS DataKeeper 的具体示例，请参阅[使用 WSFC 和第三方软件 SIOS Datakeeper 的文件共享的高可用性](https://azure.microsoft.com/blog/high-availability-for-a-file-share-using-wsfc-ilb-and-3rd-party-software-sios-datakeeper/)。<br/><br/>2.在通过 ExpressRoute 使用远程 iSCSI 目标共享块存储的 Azure VM 中运行的双节点 WSFC 上的 FCI。例如，NetApp Private Storage (NPS) 通过 Equinix 的 ExpressRoute 向 Azure VM 公开 iSCSI 目标。<br/><br/>有关第三方共享存储和数据复制解决方案，应联系供应商了解与在故障转移时访问数据相关的任何问题。<br/><br/>请注意，尚不支持在 [Azure 文件存储](/home/features/storage/files/)之上使用 FCI，因为此解决方案不使用高级存储。我们正在努力很快支持此功能。|
 
@@ -56,7 +56,7 @@ Azure 支持的 SQL Server HADR 技术包括：
 |---|---|
 |**AlwaysOn 可用性组**|可用性副本在 Azure VM 中跨越多个数据中心运行以实现灾难恢复。这种跨区域解决方案可以防止站点完全中断。<br/> ![AlwaysOn 可用性组](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_alwayson.png)<br/>在某个区域内，所有副本应该位于同一云服务和同一 VNet 中。由于每个区域将有单独的 VNet，因此这些解决方案需要 VNet 到 VNet 连接。
 |**数据库镜像**|主体和镜像以及服务器在不同数据库中运行以实现灾难恢复。必须使用服务器证书进行部署，因为 Active Directory 域不能跨越多个数据中心。<br/>![数据库镜像](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_dbmirroring.gif)|
-|**使用 Azure Blob 存储服务进行备份和还原**|生产数据库直接备份到不同数据中心内的 Blob 存储以实现灾难恢复。<br/>![备份和还原](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_backup_restore.gif)<br/>有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery)。|
+|**使用 Azure Blob 存储服务进行备份和还原**|生产数据库直接备份到不同数据中心内的 Blob 存储以实现灾难恢复。<br/>![备份和还原](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_backup_restore.gif)<br/>有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。|
 
 ## 混合 IT：灾难恢复解决方案
 
@@ -67,7 +67,7 @@ Azure 支持的 SQL Server HADR 技术包括：
 |**AlwaysOn 可用性组**|某些可用性副本运行在 Azure VM 中，另一些则在本地运行，以实现跨站点灾难恢复。生产站点可以是本地站点，也可以位于 Azure 数据中心内。<br/>![AlwaysOn 可用性组](./media/virtual-machines-windows-sql-high-availability-dr/hybrid_dr_alwayson.gif)<br/>由于所有可用性副本必须在同一 WSFC 群集中，因此 WSFC 群集必须同时跨越这两个网络（多子网 WSFC 群集）。此配置需要在 Azure 与本地网络之间使用 VPN 连接。<br/><br/>为了成功地对数据库进行灾难恢复，还应在灾难恢复站点上安装副本域控制器。<br/><br/>可以使用 SSMS 中的“添加副本向导”将 Azure 副本添加到现有的 AlwaysOn 可用性组。有关详细信息，请参阅教程“将 AlwaysOn 可用性组扩展到 Azure 中”。|
 |**数据库镜像**|一个伙伴在 Azure VM 中运行，另一个则在本地运行，以实现使用服务器证书进行跨站点灾难恢复。伙伴不必在同一 Active Directory 域中，并且不需要 VPN 连接。<br/>![数据库镜像](./media/virtual-machines-windows-sql-high-availability-dr/hybrid_dr_dbmirroring.gif)<br/>另一种数据库镜像方案是一个伙伴在 Azure VM 中运行，另一个则在同一 Active Directory 域中本地运行，以实现跨站点灾难恢复。<br/><br/>为了成功地对数据库进行灾难恢复，还应在灾难恢复站点上安装副本域控制器。|
 |**日志传送**|一个服务器在 Azure VM 中运行，另一个则在本地运行，以实现跨站点灾难恢复。日志传送依赖于 Windows 文件共享，因此需要在 Azure 虚拟网络与本地网络之间使用 VPN 连接。<br/>![日志传送](./media/virtual-machines-windows-sql-high-availability-dr/hybrid_dr_log_shipping.gif)<br/>为了成功地对数据库进行灾难恢复，还应在灾难恢复站点上安装副本域控制器。|
-|**使用 Azure Blob 存储服务进行备份和还原**|本地生产数据库直接备份到 Azure Blob 存储以实现灾难恢复。<br/>![备份和还原](./media/virtual-machines-windows-sql-high-availability-dr/hybrid_dr_backup_restore.gif)<br/>有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery)。|
+|**使用 Azure Blob 存储服务进行备份和还原**|本地生产数据库直接备份到 Azure Blob 存储以实现灾难恢复。<br/>![备份和还原](./media/virtual-machines-windows-sql-high-availability-dr/hybrid_dr_backup_restore.gif)<br/>有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。|
 
 ## 有关 Azure 中的 SQL Server HADR 的重要注意事项
 
@@ -75,7 +75,7 @@ Azure VM、存储和网络的运行特征与本地非虚拟化的 IT 基础结�
 
 ### 可用性集中的高可用性节点
 
-使用 Azure 中的高可用性集，你可将高可用性节点放置在单独的容错域 (FD) 和更新域 (UD) 中。若要将 Azure VM 放入同一可用性集，必须将这些 VM 部署到同一云服务中。只有同一云服务中的节点可加入同一可用性集。有关详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
+使用 Azure 中的高可用性集，你可将高可用性节点放置在单独的容错域 (FD) 和更新域 (UD) 中。若要将 Azure VM 放入同一可用性集，必须将这些 VM 部署到同一云服务中。只有同一云服务中的节点可加入同一可用性集。有关详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。
 
 ### WSFC 群集在 Azure 网络中的行为
 
@@ -97,7 +97,7 @@ Azure 中的 DHCP 服务不符合 RFC 标准，可能会导致创建某些 WSFC 
 
 可通过将未使用的静态 IP 地址（如 169.254.1.1 等链接本地 IP 地址）分配给群集网络名称，让群集网络名称联机，从而避免这种情况发生。若要简化此过程，请参阅[在 Azure 中针对 AlwaysOn 可用性组配置 Windows 故障转移群集](http://social.technet.microsoft.com/wiki/contents/articles/14776.configuring-windows-failover-cluster-in-windows-azure-for-alwayson-availability-groups.aspx)。
 
-有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)。
+有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)。
 
 ### 可用性组侦听器支持
 
@@ -107,8 +107,8 @@ Azure 中的 DHCP 服务不符合 RFC 标准，可能会导致创建某些 WSFC 
 
 如果可用性组跨多个 Azure 子网（例如，跨 Azure 区域的部署），则客户端连接字符串必须包含“**MultisubnetFailover=True**”。这会导致与不同子网中的副本建立并行连接。有关设置侦听器的说明，请参阅
 
-- [在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)。
-- [在 Azure 中配置 AlwaysOn 可用性组的外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener)。
+- [在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)。
+- [在 Azure 中配置 AlwaysOn 可用性组的外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)。
 
 你仍可通过直接连接到服务实例，单独连接到每个可用性副本。此外，由于 AlwaysOn 可用性组与数据库镜像客户端向后兼容，因此可以像数据库镜像伙伴一样连接到可用性副本，只要这些副本配置得类似于数据库镜像即可：
 
@@ -138,15 +138,15 @@ Azure 磁盘中的异地复制不支持将同一数据库的数据文件和日�
 
 ## 后续步骤
 
-如果需要创建使用 SQL Server 的 Azure 虚拟机，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。
+如果需要创建使用 SQL Server 的 Azure 虚拟机，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)。
 
-若要使 Azure VM 上运行的 SQL Server 保持最佳性能，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)中的指导。
+若要使 Azure VM 上运行的 SQL Server 保持最佳性能，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)中的指导。
 
-有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 ### 其他资源：
 
-- [在 Azure 中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine)
+- [在 Azure 中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
 - [在 Azure VM 中创建用于 AlwaysOn 可用性组的 WSFC 群集](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 
 <!---HONumber=Mooncake_0215_2016-->

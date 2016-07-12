@@ -13,15 +13,15 @@
     wacn.date="06/14/2016"/>
 
 # 弹性数据库工具词汇表
-Azure SQL 数据库的[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)的术语定义如下。这些工具用于管理[分片映射](/documentation/articles/sql-database-elastic-scale-shard-map-management)，包括[客户端库](/documentation/articles/sql-database-elastic-database-client-library)、[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、[弹性池](/documentation/articles/sql-database-elastic-pool)和[查询](/documentation/articles/sql-database-elastic-query-overview)。
+Azure SQL 数据库的[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction/)的术语定义如下。这些工具用于管理[分片映射](/documentation/articles/sql-database-elastic-scale-shard-map-management/)，包括[客户端库](/documentation/articles/sql-database-elastic-database-client-library/)、[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)、[弹性池](/documentation/articles/sql-database-elastic-pool/)和[查询](/documentation/articles/sql-database-elastic-query-overview/)。
 
-这些术语用于[使用弹性数据库工具添加分片](/documentation/articles/sql-database-elastic-scale-add-a-shard)和[使用 RecoveryManager 类解决分片映射问题](/documentation/articles/sql-database-elastic-database-recovery-manager)。
+这些术语用于[使用弹性数据库工具添加分片](/documentation/articles/sql-database-elastic-scale-add-a-shard/)和[使用 RecoveryManager 类解决分片映射问题](/documentation/articles/sql-database-elastic-database-recovery-manager/)。
 
 ![灵活扩展术语][1]
 
 **数据库**：Azure SQL 数据库。
 
-**数据相关的路由**：使应用程序能够连接到给定了特定分片键的分片的功能。请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。与**[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)**进行比较。
+**数据相关的路由**：使应用程序能够连接到给定了特定分片键的分片的功能。请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)。与**[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying/)**进行比较。
 
 **全局分片映射**：**分片集**内分片键及其各自分片之间的映射。全局分片映射存储在**分片映射管理器**中。与**局部分片映射**进行比较。
 

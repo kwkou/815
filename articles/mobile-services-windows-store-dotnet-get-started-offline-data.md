@@ -238,7 +238,7 @@
 
 * [使用移动服务脱机支持处理冲突]
 
-* [使用移动服务中的软删除](/documentation/articles/mobile-services-using-soft-delete)
+* [使用移动服务中的软删除](/documentation/articles/mobile-services-using-soft-delete/)
 
 <!-- Anchors. -->
 [Update the app to support offline features]: #enable-offline-app
@@ -259,14 +259,14 @@
 
 
 <!-- URLs. -->
-[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
+[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/
 [TodoList 脱机示例]: http://go.microsoft.com/fwlink/?LinkId=394777
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
-[Getting Started]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
-[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[Getting Started]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 [SQLite for Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkId=397953
-[软删除]: /documentation/articles/mobile-services-using-soft-delete
+[软删除]: /documentation/articles/mobile-services-using-soft-delete/
 
 
 

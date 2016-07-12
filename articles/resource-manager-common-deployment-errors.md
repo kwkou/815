@@ -16,9 +16,9 @@
 
 # 解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误
 
-本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。<!-- 有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。-->
+本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。<!-- 有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。-->
 
-如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源）](/documentation/articles/resource-group-template-deploy)。
+如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源）](/documentation/articles/resource-group-template-deploy/)。
 
 ## 无效的模板或资源
 
@@ -100,7 +100,7 @@
 
 ## 超出配额
 
-当部署超出配额（可能是根据资源组、订阅、帐户和其他范围指定的）时，你可能会遇到问题。例如，订阅可能配置为限制某个区域的核心数目。如果你尝试部署超过允许核心数目的虚拟机，将收到指出超过配额的错误消息。有关完整的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
+当部署超出配额（可能是根据资源组、订阅、帐户和其他范围指定的）时，你可能会遇到问题。例如，订阅可能配置为限制某个区域的核心数目。如果你尝试部署超过允许核心数目的虚拟机，将收到指出超过配额的错误消息。有关完整的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
 
 若要检查订阅的核心配额，可以使用 Azure CLI 中的 `azure vm list-usage` 命令。以下示例演示了核心配额为 4 的免费试用帐户：
 
@@ -211,7 +211,7 @@
 
 ## 自定义脚本扩展错误
 
-如果在部署虚拟机时遇到自定义脚本扩展错误，请参阅 [Troubleshooting Azure Windows VM extension failures（排查 Azure Windows VM 扩展失败错误）](/documentation/articles/virtual-machines-windows-extensions-troubleshoot)或 [Troubleshooting Azure Linux VM extension failures（排查 Azure Linux VM 扩展失败错误）](/documentation/articles/virtual-machines-linux-extensions-troubleshoot)。
+如果在部署虚拟机时遇到自定义脚本扩展错误，请参阅 [Troubleshooting Azure Windows VM extension failures（排查 Azure Windows VM 扩展失败错误）](/documentation/articles/virtual-machines-windows-extensions-troubleshoot/)或 [Troubleshooting Azure Linux VM extension failures（排查 Azure Linux VM 扩展失败错误）](/documentation/articles/virtual-machines-linux-extensions-troubleshoot/)。
 
 ## 了解部署何时准备就绪 
 
@@ -221,7 +221,7 @@ Azure Resource Manager 部署成功返回所有提供程序时，将报告部署
 
 ## 后续步骤
 
-- 若要了解审核操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit)。
-- 若要了解部署期间为确定错误执行哪些操作，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
+- 若要了解审核操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit/)。
+- 若要了解部署期间为确定错误执行哪些操作，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
 
 <!---HONumber=Mooncake_0620_2016-->

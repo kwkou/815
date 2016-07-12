@@ -13,15 +13,15 @@
 
 # 具有弹性数据库工具和行级安全性的多租户应用程序 
 
-[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-get-started)和[行级安全性 (RLS)](https://msdn.microsoft.com/zh-cn/library/dn765131) 提供了一组强大功能，让你灵活高效地缩放装有 Azure SQL 数据库的多租户应用程序与的数据层。本文将演示如何使用 **ADO.NET SqlClient** 和/或**实体框架**，同时运用这些技术来构建具有高度可伸缩性数据层、支持多租户分片的应用程序。
+[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-get-started/)和[行级安全性 (RLS)](https://msdn.microsoft.com/zh-cn/library/dn765131) 提供了一组强大功能，让你灵活高效地缩放装有 Azure SQL 数据库的多租户应用程序与的数据层。本文将演示如何使用 **ADO.NET SqlClient** 和/或**实体框架**，同时运用这些技术来构建具有高度可伸缩性数据层、支持多租户分片的应用程序。
 
 * **弹性数据库工具**可让开发人员使用一组 .NET 库和 Azure 服务模板通过行业标准分片实践扩大应用程序的数据层。使用弹性数据库客户端库管理分片有助于自动化和简化通常与分片关联的许多基础结构任务。 
 
-* **行级安全性**可让开发人员使用安全策略来筛选掉不属于执行查询的租户的行，从而将多个租户的数据存储在同一个数据库中。集中化数据库而不是应用程序中的 RLS 访问逻辑可以简化维护，降低由于应用程序代码库不断增长而带来的出错风险。RLS 需要最新的 [Azure SQL 数据库更新版 (V12)](/documentation/articles/sql-database-v12-whats-new)。
+* **行级安全性**可让开发人员使用安全策略来筛选掉不属于执行查询的租户的行，从而将多个租户的数据存储在同一个数据库中。集中化数据库而不是应用程序中的 RLS 访问逻辑可以简化维护，降低由于应用程序代码库不断增长而带来的出错风险。RLS 需要最新的 [Azure SQL 数据库更新版 (V12)](/documentation/articles/sql-database-v12-whats-new/)。
 
 将这些功能一起使用，应用程序可以在同一个分片数据库中存储多个租户的数据，从而带来成本节约和效率提高的好处。同时，应用程序仍然能够为需要更严格性能保证的“高级”租户提供隔离的单租户分片，因为多租户分片不保证在租户之间平衡分配资源。
 
-简单而言，弹性数据库客户端库的[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing) API 会自动将租户连接到包含其分片键（通常为“TenantId”）的正确分片数据库。连接后，数据库中的 RLS 安全策略可确保租户只能访问包含其 TenantId 的行。假设条件是所有表都包含一个 TenantId 列用于指示哪些行属于每个租户。
+简单而言，弹性数据库客户端库的[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/) API 会自动将租户连接到包含其分片键（通常为“TenantId”）的正确分片数据库。连接后，数据库中的 RLS 安全策略可确保租户只能访问包含其 TenantId 的行。假设条件是所有表都包含一个 TenantId 列用于指示哪些行属于每个租户。
 
 ![应用程序体系结构博客][1]
 
@@ -33,7 +33,7 @@
 * 下载示例项目：[Azure SQL 的弹性数据库工具 - 多租户分片](http://go.microsoft.com/?linkid=9888163)
   * 在 **Program.cs** 的开头填入数据库的信息 
 
-此项目通过添加对多租户分片数据库的支持，扩展了 [Azure SQL 的弹性数据库工具 - 实体框架集成](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio)中所述的项目。它将构建一个用于创建博客和文章的简单控制台应用程序，其中包含四个租户和两个多租户分片数据库，如上图中所示。
+此项目通过添加对多租户分片数据库的支持，扩展了 [Azure SQL 的弹性数据库工具 - 实体框架集成](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/)中所述的项目。它将构建一个用于创建博客和文章的简单控制台应用程序，其中包含四个租户和两个多租户分片数据库，如上图中所示。
 
 构建并运行应用程序。这会引导弹性数据库工具的分片映射管理器，并运行以下测试：
 
@@ -186,7 +186,7 @@
 
 RLS 在 T-SQL 中实现：用户定义的函数用于定义访问逻辑，安全策略可将此函数绑定到任意数量的表。对于此项目，该函数只会验证应用程序（而不是其他某个 SQL 用户）是否已连接到数据库，以及存储在 SESSION\_CONTEXT 中的“TenantId”是否与给定行的 TenantId 相匹配。筛选谓词将允许满足这些条件的行通过 SELECT、UPDATE 和 DELETE 查询的筛选；阻塞谓词将阻止系统对违反这些条件的行执行 INSERT 或 UPDATE 操作。SESSION\_CONTEXT 在未设置的情况下会返回 NULL，将无法查看或插入任何行。
 
-若要启用 RLS，请使用 Visual Studio (SSDT)、SSMS 或项目中包含的 PowerShell 脚本对所有分片执行以下 T-SQL（或者，如果你正在使用[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview)，可以使用它来对所有分片自动执行此 T-SQL）：
+若要启用 RLS，请使用 Visual Studio (SSDT)、SSMS 或项目中包含的 PowerShell 脚本对所有分片执行以下 T-SQL（或者，如果你正在使用[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview/)，可以使用它来对所有分片自动执行此 T-SQL）：
 
 ```
 CREATE SCHEMA rls -- separate schema to organize RLS objects 

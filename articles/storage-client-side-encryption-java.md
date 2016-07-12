@@ -240,6 +240,6 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 - 下载适用于 Java 的 Azure 密钥保管库 Maven 程序包：
 	- [核心](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault-core)程序包
 	- [客户端](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault)程序包
-- 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis)  
+- 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/)  
 
 <!---HONumber=Mooncake_0405_2016-->

@@ -60,7 +60,7 @@
 		}
 	}
 
-若要使用此代码段，需要创建证书文件并将其上载到 Azure。有关详细信息，请参阅 [Upload an Azure Management API Management Certificate（上载 Azure Management API 管理证书）](/documentation/articles/azure-api-management-certs)。
+若要使用此代码段，需要创建证书文件并将其上载到 Azure。有关详细信息，请参阅 [Upload an Azure Management API Management Certificate（上载 Azure Management API 管理证书）](/documentation/articles/azure-api-management-certs/)。
 
 ##列出群集
 
@@ -121,19 +121,19 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 **提交 Hive 作业**
 
-请参阅 [Run Hive queries using .NET SDK（使用 .NET SDK 运行 Hive 查询）](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk)。
+请参阅 [Run Hive queries using .NET SDK（使用 .NET SDK 运行 Hive 查询）](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)。
 
 **提交 Pig 作业**
 
-请参阅 [Run Pig jobs using .NET SDK（使用 .NET SDK 运行 Pig 作业）](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)。
+请参阅 [Run Pig jobs using .NET SDK（使用 .NET SDK 运行 Pig 作业）](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)。
 
 **提交 Sqoop 作业**
 
-请参阅[将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk)。
+请参阅[将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/)。
 
 **提交 Oozie 作业**
 
-请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie)。
+请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie/)。
 
 ##将数据上载到 Azure Blob 存储
 请参阅[将数据上载到 HDInsight][hdinsight-upload-data]。
@@ -152,18 +152,18 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters-v1#configuration
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters-v1/#configuration
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
-[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 
 
 

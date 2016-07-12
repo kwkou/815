@@ -16,8 +16,8 @@
 # 在 Azure 中配置自定义域名
 
 > [AZURE.SELECTOR]
-- [使用外部域名的 Web 应用](/documentation/articles/web-sites-custom-domain-name)
-- [使用流量管理器的 Web 应用](/documentation/articles/web-sites-traffic-manager-custom-domain-name)
+- [使用外部域名的 Web 应用](/documentation/articles/web-sites-custom-domain-name/)
+- [使用流量管理器的 Web 应用](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
 
 当你创建 Web 应用时，Azure 会将其分配给 chinacloudsites.cn 的子域。例如，如果你的 Web 应用名为 **contoso**，则 URL 为 **contoso.chinacloudsites.cn**。Azure 还会将分配一个虚拟 IP 地址。
 

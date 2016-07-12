@@ -13,7 +13,7 @@
 	wacn.date="06/24/2016"/>
 
 # Azure AD 和应用程序：将用户分配到应用程序
-在将用户和组分配到应用程序之前，你必须要求用户分配。若要了解如何要求用户分配，请参阅 [Requiring User Assignment](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment)（要求用户分配）一文。
+在将用户和组分配到应用程序之前，你必须要求用户分配。若要了解如何要求用户分配，请参阅 [Requiring User Assignment](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment/)（要求用户分配）一文。
 
 ## 将用户分配到应用程序
 1. 使用管理员帐户登录到 Azure 门户预览。

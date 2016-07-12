@@ -15,7 +15,7 @@
 # 在本地群集上部署和升级应用程序入门
 Azure Service Fabric SDK 包含完整的本地开发环境，可让你快速地在本地群集上开始部署和管理应用程序。在本文中，你将从 Windows PowerShell 创建本地群集、将现有应用程序部署到该群集，然后将该应用程序升级为新版本。
 
-> [AZURE.NOTE] 本文假设你已[设置开发环境](/documentation/articles/service-fabric-get-started)。
+> [AZURE.NOTE] 本文假设你已[设置开发环境](/documentation/articles/service-fabric-get-started/)。
 
 ## 创建本地群集
 Service Fabric 群集代表一组可在其中部署应用程序的硬件资源。通常，群集由任意数量的计算机（从 5 台到数千台）组成。不过，Service Fabric SDK 包含可在一台计算机上运行的群集配置。
@@ -42,7 +42,7 @@ SDK 提供两种方式来设置本地群集：Windows PowerShell 脚本和本地
     现已准备好将应用程序部署到群集。
 
 ## 部署应用程序
-Service Fabric SDK 包含一组丰富的框架以及用于创建应用程序的开发人员工具。如果你有兴趣学习如何在 Visual Studio 中创建应用程序，请参阅[在 Visual Studio 中创建你的第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio)。
+Service Fabric SDK 包含一组丰富的框架以及用于创建应用程序的开发人员工具。如果你有兴趣学习如何在 Visual Studio 中创建应用程序，请参阅[在 Visual Studio 中创建你的第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)。
 
 在本教程中，我们将使用现有的示例应用程序（称为 WordCount），以便我们可以专注于平台的管理层面，包括部署、监视和升级。
 
@@ -125,7 +125,7 @@ Service Fabric SDK 包含一组丰富的框架以及用于创建应用程序的�
 
     ![在 Service Fabric 资源管理器中查看应用程序详细信息][sfx-service-overview]
 
-    > [AZURE.NOTE] 要了解有关 Service Fabric Explorer 的详细信息，请参阅[使用 Service Fabric Explorer 可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster)。
+    > [AZURE.NOTE] 要了解有关 Service Fabric Explorer 的详细信息，请参阅[使用 Service Fabric Explorer 可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
 
 ## 升级应用程序
 Service Fabric 在应用程序推出于群集时监视其运行状况，从而提供无需停机的升级。让我们对 WordCount 应用程序执行简单的升级。
@@ -192,9 +192,9 @@ Service Fabric 在应用程序推出于群集时监视其运行状况，从而�
 4. 要完全删除群集，请在系统托盘应用中单击“删除本地群集”。请注意，此选项会导致下次在 Visual Studio 中按 F5 时部署较慢。仅当在一段时间内不想使用本地群集时，或者当需要回收资源时，才使用此选项。
 
 ## 后续步骤
-- 现在，你已部署并升级某些预先生成的应用程序，接下来可以[尝试在 Visual Studio 中生成你自己的应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio)。
+- 现在，你已部署并升级某些预先生成的应用程序，接下来可以[尝试在 Visual Studio 中生成你自己的应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)。
 - 也可以对 Azure 群集执行本文中所述的对本地群集执行的所有操作。
-- 本文中执行的升级非常简单。若要深入了解 Service Fabric 升级的功能和灵活性，请参阅[升级文档](/documentation/articles/service-fabric-application-upgrade)。
+- 本文中执行的升级非常简单。若要深入了解 Service Fabric 升级的功能和灵活性，请参阅[升级文档](/documentation/articles/service-fabric-application-upgrade/)。
 
 <!-- Images -->
 

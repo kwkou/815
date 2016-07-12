@@ -31,7 +31,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 - 此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders)中指定的所有系统数据。
 - 用户指定的日志文件。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 如何启用扩展
 通过 Azure PowerShell 或 Azure CLI 脚本可以启用扩展。
@@ -40,7 +40,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 
 ## 先决条件
 1. Azure Linux Agent 2.0.6 版或更高版本。请注意，大部分 Azure VM Linux 库映像都包含 2.0.6 版本或更高版本。你可以运行 **WAAgent -version** 以确认 VM 中安装的版本。如果 VM 正在运行的版本早于 2.0.6，则可以按照以下[说明](https://github.com/Azure/WALinuxAgent "说明")进行更新。
-- [Azure CLI](/documentation/articles/xplat-cli-install)。请按照[此指南](/documentation/articles/xplat-cli-install)中的说明在计算机上设置 Azure CLI 环境。安装了 Azure CLI 之后，你可以从命令行界面（Bash、终端、命令提示符）使用 **azure** 命令访问 Azure CLI 命令。例如，运行 **azure vm extension set --help** 可以获取详细用法，运行 **azure login -e AzureChinaCloud** 可以登录到 Azure，运行 **azure vm list** 可以列出你在 Azure 上拥有的所有虚拟机。
+- [Azure CLI](/documentation/articles/xplat-cli-install/)。请按照[此指南](/documentation/articles/xplat-cli-install/)中的说明在计算机上设置 Azure CLI 环境。安装了 Azure CLI 之后，你可以从命令行界面（Bash、终端、命令提示符）使用 **azure** 命令访问 Azure CLI 命令。例如，运行 **azure vm extension set --help** 可以获取详细用法，运行 **azure login -e AzureChinaCloud** 可以登录到 Azure，运行 **azure vm list** 可以列出你在 Azure 上拥有的所有虚拟机。
 - 用于存储数据的存储帐户。你将需要以前创建的存储帐户名称和访问密钥，以将数据上载到存储中。
 
 
@@ -113,7 +113,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 
 
 ## 查看数据
-性能和诊断数据存储在 Azure 存储表中。查看[本文](/documentation/articles/storage-ruby-how-to-use-table-storage)了解如何使用 Azure CLI 脚本访问存储表中的数据。
+性能和诊断数据存储在 Azure 存储表中。查看[本文](/documentation/articles/storage-ruby-how-to-use-table-storage/)了解如何使用 Azure CLI 脚本访问存储表中的数据。
 
 此外，可以使用以下 UI 工具来访问数据：
 

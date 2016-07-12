@@ -2,8 +2,8 @@
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“移动服务”> 你的移动服务 >“仪表板”，并记下“移动服务 URL”值。
 
 2. 使用一个或多个以下身份验证提供者注册你的应用程序：
-   * [Microsoft](/documentation/articles/mobile-services-how-to-register-microsoft-authentication)
-   * [Azure Active Directory](/documentation/articles/mobile-services-how-to-register-active-directory-authentication)。 
+   * [Microsoft](/documentation/articles/mobile-services-how-to-register-microsoft-authentication/)
+   * [Azure Active Directory](/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)。 
    
 	记下标识提供者生成的客户端标识和客户端机密值。不要分发或共享客户端机密。
 

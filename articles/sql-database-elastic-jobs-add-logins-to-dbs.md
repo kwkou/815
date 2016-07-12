@@ -16,7 +16,7 @@
 **弹性数据库作业**功能（预览版）可让你对 Azure SQL 数据库中包含自定义数据库集合、**弹性数据库池**或**弹性数据库池分片集**的一组数据库运行 Transact-SQL 脚本。若要运行脚本，必须将具有相应权限的用户添加到要执行作业的每个数据库中。有关详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx?f=255&MSPPError=-2147217396)或[将用户添加到 SQL Azure 数据库](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/)
 
 ## 先决条件
-* 安装[弹性作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation)。 
+* 安装[弹性作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation/)。 
 
 ## 如何将用户添加到数据库
 
@@ -32,7 +32,7 @@
 
 ## 后续步骤
 
-若要使用 PowerShell 创建作业，请参阅[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell)。
+若要使用 PowerShell 创建作业，请参阅[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell/)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

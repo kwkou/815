@@ -23,7 +23,7 @@
 
 在开始阅读本教程前，你必须具有：
 
-- **HDInsight 中的 Hadoop 群集**。请参阅[创建群集和 SQL 数据库](/documentation/articles/hdinsight-use-sqoop#create-cluster-and-sql-database)。
+- **HDInsight 中的 Hadoop 群集**。请参阅[创建群集和 SQL 数据库](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
 
 ## 使用 .NET SDK 运行 Sqoop
 
@@ -105,9 +105,9 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 现在你已经学习了如何使用 Sqoop。若要了解更多信息，请参阅以下文章：
 
-- [将 Oozie 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-oozie)：在 Oozie 工作流中使用 Sqoop 操作。
-- [使用 HDInsight 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)：使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 Azure SQL 数据库。
-- [将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data)：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
+- [将 Oozie 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-oozie/)：在 Oozie 工作流中使用 Sqoop 操作。
+- [使用 HDInsight 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data/)：使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 Azure SQL 数据库。
+- [将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data/)：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
 
 
 

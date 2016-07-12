@@ -24,7 +24,7 @@
 向通知中心注册设备是通过使用“注册”或“安装”来完成的。
 
 #### 注册
-注册是通知中心的子实体，它将设备的平台通知服务 (PNS) 句柄与标记（有时还包括模板）相关联。PNS 句柄可能是 ChannelURI、设备令牌或 GCM 注册 ID。标记用于将通知路由到一组正确的设备句柄。有关详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-routing-tag-expressions)。模板用于实现按注册转换。有关详细信息，请参阅[模板](/documentation/articles/notification-hubs-templates)。
+注册是通知中心的子实体，它将设备的平台通知服务 (PNS) 句柄与标记（有时还包括模板）相关联。PNS 句柄可能是 ChannelURI、设备令牌或 GCM 注册 ID。标记用于将通知路由到一组正确的设备句柄。有关详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-routing-tag-expressions/)。模板用于实现按注册转换。有关详细信息，请参阅[模板](/documentation/articles/notification-hubs-templates/)。
 
 #### 安装
 安装是增强型的注册，包含推送相关的属性包。它是最新且最佳的设备注册方式。但是，客户端 .NET SDK（[用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)）目前不支持安装。这意味着，如果你要从客户端设备本身注册，则必须使用[通知中心 REST API](https://msdn.microsoft.com/library/mt621153.aspx) 方法来支持安装。如果使用后端服务，则应能够使用[用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
@@ -79,7 +79,7 @@
 
 #### 模板
 
-如果你使用[模板](/documentation/articles/notification-hubs-templates)，则设备安装还会保存与设备关联的、采用 JSON 格式的所有模板（请参阅上面的示例）。模板名称有助于将目标指向相同设备的不同模板。
+如果你使用[模板](/documentation/articles/notification-hubs-templates/)，则设备安装还会保存与设备关联的、采用 JSON 格式的所有模板（请参阅上面的示例）。模板名称有助于将目标指向相同设备的不同模板。
 
 请注意，每个模板名称将映射到一个模板主体和一组可选的标记。此外，每个平台可能有附加的模板属性。对于 Windows 应用商店（使用 WNS）和 Windows Phone 8（使用 MPNS），模板中还可能会有一组附加标头。对于 APNs，可以将过期属性设为常量或模板表达式。有关完整的安装属性列表，请参阅[使用 REST 创建或覆盖安装](https://msdn.microsoft.com/library/azure/mt621153.aspx)主题。
 
@@ -96,8 +96,8 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 
 ![](./media/notification-hubs-registration-management/notification-hubs-registering-on-device.png)
 
-设备首先从 PNS 检索 PNS 句柄，然后直接向通知中心进行注册。注册成功之后，应用后端即可发送以该注册为目标的通知。有关如何发送通知的详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-routing-tag-expressions)。
-请注意，在此情况下，将只使用“侦听”权限从设备访问通知中心。有关详细信息，请参阅[安全性](/documentation/articles/notification-hubs-security)。
+设备首先从 PNS 检索 PNS 句柄，然后直接向通知中心进行注册。注册成功之后，应用后端即可发送以该注册为目标的通知。有关如何发送通知的详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-routing-tag-expressions/)。
+请注意，在此情况下，将只使用“侦听”权限从设备访问通知中心。有关详细信息，请参阅[安全性](/documentation/articles/notification-hubs-security/)。
 
 从设备注册是最简单的方法，但存在一些缺点。
 第一个缺点是客户端应用只能在它处于活动状态时更新其标记。例如，如果用户有两台设备要注册与体育团队相关的标记，则当第一台设备注册附加标记（例如，Seahawks）时，第二台设备将不会收到有关 Seahawks 的通知，直到第二次在第二台设备上执行应用程序为止。更概括地说，如果标记受多个设备的影响，则从后端管理标记是理想的选择。

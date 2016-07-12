@@ -15,8 +15,8 @@
 # 为 Azure 云服务配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-custom-domain-name-portal)
-- [Azure 经典管理门户](/documentation/articles/cloud-services-custom-domain-name)
+- [Azure 门户预览](/documentation/articles/cloud-services-custom-domain-name-portal/)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-custom-domain-name/)
 
 创建云服务时，Azure 会将其分配给 **chinacloudapp.cn** 的子域。例如，如果你的云服务名为"contoso"，你的用户将能够访问类似 http://contoso.chinacloudapp.cn 的 URL 上的应用程序。Azure 还会将分配一个虚拟 IP 地址。
 
@@ -25,7 +25,7 @@
 你是否已经了解什么是 CNAME 和 A 记录？ [跳过解释](#add-a-cname-record-for-your-custom-domain)。
 
 > [AZURE.NOTE]
-本任务中的过程适用于 Azure 云服务。对于应用程序服务，请参阅[此文章](/documentation/articles/web-sites-custom-domain-name)。对于存储帐户，请参阅[此文章](/documentation/articles/storage-custom-domain-name)。
+本任务中的过程适用于 Azure 云服务。对于应用程序服务，请参阅[此文章](/documentation/articles/web-sites-custom-domain-name/)。对于存储帐户，请参阅[此文章](/documentation/articles/storage-custom-domain-name/)。
 
 <p/>
 
@@ -50,7 +50,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 > [AZURE.NOTE]
 由于 A 记录映射到静态 IP 地址，它无法动态解析您的云服务的 IP 地址的更改。将在您第一次部署到空槽（无论是生产还是临时）时分配由您的云服务所使用的 IP 地址。 如果您删除针对该槽的部署，则 Azure 将释放该 IP 地址，并且可能为将来任何针对该槽的部署提供新的 IP 地址。
 >
-> 为方便起见，在临时和生产部署之间切换或对现有部署执行就地升级时，将保留给定部署槽（生产或临时）的 IP 地址。有关执行这些操作的详细信息，请参阅[如何管理云服务](/documentation/articles/cloud-services-how-to-manage)。
+> 为方便起见，在临时和生产部署之间切换或对现有部署执行就地升级时，将保留给定部署槽（生产或临时）的 IP 地址。有关执行这些操作的详细信息，请参阅[如何管理云服务](/documentation/articles/cloud-services-how-to-manage/)。
 
 
 ## 为自定义域添加 CNAME 记录
@@ -65,7 +65,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
             
         **或者**
   
-    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
+    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
 
         ```powershell
         Get-AzureDeployment -ServiceName yourservicename | Select Url
@@ -105,7 +105,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 
         **或者**
 
-    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
+    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
 
         ```powershell
         get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
@@ -133,15 +133,15 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 此示例展示了如何为根域创建 A 记录。如果希望创建一个通配符条目来涵盖所有子域，则输入 '__*__' 作为子域。
 
 >[AZURE.WARNING]
-Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保留 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip)以确保你的 IP 地址不会更改。
+Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保留 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip/)以确保你的 IP 地址不会更改。
 
 ## 后续步骤
 
-* [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
-* [如何将 CDN 内容映射到自定义域](/documentation/articles/cdn-map-content-to-custom-domain)
-* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)。
-* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
-* 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
+* [如何管理云服务](/documentation/articles/cloud-services-how-to-manage/)
+* [如何将 CDN 内容映射到自定义域](/documentation/articles/cdn-map-content-to-custom-domain/)
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal/)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal/)。
+* 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal/)。
 
 [Expose Your Application on a Custom Domain]: #access-app
 [Add a CNAME Record for Your Custom Domain]: #add-cname

@@ -15,12 +15,12 @@
 # 使用 PowerShell 配置与虚拟网络的点到站点连接
 
 > [AZURE.SELECTOR]
-- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps)
-- [经典管理门户](/documentation/articles/vpn-gateway-point-to-site-create)
+- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
+- [经典管理门户](/documentation/articles/vpn-gateway-point-to-site-create/)
 
 点到站点设置可让你从客户端计算机单独创建与虚拟网络的安全连接。可通过从客户端计算机启动连接来建立 VPN 连接。如果你要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则点到站点连接是绝佳的解决方案。
 
-点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)和 [About cross-premises connections（关于跨界连接）](/documentation/articles/vpn-gateway-cross-premises-options)。
+点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)和 [About cross-premises connections（关于跨界连接）](/documentation/articles/vpn-gateway-cross-premises-options/)。
 
 本文适用于点到站点 VPN 网关连接，此类连接可连接到使用 **Resource Manager 部署模型**（服务管理）创建的虚拟网络。
 
@@ -59,7 +59,7 @@
 
 - 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，你可以注册一个[试用版](/pricing/1rmb-trial)。
 	
-- 你需要安装 Azure Resource Manager PowerShell cmdlet（1.0.2 或更高版本）。有关安装 PowerShell cmdlet 的详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
+- 你需要安装 Azure Resource Manager PowerShell cmdlet（1.0.2 或更高版本）。有关安装 PowerShell cmdlet 的详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。
 
 ## 为 Azure 配置点到站点连接
 
@@ -119,7 +119,7 @@
 		$pip = New-AzureRmPublicIpAddress -Name $GWIPName -ResourceGroupName $RG -Location $Location -AllocationMethod Dynamic
 		$ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip
 		
-10. 将根证书 .cer 文件上载到 Azure。可以使用来自企业证书环境的根证书，或者使用自签名的根证书。最多可以上载 20 个根证书。有关使用 makecert 创建自签名根证书的说明，请参阅 [Working with self-signed root certificates for Point-to-Site configurations（为点到站点配置使用自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site)。请注意，.cer 文件不应包含根证书的私钥。
+10. 将根证书 .cer 文件上载到 Azure。可以使用来自企业证书环境的根证书，或者使用自签名的根证书。最多可以上载 20 个根证书。有关使用 makecert 创建自签名根证书的说明，请参阅 [Working with self-signed root certificates for Point-to-Site configurations（为点到站点配置使用自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site/)。请注意，.cer 文件不应包含根证书的私钥。
 	
 	以下是其外观的示例。上载公开证书数据的较难部分是必须复制并粘贴整个字符串，且不包含空格。否则，上载将无法进行。你需要针对此步骤使用自己的证书 .cer 文件。请勿尝试从下面复制并粘贴示例。
 
@@ -142,7 +142,7 @@
 
     	"https://mdsbrketwprodsn1prod.blob.core.chinacloudapi.cn/cmakexe/4a431aa7-b5c2-45d9-97a0-859940069d3f/amd64/4a431aa7-b5c2-45d9-97a0-859940069d3f.exe?sv=2014-02-14&sr=b&sig=jSNCNQ9aUKkCiEokdo%2BqvfjAfyhSXGnRG0vYAv4efg0%3D&st=2016-01-08T07%3A10%3A08Z&se=2016-01-08T08%3A10%3A08Z&sp=r&fileExtension=.exe"
 	
-2. 生成并安装从客户端计算机上的根证书创建的客户端证书 (*.pfx)。可以使用你所习惯的任何安装方法。如果你使用自签名根证书但不熟悉如何执行此操作，可以参考 [Working with self-signed root certificates for Point-to-Site configurations（使用用于点到站点配置的自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site)。
+2. 生成并安装从客户端计算机上的根证书创建的客户端证书 (*.pfx)。可以使用你所习惯的任何安装方法。如果你使用自签名根证书但不熟悉如何执行此操作，可以参考 [Working with self-signed root certificates for Point-to-Site configurations（使用用于点到站点配置的自签名根证书）](/documentation/articles/vpn-gateway-certificates-point-to-site/)。
 
 3. 若要连接到 VNet，请在客户端计算机上，导航到 VPN 连接，找到你刚创建的 VPN 连接。其名称将与虚拟网络的名称相同。单击“连接”。可能会出现与使用证书相关的弹出消息。如果出现此消息，请单击“继续”以使用提升的权限。
 
@@ -234,7 +234,7 @@
 
 ## 后续步骤
 
-你可以将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)以获取相关步骤。
+你可以将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)以获取相关步骤。
 
 
 

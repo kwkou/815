@@ -3,11 +3,11 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 # Client compatibility issues
 > [AZURE.SELECTOR]
-- [All issues](/documentation/articles/mysql-database-enus-tech-faq)
-- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry)
-- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry)
-- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry)
-- [Compatibility issues](/documentation/articles/mysql-database-enus-compatibilityinquiry)
+- [All issues](/documentation/articles/mysql-database-enus-tech-faq/)
+- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry/)
+- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry/)
+- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry/)
+- [Compatibility issues](/documentation/articles/mysql-database-enus-compatibilityinquiry/)
 
 MySQL Database on Azure uses MySQL Community Edition and is compatible with common MySQL management tools. During the actual operation and maintenance of MySQL Database on Azure, you may encounter compatibility issues with some versions of some clients. These issues are summarized below.
 

@@ -23,7 +23,7 @@
 在将内容传送到客户（流式传输实时事件或视频点播）时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。若要实现此目标，请执行以下操作：
 
 - 将你的流编码成多比特率（[自适应比特率](http://zh.wikipedia.org/wiki/自适性串流)）视频流（这将会负责处理质量和网络条件），并 
-- 使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将你的流动态地重新打包成不同的协议（这将会负责不同设备上的流式处理）。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。 
+- 使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将你的流动态地重新打包成不同的协议（这将会负责不同设备上的流式处理）。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。 
 
 ###清单文件 
 
@@ -65,14 +65,14 @@
 	
 ###动态清单
 
-在某些[情况](/documentation/articles/media-services-dynamic-manifest-overview#scenarios)下，默认资产的清单文件中描述的内容无法满足客户端所需的灵活性。例如：
+在某些[情况](/documentation/articles/media-services-dynamic-manifest-overview/#scenarios)下，默认资产的清单文件中描述的内容无法满足客户端所需的灵活性。例如：
 
 - 特定于设备：只传送内容播放设备所支持的指定再现内容和/或指定的语言轨迹（“再现内容筛选”）。 
 - 缩小清单以显示实时事件的子剪辑（“子剪辑筛选”）。
 - 修剪视频开头（“修剪视频”）。
 - 调整演播窗口，以便在播放器中提供长度有限的 DVR 窗口（“调整演播窗口”）。
  
-为实现这种灵活性，媒体服务会根据预定义的[筛选器](/documentation/articles/media-services-dynamic-manifest-overview#filters)提供**动态清单**。在你定义筛选器后，客户端将会使用筛选器来流式传输视频的特定再现内容或子剪辑。客户端将在流 URL 中指定筛选器。筛选器可应用到[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)支持的自适应比特率流协议：HLS、MPEG DASH、平滑流和 HDS。例如：
+为实现这种灵活性，媒体服务会根据预定义的[筛选器](/documentation/articles/media-services-dynamic-manifest-overview/#filters)提供**动态清单**。在你定义筛选器后，客户端将会使用筛选器来流式传输视频的特定再现内容或子剪辑。客户端将在流 URL 中指定筛选器。筛选器可应用到[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)支持的自适应比特率流协议：HLS、MPEG DASH、平滑流和 HDS。例如：
 
 包含筛选器的 MPEG DASH URL
 
@@ -83,7 +83,7 @@
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyLocalFilter)
 
 
-有关如何传送内容和构建流 URL 的详细信息，请参阅[传送内容概述](/documentation/articles/media-services-deliver-content-overview)。
+有关如何传送内容和构建流 URL 的详细信息，请参阅[传送内容概述](/documentation/articles/media-services-deliver-content-overview/)。
 
 
 >[AZURE.NOTE]请注意，动态清单不会更改资产和该资产的默认清单。客户端可以选择请求包含或不包含筛选器的流。
@@ -170,7 +170,7 @@
 
 以下主题讨论与筛选器相关的媒体服务实体。该主题还说明如何以编程方式创建筛选器。
 
-[使用 REST API 创建筛选器](/documentation/articles/media-services-rest-dynamic-manifest)。
+[使用 REST API 创建筛选器](/documentation/articles/media-services-rest-dynamic-manifest/)。
 
 ## 组合多个筛选器（筛选器组合）
 
@@ -201,7 +201,7 @@
 
 ##另请参阅
 
-[将内容传送到客户概述](/documentation/articles/media-services-deliver-content-overview)
+[将内容传送到客户概述](/documentation/articles/media-services-deliver-content-overview/)
 
 [renditions1]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter.png
 [renditions2]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter2.png

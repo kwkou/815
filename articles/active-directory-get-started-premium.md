@@ -119,7 +119,7 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 
 ## 后续步骤
 
-- [向“登录”和“访问面板”页添加公司品牌](/documentation/articles/active-directory-add-company-branding)
+- [向“登录”和“访问面板”页添加公司品牌](/documentation/articles/active-directory-add-company-branding/)
 
 
 <!--Image references-->

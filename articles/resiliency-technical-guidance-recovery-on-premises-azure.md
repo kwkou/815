@@ -25,12 +25,12 @@ Azure 提供一整套服务，可让你将本地数据中心扩展到 Azure，�
 <a id="networking"></a>
 ##联网
 
-可以使用 Azure 虚拟网络在 Azure 中创建一个逻辑上独立的部分，并可使用 IPsec 连接将其连接到本地数据中心或单个客户端计算机。通过虚拟网络，可轻松地利用 Azure 中按需可缩放的基础架构，同时可连接到本地数据和应用程序，包括 Windows Server、大型机和 UNIX 上运行的系统。有关详细信息，请参阅 [Azure 网络文档](/documentation/articles/virtual-networks-overview)。
+可以使用 Azure 虚拟网络在 Azure 中创建一个逻辑上独立的部分，并可使用 IPsec 连接将其连接到本地数据中心或单个客户端计算机。通过虚拟网络，可轻松地利用 Azure 中按需可缩放的基础架构，同时可连接到本地数据和应用程序，包括 Windows Server、大型机和 UNIX 上运行的系统。有关详细信息，请参阅 [Azure 网络文档](/documentation/articles/virtual-networks-overview/)。
 
 <a id="compute"></a>
 ##计算
 
-使用本地 Hyper-V 的客户可以将现有的虚拟机“提起并移动”到 Azure 和运行 Windows Server 2012（或更高版本）的服务提供程序，而不需要对 VM 进行更改或转换 VM 格式。有关详细信息，请参阅 [About disks and VHDs for Azure virtual machines（关于 Azure 虚拟机的磁盘和 VHD）](/documentation/articles/virtual-machines-linux-about-disks-vhds)。
+使用本地 Hyper-V 的客户可以将现有的虚拟机“提起并移动”到 Azure 和运行 Windows Server 2012（或更高版本）的服务提供程序，而不需要对 VM 进行更改或转换 VM 格式。有关详细信息，请参阅 [About disks and VHDs for Azure virtual machines（关于 Azure 虚拟机的磁盘和 VHD）](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。
 
 ##Azure Site Recovery
 
@@ -51,7 +51,7 @@ Azure 备份让你可以使用 Windows Server 2012（或更高版本）、Window
 
 使用增量备份时，只会将文件更改传输到云。这有助于高效使用存储空间、降低带宽消耗并支持多个数据版本的时间点恢复。你也可以选择使用其他功能，如数据保留策略、数据压缩和数据传输限制。使用 Azure 作为备份位置有一个明显的优点，那就是自动在“场外”备份。这样就不再需要额外对现场备份媒体进行保护了。
 
-有关详细信息，请参阅 [What is Azure Backup?（什么是 Azure 备份？）](/documentation/articles/backup-introduction-to-azure-backup)和 [Configure Azure Backup for DPM data（为 DMP 数据配置 Azure 备份）](https://technet.microsoft.com/zh-cn/library/jj728752.aspx)。
+有关详细信息，请参阅 [What is Azure Backup?（什么是 Azure 备份？）](/documentation/articles/backup-introduction-to-azure-backup/)和 [Configure Azure Backup for DPM data（为 DMP 数据配置 Azure 备份）](https://technet.microsoft.com/zh-cn/library/jj728752.aspx)。
 
 <a id="database"></a>
 ##数据库
@@ -74,7 +74,7 @@ AlwaysOn 可用性组可在本地和云中都有数据库副本的混合 IT 环�
 
 ![在混合云体系结构中将 SQL Server 备份到 Azure Blob 存储](./media/resiliency-technical-guidance-recovery-on-premises-azure/SQL_Server_Disaster_Recovery-6.png)
 
-有关详细信息，请参阅 [High availability and disaster recovery for SQL Server in Azure virtual machines（Azure 虚拟机中 SQL Server 的高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)和 [Backup and restore for SQL Server in Azure virtual machines（Azure 虚拟机中 SQL Server 的备份和还原）](/documentation/articles/virtual-machines-windows-sql-backup-recovery)。
+有关详细信息，请参阅 [High availability and disaster recovery for SQL Server in Azure virtual machines（Azure 虚拟机中 SQL Server 的高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)和 [Backup and restore for SQL Server in Azure virtual machines（Azure 虚拟机中 SQL Server 的备份和还原）](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。
 
 ##Azure 中的本地恢复清单
 
@@ -104,6 +104,6 @@ AlwaysOn 可用性组可在本地和云中都有数据库副本的混合 IT 环�
 
 ##后续步骤
 
-本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance)的系列教程的一部分。本系列教程的下一篇文章是[数据损坏或意外删除后进行恢复](/documentation/articles/resiliency-technical-guidance-recovery-data-corruption)。
+本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。本系列教程的下一篇文章是[数据损坏或意外删除后进行恢复](/documentation/articles/resiliency-technical-guidance-recovery-data-corruption/)。
 
 <!---HONumber=Mooncake_0627_2016-->

@@ -54,7 +54,7 @@
 
 ### 使用 Windows PowerShell 将计划链接到 Runbook
 
-你可以使用 [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) 将计划链接到 Runbook。可以使用 Parameters 参数指定 Runbook 参数的值。有关指定参数值的详细信息，请参阅[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)。
+你可以使用 [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) 将计划链接到 Runbook。可以使用 Parameters 参数指定 Runbook 参数的值。有关指定参数值的详细信息，请参阅[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)。
 
 以下示例命令演示了如何将计划链接到包含参数的 Runbook。
 
@@ -89,7 +89,7 @@
 
 ## 相关文章
 
-- [在 Azure 自动化中计划资产](/documentation/articles/automation-schedules)
-- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook) 
+- [在 Azure 自动化中计划资产](/documentation/articles/automation-schedules/)
+- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/) 
 
 <!---HONumber=79-->

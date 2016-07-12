@@ -54,7 +54,7 @@
    
 ## 后续步骤
 
-* 每当发生事件时[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。
-* [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring)以确保你的服务可用且响应迅速。
+* 每当发生事件时[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)。
+* [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
  
 <!---HONumber=Mooncake_0503_2016-->

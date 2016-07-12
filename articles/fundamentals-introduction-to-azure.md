@@ -102,7 +102,7 @@ Azure Web 应用允许创建这种 Web 应用程序，但有一些约束。例�
 当您需要对平台进行更多的控制，而这种需要超过了 Azure Web 应用所能提供的控制，同时您又不想控制基础操作系统时，可以使用云服务进行大规模的向外扩展。
 
 #### 选择计算模型
-[Azure Web 应用、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm)提供了有关如何选择计算模型的更多详细信息。
+[Azure Web 应用、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/)提供了有关如何选择计算模型的更多详细信息。
 
 
 
@@ -223,7 +223,7 @@ Blob 存储可用于许多其他的 Azure 功能（包括虚拟机），因此�
 
 设置 ExpressRoute 连接需要更多的时间和规划，因此你可以先使用站点到站点 VPN，然后再迁移到 ExpressRoute 连接。
 
-有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
+有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。
 
 ### 流量管理器
 

@@ -14,8 +14,8 @@
 
 # Azure IaaS 用户手册 - 第二部分
 
-- [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1)
-- [Azure IaaS 用户手册 - 第三部分](/documentation/articles/azure-Iaas-user-manual-part3)
+- [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1/)
+- [Azure IaaS 用户手册 - 第三部分](/documentation/articles/azure-Iaas-user-manual-part3/)
 
 ##<a name="section_5"></a> 3.	开始创建 Azure 虚拟机
 ###<a name="section_5_1"></a> 3.1 模拟场景
@@ -62,7 +62,7 @@ Contoso 公司已经采购了 Azure 服务，计划把现有托管在 IDC 的企
 ####<a name="section_5_2_3"></a> 3.2.3 选择最合适的虚拟机配置
 传统的虚拟机化技术，CPU 是共享的。Azure 虚拟机，除了 A0 的虚拟机类型，它的 CPU 是和别的用户共享的。其他类型的虚拟机，比如 A1-A7，它的 CPU 是独占的，不是和别的用户共享的。
 
-如[第 2.4.2 章](/documentation/articles/azure-Iaas-user-manual-part1#section_4_4_2)，Azure 虚拟机分为 A 系列、 D 系列和 Dv2 系列，并且拥有不同的 CPU 和内存配置。
+如[第 2.4.2 章](/documentation/articles/azure-Iaas-user-manual-part1/#section_4_4_2)，Azure 虚拟机分为 A 系列、 D 系列和 Dv2 系列，并且拥有不同的 CPU 和内存配置。
 
 如果您在传统 IDC 托管中已经部署了硬件服务器。则在 Azure 平台选择最接近的 Azure 虚拟机配置即可。
 
@@ -73,7 +73,7 @@ Contoso 公司已经采购了 Azure 服务，计划把现有托管在 IDC 的企
 1.	相比 A 系列单台 VM 最大 8Core/56GB RAM 的配置，D 系列虚拟机单台最大的配置为 16Core/112GB RAM
 2.	D 系列的 CPU 性能比 A 系列提升约 60%
 
-其他内容，请参考[第 2.4.2 章](/documentation/articles/azure-Iaas-user-manual-part1#section_4_4_2)。
+其他内容，请参考[第 2.4.2 章](/documentation/articles/azure-Iaas-user-manual-part1/#section_4_4_2)。
 
 ####<a name="section_5_2_4"></a> 3.2.4 规划好高可用
 在 Azure 虚拟机中，您也可以选择使用一台 Azure 虚拟机部署 AD Server，一台 Azure 虚拟机部署 Web 应用程序，使用另一台虚拟机部署 SQL Server。但是这样的场景是没有服务级别协议保障的。
@@ -620,7 +620,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 ![vm_create28](./media/azure-Iaas-user-manual-part2/vm_create28.png)
 
-有关 SQL Server 虚拟机配置 Always-On 的文档，请参考 [文档](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
+有关 SQL Server 虚拟机配置 Always-On 的文档，请参考 [文档](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
 
 #####<a name="section_5_4_4_7"></a> 3.4.4.7 总结
 一般情况下，创建 Azure 虚拟机之前需要做如下准备:

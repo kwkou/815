@@ -12,7 +12,7 @@
 
 	- 对于“订阅”，请选择要用于 DocumentDB 帐户的 Azure 订阅。如果帐户只有一个订阅，则默认情况下会选择该帐户。
 
-	- 在“资源组”中，为 DocumentDB 帐户选择或创建资源组。默认情况下，会选择 Azure 订阅下的现有资源组。但是，可以选择创建要将 DocumentDB 帐户添加到其中的新资源组。有关详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal)。
+	- 在“资源组”中，为 DocumentDB 帐户选择或创建资源组。默认情况下，会选择 Azure 订阅下的现有资源组。但是，可以选择创建要将 DocumentDB 帐户添加到其中的新资源组。有关详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
 
 	- 使用“位置”指定在其中托管 DocumentDB 帐户的地理位置。
 

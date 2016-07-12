@@ -22,7 +22,7 @@
 
 	**注意** 为了避免受到阻止，请确保你要重命名的表没有任何正在运行的活动。如果你遇到问题，请确保在维护时段内执行此过程。
 
-2. 将数据库的一个备份还原到你想要恢复到的一个时间点。要实现此操作，请参阅[从用户错误中恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery)中的步骤。
+2. 将数据库的一个备份还原到你想要恢复到的一个时间点。要实现此操作，请参阅[从用户错误中恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery/)中的步骤。
 
 	**注意**：
 	- 还原的数据库的名称的格式为 DBName+TimeStamp；例如，**Adventureworks2012\_2016-01-01T22-12Z**。此步骤不会覆盖服务器上现有的数据库名称。这是一项安全措施，目的是要让用户在删除其当前数据库之前确认还原的数据库，然后重命名此还原的数据库供生产之用。

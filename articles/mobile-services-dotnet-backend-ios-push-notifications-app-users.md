@@ -39,9 +39,9 @@
 
 
 <!-- URLs. -->
-[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
+[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/
 
-[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 
 <!---HONumber=Mooncake_0118_2016-->

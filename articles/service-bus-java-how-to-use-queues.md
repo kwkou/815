@@ -183,7 +183,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 [Azure SDK for Java]: /develop/java/
 [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
 
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
 <!---HONumber=Mooncake_0104_2016-->

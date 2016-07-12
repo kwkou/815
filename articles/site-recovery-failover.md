@@ -14,7 +14,7 @@
 
 # Site Recovery 中的故障转移
 
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)
+Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
 
 ## 概述
 
@@ -50,7 +50,7 @@ VMware 站点到 Azure | 支持（增强版方案）<br/><br/>不支持（旧方
 
 ## 故障转移和故障回复
 
-根据你的部署，将虚拟机故障转移到本地辅助站点或 Azure。故障转移到 Azure 的计算机将作为 Azure 虚拟机创建。可以故障转移单个虚拟机、物理服务器或恢复计划。恢复计划由一个或多个包含受保护虚拟机或物理服务器的有序组构成。它们用于根据多个虚拟机所在的组协调这些虚拟机的故障转移。[详细了解](/documentation/articles/site-recovery-create-recovery-plans)恢复计划。
+根据你的部署，将虚拟机故障转移到本地辅助站点或 Azure。故障转移到 Azure 的计算机将作为 Azure 虚拟机创建。可以故障转移单个虚拟机、物理服务器或恢复计划。恢复计划由一个或多个包含受保护虚拟机或物理服务器的有序组构成。它们用于根据多个虚拟机所在的组协调这些虚拟机的故障转移。[详细了解](/documentation/articles/site-recovery-create-recovery-plans/)恢复计划。
 
 完成故障转移并且计算机在辅助位置正常运行后，请注意：
 
@@ -148,7 +148,7 @@ VMware 站点到 Azure | 支持（增强版方案）<br/><br/>不支持（旧方
 
 
 ### 准备 Active Directory
-要运行测试故障转移以进行应用程序测试，测试中需要生产用 Active Directory 环境的副本。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover)部分。
+要运行测试故障转移以进行应用程序测试，测试中需要生产用 Active Directory 环境的副本。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory/#considerations-for-test-failover)部分。
 
 
 ### 准备 DNS
@@ -232,7 +232,7 @@ VMware 站点到 Azure | 支持（增强版方案）<br/><br/>不支持（旧方
 
 ## 故障回复到备用位置
 
-如果您在 [Hyper-V 站点与 Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure) 之间部署了保护，则可以从 Azure 故障回复到备用本地位置。如果你需要设置新的本地硬件，此功能将十分有用。下面介绍了操作方法。
+如果您在 [Hyper-V 站点与 Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure/) 之间部署了保护，则可以从 Azure 故障回复到备用本地位置。如果你需要设置新的本地硬件，此功能将十分有用。下面介绍了操作方法。
 
 1. 如果你需要设置新的硬件，请在服务器上安装 Windows Server 2012 R2 和 Hyper-V 角色。
 2. 创建与原始服务器上的名称相同的虚拟网络交换机。

@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
-> [AZURE.NOTE] 若要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install)。
+> [AZURE.NOTE] 若要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install/)。
 
 ## 创建队列
 
@@ -107,8 +107,8 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 [Python Azure 包]: https://pypi.python.org/pypi/azure
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
-[服务总线配额]: /documentation/articles/service-bus-quotas
+[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
+[服务总线配额]: /documentation/articles/service-bus-quotas/
  
 
 <!---HONumber=Mooncake_0104_2016-->

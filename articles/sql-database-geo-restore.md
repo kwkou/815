@@ -21,11 +21,11 @@
 
 |任务（门户） | PowerShell | REST |
 |:--|:--|:--|
-| Recover a SQL database from a copy in a different region（从其他区域中的副本恢复 SQL 数据库） | [PowerShell](/documentation/articles/sql-database-geo-restore-powershell) | [REST (createMode=Restore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx) |
+| Recover a SQL database from a copy in a different region（从其他区域中的副本恢复 SQL 数据库） | [PowerShell](/documentation/articles/sql-database-geo-restore-powershell/) | [REST (createMode=Restore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx) |
 
 
 
-当你的数据库因其所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与[时间点还原](/documentation/articles/sql-database-point-in-time-restore)一样，异地还原依赖异地冗余 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。
+当你的数据库因其所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与[时间点还原](/documentation/articles/sql-database-point-in-time-restore/)一样，异地还原依赖异地冗余 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。
 
 
 
@@ -50,15 +50,15 @@
 
 ## 摘要
 
-异地还原在所有服务层均可用，并且异地还原是 SQL 数据库提供的灾难恢复解决方案中最基本的，具有最长的 RPO 和估计恢复时间 (ERT)。对于最大为 2GB 的基本数据库，异地还原提供了 ERT 为 12 小时的合理灾难恢复解决方案。对于较大的标准或高级数据库，如果需要在很短的恢复时间内恢复，或要减少数据丢失的可能性，应考虑使用活动异地复制。活动异地复制可提供低得多的 RPO 和 ERT，因为它只要求你启动故障转移，故障转移到连续复制的辅助数据库。有关详细信息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview)。
+异地还原在所有服务层均可用，并且异地还原是 SQL 数据库提供的灾难恢复解决方案中最基本的，具有最长的 RPO 和估计恢复时间 (ERT)。对于最大为 2GB 的基本数据库，异地还原提供了 ERT 为 12 小时的合理灾难恢复解决方案。对于较大的标准或高级数据库，如果需要在很短的恢复时间内恢复，或要减少数据丢失的可能性，应考虑使用活动异地复制。活动异地复制可提供低得多的 RPO 和 ERT，因为它只要求你启动故障转移，故障转移到连续复制的辅助数据库。有关详细信息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)。
 
 ## 其他资源
 
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq)
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
-- [时间点还原](/documentation/articles/sql-database-point-in-time-restore)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
 
 <!---HONumber=Mooncake_0530_2016-->

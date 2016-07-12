@@ -1,4 +1,4 @@
-**本文适用于 Web Apps**；对于云服务，请参阅<a href="/documentation/articles/cloud-services-custom-domain-name">在 Azure 中配置自定义域名</a>。
+**本文适用于 Web Apps**；对于云服务，请参阅<a href="/documentation/articles/cloud-services-custom-domain-name/\">在 Azure 中配置自定义域名</a>。
 
 > [AZURE.NOTE]
 > **有关使用流量管理器使到 Web 应用的流量实现负载平衡的说明**，请使用本文顶部的选择器选择特定于流量管理器的步骤。

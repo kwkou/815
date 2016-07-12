@@ -15,7 +15,7 @@
 # 有关 Service Fabric Reliable Actors 类型序列化的说明
 
 
-所有方法的参数、执行组件接口中每个方法返回的任务的结果类型和执行组件的状态管理器中存储的对象都必须是[数据协定可序列化](https://msdn.microsoft.com/zh-cn/library/ms731923.aspx)..这同样适用于[执行组件事件接口](/documentation/articles/service-fabric-reliable-actors-events#actor-events)中定义的方法的参数。（执行组件事件接口方法始终返回 void。）
+所有方法的参数、执行组件接口中每个方法返回的任务的结果类型和执行组件的状态管理器中存储的对象都必须是[数据协定可序列化](https://msdn.microsoft.com/zh-cn/library/ms731923.aspx)..这同样适用于[执行组件事件接口](/documentation/articles/service-fabric-reliable-actors-events/#actor-events)中定义的方法的参数。（执行组件事件接口方法始终返回 void。）
 
 ## 自定义数据类型
 
@@ -81,12 +81,12 @@ public class VoicemailBox
 ```
 
 ## 后续步骤
- - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle)
- - [执行组件计时器和提醒](/documentation/articles/service-fabric-reliable-actors-timers-reminders)
- - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events)
- - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy)
- - [执行组件多态性和面向对象的设计模式](/documentation/articles/service-fabric-reliable-actors-polymorphism)
- - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics)
+ - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
+ - [执行组件计时器和提醒](/documentation/articles/service-fabric-reliable-actors-timers-reminders/)
+ - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events/)
+ - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)
+ - [执行组件多态性和面向对象的设计模式](/documentation/articles/service-fabric-reliable-actors-polymorphism/)
+ - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
 
 
 <!---HONumber=Mooncake_0503_2016-->

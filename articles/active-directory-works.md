@@ -19,11 +19,11 @@
 ###本主题的其他相关文章
 
 > [AZURE.SELECTOR]
-- [什么是 Azure AD](/documentation/articles/active-directory-whatis)
-- [它的工作原理是怎样的？](/documentation/articles/active-directory-works)
-- [入门](/documentation/articles/active-directory-get-started)
-- [后续步骤](/documentation/articles/active-directory-next-steps)
-- [了解详细信息](/documentation/articles/active-directory-learn-map)
+- [什么是 Azure AD](/documentation/articles/active-directory-whatis/)
+- [它的工作原理是怎样的？](/documentation/articles/active-directory-works/)
+- [入门](/documentation/articles/active-directory-get-started/)
+- [后续步骤](/documentation/articles/active-directory-next-steps/)
+- [了解详细信息](/documentation/articles/active-directory-learn-map/)
 
 
 Azure Active Directory (Azure AD) 可在云中创建属于你的标识布局。它可以连接到你的本地标识系统，你也可以单独使用它。
@@ -46,9 +46,9 @@ Azure AD 支持多个最广泛使用的身份验证和授权协议。[了解有�
 
 ## 其他资源
 
-* [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
+* [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
 
-* [Azure 标识](/documentation/articles/fundamentals-identity)
+* [Azure 标识](/documentation/articles/fundamentals-identity/)
 
 
 <!---HONumber=Mooncake_0620_2016-->

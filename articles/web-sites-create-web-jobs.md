@@ -18,9 +18,9 @@
 
 你可以使用三种方式在 [Azure Web 应用](/documentation/services/web-sites/) Web 应用的 Web 作业中运行程序或脚本，即：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
 
-本文说明如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs)。
+本文说明如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
-Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)。
+Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/)。
 
 ## <a name="acceptablefiles"></a>可接受的脚本或程序文件类型
 

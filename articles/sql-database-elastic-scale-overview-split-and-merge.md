@@ -13,11 +13,11 @@
 
 # 使用弹性数据库拆分/合并工具进行缩放
 
-[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)包含的一个工具可用于重新平衡数据分布和管理分片应用程序的热点。**拆分/合并工具**管理向内缩放和向外缩放。你可以在分片集中添加或删除数据库，并且可以使用拆分/合并工具重新平衡它们之间的 shardlet 分布。（有关术语定义，请参阅[弹性缩放词汇表](/documentation/articles/sql-database-elastic-scale-glossary)。）
+[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction/)包含的一个工具可用于重新平衡数据分布和管理分片应用程序的热点。**拆分/合并工具**管理向内缩放和向外缩放。你可以在分片集中添加或删除数据库，并且可以使用拆分/合并工具重新平衡它们之间的 shardlet 分布。（有关术语定义，请参阅[弹性缩放词汇表](/documentation/articles/sql-database-elastic-scale-glossary/)。）
 
-该工具在不同数据库之间按需移动 shardlet，并与[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)集成，以维护一致的映射。
+该工具在不同数据库之间按需移动 shardlet，并与[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)集成，以维护一致的映射。
 
-开始时，请参阅[弹性数据库拆分/合并工具](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
+开始时，请参阅[弹性数据库拆分/合并工具](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。
 
 ## 拆分/合并的新增功能
 
@@ -63,7 +63,7 @@
 
 ## 概念和主要功能
 
-**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Azure 订阅中部署并托管该服务。您从 NuGet 下载的程序包将包含一个要使用您的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在您的 Azure 订阅中运行，因此您可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、存储凭据的加密、DoS 防护和 IP 限制。你可以在以下[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)文档中找到有关安全方面的详细信息。
+**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Azure 订阅中部署并托管该服务。您从 NuGet 下载的程序包将包含一个要使用您的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。由于服务在您的 Azure 订阅中运行，因此您可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、存储凭据的加密、DoS 防护和 IP 限制。你可以在以下[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration/)文档中找到有关安全方面的详细信息。
 
 默认部署的服务可与一个辅助角色和一个 Web 角色同时运行。在 Azure 云服务中，每个角色都使用 A1 VM 大小。虽然您无法在部署程序包时修改这些设置，但是您可以在运行的云服务中成功进行部署之后更改它们（通过 Azure 门户）。请注意，出于技术方面的原因，不得为多个实例配置辅助角色。
 
@@ -107,7 +107,7 @@
 
 ## 获取服务二进制文件
 
-拆分/合并的服务二进制文件通过 [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge) 提供。有关下载二进制文件的详细信息，请参阅循序渐进式[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
+拆分/合并的服务二进制文件通过 [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge) 提供。有关下载二进制文件的详细信息，请参阅循序渐进式[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。
 
 ## 拆分/合并用户界面
 
@@ -171,7 +171,7 @@
 
 ### Azure 诊断
 
-拆分/合并服务使用基于 Azure SDK 2.5 的 Azure Diagnostics 进行监视与诊断。可以根据此处所述控制诊断配置：[在 Azure 云服务和虚拟机器中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。下载包包含两个诊断配置 – 一个用于 Web 角色，另一个用于辅助角色。这些服务诊断配置遵循 [Azure 中的云服务基础知识](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649)中的指导原则。它包括用于记录性能计数器、IIS 日志、Windows 事件日志和拆分/合并应用程序事件日志的定义。
+拆分/合并服务使用基于 Azure SDK 2.5 的 Azure Diagnostics 进行监视与诊断。可以根据此处所述控制诊断配置：[在 Azure 云服务和虚拟机器中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。下载包包含两个诊断配置 – 一个用于 Web 角色，另一个用于辅助角色。这些服务诊断配置遵循 [Azure 中的云服务基础知识](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649)中的指导原则。它包括用于记录性能计数器、IIS 日志、Windows 事件日志和拆分/合并应用程序事件日志的定义。
 
 ## 部署诊断 
 
@@ -197,7 +197,7 @@
     
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Production -Role "SplitMergeWorker" 
 
-可以在此处找到有关如何配置和部署诊断设置的详细信息：[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
+可以在此处找到有关如何配置和部署诊断设置的详细信息：[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 ## 检索诊断 
 
@@ -229,9 +229,9 @@
 
 ## 参考 
 
-* [拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
+* [拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)
 
-* [灵活扩展安全注意事项](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)
+* [灵活扩展安全注意事项](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration/)
 
 
 <!--Anchors-->

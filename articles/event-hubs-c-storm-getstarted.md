@@ -26,7 +26,7 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal) 上。有关其他环境的说明，将在外部链接中提供。
++ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/) 上。有关其他环境的说明，将在外部链接中提供。
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
@@ -63,12 +63,12 @@
 <!-- Links -->
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[事件中心概述]: /documentation/articles/event-hubs-overview
+[事件中心概述]: /documentation/articles/event-hubs-overview/
 
 [Apache Storm]: https://storm.incubator.apache.org
-[HDInsight Storm 概述]: /documentation/articles/hdinsight-storm-overview
-[用 Storm 和 HDInsight 分析传感器数据]: /documentation/articles/hdinsight-storm-sensor-data-analysis
-[使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
+[HDInsight Storm 概述]: /documentation/articles/hdinsight-storm-overview/
+[用 Storm 和 HDInsight 分析传感器数据]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
+[使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/
  
 
 <!---HONumber=Mooncake_0613_2016-->

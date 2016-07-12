@@ -80,9 +80,9 @@
 
 ## 相关主题
 
-* [Azure Batch 功能概述](/documentation/articles/batch-api-basics)
+* [Azure Batch 功能概述](/documentation/articles/batch-api-basics/)
 
-* [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)
+* [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
 
 [portal]: https://portal.azure.cn
 [portal_classic_increase]: https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/

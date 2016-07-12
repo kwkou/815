@@ -103,21 +103,21 @@ SQL 数据仓库会自动每隔一定时间备份你的数据库。有关数据�
 <!--Image references-->
 
 <!--Article references-->
-[Azure 存储冗余选项]: /documentation/articles/storage-redundancy#read-access-geo-redundant-storage
-[创建 SQL 数据仓库（Azure 门户）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
-[Create a database (PowerShell)（创建数据库 (PowerShell)）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
-[connection]: /documentation/articles/sql-data-warehouse-develop-connections
-[使用 Visual Studio 连接到 Azure SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect
-[Connect and query with sqlcmd（使用 sqlcmd 进行连接和查询）]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd
-[高可靠性]: /documentation/articles/sql-data-warehouse-overview-expectations#high-reliability
-[Monitor your workload using DMVs（使用 DMV 监视工作负荷）]: /documentation/articles/sql-data-warehouse-manage-monitor
-[暂停计算]: /documentation/articles/sql-data-warehouse-overview-scalability#pause-compute-bk
-[Restore from snapshot（从快照还原）]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-snapshot
-[恢复计算]: /documentation/articles/sql-data-warehouse-overview-scalability#resume-compute-performance-bk
-[缩放性能]: /documentation/articles/sql-data-warehouse-overview-scalability#scale-performance-bk
-[安全性概述]: /documentation/articles/sql-data-warehouse-overview-security
-[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices
-[SQL 数据仓库系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views
+[Azure 存储冗余选项]: /documentation/articles/storage-redundancy/#read-access-geo-redundant-storage
+[创建 SQL 数据仓库（Azure 门户）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[Create a database (PowerShell)（创建数据库 (PowerShell)）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[connection]: /documentation/articles/sql-data-warehouse-develop-connections/
+[使用 Visual Studio 连接到 Azure SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[Connect and query with sqlcmd（使用 sqlcmd 进行连接和查询）]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
+[高可靠性]: /documentation/articles/sql-data-warehouse-overview-expectations/#high-reliability
+[Monitor your workload using DMVs（使用 DMV 监视工作负荷）]: /documentation/articles/sql-data-warehouse-manage-monitor/
+[暂停计算]: /documentation/articles/sql-data-warehouse-overview-scalability/#pause-compute-bk
+[Restore from snapshot（从快照还原）]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-snapshot/
+[恢复计算]: /documentation/articles/sql-data-warehouse-overview-scalability/#resume-compute-performance-bk
+[缩放性能]: /documentation/articles/sql-data-warehouse-overview-scalability/#scale-performance-bk
+[安全性概述]: /documentation/articles/sql-data-warehouse-overview-security/
+[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
+[SQL 数据仓库系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
 
 <!--MSDN references-->
 [SQL Server Data Tools]: https://msdn.microsoft.com/zh-cn/library/mt204009.aspx

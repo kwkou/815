@@ -129,10 +129,10 @@
 [15]: ./media/mobile-services-html-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-html-get-started
-[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[移动服务入门]: /documentation/articles/mobile-services-html-get-started/
+[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 
-[移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library
+[移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library/
  
 
 <!---HONumber=Mooncake_0118_2016-->

@@ -59,21 +59,21 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 <!-- Links -->
 
-[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
 
 [Azure portal]: https://manage.windowsazure.com
 
-[Send Cloud-to-Device messages with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-c2d
-[处理设备到云的消息]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
-[从设备上载文件]: /documentation/articles/iot-hub-csharp-csharp-file-upload
+[Send Cloud-to-Device messages with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-c2d/
+[处理设备到云的消息]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
+[从设备上载文件]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 
-[IoT 中心概述]: /documentation/articles/iot-hub-what-is-iot-hub
-[IoT 中心指南]: /documentation/articles/iot-hub-guidance
-[IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide
-[IoT Hub Supported Devices]: /documentation/articles/iot-hub-supported-devices
-[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[IoT 中心概述]: /documentation/articles/iot-hub-what-is-iot-hub/
+[IoT 中心指南]: /documentation/articles/iot-hub-guidance/
+[IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide/
+[IoT Hub Supported Devices]: /documentation/articles/iot-hub-supported-devices/
+[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations
 [Azure IoT 开发人员中心]: /develop/iot
 

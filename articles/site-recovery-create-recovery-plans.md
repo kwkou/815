@@ -14,7 +14,7 @@
 
 # 创建恢复计划
 
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。可将虚拟机复制到 Azure 或辅助本地数据中心。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)。
+Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。可将虚拟机复制到 Azure 或辅助本地数据中心。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)。
 
 
 ## 概述
@@ -103,7 +103,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ### 创建 Azure 自动化 Runbook
 
-你可以通过计划中包含的 Azure 自动化 Runbook 来扩展恢复计划。[了解详细信息](/documentation/articles/site-recovery-runbook-automation)。
+你可以通过计划中包含的 Azure 自动化 Runbook 来扩展恢复计划。[了解详细信息](/documentation/articles/site-recovery-runbook-automation/)。
 
 
 ### 将自定义设置添加到恢复计划
@@ -118,7 +118,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ## 后续步骤
 
-你可以在恢复计划中运行不同类型的故障转移，包括用于检查环境的测试故障转移，以及计划的故障转移或非计划故障转移。[了解详细信息](/documentation/articles/site-recovery-failover)。
+你可以在恢复计划中运行不同类型的故障转移，包括用于检查环境的测试故障转移，以及计划的故障转移或非计划故障转移。[了解详细信息](/documentation/articles/site-recovery-failover/)。
 
 
  

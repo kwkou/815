@@ -59,6 +59,6 @@ Microsoft Azure 政府版云中当前不存在的功能：
 - 密码写回未提供。
 
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0613_2016-->

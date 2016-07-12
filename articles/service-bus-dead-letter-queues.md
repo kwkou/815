@@ -84,7 +84,7 @@ while(true)
 
 有关服务总线队列的详细信息，请参阅以下文章：
 
-- [比较 Azure 队列和服务总线队列](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
-- 如何使用[服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+- [比较 Azure 队列和服务总线队列](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
+- 如何使用[服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
 
 <!---HONumber=Mooncake_0328_2016-->

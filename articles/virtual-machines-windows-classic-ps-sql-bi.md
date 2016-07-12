@@ -14,7 +14,7 @@
 
 # Azure 虚拟机中的 SQL Server Business Intelligence
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 Azure 虚拟机库包括含有 SQL Server 安装的映像。库映像中支持的 SQL Server 版本是可以安装到本地计算机和虚拟机的相同安装文件。本主题总结了在映像上安装的 SQL Server 商业智能 (BI) 功能和配置虚拟机后所需的配置步骤。本主题还介绍了 BI 功能和最佳实践支持的部署拓扑。
 
@@ -91,7 +91,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机�
 
 - 在使用 SQL Server Enterprise Edition 时，虚拟机的最小建议大小是 **A3**。对于 Analysis Services 和 Reporting Services 的 SQL Server BI 部署，其建议虚拟机大小为 **A4**。
 
-	有关当前 VM 大小的信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
+	有关当前 VM 大小的信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)。
 
 - 磁盘管理的最佳做法是在 **C**: 和 **D**: 以外的驱动器上存储数据、日志和备份文件。例如，创建数据磁盘 **E**: 和 **F**:。
 
@@ -99,7 +99,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机�
 	
 	- **D**: 驱动器是主要用于页面文件的临时驱动器。**D**: 驱动器不会持久保留且不保存在 blob 存储中。诸如更改虚拟机大小之类的管理任务会重置 **D**: 驱动器。建议**不**要将 **D**: 驱动器用于数据库文件（包括 tempdb）。
 
-	有关创建和附加磁盘的详细信息，请参阅[如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk)。
+	有关创建和附加磁盘的详细信息，请参阅[如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk/)。
 
 - 停止或卸载计划不使用的服务。例如，如果虚拟机仅用于 Reporting Services，停止或卸载 Analysis Services 和 SQL Server Integration Services。下图是默认情况下启动的服务的示例。
 
@@ -149,7 +149,7 @@ Analysis Services、Reporting Services、SQL Server 数据库引擎和数据源�
 
 SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式，但未配置报表服务器。本部分中的步骤配置 Reporting Services 报表服务器。有关配置 Reporting Services 本机模式的更多详细信息，请参阅[安装 Reporting Services 本机模式报表服务器 (SSRS)](https://msdn.microsoft.com/zh-cn/library/ms143711.aspx)。
 
->[AZURE.NOTE]有关使用 Windows PowerShell 脚本配置报表服务器的类似内容，请参阅[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-windows-classic-ps-sql-report)。
+>[AZURE.NOTE]有关使用 Windows PowerShell 脚本配置报表服务器的类似内容，请参阅[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-windows-classic-ps-sql-report/)。
 
 ###<a name="connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager"></a> 连接到虚拟机并启动 Reporting Services 配置管理器
 
@@ -298,7 +298,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 	
 	1. 创建并安装管理证书。
 	
-	1. 使用 Add-azurevhd cmdlet 将 VHD 文件上载到 Azure [创建 Windows Server VHD 并上载到 Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)。
+	1. 使用 Add-azurevhd cmdlet 将 VHD 文件上载到 Azure [创建 Windows Server VHD 并上载到 Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)。
 	
 	1. 将磁盘附加到虚拟机。
 
@@ -349,7 +349,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 ### 对 Analysis Services 服务器的远程访问
 
-Analysis Services 服务器仅支持 windows 身份验证。若要从客户端应用程序（如 SQL Server Management Studio 或 SQL Server Data Tools）远程访问 Analysis Services，虚拟机需要使用 Azure 虚拟网络加入到本地域。有关详细信息，请参阅 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview)。
+Analysis Services 服务器仅支持 windows 身份验证。若要从客户端应用程序（如 SQL Server Management Studio 或 SQL Server Data Tools）远程访问 Analysis Services，虚拟机需要使用 Azure 虚拟网络加入到本地域。有关详细信息，请参阅 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)。
 
 Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机防火墙中打开该端口。Analysis Services 的群集命名实例也侦听端口 **2383**。
 
@@ -396,9 +396,9 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 有关创建终结点的详细信息，请参阅以下资源：
 
-- 创建终结点：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+- 创建终结点：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
-- SQL Server：请参阅[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)的“完成配置步骤以使用 SQL Server Management Studio 连接到虚拟机”。
+- SQL Server：请参阅[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)的“完成配置步骤以使用 SQL Server Management Studio 连接到虚拟机”。
 
 下图说明了要允许远程访问 VM 上的功能和组件，需要在 VM 防火墙上打开的端口。
 
@@ -408,15 +408,15 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 - 查看在 Azure 虚拟机环境中使用的 Microsoft 服务器软件的支持策略。以下主题概述对 BitLocker、故障转移群集和网络负载平衡等功能的支持。[Microsoft 服务器软件对 Azure 虚拟机的支持](http://support.microsoft.com/kb/2721672)。
 
-- [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)
+- [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)
 
 - [虚拟机](/documentation/services/virtual-machines/)
 
 - [在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
 
-- [如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk)
+- [如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
 
-- [将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql)
+- [将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql/)
 
 - [确定 Analysis Services 实例的服务器模式](https://msdn.microsoft.com/zh-cn/library/gg471594.aspx)
 

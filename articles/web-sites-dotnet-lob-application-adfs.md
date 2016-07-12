@@ -16,7 +16,7 @@
 
 在本文中，你将了解如何在使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者的 [Azure Web 应用](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。当你想要在 Azure 中创建业务线应用程序，而你的组织要求在现场存储所有数据时，可以应用此方案。
 
->[AZURE.NOTE]有关 Azure Web 应用支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
+>[AZURE.NOTE]有关 Azure Web 应用支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)。
 
 <a name="bkmk_build"></a>
 ## 要生成的项目 ##
@@ -173,7 +173,7 @@
 	-	名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - ASP.NET 用来解冻 `User.Identity.Name`。
 	-	用户主体名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn) - 用于唯一标识组织中的用户。
 	-	将成员资格分组为角色 (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - 可与 `[Authorize(Roles="role1, role2,...")]` 修饰符配合使用来授权控制器/操作。实际上，这可能不是大多数的高性能方法进行角色授权，尤其是在你的 AD 用户定期属于数百个安全组转换为数以百计的 SAML 令牌中的角色声明。另一种方法是在某个特定组发送单个角色声明有条件地根据用户的成员身份。但是，本教程将简化其结构。
-	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
+	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
 
 	> [AZURE.NOTE]需要为应用程序配置的声明类型取决于应用程序的需求。有关 Azure Active Directory 应用程序支持的声明列表（即 RP 信任），请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。
 
@@ -332,9 +332,9 @@
 <a name="bkmk_resources"></a>
 ## 其他资源
 
-- [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
-- [在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad)
+- [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/#protect-the-application-with-ssl-and-the-authorize-attribute)
+- [使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)
+- [在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/)
 - [在 Visual Studio 2013 中将本地组织的身份验证选项 (ADFS) 与 ASP.NET 结合使用](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

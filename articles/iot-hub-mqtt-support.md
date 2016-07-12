@@ -87,7 +87,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [lnk-mqtt-org]: http://mqtt.org/
-[lnk-iot-get-stated]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[lnk-iot-get-stated]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-mqtt-docs]: http://mqtt.org/documentation
 [lnk-iothub-security]: /documentation/articles/iot-hub-devguide/#security
 [lnk-sample-node]: https://github.com/Azure/azure-iot-sdks/blob/develop/node/device/samples/simple_sample_device.js
@@ -95,7 +95,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 [lnk-sample-c]: https://github.com/Azure/azure-iot-sdks/tree/master/c/iothub_client/samples/iothub_client_sample_mqtt
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/readme.md
-[lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens
+[lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens/
 [lnk-mqtt-devguide]: /documentation/articles/iot-hub-devguide/#mqtt-support
 
 <!---HONumber=Mooncake_0307_2016-->

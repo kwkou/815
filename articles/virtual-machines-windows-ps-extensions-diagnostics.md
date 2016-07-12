@@ -21,11 +21,11 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-你可以使用 Azure 诊断扩展从运行 Windows 的 Azure 虚拟机收集诊断数据（例如应用程序日志、性能计数器等）。本文介绍如何使用 PowerShell 为虚拟机启用 Azure 诊断扩展。有关本文所需的先决条件，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+你可以使用 Azure 诊断扩展从运行 Windows 的 Azure 虚拟机收集诊断数据（例如应用程序日志、性能计数器等）。本文介绍如何使用 PowerShell 为虚拟机启用 Azure 诊断扩展。有关本文所需的先决条件，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 使用资源管理器部署模型在虚拟机上启用 Azure 诊断扩展
 
-你可以使用资源管理器部署模型在创建 Windows 虚拟机的同时启用诊断扩展，只需将扩展配置添加到资源管理器模板即可。请参阅[使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)。
+你可以使用资源管理器部署模型在创建 Windows 虚拟机的同时启用诊断扩展，只需将扩展配置添加到资源管理器模板即可。请参阅[使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)。
 
 若要在通过资源管理器部署模型创建的现有虚拟机上启用 Azure 诊断扩展，可以使用 [Set-AzureRMVMDiagnosticsExtension](https://msdn.microsoft.com/zh-cn/library/mt603499.aspx) powershell cmdlet，如下所示。
 
@@ -88,7 +88,7 @@
 		```
 		<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWindowsVM" >
 		```
-	- 有关如何根据性能计数器和度量值配置生成度量值的详细信息，请参阅[存储中的 WAD 度量值表](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template#wadmetrics-tables-in-storage)
+	- 有关如何根据性能计数器和度量值配置生成度量值的详细信息，请参阅[存储中的 WAD 度量值表](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/#wadmetrics-tables-in-storage)
 
 - 需要使用诊断存储帐户的名称对 **StorageAccount** 元素进行更新。
  
@@ -197,7 +197,7 @@
 	```
 
 ## 后续步骤 
-- 有关使用 Azure 诊断和其他方法排查问题的详细说明，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
+- 有关使用 Azure 诊断和其他方法排查问题的详细说明，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 - [诊断配置架构](https://msdn.microsoft.com/zh-cn/library/azure/mt634524.aspx)说明了诊断扩展的各种 XML 配置选项。
 
 <!---HONumber=Mooncake_0118_2016-->

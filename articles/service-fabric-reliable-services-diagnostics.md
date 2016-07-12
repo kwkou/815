@@ -16,9 +16,9 @@
 有状态 Reliable Services StatefulServiceBase 类会发出 [EventSource](https://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource.aspx) 事件，它们可以用于调试服务、提供对运行时运行方式的深入了解以及帮助进行故障排除。
 
 ## EventSource 事件
-有状态 Reliable Services StatefulServiceBase 类的 EventSource 名称是“Microsoft-ServiceFabric-Services”。当[在 Visual Studio 中调试](/documentation/articles/service-fabric-debugging-your-application)服务时，来自此事件源的事件在[](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally#view-service-fabric-system-events-in-visual-studio)“诊断事件”窗口中显示。
+有状态 Reliable Services StatefulServiceBase 类的 EventSource 名称是“Microsoft-ServiceFabric-Services”。当[在 Visual Studio 中调试](/documentation/articles/service-fabric-debugging-your-application/)服务时，来自此事件源的事件在[](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/#view-service-fabric-system-events-in-visual-studio)“诊断事件”窗口中显示。
 
-可帮助收集和/或查看 EventSource 事件的工具和技术的示例包括 [PerfView](http://www.microsoft.com/download/details.aspx?id=28567)、[Microsoft Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics)和 [Microsoft TraceEvent 库](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent)。
+可帮助收集和/或查看 EventSource 事件的工具和技术的示例包括 [PerfView](http://www.microsoft.com/download/details.aspx?id=28567)、[Microsoft Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)和 [Microsoft TraceEvent 库](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent)。
 
 ## 事件
 

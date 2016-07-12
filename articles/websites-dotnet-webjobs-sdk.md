@@ -18,7 +18,7 @@
 
 本文说明 WebJobs SDK 是什么、了解部分适用的典型方案，以及提供在代码中的使用方式概述。
 
-[WebJobs](/documentation/articles/websites-webjobs-resources) 是一项 Azure Web 应用功能，可让你在与 Web、API 应用相同的上下文中运行程序或脚本。[WebJobs SDK](/documentation/articles/websites-webjobs-resources) 的用途是简化针对 Web 作业可以执行的常见任务（例如，图像处理、队列处理、RSS 聚合、文件维护和发送电子邮件）编写的代码。WebJobs SDK 中的内置功能使用 Azure 存储空间和 Service Bus，用于计划任务和处理错误，以及用于许多其他常见方案。此外，它还设计为可扩展。[WebJobs SDK 是开源的](https://github.com/Azure/azure-webjobs-sdk/)，并且有[用于扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。
+[WebJobs](/documentation/articles/websites-webjobs-resources/) 是一项 Azure Web 应用功能，可让你在与 Web、API 应用相同的上下文中运行程序或脚本。[WebJobs SDK](/documentation/articles/websites-webjobs-resources/) 的用途是简化针对 Web 作业可以执行的常见任务（例如，图像处理、队列处理、RSS 聚合、文件维护和发送电子邮件）编写的代码。WebJobs SDK 中的内置功能使用 Azure 存储空间和 Service Bus，用于计划任务和处理错误，以及用于许多其他常见方案。此外，它还设计为可扩展。[WebJobs SDK 是开源的](https://github.com/Azure/azure-webjobs-sdk/)，并且有[用于扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。
 
 WebJobs SDK 包括以下组件：
 
@@ -32,7 +32,7 @@ WebJobs SDK 包括以下组件：
 
 * 图像处理或其他需要大量 CPU 的工作。 Web 应用的一项常见功能是上载图像或视频。在许多时候，你想要在内容上载后处理该内容，但又不想在你执行此任务时让用户等候。
 
-* 队列处理。Web 前端与后端服务的一个常见通信方式是使用队列。当 Web 应用需要完成工作时，它会将消息推送到队列。后端服务会从队列提取消息，并完成工作。你可以在图像处理中使用队列：例如，在用户上载多个文件之后，文件名会被放置在队列消息中，由后端选取队列消息进行处理。或者，你可以使用队列来改进 Web 应用响应能力。例如，无需将目录直接写入 SQL 数据库，而可以写入队列并告知用户已完成，然后由后端服务处理高延迟的关系型数据库工作。有关使用图像处理的队列处理示例，请参阅 [WebJobs SDK 入门教程](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
+* 队列处理。Web 前端与后端服务的一个常见通信方式是使用队列。当 Web 应用需要完成工作时，它会将消息推送到队列。后端服务会从队列提取消息，并完成工作。你可以在图像处理中使用队列：例如，在用户上载多个文件之后，文件名会被放置在队列消息中，由后端选取队列消息进行处理。或者，你可以使用队列来改进 Web 应用响应能力。例如，无需将目录直接写入 SQL 数据库，而可以写入队列并告知用户已完成，然后由后端服务处理高延迟的关系型数据库工作。有关使用图像处理的队列处理示例，请参阅 [WebJobs SDK 入门教程](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)。
 
 * RSS 聚合。如果你有维护 RSS 源列表的 Web 应用，你可以在后台进程中提取源中的所有文章。
 
@@ -52,7 +52,7 @@ WebJobs SDK 包括以下组件：
 
 使用 Azure 存储空间处理典型任务的代码十分简单。在控制台应用程序的 `Main` 方法中创建一个 `JobHost` 对象，以协调对你编写的方法的调用。WebJobs SDK 框架会根据方法中所用的 WebJobs SDK 属性，知道何时调用方法以及要使用什么参数值。该 SDK 提供了 *触发器* ，用于指定哪些条件导致调用函数，并提供了 *绑定器* ，用于指定如何获取传入和传出方法参数的信息。
 
-例如，[QueueTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to) 属性导致在队列中收到消息时调用函数，如果消息格式为字节数组或自定义类型的 JSON，该消息将自动反序列化。每次在 Azure 存储帐户中新建一个 blob 时，[BlobTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to) 属性都会触发一个流程。
+例如，[QueueTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/) 属性导致在队列中收到消息时调用函数，如果消息格式为字节数组或自定义类型的 JSON，该消息将自动反序列化。每次在 Azure 存储帐户中新建一个 blob 时，[BlobTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/) 属性都会触发一个流程。
 
 下面是个一个简单程序，它可用来轮询队列并为收到的每个队列消息创建 Blob：
 
@@ -161,7 +161,7 @@ WebJobs SDK 的触发器和绑定器功能可大幅简化所需编写的代码�
 * 可以从仪表板重放函数。
 * 您可以在仪表板中查看日志，链接到特定的 WebJob（使用 Console.Out、Console.Error、Trace 等编写的应用程序日志）或链接到生成它们的特定函数调用（使用此 SDK 传递给函数作为参数的 `TextWriter` 对象编写的日志）。 
 
-有关详细信息，请参阅[如何手动调用函数](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#manual)和[如何编写日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#logs)
+有关详细信息，请参阅[如何手动调用函数](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#manual)和[如何编写日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)
 
 ## <a id="nextsteps"></a>后续步骤
 

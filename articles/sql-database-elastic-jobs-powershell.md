@@ -13,17 +13,17 @@
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-elastic-jobs-powershell)
+- [PowerShell](/documentation/articles/sql-database-elastic-jobs-powershell/)
 
 
 
-使用适用于**弹性数据库作业**的 PowerShell API（预览版），可以定义要针对哪组数据库执行哪些脚本。本文说明如何使用 PowerShell cmdlet 创建和管理**弹性数据库作业**。请参阅[弹性作业概述](/documentation/articles/sql-database-elastic-jobs-overview)。
+使用适用于**弹性数据库作业**的 PowerShell API（预览版），可以定义要针对哪组数据库执行哪些脚本。本文说明如何使用 PowerShell cmdlet 创建和管理**弹性数据库作业**。请参阅[弹性作业概述](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
 ## 先决条件
 * Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
-* 使用弹性数据库工具创建的一组数据库。请参阅[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)。
-* Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
-* **弹性数据库作业** PowerShell 包：请参阅[安装弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-service-installation)
+* 使用弹性数据库工具创建的一组数据库。请参阅[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
+* Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+* **弹性数据库作业** PowerShell 包：请参阅[安装弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-service-installation/)
 
 ### 选择 Azure 订阅
 
@@ -189,7 +189,7 @@
  
 有两种可以创建的组类型：
 
-* [分片映射](/documentation/articles/sql-database-elastic-scale-shard-map-management)组：提交以分片映射为目标的作业时，该作业会通过查询分片映射来确定其当前的分片集，然后为分片映射中的每个分片创建子作业。
+* [分片映射](/documentation/articles/sql-database-elastic-scale-shard-map-management/)组：提交以分片映射为目标的作业时，该作业会通过查询分片映射来确定其当前的分片集，然后为分片映射中的每个分片创建子作业。
 * 自定义集合组：一种自定义数据库集。当作业以自定义集合为目标时，它会针对当前位于自定义集合中的每个数据库创建子作业。
 
 ## 设置弹性数据库作业连接
@@ -231,7 +231,7 @@
 
 ## 定义弹性数据库分片映射目标
 
-若要针对分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)创建）中的所有数据库执行作业，请将分片映射用作数据库目标。本示例要求使用弹性数据库客户端库创建分片应用程序。请参阅[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started)。
+若要针对分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)创建）中的所有数据库执行作业，请将分片映射用作数据库目标。本示例要求使用弹性数据库客户端库创建分片应用程序。请参阅[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
 ###使用示例应用程序创建分片映射管理器
 
@@ -650,7 +650,7 @@
 
 ## 创建可以跨数据库执行的数据层应用程序 (DACPAC)
 
-若要创建 DACPAC，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)。若要部署 DACPAC，请使用 [New-AzureSqlJobContent cmdlet](https://msdn.microsoft.com/zh-cn/library/mt346085.aspx)。DACPAC 必须可供服务访问。建议将创建的 DACPAC 上载到 Azure 存储空间，并创建 DACPAC 的[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+若要创建 DACPAC，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)。若要部署 DACPAC，请使用 [New-AzureSqlJobContent cmdlet](https://msdn.microsoft.com/zh-cn/library/mt346085.aspx)。DACPAC 必须可供服务访问。建议将创建的 DACPAC 上载到 Azure 存储空间，并创建 DACPAC 的[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 	$dacpacUri = "{Uri}"
 	$dacpacName = "{Dacpac Name}"

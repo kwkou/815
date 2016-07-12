@@ -15,8 +15,8 @@
 # 使用 Visual Studio 连接到 SQL 数据仓库
 
 > [AZURE.SELECTOR]
-- [Visual Studio](/documentation/articles/sql-data-warehouse-get-started-connect)
-- [SQLCMD](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd)
+- [Visual Studio](/documentation/articles/sql-data-warehouse-get-started-connect/)
+- [SQLCMD](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
 
 本演练说明如何使用 Visual Studio 中的 SQL Server Data Tools (SSDT) 扩展在短时间内连接到 Azure SQL 数据仓库。连接后，你将运行一个简单的查询。
 
@@ -90,10 +90,10 @@
 若要为 Windows 身份验证配置环境，请参阅 [使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库][]。
 
 <!--Arcticles-->
-[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision
-[安装 Visual Studio 和 SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio
+[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision/
+[安装 Visual Studio 和 SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio/
 [使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库]: /documentation/articles/sql-database/sql-database-aad-authentication
-[使用 PowerBI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi
+[使用 PowerBI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi/
 
 <!--Other-->
 [Azure 经典管理门户]: https://manage.windowsazure.cn

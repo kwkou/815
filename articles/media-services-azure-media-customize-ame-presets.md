@@ -238,7 +238,7 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 
 
 
->[AZURE.NOTE]为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 批量引入资产](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk)。
+>[AZURE.NOTE]为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 批量引入资产](/documentation/articles/media-services-dotnet-upload-files/#ingest_in_bulk)。
 
 有关完整的示例代码，请参阅[使用媒体服务编码器创建叠加](https://code.msdn.microsoft.com/Creating-Audio-and-Video-c2942c47)。
 
@@ -397,7 +397,7 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 		} 
 
 
-为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 批量引入资产](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk)。有关完整的示例代码，请参阅[使用媒体服务编码器进行拼结](https://code.msdn.microsoft.com/Stitching-with-Media-8fd5f203)。
+为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 批量引入资产](/documentation/articles/media-services-dotnet-upload-files/#ingest_in_bulk)。有关完整的示例代码，请参阅[使用媒体服务编码器进行拼结](https://code.msdn.microsoft.com/Stitching-with-Media-8fd5f203)。
 
 ###拼结单个资产中的视频
 

@@ -17,7 +17,7 @@
 - **性能**：请在以下情况下使用此方法：你在不同地理位置中具有多个终结点，并且希望请求客户端使用“最靠近的”终结点（因为延迟最低）。
 - **轮循机制：**请在以下情况下使用此方法：要将负载分发到位于同一数据中心的一组云服务中，或位于不同数据中心的多个云服务或 Web 应用中。
 
-有关详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-routing-methods)。
+有关详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-routing-methods/)。
 
 下图显示了一个用于将流量分发到不同云服务的轮循机制负载平衡方法的示例。
 
@@ -30,7 +30,7 @@
 3.	流量管理器在轮循机制列表中选择下一个云服务并将 DNS 名称发送回来。Internet 客户端的 DNS 服务器将该名称解析为 IP 地址，然后将其发送到 Internet 客户端。
 4.	Internet 客户端通过流量管理器与所选的云服务相连接。
 
-有关详细信息，请参阅[流量管理器](/documentation/articles/traffic-manager-overview)。
+有关详细信息，请参阅[流量管理器](/documentation/articles/traffic-manager-overview/)。
 
 ## 针对虚拟机的 Azure 负载平衡 ##
 

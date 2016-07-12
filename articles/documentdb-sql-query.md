@@ -604,7 +604,7 @@ IN 关键字可用于检查指定的值是否与列表中的任意值匹配。�
     FROM Families 
     WHERE Families.address.state IN ("NY", "WA", "CA", "PA", "OH", "OR", "MI", "WI", "MN", "FL")
 
-IN 等效于链接多个 OR 子句，但是由于可以使用单一索引处理它，因此 DocumentDB 支持对 IN 子句内指定的参数数量实现更高[限制](/documentation/articles/documentdb-limits)。
+IN 等效于链接多个 OR 子句，但是由于可以使用单一索引处理它，因此 DocumentDB 支持对 IN 子句内指定的参数数量实现更高[限制](/documentation/articles/documentdb-limits/)。
 
 ### 三元 (?) 和联合 (??) 运算符
 三元和联合运算符可以用于生成条件表达式，类似于常用的编程语言（如 C# 和 JavaScript）。
@@ -923,7 +923,7 @@ TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER B
 可将 TOP 与常量值（如以上所示）或使用参数化查询的变量值配合使用。有关更多详细信息，请参阅下面的参数化查询。
 
 ## ORDER BY 子句
-如同在 ANSI-SQL 中一样，在查询时可以包含可选的 Order By 子句。该子句可以包括可选的 ASC/DESC 参数以指定检索结果必须遵守的顺序。有关 Order By 的详细信息，请参阅 [DocumentDB Order By Walkthrough（DocumentDB Order By 演练）](/documentation/articles/documentdb-orderby)。
+如同在 ANSI-SQL 中一样，在查询时可以包含可选的 Order By 子句。该子句可以包括可选的 ASC/DESC 参数以指定检索结果必须遵守的顺序。有关 Order By 的详细信息，请参阅 [DocumentDB Order By Walkthrough（DocumentDB Order By 演练）](/documentation/articles/documentdb-orderby/)。
 
 例如，下面是按居住城市的名称检索家庭的查询。
 
@@ -1663,7 +1663,7 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 
 ### 空间函数
 
-DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。有关 DocumentDB 中地理支持的更多详细信息，请参阅 [Working with geospatial data in Azure DocumentDB（在 Azure DocumentDB 中使用地理数据）](/documentation/articles/documentdb-geospatial)。
+DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。有关 DocumentDB 中地理支持的更多详细信息，请参阅 [Working with geospatial data in Azure DocumentDB（在 Azure DocumentDB 中使用地理数据）](/documentation/articles/documentdb-geospatial/)。
 
 <table>
 <tr>
@@ -1706,7 +1706,7 @@ DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟
 
 ST\_WITHIN 可用于检查点是否在多边形内。多边形通常用来表示边界，例如邮政编码、省/自治区边界或自然构成物。再次说明，如果在你的索引策略中包含空间索引，则将通过索引有效地进行“within”查询。
 
-ST\_WITHIN 中的多边形参数只能包含单个环形，也就是说，多边形本身不能包含洞。有关 ST\_WITHIN 查询的多边形中允许的点数目上限，请查看 [DocumentDB 限制](/documentation/articles/documentdb-limits)。
+ST\_WITHIN 中的多边形参数只能包含单个环形，也就是说，多边形本身不能包含洞。有关 ST\_WITHIN 查询的多边形中允许的点数目上限，请查看 [DocumentDB 限制](/documentation/articles/documentdb-limits/)。
 
 **查询**
 
@@ -2374,7 +2374,7 @@ DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaS
 
 
 [1]: ./media/documentdb-sql-query/sql-query1.png
-[introduction]: /documentation/articles/documentdb-introduction
-[consistency-levels]: /documentation/articles/documentdb-consistency-levels
+[introduction]: /documentation/articles/documentdb-introduction/
+[consistency-levels]: /documentation/articles/documentdb-consistency-levels/
 
 <!---HONumber=Mooncake_0425_2016-->

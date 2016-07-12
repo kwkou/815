@@ -29,7 +29,7 @@
 
 教程末尾的[故障排除](#troubleshooting)部分介绍了在出现故障的情况下应如何操作，[后续步骤](#next-steps)部分提供了其他教程的链接，方便用户更深入地了解如何使用 Azure Web 应用。
 
-由于这是一篇入门教程，其中只是说明了部署 Web 项目有多么简单 - 不需要使用数据库，也不需要进行身份验证或授权。有关更多高级部署主题的链接，请参阅 [How to deploy an Azure web app（如何部署 Azure Web 应用）](/documentation/articles/web-sites-deploy)。
+由于这是一篇入门教程，其中只是说明了部署 Web 项目有多么简单 - 不需要使用数据库，也不需要进行身份验证或授权。有关更多高级部署主题的链接，请参阅 [How to deploy an Azure web app（如何部署 Azure Web 应用）](/documentation/articles/web-sites-deploy/)。
 
 除了安装 Azure SDK for .NET 所需的时间，本教程需要大约 10-15 分钟才能完成。
 
@@ -144,11 +144,11 @@
 
 * 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中监视和管理 Web 应用。 
 
-	有关详细信息，请参阅 [Configure web apps in Azure（在 Azure 中配置 Web 应用）](/documentation/articles/web-sites-configure)。
+	有关详细信息，请参阅 [Configure web apps in Azure（在 Azure 中配置 Web 应用）](/documentation/articles/web-sites-configure/)。
 
 * 从源代码管理部署 Web 项目
 
-	有关通过[源代码管理系统](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control)[自动完成部署](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery)的信息，请参阅 [Get started with web apps in Azure（Azure 中的 Web Apps 入门）](/documentation/articles/app-service-web-get-started)和 [How to deploy an Azure web app（如何部署 Azure Web 应用）](/documentation/articles/web-sites-deploy)。
+	有关通过[源代码管理系统](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control)[自动完成部署](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery)的信息，请参阅 [Get started with web apps in Azure（Azure 中的 Web Apps 入门）](/documentation/articles/app-service-web-get-started/)和 [How to deploy an Azure web app（如何部署 Azure Web 应用）](/documentation/articles/web-sites-deploy/)。
 
 * 将 ASP.NET Web API 部署到 Azure 中的 API 应用
 
@@ -158,8 +158,8 @@
 
 	有关如何使用 SSL 和你自己的域（例如 www.contoso.com 而不是 contoso.chinacloudsites.cn）的信息，请参阅以下资源：
 
-	* [在 Azure Web 应用中配置自定义域名](/documentation/articles/web-sites-custom-domain-name)
-	* [为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
+	* [在 Azure Web 应用中配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)
+	* [为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 * 当你不再使用 Web 应用和任何相关的 Azure 资源时，请删除包含这些资源的资源组。
 

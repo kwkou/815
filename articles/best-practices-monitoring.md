@@ -482,7 +482,7 @@ SLA 中经常会规定以下条款：
 #### 提取和推送检测数据
 检测数据收集子系统可以从各种日志和应用程序的每个实例的其他源主动检索检测数据（提取模型）。或者，它可以用作被动接收者，等候要从构成应用程序每个实例的组件发送的数据（推送模型）。
 
-实现提取模型的方法是将本地运行的监视代理与应用程序的每个实例配合使用。监视代理是独立的进程，可定期检索（提取）已在本地节点收集的遥测数据，并将此信息直接写入到应用程序所有实例共享的中心存储。这是 Azure 诊断实施的机制。Azure Web 或辅助角色的每个实例可以配置为捕获本地存储的诊断和其他跟踪信息。与每个实例一起运行的监视代理将指定的数据复制到 Azure 存储空间。[Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics)（在 Azure 云服务和虚拟机中启用诊断）一文提供了有关此过程的详细信息。某些元素（例如 IIS 日志、故障转储和自定义错误日志）将写入 Blob 存储。而来自 Windows 事件日志、ETW 事件和性能计数器的数据将记录在表存储中。图 3 演示了此机制。
+实现提取模型的方法是将本地运行的监视代理与应用程序的每个实例配合使用。监视代理是独立的进程，可定期检索（提取）已在本地节点收集的遥测数据，并将此信息直接写入到应用程序所有实例共享的中心存储。这是 Azure 诊断实施的机制。Azure Web 或辅助角色的每个实例可以配置为捕获本地存储的诊断和其他跟踪信息。与每个实例一起运行的监视代理将指定的数据复制到 Azure 存储空间。[Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics/)（在 Azure 云服务和虚拟机中启用诊断）一文提供了有关此过程的详细信息。某些元素（例如 IIS 日志、故障转储和自定义错误日志）将写入 Blob 存储。而来自 Windows 事件日志、ETW 事件和性能计数器的数据将记录在表存储中。图 3 演示了此机制。
 
 ![使用监视代理提取信息并写入共享存储的插图](.media/best-practices-monitoring/PullModel.png)
 
@@ -644,19 +644,19 @@ SLA 中经常会规定以下条款：
 在许多情况下，批处理进程可以根据定义的计划生成报告。（正常情况下，延迟不是问题。） 但在需要时，它们还应该可以根据特定情况生成报告。举例来说，如果你要将数据存储在关系数据库（例如 Azure SQL 数据库）中，则可以使用 SQL Server Reporting Services 等工具来提取并格式化数据，然后将其呈现为一组报告。
 
 ## 相关模式和指南
-- [Autoscaling guidance](/documentation/articles/best-practices-auto-scaling)（自动缩放指南）介绍如何通过减少操作员持续监视系统性能的需要来降低管理开销，并做出有关添加或删除资源的决策。
+- [Autoscaling guidance](/documentation/articles/best-practices-auto-scaling/)（自动缩放指南）介绍如何通过减少操作员持续监视系统性能的需要来降低管理开销，并做出有关添加或删除资源的决策。
 - [Health Endpoint Monitoring Pattern](https://msdn.microsoft.com/zh-cn/library/dn589789.aspx)（运行状况终结点监视模式）介绍如何在应用程序中实施可让外部工具通过公开终结点定期访问的功能检查。
 - [Priority Queue Pattern](https://msdn.microsoft.com/zh-cn/library/dn589794.aspx)（优先级队列模式）说明如何排定队列消息的优先级，以便在较不紧急的消息之前接收和处理紧急请求。
 
 ## 详细信息
-- [监视、诊断和排查 Microsoft Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
+- [监视、诊断和排查 Microsoft Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)
 - [Azure: Telemetry Basics and Troubleshooting](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)（Azure：遥测基础知识和疑难解答）
-- [在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)
+- [在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)
 - [Azure Redis Cache](https://azure.microsoft.com/services/cache/)（Azure Redis 缓存）、[Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 和 [HDInsight](https://azure.microsoft.com/services/hdinsight/)
-- [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
-- [SQL Server business intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi)（Azure 虚拟机中的 SQL Server Business Intelligence）
-- [Receive alert notifications](./azure-portal/insights-receive-alert-notifications)（接收警报通知）和 [Track service health](/documentation/articles/insights-service-health)（跟踪服务运行状况）
-- [Application Insights](/documentation/articles/app-insights-get-started)
+- [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
+- [SQL Server business intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/)（Azure 虚拟机中的 SQL Server Business Intelligence）
+- [Receive alert notifications](./azure-portal/insights-receive-alert-notifications)（接收警报通知）和 [Track service health](/documentation/articles/insights-service-health/)（跟踪服务运行状况）
+- [Application Insights](/documentation/articles/app-insights-get-started/)
 
 ##其他最佳实践
 - [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)

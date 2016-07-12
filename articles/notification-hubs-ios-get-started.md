@@ -470,9 +470,9 @@
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
-[Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
-[使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
-[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-ios-send-breaking-news
+[Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push/
+[使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users/
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-ios-send-breaking-news/
 [本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 [Azure 门户]: https://portal.azure.cn
 <!---HONumber=Mooncake_0405_2016-->

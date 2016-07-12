@@ -17,9 +17,9 @@
 # 在 Azure VM (GUI) 中配置 AlwaysOn 可用性组
 
 > [AZURE.SELECTOR]
-- [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)
-- [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
-- [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
+- [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
+- [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)
+- [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
 
 <br/>
 
@@ -27,7 +27,7 @@
 
 本端到端教程介绍如何使用 Azure Resource Manager 虚拟机上运行的 SQL Server AlwaysOn 实施可用性组。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是 Resource Manager 模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是 Resource Manager 模型。
 
 完成本教程后，Azure 中的 SQL Server AlwaysOn 解决方案将包括以下要素：
 
@@ -53,7 +53,7 @@
 
 - 你已有一个 Azure 帐户。
 
-- 你已经知道如何从虚拟机库预配 SQL Server VM。有关详细信息，请参阅[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create)
+- 你已经知道如何从虚拟机库预配 SQL Server VM。有关详细信息，请参阅[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)
 
 - 你已经深入了解 AlwaysOn 可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 
@@ -91,7 +91,7 @@ Azure 将创建新资源组，并在门户预览中固定资源组的快捷方�
 
 下一步是在 Azure 资源组中创建网络和子网。
 
-此解决方案使用一个包含两个子网的虚拟网络。你应该了解网络的基础知识以及网络在 Azure 中的工作原理。[Virtual Network Overview（虚拟网络概述）](/documentation/articles/virtual-networks-overview)提供了有关 Azure 中网络的详细信息。
+此解决方案使用一个包含两个子网的虚拟网络。你应该了解网络的基础知识以及网络在 Azure 中的工作原理。[Virtual Network Overview（虚拟网络概述）](/documentation/articles/virtual-networks-overview/)提供了有关 Azure 中网络的详细信息。
 
 若要创建虚拟网络，请执行以下操作：
 
@@ -174,7 +174,7 @@ Azure 会将你返回到门户预览仪表板，并在创建新网络时发出�
 
 ### 创建可用性集
 
-在创建虚拟机之前，需要创建可用性集。可用性集可减少计划内或计划外维护事件的停机时间。Azure 可用性集是 Azure 置于物理容错域和更新域上的逻辑资源组。容错域确保可用性集的成员具有不同的电源和网络资源。更新域确保可用性集的成员不会同时停机进行维护。[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
+在创建虚拟机之前，需要创建可用性集。可用性集可减少计划内或计划外维护事件的停机时间。Azure 可用性集是 Azure 置于物理容错域和更新域上的逻辑资源组。容错域确保可用性集的成员具有不同的电源和网络资源。更新域确保可用性集的成员不会同时停机进行维护。[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。
 
 需要两个可用性集。一个用于域控制器，另一个用于 SQL Server。
 
@@ -258,7 +258,7 @@ Azure 将创建虚拟机。
 
 1. 选择“Active Directory 域服务”和“DNS 服务器”角色。出现提示时，添加这些角色所需的任何其他功能。
 
-	>[AZURE.NOTE] 你将收到无静态 IP 地址的验证警告。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户预览中将 IP 地址设置为静态，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)。
+	>[AZURE.NOTE] 你将收到无静态 IP 地址的验证警告。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户预览中将 IP 地址设置为静态，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
 
 	![添加角色对话框](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784624.png)
 
@@ -393,7 +393,7 @@ Azure 将创建虚拟机。
 
 <br/>
 
->[AZURE.NOTE] 前面的配置建议使用标准层虚拟机，因为基本层计算机不支持可用性组侦听器所需的负载平衡终结点。此外，此处建议的计算机大小是为了在 Azure VM 中测试可用性组。为获得生产工作负荷的最佳性能，请参阅 [Performance best practices for SQL Server in Azure Virtual Machines（Azure 虚拟机中 SQL Server 的性能最佳实践）](/documentation/articles/virtual-machines-windows-sql-performance)中关于 SQL Server 计算机大小和配置的建议。
+>[AZURE.NOTE] 前面的配置建议使用标准层虚拟机，因为基本层计算机不支持可用性组侦听器所需的负载平衡终结点。此外，此处建议的计算机大小是为了在 Azure VM 中测试可用性组。为获得生产工作负荷的最佳性能，请参阅 [Performance best practices for SQL Server in Azure Virtual Machines（Azure 虚拟机中 SQL Server 的性能最佳实践）](/documentation/articles/virtual-machines-windows-sql-performance/)中关于 SQL Server 计算机大小和配置的建议。
 
 
 
@@ -734,7 +734,7 @@ Azure 将创建虚拟机。
 
 	![新建可用性组向导，选择初始数据同步](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665529.png)
 
-1. 在“验证”页中，单击“下一步”。此页应与以下页类似。因为你尚未配置可用性组侦听器，会出现一个侦听器配置警告。你可以忽略此警告，因为本教程不会配置侦听器。本教程稍后将帮助你创建侦听器。有关如何配置侦听器的详细信息，请参阅 [Configure an internal load balancer for an AlwaysOn availability group in Azure](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-int-listener)（在 Azure 中为 AlwaysOn 可用性组配置内部负载平衡器）。
+1. 在“验证”页中，单击“下一步”。此页应与以下页类似。因为你尚未配置可用性组侦听器，会出现一个侦听器配置警告。你可以忽略此警告，因为本教程不会配置侦听器。本教程稍后将帮助你创建侦听器。有关如何配置侦听器的详细信息，请参阅 [Configure an internal load balancer for an AlwaysOn availability group in Azure](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-int-listener/)（在 Azure 中为 AlwaysOn 可用性组配置内部负载平衡器）。
 
 	![新建可用性组向导，验证](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665530.gif)
 
@@ -760,7 +760,7 @@ Azure 将创建虚拟机。
 
 ## 在 Azure 中配置内部负载平衡器以及在群集中配置可用性组侦听器
 
-若要直接连接到可用性组，需要在 Azure 中配置内部负载平衡器，然后在群集中创建侦听器。本部分提供这些步骤的综合概述。有关详细说明，请参阅 [Configure an internal load balancer for an AlwaysOn availability group in Azure（在 Azure 中为 AlwaysOn 可用性组配置内部负载平衡器）](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-int-listener)。
+若要直接连接到可用性组，需要在 Azure 中配置内部负载平衡器，然后在群集中创建侦听器。本部分提供这些步骤的综合概述。有关详细说明，请参阅 [Configure an internal load balancer for an AlwaysOn availability group in Azure（在 Azure 中为 AlwaysOn 可用性组配置内部负载平衡器）](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-int-listener/)。
 
 ### 在 Azure 中创建负载平衡器
 
@@ -845,7 +845,7 @@ Azure 将创建虚拟机。
 
 1. 将侦听器端口属性设置为 1433。为此，请打开 SQL Server Management Studio，右键单击可用性组侦听器，然后选择“属性”。将“端口”设置为 1433。
 
-1. 现在，可以[使侦听器联机](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-int-listener#2-bring-the-listener-online)。
+1. 现在，可以[使侦听器联机](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-int-listener/#2-bring-the-listener-online)。
 
 ### 测试与侦听器的连接
 
@@ -861,6 +861,6 @@ Azure 将创建虚拟机。
 
 ## 后续步骤
 
-有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
+有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_0613_2016-->

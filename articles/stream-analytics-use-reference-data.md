@@ -15,7 +15,7 @@
 
 # 在流分析的输入流中使用引用数据或查找表
 
-引用数据（也称为查找表）是一个静态的或本质上缓慢变化的有限数据集，用于执行查找或与你的数据流相关联。为了在 Azure 流分析作业中利用引用数据，你通常会在查询中使用[引用数据联合](https://msdn.microsoft.com/zh-cn/library/azure/dn949258.aspx)。流分析使用 Azure Blob 存储作为引用数据的存储层，并且通过 Azure 数据工厂，可以从<!--[-->基于云和本地的任意数量的数据存储区<!--](/documentation/articles/data-factory-data-movement-activities)-->将引用数据转换和/或复制到 Azure Blob 存储，以用作引用数据。
+引用数据（也称为查找表）是一个静态的或本质上缓慢变化的有限数据集，用于执行查找或与你的数据流相关联。为了在 Azure 流分析作业中利用引用数据，你通常会在查询中使用[引用数据联合](https://msdn.microsoft.com/zh-cn/library/azure/dn949258.aspx)。流分析使用 Azure Blob 存储作为引用数据的存储层，并且通过 Azure 数据工厂，可以从<!--[-->基于云和本地的任意数量的数据存储区<!--](/documentation/articles/data-factory-data-movement-activities/)-->将引用数据转换和/或复制到 Azure Blob 存储，以用作引用数据。
 
 ## 配置引用数据
 
@@ -86,8 +86,8 @@
 ## 后续步骤
 我们已经向你介绍了流分析，这是一种托管服务，适用于对物联网的数据进行流式分析。若要了解有关此服务的详细信息，请参阅：
 
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 

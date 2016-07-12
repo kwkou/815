@@ -3,13 +3,13 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-validationquery)
-- [English](/documentation/articles/mysql-database-enus-validationquery)
+- [中文](/documentation/articles/mysql-database-validationquery/)
+- [English](/documentation/articles/mysql-database-enus-validationquery/)
 
 # Verify the effectiveness of persistent connections<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
 
 
-To make better use of the database’s connection resources, use the connection pooling or persistent connection methods to access the database. For more information, see [How to connect efficiently to MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool). However, time-efficiency is also an issue for connection pooling and persistent connections. The server configures a timeout mechanism, closing a connection that has been in an idle state for some time, in order to free up resources. When the client accesses the database again, this is equivalent to creating a new connection request between the client and the server. To ensure the effectiveness of connections during the process of using them, configure a verification mechanism on the client. For example, as shown below, you can use Tomcat JDBC connection pooling to configure this verification mechanism.
+To make better use of the database’s connection resources, use the connection pooling or persistent connection methods to access the database. For more information, see [How to connect efficiently to MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool/). However, time-efficiency is also an issue for connection pooling and persistent connections. The server configures a timeout mechanism, closing a connection that has been in an idle state for some time, in order to free up resources. When the client accesses the database again, this is equivalent to creating a new connection request between the client and the server. To ensure the effectiveness of connections during the process of using them, configure a verification mechanism on the client. For example, as shown below, you can use Tomcat JDBC connection pooling to configure this verification mechanism.
 
 By setting the TestOnBorrow parameter, when there is a new request, the connection pool automatically verifies the effectiveness of any available connections that are idle before returning the idle connections. If such a connection is effective, it will be directly returned; if it is not effective, the connection pool will withdraw the connection, create a new, effective connection, and return it. This ensures the speed of access to the database.
 

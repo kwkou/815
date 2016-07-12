@@ -23,13 +23,13 @@
 
 从媒体服务2.10 发行版开始，在创建频道时，可以指定你想要频道接收输入流的方式，以及是否想要频道对流执行实时编码。可以使用两个选项：
 
-- **无** - 如果你打算使用输出多比特率流的本地实时编码器，请指定此值。在这种情况下，传入流将传递到输出，而不会进行任何编码。这是 2.10 发行版以前的频道行为。有关使用此类型的频道的更详细信息，请参阅[使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
+- **无** - 如果你打算使用输出多比特率流的本地实时编码器，请指定此值。在这种情况下，传入流将传递到输出，而不会进行任何编码。这是 2.10 发行版以前的频道行为。有关使用此类型的频道的更详细信息，请参阅[使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)。
 
 - **标准** - 如果你打算使用媒体服务将单比特率实时流编码为多比特率流，请选择此值。请注意，实时编码会影响计费，你应该记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
->[AZURE.NOTE]本主题讨论为执行实时编码（“标准”编码类型）启用的频道的属性。若要了解如何使用无法执行实时编码的频道，请参阅[使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
+>[AZURE.NOTE]本主题讨论为执行实时编码（“标准”编码类型）启用的频道的属性。若要了解如何使用无法执行实时编码的频道，请参阅[使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)。
 >
->请务必仔细阅读[注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels#Considerations)部分。
+>请务必仔细阅读[注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#Considerations)部分。
 
 
 
@@ -73,9 +73,9 @@
 
 ##本主题内容
 
-- 概述[常见的实时流方案](/documentation/articles/media-services-manage-live-encoder-enabled-channels#scenario)
-- [频道及其相关组件的说明](/documentation/articles/media-services-manage-live-encoder-enabled-channels#channel)
-- [注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels#Considerations)
+- 概述[常见的实时流方案](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#scenario)
+- [频道及其相关组件的说明](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#channel)
+- [注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#Considerations)
 
 
 ##<a id="scenario"></a>常见的实时流方案
@@ -213,7 +213,7 @@
 
 注意事项：
 
-这同样适用于[单比特率 RTMP](/documentation/articles/media-services-manage-live-encoder-enabled-channels#single_bitrate_RTMP)。
+这同样适用于[单比特率 RTMP](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#single_bitrate_RTMP)。
 
 ####其他注意事项
 
@@ -256,7 +256,7 @@
 
 本部分介绍当频道的**“编码类型”**设为**“标准”**时，如何调整频道内的实时编码器的设置。
 
->[AZURE.NOTE]在 Azure 中输入多个语言轨迹和执行实时编码时，多语言输入仅支持 RTP。使用 MPEG-2 TS over RTP 最多可以定义 8 个音频流。当前不支持使用 RTMP 或平滑流引入多个音频轨迹。使用[本地实时编码器](/documentation/articles/media-services-live-streaming-with-onprem-encoders)执行实时编码时，将不存在这种限制，因为发送到 AMS 的任何数据都会通过某个通道，而不做进一步的处理。
+>[AZURE.NOTE]在 Azure 中输入多个语言轨迹和执行实时编码时，多语言输入仅支持 RTP。使用 MPEG-2 TS over RTP 最多可以定义 8 个音频流。当前不支持使用 RTMP 或平滑流引入多个音频轨迹。使用[本地实时编码器](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)执行实时编码时，将不存在这种限制，因为发送到 AMS 的任何数据都会通过某个通道，而不做进一步的处理。
 
 ###Ad 标记源
 
@@ -339,7 +339,7 @@
 
 ###显示清单
 
-可选。指示实时编码器在商业广告期间切换到[默认静态](/documentation/articles/media-services-manage-live-encoder-enabled-channels#default_slate)图像并隐藏传入视频源。在清单期间音频也会静音。默认值为 **false**。
+可选。指示实时编码器在商业广告期间切换到[默认静态](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#default_slate)图像并隐藏传入视频源。在清单期间音频也会静音。默认值为 **false**。
  
 所用图像将是在创建频道时通过默认清单资源 ID 属性指定的图像。静态图像将进行拉伸以适合显示图像大小。
 
@@ -426,12 +426,12 @@
 - 当频道或其关联的节目正在运行时，无法更改输入协议。如果你需要不同的协议，应当针对每个输入协议创建单独的频道。 
 - 每次重新配置实时编码器后，请对频道调用**重置**方法。在重置频道之前，必须停止节目。在重置频道后，重新启动节目。 
 - 只有当频道处于“正在运行”状态且频道中的所有节目都已停止时才能停止频道。
-- 默认情况下，你只能向你的媒体服务帐户添加 5 个频道。这是所有新帐户的软配额。有关详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
+- 默认情况下，你只能向你的媒体服务帐户添加 5 个频道。这是所有新帐户的软配额。有关详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
 - 当频道或其关联的节目正在运行时，无法更改输入协议。如果你需要不同的协议，应当针对每个输入协议创建单独的频道。
-- 仅当你的频道处于**“正在运行”**状态时才会向你收费。有关详细信息，请参阅[此](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states)部分。
+- 仅当你的频道处于**“正在运行”**状态时才会向你收费。有关详细信息，请参阅[此](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#states)部分。
 - 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 Azure.cn 联系 amslived。
 - 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
-- 在 Azure 中输入多个语言轨迹和执行实时编码时，多语言输入仅支持 RTP。使用 MPEG-2 TS over RTP 最多可以定义 8 个音频流。当前不支持使用 RTMP 或平滑流引入多个音频轨迹。使用[本地实时编码器](/documentation/articles/media-services-live-streaming-with-onprem-encoders)执行实时编码时，将不存在这种限制，因为发送到 AMS 的任何数据都会通过某个通道，而不做进一步的处理。
+- 在 Azure 中输入多个语言轨迹和执行实时编码时，多语言输入仅支持 RTP。使用 MPEG-2 TS over RTP 最多可以定义 8 个音频流。当前不支持使用 RTMP 或平滑流引入多个音频轨迹。使用[本地实时编码器](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)执行实时编码时，将不存在这种限制，因为发送到 AMS 的任何数据都会通过某个通道，而不做进一步的处理。
 - 编码预设使用“最大帧速率”30 fps 的思路。因此，如果输入为 60fps/59.97i，则输入帧将修剪/反交错为 30/29.97 fps。因此，如果输入为 50fps/50i，则输入帧将修剪/反交错为 25 fps。如果输入为 25 fps，则输出将保持为 25 fps。
 - 完成后请不要忘记关闭你的通道。否则会继续计费。 
 
@@ -439,7 +439,7 @@
 
 - 通道启动时间已改善为平均 2 分钟，但有时因为需求提高，可能仍然需要长达 20 分钟以上的时间。
 - RTP 支持迎合专业的广播装置。请查看[此](https://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/)博客中有关 RTP 的说明。
-- 静态图像应符合[此处](/documentation/articles/media-services-manage-live-encoder-enabled-channels#default_slate)所述的限制。如果你想要尝试创建默认静态图像大于 1920x1080 的频道，最终请求将会出错。
+- 静态图像应符合[此处](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#default_slate)所述的限制。如果你想要尝试创建默认静态图像大于 1920x1080 的频道，最终请求将会出错。
 - 再次强调，完成流式处理后请不要忘记关闭你的通道。否则会继续计费。
 
 ###如何创建频道以执行从单比特率到自适应比特率流的实时编码 
@@ -447,19 +447,19 @@
 选择**“门户”**、**.NET**、**REST API** 以了解如何创建和管理频道和节目。
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
+- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
+- [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 
 
 ##相关主题
 
-[使用 Azure 媒体服务传递实时流式处理事件](/documentation/articles/media-services-live-streaming-workflow)
+[使用 Azure 媒体服务传递实时流式处理事件](/documentation/articles/media-services-live-streaming-workflow/)
 
-[媒体服务概念](/documentation/articles/media-services-concepts)
+[媒体服务概念](/documentation/articles/media-services-concepts/)
 
-[Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview)
+[Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview/)
 
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  

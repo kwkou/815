@@ -33,7 +33,7 @@
 
 ### 为自动化设置身份验证
 
-你需要先创建生成代理将用于对 Azure 进行身份验证的[服务主体](/documentation/articles/resource-group-create-service-principal-portal)，才能设置生成计算机。你还需要创建证书并将其上载到 Azure 密钥保管库，因为密钥保管库不支持服务主体身份验证。可以从任意计算机进行这些步骤。你的开发计算机是一个不错的选择。
+你需要先创建生成代理将用于对 Azure 进行身份验证的[服务主体](/documentation/articles/resource-group-create-service-principal-portal/)，才能设置生成计算机。你还需要创建证书并将其上载到 Azure 密钥保管库，因为密钥保管库不支持服务主体身份验证。可以从任意计算机进行这些步骤。你的开发计算机是一个不错的选择。
 
 ### 安装 Azure PowerShell 并登录
 
@@ -403,9 +403,9 @@
 
 前面的说明为每个生成创建新的群集，并在生成的末尾删除它。如果你希望改为让每个生成执行应用程序升级（到现有群集），请使用以下步骤：
 
-1.	按照[这些说明](/documentation/articles/service-fabric-cluster-creation-via-arm)，通过 Azure PowerShell 手动创建测试群集。
+1.	按照[这些说明](/documentation/articles/service-fabric-cluster-creation-via-arm/)，通过 Azure PowerShell 手动创建测试群集。
 
-2.	按照[这些说明](/documentation/articles/service-fabric-visualstudio-configure-upgrade)配置发布配置文件，以支持应用程序升级。
+2.	按照[这些说明](/documentation/articles/service-fabric-visualstudio-configure-upgrade/)配置发布配置文件，以支持应用程序升级。
 
 4.	从你的生成定义中删除“删除群集资源组”和“预配群集”生成步骤。
 

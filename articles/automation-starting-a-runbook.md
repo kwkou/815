@@ -21,10 +21,10 @@
 | [Azure 经典管理门户](#starting-a-runbook-with-the-azure-portal) | <li>使用交互式用户界面的最简单方法。<br> <li>用于提供简单参数值的窗体。<br> <li>轻松跟踪作业状态。<br> <li>使用 Azure 登录对访问进行身份验证。 |
 | [Windows PowerShell](https://msdn.microsoft.com/zh-cn/library/dn690259.aspx) | <li>使用 Windows PowerShell cmdlet 从命令行调用。<br> <li>可以使用多个步骤包含在自动化解决方案中。<br> <li>使用证书或 OAuth 用户主体/服务主体对请求进行身份验证。<br> <li>提供简单和复杂的参数值。<br> <li>跟踪作业状态。<br> <li>支持 PowerShell cmdlet 所需的客户端。 |
 | [Azure 自动化 API](http://msdn.microsoft.com/zh-cn/library/azure/mt163849.aspx) | <li>最有弹性的方法，但也最复杂。<br> <li>从任何可发出 HTTP 请求的自定义代码调用。<br> <li>使用证书或 OAuth 用户主体/服务主体对请求进行身份验证。<br> <li>提供简单和复杂的参数值。<br> <li>跟踪作业状态。 |
-| [Webhook](/documentation/articles/automation-webhooks) | <li>从单个 HTTP 请求启动 Runbook。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>客户端无法覆盖创建 Webhook 时指定的参数值。Runbook 可以定义填入了 HTTP 请求详细信息的单个参数。<br> <li>无法通过 Webhook URL 跟踪作业状态。 |
-| [响应 Azure 警报](/documentation/articles/automation-webhooks) | <li>启动 Runbook 以响应 Azure 警报。<br> <li>为 Runbook 配置 Webhook 并链接到警报。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>当前仅对度量值支持警报。 |
-| [计划](/documentation/articles/automation-scheduling-a-runbook) | <li>按每小时、每天或每周计划自动启动 Runbook。<br> <li>通过 Azure 经典管理门户、PowerShell cmdlet 或 Azure API 来操作计划。<br> <li>提供与计划配置使用的参数值。 |
-| [从另一个 Runbook](/documentation/articles/automation-child-runbooks) | <li>使用一个 Runbook 作为另一个 Runbook 中的活动。<br> <li>对多个 Runbook 使用的功能很有用。<br> <li>为子 Runbook 提供参数值，并使用父 Runbook 中的输出。 |
+| [Webhook](/documentation/articles/automation-webhooks/) | <li>从单个 HTTP 请求启动 Runbook。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>客户端无法覆盖创建 Webhook 时指定的参数值。Runbook 可以定义填入了 HTTP 请求详细信息的单个参数。<br> <li>无法通过 Webhook URL 跟踪作业状态。 |
+| [响应 Azure 警报](/documentation/articles/automation-webhooks/) | <li>启动 Runbook 以响应 Azure 警报。<br> <li>为 Runbook 配置 Webhook 并链接到警报。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>当前仅对度量值支持警报。 |
+| [计划](/documentation/articles/automation-scheduling-a-runbook/) | <li>按每小时、每天或每周计划自动启动 Runbook。<br> <li>通过 Azure 经典管理门户、PowerShell cmdlet 或 Azure API 来操作计划。<br> <li>提供与计划配置使用的参数值。 |
+| [从另一个 Runbook](/documentation/articles/automation-child-runbooks/) | <li>使用一个 Runbook 作为另一个 Runbook 中的活动。<br> <li>对多个 Runbook 使用的功能很有用。<br> <li>为子 Runbook 提供参数值，并使用父 Runbook 中的输出。 |
 
 下图演示了 Runbook 生命周期的详细分步过程。其中包括在 Azure 自动化中启动 Runbook 的不同方式、本地计算机执行 Azure 自动化 Runbook 时所需的组件，以及不同组件之间的交互。
 
@@ -65,7 +65,7 @@ Start-AzureAutomationRunbook 将返回一个作业对象，启动 Runbook 后，
 
 ##<a name="runbook-parameters"></a> Runbook 参数
 
-当你使用 Azure 经典管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks) 中所述，以内联方式从另一个 Runbook 调用该参数值。
+当你使用 Azure 经典管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/) 中所述，以内联方式从另一个 Runbook 调用该参数值。
 
 Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功能，如以下部分中所述。
 
@@ -131,7 +131,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 凭据
 
-如果参数的数据类型为 **PSCredential**，则你可以提供 Azure 自动化[凭据资产](/documentation/articles/automation-credentials)的名称。Runbook 将检索具有指定名称的凭据。
+如果参数的数据类型为 **PSCredential**，则你可以提供 Azure 自动化[凭据资产](/documentation/articles/automation-credentials/)的名称。Runbook 将检索具有指定名称的凭据。
 
 请考虑以下接受名为 credential 的参数的测试 Runbook。
 
@@ -153,6 +153,6 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ## 后续步骤
 
--	本文中的 Runbook 体系结构提供了有关子 Runbook 的概括说明，若要了解详细信息，请参阅 [Child runbooks in Azure Automation（Azure 自动化中的子 Runbook）](/documentation/articles/automation-child-runbooks)
+-	本文中的 Runbook 体系结构提供了有关子 Runbook 的概括说明，若要了解详细信息，请参阅 [Child runbooks in Azure Automation（Azure 自动化中的子 Runbook）](/documentation/articles/automation-child-runbooks/)
 
 <!---HONumber=Mooncake_0411_2016-->

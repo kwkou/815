@@ -475,7 +475,7 @@ AP5000
 
   ![访问“启用诊断”选项](./media/vs-azure-tools-optimizing-azure-code-in-visual-studio/IC796660.png)
 
-  有关详细信息，请参阅 [为 Azure 云服务和虚拟机配置诊断](/documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines)。
+  有关详细信息，请参阅 [为 Azure 云服务和虚拟机配置诊断](/documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/)。
 
 
 ## 避免将 DbContext 对象声明为静态
@@ -524,6 +524,6 @@ public class BlogsController : Controller
 
 ## 后续步骤
 
-若要详细了解如何对 Azure 应用程序进行优化和故障排除，请参阅 [使用 Visual Studio 对 Azure App Service 中的 Web 应用进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
+若要详细了解如何对 Azure 应用程序进行优化和故障排除，请参阅 [使用 Visual Studio 对 Azure App Service 中的 Web 应用进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
 
 <!---HONumber=Mooncake_0509_2016-->

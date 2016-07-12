@@ -21,7 +21,7 @@ Azure 支持两种队列机制：**Azure 队列**和**服务总线队列**。
 
 **Azure 队列**是 [Azure 存储空间](/home/features/storage/)基础结构的一部分，其特点是简单的基于 REST 的 Get/Put/Peek 接口，可在服务内部或服务之间提供可靠的持久性消息传送。
 
-**服务总线队列**是更广的 [Azure 消息传送](/home/features/messaging)基础结构的一部分，可支持队列以及发布/订阅、Web 远程服务和集成模式。有关服务总线队列、主题/订阅和中继的详细信息，请参阅[服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)。
+**服务总线队列**是更广的 [Azure 消息传送](/home/features/messaging)基础结构的一部分，可支持队列以及发布/订阅、Web 远程服务和集成模式。有关服务总线队列、主题/订阅和中继的详细信息，请参阅[服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)。
 
 当两种队列技术同时存在时，首先引入的是 Azure 队列，这是一种基于 Azure 存储服务构建的专用队列存储机制。服务总线队列基于更广泛的“中转消息传送”基础结构而构建，旨在集成跨多个通信协议、数据约定、可信域和/或网络环境的应用程序或应用程序组件。
 
@@ -63,7 +63,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 - 你的队列大小不会增长到超过 80 GB。
 
-- 你希望使用基于 AMQP 1.0 标准的消息传送代理。有关 AMQP 的详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-overview)。
+- 你希望使用基于 AMQP 1.0 标准的消息传送代理。有关 AMQP 的详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-overview/)。
 
 - 你想要从基于队列的点到点通信最终迁移到消息交换模式，后者允许无缝集成其他接收者（订阅服务器），其中每个接收者都接收发送到该队列的某些消息或所有消息的独立副本。消息交换模式是服务总线本机提供的发布/订阅功能。
 
@@ -173,7 +173,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 |比较条件|Azure 队列|服务总线队列|
 |---|---|---|
-|最大队列大小|**200 TB**<br/><br/>（限制为单个存储帐户容量）|**1 GB 到 80 GB**<br/><br/>（在创建队列和[启用分区](/documentation/articles/service-bus-partitioning)时定义 – 请参阅“其他信息”部分）|
+|最大队列大小|**200 TB**<br/><br/>（限制为单个存储帐户容量）|**1 GB 到 80 GB**<br/><br/>（在创建队列和[启用分区](/documentation/articles/service-bus-partitioning/)时定义 – 请参阅“其他信息”部分）|
 |最大消息大小|**64 KB**<br/><br/>（使用 **Base64** 编码时为 48 KB）<br/><br/>Azure 可以通过合并队列和 Blob 支持大消息 – 单个项目排队的消息最多达到 200GB。|**256 KB** 或 **1 MB**<br/><br/>（包括标头和正文，最大标头大小：64 KB）。<br/><br/>取决于[服务层](/docuementation/articles/service-bus-premium-messaging)。|
 |最大消息 TTL|**7 天**|**不受限制**|
 |最大队列数|**不受限制**|**10,000**<br/><br/>（每个服务命名空间，可以增加）|
@@ -181,7 +181,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 ### 其他信息
 
-- 服务总线强制实施队列大小限制。在创建队列时指定最大队列大小，其值可以在 1 至 80 GB 之间。如果达到创建队列时设置的队列大小值，则将拒绝其他传入消息，并且调用代码将收到一个异常。有关服务总线中配额的详细信息，请参阅[服务总线配额](/documentation/articles/service-bus-quotas)。
+- 服务总线强制实施队列大小限制。在创建队列时指定最大队列大小，其值可以在 1 至 80 GB 之间。如果达到创建队列时设置的队列大小值，则将拒绝其他传入消息，并且调用代码将收到一个异常。有关服务总线中配额的详细信息，请参阅[服务总线配额](/documentation/articles/service-bus-quotas/)。
 
 - 你可以创建 1、2、3、4 或 5 GB 大小的服务总线队列（默认值为 1 GB）。启用分区（这是默认值）时，服务总线将为你指定的每个 GB 创建 16 个分区。因此，如果你创建了一个大小为 5 GB 的队列，由于每 GB 16 个分区，最大队列大小将变为 (5 * 16) = 80 GB。可以通过在 [Azure 经典管理门户][]上查看分区队列或主题的条目，来了解该队列或主题的最大大小。
 
@@ -243,7 +243,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 - Azure 队列和服务总线队列通过对要中止的队列拒绝请求来实施中止行为。但是，这两个队列都不会将中止的请求视为计费。
 
-- 针对服务总线队列的基准已证明：单个队列每秒可以获得最多 2,000 条消息的消息吞吐量（消息大小大约为 1 KB）。要获得更高吞吐量，请使用多个队列。有关使用服务总线优化性能的详细信息，请参阅[使用服务总线中转消息传送改进性能的最佳实践](/documentation/articles/service-bus-performance-improvements)。
+- 针对服务总线队列的基准已证明：单个队列每秒可以获得最多 2,000 条消息的消息吞吐量（消息大小大约为 1 KB）。要获得更高吞吐量，请使用多个队列。有关使用服务总线优化性能的详细信息，请参阅[使用服务总线中转消息传送改进性能的最佳实践](/documentation/articles/service-bus-performance-improvements/)。
 
 - 对于服务总线队列，当达到最大吞吐量时，一个 [ServerBusyException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.serverbusyexception.aspx)（使用 .NET 托管中转消息传送 API 时）或 HTTP 503（使用基于 REST 的 API 时）响应将返回到该队列客户端，指示该队列将中止。
 
@@ -261,7 +261,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 - 针对任一队列技术的每个请求都必须进行身份验证。不支持使用匿名访问的公共队列。使用 SAS，你可以通过发布只写 SAS、只读 SAS 或者甚至完全访问权限 SAS 来满足这种方案的需求。
 
-- Azure 队列提供的身份验证方案涉及使用对称密钥，该密钥是基于哈希的消息身份验证代码 (HMAC)，使用 SHA-256 算法计算并编码为 **Base64** 字符串。有关相应协议的详细信息，请参阅 [Azure 存储空间服务的身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。服务总线队列支持使用对称密钥的类似模型。有关详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication)。
+- Azure 队列提供的身份验证方案涉及使用对称密钥，该密钥是基于哈希的消息身份验证代码 (HMAC)，使用 SHA-256 算法计算并编码为 **Base64** 字符串。有关相应协议的详细信息，请参阅 [Azure 存储空间服务的身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。服务总线队列支持使用对称密钥的类似模型。有关详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)。
 
 
 ### 其他信息
@@ -286,9 +286,9 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 以下文章提供了有关使用 Azure 队列或服务总线队列的更多指导和信息。
 
-- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
-- [如何使用队列存储服务](/documentation/articles/storage-dotnet-how-to-use-queues)
-- [使用服务总线中转消息传递改善性能的最佳实践](/documentation/articles/service-bus-performance-improvements)
+- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
+- [如何使用队列存储服务](/documentation/articles/storage-dotnet-how-to-use-queues/)
+- [使用服务总线中转消息传递改善性能的最佳实践](/documentation/articles/service-bus-performance-improvements/)
 - [Azure 服务总线中的队列和主题简介](http://www.code-magazine.com/article.aspx?quickid=1112041)
 - [服务总线开发人员指南](http://www.cloudcasts.net/devguide/)
 - [Azure 表和队列深入介绍](http://www.microsoftpdc.com/2009/SVC09)

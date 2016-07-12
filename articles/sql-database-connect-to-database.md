@@ -19,7 +19,7 @@
 ## 先决条件
 
 * SQL Server Management Studio (SSMS) - 若要下载最新版本的 SSMS，请参阅[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
-* [Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 AdventureWorks 示例数据库。
+* [Azure SQL 数据库入门](/documentation/articles/sql-database-get-started/)中所述的 AdventureWorks 示例数据库。
 
 
 ## 获取完全限定的 Azure SQL 服务器名称
@@ -79,7 +79,7 @@
 
 
 ## 后续步骤
-你可以使用 Transact-SQL 语句来创建或管理数据库。有关详细信息，请参阅 [CREATE DATABASE（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)和[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms)。你还可以将事件记录到 Azure 存储空间。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started)。
+你可以使用 Transact-SQL 语句来创建或管理数据库。有关详细信息，请参阅 [CREATE DATABASE（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)和[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)。你还可以将事件记录到 Azure 存储空间。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started/)。
 
 <!--Image references-->
 

@@ -70,7 +70,7 @@
 >[AZURE.IMPORTANT] 用户定义路由仅适用于 Azure VM 和云服务。例如，如果你想要在本地网络和 Azure 之间添加防火墙虚拟设备，则需为 Azure 路由表创建用户定义路由，以便将目标为本地地址空间的所有流量转发到虚拟设备。但是，来自本地地址空间的传入流量将流经你的 VPN 网关或 ExpressRoute 线路，绕过虚拟设备直接进入 Azure 环境中。
 
 ## BGP 路由
-如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与系统路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction)。
+如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与系统路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction/)。
 
 >[AZURE.IMPORTANT] 你可以将 Azure 环境配置为使用强制方式通过隧道来连接你的本地网络，即为子网 0.0.0.0/0 创建一个用户定义路由，而该子网则使用 VPN 网关作为下一跃点。但是，仅在使用 VPN 网关而非 ExpressRoute 的情况下，此方法才起作用。对于 ExpressRoute，强制隧道是通过 BGP 配置的。
 
@@ -81,6 +81,6 @@
 
 ## 后续步骤
 
-- 了解如何[在经典部署模型中创建路由](/documentation/articles/virtual-network-create-udr-classic-ps)并将它们关联到子网。
+- 了解如何[在经典部署模型中创建路由](/documentation/articles/virtual-network-create-udr-classic-ps/)并将它们关联到子网。
 
 <!---HONumber=Mooncake_0418_2016-->

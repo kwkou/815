@@ -97,8 +97,8 @@
 - [使用事件中心的完整示例应用程序]。
 - 使用服务总线队列的[队列消息解决方案]。
 
-[事件中心概述]: /documentation/articles/event-hubs-overview
+[事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://github.com/Azure-Samples
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 <!---HONumber=Mooncake_0321_2016-->

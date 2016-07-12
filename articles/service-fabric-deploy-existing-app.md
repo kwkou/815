@@ -300,7 +300,7 @@ Visual Studio 提供 Service Fabric 服务模板来帮助你将来宾可执行�
 在本文中，我们了解了如何打包来宾可执行文件并将它部署到 Service Fabric。作为下一步，可以查看本主题的其他内容。
 
 - [在 GitHub 上打包和部署来宾可执行文件的示例](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/GuestExe/SimpleApplication)，包括打包工具的预发行版本的链接
-- [部署多个来宾可执行文件](/documentation/articles/service-fabric-deploy-multiple-apps)
-- [使用 Visual Studio 创建第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio)
+- [部署多个来宾可执行文件](/documentation/articles/service-fabric-deploy-multiple-apps/)
+- [使用 Visual Studio 创建第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)
 
 <!---HONumber=Mooncake_0627_2016-->

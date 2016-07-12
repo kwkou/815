@@ -35,13 +35,13 @@ SQL 数据仓库是一种分布式数据库系统，可根据你的需要弹性�
 <!--Image references-->
 
 <!--Article references-->
-[迁移架构]: /documentation/articles/sql-data-warehouse-migrate-schema
-[迁移数据]: /documentation/articles/sql-data-warehouse-migrate-data
-[迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code
+[迁移架构]: /documentation/articles/sql-data-warehouse-migrate-schema/
+[迁移数据]: /documentation/articles/sql-data-warehouse-migrate-data/
+[迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code/
 
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[加载概述]: /documentation/articles/sql-data-warehouse-overview-load
-[Transact-SQL 参考]: /documentation/articles/sql-data-warehouse-overview-migrate
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[加载概述]: /documentation/articles/sql-data-warehouse-overview-load/
+[Transact-SQL 参考]: /documentation/articles/sql-data-warehouse-overview-migrate/
 
 <!--MSDN references-->
 

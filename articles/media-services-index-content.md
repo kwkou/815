@@ -16,8 +16,8 @@
 # 使用 Azure Media Indexer 为媒体文件编制索引
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-manage-content#index)
-- [.NET](/documentation/articles/media-services-index-content)
+- [门户](/documentation/articles/media-services-manage-content/#index)
+- [.NET](/documentation/articles/media-services-index-content/)
 
 
 使用 Azure Media Indexer，可以使媒体文件内容可供搜索，并为隐藏的字幕和关键字生成全文本脚本。你可以只处理一个媒体文件，也可以一次处理多个媒体文件。
@@ -280,9 +280,9 @@ __features__ <br /><br />在版本 1.2 中添加。目前，唯一支持的功�
 
 ## 相关链接
 
-[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview)
+[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)
 
 [在 Azure Media Indexer 和 SQL Server 中使用 AIB 文件](https://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/)
 
-[使用 Azure Media Indexer 2 预览版为媒体文件编制索引](/documentation/articles/media-services-process-content-with-indexer2)
+[使用 Azure Media Indexer 2 预览版为媒体文件编制索引](/documentation/articles/media-services-process-content-with-indexer2/)
 <!---HONumber=Mooncake_0509_2016-->

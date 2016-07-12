@@ -15,19 +15,19 @@
 # 如何使用 Azure Redis Cache
 
 > [AZURE.SELECTOR]
-- [.Net](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
-- [Node.js](/documentation/articles/cache-nodejs-get-started)
-- [Java](/documentation/articles/cache-java-get-started)
-- [Python](/documentation/articles/cache-python-get-started)
+- [.Net](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
+- [Node.js](/documentation/articles/cache-nodejs-get-started/)
+- [Java](/documentation/articles/cache-java-get-started/)
+- [Python](/documentation/articles/cache-python-get-started/)
 
-本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Azure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Azure 内的任何应用程序进行访问。需要使用 Redis 缓存的 ASP.NET MVC Web 应用的逐步教程，请查看[如何创建使用 Redis 缓存的 Web 应用](/documentation/articles/cache-web-app-howto)。
+本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Azure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Azure 内的任何应用程序进行访问。需要使用 Redis 缓存的 ASP.NET MVC Web 应用的逐步教程，请查看[如何创建使用 Redis 缓存的 Web 应用](/documentation/articles/cache-web-app-howto/)。
 
 
 Azure Redis 缓存提供以下层：
 
 -	**基本** - 单个节点。多种大小，最大 53 GB。
 -	**标准** - 双节点主/副本配置。多种大小，最大 53 GB。99.9% SLA。
--	**高级** - 双节点主/副本配置，最多有 10 个分片。从 6 GB 到 530 GB 的多种大小（有关详细信息，请与我们联系）。标准层的所有功能加上其他功能，支持 [Redis 群集](/documentation/articles/cache-how-to-premium-clustering)，[Redis 暂留](/documentation/articles/cache-how-to-premium-persistence)和 [Azure 虚拟网络](/documentation/articles/cache-how-to-premium-vnet)。99.9% SLA。
+-	**高级** - 双节点主/副本配置，最多有 10 个分片。从 6 GB 到 530 GB 的多种大小（有关详细信息，请与我们联系）。标准层的所有功能加上其他功能，支持 [Redis 群集](/documentation/articles/cache-how-to-premium-clustering/)，[Redis 暂留](/documentation/articles/cache-how-to-premium-persistence/)和 [Azure 虚拟网络](/documentation/articles/cache-how-to-premium-vnet/)。99.9% SLA。
 
 每个级别在功能和定价方面存在差异。有关定价信息，请参阅[缓存定价详细信息][]。
 
@@ -202,8 +202,8 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 现在，你已学习了基础知识，接下来请打开以下链接了解有关 Azure Redis 缓存的详细信息。
 
 -	了解 Azure Redis 缓存的 ASP.NET 提供程序。
-	-	[Azure Redis 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider)
-	-	[Azure Redis 缓存 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider)
+	-	[Azure Redis 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider/)
+	-	[Azure Redis 缓存 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider/)
 -	查看 [StackExchange.Redis 缓存客户端文档][]。
 	-	可以从许多 Redis 客户端和开发语言访问 azure Redis 缓存。有关详细信息，请参阅 [http://redis.io/clients][] 和[以其他语言开发 Azure Redis 缓存][]。
 -	请参阅 [redis][] 文档并阅读 [redis 数据类型][]和 [Redis 数据类型的十五分钟介绍][]。
@@ -258,7 +258,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 [http://redis.io/clients]: http://redis.io/clients
 [以其他语言开发 Azure Redis 缓存]: /documentation/services/redis-cache
 [如何检索 Azure Redis 连接字符串并将其用于 Redsmin]: https://redsmin.uservoice.com/knowledgebase/articles/485711-how-to-connect-redsmin-to-azure-redis-cache
-[Azure Redis 会话状态提供程序]: /documentation/articles/cache-aspnet-session-state-provider
+[Azure Redis 会话状态提供程序]: /documentation/articles/cache-aspnet-session-state-provider/
 [How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/azure/gg618003.aspx
 [Session State Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
@@ -275,7 +275,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 
 [StackExchange.Redis 配置模型]: http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
 
-[处理缓存中的 .NET 对象]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#working-with-caches
+[处理缓存中的 .NET 对象]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#working-with-caches
 
 
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311

@@ -421,14 +421,14 @@ END
 <!--Image references-->
 
 <!--ACOM references-->
-[开发]: /documentation/articles/sql-data-warehouse-overview-develop
-[事务]: /documentation/articles/sql-data-warehouse-develop-transactions
-[表分区]: /documentation/articles/sql-data-warehouse-develop-table-partitions
-[table partition]: /documentation/articles/sql-data-warehouse-develop-table-partitions
-[并发]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas
-[RENAME OBJECT]: /documentation/articles/sql-data-warehouse-develop-rename
-[重命名对象]: /documentation/articles/sql-data-warehouse-develop-rename
+[开发]: /documentation/articles/sql-data-warehouse-overview-develop/
+[事务]: /documentation/articles/sql-data-warehouse-develop-transactions/
+[表分区]: /documentation/articles/sql-data-warehouse-develop-table-partitions/
+[table partition]: /documentation/articles/sql-data-warehouse-develop-table-partitions/
+[并发]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[RENAME OBJECT]: /documentation/articles/sql-data-warehouse-develop-rename/
+[重命名对象]: /documentation/articles/sql-data-warehouse-develop-rename/
 
 <!--MSDN references-->
 [alter index]: https://msdn.microsoft.com/zh-cn/library/ms188388.aspx

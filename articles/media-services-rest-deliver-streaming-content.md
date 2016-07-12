@@ -16,14 +16,14 @@
 #如何：传送流内容
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-deliver-streaming-content)
-- [REST](/documentation/articles/media-services-rest-deliver-streaming-content)
-- [门户](/documentation/articles/media-services-manage-content#publish)
+- [.NET](/documentation/articles/media-services-deliver-streaming-content/)
+- [REST](/documentation/articles/media-services-rest-deliver-streaming-content/)
+- [门户](/documentation/articles/media-services-manage-content/#publish)
 
 ##概述
 
 
-你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-rest-encode-asset)主题说明了如何编码成自适应比特率 MP4 集。如果内容已加密，则在创建定位符之前配置资产传送策略（如[本](/documentation/articles/media-services-rest-configure-asset-delivery-policy)主题中所述）。
+你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-rest-encode-asset/)主题说明了如何编码成自适应比特率 MP4 集。如果内容已加密，则在创建定位符之前配置资产传送策略（如[本](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)主题中所述）。
 
 你也可以使用 OnDemand 流式处理定位符生成指向可渐进式下载的 MP4 文件的 URL。
 
@@ -178,5 +178,5 @@ URL：**路径** + 资产文件 mp4 名称
 
 ##另请参阅
 
-[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)
+[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)
 <!---HONumber=Mooncake_0620_2016-->

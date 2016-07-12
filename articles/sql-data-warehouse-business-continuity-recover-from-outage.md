@@ -88,8 +88,8 @@
 <!--Image references-->
 
 <!--Article references-->
-[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity
-[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize
+[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
+[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize/
 
 <!--MSDN references-->
 [Start-AzureSqlDatabaseRecovery]: https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx

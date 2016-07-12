@@ -22,13 +22,13 @@
 - 在“自定义设置”中，我们将提供更多选项；但在某些情况下，你需要确保自己拥有正确的权限。
 
 ## 相关文档
-如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的文档，下表提供了相关主题的链接。
+如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的文档，下表提供了相关主题的链接。
 
 | 主题 | |
 | --------- | --------- |
-| 使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express) |
-| 使用自定义设置安装 | [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom) |
-| 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started) |
+| 使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express/) |
+| 使用自定义设置安装 | [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom/) |
+| 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/) |
 
 
 ## 快速设置安装
@@ -80,7 +80,7 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 | 功能 | 权限 |
 | ------ | ------ |
 | 密码同步 | <li>复制目录更改</li><li>复制所有目录更改。 |
-| 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started#step-4-set-up-the-appropriate-active-directory-permissions)中叙述了对用户的属性的写入权限。 |
+| 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/#step-4-set-up-the-appropriate-active-directory-permissions)中叙述了对用户的属性的写入权限。 |
 | 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。|
 
 ## 升级
@@ -126,6 +126,6 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 
 ## 后续步骤
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

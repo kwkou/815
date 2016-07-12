@@ -16,7 +16,7 @@
 
 必要时还原备份的数据库可从许多类型的故障、错误和灾难中恢复。
 
-有关备份的详细信息，请参阅[备份已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-backup)。
+有关备份的详细信息，请参阅[备份已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-backup/)。
 
 >   [AZURE.NOTE] 备份只是完整的高可用性和业务连续性解决方案的一个部分。有关高可用性的详细信息，请参阅[高可用性解决方案](https://msdn.microsoft.com/zh-cn/library/ms190202.aspx)。
 
@@ -68,7 +68,7 @@ Azure 上的 SQL Server Stretch Database 服务在删除数据库之前会创建
 
 ## 另请参阅
 
-[延伸数据库的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)
+[延伸数据库的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage/)
 
 [sys.sp\_rda\_reauthorize\_db (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt131016.aspx)
 

@@ -140,12 +140,12 @@ DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计�
 
 如果你不想将查询转发到 Azure，则需提供你自己的 DNS 解决方案。你的 DNS 解决方案需满足以下条件：
 
--  提供合适的主机名解析方式（例如通过 [DDNS](/documentation/articles/virtual-networks-name-resolution-ddns) 进行解析）。请注意，如果使用 DDNS，则可能需要禁用 DNS 记录清理，因为 Azure 的 DHCP 租约时间很长，进行清理可能会导致 DNS 记录删除过早。 
+-  提供合适的主机名解析方式（例如通过 [DDNS](/documentation/articles/virtual-networks-name-resolution-ddns/) 进行解析）。请注意，如果使用 DDNS，则可能需要禁用 DNS 记录清理，因为 Azure 的 DHCP 租约时间很长，进行清理可能会导致 DNS 记录删除过早。 
 -  提供适当的递归式解析来解析外部域名。
 -  可以从其所服务的对象（即客户端）进行访问（在端口 53 上启用 TCP 和 UDP），并可访问 Internet。
 -  禁止从 Internet 进行访问，减少外部代理带来的威胁。
 
-> [AZURE.NOTE] 为了获得最佳性能，在将 Azure VM用作 DNS 服务器时，应禁用 IPv6，并且[实例层级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip) 应分配给每个 DNS 服务器 VM。如果你选择使用 Windows Server 作为 DNS 服务器，则可参阅[此文](http://blogs.technet.com/b/networking/archive/2015/08/19/name-resolution-performance-of-a-recursive-windows-dns-server-2012-r2.aspx)，其中提供了其他性能分析和优化措施。
+> [AZURE.NOTE] 为了获得最佳性能，在将 Azure VM用作 DNS 服务器时，应禁用 IPv6，并且[实例层级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip/) 应分配给每个 DNS 服务器 VM。如果你选择使用 Windows Server 作为 DNS 服务器，则可参阅[此文](http://blogs.technet.com/b/networking/archive/2015/08/19/name-resolution-performance-of-a-recursive-windows-dns-server-2012-r2.aspx)，其中提供了其他性能分析和优化措施。
 
 
 ### 指定 DNS 服务器
@@ -165,6 +165,6 @@ DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计�
 
 - [Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
 - [虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
-- [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file) 
+- [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/) 
 
 <!---HONumber=Mooncake_0418_2016-->

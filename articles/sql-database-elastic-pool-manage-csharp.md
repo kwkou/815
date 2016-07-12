@@ -15,14 +15,14 @@
 # 使用 C&#x23; 监视和管理弹性数据库池 
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell)
-- [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp)
-- [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
+- [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
+- [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
 
 
-了解如何使用 C&#x23; 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+了解如何使用 C&#x23; 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
-有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages)。
+有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
 > [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
 
@@ -105,7 +105,7 @@
     PM> Install-Package Microsoft.Azure.Management.Resources –Pre
     PM> Install-Package Microsoft.Azure.Common.Authentication –Pre
 
-创建控制台应用并将 Program.cs 的内容替换为以下内容。若要获取必需的客户端 ID 和相关的值，请参阅[注册应用并获取所需的客户端值以便将你的应用连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys)。
+创建控制台应用并将 Program.cs 的内容替换为以下内容。若要获取必需的客户端 ID 和相关的值，请参阅[注册应用并获取所需的客户端值以便将你的应用连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys/)。
 
     using Microsoft.Azure;
     using Microsoft.Azure.Management.Resources;
@@ -423,9 +423,9 @@
 
 - [SQL 数据库](/documentation/services/sql-databases)
 - [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
-- [使用 C# 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp)
-- [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance)
-- 请参阅[使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
+- [使用 C# 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/)
+- [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance/)
+- 请参阅[使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
 
 <!---HONumber=Mooncake_0530_2016-->

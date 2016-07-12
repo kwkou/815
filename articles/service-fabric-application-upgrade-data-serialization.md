@@ -15,12 +15,12 @@
 
 # 数据序列化如何影响应用程序升级
 
-在[应用程序滚动升级](/documentation/articles/service-fabric-application-upgrade)过程中，升级应用于部分节点，一次一个升级域。在此过程中，一些升级域将位于较新版本的应用程序上，而一些升级域将位于较旧版本的应用程序上。在滚动更新期间，新版本的应用程序必须能够读取旧版本的数据，并且旧版本的应用程序必须能够读取新版本的数据。如果数据格式不向前和向后兼容，则升级可能会失败（或更糟），甚至可能丢失数据。本文介绍数据格式的构成，并提供确保数据向前和向后兼容的最佳实践。
+在[应用程序滚动升级](/documentation/articles/service-fabric-application-upgrade/)过程中，升级应用于部分节点，一次一个升级域。在此过程中，一些升级域将位于较新版本的应用程序上，而一些升级域将位于较旧版本的应用程序上。在滚动更新期间，新版本的应用程序必须能够读取旧版本的数据，并且旧版本的应用程序必须能够读取新版本的数据。如果数据格式不向前和向后兼容，则升级可能会失败（或更糟），甚至可能丢失数据。本文介绍数据格式的构成，并提供确保数据向前和向后兼容的最佳实践。
 
 
 ## 数据格式由哪些部分构成？
 
-在 Azure Service Fabric 中，保留和复制的数据来自于你的 C# 类。对于使用 [Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections) 的应用程序，它是可靠词典和队列中的对象。对于使用 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction) 应用程序，它是执行组件的备用状态。这些 C# 类必须可序列化，以进行保留和复制。因此，数据格式由已序列化的字段和属性及其序列化方式定义。例如，在 `IReliableDictionary<int, MyClass>` 中，数据是一个序列化的 `int` 和一个序列化的 `MyClass`。
+在 Azure Service Fabric 中，保留和复制的数据来自于你的 C# 类。对于使用 [Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections/) 的应用程序，它是可靠词典和队列中的对象。对于使用 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/) 应用程序，它是执行组件的备用状态。这些 C# 类必须可序列化，以进行保留和复制。因此，数据格式由已序列化的字段和属性及其序列化方式定义。例如，在 `IReliableDictionary<int, MyClass>` 中，数据是一个序列化的 `int` 和一个序列化的 `MyClass`。
 
 ### 导致数据格式更改的代码更改
 
@@ -52,14 +52,14 @@
 
 ## 后续步骤
 
-[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial)将逐步指导你使用 Visual Studio 进行应用程序升级。
+[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial/)将逐步指导你使用 Visual Studio 进行应用程序升级。
 
-[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell)将逐步指导你使用 PowerShell 进行应用程序升级。
+[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell/)将逐步指导你使用 PowerShell 进行应用程序升级。
 
-使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)来控制应用程序的升级方式。
+使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)来控制应用程序的升级方式。
 
-参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced)，了解如何在升级应用程序时使用高级功能。
+参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced/)，了解如何在升级应用程序时使用高级功能。
 
-参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting)中的步骤来解决应用程序升级时的常见问题。
+参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
 
 <!---HONumber=Mooncake_0425_2016-->

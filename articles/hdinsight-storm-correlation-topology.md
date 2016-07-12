@@ -21,7 +21,7 @@
 
 ## 先决条件
 
--	HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+-	HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 -	Apache Storm on HDInsight 群集
 
@@ -195,7 +195,7 @@
 
 ##后续步骤
 
-如需更多 Storm 示例，请参阅[Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
+如需更多 Storm 示例，请参阅[Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
  
 
 <!---HONumber=Mooncake_1207_2015-->

@@ -18,7 +18,7 @@ Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提�
 
 ## 先决条件
 
-开始之前，请确保已[设置开发环境](/documentation/articles/service-fabric-get-started)。
+开始之前，请确保已[设置开发环境](/documentation/articles/service-fabric-get-started/)。
 
 
 
@@ -38,7 +38,7 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 	![Visual Studio 中的新建服务对话框][2]
 
-	>[AZURE.NOTE] 有关选项的详细信息，请参阅 [Service Fabric programming model overview](/documentation/articles/service-fabric-choose-framework)（Service Fabric 编程模型概述）。
+	>[AZURE.NOTE] 有关选项的详细信息，请参阅 [Service Fabric programming model overview](/documentation/articles/service-fabric-choose-framework/)（Service Fabric 编程模型概述）。
 
 	Visual Studio 会创建应用程序项目和有状态服务项目，并在解决方案资源管理器中显示它们。
 
@@ -52,7 +52,7 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 	- **应用程序定义**：包括 *ApplicationPackageRoot* 下的应用程序清单以及 *ApplicationParameters* 下的用于定义应用程序并使你可以专门为给定环境配置它的关联应用程序参数文件。
 
-    有关服务项目的内容概述，请参阅 [Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start)。
+    有关服务项目的内容概述，请参阅 [Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start/)。
 
 ## 部署和调试应用程序
 
@@ -78,7 +78,7 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 	本地群集包含在单台计算机承载的五个节点。它会模拟一个五节点群集，其中节点处于不同计算机上。让我们在本地群集上取下一个节点，以模拟丢失一台计算机的情况并同时练习 Visual Studio 调试器。
 
-    >[AZURE.NOTE] 项目模板发出的应用程序诊断事件会使用包含的 `ServiceEventSource` 类。有关详细信息，请参阅[如何在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)。
+    >[AZURE.NOTE] 项目模板发出的应用程序诊断事件会使用包含的 `ServiceEventSource` 类。有关详细信息，请参阅[如何在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)。
 
 4. 在服务项目中查找派生自 StatefulService 的类（例如 MyStatefulService），然后在 `RunAsync` 方法的第一行上设置断点。
 
@@ -88,7 +88,7 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
     ![从本地群集管理器启动 Service Fabric 资源管理器][systray-launch-sfx]
 
-    Service Fabric 资源管理器提供群集的可视表示形式 — 包括部署到群集的已部署应用程序的集合和组成群集的物理节点的集合。要了解有关 Service Fabric 资源管理器的详细信息，请参阅[可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster)。
+    Service Fabric 资源管理器提供群集的可视表示形式 — 包括部署到群集的已部署应用程序的集合和组成群集的物理节点的集合。要了解有关 Service Fabric 资源管理器的详细信息，请参阅[可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
 
 6. 在左窗格中，展开“群集”>“节点”，然后查找运行代码的节点。
 
@@ -112,9 +112,9 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 ## 后续步骤
 
-- 了解如何[在 Windows 上创建独立群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server)。
-- 尝试使用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-quick-start) 或 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-get-started) 编程模型创建服务。
-- 了解如何使用 [Web 服务前端](/documentation/articles/service-fabric-add-a-web-frontend)向 Internet 服务公开服务。
+- 了解如何[在 Windows 上创建独立群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)。
+- 尝试使用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-quick-start/) 或 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-get-started/) 编程模型创建服务。
+- 了解如何使用 [Web 服务前端](/documentation/articles/service-fabric-add-a-web-frontend/)向 Internet 服务公开服务。
 
 <!-- Image References -->
 

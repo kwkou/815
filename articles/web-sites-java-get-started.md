@@ -38,7 +38,7 @@
 	* 你想要从头开始自行配置 Web 容器。 
 	* 你想要使用在 Azure 中不受支持的 Java 版本，且想要自行上载它。
 
-	对于这样的情况，你可以通过 Azure 经典管理门户创建一个应用，然后手动提供相应的运行时文件。在本示例中，这些文件将占用你 App Service 计划的存储空间配额。有关详细信息，请参阅[将自定义 Java Web 应用上载到 Azure](/documentation/articles/web-sites-java-custom-upload)。
+	对于这样的情况，你可以通过 Azure 经典管理门户创建一个应用，然后手动提供相应的运行时文件。在本示例中，这些文件将占用你 App Service 计划的存储空间配额。有关详细信息，请参阅[将自定义 Java Web 应用上载到 Azure](/documentation/articles/web-sites-java-custom-upload/)。
 
 ## <a name="portal"></a>创建和配置 Java Web 应用
 
@@ -61,22 +61,22 @@
 
 ##<a name="next-steps"></a>后续步骤
 
-现在，你有了一台在 Azure 的 Web 应用中运行的 Java 应用程序服务器。若要将你自己的代码部署到 Web 应用，请参阅[将应用程序或网页添加到 Java Web 应用](/documentation/articles/web-sites-java-add-app)。
+现在，你有了一台在 Azure 的 Web 应用中运行的 Java 应用程序服务器。若要将你自己的代码部署到 Web 应用，请参阅[将应用程序或网页添加到 Java Web 应用](/documentation/articles/web-sites-java-add-app/)。
 
 有关如何在 Azure 中开发 Java 应用程序的详细信息，请参阅 [Java 开发中心](/develop/java/)。
 
 <!-- URL List -->
 
-[Add an application or webpage to your Java web app]: /documentation/articles/web-sites-java-add-app
-[Azure App Service plans overview]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview
+[Add an application or webpage to your Java web app]: /documentation/articles/web-sites-java-add-app/
+[Azure App Service plans overview]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [Azure Portal]: https://portal.azure.cn/
 [activate your Visual Studio subscriber benefits]: /pricing/1rmb-trial/
 [注册试用版]: /pricing/1rmb-trial/
 [Try Azure Web App]: https://tryappservice.azure.com/
 [web app in Azure]: /documentation/services/web-sites/
 [Java Developer Center]: /develop/java/
-[Using the Azure Portal to manage your Azure resources]: /documentation/articles/resource-group-portal
-[Upload a custom Java web app to Azure]: /documentation/articles/web-sites-java-custom-upload
+[Using the Azure Portal to manage your Azure resources]: /documentation/articles/resource-group-portal/
+[Upload a custom Java web app to Azure]: /documentation/articles/web-sites-java-custom-upload/
 
 <!-- IMG List -->
 

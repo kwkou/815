@@ -24,11 +24,11 @@
 
 ##在虚拟机上安装 MySQL
 
-> [AZURE.NOTE]你必须已经有一个运行 Linux 的 Azure 虚拟机，才能完成本教程。在继续操作前，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-quick-create-cli)创建并设置一个 Linux VM，其中 `mysqlnode` 为 VM 名称，`azureuser` 为用户。
+> [AZURE.NOTE]你必须已经有一个运行 Linux 的 Azure 虚拟机，才能完成本教程。在继续操作前，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-quick-create-cli/)创建并设置一个 Linux VM，其中 `mysqlnode` 为 VM 名称，`azureuser` 为用户。
 
 在此情况下，请使用 3306 端口作为 MySQL 端口。
 
-通过 putty 连接到你创建的 Linux VM。如果这是首次使用 Azure Linux VM，请参阅[此处](/documentation/articles/virtual-machines-linux-ssh-from-linux)了解如何使用 putty 连接到 Linux VM。
+通过 putty 连接到你创建的 Linux VM。如果这是首次使用 Azure Linux VM，请参阅[此处](/documentation/articles/virtual-machines-linux-ssh-from-linux/)了解如何使用 putty 连接到 Linux VM。
 
 我们将使用存储库包来安装 MySQL5.6，作为本文中的示例。实际上，MySQL5.6 在性能上相对于 MySQL5.5 而言有更大的改进。[此处](http://www.mysqlperformanceblog.com/2013/02/18/is-mysql-5-6-slower-than-mysql-5-5/)提供更多信息。
 

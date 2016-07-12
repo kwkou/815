@@ -17,8 +17,8 @@
 # 始终加密 - 使用数据库加密保护 SQL 数据库中的敏感数据并将加密密钥存储在 Windows 证书存储中
 
 > [AZURE.SELECTOR]
-- [Azure 密钥保管库](/documentation/articles/sql-database-always-encrypted-azure-key-vault)
-- [Windows 证书存储](/documentation/articles/sql-database-always-encrypted)
+- [Azure 密钥保管库](/documentation/articles/sql-database-always-encrypted-azure-key-vault/)
+- [Windows 证书存储](/documentation/articles/sql-database-always-encrypted/)
 
 
 本文演示如何使用 [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/hh213248.aspx) 中的[始终加密向导](https://msdn.microsoft.com/zh-cn/library/mt459280.aspx)，通过数据库加密来保护 SQL 数据库中的敏感数据，以及如何将加密密钥存储在 Windows 证书存储中。

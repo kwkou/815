@@ -26,7 +26,7 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 ##时间点还原
 在发生用户错误或意外数据修改的情况下，可以使用时间点还原，将数据库还原到数据库保留期内的任一时间点。
 
-基本、标准和高级数据库的保留期分别为 7 天、14 天和 35 天。若要了解有关数据库保留期的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+基本、标准和高级数据库的保留期分别为 7 天、14 天和 35 天。若要了解有关数据库保留期的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 > [AZURE.NOTE] 还原数据库会创建一个新的数据库。必须确保要还原到的服务器具有足够的 DTU，可以容纳新数据库的容量。你可以通过[与支持人员联系](https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests)来请求增加此配额。
 
@@ -52,7 +52,7 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 ##还原已删除的数据库
 在删除了某个数据库的情况下，Azure SQL 数据库允许你将删除的数据库还原到删除时的时间点。Azure SQL 数据库将会根据数据库的保留期存储已删除的数据库备份。
 
-已删除的数据库的保留期由该数据库尚未删除时所在的服务层或者数据库存在的天数确定（以两者中较小的为准）。若要了解有关数据库保留期的详细信息，请阅读[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+已删除的数据库的保留期由该数据库尚未删除时所在的服务层或者数据库存在的天数确定（以两者中较小的为准）。若要了解有关数据库保留期的详细信息，请阅读[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 > [AZURE.NOTE] 还原数据库会创建一个新的数据库。必须确保要还原到的服务器具有足够的 DTU，可以容纳新数据库的容量。你可以通过[与支持人员联系](https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests)来请求增加此配额。
 

@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-本文说明如何使用 VMAcesss VM 扩展 [(Github)](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) 来检查或修复磁盘、重置用户访问权限、管理用户帐户，或重置 Linux 上的 SSHD 配置。本文需要使用 [Azure 帐户](/pricing/1rmb-trial/)、[SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys)、Azure Linux 虚拟机、安装 Azure CLI 并使用 `azure config mode arm` 切换到 ARM 模式。
+本文说明如何使用 VMAcesss VM 扩展 [(Github)](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) 来检查或修复磁盘、重置用户访问权限、管理用户帐户，或重置 Linux 上的 SSHD 配置。本文需要使用 [Azure 帐户](/pricing/1rmb-trial/)、[SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)、Azure Linux 虚拟机、安装 Azure CLI 并使用 `azure config mode arm` 切换到 ARM 模式。
 
 ## 快速命令
 

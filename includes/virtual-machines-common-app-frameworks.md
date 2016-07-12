@@ -41,7 +41,7 @@
 
 ## Azure CLI
 
-[安装 Azure CLI](/documentation/articles/xplat-cli-install)，登录，确保启用 Resource Manager 命令。
+[安装 Azure CLI](/documentation/articles/xplat-cli-install/)，登录，确保启用 Resource Manager 命令。
 
 下载 https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/{template-name}/azuredeploy.json，作必要的修改。
 
@@ -56,4 +56,4 @@
 
 发现 [GitHub](https://github.com/Azure/azure-quickstart-templates) 上可自由应用的所有模板。
 
-了解有关 [Azure 资源管理器](/documentation/articles/resource-group-template-deploy)的详细信息。
+了解有关 [Azure 资源管理器](/documentation/articles/resource-group-template-deploy/)的详细信息。

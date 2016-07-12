@@ -13,7 +13,7 @@
 
 # 如何使用 PowerShell 管理终结点的访问控制列表 (ACL)
 
-你可以使用 Azure PowerShell 或在经典管理门户中为终结点创建和管理网络访问控制列表 (ACL)。在本主题中，你将了解可使用 PowerShell 完成 ACL 常见任务的过程。有关 Azure PowerShell cmdlet 的列表，请参阅 [Azure 管理 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx)。有关 ACL 的详细信息，请参阅[什么是网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl)。如果要使用经典管理门户管理 ACL，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+你可以使用 Azure PowerShell 或在经典管理门户中为终结点创建和管理网络访问控制列表 (ACL)。在本主题中，你将了解可使用 PowerShell 完成 ACL 常见任务的过程。有关 Azure PowerShell cmdlet 的列表，请参阅 [Azure 管理 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx)。有关 ACL 的详细信息，请参阅[什么是网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl/)。如果要使用经典管理门户管理 ACL，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
 ## 使用 Azure PowerShell 管理网络 ACL
 
@@ -89,6 +89,6 @@
 
 ## 下一步
 
-[什么是网络访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl)
+[什么是网络访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl/)
 
 <!---HONumber=74-->

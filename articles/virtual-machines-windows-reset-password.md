@@ -22,7 +22,7 @@
 
 如果你由于忘记了密码或远程桌面服务配置有问题而无法连接到 Windows 虚拟机，你可以重置本地管理员密码或重置远程桌面服务配置。
 
-根据虚拟机的部署模型，可以使用 Azure 门户预览或 Azure PowerShell 中的 VM Access 扩展。如果使用 PowerShell，请务必在工作计算机上安装最新的 PowerShell 模块，并登录 Azure 订阅。有关详细步骤，请阅读 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
+根据虚拟机的部署模型，可以使用 Azure 门户预览或 Azure PowerShell 中的 VM Access 扩展。如果使用 PowerShell，请务必在工作计算机上安装最新的 PowerShell 模块，并登录 Azure 订阅。有关详细步骤，请阅读 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。
 
 
 > [AZURE.TIP] 可以使用 `Import-Module Azure; Get-Module Azure | Format-Table Version` 来检查安装的 PowerShell 版本。
@@ -126,14 +126,14 @@ Azure 门户预览目前不支持重置使用 Azure Resource Manager 创建的�
 > [AZURE.TIP] 这两个命令都在虚拟机中添加新的命名 VM 访问代理。无论何时，一个 VM 只能有一个 VM 访问代理。若要成功设置 VM 访问代理属性，请使用 `Remove-AzureRmVMAccessExtension` 或 `Remove-AzureRmVMExtension` 删除以前设置的访问代理。从 Azure PowerShell 版本 1.2.2 开始，如果将 `Set-AzureRmVMExtension` 与 `-ForceRerun` 选项结合使用，则无需执行此步骤。使用 `-ForceRerun` 时，请务必使用与前述命令设置的 VM 访问代理相同的名称。
 
 
-如果你仍然无法远程连接到虚拟机，请参阅 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine（对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除）](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)，以了解其他值得一试的步骤。
+如果你仍然无法远程连接到虚拟机，请参阅 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine（对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除）](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)，以了解其他值得一试的步骤。
 
 ## 其他资源
 
-[Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)
+[Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features/)
 
 [使用 RDP 或 SSH 连接到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-about/)
 
-[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
+[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 
 <!---HONumber=Mooncake_0503_2016-->

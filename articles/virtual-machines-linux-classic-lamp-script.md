@@ -14,7 +14,7 @@
 
 #使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序#
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 适用于 Linux 的 Azure CustomScript 扩展提供了一种方式来通过运行以 VM 支持的任何脚本语言（例如，Python、Bash 等）编写的任意代码来自定义你的虚拟机 (VM)。这提供了一种非常灵活的方式来在多台计算机上自动执行应用程序部署。
 
@@ -30,7 +30,7 @@
 
 虽然特定的安装命令将采用 Ubuntu，但你可以针对任何受支持的发行版改编一般步骤。
 
-*script-vm* VM 需要使用与 Azure 之间的有效链接安装 Azure CLI。有关这方面的帮助，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli-install)。
+*script-vm* VM 需要使用与 Azure 之间的有效链接安装 Azure CLI。有关这方面的帮助，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli-install/)。
 
 ## 上载脚本
 
@@ -100,6 +100,6 @@
 
 [Azure Linux 扩展 (GitHub)](https://github.com/Azure/azure-linux-extensions)
 
-[Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource-links)
+[Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource-links/)
 
 <!---HONumber=70-->

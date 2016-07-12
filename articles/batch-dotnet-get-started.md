@@ -15,10 +15,10 @@
 # 适用于 .NET 的 Azure Batch 库入门  
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/batch-dotnet-get-started)
-- [Python](/documentation/articles/batch-python-tutorial)
+- [.NET](/documentation/articles/batch-dotnet-get-started/)
+- [Python](/documentation/articles/batch-python-tutorial/)
 
-在我们分步讨论 C# 示例应用程序时，了解本文中的 [Azure Batch][azure_batch] 和 [Batch .NET][net_api] 库的基础知识。我们将探讨该示例应用程序如何利用 Batch 服务来处理云中的并行工作负荷，以及如何与 [Azure 存储空间](/documentation/articles/storage-introduction)交互来暂存和检索文件。你会了解常见的 Batch 应用程序工作流技术。你还会大致了解 Batch 的主要组件，例如作业、任务、池和计算节点。
+在我们分步讨论 C# 示例应用程序时，了解本文中的 [Azure Batch][azure_batch] 和 [Batch .NET][net_api] 库的基础知识。我们将探讨该示例应用程序如何利用 Batch 服务来处理云中的并行工作负荷，以及如何与 [Azure 存储空间](/documentation/articles/storage-introduction/)交互来暂存和检索文件。你会了解常见的 Batch 应用程序工作流技术。你还会大致了解 Batch 的主要组件，例如作业、任务、池和计算节点。
 
 ![Batch 解决方案工作流（基础）][11]
 
@@ -30,9 +30,9 @@
 
 - **Azure 帐户** -- 如果你没有 Azure 订阅，可以 [创建一个 试用 Azure 帐户][azure\_free\_account]。
 - **Batch 帐户**
-- **存储帐户**：请参阅 [About Azure storage accounts](/documentation/articles/storage-create-storage-account)（关于 Azure 存储帐户）中的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account#create-a-storage-account)。
+- **存储帐户**：请参阅 [About Azure storage accounts](/documentation/articles/storage-create-storage-account/)（关于 Azure 存储帐户）中的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 
-> [AZURE.IMPORTANT] Batch 目前*仅*支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account#create-a-storage-account)中步骤 5 所述。
+> [AZURE.IMPORTANT] Batch 目前*仅*支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。
 
 ### Visual Studio
 
@@ -107,7 +107,7 @@
 
 ![在 Azure 存储空间中创建容器][1] <br/>
 
-Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中的容器将为 Batch 帐户中运行的任务提供所需的文件。这些容器还提供存储任务生成的输出数据所需的位置。DotNetTutorial 客户端应用程序首先在 [Azure Blob 存储](/documentation/articles/storage-introduction)中创建三个容器：
+Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中的容器将为 Batch 帐户中运行的任务提供所需的文件。这些容器还提供存储任务生成的输出数据所需的位置。DotNetTutorial 客户端应用程序首先在 [Azure Blob 存储](/documentation/articles/storage-introduction/)中创建三个容器：
 
 - **应用程序**：此容器用于存储任务所要运行的应用程序及其依赖项，例如 DLL。
 - **输入**：任务将从*输入*容器下载所要处理的数据文件。
@@ -157,7 +157,7 @@ Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中�
 
 创建容器之后，应用程序现在即可上载任务使用的文件。
 
-> [AZURE.TIP] [How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs) 对如何使用 Azure 存储容器和 blob 进行了很好的概述。当你开始使用 Batch 时，它应该位于阅读列表顶部附近。
+> [AZURE.TIP] [How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs/) 对如何使用 Azure 存储容器和 blob 进行了很好的概述。当你开始使用 Batch 时，它应该位于阅读列表顶部附近。
 
 ## 步骤 2：上载任务应用程序和数据文件
 
@@ -237,7 +237,7 @@ Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中�
 - [JobPreparationTask][net_jobpreptask]
 - [JobReleaseTask][net_jobreltask]
 
-DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask 任务类型，但你可以通过[在 Azure Batch 计算节点上运行作业准备和完成任务](/documentation/articles/batch-job-prep-release)来详细了解这些任务类型。
+DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask 任务类型，但你可以通过[在 Azure Batch 计算节点上运行作业准备和完成任务](/documentation/articles/batch-job-prep-release/)来详细了解这些任务类型。
 
 ### 共享访问签名 (SAS)
 
@@ -247,7 +247,7 @@ DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask
 
 - **容器共享访问签名**：每个任务在计算节点上完成其工作后，会将其输出文件上载到 Azure 存储空间中的*输出*容器。为此，TaskApplication 使用容器共享访问签名，在上载文件时，该共享访问签名提供对路径中包含的容器的写访问。获取容器共享访问签名的操作方式类似于获取 blob 共享访问签名。在 DotNetTutorial 中，你会发现 `GetContainerSasUrl` 帮助器方法调用 [CloudBlobContainer.GetSharedAccessSignature][net_sas_container] 来执行该操作。你可以在下面的“步骤 6：监视任务”中详细了解 TaskApplication 如何使用容器共享访问签名。
 
-> [AZURE.TIP] 请查看有关共享访问签名的两篇系列教程的[第 1 部分：了解共享访问签名 (SAS) 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[第 2 部分：创建共享访问签名 (SAS) 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2)，以详细了解如何提供对存储帐户中数据的安全访问。
+> [AZURE.TIP] 请查看有关共享访问签名的两篇系列教程的[第 1 部分：了解共享访问签名 (SAS) 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[第 2 部分：创建共享访问签名 (SAS) 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)，以详细了解如何提供对存储帐户中数据的安全访问。
 
 ## 步骤 3：创建 Batch 池
 
@@ -304,7 +304,7 @@ DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask
 		}
 
 
-使用 [CreatePool][net_pool_create] 创建池时，需指定一些参数，例如计算节点数目、[节点大小](/documentation/articles/cloud-services-sizes-specs)以及节点的操作系统。在 DotNetTutorial 中，我们使用 [CloudServiceConfiguration][net_cloudserviceconfiguration] 从[云服务](/documentation/articles/cloud-services-guestos-update-matrix)指定 Windows Server 2012 R2。但是，如果指定 [VirtualMachineConfiguration][net_virtualmachineconfiguration]，则可以从应用商店映像（包括 Windows 和 Linux 映像）创建节点池 -- 有关详细信息，请参阅 [Introducing Linux support on Azure Batch（Azure Batch 上的 Linux 支持简介）][blog_linux]。
+使用 [CreatePool][net_pool_create] 创建池时，需指定一些参数，例如计算节点数目、[节点大小](/documentation/articles/cloud-services-sizes-specs/)以及节点的操作系统。在 DotNetTutorial 中，我们使用 [CloudServiceConfiguration][net_cloudserviceconfiguration] 从[云服务](/documentation/articles/cloud-services-guestos-update-matrix/)指定 Windows Server 2012 R2。但是，如果指定 [VirtualMachineConfiguration][net_virtualmachineconfiguration]，则可以从应用商店映像（包括 Windows 和 Linux 映像）创建节点池 -- 有关详细信息，请参阅 [Introducing Linux support on Azure Batch（Azure Batch 上的 Linux 支持简介）][blog_linux]。
 
 > [AZURE.IMPORTANT] 你需要支付 Batch 中计算资源的费用。若要将费用降到最低，可以在运行示例之前，将 `targetDedicated` 降为 1。
 
@@ -316,7 +316,7 @@ DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask
 
 此外，在上述代码段中，值得注意的问题是，StartTask 的 *CommandLine* 属性中使用了两个环境变量：`%AZ_BATCH_TASK_WORKING_DIR%` 和 `%AZ_BATCH_NODE_SHARED_DIR%`。将自动为 Batch 池中的每个计算节点配置多个特定于 Batch 的环境变量。由任务执行的任何进程都可以访问这些环境变量。
 
-> [AZURE.TIP] 若要深入了解 Batch 池中计算节点上可用的环境变量，以及有关任务工作目录的信息，请参阅 [Azure Batch 功能概述](/documentation/articles/batch-api-basics)中的“任务的环境设置”及“文件和目录”部分。
+> [AZURE.TIP] 若要深入了解 Batch 池中计算节点上可用的环境变量，以及有关任务工作目录的信息，请参阅 [Azure Batch 功能概述](/documentation/articles/batch-api-basics/)中的“任务的环境设置”及“文件和目录”部分。
 
 ## 步骤 4：创建 Batch 作业
 
@@ -428,11 +428,11 @@ Batch 作业实质上是与计算节点池关联的任务的集合。它不仅�
 
 DotNetTutorial 的 `Program.cs` 中的 `MonitorTasks` 方法内有三个 Batch .NET 概念值得讨论。下面按出现顺序列出了这些概念：
 
-1. **ODATADetailLevel**：必须在列出操作（例如获取作业的任务列表）中指定 [ODATADetailLevel][net_odatadetaillevel]，以确保 Batch 应用程序的性能。如果你打算在 Batch 应用程序中进行任何类型的状态监视，请将[有效地查询 Azure Batch 服务](/documentation/articles/batch-efficient-list-queries)加入你的阅读列表。
+1. **ODATADetailLevel**：必须在列出操作（例如获取作业的任务列表）中指定 [ODATADetailLevel][net_odatadetaillevel]，以确保 Batch 应用程序的性能。如果你打算在 Batch 应用程序中进行任何类型的状态监视，请将[有效地查询 Azure Batch 服务](/documentation/articles/batch-efficient-list-queries/)加入你的阅读列表。
 
 2. **TaskStateMonitor**：[TaskStateMonitor][net_taskstatemonitor] 为 Batch .NET 应用程提供用于监视任务状态的帮助器实用程序。在 `MonitorTasks` 中，DotNetTutorial 将等待所有任务在时限内达到 [TaskState.Completed][net_taskstate]，然后终止作业。
 
-3. **TerminateJobAsync**：通过 [JobOperations.TerminateJobAsync][net_joboperations_terminatejob] 终止作业（或阻止 JobOperations.TerminateJob）会将该作业标记为已完成。如果你的 Batch 解决方案使用 [JobReleaseTask][net_jobreltask]，则这样做很重要。这是一种特殊类型的任务，在[作业准备与完成任务](/documentation/articles/batch-job-prep-release)中有说明。
+3. **TerminateJobAsync**：通过 [JobOperations.TerminateJobAsync][net_joboperations_terminatejob] 终止作业（或阻止 JobOperations.TerminateJob）会将该作业标记为已完成。如果你的 Batch 解决方案使用 [JobReleaseTask][net_jobreltask]，则这样做很重要。这是一种特殊类型的任务，在[作业准备与完成任务](/documentation/articles/batch-job-prep-release/)中有说明。
 
 *DotNetTutorial* 的 `Program.cs` 中的 `MonitorTasks` 方法如下所示：
 
@@ -639,7 +639,7 @@ BatchClient 的 [JobOperations][net_joboperations] 和 [PoolOperations][net_pool
 
 熟悉 Batch 解决方案的基本工作流后，接下来可以深入了解 Batch 服务的其他功能。
 
-- 建议所有 Batch 新用户阅读 [Batch feature overview for developers](/documentation/articles/batch-api-basics)（面向开发人员的 Batch 功能概述）。
+- 建议所有 Batch 新用户阅读 [Batch feature overview for developers](/documentation/articles/batch-api-basics/)（面向开发人员的 Batch 功能概述）。
 - 从 [Batch learning path][batch_learning_path]（Batch 学习路径）中 **Development in-depth**（深度开发）下面列出的其他 Batch 开发文章着手。
 - 通过 [TopNWords][github_topnwords] 示例了解有关使用 Batch 处理“前 N 个单词”工作负荷的不同实现方式。
 

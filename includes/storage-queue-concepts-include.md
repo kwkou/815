@@ -20,7 +20,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 		
 	http://myaccount.queue.core.chinacloudapi.cn/imagesToDownload
 
-- **存储帐户：**对 Azure 存储空间的所有访问都要通过存储帐户来完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+- **存储帐户：**对 Azure 存储空间的所有访问都要通过存储帐户来完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 - **队列：**一个队列包含一组消息。所有消息必须位于相应的队列中。请注意，队列名称必须全部小写。有关命名队列的详细信息，请参阅[命名队列和元数据](https://msdn.microsoft.com/zh-cn/library/azure/dd179349.aspx)。
 

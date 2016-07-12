@@ -24,7 +24,7 @@
 
 ### 引用数据
 流分析支持称为引用数据的第二类输入。此类数据为辅助数据，处于静态或者缓慢变化状态，通常用于执行关联性操作和查找操作。目前只支持使用 Azure Blob 存储作为引用数据的输入源。引用数据源 Blob 存在 100MB 的大小限制。
-	若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data)
+	若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data/)
 
 ## 通过事件中心创建数据流输入
 
@@ -34,7 +34,7 @@
 
 ### 使用者组
 
-应对每个流分析事件中心输入进行配置，使之拥有自己的使用者组。如果作业包含自联接或多个输入，部分输入可能会由下游的多个读取器读取，这会影响单个使用者组中的读取器数目。为了避免超出针对事件中心设置的每个分区每个使用者组 5 个读取器的限制，最好是为每个流分析作业指定一个使用者组。请注意还有一项限制，即每个事件中心最多只能有 20 个使用者组。有关详细信息，请参阅[事件中心编程指南](/documentation/articles/event-hubs-programming-guide)。
+应对每个流分析事件中心输入进行配置，使之拥有自己的使用者组。如果作业包含自联接或多个输入，部分输入可能会由下游的多个读取器读取，这会影响单个使用者组中的读取器数目。为了避免超出针对事件中心设置的每个分区每个使用者组 5 个读取器的限制，最好是为每个流分析作业指定一个使用者组。请注意还有一项限制，即每个事件中心最多只能有 20 个使用者组。有关详细信息，请参阅[事件中心编程指南](/documentation/articles/event-hubs-programming-guide/)。
 
 ### 将事件中心配置为输入数据流
 
@@ -196,16 +196,16 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 ## 后续步骤
 你已经了解了 Azure 中针对流分析作业的数据连接选项。若要了解流分析的更多内容，请参阅：
 
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!--Link references-->
-[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
-[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
-[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction
-[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started
+[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide/
+[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs/
+[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction/
+[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started/
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 

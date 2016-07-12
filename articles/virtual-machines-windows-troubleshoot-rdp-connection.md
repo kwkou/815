@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-本文适用于运行 Windows 的 Azure 虚拟机。对于运行 Linux 的 Azure 虚拟机，请参阅 [Troubleshoot Secure Shell connections to a Linux-based Azure virtual machine（对基于 Linux 的 Azure 虚拟机的安全外壳连接进行故障排除）](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)。
+本文适用于运行 Windows 的 Azure 虚拟机。对于运行 Linux 的 Azure 虚拟机，请参阅 [Troubleshoot Secure Shell connections to a Linux-based Azure virtual machine（对基于 Linux 的 Azure 虚拟机的安全外壳连接进行故障排除）](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)。
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure 论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
 
@@ -37,7 +37,7 @@
 
 - 重新启动虚拟机可解决其他启动问题。选择“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重新启动”。
 
-- 将虚拟机重新部署到新的 Azure 节点。请参阅 [Redeploy Virtual Machine to new Azure node（将虚拟机重新部署到新的 Azure 节点）](/documentation/articles/virtual-machines-windows-redeploy-to-new-node)。
+- 将虚拟机重新部署到新的 Azure 节点。请参阅 [Redeploy Virtual Machine to new Azure node（将虚拟机重新部署到新的 Azure 节点）](/documentation/articles/virtual-machines-windows-redeploy-to-new-node/)。
 
 	请注意，完成此操作后，你会丢失临时磁盘数据，而系统则会更新与虚拟机关联的动态 IP 地址。
 
@@ -52,10 +52,10 @@
 
 这些步骤可能会帮助解决使用 Resource Manager 部署模型创建的 Azure 虚拟机中的大部分远程桌面连接失败。在执行每个步骤之后，请尝试重新连接到 VM。
 
-> [AZURE.TIP] 如果门户预览中的“连接”按钮灰显，并且你未通过 [Express Route](/documentation/articles/expressroute-introduction) 或[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal) 连接连接到 Azure，则必须先为 VM 创建并分配一个公共 IP 地址才能使用 RDP。请阅读有关 [Azure 中的公共 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm)的详细信息。
+> [AZURE.TIP] 如果门户预览中的“连接”按钮灰显，并且你未通过 [Express Route](/documentation/articles/expressroute-introduction/) 或[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/) 连接连接到 Azure，则必须先为 VM 创建并分配一个公共 IP 地址才能使用 RDP。请阅读有关 [Azure 中的公共 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm/)的详细信息。
 
 - 使用 PowerShell 重置远程访问。
-	- 如果尚未安装 PowerShell，请使用 Azure Active Directory 方法[安装 Azure PowerShell 并连接到你的 Azure 订阅](/documentation/articles/powershell-install-configure)。请注意，在 Azure PowerShell 版本 1.0.x 中，无需切换到 Resource Manager 模式。
+	- 如果尚未安装 PowerShell，请使用 Azure Active Directory 方法[安装 Azure PowerShell 并连接到你的 Azure 订阅](/documentation/articles/powershell-install-configure/)。请注意，在 Azure PowerShell 版本 1.0.x 中，无需切换到 Resource Manager 模式。
 
 	- 使用以下任一 PowerShell 命令重置 RDP 连接。将 `myRG`、`myVM`、`myVMAccessExtension` 和位置替换为与你的设置相关的值。
 
@@ -153,7 +153,7 @@
 
 请确保该帐户名称是虚拟机可以验证为有效帐户的名称并且密码正确。
 
-如果需要更改本地管理员帐户的密码，请参阅[如何为 Windows 虚拟机重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp)。
+如果需要更改本地管理员帐户的密码，请参阅[如何为 Windows 虚拟机重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp/)。
 
 ###<a id="rdpconnect"></a>远程桌面连接错误：此计算机无法连接到远程计算机。
 
@@ -165,19 +165,19 @@
 
 ## 排查一般性远程桌面错误
 
-如果未发生上述任何错误，而你仍无法通过远程桌面连接到 VM，请阅读详细的[远程桌面故障排除指南](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp)。
+如果未发生上述任何错误，而你仍无法通过远程桌面连接到 VM，请阅读详细的[远程桌面故障排除指南](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)。
 
 
 ## 其他资源
 
 [Azure IaaS (Windows) 诊断程序包](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)
 
-[如何为 Windows 虚拟机重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp)
+[如何为 Windows 虚拟机重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp/)
 
-[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
+[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)
 
-[对基于 Linux 的 Azure 虚拟机的安全外壳连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)
+[对基于 Linux 的 Azure 虚拟机的安全外壳连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)
 
-[对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection)
+[对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)
 
 <!---HONumber=Mooncake_0606_2016-->

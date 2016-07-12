@@ -16,7 +16,7 @@ Blob 服务包含以下组件：
 
 ![Blob1][Blob1]
 
-- **存储帐户：**对 Azure 存储服务的所有访问都要通过存储帐户来完成。此存储帐户可以是**常规用途存储帐户**，也可以是专用于存储对象/Blob 的 **Blob 存储帐户**。有关存储帐户的详细信息，请参阅 [Azure 存储帐户](/documentation/articles/storage-create-storage-account)。
+- **存储帐户：**对 Azure 存储服务的所有访问都要通过存储帐户来完成。此存储帐户可以是**常规用途存储帐户**，也可以是专用于存储对象/Blob 的 **Blob 存储帐户**。有关存储帐户的详细信息，请参阅 [Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。
 
 -   **容器：**一个容器包含一组 blob 集。所有 blob 必须位于相应的容器中。一个帐户可以包含无限个容器。一个容器可以存储无限个 Blob。请注意，容器名称必须小写。
 

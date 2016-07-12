@@ -5,11 +5,11 @@
 # All FAQs
 
 > [AZURE.SELECTOR]
-- [All issues](/documentation/articles/mysql-database-enus-tech-faq)
-- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry)
-- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry)
-- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry)
-- [Compatibility issues](/documentation/articles/mysql-database-enus-compatibilityinquiry)
+- [All issues](/documentation/articles/mysql-database-enus-tech-faq/)
+- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry/)
+- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry/)
+- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry/)
+- [Compatibility issues](/documentation/articles/mysql-database-enus-compatibilityinquiry/)
 
 + [Service consulting](#step1)
 + [Connection issues](#step2)
@@ -50,7 +50,7 @@ For performance reasons, we use two 256 MB log files for new database instance c
 Yes. While our [Management Portal](https://manage.windowsazure.cn/) and the PowerShell command line only support setting read/write privileges for the entire database when creating users or databases, you can use the **grant** command to fine-tune user privilege settings.
   
 ### **What system time does MySQL Database on Azure currently use? How can I change it?**
-MySQL on Azure currently defaults to using UTC (Coordinated Universal Time) as the system time. Users can configure offsets using the Management Portal or PowerShell to update the time. For more information, see [Time zone configuration on MySQL on Azure](/documentation/articles/mysql-database-timezone-config).
+MySQL on Azure currently defaults to using UTC (Coordinated Universal Time) as the system time. Users can configure offsets using the Management Portal or PowerShell to update the time. For more information, see [Time zone configuration on MySQL on Azure](/documentation/articles/mysql-database-timezone-config/).
 
   
 ## **Connection issues**<a id="step2"></a> 
@@ -101,7 +101,7 @@ If the user name is longer than 16 characters, this client automatically truncat
 ## **Other issues**<a id="step5"></a> 
 ## Common issues with database migration:
 ### An error message saying “Access denied; you need (at least one of) the SUPER privilege(s) for this operation” is reported during the TRIGGER, PROCEDURE, VIEW, FUNCTION, or EVENT import process.
-Check whether the statement reporting the error uses DEFINER and uses users other than the current user (for example DEFINER=user`user`@`host`host). If this is the case, MySQL requires SUPER privileges to execute this statement. MySQL Database on Azure does not provide user SUPER privileges (see [Service limitations](http://www.windowsazure.cn/documentation/articles/mysql-database-operation-limitation)), causing an error. To resolve this error, delete DEFINER from the statement and use the default current user.
+Check whether the statement reporting the error uses DEFINER and uses users other than the current user (for example DEFINER=user`user`@`host`host). If this is the case, MySQL requires SUPER privileges to execute this statement. MySQL Database on Azure does not provide user SUPER privileges (see [Service limitations](http://www.windowsazure.cn/documentation/articles/mysql-database-operation-limitation/)), causing an error. To resolve this error, delete DEFINER from the statement and use the default current user.
 
 
 <!--Image references-->

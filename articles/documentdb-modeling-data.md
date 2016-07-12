@@ -110,7 +110,7 @@
 
 如果我们要对一个典型博客或 CMS 系统建模，那么具有嵌入式评论的发布实体可能就如上面的代码所示。此示例中的问题是评论数组**没有限制**，这意味着任何单个发布的评论数都没有（实际）限制。随着文档大小的显著增长，这将成为一个问题。
 
-> [AZURE.TIP] DocumentDB 中的文档大小具有最大值。有关此方面的详细信息，请参阅 [DocumentDB 限制](/documentation/articles/documentdb-limits)。
+> [AZURE.TIP] DocumentDB 中的文档大小具有最大值。有关此方面的详细信息，请参阅 [DocumentDB 限制](/documentation/articles/documentdb-limits/)。
 
 随着文档大小的不断增长，通过网络传输数据和大规模读取和更新文档的能力将受到影响。
 
@@ -382,9 +382,9 @@
 
 若要了解有关 Azure DocumentDB 的详细信息，请参阅该服务的[文档](/documentation/services/documentdb/)页。
 
-若要了解有关在 Azure DocumentDB 中优化索引的信息，请参阅[索引策略](/documentation/articles/documentdb-indexing-policies)中的文章。
+若要了解有关在 Azure DocumentDB 中优化索引的信息，请参阅[索引策略](/documentation/articles/documentdb-indexing-policies/)中的文章。
 
-若要了解如何在多个分区之间对数据进行分片，请参阅[在 DocumentDB 中对数据进行分区](/documentation/articles/documentdb-partition-data)。
+若要了解如何在多个分区之间对数据进行分片，请参阅[在 DocumentDB 中对数据进行分区](/documentation/articles/documentdb-partition-data/)。
 
 最后，有关多租户应用程序的数据建模和分片指导，请查阅[使用 Azure DocumentDB 扩展多租户应用程序](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx)。
  

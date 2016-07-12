@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-intro-include.md](../includes/virtual-network-deploy-static-pip-intro-include.md)]
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-scenario-include.md](../includes/virtual-network-deploy-static-pip-scenario-include.md)]
 
@@ -95,7 +95,7 @@
 
 若要使用 PowerShell 部署下载的模板，请执行以下步骤。
 
-1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)，并按步骤 1 到 3 中的说明进行操作。
+1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)，并按步骤 1 到 3 中的说明进行操作。
 
 2. 在 PowerShell 控制台中，根据需要运行 **New-AzureRmResourceGroup** cmdlet 以创建新资源组。如果已创建资源组，请转到步骤 3。
 
@@ -146,7 +146,7 @@
 
 若要使用 Azure CLI 部署模板，请执行以下步骤。
 
-1. 如果你从未用过 Azure CLI，请遵循 [Install and Configure the Azure CLI（安装和配置 Azure CLI）](/documentation/articles/xplat-cli-install)一文中的步骤，然后遵循 [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)（从 Azure 命令行接口 (Azure CLI) 连接到 Azure 订阅）](/documentation/articles/xplat-cli-connect)一文的“Use azure login to authenticate interactively”（使用 azure 登录名以交互方式进行身份验证）部分中所述的，将 CLI 连接到订阅的步骤。
+1. 如果你从未用过 Azure CLI，请遵循 [Install and Configure the Azure CLI（安装和配置 Azure CLI）](/documentation/articles/xplat-cli-install/)一文中的步骤，然后遵循 [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)（从 Azure 命令行接口 (Azure CLI) 连接到 Azure 订阅）](/documentation/articles/xplat-cli-connect/)一文的“Use azure login to authenticate interactively”（使用 azure 登录名以交互方式进行身份验证）部分中所述的，将 CLI 连接到订阅的步骤。
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
 		azure config mode arm

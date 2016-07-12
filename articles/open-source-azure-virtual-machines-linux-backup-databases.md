@@ -27,7 +27,7 @@
 
 ##<a id="backup-mysql"></a>备份 MySQL
 
-有许多种备份 MySQL 数据库的方式。如果您使用的是 Azure 提供的 MySQL 服务，您可以参考 [Azure MySQL tutorial](/documentation/articles/mysql-database-get-started) 进行备份
+有许多种备份 MySQL 数据库的方式。如果您使用的是 Azure 提供的 MySQL 服务，您可以参考 [Azure MySQL tutorial](/documentation/articles/mysql-database-get-started/) 进行备份
 
 如果您是在 Azure 的 Linux 虚拟机上自行搭建的 MySQL 数据库的话，这篇文档就非常适合您了。我们会介绍三种 MySQL 备份的方式：mysqldump, 主从复制, 以及 xtrabackup. 
 
@@ -80,7 +80,7 @@ Mysqldump 要求对备份的表至少有查询的权限，如果--single-transac
 
 主从复制通常指将主服务器上的数据及时同步到从服务器上，保持主从服务器数据的一致。在 Azure 上，建议将主从服务器放置于同一个子网下，或者位于同一个数据中心，比如区域都位于中国东部或者中国北部，以降低网络延迟。在创建虚拟机时选择区域。  
 
-Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一个子网下。请参考[虚拟网络链接](/documentation/articles/virtual-networks-create-vnet-classic-portal)创建虚拟网络。  
+Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一个子网下。请参考[虚拟网络链接](/documentation/articles/virtual-networks-create-vnet-classic-portal/)创建虚拟网络。  
 
 >[Azure.Note]**必须**在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它加入虚拟网络。如果不想让这些服务器处于同一个子网下，则请在选择区域时保持一致。
 
@@ -381,11 +381,11 @@ Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁�
 
 ##<a id="backup-redis"></a>备份 Redis
 
-请参考文档“[在Azure Linux虚拟机上配置Redis集群.docx](/documentation/articles/open-source-azure-virtual-machines-linux-configure-redis-cluster)” 中关于复制和集群的部分。
+请参考文档“[在Azure Linux虚拟机上配置Redis集群.docx](/documentation/articles/open-source-azure-virtual-machines-linux-configure-redis-cluster/)” 中关于复制和集群的部分。
 
 
 ##<a id="backup-mongodb"></a>备份 MongoDB
-请参考文档 “[在Azure Linux虚拟机上管理配置MongoDB集群.docx](/documentation/articles/open-source-azure-virtual-machines-manage-mongodb-cluster)” 中复制和分片的部分。  
+请参考文档 “[在Azure Linux虚拟机上管理配置MongoDB集群.docx](/documentation/articles/open-source-azure-virtual-machines-manage-mongodb-cluster/)” 中复制和分片的部分。  
 
 亦可使用mongodb tools.具体请参考[官网](#https://docs.mongodb.com/manual/administration/backup/)
 

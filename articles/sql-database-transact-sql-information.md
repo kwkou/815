@@ -28,7 +28,7 @@ Microsoft SQL Server 和 Azure SQL 数据库都支持应用程序依赖的大多
 
 ## 升级到 SQL 数据库 V12
 
-本主题介绍 SQL 数据库升级到免费版 SQL 数据库 V12 后可用的功能。有关 V12 的详细信息，请参阅 [SQL 数据库 V12 新增功能](/documentation/articles/sql-database-v12-whats-new)。SQL 数据库 V12 增加了性能和可管理性改进功能，以及对其他功能的支持。增加的功能在下面列出，分为完全支持的功能以及部分支持的功能。
+本主题介绍 SQL 数据库升级到免费版 SQL 数据库 V12 后可用的功能。有关 V12 的详细信息，请参阅 [SQL 数据库 V12 新增功能](/documentation/articles/sql-database-v12-whats-new/)。SQL 数据库 V12 增加了性能和可管理性改进功能，以及对其他功能的支持。增加的功能在下面列出，分为完全支持的功能以及部分支持的功能。
 
 ## SQL 数据库 V12 部分支持的功能
 
@@ -49,7 +49,7 @@ SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的�
 
 - 系统对象的排序规则
 - 连接相关：终结点语句、ORIGINAL\_DB\_NAME。Windows 身份验证不可用于登录名或包含的数据库用户。
-- 使用三个或四个部分名称的跨数据库查询。（使用[弹性数据库查询](/documentation/articles/sql-database-elastic-query-overview)支持只读跨数据库查询。）
+- 使用三个或四个部分名称的跨数据库查询。（使用[弹性数据库查询](/documentation/articles/sql-database-elastic-query-overview/)支持只读跨数据库查询。）
 - 跨数据库所有权链接, TRUSTWORTHY 设置
 - 数据收集器
 - 数据库关系图

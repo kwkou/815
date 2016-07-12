@@ -37,17 +37,17 @@
 
 - 默认情况下，在 Resource Manager 部署模型中创建的 ExpressRoute 线路无法访问经典部署模型。
 - 默认情况下，可以从这两种部署模型访问从经典部署模型转移到 Resource Manager 部署模型的 ExpressRoute 线路。
-- 无论是在 Resource Manager 部署模型还是经典部署模型中创建的，ExpressRoute 线路始终都可以访问 Resource Manager 部署模型。这意味着，你可以根据[如何链接虚拟网络](/documentation/articles/expressroute-howto-linkvnet-arm)中的说明，与 Resource Manager 部署模型中创建的虚拟网络建立连接。
+- 无论是在 Resource Manager 部署模型还是经典部署模型中创建的，ExpressRoute 线路始终都可以访问 Resource Manager 部署模型。这意味着，你可以根据[如何链接虚拟网络](/documentation/articles/expressroute-howto-linkvnet-arm/)中的说明，与 Resource Manager 部署模型中创建的虚拟网络建立连接。
 - 对经典部署模型的访问权限由 ExpressRoute 线路中的 **allowClassicOperations** 参数控制。
 
->[AZURE.IMPORTANT] 将应用[服务限制](/documentation/articles/azure-subscription-service-limits)页中所述的所有配额。例如，标准线路最多可以有 10 个跨经典部署模型和 Resource Manager 部署模型的虚拟网络链接/连接。
+>[AZURE.IMPORTANT] 将应用[服务限制](/documentation/articles/azure-subscription-service-limits/)页中所述的所有配额。例如，标准线路最多可以有 10 个跨经典部署模型和 Resource Manager 部署模型的虚拟网络链接/连接。
 
 
 ## 控制对经典部署模型的访问权限
 
 设置 ExpressRoute 线路的 **allowClassicOperations** 参数，即可让单个 ExpressRoute 线路链接到这两种部署模型中的虚拟网络。
 
-将 **allowClassicOperations** 设置为 TRUE 即可从这两种部署模型中的虚拟网络链接到 ExpressRoute 线路。可以遵循有关[如何链接经典部署模型中的虚拟网络](/documentation/articles/expressroute-howto-linkvnet-classic)的指导链接到经典部署模型中的虚拟网络。可以遵循有关[如何链接 Resource Manager 部署模型中的虚拟网络](/documentation/articles/expressroute-howto-linkvnet-arm)的指导链接到 Resource Manager 部署模型中的虚拟网络。
+将 **allowClassicOperations** 设置为 TRUE 即可从这两种部署模型中的虚拟网络链接到 ExpressRoute 线路。可以遵循有关[如何链接经典部署模型中的虚拟网络](/documentation/articles/expressroute-howto-linkvnet-classic/)的指导链接到经典部署模型中的虚拟网络。可以遵循有关[如何链接 Resource Manager 部署模型中的虚拟网络](/documentation/articles/expressroute-howto-linkvnet-arm/)的指导链接到 Resource Manager 部署模型中的虚拟网络。
 
 将 **allowClassicOperations** 设置为 FALSE 会阻止从经典部署模型访问线路。但是，经典部署模型中的所有虚拟网络链接将会保留。在此情况下，ExpressRoute 线路不显示在经典部署模型中。
 
@@ -94,15 +94,15 @@ ExpressRoute 线路相当于经典部署模型与 Resource Manager 部署模型�
 
 ## 配置
 
-遵循[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-howto-move-arm)中所述的说明。
+遵循[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-howto-move-arm/)中所述的说明。
 
 ## 后续步骤
 
-- 有关工作流信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
+- 有关工作流信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows/)。
 - 配置 ExpressRoute 连接的步骤：
 
-	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)
-	- [配置路由](/documentation/articles/expressroute-howto-routing-arm)
-	- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
+	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)
+	- [配置路由](/documentation/articles/expressroute-howto-routing-arm/)
+	- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
 <!---HONumber=Mooncake_0509_2016-->

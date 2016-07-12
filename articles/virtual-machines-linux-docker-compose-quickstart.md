@@ -26,7 +26,7 @@
 
 ## 步骤 1：将 Linux VM 设置为 Docker 主机
 
-可以使用各种 Azure 过程和 Azure 应用商店中提供的映像或 Resource Manager 模板创建 Linux VM，并将其设置为 Docker 主机。例如，请参阅[使用 Docker VM 扩展部署环境](/documentation/articles/virtual-machines-linux-dockerextension)，了解使用[快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)通过 Azure Docker VM 扩展来创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，VM 将自动设置为 Docker 主机，并且已安装 Compose。该文中的示例演示如何在 Resource Manager 模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行接口](/documentation/articles/xplat-cli-install) (Azure CLI) 创建 VM。
+可以使用各种 Azure 过程和 Azure 应用商店中提供的映像或 Resource Manager 模板创建 Linux VM，并将其设置为 Docker 主机。例如，请参阅[使用 Docker VM 扩展部署环境](/documentation/articles/virtual-machines-linux-dockerextension/)，了解使用[快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)通过 Azure Docker VM 扩展来创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，VM 将自动设置为 Docker 主机，并且已安装 Compose。该文中的示例演示如何在 Resource Manager 模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行接口](/documentation/articles/xplat-cli-install/) (Azure CLI) 创建 VM。
 
 ## 步骤 2：确认已安装 Compose
 
@@ -92,7 +92,7 @@
 * 转到 [Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)，了解用于在 Docker VM 中配置 Docker 和 Compose 的更多选项。例如，其中一个选项是将 Compose yml 文件（已转换为 JSON）直接放在 Docker VM 扩展的配置中。
 * 有关构建和部署多容器应用的更多示例，请查阅 [Compose 命令行参考](http://docs.docker.com/compose/reference/)和[用户指南](http://docs.docker.com/compose/)。
 * 使用 Azure 资源管理器模板（你自己的或[社区](https://github.com/Azure/azure-quickstart-templates/)提供的），通过 Docker 部署 Azure VM 和使用 Compose 设置的应用程序。例如，[使用 Docker 部署 WordPress 博客](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql)模板使用 Docker 和 Compose 通过 Ubuntu VM 上的 MySQL 后端快速部署 WordPress。
-* 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-linux-docker-swarm) 群集集成。相关方案请参阅 [Using Compose with Swarm（将 Compose 与 Swarm 搭配使用）](https://docs.docker.com/compose/swarm/)。
+* 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-linux-docker-swarm/) 群集集成。相关方案请参阅 [Using Compose with Swarm（将 Compose 与 Swarm 搭配使用）](https://docs.docker.com/compose/swarm/)。
 
 <!--Image references-->
 

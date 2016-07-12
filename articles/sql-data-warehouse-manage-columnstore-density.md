@@ -133,11 +133,11 @@ WHERE	[table_name] = 'FactInternetSales'
 <!--Image references-->
 
 <!--Article references-->
-[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas
-[表分区]: /documentation/articles/sql-data-warehouse-develop-table-partitions
-[并发]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[管理]: /documentation/articles/sql-data-warehouse-manage-monitor
-[管理索引]: /documentation/articles/sql-data-warehouse-manage-indexes
+[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[表分区]: /documentation/articles/sql-data-warehouse-develop-table-partitions/
+[并发]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[管理]: /documentation/articles/sql-data-warehouse-manage-monitor/
+[管理索引]: /documentation/articles/sql-data-warehouse-manage-indexes/
 
 <!--MSDN references-->
 [ALTER INDEX]: https://msdn.microsoft.com/zh-cn/library/ms188388.aspx

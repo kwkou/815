@@ -92,11 +92,11 @@
 
 ##后续步骤
 
-若要了解有关随 Azure 提供的 Node.js 版本的更多信息以及如何指定要与你的应用程序结合使用的版本，请参阅[在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps)。
+若要了解有关随 Azure 提供的 Node.js 版本的更多信息以及如何指定要与你的应用程序结合使用的版本，请参阅[在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps/)。
 
-如果在将应用程序部署到 Azure 后遇到应用程序问题，请参阅[如何在 Azure Web 应用中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug)以了解有关诊断问题的信息。
+如果在将应用程序部署到 Azure 后遇到应用程序问题，请参阅[如何在 Azure Web 应用中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)以了解有关诊断问题的信息。
 [Azure 经典管理门户]: http://manage.windowsazure.cn
-[使用 Git 发布 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control
+[使用 Git 发布 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control/
 [免费]: /zh-cn/pricing/1rmb-trial
 [WebMatrix Web 应用]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409

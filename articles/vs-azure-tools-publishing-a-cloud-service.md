@@ -33,7 +33,7 @@
 
 - 创建服务包：可以使用此包和服务配置文件，从 [Azure 经典管理门户](http://manage.windowsazure.cn)中，将应用程序发布到部署环境。
 
-- 从 Visual Studio 中发布 Azure 项目：若要将应用程序直接发布到 Azure，请使用发布向导。有关信息，请参阅 [发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard)。
+- 从 Visual Studio 中发布 Azure 项目：若要将应用程序直接发布到 Azure，请使用发布向导。有关信息，请参阅 [发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/)。
 
 ### 从 Visual Studio 中创建服务包
 
@@ -57,7 +57,7 @@
 
     >[AZURE.NOTE] 若要在已完成部署后删除此部署环境，必须使用 Azure 经典管理门户。
 
-1. （可选）启动角色实例后，Visual Studio 将自动在服务器资源管理器的“云服务”节点中显示部署环境。你可以从此位置查看单个角色实例的状态。请参阅 [使用云资源管理器管理 Azure 资源](/documentation/articles/vs-azure-tools-resources-managing-with-cloud-explorer)。下图显示了仍处于“正在初始化”状态中的角色实例：
+1. （可选）启动角色实例后，Visual Studio 将自动在服务器资源管理器的“云服务”节点中显示部署环境。你可以从此位置查看单个角色实例的状态。请参阅 [使用云资源管理器管理 Azure 资源](/documentation/articles/vs-azure-tools-resources-managing-with-cloud-explorer/)。下图显示了仍处于“正在初始化”状态中的角色实例：
 
     ![VST\_DeployComputeNode](./media/vs-azure-tools-publishing-a-cloud-service/IC744134.png)
 
@@ -81,7 +81,7 @@
 
 ### 发布应用程序时启用 Web 部署
 
-1. 若要启用“为所有 Web 角色启用 Web 部署”复选框，必须先配置远程桌面连接。选择“为所有角色启用远程桌面”，然后在显示的“远程桌面配置”框中提供将用于远程连接的凭据。有关详细信息，请参阅 [对 Azure 角色使用远程桌面](/documentation/articles/vs-azure-tools-remote-desktop-roles)。
+1. 若要启用“为所有 Web 角色启用 Web 部署”复选框，必须先配置远程桌面连接。选择“为所有角色启用远程桌面”，然后在显示的“远程桌面配置”框中提供将用于远程连接的凭据。有关详细信息，请参阅 [对 Azure 角色使用远程桌面](/documentation/articles/vs-azure-tools-remote-desktop-roles/)。
 
 1. 若要为应用程序中的所有 Web 角色启用 Web 部署，请选择“为所有 Web 角色启用 Web 部署”。
 
@@ -119,7 +119,7 @@
 
 1. 若要将受信任的 SSL 证书添加到 IIS 以用于远程连接，请遵循以下步骤：
 
-  1. 若要连接到正在运行 Web 角色的虚拟机，请单击“云资源管理器”或“服务器资源管理器”中的 Web 角色实例，然后选择“使用远程桌面连接”。有关如何连接到虚拟机的详细步骤，请参阅 [对 Azure 角色使用远程连接](/documentation/articles/vs-azure-tools-remote-desktop-roles)。
+  1. 若要连接到正在运行 Web 角色的虚拟机，请单击“云资源管理器”或“服务器资源管理器”中的 Web 角色实例，然后选择“使用远程桌面连接”。有关如何连接到虚拟机的详细步骤，请参阅 [对 Azure 角色使用远程连接](/documentation/articles/vs-azure-tools-remote-desktop-roles/)。
 
       浏览器将提示你下载 .RDP 文件。
 
@@ -165,6 +165,6 @@
 
 ## 后续步骤
 
-若要详细了解如何从 Visual Studio 发布到 Azure，请参阅 [发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard)。
+若要详细了解如何从 Visual Studio 发布到 Azure，请参阅 [发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/)。
 
 <!---HONumber=Mooncake_0509_2016-->

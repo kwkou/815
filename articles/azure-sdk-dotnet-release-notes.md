@@ -21,15 +21,15 @@
 
 ##Azure SDK for .NET 2.8 发行说明
 
-[Azure SDK for .NET 2.8 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_8)
+[Azure SDK for .NET 2.8 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_8/)
 
 ##Azure SDK for .NET 2.7 发行说明
 
-[Azure SDK for .NET 2.7 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_7)
+[Azure SDK for .NET 2.7 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_7/)
 
 ##Azure SDK for .NET 2.6 发行说明
 
-[Azure SDK for .NET 2.6 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_6)
+[Azure SDK for .NET 2.6 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_6/)
 
 ##Azure SDK for .NET 2.5 发行说明
 

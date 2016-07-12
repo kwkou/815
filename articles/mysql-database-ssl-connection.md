@@ -3,8 +3,8 @@
 
 # SSL安全访问MySQL Database on Azure
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-ssl-connection)
-- [English](/documentation/articles/mysql-database-enus-ssl-connection)
+- [中文](/documentation/articles/mysql-database-ssl-connection/)
+- [English](/documentation/articles/mysql-database-enus-ssl-connection/)
 
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
@@ -48,7 +48,7 @@ mysql.exe --ssl-ca=WS_CA1_NEW.crt -h mysqlservices.chinacloudapp.cn -u ssltest%t
 > ![errormessage][4]
 >
 
-> 2.MySQL workbench 6.3.5中，会默认进行SSL加密，且存在一定的兼容性问题，具体解决方法可参见[客户端兼容性常见问题](/documentation/articles/mysql-database-compatibilityinquiry)
+> 2.MySQL workbench 6.3.5中，会默认进行SSL加密，且存在一定的兼容性问题，具体解决方法可参见[客户端兼容性常见问题](/documentation/articles/mysql-database-compatibilityinquiry/)
 
 > **提示** 当前证书支持MySQL.exe 5.5.44和5.6.25及其后续版本。
 > 

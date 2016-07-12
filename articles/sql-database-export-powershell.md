@@ -16,7 +16,7 @@
 # 使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-export-powershell)
+- [PowerShell](/documentation/articles/sql-database-export-powershell/)
 
 
 本文说明了如何使用 PowerShell 将 Azure SQL 数据库存档到存储在 Azurte blob 存储中的 BACPAC 文件。
@@ -33,14 +33,14 @@
  - 在导出过程中终止所有读取和写入活动。
  - 在所有大型表格上使用聚集索引。如果不使用聚集索引，当时间超过 6-12 个小时时，导出可能会失败。因为导出服务需要完成表格扫描才能尝试导出整个表格。
  
-> [AZURE.NOTE] BACPAC 不能用于备份和还原操作。Azure SQL 数据库会自动为每个用户数据库创建备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+> [AZURE.NOTE] BACPAC 不能用于备份和还原操作。Azure SQL 数据库会自动为每个用户数据库创建备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 若要完成本文，你需要以下各项：
 
 - Azure 订阅。 
 - Azure SQL 数据库。 
-- 具有 blob 容器的 [Azure 标准存储帐户](/documentation/articles/storage-create-storage-account)可在标准存储中存储 BACPAC。
-- Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- 具有 blob 容器的 [Azure 标准存储帐户](/documentation/articles/storage-create-storage-account/)可在标准存储中存储 BACPAC。
+- Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
 ## 配置你的凭据，然后选择你的订阅
@@ -92,7 +92,7 @@
 
 此命令会将导出数据库请求提交到服务。根据数据库的大小，导出操作可能需要一些时间才能完成。
 
-> [AZURE.IMPORTANT] 若要确保获得事务处理一致性 BACPAC 文件，应首先[创建数据库的副本](/documentation/articles/sql-database-copy-powershell)，然后导出该数据库副本。
+> [AZURE.IMPORTANT] 若要确保获得事务处理一致性 BACPAC 文件，应首先[创建数据库的副本](/documentation/articles/sql-database-copy-powershell/)，然后导出该数据库副本。
 
 
     $exportRequest = Start-AzureSqlDatabaseExport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
@@ -137,13 +137,13 @@
 
 ## 后续步骤
 
-- [导入 Azure SQL 数据库](/documentation/articles/sql-database-import-powershell)
+- [导入 Azure SQL 数据库](/documentation/articles/sql-database-import-powershell/)
 
 
 ## 其他资源
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 
 <!---HONumber=Mooncake_0509_2016-->

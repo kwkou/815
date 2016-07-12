@@ -15,8 +15,8 @@
 # 创建和修改 ExpressRoute 线路的路由
 
 > [AZURE.SELECTOR]
-[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-routing-arm)
-[PowerShell - Classic](/documentation/articles/expressroute-howto-routing-classic)
+[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-routing-arm/)
+[PowerShell - Classic](/documentation/articles/expressroute-howto-routing-classic/)
 
 
 
@@ -30,8 +30,8 @@
 ## 配置先决条件
 
 - 你将需要最新版本的 Azure PowerShell 模块（版本 1.0 或更高版本）。 
-- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、[路由要求](/documentation/articles/expressroute-routing)页和[工作流](/documentation/articles/expressroute-workflows)页。
-- 你必须有一个活动的 ExpressRoute 线路。在继续下一步之前，请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)，并通过连接提供商启用该线路。ExpressRoute 线路必须处于已预配和已启用状态，你才能运行下述 cmdlet。
+- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites/)页、[路由要求](/documentation/articles/expressroute-routing/)页和[工作流](/documentation/articles/expressroute-workflows/)页。
+- 你必须有一个活动的 ExpressRoute 线路。在继续下一步之前，请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)，并通过连接提供商启用该线路。ExpressRoute 线路必须处于已预配和已启用状态，你才能运行下述 cmdlet。
 
 >[AZURE.IMPORTANT] 这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。
 
@@ -70,7 +70,7 @@
 
 2. 创建 ExpressRoute 线路。
 	
-	请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)，并由连接服务提供商进行预配。
+	请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)，并由连接服务提供商进行预配。
 
 	如果你的连接服务提供商提供第 3 层托管服务，你可以请求连接服务提供商为你启用 Azure 专用对等互连。在此情况下，你不需要遵循后续部分中所列的说明。但是，如果你的连接服务提供商不为你管理路由，请在创建线路之后遵循以下说明。
 
@@ -190,7 +190,7 @@
 
 2. 创建 ExpressRoute 线路。
 	
-	请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)，并由连接服务提供商进行预配。
+	请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)，并由连接服务提供商进行预配。
 
 	如果你的连接服务提供商提供第 3 层托管服务，你可以请求连接服务提供商为你启用 Azure 公共对等互连。在此情况下，你不需要遵循后续部分中所列的说明。但是，如果你的连接服务提供商不为你管理路由，请在创建线路之后遵循以下说明。
 
@@ -278,12 +278,12 @@
 
 ## 后续步骤
 
-下一步，[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
+下一步，[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)。
 
--  有关 ExpressRoute 工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows)。
+-  有关 ExpressRoute 工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows/)。
 
--  有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)。
+-  有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings/)。
 
--  有关使用虚拟网络的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
+-  有关使用虚拟网络的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 
 <!---HONumber=Mooncake_1207_2015-->

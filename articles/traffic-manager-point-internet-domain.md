@@ -25,10 +25,10 @@
 
 ## 后续步骤
 
-[流量管理器路由方法](/documentation/articles/traffic-manager-routing-methods)
+[流量管理器路由方法](/documentation/articles/traffic-manager-routing-methods/)
 
-[流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile)
+[流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile/)
 
-[流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint)
+[流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint/)
 
 <!---HONumber=Mooncake_1221_2015-->

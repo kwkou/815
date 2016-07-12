@@ -15,8 +15,8 @@
 # 在 Azure 中配置 AlwaysOn 可用性组的外部侦听器
 
 > [AZURE.SELECTOR]
-- [内部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)
-- [外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener)
+- [内部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)
+- [外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)
 
 本主题说明如何为 AlwaysOn 可用性组配置一个可以通过 Internet 从外部访问的侦听器。这是通过将云服务的**公共虚拟 IP (VIP)** 地址与侦听器关联来实现的。
 
@@ -24,7 +24,7 @@
 
 ## 外部侦听器的准则和限制
 
-你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)但是没有配置侦听器。
+你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)但是没有配置侦听器。
 
 在使用云服务的公共 VIP 地址部署时，请注意对 Azure 中可用性组侦听器的以下限制：
 
@@ -40,7 +40,7 @@
 
 [AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
-本文重点介绍如何创建使用**外部负载平衡**的侦听器。如果你想要创建专用于虚拟网络的侦听器，请参阅本文的另一个版本，其中提供了设置[使用 ILB 的侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener)的步骤
+本文重点介绍如何创建使用**外部负载平衡**的侦听器。如果你想要创建专用于虚拟网络的侦听器，请参阅本文的另一个版本，其中提供了设置[使用 ILB 的侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)的步骤
 
 ## 创建支持直接服务器返回的负载平衡 VM 终结点
 

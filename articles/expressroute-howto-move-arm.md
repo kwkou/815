@@ -18,8 +18,8 @@
 ## 配置先决条件
 
 - 需要最新版本的 Azure PowerShell 模块（至少 1.0 版）。
-- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)、[路由要求](/documentation/articles/expressroute-routing)和[工作流](/documentation/articles/expressroute-workflows)。
-- 在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move)中提供的信息。确保你已完全了解可能的限制和局限性。
+- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites/)、[路由要求](/documentation/articles/expressroute-routing/)和[工作流](/documentation/articles/expressroute-workflows/)。
+- 在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move/)中提供的信息。确保你已完全了解可能的限制和局限性。
 - 如果你要将 Azure ExpressRoute 线路从经典部署模型转移到 Azure Resource Manager 部署模型，必须完全配置好该线路，使它能够在经典部署模型中正常工作。
 - 确保拥有一个在 Resource Manager 部署模型中创建的资源组。
 
@@ -65,7 +65,7 @@
 
 ### 步骤 3：将 ExpressRoute 线路转移到 Resource Manager 部署模型
 
-现在，你可以将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型。在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move)中提供的信息。
+现在，你可以将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型。在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move/)中提供的信息。
 
 可以运行以下代码段来实现此目的：
 
@@ -96,8 +96,8 @@
 
 服务密钥必须已列出。现在，你可以通过适用于经典 VNet 的标准经典部署模型命令以及适用于 ARM VNET 的标准 ARM 命令来管理到 ExpressRoute 线路的链接。以下文章将引导你了解如何管理 ExpressRoute 线路的链接：
 
-- [在 Resource Manager 部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
-- [在经典部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
+- [在 Resource Manager 部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
+- [在经典部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
 
 
 ## 在经典部署模型中禁用 ExpressRoute 线路
@@ -119,7 +119,7 @@
 
 创建你的线路后，请确保执行以下操作：
 
-- [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm)
-- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
+- [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm/)
+- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
 <!---HONumber=Mooncake_0509_2016-->

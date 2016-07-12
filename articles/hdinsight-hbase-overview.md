@@ -48,7 +48,7 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 
 - [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用][hbase-get-started]
 - [在 Azure 虚拟网络上设置 HDInsight 群集][hbase-provision-vnet]
-- [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication) 
+- [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication/) 
 - [借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序][hbase-build-java-maven]
 
 ##<a name="see-also"></a>另请参阅
@@ -58,17 +58,17 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 
 
 
-[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
 
 [azure-purchase-options]: /pricing/overview/
 
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 [apache-hadoop]: http://hadoop.apache.org/
 
 <!---HONumber=76-->

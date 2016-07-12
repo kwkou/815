@@ -97,8 +97,8 @@
 <!--Image references-->
 
 <!--Article references-->
-[SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference
-[Concurrency and workload management（并发性和工作负荷管理）]: /documentation/articles/sql-data-warehouse-develop-concurrency
+[SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
+[Concurrency and workload management（并发性和工作负荷管理）]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 
 <!--MSDN references-->
 [Row-Overflow Data Exceeding 8 KB（超过 8 KB 的行溢出数据）]: https://msdn.microsoft.com/zh-cn/library/ms186981.aspx

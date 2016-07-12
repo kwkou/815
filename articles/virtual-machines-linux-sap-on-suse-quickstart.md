@@ -53,7 +53,7 @@
 
 - [OpenSUSE](http://software.opensuse.org/package/WALinuxAgent)
 
-- [Azure](/documentation/articles/virtual-machines-linux-endorsed-distros)
+- [Azure](/documentation/articles/virtual-machines-linux-endorsed-distros/)
 
 - [SUSE](https://www.suse.com/communities/blog/suse-linux-enterprise-server-configuration-for-windows-azure/)
 
@@ -80,7 +80,7 @@
 
 ## 从本地将 SUSE VM 上载到 Azure
 
-有关从本地将 SUSE VM 上载到 Azure 的步骤说明，请参阅 [Prepare a SLES or openSUSE virtual machine for Azure（为 Azure 准备 SLES 或 openSUSE 虚拟机）](/documentation/articles/virtual-machines-linux-suse-create-upload-vhd)。
+有关从本地将 SUSE VM 上载到 Azure 的步骤说明，请参阅 [Prepare a SLES or openSUSE virtual machine for Azure（为 Azure 准备 SLES 或 openSUSE 虚拟机）](/documentation/articles/virtual-machines-linux-suse-create-upload-vhd/)。
 
 例如，若要使用最终没有取消预配步骤的方法上载 VM 以保留现有 SAP 安装以及主机名，需要检查以下项：
 
@@ -99,7 +99,7 @@
 
 	   azure group deployment create "<deployment name>" -g "<resource group name>" --template-file "<../../filename.json>"
 
-有关 JSON 模板文件的详细信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)。
+有关 JSON 模板文件的详细信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates/)。
 
 ## SAP 许可证和硬件密钥
 
@@ -115,7 +115,7 @@ SUSE 提供了一个名为“sapconf”的包，该包可管理一组特定于 S
 
 ## 逻辑卷
 
-逻辑卷管理器 (LVM) 未在 Azure 上完全验证。如果需要跨多个 Azure 数据磁盘的大型逻辑卷（例如，用于 SAP 数据库），应使用 mdadm。若要了解如何使用 mdadm 在 Azure 上设置 Linux RAID，请参阅 [Configure software RAID on Linux（在 Linux 上配置软件 RAID）](/documentation/articles/virtual-machines-linux-configure-raid)。
+逻辑卷管理器 (LVM) 未在 Azure 上完全验证。如果需要跨多个 Azure 数据磁盘的大型逻辑卷（例如，用于 SAP 数据库），应使用 mdadm。若要了解如何使用 mdadm 在 Azure 上设置 Linux RAID，请参阅 [Configure software RAID on Linux（在 Linux 上配置软件 RAID）](/documentation/articles/virtual-machines-linux-configure-raid/)。
 
 
 ## Azure SUSE 存储库

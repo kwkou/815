@@ -105,11 +105,11 @@ Service Fabric 让编写和管理分布式可扩展应用程序的工作变得�
 
 ## 后续步骤
 
-- [可测试性操作](/documentation/articles/service-fabric-testability-actions)
-- [可测试性方案](/documentation/articles/service-fabric-testability-actions)
+- [可测试性操作](/documentation/articles/service-fabric-testability-actions/)
+- [可测试性方案](/documentation/articles/service-fabric-testability-actions/)
 - 如何测试你的服务
-  - [在服务工作负荷期间模拟故障](/documentation/articles/service-fabric-testability-workload-tests)
-  - [服务到服务通信失败](/documentation/articles/service-fabric-testability-scenarios-service-communication)
+  - [在服务工作负荷期间模拟故障](/documentation/articles/service-fabric-testability-workload-tests/)
+  - [服务到服务通信失败](/documentation/articles/service-fabric-testability-scenarios-service-communication/)
 
  
 

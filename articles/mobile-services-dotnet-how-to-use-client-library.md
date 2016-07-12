@@ -18,7 +18,7 @@
 
 ##概述 
 
-本指南说明如何在 Windows 应用和 Xamarin 应用中使用 Azure 移动服务的托管客户端库执行常见方案。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started)教程。
+本指南说明如何在 Windows 应用和 Xamarin 应用中使用 Azure 移动服务的托管客户端库执行常见方案。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started/)教程。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -274,7 +274,7 @@
 
 ##<a name="#custom-api"></a>如何：调用自定义 API
 
-自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)。
+自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api/)。
 
 通过在客户端上调用某一个 [InvokeApiAsync] 方法重载来调用自定义 API。例如，以下代码行向移动服务上的 **completeAll** API 发送 POST 请求：
 
@@ -300,11 +300,11 @@
 		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
 		}
 
-请注意，在此示例中，注册包含两个标记。有关 Windows 应用的详细信息，请参阅[向应用添加推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)。
+请注意，在此示例中，注册包含两个标记。有关 Windows 应用的详细信息，请参阅[向应用添加推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push/)。
 
 Xamarin 应用需要一些额外的代码才能将 iOS 或 Android 应用上运行的 Xamarin 应用分别注册到 Apple Push Notification 服务 (APNS) 和 Google Cloud Messaging (GCM) 服务。有关详细信息，请参阅**向应用添加推送通知** ([Xamarin.iOS](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push/#add-push)。
 
->[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
+>[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/)。
 
 ##<a name="pull-notifications"></a>如何：在 Windows 应用中使用定期通知
 
@@ -526,7 +526,7 @@ Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定
 
 ####单一登录将 Microsoft 帐户与 Live SDK 配合使用
 
-若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。完成[注册应用以使用 Microsoft 帐户登录](/documentation/articles/mobile-services-how-to-register-microsoft-authentication)中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。如果你同时拥有 Windows 应用商店和 Windows Phone 8/Silverlight 版本的应用，请先注册 Windows 应用商店版本。
+若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。完成[注册应用以使用 Microsoft 帐户登录](/documentation/articles/mobile-services-how-to-register-microsoft-authentication/)中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。如果你同时拥有 Windows 应用商店和 Windows Phone 8/Silverlight 版本的应用，请先注册 Windows 应用商店版本。
 
 下面的代码使用 Live SDK 进行身份验证，并使用返回的令牌来登录到你的移动服务。
 
@@ -740,7 +740,7 @@ Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定
 
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/
 [PasswordVault]: http://msdn.microsoft.com/zh-cn/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [ProtectedData]: http://msdn.microsoft.com/zh-cn/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [LoginAsync 方法]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
@@ -750,7 +750,7 @@ Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
-[乐观并发教程]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
+[乐观并发教程]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/
 [MobileServiceClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
 [IncludeTotalCount]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn250560.aspx

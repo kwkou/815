@@ -554,8 +554,8 @@ Web 服务器、IIS01 和防火墙都在相同的云服务中，因此共享相�
 [4]: ./media/virtual-networks-dmz-nsg-fw-asm/firewallruleactivate.png "防火墙规则激活"
 
 <!--Link References-->
-[HOME]: /documentation/articles/best-practices-network-security
-[SampleApp]: /documentation/articles/virtual-networks-sample-app
-[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm
+[HOME]: /documentation/articles/best-practices-network-security/
+[SampleApp]: /documentation/articles/virtual-networks-sample-app/
+[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm/
 
 <!---HONumber=Mooncake_0307_2016-->

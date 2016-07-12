@@ -14,11 +14,11 @@
 
 # 使用证书保护独立的 Windows 群集
 
-本文介绍如何使用 X.509 证书保护独立 Windows 群集的各个节点之间的通信，以及如何对连接到此群集的客户端进行身份验证。这可确保只有经过授权的用户才能访问该群集和部署的应用程序，以及执行管理任务。创建群集时，应在该群集上启用证书安全性。有关节点到节点安全性、客户端到节点安全性和基于角色的访问控制的详细信息，请参阅 [Cluster security scenarios](/documentation/articles/service-fabric-cluster-security)（群集安全方案）。
+本文介绍如何使用 X.509 证书保护独立 Windows 群集的各个节点之间的通信，以及如何对连接到此群集的客户端进行身份验证。这可确保只有经过授权的用户才能访问该群集和部署的应用程序，以及执行管理任务。创建群集时，应在该群集上启用证书安全性。有关节点到节点安全性、客户端到节点安全性和基于角色的访问控制的详细信息，请参阅 [Cluster security scenarios](/documentation/articles/service-fabric-cluster-security/)（群集安全方案）。
 
 ## 需要哪些证书？
 
-首先，[将独立群集包下载到](/documentation/articles/service-fabric-cluster-creation-for-windows-server#downloadpackage)群集中的节点之一。在下载的包，你会看到 **ClusterConfig.X509.json** 文件。在“编辑”模式下打开该文件，然后在 **properties** 选项卡下面查看 **security** 所在的节：
+首先，[将独立群集包下载到](/documentation/articles/service-fabric-cluster-creation-for-windows-server/#downloadpackage)群集中的节点之一。在下载的包，你会看到 **ClusterConfig.X509.json** 文件。在“编辑”模式下打开该文件，然后在 **properties** 选项卡下面查看 **security** 所在的节：
 
     "security": {
         "metadata": "The Credential type X509 indicates this is cluster is secured using X509 Certificates. The thumbprint format is - d5 ec 42 3b 79 cb e5 07 fd 83 59 3c 56 b9 d5 31 24 25 42 64.",
@@ -66,7 +66,7 @@
 
 ## 安装证书
 
-若要保护群集之间的通信，首先需要获取群集节点的 X.509 证书。此外，如果只想允许经过授权的计算机/用户连接到此群集，需要获得并安装这些潜在客户端计算机的证书。请阅读 [How to obtain a certificate](https://msdn.microsoft.com/zh-cn/library/aa702761.aspx)（如何获得证书），以了解有关获取 X.509 证书的步骤。需要创建一个 **.pfx** 证书，以便能够存储你的私钥。或者，如果你有 Azure 订阅，则可以遵循[获取 X.509 证书](/documentation/articles/service-fabric-secure-azure-cluster-with-certs#acquirecerts)部分中的步骤创建证书。获取此证书后，可以使用以下步骤在群集节点上安装该证书。请注意，这些步骤假设你的节点上已安装最新版本的 Windows PowerShell 3.x。需要在每个节点上，针对群集证书和服务器证书以及任何辅助证书重复这些步骤。
+若要保护群集之间的通信，首先需要获取群集节点的 X.509 证书。此外，如果只想允许经过授权的计算机/用户连接到此群集，需要获得并安装这些潜在客户端计算机的证书。请阅读 [How to obtain a certificate](https://msdn.microsoft.com/zh-cn/library/aa702761.aspx)（如何获得证书），以了解有关获取 X.509 证书的步骤。需要创建一个 **.pfx** 证书，以便能够存储你的私钥。或者，如果你有 Azure 订阅，则可以遵循[获取 X.509 证书](/documentation/articles/service-fabric-secure-azure-cluster-with-certs/#acquirecerts)部分中的步骤创建证书。获取此证书后，可以使用以下步骤在群集节点上安装该证书。请注意，这些步骤假设你的节点上已安装最新版本的 Windows PowerShell 3.x。需要在每个节点上，针对群集证书和服务器证书以及任何辅助证书重复这些步骤。
 
 - 将 .pfx 文件复制到节点。
 
@@ -100,13 +100,13 @@
 
 ## 后续步骤
 
-配置 ClusterConfig.X509.json 文件的 **security** 节后，可以转到[创建群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server#createcluster)部分来配置节点并创建独立群集。创建群集时，请记得使用 **ClusterConfig.X509.json** 文件。例如，你的命令可能如下所示：
+配置 ClusterConfig.X509.json 文件的 **security** 节后，可以转到[创建群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/#createcluster)部分来配置节点并创建独立群集。创建群集时，请记得使用 **ClusterConfig.X509.json** 文件。例如，你的命令可能如下所示：
 
 	cd $ServiceFabricDeployAnywhereFolder
 	.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.X509.json -MicrosoftServiceFabricCabFilePath .\MicrosoftAzureServiceFabric.cab -AcceptEULA $true -Verbose
 
 
-使安全的独立 Windows 群集成功运行并且设置了可连接到该群集的、经过身份验证的客户端之后，请遵循[使用 PowerShell 连接到安全群集](/documentation/articles/service-fabric-connect-to-secure-cluster#connectsecurecluster)部分中的步骤连接到该群集。
+使安全的独立 Windows 群集成功运行并且设置了可连接到该群集的、经过身份验证的客户端之后，请遵循[使用 PowerShell 连接到安全群集](/documentation/articles/service-fabric-connect-to-secure-cluster/#connectsecurecluster)部分中的步骤连接到该群集。
 
 
 

@@ -93,13 +93,13 @@
 
 **问：Azure AD Connect Health 门户中为何有两个同名的服务器？**
 
-当你从某个服务器中删除代理时，该服务器不会自动从 Azure AD Connect 门户中删除。因此，如果你手动从服务器中删除代理或删除服务器本身，需要从 Azure AD Connect Health 门户中手动删除该服务器条目。有关详细信息，请参阅[删除服务器或服务实例](/documentation/articles/active-directory-aadconnect-health-operations#delete-a-server-or-service-instance)。
+当你从某个服务器中删除代理时，该服务器不会自动从 Azure AD Connect 门户中删除。因此，如果你手动从服务器中删除代理或删除服务器本身，需要从 Azure AD Connect Health 门户中手动删除该服务器条目。有关详细信息，请参阅[删除服务器或服务实例](/documentation/articles/active-directory-aadconnect-health-operations/#delete-a-server-or-service-instance)。
 此外，如果你重建了服务器的映像或者创建了具有相同详细信息（如计算机名称）的新服务器，但没有从 Azure AD Connect Health 门户中删除原有服务器，而是在新服务器上安装了代理，则你现在将看到两个服务器条目。在这种情况下，你应手动删除属于原有服务器的条目。此条目中的数据通常已过时。
 
 ## 相关链接
 
-* [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
-* [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs)
-* [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations)
+* [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/)
+* [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs/)
+* [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations/)
 
 <!---HONumber=Mooncake_0405_2016-->

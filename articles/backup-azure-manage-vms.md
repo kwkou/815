@@ -17,8 +17,8 @@
 # 管理和监视 Azure 虚拟机备份
 
 > [AZURE.SELECTOR]
-- [管理 Azure VM 备份](/documentation/articles/backup-azure-manage-vms)
-- [管理 经典 VM 备份](/documentation/articles/backup-azure-manage-vms-classic)
+- [管理 Azure VM 备份](/documentation/articles/backup-azure-manage-vms/)
+- [管理 经典 VM 备份](/documentation/articles/backup-azure-manage-vms-classic/)
 
 本文将指导你如何管理虚拟机 (VM) 的备份，并对门户仪表板中提供的备份信息进行了说明。本文中的指导的适用范围是将 VM 用于恢复服务保管库。本文不介绍如何创建虚拟机，也不说明如何保护虚拟机。
 
@@ -85,13 +85,13 @@
 	- 停止保护虚拟机 <br>
 	- 恢复对虚拟机的保护 <br>
 	- 删除备份数据（或恢复点）<br>
-	- [删除备份（或恢复点）](/documentation/articles/backup-azure-arm-restore-vms#restore-a-recovery-point)<br>
+	- [删除备份（或恢复点）](/documentation/articles/backup-azure-arm-restore-vms/#restore-a-recovery-point)<br>
 
 以下过程的起点是保管库项仪表板。
 
 ## 更改策略或创建新的备份策略
 
-1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms#open-a-vault-item-dashboard)”中，单击“所有设置”以打开“设置”边栏选项卡。
+1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms/#open-a-vault-item-dashboard)”中，单击“所有设置”以打开“设置”边栏选项卡。
 
     ![备份策略边栏选项卡](./media/backup-azure-manage-vms/all-settings-button.png)
 
@@ -107,7 +107,7 @@
 
     ![虚拟机备份](./media/backup-azure-manage-vms/backup-policy-create-new.png)
 
-    有关创建备份策略的说明，请参阅[定义备份策略](/documentation/articles/backup-azure-manage-vms#defining-a-backup-policy)。
+    有关创建备份策略的说明，请参阅[定义备份策略](/documentation/articles/backup-azure-manage-vms/#defining-a-backup-policy)。
 
 
 ## 虚拟机的按需备份
@@ -117,7 +117,7 @@
 
 若要触发虚拟机的按需备份，请执行以下操作：
 
-1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms#open-a-vault-item-dashboard)”中，单击“立即备份”。
+1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms/#open-a-vault-item-dashboard)”中，单击“立即备份”。
 
     ![“立即备份”按钮](./media/backup-azure-manage-vms/backup-now-button.png)
 
@@ -133,7 +133,7 @@
 
 若要停止保护虚拟机，请执行以下操作：
 
-1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms#open-a-vault-item-dashboard)”中，单击“停止备份”。
+1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms/#open-a-vault-item-dashboard)”中，单击“停止备份”。
 
     ![“停止备份”按钮](./media/backup-azure-manage-vms/stop-backup-button.png)
 
@@ -166,7 +166,7 @@
 
 恢复对虚拟机的保护的步骤
 
-1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms#open-a-vault-item-dashboard)”中，单击“恢复备份”。
+1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms/#open-a-vault-item-dashboard)”中，单击“恢复备份”。
 
     ![恢复保护](./media/backup-azure-manage-vms/resume-backup-button.png)
 
@@ -174,7 +174,7 @@
 
     >[AZURE.NOTE] 重新保护虚拟机时，你可以选择一个不同的策略，而不是最初用于保护虚拟机的策略。
 
-2. 按[更改策略或创建新的备份策略](/documentation/articles/backup-azure-manage-vms#change-policies-or-create-a-new-backup-policy)中的步骤为虚拟机分配策略。
+2. 按[更改策略或创建新的备份策略](/documentation/articles/backup-azure-manage-vms/#change-policies-or-create-a-new-backup-policy)中的步骤为虚拟机分配策略。
 
     对虚拟机应用备份策略以后，你会看到以下消息。
 
@@ -189,7 +189,7 @@
 
 若要删除已禁用备份的虚拟机上的备份数据，请执行以下操作：
 
-1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms#open-a-vault-item-dashboard)”中，单击“删除备份”。
+1. 在“[保管库项仪表板](/documentation/articles/backup-azure-manage-vms/#open-a-vault-item-dashboard)”中，单击“删除备份”。
 
     ![VM 类型](./media/backup-azure-manage-vms/delete-backup-buttom.png)
 
@@ -211,7 +211,7 @@
     你可以通过通知消息了解到备份数据已删除。
 
 ## 审核操作
-你可以通过查看操作和事件日志来了解对恢复服务保管库执行的管理操作。通过操作日志，可以针对备份操作进行很好的事后总结和审核。你可以使用审核日志功能来查看订阅中所有操作的日志。有关事件、操作和审核日志的其他信息，请参阅文章：[查看事件和审核日志](/documentation/articles/insights-debugging-with-events)。使用“审核日志”设置可查看特定于恢复服务保管库或保管库项的事件和操作日志。
+你可以通过查看操作和事件日志来了解对恢复服务保管库执行的管理操作。通过操作日志，可以针对备份操作进行很好的事后总结和审核。你可以使用审核日志功能来查看订阅中所有操作的日志。有关事件、操作和审核日志的其他信息，请参阅文章：[查看事件和审核日志](/documentation/articles/insights-debugging-with-events/)。使用“审核日志”设置可查看特定于恢复服务保管库或保管库项的事件和操作日志。
 
 审核日志中记录了以下操作：
 
@@ -229,7 +229,7 @@
 
 若要查看恢复服务保管库的事件日志，请执行以下操作：
 
-1. 在“[保管库仪表板](/documentation/articles/backup-azure-manage-vms#open-a-recovery-services-vault-in-the-dashboard)”中，浏览到“审核日志”并单击该选项，以便打开“事件”边栏选项卡。
+1. 在“[保管库仪表板](/documentation/articles/backup-azure-manage-vms/#open-a-recovery-services-vault-in-the-dashboard)”中，浏览到“审核日志”并单击该选项，以便打开“事件”边栏选项卡。
 
     ![审核日志](./media/backup-azure-manage-vms/audit-logs.png)
 
@@ -290,13 +290,13 @@
 基于事件的警报会受到以下限制：
 
 1. 警报在恢复服务保管库的所有虚拟机上触发。你不能在恢复服务保管库中自定义特定虚拟机集的警报。
-2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples#create-alert-rules)
+2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples/#create-alert-rules)
 3. 警报从“alerts-noreply@mail.windowsazure.com”发送。目前你无法修改电子邮件发件人。
 
 [AZURE.INCLUDE [backup-create-backup-policy-for-vm](../includes/backup-create-backup-policy-for-vm.md)]
 
 ## 后续步骤
 
-有关如何从恢复点重新创建虚拟机的信息，请查看[还原 Azure VM](/documentation/articles/backup-azure-restore-vms)。如果你需要有关如何保护虚拟机的信息，请参阅[初步了解：将 VM 备份到恢复服务保管库](/documentation/articles/backup-azure-vms-first-look-arm)。
+有关如何从恢复点重新创建虚拟机的信息，请查看[还原 Azure VM](/documentation/articles/backup-azure-restore-vms/)。如果你需要有关如何保护虚拟机的信息，请参阅[初步了解：将 VM 备份到恢复服务保管库](/documentation/articles/backup-azure-vms-first-look-arm/)。
 
 <!---HONumber=Mooncake_0704_2016-->

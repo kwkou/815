@@ -18,7 +18,7 @@
 
 # 将磁盘添加到 Linux VM
 
-本文介绍如何将持久性磁盘附加到 VM 以保存数据 - 即使 VM 由于维护或调整大小而重新预配。若要添加磁盘，需要在 Resource Manager 模式下配置 [Azure CLI](/documentation/articles/xplat-cli-install) (`azure config mode arm`)。
+本文介绍如何将持久性磁盘附加到 VM 以保存数据 - 即使 VM 由于维护或调整大小而重新预配。若要添加磁盘，需要在 Resource Manager 模式下配置 [Azure CLI](/documentation/articles/xplat-cli-install/) (`azure config mode arm`)。
 
 ## 快速命令
 
@@ -43,7 +43,7 @@
 
 ## 连接到 Linux VM 以装入新磁盘
 
-> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux)。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
+> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
 
 需要使用 SSH 访问 Azure VM 才能分区、格式化和装入新磁盘以供 Linux VM 使用。如果你不熟悉如何使用 **ssh** 进行连接，请注意，该命令采用 `ssh <username>@<FQDNofAzureVM> -p <the ssh port>` 格式，如下所示：
 
@@ -183,12 +183,12 @@
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
-> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
+> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。
 
 ## 后续步骤
 
 - 请记住，即使重新启动 VM，你的新磁盘通常也无法供 VM 使用，除非你将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件。
-- 请查看[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization)的建议，以确保 Linux VM 正确配置。
-- 通过添加更多的磁盘来扩展存储容量，并[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid) 以提高性能。
+- 请查看[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议，以确保 Linux VM 正确配置。
+- 通过添加更多的磁盘来扩展存储容量，并[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 以提高性能。
 
 <!---HONumber=Mooncake_0620_2016-->

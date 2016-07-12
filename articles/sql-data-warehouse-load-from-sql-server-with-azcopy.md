@@ -156,10 +156,10 @@ bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name>
 
 <!--Article references-->
 
-[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[Table Design]: /documentation/articles/sql-data-warehouse-develop-table-design
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
+[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load/
+[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[Table Design]: /documentation/articles/sql-data-warehouse-develop-table-design/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/zh-cn/library/ms162802.aspx

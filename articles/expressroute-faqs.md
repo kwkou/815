@@ -24,10 +24,10 @@ ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型
 ExpressRoute 目前支持大多数 Azure 服务。
 
 ### 哪里提供该服务？
-参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)了解服务上市区域和可用性。
+参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations/)了解服务上市区域和可用性。
 
 ### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Azure？
-你可以通过区域运营商来建立以太网连接到 Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
+你可以通过区域运营商来建立以太网连接到 Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations/)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
 
 ### ExpressRoute 的费用是多少？
 有关定价信息，请查看[定价详细信息](/home/features/expressroute/#price)。
@@ -72,12 +72,12 @@ ExpressRoute 目前支持大多数 Azure 服务。
 |**Exchange 提供商**|200 Mbps、500 Mbps、1Gbps、10Gbps|
 
 ### 可以选择哪些服务提供商？
-有关服务提供商和位置的列表，请参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)。
+有关服务提供商和位置的列表，请参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations/)。
 
 ## 技术详细信息
 
 ### 将本地位置连接到 Azure 有哪些技术要求？
-有关要求，请参阅 [ExpressRoute 先决条件页](/documentation/articles/expressroute-prerequisites)。
+有关要求，请参阅 [ExpressRoute 先决条件页](/documentation/articles/expressroute-prerequisites/)。
 
 ### 与 ExpressRoute 的连接是冗余的吗？
 是的。每条 ExpressRoute 线路都配置了一对冗余的交叉连接，以便为你提供高可用性。
@@ -86,7 +86,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 如果其中一个交叉连接出现故障，你不会失去连接。冗余连接可用于支持网络负载。另外，你还可以在不同对等位置创建多条线路以获得故障恢复能力。
 
 ### <a name="onep2plink"></a>如果我不在云交换中共置，而我的服务提供商提供点到点连接，我需要在本地网络与 Azure 之间订购两个物理连接吗？ 
-不需要，如果你的服务提供商可以通过物理连接建立两条以太网虚拟电路，你就只需要一个物理连接。物理连接（例如光纤）的终点在第 1 层 (L1) 设备上（请参阅下图）。两条以太网虚拟电路使用不同的 VLAN ID 进行标记，一个供主要电路使用，一个供次要电路使用。这些 VLAN ID 位于外部 802.1Q 以太网标头中。内部 802.1Q 以太网标头（不显示）会映射到特定的 [ExpressRoute 路由域](/documentation/articles/expressroute-circuit-peerings)。
+不需要，如果你的服务提供商可以通过物理连接建立两条以太网虚拟电路，你就只需要一个物理连接。物理连接（例如光纤）的终点在第 1 层 (L1) 设备上（请参阅下图）。两条以太网虚拟电路使用不同的 VLAN ID 进行标记，一个供主要电路使用，一个供次要电路使用。这些 VLAN ID 位于外部 802.1Q 以太网标头中。内部 802.1Q 以太网标头（不显示）会映射到特定的 [ExpressRoute 路由域](/documentation/articles/expressroute-circuit-peerings/)。
 
 ![](./media/expressroute-faqs/expressroute-p2p-ref-arch.png)
 
@@ -107,10 +107,10 @@ ExpressRoute 目前支持大多数 Azure 服务。
 - 你或提供商必须配置 BGP 对等互连。
 - 你必须将虚拟网络连接到 ExpressRoute 线路。
 
-有关详细信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
+有关详细信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows/)。
 
 ### 我的 ExpressRoute 线路是否存在连接界限？
-是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。可以通过启用 ExpressRoute 高级功能，将连接扩展为跨地缘政治区域。
+是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations/)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。可以通过启用 ExpressRoute 高级功能，将连接扩展为跨地缘政治区域。
 
 ### 能否将多个虚拟网络链接到一条 ExpressRoute 线路？
 是的。最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。
@@ -118,7 +118,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 ### 我有多个包含虚拟网络的 Azure 订阅。能否将不同订阅中的虚拟网络连接到单个 ExpressRoute 线路？
 是的。最多可以授权其他 10 个 Azure 订阅使用单条 ExpressRoute 线路。可以通过启用 ExpressRoute 高级功能来提高此限制。
 
-有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
+有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)。
 
 ### 连接到同一线路的虚拟网络相互隔离吗？
 不能。连接到同一 ExpressRoute 线路的所有虚拟网络都属于同一路由域，从路由角度看不是相互隔离的。如果需要路由隔离，则需要创建单独的 ExpressRoute 线路。

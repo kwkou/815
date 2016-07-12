@@ -15,7 +15,7 @@
 
 # 使用 PowerShell 在 Azure 云服务中启用诊断
 
-你可以使用 Azure 诊断扩展从云服务收集诊断数据（例如应用程序日志、性能计数器等）。本文介绍如何使用 PowerShell 为云服务启用 Azure 诊断扩展。有关本文所需的先决条件，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+你可以使用 Azure 诊断扩展从云服务收集诊断数据（例如应用程序日志、性能计数器等）。本文介绍如何使用 PowerShell 为云服务启用 Azure 诊断扩展。有关本文所需的先决条件，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 在部署云服务过程中启用诊断扩展
 
@@ -119,7 +119,7 @@ Visual Studio Online 使用类似的方法通过诊断扩展自动部署云服�
 
 ## 后续步骤
 
-- 有关使用 Azure 诊断和其他方法排查问题的详细说明，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
+- 有关使用 Azure 诊断和其他方法排查问题的详细说明，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 - [诊断配置架构](https://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx)说明了诊断扩展的各种 XML 配置选项。
 
 <!---HONumber=Mooncake_0307_2016-->

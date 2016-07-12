@@ -116,7 +116,7 @@
 <!--Image references-->
 
 <!--Article references-->
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-reference
+[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-reference/
 
 <!--MSDN references-->
 

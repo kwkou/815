@@ -61,7 +61,7 @@
 
 ## 创建 Ruby 应用程序
 
-有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app)。
+有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)。
 
 ## 配置应用程序以使用 Service Bus
 
@@ -230,7 +230,7 @@ azure_service_bus_service.delete_subscription("test-topic", "high-messages")
 
 现在，你已了解有关 Service Bus 主题的基础知识，单击下面的链接可了解更多信息。
 
--   请参阅[队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions)。
+-   请参阅[队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)。
 -   [SqlFilter](http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx) 的 API 参考。
 -	访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 [Azure 经典管理门户]: http://manage.windowsazure.cn

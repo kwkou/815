@@ -37,13 +37,13 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 [AZURE.INCLUDE [storage-emulator-connection-string-include](../includes/storage-emulator-connection-string-include.md)]
 
-有关连接字符串的详细信息，请参阅[配置到 Azure 存储的连接字符串](/documentation/articles/storage-configure-connection-string)。
+有关连接字符串的详细信息，请参阅[配置到 Azure 存储的连接字符串](/documentation/articles/storage-configure-connection-string/)。
 
 ### 使用共享访问签名进行身份验证 
 
 某些 Azure 存储客户端库（诸如 Xamarin 库）仅支持使用共享的访问签名 (SAS) 令牌进行身份验证。您将需要使用支持共享密钥身份验证的工具或应用程序创建此 SAS 令牌。生成该 SAS 令牌的简单方法是通过 Azure PowerShell：
 
-1. 安装 Azure PowerShell（如果尚未安装）。建议使用 Azure PowerShell cmdlet 最新版本。请查看[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure#Install) 以获取安装说明。
+1. 安装 Azure PowerShell（如果尚未安装）。建议使用 Azure PowerShell cmdlet 最新版本。请查看[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/#Install) 以获取安装说明。
 
 2. 请打开 Azure PowerShell 并运行以下命令。请记住要使用您自己的凭据替换 *ACCOUNT_NAME* 和 *ACCOUNT_KEY = =*。将 *CONTAINER_NAME* 替换为您选择的名称。
 
@@ -61,7 +61,7 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 此示例中创建的共享访问签名的有效期为一天。该签名将授予对容器内 Blob 的完整权限（例如，读取、写入、删除和列出）。
 
-有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 
 ##<a id="start-and-initialize-the-storage-emulator"></a> 启动和初始化存储模拟器

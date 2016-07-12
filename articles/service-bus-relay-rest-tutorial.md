@@ -576,7 +576,7 @@ namespace Microsoft.ServiceBus.Samples
 
 - [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#relays)
 
-- [如何使用服务总线中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
+- [如何使用服务总线中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay/)
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

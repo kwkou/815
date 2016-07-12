@@ -81,9 +81,9 @@ Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密
 <!--Image references-->
 
 <!--Article references-->
-[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-develop-connections
-[SQL 数据库审核入门]: /documentation/articles/sql-database-auditing-get-started
-[透明数据加密 (TDE) 入门]: /documentation/articles/sql-data-warehouse-encryption-tde-sql
+[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-develop-connections/
+[SQL 数据库审核入门]: /documentation/articles/sql-database-auditing-get-started/
+[透明数据加密 (TDE) 入门]: /documentation/articles/sql-data-warehouse-encryption-tde-sql/
 
 <!--MSDN references-->
 [Azure SQL 数据库防火墙]: /documentation/articles/sql-database-firewall-configure/
@@ -95,6 +95,6 @@ Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密
 [Azure 门户]: https://manage.windowsazure.cn/
 
 <!--Other Web references-->
-[Role-based access control in Azure Portal（Azure 门户中基于角色的访问控制）]: /documentation/articles/role-based-access-control-configure
+[Role-based access control in Azure Portal（Azure 门户中基于角色的访问控制）]: /documentation/articles/role-based-access-control-configure/
 
 <!---HONumber=Mooncake_0613_2016-->

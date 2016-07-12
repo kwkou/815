@@ -16,9 +16,9 @@
 # 使用 Azure 经典管理门户创建具有站点到站点 VPN 连接的虚拟网络
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
-- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
+- [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
+- [Azure 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
+- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 
 
 本文将指导你创建一个虚拟网络，并与本地网络建立站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。本文适用于经典部署模型并使用 Azure 经典管理门户。
@@ -35,14 +35,14 @@
 
 [AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)]
  
-如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，请参阅[为经典部署模型配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology)一文。
+如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，请参阅[为经典部署模型配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology/)一文。
 
  
 ## 开始之前
 
 在开始配置之前，请确认具有以下各项。
 
-- 一台兼容的 VPN 设备和能够对其进行配置的人员。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices)。如果你不熟悉 VPN 设备的配置，或者不熟悉本地网络配置中的 IP 地址范围，则需咨询能够为你提供此类详细信息的人员。
+- 一台兼容的 VPN 设备和能够对其进行配置的人员。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。如果你不熟悉 VPN 设备的配置，或者不熟悉本地网络配置中的 IP 地址范围，则需咨询能够为你提供此类详细信息的人员。
 
 -  一个用于 VPN 设备的面向外部的公共 IP 地址。此 IP 地址不得位于 NAT 之后。
 
@@ -101,7 +101,7 @@
 
 ## 配置虚拟网络网关
 
-接下来，你将配置虚拟网络网关，以便创建安全的站点到站点连接。请参阅[在 Azure 经典管理门户中配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。
+接下来，你将配置虚拟网络网关，以便创建安全的站点到站点连接。请参阅[在 Azure 经典管理门户中配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/)。
 
 ## 后续步骤
 

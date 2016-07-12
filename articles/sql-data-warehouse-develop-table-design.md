@@ -293,9 +293,9 @@ SQL 数据仓库不使用或不支持以下功能：
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 [分配代理键]: https://blogs.msdn.microsoft.com/sqlcat/2016/02/18/assigning-surrogate-key-to-dimension-tables-in-sql-dw-and-aps/
-[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices
+[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 
 <!--MSDN references-->
 

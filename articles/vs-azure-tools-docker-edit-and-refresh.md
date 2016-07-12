@@ -27,7 +27,7 @@ Visual Studio Tools for Docker 提供了一致的方法在本地 Linux Docker �
 
 若要在本地运行 Docker 容器，需要本地 docker 客户端。你可以使用发布的 [Docker 工具箱](https://www.docker.com/products/overview#/docker_toolbox)（需要禁用 Hyper-V），也可以选择使用 [Docker for Windows Beta 版](https://beta.docker.com)（它使用 Hyper-V，并需要 Windows 10）。
 
-如果使用 Docker 工具箱，则需要[配置 Docker 客户端](/documentation/articles/vs-azure-tools-docker-setup)
+如果使用 Docker 工具箱，则需要[配置 Docker 客户端](/documentation/articles/vs-azure-tools-docker-setup/)
 
 ## 编辑本地 Docker 容器中运行的应用
 Visual Studio 2015 Tools for Docker 可让 ASP .NET Core RC2 Web 应用开发人员在 Docker 容器中测试和运行应用程序、在 Visual Studio 中更改应用程序，以及刷新浏览器来查看已应用到容器中运行的应用的更改。使用 .NET Core 和 Visual Studio Tools for Docker 版本 0.20，还可以为使用 Docker 容器运行的代码设置断点。
@@ -59,7 +59,7 @@ Visual Studio 2015 Tools for Docker 可让 ASP .NET Core RC2 Web 应用开发人
 
 1. 将解决方案配置设置为 `Debug`，并按 **&lt;CTRL + F5>** 以生成 docker 映像并在本地运行它。使用内部版本查看输出窗口，或者
 
-1. 容器映像已生成并在 Docker 容器中运行后，Visual Studio 将尝试在默认浏览器中启动 Web 应用。如果你使用的是 Microsoft Edge 浏览器或以其他方式出现错误，请参阅[故障排除](/documentation/articles/vs-azure-tools-docker-troubleshooting-docker-errors)部分。
+1. 容器映像已生成并在 Docker 容器中运行后，Visual Studio 将尝试在默认浏览器中启动 Web 应用。如果你使用的是 Microsoft Edge 浏览器或以其他方式出现错误，请参阅[故障排除](/documentation/articles/vs-azure-tools-docker-troubleshooting-docker-errors/)部分。
 
 1. 返回到 Visual Studio 并打开 `Views\Home\About.cshtml`。
 
@@ -95,7 +95,7 @@ Visual Studio 2015 Tools for Docker 可让 ASP .NET Core RC2 Web 应用开发人
 使用 [Visual Studio 2015 Tools for Docker](https://aka.ms/DockerToolsForVS)，可以通过在 Docker 容器内开发的生产真实性，获得在本地工作的生产效率。
 
 ## 故障排除
-[Visual Studio Docker 开发故障排除](/documentation/articles/vs-azure-tools-docker-troubleshooting-docker-errors)
+[Visual Studio Docker 开发故障排除](/documentation/articles/vs-azure-tools-docker-troubleshooting-docker-errors/)
 
 ## 提供有关在 Visual Studio、Windows 和 Azure 中使用 Docker 的更多信息
 

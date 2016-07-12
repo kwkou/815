@@ -31,7 +31,7 @@
 * 如何使用 Azure SQL 数据库在云中存储关系数据。
 * 如何部署 Web 项目，以便将数据库用于 Azure Web 应用中的 [Web 应用](/documentation/services/web-sites/)。
 
->[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure Web 应用和 Visual Studio Web 项目，请参阅[在 Azure 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
+>[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure Web 应用和 Visual Studio Web 项目，请参阅[在 Azure 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started/)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
 >
 
 ## 先决条件
@@ -632,7 +632,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 * 预配 SQL 数据库时出错 - 确保已安装最新的 SDK。2.8.1 之前的版本存在一个 bug，在某些情况下，当 VS 尝试创建数据库服务器或数据库时，该 bug 会导致错误。
 * 创建 Azure 资源时出现错误消息“你的订阅产品类型不支持该操作” - 同上。
-* 部署时出错 - 建议查看[基本 ASP.NET 部署](/documentation/articles/web-sites-dotnet-get-started)一文。该部署方案较为简单，如果你遇到相同的问题，也许可以轻松地识别原因。例如，在某些企业环境中，企业防火墙可能会阻止 Web Deploy 与 Azure 建立所需的连接类型。
+* 部署时出错 - 建议查看[基本 ASP.NET 部署](/documentation/articles/web-sites-dotnet-get-started/)一文。该部署方案较为简单，如果你遇到相同的问题，也许可以轻松地识别原因。例如，在某些企业环境中，企业防火墙可能会阻止 Web Deploy 与 Azure 建立所需的连接类型。
 * 部署时无法在“发布 Web”向导中选择连接字符串 - 如果你使用另一种方法来创建 Azure 资源（例如，尝试部署到在经典管理门户中创建的 Web 应用和 SQL 数据库），SQL 数据库可能与 Web 应用不相关联。最简单的解决方案是根据本教程中所示，使用 VS 创建新的 Web 应用和数据库。不需要从头开始学习本教程 - 在“发布 Web”向导中，可以选择创建新的 web 应用，此时会出现你在创建项目时所看到的相同 Azure 资源创建对话框。
 * 有关 Google 或 Facebook 开发人员经典管理门户的指导已过时 - 在本教程末尾的 Disqus 专门注释。
 

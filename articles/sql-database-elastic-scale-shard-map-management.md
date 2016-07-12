@@ -14,7 +14,7 @@
 
 # 分片映射管理
 
-在分片数据库环境中，[**分片映射**](/documentation/articles/sql-database-elastic-scale-glossary)将维护相关信息，以便应用程序可以根据**分片键**的值连接到相应的数据库。了解如何构建这些映射对于分片映射管理至关重要。对于 Azure SQL 数据库，请使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的 [ShardMapManager 类](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx)来管理分片映射。
+在分片数据库环境中，[**分片映射**](/documentation/articles/sql-database-elastic-scale-glossary/)将维护相关信息，以便应用程序可以根据**分片键**的值连接到相应的数据库。了解如何构建这些映射对于分片映射管理至关重要。对于 Azure SQL 数据库，请使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的 [ShardMapManager 类](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx)来管理分片映射。
  
 
 ## 分片映射
@@ -116,7 +116,7 @@ ShardMapManager 对象使用[工厂](https://msdn.microsoft.com/zh-cn/library/az
 
 ### 仅元数据受影响 
 
-用于填充或更改 **ShardMapManager** 数据的方法不会更改存储在分片本身中的用户数据。例如，类似于 **CreateShard**、**DeleteShard**、**UpdateMapping** 等的方法仅影响分片映射元数据，而不会删除、添加或更改分片中所包含的用户数据。但是，这些方法旨在与您执行的单独操作结合使用，以创建或删除实际数据库，或者将行从一个分片移动到另一个分片，以使分片环境恢复均衡。（弹性数据库工具附带的**拆分-合并**工具将使用这些 API 并安排在分片之间移动实际数据。） 请参阅[使用弹性数据库拆分/合并工具进行缩放](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。
+用于填充或更改 **ShardMapManager** 数据的方法不会更改存储在分片本身中的用户数据。例如，类似于 **CreateShard**、**DeleteShard**、**UpdateMapping** 等的方法仅影响分片映射元数据，而不会删除、添加或更改分片中所包含的用户数据。但是，这些方法旨在与您执行的单独操作结合使用，以创建或删除实际数据库，或者将行从一个分片移动到另一个分片，以使分片环境恢复均衡。（弹性数据库工具附带的**拆分-合并**工具将使用这些 API 并安排在分片之间移动实际数据。） 请参阅[使用弹性数据库拆分/合并工具进行缩放](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。
 
 ## 填充分片映射示例
  
@@ -233,9 +233,9 @@ ShardMapManager 对象使用[工厂](https://msdn.microsoft.com/zh-cn/library/az
 
 分片映射管理器主要由需要数据库连接的应用程序用来执行特定于应用的数据操作。这些连接必须与正确的数据库关联。这称为**数据相关的路由**。对于这些应用程序，通过使用在 GSM 数据库上具有只读访问权限的凭据，实例化来自工厂的分片映射管理器对象。以后，单独的连接请求将提供连接相应分片数据库时所需的凭据。
 
-请注意，这些应用程序（使用通过具有只读权限的凭据打开的 ShardMapManager）将无法更改映射。为了满足这些需求，请创建特定于管理的应用程序或 PowerShell 脚本，以提供如前所述的更高级别权限的凭据。请参阅[用于访问弹性数据库客户端库的凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials)。
+请注意，这些应用程序（使用通过具有只读权限的凭据打开的 ShardMapManager）将无法更改映射。为了满足这些需求，请创建特定于管理的应用程序或 PowerShell 脚本，以提供如前所述的更高级别权限的凭据。请参阅[用于访问弹性数据库客户端库的凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials/)。
 
-有关详细信息，请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。
+有关详细信息，请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)。
 
 ## 修改分片映射 
 
@@ -271,9 +271,9 @@ ShardMapManager 对象使用[工厂](https://msdn.microsoft.com/zh-cn/library/az
 
 对于已经存在的分片映射，应用程序通常仅需要添加新分片，以处理预期的新键或键范围数据。例如，由租户 ID 分片的应用程序可能需要为新的租户设置新分片，或者在每个新的月份开始之前，每月分片的数据可能需要设置新分片。
 
-如果新的键值范围还不是现有映射的组成部分且无需移动数据，则添加新分片以及将新的键或范围关联到该分片非常简单。有关添加新分片的详细信息，请参阅[添加新分片](/documentation/articles/sql-database-elastic-scale-add-a-shard)。
+如果新的键值范围还不是现有映射的组成部分且无需移动数据，则添加新分片以及将新的键或范围关联到该分片非常简单。有关添加新分片的详细信息，请参阅[添加新分片](/documentation/articles/sql-database-elastic-scale-add-a-shard/)。
 
-但是，在需要移动数据的情况下，需要拆分/合并工具并结合使用必要的分片映射更新，才能安排在分片之间移动数据。有关使用拆分/合并工具的详细信息，请参阅[拆分/合并概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)
+但是，在需要移动数据的情况下，需要拆分/合并工具并结合使用必要的分片映射更新，才能安排在分片之间移动数据。有关使用拆分/合并工具的详细信息，请参阅[拆分/合并概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  

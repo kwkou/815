@@ -47,8 +47,8 @@ ALTER SCHEMA dbo TRANSFER OBJECT::product.item;
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
-[会话]: /documentation/articles/sql-data-warehouse-develop-connections
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[会话]: /documentation/articles/sql-data-warehouse-develop-connections/
 
 <!--MSDN references-->
 [KILL]: https://msdn.microsoft.com/zh-cn/library/ms173730.aspx

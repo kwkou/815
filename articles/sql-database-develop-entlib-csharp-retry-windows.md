@@ -312,9 +312,9 @@ Program.cs 源代码示例将在本主题后面部分提供。可以使用以下
 - [Enterprise Library 6 类库参考](http://msdn.microsoft.com/zh-cn/library/dn170426.aspx)
 
 
-- [代码示例：使用 ADO.NET 连接到 SQL 数据库的 C# 重试逻辑](/documentation/articles/sql-database-develop-csharp-retry-windows)
+- [代码示例：使用 ADO.NET 连接到 SQL 数据库的 C# 重试逻辑](/documentation/articles/sql-database-develop-csharp-retry-windows/)
 
 
-- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
 
 <!---HONumber=Mooncake_0104_2016-->

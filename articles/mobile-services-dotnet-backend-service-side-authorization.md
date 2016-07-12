@@ -14,8 +14,8 @@
 
 # 移动服务中的用户服务端授权
 > [AZURE.SELECTOR]
-- [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
-- [Javascript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
+- [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization/)
+- [Javascript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization/)
 
 
 本主题说明如何使用服务器端逻辑为用户授权。在本教程中，你将要修改表控制器，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。根据用户 ID 筛选用户的查询结果是最基本的授权形式。根据具体的方案，你可能还需要创建“用户”或“角色”表，以跟踪更详细的用户授权信息，例如，给定的用户有权访问哪些终结点。
@@ -28,7 +28,7 @@
 
 		public string UserId { get; set; }
 
-	>[AZURE.NOTE] 若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+	>[AZURE.NOTE] 若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)。
 
 2. 在 Visual Studio 中，展开“控制器”文件夹，打开 **TodoItemController.cs**，然后添加以下 using 语句：
 
@@ -72,6 +72,6 @@
 [3]: ./media/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
 
 <!---HONumber=Mooncake_0118_2016-->

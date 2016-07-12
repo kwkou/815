@@ -111,7 +111,7 @@ Azure 中的每个子网可以链接到用于定义该子网中发起的流量�
 
 此虚拟设备 VM 必须能够接收不发送给自身的传入流量。若要允许 VM 接收发送到其他目标的流量，必须为该 VM 启用 IP 转发。这是 Azure 设置，不是来宾操作系统中的设置。虚拟设备仍需要运行某种类型的应用程序来处理传入流量并相应地路由这些流量。
 
-有关 IP 转发的详细信息，请访问 [What are User Defined Routes and IP Forwarding（什么是用户定义的路由和 IP 转发）](/documentation/articles/virtual-networks-udr-overview#ip-forwarding)。
+有关 IP 转发的详细信息，请访问 [What are User Defined Routes and IP Forwarding（什么是用户定义的路由和 IP 转发）](/documentation/articles/virtual-networks-udr-overview/#ip-forwarding)。
 
 例如，假设你在 Azure VNet 中使用了以下设置：
 

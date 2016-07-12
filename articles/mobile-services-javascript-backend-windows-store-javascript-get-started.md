@@ -66,7 +66,7 @@
 >[AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 default.js 文件中。
 
 ## 后续步骤
-完成快速入门后，请了解如何使用[适用于 HTML/JavaScript 的移动服务客户端](/documentation/articles/mobile-services-html-how-to-use-client-library)。
+完成快速入门后，请了解如何使用[适用于 HTML/JavaScript 的移动服务客户端](/documentation/articles/mobile-services-html-how-to-use-client-library/)。
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 

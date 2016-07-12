@@ -324,10 +324,10 @@ DROP TABLE #partitions;
 <!--Image references-->
 
 <!-- Article references -->
-[迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code
-[迁移数据]: /documentation/articles/sql-data-warehouse-migrate-data
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
-[工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency
+[迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code/
+[迁移数据]: /documentation/articles/sql-data-warehouse-migrate-data/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 
 <!-- MSDN Articles -->
 

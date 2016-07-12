@@ -44,7 +44,7 @@
 
 ##Azure 资源管理器 
 
-此版本添加了对 ARM 模板的[密钥保管库](/documentation/articles/resource-manager-keyvault-parameter)支持。
+此版本添加了对 ARM 模板的[密钥保管库](/documentation/articles/resource-manager-keyvault-parameter/)支持。
 
 ##另请参阅
 

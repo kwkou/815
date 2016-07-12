@@ -16,9 +16,9 @@
 
 # 什么是 Azure 弹性数据库池？
 
-SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数据库。弹性数据库池简化了跨多个数据库的创建、维护和性能管理。随意在池中加减数据库。请参阅[使用 PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell) 或 [C#](/documentation/articles/sql-database-elastic-pool-csharp)。
+SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数据库。弹性数据库池简化了跨多个数据库的创建、维护和性能管理。随意在池中加减数据库。请参阅[使用 PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/) 或 [C#](/documentation/articles/sql-database-elastic-pool-csharp/)。
 
-有关 API 和错误的详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
+有关 API 和错误的详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference/)。
 
 ## 工作原理
 
@@ -40,7 +40,7 @@ SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数�
 
 最适合添加到弹性数据库池的数据库通常是有时活动，有时不活动。在上述示例中，你可以看到单一数据库的活动、4 个数据库的活动，最后是包含 20 个数据库的弹性数据库池的活动。活动随时间而不同的数据库很适合添加到弹性池，因为它们不是永远都在使用中，而且可以共享 eDTU。并非所有数据库都符合此模式。具有更稳定的资源需求的数据库更适合“基本”、“标准”和“高级”服务层级，这些层级的资源是单独分配的。
 
-[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
+[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
 
 > [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。
@@ -64,13 +64,13 @@ SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数�
 
 ## 弹性数据库作业
 
-通过池，可以通过运行**[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)**中的脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分麻烦。若要开始，请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
+通过池，可以通过运行**[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)**中的脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分麻烦。若要开始，请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
 
 有关其他工具的详细信息，请参阅[弹性数据库工具学习路线图](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale)。
 
 ## 池中数据库的业务连续性功能
 
-弹性数据库支持 V12 服务器上单一数据库可用的大部分[业务连续性功能](/documentation/articles/sql-database-business-continuity)（目前以预览版提供）。
+弹性数据库支持 V12 服务器上单一数据库可用的大部分[业务连续性功能](/documentation/articles/sql-database-business-continuity/)（目前以预览版提供）。
 
 ### 时间点还原
 
@@ -89,7 +89,7 @@ SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数�
 
 ### 异地复制
 
-标准异地复制适用于标准或高级弹性数据库池中的任何数据库。只要服务层相同，异地复制合作关系中的一个或所有数据库就可以处于一个弹性数据库池中。可以使用[PowerShell](/documentation/articles/sql-database-geo-replication-powershell) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql) 为弹性数据库池配置异地复制。
+标准异地复制适用于标准或高级弹性数据库池中的任何数据库。只要服务层相同，异地复制合作关系中的一个或所有数据库就可以处于一个弹性数据库池中。可以使用[PowerShell](/documentation/articles/sql-database-geo-replication-powershell/) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/) 为弹性数据库池配置异地复制。
 
 ### 导入和导出
 

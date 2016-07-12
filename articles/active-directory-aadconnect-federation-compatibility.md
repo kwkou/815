@@ -62,9 +62,9 @@ Azure Active Directory 可以通过与本地 Active-Directory 联合，或者在
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 |使用 ADAL 的现代应用程序，例如 Office 2016| 支持|无|
 
-有关将 Azure Active Directory 与 AD FS 配合使用的详细信息，请参阅 [Active Directory Federation Services (ADFS)（Active Directory 联合身份验证服务 (ADFS)）](/documentation/articles/active-directory-aadconnect-get-started-custom#configuring-federation-with-ad-fs)
+有关将 Azure Active Directory 与 AD FS 配合使用的详细信息，请参阅 [Active Directory Federation Services (ADFS)（Active Directory 联合身份验证服务 (ADFS)）](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs)
 
-有关将 Azure Active Directory 与密码同步配合使用的详细信息，请参阅 [Azure AD Connect](/documentation/articles/active-directory-aadconnect)。
+有关将 Azure Active Directory 与密码同步配合使用的详细信息，请参阅 [Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。
 
 
 ## Optimal IDM Virtual Identity Server Federation Services 

@@ -1,11 +1,11 @@
 
-有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-linux-about-disks-vhds)。
+有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。
 
 <a id="attachempty"></a>
 ## 如何：附加空磁盘
 附加空磁盘是添加数据磁盘的更简单方法，因为 Azure 将为你创建 .vhd 文件并将其存储在存储帐户中。
 
-1.  打开适用于 Mac、Linux 和 Windows 的 Azure CLI 并连接到 Azure 订阅有关详细信息，请参阅[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect)。
+1.  打开适用于 Mac、Linux 和 Windows 的 Azure CLI 并连接到 Azure 订阅有关详细信息，请参阅[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect/)。
 
 2.  确保处于 Azure 服务管理模式下，这是键入 `azure config mode asm` 时的默认模式。
 
@@ -32,7 +32,7 @@
 
 附加现有磁盘需要存储帐户中具有可用的 .vhd。
 
-1. 	打开适用于 Mac、Linux 和 Windows 的 Azure CLI 并连接到 Azure 订阅有关详细信息，请参阅[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect)。
+1. 	打开适用于 Mac、Linux 和 Windows 的 Azure CLI 并连接到 Azure 订阅有关详细信息，请参阅[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect/)。
 
 2.  确保处于 Azure 服务管理模式下，这是默认模式。如果你已将模式更改为资源管理，只需通过键入 `azure config mode asm` 来还原。
 
@@ -61,7 +61,7 @@
 		uploaded successfully
 		info:    vm disk create command OK
 
-	你也可以使用 `azure vm disk upload` 命令来将 VHD 上载到特定的存储帐户。详细阅读命令，以管理你[在这里](/documentation/articles/virtual-machines-command-line-tools#commands-to-manage-your-azure-virtual-machine-data-disks)的 Azure 虚拟机数据磁盘。
+	你也可以使用 `azure vm disk upload` 命令来将 VHD 上载到特定的存储帐户。详细阅读命令，以管理你[在这里](/documentation/articles/virtual-machines-command-line-tools/#commands-to-manage-your-azure-virtual-machine-data-disks)的 Azure 虚拟机数据磁盘。
 
 5.  键入以下命令以将所需上载的 VHD 附加到虚拟机：
 

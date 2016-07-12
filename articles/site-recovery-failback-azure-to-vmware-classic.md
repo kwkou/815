@@ -15,8 +15,8 @@
 # 将 VMware 虚拟机和物理服务器故障回复到本地站点
 
 > [AZURE.SELECTOR]
-- [Enhanced](/documentation/articles/site-recovery-failback-azure-to-vmware-classic)
-- [Legacy](/documentation/articles/site-recovery-failback-azure-to-vmware-classic-legacy)
+- [Enhanced](/documentation/articles/site-recovery-failback-azure-to-vmware-classic/)
+- [Legacy](/documentation/articles/site-recovery-failback-azure-to-vmware-classic-legacy/)
 
 
 本文介绍如何将 Azure 虚拟机从 Azure 故障回复到本地站点。

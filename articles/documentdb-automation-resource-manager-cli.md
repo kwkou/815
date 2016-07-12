@@ -17,10 +17,10 @@
 # 使用 Azure Resource Manager 模板和 Azure CLI 自动创建 DocumentDB 帐户
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/documentdb-create-account)
-- [Azure CLI 和 ARM](/documentation/articles/documentdb-automation-resource-manager-cli)
+- [Azure 门户预览](/documentation/articles/documentdb-create-account/)
+- [Azure CLI 和 ARM](/documentation/articles/documentdb-automation-resource-manager-cli/)
 
-本文说明如何使用 Azure Resource Manager 模板或 Azure 命令行界面 (CLI) 来创建 DocumentDB 帐户。若要使用 Azure 门户预览创建 DocumentDB 帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)。
+本文说明如何使用 Azure Resource Manager 模板或 Azure 命令行界面 (CLI) 来创建 DocumentDB 帐户。若要使用 Azure 门户预览创建 DocumentDB 帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。
 
 - [使用 CLI 创建 DocumentDB 帐户](#quick-create-documentdb-account)
 - [使用 ARM 模板创建 DocumentDB 帐户](#deploy-documentdb-from-a-template)
@@ -29,7 +29,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 ## 做好准备
 
-必须拥有正确的 Azure CLI 版本和 Azure 帐户，才能将 Azure CLI 与 Azure 资源组配合使用。如果没有 Azure CLI，[请安装](/documentation/articles/xplat-cli-install)。
+必须拥有正确的 Azure CLI 版本和 Azure 帐户，才能将 Azure CLI 与 Azure 资源组配合使用。如果没有 Azure CLI，[请安装](/documentation/articles/xplat-cli-install/)。
 
 ### 更新 Azure CLI 版本
 
@@ -38,7 +38,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 	azure --version
     0.9.11 (node: 0.12.7)
 
-如果你的版本不是 0.9.11 或更高版本，则需要使用某个本机安装程序[安装 Azure CLI](/documentation/articles/xplat-cli-install) 或进行更新，或者通过在 **npm** 中键入 `npm update -g azure-cli` 进行更新或键入 `npm install -g azure-cli` 进行安装。
+如果你的版本不是 0.9.11 或更高版本，则需要使用某个本机安装程序[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 或进行更新，或者通过在 **npm** 中键入 `npm update -g azure-cli` 进行更新或键入 `npm install -g azure-cli` 进行安装。
 
 ### 设置你的 Azure 帐户和订阅
 
@@ -55,7 +55,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
     Enter the code E1A2B3C4D to authenticate. If you're signing in as an Azure
     AD application, use the --username and --password parameters.
 
-> [AZURE.NOTE] 如果你没有 Azure 帐户，则会看到一条错误消息，指出你需要不同类型的帐户。若要从当前 Azure 帐户创建一个帐户，请参阅[在 Azure Active Directory 中创建工作或学校标识](/documentation/articles/virtual-machines-windows-create-aad-work-id)。
+> [AZURE.NOTE] 如果你没有 Azure 帐户，则会看到一条错误消息，指出你需要不同类型的帐户。若要从当前 Azure 帐户创建一个帐户，请参阅[在 Azure Active Directory 中创建工作或学校标识](/documentation/articles/virtual-machines-windows-create-aad-work-id/)。
 
 在浏览器中打开 [https://aka.ms/devicelogin](https://aka.ms/devicelogin)，然后输入命令输出中提供的代码。
 
@@ -76,7 +76,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
     +
     info:    login command OKK
 
-除了此处所述的交互式登录方法之外，还有一些其他的 Azure CLI 登录方法可供使用。有关其他方法的详细信息以及处理多个订阅的相关信息，请参阅[从 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。
+除了此处所述的交互式登录方法之外，还有一些其他的 Azure CLI 登录方法可供使用。有关其他方法的详细信息以及处理多个订阅的相关信息，请参阅[从 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 ### 切换到 Azure CLI 资源组模式
 
@@ -177,7 +177,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 你可以利用 Azure 资源管理器模板将这些不同的资源声明为一个逻辑部署单元，然后进行部署和管理。请不要以命令方式告知 Azure 逐一部署命令，而应该在 JSON 文件中描述整个部署 - 所有资源及关联的设置以及部署参数 - 然后告诉 Azure 将这些资源视为一个组进行部署。
 
-可在 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)中了解有关 Azure 资源组及其功能的详细信息。如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+可在 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)中了解有关 Azure 资源组及其功能的详细信息。如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 ### 步骤 1：创建模板和参数文件
 
@@ -335,17 +335,17 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 现在你已经有了 DocumentDB 帐户，下一步是创建 DocumentDB 数据库。你可以使用下面其中一项来创建数据库：
 
-- Azure 门户预览，如[使用 Azure 门户预览创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database)中所述。
+- Azure 门户预览，如[使用 Azure 门户预览创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database/)中所述。
 - C# .NET 示例，位于 GitHub 上 [azure-documentdb-dotnet](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
 - [DocumentDB SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)。DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。 
 
-创建数据库后，你必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer)。
+创建数据库后，你必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。
 
-当集合中有文档后，你就可以利用门户预览中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query) [执行查询](/documentation/articles/documentdb-sql-query#executing-queries)。
+当集合中有文档后，你就可以利用门户预览中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#executing-queries)。
 
 若要详细了解 DocumentDB，请浏览以下资源：
 
--	[DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources)
+-	[DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources/)
 
 
 

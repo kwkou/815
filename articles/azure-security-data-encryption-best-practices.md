@@ -46,15 +46,15 @@
 
 ## 实施多重身份验证
 
-在 Azure 中访问和控制数据的第一个步骤是对用户进行身份验证。[Azure Multi-Factor Authentication (MFA)](/documentation/articles/multi-factor-authentication) 是除了使用用户名与密码以外，还要求使用其他方法对用户标识进行身份验证的方法。这种身份验证方法可帮助保护对数据和应用程序的访问，同时可以满足用户对简单登录过程的需求。
+在 Azure 中访问和控制数据的第一个步骤是对用户进行身份验证。[Azure Multi-Factor Authentication (MFA)](/documentation/articles/multi-factor-authentication/) 是除了使用用户名与密码以外，还要求使用其他方法对用户标识进行身份验证的方法。这种身份验证方法可帮助保护对数据和应用程序的访问，同时可以满足用户对简单登录过程的需求。
 
 如果针对用户启用 Azure MFA，则可为用户登录和事务增加第二层安全性。在此情况下，事务可能将访问位于文件服务器或 SharePoint Online 中的文档。Azure MFA 还可帮助 IT 部门减少使用透露的凭据访问企业数据的可能性。
  
 例如：如果对用户实施 Azure MFA 并将它配置为使用电话呼叫或短信作为身份验证，那么，当用户的凭据透露时，攻击者无法访问任何资源，因为攻击者无权访问用户的电话。未添加这种额外标识保护层的组织将更容易受到凭据窃取攻击，从而导致数据泄漏。
 
-想要保留本地身份验证控制的组织有一个替代方法，就是使用 [Azure Multi-Factor Authentication 服务器](/documentation/articles/multi-factor-authentication-get-started-server)（也称为本地 MFA）。使用此方法仍可实施多重身份身份验证，同时保留本地 MFA 服务器。
+想要保留本地身份验证控制的组织有一个替代方法，就是使用 [Azure Multi-Factor Authentication 服务器](/documentation/articles/multi-factor-authentication-get-started-server/)（也称为本地 MFA）。使用此方法仍可实施多重身份身份验证，同时保留本地 MFA 服务器。
 
-有关 Azure MFA 的详细信息，请参阅 [Getting started with Azure Multi-Factor Authentication in the cloud（云中的 Azure Multi-Factor Authentication 入门）](/documentation/articles/multi-factor-authentication-get-started-cloud)。
+有关 Azure MFA 的详细信息，请参阅 [Getting started with Azure Multi-Factor Authentication in the cloud（云中的 Azure Multi-Factor Authentication 入门）](/documentation/articles/multi-factor-authentication-get-started-cloud/)。
 
 
 ## 加密 Azure 虚拟机
@@ -62,7 +62,7 @@
 
 你可以利用 Azure 磁盘加密来帮助保护数据的安全，以满足组织安全与合规性要求。组织还应考虑使用加密来帮助降低与未经授权访问数据相关的风险。此外，建议在将敏感数据写入驱动器之前先将驱动器加密。
  
-确保将 VM 数据卷和启动卷加密，以保护 Azure 存储帐户中的静态数据。使用 [Azure 密钥保管库](/documentation/articles/key-vault-whatis)来保护加密密钥和机密。
+确保将 VM 数据卷和启动卷加密，以保护 Azure 存储帐户中的静态数据。使用 [Azure 密钥保管库](/documentation/articles/key-vault-whatis/)来保护加密密钥和机密。
   
 对于本地 Windows Server，请考虑以下加密最佳实践：
 
@@ -72,7 +72,7 @@
 
 未实施数据加密的组织更容易遭遇数据完整性问题，例如恶意或粗暴用户窃取数据与入侵帐户，且未经授权访问单纯格式的数据。除了这些风险，必须遵守行业法规的公司需要证明他们是十分用心，并使用正确的安全控件来增强数据安全。
 
-有关 Azure 磁盘加密的详细信息，请阅读 [Azure Disk Encryption for Windows and Linux IaaS VMs（适用于 Windows 和 Linux IaaS VM 的 Azure 磁盘加密）](/documentation/articles/azure-security-disk-encryption)一文。
+有关 Azure 磁盘加密的详细信息，请阅读 [Azure Disk Encryption for Windows and Linux IaaS VMs（适用于 Windows 和 Linux IaaS VM 的 Azure 磁盘加密）](/documentation/articles/azure-security-disk-encryption/)一文。
 
 ## 使用硬件安全模块
 
@@ -84,7 +84,7 @@ Azure 磁盘加密使用 [Azure 密钥保管库](https://azure.microsoft.com/ser
  
 有关 Azure 中证书管理的一般建议，请阅读 [Certificate Management in Azure: Do’s and Don’ts（Azure 中的证书管理：必做与禁忌事项）](https://blogs.msdn.microsoft.com/azuresecurity/2015/07/13/certificate-management-in-azure-dos-and-donts/)。
  
-有关 Azure 密钥保管库的详细信息，请阅读 [Get started with Azure Key Vault（Azure 密钥保管库入门）](/documentation/articles/key-vault-get-started)。
+有关 Azure 密钥保管库的详细信息，请阅读 [Get started with Azure Key Vault（Azure 密钥保管库入门）](/documentation/articles/key-vault-get-started/)。
 
 ## 使用安全工作站进行管理
 
@@ -121,9 +121,9 @@ Azure 磁盘加密使用 [Azure 密钥保管库](https://azure.microsoft.com/ser
 
 对于在本地基础结构与 Azure 之间移动的数据，应该考虑适当的防护措施，例如 HTTPS 或 VPN。
  
-对于需要从位于本地的多个工作站安全访问 Azure 的组织而言，请使用 [Azure 站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)。
+对于需要从位于本地的多个工作站安全访问 Azure 的组织而言，请使用 [Azure 站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)。
  
-对于需要从位于本地的一个工作站安全访问 Azure 的组织而言，请使用[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create)。
+对于需要从位于本地的一个工作站安全访问 Azure 的组织而言，请使用[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/)。
  
 可以通过专用高速 WAN 链接（例如 [ExpressRoute](https://azure.microsoft.com/services/expressroute/)）移动较大的数据集。如果选择使用 ExpressRoute，则还可以使用 [SSL/TLS](https://support.microsoft.com/kb/257591) 或其他协议，在应用程序级别加密数据，以提供额外的保护。
  
@@ -131,7 +131,7 @@ Azure 磁盘加密使用 [Azure 密钥保管库](https://azure.microsoft.com/ser
 
 无法保护传输中数据的组织比较容易遭受[中间人攻击](https://technet.microsoft.com/zh-cn/library/gg195821.aspx)、[窃听](https://technet.microsoft.com/zh-cn/library/gg195641.aspx)和会话劫持。这些攻击可能是获取机密数据访问权限的第一步。
 
-有关 Azure VPN 选项的详细信息，请阅读 [Planning and design for VPN Gateway（规划和设计 VPN 网关）](/documentation/articles/vpn-gateway-plan-design)一文。
+有关 Azure VPN 选项的详细信息，请阅读 [Planning and design for VPN Gateway（规划和设计 VPN 网关）](/documentation/articles/vpn-gateway-plan-design/)一文。
 
 ## 实施文件级数据加密
 

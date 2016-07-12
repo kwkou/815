@@ -36,7 +36,7 @@
 
 - **生成: 无法生成映像，检查 TLS 连接时出错: 主机未运行**
 
-	验证默认 Docker 主机是否正在运行。请参阅 [Configure the Docker client（配置 Docker 客户端）](/documentation/articles/vs-azure-tools-docker-setup)一文。
+	验证默认 Docker 主机是否正在运行。请参阅 [Configure the Docker client（配置 Docker 客户端）](/documentation/articles/vs-azure-tools-docker-setup/)一文。
 
 - **找不到卷映射**
 

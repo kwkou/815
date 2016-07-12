@@ -14,7 +14,7 @@
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关 IoTHubClient 的详细信息
 
-本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。该文章已说明 SDK 中有两个体系结构层。底层是 **IoTHubClient** 库，用于直接管理与 IoT 中心的通信。另有一个**序列化程序**库，它构建在 SDK 的顶部，可提供序列化服务。在本文中，我们将提供有关 **IoTHubClient** 库的更多详细信息。
+本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。该文章已说明 SDK 中有两个体系结构层。底层是 **IoTHubClient** 库，用于直接管理与 IoT 中心的通信。另有一个**序列化程序**库，它构建在 SDK 的顶部，可提供序列化服务。在本文中，我们将提供有关 **IoTHubClient** 库的更多详细信息。
 
 前一篇文章介绍了如何使用 **IoTHubClient** 库将事件发送到 IoT 中心及接收消息。本文将扩大讨论范围，介绍**较低级别 API**，说明如何更精确地管理发送和接收数据的*时机*。此外将说明如何使用 **IoTHubClient** 库中的属性处理功能，将属性附加到事件（以及从消息中检索属性）。最后，进一步说明如何以不同的方式来处理从 IoT 中心收到的消息。
 
@@ -230,7 +230,7 @@ iotHubClientHandle = IoTHubClient_CreateFromConnectionString(connectionString, A
 HostName=IOTHUBNAME.IOTHUBSUFFIX;DeviceId=DEVICEID;SharedAccessKey=SHAREDACCESSKEY
 ```
 
-此字符串包含四个信息片段：IoT 中心名称、IoT 中心后缀、设备 ID 和共享访问密钥。当你在 Azure 门户预览中创建 IoT 中心实例时，可以获取 IoT 中心的完全限定域名 (FQDN) - 它提供了 IoT 中心名称（FQDN 的第一个部分）和 IoT 中心后缀（FQDN 的其余部分）。使用 IoT 中心注册设备时，可以获取设备 ID 和共享访问密钥（如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro)中所述）。
+此字符串包含四个信息片段：IoT 中心名称、IoT 中心后缀、设备 ID 和共享访问密钥。当你在 Azure 门户预览中创建 IoT 中心实例时，可以获取 IoT 中心的完全限定域名 (FQDN) - 它提供了 IoT 中心名称（FQDN 的第一个部分）和 IoT 中心后缀（FQDN 的其余部分）。使用 IoT 中心注册设备时，可以获取设备 ID 和共享访问密钥（如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中所述）。
 
 **IoTHubClient\_CreateFromConnectionString** 提供了初始化库的方式。如果需要，你可以使用其中的每个参数而不是连接字符串来创建新的 **IOTHUB\_CLIENT\_HANDLE**。使用以下代码即可实现此目的：
 
@@ -246,7 +246,7 @@ IOTHUB_CLIENT_HANDLE iotHubClientHandle = IoTHubClient_LL_Create(&iotHubClientCo
 
 结果将与使用 **IoTHubClient\_CreateFromConnectionString** 相同。
 
-显然，你更想要使用 **IoTHubClient\_CreateFromConnectionString**，而不是这种更繁琐的初始化方法。但请记住，当你在 IoT 中心注册设备时，获得的是设备 ID 和设备密钥（而不是连接字符串）。[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro)中介绍的**设备管理器** SDK 工具使用 **Azure IoT 服务 SDK** 中的库，从设备ID、设备密钥和 IoT 中心主机名创建连接字符串。因此调用 **IoTHubClient\_LL\_Create** 可能更好，因为这样可以免除生成连接字符串的步骤。使用任何一种方法都很方便。
+显然，你更想要使用 **IoTHubClient\_CreateFromConnectionString**，而不是这种更繁琐的初始化方法。但请记住，当你在 IoT 中心注册设备时，获得的是设备 ID 和设备密钥（而不是连接字符串）。[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中介绍的**设备管理器** SDK 工具使用 **Azure IoT 服务 SDK** 中的库，从设备ID、设备密钥和 IoT 中心主机名创建连接字符串。因此调用 **IoTHubClient\_LL\_Create** 可能更好，因为这样可以免除生成连接字符串的步骤。使用任何一种方法都很方便。
 
 ## 配置选项
 
@@ -267,6 +267,6 @@ batching 选项非常重要。默认情况下，库将逐个引入事件（单�
 
 ## 后续步骤
 
-本文详细探讨了**适用于 C 语言的 Azure IoT 设备 SDK** 中的 **IoTHubClient** 库的行为。参考这些信息可以充分了解 **IoTHubClient** 库的功能。[下一篇文章](/documentation/articles/iot-hub-device-sdk-c-serializer)将提供有关**序列化程序**库的类似详细信息。
+本文详细探讨了**适用于 C 语言的 Azure IoT 设备 SDK** 中的 **IoTHubClient** 库的行为。参考这些信息可以充分了解 **IoTHubClient** 库的功能。[下一篇文章](/documentation/articles/iot-hub-device-sdk-c-serializer/)将提供有关**序列化程序**库的类似详细信息。
 
 <!---HONumber=Mooncake_0307_2016-->

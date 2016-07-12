@@ -4,7 +4,7 @@
 
 ### <a name="setupdevenv"></a>Visual Studio 2015 with the Azure SDK for .NET
 
-本教程专为配合使用 Visual Studio 2015 和 [Azure SDK for .NET](/documentation/articles/dotnet-sdk) 2.8.2 或更高版本编写。[单击此处下载最新的 Azure SDK for Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
+本教程专为配合使用 Visual Studio 2015 和 [Azure SDK for .NET](/documentation/articles/dotnet-sdk/) 2.8.2 或更高版本编写。[单击此处下载最新的 Azure SDK for Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
 
 如果有 Visual Studio 2013，则可以[下载最新的 Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322)。某些屏幕可能看起来与这些插图不同。
 

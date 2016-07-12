@@ -15,8 +15,8 @@
 # 在源代码管理中存储移动服务项目代码
 
 > [AZURE.SELECTOR]
-- [.NET backend](/zh-cn/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
-- [Javascript backend](/zh-cn/documentation/articles/mobile-services-store-scripts-source-control)
+- [.NET backend](/zh-cn/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/)
+- [Javascript backend](/zh-cn/documentation/articles/mobile-services-store-scripts-source-control/)
 
 本主题说明如何使用 Azure 移动服务提供的源代码管理存储 .NET 后端服务项目。只需将项目从本地 Git 存储库上载到生产移动服务，便可以发布该项目。
 
@@ -92,8 +92,8 @@
 [Git website]: http://git-scm.com
 [Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started/
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[如何对 .NET 后端移动服务进行数据模型更改]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
+[如何对 .NET 后端移动服务进行数据模型更改]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/
 
 <!---HONumber=Mooncake_0118_2016-->

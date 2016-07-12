@@ -84,12 +84,12 @@ John 是 contoso.com 中的用户。在将用户同步到 Azure AD 目录 azurec
 ### 不可路由的本地域与 Azure AD 的 UPN
 有些组织使用不可路由的域，例如 contoso.local 或简单的单标签域，例如 contoso。在 Azure AD 中，你无法验证不可路由的域。Azure AD Connect 只能同步到 Azure AD 中已验证的域。当你创建 Azure AD 目录时，将创建可路由的域，而该域将成为 Azure AD 的默认域，例如 contoso.partner.onmschina.cn。因此，如果你不想要同步到默认的 .partner.onmschina.cn 域，则必须在此类方案中验证任何其他可路由的域。
 
-有关添加和验证域的详细信息，请阅读 [Add your custom domain name to Azure Active Directory（将自定义域名添加到 Azure Active Directory）](/documentation/articles/active-directory-add-domain)。
+有关添加和验证域的详细信息，请阅读 [Add your custom domain name to Azure Active Directory（将自定义域名添加到 Azure Active Directory）](/documentation/articles/active-directory-add-domain/)。
 
 Azure AD Connect 将检测你是否在不可路由的域环境中运行，并在适当的情况下警告你不要继续使用快速设置。如果你在不可路由的域中操作，则用户的 UPN 可能也有不可路由的后缀。例如，如果你在 contoso.local 下运行，Azure AD Connect 将建议使用自定义设置，而不是快速设置。使用自定义设置，可以在用户同步到 Azure AD 之后，指定要用作 UPN 以供登录 Azure 的属性。
 有关详细信息，请参阅下面的**选择 Azure AD 中用户主体名的属性**。
 
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

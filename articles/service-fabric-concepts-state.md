@@ -30,11 +30,11 @@
 
 有关 Service Fabric 概念的详细信息，请参阅以下内容：
 
-- [Service Fabric 服务的可用性](/documentation/articles/service-fabric-availability-services)
+- [Service Fabric 服务的可用性](/documentation/articles/service-fabric-availability-services/)
 
-- [Service Fabric 服务的可伸缩性](/documentation/articles/service-fabric-concepts-scalability)
+- [Service Fabric 服务的可伸缩性](/documentation/articles/service-fabric-concepts-scalability/)
 
-- [Service Fabric 服务分区](/documentation/articles/service-fabric-concepts-partitioning)
+- [Service Fabric 服务分区](/documentation/articles/service-fabric-concepts-partitioning/)
  
 
 <!---HONumber=Mooncake_0307_2016-->

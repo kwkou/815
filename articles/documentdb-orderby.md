@@ -23,7 +23,7 @@ Azure DocumentDB 支持使用 JSON 文档的 SQL 对文档进行查询。可以�
 
 还提供了[示例](#samples)和[常见问题](#faq)。
 
-有关 SQL 查询的完整参考，请参阅 [DocumentDB 查询教程](/documentation/articles/documentdb-sql-query)。
+有关 SQL 查询的完整参考，请参阅 [DocumentDB 查询教程](/documentation/articles/documentdb-sql-query/)。
 
 ## 如何使用 Order By 进行查询
 正如在 ANSI-SQL 中，现在可在查询 DocumentDB 时将可选 Order By 子句包括在 SQL 语句中。该子句可以包括可选的 ASC/DESC 参数以指定检索结果必须遵守的顺序。
@@ -63,7 +63,7 @@ DocumentDB 支持每个查询使用单个数值、字符串或布尔值属性进
 >
 >在 REST API 版本 2015-06-03 之前，默认的集合索引策略为字符串哈希和数字哈希。这都已更改为字符串哈希和数字范围。
 
-有关详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies)。
+有关详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)。
 
 ### 针对所有属性的 Order By 的索引
 下面显示如何针对集合中 JSON 文档内出现的所有数字或字符串属性使用“所有范围”索引为 Order By 创建集合。此处我们将字符串值默认索引类型改写为范围，并且采用最大精度 (-1)。
@@ -107,7 +107,7 @@ DocumentDB 支持每个查询使用单个数值、字符串或布尔值属性进
 
 **如何使用 Order By 查询 DocumentDB 中现有的数据？**
 
-为了使用 Order By 对查询结果进行排序，必须修改集合的索引策略从而针对用于排序的属性使用范围索引类型。请参阅[修改索引策略](/documentation/articles/documentdb-indexing-policies#modifying-the-indexing-policy-of-a-collection)。
+为了使用 Order By 对查询结果进行排序，必须修改集合的索引策略从而针对用于排序的属性使用范围索引类型。请参阅[修改索引策略](/documentation/articles/documentdb-indexing-policies/#modifying-the-indexing-policy-of-a-collection)。
 
 **Order By 当前的限制是什么？**
 
@@ -126,8 +126,8 @@ DocumentDB 支持每个查询使用单个数值、字符串或布尔值属性进
 分叉 [Github 示例项目](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries)并开始对数据进行排序！
 
 ## 参考
-* [DocumentDB 查询参考](/documentation/articles/documentdb-sql-query)
-* [DocumentDB 索引策略参考](/documentation/articles/documentdb-indexing-policies)
+* [DocumentDB 查询参考](/documentation/articles/documentdb-sql-query/)
+* [DocumentDB 索引策略参考](/documentation/articles/documentdb-indexing-policies/)
 * [DocumentDB SQL 参考](https://msdn.microsoft.com/library/azure/dn782250.aspx)
 * [DocumentDB Order By 示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries)
  

@@ -131,5 +131,5 @@ ORDER BY highest_cpu_queries.total_worker_time DESC;
 
 ## 另请参阅
 
-[SQL 数据库简介](/documentation/articles/sql-database-technical-overview)
+[SQL 数据库简介](/documentation/articles/sql-database-technical-overview/)
 <!---HONumber=Mooncake_0321_2016-->

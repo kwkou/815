@@ -20,7 +20,7 @@
 本主题说明如何使用 Azure 移动服务将持久性数据添加到 Android 应用程序。在本教程中，你将要下载一个可在内存中存储数据的应用，创建一个新的移动服务，将该应用与该移动服务相集成以便在 Azure 移动服务而不是在本地存储和更新数据，然后使用 Azure 经典管理门户查看运行该应用时对数据所做的更改。
 
 
-本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/documentation/articles/mobile-services-android-get-started)教程。
+本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/documentation/articles/mobile-services-android-get-started/)教程。
 
 ## 先决条件
 
@@ -91,7 +91,7 @@
 
 本教程演示了有关如何使 Android 应用程序处理移动服务中的数据的基础知识。请试着学习下列其他 Android 教程：
 
-* [身份验证入门](/documentation/articles/mobile-services-android-get-started-users)
+* [身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)
 	<br/>了解如何对应用程序用户进行身份验证。
 
 

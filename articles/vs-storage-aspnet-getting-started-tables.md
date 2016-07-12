@@ -15,7 +15,7 @@
 # 开始使用表存储和 Visual Studio 连接服务 (ASP.NET)
 
 ## 概述
-本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 项目中创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 表存储。本文向你展示如何使用 Azure 表执行常见任务，包括创建和删除表以及使用表实体。示例是用 C# 代码编写的，并使用了 [Azure .NET 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。有关使用 Azure 表存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
+本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 项目中创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 表存储。本文向你展示如何使用 Azure 表执行常见任务，包括创建和删除表以及使用表实体。示例是用 C# 代码编写的，并使用了 [Azure .NET 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。有关使用 Azure 表存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。
 
 Azure 表存储使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。
 

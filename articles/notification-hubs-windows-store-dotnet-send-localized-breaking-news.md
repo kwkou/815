@@ -15,8 +15,8 @@
 # 使用通知中心发送本地化的突发新闻
 
 > [AZURE.SELECTOR]
-- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
-- [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news)
+- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/)
+- [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news/)
 
 ##概述
 
@@ -66,7 +66,7 @@
 
 
 
-模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates)一文中了解其更多信息。
+模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates/)一文中了解其更多信息。
 
 ##应用程序用户界面
 
@@ -204,7 +204,7 @@
 <!-- URLs. -->
 [Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
-[使用通知中心通知用户：移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[使用通知中心通知用户：移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 

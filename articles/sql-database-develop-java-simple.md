@@ -28,7 +28,7 @@
 
 ## 步骤 2：创建 SQL 数据库
 
-请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建数据库。
+请参阅[入门页](/documentation/articles/sql-database-get-started/)，以了解如何创建数据库。
 
 ## 步骤 3：获取连接字符串
 

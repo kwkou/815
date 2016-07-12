@@ -16,9 +16,9 @@
 # 在 SQL 数据仓库中使用 PolyBase 加载数据
 
 > [AZURE.SELECTOR]
-- [SSIS](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services)
-- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-polybase)
-- [bcp](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp)
+- [SSIS](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services/)
+- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-polybase/)
+- [bcp](/documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp/)
 
 本教程说明如何使用 AzCopy 和 PolyBase 将数据载入 SQL 数据仓库。完成后，你将了解如何：
 
@@ -250,14 +250,14 @@ CREATE STATISTICS [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 
 
 <!--Article references-->
-[PolyBase in SQL Data Warehouse Tutorial]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase
-[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp
-[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
-[PolyBase 指南]: /documentation/articles/sql-data-warehouse-load-polybase-guide
-[AzCopy 命令行实用程序入门]: /documentation/articles/storage-use-azcopy
-[最新版本的 AzCopy]: /documentation/articles/storage-use-azcopy
+[PolyBase in SQL Data Warehouse Tutorial]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
+[Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
+[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[PolyBase 指南]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
+[AzCopy 命令行实用程序入门]: /documentation/articles/storage-use-azcopy/
+[最新版本的 AzCopy]: /documentation/articles/storage-use-azcopy/
 
 <!--External references-->
 [supported source/sink]: https://msdn.microsoft.com/zh-cn/library/dn894007.aspx

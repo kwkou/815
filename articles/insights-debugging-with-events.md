@@ -72,9 +72,9 @@
 
 ## 后续步骤
 
-* 每当发生事件时[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。
-* [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring)以确保你的服务可用且响应迅速。
-* [跟踪服务运行状况](/documentation/articles/insights-service-health)以在 Azure 遇到性能下降或服务中断时及时发现。  
+* 每当发生事件时[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)。
+* [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
+* [跟踪服务运行状况](/documentation/articles/insights-service-health/)以在 Azure 遇到性能下降或服务中断时及时发现。  
 
 
 <!---HONumber=Mooncake_0503_2016-->

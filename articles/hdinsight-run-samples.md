@@ -28,20 +28,20 @@
 
 Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编程和流式处理）的其他文档，以及有关 Windows PowerShell 脚本中使用的 cmdlet 的文档。有关这些资源的详细信息，请参阅：
 
-- [为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
-- [为 HDInsight 开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
-- [在 HDInsight 中提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
+- [为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
+- [为 HDInsight 开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
+- [在 HDInsight 中提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
 - [Azure HDInsight 简介][hdinsight-introduction]
 
 现今，许多人选择 Hive 和 Pig，而不是 MapReduce。有关详细信息，请参阅：
 
-- [在 HDInsight 中使用 Hive](/documentation/articles/hdinsight-use-hive)
-- [在 HDInsight 中使用 Pig](/documentation/articles/hdinsight-use-pig)
+- [在 HDInsight 中使用 Hive](/documentation/articles/hdinsight-use-hive/)
+- [在 HDInsight 中使用 Pig](/documentation/articles/hdinsight-use-pig/)
  
 **先决条件**：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
+- **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)。
 - **配备 Azure PowerShell 的工作站**。
 
     [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
@@ -52,7 +52,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 
 可以在[附录 A](#apendix-a---the-word-count-MapReduce-program-in-java) 中找到源代码。
 
-有关开发 Java MapReduce 程序的过程，请参阅[开发适用于 HDInsight 中的 Hadoop 的 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
+有关开发 Java MapReduce 程序的过程，请参阅[开发适用于 HDInsight 中的 Hadoop 的 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
  
 **提交字数统计 MapReduce 作业**
 
@@ -969,26 +969,26 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
 
 
 
-[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs/
 
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction/
 
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
 [hdinsight-sample-10gb-graysort]: #hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: #hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: #hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: #hdinsight-sample-wordcount
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 
 [streamreader]: http://msdn.microsoft.com/zh-cn/library/system.io.streamreader.aspx
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline

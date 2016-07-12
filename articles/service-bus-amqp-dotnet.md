@@ -167,7 +167,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 - [针对服务总线分区队列和主题的 AMQP 1.0 支持]
 - [适用于 Windows Server 的服务总线中的 AMQP]
 
-  [如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues
+  [如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
   [DataContractSerializer]: https://msdn.microsoft.com/zh-cn/library/azure/system.runtime.serialization.datacontractserializer.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
   [Microsoft.ServiceBus.Messaging.MessagingFactory.AcceptMessageSession]: https://msdn.microsoft.com/zh-cn/library/azure/jj657638.aspx
@@ -196,8 +196,8 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
-[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview
-[针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview
+[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
+[针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
 <!---HONumber=Mooncake_0104_2016-->

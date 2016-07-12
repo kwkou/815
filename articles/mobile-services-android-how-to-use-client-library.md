@@ -647,7 +647,7 @@
 
 ##<a name="custom-api"></a>如何：调用自定义 API
 
-自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)。
+自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api/)。
 
 [AZURE.INCLUDE [mobile-services-android-call-custom-api](../includes/mobile-services-android-call-custom-api.md)]
 
@@ -923,8 +923,8 @@
 
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-android-get-started
-[移动服务快速入门]: /documentation/articles/mobile-services-android-get-started
+[移动服务入门]: /documentation/articles/mobile-services-android-get-started/
+[移动服务快速入门]: /documentation/articles/mobile-services-android-get-started/
 [ASCII 控制代码 C0 和 C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
 
 <!---HONumber=Mooncake_0118_2016-->

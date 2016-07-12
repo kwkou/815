@@ -13,7 +13,7 @@
 
 # 将弹性数据库客户端库与 Dapper 配合使用 
 
-本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)创建应用程序来实现分片，以向外缩放其应用程序的开发人员。本文档演示了与弹性数据库工具集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性数据库分片管理和数据相关的路由。
+本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction/)创建应用程序来实现分片，以向外缩放其应用程序的开发人员。本文档演示了与弹性数据库工具集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性数据库分片管理和数据相关的路由。
 
 **示例代码**：[Azure SQL 数据库的弹性数据库工具 - Dapper 集成](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f)。
  

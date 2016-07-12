@@ -46,7 +46,7 @@ Hyper-V 站点部署与 VMM 部署相同 – 唯一区别在于提供程序和�
 ### 增量复制
 Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hyper-V 复制日志 (*.hrl) 的形式记录对虚拟磁盘做出的变更。HRL 文件将位于关联磁盘的相同目录中。为复制配置的每个磁盘有一个关联的 HRL 文件。在初始复制完成后，此日志被发送到客户的存储帐户中。当日志正处于传输到 Azure 的过程中时，主站点中的变更被记录到同一目录中的另一日志文件中。
 
-可以在虚拟机视图中监视初始复制或增量复制期间虚拟机复制的运行状况，如[监视虚拟机的复制运行状况](/documentation/articles/site-recovery-monitoring-and-troubleshooting#monitor-replication-health-for-virtual-machine)所述。
+可以在虚拟机视图中监视初始复制或增量复制期间虚拟机复制的运行状况，如[监视虚拟机的复制运行状况](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#monitor-replication-health-for-virtual-machine)所述。
 
 ### 重新同步 
 当增量复制失败或完整初始复制占用大量网络带宽（或完成完整初始复制要用很长时间）时，虚拟机会标记为重新同步。例如，当 HRL 文件的大小累积到总磁盘大小的 50% 时，则虚拟机会标记为重新同步。重新同步通过计算源虚拟机磁盘和目标虚拟机磁盘的校验和并只发送差异来最大程度地减小通过网络发送的数据量。
@@ -71,8 +71,8 @@ Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hy
 
 ## 其他参考资料
 
-- [监视 VMware、VMM、Hyper-V 和物理站点的保护以及对其进行故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting)
-- [联系 Microsoft 技术](/documentation/articles/site-recovery-monitoring-and-troubleshooting#reaching-out-for-microsoft-support)
-- [常见 ASR 错误及其解决方法](/documentation/articles/site-recovery-monitoring-and-troubleshooting#common-asr-errors-and-their-resolutions)
+- [监视 VMware、VMM、Hyper-V 和物理站点的保护以及对其进行故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting/)
+- [联系 Microsoft 技术](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#reaching-out-for-microsoft-support)
+- [常见 ASR 错误及其解决方法](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#common-asr-errors-and-their-resolutions)
 
 <!---HONumber=Mooncake_0104_2016-->

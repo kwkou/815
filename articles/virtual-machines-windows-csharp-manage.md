@@ -20,7 +20,7 @@
 若要完成本文中的任务，你需要：
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)。
-- [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal)
+- [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal/)
 
 ## 创建 Visual Studio 项目并安装包
 

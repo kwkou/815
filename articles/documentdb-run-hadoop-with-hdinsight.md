@@ -443,7 +443,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 [apache-hadoop-doc]: http://hadoop.apache.org/docs/current/
 [apache-hive]: http://hive.apache.org/
 [apache-pig]: http://pig.apache.org/
-[getting-started]: /documentation/articles/documentdb-get-started
+[getting-started]: /documentation/articles/documentdb-get-started/
 
 [azure-classic-portal]: https://manage.windowsazure.cn/
 [azure-powershell-diagram]: ./media/documentdb-run-hadoop-with-hdinsight/azurepowershell-diagram-med.png
@@ -451,20 +451,20 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 [documentdb-hdinsight-samples]: http://portalcontent.blob.core.windows.net/samples/documentdb-hdinsight-samples.zip
 [documentdb-github]: https://github.com/Azure/azure-documentdb-hadoop
-[documentdb-java-application]: /documentation/articles/documentdb-java-application
-[documentdb-manage-collections]: /documentation/articles/documentdb-manage#Collections
-[documentdb-manage-document-storage]: /documentation/articles/documentdb-manage#IndexOverhead
-[documentdb-manage-throughput]: /documentation/articles/documentdb-manage#ProvThroughput
-[documentdb-import-data]: /documentation/articles/documentdb-import-data
+[documentdb-java-application]: /documentation/articles/documentdb-java-application/
+[documentdb-manage-collections]: /documentation/articles/documentdb-manage/#Collections
+[documentdb-manage-document-storage]: /documentation/articles/documentdb-manage/#IndexOverhead
+[documentdb-manage-throughput]: /documentation/articles/documentdb-manage/#ProvThroughput
+[documentdb-import-data]: /documentation/articles/documentdb-import-data/
 
-[hdinsight-custom-provision]: /documentation/articles/hdinsight-provision-clusters#powershell
-[hdinsight-develop-deploy-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-hadoop-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-custom-provision]: /documentation/articles/hdinsight-provision-clusters/#powershell
+[hdinsight-develop-deploy-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-hadoop-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 
 [image-customprovision-page1]: ./media/documentdb-run-hadoop-with-hdinsight/customprovision-page1.png
 [image-customprovision-page4]: ./media/documentdb-run-hadoop-with-hdinsight/customprovision-page4.png
@@ -474,7 +474,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 [image-mapreduce-query-results]: ./media/documentdb-run-hadoop-with-hdinsight/mapreducequeryresults.PNG
 [image-pig-query-results]: ./media/documentdb-run-hadoop-with-hdinsight/pigqueryresults.PNG
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
  
 
 <!---HONumber=Mooncake_0523_2016-->

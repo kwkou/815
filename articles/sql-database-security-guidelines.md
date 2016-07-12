@@ -21,7 +21,7 @@
 
 只能通过 TCP 端口 1433 使用 Azure SQL 数据库服务。若要从计算机访问 SQL 数据库，请确保你的防火墙允许 TCP 端口 1433 上的传出 TCP 通信。在连接过程中，来自 Azure 虚拟机的连接将重定向到每个辅助角色特有的不同 IP 地址和端口。该端口号在 11000 到 11999 的范围内。
 
-在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
+在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。
 
 ## 连接加密和证书验证
 
@@ -41,9 +41,9 @@ SQL Server Management Studio 也支持证书验证。在“连接到服务器”
 
 ## 身份验证
 
-Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以预览版的形式提供。有关如何配置 AD 身份验证的信息，请参阅[通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。如果与使用预览版，则用户在每次连接到 SQL 数据库时都必须提供凭据（登录名和密码）。有关 SQL Server 身份验证的详细信息，请参阅 SQL Server 联机丛书中的[选择身份验证模式](https://msdn.microsoft.com/zh-cn/library/ms144284.aspx)。
+Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以预览版的形式提供。有关如何配置 AD 身份验证的信息，请参阅[通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication/)。如果与使用预览版，则用户在每次连接到 SQL 数据库时都必须提供凭据（登录名和密码）。有关 SQL Server 身份验证的详细信息，请参阅 SQL Server 联机丛书中的[选择身份验证模式](https://msdn.microsoft.com/zh-cn/library/ms144284.aspx)。
 
-[SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new) 允许用户使用包含的数据库用户在数据库中进行身份验证。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)。
+[SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/) 允许用户使用包含的数据库用户在数据库中进行身份验证。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)。
 
 > [AZURE.NOTE] Azure 建议使用包含的数据库用户提高可缩放性。
 
@@ -86,7 +86,7 @@ Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以�
 - 若要执行 ``CREATE/ALTER/DROP`` 操作，用户需要对数据库拥有 ``ALTER ANY USER`` 权限。
 - 在数据库角色的所有者尝试向该数据库角色添加其他数据库用户或者从该数据库角色中删除其他数据库用户时，可能会发生以下错误：“此数据库中不存在用户或角色 'Name'”。 在用户对所有者不可见时，将会发生此错误。若要解决此问题，请向角色所有者授予对该用户的 ``VIEW DEFINITION`` 权限。 
 
-有关登录名和用户的详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)。
+有关登录名和用户的详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)。
 
 ## 安全最佳实践
 
@@ -99,9 +99,9 @@ Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以�
 
 ## 另请参阅
 
-[Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)
+[Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)
 
-[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)
+[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)
 
 [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
 

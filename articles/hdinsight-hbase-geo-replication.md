@@ -14,9 +14,9 @@
 
 # 在 HDInsight 中配置 HBase 地域复制
 
-- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets)
-- [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
-- [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication) 
+- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/)
+- [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+- [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication/) 
  
 了解如何跨两个数据中心配置 HBase 复制。群集复制的部分用例包括：
 
@@ -290,22 +290,22 @@ Azure 经典管理门户不支持使用自定义配置选项设置 HDInsight 群
 - [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet-v1]
 - [使用 HDInsight (Hadoop) 中的 Storm 和 HBase 分析传感器数据][hdinsight-sensor-data]
 
-[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
-<!-- [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNet -->
+[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/
+<!-- [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNet/ -->
 
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
 
 
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
-[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
-<!-- [hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment -->
-[hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
+<!-- [hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/ -->
+[hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
 
 <!---HONumber=71-->

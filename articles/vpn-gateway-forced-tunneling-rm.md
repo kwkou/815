@@ -15,8 +15,8 @@
 # 使用 PowerShell 和 Azure 资源管理器配置强制隧道
 
 > [AZURE.SELECTOR]
-- [PowerShell - 服务管理](/documentation/articles/vpn-gateway-about-forced-tunneling)
-- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-forced-tunneling-rm)
+- [PowerShell - 服务管理](/documentation/articles/vpn-gateway-about-forced-tunneling/)
+- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-forced-tunneling-rm/)
 
 本文适用于通过 Azure 资源管理器部署模型创建的 VNet 和 VPN 网关。
 
@@ -41,7 +41,7 @@
 
 ## 要求和注意事项
 
-在 Azure 中，通过虚拟网络用户定义路由配置强制隧道。将流量重定向到本地站点，这是 Azure VPN 网关的默认路由。有关用户定义路由和虚拟网络的详细信息，请参阅[用户定义路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。
+在 Azure 中，通过虚拟网络用户定义路由配置强制隧道。将流量重定向到本地站点，这是 Azure VPN 网关的默认路由。有关用户定义路由和虚拟网络的详细信息，请参阅[用户定义路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview/)。
 
 - 每个虚拟网络子网具有内置的系统路由表。系统路由表具有下面的 3 组路由：
 
@@ -72,7 +72,7 @@
 
 - Azure 订阅。如果你还没有 Azure 订阅，你可以注册一个[试用版](/pricing/1rmb-trial)。
 
-- 你需要安装最新版本的 Azure Resource Manager PowerShell cmdlet（1.0 或更高）。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- 你需要安装最新版本的 Azure Resource Manager PowerShell cmdlet（1.0 或更高）。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
 ### 配置步骤

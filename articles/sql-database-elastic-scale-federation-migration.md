@@ -37,7 +37,7 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
  
 在测试环境中，从现有的联合应用程序开始。
  
-使用**联合迁移实用工具**将联合根元数据克隆到弹性数据库客户端库的[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)的结构中。与联合根类似，分片映射管理器数据库是独立数据库，它包含了分片映射（即联合）、对分片的引用（即联合成员）以及各自的范围映射。
+使用**联合迁移实用工具**将联合根元数据克隆到弹性数据库客户端库的[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)的结构中。与联合根类似，分片映射管理器数据库是独立数据库，它包含了分片映射（即联合）、对分片的引用（即联合成员）以及各自的范围映射。
 
 从联合根到分片映射管理器的克隆是元数据的复制和转换。不会在联合根上更改任何元数据。请注意，使用联合迁移实用工具克隆联合根是一项时间点操作，并且对联合根或分片映射进行的任何更改将不会反映在其他相应的数据存储中。如果在测试新 API 期间对联合根进行了更改，则联合迁移实用工具可用于刷新分片映射以表示当前状态。
 
@@ -65,7 +65,7 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
 
     USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=OFF`
 
-对于弹性数据库工具 API，将使用 **RangeShardMap** 类中的 **OpenConnectionForKey** 方法，通过[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)建立与特定分片的连接。
+对于弹性数据库工具 API，将使用 **RangeShardMap** 类中的 **OpenConnectionForKey** 方法，通过[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)建立与特定分片的连接。
 
     //Connect and issue queries on the shard with key=100 
     using (SqlConnection conn = rangeShardMap.OpenConnectionForKey(100, csb))  
@@ -82,7 +82,7 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
         } 
     }
 
-本部分中的这些步骤是必要的，但是可能不适用于出现的所有迁移方案。有关详细信息，请参阅[弹性数据库工具的概念性概述](/documentation/articles/sql-database-elastic-scale-introduction)和 [API 参考](http://go.microsoft.com/?linkid=9862604)。
+本部分中的这些步骤是必要的，但是可能不适用于出现的所有迁移方案。有关详细信息，请参阅[弹性数据库工具的概念性概述](/documentation/articles/sql-database-elastic-scale-introduction/)和 [API 参考](http://go.microsoft.com/?linkid=9862604)。
 
 ## 断开现有联合成员 
 
@@ -104,9 +104,9 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
 
 ## 功能比较
 
-虽然弹性数据库工具提供了许多附加功能（例如，[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)、[拆分和合并分片](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、分片弹性、[客户端缓存](/documentation/articles/sql-database-elastic-scale-shard-map-management)等），但是有几个在弹性数据库工具中不受支持的联合功能值得注意。
+虽然弹性数据库工具提供了许多附加功能（例如，[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying/)、[拆分和合并分片](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)、分片弹性、[客户端缓存](/documentation/articles/sql-database-elastic-scale-shard-map-management/)等），但是有几个在弹性数据库工具中不受支持的联合功能值得注意。
   
-- **FILTERING=ON** 的使用。建立使用行级安全性 (RLS) 来执行行筛选。与联合中的筛选一样，RLS 会自动将一个谓词添加到对分片表执行的所有查询。有关详细信息，请参阅[具有弹性数据库工具和行级安全性的多租户应用程序](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security)。 
+- **FILTERING=ON** 的使用。建立使用行级安全性 (RLS) 来执行行筛选。与联合中的筛选一样，RLS 会自动将一个谓词添加到对分片表执行的所有查询。有关详细信息，请参阅[具有弹性数据库工具和行级安全性的多租户应用程序](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security/)。 
  
  或者，你可以在针对分片发出的查询中生成筛选逻辑。例如：
 

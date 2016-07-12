@@ -30,7 +30,7 @@
 
 您的应用程序可能需要存储数据。若要执行此操作，您可以将数据磁盘附加到之前创建的虚拟机。执行此操作的最简单方法是将空数据磁盘附加到计算机。
 
-在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 /mnt/resource（或 Ubuntu 映像上的 /mnt）。另一方面，在 Linux 上，数据磁盘由内核命名为 `/dev/sdc`，并且用户将需要对该资源进行分区、格式化和安装。有关详细信息，请参阅 [Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide)。
+在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 /mnt/resource（或 Ubuntu 映像上的 /mnt）。另一方面，在 Linux 上，数据磁盘由内核命名为 `/dev/sdc`，并且用户将需要对该资源进行分区、格式化和安装。有关详细信息，请参阅 [Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide/)。
 
 >[AZURE.NOTE]不要在资源磁盘上存储数据。该磁盘为应用程序和进程提供临时存储空间，用于存储不需要保留的数据，比如交换文件。数据磁盘在 Azure 存储空间中以页 Blob 中的 .vhd 文件形式驻留，并且提供存储冗余，从而保护你的数据。有关详细信息，请参阅[关于 Azure 中的磁盘和映像](http://msdn.microsoft.com/zh-cn/library/jj672979.aspx)。
 

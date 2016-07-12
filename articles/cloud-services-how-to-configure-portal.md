@@ -18,8 +18,8 @@
 # 如何配置云服务
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-how-to-configure-portal)
-- [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-configure)
+- [Azure 门户预览](/documentation/articles/cloud-services-how-to-configure-portal/)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-configure/)
 
 你可以在 Azure 门户预览中配置最常使用的云服务设置。或者，如果你希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
 
@@ -67,7 +67,7 @@
 
 ## 重新启动、重置映像或远程桌面
 
-此时无法使用 **Azure 门户预览**配置远程桌面。不过，你可以通过 [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop)、[PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell) 或 [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles) 对其进行设置。
+此时无法使用 **Azure 门户预览**配置远程桌面。不过，你可以通过 [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)、[PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/) 或 [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles/) 对其进行设置。
 
 首先，单击云服务实例
 
@@ -104,9 +104,9 @@
 			
 ## 后续步骤
 
-* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
-* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
-* [管理云服务](/documentation/articles/cloud-services-how-to-manage-portal)。
-* 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal/)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal/)。
+* [管理云服务](/documentation/articles/cloud-services-how-to-manage-portal/)。
+* 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal/)。
 
 <!---HONumber=Mooncake_0523_2016-->

@@ -24,7 +24,7 @@
 
 无需使用 Azure SDK 就能为 Web 项目生成脚本。此功能适用于 Web 项目，而不适用于云服务中的 Web 角色。
 
-- Azure PowerShell 0.7.4 或更高版本。有关详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
+- Azure PowerShell 0.7.4 或更高版本。有关详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。
 
 - [Windows PowerShell 3.0](http://go.microsoft.com/?linkid=9811175) 或更高版本。
 
@@ -34,7 +34,7 @@
 
 ## 生成发布脚本
 
-你可以遵照[这些说明](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio)，在创建新项目时为托管网站的虚拟机生成发布脚本。还可以[为 Azure App Service 中的 Web 应用生成发布脚本](/documentation/articles/web-sites-dotnet-get-started)。
+你可以遵照[这些说明](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio/)，在创建新项目时为托管网站的虚拟机生成发布脚本。还可以[为 Azure App Service 中的 Web 应用生成发布脚本](/documentation/articles/web-sites-dotnet-get-started/)。
 
 ## Visual Studio 生成的脚本
 
@@ -46,7 +46,7 @@ Visual Studio 将生成名为 **PublishScripts** 的解决方案级文件夹，�
 
 ### Windows PowerShell 模块
 
-Visual Studio 生成的 Windows PowerShell 模块包含发布脚本使用的函数。不应修改这些 Azure PowerShell 函数。有关详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
+Visual Studio 生成的 Windows PowerShell 模块包含发布脚本使用的函数。不应修改这些 Azure PowerShell 函数。有关详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。
 
 ### JSON 配置文件
 
@@ -143,7 +143,7 @@ JSON 文件是在 **Configurations** 文件夹中创建的，其中包含的配�
 
 你可以编辑 JSON 配置，以更改运行发布脚本时的行为。`cloudService` 和 `virtualMachine` 节是必需的，但是，如果你不需要 `databases` 节，则可以将它删除。在 Visual Studio 生成的默认配置文件中为空的属性是可选的；在默认配置文件中具有值的属性是必需的。
 
-如果你的网站具有多个部署环境（称为槽），而并非仅在 Azure 中有单个生产站点，则可将槽位名称包括在在 JSON 配置文件的网站名称中。例如，如果你的网站的名称为 **mysite**，该网站的一个槽的名称为 **test**，则 URI 为 mysite-test.chinacloudapp.cn，但在配置文件中使用的正确名称为 mysite(test)。只有当网站和槽已在订阅中存在时，才能这样做。如果它们不存在，请运行脚本而不指定槽位，从而创建网站，然后在 Azure 经典管理门户中创建槽位，从而使用未修改的网站名称来运行脚本。有关网站的部署槽的详细信息，请参阅 [Set up staging environments for web sites in Azure App Service（为 Azure App Service 中的网站设置过渡环境）](/documentation/articles/web-sites-staged-publishing)。
+如果你的网站具有多个部署环境（称为槽），而并非仅在 Azure 中有单个生产站点，则可将槽位名称包括在在 JSON 配置文件的网站名称中。例如，如果你的网站的名称为 **mysite**，该网站的一个槽的名称为 **test**，则 URI 为 mysite-test.chinacloudapp.cn，但在配置文件中使用的正确名称为 mysite(test)。只有当网站和槽已在订阅中存在时，才能这样做。如果它们不存在，请运行脚本而不指定槽位，从而创建网站，然后在 Azure 经典管理门户中创建槽位，从而使用未修改的网站名称来运行脚本。有关网站的部署槽的详细信息，请参阅 [Set up staging environments for web sites in Azure App Service（为 Azure App Service 中的网站设置过渡环境）](/documentation/articles/web-sites-staged-publishing/)。
 
 ## 如何运行发布脚本
 
@@ -169,7 +169,7 @@ JSON 文件是在 **Configurations** 文件夹中创建的，其中包含的配�
 
 出现提示时，请提供你的用户名和密码。
 
-请注意，当自动编写脚本时，这一提供 Azure 凭据的方法不起作用。应使用 .publishsettings 文件提供凭据。仅限一次使用 **Get-AzurePublishSettingsFile** 从 Azure 下载命令，此后则使用 **Import-AzurePublishSettingsFile** 导入该文件。有关详细说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure).
+请注意，当自动编写脚本时，这一提供 Azure 凭据的方法不起作用。应使用 .publishsettings 文件提供凭据。仅限一次使用 **Get-AzurePublishSettingsFile** 从 Azure 下载命令，此后则使用 **Import-AzurePublishSettingsFile** 导入该文件。有关详细说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 1. （可选）如果你希望创建虚拟机、数据库和网站等 Azure 资源，而不发布你的 Web 应用程序，请使用 **Publish-WebApplication.ps1** 命令，并结合设置为 JSON 配置文件的 **-Configuration** 参数。此命令行使用 JSON 配置文件来确定要创建的资源。由于它的其他命令行参数使用默认设置，因此它会创建资源，但不发布你的 Web 应用程序。-Verbose 选项可为你提供有关运行情况的更多信息。
 

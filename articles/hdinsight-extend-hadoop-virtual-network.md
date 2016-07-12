@@ -52,7 +52,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	* 从 LOB 应用程序**调用 HDInsight 服务或作业**。例如，使用 HBase Java API 来存储和检索 HDInsight HBase 群集的数据。
 
-有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
+有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 
 > [AZURE.NOTE] 你必须创建 Azure 虚拟网络才能设置一个 HDInsight 群集。有关详细信息，请参阅[虚拟网络配置任务](/documentation/services/networking/)。
 
@@ -72,7 +72,7 @@ Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于�
 
 基于 Windows 的群集需要 V1（经典）虚拟网络。如果没有正确的网络类型，创建群集时它将不能使用。
 
-如果具有计划创建的群集不可用的虚拟网络上的资源，可以新建一个该群集可用的虚拟网络，并将其连接到不兼容的虚拟网络。然后可以在其要求的网络版本中创建群集，由于两者已联接，该群集将能够访问另一个网络中的资源。有关连接经典虚拟网络和新虚拟网络的详细信息，请参阅 [Connecting classic VNets to new VNets（将经典 VNet 连接到新的 VNet）](/documentation/articles/virtual-networks-arm-asm-s2s)。
+如果具有计划创建的群集不可用的虚拟网络上的资源，可以新建一个该群集可用的虚拟网络，并将其连接到不兼容的虚拟网络。然后可以在其要求的网络版本中创建群集，由于两者已联接，该群集将能够访问另一个网络中的资源。有关连接经典虚拟网络和新虚拟网络的详细信息，请参阅 [Connecting classic VNets to new VNets（将经典 VNet 连接到新的 VNet）](/documentation/articles/virtual-networks-arm-asm-s2s/)。
 
 ###受保护的虚拟网络
 
@@ -173,7 +173,7 @@ __使用 Azure CLI__
 ><p> * Azure PowerShell - ```Set-AzureNetworkSecurityRule -Name "RDP" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "3389" -SourceAddressPrefix "*" -DestinationAddressPrefix "*" -Action Allow -Priority 304 -Type Inbound```
 ><p> * Azure CLI - ```azure network nsg rule create hdisecure RDP -p "*" -o "*" -u "3389" -f "*" -e "*" -c "Allow" -y 304 -r "Inbound"```
 
-有关网络安全组的详细信息，请参阅 [Network Security Groups overview（网络安全组概述）](/documentation/articles/virtual-networks-nsg)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅 [User Defined Routes and IP forwarding（用户定义的路由和 IP 转发）。](/documentation/articles/virtual-networks-udr-overview)
+有关网络安全组的详细信息，请参阅 [Network Security Groups overview（网络安全组概述）](/documentation/articles/virtual-networks-nsg/)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅 [User Defined Routes and IP forwarding（用户定义的路由和 IP 转发）。](/documentation/articles/virtual-networks-udr-overview/)
 
 ##<a id="tasks"></a>任务和信息
 
@@ -189,12 +189,12 @@ __使用 Azure CLI__
 
 以下示例演示了如何对 Azure 虚拟网络使用 HDInsight：
 
-* [使用 HDInsight 中的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis) - 演示如何在虚拟网络中配置 Storm 和 HBase 群集，以及如何从 Storm 将数据远程写入到 HBase。
+* [使用 HDInsight 中的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/) - 演示如何在虚拟网络中配置 Storm 和 HBase 群集，以及如何从 Storm 将数据远程写入到 HBase。
 
-* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1) - 提供有关设置 Hadoop 群集的信息，包括有关使用 Azure 虚拟网络的信息。
+* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/) - 提供有关设置 Hadoop 群集的信息，包括有关使用 Azure 虚拟网络的信息。
 
-* [将 Sqoop 与 HDinsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-sqoop) - 提供有关使用 Sqoop 通过虚拟网络传输 SQL Server 数据的信息。
+* [将 Sqoop 与 HDinsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-sqoop/) - 提供有关使用 Sqoop 通过虚拟网络传输 SQL Server 数据的信息。
 
-若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
+若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 
 <!---HONumber=Mooncake_0530_2016-->

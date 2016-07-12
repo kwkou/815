@@ -22,7 +22,7 @@
 
 ## 先决条件
 
-* **部署在 Azure VM 中的 HPC Pack 头节点** - 建议你使用自动化工具（例如 [Azure PowerShell script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)）来部署头节点和群集。需要获得头节点的 DNS 名称和群集管理员的凭据才能完成本文中的步骤。
+* **部署在 Azure VM 中的 HPC Pack 头节点** - 建议你使用自动化工具（例如 [Azure PowerShell script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)）来部署头节点和群集。需要获得头节点的 DNS 名称和群集管理员的凭据才能完成本文中的步骤。
 
 * **HPC Pack 安装媒体** - HPC Pack (HPC Pack 2012 R2) 最新版本的免费安装包可在 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkId=328024)找到。确保下载与头节点 VM 上安装的版本相同的 HPC Pack 版本。
 
@@ -35,7 +35,7 @@
 
 有关详细过程，请参阅[安装 Microsoft HPC Pack Web 组件](http://technet.microsoft.com/zh-cn/library/hh314627.aspx)。
 
->[AZURE.TIP] 特定的 HPC Pack 模板会自动安装和配置 Web 组件。如果使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)创建群集，你可以在部署期间选择安装并配置 Web 组件。
+>[AZURE.TIP] 特定的 HPC Pack 模板会自动安装和配置 Web 组件。如果使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)创建群集，你可以在部署期间选择安装并配置 Web 组件。
 
 **安装 Web 组件**
 

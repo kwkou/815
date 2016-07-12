@@ -39,7 +39,7 @@
 | **SLA** | [SLA](/support/legal/sla) | [SLA](/support/legal/sla) | [SLA](/support/legal/sla) |
 | **价格** | [价格](/home/features/vpn-gateway/#price) | [价格](/home/features/vpn-gateway/#price) | [价格](/home/features/expressroute/#price) |
 | **技术文档** | [VPN 网关文档](/documentation/services/vpn-gateway) | [VPN 网关文档](/documentation/services/vpn-gateway) | [ExpressRoute 文档](/documentation/services/expressroute) |
-| **常见问题** | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq) | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq) | [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs) |
+| **常见问题** | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq/) | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq/) | [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/) |
 
 
 ## 站点到站点连接
@@ -55,11 +55,11 @@
 **要求**
 
 - 本地 VPN 设备必须有面向 Internet 的 IPv4 IP 地址。该设备不能在 NAT 后面。
-- 你必须有兼容的 VPN 设备。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices)。 
-- 使用的 VPN 设备必须与解决方案所需的网关类型兼容。请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。
+- 你必须有兼容的 VPN 设备。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。 
+- 使用的 VPN 设备必须与解决方案所需的网关类型兼容。请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 - 网关 SKU 也会影响聚合吞吐量。有关详细信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways/#gateway-skus)。 
 
-有关如何使用 Azure 经典管理门户和经典部署模型配置站点到站点 VPN 网关连接的信息，请参阅 [Configure a virtual network with a Site-to-Site VPN connection for the classic deployment model（使用经典部署模型的站点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-site-to-site-create)。有关如何使用资源管理器部署模型配置站点到站点 VPN 的信息，请参阅 [Create a virtual network with a Site-to-Site VPN connection for the Resource Manager deployment model（使用 Resource Manager 部署模型的站点到站点 VPN 连接创建虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)。
+有关如何使用 Azure 经典管理门户和经典部署模型配置站点到站点 VPN 网关连接的信息，请参阅 [Configure a virtual network with a Site-to-Site VPN connection for the classic deployment model（使用经典部署模型的站点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-site-to-site-create/)。有关如何使用资源管理器部署模型配置站点到站点 VPN 的信息，请参阅 [Create a virtual network with a Site-to-Site VPN connection for the Resource Manager deployment model（使用 Resource Manager 部署模型的站点到站点 VPN 连接创建虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)。
 
 
 ## 点到站点连接
@@ -80,7 +80,7 @@
 
 - VPN 设备没有面向 Internet 的 IPv4 IP 地址。
 
-有关为经典部署模型配置点到站点连接的详细信息，请参阅 [Configure a Point-to-Site VPN connection to a virtual network for the classic deployment model（配置与经典部署模型的虚拟网络的点到站点 VPN 连接）](/documentation/articles/vpn-gateway-point-to-site-create)。有关为 Resource Manager 部署模型配置点到站点连接的详细信息，请参阅 [Configure a Point-to-Site VPN connection to a virtual network for the Resource Manager deployment model（配置与 Resource Manager 部署模型的虚拟网络的点到站点 VPN 连接）](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps)。
+有关为经典部署模型配置点到站点连接的详细信息，请参阅 [Configure a Point-to-Site VPN connection to a virtual network for the classic deployment model（配置与经典部署模型的虚拟网络的点到站点 VPN 连接）](/documentation/articles/vpn-gateway-point-to-site-create/)。有关为 Resource Manager 部署模型配置点到站点连接的详细信息，请参阅 [Configure a Point-to-Site VPN connection to a virtual network for the Resource Manager deployment model（配置与 Resource Manager 部署模型的虚拟网络的点到站点 VPN 连接）](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)。
 
 ## ExpressRoute 连接
 
@@ -88,12 +88,12 @@
 
 在某些情况下，使用 ExpressRoute 连接在本地和 Azure 之间传输数据还可以产生显著的成本效益。使用 ExpressRoute，你可以在 ExpressRoute 位置（Exchange 提供商设施）建立与 Azure 的连接，也可以直接从网络服务提供商提供的现有 WAN 网络（例如 MPLS VPN）连接到 Azure。
 
-有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
+有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。
 
 
 ## 后续步骤
 
-有关详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq)和 [ExpressRoute FAQ（ExpressRoute 常见问题）](/documentation/articles/expressroute-faqs)。
+有关详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/)和 [ExpressRoute FAQ（ExpressRoute 常见问题）](/documentation/articles/expressroute-faqs/)。
 
 
 

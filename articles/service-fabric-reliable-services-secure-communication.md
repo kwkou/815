@@ -18,7 +18,7 @@
 
 ## 使用服务远程处理时帮助保护服务
 
-我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-remoting)来解释如何为 Reliable Services 设置远程处理。若要在使用服务远程处理时帮助保护服务，请遵循以下步骤：
+我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-remoting/)来解释如何为 Reliable Services 设置远程处理。若要在使用服务远程处理时帮助保护服务，请遵循以下步骤：
 
 1. 创建接口 `IHelloWorldStateful`，用于定义可供服务的远程过程调用使用的方法。服务将使用 `Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime` 命名空间中声明的 `FabricTransportServiceRemotingListener`。这是可以提供远程处理功能的 `ICommunicationListener` 实现。
 
@@ -80,7 +80,7 @@
             	return x509Credentials;
         	}
 
-    2. 使用[配置包](/documentation/articles/service-fabric-application-model)提供：
+    2. 使用[配置包](/documentation/articles/service-fabric-application-model/)提供：
 
         在 settings.xml 文件中添加 `TransportSettings` 节。
 
@@ -195,7 +195,7 @@
 
 ## 使用基于 WCF 的通信堆栈时帮助保护服务
 
-我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-wcf)来解释如何为 Reliable Services 设置基于 WCF 的通信堆栈。若要在使用基于 WCF 的通信堆栈时帮助保护服务，请遵循以下步骤：
+我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-wcf/)来解释如何为 Reliable Services 设置基于 WCF 的通信堆栈。若要在使用基于 WCF 的通信堆栈时帮助保护服务，请遵循以下步骤：
 
 1. 对于服务，需要帮助保护你创建的 WCF 通信侦听器 (`WcfCommunicationListener`)。为此，请修改 `CreateServiceReplicaListeners` 方法。
 
@@ -235,7 +235,7 @@
     	}
 
 
-2. 在客户端中，在前面[示例](/documentation/articles/service-fabric-reliable-services-communication-wcf)中创建的 `WcfCommunicationClient` 类保持不变。但是，需要重写 `WcfCommunicationClientFactory` 的 `CreateClientAsync` 方法：
+2. 在客户端中，在前面[示例](/documentation/articles/service-fabric-reliable-services-communication-wcf/)中创建的 `WcfCommunicationClient` 类保持不变。但是，需要重写 `WcfCommunicationClientFactory` 的 `CreateClientAsync` 方法：
 
 
     	public class SecureWcfCommunicationClientFactory<TServiceContract> : WcfCommunicationClientFactory<TServiceContract> where TServiceContract : class
@@ -303,6 +303,6 @@
 
 ## 后续步骤
 
-* [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+* [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
 <!---HONumber=Mooncake_0425_2016-->

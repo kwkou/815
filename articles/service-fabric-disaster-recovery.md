@@ -26,7 +26,7 @@
 
 默认情况下，群集中的 VM 平均分散在名为容错域 (FD) 的逻辑组中，逻辑组根据主机硬件中的潜在故障将计算机分段。具体而言，如果你有两个 VM 位于两个不同的 FD 中，则可以确保它们不会共享相同的电源或网络交换机。因此，影响一个 VM 的局域网或电源故障不会影响到另一个 VM，使 Service Fabric 能够重新平衡群集中无响应计算机的工作负荷。
 
-可以使用 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster) 中提供的群集映射将各容错域中群集的布局可视化：
+可以使用 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster/) 中提供的群集映射将各容错域中群集的布局可视化：
 
 ![Service Fabric Explorer 中分散在容错域之间的节点][sfx-cluster-map]
 
@@ -68,7 +68,7 @@
 
 在整个物理数据中心遭到损坏（这种情况很少见）时，该数据中心托管的所有 Service Fabric 群集及其状态将会丢失。
 
-若要防范这种可能性，请务必定期[将状态备份到](/documentation/articles/service-fabric-reliable-services-backup-restore)异地冗余存储，并确保已验证你能够还原备份。执行备份的频率取决于恢复点目标 (RPO)。即使你尚未完全实现备份和还原，但还是应该实现 `OnDataLoss` 事件的处理程序，以便在发生该事件时进行记录，如下所示：
+若要防范这种可能性，请务必定期[将状态备份到](/documentation/articles/service-fabric-reliable-services-backup-restore/)异地冗余存储，并确保已验证你能够还原备份。执行备份的频率取决于恢复点目标 (RPO)。即使你尚未完全实现备份和还原，但还是应该实现 `OnDataLoss` 事件的处理程序，以便在发生该事件时进行记录，如下所示：
 
 ```c#
 protected virtual Task<bool> OnDataLoss(CancellationToken cancellationToken)
@@ -85,10 +85,10 @@ protected virtual Task<bool> OnDataLoss(CancellationToken cancellationToken)
 
 ## 后续步骤
 
-- 了解如何使用[可测试性框架](/documentation/articles/service-fabric-testability-overview)模拟各种故障
+- 了解如何使用[可测试性框架](/documentation/articles/service-fabric-testability-overview/)模拟各种故障
 - 阅读有关灾难恢复和高可用性的其他资源。Microsoft 已发布大量有关这些主题的指导。尽管其中有些文档提到其他产品中使用的特定技术，但也包含了许多可在 Service Fabric 上下文中应用的一般性最佳实践：
- - [可用性核对清单](/documentation/articles/best-practices-availability-checklist)
- - [执行灾难恢复演练](/documentation/articles/sql-database-disaster-recovery-drills)
+ - [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)
+ - [执行灾难恢复演练](/documentation/articles/sql-database-disaster-recovery-drills/)
 
 
 

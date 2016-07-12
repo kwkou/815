@@ -20,7 +20,7 @@
 
 ## 先决条件
 
-如果你尚未安装 Azure CLI，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
+如果你尚未安装 Azure CLI，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 
 在 Windows 中，从 [Node.js 网站](https://nodejs.org/)安装 npm。完成安装之后，通过“以管理员身份运行”权限使用 CMD.exe，从安装 npm 的文件夹执行以下命令：

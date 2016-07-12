@@ -29,7 +29,7 @@ Azure 的基础结构（从设备到应用程序）经过设计，可同时托�
 
 控制对 IT 基础结构、数据和应用程序的访问很重要。在 Azure 中，这些功能是通过 Azure Active Directory、Azure 存储空间、对各种标准和 API 的支持之类的服务提供的。
 
-[Azure Active Directory(Azure AD)](/documentation/articles/active-directory-whatis) 是一个标识存储库和引擎，可以为组织的用户、小组和对象提供身份验证、授权和访问控制。Azure AD 还为开发人员提供了在其应用程序中集成标识管理的有效方法。通过支持行业标准协议（例如 [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0)、[WS-Federation](https://msdn.microsoft.com/zh-cn/library/bb498017.aspx) 和 [OpenID Connect](http://openid.net/connect/)），能够在多种平台（例如 .NET、Java、Node.js 和 PHP）上进行登录。
+[Azure Active Directory(Azure AD)](/documentation/articles/active-directory-whatis/) 是一个标识存储库和引擎，可以为组织的用户、小组和对象提供身份验证、授权和访问控制。Azure AD 还为开发人员提供了在其应用程序中集成标识管理的有效方法。通过支持行业标准协议（例如 [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0)、[WS-Federation](https://msdn.microsoft.com/zh-cn/library/bb498017.aspx) 和 [OpenID Connect](http://openid.net/connect/)），能够在多种平台（例如 .NET、Java、Node.js 和 PHP）上进行登录。
 
 基于 REST 的图形 API 允许开发人员从任意平台对目录进行读和写。通过对 [OAuth 2.0](http://oauth.net/2/) 的支持，开发人员可以构建与 Microsoft 和第三方 Web API 相集成的移动和 Web 应用程序，并且构建自己的安全 Web API。提供面向 .Net、Windows 应用商店、iOS 和 Android 的开放源客户端库，还有更多的库仍在开发中。
 
@@ -43,9 +43,9 @@ Azure 的基础结构（从设备到应用程序）经过设计，可同时托�
 
 -   对 [Azure 存储空间](/services/storage/)中的数据进行访问可以通过身份验证来控制。每个存储帐户都有一个主密钥（[存储帐户密钥](https://msdn.microsoft.com/zh-cn/library/azure/ee460785.aspx)，简称 SAK）和一个辅助密钥（共享访问签名，简称 SAS）。
 
--   Azure AD 通过联合身份验证（使用 [Active Directory 联合身份验证服务](/documentation/articles/fundamentals-identity)）、同步以及本地目录复制方式提供标识即服务。
+-   Azure AD 通过联合身份验证（使用 [Active Directory 联合身份验证服务](/documentation/articles/fundamentals-identity/)）、同步以及本地目录复制方式提供标识即服务。
 
--   [Azure 多重身份验证 (MFA)](/documentation/articles/multi-factor-authentication) 是多重身份验证服务，它要求用户使用移动应用程序、手机或短信验证登录。它可用于 Azure AD 以通过 Azure MFA 服务器来保护本地资源安全，它还用于使用 SDK 的自定义应用程序和目录。
+-   [Azure 多重身份验证 (MFA)](/documentation/articles/multi-factor-authentication/) 是多重身份验证服务，它要求用户使用移动应用程序、手机或短信验证登录。它可用于 Azure AD 以通过 Azure MFA 服务器来保护本地资源安全，它还用于使用 SDK 的自定义应用程序和目录。
 
 -   [Azure AD 域服务](https://azure.microsoft.com/zh-cn/services/active-directory-ds/)让你可以将 Azure 虚拟机加入一个域，且无需部署域控制器。用户可以使用其公司的 Active Directory 凭据登录到这些虚拟机中，并使用组策略管理已加入域的虚拟机，以便在你的所有 Azure 虚拟机上强制实施安全基准措施。
 
@@ -59,7 +59,7 @@ Microsoft 所采用的“职责分离”和[最小特权](https://en.wikipedia.o
 
 ### Azure 加密技术
 
-你可以使用 [Azure AD 报告](/documentation/articles/active-directory-reporting-audit-events)来收集对订阅进行管理性访问的相关详细信息。你可以选择在 Azure 的 VHD（内含敏感信息）上配置 [BitLocker 驱动器加密](https://technet.microsoft.com/zh-cn/library/cc732774.aspx)。
+你可以使用 [Azure AD 报告](/documentation/articles/active-directory-reporting-audit-events/)来收集对订阅进行管理性访问的相关详细信息。你可以选择在 Azure 的 VHD（内含敏感信息）上配置 [BitLocker 驱动器加密](https://technet.microsoft.com/zh-cn/library/cc732774.aspx)。
 
 Azure 中其他用于确保数据安全的功能包括：
 
@@ -95,7 +95,7 @@ Azure 使用虚拟机监控程序防火墙（数据包筛选器），该防火�
 
 -   **计算机配置或基础结构规则**：默认情况下，将阻止所有通信。在例外情况下，可以允许 VM 发送和接收 DHCP 和 DNS 流量。VM 还可以将流量发送到“公共”Internet 以及群集和 OS 激活服务器中的其他 VM。VM 的传出目标允许列表不包括 Azure 路由器子网、Azure 管理后端以及其他 Microsoft 属性。
 
--   **角色配置文件**：根据租户的服务模型定义入站 ACL。例如，如果某个租户在特定 VM 的端口 80 上有一个 Web 前端，Azure 会对所有 IP 开放 TCP 端口 80，前提是你要在 [Azure 服务管理](/documentation/articles/resource-manager-deployment-model)模型中配置一个终结点。如果 VM 有一个正在运行的后端或辅助角色，我们就会只向同一租户中的 VM 开放该辅助角色。
+-   **角色配置文件**：根据租户的服务模型定义入站 ACL。例如，如果某个租户在特定 VM 的端口 80 上有一个 Web 前端，Azure 会对所有 IP 开放 TCP 端口 80，前提是你要在 [Azure 服务管理](/documentation/articles/resource-manager-deployment-model/)模型中配置一个终结点。如果 VM 有一个正在运行的后端或辅助角色，我们就会只向同一租户中的 VM 开放该辅助角色。
 
 ##隔离
 
@@ -145,15 +145,15 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 可以使用以下 Azure 虚拟网络技术来帮助实现 Azure 虚拟网络上的安全通信：
 
--   [**网络安全组 (NSG)**](/documentation/articles/virtual-networks-nsg)。可以在虚拟网络中使用 NSG 控制流向一个或多个虚拟机 (VM) 实例的流量。NSG 包含根据流量方向、协议、源地址和端口以及目标地址和端口允许或拒绝流量的访问控制规则。
+-   [**网络安全组 (NSG)**](/documentation/articles/virtual-networks-nsg/)。可以在虚拟网络中使用 NSG 控制流向一个或多个虚拟机 (VM) 实例的流量。NSG 包含根据流量方向、协议、源地址和端口以及目标地址和端口允许或拒绝流量的访问控制规则。
 
--   [**用户定义的路由**](/documentation/articles/virtual-networks-udr-overview)。你可以创建用户定义的路由来指定下一跃点，方便数据包流向特定的子网并转到你的虚拟网络安全设备，从而控制数据包通过虚拟设备进行的路由。
+-   [**用户定义的路由**](/documentation/articles/virtual-networks-udr-overview/)。你可以创建用户定义的路由来指定下一跃点，方便数据包流向特定的子网并转到你的虚拟网络安全设备，从而控制数据包通过虚拟设备进行的路由。
 
--   [**IP 转发**](/documentation/articles/virtual-networks-udr-overview)。虚拟网络安全设备必须能够接收不发送给自身的传入流量。若要允许 VM 接收发送到其他目标的流量，可以为该 VM 启用 IP 转发。
+-   [**IP 转发**](/documentation/articles/virtual-networks-udr-overview/)。虚拟网络安全设备必须能够接收不发送给自身的传入流量。若要允许 VM 接收发送到其他目标的流量，可以为该 VM 启用 IP 转发。
 
--   [**强制隧道**](/documentation/articles/vpn-gateway-about-forced-tunneling)。借助强制隧道，你可以通过站点到站点 VPN 隧道，将 Azure 虚拟网络中的虚拟机所生成的全部 Internet 绑定流量重定向或“强制”返回到本地位置，以便进行检查和审核
+-   [**强制隧道**](/documentation/articles/vpn-gateway-about-forced-tunneling/)。借助强制隧道，你可以通过站点到站点 VPN 隧道，将 Azure 虚拟网络中的虚拟机所生成的全部 Internet 绑定流量重定向或“强制”返回到本地位置，以便进行检查和审核
 
--   [**终结点** ACL](/documentation/articles/virtual-machines-set-up-endpoints)。你可以通过定义终结点 ACL 来控制哪些计算机允许从 Internet 到 Azure 虚拟网络上的虚拟机的入站连接。
+-   [**终结点** ACL](/documentation/articles/virtual-machines-set-up-endpoints/)。你可以通过定义终结点 ACL 来控制哪些计算机允许从 Internet 到 Azure 虚拟网络上的虚拟机的入站连接。
 
 
 ### Azure 如何实施虚拟网络和防火墙
@@ -170,21 +170,21 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 -   **存储防火墙 (FW)**：存储前端的防火墙会对通信进行筛选，只允许在端口 80/443 以及其他必需实用程序端口上进行通信。存储后端的防火墙会将通信限制为只能来自存储前端服务器。
 
--   **虚拟网络网关**：[Azure 虚拟网络网关](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)充当跨界网关，将你在 Azure 虚拟网络中的工作负荷连接到本地站点。它需要通过 [IPsec 站点到站点 VPN 隧道](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)或 [ExpressRoute](/documentation/articles/expressroute-introduction) 线路连接到本地站点。对于 IPsec/IKE VPN 隧道，这些网关会执行 IKE 握手，并在虚拟网络和本地站点之间建立 IPsec S2S VPN 隧道。虚拟网络网关还会终止[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create)。
+-   **虚拟网络网关**：[Azure 虚拟网络网关](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)充当跨界网关，将你在 Azure 虚拟网络中的工作负荷连接到本地站点。它需要通过 [IPsec 站点到站点 VPN 隧道](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)或 [ExpressRoute](/documentation/articles/expressroute-introduction/) 线路连接到本地站点。对于 IPsec/IKE VPN 隧道，这些网关会执行 IKE 握手，并在虚拟网络和本地站点之间建立 IPsec S2S VPN 隧道。虚拟网络网关还会终止[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/)。
 
 ##安全远程访问
 
 存储在云中的数据必须具有足够的安全措施来防止遭到攻击，并且需要在传输过程中保持机密性和完整性。这其中包括网络控制，同时结合使用组织的基于策略的、可审核的身份和访问管理机制。
 
-内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-log-on-windows-server)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) 和 [Azure 经典管理门户](http://manage.windowsazure.cn)对虚拟机进行的访问始终加密。
+内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-log-on-windows-server/)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) 和 [Azure 经典管理门户](http://manage.windowsazure.cn)对虚拟机进行的访问始终加密。
 
-为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create) 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
+为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction/) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
 
 ### Azure 如何实现安全的远程访问
 
 连接到 Azure 经典管理门户时，必须始终进行身份验证，并且需要 SSL/TLS。你可以配置管理证书，以便进行安全管理。完全支持各种行业标准安全协议，例如 [SSTP](https://technet.microsoft.com/zh-cn/magazine/2007.06.cableguy.aspx) 和 [IPsec](https://en.wikipedia.org/wiki/IPsec)。
 
-使用 [Azure ExpressRoute](/documentation/articles/expressroute-introduction)，可在 Azure 数据中心与你的本地环境或共同租用环境中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet 。与常用的基于 Internet 的链接相比，这些链接更可靠，速度更快，延迟更低，安全性更高。在某些情况下，使用 ExpressRoute 连接在本地和 Azure 之间传输数据还可以产生显著的成本效益。
+使用 [Azure ExpressRoute](/documentation/articles/expressroute-introduction/)，可在 Azure 数据中心与你的本地环境或共同租用环境中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet 。与常用的基于 Internet 的链接相比，这些链接更可靠，速度更快，延迟更低，安全性更高。在某些情况下，使用 ExpressRoute 连接在本地和 Azure 之间传输数据还可以产生显著的成本效益。
 
 ##日志记录和监视
 
@@ -202,7 +202,7 @@ Azure 管理员通过 Web 门户访问日志，对日志进行的访问必须经
 
 Microsoft 使用 Syslog 协议从网络设备收集日志，使用 Microsoft 审核收集服务 (ACS) 从主机服务器收集日志。这些日志放置在日志数据库中，发生可疑事件时，就会生成直接发送给 Microsoft 管理员的警报。管理员可以访问并分析这些日志。
 
-[Azure 诊断](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)是 Azure 的一项功能，你可以通过它从运行在 Azure 中的应用程序收集诊断数据。可以将这些诊断数据用于调试和故障排除、度量性能、监视资源使用状况、进行流量分析和容量规划以及进行审核。收集诊断数据后，可以将其传输到 Azure 存储帐户进行永久保存。可以按计划传输，也可以按需传输。[Azure 安全和审核日志管理](/documentation/articles/azure-security-audit-log-management)这篇文章详细介绍了如何收集此类信息以及如何对其进行分析。
+[Azure 诊断](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)是 Azure 的一项功能，你可以通过它从运行在 Azure 中的应用程序收集诊断数据。可以将这些诊断数据用于调试和故障排除、度量性能、监视资源使用状况、进行流量分析和容量规划以及进行审核。收集诊断数据后，可以将其传输到 Azure 存储帐户进行永久保存。可以按计划传输，也可以按需传输。[Azure 安全和审核日志管理](/documentation/articles/azure-security-audit-log-management/)这篇文章详细介绍了如何收集此类信息以及如何对其进行分析。
 
 ##威胁缓解措施
 
@@ -214,7 +214,7 @@ Microsoft 采取的安全控制和风险管理流程目的是确保其云基础�
 
 Azure 建立安全控制的目的是实施威胁缓解措施，同时协助客户减轻其环境中的可能威胁。以下列表总结了 Azure 提供的威胁缓解功能：
 
--   [Azure 反恶意软件](/documentation/articles/azure-security-antimalware)在所有基础结构服务器上默认启用。你可以在自己的 VM 中选择性地启用它。
+-   [Azure 反恶意软件](/documentation/articles/azure-security-antimalware/)在所有基础结构服务器上默认启用。你可以在自己的 VM 中选择性地启用它。
 
 -   Microsoft 会持续监视服务器、网络和应用程序以检测各种威胁，防止遭到攻击。自动警报会将异常行为通知给管理员，因此管理员可以针对内部和外部威胁采取纠正性措施。
 

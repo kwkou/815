@@ -26,7 +26,7 @@
 
 ## 确定需要多少个节点
 
-分区服务可让你将服务的数据扩大（有关分区的详细信息，请参阅 [Service Fabric 分区](/documentation/articles/service-fabric-concepts-partitioning)）。必须将每个分区放入单个 VM，但也可以将多个（小型）分区放入单个 VM。因此，相比少量的大型磁盘分区，大量小型分区可提供更大的弹性。缺点是增加分区会增大 Service Fabric 的负担，并且无法跨分区执行事务操作。如果服务代码经常需要访问位于不同分区的数据片段，则还可能会产生更多的网络流量。设计服务时，应该仔细考虑这些优缺点，以实现有效的分区策略。
+分区服务可让你将服务的数据扩大（有关分区的详细信息，请参阅 [Service Fabric 分区](/documentation/articles/service-fabric-concepts-partitioning/)）。必须将每个分区放入单个 VM，但也可以将多个（小型）分区放入单个 VM。因此，相比少量的大型磁盘分区，大量小型分区可提供更大的弹性。缺点是增加分区会增大 Service Fabric 的负担，并且无法跨分区执行事务操作。如果服务代码经常需要访问位于不同分区的数据片段，则还可能会产生更多的网络流量。设计服务时，应该仔细考虑这些优缺点，以实现有效的分区策略。
 
 假设应用程序包含单个有状态服务，该服务的存储大小在一年内预期会增加到 DB\_Size GB。在这种情况下，你会想要添加更多的应用程序（与分区），以应对该年度后的存储增长。若要得出所有副本上的 DB\_Size 总计，我们还必须采用复制因数 (RF)，它可以确定服务的副本数（所有副本上的 DB\_Size 总计为复制因数乘以 DB\_Size）。Node\_Size 表示想要用于服务的每节点磁盘空间/RAM。为了获得最佳性能，应该使 DB\_Size 适应各群集的内存量，并使 Node\_Size 大约等于所选 VM 的 RAM 容量。通过分配大于 RAM 容量的 Node\_Size，你可以依赖于操作系统分页。因此，性能可能不是最佳的，但对于服务而言仍然足够。
 
@@ -44,7 +44,7 @@ Number of Nodes = (DB_Size * RF)/Node_Size
 
 此外，最好随时能有几台后备计算机（超额容量）可用，以便可以处理任何意外的高峰或基础结构故障（例如，一些 VM 停机）。尽管这种做法应该根据预期高峰为准，但保留一些额外的 VM（额外 5-10%）是不错的起点。
 
-上面假设只有一个有状态服务。如果有多个有状态服务，则你还必须将要与其他服务关联的 DB\_Size 添加到公式中，或分别为每个有状态服务计算节点数目。服务可能包含不平衡的副本或分区。某些分区的数据可能多于其他分区，因此请参考[有关分区最佳实践的文章](/documentation/articles/service-fabric-concepts-partitioning)来了解详细信息。但是，上述公式不受分区或副本影响，因为 Service Fabric 将确保副本以优化方式分散在节点之间。
+上面假设只有一个有状态服务。如果有多个有状态服务，则你还必须将要与其他服务关联的 DB\_Size 添加到公式中，或分别为每个有状态服务计算节点数目。服务可能包含不平衡的副本或分区。某些分区的数据可能多于其他分区，因此请参考[有关分区最佳实践的文章](/documentation/articles/service-fabric-concepts-partitioning/)来了解详细信息。但是，上述公式不受分区或副本影响，因为 Service Fabric 将确保副本以优化方式分散在节点之间。
 
 
 ## 使用电子表格进行成本计算
@@ -69,6 +69,6 @@ Number of Nodes = (DB_Size * RF)/Node_Size
 [Image1]: ./media/SF-Cost.png
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
-[10]: /documentation/articles/service-fabric-concepts-partitioning
+[10]: /documentation/articles/service-fabric-concepts-partitioning/
 
 <!---HONumber=Mooncake_0627_2016-->

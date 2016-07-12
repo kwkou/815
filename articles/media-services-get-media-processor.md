@@ -16,8 +16,8 @@
 #如何：获取媒体处理器实例
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-get-media-processor)
-- [REST](/documentation/articles/media-services-rest-get-media-processor)
+- [.NET](/documentation/articles/media-services-get-media-processor/)
+- [REST](/documentation/articles/media-services-rest-get-media-processor/)
  
 
 ##概述
@@ -28,10 +28,10 @@
 
 媒体处理器名称|说明|更多信息
 ---|---|---
-媒体编码器标准版|为按需编码提供标准功能。 |[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset)
-媒体编码器高级工作流|允许你使用媒体编码器高级工作流运行编码任务。|[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset)
-Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[Azure Media Indexer](/documentation/articles/media-services-index-content)
-Azure Media Hyperlapse（预览）|使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。|[Azure Media Hyperlapse](/documentation/articles/media-services-hyperlapse-content)
+媒体编码器标准版|为按需编码提供标准功能。 |[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset/)
+媒体编码器高级工作流|允许你使用媒体编码器高级工作流运行编码任务。|[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset/)
+Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[Azure Media Indexer](/documentation/articles/media-services-index-content/)
+Azure Media Hyperlapse（预览）|使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。|[Azure Media Hyperlapse](/documentation/articles/media-services-hyperlapse-content/)
 Azure Media Encoder|已过时
 存储解密| 已过时|
 Azure 媒体包装器|已过时|
@@ -39,7 +39,7 @@ Azure 媒体加密器|已过时|
 
 ##获取媒体处理器
 
-以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically)部分中描述的服务器上下文。
+以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically/)部分中描述的服务器上下文。
 
 	private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
 	{
@@ -56,7 +56,7 @@ Azure 媒体加密器|已过时|
 
 ##后续步骤
 
-了解如何获取媒体处理器实例后，请转到[如何对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)主题，其中说明了如何使用媒体编码器标准版对资产进行编码。
+了解如何获取媒体处理器实例后，请转到[如何对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)主题，其中说明了如何使用媒体编码器标准版对资产进行编码。
 
 
 

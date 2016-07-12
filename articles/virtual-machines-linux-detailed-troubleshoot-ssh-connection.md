@@ -16,7 +16,7 @@
 
 # SSH 详细故障排除步骤
 
-有许多可能的原因会导致 SSH 客户端无法连接到 VM 上的 SSH 服务。如果已经执行了较[常规的 SSH 故障排除步骤](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)，则需要进一步排查连接问题。本文将指导你完成详细的故障排除步骤，以确定 SSH 连接失败的位置及其解决方法。
+有许多可能的原因会导致 SSH 客户端无法连接到 VM 上的 SSH 服务。如果已经执行了较[常规的 SSH 故障排除步骤](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)，则需要进一步排查连接问题。本文将指导你完成详细的故障排除步骤，以确定 SSH 连接失败的位置及其解决方法。
 
 ## 采取预备步骤
 
@@ -47,7 +47,7 @@
 
 2. 选择“设置”以检查终结点、IP 地址和其他设置。
 
-	若要识别 VM 中使用 Resource Manager 创建的终结点，请验证是否已定义[网络安全组](/documentation/articles/virtual-networks-nsg)。此外，请验证对网络安全组应用的规则，以及子网中是否引用了这些规则。
+	若要识别 VM 中使用 Resource Manager 创建的终结点，请验证是否已定义[网络安全组](/documentation/articles/virtual-networks-nsg/)。此外，请验证对网络安全组应用的规则，以及子网中是否引用了这些规则。
 
 若要验证网络连接，请检查所配置的终结点，并了解是否可通过其他协议（例如 HTTP 或其他服务）连接到该 VM。
 
@@ -92,7 +92,7 @@
 
 ![突出显示组织边缘设备的图表](./media/virtual-machines-linux-detailed-troubleshoot-ssh-connection/ssh-tshoot3.png)
 
-如果没有直接连接到 Internet 的计算机，可以轻松地在其自己的资源组或云服务中创建新的 Azure VM，然后进行使用。有关详细信息，请参阅[在 Azure 中创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli)。测试完成后，请删除资源组或 VM 以及云服务。
+如果没有直接连接到 Internet 的计算机，可以轻松地在其自己的资源组或云服务中创建新的 Azure VM，然后进行使用。有关详细信息，请参阅[在 Azure 中创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli/)。测试完成后，请删除资源组或 VM 以及云服务。
 
 如果可以创建与直接连接到 Internet 的计算机之间的 SSH 连接，则检查你的组织边缘设备中是否存在以下问题：
 
@@ -110,21 +110,21 @@
 
 ![突出显示云服务终结点和 ACL 的图表](./media/virtual-machines-linux-detailed-troubleshoot-ssh-connection/ssh-tshoot4.png)
 
-如果同一虚拟网络中没有其他 VM，你可以轻松创建一个新 VM。有关详细信息，请参阅[使用 CLI 在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli)。测试完成后，请删除多余的 VM。
+如果同一虚拟网络中没有其他 VM，你可以轻松创建一个新 VM。有关详细信息，请参阅[使用 CLI 在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。测试完成后，请删除多余的 VM。
 
 如果可以与同一虚拟网络中的某个 VM 建立 SSH 连接，请检查以下各项：
 
 - **目标 VM 上 SSH 流量的终结点配置。** 终结点的专用 TCP 端口应该与 VM 上的 SSH 服务正在侦听的 TCP 端口匹配。（默认端口为 22）。对于使用 Resource Manager 部署模型创建的 VM，请在 Azure 门户预览中选择“浏览”>“虚拟机(v2)”> VM 名称>“设置”>“终结点”来验证 SSH TCP 端口号。
 
-- **目标虚拟机上的 SSH 流量终结点的 ACL。** ACL 允许你指定基于源 IP 地址允许或拒绝的从 Internet 传入的流量。错误配置的 ACL 可能会阻止 SSH 流量传入终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[关于网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl)。
+- **目标虚拟机上的 SSH 流量终结点的 ACL。** ACL 允许你指定基于源 IP 地址允许或拒绝的从 Internet 传入的流量。错误配置的 ACL 可能会阻止 SSH 流量传入终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[关于网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl/)。
 
-若要将终结点从问题原因中排除，请删除当前终结点，创建一个新的终结点，然后指定 SSH 名称（公共和专用端口号为 TCP 端口 22）。有关详细信息，请参阅[在 Azure 中的虚拟机上设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+若要将终结点从问题原因中排除，请删除当前终结点，创建一个新的终结点，然后指定 SSH 名称（公共和专用端口号为 TCP 端口 22）。有关详细信息，请参阅[在 Azure 中的虚拟机上设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
 <a id="nsg"></a>
 ## 来源 4：网络安全组
 
 通过使用网络安全组，可以对允许的入站和出站流量进行更精细的控制。你可以创建跨 Azure 虚拟网络中的子网和云服务的规则。检查你的网络安全组规则，以确保允许来自和去往 Internet 的 SSH 流量。
-有关详细信息，请参阅[关于网络安全组](/documentation/articles/virtual-networks-nsg)。
+有关详细信息，请参阅[关于网络安全组](/documentation/articles/virtual-networks-nsg/)。
 
 ## 来源 5：基于 Linux 的 Azure 虚拟机
 
@@ -132,7 +132,7 @@
 
 ![突出显示基于 Linux 的 Azure 虚拟机的图表](./media/virtual-machines-linux-detailed-troubleshoot-ssh-connection/ssh-tshoot5.png)
 
-如果尚未这样做，请遵循[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access) 中的说明。
+如果尚未这样做，请遵循[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access/) 中的说明。
 
 再次尝试从你的计算机建立连接。如果仍然失败，则可能存在以下问题：
 
@@ -143,5 +143,5 @@
 
 
 ## 其他资源
-有关排除应用程序访问故障的详细信息，请参阅[对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection)
+有关排除应用程序访问故障的详细信息，请参阅[对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)
 <!---HONumber=Mooncake_0704_2016-->

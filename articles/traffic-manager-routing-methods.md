@@ -35,10 +35,10 @@ Azure 流量管理器支持使用多种算法来确定如何将最终用户路�
 
 - **性能**：如果终结点位于不同的地理位置，并且你希望最终用户依据最低网络延迟使用“最近的”终结点，则可选择“性能”。有关详细信息，请参阅[性能流量路由方法](#performance-traffic-routing-method)。
 
-> [AZURE.NOTE] 所有流量管理器配置文件都包括持续监视终结点运行状况以及终结点自动故障转移的设置。所有流量路由方法都支持此设置。有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring)。
+> [AZURE.NOTE] 所有流量管理器配置文件都包括持续监视终结点运行状况以及终结点自动故障转移的设置。所有流量路由方法都支持此设置。有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/)。
 
 一个流量管理器配置文件只能使用一种流量路由方法。你可以随时为配置文件选择其他流量路由方法。1 分钟内即可应用所做的更改，不会导致停机。
-可以通过嵌套式流量管理器配置文件来组合使用多种流量路由方法。这样可以创建复杂且灵活的流量路由配置，以满足更大型、更复杂应用程序的需求。有关详细信息，请参阅[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles)。
+可以通过嵌套式流量管理器配置文件来组合使用多种流量路由方法。这样可以创建复杂且灵活的流量路由配置，以满足更大型、更复杂应用程序的需求。有关详细信息，请参阅[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles/)。
 
 ##<a name="priority-traffic-routing-method"></a> 优先级流量路由方法
 
@@ -92,7 +92,7 @@ Azure 流量管理器支持使用多种算法来确定如何将最终用户路�
 
 流量管理器检查每个传入 DNS 请求，并在 Internet 延迟表中查看该请求的源 IP 地址。这决定了从该 IP 地址到每个 Azure 数据中心的延迟。然后，流量管理器会根据已配置终结点的“已启用/已禁用”状态以及正在进行的终结点监视情况选取延迟最低的可用终结点，并在 DNS 响应中返回该终结点。然后，最终用户会被引导到延迟最低（因此也是性能最强）的终结点。
 
-如[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works)中所述，流量管理器不直接从最终用户接收 DNS 查询，而是从用户按配置应使用的递归 DNS 服务处接收。因此，用于确定“最靠近”终结点的 IP 地址不是最终用户的 IP 地址，而是其递归 DNS 服务的 IP 地址。在实践中，该 IP 地址适合充当最终用户此方面用途的代理。
+如[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)中所述，流量管理器不直接从最终用户接收 DNS 查询，而是从用户按配置应使用的递归 DNS 服务处接收。因此，用于确定“最靠近”终结点的 IP 地址不是最终用户的 IP 地址，而是其递归 DNS 服务的 IP 地址。在实践中，该 IP 地址适合充当最终用户此方面用途的代理。
 
 为了反映全球 Internet 的变化以及所添加的新 Azure 区域，流量管理器会定期更新所使用的 Internet 延迟表。但是，这没法考虑整个 Internet 在性能或负载方面的实时差异。
 
@@ -100,9 +100,9 @@ Azure 流量管理器支持使用多种算法来确定如何将最终用户路�
 
 需要注意的要点：
 
-- 如果配置文件包含同一 Azure 区域的多个终结点，则定向到该区域的流量将在可用终结点中平均分布（具体取决于已配置终结点的“已启用/已禁用”状态和正在进行的终结点监视情况）。若要在某个区域中对流量采用其他分配方式，则可使用[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles)来完成。
+- 如果配置文件包含同一 Azure 区域的多个终结点，则定向到该区域的流量将在可用终结点中平均分布（具体取决于已配置终结点的“已启用/已禁用”状态和正在进行的终结点监视情况）。若要在某个区域中对流量采用其他分配方式，则可使用[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles/)来完成。
 
-- 如果给定 Azure 区域中的所有已启用终结点均已降级（根据正在进行的终结点监视情况来判断），则这些终结点的流量将分布到配置文件中指定的所有其他可用终结点，而不是分布到接下来最近的终结点。这有助于避免当下一个最靠近的终结点过载时可能发生的级联失败。如果你想要定义终结点故障转移顺序，则可使用[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles)来完成。
+- 如果给定 Azure 区域中的所有已启用终结点均已降级（根据正在进行的终结点监视情况来判断），则这些终结点的流量将分布到配置文件中指定的所有其他可用终结点，而不是分布到接下来最近的终结点。这有助于避免当下一个最靠近的终结点过载时可能发生的级联失败。如果你想要定义终结点故障转移顺序，则可使用[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles/)来完成。
 
 - 对外部终结点或嵌套式终结点使用“性能”流量路由方法时，需要指定这些终结点的位置。选择最靠近你的部署的 Azure 区域--可用选项为 Azure 区域，因为这些区域是 Internet 延迟表所支持的位置。
 
@@ -113,9 +113,9 @@ Azure 流量管理器支持使用多种算法来确定如何将最终用户路�
 
 ## 后续步骤
 
-了解如何使用[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring)开发高可用性应用程序
+了解如何使用[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/)开发高可用性应用程序
 
-了解如何[创建流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)
+了解如何[创建流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)
 
 
 <!--Image references-->

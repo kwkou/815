@@ -112,7 +112,7 @@ Azure 中的 SQL 数据库的凭据。示例：-DatabaseServerPassword @{Name = 
 
 ## 备注
 
-有关如何使用脚本创建开发和测试环境的完整说明，请参阅[使用 Windows PowerShell 脚本发布到开发和测试环境](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts)。
+有关如何使用脚本创建开发和测试环境的完整说明，请参阅[使用 Windows PowerShell 脚本发布到开发和测试环境](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/)。
 
 JSON 配置文件指定要部署的内容的详细信息。它包括当你创建项目时指定的信息，如名称、地缘组、VHD 映像和虚拟机的大小。它还包括虚拟机上的终结点、要预配的数据库（如果有的话）和 Web 部署参数。以下代码显示一个示例 JSON 配置文件：
 

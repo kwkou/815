@@ -45,7 +45,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ### 将子 Runbook 的代码插入 Runbook 中
 
-1. 在文本编辑器的“画布”中，将光标置于要放置[子 Runbook](/documentation/articles/automation-child-runbooks) 的地方。
+1. 在文本编辑器的“画布”中，将光标置于要放置[子 Runbook](/documentation/articles/automation-child-runbooks/) 的地方。
 2. 在屏幕底部，单击“插入”，然后单击“Runbook”。
 3. 选择要从中心列插入的 Runbook，然后单击右箭头。
 4. 如果该 Runbook 具有参数，则会将其列出供你参考。
@@ -81,7 +81,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ### 使用 Windows PowerShell 更改 Runbook 的内容
 
-以下示例命令演示了如何使用脚本文件的内容替换 Runbook 的现有内容。请注意，此示例过程与[使用 Windows PowerShell 从脚本文件中导入 Runbook](/documentation/articles/automation-creating-importing-runbook#ImportRunbookScriptPS) 中的相同。
+以下示例命令演示了如何使用脚本文件的内容替换 Runbook 的现有内容。请注意，此示例过程与[使用 Windows PowerShell 从脚本文件中导入 Runbook](/documentation/articles/automation-creating-importing-runbook/#ImportRunbookScriptPS) 中的相同。
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
@@ -92,12 +92,12 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ## 相关文章
 
-- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
-- [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)
-- [证书](/documentation/articles/automation-certificates)
-- [连接](/documentation/articles/automation-connections)
-- [凭据](/documentation/articles/automation-credentials)
-- [计划](/documentation/articles/automation-schedules)
-- [变量](/documentation/articles/automation-variables)
+- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
+- [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow/)
+- [证书](/documentation/articles/automation-certificates/)
+- [连接](/documentation/articles/automation-connections/)
+- [凭据](/documentation/articles/automation-credentials/)
+- [计划](/documentation/articles/automation-schedules/)
+- [变量](/documentation/articles/automation-variables/)
 
 <!---HONumber=Mooncake_0307_2016-->

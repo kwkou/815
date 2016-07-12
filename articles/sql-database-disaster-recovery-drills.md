@@ -22,7 +22,7 @@
 - 恢复 
 - 验证恢复后的应用程序完整性
 
-根据[针对业务连续性设计应用程序](/documentation/articles/sql-database-business-continuity)的方式，用于执行演练的工作流会有所不同。下面将会讨论在 Azure SQL 数据库上下文中执行灾难恢复演练的最佳实践。
+根据[针对业务连续性设计应用程序](/documentation/articles/sql-database-business-continuity/)的方式，用于执行演练的工作流会有所不同。下面将会讨论在 Azure SQL 数据库上下文中执行灾难恢复演练的最佳实践。
 
 ##异地还原
 
@@ -34,8 +34,8 @@
 
 ####恢复
 
-- 根据[此处](/documentation/articles/sql-database-disaster-recovery)所述，在另一台服务器中执行数据库异地还原。 
-- 更改应用程序配置以连接到已恢复的数据库，并根据[在恢复后配置数据库](/documentation/articles/sql-database-disaster-recovery)指南完成恢复。
+- 根据[此处](/documentation/articles/sql-database-disaster-recovery/)所述，在另一台服务器中执行数据库异地还原。 
+- 更改应用程序配置以连接到已恢复的数据库，并根据[在恢复后配置数据库](/documentation/articles/sql-database-disaster-recovery/)指南完成恢复。
 
 ####验证
 
@@ -53,7 +53,7 @@
 
 - 确保 DR 区域中的应用程序配置指向以前的辅助数据库，故障转移后，该数据库将成为完全可访问的新主数据库。 
 - 执行[计划的故障转移](/documentation/articles/sql-database-geo-replication-powershell/#initiate-a-planned-failover)，使辅助数据库成为新的主数据库
-- 根据[在恢复后配置数据库](/documentation/articles/sql-database-disaster-recovery)指南完成恢复。
+- 根据[在恢复后配置数据库](/documentation/articles/sql-database-disaster-recovery/)指南完成恢复。
 
 ####验证
 

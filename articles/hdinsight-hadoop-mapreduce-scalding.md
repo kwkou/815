@@ -21,7 +21,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 ## 先决条件
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters-v1)。
+* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters-v1/)。
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -181,9 +181,9 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 ## 在基于 Windows 的群集上运行作业
 
-> [AZURE.NOTE]以下步骤使用 Windows PowerShell。有关运行 MapReduce 作业的其他方法，请参阅[在 HDInsight 上的 Hadoop 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce)。
+> [AZURE.NOTE]以下步骤使用 Windows PowerShell。有关运行 MapReduce 作业的其他方法，请参阅[在 HDInsight 上的 Hadoop 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)。
 
-1. [安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+1. [安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 2. 下载 [hdinsight-tools.psm1](https://github.com/Blackmist/hdinsight-tools/blob/master/hdinsight-tools.psm1) 并将其保存到名为 **hdinsight-tools.psm1** 的文件。
 
@@ -232,10 +232,10 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 现在，你已学习如何使用 Scalding 来创建适用于 HDInsight 的 MapRedcue 作业，接下来请使用以下链接学习 Azure HDInsight 的其他用法。
 
-* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=Mooncake_0104_2016-->

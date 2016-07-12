@@ -9,5 +9,5 @@
   - 优先级值小于 65,500（优先级应比默认的“捕获全部”拒绝入站规则要高）
 3. 将网络安全组与 VM 网络接口或子网相关联。
     
-你可以使用网络安全组和规则创建非常复杂的网络配置来确保环境安全，而不是只使用一个或两个允许 HTTP 流量或远程管理的规则。有关详细信息，请参阅下面的[更多信息](#more-information-on-network-security-groups)部分或[什么是网络安全组？](/documentation/articles/virtual-networks-nsg)
+你可以使用网络安全组和规则创建非常复杂的网络配置来确保环境安全，而不是只使用一个或两个允许 HTTP 流量或远程管理的规则。有关详细信息，请参阅下面的[更多信息](#more-information-on-network-security-groups)部分或[什么是网络安全组？](/documentation/articles/virtual-networks-nsg/)
 <!---HONumber=Mooncake_0627_2016-->

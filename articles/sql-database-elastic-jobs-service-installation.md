@@ -14,13 +14,13 @@
 
 # 安装弹性数据库作业概述
 
-可以通过 PowerShell 或 Azure 经典管理门户安装[**弹性数据库作业**](/documentation/articles/sql-database-elastic-jobs-overview)。只有安装了 PowerShell 包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
+可以通过 PowerShell 或 Azure 经典管理门户安装[**弹性数据库作业**](/documentation/articles/sql-database-elastic-jobs-overview/)。只有安装了 PowerShell 包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
 
 如果你从现有的**弹性数据库池**通过门户安装了**弹性数据库作业**，最新的 Powershell 预览包含用于升级现有安装的脚本。强烈建议将安装升级到最新的**弹性数据库作业**组件，以便利用通过 PowerShell API 公开的新功能。
 
 ## 先决条件
 * Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
-* Azure PowerShell。使用 [Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376)安装最新版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+* Azure PowerShell。使用 [Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376)安装最新版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 * [NuGet 命令行实用程序](https://nuget.org/nuget.exe)用于安装弹性数据库作业包。有关详细信息，请参阅 http://docs.nuget.org/docs/start-here/installing-nuget。
 
 ## 下载并导入弹性数据库作业 PowerShell 包
@@ -147,7 +147,7 @@
 
 ## 后续步骤
 
-确保已在组中的每个数据库上创建对脚本执行具有适当权限的凭据。有关详细信息，请参阅[保护你的 SQL 数据库](/documentation/articles/sql-database-security)。
+确保已在组中的每个数据库上创建对脚本执行具有适当权限的凭据。有关详细信息，请参阅[保护你的 SQL 数据库](/documentation/articles/sql-database-security/)。
 
 
 <!--Image references-->

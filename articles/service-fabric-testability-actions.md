@@ -228,9 +228,9 @@ ReplicaSelector secondaryReplicaSelector = ReplicaSelector.RandomSecondaryOf(par
 
 ## 后续步骤
 
-- [可测试性方案](/documentation/articles/service-fabric-testability-scenarios)
+- [可测试性方案](/documentation/articles/service-fabric-testability-scenarios/)
 - 如何测试你的服务
-   - [在服务工作负荷期间模拟故障](/documentation/articles/service-fabric-testability-workload-tests)
-   - [服务到服务通信失败](/documentation/articles/service-fabric-testability-scenarios-service-communication)
+   - [在服务工作负荷期间模拟故障](/documentation/articles/service-fabric-testability-workload-tests/)
+   - [服务到服务通信失败](/documentation/articles/service-fabric-testability-scenarios-service-communication/)
  
 <!---HONumber=Mooncake_0503_2016-->

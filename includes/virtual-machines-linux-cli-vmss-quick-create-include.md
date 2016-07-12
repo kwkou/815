@@ -1,4 +1,4 @@
-如果尚未这样做，你可以获取 [Azure 订阅试用版](/pricing/1rmb-trial/)和 [Azure CLI](/documentation/articles/xplat-cli-install) 来[连接到你的 Azure 帐户](/documentation/articles/xplat-cli-connect)。然后，可以运行以下命令来快速创建缩放集：
+如果尚未这样做，你可以获取 [Azure 订阅试用版](/pricing/1rmb-trial/)和 [Azure CLI](/documentation/articles/xplat-cli-install/) 来[连接到你的 Azure 帐户](/documentation/articles/xplat-cli-connect/)。然后，可以运行以下命令来快速创建缩放集：
 
 	# make sure we are in Resource Manager mode (/documentation/articles/resource-manager-deployment-model/)
 	azure config mode arm

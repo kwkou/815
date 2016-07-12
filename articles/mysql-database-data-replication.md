@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-data-replication)
-- [English](/documentation/articles/mysql-database-enus-data-replication)
+- [中文](/documentation/articles/mysql-database-data-replication/)
+- [English](/documentation/articles/mysql-database-enus-data-replication/)
 
 #如何配置数据同步复制到MySQL Database on Azure
 

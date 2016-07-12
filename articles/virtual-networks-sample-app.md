@@ -180,6 +180,6 @@
 本示例应用程序中未包含设置 DNS 服务器的脚本。如果测试防火墙规则、NSG 或 UDR 时需要包含 DNS 流量，必须手动安装 DNS01 服务器。这两个示例的网络配置 XML 文件都包含 DNS01 作为主要 DNS 服务器，而由第 3 级托管的公共 DNS 服务器则作为备份 DNS 服务器。第 3 级 DNS 服务器是非本地流量使用的实际 DNS 服务器，若未安装 DNS01，就不会有本地 DNS。
 
 <!--Link References-->
-[HOME]: /documentation/articles/best-practices-network-security
+[HOME]: /documentation/articles/best-practices-network-security/
 
 <!---HONumber=82-->

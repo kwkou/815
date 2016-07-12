@@ -184,8 +184,8 @@
 
 [lnk-free-trial]: /pricing/1rmb-trial/
 [Azure 门户预览]: https://portal.azure.cn/
-[使用资源组管理 Azure 资源]: /documentation/articles/resource-group-portal
+[使用资源组管理 Azure 资源]: /documentation/articles/resource-group-portal/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management
-[lnk-sample-ui]: /documentation/articles/iot-hub-device-management-ui-sample
+[lnk-sample-ui]: /documentation/articles/iot-hub-device-management-ui-sample/
 
 <!---HONumber=Mooncake_0523_2016-->

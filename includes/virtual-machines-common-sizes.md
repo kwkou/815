@@ -1,6 +1,6 @@
 
 
-若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
+若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
 
 标准大小包括多个系列：A、D 和 DS。其中某些大小的注意事项包括：
 
@@ -8,9 +8,9 @@
 
 *   Dv2 系列是原 D 系列的后续系列，其特点是 CPU 功能更强大。Dv2 系列 CPU 比 D 系列 CPU 快大约 35%。该系列基于最新一代的 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) 处理器，通过 Intel Turbo Boost Technology 2.0 可以达到 3.1 GHz。Dv2 系列的内存和磁盘配置与 D 系列相同。
 
-*   DS 系列和 DvS 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
+*   DS 系列和 DvS 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
-	>[AZURE.NOTE] 目前，DS 系列不能直接在经典管理门户上创建，因为高级存储暂时还不支持在经典管理门户上创建。不过，你可以通过 Azure PowerShell 新建高级存储，然后新建虚拟机时把他指定为默认存储，然后制定虚拟机大小为 D，于是你便能得到 DS 的虚拟机。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
+	>[AZURE.NOTE] 目前，DS 系列不能直接在经典管理门户上创建，因为高级存储暂时还不支持在经典管理门户上创建。不过，你可以通过 Azure PowerShell 新建高级存储，然后新建虚拟机时把他指定为默认存储，然后制定虚拟机大小为 D，于是你便能得到 DS 的虚拟机。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
 *   A 系列 VM 可以部署在各种不同的硬件类型和处理器上。根据硬件限制大小，为运行中的实例提供一致的处理器性能，不论硬件部署的位置。若要判断此大小部署所在的物理硬件，请从虚拟机中查询虚拟硬件。
 
@@ -112,7 +112,7 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 |Standard\_DS13 |8|56|8|本地 SSD 磁盘 = 112 GB |16|288| 25,600 每秒 256 MB | 高 |
 |Standard\_DS14 |16|112|8|本地 SSD 磁盘 = 224 GB |32|576| 50,000 每秒 512 MB | 很高 |
 
-**DS 系列 VM 可能的最大每秒输入/输出操作次数 (IOPS) 和吞吐量（带宽）受磁盘大小影响。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
+**DS 系列 VM 可能的最大每秒输入/输出操作次数 (IOPS) 和吞吐量（带宽）受磁盘大小影响。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
 ## 注意：使用 CLI 和 Powershell 的标准 A0 - A4 
 
@@ -128,7 +128,7 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 
 ## 后续步骤
 
-- 了解 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
+- 了解 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
 
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -21,7 +21,7 @@
 
 网络配置文件可能包含以下元素。每个元素的标题链接到提供有关元素值设置的其他信息的页中。
 
->[AZURE.IMPORTANT] 有关如何配置网络配置文件的信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)。有关网络配置文件中包含的每个元素的信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
+>[AZURE.IMPORTANT] 有关如何配置网络配置文件的信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/)。有关网络配置文件中包含的每个元素的信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
 
 [Dns 元素](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
@@ -49,6 +49,6 @@
 
 - 了解 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)。
 - 了解 [Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)。
-- [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)。
+- [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/)。
 
 <!---HONumber=Mooncake_0418_2016-->

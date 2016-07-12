@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
-**注意：**如果你需要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install)。
+**注意：**如果你需要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install/)。
 
 ## 创建主题
 
@@ -174,8 +174,8 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 [Python Azure 包]: https://pypi.python.org/pypi/azure
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-[服务总线配额]: /documentation/articles/service-bus-quotas
+[服务总线配额]: /documentation/articles/service-bus-quotas/
 
 <!---HONumber=Mooncake_0104_2016-->

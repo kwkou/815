@@ -15,8 +15,8 @@
 # 使用经典部署模型为 VPN 网关配置强制隧道
 
 > [AZURE.SELECTOR]
-- [PowerShell - 服务管理](/documentation/articles/vpn-gateway-about-forced-tunneling)
-- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-forced-tunneling-rm)
+- [PowerShell - 服务管理](/documentation/articles/vpn-gateway-about-forced-tunneling/)
+- [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-forced-tunneling-rm/)
 
 借助强制隧道，您可以通过站点到站点 VPN 隧道，将全部 Internet 绑定流量重定向或“强制”返回到本地位置，以进行检查和审核。这是很多企业 IT 策略的关键安全要求。没有强制隧道，来自 Azure 中虚拟机的 Internet 绑定流量会始终通过 Azure 网络基础设施直接连接到 Internet。没有该选项，您无法对流量进行检查或审核。未经授权的 Internet 访问可能会导致信息泄漏或其他类型的安全漏洞。
 

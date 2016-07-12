@@ -15,8 +15,8 @@
 # 使用 Azure PowerShell 管理 Azure Redis 缓存
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell)
-- [Azure CLI](/documentation/articles/cache-manage-cli)
+- [PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell/)
+- [Azure CLI](/documentation/articles/cache-manage-cli/)
 
 本主题说明如何执行创建、更新和缩放 Azure Redis 缓存实例等常见任务、如何重新生成访问密钥，以及如何查看有关缓存的信息。有关 Azure Redis 缓存 PowerShell cmdlet 的完整列表，请参阅 [Azure Redis 缓存 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt634513.aspx)。
 
@@ -263,7 +263,7 @@
 >-	可以从**基本**缓存缩放为**标准**缓存，但不能同时更改大小。如果你需要不同大小，则可以执行后续缩放操作以缩放为所需大小。
 >-	不能从较大的大小减小为 **C0 (250 MB)** 大小。
 >
->有关详细信息，请参阅[如何缩放 Azure Redis 缓存](/documentation/articles/cache-how-to-scale)。
+>有关详细信息，请参阅[如何缩放 Azure Redis 缓存](/documentation/articles/cache-how-to-scale/)。
 
 以下示例演示了如何将名为 `myCache` 的缓存缩放为 2.5 GB 缓存。请注意，此命令适用于基本或标准缓存。
 

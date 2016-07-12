@@ -17,7 +17,7 @@ Azure Service Fabric 引入了一个运行状况模型，该模型提供丰富�
 
 Service Fabric 组件使用此运行状况模型报告其当前状态。你可以使用相同的机制报告应用程序中的运行状况。特定于你的自定义条件的运行状况报告的质量和丰富程度将决定你能够针对运行的应用程序检测和修复问题的轻松程度。
 
-> [AZURE.NOTE] 我们根据需要为监视的升级启动运行状况子系统。Service Fabric 提供监视的升级，该升级了解如何在没有停机时间、无用户干预最小化，并具有完整的群集和应用程序可用性的情况下升级群集或应用程序。若要执行此操作，升级会基于配置的升级策略检查运行状况，并且仅当运行状况遵从所需的阈值时允许升级继续。否则，升级会自动回滚或暂停，以便让管理员有机会修复问题。若要了解有关应用程序升级的详细信息，请参阅[本文](/documentation/articles/service-fabric-application-upgrade)。
+> [AZURE.NOTE] 我们根据需要为监视的升级启动运行状况子系统。Service Fabric 提供监视的升级，该升级了解如何在没有停机时间、无用户干预最小化，并具有完整的群集和应用程序可用性的情况下升级群集或应用程序。若要执行此操作，升级会基于配置的升级策略检查运行状况，并且仅当运行状况遵从所需的阈值时允许升级继续。否则，升级会自动回滚或暂停，以便让管理员有机会修复问题。若要了解有关应用程序升级的详细信息，请参阅[本文](/documentation/articles/service-fabric-application-upgrade/)。
 
 ## 运行状况存储
 运行状况存储保留群集中关于实体的运行状况相关信息，以进行轻松的检索和评估。它作为 Service Fabric 保留的有状态服务进行实现，以确保高度可用性和可缩放性。运行状况存储是 **fabric:/System** 应用程序的一部分，并且只要群集已启动并正在运行，即可使用。
@@ -25,7 +25,7 @@ Service Fabric 组件使用此运行状况模型报告其当前状态。你可�
 ## 运行状况实体和层次结构
 运行状况实体采用逻辑层次结构进行组织，该结构会捕获不同实体之间的交互和依赖项。基于从 Service Fabric 组件接收的报告，运行状况存储自动生成实体和层次结构。
 
-运行状况实体镜像 Service Fabric 实体。（例如，**运行状况应用程序实体**匹配群集中部署的应用程序实例，**运行状况节点实体**匹配 Service Fabric 群集节点。） 运行状况层次结构捕获系统实体的交互并且是进行高级运行状况评估的基础。你可以通过 [Service Fabric 技术概述](/documentation/articles/service-fabric-technical-overview)了解 Service Fabric 的关键概念。有关应用程序的详细信息，请参阅 [Service Fabric 应用程序模型](/documentation/articles/service-fabric-application-model)。
+运行状况实体镜像 Service Fabric 实体。（例如，**运行状况应用程序实体**匹配群集中部署的应用程序实例，**运行状况节点实体**匹配 Service Fabric 群集节点。） 运行状况层次结构捕获系统实体的交互并且是进行高级运行状况评估的基础。你可以通过 [Service Fabric 技术概述](/documentation/articles/service-fabric-technical-overview/)了解 Service Fabric 的关键概念。有关应用程序的详细信息，请参阅 [Service Fabric 应用程序模型](/documentation/articles/service-fabric-application-model/)。
 
 利用运行状况实体和层次结构，你能够有效地报告、调试和监视群集和应用程序。运行状况模型为群集中许多移动片段的运行状况提供准确而“精细”的表示。
 
@@ -197,7 +197,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 - **SourceId**。唯一标识运行状况事件的报告器的字符串。
 
-- **实体标识符**。标识对其申请报告的实体。它因[实体类型](/documentation/articles/service-fabric-health-introduction#health-entities-and-hierarchy)而异：
+- **实体标识符**。标识对其申请报告的实体。它因[实体类型](/documentation/articles/service-fabric-health-introduction/#health-entities-and-hierarchy)而异：
 
   - 群集。无。
 
@@ -219,7 +219,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 - **说明**。报告器用于提供有关运行状况事件的详细信息的字符串。**SourceId**、**属性**和 **HealthState** 应完整说明报告。说明中添加了用户可读的报告相关信息。这有助于让管理员和用户更容易理解。
 
-- **HealthState**。说明报告的运行状况状态的[枚举](/documentation/articles/service-fabric-health-introduction#health-states)。已接受值为“确定”、“警告”和“错误”。
+- **HealthState**。说明报告的运行状况状态的[枚举](/documentation/articles/service-fabric-health-introduction/#health-states)。已接受值为“确定”、“警告”和“错误”。
 
 - **TimeToLive**。指示运行状况报告的有效时间的时间跨度。结合 **RemoveWhenExpired** 时，它能够使运行状况存储知道如何评估过期的事件。默认情况下，此值为无穷大，表示报告将永远有效。
 
@@ -230,7 +230,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 每个运行状况报告都需要四种信息（SourceId、实体标识符、属性和 HealthState）。不允许 SourceId 字符串以前缀“**System.**”开头，该字符串是为系统报告保留的。对于相同实体，相同的源和属性只有一个报告。如果为相同的源和属性生成多个报告，它们会在运行状况客户端（如果按批处理）或在运行状况存储端覆盖彼此。根据序列号进行这种替换操作：较新的报告（具有更高的序列号）替换较旧的报告。
 
 ### 运行状况事件
-在内部，运行状况存储保留[运行状况事件](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.healthevent.aspx)，其中包含报告的所有信息以及其他元数据。这包括报告提供给运行状况客户端的时间，以及在服务器端修改该报告的时间。运行状况事件通过[运行状况查询](/documentation/articles/service-fabric-view-entities-aggregated-health#health-queries)返回。
+在内部，运行状况存储保留[运行状况事件](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.healthevent.aspx)，其中包含报告的所有信息以及其他元数据。这包括报告提供给运行状况客户端的时间，以及在服务器端修改该报告的时间。运行状况事件通过[运行状况查询](/documentation/articles/service-fabric-view-entities-aggregated-health/#health-queries)返回。
 
 已添加元数据包含：
 
@@ -324,14 +324,14 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 运行状况模型大量用于监视和诊断、评估群集和应用程序运行状况以及监视的升级。其他服务使用运行状况数据执行自动修复、生成群集运行状况历史记录以及对某些条件发出警报。
 
 ## 后续步骤
-[查看 Service Fabric 运行状况报告](/documentation/articles/service-fabric-view-entities-aggregated-health)
+[查看 Service Fabric 运行状况报告](/documentation/articles/service-fabric-view-entities-aggregated-health/)
 
-[使用系统运行状况报告进行故障排除](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
+[使用系统运行状况报告进行故障排除](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports/)
 
-[添加自定义 Service Fabric 运行状况报告](/documentation/articles/service-fabric-report-health)
+[添加自定义 Service Fabric 运行状况报告](/documentation/articles/service-fabric-report-health/)
 
-[在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)
+[在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)
 
-[Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade)
+[Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
  
 <!---HONumber=Mooncake_0523_2016-->

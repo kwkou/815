@@ -94,7 +94,7 @@ Azure 提供了安全机制来帮助管理员管理 Azure 云服务和虚拟机�
 
 虚拟机部署的应用程序将根据需要提供自身的客户端工具和界面（例如 Microsoft Management Console (MMC)）、企业管理控制台（例如 Microsoft System Center 或 Windows Intune）或其他管理应用程序（例如 Microsoft SQL Server Management Studio）。这些工具通常驻留在企业环境或客户端网络中。它们可能依赖于需要直接有状态连接的特定网络协议，例如远程桌面协议 (RDP)。有些可能包含不应该通过 Internet 公开发布或访问的具有 Web 功能的接口。
 
-你可以使用[多重身份验证](/documentation/articles/multi-factor-authentication)、[X.509 管理证书](https://blogs.msdn.microsoft.com/azuresecurity/2015/07/13/certificate-management-in-azure-dos-and-donts/)和防火墙规则来限制访问 Azure 中的基础结构和平台服务管理。Azure 经典管理门户和 SMAPI 需要传输层安全性 (TLS)。但是，部署到 Azure 的服务和应用程序需要根据应用程序采取适当的保护措施。可以通过标准化的强化后工作站配置更轻松地经常启用这些机制。
+你可以使用[多重身份验证](/documentation/articles/multi-factor-authentication/)、[X.509 管理证书](https://blogs.msdn.microsoft.com/azuresecurity/2015/07/13/certificate-management-in-azure-dos-and-donts/)和防火墙规则来限制访问 Azure 中的基础结构和平台服务管理。Azure 经典管理门户和 SMAPI 需要传输层安全性 (TLS)。但是，部署到 Azure 的服务和应用程序需要根据应用程序采取适当的保护措施。可以通过标准化的强化后工作站配置更轻松地经常启用这些机制。
 
 ### 管理网关
 
@@ -121,7 +121,7 @@ Azure 提供了安全机制来帮助管理员管理 Azure 云服务和虚拟机�
 
 ### 连接
 
-有多种机制可供帮助保护客户端与 Azure 虚拟网络的连接。在这些机制中，[站点到站点 VPN](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create) (P2S) 支持使用行业标准 IPsec (S2S) 或[安全套接字隧道协议](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) 来进行加密和隧道传输。当 Azure 连接到面向公众的 Azure 服务管理（例如 Azure 经典管理门户）时，Azure 需要超文本安全传输协议 (HTTPS)。
+有多种机制可供帮助保护客户端与 Azure 虚拟网络的连接。在这些机制中，[站点到站点 VPN](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) (P2S) 支持使用行业标准 IPsec (S2S) 或[安全套接字隧道协议](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) 来进行加密和隧道传输。当 Azure 连接到面向公众的 Azure 服务管理（例如 Azure 经典管理门户）时，Azure 需要超文本安全传输协议 (HTTPS)。
 
 未通过 RD 网关连接到 Azure 的独立强化工作站应使用基于 SSTP 的点到站点 VPN 来与 Azure 虚拟网络建立初始连接，然后从 VPN 隧道与各个虚拟机建立 RDP 连接。
 

@@ -20,7 +20,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Az
 
 你可以使用[经典管理门户](https://manage.windowsazure.cn)、Azure 存储空间 PowerShell cmdlet、Azure 存储空间客户端库或 Azure 存储空间 REST API 来创建 Azure 文件共享。此外，由于文件共享是 SMB 共享，因此你还可以通过标准的文件系统 API 来访问它们。
 
-文件存储基于与 Blob、表和队列存储相同的技术构建，因此文件存储能够提供 Azure 存储平台内置的现有可用性、持续性、可伸缩性和异地冗余。有关存文件存储性能目标和限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+文件存储基于与 Blob、表和队列存储相同的技术构建，因此文件存储能够提供 Azure 存储平台内置的现有可用性、持续性、可伸缩性和异地冗余。有关存文件存储性能目标和限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 文件存储现已正式推出并同时支持 SMB 2.1 和 SMB 3.0。有关文件存储的更多详细信息，请参阅[文件服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)。
 
@@ -90,11 +90,11 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Az
 - 调整文件共享大小配额。
 - 复制 `net use` 命令以用于从 Windows 客户端装载文件共享。 
 
-还可以从 Linux 使用 Azure 跨平台命令行界面 (Azure CLI) 来管理文件共享。Azure CLI 提供了一组开放源代码跨平台命令，你可以使用这些命令来处理 Azure 存储（包括文件存储）。它提供 Azure 经典管理门户所能提供的相同功能，此外还有各种数据访问功能。有关示例，请参阅[将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli)。
+还可以从 Linux 使用 Azure 跨平台命令行界面 (Azure CLI) 来管理文件共享。Azure CLI 提供了一组开放源代码跨平台命令，你可以使用这些命令来处理 Azure 存储（包括文件存储）。它提供 Azure 经典管理门户所能提供的相同功能，此外还有各种数据访问功能。有关示例，请参阅[将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli/)。
 
 ## 使用文件存储进行开发 ##
 
-作为开发人员，你可以通过[适用于 Java 的 Azure 存储空间客户端库](https://github.com/azure/azure-storage-java)使用文件存储构建应用程序。有关代码示例，请参阅[如何通过 Java 使用文件存储](/documentation/articles/storage-java-how-to-use-file-storage)。
+作为开发人员，你可以通过[适用于 Java 的 Azure 存储空间客户端库](https://github.com/azure/azure-storage-java)使用文件存储构建应用程序。有关代码示例，请参阅[如何通过 Java 使用文件存储](/documentation/articles/storage-java-how-to-use-file-storage/)。
 
 你还可以使用[适用于 Node.js 的 Azure 存储空间客户端库](https://github.com/Azure/azure-storage-node)针对文件存储进行开发。
 
@@ -111,12 +111,12 @@ Linux 用户，我们希望倾听你的意见！
 ### 概念性文章
 
 - [Azure 文件存储：适用于 Windows 和 Linux 的顺畅的云 SMB 文件系统](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
-- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
+- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
 
 ### 文件存储的工具支持
 
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
-- 通过 Azure CLI [创建和管理文件共享](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
+- 通过 Azure CLI [创建和管理文件共享](/documentation/articles/storage-azure-cli/#create-and-manage-file-shares)
 
 ### 引用
 

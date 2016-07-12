@@ -18,7 +18,7 @@
 # 将 Windows VM 映像上载到 Azure 以进行资源管理器部署
 
 
-本文介绍如何使用 Windows 操作系统上载虚拟硬盘 (VHD)，因此可以通过它使用 Azure Resource Manager 部署模型创建新的 Windows 虚拟机 (VM)。有关 Azure 中的磁盘和 VHD 的更多详细信息，请参阅 [About disks and VHDs for virtual machines（关于虚拟机的磁盘和 VHD）](/documentation/articles/virtual-machines-linux-about-disks-vhds)。
+本文介绍如何使用 Windows 操作系统上载虚拟硬盘 (VHD)，因此可以通过它使用 Azure Resource Manager 部署模型创建新的 Windows 虚拟机 (VM)。有关 Azure 中的磁盘和 VHD 的更多详细信息，请参阅 [About disks and VHDs for virtual machines（关于虚拟机的磁盘和 VHD）](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。
 
 
 
@@ -28,7 +28,7 @@
 
 - **Azure 订阅** - 如果你没有 Azure 订阅，请[注册 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
-- **Azure PowerShell 1.0 或更高版本** - 如果你还没有安装它，请阅读 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
+- **Azure PowerShell 1.0 或更高版本** - 如果你还没有安装它，请阅读 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。
 
 - **运行 Windows 的虚拟机** - 有许多工具可在本地创建虚拟机。有关示例，请参阅 [Install the Hyper-V Role and configure a virtual machine（安装 Hyper-V 角色和配置虚拟机）](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。若要了解 Azure 支持哪些 Windows 操作系统，请参阅 [Microsoft server software support for Azure virtual machines（对 Azure 虚拟机的 Microsoft 服务器软件支持）](https://support.microsoft.com/kb/2721672)。
 
@@ -262,6 +262,6 @@ Azure 只能接受以 VHD 文件格式保存的[第 1 代虚拟机](http://blogs
 
 ## 后续步骤
 
-若要使用 Azure PowerShell 管理新虚拟机，请阅读 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 与 PowerShell 来管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)。
+若要使用 Azure PowerShell 管理新虚拟机，请阅读 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 与 PowerShell 来管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage/)。
 
 <!---HONumber=Mooncake_0613_2016-->

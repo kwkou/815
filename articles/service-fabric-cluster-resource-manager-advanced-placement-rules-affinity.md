@@ -58,8 +58,8 @@ await fabricClient.ServiceManager.CreateServiceAsync(serviceDescription);
 对于相关性，要注意的最后一点是，不支持分区父级的相关性关系。我们最终可能会支持这一点，但目前并不允许。
 
 ## 后续步骤
-- 有关可用于配置服务的其他选项的详细信息，请查看 [Learn about configuring Services](/documentation/articles/service-fabric-cluster-resource-manager-configure-services)（了解如何配置服务）中提供的其他群集资源管理器配置的相关主题
-- 用户尝试使用相关性的许多原因（例如限制服务在少量计算机上运行，以及尝试聚合服务集合的负载）实际上可以通过应用程序组获得更好的支持。请查看 [Application Groups](/documentation/articles/service-fabric-cluster-resource-manager-application-groups)（应用程序组）
+- 有关可用于配置服务的其他选项的详细信息，请查看 [Learn about configuring Services](/documentation/articles/service-fabric-cluster-resource-manager-configure-services/)（了解如何配置服务）中提供的其他群集资源管理器配置的相关主题
+- 用户尝试使用相关性的许多原因（例如限制服务在少量计算机上运行，以及尝试聚合服务集合的负载）实际上可以通过应用程序组获得更好的支持。请查看 [Application Groups](/documentation/articles/service-fabric-cluster-resource-manager-application-groups/)（应用程序组）
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-advanced-placement-rules-affinity/cluster-resrouce-manager-affinity-modes.png
 [Image2]: ./media/service-fabric-cluster-resource-manager-advanced-placement-rules-affinity/cluster-resource-manager-chains-vs-stars.png

@@ -114,6 +114,6 @@ Azure 门户预览使你能够创建并排的指标图表。
 	![更新后的过去一小时请求总数磁贴的屏幕截图](./media/documentdb-monitor-accounts/documentdb-no-available-data-fixed.png)
 
 ## 后续步骤
-若要了解有关 DocumentDB 容量的详细信息，请参阅[管理 DocumentDB 容量](/documentation/articles/documentdb-manage)。
+若要了解有关 DocumentDB 容量的详细信息，请参阅[管理 DocumentDB 容量](/documentation/articles/documentdb-manage/)。
 
 <!---HONumber=Mooncake_0627_2016-->

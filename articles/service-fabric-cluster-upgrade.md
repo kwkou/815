@@ -70,7 +70,7 @@ Microsoft 将维护群集中运行的结构代码和配置。我们将根据需�
 可以通过对 servicefabric.cluster 资源发出 PUT 命令，来轻松更新主证书或辅助证书。
 
 >[AZURE.NOTE] 在标识用于群集资源的证书之前，必须先完成以下步骤，否则不会使用新的证书：
-1. 将新证书上载到 Azure 密钥保管库。有关说明，请参阅 [Service Fabric 安全性](/documentation/articles/service-fabric-cluster-security)。从该文档的步骤 2 开始。
+1. 将新证书上载到 Azure 密钥保管库。有关说明，请参阅 [Service Fabric 安全性](/documentation/articles/service-fabric-cluster-security/)。从该文档的步骤 2 开始。
 2. 更新所有构成群集的虚拟机 (VM)，以便将证书部署到这些虚拟机上。为此，请参阅 [Azure 密钥保管库团队博客](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx)。
 
 ### 应用程序端口
@@ -90,11 +90,11 @@ Microsoft 将维护群集中运行的结构代码和配置。我们将根据需�
 
 对于每个节点类型，可以添加要在应用程序中使用的自定义放置属性。NodeType 是无需显式添加即可使用的默认属性。
 
->[AZURE.NOTE] 有关使用放置约束、节点属性以及如何定义它们的详细信息，请参阅 Service Fabric 群集资源管理器文档[描述群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description)中的“放置约束和节点属性”部分。
+>[AZURE.NOTE] 有关使用放置约束、节点属性以及如何定义它们的详细信息，请参阅 Service Fabric 群集资源管理器文档[描述群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)中的“放置约束和节点属性”部分。
 
 ### 容量度量值
 
-对于每个节点类型，可以添加要在应用程序中用于报告负载的自定义容量度量值。有关使用容量指标来报告负载的详细信息，请参阅 Service Fabric 群集资源管理器文档[描述群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description)以及[指标和负载](/documentation/articles/service-fabric-cluster-resource-manager-metrics)。
+对于每个节点类型，可以添加要在应用程序中用于报告负载的自定义容量度量值。有关使用容量指标来报告负载的详细信息，请参阅 Service Fabric 群集资源管理器文档[描述群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)以及[指标和负载](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)。
 
 ### 构成群集的 VM 上的操作系统修补
 
@@ -106,8 +106,8 @@ Microsoft 将维护群集中运行的结构代码和配置。我们将根据需�
 
 ## 后续步骤
 
-- 了解如何[扩展和缩减群集](/documentation/articles/service-fabric-cluster-scale-up-down)
-- 了解[应用程序升级](/documentation/articles/service-fabric-application-upgrade)
+- 了解如何[扩展和缩减群集](/documentation/articles/service-fabric-cluster-scale-up-down/)
+- 了解[应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
 <!--Image references-->
 [CertificateUpgrade]: ./media/service-fabric-cluster-upgrade/CertificateUpgrade.png

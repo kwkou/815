@@ -14,8 +14,8 @@
 
 # Azure IaaS 用户手册 - 第三部分
 
-- [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1)
-- [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2)
+- [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1/)
+- [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2/)
 
 ##<a name="section_6"></a> 4.	高级内容
 ###<a name="section_6_1"></a> 4.1 设置虚拟机端口映射

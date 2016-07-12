@@ -16,8 +16,8 @@
 # 如何使用 Azure 经典管理门户缩放媒体处理
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encoding-units)
-- [门户](/documentation/articles/media-services-portal-encoding-units)
+- [.NET](/documentation/articles/media-services-dotnet-encoding-units/)
+- [门户](/documentation/articles/media-services-portal-encoding-units/)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 - [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
@@ -71,7 +71,7 @@
 
 ##配额和限制
 
-有关配额和限制以及如何开具支持票证的信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
+有关配额和限制以及如何开具支持票证的信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
 
 
 

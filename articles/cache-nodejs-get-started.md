@@ -15,15 +15,15 @@
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
-- [ASP.NET](/documentation/articles/cache-web-app-howto)
-- [Node.js](/documentation/articles/cache-nodejs-get-started)
-- [Java](/documentation/articles/cache-java-get-started)
-- [Python](/documentation/articles/cache-python-get-started)
+- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
+- [ASP.NET](/documentation/articles/cache-web-app-howto/)
+- [Node.js](/documentation/articles/cache-nodejs-get-started/)
+- [Java](/documentation/articles/cache-java-get-started/)
+- [Python](/documentation/articles/cache-python-get-started/)
 
 Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问你的缓存。
 
-本主题说明如何开始将 Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio)。
+本主题说明如何开始将 Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio/)。
 
 
 ## 先决条件
@@ -79,6 +79,6 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序]: /documentation/articles/web-sites-nodejs-chat-app-socketio
+[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
 
 <!---HONumber=71-->

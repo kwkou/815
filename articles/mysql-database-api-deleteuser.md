@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-api-deleteuser)
-- [English](/documentation/articles/mysql-database-enus-api-deleteuser)
+- [中文](/documentation/articles/mysql-database-api-deleteuser/)
+- [English](/documentation/articles/mysql-database-enus-api-deleteuser/)
 
 #删除用户
 

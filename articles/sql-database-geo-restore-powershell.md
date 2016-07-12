@@ -15,11 +15,11 @@
 # 使用 PowerShell 从异地冗余备份还原 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-geo-restore-powershell)
+- [PowerShell](/documentation/articles/sql-database-geo-restore-powershell/)
 
 本文展示了如何使用 PowerShell 通过异地还原将数据库还原到新服务器中。
 
-[异地还原](/documentation/articles/sql-database-geo-restore)让你能够从异地冗余备份还原数据库以创建新数据库。可以在任意 Azure 区域中的任何服务器上创建数据库。由于它使用异地冗余备份作为其源，因此即使由于停电而无法访问数据库，也能够用其恢复数据库。将自动为所有服务层启用异地还原，而无需支付额外费用。
+[异地还原](/documentation/articles/sql-database-geo-restore/)让你能够从异地冗余备份还原数据库以创建新数据库。可以在任意 Azure 区域中的任何服务器上创建数据库。由于它使用异地冗余备份作为其源，因此即使由于停电而无法访问数据库，也能够用其恢复数据库。将自动为所有服务层启用异地还原，而无需支付额外费用。
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
 
@@ -46,13 +46,13 @@
 
 ## 后续步骤
 
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)
-- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
+- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
 
 
 ## 其他资源
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 
 <!---HONumber=Mooncake_0530_2016-->

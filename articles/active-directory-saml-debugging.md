@@ -23,8 +23,8 @@
 
 <!--## 相关文章
 
-- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
-- [如何为预先集成的应用程序自定义 SAML 令牌中颁发的声明](/documentation/articles/active-directory-saml-claims-customization)
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
+- [如何为预先集成的应用程序自定义 SAML 令牌中颁发的声明](/documentation/articles/active-directory-saml-claims-customization/)
 -->
 <!--Image references-->
 [1]: ./media/active-directory-saml-debugging/fiddler.png

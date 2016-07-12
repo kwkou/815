@@ -66,9 +66,9 @@
 [Windows 10]: http://windows.microsoft.com/zh-cn/windows/using-internet-connection-sharing#1TC=windows-7
 [Ubuntu]: https://help.ubuntu.com/community/Internet/ConnectionSharing
 [3]: ./media/iot-hub-gateway-device-management/manage_2.png
-[lnk-gateway-get-started]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started
-[lnk-gateway-simulated]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview
+[lnk-gateway-get-started]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
+[lnk-gateway-simulated]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/
 
 
 

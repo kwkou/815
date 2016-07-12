@@ -13,7 +13,7 @@
    wacn.date="05/31/2016"/>
 
 # Azure 来宾 OS 可支持性和停用策略
-本页面上的信息与 Azure 来宾操作系统（[来宾 OS](/documentation/articles/cloud-services-guestos-update-matrix)）相关。来宾 OS 仅适用于云服务辅助角色和 Web 角色 (PaaS)，而不适用于虚拟机 (IaaS)。
+本页面上的信息与 Azure 来宾操作系统（[来宾 OS](/documentation/articles/cloud-services-guestos-update-matrix/)）相关。来宾 OS 仅适用于云服务辅助角色和 Web 角色 (PaaS)，而不适用于虚拟机 (IaaS)。
 
 Microsoft 已发布[来宾 OS 的支持策略](http://support.microsoft.com/zh-cn/gp/azure-cloud-lifecycle-faq)。你目前正在阅读的页面描述了如何实施该策略。
 
@@ -23,7 +23,7 @@ Microsoft 已发布[来宾 OS 的支持策略](http://support.microsoft.com/zh-c
 2. Microsoft 支持**至少两个最新的支持来宾 OS 系列版本**。 
 3. Microsoft 支持**至少两个最新的 Azure SDK 版本**。在某个 SDK 版本停用后，客户可以在从正式停用之日起的 12 个月内更新为较新的版本。 
 
-有时，可能会支持两个以上的系列或发行版。将在 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix)中显示正式的来宾 OS 支持信息。
+有时，可能会支持两个以上的系列或发行版。将在 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix/)中显示正式的来宾 OS 支持信息。
 
 
 ## 何时停用来宾 OS 系列或版本 
@@ -36,7 +36,7 @@ Microsoft 已发布[来宾 OS 的支持策略](http://support.microsoft.com/zh-c
 ### 来宾 OS 停用的过程 
 
 
-宣布停用之后，客户在较旧系列正式从服务中移除之前有 12 个月的“过渡”期。过渡时间可能延长，这由 Microsoft 决定。将在 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix)中发布更新。
+宣布停用之后，客户在较旧系列正式从服务中移除之前有 12 个月的“过渡”期。过渡时间可能延长，这由 Microsoft 决定。将在 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix/)中发布更新。
 
 在过渡期开始的 6 个月后，将逐步执行停用过程。在此期间：
 
@@ -57,7 +57,7 @@ Microsoft 将继续推出合并了最新 MSRC 更新的新来宾 OS 版本，直
 
 之后，来宾 OS 版本“到期”，仍在运行该版本的任何安装都会强制升级并设置为在将来自动更新来宾 OS。过期是分批过期的，因此从禁用到过期的时间段可能各不相同。
 
-这些期间可能会延长，这由 Microsoft 决定，以便于客户过渡。将在 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix)中通告所有更改。
+这些期间可能会延长，这由 Microsoft 决定，以便于客户过渡。将在 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix/)中通告所有更改。
 
 
 
@@ -81,9 +81,9 @@ Microsoft 将继续推出合并了最新 MSRC 更新的新来宾 OS 版本，直
 
 **如果我的 Web 应用程序需要更深入地与 OS 集成，我该怎么办？**
 
-如果你的 Web 应用程序体系结构需要更深入地依赖于基本操作系统，请使用平台支持的功能（例如[启动任务](/documentation/articles/cloud-services-startup-tasks)）或将来可能存在的其他扩展性机制。此外，你还可以使用 [Azure 虚拟机](/documentation/services/virtual-machines)（IaaS – 基础结构即服务），你可以在其中负责维护基本操作系统。
+如果你的 Web 应用程序体系结构需要更深入地依赖于基本操作系统，请使用平台支持的功能（例如[启动任务](/documentation/articles/cloud-services-startup-tasks/)）或将来可能存在的其他扩展性机制。此外，你还可以使用 [Azure 虚拟机](/documentation/services/virtual-machines)（IaaS – 基础结构即服务），你可以在其中负责维护基本操作系统。
  
 ## 后续步骤
-查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix)。
+查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix/)。
 
 <!---HONumber=Mooncake_0523_2016-->

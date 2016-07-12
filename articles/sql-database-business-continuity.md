@@ -62,21 +62,21 @@
 | 异地还原 | ERT < 12 小时，RPO < 1 小时 | ERT < 12 小时，RPO < 1 小时 | ERT < 12 小时，RPO < 1 小时
 | 活动异地复制 | ERT < 30 秒，RPO < 5 秒 | ERT < 30 秒，RPO < 5 秒 | ERT < 30 秒，RPO < 5 秒
 
-提供这些功能是为了解决前面列出的方案。有关如何选择特定功能的指导，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)部分。
+提供这些功能是为了解决前面列出的方案。有关如何选择特定功能的指导，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design/)部分。
 
 > [AZURE.NOTE] ERT 和 RPO 值是工程目标，并仅提供指导。它们不属于 [SQL 数据库的 SLA](/support/legal/sla)
 
 
 ###时间点还原
 
-[时间点还原](/documentation/articles/sql-database-point-in-time-restore)旨在将数据库还原到以前的某个时间点。它使用服务自动为每个用户数据库维护的数据库备份、增量备份和事务日志备份。此功能适用于所有服务层。基本、标准和高级数据库的还原期限分别为 7 天、14 天和 35 天。有关如何使用时间点还原的详细信息，请参阅[在人为失误后恢复](/documentation/articles/sql-database-user-error-recovery)。
+[时间点还原](/documentation/articles/sql-database-point-in-time-restore/)旨在将数据库还原到以前的某个时间点。它使用服务自动为每个用户数据库维护的数据库备份、增量备份和事务日志备份。此功能适用于所有服务层。基本、标准和高级数据库的还原期限分别为 7 天、14 天和 35 天。有关如何使用时间点还原的详细信息，请参阅[在人为失误后恢复](/documentation/articles/sql-database-user-error-recovery/)。
 
 ###异地还原
 
-[异地还原](/documentation/articles/sql-database-geo-restore)也适用于基本、标准和高级数据库。当数据库由于它所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与时间点还原一样，异地还原依赖于异地冗余的 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。有关如何使用异地还原的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)。
+[异地还原](/documentation/articles/sql-database-geo-restore/)也适用于基本、标准和高级数据库。当数据库由于它所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与时间点还原一样，异地还原依赖于异地冗余的 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。有关如何使用异地还原的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery/)。
 
 ###活动异地复制
 
-[活动异地复制](/documentation/articles/sql-database-geo-replication-overview)适用于所有数据库层。它专为恢复要求超出了异地还原的能力的应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。可以启动到任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade)。
+[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)适用于所有数据库层。它专为恢复要求超出了异地还原的能力的应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。可以启动到任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade/)。
 
 <!---HONumber=Mooncake_0530_2016-->

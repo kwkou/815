@@ -104,11 +104,11 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 	* 登录到 [Azure 经典管理门户][portal]，依次选择您的 Web 应用、"仪表板"，然后在"速览"部分中查找" Web 应用 URL"条目。
 
-	* 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
+	* 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
 
 			get-azurewebsite yoursitename | select hostnames
 
-	* 安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)，然后使用以下命令：
+	* 安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install/)，然后使用以下命令：
 
 			azure site domain list yoursitename
 
@@ -149,7 +149,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 **使用命令行工具添加域名**
 
-安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)，然后使用以下命令：
+安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install/)，然后使用以下命令：
 
 	azure site domain add customdomain yoursitename
 
@@ -245,7 +245,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 **使用命令行工具添加域名**
 
-安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)，然后使用以下命令：
+安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install/)，然后使用以下命令：
 
 	azure site domain add customdomain yoursitename
 
@@ -279,7 +279,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 ## 后续步骤
 
--   [如何管理 Web 应用](/documentation/articles/web-sites-manage)
+-   [如何管理 Web 应用](/documentation/articles/web-sites-manage/)
 
 -   [为 Web 应用配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate/)
 
@@ -297,7 +297,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 [PricingDetails]: /pricing/overview/
 [portal]: http://manage.windowsazure.cn
 [digweb]: http://www.digwebinterface.com/
-[cloudservicedns]: /documentation/articles/custom-dns
+[cloudservicedns]: /documentation/articles/custom-dns/
 [trafficmanager]: /documentation/articles/web-sites-traffic-manager/
 [addendpoint]: http://msdn.microsoft.com/zh-cn/library/azure/hh744839.aspx
 [createprofile]: http://msdn.microsoft.com/zh-cn/library/azure/dn339012.aspx

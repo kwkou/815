@@ -41,7 +41,7 @@ Azure 云服务由包含一个或多个 Web 角色或辅助角色的集合组成
 
 ###弹性
 
-为每个角色运行的初始实例数量由每个角色的配置决定。管理员应根据预期负载，将每个角色初始配置为运行两个或多个实例。但是，角色实例数可以随着使用模式的更改轻松扩展或缩减。可以在 Azure 门户预览中手动执行此操作，或者使用 Windows PowerShell、服务管理 API 或第三方工具来自动完成该过程。有关详细信息，请参阅 [How to autoscale an application（如何自动缩放应用程序）](/documentation/articles/cloud-services-how-to-scale)。
+为每个角色运行的初始实例数量由每个角色的配置决定。管理员应根据预期负载，将每个角色初始配置为运行两个或多个实例。但是，角色实例数可以随着使用模式的更改轻松扩展或缩减。可以在 Azure 门户预览中手动执行此操作，或者使用 Windows PowerShell、服务管理 API 或第三方工具来自动完成该过程。有关详细信息，请参阅 [How to autoscale an application（如何自动缩放应用程序）](/documentation/articles/cloud-services-how-to-scale/)。
 
 ###分区
 
@@ -79,7 +79,7 @@ Azure 原本就能识别 PaaS 应用程序（Web 角色和辅助角色）中的�
 
 ###负载平衡
 
-如果应在各 VM 间分布流量，必须将应用程序中的 VM 分组，并对特定的 TCP 或 UDP 终结点进行负载平衡。有关详细信息，请参阅 [Load balancing virtual machines（对虚拟机进行负载平衡）](/documentation/articles/virtual-machines-linux-load-balance)。如果 VM 接收来自其他来源（如排队机制）的输入，则不需要负载平衡器。负载平衡器使用基本运行状况检查来确定是否应将流量发送到节点。你也可以创建自己的探测，实现应用程序特定的运行状况指标，以确定 VM 是否应接收流量。
+如果应在各 VM 间分布流量，必须将应用程序中的 VM 分组，并对特定的 TCP 或 UDP 终结点进行负载平衡。有关详细信息，请参阅 [Load balancing virtual machines（对虚拟机进行负载平衡）](/documentation/articles/virtual-machines-linux-load-balance/)。如果 VM 接收来自其他来源（如排队机制）的输入，则不需要负载平衡器。负载平衡器使用基本运行状况检查来确定是否应将流量发送到节点。你也可以创建自己的探测，实现应用程序特定的运行状况指标，以确定 VM 是否应接收流量。
 
 <a id="storage"></a>
 ##存储
@@ -110,11 +110,11 @@ Azure 存储空间数据持久性形成的方式，是在区域内完全独立�
 
 Azure SQL 数据库提供数据库即服务。它使应用程序可以快速预配和查询关系数据库，并在数据库中插入数据。它提供许多熟悉的 SQL Server 特性与功能，同时减少了硬件、配置、修补和复原方面的负担。
 
->[AZURE.NOTE] Azure SQL 数据库并不提供与 SQL Server 一一对应的功能。其目的在于满足专门适用于云应用程序的一套不同的要求（通过弹性扩展、数据库即服务来降低维护成本等）。有关详细信息，请参阅 [Choose a cloud SQL Server option: Azure SQL Database (PaaS) or SQL Server on Azure VMs (IaaS)（选择云 SQL Server 选项：Azure SQL 数据库 (PaaS) 或 Azure VM 上的 SQL Server (IaaS)）](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)。
+>[AZURE.NOTE] Azure SQL 数据库并不提供与 SQL Server 一一对应的功能。其目的在于满足专门适用于云应用程序的一套不同的要求（通过弹性扩展、数据库即服务来降低维护成本等）。有关详细信息，请参阅 [Choose a cloud SQL Server option: Azure SQL Database (PaaS) or SQL Server on Azure VMs (IaaS)（选择云 SQL Server 选项：Azure SQL 数据库 (PaaS) 或 Azure VM 上的 SQL Server (IaaS)）](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)。
 
 ####复制
 
-Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入数据库的内容会使用仲裁提交技术自动复制到两个或更多个后台节点。（主要副本和至少一个辅助副本必须先确认活动写入事务日志，然后才将事务视为成功并返回。） 在节点发生故障时，数据库会自动故障转移到其中一个辅助副本。这会造成客户端应用程序的暂时连接中断。因此，所有 Azure SQL 数据库客户端都必须实现某种形式的暂时连接处理。有关详细信息，请参阅 [Retry service specific guidance（重试服务指南）](/documentation/articles/best-practices-retry-service-specific)。
+Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入数据库的内容会使用仲裁提交技术自动复制到两个或更多个后台节点。（主要副本和至少一个辅助副本必须先确认活动写入事务日志，然后才将事务视为成功并返回。） 在节点发生故障时，数据库会自动故障转移到其中一个辅助副本。这会造成客户端应用程序的暂时连接中断。因此，所有 Azure SQL 数据库客户端都必须实现某种形式的暂时连接处理。有关详细信息，请参阅 [Retry service specific guidance（重试服务指南）](/documentation/articles/best-practices-retry-service-specific/)。
 
 ####资源管理
 
@@ -143,13 +143,13 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
 
 可使用 AlwaysOn 可用性组或数据库镜像，为 Azure 中的 SQL Server 数据库提供高可用性解决方案。
 
-下图演示了 Azure 虚拟机中运行的 AlwaysOn 可用性组的体系架构。此图摘自有关本主题的深入文章 [High availability and disaster recovery for SQL Server on Azure Virtual Machines（Azure 虚拟机中的 SQL Server 高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)。
+下图演示了 Azure 虚拟机中运行的 AlwaysOn 可用性组的体系架构。此图摘自有关本主题的深入文章 [High availability and disaster recovery for SQL Server on Azure Virtual Machines（Azure 虚拟机中的 SQL Server 高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
 ![Azure 中的 AlwaysOn 可用性组](./media/resiliency-technical-guidance-recovery-local-failures/high_availability_solutions-1.png)
 
 也可以在 Azure 门户预览中使用 AlwaysOn 模板在 Azure VM 上自动预配 AlwaysOn 可用性组的端到端部署。有关详细信息，请参阅 [SQL Server AlwaysOn Offering in Azure Portal Gallery（Azure 门户预览库中的 SQL Server AlwaysOn 产品）](https://blogs.technet.microsoft.com/dataplatforminsider/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery/)。
 
-下图演示了在 Azure 虚拟机上使用数据库镜像的情况。该图同样摘自深入主题文章 [High availability and disaster recovery for SQL Server on Azure Virtual Machines（Azure 虚拟机中的 SQL Server 高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)。
+下图演示了在 Azure 虚拟机上使用数据库镜像的情况。该图同样摘自深入主题文章 [High availability and disaster recovery for SQL Server on Azure Virtual Machines（Azure 虚拟机中的 SQL Server 高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
 ![Azure 中的数据库镜像](./media/resiliency-technical-guidance-recovery-local-failures/high_availability_solutions-2.png)
 
@@ -162,18 +162,18 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
 <a id="service-bus"></a>
 ###服务总线
 
-为了防范 Azure 服务总线的临时中断，请考虑创建一个持久的客户端队列。这会临时使用备用的本地存储机制，来存储无法添加到服务总线队列的消息。应用程序可以在还原服务后再决定如何处理临时存储的消息。有关详细信息，请参阅 [Best practices for performance improvements using Service Bus brokered messaging（使用服务总线中转消息传送改进性能的最佳实践）](/documentation/articles/service-bus-performance-improvements)和[Service Bus (disaster recovery)（服务总线（灾难恢复））](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region#service-bus)。
+为了防范 Azure 服务总线的临时中断，请考虑创建一个持久的客户端队列。这会临时使用备用的本地存储机制，来存储无法添加到服务总线队列的消息。应用程序可以在还原服务后再决定如何处理临时存储的消息。有关详细信息，请参阅 [Best practices for performance improvements using Service Bus brokered messaging（使用服务总线中转消息传送改进性能的最佳实践）](/documentation/articles/service-bus-performance-improvements/)和[Service Bus (disaster recovery)（服务总线（灾难恢复））](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region/#service-bus)。
 
 ###移动服务
 
-关于 Azure 移动服务，有两项可用性注意事项。首先，请定期备份与移动服务关联的 SQL 数据库。其次还要备份移动服务脚本。有关详细信息，请参阅 [Recover your mobile service in the event of a disaster（在发生灾难时恢复移动服务）](/documentation/articles/mobile-services-disaster-recovery)。
+关于 Azure 移动服务，有两项可用性注意事项。首先，请定期备份与移动服务关联的 SQL 数据库。其次还要备份移动服务脚本。有关详细信息，请参阅 [Recover your mobile service in the event of a disaster（在发生灾难时恢复移动服务）](/documentation/articles/mobile-services-disaster-recovery/)。
 
-如果移动服务经历暂时中断，你可能必须临时使用备用 Azure 数据中心。有关详细信息，请参阅 [Mobile Services (disaster recovery)（移动服务（灾难恢复））](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region#mobile-services)。
+如果移动服务经历暂时中断，你可能必须临时使用备用 Azure 数据中心。有关详细信息，请参阅 [Mobile Services (disaster recovery)（移动服务（灾难恢复））](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region/#mobile-services)。
 
 <a id="hdinsight"></a>
 ###HDInsight
 
-与 Azure HDInsight 关联的数据默认存储在 Azure Blob 存储中。Azure 存储空间为 Blob 存储指定了高可用性和持久性属性。与 Hadoop MapReduce 作业关联的多节点处理是在 HDInsight 根据需要预配的暂时性 Hadoop 分布式文件系统 (HDFS) 上进行的。MapReduce 作业产生的结果默认也存储在 Azure Blob 存储中，因此在取消 Hadoop 群集的设置后处理过的数据仍具有持久性且仍然高度可用。有关详细信息，请参阅 [HDInsight (disaster recovery)（HDInsight（灾难恢复））](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region#hdinsight)。
+与 Azure HDInsight 关联的数据默认存储在 Azure Blob 存储中。Azure 存储空间为 Blob 存储指定了高可用性和持久性属性。与 Hadoop MapReduce 作业关联的多节点处理是在 HDInsight 根据需要预配的暂时性 Hadoop 分布式文件系统 (HDFS) 上进行的。MapReduce 作业产生的结果默认也存储在 Azure Blob 存储中，因此在取消 Hadoop 群集的设置后处理过的数据仍具有持久性且仍然高度可用。有关详细信息，请参阅 [HDInsight (disaster recovery)（HDInsight（灾难恢复））](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region/#hdinsight)。
 
 ##局部故障清单
 
@@ -224,6 +224,6 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
 
 ##后续步骤
 
-本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance)的系列教程的一部分。本系列教程的下一篇文章是[在发生区域范围的服务中断后进行恢复](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region)。
+本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。本系列教程的下一篇文章是[在发生区域范围的服务中断后进行恢复](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region/)。
 
 <!---HONumber=Mooncake_0627_2016-->

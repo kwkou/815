@@ -51,7 +51,7 @@
 
 ## <a name="next-steps"></a>后续步骤
 
-本主题说明了如何针对 Azure 中运行的移动服务运行新的客户端应用程序。在对本地计算机上运行的移动服务测试 iOS 应用程序之前，必须配置 Web 服务器和防火墙，以允许从 iOS 开发计算机进行访问。有关详细信息，请参阅[配置本地 Web 服务器以允许连接到本地移动服务](/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express)。
+本主题说明了如何针对 Azure 中运行的移动服务运行新的客户端应用程序。在对本地计算机上运行的移动服务测试 iOS 应用程序之前，必须配置 Web 服务器和防火墙，以允许从 iOS 开发计算机进行访问。有关详细信息，请参阅[配置本地 Web 服务器以允许连接到本地移动服务](/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express/)。
 
 了解如何在移动服务中执行其他重要任务：
 
@@ -89,14 +89,14 @@
 
 
 <!-- URLs. -->
-[脱机数据同步入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
-[向现有应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[向现有应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
-[移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+[脱机数据同步入门]: /documentation/articles/mobile-services-ios-get-started-offline-data/
+[向现有应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
+[向现有应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/
+[移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot/
 
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[JavaScript 后端版本]: /documentation/articles/mobile-services-ios-get-started
+[JavaScript 后端版本]: /documentation/articles/mobile-services-ios-get-started/
 
 <!---HONumber=Mooncake_0118_2016-->

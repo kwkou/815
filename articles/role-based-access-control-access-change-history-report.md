@@ -60,7 +60,7 @@
 ![更改日志被视为电子表格 - 屏幕快照](./media/role-based-access-control-configure/change-history-spreadsheet.png)
 
 ## 另请参阅
-- 开始使用 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)
-- 使用 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles)
+- 开始使用 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)
+- 使用 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)
 
 <!---HONumber=Mooncake_0627_2016-->

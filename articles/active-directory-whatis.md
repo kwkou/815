@@ -57,7 +57,7 @@ Azure AD 的多租户、地理分布、高可用性设计意味着你可以依�
  - [立即试用！](/pricing/1rmb-trial/)- 你现在就可以使用此链接注册 30 天免费试用版，然后在不到 5 分钟内部署第一个云解决方案
  - 阅读“Azure AD 入门”，获取有关如何设置和快速运行 Azure AD 租户的提示与技巧
 -	如果你是开发人员：
- - 查看 Azure Active Directory 的[开发人员指南](/documentation/articles/active-directory-developers-guide) 
+ - 查看 Azure Active Directory 的[开发人员指南](/documentation/articles/active-directory-developers-guide/) 
  - [开始试用](/pricing/1rmb-trial/) – 立即注册 30 天免费试用版，开始将你的应用集成到 Azure AD
 
 
@@ -67,15 +67,15 @@ Azure AD 的多租户、地理分布、高可用性设计意味着你可以依�
 我们提供了大量的有用在线资源，以帮助你了解 Azure AD 的方方面面。下面是一些可帮助你快速入门的佳作：
 
 
-- [使用 Azure AD Connect 启用目录的混合管理](/documentation/articles/active-directory-aadconnect)
+- [使用 Azure AD Connect 启用目录的混合管理](/documentation/articles/active-directory-aadconnect/)
 
-- [在互联世界中提高安全性](/documentation/articles/multi-factor-authentication)
+- [在互联世界中提高安全性](/documentation/articles/multi-factor-authentication/)
 
-- [从任意位置管理密码](/documentation/articles/active-directory-passwords)
+- [从任意位置管理密码](/documentation/articles/active-directory-passwords/)
 
-- [Azure Active Directory 的应用程序访问与单一登录是什么？](/documentation/articles/active-directory-appssoaccess-whatis)
+- [Azure Active Directory 的应用程序访问与单一登录是什么？](/documentation/articles/active-directory-appssoaccess-whatis/)
 
-- [使用 Azure Active Directory 组管理对资源的访问](/documentation/articles/active-directory-manage-groups)
+- [使用 Azure Active Directory 组管理对资源的访问](/documentation/articles/active-directory-manage-groups/)
 
 
 <!---HONumber=Mooncake_0516_2016-->

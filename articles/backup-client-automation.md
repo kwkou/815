@@ -85,7 +85,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 
 ## 注册到 Azure 备份服务
-在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-configure-vault)。你必须：
+在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-configure-vault/)。你必须：
 
 - 具备有效的 Azure 订阅
 - 有一个备份保管库
@@ -543,7 +543,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 ## 后续步骤
 有关适用于 Windows Server/客户端的 Azure 备份的详细信息，请参阅
 
-- [Azure 备份简介](/documentation/articles/backup-configure-vault)
-- [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
+- [Azure 备份简介](/documentation/articles/backup-configure-vault/)
+- [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server/)
 
 <!---HONumber=Mooncake_0307_2016-->

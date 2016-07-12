@@ -23,13 +23,13 @@
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
-- [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal)
+- [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal/)
 
 完成这些步骤大约需要 30 分钟。
 
 ## 步骤 1：安装 Azure PowerShell
 
-有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。选择要使用的订阅，然后登录到你的 Azure 帐户。
+有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。
 
 ## 步骤 2：创建 Visual Studio 项目并安装这些库
 
@@ -434,7 +434,7 @@
           Console.WriteLine(vm.ProvisioningState);
         }
 
-	>[AZURE.NOTE] 本教程创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
+	>[AZURE.NOTE] 本教程创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
 
 2. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
@@ -487,6 +487,6 @@
     
 ## 后续步骤
 
-参考 [Deploy an Azure Virtual Machine using C# and a Resource Manager template（使用 C# 和 Resource Manager 模板部署 Azure 虚拟机）](/documentation/articles/virtual-machines-windows-csharp-template)中的信息，利用模板创建虚拟机
+参考 [Deploy an Azure Virtual Machine using C# and a Resource Manager template（使用 C# 和 Resource Manager 模板部署 Azure 虚拟机）](/documentation/articles/virtual-machines-windows-csharp-template/)中的信息，利用模板创建虚拟机
 
 <!---HONumber=Mooncake_0613_2016-->

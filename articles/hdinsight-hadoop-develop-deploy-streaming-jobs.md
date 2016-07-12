@@ -364,7 +364,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 ##<a id="nextsteps"></a>后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Hadoop 流式处理 MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
 
-- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
+- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
 - [HDInsight Emulator 入门][hdinsight-get-started-emulator]
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 - [将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]
@@ -376,22 +376,22 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 [azure-purchase-options]: /pricing/overview/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started/#blobstorage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure/
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce 单词计数应用程序流"
 

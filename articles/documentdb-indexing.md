@@ -59,8 +59,8 @@ DocumentDB 的索引旨在提升存储效率，同时处理多租户。为了追
 
 ##<a name="NextSteps"></a>后续步骤
 - 下载 [Azure DocumentDB 不限架构的索引”](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)，这篇文章于 2015 年 8 月 31 日至 9 月 4 日在超大型数据库第 41 届内部会议发布。
-- [使用 DocumentDB SQL 进行查询](/documentation/articles/documentdb-sql-query)
-- 在[此处](/documentation/articles/documentdb-indexing-policies)了解如何自定义 DocumentDB 索引
+- [使用 DocumentDB SQL 进行查询](/documentation/articles/documentdb-sql-query/)
+- 在[此处](/documentation/articles/documentdb-indexing-policies/)了解如何自定义 DocumentDB 索引
  
 
 <!---HONumber=Mooncake_0627_2016-->

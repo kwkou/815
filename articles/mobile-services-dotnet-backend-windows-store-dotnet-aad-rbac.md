@@ -375,12 +375,12 @@
 [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac/add-authorize-aad-role-class.png
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
-[How to Register with the Azure Active Directory]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/
+[How to Register with the Azure Active Directory]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Directory Sync Scenarios]: http://msdn.microsoft.com/zh-cn/library/azure/jj573653.aspx
-[Store Server Scripts]: /documentation/articles/mobile-services-store-scripts-source-control
-[注册以使用 Azure Active Directory 登录名]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
+[Store Server Scripts]: /documentation/articles/mobile-services-store-scripts-source-control/
+[注册以使用 Azure Active Directory 登录名]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Graph REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh974478.aspx
 [IsMemberOf]: http://msdn.microsoft.com/zh-cn/library/azure/dn151601.aspx
 [ADAL for .NET]: https://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx

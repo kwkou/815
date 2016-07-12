@@ -18,8 +18,8 @@
 #如何在 Azure 上将 SSH 用于 Linux 和 Mac
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows)
-- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux)
+- [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/)
+- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
 
 本主题介绍如何在 Linux 和 Mac 上使用 **ssh-keygen** 和 **openssl**，创建和使用 **ssh-rsa** 格式和 **.pem** 格式文件来基于 Linux 保护与 Azure VM 的通信。对于新部署，建议使用资源管理器部署模型创建基于 Linux 的 Azure 虚拟机，并采用 *ssh-rsa* 类型公钥文件或字符串（具体取决于部署客户端）。
 
@@ -34,7 +34,7 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 以下是部署方案，你在每个方案中使用的文件类型为：
 
 1. 无论是哪种部署模型，使用[门户预览](https://portal.azure.cn)的所有部署都必需使用 **ssh-rsa** 密钥。
-2. 使用[经典管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署也支持 .pem 文件。 
+2. 使用[经典管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 的经典部署也支持 .pem 文件。 
 
 ## 创建密钥以用于 SSH
 
@@ -293,7 +293,7 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 ## 如果你无法连接
 
-可以阅读 [SSH 连接疑难解答](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)中的建议以了解这些建议是否可以帮助解决该情况。
+可以阅读 [SSH 连接疑难解答](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)中的建议以了解这些建议是否可以帮助解决该情况。
 
 ## 后续步骤
  

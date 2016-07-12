@@ -16,7 +16,7 @@
 # 使用 DPM 准备将工作负荷备份到 Azure
 
 > [AZURE.SELECTOR]
-- [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
+- [SCDPM](/documentation/articles/backup-azure-dpm-introduction/)
 
 本文介绍如何使用 Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
 
@@ -25,7 +25,7 @@
 - 遇到的典型错误以及如何处理它们
 - 支持的方案
 
-> [AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本文提供有关还原使用 Resource Manager 模型部署的 VM 的信息和过程。
+> [AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。本文提供有关还原使用 Resource Manager 模型部署的 VM 的信息和过程。
 
 System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可以存储在磁带、磁盘上，或者使用 Microsoft Azure Backup 备份到 Azure。DPM 可与 Azure 备份交互，如下所述：
 

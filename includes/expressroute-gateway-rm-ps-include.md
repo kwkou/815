@@ -73,7 +73,7 @@
 
 ## 重设网关大小
 
-有三个[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways)。你可以使用以下命令随时更改网关 SKU。
+有三个[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways/)。你可以使用以下命令随时更改网关 SKU。
 
 	$gw = Get-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG
 	Resize-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw -GatewaySku HighPerformance

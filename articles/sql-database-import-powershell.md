@@ -17,23 +17,23 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-import-powershell)
-- [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms)
-- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage)
+- [PowerShell](/documentation/articles/sql-database-import-powershell/)
+- [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms/)
+- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage/)
 
 本文说明如何使用 PowerShell 通过导入 BACPAC 来创建 Azure SQL 数据库。
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
-数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储空间中没有 .bacpac 文件，你可以按照[创建和导出 Azure SQL 数据库的 BACPAC](/documentation/articles/sql-database-export-powershell) 中的步骤创建一个。
+数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储空间中没有 .bacpac 文件，你可以按照[创建和导出 Azure SQL 数据库的 BACPAC](/documentation/articles/sql-database-export-powershell/) 中的步骤创建一个。
 
-> [AZURE.NOTE] Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+> [AZURE.NOTE] Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 
 要导入 SQL 数据库，你需要以下各项：
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
-- 要导入的数据库的 .bacpac 文件 (BACPAC)。BACPAC 需位于 [Azure 存储帐户（经典）](/documentation/articles/storage-create-storage-account)blob 容器中。
+- 要导入的数据库的 .bacpac 文件 (BACPAC)。BACPAC 需位于 [Azure 存储帐户（经典）](/documentation/articles/storage-create-storage-account/)blob 容器中。
 
 
 > [AZURE.IMPORTANT] 本文包含的命令适用于最高版本为 1.0（但不含）的 Azure PowerShell。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
@@ -137,15 +137,15 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
 
 ## 后续步骤
 
-- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)
+- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
 
 
 
 
 ## 其他资源
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity)
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 
 <!---HONumber=Mooncake_0606_2016-->

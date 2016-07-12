@@ -100,7 +100,7 @@ LAMP 堆栈包含以下不同元素：
 
 		- CentOS 和 Oracle：`sudo service httpd restart`
 
-	- 默认情况下，Apache 在端口 80 上进行侦听。你可能需要打开一个终结点才能远程访问 Apache 服务器。请参阅[配置终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints)上的文档以获取详细说明。
+	- 默认情况下，Apache 在端口 80 上进行侦听。你可能需要打开一个终结点才能远程访问 Apache 服务器。请参阅[配置终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)上的文档以获取详细说明。
 
 	- 你现在可以查看 Apache 是否正在运行并提供内容服务。将浏览器指向 `http://[MYSERVICE].chinacloudapp.cn`，其中 **[MYSERVICE]** 是虚拟机所在的云服务的名称。在某些分发中，你可能会看到一个默认的 Web 页面，其内容只是简单的一句话：“It works!”。在其他分发中，你可能会看到更完整的 Web 页面，其中包含的链接指向更多配置 Apache 服务器所需的文档和内容。
 
@@ -117,7 +117,7 @@ LAMP 堆栈包含以下不同元素：
 
 ##延伸阅读
 
-假设一下，你是否需要将这些步骤自动化，以便将应用程序部署到远程 Linux 虚拟机？ 你可以使用 Linux CustomScript 扩展来这样做。请参阅[使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-classic-lamp-script)。
+假设一下，你是否需要将这些步骤自动化，以便将应用程序部署到远程 Linux 虚拟机？ 你可以使用 Linux CustomScript 扩展来这样做。请参阅[使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-classic-lamp-script/)。
 
 有许多在 Ubuntu 上设置 LAMP 堆栈的其他资源。
 

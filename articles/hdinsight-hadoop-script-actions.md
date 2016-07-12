@@ -15,13 +15,13 @@
 
 # 为 HDInsight 开发脚本操作脚本
 
-了解如何为 HDInsight 编写脚本操作脚本。有关如何使用脚本操作脚本的信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)。
+了解如何为 HDInsight 编写脚本操作脚本。有关如何使用脚本操作脚本的信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/)。
 
 脚本操作可用于安装运行在 Hadoop 群集上的其他软件，或更改安装在群集上的应用程序的配置。脚本操作是在部署 HDInsight 群集时运行在群集节点上的脚本，这些脚本在群集中的节点完成 HDInsight 配置后执行。脚本操作根据系统管理员帐户权限执行，提供对群集节点的完全访问权限。每个群集可能都提供有要按指定顺序执行的脚本操作的列表。
 
 > [AZURE.NOTE]如果你遇到以下错误消息：
 > <p>`System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`
-> <p>这是因为你没有包括帮助器方法。请参阅[自定义脚本的帮助器方法](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts)。
+> <p>这是因为你没有包括帮助器方法。请参阅[自定义脚本的帮助器方法](/documentation/articles/hdinsight-hadoop-script-actions/#helper-methods-for-custom-scripts)。
 
 ## 示例脚本
 
@@ -85,12 +85,12 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装附加组件�
 Name | 脚本
 ----- | -----
 **安装 R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1。请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-r-scripts]。
-**安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)。
-- **安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)。
+**安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1/)。
+- **安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1/)。
 
 脚本操作可以通过 Azure 经典管理门户、Azure PowerShell 或 HDInsight .NET SDK 来部署。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]。
 
-> [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集 3.1 或更高版本。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning-v1)。
+> [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集 3.1 或更高版本。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning-v1/)。
 
 
 
@@ -248,7 +248,7 @@ Name | 脚本
 
 本部分概述在本地使用 HDInsight 模拟器进行测试的过程，但是使用 VM 的过程类似。
 
-**安装 HDInsight 模拟器** - 若要在本地运行脚本操作，你必须安装有 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-hadoop-emulator-get-started)。
+**安装 HDInsight 模拟器** - 若要在本地运行脚本操作，你必须安装有 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
 
 **设置 Azure PowerShell 的执行策略** - 打开 Azure PowerShell 并运行（以管理员身份）以下命令，以将执行策略设置为 *LocalMachine* 和 *Unrestricted*：
 
@@ -275,7 +275,7 @@ Name | 脚本
 
 ##<a name="runScriptAction"></a> 调试自定义脚本
 
-脚本错误日志随同其他输出一起存储在创建群集时为该群集指定的默认存储帐户中。这些日志存储在名为 *u<\\cluster-name-fragment><\\time-stamp>setuplog* 的表中。这些是包含所有节点（头节点和从节点）中的记录的聚合日志，脚本在群集中的这些节点上运行。若要查看日志，一个简单方法是使用 HDInsight Tools for Visual Studio。若要安装这些工具，请参阅[开始使用适用于 HDInsight 的 Visual Studio Hadoop 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started#install-hdinsight-tools-for-visual-studio)
+脚本错误日志随同其他输出一起存储在创建群集时为该群集指定的默认存储帐户中。这些日志存储在名为 *u<\\cluster-name-fragment><\\time-stamp>setuplog* 的表中。这些是包含所有节点（头节点和从节点）中的记录的聚合日志，脚本在群集中的这些节点上运行。若要查看日志，一个简单方法是使用 HDInsight Tools for Visual Studio。若要安装这些工具，请参阅[开始使用适用于 HDInsight 的 Visual Studio Hadoop 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#install-hdinsight-tools-for-visual-studio)
 
 **使用 Visual Studio 查看日志的步骤**
 
@@ -294,12 +294,12 @@ Name | 脚本
 
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-r-scripts]
-- [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
-- [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
+- [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1/)
+- [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1/)
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
-[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
 [powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 <!--Reference links in article-->

@@ -15,12 +15,12 @@
 #  将 VMM 云中的 Hyper-V 虚拟机复制到 Azure
 
 > [AZURE.SELECTOR]
-- [Azure 经典管理门户](/documentation/articles/site-recovery-vmm-to-azure)
-- [PowerShell — 经典](/documentation/articles/site-recovery-deploy-with-powershell)
+- [Azure 经典管理门户](/documentation/articles/site-recovery-vmm-to-azure/)
+- [PowerShell — 经典](/documentation/articles/site-recovery-deploy-with-powershell/)
 
 
 
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)。
+Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)。
 
 ## 概述
 
@@ -45,7 +45,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 **先决条件** | **详细信息**
 --- | ---
 **Azure 帐户**| 需要一个 [Azure](https://azure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/home/features/site-recovery) Site Recovery 定价。 
-**Azure 存储空间** | 你将需要使用 Azure 存储帐户来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。<br/><br/>你需要[标准异地冗余存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)。该帐户必须位于 Site Recovery 服务所在的同一区域，并与同一订阅相关联。请注意，目前不支持复制到高级存储帐户，因此不应使用该功能。<br/><br/>[了解](/documentation/articles/storage-introduction) Azure 存储空间。
+**Azure 存储空间** | 你将需要使用 Azure 存储帐户来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。<br/><br/>你需要[标准异地冗余存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)。该帐户必须位于 Site Recovery 服务所在的同一区域，并与同一订阅相关联。请注意，目前不支持复制到高级存储帐户，因此不应使用该功能。<br/><br/>[了解](/documentation/articles/storage-introduction/) Azure 存储空间。
 **Azure 网络** | 你需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。Azure 虚拟网络必须位于与 Site Recovery 保管库相同的区域中。 
 
 ## 本地先决条件
@@ -56,7 +56,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 --- | ---
 **VMM** | 你至少需要一台部署为单独的物理或虚拟服务器（或虚拟群集）的 VMM 服务器。<br/><br/>VMM 服务器应运行安装了最新累积更新的 System Center 2012 R2。<br/><br/>需要在 VMM 服务器上配置至少一个云。<br/><br/>要保护的源云必须包含一个或多个 VMM 主机组。<br/><br/>若要详细了解如何设置 VMM 云，请参阅[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)（Keith Mayer 博客文章）。
 **Hyper-V** | 你在 VMM 云中需要一或多个 Hyper-V 主机服务器或群集。主机服务器应该有一或多个 VM。<br/><br/>Hyper-V 服务器必须至少运行包含 Hyper-V 角色的 Windows Server 2012 R2，并安装了最新更新。<br/><br/>任何包含你所要保护的 VM 的 Hyper-V 服务器都必须位于 VMM 云中。<br/><br/>如果你要在群集中运行 Hyper-V，请注意，如果你的群集是静态的基于 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。在 Aidan Finn 的博客文章中[了解详细信息](https://www.petri.com/use-hyper-v-replica-broker-prepare-host-clusters)。
-**受保护的计算机** | 你想要保护的 VM 应该符合 [Azure 要求](/documentation/articles/site-recovery-best-practices#azure-virtual-machine-requirements)。
+**受保护的计算机** | 你想要保护的 VM 应该符合 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。
 
 
 ## 网络映射先决条件
@@ -73,7 +73,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 准备网络映射，如下所示：
 
-1. [了解](/documentation/articles/site-recovery-network-mapping)网络映射要求。
+1. [了解](/documentation/articles/site-recovery-network-mapping/)网络映射要求。
 2. 在 VMM 中准备 VM 网络：
 
 	- [设置逻辑网络](https://technet.microsoft.com/zh-cn/library/jj721568.aspx)。
@@ -263,7 +263,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 在正确配置服务器、云和网络后，可以在云中为虚拟机启用保护。注意以下事项：
 
-- 虚拟机必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices#azure-virtual-machine-requirements)。
+- 虚拟机必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。
 - 若要启用保护，必须为虚拟机设置操作系统和操作系统磁盘属性。当你使用虚拟机模板在 VMM 中创建虚拟机时，可以设置属性。也可以在虚拟机属性的“常规”和“硬件配置”选项卡中为现有虚拟机设置这些属性。如果未在 VMM 中设置这些属性，可以在 Azure Site Recovery 门户中配置它们。
 
 	![创建虚拟机](./media/site-recovery-vmm-to-azure/enable-new.png)
@@ -289,7 +289,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 
 
-- **目标虚拟机的网络适配器数目** — 网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles/virtual-machines-windows-sizes#size-tables)，了解虚拟机大小所支持的适配器数目。在修改虚拟机的大小并保存设置后，下一次当你打开“配置”页时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目，如下所示：
+- **目标虚拟机的网络适配器数目** — 网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles/virtual-machines-windows-sizes/#size-tables)，了解虚拟机大小所支持的适配器数目。在修改虚拟机的大小并保存设置后，下一次当你打开“配置”页时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目，如下所示：
 
 	- 如果源计算机上的网络适配器数小于或等于目标计算机大小允许的适配器数，则目标的适配器数将与源相同。
 	- 如果源虚拟机的适配器数大于目标大小允许的数目，则使用目标大小允许的最大数目。
@@ -326,7 +326,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 	![创建恢复计划](./media/site-recovery-vmm-to-azure/select-rp.png)
 
-在创建恢复计划后，它将出现在“恢复计划”选项卡中。你还可以将 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation) 添加到恢复计划，以自动执行故障转移期间的操作。
+在创建恢复计划后，它将出现在“恢复计划”选项卡中。你还可以将 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation/) 添加到恢复计划，以自动执行故障转移期间的操作。
 
 ### 运行测试故障转移
 
@@ -338,7 +338,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 如果你希望在不指定 Azure 目标网络的情况下为启用了保护的虚拟机运行到 Azure 的测试故障转移，则不需要做任何准备。若要运行具有目标 Azure 网络的测试性故障转移，你将需要创建一个与你的 Azure 生产网络相隔离的新 Azure 网络（你在 Azure 中新建网络时的默认行为）。看看如何[运行测试性故障转移](/documenatation/articles/site-recovery-failover#run-a-test-failover)，以获取更多详细信息。
 
 
-你还需要设置已复制虚拟机的基础结构，使之能够正常工作。使用，可以使用 Azure Site Recovery 将包含域控制器和 DNS 的虚拟机复制到 Azure，并可以使用测试故障故障转移在测试网络中创建此类虚拟机。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover)部分。
+你还需要设置已复制虚拟机的基础结构，使之能够正常工作。使用，可以使用 Azure Site Recovery 将包含域控制器和 DNS 的虚拟机复制到 Azure，并可以使用测试故障故障转移在测试网络中创建此类虚拟机。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory/#considerations-for-test-failover)部分。
 
 若要运行测试故障转移，请执行以下操作：
 
@@ -353,7 +353,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 6. 在故障转移后，你将能够在 Azure 门户中看到虚拟机测试副本。如果你已设置为从本地网络访问虚拟机，则可以启动与虚拟机的远程桌面连接。请执行以下操作：
 
     1. 验证虚拟机成功启动。
-    2. 如果想要在故障转移之后使用远程桌面连接到 Azure 中的虚拟机，请在虚拟机上启用远程桌面连接，然后运行测试故障转移。还需要在虚拟机上添加 RDP 终结点。你可以利用 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation) 来执行此操作。
+    2. 如果想要在故障转移之后使用远程桌面连接到 Azure 中的虚拟机，请在虚拟机上启用远程桌面连接，然后运行测试故障转移。还需要在虚拟机上添加 RDP 终结点。你可以利用 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation/) 来执行此操作。
     3. 故障转移后，如果想要在远程桌面中使用公共 IP 地址连接到 Azure 中的虚拟机，请确保没有任何域策略阻止你使用公共地址连接到虚拟机。
 
 7.  完成测试后，执行以下操作：
@@ -364,6 +364,6 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ## 后续步骤
 
-了解[设置恢复计划](/documentation/articles/site-recovery-create-recovery-plans)和[故障转移](/documentation/articles/site-recovery-failover)。
+了解[设置恢复计划](/documentation/articles/site-recovery-create-recovery-plans/)和[故障转移](/documentation/articles/site-recovery-failover/)。
 
 <!---HONumber=Mooncake_0328_2016-->

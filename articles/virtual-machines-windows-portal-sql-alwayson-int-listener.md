@@ -20,15 +20,15 @@
 
 若要完成此任务，需要在 Resource Manager 模型中的 Azure 虚拟机上部署 SQL Server AlwaysOn 可用性组。这两个 SQL Server 虚拟机必须属于同一个可用性集。
 
-如果需要，你可以[手动配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)。
+如果需要，你可以[手动配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
 
 本主题要求事先配置可用性组。
 
 相关主题包括：
 
- - [在 Azure VM (GUI) 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)   
+ - [在 Azure VM (GUI) 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)   
  
- - [使用 Azure Resource Manager 和 PowerShell 配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)
+ - [使用 Azure Resource Manager 和 PowerShell 配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
 
 ## 步骤
 

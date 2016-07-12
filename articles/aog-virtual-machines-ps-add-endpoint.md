@@ -10,7 +10,7 @@
 
 #通过 PowerShell 的方式增加虚拟机终结点
 
-关于虚拟机终结点的概念请阅读：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)
+关于虚拟机终结点的概念请阅读：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)
 
 本文包含以下内容（本文在名称为"pstest"的虚拟机做测试）：
 
@@ -19,7 +19,7 @@
 
 ##通过 PowerShell 的方式增加终结点
 
->使用 Powershell 前有关 Azure PowerShell 的安装、配置和连接到订阅请阅读[这篇文章](/documentation/articles/powershell-install-configure)
+>使用 Powershell 前有关 Azure PowerShell 的安装、配置和连接到订阅请阅读[这篇文章](/documentation/articles/powershell-install-configure/)
 
 ####查看当前虚拟机终结点
 

@@ -15,18 +15,18 @@
 # 使用 PowerShell 部署和管理 Resource Manager 部署型 VM 的备份
 
 > [AZURE.SELECTOR]
-- [Resource Manager PowerShell](/documentation/articles/backup-azure-vms-automation)
-- [经典 PowerShell](/documentation/articles/backup-azure-vms-classic-automation)
+- [Resource Manager PowerShell](/documentation/articles/backup-azure-vms-automation/)
+- [经典 PowerShell](/documentation/articles/backup-azure-vms-classic-automation/)
 
 本文说明如何使用 Azure PowerShell 从恢复服务保管库备份和恢复 Azure 虚拟机 (VM)。恢复服务保管库是一种 Azure Resource Manager (ARM) 资源，用于保护 Azure 备份和 Azure Site Recovery 服务中的数据与资产。在 ARM 部署中操作时，请使用恢复服务保管库。可以使用恢复服务保管库来保护 Azure 服务管理器 ASM 部署的 VM 以及 ARM VM。
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本文的内容与使用 Resource Manager 模型创建的 VM 有关。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。本文的内容与使用 Resource Manager 模型创建的 VM 有关。
 
 本文将逐步指导你使用 PowerShell 来保护 VM，以及从恢复点还原数据。
 
 ## 概念
 
-如果你不熟悉 Azure 备份服务，请查看 [What is Azure Backup?（什么是 Azure 备份）](/documentation/articles/backup-introduction-to-azure-backup)，以获取有关该服务的概述 在开始之前，请确保你已掌握与系统必备组件相关的基础知识（这些必备组件是使用 Azure 备份所必需的），并了解当前 VM 备份解决方案的限制。
+如果你不熟悉 Azure 备份服务，请查看 [What is Azure Backup?（什么是 Azure 备份）](/documentation/articles/backup-introduction-to-azure-backup/)，以获取有关该服务的概述 在开始之前，请确保你已掌握与系统必备组件相关的基础知识（这些必备组件是使用 Azure 备份所必需的），并了解当前 VM 备份解决方案的限制。
 
 为了提高 PowerShell 使用效率，必须了解对象的层次结构以及从何处开始。
 
@@ -109,7 +109,7 @@
     	PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
     
 
-4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy#locally-redundant-storage) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy#geo-redundant-storage)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
+4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
 
     
 	    PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault –Name "testVault"
@@ -368,6 +368,6 @@
 
 ## 后续步骤
 
-如果你更愿意使用 PowerShell 来处理 Azure 资源，则请查看有关如何保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation)。此外还有一篇有关如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation)。这两篇文章都为 Resource Manager 部署和经典部署提供了一个版本。
+如果你更愿意使用 PowerShell 来处理 Azure 资源，则请查看有关如何保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation/)。此外还有一篇有关如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation/)。这两篇文章都为 Resource Manager 部署和经典部署提供了一个版本。
 
 <!---HONumber=Mooncake_0704_2016-->

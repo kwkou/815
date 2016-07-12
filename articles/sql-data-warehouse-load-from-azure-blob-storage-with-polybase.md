@@ -16,8 +16,8 @@
 # 将数据从 Azure Blob 存储载入 SQL 数据仓库 (PolyBase)
 
 > [AZURE.SELECTOR]
-- [Data Factory](/documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-data-factory)
-- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-polybase)
+- [Data Factory](/documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-data-factory/)
+- [PolyBase](/documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-polybase/)
 
 使用 PolyBase 和 T-SQL 命令可将数据从 Azure Blob 存储载入 Azure SQL 数据仓库。
 
@@ -347,13 +347,13 @@ GROUP BY p.[BrandName]
 <!--Image references-->
 
 <!--Article references-->
-[Create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision
-[Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load
-[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop
+[Create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision/
+[Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
+[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [manage columnstore indexes]:
-[Statistics]: /documentation/articles/sql-data-warehouse-develop-statistics
-[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas
-[label]: /documentation/articles/sql-data-warehouse-develop-label
+[Statistics]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[label]: /documentation/articles/sql-data-warehouse-develop-label/
 
 <!--MSDN references-->
 [CREATE EXTERNAL DATA SOURCE]:

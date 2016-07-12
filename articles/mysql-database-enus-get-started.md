@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-get-started)
-- [English](/documentation/articles/mysql-database-enus-get-started)
+- [中文](/documentation/articles/mysql-database-get-started/)
+- [English](/documentation/articles/mysql-database-enus-get-started/)
 
 #Introduction to MySQL Database on Azure
 
@@ -56,7 +56,7 @@ You can find the server address by using the “dashboard” in the Azure portal
 ##<a id="step6"></a>Step 6: Migrate data (optional)
 If you need to migrate the database from another location to MySQL Database on Azure and the amount of data involved is considerable, we recommend using the following migration procedure. 
 - Step 1: Export the data from the existing database to a file (for example, by using the mysqldump tool). 
-- Step 2: Send the file exported from the database to your specific VM on Azure. You can do this by using any data transfer tool that you are familiar with (such as FTP) or by using the [AzCopy](/documentation/articles/storage-use-azcopy) tool. If you use the AzCopy tool, you need to send the file to a storage blob before you send it to the VM. 
+- Step 2: Send the file exported from the database to your specific VM on Azure. You can do this by using any data transfer tool that you are familiar with (such as FTP) or by using the [AzCopy](/documentation/articles/storage-use-azcopy/) tool. If you use the AzCopy tool, you need to send the file to a storage blob before you send it to the VM. 
 - Step 3: Import the data from your Azure VM into your MySQL Database on Azure database. **This can reduce the chance of experiencing migration failures due to connection dropouts.**
 
 ##<a id="nextstep"></a>Subsequent steps

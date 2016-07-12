@@ -38,7 +38,7 @@
 
 	IMobileServiceTable<TodoItem> todoTable = App.<yourClient>.GetTable<TodoItem>();
 
-如果您的表权限已设置为**具有应用程序密钥的任何人**，则此代码有效。如果您更改权限以保护您的移动服务，您将需要添加用户身份验证支持。请参阅[身份验证入门](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users)。
+如果您的表权限已设置为**具有应用程序密钥的任何人**，则此代码有效。如果您更改权限以保护您的移动服务，您将需要添加用户身份验证支持。请参阅[身份验证入门](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/)。
 
 ##添加表项
 

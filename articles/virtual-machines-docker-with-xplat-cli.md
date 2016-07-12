@@ -15,9 +15,9 @@
 
 # 从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
-本主题说明如何通过 Azure CLI 中的服务管理 (asm) 模式，在任何平台上创建包含 Docker VM 扩展的 VM。[Docker](https://www.docker.com/) 是最常用的虚拟化技术之一，它使用 [Linux 容器](http://zh.wikipedia.org/wiki/LXC)而不是虚拟机作为在共享资源上隔离数据和执行计算的方法。可以在 [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)中使用 Docker VM 扩展，以创建可在 Azure 上为应用程序托管任意数量的容器的 Docker VM。若要查看容器及其优点的综合讨论，请参阅 [Docker 高级白板](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard)。
+本主题说明如何通过 Azure CLI 中的服务管理 (asm) 模式，在任何平台上创建包含 Docker VM 扩展的 VM。[Docker](https://www.docker.com/) 是最常用的虚拟化技术之一，它使用 [Linux 容器](http://zh.wikipedia.org/wiki/LXC)而不是虚拟机作为在共享资源上隔离数据和执行计算的方法。可以在 [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/)中使用 Docker VM 扩展，以创建可在 Azure 上为应用程序托管任意数量的容器的 Docker VM。若要查看容器及其优点的综合讨论，请参阅 [Docker 高级白板](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard)。
 
 
 ##如何对 Azure 使用 Docker VM 扩展
@@ -33,12 +33,12 @@
 
 ### 安装 Azure 命令行界面 (Azure CLI)
 
-若要安装和配置 Azure CLI，请参阅[如何安装 Azure 命令行界面](/documentation/articles/xplat-cli-install)。若要确认安装，请在命令提示符下键入 `azure`，片刻之后，你就会看到 Azure CLI ASCII 图文，其中列出了可用的基本命令。如果安装正常，你应该可以键入 `azure help vm`，并看到列出的其中一个命令是“docker”。
+若要安装和配置 Azure CLI，请参阅[如何安装 Azure 命令行界面](/documentation/articles/xplat-cli-install/)。若要确认安装，请在命令提示符下键入 `azure`，片刻之后，你就会看到 Azure CLI ASCII 图文，其中列出了可用的基本命令。如果安装正常，你应该可以键入 `azure help vm`，并看到列出的其中一个命令是“docker”。
 
 > [AZURE.NOTE] Docker 提供适用于 Windows 的工具 [Docker Machine](https://docs.docker.com/installation/windows/)，你也可以使用该安装程序自动创建可以配合用作 docker 主机的 Azure VM 使用的 docker 客户端。
 
 ### 将 Azure CLI 连接到你的 Azure 帐户
-在使用 Azure CLI 之前，必须将 Azure 帐户凭据与平台上的 Azure CLI 相关联。[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)部分说明了如何下载和导入 **.publishsettings** 文件，或者将 Azure CLI 与组织 ID 相关联。在Bash或终端会话下键入一下Azure CLI命令来链接到Azure账户,并将其中的<username\>和<password\>分别替换为您自己的用户名和密码。
+在使用 Azure CLI 之前，必须将 Azure 帐户凭据与平台上的 Azure CLI 相关联。[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)部分说明了如何下载和导入 **.publishsettings** 文件，或者将 Azure CLI 与组织 ID 相关联。在Bash或终端会话下键入一下Azure CLI命令来链接到Azure账户,并将其中的<username\>和<password\>分别替换为您自己的用户名和密码。
 
 `azure login --environment AzureChinaCloud --username <username> --password <password>`
 
@@ -51,11 +51,11 @@
 ### 安装 Docker 并对 Azure 使用 Docker VM 扩展
 遵循 [Docker 安装说明](https://docs.docker.com/installation/#installation)在计算机本地安装 Docker。
 
-若要将 Docker 与 Azure 虚拟机配合使用，VM 使用的 Linux 映像上必须已安装 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。目前，只有两种类型的映像提供此代理：
+若要将 Docker 与 Azure 虚拟机配合使用，VM 使用的 Linux 映像上必须已安装 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/)。目前，只有两种类型的映像提供此代理：
 
 + Azure 映像库中的 Ubuntu 映像，或
 
-+ 使用已安装并配置的 Azure Linux VM 代理创建的自定义 Linux 映像。有关如何使用 Azure VM 代理构建自定义 Linux VM 的详细信息，请参阅 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。
++ 使用已安装并配置的 Azure Linux VM 代理创建的自定义 Linux 映像。有关如何使用 Azure VM 代理构建自定义 Linux VM 的详细信息，请参阅 [Azure Linux VM 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/)。
 
 ### 使用 Azure 映像库
 
@@ -167,12 +167,12 @@
 
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-hero-tutorial
-[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
-[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-hero-tutorial/
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name/
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account/
 
 [Docker 用户指南]: https://docs.docker.com/userguide/
  
-[开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序]: /documentation/articles/virtual-machines-linux-docker-compose-quickstart
+[开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序]: /documentation/articles/virtual-machines-linux-docker-compose-quickstart/
 
 <!---HONumber=Mooncake_0215_2016-->

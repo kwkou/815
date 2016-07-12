@@ -31,7 +31,7 @@
  
 数据也可以是结构化或非结构化数据。相对于文档、源代码和电子邮件中的非结构化数据而言，数据库和电子表格中的结构化数据的分类过程不太复杂和耗时。
 
-> [AZURE.TIP] 有关 Azure 功能和数据加密最佳实践的详细信息，请阅读 [Azure Data Encryption Best Practices（Azure 数据加密最佳实践）](/documentation/articles/azure-security-data-encryption-best-practices)
+> [AZURE.TIP] 有关 Azure 功能和数据加密最佳实践的详细信息，请阅读 [Azure Data Encryption Best Practices（Azure 数据加密最佳实践）](/documentation/articles/azure-security-data-encryption-best-practices/)
 
 一般情况下，组织的结构化数据比非结构化数据要多。不管数据是结构化还是非结构化，都必须处理好数据的敏感性。如果正确实施，数据分类可帮助确保敏感或机密数据得到的监管力度优于公开或可任意分发的数据资产。
 
@@ -45,7 +45,7 @@
 
 身份验证通常至少包括两个组成部分：用于标识用户的用户名或用户 ID，以及用于确认用户名凭据是否有效的令牌，如密码。该过程不会给经过身份验证的用户提供访问任何项或服务的权限；它只是验证该用户声明的身份。
 
-> [AZURE.TIP] [Azure Active Directory](/documentation/articles/active-directory-whatis) 提供基于云的标识服务，可让你对用户进行身份验证和授权。
+> [AZURE.TIP] [Azure Active Directory](/documentation/articles/active-directory-whatis/) 提供基于云的标识服务，可让你对用户进行身份验证和授权。
 
 ### 授权
  
@@ -198,7 +198,7 @@ Rights Management 软件的部分优势包括：
 - 不同状态的数据都会受到保护。客户可以持续控制谁有权访问其数据，不管数据是位于云、现有 IT 基础结构中，还是在用户桌面上。组织可以选择加密其数据，并根据业务要求限制访问。 
 - 默认的信息保护策略。管理员和用户可以针对许多常见业务方案使用标准策略，例如“公司机密 - 只读”和“不得转发”。 支持一组丰富的使用权限，例如读取、复制、打印、保存、编辑和转发，允许灵活自定义使用权限。 
 
-> [AZURE.TIP] 可以使用适用于静态数据的 [Azure 存储空间服务加密](/documentation/articles/storage-service-encryption)来保护 Azure 存储空间中的数据。还可以使用 [Azure 磁盘加密](/documentation/articles/azure-security-disk-encryption)来帮助保护用于 Azure 虚拟机的虚拟磁盘上包含的数据。
+> [AZURE.TIP] 可以使用适用于静态数据的 [Azure 存储空间服务加密](/documentation/articles/storage-service-encryption/)来保护 Azure 存储空间中的数据。还可以使用 [Azure 磁盘加密](/documentation/articles/azure-security-disk-encryption/)来帮助保护用于 Azure 虚拟机的虚拟磁盘上包含的数据。
 
 ### 加密网关
 
@@ -208,7 +208,7 @@ Rights Management 软件的部分优势包括：
  
 加密网关位于用户设备与应用程序数据中心之间的数据流中，可加密/解密服务。这些解决方案（如 VPN）主要是本地解决方案。它们旨在向第三方提供对加密密钥的控制权，帮助降低由一家提供商管理数据和密钥存在的风险。与加密非常类似，此类解决方案可以无缝、透明地在用户与服务之间工作。
 
-> [AZURE.TIP] 可以使用 Azure ExpressRoute 通过专用连接将本地网络扩展到 Microsoft 云。有关此功能的详细信息，请阅读 [ExpressRoute technical overview（ExpressRoute 技术概述）](/documentation/articles/expressroute-introduction)。在本地网络之间与 Azure 之间建立跨界连接的另一个选项是[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)。
+> [AZURE.TIP] 可以使用 Azure ExpressRoute 通过专用连接将本地网络扩展到 Microsoft 云。有关此功能的详细信息，请阅读 [ExpressRoute technical overview（ExpressRoute 技术概述）](/documentation/articles/expressroute-introduction/)。在本地网络之间与 Azure 之间建立跨界连接的另一个选项是[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)。
 
 ### 数据丢失预防 
 数据丢失（有时称为数据泄漏）是一个重要的考虑因素，对于许多组织来说，防止恶意用户有意和内部人员无意丢失外部数据是首要任务。
@@ -228,8 +228,8 @@ DLP 技术可以通过关键字匹配、字典匹配、正则表达式求值和�
 
 ## 另请参阅
 
-- [Azure Data Encryption Best Practices（Azure 数据加密最佳实践）](/documentation/articles/azure-security-data-encryption-best-practices)
-- [Azure Identity Management and access control security best practices（Azure 标识管理和访问控制安全最佳实践）](/documentation/articles/azure-security-identity-management-best-practices)
+- [Azure Data Encryption Best Practices（Azure 数据加密最佳实践）](/documentation/articles/azure-security-data-encryption-best-practices/)
+- [Azure Identity Management and access control security best practices（Azure 标识管理和访问控制安全最佳实践）](/documentation/articles/azure-security-identity-management-best-practices/)
 - [Azure 安全团队博客](http://blogs.msdn.com/b/azuresecurity/)
 - [Microsoft 安全响应中心](https://technet.microsoft.com/zh-cn/library/dn440717.aspx)
 

@@ -29,8 +29,8 @@
 
 ## 后续步骤
 
-- 确保你的环境[已准备好备份 Windows 服务器或客户端计算机](/documentation/articles/backup-configure-vault)
-- 如果仍有疑问，请查看 [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)。
+- 确保你的环境[已准备好备份 Windows 服务器或客户端计算机](/documentation/articles/backup-configure-vault/)
+- 如果仍有疑问，请查看 [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)。
 - 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
 <!---HONumber=Mooncake_0405_2016-->

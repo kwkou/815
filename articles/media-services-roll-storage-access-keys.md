@@ -14,7 +14,7 @@
 
 #如何：轮转存储访问密钥后更新媒体服务
 
-当你创建新的 Azure 媒体服务帐户时，系统还会要求你选择用来存储媒体内容的 Azure 存储帐户。请注意，你可以[将多个存储帐户添加到](/documentation/articles/meda-services-managing-multiple-storage-accounts)媒体服务帐户。
+当你创建新的 Azure 媒体服务帐户时，系统还会要求你选择用来存储媒体内容的 Azure 存储帐户。请注意，你可以[将多个存储帐户添加到](/documentation/articles/meda-services-managing-multiple-storage-accounts/)媒体服务帐户。
 
 在创建新的存储帐户后，Azure 将生成两个 512 位存储访问密钥，用于对你存储帐户的访问进行身份验证。若要保持存储连接的安全性，我们建议定期重新生成并轮转你的存储访问密钥。将提供两个访问密钥（主密钥和辅助密钥），以便在你重新生成其中一个访问密钥时，始终能够使用另一个访问密钥连接到存储帐户。此过程也称为“轮转访问密钥”。
 
@@ -25,7 +25,7 @@
 
 ## 步骤 1：重新生成辅助存储访问密钥
 
-首先，请重新生成辅助存储密钥。默认情况下，媒体服务不使用辅助密钥。有关如何轮转存储密钥的信息，请参阅[如何：查看、复制和重新生成存储访问密钥](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys)。
+首先，请重新生成辅助存储密钥。默认情况下，媒体服务不使用辅助密钥。有关如何轮转存储密钥的信息，请参阅[如何：查看、复制和重新生成存储访问密钥](/documentation/articles/storage-create-storage-account/#view-copy-and-regenerate-storage-access-keys)。
   
 ##<a id="step2"></a>步骤 2：将媒体服务更新为使用新的辅助存储密钥
 
@@ -123,11 +123,11 @@
 
 ##步骤 5：重新生成主存储访问密钥
 
-重新生成主存储访问密钥。有关如何轮转存储密钥的信息，请参阅[如何：查看、复制和重新生成存储访问密钥](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys)。
+重新生成主存储访问密钥。有关如何轮转存储密钥的信息，请参阅[如何：查看、复制和重新生成存储访问密钥](/documentation/articles/storage-create-storage-account/#view-copy-and-regenerate-storage-access-keys)。
 
 ##步骤 6：将媒体服务更新为使用新的主存储密钥
 	
-按照[步骤 2](/documentation/articles/media-services-roll-storage-access-keys#step2) 中所述的相同过程操作，不过此次将新的主存储访问密钥与媒体服务帐户同步。
+按照[步骤 2](/documentation/articles/media-services-roll-storage-access-keys/#step2) 中所述的相同过程操作，不过此次将新的主存储访问密钥与媒体服务帐户同步。
 
 >[AZURE.NOTE]在对媒体服务执行任何操作（例如，创建新定位符）之前等待 30 分钟，以防止对挂起的作业产生任何影响。
 
@@ -135,7 +135,7 @@
 
 在 30 分钟后，你可以重新创建 OnDemand 定位符，使其依赖于新的主存储密钥并保留现有的 URL。
 
-使用[步骤 3](/documentation/articles/media-services-roll-storage-access-keys#step-3-update-locators) 中所述的相同过程。
+使用[步骤 3](/documentation/articles/media-services-roll-storage-access-keys/#step-3-update-locators) 中所述的相同过程。
 
 
 <!---HONumber=Mooncake_0704_2016-->

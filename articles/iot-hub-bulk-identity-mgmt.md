@@ -300,7 +300,7 @@ while(true)
 ## 获取容器 SAS URI
 
 
-以下代码示例演示如何生成具有 Blob 容器读取、写入和删除权限的 [SAS URI](/documentation/articles/storage-dotnet-shared-access-signature-part-2)：
+以下代码示例演示如何生成具有 Blob 容器读取、写入和删除权限的 [SAS URI](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)：
 
 ```
 static string GetContainerSasUri(CloudBlobContainer container)
@@ -330,8 +330,8 @@ static string GetContainerSasUri(CloudBlobContainer container)
 
 在本文中，你已学习如何对 IoT 中心内的设备标识注册表执行批量操作。可以使用以下文章继续探索 IoT 中心功能和其他 IoT 方案：
 
-- [以编程方式创建 IoT 中心](/documentation/articles/iot-hub-rm-template)
-- [IoT 中心使用情况度量值](/documentation/articles/iot-hub-metrics)
-- [IoT 中心操作监视](/documentation/articles/iot-hub-operations-monitoring)
+- [以编程方式创建 IoT 中心](/documentation/articles/iot-hub-rm-template/)
+- [IoT 中心使用情况度量值](/documentation/articles/iot-hub-metrics/)
+- [IoT 中心操作监视](/documentation/articles/iot-hub-operations-monitoring/)
 
 <!---HONumber=Mooncake_0307_2016-->

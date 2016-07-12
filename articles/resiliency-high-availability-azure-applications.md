@@ -18,7 +18,7 @@
 
 ##Azure 高可用性功能
 
-Azure 在平台中内置了多种功能，用于支持高度可用的应用程序。本部分介绍其中一些重要功能。有关该平台的更全面分析，请参阅 [Azure resiliency technical guidance（Azure 业务连续性技术指南）](/documentation/articles/resiliency-technical-guidance)。
+Azure 在平台中内置了多种功能，用于支持高度可用的应用程序。本部分介绍其中一些重要功能。有关该平台的更全面分析，请参阅 [Azure resiliency technical guidance（Azure 业务连续性技术指南）](/documentation/articles/resiliency-technical-guidance/)。
 
 ###结构控制器
 
@@ -30,7 +30,7 @@ Azure 结构控制器负责预配和监视 Azure 计算实例的状况。结构�
 
 ![容错域隔离的简化视图](./media/resiliency-high-availability-azure-applications/fault-domain-isolation.png)
 
-升级域在功能上与容错域类似，但支持升级而非故障。升级域是实例分离的逻辑单元，它决定将在某个时间点升级特定服务中的哪些实例。默认情况下会为托管服务部署定义五个升级域。不过，你可以在服务定义文件中更改该值。例如，假设你有八个 Web 角色实例。三个升级域中各有两个实例，一个升级域中有两个实例。Azure 定义了更新顺序，但它以升级域的数量为基础。有关升级域的详细信息，请参阅 [Update a cloud service（更新云服务）](/documentation/articles/cloud-services-update-azure-service)。
+升级域在功能上与容错域类似，但支持升级而非故障。升级域是实例分离的逻辑单元，它决定将在某个时间点升级特定服务中的哪些实例。默认情况下会为托管服务部署定义五个升级域。不过，你可以在服务定义文件中更改该值。例如，假设你有八个 Web 角色实例。三个升级域中各有两个实例，一个升级域中有两个实例。Azure 定义了更新顺序，但它以升级域的数量为基础。有关升级域的详细信息，请参阅 [Update a cloud service（更新云服务）](/documentation/articles/cloud-services-update-azure-service/)。
 
 ###其他服务中的功能
 
@@ -66,7 +66,7 @@ Azure 结构控制器负责预配和监视 Azure 计算实例的状况。结构�
 
 上述情况的一种变化形式使用 Azure 存储空间（Blob、表，队列）或服务总线队列作为调用数据库失败后的故障转移位置。例如，在应用程序中同步调用另一个服务（如 Azure SQL 数据库）反复失败。你可以将这些数据序列化为持久存储。以后在服务或数据库恢复联机时，应用程序可重新提交来自存储的请求。此模型中的区别在于中间位置不是应用程序工作流的固定部分。此模型仅用于故障情况下。
 
-在两种方案中，异步通信和中间存储均可防止后端服务中断导致整个应用程序停止运行。队列充当逻辑中介。有关选择正确队列服务的更多指导，请参阅 [Azure queues and Azure Service Bus queues--compared and contrasted（Azure 队列和 Azure 服务总线队列 - 比较与对照）](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)。
+在两种方案中，异步通信和中间存储均可防止后端服务中断导致整个应用程序停止运行。队列充当逻辑中介。有关选择正确队列服务的更多指导，请参阅 [Azure queues and Azure Service Bus queues--compared and contrasted（Azure 队列和 Azure 服务总线队列 - 比较与对照）](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)。
 
 ###故障检测和重试逻辑
 
@@ -137,6 +137,6 @@ Web 角色将脱离基础结构的其余部分进行自治。其可用性配置�
 
 ##后续步骤
 
-本文是着重介绍[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications)的系列教程的一部分。此系列教程的下一篇文章为[构建在 Azure 基础之上的应用程序灾难恢复](/documentation/articles/resiliency-disaster-recovery-azure-applications)。
+本文是着重介绍[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)的系列教程的一部分。此系列教程的下一篇文章为[构建在 Azure 基础之上的应用程序灾难恢复](/documentation/articles/resiliency-disaster-recovery-azure-applications/)。
 
 <!---HONumber=Mooncake_0627_2016-->

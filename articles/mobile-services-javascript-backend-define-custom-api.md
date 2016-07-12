@@ -16,8 +16,8 @@
 # 如何：在 JavaScript 后端移动服务中定义自定义 API 终结点
 
 > [AZURE.SELECTOR]
-- [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-define-custom-api)
-- [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)
+- [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-define-custom-api/)
+- [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-define-custom-api/)
 
 
 

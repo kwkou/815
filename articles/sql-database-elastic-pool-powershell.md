@@ -16,10 +16,10 @@
 # 使用 PowerShell 创建弹性数据库池以便向外缩放多个 SQL 数据库的资源 
 
 > [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-elastic-pool-csharp)
-- [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
+- [C#](/documentation/articles/sql-database-elastic-pool-csharp/)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/)
 
-了解如何通过使用 PowerShell cmdlet 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool)来管理多个数据库。
+了解如何通过使用 PowerShell cmdlet 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)来管理多个数据库。
 
 > [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
 
@@ -33,7 +33,7 @@
 我们对使用 Azure PowerShell 创建弹性数据库池的各个步骤进行了剖析。如果你只需命令的简明列表，请参阅本文底部的“汇总”部分。
 
 
-若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
 
@@ -79,12 +79,12 @@
 
 	New-AzureRmSqlServerFirewallRule -ResourceGroupName "resourcegroup1" -ServerName "server1" -FirewallRuleName "rule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
-有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
+有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。
 
 
 ## 创建弹性数据库池和弹性数据库
 
-现在，你已经有了一个资源组、一个服务器，并且配置了防火墙规则，因此可以访问服务器。[New-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt619378.aspx) cmdlet 将创建弹性数据库池。该命令将创建一个池，可以共享总共 400 eDTU。可以确保池中的每个数据库始终有 10 eDTU (DatabaseDtuMin) 可用。池中的各个数据库最多可以耗用 100 eDTU (DatabaseDtuMax)。有关详细的参数说明，请参阅 [Azure SQL 数据库弹性池](/documentation/articles/sql-database-elastic-pool)。
+现在，你已经有了一个资源组、一个服务器，并且配置了防火墙规则，因此可以访问服务器。[New-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt619378.aspx) cmdlet 将创建弹性数据库池。该命令将创建一个池，可以共享总共 400 eDTU。可以确保池中的每个数据库始终有 10 eDTU (DatabaseDtuMin) 可用。池中的各个数据库最多可以耗用 100 eDTU (DatabaseDtuMax)。有关详细的参数说明，请参阅 [Azure SQL 数据库弹性池](/documentation/articles/sql-database-elastic-pool/)。
 
 
 	New-AzureRmSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
@@ -225,11 +225,11 @@
 
 ## 后续步骤
 
-创建弹性数据库池后，你可以通过创建弹性作业来管理池中的弹性数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。有关详细信息，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview)。
+创建弹性数据库池后，你可以通过创建弹性作业来管理池中的弹性数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。有关详细信息，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
 
 ## 弹性数据库参考
 
-有关弹性数据库和弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
+有关弹性数据库和弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference/)。
 
 <!---HONumber=Mooncake_0328_2016-->

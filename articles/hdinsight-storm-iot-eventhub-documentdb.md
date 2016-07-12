@@ -52,6 +52,6 @@ GitHub 上的 [HDInsight-Storm-Examples](https://github.com/hdinsight/hdinsight-
 
 ## 后续步骤
 
-如需更多 Storm 拓扑示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
+如需更多 Storm 拓扑示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
 
 <!---HONumber=Mooncake_1207_2015-->

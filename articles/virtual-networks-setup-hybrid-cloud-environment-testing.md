@@ -15,7 +15,7 @@
 
 # 设置用于测试的混合云环境
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
  
 
 本主题将指导你逐步使用 Azure 创建混合云环境，以便进行测试。这是生成的配置。
@@ -46,7 +46,7 @@
 
 >[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的试用版。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
 
-此配置要求使用一个由最多四台计算机组成的测试子网，这些计算机使用公共 IP 地址直接连接到 Internet。如果没有这些资源，你也可以[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。模拟混合云测试环境只需要 Azure 订阅。
+此配置要求使用一个由最多四台计算机组成的测试子网，这些计算机使用公共 IP 地址直接连接到 Internet。如果没有这些资源，你也可以[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)。模拟混合云测试环境只需要 Azure 订阅。
 
 ## 阶段 1：在 Corpnet 子网上配置计算机
 
@@ -126,7 +126,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 	- 单击**“添加网关子网”**。
 11.	单击“完成”图标。请等到虚拟网络创建完以后再继续。
 
-接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。
+接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明在本地计算机上安装 Azure PowerShell。
 
 接下来，请为 TestVNET 虚拟网络创建新的云服务。你必须选取一个唯一的名称。例如，你可将其命名为TestVNET-*UniqueSequence*，其中 *UniqueSequence* 是你组织的缩写。例如，如果你的组织名称为 Tailspin Toys，则可以将云服务命名为 TestVNET-Tailspin。
 
@@ -312,6 +312,6 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
  
 ## 后续步骤
 
-- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)。
+- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing/)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing/)。
 
 <!---HONumber=Mooncake_0307_2016-->

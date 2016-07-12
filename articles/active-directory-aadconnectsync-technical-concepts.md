@@ -14,7 +14,7 @@
 
 
 # Azure AD Connect 同步：技术概念
-本文是[了解体系结构](/documentation/articles/active-directory-aadconnectsync-technical-concepts)主题的总结。
+本文是[了解体系结构](/documentation/articles/active-directory-aadconnectsync-technical-concepts/)主题的总结。
 
 Azure AD Connect 同步构建在稳固的元目录同步平台基础之上。以下部分介绍了元目录同步的概念。Azure Active Directory 同步服务基于 MIIS、ILM 和 FIM 进行构建，它提供了下一个平台，用于连接到数据源、同步数据源之间的数据以及设置标识和取消标识设置。
 
@@ -80,8 +80,8 @@ metaverse 是相邻连接器空间中的所有已联接标识的合并视图。
 
 ## 其他资源
 
-* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
+* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
+* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
  
 <!--Image references-->
 [1]: ./media/active-directory-aadsync-technical-concepts/ic750598.png

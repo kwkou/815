@@ -173,9 +173,9 @@
 
 <!--Link references-->
 [Python 开发人员中心]: /develop/python/
-[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
-[文档]: /documentation/articles/storage-python-how-to-use-table-storage
-[如何从 Python 使用表存储服务]: /documentation/articles/storage-python-how-to-use-table-storage
+[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs/
+[文档]: /documentation/articles/storage-python-how-to-use-table-storage/
+[如何从 Python 使用表存储服务]: /documentation/articles/storage-python-how-to-use-table-storage/
 
 <!--External Link references-->
 [Azure 经典管理门户]: https://manage.windowsazure.cn

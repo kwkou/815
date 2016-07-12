@@ -237,7 +237,7 @@ service.deleteTopic("TestTopic");
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
   [Azure classic portal]: http://manage.windowsazure.cn
-  [服务总线队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+  [服务总线队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx

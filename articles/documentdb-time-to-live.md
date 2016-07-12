@@ -30,7 +30,7 @@ DocumentDB 中的TTL值是针对文档最近修改时间戳的偏移量。文档
 2.	文档的 TTL：
 •	文档的TTL属性仅在集合上已设置 DefaultTTL 时有用。
 •	文档的TTL会覆盖集合上的 DefaultTTL 值。
-只要文档已过期（ttl + _ts >= 当前服务器时间），则文档就会标记为“已过期”，系统不允许对这些过期文档执行任何操作，这些文档也将从执行的任何查询结果中排除。过期文档将会被系统在后台自动删除。 这不占用集合预算的任何[请求单元 (RU)](/documentation/articles/documentdb-request-units)。
+只要文档已过期（ttl + _ts >= 当前服务器时间），则文档就会标记为“已过期”，系统不允许对这些过期文档执行任何操作，这些文档也将从执行的任何查询结果中排除。过期文档将会被系统在后台自动删除。 这不占用集合预算的任何[请求单元 (RU)](/documentation/articles/documentdb-request-units/)。
 
 上面的逻辑可显示在以下矩阵中：
 
@@ -145,7 +145,7 @@ TTL 应用于整个文档。如果只是想要使文档的一部分属性过期�
 
 **TTL 功能是否具有特定的索引要求？**
 
-是的。该集合必须将[索引策略设置](/documentation/articles/documentdb-indexing-policies)为“迟缓”或“一致性”。尝试在索引策略设置为“无”的集合上设置 DefaultTTL 将导致错误，尝试禁用已设置 DefaultTTL 的集合上的索引也会出错。
+是的。该集合必须将[索引策略设置](/documentation/articles/documentdb-indexing-policies/)为“迟缓”或“一致性”。尝试在索引策略设置为“无”的集合上设置 DefaultTTL 将导致错误，尝试禁用已设置 DefaultTTL 的集合上的索引也会出错。
 
 
 ## 后续步骤

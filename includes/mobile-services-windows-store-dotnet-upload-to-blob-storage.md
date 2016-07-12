@@ -50,7 +50,7 @@
         [JsonProperty(PropertyName = "imageUri")]
         public string ImageUri { get; set; } 
 
-   	>[AZURE.NOTE]若要将新属性添加到 JavaScript 后端移动服务中的 TodoItem 对象，你必须在你的移动服务中启用动态架构。启用动态架构时，新列自动添加到映射到这些新属性的 TodoItem 表。有关 .NET 后端移动服务的更多信息，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+   	>[AZURE.NOTE]若要将新属性添加到 JavaScript 后端移动服务中的 TodoItem 对象，你必须在你的移动服务中启用动态架构。启用动态架构时，新列自动添加到映射到这些新属性的 TodoItem 表。有关 .NET 后端移动服务的更多信息，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)。
 
 5. 在 MainPage 类中，添加以下代码：
 

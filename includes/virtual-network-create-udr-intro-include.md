@@ -5,6 +5,6 @@
 - 使用入侵检测系统 (IDS) 监视流量
 - 使用防火墙控制流量
 
-有关 UDR 和 IP 转发的详细信息，请访问[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。
+有关 UDR 和 IP 转发的详细信息，请访问[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview/)。
 
 <!---HONumber=79-->

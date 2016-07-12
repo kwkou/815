@@ -36,15 +36,15 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 * 工程压力分析
 * 软件测试
 
-你还可以使用批处理 ( Batch ) 来执行并行计算（最后加上归纳步骤），以及其他更复杂的 HPC 工作负荷，例如[消息传递接口 (MPI)](/documentation/articles/batch-mpi) 应用程序。
+你还可以使用批处理 ( Batch ) 来执行并行计算（最后加上归纳步骤），以及其他更复杂的 HPC 工作负荷，例如[消息传递接口 (MPI)](/documentation/articles/batch-mpi/) 应用程序。
 
-有关 Batch 与 Azure 中其他 HPC 解决方案选项的比较，请参阅 [Batch 和 HPC 解决方案](/documentation/articles/batch-hpc-solutions)。
+有关 Batch 与 Azure 中其他 HPC 解决方案选项的比较，请参阅 [Batch 和 HPC 解决方案](/documentation/articles/batch-hpc-solutions/)。
 
 ## 使用 Batch 进行开发
 
 当你构建解决方案来使用 Azure Batch 处理并行工作负荷时，可以使用 [Batch API](#batch-development-apis) 来编程。Batch API 可让你创建和管理计算节点（虚拟机）池，以及计划作业和任务在这些节点上运行。编写的客户端应用程序或服务使用 Batch API 来与 Batch 服务通信。
 
-可以为组织有效率地处理大量工作负荷，或提供前端服务给客户，让他们可以在一个、数百个甚至数千个节点上，按需要或按计划运行作业和任务。还可以在 [Azure 数据工厂](/documentation/articles/data-factory-data-processing-using-batch)等工具管理的大型工作流中使用 Batch。
+可以为组织有效率地处理大量工作负荷，或提供前端服务给客户，让他们可以在一个、数百个甚至数千个节点上，按需要或按计划运行作业和任务。还可以在 [Azure 数据工厂](/documentation/articles/data-factory-data-processing-using-batch/)等工具管理的大型工作流中使用 Batch。
 
 > [AZURE.TIP] 当你准备钻研 Batch API 以深入了解它所提供的功能时，请参阅 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articlesbatch-api-basics)。
 
@@ -56,7 +56,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 - **Batch 帐户** - 当应用程序与 Batch 服务交互时，将使用帐户名、帐户的 URL 和访问密钥作为凭据。所有 Batch 资源（如池、计算节点、作业和任务）都与 Batch 帐户关联。
 
-- **存储帐户** - Batch 内置支持处理 [Azure 存储空间][azure_storage]中的文件。几乎每个 Batch 方案都使用 Azure 存储空间来暂存文件（用于任务执行的程序及它们处理的数据），以及存储任务生成的输出数据。若要创建存储帐户，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。
+- **存储帐户** - Batch 内置支持处理 [Azure 存储空间][azure_storage]中的文件。几乎每个 Batch 方案都使用 Azure 存储空间来暂存文件（用于任务执行的程序及它们处理的数据），以及存储任务生成的输出数据。若要创建存储帐户，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。
 
 ### Batch 开发 API
 
@@ -74,11 +74,11 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 除了客户端 API 以外，还可以使用以下功能来管理 Batch 帐户中的资源。
 
-- [Batch PowerShell cmdlet][batch_ps] - [Azure PowerShell](/documentation/articles/powershell-install-configure) 模块中的 Batch PowerShell cmdlet 可让你使用 PowerShell 来管理 Batch 资源。
+- [Batch PowerShell cmdlet][batch_ps] - [Azure PowerShell](/documentation/articles/powershell-install-configure/) 模块中的 Batch PowerShell cmdlet 可让你使用 PowerShell 来管理 Batch 资源。
 
-- [Azure CLI](/documentation/articles/xplat-cli-install)：Azure 命令行接口 (Azure CLI) 是一个跨平台工具集，提供用来与许多 Azure 服务（包括 Batch）交互的 shell 命令。
+- [Azure CLI](/documentation/articles/xplat-cli-install/)：Azure 命令行接口 (Azure CLI) 是一个跨平台工具集，提供用来与许多 Azure 服务（包括 Batch）交互的 shell 命令。
 
-- [Batch Management .NET](/documentation/articles/batch-management-dotnet) 客户端库：也可以通过 [NuGet][api_net_mgmt_nuget] 获取。你可以使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户、配额和应用程序包。[MSDN][api_net_mgmt] 上提供了管理库的参考信息。
+- [Batch Management .NET](/documentation/articles/batch-management-dotnet/) 客户端库：也可以通过 [NuGet][api_net_mgmt_nuget] 获取。你可以使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户、配额和应用程序包。[MSDN][api_net_mgmt] 上提供了管理库的参考信息。
 
 ## 方案：扩大并行工作负荷
 
@@ -92,7 +92,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 1. 将**输入文件**和处理这些文件的**应用程序**上载到 Azure 存储帐户。输入文件可以是应用程序要处理的任何数据，例如金融建模数据或要转码的视频文件。应用程序文件可以是任何用于处理数据的应用程序，例如 3D 渲染应用程序或媒体转码器。
 
-2. 在 Batch 帐户中创建计算节点的 Batch **池** -- 这些是将执行任务的虚拟机。需要指定属性，例如[节点大小](/documentation/articles/cloud-services-sizes-specs)、其操作系统，以及节点加入池时要安装的应用程序在 Azure 存储空间中的位置（在步骤 #1 中上载的应用程序）。你还可以配置池来随着任务所生成的工作负荷而[自动缩放](/documentation/articles/batch-automatic-scaling) - 动态缩放池中的计算节点数目。
+2. 在 Batch 帐户中创建计算节点的 Batch **池** -- 这些是将执行任务的虚拟机。需要指定属性，例如[节点大小](/documentation/articles/cloud-services-sizes-specs/)、其操作系统，以及节点加入池时要安装的应用程序在 Azure 存储空间中的位置（在步骤 #1 中上载的应用程序）。你还可以配置池来随着任务所生成的工作负荷而[自动缩放](/documentation/articles/batch-automatic-scaling/) - 动态缩放池中的计算节点数目。
 
 3. 创建 Batch **作业**以便在计算节点池上运行工作负荷。创建作业时，需要将它与 Batch 池关联。
 
@@ -100,21 +100,21 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
     - 4a.任务执行之前，它可以将它要处理的数据（输入文件）下载到它被分配到的计算节点。如果应用程序未安装在节点上（请参阅步骤 2#），可以从此处下载。下载完成后，任务将在它被分配到的节点上执行。
 
-5. 任务执行时，你可以查询 Batch 来监视作业及其任务的进度。客户端应用程序或服务通过 HTTPS 来与 Batch 服务通信，因为可能监视数千个计算节点上执行的数千个任务，因此请务必[有效地查询 Batch 服务](/documentation/articles/batch-efficient-list-queries)。
+5. 任务执行时，你可以查询 Batch 来监视作业及其任务的进度。客户端应用程序或服务通过 HTTPS 来与 Batch 服务通信，因为可能监视数千个计算节点上执行的数千个任务，因此请务必[有效地查询 Batch 服务](/documentation/articles/batch-efficient-list-queries/)。
 
 6. 当任务完成时，它们可以将其输出数据上载到 Azure 存储空间。你也可以直接从计算节点检索文件。
 
 7. 当监视检测到作业中的任务已完成时，客户端应用程序或服务可以下载输出数据来进一步处理或评估。
 
-请记住，这只是使用 Batch 的一种方式，此方案只描述它可用的几项功能。例如，可以在每个计算节点上[以并行方式执行多项任务](/documentation/articles/batch-parallel-node-tasks)，也可以使用[作业准备和完成任务](/documentation/articles/batch-job-prep-release)来准备作业的节点，然后再清除。
+请记住，这只是使用 Batch 的一种方式，此方案只描述它可用的几项功能。例如，可以在每个计算节点上[以并行方式执行多项任务](/documentation/articles/batch-parallel-node-tasks/)，也可以使用[作业准备和完成任务](/documentation/articles/batch-job-prep-release/)来准备作业的节点，然后再清除。
 
 ## 后续步骤
 
 在大致了解 Batch 服务后，接下来可以更深入探索该服务，以了解如何使用它来处理计算密集型并行工作负荷。
 
-- 阅读 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articles/batch-api-basics)，深入了解 Batch 提供用于处理工作负荷的 API 功能。想要使用 Batch 的任何人都必须阅读此文。
+- 阅读 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articles/batch-api-basics/)，深入了解 Batch 提供用于处理工作负荷的 API 功能。想要使用 Batch 的任何人都必须阅读此文。
 
-- 阅读 [Get started with the Azure Batch library for .NET（适用于 .NET 的 Azure Batch 库入门）](/documentation/articles/batch-dotnet-get-started)，了解如何使用 C# 和 Batch .NET 库在常见的 Batch 工作流中执行简单的工作负荷。这应该是学习如何使用 Batch 服务的第一站。
+- 阅读 [Get started with the Azure Batch library for .NET（适用于 .NET 的 Azure Batch 库入门）](/documentation/articles/batch-dotnet-get-started/)，了解如何使用 C# 和 Batch .NET 库在常见的 Batch 工作流中执行简单的工作负荷。这应该是学习如何使用 Batch 服务的第一站。
 - 下载 [GitHub 上的代码示例][github_samples]，了解 C# 和 Python 如何与 Batch 相互作用，以计划和处理示例工作负荷。
 
 - 查看 [Batch Learning Path（Batch 学习路径）][learning_path]，获取在学习使用 Batch 时可用的资源。

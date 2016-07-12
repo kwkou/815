@@ -183,7 +183,7 @@ Move-AzureRmResource -DestinationResourceGroupName 'targetRP' -DestinationSubscr
 [购买选项]: http://azure.microsoft.com/zh-cn/pricing/purchase-options/
 [成员优惠]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
 [试用]: /pricing/1rmb-trial/
-[安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
+[安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [服务总线 NuGet 包]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx

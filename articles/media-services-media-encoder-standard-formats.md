@@ -104,8 +104,8 @@ MPEG2-TS |H.264（High、Main 和 Baseline Profile）|AAC-LC、HE-AAC v1、HE-AA
 
 ##另请参阅
 
-[使用 Azure 媒体服务对按需内容进行编码](/documentation/articles/media-services-encode-asset)
+[使用 Azure 媒体服务对按需内容进行编码](/documentation/articles/media-services-encode-asset/)
 
-[如何使用媒体编码器标准版进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)
+[如何使用媒体编码器标准版进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)
 
 <!---HONumber=Mooncake_0620_2016-->

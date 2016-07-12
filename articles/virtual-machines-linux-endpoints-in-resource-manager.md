@@ -18,8 +18,8 @@
 ## 后续步骤
 你可以从下列文章中，阅读与此处讨论的技术相关的更为详细的信息，以及有关如何使用网络安全组的快速入门指南：
 
-- [快速入门 — 使用 Azure CLI 来创建网络安全组和 ACL 规则](/documentation/articles/virtual-machines-linux-nsg-quickstart)  
-- [Azure 资源管理器概述](/documentation/articles/resource-group-overview)  
-- [什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg)
+- [快速入门 — 使用 Azure CLI 来创建网络安全组和 ACL 规则](/documentation/articles/virtual-machines-linux-nsg-quickstart/)  
+- [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)  
+- [什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)
 
 <!---HONumber=Mooncake_0704_2016-->

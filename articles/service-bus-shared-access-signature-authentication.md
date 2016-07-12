@@ -13,9 +13,9 @@
 
 # 服务总线的共享访问签名身份验证
 
-通过[共享访问签名 (SAS)](/documentation/articles/service-bus-sas-overview) 身份验证，应用程序能够使用在命名空间或在关联了特定权限的消息传送实体（队列或主题）上配置的访问密钥向服务总线进行身份验证。然后可以使用此密钥生成 SAS 令牌，客户端反过来可用它向服务总线进行身份验证。
+通过[共享访问签名 (SAS)](/documentation/articles/service-bus-sas-overview/) 身份验证，应用程序能够使用在命名空间或在关联了特定权限的消息传送实体（队列或主题）上配置的访问密钥向服务总线进行身份验证。然后可以使用此密钥生成 SAS 令牌，客户端反过来可用它向服务总线进行身份验证。
 
-Azure SDK 2.0 版和更高版本包括 SAS 身份验证支持。有关服务总线身份验证的详细信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization)。
+Azure SDK 2.0 版和更高版本包括 SAS 身份验证支持。有关服务总线身份验证的详细信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)。
 
 ## 概念
 
@@ -248,9 +248,9 @@ sendClient.Send(helloMessage);
 
 ## 后续步骤
 
-有关服务总线中的 SAS 的高级概述，请参阅[共享访问签名](/documentation/articles/service-bus-sas-overview)。
+有关服务总线中的 SAS 的高级概述，请参阅[共享访问签名](/documentation/articles/service-bus-sas-overview/)。
 
-有关服务总线身份验证的更多背景信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization)。
+有关服务总线身份验证的更多背景信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)。
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

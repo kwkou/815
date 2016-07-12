@@ -67,7 +67,7 @@ Fabrikam 中有对名字、姓氏和显示名称使用本地字母的林。以�
 ![属性流 4](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp4.png)
 
 ### <a name="do-not-flow-an-attribute"></a>不要流送属性
-有两种方法可防止流送属性。第一种方法可在安装向导中使用，可让你[删除选定的属性](/documentation/articles/active-directory-aadconnect-get-started-custom#azure-ad-app-and-attribute-filtering)。如果你以前未曾同步该属性，则可以使用这个选项。但是，如果你已开始同步此属性，后来使用此功能将它删除，则同步引擎将停止管理属性，现有值将保留在 Azure AD 中。
+有两种方法可防止流送属性。第一种方法可在安装向导中使用，可让你[删除选定的属性](/documentation/articles/active-directory-aadconnect-get-started-custom/#azure-ad-app-and-attribute-filtering)。如果你以前未曾同步该属性，则可以使用这个选项。但是，如果你已开始同步此属性，后来使用此功能将它删除，则同步引擎将停止管理属性，现有值将保留在 Azure AD 中。
 
 如果想要删除某个属性的值并确保将来不会流送该属性，则需要改为创建自定义规则。
 
@@ -104,8 +104,8 @@ Fabrikam 中有对名字、姓氏和显示名称使用本地字母的林。以�
 在这个克隆的规则中，对范围、联接和转换进行任何必要的更改。
 
 ## 后续步骤
-了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis)配置的详细信息。
+了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0606_2016-->

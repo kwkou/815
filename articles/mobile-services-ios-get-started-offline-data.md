@@ -252,20 +252,20 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 [Core Data]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
 [Download the preview SDK here]: http://aka.ms/Gc6fex
-[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library
+[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library/
 [Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
 [Mobile Services sample repository on GitHub]: https://github.com/Azure/mobile-services-samples
 
 
-[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data
-[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
-[软删除]: /documentation/articles/mobile-services-using-soft-delete
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started/
+[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data/
+[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete/
+[软删除]: /documentation/articles/mobile-services-using-soft-delete/
 
 [云覆盖：Azure 移动服务中的脱机同步]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Aazure Friday：Azure 移动服务中支持脱机的应用]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
-[移动服务快速入门教程]: /documentation/articles/mobile-services-ios-get-started
+[移动服务快速入门教程]: /documentation/articles/mobile-services-ios-get-started/
  
 
 <!---HONumber=Mooncake_0215_2016-->

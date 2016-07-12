@@ -17,11 +17,11 @@
 
 # 在创建期间使用 cloud-init 自定义 Linux VM
 
-本文说明如何制作 cloud-init 脚本来设置主机名、更新已安装的包及管理用户帐户。然后，可以在 VM 创建期间从 [Azure CLI](/documentation/articles/xplat-cli-install) 使用这些 cloud-init 脚本。
+本文说明如何制作 cloud-init 脚本来设置主机名、更新已安装的包及管理用户帐户。然后，可以在 VM 创建期间从 [Azure CLI](/documentation/articles/xplat-cli-install/) 使用这些 cloud-init 脚本。
 
 ## 先决条件
 
-先决条件：[Azure 帐户](/pricing/1rmb-trial/)、[SSH 公钥与私钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys)、在其中启动 Linux VM 的 Azure 资源组、已安装 Azure CLI，并已使用 `azure config mode arm` 切换到 ARM 模式。
+先决条件：[Azure 帐户](/pricing/1rmb-trial/)、[SSH 公钥与私钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)、在其中启动 Linux VM 的 Azure 资源组、已安装 Azure CLI，并已使用 `azure config mode arm` 切换到 ARM 模式。
 
 ## 介绍
 
@@ -30,14 +30,14 @@
 Azure 有三种不同的方法可在 Linux VM 启动时进行更改。
 
 - 可以使用 cloud-init 注入脚本。
-- 可以使用 Azure [CustomScriptExtention](/documentation/articles/virtual-machines-linux-extensions-customscript) 注入脚本。
+- 可以使用 Azure [CustomScriptExtention](/documentation/articles/virtual-machines-linux-extensions-customscript/) 注入脚本。
 - 可以在 Azure 模板中指定自定义设置，并且用它来启动及自定义 Linux VM，此模板中包括 cloud-init 支持以及 CustomScript VM 扩展和许多其他功能。
 
 若要随时注入脚本，可以：
 
-- 使用 SSH 直接运行命令，可以命令方式或在 Azure 模板中使用 Azure [CustomScriptExtention](/documentation/articles/virtual-machines-linux-extensions-customscript)，或者使用 Ansible、Salt、Chef 及 Puppet 等通用配置管理工具，这些工具在 VM 启动完成后在 SSH 上工作。
+- 使用 SSH 直接运行命令，可以命令方式或在 Azure 模板中使用 Azure [CustomScriptExtention](/documentation/articles/virtual-machines-linux-extensions-customscript/)，或者使用 Ansible、Salt、Chef 及 Puppet 等通用配置管理工具，这些工具在 VM 启动完成后在 SSH 上工作。
 
-注意：尽管 [CustomScriptExtention](/documentation/articles/virtual-machines-linux-extensions-customscript) 和使用 SSH 时一样只将脚本作为 root 运行，但是使用 VM 扩展可让 Azure 提供的几项功能发挥功用，具体取决于你的方案。
+注意：尽管 [CustomScriptExtention](/documentation/articles/virtual-machines-linux-extensions-customscript/) 和使用 SSH 时一样只将脚本作为 root 运行，但是使用 VM 扩展可让 Azure 提供的几项功能发挥功用，具体取决于你的方案。
 
 ## 快速命令
 

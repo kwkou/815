@@ -24,7 +24,7 @@ Service Fabric 群集由群集资源本身及众多其他 Azure 资源组成。�
 
 ### 使用 Azure PowerShell 删除资源组
 
-也可通过运行以下 Azure PowerShell cmdlet 删除资源组。请确保计算机上已安装 Azure PowerShell 1.0 或更高版本。如果尚未安装，请按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中所述的步骤进行安装。
+也可通过运行以下 Azure PowerShell cmdlet 删除资源组。请确保计算机上已安装 Azure PowerShell 1.0 或更高版本。如果尚未安装，请按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中所述的步骤进行安装。
 
 打开 PowerShell 窗口并运行以下 PS cmdlet：
 
@@ -74,7 +74,7 @@ Remove-AzureRmResourceGroup -Name <name of ResouceGroup> -Force
 
 ### 使用 Azure PowerShell 删除资源
 
-可通过运行以下 Azure PowerShell cmdlet 逐个删除资源。请确保计算机上已安装 Azure PowerShell 1.0 或更高版本。如果尚未安装，请按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中所述的步骤进行安装。
+可通过运行以下 Azure PowerShell cmdlet 逐个删除资源。请确保计算机上已安装 Azure PowerShell 1.0 或更高版本。如果尚未安装，请按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中所述的步骤进行安装。
 
 打开 PowerShell 窗口并运行以下 PS cmdlet：
 
@@ -96,8 +96,8 @@ Remove-AzureRmResource -ResourceName "<name of the Resource>" -ResourceType "Mic
 ## 后续步骤
 参阅以下文章以了解如何升级群集以及对服务进行分区：
 
-- [了解群集升级](/documentation/articles/service-fabric-cluster-upgrade)
-- [了解如何为有状态服务分区以最大程度地实现缩放](/documentation/articles/service-fabric-concepts-partitioning)
+- [了解群集升级](/documentation/articles/service-fabric-cluster-upgrade/)
+- [了解如何为有状态服务分区以最大程度地实现缩放](/documentation/articles/service-fabric-concepts-partitioning/)
 
 
 <!--Image references-->

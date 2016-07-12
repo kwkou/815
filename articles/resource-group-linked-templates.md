@@ -109,7 +109,7 @@
 如果你需要将值从链接模板传递到主模板，则可以在链接模板的**输出**部分创建一个值。
 
 ## 后续步骤
-- 若要了解如何为资源定义部署顺序，请参阅 [在 Azure Resource Manager 模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies)
-- 若要了解如何定义一个资源但要创建其多个实例，请参阅 [在 Azure Resource Manager 中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
+- 若要了解如何为资源定义部署顺序，请参阅 [在 Azure Resource Manager 模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies/)
+- 若要了解如何定义一个资源但要创建其多个实例，请参阅 [在 Azure Resource Manager 中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)
 
 <!---HONumber=Mooncake_0425_2016-->

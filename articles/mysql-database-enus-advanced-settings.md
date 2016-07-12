@@ -3,8 +3,8 @@
 <tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-advanced-settings)
-- [English](/documentation/articles/mysql-database-enus-advanced-settings)
+- [中文](/documentation/articles/mysql-database-advanced-settings/)
+- [English](/documentation/articles/mysql-database-enus-advanced-settings/)
 
 #Setting MySQL Database on Azure server parameters
 

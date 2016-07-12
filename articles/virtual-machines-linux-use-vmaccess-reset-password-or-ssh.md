@@ -18,7 +18,7 @@
 
 如果因为忘记密码、安全外壳 (SSH) 密钥不正确或 SSH 配置出现问题而不能连接到 Azure 上的 Linux 虚拟机，请使用 VMAccessForLinux 扩展通过 Azure CLI 重置密码或 SSH 密钥、修复 SSH 配置以及检查磁盘一致性。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理模型](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理模型](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
 
 
 
@@ -27,7 +27,7 @@
 
 你将需要以下各项：
 
-- Azure 命令行界面 (CLI)。你需要[安装 Azure CLI](/documentation/articles/xplat-cli-install)，并[连接到你的订阅](/documentation/articles/xplat-cli-connect)以使用与你帐户关联的 Azure 资源。
+- Azure 命令行界面 (CLI)。你需要[安装 Azure CLI](/documentation/articles/xplat-cli-install/)，并[连接到你的订阅](/documentation/articles/xplat-cli-connect/)以使用与你帐户关联的 Azure 资源。
 - 一个新密码或一组新 SSH 密钥（如果想要重置任一项）。如果想要重置 SSH 配置，则不需要这些。
 
 
@@ -171,6 +171,6 @@
 
 * 你也可以使用 [Azure 门户预览](https://portal.azure.cn)来重置部署在经典部署模型中的 Linux VM 的密码或 SSH 密钥。目前你无法使用门户预览来针对部署在 Resource Manager 部署模型中的 Linux VM 执行上述操作。
 
-* 有关使用适用于 Azure 虚拟机的 VM 扩展的详细信息，请参阅 [About virtual machine extensions and features（关于虚拟机扩展和功能）](/documentation/articles/virtual-machines-linux-extensions-features)。
+* 有关使用适用于 Azure 虚拟机的 VM 扩展的详细信息，请参阅 [About virtual machine extensions and features（关于虚拟机扩展和功能）](/documentation/articles/virtual-machines-linux-extensions-features/)。
 
 <!---HONumber=Mooncake_0606_2016-->

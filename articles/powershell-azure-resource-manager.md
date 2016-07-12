@@ -15,7 +15,7 @@
 # 将 Azure PowerShell 与 Azure 资源管理器配合使用
 
 > [AZURE.SELECTOR]
-- [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager)
+- [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
 
 Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。首先应该构想整个解决方案，而不是创建和管理各个资源，如博客、照片库、SharePoint 门户或 wiki。可以使用模板（解决方案的声明性表示形式）创建包含支持该解决方案所需资源的资源组。然后，可以将该资源组作为一个逻辑单元进行管理和部署。
 
@@ -35,7 +35,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 - 一个 Azure 帐户
   + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。你的信用卡将永远不会付费，除非你显式更改设置并要求付费。
   
-- Azure PowerShell 1.0。有关此版本及其安装方法的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- Azure PowerShell 1.0。有关此版本及其安装方法的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 本教程专为 PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。
 
@@ -107,13 +107,13 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ## 部署你的解决方案
 
-本主题不会说明如何创建模板，也不会介绍模板的结构。有关该信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)。
+本主题不会说明如何创建模板，也不会介绍模板的结构。有关该信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates/)。
 
 在创建资源组和模板后，可以将模板中定义的基础结构部署到资源组。你可以使用 **New-AzureRmResourceGroupDeployment** cmdlet 部署资源。该模板指定了我们要使用的许多默认值，因此你不需要提供这些参数的值。基本语法如下：
 
     New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -administratorLogin exampleadmin -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json 
 
-指定资源组及模板的位置。如果你的模板是本地文件，可以使用 **-TemplateFile** 参数并指定模板的路径。可将 **-Mode** 参数设置为 **Incremental** 或 **Complete**。默认情况下，Resource Manager 将在部署期间执行增量更新；因此，不必要将 **-Mode** 设置为 **Incremental**。若要了解这些部署模式之间的差异，请参阅[使用 Azure Resource Manager 模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+指定资源组及模板的位置。如果你的模板是本地文件，可以使用 **-TemplateFile** 参数并指定模板的路径。可将 **-Mode** 参数设置为 **Incremental** 或 **Complete**。默认情况下，Resource Manager 将在部署期间执行增量更新；因此，不必要将 **-Mode** 设置为 **Incremental**。若要了解这些部署模式之间的差异，请参阅[使用 Azure Resource Manager 模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
 ###动态模板参数
 
@@ -163,7 +163,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ### 日志调试信息
 
-在部署模板时，通过指定运行 **New-AzureRmResourceGroupDeployment** 时的 **-DeploymentDebugLogLevel** 参数，可记录有关请求和响应的其他信息。此信息可帮助排查部署错误。默认值为 **None**，即不记录任何请求或响应内容。你可以指定从请求和/或响应记录内容。有关排查部署问题和记录调试信息的详细信息，请参阅 [Troubleshooting resource group deployments with Azure PowerShell（使用 Azure PowerShell 排查资源组部署问题）](/documentation/articles/resource-manager-troubleshoot-deployments-powershell)。以下示例将记录部署的请求内容和响应内容。
+在部署模板时，通过指定运行 **New-AzureRmResourceGroupDeployment** 时的 **-DeploymentDebugLogLevel** 参数，可记录有关请求和响应的其他信息。此信息可帮助排查部署错误。默认值为 **None**，即不记录任何请求或响应内容。你可以指定从请求和/或响应记录内容。有关排查部署问题和记录调试信息的详细信息，请参阅 [Troubleshooting resource group deployments with Azure PowerShell（使用 Azure PowerShell 排查资源组部署问题）](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)。以下示例将记录部署的请求内容和响应内容。
 
     New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -DeploymentDebugLogLevel All -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json 
 
@@ -219,7 +219,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
         Location          : China East
         SubscriptionId    : {guid}
                 
-      标记的作用远远不止如此。有关详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags)。
+      标记的作用远远不止如此。有关详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
 ## 添加到资源组
 
@@ -227,7 +227,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ## 移动资源
 
-可以将现有资源移动到新的资源组。有关示例，请参阅[将资源移动到新的资源组或订阅中](/documentation/articles/resource-group-move-resources)。
+可以将现有资源移动到新的资源组。有关示例，请参阅[将资源移动到新的资源组或订阅中](/documentation/articles/resource-group-move-resources/)。
 
 ## 导出模板
 
@@ -367,8 +367,8 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ## 后续步骤
 
-- 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+- 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
+- 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
 
 <!---HONumber=Mooncake_0425_2016-->

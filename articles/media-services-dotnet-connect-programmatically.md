@@ -16,8 +16,8 @@
 # 使用适用于 .NET 的媒体服务 SDK 连接到媒体服务帐户
 
 > [AZURE.SELECTOR]
-- [REST](/documentation/articles/media-services-rest-connect-programmatically)
-- [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
+- [REST](/documentation/articles/media-services-rest-connect-programmatically/)
+- [.NET](/documentation/articles/media-services-dotnet-connect_programmatically/)
 
 
 本主题介绍如何在使用适用于 .NET 的媒体服务 SDK 编程时获取与 Azure 媒体服务的编程连接。

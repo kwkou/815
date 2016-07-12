@@ -53,7 +53,7 @@
 
 
 - PowerShell
- - [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full) - 提供有关 PowerShell 和 Azure 存储服务的综合信息。
+ - [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) - 提供有关 PowerShell 和 Azure 存储服务的综合信息。
 
 
 ## 代码示例
@@ -62,12 +62,12 @@
 相关主题提供了两个代码示例：
 
 
-- [SQL 数据库中扩展事件的环形缓冲区目标代码](/documentation/articles/sql-database-xevent-code-ring-buffer)
+- [SQL 数据库中扩展事件的环形缓冲区目标代码](/documentation/articles/sql-database-xevent-code-ring-buffer/)
  - 简短的 Transact-SQL 脚本。
  - 我们在代码示例主题中强调，当完成环形缓冲区目标时，应该通过执行 alter-drop `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` 语句释放其资源。然后可以通过 `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...` 添加环形缓冲区的另一个实例。
 
 
-- [SQL 数据库中扩展事件的事件文件目标代码](/documentation/articles/sql-database-xevent-code-event-file)
+- [SQL 数据库中扩展事件的事件文件目标代码](/documentation/articles/sql-database-xevent-code-event-file/)
  - 阶段 1 是 PowerShell，用于创建 Azure 存储容器。
  - 阶段 2 是 Transact-SQL，它使用 Azure 存储容器。
 
@@ -239,12 +239,12 @@ SELECT
 ## 相关链接
 
 
-- [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full)。
+- [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/)。
 - [Azure 存储 Cmdlet](http://msdn.microsoft.com/zh-cn/library/dn806401.aspx)
 
 
-- [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full) - 提供有关 PowerShell 和 Azure 存储服务的综合信息。
-- [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
+- [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) - 提供有关 PowerShell 和 Azure 存储服务的综合信息。
+- [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 
 
 - [CREATE CREDENTIAL (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms189522.aspx)

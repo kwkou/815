@@ -45,7 +45,7 @@
 <!--Image references-->
 
 <!--Arcticles-->
-[连接]: /documentation/articles/sql-data-warehouse-get-started-connect
+[连接]: /documentation/articles/sql-data-warehouse-get-started-connect/
 
 <!--Other-->
 [下载 Visual Studio 2015]: https://www.visualstudio.com/downloads/

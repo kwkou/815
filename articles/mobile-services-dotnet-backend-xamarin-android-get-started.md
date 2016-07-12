@@ -114,14 +114,14 @@
 [10]: ./media/mobile-services-dotnet-backend-xamarin-android-get-started/mobile-quickstart-startup-android.png
 
 <!-- URLs. -->
-[脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data
-[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users
+[脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data/
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users/
 
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
+[JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript/
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
-[JavaScript 后端版本]: /documentation/articles/mobile-services-android-get-started
-[移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+[JavaScript 后端版本]: /documentation/articles/mobile-services-android-get-started/
+[移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot/
 
 <!---HONumber=Mooncake_0516_2016-->

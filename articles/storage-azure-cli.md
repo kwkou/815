@@ -18,11 +18,11 @@
 
 Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。它提供了[经典管理门户](https://manage.windowsazure.cn)所提供的很多相同功能，以及各种数据访问功能。
 
-在本指南中，我们将探讨如何使用 [Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli-install)，以便通过 Azure 存储空间执行各种开发和管理任务。在使用本指南之前，我们建议你下载和安装或者升级到最新版 Azure CLI。
+在本指南中，我们将探讨如何使用 [Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli-install/)，以便通过 Azure 存储空间执行各种开发和管理任务。在使用本指南之前，我们建议你下载和安装或者升级到最新版 Azure CLI。
 
 本指南假定你了解 Azure 存储服务的基本概念。本指南提供了大量的脚本，用于演示 Azure CLI 与 Azure 存储服务的用法。在运行每个脚本之前，请确保根据配置更新脚本变量。
 
-> [AZURE.NOTE] 本指南提供在 Azure 服务管理 (ASM) 模式下运行的 Azure CLI 命令和脚本的示例。若要了解如何使用 Azure CLI 命令在 Azure 资源管理 (ARM) 模式下进行存储，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands#azure-storage-commands-to-manage-your-storage-objects)。
+> [AZURE.NOTE] 本指南提供在 Azure 服务管理 (ASM) 模式下运行的 Azure CLI 命令和脚本的示例。若要了解如何使用 Azure CLI 命令在 Azure 资源管理 (ARM) 模式下进行存储，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands/#azure-storage-commands-to-manage-your-storage-objects)。
 
 ## 在 5 分钟内开始使用 Azure 存储服务和 Azure CLI
 
@@ -34,7 +34,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 **创建 Azure 订阅和帐户之后：**
 
-1. 按照[安装 Azure CLI](/documentation/articles/xplat-cli-install) 中概述的说明，下载和安装 Azure CLI。
+1. 按照[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 中概述的说明，下载和安装 Azure CLI。
 2. 安装了 Azure CLI 之后，你将可以从命令行界面（Bash、终端、命令提示符）使用 azure 命令访问 Azure CLI 命令。输入 `azure` 命令，你应该会看到以下输出：
 
     ![Azure 命令输出][Image1]
@@ -91,7 +91,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ### 连接到你的 Azure 订阅
 
-大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请执行[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)中的步骤。
+大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请执行[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)中的步骤。
 
 ### 新建存储帐户
 
@@ -118,7 +118,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ## 创建并管理 blob
 
-Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储的概念。有关详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
+Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储的概念。有关详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
 
 ### 创建容器
 
@@ -126,7 +126,7 @@ Azure 存储服务中的每个 Blob 都必须在容器中。你可以使用 `azu
 
         azure storage container create mycontainer
 
-> [AZURE.NOTE] 有三种级别的匿名读取访问权限：**Off**、**Blob** 和 **Container**。若要防止对 Blob 进行匿名访问，请将 Permission 参数设置为 **Off**。默认情况下，新容器是专用容器，只能由帐户所有者访问。若要允许对 Blob 资源进行匿名公共读取访问，但不允许访问容器元数据或容器中的 Blob 列表，请将 Permission 参数设置为 **Blob**。若要允许对 Blob 资源、容器元数据和容器中的 Blob 列表进行完全公开读取访问，请将 Permission 参数设置为 **Container**。有关详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources)。
+> [AZURE.NOTE] 有三种级别的匿名读取访问权限：**Off**、**Blob** 和 **Container**。若要防止对 Blob 进行匿名访问，请将 Permission 参数设置为 **Off**。默认情况下，新容器是专用容器，只能由帐户所有者访问。若要允许对 Blob 资源进行匿名公共读取访问，但不允许访问容器元数据或容器中的 Blob 列表，请将 Permission 参数设置为 **Blob**。若要允许对 Blob 资源、容器元数据和容器中的 Blob 列表进行完全公开读取访问，请将 Permission 参数设置为 **Container**。有关详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)。
 
 ### 将 Blob 上载到容器中
 
@@ -166,7 +166,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 
 ##<a id="create-and-manage-file-shares"></a> 创建和管理文件共享
 
-Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Azure 虚拟机和云服务以及本地应用程序可以通过装载的共享来共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)或[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)。
+Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Azure 虚拟机和云服务以及本地应用程序可以通过装载的共享来共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)或[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux/)。
 
 ### 创建文件共享
 

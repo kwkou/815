@@ -50,13 +50,13 @@
 [Storing authentication tokens in your app]: #store-authentication
 
 <!-- URLs. -->
-[移动服务用户的服务端授权]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
-[移动服务快速入门教程]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
-[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
+[移动服务用户的服务端授权]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization/
+[移动服务快速入门教程]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started/
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization/
 
 [Mobile Services .NET How-to Conceptual Reference]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/
 
 <!---HONumber=Mooncake_0215_2016-->

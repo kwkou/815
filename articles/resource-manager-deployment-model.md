@@ -23,7 +23,7 @@
 - **存储** - 对所需的存储帐户提供支持，存储帐户存储虚拟机的 VHD，包括其操作系统和其附加的数据磁盘。
 - **网络** - 对所需的 NIC、虚拟机 IP 地址和虚拟网络内的子网及可选的负载平衡器、负载平衡器 IP 地址和网络安全组提供支持。
 
-对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。<! -- 如果你已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅 [Platform supported migration of IaaS resources from Classic to Azure Resource Manager（平台支持从经典部署迁移到 Azure Resource Manager 部署的 IaaS 资源）](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager)。 -->
+对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。<! -- 如果你已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅 [Platform supported migration of IaaS resources from Classic to Azure Resource Manager（平台支持从经典部署迁移到 Azure Resource Manager 部署的 IaaS 资源）](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)。 -->
 
 若要了解应使用哪种模型来部署资源，让我们回顾这两个模型。
 
@@ -106,7 +106,7 @@
 
 标记使您能够按照逻辑组织您的资源。只有通过资源管理器创建的资源才支持标记。您不能将标记应用到经典资源。
 
-有关在资源管理器中使用标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags)。
+有关在资源管理器中使用标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
 ## 部署模型支持的操作
 
@@ -144,11 +144,11 @@
 
 如果你可以承受虚拟机停机带来的损失，则可以使用 [ASM2ARM PowerShell 脚本](https://github.com/fullscale180/asm2arm)将虚拟机从经典部署过渡到资源管理器部署。
 
-有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅 [VM 操作的等效资源管理器和服务管理命令](/documentation/articles/virtual-machines-windows-cli-manage)。
+有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅 [VM 操作的等效资源管理器和服务管理命令](/documentation/articles/virtual-machines-windows-cli-manage/)。
 
 ## 后续步骤
 
-- 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+- 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
+- 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
 <!---HONumber=Mooncake_0620_2016-->

@@ -4,11 +4,11 @@
 
 # Service consulting
 > [AZURE.SELECTOR]
-- [All issues](/documentation/articles/mysql-database-enus-tech-faq)
-- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry)
-- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry)
-- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry)
-- [Compatibility issues](/documentation/articles/mysql-database-enus-compatibilityinquiry)
+- [All issues](/documentation/articles/mysql-database-enus-tech-faq/)
+- [Service consulting](/documentation/articles/mysql-database-enus-serviceinquiry/)
+- [Connection issues](/documentation/articles/mysql-database-enus-connectioninquiry/)
+- [Security consulting](/documentation/articles/mysql-database-enus-securityinquiry/)
+- [Compatibility issues](/documentation/articles/mysql-database-enus-compatibilityinquiry/)
 
 ### **Is the amount of storage space for data backups limited?**
   
@@ -41,6 +41,6 @@ For performance reasons, we use two 256 MB log files for new database instance c
 Yes. While our [Management Portal](https://manage.windowsazure.cn/) and the PowerShell command line only support setting read/write privileges for the entire database when creating users or databases, you can use the **grant** command to fine-tune user privilege settings.
 
 ### **What system time does MySQL Database on Azure currently use? How can I change it?**
-MySQL on Azure currently defaults to using UTC (Coordinated Universal Time) as the system time. Users can configure offsets using the Management Portal or PowerShell to update the time. For more information see [Change time zones on MySQL on Azure](/documentation/articles/mysql-database-timezone-config).
+MySQL on Azure currently defaults to using UTC (Coordinated Universal Time) as the system time. Users can configure offsets using the Management Portal or PowerShell to update the time. For more information see [Change time zones on MySQL on Azure](/documentation/articles/mysql-database-timezone-config/).
 
 <!---HONumber=Acom_0218_2016_MySql-->

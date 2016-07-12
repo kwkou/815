@@ -28,7 +28,7 @@
 
 > [AZURE.NOTE]  请注意，你的 IT 部门可能会禁用上述一个或多个选项。如果存在这种情况，在注册过程中这些禁用的选项将不可用。
 
-在确定验证方法后，你可以开始注册。使用[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)链接开始逐步完成注册过程。
+在确定验证方法后，你可以开始注册。使用[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time/)链接开始逐步完成注册过程。
 
 
 ## 如何开始使用 Multi-Factor Authentication
@@ -37,10 +37,10 @@
 
 主题|说明
 :------------- | :------------- | 
-[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)| 介绍第一次设置多重身份验证的过程。
-[登录体验](/documentation/articles/multi-factor-authentication-end-user-signin)|说明使用各种方法（例如电话或应用）登录时预期会发生的情况。
-[更改设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings)|说明如何更改你的设置，例如电话号码或首选的注册方法。
-[有关应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords)| 查找有关创建和使用应用密码的信息。
+[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time/)| 介绍第一次设置多重身份验证的过程。
+[登录体验](/documentation/articles/multi-factor-authentication-end-user-signin/)|说明使用各种方法（例如电话或应用）登录时预期会发生的情况。
+[更改设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)|说明如何更改你的设置，例如电话号码或首选的注册方法。
+[有关应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)| 查找有关创建和使用应用密码的信息。
 
 
  

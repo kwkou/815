@@ -15,7 +15,7 @@
 
 # Service Fabric 应用程序升级
 
-Azure Service Fabric 应用程序是多个服务的集合。在升级期间，Service Fabric 将新的[应用程序清单](/documentation/articles/service-fabric-application-model#describe-an-application)与以前的版本进行比较，并确定应用程序中的哪些服务需要升级。Fabric Service 的做法是将服务清单中的版本号与前一版中的版本号进行比较。如果服务未更改，则不升级服务。
+Azure Service Fabric 应用程序是多个服务的集合。在升级期间，Service Fabric 将新的[应用程序清单](/documentation/articles/service-fabric-application-model/#describe-an-application)与以前的版本进行比较，并确定应用程序中的哪些服务需要升级。Fabric Service 的做法是将服务清单中的版本号与前一版中的版本号进行比较。如果服务未更改，则不升级服务。
 
 ## 滚动升级概述
 
@@ -31,7 +31,7 @@ Azure Service Fabric 应用程序是多个服务的集合。在升级期间，Se
 
 必须对升级设置运行状况策略（或者可使用默认值）。当所有更新域均在指定的超时内进行了升级，并且所有更新域均被认为运行正常时，即可称升级为成功升级。运行正常的更新域是指该更新域通过了运行状况策略中指定的所有运行状况检查。例如，运行状况策略可能要求应用程序实例中的所有服务都必须运行正常，因为运行状况是由 Service Fabric 定义的。
 
-升级期间 Service Fabric 执行的运行状况策略和检查与服务和应用程序无关。也就是说，不会执行任何特定于服务的测试。例如，你的服务可能具有最小吞吐量要求。但 Service Fabric 没有对其进行测试的信息，因此将不会检查为应用程序定义的吞吐量。有关要执行的检查，请参阅[运行状况文章](/documentation/articles/service-fabric-health-introduction)。在升级期间执行的检查包括是否已正确复制应用程序包、是否已启动实例，等等。
+升级期间 Service Fabric 执行的运行状况策略和检查与服务和应用程序无关。也就是说，不会执行任何特定于服务的测试。例如，你的服务可能具有最小吞吐量要求。但 Service Fabric 没有对其进行测试的信息，因此将不会检查为应用程序定义的吞吐量。有关要执行的检查，请参阅[运行状况文章](/documentation/articles/service-fabric-health-introduction/)。在升级期间执行的检查包括是否已正确复制应用程序包、是否已启动实例，等等。
 
 应用程序运行状况是应用程序子实体的聚合。简单地说，Service Fabric 通过应用程序报告的运行状况来评估应用程序的运行状况。它还以这种方式评估应用程序的所有服务的运行状况。Service Fabric 通过聚合子实体（如服务副本）的运行状况进一步评估应用程序服务的运行状况。一旦符合应用程序运行状况策略，便可继续升级。如果违反运行状况策略，则应用程序升级将会失败。
 
@@ -50,17 +50,17 @@ Azure Service Fabric 应用程序是多个服务的集合。在升级期间，Se
 
 ## 后续步骤
 
-[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial)将逐步指导你使用 Visual Studio 进行应用程序升级。
+[使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial/)将逐步指导你使用 Visual Studio 进行应用程序升级。
 
-[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell)将逐步指导你使用 PowerShell 进行应用程序升级。
+[使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell/)将逐步指导你使用 PowerShell 进行应用程序升级。
 
-使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters)来控制应用程序的升级方式。
+使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)来控制应用程序的升级方式。
 
-了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization)，使应用程序在升级后保持兼容。
+了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization/)，使应用程序在升级后保持兼容。
 
-参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced)，了解如何在升级应用程序时使用高级功能。
+参考[高级主题](/documentation/articles/service-fabric-application-upgrade-advanced/)，了解如何在升级应用程序时使用高级功能。
 
-参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting)中的步骤来解决应用程序升级时的常见问题。
+参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
  
 
 

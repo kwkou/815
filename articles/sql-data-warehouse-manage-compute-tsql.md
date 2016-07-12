@@ -15,10 +15,10 @@
 # 管理 Azure SQL 数据仓库中的计算能力 (T-SQL)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute)
-- [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell)
-- [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api)
-- [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql)
+- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
+- [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
+- [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
 
 
 通过扩大计算资源和内存来提升性能，从而满足工作负荷不断变化的需求。通过在非高峰时段缩减资源或同时暂停计算来节省成本。
@@ -78,9 +78,9 @@ MODIFY (SERVICE_OBJECTIVE = 'DW1000')
 <!--Image references-->
 
 <!--Article references-->
-[Service capacity limits]: /documentation/articles/sql-data-warehouse-service-capacity-limits
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage
-[管理计算能力概述]: /documentation/articles/sql-data-warehouse-overview-manage-compute-power
+[Service capacity limits]: /documentation/articles/sql-data-warehouse-service-capacity-limits/
+[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
+[管理计算能力概述]: /documentation/articles/sql-data-warehouse-overview-manage-compute-power/
 
 <!--MSDN references-->
 

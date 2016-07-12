@@ -59,7 +59,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 	不想让这些服务器处于同一子网的话可以忽略‘创建虚拟网络’这步，那么则让它们的区域保持一致，都是中国东部或者中国北部。在创建虚拟机时选择区域。
 
-	Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一个子网下。请参考[虚拟网络链接](/documentation/articles/virtual-networks-create-vnet-classic-portal)创建虚拟网络
+	Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一个子网下。请参考[虚拟网络链接](/documentation/articles/virtual-networks-create-vnet-classic-portal/)创建虚拟网络
 
 2. 新建三台 VM，选择 OS， 比如 CentOS 7.0。参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/). 创建虚拟机。在创建时记得选择上一步创建的虚拟网络。必须在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它加入虚拟网络。没有创建虚拟网络的话则请在选择区域时保持一致。
 

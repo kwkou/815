@@ -16,8 +16,8 @@
 # 为经典部署模型配置 VNet 到 VNet 连接
 
 > [AZURE.SELECTOR]
-- [Azure 经典管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
-- [PowerShell - Azure 资源管理器](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)
+- [Azure 经典管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)
+- [PowerShell - Azure 资源管理器](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
 
 
 本文将引导你执行相关步骤，以便使用经典部署模型（也称为服务管理）来创建虚拟网络并将其连接到一起。以下步骤使用 Azure 经典管理门户和 PowerShell 的组合。
@@ -221,7 +221,7 @@ VNet2：地址空间 = 10.2.0.0/16；区域 = 中国北部
 连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines)文档。
 
 
-[1]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets
+[1]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 

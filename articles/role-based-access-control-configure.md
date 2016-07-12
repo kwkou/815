@@ -14,7 +14,7 @@
 
 # 使用角色分配来管理对 Azure Active Directory 资源的访问权限
 
-Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 进行细致的访问管理。使用 RBAC，你可以仅授予用户执行其作业所需的访问次数。本文可帮助你在 Azure 门户中启动并运行 RBAC。如果你希望了解有关 RBAC 如何帮助你管理访问权限的详细信息，请参阅[什么是基于角色的访问控制](/documentation/articles/role-based-access-control-what-is)。
+Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 进行细致的访问管理。使用 RBAC，你可以仅授予用户执行其作业所需的访问次数。本文可帮助你在 Azure 门户中启动并运行 RBAC。如果你希望了解有关 RBAC 如何帮助你管理访问权限的详细信息，请参阅[什么是基于角色的访问控制](/documentation/articles/role-based-access-control-what-is/)。
 
 ## 查看访问权限
 你可以在 [Azure 门户](https://portal.azure.cn)中的主边栏选项卡上查看谁有权访问资源、资源组或订阅。例如，我们想要查看谁有权访问其中一个资源组：
@@ -63,13 +63,13 @@ Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 进行细致的访�
 ## 管理访问权限的其他工具
 可以使用 Azure 门户以外的工具中的 Azure RBAC 命令分配角色和管理访问权限。依照该链接以了解有关先决条件和 Azure RBAC 命令入门的详细信息。
 
-- [Azure PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell)
-- [Azure 命令行界面](/documentation/articles/role-based-access-control-manage-access-azure-cli)
-- [REST API](/documentation/articles/role-based-access-control-manage-access-rest)
+- [Azure PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
+- [Azure 命令行界面](/documentation/articles/role-based-access-control-manage-access-azure-cli/)
+- [REST API](/documentation/articles/role-based-access-control-manage-access-rest/)
 
 ## 后续步骤
-- [创建访问变更历史记录报表](/documentation/articles/role-based-access-control-access-change-history-report)
-- 请参阅 [RBAC 内置角色](/documentation/articles/role-based-access-built-in-roles)
-- 定义你在 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles)
+- [创建访问变更历史记录报表](/documentation/articles/role-based-access-control-access-change-history-report/)
+- 请参阅 [RBAC 内置角色](/documentation/articles/role-based-access-built-in-roles/)
+- 定义你在 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)
 
 <!---HONumber=Mooncake_0627_2016-->

@@ -101,7 +101,7 @@ Azure 自动化使用 Azure PowerShell 连接到订阅以及对那里的项目�
 
 ![](./media/site-recovery-runbook-automation/11.png)
 
-[此处](/documentation/articles/powershell-install-configure)提供了有关如何通过 PowerShell 连接到订阅的详细信息。
+[此处](/documentation/articles/powershell-install-configure/)提供了有关如何通过 PowerShell 连接到订阅的详细信息。
 
 接下来，你将要在 Azure 自动化中创建一个 Runbook，用于在故障转移后为前端虚拟机添加终结点。
 

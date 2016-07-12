@@ -15,8 +15,8 @@
 # 使用 SqlPackage.exe 确定 SQL 数据库兼容性
 
 > [AZURE.SELECTOR]
-- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage)
-- [SQL Server Management Studio](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms)
+- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage/)
+- [SQL Server Management Studio](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/)
 
 在本文中，你将了解如何使用 [SqlPackage](https://msdn.microsoft.com/zh-cn/library/hh550080.aspx) 命令提示实用程序确定要迁移到 SQL 数据库的 SQL Server 数据库是否兼容。
 
@@ -45,6 +45,6 @@
 
 ## 下一步：修复兼容性问题（如果有）
 
-[修复数据库兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues)（如果有）。
+[修复数据库兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)（如果有）。
 
 <!---HONumber=Mooncake_0104_2016-->

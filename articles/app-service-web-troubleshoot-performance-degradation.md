@@ -59,7 +59,7 @@
 
 有关详细信息，请参阅：
 
--	[在 Azure 中监视 Web 应用](/documentation/articles/web-sites-monitor)
+-	[在 Azure 中监视 Web 应用](/documentation/articles/web-sites-monitor/)
 
 #### 监视 Web 终结点状态
 
@@ -69,7 +69,7 @@
 
 将使用 HTTP 响应代码监视运行时间，并且以毫秒为单位计算响应时间。如果 HTTP 响应代码大于或等于 400 或响应时间超过 30 秒，则监视测试失败。如果从所有指定的位置监视测试均成功，则终结点被视为可用。
 
-若要设置此功能，请参阅[如何：监视 Web 终结点状态](/documentation/articles/web-sites-monitor#webendpointstatus)。
+若要设置此功能，请参阅[如何：监视 Web 终结点状态](/documentation/articles/web-sites-monitor/#webendpointstatus)。
 
 ###<a name="collect"></a> 2\.收集数据
 
@@ -89,7 +89,7 @@
 
 使用应用程序诊断可以捕获 Web 应用生成的信息。ASP.NET 应用程序可使用 `System.Diagnostics.Trace` 类将信息记录到应用程序诊断日志。
 
-有关如何在应用程序中配置日志记录的详细说明，请参阅[在 Azure 中为 Web 应用启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
+有关如何在应用程序中配置日志记录的详细说明，请参阅[在 Azure 中为 Web 应用启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)。
 
 ###<a name="mitigate"></a> 3\.缓解问题
 
@@ -97,7 +97,7 @@
 
 在 Azure 中，为了提高性能和吞吐量，你可以调整运行应用程序的规模。向上缩放 Web 应用涉及到两个相关操作：将 App Service 计划更改为较高的定价层，以及在切换到较高的定价层后配置特定的设置。
 
-有关缩放的详细信息，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale)。
+有关缩放的详细信息，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale/)。
 
 此外，你可以选择在多个实例上运行应用程序。这不仅能提供更强大的处理能力，而且还能提供一定程度的容错。如果进程在某个实例上中断，其他实例仍将继续处理请求。
 
@@ -114,6 +114,6 @@ AutoHeal 会根据你选择的设置（例如配置更改、请求、基于内�
 
  ![](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
 
-你还可以使用 Azure Powershell 管理 Web 应用。有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
+你还可以使用 Azure Powershell 管理 Web 应用。有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
 <!---HONumber=Mooncake_0104_2016-->

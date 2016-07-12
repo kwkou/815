@@ -5,11 +5,11 @@
 #全部常见问题
 
 > [AZURE.SELECTOR]
-- [全部问题](/documentation/articles/mysql-database-tech-faq)
-- [服务咨询](/documentation/articles/mysql-database-serviceinquiry)
-- [连接问题](/documentation/articles/mysql-database-connectioninquiry)
-- [安全性咨询](/documentation/articles/mysql-database-securityinquiry)
-- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry)
+- [全部问题](/documentation/articles/mysql-database-tech-faq/)
+- [服务咨询](/documentation/articles/mysql-database-serviceinquiry/)
+- [连接问题](/documentation/articles/mysql-database-connectioninquiry/)
+- [安全性咨询](/documentation/articles/mysql-database-securityinquiry/)
+- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry/)
 
 + [服务咨询](#step1)
 + [连接问题](#step2)
@@ -50,7 +50,7 @@
 支持,虽然我们的[管理门户](https://manage.windowsazure.cn/) 以及PowerShell 命令行在创建用户或数据库时只支持对整个数据库设置读写权限，但你可以用“grant”命令对用户权限进行更细化的设置。
   
 ### **MySQL Database on Azure 现在使用什么系统时间？ 如何变更？**
-MySQL on Azure目前默认采用UTC 协调世界时作为系统时间System， 用户可以通过在管理门户上或PowerShell等途径配置补偿值(offsite)来进行时间更新。具体配置方法请参考：[MySQL on Azure上的时区配置](/documentation/articles/mysql-database-timezone-config).
+MySQL on Azure目前默认采用UTC 协调世界时作为系统时间System， 用户可以通过在管理门户上或PowerShell等途径配置补偿值(offsite)来进行时间更新。具体配置方法请参考：[MySQL on Azure上的时区配置](/documentation/articles/mysql-database-timezone-config/).
 
   
 ## **连接问题**<a id="step2"></a> 
@@ -102,7 +102,7 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 
 ## 关于数据库迁移的常见问题：
 ###导入TRIGGER, PROCEDURE, VIEW, FUNCTION, 或EVENT过程中报”Access denied; you need (at least one of) the SUPER privilege(s) for this operation” 错误。
-检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=`user`@`host`， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](/documentation/articles/mysql-database-operation-limitation) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
+检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=`user`@`host`， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](/documentation/articles/mysql-database-operation-limitation/) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
 
 ###MYSQL Database on Azure 的管理门户只支持对用户设置整个数据库的读写权限，如果我现在的数据库有对用户权限更细化的设置，迁移会成功吗？
 没有问题，虽然我们的管理门户 以及PowerShell /REST API在创建用户或数据库时只支持对整个数据库设置读写权限，但您可以用“grant”语句对用户权限进行更细化的设置。

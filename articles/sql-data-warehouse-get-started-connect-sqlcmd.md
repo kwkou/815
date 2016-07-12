@@ -16,8 +16,8 @@
 # 查询 Azure SQL 数据仓库 (sqlcmd)
 
 > [AZURE.SELECTOR]
-- [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd)
-<!-- - [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio) -->
+- [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
+<!-- - [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio/) -->
 
 本演练使用 sqlcmd 命令行实用工具来查询 Azure SQL 数据仓库。
 
@@ -78,7 +78,7 @@
 若要了解有关所有 sqlcmd 选项的信息，请参阅 [sqlcmd 文档][sqlcmd.exe]。
 
 <!--Articles-->
-[connecting with PowerBI]: /documentation/articles/sql-data-warehouse-integrate-power-bi
+[connecting with PowerBI]: /documentation/articles/sql-data-warehouse-integrate-power-bi/
 
 
 <!--Other-->

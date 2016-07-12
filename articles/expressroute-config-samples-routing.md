@@ -17,7 +17,7 @@
 
 >[AZURE.IMPORTANT]本页中的示例仅供指导。你必须与供应商的销售/技术团队和你的网络团队合作，以便指定符合需要的适当配置。对于本页中所列配置的相关问题，Azure 将不提供支持。出现问题时，你必须联系设备供应商来获得支持。
 
-以下路由器配置示例适用于所有对等互连互连。有关路由的详细信息，请查看 [ExpressRoute 对等互连](/documentation/articles/expressroute-circuit-peerings)和 [ExpressRoute 路由要求](/documentation/articles/expressroute-routing)。
+以下路由器配置示例适用于所有对等互连互连。有关路由的详细信息，请查看 [ExpressRoute 对等互连](/documentation/articles/expressroute-circuit-peerings/)和 [ExpressRoute 路由要求](/documentation/articles/expressroute-routing/)。
 
 ## 基于 Cisco IOS-XE 的路由器
 
@@ -204,6 +204,6 @@
 
 ## 后续步骤
 
-有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
+有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
 <!---HONumber=82-->

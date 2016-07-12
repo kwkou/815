@@ -24,7 +24,7 @@
 
 也可以使用 Transact-SQL 为表或数据库禁用SQL Server Stretch Database。
 
-如果你只是想要暂停数据迁移，请参阅[暂停和恢复SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-pause)。
+如果你只是想要暂停数据迁移，请参阅[暂停和恢复SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-pause/)。
 
 ## 为表禁用SQL Server Stretch Database
 
@@ -86,6 +86,6 @@ ALTER DATABASE <database name>
 
 ## 另请参阅
 [ALTER DATABASE SET 选项 (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/bb522682.aspx)
-[暂停和恢复SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-pause)
+[暂停和恢复SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-pause/)
 
 <!---HONumber=Mooncake_0307_2016-->

@@ -18,14 +18,14 @@
 
 ## 探究
 
-- [事件中心](/documentation/articles/event-hubs-overview)
+- [事件中心](/documentation/articles/event-hubs-overview/)
 - [分片模式](http://msdn.microsoft.com/zh-cn/library/dn589797.aspx)
-- [服务总线和 AMQP 1.0](/documentation/articles/service-bus-amqp-overview)
+- [服务总线和 AMQP 1.0](/documentation/articles/service-bus-amqp-overview/)
 - [服务总线简介](/services/service-bus/)
  
 ## 构建
-- [分区消息实体](/documentation/articles/service-bus-partitioning)
-- [Service Bus 主题](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
+- [分区消息实体](/documentation/articles/service-bus-partitioning/)
+- [Service Bus 主题](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/)
 - [在 Linux 和 Windows 上将 Apache Qpid Proton C 与 Azure 服务总线配合使用](http://msdn.microsoft.com/zh-cn/library/azure/dn235560.aspx) 
  
 ## 热门

@@ -146,7 +146,7 @@ DocumentDB 支持对使用 [GeoJSON 规范](http://geojson.org/geojson-spec.html
 我们已经探讨过如何插入地理空间数据，现在就来看看如何通过 SQL 和 LINQ 使用 DocumentDB 查询此数据。
 
 ### 空间 SQL 内置函数
-DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。有关 SQL 语言中的整套内置函数的更多详细信息，请参阅[查询 DocumentDB](/documentation/articles/documentdb-sql-query)。
+DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。有关 SQL 语言中的整套内置函数的更多详细信息，请参阅[查询 DocumentDB](/documentation/articles/documentdb-sql-query/)。
 
 <table>
 <tr>
@@ -351,7 +351,7 @@ DocumentDB .NET SDK 还提供存根方法 `Distance()` 和 `Within()`，供你�
 
 - 使用 [Github 上的地理空间 .NET 代码示例](https://github.com/Azure/azure-documentdb-dotnet/blob/e880a71bc03c9af249352cfa12997b51853f47e5/samples/code-samples/Geospatial/Program.cs)开始编写代码
 - 在 [DocumentDB 查询板块](http://www.documentdb.com/sql/demo#geospatial)中实际操作地理空间查询
-- 详细了解 [DocumentDB 查询](/documentation/articles/documentdb-sql-query)
-- 详细了解 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies)
+- 详细了解 [DocumentDB 查询](/documentation/articles/documentdb-sql-query/)
+- 详细了解 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)
 
 <!---HONumber=Mooncake_0627_2016-->

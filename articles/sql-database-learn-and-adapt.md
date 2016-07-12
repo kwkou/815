@@ -46,12 +46,12 @@ SQL 数据库提供应用所需的自动管理和数据保护，以便你能够�
 
 ## 后续步骤
 
-获取 [Azure 订阅](/pricing/1rmb-trial)，并[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
+获取 [Azure 订阅](/pricing/1rmb-trial)，并[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
 
 ## 了解详细信息
 
 浏览所有 [SQL 数据库的功能](/home/features/sql-database)。
  
-查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview)。
+查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 
 <!---HONumber=Mooncake_0530_2016-->

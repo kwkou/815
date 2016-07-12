@@ -15,7 +15,7 @@
 # 从本地 Git 部署到 Azure
 
 本教程说明如何将应用从本地计算机上的 Git 存储库部署到 [Azure Web 应用]。Azure 支持结合 [Azure 经典管理门户]中的“本地 Git”部署选项使用此方法。  
-在根据[此处](/documentation/articles/app-service-web-get-started)所述使用 [Azure 命令行界面]创建 Azure Web 应用时，将自动执行本文中所述的许多 Git 命令。
+在根据[此处](/documentation/articles/app-service-web-get-started/)所述使用 [Azure 命令行界面]创建 Azure Web 应用时，将自动执行本文中所述的许多 Git 命令。
 
 ## 先决条件
 
@@ -150,8 +150,8 @@ Azure 支持用各种编程语言创建的应用程序。
 ## 其他资源
 
 * [Git 文档](http://git-scm.com/documentation)
-* [如何使用适用于 Azure 的 PowerShell](/documentation/articles/powershell-install-configure)
-* [如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install)
+* [如何使用适用于 Azure 的 PowerShell](/documentation/articles/powershell-install-configure/)
+* [如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install/)
 
 [Azure Web 应用]: /documentation/services/web-sites/
 [Azure Developer Center]: /develop/overview/

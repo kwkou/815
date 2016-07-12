@@ -18,7 +18,7 @@
 
 ## 概述
 
-本教程的[第 1 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-1)介绍了共享访问签名 (SAS) 并且说明了有关使用共享访问签名的最佳实践。第 2 部分将演示如何生成共享访问签名以及如何将共享访问签名用于 Blob 存储。示例是用 C# 编写的并使用了 Azure .NET 存储客户端库。涉及的任务包括使用共享访问签名的以下方面：
+本教程的[第 1 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)介绍了共享访问签名 (SAS) 并且说明了有关使用共享访问签名的最佳实践。第 2 部分将演示如何生成共享访问签名以及如何将共享访问签名用于 Blob 存储。示例是用 C# 编写的并使用了 Azure .NET 存储客户端库。涉及的任务包括使用共享访问签名的以下方面：
 
 - 在容器上生成共享访问签名
 - 在 Blob 上生成共享访问签名
@@ -540,9 +540,9 @@
 
 ## 后续步骤
 
-[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
+[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 
-[管理对容器和 blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources)
+[管理对容器和 blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)
 
 [使用共享访问签名委托访问 (REST API)](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 

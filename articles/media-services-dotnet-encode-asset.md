@@ -17,9 +17,9 @@
 
 
 > [AZURE.SELECTOR]
-- [REST](/documentation/articles/media-services-rest-encode-asset)
-- [.NET](/documentation/articles/media-services-dotnet-encode-asset)
-- [门户](/documentation/articles/media-services-manage-content#encode)
+- [REST](/documentation/articles/media-services-rest-encode-asset/)
+- [.NET](/documentation/articles/media-services-dotnet-encode-asset/)
+- [门户](/documentation/articles/media-services-manage-content/#encode)
 
 ##概述
 
@@ -27,9 +27,9 @@
 
 编码作业是媒体服务中最常见的处理操作之一。可通过创建编码作业将媒体文件从一种编码转换为另一种编码。进行编码时，可以使用媒体服务内置的 Media Encoder。你也可以使用媒体服务合作伙伴提供的编码器；可通过 Azure 应用商店获取第三方编码器。可以使用为编码器定义的预设字符串或预设配置文件来指定编码任务的详细信息。若要查看可用预设的类型，请参阅 [Azure 媒体服务的任务预设](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx)。如果你使用了第三方编码器，则应[验证你的文件](https://msdn.microsoft.com/zh-cn/library/azure/dn750842.aspx)。
 
-建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
-如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)。
+如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)。
 
 
 ###使用适用于 .NET 的媒体服务 SDK  
@@ -206,7 +206,7 @@
 
 ##另请参阅 
 
-[媒体服务编码概述](/documentation/articles/media-services-encode-asset)
+[媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
  
 

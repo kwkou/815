@@ -60,11 +60,11 @@
 <!--Image references-->
 
 <!--Article references-->
-[business continuity overview]: /documentation/articles/sql-database-business-continuity
-[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize
+[business continuity overview]: /documentation/articles/sql-database-business-continuity/
+[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize/
 [Azure 存储冗余选项]: /documentation/articles/storage-redundancy/#read-access-geo-redundant-storage-ra-grs
-[SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity
-[在发生用户错误后恢复]: /documentation/articles/sql-data-warehouse-business-continuity-recover-from-user-error
+[SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
+[在发生用户错误后恢复]: /documentation/articles/sql-data-warehouse-business-continuity-recover-from-user-error/
 
 <!--MSDN references-->
 [Create database restore request]: http://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx

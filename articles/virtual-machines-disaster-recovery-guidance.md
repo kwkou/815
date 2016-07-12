@@ -38,17 +38,17 @@ Azure 已在平台中内置多种功能，用于支持高度可用的应用程�
 ##选项 2：从备份还原 VM
 对于已配置 VM 备份的客户，你可以从备份和恢复点来还原 VM。
 
-若要从 Azure 备份还原新的 VM，请参阅[还原 Azure 中的虚拟机](/documentation/articles/backup-azure-restore-vms)。
+若要从 Azure 备份还原新的 VM，请参阅[还原 Azure 中的虚拟机](/documentation/articles/backup-azure-restore-vms/)。
 
-请参阅[在 Azure 中计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction)，帮助计划你的 Azure 虚拟机备份基础结构。
+请参阅[在 Azure 中计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)，帮助计划你的 Azure 虚拟机备份基础结构。
 
 ##选项 3：使用 Azure Site Recovery 启动故障转移
-如果已将 Azure Site Recovery 配置为用于受影响的 Azure 虚拟机，则可以从副本还原 VM。这些副本可以位于 Azure 上，也可以位于本地。如此，你就可以用现有副本来创建新的 VM。若要从 Azure Site Recovery 副本还原 VM，请参阅[使用 Azure Site Recovery 在 Azure 区域之间迁移 Azure IaaS 虚拟机](/documentation/articles/site-recovery-migrate-azure-to-azure)。
+如果已将 Azure Site Recovery 配置为用于受影响的 Azure 虚拟机，则可以从副本还原 VM。这些副本可以位于 Azure 上，也可以位于本地。如此，你就可以用现有副本来创建新的 VM。若要从 Azure Site Recovery 副本还原 VM，请参阅[使用 Azure Site Recovery 在 Azure 区域之间迁移 Azure IaaS 虚拟机](/documentation/articles/site-recovery-migrate-azure-to-azure/)。
 
 >[AZURE.NOTE]虽然 Azure 虚拟机的操作系统和数据磁盘会复制到次要 VHD，但如果它们位于异地冗余存储或读取访问权限异地冗余存储帐户中，则会各自复制每个 VHD。此级别的复制不保证已复制 VHD 的一致性。如果使用这些数据磁盘的应用程序和/或数据库彼此有依赖关系，则不保证所有 VHD 复制为一个快照。也不保证异地冗余存储或读取访问权限异地冗余存储中的 VHD 副本能生成应用程序一致的快照来引导 VM。
 
 ##后续步骤
-若要了解如何备份 VM，请参阅[备份 Azure 虚拟机](/documentation/articles/backup-azure-vms)。
+若要了解如何备份 VM，请参阅[备份 Azure 虚拟机](/documentation/articles/backup-azure-vms/)。
 
 若要了解如何使用 Azure Site Recovery 来安排和自动保护 VMWare 和 Hyper-V VM 上运行的物理（和虚拟）Windows 和 Linux 计算机，请参阅 [Azure Site Recovery](/documentation/services/site-recovery/)。
 

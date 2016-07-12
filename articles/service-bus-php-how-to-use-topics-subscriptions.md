@@ -15,13 +15,13 @@
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
-本文说明如何使用服务总线主题和订阅。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk)。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
+本文说明如何使用服务总线主题和订阅。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk/)。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
 
 [AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
 ## 创建 PHP 应用程序
 
-创建访问 Azure Blob 服务的 PHP 应用程序的唯一要求是从代码中引用 [Azure SDK for PHP](/documentation/articles/php-download-sdk) 中的类。你可以使用任何开发工具或记事本创建应用程序。
+创建访问 Azure Blob 服务的 PHP 应用程序的唯一要求是从代码中引用 [Azure SDK for PHP](/documentation/articles/php-download-sdk/) 中的类。你可以使用任何开发工具或记事本创建应用程序。
 
 > [AZURE.NOTE]你的 PHP 安装还必须已安装并启用 [OpenSSL 扩展](http://php.net/openssl)。
 
@@ -327,9 +327,9 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 
 现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]以获取更多信息。
 
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [require-once]: http://php.net/require_once
-[服务总线配额]: /documentation/articles/service-bus-quotas
+[服务总线配额]: /documentation/articles/service-bus-quotas/
 
 <!---HONumber=82-->

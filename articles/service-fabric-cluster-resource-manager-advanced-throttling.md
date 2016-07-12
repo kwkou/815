@@ -36,7 +36,7 @@
 请注意，我们在大多数时间看到的是客户使用这些限制，这是因为他们已经处于资源受限的环境中（例如，连到个别节点的有限网络带宽），这意味着此类操作失败，或者无论如何速度都变慢，并且客户已充分了解可能需要延长群集到达稳定状态所需花费的时间量，包括了解在为其设置限制时，它们最终以较低的整体可靠性来运行。
 
 ## 后续步骤
-- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing)的文章
-- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description)的文章
+- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing/)的文章
+- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)的文章
 
 <!---HONumber=Mooncake_0627_2016-->

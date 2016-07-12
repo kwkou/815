@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-network-deploy-multinic-classic-ps)。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-network-deploy-multinic-classic-ps/)。
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
@@ -83,7 +83,7 @@
 	        "dbPort": 1433
 	      },
 
-6. 请注意，*vmSize* 包含值 *Standard\_DS3*。只有某些 VM 大小允许使用多个 NIC。你可以通过访问[多 NIC 概述](/documentation/articles/virtual-networks-multiple-nics)来确认哪些 VM 大小支持多 NIC。
+6. 请注意，*vmSize* 包含值 *Standard\_DS3*。只有某些 VM 大小允许使用多个 NIC。你可以通过访问[多 NIC 概述](/documentation/articles/virtual-networks-multiple-nics/)来确认哪些 VM 大小支持多 NIC。
 7. 向下滚动到“资源”，并留意第一个元素。它描述存储帐户。此存储帐户将用于维护每个数据库 VM 使用的数据磁盘。在此方案中，每个数据库 VM 有一个存储在常规存储中的 OS 磁盘，以及两个存储在 SSD（高级）存储中的数据磁盘。
 
 	    {
@@ -251,7 +251,7 @@
 
 若要使用 Azure CLI 部署模板，请执行以下步骤。
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
 		azure config mode arm

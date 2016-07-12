@@ -18,9 +18,9 @@
 Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载平衡、基于 Cookie 的会话相关性和安全套接字层 (SSL) 卸载。
 
 > [AZURE.SELECTOR]
-- [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway)
-- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template)
+- [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway/)
+- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
+- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
 
 你将了解如何从 GitHub 下载并修改现有 Azure 资源管理器模板，以及如何通过 GitHub、PowerShell 和 Azure CLI 部署该模板。
 
@@ -116,7 +116,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 ## 使用 PowerShell 部署 Azure 资源管理器模板
 
-如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
+如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 
 ### 步骤 1
 
@@ -191,7 +191,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 若要使用 Azure CLI 部署下载的 Azure 资源管理器模板，请执行以下步骤：
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
 		azure config mode arm
@@ -200,7 +200,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 		info:	New mode is arm
 
-3. 如有必要，请运行 **azure group create** 命令以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
+3. 如有必要，请运行 **azure group create** 命令以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)。
 
 		azure group create -n appgatewayRG -l chinaeast
 
@@ -244,9 +244,9 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
+如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
+如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 

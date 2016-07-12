@@ -85,7 +85,7 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
 }
 ```
 
-最后，在[服务清单](/documentation/articles/service-fabric-application-model)中有关终结点的节下面描述服务所需的终结点。
+最后，在[服务清单](/documentation/articles/service-fabric-application-model/)中有关终结点的节下面描述服务所需的终结点。
 
 
 	<Resources>
@@ -132,7 +132,7 @@ public Task<string> OpenAsync(CancellationToken cancellationToken)
 
 Service Fabric 提供了许多 API，使客户端和其他服务随后可以通过服务名称请求此地址。这一点很重要，因为服务地址不是静态的。服务为了资源平衡和可用性目的在群集中移动。这是允许客户端为服务解析侦听地址的机制。
 
-> [AZURE.NOTE] 有关如何编写 `ICommunicationListener` 的完整演练，请参阅 [Service Fabric Web API 服务与 OWIN 自托管](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+> [AZURE.NOTE] 有关如何编写 `ICommunicationListener` 的完整演练，请参阅 [Service Fabric Web API 服务与 OWIN 自托管](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
 ## 与服务通信
 Reliable Services API 提供以下库来编写与服务通信的客户端。
@@ -271,10 +271,10 @@ var result = await myServicePartitionClient.InvokeWithRetryAsync(async (client) 
 ## 后续步骤
  - 请参阅 [GitHUb 上的示例项目](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/WordCount)中服务之间的 HTTP 通信示例。
 
- - [使用 Reliable Services 远程控制执行远程过程调用](/documentation/articles/service-fabric-reliable-services-communication-remoting)
+ - [使用 Reliable Services 远程控制执行远程过程调用](/documentation/articles/service-fabric-reliable-services-communication-remoting/)
 
- - [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+ - [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
- - [使用 Reliable Services 的 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf)
+ - [使用 Reliable Services 的 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf/)
 
 <!---HONumber=Mooncake_0503_2016-->

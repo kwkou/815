@@ -17,9 +17,9 @@
 # Azure SQL 数据仓库的驱动程序
 
 > [AZURE.SELECTOR]
-- [身份验证](/documentation/articles/sql-data-warehouse-authentication)
-- [驱动程序](/documentation/articles/sql-data-warehouse-connection-strings)
-<!-- - [概述](/documentation/articles/sql-data-warehouse-connect-overview) -->
+- [身份验证](/documentation/articles/sql-data-warehouse-authentication/)
+- [驱动程序](/documentation/articles/sql-data-warehouse-connection-strings/)
+<!-- - [概述](/documentation/articles/sql-data-warehouse-connect-overview/) -->
 
 可以使用以下任一应用程序协议连接到 SQL 数据仓库：
 

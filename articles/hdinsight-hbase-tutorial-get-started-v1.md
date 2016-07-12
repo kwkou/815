@@ -324,11 +324,11 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 - [HDInsight HBase 概述][hdinsight-hbase-overview]：HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 - [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet-v1]：通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
-- [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication)：了解如何跨两个 Azure 数据中心配置 HBase 复制。
+- [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication/)：了解如何跨两个 Azure 数据中心配置 HBase 复制。
 
 
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf
 [hbase-quick-start]: http://hbase.apache.org/book.html#quickstart
@@ -337,10 +337,10 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 
 
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

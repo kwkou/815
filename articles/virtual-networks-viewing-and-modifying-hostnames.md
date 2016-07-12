@@ -59,12 +59,12 @@
 
 ## 后续步骤
 
-[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)
+[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)
 
 [Azure 服务配置架构 (.cscfg)](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)
 
 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-[使用网络配置文件指定 DNS 设置](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file)
+[使用网络配置文件指定 DNS 设置](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file/)
 
 <!---HONumber=Mooncake_0523_2016-->

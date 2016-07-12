@@ -17,13 +17,13 @@
 
 ## 概述 
 
-Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-service-tiers)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
+Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-service-tiers/)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
 
->[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。
+>[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq/)。
 
 本文提供了一些指导，帮助你确定此预览版提供的哪个服务层适合你的应用程序，并提供了一些应用程序优化建议，让你充分利用 Azure SQL 数据库。
 
->[AZURE.NOTE] 本文侧重于 SQL 数据库中单一数据库的性能指导。有关弹性数据库池的性能指导，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。但请注意，本文中许多单一数据库的微调建议适用于具有类似性能优势的弹性池中的数据库。
+>[AZURE.NOTE] 本文侧重于 SQL 数据库中单一数据库的性能指导。有关弹性数据库池的性能指导，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。但请注意，本文中许多单一数据库的微调建议适用于具有类似性能优势的弹性池中的数据库。
 
 **作者：**Conor Cunningham、Kun Cheng、Jan Engelsberg
 
@@ -56,7 +56,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 通过标准和高级服务层中的性能级别设置，你只需为所需容量付费，并可根据工作负荷变化情况扩展或缩减容量。例如，如果数据库工作负荷在返校购物季期间繁忙，则可在这段时间内提高数据库的性能级别，而在高峰期结束之后降低性能级别。这样一来，你就可以按业务的季节性因素优化云环境，将支出降至最低。此模型也很适合软件产品发布环节。测试团队可在进行测试运行时分配容量，一旦测试完毕，即释放该容量。这些容量请求很适合只为所需容量付款而避免在很少使用的专用资源上支出的模型。这样产生的体验与许多 Microsoft 客户曾用于 SQL Server 的传统专用式硬件模型非常接近。这样应可在 Azure SQL 数据库上更轻松地运行规模更大的一组应用程序。
 
-有关服务层、性能级别和 DTU 的详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
+有关服务层、性能级别和 DTU 的详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)。
 
 ## 使用服务层的原因
 
@@ -79,7 +79,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 所需的确切级别取决于每个资源维度的峰值负载要求。某些应用程序可能对于某种资源仅少量使用，但对于另一种资源需要大量使用。
 
-有关服务层的详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
+有关服务层的详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)。
 
 ## 服务层功能和限制
 每个服务层和性能级别都与不同的限制和性能特征相关联。下表描述单个数据库的这些特征。
@@ -94,11 +94,11 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 ### DTU
 
-**DTU** 是指数据库事务单位。它是 SQL 数据库中的度量单位，表示数据库基于实际度量（数据库事务）的相对性能。这包括通常需要针对联机事务处理 (OLTP) 请求执行的一组操作，按照在全部加载的条件下每秒可以完成多少个事务进行度量。若要获取有关 DTU 的详细信息，请参阅[了解 DTU](/documentation/articles/sql-database-technical-overview/#understand-dtus)。有关如何度量 DTU 的详细信息，请参阅[基准概述](/documentation/articles/sql-database-benchmark-overview)。
+**DTU** 是指数据库事务单位。它是 SQL 数据库中的度量单位，表示数据库基于实际度量（数据库事务）的相对性能。这包括通常需要针对联机事务处理 (OLTP) 请求执行的一组操作，按照在全部加载的条件下每秒可以完成多少个事务进行度量。若要获取有关 DTU 的详细信息，请参阅[了解 DTU](/documentation/articles/sql-database-technical-overview/#understand-dtus)。有关如何度量 DTU 的详细信息，请参阅[基准概述](/documentation/articles/sql-database-benchmark-overview/)。
 
 ### 时间点还原
 
-**时间点还原**是指能够将你的数据库及时还原到以前的点。你的服务层决定了你可以在时间上回退多少天。有关详细信息，请参阅[在发生用户错误后恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery)。
+**时间点还原**是指能够将你的数据库及时还原到以前的点。你的服务层决定了你可以在时间上回退多少天。有关详细信息，请参阅[在发生用户错误后恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery/)。
 
 ### 灾难恢复
 
@@ -108,7 +108,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 标准和活动异地复制提供的灾难恢复功能是类似的，但恢复点目标 (RPO) 要低得多。例如，使用异地还原，RPO 只需不到 1 小时的时间（换句话说，备份最多只需从 1 小时前开始）。但对于异地复制来说，RPO 只需不到 5 秒的时间。
 
-有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 >[AZURE.NOTE] 内存中 OLTP 预览版目前仅适用于单一数据库，不适用于弹性数据库池中的数据库。
 
@@ -453,7 +453,7 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 ### 跨数据库分片
 由于 Azure SQL 数据库运行在商用硬件上，因此单一数据库的容量限制一般低于传统的本地 SQL Server 安装。因此，有许多客户使用分片技术在数据库操作不符合 Azure SQL 数据库中单一数据库的限制时，将这些操作分摊到多个数据库上。当今在 Azure SQL 数据库上使用分片技术的大多数客户将单个维度的数据拆分到多个数据库上。该方法涉及了解 OLTP 应用程序执行的事务经常仅适用于架构中的一行或少数几行。
 
->[AZURE.NOTE] SQL 数据库现在提供一个库来帮助分片。有关详细信息，请参阅[弹性数据库客户端库概述](/documentation/articles/sql-database-elastic-database-client-library)。
+>[AZURE.NOTE] SQL 数据库现在提供一个库来帮助分片。有关详细信息，请参阅[弹性数据库客户端库概述](/documentation/articles/sql-database-elastic-database-client-library/)。
 
 例如，如果数据库包含客户、订单和订单详细信息（如 SQL Server 附带的传统示例 Northwind 数据库中所见），则可通过将客户与相关订单和订单详细信息集中在一起并保证其留在单一数据库内，将这些数据拆分到多个数据库中。应用程序将不同的客户拆分到多个数据库上，实际上就是将负载分散在多个数据库上。这样，客户不仅可以避免达到最大数据库大小限制，而且还使 Azure SQL 数据库能够处理明显大于不同性能级别限制的工作负荷，前提是每个数据库适合其 DTU。
 

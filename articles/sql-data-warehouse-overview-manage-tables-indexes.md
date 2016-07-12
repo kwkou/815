@@ -34,9 +34,9 @@
 <!--Image references-->
 
 <!--Article references-->
-[管理列存储索引]: /documentation/articles/sql-data-warehouse-manage-columnstore-indexes
-[管理分布式数据偏斜]: /documentation/articles/sql-data-warehouse-manage-distributed-data-skew
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage
+[管理列存储索引]: /documentation/articles/sql-data-warehouse-manage-columnstore-indexes/
+[管理分布式数据偏斜]: /documentation/articles/sql-data-warehouse-manage-distributed-data-skew/
+[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
 
 <!--MSDN references-->
 

@@ -9,6 +9,6 @@
 | **SLA** | [SLA](/support/legal/sla) | [SLA](/support/legal/sla) | [SLA](/support/legal/sla) |
 | **价格** | [价格](/home/features/vpn-gateway#price) | [价格](/home/features/vpn-gateway#price) | [价格](/home/features/expressroute#price) |
 | **技术文档** | [VPN 网关文档](/documentation/services/vpn-gateway) | [VPN 网关文档](/documentation/services/vpn-gateway) | [ExpressRoute 文档](/documentation/services/expressroute) |
-| **常见问题** | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq) | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq) | [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs) |
+| **常见问题** | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq/) | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq/) | [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/) |
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -15,7 +15,7 @@
 
 ## 概述
 
-本主题介绍 Azure 存储空间的可伸缩性和性能主题。有关其他 Azure 限制的摘要，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
+本主题介绍 Azure 存储空间的可伸缩性和性能主题。有关其他 Azure 限制的摘要，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
 
 >[AZURE.NOTE] 所有存储帐户都在新的扁平网络拓扑上运行，无论它们在何时创建，都支持下文概述的可伸缩性和性能目标。有关 Azure 存储的扁平网络体系结构和可伸缩性的详细信息，请参阅 [Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
 
@@ -34,7 +34,7 @@
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes)或 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes)了解其他详细信息。
+请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes/)或 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)了解其他详细信息。
 
 ### 标准存储帐户
 
@@ -73,10 +73,10 @@
 ## 另请参阅
 
 - [存储定价详细信息](/home/features/storage#price)
-- [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)
-- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)
-- [Azure 存储复制](/documentation/articles/storage-redundancy)
-- [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)
+- [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
+- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)
+- [Azure 存储复制](/documentation/articles/storage-redundancy/)
+- [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)
 - [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
 <!---HONumber=Mooncake_0606_2016-->

@@ -53,7 +53,7 @@ Hadoop 支持默认文件系统的概念。默认文件系统意指默认方案�
 - **没有连接到群集的存储帐户中的公共容器或公共 Blob：**你对这些容器中的 Blob 具有只读权限。
 
 	> [AZURE.NOTE]
-	> 利用公共容器，你可以获得该容器中可用的所有 Blob 的列表以及容器元数据。利用公共 Blob，你仅在知道正确 URL 时才可访问 Blob。有关详细信息，请参阅<a href="/documentation/articles/storage-manage-access-to-resources">限制对容器和 Blob 的访问</a>。
+	> 利用公共容器，你可以获得该容器中可用的所有 Blob 的列表以及容器元数据。利用公共 Blob，你仅在知道正确 URL 时才可访问 Blob。有关详细信息，请参阅<a href="/documentation/articles/storage-manage-access-to-resources/\">限制对容器和 Blob 的访问</a>。
 
 - **没有连接到群集的存储帐户中的私有容器：**你不能访问这些容器中的 Blob，除非在提交 WebHCat 作业时定义存储帐户。本文后面对此做了解释。
 
@@ -295,16 +295,16 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 * [使用 Azure 存储空间共享访问签名来限制使用 HDInsight 访问数据][hdinsight-use-sas]
 
-[hdinsight-use-sas]: /documentation/articles/hdinsight-storage-sharedaccesssignature-permissions
-[powershell-install]: /documentation/articles/powershell-install-configure
-[hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-sas]: /documentation/articles/hdinsight-storage-sharedaccesssignature-permissions/
+[powershell-install]: /documentation/articles/powershell-install-configure/
+[hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 
 [blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-[azure-storage-create]: /documentation/articles/storage-create-storage-account
+[azure-storage-create]: /documentation/articles/storage-create-storage-account/
 
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png

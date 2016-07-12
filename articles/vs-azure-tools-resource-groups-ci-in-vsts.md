@@ -95,7 +95,7 @@
         `azure account show`
     
 
-    1.	要获取服务主体 ID、服务主体密钥和租户 ID，请遵循 [使用门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)或 [通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)的过程。
+    1.	要获取服务主体 ID、服务主体密钥和租户 ID，请遵循 [使用门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal/)或 [通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)的过程。
 
     1.	在“添加 Azure 订阅”对话框中添加服务主体 ID、服务主体密钥和租户 ID 值，然后选择“确定”按钮。
 
@@ -142,7 +142,7 @@
 
 ## 后续步骤
 
-有关 Azure Resource Manager 和 Azure 资源组的详细信息，请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview)。
+有关 Azure Resource Manager 和 Azure 资源组的详细信息，请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview/)。
 
 
 [0]: ./media/vs-azure-tools-resource-groups-ci-in-vsts/walkthrough1.png

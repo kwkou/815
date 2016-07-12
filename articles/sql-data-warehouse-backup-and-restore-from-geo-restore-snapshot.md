@@ -79,9 +79,9 @@
 <!--Image references-->
 
 <!--Article references-->
-[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
-[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity
-[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize
+[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
+[Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
+[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize/
 
 <!--MSDN references-->
 [Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt693390.aspx

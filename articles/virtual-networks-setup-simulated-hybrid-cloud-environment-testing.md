@@ -15,9 +15,9 @@
 
 # 设置用于测试的模拟混合云环境（经典部署模式）
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
-本文将指导你通过两个独立的 Azure 虚拟网络，逐步使用Azure 创建用于测试的模拟混合云环境。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)的替代方法。这是生成的配置。
+本文将指导你通过两个独立的 Azure 虚拟网络，逐步使用Azure 创建用于测试的模拟混合云环境。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing/)的替代方法。这是生成的配置。
 
 ![](./media/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
 
@@ -47,7 +47,7 @@
 
 ## 阶段 1：配置 TestLab 虚拟网络
 
-按照[基本配置测试环境](/documentation/articles/virtual-machines-windows-classic-test-config-env)中的说明，在名为 TestLab 的 Azure 虚拟网络中配置 DC1、APP1 和 CLIENT1 计算机。
+按照[基本配置测试环境](/documentation/articles/virtual-machines-windows-classic-test-config-env/)中的说明，在名为 TestLab 的 Azure 虚拟网络中配置 DC1、APP1 和 CLIENT1 计算机。
 
 在本地计算机上的 Azure 经典管理门户中，使用 CORP\\User1 凭据连接到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请从管理员级 Windows PowerShell 命令提示符运行这些命令。
 
@@ -75,7 +75,7 @@
 	- 在 TestSubnet 的“CIDR (地址计数)”列中，单击“/24 (256)”。
 7.	单击“完成”图标。请等到虚拟网络创建完以后再继续。
 
-接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。
+接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明在本地计算机上安装 Azure PowerShell。
 
 接下来，请为 TestVNET 虚拟网络创建新的云服务。你必须选取一个唯一的名称。例如，你可将其命名为 **TestVNET-***UniqueSequence*，其中 *UniqueSequence* 是你组织的缩写。例如，如果你组织的名称为 Tailspin Toys，则可以将云服务命名为 **TestVNET-Tailspin**。
 
@@ -216,7 +216,7 @@
 
 ## 后续步骤
 
-- 在 TestVNET 虚拟网络中设置 [SharePoint intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)、[基于 Web 的业务线应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)或 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)。
+- 在 TestVNET 虚拟网络中设置 [SharePoint intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/)、[基于 Web 的业务线应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing/)或 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing/)。
 
 
 ## <a id="costs"></a>最大程度地降低此环境的持续使用成本

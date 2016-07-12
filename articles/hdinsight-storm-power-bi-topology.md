@@ -33,7 +33,7 @@ Power BI 允许你以可视方式将数据显示为报告或仪表板。借助 P
 
     * Visual Studio 2015 [CTP6](http://visualstudio.com/downloads/visual-studio-2015-ctp-vs)
 
-* HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
+* HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 ## 工作原理
 
@@ -133,6 +133,6 @@ Power BI 允许你以可视方式将数据显示为报告或仪表板。借助 P
 
 在本文档中，你已学习如何使用 REST 将数据从 Storm 拓扑发送到 Power BI。有关如何使用其他 Azure 技术的信息，请参阅以下文章：
 
-* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
+* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
 <!---HONumber=Mooncake_0215_2016-->

@@ -16,8 +16,8 @@
 # NoSQL Node.js 教程：DocumentDB Node.js 控制台应用程序  
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/documentdb-get-started)
-- [Node.js](/documentation/articles/documentdb-nodejs-get-started)
+- [.NET](/documentation/articles/documentdb-get-started/)
+- [Node.js](/documentation/articles/documentdb-nodejs-get-started/)
 
 欢迎使用 DocumentDB Node.js SDK 的 Node.js 教程！ 学习本教程后，你将拥有一个创建并查询 DocumentDB 资源（包括节点数据库）的控制台应用程序。
 
@@ -304,7 +304,7 @@
 祝贺你！ 你已成功创建 DocumentDB 集合。
 
 ##<a id="CreateDoc"></a>步骤 7：创建文档
-可以通过使用 **DocumentClient** 类的 [createDocument](https://azure.github.io/azure-documentdb-node/DocumentClient.html) 函数创建[文档](/documentation/articles/documentdb-resources#documents)。文档为用户定义的（任意）JSON 内容。现在，你可以将文档插入 DocumentDB。
+可以通过使用 **DocumentClient** 类的 [createDocument](https://azure.github.io/azure-documentdb-node/DocumentClient.html) 函数创建[文档](/documentation/articles/documentdb-resources/#documents)。文档为用户定义的（任意）JSON 内容。现在，你可以将文档插入 DocumentDB。
 
 将 **getFamilyDocument** 函数复制并粘贴到 **getCollection** 函数下面，以创建包含 ```config``` 对象中保存的 JSON 数据的文档。同样，我们将首先检查以确保不存在具有相同 ID 的文档。
 
@@ -608,13 +608,13 @@ DocumentDB 支持删除 JSON 文档。
 
 ## 后续步骤
 
--  想要更复杂的 Node.js 示例？ 请参见[使用 DocumentDB 生成 Node.js Web 应用程序](/documentation/articles/documentdb-nodejs-application)。
-- 了解如何[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts)。
+-  想要更复杂的 Node.js 示例？ 请参见[使用 DocumentDB 生成 Node.js Web 应用程序](/documentation/articles/documentdb-nodejs-application/)。
+- 了解如何[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts/)。
 - 在 [Query Playground（查询板块）](https://www.documentdb.com/sql/demo)中对示例数据集运行查询。
 - 在 [DocumentDB 文档页](/documentation/services/documentdb/)的“Develop”（开发）部分中了解有关编程模型的详细信息。
 
-[documentdb-create-account]: /documentation/articles/documentdb-create-account
-[documentdb-manage]: /documentation/articles/documentdb-manage
+[documentdb-create-account]: /documentation/articles/documentdb-create-account/
+[documentdb-manage]: /documentation/articles/documentdb-manage/
 
 [keys]: ./media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 

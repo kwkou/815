@@ -46,9 +46,9 @@
 
 | 语言 | 简短示例 | 重试示例 | 关系到对象 |
 | :-- | :-- | :-- | :-- |
-| Node.js | [Tedious](/documentation/articles/sql-database-develop-nodejs-simple-linux) | 。 | 。 |
-| Python | [FreeTDS、pymssql](/documentation/articles/sql-database-develop-python-simple-ubuntu-linux) | 。 | 。 |
-| Ruby | [FreeTDS、TinyTDS](/documentation/articles/sql-database-develop-ruby-simple-linux) | 。 | 。 |
+| Node.js | [Tedious](/documentation/articles/sql-database-develop-nodejs-simple-linux/) | 。 | 。 |
+| Python | [FreeTDS、pymssql](/documentation/articles/sql-database-develop-python-simple-ubuntu-linux/) | 。 | 。 |
+| Ruby | [FreeTDS、TinyTDS](/documentation/articles/sql-database-develop-ruby-simple-linux/) | 。 | 。 |
 
 
 ## Mac OS 上的客户端
@@ -59,8 +59,8 @@
 
 | 语言 | 简短示例 | 重试示例 | 关系到对象 |
 | :-- | :-- | :-- | :-- |
-| Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-mac-osx) | 。 | 。 |
-| Ruby | [Homebrew<br/>FreeTDS、TinyTDS](/documentation/articles/sql-database-develop-ruby-simple-mac-osx) | 。 | 。 |
+| Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-mac-osx/) | 。 | 。 |
+| Ruby | [Homebrew<br/>FreeTDS、TinyTDS](/documentation/articles/sql-database-develop-ruby-simple-mac-osx/) | 。 | 。 |
 
 
 ## Windows 上的客户端
@@ -71,23 +71,23 @@
 
 | 语言 | 简短示例 | 重试示例 | 关系到对象 |
 | :-- | :-- | :-- | :-- |
-| C# | [ADO.NET](/documentation/articles/sql-database-develop-dotnet-simple) | [ADO.NET 自定义](/documentation/articles/sql-database-develop-csharp-retry-windows)<br/><br/>[Enterprise Library](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows) | （实体框架） |
+| C# | [ADO.NET](/documentation/articles/sql-database-develop-dotnet-simple/) | [ADO.NET 自定义](/documentation/articles/sql-database-develop-csharp-retry-windows/)<br/><br/>[Enterprise Library](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows/) | （实体框架） |
 | C++ | [ODBC 驱动程序](http://msdn.microsoft.com/zh-cn/library/azure/hh974312.aspx) | 。 | 。 |
-| Java | [Java。JDBC、JDK。Insert、Transaction、Select。](/documentation/articles/sql-database-develop-java-simple-windows) | 。 | 。 |
-| Node.js | [msnodesql](/documentation/articles/sql-database-develop-nodejs-simple-windows) | 。 | 。 |
-| PHP | [ODBC](/documentation/articles/sql-database-develop-php-simple-windows) | [ODBC 自定义](/documentation/articles/sql-database-develop-php-retry-windows) | 。 |
-| Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-windows) | 。 | 。 |
+| Java | [Java。JDBC、JDK。Insert、Transaction、Select。](/documentation/articles/sql-database-develop-java-simple-windows/) | 。 | 。 |
+| Node.js | [msnodesql](/documentation/articles/sql-database-develop-nodejs-simple-windows/) | 。 | 。 |
+| PHP | [ODBC](/documentation/articles/sql-database-develop-php-simple-windows/) | [ODBC 自定义](/documentation/articles/sql-database-develop-php-retry-windows/) | 。 |
+| Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-windows/) | 。 | 。 |
 
 
 ## 另请参阅
 
 
 - [适用于多种语言和平台的 SDK 与工具的下载项目](/downloads/#cmd-line-tools)
-- [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)
+- [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)
 - [暂时性错误的数字代码列表](/documentation/articles/sql-database-develop-error-messages/#bkmk_connection_errors)<br/>&nbsp;
 - [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
-- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations)
-- [创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)
+- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations/)
+- [创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)
 - [GitHub 上的 Entity Framework 6、EF 7](http://entityframework.codeplex.com)
 
 <!---HONumber=Mooncake_0215_2016-->

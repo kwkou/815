@@ -59,7 +59,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 * **Blob 存储** - 将应用程序诊断信息存储在指定的 Azure 存储帐户和 Blob 容器中。
 * **保留期** - 默认情况下，日志不会自动从“Blob 存储”中删除。如果你希望自动删除日志，可选择“设置保留”并输入保存日志的天数。
 
->[AZURE.NOTE] 如果[重新生成存储帐户的访问密钥](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys)，则必须重置相应的日志记录配置才能使用更新的密钥。为此，请按以下步骤操作：
+>[AZURE.NOTE] 如果[重新生成存储帐户的访问密钥](/documentation/articles/storage-create-storage-account/#view-copy-and-regenerate-storage-access-keys)，则必须重置相应的日志记录配置才能使用更新的密钥。为此，请按以下步骤操作：
 >
 > 1. 在“配置”选项卡上，将相应的日志记录功能设置为“关闭”。保存你的设置。
 > 2. 允许再次将日志记录到存储帐户 blob 或表。保存你的设置。
@@ -112,7 +112,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 这会将名为“webappname”的 Web 应用的日志保存到当前目录中名为 **diagnostics.zip** 的文件中。
 
-> [AZURE.NOTE] 如果尚未安装 Azure 命令行界面 (Azure CLI)，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure CLI](/documentation/articles/xplat-cli-install)。
+> [AZURE.NOTE] 如果尚未安装 Azure 命令行界面 (Azure CLI)，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 ##<a name="streamlogs"></a> 如何：流式传输日志
 
@@ -158,7 +158,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 	azure site log tail webappname --path http
 
-> [AZURE.NOTE] 如果尚未安装 Azure 命令行界面，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install)。
+> [AZURE.NOTE] 如果尚未安装 Azure 命令行界面，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install/)。
 
 ##<a name="understandlogs"></a> 如何：了解诊断日志
 

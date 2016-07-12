@@ -1,6 +1,6 @@
 注册新的插入脚本，当插入新的 Todo 项时，它可以生成 SAS。
 
-0. 如果你尚未创建你的存储帐户，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
+0. 如果你尚未创建你的存储帐户，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/)。
 
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“存储”，单击存储帐户，然后单击“管理密钥”。
 

@@ -52,9 +52,9 @@
 	    ]
 	}
 
-可以在 wasb://processjson@hditutorialdata.blob.core.windows.net/ 上找到该文件。有关将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。如果需要，你可以将该文件复制到群集的默认容器。
+可以在 wasb://processjson@hditutorialdata.blob.core.windows.net/ 上找到该文件。有关将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage/)。如果需要，你可以将该文件复制到群集的默认容器。
 
-在本教程中，你将使用 Hive 控制台。有关打开 Hive 控制台的说明，请参阅[通过远程桌面将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop)。
+在本教程中，你将使用 Hive 控制台。有关打开 Hive 控制台的说明，请参阅[通过远程桌面将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop/)。
 
 ##平展 JSON 文档
 
@@ -237,11 +237,11 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，它可让你定义 JSON
 
 如需其他相关文章，请参阅
 
-- [将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件](/documentation/articles/hdinsight-use-hive)
-- [使用 HDInsight 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)
+- [将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件](/documentation/articles/hdinsight-use-hive/)
+- [使用 HDInsight 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data/)
 
 
-[hdinsight-python]: /documentation/articles/hdinsight-python
+[hdinsight-python]: /documentation/articles/hdinsight-python/
 
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png
 [image-hdi-hivejson-getjsonobject]: ./media/hdinsight-using-json-in-hive/getjsonobject.png

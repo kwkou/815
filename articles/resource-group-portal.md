@@ -17,11 +17,11 @@
 
 ## 介绍
 
-本主题演示了如何将 [Azure 门户预览](https://portal.azure.cn)与 [Azure 资源管理器](/documentation/articles/resource-group-overview)配合使用，以部署和管理 Azure 资源。
+本主题演示了如何将 [Azure 门户预览](https://portal.azure.cn)与 [Azure 资源管理器](/documentation/articles/resource-group-overview/)配合使用，以部署和管理 Azure 资源。
 
 目前，并非每种服务都支持门户预览或资源管理器。对于这些服务，你需要使用[经典管理门户](https://manage.windowsazure.cn)。
 
-也可以通过 Azure PowerShell 和 Azure CLI 来管理资源。有关使用这些接口的详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
+也可以通过 Azure PowerShell 和 Azure CLI 来管理资源。有关使用这些接口的详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
 ## 创建资源组
 
@@ -176,7 +176,7 @@
 
 ## 标记资源
 
-可以将标记应用到资源组和资源，以按照逻辑组织资产。有关通过门户使用标记的信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags)。
+可以将标记应用到资源组和资源，以按照逻辑组织资产。有关通过门户使用标记的信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
 ## 部署已保存的模板
 
@@ -191,7 +191,7 @@
 
 ## 部署自定义模板
 
-如果想要执行部署，但不使用应用商店中的任何模板，可以创建自定义模板来针对你的解决方案定义基础结构。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+如果想要执行部署，但不使用应用商店中的任何模板，可以创建自定义模板来针对你的解决方案定义基础结构。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 若要通过门户部署自定义模板，请选择**新建**，并开始搜索**模板部署**，直至可以从选项中选择它。
 
@@ -234,7 +234,7 @@
 
 ## 后续步骤
 
-- 若要查看审核日志，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)。
+- 若要查看审核日志，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)。
 
 
 

@@ -20,7 +20,7 @@
 
 ## 先决条件
 
-* **Azure PowerShell** - 有关 Azure PowerShell 的下载和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。 
+* **Azure PowerShell** - 有关 Azure PowerShell 的下载和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。 
    
     * 由于 Azure Batch cmdlet 随附在 Azure Resource Manager 模块中，因此需要运行 **Login-AzureRmAccount** cmdlet 才能连接到订阅。 
     
@@ -160,6 +160,6 @@ OData 筛选器的替代方法是使用 **Id** 参数。若要查询 ID 为“my
 ## 后续步骤
 * 有关详细的 cmdlet 语法和示例，请参阅 [Azure Batch cmdlet reference（Azure Batch cmdlet 参考）](https://msdn.microsoft.com/library/azure/mt125957.aspx)。
 
-* 有关如何减少项数和有关针对 Batch 查询返回的信息类型的详细信息，请参阅 [Query the Batch service efficiently（有效地查询 Batch 服务）](/documentation/articles/batch-efficient-list-queries)。
+* 有关如何减少项数和有关针对 Batch 查询返回的信息类型的详细信息，请参阅 [Query the Batch service efficiently（有效地查询 Batch 服务）](/documentation/articles/batch-efficient-list-queries/)。
 
 <!---HONumber=Mooncake_0704_2016-->

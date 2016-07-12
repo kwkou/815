@@ -16,7 +16,7 @@
 
 ##概述
 
-Azure 存储空间提供配套的安全性功能，这些功能相辅相成，可让开发人员共同构建安全的应用程序。存储帐户本身可以通过基于角色的访问控制和 Azure Active Directory 来保护。在应用程序和 Azure 之间传输数据时，可以使用[客户端加密](/documentation/articles/storage-client-side-encryption)、HTTPs 或 SMB 3.0 来保护数据。可以使用[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1)来授予对 Azure 存储空间中数据对象的委派访问权限。
+Azure 存储空间提供配套的安全性功能，这些功能相辅相成，可让开发人员共同构建安全的应用程序。存储帐户本身可以通过基于角色的访问控制和 Azure Active Directory 来保护。在应用程序和 Azure 之间传输数据时，可以使用[客户端加密](/documentation/articles/storage-client-side-encryption/)、HTTPs 或 SMB 3.0 来保护数据。可以使用[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)来授予对 Azure 存储空间中数据对象的委派访问权限。
 
 本文将概述其中每项可配合 Azure 存储空间使用的安全功能。提供的文章链接提供每项功能的详细信息，让你轻松地进一步探讨每个主题。
 
@@ -56,7 +56,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ###如何使用基于角色的访问控制 (RBAC) 来保护存储帐户
 
-让我们讨论 RBAC 是什么及其用法。每个 Azure 订阅都有一个 Azure Active Directory。可以为来自该目录的用户、组和应用程序授予访问权限，以便在使用 Resource Manager 部署模型的 Azure 订阅中管理资源。这称为基于角色的访问控制 (RBAC)。若要管理此访问权限，可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install)、[PowerShell](/documentation/articles/powershell-install-configure) 或 [Azure 存储空间资源提供程序 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)。
+让我们讨论 RBAC 是什么及其用法。每个 Azure 订阅都有一个 Azure Active Directory。可以为来自该目录的用户、组和应用程序授予访问权限，以便在使用 Resource Manager 部署模型的 Azure 订阅中管理资源。这称为基于角色的访问控制 (RBAC)。若要管理此访问权限，可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install/)、[PowerShell](/documentation/articles/powershell-install-configure/) 或 [Azure 存储空间资源提供程序 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)。
 
 使用 Resource Manager 模型可以将存储帐户放在资源组中，并使用 Azure Active Directory 来控制对该特定存储帐户的管理平面的访问。例如，你可以授权特定用户访问存储帐户密钥，而其他用户可以查看有关存储帐户的信息，但无法访问存储帐户密钥。
 
@@ -98,23 +98,23 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ####资源
 
-<!---   [Azure Active Directory Role-based Access Control（Azure Active Directory 基于角色的访问控制）](/documentation/articles/role-based-access-control-configure)
+<!---   [Azure Active Directory Role-based Access Control（Azure Active Directory 基于角色的访问控制）](/documentation/articles/role-based-access-control-configure/)
 
     此文解释了 Azure Active Directory 基于角色的访问控制及其工作原理。
 
--   [RBAC: Built in Roles（RBAC：内置角色）](/documentation/articles/role-based-access-built-in-roles)
+-   [RBAC: Built in Roles（RBAC：内置角色）](/documentation/articles/role-based-access-built-in-roles/)
 
     此文详细说明了 RBAC 中所有可用的内置角色。-->
 
--   [了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model)
+-   [了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)
 
     此文介绍了 Resource Manager 部署和经典部署模型，并说明使用 Resource Manager 和资源组的优点
 
-<!---   [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models)
+<!---   [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models/)
 
     本文介绍了 Azure 计算、网络和存储提供程序在 ARM 模式下的工作方式。
 
--   [Managing Role-Based Access Control with the REST API（使用 REST API 管理基于角色的访问控制）](/documentation/articles/role-based-access-control-manage-access-rest)
+-   [Managing Role-Based Access Control with the REST API（使用 REST API 管理基于角色的访问控制）](/documentation/articles/role-based-access-control-manage-access-rest/)
 
 	此文说明如何使用 REST API 来管理 RBAC。-->
 
@@ -174,7 +174,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ####资源
 
--   [关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account#regenerate-storage-access-keys)
+-   [关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/#regenerate-storage-access-keys)
 
 	此文提供存储帐户的概述，并介绍如何查看、复制和重新生成存储访问密钥。
 
@@ -286,17 +286,17 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 -   这些是使用 .NET 客户端库来创建共享访问签名和存储访问策略的教程。
 
-    -	[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
+    -	[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 
         此文包含 SAS 模型的说明、共享访问签名的示例，以及 SAS 用法最佳实践的建议。此外介绍了如何吊销授予的权限。
 
-    -	[共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2)
+    -	[共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)
 
         此文介绍如何使用 .NET 存储客户端库生成 SAS URI。
 
 -   按 IP 地址限制访问 (IP ACL)
 
-    -	[什么是终结点访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl)
+    -	[什么是终结点访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl/)
 
     -	[Constructing a Service SAS（构造服务 SAS）](https://msdn.microsoft.com/zh-cn/library/azure/dn140255.aspx)
 
@@ -324,7 +324,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ####资源
 
--   [Enable HTTPS for an app in Azure App Service（为 Azure App Service 中的应用启用 HTTPS）](/documentation/articles/web-sites-configure-ssl-certificate)
+-   [Enable HTTPS for an app in Azure App Service（为 Azure App Service 中的应用启用 HTTPS）](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 	此文说明如何为 Azure Web 应用启用 HTTPS。
 
@@ -336,11 +336,11 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ####资源
 
--   [如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)
+-   [如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux/)
 
     此文介绍如何在 Linux 系统上装载 Azure 文件共享，以及上载/下载文件。
 
--   [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
+-   [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
 
 	此文概述 Azure 文件共享，以及如何通过 PowerShell 与 .NET 来装载和使用这些文件共享。
 
@@ -390,11 +390,11 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ####资源
 
--   [在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault)
+-   [在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/)
 
     此文说明如何配合 Azure 密钥保管库使用客户端加密，包括如何使用 PowerShell 来创建 KEK 并将它存储在保管库中。
 
-<!---   [Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)
+<!---   [Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)
 
     此文介绍客户端加密，并提供使用存储客户端库从四个存储服务加密和解密资源的示例。此外介绍了 Azure 密钥保管库。-->
 
@@ -416,7 +416,7 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 -   标准 [A、D 和 G 系列 IaaS VM](/home/features/virtual-machines/#price)
 
--   在使用 [Azure 资源管理器](/documentation/articles/resource-group-overview)模型创建的 IaaS VM 上启用加密
+-   在使用 [Azure 资源管理器](/documentation/articles/resource-group-overview/)模型创建的 IaaS VM 上启用加密
 
 
 
@@ -516,7 +516,7 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 ####资源
 
--   [存储分析](/documentation/articles/storage-analytics)
+-   [存储分析](/documentation/articles/storage-analytics/)
 
 	此文概述存储分析及其启用方法。
 
@@ -524,11 +524,11 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 	此文介绍存储分析日志格式，并详细说明其中的可用字段，包括身份验证类型（指示请求使用的身份验证类型）。
 
--   [Monitor a Storage Account in the Azure portal（在 Azure 经典管理门户中监视存储帐户）](/documentation/articles/storage-monitor-storage-account)
+-   [Monitor a Storage Account in the Azure portal（在 Azure 经典管理门户中监视存储帐户）](/documentation/articles/storage-monitor-storage-account/)
 
 	此文说明如何配置和监视存储帐户的指标与日志记录。
 
--   [使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除](/documentation/articles/storage-e2e-troubleshooting)
+-   [使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除](/documentation/articles/storage-e2e-troubleshooting/)
 
 	此文介绍如何使用存储分析进行故障排除，并说明如何使用 Microsoft Message Analyzer。
 
@@ -584,7 +584,7 @@ Azure 存储空间允许你启用 CORS – 跨域资源共享。对于每个存�
 
 有关 CORS 及其启用方法的详细信息，请参阅以下资源。
 
--   Azure.com 上的 [Cross-Origin Resource Sharing (CORS) Support for the Azure Storage Services on Azure.com（对 Azure 存储服务的跨域资源共享 (CORS) 支持）](/documentation/articles/storage-cors-support)
+-   Azure.com 上的 [Cross-Origin Resource Sharing (CORS) Support for the Azure Storage Services on Azure.com（对 Azure 存储服务的跨域资源共享 (CORS) 支持）](/documentation/articles/storage-cors-support/)
 
 	此文概述 CORS，以及如何为不同的存储服务设置规则。
 

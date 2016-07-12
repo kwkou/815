@@ -13,7 +13,7 @@
 
 # 适用于跨数据库查询的弹性数据库查询（垂直分区）
 
-本文档说明如何为跨数据库查询方案（垂直分区）设置弹性查询，以及如何执行查询。有关垂直分区方案的定义，请参阅 [Azure SQL 数据库弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview)。
+本文档说明如何为跨数据库查询方案（垂直分区）设置弹性查询，以及如何执行查询。有关垂直分区方案的定义，请参阅 [Azure SQL 数据库弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview/)。
 
 ![跨不同数据库中的表进行查询][1]
 

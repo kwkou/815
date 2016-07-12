@@ -66,10 +66,10 @@
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
-[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted
+[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 
 
-[使用 IoT 中心发送云到设备的消息]: /documentation/articles/iot-hub-csharp-csharp-c2d
+[使用 IoT 中心发送云到设备的消息]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 <!-- Images -->
 
 <!---HONumber=Mooncake_0321_2016-->

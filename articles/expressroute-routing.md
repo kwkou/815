@@ -15,7 +15,7 @@
 
 若要使用 ExpressRoute 连接到 Azure 云服务，你需要设置并管理路由。某些连接服务提供商以托管服务形式提供路由的设置和管理。请咨询连接服务提供商，以确定他们是否提供此类服务。如果不提供，则你必须遵守以下所述的要求。
 
-有关需要在设置后才能建立连接的路由会话的说明，请参阅[线路和路由域](/documentation/articles/expressroute-circuit-peerings)一文。
+有关需要在设置后才能建立连接的路由会话的说明，请参阅[线路和路由域](/documentation/articles/expressroute-circuit-peerings/)一文。
 
 **注意：** ExpressRoute 不支持任何高可用性配置的路由器冗余协议（如 HSRP 和 VRRP）。我们依赖每个对等互连的一组冗余 BGP 会话来获得高可用性。
 
@@ -48,7 +48,7 @@ a.b.c.d/29 拆分成 a.b.c.d/30 和 a.b.c.d+4/30 并通过预配 API 一路传�
 
 ## 动态路由交换
 
-路由交换将通过 eBGP 协议进行。EBGP 会话在 MSEE 与路由器之间建立。不要求对 BGP 会话进行身份验证。如果需要，可以配置 MD5 哈希。有关配置 BGP 会话的信息，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-classic)及[线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
+路由交换将通过 eBGP 协议进行。EBGP 会话在 MSEE 与路由器之间建立。不要求对 BGP 会话进行身份验证。如果需要，可以配置 MD5 哈希。有关配置 BGP 会话的信息，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-classic/)及[线路预配工作流和线路状态](/documentation/articles/expressroute-workflows/)。
 
 ## 自治系统编号
 
@@ -85,7 +85,7 @@ ExpressRoute 不能配置为传输路由器。你必须依赖连接服务提供�
 
 例如，如果你在北京通过 ExpressRoute 连接到 Azure，则就能够访问在上海托管的所有 Azure 云服务。
 
-有关地缘政治地区、关联的 Azure 区域和对应的 ExpressRoute 对等互连位置的详细列表，请参阅 [ExpressRoute 合作伙伴和对等位置](/documentation/articles/expressroute-locations)。
+有关地缘政治地区、关联的 Azure 区域和对应的 ExpressRoute 对等互连位置的详细列表，请参阅 [ExpressRoute 合作伙伴和对等位置](/documentation/articles/expressroute-locations/)。
 
 可以针对每个地缘政治区域购买多个 ExpressRoute 线路。如果拥有多个连接，则可以从异地冗余中获得明显的高可用性优势。如果你多条 ExpressRoute 线路，将从 Azure 收到同一组公共对等互连路径的前缀。这意味着你可以使用多个路径从你的网络接入 Azure。这可能会导致在网络中做出欠佳的路由决策。因此，你可能会在不同的服务上遇到欠佳的连接体验。
 
@@ -99,8 +99,8 @@ Azure 不遵循你设置的任何 BGP 社区值。你需要为每个对等互连
 
 - 配置 ExpressRoute 连接。
 
-	- [创建经典部署模型的 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)或[使用 Azure 资源管理器创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)
-	- [为经典部署模型配置路由](/documentation/articles/expressroute-howto-routing-classic)或[为资源管理器部署模型配置路由](/documentation/articles/expressroute-howto-routing-arm)
-	- [将经典 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)或[将资源管理器 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
+	- [创建经典部署模型的 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)或[使用 Azure 资源管理器创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)
+	- [为经典部署模型配置路由](/documentation/articles/expressroute-howto-routing-classic/)或[为资源管理器部署模型配置路由](/documentation/articles/expressroute-howto-routing-arm/)
+	- [将经典 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)或[将资源管理器 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
 <!---HONumber=Mooncake_0104_2016-->

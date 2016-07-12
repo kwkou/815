@@ -58,7 +58,7 @@
 代码示例遵循一些基本指导原则或者无论你使用哪种技术来与 Azure SQL 数据库交互都适用的建议。你可以在此处查看常规建议：
 
 
-- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations)
+- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations/)
 
 
 C# 代码示例包含一个名为 Program.cs 的文件。下一节中提供其代码。
@@ -344,7 +344,7 @@ C# 代码示例包含一个名为 Program.cs 的文件。下一节中提供其�
 
 ## E.相关链接
 
-- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
-- [试用 SQL 数据库：使用 C# 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp)
+- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
+- [试用 SQL 数据库：使用 C# 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp/)
 
 <!---HONumber=Mooncake_0509_2016-->

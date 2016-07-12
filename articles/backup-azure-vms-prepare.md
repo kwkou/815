@@ -21,12 +21,12 @@
 - 在 Azure 公共 Internet 地址和 Azure 存储空间终结点之间建立网络连接。
 - 在 VM 上安装 VM 代理。
 
-如果你确定你的环境满足这些条件，请转到[有关备份 VM 的文章](/documentation/articles/backup-azure-vms)。否则，请继续阅读本文，其中将会引导你逐步完成准备环境来备份 Azure VM 的过程。
+如果你确定你的环境满足这些条件，请转到[有关备份 VM 的文章](/documentation/articles/backup-azure-vms/)。否则，请继续阅读本文，其中将会引导你逐步完成准备环境来备份 Azure VM 的过程。
 
 
 ## 备份和还原 VM 时的限制
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。以下列表提供了在经典模型中部署时的限制。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。以下列表提供了在经典模型中部署时的限制。
 
 - 目前不支持备份基于 Azure Resource Manager (ARM)（即 IaaS V2）的虚拟机。
 - 不支持备份超过 16 个数据磁盘的虚拟机。
@@ -36,10 +36,10 @@
 - 不支持跨区域备份和恢复。
 - Azure 的所有公共区域都支持使用 Azure 备份服务来备份虚拟机（请参阅受支持区域的[清单](https://azure.microsoft.com/regions/#services)）。在创建保管库期间，如果你要寻找的区域目前不受支持，则不会在下拉列表中显示它。
 - 只有特定的操作系统版本才支持使用 Azure 备份服务备份虚拟机。
-  - **Linux**：请参阅 [Azure 认可的分发版列表](/documentation/articles/virtual-machines-linux-endorsed-distros)。只要虚拟机上装有 VM 代理，其他自带的 Linux 分发版应该也能正常运行。
+  - **Linux**：请参阅 [Azure 认可的分发版列表](/documentation/articles/virtual-machines-linux-endorsed-distros/)。只要虚拟机上装有 VM 代理，其他自带的 Linux 分发版应该也能正常运行。
   - **Windows Server**：不支持低于 Windows Server 2008 R2 的版本。
-	- 仅支持通过 PowerShell 还原属于多 DC 配置的域控制器 (DC) VM。阅读有关[还原多 DC 域控制器](/documentation/articles/backup-azure-restore-vms#restoring-domain-controller-vms)的详细信息。
-	- 仅支持通过 PowerShell 还原采用以下特殊网络配置的虚拟机。还原操作完成后，在 UI 中使用还原工作流创建的虚拟机将不采用这些网络配置。若要了解详细信息，请参阅[还原采用特殊网络配置的 VM](/documentation/articles/backup-azure-restore-vms#restoring-vms-with-special-netwrok-configurations)。
+	- 仅支持通过 PowerShell 还原属于多 DC 配置的域控制器 (DC) VM。阅读有关[还原多 DC 域控制器](/documentation/articles/backup-azure-restore-vms/#restoring-domain-controller-vms)的详细信息。
+	- 仅支持通过 PowerShell 还原采用以下特殊网络配置的虚拟机。还原操作完成后，在 UI 中使用还原工作流创建的虚拟机将不采用这些网络配置。若要了解详细信息，请参阅[还原采用特殊网络配置的 VM](/documentation/articles/backup-azure-restore-vms/#restoring-vms-with-special-netwrok-configurations)。
 		- 采用负载平衡器配置的虚拟机（内部和外部）
 		- 使用多个保留 IP 地址的虚拟机
 		- 使用多个网络适配器的虚拟机
@@ -67,7 +67,7 @@
 
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)
 
-7. 一条消息将确认已成功创建保管库。并且将在“恢复服务”页上将保管库列出为“活动”保管库。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault#azure-backup---storage-redundancy-options)的更多内容。
+7. 一条消息将确认已成功创建保管库。并且将在“恢复服务”页上将保管库列出为“活动”保管库。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/#azure-backup---storage-redundancy-options)的更多内容。
 
     ![备份保管库列表](./media/backup-azure-vms-prepare/backup_vaultslist.png)
 
@@ -175,7 +175,7 @@ VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中
 | **操作** | **Windows** | **Linux** |
 | --- | --- | --- |
 | 安装 VM 代理 | <li>下载并安装[代理 MSI](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)。你需要有管理员权限才能完成安装。<li>[更新 VM 属性](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx)，指明已安装代理。 | <li>从 GitHub 安装最新的 [Linux 代理](https://github.com/Azure/WALinuxAgent)。你需要有管理员权限才能完成安装。<li>[更新 VM 属性](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx)，指明已安装代理。 |
-| 更新 VM 代理 | 更新 VM 代理与重新安装 [VM 代理二进制文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)一样简单。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 | 按照[更新 Linux VM 代理](/documentation/articles/virtual-machines-linux-update-agent)上的说明进行操作。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 |
+| 更新 VM 代理 | 更新 VM 代理与重新安装 [VM 代理二进制文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)一样简单。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 | 按照[更新 Linux VM 代理](/documentation/articles/virtual-machines-linux-update-agent/)上的说明进行操作。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 |
 | 验证 VM 代理安装 | <li>导航到 Azure VM 中的 C:\\WindowsAzure\\Packages 文件夹。<li>你应会发现 WaAppAgent.exe 文件已存在。<li> 右键单击该文件，转到“属性”，然后选择“详细信息”选项卡。“产品版本”字段应为 2.6.1198.718 或更高。 | 不适用 |
 
 
@@ -194,8 +194,8 @@ VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中
 ## 后续步骤
 现在你已准备好环境来备份 VM，下一个逻辑步骤是创建备份。规划文章提供了有关备份 VM 的更详细信息。
 
-- [备份虚拟机](/documentation/articles/backup-azure-vms)
-- [计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction)
-- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms)
+- [备份虚拟机](/documentation/articles/backup-azure-vms/)
+- [计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)
+- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms/)
 
 <!---HONumber=Mooncake_0405_2016-->

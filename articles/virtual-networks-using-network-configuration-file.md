@@ -23,7 +23,7 @@
 
 应严格遵循[网络配置文件架构设置](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)指南。
 
-Azure 会将其上部署有项目的子网视为“已使用”。当某个子网处于已使用中时，不能对其进行修改。在修改之前，请将已部署到子网的任何内容移动到不会进行修改的其他子网。请参阅[将 VM 或角色实例移到其他子网](/documentation/articles/virtual-networks-move-vm-role-to-subnet)。
+Azure 会将其上部署有项目的子网视为“已使用”。当某个子网处于已使用中时，不能对其进行修改。在修改之前，请将已部署到子网的任何内容移动到不会进行修改的其他子网。请参阅[将 VM 或角色实例移到其他子网](/documentation/articles/virtual-networks-move-vm-role-to-subnet/)。
 
 ## 使用经典管理门户导出和导入虚拟网络设置  
 你可以使用 PowerShell 或经典管理门户导入和导出包含在网络配置文件中的网络配置设置。下面的说明将帮助你使用经典管理门户进行导出和导入。

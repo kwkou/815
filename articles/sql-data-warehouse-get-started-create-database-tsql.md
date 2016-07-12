@@ -17,8 +17,8 @@
 # 使用 Transact-SQL (TSQL) 创建 SQL 数据仓库数据库
 
 > [AZURE.SELECTOR]
-- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
-- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)
 
 本文说明如何使用 Transact-SQL (TSQL) 创建 SQL 数据仓库数据库。
 
@@ -57,15 +57,15 @@ MAXSIZE 可介于 250 GB 和 240 TB 之间。服务目标可以介于 DW100 与 
 
 <!--Article references-->
 
-[how to create a SQL Data Warehouse from the Azure portal]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
-[使用 Visual Studio 连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect
-[迁移]: /documentation/articles/sql-data-warehouse-overview-migrate
-[开发]: /documentation/articles/sql-data-warehouse-overview-develop
-[加载]: /documentation/articles/sql-data-warehouse-overview-load
-[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started#create-an-azure-sql-database-logical-server
-[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell#database-setup-create-a-resource-group-server-and-firewall-rule
-[资源组]: /documentation/articles/resource-group-portal
-[安装 Visual Studio 和 SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio
+[how to create a SQL Data Warehouse from the Azure portal]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[使用 Visual Studio 连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[开发]: /documentation/articles/sql-data-warehouse-overview-develop/
+[加载]: /documentation/articles/sql-data-warehouse-overview-load/
+[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server
+[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
+[资源组]: /documentation/articles/resource-group-portal/
+[安装 Visual Studio 和 SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio/
 
 
 <!--MSDN references--> 

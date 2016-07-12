@@ -31,7 +31,7 @@ Microsoft 标识平台以及 Microsoft 标识 SDK 能够为你完成所有这些
 * Azure Active Directory B2B
 
 
-请注意，以下文档假设你已了解如何[在旧版门户中为 Azure Active Directory 预配应用程序](/documentation/articles/active-directory-how-to-integrate)，并且你已将应用程序与 [Microsoft Identity iOS SDK](https://github.com/AzureAD/azure-activedirectory-library-for-objc) 集成。
+请注意，以下文档假设你已了解如何[在旧版门户中为 Azure Active Directory 预配应用程序](/documentation/articles/active-directory-how-to-integrate/)，并且你已将应用程序与 [Microsoft Identity iOS SDK](https://github.com/AzureAD/azure-activedirectory-library-for-objc) 集成。
 
 ## Microsoft 标识平台中的 SSO 概念
 
@@ -285,7 +285,7 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 例如：x msauth mytestiosapp://com.myapp.mytestapp
 
-需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate)。
+需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
 
 
 ##### 步骤 3a：在应用和开发人员门户添加重定向 URI，以支持基于证书的身份验证

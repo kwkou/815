@@ -20,7 +20,7 @@ Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL �
       
     您可以直接使用此地址和 OData 协议来访问 Azure 表。有关详细信息，请参阅 [OData.org][]
 
--   **存储帐户：**对 Azure 存储服务的所有访问都要通过存储帐户来完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+-   **存储帐户：**对 Azure 存储服务的所有访问都要通过存储帐户来完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 -   **表：**表是实体的集合。表不对实体强制实施架构，这意味着单个表可以包含具有不同属性集的实体。一个存储帐户可以包含的表数仅受存储帐户容量限制。
 

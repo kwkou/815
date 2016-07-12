@@ -27,13 +27,13 @@ Azure VM 唯一 ID 是只读属性。在重新启动关机（计划中或计划�
 ## 创建 VM
  
 
-有关详细信息，请参阅 [Create a Virtual Machine（创建虚拟机）](/documentation/articles/virtual-machines-linux-creation-choices)
+有关详细信息，请参阅 [Create a Virtual Machine（创建虚拟机）](/documentation/articles/virtual-machines-linux-creation-choices/)
 
 
 ## 连接到 VM
  
 
-有关详细信息，请参阅 [SSH from Linux（从 Linux 执行 SSH）](/documentation/articles/virtual-machines-linux-ssh-from-linux)
+有关详细信息，请参阅 [SSH from Linux（从 Linux 执行 SSH）](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
 
 
 ## 查询 VM 唯一 ID

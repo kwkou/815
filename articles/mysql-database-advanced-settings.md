@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-advanced-settings)
-- [English](/documentation/articles/mysql-database-enus-advanced-settings)
+- [中文](/documentation/articles/mysql-database-advanced-settings/)
+- [English](/documentation/articles/mysql-database-enus-advanced-settings/)
 
 #定制MySQL 数据库 on Azure服务器参数
 
@@ -101,4 +101,4 @@ MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置�
 </table>
 >[AZURE.NOTE] **考虑到流量管理器的限制，我们将wait_timeout的默认值调整为120s，可选范围为60-240s，但上述调整只对10月后创建的实例生效。对于以前的实例，请您手动将wait_timeout值设置为60-240s之间的任意数值，推荐120s。**
 
->[AZURE.NOTE] **关于时区的配置，可详细参考[MySQL on Azure上的时区配置](/documentation/articles/mysql-database-timezone-config).**
+>[AZURE.NOTE] **关于时区的配置，可详细参考[MySQL on Azure上的时区配置](/documentation/articles/mysql-database-timezone-config/).**

@@ -15,9 +15,9 @@
 # 使用 node.js 保护 Web API
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
+Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
 
 **Passport** 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Microsoft Azure Active Directory 开发了一个策略。我们将安装此模块，然后添加 Microsoft Azure Active Directory `passport-azure-ad` 插件。
 
@@ -30,7 +30,7 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 
 ## 1\.注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 - 为应用添加**移动**平台。
@@ -845,11 +845,11 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 现在，可以转到更高级的主题。你可能想要尝试：
 
-[使用 v2.0 终结点保护 Node.js Web 应用 >>](/documentation/articles/active-directory-v2-devquickstarts-node-web)
+[使用 v2.0 终结点保护 Node.js Web 应用 >>](/documentation/articles/active-directory-v2-devquickstarts-node-web/)
 
 有关更多资源，请查看：
 
-- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
+- [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
 <!---HONumber=Mooncake_0516_2016-->

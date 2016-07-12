@@ -26,9 +26,9 @@
 
 ## 后续步骤
 
-- [向 Azure Active Directory 添加新用户](/documentation/articles/active-directory-create-users)
-- [管理 Azure AD](/documentation/articles/active-directory-administer)
-- [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords)
-- [在 Azure AD 中管理组](/documentation/articles/active-directory-manage-groups)
+- [向 Azure Active Directory 添加新用户](/documentation/articles/active-directory-create-users/)
+- [管理 Azure AD](/documentation/articles/active-directory-administer/)
+- [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords/)
+- [在 Azure AD 中管理组](/documentation/articles/active-directory-manage-groups/)
 
 <!---HONumber=Mooncake_0613_2016-->

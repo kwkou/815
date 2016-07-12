@@ -15,13 +15,13 @@
 
 # 如何使用 Azure 服务总线中继服务
 
-本文介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[服务总线中继消息传送](/documentation/articles/service-bus-relay-overview)概述。
+本文介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[服务总线中继消息传送](/documentation/articles/service-bus-relay-overview/)概述。
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## 什么是服务总线中继？
 
-[服务总线“中继”服务](/documentation/articles/service-bus-relay-overview)使你能构建可在 Azure 数据中心和你自己的本地企业环境中运行的混合应用程序。服务总线中继可简化这一过程，它允许你安全地向公有云公开位于企业网络内的 Windows Communication Foundation (WCF) 服务，而无需打开防火墙连接，也无需对企业网络基础结构进行彻底的更改。
+[服务总线“中继”服务](/documentation/articles/service-bus-relay-overview/)使你能构建可在 Azure 数据中心和你自己的本地企业环境中运行的混合应用程序。服务总线中继可简化这一过程，它允许你安全地向公有云公开位于企业网络内的 Windows Communication Foundation (WCF) 服务，而无需打开防火墙连接，也无需对企业网络基础结构进行彻底的更改。
 
 ![中继概念](./media/service-bus-dotnet-how-to-use-relay/sb-relay-01.png)
 
@@ -264,13 +264,13 @@ using (var ch = cf.CreateChannel())
 
 现在，你已了解服务总线中继服务的基础知识，请访问以下链接以了解更多信息。
 
-- [服务总线中继消息传送概述](/documentation/articles/service-bus-relay-overview)
-- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [服务总线中继消息传送概述](/documentation/articles/service-bus-relay-overview/)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - 从 [Azure 示例][]下载服务总线示例，或参阅[服务总线示例概述][]。
 
   [Azure 经典管理门户]: http://manage.windowsazure.cn
-  [使用服务总线进行共享访问签名身份验证]: /documentation/articles/service-bus-shared-access-signature-authentication
+  [使用服务总线进行共享访问签名身份验证]: /documentation/articles/service-bus-shared-access-signature-authentication/
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
-  [服务总线示例概述]: /documentation/articles/service-bus-samples
+  [服务总线示例概述]: /documentation/articles/service-bus-samples/
 
 <!---HONumber=Mooncake_0104_2016-->

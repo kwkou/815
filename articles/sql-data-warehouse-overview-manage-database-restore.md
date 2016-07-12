@@ -17,10 +17,10 @@
 # Azure SQL 数据仓库中的数据还原（概述）
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore)
-- [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal)
-- [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell)
-- [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api)
+- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore/)
+- [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal/)
+- [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell/)
+- [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api/)
 
 描述在Azure SQL 数据仓库中还原数据库的选项。这些选项包括：还原实时数据库、还原已删除的数据库，以及还原无法访问的数据库。实时数据库和已删除的数据库在还原时使用同一数据中心提供的备份。无法访问的数据库可能是由于停电而脱机的。在这种情况下，将通过位于其他地理位置的数据中心进行还原。
 
@@ -68,9 +68,9 @@
 <!--Image references-->
 
 <!--Article references-->
-[Azure 存储冗余选项]: /documentation/articles/storage-redundancy#read-access-geo-redundant-storage
-[Backup and restore tasks]: /documentation/articles/sql-data-warehouse-database-restore-portal
-[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize
+[Azure 存储冗余选项]: /documentation/articles/storage-redundancy/#read-access-geo-redundant-storage
+[Backup and restore tasks]: /documentation/articles/sql-data-warehouse-database-restore-portal/
+[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize/
 [管理概述]: /documentation/articles/sql-database-business-continuity/
 
 <!--MSDN references-->

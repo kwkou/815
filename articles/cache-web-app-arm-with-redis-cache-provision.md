@@ -16,7 +16,7 @@
 
 在本主题中，你将学习如何创建用于部署 Azure Web 应用和 Redis 缓存的 Azure 资源管理器模板。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
 
-有关创建模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+有关创建模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 有关完整的模板，请参阅[包含 Redis 缓存的 Web 应用模板](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-with-redis-cache/azuredeploy.json)。
 
@@ -35,7 +35,7 @@
 
 ## 名称变量
 
-此模板使用变量来构造资源的名称。它使用 [uniqueString](/documentation/articles/resource-group-template-functions#uniquestring) 函数来构造基于资源组 ID 的值。
+此模板使用变量来构造资源的名称。它使用 [uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数来构造基于资源组 ID 的值。
 
     "variables": {
       "hostingPlanName": "[concat('hostingplan', uniqueString(resourceGroup().id))]",

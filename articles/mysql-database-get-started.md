@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-get-started)
-- [English](/documentation/articles/mysql-database-enus-get-started)
+- [中文](/documentation/articles/mysql-database-get-started/)
+- [English](/documentation/articles/mysql-database-enus-get-started/)
 
 #MySQL 数据库 on Azure数据库入门
 
@@ -56,7 +56,7 @@ MySQL 数据库 on Azure支持两种备份形式：按需备份和每日定时�
 ##<a id="step6"></a>步骤六：数据迁移（可选）
 如果您需要把数据库从别的地方迁移到MySQL 数据库 on Azure，当数据量大的情况下建议您通过以下步骤完成迁移。
 - 第一步，把数据从现在的数据库导出到一个文件（比如用mysqldump工具）。
-- 第二步，将数据库导出文件传输到您在Azure上的某台VM上。您可以用您熟悉的数据传输工具（比如FTP等），您也可以用[AzCopy](/documentation/articles/storage-use-azcopy)这一工具（用AzCopy需要先把文件传输到一个存储blob，再传至VM）。
+- 第二步，将数据库导出文件传输到您在Azure上的某台VM上。您可以用您熟悉的数据传输工具（比如FTP等），您也可以用[AzCopy](/documentation/articles/storage-use-azcopy/)这一工具（用AzCopy需要先把文件传输到一个存储blob，再传至VM）。
 - 第三步，把数据从您的Azure VM上导入到您的MySQL 数据库 on Azure。**这样可以降低连接中途断开而导致迁移失败的可能性**。
 
 ##<a id="nextstep"></a>后续步骤

@@ -14,7 +14,7 @@
 
 # 在云服务角色上安装 .NET 
 
-本文介绍如何在云服务 Web 角色和辅助角色上安装 .NET Framework。可以使用以下步骤在 Azure 来宾 OS 系列 4 上安装 .NET 4.6.1。有关最新的来宾 OS 版本信息，请参阅 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix)。
+本文介绍如何在云服务 Web 角色和辅助角色上安装 .NET Framework。可以使用以下步骤在 Azure 来宾 OS 系列 4 上安装 .NET 4.6.1。有关最新的来宾 OS 版本信息，请参阅 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix/)。
 
 在 Web 角色和辅助角色上安装 .NET 的过程涉及到在云项目中添加 .NET 安装包，并在执行角色的启动任务过程中启动安装程序。
 
@@ -34,7 +34,7 @@
 ![包含安装程序文件的角色内容][1]
 
 ## 为角色定义启动任务
-启动任务可让你在启动角色之前执行操作。将 .NET Framework 作为启动任务的一部分安装，可确保在运行任何应用程序代码之前已安装好 Framework。有关启动任务的详细信息，请参阅[在 Azure 中运行启动任务](/documentation/articles/cloud-services-startup-tasks)。
+启动任务可让你在启动角色之前执行操作。将 .NET Framework 作为启动任务的一部分安装，可确保在运行任何应用程序代码之前已安装好 Framework。有关启动任务的详细信息，请参阅[在 Azure 中运行启动任务](/documentation/articles/cloud-services-startup-tasks/)。
 
 1. 将以下内容添加所有角色的 **WebRole** **或WorkerRole** 节点下的 *ServiceDefinition.csdef* 文件：
 	
@@ -56,7 +56,7 @@
     </Startup>
 	```
 
-	上述配置将使用管理员特权来执行控制台命令*install.cmd*，以安装 .NET Framework。该配置还会创建名为 *NETFXInstall* 的 LocalStorage。启动脚本会将临时文件夹设置为使用此本地存储资源，以便从此资源下载并安装 .NET Framework 安装程序。必须将此资源的大小设置为至少 1024MB，以确保能够正确安装 Framework。有关启动任务的详细信息，请参阅：[常见的云服务启动任务](/documentation/articles/cloud-services-startup-tasks-common)
+	上述配置将使用管理员特权来执行控制台命令*install.cmd*，以安装 .NET Framework。该配置还会创建名为 *NETFXInstall* 的 LocalStorage。启动脚本会将临时文件夹设置为使用此本地存储资源，以便从此资源下载并安装 .NET Framework 安装程序。必须将此资源的大小设置为至少 1024MB，以确保能够正确安装 Framework。有关启动任务的详细信息，请参阅：[常见的云服务启动任务](/documentation/articles/cloud-services-startup-tasks-common/)
 
 2. 创建文件 **install.cmd**，然后右键单击角色并选择“添加 > 现有项...”将此文件添加到所有角色。因此，所有角色现在应该都有 .NET 安装程序文件，以及 install.cmd 文件。
 	

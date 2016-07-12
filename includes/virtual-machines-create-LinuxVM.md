@@ -1,4 +1,4 @@
-1. 使用[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect) 中列出的步骤登录到你的 Azure 订阅。
+1. 使用[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect/) 中列出的步骤登录到你的 Azure 订阅。
 
 2. 请使用以下命令你确保处于服务管理模式下：
 
@@ -25,9 +25,9 @@
         + Creating VM
         info:    vm create command OK
 
-    >[AZURE.NOTE]对于 Linux 虚拟机，你必须提供在 `vm create` 中提供 `-e` 选项；不能在创建虚拟机后启用 SSH。有关 SSH 的详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
+    >[AZURE.NOTE]对于 Linux 虚拟机，你必须提供在 `vm create` 中提供 `-e` 选项；不能在创建虚拟机后启用 SSH。有关 SSH 的详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。
 
-    请注意，映像 *250d269906be4694a10aee49a3385f2d__suse-opensuse-13.2-v20160302* 是我们在上述步骤中从映像列表中选择的映像。*MyTestVM* 是我们的新虚拟机的名称，*adminUser* 是我们将 SSH 用于虚拟机的用户名。你可以根据你的要求来替换这些变量。有关此命令的更多详细信息，请访问[使用 Azure 服务管理的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
+    请注意，映像 *250d269906be4694a10aee49a3385f2d__suse-opensuse-13.2-v20160302* 是我们在上述步骤中从映像列表中选择的映像。*MyTestVM* 是我们的新虚拟机的名称，*adminUser* 是我们将 SSH 用于虚拟机的用户名。你可以根据你的要求来替换这些变量。有关此命令的更多详细信息，请访问[使用 Azure 服务管理的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/)。
 
 5. 新创建的 Linux 虚拟机将显示在由以下命令生成的列表中：
 
@@ -39,6 +39,6 @@
 
 7. 使用 `azure vm start` 命令即可启动新创建的虚拟机。
 
-有关所有这些 Azure CLI 虚拟机命令的详细信息，请参阅[使用服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
+有关所有这些 Azure CLI 虚拟机命令的详细信息，请参阅[使用服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/)。
 
 <!---HONumber=Mooncake_1221_2015-->

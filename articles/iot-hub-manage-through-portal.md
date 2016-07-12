@@ -146,7 +146,7 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
   [11]: ./media/iot-hub-manage-through-portal/messaging-settings.png
   [12]: ./media/iot-hub-manage-through-portal/pricing-error.png
 
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
-[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub
+[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/
 
 <!---HONumber=Mooncake_0418_2016-->

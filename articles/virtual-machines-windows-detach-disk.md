@@ -22,7 +22,7 @@
 
 当你不再需要附加到虚拟机的数据磁盘时，你可以轻松地分离它。这将从虚拟机中删除磁盘，但不会从存储中删除它。
 
-> [AZURE.WARNING] 如果你分离磁盘，它将不会自动删除。如果你订阅了高级存储，则将继续承担该磁盘的存储费用。有关详细信息，请参阅[使用高级存储时的定价和计费方式](/documentation/articles/storage-premium-storage#pricing-and-billing)。
+> [AZURE.WARNING] 如果你分离磁盘，它将不会自动删除。如果你订阅了高级存储，则将继续承担该磁盘的存储费用。有关详细信息，请参阅[使用高级存储时的定价和计费方式](/documentation/articles/storage-premium-storage/#pricing-and-billing)。
 
 若果你希望再次使用磁盘上的现有数据，可以将其重新附加到相同的虚拟机或另一个虚拟机。
 
@@ -62,6 +62,6 @@
 
 ## 后续步骤
 
-如果你想重新使用数据磁盘，只需将它[附加到另一台 VM](/documentation/articles/virtual-machines-windows-attach-disk-portal)
+如果你想重新使用数据磁盘，只需将它[附加到另一台 VM](/documentation/articles/virtual-machines-windows-attach-disk-portal/)
 
 <!---HONumber=Mooncake_0704_2016-->

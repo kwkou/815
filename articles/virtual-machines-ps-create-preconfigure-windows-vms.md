@@ -16,20 +16,20 @@
 # 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
-- [Azure 经典管理门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
-- [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell)
+- [Azure 经典管理门户](/documentation/articles/virtual-machines-windows-classic-tutorial/)
+- [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
 <br>
 
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-ps-create)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-ps-create/)。
 
 
 这些步骤演示了如何使用构建基块方法自定义一组 Azure PowerShell 命令以创建和预配置基于 Windows 的 Azure 虚拟机。可以使用此过程快速创建用于新的基于 Windows 的虚拟机的命令集并扩展现有部署，或者创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
 
 这些步骤采用填空方法来创建 Azure PowerShell 命令集。如果你不熟悉 PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。高级 PowerShell 用户可以使用命令并将变量（以“$”开头的行）替换为他们自己的值。
 
-如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Windows PowerShell 命令提示符。
+如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Windows PowerShell 命令提示符。
 
 ## 步骤 1：添加帐户
 
@@ -254,7 +254,7 @@
 
 ## 后续步骤
 
-如果需要大于 127 GB 的 OS 驱动器，你可以[展开 OS 驱动器](/documentation/articles/virtual-machines-windows-expand-os-disk)。
+如果需要大于 127 GB 的 OS 驱动器，你可以[展开 OS 驱动器](/documentation/articles/virtual-machines-windows-expand-os-disk/)。
 
 
 

@@ -14,10 +14,10 @@
 
 # 排查在 Azure Service Fabric 上部署服务时遇到的常见问题
 
-当你在开发人员计算机上运行服务时，可以轻松使用 [Visual Studio 的调试工具](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally)。对于远程群集而言，[运行状况报告](/documentation/articles/service-fabric-view-entities-aggregated-health)始终是一个不错的起点。访问这些报告的最简单方法是使用 PowerShell 或 [SFX](/documentation/articles/service-fabric-visualizing-your-cluster)。本文假设你要调试远程群集，并且基本了解如何使用这些工具。
+当你在开发人员计算机上运行服务时，可以轻松使用 [Visual Studio 的调试工具](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)。对于远程群集而言，[运行状况报告](/documentation/articles/service-fabric-view-entities-aggregated-health/)始终是一个不错的起点。访问这些报告的最简单方法是使用 PowerShell 或 [SFX](/documentation/articles/service-fabric-visualizing-your-cluster/)。本文假设你要调试远程群集，并且基本了解如何使用这些工具。
 
 ##应用程序崩溃
-“分区低于目标副本或实例计数”报告很好地反映了你的服务即将崩溃。若要找出服务发生崩溃的位置，需要稍作一番调查。如果服务的运行强度很高，那么，你最好有一组详尽的跟踪数据。我们建议你尝试使用 [Azure 诊断](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad)来收集这些跟踪，并[弹性搜索](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch)等解决方案来查看和搜索跟踪。
+“分区低于目标副本或实例计数”报告很好地反映了你的服务即将崩溃。若要找出服务发生崩溃的位置，需要稍作一番调查。如果服务的运行强度很高，那么，你最好有一组详尽的跟踪数据。我们建议你尝试使用 [Azure 诊断](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad/)来收集这些跟踪，并[弹性搜索](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)等解决方案来查看和搜索跟踪。
 
 ![SFX 分区运行状况](./media/service-fabric-diagnostics-troubleshoot-common-scenarios/crashNewApp.png)
 
@@ -33,7 +33,7 @@
  
  这表明注册的服务类型名称与服务清单不匹配。
 
-可将 [Azure 诊断](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad)配置为自动上载所有节点的应用程序事件日志。
+可将 [Azure 诊断](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad/)配置为自动上载所有节点的应用程序事件日志。
 
 ###RunAsync() 或 OnActivateAsync()
 如果崩溃发生在初始化或运行已注册的服务类型或执行组件期间，Azure Service Fabric 将捕获该异常。可以通过“后续步骤”部分中所述的 EventSource 提供程序查看这些异常。
@@ -42,7 +42,7 @@
 
 详细了解 Service Fabric 提供的现有诊断信息：
 
-* [Reliable Actors 诊断](/documentation/articles/service-fabric-reliable-actors-diagnostics)
-* [Reliable Services 诊断](/documentation/articles/service-fabric-reliable-services-diagnostics)
+* [Reliable Actors 诊断](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
+* [Reliable Services 诊断](/documentation/articles/service-fabric-reliable-services-diagnostics/)
 
 <!---HONumber=Mooncake_0425_2016-->

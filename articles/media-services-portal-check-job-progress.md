@@ -15,9 +15,9 @@
 #如何：检查作业进度
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-portal-check-job-progress)
-- [.NET](/documentation/articles/media-services-check-job-progress)
-- [REST](/documentation/articles/media-services-rest-check-job-progress)
+- [门户](/documentation/articles/media-services-portal-check-job-progress/)
+- [.NET](/documentation/articles/media-services-check-job-progress/)
+- [REST](/documentation/articles/media-services-rest-check-job-progress/)
 
 ##使用门户检查作业状态
 
@@ -32,7 +32,7 @@
 
 ##后续步骤
 
-发布内容。有关详细信息，请参阅[如何：对资产进行编码](/documentation/articles/media-services-manage-content#publish)。
+发布内容。有关详细信息，请参阅[如何：对资产进行编码](/documentation/articles/media-services-manage-content/#publish)。
 
 
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png

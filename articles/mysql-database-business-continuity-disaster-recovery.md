@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-business-continuity-disaster-recovery)
-- [English](/documentation/articles/mysql-database-enus-business-continuity-disaster-recovery)
+- [中文](/documentation/articles/mysql-database-business-continuity-disaster-recovery/)
+- [English](/documentation/articles/mysql-database-enus-business-continuity-disaster-recovery/)
 
 # MySQL on Azure 业务连续性方案
 
@@ -43,7 +43,7 @@
 		</td>
 		<td>
 			备份与恢复- 任意时间点回滚功能
-			MySQL 支持七天内的任意时间点回滚，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore" target="_blank">MySQL on Azure备份与恢复- 还原数据库到任意时间点</a>
+			MySQL 支持七天内的任意时间点回滚，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">MySQL on Azure备份与恢复- 还原数据库到任意时间点</a>
 		</td>
 	</tr>
 	<tr>
@@ -54,7 +54,7 @@
 			在生产环境下，由于某次升级失败，导致发生兼容性问题，业务无法正常进行。
 		</td>
 		<td>
-			在升级前，用户对数据库创建快照备份，升级如遇到问题，可以快速还原完全备份到新实例/原实例，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore" target="_blank">备份与恢复</a>
+			在升级前，用户对数据库创建快照备份，升级如遇到问题，可以快速还原完全备份到新实例/原实例，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">备份与恢复</a>
 		</td>
 	</tr>
 	<tr>
@@ -92,7 +92,7 @@ ERT<3小时，RPO< 1小时。<br>
 >[AZURE.NOTE]**注意：ERT, RTO和RPO是工程指标，仅提供参考，且该指标仅在区域性灾难中出现，且不属于MySQL数据库服务的SLA。**
 
 ###用户自助助服务步骤：###
-如果发生灾难时，管理门户可用，用户可以通过[备份与恢复](/documentation/articles/mysql-database-point-in-time-restore)中异地还原的步骤进行操作。但通常发生区域性灾难时，管理门户中无法正确获取实例的信息，建议用户通过PowerShell对实例进行异地还原操作：
+如果发生灾难时，管理门户可用，用户可以通过[备份与恢复](/documentation/articles/mysql-database-point-in-time-restore/)中异地还原的步骤进行操作。但通常发生区域性灾难时，管理门户中无法正确获取实例的信息，建议用户通过PowerShell对实例进行异地还原操作：
 
 ```
 New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName <ResourceName> -ApiVersion 2015-09-01 -ResourceGroupName <ResourceGroupName> -Location <TargetLocation> -SkuObject @{name=<targetSKU>} -Properties @{creationSource=@{server='<SourceServerName>';region='<SourceLocation>';timepoint='<TimeTag>'};version = '<version number>'}

@@ -45,18 +45,18 @@
 
 若要使用网络配置文件编辑 DNS 服务器列表，将首先从经典管理门户中导出配置设置。然后，将编辑网络配置文件，再通过经典管理门户向回导入该文件。下面概括列出了用于完成此过程的步骤。
 
-1. 将虚拟网络设置导出到网络配置文件。有关导出网络配置设置的详细信息和步骤，请参阅[将虚拟网络设置导出到网络配置文件](/documentation/articles/virtual-networks-using-network-configuration-file)。
+1. 将虚拟网络设置导出到网络配置文件。有关导出网络配置设置的详细信息和步骤，请参阅[将虚拟网络设置导出到网络配置文件](/documentation/articles/virtual-networks-using-network-configuration-file/)。
 
-2. 指定虚拟网络的 DNS 服务器信息。有关指定 DNS 服务器的详细信息，请参阅[在虚拟网络配置文件中指定 DNS 服务器](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file)。有关网络配置文件的其他信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)和[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)。
+2. 指定虚拟网络的 DNS 服务器信息。有关指定 DNS 服务器的详细信息，请参阅[在虚拟网络配置文件中指定 DNS 服务器](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file/)。有关网络配置文件的其他信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)和[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)。
 
-3. 导入网络配置文件。有关导入网络配置文件的详细信息和步骤，请参阅[导入网络配置文件](/documentation/articles/virtual-networks-using-network-configuration-file)。
+3. 导入网络配置文件。有关导入网络配置文件的详细信息和步骤，请参阅[导入网络配置文件](/documentation/articles/virtual-networks-using-network-configuration-file/)。
 
 4. 重新启动位于虚拟网络中的虚拟机以使其可获取新的 DNS 设置。
 
 ## 后续步骤
 
-[如何在虚拟网络中使用公共 IP 地址](/documentation/articles/virtual-networks-public-ip-within-vnet)
+[如何在虚拟网络中使用公共 IP 地址](/documentation/articles/virtual-networks-public-ip-within-vnet/)
 
-[如何删除虚拟网络 (VNet)](/documentation/articles/virtual-networks-delete-vnet)
+[如何删除虚拟网络 (VNet)](/documentation/articles/virtual-networks-delete-vnet/)
 
 <!---HONumber=74-->

@@ -15,11 +15,11 @@
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 [Resource Manager 模型](/documentation/articles/virtual-machines-windows-attach-disk-portal)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 [Resource Manager 模型](/documentation/articles/virtual-machines-windows-attach-disk-portal/)。
 
 如果需要其他数据磁盘，可将空磁盘或现有的数据磁盘附加到 VM。在这两种情况下，磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。如果是新磁盘，在附加磁盘之后，你也需要将它初始化，使其可供 Windows VM 使用。
 
-有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds)。
+有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds/)。
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
@@ -41,14 +41,14 @@
 
 	![已成功初始化卷](./media/virtual-machines-windows-classic-attach-disk/newvolumecreated.png)
 
-> [AZURE.NOTE] VM 的大小决定了可以在其上附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
+> [AZURE.NOTE] VM 的大小决定了可以在其上附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)。
 
 ## 其他资源
 
-[如何从 Windows 虚拟机分离磁盘](/documentation/articles/virtual-machines-windows-classic-detach-disk)
+[如何从 Windows 虚拟机分离磁盘](/documentation/articles/virtual-machines-windows-classic-detach-disk/)
 
-[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds)
+[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds/)
 
-[logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon
+[logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
 
 <!---HONumber=Mooncake_0704_2016-->

@@ -55,18 +55,18 @@ Azure 多重身份验证可以使 Azure 管理员安全访问 Azure 经典管理
 
 **问：我是一名管理员，如果某个用户联系我，但我的帐户已被锁定，我该怎么办？**
 
-强制用户再次完成注册过程，即可重置用户。为此，请参阅[在云使用 Azure 多重身份验证管理用户和设备设置](/documentation/articles/multi-factor-authentication-manage-users-and-devices)
+强制用户再次完成注册过程，即可重置用户。为此，请参阅[在云使用 Azure 多重身份验证管理用户和设备设置](/documentation/articles/multi-factor-authentication-manage-users-and-devices/)
 
 **问：如果用户的设备丢失或被盗，而设备使用了应用密码，我该怎么做？**
 
-你可以删除所有用户应用密码，以防止任何未经授权的访问。在更换设备后，用户可以重建密码。为此，请参阅[在云使用 Azure Multi-Factor Authentication 管理用户和设备设置](/documentation/articles/multi-factor-authentication-manage-users-and-devices)
+你可以删除所有用户应用密码，以防止任何未经授权的访问。在更换设备后，用户可以重建密码。为此，请参阅[在云使用 Azure Multi-Factor Authentication 管理用户和设备设置](/documentation/articles/multi-factor-authentication-manage-users-and-devices/)
 
 **问：如果用户无法登录非浏览器应用，该怎么办？**
 
 - 已启用多重身份验证的用户需要应用密码，才能登录一些非浏览器应用。
 - 用户需要清除登录信息（删除登录信息），重新启动应用程序，然后使用其用户名和应用密码登录。 
 
-有关创建应用密码的信息，请参阅[有关使用应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords)
+有关创建应用密码的信息，请参阅[有关使用应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)
 
 
 >[AZURE.NOTE]适用于 Office 2013 客户端的现代身份验证

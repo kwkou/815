@@ -40,9 +40,9 @@
       ...
     }
 
-如果需要在某个资源与通过 copy 循环创建的资源之间创建依赖关系（如上所示），可将 dependsOn 元素设置为该循环的名称。有关示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+如果需要在某个资源与通过 copy 循环创建的资源之间创建依赖关系（如上所示），可将 dependsOn 元素设置为该循环的名称。有关示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
 
-尽管您可能倾向使用 dependsOn 来映射您的资源之间的依赖关系，但请务必了解您这么做的理由，因为它会影响您的部署性能。例如，如果您这么做是因为想要记录资源的互连方式，那么，dependsOn 方法并不合适。DependsOn 的生命周期仅适合于部署而不适合于部署后。一旦部署完成，就无法查询这些依赖关系。如果您无意中阻止部署引擎使用应有的并行功能，则使用 dependsOn 将会给性能带来不利影响。若要对资源之间的关系进行记录并提供查询功能，则应改用[资源链接](/documentation/articles/resource-group-link-resources)。
+尽管您可能倾向使用 dependsOn 来映射您的资源之间的依赖关系，但请务必了解您这么做的理由，因为它会影响您的部署性能。例如，如果您这么做是因为想要记录资源的互连方式，那么，dependsOn 方法并不合适。DependsOn 的生命周期仅适合于部署而不适合于部署后。一旦部署完成，就无法查询这些依赖关系。如果您无意中阻止部署引擎使用应有的并行功能，则使用 dependsOn 将会给性能带来不利影响。若要对资源之间的关系进行记录并提供查询功能，则应改用[资源链接](/documentation/articles/resource-group-link-resources/)。
 
 ## 子资源
 
@@ -98,12 +98,12 @@
 
 可以使用此元素或 dependsOn 元素来指定依赖关系，但不需要同时使用它们用于同一依赖资源。本指南将使用隐式引用以避免无意中使某个不必要的 dependsOn 元素阻止部署引擎执行并行部署方面操作的风险。
 
-若要了解详细信息，请参阅[引用函数](/documentation/articles/resource-group-template-functions#reference)。
+若要了解详细信息，请参阅[引用函数](/documentation/articles/resource-group-template-functions/#reference)。
 
 ## 后续步骤
 
-- 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。 
-- 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions)。
+- 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。 
+- 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
 
 <!---HONumber=Mooncake_0425_2016-->

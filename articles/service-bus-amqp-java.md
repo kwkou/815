@@ -438,7 +438,7 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview
+[服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

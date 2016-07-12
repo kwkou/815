@@ -19,7 +19,7 @@
 
 ##Azure 灾难恢复功能
 
-和可用性注意事项一样，Azure 提供了旨在支持灾难恢复的[复原能力技术指南](/documentation/articles/resiliency-technical-guidance)。Azure 的某些可用性功能与灾难恢复之间还存在某种关系。例如，跨容错域管理角色可提高应用程序的可用性。如果没有此项管理，则未经处理的硬件故障将会演变为“灾难”情形。因此，应将正确地应用许多可用性功能和策略视为应用程序防灾的重要部分。但是，本文不仅介绍一般的可用性问题，还涉及到严重（且罕见）的灾难事件。
+和可用性注意事项一样，Azure 提供了旨在支持灾难恢复的[复原能力技术指南](/documentation/articles/resiliency-technical-guidance/)。Azure 的某些可用性功能与灾难恢复之间还存在某种关系。例如，跨容错域管理角色可提高应用程序的可用性。如果没有此项管理，则未经处理的硬件故障将会演变为“灾难”情形。因此，应将正确地应用许多可用性功能和策略视为应用程序防灾的重要部分。但是，本文不仅介绍一般的可用性问题，还涉及到严重（且罕见）的灾难事件。
 
 ##多个数据中心区域
 
@@ -41,8 +41,8 @@ Azure 在世界各地许多不同的区域保留了数据中心。此基础结�
 
 有关 Azure 流量管理器工作原理的详细信息，请参阅：
 
- * [流量管理器概述](/documentation/articles/traffic-manager-overview)
- * [配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)
+ * [流量管理器概述](/documentation/articles/traffic-manager-overview/)
+ * [配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)
 
 ##Azure 灾难情况
 
@@ -120,11 +120,11 @@ Azure 提供的许多服务可能会定期停机。以 [Azure Redis 缓存](/ser
 
 定期备份应用程序数据可为某些灾难恢复方案提供支持。不同的存储资源需要使用不同的方法。
 
-对于基本、标准和高级 SQL 数据库层，可以利用时间点还原来恢复数据库。有关详细信息，请参阅[概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity)。另一种做法是对 SQL 数据库使用活动异地复制。这会自动将数据库更改复制到相同甚至不同 Azure 区域中的辅助数据库。这提供了一些本文介绍的手动程度更高的数据同步技术的潜在替代方法。有关详细信息，请参阅[概述：SQL 数据库活动异地复制](/documentation/articles/sql-database-geo-replication-overview)。
+对于基本、标准和高级 SQL 数据库层，可以利用时间点还原来恢复数据库。有关详细信息，请参阅[概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity/)。另一种做法是对 SQL 数据库使用活动异地复制。这会自动将数据库更改复制到相同甚至不同 Azure 区域中的辅助数据库。这提供了一些本文介绍的手动程度更高的数据同步技术的潜在替代方法。有关详细信息，请参阅[概述：SQL 数据库活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)。
 
 还可以使用手动程度更高的方法进行备份和还原。使用 DATABASE COPY 命令创建数据库的副本。必须使用此命令才能获得在事务上一致的备份。还可以利用 Azure SQL 数据库的导入/导出服务。这样支持将数据库导出到存储在 Azure Blob 存储中的 BACPAC 文件。
 
-Azure 存储空间内置的冗余性在同一区域中创建备份文件的两个副本。但是，由运行备份过程的频率决定 RPO，即可能在灾难情况下丢失的数据量。例如，假设你在整点执行备份，而灾难发生在整点的两分钟前。那么，你会丢失在执行上次备份之后产生的 58 分钟的数据。此外，为了应对区域范围的服务中断，应将 BACPAC 文件复制到备用区域。然后，可还原备用区域内的那些备份。有关更多详细信息，请参阅[概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity)。
+Azure 存储空间内置的冗余性在同一区域中创建备份文件的两个副本。但是，由运行备份过程的频率决定 RPO，即可能在灾难情况下丢失的数据量。例如，假设你在整点执行备份，而灾难发生在整点的两分钟前。那么，你会丢失在执行上次备份之后产生的 58 分钟的数据。此外，为了应对区域范围的服务中断，应将 BACPAC 文件复制到备用区域。然后，可还原备用区域内的那些备份。有关更多详细信息，请参阅[概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity/)。
 
 对于 Azure 存储空间，可制定你自己的自定义备份过程，也可使用许多第三方备份工具。请注意，在大多数应用程序设计中，还有许多其他的复杂情况，其中存储资源互相引用对方。例如，设想一个 SQL 数据库，其中一列链接到 Azure 存储空间中的 Blob。如果未能同步进行备份，则数据库可能会提供一个指针，指向在发生故障之前未备份的 Blob。应用程序或灾难恢复计划必须实现在恢复后处理这种不一致性的过程。
 
@@ -132,7 +132,7 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 引用数据是支持应用程序功能的只读数据。这些数据通常不经常更改。尽管备份和还原是处理区域范围的服务中断的一种方法，但 RTO 耗时相对较长。将应用程序部署到次要区域后，有一些策略可改进引用数据的 RTO。
 
-由于引用数据不经常更改，因此可通过在次要区域内保留引用数据的永久副本，缩短 RTO。这样可消除发生灾难时还原备份所需的时间。若要满足多区域灾难恢复要求，必须将应用程序和引用数据一起部署到多个区域。如[高可用性的引用数据模式](/documentation/articles/resiliency-high-availability-azure-applications#reference-data-pattern-for-high-availability)中所述，可以将引用数据部署到角色本身、外部存储或这两者的组合。
+由于引用数据不经常更改，因此可通过在次要区域内保留引用数据的永久副本，缩短 RTO。这样可消除发生灾难时还原备份所需的时间。若要满足多区域灾难恢复要求，必须将应用程序和引用数据一起部署到多个区域。如[高可用性的引用数据模式](/documentation/articles/resiliency-high-availability-azure-applications/#reference-data-pattern-for-high-availability)中所述，可以将引用数据部署到角色本身、外部存储或这两者的组合。
 
 计算节点内引用数据部署模型还隐式满足了灾难恢复要求。将引用数据部署到 SQL 数据库需要将引用数据的副本部署到每个区域。同样的策略也适用于 Azure 存储空间。必须将存储在 Azure 存储空间中的任何引用数据副本部署到主要区域和次要区域。
 
@@ -144,7 +144,7 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 实施功能完备的灾难模式策略需要将事务数据异步复制到次要区域。可进行复制的实际时间范围将决定应用程序的 RPO 特征。你仍然可以从主要区域恢复在复制期间丢失的数据。以后还可以与次要区域合并。
 
-以下体系结构示例介绍在故障转移情况下处理事务数据的几种不同方式。这些示例并未尽列，注意到这一点很重要。例如，可将中间存储位置（如队列）替换为 Azure SQL 数据库。队列自身可以是 Azure 存储空间或服务总线队列（请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)）。服务器存储目标也可能有所不同，如使用 Azure 表而不是 SQL 数据库。此外，在不同步骤中，还可插入辅助角色作为中介。重要的不在于精确地模仿这些体系结构，而是在恢复事务数据和相关模块时考虑各种备选方法。
+以下体系结构示例介绍在故障转移情况下处理事务数据的几种不同方式。这些示例并未尽列，注意到这一点很重要。例如，可将中间存储位置（如队列）替换为 Azure SQL 数据库。队列自身可以是 Azure 存储空间或服务总线队列（请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)）。服务器存储目标也可能有所不同，如使用 Azure 表而不是 SQL 数据库。此外，在不同步骤中，还可插入辅助角色作为中介。重要的不在于精确地模仿这些体系结构，而是在恢复事务数据和相关模块时考虑各种备选方法。
 
 ####复制事务数据以准备灾难恢复
 
@@ -154,11 +154,11 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 ![复制事务数据以准备灾难恢复](./media/resiliency-disaster-recovery-azure-applications/replicate-transactional-data-in-preparation-for-disaster-recovery.png)
 
-实现这种体系结构的最大难题是区域之间的复制策略。Azure SQL 数据同步服务可以实现这种类型的复制。但是，该服务仍为预览版，建议不要将其用于生产环境。有关详细信息，请参阅[概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity)。对于生产应用程序，必须投资购入第三方解决方案或在代码中创建自己的复制逻辑。根据体系结构的不同，可能会进行双向复制，而这也更加复杂。
+实现这种体系结构的最大难题是区域之间的复制策略。Azure SQL 数据同步服务可以实现这种类型的复制。但是，该服务仍为预览版，建议不要将其用于生产环境。有关详细信息，请参阅[概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity/)。对于生产应用程序，必须投资购入第三方解决方案或在代码中创建自己的复制逻辑。根据体系结构的不同，可能会进行双向复制，而这也更加复杂。
 
 一种可能的实现方法是在上述示例中使用中间队列。处理数据并将其放入最终存储目标的辅助角色可以同时在主要区域和次要区域内做出更改。这些任务并非不重要，而有关复制代码的完整指导超出本文的范畴。关键是应投入大量时间并重点测试如何将数据复制到次要区域。应进行其他处理和测试，以确保故障转移和恢复过程正确处理任何可能发生的数据不一致情况或复制事务。
 
->[AZURE.NOTE] 本文侧重于平台即服务 (PaaS)。但是，使用 Azure 虚拟机的混合应用程序仍具有其他复制和可用性选项。这些混合应用程序使用基础结构即服务 (IaaS) 在 Azure 中的虚拟机上托管 SQL Server。因此，可在 SQL Server 中使用传统的可用性方法，如 AlwaysOn 可用性组或日志传送。某些方法（如 AlwaysOn）只能在本地 SQL Server 与 Azure 虚拟机之间发挥作用。有关详细信息，请参阅 [High availability and disaster recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)（Azure 虚拟机中 SQL Server 的高可用性和灾难恢复）。
+>[AZURE.NOTE] 本文侧重于平台即服务 (PaaS)。但是，使用 Azure 虚拟机的混合应用程序仍具有其他复制和可用性选项。这些混合应用程序使用基础结构即服务 (IaaS) 在 Azure 中的虚拟机上托管 SQL Server。因此，可在 SQL Server 中使用传统的可用性方法，如 AlwaysOn 可用性组或日志传送。某些方法（如 AlwaysOn）只能在本地 SQL Server 与 Azure 虚拟机之间发挥作用。有关详细信息，请参阅 [High availability and disaster recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)（Azure 虚拟机中 SQL Server 的高可用性和灾难恢复）。
 
 ####用于事务捕获的降级应用程序模式
 
@@ -227,7 +227,7 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 除了响应更快之外，此模式还具有预先分配和部署备份服务的优点。你不必担心区域没有空间可在发生灾难时分配新实例。如果辅助 Azure 区域接近最大容量，则这一点很重要。无法保证立即可在任何区域内部署大量新的云服务（服务级别协议）。
 
-为了尽量缩短此模型的响应时间，主要区域和次要区域的规模（角色实例数）必须相近。尽管存在一些优点，但由于为未使用的计算实例付费的成本高昂，通常这不是最明智的财务选择。因此，更常见的做法是在次要区域内使用规模略有缩减的云服务版本。然后，可在必要时迅速进行故障转移和横向扩展辅助部署。你应当自动完成故障转移过程，以便一旦主要区域发生故障，即根据负载激活其他实例。这可能涉及某种类型的自动缩放机制，如[虚拟机缩放集](/documentation/articles/virtual-machine-scale-sets-overview)。
+为了尽量缩短此模型的响应时间，主要区域和次要区域的规模（角色实例数）必须相近。尽管存在一些优点，但由于为未使用的计算实例付费的成本高昂，通常这不是最明智的财务选择。因此，更常见的做法是在次要区域内使用规模略有缩减的云服务版本。然后，可在必要时迅速进行故障转移和横向扩展辅助部署。你应当自动完成故障转移过程，以便一旦主要区域发生故障，即根据负载激活其他实例。这可能涉及某种类型的自动缩放机制，如[虚拟机缩放集](/documentation/articles/virtual-machine-scale-sets-overview/)。
 
 下图展示了一种模型，其中主要区域和次要区域均包含处于主动-被动模式的完全部署的云服务。
 
@@ -245,7 +245,7 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 ![主动-主动](./media/resiliency-disaster-recovery-azure-applications/active-active.png)
 
-上图中的主动-主动体系结构有一个缺点。第二个区域必须访问第一个区域内的数据库，因为主控副本存放在那里。从区域外部访问数据时，性能大幅下降。在跨区域调用数据库时，应考虑使用某种类型的批处理方法以提高这些调用的性能。有关详细信息，请参阅 [How to use batching to improve SQL Database application performance](/documentation/articles/sql-database-use-batching-to-improve-performance)（如何使用批处理来改善 SQL 数据库应用程序的性能）。
+上图中的主动-主动体系结构有一个缺点。第二个区域必须访问第一个区域内的数据库，因为主控副本存放在那里。从区域外部访问数据时，性能大幅下降。在跨区域调用数据库时，应考虑使用某种类型的批处理方法以提高这些调用的性能。有关详细信息，请参阅 [How to use batching to improve SQL Database application performance](/documentation/articles/sql-database-use-batching-to-improve-performance/)（如何使用批处理来改善 SQL 数据库应用程序的性能）。
 
 另一种备选体系结构可能要求每个区域直接访问其数据库。在该模型中，将需要进行某种类型的双向复制以同步每个区域内的数据库。
 
@@ -259,7 +259,7 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 这些混合体系结构中有一些难题。首先，本文大部分内容处理的是 PaaS 体系结构模式。Azure 中的典型 PaaS 应用程序依赖 Azure 特有的构件，如角色、云服务和流量管理器。为此类型的 PaaS 应用程序创建本地解决方案所需的体系结构显著不同。就管理或成本角度而言，这一点可能不可行。
 
-但是，对直接移至云中的传统体系结构来说，混合灾难恢复解决方案面临的挑战更少。对于使用 IaaS 的体系结构就是这样。IaaS 应用程序使用云中的虚拟机，这些虚拟机在本地具有直接等效项。使用虚拟网络还可将云中的虚拟机与本地网络资源相连。这样就产生了多种仅 PaaS 应用程序所不具备的可能性。例如，SQL Server 可利用灾难恢复解决方案，如 AlwaysOn 可用性组和数据库镜像。有关详细信息，请参阅 [High availability and disaster recovery for SQL Server in Azure virtual machines（Azure 虚拟机中 SQL Server 的高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)。
+但是，对直接移至云中的传统体系结构来说，混合灾难恢复解决方案面临的挑战更少。对于使用 IaaS 的体系结构就是这样。IaaS 应用程序使用云中的虚拟机，这些虚拟机在本地具有直接等效项。使用虚拟网络还可将云中的虚拟机与本地网络资源相连。这样就产生了多种仅 PaaS 应用程序所不具备的可能性。例如，SQL Server 可利用灾难恢复解决方案，如 AlwaysOn 可用性组和数据库镜像。有关详细信息，请参阅 [High availability and disaster recovery for SQL Server in Azure virtual machines（Azure 虚拟机中 SQL Server 的高可用性和灾难恢复）](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
 IaaS 解决方案还为本地应用程序使用 Azure 作为故障转移选项提供一个更方便的途径。可能在现有的本地区域内具有完全正常运行的应用程序。但如果缺少资源，无法维护分散在各地的区域以进行故障转移，该怎么办呢？ 你可能决定使用虚拟机和虚拟网络在 Azure 中运行应用程序。在这种情况下，可以定义将数据同步到云的过程。然后，Azure 部署成为用于故障转移的次要区域。主要区域仍为本地应用程序。有关 IaaS 体系结构和功能的详细信息，请参阅[虚拟机文档](/services/virtual-machines/)。
 
@@ -287,7 +287,7 @@ IaaS 解决方案还为本地应用程序使用 Azure 作为故障转移选项�
 
 若要正确地处理可用性和灾难恢复的问题，必须可检测和诊断故障。应对服务器和部署进行高级监视，以使你可在系统或其部分突然停运时迅速了解情况。检查云服务及其依赖项的总体运行状况的监视工具可完成这其中的一部分工作。一个 Microsoft 工具是 [System Center 2016](https://www.microsoft.com/zh-cn/server-cloud/products/system-center-2016/)。第三方工具也可提供监视功能。大多数监视解决方案跟踪关键的性能计数器和服务可用性。
 
-尽管这些工具很重要，但仍需要为云服务中的故障检测和报告进行规划。必须规划以正确使用 Azure 诊断。自定义性能计数器或事件日志条目也可成为总体策略的一部分。这样可在故障期间提供更多数据以迅速诊断问题并恢复所有功能。它还为监视工具提供其他指标，用于确定应用程序的运行状况。有关详细信息，请参阅 [Enabling Azure Diagnostics in Azure Cloud Services（在 Azure 云服务中启用 Azure 诊断）](/documentation/articles/cloud-services-dotnet-diagnostics)。<!-- 有关如何规划总体“运行状况模型”的讨论，请参阅[防故障：弹性云体系结构指南](https://channel9.msdn.com/Series/FailSafe)。 -->
+尽管这些工具很重要，但仍需要为云服务中的故障检测和报告进行规划。必须规划以正确使用 Azure 诊断。自定义性能计数器或事件日志条目也可成为总体策略的一部分。这样可在故障期间提供更多数据以迅速诊断问题并恢复所有功能。它还为监视工具提供其他指标，用于确定应用程序的运行状况。有关详细信息，请参阅 [Enabling Azure Diagnostics in Azure Cloud Services（在 Azure 云服务中启用 Azure 诊断）](/documentation/articles/cloud-services-dotnet-diagnostics/)。<!-- 有关如何规划总体“运行状况模型”的讨论，请参阅[防故障：弹性云体系结构指南](https://channel9.msdn.com/Series/FailSafe)。 -->
 
 ##灾难模拟
 
@@ -301,6 +301,6 @@ IaaS 解决方案还为本地应用程序使用 Azure 作为故障转移选项�
 
 ##后续步骤
 
-本文是着重介绍[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications)的系列教程的一部分。本系列教程的前一篇文章为[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applications)。
+本文是着重介绍[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)的系列教程的一部分。本系列教程的前一篇文章为[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applications/)。
 
 <!---HONumber=Mooncake_0627_2016-->

@@ -18,7 +18,7 @@
 
 本指南提供了 C# 代码示例，用于演示如何在 Azure 队列存储服务中使用 Azure WebJobs SDK 版本 1.x。
 
-本指南假设你了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started#configure-storage)或创建[多个存储帐户](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs)。
+本指南假设你了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/#configure-storage)或创建[多个存储帐户](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs)。
 
 大多数代码段只显示函数，不同于创建 `JobHost` 对象的代码，如以下示例所示：
 
@@ -295,7 +295,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 
 ## <a id="blobs"></a>如何在处理队列消息时读取和写入 blob 和表
 
-可以使用 `Blob` 和 `Table` 属性来读取和写入 blob 和表。本部分中的示例适用于 Blob。有关展示如何在创建或更新 blob 时触发进程的代码示例，请参阅[如何结合使用 Azure blob 存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)；有关用于读取和写入表的代码示例，请参阅[如何结合使用 Azure 表存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to)。
+可以使用 `Blob` 和 `Table` 属性来读取和写入 blob 和表。本部分中的示例适用于 Blob。有关展示如何在创建或更新 blob 时触发进程的代码示例，请参阅[如何结合使用 Azure blob 存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/)；有关用于读取和写入表的代码示例，请参阅[如何结合使用 Azure 表存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to/)。
 
 ### 触发 Blob 操作的字符串队列消息
 
@@ -311,7 +311,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-`Blob` 属性构造函数采用指定容器和 blob 名称的 `blobPath` 参数。有关此占位符的详细信息，请参阅[如何结合使用 Azure blob 存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)。
+`Blob` 属性构造函数采用指定容器和 blob 名称的 `blobPath` 参数。有关此占位符的详细信息，请参阅[如何结合使用 Azure blob 存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/)。
 
 当属性修饰 `Stream` 对象时，另一个构造函数参数会将 `FileAccess` 模式指定为读取、写入或读取/写入。
 

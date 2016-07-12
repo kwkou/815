@@ -16,8 +16,8 @@
 
 
 > [AZURE.SELECTOR]
-- [事务 - SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms)
-- [PowerShell](/documentation/articles/sql-database-command-line-tools)
+- [事务 - SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms/)
+- [PowerShell](/documentation/articles/sql-database-command-line-tools/)
 
 本主题提供了用于执行许多 Azure SQL 数据库任务的 PowerShell 命令。
 
@@ -52,7 +52,7 @@
 
 	New-AzureRmSqlServerFirewallRule -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -FirewallRuleName "clientFirewallRule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
-有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
+有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。
 
 ## 创建 SQL 数据库
 

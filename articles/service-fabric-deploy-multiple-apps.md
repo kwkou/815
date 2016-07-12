@@ -17,7 +17,7 @@
 
 本文说明如何使用 Azure Service Fabric 打包工具预览版（可从 [http://aka.ms/servicefabricpacktool](http://aka.ms/servicefabricpacktool) 获得）将多个来宾可执行文件打包并部署到 Azure Service Fabric。
 
-若要手动生成 Service Fabric 包，请参阅如何[将来宾可执行文件部署到 Service Fabric](/documentation/articles/service-fabric-deploy-existing-app)。
+若要手动生成 Service Fabric 包，请参阅如何[将来宾可执行文件部署到 Service Fabric](/documentation/articles/service-fabric-deploy-existing-app/)。
 
 虽然本演练演示的是如何部署将 MongoDB 用作数据存储并具有 Node.js 前端的应用程序，但是你可以将这些步骤套用于任何与另一个应用程序具有依赖关系的应用程序。
 
@@ -63,7 +63,7 @@
 - **/ma** 定义要用来启动可执行文件的参数。由于未安装 Node.js，因此 Service Fabric 需要执行 `node.exe bin/www` 来启动 Node.js Web 服务器。`/ma:'bin/www'` 会指示打包工具使用 `bin/ma` 作为 node.exe 的参数。
 - **/AppType** 定义 Service Fabric 应用程序类型名称。
 
->[AZURE.NOTE] 可以使用 Visual Studio 来生成应用程序包，以用作应用程序项目的一部分。如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app#using-visual-studio-to-package-an-existing-application)
+>[AZURE.NOTE] 可以使用 Visual Studio 来生成应用程序包，以用作应用程序项目的一部分。如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#using-visual-studio-to-package-an-existing-application)
 
 如果浏览到 /target 参数中指定的目录，则可以看到工具已创建完全正常运行的 Service Fabric 包，如下所示：
 
@@ -133,7 +133,7 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 为了将 MongoDB 添加到你的 Service Fabric 应用程序包，你必须确定 /target 参数指向已经包含应用程序清单及 Node.js 应用程序的同一个目录。此外，还需要确定你使用的是相同的 ApplicationType 名称。
 
->[AZURE.NOTE] 可以使用 Visual Studio 来生成应用程序包，以用作应用程序项目的一部分。如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app#using-visual-studio-to-package-an-existing-application)
+>[AZURE.NOTE] 可以使用 Visual Studio 来生成应用程序包，以用作应用程序项目的一部分。如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#using-visual-studio-to-package-an-existing-application)
 
 让我们浏览到该目录并检查已创建的工具。
 
@@ -198,6 +198,6 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 ## 后续步骤
 
-- 了解如何[手动打包来宾应用程序](/documentation/articles/service-fabric-deploy-existing-app)。
+- 了解如何[手动打包来宾应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 
 <!---HONumber=Mooncake_0627_2016-->

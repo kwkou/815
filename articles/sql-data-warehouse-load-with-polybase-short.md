@@ -16,8 +16,8 @@
 # 使用 PolyBase 加载数据
 
 > [AZURE.SELECTOR]
-- [PolyBase](/documentation/articles/sql-data-warehouse-load-with-polybase-short)
-- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp)
+- [PolyBase](/documentation/articles/sql-data-warehouse-load-with-polybase-short/)
+- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp/)
 
 本教程说明如何使用 PolyBase 将数据载入 Azure SQL 数据仓库。若要了解有关 PolyBase 的详细信息，请参阅 [SQL 数据仓库中的 PolyBase 教程][]。
 
@@ -146,12 +146,12 @@ create statistics [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 ```
 
 <!--Article references-->
-[SQL 数据仓库中的 PolyBase 教程]: /documentation/articles/sql-data-warehouse-load-with-polybase
+[SQL 数据仓库中的 PolyBase 教程]: /documentation/articles/sql-data-warehouse-load-with-polybase/
 
 
 <!-- External Links -->
 [最新版本的 AzCopy]: http://aka.ms/downloadazcopy
-[AzCopy 命令行实用程序入门]: /documentation/articles/storage-use-azcopy
+[AzCopy 命令行实用程序入门]: /documentation/articles/storage-use-azcopy/
 
 [创建外部数据源]: https://msdn.microsoft.com/zh-cn/library/dn935022(v=sql.130).aspx
 [创建外部文件格式]: https://msdn.microsoft.com/zh-cn/library/dn935026(v=sql.130).aspx
@@ -163,6 +163,6 @@ create statistics [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 
 <!--Article references-->
 
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
+[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
 
 <!---HONumber=Mooncake_1207_2015-->
