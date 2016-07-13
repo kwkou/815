@@ -42,7 +42,7 @@ Following are common scenarios and corresponding solutions.
 			An operational error by a database administrator in a production environment that causes the loss of some important data and requires rapid recovery.
 		</td>
 		<td>
-			Backup and restore -- point-in-time restore feature of MySQL can roll back to any point in time during the last seven days. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">MySQL on Azure backup and restore—restore the database to any point in time</a>.
+			Backup and restore -- point-in-time restore feature of MySQL can roll back to any point in time during the last seven days. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/" target="_blank">MySQL on Azure backup and restore—restore the database to any point in time</a>.
 		</td>
 	</tr>
 	<tr>
@@ -53,7 +53,7 @@ Following are common scenarios and corresponding solutions.
 			In a production environment, the failure of a particular upgrade causes compatibility problems that make it impossible for the service to be performed normally.
 		</td>
 		<td>
-			Create a snapshot backup of the database before you upgrade. If the upgrade encounters a problem, you can then quickly restore the entire backup to the original instance or to a new instance. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">Backup and restore</a>.
+			Create a snapshot backup of the database before you upgrade. If the upgrade encounters a problem, you can then quickly restore the entire backup to the original instance or to a new instance. For the specific steps, see <a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/" target="_blank">Backup and restore</a>.
 		</td>
 	</tr>
 	<tr>

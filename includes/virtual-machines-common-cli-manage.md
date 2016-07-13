@@ -12,7 +12,7 @@
 <th>任务 </th><th> 服务管理模式 </th><th> 资源管理器模式</th>
 </tr></thead>
 <tr>
-<td>创建最基本的 VM </td><td> <code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code> </td><td> <code>azure vm quick-create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt; &lt;image-urn&gt; &lt;admin-username&gt; &lt;admin-password&gt;</code><br/><br/>（从 <code>azure vm image list</code> 命令获取 <code>image-urn</code>。有关示例，请参阅 <a href="/documentation/articles/virtual-machines-windows-cli-ps-findimage/\">Windows</a> 或者 <a href="/documentation/articles/virtual-machines-linux-cli-ps-findimage/\">Linux</a>。）</td>
+<td>创建最基本的 VM </td><td> <code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code> </td><td> <code>azure vm quick-create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt; &lt;image-urn&gt; &lt;admin-username&gt; &lt;admin-password&gt;</code><br/><br/>（从 <code>azure vm image list</code> 命令获取 <code>image-urn</code>。有关示例，请参阅 <a href="/documentation/articles/virtual-machines-windows-cli-ps-findimage/">Windows</a> 或者 <a href="/documentation/articles/virtual-machines-linux-cli-ps-findimage/">Linux</a>。）</td>
 </tr>
 <tr>
 <td>创建 Linux VM </td><td> <code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code> </td><td> <code>azure  vm create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; -y "Linux"</code></td>

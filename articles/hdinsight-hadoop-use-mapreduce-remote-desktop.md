@@ -45,7 +45,7 @@
 
 	这将启动 **wordcount** 类（包含在当前目录中的 **hadoop-mapreduce-examples.jar** 文件内）。它使用 **wasb://example/data/gutenberg/davinci.txt** 文档作为输入，输出将存储到 **wasb:///example/data/WordCountOutput**。
 
-	> [AZURE.NOTE]有关此 MapReduce 作业和示例数据的详细信息，请参阅<a href="/documentation/articles/hdinsight-use-mapreduce/\">在 HDInsight Hadoop 中使用 MapReduce</a>。
+	> [AZURE.NOTE]有关此 MapReduce 作业和示例数据的详细信息，请参阅<a href="/documentation/articles/hdinsight-use-mapreduce/">在 HDInsight Hadoop 中使用 MapReduce</a>。
 
 2. 作业在处理时提供详细信息，并在完成时返回如下信息：
 

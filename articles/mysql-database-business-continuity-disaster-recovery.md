@@ -43,7 +43,7 @@
 		</td>
 		<td>
 			备份与恢复- 任意时间点回滚功能
-			MySQL 支持七天内的任意时间点回滚，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">MySQL on Azure备份与恢复- 还原数据库到任意时间点</a>
+			MySQL 支持七天内的任意时间点回滚，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/" target="_blank">MySQL on Azure备份与恢复- 还原数据库到任意时间点</a>
 		</td>
 	</tr>
 	<tr>
@@ -54,7 +54,7 @@
 			在生产环境下，由于数据库管理员的操作失误，导致某些重要数据丢失，需要快速恢复。
 		</td>
 		<td>
-			在升级前，用户对数据库创建快照备份，升级如遇到问题，可以快速还原完全备份到新实例/原实例，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/\" target="_blank">备份与恢复</a>
+			在升级前，用户对数据库创建快照备份，升级如遇到问题，可以快速还原完全备份到新实例/原实例，具体步骤请参照：<a href="https://www.azure.cn/documentation/articles/mysql-database-point-in-time-restore/" target="_blank">备份与恢复</a>
 		</td>
 	</tr>
 	<tr>
