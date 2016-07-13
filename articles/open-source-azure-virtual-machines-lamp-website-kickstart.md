@@ -147,8 +147,8 @@ PowerShell 脚本运行注意事项：
 
 如果是 Azure PowerShell 或者 Azure CLI 方式部署 LAMP 的话，URL 地址为： 
 
-	http://<YOUR-DNS-PREFIX>.<RESOURCE-LOCATION>. cloudapp.chinacloudapi.cn/info.php
-	http://<YOUR-DNS-PREFIX>.<RESOURCE-LOCATION>. cloudapp.chinacloudapi.cn/mysql.php
+	http://<YOUR-DNS-PREFIX>.<RESOURCE-LOCATION>.cloudapp.chinacloudapi.cn/info.php
+	http://<YOUR-DNS-PREFIX>.<RESOURCE-LOCATION>.cloudapp.chinacloudapi.cn/mysql.php
 
 其中 <YOUR-DNS-PREFIX> 是您在之前用 Azure PowerShell 或者 Azure CLI 时定义的 DNSNamePrefix 的值， 而 <RESOURCE-LOCATION> 是您在之前创建资源组时指定的 location 值。  
 
@@ -195,7 +195,7 @@ URL 地址为：
 
 即可。
 
-注意：我们强烈建议您在测试完毕无误后把 mysql.php 删除掉，因为它里面包含了 MySQL root 的明文密码。  
+> [AZURE.NOTE] 注意：我们强烈建议您在测试完毕无误后把 mysql.php 删除掉，因为它里面包含了 MySQL root 的明文密码。  
 
 如果是 Redhat, Ubuntu Linux, mysql.php 在 /var/www/html/ 路径下，如果是 SUSE LINUX, mysql.php 在 /srv/www/htdocs/ 路径下。
 

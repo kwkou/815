@@ -9,8 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="04/26/2016"
-    wacn.date="06/14/2016"/>
+    ms.date="05/24/2016"
+    wacn.date="07/11/2016"/>
 
 # 构建可缩放的云数据库
 
@@ -33,11 +33,12 @@
 * [将弹性数据库客户端库与实体框架配合使用](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/)
 * [弹性数据库客户端库与 Dapper](/documentation/articles/sql-database-elastic-scale-working-with-dapper/)
 * [拆分-合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)
+* [分片映射管理器的性能计数器](/documentation/articles/sql-database-elastic-database-client-library/) 
 * [弹性数据库工具常见问题](/documentation/articles/sql-database-elastic-scale-faq/)
 
 ## 客户端功能
 
-无论对于开发人员还是管理员，使用*分区*扩大应用程序都存在挑战。客户端库通过提供工具让开发人员和管理员管理扩大的数据库，简化了管理任务。在典型的示例中，有许多称为“分片”的数据库要管理。客户并置于同一数据库，并且每位客户（单租户方案）一个数据库。客户端库包含下列功能：
+无论对于开发人员还是管理员，使用分片扩展应用程序都存在挑战。客户端库通过提供工具让开发人员和管理员管理扩大的数据库，简化了管理任务。在典型的示例中，有许多称为“分片”的数据库要管理。客户并置于同一数据库，并且每位客户（单租户方案）一个数据库。客户端库包含下列功能：
 
 1.  **分片映射管理**：创建一个称为“分片映射管理器”的特殊数据库。分片映射管理是一种使应用程序能够管理其分片相关元数据的功能。开发人员可使用此功能将数据库注册为分片（描述各个分片键或键范围到这些数据库的映射），并随着数据库的数量和组成发展来维护此元数据，以反映容量更改。如果不使用弹性数据库客户端库，实现分片时你必须花费大量时间来编写管理代码。有关详细信息，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 
@@ -69,4 +70,4 @@
 [1]: ./media/sql-database-elastic-database-client-library/glossary.png
 
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->

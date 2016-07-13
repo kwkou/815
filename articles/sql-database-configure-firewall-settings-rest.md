@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何：配置 Azure SQL 数据库防火墙 | Azure"
+	pageTitle="使用 REST API 配置 Azure SQL 数据库服务器级防火墙规则 | Azure"
 	description="了解如何配置防火墙以允许 IP 地址访问 Azure SQL 数据库。"
 	services="sql-database"
 	documentationCenter=""
@@ -10,14 +10,15 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/09/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="06/15/2016"
+	wacn.date="07/11/2016"/>
 
 
-# 如何：使用 REST API 配置 Azure SQL 数据库防火墙
+#  使用 REST API 配置 Azure SQL 数据库服务器级防火墙规则
 
 
 > [AZURE.SELECTOR]
+- [概述](/documentation/articles/sql-database-firewall-configure/)
 - [TSQL](/documentation/articles/sql-database-configure-firewall-settings-tsql/)
 - [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
 - [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest/)
@@ -59,9 +60,20 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
  
 ## 后续步骤
 
-有关创建数据库的教程，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
-有关从开放源代码或第三方应用程序连接到 Azure SQL 数据库的帮助，请参阅[以编程方式连接到 Azure SQL 数据库的指导原则](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)。
-若要了解如何导航到数据库，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)。
+有关如何使用 Transact-SQL 创建服务器级和数据库级防火墙规则的指导文章，请参阅[使用 T-SQL 配置 Azure SQL 数据库服务器级和数据库级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-tsql/)。
+
+有关如何使用其他方式创建服务器级防火墙规则的指导文章，请参阅：
+
+- [使用 PowerShell 配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
+有关创建数据库的教程，请参阅[使用 Azure 门户在几分钟内创建一个 SQL 数据库](/documentation/articles/sql-database-get-started/)。
+有关从开放源代码或第三方应用程序连接到 Azure SQL 数据库的帮助，请参阅 [SQL 数据库的客户端快速入门代码示例](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)。
+若要了解如何导航到数据库，请参阅[管理数据库的访问和登录安全](/documentation/articles/sql-database-manage-logins/)。
+
+
+## 其他资源
+
+- [保护你的数据库](/documentation/articles/sql-database-security/)
+- [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
 
 <!--Image references-->
 [1]: ./media/sql-database-configure-firewall-settings/AzurePortalBrowseForFirewall.png

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="04/18/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="06/16/2016"
+   wacn.date="07/11/2016"/>
 
 #执行灾难恢复演练
 
@@ -59,4 +59,21 @@
 
 - 通过验证恢复后的应用程序完整性（例如，连接字符串、登录名、基本功能测试，或标准应用程序验收过程的其他验证部分）来完成演练。
 
-<!---HONumber=Mooncake_0509_2016-->
+
+## 后续步骤
+
+- 有关使用和配置灾难恢复的活动异地复制功能的信息，请参阅 [Active Geo-Replication（活动异地复制）](/documentation/articles/sql-database-geo-replication-overview/)
+- 有关使用异地还原进行灾难恢复的信息，请参阅 [Geo-Restore（异地还原）](/documentation/articles/sql-database-geo-restore/)
+
+## 其他资源
+
+- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity/)
+- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
+- [异地还原](/documentation/articles/sql-database-geo-restore/)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
+- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
+
+<!---HONumber=Mooncake_0704_2016-->

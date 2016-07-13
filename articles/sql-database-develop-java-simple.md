@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/27/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="06/16/2016"
+	wacn.date="07/11/2016"/>
 
 
 # 在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库
@@ -42,6 +42,13 @@
 
 ## 后续步骤
 
-有关详细信息，请参阅 [Java 开发人员中心](/develop/java)。
+* 访问 [Java 开发人员中心](/develop/java/)。
+* 参阅 [SQL Database Development Overview（SQL 数据库开发概述）](/documentation/articles/sql-database-develop-overview/)
+* 有关 [Microsoft JDBC Driver for SQL Server](https://msdn.microsoft.com/zh-cn/library/mt484311.aspx) 的详细信息
 
-<!---HONumber=Mooncake_0530_2016-->
+## 其他资源 
+
+* [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
+* 浏览所有 [SQL 数据库功能](/home/features/sql-databases/)
+
+<!---HONumber=Mooncake_0704_2016-->

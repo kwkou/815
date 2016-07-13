@@ -1,6 +1,6 @@
 <properties 
    pageTitle="升级应用程序期间的 SQL 数据库业务连续性" 
-   description="本部分提供有关在升级应用程序期间实现业务连续性以防止出现停机的指导。" 
+   description="本节对在升级应用程序期间如何避免停机提供了一些指导。" 
    services="sql-database"
    documentationCenter="" 
    authors="elfisher" 
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="02/09/2016"
-   wacn.date="03/21/2016"/>
+   ms.date="05/27/2016"
+   wacn.date="07/11/2016"/>
 
 #在不停机的情况下升级应用程序
 
@@ -21,10 +21,10 @@
 1.	应用程序功能削弱的最长可接受时间 
 2.	升级过程中可用的最少功能集
 3.	在升级过程中发生任何错误时的回滚能力。
-4.	涉及的总货币成本。这包括创建临时副本（例如，为活动异地复制创建的附加高级数据库）所需的附加应用程序组件成本，以及升级过程使用的临时部署的增量成本。 
+4.	涉及的总货币成本。这包括创建临时副本（例如，为活动异地复制创建的附加数据库）所需的附加应用程序组件成本，以及升级过程使用的临时部署的增量成本。 
 
-如果应用程序可以暂时在只读模式下运行，则可以将升级工作流设计为有效消除总体停机时间。若要了解如何针对特定的应用程序拓扑实施升级工作流，请参阅[滚动升级应用程序期间最大程度地减少 Azure SQL 数据库中断的最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/dn790385.aspx)
+如果应用程序可以暂时在只读模式下运行，则可以将升级工作流设计为有效消除总体停机时间。若要了解如何针对特定的应用程序拓扑实施升级工作流，请参阅 [Managing rolling upgrades of cloud applications using SQL Database Active Geo-Replication（使用 SQL数据库活动异地复制管理云应用程序的滚动升级）](/documentation/articles/sql-database-manage-application-rolling-upgrade)。
  
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0704_2016-->

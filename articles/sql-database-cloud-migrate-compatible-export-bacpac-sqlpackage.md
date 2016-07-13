@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="03/14/2016"
-   wacn.date="03/24/2016"/>
+   ms.date="06/07/2016"
+   wacn.date="07/11/2016"/>
 
 # 使用 SqlPackage 将 SQL Server 数据库导出到 BACPAC 文件
 
@@ -33,10 +33,19 @@
 
 	![通过“任务”菜单导出数据层应用程序](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSQLPackage01b.png)
 
-## 下一步：从 BACPAC 文件导入到 SQL 数据库
+## 后续步骤
 
-- [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms/)
-- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage/)
-- [PowerShell](/documentation/articles/sql-database-import-powershell/)
+- [最新版本的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)
+- [最新版本的 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
+- [使用 SSMS 将 BACPAC 导入 Azure SQL 数据库](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms/)
+- [将 BACPAC 导入 Azure SQL 数据库 SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage/)
+- [将 BACPAC 导入 Azure SQL 数据库 Azure 门户](/documentation/articles/sql-database-import/)
+- [将 BACPAC 导入 Azure SQL 数据库 PowerShell](/documentation/articles/sql-database-import-powershell/)
 
-<!---HONumber=Mooncake_0104_2016-->
+## 其他资源
+
+- [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/)
+- [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
+- [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
+
+<!---HONumber=Mooncake_0704_2016-->

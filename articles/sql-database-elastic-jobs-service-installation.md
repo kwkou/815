@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="05/02/2016" 
-	wacn.date="06/14/2016"/>
+	ms.date="05/27/2016" 
+	wacn.date="07/11/2016"/>
 
 # 安装弹性数据库作业概述
 
@@ -155,6 +155,5 @@
 [2]: ./media/sql-database-elastic-jobs-service-installation/credentials.png
 [3]: ./media/sql-database-elastic-jobs-service-installation/start-board.png
 [4]: ./media/sql-database-elastic-jobs-service-installation/not-done.png
- 
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->

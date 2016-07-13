@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/27/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="06/16/2016"
+	wacn.date="07/11/2016"/>
 
 
 # 在 Windows上使用 PHP 连接到 SQL 数据库
@@ -44,7 +44,13 @@
 
 ## 后续步骤
 
+* 参阅 [SQL Database Development Overview（SQL 数据库开发概述）](/documentation/articles/sql-database-develop-overview/)
+* 有关 [Microsoft PHP Driver for SQL Server](https://msdn.microsoft.com/zh-cn/library/dn865013.aspx) 的详细信息
+* 有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](http://social.technet.microsoft.com/wiki/contents/articles/1258.accessing-sql-server-databases-from-php.aspx)。
 
-有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](http://social.technet.microsoft.com/wiki/contents/articles/1258.accessing-sql-server-databases-from-php.aspx)。
+## 其他资源 
 
-<!---HONumber=Mooncake_0530_2016-->
+* [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
+* 浏览所有 [SQL 数据库功能](/home/features/sql-databases/)
+
+<!---HONumber=Mooncake_0704_2016-->
