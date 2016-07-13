@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/25/2016" 
-	wacn.date="04/05/2016"/>
+	ms.date="05/11/2016" 
+	wacn.date="07/11/2016"/>
 
 #Azure 媒体服务概念 
 
@@ -81,7 +81,7 @@
 
 作业包含有关要执行的处理的元数据。每个作业包含一个或多个[任务](https://msdn.microsoft.com/zh-cn/library/azure/hh974286.aspx)，这些任务指定一个原子处理任务、该任务的输入资产和输出资产、一个媒体处理器及其关联的设置。作业中的各个任务可连接在一起，其中一个任务的输出资产指定为下一任务的输入资产。因此，一个作业可以包含播放媒体所必需的全部处理过程。
 
-##<a id="encoding"></a>编码
+##<a id="encoding"></a>编码 
 
 Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项。
 
@@ -133,8 +133,9 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 有关详细信息，请参阅：
 
+
 - [使用能够使用 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)
-- [使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview/)
+- [使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)
 - [配额和限制](/documentation/articles/media-services-quotas-and-limitations/)  
 
 ##保护内容
@@ -243,4 +244,4 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递�
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
 
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0704_2016-->

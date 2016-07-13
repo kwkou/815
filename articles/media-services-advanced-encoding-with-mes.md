@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="04/24/2016"    
-	wacn.date="06/20/2016"/>
+	ms.date="05/19/2016"    
+	wacn.date="07/11/2016"/>
 
 
 #使用媒体编码器标准版进行高级编码
@@ -232,6 +232,20 @@
 		}
 
 
+##支持相对大小
+
+生成它的缩略图时，不需始终以像素为单位指定输出宽度和高度。你可以以百分比的方式在 [1%, …, 100%] 范围内对其进行指定。
+
+###JSON 预设 
+	
+	"Width": "100%",
+	"Height": "100%"
+
+###XML 预设
+	
+	<Width>100%</Width>
+	<Height>100%</Height>
+	
 ##<a id="thumbnails"></a>生成缩略图
 
 本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并添加生成缩略图的代码。
@@ -1061,4 +1075,4 @@
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0704_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016" 
-	wacn.date="06/27/2016"/>
+ 	ms.date="05/26/2016" 
+	wacn.date="07/11/2016"/>
 
 #如何：轮转存储访问密钥后更新媒体服务
 
@@ -35,7 +35,7 @@
 
 - 使用媒体服务管理 REST API。
 
-以下代码示例演示了如何构造 https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key 请求，以便将指定的存储密钥与媒体服务同步。在本例中，我们将使用辅助存储密钥值。有关详细信息，请参阅[如何：使用媒体服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx)。
+以下代码示例演示了如何构造 https://endpoint/*subscriptionId*/services/mediaservices/Accounts/*accountName*/StorageAccounts/*storageAccountName*/Key 请求，以便将指定的存储密钥与媒体服务同步。在本例中，我们将使用辅助存储密钥值。有关详细信息，请参阅[如何：使用媒体服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx)。
  
 		public void UpdateMediaServicesWithStorageAccountKey(string mediaServicesAccount, string storageAccountName, string storageAccountKey)
 		{
@@ -82,7 +82,7 @@
 
 请注意，当你更新（或重新创建）SAS 定位符时，URL 始终会变化。
 
->[AZURE.NOTE]若要确保保留 OnDemand 定位器的现有 URL，你需要删除现有定位符并新建一个具相同 ID 的定位符。
+>[AZURE.NOTE] 若要确保保留 OnDemand 定位器的现有 URL，你需要删除现有定位符并新建一个具相同 ID 的定位符。
  
 以下 .NET 示例演示如何重新创建具相同 ID 的定位符。
 	
@@ -138,4 +138,4 @@
 使用[步骤 3](/documentation/articles/media-services-roll-storage-access-keys/#step-3-update-locators) 中所述的相同过程。
 
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0704_2016-->
