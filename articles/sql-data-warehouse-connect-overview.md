@@ -1,4 +1,4 @@
-<!-- Remove Azure portal -->
+<!-- Remove Azure portal, vs -->
 <properties
    pageTitle="连接到 Azure SQL 数据仓库 | Azure"
    description="连接到 Azure SQL 数据仓库的连接概述"
@@ -101,11 +101,11 @@ SQL 数据仓库在连接和创建对象期间标准化一些设置。无法重�
     
     SELECT * FROM dbo.vSessionRequests;
 
-
+<!-- 
 ## 后续步骤
 
 若要开始使用 Visual Studio 和其他应用程序查询数据仓库，请参阅[使用 Visual Studio 进行查询][]。
-
+-->
 
 <!--Arcticles-->
 

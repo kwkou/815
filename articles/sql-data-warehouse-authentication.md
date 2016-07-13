@@ -19,6 +19,7 @@
 > [AZURE.SELECTOR]
 - [身份验证](/documentation/articles/sql-data-warehouse-authentication/)
 - [驱动程序](/documentation/articles/sql-data-warehouse-connection-strings/)
+
 <!-- - [概述](/documentation/articles/sql-data-warehouse-connect-overview/) -->
 
 若要连接到 SQL 数据仓库，需要传入安全凭据进行身份验证。建立连接时，你还会看到特定的连接设置已配置为建立查询会话的一部分。

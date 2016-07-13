@@ -55,5 +55,6 @@
 [迁移文档]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [此处]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
+[Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
 <!---HONumber=Mooncake_0704_2016-->
