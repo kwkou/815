@@ -20,7 +20,7 @@
 
 ## 我可以在 Azure VM 上运行什么程序？
 
-所有订户都可以在 Azure 虚拟机上运行服务器软件。有关在 Azure 中运行 Microsoft 服务器软件的支持策略的信息，请参阅 [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/kb/2721672)（对 Azure 虚拟机中的 Microsoft 服务器软件的支持）
+所有订户都可以在 Azure 虚拟机上运行服务器软件。有关在 Azure 中运行 Microsoft 服务器软件的支持策略的信息，请参阅 [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/zh-cn/kb/2721672)（对 Azure 虚拟机中的 Microsoft 服务器软件的支持）
 
 ## 使用虚拟机时，我可以使用多少存储？
 

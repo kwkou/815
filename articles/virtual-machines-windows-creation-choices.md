@@ -33,7 +33,6 @@ Azure 门户预览的图形用户界面是一种试用虚拟机的简便方式�
 如果你喜欢在命令外壳中工作，可以使用 Azure PowerShell。
 
 - [使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/)
-- [使用资源管理器模板创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template/)
 
 ## 模板
 
