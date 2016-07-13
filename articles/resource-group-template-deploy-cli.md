@@ -1,3 +1,4 @@
+<!-- Temporarily remove REST API, 3rd round on -->
 <properties
    pageTitle="使用 Azure CLI 和模板部署资源 | Azure"
    description="使用 Azure Resource Manager 和 Azure CLI 将资源部署到 Azure。资源在 Resource Manager 模板中定义。"
@@ -17,8 +18,8 @@
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-group-template-deploy)
 - [Azure CLI](/documentation/articles/resource-group-template-deploy-cli)
+<!--
 - [REST API](/documentation/articles/resource-group-template-deploy-rest)
-<!-- 
 - [门户](/documentation/articles/resource-group-template-deploy-portal)
 - [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)
 -->
@@ -85,7 +86,7 @@
 
             azure group deployment create --template-uri <LinkToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
 
-     3. 使用参数文件。有关模板文件的信息，请参阅[参数文件](./#parameter-file)。
+     3. 使用参数文件。有关模板文件的信息，请参阅[参数文件](/#parameter-file)。
     
             azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
 

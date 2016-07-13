@@ -160,7 +160,7 @@
 
      ![显示](./media/resource-group-create-service-principal-portal/show-app.png)
 
-有关通过门户预览将用户和应用程序分配到角色的详细信息，请参阅[使用 Azure 门户预览管理访问权限](../role-based-access-control-configure/#manage-access-using-the-azure-management-portal)。
+有关通过门户预览将用户和应用程序分配到角色的详细信息，请参阅[使用 Azure 门户预览管理访问权限](/documentation/articles/role-based-access-control-configure/#manage-access-using-the-azure-management-portal)。
 
 ## 在代码中获取访问令牌
 

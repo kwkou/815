@@ -13,15 +13,12 @@
 	ms.date="06/07/2016" 
 	wacn.date="07/04/2016"/>
 
-<!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694271.aspx -->
 
 # 适用于 Eclipse 的 Azure 工具包
 
 使用 Azure Toolkit for Eclipse 提供的模板和功能，可轻松地利用 Eclipse 开发环境创建、开发、测试和部署 Azure 应用程序。它是一个开放源代码项目，其源代码可从项目站点的 MIT 许可证下获取，网址为：
 
 * <https://github.com/microsoft/azure-tools-for-java>
-<!-- 
-> [AZURE.NOTE] 另外还有 Azure Toolkit for IntelliJ IDE。有关详细信息，请参阅 [Azure Toolkit for IntelliJ]。-->
 
 ## Azure Toolkit for Eclipse 入门
 
@@ -30,7 +27,6 @@
 * [Azure Toolkit for Eclipse 的新增功能]
 * [安装 Azure Toolkit for Eclipse]
 * [在 Eclipse 中创建 Azure 的 Hello World 云服务]
-<!-- * [在 Eclipse 中创建 Azure 的 Hello World Web 应用] -->
 
 ## 配置 Azure 项目设置
 
@@ -57,13 +53,8 @@
 
 - Azure Toolkit for Eclipse（本文）
   - [安装 Azure Toolkit for Eclipse]
-  <!-- - [在 Eclipse 中创建 Azure 的 Hello World Web 应用] -->
   - [Azure Toolkit for Eclipse 的新增功能]
-  
-<!-- 
-- [Azure Toolkit for IntelliJ]
-  - [安装 Azure Toolkit for IntelliJ]
-  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用] -->
+
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]。
 
@@ -89,13 +80,5 @@
 [在 Eclipse 中为 Azure 部署启用远程访问]: /documentation/articles/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/
 [How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/
 [启用会话相关性]: /documentation/articles/azure-toolkit-for-eclipse-enable-session-affinity/
-
-<!-- [How to Maintain Session Data with Session Affinity]: http://go.microsoft.com/fwlink/?LinkID=699539 -->
-<!-- [How to Use Co-located Caching]: http://go.microsoft.com/fwlink/?LinkID=699542 -->
-<!-- [How to Use Dedicated Caching]: http://go.microsoft.com/fwlink/?LinkID=699543 -->
-<!-- [How to Use JMS with AMQP 1.0 in Azure with Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699544 -->
-<!-- [How to Use SSL Offloading]: http://go.microsoft.com/fwlink/?LinkID=699545 -->
-<!-- [SSL Offloading]: http://go.microsoft.com/fwlink/?LinkID=699549 -->
-<!-- [Using the Azure Service Runtime Library in JSP]: http://go.microsoft.com/fwlink/?LinkID=699551 -->
 
 <!---HONumber=Mooncake_0627_2016-->

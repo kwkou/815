@@ -35,7 +35,7 @@
 1. 切换到 Azure Resource Manager 模式并登录到你的帐户。
 
         azure config mode arm
-        azure login
+        azure login -e AzureChinaCloud
 
 2. 运行 **azure ad app create** 命令创建新的 AD 应用程序。提供应用程序的显示名称、描述应用程序的页面的 URI（该链接未验证）、标识应用程序的 URI，以及应用程序标识的密码。
 
@@ -84,7 +84,7 @@
 
 3. 以服务主体身份登录。
 
-        azure login e AzureChinaCloud -u "$appId" --service-principal --tenant "$tenantId"
+        azure login -e AzureChinaCloud -u "$appId" --service-principal --tenant "$tenantId"
 
     系统将提示你输入密码。提供在创建 AD 应用程序时指定的密码。
 

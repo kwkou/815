@@ -1,3 +1,4 @@
+<!-- Remove vs-azure-tools-deploy -->
 <properties
    pageTitle="创作 Azure Resource Manager 模板 | Azure"
    description="使用声明性 JSON 语法创建 Azure Resource Manager 模板，以将应用程序部署到 Azure。"
@@ -16,7 +17,8 @@
 
 在 Azure Resource Manager 模板中，可以定义要为解决方案部署的资源，以及指定可让你根据不同的环境输入值的参数和变量。模板中包含可用于构造部署值的 JSON 和表达式。本主题介绍了该模板的部分。
 
-Visual Studio 提供了工具来帮助你创建模板。有关使用 Visual Studio 处理模板的详细信息，请参阅[通过 Visual Studio 创建和部署 Azure 资源组](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)。
+<!-- 
+Visual Studio 提供了工具来帮助你创建模板。有关使用 Visual Studio 处理模板的详细信息，请参阅[通过 Visual Studio 创建和部署 Azure 资源组](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)。 -->
 
 有关创建模板的指导，请参阅 [Resource Manager Template Walkthrough（Resource Manager 模板演练）](/documentation/articles/resource-manager-template-walkthrough)。
 

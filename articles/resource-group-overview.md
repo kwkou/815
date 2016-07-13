@@ -1,3 +1,4 @@
+<!-- Remove best practices -->
 <properties
    pageTitle="Azure 资源管理器概述 | Azure"
    description="介绍如何使用 Azure 资源管理器在 Azure 上部署和管理资源以及对其进行访问控制。"
@@ -101,7 +102,8 @@
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure Resource Manager 锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
-有关最佳实践，请参阅 [Azure Resource Manager 的安全注意事项](/documentation/articles/best-practices-resource-manager-security/)
+<!-- 
+有关最佳实践，请参阅 [Azure Resource Manager 的安全注意事项](/documentation/articles/best-practices-resource-manager-security/) -->
 
 ## 使用自定义策略管理资源
 
@@ -126,6 +128,8 @@ Azure Resource Manager 支持跨域资源共享 (CORS)。使用 CORS 时，你�
 - 有关使用模板的简单介绍，请参阅 [Export an Azure Resource Manager template from existing resources（从现有资源导出 Azure Resource Manager 模板）](/documentation/articles/resource-manager-export-template/)。
 - 有关创建模板的更全面演练，请参阅 [Resource Manager Template Walkthrough（Resource Manager 模板演练）](/documentation/articles/resource-manager-template-walkthrough/)。
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)
-- 有关将 Visual Studio 与 Resource Manager 配合使用的信息，请参阅[通过 Visual Studio 创建和部署 Azure 资源组](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/)
+
+<!--
+- 有关将 Visual Studio 与 Resource Manager 配合使用的信息，请参阅[通过 Visual Studio 创建和部署 Azure 资源组](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) -->
 
 <!---HONumber=Mooncake_0704_2016-->

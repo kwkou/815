@@ -1,4 +1,4 @@
-<!-- Remove Portal -->
+<!-- Remove Portal, Temp remove REST API -->
 <properties
    pageTitle="使用资源管理器模板部署资源 | Azure"
    description="使用 Azure Resource Manager 和 Azure PowerShell 将资源部署到 Azure。资源在 Resource Manager 模板中定义。"
@@ -18,8 +18,8 @@
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-group-template-deploy/)
 - [Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)
-- [REST API](/documentation/articles/resource-group-template-deploy-rest/)
-<!--
+
+<!-- - [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 - [门户](/documentation/articles/resource-group-template-deploy-portal)
 - [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)
 -->
@@ -109,7 +109,7 @@
         Mode              : Incremental
         ...
 
-     如果模板包括名称与部署模板命令中的参数之一匹配的参数（例如，在模板中包括名为 **ResourceGroupName** 的参数，这与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数相同），系统将提示你为后缀为 **FromTemplate** 的参数（例如 **ResourceGroupNameFromTemplate**）提供值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
+     如果模板包括名称与部署模板命令中的参数之一匹配的参数（例如，在模板中包括名为 **ResourceGroupName** 的参数，这与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数相同），系统将提示你为后缀为 **FromTemplate** 的参数（例如 **ResourceGroupNameFromTemplate**）提供值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
 
 6. 如果要记录可能帮助你排查任何部署错误的有关部署的其他信息，请使用 **DeploymentDebugLogLevel** 参数。你可以指定在对部署操作进行日志记录时记录请求内容或/和响应内容。
 

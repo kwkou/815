@@ -47,7 +47,7 @@
         "contentVersion": "1.0.0.0",
     }
 
-尽管链接模板必须可从外部使用，但它无需向公众正式发布。你可以将模板添加到专用存储帐户，这样，只有存储帐户所有者可访问该模板，然后创建共享访问签名 (SAS) 令牌，以允许在部署期间访问。将该 SAS 令牌添加到链接模板的 URI。有关在存储帐户中设置模板和生成 SAS 令牌的步骤，请参阅[使用 Resource Manager 模板和 Azure PowerShell 部署资源](resource-group-template-deploy.md)或[使用 Resource Manager 模板和 Azure CLI 部署资源](resource-group-template-deploy-cli.md)。
+尽管链接模板必须可从外部使用，但它无需向公众正式发布。你可以将模板添加到专用存储帐户，这样，只有存储帐户所有者可访问该模板，然后创建共享访问签名 (SAS) 令牌，以允许在部署期间访问。将该 SAS 令牌添加到链接模板的 URI。有关在存储帐户中设置模板和生成 SAS 令牌的步骤，请参阅[使用 Resource Manager 模板和 Azure PowerShell 部署资源](/documentation/articles/resource-group-template-deploy)或[使用 Resource Manager 模板和 Azure CLI 部署资源](/documentation/articles/resource-group-template-deploy-cli)。
 
 下面的示例演示了链接到其他模板的父模板。使用作为参数传入的 SAS 令牌访问嵌套模板。
 
