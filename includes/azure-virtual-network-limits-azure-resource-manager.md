@@ -4,7 +4,7 @@
    <th align="left" valign="middle">默认限制</th>
 </tr>
 <tr>
-   <td valign="middle"><p>每个订阅的<a href="/documentation/articles/virtual-networks-overview/\">虚拟网络数</a><sup>1</sup></p></td>
+   <td valign="middle"><p>每个订阅的<a href="/documentation/articles/virtual-networks-overview/">虚拟网络数</a><sup>1</sup></p></td>
    <td valign="middle"><p>每个区域 50 个<sup>1</sup></p></td>
 </tr>
 <tr>

@@ -109,8 +109,8 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 |部署工具|经典|
 |---|---|---|
 |经典管理门户|![否][red]|
-|PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps/\">![是][green]</a>|
-|Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli/\">![是][green]</a>|
+|PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps/">![是][green]</a>|
+|Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli/">![是][green]</a>|
 
 |**键**|支持 ![是][green]。单击项目。|不支持 ![否][red]。|
 |---|---|---|

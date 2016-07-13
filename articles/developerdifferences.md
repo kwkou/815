@@ -287,7 +287,7 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
     		</Bindings>
     	</Site>
     </Sites>
-有关详细信息，请参见<a href="/documentation/articles/cloud-services-enable-communication-role-instances/\">如何配置Azure 端口。
+有关详细信息，请参见<a href="/documentation/articles/cloud-services-enable-communication-role-instances/">如何配置Azure 端口。
 
 ##<a name="sqlcon"></a>与 SQL 数据库服务器的连接
 

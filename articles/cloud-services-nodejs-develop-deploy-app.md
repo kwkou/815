@@ -174,7 +174,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 <!-- URL List -->
 
 [Azure 网站、云服务和虚拟机的比较]: /documentation/articles/choose-web-site-cloud-service-vm/
-[使用轻型 Web 应用]:/documentation/articles/web-sites-nodejs-develop-deploy-mac/\">
+[使用轻型 Web 应用]:/documentation/articles/web-sites-nodejs-develop-deploy-mac/">
 [Azure Powershell]: /documentation/articles/powershell-install-configure/
 [Azure SDK for .NET 2.7]: http://www.microsoft.com/en-us/download/details.aspx?id=48178
 [将 PowerShell 连接]: /documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription

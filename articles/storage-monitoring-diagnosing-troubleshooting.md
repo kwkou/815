@@ -693,7 +693,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 #### <a name="feature-X-is-not-working"></a>功能“X”在存储模拟器中无法正常工作
 
-存储模拟器并非支持 Azure 存储服务的所有功能，如文件服务。有关详细信息，请参阅 MSDN 上的<a href="/documentation/articles/storage-use-emulator/\" target="_blank">存储模拟器与 Azure 存储服务之间的差异</a>。
+存储模拟器并非支持 Azure 存储服务的所有功能，如文件服务。有关详细信息，请参阅 MSDN 上的<a href="/documentation/articles/storage-use-emulator/" target="_blank">存储模拟器与 Azure 存储服务之间的差异</a>。
 
 对于存储模拟器不支持的这些功能，请使用云中的 Azure 存储服务。
 
@@ -709,7 +709,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 当你运行存储模拟器时，系统提示你提供管理员凭据。仅当你首次初始化存储模拟器时，才会出现这种情况。初始化存储模拟器后，将无需管理权限即可再次运行。
 
-有关详细信息，请参阅 MSDN 上的<a href="/documentation/articles/storage-use-emulator/\" target="_blank">使用命令行工具初始化存储模拟器</a>（也可以在 Visual Studio 中初始化存储模拟器，但这需要管理权限）。
+有关详细信息，请参阅 MSDN 上的<a href="/documentation/articles/storage-use-emulator/" target="_blank">使用命令行工具初始化存储模拟器</a>（也可以在 Visual Studio 中初始化存储模拟器，但这需要管理权限）。
 
 ### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>安装 Azure SDK for .NET 时遇到问题
 
