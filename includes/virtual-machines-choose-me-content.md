@@ -26,7 +26,7 @@
 
 除了操作系统以外，可对 VM 使用的其他配置选项包括：
 
-- 大小，决定了可附加的磁盘数和处理能力等因素。Azure 提供各种大小来支持多种类型的用途。有关详细信息，请参阅 [Windows](/documentation/articles/virtual-machines-windows-sizes/) 或者 [Linux](/documentation/articles/virtual-machines-Linux-sizes/) 虚拟机大小。  
+- 大小，决定了可附加的磁盘数和处理能力等因素。Azure 提供各种大小来支持多种类型的用途。有关详细信息，请参阅 [Windows](/documentation/articles/virtual-machines-windows-sizes/) 或者 [Linux](/documentation/articles/virtual-machines-linux-sizes/) 虚拟机大小。  
 - 托管新 VM 的 Azure 区域，例如中国东部或中国北部。 
 - VM 扩展，为虚拟机提供更多的功能，例如，运行防病毒软件，或使用 Windows PowerShell 的所需状态配置功能。
 
