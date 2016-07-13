@@ -7,10 +7,10 @@
 	manager="abhiag" 
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="site-recovery"
-	ms.date="05/10/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="06/13/2016"
+	wacn.date="07/11/2016"/>
 
 # 使用 Azure Site Recovery 保护 Active Directory 和 DNS
 
@@ -66,9 +66,11 @@
 
 ###站点到 Azure 的保护
 
-遵照说明[在 Azure 虚拟网络中创建域控制器](/documentation/articles/virtual-network-install-replica-active-directory-domain-controller/)。将服务器提升为域控制器角色时，请指定主站点中使用的同一域名。
 
-然后，[重新配置虚拟网络的 DNS 服务器](/documentation/articles/virtual-network-install-replica-active-directory-domain-controller/#reconfigure-dns-server-for-the-virtual-network)，以便在 Azure 中使用 DNS 服务器。
+遵照说明[在 Azure 虚拟网络中创建域控制器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)。将服务器提升为域控制器角色时，请指定主站点中使用的同一域名。
+
+然后，[重新配置虚拟网络的 DNS 服务器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/#reconfigure-dns-server-for-the-virtual-network)，以便在 Azure 中使用 DNS 服务器。
+
   
 ![Azure 网络](./media/site-recovery-active-directory/azure-network.png)
 
@@ -82,7 +84,7 @@
 2. 创建独立的网络。默认情况下，在 Azure 中创建的任何虚拟网络都是独立于其他网络的。建议将此网络的 IP 地址范围设置为与生产网络相同。不要在此网络上启用站点到站点连接。
 3. 提供创建的网站的 DNS IP 地址作为 DNS 虚拟机应该获取的 IP 地址。如果要复制到 Azure，请在 VM 属性的“目标 IP”中提供 VM 的 IP 地址用于故障转移。如果要复制到其他本地站点并使用 DHCP，请遵照说明来[针对测试故障转移设置 DNS 和 DHCP](/documentation/articles/site-recovery-failover/#prepare-dhcp) 
 
->[AZURE.NOTE]如果 IP 地址可用于测试故障转移网络，则在测试故障转移期间分配给虚拟机的 IP 地址与在运行计划或非计划的故障转移时获取的 IP 地址相同。如果该 IP 地址不可用，则虚拟机收到的 IP 地址与测试故障转移网络中提供的 IP 地址不同。
+>[AZURE.NOTE] 如果 IP 地址可用于测试故障转移网络，则在测试故障转移期间分配给虚拟机的 IP 地址与在运行计划或非计划的故障转移时获取的 IP 地址相同。如果该 IP 地址不可用，则虚拟机收到的 IP 地址与测试故障转移网络中提供的 IP 地址不同。
 
 4. 在域控制器虚拟机上，在隔离的网络中对它运行测试故障转移。 
 5. 运行应用程序恢复计划的测试故障转移。
@@ -119,4 +121,4 @@
 
 
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->
