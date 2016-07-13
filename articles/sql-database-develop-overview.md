@@ -48,17 +48,17 @@ Azure SQL 数据库提供用于在 SQL 数据库中限制访问、保护数据�
 * 如果你在使用[连接池](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx)，请确保在程序不活跃地使用连接时将其关闭，而不是准备重用它。
 
 ## 网络注意事项
-* 在托管你的客户端程序的计算机上，确保防火墙允许端口 1433 上的传出 TCP 通信。详细信息：[Configure an Azure SQL Database firewall（配置 Azure SQL 数据库防火墙）](/documentation/articles/sql-database-configure-firewall-settings)
+* 在托管你的客户端程序的计算机上，确保防火墙允许端口 1433 上的传出 TCP 通信。详细信息：[Configure an Azure SQL Database firewall（配置 Azure SQL 数据库防火墙）](/documentation/articles/sql-database-configure-firewall-settings-powershell)
 * 如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开 VM 上的某些端口范围。详细信息：[Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12（用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口）](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 * 与 Azure SQL 数据库 V12 建立的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。详细信息：[Ports beyond 1433 for ADO.NET 4.5 and SQL Database V12（用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口）](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 
 ## 数据分片和弹性缩放
 弹性缩放简化了扩展（和缩减）过程。
 
-[包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式]
-* (/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications)
-* [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
-* [Azure SQL 数据库 Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
+
+* [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications)  
+* [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)  
+* [Azure SQL 数据库 Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)  
 
 ## 后续步骤
 

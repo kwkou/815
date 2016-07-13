@@ -40,7 +40,6 @@
 [Recover an Azure SQL Database from a user error（从用户错误中恢复 Azure SQL 数据库）](/documentation/articles/sql-database-user-error-recovery)这篇文章介绍了如何使用以下功能从用户错误或意外的数据更改中恢复：
 
 - [时间点还原](/documentation/articles/sql-database-point-in-time-restore) 
-- [还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database)
 
 ## 执行灾难恢复演练
 
