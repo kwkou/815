@@ -17,7 +17,7 @@
 
 Azure 中的 Query Store 是完全托管的数据库功能，可持续收集和提供有关所有查询的详细历史信息。可以将 Query Store 视为一个航班数据记录器，它可以大幅简化云与本地客户的查询性能故障排除。本文说明在 Azure 中操作 Query Store 的具体方法。使用这些预先收集的查询数据，用户可以快速诊断并解决性能问题，因此将更多的时间投入到业务上。
 
-从 2015 年 11 月开始，Query Store 已在 Azure SQL 数据库中[全球推出](https://azure.microsoft.com/updates/general-availability-azure-sql-database-query-store/)。Query Store 是性能分析和优化功能（例如 [SQL 数据库顾问和性能仪表板](https://azure.microsoft.com/updates/sqldatabaseadvisorga/)）的基础。在本文发布时，Query Store 正在 Azure 中运行 200,000 多个用户数据库，不间断地收集多个月的查询相关信息。
+从 2015 年 11 月开始，Query Store 已在 Azure SQL 数据库中[全球推出](https://azure.microsoft.com/updates/general-availability-azure-sql-database-query-store/)。Query Store 是性能分析和优化功能的基础。在本文发布时，Query Store 正在 Azure 中运行 200,000 多个用户数据库，不间断地收集多个月的查询相关信息。
 
 > [AZURE.IMPORTANT] Microsoft 即将为所有 Azure SQL 数据库（现有的和新的）激活 Query Store。此激活过程目前只包括单一数据库，但不久之后，将扩展到弹性池数据库。使用弹性池时，只能为一小部分数据库启用 Query Store。为弹性池中的所有数据库启用 Query Store 可能会导致资源用量过高，并可能导致系统无响应。
 
