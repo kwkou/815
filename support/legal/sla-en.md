@@ -21,7 +21,7 @@ This agreement describes the commitment about uptime and connectivity of Microso
 <!--
 |                       |                       |                       |                       |
 |-----------------------|-----------------------|-----------------------|-----------------------|
-|**Compute**<br/><br/>[Virtual Machines]<br/>[Cloud Services]<br/><br/><br/>  |**Web & Mobile**<br/><br/>[Web Apps]<br/>[Notification Hubs]<br/><br/><br/>  |**Data & Storage**<br/><br/>[SQL Database]<br/>[Radis Cache]<br/>[Storage]<br/>[MySQL Database on Azure]<br/> |**Analytics**<br/><br/>[HDInsight]<br/>[Stream Analytics]<br/><br/><br/> |
+|**Compute**<br/><br/>[Virtual Machines]<br/>[Cloud Services]<br/><br/><br/>  |**Web & Mobile**<br/><br/>[Web Apps]<br/>[Notification Hubs]<br/><br/><br/>  |**Data & Storage**<br/><br/>[SQL Database]<br/>[SQL Server Stretch Database]<br/>[Radis Cache]<br/>[Storage]<br/>[MySQL Database on Azure]<br/> |**Analytics**<br/><br/>[HDInsight]<br/>[Stream Analytics]<br/><br/><br/> |
 |**Internet of Things**<br/><br/>[Azure IoT Hub]<br/>[Event Hubs]<br/>[Stream Analytics]<br/>[Notification Hubs]<br/><br/>  |**Networking**<br/><br/>[Virtual Network]<br/>[ExpressRoute]<br/>[Traffic Manager]<br/>[VPN Gateway]<br/>[Application Gateway]<br/> |**Media & CDN**<br/><br/>[Media Services]<br/>[CDN]<br/><br/><br/><br/> |**Hybrid Integration**<br/><br/>[Service Bus]<br/>[Backup]<br/>[Site Recovery]<br/><br/><br/>  |
 |**Identity & Access Management**<br/><br/>[Multi-Factor Authentication]<br/><br/><br/> |**Management & Security**<br/><br/>[Scheduler]<br/>[Automation]<br/>[Key Vault]  | | |
 -->
@@ -37,6 +37,7 @@ This agreement describes the commitment about uptime and connectivity of Microso
 
 ##Data & Storage
 - [SQL Database]
+- [SQL Server Stretch Database]
 - [Radis Cache]
 - [Storage]
 - [MySQL Database on Azure]
@@ -84,6 +85,7 @@ Click [here](https://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/d
 [Web Apps]: /support/sla/web-apps-en/
 [Notification Hubs]: /support/sla/notification-hubs-en/
 [SQL Database]: /support/sla/sql-data-en/
+[SQL Server Stretch Database]: /support/sla/sql-server-stretch-database-en/
 [Radis Cache]: /support/sla/redis-cache-en/
 [Storage]: /support/sla/storage-en/
 [MySQL Database on Azure]: /support/sla/mysql-en/
