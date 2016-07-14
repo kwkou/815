@@ -16,7 +16,7 @@
 
 #如何登录到运行 Linux 的虚拟机 #
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager 部署模型](/documentation/articles/virtual-machines-linux-quick-create-portal/)。
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager 部署模型](/documentation/articles/virtual-machines-linux-quick-create-portal/)。
 
 需要在用于登录到虚拟机的计算机上安装 SSH 客户端。您可以选择很多 SSH 客户端程序。以下是可能的选择：
 
