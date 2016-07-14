@@ -15,9 +15,6 @@
 
 # 将 SQL Server 数据库迁移到 Azure VM 中的 SQL Server
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。
-
-
 将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个[教程](#azure-vm-deployment-wizard-tutorial)，指导你使用**将 SQL Server 数据库部署到 Azure VM** 向导。
 
 [教程](#azure-vm-deployment-wizard-tutorial)中介绍的使用**将 SQL Server 数据库部署到 Azure VM** 向导的方法仅适用于经典部署模型。
@@ -74,7 +71,7 @@
 
 如果要迁移到现有的 Azure VM，则需执行下列配置步骤：
 
-- 按照[在另一台计算机上从 SSMS 连接到 SQL Server VM 实例](/documentation/articles/virtual-machines-windows-sql-connect/)的步骤进行操作，将 Azure VM 和 SQL Server 实例配置为支持从另一台计算机进行连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
+- 按照[在另一台计算机上从 SSMS 连接到 SQL Server VM 实例](/documentation/articles/virtual-machines-windows-classic-sql-connect/)的步骤进行操作，将 Azure VM 和 SQL Server 实例配置为支持从另一台计算机进行连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
 - 使用专用端口 11435 为 Azure 网关上的 SQL Server 云适配器服务配置一个打开的终结点。当在 Azure VM 上预配 SQL Server 2014 或 SQL Server 2016 时，将创建此端口。云适配器还创建一项 Windows 防火墙规则，以允许其传入 TCP 连接在默认端口 11435 上通过。此终结点允许向导利用云适配器服务将本地实例中的备份文件复制到 Azure VM。有关详细信息，请参阅[用于 SQL Server 的云适配器](https://msdn.microsoft.com/zh-cn/library/dn169301.aspx)。
 
 	![创建云适配器终结点](./media/virtual-machines-windows-migrate-sql/cloud-adapter-endpoint.png)
@@ -133,7 +130,7 @@
 	![结果](./media/virtual-machines-windows-migrate-sql/results.png)
 
 13. 完成向导操作后，连接到你的虚拟机并确保数据库已迁移。
-14. 如果创建了新的虚拟机，请按照[在另一台计算机上从 SSMS 连接到 SQL Server VM 实例](/documentation/articles/virtual-machines-windows-sql-connect/)的步骤进行操作，以配置 Azure 虚拟机和 SQL Server 实例。
+14. 如果创建了新的虚拟机，请按照[在另一台计算机上从 SSMS 连接到 SQL Server VM 实例](/documentation/articles/virtual-machines-windows-classic-sql-connect/)的步骤进行操作，以配置 Azure 虚拟机和 SQL Server 实例。
 
 ##<a name="backup-to-file-and-copy-to-vm-and-restore"></a>备份到文件、复制到 VM 并还原
 
@@ -141,7 +138,7 @@
 
 1.	执行到本地位置的完整数据库备份。
 2.	创建或上载具有所需 SQL Server 版本的虚拟机。
-3.	根据你的要求设置连接。请参阅[连接到 Azure (Resource Manager) 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-sql-connect/)。
+3.	根据你的要求设置连接。请参阅[连接到 Azure (经典) 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-sql-connect/)。
 4.	使用远程桌面、Windows 资源管理器或命令提示符处的复制命令将备份文件复制到 VM。
 
 ##<a name="backup-to-url-and-restore"></a>备份到 URL 并还原
