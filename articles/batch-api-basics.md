@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Azure Batch 功能概述 | Azure"
+	pageTitle="面向开发人员的 Azure Batch 功能概述 | Azure"
 	description="从开发的角度了解 Batch 服务的功能及其 API。"
 	services="batch"
 	documentationCenter=".net"
-	authors="yidingzhou"
+	authors="mmacy"
 	manager="timlt"
 	editor=""/>
 
@@ -38,7 +38,7 @@
 
 在以下部分中，你将了解上述工作流中提到的每个资源，以及其他可实现分布式计算方案的许多 Batch 功能。
 
-> [AZURE.NOTE] 你需要通过一个 [Batch 帐户](/documentation/articles/batch-account-create-portal/)来使用 Batch 服务，几乎所有的解决方案都使用 [Azure 存储][azure_storage]帐户来进行文件存储和检索。Batch 目前仅支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。
+> [AZURE.NOTE] 你需要通过一个 Batch 帐户来使用 Batch 服务，几乎所有的解决方案都使用 [Azure 存储][azure_storage]帐户来进行文件存储和检索。Batch 目前仅支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。
 
 ## Batch 服务组件
 
@@ -66,7 +66,7 @@
 
 ## <a name="account"></a>帐户
 
-批处理帐户是批处理服务中唯一标识的实体。所有处理都与一个 Batch 帐户相关联。当你使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。可以[在 Azure 门户中创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
+批处理帐户是批处理服务中唯一标识的实体。所有处理都与一个 Batch 帐户相关联。当你使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。
 
 ## <a name="computenode"></a>计算节点
 
@@ -308,11 +308,10 @@ Batch 服务在节点上公开文件系统的一部分作为“根目录”。 �
 
 ## <a name="application-packages"></a>应用程序包
 
-[应用程序包](/documentation/articles/batch-application-packages/)功能可为池中的计算节点提供简单的应用程序管理和部署能力。通过应用程序包，可以轻松上载及管理多个版本的工作执行应用程序（包括二进制文件和支持文件），然后将一或多个这种类型的应用程序自动部署到池中的计算节点。
+应用程序包功能可为池中的计算节点提供简单的应用程序管理和部署能力。通过应用程序包，可以轻松上载及管理多个版本的工作执行应用程序（包括二进制文件和支持文件），然后将一或多个这种类型的应用程序自动部署到池中的计算节点。
 
 Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储及部署到计算节点的详细信息，因此可以简化代码和管理开销。
 
-若要了解应用程序包功能的详细信息，请参阅 [Application deployment with Azure Batch application packages（使用 Azure Batch 应用程序包部署应用程序）](/documentation/articles/batch-application-packages/)。
 
 ## 池和计算节点生存期
 
@@ -423,7 +422,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 ## 后续步骤
 
-- 在 [Get started with the Azure Batch Library for .NET（适用于 .NET 的 Azure Batch 库入门）](/documentation/articles/batch-dotnet-get-started/)中逐步演练一个示例 Batch 应用程序。另请参阅该教程的 [Python 版本](/documentation/articles/batch-python-tutorial/)，其中介绍了如何在 Linux 计算节点上运行工作负荷。
+- 在 [Get started with the Azure Batch Library for .NET（适用于 .NET 的 Azure Batch 库入门）](/documentation/articles/batch-dotnet-get-started/)中逐步演练一个示例 Batch 应用程序。
 
 - 了解如何[创建 Linux 计算节点池](/documentation/articles/batch-linux-nodes/)。
 
