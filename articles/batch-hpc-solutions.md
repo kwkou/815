@@ -96,7 +96,7 @@ Azure 还为开发人员和合作伙伴提供一整套功能、体系结构选�
 
 Azure 计算服务是大型计算解决方案的核心，不同的计算服务适用于不同的方案。在基本级别中，这些服务为使用 Windows Server Hyper-V 技术，由 Azure 提供的基于虚拟机的计算实例上运行的应用程序提供不同模式。这些实例可以运行各种标准的和自定义的 Linux 和 Windows 操作系统与工具。Azure 允许你选择[实例大小](/documentation/articles/virtual-machines-windows-sizes/)，对 CPU 核心、内存、磁盘容量和其他特征进行了不同的配置。你可以根据需要将实例扩展到数千个核心，并在需要较少的资源时相应减少。
 
->[AZURE.NOTE] 利用 A8-A11 实例改善某些 HPC 工作负荷（包括需要低延迟、高吞吐量应用程序网络的并行 MPI 应用程序）的性能。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/services/virtual-machines-a8-a9-a10-a11-specs)。
+>[AZURE.NOTE] 利用 A8-A11 实例改善某些 HPC 工作负荷（包括需要低延迟、高吞吐量应用程序网络的并行 MPI 应用程序）的性能。
 
 服务 | 说明
 ------------- | -----------
@@ -125,7 +125,7 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 
 大型计算解决方案可能需要包含其他 Azure 基础结构和平台服务，才能连接到本地或其他环境中的资源。示例包括：
 
-* [虚拟网络](/documentation/services/virtual-network) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
+* [虚拟网络](/documentation/services/virtual-machines/windows/) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
 
 * [服务总线](/documentation/services/service-bus) - 提供多种机制让应用程序进行通信或交换数据，无论这些应用程序位于 Azure、另一个云平台还是数据中心。
 

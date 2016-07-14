@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="06/16/2016"
-	wacn.date="07/11/2016"/>
+	wacn.date="07/14/2016"/>
 
 # Azure 批处理 ( Batch ) 基础知识
 
@@ -44,9 +44,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 当你构建解决方案来使用 Azure Batch 处理并行工作负荷时，可以使用 [Batch API](#batch-development-apis) 来编程。Batch API 可让你创建和管理计算节点（虚拟机）池，以及计划作业和任务在这些节点上运行。编写的客户端应用程序或服务使用 Batch API 来与 Batch 服务通信。
 
-可以为组织有效率地处理大量工作负荷，或提供前端服务给客户，让他们可以在一个、数百个甚至数千个节点上，按需要或按计划运行作业和任务。还可以在 [Azure 数据工厂](/documentation/articles/data-factory-data-processing-using-batch/)等工具管理的大型工作流中使用 Batch。
-
-> [AZURE.TIP] 当你准备钻研 Batch API 以深入了解它所提供的功能时，请参阅 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articlesbatch-api-basics)。
+> [AZURE.TIP] 当你准备钻研 Batch API 以深入了解它所提供的功能时，请参阅 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articles/batch-api-basics)。
 
 ### 需要的 Azure 帐户
 
@@ -78,7 +76,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 - [Azure CLI](/documentation/articles/xplat-cli-install/)：Azure 命令行接口 (Azure CLI) 是一个跨平台工具集，提供用来与许多 Azure 服务（包括 Batch）交互的 shell 命令。
 
-- [Batch Management .NET](/documentation/articles/batch-management-dotnet/) 客户端库：也可以通过 [NuGet][api_net_mgmt_nuget] 获取。你可以使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户、配额和应用程序包。[MSDN][api_net_mgmt] 上提供了管理库的参考信息。
+- Batch Management .NET客户端库：也可以通过 [NuGet][api_net_mgmt_nuget] 获取。你可以使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户、配额和应用程序包。[MSDN][api_net_mgmt] 上提供了管理库的参考信息。
 
 ## 方案：扩大并行工作负荷
 
@@ -117,7 +115,6 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 - 阅读 [Get started with the Azure Batch library for .NET（适用于 .NET 的 Azure Batch 库入门）](/documentation/articles/batch-dotnet-get-started/)，了解如何使用 C# 和 Batch .NET 库在常见的 Batch 工作流中执行简单的工作负荷。这应该是学习如何使用 Batch 服务的第一站。
 - 下载 [GitHub 上的代码示例][github_samples]，了解 C# 和 Python 如何与 Batch 相互作用，以计划和处理示例工作负荷。
 
-- 查看 [Batch Learning Path（Batch 学习路径）][learning_path]，获取在学习使用 Batch 时可用的资源。
 
 [azure_storage]: https://azure.microsoft.com/services/storage/
 [api_java]: http://azure.github.io/azure-sdk-for-java/
@@ -134,7 +131,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 [api_sample_python]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch
 [batch_ps]: https://msdn.microsoft.com/library/azure/mt125957.aspx
 [batch_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
-[free_account]: https://azure.microsoft.com/free/
+[free_account]: /pricing/1rmb-trial/
 [github_samples]: https://github.com/Azure/azure-batch-samples
 
 [1]: ./media/batch-technical-overview/tech_overview_01.png

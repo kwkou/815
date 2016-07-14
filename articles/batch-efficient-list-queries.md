@@ -94,6 +94,7 @@ expand 字符串用于减少获取特定信息所需的 API 调用数。使用 e
 以下代码段使用 Batch .NET API 对 Batch 服务进行有效的查询，查询其中是否存在特定池集的统计信息。在此方案中，Batch 用户既有测试池又有生产池。测试池 ID 具有“test”前缀，生产池 ID 具有“prod”前缀。在代码段中，*myBatchClient* 是正确初始化的 [BatchClient](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient) 类实例。
 
 csharp
+
 		// First we need an ODATADetailLevel instance on which to set the expand, filter, and select
 		// clause strings
 		ODATADetailLevel detailLevel = new ODATADetailLevel();
