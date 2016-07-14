@@ -98,6 +98,11 @@ MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置�
     <td>System</td>
     <td>System, [-12:00 to +12:00] </td>
   </tr>
+   <tr>
+    <td >character_set_server</td>
+    <td>默认为DB创建时的设置</td>
+    <td>utf8|utf16|utf32|utf8mb4|ujis|ucs2|tis620|swe7|sjis|macroman|macce|latin1|latin2|latin5|latin7|koi8r|koi8u|keybcs2|hp8|hebrew|greek|geostd8|gbk|gb2312|euckr|eucjpms|dec8|cp850|cp852|cp866|cp932|cp1250|cp1251|cp1256|cp1257|binary|big5|ascii|armscii8</td>
+  </tr>
 </table>
 >[AZURE.NOTE] **考虑到流量管理器的限制，我们将wait_timeout的默认值调整为120s，可选范围为60-240s，但上述调整只对10月后创建的实例生效。对于以前的实例，请您手动将wait_timeout值设置为60-240s之间的任意数值，推荐120s。**
 
