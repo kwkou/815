@@ -120,16 +120,14 @@
 
 在 Azure 上部署云服务项目后，请使用 AD 域扩展将角色实例连接到自定义 AD 域。若要将 AD 域扩展添加到现有云服务部署并加入自定义域，请在 Powershell 中执行以下命令：
 
-# 初始化域变量
-
+    # 初始化域变量
 	$domain = '<your-domain-name>'
 	$dmuser = '$domain<your-username>'
 	$dmpswd = '<your-domain-password>'
 	$dmspwd = ConvertTo-SecureString $dmpswd -AsPlainText -Force
 	$dmcred = New-Object System.Management.Automation.PSCredential ($dmuser, $dmspwd)
 
-# 将 AD 域扩展添加到云服务角色
-
+    # 将 AD 域扩展添加到云服务角色
 	Set-AzureServiceADDomainExtension -Service <your-cloud-service-hosted-service-name> -Role <your-role-name> -Slot <staging-or-production> -DomainName $domain -Credential $dmcred -JoinOption 35
 
 这就是所有的操作。
