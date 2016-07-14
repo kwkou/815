@@ -28,8 +28,6 @@
 
 [VM、网站和云服务对比](/documentation/articles/choose-web-site-cloud-service-vm/)
 
-[Azure 中的虚拟机和容器](/documentation/articles/virtual-machines-windows-containers/)
-
 
 
 ## 环境设置
