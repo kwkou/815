@@ -21,15 +21,10 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
-|**MSEnterpriseApplication**|实现了由 Windows System Center 提供支持的功能。|[System Center 2012 R2 虚拟机角色](http://social.technet.microsoft.com/wiki/contents/articles/18274.system-center-2012-r2-virtual-machine-role-authoring-guide-resource-extension-package.aspx)|
 |**Octopus Deploy**（基于 DSC 扩展）|支持自动将 ASP.NET Web 应用程序和 Windows 服务部署到开发、测试和生产环境。|[Octopus Deploy 入门](http://docs.octopusdeploy.com/display/OD/Getting%20started)|
 |**Visual Studio 发布管理器**（基于 DSC 扩展）|使用 Visual Studio 支持连续部署。|[使用 Release Management 自动进行部署](https://msdn.microsoft.com/Library/vs/alm/Release/overview)|
-|**CentosChefClient**|||
-|**ChefClient**|在 Windows 上创建 Chef 客户端。（也可以使用下面的 DSC 扩展。）|[Chef 与 Azure](https://www.getchef.com/solutions/azure/)|
-|**LinuxChefClient**|||
 |**DockerExtension**|安装 Docker 后台程序以支持远程 Docker 命令。|[如何使用 Docker 虚拟机扩展](/documentation/articles/virtual-machines-linux-dockerextension/)有关更广泛的信息，请参阅 [Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)|
 |**DSC**|PowerShell DSC（所需状态配置）扩展。|[Azure PowerShell DSC（所需状态配置）扩展](http://blogs.msdn.com/b/powershell/archive/2014/08/07/introducing-the-azure-powershell-dsc-desired-state-configuration-extension.aspx)|
-|**PuppetEnterpriseAgent**|实现 Puppet Enterprise 的功能。 |[Azure 上的 Puppet](http://puppetlabs.com/solutions/microsoft)|
 |**CustomScriptExtension** (Windows)**CustomScriptForLinux** (Linux)|在任何时候调用 VM 上的自定义脚本：启动时或在生存期内。|
 |**AzureCATExtensionHandler**|使用 **IaaSDiagnostics** 和少数其他数据源（如 [Azure 存储分析指标](https://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)）收集的诊断数据，并将这些数据转换为适合 SAP 主机控制进程使用的聚合数据集|[适用于 SAP 的 Azure 增强型监视](http://azure.microsoft.com/blog/2014/06/04/azure-enhanced-monitoring-for-sap/)|
 
@@ -39,10 +34,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
-|**CloudLinkSecureVMWindowsAgent**|为 Azure 客户提供在多租户共享的基础结构上加密其虚拟机数据的功能，并完全控制 Azure 存储基础结构上其加密数据的加密密钥。|[利用 BitLocker 和本机 OS 加密保护 Azure 虚拟机](http://www.cloudlinktech.com/azure)|
-|**McAfeeEndpointSecurity**|保护 VM 免受恶意软件的威胁。|[McAfee](https://www.mcafeeasap.com/MarketingContent/default.aspx)|
 |**TrendMicroDSA**|启用 TrendMicro 的 Deep Security 平台支持可提供入侵检测和防护、防火墙、防恶意软件、Web 信誉评估、日志检查和完整性监视。|[如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend/)|
-|**PortalProtectExtension**|防止对你的 Microsoft SharePoint 环境构成威胁。|[保护 Azure 上的 SharePoint 部署](http://blog.trendmicro.com/securing-sharepoint-deployment-azure/)|
 |**IaaSAntimalware**|用于 Azure 云服务和虚拟机的 Microsoft 反恶意软件是一种实时保护功能，当已知恶意软件或不需要的软件试图在你的系统上安装自身或运行时，它可使用可配置的警报帮助识别和删除病毒、间谍软件和其他恶意软件。||
 
 ##VM 操作和管理
@@ -64,9 +56,6 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |**VS14CTPDebugger**|支持使用 Azure SDK 2.4 从 VS 进行远程调试|[在 Visual Studio 中进行远程调试](https://msdn.microsoft.com/zh-cn/library/y7f5zaaa.aspx)|
 |**VS2013Debugger**|支持使用 Azure SDK 2.4 从 VS 进行远程调试||
 |**VS2012Debugger**|支持使用 Azure SDK 2.4 从 VS 进行远程调试||
-|**RemoteDebugVS14CTP**|支持使用 Azure SDK 2.3 从 VS 进行远程调试||
-|**RemoteDebugVS2013**|支持使用 Azure SDK 2.3 从 VS 进行远程调试||
-|**RemoteDebugVS2012**|支持使用 Azure SDK 2.3 从 VS 进行远程调试||
 |**WebDeployForVSDevTest**|在 Windows Server 上安装和配置 IIS 和 Web 部署。不支持删除或禁用它。|
 
 ##其他功能
@@ -76,4 +65,3 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
 |**BGInfo**|使用 RDP 时在桌面上显示有用服务器信息的合并图片。|[BGInfo 扩展](https://msdn.microsoft.com/zh-cn/library/mt589195.aspx)|
-|**HpcVmDrivers**|在运行 Windows Server 2012 R2 或 Windows Server 2012 的 VM 上，安装、配置和维护远程直接内存访问 (RDMA) 网络设备驱动程序。运行并行 MPI 应用程序时，支持群集 VM 使用 RDMA 网络。
