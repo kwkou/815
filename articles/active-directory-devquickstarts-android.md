@@ -166,13 +166,13 @@ xml
 ### 步骤 5：在项目中添加对 Android ADAL 的引用
 
 
-2. 添加对项目的引用，并将其指定为 Android 库。如果你不确定如何执行此操作，请[单击此处了解详细信息](http://developer.android.com/intl/zh-cn/tools/projects/projects-eclipse.html)
+1. 添加对项目的引用，并将其指定为 Android 库。如果你不确定如何执行此操作，请[单击此处了解详细信息](http://developer.android.com/intl/zh-cn/tools/projects/projects-eclipse.html)
 
-3. 在项目设置中添加用于调试的项目依赖关系
+2. 在项目设置中添加用于调试的项目依赖关系
 
-4. 更新项目的 AndroidManifest.xml 文件以包括：
+3. 更新项目的 AndroidManifest.xml 文件以包括：
 
-    Java
+  	Java
 
 		      <uses-permission android:name="android.permission.INTERNET" />
 		      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -191,7 +191,7 @@ xml
 		      <application/>
 		    
 
-7. 在主要活动中创建 AuthenticationContext 的实例。有关此调用的详细信息超出了本自述文件的范畴，但你可以通过查看 [Android 本机客户端示例](https://github.com/AzureADSamples/NativeClient-Android)来获得一个良好的起点。下面是一个示例：
+4. 在主要活动中创建 AuthenticationContext 的实例。有关此调用的详细信息超出了本自述文件的范畴，但你可以通过查看 [Android 本机客户端示例](https://github.com/AzureADSamples/NativeClient-Android)来获得一个良好的起点。下面是一个示例：
 
     Java
 
@@ -200,7 +200,7 @@ xml
 		    
   * 注意：mContext 是活动中的一个字段
 
-8. 复制此代码块，以便在用户输入凭据并收到授权代码后处理 AuthenticationActivity 的结束：
+5. 复制此代码块，以便在用户输入凭据并收到授权代码后处理 AuthenticationActivity 的结束：
 
     Java
 
@@ -213,7 +213,7 @@ xml
 		     }
 		    
 
-9. 若要请求令牌，你可以定义一个回调
+6. 若要请求令牌，你可以定义一个回调
 
     Java
 
@@ -247,7 +247,7 @@ xml
 		            }
 		        };
     
-10. 最后，使用该回调请求令牌：
+7. 最后，使用该回调请求令牌：
 
     Java
 
@@ -255,26 +255,26 @@ xml
 		                    callback);
 		    
 
-参数说明：
+	参数说明：
 
-  * Resource 是必需的，它是你尝试访问的资源。
-  * Clientid 是必需的，它来自 AzureAD 门户。
-  * 你可以将 redirectUri 设置为包名称。对于 acquireToken 调用，不需要提供此参数。
-  * PromptBehavior 可帮助请求凭据以跳过缓存和 Cookie。
-  * 在交换令牌的授权代码后，将调用 Callback。
+	  * Resource 是必需的，它是你尝试访问的资源。
+	  * Clientid 是必需的，它来自 AzureAD 门户。
+	  * 你可以将 redirectUri 设置为包名称。对于 acquireToken 调用，不需要提供此参数。
+	  * PromptBehavior 可帮助请求凭据以跳过缓存和 Cookie。
+	  * 在交换令牌的授权代码后，将调用 Callback。
+	
+	  Callback 具有一个包含 accesstoken、过期日期和 idtoken 信息的 AuthenticationResult 对象。
+	
+	可选：**acquireTokenSilent**
+	
+	可以调用 **acquireTokenSilent** 来处理缓存和令牌刷新。它也提供了同步版本。它接受使用 userid 作为参数。
+	
+		    java
+		
+		     	mContext.acquireTokenSilent(resource, clientid, userId, callback );
+		    
 
-  Callback 具有一个包含 accesstoken、过期日期和 idtoken 信息的 AuthenticationResult 对象。
-
-可选：**acquireTokenSilent**
-
-可以调用 **acquireTokenSilent** 来处理缓存和令牌刷新。它也提供了同步版本。它接受使用 userid 作为参数。
-
-    java
-
-     	mContext.acquireTokenSilent(resource, clientid, userId, callback );
-    
-
-11. **Broker**：Microsoft Intune 的公司门户应用程序将提供代理组件。如果在验证器中创建了一个用户帐户并且开发人员选择不跳过代理帐户，ADAL 将使用代理帐户。开发人员可以使用以下操作跳过代理用户：
+8. **Broker**：Microsoft Intune 的公司门户应用程序将提供代理组件。如果在验证器中创建了一个用户帐户并且开发人员选择不跳过代理帐户，ADAL 将使用代理帐户。开发人员可以使用以下操作跳过代理用户：
 
     java
 
@@ -458,8 +458,6 @@ Java
 		<string name="http_auth_dialog_login">Login</string>
 		<string name="http_auth_dialog_cancel">Cancel</string>
 
-
-=======
 
 ### NTLM 对话
 ADAL 版本 1.1.0 支持通过 WebViewClient 中的 onReceivedHttpAuthRequest 事件处理的 NTLM 对话。你可以自定义对话布局和字符串。

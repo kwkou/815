@@ -6,6 +6,7 @@
    authors="msmbaldwin"
    manager="mbaldwin"
    editor="mbaldwin" />
+
 <tags
    ms.service="active-directory"
    ms.date="03/18/2016"
@@ -29,7 +30,7 @@ Azure Active Directory 图形 API 通过 REST API 终结点提供对 Azure AD �
 
 除了用户对象外，你还可以对其他对象（如组和应用程序）执行类似操作。若要对目录调用图形 API，应用程序必须向 Azure AD 注册并配置为允许访问目录。这通常可以通过用户或管理员同意流来实现。
 
-若要开始使用 Azure Active Directory 图形 API，请参阅<!-- [图形 API 快速入门指南](/documentation/articles/active-directory-graph-api-quickstart/)，或查看 --> [交互式图形 API 参考文档](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)。
+若要开始使用 Azure Active Directory 图形 API，请参阅[图形 API 快速入门指南](/documentation/articles/active-directory-graph-api-quickstart/)，或查看 [交互式图形 API 参考文档](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)。
 
 
 ## 功能
