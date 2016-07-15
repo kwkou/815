@@ -137,6 +137,7 @@ ObjC
 - 现在，我们需要使用此令牌在图形中搜索用户。查找 `// TODO: implement SearchUsersList` 注释。此方法将向 Azure AD 图形 API 发出 GET 请求，以查询其 UPN 以给定搜索词开头的用户。但是，若要查询 Graph API，你需要在请求的 `Authorization` 标头中包含 access\_token - 这是 ADAL 传入的位置。
 
 ObjC
+
 		+(void) searchUserList:(NSString*)searchString
 		                parent:(UIViewController*) parent
 		       completionBlock:(void (^) (NSMutableArray* Users, NSError* error)) completionBlock
