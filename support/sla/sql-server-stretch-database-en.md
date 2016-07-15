@@ -11,8 +11,8 @@
 <tags ms.service="legal" ms.date="07/2016" wacn.date="07/2016" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
-- [中文](/support/legal/sql-server-stretch-database/)
-- [English](/support/legal/sql-server-stretch-database-en/)
+- [中文](/support/sla/sql-server-stretch-database/)
+- [English](/support/sla/sql-server-stretch-database-en/)
 
 # SLA for SQL Server Stretch Database
 
