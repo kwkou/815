@@ -64,7 +64,7 @@
 
 ###许可证和密钥传送服务
 
-媒体服务提供用于向已授权客户端传送 DRM（PlayReady 和 Widevine）许可证和 AES 明文密钥的服务。你可以使用 Azure 管理门户、REST API 或适用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
+媒体服务提供用于向已授权客户端传送 DRM（PlayReady 和 Widevine）许可证和 AES 明文密钥的服务。你可以使用 Azure 经典管理门户、REST API 或适用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
 
 请注意，如果使用门户，则你可以配置一个 AES 策略（将应用到所有 AES 加密内容）和一个 PlayReady 策略（将应用到所有 PlayReady 加密内容）。如果你想要以更大的力度控制配置，请使用适用于 .NET 的媒体服务 SDK。
 

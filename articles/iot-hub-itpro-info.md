@@ -43,7 +43,7 @@
 - [Azure IoT 中心是什么？][lnk-iothub]
 - [Azure IoT 中心开发人员指南中的“安全性”部分][lnk-devguide]提供了有关 IoT 中心内令牌和权限系统的更多信息。
 
-- [通过 Azure 门户管理 IoT 中心][lnk-manage-portal]介绍了如何使用 Azure 门户来管理 IoT 中心。
+- [通过 Azure 门户预览管理 IoT 中心][lnk-manage-portal]介绍了如何使用 Azure 门户预览来管理 IoT 中心。
 
 [lnk-iothub]: /documentation/articles/iot-hub-what-is-iot-hub/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/#security

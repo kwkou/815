@@ -15,7 +15,6 @@
 
 ##概述
 
-
 使用 Azure 媒体服务传递实时流式处理事件时，通常涉及以下组件：
 
 - 一个用于广播事件的相机。
@@ -23,7 +22,7 @@
 
 	（可选）多个实时同步编码器。对于某些需要高可用性与优质体验的重要实时事件，建议使用带时间同步功能的主动-主动冗余编码器，以实现无缝故障转移，且不会丢失数据。
 - 实时流式处理服务允许你执行以下操作：
-
+	
 	- 使用多种实时流式处理协议（例如 RTMP 或平滑流式处理）引入实时内容
 	- （可选）将你的流编码为自适应比特率流
 	- 预览你的实时流
@@ -33,7 +32,7 @@
 
 **Azure 媒体服务** (AMS) 提供了引入、编码、预览、存储和传送实时流式处理内容的功能。
 
-在将内容传送给客户时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。为此，可使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+在将内容传送给客户时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。为此，可使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
 在 Azure 媒体服务中，**频道**、**程序**和**流式处理终结点**处理所有实时流式处理功能，包括引入、格式化、DVR、安全性、缩放性和冗余。
 
@@ -41,7 +40,7 @@
 
 - 本地实时编码器将多比特率 **RTMP** 或“平滑流”（分片 MP4）发送到经配置可以进行“直通”传递的通道。“直通”传递是指引入的流将会直接通过“通道”，而不会经过任何进一步的处理。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder (FMLE)、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的频道，并不建议这样做。收到请求时，媒体服务会将该流传递给客户。
 
-	>[AZURE.NOTE] 当你需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，则可使用直通这种最经济的方法来实时传送视频流。请参见[定价](/home/features/media-services/#price)详细信息。
+	>[AZURE.NOTE] 当你需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，则可使用直通这种最经济的方法来实时传送视频流。请参见[定价](/home/features/media-services/pricing/)详细信息。
 	
 	
 - 本地实时编码器（采用以下格式之一：RTMP 或平滑流式处理（分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的频道。RTP (MPEG-TS) 也是支持的，但前提是你有到 Azure 数据中心的专用连接。以下提供 RTMP 输出的实时编码器可以使用此类型的通道：Telestream Wirecast、FMLE。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传递给客户。
@@ -62,7 +61,7 @@
 单比特率输入在云中被编码为多比特率|否|是
 最大分辨率，层数|1080p，8 层，60+fps|720p，6 层，30 fps
 输入协议|RTMP、平滑流|RTMP、平滑流和 RTP
-价格|请参阅[定价页](/home/features/media-services/#price)并单击“实时视频”选项卡|请参阅[定价页](/home/features/media-services/#price) 
+价格|请参阅[定价页](/home/features/media-services/pricing/)并单击“实时视频”选项卡|请参阅[定价页](/home/features/media-services/pricing/) 
 最长运行时间|全天候运行|8 小时
 支持插入静态图像|否|是
 支持发出广告指示|否|是
@@ -78,7 +77,7 @@
 
 ![实时工作流](./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png)
 
-有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
+有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)。
 
 ##使用能够通过 Azure 媒体服务执行实时编码的频道
 
@@ -86,7 +85,7 @@
 
 ![实时工作流](./media/media-services-live-streaming-workflow/media-services-live-streaming-new.png)
 
-有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 ##频道及其相关组件的说明
 
@@ -96,9 +95,7 @@
 
 可以在创建通道时获取引入 URL 和预览 URL。若要获取这些 URL，通道不一定要处于已启动状态。当你准备好开始将数据从实时转码器推送到通道时，通道必须已启动。实时转码器开始引入数据后，你可以预览流。
 
-
 每个媒体服务帐户均可包含多个通道、多个节目以及多个 StreamingEndpoint。根据带宽和安全性需求，StreamingEndpoint 服务可专用于一个或多个通道。任何 StreamingEndpoint 都可以从任何通道拉取。
-
 
 
 ###节目 
@@ -147,17 +144,16 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 
 
-
 ##相关主题
 
 [Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview/)
 
-[使用能够使用 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)
+[使用能够使用 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)
 
-[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)
+[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)
 
-[配额和限制](/documentation/articles/media-services-quotas-and-limitations)
+[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)
 
-[媒体服务概念](/documentation/articles/media-services-concepts)
+[媒体服务概念](/documentation/articles/media-services-concepts/)
 
 <!---HONumber=Mooncake_0704_2016-->

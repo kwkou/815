@@ -129,7 +129,7 @@
 
 Azure 云服务是该应用程序将运行的环境。
 
-1. 在你的浏览器中，打开 [Azure 管理门户](http://manage.windowsazure.cn)。
+1. 在你的浏览器中，打开 [Azure 经典管理门户](http://manage.windowsazure.cn)。
 
 2. 单击“新建”>“计算”>“云服务”>“快速创建”。
 
@@ -151,7 +151,7 @@ Azure 云服务是该应用程序将运行的环境。
 
 在云中运行应用程序时，它将使用基于云的数据库。
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，单击“新建”>“数据服务”>“SQL 数据库”>“快速创建”。
+1. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，单击“新建”>“数据服务”>“SQL 数据库”>“快速创建”。
 
 1. 在“数据库名称”框中，输入 contosoads。
 
@@ -171,7 +171,7 @@ Azure 云服务是该应用程序将运行的环境。
 
 	![新 SQL 数据库](./media/cloud-services-dotnet-get-started/newdb.png)
 
-1. Azure 完成创建数据库后，在门户的左窗格中单击“SQL 数据库”选项卡，然后单击新数据库的名称。
+1. Azure 完成创建数据库后，在经典管理门户的左窗格中单击“SQL 数据库”选项卡，然后单击新数据库的名称。
 
 2. 单击“仪表板”选项卡。
 
@@ -187,7 +187,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。
 
 在实际应用程序中，您通常会为记录数据的应用程序数据创建单独的帐户，并且为生产数据的测试数据创建单独帐户。对于本教程，你将只使用一个帐户。
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，单击“新建”>“数据服务”>“存储”>“快速创建”。
+1. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，单击“新建”>“数据服务”>“存储”>“快速创建”。
 
 4. 在“URL”框中，输入 URL 前缀。
 
@@ -226,15 +226,15 @@ Web 项目和辅助角色项目自身具有数据库连接字符串，并且当�
 
 	保持文件打开进行编辑。
 
-2. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，依次单击左窗格中的“SQL 数据库”、你在本教程中创建的数据库、“仪表板”选项卡、“显示连接字符串”。
+2. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，依次单击左窗格中的“SQL 数据库”、你在本教程中创建的数据库、“仪表板”选项卡、“显示连接字符串”。
 
 	![显示连接字符串](./media/cloud-services-dotnet-get-started/showcs.png)
 
-	门户将显示连接字符串，其占位符用于输入密码。
+	经典管理门户将显示连接字符串，其占位符用于输入密码。
 
 	![连接字符串](./media/cloud-services-dotnet-get-started/connstrings.png)
 
-4. 在 Web.Release.config 转换文件中，删除 `{connectionstring}` 并从 Azure 管理门户的 ADO.NET 连接字符串粘贴在其原位置。
+4. 在 Web.Release.config 转换文件中，删除 `{connectionstring}` 并从 Azure 经典管理门户的 ADO.NET 连接字符串粘贴在其原位置。
 
 5. 在粘贴到 Web.Release.config 转换文件的连接字符串中，请用你为新的 SQL 数据库创建的密码替换 `{your_password_here}`。
 
@@ -343,7 +343,7 @@ ServiceConfiguration.Cloud.cscfg 文件包括你为 Visual Studio 中的设置�
 
 7. 就像在本地运行应用程序一样，现在可以通过创建、查看和编辑一些广告测试应用程序。
 
->[AZURE.NOTE] 完成测试后，删除或停止云服务。即使你不使用云服务，也会产生费用，因为要为它保留虚拟机资源。如果保持运行云服务，找到你 URL 的任何人都可以创建和查看广告。在 [Azure 管理门户](http://manage.windowsazure.cn)中，转到云服务的“仪表板”选项卡，然后单击页面底部的“删除”按钮。如果你只是想要暂时防止其他人访问站点，请单击“停止”。在这种情况下，会继续产生费用。当你不再需要 SQL 数据库和存储帐户时，可以遵循类似的过程将其删除。
+>[AZURE.NOTE] 完成测试后，删除或停止云服务。即使你不使用云服务，也会产生费用，因为要为它保留虚拟机资源。如果保持运行云服务，找到你 URL 的任何人都可以创建和查看广告。在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，转到云服务的“仪表板”选项卡，然后单击页面底部的“删除”按钮。如果你只是想要暂时防止其他人访问站点，请单击“停止”。在这种情况下，会继续产生费用。当你不再需要 SQL 数据库和存储帐户时，可以遵循类似的过程将其删除。
 
 ## 从头开始创建应用程序
 

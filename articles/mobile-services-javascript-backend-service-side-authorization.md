@@ -24,7 +24,7 @@
 
 ##  <a name="register-scripts"></a>注册脚本
 
-1. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的移动服务。单击“数据”选项卡，然后单击 **TodoItem** 表。
+1. 登录到 [Azure 经典管理门户]，单击“移动服务”，然后单击你的移动服务。单击“数据”选项卡，然后单击 **TodoItem** 表。
 
 2. 单击“脚本”，选择“Insert”操作，将现有脚本替换为以下函数，然后单击“保存”。
 
@@ -66,7 +66,7 @@
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [向现有移动服务应用添加身份验证]: /documentation/articles/mobile-services-ios-get-started-users/
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
  
 
 <!---HONumber=Mooncake_0118_2016-->

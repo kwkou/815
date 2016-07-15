@@ -49,7 +49,7 @@
 
 创建 Azure 存储帐户。应用会使用此帐户存储待办事项。
 
-1. 打开你的 Web 浏览器并转到 [Azure 门户]。如果出现提示，请使用你的 Azure 订阅信息进行登录。
+1. 打开你的 Web 浏览器并转到 [Azure 经典管理门户]。如果出现提示，请使用你的 Azure 订阅信息进行登录。
 
 2. 在门户底部，单击“+新建”，然后选择“存储帐户”。
 
@@ -479,9 +479,9 @@
 
 本部分中的步骤使用 Azure 命令行工具在 Azure 中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn/)执行这些步骤。请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
+> [AZURE.NOTE]还可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)执行这些步骤。请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
 >
-> 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 门户部署此应用程序。
+> 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 经典管理门户部署此应用程序。
 
 若要开始，请在命令行中输入以下命令以安装 [Azure CLI]：
 
@@ -535,13 +535,13 @@
 		info:   Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE]如果这是你的订阅的第一个 Web 应用，系统会指示你使用 Azure 门户创建 Web 应用。有关详细信息，请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
+	> [AZURE.NOTE]如果这是你的订阅的第一个 Web 应用，系统会指示你使用 Azure 经典管理门户创建 Web 应用。有关详细信息，请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
 
 ### 切换到环境变量
 
 前面我们实现了用于查找环境变量或从 **config.json** 文件中加载值的代码。在接下来的步骤中，你将在 Web 应用配置中创建应用程序通过环境变量实际访问的键值对。
 
-1. 从管理门户中，单击“ Web 应用”，然后选择你的 Web 应用。
+1. 从经典管理门户中，单击“ Web 应用”，然后选择你的 Web 应用。
 
 	![打开 Web 应用仪表板][go-to-dashboard]
 
@@ -621,7 +621,7 @@
 [nconf]: https://www.npmjs.com/package/nconf
 [async]: https://www.npmjs.com/package/async
 
-[Azure 门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 
 
 [node-table-finished]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png

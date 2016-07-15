@@ -25,7 +25,7 @@
 
 ## 服务总线入门
 
-此指南假定你已具有包含名为“queue1”的队列的 Service Bus 命名空间。 如果没有，则可以使用 [Azure 经典门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
+此指南假定你已具有包含名为“queue1”的队列的 Service Bus 命名空间。 如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
 > [AZURE.NOTE]分区队列和主题也支持 AMQP。有关详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning/)和[针对服务总线分区队列和主题的 AMQP 1.0 支持](/documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/)。
 
 ## 下载 AMQP 1.0 JMS 客户端库

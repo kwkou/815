@@ -125,11 +125,11 @@
 
 6.  确保已在订阅中创建可通过发布脚本定位的有效云服务和存储帐户。存储帐户（Blob 存储）将用于在创建部署时上载和临时存储部署包和配置文件。
 
-    -   若要创建新的云服务，你可调用此脚本或使用 [Azure 管理门户](https://manage.windowsazure.cn)。云服务名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。
+    -   若要创建新的云服务，你可调用此脚本或使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。云服务名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。
 
             New-AzureService -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
-    -   若要创建新的存储帐户，你可调用此脚本或使用 [Azure 管理门户](https://manage.windowsazure.cn)。存储帐户名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。您可尝试使用与云服务相同的名称。
+    -   若要创建新的存储帐户，你可调用此脚本或使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。存储帐户名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。您可尝试使用与云服务相同的名称。
 
             New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
@@ -141,7 +141,7 @@
 
         PowerShell c:\scripts\windowsazure\PublishCloudService.ps1 -environment Staging -serviceName mycloudservice -storageAccountName mystoragesaccount -packageLocation c:\drops\app.publish\ContactManager.Azure.cspkg -cloudConfigLocation c:\drops\app.publish\ServiceConfiguration.Cloud.cscfg -subscriptionDataFile c:\scripts\default.publishsettings
 
-    通常，此操作后跟测试运行验证和 VIP 交换。VIP 交换可通过 [Azure 管理门户](https://manage.windowsazure.cn)或使用 Move-Deployment cmdlet 执行。
+    通常，此操作后跟测试运行验证和 VIP 交换。VIP 交换可通过 [Azure 经典管理门户](https://manage.windowsazure.cn)或使用 Move-Deployment cmdlet 执行。
 
     **示例方案 2：**对专用测试服务的生产环境进行持续部署
 
@@ -165,7 +165,7 @@
 
         Add-AzureCertificate -serviceName 'mytestcloudservice' -certToDeploy (get-item cert:\CurrentUser\MY\C33B6C432C25581601B84C80F86EC2809DC224E8
 
-    或者，可以导出带私钥的证书文件 PFX，并使用 [Azure 管理门户](https://manage.windowsazure.cn)将证书上载到每个目标云服务。阅读以下文章以了解详细信息：[http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx][]。
+    或者，可以导出带私钥的证书文件 PFX，并使用 [Azure 经典管理门户](https://manage.windowsazure.cn)将证书上载到每个目标云服务。阅读以下文章以了解详细信息：[http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx][]。
 
     **升级部署与删除部署 -> 新建部署**
 

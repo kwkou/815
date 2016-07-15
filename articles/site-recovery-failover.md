@@ -148,9 +148,7 @@ VMware 站点到 Azure | 支持（增强版方案）<br/><br/>不支持（旧方
 
 
 ### 准备 Active Directory
-
 要运行测试故障转移以进行应用程序测试，测试中需要生产用 Active Directory 环境的副本。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory/#considerations-for-test-failover)部分。
-
 
 
 ### 准备 DNS

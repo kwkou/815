@@ -38,7 +38,7 @@
 
 这两个初始值设定项会从数据库中，删除移动服务所用架构中的所有表、视图、函数和过程。
 
-+ **ClearDatabaseSchemaIfModelChanges** <br/>仅当 Code First 检测到数据模型更改时，才删除架构对象。从 [Azure 管理门户]下载的 .NET 后端项目中的默认初始值设定项继承自这个基类。
++ **ClearDatabaseSchemaIfModelChanges** <br/>仅当 Code First 检测到数据模型更改时，才删除架构对象。从 [Azure 经典管理门户]下载的 .NET 后端项目中的默认初始值设定项继承自这个基类。
  
 + **ClearDatabaseSchemaAlways**：<br/>每次访问数据模型都会删除架构对象。使用此基类可以重置数据库，而无需进行数据模型更改。
 
@@ -106,7 +106,7 @@ Code First 迁移使用快照方法来生成代码，执行这些代码会对数
 
 10. 将移动服务重新发布到 Azure，然后运行客户端应用程序以访问数据，并验证是否可以加载数据且不出错。
 
-13. （可选）在 [Azure 管理门户]中选择你的移动服务，然后单击“配置”>“SQL 数据库”。随后你将导航到移动服务数据库的 SQL 数据库页。
+13. （可选）在 [Azure 经典管理门户]中选择你的移动服务，然后单击“配置”>“SQL 数据库”。随后你将导航到移动服务数据库的 SQL 数据库页。
 
 14. （可选）单击“管理”，登录到 SQL 数据库服务器，然后单击“设计”并验证是否已在 Azure 中进行架构更改。
 
@@ -167,7 +167,7 @@ Code First 迁移使用快照方法来生成代码，执行这些代码会对数
 <!-- URLs -->
 [DropCreateDatabaseIfModelChanges]: http://msdn.microsoft.com/zh-cn/library/gg679604(v=vs.113).aspx
 [Seed]: http://msdn.microsoft.com/zh-cn/library/hh829453(v=vs.113).aspx
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [DbContext]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext(v=vs.113).aspx
 [AddOrUpdate]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
 [TableController<TEntity>]: https://msdn.microsoft.com/zh-cn/library/azure/dn643359.aspx

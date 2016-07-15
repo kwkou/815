@@ -50,7 +50,7 @@
 
 ### 配置连接字符串
 
-利用该服务配置机制，你可以从 [Azure 经典门户][]动态更改配置设置，而无需重新部署应用程序。例如，向服务定义 (****.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
+利用该服务配置机制，你可以从 [Azure 经典管理门户][]动态更改配置设置，而无需重新部署应用程序。例如，向服务定义 (****.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
 
 ```
 <ServiceDefinition name="WindowsAzure1">
@@ -94,7 +94,7 @@
 </configuration>
 ```
 
-使用从 [ Azure 管理门户][]检索到的 SAS 名称和密钥值，如上一部分中所述。
+使用从 [ Azure 经典管理门户][]检索到的 SAS 名称和密钥值，如上一部分中所述。
 
 ## 创建主题
 
@@ -314,7 +314,7 @@ namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
 -   构建向服务总线队列发送消息以及从中接收消息的工作应用程序：[服务总线中转消息传送 .NET 教程][]。
 -   服务总线示例：从 [Azure 示例][]下载，或参阅[概述](/documentation/articles/service-bus-samples/)。
 
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
 
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
   

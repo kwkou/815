@@ -33,7 +33,7 @@
 
 本教程说明如何完成以下任务：
 
-1.  创建媒体服务帐户（使用 Azure 管理门户）。
+1.  创建媒体服务帐户（使用 Azure 经典管理门户）。
 2.  配置流式处理终结点（使用门户）。
 3.  创建和配置 Visual Studio 项目。
 5.  连接到媒体服务帐户。
@@ -60,7 +60,7 @@
 
 ##使用门户创建媒体服务帐户
 
-1. 在 Azure 管理门户中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在 Azure 经典管理门户中，依次单击“新建”、“媒体服务”和“快速创建”。
 
 	![媒体服务快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
@@ -125,7 +125,7 @@
 
 3. 添加对 System.Configuration 程序集的引用。此程序集包含用于访问配置文件（例如，App.config）的 **System.Configuration.ConfigurationManager** 类。
 
-4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。若要获取帐户名和密钥信息，请打开 Azure 管理门户，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
+4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。若要获取帐户名和密钥信息，请打开 Azure 经典管理门户，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
 		<configuration>
 		...

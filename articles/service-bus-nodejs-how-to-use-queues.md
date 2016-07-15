@@ -65,7 +65,7 @@ Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBU
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
-有关在 [Azure 经典门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
+有关在 [Azure 经典管理门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
 
 ## 创建队列
 
@@ -189,7 +189,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 -   [Node.js 开发人员中心](/develop/nodejs/)
 
   [Azure SDK for Node]: https://github.com/Azure/azure-sdk-for-node
-  [Azure 经典门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
   
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="上载 Azure Management API 证书 | Azure" 
-	description="了解如何为 Azure 经典门户上载 Management API 证书。" 
+	description="了解如何为 Azure 经典管理门户上载 Management API 证书。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -15,7 +15,7 @@
 
 # 上载 Azure Management API 管理证书
 
-管理证书允许你使用 Azure 提供的服务管理 API 进行身份验证。许多程序和工具（如 Visual Studio 或 Azure SDK）将使用这些证书来自动配置和部署各种 Azure 服务。**这仅适用于 Azure 经典门户**。
+管理证书允许你使用 Azure 提供的服务管理 API 进行身份验证。许多程序和工具（如 Visual Studio 或 Azure SDK）将使用这些证书来自动配置和部署各种 Azure 服务。**这仅适用于 Azure 经典管理门户**。
 
 >[AZURE.WARNING] 请小心！ 这些类型的证书允许任何使用它们进行身份验证的人管理与它们相关联的订阅。
 
@@ -25,10 +25,10 @@
 
 ## 上载管理证书
 
-一旦您创建了一个管理证书（仅使用公开密钥的 .cer 文件），您可以将其上载到门户。当该证书在门户中可用时，任何拥有匹配证书（私钥）的人可以通过 Management API 连接并访问与订阅相关联的资源。
+一旦您创建了一个管理证书（仅使用公开密钥的 .cer 文件），您可以将其上载到经典管理门户。当该证书在经典管理门户中可用时，任何拥有匹配证书（私钥）的人可以通过 Management API 连接并访问与订阅相关联的资源。
 
-1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
-2. 单击门户左侧的“设置”（可能需要向下滚动）。 
+1. 登录到 [Azure 经典管理门户](http://manage.windowsazure.cn)。
+2. 单击经典管理门户左侧的“设置”（可能需要向下滚动）。 
     
     ![设置](./media/azure-api-management-certs/settings.png)
 

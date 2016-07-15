@@ -16,7 +16,7 @@
 # 对删除 Azure 存储帐户、容器或 VHD 进行故障排除
 
 ## 摘要
-当你尝试在 [Azure 管理门户](https://manage.windowsazure.cn/)中删除 Azure 存储帐户、容器或的 VHD 时，可能会收到错误。这些问题可能由以下原因引起：
+当你尝试在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中删除 Azure 存储帐户、容器或的 VHD 时，可能会收到错误。这些问题可能由以下原因引起：
 
 -	删除 VM 时没有自动删除磁盘和 VHD，这可能是存储帐户删除失败的原因。我们不删除磁盘，以便你可以使用该磁盘安装另一个 VM。
 
@@ -27,7 +27,7 @@
 ## 解决方法
 若要解决最常见的问题，请尝试以下方法：
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 选择“虚拟机”>“磁盘”。
 
 	![disk.png](./media/storage-cannot-delete-storage-account-container-vhd/VMUI.png)
@@ -52,17 +52,17 @@
 
 ### 场景 1：无法删除存储帐户
 
-在通过导航到 [Azure 管理门户](https://manage.windowsazure.cn/)中的存储帐户试图删除不再使用的存储帐户并选择“删除”时，你可能会看到以下错误消息：
+在通过导航到 [Azure 经典管理门户](https://manage.windowsazure.cn/)中的存储帐户试图删除不再使用的存储帐户并选择“删除”时，你可能会看到以下错误消息：
 
 
-**在 Azure 管理门户中**：
+**在 Azure 经典管理门户中**：
 
 存储帐户<vm-storage-account-name>具有一些活动的映像和/或磁盘，例如 xxxxxxxxx-xxxxxxxxx-O-209490240936090599。删除此存储帐户前，请确保删除这些映像和/或磁盘。
 
 你可能也会看到此错误：
 
 
-**在 Azure 管理门户中**：
+**在 Azure 经典管理门户中**：
 
 提交失败的存储帐户<vm-storage-account-name>拥有 1 个具有活动的映像和/或磁盘项目的容器。在删除此存储帐户前，请确保从映像存储库中删除这些项目。
 当你试图删除某个存储帐户，但仍存在与之关联的活动磁盘时，你将看到一条告诉你有活动磁盘需要进行删除的消息。
@@ -81,11 +81,11 @@
 
 ## 详细信息
 
-已保留的 V1 VM 将如 [Azure 管理门户](https://manage.windowsazure.cn/)上的已停止取消分配状态中所示。
+已保留的 V1 VM 将如 [Azure 经典管理门户](https://manage.windowsazure.cn/)上的已停止取消分配状态中所示。
 
 
 
-**Azure 管理门户**：
+**Azure 经典管理门户**：
 
 ![screenshot2](./media/storage-cannot-delete-storage-account-container-vhd/moreinfo2.png)
 

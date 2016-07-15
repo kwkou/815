@@ -195,7 +195,7 @@
             </td>
             <td width="204" valign="top">
                 <p>
-                    通过 Azure 门户获得对示例数据的交互式创作和调试体验。
+                    通过 Azure 经典管理门户获得对示例数据的交互式创作和调试体验。
                 </p>
             </td>
             <td width="246" valign="top">
@@ -372,7 +372,7 @@
                     <strong>作业部署模型</strong>
                 </p>
                 <p>
-                    - <strong>Azure 门户</strong>
+                    - <strong>Azure 经典管理门户</strong>
                 </p>
                 <p>
                     - <strong>Visual Studio</strong>
@@ -383,12 +383,12 @@
             </td>
             <td width="204" valign="top">
                 <p>
-                    部署是通过 Azure 门户、PowerShell 和 REST API 实现的。
+                    部署是通过 Azure 经典管理门户、PowerShell 和 REST API 实现的。
                 </p>
             </td>
             <td width="246" valign="top">
                 <p>
-                    部署是通过 Azure 门户、PowerShell、Visual Studio 和 REST API 实现的。
+                    部署是通过 Azure 经典管理门户、PowerShell、Visual Studio 和 REST API 实现的。
                 </p>
             </td>
         </tr>
@@ -400,7 +400,7 @@
             </td>
             <td width="204" valign="top">
                 <p>
-                    监视是通过 Azure 门户和 REST API 实现的。
+                    监视是通过 Azure 经典管理门户和 REST API 实现的。
                 </p>
                 <p>
                     用户还可以配置 Azure 警报。

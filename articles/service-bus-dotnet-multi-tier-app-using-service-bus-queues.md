@@ -83,9 +83,9 @@
 
 下一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将会生成 SAS 密钥。命名空间与 SAS 密钥的组合为服务总线提供了用于验证应用程序访问权限的凭据。
 
-### 使用 Azure 经典门户设置命名空间
+### 使用 Azure 经典管理门户设置命名空间
 
-1.  登录到 [Azure 经典门户][]。
+1.  登录到 [Azure 经典管理门户][]。
 
 2.  在门户的左侧导航窗格中，单击“服务总线”。
 
@@ -265,7 +265,7 @@
 
 2.  将类命名为 QueueConnector.cs。单击“添加”以创建类。
 
-3.  现在，将添加可封装连接信息并初始化服务总线队列连接的代码。在 QueueConnector.cs 中添加以下代码，并输入 **Namespace**（你的服务命名空间）和 **yourKey**（前面通过 [Azure 经典门户][]获取的 SAS 密钥）的值。
+3.  现在，将添加可封装连接信息并初始化服务总线队列连接的代码。在 QueueConnector.cs 中添加以下代码，并输入 **Namespace**（你的服务命名空间）和 **yourKey**（前面通过 [Azure 经典管理门户][]获取的 SAS 密钥）的值。
 
         using System;
         using System.Collections.Generic;
@@ -506,7 +506,7 @@
 
   [EventHubClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
 
-  [Azure 经典门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
   [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
   [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
   [8]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-09.png

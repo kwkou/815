@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 管理门户创建多比特率流" 
-	description="本教程将指导你使用 Azure 管理门户完成创建通道的步骤，该通道接收单比特率实时流，并将其编码为多比特率流。" 
+	pageTitle="如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 经典管理门户创建多比特率流" 
+	description="本教程将指导你使用 Azure 经典管理门户完成创建通道的步骤，该通道接收单比特率实时流，并将其编码为多比特率流。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako,anilmur" 
@@ -13,7 +13,7 @@
 	wacn.date="06/27/2016"/>
 
 
-#如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 管理门户创建多比特率流
+#如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 经典管理门户创建多比特率流
 
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
@@ -54,7 +54,7 @@
 
 ##本教程的内容
 
-在本教程中，将使用 Azure 管理门户完成以下任务：
+在本教程中，将使用 Azure 经典管理门户完成以下任务：
 
 2.  配置流式处理终结点。
 3.  创建能够执行实时编码的频道。
@@ -81,7 +81,7 @@
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -101,7 +101,7 @@
  
 ##<a id="create-a-channel"></a>创建频道
 
-1.	在 [Azure 管理门户](http://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名。
+1.	在 [Azure 经典管理门户](http://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2.	选择“频道”页。
 3.	选择“添加+”以添加新频道。
 

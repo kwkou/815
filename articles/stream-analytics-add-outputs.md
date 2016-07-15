@@ -21,7 +21,7 @@ Azure 流分析作业可以连接到一个或多个数据输出，这些数据�
 
 若要向你的流分析作业添加输出：
 
-1. 在 Azure 门户中，单击“输出”，然后在流分析作业中单击“添加输出”。
+1. 在 Azure 经典管理门户中，单击“输出”，然后在流分析作业中单击“添加输出”。
 
     ![添加输出](./media/stream-analytics-add-outputs/1-stream-analytics-add-outputs.png)
 

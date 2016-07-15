@@ -1,7 +1,6 @@
+<!-- Remove App Service Plan -->
 资源|免费|共享（预览）|基本|标准
 ---|---|---|---|---|---
-每个 [App Service 计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)的 [Web 应用](/home/features/web-site/)数<sup>1</sup>|10|100|无限制<sup>2</sup>|无限制<sup>2</sup>
-[App Service 计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)|每个区域 1 个|每个资源组 10 个|每个资源组 10 个|每个资源组 10 个
 计算实例类型|共享|共享|专用<sup>3</sup>|专用<sup>3</sup>
 [横向扩展](/documentation/articles/web-sites-scale/)（最大实例数）|1 个共享|1 个共享|3 个专用<sup>3</sup>|10 个专用<sup>3</sup>
 存储<sup>5</sup>|1 GB<sup>5</sup>|1 GB<sup>5</sup>|10 GB<sup>5</sup>|50 GB<sup>5</sup>

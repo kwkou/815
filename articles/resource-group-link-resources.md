@@ -1,30 +1,42 @@
 <properties 
-	pageTitle="Azure 资源管理器中的链接资源" 
-	description="在 Azure 资源管理器的不同资源组中的各个资源之间创建链接。" 
+	pageTitle="Azure Resource Manager 中的链接资源 | Azure" 
+	description="在 Azure Resource Manager 的不同资源组中的相关资源之间创建链接。" 
 	services="azure-resource-manager" 
 	documentationCenter="" 
 	authors="tfitzmac" 
-	manager="wpickett" 
-	editor=""/>
+	manager="timlt" 
+	editor="tysonn"/>
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="01/26/2016" 
-	wacn.date="03/21/2016"/>
+	ms.date="05/16/2016" 
+	wacn.date="07/11/2016"/>
 
-# Azure 资源管理器中的链接资源
+# Azure Resource Manager 中的链接资源
 
-部署后，您可能想要查询资源之间的关系或链接。依赖关系会通知部署，但其生命周期会在部署时结束。部署完成后，依赖资源之间没有任何标识关系。
+在部署期间，你可以将一个资源标记为依赖于另一个资源，但该生命周期在部署时结束。部署后，依赖资源之间没有任何标识关系。Resource Manager 提供了一个称为资源链接的功能来建立资源之间的永久关系。
 
-相反，Azure 资源管理器提供了一个称为资源链接的新功能来建立和查询资源之间的关系。您可以确定哪些资源将链接到某个资源或哪些资源将链接自某个资源。
+通过资源链接，可以记录跨资源组的关系。例如，将数据库的生命周期驻留在一个资源组中，将应用程序的不同于前者的生命周期驻留在另一个资源组中是一种常见现象。应用将连接到数据库，因此你需要在应用和数据库之间标记链接。
 
-资源链接的范围可以是订阅、资源组或特定的资源。这意味着资源链接可以记录跨资源组的关系。当您开始将您的解决方案分解为多个模板和多个资源组时，使用某种机制来标识这些资源链接经证明是非常有用的。例如，将数据库的生命周期驻留在一个资源组中，将应用程序的不同于前者的生命周期驻留在另一个资源组中是一种常见现象。该应用程序连接到数据库时，就会在不同的资源组中的各个资源之间建立链接。
-
-所有链接资源必须属于同一订阅。每个资源可以链接到 50 个其他资源。如果删除或移动任何链接资源，链接所有者必须清理剩余的链接。
+所有链接资源必须属于同一订阅。每个资源可以链接到 50 个其他资源。查询相关资源的唯一方法是通过 REST API。如果删除或移动任何链接资源，链接所有者必须清理剩余的链接。删除链接到其他资源的资源时，你**不会**收到警告。
 
 ## 模板中的链接
 
-若要在模板中的资源之间定义链接，请参阅[资源链接 - 模板架构](/documentation/articles/resource-manager-template-links/)。
+若要在模板中定义链接，请包括将源资源的资源提供程序命名空间和类型与 **/providers/links** 组合在一起的资源类型。该名称必须包含源资源的名称。你提供目标资源的资源 ID。下面的示例将在网站与存储帐户之间建立链接。
+
+    {
+      "type": "Microsoft.Web/sites/providers/links",
+      "apiVersion": "2015-01-01",
+      "name": "[concat(variables('siteName'),'/Microsoft.Resources/SiteToStorage')]",
+      "dependsOn": [ "[variables('siteName')]" ],
+      "properties": {
+        "targetId": "[resourceId('Microsoft.Storage/storageAccounts','storagecontoso')]",
+        "notes": "This web site uses the storage account to store user information."
+      }
+    }
+
+
+有关模板格式的完整说明，请参阅[资源链接 - 模板架构](/documentation/articles/resource-manager-template-links)。
 
 ## 使用 REST API 进行链接
 
@@ -46,6 +58,10 @@
 
 Properties 元素包含第二个资源的标识符。
 
+可以使用以下命令在订阅中查询链接：
+
+    https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.Resources/links?api-version={api-version}
+
 有关更多示例，包括如何检索有关链接的信息，请参阅[链接资源](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx)。
 
 ## 后续步骤
@@ -53,4 +69,4 @@ Properties 元素包含第二个资源的标识符。
 - 您还可以使用标记来组织您的资源。若要了解有关标记资源的信息，请参阅[使用标记来组织你的资源](/documentation/articles/resource-group-using-tags/)。
 - 有关如何创建模板并定义要部署的资源的说明，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0704_2016-->

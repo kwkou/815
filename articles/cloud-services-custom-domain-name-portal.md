@@ -1,6 +1,6 @@
 <properties
 	pageTitle="在云服务中配置自定义域名 | Azure"
-	description="了解如何通过配置 DNS 设置在自定义域上向 Internet 公开你的 Azure 应用程序或数据。这些示例使用 Azure 门户。"
+	description="了解如何通过配置 DNS 设置在自定义域上向 Internet 公开你的 Azure 应用程序或数据。这些示例使用 Azure 门户预览。"
 	services="cloud-services"
 	documentationCenter=".net"
 	authors="Thraka"
@@ -15,8 +15,8 @@
 # 为 Azure 云服务配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-custom-domain-name-portal/)
-- [Azure 管理门户](/documentation/articles/cloud-services-custom-domain-name/)
+- [Azure 门户预览](/documentation/articles/cloud-services-custom-domain-name-portal/)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-custom-domain-name/)
 
 创建云服务时，Azure 会将其分配给 **chinacloudapp.cn** 的子域。例如，如果你的云服务名为"contoso"，你的用户将能够访问类似 http://contoso.chinacloudapp.cn 的 URL 上的应用程序。Azure 还会将分配一个虚拟 IP 地址。
 
@@ -59,7 +59,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 
 1. 使用下列方法之一找到分配给你的云服务的 **.chinacloudapp.cn** 域名。
 
-    * 登录到 [Azure 门户]，选择你的云服务，查看“概要”部分，然后找到“站点 URL”条目。
+    * 登录到 [Azure 门户预览]，选择你的云服务，查看“概要”部分，然后找到“站点 URL”条目。
 
         ![显示站点 URL 的速览部分][csurl]
             
@@ -99,7 +99,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 
 1. 使用以下方法之一来获取您的云服务的 IP 地址。
 
-    * 登录到 [Azure 门户]，选择你的云服务，查看“概要”部分，然后找到“公共 IP 地址”条目。
+    * 登录到 [Azure 门户预览]，选择你的云服务，查看“概要”部分，然后找到“公共 IP 地址”条目。
 
         ![显示 VIP 的速览部分][vip]
 
@@ -148,7 +148,7 @@ Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保�
 [Expose Your Data on a Custom Domain]: #access-data
 [VIP swaps]: /documentation/articles/cloud-services-how-to-manage-portal/#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 [Create a CNAME record that associates the subdomain with the storage account]: #create-cname
-[Azure 门户]: https://portal.azure.cn
+[Azure 门户预览]: https://portal.azure.cn
 [vip]: ./media/cloud-services-custom-domain-name-portal/csvip.png
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
  

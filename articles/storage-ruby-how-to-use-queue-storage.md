@@ -54,7 +54,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 获取这些值：
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 导航到要使用的存储帐户
 3. 单击导航窗格底部的“管理访问密钥”。
 4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，您可以使用主访问密钥，也可以使用辅助访问密钥。 

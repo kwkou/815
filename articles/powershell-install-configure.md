@@ -20,7 +20,7 @@
 - [Azure CLI](/documentation/articles/xplat-cli-install/)
 
 ##什么是 Azure PowerShell？
-Azure PowerShell 是一组模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务，例如，创建和配置云服务、虚拟机、虚拟网络和 Web 应用。
+Azure PowerShell 是一组模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 经典管理门户中可以执行的任务，例如，创建和配置云服务、虚拟机、虚拟网络和 Web 应用。
 
 <a id="Install"></a>
 ## 步骤 1：安装
@@ -133,15 +133,15 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 > [AZURE.NOTE] 这种非交互式登录方法仅适用于工作或学校帐户。工作或学校帐户是由你的公司或学校所管理的用户，并在你公司或学校的 Azure Active Directory 实例中定义。如果你当前没有工作或学校帐户，且已使用 Microsoft 帐户登录到 Azure 订阅，则你可以按照以下步骤轻松地创建一个工作或学校帐户。
 
-> 1. 登录到“Azure 管理门户”，然后单击“Active Directory”[](https://manage.windowsazure.cn)。
+> 1. 登录到“Azure 经典管理门户”，然后单击“Active Directory”[](https://manage.windowsazure.cn)。
 
 > 2. 如果目录不存在，请选择“创建目录”，并提供所请求的信息。
 
 > 3. 选择目录，并添加新用户。这个新用户可以使用工作或学校帐户登录。创建用户时，系统将为你提供用户电子邮件地址和临时密码。保存此信息，因为下面的步骤 5 将要用到。
 
-> 4. 从门户中，选择“设置”，然后选择“管理员”。选择“添加”，并将新用户添加为共同管理员。这样工作或学校帐户即可管理 Azure 订阅。
+> 4. 从门户预览中，选择“设置”，然后选择“管理员”。选择“添加”，并将新用户添加为共同管理员。这样工作或学校帐户即可管理 Azure 订阅。
 
-> 5. 最后，从 Azure 门户注销，然后使用工作或学校帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
+> 5. 最后，从 Azure 门户预览注销，然后使用工作或学校帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
 
 > 有关使用工作或学校帐户注册 Azure 的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization/)。
 

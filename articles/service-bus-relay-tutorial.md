@@ -27,7 +27,7 @@
 
 第一步是创建服务总线服务命名空间并获取共享访问签名 (SAS) 密钥。服务命名空间为每个通过服务总线公开的应用程序提供应用程序边界。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
 
-1. 若要创建服务命名空间，请访问 [Azure 管理门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
+1. 若要创建服务命名空间，请访问 [Azure 经典管理门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
 
 	>[AZURE.NOTE] 无需针对客户端和服务应用程序使用相同的命名空间。
 
@@ -828,6 +828,6 @@ namespace Microsoft.ServiceBus.Samples
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [服务总线体系结构](/documentation/articles/service-bus-architecture/)
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

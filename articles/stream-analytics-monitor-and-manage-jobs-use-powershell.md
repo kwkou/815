@@ -52,7 +52,7 @@ Azure PowerShell 1.0：
 		
 
 
-> [AZURE.NOTE] 以编程方式创建的流分析作业默认情况下并不启用监视功能。你可以在 Azure 门户中手动启用监视功能，只需导航到作业的“监视”页，然后单击“启用”按钮即可；你也可以通过编程方式来执行此操作，只需遵循 [Azure 流分析 - 以编程方式监视流分析作业](/documentation/articles/stream-analytics-monitor-jobs/)中的步骤即可
+> [AZURE.NOTE] 以编程方式创建的流分析作业默认情况下并不启用监视功能。你可以在 Azure 经典管理门户中手动启用监视功能，只需导航到作业的“监视”页，然后单击“启用”按钮即可；你也可以通过编程方式来执行此操作，只需遵循 [Azure 流分析 - 以编程方式监视流分析作业](/documentation/articles/stream-analytics-monitor-jobs/)中的步骤即可
 
 ## 适用于流分析的 Azure PowerShell cmdlet
 下面的 Azure PowerShell cmdlet 可用于监视和管理 Azure 流分析作业。请注意，Azure PowerShell 具有不同版本。**在所列示例中，第一个命令用于 Azure PowerShell 0.9.8，第二个命令用于 Azure PowerShell 1.0。** Azure PowerShell 1.0 命令将在命令中始终包含“AzureRM”。
@@ -397,7 +397,7 @@ Azure PowerShell 1.0：
 
 
 ### Stop-AzureStreamAnalyticsJob | Stop-AzureRMStreamAnalyticsJob
-以异步方式停止流分析作业在  Azure 中的运行，并取消分配所使用的资源。在订阅中，你将始终可以通过 Azure 门户和管理 API 来使用作业定义和元数据，方便你编辑和重新启动该作业。处于停止状态的作业不收费。
+以异步方式停止流分析作业在  Azure 中的运行，并取消分配所使用的资源。在订阅中，你将始终可以通过 Azure 经典管理门户和管理 API 来使用作业定义和元数据，方便你编辑和重新启动该作业。处于停止状态的作业不收费。
 
 **示例 1**
 

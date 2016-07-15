@@ -1,7 +1,7 @@
 
 本教程的最后可选步骤是在与移动服务关联的 SQL 数据库中检查和复审所存储的数据。
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击与移动服务关联的数据库对应的“管理”。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击与移动服务关联的数据库对应的“管理”。
  
 	![登录以管理 SQL 数据库](./media/mobile-services-dotnet-backend-view-sql-data/manage-sql-azure-database.png)
 

@@ -166,7 +166,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 
 4.	时区
 
-	使用 Azure [管理门户](https://manage.windowsazure.cn)创建的 Azure 虚拟机，默认的时区都是 UTC 时区。我们需要通过 Remote Desktop 或者 SSH，在操作系统中，将时区修改为 UTC+8 时区，对应北京时间。
+	使用 Azure [经典管理门户](https://manage.windowsazure.cn)创建的 Azure 虚拟机，默认的时区都是 UTC 时区。我们需要通过 Remote Desktop 或者 SSH，在操作系统中，将时区修改为 UTC+8 时区，对应北京时间。
 
 5.	Ping 命令
 

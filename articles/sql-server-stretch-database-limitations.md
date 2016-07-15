@@ -1,67 +1,81 @@
 <properties
-	pageTitle="SQL Server Stretch Database的外围应用限制与阻碍性问题 | Azure"
-	description="了解启用SQL Server Stretch Database之前必须解决的阻碍性问题。"
+	pageTitle="Stretch Database 的限制 | Azure"
+	description="了解 Stretch Database 的限制。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
 	ms.date="02/26/2016"
-	wacn.date="03/10/2016"/>
+	wacn.date="05/30/2016"/>
 
-# SQL Server Stretch Database的外围应用限制与阻碍性问题
+# Stretch Database 的限制
 
-了解启用SQL Server Stretch Database之前必须解决的阻碍性问题。
+了解已启用延伸的表的限制，以及当前会阻止你为表启用延伸的限制。
 
-## <a name="Limitations"></a>阻碍性问题
-在当前的 SQL Server 2016 预览版中，以下各项会使表不符合延伸的条件。
+##  <a name="Caveats"></a>已启用延伸的表的限制
 
-**表属性**
--   超过 1,023 列
+已启用延伸的表存在以下限制。
 
--   超过 998 个索引
+### 约束
 
--   包含 FILESTREAM 数据的表
+-   没有对包含迁移数据的 Azure 表中的 UNIQUE 约束和 PRIMARY KEY 约束强制实施唯一性。
 
--   FileTables
+### DML 操作
 
--   复制的表
+-   无法在已启用延伸的表中或者在包含已启用延伸的表的视图中更新或删除行。
 
--   正在实际使用更改跟踪或更改数据捕获的表
+-   无法将行插入链接服务器上的已启用延伸的表。
+
+### 索引
+
+-   无法为包含已启用延伸的表的视图创建索引。
+
+-   对 SQL Server 索引创建的筛选器不会传播到远程表。
+
+##  <a name="Limitations"></a>当前会阻止你为表启用延伸的限制
+
+以下各项当前会阻止你为表启用延伸。
+
+### 表属性
+
+-   列超过 1,023 个或索引超过 998 个的表
+
+-   包含 FILESTREAM 数据的 FileTables 或表
+
+-   复制的或者正在实际使用更改跟踪或更改数据捕获的表
 
 -   内存优化表
 
-**数据类型和列属性**
+### 数据类型
+
+-   text、ntext 和 image
+
 -   timestamp
 
 -   sql\_variant
 
 -   XML
 
--   geometry
+-   CLR 数据类型，包括 geometry、geography、hierarchyid 和 CLR 用户定义的类型
 
--   geography
+### 列类型
 
--   hierarchyid
-
--   CLR 用户定义的类型 (UDT)
-
-**列类型**
 -   COLUMN\_SET
 
 -   计算列
 
-**约束**
--   检查约束
+### 约束
 
--   默认约束
+-   默认约束和检查约束
 
--   引用表的外键约束
+-   引用表的外键约束。在父-子关系中（例如，Order 和 Order\_Detail），可以为子表 (Order\_Detail) 启用延伸，但不能为父表 (Order) 启用延伸。
 
-**索引**
+### 索引
+
 -   全文索引
 
 -   XML 索引
@@ -70,24 +84,12 @@
 
 -   引用表的索引视图
 
-## <a name="Caveats"></a>已启用延伸的表的限制和注意事项
-在当前的 SQL Server 2016 预览版中，已启用延伸的表存在以下限制或注意事项。
-
--   没有对已启用延伸的表中的 UNIQUE 约束和 PRIMARY KEY 约束强制实施唯一性。
-
--   无法对已启用延伸的表运行 UPDATE 或 DELETE 操作。
-
--   无法使用 INSERT 在远程 Azure SQL 数据库表中插入数据。
-
--   无法为包含已启用延伸的表的视图创建索引。
-
--   无法在包含已启用延伸的表的视图中更新或删除数据。但是，可以在包含已启用延伸的表的视图中插入数据。
-
--   对索引创建的筛选器不会传播到远程表。
-
 ## 另请参阅
-[通过运行SQL Server Stretch Database顾问识别SQL Server Stretch Database的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)
-[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database/)
-[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)
+
+[通过运行延伸数据库顾问来识别符合延伸数据库条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases/)
+
+[为数据库启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-database/)
+
+[为表启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-table/)
 
 <!---HONumber=Mooncake_0307_2016-->

@@ -103,17 +103,6 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 如果企业内部需要进行内部成本核算，例如 IT 部门、销售部门、市场部门均需要使用 Azure，并且根据不同部门的 Azure 实际使用量进行内部成本核算，就需要实现规划好三个不同的 Azure 订阅。在创建 Azure IaaS 相关资源的时候，将这些资源创建在不同的订阅下。
 
-<<<<<<< HEAD
-关于订阅相关的内容，请参考[《Azure 企业门户管理手册》](/documentation/articles/azure-ea-portal-user-manual/)
-
-<<<<<<< HEAD
-####<a name="section_5_2_6"></a> 5.2.6 选择订阅(非常重要)
-我们登陆 Azure [管理门户](https://manage.windowsazure.cn))，输入账户和密码。
-=======
->>>>>>> fc54766... Apply Sellina's update
-
-=======
->>>>>>> 567d788... Apply Sellina's update - 2
 ####<a name="section_5_2_6"></a> 3.2.6 选择订阅
 登陆 Azure [经典管理门户](https://manage.windowsazure.cn)，输入账户和密码。
 
@@ -154,7 +143,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 ####<a name="section_5_3_1"></a> 3.3.1 说明
 在创建 Azure 服务的时候，可以通过以下两种方式来创建
 
-1.	使用 Azure [管理门户](https://manage.windowsazure.cn)
+1.	使用 Azure [经典管理门户](https://manage.windowsazure.cn)
 
 	优势：
 	* (1)	可以通过用户界面的方式，创建相应的 Azure 虚拟机，方便简单。
@@ -234,15 +223,6 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 接下来的几章将详细介绍如何创建 Azure 虚拟机。
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-###<a name="section_5_4"></a> 5.4 使用 Azure 管理界面创建虚拟机
-我们登陆 Azure [管理门户](https://manage.windowsazure.cn/))，输入相应的 Azure 账户名称和密码。
-=======
->>>>>>> fc54766... Apply Sellina's update
-
-=======
->>>>>>> 567d788... Apply Sellina's update - 2
 ###<a name="section_5_4"></a> 3.4 使用 Azure 管理界面创建虚拟机
 登陆 Azure [经典管理门户](https://manage.windowsazure.cn/)，输入相应的 Azure 账户名称和密码。
 
@@ -1097,7 +1077,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 ####<a name="section_5_6_7"></a> 3.6.7 虚拟机关机
 注意：通过远程桌面连接或者是 SSH，关闭 Azure 虚拟机，是会继续收取 Azure 计算费用的。
 
-只有通过 Azure [管理门户](https://manage.windowsazure.cn)，选中相应的 Azure 虚拟机，并点击关闭按钮。如下图：
+只有通过 Azure [经典管理门户](https://manage.windowsazure.cn)，选中相应的 Azure 虚拟机，并点击关闭按钮。如下图：
 
 ![vm_manage14](./media/azure-Iaas-user-manual-part2/vm_manage14.png)
 

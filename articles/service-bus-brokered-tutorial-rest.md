@@ -23,7 +23,7 @@
 
 1. 有关如何创建服务命名空间的完整信息，请参阅[管理服务总线服务命名空间](https://msdn.microsoft.com/zh-cn/library/azure/hh690928.aspx)部分中的[如何：创建或修改服务总线服务命名空间](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx)主题。
 
-1. 在 [Azure 经典门户][] 的主窗口中，单击在上一步中创建的命名空间的名称。
+1. 在 [Azure 经典管理门户][] 的主窗口中，单击在上一步中创建的命名空间的名称。
 
 3. 单击“配置”选项卡。
 
@@ -626,6 +626,6 @@ namespace Microsoft.ServiceBus.Samples
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
 - [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial/)
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何监视存储帐户 | Azure"
-	description="了解如何使用 Azure 门户在 Azure 中监视存储帐户。"
+	description="了解如何使用 Azure 经典管理门户在 Azure 中监视存储帐户。"
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
@@ -12,22 +12,22 @@
 	ms.date="05/09/2016"
 	wacn.date="06/06/2016"/>
 
-# 监视 Azure 门户中的存储帐户
+# 监视 Azure 经典管理门户中的存储帐户
 
 ## 概述
 
-你可以从 [Azure 管理门户](https://manage.windowsazure.cn)监视你的存储帐户。在配置您的存储帐户用于通过门户进行监视时，Azure 存储空间使用[存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)跟踪帐户和日志请求数据的指标。
+你可以从 [Azure 经典管理门户](https://manage.windowsazure.cn)监视你的存储帐户。在配置您的存储帐户用于通过门户进行监视时，Azure 存储空间使用[存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)跟踪帐户和日志请求数据的指标。
 
-> [AZURE.NOTE] 在 [Azure管理门户](https://manage.windowsazure.cn)中查看监视数据会产生相关的额外费用。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">存储分析和计费</a>。<br />
+> [AZURE.NOTE] 在 [Azure经典管理门户](https://manage.windowsazure.cn)中查看监视数据会产生相关的额外费用。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">存储分析和计费</a>。<br />
 
-> Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。可以通过 [Azure 管理门户](https://manage.windowsazure.cn)为 Azure 文件存储启用指标。
+> Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。可以通过 [Azure 经典管理门户](https://manage.windowsazure.cn)为 Azure 文件存储启用指标。
 
 > 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)。
 
 
 ## 如何：为存储帐户配置监视
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
 
 2. 单击“配置”，然后向下滚动到 Blob、表和队列服务的“监视”设置。
 
@@ -51,7 +51,7 @@
 
 在您为存储帐户配置监视之前，不会收集任何监视数据，且仪表板和“监视”页上的度量值图表为空。
 
-在设置监视级别和保留策略后，你可以选择要在 [Azure 管理门户](https://manage.windowsazure.cn)中监视哪些可用指标，以及要在指标图表上显示哪些指标。将在每个监视级别显示一组默认度量值。您可以使用“添加度量值”在度量值列表中添加或删除度量值。
+在设置监视级别和保留策略后，你可以选择要在 [Azure 经典管理门户](https://manage.windowsazure.cn)中监视哪些可用指标，以及要在指标图表上显示哪些指标。将在每个监视级别显示一组默认度量值。您可以使用“添加度量值”在度量值列表中添加或删除度量值。
 
 度量值存储在存储帐户中的以下 4 个表中：$MetricsTransactionsBlob、$MetricsTransactionsTable、$MetricsTransactionsQueue 和 $MetricsCapacityBlob。有关详细信息，请参阅[关于存储分析度量值](http://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx)。
 
@@ -60,7 +60,7 @@
 
 在仪表板上，您可以从 9 个可用度量值中最多选择 6 个要显示在度量值图表上的度量值。对于每项服务（Blob、表和队列），“可用性”、“成功百分比”和“请求总数”均可供选择。对于最少监视或详细监视，仪表板上提供的度量值是相同的。
 
-1. 在 [Azure 门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
 
 2. 若要更改显示在图表上的度量值，请执行以下操作之一：
 
@@ -88,7 +88,7 @@
 ## 如何：向度量值表中添加度量值
 
 
-1. 在 [Azure 门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
 
 2. 单击“监视”。
 
@@ -109,7 +109,7 @@
 	![添加度量值滚动条](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
 
 
-5. 单击度量值旁边的向下箭头，以展开该度量值范围内所包括的操作的列表。选择要在 [Azure 管理门户](https://manage.windowsazure.cn)的度量值表中查看的每项操作。
+5. 单击度量值旁边的向下箭头，以展开该度量值范围内所包括的操作的列表。选择要在 [Azure 经典管理门户](https://manage.windowsazure.cn)的度量值表中查看的每项操作。
 
 	在下图中，“授权错误百分比”度量值已展开。
 
@@ -136,7 +136,7 @@
 
 对于您的存储帐户中提供的每项存储服务（Blob、表和队列），您可以保存“读取请求”、“写入请求”和/或“删除请求”的诊断日志，并且可以为其中每项服务设置数据保留策略。
 
-1. 在[管理门户](https://manage.windowsazure.cn)中, 单击“存储”，然后单击存储帐户名称以打开仪表板。
+1. 在[经典管理门户](https://manage.windowsazure.cn)中, 单击“存储”，然后单击存储帐户名称以打开仪表板。
 
 2. 单击“配置”，然后使用键盘上的向下箭头向下滚动到“日志记录”。
 

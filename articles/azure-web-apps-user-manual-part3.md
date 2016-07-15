@@ -78,7 +78,6 @@
 ####<a name="section_5_3_2"></a> 3.3.2 PHP 使用 Azure 存储
 在[第 1.10 节](/documentation/articles/azure-web-apps-user-manual-part1/#section_3_10)中，建议把 Web 项目文件的静态资源，比如图片、照片、视频等都保存在 Azure 存储里。
 
-
 ###<a name="section_5_4"></a> 3.4 Java 开发者必读
 ####<a name="section_5_4_1"></a> 3.4.1 Azure Web 应用 Java 运行环境基本配置
 1.	登入 Azure 的经典管理门户，创建一个测试的 website 应用 myjavasite, 如下所示：

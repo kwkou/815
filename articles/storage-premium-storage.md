@@ -42,7 +42,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 可通过两种方式使用高级存储磁盘：
 - 首先，创建新的高级存储帐户。接下来，在创建新的 DS、DSv2 VM 时选择存储配置设置中的高级存储帐户。或者，
-- 在创建新的 DS、DSv2 VM 时，在存储配置设置中创建新的高级存储帐户，或者让 Azure 门户创建默认的高级存储帐户。
+- 在创建新的 DS、DSv2 VM 时，在存储配置设置中创建新的高级存储帐户，或者让 Azure 门户预览创建默认的高级存储帐户。
 
 有关分步说明，请参阅本文后面的[快速入门](#quick-start)部分。
 
@@ -66,7 +66,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 **缓存**：DS、DSv2 系列 VM 都有独特的缓存功能，可让你获取超过基础高级存储磁盘性能的高级别吞吐量和延迟时间。可以在高级存储磁盘上将磁盘缓存策略配置为 ReadOnly、ReadWrite 或 None。所有高级数据磁盘的默认磁盘缓存策略都是 ReadOnly，而操作系统磁盘的磁盘缓存策略则是 ReadWrite。请使用正确的配置设置，以达到应用程序的最佳性能。例如，对于读取频繁或只读数据磁盘（如 SQL Server 数据文件），将磁盘缓存策略设置为“ReadOnly”。例如，对于写入频繁或只写数据磁盘（如 SQL Server 日志文件），将磁盘缓存策略设置为“None”。在 [Design for Performance with Premium Storage（使用高级存储器针对性能进行设计）](/documentation/articles/storage-premium-storage-performance/)中深入了解如何优化高级存储的设计。
 
-**分析**：若要分析使用高级存储帐户磁盘的 VM 性能，可以在 Azure 门户中启用 Azure VM 诊断。有关详细信息，请参阅 [Azure Virtual Machine Monitoring with Azure Diagnostics Extension（使用 Azure Diagnostics 扩展监视 Azure 虚拟机）](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。若要查看磁盘性能，请使用操作系统工具，例如适用于 Windows VM 的 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)和适用于 Linux VM 的 [IOSTAT](http://linux.die.net/man/1/iostat)。
+**分析**：若要分析使用高级存储帐户磁盘的 VM 性能，可以在 Azure 门户预览中启用 Azure VM 诊断。有关详细信息，请参阅 [Azure Virtual Machine Monitoring with Azure Diagnostics Extension（使用 Azure Diagnostics 扩展监视 Azure 虚拟机）](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。若要查看磁盘性能，请使用操作系统工具，例如适用于 Windows VM 的 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)和适用于 Linux VM 的 [IOSTAT](http://linux.die.net/man/1/iostat)。
 
 **VM 缩放限制和性能**：每个 DS 系列、DSv2 系列的 VM 大小都有 IOPS、带宽和每个 VM 可连接的磁盘数目的缩放限制和性能规范。使用高级存储磁盘配合 DS、DSv2 系列 VM 时，请确保 VM 上有足够的 IOPS 和带宽可用于驱动磁盘流量。
 例如，STANDARD_DS1 VM 为高级存储磁盘通信提供每秒 32 MB 的专用带宽。P10 高级存储磁盘可以提供每秒 100 MB 的带宽。附加到此 VM 的 P10 高级存储磁盘最高只能达到每秒 32 MB，而不能像 P10 磁盘那样最高达到每秒 100 MB。

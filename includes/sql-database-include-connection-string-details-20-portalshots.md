@@ -7,10 +7,10 @@ Latest Freshness check:  2015-09-02 , GeneMi.
 -->
 
 
-### 从 Azure 管理门户获取连接字符串
+### 从 Azure 经典管理门户获取连接字符串
 
 
-使用 [Azure 管理门户](http://manage.windowsazure.cn)获取客户端程序与 Azure SQL 数据库进行交互所需的连接字符串：
+使用 [Azure 经典管理门户](http://manage.windowsazure.cn)获取客户端程序与 Azure SQL 数据库进行交互所需的连接字符串：
 
 1. 单击**所有项目**>**SQL 数据库**。
   

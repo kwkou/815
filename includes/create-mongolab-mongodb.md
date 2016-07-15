@@ -4,7 +4,7 @@
 
 若要从 [Azure 应用商店]创建 MongoDB 数据库，请执行以下操作：
 
-1. 登录到 [Azure 管理门户][门户]。
+1. 登录到 [Azure 经典管理门户][门户]。
 2. 单击页面底部的"+新建"，然后选择"应用商店"。
 
 	![从应用商店选择外接程序](./media/create-mongolab-mongodb/select-store.png)

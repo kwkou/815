@@ -29,7 +29,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 <a name="Diagnosing"></a>
 ##  诊断问题
 
-如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 管理门户]中查看服务的“仪表板”选项卡。以下几点需要验证：
+如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 经典管理门户]中查看服务的“仪表板”选项卡。以下几点需要验证：
 
 - 用量计量表（包括“API 调用”和“活动设备”计量表）未超出配额
 - “终结点监视”状态指示服务处于上升阶段（仅支持服务正使用标准层以及终结点监视已启用的情况） 
@@ -57,7 +57,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 如果您已对不同数据库层有所了解，我们将探讨数据库性能指标，以帮助我们探寻在各层内部以及各层之间进行扩展的原因。
 
-1. 启动 [Azure 管理门户]。
+1. 启动 [Azure 经典管理门户]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
@@ -70,12 +70,12 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
     - *存储* 
 7. 当服务遇到问题时，检查高于时窗的指标。 
 
-    ![Azure 经典门户 - SQL 数据库度量值][PortalSqlMetrics]
+    ![Azure 经典管理门户 - SQL 数据库度量值][PortalSqlMetrics]
 
 如果指标超出了时间延长期 80% 的利用率，说明存在性能问题。有关数据库利用率的详细信息，请参阅[了解资源用量](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx#Resource)。
 
 如果指标显示数据库的利用率较高，请考虑**将数据库纵向扩展至更高的服务层**，这是缓解问题的第一步。为尽快解决问题，请考虑使用数据库的“缩放”选项卡，对数据库进行缩放。这会增加你的费用。
-![Azure 经典门户 - SQL 数据库缩放][PortalSqlScale]
+![Azure 经典管理门户 - SQL 数据库缩放][PortalSqlScale]
 
 请尽早考虑以下其他缓解步骤：
 
@@ -94,11 +94,11 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 1. 如果你希望为某数据库设置警报，导航到该数据库的“监视”选项卡
 2. 确保如上节所述显示相关指标。
 3. 选择你希望为其设置警报的指标，然后选择“添加规则”
-    ![Azure 管理门户 - SQL 警报][PortalSqlAddAlert]
+    ![Azure 经典管理门户 - SQL 警报][PortalSqlAddAlert]
 4. 提供警报名称及描述
-    ![Azure 管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
+    ![Azure 经典管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
 5. 指定用于警报阈值的值。请考虑使用 **80%**，以便有时间做出反应。此外，请务必指定你主动监控的电子邮箱地址。
-    ![Azure 管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
+    ![Azure 经典管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
 
 有关诊断 SQL 问题的详细信息，请参阅本文末尾的[高级诊断](#AdvancedDiagnosing)。
 
@@ -139,7 +139,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 若要设置 JavaScript 后端中某一列的索引，请执行以下操作：
 
-1. 在 [Azure 管理门户]中打开你的移动服务。
+1. 在 [Azure 经典管理门户]中打开你的移动服务。
 2. 单击“数据”选项卡。
 3. 选择你想要修改的表。
 4. 单击“列”选项卡。
@@ -199,16 +199,16 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 本部分介绍一些更高级的诊断任务，如果上述步骤未完全解决此问题，这些高级任务可能会有所帮助。
 
 ### 先决条件
-若要执行本部分的诊断任务，你需要访问 SQL 数据库的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 经典门户**的管理功能。
+若要执行本部分的诊断任务，你需要访问 SQL 数据库的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 经典管理门户**的管理功能。
 
-SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial/)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
+SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
 
-Azure 经典门户提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
+Azure 经典管理门户提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
 
 下列步骤向您介绍如何获取关于支持移动服务的 SQL 数据库的连接信息，以及如何使用以下两种工具进行连接。您可以挑选任意一种您喜欢的工具。
 
 #### 获取 SQL 连接信息
-1. 启动 [Azure 经典门户]。
+1. 启动 [Azure 经典管理门户]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
@@ -238,12 +238,12 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
     - 密码：*创建服务器时选择的密码*
 3. 立即连接。
 
-    ![Azure 经典门户 - SQL 数据库][PortalSqlManagement]
+    ![Azure 经典管理门户 - SQL 数据库][PortalSqlManagement]
 
 <a name="AdvancedDiagnosing" /></a>
 ###  高级诊断
 
-许多诊断任务都可直接在 **Azure 经典门户**中轻松完成，但有些高级诊断任务只能通过 **SQL Server Management Studio** 或 **SQL 数据库管理门户**来完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][]。
+许多诊断任务都可直接在 **Azure 经典管理门户**中轻松完成，但有些高级诊断任务只能通过 **SQL Server Management Studio** 或 **SQL 数据库管理门户**来完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][]。
 
 完成上一部分中的步骤以连接到 SQL Server Management Studio 中的数据库后，请在“对象资源管理器”中选择你的数据库。依次展开“视图”，“系统视图”将显示管理视图列表。若要执行以下查询，请选择“新建查询”（前面已在“对象资源管理器”中选择了数据库），然后粘贴查询并选择“执行”。
 
@@ -444,7 +444,7 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
 
 <!-- LINKS -->
 
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 
 [Azure SQL 数据库文档]: /documentation/services/sql-database/
 [Managing SQL Database using SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409

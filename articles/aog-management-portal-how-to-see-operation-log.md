@@ -1,15 +1,15 @@
 <properties 
-	pageTitle="如何通过管理服务查看在管理门户中执行的相关操作记录" 
-	description="本文介绍如何通过管理服务查看在管理门户中执行的相关操作记录" 
+	pageTitle="如何通过管理服务查看在经典管理门户中执行的相关操作记录" 
+	description="本文介绍如何通过管理服务查看在经典管理门户中执行的相关操作记录" 
 	services="management portal" 
 	documentationCenter="" 
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="na" ms.date="" wacn.date="12/18/2015"/>
+<tags ms.service="na-aog" ms.date="" wacn.date="12/18/2015"/>
 
 
-#如何通过管理服务查看在管理门户中执行的相关操作记录
+#如何通过管理服务查看在经典管理门户中执行的相关操作记录
 
 
 ###本文包含以下内容
@@ -24,13 +24,13 @@
  
 ## <a id="access"></a>如何访问日志
  
-我们有两种方式来访问我们服务的日志 ，1) 云服务仪表盘右侧“操作日志”2) Azure 门户网站“管理服务”
+我们有两种方式来访问我们服务的日志 ，1) 云服务仪表盘右侧“操作日志”2) Azure 经典管理门户网站“管理服务”
  
 ## <a id="detail"></a>详细步骤
  
-云服务提供了重启日志和在门户网站里面操作的日志，请通过以下步骤来查看详细。
+云服务提供了重启日志和在经典管理门户网站里面操作的日志，请通过以下步骤来查看详细。
 
-1. 登录Azure 门户网站，选择云服务
+1. 登录Azure 经典管理门户网站，选择云服务
 
 	![](./media/aog-management-portal-how-to-see-operation-log/choose-service.jpg)
  

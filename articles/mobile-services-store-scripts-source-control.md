@@ -89,7 +89,7 @@
 	
 	您应该会看到一系列命令，指出已将提交的内容部署到移动服务。
 
-6. 返回 [Azure 经典门户]，单击“数据”选项卡，单击“TodoItem”表，单击“脚本”，然后选择“插入”操作。可以看到，显示的插入操作脚本与您刚刚上载到存储库的 JavaScript 代码相同。
+6. 返回 [Azure 经典管理门户]，单击“数据”选项卡，单击“TodoItem”表，单击“脚本”，然后选择“插入”操作。可以看到，显示的插入操作脚本与您刚刚上载到存储库的 JavaScript 代码相同。
 
 ## <a name="use-npm"></a>在服务器脚本中利用共享代码和 Node.js 模块
 
@@ -147,7 +147,7 @@
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [移动服务入门]: /documentation/articles/mobile-services-ios-get-started/
 [在移动服务中使用服务器脚本]: /documentation/articles/mobile-services-how-to-use-server-scripts/
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [模块]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 

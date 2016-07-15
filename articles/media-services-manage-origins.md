@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="如何在媒体服务帐户中管理流式处理终结点" 
-	description="本主题说明如何使用 Azure 管理门户管理流式处理终结点。" 
+	description="本主题说明如何使用 Azure 经典管理门户管理流式处理终结点。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -27,16 +27,16 @@
 
 请注意，仅当 StreamingEndpoint 处于运行状态时才进行计费。
 
-本主题概述了流式处理终结点提供的主要功能。本主题还展示如何使用 Azure 管理门户管理流式处理终结点。
+本主题概述了流式处理终结点提供的主要功能。本主题还展示如何使用 Azure 经典管理门户管理流式处理终结点。
 
 
 ##添加和删除流式处理终结点
 
-可以使用 .NET SDK、REST API 或 Azure 管理门户添加或删除流式处理终结点。
+可以使用 .NET SDK、REST API 或 Azure 经典管理门户添加或删除流式处理终结点。
 
-若要使用 Azure 管理门户添加/删除流式处理终结点，请执行以下操作：
+若要使用 Azure 经典管理门户添加/删除流式处理终结点，请执行以下操作：
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
 2. 选择“流式处理终结点”页。
 3. 单击页底部的“添加”或“删除”按钮。请注意，不能删除默认的流式处理终结点。
 4. 单击“启动”按钮以启动流式处理终结点。
@@ -51,7 +51,7 @@
 
 流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态打包功能](/documentation/articles/media-services-dynamic-packaging-overview/)）默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
 
-可以使用 .NET SDK、REST API 或 Azure 管理门户进行缩放。
+可以使用 .NET SDK、REST API 或 Azure 经典管理门户进行缩放。
 
 若要使用门户更改流式处理单元数，请执行以下操作：
 
@@ -79,7 +79,7 @@
 
 有关这些属性的详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx)。
 
-可以使用 .NET SDK、REST API 或 Azure 管理门户配置这些属性。
+可以使用 .NET SDK、REST API 或 Azure 经典管理门户配置这些属性。
 
 若要使用门户更改流式处理单元数，请执行以下操作：
 

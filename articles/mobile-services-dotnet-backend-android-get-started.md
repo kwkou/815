@@ -61,7 +61,7 @@
 
 在本部分中，你将要创建一个连接到移动服务的新的 Android 应用程序。
 
-1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 经典管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序”。
  
@@ -80,9 +80,6 @@
 ## <a name="next-steps"></a>后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-
-* [向应用添加身份验证]
-  <br/>了解如何将后端数据的访问权限限制为应用的特定注册用户。
 
 * [移动服务 .NET 后端故障排除]
 <br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
@@ -120,6 +117,6 @@
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot/
 
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

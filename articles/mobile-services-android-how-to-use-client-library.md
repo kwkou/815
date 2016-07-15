@@ -51,7 +51,7 @@
 				"AppKey", 			// replace with the Application Key 
 				this)
 
-在上面的代码中，请将 `MobileServiceUrl` 和 `AppKey` 依次替换为移动服务 URL 和应用程序密钥。在 Azure 经典门户中选择你的移动服务，然后单击“仪表板”即可获取这两个值。
+在上面的代码中，请将 `MobileServiceUrl` 和 `AppKey` 依次替换为移动服务 URL 和应用程序密钥。在 Azure 经典管理门户中选择你的移动服务，然后单击“仪表板”即可获取这两个值。
 
 ## <a name="instantiating"></a>如何创建表引用
 
@@ -367,7 +367,7 @@
 	}
 
 
-以下代码演示了执行删除操作的另一种方法。该代码通过指定要删除的行的 ID 字段值（假设等于 "2FA404AB-E458-44CD-BC1B-3BC847EF0902"）来删除 ToDoItem 表中的现有项。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以在 Azure 经典门户中转到你的服务，单击“数据”并复制你要测试的 ID。
+以下代码演示了执行删除操作的另一种方法。该代码通过指定要删除的行的 ID 字段值（假设等于 "2FA404AB-E458-44CD-BC1B-3BC847EF0902"）来删除 ToDoItem 表中的现有项。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以在 Azure 经典管理门户中转到你的服务，单击“数据”并复制你要测试的 ID。
 
     public void deleteItem(View view) {
 
@@ -392,7 +392,7 @@
     }
 
 ##<a name="lookup"></a>如何查找特定的项
-有时，你需要按 *id* 查找特定的项，这一点不像查询，因为查询通常会返回满足某些条件的项集合。以下代码演示了如何执行此作业，此处假设 *id* 值为 `0380BAFB-BCFF-443C-B7D5-30199F730335`。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以在 Azure 经典门户中转到你的服务，单击“数据”选项卡并复制你要测试的 ID。
+有时，你需要按 *id* 查找特定的项，这一点不像查询，因为查询通常会返回满足某些条件的项集合。以下代码演示了如何执行此作业，此处假设 *id* 值为 `0380BAFB-BCFF-443C-B7D5-30199F730335`。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以在 Azure 经典管理门户中转到你的服务，单击“数据”选项卡并复制你要测试的 ID。
 
     /**
      * Lookup specific item from table and UI
@@ -672,7 +672,7 @@
 
 你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。还可以使用已经过身份验证的用户的 ID 来修改请求。
 
-前两个任务可使用 [Azure 管理门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
+前两个任务可使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
 
 ### <a name="caching"></a>如何向应用程序添加身份验证代码
 

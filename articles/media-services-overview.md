@@ -31,7 +31,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 	- [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php)， 
 	- [适用于 Node.js 的 Azure 媒体服务](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js)（这是 Node.js SDK 的非 Microsoft 版本。它由社区维护，当前未包括所有的 AMS API）。 
 - 现有工具： 
-	- [Azure 经典门户](http://manage.windowsazure.cn/) 
+	- [Azure 经典管理门户](http://manage.windowsazure.cn/) 
 	- [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer)（Azure 媒体服务资源管理器 (AMSE) 是适用于 Windows 的 Winforms/C# 应用程序）
 
 ##先决条件
@@ -39,7 +39,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 若要开始使用 Azure 媒体服务，你应该具备以下条件：
  
 3. 一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
-2. Azure 媒体服务帐户。使用 Azure 管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
+2. Azure 媒体服务帐户。使用 Azure 经典管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use/)。 
 
 	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect_programmatically/)。

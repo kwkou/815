@@ -194,7 +194,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 3. 查看远程 TodoItem 表的内容。验证新项是否未同步到服务器。
 
-   - 对于 JavaScript 后端，请转到 [Azure 管理门户](http://manage.windowsazure.cn)，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
+   - 对于 JavaScript 后端，请转到 [Azure 经典管理门户](http://manage.windowsazure.cn)，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
    - 对于 .NET 后端，请使用 SQL 工具（如 SQL Server Management Studio）或 REST 客户端（如 Fiddler 或 Postman）查看表内容。
 
 4. 在 iOS 模拟器中打开 Wi-Fi。接下来，通过拉下项列表来执行刷新手势。你将看到旋转进度条和“正在同步...”文字。

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何通过 PHP 使用 Blob 存储 | Azure"
-	description="了解如何使用 Azure Blob 服务上载、列出、下载和删除 Blob。通过 PHP 编写代码示例。"
+	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
 	documentationCenter="php"
 	services="storage"
 	authors="tfitzmac"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/08/2016"
-	wacn.date="05/23/2016"/>
+    ms.date="04/29/2016"
+	wacn.date="06/13/2016"/>
 
 # 如何通过 PHP 使用 Blob 存储
 
@@ -301,5 +301,4 @@
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0606_2016-->

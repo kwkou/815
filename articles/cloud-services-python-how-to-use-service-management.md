@@ -17,10 +17,10 @@
 
 # 如何从 Python 使用服务管理
 
-本指南说明如何以编程方式从 Python 执行常见服务管理任务。[Azure SDK for Python][download-SDK-Python] 中的 **ServiceManagementService** 类支持以编程方式访问[管理门户][management-portal]中提供的众多与服务管理相关的功能（例如**创建、更新和删除云服务、部署、数据管理服务和虚拟机**）。此功能可用于构建需要以编程方式访问服务管理的应用程序。
+本指南说明如何以编程方式从 Python 执行常见服务管理任务。[Azure SDK for Python][download-SDK-Python] 中的 **ServiceManagementService** 类支持以编程方式访问[经典管理门户][management-portal]中提供的众多与服务管理相关的功能（例如**创建、更新和删除云服务、部署、数据管理服务和虚拟机**）。此功能可用于构建需要以编程方式访问服务管理的应用程序。
 
 ## <a name="WhatIs"> </a>什么是服务管理？
-利用服务管理 API，可以编程方式访问通过[管理门户][management-portal]提供的众多服务管理功能。Azure SDK for Python 允许你管理云服务和存储帐户。
+利用服务管理 API，可以编程方式访问通过[经典管理门户][management-portal]提供的众多服务管理功能。Azure SDK for Python 允许你管理云服务和存储帐户。
 
 若要使用服务管理 API，你需要[创建 Azure 帐户](/pricing/1rmb-trial/)。
 
@@ -28,7 +28,7 @@
 Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后者是一种 REST API。所有 API 操作都是通过 SSL 执行的，并且使用 X.509 v3 证书互相进行身份验证。可以从在 Azure 中运行的服务访问管理服务，或直接通过 Internet 从可发送 HTTPS 请求和接收 HTTPS 响应的任意应用程序访问管理服务。
 
 ## <a name="Connect"> </a>如何：连接到服务管理
-若要连接到服务管理终结点，你需要 Azure 订阅 ID 和有效管理证书。你可以通过[管理门户][management-portal]获取订阅 ID。
+若要连接到服务管理终结点，你需要 Azure 订阅 ID 和有效管理证书。你可以通过[经典管理门户][management-portal]获取订阅 ID。
 
 > [AZURE.NOTE]从 Azure SDK for Python v0.8.0 开始，在 Windows 上运行时，可以使用通过 OpenSSL 创建的证书。这需要 Python 2.7.4 版或更高版本。我们建议用户使用 OpenSSL 而不是 .pfx，因为将来可能会取消对 .pfx 证书的支持。
 
@@ -43,7 +43,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
 有关 Azure 证书的详细信息，请参阅[在 Azure 中管理证书](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg981929.aspx)。有关 OpenSSL 参数的完整说明，请参阅 [http://www.openssl.org/docs/apps/openssl.html](http://www.openssl.org/docs/apps/openssl.html) 上的文档。
 
-在创建这些文件之后，你将需要通过[管理门户][management-portal]的“设置”选项卡的“上载”部分将 `.cer` 文件上载到 Azure，并且你将需要记下 `.pem` 文件的保存位置。
+在创建这些文件之后，你将需要通过[经典管理门户][management-portal]的“设置”选项卡的“上载”部分将 `.cer` 文件上载到 Azure，并且你将需要记下 `.pem` 文件的保存位置。
 
 在你获取订阅 ID，创建证书并将 `.cer` 文件上载到 Azure 之后，你可以通过将订阅 ID 和 `.pem` 文件的路径传递给 **ServiceManagementService** 来连接到 Azure 管理终结点：
 
@@ -65,7 +65,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
 该命令将创建 `.cer` 文件，然后将该文件安装到“个人”证书存储区中。有关详细信息，请参阅[创建并上载 Azure 管理证书](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg551722.aspx)。
 
-在你创建了证书后，需要通过[管理门户][management-portal]的“设置”选项卡的“上载”操作，将 `.cer` 文件上载到 Azure。
+在你创建了证书后，需要通过[经典管理门户][management-portal]的“设置”选项卡的“上载”操作，将 `.cer` 文件上载到 Azure。
 
 在你获取了订阅 ID、创建了证书并且将 `.cer` 文件上载到 Azure 后，可以通过将订阅 ID 以及你的“个人”证书存储区中的证书位置传递到 **ServiceManagementService**（此外，用你的证书名称替代 *AzureCertificate*），连接到 Azure 管理终结点：
 

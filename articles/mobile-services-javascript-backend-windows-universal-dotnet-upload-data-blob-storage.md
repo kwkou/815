@@ -34,7 +34,7 @@
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先[完成移动服务入门]。
 
-##在 Azure 经典门户中更新已注册的插入脚本
+##在 Azure 经典管理门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 

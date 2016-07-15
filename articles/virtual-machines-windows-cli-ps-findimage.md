@@ -22,14 +22,10 @@
 
 | PublisherName | 产品 | SKU |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
-| MicrosoftSharePoint              | MicrosoftSharePointServer                  | 2013                             |
-| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-DW      |
-| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-OLTP    |
 | MicrosoftWindowsServer           | WindowsServer                              | 2012-Datacenter               |
 | MicrosoftWindowsServer           | WindowsServer                              | 2012-R2-Datacenter |
 | MicrosoftWindowsServer           | WindowsServer                              | 2008-R2-SP1 |
 | MicrosoftWindowsServer           | WindowsServer                              | Windows-Server-Technical-Preview |
-| MicrosoftWindowsServerEssentials | WindowsServerEssentials                    | WindowsServerEssentials          |
 | MicrosoftWindowsServerHPCPack    | WindowsServerHPCPack                       | 2012R2                           |
 
 

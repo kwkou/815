@@ -38,9 +38,9 @@ SendGrid 是一项[基于云的电子邮件服务]，该服务提供了可靠的
 
 ## <a name="add-script"></a>注册发送电子邮件的新脚本
 
-1. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的移动服务。
+1. 登录到 [Azure 经典管理门户]，单击“移动服务”，然后单击你的移动服务。
 
-2. 在 Azure 经典门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+2. 在 Azure 经典管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
 
 	![][1]
 
@@ -131,7 +131,7 @@ SendGrid 是一项[基于云的电子邮件服务]，该服务提供了可靠的
 [完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [sign up page]: https://sendgrid.com/windowsazure.html
 [Multiple User Credentials page]: https://sendgrid.com/credentials
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [基于云的电子邮件服务]: https://sendgrid.com/email-solutions
 [事务性电子邮件传递]: https://sendgrid.com/transactional-email
 

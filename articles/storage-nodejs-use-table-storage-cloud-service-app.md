@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/09/2016" 
-	wacn.date="03/24/2016"/>
+	ms.date="05/04/2016" 
+	wacn.date="05/31/2016"/>
 
 # 使用存储构建 Node.js Web 应用程序
 
@@ -91,7 +91,7 @@
 
 ##在 Node 应用程序中使用表服务
 
-在本节中，你将通过添加一个包含你的任务模型的 **task.js** 文件来扩展 **express** 命令创建的基本应用程序。你还将修改现有 **app.js** 并创建使用该模型的新 **tasklist.js** 文件。
+在本节中，你将通过添加一个包含你的任务模型的 **task.js** 文件来扩展 **express** 命令创建的基本应用程序。你还将修改现有 **app.js** 并创建使用该模型的新** tasklist.js** 文件。
 
 ### 创建模型
 
@@ -310,7 +310,7 @@
 
 ### 修改全局布局
 
-**views** 目录中的 **layout.jade** 文件用作其他 .**jade** 文件的全局模板。在此步骤中，你将对其进行修改以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观 Web 应用的工具包）。
+**views** 目录中的 **layout.jade** 文件用作其他 .**jade** 文件的全局模板。在此步骤中，你将对其进行修改以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观网站的工具包）。
 
 1. 下载并提取 [Twitter Bootstrap](http://getbootstrap.com) 的文件。将 **bootstrap.min.css** 文件从 **bootstrap\\dist\\css** 文件夹复制到你的 tasklist 应用程序的 **public\\stylesheets** 目录中。
 
@@ -398,4 +398,4 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [Node.js Web 应用程序]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
  
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0523_2016-->

@@ -16,7 +16,7 @@
 
 使用 Azure 资源管理器可以确保组织中的用户拥有用于管理或访问资源的适当权限。资源管理器利用基于角色的访问控制 (RBAC)，因此，你可以轻松地向各个资源或资源组应用安全策略。例如，可以授予用户访问订阅中特定虚拟机的权限，允许用户管理订阅中的所有 Web 应用，但但不允许管理其他资源。
 
-本主题重点介绍用于分配角色和权限的命令。有关基于角色的访问控制的概述，请参阅 [Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
+
 
 ## 概念
 
@@ -259,7 +259,7 @@
 
 ## 后续步骤
 
-- 若要了解有关使用服务主体管理订阅中的应用程序的访问权限的详细信息，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)和[使用 Azure 经典门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal/)。
+- 若要了解有关使用服务主体管理订阅中的应用程序的访问权限的详细信息，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)和[使用 Azure 经典管理门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal/)。
 - 若要了解有关组织中的审核操作的详细信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)。
 
  

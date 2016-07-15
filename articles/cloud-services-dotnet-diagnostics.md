@@ -123,7 +123,7 @@
 4.	在“创建云服务和存储帐户”对话框中输入一个名称（例如“WadExample”），然后选择区域或地缘组。
 5.	将“环境”设置为“过渡”。
 6.	适当地修改任何其他设置，然后单击“发布”。
-7.	完成部署后，在 Azure 管理门户中验证你的云服务是否处于“正在运行”状态。
+7.	完成部署后，在 Azure 经典管理门户中验证你的云服务是否处于“正在运行”状态。
 
 ### 步骤 4：创建 Diagnostics 配置文件并安装扩展
 1.	通过执行以下 PowerShell 命令来下载公共配置文件架构定义：2.(Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd'

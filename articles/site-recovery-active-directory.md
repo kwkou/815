@@ -66,11 +66,9 @@
 
 ###站点到 Azure 的保护
 
-
 遵照说明[在 Azure 虚拟网络中创建域控制器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)。将服务器提升为域控制器角色时，请指定主站点中使用的同一域名。
 
 然后，[重新配置虚拟网络的 DNS 服务器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/#reconfigure-dns-server-for-the-virtual-network)，以便在 Azure 中使用 DNS 服务器。
-
   
 ![Azure 网络](./media/site-recovery-active-directory/azure-network.png)
 

@@ -46,7 +46,7 @@
 ## 代码示例
 [此处](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages)提供了此应用的已完成客户端源代码部分。若要运行此代码，你必须先完成本教程的移动服务后端部分。
 
-## 在 Azure 管理门户中更新已注册的插入脚本
+## 在 Azure 经典管理门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -365,7 +365,7 @@
 
 4. 按“上载”。注意 ToDoItem 如何像往常一样已添加到列表中。
 
-5. 在 Azure 经典门户中，转到你的存储帐户，按“容器”选项卡，然后在列表中按你的容器的名称。
+5. 在 Azure 经典管理门户中，转到你的存储帐户，按“容器”选项卡，然后在列表中按你的容器的名称。
 
 6. 此时将显示已上载的 blob 文件列表。选择其中一个，然后按“下载”。
 

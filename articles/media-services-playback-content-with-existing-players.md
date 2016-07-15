@@ -19,9 +19,9 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 >[AZURE.NOTE]若要播放动态打包或动态加密的内容，请确保获取你计划从中传送内容的流式处理终结点的至少一个流式处理单元。有关缩放流式处理单元的信息，请参阅：[如何缩放流式处理单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
-###Azure 管理门户媒体服务内容播放器
+###Azure 经典管理门户媒体服务内容播放器
 
-**Azure 管理门户**提供了可用于测试视频的内容播放器。
+**Azure 经典管理门户**提供了可用于测试视频的内容播放器。
 
 单击所需的视频（确保它已[发布](/documentation/articles/media-services-manage-content/#publish)），然后单击门户底部的“播放”按钮。
  

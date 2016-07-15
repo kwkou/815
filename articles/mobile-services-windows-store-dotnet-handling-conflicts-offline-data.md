@@ -58,7 +58,7 @@
 
 现在可以针对移动服务测试应用程序了。
 
-1. 在 [Azure 管理门户]中，通过单击“仪表板”选项卡的命令栏上的“管理密钥”找到移动服务的应用程序密钥。复制“应用程序密钥”。
+1. 在 [Azure 经典管理门户]中，通过单击“仪表板”选项卡的命令栏上的“管理密钥”找到移动服务的应用程序密钥。复制“应用程序密钥”。
 
 2. 在 Visual Studio 的解决方案资源管理器中，打开客户端示例项目中的 App.xaml.cs 文件。更改 **MobileServiceClient** 的初始化以使用你的移动服务 URL 和应用程序密钥：
 
@@ -153,7 +153,7 @@
 [脱机数据入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/
 [脱机数据处理入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app
 [移动服务示例 GitHub 存储库]: http://go.microsoft.com/fwlink/?LinkId=512865
 [Todo 脱机移动服务示例]: http://go.microsoft.com/fwlink/?LinkId=512866

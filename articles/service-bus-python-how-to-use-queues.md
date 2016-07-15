@@ -40,7 +40,7 @@ bus_service = ServiceBusService(
 	shared_access_key_value='sharedaccesskey')
 ```
 
-SAS 密钥名称和值可以在 [Azure 经典门户][]连接信息中找到，也可以在服务器资源管理器中选择服务总线命名空间后，在 Visual Studio “属性”窗格中找到（如前一部分中所示）。
+SAS 密钥名称和值可以在 [Azure 经典管理门户][]连接信息中找到，也可以在服务器资源管理器中选择服务总线命名空间后，在 Visual Studio “属性”窗格中找到（如前一部分中所示）。
 
 ```
 bus_service.create_queue('taskqueue')
@@ -105,7 +105,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 -   请参阅[队列、主题和订阅][]。
 
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 [Python Azure 包]: https://pypi.python.org/pypi/azure
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [服务总线配额]: /documentation/articles/service-bus-quotas/

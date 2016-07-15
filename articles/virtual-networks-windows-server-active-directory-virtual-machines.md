@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="04/07/2016" 
-	wacn.date="06/21/2016"/>
+	wacn.date="07/04/2016"/>
 
 
 # Azure VM 上的 Windows Server Active Directory
@@ -38,4 +38,4 @@
 
 
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0620_2016-->

@@ -56,7 +56,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ###如何使用基于角色的访问控制 (RBAC) 来保护存储帐户
 
-让我们讨论 RBAC 是什么及其用法。每个 Azure 订阅都有一个 Azure Active Directory。可以为来自该目录的用户、组和应用程序授予访问权限，以便在使用 Resource Manager 部署模型的 Azure 订阅中管理资源。这称为基于角色的访问控制 (RBAC)。若要管理此访问权限，可以使用 [Azure 管理门户](https://manage.windowsazure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install/)、[PowerShell](/documentation/articles/powershell-install-configure/) 或 [Azure 存储空间资源提供程序 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)。
+让我们讨论 RBAC 是什么及其用法。每个 Azure 订阅都有一个 Azure Active Directory。可以为来自该目录的用户、组和应用程序授予访问权限，以便在使用 Resource Manager 部署模型的 Azure 订阅中管理资源。这称为基于角色的访问控制 (RBAC)。若要管理此访问权限，可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install/)、[PowerShell](/documentation/articles/powershell-install-configure/) 或 [Azure 存储空间资源提供程序 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)。
 
 使用 Resource Manager 模型可以将存储帐户放在资源组中，并使用 Azure Active Directory 来控制对该特定存储帐户的管理平面的访问。例如，你可以授权特定用户访问存储帐户密钥，而其他用户可以查看有关存储帐户的信息，但无法访问存储帐户密钥。
 
@@ -134,7 +134,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 存储帐户密钥是由 Azure 创建的 512 位字符串，配合存储帐户名称用于访问存储于存储帐户中的数据对象，例如，Blob、表中的实体、队列消息，以及 Azure 文件共享中的文件。控制对存储帐户密钥的访问就能控制对该存储帐户的数据平面的访问。
 
-每个存储帐户在 [Azure 管理门户](http://manage.windowsazure.cn/)和 PowerShell cmdlet 中有两个称为“密钥 1”和“密钥 2”的密钥。可以使用多种方法之一手动重新生成密钥，包括（但不限于）使用 [Azure 管理门户](https://manage.windowsazure.cn/)、PowerShell、Azure CLI，或以编程方式使用 .NET 存储客户端库或 Azure 存储空间服务 REST API。
+每个存储帐户在 [Azure 经典管理门户](http://manage.windowsazure.cn/)和 PowerShell cmdlet 中有两个称为“密钥 1”和“密钥 2”的密钥。可以使用多种方法之一手动重新生成密钥，包括（但不限于）使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)、PowerShell、Azure CLI，或以编程方式使用 .NET 存储客户端库或 Azure 存储空间服务 REST API。
 
 有许多原因会导致重新生成存储帐户密钥。
 
@@ -150,11 +150,11 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 重新生成密钥之前，先确保拥有依赖于存储帐户的所有应用程序列表，以及在 Azure 中使用的所有其他服务。例如，如果你的 Azure 媒体服务依赖于存储帐户，则必须在重新生成密钥后将访问密钥与媒体服务重新同步。如果你使用存储资源管理器之类的任何应用程序，也必须为这些应用程序提供新的密钥。请注意，如果 VM 的 VHD 文件存储在存储帐户中，它们将不会受到重新生成存储帐户密钥的影响。
 
-可以在 Azure 管理门户中重新生成密钥。重新生成密钥之后，它们最多可能需要 10 分钟的时间跨存储服务进行同步。
+可以在 Azure 经典管理门户中重新生成密钥。重新生成密钥之后，它们最多可能需要 10 分钟的时间跨存储服务进行同步。
 
 准备就绪后，请遵循以下常规过程，其中详细描述了如何更改密钥。在本例中，假设你当前使用的是密钥 1，并想要更改所有项目以改用密钥 2。
 
-1.  重新生成密钥 2 以确保密钥的安全。可以在 Azure 管理门户中执行此操作。
+1.  重新生成密钥 2 以确保密钥的安全。可以在 Azure 经典管理门户中执行此操作。
 
 2.  在存储密钥所存储到的所有应用程序中，更改存储密钥以使用密钥 2 的新值。测试并发布应用程序。
 
@@ -202,7 +202,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 存储帐户密钥是由 Azure 创建的 512 位字符串，配合存储帐户名称用于访问存储于存储帐户中的数据对象。
 
-例如，你可以读取 Blob、写入队列、创建表，以及修改文件。其中的许多操作可以通过 Azure 管理门户或使用多种存储资源管理器应用程序中的一种来执行。你也可以编写代码来使用 REST API 或某个存储客户端库来执行这些操作。
+例如，你可以读取 Blob、写入队列、创建表，以及修改文件。其中的许多操作可以通过 Azure 经典管理门户或使用多种存储资源管理器应用程序中的一种来执行。你也可以编写代码来使用 REST API 或某个存储客户端库来执行这些操作。
 
 如同[管理平面安全性](#management-plane-security)部分中所述，对经典存储帐户的存储密钥的访问权限可以通过为 Azure 订阅提供完全访问权限来授予。使用 Azure Resource Manager 模型来访问存储帐户的存储密钥可以通过基于角色的访问控制 (RBAC) 来控制。
 
@@ -364,7 +364,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 存储服务加密是公共预览版中新增的 Azure 存储空间功能。此功能可让你请求存储服务在将数据写入 Azure 存储空间时自动加密数据。当你从 Azure 存储空间读取数据时，存储服务将在返回数据之前将其解密。这样，你就可以保护数据，而无需修改代码或将代码添加到任何应用程序。
 
-这是应用到整个存储帐户的设置。可以通过更改设置的值来启用和禁用此功能。为此，可以使用 Azure 管理门户、PowerShell、Azure CLI、存储资源提供程序 REST API 或 .NET 存储客户端库。默认情况下，存储服务加密已关闭。
+这是应用到整个存储帐户的设置。可以通过更改设置的值来启用和禁用此功能。为此，可以使用 Azure 经典管理门户、PowerShell、Azure CLI、存储资源提供程序 REST API 或 .NET 存储客户端库。默认情况下，存储服务加密已关闭。
 
 目前，用于加密的密钥由 Microsoft 管理。我们最初将生成密钥，管理密钥的安全存储，并根据 Microsoft 内部策略的定义定期轮转密钥。将来，我们会添加自我管理加密密钥的功能，并提供从 Microsoft 管理的密钥到客户管理的密钥的迁移路径。
 
@@ -472,7 +472,7 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 ####日志的外观
 
-在通过 Azure 管理门户启用存储帐户指标和日志记录之后，分析数据将开始快速累积。每个服务的日志记录与指标是分开的；只有在该存储帐户中有活动时才将写入日志，而根据设置指标的方式，将会每分钟、每小时或每天记录指标。
+在通过 Azure 经典管理门户启用存储帐户指标和日志记录之后，分析数据将开始快速累积。每个服务的日志记录与指标是分开的；只有在该存储帐户中有活动时才将写入日志，而根据设置指标的方式，将会每分钟、每小时或每天记录指标。
 
 日志将存储在存储帐户中名为 $logs 的容器的块 Blob 中。启用存储分析后，将自动创建此容器。创建此容器之后，无法将它删除，但可以删除其内容。
 
@@ -524,7 +524,7 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 	此文介绍存储分析日志格式，并详细说明其中的可用字段，包括身份验证类型（指示请求使用的身份验证类型）。
 
--   [Monitor a Storage Account in the Azure portal（在 Azure 管理门户中监视存储帐户）](/documentation/articles/storage-monitor-storage-account/)
+-   [Monitor a Storage Account in the Azure portal（在 Azure 经典管理门户中监视存储帐户）](/documentation/articles/storage-monitor-storage-account/)
 
 	此文说明如何配置和监视存储帐户的指标与日志记录。
 

@@ -42,7 +42,7 @@
 
 		azure account download
 
-这将会打开默认浏览器，并提示你登录到 Azure 经典门户。登录后，将会下载你的 `.publishsettings` 文件。请记下此文件的保存位置。
+这将会打开默认浏览器，并提示你登录到 Azure 经典管理门户。登录后，将会下载你的 `.publishsettings` 文件。请记下此文件的保存位置。
 
 接下来，通过运行以下命令导入 `.publishsettings` 文件，并将 `<path-to-settings-file>` 替换为 `.publishsettings` 文件的路径：
 
@@ -100,7 +100,7 @@
 
 		azure mobile table create <service-name> <table-name> -p read=public,delete=admin
 
-下面显示了脚本权限值与 [Azure 管理门户]中的权限值的对照表。
+下面显示了脚本权限值与 [Azure 经典管理门户]中的权限值的对照表。
 
 |脚本值|门户值|
 |------|------|
@@ -174,7 +174,7 @@
 <!-- URLs. -->
 [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/p?LinkId=262293
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 

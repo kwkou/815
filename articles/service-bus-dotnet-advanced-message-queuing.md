@@ -22,7 +22,7 @@
 
 ## 服务总线入门
 
-本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
+本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
 
 ## 下载服务总线 SDK
 
@@ -59,7 +59,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可从以�
 Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 ```
 
-其中 `[namespace]` 和 `[SAS key]` 是从 [Azure 管理门户][]获取的。有关详细信息，请参阅 [如何使用服务总线队列][]。
+其中 `[namespace]` 和 `[SAS key]` 是从 [Azure 经典管理门户][]获取的。有关详细信息，请参阅 [如何使用服务总线队列][]。
 
 在使用 AMQP 时，在连接字符串后面追加了 `;TransportType=Amqp`，以通知客户端库使用 AMQP 1.0 连接到服务总线。
 
@@ -318,7 +318,7 @@ exit
 * [如何将 Java 消息服务 (JMS) API 用于服务总线 和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/)
 * [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
  
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 [如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
 
 <!---HONumber=Mooncake_0104_2016-->

@@ -44,7 +44,7 @@
 
 ## <a id="create_ams"></a>使用门户创建媒体服务帐户
 
-1. 在 [Azure 管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在 [Azure 经典管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
    
 	![媒体服务快速创建](./media/media-services-rest-get-started/wams-QuickCreate.png)
 
@@ -1188,7 +1188,7 @@ MPEG DASH 的流 URL 采用以下格式：
 
 
 <!-- URLs. -->
-  [Azure 管理门户]: http://manage.windowsazure.cn/
+  [Azure 经典管理门户]: http://manage.windowsazure.cn/
 
 
 

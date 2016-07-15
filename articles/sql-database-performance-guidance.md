@@ -161,7 +161,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 - [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)
 - [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx)
 
->[AZURE.NOTE] 也可以使用 Azure 管理门户来查看资源使用状况。有关示例，请参阅[服务层 - 监视性能](/documentation/articles/sql-database-service-tiers/#monitoring-performance)。
+>[AZURE.NOTE] 也可以使用 Azure 经典管理门户来查看资源使用状况。有关示例，请参阅[服务层 - 监视性能](/documentation/articles/sql-database-service-tiers/#monitoring-performance)。
 
 ### 使用 sys.dm\_db\_resource\_stats
 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) 视图存在于每个 SQL 数据库中，提供了最近的相对于服务层的资源使用数据。CPU 平均百分比、数据 IO、日志写入以及内存每 15 秒记录一次，持续记录 1 小时。

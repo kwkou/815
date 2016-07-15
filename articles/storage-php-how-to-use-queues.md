@@ -377,6 +377,6 @@
 
 [下载]: /documentation/articles/php-download-sdk/
 [require_once]: http://www.php.net/manual/en/function.require-once.php
-[Azure 管理门户]: http://manage.windowsazure.cn/
+[Azure 经典管理门户]: http://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0516_2016-->

@@ -1,5 +1,5 @@
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)，单击“移动服务”，然后单击你的应用。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)，单击“移动服务”，然后单击你的应用。
 
 	![](./media/mobile-services-create-new-push-table/mobile-services-selection.png)
 

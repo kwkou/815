@@ -17,7 +17,7 @@
 
 ## 摘要
 
-本主题说明如何使用 Azure 移动服务将持久性数据添加到 Android 应用程序。在本教程中，你将要下载一个可在内存中存储数据的应用，创建一个新的移动服务，将该应用与该移动服务相集成以便在 Azure 移动服务而不是在本地存储和更新数据，然后使用 Azure 管理门户查看运行该应用时对数据所做的更改。
+本主题说明如何使用 Azure 移动服务将持久性数据添加到 Android 应用程序。在本教程中，你将要下载一个可在内存中存储数据的应用，创建一个新的移动服务，将该应用与该移动服务相集成以便在 Azure 移动服务而不是在本地存储和更新数据，然后使用 Azure 经典管理门户查看运行该应用时对数据所做的更改。
 
 
 本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/documentation/articles/mobile-services-android-get-started/)教程。
@@ -46,7 +46,7 @@
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
-## 在 Azure 管理门户中创建新的移动服务
+## 在 Azure 经典管理门户中创建新的移动服务
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
@@ -71,7 +71,7 @@
 
    	此时会将一个新项作为 insert 发送到移动服务。
 
-3. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“移动服务”，然后单击你的移动服务。
+3. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，单击“移动服务”，然后单击你的移动服务。
 
 4. 单击“数据”选项卡，然后单击“浏览”。
 
@@ -115,7 +115,7 @@
 
 <!-- URLs. -->
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Azure 移动服务 Android SDK]: http://aka.ms/Iajk6q
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125

@@ -1,6 +1,6 @@
 
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)，单击“移动服务”，然后选择你的移动服务。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)，单击“移动服务”，然后选择你的移动服务。
 
 2. 单击“API”选项卡，然后单击“创建”。这将显示“创建新的自定义 API”对话框。
 

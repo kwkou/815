@@ -138,7 +138,7 @@ Contoso 公司已经采购了 Azure 中国的服务，并且开发部门使用 V
 
 	![visual_studio13](./media/azure-web-apps-user-manual-part2/visual_studio13.png)
 
-2.	介绍一下通过 Azure [管理门户](https://manage.windowsazure.cn)，来发布 Azure Web 应用。
+2.	介绍一下通过 Azure [经典管理门户](https://manage.windowsazure.cn)，来发布 Azure Web 应用。
 
 	点击创建成功的 Azure Web 应用，如下图红色区域：
 

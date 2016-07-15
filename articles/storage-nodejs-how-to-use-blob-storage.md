@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="如何通过 Node.js 使用 Blob 存储 | Azure" 
-	description="了解如何使用 Blob 存储上载、下载、列出和删除 Blob 内容。示例用 Node.js 编写。"
+	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
 	services="storage" 
 	documentationCenter="nodejs" 
 	authors="MikeWasson" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="04/08/2016"
-	wacn.date="05/23/2016"/>
+    ms.date="04/29/2016"
+	wacn.date="06/13/2016"/>
 
 
 
@@ -63,7 +63,7 @@
 
 Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCESS_KEY` 或 `AZURE_STORAGE_CONNECTION_STRING`，以便获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 **createBlobService** 时必须指定帐户信息。
 
-有关在管理门户中为 Azure Web 应用设置环境变量的示例，请参阅[使用 Azure 表服务的 Node.js Web 应用]。
+有关在经典管理门户中为 Azure Web 应用设置环境变量的示例，请参阅[使用 Azure 表服务的 Node.js Web 应用]。
 
 ## 创建容器
 
@@ -211,7 +211,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 * **createWriteStreamToExistingPageBlob** - 向现有页 Blob 提供写入流。
 
-* **createWriteStreamToNewPageBlob** - 创建新的 blob，然后向其提供写入流。
+* **createWriteStreamToNewPageBlob** - 创建新的页 blob，然后向其提供写入流。
 
 以下代码示例将 **test.txt** 文件的内容上传到 **mypageblob** 中。
 
@@ -411,4 +411,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Node API 参考]: http://azure.github.io/azure-storage-node/
  
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0606_2016-->

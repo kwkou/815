@@ -49,9 +49,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name/)。对于 ARM 存储帐户，此功能尚未添加到 [Azure 门户预览](https://portal.azure.cn)，但你可以使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
 
-
 ## 创建存储帐户
-
 
 1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
@@ -83,9 +81,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 10. 单击“创建”以创建存储帐户。
 
-
 ## 管理存储帐户
-
 
 ### 更改帐户配置
 
@@ -95,17 +91,13 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 更改复制选项将更改你的定价。有关更多详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)页。
 
-
 对于 Blob 存储帐户，更改访问层除了会更改你的定价之外，可能还会产生更改费用。有关更多详细信息，请参阅 [Blob 存储帐户 — 定价和计费](/documentation/articles/storage-blob-storage-tiers/#pricing-and-billing)。
-
 
 ### 管理存储访问密钥
 
 当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
-
 > [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用共享访问签名。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
-
 
 #### 查看和复制存储访问密钥
 
@@ -129,7 +121,6 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 2. 为你的存储帐户重新生成主访问密钥。在“访问密钥”边栏选项卡上，单击“重新生成密钥1”，然后单击“是”以确认要生成新密钥。
 
-
 3. 更新代码中的连接字符串以引用新的主访问密钥。
 
 4. 以相同方式重新生成辅助访问密钥。
@@ -141,7 +132,6 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 > [AZURE.WARNING] 无法恢复已删除的存储帐户，也无法检索删除之前该存储帐户包含的任何内容。请在删除帐户之前务必备份你想要保存的任何内容。对于帐户中的任务资源也是如此 — 一旦你删除了一个 Blob、表、队列或文件 ，则它将被永久删除。
 
 若要删除与 Azure 虚拟机相关联的存储帐户，必须首先确保已删除所有虚拟机磁盘。如果不先删除虚拟机磁盘，则当你尝试删除存储帐户时，将看到如下错误消息：
-
 
 无法删除存储帐户 \<vm-storage-account-name\>。无法删除存储帐户 \<vm-storage-account-name\>：存储帐户 \<vm-storage-account-name\> 有一些活动映像和/或磁盘。删除此存储帐户前，请确保删除这些映像和/或磁盘。
 

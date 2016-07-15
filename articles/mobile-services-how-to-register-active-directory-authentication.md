@@ -24,11 +24,11 @@
 
 >[AZURE.NOTE]本主题中所述的步骤应在你想要对应用程序使用[服务定向的登录操作](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)时与[向移动服务应用程序添加身份验证](http://msdn.microsoft.com/zh-cn/library/azure/dn283952.aspx)教程一起使用。此外，如果你的应用程序对于 Azure Active Directory 需要[客户端定向的登录操作](http://msdn.microsoft.com/zh-cn/library/azure/jj710106.aspx)和 .NET 后端移动服务，应首先阅读[使用 Active Directory 身份验证库单一登录对应用程序进行身份验证](/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/)教程。
 
-1. 登录到 [Azure 管理门户]，导航到你的移动服务，单击“身份”选项卡，然后向下滚动到“Azure Active Directory”标识提供者部分，并复制显示的“应用 URL”。
+1. 登录到 [Azure 经典管理门户]，导航到你的移动服务，单击“身份”选项卡，然后向下滚动到“Azure Active Directory”标识提供者部分，并复制显示的“应用 URL”。
 
     ![AAD 的移动服务应用 URL](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-copy-app-url-waad-auth.png)
 
-2. 在[Azure 管理门户]中，导航到“Active Directory”，依次单击你的目录和“域”，然后记下目录的默认域。
+2. 在[Azure 经典管理门户]中，导航到“Active Directory”，依次单击你的目录和“域”，然后记下目录的默认域。
 
 3. 单击“应用程序”>“添加”。
 
@@ -61,7 +61,7 @@
 
 
 <!-- URLs. -->
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 
 
 <!---HONumber=Mooncake_0118_2016-->

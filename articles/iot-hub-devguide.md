@@ -59,7 +59,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 
 当你使用[适用于 .NET 的 Azure 服务总线 SDK](https://www.nuget.org/packages/WindowsAzure.ServiceBus) 或[事件中心 - 事件处理器主机][]时，可以将任何 IoT 中心连接字符串与正确的权限配合使用，然后使用**消息/事件**作为事件中心名称。
 
-使用无法识别 IoT 中心的 SDK（或产品集成）时，必须从 [Azure 门户][]的 IoT 中心配置中检索事件中心兼容终结点和事件中心名称：
+使用无法识别 IoT 中心的 SDK（或产品集成）时，必须从 [Azure 门户预览][]的 IoT 中心配置中检索事件中心兼容终结点和事件中心名称：
 
 1. 在 IoT 中心边栏选项卡中单击“设置”>“消息传递”。
 2. 在**设备到云的设置**部分中，你可以看到以下值：**事件中心兼容的终结点**、**事件中心兼容的名称**和**分区**。
@@ -167,7 +167,7 @@ IoT 中心使用以下一组*权限*向每个 IoT 中心的终结点授予访问
 
 可以通过以下方式授予权限：
 
-* **中心级别的共享访问策略**。共享访问策略可以授予前一部分中所列权限的任意组合。你可以在 [Azure 门户][lnk-management-portal]中定义策略，或使用 [Azure IoT 中心资源提供程序 API][lnk-resource-provider-apis] 以编程方式定义策略。新建的 IoT 中心有以下默认策略：
+* **中心级别的共享访问策略**。共享访问策略可以授予前一部分中所列权限的任意组合。你可以在 [Azure 门户预览][lnk-management-portal]中定义策略，或使用 [Azure IoT 中心资源提供程序 API][lnk-resource-provider-apis] 以编程方式定义策略。新建的 IoT 中心有以下默认策略：
 
     - **iothubowner**：包含所有权限的策略。
     - **service**：包含 ServiceConnect 权限的策略。
@@ -341,7 +341,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 此外，类似于事件中心，IoT 中心也可让你管理设备到云接收终结点上的“使用者组”。
 
-可以通过 [Azure IoT 中心 - 资源提供程序 API][lnk-management-portal] 以编程方式修改上述所有属性，或使用 [Azure 门户][lnk-resource-provider-apis]进行修改。
+可以通过 [Azure IoT 中心 - 资源提供程序 API][lnk-management-portal] 以编程方式修改上述所有属性，或使用 [Azure 门户预览][lnk-resource-provider-apis]进行修改。
 
 #### 反欺骗属性 <a id="antispoofing"></a>
 
@@ -476,7 +476,7 @@ IoT 中心本身不中转消息，而是充当关联 Azure 存储帐户的调度
 
 #### 将 Azure 存储帐户与 IoT 中心相关联
 
-若要使用文件上传功能，必须首先将 Azure 存储帐户链接到 IoT 中心。可以通过 [Azure 门户][lnk-management-portal]实现此操作，或通过 [Azure IoT 中心 — 资源提供程序 API][lnk-resource-provider-apis] 以编程方式实现此操作。将存储帐户与 IoT 中心关联后，当设备启动文件上传请求时，此服务将向该设备返回 SAS URI。
+若要使用文件上传功能，必须首先将 Azure 存储帐户链接到 IoT 中心。可以通过 [Azure 门户预览][lnk-management-portal]实现此操作，或通过 [Azure IoT 中心 — 资源提供程序 API][lnk-resource-provider-apis] 以编程方式实现此操作。将存储帐户与 IoT 中心关联后，当设备启动文件上传请求时，此服务将向该设备返回 SAS URI。
 
 > [AZURE.NOTE] [Azure IoT 中心 SDK][lnk-apis-sdks] 自动处理检索 SAS URI、上传文件和通知 IoT 中心已完成上传。
 
@@ -573,7 +573,7 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 
 [事件中心 - 事件处理器主机]: http://blogs.msdn.com/b/servicebus/archive/2015/01/16/event-processor-host-best-practices-part-1.aspx
 
-[Azure 门户]: https://manage.windowsazure.cn
+[Azure 门户预览]: https://manage.windowsazure.cn
 
 [img-endpoints]: ./media/iot-hub-devguide/endpoints.png
 [img-lifecycle]: ./media/iot-hub-devguide/lifecycle.png

@@ -2,5 +2,5 @@
 
 如果部署之前先验证模板和基础结构，则可以避免一些错误。有关详细信息，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy/)。
 
-有关解决特定部署错误的帮助，请参阅 [Resolve common errors when deploying resources to Azure with Azure Resource Manager（解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误）](../articles/resource-manager-common-deployment-errors.md)。
-<!---HONumber=Mooncake_0523_2016-->
+有关解决特定部署错误的帮助，请参阅 [Resolve common errors when deploying resources to Azure with Azure Resource Manager（解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误）](/documentation/articles/resource-manager-common-deployment-errors)。
+<!---HONumber=Mooncake_0704_2016-->

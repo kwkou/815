@@ -14,7 +14,7 @@
 
 # 跟踪服务运行状况
 
-每次发生服务中断或性能下降时 Azure 会进行宣传。可以在 Azure 门户中浏览这些事件，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式访问完整的事件集。
+每次发生服务中断或性能下降时 Azure 会进行宣传。可以在 Azure 门户预览中浏览这些事件，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式访问完整的事件集。
 
 ## 按区域查看服务运行状况
 

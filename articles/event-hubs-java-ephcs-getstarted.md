@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="05/13/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/16/2016"
+	wacn.date="07/04/2016"/>
 
 # 事件中心入门
 
@@ -26,17 +26,15 @@
 
 若要完成本教程，你需要以下各项：
 
-+ Java 开发环境。对于本教程，我们将采用 Eclipse。
++ Java 开发环境。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
-+ Microsoft Visual Studio Express for Windows
++ [Microsoft Visual Studio](http://visualstudio.com)
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/zh-cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
 [AZURE.INCLUDE [event-hubs-create-event-hub](../includes/event-hubs-create-event-hub.md)]
 
-
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-java](../includes/service-bus-event-hubs-get-started-send-java.md)]
-
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
 
@@ -48,7 +46,7 @@
 
 	![][21]
 
-2.	运行 **Sender** 项目，在控制台窗口中按 **Enter**，然后会看到事件出现在接收方窗口中。
+2.	运行 **Sender** 项目。
 
 	![][22]
 
@@ -64,10 +62,10 @@
 
 <!-- Images. -->
 [21]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs1.png
-[22]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs2.png
+[22]: ./media/event-hubs-java-ephcs-getstarted/java-send.png
 
 <!-- Links -->
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097

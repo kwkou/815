@@ -1,6 +1,6 @@
 ﻿
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击“数据”选项卡，然后单击“Registrations”表。 
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“数据”选项卡，然后单击“Registrations”表。 
 
 	![](./media/mobile-services-update-registrations-script/mobile-portal-data-tables-registrations.png)
 

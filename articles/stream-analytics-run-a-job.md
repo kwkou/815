@@ -18,7 +18,7 @@
 
 若要启动你的作业：
 
-1.	在 Azure 门户上的作业仪表板中，单击页面底部的“启动”。
+1.	在 Azure 经典管理门户上的作业仪表板中，单击页面底部的“启动”。
 
     ![启动作业按钮](./media/stream-analytics-run-a-job/1-stream-analytics-run-a-job.png)
 

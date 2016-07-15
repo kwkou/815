@@ -24,7 +24,7 @@
 
 每个资源或资源组最多可以有 15 个标记。标记名称不能超过 512 个字符，标记值不能超过 256 个字符。
 
-> [AZURE.NOTE] 您只能将标记应用到支持资源管理器操作的资源。如果通过经典部署模型（如通过 Azure 门户或服务管理 API）创建虚拟机、虚拟网络或存储器，则无法向该资源应用标记。您必须通过资源管理器重新部署这些资源才能支持标记。所有其他资源均支持标记。
+> [AZURE.NOTE] 您只能将标记应用到支持资源管理器操作的资源。如果通过经典部署模型（如通过 Azure 门户预览或服务管理 API）创建虚拟机、虚拟网络或存储器，则无法向该资源应用标记。您必须通过资源管理器重新部署这些资源才能支持标记。所有其他资源均支持标记。
 
 ## 模板中的标记
 
@@ -254,14 +254,14 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 ## 标记和 REST API
 
-门户和 PowerShell 在幕后都使用[资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn848368.aspx)。如果需要将标记集成到另一个环境中，可以对资源 ID 使用 GET 以获取标记，并使用 PATCH 调用更新标记集。
+门户预览和 PowerShell 在幕后都使用[资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn848368.aspx)。如果需要将标记集成到另一个环境中，可以对资源 ID 使用 GET 以获取标记，并使用 PATCH 调用更新标记集。
 
 
 ## 标记和计费
 
 对于受支持的服务，您可以使用标记对计费数据进行分组。例如，[与 Azure Resource Manager 集成的虚拟机](/documentation/articles/virtual-machines-windows-compare-deployment-models/)可让你定义并应用标签来组织虚拟机的计费使用情况。如果您针对不同组织运行多个虚拟机，可以使用标记根据成本中心对使用情况进行分组。您还可以使用标记根据运行时环境对成本进行分类；例如，在生产环境中运行的虚拟机的计费使用情况。
 
-你可以从 [Azure 帐户门户](https://account.windowsazure.cn/)或 [EA 门户](https://ea.azure.com)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关以编程方式访问计费信息的详细信息，请参阅[深入了解你的 Microsoft Azure 资源消耗](/documentation/articles/billing-usage-rate-card-overview/)。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
+你可以从 [Azure 帐户门户预览](https://account.windowsazure.cn/)或 [EA 门户预览](https://ea.azure.com)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关以编程方式访问计费信息的详细信息，请参阅[深入了解你的 Microsoft Azure 资源消耗](/documentation/articles/billing-usage-rate-card-overview/)。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
 
 在你为支持标记和计费的服务下载使用情况 CSV 时，标记将显示在“标记”列中。有关更多详细信息，请参阅[了解 Azure 的计费](/documentation/articles/billing-understand-your-bill/)。
 
@@ -270,6 +270,6 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 ## 后续步骤
 
 - 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。
-<!-- - 有关使用门户的说明，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles/resource-group-portal/) -->
+<!-- - 有关使用门户预览的说明，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/) -->
 
 <!---HONumber=Mooncake_0620_2016-->

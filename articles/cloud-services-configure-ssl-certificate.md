@@ -18,7 +18,7 @@
 # 在 Azure 中为应用程序配置 SSL
 
 > [AZURE.SELECTOR]
-- [Azure 管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
 
@@ -81,7 +81,7 @@
     | 权限值 | 说明 |
     | ----------------  | ----------- |
     | limitedOrElevated | **（默认）**所有角色进程都可以访问该私钥。 |
-    | 提升的 | 仅提升的进程可以访问该私钥。|
+    | Elevated | 仅提升的进程可以访问该私钥。|
 
 2.  在你的服务定义文件中，在 **Endpoints** 节中添加 **InputEndpoint** 元素以启用 HTTPS：
 
@@ -131,9 +131,9 @@
 
 ## 步骤 3：上载证书
 
-已将部署包更新为使用此证书，并且已添加 HTTPS 终结点。现在你可以使用 Azure 管理门户将包和证书上载到 Azure。
+已将部署包更新为使用此证书，并且已添加 HTTPS 终结点。现在你可以使用 Azure 经典管理门户将包和证书上载到 Azure。
 
-1. 登录到 [Azure 管理门户][]。 
+1. 登录到 [Azure 经典管理门户][]。 
 2. 在左侧导航窗格中单击“云服务”。
 3. 单击所需的云服务。
 4. 单击“证书”选项卡。
@@ -150,7 +150,7 @@
 
 在 Azure 中启动并运行部署后，便可以使用 HTTPS 连接到该部署。
 
-1.  在 Azure 管理门户中选择你的部署，然后单击“站点 URL”下的链接。
+1.  在 Azure 经典管理门户中选择你的部署，然后单击“站点 URL”下的链接。
 
     ![确定网站 URL][2]
 
@@ -160,7 +160,7 @@
 
     ![SSL 示例网站][3]
 
-若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在 Azure 管理门户的“站点 URL”字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用 Azure 管理门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
+若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在 Azure 经典管理门户的“站点 URL”字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用 Azure 经典管理门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
 
 ## 后续步骤
 
@@ -170,7 +170,7 @@
 * [管理云服务](/documentation/articles/cloud-services-how-to-manage/)。
 
 
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
   [0]: ./media/cloud-services-configure-ssl-certificate/CreateCloudService.png
   [1]: ./media/cloud-services-configure-ssl-certificate/AddCertificate.png
   [2]: ./media/cloud-services-configure-ssl-certificate/CopyURL.png

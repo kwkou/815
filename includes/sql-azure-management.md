@@ -10,7 +10,7 @@
 
 连接到 SQL Database 需要您知道在 Azure 上的服务器名称。您可能需要登录到门户来获取此信息。
 
-1.  登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
+1.  登录到 [Azure 经典管理门户](http://manage.windowsazure.cn)。
 
 2.  在左窗格中，单击“SQL 数据库”。
 

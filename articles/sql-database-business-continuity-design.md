@@ -46,8 +46,7 @@
 
 > [AZURE.NOTE] 活动异地复制还支持对辅助数据库进行只读访问，因此为只读工作负荷提供了额外的容量。
 
-
-##如何选择故障转移配置
+##如何选择故障转移配置 
 
 在针对业务连续性设计应用程序时，应考虑多个配置选项。所做的选择取决于应用程序部署拓扑，以及应用程序的哪些组件最容易中断。有关指导，请参阅[使用异地复制设计云解决方案以实现灾难恢复](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)。
 

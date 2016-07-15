@@ -41,13 +41,13 @@
 
 ##编码
 
-使用 **Azure 管理门户**、**.NET** 或 **REST API** 通过 **Azure 媒体编码器**进行编码。
+使用 **Azure 经典管理门户**、**.NET** 或 **REST API** 通过 **Azure 媒体编码器**进行编码。
 
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
 ##监视作业进度
 
-使用 **Azure 管理门户**、**.NET** 或 **REST API** 监视作业进度。
+使用 **Azure 经典管理门户**、**.NET** 或 **REST API** 监视作业进度。
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../includes/media-services-selector-job-progress.md)]
 

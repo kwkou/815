@@ -32,9 +32,9 @@
 
 	- **存储日志记录**可以在服务器端日志中记录发送到 Azure 存储服务的每个请求。日志用于跟踪每个请求的详细数据，包括执行的操作、操作的状态和延迟信息。有关存储分析写入日志的请求和响应数据的详细信息，请参阅[存储分析日志格式](http://msdn.microsoft.com/zh-cn/library/azure/hh343259.aspx)。
 
-- **Azure 管理门户**。可以在[管理门户](https://manage.windowsazure.cn)中配置存储帐户的度量值和日志记录。还可以查看显示应用程序在各时间段执行情况的图表和图形，以及配置警报，以便在应用程序的特定度量值不同于预期时接收通知。
+- **Azure 经典管理门户**。可以在[经典管理门户](https://manage.windowsazure.cn)中配置存储帐户的度量值和日志记录。还可以查看显示应用程序在各时间段执行情况的图表和图形，以及配置警报，以便在应用程序的特定度量值不同于预期时接收通知。
 	
-	请参阅[监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)，了解如何在管理门户中配置监视功能。
+	请参阅[监视 Azure 经典管理门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)，了解如何在经典管理门户中配置监视功能。
 
 - **AzCopy**。Azure 存储空间的服务器日志存储为 Blob，因此你可以使用 AzCopy 将日志 Blob 复制到本地目录，以使用 Microsoft Message Analyzer 进行分析。有关 AzCopy 的详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)。
 
@@ -42,7 +42,7 @@
 
 ## 关于示例情景
 
-在本教程中，我们将介绍 Azure 存储度量值指示调用 Azure 存储空间的应用程序成功率较低的情景。低成功率度量值（在[管理门户](https://manage.windowsazure.cn)和度量值表中显示为 **PercentSuccess**）用于跟踪已经成功，但返回的 HTTP 状态代码大于 299 的操作。在服务器端存储日志文件中，这些操作将使用事务状态 **ClientOtherErrors** 进行记录。有关低成功率度量值的详细信息，请参阅[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/#metrics-show-low-percent-success)。
+在本教程中，我们将介绍 Azure 存储度量值指示调用 Azure 存储空间的应用程序成功率较低的情景。低成功率度量值（在[经典管理门户](https://manage.windowsazure.cn)和度量值表中显示为 **PercentSuccess**）用于跟踪已经成功，但返回的 HTTP 状态代码大于 299 的操作。在服务器端存储日志文件中，这些操作将使用事务状态 **ClientOtherErrors** 进行记录。有关低成功率度量值的详细信息，请参阅[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/#metrics-show-low-percent-success)。
 
 Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能的一部分。但在某些情况下，这些错误指示你可能能够优化客户端应用程序以提高性能。
 
@@ -84,15 +84,15 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 ### 配置服务器端日志记录和度量值
 
-首先，我们需要配置 Azure 存储日志记录和度量值，以便可以从客户端应用程序获取要分析的数据。可以通过不同的方式配置日志记录和度量值 - 通过 [Azure 管理门户](https://manage.windowsazure.cn)、使用 PowerShell 或以编程方式。有关配置日志记录和度量的详细信息，请参阅 MSDN 上的[启用存储度量值和查看度量值数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782843.aspx)及[启用存储日志记录和访问日志数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx)。
+首先，我们需要配置 Azure 存储日志记录和度量值，以便可以从客户端应用程序获取要分析的数据。可以通过不同的方式配置日志记录和度量值 - 通过 [Azure 经典管理门户](https://manage.windowsazure.cn)、使用 PowerShell 或以编程方式。有关配置日志记录和度量的详细信息，请参阅 MSDN 上的[启用存储度量值和查看度量值数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782843.aspx)及[启用存储日志记录和访问日志数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx)。
 
-**通过管理门户**
+**通过经典管理门户**
 
-若要使用[管理门户](https://manage.windowsazure.cn)配置存储帐户的日志记录和度量值，请遵循[监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)中的说明。
+若要使用[经典管理门户](https://manage.windowsazure.cn)配置存储帐户的日志记录和度量值，请遵循[监视 Azure 经典管理门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)中的说明。
 
-> [AZURE.NOTE] 无法使用 Azure 管理门户设置分钟度量值。但是，对于本教程，我们建议你设置分钟度量值，它还可以调查应用程序的性能问题。可以使用 PowerShell（如下所示）设置分钟度量值，也可以使用存储客户端库通过编程方式来进行。
+> [AZURE.NOTE] 无法使用 Azure 经典管理门户设置分钟度量值。但是，对于本教程，我们建议你设置分钟度量值，它还可以调查应用程序的性能问题。可以使用 PowerShell（如下所示）设置分钟度量值，也可以使用存储客户端库通过编程方式来进行。
 >
-> 请注意，Azure 管理门户无法显示分钟度量值，而只显示小时度量值。
+> 请注意，Azure 经典管理门户无法显示分钟度量值，而只显示小时度量值。
 
 **通过 PowerShell**
 
@@ -162,15 +162,15 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 有关详细信息，请参阅 Technet 上的[使用网络跟踪功能](http://technet.microsoft.com/zh-cn/library/jj674819.aspx)。
 
-## 在管理门户中查看度量值数据
+## 在经典管理门户中查看度量值数据
 
-在应用程序运行一段时间后，你可以查看 [Azure 门户](https://manage.windowsazure.cn)中显示的度量值图表，以观察服务的性能。首先，导航到你在 Azure 门户中的存储帐户，然后添加“成功百分比”度量值图表。
+在应用程序运行一段时间后，你可以查看 [Azure 经典管理门户](https://manage.windowsazure.cn)中显示的度量值图表，以观察服务的性能。首先，导航到你在 Azure 经典管理门户中的存储帐户，然后添加“成功百分比”度量值图表。
 
-现在，Azure 门户中的监视图上将会显示“成功百分比”，以及你可能添加的任何其他度量值。在此情况下，接下来我们要在 Message Analyzer 中通过分析日志进行调查，成功率百分比略低于 100%。
+现在，Azure 经典管理门户中的监视图上将会显示“成功百分比”，以及你可能添加的任何其他度量值。在此情况下，接下来我们要在 Message Analyzer 中通过分析日志进行调查，成功率百分比略低于 100%。
 
 有关将度量值添加到监视页的详细信息，请参阅[如何：向度量值表中添加度量值](/documentation/articles/storage-monitor-storage-account/#how-to-add-metrics-to-the-metrics-table)。
 
-> [AZURE.NOTE] 在启用存储度量值后，可能需要经过一段时间，度量值数据才会显示在 Azure 门户中。这是因为，只有在当前小时已过后，前一个小时的小时度量值才会显示在 Azure 门户中。此外，分钟度量值当前不会显示在 Azure 门户中。因此，根据启用度量值的时间，最多可能需要两个小时才能看到度量值数据。
+> [AZURE.NOTE] 在启用存储度量值后，可能需要经过一段时间，度量值数据才会显示在 Azure 经典管理门户中。这是因为，只有在当前小时已过后，前一个小时的小时度量值才会显示在 Azure 经典管理门户中。此外，分钟度量值当前不会显示在 Azure 经典管理门户中。因此，根据启用度量值的时间，最多可能需要两个小时才能看到度量值数据。
 
 ## 使用 AzCopy 将服务器日志复制到本地目录
 
@@ -355,7 +355,7 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 
 - [对 Azure 存储空间进行监视、诊断和故障排除](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)
 - [存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)
-- [监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)
+- [监视 Azure 经典管理门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)
 
