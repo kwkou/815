@@ -157,6 +157,12 @@ MySQL Database on Azure 提供 99.9% 的运行时间服务级别协议，保证�
 
 [查看完整的详细信息](https://www.azure.cn/support/sla/sql-data/) 
 
+##SQL Server Stretch Database
+
+我们保证至少在 99.9% 的时间内客户将能够在其 SQL Server Stretch Database 与我们的 Internet 网关之间保持连接。
+
+[查看完整的详细信息](https://www.azure.cn/support/sla/sql-server-stretch-database/)
+
 ##StorSimple
 
 我们保证 Azure StorSimple 服务的备份、云分层和还原功能的可用性至少达到 99.9%。可用性按月计费周期计算。 
