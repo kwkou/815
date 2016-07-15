@@ -22,9 +22,9 @@
 * 我已经知道，请为我提供有关可以配置具体内容的[一些示例](#next-steps)。
 * 我想要创建 [ServicePackage.cspkg](#cspkg)。
 * 我正在使用 Visual Studio，我想要...
-    * [创建新的云服务][vs_create]
-    * [重新配置现有云服务][vs_reconfigure]
-    * [部署云服务项目][vs_deploy]
+    <!--* [创建新的云服务][vs_create]-->
+    <!--* [重新配置现有云服务][vs_reconfigure]-->
+    <!--* [部署云服务项目][vs_deploy]-->
     * [通过远程桌面连接到云服务实例][remotedesktop]
 
 <a name="csdef"></a>
@@ -257,12 +257,12 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Azure �
 * [配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources/)
 * [为云服务实例设置远程桌面][remotedesktop]
 
-我正在使用 Visual Studio，我想要...
+<!--我正在使用 Visual Studio，我想要...
 
 * [创建新的云服务][vs_create]
 * [重新配置现有云服务][vs_reconfigure]
 * [部署云服务项目][vs_deploy]
-* [为云服务实例设置远程桌面][vs_remote]
+* [为云服务实例设置远程桌面][vs_remote]-->
 
 [remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop/
 [vs_remote]: /documentation/articles/vs-azure-tools-remote-desktop-roles/

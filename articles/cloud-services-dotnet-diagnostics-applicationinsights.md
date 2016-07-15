@@ -40,7 +40,7 @@
 
 5) 启用“将诊断数据发送到 Application Insights”会自动将 Azure 诊断配置为向 Application Insights 发送 Azure 诊断代理程序收集的所有性能计数器和错误级别日志。如果你想进一步配置要将哪些数据发送到 Application Insights，必须手动编辑每个角色的 *diagnostics.wadcfgx* 文件。若要了解有关手动更新配置的详细信息，请参阅[配置 Azure 诊断以将数据发送到 Application Insights](/documentation/articles/azure-diagnostics-configure-applicationinsights/)。
 
-将云服务配置为向 Application Insights 发送 Azure 诊断数据后，可以像平时一样将云服务部署到 Azure，并确保 Azure 诊断扩展已启用。请参阅[使用 Visual Studio 发布云服务](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)。
+将云服务配置为向 Application Insights 发送 Azure 诊断数据后，可以像平时一样将云服务部署到 Azure，并确保 Azure 诊断扩展已启用。<!--请参阅[使用 Visual Studio 发布云服务](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)。-->
 
 ## 在 Application Insights 中查看 Azure 诊断数据
 Azure 诊断遥测数据会显示在为云服务配置的 Application Insights 资源中。
