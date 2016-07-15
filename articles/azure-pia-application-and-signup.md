@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="" ms.date="" wacn.date="07/14/2016" wacn.lang="cn"/>
+<tags ms.service="multiple" ms.date="" wacn.date="07/14/2016" wacn.lang="cn"/>
 
 #Azure 标准预付费订阅申请和注册指南
 
