@@ -154,6 +154,12 @@ We guarantee at least 99.99% of the time customers will have connectivity betwee
 
 [See the full details](https://www.azure.cn/support/sla/sql-data/)
 
+##SQL Server Stretch Database
+
+We guarantee at least 99.9% of the time customers will have connectivity between their SQL Server Stretch Database and our Internet gateway. 
+
+[See the full details](https://www.azure.cn/support/sla/sql-server-stretch-database-en/)
+
 ##StorSimple
 
 We guarantee at least 99.9% availability of the backup, cloud tiering, and restore functionality of the Azure StorSimple service. Availability is calculated by monthly billing cycle. 
