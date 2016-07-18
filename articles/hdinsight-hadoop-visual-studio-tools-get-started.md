@@ -1,5 +1,3 @@
-<!-- need to customize -->
-
 <properties
 	pageTitle="了解如何使用 Visual Studio Hadoop Tools for HDInsight | Azure"
 	description="了解如何安装和使用 Visual Studio Hadoop tools for HDInsight 连接到 Hadoop 群集及运行 Hive 查询。"
@@ -13,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/25/2016"
-	wacn.date=""/>
+	ms.date="04/28/2016"
+	wacn.date="07/11/2016"/>
 
 # 开始使用 HDInsight 的 Visual Studio Hadoop 工具来运行 Hive 查询
 
@@ -50,7 +48,7 @@ Azure SDK for .NET 2.5.1 或者 2.6 中已随附 HDInsight Tools for Visual Stud
 ## 连接到 Azure 订阅
 适用于 Visual Studio 的 HDInsight 工具允许你连接到 HDInsight 群集，执行一些基本的管理操作，并运行 Hive 查询。
 
->[AZURE.NOTE] 有关连接到常规 Hadoop 群集的信息，请参阅 [Write and submit Hive queries using Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx)（使用 Visual Studio 编写和提交 Hive 查询）。
+>[AZURE.NOTE] 有关连接到常规 Hadoop 群集的信息，请参阅 [Write and submit Hive queries using Visual Studio（使用 Visual Studio 编写和提交 Hive 查询）](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx)。
 
 
 **连接到 Azure 订阅**
@@ -59,7 +57,7 @@ Azure SDK for .NET 2.5.1 或者 2.6 中已随附 HDInsight Tools for Visual Stud
 2.	在“视图”菜单中，单击“服务器资源管理器”，以打开“服务器资源管理器”窗口。
 3.	依次展开“Azure”和“HDInsight”。
 
-	>[AZURE.NOTE]请注意，应打开“HDInsight 任务列表”窗口。如果你未看到它，则在“视图”菜单中，单击“其他窗口”，然后单击“HDInsight 任务列表”窗口。
+	>[AZURE.NOTE]请注意，应打开“HDInsight 任务列表”窗口。如果你未看到它，则在“视图”菜单中，单击“其他窗口”，然后单击“HDInsight 任务列表”窗口。  
 4.	输入你的 Azure 订阅凭据，然后单击“登录”。仅当你尚未从此工作站上的 Visual Studio 连接到 Azure 订阅时，才需要此凭据。
 5.	在“服务器资源管理器”中，你将看到现有 HDInsight 群集的列表。如果你没有任何群集，则可以通过使用 Azure 经典管理门户、Azure PowerShell 或 HDInsight SDK 预配群集。有关详细信息，请参阅[设置 HDInsight 群集][hdinsight-provision]。
 
@@ -177,7 +175,9 @@ Azure SDK for .NET 2.5.1 或者 2.6 中已随附 HDInsight Tools for Visual Stud
 
 >[AZURE.NOTE] 此功能仅适用于 HDInsight 群集 3.2 和更高版本。
 
-HDInsight 工具用于通过 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)（也称为 Templeton）提交 Hive 作业。返回作业详细信息和错误信息所需的时间很长。为了解决此性能问题，HDInsight 工具通过 HiveServer2 直接在群集中运行 Hive 作业，以便绕过 RDP/SSH。除了提升性能，用户还可以在 Tez 图形上查看 Hive 和任务详细信息。
+HDInsight 工具用于通过 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)（也称为 Templeton）提交 Hive 作业。返回作业详细信息和错误信息所需的时间很长。
+为了解决此性能问题，HDInsight 工具通过 HiveServer2 直接在群集中运行 Hive 作业，以便绕过 RDP/SSH。
+除了提升性能，用户还可以在 Tez 图形上查看 Hive 和任务详细信息。
 
 对于 HDInsight 群集 3.2 或更高版本，你可以看到“通过 HiveServer2 执行”按钮：
 
@@ -225,8 +225,6 @@ HDInsight Tools for Visual Studio 支持创建 Pig 脚本并将其提交到 HDIn
 
 - 如果结果以 NULL 值开头，则目前不会显示结果。我们已解决此问题，如果你受此问题的困扰，欢迎给我们发送电子邮件，或与支持团队联系。
 
-- Visual Studio 创建的 HQL 脚本将会根据用户的本地区域设置进行编码。如果用户以二进制文件形式将脚本上载到群集，脚本可能无法正常执行。
-
 如果你有任何建议或反馈，或使用此工具时遇到任何问题，欢迎向 hdivstool@microsoft.com 发送电子邮件。
 
 ## 后续步骤
@@ -271,4 +269,4 @@ HDInsight Tools for Visual Studio 支持创建 Pig 脚本并将其提交到 HDIn
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0530_2016-->

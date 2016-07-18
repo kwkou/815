@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/20/2016"
-	wacn.date=""/>
+	ms.date="05/06/2016"
+	wacn.date="06/27/2016"/>
 
 # 排查在 Azure 中新建 Linux 虚拟机时遇到的经典部署问题
 
@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 [AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
 
@@ -29,7 +29,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。
 
-在 Azure 门户预览版中，单击“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“审核日志”。
+在 Azure 门户预览中，单击“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“审核日志”。
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
@@ -55,7 +55,7 @@
 
 **解决方法：**
 
-若要解决这两个错误，请在门户中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-linux-classic-capture-image/)，该映像将带有与该 OS（通用/专用）相同的设置。
+若要解决这两个错误，请在经典管理门户中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-linux-classic-capture-image/)，该映像将带有与该 OS（通用/专用）相同的设置。
 
 ## 问题：自定义/库/应用商店映像；分配失败
 当新的 VM 请求被发送到没有可用空间可处理请求、或不支持所请求的 VM 大小的群集，便发生此错误。在相同的云服务中不可混合不同系列的 VM。因此，如果想要创建和云服务可支持大小不同的新 VM，计算请求将失败。
@@ -67,8 +67,7 @@
 **解决方法 1：**
 
 - 创建新的云服务，并将它与区域或基于区域的虚拟网络关联。
-- 在新的云服务中创建新 VM。
-  如果在尝试创建新的云服务时收到错误，请稍后再试一次，或更改云服务的区域。
+- 在新的云服务中创建新 VM。如果在尝试创建新的云服务时收到错误，请稍后再试一次，或更改云服务的区域。
 
 > [AZURE.IMPORTANT] 如果尝试在现有的云服务中创建新的 VM，但无法创建，而又必须为新的 VM 创建新的云服务，则可以选择合并相同云服务中的所有 VM。为此，请删除现有云服务中的 VM，然后从它们位于新云服务中的磁盘重新撷取它们。然而，请务必记得新的云服务将有新的名称和 VIP，因此需要为所有目前将此信息用于现有云服务的依赖性更新该信息。
 
@@ -80,7 +79,4 @@
 - 在新的虚拟网络中创建新 VM。
 - [将现有虚拟网络连接到](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/)新虚拟网络。详细了解[区域虚拟网络](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/)。此外，你也可以[将基于地缘组的虚拟网络迁移到区域虚拟网络](https://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/)，然后创建新 VM。
 
-## 后续步骤
-如果你在 Azure 中启动已停止的 Linux VM 或调整现有 Linux VM 的大小时遇到问题，请参阅[排查在 Azure 中重新启动现有 Linux 虚拟机或调整其大小时遇到的经典部署问题](/documentation/articles/virtual-machines-linux-classic-restart-resize-error-troubleshooting/)。
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0620_2016-->
