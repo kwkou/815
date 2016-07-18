@@ -69,7 +69,7 @@
 -   你的网络条件可能有所退化。有关最近出现的问题或服务中断的信息，请与你的网络管理员联系。
 
 ### 提高 Azure 性能级别，以便能够执行索引编制等资源密集型操作
-在生成、重新生成或重新组织已针对 Stretch Database 配置的大型表中的索引时，你期望在此期间在 Azure 中对迁移的数据进行大量的查询，那么请考虑在该操作的持续时间内提高相应远程 Azure 数据库的性能级别。有关性能级别和定价的详细信息，请参阅 [SQL Server Stretch Database 定价](https://azure.microsoft.com/pricing/details/sql-server-stretch-database/)。
+在生成、重新生成或重新组织已针对 Stretch Database 配置的大型表中的索引时，你期望在此期间在 Azure 中对迁移的数据进行大量的查询，那么请考虑在该操作的持续时间内提高相应远程 Azure 数据库的性能级别。有关性能级别和定价的详细信息，请参阅 [SQL Server Stretch Database 定价](/home/features/sql-server-stretch-database/pricing/)。
 
 ### 你无法暂停 Azure 上的 SQL Server Stretch Database 服务  
  请确保你选择合适的性能和定价级别。如果你为某个资源密集型操作暂时增加性能级别，那么在操作完成后，请将它还原到之前的级别。有关性能级别和定价的详细信息，请参阅 [SQL Server Stretch Database 定价](/home/features/sql-server-stretch-database/pricing/)。
