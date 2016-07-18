@@ -37,12 +37,12 @@
 ## 下载现有模板
 Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你可以直接在 Azure 门户预览中部署多个现有的模板，或者使用应用程序代码在源代码管理系统中下载、修改和保存这些模板。完成以下步骤以下载现有的模板。
 
-1. 可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/) GitHub 存储库中浏览现有模板。在列表中，你将看到“[201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)”文件夹。由于许多自定义应用程序包含 Web 应用程序和 SQL 数据库，此模板可作为本文其余部分的示例，帮助你了解如何使用模板。本文未提供有关创建和配置此模板的完整内容，但是，如果你打算使用它在组织中创建实际环境，请阅读[预配包含 SQL 数据库的 Web 应用](/documentation/articles/app-service-web-arm-with-sql-database-provision)一文以全面了解该模板。
+1. 可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/) GitHub 存储库中浏览现有模板。在列表中，你将看到“[201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)”文件夹。由于许多自定义应用程序包含 Web 应用程序和 SQL 数据库，此模板可作为本文其余部分的示例，帮助你了解如何使用模板。 <!-- 本文未提供有关创建和配置此模板的完整内容，但是，如果你打算使用它在组织中创建实际环境，请阅读[预配包含 SQL 数据库的 Web 应用](/documentation/articles/app-service-web-arm-with-sql-database-provision)一文以全面了解该模板。 -->
 2. 单击 201-web-app-sql-databas 文件夹中的 [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json) 文件以查看其内容。这是 Azure 资源管理器模板文件。 
 3. 在视图模式中，单击 “[原始](https://github.com/Azure/azure-quickstart-templates/raw/master/201-web-app-sql-database/azuredeploy.json)” 按钮。 
 4. 使用鼠标选择此文件的内容，然后将内容以“TestApp1-Template.json”文件名保存到计算机。 
 5. 检查模板的内容，并注意以下事项：
- - **Resources** 节：此节定义此模板创建的 Azure 资源类型。在其他资源类型中，此模板将创建 [Azure Web 应用](/documentation/articles/app-service-web-overview)和 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)资源。如果你偏好在虚拟机中运行和管理 Web 与 SQL 服务器，可以使用“[iis-2vm-sql-1vm](https://github.com/Azure/azure-quickstart-templates/tree/master/iis-2vm-sql-1vm)”或“[lamp-app](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)”模板；但本文中的说明基于 [201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database) 模板。
+ - **Resources** 节：此节定义此模板创建的 Azure 资源类型。在其他资源类型中，此模板将创建 Azure Web 应用和 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)资源。如果你偏好在虚拟机中运行和管理 Web 与 SQL 服务器，可以使用“[iis-2vm-sql-1vm](https://github.com/Azure/azure-quickstart-templates/tree/master/iis-2vm-sql-1vm)”或“[lamp-app](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)”模板；但本文中的说明基于 [201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database) 模板。
  - **Parameters** 节：此节定义可用于配置每个资源的参数。在模板中指定的一些参数带有“defaultValue”属性，而其他一些参数则没有该属性。使用模板部署 Azure 资源时，必须将值提供给模板中所有未指定 defaultValue 属性的参数。如果未向带有 defaultValue 属性的参数提供值，则会使用模板中为 defaultValue 参数指定的值。
 
 模板定义所创建的 Azure 资源，以及可用来配置每个资源的参数。你可以阅读[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)一文，以进一步了解模板及如何设计自己的模板。
@@ -119,7 +119,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 
 在上述预生产参数文件中，**sku** 和 **requestedServiceObjectiveName** 参数为 added，而它们并未添加到开发和测试参数文件。这是因为模板中为这些参数指定了默认值，并且默认值也用于开发和测试环境中，但在预生产环境中用于这些参数的是非默认值。
 
-在预生产环境中将非默认值用于这些参数的原因是要测试生产环境可能偏好的这些参数的值，以便也可以测试这些参数。这些参数全都与应用程序使用的 Azure [Web 应用托管计划](https://azure.microsoft.com/pricing/details/app-service/)、**sku** 和 [Azure SQL 数据库](https://azure.microsoft.com/pricing/details/sql-database/)或 **requestedServiceObjectiveName** 相关。不同的 sku 和服务目标名称有不同的成本和功能，并支持不同的服务级别度量量。
+在预生产环境中将非默认值用于这些参数的原因是要测试生产环境可能偏好的这些参数的值，以便也可以测试这些参数。这些参数全都与应用程序使用的 Azure Web 应用托管计划、**sku** 和 [Azure SQL 数据库](/home/features/sql-database/pricing/)或 **requestedServiceObjectiveName** 相关。不同的 sku 和服务目标名称有不同的成本和功能，并支持不同的服务级别度量量。
 
 下表列出了模板中指定参数的默认值，以及在预生产参数文件中替代默认值的值。
 
@@ -129,7 +129,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 | **requestedServiceObjectiveName** | S0 | S1 |
 
 ## 创建环境
-所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal#create-resource-group-and-resources)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure [区域](https://azure.microsoft.com/regions/)中创建。在本文中，所有资源都在美国中部区域创建。开始创建实际环境时，请选择最符合要求的区域。
+所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal#create-resource-group-and-resources)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在美国中部区域创建。开始创建实际环境时，请选择最符合要求的区域。
 
 使用以下方法之一为每个环境创建资源组。所有方法都可实现相同的结果。
 
@@ -234,7 +234,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 	data:    requestedServiceObjectiveName  String        S0
 	info:    group deployment create command OKx
 
-如果命令未成功，请解决任何错误消息并重试。常见的问题是使用了未遵循 Azure 资源命名约束的参数值。其他故障排除提示可在 [Azure 中的资源组部署故障排除](/documentation/articles/resource-group-deploy-debug)一文中找到。
+如果命令未成功，请解决任何错误消息并重试。常见的问题是使用了未遵循 Azure 资源命名约束的参数值。
 
 在 CLI 命令行中键入以下命令（将 [path] 替换为前面步骤中的文件保存路径），将资源部署到为测试环境创建的资源组。
 
@@ -290,7 +290,6 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 
 在源代码管理系统中可以使用应用程序代码控制模板和参数文件的版本和进行维护。还可以将上述命令保存到脚本文件，以及将它们与代码一起保存。
 
-> [AZURE.NOTE] 你可以通过单击[预配包含 SQL 数据库的 Web 应用](https://azure.microsoft.com/documentation/templates/201-web-app-sql-database/)一文中的“部署到 Azure”按钮直接将模板部署到 Azure。你可能发现这对了解模板很有帮助，但这样做并不能使用应用程序代码编辑、保存模板与参数值及控制其版本，因此本文未阐述有关此方法的更多详细信息。
 
 ## 维护环境
 在整个开发过程中，不同环境中的 Azure 资源配置可能会出现有意或无意的不一致性更改。这可能会在应用程序开发周期中造成不必要的故障排除和问题解决。
@@ -301,7 +300,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
    ![门户](./media/solution-dev-test-environments/rgbrowse.png)
 4. 单击上图中所示的资源组之后，你将看到“资源组”边栏选项卡，以及在上一步骤中创建的三个资源组，如下图所示。单击 TestApp1-Development 资源组之后，你将看到一个边栏选项卡，其中列出了模板在上一步骤完成的 TestApp1-Development 资源组部署中所创建的资源。单击“TestApp1-Development 资源组”边栏选项卡中的 TestApp1DevApp，删除 TestApp1DevApp Web 应用资源，然后单击“TestApp1DevApp Web 应用”边栏选项卡中的“删除”。
    ![门户](./media/solution-dev-test-environments/portal2.png)
-5. 当门户提示是否确定要删除该资源时，请单击“是”。如果关闭“TestApp1-Development 资源组”边栏选项卡并将它重新打开，显示的内容不会出现刚刚删除的 Web 应用。资源组的内容现在与其应有内容不同。你可以从多个资源组删除多个资源来进一步试验，甚至可以更改某些资源的配置设置。如果不使用 Azure 门户预览从资源组删除资源，你可以使用 PowerShell [Remove-AzureResource](https://msdn.microsoft.com/library/azure/dn757676.aspx) 命令或者从 CLI 使用“azure resource delete”命令来完成相同的任务。
+5. 当门户提示是否确定要删除该资源时，请单击“是”。如果关闭“TestApp1-Development 资源组”边栏选项卡并将它重新打开，显示的内容不会出现刚刚删除的 Web 应用。资源组的内容现在与其应有内容不同。你可以从多个资源组删除多个资源来进一步试验，甚至可以更改某些资源的配置设置。如果不使用 Azure 门户预览从资源组删除资源，你可以使用 PowerShell [Remove-AzureResource](https://msdn.microsoft.com/zh-cn/library/azure/dn757676.aspx) 命令或者从 CLI 使用“azure resource delete”命令来完成相同的任务。
 6. 要让所有应该位于资源组中的所有资源和配置恢复到其应有状态，请使用[将资源部署到环境](#deploy-resources-to-environments)部分中的相同命令，将环境重新部署到资源组，但这次请将“Deployment1”替换为“Deployment2”。
 7.  如步骤 4 中图示的 TestApp1-Development 边栏选项卡中的“摘要”部分，你将看到在上一步骤中删除的 Web 应用以及其他删除的资源再次出现。如果你更改了任何资源的配置，则还可以验证这些配置是否已设置回到参数文件中的值。使用 Azure 资源管理器模板部署环境的优点之一是可以随时轻松地将环境重新部署回到已知状态。
 8. 如果你单击下图中“上次部署”下面的文本，将会看到边栏选项卡显示资源组的部署历史记录。由于你已将名称“Deployment1”用于第一个部署，并已将“Deployment2”用于第二个部署，因此会有两个条目。单击某个部署会显示一个边栏选项卡，其中显示了每个部署的结果。

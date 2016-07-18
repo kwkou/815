@@ -168,7 +168,6 @@
 
 祝贺你！ 你已学习如何从门户中创建的资源导出模板。
 
-- 在本教程的第二部分中，你将通过添加更多参数和通过脚本重新部署刚下载的模板来自定义该模板。请参阅[自定义和重新部署导出的模板](/documentation/articles/resource-manager-customize-template)。
 - 若要了解如何通过 PowerShell 导出模板，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)。
 - 若要了解如何通过 Azure CLI 导出模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。 
 

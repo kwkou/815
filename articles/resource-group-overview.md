@@ -117,7 +117,7 @@
 
 有关 Azure CLI 的信息，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 
-有关 REST API 的信息，请参阅 [Azure Resource Manager REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。若要查看已部署的资源的 REST 操作，请参阅 [Use Azure Resource Explorer to view and modify resources（使用 Azure 资源浏览器来查看和修改资源）](/documentation/articles/resource-manager-resource-explorer/)。
+有关 REST API 的信息，请参阅 [Azure Resource Manager REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。 <!-- 若要查看已部署的资源的 REST 操作，请参阅 [Use Azure Resource Explorer to view and modify resources（使用 Azure 资源浏览器来查看和修改资源）](/documentation/articles/resource-manager-resource-explorer/)。-->
 
 有关使用门户的信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
 
