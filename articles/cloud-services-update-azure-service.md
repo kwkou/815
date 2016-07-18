@@ -9,7 +9,7 @@ editor=""/>
 <tags
 ms.service="cloud-services"
 ms.date="10/26/2015"
-wacn.date="03/18/2016"/>
+wacn.date="07/18/2016"/>
 
 # 如何更新云服务
 
@@ -43,17 +43,19 @@ Azure 将你的角色实例划分为称为升级域 (UD) 的逻辑组。升级�
 |---|---|---|---|
 |操作系统版本|是|是|是
 |.NET 信任级别|是|是|是|
-|虚拟机大小|是*|是|是|
-|本地存储设置|仅限增大*|是|是|
+|虚拟机大小<sup>1</sup>|是<sup>2</sup>|是|是|
+|本地存储设置|仅限增大<sup>2</sup>|是|是|
 |在服务中添加或删除角色|是|是|是|
 |特定角色的实例数|是|是|是|
-|服务的终结点数量或类型|是*|否|是|
+|服务的终结点数量或类型|是<sup>2</sup>|否|是|
 |配置设置的名称和值|是|是|是|
 |配置设置的值（但不包括名称）|是|是|是|
 |添加新证书|是|是|是|
 |更改现有证书|是|是|是|
 |部署新代码|是|是|是|
-*需要 Azure SDK 1.5 或更高版本。
+<sup>1</sup>大小更改限制为可用于云服务的大小的子集。
+
+<sup>2</sup>需要 Azure SDK 1.5 或更高版本。
 
 > [AZURE.WARNING]更改虚拟机大小将会破坏本地数据。
 
@@ -176,6 +178,6 @@ Azure 在设置的升级域数之间平均分配角色的实例，可以将升�
 ## 后续步骤
 [如何管理云服务](/documentation/articles/cloud-services-how-to-manage/)<br>
 [如何监视云服务](/documentation/articles/cloud-services-how-to-monitor/)<br>
-[如何配置云服务](/documentation/articles/cloud-services-how-to-cofigure/)<br>
+[如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)<br>
 
 <!---HONumber=Mooncake_0104_2016-->

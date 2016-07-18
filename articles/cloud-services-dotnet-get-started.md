@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="03/21/2016"
-	wacn.date="05/12/2016"/>
+	ms.date="06/10/2016"
+	wacn.date="07/18/2016"/>
 
 # Azure 云服务和 ASP.NET 入门
 

@@ -6,12 +6,10 @@ documentationCenter=".net"
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-
 <tags 
 ms.service="cloud-services" 
 ms.date="12/07/2015" 
-wacn.date="01/15/2016"
-/>
+wacn.date="07/18/2016"/>
 
 # 在 .NET 中自定义 Web 角色或辅助角色的生命周期
 

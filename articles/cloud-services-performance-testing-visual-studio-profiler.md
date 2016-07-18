@@ -11,8 +11,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="03/28/2016" 
-	wacn.date="05/12/2016"/>
+	ms.date="06/01/2016" 
+	wacn.date="07/18/2016"/>
 
 # 在 Azure 计算模拟器中使用 Visual Studio 探查器来本地测试云服务的性能
 

@@ -3,21 +3,20 @@ pageTitle="使用 PowerShell 为 Azure 云服务中的角色启用远程桌面�
 description="如何使用 PowerShell 配置 Azure 云服务应用程序以允许远程桌面连接" 
 services="cloud-services" 
 documentationCenter="" 
-authors="sbtron" 
+authors="thraka" 
 manager="timlt" 
 editor=""/>
-
 <tags 
 ms.service="cloud-services" 
-ms.date="09/17/2015" 
-wacn.date="10/17/2015"/>
+s.date="05/17/2016" 
+wacn.date="07/18/2016"/>
 
 # 使用 PowerShell 为 Azure 云服务中的角色启用远程桌面连接
 
 >[AZURE.SELECTOR]
 - [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)
 - [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/)
-- [Visual Studio](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)
+- [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles/)
 
 
 你可以通过远程桌面访问在 Azure 中运行的角色的桌面。你可以使用远程桌面连接，在应用程序正在运行时排查和诊断其问题。
@@ -91,7 +90,9 @@ Remove-AzureServiceRemoteDesktopExtension -ServiceName $servicename -UninstallCo
 
 ```  
 
->[AZURE.NOTE]*UninstallConfiguration* 参数将卸载任何已应用于服务的扩展配置。所有扩展配置均与服务配置相关联，以使用部署激活扩展，部署必须与该扩展配置相关联。如果在未指定 *UninstallConfiguration* 的情况下调用 Remove cmdlet，则将解除部署与扩展配置的关联，从而实际上从部署中删除扩展。但是，扩展配置仍将保持与服务相关联。若要完全删除扩展配置，应使用 *UninstallConfiguration*参数调用 Remove cmdlet。
+>[AZURE.NOTE] 若要完全删除扩展配置，应使用 **UninstallConfiguration** 参数调用 *remove* cmdlet。
+>
+>**UninstallConfiguration** 参数将卸载任何已应用于服务的扩展配置。所有扩展配置均与服务配置相关联，以使用部署激活扩展，部署必须与该扩展配置相关联。如果在未指定 **UninstallConfiguration** 的情况下调用 *remove* cmdlet，则将解除部署与扩展配置的关联，从而实际上从部署中删除扩展。但是，扩展配置仍将保持与服务相关联。
 
 
 

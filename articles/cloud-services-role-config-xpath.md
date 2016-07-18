@@ -9,7 +9,7 @@ editor=""/>
 <tags 
 ms.service="cloud-services" 
 ms.date="02/25/2016" 
-wacn.date="04/06/2016"/>
+wacn.date="07/18/2016"/>
 
 # 使用 XPath 将角色配置设置公共为环境变量
 
@@ -138,7 +138,7 @@ wacn.date="04/06/2016"/>
 
 ## 示例
 
-下面是使用名为 `TestIsEmulated`, 设置为 [@emulated xpath value](#app-running-in-emulator) 的环境变量创建启动任务的辅助角色示例。
+下面是使用名为 `TestIsEmulated`、设置为 [@emulated xpath value](#app-running-in-emulator) 的环境变量创建启动任务的辅助角色示例。
 
 ```xml
 <WorkerRole name="Role1">
