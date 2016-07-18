@@ -9,7 +9,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="03/10/2016"
-   wacn.date="06/30/2016" />
+   wacn.date="07/18/2016" />
 
 # VPN 网关常见问题
 
@@ -84,15 +84,13 @@
 
 支持以下操作系统：
 
-- Windows 7（仅限 64 位版本）
-
-- Windows Server 2008 R2
-
-- Windows 8（仅限 64 位版本）
-
-- Windows Server 2012
-
-- Windows 10
+ - Windows 7（32 位和 64 位）
+ - Windows Server 2008 R2（仅 64 位）
+ - Windows 8（32 位和 64 位）
+ - Windows 8.1（32 位和 64 位）
+ - Windows Server 2012（仅 64 位）
+ - Windows Server 2012 R2（仅 64 位）
+ - Windows 10
 
 ### 能否使用任何支持 SSTP 的点到站点软件 VPN 客户端？
 
