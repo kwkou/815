@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Microsoft Azure" 
+	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Azure" 
 	description="了解如何从 JavaScript 后端移动服务使用 Azure 通知中心向通用 Windows 8.1 应用发送推送通知。" 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="03/05/2016" 
-	wacn.date="04/11/2016"/>
+	wacn.date="07/18/2016"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -65,16 +65,16 @@
 + [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/)
 <br/>了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
 
-+ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/)
-<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
++ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/)
+	<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
-+ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/)
-<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
++ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notification/)
+	<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
 
 	通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing/)
-<br/>了解如何排查推送通知问题。
+* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-push-notification-fixer/)
+	<br/>了解如何排查推送通知问题。
 
 * [身份验证入门]
   <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
@@ -102,7 +102,7 @@
 
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview/
 
-[如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library/
+[如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 
 <!---HONumber=Mooncake_1221_2015-->
