@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/03/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="06/16/2016"
+	wacn.date=""/>
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 
@@ -42,7 +42,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 以下是你需要了解的有关 Hive 内部表和外部表的一些信息：
 
 - **CREATE TABLE** 命令创建内部表。数据文件必须位于默认容器中。
-- **CREATE TABLE** 命令会将数据文件移到 /hive/warehouse/<TableName> 文件夹中。
+- **CREATE TABLE** 命令会将数据文件移到 /hive/warehouse/<表名> 文件夹中。
 - **CREATE EXTERNAL TABLE** 命令创建外部表。数据文件可以位于默认容器以外的位置。
 - **CREATE EXTERNAL TABLE** 命令不移动数据文件。
 - **CREATE EXTERNAL TABLE** 命令不允许在 LOCATION 中有任何文件夹。这是本教程生成 sample.log 文件的副本的原因。
@@ -66,12 +66,13 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 由于 Azure Blob 存储是 HDInsight 的默认存储，因此你也可以使用 HiveQL 中的 **/example/data/sample.log** 访问该文件。
 
-> [AZURE.NOTE] 语法 **wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：**wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
+> [AZURE.NOTE] 语法 **wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如 **wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
 
 ##<a id="job"></a>示例作业：将列投影到分隔的数据
 
 以下 HiveQL 语句将列投影到 **wasb:///example/data** 目录中存储的分隔数据：
 
+    set hive.execution.engine=tez;
 	DROP TABLE log4jLogs;
     CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
     ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
@@ -79,6 +80,8 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
     SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
 
 在上例中，HiveQL 语句执行以下操作：
+
+* __set hive.execution.engine=tez;__：将执行引擎设置为使用 Tez。使用 Tez 而不是 MapReduce 可以提高查询性能。有关 Tez 的详细信息，请参阅[使用 Apache Tez 提高性能](#usetez)部分。
 
 * **DROP TABLE**：删除表和数据文件（如果该表已存在）。
 * **CREATE EXTERNAL TABLE**：在 Hive 中创建新的**外部**表。外部表只会在 Hive 中存储表定义；数据以原始格式保留在原始位置。
@@ -91,10 +94,11 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 创建外部表后，使用以下语句创建**内部**表。
 
+    set hive.execution.engine=tez;
 	CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
 	STORED AS ORC;
 	INSERT OVERWRITE TABLE errorLogs
-	SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log';
+	SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
 
 这些语句将执行以下操作：
 
@@ -108,11 +112,12 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 [Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。
 
-> [AZURE.NOTE] 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：<p>```set hive.execution.engine=tez;``` <p>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)中找到详细信息。
+> [AZURE.NOTE] 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，必须设置 Hive 查询的以下值：<p>```set hive.execution.engine=tez;``` <p>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)中找到详细信息。
 
 [Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
 为了帮助使用 Tez 调试运行的作业，HDInsight 提供了以下 Web UI，使你可以查看 Tez 作业的详细信息：
+
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
 
 ##<a id="run"></a>选择如何运行 HiveQL 作业
@@ -146,6 +151,8 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 - [将数据上载到 HDInsight][hdinsight-upload-data]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
+- [将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop/)
+- [将 Oozie 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-oozie/)
 - [将 MapReduce 作业与 HDInsight 配合使用][hdinsight-use-mapreduce]
 
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
@@ -189,4 +196,4 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0711_2016-->

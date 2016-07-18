@@ -1,27 +1,40 @@
 <!-- ARM: tested -->
 
 <properties
-   pageTitle="使用 Azure CLI 从头开始创建 Linux VM | Azure"
-   description="使用 Azure CLI 从头开始创建 Linux VM、存储、虚拟网络和子网、NIC、公共 IP 和网络安全组。"
+   pageTitle="使用 Azure CLI 创建完整的 Linux 环境 | Azure"
+   description="使用 Azure CLI 从头开始创建 Linux VM、存储、虚拟网络和子网、负载平衡器、NIC、公共 IP 和网络安全组。"
    services="virtual-machines-linux"
    documentationCenter="virtual-machines"
    authors="iainfoulds"
-   manager="squillace"
+   manager="timlt"
    editor=""
    tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/29/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="06/10/2016"
+	wacn.date=""/>
 
-# 使用 Azure CLI 从头开始创建 Linux VM
+# 使用 Azure CLI 创建完整的 Linux 环境
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-若要创建 Linux VM，你需要安装 Resource Manager 模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install/) 以及 JSON 分析工具，在本文档中，我们将使用 [jq](https://stedolan.github.io/jq/)。
+让我们构建一个简单网络，其中包含一个负载平衡器，以及一对可用于开发和简单计算的 VM。你将通过强制性的逐条命令方式逐步完成整个环境，直到创建一个可通过 Internet 从任何位置连接的有效且安全的 Linux VM。然后，你可以继续构建更复杂的网络和环境。
+
+在此过程中，你将了解 Resource Manager 部署模型提供给你的依赖性层次结构及其提供的功能。明白系统是如何构建的以后，即可使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)更快速地重新构建系统。了解环境的部件如何彼此配合运行后，你可以更轻松地创建模板来将它们自动化。
+
+该环境将包含：
+
+- 两个位于可用性集中的 VM
+- 在端口 80 上设置了负载平衡规则的负载平衡器
+- 网络安全组规则，阻止你的 VM 接受不需要的流量
+
+![基本环境概述](./media/virtual-machines-linux-create-cli-complete/environment_overview.png)
+
+若要创建此自定义环境，你需要安装最新 [Azure CLI](/documentation/articles/xplat-cli-install/)，并且需要处于 Resource Manager 模式 (`azure config mode arm`)。你还需要 JSON 分析工具 - 本示例使用 [jq](https://stedolan.github.io/jq/)。
 
 ## 快速命令
+以下快速命令用于构建你的自定义环境。如需更深入地了解构建环境时每个命令所执行的操作以及此方面的概述，请通读[下述详细演练步](#detailed-walkthrough)。
 
 创建资源组
 
@@ -33,7 +46,7 @@
 
 创建存储帐户
 
-	azure storage account create -g TestRG -l chinaeast --type GRS computeteststore
+	azure storage account create -g TestRG -l chinaeast --kind Storage --sku-name GRS computeteststore
 
 使用 JSON 分析器验证存储
 
@@ -87,14 +100,14 @@
 
 创建第一个 NIC
 
-	azure network nic create -g TestRG -n LB-NIC1 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd
-	    -d "/subscriptions/########-####-####-####-############/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool"
+	azure network nic create -g TestRG -n LB-NIC1 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd \
+	    -d "/subscriptions/########-####-####-####-############/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool" \
 	    -e "/subscriptions/########-####-####-####-############/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/inboundNatRules/VM1-SSH"
 
 创建第二个 NIC
 
-	azure network nic create -g TestRG -n LB-NIC2 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd
-	    -d "/subscriptions/########-####-####-####-############/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool"
+	azure network nic create -g TestRG -n LB-NIC2 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd \
+	    -d "/subscriptions/########-####-####-####-############/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool" \
 	    -e "/subscriptions/########-####-####-####-############/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/inboundNatRules/VM2-SSH"
 
 使用 JSON 分析器验证 NIC
@@ -113,6 +126,7 @@
 	azure network nsg rule create --protocol tcp --direction inbound --priority 1001 \
 	    --destination-port-range 80 --access allow -g TestRG -a TestNSG -n HTTPRule
 
+
 使用 JSON 分析器验证 NSG 和入站规则
 
 	azure network nsg show -g TestRG -n TestNSG --json | jq '.'
@@ -128,7 +142,7 @@
 
 创建第一个 Linux VM
 
-	azure vm create \            
+	azure vm create \
 	    --resource-group TestRG \
 	    --name TestVM1 \
 	    --location chinaeast \
@@ -144,7 +158,7 @@
 
 创建第二个 Linux VM
 
-	azure vm create \            
+	azure vm create \
 	    --resource-group TestRG \
 	    --name TestVM2 \
 	    --location chinaeast \
@@ -163,15 +177,12 @@
 	azure vm show -g TestRG -n TestVM1 --json | jq '.'
 	azure vm show -g TestRG -n TestVM2 --json | jq '.'
 
+将所构建的环境导出到模板中，以便快速地重新创建新实例：
+
+	azure resource export TestRG
+
 ## 详细演练
-
-### 介绍
-
-本文使用负载平衡器后面的两个 Linux VM 来构建部署。它以强制性的逐条命令方式逐步完成整个基本部署，直到创建一个可通过 Internet 从任何位置连接的有效且安全的 Linux VM。
-
-在此过程中，你将了解 Resource Manager 部署模型提供给你的依赖性层次结构及其提供的功能。了解系统的构建方法后，你可以使用更直接的 Azure CLI 命令，更快地重新构建系统（请参阅[此文](/documentation/articles/virtual-machines-linux-quick-create-cli/)，以了解如何使用 `azure vm quick-create` 命令处理大致相同的部署），或者继续掌握如何设计和自动化整个网络与应用程序部署，并使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)进行更新。了解部署的部件如何彼此配合运行后，你可以更轻松地创建模板来将它们自动化。
-
-让我们构建一个简单网络和负载平衡器，其中包含一对可用于部署和简单计算的 VM；在构建过程中，我们将解释具体的操作。然后你可以继续构建更复杂的网络和部署。
+这些更详细的步骤说明了在构建环境时每个命令的具体作用，帮助你掌握这些概念，以便你随后针对开发或生产工作负荷构建你自己的自定义环境。
 
 ## 创建资源组并选择部署位置
 
@@ -180,7 +191,7 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 	azure group create TestRG chinaeast
 
 输出
-
+                      
 	info:    Executing command group create
 	+ Getting resource group TestRG
 	+ Creating resource group TestRG
@@ -202,41 +213,40 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 	azure storage account create \  
 	--location chinaeast \
 	--resource-group TestRG \
-	--type GRS \
+	--kind Storage --sku-name GRS \
 	computeteststore
 
 输出
 
-		info:    Executing command storage account create
-		+ Creating storage account
-		info:    storage account create command OK
-		ahmet•~/workspace/keygen» azure group show testrg
-		info:    Executing command group show
-		+ Listing resource groups
-		+ Listing resources for the group
-		data:    Id:                  /subscriptions/<guid>/resourceGroups/TestRG
-		data:    Name:                TestRG
-		data:    Location:            chinaeast
-		data:    Provisioning State:  Succeeded
-		data:    Tags: null
-		data:    Resources:
-		data:
-		data:      Id      : /subscriptions/<guid>/resourceGroups/TestRG/providers/Microsoft.Storage/storageAccounts/computeteststore
-		data:      Name    : computeteststore
-		data:      Type    : storageAccounts
-		data:      Location: chinaeast
-		data:      Tags    :
-		data:
-		data:    Permissions:
-		data:      Actions: *
-		data:      NotActions:
-		data:
-		info:    group show command OK
+	info:    Executing command storage account create
+	+ Creating storage account
+	info:    storage account create command OK
+	ahmet•~/workspace/keygen» azure group show testrg
+	info:    Executing command group show
+	+ Listing resource groups
+	+ Listing resources for the group
+	data:    Id:                  /subscriptions/<guid>/resourceGroups/TestRG
+	data:    Name:                TestRG
+	data:    Location:            chinaeast
+	data:    Provisioning State:  Succeeded
+	data:    Tags: null
+	data:    Resources:
+	data:
+	data:      Id      : /subscriptions/<guid>/resourceGroups/TestRG/providers/Microsoft.Storage/storageAccounts/computeteststore
+	data:      Name    : computeteststore
+	data:      Type    : storageAccounts
+	data:      Location: chinaeast
+	data:      Tags    :
+	data:
+	data:    Permissions:
+	data:      Actions: *
+	data:      NotActions:
+	data:
+	info:    group show command OK
 
 让我们结合 `--json` Azure CLI 选项使用 [jq](https://stedolan.github.io/jq/) 工具（可以使用 **jsawk** 或偏好的语言库来分析 JSON）以及 `azure group show` 命令来检查资源组。
 
 	azure group show TestRG --json | jq                                                                                      
-
 
 输出
 
@@ -271,6 +281,7 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 若要调查使用 CLI 的存储帐户，首先需要使用以下命令的变体，将本文中的存储帐户名称替换为你自己的名称，以设置帐户名称和密钥。
 
 	AZURE_STORAGE_CONNECTION_STRING="$(azure storage account connectionstring show computeteststore --resource-group testrg --json | jq -r '.string')"
+
 
 然后就能轻松地查看存储信息：
 
@@ -365,7 +376,7 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 	data:
 	info:    network vnet subnet create command OK
 
-由于子网以逻辑方式出现在虚拟网络中，我们使用稍微不同的命令来查找子网信息 -- `azure network vnet show`，但仍需使用 **jq** 检查 JSON 输出。
+由于子网以逻辑方式出现在虚拟网络中，我们使用稍微不同的命令（`azure network vnet show`）来查找子网信息，但仍需使用 **jq** 检查 JSON 输出。
 
 	azure network vnet show TestRG TestVNet --json | jq '.'
 
@@ -503,8 +514,6 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 我们将创建具有以下特点的负载平衡器：
 
 	azure network lb create -g TestRG -n TestLB -l chinaeast
-
-<br>
 
 	azure network lb create -g TestRG -n TestLB -l chinaeast
 
@@ -648,7 +657,7 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 
 ## 创建负载平衡器运行状况探测
 
-运行状况探测定期检查受负载平衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，这些 VM 将从操作中删除，以确保不会将用户定向到这些 VM。你可以针对运行状况探测定义自定义检查，以及间隔和超时值。
+运行状况探测定期检查受负载平衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，这些 VM 将从操作中删除，以确保不会将用户定向到这些 VM。你可以针对运行状况探测定义自定义检查，以及间隔和超时值。有关运行状况探测的详细信息，请阅读[负载平衡器探测](/documentation/articles/load-balancer-custom-probe-overview/)。
 
 	azure network lb probe create -g TestRG -l TestLB -n HealthProbe -p "http" -f healthprobe.aspx -i 15 -c 4
 
@@ -794,11 +803,12 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 
 由于你可以将规则应用到 NIC 的使用上，并有多个规则，因此即使对于 NIC，也能以编程方式使用。请注意，在下面的 `azure network nic create` 命令中，你要将 NIC 挂接到负载后端 IP 池，并与 NAT 规则关联以允许 SSH 流量。为此，需要指定 Azure 订阅的订阅 ID 来取代 `<GUID>`：
 
-	azure network nic create -g TestRG -n LB-NIC1 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd -d
+	azure network nic create -g TestRG -n LB-NIC1 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd \
+	     -d /subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool \
+	     -e /subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/inboundNatRules/VM1-SSH
 
 输出
 
-	/subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool -e /subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/inboundNatRules/VM1-SSH
 	info:    Executing command network nic create
 	+ Looking up the subnet "FrontEnd"
 	+ Looking up the network interface "LB-NIC1"
@@ -868,11 +878,9 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 
 让我们继续创建第二个 NIC 并同样将其挂接到后端 IP 池，同时，创建第二个 NAT 规则以允许 SSH 流：
 
-	azure network nic create -g TestRG -n LB-NIC2 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd -d
-
-输出
-
-	/subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool -e /subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/inboundNatRules/VM2-SSH
+	azure network nic create -g TestRG -n LB-NIC2 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd \
+	    -d  /subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool \
+	    -e /subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/inboundNatRules/VM2-SSH
 
 ## 创建网络安全组和规则
 
@@ -888,16 +896,13 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 	azure network nsg rule create --protocol tcp --direction inbound --priority 1001 \
 	    --destination-port-range 80 --access allow -g TestRG -a TestNSG -n HTTPRule
 
-> [AZURE.NOTE] 入站规则是入站网络连接的筛选器。在本示例中，我们将 NSG 绑定到 VM 虚拟网络接口卡 (NIC)，这意味着任何对端口 22 的请求都将在 VM 上传递到 NIC。由于这是关于网络连接（而不是经典部署中的终结点）打开端口的规则，因此必须将 `--source-port-range` 保持设置为 '\*'（默认值）才能接受来自**任何**请求端口的入站请求（这些请求通常是动态的）。
+> [AZURE.NOTE] 入站规则是入站网络连接的筛选器。在本示例中，我们将 NSG 绑定到 VM 虚拟网络接口卡 (NIC)，这意味着任何对端口 22 的请求都将在 VM 上传递到 NIC。由于这是关于网络连接（而不是经典部署中的终结点）打开端口的规则，因此必须将 `--source-port-range` 保持设置为“\*”（默认值）才能接受来自**任何**请求端口的入站请求（这些请求通常是动态的）。
 
 ## 绑定到 NIC
 
 将 NSG 绑定到 NIC：
 
-
 	azure network nic set -g TestRG -n LB-NIC1 -o TestNSG
-
-<br>
 
 	azure network nic set -g TestRG -n LB-NIC2 -o TestNSG
 
@@ -910,11 +915,11 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 
 升级域表示虚拟机组以及可同时重新启动的基础物理硬件。在计划内维护期间，升级域的重新启动顺序可能不会按序进行，但一次只重新启动一个升级域。同样，将多个 VM 放入一个可用性站点时，Azure 会自动将它们分散到升级域。
 
-请阅读有关[管理 VM 可用性](/documentation/articles/virtual-machines-linux-manage-availability/)的详细信息。
+你可以阅读有关[管理 VM 可用性](/documentation/articles/virtual-machines-linux-manage-availability/)的详细信息。
 
 ## 创建 Linux VM
 
-你已创建存储和网络资源以支持可访问 Internet 的 VM。现在，让我们创建 VM，并使用不带密码的 SSH 密钥来保护其安全。在此情况下，我们需要基于最新的 LTS 创建 Ubuntu VM。我们将根据[查找 Azure VM 映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)中所述，使用 `azure vm image list` 来查找该映像信息。我们前面使用了命令 `azure vm image list chinaeast canonical | grep LTS` 来选择映像，而现在，我们将使用 `canonical:UbuntuServer:14.04.3-LTS:14.04.201604060`，但为最后一个字段传递 `latest`，以便将来可随时获取最新的内部版本（我们使用的字符串将是 `canonical:UbuntuServer:14.04.3-LTS:14.04.201604060`）。
+你已创建存储和网络资源以支持可访问 Internet 的 VM。现在，让我们创建 VM，并使用不带密码的 SSH 密钥来保护其安全。在此情况下，我们需要基于最新的 LTS 创建 Ubuntu VM。我们将根据[查找 Azure VM 映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)中所述，使用 `azure vm image list` 来查找该映像信息。我们前面使用了命令 `azure vm image list chinaeast canonical | grep LTS` 来选择映像，而现在，我们将使用 `canonical:UbuntuServer:14.04.3-LTS:14.04.201604060`，但对于最后一个字段，我们将传递 `latest`，以便将来可随时获取最新的内部版本（我们使用的字符串将是 `canonical:UbuntuServer:14.04.3-LTS:14.04.201604060`）。
 
 > [AZURE.NOTE] 已使用 **ssh-keygen -t rsa -b 2048** 在 Linux 或 Mac 上创建 ssh rsa 公钥和私钥对的任何人都熟悉下一个步骤。如果 `~/.ssh` 目录中没有任何证书密钥对，你可以创建证书密钥对：
 <br />
@@ -1011,7 +1016,7 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 	    --ssh-publickey-file ~/.ssh/id_rsa.pub \
 	    --admin-username ops
 
-并且可以使用 `azure vm show testrg testvm` 命令来检查创建的内容。此时，你已在 Azure 中运行了一个位于负载平衡器后面的 Ubuntu VM，你只能使用创建的 SSH 密钥对登录；禁止使用密码。你可以安装 nginx 或 httpd 并部署 Web 应用，然后查看流量是否通过负载平衡器流向两个 VM。
+现在，你可以使用 `azure vm show testrg testvm` 命令来检查创建的内容。此时，你已在 Azure 中运行了一个位于负载平衡器后面的 Ubuntu VM，你只能使用创建的 SSH 密钥对登录；禁止使用密码。你可以安装 nginx 或 httpd 并部署 Web 应用，然后查看流量是否通过负载平衡器流向两个 VM。
 
 	azure vm show TestRG TestVM1
 
@@ -1069,8 +1074,20 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 	data:      Diagnostics Instance View:
 	info:    vm show command OK
 
+## 将环境导出为模板
+现在，你已经构建了此环境，那么，如果你需要使用相同的参数创建额外的开发环境，或者现在就需要创建相应的生产环境，则该怎么办？ Resource Manager 使用 JSON 模板来定义你环境的所有参数，允许你通过引用此 JSON 模板来构建整个环境。你可以[手动构建 JSON 模板](/documentation/articles/resource-group-authoring-templates/)，也可以通过直接导出现有环境来为自己创建 JSON 模板：
+
+	azure group export TestRG
+
+这将在你的当前工作目录中创建 `TestRG.json` 文件。然后，当你通过此模板创建新的环境时，系统会提示你提供所有资源名称，例如提供负载平衡器、网络接口、VM 等的名称。你可以在模板文件中填充这些名称，只需将 `-p` 或 `--includeParameterDefaultValue` 添加到如上所示的 `azure group export` 命令即可，也可以通过编辑 JSON 模板来指定资源名称，或者通过[创建 parameters.json 文件](/documentation/articles/resource-group-authoring-templates/#parameters)来直接指定资源名称。
+
+若要从你的模板创建新的环境，请执行以下命令：
+
+	azure group deployment create -f TestRG.json -g NewRGFromTemplate
+
+你可能需要阅读[有关通过模板进行部署的更多详细信息](/documentation/articles/resource-group-template-deploy-cli/)，包括如何对环境进行增量更新、如何使用参数文件，以及如何从单个存储位置访问模板。
+
 ## 后续步骤
 
-现在，你已准备好开始使用多个网络组件和 VM。
-
-<!---HONumber=Mooncake_0620_2016-->
+现在，你已准备好开始使用多个网络组件和 VM。你可以使用此处介绍的核心组件，通过此示例环境来构建应用程序。
+<!---HONumber=Mooncake_0711_2016-->
