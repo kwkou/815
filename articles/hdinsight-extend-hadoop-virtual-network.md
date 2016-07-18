@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用虚拟网络扩展 HDInsight | Azure"  
+	pageTitle="使用虚拟网络扩展 HDInsight | Microsoft Azure"  
 	description="了解如何使用 Azure 虚拟网络将 HDInsight 连接到其他云资源或者你数据中心内的资源"
 	services="hdinsight"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/04/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="06/20/2016"
+	wacn.date=""/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -64,15 +64,17 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于地缘的虚拟网络。
 
-###子网
-
-强烈建议针对每个 HDInsight 群集创建一个子网。
-
 ###经典虚拟网络
 
 基于 Windows 的群集需要 V1（经典）虚拟网络。如果没有正确的网络类型，创建群集时它将不能使用。
 
-如果具有计划创建的群集不可用的虚拟网络上的资源，可以新建一个该群集可用的虚拟网络，并将其连接到不兼容的虚拟网络。然后可以在其要求的网络版本中创建群集，由于两者已联接，该群集将能够访问另一个网络中的资源。有关连接经典虚拟网络和新虚拟网络的详细信息，请参阅 [Connecting classic VNets to new VNets（将经典 VNet 连接到新的 VNet）](/documentation/articles/virtual-networks-arm-asm-s2s/)。
+如果具有计划创建的群集不可用的虚拟网络上的资源，可以新建一个该群集可用的虚拟网络，并将其连接到不兼容的虚拟网络。然后可以在其要求的网络版本中创建群集，由于两者已联接，该群集将能够访问另一个网络中的资源。有关连接经典虚拟网络和新虚拟网络的详细信息，请参阅 [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s/)（将经典 VNet 连接到新的 VNet）。
+
+###自定义 DNS
+
+创建虚拟网络时，Azure 将为网络中安装的 Azure 服务（例如 HDInsight）提供默认名称解析。但是，对于跨网络域名解析等情况，你可能需要使用自己的域名系统 (DNS)。例如，在位于两个联接的虚拟网络中的服务之间通信时。与 Azure 虚拟网络配合使用时，HDInsight 同时支持默认 Azure 名称解析和自定义 DNS。
+
+有关配合 Azure 虚拟网络使用自己的 DNS 服务器的详细信息，请参阅 [Name Resolution for VMs and Role Instances](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/#name-resolution-using-your-own-dns-server)（VM 和角色实例的名称解析）文档中的 __Name resolution using your own DNS server__（使用你自己的 DNS 服务器的名称解析）部分。
 
 ###受保护的虚拟网络
 
@@ -168,12 +170,9 @@ __使用 Azure CLI__
 
     此命令完成之后，你可以将 HDInsight 成功安装到这些步骤中使用的子网上的受保护虚拟网络。
 
-> [AZURE.IMPORTANT] 使用上述步骤只会实现对 Azure 云中 HDInsight 运行状况和管理服务的访问。这一操作让你能够成功地将 HDInsight 群集安装到子网，但默认阻止从虚拟网络外部对 HDInsight 群集进行访问。如果想要启用从虚拟网络外部进行访问，将需要添加其他网络安全组规则。
-><p> 例如，若要允许来自 Internet 的 RDP 访问，需要添加类似于下面的规则：
-><p> * Azure PowerShell - ```Set-AzureNetworkSecurityRule -Name "RDP" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "3389" -SourceAddressPrefix "*" -DestinationAddressPrefix "*" -Action Allow -Priority 304 -Type Inbound```
-><p> * Azure CLI - ```azure network nsg rule create hdisecure RDP -p "*" -o "*" -u "3389" -f "*" -e "*" -c "Allow" -y 304 -r "Inbound"```
+> [AZURE.IMPORTANT] 使用上述步骤只会实现对 Azure 云中 HDInsight 运行状况和管理服务的访问。这一操作让你能够成功地将 HDInsight 群集安装到子网，但默认阻止从虚拟网络外部对 HDInsight 群集进行访问。如果想要启用从虚拟网络外部进行访问，将需要添加其他网络安全组规则。<p>例如，若要允许来自 Internet 的 RDP 访问，需要添加类似于下面的规则：<p> * Azure PowerShell - `Set-AzureNetworkSecurityRule -Name "RDP" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "3389" -SourceAddressPrefix "*" -DestinationAddressPrefix "*" -Action Allow -Priority 304 -Type Inbound` <p> * Azure CLI - `azure network nsg rule create hdisecure RDP -p "*" -o "*" -u "3389" -f "*" -e "*" -c "Allow" -y 304 -r "Inbound"`
 
-有关网络安全组的详细信息，请参阅 [Network Security Groups overview（网络安全组概述）](/documentation/articles/virtual-networks-nsg/)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅 [User Defined Routes and IP forwarding（用户定义的路由和 IP 转发）。](/documentation/articles/virtual-networks-udr-overview/)
+有关网络安全组的详细信息，请参阅 [Network Security Groups overview](/documentation/articles/virtual-networks-nsg/)（网络安全组概述）。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅 [User Defined Routes and IP forwarding](/documentation/articles/virtual-networks-udr-overview/)（用户定义的路由和 IP 转发）。
 
 ##<a id="tasks"></a>任务和信息
 
@@ -197,4 +196,4 @@ __使用 Azure CLI__
 
 若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0711_2016-->

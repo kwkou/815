@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/04/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="06/07/2016"
+	wacn.date=""/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 
@@ -157,15 +157,17 @@
 
 >[AZURE.NOTE] 之后，在不编辑 fstab 的情况下删除数据磁盘可能会导致 VM 无法引导。如果这是一种常见情况，则请注意，大多数分发都提供了 `nofail` 和/或 `nobootwait` fstab 选项，这些选项使系统在磁盘无法装载的情况下也能引导。有关这些参数的详细信息，请查阅您的分发文档。
 
-## 其他资源
-[如何登录到运行 Linux 的虚拟机][Logon]
+## 后续步骤
+你可以阅读下列文章，进一步了解如何使用 Linux VM：
 
-[如何从 Linux 虚拟机分离磁盘](/documentation/articles/virtual-machines-linux-classic-detach-disk/)
+- [如何登录到运行 Linux 的虚拟机][Logon]
 
-[使用带服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/)
+- [如何从 Linux 虚拟机分离磁盘](/documentation/articles/virtual-machines-linux-classic-detach-disk/)
+
+- [将 Azuer CLI 与经典部署模型搭配使用](/documentation/articles/virtual-machines-command-line-tools/)
 
 <!--Link references-->
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide/
 [Logon]: /documentation/articles/virtual-machines-linux-classic-log-on/
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->
