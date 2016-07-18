@@ -10,7 +10,7 @@
 <tags
 	ms.service="azure-portal"
 	ms.date="03/30/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="07/18/2016"/>
 
 # 使用自动缩放操作在 Azure Insights 中发送电子邮件和 webhook 警报通知
 
@@ -37,8 +37,8 @@
 ## webhook 中的身份验证
 有两种身份验证 URI 形式：
 
-	1. Token-base authentication, where you save the webhook URI with a token ID as a query parameter. For example, https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue
-	2. Basic authentication, where you use a user ID and password. For example, https://userid:password@mysamplealert/webcallback?someparamater=somevalue&parameter=value
+1. 基于令牌的身份验证：将具有令牌 ID 的 webhook URI 保存为查询参数。例如 https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue
+2. 基本身份验证：使用用户 ID 和密码。例如 https://userid:password@mysamplealert/webcallback?someparamater=somevalue&parameter=value
 
 ## 自动缩放通知 webhook 负载架构
 生成自动缩放通知时，以下元数据会包含在 webhook 负载中：

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Insights：Azure Insights CLI 快速启动示例。| Azure"
+	pageTitle="Azure Insights：Azure Insights CLI 快速入门示例 | Azure"
 	description="示例 CLI 命令可以帮助访问 Azure Insights 监视功能。Azure Insights 是一种 Microsoft Azure 服务，允许你基于配置的遥测数据值自动缩放云服务、虚拟机和 Web Apps、发送警报通知或调用 Web URL。"
 	authors="kamathashwin"
 	manager=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="azure-portal"
 	ms.date="03/30/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="07/18/2016"/>
 
 # Azure Insights 跨平台 CLI 快速启动示例
 
@@ -20,7 +20,7 @@
 
 ## 先决条件
 
-如果你尚未安装 Azure CLI，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。
+如果你尚未安装 Azure CLI，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。如果你不熟悉 Azure CLI，则可以在[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)处了解有关它的详细信息。
 
 
 在 Windows 中，从 [Node.js 网站](https://nodejs.org/)安装 npm。完成安装之后，通过“以管理员身份运行”权限使用 CMD.exe，从安装 npm 的文件夹执行以下命令：
