@@ -9,13 +9,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/06/2016"
-   wacn.date="06/13/2016"/>
+   ms.date="06/13/2016"
+   wacn.date="07/18/2016"/>
 
 # 管理 Azure SQL 数据仓库中的计算能力 (PowerShell)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute/)
+- [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
@@ -29,20 +29,20 @@
 - 暂停计算
 - 恢复计算
 
-若要了解相关信息，请参阅 [管理计算能力概述][]。
+若要了解相关信息，请参阅 [管理计算概述][]。
 
 
 ## 开始之前
 
 ### 安装最新版本的 Azure PowerShell
 
-> [AZURE.NOTE]  若要对 SQL 数据仓库使用 Azure PowerShell，需要安装 Azure PowerShell 1.0.3 或更高版本。若要验证当前版本，请运行命令 **Get-Module -ListAvailable -Name Azure**。可以从 [Microsoft Web 平台安装程序][] 安装最新的版本。有关详细信息，请参阅 [如何安装和配置 Azure PowerShell][]。
+> [AZURE.NOTE]  若要对 SQL 数据仓库使用 Azure PowerShell，需要安装 Azure PowerShell 1.0.3 或更高版本。若要验证当前版本，请运行命令 **Get-Module -ListAvailable -Name Azure**。可以从 [Microsoft Web 平台安装程序][]安装最新的版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell][]。
 
 ### Azure PowerShell cmdlet 入门
 
 开始操作：
 
-1. 打开 Azure PowerShell。 
+1. 打开 Azure PowerShell。
 2. 在 PowerShell 提示符下，运行以下命令以登录到 Azure Resource Manager，然后选择你的订阅。
 
         Login-AzureRmAccount -EnvironmentName AzureChinaCloud
@@ -109,15 +109,15 @@
 <!--Article references-->
 [Service capacity limits]: /documentation/articles/sql-data-warehouse-service-capacity-limits/
 [管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
+[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 
 <!--MSDN references-->
 [Resume-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619347.aspx
 [Suspend-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619337.aspx
 [Set-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619433.aspx
 
-
 <!--Other Web references-->
-
+[Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 [Azure portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

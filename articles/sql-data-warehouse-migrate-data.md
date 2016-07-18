@@ -9,11 +9,11 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/03/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="05/31/2016"
+   wacn.date="07/18/2016"/>
 
 # 迁移数据
-迁移数据时的主要目标是填充 SQLDW 数据库。此过程可以通过多种方式来完成。SSIS 和 bcp 都可用来实现此目标。但是，随着数据量的增加，你应该考虑将数据迁移过程划分成多个步骤。这样，你便有机会优化每个步骤以提高性能和弹性，确保顺利迁移数据。
+数据可以使用各种工具从不同源移动到 SQL 数据仓库中。 SSIS 和 bcp 都可用来实现此目标。但是，随着数据量的增加，你应该考虑将数据迁移过程划分成多个步骤。这样，你便有机会优化每个步骤以提高性能和弹性，确保顺利迁移数据。
 
 本文首先讨论 SSIS 和 bcp 的简单迁移方案。然后稍微深入讨论如何优化迁移。
 
@@ -71,7 +71,7 @@ PolyBase 规定数据文件必须采用 UTF-8 编码。这意味着在导出数�
 
 > [AZURE.NOTE] bcp 不支持将数据导出为 UTF-8。
 
-数据传输***之前***，任何使用 UFT-16 编码的文件都需要经过重新编写。
+数据传输**之前**，任何使用 UFT-16 编码的文件都需要经过重新编写。
 
 ### 数据文件的格式
 PolyBase 规定要有固定的行终止符 \\n 或换行符。数据文件必须符合此标准。字符串或列终止符没有任何限制。
@@ -122,9 +122,8 @@ Azure 导入和导出服务是一个数据传输进程，用于将大量 (GB++) 
 
 若要从文件系统上载文件，需要执行如下所示的命令：
 
-```
-AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Pattern:abc.txt
-```
+
+    AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Pattern:abc.txt
 
 高级过程摘要如下：
 
@@ -153,6 +152,7 @@ PolyBase 还支持名为“递归文件夹遍历”的功能。你可以使用�
 
 ## 后续步骤
 有关迁移的详细信息，请参阅[将解决方案迁移到 SQL 数据仓库][]。
+有关更多开发技巧，请参阅[开发概述][]。
 
 <!--Image references-->
 
@@ -164,7 +164,7 @@ PolyBase 还支持名为“递归文件夹遍历”的功能。你可以使用�
 [将解决方案迁移到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [使用 bcp 将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-load-with-bcp/
-[使用 PolyBase 将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-load-with-polybase/
+[使用 PolyBase 将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
 
 
 <!--MSDN references-->
@@ -173,9 +173,11 @@ PolyBase 还支持名为“递归文件夹遍历”的功能。你可以使用�
 [Azure 数据工厂]: /services/data-factory/
 [ExpressRoute]: /services/expressroute/
 [ExpressRoute 文档]: /documentation/services/expressroute/
+
 [生产版]: http://aka.ms/downloadazcopy/
 [预览版]: http://aka.ms/downloadazcopypr/
 [ADO.NET 目标适配器]: https://msdn.microsoft.com/zh-cn/library/bb934041.aspx
 [SSIS 文档]: https://msdn.microsoft.com/zh-cn/library/ms141026.aspx
 
-<!---HONumber=Mooncake_0307_2016-->
+
+<!---HONumber=Mooncake_0711_2016-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/14/2016"
-   wacn.date="06/20/2016"/>
+   ms.date="06/03/2016"
+   wacn.date="07/18/2016"/>
 
 # 将 SQL 代码迁移到 SQL 数据仓库
 
@@ -76,7 +76,7 @@ SQL 数据仓库支持部分通用表表达式 (CTE)。目前支持以下 CTE �
 
 SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复杂，最好是将其分为多个步骤来进行。通常你可以使用循环，并在循环访问递归的临时查询时填充临时表。填充临时表之后，你可以使用单个结果集返回数据。类似的方法已用于解决[结合 rollup / cube / grouping sets 选项的 Group By 子句][]一文中所述的 `GROUP BY WITH CUBE`。
 
-### 系统函数
+## 系统函数
 
 还有一些不支持的系统函数。在数据仓库中，你可能经常发现使用了下面这些主要函数：
 
@@ -91,21 +91,22 @@ SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复�
 
 例如，以下代码是检索 @@ROWCOUNT 信息的替代解决方法：
 
-```
-SELECT  SUM(row_count) AS row_count 
-FROM    sys.dm_pdw_sql_requests 
-WHERE   row_count <> -1 
-AND     request_id IN 
-                    (   SELECT TOP 1    request_id 
-                        FROM            sys.dm_pdw_exec_requests 
-                        WHERE           session_id = SESSION_ID() 
-                        ORDER BY end_time DESC
-                    )
-;
-``` 
+
+	SELECT  SUM(row_count) AS row_count
+	FROM    sys.dm_pdw_sql_requests
+	WHERE   row_count <> -1
+	AND     request_id IN
+	                    (   SELECT TOP 1    request_id
+	                        FROM            sys.dm_pdw_exec_requests
+	                        WHERE           session_id = SESSION_ID()
+	                        AND             resource_class IS NOT NULL
+	                        ORDER BY end_time DESC
+	                    )
+	;
+
 
 ## 后续步骤
-有关开发代码的建议，请参阅[开发概述][]。
+有关所有支持的 T-SQL 语句的完整列表，请参阅 [Transact-SQL 主题][]。
 
 <!--Image references-->
 
@@ -114,6 +115,7 @@ AND     request_id IN
 [Delete 中的 ANSI Join]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [Merge 语句]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [INSERT..EXEC]: /documentation/articles/sql-data-warehouse-develop-temporary-tables/
+[Transact-SQL 主题]: /documentation/articles/sql-data-warehouse-reference-tsql-statements/
 
 [游标]: /documentation/articles/sql-data-warehouse-develop-loops/
 [SELECT..INTO]: /documentation/articles/sql-data-warehouse-develop-ctas/
@@ -122,10 +124,10 @@ AND     request_id IN
 [通过视图更新]: /documentation/articles/sql-data-warehouse-develop-views/
 [使用 select 分配变量]: /documentation/articles/sql-data-warehouse-develop-variable-assignment/
 [动态 SQL 字符串没有 MAX 数据类型]: /documentation/articles/sql-data-warehouse-develop-dynamic-sql/
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0711_2016-->
