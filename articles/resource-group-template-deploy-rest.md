@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="06/08/2016"
-   wacn.date=""/>
+   wacn.date="07/18/2016"/>
 
 # 使用 Resource Manager 模板和 Resource Manager REST API 部署资源
 
