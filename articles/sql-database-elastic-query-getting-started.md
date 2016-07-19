@@ -1,21 +1,24 @@
 <properties
-	pageTitle="用于分片的弹性查询（水平分区）入门 | Azure"
+	pageTitle="跨扩展云数据库（横向分区）进行报告 | Azure"
 	description="如何使用跨数据库数据库查询"
 	services="sql-database"
 	documentationCenter=""  
-	manager="jeffreyg"
+	manager="jhubbard"
 	authors="sidneyh"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/22/2016"
-	wacn.date="06/14/2016" />
+	ms.date="05/23/2016"
+	wacn.date="07/18/2016" />
 
-# 用于分片的弹性查询（水平分区）入门
+# 跨扩展云数据库进行报告（预览）
 
-Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-query-overview/)。
+你可以使用[弹性查询](/documentation/articles/sql-database-elastic-query-overview)从单个连接点中的多个 Azure SQL 数据库中创建报告。数据库必须进行横向分区（也称为“分片”）。
 
-本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中的示例做了延伸。完成时，你将会：了解如何配置和使用 Azure SQL 数据库执行跨多个相关数据库的查询。
+如果有现有的数据库，请参阅 [Migrating existing databases to scaled-out databases（将现有数据库迁移到扩展数据库）](/documentation/articles/sql-database-elastic-convert-to-use-elastic-tools/)。
+
+若要了解需要查询的 SQL 对象，请参阅 [Query across horizontally partitioned databases（跨横向分区的数据库进行查询）](/documentation/articles/sql-database-elastic-query-horizontal-partitioning/)。
+
 ## 先决条件
 
 下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
@@ -138,4 +141,4 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure SQL 数据库的弹性数据库事务概述"
+   pageTitle="跨云数据库的分布式事务"
    description="Azure SQL 数据库的弹性数据库事务概述"
    services="sql-database"
    documentationCenter=""
@@ -9,10 +9,10 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="02/23/2016"
-   wacn.date="04/06/2016"/>
+   ms.date="05/27/2016"
+   wacn.date="07/18/2016"/>
 
-# Azure SQL 数据库的弹性数据库事务概述
+# 跨云数据库的分布式事务
 
 Azure SQL 数据库 (SQL DB) 的弹性数据库事务可让你在 SQL DB 中跨多个数据库运行事务。SQL DB 的弹性数据库事务适用于使用 ADO .NET 的 .NET 应用程序，并且与你熟悉的使用 [System.Transaction](https://msdn.microsoft.com/zh-cn/library/system.transactions.aspx) 类的编程体验相集成。若要获取该库，请参阅 [.NET Framework 4.6.1（Web 安装程序）](https://www.microsoft.com/zh-cn/download/details.aspx?id=49981)。
 
@@ -22,7 +22,8 @@ Azure SQL 数据库 (SQL DB) 的弹性数据库事务可让你在 SQL DB 中跨�
 
 ## 常见方案
 
-SQL DB 的弹性数据库事务可让应用程序对多个不同 SQL 数据库中存储的数据进行原子性更改。预览版着重于 C# 和 .NET 的客户端开发体验。已计划在将来添加使用 T-SQL 的服务器端体验。弹性数据库事务面向以下方案：
+SQL DB 的弹性数据库事务可让应用程序对多个不同 SQL 数据库中存储的数据进行原子性更改。预览版着重于 C# 和 .NET 的客户端开发体验。已计划在将来添加使用 T-SQL 的服务器端体验。  
+弹性数据库事务面向以下方案：
 
 * Azure 中的多数据库应用程序：在此方案中，数据垂直分区到 SQL DB 中的多个数据库，使得不同种类的数据位于不同的数据库。某些操作需要更改两个以上的数据库中保存的数据。应用程序使用弹性数据库事务来协调数据库之间的更改并确保原子性。
 
@@ -92,7 +93,7 @@ SQL DB 的弹性数据库事务还支持协调分布式事务，这需要使用�
 
 ## 适用于 Azure 云服务的 .NET 安装
 
-Azure 为托管 .NET 应用程序提供了多个产品。不同产品的比较可见于[Azure App Service、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/)。如果产品的来宾 OS 版本低于弹性事务所需的 .NET 4.6.1，你需要将来宾 OS 升级到 4.6.1。
+Azure 为托管 .NET 应用程序提供了多个产品。不同产品的比较可见于[Azure Web 应用、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/)。如果产品的来宾 OS 版本低于弹性事务所需的 .NET 4.6.1，你需要将来宾 OS 升级到 4.6.1。
 
 对于 Azure App Service，当前不支持升级到来宾 OS。对于 Azure 虚拟机，只需要登录到 VM 并运行最新的 .NET framework 安装程序即可。对于 Azure 云服务，你需要将更高版本的 .NET 安装包括到部署的启动任务中。[在云服务角色上安装 .NET](/documentation/articles/cloud-services-dotnet-install-dotnet/) 中说明了概念和步骤。
 
@@ -125,7 +126,7 @@ Azure SQL 数据库中支持跨不同逻辑服务器的弹性数据库事务。�
 
 * **New-AzureRmSqlServerCommunicationLink**：使用此 cmdlet 在 Azure SQL DB 中的两个逻辑服务器之间创建新的通信关系。这种通信关系是对称的，这意味着这两台服务器可以使用另一台服务器启动事务。
 * **Get AzureRmSqlServerCommunicationLink**：使用此 cmdlet 来检索现有通信关系及其属性。
-* **Get AzureRmSqlServerCommunicationLink**：使用此 cmdlet 来删除现有通信关系。 
+* **Get AzureRmSqlServerCommunicationLink**：使用此 cmdlet 来删除现有通信关系。
 
 
 ## 监视事务状态
@@ -142,15 +143,16 @@ Azure SQL 数据库中支持跨不同逻辑服务器的弹性数据库事务。�
 
 SQL DB 中的弹性数据库事务当前存在以下限制：
 
-* 仅支持 SQL DB 中跨数据库的事务。其他 [X/Open XA](https://zh.wikipedia.org/wiki/X/Open_XA) 资源提供程序和除 SQL DB 以外的数据库无法参与弹性数据库事务。这意味着，弹性数据库事务无法扩展到本地 SQL Server 和 Azure SQL 数据库。对于本地的分布式事务，请继续使用 MSDTC。 
-* 仅支持来自 .NET 应用程序的客户端协调事务。目前已规划 T-SQL 的服务器端支持，例如 BEGIN DISTRIBUTED TRANSACTION，但尚未推出。 
+* 仅支持 SQL DB 中跨数据库的事务。其他 [X/Open XA](https://zh.wikipedia.org/wiki/X/Open_XA) 资源提供程序和除 SQL DB 以外的数据库无法参与弹性数据库事务。这意味着，弹性数据库事务无法扩展到本地 SQL Server 和 Azure SQL 数据库。对于本地的分布式事务，请继续使用 MSDTC。
+* 仅支持来自 .NET 应用程序的客户端协调事务。目前已规划 T-SQL 的服务器端支持，例如 BEGIN DISTRIBUTED TRANSACTION，但尚未推出。
 * 仅支持 Azure SQL DB V12 上的数据库。
+* 不支持跨 WCF 服务的事务。例如，你有一个执行事务的 WCF 服务方法。事务范围内的调用将失败，并显示异常 [System.ServiceModel.ProtocolException](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.protocolexception)。
 
-## 了解详细信息
-
-你的 Azure 应用程序尚未使用弹性数据库功能吗？ 请访问我们的[文档结构图](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale)。如有问题，请在 [SQL 数据库论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=ssdsgetstarted)上联系我们；对于功能请求，请将其添加到 [SQL 数据库反馈论坛](https://feedback.azure.com/forums/217321-sql-database)。
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-transactions-overview/distributed-transactions.png
 
-<!---HONumber=Mooncake_0328_2016-->
+
+
+
+<!---HONumber=Mooncake_0711_2016-->

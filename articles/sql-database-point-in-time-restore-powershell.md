@@ -9,17 +9,16 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="05/10/2016"
-    wacn.date="06/14/2016"/>
+    ms.date="06/17/2016"
+    wacn.date="07/18/2016"/>
 
 # 使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点
 
 > [AZURE.SELECTOR]
+- [概述](/documentation/articles/sql-database-point-in-time-restore/)
 - [PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell/)
 
-本文将向你说明如何使用 PowerShell 将数据库还原到以前的时间点。
-
-[**时间点还原**](/documentation/articles/sql-database-point-in-time-restore/)是自助服务功能，允许你将数据库从我们为所有数据库进行的自动备份还原到数据库保留期内的任何时间点。若要了解有关自动备份和数据库保留期的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
+本文将向你说明如何使用 PowerShell 将数据库从 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)还原到以前的时间点。
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
 
@@ -46,13 +45,12 @@
 
 ## 后续步骤
 
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
-
+- 有关如何使用 REST API 恢复到某个时间点的信息，请参阅 [Point-In-Time Restore using the REST API（使用 REST API 进行的时间点还原）](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)。
+- 有关时间点还原的概述，请参阅[时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
+- 有关如何从用户或应用程序错误进行恢复的完整讨论，请参阅[用户错误恢复](/documentation/articles/sql-database-user-error-recovery/)。
 
 ## 其他资源
 
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [SQL 数据库文档](/documentation/services/sql-databases)
+- [业务连续性方案](/documentation/articles/sql-database-business-continuity-scenarios/)
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -10,19 +10,18 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="03/24/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="05/26/2016"
+   wacn.date="07/18/2016"/>
 
-# 试用 SQL 数据库：使用 C&#x23; 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库
+# 试用 SQL 数据库：使用 C# 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库
 
-**单一数据库**
 
 > [AZURE.SELECTOR]
 - [Azure 经典管理门户](/documentation/articles/sql-database-get-started/)
 - [C#](/documentation/articles/sql-database-get-started-csharp/)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell/)
 
-了解如何使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 命令创建 Azure SQL 数据库。你可以使用 SQL 和 C# 创建单一数据库以试用 SQL 数据库。为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
+了解如何使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 命令创建 Azure SQL 数据库。你可以使用 SQL 和 C# 创建单一数据库以试用 SQL 数据库。若要创建弹性数据库池，请参阅[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)。为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
 
 适用于 .NET 的 Azure SQL 数据库库提供了基于 [Azure 资源管理器](/documentation/articles/resource-group-overview/)的 API，用于包装[基于资源管理器的 SQL 数据库 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)。此客户端库遵循基于资源管理器的客户端库的通用模式。资源管理器需要资源组，并要求使用 [Azure Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/mt168838.aspx) (AAD) 进行身份验证。
 
@@ -43,7 +42,7 @@
 若要使用 C# 来设置 SQL 数据库，请通过在 Visual Studio 中使用[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）安装以下程序包来获取所需的管理库：
 
     Install-Package Microsoft.Azure.Management.Sql –Pre
-    Install-Package Microsoft.Azure.Management.Resources –Pre
+    Install-Package Microsoft.Azure.Management.ResourceManager –Pre
     Install-Package Microsoft.Azure.Common.Authentication –Pre
 
 
@@ -251,8 +250,8 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 
     using Microsoft.Azure;
-    using Microsoft.Azure.Management.Resources;
-    using Microsoft.Azure.Management.Resources.Models;
+    using Microsoft.Azure.Management.ResourceManager;
+    using Microsoft.Azure.Management.ResourceManager.Models;
     using Microsoft.Azure.Management.Sql;
     using Microsoft.Azure.Management.Sql.Models;
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
@@ -414,6 +413,8 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     }
 
 
+
+
 ## 后续步骤
 既然你已试用 SQL 数据库并使用 C# 设置了数据库，现在可以阅读以下文章：
 
@@ -438,4 +439,4 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0711_2016-->

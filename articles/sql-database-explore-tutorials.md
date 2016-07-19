@@ -1,5 +1,5 @@
 <properties
-   pageTitle="浏览 SQL 数据库教程"
+   pageTitle="浏览 Azure SQL 数据库教程"
    description="了解 SQL 数据库的特性和功能"
    keywords=""
    services="sql-database"
@@ -10,12 +10,12 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="05/04/2016"
-   wacn.date="06/14/2016"/>
+   ms.date="06/01/2016"
+   wacn.date="07/18/2016"/>
    
-# 浏览 SQL 数据库教程
+# 浏览 Azure SQL 数据库教程
 
-以下链接可以转到每个列出的功能区域概述以及每个区域的快速入门教程。
+以下链接可以转到每个列出的功能区域的概述以及每个区域的简单的分步入门教程。有关在基于实际情况的完整解决方案中演示 SQL 数据库的使用的解决方案范围的快速入门，请参阅 [Azure SQL Database Solution Quick Starts（Azure SQL 数据库解决方案快速入门）](/documentation/articles/sql-database-solution-quick-starts/)。
 
 ## 使用 SQL Server Management Studio
 
@@ -33,12 +33,12 @@
 
 | 教程 | 说明 |
 |---|---|---|
-| 创建弹性池 | 在本教程中，你将学习如何创建 Azure SQL 数据库的可缩放的池。 |
-| 监视弹性数据库 | 在本教程中，你将学习如何监视单个弹性数据库的潜在问题。 |
-| 向池资源添加警报 | 在本教程中，你将学习如何向资源添加规则，以便在资源达到设置的利用率阈值时，向人员发送电子邮件或是向 URL 终结点发送警报字符串。 |
-| 将数据库移入弹性池 | 在本教程中，你将学习如何将数据库移入弹性池。 |
-| 将数据库移出弹性池 | 在本教程中，你将学习如何将数据库移出弹性池。 |
-| 更改池的性能设置   | 在本教程中，你将学习如何调整池的性能和存储限制。 |
+| [创建弹性池](/documentation/articles/sql-database-elastic-pool-create-powershell/) | 在本教程中，你将学习如何创建 Azure SQL 数据库的可缩放的池。 |
+| [监视弹性数据库](/documentation/articles/sql-database-elastic-pool-manage-powershell/#elastic-database-monitoring) | 在本教程中，你将学习如何监视单个弹性数据库的潜在问题。 |
+| [向池资源添加警报](/documentation/articles/sql-database-elastic-pool-manage-powershell/#add-an-alert-to-a-pool-resource) | 在本教程中，你将学习如何向资源添加规则，以便在资源达到设置的利用率阈值时，向人员发送电子邮件或是向 URL 终结点发送警报字符串。 |
+| [将数据库移入弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/#move-a-database-into-an-elastic-pool) | 在本教程中，你将学习如何将数据库移入弹性池。 |
+| [将数据库移出弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/#move-a-database-out-of-an-elastic-pool) | 在本教程中，你将学习如何将数据库移出弹性池。 |
+| [更改池的性能设置](/documentation/articles/sql-database-elastic-pool-manage-powershell/#change-performance-settings-of-a-pool) | 在本教程中，你将学习如何调整池的性能和存储限制。 |
 ||||
 
 ## 弹性数据库作业
@@ -58,7 +58,7 @@
 | 教程 | 说明 |
 |---|---|---|
 | [跨横向分区（分片）数据库查询）](/documentation/articles/sql-database-elastic-query-getting-started/) | 在本教程中，你将学习如何使用[弹性查询](/documentation/articles/sql-database-elastic-query-overview/)从位于横向分区（分片）数据库中的所有数据库创建报表 |
-| [跨垂直分区数据库查询）](/documentation/articles/sql-database-elastic-query-getting-started-vertical/#create-database-objects) | 在本教程中，你将学习如何使用[弹性查询](/documentation/articles/sql-database-elastic-query-overview/)从位于垂直分区（分片）数据库中的所有数据库创建报表 |
+| [跨垂直分区数据库查询）](/documentation/articles/sql-database-elastic-query-getting-started-vertical/#create-database-objects) | 在本教程中，你将学习如何使用[弹性查询](/documentation/articles/sql-database-elastic-query-overview/)从位于纵向分区数据库中的所有数据库创建报表 |
 | [迁移要横向扩展的现有数据库](/documentation/articles/sql-database-elastic-convert-to-use-elastic-tools/)| 在本教程中，你将学习如何横向扩展（分片）Azure SQL 数据库。 |
 ||||
 
@@ -94,14 +94,14 @@
 | [使用 PowerShell 将 BACPAC 文件导入 Azure SQL 数据库](/documentation/articles/sql-database-import-powershell/) | 在本教程中，你将学习如何使用 PowerShell 将数据库从 BACPAC 文件导入 Azure SQL 数据库。|
 | 使用 Azure 门户存档 Azure SQL 数据库 | 在本教程中，你将学习如何使用 Azure 门户将 Azure SQL 数据库存档到 BACPAC 文件。 |
 | [使用 PowerShell 存档 Azure SQL 数据库](/documentation/articles/sql-database-export-powershell/) | 在本教程中，你将学习如何使用 Azure 门户将 Azure SQL 数据库存档到 BACPAC 文件。 |
-| 使用 Azure 门户复制 Azure SQL 数据库 | 在本教程中，你将学习如何使用 Azure 门户复制 Azure SQL 数据库。 |
+| [使用 Azure 门户复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/#copy-your-sql-database) | 在本教程中，你将学习如何使用 Azure 门户复制 Azure SQL 数据库。 |
 | [使用 PowerShell 复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-powershell/#copy-your-sql-database) | 在本教程中，你将学习如何使用 PowerShell 复制 Azure SQL 数据库。 |
 | [使用 Transact-SQL 复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-transact-sql/#copy-your-sql-database) | 在本教程中，你将学习如何使用 Transact-SQL 复制 Azure SQL 数据库。 |
 ||||
 
 ##开发
 
-在以下教程中，你将了解 [Azure SQL 数据库的客户端连接](/documentation/articles/sql-database-connect-central-recommendations/)和使用[连接库](/documentation/articles/sql-database-libraries/)。
+在以下教程中，你将了解 [SQL 数据库开发](/documentation/articles/sql-database-develop-overview/)和使用[连接库](/documentation/articles/sql-database-libraries/)。
 
 | 教程 | 说明 |
 |---|---|---|
@@ -138,27 +138,27 @@
 
 | 教程 | 说明 |
 |---|---|---|
-| 使用 Azure 门户为数据库启用威胁检测 | 在本教程中，你将学习在 Azure 门户中如何为数据库设置威胁检测。|
+
 | [使用“始终加密”保护敏感数据](/documentation/articles/sql-database-always-encrypted-azure-key-vault/) | 在本教程中，你将使用“始终加密”向导保护 Azure SQL 数据库中的敏感数据。|
 | [使用透明数据加密保护敏感数据](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx)| 在本教程中，你将学习如何使用透明数据加密保护敏感数据。|
 | [加密一列数据](https://msdn.microsoft.com/zh-cn/library/ms179331.aspx)| 在本教程中，你将学习如何使用 Transact-SQL 加密一列数据。|
-| 设置动态数据掩码 | 在本教程中，你将学习如何为 Azure SQL 数据库设置动态数据掩码。 |
+
 ||||
 
 ## 业务连续性和查询横向扩展
 
-在以下教程中，你将学习如何使用[异地还原和活动异地复制](/documentation/articles/sql-database-business-continuity/)从错误中恢复过来，以保持业务连续性和实现查询横向扩展。
+在以下教程中，你将学习如何使用[异地还原和活动异地复制](/documentation/articles/sql-database-business-continuity/)从错误中恢复过来，以保持业务连续性和实现查询扩展。
 
 | 教程 | 说明 |
 |---|---|---|
-| 使用 Azure 门户将 Azure SQL 数据库还原到之前的时间点 | 在本教程中，你将学习如何使用 Azure 门户将数据库还原到较早的时间点。|
+| [使用 Azure PowerShell 将 Azure SQL 数据库还原到之前的时间点](/documentation/articles/sql-database-point-in-time-restore-powershell/)| 在本教程中，你将学习如何使用 Azure 门户将数据库还原到较早的时间点。|
 | [使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点](/documentation/articles/sql-database-point-in-time-restore-powershell/) | 在本教程中，你将学习如何使用 PowerShell 将数据库还原到较早的时间点|
-| 使用 Azure 门户还原已删除的 Azure SQL 数据库 | 在本教程中，你将学习如何使用 Azure 门户还原已删除的数据库。|
+| [使用 Azure PowerShell 还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/) | 在本教程中，你将学习如何使用 Azure 门户还原已删除的数据库。|
 | [使用 PowerShell 还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/) | 在本教程中，你将学习如何使用 PowerShell 还原已删除的数据库。|
-| 使用 Azure 门户为 Azure SQL 数据库配置异地复制 | 在本教程中，你将学习如何使用 Azure 门户配置活动异地复制。|
+
 | [使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/)| 在本教程中，你将学习如何使用 Transact-SQL 配置活动异地复制。|
 | [使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql/)| 在本教程中，你将学习如何使用 Transact-SQL 配置活动异地复制。|
-| 使用 Azure 门户为 Azure SQL 数据库启动计划内或计划外的故障转移 | 在本教程中，你将学习如何使用 Azure 门户故障转移到异地复制的次要副本。|
+
 | [使用 PowerShell 为 Azure SQL 数据库启动计划内或计划外的故障转移](/documentation/articles/sql-database-geo-replication-failover-powershell/) | 在本教程中，你将学习如何使用 PowerShell 故障转移到异地复制的次要副本。|
 | [使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外的故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/) | 在本教程中，你将学习如何使用 Transact-SQL 故障转移到异地复制的次要副本。|
 ||||
@@ -172,4 +172,4 @@
 | [Azure SQL 数据同步入门（预览版）](/documentation/articles/sql-database-get-started-sql-data-sync/) | 在本教程中，你将了解使用 Azure 经典管理门户的 Azure SQL 数据同步的基础知识。 |
 ||||
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -9,166 +9,262 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="04/01/2016"
-    wacn.date="06/14/2016"/>
+    ms.date="05/27/2016"
+    wacn.date="07/18/2016"/>
 
-# 使用 PowerShell 监视、管理弹性数据库池并调整其大小 
+# 使用 PowerShell 监视和管理弹性数据库池 
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
 - [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
 - [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
 
-了解如何使用 PowerShell cmdlet 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
+使用 PowerShell cmdlet 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
 有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
+可以在 [eDTU and storage limits（eDTU 和存储限制）](/documentation/articles/sql-database-elastic-pool#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases)中找到有关池的值。
 
-你需要运行 Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+## 先决条件
 
-## 在池中创建新的弹性数据库
-
-若要直接在池中创建新的数据库，请使用 [New-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619339.aspx) cmdlet 并设置 **ElasticPoolName** 参数。
-
-
-	New-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
+* Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+* 弹性数据库池只能在 SQL 数据库 V12 服务器中使用。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 
-## 将独立的数据库移到池中
+## 将数据库移入弹性池
 
-若要将现有数据库移到池中，请使用 [Set-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) cmdlet 并设置 **ElasticPoolName** 参数。
+使用 [Set-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) 可以将数据库移入或移出池。
 
 	Set-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
-
 ## 更改池的性能设置
 
-若要更改池的性能设置，请使用 [Set-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603511.aspx) cmdlet。
+当性能受到影响时，可以更改池的设置以适应增长。使用 [Set-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603511.aspx) cmdlet。将 -Dtu 参数设置为每个池的 eDTU。有关该参数可能的值，请参阅 [eDTU and storage limits（eDTU 和存储限制）](/documentation/articles/sql-database-elastic-pool/#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases)。
 
     Set-AzureRmSqlElasticPool –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” –Dtu 1200 –DatabaseDtuMax 100 –DatabaseDtuMin 50 
 
 
 ## 获取池操作的状态
 
-你可以使用 [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) cmdlet 跟踪池操作的状态（包括创建和更新）。
+创建一个池需要一些时间。你可以使用 [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) cmdlet 跟踪池操作（包括创建和更新）的状态。
 
 	Get-AzureRmSqlElasticPoolActivity –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” 
 
 
 ## 获取将弹性数据库移入和移出池的状态
 
-你可以使用 [Get-AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603687.aspx) cmdlet 跟踪弹性数据库操作的状态（包括创建和更新）。
+移动数据库需要一些时间。你可以使用 [Get AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603687.aspx) cmdlet 跟踪移动状态。
 
 	Get-AzureRmSqlDatabaseActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
-## 获取池的使用情况数据
+## 获取池的资源使用情况数据
 
 可以检索的以资源池限制值百分比形式表示的指标：
 
-* 平均 CPU 使用率 - cpu\_percent 
-* 平均 IO 使用率 - data\_io\_percent 
-* 平均日志使用率 - log\_write\_percent 
-* 平均内存使用率 - memory\_percent 
-* 平均 eDTU 使用率（以 CPU/IO/日志最大使用率的形式表示）– DTU\_percent 
-* 并发用户请求（工作进程）最大数 – max\_concurrent\_requests 
-* 并发用户会话最大数 – max\_concurrent\_sessions 
-* 弹性池的总存储大小 – storage\_in\_megabytes 
 
+| 指标名称 | 说明 |
+| :-- | :-- |
+| cpu\_percent | 以池的限制百分比形式表示的平均计算使用率。 |
+| physical\_data\_read\_percent | 以基于池的限制的百分比形式表示的平均 I/O 使用率。 |
+| log\_write\_percent | 以池的限制百分比形式表示的平均写入资源使用率。 | 
+| DTU\_consumption\_percent | 以池的 eDTU 限制百分比形式表示的平均 eDTU 使用率 | 
+| storage\_percent | 以池的存储限制百分比形式表示的平均存储使用率。 |  
+| workers\_percent | 以基于池的限制的百分比形式表示的最大并发工作线程（请求）数量。 |  
+| sessions\_percent | 以基于池的限制的百分比形式表示的最大并发会话（请求）数量。 | 
+| eDTU\_limit | 在该时间间隔内该弹性池的当前最大弹性池 DTU 设置。 |
+| storage\_limit | 在该时间间隔内该弹性池的当前最大弹性池存储限制设置（以兆字节为单位）。 |
+| eDTU\_used | 在此时间间隔内池使用的平均 eDTU 数。 |
+| storage\_used | 在此时间间隔内池使用的平均存储空间（以字节为单位） |
 
-指标粒度/保持期：
+**指标粒度/保持期：**
 
-* 将以 5 分钟的粒度返回数据。  
-* 数据保持期为 14 天。  
-
+* 将以 5 分钟的粒度返回数据。
+* 数据保持期为 14 天。
 
 此 cmdlet 和 API 将能够在一次调用中检索的行数限制为 1000 行（大约 3 天的数据，如果粒度值为 5 分钟的话）。不过，可以使用不同的开始/结束时间间隔来多次调用此命令，以便检索更多数据
 
+要检索指标：
 
-检索指标：
+	$metrics = (Get-AzureRmMetric -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015")  
 
-	$metrics = (Get-Metrics -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
-通过重复调用和追加数据来获取更多天数：
+## 获取弹性数据库的资源使用情况数据
 
-	$metrics = $metrics + (Get-Metrics -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/21/2015" -EndTime "4/24/2015") 
- 
-设置表的格式：
+这些 API 与当前用来监视单独数据库的资源使用情况的 (V12) API 相同，但存在以下语义差异。
 
-    $table = Format-MetricsAsTable $metrics 
+就此 API 来说，检索的指标表示为为该池设置的单个最大 eDTU（或者 CPU、IO 等基础指标的等效最大值）的百分比。例如，对于任何此类指标来说，50% 的使用率表示特定资源消耗为父池中该资源的每个数据库上限的 50%。
 
-导出到 CSV 文件：
+要检索指标：
 
-    foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation} 
+    $metrics = (Get-AzureRmMetric -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
-## 获取弹性数据库的资源消耗指标
+## 向池资源添加警报
 
-这些 API 与当前用来监视单独数据库的资源使用率的 (V12) API 相同，但存在以下语义差异
+可以向资源添加警报规则，以便在资源达到你设置的使用阈值时，向 [URL 终结点](https://msdn.microsoft.com/zh-cn/library/mt718036.aspx)发送电子邮件通知或警报字符串。使用 Add-AzureRmMetricAlertRule cmdlet。
 
-* 就此 API 来说，检索的指标将表示为为该池设置的单个 databaseDtuMax（或者 CPU、IO 等基础指标的等效最大值）的百分比。例如，对于任何此类指标来说，50% 的使用率表示特定资源消耗为父池中该资源的相应 DB 上限的 50%。 
+该示例添加了一个警报，以便在池的 eDTU 消耗超出特定阈值时获取通知。
 
-获取指标：
+    # Set up your resource ID configurations
+    $subscriptionId = '<Azure subscription id>'      # Azure subscription ID
+    $location =  '<location'                         # Azure region
+    $resourceGroupName = '<resource group name>'     # Resource Group
+    $serverName = '<server name>'                    # server name
+    $poolName = '<elastic pool name>'                # pool name 
 
-    $metrics = (Get-Metrics -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
+    #$Target Resource ID
+    $ResourceID = '/subscriptions/' + $subscriptionId + '/resourceGroups/' +$resourceGroupName + '/providers/Microsoft.Sql/servers/' + $serverName + '/elasticpools/' + $poolName
 
-重复进行调用并追加数据，以便根据需要获取更多天数：
+    # Create an email action
+    $actionEmail = New-AzureRmAlertRuleEmail -SendToServiceOwners -CustomEmail JohnDoe@contoso.com
 
-    $metrics = $metrics + (Get-Metrics -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/21/2015" -EndTime "4/24/2015") 
+    # create a unique rule name
+    $alertName = $poolName + "- DTU consumption rule"
 
-设置表的格式：
+    # Create an alert rule for DTU_consumption_percent
+    Add-AzureRMMetricAlertRule -Name $alertName -Location $location -ResourceGroup $resourceGroupName -TargetResourceId $ResourceID -MetricName "DTU_consumption_percent"  -Operator GreaterThan -Threshold 80 -TimeAggregationOperator Average -WindowSize 00:05:00 -Actions $actionEmail 
 
-    $table = Format-MetricsAsTable $metrics 
+## 将警报添加到池中的所有数据库
 
-导出到 CSV 文件：
+可以将警报规则添加到弹性池中的所有数据库，以便在资源达到警报设置的使用阈值时，向 [URL 终结点](https://msdn.microsoft.com/zh-cn/library/mt718036.aspx)发送电子邮件通知或警报字符串。
 
-    foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation}
+该示例向池中的所有数据库添加了一个警报，以便在数据库的 DTU 消耗超出特定阈值时获取通知。
+
+    # Set up your resource ID configurations
+    $subscriptionId = '<Azure subscription id>'      # Azure subscription ID
+    $location = '<location'                          # Azure region
+    $resourceGroupName = '<resource group name>'     # Resource Group
+    $serverName = '<server name>'                    # server name
+    $poolName = '<elastic pool name>'                # pool name 
+
+    # Get the list of databases in this pool.
+    $dbList = Get-AzureRmSqlElasticPoolDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName -ElasticPoolName $poolName
+
+    # Create an email action
+    $actionEmail = New-AzureRmAlertRuleEmail -SendToServiceOwners -CustomEmail JohnDoe@contoso.com
+
+    # Get resource usage metrics for a database in an elastic database for the specified time interval.
+    foreach ($db in $dbList)
+    {
+    $dbResourceId = '/subscriptions/' + $subscriptionId + '/resourceGroups/' + $resourceGroupName + '/providers/Microsoft.Sql/servers/' + $serverName + '/databases/' + $db.DatabaseName
+
+    # create a unique rule name
+    $alertName = $db.DatabaseName + "- DTU consumption rule"
+
+    # Create an alert rule for DTU_consumption_percent
+    Add-AzureRMMetricAlertRule -Name $alertName  -Location $location -ResourceGroup $resourceGroupName -TargetResourceId $dbResourceId -MetricName "dtu_consumption_percent"  -Operator GreaterThan -Threshold 80 -TimeAggregationOperator Average -WindowSize 00:05:00 -Actions $actionEmail
+
+    # drop the alert rule
+    #Remove-AzureRmAlertRule -ResourceGroup $resourceGroupName -Name $alertName
+    } 
+
+
+
+## 在一个订阅的多个池中收集和监视资源使用情况数据
+
+一个订阅中有大量数据库时，单独监视每个弹性池非常麻烦。取而代之的是可以将 SQL 数据库 PowerShell cmdlet 和 T-SQL 查询结合使用，从多个池及其数据库中收集资源使用情况数据，以便监视和分析资源使用情况。可以在 GitHub SQL Server 存储库及有关该存储库是什么和如何使用的文档中找到此 powershell 脚本集合的[示例实现](https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools)。
+
+要使用此示例实现，请按照下面所列的这些步骤进行操作。
+
+
+1. 下载[脚本和文档](https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools)：
+2. 修改环境的脚本。指定在其上托管弹性池的一个或多个服务器。
+3. 指定要存储收集的指标的遥测数据库。
+4. 自定义脚本以指定脚本的执行持续时间。
+
+在高级别中，脚本执行以下操作：
+
+*	枚举指定的 Azure 订阅（或指定的服务器列表）中的所有服务器。
+*	为每个服务器运行后台作业。该作业在固定的时间间隔内循环运行，并收集服务器中所有池的遥测数据。然后将收集的数据加载到指定的遥测数据库。
+*	枚举每个池中的数据库列表，以收集数据库资源使用情况数据。然后将收集的数据加载到遥测数据库。
+
+可以对遥测数据库中收集的指标值进行分析，以监视弹性池及其中的数据库的运行状况。该脚本还在遥测数据库中安装预定义的表值函数 (TVF)，以便针对指定的时间窗口汇总指标值。例如，TVF 的结果可用来显示“指定时间窗口内具有最大 eDTU 使用量的前 N 个弹性池”。 或者，使用诸如 Excel 或 Power BI 这样的分析工具对收集的数据进行查询和分析。
+
+## 示例：检索池及其数据库的资源消耗指标值
+
+该示例将检索指定弹性池及其所有数据库的资源消耗指标值。收集的数据被格式化并写入到 .csv 格式文件中。该文件可以使用 Excel 进行浏览。
+
+	$subscriptionId = '<Azure subscription id>'	      # Azure subscription ID
+	$resourceGroupName = '<resource group name>'             # Resource Group
+	$serverName = <server name>                              # server name
+	$poolName = <elastic pool name>                          # pool name
+		
+	# Login to Azure account and select the subscription.
+	Login-AzureRmAccount -EnvironmentName AzrueChinaCloud
+	Set-AzureRmContext -SubscriptionId $subscriptionId
+	
+	# Get resource usage metrics for an elastic pool for the specified time interval.
+	$startTime = '4/27/2016 00:00:00'  # start time in UTC
+	$endTime = '4/27/2016 01:00:00'    # end time in UTC
+	
+	# Construct the pool resource ID and retrive pool metrics at 5 minute granularity.
+	$poolResourceId = '/subscriptions/' + $subscriptionId + '/resourceGroups/' + $resourceGroupName + '/providers/Microsoft.Sql/servers/' + $serverName + '/elasticPools/' + $poolName
+	$poolMetrics = (Get-AzureRmMetric -ResourceId $poolResourceId -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime $startTime -EndTime $endTime) 
+	
+	# Get the list of databases in this pool.
+	$dbList = Get-AzureRmSqlElasticPoolDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName -ElasticPoolName $poolName
+	
+	# Get resource usage metrics for a database in an elastic database for the specified time interval.
+	$dbMetrics = @()
+	foreach ($db in $dbList)
+	{
+	    $dbResourceId = '/subscriptions/' + $subscriptionId + '/resourceGroups/' + $resourceGroupName + '/providers/Microsoft.Sql/servers/' + $serverName + '/databases/' + $db.DatabaseName
+	    $dbMetrics = $dbMetrics + (Get-AzureRmMetric -ResourceId $dbResourceId -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime $startTime -EndTime $endTime)
+	}
+	
+	#Optionally you can format the metrics and output as .csv file using the following script block.
+	$command = {
+    param($metricList, $outputFile)
+
+    # Format metrics into a table.
+    $table = @()
+    foreach($metric in $metricList) { 
+      foreach($metricValue in $metric.MetricValues) {
+        $sx = New-Object PSObject -Property @{
+            Timestamp = $metricValue.Timestamp.ToString()
+            MetricName = $metric.Name; 
+            Average = $metricValue.Average;
+            ResourceID = $metric.ResourceId 
+          }
+          $table = $table += $sx
+      }
+    }
+    
+    # Output the metrics into a .csv file.
+    write-output $table | Export-csv -Path $outputFile -Append -NoTypeInformation
+	}
+	
+	# Format and output pool metrics
+	Invoke-Command -ScriptBlock $command -ArgumentList $poolMetrics,c:\temp\poolmetrics.csv
+	
+	# Format and output database metrics
+	Invoke-Command -ScriptBlock $command -ArgumentList $dbMetrics,c:\temp\dbmetrics.csv
+
 
 
 ## 弹性池操作延迟
 
-- 更改单个数据库的保障 eDTU 数 (DatabaseDtuMin) 或单个数据库的最大 eDTU 数 (DatabaseDtuMax) 通常在 5 分钟或更少的时间内完成。
-- 如何更改池的 eDTU/存储限制 (Dtu) 取决于池中所有数据库使用的空间总容量。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改池的 eDTU/存储限制时，预计延迟为 3 小时或更短的时间。
+- 更改每个数据库的最小 eDTU 数或每个数据库的最大 eDTU 数通常可在 5 分钟或更少的时间内完成。
+- 更改每个池的 eDTU 数取决于池中所有数据库使用的空间总量。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改每个池的池 eDTU 时，预计延迟为 3 小时或更短的时间。
+
+## 从 V11 服务器迁移到 V12 服务器
+
+可以使用 PowerShell cmdlett 来启动、停止或监视从 Azure SQL 数据库 V11 或其他任何低于 V12 的版本到 V12 的升级。
+
+- [使用 PowerShell 升级到 SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell/)
+
+有关这些 PowerShell cmdlet 的参考文档，请参阅：
 
 
-## 监视和管理池 PowerShell 示例
+- [Get-AzureRMSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603582.aspx)
+- [Start-AzureRMSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt619403.aspx)
+- [Stop-AzureRMSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603589.aspx)
 
 
-    $subscriptionId = '<Azure subscription id>'
-    $resourceGroupName = '<resource group name>'
-    $location = '<datacenter location>'
-    $serverName = '<server name>'
-    $poolName = '<pool name>'
-    $databaseName = '<database name>'
-    
-    Login-AzureRmAccount -EnvironmentName AzrueChinaCloud
-    Set-AzureRmContext -SubscriptionId $subscriptionId
-    
-    
-    Set-AzureRmSqlElasticPool –ResourceGroupName $resourceGroupName –ServerName $serverName –ElasticPoolName $poolName –Dtu 1200 –DatabaseDtuMax 100 –DatabaseDtuMin 50 
-    
-    $poolResourceId = '/subscriptions/' + $subscriptionId + '/resourceGroups/' + $resourceGroupName + '/providers/Microsoft.Sql/servers/' + $serverName + '/elasticPools/' + $poolName
-    $dbResourceId = '/subscriptions/' + $subscriptionId + '/resourceGroups/' + $resourceGroupName + '/providers/Microsoft.Sql/servers/' + $serverName + '/databases/' + $databaseName 
-    $startTime1 = '2/10/2016'
-    $endTime1 = '2/14/2016'
-    $startTime2 = '2/14/2016'
-    $endTime2 = '2/18/2016'
-    
-    
-    
-    $metrics = (Get-Metrics -ResourceId $poolResourceId -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime $startTime1 -EndTime $endTime1) 
-    $metrics
-    
-    $metrics = $metrics + (Get-Metrics -ResourceId $poolResourceId -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime $startTime2 -EndTime $endTime2)
-    $table = Format-MetricsAsTable $metrics
-    foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation}
-    
-    $metrics = (Get-Metrics -ResourceId $dbResourceId -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime $startTime1 -EndTime $endTime1) 
-    $metrics = $metrics + (Get-Metrics -ResourceId $dbResourceId -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime $startTime2 -EndTime $endTime2)
-    $table = Format-MetricsAsTable $metrics
-    foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation}
+Stop- cmdlet 表示取消，而不是暂停。你无法在中途恢复升级，而只能从头开始重新升级。Stop- cmdlet 将清理并释放所有相应的资源。
 
 ## 后续步骤
 
 - [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)弹性作业可以根据池中数据库的数量来运行 T-SQL 脚本。
+- 请参阅 [Scaling out with Azure SQL Database（使用 Azure SQL 数据库进行扩展）](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -9,12 +9,14 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="03/22/2016" 
-	wacn.date="05/16/2016"/>
+	ms.date="05/27/2016" 
+	wacn.date="07/18/2016"/>
 
 # 弹性数据库工具入门
 
 本文介绍开发人员运行示例应用时的体验。此示例将创建一个简单的分片应用程序，并探讨弹性数据库工具的主要功能。此示例演示[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的功能
+
+若要安装该库，请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。请注意，该库和下面描述的示例应用程序一起安装。
 
 ## 先决条件
 
@@ -50,7 +52,7 @@
 ### 重要的代码示例片段
 
 1. **管理分片和分片映射：**该代码演示如何在文件 **ShardMapManagerSample.cs** 中处理分片、范围和映射。你可以在以下位置找到有关此主题的详细信息：[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。  
-2. **数据相关的路由**：**DataDependentRoutingSample.cs** 中演示了如何向正确的分片路由事务。有关详细信息，请参阅[数据相关的路由](http://go.microsoft.com/?linkid=9862596)。 
+2. **数据相关的路由**：**DataDependentRoutingSample.cs** 中演示了如何向正确的分片路由事务。有关详细信息，请参阅[数据相关的路由](http://go.microsoft.com/?linkid=9862596)。
 3. **查询多个分片**：文件 **MultiShardQuerySample.cs** 中演示了如何查询多个分片。有关详细信息，请参阅[多分片查询](http://go.microsoft.com/?linkid=9862597)。
 4. **添加空分片**：文件 **AddNewShardsSample.cs** 中的代码以迭代方式添加新的空分片。以下位置提供了此主题的详细信息：[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 
@@ -71,13 +73,15 @@
 ## 后续步骤
 有关弹性数据库工具的详细信息，请参阅：
 
-* [弹性数据库工具文档结构图](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale) 
--    代码示例： 
+* [弹性数据库工具文档结构图](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale)
+-    代码示例：
     -    [Azure SQL 弹性数据库 - 入门](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE)
     -    [Azure SQL 弹性数据库 - 与实体框架集成](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)
     -    [脚本中心上的分片弹性](https://gallery.technet.microsoft.com/scriptcenter/Elastic-Scale-Shard-c9530cbe)
 -    博客：[弹性缩放产品通告](https://azure.microsoft.com/blog/2014/10/02/introducing-elastic-scale-preview-for-azure-sql-database)
+-    第 9 频道：[弹性缩放概述视频](http://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Elastic-Scale)
 -    论坛：[Azure SQL 数据库论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=ssdsgetstarted)
+-    要测量性能：[分片映射管理器的性能计数器](/documentation/articles/sql-database-elastic-database-client-library/)
 
 
 <!--Anchors-->
@@ -93,4 +97,4 @@
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0711_2016-->

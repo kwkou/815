@@ -9,8 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="04/28/2016"
-    wacn.date="06/14/2016"/>
+    ms.date="05/27/2016"
+    wacn.date="07/18/2016"/>
 
 # 使用 C&#x23; 监视和管理弹性数据库池 
 
@@ -24,7 +24,7 @@
 
 有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
+弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 此示例使用[适用于 .NET 的 SQL 数据库库](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx)安装库，方法是在 Visual Studio 的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）中运行以下命令：
 
@@ -58,7 +58,7 @@
 
 ## 列出弹性池中的数据库
 
-要在池中检索所有数据库，可调用 [ListDatabases](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.elasticpooloperationsextensions.listdatabases) 方法。
+若要在池中检索所有数据库，可调用 [ListDatabases](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.elasticpooloperationsextensions.listdatabases) 方法。
 
     //List databases in the elastic pool
     DatabaseListResponse dbListInPool = sqlClient.ElasticPools.ListDatabases("resourcegroup-name", "server-name", "ElasticPool1");
@@ -428,4 +428,4 @@
 - 请参阅[使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0711_2016-->

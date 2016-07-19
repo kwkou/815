@@ -8,12 +8,14 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="04/04/2016" 
-	wacn.date="06/14/2016" />
+	ms.date="05/27/2016" 
+	wacn.date="07/18/2016" />
 
-# 升级到最新的弹性数据库客户端库
+# 升级应用以使用最新的弹性数据库客户端库
 
-可通过 [NuGet](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client) 和 Visual Studio 中的 NuGet 包管理器界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的新版本。升级包含客户端库的 bug 修复和新功能支持。
+可通过 NuGetand 和 Visual Studio 中的 NuGetPackage Manager 界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的新版本。升级包含客户端库的 bug 修复和新功能支持。
+
+**要获取最新版本：**请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)。
 
 使用新库重新生成你的应用程序，以及更改 Azure SQL 数据库中存储的现有分片映射管理器元数据以支持新功能。
 
@@ -23,7 +25,7 @@
 
 **1.升级你的应用程序。** 在 Visual Studio 中，下载最新的客户端库版本并在使用该库的所有开发项目中引用该版本；然后重新生成并部署。
 
- * 在 Visual Studio 解决方案中，选择“工具”“NuGet 包管理器”“管理解决方案的 NuGet 包”。 
+ * 在 Visual Studio 解决方案中，选择“工具”“NuGet 包管理器”“管理解决方案的 NuGet 包”。
  * (Visual Studio 2013) 在左面板中，选择“更新”，然后选择窗口中显示的包“Azure SQL 数据库弹性扩展客户端库”上的“更新”按钮。
  * (Visual Studio 2015) 将“筛选器”框设置为“可用升级”。选择要更新的包，然后单击“更新”按钮。
 	
@@ -38,7 +40,7 @@
 
 ***选项 1：使用 PowerShell 升级元数据***
 
-1. 在[此处](http://nuget.org/nuget.exe)下载 NuGet 的最新命令行实用工具并将其保存到一个文件夹。 
+1. 在[此处](http://nuget.org/nuget.exe)下载 NuGet 的最新命令行实用工具并将其保存到一个文件夹。
 
 2. 打开命令提示符，导航到同一文件夹，并发出命令：
 `nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Client`
@@ -71,20 +73,7 @@
 
 ## 弹性数据库客户端版本历史记录 
 
-**版本 1.0 -- 2015 年 4 月**
-
-* 正式版
-* 添加了日期时间类型分片键的支持
-
-**版本 0.8 – 2015 年 3 月**
-
-* 使用新的 ShardMap.OpenConnectionForKeyAsync 方法为依赖于数据的路由添加异步支持。 
-* 为 ShardMap 添加了公共 KeyType 属性 
-* 为分片添加了支持数据库还原和灾难恢复方案的改进 
-
-**版本 0.7 – 2014 年 10 月**
-
-初始预览版
+有关版本历史记录，请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
@@ -93,4 +82,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-upgrade-client-library/nuget-upgrade.png
  
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->
