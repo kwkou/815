@@ -93,8 +93,8 @@
 
 ## 在现有 VM 上部署 LAMP 的演练
 
-如果你需要有关创建 Linux VM 方面的帮助，可以转到[此处以了解如何创建 Linux VM](./virtual-machines-linux-quick-create-cli.md)。 
-接下来，你需要通过 SSH 登录 Linux VM。如果你需要有关创建 SSH 密钥方面的帮助，可以转到[此处了解如何在 Linux/Mac 上创建 SSH 密钥](./virtual-machines-linux-mac-create-ssh-keys.md)。
+如果你需要有关创建 Linux VM 方面的帮助，可以转到[此处以了解如何创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。 
+接下来，你需要通过 SSH 登录 Linux VM。如果你需要有关创建 SSH 密钥方面的帮助，可以转到[此处了解如何在 Linux/Mac 上创建 SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 如果你已经有 SSH 密钥，则继续并使用 `ssh username@uniqueDNS` 通过 SSH 登录 Linux VM。
 
 既然你正在使用 Linux VM，我们将指导你如何在基于 Debian 的分发版上安装 LAMP 堆栈。对于其他 Linux 分发版，确切的命令可能会有所不同。

@@ -112,7 +112,7 @@ Power BI 允许你以可视方式将数据显示为报表。使用适用于 Stor
 
 3. 选择“Azure SQL 数据库”，然后选择“连接”。
 
-4. 输入信息以连接到 Azure SQL 数据库。可以通过访问 [Azure 门户](https://portal.azure.cn)并选择你的 SQL 数据库来找到此信息。
+4. 输入信息以连接到 Azure SQL 数据库。可以通过访问 [Azure 经典管理门户](https://manage.windowsazure.cn)并选择你的 SQL 数据库来找到此信息。
 
     > [AZURE.NOTE] 还可以通过在连接对话框中使用“启用高级选项”，来设置刷新间隔和自定义筛选器。
 
