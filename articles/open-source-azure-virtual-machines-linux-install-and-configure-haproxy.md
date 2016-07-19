@@ -61,11 +61,11 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 	Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一个子网下。请参考[虚拟网络链接](/documentation/articles/virtual-networks-create-vnet-classic-portal/)创建虚拟网络
 
-2. 新建三台 VM，选择 OS， 比如 CentOS 7.0。参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/). 创建虚拟机。在创建时记得选择上一步创建的虚拟网络。必须在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它加入虚拟网络。没有创建虚拟网络的话则请在选择区域时保持一致。
+2. 新建三台 VM，选择 OS， 比如 CentOS 7.0。参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/). 创建虚拟机。在创建时记得选择上一步创建的虚拟网络。必须在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它加入虚拟网络。没有创建虚拟网络的话则请在选择区域时保持一致。
 
 3. 三台 VM 打开上面表格中提到的相应端口。参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
-4. 连接到 HAProxy VM. 如果这是您第一次使用 AZURE 的虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 连接到虚拟机。
+4. 连接到 HAProxy VM. 如果这是您第一次使用 AZURE 的虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 连接到虚拟机。
 
 5. 下载 HAProxy 源码包。访问 HAProxy 官网下载您所需的版本，比如 http://www.haproxy.org/download/1.6/src/haproxy-1.6.3.tar.gz
 

@@ -136,16 +136,16 @@
 
 本教程演示了启用 Windows 应用商店应用程序以便使用移动服务和通知中心发送推送通知的基础知识。接下来，请考虑完成以下教程之一：
 
-+ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-phone-send-breaking-news/)
++ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-phone-push-xplat-segmented-mpns-notification/)
 	<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
-+ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/)
++ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notification/)
 	<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
 
 
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing/)
+* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-push-notification-fixer/)
   <br/>了解如何排查推送通知问题。
 
 * [身份验证入门]
@@ -178,7 +178,7 @@
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library/
 
-[什么是通知中心？]: /documentation/articles/notification-hubs-overview/
+[什么是通知中心？]: /documentation/articles/notification-hubs-push-notification-overview/
 
  
 

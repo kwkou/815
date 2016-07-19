@@ -103,7 +103,7 @@
 
 [向经过身份验证的用户发送推送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 
-[什么是通知中心？]: /documentation/articles/notification-hubs-overview/
+[什么是通知中心？]: /documentation/articles/notification-hubs-push-notification-overview/
 
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library/
 [MobileServiceClient]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx

@@ -119,8 +119,8 @@
 
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview/
-[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news/
-[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news/
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-push-notification-overview/
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-xplat-localized-apns-push-notification/
 
 <!---HONumber=Mooncake_0215_2016-->

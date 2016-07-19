@@ -50,7 +50,7 @@
 -->
 ###推送
 
-- 通知中心入门 [iOS](/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/) | [Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
+- 通知中心入门 [iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/) | [Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
 
 查看服务： [通知中心](/documentation/services/notification-hubs)
 

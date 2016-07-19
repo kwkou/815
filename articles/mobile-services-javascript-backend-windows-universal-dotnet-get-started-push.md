@@ -65,15 +65,15 @@
 + [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/)
 <br/>了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
 
-+ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/)
++ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/)
 <br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
-+ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/)
++ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notification/)
 <br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
 
 	通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing/)
+* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-push-notification-fixer/)
 <br/>了解如何排查推送通知问题。
 
 * [身份验证入门]
@@ -100,7 +100,7 @@
 
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
 
-[什么是通知中心？]: /documentation/articles/notification-hubs-overview/
+[什么是通知中心？]: /documentation/articles/notification-hubs-push-notification-overview/
 
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library/
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030

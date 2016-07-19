@@ -23,7 +23,7 @@
 MySQL 有多个稳定版本以及多种安装方式，这篇文档以 MySQL 5.6， repository package 安装方式演示整个安装过程。
 
 
-连接到您的 LINUX 虚拟机。如果这是您第一次使用 Azure 的 LINUX 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 连接到虚拟机。
+连接到您的 LINUX 虚拟机。如果这是您第一次使用 Azure 的 LINUX 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 连接到虚拟机。
 
 不同的 LINUX 发行版在安装 MySQL 时有少许的不同。请根据您的 LINUX 版本选择对应的步骤。
 

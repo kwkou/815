@@ -51,7 +51,7 @@ editor="Eric Chen" />
 - [Blob 服务](/documentation/articles/storage-nodejs-how-to-use-blob-storage/) / [API](http://go.microsoft.com/fwlink/?linkid=401539&clcid=0x804) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 <!--
 - [DocumentDB](/documentation/articles/documentdb-nodejs-application/) / [API](http://dl.windowsazure.com/documentdb/nodedocs)-->
-- [通知中心](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs/) / [API](http://dl.windowsazure.com/nodedocs/NotificationHubService.html) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx)
+- [通知中心](/documentation/articles/notification-hubs-nodejs-push-notification-tutorial/) / [API](http://dl.windowsazure.com/nodedocs/NotificationHubService.html) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx)
 - [队列服务](/documentation/articles/storage-nodejs-how-to-use-queues/) / [API](http://go.microsoft.com/fwlink/?linkid=401540&clcid=0x804) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 <!--- [SendGrid](/documentation/articles/store-sendgrid-nodejs-how-to-send-email/) / [REST](http://sendgrid.com/docs/API_Reference/index.html)-->
 - [服务总线队列](/documentation/articles/service-bus-nodejs-how-to-use-queues/) / [API](http://dl.windowsazure.com/nodedocs/ServiceBusService.html) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)

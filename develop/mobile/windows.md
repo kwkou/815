@@ -21,7 +21,7 @@
 ##新功能
 
 - [使用移动服务同步脱机数据](/documentation/articles/mobile-services-windows-phone-get-started-offline-data/)
-- [通知中心入门](/documentation/articles/notification-hubs-windows-phone-get-started/)
+- [通知中心入门](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)
 - [使用 Active Directory 身份验证库登录](https://github.com/AzureADSamples/NativeClient-WindowsPhone8.1)
 - [通过媒体服务使用视频和音频流](http://playerframework.codeplex.com/releases/view/97333)
 
@@ -51,8 +51,8 @@
 
 ###推送
 
-- [通知中心入门](/documentation/articles/notification-hubs-windows-phone-get-started/)
-- [通过通知中心发送有针对性的通知](/documentation/articles/notification-hubs-windows-phone-send-breaking-news/)
+- [通知中心入门](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)
+- [通过通知中心发送有针对性的通知](/documentation/articles/notification-hubs-windows-phone-push-xplat-segmented-mpns-notification/)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users/)
 
 查看服务： [通知中心](/documentation/services/notification-hubs)

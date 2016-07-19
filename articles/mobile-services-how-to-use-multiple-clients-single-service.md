@@ -138,11 +138,11 @@
 
 
 <!-- URLs -->
-[Azure 通知中心]: /zh-cn/documentation/articles/notification-hubs-overview/
+[Azure 通知中心]: /zh-cn/documentation/articles/notification-hubs-push-notification-overview/
 [SSO Windows Store]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
 [SSO Windows Phone]: /zh-cn/documentation/articles/mobile-services-windows-phone-single-sign-on/
 [Tutorials and resources]: /zh-cn/documentation/services/mobile-services/
-[Get started with Notification Hubs]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started
+[Get started with Notification Hubs]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
 [向用户发送跨平台通知]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
 [Get started with push Windows dotnet]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012/
 [Get started with push Windows js]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/

@@ -31,9 +31,9 @@
 
 如果您是在 Azure 的 Linux 虚拟机上自行搭建的 MySQL 数据库的话，这篇文档就非常适合您了。我们会介绍三种 MySQL 备份的方式：mysqldump, 主从复制, 以及 xtrabackup. 
 
-如果您还没有 Azure 下的 LINUX 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/). 创建 LINUX 虚拟机。  
+如果您还没有 Azure 下的 LINUX 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/). 创建 LINUX 虚拟机。  
 连接到您的 LINUX 虚拟机。如果这是您第一次使用 Azure 的 LINUX 虚拟机，请参考
- [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 连接到虚拟机。  
+ [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 连接到虚拟机。  
 我们假设您已经在 Azure 的 Linux 虚拟机上安装好了 MySQL 数据库服务，接下来开始备份过程。
 
 ##<a id="mysqldump"></a>Mysqldump
