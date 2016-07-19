@@ -8,8 +8,8 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="05/16/2016"
-   wacn.date="06/06/2016"/>
+   ms.date="06/01/2016"
+   wacn.date="07/11/2016"/>
 
 # ExpressRoute 路由要求  
 

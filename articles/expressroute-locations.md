@@ -8,8 +8,8 @@
    editor="" />
 <tags
    ms.service="expressroute"
-   ms.date="05/11/2016"
-   wacn.date="06/06/2016" />
+   ms.date="06/17/2016"
+   wacn.date="07/11/2016" />
 
 # ExpressRoute 合作伙伴和对等位置
 本文中的表格提供有关 ExpressRoute 连接提供商、ExpressRoute 地理覆盖范围、通过 ExpressRoute 支持的 Azure 服务以及 ExpressRoute 系统集成商 (SI) 的信息。
