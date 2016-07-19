@@ -9,8 +9,8 @@
 <tags 
     ms.service="storage"
    
-    ms.date="02/14/2016"
-    wacn.date="04/11/2016"/>
+    ms.date="05/24/2016"
+    wacn.date="07/18/2016"/>
 
 # 使用 C++ 列出 Azure 存储资源
 
@@ -181,4 +181,4 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	[Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure 存档文档](/documentation/services/storage/)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="04/12/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="06/08/2016"
+	wacn.date="07/18/2016"/>
 
 # 配置 Azure 存储空间连接字符串
 
@@ -82,7 +82,7 @@
 	BlobEndpoint=https://storagesample.blob.core.chinacloudapi.cn;
 	SharedAccessSignature=sv=2015-04-05&sr=b&si=tutorial-policy-635959936145100803&sig=9aCzs76n0E7y5BpEi2GvsSv433BZa22leDOZXX%2BXXIU%3D
 
-下面是具有 URL 编码的同一个连接字符串的示例：
+下面是具有特殊字符编码的同一个连接字符串的示例：
 
 	BlobEndpoint=https://storagesample.blob.core.chinacloudapi.cn;
 	SharedAccessSignature=sv=2015-04-05&amp;sr=b&amp;si=tutorial-policy-635959936145100803&amp;sig=9aCzs76n0E7y5BpEi2GvsSv433BZa22leDOZXX%2BXXIU%3D
@@ -161,4 +161,4 @@
 - [使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator/)
 - [Azure 存储资源管理器](/documentation/articles/storage-explorers/)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0711_2016-->

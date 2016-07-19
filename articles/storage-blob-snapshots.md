@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="创建 blob 的只读快照 | Azure"
+	pageTitle="创建 Blob 的只读快照 | Azure"
 	description="了解如何在指定时刻及时创建 blob 的快照以备份 blob 数据。了解如何对快照计费，以及如何使用快照来最大程度地减少容量费用。"
 	services="storage" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/19/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/27/2016"
+	wacn.date="07/18/2016"/>
 
 # 创建 Blob 快照
 
@@ -62,7 +62,9 @@ Blob 的快照与从中创建快照的基本 Blob 具有相同的名称，但后
 此 C# 代码示例创建一个新的快照并写出主位置的绝对 URI。
 
     //Create the blob service client object.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+    const string ConnectionString = "DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key;EndpointSuffix=core.chinacloudapi.cn";
+
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConnectionString);
     CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
     //Get a reference to a container.
@@ -76,6 +78,8 @@ Blob 的快照与从中创建快照的基本 Blob 具有相同的名称，但后
     //Create a snapshot of the blob and write out its primary URI.
     CloudBlockBlob blobSnapshot = blob.CreateSnapshot();
     Console.WriteLine(blobSnapshot.SnapshotQualifiedStorageUri.PrimaryUri);
+
+
 
 ## 了解快照如何产生费用
 
@@ -121,4 +125,4 @@ Blob 的快照与从中创建快照的基本 Blob 具有相同的名称，但后
 
 ![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0711_2016-->

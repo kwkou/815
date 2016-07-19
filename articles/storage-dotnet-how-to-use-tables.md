@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/29/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="06/09/2016"
+	wacn.date="07/18/2016"/>
 
 
 # 通过 .NET 开始使用 Azure 表存储
@@ -458,4 +458,4 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0711_2016-->

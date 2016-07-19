@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过 .NET 开始使用 Azure Blob 存储 | Azure"
+	pageTitle="通过 .NET 开始使用 Azure Blob 存储（对象存储）| Azure"
 	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
 	services="storage"
 	documentationCenter=".net"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/25/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="06/09/2016"
+	wacn.date="07/18/2016"/>
 
 
 # 通过 .NET 开始使用 Azure Blob 存储
@@ -47,7 +47,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 将下列 `using` 语句添加到 `program.cs` 文件顶部：
 
-	using Microsoft.Azure; // Namespace for CloudConfigurationManager 
+	using Microsoft.Azure; // Namespace for CloudConfigurationManager
 	using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
     using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage types
 
@@ -390,4 +390,4 @@ Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
   [.NET 客户端库引用]: https://msdn.microsoft.com/zh-cn/library/mt347887.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
  
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0711_2016-->
