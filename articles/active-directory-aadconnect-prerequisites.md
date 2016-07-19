@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/10/2016"
-   wacn.date="06/14/2016"/>
+   ms.date="05/24/2016"
+   wacn.date="07/18/2016"/>
 
 # Azure AD Connect 的先决条件
 本主题介绍 Azure AD Connect 的先决条件和硬件要求。
@@ -36,7 +36,11 @@
 - 如果你正在部署 Active Directory 联合身份验证服务，则要安装 AD FS 或 Web 应用程序代理的服务器必须是 Windows Server 2012 R2 或更高版本。必须在这些服务器上启用 [Windows 远程管理](#windows-remote-management)才能进行远程安装。
 - 如果要部署 Active Directory 联合身份验证服务，你需要使用 [SSL 证书](#ssl-certificate-requirements)。
 - 如果要部署 Active Directory 联合身份验证服务，则需要配置[名称解析](#name-resolution-for-federation-servers)。
-- Azure AD Connect 要求使用 SQL Server 数据库来存储标识数据。默认情况下，将会安装 SQL Server 2012 Express LocalDB（轻量版 SQL Server Express），并在本地计算机上创建服务的服务帐户。SQL Server Express 有 10GB 的大小限制，允许你管理大约 100,000 个对象。如果你需要管理更多的目录对象，则需要将安装向导指向不同的 SQL Server 安装。Azure AD Connect 支持从 SQL Server 2008（装有 SP4）到 SQL Server 2014 的各种 Microsoft SQL Server。**不支持**将 Microsoft Azure SQL 数据库用作数据库。
+- Azure AD Connect 要求使用 SQL Server 数据库来存储标识数据。默认情况下，将会安装 SQL Server 2012 Express LocalDB（轻量版 SQL Server Express），并在本地计算机上创建服务的服务帐户。SQL Server Express 有 10GB 的大小限制，允许你管理大约 100,000 个对象。如果你需要管理更多的目录对象，则需要将安装向导指向不同的 SQL Server 安装。
+- 如果使用独立的 SQL Server，则这些要求适用：
+    - Azure AD Connect 支持从 SQL Server 2008（装有 SP4）到 SQL Server 2014 的各种 Microsoft SQL Server。**不支持**将 Microsoft Azure SQL 数据库用作数据库。
+    - 必须使用不区分大小写的 SQL 排序规则。可通过其名称中的 \_CI_ 识别。**不支持**使用区分大小写的排序规则，可通过其名称中的 \_CS_ 识别。
+    - 每个数据库实例只能有一个同步引擎。**不支持**与 FIM/MIM Sync、DirSync 或 Azure AD Sync 共享数据库实例。
 
 ### 帐户
 - 你要集成的 Azure AD 目录的 Azure AD 全局管理员帐户。该帐户必须是**学校或组织帐户**，而不能是 **Microsoft 帐户**。
@@ -50,6 +54,8 @@
 - Azure AD Connect 服务器需要 Intranet 和 Internet 的 DNS 解析。DNS 服务器必须能够将名称解析成本地 Active Directory 以及 Azure AD 终结点。
 - 如果 Intranet 有防火墙，而你需要开放 Azure AD Connect 服务器与域控制器之间的端口，请参阅 [Azure AD Connect 连接端口](/documentation/articles/active-directory-aadconnect-ports/)来了解详细信息。
 - 如果代理限制了可访问的 URL，则必须在代理中打开 [Office 365 URL 和 IP 地址范围](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的 URL。
+    - 如果你在德国使用 Microsoft 云或 Microsoft Azure 政府版云，请参阅 [Azure AD Connect 同步服务实例注意事项](/documentation/articles/active-directory-aadconnect-instances)以了解 URL。
+- Azure AD Connect 默认情况下使用 TLS 1.0 与 Azure AD 进行通信。可以通过遵循 [为 Azure AD connect 启用 TLS 1.2](#enable-tls-12-for-azure-ad-connect) 中的步骤将此更改为 TLS 1.2。
 - 如果你正在使用出站代理连接到 Internet，则必须在 **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** 文件中添加以下设置，才能将安装向导和 Azure AD Connect 同步连接到 Internet 和 Azure AD。必须在文件底部输入此文本。在此代码中，&lt;PROXYADRESS&gt; 代表实际代理 IP 地址或主机名。
 
 	
@@ -86,17 +92,36 @@
 - 可选：一个用于验证同步的测试用户帐户。
 
 ## 组件先决条件
-Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。请根据 Windows Server 版本执行以下操作：
+
+### PowerShell 和.Net Framework
+Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。你的服务器上需要安装此版本或更高版本。请根据 Windows Server 版本执行以下操作：
 
 - Windows Server 2012R2
   - 已按默认安装 Microsoft PowerShell，因此不需要执行任何操作。
   - .NET Framework 4.5.1 和更高版本将通过 Windows 更新提供。请确保已在控制面板中安装 Windows Server 的最新更新。
 - Windows Server 2008R2 和 Windows Server 2012
-  - 可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取的 **Windows Management Framework 4.0** 中包含最新的 Microsoft PowerShell 版本。
+  - 可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取的 **Windows Management Framework 4.0** 中获得最新的 Microsoft PowerShell 版本。
   - .NET Framework 4.5.1 和更高版本可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取。
 - Windows Server 2008
   - 可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取的 **Windows Management Framework 3.0** 中包含最新的受支持 PowerShell 版本。
  - .NET Framework 4.5.1 和更高版本可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取。
+
+### 为 Azure AD Connect 启用 TLS 1.2
+Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure AD 之间的通信进行加密。可以通过配置 .Net 应用程序在服务器上默认使用 TLS 1.2 来更改此项。有关 TLS 1.2 的详细信息，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。
+
+1. 无法在 Windows Server 2008 上启用 TLS 1.2。需要 Windows Server 2008R2 或更高版本。请确保已为操作系统安装了 .Net 4.5.1 修补程序，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。在你的服务器上可能已经安装了此版本或更高版本。
+2. 如果使用 Windows Server 2008R2，请确保已启用 TLS 1.2。Windows Server 2012 服务器及更高版本的服务器操作系统上应该已经启用了 TLS 1.2。
+```
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+```
+3. 对于所有操作系统，设置此注册表项并重新启动服务器。
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319
+"SchUseStrongCrypto"=dword:00000001
+```
+4. 如果还想在同步引擎服务器和远程 SQL Server之间启用 TLS 1.2，请确保你已为 [TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/kb/3135244)（适用于 Microsoft SQL Server 的 TLS 1.2 支持）安装了所需的版本。
 
 ## 联合身份验证安装和配置的先决条件
 
@@ -124,9 +149,9 @@ Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。请�
 - 在测试实验室环境中，你可以在联合服务器上使用自签名证书。不过，对于生产环境，建议你从某个公共 CA 获取证书。
     - 如果使用未公开受信任的证书，请确保每个 Web 应用程序代理服务器上安装的证书同时受本地服务器和所有联合服务器的信任
 - 证书的标识必须与联合身份验证服务名称（例如 sts.contoso.com）匹配。
-    - 标识是类型为 dNSName 的使用者备用名称 (SAN) 扩展，或者是指定为公用名的使用者名称（当不存在 SAN 条目时）。  
+    - 标识是类型为 dNSName 的使用者备用名称 (SAN) 扩展，或者是指定为公用名的使用者名称（当不存在 SAN 条目时）。
     - 证书中可以存在多个 SAN 条目，但是它们中必须有一个与联合身份验证服务名称匹配。
-    - 如果计划使用“工作区加入”，则还需要一个 SAN，它的值为 **enterpriseregistration.**，后接你的组织的用户主体名称 (UPN) 后缀（例如 **enterpriseregistration.contoso.com**）。
+    - 如果计划使用“工作区加入”，则还需要一个SAN，它的值为 **enterpriseregistration.**，后接你的组织的用户主体名称 (UPN) 后缀（例如 **enterpriseregistration.contoso.com**）。
 - 不支持基于 CryptoAPI 下一代 (CNG) 密钥和密钥存储提供者的证书。这意味着，你必须使用基于 CSP（加密服务提供者）而非 KSP（密钥存储提供者）的证书。
 - 支持通配符证书。
 
@@ -167,4 +192,4 @@ Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。请�
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

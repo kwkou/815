@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="04/02/2016"
-   wacn.date="06/27/2016"/>
+   ms.date="06/06/2016"
+   wacn.date="07/19/2016"/>
 
 
 # Azure Active Directory 开发人员指南
@@ -29,13 +29,15 @@
 
 5. [Azure Active Directory 身份验证库](/documentation/articles/active-directory-authentication-libraries/)：使用适用于 [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)、[JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js)、[Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc)、[Android](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/o) 和[其他语言](/documentation/articles/active-directory-authentication-libraries/)的 Azure 身份验证库轻松对用户进行身份验证以获取访问令牌。
 
+
+
 ## 入门
 
 以下教程是专门针对多种平台编写的，可帮助你快速开始使用 Azure Active Directory 进行开发。作为先决条件，你必须[获取一个 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ### 移动和电脑应用程序快速入门指南
 
-|[![iOS](./media/active-directory-developers-guide/ios.png)](/documentation/articles/active-directory-devquickstarts-ios/)|[![Android](./media/active-directory-developers-guide/android.png)](active-directory-devquickstarts-android)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-dotnet)| [![Windows Phone](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsphone)|[![Windows 应用商店](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsstore)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](active-directory-devquickstarts-xamarin)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](active-directory-devquickstarts-cordova)
+|[![iOS](./media/active-directory-developers-guide/ios.png)](/documentation/articles/active-directory-devquickstarts-ios/)|[![Android](./media/active-directory-developers-guide/android.png)](/documentation/articles/active-directory-devquickstarts-android/)|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-dotnet/)| [![Windows Phone](./media/active-directory-developers-guide/windows.png)](/documentation/articles/active-directory-devquickstarts-windowsphone/)|[![Windows 应用商店](./media/active-directory-developers-guide/windows.png)](/documentation/articles/active-directory-devquickstarts-windowsstore/)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](/documentation/articles/active-directory-devquickstarts-xamarin/)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](/documentation/articles/active-directory-devquickstarts-cordova/)
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:
 |[iOS](/documentation/articles/active-directory-devquickstarts-ios/)|[Android](/documentation/articles/active-directory-devquickstarts-android/)|[.NET](/documentation/articles/active-directory-devquickstarts-dotnet/)|[Windows Phone](/documentation/articles/active-directory-devquickstarts-windowsphone/)|[Windows 应用商店](/documentation/articles/active-directory-devquickstarts-windowsstore/)|[Xamarin](/documentation/articles/active-directory-devquickstarts-xamarin/)|[Cordova](/documentation/articles/active-directory-devquickstarts-cordova/)
 
@@ -57,10 +59,9 @@
 |:--:|
 |[Graph API](/documentation/articles/active-directory-graph-api-quickstart/)|
 
+## 操作方法
 
-## 操作说明
-
-以下文章介绍如何使用 Azure Active Directory (AD) 执行具体的任务。
+以下文章介绍如何使用 Azure Active Directory 执行特定任务：
 
 - [获取 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant/)
 - [列出 Azure Active Directory 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/)
@@ -116,4 +117,4 @@
 
 - [Twitter 上的 Azure Active Directory](https://twitter.com/azuread)：以 140 个或更少的字符发布的 Azure Active Directory 公告。
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0711_2016-->

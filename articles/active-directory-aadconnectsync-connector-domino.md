@@ -9,7 +9,7 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="04/20/2016"
+   ms.date="05/24/2016"
    wacn.date="06/24/2016"/>
 
 # Lotus Domino 连接器技术参考
@@ -28,12 +28,12 @@ Lotus Domino 连接器可让你将同步服务与 IBM Lotus Domino 服务器集�
 
 从较高层面讲，当前的连接器版本支持以下功能：
 
-| 功能 | 支持 |
-| --- | --- |
-| 连接的数据源 | 服务器：<li>Lotus Domino 8.5.x</li><li>Lotus Domino 9.x</li>客户端：<li>Lotus Notes 9.x</li> |
-| 方案 | <li>对象生命周期管理</li><li>组管理</li><li>密码管理</li> |
-| 操作 | <li>完整和增量导入</li><li>导出</li><li>设置和更改 HTTP 密码</li> |
-| 架构 | <li>人员（漫游用户、联系人（没有证书的人员））</li><li>组</li><li>资源（资源、会议室、在线会议）</li><li>邮件数据库</li><li>动态发现受支持对象的属性</li> |
+功能 | 支持
+--- | ---
+连接的数据源 | 服务器：<li>Lotus Domino 8.5.x</li><li>Lotus Domino 9.x</li>客户端：<li>Lotus Notes 9.x</li>
+方案 | <li>对象生命周期管理</li><li>组管理</li><li>密码管理</li>
+操作 | <li>完整和增量导入</li><li>导出</li><li>设置和更改 HTTP 密码</li>
+架构 | <li>人员（漫游用户、联系人（没有证书的人员））</li><li>组</li><li>资源（资源、会议室、在线会议）</li><li>邮件数据库</li><li>动态发现受支持对象的属性</li>
 
 Lotus Domino 连接器利用 Lotus Notes 客户端来与 Lotus Domino 服务器通信。因此，同步服务器上必须安装支持的 Lotus Notes 客户端。客户端与服务器之间的通信是通过 Lotus Notes .NET Interop (Interop.domino.dll) 接口实现的。此接口可帮助在 Microsoft.NET 平台和 Lotus Notes 客户端之间进行通信，并支持 Lotus Domino 文档和视图的访问。在执行增量导入时，也可以使用 C++ 本机接口（取决于所选的增量导入方法）。
 
@@ -55,10 +55,10 @@ Lotus Domino 连接器利用 Lotus Notes 客户端来与 Lotus Domino 服务器�
 
 下表列出了每个操作所需的权限：
 
-| 操作 | 访问权限 |
-| --- | --- |
-| 导入 | <li>读取公共文档</li><li>具有完全访问权限的管理员（如果你是完全访问权限的管理员组的成员，则自然而然就拥有有效的 ACL 访问权限）。</li> |
-| 导出和重置密码 | 有效的访问权限：<li>创建文档</li><li>删除文档</li><li>读取公共文档</li><li>写入公共文档</li><li>复制文档</li>除了上述访问权限，还必须分配有以下角色才能进行导出操作：<li>CreateResource</li><li>GroupCreator</li><li>GroupModifier</li><li>UserCreator</li><li>UserModifier</li> |
+操作 | 访问权限
+--- | ---
+导入 | <li>读取公共文档</li><li>具有完全访问权限的管理员（如果你是完全访问权限的管理员组的成员，则自然而然就拥有有效的 ACL 访问权限）。</li>
+导出和重置密码 | 有效的访问权限：<li>创建文档</li><li>删除文档</li><li>读取公共文档</li><li>写入公共文档</li><li>复制文档</li>除了上述访问权限，还必须分配有以下角色才能进行导出操作：<li>CreateResource</li><li>GroupCreator</li><li>GroupModifier</li><li>UserCreator</li><li>UserModifier</li>
 
 ### 直接操作和 AdminP
 
@@ -66,21 +66,21 @@ Lotus Domino 连接器利用 Lotus Notes 客户端来与 Lotus Domino 服务器�
 
 **主要通讯簿**
 
-| 对象 | 创建 | 更新 | 删除 |
-| --- | --- | --- | --- |
-| 人员 | AdminP | 直接 | AdminP |
-| 组 | AdminP | 直接 | AdminP |
-| MailInDB | 直接 | 直接 | 直接 |
-| 资源 | AdminP | 直接 | AdminP |
+对象 | 创建 | 更新 | 删除
+--- | --- | --- | ---
+人员 | AdminP | 直接 | AdminP
+组 | AdminP | 直接 | AdminP
+MailInDB | 直接 | 直接 | 直接
+资源 | AdminP | 直接 | AdminP
 
 **辅助通讯簿**
 
-| 对象 | 创建 | 更新 | 删除 |
-| --- | --- | --- | --- |
-| 人员 | 不适用 | 直接 | 直接 |
-| 组 | 直接 | 直接 | 直接 |
-| MailInDB | 直接 | 直接 | 直接 |
-| 资源 | 不适用 | 不适用 | 不适用 |
+对象 | 创建 | 更新 | 删除
+--- | --- | --- | ---
+人员 | 不适用 | 直接 | 直接
+组 | 直接 | 直接 | 直接
+MailInDB | 直接 | 直接 | 直接
+资源 | 不适用 | 不适用 | 不适用
 
 创建资源时将创建 Notes 文档。同样，删除资源时会删除 Notes 文档。
 
@@ -108,7 +108,7 @@ IBM Lotus Notes 客户端和 Domino 服务器使用 Notes 远程过程调用 (NR
 
 ![Notes2](./media/active-directory-aadconnectsync-connector-domino/notes2.png)
 
-**注意：**必须启动 Lotus Notes 一次，且启动时所使用的用户必须位于与将作为连接器服务帐户的帐户同一服务器上。
+**注意：**必须启动 Lotus Notes 一次，且启动时所使用的用户必须位于与将作为连接器服务帐户的帐户同一服务器上。此外请务必在服务器上关闭 Lotus Notes 客户端。客户端不能在连接器尝试连接到 Domino 服务器的同时运行。
 
 ### 创建连接器
 
@@ -199,11 +199,11 @@ Domino 服务器属性支持两种服务器名称格式：
 
 #### 路由信息
 
-在 Domino 中，引用属性可能具有嵌入为 DN 后缀的路由信息。例如，组中的成员属性可能包含 **CN=example/organization@ABC**。后缀 @ABC 就是路由信息。Domino 使用路由信息来传送电子邮件给正确的 Domino 系统，而此系统可能是位于不同组织的系统。在“路由信息”字段中，可以指定组织内所使用、且在连接器范围内的路由后缀。如果在引用属性中发现有任何一个值作为其后缀，便从引用中删除路由信息，以让其符合连接器空间中对象的 DN。如果引用值的路由后缀无法符合所指定的其中一个值，则创建 \_Contact 对象。在创建这些 \_Contact 对象时，将 **RO=@<RoutingSuffix>** 插入 DN 中。针对这些 \_Contact 对象，还将视需要添加以下属性以允许加入实际的对象：\_routingName、\_contactName、\_displayName 和 UniversalID。
+在 Domino 中，引用属性可能具有嵌入为 DN 后缀的路由信息。例如，组中的成员属性可能包含 **CN=example/organization@ABC**。后缀 @ABC 就是路由信息。Domino 使用路由信息来传送电子邮件给正确的 Domino 系统，而此系统可能是位于不同组织的系统。在“路由信息”字段中，可以指定组织内所使用、且在连接器范围内的路由后缀。如果在引用属性中发现有任何一个值作为其后缀，便从引用中删除路由信息，以让其符合连接器空间中对象的 DN。如果引用值的路由后缀无法符合所指定的其中一个值，则创建 \_Contact 对象。通过将 **RO=@<RoutingSuffix>** 插入 DN 中创建这些 \_Contact 对象。针对这些 \_Contact 对象，还将视需要添加以下属性以允许加入实际的对象：\_routingName、\_contactName、\_displayName 和 UniversalID。
 
 #### 其他通讯簿
 
-如果你没有安装提供辅助通讯簿名称的**目录助手**，可以手动输入这些通讯簿。
+如果你没有安装提供辅助通讯簿名称的“目录助手”，可以手动输入这些通讯簿。
 
 #### 多值转换
 
@@ -216,7 +216,7 @@ Lotus Domino 中有许多属性具有多个值。相对应的 Metaverse 属性�
 - 附加项
 - 替换项
 
-**替换项** – 选择此选项时，连接器始终删除 Domino 属性的当前值，并以所提供的值替换这些值。所提供的值可以是单值或多值。
+**替换项** – 选择此选项时，连接器始终删除 Domino 中属性的当前值，并以所提供的值替换这些值。所提供的值可以是单值或多值。
 
 示例：
 person 对象的 Assistant 属性具有以下值：
@@ -228,7 +228,7 @@ person 对象的 Assistant 属性具有以下值：
 
 - CN=David Alexander/OU= Contoso /O=Americas,NAB=names.nsf
 
-**附加项** – 选择此选项时，连接器保留 Domino 属性的现有值，并在数据列表顶部插入新值。
+**附加项** – 选择此选项时，连接器保留 Domino 中属性的现有值，并在数据列表顶部插入新值。
 
 示例：
 person 对象的 Assistant 属性具有以下值：
@@ -249,9 +249,9 @@ person 对象的 Assistant 属性具有以下值：
 - 默认
 - 多值转换为单值
 
-**默认** – 选择“默认”选项时，将导入所有属性的所有值。
+“默认” – 选择“默认”选项时，将导入所有属性的所有值。
 
-**多值转换为单值** – 选择此选项时，多值属性将转换成单值属性。如果有多个值存在，则使用顶部的值（通常也是最新值）。
+“多值转换为单值” – 选择此选项时，多值属性将转换成单值属性。如果有多个值存在，则使用顶部的值（通常也是最新值）。
 
 示例：
 
@@ -342,11 +342,11 @@ Person 对象代表组织和组织单位中的用户。除了默认属性，Domi
 - 资源
 - 保留
 
-有关设置资源保留数据库的详细信息，请参阅[设置资源保留数据库](https://www-01.ibm.com/support/knowledgecenter/SSKTMJ_8.0.1/com.ibm.help.domino.admin.doc/DOC/H_SETTING_UP_THE_RESOURCE_RESERVATIONS_DATABASE.html)。
+有关设置资源保留数据库的详细信息，请参阅 [Setting up the Resource Reservations database（设置资源保留数据库）](https://www-01.ibm.com/support/knowledgecenter/SSKTMJ_8.0.1/com.ibm.help.domino.admin.doc/DOC/H_SETTING_UP_THE_RESOURCE_RESERVATIONS_DATABASE.html)。
 
 **创建、更新和删除资源**
 
-Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除操作。因此，将资源创建为 Names.nsf 中的文档（也就是主要通讯簿）。有关编辑和删除资源的详细信息，请参阅[编辑和删除资源文档](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_EDITING_AND_DELETING_RESOURCE_DOCUMENTS.html)。
+Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除操作。因此，将资源创建为 Names.nsf 中的文档（也就是主要通讯簿）。有关编辑和删除资源的详细信息，请参阅[编辑和删除“资源”文档](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_EDITING_AND_DELETING_RESOURCE_DOCUMENTS.html)。
 
 **资源的导入和导出操作**
 
@@ -356,11 +356,11 @@ Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除�
 
 邮件数据库是旨在接收邮件的数据库。此数据库是未与任何特定 Lotus Domino 用户帐户相关联（也就是没有自己的 ID 文件和密码）的 Lotus Domino 邮箱（以邮件模板为基础的 Notes 数据库）。邮件数据库具有关联的唯一 UserID（“短名称”），并有自己的电子邮件地址。
 
-每个用户只需要一个 Lotus Domino 帐户。如果需要可让不同用户共享的单个邮箱，且此邮箱拥有自己的电子邮件地址（例如：group@contoso.com)），则创建邮件数据库，而非另外创建 Notes 帐户。此邮箱通过其访问控制列表 (ACL) 来控制访问，此列表中包含允许其使用自己的 ID 文件和密码打开邮箱的 Notes 用户的名称。这些用户不需要另外的密码就能访问邮件数据库。
+每个用户只需要一个 Lotus Domino 帐户。如果需要可让不同用户共享的单个邮箱，且此邮箱拥有自己的电子邮件地址（例如：group@contoso.com），则创建邮件数据库，而非另外创建 Notes 帐户。此邮箱通过其访问控制列表 (ACL) 来控制访问，此列表中包含允许其使用自己的 ID 文件和密码打开邮箱的 Notes 用户的名称。这些用户不需要另外的密码就能访问邮件数据库。
 
 有关必需属性的列表，请参阅本文后面的[必需的属性](#mandatory-attributes)部分。
 
-设计用于接收邮件的数据库时，将在 Lotus Domino 中创建邮件数据库文档。存储数据库副本的每台服务器的 Domino 目录中都必须有此文档。有关创建邮件数据库文档的详细说明，请参阅[创建邮件数据库文档](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_CREATING_A_MAILIN_DATABASE_DOCUMENT_FOR_A_NEW_DATABASE_OVERVIEW.html)。
+设计用于接收邮件的数据库时，将在 Lotus Domino 中创建邮件数据库文档。存储数据库副本的每台服务器的 Domino 目录中都必须有此文档。有关创建邮件数据库文档的详细说明，请参阅[创建“函件收集数据库”文档](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_CREATING_A_MAILIN_DATABASE_DOCUMENT_FOR_A_NEW_DATABASE_OVERVIEW.html)。
 
 在创建邮件数据库之前，Domino 服务器上应该已有此数据库（应该已由 Lotus 管理员创建）。
 
@@ -407,21 +407,21 @@ Lotus Domino 连接器支持对 Internet 密码执行以下操作：
 
 下表列出了这些属性及其描述。
 
-| 属性 | 说明 |
-| --- | --- |
-| \_MMS\_AltFullName | 用户的备用完整名称。 |
-| \_MMS\_AltFullNameLanguage | 用于指定用户备用完整名称的语言。 |
-| \_MMS\_CertDaysToExpire | 从当日起算的证书到期前天数。若未指定，则默认日期是当日算起的两年后。 |
-| \_MMS\_Certifier | 包含认证者组织层次结构名称的属性。例如：OU=OrganizationUnit,O=Org,C=Country。 |
-| \_MMS\_IDPath | 如果属性是空的，则不在同步服务器本地上创建用户标识文件。如果属性包含文件名称，则在 madata 文件夹中创建用户 ID 文件。属性也可以包含用户 ID 文件创建所在位置的完整路径。 |
-| \_MMS\_IDRegType | 人员可以分类为联系人。美国用户和国际用户。下表列出了可能值：<li>0 - 联系人</li><li>1 - 美国用户</li><li>2 - 国际用户</li> |
-| \_MMS\_IDStoreType | 适用于美国和国际用户的必需属性。此属性包含整数值，可指定要将用户标识存储为 Notes 通讯簿中的附件，还是存储在人员的邮件文件中。如果用户 ID 文件是通讯簿中的附件，则可以选择性地将其创建为具有 \_MMS\_IDPath 的文件。<li>空 - 将ID文件存储在 ID 保管库中，没有标识文件（用于“联系人”）。</li><li> 1 - Notes 通讯簿中的附件。属于附件的用户ID文件必须设置 \_MMS\_Password 属性</li><li>2 - 将ID存储在人员的邮件文件中。\_MMS\_UseAdminP 必须设置为 false，以在人员注册期间创建邮件文件。必须为用户标识文件设置 \_MMS\_Password 属性。</li>
-| \_MMS\_MailQuotaSizeLimit | 电子邮件文件数据库允许使用的 MB 数。 |
-| \_MMS\_MailQuotaWarningThreshold | 电子邮件文件数据库允许使用的 MB 数，超过后就会发出警告。 |
-| \_MMS\_MailTemplateName | 用于创建用户的电子邮件文件的电子邮件模板文件。如果有指定模板，则使用指定的模板创建邮件文件。如果未指定模板，则使用默认模板文件来创建文件。 |
-| \_MMS\_OU | 可选属性，此为认证者下面的 OU 名称。联系人的此属性应该是空的。 |
-| \_MMS\_Password | 用户的必需属性。该属性包含对象标识文件的密码。 |
-| \_MMS\_UseAdminP | 如果应该要由 AdminP 进程在 Domino 服务器上创建邮件文件（与导出程序不同步），则此属性应设置为 true。如果此属性设置为 false，则为 Domino 用户创建邮件文件（在导出过程中同步）。 |
+属性 | 说明
+--- | ---
+\_MMS\_AltFullName | 用户的备用完整名称。
+\_MMS\_AltFullNameLanguage | 用于指定用户备用完整名称的语言。
+\_MMS\_CertDaysToExpire | 从当日起算的证书到期前天数。若未指定，则默认日期是当日算起的两年后。
+\_MMS\_Certifier | 包含认证者组织层次结构名称的属性。例如：OU=OrganizationUnit,O=Org,C=Country。
+\_MMS\_IDPath | 如果属性是空的，则不在同步服务器本地上创建用户标识文件。如果属性包含文件名称，则在 madata 文件夹中创建用户 ID 文件。属性也可以包含用户 ID 文件创建所在位置的完整路径。
+\_MMS\_IDRegType | 人员可以分类为联系人。美国用户和国际用户。下表列出了可能的值：<li>0 - 联系人</li><li>1 - 美国用户</li><li>2 - 国际用户</li>
+\_MMS\_IDStoreType | 适用于美国和国际用户的必需属性。此属性包含整数值，可指定要将用户标识存储为 Notes 通讯簿中的附件，还是存储在人员的邮件文件中。如果用户 ID 文件是通讯簿中的附件，则可以选择性地将其创建为具有 \_MMS\_IDPath 的文件。<li>空 - 将ID文件存储在 ID 保管库中，没有标识文件（用于“联系人”）。</li><li> 1 - Notes 通讯簿中的附件。必须为作为附件的用户标识文件设置 \_MMS\_Password 属性</li><li>2 - 将ID存储在人员的邮件文件中。必须将 \_MMS\_UseAdminP 设置为 false，以便在人员注册期间创建邮件文件。必须为用户标识文件设置 \_MMS\_Password 属性。</li>
+\_MMS\_MailQuotaSizeLimit | 电子邮件文件数据库允许使用的 MB 数。
+\_MMS\_MailQuotaWarningThreshold | 电子邮件文件数据库允许使用的 MB 数，超过后就会发出警告。
+\_MMS\_MailTemplateName | 用于创建用户的电子邮件文件的电子邮件模板文件。如果有指定模板，则使用指定的模板创建邮件文件。如果未指定模板，则使用默认模板文件来创建文件。
+\_MMS\_OU | 可选属性，此为认证者下面的 OU 名称。联系人的此属性应该是空的。
+\_MMS\_Password | 用户的必需属性。该属性包含对象标识文件的密码。
+\_MMS\_UseAdminP | 如果应该要由 AdminP 进程在 Domino 服务器上创建邮件文件（与导出程序不同步），则此属性应设置为 true。如果此属性设置为 false，则为 Domino 用户创建邮件文件（在导出过程中同步）。
 
 对于具有关联标识文件的用户，\_MMS\_Password 属性必须包含值。若通过 Lotus Notes 客户端访问电子邮件，用户的 MailServer 和 MailFile 属性必须包含值。
 
@@ -447,13 +447,13 @@ Lotus Domino 连接器在同步服务中主要支持四种类型的对象（文�
 
 本部分列出要将对象导出到 Domino 服务器时，每个支持对象类型的必需属性。
 
-| 对象类型 | 必需的属性 |
-| --- | --- |
-| 组 | <li>ListName</li> |
-| 邮件数据库 | <li>FullName</li><li>MailFile</li><li>MailServer</li><li>MailDomain</li> |
-| 人员 | <li>LastName</li><li>MailFile</li><li>ShortName</li><li>\_MMS\_Password</li><li>\_MMS\_IDStoreType</li><li>\_MMS\_Certifier</li><li>\_MMS\_IDRegType</li><li>\_MMS\_UseAdminP</li> |
-| 联系人（没有认证者的人员） | <li>\_MMS\_IDRegType</li> |
-| 资源 | <li>FullName</li><li>ResourceType</li><li>ConfDB</li><li>ResourceCapacity</li><li>Site</li><li>DisplayName</li><li>MailFile</li><li>MailServer</li><li>MailDomain</li> |
+对象类型 | 必需的属性
+--- | ---
+组 | <li>ListName</li>
+邮件数据库 | <li>FullName</li><li>MailFile</li><li>MailServer</li><li>MailDomain</li>
+人员 | <li>LastName</li><li>MailFile</li><li>ShortName</li><li>\_MMS\_Password</li><li>\_MMS\_IDStoreType</li><li>\_MMS\_Certifier</li><li>\_MMS\_IDRegType</li><li>\_MMS\_UseAdminP</li>
+联系人（没有认证者的人员） | <li>\_MMS\_IDRegType</li>
+资源 | <li>FullName</li><li>ResourceType</li><li>ConfDB</li><li>ResourceCapacity</li><li>Site</li><li>DisplayName</li><li>MailFile</li><li>MailServer</li><li>MailDomain</li>
 
 ## 常见问题
 
@@ -483,7 +483,7 @@ Domino 连接器依赖 Directory Assistance 功能来查找辅助通讯簿。如
     - 在添加的字段中，于字段“属性”窗口上选择其类型、样式、大小、字体和其他相关参数，并设置其属性。
     - 让属性默认值和提供给该属性的名称保持相同（例如，如果属性名称是 MyPersonAttribute，请让默认值保有相同名称）。
     - 保存包含更新值的 ${ObjectName}InheritableSchema 子窗体
-3. 遵循[这些步骤](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html)，将 Domino 目录模板 {PUBNAMES.NTF} 替换为新的自定义模板 {CONTOSO.NTF}。
+3. 按照[这些步骤](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html)，将 Domino 目录模板 {PUBNAMES.NTF} 替换为新的自定义模板 {CONTOSO.NTF}。
 4. 关闭 Domino Admin，然后打开 Domino 控制台以重新启动 LDAP 服务，并重新加载 LDAP 架构：
     - 在 Domino 控制台中，于“Domino 命令”文本字段下插入命令以重新启动 LDAP 服务 - [重新启动任务 LDAP](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_STARTING_AND_STOPPING_THE_LDAP_SERVER_OVER.html)。
     - 若要重新加载 LDAP 架构，请使用 Tell LDAP 命令 - Tell LDAP ReloadSchema
@@ -515,7 +515,7 @@ Domino 连接器依赖 Directory Assistance 功能来查找辅助通讯簿。如
         - 单击左边的第三个选项卡，然后选择“传播此设计更改禁止”。
 7. 打开“${ObjectName}ExtensibleSchema”子窗体（其中 {ObjectName} 是默认结构化对象类的名称，例如 Person）。
 8. 插入“资源”并选择子窗体（刚才创建的，例如 TestSubform），然后保存“${ObjectName}ExtensibleSchema”子窗体。
-9. 遵循[这些步骤](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html)，将 Domino 目录模板 {PUBNAMES.NTF} 替换为新的自定义模板 {CONTOSO.NTF}。
+9. 按照[这些步骤](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html)，将 Domino 目录模板 {PUBNAMES.NTF} 替换为新的自定义模板 {CONTOSO.NTF}。
 10. 关闭 Domino Admin，然后打开 Domino 控制台以重新启动 LDAP 服务，并重新加载 LDAP 架构：
     - 在 Domino 控制台中，于“Domino 命令”文本字段下插入命令以重新启动 LDAP 服务 - [重新启动任务 LDAP](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_STARTING_AND_STOPPING_THE_LDAP_SERVER_OVER.html)。
     - 若要重新加载 LDAP 架构，请使用 Tell LDAP 命令 - Tell LDAP ReloadSchema
@@ -530,11 +530,11 @@ Domino 连接器依赖 Directory Assistance 功能来查找辅助通讯簿。如
 4. 提供想要为其扩展架构的上级对象类名称。例如，若要扩展 Person 对象类的架构，请提供上级对象类名称 {dominoPerson}：
 5. 指出对应于对象类的有效 OID。
 6. 根据要求选择“必需属性类型”或“可选属性类型”字段下的扩展/自定义属性：
-7. 将所需的属性添加到 ExtensibleObjectClass 后面，然后单击“保存并关闭”按钮。
+7. 将所需的属性添加到 ExtensibleObjectClass 之后，单击“保存并关闭”按钮。
 8. 系统将为相应的默认对象类创建具有扩展属性的 ExtensibleObjectClass。
 
 ## 故障排除
 
--	有关如何启用记录来排查连接器问题的信息，请参阅[如何启用连接器的 ETW 跟踪](http://go.microsoft.com/fwlink/?LinkId=335731)。
+-	有关如何启用记录来排查连接器问题的信息，请参阅 [如何启用连接器的 ETW 跟踪](http://go.microsoft.com/fwlink/?LinkId=335731)。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

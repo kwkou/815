@@ -34,7 +34,7 @@
 
 有关如何设置的信息，请访问我们的现有示例：
 
-* [适用于 Node.js 的 Microsoft Azure Active Directory 示例 REST API 服务](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
+* [适用于 Node.js 的 Microsoft Azure Active Directory 示例 REST API 服务](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
 
 ## 步骤 2：向 Microsoft Azure AD 租户注册 Web API
 
@@ -118,8 +118,8 @@ Microsoft Active Directory 支持添加两种类型的应用程序。Web API，�
 
 若要通过 git 获取 SDK 的源代码，只需键入：
 
-	    git clone git@github.com:AzureAD/azure-activedirectory-library-for-android.git
-	    cd ./azure-activedirectory-library-for-android/src
+    git clone git@github.com:AzureAD/azure-activedirectory-library-for-android.git
+    cd ./azure-activedirectory-library-for-android/src
 
 ####选项 3：通过 Gradle 获取二进制文件
 
@@ -463,7 +463,7 @@ Java
 ADAL 版本 1.1.0 支持通过 WebViewClient 中的 onReceivedHttpAuthRequest 事件处理的 NTLM 对话。你可以自定义对话布局和字符串。
 
 ### 跨应用 SSO
-了解[如何使用 ADAL 在 Android 上启用跨应用 SSO](/documentation/articles/active-directory-sso-android)
+了解[如何使用 ADAL 在 Android 上启用跨应用 SSO](/documentation/articles/active-directory-sso-android/)
 
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]

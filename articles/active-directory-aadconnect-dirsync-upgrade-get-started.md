@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure AD Connect：从 Microsoft Azure AD 同步工具 (DirSync) 升级 | Microsoft Azure"
-   description="了解如何从 DirSync 升级到 Azure AD Connect。本文介绍将当前 Microsoft Azure AD 同步工具 (DirSync) 升级到 Azure AD Connect 的步骤。"
+   pageTitle="Azure AD Connect：从 DirSync 升级 | Azure"
+   description="了解如何从 DirSync 升级到 Azure AD Connect。本文介绍从 DirSync 升级到 Azure AD Connect 的步骤。"
    services="active-directory"
    documentationCenter=""
    authors="andkjell"
@@ -9,29 +9,24 @@
 
 <tags 
    ms.service="active-directory" 
-   ms.date="04/25/2016"
-   wacn.date="06/14/2016"/>
+   ms.date="05/31/2016"
+   wacn.date="07/18/2016"/>
 
-# Azure AD Connect：升级 Microsoft Azure Active Directory 同步 (DirSync)
 
-以下文档可帮助你将现有 DirSync 安装升级到 Azure AD Connect。
+# Azure AD Connect：从 DirSync 升级
+Azure AD Connect 是 DirSync 的后继产品。你将在本主题中了解可从 DirSync 升级的方式。这些步骤不适用于从另一个版本的 Azure AD Connect 或从 Azure AD Sync 升级。
 
-## 相关文档
-如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的文档，下表提供了相关主题的链接。开始从 DirSync 升级之前，需要完成以粗体显示的前两个主题。
+在开始安装 Azure AD Connect 之前，请确保[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) 并完成 [Azure AD Connect：硬件和先决条件](active-directory-aadconnect-prerequisites.md)中的预先准备步骤。
 
-| 主题 | |
-| --------- | --------- |
-| **下载 Azure AD Connect** | [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) |
-| **硬件和先决条件** | [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/) |
-| **用于安装的帐户** | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions/) |
+如果不是从 DirSync 升级，请参阅[相关文档](#related-documentation)中的其他方案。
 
 ## 从 DirSync 升级
-根据当前的 DirSync 部署，可以使用不同的升级选项。如果预期的升级时间少于 3 小时，则我们建议执行就地升级。如果预期的升级时间超过 3 小时，则我们建议在另一台服务器上进行并行部署。如果对象数目超过 50,000 个，预计需要花费 3 个多小时才能完成升级。
+根据当前的 DirSync 部署，可以使用不同的升级选项。如果预期的升级时间少于 3 小时，建议执行就地升级。如果预期的升级时间超过 3 小时，建议在另一台服务器上进行并行部署。如果对象数目超过 50,000 个，预计需要花费 3 个多小时才能完成升级。
 
-| 方案 | |
-| ---- | ---- |
-| [就地升级](#in-place-upgrade) | 如果升级预期少于 3 小时，则为首选选项。 |
-| [并行部署](#parallel-deployment) | 如果升级预期超过 3 小时，则为首选选项。 |
+方案 |  
+---- | ----
+[就地升级](#in-place-upgrade) | 如果升级预期少于 3 小时，则为首选选项。
+[并行部署](#parallel-deployment) | 如果升级预期超过 3 小时，则为首选选项。
 
 >[AZURE.NOTE] 当你规划从 DirSync 升级到 Azure AD Connect 时，在升级之前请勿自行卸载 DirSync。Azure AD Connect 将读取和迁移 DirSync 的配置，并在检查服务器之后卸载 DirSync。
 
@@ -41,9 +36,8 @@
 
 如果你想要执行配置迁移并执行并行部署，可以拒绝就地升级建议。例如，你可以借机刷新硬件和操作系统。有关详细信息，请参阅[并行部署](#parallel-deployment)部分。
 
-**并行部署**
-
-如果对象数超过 50,000 个，则我们建议使用并行部署。这样，用户就不会遇到任何操作延迟。Azure AD Connect 安装程序将尝试评估升级时的停机时间，但是，如果你过去升级过 DirSync，则你自己的经验可能会提供最佳指导。
+**并行部署**  
+如果对象数超过 50,000 个，则建议使用并行部署。这样，用户就不会遇到任何操作延迟。Azure AD Connect 安装程序将尝试预估升级时的停机时间，但是，如果你曾升级过 DirSync，那么，你自己的经验可能会提供最佳指导。
 
 ### 要升级的受支持 DirSync 配置
 以下配置更改受 DirSync 的支持，并且将会升级：
@@ -60,10 +54,9 @@
 
 ![已阻止升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/analysisblocked.png)
 
-在这种情况下，建议在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)下安装新的 Azure AD Connect 服务器，并验证旧的 DirSync 及新的 Azure AD Connect 配置。使用自定义配置重新应用所有更改，如 [Azure AD Connect 同步自定义配置](/documentation/articles/active-directory-aadconnectsync-whatis/)中所述。
+在这种情况下，建议在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)下安装新的 Azure AD Connect 服务器，并验证旧的 DirSync 及新的 Azure AD Connect 配置。使用自定义配置重新应用所有更改，如 [Azure AD Connect 同步自定义配置](active-directory-aadconnectsync-whatis.md)中所述。
 
-
-无法检索且不会迁移 DirSync 用于服务帐户的密码。这些密码将在升级期间重置。
+无法检索且不会迁移 DirSync 用于服务帐户的密码。这些密码会在升级期间重置。
 
 ### 从 DirSync 升级到 Azure AD Connect 的高级步骤
 
@@ -88,15 +81,15 @@
 ![欢迎使用 Azure](./media/active-directory-aadconnect-dirsync-upgrade-get-started/Welcome.png)
 3. 单击“下一步”开始分析现有的 DirSync 安装。
 ![分析现有的目录同步安装](./media/active-directory-aadconnect-dirsync-upgrade-get-started/Analyze.png)
-4. 分析完成时，我们将提出如何继续的建议。  
-    - 如果使用 SQL Server Express 并且对象数少于 50,000 个，则会显示以下屏幕：  
+4. 分析完成时，你将看到如何继续的建议。
+    - 如果使用 SQL Server Express 并且对象数少于 50,000 个，则会显示以下屏幕：
 ![分析完成，已准备好从 DirSync 升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisReady.png)
     - 如果为 DirSync 使用了完整的 SQL Server，将看到此页面：
-![分析完成，已准备好从 DirSync 升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisReadyFullSQL.png)<BR/>
+![分析完成，已准备好从 DirSync 升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisReadyFullSQL.png)  
 系统会显示有关 DirSync 使用的现有 SQL Server 数据库服务器的信息。如果需要，请做相应的调整。单击“下一步”继续安装。
     - 如果对象数超过 50,000 个，你将看到此屏幕：
-![分析完成，已准备好从 DirSync 升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)<BR/>
-若要继续进行就地升级，请单击消息旁的复选框：“继续在此计算机上升级 DirSync”。
+![分析完成，已准备好从 DirSync 升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)  
+若要继续进行就地升级，请单击此消息旁的复选框：“继续在此计算机上升级 DirSync”。
 若要改为执行[并行部署](#parallel-deployment)，请导出 DirSync 配置设置并将其转移到新服务器。
 5. 提供当前用于连接 Azure AD 的帐户的密码。这必须是 DirSync 当前使用的帐户。
 ![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToAzureAD.png)  
@@ -112,13 +105,13 @@
 ### 导出 DirSync 配置
 **对象数超过 50,000 时执行并行部署**
 
-如果你的对象数超过 50,000 个，则 Azure AD Connect 安装程序会建议并行部署。
+如果对象数超过 50,000 个，Azure AD Connect 安装程序会建议执行并行部署。
 
-将会显示类似于下面的屏幕：
+将显示如下屏幕：
 
 ![分析已完成](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)
 
-如果你想要继续进行并行部署，需要运行以下步骤：
+如果想继续进行并行部署，需要执行以下步骤：
 
 - 单击“导出设置”按钮。在不同的服务器上安装 Azure AD Connect 时，会导入这些设置，以将目前 DirSync 中的任何设置迁移到新的 Azure AD Connect 安装。
 
@@ -131,7 +124,8 @@
 1. 运行 Azure AD Connect 安装程序 (MSI)。
 2. 看到“欢迎使用 Azure AD Connect”屏幕时，请单击窗口右上角的“X”退出安装向导。
 3. 打开命令提示符。
-4. 从 Azure AD Connect 的安装位置（默认值：C:\\Program Files\\Microsoft Azure Active Directory Connect）执行以下命令：`AzureADConnect.exe /ForceExport`。
+4. 从 Azure AD Connect 的安装位置（默认值：C:\\Program Files\\Microsoft Azure Active Directory Connect）执行以下命令：
+    `AzureADConnect.exe /ForceExport`。
 5. 单击“导出设置”按钮。在不同的服务器上安装 Azure AD Connect 时，会导入这些设置，以将目前 DirSync 中的任何设置迁移到新的 Azure AD Connect 安装。
 
 ![分析已完成](./media/active-directory-aadconnect-dirsync-upgrade-get-started/forceexport.png)
@@ -156,8 +150,8 @@
 	- 用于连接 SQL Server 的服务帐户（如果你的 SQL Server 数据库位于远程，则此帐户必须是域服务帐户）。
 可以在此屏幕上看到以下选项：
 ![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/advancedsettings.png)
-7. 单击“下一步”。
-8. 在“已准备好配置”页上，保留选中“配置完成后立即开始同步过程”。服务器将进入[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)，因此暂时不会将更改导出到 Azure AD。
+7. 单击**“下一步”**。
+8. 在“已准备好配置”页上，保留选中“配置完成后立即开始同步过程”。服务器将进入[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)，因此暂时不会将更改导出到 Azure AD。
 9. 单击“安装”。
 10. 安装完成后，请注销并再次登录到 Windows，然后即可使用同步服务管理器或同步规则编辑器，或者尝试进行其他任何配置更改。
 
@@ -178,9 +172,9 @@
 
 检查这些操作的结果，并确保没有任何错误。
 
-如果你想要查看并检查哪些更改即将导出到 Azure AD，请阅读有关如何在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)下验证配置的主题。进行所需的配置更改，直到没有任何意外的错误。
+如果你想查看并检查即将导出到 Azure AD 的更改，请阅读有关如何在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)下验证配置的主题。进行所需的配置更改，直到没有任何意外的错误。
 
-完成这 4 项操作之后，如果没有任何错误，并且你对即将导出的更改感到满意，即表示已准备好卸载 DirSync 并启用 Azure AD Connect 同步。完成以下两个步骤以完成迁移。
+完成这 4 项操作之后，如果没有任何错误，并且你对即将导出的更改感到满意，则可以卸载 DirSync 并启用 Azure AD Connect 同步。完成以下两个步骤以完成迁移。
 
 ### 卸载 DirSync（旧服务器）
 
@@ -212,4 +206,4 @@ Azure AD Connect 现为你的活动服务器。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"  
-   ms.date="04/14/2016"
-   wacn.date="06/14/2016"/>
+   ms.date="05/19/2016"
+   wacn.date="07/18/2016"/>
 
 
 # Azure AD Connect：帐户和权限
@@ -32,7 +32,7 @@
 
 
 ## 快速设置安装
-在快速设置中，安装向导将要求提供企业管理员凭据，以便可以配置本地 Active Directory，使其具有 Azure AD Connect 所需的权限。如果你从 DirSync 升级，企业管理员凭据可用于重置 DirSync 所用帐户的密码。
+在快速设置中，安装向导将要求提供 AD DS 企业管理员凭据，以便配置本地 Active Directory，使其具有 Azure AD Connect 所需的权限。如果从 DirSync 升级，AD DS 企业管理员凭据可用于重置 DirSync 所用帐户的密码。此外，还需要 Azure AD 全局管理员凭据。
 
 向导页 | 收集的凭据 | 所需的权限| 用途
 ------------- | ------------- |------------- |------------- |
@@ -49,14 +49,14 @@
 ### 使用快速设置创建的 AD DS 帐户的权限
 如果使用快速设置创建用于在 AD DS 中读取和写入数据的[帐户](#active-directory-account)，该帐户将拥有以下权限：
 
-| 权限 | 用途 |
-| ---- | ---- |
-| <li>复制目录更改</li><li>复制所有目录更改 | 密码同步 |
-| 读取/写入所有用户属性 | 导入和执行 Exchange 混合部署 |
-| 读取/写入所有 iNetOrgPerson 属性 | 导入和执行 Exchange 混合部署 |
-| 读取/写入所有组属性 | 导入和执行 Exchange 混合部署 |
-| 读取/写入所有联系人属性 | 导入和执行 Exchange 混合部署 |
-| 重置密码 | 准备启用密码写回 |
+权限 | 用途
+---- | ----
+<li>复制目录更改</li><li>复制所有目录更改 | 密码同步
+读取/写入所有用户属性 | 导入和执行 Exchange 混合部署
+读取/写入所有 iNetOrgPerson 属性 | 导入和执行 Exchange 混合部署
+读取/写入所有组属性 | 导入和执行 Exchange 混合部署
+读取/写入所有联系人属性 | 导入和执行 Exchange 混合部署
+重置密码 | 准备启用密码写回
 
 ## 自定义设置安装
 使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。你必须授予此帐户的权限可在[创建 AD DS 帐户](#create-the-ad-ds-account)中找到。
@@ -128,4 +128,4 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

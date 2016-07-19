@@ -7,21 +7,20 @@
 	manager="StevenPo"
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="active-directory"
-	ms.date="03/07/2016"
-	wacn.date="04/28/2016"/>
+	ms.date="05/23/2016"
+	wacn.date="07/19/2016"/>
 
 
 # Azure AD Connect 同步：函数参考
 
-
-在 Azure Active Directory Sync 中，函数用于在同步期间操作属性值。  
+在 Azure AD Connect 中，函数用于在同步期间操作属性值。  
 函数的语法使用以下格式表示：  
 `<output type> FunctionName(<input type> <position name>, ..)`
 
 如果函数被重载并接受多个语法，则会列出所有的有效语法。  
-该函数为强类型函数，并会验证传递的类型是否匹配记录的类型。  
+该函数为强类型函数，并会验证传递的类型是否匹配记录的类型。   
 如果类型不匹配，则会引发错误。
 
 类型使用以下语法表示：
@@ -32,51 +31,44 @@
 - **enum** – 已知常量的枚举
 - **exp** – 表达式，计算结果预计为布尔值
 - **mvbin** – 多值二进制
-- **mvstr** – 多值引用
+- **mvstr** – 多值字符串
+- **mvref** – 多值引用
 - **num** – 数值
 - **ref** – 单值引用
 - **str** – 单值字符串
 - **var** – （几乎）任何其他类型的变体
 - **void** – 不返回值
 
-
-
 ## 函数引用
 
-----------
-**转换：**
-
-[CBool](#cbool) &nbsp;&nbsp;&nbsp;&nbsp; [CDate](#cdate) &nbsp;&nbsp;&nbsp;&nbsp; [CGuid](#cguid) &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [ConvertFromBase64](#convertfrombase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToBase64](#converttobase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertFromUTF8Hex](#convertfromutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [CNum](#cnum) &nbsp;&nbsp;&nbsp;&nbsp; [CRef](#cref) &nbsp;&nbsp;&nbsp;&nbsp; [CStr](#cstr) &nbsp;&nbsp;&nbsp;&nbsp; [StringFromGuid](#StringFromGuid) &nbsp;&nbsp;&nbsp;&nbsp; [StringFromSid](#stringfromsid)
-
-**日期/时间：**
-
-[DateAdd](#dateadd) &nbsp;&nbsp;&nbsp;&nbsp; [DateFromNum](#datefromnum) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Now](#now) &nbsp;&nbsp;&nbsp;&nbsp; [NumFromDate](#numfromdate)
-
-**Directory**
-
-[DNComponent](#dncomponent) &nbsp;&nbsp;&nbsp;&nbsp; [DNComponentRev](#dncomponentrev) &nbsp;&nbsp;&nbsp;&nbsp; [EscapeDNComponent](#escapedncomponent)
-
-**计算：**
-
-[IsBitSet](#isbitset) &nbsp;&nbsp;&nbsp;&nbsp; [IsDate](#isdate) &nbsp;&nbsp;&nbsp;&nbsp; [IsEmpty](#isempty)
-&nbsp;&nbsp;&nbsp;&nbsp; [IsGuid](#isguid) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsNumeric](#isnumeric)  &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring)
-
-**数学：**
-
-[BitAnd](#bitand) &nbsp;&nbsp;&nbsp;&nbsp; [BitOr](#bitor) &nbsp;&nbsp;&nbsp;&nbsp; [RandomNum](#randomnum)
-
-**多值**
-
-[Contains](#contains) &nbsp;&nbsp;&nbsp;&nbsp; [Count](#count) &nbsp;&nbsp;&nbsp;&nbsp; [Item](#item) &nbsp;&nbsp;&nbsp;&nbsp; [ItemOrNull](#itemornull) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [RemoveDuplicates](#removeduplicates) &nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)
-
-**程序流：**
-
-[Error](#error) &nbsp;&nbsp;&nbsp;&nbsp; [IIF](#iif) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)
-
-
-**文本**
-
-[GUID](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [InStrRev](#instrrev) &nbsp;&nbsp;&nbsp;&nbsp; [LCase](#lcase) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Len](#len) &nbsp;&nbsp;&nbsp;&nbsp; [LTrim](#ltrim) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [PadLeft](#padleft) &nbsp;&nbsp;&nbsp;&nbsp; [PadRight](#padright) &nbsp;&nbsp;&nbsp;&nbsp; [PCase](#pcase) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [ReplaceChars](#replacechars) &nbsp;&nbsp;&nbsp;&nbsp; [Right](#right) &nbsp;&nbsp;&nbsp;&nbsp; [RTrim](rtrim) &nbsp;&nbsp;&nbsp;&nbsp; [Trim](#trim) &nbsp;&nbsp;&nbsp;&nbsp; [UCase](#ucase) &nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
+函数列表 | | | | |  
+--------- | --------- | --------- | --------- | --------- | ---------
+**转换** |  
+[CBool](#cbool) | [CDate](#cdate) | [CGuid](#cguid) | [ConvertFromBase64](#convertfrombase64)
+[ConvertToBase64](#converttobase64) | [ConvertFromUTF8Hex](#convertfromutf8hex) | [ConvertToUTF8Hex](#converttoutf8hex) | [CNum](#cnum)
+[CRef](#cref) | [CStr](#cstr) | [StringFromGuid](#StringFromGuid) | [StringFromSid](#stringfromsid)
+**日期/时间** |  
+[DateAdd](#dateadd) | [DateFromNum](#datefromnum) | [FormatDateTime](#formatdatetime) | [Now](#now)
+[NumFromDate](#numfromdate) |  
+**目录** |  
+[DNComponent](#dncomponent) | [DNComponentRev](#dncomponentrev) | [EscapeDNComponent](#escapedncomponent)
+**计算** |  
+[IsBitSet](#isbitset) | [IsDate](#isdate) | [IsEmpty](#isempty) | [IsGuid](#isguid)
+[IsNull](#isnull) | [IsNullOrEmpty](#isnullorempty) | [IsNumeric](#isnumeric) | [IsPresent](#ispresent) |
+[IsString](#isstring) |  
+**数学** |  
+[BitAnd](#bitand) | [BitOr](#bitor) | [RandomNum](#randomnum)
+**多值** |  
+[Contains](#contains) | [计数](#count) | [项目](#item) | [ItemOrNull](#itemornull)
+[Join](#join) | [RemoveDuplicates](#removeduplicates) | [拆分](#split) |
+**程序流** |  
+[错误](#error) | [IIF](#iif) | [Switch](#switch)
+**文本** |  
+[GUID](#guid) | [InStr](#instr) | [InStrRev](#instrrev) | [LCase](#lcase)
+[Left](#left) | [Len](#len) | [LTrim](#ltrim) | [Mid](#mid)
+[PadLeft](#padleft) | [PadRight](#padright) | [PCase](#pcase) | [将](#replace)
+[ReplaceChars](#replacechars) | [Right](#right) | [RTrim](#rtrim) | [Trim](#trim)
+[UCase](#ucase) | [Word](#word)
 
 ----------
 ### BitAnd
@@ -87,19 +79,19 @@ BitAnd 函数设置值的指定位。
 **语法：**  
 `num BitAnd(num value1, num value2)`
 
-- value1、value2：应该 AND 在一起的数字值
+- value1、value2： 应该 AND 在一起的数字值
 
 **备注：**  
 此函数将两个参数转换为二进制表示形式，并将位设置为：
 
-- 0 - 如果*掩码*和*标志*中相应位的其中一个或两个均为 0
+- 0 - 如果掩码和标志中相应位的其中一个或两个均为 0
 - 1 - 如果两个相应位均为 1。
 
 换而言之，除了当两个参数的相应位均为 1 时之外，所有情况下均返回 0。
 
 **示例：**  
 `BitAnd(&HF, &HF7)`  
-返回 7，因为十六进制“F”AND“F7”的计算结果为此值。
+返回 7，因为十六进制 "F" AND "F7" 的计算结果为此值。
 
 ----------
 ### BitOr
@@ -119,7 +111,7 @@ BitOr 函数设置值的指定位。
 ### CBool
 
 **说明：**  
-CBool 函数基于求值的表达式返回布尔值
+CBool 函数基于计算的表达式返回布尔值
 
 **语法：**  
 `bool CBool(exp Expression)`
@@ -151,7 +143,7 @@ CDate 函数通过字符串返回 UTC DateTime。DateTime 不是 Sync 中的原�
 基于员工的开始时间返回 DateTime
 
 `CDate("2013-01-10 4:00 PM -8")`  
-返回表示“2013-01-11 12:00 AM”的 DateTime
+返回表示 "2013-01-11 12:00 AM" 的 DateTime
 
 ----------
 ### CGuid
@@ -168,7 +160,7 @@ CGuid 函数将 GUID 的字符串表示转换为其二进制表示形式。
 ### Contains
 
 **说明：**  
-Contains 函数寻找多值属性内的字符串
+Contains 函数查找多值属性内的字符串
 
 **语法：**  
 `num Contains (mvstring attribute, str search)` - 区分大小写  
@@ -183,11 +175,11 @@ Contains 函数寻找多值属性内的字符串
 
 **备注：**  
 对于多值字符串属性，搜索会在值中查找子字符串。  
-对于引用属性，搜索的字符串必须与视为匹配的值完全匹配。
+对于引用属性，搜索的字符串必须与视为匹配的值完全匹配。  
 
 **示例：**  
 `IIF(Contains([proxyAddresses],"SMTP:")>0,[proxyAddresses],Error("No primary SMTP address found."))`  
-如果 proxyAddresses 属性具有主电子邮件地址（由大写“SMTP:”表示），则返回 proxyAddress 属性，否则返回错误。
+如果 proxyAddresses 属性具有主电子邮件地址（由大写 "SMTP:" 表示），则返回 proxyAddress 属性，否则返回错误。
 
 ----------
 ### ConvertFromBase64
@@ -196,17 +188,17 @@ Contains 函数寻找多值属性内的字符串
 ConvertFromBase64 函数将指定的 base64 编码值转换为规则的字符串。
 
 **语法：**  
-`str ConvertFromBase64(str source)` - 假定采用 Unicode 编码 <br> 
+`str ConvertFromBase64(str source)` - 假定采用 Unicode 编码 <br>
 `str ConvertFromBase64(str source, enum Encoding)`
 
-- source：Base64 编码的字符串  
+- source：Base64 编码的字符串
 - Encoding：Unicode、ASCII、UTF8
 
 **示例**  
 `ConvertFromBase64("SABlAGwAbABvACAAdwBvAHIAbABkACEA")`  
 `ConvertFromBase64("SGVsbG8gd29ybGQh", UTF8)`
 
-这两个示例均返回 "Hello world!"
+这两个示例均返回 "*Hello world!*"
 
 ----------
 ### ConvertFromUTF8Hex
@@ -225,7 +217,7 @@ ConvertFromUTF8Hex 函数将指定的 UTF8 Hex 编码值转换为字符串。
 
 **示例：**  
 `ConvertFromUTF8Hex("48656C6C6F20776F726C6421")`  
-返回 "Hello world!"
+返回 "*Hello world!*"
 
 ----------
 ### ConvertToBase64
@@ -302,13 +294,13 @@ CStr 函数转换为字符串数据类型。
 
 **示例：**  
 `CStr([dn])`  
-可能返回 “cn=Joe,dc=contoso,dc=com”
+可能返回 "cn=Joe,dc=contoso,dc=com"
 
 ----------
 ### DateAdd
 
 **说明：**  
-返回包含指定时间间隔已添加到其中的日期的日期。
+返回日期，其中包含已添加制定时间间隔的日期。
 
 **语法：**  
 `dt DateAdd(str interval, num value, dt date)`
@@ -329,7 +321,7 @@ CStr 函数转换为字符串数据类型。
 
 **示例：**  
 `DateAdd("m", 3, CDate("2001-01-01"))`  
-添加 3 个月，并返回表示“2001-04-01”的 DateTime
+添加 3 个月，并返回表示 "2001-04-01" 的 DateTime
 
 ----------
 ### DateFromNum
@@ -359,7 +351,7 @@ DNComponent 函数返回从左边起的指定 DN 组件的值。
 
 **示例：**  
 `DNComponent([dn],1)`  
-如果 dn 为“cn=Joe,ou=…”，则返回 Joe
+如果 dn 为 "cn=Joe,ou=…,"，则返回 Joe
 
 ----------
 ### DNComponentRev
@@ -420,15 +412,15 @@ FormatDateTime 函数用于为具有指定格式的字符串设置 DateTime 格�
 - format：表示要转换为的格式的字符串。
 
 **备注：**  
-格式的可能值可以在此处找到：[用户定义的日期/时间格式（格式函数）](http://msdn2.microsoft.com/library/73ctwf33(VS.90).aspx)
+格式的可能值可以在此处找到：[用户定义的日期/时间格式（Format 函数）](http://msdn2.microsoft.com/library/73ctwf33(VS.90).aspx)
 
-**示例：**
+**示例：**  
 
 `FormatDateTime(CDate("12/25/2007"),"yyyy-mm-dd")`  
-结果是“2007-12-25”。
+结果是 "2007-12-25"。
 
 `FormatDateTime(DateFromNum([pwdLastSet]),"yyyyMMddHHmmss.0Z")`  
-结果可能是“20140905081453.0Z”
+结果可能是 "20140905081453.0Z"
 
 ----------
 ### GUID
@@ -454,7 +446,7 @@ IIF 函数基于指定的条件返回一组可能值中的其中一个值。
 
 **示例：**  
 `IIF([employeeType]="Intern","t-" & [alias],[alias])`  
-如果用户是实习生，则返回用户的别名，同时将“t-”添加到其开头，否则按原样返回用户的别名。
+如果用户是实习生，则返回用户的别名，同时将 "t-" 添加到其开头，否则按原样返回用户的别名。
 
 ----------
 ### InStr
@@ -519,7 +511,7 @@ InStrRev 函数查找字符串中最后一次出现的子字符串
 
 **示例：**  
 `IsBitSet(&HF,4)`  
-返回 True，因为位“4”在十六进制值“F”中设置
+返回 True，因为位 "4" 在十六进制值 "F" 中设置
 
 ----------
 ### IsDate
@@ -537,7 +529,7 @@ InStrRev 函数查找字符串中最后一次出现的子字符串
 ### IsEmpty
 
 **说明：**  
-如果属性是出现在 CS 或 MV 中，但计算结果为空字符串，则 IsEmpty 函数计算结果为 True。
+如果属性出现在 CS 或 MV 中，但计算结果为空字符串，则 IsEmpty 函数计算结果为 True。
 
 **语法：**  
 `bool IsEmpty(var Expression)`
@@ -688,7 +680,7 @@ Join 和 Split 函数之间没有奇偶校验。Join 函数使用字符串数组
 
 **示例：**  
 `Join([proxyAddresses],",")`  
-可能返回：“SMTP:john.doe@contoso.com,smtp:jd@contoso.com”
+可能返回："SMTP:john.doe@contoso.com,smtp:jd@contoso.com"
 
 ----------
 ### LCase
@@ -701,7 +693,7 @@ LCase 函数将字符串中的所有字符都转换为小写。
 
 **示例：**  
 `LCase("TeSt")`  
-返回“test”。
+返回 "test"。
 
 ----------
 ### Left
@@ -752,7 +744,7 @@ LTrim 函数从字符串中删除前导空格。
 
 **示例：**  
 `LTrim(" Test ")`  
-返回 “Test”
+返回 "Test "。
 
 ----------
 ### Mid
@@ -871,7 +863,7 @@ PCase 函数将字符串中每个空格分隔词的第一个字符转换为大�
 
 **示例：**  
 `PCase("TEsT")`  
-返回“Test”。
+返回 "Test"。
 
 ----------
 ### RandomNum
@@ -903,7 +895,7 @@ RemoveDuplicates 函数使用多值字符串，并确保每个值都是唯一值
 返回净化的 proxyAddress 属性，其中所有重复值已被删除。
 
 ----------
-### Replace
+### 将
 
 **说明：**  
 Replace 函数将所有出现的某一字符串替换为另一个字符串。
@@ -924,7 +916,7 @@ Replace 函数将所有出现的某一字符串替换为另一个字符串。
 
 **示例：**  
 `Replace([address],"\r\n",", ")`  
-将 CRLF 替换为逗号和空格，可能导致出现“One Microsoft Way, Redmond, WA, USA”
+将 CRLF 替换为逗号和空格，可能导致出现 "One Microsoft Way, Redmond, WA, USA"
 
 ----------
 ### ReplaceChars
@@ -958,7 +950,7 @@ ReplaceChars 函数替换 ReplacePattern 字符串中找到的所有出现的字
 返回 Raksmorgas
 
 `ReplaceChars("O’Neil",%ReplaceString%)`  
-返回 “ONeil”，定义要删除单次勾选。
+返回 "ONeil"，定义要删除单次勾选。
 
 ----------
 ### Right
@@ -998,7 +990,7 @@ RTrim 函数从字符串中删除尾随空格。
 
 **示例：**  
 `RTrim(" Test ")`  
-返回“Test”。
+返回 " Test"。
 
 ----------
 ### 拆分
@@ -1079,7 +1071,7 @@ Trim 函数从字符串中删除前导空格和尾随空格。
 
 **示例：**  
 `Trim(" Test ")`  
-返回“Test”。
+返回 "Test"。
 
 `Trim([proxyAddresses])`  
 删除 proxyAddress 属性中每个值的前导空格和尾随空格。
@@ -1095,7 +1087,7 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 
 **示例：**  
 `UCase("TeSt")`  
-返回“TEST”。
+返回 "TEST"。
 
 ----------
 ### Word
@@ -1120,10 +1112,10 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 
 **示例：**  
 `Word("The quick brown fox",3," ")`  
-返回 “brown”
+返回 "brown"
 
 `Word("This,string!has&many separators",3,",!&#")`  
-返回 “has”
+返回 "has"
 
 ## 其他资源
 
@@ -1131,4 +1123,4 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 * [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

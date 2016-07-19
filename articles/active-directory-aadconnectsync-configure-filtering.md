@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/10/2016"
-	wacn.date="06/14/2016"/>
+	wacn.date="07/18/2016"/>
 
 
 # Azure AD Connect 同步：配置筛选
@@ -46,6 +46,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 
 如果你有多个林，则必须将本主题中所述的筛选配置应用到每个林（假设你想要让所有林使用相同的配置）。
 
+### 禁用计划任务
 若要禁用每隔 30 分钟触发同步周期一次的内置计划程序，请遵循以下步骤：
 
 1. 转到 PowerShell 提示符。
@@ -276,7 +277,6 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 2. 在“任务计划程序库”正下方找到名为“Azure AD 同步计划程序”的任务，单击右键，然后选择“启用”。
 
 ## 后续步骤
-
 了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。

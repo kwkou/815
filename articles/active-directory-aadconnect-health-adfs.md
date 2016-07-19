@@ -106,4 +106,4 @@ Azure AD Connect Health for ADFS 提供一份报告，内容有关因为用户�
 * [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations/)
 * [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq/)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

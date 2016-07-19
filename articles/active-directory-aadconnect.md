@@ -10,7 +10,7 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="04/20/2016"
+	ms.date="05/19/2016"
 	wacn.date="06/24/2016"/>
 
 
@@ -33,7 +33,7 @@ Azure AD Connect 会将你的本地目录与 Azure Active Directory 集成。这
 
 ### Azure AD Connect 工作原理
 
-Azure Active Directory Connect 由三个主要部分组成，分别是同步服务、可选的 Active Directory 联合身份验证服务功能，以及使用 [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/) 实现的监视功能。
+Azure Active Directory Connect 由三个主要组件构成：同步服务、可选的 Active Directory 联合身份验证服务组件和名为 [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/active-directory-aadconnect-health) 的监视组件。
 
 <center>![Azure AD Connect 堆栈](./media/active-directory-aadconnect-how-it-works/AADConnectStack2.png)
 </center>
@@ -53,7 +53,7 @@ Azure Active Directory Connect 由三个主要部分组成，分别是同步服�
 | [快速设置](/documentation/articles/active-directory-aadconnect-get-started-express/) | <li>适用于单林 AD 的推荐默认选项。</li> <li>使用密码同步以同一密码进行用户登录。</li>
 | [自定义设置](/documentation/articles/active-directory-aadconnect-get-started-custom/) | <li>有多个林时使用。支持许多[本地拓扑](/documentation/articles/active-directory-aadconnect-topologies/)。</li> <li>自定义登录选项，例如用于联合身份验证的 ADFS，或使用第三方标识提供者。</li> <li>自定义同步功能，例如筛选和写回。</li>
 | [从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/) | <li>如果你有已在运行的现有 DirSync 服务器。</li>
-
+| [从 Azure AD Sync 或 Azure AD Connect 升级](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/)| <li>根据你的偏好，你可以选择多种不同的方法。</li>
 
 
 [安装后](/documentation/articles/active-directory-aadconnect-whats-next/)，你应该验证程序是否按预期工作，并将许可证分配给用户。
@@ -118,15 +118,31 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 主题 | |
 | --------- | --------- |
 | 所有 Azure AD Connect 同步文章 | [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/) |
+| 技术概念 | [Azure AD Connect 同步：技术概念](/documentation/articles/active-directory-aadconnect-technical-concepts/) |
+| 了解默认配置 | [Azure AD Connect 同步：了解默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration/) |
 | 了解用户和联系人 | [Azure AD Connect 同步：了解用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts/) |
 | 声明性预配 | [Azure AD Connect Sync：了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions/) |
 | 更改默认配置 | [更改默认配置的最佳做法](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration/) |
+
+## 配置联合身份验证功能
+可将 ADFS 配置为支持[多个域](/documentation/articles/active-directory-aadconnect-multiple-domains)。例如，你可能在联合身份验证功能中需要使用多个顶级域。
+
+如果你的 ADFS 服务器未配置为自动更新 Azure AD 中的证书，或者如果你使用非 ADFS 解决方案，那么在需要[更新证书](/documentation/articles/active-directory-aadconnect-o365-certs)时会通知你。
+
+### 配置联合身份验证功能的后续步骤
+
+| 主题 | |
+| --------- | --------- |
+| 配置带有子域的 ADFS | [与 Azure AD 联合的多域支持](/documentation/articles/active-directory-aadconnect-multiple-domains) |
+| 管理 AD FS 场 | [使用 Azure AD Connect 管理和自定义 AD FS](/documentation/articles/active-directory-aadconnect-federation-management) |
+| 手动更新联合身份验证证书 | [续订 Office 365 和 Azure AD 的联合身份验证证书](/documentation/articles/active-directory-aadconnect-o365-certs) |
 
 ## 详细信息和参考
 
 | 主题 | |
 | --------- | --------- |
 | 版本历史记录 | [版本历史记录](/documentation/articles/active-directory-aadconnect-version-history/) |
+| Azure AD 的非 ADFS 兼容性列表 | [Azure AD 联合身份验证兼容性列表](/documentation/articles/active-directory-aadconnect-federation-compatibility/) |
 | 同步的属性 | [同步的属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/) |
 | 使用 Azure AD Connect Health 进行监视 | [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/) |
 | 常见问题 | [Azure AD Connect 常见问题](/documentation/articles/active-directory-aadconnect-faq/) |
@@ -138,4 +154,4 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 有关将本地目录扩展到云的 Ignite 2015 演示文稿。
 
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

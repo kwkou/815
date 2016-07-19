@@ -92,16 +92,13 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 
 1. 先要使用 PowerShell cmdlet `Stop-ADSyncSyncCycle` 指示计划程序停止其当前周期。
 2. 停止计划程序并不会使当前连接器停止执行其当前任务。若要强制停止连接器，请执行以下操作：
- - 从“开始”菜单启动“同步服务”。转到“连接器”，突出显示状态为“正在运行”的连接器，然后从“操作”中选择“停止”。
-
-
-	![StopAConnector](./media/active-directory-aadconnectsync-feature-scheduler/stopaconnector.png)
-
+![StopAConnector](./media/active-directory-aadconnectsync-feature-scheduler/stopaconnector.png)
+    - 从“开始”菜单启动“同步服务”。转到“连接器”，突出显示状态为“正在运行”的连接器，然后从“操作”中选择“停止”。
 
 计划程序仍处于活动状态，并将在下次有机会时重新启动。
 
 ## 自定义计划程序
-本节中所述的 cmdlet 仅在内部版本 [1\.1.130.0](/documentation/articles/active-directory-aadconnect-version-history#111300) 及更高版本中提供。
+本节中所述的 cmdlet 仅在内部版本 [1\.1.130.0](/documentation/articles/active-directory-aadconnect-version-history/#111300) 及更高版本中提供。
 
 如果内置的计划程序不符合你的要求，则可以使用 PowerShell 计划连接器。
 

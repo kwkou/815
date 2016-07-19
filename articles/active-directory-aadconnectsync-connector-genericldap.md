@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="03/16/2016"
-   wacn.date="06/24/2016"/>
+   ms.date="05/24/2016"
+   wacn.date="07/18/2016"/>
 
 # 泛型 LDAP 连接器技术参考
 
@@ -33,12 +33,12 @@ IETF RFC 中未指定某些操作和架构元素，例有关要执行增量导�
 
 从较高层面讲，当前的连接器版本支持以下功能：
 
-| 功能 | 支持 |
-| --- | --- |
-| 连接的数据源 | 此连接器支持所有 LDAP v3 服务器（RFC 4510 兼容）。此连接器已在以下各项产品中进行测试：<li>Microsoft Active Directory 轻量型目录服务 (AD LDS)</li><li>Microsoft Active Directory 通用类目录 (AD GC)</li><li>389 Directory Server</li><li>Apache Directory Server</li><li>IBM Tivoli DS</li><li>Isode Directory</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>Open DJ</li><li>Open DS</li><li>Open LDAP (openldap.org)</li><li>Oracle（以前为 Sun）Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory Server (VDS)</li><li>Sun One Directory Server</li>**不支持的著名目录：**<li>Microsoft Active Directory 域服务 (AD DS) [改用内置的 Active Directory 连接器]</li><li>Oracle Internet Directory (OID)</li> |
-| 方案 | <li>对象生命周期管理</li><li>组管理</li><li>密码管理</li> |
-| 操作 |所有 LDAP 目录都支持以下操作：<li>完整导入</li><li>导出</li>只有指定的目录支持以下操作：<li>增量导入</li><li>设置密码、更改密码</li> |
-| 架构 | <li>在 LDAP 架构（RFC3673 和 RFC4512/4.2）中检测到架构</li><li>支持结构化类、aux 类和 extensibleObject 对象类（RFC4512/4.3）</li>
+功能 | 支持
+--- | --- |
+连接的数据源 | 此连接器支持所有 LDAP v3 服务器（RFC 4510 兼容）。此连接器已在以下各项产品中进行测试：<li>Microsoft Active Directory 轻量型目录服务 (AD LDS)</li><li>Microsoft Active Directory 全局目录 (AD GC)</li><li>389 Directory Server</li><li>Apache Directory Server</li><li>IBM Tivoli DS</li><li>Isode Directory</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>Open DJ</li><li>Open DS</li><li>Open LDAP (openldap.org)</li><li>Oracle（以前为 Sun）Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory Server (VDS)</li><li>Sun One Directory Server</li>**不支持的著名目录：**<li>Microsoft Active Directory 域服务 (AD DS) [改用内置的 Active Directory 连接器]</li><li>Oracle Internet Directory (OID)</li>
+方案 | <li>对象生命周期管理</li><li>组管理</li><li>密码管理</li>
+操作 |所有 LDAP 目录都支持以下操作：<li>完整导入</li><li>导出</li>只有指定的目录支持以下操作：<li>增量导入</li><li>设置密码、更改密码</li>
+架构 | <li>在 LDAP 架构（RFC3673 和 RFC4512/4.2）中检测到架构</li><li>支持结构化类、aux 类和 extensibleObject 对象类(RFC4512/4.3)</li>
 
 ### 增量导入和密码管理支持
 
@@ -113,7 +113,7 @@ LDAP 服务器必须提供以下 LDAP 控件/功能，连接器才能正常运�
 
 - 1\.3.6.1.4.1.4203.1.5.3 True/False 筛选器
 
-True/False 筛选器通常因为由 LDAP 目录所支持而不报告，并且可能出现在“找不到强制功能”之下的“全局页面”上。它用于在 LDAP 查询中创建 OR 筛选器，例如，当导入多个对象类型时。如果可以导入一种以上的对象类型，则 LDAP 服务器支持此筛选器。
+True/False 筛选器通常不被报告为受 LDAP 目录支持，并且可能出现在“找不到强制功能”之下的“全局页面”上。它用于在 LDAP 查询中创建 **OR** 筛选器，例如，当导入多个对象类型时。如果可以导入一种以上的对象类型，则 LDAP 服务器支持此筛选器。
 
 如果使用的目录中有唯一标识符是定位点，则也必须提供以下项目（有关详细信息，请参阅本文后面的[配置定位点](#configure-anchors)部分）：
 
@@ -198,23 +198,23 @@ True/False 筛选器通常因为由 LDAP 目录所支持而不报告，并且可
 - 如果三个选项（pagedResultsControl、VLVControl 和 SortControl）均未选择，则连接器在一个操作中导入所有对象，而如果是大型目录，有可能失败。
 - 只有在增量导入方法是 USNChanged 时，才使用 ShowDeletedControl。
 
-更改日志 DN 是差异更改日志所使用的命名内容，例如 **cn=changelog**。必须指定此值，才能够进行增量导入。
+更改日志 DN 是增量更改日志所使用的命名内容，例如 **cn=discovery**。必须指定此值，才能够进行增量导入。
 
 以下是默认更改日志 DN 列表：
 
-| Directory | 增量更改日志 |
-| --- | --- |
-| Microsoft AD LDS 和 AD GC | 自动检测。USNChanged。 |
-| Apache Directory 服务器 | 不可用。 |
-| Directory 389 | 更改日志。要使用的默认值：**cn=changelog** |
-| IBM Tivoli DS | 更改日志。要使用的默认值：**cn=changelog** |
-| Isode Directory | 更改日志。要使用的默认值：**cn=changelog**
-| Novell/NetIQ eDirectory | 不可用。TimeStamp。连接器使用上次更新日期/时间来获取已添加和更新的记录。 |
-| Open DJ/DS | 更改日志。要使用的默认值：**cn=changelog** |
-| Open LDAP | 访问日志。要使用的默认值：**cn=accesslog** |
-| Oracle DSEE | 更改日志。要使用的默认值：**cn=changelog** |
-| RadiantOne VDS | 虚拟目录。取决于连接到 VDS 的目录。 |
-| Sun One Directory 服务器 | 更改日志。要使用的默认值：**cn=changelog** |
+Directory | 增量更改日志
+--- | ---
+Microsoft AD LDS 和 AD GC | 自动检测。USNChanged。
+Apache Directory 服务器 | 不可用。
+Directory 389 | 更改日志。要使用的默认值：**cn=changelog**
+IBM Tivoli DS | 更改日志。要使用的默认值：**cn=changelog**
+Isode Directory | 更改日志。要使用的默认值：**cn=changelog**
+Novell/NetIQ eDirectory | 不可用。TimeStamp。连接器使用上次更新日期/时间来获取已添加和更新的记录。
+Open DJ/DS | 更改日志。要使用的默认值：**cn=changelog**
+Open LDAP | 访问日志。要使用的默认值：**cn=accesslog**
+Oracle DSEE | 更改日志。要使用的默认值：**cn=changelog**
+RadiantOne VDS | 虚拟目录。取决于连接到 VDS 的目录。
+Sun One Directory 服务器 | 更改日志。要使用的默认值：**cn=changelog**
 
 密码属性是连接器在密码更改和密码设置操作中应用于设置密码的属性名称。
 默认设置为 **userPassword**，但特定 LDAP 系统可以视需要进行更改。
@@ -247,19 +247,19 @@ True/False 筛选器通常因为由 LDAP 目录所支持而不报告，并且可
 
 以下是 LDAP 服务器列表和使用的定位点：
 
-| Directory | 定位点属性 |
-| --- | --- |
-| Microsoft AD LDS 和 AD GC | objectGUID |
-| 389 目录服务器 | dn |
-| Apache Directory | dn |
-| IBM Tivoli DS | dn |
-| Isode Directory | dn |
-| Novell/NetIQ eDirectory | GUID |
-| Open DJ/DS | dn |
-| Open LDAP | dn |
-| Oracle ODSEE | dn |
-| RadiantOne VDS | dn |
-| Sun One Directory 服务器 | dn |
+Directory | 定位点属性
+--- | ---
+Microsoft AD LDS 和 AD GC | objectGUID
+389 目录服务器 | dn
+Apache Directory | dn
+IBM Tivoli DS | dn
+Isode Directory | dn
+Novell/NetIQ eDirectory | GUID
+Open DJ/DS | dn
+Open LDAP | dn
+Oracle ODSEE | dn
+RadiantOne VDS | dn
+Sun One Directory 服务器 | dn
 
 ## 其他说明
 
@@ -275,6 +275,6 @@ Open LDAP 中的增量水印是 UTC 日期/时间。出于此原因，FIM 同步
 
 ## 故障排除
 
--	有关如何启用记录来排查连接器问题的信息，请参阅[如何启用连接器的 ETW 跟踪](http://go.microsoft.com/fwlink/?LinkId=335731)。
+-	有关如何启用记录来排查连接器问题的信息，请参阅 [如何启用连接器的 ETW 跟踪](http://go.microsoft.com/fwlink/?LinkId=335731)。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

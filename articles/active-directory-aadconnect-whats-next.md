@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="03/16/2016"
-	wacn.date="06/03/2016"/>
+	ms.date="05/12/2016"
+	wacn.date="07/18/2016"/>
 
 # 后续步骤以及如何管理 Azure AD Connect
 以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
@@ -18,20 +18,13 @@
 ## 添加更多的同步管理员
 默认情况下，只有执行安装的用户和本地管理员才可以管理安装的同步引擎。要使其他用户能够访问和管理同步引擎，请在本地服务器上找到名为 ADSyncAdmins 的组，并将这些用户添加到此组中。
 
-## AD FS 服务中的可选配置
-你可以自定义 AD FS 登录页的插图和徽标图像，方法是登录 AD FS，然后使用 PSH 进行这项配置。
-
-	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
-
-有关可能配置的完整说明，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。
-
 ## 向 Azure AD Premium 和企业移动性套件用户分配许可证
 
 将用户同步到云后，你需要向他们分配许可证，以便他们继续使用云应用（例如 Office 365）。
 
 ### 分配 Azure AD Premium 或企业移动套件许可证
 --------------------------------------------------------------------------------
-1. 以管理员身份登录到 Azure 经典管理门户。
+1. 以管理员身份登录到 Azure 门户。
 2. 在左侧选择“Active Directory”。
 3. 在“Active Directory”页上，双击要分配许可证的用户所在的目录。
 4. 在“目录”页的顶部，选择“许可证”。
@@ -57,6 +50,9 @@
 
 <center>![云](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
 
+有关“Azure AD Connect 同步：计划程序”的详细信息，请参阅 [Azure AD Connect 计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)
+
+
 ## Azure AD Connect 中提供的其他任务
 在完成 Azure AD Connect 的初始安装后，你随时可以从 Azure AD Connect 启动页或桌面快捷方式再次启动向导。在再次运行向导的过程中，你会发现，它会以“其他任务”的形式提供一些新选项。
 
@@ -76,4 +72,4 @@
 
  
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

@@ -20,17 +20,17 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 相关链接：
 
 - [下载最新连接器](http://go.microsoft.com/fwlink/?LinkId=717495)
-- [通用 LDAP 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericldap)参考文档
-- [通用 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql)参考文档
+- [通用 LDAP 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericldap/)参考文档
+- [通用 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)参考文档
 - [Web 服务连接器](http://go.microsoft.com/fwlink/?LinkID=226245)参考文档
-- [PowerShell 连接器](/documentation/articles/active-directory-aadconnectsync-connector-powershell)参考文档
-- [Lotus Domino 连接器](/documentation/articles/active-directory-aadconnectsync-connector-domino)参考文档
+- [PowerShell 连接器](/documentation/articles/active-directory-aadconnectsync-connector-powershell/)参考文档
+- [Lotus Domino 连接器](/documentation/articles/active-directory-aadconnectsync-connector-domino/)参考文档
 
 ## 1\.1.117.0
 发布时间：2016 年 3 月
 
 **新连接器**  
-[通用 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql)的初始版本。
+[通用 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)的初始版本。
 
 **新功能：**
 
@@ -84,8 +84,8 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 - [KB2875551](https://support.microsoft.com/kb/2875551) - 5.3.0534，2013 年 8 月
 
 ## 后续步骤
-了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis)配置的详细信息。
+了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0704_2016-->

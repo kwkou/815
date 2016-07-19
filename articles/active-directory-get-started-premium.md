@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="markusvi"
 	manager="stevenpo" 
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags 
 	ms.service="active-directory" 

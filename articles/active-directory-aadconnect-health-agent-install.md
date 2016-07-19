@@ -89,7 +89,7 @@
 6. 在“操作”窗格中，单击“编辑联合身份验证服务属性”。
 7. 在“联合身份验证服务属性”对话框中，单击“事件”选项卡。
 8. 选择“成功审核”和“失败审核”复选框。
-9. 单击“确定”。
+9. 单击**“确定”**。
 
 #### 在 Windows Server 2012 R2 上启用 AD FS 审核的步骤
 
@@ -185,7 +185,7 @@
 
 	Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress address:port
 
-示例：Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress myproxyserver:443
+示例：*Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress myproxyserver:443*
 
 - “地址”可以是 DNS 可解析的服务器名称或 IPv4 地址
 - 可以省略“端口”。如果省略端口，则会选择 443 作为默认端口。

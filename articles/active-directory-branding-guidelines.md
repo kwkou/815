@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="01/21/2016"
-   wacn.date="05/18/2016"/>
+   ms.date="05/16/2016"
+   wacn.date="07/19/2016"/>
 
 
 # 适用于应用程序的品牌准则
@@ -22,11 +22,11 @@
 
 Microsoft 管理两种类型的用户帐户：
 
-- **个人帐户**（以前称为 Windows Live ID）。这些帐户表示个人用户与 Microsoft 之间的关系，用于访问客户设备和 Microsoft 中的服务。这些帐户专供个人使用。
+- **个人帐户**（以前称为 Windows Live ID）。这些帐户表示*个人*用户与 Microsoft 之间的关系，用于访问客户设备和 Microsoft 中的服务。这些帐户专供个人使用。
 
 - **工作或学校帐户。** 这些帐户由 Microsoft 代表使用 Azure Active Directory 的组织进行管理。这些帐户用于登录 Office 365 和 Microsoft 的其他业务服务。
 
-Microsoft 工作或学校帐户帐户通常由组织（公司、学校、政府机构）分配给最终用户（员工、学生、联邦雇员）。这些帐户可以直接在云中或Azure AD 中直接控制，也可以从本地目录（如 Windows Server Active Directory）同步到 Azure AD。Microsoft 是工作或学校帐户的监管员，但这些帐户由组织所有和控制。
+Microsoft 工作或学校帐户帐户通常由组织（公司、学校、政府机构）分配给最终用户（员工、学生、联邦雇员）。这些帐户可以直接在云中或Azure AD 中直接控制，也可以从本地目录（如 Windows Server Active Directory）同步到 Azure AD。Microsoft 是工作或学校帐户的*监管员*，但这些帐户由组织所有和控制。
 
 ## 在应用程序中引用 Azure AD 帐户
 
@@ -49,14 +49,14 @@ Microsoft 不会向最终用户显示 Azure 或 Active Directory 品牌名称，
 
 ## 有关获取应用程序的可视指南
 
-“获取应用程序”链接必须将用户重定向到 Azure AD 的访问权限授予（授权）页，以方便组织的管理员对你的应用程序进行授权，使其有权访问 Microsoft 托管的组织数据。
+“获取应用程序”链接必须将用户重定向到 Azure AD 的访问权限授予（授权）页，以方便组织的管理员对你的应用程序进行授权，使其有权访问 Microsoft 托管的组织数据。有关如何请求访问权限的详细信息，请参阅[将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications/)一文。
 
 管理员许可你的应用程序后，可以选择将应用程序添加到其用户的 Office 365 应用程序启动器体验（可从 waffle 和 [https://portal.office.com/myapps](https://portal.office.com/myapps) 访问）。如果你想要广告此功能，可以使用类似于“将此应用程序添加到你的组织”词语，并显示类似于下面的按钮：
 
 ![应用程序类型和方案](./media/active-directory-branding-guidelines/add-to-my-org.png)
-  
+
 但是，我们建议你编写说明性的文本而不要依赖于按钮。例如：
-> 如果你已使用 Office 365 或 Microsoft 的其他业务服务，则只需授予 <your_app_name> 对你的组织数据的访问权限。这样，你的用户便可以使用其现有工作帐户访问 <your_app_name>。
+> *如果你已使用 Office 365 或 Microsoft 的其他业务服务，则只需授予 <应用名称> 对你的组织数据的访问权限。这样，你的用户便可以使用其现有工作帐户访问 <应用名称>。*
 
 
 ## 有关登录的可视指南
@@ -90,4 +90,4 @@ Microsoft 不会向最终用户显示 Azure 或 Active Directory 品牌名称，
 
 如果你的应用程序同时支持 Azure AD 帐户和 Microsoft 帐户，则需要在应用程序中提供两个单独的登录按钮。我们正在积极处理更新，以便你只需集成一次，就能支持个人帐户和 Microsoft 中的工作帐户。在使用此更新后，你便可以在应用程序中显示“使用 Microsoft 登录”按钮。
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -40,7 +40,7 @@ Azure AD Connect 同步构建在声明性预配的基础之上。该声明性预
 
 有关函数的完整列表，请参阅[函数参考](/documentation/articles/active-directory-aadconnectsync-functions-reference/)。
 
-### Parameters
+### 参数
 
 参数由连接器定义，或者由系统管理员使用 PowerShell 来设置。参数通常包含因系统不同而各异的值，例如用户所在域的名称。这些参数可在属性流中使用。
 
@@ -115,7 +115,7 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
 
 可以从 Exchange 的现成同步规则 In from AD – User Common 中找到这种示例。其中，在混合 Exchange 中，如果已确认已成功导出由 Exchange Online 添加的值，则应该只同步该值：
 
-`proxyAddresses` <- `RemoveDuplicates(Trim(ImportedValues("proxyAddresses")))`
+`proxyAddresses` <- `RemoveDuplicates(Trim(ImportedValue("proxyAddresses")))`
 
 有关函数的完整列表，请参阅 [Azure AD Connect Sync：函数引用](/documentation/articles/active-directory-aadconnectsync-functions-reference/)
 
@@ -127,4 +127,4 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录 | Microsoft Azure" 
+    pageTitle="如何在 Azure Active Directory 中调试对应用程序进行的基于 SAML 的单一登录 | Azure" 
     description="了解如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录" 
     services="active-directory" 
     authors="asmalser-msft"  

@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="04/20/2016"
-	wacn.date="06/23/2016"/>
+	wacn.date="07/19/2016"/>
 
 # 管理 Azure Active Directory 中的自定义域名
 
@@ -76,4 +76,4 @@
 
 -   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -29,7 +29,6 @@ Azure AD 连接器所使用的服务帐户应该是免费服务。但如果你�
 此 cmdlet 将重置服务帐户的密码，并同时在 Azure AD 和同步引擎中更新该密码。
 
 ## 后续步骤
-
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 <!---HONumber=Mooncake_0704_2016-->
