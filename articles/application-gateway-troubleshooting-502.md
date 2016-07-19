@@ -10,7 +10,7 @@
 <tags
 	ms.service="application-gateway"
 	ms.date="05/15/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 #排查应用程序网关中的网关无效错误
 

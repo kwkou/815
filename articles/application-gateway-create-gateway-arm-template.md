@@ -11,7 +11,7 @@
 <tags 
 	ms.service="application-gateway"
 	ms.date="06/07/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 
 # 使用 Azure Resource Manager 模板创建应用程序网关

@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/04/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 # 使用 Docker VM 扩展部署环境
 

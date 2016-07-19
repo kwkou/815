@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/10/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 # 使用 Azure CLI 创建完整的 Linux 环境
 
