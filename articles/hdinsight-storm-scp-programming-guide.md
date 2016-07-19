@@ -684,7 +684,6 @@ SCP 组件包括 Java 端和 C# 端。若要与本机 Java Spout/Bolt 交互，�
 
 * [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 * [使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)
-* [在 C# Storm 拓朴中创建多个数据流](/documentation/articles/hdinsight-storm-twitter-trending/)
 * [Use Power Bi to visualize data from a Storm topology](/documentation/articles/hdinsight-storm-power-bi-topology/)（使用 Power Bi 直观显示 Storm 拓扑中的数据）
 * [使用 Storm on HDInsight 处理事件中心的汽车传感器数据](https://github.com/hdinsight/hdinsight-storm-examples/tree/master/IotExample)
 * [Extract, Transform, and Load (ETL) from Azure Event Hubs to HBase](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/RealTimeETLExample)（从 Azure 事件中心提取、转换和加载 (ETL) 到 HBase）

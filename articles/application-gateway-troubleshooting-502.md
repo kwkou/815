@@ -127,5 +127,5 @@
 
 ##后续步骤
 
-如果上述步骤无法解决问题，请开具[支持票证](https://azure.microsoft.com/support/contact/)。
+如果上述步骤无法解决问题，请开具[支持票证](/support/contact/)。
 <!---HONumber=Mooncake_0711_2016-->
