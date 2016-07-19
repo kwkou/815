@@ -9,8 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="04/28/2016"
-    wacn.date="06/14/2016"/>
+    ms.date="05/27/2016"
+    wacn.date="07/18/2016"/>
 
 # 使用 PowerShell 创建新的弹性数据库池
 
@@ -23,7 +23,7 @@
 
 有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
+> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 
 你需要运行 Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
@@ -76,4 +76,4 @@
 - [使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展。
 
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0711_2016-->

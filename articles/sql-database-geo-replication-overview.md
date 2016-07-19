@@ -1,24 +1,36 @@
 <properties
 	pageTitle="Azure SQL 数据库的活动异地复制"
-	description="本主题介绍 SQL 数据库的活动异地复制及其用法。"
+	description="你可以使用活动异地复制在任何 Azure 数据中心设置 4 个数据库副本。"
 	services="sql-database"
 	documentationCenter="na"
-	authors="rothja"
-	manager="jeffreyg"
+	authors="stevestein"
+	manager="jhubbard"
 	editor="monicar" />
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/07/2016"
-	wacn.date="06/14/2016" />
+	ms.date="06/14/2016"
+	wacn.date="07/18/2016" />
 
-# Azure SQL 数据库的活动异地复制
+# 概述：SQL 数据库的活动异地复制
 
-## 概述
+> [AZURE.SELECTOR]
+- [概述](/documentation/articles/sql-database-geo-replication-overview/)/
+- [PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)
+- [T-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/)
+
+活动异地复制可让你在相同或不同数据中心位置（区域）中最多配置 4 个可读的辅助数据库。在数据中心发生服务中断或无法连接到主数据库时，可以使用辅助数据库。
+
+>[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。非可读辅助类型将在 2017 年 4 月停用，现有的非可读数据库将自动升级到可读辅助数据库。
+
+如果你的主数据库因某种原因而出现故障，或者需要脱机，你可以故障转移到任何辅助数据库。激活故障转移以后，即可将主数据库故障转移到某个辅助数据库，然后所有其他辅助数据库就会自动链接到新的主数据库。
+
 活动异地复制功能实现了一个机制，用于在同一 Azure 区域或不同区域中提供数据库冗余（异地冗余）。活动异地复制以异步方式将已提交的事务从数据库复制到不同服务器上的最多四个数据库副本中。在配置活动异地复制时，会在指定的服务器上创建辅助数据库。原始数据库将变成主数据库。主数据库以异步方式将已提交的事务复制到每个辅助数据库。尽管在任意给定时间，辅助数据库可能略微滞后于主数据库，但系统可以保证辅助数据在事务处理上始终与提交到主数据库的更改相一致。
 
 活动异地复制的主要优势之一在于能够提供数据库级别的灾难恢复解决方案且恢复时间非常短。当将辅助数据库放在不同区域中的服务器上时，你可以为应用程序增添极大的恢复能力。跨区域冗余使应用程序能够在自然灾害、灾难性人为失误或恶意行为导致整个或部分数据中心永久性数据丢失后得以恢复。下图显示了在高级数据库上配置的活动异地复制示例，其中主数据库位于中国北部区域，而辅助数据库位于中国东部区域。
+
+![异地复制关系](./media/sql-database-active-geo-replication/geo-replication-relationship.png)
 
 另一个关键优势是辅助数据库是可读的，并且可用于卸载只读工作负荷，如报表作业。如果只想使用辅助数据库进行负载平衡，你可以在主数据库所在的同一区域中创建它。然而，这将不会增加应用程序的灾难性故障的恢复能力。
 
@@ -40,7 +52,7 @@
 
 >[AZURE.NOTE] 如果日志重播正在从主数据库接收的内容存在架构更新，则它将在辅助数据库上延迟，因为此过程需要辅助数据库上的架构锁。
 
-- **弹性池数据库的活动异地复制**：可以为高级弹性数据库池中的任何数据库配置活动异地复制。辅助数据库可以位于另一个高级弹性数据库池。对于常规的数据库，辅助数据库可以是弹性数据库池，反过来也一样，只要服务层相同。有关如何配置弹性池数据库的异地复制的详细信息，请参阅[使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql/)和[使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/)。  
+- **弹性池数据库的活动异地复制**：可以为任何弹性数据库池中的任何数据库配置活动异地复制。辅助数据库可以位于另一个弹性数据库池。对于常规的数据库，辅助数据库可以是弹性数据库池，反过来也一样，只要服务层相同。有关如何配置弹性池数据库的异地复制的详细信息，请参阅[使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql/)和[使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/)。  
 
 - **辅助数据库的可配置性能级别**：可以使用低于主数据库的性能级别创建辅助数据库。主数据库和辅助数据库都需要有相同的服务层。不建议将此选项用于具有高数据库写入活动的应用程序，因为它可能会导致复制延迟时间增长，因此在故障转移后具有大量数据丢失的高风险。此外，在故障转移后，应用程序的性能将受到影响，直到新的主数据库升级到更高的性能级别。在 Azure 门户上的日志 IO 百分比图表提供了一种评估维持复制负荷所需的辅助数据库的最小性能级别的好办法。例如，如果你的主数据库是 P6 (1000 DTU)，其日志 IO 百分比为 50%，则辅助数据库需要至少应为 P4 (500 DTU)。你还可以使用 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx) 或 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) 数据库视图检索日志 IO 数据。有关 SQL 数据库性能级别的详细信息，请参阅 [SQL 数据库选项和性能](/documentation/articles/sql-database-service-tiers/)。有关如何配置辅助数据库示例的性能级别的详细信息，请参阅[使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql/)和[使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/)。
 
@@ -50,14 +62,18 @@
 
 - **Azure 资源管理器 API 和基于角色的安全性**：活动异地复制包括一组用于管理的 [Azure 资源管理器 (ARM) API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)，其中包括 [基于 ARM 的 PowerShell cmdlet](/documentation/articles/sql-database-geo-replication-powershell/)。这些 API 需要使用资源组，并支持基于角色的安全 (RBAC)。有关如何实现访问角色的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
->[AZURE.NOTE] 向后兼容支持现有 [Azure SQL 服务管理（经典）REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx) 和 [Azure SQL 数据库（经典）cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn546723.aspx)。不过，仅在基于 ARM 的 [Azure SQL REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) 和基于 ARM 的 [Azure SQL 数据库 PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx) 中支持活动异地复制的多种新功能。
+>[AZURE.NOTE] 许多新的活动异地复制功能只能通过基于 [Azure Resource Manager (ARM)](/documentation/articles/resource-group-overview/) 的 [Azure SQL REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) 和 [Azure SQL Database PowerShell cmdlets（Azure SQL 数据库 PowerShell cmdlet）](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx)来使用。向后兼容支持现有 [Azure SQL 服务管理（经典）REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx) 和 [Azure SQL Database (classic) cmdlets（Azure SQL 数据库（经典）cmdlet）](https://msdn.microsoft.com/zh-cn/library/azure/dn546723.aspx)，因此建议你使用基于 ARM 的 API。
 
 ## 防止丢失关键数据
 由于广域网的延迟时间较长，连续复制使用了异步复制机制。这样，在发生故障时，会不可避免地丢失某些数据。但是，某些应用程序可能要求不能有数据丢失。为了保护这些关键更新，应用程序开发人员可以在提交事务后立即调用 [sp\_wait\_for\_database\_copy\_sync](https://msdn.microsoft.com/zh-cn/library/dn467644.aspx) 系统过程。调用 **sp\_wait\_for\_database\_copy\_sync** 会阻止调用线程，直到已将上次提交的事务复制到辅助数据库。该过程会等到辅助数据库确认所有排队的事务为止。**sp\_wait\_for\_database\_copy\_sync** 将划归到特定的连续复制链接。对主数据库具有连接权限的任何用户都可以调用此过程。
 
 >[AZURE.NOTE] **sp\_wait\_for\_database\_copy\_sync** 过程调用导致的延迟可能会很明显。延迟取决于当前事务日志长度的大小，并且在复制整个日志之前，将不会返回。除非绝对必要，否则请避免调用此过程。
 
-## 后续步骤
-有关 SQL 数据库的其他业务连续性功能的信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
+## 另请参阅
 
-<!---HONumber=Mooncake_0606_2016-->
+- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
+- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
+
+<!---HONumber=Mooncake_0711_2016-->

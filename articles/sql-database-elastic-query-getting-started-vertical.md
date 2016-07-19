@@ -1,17 +1,17 @@
 <properties
-	pageTitle="跨数据库查询（垂直分区）入门 | Azure"	
+	pageTitle="跨数据库查询（纵向分区）入门 | Azure"	
 	description="如何在垂直分区数据库中使用弹性数据库查询"
 	services="sql-database"
 	documentationCenter=""  
-	manager="jeffreyg"
+	manager="jhubbard"
 	authors="sidneyh"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/26/2016"
-	wacn.date="06/14/2016" />
+	ms.date="05/23/2016"
+	wacn.date="07/18/2016" />
 
-# 跨数据库查询（垂直分区）入门 
+# 跨数据库查询（纵向分区）入门（预览）
 
 Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。本主题适用于[垂直分区数据库](/documentation/articles/sql-database-elastic-query-vertical-partitioning/)。
 
@@ -35,7 +35,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 	INSERT INTO [dbo].[OrderInformation] ([OrderID], [CustomerID]) VALUES (321, 1) 
 	INSERT INTO [dbo].[OrderInformation] ([OrderID], [CustomerID]) VALUES (564, 8) 
 
-现在，在 Customers 数据库中执行以下查询以创建 CustomerInformation 表并输入示例数据。
+现在，在 **Customers** 数据库中执行以下查询以创建 **CustomerInformation** 表并输入示例数据。
 
 	CREATE TABLE [dbo].[CustomerInformation]( 
 		[CustomerID] [int] NOT NULL, 
@@ -49,9 +49,6 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 ## 创建数据库对象
 ### 数据库范围的主密钥和凭据
-
-
-它们用来连接到分片映射管理器和分片：
 
 1. 在 Visual Studio 中打开 SQL Server Management Studio 或 SQL Server Data Tools。
 2. 连接到 Orders 数据库，并执行以下 T-SQL 命令：
@@ -105,4 +102,4 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 <!--anchors-->
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

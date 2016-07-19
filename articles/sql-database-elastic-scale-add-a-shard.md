@@ -3,14 +3,14 @@
 	description="如何使用弹性缩放 API 将新分片添加到分片集。" 
 	services="sql-database" 
 	documentationCenter="" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	authors="ddove" 
 	editor=""/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="01/27/2016" 
-	wacn.date="05/16/2016"/>
+	ms.date="05/27/2016" 
+	wacn.date="07/18/2016"/>
 
 # 使用弹性数据库工具添加分片
 
@@ -75,4 +75,4 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0711_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/11/2016"
-	wacn.date="05/16/2016" />
+	ms.date="05/27/2016"
+	wacn.date="07/18/2016" />
 
 
 # 弹性数据库池计费和定价信息
@@ -32,7 +32,9 @@
 
 ## 后续步骤
 
+- [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)
+- [监视、管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
 - [SQL 数据库选项和性能：了解每个服务层中可用的功能](/documentation/articles/sql-database-service-tiers/)
 - [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0711_2016-->

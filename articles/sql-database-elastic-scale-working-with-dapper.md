@@ -3,13 +3,13 @@
 	description="将弹性数据库客户端库与 Dapper 配合使用。" 
 	services="sql-database" 
 	documentationCenter="" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	authors="torsteng"/>
 
 <tags 
-	ms.service="sql-database"
-	ms.date="04/26/2016" 
-	wacn.date="05/23/2016"/>
+	ms.service="sql-database" 
+	ms.date="05/27/2016" 
+	wacn.date="07/18/2016"/>
 
 # 将弹性数据库客户端库与 Dapper 配合使用 
 
@@ -32,7 +32,7 @@ Dapper 和 DapperExtensions 的另一个优点在于，应用程序可以控制�
 
 ## 弹性数据库客户端库速览
 
-使用弹性数据库客户端库，你可以定义应用程序数据的分区（称为 *shardlet*），将它们映射到数据库，并根据*分片键*来识别这些分区。你可以根据需要创建任意数目的数据库，并在这些数据库之间分布 shardlet。分片键值到数据库的映射由库的 API 提供的分片映射存储。此功能称为**分片映射管理**。分片映射还为带有分片键的请求充当数据库连接的代理。此功能称为**数据相关的路由**。
+使用弹性数据库客户端库，你可以定义应用程序数据的分区（称为 *shardlet*），将它们映射到数据库，并根据分片键来识别这些分区。你可以根据需要创建任意数目的数据库，并在这些数据库之间分布 shardlet。分片键值到数据库的映射由库的 API 提供的分片映射存储。此功能称为**分片映射管理**。分片映射还为带有分片键的请求充当数据库连接的代理。此功能称为**数据相关的路由**。
 
 ![分片映射和数据相关的路由][1]
 
@@ -44,7 +44,7 @@ Dapper 和 DapperExtensions 的另一个优点在于，应用程序可以控制�
 
 在使用弹性数据库客户端库和 Dapper API 时，我们希望保留以下属性：
 
-* **向外缩放**：我们需要根据应用程序的容量需求，在分片应用程序的数据层中添加或删除数据库。 
+* **向外缩放**：我们需要根据应用程序的容量需求，在分片应用程序的数据层中添加或删除数据库。
 
 -    **一致性**：由于应用程序是使用分片向外缩放的，因此我们需要执行数据相关的路由。我们需要使用库的数据相关路由功能来实现此目的。具体而言，我们需要保留验证，以避免损坏或错误的查询结果情况下通过分片映射管理器中转连接提供的一致性保证。这可确保（举例而言）当前已使用 Split/Merge API 将 shardlet 移至其他分片时，拒绝或停止与给定 shardlet 的连接。
 
@@ -169,5 +169,4 @@ Microsoft 模式和实践团队发布了[暂时性故障处理应用程序块](h
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-working-with-dapper/dapperimage1.png
  
-
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0711_2016-->

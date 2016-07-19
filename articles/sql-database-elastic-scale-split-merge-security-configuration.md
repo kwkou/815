@@ -1,18 +1,19 @@
 <properties 
-    pageTitle="弹性缩放安全配置 | Azure" 
+    pageTitle="拆分/合并安全配置 | Azure" 
     description="设置用于加密的 x409 证书" 
     metaKeywords="弹性数据库证书安全性" 
-    services="sql-database"
+    services="sql-database" 
     documentationCenter="" 
     manager="jhubbard" 
     authors="torsteng"/>
 
 <tags 
     ms.service="sql-database" 
-    ms.date="02/23/2016" 
-    wacn.date="06/14/2016" />
+    ms.date="05/27/2016" 
+    wacn.date="07/18/2016" />
 
-# 拆分合并安全配置  
+
+# 拆分/合并安全配置  
 
 若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性缩放功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。
 
@@ -21,7 +22,7 @@
 通过两种方式配置证书。
 
 1. [配置 SSL 证书](#To-Configure-the-SSL#Certificate)
-2. [配置客户端证书](#To-Configure-Client-Certificates) 
+2. [配置客户端证书](#To-Configure-Client-Certificates)
 
 ## 获取证书
 
@@ -36,7 +37,7 @@
 
 ### 运行工具
 
-* 有关适用于 Visual Studio 的开发人员命令提示符，请参阅 [Visual Studio 命令提示符](http://msdn.microsoft.com/zh-cn/library/ms229859.aspx) 
+* 有关适用于 Visual Studio 的开发人员命令提示符，请参阅 [Visual Studio 命令提示符](http://msdn.microsoft.com/zh-cn/library/ms229859.aspx)
 
     如果已安装工具，请转到：
 
@@ -122,14 +123,14 @@
 
 ### 更改配置
 
-在**服务配置文件**的 **<EndpointAcls>** 节中配置应用的访问控制组规则和终结点。
+在**服务配置文件**的 **<EndpointAcls>** 部分配置应用的访问控制组规则和终结点。
 
     <EndpointAcls>
       <EndpointAcl role="SplitMergeWeb" endPoint="HttpIn" accessControl="DenyAll" />
       <EndpointAcl role="SplitMergeWeb" endPoint="HttpsIn" accessControl="AllowAll" />
     </EndpointAcls>
 
-在服务配置文件的 <AccessControl name=""> 节中配置访问控制组中的规则。
+在服务配置文件的 <AccessControl name=""> 部分配置访问控制组中的规则。
 
 在网络访问控制列表文档中对格式进行了说明。
 例如，若要仅允许范围 100.100.0.0 到 100.100.255.255 中的 IP 访问 HTTPS 终结点，规则将如下所示：
@@ -196,7 +197,8 @@
 自定义：
 
 *    -n，带有服务 URL。通配符 ("CN=*.chinacloudapp.cn") 和替代名称 ("CN=myservice1.chinacloudapp.cn, CN=myservice2.chinacloudapp.cn") 均受支持。
-*    -e，带有证书过期日期创建强密码并在提示时指定它。
+*    -e，带有证书过期日期。
+创建强密码并在提示时指定它。
 
 ## 为自签名 SSL 证书创建 PFX 文件
 
@@ -356,7 +358,7 @@
 * 确保“显示”可显示全部内容
 * 选择列表中名为“Thumbprint”的字段
 * 复制指纹的值
-* 删除第一个数字前不可见的 Unicode 字符
+* 删除第一个数字前不可见的Unicode 字符
 * 删除所有空格
 
 ## 在服务配置文件中配置允许的客户端
@@ -390,9 +392,9 @@
 
 *    查找证书
 *    依次单击“操作”->“所有任务”->“导出...”
-*    使用以下选项将证书导出到 .PFX 文件中： 
+*    使用以下选项将证书导出到 .PFX 文件中：
   *    是，导出私钥
-  *    包括证书路径中的所有证书（如果可能） 
+  *    包括证书路径中的所有证书（如果可能）
 *    导出所有扩展属性
 
 ## 将加密证书上载到云服务
@@ -457,10 +459,10 @@
 4. 如果要导入 .PFX 文件，请执行以下操作：
     1.     输入用于保护私钥的密码
     2.     选择导入选项
-5.     选择“将证书放入以下存储”
-6.     单击“浏览”。
-7.     选择所需的存储。
-8.     单击“完成”。
+5. 选择“将证书放入以下存储”
+6. 单击“浏览”。
+7. 选择所需的存储。
+8. 单击“完成”。
        
     * 如果已选中“受信任的根证书颁发机构”存储，请单击“是”。
 9.     在所有对话框窗口上单击“确定”。
@@ -486,4 +488,4 @@
 对此数据库中存储的凭据进行加密。但是，最佳做法是，确保服务部署的 Web 角色和辅助角色保持最新且是安全的，因为它们都有权访问元数据数据库和用于加密和解密存储凭据的证书。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

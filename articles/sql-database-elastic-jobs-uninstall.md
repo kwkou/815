@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/23/2016" 
-	wacn.date="03/24/2016"/>
+	ms.date="05/27/2016" 
+	wacn.date="07/18/2016"/>
 
 #卸载弹性数据库作业组件
 可以使用PowerShell 卸载**弹性数据库作业**组件。
@@ -52,4 +52,4 @@
 
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0711_2016-->

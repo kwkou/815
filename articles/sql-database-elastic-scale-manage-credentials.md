@@ -3,14 +3,14 @@
 	description="如何为弹性数据库应用设置正确的凭据级别（从管理员到只读权限）" 
 	services="sql-database" 
 	documentationCenter="" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	authors="ddove" 
 	editor=""/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="05/03/2016" 
-	wacn.date="05/23/2016"/>
+	ms.date="05/27/2016" 
+	wacn.date="07/18/2016"/>
 
 # 用于访问弹性数据库客户端库的凭据
 
@@ -18,7 +18,7 @@
 
 * **管理凭据**：用于创建或操作分片映射管理器。（请参阅[词汇表](/documentation/articles/sql-database-elastic-scale-glossary/)。） 
 * **访问凭据**：用于访问现有分片映射管理器以获取有关分片的信息。
-* **连接凭据**：用于连接到分片。 
+* **连接凭据**：用于连接到分片。
 
 另请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins/)。
  
@@ -72,5 +72,4 @@
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0711_2016-->

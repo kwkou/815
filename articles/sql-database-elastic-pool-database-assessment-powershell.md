@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/16/2016"
-	wacn.date="04/06/2016"/>
+	ms.date="06/06/2016"
+	wacn.date="07/18/2016"/>
 
 
 
@@ -18,7 +18,7 @@
 
 本文中的示例 PowerShell 脚本用于估算 SQL 数据库服务器中用户数据库的聚合 eDTU 值。此脚本在运行时收集数据，而对于典型的生产工作负荷，你应至少运行该脚本一天。理想情况下，你想让这个脚本运行能够代表数据库的的典型工作负荷的时长 — 即足够长的时间以捕获代表数据库正常和高峰使用率的数据。运行此脚本一周或更长的时间可能会提供更准确的估计。
 
-此脚本非常适合用于评估不支持池的 v11 服务器上的数据库，也适合迁移到支持池的 v12 服务器。在 v12 服务器上， SQL 数据库有内置的智能，它能分析历史使用情况遥测数据并在更具成本效益的时候推荐使用池。
+此脚本非常适合用于评估不支持池的 v11 服务器上的数据库，也适合迁移到支持池的 v12 服务器。在 v12 服务器上， SQL 数据库有内置的智能，它能分析历史使用情况遥测数据并在更具成本效益的时候推荐使用池。有关如何使用此功能的信息，请参阅[监视、管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
 
 > [AZURE.IMPORTANT] 运行该脚本时，必须一直打开 PowerShell 窗口。在运行脚本未达到所需的时间前，请不要关闭 PowerShell 窗口。
 
@@ -55,10 +55,11 @@
 - 警告: Switch-AzureMode cmdlet 已过时。
 - 警告: 无法获取 SQL Server 服务信息。尝试连接到 'Microsoft.Azure.Commands.Sql.dll' 上的 WMI 时失败并出现以下错误: RPC 服务器不可用。
 
-脚本完成时，会输出池要包含目标服务器中所有候选数据库所需要的 eDTU 估算数目。此估算的 eDTU 可用于创建和配置池。创建池并将数据库移动到池中后，请密切监控池数天，并根据需要对池 eDTU 配置进行调整。
+脚本完成时，会输出池要包含目标服务器中所有候选数据库所需要的 eDTU 估算数目。此估算的 eDTU 可用于创建和配置池。创建池并将数据库移动到池中后，请密切监控池数天，并根据需要对池 eDTU 配置进行调整。请参阅[监视、管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-powershell/)。
 
-[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]
 
+   [AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)
+    
     param (
     [Parameter(Mandatory=$true)][string]$AzureSubscriptionName, # Azure Subscription name - can be found on the Azure portal: https://manage.windowsazure.cn/
     [Parameter(Mandatory=$true)][string]$ResourceGroupName, # Resource Group name - can be found on the Azure portal: https://manage.windowsazure.cn/
@@ -72,14 +73,13 @@
     [Parameter(Mandatory=$true)][int]$duration_minutes # How long to run. Recommend to run for the period of time when your typical workload is running. At least 10 mins.
     )
     
-    Add-AzureAccount -Environment AzureChinaCloud
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
     Select-AzureSubscription $AzureSubscriptionName
-    Switch-AzureMode AzureResourceManager
     
-    $server = Get-AzureSqlServer -ServerName $servername.Split('.')[0] -ResourceGroupName $ResourceGroupName
+    $server = Get-AzureRmSqlServer -ServerName $servername.Split('.')[0] -ResourceGroupName $ResourceGroupName
     
     # Check version/upgrade status of the server
-    $upgradestatus = Get-AzureSqlServerUpgrade -ServerName $servername.Split('.')[0] -ResourceGroupName $ResourceGroupName
+    $upgradestatus = Get-AzureRmSqlServerUpgrade -ServerName $servername.Split('.')[0] -ResourceGroupName $ResourceGroupName
     $version = ""
     if ([string]::IsNullOrWhiteSpace($server.ServerVersion)) 
     {
@@ -91,7 +91,7 @@
     }
     
     # For Elastic database pool candidates, we exclude master, and any databases that are already in a pool. You may add more databases to the excluded list below as needed
-    $ListOfDBs = Get-AzureSqlDatabase -ServerName $servername.Split('.')[0] -ResourceGroupName $ResourceGroupName | Where-Object {$_.DatabaseName -notin ("master") -and $_.CurrentServiceLevelObjectiveName -notin ("ElasticPool") -and $_.CurrentServiceObjectiveName -notin ("ElasticPool")}
+    $ListOfDBs = Get-AzureRmSqlDatabase -ServerName $servername.Split('.')[0] -ResourceGroupName $ResourceGroupName | Where-Object {$_.DatabaseName -notin ("master") -and $_.CurrentServiceLevelObjectiveName -notin ("ElasticPool") -and $_.CurrentServiceObjectiveName -notin ("ElasticPool")}
     
     $outputConnectionString = "Data Source=$outputServerName;Integrated Security=false;Initial Catalog=$outputdatabaseName;User Id=$outputDBUsername;Password=$outputDBpassword"
     $destinationTableName = "resource_stats_output"
@@ -123,7 +123,7 @@
     if ($version -in ("12.0", "Completed")) # for V12 databases 
     {
     $sql = "Declare @dbname varchar(128) = '$($db.DatabaseName)';"
-    $sql += "Declare @SLO varchar(20) = '$($db.CurrentServiceLevelObjectiveName)';"
+    $sql += "Declare @SLO varchar(20) = '$($db.CurrentServiceObjectiveName)';"
     $sql+= "
     Declare @DTU_cap int, @db_size float;
     Select @DTU_cap = CASE @SLO 
@@ -138,7 +138,7 @@
     ELSE 50 -- assume Web/Business DBs
     END
     SELECT @db_size = SUM(reserved_page_count) * 8.0/1024/1024 FROM sys.dm_db_partition_stats
-    SELECT @dbname as database_name, @SLO, dateadd(second, round(datediff(second, '2015-01-01', end_time) / 15.0, 0) * 15,'2015-01-01')
+    SELECT @dbname as database_name, @SLO as SLO, dateadd(second, round(datediff(second, '2015-01-01', end_time) / 15.0, 0) * 15,'2015-01-01')
     as end_time, avg_cpu_percent * (@DTU_cap/100.0) AS avg_cpu, avg_data_io_percent * (@DTU_cap/100.0) AS avg_io, avg_log_write_percent * (@DTU_cap/100.0) AS avg_log, @db_size as db_size FROM sys.dm_db_resource_stats
     WHERE end_time > '$($start_time)' and end_time <= '$($end_time)';
     " 
@@ -146,7 +146,7 @@
     else
     {
     $sql = "Declare @dbname varchar(128) = '$($db.DatabaseName)';"
-    $sql += "Declare @SLO varchar(20) = '$($db.CurrentServiceLevelObjectiveName)';"
+    $sql += "Declare @SLO varchar(20) = '$($db.CurrentServiceObjectiveName)';"
     $sql+= "
     Declare @DTU_cap int, @db_size float;
     Select @DTU_cap = CASE @SLO 
@@ -160,7 +160,7 @@
     ELSE 50 -- assume Web/Business DBs
     END
     SELECT @db_size = SUM(reserved_page_count) * 8.0/1024/1024 from sys.dm_db_partition_stats
-    SELECT @dbname as database_name, @SLO, dateadd(second, round(datediff(second, '2015-01-01', end_time) / 15.0, 0) * 15,'2015-01-01')
+    SELECT @dbname as database_name, @SLO as SLO, dateadd(second, round(datediff(second, '2015-01-01', end_time) / 15.0, 0) * 15,'2015-01-01')
     as end_time, avg_cpu_percent * (@DTU_cap/100.0) AS avg_cpu, avg_data_io_percent * (@DTU_cap/100.0) AS avg_io, avg_log_write_percent * (@DTU_cap/100.0) AS avg_log, @db_size as db_size FROM sys.dm_db_resource_stats
     WHERE end_time > '$($start_time)' and end_time <= '$($end_time)';
     " 
@@ -263,4 +263,5 @@
     }
         
 
-<!---HONumber=Mooncake_0328_2016-->
+
+<!---HONumber=Mooncake_0711_2016-->
