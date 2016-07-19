@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="Trust Center - Microsoft Azure"
     description=""
     services=""
     documentationCenter=""

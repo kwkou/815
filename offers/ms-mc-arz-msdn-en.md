@@ -1,6 +1,6 @@
 <properties
-	pageTitle=""
-    description=""
+	pageTitle="Offer Details - Microsoft Azure"
+    description="Offer Details - MSDN Subscriptions Azure Benefit Offer"
     services=""
     documentationCenter=""
     authors=""

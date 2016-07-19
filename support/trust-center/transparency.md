@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="透明度 - Microsoft Azure"
     description=""
     services=""
     documentationCenter=""

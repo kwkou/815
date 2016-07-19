@@ -1,6 +1,6 @@
 <properties
-	pageTitle=""
-    description=""
+	pageTitle="Offer Details - Microsoft Azure"
+    description="Offer Details - Windows Server Essentials Customers Offer"
     services=""
     documentationCenter=""
     authors=""

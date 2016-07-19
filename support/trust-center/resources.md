@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="资源 - Microsoft Azure"
     description=""
     services=""
     documentationCenter=""
