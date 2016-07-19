@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/12/2016"
-   wacn.date="06/24/2016"/>
+   ms.date="05/19/2016"
+   wacn.date="07/18/2016"/>
 
 # Azure AD Connect：从旧版升级到最新版本
 本主题介绍可将 Azure AD Connect 安装升级到最新版本的不同方法。我们建议你使用最新版本的 Azure AD Connect。
@@ -19,11 +19,11 @@
 
 可以采用几种不同的策略来升级 Azure AD Connect。
 
-| 方法 | 说明 |
-| --- | --- |
-| [自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/) | 对于使用快速安装的客户，这是最简单的方法。 |
-| [就地升级](#in-place-upgrade) | 如果你只有一台服务器，请在该服务器上就地升级安装。 |
-| [交叉迁移](#swing-migration) | 如果你有两台服务器，可将其中一台升级到最新版本，然后在准备就绪时更改活动的服务器。
+方法 | 说明
+--- | ---
+[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/) | 对于使用快速安装的客户，这是最简单的方法。
+[就地升级](#in-place-upgrade) | 如果你只有一台服务器，请在该服务器上就地升级安装。
+[交叉迁移](#swing-migration) | 如果你有两台服务器，可将其中一台升级到最新版本，然后在准备就绪时更改活动的服务器。
 
 有关所需的权限，请参阅[升级所需的权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#upgrade)。
 
@@ -83,4 +83,4 @@
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

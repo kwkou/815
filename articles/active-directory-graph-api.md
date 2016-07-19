@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory 图形 API"
+   pageTitle="Azure Active Directory 图形 API | Azure"
    description="有关可通过 REST API 终结点提供对 Azure AD 的编程访问权限的图形 API 的概述和快速入门指南。"
    services="active-directory"
    documentationCenter=""
@@ -9,11 +9,11 @@
 <tags
    ms.service="active-directory"
    ms.date="03/18/2016"
-   wacn.date="06/21/2016" />
+   wacn.date="07/19/2016" />
 
 # Azure Active Directory 图形 API
 
-> [AZURE.IMPORTANT]也可以通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API 功能。Microsoft Graph 是统一的 API，其中包含 Outlook、OneDrive、OneNote、Planner 和 Office Graph 等其他 Microsoft 服务中的 API，可通过单个终结点和单个访问令牌进行访问。
+> [AZURE.IMPORTANT] 也可以通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API 功能。Microsoft Graph 是统一的 API，其中包含 Outlook、OneDrive、OneNote、Planner 和 Office Graph 等其他 Microsoft 服务中的 API，可通过单个终结点和单个访问令牌进行访问。
 
 Azure Active Directory 图形 API 通过 REST API 终结点提供对 Azure AD 的编程访问权限。应用程序可以使用图形 API 对目录数据和对象执行创建、读取、更新和删除 (CRUD) 操作。例如，图形 API 支持对用户对象执行以下常见操作：
 
@@ -45,6 +45,13 @@ Azure Active Directory 图形 API 通过 REST API 终结点提供对 Azure AD �
 - **差异查询**：如果要查看两个时间段之间对目录所做的更改，而不对图形 API 进行频繁的查询，可以发出差异查询请求。这种类型的请求将只返回在上一个差异查询请求与当前请求之间所做的更改。有关详细信息，请参阅 [Azure AD 图形 API 差异查询](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-differential-query)。
 
 - **目录扩展**：如果你要开发需要读取或写入目录对象的唯一属性的应用程序，则可以通过图形 API 来注册并使用扩展值。例如，如果应用程序需要每个用户的 Skype ID 属性，则可以在目录中注册新属性，然后即可在每个用户对象上获取该属性。有关详细信息，请参阅 [Azure AD 图形 API 目录架构扩展](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions)。
+
+- **受权限范围保护**：AAD 图形 API 会公开权限范围，以启用对 AAD 数据的安全/同意访问，并支持各种客户端应用类型，包括：
+ - 具有用户界面的应用，这类应用通过登录用户（委派）授权而获得对数据的委派访问权限
+  - 使用服务/守护程序客户端（应用角色）等应用程序定义的基于角色的访问控制的应用
+
+    委派和应用角色权限范围都代表图形 API 公开的特权，而且客户端应用程序可以通过应用程序注册权限请求它们（[Azure 经典门户中的功能](https://manage.windowsazure.com)）。客户端可以验证为其授予的权限范围，方法是检查委派权限的访问令牌中收到的范围（“scp”）声明，以及应用角色权限的角色（“roles”）声明。了解有关 [Azure AD 图形 API 权限范围](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)的详细信息。
+
 
 ## 方案
 

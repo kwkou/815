@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="04/14/2016"
-   wacn.date="05/18/2016"/>
+   ms.date="06/02/2016"
+   wacn.date="07/19/2016"/>
 
 # Azure AD Connect 同步：操作任务和注意事项
 本主题旨在介绍 Azure AD Connect 同步的操作任务。
@@ -26,7 +26,9 @@
 
 可以在安装过程中选择将服务器置于**暂存模式**。这样，便可以激活服务器以便导入和同步，但不会执行任何导出。处于暂存模式的服务器无法运行密码同步或启用密码写回，即使你选择了这些功能。如果你禁用暂存模式，服务器将开始导出并启用密码同步和密码写回（如果已启用）。
 
-处于暂存模式的服务器将继续接收来自 Active Directory 和 Azure AD 的更改。因此你始终都有最新更改的副本，并且可以非常快速地接管另一服务器的责任。如果对主要服务器进行配置更改，则你需要负责对处于暂存模式的服务器进行相同的更改。
+你仍然可以使用 Synchronization Service Manager 强制导出。
+
+处于暂存模式的服务器将继续接收来自 Active Directory 和 Azure AD 的更改。它始终都有最新更改的副本，并且可以非常快速地接管另一服务器的责任。如果对主要服务器进行配置更改，则你需要负责对处于暂存模式的服务器进行相同的更改。
 
 对于熟悉旧式同步技术的人员而言，暂存模式是不同的，因为服务器有自身的 SQL 数据库。这样，便可以将暂存模式服务器放置在不同的数据中心。
 
@@ -48,17 +50,18 @@
 
 1. 选择“连接器”，并选择第一个 **Active Directory 域服务**类型的连接器。单击“运行”，然后依次选择“完全导入”和“确定”。对这种类型的所有连接器执行此操作。
 2. 选择 **Azure Active Directory (Microsoft)** 类型的连接器。单击“运行”，然后依次选择“完全导入”和“确定”。
-4. 确保仍然选择“连接器”，并针对每个 **Active Directory 域服务**类型的连接器单击“运行”，然后选择“差异同步”和“确定”。
-5. 选择 **Azure Active Directory (Microsoft)** 类型的连接器。单击“运行”，选择“差异同步”，然后选择“确定”。
+3. 确保仍然选择“连接器”，并针对每个 **Active Directory 域服务**类型的连接器单击“运行”，然后选择“差异同步”和“确定”。
+4. 选择 **Azure Active Directory (Microsoft)** 类型的连接器。单击“运行”，选择“差异同步”，然后选择“确定”。
 
 现在，已将导出更改暂存到 Azure AD 和本地 AD（如果你正在使用 Exchange 混合部署）。接下来的步骤可让你在实际开始导出到目录之前，检查将要更改的内容。
 
 **验证**
 
-1. 启动 cmd 提示符并转到 `%Program Files%\Microsoft Azure AD Sync\bin`
-2. 运行：`csexport "Name of Connector" %temp%\export.xml /f:x`<BR/> 连接器名称可以在同步服务中找到。它的名称类似于“contoso.com – AAD”（表示 Azure AD）。
+1. 启动 cmd 提示符并转到 `%ProgramFiles%\Microsoft Azure AD Sync\bin`
+2. 运行：`csexport "Name of Connector" %temp%\export.xml /f:x`  
+连接器名称可以在同步服务中找到。它的名称类似于“contoso.com – AAD”（表示 Azure AD）。
 3. 运行：`CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`
-4. 现在在 %temp% 中已经有名称为 export.csv 的文件，可在 Microsoft Excel 中检查。此文件包含将要导出的所有更改。
+4. 现在在 %temp% 中已经有名为 export.csv 的文件，可在 Microsoft Excel 中检查。此文件包含将要导出的所有更改。
 5. 对数据或配置进行必要的更改并再次运行这些步骤（导入和同步和身份验证），直到要导出的更改都按预期进行。
 
 **了解 export.csv 文件**
@@ -94,7 +97,8 @@
 ### 根据需要重建
 必要时规划服务器重建为可行的策略。在许多情况下，安装同步引擎并运行初始导入，同步可以在几个小时内完成。如果没有可用的备用服务器，则可以暂时使用域控制器托管同步引擎。
 
-同步引擎服务器不存储有关对象的任何状态，因此可以从 Active Directory 与 Azure AD 中的数据重建数据库。**sourceAnchor** 属性可用于联接来自本地和云的对象。如果重建包含本地与云中现有对象的服务器，同步引擎的重新安装符合这些项目。需要记录和保存的内容是对服务器进行的配置更改，例如筛选和同步规则。这些内容必须在开始同步之前重新应用。
+同步引擎服务器不存储有关对象的任何状态，因此可以从 Active Directory 与 Azure AD 中的数据重建数据库。**sourceAnchor** 属性可用于联接来自本地和云的对象。如果重新生成包含本地与云中现有对象的服务器，同步引擎的重新安装符合这些项目。
+需要记录和保存的内容是对服务器进行的配置更改，例如筛选和同步规则。这些内容必须在开始同步之前重新应用。
 
 ### 具有备用的待机服务器 - 暂存模式
 如果你的环境更复杂，我们建议你使用一个或多个待机服务器。可以在安装过程中启用服务器的**暂存模式**。
@@ -112,4 +116,4 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

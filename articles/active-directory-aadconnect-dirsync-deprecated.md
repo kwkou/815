@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/11/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="05/19/2016"
+	wacn.date="07/18/2016"/>
 
 
 # 升级 Microsoft Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync)
@@ -25,10 +25,10 @@ Azure AD Connect 是 DirSync 和 Azure AD Sync 的后继产品。它结合了两
 
 ## 弃用计划
 
-|日期 | 注释 |
-| --- | --- |
-| 2016 年 4 月 13 日 | Microsoft Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync) 已宣布弃用。 |
-| 2017 年 4 月 13 日 | 结束支持。客户必须先升级到 Azure AD Connect 才能建立支持案例。 |
+日期 | 注释
+ --- | ---
+2016 年 4 月 13 日 | Microsoft Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync) 已宣布弃用。
+2017 年 4 月 13 日 | 结束支持。客户必须先升级到 Azure AD Connect 才能建立支持案例。
 
 ## 如何过渡到 Azure AD Connect
 如果你正在运行 DirSync，可通过两种方式升级：就地升级和并行部署。对大多数客户，如果使用最新的操作系统并且对象数少于 50,000 个，我们建议使用就地升级。对于其他情况，建议执行并行部署，这样，DirSync 配置将迁移到运行 Azure AD Connect 的新服务器。
@@ -55,10 +55,10 @@ Azure AD Connect 是 DirSync 和 Azure AD Sync 的后继产品。它结合了两
 支持从当前所用的任何 DirSync 版本升级。
 
 **问：用于 FIM/MIM 的 Azure AD 连接器的情况怎样？**  
-用于 FIM/MIM 的 Azure AD 连接器**尚未**宣布弃用。它目前处于**功能冻结**状态；其中不会添加任何功能，也不会接受任何 bug 修复。Microsoft 建议其用户计划好迁移到 Azure AD Connect。我们强烈建议不要使用它来启动任何新部署。今后我们将宣布弃用此连接器。
+用于 FIM/MIM 的 Azure AD 连接器**尚未**宣布弃用。它目前处于**功能冻结**状态；其中不会添加任何功能，也不会接受任何 bug 修复。Azure 建议其用户计划好迁移到 Azure AD Connect。我们强烈建议不要使用它来启动任何新部署。今后我们将宣布弃用此连接器。
 
 ## 其他资源
 
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0711_2016-->

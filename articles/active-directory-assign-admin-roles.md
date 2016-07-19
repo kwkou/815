@@ -10,22 +10,30 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="04/26/2016"
-	wacn.date="04/28/2016"/>
+	wacn.date="07/19/2016"/>
 
 # 在 Azure Active Directory (Azure AD) 中分配管理员角色
 
-根据你公司的规模，你可能需要指定多个具有不同职责的管理员。这些管理员可以按角色访问 Azure 门户预览或 Azure 经典管理门户中的各种功能：创建或编辑用户、将管理角色分配给他人、重置用户密码、管理用户许可证以及管理域等。
+根据你公司的规模，你可能需要指定多个具有不同职责的管理员。这些管理员可以按角色访问 Azure 门户或 Azure 经典门户中的各种功能：创建或编辑用户、将管理角色分配给他人、重置用户密码、管理用户许可证以及管理域等。
 
-你必须知道，分配为管理员角色的用户在你的组织所订阅的所有云服务中拥有相同的权限，不管该角色是通过 Office 365 门户、Azure 经典管理门户还是用于 Windows PowerShell 的 Azure AD 模块分配的。
+你必须知道，分配为管理员角色的用户在你的组织所订阅的所有云服务中拥有相同的权限，不管该角色是通过 Office 365 门户、Azure 经典门户还是用于 Windows PowerShell 的 Azure AD 模块分配的。
 
 提供以下管理员角色：
 
 - **计费管理员**：进行采购、管理订阅、管理支持票证并监视服务运行状况。
+
 - **全局管理员**：有权访问所有管理功能。注册 Azure 帐户的人员将成为全局管理员。只有全局管理员才能分配其他管理员角色。你的公司中可以有多个全局管理员。
+
+	> [AZURE.NOTE] 在 Microsoft 图形 API、Azure AD 图形 API 和 Azure AD PowerShell 中，此角色标识为“公司管理员”。
+
 - **密码管理员**：重置密码、管理服务请求并监视服务运行状况。密码管理员只能为用户和其他密码管理员重置密码。
+
+	> [AZURE.NOTE] 在 Microsoft 图形 API、Azure AD 图形 API 和 Azure AD PowerShell 中，此角色标识为“支持管理员”。
+
 - **服务管理员**：管理服务请求并监视服务运行状况。
 
-	> [AZURE.NOTE] 若要为用户分配服务管理员角色，全局管理员必须先在服务（例如 Exchange Online）中将管理权限分配给用户，然后再在 Azure 经典管理门户中将服务管理员角色分配给用户。
+	> [AZURE.NOTE] 若要为用户分配服务管理员角色，全局管理员必须先在服务（例如 Exchange Online）中将管理权限分配给用户，然后再在 Azure 经典门户中将服务管理员角色分配给用户。
+
 - **用户管理员**：重置密码、监视服务运行状况，并管理用户帐户、用户组和服务请求。用户管理管理员权限存在一些限制。例如，他们不能删除全局管理员或创建其他管理员。另外，他们也不能为计费管理员、全局管理员和服务管理员重置密码。
 
 ## 管理员权限
@@ -66,7 +74,7 @@
 
 ## 分配或删除管理员角色
 
-1. 在 Azure 经典管理门户中，单击“Active Directory”，然后单击你所在组织的目录的名称。
+1. 在 Azure 经典门户中，单击“Active Directory”，然后单击你所在组织的目录的名称。
 
 2. 在“用户”页上，单击你想要编辑的用户的显示名称。
 3. 在“组织角色”列表中，选择要分配给此用户的管理员角色，或者选择“用户”（如果要删除现有的管理员角色）。
@@ -79,7 +87,9 @@
 
 ## 后续步骤
 
-- 若要了解有关如何在 Microsoft Azure 中控制资源访问的详细信息，请参阅 [Understanding resource access in Azure](/documentation/articles/active-directory-understanding-resource-access/)（了解 Azure 中的资源访问）
+- 若要了解有关如何更改 Azure 订阅管理员的详细信息，请参阅[如何添加或更改 Azure 管理员角色](/documentation/articles/billing-add-change-azure-subscription-administrator/)
+
+- 若要了解有关如何在 Microsoft Azure 中控制资源访问的详细信息，请参阅[了解 Azure 中的资源访问权限](/documentation/articles/active-directory-understanding-resource-access/)
 
 - 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
 
@@ -89,4 +99,4 @@
 
 - [管理组](/documentation/articles/active-directory-manage-groups/)
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0711_2016-->

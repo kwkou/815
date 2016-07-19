@@ -30,7 +30,7 @@ Azure AD 能轻松集成到许多现今热门的 SaaS 应用程序。它提供�
 
 * 用户预配使用户能够基于 Windows Server Active Directory 和/或 Azure AD 中所做的更改，对目标 SaaS 进行预配和取消预配操作。预配的帐户通过单一登录身份验证之后，可授权用户使用应用程序。
 
-* Azure 经典管理门户中的集中式应用程序访问管理实现了 SaaS 应用程序的单点访问和管理，并且可以将应用程序访问决策和审批委派给组织中的任何人。
+* Azure 管理门户中的集中式应用程序访问管理实现了 SaaS 应用程序的单点访问和管理，并且可以将应用程序访问决策和审批委派给组织中的任何人。
 
 * 在 Azure AD 中对异常用户活动进行统一报告和监视
 
@@ -205,6 +205,7 @@ https://myapps.microsoft.com/contosobuild.com/signin/Twitter/230848d52c8745d4b05
 - [有关如何将 SaaS 应用与 Azure Active Directory 集成的教程列表](/documentation/articles/active-directory-saas-tutorial-list/)
 - [Introduction to Managing Access to Apps（管理对应用的访问简介）](/documentation/articles/active-directory-managing-access-to-apps/)
 
+
 <!--Image references-->
 [1]: ./media/active-directory-appssoaccess-whatis/onlineappgallery.png
 [2]: ./media/active-directory-appssoaccess-whatis/azuremgmtportal.png
@@ -213,4 +214,4 @@ https://myapps.microsoft.com/contosobuild.com/signin/Twitter/230848d52c8745d4b05
 [5]: ./media/active-directory-appssoaccess-whatis/workdaymobile.png
 [6]: ./media/active-directory-appssoaccess-whatis/deeplink.png
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0711_2016-->

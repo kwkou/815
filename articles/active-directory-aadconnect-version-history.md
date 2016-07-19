@@ -20,11 +20,45 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 这是相关主题的列表：
 
-| 主题 | |
-| --------- | --------- |
-| 从 Azure AD Connect 升级的步骤 | 从[旧版升级到最新版本](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/) Azure AD Connect 的不同方法。 |
-| 所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#upgrade) |
-| 下载| [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) |
+主题 |  
+--------- | --------- |
+从 Azure AD Connect 升级的步骤 | [从旧版升级到最新版](/documentation/articles/active-directory-aadconnect-upgrade-previous-version) Azure AD Connect 的不同方法。
+所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions#upgrade)
+下载| [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1\.1.189.0
+发布日期：2016 年 6 月
+
+**已解决的问题和改进：**
+
+- Azure AD Connect 现在可以安装于符合 FIPS 的服务器上。
+    - 有关密码同步，请参阅[密码同步和 FIPS](active-directory-aadconnectsync-implement-password-synchronization.md#password-synchronization-and-fips)
+- 已修复下列问题：NetBIOS 名称无法解析为 Active Directory 连接器中的 FQDN。
+
+## 1\.1.180.0
+发布日期：2016 年 5 月
+
+**新功能：**
+
+- 警告并帮助你验证域（如果你在运行 Azure AD Connect 之前未执行此操作）。
+- 添加了对[德国 Microsoft 云](active-directory-aadconnect-instances.md#microsoft-cloud-germany)的支持。
+- 添加了对最新 [Microsoft Azure 政府云](active-directory-aadconnect-instances.md#microsoft-azure-government-cloud)基础结构的支持，以及新的 URL 要求。
+
+**已解决的问题和改进：**
+
+- 在同步规则编辑器中添加了筛选功能以方便查找同步规则。
+- 改进了删除连接器空间时的性能。
+- 修复了在同一个运行轮次中同时删除和添加（称为删除/添加）同一个对象时出现的问题。
+- 在升级或刷新目录架构时，已禁用的同步规则不再重新启用包含的对象和属性。
+
+## 1\.1.130.0
+发布日期：2016 年 4 月
+
+**新功能：**
+
+- 添加了对[目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions)的多值属性支持。
+- 添加了将[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade)的更多配置变体视为符合升级要求的支持。
+- 为[自定义计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler#custom-scheduler)添加了一些 cmdlet。
 
 ## 1\.1.119.0
 发布时间：2016 年 3 月
@@ -40,8 +74,8 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **已解决的问题：**
 
-- 如果安装不是位于默认的 **C:\\Program Files** 文件夹中，则无法从旧版升级。
-- 如果安装并在结束安装向导时取消选择“启动同步过程”，重新运行安装向导将不启用计划程序。
+- 如果安装不位于默认的 **C:\\Program Files** 文件夹中，则无法从旧版升级。
+- 如果进行安装，并在安装向导结束时取消选择“启动同步过程”，重新运行安装向导将不启用计划程序。
 - 在日期/时间格式并非美国英文的服务器上，计划程序将无法正常运行。此外，还会阻止 `Get-ADSyncScheduler` 返回正确的时间。
 - 如果以 ADFS 作为登录选项和升级来安装旧版 Azure AD Connect，便无法再次执行安装向导。
 
@@ -50,13 +84,22 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **新功能：**
 
-- 适用于快速设置用户的[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)功能。
+- 适用于快速设置客户的[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)功能。
 - 使用安装向导中的 MFA 和 PIM 来提供全局管理员支持。
-    - 如果你使用 MFA，则需要让代理也允许与 https://secure.aadcdn.microsoftonline-p.com 进行通信。
-    - 需要将 https://secure.aadcdn.microsoftonline-p.com 添加到受信任站点列表，MFA 才能正常使用。
+    - 如果你使用 MFA，则需要让代理也允许向 https://secure.aadcdn.microsoftonline-p.com 传送流量。
+    - 需要将 https://secure.aadcdn.microsoftonline-p.com 添加到受信任站点列表，MFA 才能正常运行。
 - 允许在初始安装之后更改用户的登录方法。
 - 允许在安装向导中使用[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#domain-and-ou-filtering)。这也允许连接到并非所有域都可供使用的林。
 - [计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)是同步引擎的内置功能。
+
+**从预览版升级到 GA 的功能：**
+
+- [设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback)。
+- [目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions)。
+
+**新的预览功能：**
+
+- 新的默认同步周期间隔为 30 分钟。过去所有旧版本都是 3 小时。添加了更改[计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)行为的支持。
 
 **已解决的问题：**
 
@@ -84,6 +127,8 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 - 可以禁用同步规则。
 - 可以将“AuthoritativeNull”定义为同步规则中的新文本。
 
+**新的预览功能：**
+- 支持 [Azure AD 域服务](/documentation/articles/active-directory-get-started/)密码同步。
 **新的受支持方案：**
 
 - 支持多个本地 Exchange 组织。有关详细信息，请参阅[包含多个 Active Directory 林的混合部署](https://technet.microsoft.com/zh-cn/library/jj873754.aspx)。
@@ -240,4 +285,4 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0711_2016-->
