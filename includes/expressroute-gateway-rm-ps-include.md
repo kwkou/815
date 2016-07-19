@@ -1,5 +1,3 @@
-## 配置概述
-
 此任务的步骤使用基于以下值的 VNet。此列表中也概述了其他设置和名称。尽管我们确实基于此列表中的值添加变量，但是我们在任何步骤中不会直接使用此列表。你可以复制列表作为参考，并将列表中的值替换为自己的值。
 
 配置参考列表：
@@ -55,11 +53,10 @@
 7. 请求公共 IP 地址。创建网关之前请求 IP 地址。不支持静态指定IP， AllocationMethod 必须是动态的。
 
 		$pip = New-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName $RG -Location $Location -AllocationMethod Dynamic
+
+8. 创建网关配置。网关配置定义要使用的子网和公共 IP 地址。在此步骤中，你将指定创建网关时使用的配置。此步骤不会实际创建网关对象。使用下面的示例创建你的网关配置。
+
 		$ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip
-
-8. 创建网关配置（gwipconfig）。网关配置定义要使用的子网和公共 IP 地址。在此步骤中，你将指定创建网关时使用的配置。此步骤不会实际创建网关对象。使用下面的示例创建你的网关配置。
-
-		$gwipconfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -SubnetId $subnet.Id -PublicIpAddressId $pip.Id 
 
 9. 创建网关。在此步骤中，**-GatewayType** 尤其重要。必须使用值 **ExpressRoute**。请注意，运行这些 cmdlet 后，可能需要 20 分钟或更多时间来创建网关。
 
