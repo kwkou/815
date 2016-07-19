@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="05/18/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (Java)
 

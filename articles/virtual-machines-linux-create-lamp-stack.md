@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/07/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 # 在 Azure 上部署 LAMP 堆栈
 本文将指导你完成在 Azure 上部署 Apache web 服务器、MySQL 和 PHP（LAMP 堆栈）。你需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）和[连接到 Azure 帐户](/documentation/articles/xplat-cli-connect/)的 [Azure CLI](/documentation/articles/xplat-cli-install/)。

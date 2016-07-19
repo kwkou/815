@@ -14,7 +14,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="05/25/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 # 开始使用 HDInsight 的 Visual Studio Hadoop 工具来运行 Hive 查询
 

@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/16/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 # 排查在 Azure 中重新启动或调整现有 Linux 虚拟机时遇到的经典部署问题
 

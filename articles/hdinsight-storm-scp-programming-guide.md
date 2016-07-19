@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="05/16/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 #SCP 编程指南
 

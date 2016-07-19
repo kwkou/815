@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="05/27/2016"
-	wacn.date=""/>
+	wacn.date="07/18/2016"/>
 
 #使用 Curl 在 HDInsight 中的 Hadoop 上运行 Sqoop 作业
 
