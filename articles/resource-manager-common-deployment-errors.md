@@ -1,24 +1,21 @@
-<!-- Remove arm-troubleshoot-portal -->
 <properties
-   pageTitle="常见的 Azure 部署错误 | Azure"
+   pageTitle="排查常见的 Azure 部署错误 | Azure"
    description="介绍如何解决使用 Azure Resource Manager 部署时遇到的常见错误。"
    services="azure-resource-manager"
    documentationCenter=""
-   tags=""
+   tags="top-support-issue"
    authors="tfitzmac"
    manager="timlt"
    editor="tysonn"/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="04/19/2016"
-   wacn.date="06/20/2016"/>
+   ms.date="06/15/2016"
+   wacn.date="07/18/2016"/>
 
-# 解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误
+# 排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误
 
-本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。<!-- 有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。-->
-
-如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源）](/documentation/articles/resource-group-template-deploy/)。
+本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。 有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
 
 ## 无效的模板或资源
 
@@ -30,7 +27,7 @@
 
 你将收到一个错误，指出模板或资源无效，具体取决于缺少的字符在模板中的位置。该错误也可能会指出部署过程无法处理模板语言表达式。当你收到此类错误时，请仔细检查表达式语法。
 
-## 资源名称已存在
+## 资源名称已存在或已由其他资源使用
 
 对某些资源，尤其是存储帐户、数据库服务器和网站，必须为其提供一个名称，这个名称在所有 Azure 中都是唯一的。可将命名约定与 [uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数的结果连接起来创建一个唯一名称。
  
@@ -51,53 +48,73 @@
       ...
     }
 
-## 资源的位置不可用
+## 在对象上找不到成员“copy”
 
-在为一个资源指定位置时，必须使用支持资源的位置之一。在输入资源的位置之前，请使用以下命令之一验证该位置是否支持此资源类型。
+当你将 **copy** 元素应用于不支持该元素的模板部分时，会遇到此错误。只能将 copy 元素应用于资源类型。不能将 copy 应用于资源类型中的属性。例如，可以将 copy 应用于虚拟机，但不能将其应用于虚拟机的 OS 磁盘。在某些情况下，可以将子资源转换为父资源，以创建复制循环。有关使用 copy 的详细信息，请参阅[在 Azure Resource Manager 中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
+
+## SKU 不可用
+
+在部署资源（通常为虚拟机）时，可能会收到以下错误代码和错误消息：
+
+    Code: SkuNotAvailable
+    Message: The requested tier for resource '<resource>' is currently not available in location '<location>' for subscription '<subscriptionID>'. Please try another tier or deploy to a different location.
+
+当所选的资源 SKU（如 VM 大小）不可用于所选的位置时，会收到此错误。有两个选项可解决此问题：
+
+1.	登录到门户中，并通过 UI 开始添加新资源。设置值时，你将看到该资源的可用 SKU。
+
+    ![可用的 sku](./media/resource-manager-common-deployment-errors/view-sku.png)
+
+2.	如果你在该区域或满足业务需求的备用区域中找不到合适的 SKU，请与 [Azure 支持](https://portal.azure.cn/#create/Microsoft.Support)联系。
+
+
+## 找不到已注册提供程序
+
+部署资源时，你可能会收到以下错误代码和消息：
+
+    Dode: NoRegisteredProviderFound
+    Message: No registered resource provider found for location '<location>' and API version '<api-version>' for type '<resource-type>'.
+
+你会因以下三种原因之一收到此错误：
+
+1. 资源类型不支持该位置
+2. 资源类型不支持该 API 版本
+3. 尚未为你的订阅注册资源提供程序
+
+错误消息应提供有关支持的位置和 API 版本的建议。可以将模板更改为建议的值之一。Azure 门户或正在使用的命令行接口会自动注册大多数提供程序；但非全部。如果你以前未使用特定的资源提供程序，则可能需要注册该提供程序。你可以使用以下命令了解更多有关资源提供程序的信息。
 
 ### PowerShell
 
-使用 **Get-AzureRmResourceProvider** 获取特定资源提供程序支持的类型和位置。
+若要查看注册状态，请使用 **Get-AzureRmResourceProvider**。
 
-    Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web
+    Get-AzureRmResourceProvider -ListAvailable
 
-你将获到该资源提供程序的资源类型列表。
+若要注册提供程序，请使用 **Register-AzureRmResourceProvider**，并提供想要注册的资源提供程序的名称。
 
-    ProviderNamespace RegistrationState ResourceTypes               Locations
-    ----------------- ----------------- -------------               ---------
-    Microsoft.Web     Registered        {sites/extensions}          {China East, ...
-    Microsoft.Web     Registered        {sites/slots/extensions}    {China East, ...
-    Microsoft.Web     Registered        {sites/instances}           {China East, ...
-    ...
+    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Cdn
 
-可以使用以下命令来专注于特定类型的资源：
+若要获取特定类型的资源支持的位置，请使用：
 
     ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
 
-这将返回支持的位置：
+若要获取特定类型的资源支持的 API 版本，请使用：
 
-    China East
-    China North
-
-
+    ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).ApiVersions
 
 ### Azure CLI
 
-对于 Azure CLI，可以使用 **Azure 位置列表**。因为位置列表可能很长，而且有多个提供程序，所以你可以先使用工具来检查提供程序和位置，再使用尚未使用的位置。以下脚本使用 **jq** 发现 Azure 虚拟机资源提供程序的可用位置。
+若要查看是否已注册提供程序，请使用 `azure provider list` 命令。
 
-    azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
+    azure provider list
+        
+若要注册资源提供程序，请使用 `azure provider register` 命令，并指定要注册的*命名空间*。
+
+    azure provider register Microsoft.Cdn
+
+若要查看资源提供程序支持的位置和 API 版本，请使用：
+
+    azure provider show -n Microsoft.Compute --json > compute.json
     
-这将返回支持的位置：
-    
-    {
-      "name": "Microsoft.Compute/virtualMachines",
-      "location": "East US,East US 2,West US,Central US,South Central US,North Europe,West Europe,East Asia,Southeast Asia,Japan East,Japan West"
-    }
-
-### REST API
-
-对于 REST API，请参阅[获取有关资源提供程序的信息](https://msdn.microsoft.com/zh-cn/library/azure/dn790534.aspx)。
-
 ## 超出配额
 
 当部署超出配额（可能是根据资源组、订阅、帐户和其他范围指定的）时，你可能会遇到问题。例如，订阅可能配置为限制某个区域的核心数目。如果你尝试部署超过允许核心数目的虚拟机，将收到指出超过配额的错误消息。有关完整的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
@@ -109,13 +126,13 @@
 将返回：
     
     info:    Executing command vm list-usage
-    Location: westus
+    Location: chinaeast
     data:    Name   Unit   CurrentValue  Limit
     data:    -----  -----  ------------  -----
     data:    Cores  Count  0             4
     info:    vm list-usage command OK
 
-如果你打算尝试部署一个模板，该模板在美国西部地区的上述订阅中创建多于 4 个的核心，则你会遇到与以下错误类似的部署错误（在门户中或通过调查部署日志）：
+如果你打算尝试部署一个模板，该模板在中国东部地区的上述订阅中创建多于 4 个的核心，则你会遇到与以下错误类似的部署错误（在门户中或通过调查部署日志）：
 
     statusCode:Conflict
     serviceRequestId:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -139,79 +156,46 @@
 
 在这种情况中，你应前往门户并提交一份支持问题以增加你在要部署区域内的配额。
 
-> [AZURE.NOTE] 请记住，对于资源组，配额针对每个单独的区域，而不是针对整个订阅。如果你需要在美国西部部署 30 个核心，则必须在美国西部寻求 30 个资源管理器核心。如果你需要在你有权访问的任何区域内部署总共 30 个核心，则应在所有区域内寻求总共 30 个核心。
+> [AZURE.NOTE] 请记住，对于资源组，配额针对每个单独的区域，而不是针对整个订阅。如果你需要在中国东部部署 30 个核心，则必须在中国东部寻求 30 个资源管理器核心。如果你需要在你有权访问的任何区域内部署总共 30 个核心，则应在所有区域内寻求总共 30 个核心。
 
 
 ## 授权失败
 
 你可能在部署期间收到错误，因为尝试部署资源的帐户或服务主体没有执行这些操作的访问权限。Azure Active Directory 可让你或你的系统管理员非常精确地控制哪些标识可以访问哪些资源。例如，如果帐户分配有“读取者”角色，它将无法创建新资源。在此情况下，你应会看到错误消息，指出授权失败。
 
-除了基于角色的访问控制以外，部署操作可能还受限于订阅的策略。通过策略，管理员可以对订阅中所有资源部署强制实施约定。例如，管理员可以要求为某个资源类型提供特定的标记值。如果不满足策略要求，你将在部署期间收到错误。
+有关基于角色的访问控制的详细信息，请参阅 [Azure Role-Based Access Control（Azure 基于角色的访问控制）](/documentation/articles/role-based-access-control-configure/)。
 
-## 检查资源提供程序注册
+除了基于角色的访问控制以外，部署操作可能还受限于订阅的策略。通过策略，管理员可以对订阅中所有资源部署强制实施约定。例如，管理员可以要求为某个资源类型提供特定的标记值。如果不满足策略要求，你将在部署期间收到错误。有关策略的详细信息，请参阅 [Use Policy to manage resources and control access（使用策略来管理资源和控制访问）](/documentation/articles/resource-manager-policy/)。
 
-资源由资源提供程序管理，你必须注册帐户或订阅才能使用特定的提供程序。Azure 门户预览或正在使用的命令行接口会自动注册大多数提供程序；但非全部。
+## 虚拟机故障排除 
 
-### PowerShell
+| 错误 | 文章 |
+| -------- | ----------- |
+| 自定义脚本扩展错误 | [Windows VM 扩展失败](/documentation/articles/virtual-machines-windows-extensions-troubleshoot/)<br />或 <br />[Linux VM 扩展失败](/documentation/articles/virtual-machines-linux-extensions-troubleshoot/) | 
+| OS 映像预配错误 | [新 Windows VM 错误](/documentation/articles/virtual-machines-windows-troubleshoot-deployment-new-vm/)<br />或<br />[新 Linux VM 错误](/documentation/articles/virtual-machines-linux-troubleshoot-deployment-new-vm/) | 
+| 分配失败 | [Windows VM 分配失败](/documentation/articles/virtual-machines-windows-allocation-failure/)<br />或 <br />[Linux VM 分配失败](/documentation/articles/virtual-machines-linux-allocation-failure/) | 
+| 尝试进行连接时的安全外壳 (SSH) 错误 | [到 Linux VM 的安全外壳连接](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/) | 
+| 连接到 VM 上运行的应用程序时出错 | [Windows VM 上运行的应用程序](/documentation/articles/virtual-machines-windows-troubleshoot-app-connection/)<br />或 <br />[Linux VM 上运行的应用程序](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/) | 
+| 远程桌面连接错误 | [到 Windows VM 的远程桌面连接](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/) | 
+| 通过重新部署已解决的连接错误 | [将虚拟机重新部署到新的 Azure 节点](/documentation/articles/virtual-machines-windows-redeploy-to-new-node/) | 
+| 云服务错误 | [云服务部署问题](/documentation/articles/cloud-services-troubleshoot-deployment-problems/) | 
 
-若要查看注册状态，请使用 **Get-AzureRmResourceProvider**。
+## 其他服务故障排除 
 
-    Get-AzureRmResourceProvider -ListAvailable
+下表不是 Azure 的故障排除主题的完整列表。而是，它重点介绍与部署或配置资源相关的问题。如果你需要帮助排查资源的运行时问题，请参阅该 Azure 服务的文档。
 
-这将返回所有可用的资源提供程序和注册状态：
-
-    ProviderNamespace               RegistrationState ResourceTypes
-    -----------------               ----------------- -------------
-    Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
-    Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
-    Microsoft.Batch                 Registered        {batchAccounts}
-
-若要注册提供程序，请使用 **Register-AzureRmResourceProvider**，并提供想要注册的资源提供程序的名称。
-
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Cdn
-
-系统将请求你确认注册，然后返回状态。
-
-    Confirm
-    Are you sure you want to register the provider 'Microsoft.Cdn'
-    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
-
-    ProviderNamespace RegistrationState ResourceTypes
-    ----------------- ----------------- -------------
-    Microsoft.Cdn     Registering       {profiles, profiles/endpoints,...
-
-### Azure CLI
-
-若要使用 Azure CLI 查看是否已注册提供程序供使用，请使用 `azure provider list` 命令（以下是截断的输出示例）。
-
-    azure provider list
-        
-这将返回所有可用的资源提供程序和注册状态：
-        
-    info:    Executing command provider list
-    + Getting ARM registered providers
-    data:    Namespace                        Registered
-    data:    -------------------------------  -------------
-    data:    Microsoft.Compute                Registered
-    data:    Microsoft.Network                Registered  
-    data:    Microsoft.Storage                Registered
-    data:    microsoft.visualstudio           Registered
-    ...
-    info:    provider list command OK
-
-若要注册资源提供程序，使用 `azure provider register` 命令，并指定要注册的*命名空间*。
-
-    azure provider register Microsoft.Cdn
-
-### REST API
-
-若要获取注册状态，请参阅[获取有关资源提供程序的信息](https://msdn.microsoft.com/zh-cn/library/azure/dn790534.aspx)。
-
-若要注册提供程序，请参阅[使用资源提供程序注册订阅](https://msdn.microsoft.com/zh-cn/library/azure/dn790548.aspx)。
-
-## 自定义脚本扩展错误
-
-如果在部署虚拟机时遇到自定义脚本扩展错误，请参阅 [Troubleshooting Azure Windows VM extension failures（排查 Azure Windows VM 扩展失败错误）](/documentation/articles/virtual-machines-windows-extensions-troubleshoot/)或 [Troubleshooting Azure Linux VM extension failures（排查 Azure Linux VM 扩展失败错误）](/documentation/articles/virtual-machines-linux-extensions-troubleshoot/)。
+| 服务 | 文章 |
+| -------- | -------- |
+| 自动化 | [Azure 自动化中常见错误的疑难解答提示](/documentation/articles/automation-troubleshooting-automation-errors/) | 
+| Azure Stack | [Azure Stack 故障排除](/documentation/articles/azure-stack-troubleshooting/) | 
+| Azure Stack | [Web Apps 和 Azure Stack](/documentation/articles/azure-stack-webapps-troubleshoot-known-issues/) | 
+| Data Factory | [排查数据工厂问题](/documentation/articles/data-factory-troubleshoot/) | 
+| Service Fabric | [排查在 Azure Service Fabric 上部署服务时遇到的常见问题](/documentation/articles/service-fabric-diagnostics-troubleshoot-common-scenarios/) | 
+| 站点恢复 | [监视虚拟机和物理服务器的保护及其故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting/) |
+| 存储 | [监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/) |
+| StorSimple | [排查 StorSimple 设备部署问题](/documentation/articles/storsimple-troubleshoot-deployment/) | 
+| SQL 数据库 | [排查 Azure SQL 数据库的连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/) | 
+| SQL 数据仓库 | [排查 Azure SQL 数据仓库问题](/documentation/articles/sql-data-warehouse-troubleshoot/) | 
 
 ## 了解部署何时准备就绪 
 
@@ -222,6 +206,6 @@ Azure Resource Manager 部署成功返回所有提供程序时，将报告部署
 ## 后续步骤
 
 - 若要了解审核操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit/)。
-- 若要了解部署期间为确定错误执行哪些操作，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
+- 若要了解部署期间为确定错误执行哪些操作，请参阅 [View deployment operations（查看部署操作）](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0711_2016-->
