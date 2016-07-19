@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/09/2016"
-	wacn.date="06/27/2016"/>
+	wacn.date="07/19/2016"/>
 
 #在 Azure Active Directory 中管理用于联合单一登录的证书
 

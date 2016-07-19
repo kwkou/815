@@ -228,4 +228,4 @@ You can simply redirect the user to the `end_session_endpoint` listed in the Ope
 | post_logout_redirect_uri | recommended | The URL which the user should be redirected to after successful logout.  If not included, the user will be shown a generic message by the v2.0 endpoint.  |
 
 -->
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

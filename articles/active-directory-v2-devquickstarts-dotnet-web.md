@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/20/2016"
-	wacn.date="06/28/2016"/>
+	wacn.date="07/19/2016"/>
 
 # 将登录凭据添加到 .NET MVC Web 应用
 
@@ -53,7 +53,8 @@
 -	将称为 `Startup.cs` 的 OWIN 启动类添加到项目。右键单击项目，选择“添加”-->“新建项”，然后搜索“OWIN”。当你的应用程序启动时，该 OWIN 中间件将调用 `Configuration(...)` 方法。
 -	将类声明更改为 `public partial class Startup` - 我们已在另一个文件中实现了此类的一部分。在 `Configuration(...)` 方法中，调用 ConfigureAuth(...) 以设置 Web 应用的身份验证。  
 
-		C#
+C#
+
 		[assembly: OwinStartup(typeof(Startup))]
 		
 		namespace TodoList_WebApp
@@ -69,7 +70,8 @@
 
 -	打开文件 `App_Start\Startup.Auth.cs` 并实现 `ConfigureAuth(...)` 方法。在 `OpenIdConnectAuthenticationOptions` 中提供的参数将充当应用程序与 Azure AD 通信时使用的坐标。你还需要设置 Cookie 身份验证 - OpenID Connect 中间件将在幕后使用 Cookie。
 
-		C#
+C#
+
 		public void ConfigureAuth(IAppBuilder app)
 					 {
 							 app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
@@ -105,8 +107,8 @@
 现在，应用程序已正确配置为使用 OpenID Connect 身份验证协议来与 v2.0 终结点通信。OWIN 会代你处理有关创建身份验证消息、验证 Azure AD 提供的令牌以及保留用户会话的繁琐细节。你要做的一切就是提供某种方式让用户登录和注销。
 
 - 可以在控制器中使用授权标记，要求用户在访问特定页面之前登录。打开 `Controllers\HomeController.cs`，然后将 `[Authorize]` 标记添加到 About 控制器。
+C#
 
-		C#
 		[Authorize]
 		public ActionResult About()
 		{
@@ -115,7 +117,8 @@
 
 -	还可以使用 OWIN 直接从代码内部发出身份验证请求。打开 `Controllers\AccountController.cs`。在 SignIn() 和 SignOut() 操作中，分别发出 OpenID Connect 质询和注销请求。
 
-		C#
+C#
+
 		public void SignIn()
 		{
 		    // Send an OpenID Connect sign-in request.
@@ -136,7 +139,8 @@
 
 -	现在，请打开 `Views\Shared\_LoginPartial.cshtml`。你将在其中向用户显示应用程序的登录和注销链接，用户名将在视图中列显。
 
-		HTML
+HTML
+
 		@if (Request.IsAuthenticated)
 		{
 		    <text>
@@ -166,7 +170,8 @@
 
 - 打开 `Controllers\HomeController.cs` 文件。可以通过 `ClaimsPrincipal.Current` 安全主体对象访问控制器中的用户声明。
 
-		C#
+C#
+
 		[Authorize]
 		public ActionResult About()
 		{
@@ -196,6 +201,9 @@
 
 ## 后续步骤
 
+现在，可以转到更高级的主题。你可能想要尝试：
+
+[使用 v2.0 终结点保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet/)
 
 有关更多资源，请查看：
 
@@ -203,4 +211,4 @@
 
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

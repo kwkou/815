@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建访问权限更改历史记录报告 | Microsoft Azure"
+	pageTitle="创建访问权限更改历史记录报告 | Azure"
 	description="生成一个列出过去 90 天使用基于角色的访问控制访问 Azure 订阅时所有更改的报告。"
 	services="active-directory"
 	documentationCenter=""
