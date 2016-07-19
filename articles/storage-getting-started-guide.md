@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/14/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="05/23/2016"
+	wacn.date="07/18/2016"/>
 
 # 五分钟内开始使用 Azure 存储空间 
 
@@ -24,7 +24,7 @@
 
 在开始之前，你需要符合以下先决条件：
 
-1. 若要编译和生成应用程序，你需要在你的计算机上安装 [Visual Studio](https://www.visualstudio.com/)。 
+1. 若要编译和生成应用程序，你需要在你的计算机上安装 [Visual Studio](https://www.visualstudio.com/)。
 
 2. 安装最新版的 [Azure SDK for .NET](/downloads/)。SDK 包括 Azure 快速入门示例项目、Azure 存储模拟器和[用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
@@ -91,8 +91,8 @@
 
 接下来，在 Azure 存储模拟器中运行示例应用程序:
 
-1.	按“开始”按钮或 Windows 键，然后搜索 *Azure 存储模拟器* 并启动该应用程序。当模拟器启动时，你将在“Windows 任务视图”区域看到图标和通知。
-2.	在 Visual Studio 中，单击“生成”菜单上的“生成解决方案”。 
+1.	按“开始”按钮或 Windows 键，然后搜索 Azure 存储模拟器 并启动该应用程序。当模拟器启动时，你将在“Windows 任务视图”区域看到图标和通知。
+2.	在 Visual Studio 中，单击“生成”菜单上的“生成解决方案”。
 3.	在“调试”**菜单**上，按 **F11** 逐步运行该解决方案，或按 **F5** 从头到尾运行该解决方案。
 
 
@@ -113,4 +113,4 @@
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0711_2016-->

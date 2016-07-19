@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/14/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/18/2016"/>
 
 
 
@@ -35,7 +35,7 @@
 
 在 Visual Studio 中，创建一个新的 Windows 控制台应用程序并将其命名为 **GenerateSharedAccessSignatures**。使用以下方法之一添加对 **Microsoft.WindowsAzure.Configuration.dll** 和 **Microsoft.WindowsAzure.Storage.dll** 的引用：
 
-- 	如果你想要安装 NuGet 程序包，请首先安装 [NuGet Package Manager Extension for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)。在 Visual Studio 中，选择“项目”|“管理 NuGet 包”，在线搜索“Azure 存储空间”，然后按照说明进行安装。
+- 	若要安装 NuGet 包，请先安装 [NuGet 客户端](https://docs.nuget.org/consume/installing-nuget)。在 Visual Studio 中，选择“项目”|“管理 NuGet 包”，在线搜索“Azure 存储空间”，然后按照说明进行安装。
 - 	另外，还可以在你安装的 Azure SDK 中找到这些程序集，然后添加对它们的引用。
 
 在 Program.cs 文件的顶部，添加以下 **using** 语句：
@@ -552,4 +552,4 @@
 [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
 
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0711_2016-->

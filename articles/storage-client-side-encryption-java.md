@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/24/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/24/2016"
+	wacn.date="07/18/2016"/>
 
 # Azure 存储空间的使用 Java 客户端加密   
 
@@ -25,7 +25,7 @@
 ### 通过信封技术加密  
 通过信封技术加密的工作方式如下：
 
-1.	Azure 存储客户端库生成内容加密密钥 (CEK)，这是一次性使用对称密钥。  
+1.	Azure 存储客户端库生成内容加密密钥 (CEK)，这是一次性使用对称密钥。
 
 2.	使用此 CEK 对用户数据进行加密。
 
@@ -36,7 +36,7 @@
 ### 通过信封技术解密  
 通过信封技术解密的工作方式如下：
 
-1.	客户端库假定用户在本地或 Azure 密钥保管库中管理密钥加密密钥 (KEK)。用户不需要知道用于加密的特定密钥。但是，可以设置和使用一个密钥解析程序，将不同的密钥标识符解析为密钥。  
+1.	客户端库假定用户在本地或 Azure 密钥保管库中管理密钥加密密钥 (KEK)。用户不需要知道用于加密的特定密钥。但是，可以设置和使用一个密钥解析程序，将不同的密钥标识符解析为密钥。
 
 2.	客户端库下载存储在服务中的已加密数据以及任何加密材料。
 
@@ -76,7 +76,7 @@
 
 表数据加密的工作方式如下：
 
-1.	用户指定要加密的属性。  
+1.	用户指定要加密的属性。
 
 2.	客户端库为每个实体生成 16 字节的随机初始化向量 (IV) 和 32 字节的随机内容加密密钥 (CEK)，并通过为每个属性派生新的 IV 来对要加密的单个属性执行信封加密。加密的属性存储为二进制数据。
 
@@ -103,12 +103,12 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 有三个密钥保管库包：
 
 - azure-keyvault-core 包含 IKey 和 IKeyResolver。它是没有依赖项的小型包。用于 Java 的存储空间客户端库将其定义为一个依赖项。
-- azure-keyvault 包含密钥保管库 REST 客户端。  
-- azure-keyvault-extensions 包含扩展代码，其中包括加密算法和 RSAKey 和 SymmetricKey 的实现。它依赖于 Core 和 KeyVault 命名空间，并提供用于定义聚合解析程序（在用户想要使用多个密钥提供程序时）和缓存密钥解析程序的功能。虽然存储客户端库不直接依赖于此包，但是如果用户想要使用 Azure 密钥保管库来存储其密钥或通过密钥保管库扩展来使用本地和云加密提供程序，则他们将需要此包。  
+- azure-keyvault 包含密钥保管库 REST 客户端。
+- azure-keyvault-extensions 包含扩展代码，其中包括加密算法和 RSAKey 和 SymmetricKey 的实现。它依赖于 Core 和 KeyVault 命名空间，并提供用于定义聚合解析程序（在用户想要使用多个密钥提供程序时）和缓存密钥解析程序的功能。虽然存储客户端库不直接依赖于此包，但是如果用户想要使用 Azure 密钥保管库来存储其密钥或通过密钥保管库扩展来使用本地和云加密提供程序，则他们将需要此包。
 
   密钥保管库专为高价值主密钥设计，每个密钥保管库的限流限制的设计也考虑了这一点。使用密钥保管库执行客户端加密时，首选模型是使用在密钥保管库中作为机密存储并在本地缓存的对称主密钥。用户必须执行以下操作：
 
-1.	脱机创建一个机密并将其上载到密钥保管库。  
+1.	脱机创建一个机密并将其上载到密钥保管库。
 
 2.	使用机密的基标识符作为参数来解析机密的当前版本进行加密，并在本地缓存此信息。使用 CachingKeyResolver 进行缓存；用户不需要实现自己的缓存逻辑。
 
@@ -131,10 +131,10 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 ## 客户端 API/接口  
 在创建 EncryptionPolicy 对象时，用户可以只提供密钥（实现了 IKey）、只提供解析程序（实现了 IKeyResolver），或两者都提供。IKey 是使用密钥标识符标识的基本密钥类型，它提供了包装/解包逻辑。IKeyResolver 用于在解密过程中解析密钥。它定义了 ResolveKey 方法，该方法根据给定的密钥标识符返回 IKey。由此，用户能够在多个位置中托管的多个密钥之间进行选择。
 
-- 对于加密，始终使用该密钥，而没有密钥将导致错误。  
-- 对于解密：  
-	- 如果指定为获取密钥，则将调用密钥解析程序。如果指定了解析程序，但该解析程序不具有密钥标识符的映射，则将引发错误。  
-	- 如果未指定解析程序，但指定了密钥，则在该密钥的标识符与所需密钥标识符匹配时使用该密钥。如果标识符不匹配，则将引发错误。  
+- 对于加密，始终使用该密钥，而没有密钥将导致错误。
+- 对于解密：
+	- 如果指定为获取密钥，则将调用密钥解析程序。如果指定了解析程序，但该解析程序不具有密钥标识符的映射，则将引发错误。
+	- 如果未指定解析程序，但指定了密钥，则在该密钥的标识符与所需密钥标识符匹配时使用该密钥。如果标识符不匹配，则将引发错误。
 
 	  [加密示例](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples) <fix URL> 演示了针对 Blob、队列和表的更详细端到端方案，以及密钥保管库集成。
 
@@ -235,11 +235,11 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 
 ## 后续步骤  
 
-- 下载[适用于 Java 的 Azure 存储客户端库 Maven 程序包](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage)  
-- 从 GitHub 下载[适用于 Java 的 Azure 存储客户端库源代码](https://github.com/Azure/azure-storage-java)   
+- 下载[适用于 Java 的 Azure 存储客户端库 Maven 程序包](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage)
+- 从 GitHub 下载[适用于 Java 的 Azure 存储客户端库源代码](https://github.com/Azure/azure-storage-java)
 - 下载适用于 Java 的 Azure 密钥保管库 Maven 程序包：
 	- [核心](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault-core)程序包
 	- [客户端](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault)程序包
 - 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/)  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0711_2016-->

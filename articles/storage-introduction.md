@@ -9,19 +9,19 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/24/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="06/08/2016"
+	wacn.date="07/18/2016"/>
 
 # Azure 存储服务简介
 
 ## 概述
 
-Azure 存储空间是依赖于持续性、可用性和可缩放性来满足客户需求的现代应用程序的云存储解决方案。通过阅读本文章，开发人员、IT 专业人员和业务决策人可以了解：
+Azure 存储空间是依赖于持续性、可用性和可缩放性来满足客户需求的现代应用程序的云存储解决方案。通过阅读本文章，开发人员、IT 专业人员和业务决策人员可以了解：
 
 - 什么是 Azure 存储服务，以及如何在你的云、移动、服务器和桌面应用程序中利用它
 - 使用 Azure 存储服务可以存储哪种数据：Blob（对象）数据、NoSQL 表数据、队列消息和文件共享。
 - 在 Azure 存储服务中如何管理对你的数据的访问
-- 如何通过冗余和复制保护你的 Azure 存储数据
+- 如何通过冗余和复制确保 Azure 存储数据的持久性
 - 接下来要到何处去构建你的第一个 Azure 存储应用程序
 
 若要快速启动并运行 Azure 存储服务，请参阅[在 5 分钟内开始使用 Azure 存储空间](/documentation/articles/storage-getting-started-guide/)
@@ -40,47 +40,30 @@ Azure 存储服务使用了一个自动分区系统，它可以根据流量自�
 
 可以从世界上的任何位置从任何类型的应用程序访问 Azure 存储服务，无论该应用程序是在云中、在桌面上、在本地服务器上运行还是在移动设备或平板电脑设备上运行。你可以将 Azure 存储服务用于移动方案，在这类方案中，应用程序在设备上存储一部分数据，并将其与存储在云中的完整数据集进行同步。
 
-Azure 存储服务支持使用各种操作系统（包括 Windows 和 Linux）及各种编程语言（包括 .NET、Java 和 C++）的客户端以方便开发。Azure 存储服务还通过简单的 REST API 公开数据资源，这些 REST API 可供能够通过 HTTP/HTTPS 发送和接收数据的任何客户端使用。
+Azure 存储服务支持使用各种操作系统（包括 Windows 和 Linux）及各种编程语言（包括 .NET、Java、Node.js、Python、Ruby、PHP、C++ 和移动编程语言）的客户端以方便开发。Azure 存储服务还通过简单的 REST API 公开数据资源，这些 REST API 可供能够通过 HTTP/HTTPS 发送和接收数据的任何客户端使用。
 
 Azure 高级存储提供高性能、低延迟的磁盘支持，适合在 Azure 虚拟机上运行的 I/O 密集型工作负载。有了 Azure 高级存储，你就可以将多个持久性数据磁盘附加到虚拟机，并根据性能要求对其进行配置。每个数据磁盘在 Azure 高级存储中都有一个后备 SSD 磁盘，以确保最高的 I/O 性能。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
 ## Azure 存储服务介绍
 
-Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储服务中服务的访问权限。你的存储帐户为你的存储资源提供唯一的命名空间。有两种类型的存储帐户：
+Azure 存储空间提供以下四种服务：Blob 存储、表存储、队列存储和文件存储。
 
-- 标准存储帐户包括 Blob、表、队列和文件存储。
-- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。
+- Blob 存储用于存储非结构化对象数据。Blob 可以是任何类型的文本或二进制数据，例如文档、媒体文件或应用程序安装程序。Blob 存储也称为对象存储。
+- 表存储用于存储结构化数据集。表存储是一个 NoSQL“键-属性”数据存储，可以用于实现快速开发以及快速访问大量数据。
+- 队列存储为云服务的各个组件之间的工作流处理和通信提供可靠的消息传送。
+- 文件存储使用标准 SMB 协议为旧版应用程序提供共享存储。Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件服务 REST API 来访问共享中的文件数据。
 
-你必须具有 Azure 订阅（这是允许你访问各种 Azure 服务的计划），然后才能创建存储帐户。通过单个订阅，你最多可以创建 100 个唯一的命名存储帐户。有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。有关批量定价的详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)。
-
-你可以从[试用版](/pricing/1rmb-trial/)开始使用 Azure。一旦决定购买某个计划，你可以从各种[购买选项](/pricing/purchase-options/)进行选择。
-
-### 标准存储帐户
-
-标准存储帐户可以使你访问 Azure 存储数据服务：Blob 存储、表存储、队列存储和文件存储：
-
-- **Blob 存储**用于存储文件数据。Blob 可以是任何类型的文本或二进制数据，例如文档、媒体文件或应用程序安装程序。Blob 存储也称为对象存储。
-- **表存储**用于存储结构化数据集。表存储是一个 NoSQL“键-属性”数据存储，可以用于实现快速开发以及快速访问大量数据。
-- **队列存储**为云服务的各个组件之间的工作流处理和通信提供可靠的消息传送。
-- **文件存储**使用标准 SMB 协议为旧版应用程序提供共享存储。Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件服务 REST API 来访问共享中的文件数据。
-
-每个标准存储帐户可以容纳高达 500 TB 混合的 Blob、队列、表和文件数据。有关标准存储帐户容量的详细信息，请参阅 [Azure 存储服务可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
-
-下图显示了标准存储帐户中各种 Azure 存储资源之间的关系：
+Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空间中服务的访问权限。你的存储帐户为你的存储资源提供唯一的命名空间。下图显示了存储帐户中各种 Azure 存储资源之间的关系：
 
 ![Azure 存储资源](./media/storage-introduction/storage-concepts.png)
 
-若要了解如何创建标准存储帐户的详细信息，请参阅[创建存储帐户](/documentation/articles/storage-create-storage-account-classic-portal/#create-a-storage-account)。
-
-### 高级存储帐户
-
-Azure 高级存储帐户当前仅支持 Azure 虚拟机磁盘。有关 Azure 高级存储的详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
+[AZURE.INCLUDE [storage-account-types-include](../includes/storage-account-types-include.md)]
 
 [AZURE.INCLUDE [storage-versions-include](../includes/storage-versions-include.md)]
 
 ## Blob 存储
 
-对于有大量非结构化数据要存储在云中的用户，Blob 存储提供了一种经济高效且可伸缩的解决方案。你可以使用 Blob 存储来存储如下内容：
+对于有大量非结构化对象数据要存储在云中的用户，Blob 存储提供了一种经济高效且可伸缩的解决方案。你可以使用 Blob 存储来存储如下内容：
 
 - 文档
 - 社交数据，例如照片、视频、音乐和博客
@@ -91,9 +74,11 @@ Azure 高级存储帐户当前仅支持 Azure 虚拟机磁盘。有关 Azure 高
 
 每个 Blob 都组织到一个容器中。容器还提供了一种有用的方式来向对象组分配安全策略。一个存储帐户可以包含任意数目的容器，一个容器可以包含任意数目的 Blob，直至达到存储帐户的容量限制 500 TB。
 
-Blob 存储提供三种类型的 Blob：块 Blob、追加 Blob 和页 Blob（磁盘）。块 Blob 进行了相应的优化来流化和存储云对象，并且是用于存储文档、介质文件和备份等对象的不错选择。追加 Blob 类似于块 Blob，但针对追加追加操作进行了优化。追加 Blob 仅可以通过将新的块添加到末尾来进行更新。对于需要新数据只能写入到 Blob 结尾的情况，例如日志记录，追加 Blob 是一个不错的选择 。
+Blob 存储提供三种类型的 Blob：块 Blob、追加 Blob 和页 Blob（磁盘）。
 
-页 Blob 进行了相应的优化来表示 IaaS 磁盘和支持随机写入，并且最大可以为 1 TB。Azure 虚拟机网络连接的 IaaS 磁盘是一个 VHD，存储为页 Blob。
+- 块 Blob 进行了相应的优化来流化和存储云对象，并且是用于存储文档、介质文件和备份等对象的不错选择。
+- 追加 Blob 类似于块 Blob，但针对追加追加操作进行了优化。追加 Blob 仅可以通过将新的块添加到末尾来进行更新。对于需要新数据只能写入到 Blob 结尾的情况，例如日志记录，追加 Blob 是一个不错的选择 。
+- 页 Blob 进行了相应的优化来表示 IaaS 磁盘和支持随机写入，并且最大可以为 1 TB。Azure 虚拟机网络连接的 IaaS 磁盘是一个 VHD，存储为页 Blob。
 
 
 
@@ -139,27 +124,46 @@ Azure 文件存储提供了基于云的 SMB 文件共享，这样你可以将依
 
 最后，你可以指定一个容器及其 Blob 或某个特定的 Blob 可供公开访问。当你指定某个容器或 Blob 为公用的时，任何人都可以匿名读取它，不需要进行身份验证。公用容器和 Blob 非常适用于公开在网站上托管的资源，例如媒体和文档。若要降低全球受众的网络延迟，你可以通过 Azure CDN 来缓存网站使用的 Blob 数据。
 
-有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。有关安全访问你的存储帐户的详细信息，请参阅[管理对容器和 blob 的匿名的读取访问](/documentation/articles/storage-manage-access-to-resources/)和 [Azure 存储空间服务的身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。
+有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。有关安全访问你的存储帐户的详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)和 [Azure 存储服务身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。
 
 ## 用于实现持久性和高可用性的复制
 
-[AZURE.INCLUDE [storage-replication-options-include](../includes/storage-replication-options-include.md)]
+始终复制 Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合[存储空间 SLA](/support/legal/sla/storage/) 要求。
+
+
+
+创建存储帐户时，必须选择以下复制选项之一：
+
+- **本地冗余存储 (LRS)。** 本地冗余存储保留数据的三个副本。LRS 将在单个区域中的单个设施内复制三次。LRS 可以保护你的数据免受普通的硬件故障损害，但无法保护你的数据免受单个设施故障的损害。
+  
+	LRS 以折扣价格提供。为获得最大持久性，我们建议你使用下文所述的地域冗余存储。
+
+
+
+- **异地冗余存储 (GRS)。** 默认情况下，在你创建存储帐户时便为存储帐户启用了地域冗余存储。GRS 维护你的数据的六个副本。使用 GRS 时，你的数据将在主区域内复制三次，并且还在离主区域数百英里的辅助区域中复制三次，从而提供最高级别的持久性。当主区域中发生故障时，Azure 存储空间将故障转移到辅助区域。GRS 在两个不同的区域中确保你的数据持久保存。
+
+- **读取访问异地冗余存储 (RA-GRS)。** 读取访问地域冗余存储将你的数据复制到一个辅助地理位置，同时提供对你在辅助位置中的数据的读访问权限。读取访问地域冗余存储允许你从主位置或辅助位置访问数据，以防其中一个位置不可用。
+
+	> [AZURE.IMPORTANT] 创建存储帐户后，你可以更改复制数据的方式。但请注意，如果你从 LRS 切换到 GRS 或 RA-GRS，可能会产生额外的一次性数据传输费用。
+ 
+有关存储复制选项的其他详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy/)。
+
+有关存储帐户复制的定价信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)。
+
+有关 Azure 存储空间持久性的体系结构详细信息，请参阅 [SOSP Paper - Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency（SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务）](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
+
 
 ## 将数据传输到和移出 Azure 存储空间
 
 你可以使用 AzCopy 命令行实用程序复制存储帐户内或跨存储帐户的 blob、文件和表数据。有关详细信息，请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)。
 
-AzCopy 在 [Azure 数据移动库](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)的顶部生成，当前以预览版提供。
+AzCopy 在 [Azure 数据移动库](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)的基础上构建，当前以预览版提供。
 
 
 
 ## 定价
 
-根据以下四个因素向使用 Azure 存储服务的客户收费：使用的存储容量、选择的复制选项、对服务发出的请求数，以及数据流出量。 
-
-存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储服务的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将数据和服务通过分组分到相同的数据中心内，从而降低或避免处理和数据流出量费用。） 
-
-[Azure 存储空间定价](/home/features/storage/pricing/)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfer)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储服务定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
+[AZURE.INCLUDE [storage-account-billing-include](../includes/storage-account-billing-include.md)]
 
 ## 存储 API、库和工具
 
@@ -204,8 +208,10 @@ Azure 存储空间资源可以通过任何发出 HTTP/HTTPS 请求的语言来�
 
 - [Azure 存储文档](/documentation/services/storage/)
 
-### 面向 PowerShell 用户
+### 面向管理员
+
 - [对 Azure 存储服务使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/)
+- [将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli/)
 
 ### 面向 .NET 开发人员
 
@@ -246,4 +252,4 @@ Azure 存储空间资源可以通过任何发出 HTTP/HTTPS 请求的语言来�
 - [如何通过 Python 使用队列存储](/documentation/articles/storage-python-how-to-use-queue-storage/)
 - [如何通过 Python 使用文件存储](/documentation/articles/storage-python-how-to-use-file-storage/)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0711_2016-->
