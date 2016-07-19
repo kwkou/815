@@ -93,4 +93,4 @@ Azure Active Directory 服务提供一组开发人员功能（v2.0 终结点尚�
 - Azure AD 用户的组声明
 - 应用程序角色和角色声明
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

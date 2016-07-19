@@ -1,10 +1,10 @@
-<properties 
+<properties
 	pageTitle="Azure Active Directory 的工作原理 | Azure"
 	description="Azure Active Directory 可在云中创建属于你的标识布局。它可以连接到你的本地标识系统，你也可以单独使用它。"
-	services="active-directory" 
-	documentationCenter="" 
-	authors="curtand" 
-	manager="terrylan" 
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
+	manager="stevenpo"
 	editor=""/>
 
 <tags 
@@ -47,7 +47,6 @@ Azure AD 支持多个最广泛使用的身份验证和授权协议。[了解有�
 ## 其他资源
 
 * [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
-
 * [Azure 标识](/documentation/articles/fundamentals-identity/)
 
 

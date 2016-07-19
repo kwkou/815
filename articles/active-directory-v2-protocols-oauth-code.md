@@ -256,4 +256,4 @@ Access\_token 生存期很短，必须在其过期后刷新，才能继续访问
 | trace\_id | 帮助诊断的请求唯一标识符。 |
 | correlation\_id | 帮助跨组件诊断的请求唯一标识符。 |
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

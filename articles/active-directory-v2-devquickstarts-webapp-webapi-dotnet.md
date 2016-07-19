@@ -62,7 +62,8 @@
 - 打开文件 `App_Start\Startup.Auth.cs` 并为上述库添加 `using` 语句。
 - 在同一个文件中，实现 `ConfigureAuth(...)` 方法。在 `OpenIDConnectAuthenticationOptions` 中提供的参数将充当应用程序与 Azure AD 通信时使用的坐标。
 
-		C#
+C#
+
 		public void ConfigureAuth(IAppBuilder app)
 		{
 		    app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
@@ -109,7 +110,8 @@
 - 在 `App_Start\Startup.Auth.cs` 文件中为 ADAL 添加另一个 `using` 语句。
 - 现在添加一个新方法，即 `OnAuthorizationCodeReceived` 事件处理程序。此处理程序将使用 ADAL 获取待办事项列表 API 的访问令牌，并将 ADAL 令牌缓存中的令牌存储起来以供稍后使用：
 
-		C#
+C#
+
 		private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotification notification)
 		{
 				string userObjectId = notification.AuthenticationTicket.Identity.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
@@ -138,7 +140,8 @@
 
 - 在 `Index` 操作中，使用 ADAL 的 `AcquireTokenSilentAsync` 方法获取可用于读取待办事项列表服务数据的 access\_token：
 
-		C#
+C#
+
 		...
 		string userObjectID = ClaimsPrincipal.Current.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
 		string tenantID = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid").Value;
@@ -154,7 +157,8 @@
 - 此示例接下来将生成的令牌添加到 HTTP GET 请求作为 `Authorization` 标头，让待办事项列表服务用于身份验证请求。
 - 如果待办事项列表服务返回 `401 Unauthorized` 响应，则表示 ADAL 的 access\_tokens 由于某种原因而失效。在此情况下，你应该删除所有来自 ADAL 缓存的 access\_tokens，并向用户显示消息告知可能需要再次登录，而这会重新启动令牌获取流。
 
-		C#
+C#
+
 		...
 		// If the call failed with access denied, then drop the current access token from the cache,
 		// and show the user an error indicating they might need to sign-in again.
@@ -171,15 +175,16 @@
 
 - 同样，如果 ADAL 由于任何原因而无法返回 access\_token，则你应该再次指示用户登录。这就像获取任何 `AdalException` 一样简单：
 
-```C#
-...
-catch (AdalException ee)
-{
-		// If ADAL could not get a token silently, show the user an error indicating they might need to sign in again.
-		return new RedirectResult("/Error?message=An Error Occurred Reading To Do List: " + ee.Message + " You might need to log out and log back in.");
-}
-...
-```
+C#
+		
+		...
+		catch (AdalException ee)
+		{
+				// If ADAL could not get a token silently, show the user an error indicating they might need to sign in again.
+				return new RedirectResult("/Error?message=An Error Occurred Reading To Do List: " + ee.Message + " You might need to log out and log back in.");
+		}
+		...
+
 
 - `Create` 和 `Delete` 操作中执行完全一致的 `AcquireTokenSilentAsync` 调用。在 Web 应用中，只要应用程序有需要，你就可以使用此 ADAL 方法获取 access\_tokens。ADAL 将为你获取、缓存和刷新令牌。
 
@@ -190,8 +195,7 @@ catch (AdalException ee)
 ## 后续步骤
 
 有关更多资源，请查看：
-
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [堆栈溢出“adal”标记 >>](http://stackoverflow.com/questions/tagged/adal)
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD v2.0 NodeJS Web API | Microsoft Azure"
+	pageTitle="Azure AD v2.0 NodeJS Web API | Azure"
 	description="如何构建一个可从个人 Microsoft 帐户和工作或学校帐户接受令牌的 NodeJS Web API。"
 	services="active-directory"
 	documentationCenter="nodejs"
@@ -74,7 +74,8 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 在安装 Restify 时，你可能会看到类似于下面的内容：
 
-		Shell
+Shell
+	
 		clang: error: no such file or directory: 'HD/azuread/node_modules/restify/node_modules/dtrace-provider/libusdt'
 		make: *** [Release/DTraceProviderBindings.node] Error 1
 		gyp ERR! build error
@@ -216,7 +217,8 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 在偏好的编辑器中创建 `server.js` 文件，然后添加以下信息：
 
-		Javascript
+Javascript
+
 		'use strict';
 		/**
 		* Module dependencies.
@@ -244,7 +246,8 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 在偏好的编辑器中创建 `config.js` 文件，然后添加以下信息：
 
-		Javascript
+Javascript
+
 		// Don't commit this file to your public repos. This config is for first-run
 		exports.creds = {
 		mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
@@ -259,9 +262,9 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 ### 所需值
 
-“IdentityMetadata”：passport-azure-ad 将在此处查找适用于 IdP 的配置数据，以及用来验证 JWT 令牌的密钥。如果你使用 Azure Active Directory，则可能不想更改此项。
+*IdentityMetadata*：passport-azure-ad 将在此处查找适用于 IdP 的配置数据，以及用来验证 JWT 令牌的密钥。如果你使用 Azure Active Directory，则可能不想更改此项。
 
-“audience”：来自门户的重定向 URI。
+*audience*：来自门户的重定向 URI。
 
 > [AZURE.NOTE]
 我们会频繁滚动更新密钥。请确保始终从“openid\_keys”URL 提取密钥，并且应用程序能够访问 Internet。
@@ -277,12 +280,14 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 在偏好的编辑器中打开 `server.js` 文件，并添加以下信息：
 
-		Javascript
+Javascript
+
 		var config = require('./config');
 
 然后，在 `server.js` 中替换包含以下代码的新节：
 
-		Javascript
+Javascript
+
 		// We pass these options in to the ODICBearerStrategy.
 		var options = {
 		// The URL of the metadata document for your app. We will put the keys for token validation from the URL found in the jwks_uri tag of the in the metadata.
@@ -303,9 +308,9 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 现在，我们已将这三个文件统一放在 REST API 服务中，接下来让我们的准备工作发挥作用。
 
-对于本演练，我们将使用 MongoDB 来存储“步骤 4” 中所述的任务。
+对于本演练，我们将使用 MongoDB 来存储***步骤 4*** 中所述的任务。
 
-回顾我们在步骤 11 中创建的 config.js 文件，我们将数据库称为 “tasklist”，因为这是我们在 mogoose\_auth\_local 连接 URL 的末尾放置的内容。你无需事先在 MongoDB 中创建此数据库，当你首次运行服务器应用程序时，系统将创建此数据库（假定它不存在）。
+回顾我们在步骤 11 中创建的 config.js 文件，我们将数据库称为 *tasklist*，因为这是我们在 mogoose\_auth\_local 连接 URL 的末尾放置的内容。你无需事先在 MongoDB 中创建此数据库，当你首次运行服务器应用程序时，系统将创建此数据库（假定它不存在）。
 
 现在，我们已告诉服务器要使用哪个 MongoDB 数据库，接下来我们需要编写一些附加的代码，以便为服务器任务创建模型和架构。
 
@@ -313,13 +318,13 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 我们的架构模型非常简单，你可以根据需要对其进行扩展。
 
-NAME - 分配到任务的用户名。一个“字符串”。
+NAME - 分配到任务的用户名。一个**字符串**。
 
-TASK - 任务本身。一个“字符串”。
+TASK - 任务本身。一个**字符串**。
 
-DATE - 任务截止日期。一个“日期时间”
+DATE - 任务截止日期。一个**日期时间**
 
-COMPLETED - 任务是否已完成。一个“布尔值”
+COMPLETED - 任务是否已完成。一个**布尔值**
 
 #### 在代码中创建架构
 
@@ -330,7 +335,8 @@ COMPLETED - 任务是否已完成。一个“布尔值”
 
 在偏好的编辑器中打开 `server.js` 文件，并在配置条目下面添加以下信息：
 
-		Javascript
+Javascript
+
 		// MongoDB setup
 		// Setup some configuration
 		var serverPort = process.env.PORT || 8080;
@@ -346,7 +352,8 @@ COMPLETED - 任务是否已完成。一个“布尔值”
 
 在上面编写的代码下面，添加以下代码：
 
-		Javascript
+Javascript
+
 		// Here we create a schema to store our tasks and users. Pretty simple schema for now.
 		var TaskSchema = new Schema({
 		owner: String,
@@ -370,7 +377,8 @@ Restify 中路由的工作原理，与使用 Express 堆栈时的路由工作原
 
 Restify 路由的典型模式是：
 
-		Javascript
+Javascript
+
 		function createObject(req, res, next) {
 		// do work on Object
 		_object.name = req.params.object; // passed value is in req.params under object
@@ -394,7 +402,8 @@ Restify 路由的典型模式是：
 
 在偏好的编辑器中打开 `server.js` 文件，并在前面创建的数据库条目下面添加以下信息：
 
-		Javascript
+Javascript
+
 		/**
 		*
 		* APIs for our REST Task server
@@ -500,7 +509,8 @@ Restify 路由的典型模式是：
 
 在前面编写的代码下面添加以下代码：
 
-		Javascript
+Javascript
+
 		///--- Errors for communicating something interesting back to the client
 		function MissingTaskError() {
 		restify.RestError.call(this, {
@@ -543,7 +553,8 @@ Restify 路由的典型模式是：
 
 Restify（和 Express）允许你对 REST API 执行大量的深度自定义，但同样，我们在本演练中将使用最基本的设置。
 
-		Javascript
+Javascript
+
 		/**
 		* Our Server
 		*/
@@ -576,7 +587,8 @@ Restify（和 Express）允许你对 REST API 执行大量的深度自定义，�
 
 ## 15：添加路由（目前不包括身份验证）
 
-		Javascript
+Javascript
+
 		/// Now the real handlers. Here we just CRUD
 		/**
 		/*
@@ -646,7 +658,8 @@ Restify（和 Express）允许你对 REST API 执行大量的深度自定义，�
 
 `$ curl -isS http://127.0.0.1:8080 | json`
 
-	Shell
+Shell
+
 	HTTP/1.1 200 OK
 	Connection: close
 	Content-Type: application/json
@@ -669,7 +682,8 @@ Restify（和 Express）允许你对 REST API 执行大量的深度自定义，�
 
 响应应为：
 
-		Shell
+Shell
+
 		HTTP/1.1 201 Created
 		Connection: close
 		Access-Control-Allow-Origin: *
@@ -701,7 +715,8 @@ Restify（和 Express）允许你对 REST API 执行大量的深度自定义，�
 
 首先，需指出要使用 Passport。在其他服务器配置之后紧接着执行此操作：
 
-		Javascript
+Javascript
+
 		// Let's start using Passport.js
 		
 		server.use(passport.initialize()); // Starts passport
@@ -713,7 +728,8 @@ Restify（和 Express）允许你对 REST API 执行大量的深度自定义，�
 
 接下来，我们将使用随附在 passport-azure-ad 中的 Open ID Connect Bearer 策略。先看看下面的代码，稍后我将进行解释。将此代码放在上面粘贴的内容后面：
 
-		Javascript
+Javascript
+
 		/**
 		/*
 		/* Calling the OIDCBearerStrategy and managing users
@@ -767,7 +783,8 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 让我们在服务器代码编辑路由，以做一些更有趣的事：
 
-		Javascript
+Javascript
+
 		server.get('/tasks', passport.authenticate('oidc-bearer', {
 		session: false
 		}), listTasks);
@@ -820,7 +837,8 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 `$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`
 
-		Shell
+Shell
+
 		HTTP/1.1 401 Unauthorized
 		Connection: close
 		WWW-Authenticate: Bearer realm="Users"
@@ -848,8 +866,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 [使用 v2.0 终结点保护 Node.js Web 应用 >>](/documentation/articles/active-directory-v2-devquickstarts-node-web/)
 
 有关更多资源，请查看：
-
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

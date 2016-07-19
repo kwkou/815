@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD v2.0 NodeJS Web 应用 | Microsoft Azure"
+	pageTitle="Azure AD v2.0 NodeJS Web 应用 | Azure"
 	description="如何构建一个使用个人 Microsoft 帐户和工作或学校帐户来登录用户的 Node JS Web 应用。"
 	services="active-directory"
 	documentationCenter="nodejs"
@@ -70,14 +70,15 @@
 在这里，我们要将 Express 中间件配置为使用 OpenID Connect 身份验证协议。Passport 将用于发出登录和注销请求、管理用户的会话、获取有关用户的信息，等等。
 
 -	首先，打开位于项目根目录中的 `config.js` 文件，并在 `exports.creds` 节中输入应用程序的配置值。
-    -	`clientID:` 是在注册门户中为应用分配的“应用程序 ID”。
-    -	`returnURL` 是在门户中输入的“重定向 URI”。
+    -	`clientID:` 是在注册门户中为应用分配的**应用程序 ID**。
+    -	`returnURL` 是在门户中输入的**重定向 URI**。
     - `clientSecret` 是在门户中生成的机密。
 
 - 接下来，打开项目根目录中的 `app.js` 文件，并添加以下调用以调用 `passport-azure-ad` 随附的 `OIDCStrategy` 策略
 
 		
-		JavaScript
+JavaScript
+
 		var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
 		
 		// Add some logging
@@ -88,7 +89,8 @@
 
 - 然后，使用我们刚刚提到的策略来处理登录请求
 
-		JavaScript
+JavaScript
+
 		// Use the OIDCStrategy within Passport. (Section 2)
 		//
 		//   Strategies in passport require a `validate` function, which accept
@@ -132,7 +134,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 - 接下来，让我们添加方法，以便根据 Passport 的要求，持续跟踪已登录的用户。这包括将用户信息序列化和反序列化：
 
-		JavaScript
+JavaScript
 		
 		// Passport session setup. (Section 2)
 		
@@ -168,7 +170,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 - 接下来，让我们添加可加载 Express 引擎的代码。在此处，你将看到我们使用了 Express 提供的默认 /views 和 /routes 模式。
 
-		JavaScript
+JavaScript
 		
 		// configure Express (Section 2)
 		
@@ -195,7 +197,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 - 最后，让我们添加 POST 路由，以将实际登录请求递交到 `passport-azure-ad` 引擎：
 
-		JavaScript
+JavaScript
 		
 		// Our Auth routes (Section 3)
 		
@@ -245,7 +247,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 - 首先，让我们在 `app.js` 文件中添加 default、login、account 和 logout 方法：
 
-		JavaScript
+JavaScript
 		
 		//Routes (Section 4)
 		
@@ -280,7 +282,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 - 对于 `app.js` 的最后一个部分，让我们添加上述 `/account` 中使用的 EnsureAuthenticated 方法。
 
-		JavaScript
+JavaScript
 		
 		// Simple route middleware to ensure user is authenticated. (Section 4)
 		
@@ -310,7 +312,7 @@ app.listen(3000);
 
 - 在根目录下创建 `/routes/index.js` 路由。
 
-		JavaScript
+JavaScript
 		
 		/*
 		 * GET home page.
@@ -323,7 +325,7 @@ app.listen(3000);
 
 - 在根目录下创建 `/routes/user.js` 路由
 
-		JavaScript
+JavaScript
 		
 		/*
 		 * GET users listing.
@@ -338,7 +340,8 @@ app.listen(3000);
 
 - 在根目录下创建 `/views/index.ejs` 视图。这是一个简单的页面，将调用我们的登录和注销方法，并允许我们捕获帐户信息。请注意，如果在请求中传递的用户证明我们拥有已登录的用户，就能使用条件性 `if (!user)`。
 
-		JavaScript
+JavaScript
+
 		<% if (!user) { %>
 			<h2>Welcome! Please log in.</h2>
 			<a href="/login">Log In</a>
@@ -351,7 +354,8 @@ app.listen(3000);
 
 - 在根目录下创建 `/views/account.ejs` 视图，以便能够查看 `passport-azuread` 放置在用户请求中的其他信息。
 
-		Javascript
+Javascript
+
 		<% if (!user) { %>
 			<h2>Welcome! Please log in.</h2>
 			<a href="/login">Log In</a>
@@ -370,7 +374,7 @@ app.listen(3000);
 
 - 最后，可以通过添加布局，使视图变得美观。在根目录下创建 '/views/layout.ejs' 视图
 
-		HTML
+HTML
 		
 		<!DOCTYPE html>
 		<html>
@@ -413,8 +417,7 @@ app.listen(3000);
 [使用 v2.0 终结点保护 node.js Web API >>](/documentation/articles/active-directory-v2-devquickstarts-node-api/)
 
 有关更多资源，请查看：
-
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

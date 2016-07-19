@@ -62,7 +62,8 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 - 将名为 `Startup.cs` 的 OWIN 启动类添加到 TodoListService 项目。右键单击项目，选择“添加”-->“新建项”，然后搜索“OWIN”。当你的应用程序启动时，该 OWIN 中间件将调用 `Configuration(…)` 方法。
 - 将类声明更改为 `public partial class Startup` - 我们已在另一个文件中实现了此类的一部分。在 `Configuration(…)` 方法中，调用 ConfgureAuth(...) 以设置 Web 应用的身份验证。
 
-		C#
+C#
+
 		public partial class Startup
 		{
 		    public void Configuration(IAppBuilder app)
@@ -74,7 +75,8 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 - 打开文件 `App_Start\Startup.Auth.cs` 并实现 `ConfigureAuth(…)` 方法，以便将 Web API 设置为接受来自 v2.0 终结点的令牌。
 
-		C#
+C#
+
 		public void ConfigureAuth(IAppBuilder app)
 		{
 				var tvps = new TokenValidationParameters
@@ -111,7 +113,8 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 - 现在，你可以使用 `[Authorize]` 属性并结合 OAuth 2.0 持有者身份验证来保护控制器和操作。使用 authorize 标记修饰 `Controllers\TodoListController.cs` 类。这会强制用户在访问该页面之前登录。
 
-		C#
+C#
+
 		[Authorize]
 		public class TodoListController : ApiController
 		{
@@ -119,7 +122,8 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 - 如果已授权的调用方成功调用了某个 `TodoListController` API，该操作可能需要访问有关调用方的信息。OWIN 通过 `ClaimsPrincpal` 对象提供对持有者令牌中的声明的访问。  
 
-		C#
+C#
+
 		public IEnumerable<TodoItem> Get()
 		{
 		    // You can use the ClaimsPrincipal to access information about the
@@ -161,4 +165,4 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

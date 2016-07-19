@@ -34,7 +34,7 @@ v2.0 终结点可让你快速地将身份验证添加桌面应用，同时支持
 本教程末尾也提供完成的应用。
 
 ## 注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 - 为应用添加**移动**平台。
@@ -60,7 +60,8 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 
 -	在 `TodoListClient` 项目中，打开 `MainWindow.xaml.cs` 并找到 `OnInitialized(...)` 方法。第一步是初始化应用程序的 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标，并告诉 ADAL 如何缓存令牌。
 
-		C#
+C#
+
 		protected override async void OnInitialized(EventArgs e)
 		{
 				base.OnInitialized(e);
@@ -73,7 +74,8 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 
 - 当应用程序启动时，我们希望检查并查看用户是否已登录应用。但是，我们不想在此时调用登录 UI，而是让用户单击“登录”才执行此操作。另外，请在 `OnInitialized(...)` 方法中：
 
-		C#
+C#
+
 		// As the app starts, we want to check to see if the user is already signed in.
 		// You can do so by trying to get a token from ADAL, passing in the parameter
 		// PromptBehavior.Never.  This forces ADAL to throw an exception if it cannot
@@ -113,7 +115,8 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 
 - 如果用户未登录而按下“登录”按钮，我们希望调用登录 UI 并让用户输入其凭据。实现“登录”按钮处理程序：
 		
-		C#
+C#
+
 		private async void SignIn(object sender = null, RoutedEventArgs args = null)
 		{
 				// TODO: Sign the user out if they clicked the "Clear Cache" button
@@ -160,7 +163,8 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 
 - 如果用户成功登录，ADAL 将为你接收和缓存令牌，然后你可以放心地继续调用 `GetTodoList()` 方法。获取用户任务的剩余步骤是实现 `GetTodoList()` 方法。
 
-		C#
+C#
+
 		private async void GetTodoList()
 		{
 				AuthenticationResult result = null;
@@ -209,7 +213,8 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 
 - When the user is done managing their To-Do List, they may finally sign out of the app by clicking the "Clear Cache" button.
 
-		C#
+C#
+
 		private async void SignIn(object sender = null, RoutedEventArgs args = null)
 		{
 				// If the user clicked the 'clear cache' button,
@@ -250,4 +255,4 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [堆栈溢出“adal”标记 >>](http://stackoverflow.com/questions/tagged/adal)
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->
