@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="FAQ - Microsoft Azure"
     description=""
     services=""
     documentationCenter=""

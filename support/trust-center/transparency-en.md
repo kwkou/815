@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="Transparency - Microsoft Azure"
     description=""
     services=""
     documentationCenter=""

@@ -1,6 +1,6 @@
 <properties
-	pageTitle=""
-    description=""
+	pageTitle="Offer Details - Microsoft Azure"
+    description="Offer Details - 1 RMB Trial Offer"
     services=""
     documentationCenter=""
     authors=""
@@ -31,9 +31,13 @@ If you spend 1,500 RMB or at the end of one month (whichever comes first), your 
 
 This offer is limited to one offer per new customer. For example, the same paying account (including UnionPay and Alipay) can only be used to pay once for this offer. Violation of this policy may result in termination of your subscription, deletion of all Customer Data, and forfeiture of the 1 RMB payment.
 
+[Apply for 1RMB Trial >](/pricing/1rmb-trial/)
+
 ##Conversion to Paid Offer
 
 You may convert your trial subscription into a  [Standard Pay-In-Advance](https://www.azure.cn/offers/ms-mc-arz-33p/) subscription by adding additional funds of 1,000 RMB or more. Your Azure Credits will be increased by the amount of the additional funds you add and are valid for 12 months. You may make subsequent additions of funds that will be valid for 12 months from the date of purchase, but this will not extend Azure Credits previously purchased and any Azure Credits not used within 12 months of their purchase will be forfeited.
+
+[Pay In Advance Now >](/pricing/pia/)
 
 ##Payment Options & Pricing Details
 
@@ -96,5 +100,5 @@ Any quota described in the Usage Quotas section is not a commitment that there w
 For any subscriptions of this offer that are not incurring charges and are inactive for over 90 days, we reserve the right to remove any compute resources including hosted service(s), virtual machines and websites. Please note that no data would be deleted and customers can redeploy at any time. We will also provide advance notice prior to removing any compute resources.
 
 You can also avoid having your Compute resources removed by doing either of the following every 90 days:
-•Log into the management [portal](https://manage.windowsazure.cn/)
-•Access your hosted service(s) via our Azure APIs
+- Log into the management [portal](https://manage.windowsazure.cn/)
+- Access your hosted service(s) via our Azure APIs

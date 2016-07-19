@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="Compliance - Microsoft Azure"
     description=""
     services=""
     documentationCenter=""

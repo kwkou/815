@@ -1,6 +1,6 @@
 <properties
-	pageTitle=""
-    description=""
+	pageTitle="beta 试用 - Microsoft Azure"
+    description="beta 试用 - 优惠项目详情"
     services=""
     documentationCenter=""
     authors=""

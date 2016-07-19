@@ -1,5 +1,5 @@
 <properties
-	pageTitle=""
+	pageTitle="Privacy - Microsoft Azure"
     description=""
     services=""
     documentationCenter=""

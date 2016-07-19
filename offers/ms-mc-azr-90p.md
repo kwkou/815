@@ -1,6 +1,6 @@
 <properties
-	pageTitle=""
-    description=""
+	pageTitle="优惠详情 - Microsoft Azure"
+    description="优惠详情 - Windows Server Essentials 客户优惠"
     services=""
     documentationCenter=""
     authors=""
