@@ -11,7 +11,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="02/08/2016"
-	ms.author="sumuth"/>
+	wacn.date="07/18/2016"/>
 
 # ClearDB MySql 数据库搭配 Azure App Service 的 FAQ
 

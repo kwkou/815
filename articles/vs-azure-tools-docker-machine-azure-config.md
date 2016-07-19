@@ -9,7 +9,7 @@
 <tags
    ms.service="multiple"
    ms.date="06/08/2016"
-   wacn.date="" />
+   wacn.date="07/18/2016" />
 
 # 使用 Docker-Machine 在 Azure 中创建 Docker 主机
 
