@@ -16,16 +16,20 @@
 ![流程导航](./media/azure-1rmb-trial-application-and-signup/process-guide-new.PNG)
 
 ## 1. 在 Azure 官网 www.azure.cn ，点击”申请试用“，我们就可以开始申请了。
-
-|	|	|
-|---|---|
-|![申请试用](./media/azure-1rmb-trial-application-and-signup/01.png) | ![申请试用](./media/azure-1rmb-trial-application-and-signup/02.png) |
-
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><img src="./media/azure-1rmb-trial-application-and-signup/01.png" /></td>
+	<td><img src="./media/azure-1rmb-trial-application-and-signup/02.png" /></td>
+  </tr>
+</table>
 ## 2. 来到 Azure 试用申请表页面，进行简单的手机验证即可进入下一步。
-|	|	|
-|---|---|
-|![申请试用](./media/azure-1rmb-trial-application-and-signup/03.png) | ![申请试用](./media/azure-1rmb-trial-application-and-signup/04.png) |
- 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><img src="./media/azure-1rmb-trial-application-and-signup/03.png" /></td>
+	<td><img src="./media/azure-1rmb-trial-application-and-signup/04.png" /></td>
+  </tr>
+</table>
+
 >[AZURE.NOTE]：每位新客户仅有一次享受本优惠的机会。比如同一个付费账户（包括银联及支付宝账户）只能购买一次。
 
 ## 3. 然后来到身份查验页面，你可以根据需要选择“个人申请“或”企业申请”。
@@ -34,9 +38,17 @@
 
 ## 4. 快速填写好信息后，就可以“提交”了。
 
-|	|	|
-|---|---|
-|![提交](./media/azure-1rmb-trial-application-and-signup/06.png)<br /> 个人申请|![提交](./media/azure-1rmb-trial-application-and-signup/07.png)<br /> 企业申请 |
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><img src="./media/azure-1rmb-trial-application-and-signup/06.png" /></td>
+	<td><img src="./media/azure-1rmb-trial-application-and-signup/07.png" /></td>
+  </tr>
+  <tr>
+    <td style="text-align:center">个人申请</td>
+	<td style="text-align:center">企业申请</td>
+  </tr>
+</table>
+
 
 ## 5. 到这里，申请流程已经完成一半，收到世纪互联的邮件通知后快速注册在线支付就可完成了。
 
@@ -55,21 +67,30 @@
 ![登录](./media/azure-1rmb-trial-application-and-signup/11.png)
 
 ## 9. 到最后一步了，你可以选择支付宝或银联在线支付。
-
-|	|	|
-|---|---|
-|![在线支付](./media/azure-1rmb-trial-application-and-signup/12.png) |![在线支付](./media/azure-1rmb-trial-application-and-signup/13.png) |
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><img src="./media/azure-1rmb-trial-application-and-signup/12.png" /></td>
+	<td><img src="./media/azure-1rmb-trial-application-and-signup/13.png" /></td>
+  </tr>
+</table>
 
 ## 10. 支付成功后，系统自动带你来到账户管理页面，通过“查看信用额度状态”可以看到账户的信用额度为 1500 元人民币，现在可以开始使用喽。
-|	|	|
-|---|---|
-|![查看信用额度状态](./media/azure-1rmb-trial-application-and-signup/14.png) |![查看信用额度状态](./media/azure-1rmb-trial-application-and-signup/15.png) |
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><img src="./media/azure-1rmb-trial-application-and-signup/14.png" /></td>
+	<td><img src="./media/azure-1rmb-trial-application-and-signup/15.png" /></td>
+  </tr>
+</table>
 
 
 试用期间随时可以为账户进行充值续航。
 
-|	|	|
-|---|---|
-|![充值续航](./media/azure-1rmb-trial-application-and-signup/16.png) |![充值续航](./media/azure-1rmb-trial-application-and-signup/17.png) |
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><img src="./media/azure-1rmb-trial-application-and-signup/16.png" /></td>
+	<td><img src="./media/azure-1rmb-trial-application-and-signup/17.png" /></td>
+  </tr>
+</table>
+
  
  
