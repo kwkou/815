@@ -91,7 +91,7 @@
 
 4. 通过指定此帐户为服务主体并提供凭据对象来以服务主体身份登录。
 
-        Add-AzureRmAccount -Credential $creds -ServicePrincipal -TenantId $subscription.TenantId
+        Add-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $creds -ServicePrincipal -TenantId $subscription.TenantId
         
      现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
 
@@ -135,7 +135,7 @@
 
 3. 登录到你的 Azure 帐户。
 
-        Add-AzureRmAccount
+        Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 4. 在目录中创建一个应用程序。
 
@@ -199,7 +199,7 @@
 
 若要在脚本中进行身份验证，请指定帐户为服务主体，并提供证书指纹、应用程序 ID 和租户 ID。
 
-    Add-AzureRmAccount -ServicePrincipal -CertificateThumbprint {thumbprint} -ApplicationId {applicationId} -TenantId {tenantid}
+    Add-AzureRmAccount -EnvironmentName AzureChinaCloud -ServicePrincipal -CertificateThumbprint {thumbprint} -ApplicationId {applicationId} -TenantId {tenantid}
 
 现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
 

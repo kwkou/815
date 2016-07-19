@@ -1,31 +1,30 @@
-<!-- Remove azure portal -->
 <properties
-   pageTitle="使用 Azure CLI 对部署进行故障排除 | Azure"
-   description="介绍如何使用 Azure CLI 来检测和解决资源管理器部署的问题。"
+   pageTitle="使用 Azure CLI 查看部署操作 | Azure"
+   description="介绍如何使用 Azure CLI 来检测 Resource Manager 部署的问题。"
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""
    tags="top-support-issue"
    authors="tfitzmac"
    manager="timlt"
-   editor=""/>
+   editor="tysonn"/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="03/21/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="06/13/2016"
+   wacn.date="07/18/2016"/>
 
-# 使用 Azure CLI 对资源组部署进行故障排除
+# 使用 Azure CLI 查看部署操作
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/resource-manager-troubleshoot-deployments-powershell)
-- [Azure CLI](/documentation/articles/resource-manager-troubleshoot-deployments-cli)
-- [REST API](/documentation/articles/resource-manager-troubleshoot-deployments-rest)
+- [PowerShell](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)
+- [Azure CLI](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)
+- [REST API](/documentation/articles/resource-manager-troubleshoot-deployments-rest/)
 
-如果在将资源部署到 Azure 时发生错误，你需要进行故障排除。Azure CLI 提供命令来让你查找错误并确定可能的解决方法。
+如果你在将资源部署到 Azure 时收到错误，可能想要查看有关已执行的部署操作的更多详细信息。Azure CLI 提供命令来让你查找错误并确定可能的解决方法。
 
-可以通过查看审核日志或部署操作来对部署进行故障排除。本主题将演示这两种方法。
+[AZURE.INCLUDE [resource-manager-troubleshoot-introduction](../includes/resource-manager-troubleshoot-introduction.md)]
 
-如果部署之前先验证模板和基础结构，则可以避免一些错误。有关详细信息，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy)。
+如果部署之前先验证模板和基础结构，则可以避免一些错误。你还可以在部署过程中记录其他请求和响应信息，以方便以后进行故障排除。若要了解有关验证和记录请求和响应信息的内容，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy-cli/)。
 
 ## 使用审核日志进行故障排除
 
@@ -103,7 +102,7 @@
         data:    ---------------  ------  ------------
         data:    siteName         String  ExampleSite
         data:    hostingPlanName  String  ExamplePlan
-        data:    siteLocation     String  West US
+        data:    siteLocation     String  China East
         data:    sku              String  Free
         data:    workerSize       String  0
         info:    group deployment show command OK
@@ -115,7 +114,8 @@
 
 ## 后续步骤
 
-- 若要了解如何使用审核日志来监视其他类型的操作，请参阅 [Audit operations with Resource Manager（使用资源管理器执行审核操作）](/documentation/articles/resource-group-audit)。
+- 有关解决特定部署错误的帮助，请参阅 [Resolve common errors when deploying resources to Azure with Azure Resource Manager（解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误）](/documentation/articles/resource-manager-common-deployment-errors)。
+- 若要了解如何使用审核日志来监视其他类型的操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit)。
 - 若要在执行部署之前验证部署，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy)。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0711_2016-->
