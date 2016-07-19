@@ -1,7 +1,7 @@
 > [AZURE.SELECTOR] 
-- [Java](/documentation/articles/notification-hubs-java-backend-how-to/)
-- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs/)
-- [PHP](/documentation/articles/notification-hubs-php-backend-how-to/)
-- [Python](/documentation/articles/notification-hubs-python-backend-how-to/)
+- [Java](/documentation/articles/notification-hubs-java-push-notification-tutorial/)
+- [Node.js](/documentation/articles/notification-hubs-nodejs-push-notification-tutorial/)
+- [PHP](/documentation/articles/notification-hubs-php-push-notification-tutorial/)
+- [Python](/documentation/articles/notification-hubs-python-push-notification-tutorial/)
 
 <!---HONumber=82-->

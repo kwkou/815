@@ -164,7 +164,7 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/library/microsoft.servicebus.notifications.aspx
   [App Service Mobile Apps]: /documentation/articles/app-service-mobile-value-prop/
-  [模板]: /documentation/articles/notification-hubs-templates-cross-platform-push-messages-cross-platform-push-messages
+  [模板]: /documentation/articles/notification-hubs-templates-cross-platform-push-messages
   [Azure 门户]: https://portal.azure.cn
   [标记]: http://msdn.microsoft.com/library/azure/dn530749.aspx
 

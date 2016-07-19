@@ -1,5 +1,5 @@
 
-本节演示了如何从 .NET 控制台应用以及其他任何应用发送通知。如果你使用的是移动服务，请参阅[推送入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/)教程。如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/zh-cn/documentation/articles/notification-hubs-java-backend-how-to/)。你可使用[通知中心 REST 接口]通过任何后端发送通知。
+本节演示了如何从 .NET 控制台应用以及其他任何应用发送通知。如果你使用的是移动服务，请参阅[推送入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/)教程。如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/zh-cn/documentation/articles/notification-hubs-java-push-notification-tutorial/)。你可使用[通知中心 REST 接口]通过任何后端发送通知。
 
 以下代码可将通知发送到 Windows 应用商店、Windows Phone、iOS 和 Android 设备。
 
@@ -91,7 +91,7 @@
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [通知中心 REST 接口]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx
 
 <!---HONumber=82-->

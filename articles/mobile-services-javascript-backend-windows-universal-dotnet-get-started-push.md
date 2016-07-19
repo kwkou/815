@@ -100,7 +100,7 @@
 
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
 
-[什么是通知中心？]: /documentation/articles/notification-hubs-overview/
+[什么是通知中心？]: /documentation/articles/notification-hubs-push-notification-overview/
 
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030

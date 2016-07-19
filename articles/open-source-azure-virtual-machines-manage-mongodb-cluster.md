@@ -42,8 +42,8 @@
 ##	<a name="introduction"></a>介绍
 MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍如何在 Azure 虚拟机上配置管理 MongoDB 集群。
 ## <a name="install-MongoDB"></a>在虚拟机上手动安装 MongoDB
-如果您还没有 Azure Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 创建 Linux 虚拟机。
-如果这是您第一次使用 Azure 的 Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 如何使用虚拟机。
+如果您还没有 Azure Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 创建 Linux 虚拟机。
+如果这是您第一次使用 Azure 的 Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 如何使用虚拟机。
 
 不同的 Linux 发行版在安装 MongoDB 时有少许不同，请根据您的 Linux 版本选择对应的步骤。
 

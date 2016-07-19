@@ -23,7 +23,7 @@
 - [使用移动服务同步脱机数据](/documentation/articles/mobile-services-ios-get-started-offline-data/)
 - [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication/)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
-- [使用影像发送推送通知至 iOS8](/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push/)
+- [使用影像发送推送通知至 iOS8](/documentation/articles/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich/)
 - [通过媒体服务使用视频和音频流](/documentation/articles/media-services-use-ios-media-player-framework/)
 
 ##教程
@@ -52,8 +52,8 @@
 
 ###推送
 
-- [使用通知中心发送推送通知](/documentation/articles/notification-hubs-ios-get-started/)
-- [使用通知中心广播通知](/documentation/articles/notification-hubs-ios-send-breaking-news/)
+- [使用通知中心发送推送通知](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/)
+- [使用通知中心广播通知](/documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
 
 查看服务： [通知中心](/documentation/services/notification-hubs)

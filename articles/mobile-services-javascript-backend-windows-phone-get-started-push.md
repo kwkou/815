@@ -178,7 +178,7 @@
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 
-[什么是通知中心？]: /documentation/articles/notification-hubs-overview/
+[什么是通知中心？]: /documentation/articles/notification-hubs-push-notification-overview/
 
  
 

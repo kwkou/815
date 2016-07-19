@@ -128,7 +128,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 2. 创建虚拟机
 
-	创建虚拟机和连接虚拟机的操作请参考[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/)。
+	创建虚拟机和连接虚拟机的操作请参考[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/)。
 
 
 3. LB的安装配置
