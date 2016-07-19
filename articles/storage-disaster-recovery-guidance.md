@@ -21,15 +21,11 @@ Azure 一直努力确保所提供的服务始终可用。但有时候，各种�
 
 每个客户都应准备好自己的灾难恢复计划，这很重要。从存储中断进行恢复时，通常需要操作人员和自动化过程的参与，目的是在正常运行状态下重新激活你的应用程序。制定你自己的灾难恢复计划时，请参阅以下 Azure 文档：
 
--   [Disaster Recovery and High Availability for Azure Applications（Azure 应用程序的灾难恢复和高可用性）](https://msdn.microsoft.com/zh-cn/library/azure/dn251004.aspx)
-
--   [Azure 业务连续性技术指南](https://msdn.microsoft.com/zh-cn/library/azure/hh873027.aspx)
-
 -   [Azure Site Recovery 服务](/home/features/site-recovery/)
 
 -   [Azure 存储空间复制](/documentation/articles/storage-redundancy/)
 
--   [Azure 备份服务](/home/features/backup/)
+-   [Azure 备份服务](/home/features/back-up/)
 
 ## 如何检测 
 
@@ -70,7 +66,7 @@ Azure 一直努力确保所提供的服务始终可用。但有时候，各种�
 
 可以通过一些推荐的方法定期备份你的存储数据。
 
--   VM 磁盘 – 使用 [Azure 备份服务](/home/features/backup/)备份 Azure虚拟机使用的 VM 磁盘。
+-   VM 磁盘 – 使用 [Azure 备份服务](/home/features/back-up/)备份 Azure虚拟机使用的 VM 磁盘。
 
 -   块 Blob – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/)、[Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) 或 [Azure 数据移动库](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)创建每个块 Blob 的[快照](https://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)，或者将 Blob 复制到其他区域的其他存储帐户。
 
