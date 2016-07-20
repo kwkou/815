@@ -10,9 +10,9 @@
 
 <tags ms.service="" ms.date="" wacn.date="" wacn.lang="cn"/>
 
-![流程导航](./media/azure-pia-application-and-signup/banner.png)
+![流程导航](./media/azure-pia-application-and-signup/banner.PNG)
 
-![流程导航](./media/azure-pia-application-and-signup/process-guide-new.png)
+![流程导航](./media/azure-pia-application-and-signup/process-guide-new.PNG)
 
 
 ## 1. 在 Azure 官网 www.azure.cn，点击”我要购买“，我们就可以开始申请了。
