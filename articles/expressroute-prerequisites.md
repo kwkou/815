@@ -38,9 +38,6 @@
 
 使用点到点以太网提供商连接到 Azure 的客户必须为每个对等互连配置冗余 BGP 会话，以符合可用性 SLA 要求。连接服务提供商可能会提供此项增值服务。有关限制的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings/)一文中的路由域表。
 
-## 安全与防火墙
-
-有关安全与防火墙信息，请参阅<!-- [-->Microsoft 云服务和网络安全<!--](/documentation/articles/best-practices-network-security/)-->一文。
 
 ## 后续步骤
 

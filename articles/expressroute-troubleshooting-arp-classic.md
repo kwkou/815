@@ -14,7 +14,7 @@
 #ExpressRoute 故障排除指南 - 在经典部署模型中获取 ARP 表
 
 > [AZURE.SELECTOR]
-[PowerShell - Resource Manager](/documentation/articles/expressroute-troubleshooting-arp-resourcemanager)
+[PowerShell - Resource Manager](/documentation/articles/expressroute-troubleshooting-arp-resource-manager)
 [PowerShell - Classic](/documentation/articles/expressroute-troubleshooting-arp-classic)
 
 本文将指导你完成相关步骤，以便了解 ExpressRoute 线路的 ARP 表。
