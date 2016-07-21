@@ -71,7 +71,12 @@
 若要获取“帐户名”和“帐户密钥”信息，请打开“Azure 经典管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
 
-<configuration> ... <appSettings> <add key="MediaServicesAccountName" value="Media-Services-Account-Name" /> <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /> </appSettings>
+	<configuration> 
+		... 
+		<appSettings> 
+			<add key="MediaServicesAccountName" value="Media-Services-Account-Name" /> 
+			<add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /> 
+		</appSettings>
 	  
 	</configuration>
 
