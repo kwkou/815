@@ -85,7 +85,7 @@
 
 <!--Other Web references-->
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
-[SQL 数据仓库定价]: /home/features/sql-data-warehouse/pricing/
+[SQL 数据仓库定价]: /pricing/details/sql-data-warehouse/
 [Azure 试用版]: /pricing/1rmb-trial/
 [MSDN Azure 信用额度]: /pricing/member-offers/
 

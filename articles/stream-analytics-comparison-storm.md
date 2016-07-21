@@ -119,7 +119,7 @@
                     流分析通过处理的数据量以及流式处理单位的数目（作业每小时运行的）来定价。
                 </p>
                 <p>
-                    <a href="/home/features/stream-analytics/pricing/">更多定价信息可在此处找到。</a>
+                    <a href="/pricing/details/stream-analytics/">更多定价信息可在此处找到。</a>
                 </p>
             </td>
             <td width="246" valign="top">
@@ -127,7 +127,7 @@
                     就 Apache Storm on HDInsight 来说，采购单位是根据群集计算的，而收费则根据群集所运行的时间来计算，与部署的作业无关。
                 </p>
                 <p>
-                    <a href="/home/features/hdinsight/pricing/">更多定价信息可在此处找到。</a>
+                    <a href="/pricing/details/hdinsight/">更多定价信息可在此处找到。</a>
                 </p>
             </td>
         </tr>

@@ -26,7 +26,7 @@
 	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
 - 在运行时，你也可以向外缩放群集，而无需重建群集。如下所示。![scaleout\_1][image-hdi-optimize-hive-scaleout_2]
 
-有关 HDInsight 支持的不同虚拟机的详细信息，请参阅 [HDInsight 定价](/home/features/hdinsight/pricing/)。
+有关 HDInsight 支持的不同虚拟机的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
 
 ##启用 Tez
 

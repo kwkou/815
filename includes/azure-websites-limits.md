@@ -4,7 +4,7 @@
 计算实例类型|共享|共享|专用<sup>3</sup>|专用<sup>3</sup>
 [横向扩展](/documentation/articles/web-sites-scale/)（最大实例数）|1 个共享|1 个共享|3 个专用<sup>3</sup>|10 个专用<sup>3</sup>
 存储<sup>5</sup>|1 GB<sup>5</sup>|1 GB<sup>5</sup>|10 GB<sup>5</sup>|50 GB<sup>5</sup>
-CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费率](/home/features/web-site/pricing/)</a>付费|无限制，按标准费率付费
+CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费率](/pricing/details/web-site/)</a>付费|无限制，按标准费率付费
 内存（1 小时）|每个 App Service 计划 1024 MB|每个应用 1024 MB|不适用|不适用
 带宽|165 MB|无限制，收取[数据传输费率](/pricing/details/data-transfer/)|无限制，收取数据传输费率|无限制，收取数据传输费率
 应用程序体系结构|32 位|32 位|32 位/64 位|32 位/64 位
@@ -25,7 +25,7 @@ SLA||<p>|99\.9%|99\.95%<sup>9</sup>
 
 <sup>1</sup>除非特别说明，否则应用和存储配额依每个 App Service 计划为准。  
 <sup>2</sup>你可以在这些计算机上托管的应用的实际数目取决于应用的活动、计算机实例的大小和相应的资源利用率。  
-<sup>3</sup>专用实例可有不同的大小。请参阅 [Azure Web 应用定价](/home/features/web-site/pricing/)以了解更多详细信息。可通过提出支持请求获得其他实例。   
+<sup>3</sup>专用实例可有不同的大小。请参阅 [Azure Web 应用定价](/pricing/details/web-site/)以了解更多详细信息。可通过提出支持请求获得其他实例。   
 <sup>5</sup>存储限制是跨相同 App Service 计划中所有应用的内容总大小。可以通过提出支持请求增加存储限制。  
 <sup>6</sup>这些资源受到专用实例上的物理资源（实例大小和实例数）的限制。  
 <sup>7</sup>如果你将基本层的某个应用扩展为两个实例，则其中每个实例有 350 个并发连接。  

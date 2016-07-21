@@ -12,6 +12,6 @@
 | CPU 容量 | 60 分钟/每天 | 不受限制 | 不受限制 |
 | 出站数据传输 | 每天 165 MB（每日滚动更新） | 附送 | 附送 |
 
-有关这些限制的更多详细信息以及有关定价的信息，请参阅[移动服务定价](/home/features/mobile-services/pricing/)。
+有关这些限制的更多详细信息以及有关定价的信息，请参阅[移动服务定价](/pricing/details/mobile-services/)。
 
 <!---HONumber=71-->

@@ -40,7 +40,7 @@
 
 - 本地实时编码器将多比特率 **RTMP** 或“平滑流”（分片 MP4）发送到经配置可以进行“直通”传递的通道。“直通”传递是指引入的流将会直接通过“通道”，而不会经过任何进一步的处理。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder (FMLE)、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的频道，并不建议这样做。收到请求时，媒体服务会将该流传递给客户。
 
-	>[AZURE.NOTE] 当你需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，则可使用直通这种最经济的方法来实时传送视频流。请参见[定价](/home/features/media-services/pricing/)详细信息。
+	>[AZURE.NOTE] 当你需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，则可使用直通这种最经济的方法来实时传送视频流。请参见[定价](/pricing/details/media-services/)详细信息。
 	
 	
 - 本地实时编码器（采用以下格式之一：RTMP 或平滑流式处理（分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的频道。RTP (MPEG-TS) 也是支持的，但前提是你有到 Azure 数据中心的专用连接。以下提供 RTMP 输出的实时编码器可以使用此类型的通道：Telestream Wirecast、FMLE。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传递给客户。
@@ -61,7 +61,7 @@
 单比特率输入在云中被编码为多比特率|否|是
 最大分辨率，层数|1080p，8 层，60+fps|720p，6 层，30 fps
 输入协议|RTMP、平滑流|RTMP、平滑流和 RTP
-价格|请参阅[定价页](/home/features/media-services/pricing/)并单击“实时视频”选项卡|请参阅[定价页](/home/features/media-services/pricing/) 
+价格|请参阅[定价页](/pricing/details/media-services/)并单击“实时视频”选项卡|请参阅[定价页](/pricing/details/media-services/) 
 最长运行时间|全天候运行|8 小时
 支持插入静态图像|否|是
 支持发出广告指示|否|是

@@ -32,7 +32,7 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMware 站点之间提供实�
 2. 单击“数据服务”>“恢复服务”>“Site Recovery 保管库”。
 3. 单击“新建”>“快速创建”。
 4. 在“名称”中，输入一个友好名称以标识此保管库。
-5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 Azure Site Recovery 价格详细信息中的[“地域可用性”](/home/features/site-recovery/pricing/)。
+5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 Azure Site Recovery 价格详细信息中的[“地域可用性”](/pricing/details/site-recovery/)。
 
 检查状态栏以确认保管库已成功创建。保管库将以“活动”形式列在主要的“恢复服务”页上。
 

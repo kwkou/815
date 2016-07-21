@@ -26,7 +26,7 @@
 | **标准** | 大多数云应用程序的首选选项，支持多个并发查询。示例包括工作组或 Web 应用程序。 |
 | **高级** | 专为高事务量设计，支持大量并发用户，并且需要最高级别的业务连续性功能。示例包括支持任务关键型应用程序的数据库。 |
 
->[AZURE.NOTE] Web Edition 和 Business Edition 已停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/home/features/sql-database/pricing//web-business)。
+>[AZURE.NOTE] Web Edition 和 Business Edition 已停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/pricing/details/sql-database//web-business)。
 
 ## 单一数据库服务层和性能级别
 对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层，**且不会给应用程序造成任何中断。** 
@@ -55,7 +55,7 @@
 [AZURE.INCLUDE [SQL 数据库 DTU 说明](../includes/sql-database-understanding-dtus.md)]
 
 ## 后续步骤
-- [SQL 数据库定价](/home/features/sql-database/pricing/)中提供了有关这些层的价格详细信息。
+- [SQL 数据库定价](/pricing/details/sql-database/)中提供了有关这些层的价格详细信息。
 - 了解有关[弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance/)和[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)的详细信息。
 - 了解如何[监视单一数据库的性能](/documentation/articles/sql-database-single-database-monitor/)。
 - 现在，你已了解有关 SQL 数据库层的信息，欢迎单击“试用”来试用这些[层](/pricing/1rmb-trial)，并了解[如何创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started/)。

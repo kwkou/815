@@ -5,7 +5,7 @@
 - 高性能
 
 下表显示网关类型和估计的聚合吞吐量。
-网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway/pricing/)。此表适用于 Resource Manager 与经典部署模型。
+网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/pricing/details/vpn-gateway/)。此表适用于 Resource Manager 与经典部署模型。
 
 
 | | **VPN 网关吞吐量** | **VPN 网关最大 IPsec 隧道数** | **ExpressRoute 网关吞吐量** | **VPN 网关和 ExpressRoute 共存**|

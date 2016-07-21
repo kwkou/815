@@ -85,7 +85,7 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started/
 [Git]: /documentation/articles/web-sites-publish-source-control/
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate/
-[Azure Web 应用定价详细信息]: /home/features/web-site/pricing/
+[Azure Web 应用定价详细信息]: /pricing/details/web-site/
 [对用户进行身份验证]: /documentation/articles/web-sites-authentication-authorization/
 [简易身份验证]: https://azure.microsoft.com/zh-cn/blog/2014/11/13/azure-websites-authentication-authorization/
 [为用户授权]: /documentation/articles/web-sites-authentication-authorization/

@@ -106,7 +106,7 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 
 [自定义域]: /documentation/articles/web-sites-custom-domain-name/
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate/
-[Azure Web 应用定价详细信息]: /home/features/web-site/pricing/
+[Azure Web 应用定价详细信息]: /pricing/details/web-site/
 
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
 [将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn/

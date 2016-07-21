@@ -60,7 +60,7 @@
 
 ## 定价
 
-有关定价详细信息，请参阅[计划程序定价](/home/features/scheduler/pricing/)。
+有关定价详细信息，请参阅[计划程序定价](/pricing/details/scheduler/)。
 
 ## 另请参阅
  
