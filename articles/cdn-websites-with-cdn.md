@@ -382,7 +382,7 @@
           bundles.UseCdn = true;
           var version = System.Reflection.Assembly.GetAssembly(typeof(Controllers.HomeController))
             .GetName().Version.ToString();
-          var cdnUrl = "http://<yourCDNName>.azureedge.net/{0}?v=" + version;
+          var cdnUrl = "http://<yourCDNName>.azureedge.net/{0}?" + version;
 
           bundles.Add(new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "bundles/jquery")).Include(
                 "~/Scripts/jquery-{version}.js"));
@@ -413,13 +413,14 @@
 
 	相当于：
 
-		new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "http://<yourCDNName>.azureedge.net/bundles/jquery?v=<W.X.Y.Z>"))
+		new ScriptBundle("~/bundles/jquery", string.Format(cdnUrl, "http://<yourCDNName>.azureedge.net/bundles/jquery?<W.X.Y.Z>"))
 
 	进行本地调试时，此构造函数会指示 ASP.NET 绑定和缩减功能呈现各个脚本文件，但会使用指定的 CDN 地址来访问相关脚本。不过，请注意这个仔细编写的 CDN URL 存在两个重要的特征：
 	
-	- 此 CDN URL 的源是 `http://<yourSiteName>.chinacloudsites.cn/bundles/jquery?v=<W.X.Y.Z>`，这实际上是 Web 应用程序中脚本捆绑包的虚拟目录。
+	- 此 CDN URL 的源是 `http://<yourSiteName>.chinacloudsites.cn/bundles/jquery?<W.X.Y.Z>`，这实际上是 Web 应用程序中脚本捆绑包的虚拟目录。
 	- 由于你使用的是 CDN 构造函数，因此捆绑包的 CDN 脚本标记不再包含在呈现的 URL 中自动生成的版本字符串。每次对脚本捆绑包进行修改而造成 Azure CDN 中出现缓存未命中的情况时，你都必须手动生成唯一的脚本字符串。同时，这个唯一的版本字符串在部署过程中必须保持不变，以便在捆绑包部署完以后，最大程度地提高 Azure CDN 中的缓存命中率。
-	- 查询字符串 v=<W.X.Y.Z> 的功能是从 ASP.NET 项目中的 *Properties\\AssemblyInfo.cs* 进行拉取。你可以建立一个部署工作流，这样当你每次将相关内容发布到 Azure 时，程序集版本就会递增一次。你也可以使用通配符“ * ”直接修改项目中的 *Properties\\AssemblyInfo.cs*，以便每次进行构建时让版本字符串自动递增。例如：
+  
+3. 查询字符串 v=<W.X.Y.Z> 的功能是从 ASP.NET 项目中的 *Properties\\AssemblyInfo.cs* 进行拉取。你可以建立一个部署工作流，这样当你每次将相关内容发布到 Azure 时，程序集版本就会递增一次。你也可以使用通配符“ * ”直接修改项目中的 *Properties\\AssemblyInfo.cs*，以便每次进行构建时让版本字符串自动递增。例如，像以下展示的改变 `AssemblyVersion`：
 
 			[assembly: AssemblyVersion("1.0.0.*")]
 	
@@ -430,11 +431,11 @@
 4. 查看页面的 HTML 代码。每次重新发布对 Azure Web 应用的更改时，你都应该能够看到所呈现的 CDN URL，其中包含唯一版本字符串。例如：
 	
         ...
-        <link href="http://az673227.azureedge.net/Content/css?v=1.0.0.25449" rel="stylesheet"/>
-        <script src="http://az673227.azureedge.net/bundles/modernizer?v=1.0.0.25449"></script>
+        <link href="http://az673227.azureedge.net/Content/css?1.0.0.25449" rel="stylesheet"/>
+        <script src="http://az673227.azureedge.net/bundles/modernizer?1.0.0.25449"></script>
         ...
-        <script src="http://az673227.azureedge.net/bundles/jquery?v=1.0.0.25449"></script>
-        <script src="http://az673227.azureedge.net/bundles/bootstrap?v=1.0.0.25449"></script>
+        <script src="http://az673227.azureedge.net/bundles/jquery?1.0.0.25449"></script>
+        <script src="http://az673227.azureedge.net/bundles/bootstrap?1.0.0.25449"></script>
         ...
 
 5. 在 Visual Studio 中，键入 `F5` 即可调试 ASP.NET 应用程序。
@@ -520,13 +521,13 @@
 5. 查看页面的 HTML 代码。你会发现如下所示的已注入脚本：    
 
 		...
-		<link href="http://az673227.azureedge.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
+		<link href="http://az673227.azureedge.net/Content/css?1.0.0.25474" rel="stylesheet"/>
 			<script>(function() {
         	        var loadFallback,
         	            len = document.styleSheets.length;
         	        for (var i = 0; i < len; i++) {
         	            var sheet = document.styleSheets[i];
-        	            if (sheet.href.indexOf('http://az673227.azureedge.net/Content/css?v=1.0.0.25474') !== -1) {
+        	            if (sheet.href.indexOf('http://az673227.azureedge.net/Content/css?1.0.0.25474') !== -1) {
         	                var meta = document.createElement('meta');
         	                meta.className = 'sr-only';
         	                document.head.appendChild(meta);
@@ -540,13 +541,13 @@
         	        return true;
         	    }())||document.write('<script src="/Content/css"><\/script>');</script>
 
-		<script src="http://az673227.azureedge.net/bundles/modernizer?v=1.0.0.25474"></script>
+		<script src="http://az673227.azureedge.net/bundles/modernizer?1.0.0.25474"></script>
  		<script>(window.Modernizr)||document.write('<script src="/bundles/modernizr"><\/script>');</script>
 		... 
-		<script src="http://az673227.azureedge.net/bundles/jquery?v=1.0.0.25474"></script>
+		<script src="http://az673227.azureedge.net/bundles/jquery?1.0.0.25474"></script>
 		<script>(window.jquery)||document.write('<script src="/bundles/jquery"><\/script>');</script>
 
- 		<script src="http://az673227.azureedge.net/bundles/bootstrap?v=1.0.0.25474"></script>
+ 		<script src="http://az673227.azureedge.net/bundles/bootstrap?1.0.0.25474"></script>
  		<script>($.fn.modal)||document.write('<script src="/bundles/bootstrap"><\/script>');</script>
 		...
 

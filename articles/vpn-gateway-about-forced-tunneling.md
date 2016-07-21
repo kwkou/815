@@ -126,15 +126,15 @@
 
 	下面的 cmdlet 示例将默认路由添加到在步骤 1 中创建的路由表。请注意，唯一支持的路由是“0.0.0.0/0”到“VPN 网关”下一跃点的目标前缀。
  
-		Set-AzureRoute –RouteTableName "MyRouteTable" –RouteName "DefaultRoute" –AddressPrefix "0.0.0.0/0" –NextHopType VPNGateway
+		Set-AzureRoute –RouteTable "MyRouteTable" –RouteName "DefaultRoute" –AddressPrefix "0.0.0.0/0" –NextHopType VPNGateway
 
 1. 将路由表关联到子网。
 
 	创建路由表并添加路由后，可以使用以下 cmdlet 将路由表添加到 VNet 子网，或将路由表与 VNet 子网关联。下面的示例将“MyRouteTable”路由表添加到 VNet MultiTier-VNet 的中间层和后端子网。
 
-		Set-AzureSubnetRouteTable -VNetName "MultiTier-VNet" -SubnetName "Midtier" -RouteTableName "MyRouteTable"
+		Set-AzureSubnetRouteTable -VirtualNetworkName "MultiTier-VNet" -SubnetName "Midtier" -RouteTableName "MyRouteTable"
 
-		Set-AzureSubnetRouteTable -VNetName "MultiTier-VNet" -SubnetName "Backend" -RouteTableName "MyRouteTable"
+		Set-AzureSubnetRouteTable -VirtualNetworkName "MultiTier-VNet" -SubnetName "Backend" -RouteTableName "MyRouteTable"
 
 1. 为强制隧道指定默认站点。
 
@@ -149,7 +149,7 @@
 
 **删除路由表：**
 
-	Remove-AzureRouteTable -RouteTableName <routeTableName>
+	Remove-AzureRouteTable -Name <routeTableName>
 
 **列出路由表：**
 
@@ -161,15 +161,15 @@
 
 **从子网中删除路由：**
 
-	Remove-AzureSubnetRouteTable –VNetName <virtualNetworkName> -SubnetName <subnetName>
+	Remove-AzureSubnetRouteTable -VirtualNetworkName <virtualNetworkName> -SubnetName <subnetName>
 
 **列出与子网关联的路由表：**
 	
-	Get-AzureSubnetRouteTable -VNetName <virtualNetworkName> -SubnetName <subnetName>
+	Get-AzureSubnetRouteTable -VirtualNetworkName <virtualNetworkName> -SubnetName <subnetName>
 
 **从 VNet VPN 网关中删除默认站点：**
 
-	Remove-AzureVnetGatewayDefaultSites -VNetName <virtualNetworkName>
+	Remove-AzureVnetGatewayDefaultSite -VNetName <virtualNetworkName>
 
 
 

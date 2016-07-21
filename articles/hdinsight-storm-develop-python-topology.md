@@ -118,7 +118,7 @@ Java 在此处调用 Python，并运行包含实际 Blot 逻辑的脚本。Java 
 
 __若要在本地构建并运行项目__，请使用以下命令：
 
-    lein do clean, run
+    lein clean, run
 
 若要停止拓扑，请使用 __Ctrl+C__。
 

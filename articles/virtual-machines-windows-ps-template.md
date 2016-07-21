@@ -25,7 +25,7 @@
 
 ## 步骤 1：创建模板文件
 
-你可以使用 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates/)中的信息来创建自己的模板。也可以从 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)部署创建的模板。
+你可以使用 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates/)中的信息来创建自己的模板。
 
 1. 打开偏好的文本编辑器，并将以下 JSON 信息复制到名为 *VirtualMachineTemplate.json* 的新文件中：
 
@@ -214,7 +214,7 @@
           }
         }
 
-4. 保存参数文件。
+2. 保存参数文件。
 
 ## 步骤 3：安装 Azure PowerShell
 
@@ -226,7 +226,7 @@
 
 1. 获取可以创建资源的可用位置列表。
 
-	    Get-AzureLocation | sort Name | Select Name
+	    Get-AzureRmLocation | sort DisplayName | Select DisplayName
 
 2. 使用列表中的位置（例如 **China North**）替换 **$locName** 的值。创建变量。
 
@@ -245,7 +245,7 @@
         Tags              :
         ResourceId        : /subscriptions/{subscription-id}/resourceGroups/myrg1
 
-### 步骤 7：使用模板和参数创建资源
+### 步骤 5：使用模板和参数创建资源
 
 1. 将 **$deployName** 的值替换为部署名称。将 **$templatePath** 的值替换为模板文件的路径和名称。将 **$parameterFile** 的值替换为参数文件的路径和名称。创建变量。 
 
@@ -253,7 +253,7 @@
         $templatePath = "template path"
         $parameterFile = "parameter file"
 
-4. 部署模板。
+2. 部署模板。
 
         New-AzureRmResourceGroupDeployment -ResourceGroupName "davidmurg6" -TemplateFile $templatePath -TemplateParameterFile $parameterFile
 

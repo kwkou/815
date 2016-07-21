@@ -17,8 +17,6 @@
 
 Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时你需要一种更通用的语言。Hive 和 Pig 都可让你使用各种编程语言创建用户定义的功能 (UDF)。在本文中，你将了解如何通过 Hive 和 Pig 使用 Python UDF。
 
-> [AZURE.NOTE] 本文中的步骤适用于 HDInsight 群集版本 2.1、3.0、3.1 和 3.2。
-
 ##要求
 
 * HDInsight 群集（基于 Windows）
@@ -154,7 +152,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 		add file wasb:///streaming.py;
 		SELECT TRANSFORM (clientid, devicemake, devicemodel)
-		  USING 'streaming.py' AS
+		  USING 'python streaming.py' AS
 		  (clientid string, phoneLabel string, phoneHash string)
 		FROM hivesampletable
 		ORDER BY clientid LIMIT 50;

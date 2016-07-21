@@ -25,13 +25,7 @@
 
 <br>
 
-
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
-
-
-
 本文提供为 Windows VM 配置 Azure VM 扩展的示例配置。
-
 
 若要了解有关这些扩展的详细信息，请参阅 [Azure VM 扩展概述。](/documentation/articles/virtual-machines-windows-extensions-features/)
 
@@ -98,7 +92,7 @@
               "fileUris": [
                   "http: //Yourstorageaccount.blob.core.chinacloudapi.cn/customscriptfiles/start.ps1"
               ],
-              "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted -start.ps1"
+              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -start.ps1"
           },
           "protectedSettings": {
             "storageAccountName": "yourStorageAccountName",
@@ -125,10 +119,10 @@
                 "fileUris": [
                     "http: //Yourstorageaccount.blob.core.chinacloudapi.cn/customscriptfiles/start.ps1"
                 ],
-                "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted -start.ps1"
+                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -start.ps1"
             },
             "protectedSettings": {
-              "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted -start.ps1",
+              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -start.ps1",
               "storageAccountName": "yourStorageAccountName",
               "storageAccountKey": "yourStorageAccountKey"
             }

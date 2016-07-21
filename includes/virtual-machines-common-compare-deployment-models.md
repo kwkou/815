@@ -84,10 +84,6 @@ Azure 命令行接口 (Azure CLI) 将拥有两种部署模式 - **AzureServiceMa
 
 你已经构建的所有自动化和脚本将继续适用于在 Azure 服务管理模式下创建的现有虚拟机和虚拟网络。然而，必须更新这些脚本以使用新的架构，通过新的 Azure 资源管理器模式来创建相同的资源。
 
-**使用新的 Azure 资源管理器 API 创建的虚拟网络能够连接到我的 Express Route 线路吗？**
-
-目前此操作不受支持。不能将使用新的 Azure 资源管理器 API 创建的虚拟网络连接到 Express Route 线路。以后将支持此功能。
-
 **在哪里可以找到 Azure Resource Manager 模板的示例？**
 
 可以在 [Azure Resource Manager QuickStart Templates](https://github.com/Azure/azure-quickstart-templates/)（Azure Resource Manager 快速启动模板）中找到一系列广泛的初学者模板。

@@ -29,8 +29,6 @@
 
 - SQL Server 2014 Standard
 - SQL Server 2014 Enterprise
-- SQL Server 2016 Standard
-- SQL Server 2016 Enterprise
 
 **数据库配置**：
 

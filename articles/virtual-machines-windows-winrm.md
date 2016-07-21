@@ -56,7 +56,7 @@
 将证书上传到在步骤 1 中创建的密钥保管库之前，需将其转换为 Microsoft.Compute 资源提供程序可识别的格式。以下 PowerShell 脚本将允许你执行该操作
 
 	$fileName = "<Path to the .pfx file>"
-	$fileContentBytes = get-content $fileName -Encoding Byte
+	$fileContentBytes = Get-Content $fileName -Encoding Byte
 	$fileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
 	
 	$jsonObject = @"
@@ -71,13 +71,13 @@
 	$jsonEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
 	
 	$secret = ConvertTo-SecureString -String $jsonEncoded -AsPlainText -Force
-	Set-AzureRmKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValue $secret
+	Set-AzureKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValue $secret
 
 ## 步骤 4：获取密钥保管库中自签名证书的 URL
 
 预配 VM 时，Microsoft.Compute 资源提供程序需要指向密钥保管库中密钥的 URL。这将使 Microsoft.Compute 资源提供程序能够下载密钥，并在 VM 上创建等效证书。
 
-注意：密钥 URL 需要同时包含版本。示例 URL 类似如下
+>[AZURE.NOTE] 密钥 URL 需要同时包含版本。示例 URL 类似如下
 https://contosovault.vault.chinacloudapi.cn:443/secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
 
 
@@ -97,7 +97,7 @@ https://contosovault.vault.chinacloudapi.cn:443/secrets/contososecret/01h9db0df2
 
 #### Azure Resource Manager 模板
 
-通过模板创建 VM 时，将在密钥部分和 winRM 部分中引用该证书，如下所示
+通过模板创建 VM 时，将在密钥部分和 winRM 部分中引用该证书，如下所示：
 
 	"osProfile": {
           ...
@@ -131,8 +131,9 @@ https://contosovault.vault.chinacloudapi.cn:443/secrets/contososecret/01h9db0df2
           }
         },
 
-可在此处找到以上内容的示例模板 - https://azure.microsoft.com/documentation/templates/201-vm-winrm-keyvault-windows
-可在 Github 中找到此模板的源代码 - https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows
+可在此处找到以上内容的示例模板 - [201-vm-winrm-keyvault-windows](https://azure.microsoft.com/documentation/templates/201-vm-winrm-keyvault-windows)
+
+可在 [Github](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows) 中找到此模板的源代码.
 
 >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 

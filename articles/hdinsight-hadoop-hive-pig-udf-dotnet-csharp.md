@@ -22,7 +22,7 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 ##先决条件
 
-* Windows 7、Windows 8 或 Windows 8.1。
+* Windows 7 或更新。
 
 * 以下版本的 Visual Studio：
 
@@ -30,7 +30,7 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 	* 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
 
-	* Visual Studio 2015 预览版
+	* Visual Studio 2015
 
 * HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)
 

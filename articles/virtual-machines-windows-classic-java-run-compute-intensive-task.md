@@ -15,8 +15,8 @@
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
-
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+ 
 借助 Azure，您可以使用虚拟机来处理需要进行大量计算的任务。例如，虚拟机可以处理任务并将结果传送给客户端计算机或移动应用程序。阅读完本文后，你将了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的虚拟机。
 
 本教程假定你知道如何创建 Java 控制台应用程序，而且你可以将库导入 Java 应用程序并生成 Java 存档 (JAR)。假定你不了解 Azure。

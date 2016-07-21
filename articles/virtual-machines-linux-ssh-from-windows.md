@@ -49,10 +49,10 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 
 [本部分](#What-SSH-and-key-creation-programs-do-you-need)的上述内容列出了多个包括适用于 Windows 的 `ssh-keygen` 和 `openssl` 的实用工具。下面列出了几个示例：
 
-### 使用针对 Windows 的 GitHub ###
+### 使用针对 Windows 的 Git ###
 
-1.	从以下位置下载并安装 GitHub for Windows：[https://git-for-windows.github.io/](https://git-for-windows.github.io/)
-2.	从“开始”菜单 >“所有程序”>“GitHub”运行 Git Bash
+1.	从以下位置下载并安装 Git for Windows：[https://git-for-windows.github.io/](https://git-for-windows.github.io/)
+2.	从“开始”菜单 >“所有程序”>“Git Shell”运行 Git Bash
 
 > [AZURE.NOTE] 在运行上述 `openssl` 命令时，可能会遇到以下错误：
 

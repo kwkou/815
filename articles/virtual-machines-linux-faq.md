@@ -46,4 +46,9 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 是的。相关说明请参阅[如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本](/documentation/articles/virtual-machines-linux-specialized-image/)。
 
+## VM 创建以后，我还能给它添加 NIC 吗？
+
+不能。目前，这个只能在创建的时候才能做到。
+
+
 <!---HONumber=Mooncake_0704_2016-->

@@ -18,7 +18,7 @@
 
 如果因为忘记密码、安全外壳 (SSH) 密钥不正确或 SSH 配置出现问题而不能连接到 Azure 上的 Linux 虚拟机，请使用 VMAccessForLinux 扩展通过 Azure CLI 重置密码或 SSH 密钥、修复 SSH 配置以及检查磁盘一致性。
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 [Resource Manager 模型](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
 
 借助 Azure CLI，你可以从命令行接口（Bash、终端、命令提示符）使用 **azure vm extension set** 命令来访问各种命令。运行 **azure help vm extension set** 可了解扩展的详细用法。
 

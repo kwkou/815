@@ -82,7 +82,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 	<tr><td>SQL 数据库名</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中的 Azure SQL 数据库。</td></tr>
 	</table>
 
-	> [AZURE.NOTE]默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 经典管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅 [创建和配置 SQL 数据库][sqldatabase-create-configure]。
+	> [AZURE.NOTE]默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 经典管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅 [创建和配置 SQL 数据库][sqldatabase-get-started]。
 
 
 > [AZURE.NOTE]将值填充到表中。这将有助于学习本教程。
@@ -710,7 +710,6 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 [hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 
-[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/

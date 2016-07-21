@@ -49,7 +49,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
     		operationTimeoutInMilliseconds = "5000" [number]
 		/>
         -->
-		<add name="MySessionStateStore"type="Microsoft.Web.Redis.RedisSessionStateProvider"host="127.0.0.1"accessKey="" ssl="false"/>
+		<add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="127.0.0.1"accessKey="" ssl="false"/>
         </providers>
     </sessionState>
 

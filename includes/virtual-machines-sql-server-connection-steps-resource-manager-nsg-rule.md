@@ -6,9 +6,7 @@
 
 1. 在门户预览中选择“虚拟机”，然后选择你的 SQL Server VM。
 
-2. 单击“所有设置”链接。
-
-3. 展开“网络接口”。
+3. 然后选择“网络接口”。
 
 	![网络接口](./media/virtual-machines-sql-server-connection-steps/rm-network-interface.png)
 
