@@ -34,7 +34,7 @@
 
 以下示例命令演示了如何创建新的空 Runbook。
 
-    $automationAccountName = "MyAutomationAccount"
+    $automationAccountName = "AutomationAccount"
     $runbookName = "Sample-TestRunbook"
     New-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
 
@@ -62,7 +62,7 @@
 
 下面的示例命令演示了如何将脚本文件导入到现有 Runbook 中，然后将其发布。
 
-    $automationAccountName = "MyAutomationAccount"
+    $automationAccountName = "AutomationAccount"
     $runbookName = "Sample-TestRunbook"
     $scriptPath = "c:\runbooks\Sample-TestRunbook.ps1"
 
@@ -85,7 +85,7 @@
 
 可以使用 Windows PowerShell，通过 [Publish-AzureAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/dn690266.aspx) cmdlet 来发布 Runbook。以下示例命令显示了如何发布示例 Runbook。
 
-	$automationAccountName = "MyAutomationAccount"
+	$automationAccountName = "AutomationAccount"
 	$runbookName = "Sample-TestRunbook"
 	
 	Publish-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName

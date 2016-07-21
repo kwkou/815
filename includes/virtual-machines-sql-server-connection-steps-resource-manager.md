@@ -16,6 +16,8 @@
 
 3. 输入 DNS 标签名称。这是一种可通过名称而非 IP 地址直接连接到 SQL Server VM 的 A 记录。
 
+4. 点击 “保存” 按钮
+
 	![dns 标签](./media/virtual-machines-sql-server-connection-steps/rm-dns-label.png)
 
 ###<a name="connect-to-the-database-engine-from-another-computer"></a> 从其他计算机连接到数据库引擎

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="允许从外部访问 Linux VM | Azure"
+   pageTitle="打开 Linux VM 的端口和终结点 | Azure"
    description="了解如何打开端口/创建终结点，以便允许使用 Resource Manager 部署模型和 Azure CLI 从外部访问 Linux VM"
    services="virtual-machines-linux"
    documentationCenter=""
@@ -12,8 +12,8 @@
 	ms.date="05/24/2016"
 	wacn.date="07/11/2016"/>
 
-# 允许从外部访问 VM
-[AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../includes/virtual-machines-common-nsg-quickstart.md)]
+# 打开的端口和终结点
+通过创建网络筛选器可在 Azure 中打开端口或创建终结点，以允许流量到达子网或虚拟机 (VM) 网络接口上的所选端口。这些筛选器（控制入站和出站流量）放置在网络安全组中，并附加到将接收流量的资源。让我们在端口 80 上使用 Web 流量的常见示例。
 
 ## 快速命令
 若要创建网络安全组和规则，需要将 [Azure CLI](/documentation/articles/xplat-cli-install/) 置于 Resource Manager 模式 (`azure config mode arm`)。

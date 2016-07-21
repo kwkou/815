@@ -84,8 +84,8 @@
 5. 运行 **`Set-AzureSubnetRouteTable`** cmdlet 将上面创建的路由表与**后端**子网关联。
 
 		Set-AzureSubnetRouteTable -VirtualNetworkName TestVNet `
-			-SubnetName FrontEnd `
-			-RouteTableName UDR-FrontEnd
+			-SubnetName BackEnd `
+			-RouteTableName UDR-BackEnd
 
 ## 在 FW1 VM 上启用 IP 转发
 若要在 FW1 VM 虚拟机中启用 IP 转发，请按照下面的步骤操作。

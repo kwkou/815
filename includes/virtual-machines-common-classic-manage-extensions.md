@@ -36,9 +36,7 @@ Azure VM 扩展实现了可帮助其他程序在 Azure VM 上正常工作的行�
 
      例如，以下代码示例显示如何使用 PowerShell 列出 **IaaSDiagnostics** 扩展的信息。
 
-        PS C:\PowerShell> Get-AzureVMAvailableExtension -ExtensionName IaaSDiagnostics
-        VERBOSE: 5:09:01 PM - Begin Operation: Get-AzureVMAvailableExtension
-        VERBOSE: 5:09:06 PM - Completed Operation: Get-AzureVMAvailableExtension
+        PS C:\> Get-AzureVMAvailableExtension -ExtensionName IaaSDiagnostics
 
         Publisher                   : Microsoft.Azure.Diagnostics
         ExtensionName               : IaaSDiagnostics

@@ -99,7 +99,7 @@ Storm on HDInsight 附带全天候企业级支持。Storm on HDInsight 也提供
 
 ##实时分析常见用例
 
-以下是你可能使用 Apache storm on HDInsight 的一些常见方案。有关实际方案的信息，请阅读[公司如何使用 Storm](https://storm.incubator.apache.org/documentation/Powered-By.html)。
+以下是你可能使用 Apache storm on HDInsight 的一些常见方案。有关实际方案的信息，请阅读[公司如何使用 Storm](https://storm.apache.org/documentation/Powered-By.html)。
 
 * 物联网 (IoT)
 * 欺诈检测
@@ -152,7 +152,7 @@ HDInsight Tools for Visual Studio 允许 .NET 开发人员以 C# 语言设计和
 
 你遇到的大多数 Java 示例都是无格式 Java 或 Trident。Trident 是一个高级别抽象，可更轻松地执行联接、汇总、分组和筛选等操作。但是，Trident 作用于批量元组，其中原始 Java 解决方案一次将处理一个元组流。
 
-有关 Trident 的详细信息，请参阅 apache.org 上的 [Trident 教程](https://storm.incubator.apache.org/documentation/Trident-tutorial.html)。
+有关 Trident 的详细信息，请参阅 apache.org 上的 [Trident 教程](https://storm.apache.org/documentation/Trident-tutorial.html)。
 
 有关 Java 和 Trident 拓扑的示例，请参阅 [Storm 拓扑示例列表](/documentation/articles/hdinsight-storm-example-topology/)或 HDInsight 群集上的 storm-starter 示例。
 
@@ -204,9 +204,9 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
-[stormtrident]: https://storm.incubator.apache.org/documentation/Trident-API-Overview.html
+[stormtrident]: https://storm.apache.org/documentation/Trident-API-Overview.html
 [samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
-[apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
+[apachetutorial]: https://storm.apache.org/documentation/Tutorial.html
 [gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started/
 
 <!---HONumber=Mooncake_0411_2016-->

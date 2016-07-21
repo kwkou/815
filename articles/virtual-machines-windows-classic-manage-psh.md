@@ -15,6 +15,8 @@
 
 # 使用 Azure PowerShell 管理虚拟机
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+
 每天执行的许多管理 VM 的任务都可通过使用 Azure PowerShell cmdlet 自动执行。本文提供较简单任务的示例命令，并提供演示更复杂任务的命令的文章链接。
 
 >[AZURE.NOTE]如果尚未安装和配置 Azure PowerShell，你可以在[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 这篇文章中获取相关说明。
@@ -39,10 +41,10 @@
 
 >[AZURE.NOTE]可以从显示的 **Get-AzureVM** 命令中获取虚拟机和云服务名称。
 >
-	$svcName="<cloud service name>"
-	$vmName="<virtual machine name>"
-	$localPath="<drive and folder location to store the downloaded RDP file, example: c:\temp >"
-	$localFile=$localPath + "" + $vmname + ".rdp"
+	$svcName = "<cloud service name>"
+	$vmName = "<virtual machine name>"
+	$localPath = "<drive and folder location to store the downloaded RDP file, example: c:\temp >"
+	$localFile = $localPath + "" + $vmname + ".rdp"
 	Get-AzureRemoteDesktopFile -ServiceName $svcName -Name $vmName -LocalPath $localFile -Launch
 
 ## 停止 VM
@@ -66,20 +68,17 @@
 
 若要附加新磁盘，请运行以下命令：
 
-    Add-AzureDataDisk -CreateNew -DiskSizeInGB 128 -DiskLabel "<main>" -LUN <0> -VM <$vm> `
-              | Update-AzureVM
+    Add-AzureDataDisk -CreateNew -DiskSizeInGB 128 -DiskLabel "<main>" -LUN <0> -VM <$vm> | Update-AzureVM
 
 若要附加现有数据磁盘，请运行以下命令：
 
-    Add-AzureDataDisk -Import -DiskName "<MyExistingDisk>" -LUN <0> `
-              | Update-AzureVM
+    Add-AzureDataDisk -Import -DiskName "<MyExistingDisk>" -LUN <0> | Update-AzureVM
 
 若要从 blob 存储中现有的 .vhd 文件附加数据磁盘，请运行以下命令：
 
     Add-AzureDataDisk -ImportFrom -MediaLocation `
               "<https://mystorage.blob.core.chinacloudapi.cn/mycontainer/MyExistingDisk.vhd>" `
-              -DiskLabel "<main>" -LUN <0> `
-              | Update-AzureVM
+              -DiskLabel "<main>" -LUN <0> | Update-AzureVM
 
 ## 创建基于 Windows 的 VM
 

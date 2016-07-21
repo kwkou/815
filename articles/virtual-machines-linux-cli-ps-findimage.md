@@ -14,7 +14,7 @@
    ms.date="03/14/2016"
    wacn.date="05/24/2016"/>
 
-# 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Linux 虚拟机映像
+# 使用 Azure CLI 来选择 Linux 虚拟机映像
 
 [AZURE.INCLUDE [arm-api-version-both](../includes/arm-api-version-both.md)]
 

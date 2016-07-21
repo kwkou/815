@@ -16,7 +16,7 @@
 
 #捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-capture-image/)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](/documentation/articles/virtual-machines-windows-capture-image/)。
 
 本文将演示如何捕获运行 Windows 的 Azure 虚拟机，你可以将它用作映像来创建其他虚拟机。此映像包含操作系统磁盘和任何附加到虚拟机的数据磁盘。由于它不包括网络配置，因此你在使用此映像创建其他虚拟机时，需要进行相关配置。
 
@@ -31,7 +31,7 @@ Azure 将映像存储在**“我的映像”**下。你上载的任何映像都�
 
 > [AZURE.WARNING]此过程会在捕获原始虚拟机后将其删除。
 
-这并不适合作为备份虚拟机的方式。执行此操作的一个可行方法是 Azure 备份，它在特定区域中作为预览版提供。认证合作伙伴提供了其他解决方案。若要了解当前提供的内容，请搜索 Azure 应用商店。
+这并不适合作为备份虚拟机的方式。执行此操作的一个可行方法是 Azure 备份，它在特定区域中作为预览版提供。认证合作伙伴提供了其他解决方案。若要了解当前提供的内容，请搜索 Azure 库或者应用商店。
 
 
 ##捕获虚拟机

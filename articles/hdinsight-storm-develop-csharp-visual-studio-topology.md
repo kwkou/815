@@ -304,7 +304,7 @@ Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流�
 打开 **Program.cs**。重要的方法是 **ITopologyBuilder**，它用于定义提交到 Storm 的拓扑。将 **ITopologyBuilder** 的内容替换为以下代码，以实现上面所述的拓扑。
 
     // Create a new topology named 'WordCount'
-    TopologyBuilder topologyBuilder = new TopologyBuilder("WordCount");
+	TopologyBuilder topologyBuilder = new TopologyBuilder("WordCount" + DateTime.Now.ToString("yyyyMMddHHmmss"));
 
     // Add the spout to the topology.
     // Name the component 'sentences'

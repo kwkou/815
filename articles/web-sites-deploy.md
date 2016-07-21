@@ -29,7 +29,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 常用的 Web 开发工具支持其中的一个或多个部署进程。虽然你选择的工具确定了你可以利用的部署进程，但是由你支配的实际 DevOps 功能取决于部署进程和你选择的特定工具的组合。例如，如果你从[包含 Azure SDK 的 Visual Studio](#vspros) 执行 Web 部署，将在 Visual Studio 中自动执行包还原和 MSBuild。Azure SDK 还提供易于使用的向导
 
 
->[AZURE.NOTE] 这些部署进程并未真正将你的应用可能需要的 Azure 资源（如你的代码）端到端地预配到 Azure 中。你还可以在[使用命令行工具自动部署](#automate)部分中找到用于预配 Azure 资源的其他选项。
+>[AZURE.NOTE] 这些部署进程并未真正将你的应用可能需要的 Azure 资源（如你的代码）端到端地预配到 Azure 中。然而，大部分链接的入门文章都向你展示了如何预配和发布应用。你还可以在[使用命令行工具自动部署](#automate)部分中找到用于预配 Azure 资源的其他选项。
      
 ## <a name="ftp"></a>使用 FTP 通过将文件手动复制到 Azure 进行部署
 如果你习惯于手动将 Web 内容复制到 Web 服务器，可以使用 [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol) 实用工具（如 Windows 资源管理器或 [FileZilla](https://filezilla-project.org/)）来复制文件。
