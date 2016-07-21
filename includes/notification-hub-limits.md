@@ -6,4 +6,4 @@
 | 广播（标签大小） | 10K | 10K | 无限制 |
 | 标签数（广播组） | 3K | 3K 除非广播最多5台设备 | 无限制 |
 
-请参阅[通知中心定价层](/home/features/notification-hubs/pricing/)获得更多关于通知中心限制和价格的信息。
+请参阅[通知中心定价层](/pricing/details/notification-hubs/)获得更多关于通知中心限制和价格的信息。

@@ -73,7 +73,7 @@ MAXSIZE 可介于 250 GB 和 240 TB 之间。服务目标可以介于 DW100 与 
 [ALTER DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204042.aspx
 
 <!--Other Web references-->
-[SQL 数据仓库定价]: /home/features/sql-data-warehouse/pricing/
+[SQL 数据仓库定价]: /pricing/details/sql-data-warehouse/
 [Azure 试用版]: /pricing/1rmb-trial/
 [MSDN Azure 信用额度]: /pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F
 

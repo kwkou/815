@@ -63,7 +63,7 @@
 	- 对于定价层，选择“标准”
 	- 上一个表中的默认大小，或者在**实例大小**中选择所需的大小
 
-> [AZURE.NOTE]Azure 定价计算器不包括运行 SQL Server 2014 Enterprise 的两个虚拟机的 SQL Server 许可证的额外成本。有关详细信息，请参阅[虚拟机定价-SQL](/home/features/virtual-machines/pricing/)。
+> [AZURE.NOTE]Azure 定价计算器不包括运行 SQL Server 2014 Enterprise 的两个虚拟机的 SQL Server 许可证的额外成本。有关详细信息，请参阅[虚拟机定价-SQL](/pricing/details/virtual-machines/)。
 
 ## 部署阶段
 

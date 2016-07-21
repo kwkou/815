@@ -36,7 +36,7 @@
 
     将通过远程桌面使用新名称和密码来登录计算机，因此最好能记下新名称和密码，以免忘记。在 Visual Studio 中创建 Azure 虚拟机之后，可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中更改其大小和其他设置。
 
-    >[AZURE.NOTE] 如果你选择大一点的虚拟机，将会产生额外的费用。详情请参阅[虚拟机价格详情](/home/features/virtual-machines/pricing/)
+    >[AZURE.NOTE] 如果你选择大一点的虚拟机，将会产生额外的费用。详情请参阅[虚拟机价格详情](/pricing/details/virtual-machines/)
 
 1. 在 Visual Studio 中创建的虚拟机需要云服务。在“云服务设置”页上，选择虚拟机的云服务，如果你还没有云服务或想要使用新的云服务，请单击下拉列表中的“<新建...>”。还需要一个存储帐户，因此请在“存储帐户”下拉列表框中选择存储帐户（或创建新的存储帐户）。有关详细信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction/)。
 

@@ -119,7 +119,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 
 在上述预生产参数文件中，**sku** 和 **requestedServiceObjectiveName** 参数为 added，而它们并未添加到开发和测试参数文件。这是因为模板中为这些参数指定了默认值，并且默认值也用于开发和测试环境中，但在预生产环境中用于这些参数的是非默认值。
 
-在预生产环境中将非默认值用于这些参数的原因是要测试生产环境可能偏好的这些参数的值，以便也可以测试这些参数。这些参数全都与应用程序使用的 Azure Web 应用托管计划、**sku** 和 [Azure SQL 数据库](/home/features/sql-database/pricing/)或 **requestedServiceObjectiveName** 相关。不同的 sku 和服务目标名称有不同的成本和功能，并支持不同的服务级别度量量。
+在预生产环境中将非默认值用于这些参数的原因是要测试生产环境可能偏好的这些参数的值，以便也可以测试这些参数。这些参数全都与应用程序使用的 Azure Web 应用托管计划、**sku** 和 [Azure SQL 数据库](/pricing/details/sql-database/)或 **requestedServiceObjectiveName** 相关。不同的 sku 和服务目标名称有不同的成本和功能，并支持不同的服务级别度量量。
 
 下表列出了模板中指定参数的默认值，以及在预生产参数文件中替代默认值的值。
 

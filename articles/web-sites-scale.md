@@ -20,7 +20,7 @@
 
 可在经典管理门户的“缩放”选项卡中轻松地更改模式并进行配置。您可以根据需要向上或向下缩放。这些更改只需数秒即可生效，可影响 Web 托管计划中的所有 Web 应用。无需更改代码或重新部署应用程序。
 
-有关各个 Web 托管计划的定价和功能的信息，请参阅[ Web 应用定价详细信息](/home/features/web-site/pricing/)。
+有关各个 Web 托管计划的定价和功能的信息，请参阅[ Web 应用定价详细信息](/pricing/details/web-site/)。
 
 <a name="scalingsharedorbasic"></a>
 <!-- ===================================== -->
@@ -165,7 +165,7 @@
 
 - “基本”和“标准”Web 托管计划模式提供 Web 终结点监视功能。有关 Wb 终结点监视的详细信息，请参阅[如何监视 Web 应用](/documentation/articles/web-sites-monitor/)。
 
-- 有关 Web 托管计划所有其他功能（包括定价和所有用户（包括开发人员）感兴趣的功能）的详细信息，请参阅[ Web 应用定价详细信息](/home/features/web-site/pricing/)。
+- 有关 Web 托管计划所有其他功能（包括定价和所有用户（包括开发人员）感兴趣的功能）的详细信息，请参阅[ Web 应用定价详细信息](/pricing/details/web-site/)。
 
 <a name="Next Steps"></a>
 ## 后续步骤
@@ -178,11 +178,11 @@
 	
 	[服务级别协议](/support/legal/sla/)
 	
-    [SQL 数据库定价详细信息](/home/features/sql-database/pricing/)
+    [SQL 数据库定价详细信息](/pricing/details/sql-database/)
 	
 	Azure 的[虚拟机](/documentation/articles/virtual-machines-windows-sizes/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小
 	
-	[ Web 应用定价详细信息](/home/features/web-site/pricing/)
+	[ Web 应用定价详细信息](/pricing/details/web-site/)
 
 <!-- LINKS -->
 [vmsizes]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx

@@ -297,8 +297,8 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 有关高级存储与 DS 系列 VM 定价的详细信息，请参阅：
 
-- [Azure 存储定价](/home/features/storage/pricing/)
-- [虚拟机定价](/home/features/virtual-machines/pricing/)
+- [Azure 存储定价](/pricing/details/storage/)
+- [虚拟机定价](/pricing/details/virtual-machines/)
 
 ##<a id="create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk"></a> 为虚拟机数据磁盘创建和使用高级存储帐户
 本部分演示如何使用Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 创建高级存储帐户。另外，还演示了高级存储帐户的示例用例：在使用高级存储帐户时创建虚拟机，并将数据磁盘附加到虚拟机。

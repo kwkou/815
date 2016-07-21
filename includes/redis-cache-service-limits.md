@@ -6,6 +6,6 @@
 | Redis 缓存副本（用于高可用性） | 1 |
 | 启用群集的高级缓存中的分片数 | 10 |
 
-每个定价层的 Azure Redis 缓存限制和大小都不相同。若要查看定价层及其关联的大小，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/pricing/)。
+每个定价层的 Azure Redis 缓存限制和大小都不相同。若要查看定价层及其关联的大小，请参阅 [Azure Redis 缓存定价](/pricing/details/redis-cache/)。
 
 <!---HONumber=Mooncake_0215_2016-->

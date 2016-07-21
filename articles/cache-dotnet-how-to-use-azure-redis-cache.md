@@ -279,7 +279,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 
 
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
-[缓存定价详细信息]: /home/features/redis-cache/pricing/
+[缓存定价详细信息]: /pricing/details/redis-cache/
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 [Azure Redis 缓存概述]: /documentation/services/redis-cache

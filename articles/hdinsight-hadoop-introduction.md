@@ -192,7 +192,7 @@ HDInsight 群集为以下特定于 Hadoop 生态系统的语言提供支持：
 * 群集缩放。群集缩放使你能够更改正在运行的 HDInsight 群集的节点数，而无需删除或重新创建群集。
 * 虚拟网络支持。HDInsight 群集可用于 Azure 虚拟网络，以支持隔离云资源或将云资源与数据中心资源相链接的混合方案。
 
-* 进入成本低。开始[试用](/pricing/1rmb-trial/)或查阅 [HDInsight 定价详细信息](/home/features/hdinsight/pricing/)。
+* 进入成本低。开始[试用](/pricing/1rmb-trial/)或查阅 [HDInsight 定价详细信息](/pricing/details/hdinsight/)。
 
 
 若要详细了解 HDInsight 中的 Hadoop 的优势，请参阅 [HDInsight 的 Azure 功能页][marketing-page]。

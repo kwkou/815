@@ -59,7 +59,7 @@
 
 **先决条件** | **详细信息** 
 --- | ---
-**Azure**| 需要一个 [Azure](https://azure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/home/features/site-recovery/pricing/) 站点恢复定价。 
+**Azure**| 需要一个 [Azure](https://azure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/pricing/details/site-recovery/) 站点恢复定价。 
 **VMM** | 你至少需要一台部署为单独的物理或虚拟服务器（或虚拟群集）的 VMM 服务器。<br/><br/>VMM 服务器应运行安装了最新累积更新的 System Center 2012 R2。<br/><br/>至少需要将一个云配置在所要保护的主 VMM 服务器上，一个云配置在需要用于保护和恢复的辅助 VMM 服务器上<br/><br/>要保护的源云必须包含一个或多个 VMM 主机组。<br/><br/>所有 VMM 云都必须设置 Hyper-V 容量配置文件。<br/><br/>若要详细了解如何设置 VMM 云，请参阅[配置 VMM 云结构](/documentation/articles/site-recovery-best-practices/)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)。
 **Hyper-V** | 你将需要一个或多个位于主站点和辅助站点中的 Hyper-V 群集，以及一个或多个位于源 Hyper-V 群集中的 VM。主位置和辅助位置中的 VMM 主机组应在每个组中有一个或多个 Hyper-V 群集。<br/><br/>主机和目标 Hyper-V 服务器必须至少运行包含 Hyper-V 角色的 Windows Server 2012，并安装了最新更新。<br/><br/>任何包含你所要保护的 VM 的 Hyper-V 服务器都必须位于 VMM 云中。<br/><br/>如果你要在群集中运行 Hyper-V，请注意，如果你的群集是静态的基于 IP 地址的群集，则不会自动创建群集中转站。你需要手动配置群集代理。在 Aidan Finn 的博客文章中[了解详细信息](https://www.petri.com/use-hyper-v-replica-broker-prepare-host-clusters)。
 **SAN 存储** | 使用可以通过 iSCSI 或光纤通道存储复制来宾群集虚拟机的 SAN 复制，或使用共享虚拟硬盘 (vhdx)。<br/><br/>你需要设置两个 SAN 阵列，一个位于主站点，另一个位于辅助站点。<br/><br/>应在阵列之间设置网络基础结构。应该配置对等互连和复制。应该根据存储阵列要求设置复制许可证。<br/><br/>应该在 Hyper-V 主机服务器与存储阵列之间设置网络，使主机能够使用 ISCSI 或光纤通道与存储 LUN 通信。<br/><br/> 查看[支持的存储阵列](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)列表。<br/><br/>应安装存储阵列制造商提供的 SMI-S 提供程序，并且 SAN 阵列应由提供程序管理。按提供程序文档要求设置提供程序。<br/><br/>确保阵列的 SMI-S 提供程序位于某个服务器上，使得 VMM 服务器能够通过 IP 地址或 FQDN 进行经网络的访问。<br/><br/>每个 SAN 阵列应该有一个或多个可以用于此部署的存储池。主站点的 VMM 服务器需管理主阵列，辅助 VMM 服务器将管理辅助阵列。<br/><br/>主站点的 VMM 服务器应管理主阵列，辅助 VMM 服务器应管理辅助阵列。
@@ -147,7 +147,7 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
-5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/home/features/site-recovery/pricing/)中的“地域可用性”。
+5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/pricing/details/site-recovery/)中的“地域可用性”。
 
 6. 单击“创建保管库”。
 

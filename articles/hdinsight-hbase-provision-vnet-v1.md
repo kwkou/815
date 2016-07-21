@@ -126,7 +126,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 	<tr><td>数据节点大小</td><td><p>为数据节点选择 VM 大小。</p></td></tr>
 	<tr><td>Zookeeper 大小</td><td><p>为 Zookeeper 节点选择 VM 大小。</p></td></tr>
 	</table>
-	>[AZURE.NOTE]根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/home/features/hdinsight/pricing/" target="_blank">HDInsight 价格</a>。
+	>[AZURE.NOTE]根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/pricing/details/hdinsight/" target="_blank">HDInsight 价格</a>。
 
 	单击右侧按钮。
 

@@ -147,7 +147,7 @@ CDN HTTPS加速节点的计费信息，会和其他CDN加速节点一样可以�
 
 
 ### 关于CDN HTTPS的价格
-目前Azure CDN HTTPS加速服务包含在高级版当中，具体的计费方式请参见[Azure官方网站](https://www.azure.cn/home/features/cdn/pricing/)。
+目前Azure CDN HTTPS加速服务包含在高级版当中，具体的计费方式请参见[Azure官方网站](https://www.azure.cn/pricing/details/cdn/)。
 
 
 <!--Image references-->

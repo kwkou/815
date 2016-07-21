@@ -4,7 +4,7 @@
 
 另外，您可以使用 Azure Traffic Manager 对您的 Web 应用的传入流量实现负载平衡。有关 Traffic Manager 如何作用于 Web 应用的详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure Web 应用流量][trafficmanager]。
 
-> [WACOM.NOTE] 本任务中的步骤要求您将 Web 应用配置为共享或标准模式，这可能会更改对您的订阅的计费量。有关详细信息，请参阅<a href="/home/features/web-site/pricing/"> Web 应用定价详细信息</a>。
+> [WACOM.NOTE] 本任务中的步骤要求您将 Web 应用配置为共享或标准模式，这可能会更改对您的订阅的计费量。有关详细信息，请参阅<a href="/pricing/details/web-site/"> Web 应用定价详细信息</a>。
 
 本文内容：
 

@@ -53,7 +53,7 @@
 
 >[AZURE.NOTE] 客户体验改善计划 (CEIP) 默认情况下已启用。如果需要，可以在预配虚拟机后自定义或禁用 CEIP。以远程桌面连接到 VM，并运行 **SQL Server 错误和使用报告**实用工具。
 
-除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/home/features/virtual-machines/pricing/)付费。
+除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/pricing/details/virtual-machines/)付费。
 
 为了确定 SQL Server 映像的最佳虚拟机配置设置，请查看 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)。对于生产工作负荷，**DS3** 是 SQL Server Enterprise 版建议的最小虚拟机大小，**DS2** 是标准版建议的最小虚拟机大小。
 

@@ -74,7 +74,7 @@
 
 - VNet 到 VNet 流量通过 Microsoft 网络而不是 Internet 传输。
 
-- 同一区域中的 VNet 到 VNet 流量双向均为免费；跨区域 VNet 到 VNet 出口流量根据源区域的出站 VNet 间数据传输费率收费。有关详细信息，请参阅[定价页](/home/features/vpn-gateway/pricing/)。
+- 同一区域中的 VNet 到 VNet 流量双向均为免费；跨区域 VNet 到 VNet 出口流量根据源区域的出站 VNet 间数据传输费率收费。有关详细信息，请参阅[定价页](/pricing/details/vpn-gateway/)。
 
 
 ## 我应使用哪个步骤集？

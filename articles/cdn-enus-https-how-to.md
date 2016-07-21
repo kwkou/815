@@ -144,7 +144,7 @@ Information about charges for CDN HTTPS acceleration nodes, as for other CDN acc
 
 
 ### CDN HTTPS pricing
-The Azure CDN HTTPS acceleration service is currently included in the premium version. See the [official Azure website](https://www.azure.cn/home/features/cdn/pricing/), for details of pricing and charges.
+The Azure CDN HTTPS acceleration service is currently included in the premium version. See the [official Azure website](https://www.azure.cn/pricing/details/cdn/), for details of pricing and charges.
 
 
 <!--Image references-->

@@ -522,7 +522,7 @@ SAS URL 采用以下格式：
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
 
->[AZURE.NOTE]有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/pricing/)。
+>[AZURE.NOTE]有关定价详细信息，请参阅 [媒体服务定价详细信息](/pricing/details/media-services/)。
 
 若要更改流式处理保留单元数，请执行以下操作：
 	
