@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="05/11/2015" 
-	wacn.date="06/13/2016"/>
+	wacn.date="07/18/2016"/>
 
 # 移动服务中的身份验证入门
 
@@ -86,6 +86,7 @@
 
 In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
  -->
+
 <!-- Anchors. -->
 
 [注册应用程序以进行身份验证并配置移动服务]: #register
@@ -101,7 +102,7 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started/
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users/
-
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push/
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization/
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users/
 [Azure Management Portal]: https://manage.windowsazure.cn/

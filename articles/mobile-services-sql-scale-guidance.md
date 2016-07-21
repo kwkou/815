@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="02/23/2016" 
-	wacn.date="05/23/2016"/>
+	wacn.date="07/18/2016"/>
 
 # 扩展 Azure SQL 数据库支持的移动服务
 
@@ -29,7 +29,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 <a name="Diagnosing"></a>
 ##  诊断问题
 
-如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 经典管理门户]中查看服务的“仪表板”选项卡。以下几点需要验证：
+如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 管理门户]中查看服务的“仪表板”选项卡。以下几点需要验证：
 
 - 用量计量表（包括“API 调用”和“活动设备”计量表）未超出配额
 - “终结点监视”状态指示服务处于上升阶段（仅支持服务正使用标准层以及终结点监视已启用的情况） 
@@ -57,25 +57,25 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 如果您已对不同数据库层有所了解，我们将探讨数据库性能指标，以帮助我们探寻在各层内部以及各层之间进行扩展的原因。
 
-1. 启动 [Azure 经典管理门户]。
+1. 启动 [Azure 管理门户]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
 5. 导航到“监视”选项卡
 6. 确保使用“添加度量值”按钮显示相关度量值。待显示指标包含以下内容
-    - *CPU 百分比*（仅在基本/标准/高级层中显示）
+    - CPU 百分比（仅在基本/标准/高级层中显示）
 
-    - *数据 IO 百分比*（仅在基本/标准/高级层中显示）
-    - *日志 IO 百分比*（仅在基本/标准/高级层中显示）
-    - *存储* 
-7. 当服务遇到问题时，检查高于时窗的指标。 
+    - 数据 IO 百分比（仅在基本/标准/高级层中显示）
+    - 日志 IO 百分比（仅在基本/标准/高级层中显示）
+    - 存储
+7. 当服务遇到问题时，检查高于时窗的指标。
 
-    ![Azure 经典管理门户 - SQL 数据库度量值][PortalSqlMetrics]
+    ![Azure 管理门户 - SQL 数据库度量值][PortalSqlMetrics]
 
 如果指标超出了时间延长期 80% 的利用率，说明存在性能问题。有关数据库利用率的详细信息，请参阅[了解资源用量](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx#Resource)。
 
 如果指标显示数据库的利用率较高，请考虑**将数据库纵向扩展至更高的服务层**，这是缓解问题的第一步。为尽快解决问题，请考虑使用数据库的“缩放”选项卡，对数据库进行缩放。这会增加你的费用。
-![Azure 经典管理门户 - SQL 数据库缩放][PortalSqlScale]
+![Azure 管理门户 - SQL 数据库缩放][PortalSqlScale]
 
 请尽早考虑以下其他缓解步骤：
 
@@ -94,11 +94,11 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 1. 如果你希望为某数据库设置警报，导航到该数据库的“监视”选项卡
 2. 确保如上节所述显示相关指标。
 3. 选择你希望为其设置警报的指标，然后选择“添加规则”
-    ![Azure 经典管理门户 - SQL 警报][PortalSqlAddAlert]
+    ![Azure 管理门户 - SQL 警报][PortalSqlAddAlert]
 4. 提供警报名称及描述
-    ![Azure 经典管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
+    ![Azure 管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
 5. 指定用于警报阈值的值。请考虑使用 **80%**，以便有时间做出反应。此外，请务必指定你主动监控的电子邮箱地址。
-    ![Azure 经典管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
+    ![Azure 管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
 
 有关诊断 SQL 问题的详细信息，请参阅本文末尾的[高级诊断](#AdvancedDiagnosing)。
 
@@ -139,7 +139,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 若要设置 JavaScript 后端中某一列的索引，请执行以下操作：
 
-1. 在 [Azure 经典管理门户]中打开你的移动服务。
+1. 在 [Azure 管理门户]中打开你的移动服务。
 2. 单击“数据”选项卡。
 3. 选择你想要修改的表。
 4. 单击“列”选项卡。
@@ -176,12 +176,12 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 查询数据库时要考虑的以下指南：
 
-- **始终在数据库中执行联接操作。** 你经常需要合并来自两个或更多表的记录，且这些要合并的记录共享相同的字段（称为联接）。此操作涉及到同时从两个表中提取所有实体，然后循环访问所有实体，因此，如果未正确执行此操作，可能会降低效率。此类操作最好在数据库中执行，但有时却很容易误由客户端执行，或者在移动服务代码中执行。
+- **始终在数据库中执行联接操作。** 你经常需要合并来自两个或更多表的记录，且这些要合并的记录共享相同的字段（称为*联接*）。此操作涉及到同时从两个表中提取所有实体，然后循环访问所有实体，因此，如果未正确执行此操作，可能会降低效率。此类操作最好在数据库中执行，但有时却很容易误由客户端执行，或者在移动服务代码中执行。
     - 请不要在应用程序代码中执行联接
     - 请不要在移动服务代码中执行联接。在使用 JavaScript 后端时，请注意，[table 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554210.aspx)不处理联接。请务必直接使用 [mssql 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx)，以确保在数据库中执行联接。有关详细信息，请参阅[联接关系表](/documentation/articles/mobile-services-how-to-use-server-scripts/#joins)。如果使用 .NET 后端，并且通过 LINQ 查询，实体框架将在数据库级别自动处理联接。
 - **实现分页。** 查询数据库有时可能会导致大量记录返回到客户端。为了尽可能减少操作的大小和延迟，请考虑实现分页。
     - 默认情况下，你的移动服务将所有传入的查询限制在大小为 50 的页面中，但您可以手动请求多达 1000 条记录。有关详细信息，请参阅适用于 [Windows 应用商店](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging)、[iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library/#paging)、[Android](/documentation/articles/mobile-services-android-how-to-use-client-library/#paging)、[HTML/JavaScript](/documentation/articles/mobile-services-html-how-to-use-client-library/#paging) 和 [Xamarin](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/#paging) 的“在页中返回数据”。
-    - 通过移动服务代码进行的查询没有默认页面大小。如果您的应用不实现分页，也不用作防御措施，请考虑将默认限制应用于您的查询。在 JavaScript 后端是，对 [query 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx)使用 **take** 运算符。如果你使用 .NET 后端，请考虑以 [Take 方法] (http://msdn.microsoft.com/zh-cn/library/vstudio/bb503062(v=vs.110).aspx) 作为 LINQ 查询的一部分。  
+    - 通过移动服务代码进行的查询没有默认页面大小。如果您的应用不实现分页，也不用作防御措施，请考虑将默认限制应用于您的查询。在 JavaScript 后端是，对 [query 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx)使用 **take** 运算符。如果你使用 .NET 后端，请考虑以 [Take 方法]作为 LINQ 查询的一部分。
 
 有关改进查询设计的详细信息，请参阅本文末尾的[高级查询设计](#AdvancedQuery)。
 
@@ -199,16 +199,16 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 本部分介绍一些更高级的诊断任务，如果上述步骤未完全解决此问题，这些高级任务可能会有所帮助。
 
 ### 先决条件
-若要执行本部分的诊断任务，你需要访问 SQL 数据库的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 经典管理门户**的管理功能。
+若要执行本部分的诊断任务，你需要访问 SQL 数据库的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 管理门户**的管理功能。
 
 SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
 
-Azure 经典管理门户提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
+Azure 管理门户提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
 
 下列步骤向您介绍如何获取关于支持移动服务的 SQL 数据库的连接信息，以及如何使用以下两种工具进行连接。您可以挑选任意一种您喜欢的工具。
 
 #### 获取 SQL 连接信息
-1. 启动 [Azure 经典管理门户]。
+1. 启动 [Azure 管理门户]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
@@ -216,34 +216,34 @@ Azure 经典管理门户提供内置管理体验，虽然限制更多，但无�
 6. 记下“连接到数据库”部分中的服务器地址，例如：*mcml4otbb9.database.chinacloudapi.cn*。
 
 #### SQL Server Management Studio
-1. 导航到“[SQL Server 版本 - Express](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server-editions/sql-server-express.aspx)”
+1. 导航到“SQL Server 版本 - Express”[](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server-editions/sql-server-express.aspx)
 2. 找到“SQL Server Management Studio”部分，然后选择下方的“下载”按钮。
 3. 完成安装步骤，直到成功运行该应用：
 
     ![SQL Server Management Studio][SSMS]
 
 4. 在“连接到服务器”对话框中输入以下值
-    - 服务器名称：*前面获取的服务器地址*
-    - 身份验证：*SQL Server 身份验证*
-    - 登录名：*创建服务器时选择的登录名*
-    - 密码：*创建服务器时选择的密码*
+    - 服务器名称：前面获取的服务器地址
+    - 身份验证：SQL Server 身份验证
+    - 登录名：创建服务器时选择的登录名
+    - 密码：创建服务器时选择的密码
 5. 立即连接。
 
 #### SQL 数据库管理门户
 1. 在数据库的“Azure SQL 数据库”选项卡上，选择“管理”按钮 
 2. 输入下列值对连接进行配置
-    - 服务器：*应预设为正确值*
-    - 数据库：*保留空白*
-    - 用户名：*创建服务器时选择的登录名*
-    - 密码：*创建服务器时选择的密码*
+    - 服务器：应预设为正确值
+    - 数据库：保留空白
+    - 用户名：创建服务器时选择的登录名
+    - 密码：创建服务器时选择的密码
 3. 立即连接。
 
-    ![Azure 经典管理门户 - SQL 数据库][PortalSqlManagement]
+    ![Azure 管理门户 - SQL 数据库][PortalSqlManagement]
 
 <a name="AdvancedDiagnosing" /></a>
 ###  高级诊断
 
-许多诊断任务都可直接在 **Azure 经典管理门户**中轻松完成，但有些高级诊断任务只能通过 **SQL Server Management Studio** 或 **SQL 数据库管理门户**来完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][]。
+许多诊断任务都可直接在 **Azure 管理门户**中轻松完成，但有些高级诊断任务只能通过 **SQL Server Management Studio** 或 **SQL 数据库管理门户**来完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][]。
 
 完成上一部分中的步骤以连接到 SQL Server Management Studio 中的数据库后，请在“对象资源管理器”中选择你的数据库。依次展开“视图”，“系统视图”将显示管理视图列表。若要执行以下查询，请选择“新建查询”（前面已在“对象资源管理器”中选择了数据库），然后粘贴查询并选择“执行”。
 
@@ -260,7 +260,7 @@ Azure 经典管理门户提供内置管理体验，虽然限制更多，但无�
 ####  高级指标
 
 
-如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。无论你使用哪种层，都可以通过 **[sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** 管理视图轻松获取所有度量值。请考虑下列查询：
+如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。无论你使用哪种层，都可以通过 **[sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** 管理视图轻松获取这些指标以及其他指标。请考虑下列查询：
 
     SELECT TOP 10 * 
     FROM sys.resource_stats 
@@ -444,7 +444,7 @@ Azure 经典管理门户提供内置管理体验，虽然限制更多，但无�
 
 <!-- LINKS -->
 
-[Azure 经典管理门户]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
 
 [Azure SQL 数据库文档]: /documentation/services/sql-database/
 [Managing SQL Database using SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409

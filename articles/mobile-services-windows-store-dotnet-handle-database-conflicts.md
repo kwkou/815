@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/21/2016"
-	wacn.date="03/21/2016"/>
+	wacn.date="07/18/2016"/>
 
 # 处理数据库写入冲突
 
@@ -116,10 +116,10 @@
 
 	> [AZURE.NOTE]使用非类型表时，请通过将 Version 标志添加到表的 SystemProperties 来启用乐观并发。
 	>
-	>````` 
-	//Enable optimistic concurrency by retrieving __version
-todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
-	`````
+	>`````
+	>//Enable optimistic concurrency by retrieving __version
+	>todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
+	>`````
 
 
 2. 将 `Version` 属性添加到 `TodoItem` 类后，如果记录自上次查询以来已更改，则在更新期间将通过 `MobileServicePreconditionFailedException` 异常通知应用程序。此异常包括服务器中该项目的最新版本。在共享项目的 MainPage.cs 中，添加以下代码以在 `UpdateToDoItem()` 方法中处理异常。
@@ -190,7 +190,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
 ##测试应用程序中的数据库写入冲突
 
-在本节中，你将生成 Windows 应用商店应用程序包，以便在第二台计算机或虚拟机上安装应用程序。然后，你将在这两台计算机上运行应用程序，并生成写入冲突以测试代码。应用的两个实例将尝试更新同一项目的 **text** 属性，因此需要用户解决该冲突。
+在本节中，你将生成 Windows 应用商店应用程序包，以便在第二台计算机或虚拟机上安装应用程序。然后，你将在这两台计算机上运行应用程序，并生成写入冲突以测试代码。应用的两个实例将尝试更新同一项目的 `text` 属性，因此需要用户解决该冲突。
 
 
 1. 创建 Windows 应用商店应用程序包，以便在第二台计算机或虚拟机上进行安装。为此，请在 Visual Studio 中单击“项目”->“应用商店”->“创建应用程序包”。
@@ -257,7 +257,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
 以下步骤将指导你完成添加服务器更新脚本并对其进行测试的过程。
 
-1. 登录到 [Azure 经典管理门户]，单击“移动服务”，然后单击你的应用。
+1. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用。
 
    	![][7]
 
@@ -373,7 +373,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
 
-[Azure 经典管理门户]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=271146
