@@ -9,8 +9,8 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="04/19/2015"
-   wacn.date="05/31/2016"/>
+   ms.date="06/10/2015"
+   wacn.date="07/18/2016"/>
 
 
 
@@ -33,7 +33,7 @@
 
 1. 你在云服务的 ServiceConfiguration.cscfg 文件中显式指定了值“osFamily = 1”。
 2. 你未在云服务的 ServiceConfiguration.cscfg 文件中显式指定 osFamily 的值。当前，系统对此情况使用默认值“1”。
-3. Azure 经典管理门户将你的来宾操作系统系列值列为“Windows Server 2008”。
+3. Azure 管理门户将你的来宾操作系统系列值列为“Windows Server 2008”。
 
 若要了解你的哪个云服务在运行哪个 OS 系列，你可以在 Azure PowerShell 中运行以下脚本，但必须首先[设置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。有关该脚本的其他详细信息，请参阅 [Azure 来宾 OS 系列 1 生命周期终结：2014 年 6 月](http://blogs.msdn.com/b/ryberry/archive/2014/04/02/azure-guest-os-family-1-end-of-life-june-2014.aspx)。
 

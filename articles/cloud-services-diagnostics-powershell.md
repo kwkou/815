@@ -3,14 +3,14 @@
 	description="了解如何使用 PowerShell 为云服务启用诊断" 
 	services="cloud-services" 
 	documentationCenter=".net" 
-	authors="sbtron" 
-	manager="" 
+	authors="Thraka"
+	manager="timlt"
 	editor=""/>
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="02/09/2016" 
-	wacn.date="03/18/2016"/>
+	ms.date="06/07/2016"
+	wacn.date="07/18/2016"/>
 
 
 # 使用 PowerShell 在 Azure 云服务中启用诊断
@@ -121,5 +121,6 @@ Visual Studio Online 使用类似的方法通过诊断扩展自动部署云服�
 
 - 有关使用 Azure 诊断和其他方法排查问题的详细说明，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 - [诊断配置架构](https://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx)说明了诊断扩展的各种 XML 配置选项。
+- 若要了解如何为虚拟机启用诊断扩展，请参阅[使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
 
 <!---HONumber=Mooncake_0307_2016-->

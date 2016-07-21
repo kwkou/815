@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="04/19/2016"
-	wacn.date="05/31/2016"/>
+	wacn.date="07/18/2016"/>
 
 # Azure 云服务证书概述
 证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于通过管理 API 进行身份验证（[管理证书](#what-are-management-certificates)，适用于使用 Azure 经典管理门户而不是 ARM 的场合）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)以及将其[部署](#deploy)到 Azure。
@@ -53,10 +53,15 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 
 ### Makecert.exe
 
-此实用程序随 Visual Studio 2013/2015 一并安装。它是一个控制台实用程序，可允许你创建和安装证书。如果你启动在安装 Visual Studio 时创建的 **VS2015 开发人员命令提示符**快捷方式，将出现命令提示符，提示在路径中加入此工具。
+此实用工具已弃用，此处不再进行记录。有关详细信息，请参阅[此 MSDN 文章](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa386968)。
 
-    makecert -sky exchange -r -n "CN=[CertificateName]" -pe -a sha1 -len 2048 -ss My -sv [CertificateName].pvk [CertificateName].cer
+### PowerShell
 
+```
+$cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net -CertStoreLocation "cert:\LocalMachine\My"
+$password = ConvertTo-SecureString -String "your-password" -Force -AsPlainText
+Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $password
+```
 
 ### Internet 信息服务 (IIS)
 
@@ -70,8 +75,10 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 
 ## 后续步骤
 
-[上载服务证书到 Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)。
+[上载服务证书到 Azure 管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)。
 
-将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 经典管理门户。
+将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 管理门户。
 
-<!---HONumber=Mooncake_0523_2016-->
+>[AZURE.NOTE] Azure 门户不使用管理证书来访问 API，而是使用用户帐户。
+
+<!---HONumber=Mooncake_0711_2016-->

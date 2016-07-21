@@ -8,8 +8,8 @@ manager="timlt"
 editor=""/>
 <tags 
 	ms.service="cloud-services" 
-	ms.date="12/07/2015" 
-	wacn.date="01/15/2016"/>
+	ms.date="06/07/2016" 
+	wacn.date="07/18/2016"/>
 
 
 
@@ -25,7 +25,7 @@ editor=""/>
 
 环境变量将信息传递给启动任务，而本地存储可用于从启动任务中传出信息。例如，环境变量可以指定你要安装的程序的路径，并可以将文件写入到本地存储，然后你的角色可以稍后读取这些文件。
 
-启动任务可以将信息和错误记录到 **TEMP** 环境变量指定的目录。在云中运行时，在启动任务期间，**TEMP** 环境变量将解析为 *C:\\Resources\\temp\\[guid].[rolename]\\RoleTemp* 目录。
+启动任务可以将信息和错误记录到 **TEMP** 环境变量指定的目录。在云中运行时，在启动任务期间，**TEMP** 环境变量将解析为 C:\\Resources\\temp\\[guid].[rolename]\\RoleTemp 目录。
 
 此外，启动任务还可以在重新启动之间执行多次。例如，每次角色回收时都会运行启动任务，但角色回收可能并非始终包括重新启动。应以这样的方式编写启动任务：使其能够多次运行而不会出现问题。
 
@@ -124,7 +124,7 @@ EXIT /B 0
 
 静态环境变量使用 [Variable] 元素的 **value** 属性。上面的示例创建了环境变量 **MyVersionNumber**，该变量具有静态值 **1.0.0.0**。另一个示例就是创建 **StagingOrProduction** 环境变量，你可以手动将该变量设置为值 **staging** 或 **production**，以根据 **StagingOrProduction** 环境变量的值执行不同的启动操作。
 
-基于 RoleEnvironment 类的成员的环境变量不使用 [Variable] 元素的 **value** 属性。而是使用具有相应 **xPath** 属性值的 [RoleInstanceValue] 子元素基于 [RoleEnvironment] 类的特定成员创建环境变量。用于访问各种 [RoleEnvironment] 值的 **xPath** 属性的值可以在 [Azure 中的 xPath 值](https://msdn.microsoft.com/zh-cn/library/azure/hh404006.aspx)中找到。
+基于 RoleEnvironment 类的成员的环境变量不使用 [Variable] 元素的 **value** 属性。而是使用具有相应 **XPath** 属性值的 [RoleInstanceValue] 子元素基于 [RoleEnvironment] 类的特定成员创建环境变量。用于访问各种 [RoleEnvironment] 值的 **XPath** 属性的值可以在[此处](/documentation/articles/cloud-services-role-config-xpath/)找到。
 
 
 

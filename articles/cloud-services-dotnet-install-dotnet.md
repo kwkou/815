@@ -3,14 +3,14 @@
    description="本文介绍如何在云服务 Web 角色和辅助角色上手动安装 .NET Framework"
    services="cloud-services"
    documentationCenter=".net"
-   authors="sbtron"
+   authors="thraka"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="cloud-services"
-   ms.date="02/17/2016"
-   wacn.date="04/06/2016"/>
+   ms.date="05/17/2016"
+   wacn.date="07/18/2016"/>
 
 # 在云服务角色上安装 .NET 
 

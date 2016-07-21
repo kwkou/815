@@ -3,14 +3,14 @@
    description="云服务角色的 TEMP 文件夹的空间有限。本文针对如何避免磁盘空间不足的问题提供了一些建议。"
    services="cloud-services"
    documentationCenter=""
-   authors="dalechen"
+   authors="simonxjx"
    manager="felixwu"
    editor=""
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
-   ms.date="04/20/2016"
-   wacn.date="05/31/2016" />
+   ms.date="06/03/2016"
+   wacn.date="07/18/2016" />
 
 # 云服务 Web 角色/辅助角色的默认 TEMP 文件夹大小太小
 
@@ -18,11 +18,7 @@
 
 >[AZURE.NOTE] 这仅适用于在 Azure SDK 1.0 到 1.4 中使用 Web 角色和辅助角色。
 
-## 与 Azure 客户支持联系
-
-如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和堆栈溢出论坛](/support/forums)上的 Azure 专家。
-
-或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq)。
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 为什么空间会不足？
 
@@ -73,7 +69,7 @@
 
 阅读说明[如何增加 Azure Web 角色 ASP.NET 临时文件夹大小](http://blogs.msdn.com/b/kwill/archive/2011/07/18/how-to-increase-the-size-of-the-windows-azure-web-role-asp-net-temporary-folder.aspx)的博客。
 
-查看更多针对云服务的[故障排除文章](..\?tag=top-support-issue&service=cloud-services)。
+
 
 若要了解如何使用 Azure PaaS 计算机诊断数据对云服务角色问题进行故障排除，请查看 [Kevin Williamson 博客系列](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)。
 
