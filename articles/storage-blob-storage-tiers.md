@@ -10,7 +10,7 @@
 <tags
     ms.service="storage"
     ms.date="05/09/2016"
-    wacn.date="07/18/2016"/>
+    wacn.date="07/21/2016"/>
 
 
 # Azure Blob 存储：“热”和“冷”存储层
@@ -69,7 +69,7 @@ Blob 存储帐户公开**访问层**属性，它允许你将存储层指定为**
 <tr>
     <td><strong><center></center></strong></td>
     <td><strong><center>热存储访问层</center></strong></td>
-    <td><strong><center>冷存储访问层</center></strong>&lt;/td
+    <td><strong><center>冷存储访问层</center></strong></td>
 </tr>
 <tr>
     <td><strong><center>可用性</center></strong></td>
@@ -107,7 +107,7 @@ Blob 存储帐户公开**访问层**属性，它允许你将存储层指定为**
 
 > [AZURE.NOTE] Blob 存储帐户支持与通用存储帐户相同的性能和可伸缩性目标。有关详细信息，请参阅 [Azure 存储空间的可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
-## 定价和计费
+##<a id="pricing-and-billing"></a> 定价和计费
 
 Blob 存储帐户使用基于访问层的 blob 存储的新定价模型。使用 Blob 存储帐户时，请注意以下计费方式：
 
@@ -118,20 +118,20 @@ Blob 存储帐户使用基于访问层的 blob 存储的新定价模型。使用
 - **出站数据传输成本**：出站数据传输（传出 Azure 区域的数据）会按每 GB 产生带宽使用费，与通用存储帐户一致。
 - **更改访问层**：将访问层从“冷”更改为“热”将会产生费用，此费用等于读取每个转换的存储帐户中存在的所有数据的费用。另一方面，将访问层从“热”更改为“冷”则免费。
 
-> [AZURE.NOTE] 为了使用户能够试用新的存储层并在上市后验证功能，在 2016 年 6 月 30 日之前，将免收将访问层从“冷”更改为“热”的费用。从 2016 年 7 月 1 日 开始，将对所有从“冷”到“热”的转换收取费用。有关 Blob 存储帐户的定价模型的详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)页。有关出站数据传输费用的详细信息，请参阅[数据传输定价详细信息](/pricing/details/data-transfers/)页。
+> [AZURE.NOTE] 为了使用户能够试用新的存储层并在上市后验证功能，在 2016 年 6 月 30 日之前，将免收将访问层从“冷”更改为“热”的费用。从 2016 年 7 月 1 日 开始，将对所有从“冷”到“热”的转换收取费用。有关 Blob 存储帐户的定价模型的详细信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)页。有关出站数据传输费用的详细信息，请参阅[数据传输定价详细信息](/pricing/details/data-transfer/)页。
 
 ## 快速启动
 
-在本部分，我们将使用 Azure 门户演示以下方案：
+在本部分，我们将使用 Azure 门户预览演示以下方案：
 
 - 如何创建 Blob 存储帐户。
 - 如何管理 Blob 存储帐户。
 
-### 使用 Azure 门户
+### 使用 Azure 门户预览
 
-#### 使用 Azure 门户创建 Blob 存储帐户
+#### 使用 Azure 门户预览创建 Blob 存储帐户
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 在“中心”菜单上，选择“新建”->“数据 + 存储”->“存储帐户”。
 
@@ -147,15 +147,15 @@ Blob 存储帐户使用基于访问层的 blob 存储的新定价模型。使用
 
 8. 选择想在其中创建新存储帐户的订阅。
 
-9. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles//resource-group-portal)。
+9. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal)。
 
 10. 选择存储帐户的地理区域。
 
 11. 单击“创建”以创建存储帐户。
 
-#### 使用 Azure 门户更改 Blob 存储帐户上的访问层
+#### 使用 Azure 门户预览更改 Blob 存储帐户上的访问层
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)并导航到你的存储帐户。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)并导航到你的存储帐户。
 
 2. 单击“所有设置”，然后单击“配置”以查看和/或更改帐户配置。
 
@@ -254,7 +254,7 @@ AzCopy 是一个 Windows 命令行实用程序，旨在实现高性能地将数�
 
 [按区域检查 Blob 存储定价](/home/features/storage/pricing/)
 
-[检查数据传输定价](/pricing/details/data-transfers/)
+[检查数据传输定价](/pricing/details/data-transfer/)
 
 ### 开始使用 Blob 存储帐户
 
