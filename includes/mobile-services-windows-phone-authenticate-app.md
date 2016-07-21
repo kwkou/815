@@ -8,7 +8,7 @@
                 string message;
                 try
                 {
-                    user = await App.MobileServiceDotNetClient.LoginAsync(MobileServiceAuthenticationProvider.Twitter);
+                    user = await App.MobileServiceDotNetClient.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
                     message = string.Format("You are now logged in - {0}", user.UserId);
                 }
                 catch (InvalidOperationException)
@@ -21,9 +21,9 @@
             }
         }
 
-    这样可以创建用于存储当前用户的成员变量，以及用于处理身份验证过程的方法。将使用 Twitter 登录对用户进行身份验证。
+    这样可以创建用于存储当前用户的成员变量，以及用于处理身份验证过程的方法。将使用 MicrosoftAccount 登录对用户进行身份验证。
 
-    >[AZURE.NOTE]如果使用的标识提供者不是 Twitter，请将上述 **MobileServiceAuthenticationProvider** 的值更改为你的提供者的值。<strong></strong></p></div>
+    >[AZURE.NOTE]如果使用的标识提供者不是 MicrosoftAccount **MobileServiceAuthenticationProvider** 的值更改为你的提供者的值。<strong></strong></p></div>
 
 2. 删除或注释掉现有的 **OnNavigatedTo** 方法覆盖，并将其替换为以下方法，用于处理页的 **Loaded** 事件。 
 
