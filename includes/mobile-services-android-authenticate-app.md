@@ -1,4 +1,3 @@
-9
 1. 在 Android Studio 的“项目资源管理器”中，打开 ToDoActivity.java 文件，然后添加以下 import 语句。
 
 		import java.util.concurrent.ExecutionException;

@@ -78,7 +78,7 @@
 		}
 
 		function logIn() {
-			client.login("facebook").then(refreshAuthDisplay, function(error){
+			client.login("microsoftaccount").then(refreshAuthDisplay, function(error){
 				alert(error);
 			});
 		}
@@ -97,7 +97,7 @@
 			$("#logged-in button").click(logOut);
 		});
 
-    这将会创建一组用于处理身份验证过程的函数。将使用 Facebook 登录对用户进行身份验证。如果使用的标识提供者不是 Facebook，请将传递给上述 **login** 方法的值更改为下列其中一项：*microsoftaccount*、*facebook*、*twitter*、*google* 或 *aad*。
+    这将会创建一组用于处理身份验证过程的函数。将使用 microsoftaccount 登录对用户进行身份验证。如果使用的标识提供者不是 microsoftaccount，请将传递给上述 **login** 方法的值更改为 *aad*。
 
 	>[AZURE.IMPORTANT]在 PhoneGap 应用程序中，还必须向项目中添加以下插件：
 	><ul><li><code>phonegap 插件添加 https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</code></li>
