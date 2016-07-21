@@ -73,11 +73,11 @@ Azure 将你的角色实例划分为称为升级域 (UD) 的逻辑组。升级�
 
 下图演示了在升级服务中的所有角色时如何进行升级：
 
-![升级服务](media/cloud-services-update-azure-service/IC345879.png "升级服务")
+![升级服务](./media/cloud-services-update-azure-service/IC345879.png "升级服务")
 
 下图演示了在仅升级一个角色时如何进行更新：
 
-![升级角色](media/cloud-services-update-azure-service/IC345880.png "升级角色")
+![升级角色](./media/cloud-services-update-azure-service/IC345880.png "升级角色")
 
 > [AZURE.NOTE]在将服务从单个实例升级到多个实例时，由于 Azure 升级服务的方式，将在执行升级时停止服务。保证服务可用性的服务级别协议仅适用于部署的具有多个实例的服务。以下列表描述了每种 Azure 服务升级方案如何影响每个驱动器上的数据：
 >
@@ -171,7 +171,7 @@ Azure 在设置的升级域数之间平均分配角色的实例，可以将升�
 
 下图演示了在服务定义了两个升级域时，如何分配包含两个角色的服务。该服务运行 8 个 Web 角色实例和 9 个辅助角色实例。
 
-![升级域的分配](media/cloud-services-update-azure-service/IC345533.png "升级域的分配")
+![升级域的分配](./media/cloud-services-update-azure-service/IC345533.png "升级域的分配")
 
 > [AZURE.NOTE]请注意 Azure 控制如何在升级域之间分配实例。无法指定将哪个实例分配给哪个域。
 
