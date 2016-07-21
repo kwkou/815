@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
  	ms.date="04/18/2016"  
-	wacn.date="06/27/2016"/>
+	wacn.date="07/21/2016"/>
 
 #如何将媒体服务与 Java 结合使用
 
@@ -69,7 +69,7 @@
 	public class HelloMediaServices
 	{
 	    // Media Services account credentials configuration
-	    private static String mediaServiceUri = "https://media.windows.cn/API/";
+	    private static String mediaServiceUri = "https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/";
 	    private static String oAuthUri = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn/v2/OAuth2-13";
 	    private static String clientId = "account name";
 	    private static String clientSecret = "account key";
