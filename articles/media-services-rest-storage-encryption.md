@@ -33,7 +33,7 @@
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect-programmatically/)中所述对新的 URI 执行后续调用。
+>请按照[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect-programmatically/)中所述对媒体服务 URI 执行后续调用。
 
 ##存储空间加密概述 
 
@@ -110,14 +110,14 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 请求：
 	
 	
-	GET https://media.chinacloudapi.cn/api/GetProtectionKeyId?contentKeyType=0 HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/GetProtectionKeyId?contentKeyType=0 HTTP/1.1
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
 	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423034908&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=7eSLe1GHnxgilr3F2FPCGxdL2%2bwy%2f39XhMPGY9IizfU%3d
 	x-ms-version: 2.11
-	Host: media.chinacloudapi.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 
 响应：
@@ -135,7 +135,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Wed, 04 Feb 2015 02:42:52 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Edm.String","value":"7D9BB04D9D0A4A24800CADBFEF232689E048F69C"}
+	{"odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Edm.String","value":"7D9BB04D9D0A4A24800CADBFEF232689E048F69C"}
 
 ###检索 ProtectionKeyId 的 ProtectionKey
 
@@ -143,7 +143,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 
 请求：
 		
-	GET https://media.chinacloudapi.cn/api/GetProtectionKey?ProtectionKeyId='7D9BB04D9D0A4A24800CADBFEF232689E048F69C' HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/GetProtectionKey?ProtectionKeyId='7D9BB04D9D0A4A24800CADBFEF232689E048F69C' HTTP/1.1
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
@@ -151,7 +151,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-e769-2233-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423141026&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=lDBz5YXKiWe5L7eXOHsLHc9kKEUcUiFJvrNFFSksgkM%3d
 	x-ms-version: 2.11
 	x-ms-client-request-id: 78d1247a-58d7-40e5-96cc-70ff0dfa7382
-	Host: media.chinacloudapi.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 
 
@@ -171,7 +171,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Thu, 05 Feb 2015 07:52:30 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Edm.String",
+	{"odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Edm.String",
 	"value":"MIIDSTCCAjGgAwIBAgIQqf92wku/HLJGCbMAU8GEnDANBgkqhkiG9w0BAQQFADAuMSwwKgYDVQQDEyN3YW1zYmx1cmVnMDAxZW5jcnlwdGFsbHNlY3JldHMtY2VydDAeFw0xMjA1MjkwNzAwMDBaFw0zMjA1MjkwNzAwMDBaMC4xLDAqBgNVBAMTI3dhbXNibHVyZWcwMDFlbmNyeXB0YWxsc2VjcmV0cy1jZXJ0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzR0SEbXefvUjb9wCUfkEiKtGQ5Gc328qFPrhMjSo+YHe0AVviZ9YaxPPb0m1AaaRV4dqWpST2+JtDhLOmGpWmmA60tbATJDdmRzKi2eYAyhhE76MgJgL3myCQLP42jDusWXWSMabui3/tMDQs+zfi1sJ4Ch/lm5EvksYsu6o8sCv29VRwxfDLJPBy2NlbV4GbWz5Qxp2tAmHoROnfaRhwp6WIbquk69tEtu2U50CpPN2goLAqx2PpXAqA+prxCZYGTHqfmFJEKtZHhizVBTFPGS3ncfnQC9QIEwFbPw6E5PO5yNaB68radWsp5uvDg33G1i8IT39GstMW6zaaG7cNQIDAQABo2MwYTBfBgNVHQEEWDBWgBCOGT2hPhsvQioZimw8M+jOoTAwLjEsMCoGA1UEAxMjd2Ftc2JsdXJlZzAwMWVuY3J5cHRhbGxzZWNyZXRzLWNlcnSCEKn/dsJLvxyyRgmzAFPBhJwwDQYJKoZIhvcNAQEEBQADggEBABcrQPma2ekNS3Wc5wGXL/aHyQaQRwFGymnUJ+VR8jVUZaC/U/f6lR98eTlwycjVwRL7D15BfClGEHw66QdHejaViJCjbEIJJ3p2c9fzBKhjLhzB3VVNiLIaH6RSI1bMPd2eddSCqhDIn3VBN605GcYXMzhYp+YA6g9+YMNeS1b+LxX3fqixMQIxSHOLFZ1G/H2xfNawv0VikH3djNui3EKT1w/8aRkUv/AAV0b3rYkP/jA1I0CPn0XFk7STYoiJ3gJoKq9EMXhit+Iwfz0sMkfhWG12/XO+TAWqsK1ZxEjuC9OzrY7pFnNxs4Mu4S8iinehduSpY+9mDd3dHynNwT4="}
 
 ### 创建内容密钥 
@@ -185,7 +185,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 
 请求
 
-	POST https://media.chinacloudapi.cn/api/ContentKeys HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/ContentKeys HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -194,7 +194,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423034908&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=7eSLe1GHnxgilr3F2FPCGxdL2%2bwy%2f39XhMPGY9IizfU%3d
 	x-ms-version: 2.11
-	Host: media.chinacloudapi.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	{
 	"Name":"ContentKey",
 	"ProtectionKeyId":"7D9BB04D9D0A4A24800CADBFEF232689E048F69C", 
@@ -211,7 +211,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Cache-Control: no-cache
 	Content-Length: 777
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https://media.chinacloudapi.cn/api/ContentKeys('nb%3Akid%3AUUID%3A9c8ea9c6-52bd-4232-8a43-8e43d8564a99')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/ContentKeys('nb%3Akid%3AUUID%3A9c8ea9c6-52bd-4232-8a43-8e43d8564a99')
 	Server: Microsoft-IIS/8.5
 	request-id: 76e85e0f-5cf1-44cb-b689-b3455888682c
 	x-ms-request-id: 76e85e0f-5cf1-44cb-b689-b3455888682c
@@ -221,7 +221,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Wed, 04 Feb 2015 02:37:46 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeys/@Element",
+	{"odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#ContentKeys/@Element",
 	"Id":"nb:kid:UUID:9c8ea9c6-52bd-4232-8a43-8e43d8564a99","Created":"2015-02-04T02:37:46.9684379Z",
 	"LastModified":"2015-02-04T02:37:46.9684379Z",
 	"ContentKeyType":1,
@@ -237,7 +237,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 
 **HTTP 请求**
 
-	POST https://media.chinacloudapi.cn/api/Assets HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Assets HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -245,7 +245,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-6753-2233-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.11
-	Host: media.chinacloudapi.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 	{"Name":"BigBuckBunny" "Options":1}
 
@@ -258,7 +258,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Cache-Control: no-cache
 	Content-Length: 452
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.cloudapp.net/api/Assets('nb%3Acid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Assets('nb%3Acid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')
 	Server: Microsoft-IIS/8.5
 	x-ms-client-request-id: c59de965-bc89-4295-9a57-75d897e5221e
 	request-id: e98be122-ae09-473a-8072-0ccd234a0657
@@ -268,7 +268,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Sun, 18 Jan 2015 22:06:40 GMT
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Assets/@Element",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Assets/@Element",
 	   "Id":"nb:cid:UUID:9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1",
 	   "State":0,
 	   "Created":"2015-01-18T22:06:40.6010903Z",
@@ -286,7 +286,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	
 请求：
 	
-	POST https://media.chinacloudapi.cn/api/Assets('nb%3Acid%3AUUID%3Afbd7ce05-1087-401b-aaae-29f16383c801')/$links/ContentKeys HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Assets('nb%3Acid%3AUUID%3Afbd7ce05-1087-401b-aaae-29f16383c801')/$links/ContentKeys HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
@@ -294,10 +294,10 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Content-Type: application/json
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423141026&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=lDBz5YXKiWe5L7eXOHsLHc9kKEUcUiFJvrNFFSksgkM%3d
 	x-ms-version: 2.11
-	Host: media.chinacloudapi.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 	
-	{"uri":"https://wamsbayclus001rest-hs.cloudapp.net/api/ContentKeys('nb%3Akid%3AUUID%3A01e6ea36-2285-4562-91f1-82c45736047c')"}
+	{"uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/ContentKeys('nb%3Akid%3AUUID%3A01e6ea36-2285-4562-91f1-82c45736047c')"}
 
 响应：
 
@@ -313,7 +313,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 
 **HTTP 请求**
 
-	POST https://media.chinacloudapi.cn/api/Files HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Files HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -321,7 +321,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-6753-4ca2-2233-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.11
-	Host: media.chinacloudapi.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 164
 	
 	{  
@@ -343,7 +343,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Cache-Control: no-cache
 	Content-Length: 535
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.cloudapp.net/api/Files('nb%3Acid%3AUUID%3Af13a0137-0a62-9d4c-b3b9-ca944b5142c5')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Files('nb%3Acid%3AUUID%3Af13a0137-0a62-9d4c-b3b9-ca944b5142c5')
 	Server: Microsoft-IIS/8.5
 	request-id: 98a30e2d-f379-4495-988e-0b79edc9b80e
 	x-ms-request-id: 98a30e2d-f379-4495-988e-0b79edc9b80e
@@ -354,7 +354,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	Date: Mon, 19 Jan 2015 00:34:07 GMT
 	
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Files/@Element",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Files/@Element",
 	   "Id":"nb:cid:UUID:f13a0137-0a62-9d4c-b3b9-ca944b5142c5",
 	   "Name":"BigBuckBunny.mp4",
 	   "ContentFileSize":"0",

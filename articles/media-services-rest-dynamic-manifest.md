@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
  	ms.date="04/18/2016"  
-	wacn.date="06/27/2016"/>
+	wacn.date="07/21/2016"/>
 
 #使用 Azure 媒体服务 REST API 创建筛选器
 
@@ -38,7 +38,7 @@
 
 >[AZURE.NOTE]使用媒体服务 REST API 时，需注意以下事项：<br />
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。<br />
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
+>请根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对媒体服务 URI 执行后续调用。
 
 
 ##创建筛选器
@@ -51,7 +51,7 @@
 
 请求标头
 
-	POST https://media.chinacloudapi.cn/API/Filters HTTP/1.1 
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Filters HTTP/1.1 
 	DataServiceVersion:3.0 
 	MaxDataServiceVersion: 3.0 
 	Content-Type: application/json 
@@ -60,7 +60,7 @@
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
 	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
-	Host:media.chinacloudapi.cn 
+	Host:wamsshaclus001rest-hs.chinacloudapp.cn 
 
 请求正文
 
@@ -107,7 +107,7 @@
 
 请求标头
 
-	POST https://media.chinacloudapi.cn/API/AssetFilters HTTP/1.1 
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/AssetFilters HTTP/1.1 
 	DataServiceVersion: 3.0 
 	MaxDataServiceVersion: 3.0 
 	Content-Type: application/json 
@@ -116,7 +116,7 @@
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
 	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
-	Host: media.chinacloudapi.cn  
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn  
 
 请求正文
 
@@ -162,20 +162,20 @@
 
 ####HTTP 请求
 	 
-	GET https://media.chinacloudapi.cn/API/Filters HTTP/1.1 
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Filters HTTP/1.1 
 	DataServiceVersion:3.0 
 	MaxDataServiceVersion: 3.0 
 	Accept: application/json 
 	Accept-Charset: UTF-8 
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
-	Host: media.chinacloudapi.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 	
 ### 获取与资产关联的 **AssetFilter**。
 
 ####HTTP 请求
 
-	GET https://media.chinacloudapi.cn/API/Assets('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592')/AssetFilters HTTP/1.1 
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Assets('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592')/AssetFilters HTTP/1.1 
 	DataServiceVersion: 3.0 
 	MaxDataServiceVersion: 3.0 
 	Accept: application/json 
@@ -183,13 +183,13 @@
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
 	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
-	Host: media.chinacloudapi.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 
 ###基于 ID 获取 **AssetFilter**
 
 ####HTTP 请求
 
-	GET https://media.chinacloudapi.cn/API/AssetFilters('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592__%23%23%23__TestFilter') HTTP/1.1 
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/AssetFilters('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592__%23%23%23__TestFilter') HTTP/1.1 
 	DataServiceVersion: 3.0 
 	MaxDataServiceVersion: 3.0 
 	Accept: application/json 
@@ -213,7 +213,7 @@
  
 请求标头：
 
-	MERGE https://media.chinacloudapi.cn/API/Filters('filterName') HTTP/1.1 
+	MERGE https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Filters('filterName') HTTP/1.1 
 	DataServiceVersion:3.0 
 	MaxDataServiceVersion: 3.0 
 	Content-Type: application/json 
@@ -222,7 +222,7 @@
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
 	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
-	Host: media.chinacloudapi.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 	Content-Length: 384
 	
 请求正文：
@@ -255,7 +255,7 @@
 
 请求标头：
 
-	MERGE https://media.chinacloudapi.cn/API/AssetFilters('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592__%23%23%23__TestFilter')  HTTP/1.1 
+	MERGE https://wamsshaclus001rest-hs.chinacloudapp.cn/API/AssetFilters('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592__%23%23%23__TestFilter')  HTTP/1.1 
 	DataServiceVersion: 3.0 
 	MaxDataServiceVersion: 3.0 
 	Content-Type: application/json 
@@ -264,7 +264,7 @@
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
 	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
-	Host: media.chinacloudapi.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 	
 请求正文：
 	
@@ -298,14 +298,14 @@
 	
 ####HTTP 请求
 
-	DELETE https://media.chinacloudapi.cn/api/Filters('GlobalFilter') HTTP/1.1 
+	DELETE https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Filters('GlobalFilter') HTTP/1.1 
 	DataServiceVersion:3.0 
 	MaxDataServiceVersion: 3.0 
 	Accept: application/json 
 	Accept-Charset: UTF-8 
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
-	Host: media.chinacloudapi.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 
 
 ###删除本地 AssetFilter
@@ -314,14 +314,14 @@
 
 ####HTTP 请求
 
-	DELETE https://media.chinacloudapi.cn/API/AssetFilters('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592__%23%23%23__LocalFilter') HTTP/1.1 
+	DELETE https://wamsshaclus001rest-hs.chinacloudapp.cn/API/AssetFilters('nb%3Acid%3AUUID%3A536e555d-1500-80c3-92dc-f1e4fdc6c592__%23%23%23__LocalFilter') HTTP/1.1 
 	DataServiceVersion: 3.0 
 	MaxDataServiceVersion: 3.0 
 	Accept: application/json 
 	Accept-Charset: UTF-8 
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
-	Host: media.chinacloudapi.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 
 ##生成使用筛选器的流 URL
 

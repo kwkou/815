@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
  	ms.date="03/02/2016"  
-	wacn.date="04/05/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 #常见问题  
@@ -48,7 +48,7 @@
 
 问：如何使用 REST 进行连接？
 
-答：在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
+答：请按照[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对媒体服务 URI 执行后续调用。
 
 
 问：如何在编码过程中旋转视频。

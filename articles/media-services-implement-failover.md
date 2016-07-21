@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
  	ms.date="04/18/2016"  
-	wacn.date="06/27/2016"/>
+	wacn.date="07/21/2016"/>
 
 #实现故障转移流式处理方案
 
@@ -778,7 +778,7 @@
 		{
 		    if (string.IsNullOrEmpty(mediaServicesApiServerUri))
 		    {
-		        mediaServicesApiServerUri = "https://media.chinacloudapi.cn/api/";
+		        mediaServicesApiServerUri = "https://wamsshaclus001rest-hs.chinacloudapp.cn/api/";
 		    }
 		    if (!mediaServicesApiServerUri.EndsWith("/"))
 		        mediaServicesApiServerUri = mediaServicesApiServerUri + "/";
@@ -865,7 +865,7 @@
 		{
 		    if (String.IsNullOrEmpty(mediaServicesApiServerUri))
 		    {
-		        mediaServicesApiServerUri = "https://media.chinacloudapi.cn/api/";
+		        mediaServicesApiServerUri = "https://wamsshaclus001rest-hs.chinacloudapp.cn/api/";
 		    }
 		    if (!mediaServicesApiServerUri.EndsWith("/"))
 		        mediaServicesApiServerUri = mediaServicesApiServerUri + "/";

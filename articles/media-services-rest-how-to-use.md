@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
  	ms.date="03/01/2016"  
-	wacn.date="04/05/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 #媒体服务 REST API 概述 
@@ -25,7 +25,7 @@
 
 - 使用 JSON 并指定在请求中使用 **__metadata** 关键字（例如，为了引用某个链接对象）时，必须将 Accept 标头设置为 [JSON 详细格式](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/)（参阅以下示例）。Odata 并不了解请求中的 **__metadata** 属性，除非你将它设置为 verbose。
 
-		POST https://media.chinacloudapi.cn/API/Jobs HTTP/1.1
+		POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Jobs HTTP/1.1
 		Content-Type: application/json;odata=verbose
 		Accept: application/json;odata=verbose
 		DataServiceVersion: 3.0
@@ -37,7 +37,7 @@
 		{
 			"Name" : "NewTestJob", 
 			"InputMediaAssets" : 
-				[{"__metadata" : {"uri" : "https://media.chinacloudapi.cn/api/Assets('nb%3Acid%3AUUID%3Aba5356eb-30ff-4dc6-9e5a-41e4223540e7')"}}]
+				[{"__metadata" : {"uri" : "https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Assets('nb%3Acid%3AUUID%3Aba5356eb-30ff-4dc6-9e5a-41e4223540e7')"}}]
 		. . . 
 		
 
@@ -105,7 +105,7 @@ HEAD|为 GET 响应返回对象的元数据。
 
 ## 发现媒体服务模型
 
-为了使媒体服务实体易于发现，可使用 $metadata 操作。使用该操作，你可以检索所有有效的实体类型、实体属性、关联、函数、操作等。以下示例说明了如何构建 URI：https://media.chinacloudapi.cn/API/$metadata。
+为了使媒体服务实体易于发现，可使用 $metadata 操作。使用该操作，你可以检索所有有效的实体类型、实体属性、关联、函数、操作等。以下示例说明了如何构建 URI：https://wamsshaclus001rest-hs.chinacloudapp.cn/API/$metadata。
 
 如果希望在浏览器中查看元数据，应在 URI 的末尾追加“?api-version=2.x”，或不要在请求中包括 x-ms-version 标头。
 
