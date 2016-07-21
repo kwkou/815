@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
  	ms.date="03/01/2016" 
-	wacn.date="04/05/2016"/>
+	wacn.date="07/21/2016"/>
 
 #开始使用 REST API 按需传送内容
 
@@ -78,16 +78,9 @@
 
 1. 获取访问令牌。 
 2. 连接到媒体服务 URI。  
+	>[AZURE.NOTE]上海 DC URI：https://wamsshaclus001rest-hs.chinacloudapp.cn/API/ ； 北京 DC URI： https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/
+3. 将后续 API 调用发布到相应的 URL。 
 
-	请记住，在成功连接到 https://media.chinacloudapi.cn 之后， 你将接收到指定另一个媒体服务 URI 的 301 重定向。你必须对这个新 URI 进行后续调用。你还可能会收到包含 ODATA API 元数据说明的 HTTP/1.1 200 响应。
-3. 将后续 API 调用发布到新的 URL。 
-	
-	例如，如果在尝试连接后收到以下消息：
-		
-		HTTP/1.1 301 Moved Permanently
-		Location: https://wamsbayclus001rest-hs.chinacloudapp.cn/api/
-
-	则应该将后续 API 调用发布到 https://wamsbayclus001rest-hs.chinacloudapp.cn/api/。
 
 ###获取访问令牌
 
@@ -147,45 +140,22 @@
 
 ###连接到媒体服务 URI
 
-媒体服务的根 URI 为 https://media.chinacloudapi.cn/。 你最初应连接到此 URI，如果在响应中收到“301 重定向”，则应随后调用新 URI。此外，请勿在请求中使用任何自动重定向/跟踪逻辑。HTTP 谓词和请求正文将不会转发到新 URI。
+连接到媒体服务 URI:
+
+- 上海 DC URI：https://wamsshaclus001rest-hs.chinacloudapp.cn/API/ 
+- 北京 DC URI： https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/
 
 请注意，用于上载和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中的存储帐户名为你在媒体服务帐户设置期间使用的同一帐户名。
 
-以下示例演示了对媒体服务根 URI 发出的 HTTP 请求 (https://media.chinacloudapi.cn/))。 该请求将在响应中获取 301 重定向。后续请求使用新的 URI (https://wamsbayclus001rest-hs.chinacloudapp.cn/api/))。
+以下示例演示了对上海 DC 媒体服务 URI 发出的 HTTP 请求 (https://wamsshaclus001rest-hs.chinacloudapp.cn/API/)。 
 
 **HTTP 请求**：
-	
-	GET https://media.chinacloudapi.cn/ HTTP/1.1
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
-	x-ms-version: 2.11
-	Accept: application/json
-	Host: media.chinacloudapi.cn
-
-
-**HTTP 响应**：
-	
-	HTTP/1.1 301 Moved Permanently
-	Location: https://wamsbayclus001rest-hs.chinacloudapp.cn/api/
-	Server: Microsoft-IIS/8.5
-	request-id: 987d7652-497a-44e5-b815-f492e02aef97
-	x-ms-request-id: 987d7652-497a-44e5-b815-f492e02aef97
-	X-Powered-By: ASP.NET
-	Strict-Transport-Security: max-age=31536000; includeSubDomains
-	Date: Sat, 17 Jan 2015 07:44:53 GMT
-	Content-Length: 164
-	
-	<html><head><title>Object moved</title></head><body>
-	<h2>Object moved to <a href="https://wamsbayclus001rest-hs.chinacloudapp.cn/api/">here</a>.</h2>
-	</body></html>
-
-
-**HTTP 请求**（使用新 URI）：
 			
-	GET https://wamsbayclus001rest-hs.chinacloudapp.cn/api/ HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/ HTTP/1.1
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
 	x-ms-version: 2.11
 	Accept: application/json
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 
 **HTTP 响应**：
@@ -203,7 +173,7 @@
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Sat, 17 Jan 2015 07:44:52 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata","value":[{"name":"AccessPolicies","url":"AccessPolicies"},{"name":"Locators","url":"Locators"},{"name":"ContentKeys","url":"ContentKeys"},{"name":"ContentKeyAuthorizationPolicyOptions","url":"ContentKeyAuthorizationPolicyOptions"},{"name":"ContentKeyAuthorizationPolicies","url":"ContentKeyAuthorizationPolicies"},{"name":"Files","url":"Files"},{"name":"Assets","url":"Assets"},{"name":"AssetDeliveryPolicies","url":"AssetDeliveryPolicies"},{"name":"IngestManifestFiles","url":"IngestManifestFiles"},{"name":"IngestManifestAssets","url":"IngestManifestAssets"},{"name":"IngestManifests","url":"IngestManifests"},{"name":"StorageAccounts","url":"StorageAccounts"},{"name":"Tasks","url":"Tasks"},{"name":"NotificationEndPoints","url":"NotificationEndPoints"},{"name":"Jobs","url":"Jobs"},{"name":"TaskTemplates","url":"TaskTemplates"},{"name":"JobTemplates","url":"JobTemplates"},{"name":"MediaProcessors","url":"MediaProcessors"},{"name":"EncodingReservedUnitTypes","url":"EncodingReservedUnitTypes"},{"name":"Operations","url":"Operations"},{"name":"StreamingEndpoints","url":"StreamingEndpoints"},{"name":"Channels","url":"Channels"},{"name":"Programs","url":"Programs"}]}
+	{"odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata","value":[{"name":"AccessPolicies","url":"AccessPolicies"},{"name":"Locators","url":"Locators"},{"name":"ContentKeys","url":"ContentKeys"},{"name":"ContentKeyAuthorizationPolicyOptions","url":"ContentKeyAuthorizationPolicyOptions"},{"name":"ContentKeyAuthorizationPolicies","url":"ContentKeyAuthorizationPolicies"},{"name":"Files","url":"Files"},{"name":"Assets","url":"Assets"},{"name":"AssetDeliveryPolicies","url":"AssetDeliveryPolicies"},{"name":"IngestManifestFiles","url":"IngestManifestFiles"},{"name":"IngestManifestAssets","url":"IngestManifestAssets"},{"name":"IngestManifests","url":"IngestManifests"},{"name":"StorageAccounts","url":"StorageAccounts"},{"name":"Tasks","url":"Tasks"},{"name":"NotificationEndPoints","url":"NotificationEndPoints"},{"name":"Jobs","url":"Jobs"},{"name":"TaskTemplates","url":"TaskTemplates"},{"name":"JobTemplates","url":"JobTemplates"},{"name":"MediaProcessors","url":"MediaProcessors"},{"name":"EncodingReservedUnitTypes","url":"EncodingReservedUnitTypes"},{"name":"Operations","url":"Operations"},{"name":"StreamingEndpoints","url":"StreamingEndpoints"},{"name":"Channels","url":"Channels"},{"name":"Programs","url":"Programs"}]}
 	 
 
 
@@ -231,7 +201,7 @@
 
 **HTTP 请求**
 
-	POST https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Assets HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Assets HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -240,7 +210,7 @@
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.11
 	x-ms-client-request-id: c59de965-bc89-4295-9a57-75d897e5221e
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 45
 	
 	{"Name":"BigBuckBunny.mp4", "Options":"0"}
@@ -254,7 +224,7 @@
 	Cache-Control: no-cache
 	Content-Length: 452
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Assets('nb%3Acid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Assets('nb%3Acid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')
 	Server: Microsoft-IIS/8.5
 	x-ms-client-request-id: c59de965-bc89-4295-9a57-75d897e5221e
 	request-id: e98be122-ae09-473a-8072-0ccd234a0657
@@ -266,7 +236,7 @@
 	Date: Sun, 18 Jan 2015 22:06:40 GMT
 		
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#Assets/@Element",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Assets/@Element",
 	   "Id":"nb:cid:UUID:9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1",
 	   "State":0,
 	   "Created":"2015-01-18T22:06:40.6010903Z",
@@ -286,7 +256,7 @@
 
 **HTTP 请求**
 
-	POST https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Files HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Files HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -294,7 +264,7 @@
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 164
 	
 	{  
@@ -312,7 +282,7 @@
 	Cache-Control: no-cache
 	Content-Length: 535
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Files('nb%3Acid%3AUUID%3Af13a0137-0a62-9d4c-b3b9-ca944b5142c5')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Files('nb%3Acid%3AUUID%3Af13a0137-0a62-9d4c-b3b9-ca944b5142c5')
 	Server: Microsoft-IIS/8.5
 	request-id: 98a30e2d-f379-4495-988e-0b79edc9b80e
 	x-ms-request-id: 98a30e2d-f379-4495-988e-0b79edc9b80e
@@ -323,7 +293,7 @@
 	Date: Mon, 19 Jan 2015 00:34:07 GMT
 	
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#Files/@Element",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Files/@Element",
 	   "Id":"nb:cid:UUID:f13a0137-0a62-9d4c-b3b9-ca944b5142c5",
 	   "Name":"BigBuckBunny.mp4",
 	   "ContentFileSize":"0",
@@ -349,7 +319,7 @@
 		
 **HTTP 请求**
 
-	POST https://wamsbayclus001rest-hs.chinacloudapp.cn/api/AccessPolicies HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/AccessPolicies HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -357,7 +327,7 @@
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 74
 	
 	{"Name":"NewUploadPolicy", "DurationInMinutes":"440", "Permissions":"2"} 
@@ -370,7 +340,7 @@
 	Cache-Control: no-cache
 	Content-Length: 312
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.chinacloudapp.cn/api/AccessPolicies('nb%3Apid%3AUUID%3Abe0ac48d-af7d-4877-9d60-1805d68bffae')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/AccessPolicies('nb%3Apid%3AUUID%3Abe0ac48d-af7d-4877-9d60-1805d68bffae')
 	Server: Microsoft-IIS/8.5
 	request-id: 74c74545-7e0a-4cd6-a440-c1c48074a970
 	x-ms-request-id: 74c74545-7e0a-4cd6-a440-c1c48074a970
@@ -381,7 +351,7 @@
 	Date: Sun, 18 Jan 2015 22:18:06 GMT
 
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#AccessPolicies/@Element",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#AccessPolicies/@Element",
 	   "Id":"nb:pid:UUID:be0ac48d-af7d-4877-9d60-1805d68bffae",
 	   "Created":"2015-01-18T22:18:06.6370575Z",
 	   "LastModified":"2015-01-18T22:18:06.6370575Z",
@@ -409,7 +379,7 @@ SAS URL 采用以下格式：
 	
 **HTTP 请求**
 	
-	POST https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Locators HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -417,7 +387,7 @@ SAS URL 采用以下格式：
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 178
 	
 	{  
@@ -436,7 +406,7 @@ SAS URL 采用以下格式：
 	Cache-Control: no-cache
 	Content-Length: 949
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3Aaf57bdd8-6751-4e84-b403-f3c140444b54')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3Aaf57bdd8-6751-4e84-b403-f3c140444b54')
 	Server: Microsoft-IIS/8.5
 	request-id: 2adeb1f8-89c5-4cc8-aa4f-08cdfef33ae0
 	x-ms-request-id: 2adeb1f8-89c5-4cc8-aa4f-08cdfef33ae0
@@ -447,7 +417,7 @@ SAS URL 采用以下格式：
 	Date: Mon, 19 Jan 2015 03:01:29 GMT
 	
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#Locators/@Element",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Locators/@Element",
 	   "Id":"nb:lid:UUID:af57bdd8-6751-4e84-b403-f3c140444b54",
 	   "ExpirationDateTime":"2015-02-19T00:05:53",
 	   "Type":1,
@@ -473,7 +443,7 @@ SAS URL 采用以下格式：
 
 上载文件后，请更新 FileAsset 大小（和其他）信息。例如：
 	
-	MERGE https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Files('nb%3Acid%3AUUID%3Af13a0137-0a62-9d4c-b3b9-ca944b5142c5') HTTP/1.1
+	MERGE https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Files('nb%3Acid%3AUUID%3Af13a0137-0a62-9d4c-b3b9-ca944b5142c5') HTTP/1.1
 	Content-Type: application/json
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
@@ -481,7 +451,7 @@ SAS URL 采用以下格式：
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 	{  
 	   "ContentFileSize":"1186540",
@@ -502,14 +472,14 @@ SAS URL 采用以下格式：
 **HTTP 请求**
 
 
-	DELETE https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3Aaf57bdd8-6751-4e84-b403-f3c140444b54') HTTP/1.1
+	DELETE https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3Aaf57bdd8-6751-4e84-b403-f3c140444b54') HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 	
 **HTTP 响应**
@@ -521,14 +491,14 @@ SAS URL 采用以下格式：
 
 **HTTP 请求**
 
-	DELETE https://wamsbayclus001rest-hs.chinacloudapp.cn/api/AccessPolicies('nb%3Apid%3AUUID%3Abe0ac48d-af7d-4877-9d60-1805d68bffae') HTTP/1.1
+	DELETE https://wamsshaclus001rest-hs.chinacloudapp.cn/api/AccessPolicies('nb%3Apid%3AUUID%3Abe0ac48d-af7d-4877-9d60-1805d68bffae') HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 **HTTP 响应**
 
@@ -562,14 +532,14 @@ SAS URL 采用以下格式：
 
 **HTTP 请求**：
 
-	GET https://wamsbayclus001rest-hs.chinacloudapp.cn/api/StreamingEndpoints()?$top=1 HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/StreamingEndpoints()?$top=1 HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json;odata=verbose
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 **HTTP 响应**
 	
@@ -582,7 +552,7 @@ SAS URL 采用以下格式：
  
 **HTTP 请求**：
 
-	POST https://wamsbayclus001rest-hs.chinacloudapp.cn/api/StreamingEndpoints('nb:oid:UUID:cd57670d-cc1c-0f86-16d8-3ad478bf9486')/Scale HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/StreamingEndpoints('nb:oid:UUID:cd57670d-cc1c-0f86-16d8-3ad478bf9486')/Scale HTTP/1.1
 	Content-Type: application/json;odata=verbose
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json;odata=verbose
@@ -590,7 +560,7 @@ SAS URL 采用以下格式：
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
 	x-ms-version: 2.11
 	x-ms-client-request-id: 39f96c93-a4b1-43ce-b97e-b2aaa44ee2dd
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 	{"scaleUnits":1}
 
@@ -618,13 +588,13 @@ SAS URL 采用以下格式：
  
 **HTTP 请求**：
 	
-	GET https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Operations('nb:opid:UUID:1853bcbf-b71f-4ed5-a4c7-a581d4f45ae7') HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Operations('nb:opid:UUID:1853bcbf-b71f-4ed5-a4c7-a581d4f45ae7') HTTP/1.1
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json;odata=verbose
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 **HTTP 响应**
 	
@@ -644,8 +614,8 @@ SAS URL 采用以下格式：
 	{  
 	   "d":{  
 	      "__metadata":{  
-	         "id":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Operations('nb%3Aopid%3AUUID%3Acc339c28-6bba-4f7d-bee5-91ea4a0a907e')",
-	         "uri":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Operations('nb%3Aopid%3AUUID%3Acc339c28-6bba-4f7d-bee5-91ea4a0a907e')",
+	         "id":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Operations('nb%3Aopid%3AUUID%3Acc339c28-6bba-4f7d-bee5-91ea4a0a907e')",
+	         "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Operations('nb%3Aopid%3AUUID%3Acc339c28-6bba-4f7d-bee5-91ea4a0a907e')",
 	         "type":"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Operation"
 	      },
 	      "Id":"nb:opid:UUID:cc339c28-6bba-4f7d-bee5-91ea4a0a907e",
@@ -678,14 +648,14 @@ SAS URL 采用以下格式：
 
 **HTTP 请求**
 
-	GET https://wamsbayclus001rest-hs.chinacloudapp.cn/api/MediaProcessors()?$filter=Name%20eq%20'Media%20Encoder%20Standard' HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/MediaProcessors()?$filter=Name%20eq%20'Media%20Encoder%20Standard' HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421675491&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=9hUudHYnATpi5hN3cvTfgw%2bL4N3tL0fdsRnQnm6ZYIU%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 
 **HTTP 响应**
@@ -704,7 +674,7 @@ SAS URL 采用以下格式：
 	Date: Mon, 19 Jan 2015 07:54:09 GMT
 	
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#MediaProcessors",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#MediaProcessors",
 	   "value":[  
 	      {  
 	         "Id":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
@@ -725,7 +695,7 @@ SAS URL 采用以下格式：
 
 **HTTP 请求**
 	
-	POST https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Content-Type: application/json
@@ -733,7 +703,7 @@ SAS URL 采用以下格式：
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421675491&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=9hUudHYnATpi5hN3cvTfgw%2bL4N3tL0fdsRnQnm6ZYIU%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 482
 	
 	{  
@@ -741,7 +711,7 @@ SAS URL 采用以下格式：
 	   "InputMediaAssets":[  
 	      {  
 	         "__metadata":{  
-	            "uri":"https://wamsbayclus001rest-hs.net/api/Assets('nb%3Acid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')"
+	            "uri":"https://wamsshaclus001rest-hs.net/api/Assets('nb%3Acid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')"
 	         }
 	      }
 	   ],
@@ -763,7 +733,7 @@ SAS URL 采用以下格式：
 	Cache-Control: no-cache
 	Content-Length: 1215
 	Content-Type: application/json;odata=verbose;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')
 	Server: Microsoft-IIS/8.5
 	request-id: 532ac1ec-a475-4dce-b2d5-7c8ce94ac87c
 	x-ms-request-id: 532ac1ec-a475-4dce-b2d5-7c8ce94ac87c
@@ -776,23 +746,23 @@ SAS URL 采用以下格式：
 	{  
 	   "d":{  
 	      "__metadata":{  
-	         "id":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')",
-	         "uri":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')",
+	         "id":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')",
+	         "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')",
 	         "type":"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Job"
 	      },
 	      "Tasks":{  
 	         "__deferred":{  
-	            "uri":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/Tasks"
+	            "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/Tasks"
 	         }
 	      },
 	      "OutputMediaAssets":{  
 	         "__deferred":{  
-	            "uri":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/OutputMediaAssets"
+	            "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/OutputMediaAssets"
 	         }
 	      },
 	      "InputMediaAssets":{  
 	         "__deferred":{  
-	            "uri":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')/InputMediaAssets"
+	            "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A9bc8ff20-24fb-4fdb-9d7c-b04c7ee573a1')/InputMediaAssets"
 	         }
 	      },
 	      "Id":"nb:jid:UUID:71d2dd33-efdf-ec43-8ea1-136a110bd42c",
@@ -849,14 +819,14 @@ SAS URL 采用以下格式：
 
 **HTTP 请求**
 
-	GET https://wamsbayclus001rest-hs.net/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/State HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/State HTTP/1.1
 	Content-Type: application/json;odata=verbose
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
 	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=zf84471d-2233-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336908022&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=RYXOraO6Z%2f7l9whWZQN%2bypeijgHwIk8XyikA01Kx1%2bk%3d
-	Host: wamsbayclus001rest-hs.net
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 0
 
 
@@ -889,14 +859,14 @@ SAS URL 采用以下格式：
 **HTTP 请求**
 
 
-	GET https://wamsbayclus001rest-hs.net/API/CancelJob?jobid='nb%3ajid%3aUUID%3a71d2dd33-efdf-ec43-8ea1-136a110bd42c' HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/CancelJob?jobid='nb%3ajid%3aUUID%3a71d2dd33-efdf-ec43-8ea1-136a110bd42c' HTTP/1.1
 	Content-Type: application/json;odata=verbose
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
 	x-ms-version: 2.2
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336908753&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=kolAgnFfbQIeRv4lWxKSFa4USyjWXRm15Kd%2bNd5g8eA%3d
-	Host: wamsbayclus001rest-hs.net
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 
 如果成功，将返回不带消息正文的 204 响应代码。
@@ -911,7 +881,7 @@ SAS URL 采用以下格式：
 
 **HTTP 请求**
 
-	GET https://wamsbayclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/OutputMediaAssets() HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs('nb%3Ajid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/OutputMediaAssets() HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
@@ -919,7 +889,7 @@ SAS URL 采用以下格式：
 	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421675491&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=9hUudHYnATpi5hN3cvTfgw%2bL4N3tL0fdsRnQnm6ZYIU%3d
 	x-ms-version: 2.11
-	Host: wamsbayclus001rest-hs.chinacloudapp.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 
 **HTTP 响应**
@@ -938,7 +908,7 @@ SAS URL 采用以下格式：
 	Date: Mon, 19 Jan 2015 08:28:13 GMT
 		
 	{  
-	   "odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#Assets",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Assets",
 	   "value":[  
 	      {  
 	         "Id":"nb:cid:UUID:71d2dd33-efdf-ec43-8ea1-136a110bd42c",
@@ -992,14 +962,14 @@ MPEG DASH 的流 URL 采用以下格式：
 
 以下示例说明如何为给定资产指定具有读取权限的 AccessPolicy。
 
-	POST https://wamsbayclus001rest-hs.net/API/AccessPolicies HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/AccessPolicies HTTP/1.1
 	Content-Type: application/json
 	Accept: application/json
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
 	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
-	Host: wamsbayclus001rest-hs.net
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 74
 	Expect: 100-continue
 	
@@ -1014,14 +984,14 @@ MPEG DASH 的流 URL 采用以下格式：
 
 以下代码演示了如何获取可用于下载以前创建和上载的媒体文件的 URL。AccessPolicy 已设置读取权限，并且定位符路径指向 SAS 下载 URL。
 
-	POST https://wamsbayclus001rest-hs.net/API/Locators HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Locators HTTP/1.1
 	Content-Type: application/json
 	Accept: application/json
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
 	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=zf84471d-b1ae-2233-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
-	Host: wamsbayclus001rest-hs.net
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 182
 	Expect: 100-continue
 	
@@ -1034,7 +1004,7 @@ MPEG DASH 的流 URL 采用以下格式：
 	Cache-Control: no-cache
 	Content-Length: 1150
 	Content-Type: application/json;odata=verbose;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')
 	Server: Microsoft-IIS/7.5
 	x-ms-request-id: 8cfd8556-3064-416a-97f2-67d9e35f0911
 	X-Content-Type-Options: nosniff
@@ -1046,18 +1016,18 @@ MPEG DASH 的流 URL 采用以下格式：
 	{  
 	   "d":{  
 	      "__metadata":{  
-	         "id":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')",
-	         "uri":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')",
+	         "id":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')",
+	         "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')",
 	         "type":"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Locator"
 	      },
 	      "AccessPolicy":{  
 	         "__deferred":{  
-	            "uri":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')/AccessPolicy"
+	            "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A8e5a821d-2194-4d00-8884-adf979856874')/AccessPolicy"
 	         }
 	      },
 	      "Asset":{  
 	         "__deferred":{  
-	            "uri":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/Asset"
+	            "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A71d2dd33-efdf-ec43-8ea1-136a110bd42c')/Asset"
 	         }
 	      },
 	      "Id":"nb:lid:UUID:8e5a821d-2194-4d00-8884-adf979856874",
@@ -1107,14 +1077,14 @@ MPEG DASH 的流 URL 采用以下格式：
 
 以下代码说明了如何创建流 URL 定位符：
 
-	POST https://wamsbayclus001rest-hs/API/Locators HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Locators HTTP/1.1
 	Content-Type: application/json
 	Accept: application/json
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
 	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
-	Host: wamsbayclus001rest-hs
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 182
 	Expect: 100-continue
 	
@@ -1126,7 +1096,7 @@ MPEG DASH 的流 URL 采用以下格式：
 	Cache-Control: no-cache
 	Content-Length: 981
 	Content-Type: application/json;odata=verbose;charset=utf-8
-	Location: https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')
 	Server: Microsoft-IIS/7.5
 	x-ms-request-id: 2eac4158-fc78-4fa2-81ee-c9f582dc385f
 	X-Content-Type-Options: nosniff
@@ -1138,24 +1108,24 @@ MPEG DASH 的流 URL 采用以下格式：
 	{  
 	   "d":{  
 	      "__metadata":{  
-	         "id":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')",
-	         "uri":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')",
+	         "id":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')",
+	         "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')",
 	         "type":"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Locator"
 	      },
 	      "AccessPolicy":{  
 	         "__deferred":{  
-	            "uri":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')/AccessPolicy"
+	            "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')/AccessPolicy"
 	         }
 	      },
 	      "Asset":{  
 	         "__deferred":{  
-	            "uri":"https://wamsbayclus001rest-hs.net/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')/Asset"
+	            "uri":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Locators('nb%3Alid%3AUUID%3A52034bf6-dfae-4d83-aad3-3bd87dcb1a5d')/Asset"
 	         }
 	      },
 	      "Id":"nb:lid:UUID:52034bf6-dfae-4d83-aad3-3bd87dcb1a5d",
 	      "ExpirationDateTime":"\/Date(1337049395000)\/",
 	      "Type":2,
-	      "Path":"http://wamsbayclus001rest-hs.net/52034bf6-dfae-4d83-aad3-3bd87dcb1a5d/",
+	      "Path":"http://wamsshaclus001rest-hs.chinacloudapp.cn/52034bf6-dfae-4d83-aad3-3bd87dcb1a5d/",
 	      "AccessPolicyId":"nb:pid:UUID:38c71dd0-44c5-4c5f-8418-08bb6fbf7bf8",
 	      "AssetId":"nb:cid:UUID:eb5540a2-116e-4d36-b084-7e9958f7f3c3",
 	      "StartTime":"\/Date(1337031395000)\/"

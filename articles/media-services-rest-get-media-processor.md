@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="03/01/2016"  
-	wacn.date="04/05/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 #如何：获取媒体处理器实例
@@ -43,7 +43,7 @@ Azure 媒体加密器|已过时|
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
+>请按照[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对媒体服务 URI 执行后续调用。
 
 
 以下 REST 调用演示了如何按名称获取媒体处理器实例（在本例中为媒体编码器标准版）。
@@ -53,7 +53,7 @@ Azure 媒体加密器|已过时|
 	
 请求：
 
-	GET https://media.chinacloudapi.cn/api/MediaProcessors()?$filter=Name%20eq%20'Media%20Encoder%20Standard' HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/MediaProcessors()?$filter=Name%20eq%20'Media%20Encoder%20Standard' HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
@@ -61,12 +61,12 @@ Azure 媒体加密器|已过时|
 	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer <token>
 	x-ms-version: 2.11
-	Host: media.chinacloudapi.cn
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 响应：
 		
 	{  
-	   "odata.metadata":"https://media.chinacloudapi.cn/api/$metadata#MediaProcessors",
+	   "odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#MediaProcessors",
 	   "value":[  
 	      {  
 	         "Id":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
