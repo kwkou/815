@@ -42,7 +42,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 2. Azure 媒体服务帐户。使用 Azure 经典管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use/)。 
 
-	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect_programmatically/)。
+	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect-programmatically/)。
 4. （推荐）分配一个或多个缩放单位。建议为生产环境中的应用程序分配一个或多个扩展单元。有关详细信息，请参阅[管理流式处理终结点](/documentation/articles/media-services-manage-origins/)。
 
 ##概念和概述

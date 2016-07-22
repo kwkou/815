@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="06/09/2016"
-   wacn.date="07/11/2016"/>
+   wacn.date="07/21/2016"/>
 
 # 概述：云业务连续性与使用 Azure SQL 数据库进行数据库灾难恢复
 
@@ -69,7 +69,7 @@ Azure SQL 数据库可提供大量业务连续性解决方案。业务连续性�
 | 异地还原 | ERT < 12 小时，RPO < 1 小时 | ERT < 12 小时，RPO < 1 小时 | ERT < 12 小时，RPO < 1 小时
 | 活动异地复制 | ERT < 30 秒，RPO < 5 秒 | ERT < 30 秒，RPO < 5 秒 | ERT < 30 秒，RPO < 5 秒
 
-提供这些功能是为了解决前面列出的方案。有关如何选择特定功能的指导，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design/)部分。
+提供这些功能是为了解决前面列出的方案。有关如何选择特定功能的指导，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-scenarios/)部分。
 
 > [AZURE.NOTE] ERT 和 RPO 值是工程目标，并仅提供指导。它们不属于 [SQL 数据库的 SLA](/support/legal/sla)
 

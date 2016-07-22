@@ -9,7 +9,7 @@
 <tags 
  ms.service="scheduler" 
  ms.date="03/09/2016"
- wacn.date="04/11/2016"/>
+ wacn.date="07/21/2016"/>
  
  
 # 计划程序高可用性和可靠性
@@ -26,7 +26,7 @@ Azure 计划程序已在中国的两个区域推出：中国东部和中国北�
 
 不只是 Azure 计划程序前端可用于管理请求，你自己的作业也会经过地域复制。当一个区域中的服务中断时，Azure 计划程序将故障转移，并确保配对地理区域中的另一个数据中心运行作业。
 
-例如，如果你已在美国中南部创建了一个作业，Azure 计划程序会自动在美国中北部复制该作业。如果美国中南部发生故障，Azure 计划程序可确保从美国中北部运行该作业。[有关 Azure 异地复制功能的深入说明，请参阅本主题。](/documentation/articles/sql-database-business-continuity-design/)
+例如，如果你已在美国中南部创建了一个作业，Azure 计划程序会自动在美国中北部复制该作业。如果美国中南部发生故障，Azure 计划程序可确保从美国中北部运行该作业。[有关 Azure 异地复制功能的深入说明，请参阅本主题。](/documentation/articles/sql-database-business-continuity-scenarios/)
 
 ![][1]
 

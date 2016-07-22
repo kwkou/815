@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="05/04/2016"
-   wacn.date="06/27/2016"/>
+   wacn.date="07/21/2016"/>
 
 # Azure SQL 数据库在你的环境中正常工作
 
@@ -35,7 +35,7 @@
 
 通过有保证的资源、相关教程（如创建你的第一个 SQL 数据库、排查查询问题和快速入门代码示例），获取数据库问题的正确答案永远不会遥不可及。
 
-[阅读文档](/documentation/articles/sql-database-connect-central-recommendations/)
+[阅读文档](/documentation/articles/sql-database-develop-overview/)
 
 转到主页以查看 SQL 数据库可提供的其他功能。
 [请查看](/home/features/sql-database)

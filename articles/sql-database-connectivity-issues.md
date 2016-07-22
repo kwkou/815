@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/30/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 # 排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误
@@ -89,7 +89,7 @@
 
 以下位置提供了采用各种编程语言的重试逻辑代码示例：
 
-- [快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
+- [快速入门代码示例](/documentation/articles/sql-database-libraries/)
 
 
 <a id="k-test-retry-logic" name="k-test-retry-logic"></a>
@@ -410,7 +410,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 在其重试逻辑中使用 EntLib60 的简短 C# 代码示例可从以下链接中找到：
 
-- [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows/)
+- [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-dotnet-simple/)
 
 
 > [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。

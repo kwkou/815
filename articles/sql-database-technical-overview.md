@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="03/29/2016"
-   wacn.date="05/16/2016"/>
+   wacn.date="07/21/2016"/>
 
 # 什么是 SQL 数据库？ SQL 数据库简介
 
@@ -51,7 +51,7 @@ SQL Server 的数据安全性一贯可靠，SQL 数据库也包含类似的功�
 - 了解[弹性池](/documentation/articles/sql-database-elastic-pool/)。
 - 从[创建第一个数据库](/documentation/articles/sql-database-get-started/)开始。
 - [使用 SSMS 进行连接和查询](/documentation/articles/sql-database-connect-query-ssms/)
-- 使用 [C#](/documentation/articles/sql-database-connect-query/)、[Java](/documentation/articles/sql-database-develop-java-simple-windows/)、[Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows/)、[PHP](/documentation/articles/sql-database-develop-php-retry-windows/)、[Python](/documentation/articles/sql-database-develop-python-simple-windows/) 或 [Ruby](/documentation/articles/sql-database-develop-ruby-simple-linux/) 构建你的第一个应用。
+- 使用 [C#](/documentation/articles/sql-database-connect-query/)、[Java](/documentation/articles/sql-database-develop-java-simple/)、[Node.js](/documentation/articles/sql-database-develop-nodejs-simple/)、[PHP](/documentation/articles/sql-database-develop-php-simple/)、[Python](/documentation/articles/sql-database-develop-python-simple/) 或 [Ruby](/documentation/articles/sql-database-develop-ruby-simple/) 构建你的第一个应用。
 - 请查看[有关 Azure SQL 数据库服务的所有主题](/documentation/articles/sql-database-index-all-articles/)的标题和描述的索引。
 
 <!---HONumber=Mooncake_0509_2016-->

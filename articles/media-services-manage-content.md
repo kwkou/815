@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="04/25/2016"   
-	wacn.date="06/21/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 # 使用 Azure 经典管理门户管理 Azure 媒体服务的内容
@@ -73,7 +73,7 @@
 ##<a id="encode"></a>如何：对内容进行编码
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encode-asset/)
+- [.NET](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)
 - [REST](/documentation/articles/media-services-rest-encode-asset/)
 - [门户](/documentation/articles/media-services-manage-content/#encode)
 

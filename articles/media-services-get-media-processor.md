@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="03/01/2016" 
-	wacn.date="04/05/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 #如何：获取媒体处理器实例
@@ -39,7 +39,7 @@ Azure 媒体加密器|已过时|
 
 ##获取媒体处理器
 
-以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically/)部分中描述的服务器上下文。
+以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到媒体服务](/documentation/articles/media-services-dotnet-connect-programmatically/)部分中描述的服务器上下文。
 
 	private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
 	{

@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="06/16/2016"
-   wacn.date="07/11/2016"/>
+   wacn.date="07/21/2016"/>
 
 # 还原 Azure SQL 数据库或故障转移到辅助数据库
 
@@ -19,7 +19,7 @@ Azure SQL 数据库提供以下功能，以便在服务中断后进行恢复：
 - [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 - [异地还原](/documentation/articles/sql-database-geo-restore/)
 
-若要了解有关应对灾难以及何时恢复数据库的信息，请访问[业务连续性设计](/documentation/articles/sql-database-business-continuity-design/)页。
+若要了解有关应对灾难以及何时恢复数据库的信息，请访问[业务连续性设计](/documentation/articles/sql-database-business-continuity-scenarios/)页。
 
 ## 何时启动恢复
 
@@ -106,6 +106,6 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 - [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
 - [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
 - [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
 
 <!---HONumber=Mooncake_0704_2016-->

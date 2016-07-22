@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="04/07/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="07/21/2016"/>
 
 # 通过 .NET 开始使用 Azure 队列存储
 
@@ -261,7 +261,7 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     - [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)来存储结构化数据。
     - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)来存储非结构化数据。
-    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use/)来存储关系数据。
+    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)来存储关系数据。
 
 
 

@@ -10,14 +10,14 @@
 <tags 
 	ms.service="media-services" 
 	ms.date="03/01/2016" 
-	wacn.date="04/05/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 #如何使用媒体编码器标准版对资产进行编码
 
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encode-asset/)
+- [.NET](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)
 - [REST](/documentation/articles/media-services-rest-encode-asset/)
 - [门户](/documentation/articles/media-services-manage-content/#encode)
 
@@ -45,7 +45,7 @@
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。
 
->请按照[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对媒体服务 URI 执行后续调用。
+>请按照[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect-programmatically/)中所述对媒体服务 URI 执行后续调用。
 >
 >使用 JSON 并指定在请求中使用 **__metadata** 关键字（例如，为了引用某个链接对象）时，必须将 Accept 标头设置为 [JSON 详细格式](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/)：Accept: application/json;odata=verbose。
 

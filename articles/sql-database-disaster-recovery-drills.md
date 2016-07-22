@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="06/16/2016"
-   wacn.date="07/11/2016"/>
+   wacn.date="07/21/2016"/>
 
 #执行灾难恢复演练
 
@@ -74,6 +74,6 @@
 - [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
 - [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
 - [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
 
 <!---HONumber=Mooncake_0704_2016-->

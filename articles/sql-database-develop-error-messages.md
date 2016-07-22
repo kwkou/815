@@ -12,7 +12,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/22/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 # SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题
@@ -53,7 +53,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 暂时性故障错误应该提示客户端程序运行你设计的重试逻辑来重试操作。有关重试逻辑的代码示例，请参阅：
 
 
-- [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/)
+- [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-libraries/)
 
 - [修复 SQL 数据库中的连接错误和暂时性错误的操作](/documentation/articles/sql-database-connectivity-issues/)
 
