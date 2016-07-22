@@ -48,7 +48,7 @@
 
 问：如何使用 REST 进行连接？
 
-答：请按照[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对媒体服务 URI 执行后续调用。
+答：请按照[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect-programmatically/)中所述对媒体服务 URI 执行后续调用。
 
 
 问：如何在编码过程中旋转视频。

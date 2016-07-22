@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="06/16/2016"
-   wacn.date="07/18/2016"/>
+   wacn.date="07/21/2016"/>
 
 # 使用 SQL 数据库活动异地复制管理云应用程序的滚动升级
 
@@ -137,6 +137,6 @@
 - [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
 - [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
 - [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
 
 <!---HONumber=Mooncake_0711_2016-->

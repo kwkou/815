@@ -11,13 +11,13 @@
 <tags
     ms.service="sql-database"
     ms.date="05/03/2016"
-    wacn.date="06/14/2016"/>
+    wacn.date="07/21/2016"/>
 
 # C&#x23; 数据库开发：为 SQL 数据库创建和配置弹性数据库池
 
 > [AZURE.SELECTOR]
 - [C#](/documentation/articles/sql-database-elastic-pool-csharp/)
-- [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/)
+- [PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/)
 
 
 本文说明如何为来自使用 C# 数据库开发技术的应用程序 SQL 数据库创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。

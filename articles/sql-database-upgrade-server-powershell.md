@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/18/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="07/21/2016"/>
 
 # 使用 PowerShell 升级到 Azure SQL 数据库 V12
 
@@ -34,7 +34,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 遵循本文中的步骤可以轻松地从 V11 服务器直接迁移到弹性数据库池。
 
-请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-connect-central-recommendations/)，则足以防止升级结束时连接中断。
+请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-develop-overview/)，则足以防止升级结束时连接中断。
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="06/09/2016"
-	wacn.date="07/18/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 # 通过 .NET 开始使用 Azure 表存储
@@ -439,7 +439,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 - 了解如何使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/) 简化你编写的用于 Azure 存储空间的代码
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)来存储非结构化数据。
-    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use/)来存储关系数据。
+    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)来存储关系数据。
 
 
   [下载并安装 Azure SDK for.NET]: /develop/net/

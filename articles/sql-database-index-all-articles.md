@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/24/2016"
-	wacn.date="06/14/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 # 有关 Azure SQL 数据库服务的所有主题
@@ -46,19 +46,19 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 9 | [代码示例：用于连接到 SQL 数据库的 C# 重试逻辑](/documentation/articles/sql-database-develop-csharp-retry-windows/) | C# 示例包含用于与 Azure SQL 数据库可靠交互的重试逻辑。 |
-| 10 | [在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库](/documentation/articles/sql-database-develop-java-simple-windows/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Java 代码示例。该示例使用 JDBC，并在 Windows 客户端计算机上运行。 |
-| 11 | [在 Windows上使用 Node.js 连接到 SQL 数据库](/documentation/articles/sql-database-develop-nodejs-simple-windows/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例在 Windows 客户端计算机上运行。 |
-| 12 | [在 Mac OS X 上配合 Tedious 使用 Node.js 连接到 SQL 数据库](/documentation/articles/sql-database-develop-nodejs-simple-mac/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例使用 Tedious 驱动程序进行连接。 |
-| 13 | [在 Ubuntu Linux 上配合 Tedious 使用 Node.js 连接到 SQL 数据库](/documentation/articles/sql-database-develop-nodejs-simple-linux/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例使用 Tedious 驱动程序进行连接。 |
-| 14 | [在 Windows上使用 PHP 连接到 SQL 数据库](/documentation/articles/sql-database-develop-php-simple-windows/) | 演示一个示例 PHP 程序，该程序可以从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。 |
-| 15 | [使用 Windows 上的 PHP 和暂时性故障处理连接到 SQL 数据库](/documentation/articles/sql-database-develop-php-retry-windows/) | 演示一个示例 PHP 程序，该程序可以通过暂时性故障处理从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。 |
-| 16 | [在 Mac OS 上使用 Python 连接到 SQL 数据库](/documentation/articles/sql-database-develop-python-simple-mac-osx/) | 演示了一个可用于从 Mac 连接到 Azure SQL 数据库的 Python 代码示例。该示例使用 pymssql 驱动程序。 |
-| 17 | [在 Ubuntu Linux 上使用 Python 连接到 SQL 数据库](/documentation/articles/sql-database-develop-python-simple-ubuntu-linux/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Python 代码示例。该示例在 Unbutu Linux 客户端计算机上运行。 |
-| 18 | [在 Windows上使用 Python 连接到 SQL 数据库](/documentation/articles/sql-database-develop-python-simple-windows/) | 提供了一个可以用于从 Windows 客户端连接到 Azure SQL 数据库的 Python 代码示例。该示例使用 pymssql 驱动程序。 |
-| 19 | [在 Mac OS X 上使用 Ruby 连接到 SQL 数据库(Yosemite)](/documentation/articles/sql-database-develop-ruby-simple-mac-osx/) | 提供可在 Mac OS X (Yosemite) 上运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。 |
-| 20 | [在 Ubuntu Linux 上使用 Ruby 连接到 SQL 数据库](/documentation/articles/sql-database-develop-ruby-simple-linux/) | 提供可在 Ubuntu Linux 上以客户端形式运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。 |
-| 21 | [在 Windows上使用 Ruby 连接到 SQL 数据库](/documentation/articles/sql-database-develop-ruby-simple-windows/) | 提供可在 Windows 上运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。 |
+| 9 | [代码示例：用于连接到 SQL 数据库的 C# 重试逻辑](/documentation/articles/sql-database-develop-dotnet-simple/) | C# 示例包含用于与 Azure SQL 数据库可靠交互的重试逻辑。 |
+| 10 | [在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库](/documentation/articles/sql-database-develop-java-simple/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Java 代码示例。该示例使用 JDBC，并在 Windows 客户端计算机上运行。 |
+| 11 | [在 Windows上使用 Node.js 连接到 SQL 数据库](/documentation/articles/sql-database-develop-nodejs-simple/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例在 Windows 客户端计算机上运行。 |
+| 12 | [在 Mac OS X 上配合 Tedious 使用 Node.js 连接到 SQL 数据库](/documentation/articles/sql-database-develop-nodejs-simple/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例使用 Tedious 驱动程序进行连接。 |
+| 13 | [在 Ubuntu Linux 上配合 Tedious 使用 Node.js 连接到 SQL 数据库](/documentation/articles/sql-database-develop-nodejs-simple/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例使用 Tedious 驱动程序进行连接。 |
+| 14 | [在 Windows上使用 PHP 连接到 SQL 数据库](/documentation/articles/sql-database-develop-php-simple/) | 演示一个示例 PHP 程序，该程序可以从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。 |
+| 15 | [使用 Windows 上的 PHP 和暂时性故障处理连接到 SQL 数据库](/documentation/articles/sql-database-develop-php-simple/) | 演示一个示例 PHP 程序，该程序可以通过暂时性故障处理从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。 |
+| 16 | [在 Mac OS 上使用 Python 连接到 SQL 数据库](/documentation/articles/sql-database-develop-python-simple/) | 演示了一个可用于从 Mac 连接到 Azure SQL 数据库的 Python 代码示例。该示例使用 pymssql 驱动程序。 |
+| 17 | [在 Ubuntu Linux 上使用 Python 连接到 SQL 数据库](/documentation/articles/sql-database-develop-python-simple/) | 演示了一个可以用来连接到 Azure SQL 数据库的 Python 代码示例。该示例在 Unbutu Linux 客户端计算机上运行。 |
+| 18 | [在 Windows上使用 Python 连接到 SQL 数据库](/documentation/articles/sql-database-develop-python-simple/) | 提供了一个可以用于从 Windows 客户端连接到 Azure SQL 数据库的 Python 代码示例。该示例使用 pymssql 驱动程序。 |
+| 19 | [在 Mac OS X 上使用 Ruby 连接到 SQL 数据库(Yosemite)](/documentation/articles/sql-database-develop-ruby-simple/) | 提供可在 Mac OS X (Yosemite) 上运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。 |
+| 20 | [在 Ubuntu Linux 上使用 Ruby 连接到 SQL 数据库](/documentation/articles/sql-database-develop-ruby-simple/) | 提供可在 Ubuntu Linux 上以客户端形式运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。 |
+| 21 | [在 Windows上使用 Ruby 连接到 SQL 数据库](/documentation/articles/sql-database-develop-ruby-simple/) | 提供可在 Windows 上运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。 |
 | 22 | [使用 C# 创建和管理 SQL 数据库](/documentation/articles/sql-database-get-started-csharp/) | 本文介绍如何使用适用于.NET 的 Azure SQL 数据库库通过 C# 创建和管理 Azure SQL 数据库。 |
 | 23 | [用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/) | 从 ADO.NET 到 Azure SQL 数据库 V12 的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。 |
 | 24 | [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/) | 了解有关 SQL 数据库客户端应用程序的 SQL 错误代码，例如常见的数据库连接错误、数据库复制问题和常规错误。 |
@@ -74,12 +74,12 @@
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
 | 29 | [使用现有的 SQL 数据库和移动服务 .NET 后端生成服务](/documentation/articles/mobile-services-dotnet-backend-use-existing-sql-database/) | 了解如何将现有的云或本地 SQL 数据库与基于 .NET 的移动服务结合使用 |
-| 30 | [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples/) | 提供 Node.js on Linux、Python on Mac OS、Java 和 Windows、Enterprise Library 和其他许多平台上的 Azure SQL 数据库客户端的代码示例与驱动程序。 |
-| 31 | [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows/) | Enterprise Library 旨在简化云服务的客户端程序的多个任务，包括集成暂时性故障的重试逻辑。 |
-| 32 | [连接到 SQL 数据库：最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations/) | 一个入门主题，其中收集了通过 ADO.NET 和 PHP 等技术连接到 Azure SQL 数据库的客户端程序的相关链接和最佳实践建议。 |
+| 30 | [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-libraries/) | 提供 Node.js on Linux、Python on Mac OS、Java 和 Windows、Enterprise Library 和其他许多平台上的 Azure SQL 数据库客户端的代码示例与驱动程序。 |
+| 31 | [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-dotnet-simple/) | Enterprise Library 旨在简化云服务的客户端程序的多个任务，包括集成暂时性故障的重试逻辑。 |
+| 32 | [连接到 SQL 数据库：最佳实践和设计准则](/documentation/articles/sql-database-develop-overview/) | 一个入门主题，其中收集了通过 ADO.NET 和 PHP 等技术连接到 Azure SQL 数据库的客户端程序的相关链接和最佳实践建议。 |
 | 33 | [创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure App Service](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) | 本教程说明如何生成整合了 SQL 数据库的安全 ASP.NET 4.5 Web 窗体 Web 应用程序并将其部署到 Azure。 |
 | 34 | [获取客户端 ID 和密钥以便从代码连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys/) | 获取客户端 ID 和密钥以便从代码访问 SQL 数据库。 |
-| 35 | [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use/) | SQL 数据库入门。了解如何创建 SQL 数据库实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。 |
+| 35 | [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/) | SQL 数据库入门。了解如何创建 SQL 数据库实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。 |
 | 36 | [扩展 Azure SQL 数据库支持的移动服务](/documentation/articles/mobile-services-sql-scale-guidance/) | 了解如何诊断和修复 SQL 数据库支持的移动服务中的可扩展性问题 |
 
 
@@ -146,11 +146,11 @@
 | 72 | [C# 数据库开发：为 SQL 数据库创建和配置弹性数据库池](/documentation/articles/sql-database-elastic-pool-csharp/) | 使用 C# 数据库开发技术创建 Azure SQL 数据库弹性数据库池，以便可以在多个数据库之间共享资源。 |
 | 73 | [使用 C# 创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/) | 使用 C# 数据库开发技术在 Azure SQL 数据库中创建可缩放的弹性数据库池，以便可以在多个数据库之间共享资源。 |
 | 74 | [使用 PowerShell 创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/) | 了解如何通过创建可缩放的弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。 |
-| 75 | [使用 PowerShell 创建弹性数据库池以便向外缩放多个 SQL 数据库的资源](/documentation/articles/sql-database-elastic-pool-powershell/) | 了解如何通过创建弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。 |
+| 75 | [使用 PowerShell 创建弹性数据库池以便向外缩放多个 SQL 数据库的资源](/documentation/articles/sql-database-elastic-pool-create-powershell/) | 了解如何通过创建弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。 |
 | 76 | [使用 C# 管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-csharp/) | 使用 C# 数据库开发技术来管理 Azure SQL 数据库弹性数据库池。 |
 | 77 | [使用 PowerShell 监视、管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-powershell/) | 了解如何使用 PowerShell 管理弹性数据库池。 |
 | 79 | [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/) | 弹性数据库池是由一组弹性数据库共享的可用资源的集合。本文档提供一个 Powershell 脚本来帮助你评估是否适合对一组数据库使用弹性数据库池。 |
-| 80 | [SQL 数据库弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference/) | 本参考提供弹性数据库池文章和可编程性信息的链接和详情。 |
+| 80 | [SQL 数据库弹性数据库池参考](/documentation/articles/sql-database-elastic-pool/) | 本参考提供弹性数据库池文章和可编程性信息的链接和详情。 |
 | 81 | [使用弹性数据库池共享资源以顺应 SQL 数据库中的爆炸式数据增长](/documentation/articles/sql-database-elastic-pool/) | 了解如何使用弹性数据库池（在多个数据库之间共享可用资源的一种方式）来顺应 SQL 数据库中的爆炸式数据增长。 |
 
 
@@ -179,9 +179,9 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 88 | [业务连续性常见问题](/documentation/articles/sql-database-bcdr-faq/) | 客户所提出的，有关 Azure SQL 数据库中用于实现业务连续性和灾难恢复的内置功能和可选功能的常见问题与解答。 |
+| 88 | [业务连续性常见问题](/documentation/articles/sql-database-business-continuity/) | 客户所提出的，有关 Azure SQL 数据库中用于实现业务连续性和灾难恢复的内置功能和可选功能的常见问题与解答。 |
 | 89 | [使用 SQL 数据库中的异地复制功能为云灾难恢复设计应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/) | 了解如何使用 Azure SQL 数据库中应用程序数据备份的异地复制功能为业务连续性规划设计云灾难恢复解决方案。 |
-| 90 | [业务连续性设计](/documentation/articles/sql-database-business-continuity-design/) | 选择指南.本部分将提供有关如何选择要使用的 BCDR 功能以及何时使用这些功能的指南。这包括使用 SQL DB 自动获取的内容的说明。 |
+| 90 | [业务连续性设计](/documentation/articles/sql-database-business-continuity-scenarios/) | 选择指南.本部分将提供有关如何选择要使用的 BCDR 功能以及何时使用这些功能的指南。这包括使用 SQL DB 自动获取的内容的说明。 |
 | 91 | [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/) | 时间点还原, Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 经典管理门户, Azure 经典管理门户 |
 | 92 | [如何从 Azure SQL 数据库备份中还原单个表](/documentation/articles/sql-database-cloud-migrate-restore-single-table-azure-backup/) | 了解如何从 Azure SQL 数据库备份中还原单个表。 |
 | 93 | [如何将 Azure 存储空间用于 SQL Server 备份和还原](/documentation/articles/storage-use-storage-sql-server-backup-restore/) | 将 SQL Server 和 SQL 数据库备份到 Azure 存储空间。介绍了将 SQL 数据库备份到 Azure 存储空间的好处，以及需要哪些 SQL Server 和 Azure 存储空间组件 |

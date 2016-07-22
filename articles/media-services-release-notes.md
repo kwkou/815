@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
  	ms.date="04/18/2016"
-	wacn.date="06/27/2016"/>
+	wacn.date="07/21/2016"/>
 
 
 # Azure 媒体服务发行说明
@@ -640,12 +640,12 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [使用 PlayReady 保护平滑流]: /documentation/articles/media-services-static-packaging/
 [适用于 .NET 的媒体服务 SDK 中的重试逻辑]: http://msdn.microsoft.com/zh-cn/library/azure/dn745650.aspx
 [Grass Valley 宣布通过云对 EDIUS 7 进行流式处理]: http://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter
-[控制媒体服务编码器输出文件名]: /documentation/articles/media-services-azure-media-customize-ame-presets/
-[创建覆盖]: /documentation/articles/media-services-azure-media-customize-ame-presets/
-[拼接视频片段]: /documentation/articles/media-services-azure-media-customize-ame-presets/
+[控制媒体服务编码器输出文件名]: /documentation/articles/media-services-advanced-encoding-with-mes/
+[创建覆盖]: /documentation/articles/media-services-advanced-encoding-with-mes/
+[拼接视频片段]: /documentation/articles/media-services-advanced-encoding-with-mes/
 [Azure 媒体服务 .NET SDK 3.0.0.1 和 3.0.0.2 版本]: http://www.gtrifonov.com/2014/02/07/windows-azure-media-services-.net-sdk-3.0.0.2-release/
 [Azure Active Directory 访问控制服务 (ACS)]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
-[使用适用于 .NET 的媒体服务 SDK 连接到媒体服务]: /documentation/articles/media-services-dotnet-connect_programmatically/
+[使用适用于 .NET 的媒体服务 SDK 连接到媒体服务]: /documentation/articles/media-services-dotnet-connect-programmatically/
 [Azure 媒体服务 .NET SDK 扩展]: https://github.com/Azure/azure-sdk-for-media-services-extensions/tree/dev
 [azure-sdk-tools]: https://github.com/Azure/azure-sdk-tools
 [GitHub]: https://github.com/Azure/azure-sdk-for-media-services

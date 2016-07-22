@@ -6,6 +6,6 @@
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
   - 若要使用 Azure 存储 Blob，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
   - 若要使用 Azure 存储队列，请参阅[通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)。
-  - 若要存储相关数据，请参阅[如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use/)。
+  - 若要存储相关数据，请参阅[如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)。
 
 <!---HONumber=Mooncake_0516_2016-->

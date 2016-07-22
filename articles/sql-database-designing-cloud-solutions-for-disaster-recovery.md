@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="04/25/2016"
-   wacn.date="06/14/2016"/>
+   wacn.date="07/21/2016"/>
 
 # 使用 SQL 数据库中的活动异地复制功能为云灾难恢复设计应用程序
 
@@ -159,6 +159,6 @@
 - [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 - [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
 - [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
 
 <!---HONumber=Mooncake_0530_2016-->

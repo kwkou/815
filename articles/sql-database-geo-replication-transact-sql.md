@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="06/14/2016"
-    wacn.date="07/18/2016"/>
+    wacn.date="07/21/2016"/>
 
 # 使用 Transact-SQL 为 Azure SQL 数据库配置异地复制
 
@@ -168,7 +168,7 @@
 
 - [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
 - [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 - [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
