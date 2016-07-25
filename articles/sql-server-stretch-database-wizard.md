@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="02/26/2016"
-	wacn.date="04/25/2016"/>
+	ms.date="06/14/2016"
+	wacn.date="07/25/2016"/>
 
 # 通过运行“为数据库启用延伸向导”开始操作
 

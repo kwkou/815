@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="02/26/2016"
-	wacn.date="05/30/2016"/>
+	ms.date="06/14/2016"
+	wacn.date="07/25/2016"/>
 
 # Stretch Database 的限制
 
