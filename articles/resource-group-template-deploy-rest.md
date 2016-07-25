@@ -17,8 +17,6 @@
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-group-template-deploy/)
 - [Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)
-- [门户](/documentation/articles/resource-group-template-deploy-portal/)
-- [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/)
 - [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 
 本文介绍如何将 Resource Manager REST API 与 Resource Manager 模板配合使用向 Azure 部署资源。

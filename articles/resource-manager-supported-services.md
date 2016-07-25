@@ -1,3 +1,4 @@
+<!-- Remove availability -->
 <properties
    pageTitle="Resource Manager 支持的服务 | Azure"
    description="介绍支持资源管理器的资源提供程序及其架构和可用 API 版本，以及可托管资源的区域。"
@@ -18,7 +19,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 部署资源时，你还需要知道哪些区域支持这些资源，以及哪些 API 版本可用于资源。[支持的区域](#supported-regions)部分说明了如何找出哪些区域支持你的订阅和资源。[支持的 API 版本](#supported-api-versions)部分说明了如何判断可以使用哪些 API 版本。
 
-若要查看 Azure 门户和经典门户支持哪些服务，请参阅 [Azure 门户可用性图表](/features/azure-portal/availability/)。若要查看哪些服务支持移动资源，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
+<!-- 若要查看 Azure 门户和经典门户支持哪些服务，请参阅 [Azure 门户可用性图表](/features/azure-portal/availability/)。-->若要查看哪些服务支持移动资源，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 
 下表列出哪些服务可通过资源管理器支持部署和管理，哪些则不可以。“快速入门模板”列中的链接向指定资源提供程序的 Azure 快速入门模板存储库发送查询。快速入门模板中经常会添加和更新数据。即使特定的服务存在链接，也并不一定代表查询将从存储库返回模板。
 
@@ -34,7 +35,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 远程应用 | 否 | - | - |
 | 云服务（经典）| 有限制（参阅下文）| - | - | - |
 
-虚拟机（经典）是指已通过经典部署模型部署的资源，而不是通过资源管理器部署模型部署的资源。一般而言，这些资源不支持资源管理器操作，但已启用某些操作。有关这些部署模型的详细信息，请参阅[了解资源管理器部署和经典部署](resource-manager-deployment-model.md)。
+虚拟机（经典）是指已通过经典部署模型部署的资源，而不是通过资源管理器部署模型部署的资源。一般而言，这些资源不支持资源管理器操作，但已启用某些操作。有关这些部署模型的详细信息，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model)。
 
 云服务（经典）与其他经典资源配合使用；但是，经典资源不能充分利用所有的 Resource Manager 功能，并且不太适合用于将来的解决方案。应该考虑将你的应用程序基础结构更改为使用 Microsoft.Compute、Microsoft.Storage 和 Microsoft.Network 命名空间中的资源。
 
@@ -101,7 +102,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 ## 标识和访问管理 
 
-Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角色的访问控制。若要了解有关使用基于角色的访问控制和 Active Directory 的信息，请参阅 [Azure 基于角色的访问控制](./active-directory/role-based-access-control-configure.md)。
+Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角色的访问控制。若要了解有关使用基于角色的访问控制和 Active Directory 的信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
 ## 开发人员服务 
 

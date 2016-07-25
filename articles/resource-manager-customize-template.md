@@ -18,7 +18,7 @@
 
 ## 查看导出的模板
 
-如果你已完成[导出 Resource Manager 模板](resource-manager-export-template)，请打开已下载的模板。该模板名为 **template.json**。如果你有 Visual Studio 或 Visual Code，则可以使用这两种中的任一个来编辑模板。否则，可以使用任何 JSON 编辑器或文本编辑器。
+如果你已完成[导出 Resource Manager 模板](/documentation/articles/resource-manager-export-template)，请打开已下载的模板。该模板名为 **template.json**。如果你有 Visual Studio 或 Visual Code，则可以使用这两种中的任一个来编辑模板。否则，可以使用任何 JSON 编辑器或文本编辑器。
 
 如果你尚未完成前面的演练，请创建一个名为 **template.json** 的文件，并将导出模板中的以下内容添加到该文件。
 

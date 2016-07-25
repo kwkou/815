@@ -187,13 +187,9 @@
 | 服务 | 文章 |
 | -------- | -------- |
 | 自动化 | [Azure 自动化中常见错误的疑难解答提示](/documentation/articles/automation-troubleshooting-automation-errors/) | 
-| Azure Stack | [Azure Stack 故障排除](/documentation/articles/azure-stack-troubleshooting/) | 
-| Azure Stack | [Web Apps 和 Azure Stack](/documentation/articles/azure-stack-webapps-troubleshoot-known-issues/) | 
-| Data Factory | [排查数据工厂问题](/documentation/articles/data-factory-troubleshoot/) | 
 | Service Fabric | [排查在 Azure Service Fabric 上部署服务时遇到的常见问题](/documentation/articles/service-fabric-diagnostics-troubleshoot-common-scenarios/) | 
 | 站点恢复 | [监视虚拟机和物理服务器的保护及其故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting/) |
 | 存储 | [监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/) |
-| StorSimple | [排查 StorSimple 设备部署问题](/documentation/articles/storsimple-troubleshoot-deployment/) | 
 | SQL 数据库 | [排查 Azure SQL 数据库的连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/) | 
 | SQL 数据仓库 | [排查 Azure SQL 数据仓库问题](/documentation/articles/sql-data-warehouse-troubleshoot/) | 
 
