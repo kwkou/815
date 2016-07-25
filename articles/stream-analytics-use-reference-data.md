@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="05/03/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/13/2016"
+	wacn.date="07/25/2016"/>
 
 # 在流分析的输入流中使用引用数据或查找表
 
@@ -19,7 +19,7 @@
 
 ## 配置引用数据
 
-若要配置引用数据，首先需要创建一个属于 **引用数据** 类型的输入。下表介绍你在根据属性说明创建引用数据输入时需要提供的每个属性：
+若要配置引用数据，首先需要创建一个属于**引用数据**类型的输入。下表介绍你在根据属性说明创建引用数据输入时需要提供的每个属性：
 
 <table>
 <tbody>
@@ -72,7 +72,7 @@
 
 > [AZURE.NOTE] 当前，流分析作业仅在计算机时间与 blob 名称中的编码时间一致时查找 blob 刷新。例如，作业将查找 2015 年 4 月 16 日 UTC 时区下午 5:30 与下午 5:30:59.9 的 /sample/2015-04-16/17:30/products.csv。当计算机时钟到达下午 5:31 时，流分析作业会停止查找 /sample/2015-04-16/17:30/products.csv，开始查找 /sample/2015-04-16/17:31/products.csv。这种情况的一个例外是，当作业需要按时重新处理数据时或第一次启动作业时。开始时，作业查找的是在指定的作业开始时间之前生成的最新 blob。这样做是为了确保在作业开始时存在非空的引用数据集。如果找不到此类数据集，则作业会失败，将向用户显示一个诊断通知。
 
-<!--[-->Azure 数据工厂<!--](http://azure.microsoft.com/documentation/services/data-factory/)-->可用来安排这样的任务，创建流分析更新引用数据定义所需的已更新 blob。数据工厂是一项基于云的数据集成服务，可对数据移动和转换进行安排并使其实现自动化。数据工厂支持<!--[-->连接到大量基于云和本地的数据存储<!--](/articles/data-factory-data-movement-activities.md)-->以及按你指定的定期计划轻松地移动数据。有关如何将数据工厂管道设置为生成按预定义计划刷新的流分析引用数据的详细信息和分步指导，请查看此 [GitHub 示例](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ReferenceDataRefreshForASAJobs)。
+<!--[-->Azure 数据工厂<!--](http://azure.microsoft.com/documentation/services/data-factory/)-->可用来安排这样的任务，创建流分析更新引用数据定义所需的已更新 blob。数据工厂是一项基于云的数据集成服务，可对数据移动和转换进行安排并使其实现自动化。数据工厂支持<!--[-->连接到大量基于云和本地的数据存储<!--](/articles/data-factory-data-movement-activities/)-->以及按你指定的定期计划轻松地移动数据。有关如何将数据工厂管道设置为生成按预定义计划刷新的流分析引用数据的详细信息和分步指导，请查看此 [GitHub 示例](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ReferenceDataRefreshForASAJobs)。
 
 ## 有关刷新引用数据的提示 ##
 
@@ -92,11 +92,11 @@
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!--Link references-->
-[stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
-[stream.analytics.scale.jobs]: stream-analytics-scale-jobs.md
-[stream.analytics.introduction]: stream-analytics-introduction.md
-[stream.analytics.get.started]: stream-analytics-get-started.md
-[stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide/
+[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs/
+[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction/
+[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started/
+[stream.analytics.query.language.reference]: https://msdn.microsoft.com/zh-cn/library/dn834998.aspx
+[stream.analytics.rest.api.reference]: https://msdn.microsoft.com/zh-cn/library/dn835031.aspx
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0718_2016-->
