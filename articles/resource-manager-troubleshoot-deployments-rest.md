@@ -10,8 +10,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="03/21/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="06/13/2016"
+   wacn.date="07/25/2016"/>
 
 # 使用 Azure Resource Manager REST API 对资源组部署进行故障排除
 

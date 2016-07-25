@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-security"
-   ms.date="04/04/2016"
-   wacn.date="05/23/2016"/>
+   ms.date="05/23/2016"
+   wacn.date="07/25/2016"/>
 
 #Azure 安全入门
 

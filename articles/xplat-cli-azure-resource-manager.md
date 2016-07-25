@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/09/2015"
+	ms.date="04/20/2016"
 	wacn.date="07/11/2016"/>
 
 # 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用
