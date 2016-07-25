@@ -10,9 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="03/09/2016"
-	wacn.date="01/14/2016"/>
-
-
+	wacn.date="07/25/2016"/>
 
 
 # 如何使用 Service Bus 队列
@@ -23,7 +21,7 @@
 
 ## 什么是 Service Bus 队列？
 
-Service Bus 队列支持*中转消息*通信模型。在使用队列时，分布式应用程序的组件不会直接相互通信，而是通过充当中介的队列交换消息。消息创建方（发送方）将消息传送到队列，然后继续对其进行处理。消息使用方（接收方）以异步方式从队列中提取消息并处理它。创建方不必等待使用方的答复即可继续处理并发送更多消息。队列为一个或多个竞争使用方提供**先入先出 (FIFO)** 消息传递方式。也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
+Service Bus 队列支持中转消息通信模型。在使用队列时，分布式应用程序的组件不会直接相互通信，而是通过充当中介的队列交换消息。消息创建方（发送方）将消息传送到队列，然后继续对其进行处理。消息使用方（接收方）以异步方式从队列中提取消息并处理它。创建方不必等待使用方的答复即可继续处理并发送更多消息。队列为一个或多个竞争使用方提供**先入先出 (FIFO)** 消息传递方式。也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
 
 ![QueueConcepts](./media/service-bus-ruby-how-to-use-queues/sb-queues-08.png)
 
@@ -31,11 +29,12 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 -   [多层 Azure 应用程序](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/)中 Web 角色和辅助角色之间的通信。
 -   [混合解决方案](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)中本地应用程序和 Azure 托管应用程序之间的通信。
--   在不同组织或组织的各部门中本地运行的分布式应用程序组件之间的通信
+-   在不同组织或组织的各部门中本地运行的分布式应用程序组件之间的通信。
 
 利用队列，您可以更好地向外扩展应用程序，并增强您的体系结构的恢复能力。
 
 ## 创建服务命名空间
+
 若要开始在 Azure 中使用服务总线队列，必须先创建一个服务命名空间。服务命名空间提供了用于对应用程序中的服务总线资源进行寻址的范围容器。必须通过命令行界面创建命名空间，因为 Azure 经典管理门户不会使用 ACS 连接创建命名空间。
 
 创建服务命名空间：
@@ -79,12 +78,12 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 ## 设置 Azure 服务总线连接
 
-Azure 模块将读取环境变量 **AZURE_SERVICEBUS_NAMESPACE** 和 **AZURE_SERVICEBUS_ACCESS_KEY** 以获取连接到你的 Azure 服务总线命名空间所需的信息。如果未设置这些环境变量，则在使用 **Azure::ServiceBusService** 之前必须通过以下代码指定命名空间信息：
+Azure 模块将读取环境变量 **AZURE_SERVICEBUS_NAMESPACE** 和 **AZURE_SERVICEBUS_ACCESS_KEY** 以获取连接到服务总线命名空间所需的信息。如果未设置这些环境变量，则在使用 **Azure::ServiceBusService** 之前必须通过以下代码指定命名空间信息：
 
     Azure.config.sb_namespace = "<your azure service bus namespace>"
     Azure.config.sb_access_key = "<your azure service bus access key>"
 
-将服务总线命名空间值设置为你创建的值，而不是整个 URL 的值。例如，使用 **"yourexamplenamespace"**，而不是 "yourexamplenamespace.servicebus.chinacloudapi.cn"。
+将命名空间值设置为你创建的值，而不是整个 URL 的值。例如，使用 **"yourexamplenamespace"**，而不是 "yourexamplenamespace.servicebus.chinacloudapi.cn"。
 
 ## 如何创建队列
 
@@ -115,7 +114,7 @@ Azure 模块将读取环境变量 **AZURE_SERVICEBUS_NAMESPACE** 和 **AZURE_SER
     message.correlation_id = "test-correlation-id"
     azure_service_bus_service.send_queue_message("test-queue", message)
 
-Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
+服务总线队列在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
 
 ## 如何从队列接收消息
 
@@ -145,8 +144,8 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。
 
 -   [队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)的概述
--   访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
+-   访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/Azure/azure-sdk-for-ruby) 存储库。
 
-有关本文中讨论的 Azure 服务总线队列与[如何使用 Azure 队列服务](/develop/ruby/)一文中讨论的 Azure 队列的比较，请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
+有关本文中讨论的 Azure 服务总线队列与[如何通过 Ruby 使用队列存储](/documentation/articles/storage-ruby-how-to-use-queue-storage/)一文中讨论的 Azure 队列的比较，请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
 
 <!---HONumber=Mooncake_0104_2016-->

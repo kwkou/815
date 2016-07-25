@@ -10,10 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="03/09/2016"
-	wacn.date="05/23/2016"/>
-
-
-
+	wacn.date="07/25/2016"/>
 
 
 # 如何使用 Service Bus 主题/订阅
@@ -54,10 +51,10 @@
 
 你运行的用于创建服务总线命名空间的 PowerShell cmdlet 将显示可用于管理命名空间的密钥。复制 **DefaultKey** 值。你将本教程稍后的代码中使用此值。
 
-       ![Copy key](./media/service-bus-ruby-how-to-use-topics-subscriptions/defaultkey.png)
+![复制密钥](./media/service-bus-ruby-how-to-use-topics-subscriptions/defaultkey.png)
 
 > [AZURE.NOTE]
-> 登录到 [Azure 经典管理门户][] 并导航到命名空间的连接信息后，也可以看到此密钥。
+> 如果登录到 [Azure 经典管理门户][] 并导航到命名空间的连接信息，也可以找到此密钥。
 
 ## 创建 Ruby 应用程序
 
@@ -129,7 +126,6 @@ topic = azure_service_bus_service.create_topic(topic)
 subscription = azure_service_bus_service.create_subscription("test-topic", "all-messages")
 ```
 
-
 ### <a id="how-to-create-subscriptions"></a>创建具有筛选器的订阅
 
 还可以定义筛选器，以指定发送到主题的哪些消息应该在特定订阅中显示。
@@ -184,7 +180,7 @@ rule = azure_service_bus_service.create_rule(rule)
 end
 ```
 
-Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
+服务总线主题在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
 ## 从订阅接收消息
 

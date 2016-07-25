@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="05/10/2016" 
-	wacn.date="06/21/2016"/>
+	wacn.date="07/25/2016"/>
 # 如何使用服务总线主题和订阅
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
@@ -228,7 +228,7 @@ for($i = 0; $i < 5; $i++){
 }
 ```
 
-Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。队列大小的上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
+服务总线主题在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。主题大小的此上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
 
 ## 从订阅接收消息
 

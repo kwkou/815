@@ -10,19 +10,73 @@
 <tags
 	ms.service="service-bus"
 	ms.date="05/06/2016"
-	wacn.date="06/21/2016"/>
+	wacn.date="07/25/2016"/>
 
 # 如何使用 Service Bus 队列
 
 [AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
-本文介绍了如何使用服务总线队列。这些示例用 Java 编写并使用 [Azure SDK for Java][]。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
+本文介绍了如何使用服务总线队列。这些示例是采用 Java 编写的并且使用了 [Azure SDK for Java][]。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
 
-[AZURE.INCLUDE [service-bus-java-how-to-create-queue](../includes/service-bus-java-how-to-create-queue.md)]
+## 什么是服务总线队列？
+
+Service Bus 队列支持**中转消息**通信模型。在使用队列时，分布式应用程序的组件不会直接相互通信，而是通过充当中介（代理）的队列交换消息。消息创建方（发送方）将消息传送到队列，然后继续对其进行处理。消息使用方（接收方）以异步方式从队列中提取消息并处理它。创建方不必等待使用方的答复即可继续处理并发送更多消息。队列为一个或多个竞争使用方提供**先入先出 (FIFO)** 消息传递方式。也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
+
+![QueueConcepts](./media/service-bus-java-how-to-use-queues/sb-queues-08.png)
+
+Service Bus 队列是一种可用于各种应用场景的通用技术：
+
+- 多层 Azure 应用程序中 Web 角色和辅助角色之间的通信。
+- 混合解决方案中本地应用程序和 Azure 托管应用程序之间的通信。
+- 在不同组织或组织的各部门中本地运行的分布式应用程序组件之间的通信。
+
+利用队列，你可以更轻松地扩大应用程序，并在体系结构启用复原。
+
+## 创建服务命名空间
+
+若要开始在 Azure 中使用服务总线队列，必须先创建一个命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
+
+创建命名空间：
+
+1.  登录到 [Azure 经典管理门户][]。
+
+2.  在门户的左侧导航窗格中，单击“服务总线”。
+
+3.  在门户的下方窗格中，单击“创建”。
+
+	![](./media/service-bus-java-how-to-use-queues/sb-queues-03.png)
+
+4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。
+
+	![](./media/service-bus-java-how-to-use-queues/sb-queues-04.png)
+
+5.  在确保命名空间名称可用后，选择应承载你的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
+
+	重要说明：选取要部署应用程序的**相同区域**。这将为你提供最佳性能。
+
+6. 	将对话框中的其他字段保留其默认值（“消息传递”和“标准层”），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
+
+创建的命名空间将花费一段时间来激活，然后显示在 Azure 门户中。请等到命名空间状态变为“活动”后再继续操作。
+
+## 获取命名空间的默认管理凭据
+
+若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。可以从门户中获取这些凭据。
+
+1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
+
+	![](./media/service-bus-java-how-to-use-queues/sb-queues-13.png)
+
+2.  从显示的列表中单击你刚刚创建的命名空间。
+
+3.  单击“配置”以查看命名空间的共享访问策略。
+
+	![](./media/service-bus-java-how-to-use-queues/sb-queues-14.png)
+
+4.  记下主密钥，或将其复制到剪贴板。
 
 ## 配置应用程序以使用 Service Bus
 
-在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果你使用 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
+在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
 
 ![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
 
@@ -102,7 +156,7 @@ import javax.xml.datatype.*;
          service.sendQueueMessage("TestQueue", message);
     }
 
-Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
+服务总线队列在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
 
 ## 从队列接收消息
 
@@ -185,5 +239,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
+  [Azure 经典管理门户]: http://manage.windowsazure.com
 
 <!---HONumber=Mooncake_0104_2016-->

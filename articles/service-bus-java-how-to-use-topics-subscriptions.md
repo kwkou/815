@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="05/06/2016"
-	wacn.date="06/21/2016"/>
+	wacn.date="07/25/2016"/>
 
 
 # 如何使用服务总线主题和订阅
@@ -19,7 +19,61 @@
 
 本指南介绍如何使用服务总线主题和订阅。这些示例是采用 Java 编写的并且使用了 [Azure SDK for Java][]。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
 
-[AZURE.INCLUDE [service-bus-java-how-to-create-topic](../includes/service-bus-java-how-to-create-topic.md)]
+## 什么是服务总线主题和订阅？
+
+Service Bus 主题和订阅支持发布/订阅消息通信模型。在使用主题和订阅时，分布式应用程序的组件不会直接相互通信，而是通过充当中介的主题交换消息。
+
+![TopicConcepts](./media/service-bus-java-how-to-use-topics-subscriptions/sb-topics-01.png)
+
+与每条消息由单个使用方处理的 Service Bus 队列相比，主题和订阅通过发布/订阅模式提供“一对多”通信方式。可向一个主题注册多个订阅。当消息发送到主题时，每个订阅会分别对该消息进行处理。
+
+主题订阅类似于接收发送至该主题的消息副本的虚拟队列。你可以选择基于每个订阅注册主题的筛选规则，这样就可以筛选/限制哪些主题订阅接收发送至某个主题的哪些消息。
+
+利用 Service Bus 主题和订阅，你可以进行扩展以处理跨大量用户和应用程序的许多消息。
+
+## 创建服务命名空间
+
+若要开始在 Azure 中使用服务总线主题和订阅，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
+
+创建命名空间：
+
+1.  登录到 [Azure 经典管理门户][]。
+
+2.  在门户的左侧导航窗格中，单击“服务总线”。
+
+3.  在门户的下方窗格中，单击“创建”。
+
+    ![][0]
+
+4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。
+
+    ![][2]
+
+5.  在确保命名空间名称可用后，选择应承载你的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
+
+	重要说明：选取要部署应用程序的**相同区域**。这将为你提供最佳性能。
+
+6. 	将对话框中的其他字段保留其默认值（“消息传递”和“标准层”），然后单击复选标记。系统现已创建你的服务命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
+
+## 获取命名空间的默认管理凭据
+
+若要在新命名空间上执行管理操作（如创建主题或订阅），则必须从获取该命名空间的管理凭据。可以从门户中获取这些凭据。
+
+### 从门户中获取管理凭据
+
+1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
+
+    ![][0]
+
+2.  从显示的列表中单击你刚刚创建的命名空间：
+
+    ![][3]
+
+3.  单击“配置”以查看命名空间的共享访问策略。
+
+    ![](./media/service-bus-java-how-to-use-topics-subscriptions/sb-queues-14.png)
+
+4.  记下主密钥，或将其复制到剪贴板。
 
 ## 配置应用程序以使用 Service Bus
 
@@ -64,7 +118,7 @@ import javax.xml.datatype.*;
 		System.exit(-1);
 	}
 
-可对 **TopicInfo** 执行某些方法，以设置主题的属性（例如，将默认的生存时间 (TTL) 值设置为应用于发送到主题的消息）。以下示例演示了如何创建最大大小为 5 GB 且名为 `TestTopic` 的主题：
+**TopicInfo** 上有一些方法可设置主题的属性（例如，将默认的生存时间 (TTL) 值设置为应用于发送到主题的消息）。以下示例演示了如何创建最大大小为 5 GB 且名为 `TestTopic` 的主题：
 
     long maxSizeInMegabytes = 5120;  
 	TopicInfo topicInfo = new TopicInfo("TestTopic");  
@@ -128,7 +182,7 @@ BrokeredMessage message = new BrokeredMessage("MyMessage");
 service.sendTopicMessage("TestTopic", message);
 ```
 
-发送到服务总线主题的消息是 [BrokeredMessage][] 类的实例。[BrokeredMessage][]* 对象包含一组标准方法（如 **setLabel** 和 **TimeToLive**）、一个用来保存自定义应用程序特定属性的字典和大量任意的应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage][] 的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，也可以提供 **java.io.InputStream**。
+发送到服务总线主题的消息是 [BrokeredMessage][] 类的实例。[BrokeredMessage][]* 对象包含一组标准方法（如 **setLabel** 和 **TimeToLive**），一个用来保存自定义应用程序特定属性的字典和大量任意的应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage][] 的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，也可以提供 **java.io.InputStream**。
 
 以下示例演示了如何将五条测试消息发送到我们在前面的代码段中获得的 `TestTopic` **MessageSender**。请注意每条消息的 **MessageNumber** 属性值如何随循环迭代而变化（这将确定接收消息的订阅）：
 
@@ -143,7 +197,7 @@ service.sendTopicMessage("TestTopic", message);
 }
 ```
 
-Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
+服务总线主题在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
 ## 如何从订阅接收消息
 
@@ -232,7 +286,7 @@ service.deleteTopic("TestTopic");
 
 ## 后续步骤
 
-现在，你已了解 Service Bus 队列的基础知识，请参阅[服务总线队列、主题和订阅][]以了解详细信息。
+现在，你已了解服务总线队列的基础知识，请参阅[服务总线队列、主题和订阅][]以了解详细信息。
 
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
@@ -241,5 +295,8 @@ service.deleteTopic("TestTopic");
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
+  [0]: ./media/service-bus-java-how-to-use-topics-subscriptions/sb-queues-13.png
+  [2]: ./media/service-bus-java-how-to-use-topics-subscriptions/sb-queues-04.png
+  [3]: ./media/service-bus-java-how-to-use-topics-subscriptions/sb-queues-09.png
 
 <!---HONumber=Mooncake_0104_2016-->

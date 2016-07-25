@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="05/06/2016" 
-	wacn.date="06/21/2016"/>
+	ms.date="06/01/2016" 
+	wacn.date="07/25/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -58,7 +58,7 @@ use WindowsAzure\Common\ServicesBuilder;
 Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 ```
 
-其中，**Endpoint** 的格式通常为 `https://[yourNamespace].servicebus.chinacloudapi.cn`。
+其中，**Endpoint** 的格式通常为 `[yourNamespace].servicebus.chinacloudapi.cn`。
 
 若要创建任何 Azure 服务客户端，必须使用 **ServicesBuilder** 类。你可以：
 
@@ -147,7 +147,7 @@ catch(ServiceException $e){
 
 发送至服务总线队列（和接收自服务总线队列）的消息是 **BrokeredMessage** 类实例。**BrokeredMessage** 对象具有一组标准方法（例如 **getLabel**、**getTimeToLive**、**setLabel** 和 **setTimeToLive**）和用来保存自定义的特定于应用程序的属性和任意应用程序数据正文的属性。
 
-Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。队列大小的上限为 5 GB。
+服务总线队列在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](service-bus-dotnet-get-started-with-queuesservice-bus-premium-messaging)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个队列可包含的消息数不受限制，但消息的总大小受限。队列大小的上限为 5 GB。
 
 ## 如何从队列接收消息
 

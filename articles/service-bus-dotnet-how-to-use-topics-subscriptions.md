@@ -10,7 +10,7 @@
 <tags
     ms.service="service-bus"
     ms.date="05/06/2016"
-    wacn.date="06/21/2016"/>
+    wacn.date="07/25/2016"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -24,13 +24,11 @@
 
 ## 配置应用程序以使用 Service Bus
 
-在您创建使用 Service Bus 的应用程序时，必须添加对 Service Bus 程序集的引用并包括相应的命名空间。
+在您创建使用 Service Bus 的应用程序时，必须添加对 Service Bus 程序集的引用并包括相应的命名空间。执行此操作的最简单方法是下载适当的 NuGet 包。
 
 ## 获取服务总线 NuGet 包
 
 [服务总线 NuGet 包](https://www.nuget.org/packages/WindowsAzure.ServiceBus)是获取服务总线 API 并为应用程序配置所有必需服务总线依赖项的最简单的方法。要在你的应用程序中安装 NuGet 包，请执行以下操作：
-
-要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
 1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 2.  搜索“服务总线”并选择“ Azure 服务总线”项。单击“安装”以完成安装，然后关闭以下对话框。
@@ -50,10 +48,10 @@
 
 ### 配置连接字符串
 
-利用该服务配置机制，你可以从 [Azure 经典管理门户][]动态更改配置设置，而无需重新部署应用程序。例如，向服务定义 (****.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
+利用该服务配置机制，你可以从 [Azure 经典管理门户][]动态更改配置设置，而无需重新部署应用程序。例如，向服务定义 (***.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
 
 ```
-<ServiceDefinition name="WindowsAzure1">
+<ServiceDefinition name="Azure1">
 ...
     <WebRole name="MyRole" vmsize="Small">
         <ConfigurationSettings>
@@ -67,7 +65,7 @@
 然后在服务配置 (.cscfg) 文件中指定值。
 
 ```
-<ServiceConfiguration serviceName="WindowsAzure1">
+<ServiceConfiguration serviceName="Azure1">
 ...
     <Role name="MyRole">
         <ConfigurationSettings>
@@ -122,7 +120,7 @@ if (!namespaceManager.TopicExists("TestTopic"))
 }
 ```
 
-[CreateTopic](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.createtopic.aspx) 方法存在一些重载，允许你调整主题的属性，例如，将默认的生存时间 (TTL) 值设置为应用于发送到主题的消息。使用 [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 类应用这些设置。以下示例演示如何创建名为 **TestTopic**、最大大小为 5 GB、默认消息 TTL 为 1 分钟的主题。
+[CreateTopic](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.createtopic.aspx) 方法存在一些重载，允许你设置主题的属性，例如，将默认的生存时间 (TTL) 值设置为应用于发送到主题的消息。使用 [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 类应用这些设置。以下示例演示如何创建名为 **TestTopic**、最大大小为 5 GB、默认消息 TTL 为 1 分钟的主题。
 
 ```
 // Configure Topic Settings.
@@ -232,7 +230,7 @@ for (int i=0; i<5; i++)
 }
 ```
 
-服务总线主题支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-quotas/)（标头最大为 64 Kb，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning/)。
+服务总线主题在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning/)。
 
 ## 如何从订阅接收消息
 
@@ -317,7 +315,7 @@ namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
   [Azure 经典管理门户]: http://manage.windowsazure.cn
 
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
-  
+
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [主题筛选器示例]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
