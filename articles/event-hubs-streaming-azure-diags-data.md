@@ -9,8 +9,8 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="05/08/2016"
-   wacn.date="06/20/2016" />
+   ms.date="06/01/2016"
+   wacn.date="07/25/2016" />
 
 # 使用事件中心流式处理热路径中的 Azure 诊断数据
 

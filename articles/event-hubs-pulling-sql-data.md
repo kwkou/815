@@ -9,8 +9,8 @@
 
 <tags 
    ms.service="event-hubs"
-   ms.date="02/26/2016"
-   wacn.date="04/05/2016" />
+   ms.date="05/31/2016"
+   wacn.date="07/25/2016" />
 
 # 将数据从 SQL 提取到 Azure 事件中心
 
