@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="07/21/2015"
-	wacn.date="07/14/2016"/>
+	wacn.date="07/21/2016"/>
 
 # 适用于 .NET 的 Azure Batch Apps 库入门
 

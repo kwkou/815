@@ -10,7 +10,7 @@
 <tags
    ms.service="multiple"
    ms.date="06/08/2016"
-   wacn.date="07/11/2016"/>
+   wacn.date="07/25/2016"/>
 
 # Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源
 这是一份技术资源指南，旨在帮助你在 Azure 中运行大规模并行、批处理和 HPC 工作负荷。在 Azure 中，可以使用各种 Azure 服务将现有的批处理或 HPC 工作负荷扩展到 Azure 云，或者生成新的大型计算解决方案。
@@ -48,9 +48,6 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 * [文档](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
 
-
-* Azure 中的 [Linux](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options/) 和 [Windows](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/) HPC Pack 群集选项
-
 * [使用 HPC Pack 迸发到 Azure 辅助角色实例](https://technet.microsoft.com/library/gg481749.aspx)
 
 * [使用 HPC Pack 迸发到 Azure Batch](https://technet.microsoft.com/library/mt612877.aspx)
@@ -78,11 +75,6 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 
 ## 计算密集型实例
-
-Azure 提供一[系列大小](/documentation/articles/virtual-machines-windows-sizes/)，包括能够连接到后端 RDMA 网络的计算密集型 [A8 和 A9](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs/) 实例，以运行 Linux 和 Windows HPC 工作负荷。
-
-
-* [设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-classic-rdma-cluster/)
 
 * [通过 Microsoft HPC Pack 设置 Windows RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-windows-hpcpack-cluster-rdma/)
 
@@ -112,32 +104,11 @@ Azure 提供一[系列大小](/documentation/articles/virtual-machines-windows-s
 
 * [Engineering simulations（工程模拟）](https://simulation.azure.com/)
 
-## 客户案例
-
-
-* [ANEO](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=4168) 
-
-* [d3View](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=22088)
-
-* [路德维格癌症研究所](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5830)
-
-* [Microsoft Research](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=15634)
-
-* [Milliman](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=14967)
-
-* [Mitsubishi UFJ Securities International](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=26266)
-
-* [Schlumberger](http://azure.microsoft.com/blog/big-compute-for-large-engineering-simulations)
-
-* [Towers Watson](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18222)
-
-
 
 
 
 ## 后续步骤
 
-* 有关最新通告，请参阅 [Microsoft HPC 和批处理团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](http://azure.microsoft.com/blog/tag/hpc/)。
-* 另请参阅 [Batch 中的新增功能](/updates/?service=batch)或订阅 [RSS 源](/updates/feed/?service=batch)。
+* 有关最新通告，请参阅 [这些](/what-is-new/)。
 
 <!---HONumber=Mooncake_0704_2016-->

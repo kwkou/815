@@ -1,4 +1,4 @@
-1.	登录在线 [Microsoft Azure 门户预览](https://portal.azure.cn/)。
+1.	登录在线 [Azure 门户预览](https://portal.azure.cn/)。
 2.	在跳转栏中，依次单击“新建”、“数据 + 存储器”、“Azure DocumentDB”。
 
 	![创建数据库时的 Azure 门户预览屏幕截图，其中突出显示了“新建”按钮、“创建”边栏选项卡中的“数据 + 存储器”以及“数据 + 存储器”边栏选项卡中的“Azure DocumentDB”](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-1.png)
@@ -8,7 +8,7 @@
 	![“新建 DocumentDB”边栏选项卡的屏幕截图](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-2.png)
 
 
-	- 在“ID”框中，输入一个名称用于标识 DocumentDB 帐户。对“ID”进行验证后，“ID”框中会出现一个绿色的复选标记。该“ID”值将成为 URI 中的主机名。“ID”只能包含小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。请注意，documents.azure.com 会追加到所选择的终结点名称，其结果将成为 DocumentDB 帐户终结点。
+	- 在“ID”框中，输入一个名称用于标识 DocumentDB 帐户。对“ID”进行验证后，“ID”框中会出现一个绿色的复选标记。该“ID”值将成为 URI 中的主机名。“ID”只能包含小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。请注意，documents.azure.cn 会追加到所选择的终结点名称，其结果将成为 DocumentDB 帐户终结点。
 
 	- 对于“订阅”，请选择要用于 DocumentDB 帐户的 Azure 订阅。如果帐户只有一个订阅，则默认情况下会选择该帐户。
 

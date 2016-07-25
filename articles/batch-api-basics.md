@@ -10,7 +10,7 @@
 <tags 
 	ms.service="batch" 
 	ms.date="06/17/2016"
-	wacn.date="07/11/2016"/>
+	wacn.date="07/21/2016"/>
 	
 # 面向开发人员的 Batch 功能概述
 
@@ -68,7 +68,7 @@
 
 批处理帐户是批处理服务中唯一标识的实体。所有处理都与一个 Batch 帐户相关联。当你使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。
 
-## <a name="computenode"></a>计算节点
+## <a name="compute-node"></a>计算节点
 
 计算节点是专门用于处理一部分应用程序工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。可以使用云服务或虚拟机应用商店映像创建的 Windows 或 Linux 节点池 — 有关这些选项的详细信息，请参阅下面的[池](#pool)。
 
@@ -166,7 +166,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层；Batch 池提供大�
 
 ### <a name="scheduled-jobs"></a>计划的作业
 
-[作业计划][rest\_job\_schedules] 可让你在 Batch 服务中创建周期性作业。作业计划指定何时要运行作业，并包含要运行的作业的规范。作业计划允许指定计划的持续时间（计划的持续时间和生效时间），以及在该时间段创建作业的频率。
+作业计划可让你在 Batch 服务中创建周期性作业。作业计划指定何时要运行作业，并包含要运行的作业的规范。作业计划允许指定计划的持续时间（计划的持续时间和生效时间），以及在该时间段创建作业的频率。
 
 ## <a name="task"></a>任务
 
@@ -192,18 +192,19 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层；Batch 池提供大�
 
 除了可以定义在节点上运行计算的任务以外，Batch 服务还提供以下特殊任务：
 
-- [启动任务](#starttask)
-- [作业管理器任务](#jobmanagertask)
-- [作业准备和释放任务](#jobmanagertask)
-- [多实例任务](#multiinstance)
-- [任务依赖项](#taskdep)
+  - [启动任务](#start-task)
+  - [作业管理器任务](#job-manager-task)
+  - [作业准备和释放任务](#job-preparation-and-release-tasks)
+  - [多实例任务 (MPI)](#multi-instance-tasks)
+  - [任务依赖项](#task-dependencies)
 
-<a name="tart-task"></a>
+
+####<a name="start-task"></a>启动任务
 通过将**启动任务**与池相关联，可以准备池节点的操作环境并执行各种操作，例如，安装任务所要运行的应用程序，以及启动后台进程。启动任务在节点每次启动时运行，且只要保留在池中就会持续运行（包括首次将节点添加到池时，以及节点重新启动或重置映像时）。
 
 启动任务的主要优点是可以包含全部所需的信息，使你能够配置计算节点，以及安装执行任务所需的应用程序。因此，要增加池中的节点数目，只需指定新的目标节点计数即可 — Batch 已包含配置新节点并使其可接受任务所需的信息。
 
-与任何 Azure Batch 任务一样，除了指定要执行的**命令行**以外，还可以指定 [Azure 存储空间][azure_storage]中的**资源文件**列表。Batch 先将资源文件从 Azure 存储空间复制到节点，然后运行命令行。对于池启动任务，文件列表通常包含任务应用程序及其依赖项，但它还可能包含计算节点上运行的所有任务使用的引用数据。例如，启动任务的命令行可运行 `robocopy` 操作，将应用程序文件（已指定为资源文件并下载到节点）从启动任务的[工作目录](#files-and-directories)复制到[共享文件夹](#files-and-directories)，然后然后运行 MSI 或 `setup.exe`。
+与任何 Azure Batch 任务一样，除了指定要执行的**命令行**以外，还可以指定 [Azure 存储空间][azure_storage]中的**资源文件**列表。Batch 先将资源文件从 Azure 存储空间复制到节点，然后运行命令行。对于池启动任务，文件列表通常包含任务应用程序及其依赖项，但它还可能包含计算节点上运行的所有任务使用的引用数据。例如，启动任务的命令行可运行 `robocopy` 操作，将应用程序文件（已指定为资源文件并下载到节点）从启动任务的[工作目录](#files-and-directories)复制到共享文件夹，然后然后运行 MSI 或 `setup.exe`。
 
 > [AZURE.IMPORTANT] Batch 目前“仅”支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。Batch 任务（包括标准任务、启动任务、作业准备和作业释放任务）“只能”指定位于**常规用途**存储帐户中的资源文件。
 通常，批处理 ( Batch ) 服务需要等待启动任务完成，然后认为节点已准备好分配任务，但这种行为是可配置的。
@@ -282,7 +283,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层；Batch 池提供大�
 | `AZ_BATCH_TASK_ID` | 当前任务的 ID。 |
 | `AZ_BATCH_TASK_WORKING_DIR` | 节点上的任务工作目录的完整路径。 |
 
->[AZURE.IMPORTANT] 这些环境变量仅可在**任务用户**（即执行任务的节点上的用户帐户）的上下文中使用。如果通过 RDP 或 SSH 从[远程连接](#connecting-to-compute-nodes)到计算节点并列出环境变量，将**看不到**这些变量。
+>[AZURE.IMPORTANT] 这些环境变量仅可在**任务用户**（即执行任务的节点上的用户帐户）的上下文中使用。如果通过 RDP 或 SSH 从远程连接到计算节点并列出环境变量，将**看不到**这些变量。
 
 ## <a name="files-and-directories"></a>文件和目录
 
@@ -323,7 +324,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 通常用于处理可变但持续存在的负载的组合方法是创建一个池用于容纳提交的多个作业，但同时根据作业负载向上或向下缩放节点数目（请参阅下面的[缩放计算资源](#scaling-compute-resources)）。可以根据当前负载被动执行此操作，或者在负载可预测时主动执行此操作。
 
-## 缩放计算资源
+## <a name="scaling-compute-resources"></a>缩放计算资源
 
 通过[自动缩放](/documentation/articles/batch-automatic-scaling/)功能，你可以让 Batch 服务根据计算方案的当前工作负荷和资源使用状况动态缩放池中的计算节点数目。这样，便可做到只使用所需资源并可释放不需要的资源，因而能够降低运行应用程序的整体成本。
 
