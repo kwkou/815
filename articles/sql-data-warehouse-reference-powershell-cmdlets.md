@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/14/2016"
-   wacn.date="06/27/2016"/>
+   ms.date="05/18/2016"
+   wacn.date="07/25/2016"/>
 
 # 适用于 SQL 数据仓库的 PowerShell cmdlet 和 REST API
 

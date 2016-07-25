@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/28/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="06/17/2016"
+   wacn.date="07/25/2016"/>
 
 # 系统视图
 
@@ -35,17 +35,17 @@
 
 ## SQL 数据仓库动态管理视图 (DMV)
 
-- [sys.dm\_pdw\_diag\_processing\_stats](http://msdn.microsoft.com/zh-cn/library/mt203914.aspx)
 - [sys.dm\_pdw\_dms\_cores](http://msdn.microsoft.com/zh-cn/library/mt203911.aspx)
+- [sys.dm\_pdw\_dms\_external\_work](http://msdn.microsoft.com/zh-cn/library/mt204024.aspx)
 - [sys.dm\_pdw\_dms\_workers](http://msdn.microsoft.com/zh-cn/library/mt203878.aspx)
 - [sys.dm\_pdw\_errors](http://msdn.microsoft.com/zh-cn/library/mt203904.aspx)
 - [sys.dm\_pdw\_exec\_connections](http://msdn.microsoft.com/zh-cn/library/mt203882.aspx)
 - [sys.dm\_pdw\_exec\_requests](http://msdn.microsoft.com/zh-cn/library/mt203887.aspx)
 - [sys.dm\_pdw\_exec\_sessions](http://msdn.microsoft.com/zh-cn/library/mt203883.aspx)
-- [sys.dm\_pdw\_network\_credentials](http://msdn.microsoft.com/zh-cn/library/mt203915.aspx)
+- [sys.dm\_pdw\_hadoop\_operations](https://msdn.microsoft.com/zh-cn/library/mt204032.aspx)
+- [sys.dm\_pdw\_lock\_waits](http://msdn.microsoft.com/zh-cn/library/mt203901.aspx)
 - [sys.dm\_pdw\_nodes](http://msdn.microsoft.com/zh-cn/library/mt203907.aspx)
-- [sys.dm\_pdw\_os\_event\_logs](http://msdn.microsoft.com/zh-cn/library/mt203910.aspx)
-- [sys.dm\_pdw\_os\_performance\_counters](http://msdn.microsoft.com/zh-cn/library/mt203875.aspx)
+- [sys.dm\_pdw\_nodes\_database\_encryption\_keys](http://msdn.microsoft.com/zh-cn/library/mt203922.aspx)
 - [sys.dm\_pdw\_os\_threads](http://msdn.microsoft.com/zh-cn/library/mt203917.aspx)
 - [sys.dm\_pdw\_request\_steps](http://msdn.microsoft.com/zh-cn/library/mt203913.aspx)
 - [sys.dm\_pdw\_resource\_waits](http://msdn.microsoft.com/zh-cn/library/mt203906.aspx)
@@ -64,8 +64,8 @@
 - [sys.assemblies](http://msdn.microsoft.com/zh-cn/library/ms189790.aspx)
 - [sys.assembly\_modules](http://msdn.microsoft.com/zh-cn/library/ms180052.aspx)
 - [sys.assembly\_types](http://msdn.microsoft.com/zh-cn/library/ms178020.aspx)
-- [sys.check\_constraints](http://msdn.microsoft.com/zh-cn/library/ms187388.aspx)
 - [sys.certificates](http://msdn.microsoft.com/zh-cn/library/ms189774.aspx)
+- [sys.check\_constraints](http://msdn.microsoft.com/zh-cn/library/ms187388.aspx)
 - [sys.columns](http://msdn.microsoft.com/zh-cn/library/ms176106.aspx)
 - [sys.computed\_columns](http://msdn.microsoft.com/zh-cn/library/ms188744.aspx)
 - [sys.credentials](https://msdn.microsoft.com/zh-cn/library/ms189745.aspx)
@@ -78,9 +78,9 @@
 - [sys.databases](http://msdn.microsoft.com/zh-cn/library/ms178534.aspx)
 - [sys.default\_constraints](http://msdn.microsoft.com/zh-cn/library/ms173758.aspx)
 - [sys.extended\_properties](http://msdn.microsoft.com/zh-cn/library/ms177541.aspx)
-- [sys.external\_file formats](http://msdn.microsoft.com/zh-cn/library/dn935025.aspx)
-- [sys.external\_tables](http://msdn.microsoft.com/zh-cn/library/dn935029.aspx)
 - [sys.external\_data\_sources](http://msdn.microsoft.com/zh-cn/library/dn935019.aspx)
+- [sys.external\_file\_formats](http://msdn.microsoft.com/zh-cn/library/dn935025.aspx)
+- [sys.external\_tables](http://msdn.microsoft.com/zh-cn/library/dn935029.aspx)
 - [sys.filegroups](http://msdn.microsoft.com/zh-cn/library/ms187782.aspx)
 - [sys.foreign\_key\_columns](http://msdn.microsoft.com/zh-cn/library/ms186306.aspx)
 - [sys.foreign\_keys](http://msdn.microsoft.com/zh-cn/library/ms189807.aspx)
@@ -90,12 +90,12 @@
 - [sys.key\_constraints](http://msdn.microsoft.com/zh-cn/library/ms174321.aspx)
 - [sys.numbered\_procedures](http://msdn.microsoft.com/zh-cn/library/ms179865.aspx)
 - [sys.objects](http://msdn.microsoft.com/zh-cn/library/ms190324.aspx)
+- [sys.parameters](http://msdn.microsoft.com/zh-cn/library/ms176074.aspx)
 - [sys.partition\_functions](http://msdn.microsoft.com/zh-cn/library/ms187381.aspx)
 - [sys.partition\_parameters](http://msdn.microsoft.com/zh-cn/library/ms175054.aspx)
 - [sys.partition\_range\_values](http://msdn.microsoft.com/zh-cn/library/ms187780.aspx)
 - [sys.partition\_schemes](http://msdn.microsoft.com/zh-cn/library/ms189752.aspx)
 - [sys.partitions](http://msdn.microsoft.com/zh-cn/library/ms175012.aspx)
-- [sys.parameters](http://msdn.microsoft.com/zh-cn/library/ms176074.aspx)
 - [sys.procedures](http://msdn.microsoft.com/zh-cn/library/ms188737.aspx)
 - [sys.schemas](http://msdn.microsoft.com/zh-cn/library/ms176011.aspx)
 - [sys.securable\_classes](http://msdn.microsoft.com/zh-cn/library/ms408301.aspx)
@@ -232,4 +232,4 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0718_2016-->

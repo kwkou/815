@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/23/2016"
-   wacn.date="05/23/2016"/>
+   ms.date="06/13/2016"
+   wacn.date="07/25/2016"/>
 
 # 优化 SQL 数据仓库的事务
 

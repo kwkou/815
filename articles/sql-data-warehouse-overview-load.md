@@ -10,7 +10,7 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/09/2016"
+   ms.date="05/17/2016"
    wacn.date="06/20/2016"/>
 
 # 将数据载入 Azure SQL 数据仓库

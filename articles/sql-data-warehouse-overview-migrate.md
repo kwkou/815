@@ -3,14 +3,14 @@
    description="有关将解决方案转移到 Azure SQL 数据仓库平台的迁移指南。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="jrowlandjones"
+   authors="barbkess"
    manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/14/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="05/31/2016"
+   wacn.date="07/25/2016"/>
 
 # 将解决方案迁移到 SQL 数据仓库
 
@@ -24,7 +24,7 @@ SQL 数据仓库是一种分布式数据库系统，可根据你的需要弹性�
 - [迁移架构][]
 - [迁移数据][]
 - [迁移代码][]
- 
+
 ## 后续步骤
 有关更多开发技巧，请参阅[开发概述][]。
 
@@ -41,11 +41,11 @@ SQL 数据仓库是一种分布式数据库系统，可根据你的需要弹性�
 
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载概述]: /documentation/articles/sql-data-warehouse-overview-load/
-[Transact-SQL 参考]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[Transact-SQL 参考]: /documentation/articles/sql-data-warehouse-overview-reference/
 
 <!--MSDN references-->
 
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0718_2016-->
