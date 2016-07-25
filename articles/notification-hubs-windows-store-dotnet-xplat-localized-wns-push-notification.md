@@ -66,7 +66,7 @@
 
 
 
-模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages-cross-platform-push-messages)一文中了解其更多信息。
+模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages)一文中了解其更多信息。
 
 
 ##应用程序用户界面

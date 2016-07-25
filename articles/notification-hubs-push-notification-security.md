@@ -10,9 +10,9 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/28/2016"
-	wacn.date="07/12/2016"/>
+	wacn.date="07/25/2016"/>
 
-#“安全”
+#安全
 
 ##概述
 

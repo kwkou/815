@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs" 
 	ms.date="02/29/2016"
-	wacn.date=""/>
+	wacn.date="07/25/2016"/>
 
 #Azure 通知中心安全推送
 
