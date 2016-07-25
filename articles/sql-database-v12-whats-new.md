@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="03/21/2016" 
-	wacn.date="04/18/2016"/>
+	ms.date="05/19/2016"
+	wacn.date="07/25/2016"/>
 
 
 # SQL 数据库 V12 的新增功能
@@ -28,8 +28,9 @@
 
 SQL 数据库 V12 的主要目标是提高与 Microsoft SQL Server 2014 的兼容性，以及在发布新版本的 SQL Server 时保持此兼容性。另外，在编程性方面，V12 能够与 SQL Server 兼容。例如：
 
+- [内置 JSON 支持](https://msdn.microsoft.com/zh-cn/library/dn921897.aspx)
 
-- 包括 [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 的[开窗函数](http://msdn.microsoft.com/zh-cn/library/ms189798.aspx) 
+- 包括 [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 的[开窗函数](http://msdn.microsoft.com/zh-cn/library/ms189798.aspx)
 
 - [XML 索引](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx)和[选择性 XML 索引](http://msdn.microsoft.com/zh-cn/library/jj670104.aspx)
 
@@ -135,10 +136,13 @@ V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 
 
 
 
+
 ## <a name="V12AzureSqlDbPreviewGaTable"></a> 正式版上市区域
 
 
 - 2015 年 7 月 31，所有区域都已发布正式版 (GA)。
 - V12 已于 2014 年 12 月发布，但仅以预览版提供。
 
-<!---HONumber=Mooncake_0411_2016-->
+[Azure 预览版补充使用条款](/support/legal)。
+
+<!---HONumber=Mooncake_0718_2016-->

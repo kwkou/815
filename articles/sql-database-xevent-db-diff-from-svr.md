@@ -11,26 +11,32 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="04/25/2016" 
-	wacn.date="05/23/2016"/>
+	ms.date="06/07/2016"
+	wacn.date="07/25/2016"/>
 
 
 # SQL 数据库中的扩展事件
 
+[AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../includes/sql-database-xevents-selectors-1-include.md)]
 
 本主题说明 Azure SQL 数据库中的扩展事件与 Microsoft SQL server 中的扩展事件在实现方式上有怎样的细微差别。
 
 
 - SQL 数据库 V12 在 2015 年下半年度推出了扩展事件功能。
 - SQL Server 自 2008 年开始即已推出扩展事件。
-- SQL 数据库上的扩展事件功能集是强大的 SQL Server 功能子集。 
+- SQL 数据库上的扩展事件功能集是强大的 SQL Server 功能子集。
 
 
-*XEvents* 是不正式的别名，有时在博客或其他非正式场合表示“扩展的事件”。
+XEvents 是不正式的别名，有时在博客或其他非正式场合表示“扩展的事件”。
 
 
 > [AZURE.NOTE] 从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式版 (GA) 的推出日期尚未确定。
 
+
+针对 Azure SQL 数据库和 Microsoft SQL Server 的扩展事件的其他相关信息位于：
+
+- [快速入门：SQL Server 中的扩展事件](http://msdn.microsoft.com/zh-cn/library/mt733217.aspx)
+- [扩展事件](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx)
 
 
 ## 先决条件
@@ -39,7 +45,7 @@
 本主题假设你有以下方面的经验：
 
 
-- [Azure SQL 数据库服务](/home/features/sql-database)。
+- [Azure SQL 数据库服务](/home/features/sql-database/)。
 
 
 - Microsoft SQL Server 中的[扩展事件](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx)。
@@ -49,7 +55,7 @@
 当你选择事件文件作为[目标](#AzureXEventsTargets)时，事先熟悉以下产品会很有帮助：
 
 
-- [Azure 存储服务](/home/features/storage)
+- [Azure 存储服务](/home/features/storage/)
 
 
 - PowerShell
@@ -100,13 +106,13 @@
 | **sys.database\_event\_sessions** | 返回 SQL 数据库中每个事件会话所对应的行。 |
 
 
-在 Microsoft SQL Server 中，类似目录视图的名称包含 *.server\_* 而不是 *.database\_*。名称模式类似于 **sys.server\_event\_%**。
+在 Microsoft SQL Server 中，类似目录视图的名称包含 .server\_ 而不是 .database\_。名称模式类似于 **sys.server\_event\_%**。
 
 
 ## 新的动态管理视图 [(DMV)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)
 
 
-Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://msdn.microsoft.com/zh-cn/library/bb677293.aspx)。DMV 告诉你有关活动事件会话的信息。
+Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://msdn.microsoft.com/zh-cn/library/bb677293.aspx)。DMV 告诉你有关*活动*事件会话的信息。
 
 
 | DMV 的名称 | 说明 |
@@ -264,4 +270,4 @@ SELECT
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0718_2016-->
