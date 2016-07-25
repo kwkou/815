@@ -8,8 +8,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="02/26/2016"
-	wacn.date="03/10/2016"/>
+	ms.date="06/14/2016"
+	wacn.date="07/25/2016"/>
 
 # 通过运行SQL Server Stretch Database顾问来识别符合SQL Server Stretch Database条件的数据库和表
 

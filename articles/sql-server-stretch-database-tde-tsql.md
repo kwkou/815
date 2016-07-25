@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-server-stretch-database"
-   ms.date="05/10/2016"
-   wacn.date="05/30/2016"/>
+   ms.date="06/14/2016"
+   wacn.date="07/25/2016"/>
 
 # 为 Azure 上的 SQL Server Stretch Database 启用透明数据加密 (TDE)
 
