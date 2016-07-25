@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="03/28/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="06/15/2016"
+   wacn.date="07/25/2016"/>
 
 #Azure SQL 数据库中的临时表入门
 
@@ -42,18 +42,18 @@
 
 也可以通过直接指定 Transact-SQL 语句来创建临时表，如以下示例中所示。请注意，每个临时表的必需元素为 PERIOD 定义以及可引用将存储历史行版本的另一个用户表的 SYSTEM\_VERSIONING 子句：
 
-	
-	CREATE TABLE WebsiteUserInfo 
-	(  
-	    [UserID] int NOT NULL PRIMARY KEY CLUSTERED 
-	  , [UserName] nvarchar(100) NOT NULL
-	  , [PagesVisited] int NOT NULL 
-	  , [ValidFrom] datetime2 (0) GENERATED ALWAYS AS ROW START
-	  , [ValidTo] datetime2 (0) GENERATED ALWAYS AS ROW END
-	  , PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo)
-	 )  
-	 WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.WebsiteUserInfoHistory));
-
+````
+CREATE TABLE WebsiteUserInfo 
+(  
+    [UserID] int NOT NULL PRIMARY KEY CLUSTERED 
+  , [UserName] nvarchar(100) NOT NULL
+  , [PagesVisited] int NOT NULL 
+  , [ValidFrom] datetime2 (0) GENERATED ALWAYS AS ROW START
+  , [ValidTo] datetime2 (0) GENERATED ALWAYS AS ROW END
+  , PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo)
+ )  
+ WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.WebsiteUserInfoHistory));
+````
 
 当你创建版本由系统控制的临时表时，将自动创建随附默认配置的历史记录表。默认历史记录表包含期限列（结束、开始）上启用页压缩的聚集 B 树目录索引。此配置非常适合使用临时表的大部分方案，特别是用于[数据审核](https://msdn.microsoft.com/zh-cn/library/mt631669.aspx#Anchor_0)。
 
@@ -63,11 +63,11 @@
 
 以下脚本演示如何将历史记录表的默认索引更改为聚集列存储：
 
-	
-	CREATE CLUSTERED COLUMNSTORE INDEX IX_WebsiteUserInfoHistory
-	ON dbo.WebsiteUserInfoHistory
-	WITH (DROP_EXISTING = ON); 
-
+````
+CREATE CLUSTERED COLUMNSTORE INDEX IX_WebsiteUserInfoHistory
+ON dbo.WebsiteUserInfoHistory
+WITH (DROP_EXISTING = ON); 
+````
 
 临时表在对象资源管理器中以特定图标表示以便于识别，其历史记录表显示为子节点。
 
@@ -77,23 +77,23 @@
 
 让我们探讨替代方案，其中 WebsiteUserInfo 表已存在，但不是针对保留更改历史记录而设计的。在此情况下，你只需扩展现有表，使其成为临时表，如以下示例中所示：
 
-	
-	ALTER TABLE WebsiteUserInfo 
-	ADD 
-	    ValidFrom datetime2 (0) GENERATED ALWAYS AS ROW START HIDDEN  
-	        constraint DF_ValidFrom DEFAULT DATEADD(SECOND, -1, SYSUTCDATETIME())
-	    , ValidTo datetime2 (0)  GENERATED ALWAYS AS ROW END HIDDEN   
-	        constraint DF_ValidTo DEFAULT '9999.12.31 23:59:59.99'
-	    , PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo); 
-	
-	ALTER TABLE WebsiteUserInfo  
-	SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.WebsiteUserInfoHistory));
-	GO
-	
-	CREATE CLUSTERED COLUMNSTORE INDEX IX_WebsiteUserInfoHistory
-	ON dbo.WebsiteUserInfoHistory
-	WITH (DROP_EXISTING = ON); 
+````
+ALTER TABLE WebsiteUserInfo 
+ADD 
+    ValidFrom datetime2 (0) GENERATED ALWAYS AS ROW START HIDDEN  
+        constraint DF_ValidFrom DEFAULT DATEADD(SECOND, -1, SYSUTCDATETIME())
+    , ValidTo datetime2 (0)  GENERATED ALWAYS AS ROW END HIDDEN   
+        constraint DF_ValidTo DEFAULT '9999.12.31 23:59:59.99'
+    , PERIOD FOR SYSTEM_TIME (ValidFrom, ValidTo); 
 
+ALTER TABLE WebsiteUserInfo  
+SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.WebsiteUserInfoHistory));
+GO
+
+CREATE CLUSTERED COLUMNSTORE INDEX IX_WebsiteUserInfoHistory
+ON dbo.WebsiteUserInfoHistory
+WITH (DROP_EXISTING = ON); 
+````
 
 ##步骤 2：定期运行工作负荷
 
@@ -101,10 +101,10 @@
 
 若要为此特定方案使用自动更改跟踪功能，我们只需在每次用户结束网站上的会话时更新列 **PagesVisited**：
 
-	
-	UPDATE WebsiteUserInfo  SET [PagesVisited] = 5 
-	WHERE [UserID] = 1;
-
+````
+UPDATE WebsiteUserInfo  SET [PagesVisited] = 5 
+WHERE [UserID] = 1;
+````
 
 请务必注意，更新查询不需要知道实际操作进行的时间，也不需要知道如何保留历史数据以供将来分析使用。Azure SQL 数据库会自动处理这两个方面。下图演示了如何在每次更新时生成历史记录数据。
 
@@ -116,37 +116,37 @@
 
 若要查看按访问网页次数排序的前 10 个用户，请运行以下查询：
 
-	
-	DECLARE @hourAgo datetime2 = DATEADD(HOUR, -1, SYSUTCDATETIME());
-	SELECT TOP 10 * FROM dbo.WebsiteUserInfo FOR SYSTEM_TIME AS OF @hourAgo
-	ORDER BY PagesVisited DESC
-
+````
+DECLARE @hourAgo datetime2 = DATEADD(HOUR, -1, SYSUTCDATETIME());
+SELECT TOP 10 * FROM dbo.WebsiteUserInfo FOR SYSTEM_TIME AS OF @hourAgo
+ORDER BY PagesVisited DESC
+````
 
 你可以轻松修改此查询，以分析一天前、一个月前或所需的任何过去时间点的站点访问记录。
 
 若要执行前一天的基本统计分析，请使用以下示例：
 
-	
-	DECLARE @twoDaysAgo datetime2 = DATEADD(DAY, -2, SYSUTCDATETIME());
-	DECLARE @aDayAgo datetime2 = DATEADD(DAY, -1, SYSUTCDATETIME());
-	
-	SELECT UserID, SUM (PagesVisited) as TotalVisitedPages, AVG (PagesVisited) as AverageVisitedPages,
-	MAX (PagesVisited) AS MaxVisitedPages, MIN (PagesVisited) AS MinVisitedPages,
-	STDEV (PagesVisited) as StDevViistedPages
-	FROM dbo.WebsiteUserInfo 
-	FOR SYSTEM_TIME BETWEEN @twoDaysAgo AND @aDayAgo
-	GROUP BY UserId
+````
+DECLARE @twoDaysAgo datetime2 = DATEADD(DAY, -2, SYSUTCDATETIME());
+DECLARE @aDayAgo datetime2 = DATEADD(DAY, -1, SYSUTCDATETIME());
 
+SELECT UserID, SUM (PagesVisited) as TotalVisitedPages, AVG (PagesVisited) as AverageVisitedPages,
+MAX (PagesVisited) AS MaxVisitedPages, MIN (PagesVisited) AS MinVisitedPages,
+STDEV (PagesVisited) as StDevViistedPages
+FROM dbo.WebsiteUserInfo 
+FOR SYSTEM_TIME BETWEEN @twoDaysAgo AND @aDayAgo
+GROUP BY UserId
+````
 
 若要搜索特定用户在某个时间段的活动，请使用 CONTAINED IN 子句：
 
-
-	DECLARE @hourAgo datetime2 = DATEADD(HOUR, -1, SYSUTCDATETIME());
-	DECLARE @twoHoursAgo datetime2 = DATEADD(HOUR, -2, SYSUTCDATETIME());
-	SELECT * FROM dbo.WebsiteUserInfo 
-	FOR SYSTEM_TIME CONTAINED IN (@twoHoursAgo, @hourAgo)
-	WHERE [UserID] = 1;
-
+````
+DECLARE @hourAgo datetime2 = DATEADD(HOUR, -1, SYSUTCDATETIME());
+DECLARE @twoHoursAgo datetime2 = DATEADD(HOUR, -2, SYSUTCDATETIME());
+SELECT * FROM dbo.WebsiteUserInfo 
+FOR SYSTEM_TIME CONTAINED IN (@twoHoursAgo, @hourAgo)
+WHERE [UserID] = 1;
+````
 
 图形可视化对于临时查询特别方便，因为可以轻松、直观地显示趋势和使用模式：
 
@@ -192,4 +192,4 @@ ALTER TABLE dbo.WebsiteUserInfo
 有关临时表的详细信息，请参阅 [MSDN 文档](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx)。
 访问第 9 频道收听[客户实施临时表的真实成功案例](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions)，并观看[临时表现场演示](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016)。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0718_2016-->

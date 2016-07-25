@@ -4,14 +4,14 @@
    services="sql-database"
    documentationCenter=""
    authors="BYHAM"
-   manager="jeffreyg"
+   manager="jhubbard"
    editor=""
    tags=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="02/18/2016"
-   wacn.date="06/14/2016"/>
+   ms.date="06/13/2016"
+   wacn.date="07/25/2016"/>
 
 # Azure SQL 数据库 Transact-SQL 的差异
 
@@ -32,12 +32,12 @@ Microsoft SQL Server 和 Azure SQL 数据库都支持应用程序依赖的大多
 
 ## SQL 数据库 V12 部分支持的功能
 
-SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的某些（但不是所有）参数。例如，CREATE PROCEDURE 语句可用，但 CREATE PROCEDURE 的 WITH ENCRYPTION 选项不可用。请参阅链接的语法主题，以了解有关每个语句的受支持区域的详细信息。
+SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的某些（但不是所有）参数。例如，CREATE PROCEDURE 语句可用，但 CREATE PROCEDURE 的所有选项不可用。请参阅链接的语法主题，以了解有关每个语句的受支持区域的详细信息。
 
 - 数据库：[CREATE](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)/[ALTER](https://msdn.microsoft.com/zh-cn/library/ms174269.aspx)
 - DMV 通常适用于可用的功能
 - 函数：[CREATE](https://msdn.microsoft.com/zh-cn/library/ms186755.aspx)/[ALTER FUNCTION](https://msdn.microsoft.com/zh-cn/library/ms186967.aspx)
-- [KILL](https://msdn.microsoft.com/zh-cn/library/ms173730.aspx) 
+- [KILL](https://msdn.microsoft.com/zh-cn/library/ms173730.aspx)
 - 登录名：[CREATE](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx)/[ALTER LOGIN](https://msdn.microsoft.com/zh-cn/library/ms189828.aspx)
 - 存储过程：[CREATE](https://msdn.microsoft.com/zh-cn/library/ms187926.aspx)/[ALTER PROCEDURE](https://msdn.microsoft.com/zh-cn/library/ms189762.aspx)
 - 表：[CREATE](https://msdn.microsoft.com/zh-cn/library/dn305849.aspx)/[ALTER](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)
@@ -60,7 +60,7 @@ SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的�
 - 事件：事件、事件通知、查询通知
 - 与数据库文件定位、大小以及 Azure 自动管理的数据库文件相关的功能。
 - 与通过 Azure 帐户管理的高可用性相关的功能：备份、还原、AlwaysOn、数据库镜像、日志传送、恢复模式。有关详细信息，请参阅“Azure SQL 数据库备份和还原”。
-- 依赖于日志读取器的功能：复制、更改数据捕获。
+- 依赖于在 SQL 数据库上运行的日志读取器的功能：推送复制、更改数据捕获。
 - 依赖于 SQL Server 代理或 MSDB 数据库的功能：作业、警报、运算符、基于策略的管理、数据库邮件、中心管理服务器。
 - FILESTREAM
 - 函数：fn\_get\_sql、fn\_virtualfilestats、fn\_virtualservernodes
@@ -89,7 +89,8 @@ SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的�
 - 跟踪标志
 - Transact-SQL 调试
 - 触发器：服务器作用域或登录触发器
-- USE 语句
+- USE 语句：若要将数据库上下文更改为不同的数据库，必须与新数据库建立新连接。
+
 
 ## 完整 Transact-SQL 参考
 
@@ -104,4 +105,4 @@ Transact-SQL 参考包含从 SQL Server 2008 到最新版本的相关主题。�
 在某些情况下，产品中可能使用了某个主题的常规主旨，但产品之间存在细微的差异。在适当的情况下，我们会在主题的中间位置指出差异。
 
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0718_2016-->

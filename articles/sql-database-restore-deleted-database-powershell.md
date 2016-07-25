@@ -9,18 +9,16 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/10/2016"
-	wacn.date="06/14/2016" />
+	ms.date="06/09/2016"
+	wacn.date="07/25/2016" />
 
 
 # 使用 PowerShell 还原已删除的 Azure SQL 数据库
 
-本文将向你说明如何还原已删除的 Azure SQL 数据库。
 
-在删除了某个数据库的情况下，Azure SQL 数据库允许你将删除的数据库还原到删除时的时间点。Azure SQL 数据库将会根据数据库的保留期存储已删除的数据库备份。
-
-已删除的数据库的保留期由该数据库尚未删除时所在的服务层或者数据库存在的天数确定（以两者中较小的为准）。若要了解有关数据库保留期的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
-
+> [AZURE.SELECTOR]
+- [概述](/documentation/articles/sql-database-restore-deleted-database/)
+- [PowerShell](/documentation/articles/sql-database-restore-deleted-database-powershell/)
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
 
@@ -47,16 +45,20 @@
 
 ## 后续步骤
 
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
 
-
+- 有关如何还原已删除的数据库的信息，请参阅 [Restore a deleted database using the REST API（使用 REST API 还原已删除的数据库）](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)。
+- 有关还原已删除的数据库的详细信息，请参阅[还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database/)。
+- 有关 Azure SQL 数据库自动备份的详细信息，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)。
 
 ## 其他资源
 
+- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [SQL 数据库文档](/documentation/services/sql-databases)
+- [异地还原](/documentation/articles/sql-database-geo-restore/)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
 
 
 
-<!---HONumber=Mooncake_0530_2016-->
+
+<!---HONumber=Mooncake_0718_2016-->

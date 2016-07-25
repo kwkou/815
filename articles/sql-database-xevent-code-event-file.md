@@ -4,19 +4,20 @@
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	editor="" 
 	tags=""/>
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="04/28/2016" 
-	wacn.date="05/23/2016"/>
+	ms.date="06/08/2016" 
+	wacn.date="07/25/2016"/>
 
 
 # SQL 数据库中扩展事件的事件文件目标代码
 
+[AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../includes/sql-database-xevents-selectors-1-include.md)]
 
 你需要一个完整的代码示例来可靠捕获和报告扩展事件的信息。
 
@@ -573,4 +574,5 @@ Image references.
 
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
 
-<!---HONumber=Mooncake_0118_2016-->
+
+<!---HONumber=Mooncake_0718_2016-->

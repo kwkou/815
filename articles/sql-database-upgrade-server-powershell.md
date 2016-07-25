@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/18/2016"
-	wacn.date="07/21/2016"/>
+	ms.date="06/06/2016"
+	wacn.date="07/25/2016"/>
 
 # 使用 PowerShell 升级到 Azure SQL 数据库 V12
 
@@ -34,13 +34,17 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 遵循本文中的步骤可以轻松地从 V11 服务器直接迁移到弹性数据库池。
 
-请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-develop-overview/)，则足以防止升级结束时连接中断。
+
+请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-connectivity-issues/)，则足以防止升级结束时连接中断。
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 
+升级到 V12 之后，[服务层建议](/documentation/articles/sql-database-service-tier-advisor/)和[弹性池建议](/documentation/articles/sql-database-elastic-pool-create-powershell/)将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
+
+
 ## 准备升级
 
-- **升级所有 Web 和企业数据库**：请[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell/)。
+- **升级所有 Web 和企业数据库**：请参阅下面的[升级所有 Web 和企业数据库](/documentation/articles/sql-database-v12-upgrade/#upgrade-all-web-and-business-databases)部分，或[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell/)。
 - **检查和暂停异地复制**：如果你的 Azure SQL 数据库已针对异地复制进行配置，则你应记录其当前配置并停止异地复制。升级完成后，请重新为异地复制配置数据库。
 - **如果客户端在 Azure VM 上，请打开这些端口**：如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。有关详细信息，请参阅 [SQL 数据库 V12 的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)。
 
@@ -72,14 +76,19 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 若要获取有关服务器升级的建议，请运行以下 cmdlet：
 
-    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “Default-SQL-ChinaEast” -ServerName “Your_Server _Name”
+    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1”
+
+
+有关详细信息，请参阅 [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-portal/)和 [Azure SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor/)。
+
+
 
 
 ## 开始升级
 
 若要开始服务器升级，请运行以下 cmdlet：
 
-    Start-AzureRmSqlServerUpgrade -ResourceGroupName “Default-SQL-ChinaEast” -ServerName “Your_Server _Name” -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName “resourcegroup1” -ServerName “server1” -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
 
 
 运行此命令时，升级过程将开始。你可以自定义建议的输出并将已编辑的建议提供给此 cmdlet 。
@@ -142,7 +151,7 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
     # Starting the upgrade
     #
-    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool)
+    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -ServerVersion 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool)
 
 
 
@@ -151,7 +160,8 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
 升级后，建议你主动监视数据库，以确保应用程序以所需的性能运行，并根据需要优化使用方式。
 
-除了监视各个数据库之外，你还可以使用 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/) 监视弹性数据库池。
+
+除了监视单个数据库之外，你还可以通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/) 监视弹性数据库池。
 
 
 **资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 查看资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度级提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是一个用于计算过去一小时平均 DTU 消耗百分比的查询：
@@ -179,10 +189,20 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
 
 
+
+## 后续步骤
+
+- [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)，并将部分或全部数据库添加到该池。
+
+- [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up/)。
+
+
+
 ## 相关信息
 
 - [Get-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603582.aspx)
 - [Start-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt619403.aspx)
 - [Stop-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603589.aspx)
 
-<!---HONumber=Mooncake_0509_2016-->
+
+<!---HONumber=Mooncake_0718_2016-->
