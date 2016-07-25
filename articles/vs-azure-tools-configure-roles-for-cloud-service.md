@@ -8,7 +8,7 @@
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="05/08/2016"
+   ms.date="06/01/2016"
    wacn.date="06/20/2016" />
 
 # 使用 Visual Studio 配置 Azure 云服务的角色

@@ -8,7 +8,7 @@
    editor="" />
 <tags
    ms.service="storage"
-   ms.date="01/27/2016"
+   ms.date="05/08/2016"
    wacn.date="05/23/2016" />
 
 # 使用服务器资源管理器浏览和管理存储资源

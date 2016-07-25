@@ -9,7 +9,7 @@
 
  <tags
 	ms.service="azure-resource-manager"
-	ms.date="01/26/2016"
+	ms.date="04/19/2016"
 	wacn.date="05/23/2016" />
 
 # 使用 Azure 资源组部署项目在 Visual Studio Team Services 中连续集成

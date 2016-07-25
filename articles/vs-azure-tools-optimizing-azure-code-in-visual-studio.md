@@ -8,7 +8,7 @@
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="01/30/2016"
+   ms.date="04/19/2016"
    wacn.date="05/16/2016" />
 
 # 优化 Azure 代码

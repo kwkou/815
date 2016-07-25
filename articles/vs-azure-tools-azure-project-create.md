@@ -8,7 +8,7 @@
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="01/22/2016"
+   ms.date="04/19/2016"
    wacn.date="05/23/2016" />
 
 # 使用 Visual Studio 创建 Azure 项目

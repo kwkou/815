@@ -8,7 +8,7 @@
    editor="tglee" />
 <tags 
    ms.service="multiple"
-   ms.date="04/18/2016"
+   ms.date="05/08/2016"
    wacn.date="05/16/2016" />
 
 # 使用云资源管理器管理 Azure 资源

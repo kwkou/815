@@ -8,7 +8,7 @@
    editor="" />
 <tags 
    ms.service="multiple"
-   ms.date="01/30/2016"
+   ms.date="05/08/2016"
    wacn.date="05/16/2016" />
 
 # 发布 Azure 应用程序向导

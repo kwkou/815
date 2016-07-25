@@ -8,7 +8,7 @@
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="04/18/2016"
+   ms.date="05/08/2016"
    wacn.date="05/23/2016" />
 
 # 准备从 Visual Studio 发布或部署 Azure 应用程序
