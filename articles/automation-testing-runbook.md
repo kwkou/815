@@ -1,20 +1,21 @@
 <properties 
-	pageTitle="在 Azure 自动化中测试 Runbook"
+	pageTitle="在 Azure 自动化中测试 Runbook | Azure"
 	description="在 Azure 自动化中发布某个 Runbook 之前，你可以对它进行测试，以确保它按预期工作。本文介绍如何测试 Runbook 并查看其输出。"
 	services="automation"
 	documentationCenter=""
 	authors="mgoedtel"
-	manager="stevenka"
+	manager="jwhit"
 	editor="tysonn" />
-<tags 
+<tags
 	ms.service="automation"
-	ms.date="02/23/2016"
-	wacn.date="03/24/2016" />
+	ms.date="05/24/2016"
+	wacn.date="07/25/2016"/>
 
 # 在 Azure 自动化中测试 Runbook
-测试 Runbook 时，将执行[草稿版](/documentation/articles/automation-creating-importing-runbook/#publishing-a-runbook)，并会完成其所执行的任何操作。不会创建作业历史记录，但会在测试输出窗格中显示“[输出](/documentation/articles/automation-runbook-output-and-messages/#output-stream)”与“[警告和错误](/documentation/articles/automation-runbook-output-and-messages/#message-streams)”。仅当 [$VerbosePreference 变量](/documentation/articles/automation-runbook-output-and-messages/#preference-variables)设置为 Continue 时，才会在输出窗格中显示发送到“[详细流](/documentation/articles/automation-runbook-output-and-messages/#message-streams)”的消息。
+测试 Runbook 时，将执行[草稿版](/documentation/articles/automation-creating-importing-runbook/#publishing-a-runbook)，并会完成其所执行的任何操作。不会创建作业历史记录，但会在测试输出窗格中显示“输出”与“警告和错误”。[](/documentation/articles/automation-runbook-output-and-messages/#output-stream)[](/documentation/articles/automation-runbook-output-and-messages/#message-streams)仅当 [$VerbosePreference 变量](/documentation/articles/automation-runbook-output-and-messages/#preference-variables)设置为 Continue 时，才会在输出窗格中显示发送到“详细流”的消息。[](/documentation/articles/automation-runbook-output-and-messages/#message-streams)
 
 即使草稿版正在运行，该 Runbook 也仍会正常执行工作流，并针对环境中的资源执行任何操作。因此，你只能在非生产资源中测试 Runbook。
+
 
 ## 在 Azure 经典管理门户中测试 Runbook
 
@@ -24,10 +25,10 @@
 7. 在输出窗格中检查 Runbook 的输出。
 
 
-## 相关文章
+## 后续步骤
 
-- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
-- [在 Azure 自动化中编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook/)
-- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
+- 若要了解如何创建或导入 Runbook，请参阅[在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
+- 若要开始使用 PowerShell 工作流 Runbook，请参阅 [My first PowerShell workflow runbook（我的第一个 PowerShell 工作流 Runbook）](/documentation/articles/automation-first-runbook-textual/)
+- 若要详细了解如何配置 runbook 以返回状态消息和错误（包括建议的做法），请参阅 [Runbook output and messages in Azure Automation（Azure 自动化中的 Runbook 输出和消息）](/documentation/articles/automation-runbook-output-and-messages/)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=AcomDC_0718_2016-->

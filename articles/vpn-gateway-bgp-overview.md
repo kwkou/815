@@ -9,9 +9,9 @@
    tags=""/>
 
 <tags
-   ms.service="vpn-gateway"
-   ms.date="04/26/2016"
-   wacn.date="06/24/2016"/>
+	ms.service="vpn-gateway"
+	ms.date="06/16/2016"
+	wacn.date="07/25/2016"/>
 
 # Azure VPN 网关的 BGP 概述
 
@@ -31,7 +31,9 @@ BGP 是可用于 Azure 基于路由的 VPN 网关的可选功能。在启用此�
 
 使用 BGP，你只需通过 IPsec S2S VPN 隧道为特定 BGP 对等节点声明最小前缀。它最小可为本地 VPN 设备的 BGP 对等节点 IP 地址的主机前缀（/32）。你可以控制要将哪些本地网络前缀播发到 Azure 以允许 Azure 虚拟网络访问。
 	
-你还可以播发更大的前缀，可以包括一些 VNet 地址前缀，如默认路由 (0.0.0.0/0) 或大型专用 IP 地址空间（例如，10.0.0.0/8）。但请注意，这些前缀不能与任一 VNet 前缀相同。与 VNet 前缀相同的这些路由将被拒绝。
+你还可以播发更大的前缀，可以包括一些 VNet 地址前缀，如大型专用 IP 地址空间（例如，10.0.0.0/8）。但请注意，这些前缀不能与任一 VNet 前缀相同。与 VNet 前缀相同的这些路由将被拒绝。
+
+>[AZURE.IMPORTANT] 目前，向 Azure VPN 网关播发默认路由 (0.0.0.0/0) 将被阻止。启用此功能后，将提供进一步更新。
 
 #### 支持 VNet 与本地站点之间的多个隧道基于 BGP 自动进行故障转移
 
@@ -62,4 +64,4 @@ BGP 使多个网关可以从不同网络获知和传播前缀，而无论它们�
 有关为跨界连接和 VNet 到 VNet 连接配置 BGP 的步骤，请参阅[在 Azure VPN 网关上使用 BGP 入门](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0718_2016-->
