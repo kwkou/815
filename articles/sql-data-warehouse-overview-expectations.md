@@ -56,8 +56,8 @@ SQL 数据仓库会定期进行升级，以便添加新功能和安装关键修�
 <!--Image references-->
 
 <!--Article references-->
-[创建支持票证]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
-[入门]: /documentation/articles/sql-data-warehouse-get-started-provision/
+[创建支持票证]: /support/support-ticket-form/?l=zh-cn
+[入门]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 [备份和还原概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 
 <!--MSDN references-->

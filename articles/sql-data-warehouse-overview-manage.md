@@ -99,12 +99,12 @@ DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信�
 [connection]: /documentation/articles/sql-data-warehouse-develop-connections/
 [使用 Visual Studio 连接到 Azure SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect/
 [Connect and query with sqlcmd（使用 sqlcmd 进行连接和查询）]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-development/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 [Monitor your workload using DMVs（使用 DMV 监视工作负荷）]: /documentation/articles/sql-data-warehouse-manage-monitor/
-[暂停计算]: /documentation/articles/sql-data-warehouse-overview-scalability/#pause-compute-bk/
+[暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#pause-compute-bk/
 [从快照还原]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-snapshot/
-[恢复计算]: /documentation/articles/sql-data-warehouse-overview-scalability/#resume-compute-performance-bk/
-[缩放性能]: /documentation/articles/sql-data-warehouse-overview-scalability/#scale-performance-bk/
+[恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#resume-compute-performance-bk/
+[缩放性能]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#scale-performance-bk/
 [安全性概述]: /documentation/articles/sql-data-warehouse-overview-security/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [SQL 数据仓库系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
