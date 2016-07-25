@@ -18,8 +18,6 @@
 > [AZURE.SELECTOR]
 - [概述][]
 - [门户][]
-- [PowerShell][]
-- [REST][]
 
 Azure SQL 数据仓库可通过本地冗余存储和自动化的备份来保护数据。自动化的备份提供了一种零管理方式来使数据库防范意外损坏或删除。如果用户无意中或不小心修改或删除了数据，则你可以将数据库还原到较早的时间点，以确保业务连续性。SQL 数据仓库使用 Azure 存储空间快照无缝备份数据库，无需任何停机时间。
 
@@ -60,8 +58,6 @@ Azure SQL 数据仓库可通过本地冗余存储和自动化的备份来保护�
 [本地冗余 (LRS)]: /documentation/articles/storage/storage-redundancy/
 [概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
-[PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
-[REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
 
 <!--MSDN references-->
 

@@ -17,8 +17,6 @@
 > [AZURE.SELECTOR]
 - [概述][]
 - [门户][]
-- [PowerShell][]
-- [REST][]
 
 在本文中，你会学习如何使用 Azure 门户预览还原 Azure SQL 数据仓库。
 

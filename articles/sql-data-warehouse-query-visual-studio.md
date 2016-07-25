@@ -83,13 +83,13 @@
 
 ## 后续步骤
 
-既然你可以执行连接和查询，接下来请尝试[使用 PowerBI 可视化数据][]。
+<!-- 既然你可以执行连接和查询，接下来请尝试[使用 PowerBI 可视化数据][]。 -->
 
 若要为 Azure Active Directory 配置环境，请参阅 [SQL 数据仓库身份验证][]。
 
 <!--Arcticles-->
 [连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-connect-overview/
-[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision/
+[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 [安装 Visual Studio 和 SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio/
 [SQL 数据仓库身份验证]: /documentation/articles/sql-data-warehouse-authentication/
 [使用 PowerBI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi/
@@ -99,12 +99,12 @@
 
 <!--Image references-->
 
-[1]: media/sql-data-warehouse-query-visual-studio/open-ssdt.png
-[2]: media/sql-data-warehouse-query-visual-studio/add-server.png
-[3]: media/sql-data-warehouse-query-visual-studio/connection-dialog.png
-[4]: media/sql-data-warehouse-query-visual-studio/explore-sample.png
-[5]: media/sql-data-warehouse-query-visual-studio/new-query2.png
-[6]: media/sql-data-warehouse-query-visual-studio/run-query.png
-[7]: media/sql-data-warehouse-query-visual-studio/query-results.png
+[1]: ./media/sql-data-warehouse-query-visual-studio/open-ssdt.png
+[2]: ./media/sql-data-warehouse-query-visual-studio/add-server.png
+[3]: ./media/sql-data-warehouse-query-visual-studio/connection-dialog.png
+[4]: ./media/sql-data-warehouse-query-visual-studio/explore-sample.png
+[5]: ./media/sql-data-warehouse-query-visual-studio/new-query2.png
+[6]: ./media/sql-data-warehouse-query-visual-studio/run-query.png
+[7]: ./media/sql-data-warehouse-query-visual-studio/query-results.png
 
 <!---HONumber=Mooncake_0711_2016-->
