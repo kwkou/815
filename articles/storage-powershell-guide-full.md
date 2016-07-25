@@ -8,18 +8,18 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/09/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="05/18/2016"
+	wacn.date="07/25/2016"/>
 
 # 对 Azure 存储空间使用 Azure PowerShell
 
 ## 概述
 
-Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。它是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。使用 PowerShell，你可以轻松控制和自动化 Azure 服务与应用程序的管理。例如，这些 cmdlet 可让你执行在 [Azure 经典管理门户](https://manage.windowsazure.cn)中可以执行的任务。
+Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。它是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。使用 PowerShell，你可以轻松控制和自动化 Azure 服务与应用程序的管理。例如，可以使用这些 cmdlet 执行在 [Azure 门户预览](https://portal.azure.cn)中可以执行的相同任务。
 
 在本指南中，我们将探讨如何使用[Azure 存储服务 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt269418.aspx)，以便通过 Azure 存储空间执行各种开发和管理任务。
 
-本指南假设你有使用 [Azure 存储服务](/documentation/services/storage)和 [Windows PowerShell](http://technet.microsoft.com/zh-cn/library/bb978526.aspx) 的经验。本指南提供了大量的脚本，用于演示 PowerShell 与 Azure 存储空间的用法。在运行每个脚本之前，你应该根据配置更新脚本变量。
+本指南假设你有使用 [Azure 存储服务](/documentation/services/storage/)和 [Windows PowerShell](http://technet.microsoft.com/zh-cn/library/bb978526.aspx) 的经验。本指南提供了大量的脚本，用于演示 PowerShell 与 Azure 存储空间的用法。在运行每个脚本之前，你应该根据配置更新脚本变量。
 
 本指南的第一部分提供 Azure 存储空间和 PowerShell 的概览。有关详细信息和说明，请先了解[对 Azure 存储空间使用 Azure PowerShell 的先决条件](#prerequisites-for-using-azure-powershell-with-azure-storage)。
 
@@ -28,9 +28,9 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 本部分说明如何在 5 分钟内通过 PowerShell 访问 Azure 存储空间。
 
-Azure 新用户：获取一个 Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[免费试用](/pricing/1rmb-trial/)、[购买选项](/pricing/purchase-options/)。
+Azure 新用户：获取一个 Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[免费试用](/pricing/1rmb-trial/)。
 
-请参阅[在 Azure Active Directory (Azure AD) 中分配管理员角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)，以了解有关 Azure 订阅的详细信息。
+请参阅[在 Azure Active Directory (Azure AD) 中分配管理员角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)，以了解有关 Azure 订阅的更多信息。
 
 **创建 Azure 订阅和帐户之后：**
 
@@ -102,13 +102,13 @@ Azure 新用户：获取一个 Azure 订阅以及与该订阅关联的 Microsoft
     		Add-AzureAccount -Environment AzureChinaCloud
        		Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
 
+		b.若要在 [Azure 门户预览](https://portal.azure.cn)中找到并复制你的订阅名称，则在左侧“中心”菜单中单击“订阅”。复制你在运行本指南中的脚本时要使用的订阅名称。
 
-		b.Azure 当前在中国支持的一个门户：[Azure 经典管理门户](https://manage.windowsazure.cn/)。如果登录到了当前的 [Azure 经典管理门户](https://manage.windowsazure.cn/)，请向下滚动，然后单击门户预览左侧的“设置”。单击“订阅”。复制你在运行本指南中指定的脚本时要使用的订阅名称。有关示例，请参阅下面的屏幕截图。
+		![Azure 门户][Image2]
 
-		![Azure 经典管理门户][Image1]
+		c.若要在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中找到并复制你的订阅名称，则向下滚动并单击门户左侧的“设置”。单击“订阅”查看你的订阅列表。复制你在运行本指南中指定的脚本时要使用的订阅名称。
 
-
-
+		![Azure 经典门户][Image1]
 
 	- **$StorageAccountName：**使用脚本中给定的名称，或输入存储帐户的新名称。**重要提示：**在 Azure 中，存储帐户的名称必须是唯一的。它还必须为小写！
 
@@ -231,8 +231,26 @@ Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运�
 
 现在，你已设置计算机并已了解如何使用 Azure PowerShell 管理订阅和存储帐户。请转到下一部分，了解如何管理 Azure Blob 和 Blob 快照。
 
+### 如何检索和重新生成 Azure 存储密钥
+
+Azure 存储帐户附带了两个帐户密钥。可以使用以下 cmdlet 示例来检索你的密钥。
+
+	Get-AzureStorageKey -StorageAccountName "yourstorageaccount"
+
+使用以下 cmdlet 检索特定密钥。有效值为 Primary 和 Secondary。
+
+	(Get-AzureStorageKey -StorageAccountName $StorageAccountName).Primary
+
+	(Get-AzureStorageKey -StorageAccountName $StorageAccountName).Secondary
+
+如果想要重新生成密钥，则使用以下 cmdlet。-KeyType 的有效值为“Primary”和“Secondary”
+
+	New-AzureStorageKey -StorageAccountName $StorageAccountName -KeyType “Primary”
+
+	New-AzureStorageKey -StorageAccountName $StorageAccountName -KeyType “Secondary”
+
 ## 如何管理 Azure blob
-Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储服务的概念。有关详细信息，请参阅[通过 .NET 开始使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
+Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储服务的概念。有关详细信息，请参阅[通过 .NET 开始使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)和[BLOB 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
 
 ### 如何创建容器
 Azure 存储空间中的每个 Blob 都必须在容器中。你可以使用 New-AzureStorageContainer cmdlet 创建专用容器：
@@ -713,4 +731,4 @@ Azure 环境的部署独立于 Azure，例如[中国 21Vianet 运营的 AzureChi
 [如何在美国政府部门和 Azure 中国区使用 Azure 存储空间]: #gov
 [后续步骤]: #next
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0718_2016-->

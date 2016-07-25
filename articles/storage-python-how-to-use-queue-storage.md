@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/11/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/25/2016"/>
 
 # 如何通过 Python 使用队列存储
 
@@ -50,7 +50,7 @@
 
 	messages = queue_service.peek_messages('taskqueue')
 	for message in messages:
-		print(message.message_text)
+		print(message.content)
 
 
 ## 如何：取消消息的排队
@@ -64,7 +64,7 @@
 
 你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **get_messages** 方法来在一次调用中获取 16 条消息。然后，它会使用 for 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
 
-	messages = queue_service.get_messages('taskqueue', numofmessages=16, visibilitytimeout=5*60)
+	messages = queue_service.get_messages('taskqueue', num_messages=16, visibility_timeout=5*60)
 	for message in messages:
 		print(message.content)
 		queue_service.delete_message('taskqueue', message.message_id, message.pop_receipt)		
@@ -102,6 +102,5 @@
 
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
-[Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0718_2016-->
