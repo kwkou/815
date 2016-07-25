@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="04/13/2016"
+	ms.date="04/18/2016"
 	wacn.date="05/09/2016"/>
 
 # 使用策略来管理资源和控制访问

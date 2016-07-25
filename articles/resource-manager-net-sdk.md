@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="03/10/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="05/17/2016"
+   wacn.date="07/25/2016"/>
 
 # Azure Resource Manager SDK for .Net  
 Azure Resource Manager (ARM) 预览版 SDK 适用于多种语言和平台。每种语言中实现可通过其生态系统包管理器和 GitHub 来使用。

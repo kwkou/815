@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multiple" 
-	ms.date="10/16/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="05/19/2016" 
+	wacn.date="07/25/2015"/>
 
 #Azure 上的应用程序体系结构
 用于构建使用 Azure 的应用程序的资源。这包括一些工具，帮助您画图以直观地描述软件系统。
