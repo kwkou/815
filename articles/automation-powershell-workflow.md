@@ -3,13 +3,13 @@
    description="本文旨在作为熟悉 PowerShell 创作人员的一个速成教程，以便其了解 PowerShell 和 PowerShell 工作流之间的具体差异。"
    services="automation"
    documentationCenter=""
-   authors="bwren"
-   manager="stevenka"
+   authors="mgoedtel"
+   manager="jwhit"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.date="02/03/2016"
-   wacn.date="06/30/2016" />
+<tags
+	ms.service="automation"
+	ms.date="05/26/2016"
+	wacn.date="07/25/2016"/>
 
 # 学习 Windows PowerShell 工作流
 
@@ -21,7 +21,7 @@ Azure 自动化中的 Runbook 作为 Windows PowerShell 工作流实现。Window
 
 ## Runbook 类型
 
-Azure 中国区目前仅支持文本 Runbook。
+Azure 中国区目前仅支持文本 PowerShell 工作流 Runbook。
 
 ## 工作流的基本结构
 
@@ -198,7 +198,7 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 		Write-Output "All files copied."
 	}
 
-> [AZURE.NOTE] 我们不建议并行运行子 Runbook，这是由于这已被证实将导致不可靠的结果。来自子 Runbook 的输出有时将不会显示，一个子 Runbook 中的设置可能会影响其他并行子 Runbook
+> [AZURE.NOTE]  我们不建议并行运行子 Runbook，这是由于这已被证实将导致不可靠的结果。来自子 Runbook 的输出有时将不会显示，一个子 Runbook 中的设置可能会影响其他并行子 Runbook
 
 
 ##<a name="Checkpoints"></a> 检查点
@@ -232,13 +232,11 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 	}
 
 
-
 关于检查点的详细信息，请参阅[将检查点添加到脚本工作流](http://technet.microsoft.com/zh-cn/library/jj574114.aspx)。
 
 
+## 后续步骤
 
-## 相关文章
+- 若要开始使用 PowerShell 工作流 Runbook，请参阅 [My first PowerShell workflow runbook（我的第一个 PowerShell 工作流 Runbook）](/documentation/articles/automation-first-runbook-textual/)
 
-- [Windows PowerShell 工作流入门](http://technet.microsoft.com/zh-cn/library/jj134242.aspx)
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=AcomDC_0718_2016-->

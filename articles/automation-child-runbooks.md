@@ -6,10 +6,10 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.date="04/21/2016"
-   wacn.date="06/30/2016" />
+<tags
+	ms.service="automation"
+	ms.date="05/31/2016"
+	wacn.date="07/25/2016"/>
 
 # Azure 自动化中的子 Runbook
 
@@ -30,8 +30,8 @@
 
 下面的示例将调用一个测试子 Runbook，该 Runbook 接受三个参数：一个复杂对象、一个整数和一个布尔值。该子 Runbook 的输出将分配到某个变量。在本示例中，子 Runbook 属于 PowerShell 工作流 Runbook
 
-	$vm = Get-AzureRmVM –ResourceGroupName "LabRG" –Name "MyVM"
-    $output = PSWF-ChildRunbook –VM $vm –RepeatCount 2 –Restart $true
+	$vm = Get-AzureRmVM -ResourceGroupName "LabRG" -Name "MyVM"
+    $output = PSWF-ChildRunbook -VM $vm -RepeatCount 2 -Restart $true
 
 ##  使用 cmdlet 启动子 Runbook
 
@@ -59,7 +59,6 @@
 
 [Start-ChildRunbook](http://gallery.technet.microsoft.com/scriptcenter/Start-Azure-Automation-1ac858a9) 是 TechNet 库中提供的一个帮助器 Runbook，用于从 cmdlet 启动 Runbook。使用该 Runbook，你可以选择等待子 Runbook 完成，然后检索其输出。除了可在你自己的 Azure 自动化环境中使用此 Runbook 以外，还可以使用此 Runbook 作为参考来处理 Runbook 和使用 cmdlet 执行作业。该帮助器 Runbook 本身必须以内嵌方式调用，因为它要求使用一个哈希表参数来接受子 Runbook 的参数值。
 
-
 ## 子 Runbook 调用方法的比较
 
 下表汇总了从一个 Runbook 调用另一个 Runbook 的两种方法的差异。
@@ -67,8 +66,8 @@
 | | 内联| Cmdlet|
 |:---|:---|:---|
 |作业|子 Runbook 在父级所在的同一个作业中运行。|为子 Runbook 创建单独的作业。|
-|执行|父 Runbook 等待子 Runbook 完成，然后继续。|父 Runbook 会在子 Runbook 启动后立刻继续运行。|
-|输出|父 Runbook 可以直接从子 Runbook 获取输出。|父 Runbook 必须检索子 Runbook 作业的输出。|
+|执行|父 Runbook 等待子 Runbook 完成，然后继续。|子 Runbook 启动后，父 Runbook 立即继续。|
+|输出|父 Runbook 可以直接从子 Runbook 获取输出。|父 Runbook 必须从子 Runbook 作业检索输出。|
 |Parameters|子 Runbook 参数的值需单独指定，并且可以使用任意数据类型。|子 Runbook 参数值必须组合成单个哈希表，并且只能包含简单数据类型、数组和利用 JSON 序列化的对象数据类型。|
 |自动化帐户|父 Runbook 只能使用同一自动化帐户中的子 Runbook。|父 Runbook 可以使用同一 Azure 订阅（甚至还包括不同的订阅，如果你已连接到该订阅的话）中任意自动化帐户内的子 Runbook。|
 |发布|在发布父 Runbook 之前必须先发布子 Runbook。|必须在启动父 Runbook 前的任意时间发布子 Runbook。|
@@ -78,4 +77,4 @@
 - [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)
 - [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

@@ -4,13 +4,13 @@
 	services="redis-cache" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="cache"
-	ms.date="03/04/2016"
-	wacn.date="04/26/2016"/>
+	ms.date="05/23/2016"
+	wacn.date="07/25/2016"/>
 
 # 如何为高级 Azure Redis 缓存配置数据暂留
 
@@ -60,7 +60,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 若要配置存储帐户，可以将“rdb-storage-connection-string”设置为 Azure 中国区的某个连接字符串。在上述命令中可以看到，你需要在连接字符串中指定 BlobEndpoint、QueueEndpoint 和 TableEndpoint。
 
->[AZURE.IMPORTANT]如果重新生成了持久性帐户的存储密钥，则必须更新“rdb-backup-frequency”。
+>[AZURE.IMPORTANT] 如果重新生成了持久性帐户的存储密钥，则必须更新“rdb-backup-frequency”。
 
 一旦备份频率间隔时间已过，则会启动下一次备份（或新缓存的首次备份）。
 
@@ -70,23 +70,35 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 以下列表包含有关 Azure Redis 缓存保留常见问题的解答。
 
-## 能否在此前已创建的缓存的基础上启用保留？
+-	[能否在此前已创建的缓存的基础上启用保留？](#can-i-enable-persistence-on-a-previously-created-cache)
+-	[能否在创建缓存后更改备份频率？](#can-i-change-the-backup-frequency-after-i-create-the-cache)
+-	[为何我的备份频率为 60 分钟，而两次备份的间隔却超过 60 分钟？](#why-if-i-have-a-backup-frequency-of-60-minutes-there-is-more-than-60-minutes-between-backups)
+-	[进行新备份以后，旧备份会发生什么情况？](#what-happens-to-the-old-backups-when-a-new-backup-is-made)
+-	[如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？](#what-happens-if-i-have-scaled-to-a-different-size-and-a-backup-is-restored-that-was-made-before-the-scaling-operation)
+
+### 能否在此前已创建的缓存的基础上启用保留？
 
 是的，可以在创建缓存时或者在现有高级缓存上配置 Redis 持久性。
 
-## 能否在创建缓存后更改备份频率？
+### 能否在创建缓存后更改备份频率？
 
-是的，可以在 Azure PowerShell 更改备份频率。以下是一个命令示例，通过修改 rdb-backup-frequency 可以改变备份频率。
+能，可以使用 Azure PowerShell 更改备份频率。以下是示例命令，该命令通过修改 `rdb-backup-frequency` 来更改备份频率
 
 	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
 
-## 为何我的备份频率为 60 分钟，而两次备份的间隔却超过 60 分钟？
+### 为何我的备份频率为 60 分钟，而两次备份的间隔却超过 60 分钟？
 
 在上一次备份过程成功完成之前，本次备份不会开始，其频率所对应的时间间隔也不会开始计算。如果备份频率为 60 分钟，而备份过程需要 15 分钟才能成功完成，则在上一次备份开始以后，要再过 75 分钟才会开始下一次备份。
 
-## 进行新备份以后，旧备份会发生什么情况
+### 进行新备份以后，旧备份会发生什么情况？
 
 除最新备份外的所有备份都会自动删除。这种删除可能不会即刻发生，但旧备份是不会无限期保留下去的。
+
+### 如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？
+
+-	如果缩放到更大的大小，则没有任何影响。
+-	如果缩放到更小的大小，并且你的自定义[数据库](/documentation/articles/cache-configure/#databases)设置大于新大小的[数据库限制](/documentation/articles/cache-configure/#databases)，则不会还原这些数据库中的数据。有关详细信息，请参阅[在缩放过程中，自定义数据库设置是否会受影响？](#is-my-custom-databases-setting-affected-during-scaling)
+-	如果缩放到更小的大小，并且更小的大小空间不足，无法容纳上次备份的所有数据，则在还原过程中，通常会使用 [allkeys-lru](http://redis.io/topics/lru-cache) 逐出策略逐出密钥。
 
 ## 后续步骤
 了解如何使用更多的高级版缓存功能。
@@ -106,4 +118,4 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 [redis-cache-settings]: ./media/cache-how-to-premium-persistence/redis-cache-settings.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=AcomDC_0718_2016-->

@@ -1,15 +1,15 @@
-<properties 
+<properties
    pageTitle="Azure 自动化中的 Runbook 输出和消息 | Azure"
    description="介绍如何创建和检索 Azure 自动化中 Runbook 的输出和错误消息。"
    services="automation"
    documentationCenter=""
    authors="mgoedtel"
-   manager="stevenka"
+   manager="jwhit"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.date="03/03/2016"
-   wacn.date="06/30/2016" />
+<tags
+	ms.service="automation"
+	ms.date="06/08/2016"
+	wacn.date="07/25/2016"/>
 
 # Azure 自动化中的 Runbook 输出和消息
 
@@ -33,7 +33,7 @@
 可以通过使用 [Write-Output](http://technet.microsoft.com/zh-cn/library/hh849921.aspx)，或者在 Runbook 中将对象放置在其对应行中，来向输出流写入数据。
 
 	#The following lines both write an object to the output stream.
-	Write-Output –InputObject $object
+	Write-Output -InputObject $object
 	$object
 
 ### 函数的输出
@@ -47,7 +47,7 @@
 	   Write-Verbose "Verbose outside of function"
 	   Write-Output "Output outside of function"
 	   $functionOutput = Test-Function
-	
+
 	   Function Test-Function
 	   {
 	      Write-Verbose "Verbose inside of function"
@@ -73,7 +73,7 @@ Runbook 作业的详细流将是：
 	Workflow Test-Runbook
 	{
 	   [OutputType([string])]
-	
+
 	   $output = "This is some string output."
 	   Write-Output $output
 	}
@@ -89,10 +89,10 @@ Runbook 作业的详细流将是：
 使用 [Write-Warning](https://technet.microsoft.com/zh-cn/library/hh849931.aspx) 或 [Write-Error](http://technet.microsoft.com/zh-cn/library/hh849962.aspx) cmdlet 创建警告或错误消息。活动可能也会向这些流写入数据。
 
 	#The following lines create a warning message and then an error message that will suspend the runbook.
-	
+
 	$ErrorActionPreference = "Stop"
-	Write-Warning –Message "This is a warning message."
-	Write-Error –Message "This is an error message that will stop the runbook because of the preference variable."
+	Write-Warning -Message "This is a warning message."
+	Write-Error -Message "This is an error message that will stop the runbook because of the preference variable."
 
 ###<a id="verbose-streams" name="Verbose"></a> 详细流
 
@@ -103,8 +103,8 @@ Runbook 作业的详细流将是：
 使用 [Write-Verbose](http://technet.microsoft.com/zh-cn/library/hh849951.aspx) cmdlet 创建详细消息。
 
 	#The following line creates a verbose message.
-	
-	Write-Verbose –Message "This is a verbose message."
+
+	Write-Verbose -Message "This is a verbose message."
 
 ###<a id="debug-streams" name="Debug"></a> 调试流
 
@@ -144,7 +144,7 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 
 ### Windows PowerShell
 
-在 Windows PowerShell 中，可以使用 [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/dn690268.aspx) cmdlet 检索 Runbook 的输出和消息。此 cmdlet 需要作业的 ID，如果你指定了要返回的流，则它还要使用一个名为 Stream 的参数。可以指定 Any 来返回作业的所有流。
+在 Windows PowerShell 中，可以使用 [Get-AzureAutomationJobOutput](https://msdn.microsoft.com/zh-cn/library/mt603476.aspx) cmdlet 检索 Runbook 的输出和消息。此 cmdlet 需要作业的 ID，如果你指定了要返回的流，则它还要使用一个名为 Stream 的参数。可以指定 Any 来返回作业的所有流。
 
 以下示例将启动一个示例 Runbook，然后等待该 Runbook 完成。完成后，将从作业收集该 Runbook 的输出流。
 
@@ -159,9 +159,9 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 	
 	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
 
-## 相关文章
+## 后续步骤
 
-- [跟踪 Runbook 作业](/documentation/articles/automation-runbook-execution/)
-- [子 Runbook](/documentation/articles/automation-child-runbooks/)
+- 若要详细了解 Runbook 执行方式、如何监视 Runbook 作业和其他技术详细信息，请参阅[跟踪 Runbook 作业](/documentation/articles/automation-runbook-execution/)
+- 若要了解如何设计和使用子 Runbook，请参阅 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=AcomDC_0718_2016-->

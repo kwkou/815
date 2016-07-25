@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/06/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/20/2016"
+	wacn.date="07/25/2016"/>
 
 # 排查在 Azure 中新建 Windows 虚拟机时遇到的经典部署问题
 
@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。
 
 [AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
 
@@ -29,7 +29,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。
 
-在 Azure 门户预览中，单击“浏览”>“虚拟机”> *你的 Windows 虚拟机* >“设置”>“审核日志”。
+在 Azure 门户预览版中，单击“浏览”>“虚拟机”> “你的 Windows 虚拟机” >“设置”>“审核日志”。
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
@@ -45,7 +45,7 @@
 
 **解决方法：**
 
-若要解决这两个错误，请上载原始 VHD、可用的本地设置、以及与该 OS（通用/专用）相同的设置。若要以通用设置上载，请记得先运行 sysprep。有关详细信息，请参阅 [Create and upload a Windows Server VHD to Azure（创建 Windows Server VHD 并将其上载到 Azure）](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)。
+若要解决这两个错误，请上载原始 VHD、可用的本地设置、以及与该 OS（通用/专用）相同的设置。若要以通用设置上载，请记得先运行 sysprep。有关详细信息，请参阅[创建 Windows Server VHD 并将其上传到 Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)。
 
 **捕获错误：**
 
@@ -55,7 +55,7 @@
 
 **解决方法：**
 
-若要解决这两个错误，请在门户预览中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-windows-classic-capture-image/)，该映像将带有与该 OS（通用/专用）相同的设置。
+若要解决这两个错误，请从门户中删除当前映像，并[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-windows-classic-capture-image/)，该映像具有与该 OS（通用/专用）相同的设置。
 
 ## 问题：自定义/库/应用商店映像；分配失败
 当新的 VM 请求被发送到没有可用空间可处理请求、或不支持所请求的 VM 大小的群集，便发生此错误。在相同的云服务中不可混合不同系列的 VM。因此，如果想要创建和云服务可支持大小不同的新 VM，计算请求将失败。
@@ -79,4 +79,7 @@
 - 在新的虚拟网络中创建新 VM。
 - [将现有虚拟网络连接到](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/)新虚拟网络。详细了解[区域虚拟网络](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/)。此外，你也可以[将基于地缘组的虚拟网络迁移到区域虚拟网络](https://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/)，然后创建新 VM。
 
-<!---HONumber=Mooncake_0613_2016-->
+## 后续步骤
+如果你在 Azure 中启动已停止的 Windows VM 或调整现有 Windows VM 的大小时遇到问题，请参阅[排查在 Azure 中重新启动现有 Windows 虚拟机或调整其大小时遇到的经典部署问题](/documentation/articles/virtual-machines-windows-classic-restart-resize-error-troubleshooting/)。
+
+<!---HONumber=Mooncake_0718_2016-->

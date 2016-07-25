@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/12/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/16/2016"
+	wacn.date="07/25/2016"/>
 
 # 排查在 Azure 中重新启动或调整现有 Windows 虚拟机时遇到的 Resource Manager 部署问题
 
@@ -23,13 +23,13 @@
 
 当你尝试启动已停止的 Azure 虚拟机 (VM)，或调整现有 Azure VM 的大小时，经常遇到的错误是分配失败。当群集或区域没有可用的资源或无法支持所请求的 VM 大小时，将发生此错误。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
-
 [AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
 
 ## 收集审核日志
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。以下链接包含有关过程的详细信息：
+
+[使用 Azure 门户对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 
 [使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)
 
@@ -45,13 +45,13 @@
 
 *	停止可用性集中的所有 VM 并重新启动每个 VM。
 
-  1. 单击“资源组”> 你的资源组 >“资源”> _你的可用性集_ >“虚拟机”> _你的虚拟机_ >“停止”。
+  1. 单击“资源组”> “你的资源组” >“资源”> “你的可用性集” >“虚拟机”> “你的虚拟机” >“停止”。
 
   2. 所有 VM 停止后，选择每个已停止的 VM 并单击“启动”。
 
 *	稍后重试重新启动请求。
 
-## 问题：重新启动现有 VM 时发生错误
+## 问题：调整现有 VM 的大小时发生错误
 
 你尝试调整现有 VM 的大小，但出现分配失败。
 
@@ -67,9 +67,13 @@
 
   1. 停止可用性集中的所有 VM。
 
-    * 单击“资源组”> 你的资源组 >“资源”> _你的可用性集_ >“虚拟机”> _你的虚拟机_ >“停止”。
+    * 单击“资源组”> “你的资源组” >“资源”> “你的可用性集” >“虚拟机”> “你的虚拟机” >“停止”。
 
   2. 所有 VM 停止后，将所需的 VM 调整到更大的大小。
   3. 选择已调整大小的 VM，单击“启动”，然后启动每个已停止的 VM。
 
-<!---HONumber=Mooncake_0613_2016-->
+## 后续步骤
+
+如果你在 Azure 中创建新的 Windows VM 时遇到问题，请参阅[排查在 Azure 中新建 Windows 虚拟机时遇到的部署问题](/documentation/articles/virtual-machines-windows-troubleshoot-deployment-new-vm/)。
+
+<!---HONumber=Mooncake_0718_2016-->

@@ -3,13 +3,13 @@
    description="Azure 自动化中的凭据资产包含可用于向 Runbook 访问的资源进行身份验证的安全凭据。本文介绍如何创建凭据资产并在 Runbook 中使用它们。"
    services="automation"
    documentationCenter=""
-   authors="bwren"
-   manager="stevenka"
+   authors="mgoedtel"
+   manager="jwhit"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.date="01/27/2016"
-   wacn.date="06/30/2016" />
+<tags
+	ms.service="automation"
+	ms.date="06/09/2016"
+	wacn.date="07/25/2016"/>
 
 # Azure 自动化中的凭据资产
 
@@ -23,7 +23,7 @@
 
 |Cmdlet|说明|
 |:---|:---|
-|[Get-AzureAutomationCredential](http://msdn.microsoft.com/zh-cn/library/dn913781.aspx)|检索有关凭据资产的信息。只能从 **Get-AutomationCredential** 活动中检索凭据本身。|
+|[Get-AzureAutomationCredential](http://msdn.microsoft.com/zh-cn/library/dn913781.aspx)|检索有关凭据资产的信息。只能从 **Get-AutomationPSCredential** 活动中检索凭据本身。|
 |[New-AzureAutomationCredential](http://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)|创建新的自动化凭据。|
 |[Remove- AzureAutomationCredential](http://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)|删除自动化凭据。|
 |[Set- AzureAutomationCredential](http://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)|设置现有自动化凭据的属性。|
@@ -38,10 +38,10 @@
 
 >[AZURE.NOTE] 应避免在 Get-AutomationPSCredential 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与凭据资产之间的依赖关系变得复杂化。
 
-## 创建新凭据
+## 创建新凭据资产
 
 
-### 使用 Azure 经典管理门户创建新变量
+### 使用 Azure 经典管理门户新建凭据资产
 
 1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。
@@ -52,13 +52,14 @@
 
 
 
-### 使用 Windows PowerShell 创建新的 PowerShell 凭据
+
+### 使用 Windows PowerShell 创建新的凭据资产
 
 以下示例命令演示了如何创建新的自动化凭据。首先创建了一个具有名称和密码的 PSCredential 对象，然后使用该对象创建凭据资产。或者，可以使用 **Get-Credential** cmdlet，会提示您键入名称和密码。
 
 	$user = "MyDomain\MyUser"
 	$pw = ConvertTo-SecureString "PassWord!" -AsPlainText -Force
-	$cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $user, $pw
+	$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $user, $pw
 	New-AzureAutomationCredential -AutomationAccountName "MyAutomationAccount" -Name "MyCredential" -Value $cred
 
 ## 使用 PowerShell 凭据
@@ -77,5 +78,4 @@
 
 
  
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0718_2016-->
