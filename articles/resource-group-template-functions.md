@@ -457,7 +457,7 @@
         "count": "[length(parameters('siteNames'))]"
     }
 
-有关在数组中使用此函数的详细信息，请参阅[在 Azure Resource Manager 中创建多个资源实例](resource-group-create-multiple.md)。
+有关在数组中使用此函数的详细信息，请参阅[在 Azure Resource Manager 中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
 
 或者，你可以在字符串中使用：
 
