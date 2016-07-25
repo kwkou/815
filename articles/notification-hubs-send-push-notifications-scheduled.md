@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="04/11/2016"
-	wacn.date=""/>
+	wacn.date="07/25/2016"/>
 
 # 如何：发送预定通知
 

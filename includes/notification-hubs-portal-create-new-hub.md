@@ -1,6 +1,6 @@
 
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)，然后单击屏幕底部的“+新建”。
+1. 登录到 [Azure 新门户](https://portal.azure.cn)，然后单击屏幕底部的“+新建”。
 
 2. 依次单击“新建”、“Web + 移动”、“通知中心”、“快速创建”。
 

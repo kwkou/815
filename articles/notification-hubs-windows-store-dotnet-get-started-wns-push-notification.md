@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/28/2016"
-	wacn.date="07/12/2016"/>
+	wacn.date="07/25/2016"/>
 
 # 通知中心入门（Windows 应用商店应用）
 

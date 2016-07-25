@@ -222,8 +222,8 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 [10]: ./media/notification-hubs-diagnosing/VSTestNotification.png
  
 <!-- LINKS -->
-[通知中心概述]: /documentation/articles/notification-hubs-push-notification-overview
-[入门教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
+[通知中心概述]: /documentation/articles/notification-hubs-push-notification-overview/
+[入门教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [模板指南]: https://msdn.microsoft.com/library/dn530748.aspx
 [APNS 指南]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW4
 [GCM 指南]: http://developer.android.com/google/gcm/adv.html

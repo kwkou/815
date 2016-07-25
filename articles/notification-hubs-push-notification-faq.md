@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/09/2016"
-	wacn.date="07/12/2016"/>
+	wacn.date="07/25/2016"/>
 
 #使用 Azure 通知中心推送通知 — 常见问题
 
@@ -42,11 +42,11 @@
 ###3\.哪些客户在使用通知中心？
 我们有许多客户在使用通知中心，以下是几位著名客户：
 
-* Sochi 2014 — 数百个兴趣组、300 多万台设备、2 周内发出的通知超过了 1.5 亿条。[案例研究 - Sochi]
-* Skanska - [案例研究 - Skanska]
-* Seattle Times - [案例研究 - Seattle Times]
-* Mural.ly - [案例研究 -Mural.ly]
-* 7Digital - [案例研究 - 7Digital]
+* Sochi 2014 — 数百个兴趣组、300 多万台设备、2 周内发出的通知超过了 1.5 亿条。  
+* Skanska  
+* Seattle Times  
+* Mural.ly  
+* 7Digital  
 * 必应应用 — 数千万台设备，每天发送 300 万条以上的通知。
 
 ###4\.如何升级或降级通知中心以更改我的服务层？
@@ -173,11 +173,7 @@ Azure 通知中心支持在 [Azure 经典门户]中查看遥测数据。你可�
 [Azure 经典门户]: https://manage.windowsazure.cn
 [通知中心定价]: /pricing/details/notification-hubs/
 [通知中心 SLA]: /support/legal/sla/
-[案例研究 - Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
-[案例研究 - Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
-[案例研究 - Seattle Times]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=8354
-[案例研究 -Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
-[案例研究 - 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
+
 [NH — REST API]: https://msdn.microsoft.com/library/azure/dn530746.aspx
 [NH - Getting Started Tutorials（NH — 入门教程）]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/
 [Mobile Services Pricing]: /pricing/details/mobile-services/

@@ -37,7 +37,7 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
 在 Windows 应用商店和 Windows Phone 应用程序中，通知可以采用 _toast_ 形式：显示一个无模式窗口，并伴有声音，以提醒有新的通知。支持的其他通知类型包括“磁贴”、“raw”和“提醒”通知。有关 Windows 设备支持的通知类型的详细信息，请参阅[磁贴、提醒和通知](http://msdn.microsoft.com/library/windows/apps/hh779725.aspx)。
 
-在 Apple iOS 设备上，推送时将以类似的方式提醒用户：出现一个请求用户查看或关闭通知的对话框。单击“查看”会打开收到消息的应用程序。有关 iOS 通知的详细信息，请参阅 [iOS 通知](http://go.microsoft.com/fwlink/?LinkId=615245)。
+在 Apple iOS 设备上，推送时将以类似的方式提醒用户：出现一个请求用户查看或关闭通知的对话框。单击“查看”会打开收到消息的应用程序。有关 iOS 通知的详细信息，请参阅 [iOS 通知](https://developer.apple.com/ios/human-interface-guidelines/features/notifications/)。
 
 推送通知可帮助移动设备显示最新信息，同时保持高能效。后端系统可以将通知发送给移动设备，即使设备上的相关应用处于非活动状态。推送通知是使用者应用程序的重要组件，它们可用于增加应用程序的关注度和使用率。通知对企业也很有用，最新信息会增加员工对业务活动的响应能力。
 
@@ -115,7 +115,7 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
 ##与 App Service Mobile Apps 集成
 
-为了在 Azure 服务之间促成完美且统一的体验，[App Service Mobile Apps] 原生支持使用通知中心来推送通知。[App Service Mobile Apps] 提供面向企业开发人员和系统集成商的高度可缩放、全局可用的移动应用开发平台，该平台向移动开发人员提供一组丰富的功能。
+为了在 Azure 服务之间促成完美且统一的体验，App Service Mobile Apps 原生支持使用通知中心来推送通知。App Service Mobile Apps 提供面向企业开发人员和系统集成商的高度可缩放、全局可用的移动应用开发平台，该平台向移动开发人员提供一组丰富的功能。
 
 Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
@@ -152,19 +152,18 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
   [0]: ./media/notification-hubs-overview/registration-diagram.png
   [1]: ./media/notification-hubs-overview/notification-hub-diagram.png
-  [客户如何使用通知中心]: /documentation/services/notification-hubs
-  [通知中心教程和指南]: /documentation/services/notification-hubs
-  [iOS]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started
+  [客户如何使用通知中心]: /documentation/services/notification-hubs/
+  [通知中心教程和指南]: /documentation/services/notification-hubs/
+  [iOS]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/
  
-  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
-  [Windows Phone]: /documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns
-  [Kindle]: /documentation/articles/notification-hubs-kindle-amazon-adm-push-notification
-  [Xamarin.iOS]: /documentation/articles/partner-xamarin-notification-hubs-ios-apple-push-notification-apns-get-started
-  
+  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
+  [Windows Phone]: /documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/
+  [Kindle]: /documentation/articles/notification-hubs-kindle-amazon-adm-push-notification/
+  [Xamarin.iOS]: /documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/library/microsoft.servicebus.notifications.aspx
   [App Service Mobile Apps]: /documentation/articles/app-service-mobile-value-prop/
-  [模板]: /documentation/articles/notification-hubs-templates-cross-platform-push-messages
+  [模板]: /documentation/articles/notification-hubs-templates-cross-platform-push-messages/
   [Azure 门户]: https://portal.azure.cn
   [标记]: http://msdn.microsoft.com/library/azure/dn530749.aspx
 

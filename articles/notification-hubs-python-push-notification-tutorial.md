@@ -10,7 +10,7 @@
 <tags 
 	ms.service="notification-hubs" 
 	ms.date="02/29/2016" 
-	wacn.date=""/>
+	wacn.date="07/25/2016"/>
 
 # 如何通过 Python 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
@@ -282,6 +282,7 @@
 	hub.send_apple_notification(alert_payload)
 
 ### Android
+
 	gcm_payload = {
 	    'data':
 	        {
@@ -291,6 +292,7 @@
 	hub.send_gcm_notification(gcm_payload)
 
 ### Kindle Fire
+
 	adm_payload = {
 	    'data':
 	        {
@@ -300,6 +302,7 @@
 	hub.send_adm_notification(adm_payload)
 
 ### 百度
+
 	baidu_payload = {
 	    'data':
 	        {

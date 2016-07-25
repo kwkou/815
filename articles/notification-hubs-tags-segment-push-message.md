@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/28/2016"
-	wacn.date=""/>
+	wacn.date="07/25/2016"/>
 
 # 路由和标记表达式
 
