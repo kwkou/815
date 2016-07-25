@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/08/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="06/01/2016"
+	wacn.date="07/25/2016"/>
 
 # 如何通过 PHP 使用队列存储
 
@@ -43,9 +43,10 @@
 
 下面的示例演示了如何包括 autoloader 文件并引用 **ServicesBuilder** 类。
 
-> [AZURE.NOTE] 本示例（以及本文中的其他示例）假定你已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 `WindowsAzure.php` autoloader 文件。
+> [AZURE.NOTE]
+本示例（以及本文中的其他示例）假定你已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库，则将需要引用 `WindowsAzure.php` autoloader 文件。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
 
 
@@ -73,7 +74,7 @@
 
 在此处列出的示例中，将直接传递连接字符串。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
 
@@ -84,11 +85,11 @@
 
 一个 **QueueRestProxy** 对象，让你可以通过使用 **createQueue** 方法创建队列。创建队列时，可以在该队列上设置选项，但此操作不是必需的。（下面的示例演示了如何在队列上设置元数据。）
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Queue\Models\CreateQueueOptions;
+	use MicrosoftAzure\Storage\Common\ServiceException;
+	use MicrosoftAzure\Storage\Queue\Models\CreateQueueOptions;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -111,18 +112,18 @@
 		echo $code.": ".$error_message."<br />";
 	}
 
-> [AZURE.NOTE]您不应依赖元数据密钥的区分大小写。所有密钥都是采用小写形式从服务中读取的。
+> [AZURE.NOTE] 您不应依赖元数据密钥的区分大小写。所有密钥都是采用小写形式从服务中读取的。
 
 
 ## 向队列添加消息
 
 若要将消息添加到队列，请使用 **QueueRestProxy->createMessage**。此方法接受队列名称、消息文本和消息选项（这些都是可选的）。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Queue\Models\CreateMessageOptions;
+	use MicrosoftAzure\Storage\Common\ServiceException;
+	use MicrosoftAzure\Storage\Queue\Models\CreateMessageOptions;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -145,11 +146,11 @@
 
 通过调用 **QueueRestProxy->peekMessages**，可以扫视队列前面的消息，而不会从队列中将其删除。默认情况下，**peekMessage** 方法将返回单个消息，但你可以使用 **PeekMessagesOptions->setNumberOfMessages** 方法更改该值。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Queue\Models\PeekMessagesOptions;
+	use MicrosoftAzure\Storage\Common\ServiceException;
+	use MicrosoftAzure\Storage\Queue\Models\PeekMessagesOptions;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -190,10 +191,10 @@
 
 你的代码分两步从队列中删除消息。首先，调用 **queuerestproxy->listmessages**，这将使消息对从队列中读取的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。（如果在此时段内未删除该消息，则它将变得在队列上再次可见）。 若要从队列中删除消息，你必须调用 **QueueRestProxy->deleteMessage**。此删除消息的两步过程可确保当您的代码因硬件或软件故障而无法处理消息时，您的其他代码实例可以获取同一消息并重试。你的代码在处理消息后会立即调用 **deleteMessage**。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
+	use MicrosoftAzure\Storage\Common\ServiceException;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -228,10 +229,10 @@
 
 可以通过调用 **QueueRestProxy->updateMessage** 来更改队列中已就位消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
+	use MicrosoftAzure\Storage\Common\ServiceException;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -270,11 +271,11 @@
 
 你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的可见超时，从而允许你的代码使用更多或更少的时间来彻底处理每条消息。以下代码示例使用 **getMessages** 方法在一次调用中获取 16 条消息。然后，它会使用 **for** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Queue\Models\ListMessagesOptions;
+	use MicrosoftAzure\Storage\Common\ServiceException;
+	use MicrosoftAzure\Storage\Queue\Models\ListMessagesOptions;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -317,10 +318,10 @@
 
 你可以获取队列中消息的估计数。**QueueRestProxy->getQueueMetadata** 方法要求队列服务返回有关队列的元数据。对返回的对象调用 **getApproximateMessageCount** 方法将提供队列中消息的计数。此计数仅为近似值，因为只能在队列服务响应您的请求后添加或删除消息。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
+	use MicrosoftAzure\Storage\Common\ServiceException;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -345,10 +346,10 @@
 
 若要删除队列及其包含的所有消息，请调用 **QueueRestProxy->deleteQueue** 方法。
 
-	require_once 'vendor\autoload.php';
+	require_once 'vendor/autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
+	use MicrosoftAzure\Storage\Common\ServiceException;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
@@ -379,4 +380,4 @@
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure 经典管理门户]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0718_2016-->

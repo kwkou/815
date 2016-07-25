@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/11/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/23/2016"
+	wacn.date="07/25/2016"/>
 
 # 如何通过 Python 使用 Azure 文件存储
 
@@ -51,7 +51,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	from azure.storage.file import ContentSettings
 	file_service.create_file_from_path(
         'myshare',
-				None, # We want to create this blob in the root directory, so we specify None for the directory_name
+        None, # We want to create this blob in the root directory, so we specify None for the directory_name
         'myfile',
         'sunset.png',
         content_settings=ContentSettings(content_type='image/png'))
@@ -96,4 +96,4 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0718_2016-->

@@ -10,12 +10,12 @@
 
 <tags 
   ms.service="storage" 
-  ms.date="02/17/2016" 
-  wacn.date="04/18/2016"/>
+  ms.date="06/08/2016" 
+  wacn.date="07/25/2016"/>
 
 # Azure 存储复制
 
-始终复制 Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储 SLA 要求](/support/sla/storage) 要求。
+始终复制 Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储 SLA 要求](/support/sla/storage/) 要求。
 
 创建存储帐户时，必须选择以下复制选项之一：
 
@@ -32,8 +32,9 @@
 |可以从辅助位置和主位置读取数据。|否|否|是
 |在单独的节点上维护的数据副本数。|3|6|6
 
+有关不同冗余选项的定价信息，请参阅 [Azure 存储空间定价](/pricing/details/storage/)。
 
-##<a id="locally-redundant-storage"></a> 本地冗余存储
+## 本地冗余存储
 
 本地冗余存储 (LRS) 在你创建存储帐户所在的区域中复制数据。为最大程度地提高持久性，针对你的存储帐户中的数据发出的每个请求将复制三次。这三个副本每个都驻留在不同的容错域和升级域中。容错域 (FD) 是一组代表出错的物理单元的节点，可将其视为属于同一物理机架的节点。升级域 (UD) 是一组在服务升级（部署）的过程中一起升级的节点。三个副本将分布在 UD 和 FD 上，以确保即使在硬件故障影响单个机架，以及在部署期间升级节点时，数据也可用。请求仅在写入所有三个副本后，才成功返回。
 
@@ -59,7 +60,7 @@
 |主要 |辅助
 | ---------------   |----------------
 |中国北部 |中国东部
-|中国东部 |中国北部
+|中国东部 |中国北部 
  
 ##<a id="read-access-geo-redundant-storage"></a> 读取访问异地冗余存储
 
@@ -69,10 +70,10 @@
 
 ## 后续步骤
 
+- [Azure 存储定价](/pricing/details/storage/)
 - [关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)
-- [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/) 
+- [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)
 - [Azure 存储冗余选项和读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
-- [使用 RA-GRS 的  Azure 存储模拟器 3.1](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
-- [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
+- [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
  
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0718_2016-->

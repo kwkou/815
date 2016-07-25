@@ -7,10 +7,11 @@
 	manager="douge"
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="storage"
-	ms.date="05/08/2016"
-	wacn.date="06/13/2016"/>
+	
+	ms.date="06/01/2016"
+	wacn.date="07/25/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）
 
@@ -82,7 +83,7 @@ SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.
 * `string`
 * 序列化为 JSON 的 POCO 类型
 * `byte[]`
-* `CloudQueueMessage`
+* **CloudQueueMessage**
 
 ## 轮询算法
 
@@ -184,7 +185,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 
 ### 字符串队列消息
 
-下面的非异步代码示例在名为“outputqueue”的队列中创建新的队列消息，该消息的内容与名为“inputqueue”的队列中收到的队列消息相同。（对于异步函数，请按照本部分稍后将介绍的方法使用 **IAsyncCollector<T>**。）
+下面的非异步代码示例在名为“outputqueue”的队列中创建新的队列消息，该消息的内容与名为“inputqueue”的队列中收到的队列消息相同。（对于异步函数，请按照本部分稍后将介绍的方法使用 **IAsyncCollector<T>** 。）
 
 
 		public static void CreateQueueMessage(
@@ -193,7 +194,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 		{
 		    outputQueueMessage = queueMessage;
 		}
-  
+
 ### POCO[（普通旧 CLR 对象](http://zh.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
 
 若要创建包含 POCO（而不是字符串）的队列消息，请将 POCO 类型作为输出参数传递给 **Queue** 属性构造函数。
@@ -304,7 +305,7 @@ SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.
 		var queueMessage = new CloudQueueMessage(JsonConvert.SerializeObject(blobInfo));
 		logQueue.AddMessage(queueMessage);
 
-如果在将 blob 绑定到对象之前，你需要在函数中执行某项操作，则可以使用函数正文中的属性，如[使用函数正文中的 WebJobs SDK 属性](#use-webjobs-sdk-attributes-in-the-body-of-a-function)所示。
+如果在将 Blob 绑定到某对象之前，你需要在函数中执行某些操作，则可以使用函数正文中的属性，如[使用函数正文中的 WebJobs SDK 属性](#use-webjobs-sdk-attributes-in-the-body-of-a-function)所示。
 
 ###可以使用 Blob 属性的类型
 
@@ -511,26 +512,23 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 		    logger.WriteLine("TextWriter - " + logMessage);
 		}
 
-在 WebJobs SDK 仪表板中，当你转到特定函数调用页面并单击“切换输出”时，你会看到 **TextWriter** 对象的输出：
+在 WebJobs SDK 仪表板中，当你转到特定函数调用页面并选择“切换输出”时，你会看到 **TextWriter** 对象的输出：
 
-![单击函数调用链接](./media/vs-storage-webjobs-getting-started-queues/dashboardinvocations.png)
+![调用链接](./media/vs-storage-webjobs-getting-started-queues/dashboardinvocations.png)
 
 ![函数调用页中的日志](./media/vs-storage-webjobs-getting-started-queues/dashboardlogs.png)
 
-在 WebJobs SDK 仪表板中，当您转到 Web 作业（而不是函数调用）页面并单击“切换输出”时，您会看到最近的 100 行控制台输出。
+在 WebJobs SDK 仪表板中，当转到 Web 作业（而不是函数调用）页面并选择“切换输出”时，你会看到最近的 100 行控制台输出。
 
-![单击“切换输出”](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
+![切换输出](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
 
-在连续的 WebJob 中，应用程序日志在 Web 应用文件系统的 /data/jobs/continuous/{webjobname}/job_log.txt 中显示。
+在连续的 WebJob 中，应用程序日志在 Web 应用文件系统的 /data/jobs/continuous/*{webjobname}*/job\_log.txt 中显示。
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Out - Hello world!
 
-在 Azure blob 中，应用程序日志如下所示：
-	2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!,
-	2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!,
-	2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
+在 Azure blob 中，应用程序日志如下所示：2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!, 2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!, 2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
 
 在 Azure 表中，**Console.Out** 和 **Console.Error** 日志如下所示：
 
@@ -542,4 +540,4 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 本文章提供了代码示例，演示如何处理用于操作 Azure 队列的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources/)。
  
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0718_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/06/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="06/14/2016"
+	wacn.date="07/25/2016"/>
 
 # 使用 AzCopy 命令行实用程序传输数据
 
@@ -18,7 +18,8 @@
 
 AzCopy 是一个 Windows 命令行实用程序，专用于将数据复制到 Azure Blob、文件和表存储以及从这些位置复制数据。你可以在存储帐户中将一个对象的数据复制到另一个对象，或者在存储帐户之间复制数据。
 
-> [AZURE.NOTE] 本指南假定你已熟悉 [Azure 存储空间](/home/features/storage/)。如果不熟悉，请阅读 [Azure 存储空间简介](/documentation/articles/storage-introduction/)文档获取帮助信息。最重要的是，需要[创建一个存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)一边开始使用 AzCopy。
+
+> [AZURE.NOTE] 本指南假定你已熟悉 [Azure 存储空间](/home/features/storage/)。如果不熟悉，阅读 [Azure 存储空间简介](/documentation/articles/storage-introduction/)文档将有所帮助。最重要的是，需要[创建一个存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)以便开始使用 AzCopy。
 
 ## 下载并安装 AzCopy
 
@@ -28,7 +29,7 @@ AzCopy 是一个 Windows 命令行实用程序，专用于将数据复制到 Azu
 
 ### Mac/Linux
 
-AzCopy 不可用于 Mac/Linux 操作系统。但是，Azure CLI 可用作将数据复制 Azure 存储空间以及从其中复制数据的替代方法。有关详细信息，请参阅[将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli/)。
+AzCopy 不可用于 Mac/Linux 操作系统。但是，Azure CLI 可用作将数据复制 Azure 存储空间以及从其中复制数据的替代方法。请参阅[配合使用 Azure CLI 与 Azure 存储空间](/documentation/articles/storage-azure-cli/)了解详细信息。
 
 ## 编写你的第一条 AzCopy 命令
 
@@ -121,7 +122,7 @@ AzCopy 命令的基本语法是：
 
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer/vd /DestKey:key /Pattern:abc.txt
 
-如果指定的虚拟目录不存在，则 AzCopy 将上载文件并在其名称中包括虚拟目录（例如上例中的 `vd/abc.txt`）。
+如果指定的虚拟目录不存在，则 AzCopy 将上载文件并在其名称中包括虚拟目录（*例如*上例中的 `vd/abc.txt`）。
 
 ### 上载全部文件
 
@@ -353,7 +354,7 @@ AzCopy 将使用以下命名约定在 blob 容器中生成一个 JSON 数据文�
 
 请注意，在导入方案中不能指定选项 `/PKRS`。与导出方案不同（在导出方案中必须指定 `/PKRS` 选项才会启动并发操作），在导入表时，AzCopy 将默认启动并发操作。启动的并发操作的默认数量等于核心处理器的数量；不过，你可以通过选项 `/NC` 指定一个不同的并发数量。有关详细信息，请在命令行上键入 `AzCopy /?:NC`。
 
-请注意，AzCopy 仅支持导入 JSON 文件，不支持导入 CSV 文件。
+请注意，AzCopy 仅支持导入 JSON 文件，不支持导入 CSV 文件。AzCopy 不支持来自用户创建的 JSON 和清单文件的表导入。这两个文件必须来自 AzCopy 表导出。若要避免错误，请不要修改导出的 JSON 或清单文件。
 
 ### 使用 blob 将实体导入表中
 
@@ -378,6 +379,8 @@ AzCopy 将使用以下命名约定在 blob 容器中生成一个 JSON 数据文�
 
 	/Source:http://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:http://myaccount.blob.core.chinacloudapi.cn/mycontainer1 /SourceKey:<sourcekey> /DestKey:<destkey> /S /XO /XN
 
+注意：在源或目标是表时，这不受支持。
+
 ### 使用响应文件指定命令行参数
 
 	AzCopy /@:"C:\responsefiles\copyoperation.txt"
@@ -396,7 +399,7 @@ AzCopy 将使用以下命名约定在 blob 容器中生成一个 JSON 数据文�
 	/S
 	/Y
 
-如果你将参数拆分到两行（如下面所示的 `/sourcekey` 参数），AzCopy 将会失败：
+如果你将参数拆分到两行（如此处所示的 `/sourcekey` 参数），AzCopy 将会失败：
 
 	http://myaccount.blob.core.chinacloudapi.cn/mycontainer
  	C:\myfolder
@@ -477,7 +480,7 @@ AzCopy 会像在命令行上包括了所有个体参数一样来处理此命令�
 
 ### 对 Azure 存储模拟器运行 AzCopy
 
-你可以对 blob 的 [Azure 存储模拟器](/documentation/articles/storage-use-emulator/)运行 AzCopy：
+可以针对 Blob 的 [Azure 存储模拟器](/documentation/articles/storage-use-emulator/)运行 AzCopy：
 
 	AzCopy /Source:https://127.0.0.1:10000/myaccount/mycontainer/ /Dest:C:\myfolder /SourceKey:key /SourceType:Blob /S
 
@@ -583,7 +586,7 @@ AzCopy 会像在命令行上包括了所有个体参数一样来处理此命令�
 
 默认情况下，不会复制快照。
 
-**适用于：**Blob
+**适用对象：**Blob
 
 ### /V:[verbose-log-file]
 
@@ -591,7 +594,7 @@ AzCopy 会像在命令行上包括了所有个体参数一样来处理此命令�
 
 默认情况下，详细日志文件在 `%LocalAppData%\Microsoft\Azure\AzCopy` 中将被命名为 AzCopyVerbose.log。如果你为此选项指定了现有的文件位置，则详细日志将追加到该文件中。
 
-**适用于：**Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /Z:[journal-file-folder]
 
@@ -609,7 +612,7 @@ AzCopy 始终支持对被中断的操作进行恢复。
 
 请注意，不支持通过由以前版本的 AzCopy 创建的日志文件来恢复操作。
 
-**适用于：**Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /@:"parameter-file"
 
@@ -621,7 +624,7 @@ AzCopy 始终支持对被中断的操作进行恢复。
 
 可以指定多个响应文件。但请注意，AzCopy 不支持嵌套的响应文件。
 
-**适用于：**Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /Y
 
@@ -639,7 +642,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 
 使用此选项时，AzCopy 需要此源位置的列表和读取权限。
 
-**适用于：**Blob、文件
+**适用对象：**Blob、文件
 
 ### /MT
 
@@ -682,7 +685,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 - O 表示脱机文件
 - I 表示未编制索引的文件
 
-**适用于：**Blob、文件
+**适用对象：**Blob、文件
 
 ### /XA:[RASHCNETOI]
 
@@ -701,7 +704,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 - O 表示脱机文件
 - I 表示未编制索引的文件
 
-**适用于：**Blob、文件
+**适用对象：**Blob、文件
 
 ### /Delimiter:"delimiter"
 
@@ -711,7 +714,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 
 此选项仅适用于下载 blob。
 
-**适用于：**Blob
+**适用对象：**Blob
 
 ### /NC:"number-of-concurrent-operations"
 
@@ -721,19 +724,19 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 
 并发操作的上限为 512。
 
-**适用于：**Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /SourceType:"Blob" | "Table"
 
 指定 `source` 资源是本地开发环境中可用的一个 Blob，在存储模拟器中运行。
 
-**适用于：**Blob、表
+**适用对象：**Blob、表
 
 ### /DestType:"Blob" | "Table"
 
 指定 `destination` 资源是本地开发环境中可用的一个 Blob，在存储模拟器中运行。
 
-**适用于：**Blob、表
+**适用对象：**Blob、表
 
 ### /PKRS:"key1#key2#key3#..."
 
@@ -749,7 +752,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 
   [bb, last-partition-key]
 
-**适用于：**表
+**适用对象：**表
 
 ### /SplitSize:"file-size"
 
@@ -759,7 +762,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 
 如果将表数据导出到一个 blob，并且导出的文件的大小达到了 200 GB 的 blob 大小限制，则 AzCopy 将拆分导出的文件，即使未指定此选项也是如此。
 
-**适用于：**表
+**适用对象：**表
 
 ### /EntityOperation:"InsertOrSkip" | "InsertOrMerge" | "InsertOrReplace"
 
@@ -771,7 +774,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 
 - InsertOrReplace - 替换现有实体，或者插入新实体（如果它不存在于表中）。
 
-**适用于：**表
+**适用对象：**表
 
 ### /Manifest:"manifest-file"
 
@@ -781,7 +784,7 @@ AzCopy 对该选项的使用解释为对无选项 /L 运行命令行的模拟，
 
 在用于定位数据文件的导入操作过程中，此选项是必要的。
 
-**适用于：**表
+**适用对象：**表
 
 ### /SyncCopy
 
@@ -791,7 +794,7 @@ AzCopy 默认情况下使用服务器端的异步复制。指定此选项以执�
 
 可以在以下情况使用该选项：在 Blob 存储空间复制文件、文件存储空间复制文件，从 Bolb 存储空间向文件存储空间复制文件，反之亦然。
 
-**适用于：**Blob、文件
+**适用对象：**Blob、文件
 
 ### /SetContentType:"content-type"
 
@@ -801,7 +804,7 @@ AzCopy 默认情况下使用服务器端的异步复制。指定此选项以执�
 
 如果指定此选项不带值，AzCopy 将根据文件扩展名设置每个 blob 或文件的内容类型。
 
-**适用于：**Blob、文件
+**适用对象：**Blob、文件
 
 ### /PayloadFormat:"JSON" | "CSV"
 
@@ -809,7 +812,7 @@ AzCopy 默认情况下使用服务器端的异步复制。指定此选项以执�
 
 如果未指定此选项，则默认情况下，AzCopy 导出 JSON 格式的表数据文件。
 
-**适用于：**表
+**适用对象：**表
 
 ## 已知问题和最佳实践
 
@@ -859,4 +862,4 @@ AzCopy 旨在最大限度地利用计算机资源来加快数据传输，如果�
 - [AzCopy：使用跨帐户复制 Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy：为 Azure Blob 上载/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0718_2016-->
