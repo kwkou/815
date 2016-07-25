@@ -15,7 +15,7 @@
 
 # 使用数据库迁移工具将数据导入到 DocumentDB
 
-本文演示了如何使用开源的 DocumentDB 数据迁移工具将数据从各种源导入到 [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)，包括 JSON 文件、CSV 文件、SQL、MongoDB、Azure 表存储、Amazon DynamoDB 和 DocumentDB 集合。
+本文演示了如何使用开源的 DocumentDB 数据迁移工具将数据从各种源导入到 [Azure DocumentDB](/services/documentdb/)，包括 JSON 文件、CSV 文件、SQL、MongoDB、Azure 表存储、Amazon DynamoDB 和 DocumentDB 集合。
 
 阅读本文之后，你将能够回答以下问题：
 
@@ -125,8 +125,8 @@ DocumentDB 数据迁移工具是一个开源解决方案，它将数据从多个
 > [AZURE.NOTE] 使用验证命令来确保可以访问在连接字符串字段中指定的 SQL Server 实例。
 
 嵌套分隔符属性用于在导入过程中创建层次结构关系（子文档）。请考虑下列 SQL 查询：
-
-select CAST(BusinessEntityID AS varchar) as Id, Name, AddressType as [Address.AddressType], AddressLine1 as [Address.AddressLine1], City as [Address.Location.City], StateProvinceName as [Address.Location.StateProvinceName], PostalCode as [Address.PostalCode], CountryRegionName as [Address.CountryRegionName] from Sales.vStoreWithAddresses WHERE AddressType='Main Office'
+		
+		select CAST(BusinessEntityID AS varchar) as Id, Name, AddressType as [Address.AddressType], AddressLine1 as [Address.AddressLine1], City as [Address.Location.City], StateProvinceName as [Address.Location.StateProvinceName], PostalCode as [Address.PostalCode], CountryRegionName as [Address.CountryRegionName] from Sales.vStoreWithAddresses WHERE AddressType='Main Office'
 
 它将返回以下（部分）结果：
 
@@ -161,7 +161,7 @@ select CAST(BusinessEntityID AS varchar) as Id, Name, AddressType as [Address.Ad
 
 CSV 文件源导入程序选项可用于导入一个或多个 CSV 文件。添加包含 CSV 文件的文件夹以供导入时，可以选择递归搜索子文件夹中的文件。
 
-![CSV 源选项的屏幕截图 - CSV 到 JSON](media/documentdb-import-data/csvsource.png)
+![CSV 源选项的屏幕截图 - CSV 到 JSON](./media/documentdb-import-data/csvsource.png)
 
 与 SQL 源相似，嵌套分隔符属性可用于在导入过程中创建层次结构关系（子文档）。请考虑以下 CSV 标头行和数据行︰
 
@@ -192,8 +192,8 @@ CSV 文件源导入程序选项可用于导入一个或多个 CSV 文件。添�
 
 
 下面是 CSV 导入的命令行示例︰
-
-	dt.exe /s:CsvFile /s.Files:.\Employees.csv /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Employees /t.IdField:EntityID /t.CollectionTier:S3
+	
+		dt.exe /s:CsvFile /s.Files:.\Employees.csv /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Employees /t.IdField:EntityID /t.CollectionTier:S3
 
 ##<a id="AzureTableSource"></a>从 Azure 表存储中导入
 
@@ -203,7 +203,7 @@ CSV 文件源导入程序选项可用于导入一个或多个 CSV 文件。添�
 
 Azure 表存储连接字符串的格式为：
 
-	DefaultEndpointsProtocol=<protocol>;AccountName=<Account Name>;AccountKey=<Account Key>;
+		DefaultEndpointsProtocol=<protocol>;AccountName=<Account Name>;AccountKey=<Account Key>;
 
 > [AZURE.NOTE] 使用验证命令来确保可以访问在连接字符串字段中指定的 Azure 表存储实例。
 
@@ -219,8 +219,8 @@ Azure 表存储源导入程序选项具有下列附加选项︰
 	1. Azure 表存储筛选器不支持投影。如果想要仅导入特定的 Azure 表实体属性，请将它们添加到“选择列”列表中。这样将忽略所有其他实体属性。
 
 下面是一个用于从 Azure 表存储中导入的命令行示例︰
-
-	dt.exe /s:AzureTable /s.ConnectionString:"DefaultEndpointsProtocol=https;AccountName=<Account Name>;AccountKey=<Account Key>" /s.Table:metrics /s.InternalFields:All /s.Filter:"PartitionKey eq 'Partition1' and RowKey gt '00001'" /s.Projection:ObjectCount;ObjectSize  /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:metrics /t.CollectionTier:S3
+	
+		dt.exe /s:AzureTable /s.ConnectionString:"DefaultEndpointsProtocol=https;AccountName=<Account Name>;AccountKey=<Account Key>" /s.Table:metrics /s.InternalFields:All /s.Filter:"PartitionKey eq 'Partition1' and RowKey gt '00001'" /s.Projection:ObjectCount;ObjectSize  /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:metrics /t.CollectionTier:S3
 
 ##<a id="DynamoDBSource"></a>从 Amazon DynamoDB 中导入
 
@@ -232,13 +232,13 @@ Azure 表存储源导入程序选项具有下列附加选项︰
 
 Amazon DynamoDB 连接字符串的格式为：
 
-	ServiceURL=<Service Address>;AccessKey=<Access Key>;SecretKey=<Secret Key>;
+		ServiceURL=<Service Address>;AccessKey=<Access Key>;SecretKey=<Secret Key>;
 
 > [AZURE.NOTE] 使用验证命令来确保可以访问在连接字符串字段中指定的 Amazon DynamoDB 实例。
 
 下面是一个用于从 Amazon DynamoDB 中导入的命令行示例︰
-
-	dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.amazonaws.com;AccessKey=<accessKey>;SecretKey=<secretKey> /s.Request:"{   """TableName""": """ProductCatalog""" }" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:catalogCollection /t.CollectionTier:S3
+	
+		dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.amazonaws.com;AccessKey=<accessKey>;SecretKey=<secretKey> /s.Request:"{   """TableName""": """ProductCatalog""" }" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:catalogCollection /t.CollectionTier:S3
 
 ##<a id="BlobImport"></a>从 Azure Blob 存储中导入文件
 
@@ -247,8 +247,8 @@ Amazon DynamoDB 连接字符串的格式为：
 ![Blob 文件源选项的屏幕截图](./media/documentdb-import-data/blobsource.png)
 
 下面是一个用于从 Azure Blob 存储中导入 JSON 文件的命令行示例︰
-
-	dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net:443/importcontainer/.*" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:doctest
+	
+		dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net:443/importcontainer/.*" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:doctest
 
 ##<a id="DocumentDBSource"></a>从 DocumentDB 中导入
 

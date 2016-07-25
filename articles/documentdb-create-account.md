@@ -35,7 +35,7 @@
 - C# .NET 示例，位于 GitHub 上 [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
 - Azure 门户预览，如[使用 Azure 门户预览创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database/)中所述。
 - 综合教程：[.NET](/documentation/articles/documentdb-get-started/)、[.NET MVC](/documentation/articles/documentdb-dotnet-application/)、[Java](/documentation/articles/documentdb-java-application/)、[Node.js](/documentation/articles/documentdb-nodejs-application/) 或 [Python](/documentation/articles/documentdb-python-application/)。
-- [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/)。DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。
+- [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/): DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。
 
 
 创建数据库后，你必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。

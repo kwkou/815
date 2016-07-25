@@ -41,7 +41,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 > [AZURE.NOTE] 目前，可将新区域添加到 2016 年 6 月 13 日或之后创建的新 DocumentDB 帐户。在应用商店中选择“Azure DocumentDB - 多区域数据库帐户”以创建多区域帐户。6 月 13 日之前创建的帐户在不久之后就能支持全局可用性。
 
-1. 在 [Azure 门户预览](https://portal.azure.com/)的跳转栏中，单击“DocumentDB 帐户”。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB 帐户”。
 2. 在“DocumentDB 帐户”边栏选项卡中，选择要修改的数据库帐户。
 3. 在帐户边栏选项卡中，如果“所有设置”边栏选项卡尚未打开，请单击“所有设置”。
 4. 在“所有设置”边栏选项卡中，单击“添加/删除区域”。
@@ -130,9 +130,9 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 ## <a id="next"></a>后续步骤
 
-了解如何[开始使用 DocumentDB 帐户](http://go.microsoft.com/fwlink/p/?LinkId=402364)。
+了解如何[开始使用 DocumentDB 帐户](/documentation/articles/documentdb-get-started/)。
 
-若要了解更多有关 DocumentDB 的信息，请参阅 [azure.cn](http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409) 上的 Azure DocumentDB 文档。
+若要了解更多有关 DocumentDB 的信息，请参阅 [azure.cn](/documentation/services/documentdb/) 上的 Azure DocumentDB 文档。
 
 
 <!--Image references-->
@@ -144,9 +144,9 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 [6]: ./media/documentdb-manage-account/chooseandsaveconsistency.png
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
-[bcdr]: https://azure.microsoft.com/documentation/articles/best-practices-availability-paired-regions/
+[bcdr]: /documentation/articles/best-practices-availability-paired-regions/
 [consistency]: /documentation/articles/documentdb-consistency-levels/
 [azureregions]: https://azure.microsoft.com/zh-cn/regions/#services
-[offers]: https://azure.microsoft.com/zh-cn/pricing/details/documentdb/
+[offers]: /pricing/details/documentdb/
 
 <!---HONumber=Mooncake_0627_2016-->

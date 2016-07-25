@@ -10,7 +10,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="05/04/2016" 
-	wacn.date="07/04/2016"/>
+	wacn.date="07/22/2016"/>
 
 # 使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps #
 
@@ -131,7 +131,7 @@
 9. 注意出现的 DocumentDB 终结点和每个 DocumentDB 主密钥的应用程序设置。
 	![应用程序设置的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment10.png)
 
-10. 继续任意浏览 Azure 门户预览，或遵循其中一个 DocumentDB [示例](http://go.microsoft.com/fwlink/?LinkID=402386)来创建你自己的 DocumentDB 应用程序。
+10. 继续任意浏览 Azure 门户预览，或遵循其中一个 DocumentDB [示例](/documentation/articles/documentdb-dotnet-samples/)来创建你自己的 DocumentDB 应用程序。
 
 	
 	
@@ -146,10 +146,10 @@
 
 
 ## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户预览更改为新门户预览的指南，请参阅：[有关在 Azure 经典管理门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-web-app-azure-portal/)
+* 有关从旧门户预览更改为新门户预览的指南，请参阅：[有关在 Azure 经典管理门户中导航的参考](/documentation/articles/app-service-web-app-azure-portal/)
 
->[AZURE.NOTE] 如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+
  
 
 <!---HONumber=Mooncake_0627_2016-->

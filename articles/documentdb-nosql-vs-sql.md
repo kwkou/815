@@ -11,7 +11,7 @@
 <tags
 	ms.service="documentdb"
 	ms.date="03/28/2016"
-	wacn.date="06/29/2016"/>
+	wacn.date="07/25/2016"/>
 
 # NoSQL 与 SQL
 
@@ -98,7 +98,7 @@ Microsoft 提供了五种 SQL 产品/服务：
 
 - [Azure SQL 数据库](/services/sql-databases/)
 - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
-- [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse)
+- [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
 - [分析平台系统（本地设备）](https://www.microsoft.com/zh-cn/server-cloud/products/analytics-platform-system/)
 
 如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)，了解两者区别的详细信息。
@@ -114,14 +114,14 @@ Microsoft 提供了五种 SQL 产品/服务：
 - 对于所有 Azure 服务，你可以注册 [free one-month trial（一个月试用版）](/pricing/free-trial/)，并收到 200 美元专用在任何 Azure 服务上。
     - [Azure DocumentDB](/documentation/services/documentdb/)
     - [作为 HDInsight 一部分的 Azure HBase](/documentation/services/hdinsight/)
-    - [Azure Redis Cache](/documentation/services/cache/)
+    - [Azure Redis Cache](/documentation/services/redis-cache/)
     - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
     - [Azure SQL 数据库](/documentation/services/sql-database/)
     - [Azure 表存储](/documentation/services/storage/)
 
-- 你可以注册[虚拟机上 SQL Server 2016 的评估版](/marketplace/partners/microsoft/sqlserver2016ctp33evaluationwindowsserver2012r2/)或下载 [SQL Server 评估版](/evalcenter/evaluate-sql-server-2016)。
+- 你可以下载 [SQL Server 评估版](https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016)。
     - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
-    - [Azure 虚拟机中的 SQL Server](/services/virtual-machines/sql-server/)
+    - [Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
 
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -12,7 +12,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="05/18/2016" 
-	wacn.date="06/30/2016"/>
+	wacn.date="07/222016"/>
 
 #<a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
 
@@ -80,7 +80,7 @@
 
   	我在此处没有选择“数据库服务器”，因为我们并未使用 Azure SQL Database 服务器，稍后我们会在 Azure 门户预览中创建新的 Azure DocumentDB 帐户。
 
-	 	![屏幕截图：“配置 Azure 网站”对话框](./media/documentdb-dotnet-application/image11_1.png)
+	 ![屏幕截图：“配置 Azure 网站”对话框](./media/documentdb-dotnet-application/image11_1.png)
 
 9. Visual Studio 创建好样板 MVC 应用程序之后，你便拥有可以在本地运行的空白 ASP.NET 应用程序。
 

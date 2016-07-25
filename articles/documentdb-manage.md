@@ -16,14 +16,14 @@
 # 了解 DocumentDB 中的存储和可预测性能的预配信息
 DocumentDB 是一个全面托管的，面向可扩展文档的针对 JSON 文档的 NoSQL 数据库服务。使用 DocumentDB，你无需租用虚拟机、部署软件或监视数据库。DocumentDB 由 Microsoft 工程师操作和持续监视，以提供一流的可用性、性能和数据保护。
 
-你可以通过在 [Azure 门户预览](https://portal.azure.com/)中[创建数据库帐户](/documentation/articles/documentdb-create-account/)来开始使用 DocumentDB。DocumentDB 使用固态硬盘 (SSD) 支持的存储和吞吐量的单位数来提供。这些单位数是通过在数据库帐户中创建数据库集合来设置的。每个集合都有预留的吞吐量。如果应用程序的吞吐量需求改变，你可以通过为每个集合设置[性能级别](/documentation/articles/documentdb-performance-levels/)来动态更改此预留值。
+你可以通过在 [Azure 门户预览](https://portal.azure.cn/)中[创建数据库帐户](/documentation/articles/documentdb-create-account/)来开始使用 DocumentDB。DocumentDB 使用固态硬盘 (SSD) 支持的存储和吞吐量的单位数来提供。这些单位数是通过在数据库帐户中创建数据库集合来设置的。每个集合都有预留的吞吐量。如果应用程序的吞吐量需求改变，你可以通过为每个集合设置[性能级别](/documentation/articles/documentdb-performance-levels/)来动态更改此预留值。
 
 当你的应用程序超出一个或多个集合的性能级别时，将按每个集合限制请求。这意味着一些应用程序请求可能成功，而另一些则可能受限制。
 
 本文概述了可用于管理容量和计划数据存储的资源和指标。
 
 ## 数据库帐户和管理资源
-作为 Azure 用户，你可以设置一个或多个 DocumentDB 数据库帐户。每个数据库帐户都有一个管理资源配额，包括数据库、用户和权限。这些资源的使用需要遵循[限制和配额](/documentation/articles/documentdb-limits/)。如果你需要更多管理资源，请[与支持部门联系](/documentation/articles/documentdb-increase-limits/)。
+作为 Azure 用户，你可以设置一个或多个 DocumentDB 数据库帐户。每个数据库帐户都有一个管理资源配额，包括数据库、用户和权限。这些资源的使用需要遵循[限制和配额](/documentation/articles/documentdb-limits/)。如果你需要更多管理资源，请[与支持部门联系](https://www.azure.cn/support/contact/)。
 
 Azure 门户预览提供了用于监视数据库帐户、数据库和集合的使用情况指标。有关详细信息，请参阅[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts/)。
 
