@@ -52,7 +52,40 @@
 ### **MySQL Database on Azure 现在使用什么系统时间？ 如何变更？**
 MySQL on Azure目前默认采用UTC 协调世界时作为系统时间System， 用户可以通过在管理门户上或PowerShell等途径配置补偿值(offsite)来进行时间更新。具体配置方法请参考：[MySQL on Azure上的时区配置](/documentation/articles/mysql-database-timezone-config/).
 
-  
+### **MySQL 5.7 都提供哪些功能？这些功能是否我在MySQL Database on Azure上都可以使用？**
+
+MySQL on Azure 全面兼容MySQL社区版本，关于5.7的新功能，请参考MySQL 5.7 Release Notes了解更多。MySQL on Azure兼容上述绝大功能的更新，但下述功能尚不支持：
+
+-	暂不支持5.7中关于Replication功能的改进 （由于MySQL on Azure的主从同步复制功能并未直接采用MySQL Replication技术，而是在其基础上针对MySQL on Azure服务进行了一定的改良）。
+-	暂不支持5.7中关于InnoDB Buffer Pool Online Resize的功能。
+-	暂不支持Query Rewrite Plugin。
+-	暂不支持InnoDB Transparent Page Level Compression
+-   暂不支持password expiration
+
+### **如何在管理门户上创建MySQL 5.7的实例？**
+
+在管理门户上点击左下角“”新建“”，选择MySQL Database on Azure，进行快速创建，在MySQL 版本中选择5.7。
+![MySQL57创建][2]
+
+### **我已经有MySQL on Azure的数据库实例，但是5.5 或5.6 版本，我应该如何升级到5.7？**
+
+建议您在升级前了解5.7版本的改动，测试完应用端以及数据库兼容性后再进行版本升级。如果您是生产环境，建议在业务量较低时段对数据库进行升级，步骤如下：
+
+Step 1. (可选) 如果您担心升级后兼容性问题对生产环境产生影响，可以利用数据库恢复功能将当前数据库恢复到新的实例，具体恢复方式参见MySQL Database on Azure备份和恢复。推荐使用立即备份功能对当前数据库服务器进行快照，再对该快照在另一全新实例上进行恢复。
+
+Step 2. 将当前数据库服务器数据导出：
+您可以使用MySQL 管理工具，如MySQL Workbench，或MySQL utility: mysqldump 对当前数据库服务器进行数据库导出：mysqldump --databases <数据库名> --single-transaction --order-by-primary -r <备份文件名> --routines -h<服务器地址> -P<端口号> –u<用户名> -p<密码> .
+
+Step 3. 在管理门户上，创建5.7实例并创建账户：
+在管理门户上点击左下角“”新建“”，选择MySQL Database on Azure，进行快速创建，在MySQL 版本中选择5.7。并将原数据库实例中的账户，通过管理门户进行创建。
+
+Step 4. 将数据导入到5.7实例
+可以使用MySQL 常用管理工具Workbench 或者使用SQL语句： source <备份文件名>; 进行数据导入。
+完成上述步骤后，您可以将应用层的连接字符串切换到新的服务器开始使用。
+
+**注意： 考虑到兼容性，建议不要进行跨版本升级，如果您使用的实例是5.5 版本，请先按照此方法升级到5.6。再将5.6实例升级到5.7。**
+
+
 ## **连接问题**<a id="step2"></a> 
 
 ### **创建数据库后连接不上MySQL on Azure?**
@@ -114,3 +147,4 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 <!--Image references-->
 
 [1]: ./media/mysql-database-compatibilityinquiry/SSL.png
+[2]: ./media/mysql-database-serviceinquiry/mysql57.png
