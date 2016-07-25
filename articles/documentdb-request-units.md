@@ -10,7 +10,7 @@
 <tags 
 	ms.service="documentdb"
 	ms.date="03/30/2016" 
-	wacn.date="06/29/2016"/>
+	wacn.date="07/22/2016"/>
 
 #DocumentDB 中的请求单位
 现已推出：DocumentDB [请求单位计算器](https://www.documentdb.com/capacityplanner)。详细了解如何[估计吞吐量需求](/documentation/articles/documentdb-request-units/#estimating-throughput-needs)。
@@ -97,54 +97,54 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 
 ##请求单位估计示例
 请考虑以下 ~1 KB 文档：
-
-	{
-	 "id": "08259",
-  	"description": "Cereals ready-to-eat, KELLOGG, KELLOGG'S CRISPIX",
-  	"tags": [
-    	{
-      	"name": "cereals ready-to-eat"
-    	},
-    	{
-      	"name": "kellogg"
-    	},
-    	{
-      	"name": "kellogg's crispix"
-    	}
-	],
-  	"version": 1,
-  	"commonName": "Includes USDA Commodity B855",
-  	"manufacturerName": "Kellogg, Co.",
-  	"isFromSurvey": false,
-  	"foodGroup": "Breakfast Cereals",
-  	"nutrients": [
-    	{
-      	"id": "262",
-      	"description": "Caffeine",
-      	"nutritionValue": 0,
-      	"units": "mg"
-    	},
-    	{
-      	"id": "307",
-      	"description": "Sodium, Na",
-      	"nutritionValue": 611,
-      	"units": "mg"
-    	},
-    	{
-      	"id": "309",
-      	"description": "Zinc, Zn",
-      	"nutritionValue": 5.2,
-      	"units": "mg"
-    	}
-  	],
-  	"servings": [
-    	{
-      	"amount": 1,
-      	"description": "cup (1 NLEA serving)",
-      	"weightInGrams": 29
-    	}
-  	]
-	}
+		
+			{
+			 "id": "08259",
+		  	"description": "Cereals ready-to-eat, KELLOGG, KELLOGG'S CRISPIX",
+		  	"tags": [
+		    	{
+		      	"name": "cereals ready-to-eat"
+		    	},
+		    	{
+		      	"name": "kellogg"
+		    	},
+		    	{
+		      	"name": "kellogg's crispix"
+		    	}
+			],
+		  	"version": 1,
+		  	"commonName": "Includes USDA Commodity B855",
+		  	"manufacturerName": "Kellogg, Co.",
+		  	"isFromSurvey": false,
+		  	"foodGroup": "Breakfast Cereals",
+		  	"nutrients": [
+		    	{
+		      	"id": "262",
+		      	"description": "Caffeine",
+		      	"nutritionValue": 0,
+		      	"units": "mg"
+		    	},
+		    	{
+		      	"id": "307",
+		      	"description": "Sodium, Na",
+		      	"nutritionValue": 611,
+		      	"units": "mg"
+		    	},
+		    	{
+		      	"id": "309",
+		      	"description": "Zinc, Zn",
+		      	"nutritionValue": 5.2,
+		      	"units": "mg"
+		    	}
+		  	],
+		  	"servings": [
+		    	{
+		      	"amount": 1,
+		      	"description": "cup (1 NLEA serving)",
+		      	"weightInGrams": 29
+		    	}
+		  	]
+			}
 
 >[AZURE.NOTE]文档在 DocumentDB 中已缩小，所以系统计算的上述文档的大小略小于 1 KB。
 
@@ -182,10 +182,10 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 
 ##超过保留的吞吐量限制
 前面提到，请求单位消耗以每秒速率进行评估。对于超过集合设置的请求单位速率的应用程序，将限制对该集合的请求数，直到速率降低到保留级别之下。受到限制时，服务器将会抢先结束 RequestRateTooLarge（HTTP 状态代码 429）的请求并返回 x-ms-retry-after-ms 标头，该标头指示重试请求前用户必须等待的时间数量（以毫秒为单位）。
-
-	HTTP Status 429
-	Status Line: RequestRateTooLarge
-	x-ms-retry-after-ms :100
+	
+		HTTP Status 429
+		Status Line: RequestRateTooLarge
+		x-ms-retry-after-ms :100
 
 如果使用的是 .NET 客户端 SDK 和 LINQ 查询，则大多数情况下都不需要处理此异常，因为 .NET 客户端 SDK 的当前版本会隐式捕获此响应，并会遵循服务器指定的 retry-after 标头，然后重试请求。除非多个客户端同时访问你的帐户，否则下次重试就会成功。
 

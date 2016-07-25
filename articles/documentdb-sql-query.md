@@ -11,7 +11,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="03/30/2016" 
-	wacn.date="06/29/2016"/>
+	wacn.date="07/22/2016"/>
 
 # DocumentDB 中的 SQL 查询和 SQL 语法
 Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。DocumentDB 是真正无架构的。凭借其数据库引擎内建对 JSON 数据模型的支持，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。
@@ -24,8 +24,6 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 我们相信这些功能是减少应用程序和数据库之间冲突的关键，并且对于开发人员的工作效率来说是至关重要的。
 
 我们建议从观看下面的视频开始，在此视频中，Aravind Ramachandran 会演示 DocumentDB 的查询功能，并且你可以首先访问我们的 [Query Playground（查询板块）](http://www.documentdb.com/sql/demo)，在其中尝试 DocumentDB 并对我们的数据集运行 SQL 查询。
-
-> [AZURE.VIDEO dataexposedqueryingdocumentdb]
 
 然后，返回到本文中，我们将从 SQL 查询教程开始，指导你完成一些简单的 JSON 文档和 SQL 命令。
 
@@ -2370,7 +2368,7 @@ DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaS
 10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
 11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
 12.	Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
-13.     G.Graefe.The Cascades framework for query optimization.IEEE Data Eng.Bull., 18(3): 1995.
+13. G.Graefe.The Cascades framework for query optimization.IEEE Data Eng.Bull., 18(3): 1995.
 
 
 [1]: ./media/documentdb-sql-query/sql-query1.png

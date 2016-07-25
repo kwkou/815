@@ -10,7 +10,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="03/30/2016" 
-	wacn.date="06/29/2016"/>
+	wacn.date="07/22/2016"/>
 
 # 保护对 DocumentDB 数据的访问
 
@@ -125,16 +125,16 @@ DocumentDB 权限资源与 DocumentDB 用户关联。每个用户可能包含零
 
 
 下面的代码片段演示如何创建权限资源、读取权限资源的资源令牌以及将权限与上面创建的用户关联。
-
-    // Create a permission.
-    Permission docPermission = new Permission
-    {
-        PermissionMode = PermissionMode.Read,
-        ResourceLink = documentCollection.SelfLink,
-        Id = "readperm"
-    };
-            
-  docPermission = await client.CreatePermissionAsync(UriFactory.CreateUserUri("db", "user"), docPermission); Console.WriteLine(docPermission.Id + " has token of: " + docPermission.Token);
+		
+		    // Create a permission.
+		    Permission docPermission = new Permission
+		    {
+		        PermissionMode = PermissionMode.Read,
+		        ResourceLink = documentCollection.SelfLink,
+		        Id = "readperm"
+		    };
+		            
+		  docPermission = await client.CreatePermissionAsync(UriFactory.CreateUserUri("db", "user"), docPermission); Console.WriteLine(docPermission.Id + " has token of: " + docPermission.Token);
   
 如果你为集合指定了分区键，则除 ResourceLink 以外，集合、文档和附件资源的权限，还必须包括 ResourcePartitionKey。
 

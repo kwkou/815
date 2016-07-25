@@ -29,27 +29,27 @@
 
 
 ##<a id="RequestQuotaIncrease"></a> 请求配额调整
-以下步骤演示了如何请求配额调整。
+以下步骤演示了如何请求配额调整。(目前新门户上暂时没有这些，后期很快会添加此功能)
 
 1. 在 [Azure 门户预览](https://portal.azure.cn)中，单击**浏览**，然后单击**帮助与支持**。
 
-	![启动帮助与支持的屏幕截图](media/documentdb-increase-limits/helpsupport.png)
+	![启动帮助与支持的屏幕截图](./media/documentdb-increase-limits/helpsupport.png)
 
 2. 在**帮助与支持**边栏选项卡上，单击**获取支持**。
 
-	![创建支持票证的屏幕截图](media/documentdb-increase-limits/getsupport.png)
+	![创建支持票证的屏幕截图](./media/documentdb-increase-limits/getsupport.png)
 
 3. 在**新支持请求**边栏选项卡上，单击**基本**。接下来，将**问题类型**设置为**配额**，将**订阅**设置为托管你的 DocumentDB 帐户的订阅，将**服务**设置为 **DocumentDB**，并将**支持计划**设置为**配额支持-包括**。最后单击“下一步”。
 
-	![支持票证请求类型的屏幕截图](media/documentdb-increase-limits/supportrequest1.png)
+	![支持票证请求类型的屏幕截图](./media/documentdb-increase-limits/supportrequest1.png)
 
 4. 在**问题**边栏选项卡，选择严重级别。将**问题类型**设置为 **DocumentDB**，并在**详细信息**中包含关于你的配额增加的信息。单击**“下一步”**。
 
-	![支持票证订阅选取器的屏幕截图](media/documentdb-increase-limits/supportrequest2.png)
+	![支持票证订阅选取器的屏幕截图](./media/documentdb-increase-limits/supportrequest2.png)
 
 5. 最后，在**联系信息**边栏选项卡中填写你的联系信息。
 
-	![支持票证资源选取器的屏幕截图](media/documentdb-increase-limits/supportrequest3.png)
+	![支持票证资源选取器的屏幕截图](./media/documentdb-increase-limits/supportrequest3.png)
 
 创建支持票证后，你会通过电子邮件收到支持请求编号。你还可以通过单击**帮助与支持**边栏选项卡上的**管理支持请求**来查看支持请求。
 

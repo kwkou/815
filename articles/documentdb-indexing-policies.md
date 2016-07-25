@@ -584,7 +584,7 @@ DocumentDB 允许你动态更改集合的索引策略。更改 DocumentDB 集合
 
 **联机索引转换**
 
-![索引的工作原理 – DocumentDB 联机索引转换](media/documentdb-indexing-policies/index-transformations.png)
+![索引的工作原理 – DocumentDB 联机索引转换](./media/documentdb-indexing-policies/index-transformations.png)
 
 在联机状态下执行索引转换，这意味着按照旧策略索引的文档可以按照新策略有效转换，**而不会影响集合的写入可用性或配置的吞吐量**。在索引转换过程中，使用 REST API、SDK 或在存储的过程和触发器中执行读取和写入操作的一致性不会受到影响。这就意味着，在更改索引策略时，你的应用程序的性能不会下降，也没有停机时间。
 

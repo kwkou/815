@@ -11,7 +11,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="04/26/2016" 
-	wacn.date="06/29/2016"/>
+	wacn.date="07/22/2016"/>
 
 #<a name="DocumentDB-HDInsight"></a>使用 DocumentDB 和 HDInsight 运行 Hadoop 作业
 
@@ -79,7 +79,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 4. 等待直到新存储帐户的**状态**更改为**联机**。
 
 ## <a name="ProvisionHDInsight"></a>步骤 2：创建自定义的 HDInsight 群集
-本教程使用 Azure 经典管理门户中的脚本操作自定义 HDInsight 群集。在本教程中，我们将使用 Azure 经典管理门户来创建自定义群集。有关如何使用 PowerShell cmdlet 或 HDInsight .NET SDK 的说明，请参阅 [Customize HDInsight clusters using Script Action（使用脚本操作自定义 HDInsight 群集）][hdinsight-custom-provision]文章。
+本教程使用 Azure 经典管理门户中的脚本操作自定义 HDInsight 群集。在本教程中，我们将使用 Azure 经典管理门户来创建自定义群集。
 
 1. 登录到 [Azure 经典管理门户][azure-classic-portal]。你可能已在前一步骤中登录。
 
@@ -207,13 +207,12 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 		# Provide the HDInsight cluster name where you want to run the Hive job.
 		$clusterName = "<HDInsightClusterName>"
 
-2. 
-	<p>让我们开始构造查询字符串。我们将编写 Hive 查询，该查询采用来自 DocumentDB 集合的所有文档的系统生成的时间戳 (_ts) 和唯一 ID (_rid)，按分钟计算所有文档，然后将结果存储回新 DocumentDB 集合。</p>
+2. 让我们开始构造查询字符串。我们将编写 Hive 查询，该查询采用来自 DocumentDB 集合的所有文档的系统生成的时间戳 (_ts) 和唯一 ID (_rid)，按分钟计算所有文档，然后将结果存储回新 DocumentDB 集合。</p>
 
     <p>首先，让我们从 DocumentDB 集合创建 Hive 表。将以下代码段添加到 PowerShell 脚本窗格中从 #1 开始的代码段<strong>之后</strong>。请确保包括可选的 DocumentDB.query 参数，以便将我们的文档调整为 just_ts 和 _rid。</p>
 
     > [AZURE.NOTE] **命名 DocumentDB.inputCollections 不是一个错误。** 是，我们允许添加多个集合作为输入：</br>
-    “DocumentDB.inputCollections”=“\<DocumentDB Input Collection Name 1\>,\<DocumentDB Input Collection Name 2\>”</br>不使用空格分隔集合名称，仅使用单个逗号。
+    “DocumentDB.inputCollections”=“\<DocumentDB Input Collection Name 1\>,\<DocumentDB Input Collection Name 2\>”不使用空格分隔集合名称，仅使用单个逗号。
 
 
 		# Create a Hive table using data from DocumentDB. Pass DocumentDB the query to filter transferred data to _rid and _ts.
@@ -230,8 +229,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 3.  接下来，让我们为输出集合创建 Hive 表。输出文档属性将为月、日、小时、分钟和发生次数总数。
 
 	> [AZURE.NOTE] **再次，命名 DocumentDB.outputCollections 不是一个错误。** 是，我们允许添加多个集合作为输出：</br>
-    “DocumentDB.outputCollections”=“\<DocumentDB Output Collection Name 1\>,\<DocumentDB Output Collection Name 2\>”</br>不使用空格分隔集合名称，仅使用单个逗号。</br></br>
-    文档将为跨多个集合的分布式轮循机制。一批文档将存储在一个集合中，第二批文档则存储在下一个集合中，如此类推。
+    “DocumentDB.outputCollections”=“\<DocumentDB Output Collection Name 1\>,\<DocumentDB Output Collection Name 2\>”不使用空格分隔集合名称，仅使用单个逗号。文档将为跨多个集合的分布式轮循机制。一批文档将存储在一个集合中，第二批文档则存储在下一个集合中，如此类推。
 
 		# Create a Hive table for the output data to DocumentDB.
 	    $queryStringPart2 = "drop table DocumentDB_analytics; " +
@@ -331,8 +329,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 4. 最后，让我们将结果存储到我们新的输出集合。
 
     > [AZURE.NOTE] 是，我们允许添加多个集合作为输出：</br>
-    “\<DocumentDB Output Collection Name 1\>,\<DocumentDB Output Collection Name 2\>”</br>不使用空格分隔集合名称，仅使用单个逗号。</br>
-    文档将是跨多个集合的分布式轮循机制。一批文档将存储在一个集合中，第二批文档则存储在下一个集合中，如此类推。
+    “\<DocumentDB Output Collection Name 1\>,\<DocumentDB Output Collection Name 2\>”</br>不使用空格分隔集合名称，仅使用单个逗号。文档将是跨多个集合的分布式轮循机制。一批文档将存储在一个集合中，第二批文档则存储在下一个集合中，如此类推。
 
 		# Store output data to DocumentDB.
         $queryStringPart3 = "STORE by_minute_count INTO '<DocumentDB Endpoint>' " +
@@ -434,7 +431,6 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 - [使用 Documentdb 开发 Java 应用程序][documentdb-java-application]
 - [为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序][hdinsight-develop-deploy-java-mapreduce]
-- [将 Hadoop 与 HDInsight 中的 Hive 配合使用以分析手机使用情况][hdinsight-get-started]
 - [将 MapReduce 与 HDInsight 配合使用][hdinsight-use-mapreduce]
 - [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
@@ -457,10 +453,10 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 [documentdb-manage-throughput]: /documentation/articles/documentdb-manage/#ProvThroughput
 [documentdb-import-data]: /documentation/articles/documentdb-import-data/
 
-[hdinsight-custom-provision]: /documentation/articles/hdinsight-provision-clusters/#powershell
+
 [hdinsight-develop-deploy-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 [hdinsight-hadoop-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
