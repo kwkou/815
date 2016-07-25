@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="05/10/2016" 
-	wacn.date="06/27/2016"/>
+	wacn.date="07/25/2016"/>
 
 # 使用消息传送构建可靠弹性的云应用 
  
@@ -24,8 +24,8 @@
 - [客户案例](https://customers.microsoft.com/Pages/Home.aspx)
  
 ## 构建
-- [如何使用服务总线队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/) 
-- [服务总线中转消息传送中的死信（2011 年 10 月 21 日博客文章）](http://geekswithblogs.net/asmith/articles/147398.aspx) 
+- [如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-get-started-with-queues/)
+- [服务总线中转消息传送中的死信（2011 年 10 月 21 日博客文章）](http://geekswithblogs.net/asmith/articles/147398.aspx)
 - [使服务总线应用程序免受服务总线服务中断和灾难影响的最佳实践](/documentation/articles/service-bus-outages-disasters/)
 - [中转消息传送：请求响应示例](https://code.msdn.microsoft.com/Brokered-Messaging-Request-0ce8fcaf) 
 - [使用 Azure 服务总线的多层应用程序](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/)
@@ -36,6 +36,6 @@
 - [服务总线 RP REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt639375.aspx)
 
 ## 相关服务
-- [云服务](/zh-cn/documentation/services/cloud-services/) 
+- [云服务](/home/features/cloud-services/)
 
 <!---HONumber=82-->

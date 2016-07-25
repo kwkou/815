@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="11/18/2015"
-   wacn.date="05/27/2016"/>
+   wacn.date="07/25/2016"/>
 
 # Azure 队列和服务总线队列 - 比较与对照
 

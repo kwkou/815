@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="05/10/2016" 
-	wacn.date="06/21/2016"/>
+	wacn.date="07/25/2016"/>
 
 
 # 如何使用服务总线主题和订阅
@@ -115,7 +115,7 @@ function handle (requestOptions, next)
 function (returnObject, finalCallback, next)
 ```
 
-在此回调中并且在处理 returnObject（来自对服务器请求的响应）后，回调需要调用 next（如果它存在以便继续处理其他筛选器）或只调用 finalCallback 以便结束服务调用。
+在此回叫中并且在处理 **returnObject**（来自对服务器请求的响应）后，回叫需要调用 next（如果存在）以便继续处理其他筛选器，或者只调用 **finalCallback** 以便结束服务调用。
 
 Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分别是 **ExponentialRetryPolicyFilter** 和 **LinearRetryPolicyFilter**。以下代码创建一个 **ServiceBusService** 对象，该对象使用 **ExponentialRetryPolicyFilter**：
 
@@ -247,7 +247,7 @@ for (i = 0;i < 5;i++) {
 }
 ```
 
-Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
+服务总线主题在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
 ## 从订阅接收消息
 
