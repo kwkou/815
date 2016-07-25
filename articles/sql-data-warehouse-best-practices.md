@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/02/2016"
-   wacn.date="05/30/2016"/>
+   ms.date="06/02/2016"
+   wacn.date="07/25/2016"/>
 
 # SQL 数据仓库最佳实践
 

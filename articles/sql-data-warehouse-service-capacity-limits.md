@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/13/2016"
-   wacn.date="06/27/2016"/>
+   ms.date="06/01/2016"
+   wacn.date="07/25/2016"/>
 
 # SQL 数据仓库容量限制
 
@@ -24,14 +24,14 @@
 | 数据仓库单位 (DWU)| 计算、内存和 IO 资源 | 2000 |
 | 数据库连接 | 并发打开的会话 | 1024<br/><br/>我们支持最多 1024 个活动连接，每个活动连接可同时将请求提交到 SQL 数据仓库数据库。请注意，实际可并发执行的查询数量是有限制的。当超出并发限制时，请求将进入内部队列等待处理。|
 | 数据库连接 | 预处理语句的最大内存 | 20 MB |
-| 工作负荷管理 | 并发查询数上限 | 32<br/><br/>默认情况下，SQL 数据仓库可执行最多 32 个并发查询，剩余的查询将排队。<br/><br/>当为用户分配了更高的资源类时，并发级别可能会降低。某些查询（如 DMV 查询）始终可以运行。有关详细信息，请参阅 [Concurrency and workload management（并发性和工作负荷管理）][]。|
+| 工作负荷管理 | 并发查询数上限 | 32<br/><br/>默认情况下，SQL 数据仓库可执行最多 32 个并发查询，剩余的查询将排队。<br/><br/>当为用户分配了更高的资源类时，并发级别可能会降低。某些查询（如 DMV 查询）始终可以运行。有关详细信息，请参阅 [并发性和工作负荷管理][]。|
 
 
 ## 数据库对象
 
 | 类别 | 说明 | 最大值 |
 | :---------------- | :------------------------------------------- | :----------------- |
-| 数据库 | 最大大小 | 磁盘上压缩后 60 TB<br/><br/>SQL 数据仓库允许每个数据库的磁盘上最多有 60 TB 的原始空间。磁盘上的空间是永久表的压缩大小。此空间与 tempdb 或日志空间无关，因此，此空间专用于永久表。聚集列存储压缩估计为 5 倍，这意味着当所有表都是聚集列存储（默认的表类型）时，未压缩的数据库大小可能增长到大约 300 TB。在公共预览期结束时，60 TB 限制将增加到 240 TB，这样，大部分数据库应可增长到超过 1 PB 的未压缩数据。|
+| 数据库 | 最大大小 | 磁盘上压缩的 240 TB<br/><br/> 此空间与 tempdb 或日志空间无关，因此，此空间专用于永久表。聚集列存储压缩估计为 5 倍，这意味着当所有表都是聚集列存储（默认的表类型）时，未压缩的数据库大小可能增长到大约 1 PB。|
 | 表 | 最大大小 | 磁盘上压缩后 60 TB |
 | 表 | 每个数据库的表数 | 20 亿 |
 | 表 | 每个表的列数 | 1024 个列 |
@@ -98,11 +98,11 @@
 
 <!--Article references-->
 [SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
-[Concurrency and workload management（并发性和工作负荷管理）]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[并发性和工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 
 <!--MSDN references-->
 [Row-Overflow Data Exceeding 8 KB（超过 8 KB 的行溢出数据）]: https://msdn.microsoft.com/zh-cn/library/ms186981.aspx
 [CREATE TABLE (Azure SQL Data Warehouse)（CREATE TABLE（Azure SQL 数据仓库））]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
 [Internal error: An expression services limit has been reached（内部错误：已达到表达式服务限制）]: https://support.microsoft.com/kb/913050
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->
