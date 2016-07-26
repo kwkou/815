@@ -16,7 +16,7 @@
 
 你无需在 Azure 自动化中创建自己的 Runbook 和模块，即可访问 Microsoft 和社区构建的各种方案。你可以在不加以修改的情况下直接使用这些方案，或者使用它们作为起点并根据具体的要求进行编辑。
 
-可以从 [Runbook 库](#runbooks-in-runbook-gallery)获取 Runbook，并从 [PowerShell 库](#modules-in-powerShell-gallery)获取模块。你还可以通过共享开发的方案来为社区做出贡献。
+可以从 [Runbook 库](#runbooks-in-runbook-gallery)获取 Runbook。你还可以通过共享开发的方案来为社区做出贡献。
 
 ##<a name="runbooks-in-runbook-gallery"></a> Runbook 库中的 Runbook
 

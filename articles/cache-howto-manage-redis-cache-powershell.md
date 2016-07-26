@@ -20,7 +20,7 @@
 
 本主题说明如何执行创建、更新和缩放 Azure Redis 缓存实例等常见任务、如何重新生成访问密钥，以及如何查看有关缓存的信息。有关 Azure Redis 缓存 PowerShell cmdlet 的完整列表，请参阅 [Azure Redis 缓存 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt634513.aspx)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](#classic)本文后面所述的。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代本文后面所述的 [classic deployment model](#classic)。
 
 ## 先决条件
 
@@ -96,16 +96,16 @@
 | KeyType | 指定续订访问密钥时要重新生成哪个访问密钥。有效值为：Primary、Secondary | | | |
 
 
-### RedisConfiguration 属性
+### <a name="redisconfiguration-properties"></a> RedisConfiguration 属性
 
 | 属性 | 说明 | 定价层 |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------|---------------------|
 | rdb-backup-enabled | 是否已启用 [Redis 数据暂留](/documentation/articles/cache-how-to-premium-persistence/) | 仅限高级版 |
 | rdb-storage-connection-string | [Redis 数据暂留](/documentation/articles/cache-how-to-premium-persistence/)存储帐户的连接字符串 | 仅限高级版 |
 | rdb-backup-frequency | [Redis 数据暂留](/documentation/articles/cache-how-to-premium-persistence/)的备份频率 | 仅限高级版 |
-| maxmemory-reserved | 为非缓存进程配置[预留的内存](/documentation/articles/cache-configure/#maxmemory-policy-and-maxmemory-reserved) | 标准版和高级版 |
-| maxmemory-policy | 为缓存配置[逐出策略](/documentation/articles/cache-configure/#maxmemory-policy-and-maxmemory-reserved) | 所有定价层 |
-| notify-keyspace-events | 配置 [keyspace 通知](/documentation/articles/cache-configure/#keyspace-notifications-advanced-settings) | 标准版和高级版 |
+| maxmemory-reserved | 为非缓存进程配置预留的内存 | 标准版和高级版 |
+| maxmemory-policy | 为缓存配置逐出策略 | 所有定价层 |
+| notify-keyspace-events | 配置 keyspace 通知 | 标准版和高级版 |
 | hash-max-ziplist-entries | 为较小的聚合数据类型配置[内存优化](http://redis.io/topics/memory-optimization) | 标准版和高级版 |
 | hash-max-ziplist-value | 为较小的聚合数据类型配置[内存优化](http://redis.io/topics/memory-optimization) | 标准版和高级版 |
 | set-max-intset-entries | 为较小的聚合数据类型配置[内存优化](http://redis.io/topics/memory-optimization) | 标准版和高级版 |
@@ -113,7 +113,7 @@
 | zset-max-ziplist-value | 为较小的聚合数据类型配置[内存优化](http://redis.io/topics/memory-optimization) | 标准版和高级版 |
 | 数据库 | 配置数据库的数目。该属性只能在创建缓存时配置。 | 标准版和高级版 |
 
-## 创建 Redis 缓存
+## <a name="to-create-a-redis-cache"></a> 创建 Redis 缓存
 
 使用 [New-AzureRmRedisCache](https://msdn.microsoft.com/zh-cn/library/azure/mt634517.aspx) cmdlet 创建新的 Azure Redis 缓存实例。
 
@@ -205,7 +205,7 @@
 
 	New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "China North" -Sku Premium -Size P1 -ShardCount 3
 
-若要指定 `RedisConfiguration` 参数的值，请以键/值对的方式将值括在 `{}` 内，例如 `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}`。以下示例将创建标准 1 GB 缓存，其包含 `allkeys-random` maxmemory 策略，以及使用 `KEA` 配置的 keyspace 通知。有关详细信息，请参阅 [Keyspace 通知（高级设置）](/documentation/articles/cache-configure/#keyspace-notifications-advanced-settings)以及 [Maxmemory-policy 和 maxmemory-reserved](/documentation/articles/cache-configure/#maxmemory-policy-and-maxmemory-reserved)。
+若要指定 `RedisConfiguration` 参数的值，请以键/值对的方式将值括在 `{}` 内，例如 `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}`。以下示例将创建标准 1 GB 缓存，其包含 `allkeys-random` maxmemory 策略，以及使用 `KEA` 配置的 keyspace 通知。
 
 	New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "China North" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}
 
@@ -216,7 +216,7 @@
 
 	New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "China North" -Sku Premium -Size P3 -RedisConfiguration @{"databases" = "48"}
 
-有关 `databases` 属性的详细信息，请参阅 [Default Azure Redis Cache server configuration（默认 Azure Redis 缓存服务器配置）](/documentation/articles/cache-configure/#default-redis-server-configuration)。有关使用 [New-AzureRmRedisCache](https://msdn.microsoft.com/zh-cn/library/azure/mt634517.aspx) cmdlet 创建缓存的详细信息，请参阅前面的[创建 Redis 缓存](#to-create-a-redis-cache)部分。
+有关使用 [New-AzureRmRedisCache](https://msdn.microsoft.com/zh-cn/library/azure/mt634517.aspx) cmdlet 创建缓存的详细信息，请参阅前面的[创建 Redis 缓存](#to-create-a-redis-cache)部分。
 
 ## 更新 Redis 缓存
 
@@ -555,7 +555,7 @@
 <a name="classic">
 ## 使用 PowerShell 经典部署模型管理 Azure Redis 缓存实例
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/cache-howto-manage-redis-cache-powershell/)本文开头介绍的。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用本文开头介绍的 [Resource Manager model](/documentation/articles/cache-howto-manage-redis-cache-powershell/)。
 
 以下脚本演示了如何使用经典部署模型创建、更新和删除 Azure Redis 缓存。
 		

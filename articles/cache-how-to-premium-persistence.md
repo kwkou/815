@@ -76,28 +76,28 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 -	[进行新备份以后，旧备份会发生什么情况？](#what-happens-to-the-old-backups-when-a-new-backup-is-made)
 -	[如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？](#what-happens-if-i-have-scaled-to-a-different-size-and-a-backup-is-restored-that-was-made-before-the-scaling-operation)
 
-### 能否在此前已创建的缓存的基础上启用保留？
+### <a name="can-i-enable-persistence-on-a-previously-created-cache"></a> 能否在此前已创建的缓存的基础上启用保留？
 
 是的，可以在创建缓存时或者在现有高级缓存上配置 Redis 持久性。
 
-### 能否在创建缓存后更改备份频率？
+### <a name="can-i-change-the-backup-frequency-after-i-create-the-cache"></a> 能否在创建缓存后更改备份频率？
 
 能，可以使用 Azure PowerShell 更改备份频率。以下是示例命令，该命令通过修改 `rdb-backup-frequency` 来更改备份频率
 
 	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
 
-### 为何我的备份频率为 60 分钟，而两次备份的间隔却超过 60 分钟？
+### <a name="why-if-i-have-a-backup-frequency-of-60-minutes-there-is-more-than-60-minutes-between-backups"></a> 为何我的备份频率为 60 分钟，而两次备份的间隔却超过 60 分钟？
 
 在上一次备份过程成功完成之前，本次备份不会开始，其频率所对应的时间间隔也不会开始计算。如果备份频率为 60 分钟，而备份过程需要 15 分钟才能成功完成，则在上一次备份开始以后，要再过 75 分钟才会开始下一次备份。
 
-### 进行新备份以后，旧备份会发生什么情况？
+### <a name="what-happens-to-the-old-backups-when-a-new-backup-is-made"></a> 进行新备份以后，旧备份会发生什么情况？
 
 除最新备份外的所有备份都会自动删除。这种删除可能不会即刻发生，但旧备份是不会无限期保留下去的。
 
-### 如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？
+### <a name="what-happens-if-i-have-scaled-to-a-different-size-and-a-backup-is-restored-that-was-made-before-the-scaling-operation"></a> 如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？
 
 -	如果缩放到更大的大小，则没有任何影响。
--	如果缩放到更小的大小，并且你的自定义[数据库](/documentation/articles/cache-configure/#databases)设置大于新大小的[数据库限制](/documentation/articles/cache-configure/#databases)，则不会还原这些数据库中的数据。有关详细信息，请参阅[在缩放过程中，自定义数据库设置是否会受影响？](#is-my-custom-databases-setting-affected-during-scaling)
+-	如果缩放到更小的大小，并且你的自定义数据库设置大于新大小的数据库限制，则不会还原这些数据库中的数据。
 -	如果缩放到更小的大小，并且更小的大小空间不足，无法容纳上次备份的所有数据，则在还原过程中，通常会使用 [allkeys-lru](http://redis.io/topics/lru-cache) 逐出策略逐出密钥。
 
 ## 后续步骤

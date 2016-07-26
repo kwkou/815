@@ -25,7 +25,7 @@
 
 开始之前，先评估在 Azure VM 上使用 SQL Server 的收获。
 
-当你将其他工作负荷（例如企业应用程序）移至 Azure 时，最好也将任何依赖 SQL Server 数据库移至 Azure，以改善性能。不过，在 Azure VM 中托管 SQL Server 可提供其他优势。例如，你会自动获取多个数据中心的访问权限，从而获得全局支持和灾难恢复能力。有关完整的方案和优势列表，请参阅 [Azure VM 产品页上的 SQL Server](/home/features/virtual-machines/sql-server/)。
+当你将其他工作负荷（例如企业应用程序）移至 Azure 时，最好也将任何依赖 SQL Server 数据库移至 Azure，以改善性能。不过，在 Azure VM 中托管 SQL Server 可提供其他优势。例如，你会自动获取多个数据中心的访问权限，从而获得全局支持和灾难恢复能力。有关完整的方案和优势列表，请参阅 [Azure VM 产品页上的 SQL Server](/home/features/virtual-machines/#home_vm_overview_info)。
 
 > [AZURE.NOTE] 当你评估 Azure VM 上的 SQL Server 时，也要查看 Azure 上的其他存储和 SQL 选项，例如 [SQL 数据库](/documentation/articles/sql-database-technical-overview/)、[SQL 数据仓库](/documentation/articles/sql-data-warehouse-overview-what-is/)和 [SQL Server Stretch Databsae](../sql -server-stretch-database/sql-server-stretch-database-overview.md)。有关详细的比较，请参阅[选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)。
 
@@ -38,27 +38,27 @@
 
 |版本|操作系统|版本|
 |---|---|---|
-|**SQL 2016**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMEnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMStandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMWebWindowsServer2012R2)、[Dev](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMDeveloperWindowsServer2012R2)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMExpressWindowsServer2012R2)|
-|**SQL 2014 SP1**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1EnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1StandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1WebWindowsServer2012R2)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1ExpressWindowsServer2012R2)|
-|**SQL 2014**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2014EnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2014StandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2014WebWindowsServer2012R2)|
-|**SQL 2012 SP3**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3EnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3StandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3WebWindowsServer2012R2)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3ExpressWindowsServer2012R2)|
-|**SQL 2012 SP2**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012R2)|
-|**SQL 2012 SP2**|Windows Server 2012|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2ExpressWindowsServer2012)|
-|**SQL 2008 R2 SP3**|Windows Server 2008 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2)|
-|**SQL 2008 R2 SP3**|Windows Server 2012|[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3ExpressWindowsServer2012)|
+|**SQL 2016**|Windows Server 2012 R2|Enterprise、Web、Dev、Express|
+|**SQL 2014 SP1**|Windows Server 2012 R2|Enterprise、Standard、Web、Express|
+|**SQL 2014**|Windows Server 2012 R2|Enterprise、Standard、Web|
+|**SQL 2012 SP3**|Windows Server 2012 R2|Enterprise、Standard、Web、Express|
+|**SQL 2012 SP2**|Windows Server 2012 R2|Enterprise、Standard、Web|
+|**SQL 2012 SP2**|Windows Server 2012|Enterprise、Standard、Web、Express|
+|**SQL 2008 R2 SP3**|Windows Server 2008 R2|Enterprise、Standard、Web|
+|**SQL 2008 R2 SP3**|Windows Server 2012|Express|
 
 ## 选项 2：部署 SQL VM (BYOL)
 另一个选项是自带许可 (BYOL)。在此方案中，你只需支付 VM 费用，SQL Server 许可不需要任何额外的费用。若要使用自己的许可证，请参考下面的 SQL Server 版本和操作系统对照表。在门户中，映像名称带有 **{BYOL}** 前缀。
 
 > [AZURE.IMPORTANT] 若要使用 BYOL VM 映像，必须具有包含 [Azure 上通过软件保障实现的许可移动性](https://azure.microsoft.com/pricing/license-mobility/)的企业协议。此外，还需要有所要使用的 SQL Server 版本的有效许可证。必须在预配 VM 的 **10** 天内[向 Microsoft 提供必要的 BYOL 信息](http://d36cz9buwru1tt.cloudfront.net/License_Mobility_Customer_Verification_Guide.pdf)。
 
-可以遵循[预配教程](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)中的指导，但必须使用以下 **BYOL** 映像选项之一。另外，请查看 [SQL Server VM 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)，该文章介绍了如何选择适当的虚拟机大小和预配期间其他可用的功能。
+可以遵循[预配教程](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)中的指导，但必须使用以下 **BYOL** 映像选项之一。另外，请查看 [SQL Server VM 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)，该文章介绍了如何选择适当的虚拟机大小和预配期间其他可用的功能。
 
 |版本|操作系统|版本|
 |---|---|---|
-|**SQL Server 2016**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2016RTMStandardWindowsServer2012R2)、[Standard BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2016RTMStandardWindowsServer2012R2)|
-|**SQL Server 2014 SP1**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2014SP1EnterpriseWindowsServer2012R2)、[Standard BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2014SP1StandardWindowsServer2012R2)|
-|**SQL Server 2012 SP2**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2012SP3EnterpriseWindowsServer2012R2)、[Standard BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2012SP3StandardWindowsServer2012R2)|
+|**SQL Server 2016**|Windows Server 2012 R2|Enterprise BYOL、Standard BYOL|
+|**SQL Server 2014 SP1**|Windows Server 2012 R2|Enterprise BYOL、Standard BYOL|
+|**SQL Server 2012 SP2**|Windows Server 2012 R2|Enterprise BYOL、Standard BYOL|
 
 ## 管理 SQL VM
 预配 SQL Server VM 之后，有几项可选的管理任务。在某些方面，你完全可以像在本地一样配置和管理 SQL Server。但某些任务是 Azure 特有的。下列各节重点介绍上述某些领域并提供详细信息链接。
@@ -69,22 +69,21 @@
 
 ### 配置高可用性
 
-如果你需要高可用性，请考虑配置 SQL Server 可用性组。这涉及虚拟网络中的多个 Azure VM。Azure 门户提供了一个模板用于设置此配置。有关详细信息，请参阅[在 Azure Resource Manager 虚拟机中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups/)。如果你想要手动配置可用性组和关联的侦听器，请参阅[在 Azure VM 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
+如果你需要高可用性，请考虑配置 SQL Server 可用性组。这涉及虚拟网络中的多个 Azure VM。Azure 经典管理门户提供了一个模板用于设置此配置。有关详细信息，请参阅[在经典部署虚拟机中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)。
 
 有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
 ### 备份数据
-Azure VM 可以利用[自动备份](/documentation/articles/virtual-machines-windows-sql-automated-backup/)，定期创建数据库到 Blob 存储的备份。你也可以手动使用此技术。有关详细信息，请参阅[使用 Azure 存储空间进行 SQL Server 备份和还原](/documentation/articles/storage-use-storage-sql-server-backup-restore/)。有关所有备份和还原选项的概述，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。
+你可以手动把数据库备份到 Blob 存储。有关详细信息，请参阅[使用 Azure 存储空间进行 SQL Server 备份和还原](/documentation/articles/storage-use-storage-sql-server-backup-restore/)。有关所有备份和还原选项的概述，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。
 
 ### 自动更新
-Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-windows-sql-automated-patching/)来安排维护时段，以便自动安装重要的 Windows 和 SQL Server 更新。
+Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching/)来安排维护时段，以便自动安装重要的 Windows 和 SQL Server 更新。
 
 ### 客户体验改善计划 (CEIP)
 客户体验改善计划 (CEIP) 默认情况下已启用。这不是一项管理任务，除非你想在预配之后禁用 CEIP。你可以通过远程桌面连接到 VM，以自定义或禁用 CEIP。然后运行 **SQL Server 错误和使用情况报告**实用工具。请按照说明禁用报告功能。
 
 ## 后续步骤
-[探索学习路径](https://azure.microsoft.com/documentation/learning-paths/sql-azure-vm/)：Azure 虚拟机上的 SQL Server。
 
-其他问题？ 请先参阅 [Azure 虚拟机中的 SQL Server 常见问题解答](/documentation/articles/virtual-machines-windows-sql-server-iaas-faq/)。同时将你的问题或看法添加在任何 SQL VM 主题的底部，以便与 Microsoft 和社区互动。
+其他问题？ 请先参阅 [Azure 虚拟机中的 SQL Server 常见问题解答](/documentation/articles/virtual-machines-windows-sql-server-iaas-faq/)。同时将你的问题或看法添加在任何 SQL VM 主题的底部，以便与 Azure.cn 和社区互动。
 
 <!---HONumber=Mooncake_0718_2016-->

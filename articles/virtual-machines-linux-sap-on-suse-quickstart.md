@@ -20,7 +20,6 @@
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 本文介绍在 Azure SUSE Linux 虚拟机 (VM) 上运行 SAP NetWeaver 时应注意的各个事项。自 2016 年 5 月 19 日起，Azure 上的 SUSE Linux VM 已正式支持 SAP NetWeaver。有关 Linux 版本、SAP 内核版本等等的所有详细信息，请参阅 SAP 说明 1928533“Azure 上的 SAP 应用程序：支持的产品和 Azure VM 类型”。
-有关 Linux VM 上 SAP 的更多文档可在此处找到：[在 Linux 虚拟机 (VM) 上使用 SAP](/documentation/articles/virtual-machines-linux-sap-get-started/)。
 
 
 以下信息应有助于避免一些潜在的陷阱。

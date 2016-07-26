@@ -89,7 +89,7 @@ Azure 中国区目前仅支持文本 PowerShell 工作流 Runbook。
 	}
 
 
-##<a name="InlineScript"></a> InlineScript
+##<a name="InlineScript" id="inlinescript"></a> InlineScript
 
 当您需要将一个或多个命令作为传统的 PowerShell 脚本而不是 PowerShell 工作流运行时，**InlineScript** 活动非常有用。尽管工作流中的命令将发送到 Windows Workflow Foundation 进行处理，但 InlineScript 块中的命令将由 Windows PowerShell 处理。
 

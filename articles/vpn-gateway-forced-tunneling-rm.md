@@ -75,7 +75,7 @@
 
 在开始配置之前，请确认你具有以下各项。
 
-- Azure 订阅。如果你还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)或注册获取[免费帐户](/pricing/1rmb-trial/)。
+- Azure 订阅。如果你还没有 Azure 订阅，可以注册获取[试用帐户](/pricing/1rmb-trial/)。
 
 - 你需要安装最新版本的 Azure Resource Manager PowerShell cmdlet（1.0 或更高）。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
