@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="01/21/2016"
-	wacn.date=""/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 将 Azure AD 集成到 Xamarin 应用程序中
@@ -36,12 +36,12 @@ Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备
 
 若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
-## 0.设置 Xamarin 开发环境
+## *0.设置 Xamarin 开发环境*
 因为本教程包含 iOS、Android 和 Windows 项目，所以你需要 Visual Studio 和 Xamarin。若要创建必要的环境，请遵循 MSDN 上 [Visual Studio 和 Xamarin 的设置和安装](https://msdn.microsoft.com/library/mt613162.aspx)中的完整说明。这些说明包含的材料可供你在等待安装程序完成时查看，以深入了解 Xamarin。
 
 完成必要的设置后，在 Visual Studio 中打开解决方案以开始操作。你会看到六个项目：五个特定于平台的项目，一个要在所有平台之间共享的可移植类库，即 `DirectorySearcher.cs`
 
-## 1.注册目录搜索器应用程序
+## *1.注册目录搜索器应用程序*
 若要让应用程序获取令牌，首先需要在 Azure AD 租户中注册该应用程序，并授予它访问 Azure AD Graph API 的权限：
 
 -	登录到 [Azure 管理门户](https://manage.windowsazure.cn)
@@ -54,26 +54,18 @@ Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备
 -	完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
 - 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。对于“Azure Active Directory”应用程序，在“委托的权限”下添加“访问组织的目录”权限。这样，你的应用程序便可以在 Graph API 中查询用户。
 
-## 2.安装并配置 ADAL
+## *2.安装并配置 ADAL*
 将应用程序注册到 Azure AD 后，可以安装 ADAL 并编写标识相关的代码。为了使 ADAL 能够与 Azure AD 通信，需要为 ADAL 提供一些有关应用程序的注册信息。
 -	首先，使用程序包管理器控制台将 ADAL 添加到解决方案中的各个项目。
 
 		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirectorySearcherLib
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirectorySearcherLib	
 		
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Android	
 		
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Desktop	
 		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Android
-		
-		
-		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Desktop
-		
-		
-		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-iOS
-		
-		
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-iOS		
 		
 		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Universal
 
@@ -189,4 +181,4 @@ C#
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 
  
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0718_2016-->

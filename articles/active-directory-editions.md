@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="05/12/2016"
-	wacn.date="06/21/2016" />
+	ms.date="06/07/2016"
+	wacn.date="07/26/2016" />
 
 # Azure Active Directory 版本
 
@@ -43,7 +43,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 
-<br>
+
 
 **常用功能**
 
@@ -91,17 +91,12 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 - [组帐户的自动密码滚动更新](#automatic-password-rollover-for-group-accounts)
 
 
-**Azure Active Directory Join — 仅限 Windows 10 相关功能**
+**Azure Active Directory Join – 仅适用于 Windows 10 的相关功能**
 
 - [让设备加入 Azure AD、Desktop SSO、Microsoft Passport for Azure AD 和 Administrator Bitlocker 恢复](#join-a-device-to-azure-ad-desktop-sso-microsoft-passport-for-azure-ad-administrator-bitlocker-recovery)
 
 - [MDM 自动注册、自助 Bitlocker 恢复、其他本地管理员通过 Azure AD Join 加入 Windows 10 设备](#mdm-auto-enrolment-self-service-bitlocker-recovery-additional-local-administrators-to-windows-10-devices-via-azure-ad-join)
 
-
-
-
-<br>
-<hr>
 ## 常用功能
 #### 目录对象 
 
@@ -117,7 +112,6 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 | 最多 500,000 个对象| 无对象限制| 无对象限制| Office 365 用户帐户没有对象限制|
 
 
-<br>
 
 #### 用户/组管理（添加/更新/删除）/基于用户的预配、设备注册
 
@@ -133,10 +127,11 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 **更多详细信息：**
 
 - [管理 Azure AD 目录](/documentation/articles/active-directory-administer/)
+- [Azure Active Directory 设备注册概述](/documentation/articles/active-directory-conditional-access-device-registration-overview/)
 
 
-<br>
-<hr>
+
+
 #### 单一登录 (SSO)
 
 **类型：**常用功能
@@ -146,7 +141,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 | 免费版| 基本版| Premium Edition| 仅限 Office 365 应用 |
 | :-: | :-: | :-: | :-: |
-| 每个用户 10 个应用 [1] <br>（预集成 SaaS 和开发人员集成应用）| 每个用户 10 个应用 [1] <br>（免费层 + 应用程序代理应用） | 无限制 [2] <br>（Free、Basic 层 + 自助应用集成模板）| 每个用户 10 个应用 [1] <br>（预集成 SaaS 和开发人员集成应用）|
+| 每个用户 10 个应用 [1]（预先集成的 SaaS 和开发人员集成的应用）| 每个用户 10 个应用 [1]（免费层 + 应用程序代理应用） | 无限制 [2]（免费层、基本层 + 自助应用集成模板）| 每个用户 10 个应用 [1]（预先集成的 SaaS 和开发人员集成的应用）|
 
 [1] 借助 Azure AD Free 和 Azure AD Basic，已获权访问 SaaS 应用的最终用户可以在其访问面板中看到最多 10 个应用并获得对这些应用的 SSO 访问权限。管理员可配置 SSO，并为使用 Free 和 Basic 的用户分配访问所需数量的 SaaS 应用的权限，但最终用户在其访问面板中一次只能看到 10 个应用。
 
@@ -156,8 +151,8 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 - [使用 Azure Active Directory (AD) 管理应用程序](/documentation/articles/active-directory-enable-sso-scenario/)
 
-<br>
-<hr>
+
+
 #### 云用户的自助密码更改
 
 **类型：**常用功能
@@ -173,8 +168,8 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 - [如何更新自己的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)
 
 
-<br>
-<hr>
+
+
 #### Connect（将本地目录扩展到 Azure Active Directory 的同步引擎） 
 
 **类型：**常用功能
@@ -190,8 +185,8 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 - [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<br>
-<hr>
+
+
 #### 安全/使用情况报告
 
 **类型：**常用功能
@@ -213,7 +208,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 ## Premium 和 Basic 功能
 #### 基于组的访问管理/预配
 
-**类型：**Basic 功能
+**类型：**基本功能
 
 
 **可用性：**
@@ -226,7 +221,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 <hr>
 #### 云用户的自助密码重置
 
-**类型：**Basic 功能
+**类型：**基本功能
 
 
 **可用性：**
@@ -260,7 +255,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 <hr>
 #### 应用程序代理
 
-**类型：**Basic 功能
+**类型：**基本功能
 
 
 **可用性：**
@@ -272,7 +267,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 <hr>
 #### SLA 99.9%
 
-**类型：**Basic 功能
+**类型：**基本功能
 
 
 **可用性：**
@@ -291,7 +286,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 ## Premium 功能
 #### 自助组和应用管理/自助应用程序添加/动态组
 
-**类型：**Premium 功能
+**类型：**高级功能
 
 
 **可用性：**
@@ -306,7 +301,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
          
 #### 通过本地写回实现自助密码重置/更改/解锁
 
-**类型：**Premium 功能
+**类型：**高级功能
 
 
 **可用性：**
@@ -321,7 +316,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 #### Multi-Factor Authentication（云和本地（MFA 服务器））
 
-**类型：**Premium 功能
+**类型：**高级功能
 
 
 **可用性：**
@@ -352,4 +347,4 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=AcomDC_0718_2016-->

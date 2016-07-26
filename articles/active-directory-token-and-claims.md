@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="09/17/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="05/16/2016"
+   wacn.date="07/26/2016"/>
 
 # 支持的令牌和声明类型
 
@@ -409,4 +409,4 @@ SubjectConfirmation 不是声明。它描述如何对令牌的使用者进行验
 
 [Azure Active Directory 身份验证协议](/documentation/articles/active-directory-authentication-protocols/)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0718_2016-->

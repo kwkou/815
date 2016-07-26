@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD v2.0 终结点更改 | Azure"
+	pageTitle="Azure AD v2.0 终结点的更改 | Azure"
 	description="介绍了要对应用模型 v2.0 公共预览协议进行的更改。"
 	services="active-directory"
 	documentationCenter=""
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/20/2016"
-	wacn.date="06/28/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 # v2.0 身份验证协议的重要更新
-开发人员请注意！ 在接下来两周，我们会对 v2.0 身份验证协议进行一些更新，这些更新对于你在我们的预览期间编写的任何应用都可能是重大更改。
+开发人员请注意！ 在接下来两周，我们会对 v2.0 身份验证协议进行一些更新，这些更新对于你在我们的预览期间编写的任何应用都可能是重大更改。  
 
 ## 哪些人会受到影响？
 任何已编写为使用 v2.0 聚合身份验证终结点的应用，
@@ -213,4 +213,4 @@ v2.0 终结点大量使用 JWT 令牌，其中包含标头参数部分以及令�
 
 Microsoft 标识部门
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0718_2016-->

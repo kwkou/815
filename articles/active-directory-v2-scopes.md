@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/20/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 # v2.0 终结点中的范围、权限和同意
 
@@ -47,7 +47,7 @@ Azure AD 实施 [OAuth 2.0](/documentation/articles/active-directory-v2-protocol
 
 ## Consent
 
-在 [OpenID Connect 或 OAuth 2.0](/documentation/articles/active-directory-v2-protocols/) 授权请求中，应用程序可以使用 **scope** 查询参数来请求它所需的权限。例如，当用户登录应用程序时，应用程序发送如下所示的请求（包含换行符以便于阅读）：
+在 [OpenID Connect 或 OAuth 2.0](/documentation/articles/active-directory-v2-protocols/) 授权请求中，应用可以使用 `scope` 查询参数来请求它所需的权限。例如，当用户登录应用程序时，应用程序发送如下所示的请求（包含换行符以便于阅读）：
 
 
 		GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
@@ -98,7 +98,7 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 #### OpenId
 
-如果应用程序使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow) 执行登录，则必须请求 `openid` 范围。`openid` 范围在工作帐户同意屏幕上显示为“登录”权限，而在个人 Microsoft 帐户同意屏幕上显示为“查看你的配置文件并使用你的 Microsoft 帐户连接到应用程序和服务”权限。此权限可让应用程序访问 OpenID Connect 用户信息终结点，因此需要用户批准。`openid` 范围还可用于 v2.0 令牌终结点来获取 id\_tokens，该令牌可用于保护应用程序的不同组件之间的 HTTP 调用。
+如果应用使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow) 执行登录，则必须请求 `openid` 范围。`openid` 范围在工作帐户同意屏幕上显示为“登录”权限，而在个人 Microsoft 帐户同意屏幕上显示为“查看你的配置文件并使用你的 Microsoft 帐户连接到应用程序和服务”权限。此权限可让应用程序访问 OpenID Connect 用户信息终结点，因此需要用户批准。`openid` 范围还可用于 v2.0 令牌终结点来获取 id\_tokens，该令牌可用于保护应用程序的不同组件之间的 HTTP 调用。
 
 #### 电子邮件
 
@@ -106,7 +106,7 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 #### 配置文件
 
-**profile** 范围可以连同 **openid** 范围和任何其他范围一起包含。它提供大量用户信息的应用程序访问权限。这包括但不限于用户的名字、姓氏、首选用户名、对象 ID 等等。有关指定用户的 id\_tokens 中可用的配置文件声明的完整列表，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)。
+`profile` 范围可以连同 `openid` 范围和任何其他范围一起包含。它提供大量用户信息的应用程序访问权限。这包括但不限于用户的名字、姓氏、首选用户名、对象 ID 等等。有关指定用户的 id\_tokens 中可用的配置文件声明的完整列表，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)。
 
 #### Offline\_access
 
@@ -116,4 +116,4 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 有关如何获取及使用刷新令牌的详细信息，请参阅 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

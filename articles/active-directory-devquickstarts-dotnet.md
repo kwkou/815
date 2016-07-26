@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="01/21/2016"
-	wacn.date="07/13/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 将 Azure AD 集成到 Windows 桌面 WPF 应用程序中
@@ -161,8 +161,8 @@ C#
 
 [此处](https://github.com/AzureADQuickStarts/NativeClient-DotNet/archive/complete.zip)提供了已完成示例（无需配置值）供你参考。现在，你可以转到其他方案。你可能想要尝试：
 
-[使用 Azure AD 保护 .NET Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
+[使用 Azure AD 保护 .NET Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet/)
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
  
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0718_2016-->

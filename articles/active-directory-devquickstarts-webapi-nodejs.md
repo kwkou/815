@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="01/23/2016"
-	wacn.date="07/13/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 # 节点 WEB API 入门
 
@@ -953,4 +953,4 @@ Shell
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=AcomDC_0718_2016-->

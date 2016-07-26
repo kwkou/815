@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/20/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 向 AngularJS 单页应用添加登录凭据 - .NET
@@ -234,5 +234,8 @@ js
 - [GitHub 上的 Azure 示例 >>](https://github.com/Azure-Samples)
 - [堆栈溢出网站上的 Azure AD >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 - [Azure.com](/documentation/services/identity/) 上的 Azure AD 文档 >>
+## 获取关于我们产品的安全更新
 
-<!---HONumber=Mooncake_0620_2016-->
+建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
+
+<!---HONumber=Mooncake_0718_2016-->

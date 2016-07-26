@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="01/05/2016"
-	wacn.date="06/03/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="07/26/2016"/>
 
 
 
@@ -39,7 +39,7 @@ Azure AD 提供标识即服务，并提供针对不同平台的开放源代码�
 
 
 ## Azure AD 如何扩展我的本地目录？
-Azure AD 支持多个最广泛使用的身份验证和授权协议。[了解有关 Azure Active Directory 身份验证协议的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn151124.aspx)。 
+Azure AD 支持多个最广泛使用的身份验证和授权协议。[了解有关 Azure Active Directory 身份验证协议的详细信息](/documentation/articles/active-directory-authentication-scenarios/)。
 
 ## Azure 如何帮助我管理标识？
 想要了解有关如何管理 Azure AD 的详细信息？如何获取目录？如何删除目录？如何管理目录数据？了解有关管理 Azure AD 目录的详细信息。[了解有关如何管理 Azure AD（主题待定）]。
@@ -50,4 +50,4 @@ Azure AD 支持多个最广泛使用的身份验证和授权协议。[了解有�
 * [Azure 标识](/documentation/articles/fundamentals-identity/)
 
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

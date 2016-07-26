@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="01/21/2016"
-	wacn.date="07/13/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 # 将 Azure AD Apache Cordova 应用程序集成
 
@@ -49,7 +49,8 @@ Apache Cordova 可让你开发能够在移动设备上运行的完全成熟的 H
 
 - [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [NodeJS](https://nodejs.org/download/)
-- [Cordova CLI](https://cordova.apache.org/)（可以通过 NPM 包管理器轻松安装：`npm install -g cordova`）
+- [Cordova CLI](https://cordova.apache.org/)
+  （可以通过 NPM 包管理器轻松安装：`npm install -g cordova`）
 
 请注意，这些组件应可在 PC 和 Mac 上工作。
 
@@ -256,7 +257,7 @@ javascript
 
    在默认的模拟器上运行：`cordova emulate android`
 
-   __注意__：请确保根据“先决条件”部分中所示，使用 AVD Manager 创建模拟器实例。
+   __注意__：请确保根据“先决条件”部分中所示，使用 *AVD Manager* 创建模拟器实例。
 
    使用 `cordova run android --list` 可查看所有可用目标，使用 `cordova run android --target=<target_name>` 可在特定的设备或模拟器上运行应用程序（例如 `cordova run android --target="Nexus4_emulator"`）。
 
@@ -268,14 +269,14 @@ javascript
 
    __注意__：请确保安装 `ios-sim` 包以在模拟器上运行。有关详细信息，请参阅“先决条件”部分。
 
-	    Use `cordova run ios --list` to see all available targets and `cordova run ios --target=<target_name>` to run application on specific device or emulator (for example,  `cordova run android --target="iPhone-6"`).
+    Use `cordova run ios --list` to see all available targets and `cordova run ios --target=<target_name>` to run application on specific device or emulator (for example,  `cordova run android --target="iPhone-6"`).
 
 使用 `cordova run --help` 可查看其他生成和运行选项。
 
 [此处](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-Cordova/tree/complete/DirSearchClient)提供了已完成示例（无需配置值）供你参考。现在，你可以转到更高级的（也更有趣）的案例。你可能想要尝试：
 
-[使用 Azure AD 保护 Node.js Web API>>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
+[使用 Azure AD 保护 Node.js Web API>>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0718_2016-->

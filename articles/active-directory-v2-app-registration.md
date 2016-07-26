@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/20/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 # 如何使用 v2.0 终结点注册应用
 
-若要生成同时接受 MSA 与 Azure AD 登录的应用，你必须先向 Microsoft 注册应用。你目前无法使用任何现有的应用搭配 Azure AD 或 MSA — 你需要创建一个全新的应用。
+若要生成同时接受 MSA 与 Azure AD 登录的应用，你必须先向 Microsoft 注册应用。目前，你无法使用任何现有的应用搭配 Azure AD 或 MSA - 你需要创建一个全新的应用。
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
@@ -43,4 +43,4 @@
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../includes/active-directory-v2-quickstart-table.md)]
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

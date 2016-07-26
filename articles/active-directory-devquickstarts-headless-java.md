@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/19/2016"
-	wacn.date="07/13/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 通过 Azure AD 使用 Java 命令行应用访问 API
@@ -74,7 +74,7 @@ Java
 				<dependency>
 					<groupId>com.microsoft.azure</groupId>
 					<artifactId>adal4j</artifactId>
-					<version>1.1.1</version>
+			<version>1.1.2</version>
 				</dependency>
 				<dependency>
 					<groupId>com.nimbusds</groupId>
@@ -268,4 +268,4 @@ Java
 		git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git
 
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0718_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/20/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 # v2.0 协议 — OAuth 2.0 授权代码流
 
@@ -21,7 +21,7 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-有关 OAuth 2.0 授权代码流的说明，请参阅 [OAuth 2.0 规范第 4.1 部分](http://tools.ietf.org/html/rfc6749)。在大部分的应用程序类型中，其用于执行身份验证与授权，包括 [Web Apps](/documentation/articles/active-directory-v2-flows/#web-apps) 和[本机安装的应用程序](/documentation/articles/active-directory-v2-flows/#mobile-and-native-apps)。它可让应用程序安全地获取 access\_tokens，用于访问以 v2.0 终结点保护的资源。
+有关 OAuth 2.0 授权代码流的说明，请参阅 [OAuth 2.0 规范第 4.1 部分](http://tools.ietf.org/html/rfc6749)。它用于在大部分的应用类型（包括 [Web 应用](/documentation/articles/active-directory-v2-flows/#web-apps)和[本机安装的应用](/documentation/articles/active-directory-v2-flows/#mobile-and-native-apps)）中执行身份验证与授权。它可让应用程序安全地获取 access\_tokens，用于访问以 v2.0 终结点保护的资源。
 
 ## 协议图
 从较高层面讲，本机/移动应用程序的整个身份验证流有点类似于：
@@ -43,7 +43,8 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 		&state=12345
 
 
-> [AZURE.TIP] 单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `code` 的 `https://localhost/myapp/`。<a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
+> [AZURE.TIP] 单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `code` 的 `https://localhost/myapp/`。
+    <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
@@ -256,4 +257,4 @@ Access\_token 生存期很短，必须在其过期后刷新，才能继续访问
 | trace\_id | 帮助诊断的请求唯一标识符。 |
 | correlation\_id | 帮助跨组件诊断的请求唯一标识符。 |
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

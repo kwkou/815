@@ -55,7 +55,7 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 **连接到支持 SCIM 的应用程序：**
 
-1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 经典管理门户。
+1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 经典门户。
 2.	浏览到“Active Directory”>“目录”>“[你的目录]”>“应用程序”，然后选择“添加”>“从库中添加应用程序”。
 3.	选择左侧的“自定义”选项卡，输入应用程序的名称，然后单击复选标记图标以创建应用对象。
 
@@ -374,8 +374,8 @@ Azure Active Directory 可将两种类型的资源预配到 SCIM Web 服务。�
 
 下图显示了 Azure Active Directory 将发送到 SCIM 服务以管理用户在其他标识存储中的生命周期的消息。该图还显示了使用 Microsoft 提供的、用于构建此类服务的通用语言基础结构库所实现的 SCIM 服务如何将这些请求转换为对提供程序的方法调用。
 
-![][4] 
-图：用户预配和撤销顺序
+![][4]
+图：用户预配和取消预配顺序
 
 **1：**Azure Active Directory 将在服务中查询是否有某个用户的 externalId 属性值与 Azure Active Directory 中用户的 mailNickname 属性值匹配。查询以类似的超文本传输协议请求表示，其中，jyoung 是 Azure Active Directory 中某个用户的 mailNickname 示例：
 
@@ -683,8 +683,10 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 * 确定引用属性是否具有特定值的请求将是有关成员属性的请求。  
 
 ![][5]
-图：组预配和撤销顺序
+图：组预配和取消预配顺序
 
+##相关文章
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 	
 <!--Image references-->
 [1]: ./media/active-directory-scim-provisioning/scim-figure-1.PNG
@@ -693,4 +695,4 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=AcomDC_0718_2016-->
