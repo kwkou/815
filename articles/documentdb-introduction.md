@@ -20,7 +20,7 @@ Azure DocumentDB 是一个完全托管的 NoSQL 数据库服务，其构建目�
 要快速了解此 JSON 数据库和在实际操作中使用该数据库，请遵循以下三个步骤：
 
 1. 观看两分钟的[什么是 DocumentDB？](https://azure.microsoft.com/documentation/videos/what-is-azure-documentdb/)视频，该视频介绍了使用 DocumentDB 具有哪些优势。
-2. 观看三分钟的[在 Azure 上创建 DocumentDB](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) 视频，该视频重点介绍了如何通过 Azure 门户预览开始使用 DocumentDB。
+2. 访问文档[在 Azure 上创建 DocumentDB](https://www.azure.cn/documentation/articles/documentdb-get-started/) ，该文档重点介绍了如何通过 Azure 门户预览开始使用 DocumentDB。
 3. 请访问[数据游乐园](http://www.documentdb.com/sql/demo)，你可以在其中学习不同的查询语法，以便了解 DocumentDB 中提供的丰富的查询功能。接着前往“沙盒”选项卡并运行你自己的自定义 SQL 查询，并对 DocumentDB 进行试用。
 
 然后返回到本文中，我们将更加深入的探讨该数据库，你将了解以下问题的答案：
@@ -42,11 +42,11 @@ Azure DocumentDB 具有以下主要功能和优势：
 
 -	**可灵活增减的吞吐量和存储：**轻松增大或减小 DocumentDB JSON 数据库规模来满足你的应用程序的需求。你的数据存储在固态硬盘 (SSD) 上，以实现可预测的低延迟。DocumentDB 支持使用容器来存储称为集合的 JSON 数据，这些数据可以扩展到几乎无限的存储大小和设置的吞吐量。随着应用程序规模的增长，你可以灵活无缝地扩展具有可预测的性能的 DocumentDB。 
 
--	**使用熟悉的 SQL 语法进行即席查询：**在 DocumentDB 中存储异类 JSON 文档，并通过熟悉的 SQL 语法查询这些文档。DocumentDB 使用高并发、无锁、日志结构化索引技术为所有文档内容自动创建索引。这样可以实现各种实时查询，而无需指定架构提示、二级索引或视图。要了解更多信息，请参阅[查询 DocumentDB](/documentation/articles/documentdb-sql-query/)。
+-	**使用熟悉的 SQL 语法进行即席查询：**在 DocumentDB 中存储异类 JSON 文档，并通过熟悉的 SQL 语法查询这些文档。DocumentDB 使用高并发、无锁、日志结构化索引技术为所有文档内容自动创建索引。这样可以实现各种实时查询，而无需指定架构提示、二级索引或视图。要了解更多信息，请参阅[查询 DocumentDB](https://www.azure.cn/documentation/articles/documentdb-sql-query/)。
 
--	**在数据库中执行 JavaScript：**使用标准 JavaScript 将应用程序逻辑表示为存储过程、触发器和用户定义函数 (UDF)。这样，你的应用程序逻辑可基于数据进行运作，而无需担心应用程序和数据库架构之间的不匹配。DocumentDB 支持在数据库引擎内部直接进行 JavaScript 应用程序逻辑的完全事务执行。对 JavaScript 的深度集成支持在一个 JavaScript 程序中将 INSERT、REPLACE、DELETE 和 SELECT 操作作为独立的事务来执行。要了解更多信息，请参阅 [DocumentDB 服务器端编程](/documentation/articles/documentdb-programming/)。
+-	**在数据库中执行 JavaScript：**使用标准 JavaScript 将应用程序逻辑表示为存储过程、触发器和用户定义函数 (UDF)。这样，你的应用程序逻辑可基于数据进行运作，而无需担心应用程序和数据库架构之间的不匹配。DocumentDB 支持在数据库引擎内部直接进行 JavaScript 应用程序逻辑的完全事务执行。对 JavaScript 的深度集成支持在一个 JavaScript 程序中将 INSERT、REPLACE、DELETE 和 SELECT 操作作为独立的事务来执行。要了解更多信息，请参阅 [DocumentDB 服务器端编程](https://www.azure.cn/documentation/articles/documentdb-programming/)。
 
--	**可调优的一致性级别：**从 4 个定义完好的一致性级别中选择，以实现一致性和性能之间的最佳平衡。对于查询和读取操作，DocumentDB 提供了四种不同的一致性级别：强、有限过时、会话和最终。通过这些细化的定义完好的一致性级别，你可以在一致性、可用性和延迟之间实现合理的平衡。要了解更多信息，请参阅[使用一致性级别最大化 DocumentDB 中的可用性和性能](/documentation/articles/documentdb-consistency-levels/)。
+-	**可调优的一致性级别：**从 4 个定义完好的一致性级别中选择，以实现一致性和性能之间的最佳平衡。对于查询和读取操作，DocumentDB 提供了四种不同的一致性级别：强、有限过时、会话和最终。通过这些细化的定义完好的一致性级别，你可以在一致性、可用性和延迟之间实现合理的平衡。要了解更多信息，请参阅[使用一致性级别最大化 DocumentDB 中的可用性和性能](https://www.azure.cn/documentation/articles/documentdb-consistency-levels/)。
 
 -	**完全托管：**无需管理数据库和计算机资源。作为一种完全托管的 Azure 服务，你无需管理虚拟机、部署并配置软件、管理数据库和资源的增减，或处理复杂的数据层升级。每个数据库都将自动备份，以防受到区域故障的影响。你可以轻松添加 DocumentDB 帐户并按照你的需求设置容量，从而使你专注于你的应用程序而不是操作和管理你的数据库。
 
@@ -72,7 +72,7 @@ Azure DocumentDB 通过 REST API 公开资源，此 API 可以使用能够发出
 
 下载 | 文档
 --- | ---
-[.NET SDK](http://go.microsoft.com/fwlink/?LinkID=402989) | [.NET 库](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+[.NET SDK](http://go.microsoft.com/fwlink/?LinkID=402989) | [.NET 库](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx)
 [Node.js SDK](http://go.microsoft.com/fwlink/?LinkID=402990) | [Node.js 库](http://azure.github.io/azure-documentdb-node/)
 [Java SDK](http://go.microsoft.com/fwlink/?LinkID=402380) | [Java 库](http://azure.github.io/azure-documentdb-java/)
 [JavaScript SDK](http://go.microsoft.com/fwlink/?LinkID=402991) | [JavaScript 库](http://azure.github.io/azure-documentdb-js/)
@@ -86,7 +86,7 @@ Azure DocumentDB 支持使用 SQL 语言（来源于 JavaScript 类型系统）�
 
 可以在 DocumentDB 中注册用户定义函数 (UDF)，并将其作为 SQL 查询的一部分进行引用，从而将语法扩展为支持自定义的应用程序逻辑。这些 UDF 编写为 JavaScript 程序，并在数据库中执行。
 
-对于 .NET 开发人员，DocumentDB 还提供作为 [.NET SDK](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.linq.aspx) 一部分的 LINQ 查询提供程序。
+对于 .NET 开发人员，DocumentDB 还提供作为 [.NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.linq.aspx) 一部分的 LINQ 查询提供程序。
 
 ### 事务和 JavaScript 执行
 DocumentDB 允许将应用程序逻辑编写为完全使用 JavaScript 编写的命名程序。这些程序是为集合注册的，可以对指定集合内的文档发布数据库操作。可针对执行将 JavaScript 注册为触发器、存储过程或用户定义函数。触发器和存储过程可以创建、读取、更新和删除文档，而用户定义函数作为查询执行逻辑的一部分执行，并且没有集合的写访问权限。
@@ -94,11 +94,11 @@ DocumentDB 允许将应用程序逻辑编写为完全使用 JavaScript 编写的
 DocumentDB 中的 JavaScript 执行是在关系型数据库系统所支持的概念的基础之上建立的，只是现代性的将 Transact-SQL 换成了 JavaScript。所有 JavaScript 逻辑都在使用快照隔离的环境 ACID 事务内执行。在其执行过程中，如果 JavaScript 引发异常，则整个事务将被中止。
 
 ## <a name="next-steps"></a>后续步骤
-如果你已经有 Azure 帐户，则可以在 [Azure 门户预览](https://portal.azure.cn/#gallery/Microsoft.DocumentDB)中通过[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)开始使用 DocumentDB。
+如果你已经有 Azure 帐户，则可以在 [Azure 门户预览](https://portal.azure.cn/#gallery/Microsoft.DocumentDB)中通过[创建 DocumentDB 数据库帐户](https://www.azure.cn/documentation/articles/documentdb-create-account/)开始使用 DocumentDB。
 
 如果你没有 Azure 帐户，则可以：
 
-- 注册 [Azure 试用版](/pricing/free-trial/)，将为你提供 30 天试用期和 200 美元用于试用所有 Azure 服务。 
+- 注册 [Azure 试用版](/pricing/1rmb-trial/)，将为你提供 30 天试用期和 1,500 元人民币用于试用所有 Azure 服务。 
 
 
 
