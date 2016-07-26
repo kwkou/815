@@ -18,7 +18,7 @@ Azure SQL 数据库提供两个核心功能，用于在发生用户错误或意�
 
 - [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
 
-- [还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database/)
+- [还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/)
 
 Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于所有基本、标准和高级数据库。
 

@@ -23,7 +23,7 @@
 
 连接安全性是指如何使用防火墙规则和连接加密来限制和保护数据库连接。
 
-服务器和数据库使用防火墙规则来拒绝源自未明确列入白名单的 IP 地址的连接企图。若要允许应用程序或客户端计算机的公共 IP 地址尝试连接到新数据库，你必须先使用 Azure 经典管理门户、REST API 或 PowerShell 创建服务器级防火墙规则。作为最佳实践，应该尽量通过服务器防火墙来限制允许的 IP 地址范围。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure-powershell/)。
+服务器和数据库使用防火墙规则来拒绝源自未明确列入白名单的 IP 地址的连接企图。若要允许应用程序或客户端计算机的公共 IP 地址尝试连接到新数据库，你必须先使用 Azure 经典管理门户、REST API 或 PowerShell 创建服务器级防火墙规则。作为最佳实践，应该尽量通过服务器防火墙来限制允许的 IP 地址范围。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。
 
 在与数据库相互“传输”数据时，与 Azure SQL 数据库建立的所有连接都需要经过加密 (SSL/TLS)。必须在应用程序连接字符串中指定用于加密连接的参数，而不要信任服务器证书（服务器证书用于将连接字符串复制到 Azure 经典管理门户外部），否则，连接将不会验证服务器的身份，并且容易受到“中间人”攻击。例如，对于 ADO.NET 驱动程序，这些连接字符串参数为 **Encrypt=True** 和 **TrustServerCertificate=False**。有关详细信息，请参阅 [Azure SQL 数据库连接加密和证书验证](/documentation/articles/sql-database-security-guidelines/)。
 

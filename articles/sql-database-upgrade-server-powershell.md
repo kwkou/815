@@ -79,7 +79,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
     $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1”
 
 
-有关详细信息，请参阅 [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-portal/)和 [Azure SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor/)。
+有关详细信息，请参阅 [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)。
 
 
 
