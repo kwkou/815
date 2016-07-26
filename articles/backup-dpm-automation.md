@@ -4,16 +4,21 @@
 	services="backup"
 	documentationCenter=""
 	authors="AnuragMehrotra"
-	manager="jwhit"
+	manager=""
 	editor=""/>
 
 <tags
 	ms.service="backup"
-	ms.date="01/28/2016"
-	wacn.date="05/18/2016"/>
+	ms.date="05/23/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 使用 PowerShell 部署和管理 Data Protection Manager (DPM) 服务器的 Azure 备份
+
+> [AZURE.SELECTOR]
+- [ARM](/documentation/articles/backup-dpm-automation)
+- [经典](/documentation/articles/backup-dpm-automation-classic)
+
 本文说明如何使用 PowerShell 在 DPM 服务器上设置 Azure 备份，以及管理备份和恢复。
 
 ## 设置 PowerShell 环境
@@ -45,28 +50,64 @@
 
 使用 PowerShell 可以自动化以下设置和注册任务：
 
-- 创建备份保管库
+- 创建恢复服务保管库
 - 安装 Azure 备份代理
 - 注册到 Azure 备份服务
 - 网络设置
 - 加密设置
 
-### 创建备份保管库
+## 创建恢复服务保管库
 
-> [AZURE.WARNING] 对于第一次使用 Azure 备份的客户，你需要注册用于订阅的 Azure 备份提供程序。可通过运行以下命令来执行此操作：Register-AzureProvider -ProviderNamespace "Microsoft.Backup"
+以下步骤引导你创建恢复服务保管库。恢复服务保管库不同于备份保管库。
 
-可以使用 **New-AzureRMBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
+1. 如果你是首次使用 Azure 备份，则必须使用 **Register-AzureRMResourceProvider** cmdlet 注册用于订阅的 Azure 恢复服务提供程序。
+
+    
+    PS C:\> Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
+    
+
+2. 恢复服务保管库是一种 ARM 资源，因此需要将它放在资源组中。可以使用现有资源组，也可以创建新组。创建新的资源组时，请指定资源组的名称和位置。
+
+    
+    PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "West US"
+    
+
+3. 使用 **New-AzureRmRecoveryServicesVault** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。
+
+    
+    PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
+    
+
+4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](../storage/storage-redundancy.md#locally-redundant-storage) 或[异地冗余存储 (GRS)](../storage/storage-redundancy.md#geo-redundant-storage)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
+
+    > [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。出于此原因，在变量中存储备份恢复服务保管库对象可提供方便。
+
+    ```
+    PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault –Name "testVault"
+    PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
+    ```
 
 
-		PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “China North”
-		PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GRS
+
+## 在订阅中查看保管库
+使用 **Get-AzureRmRecoveryServicesVault** 查看当前订阅中所有保管库的列表。可以使用此命令来查看是否创建了新的保管库，或者查看订阅中的可用保管库。
+
+运行 Get-AzureRmRecoveryServicesVault 命令即可列出订阅中的所有保管库。
 
 
-可以使用 **Get-AzureRMBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
+		PS C:\> Get-AzureRmRecoveryServicesVault
+		Name              : Contoso-vault
+		ID                : /subscriptions/1234
+		Type              : Microsoft.RecoveryServices/vaults
+		Location          : WestUS
+		ResourceGroupName : Contoso-docs-rg
+		SubscriptionId    : 1234-567f-8910-abc
+		Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 
 
-### 在 DPM 服务器上安装 Azure 备份代理
-在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。可以从 [Microsoft 下载中心](http://aka.ms/azurebackup_agent)或者备份保管库的“仪表板”页获取最新版本的安装程序。将安装程序保存到方便访问的位置，例如 C:\\Downloads。
+
+## 在 DPM 服务器上安装 Azure 备份代理
+在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。可以从 [Microsoft 下载中心](http://aka.ms/azurebackup_agent)或恢复服务保管库的“仪表板”页获取最新版本的安装程序。将安装程序保存到方便访问的位置，例如 C:\\Downloads。
 
 若要安装代理，请“在 DPM 服务器上”已提升权限的 PowerShell 控制台中运行以下命令：
 
@@ -80,7 +121,7 @@
 
 ![已安装代理](./media/backup-dpm-automation/installed-agent-listing.png)
 
-#### 安装选项
+### 安装选项
 若要查看所有可通过命令行运行的所有选项，请使用以下命令：
 
 
@@ -102,34 +143,31 @@
 | /pu | 代理主机用户名 | - |
 | /pw | 代理密码 | - |
 
-### 注册到 Azure 备份服务
-在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-azure-dpm-introduction/)。你必须：
+## 将 DPM 注册到恢复服务保管库
 
-- 具备有效的 Azure 订阅
-- 有一个备份保管库
-
-若要下载保管库凭据，请在 Azure PowerShell 控制台中运行 **Get-AzureBackupVaultCredentials**，并将其存储在方便的位置，例如 C:\\Downloads。
+创建恢复服务保管库后，请下载最新的代理和保管库凭据，并将其存储在一个方便访问的位置（如 C:\\Downloads）。
 
 
-		PS C:\> $credspath = "C:"
-		PS C:\> $credsfilename = Get-AzureRMBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
+		PS C:\> $credspath = "C:\downloads"
+		PS C:\> $credsfilename = Get-AzureRmRecoveryServicesVaultSettingsFile -Backup -Vault $vault1 -Path  $credspath
 		PS C:\> $credsfilename
-		f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
+		C:\downloads\testvault\_Sun Apr 10 2016.VaultCredentials
 
 
-使用 [Start-DPMCloudRegistration](https://technet.microsoft.com/zh-cn/library/jj612787) cmdlet 即可向保管库注册计算机：
+在 DPM 服务器上，运行 [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx) cmdlet 以将计算机注册到保管库。
 
 
 		PS C:\> $cred = $credspath + $credsfilename
-		PS C:\> Start-DPMCloudRegistration -DPMServerName "TestingServer" -VaultCredentialsFilePath $cred
+		PS C:\> Start-OBRegistration-VaultCredentials $cred -Confirm:$false
+		CertThumbprint      :7a2ef2caa2e74b6ed1222a5e89288ddad438df2
+		SubscriptionID      : ef4ab577-c2c0-43e4-af80-af49f485f3d1
+		ServiceResourceName: testvault
+		Region              :West US
+		Machine registration succeeded.
 
-
-这将使用指定的保管库凭据向 Microsoft Azure 保管库注册名为“TestingServer”的 DPM 服务器。
-
-> [AZURE.IMPORTANT] 请勿使用相对路径来指定保管库凭据文件。必须提供绝对路径作为 cmdlet 的输入。
 
 ### 初始配置设置
-DPM 服务器在注册到 Azure 备份保管库后，将使用默认的订阅设置启动。这些订阅设置包括网络、加密和临时区域。若要开始更改订阅设置，需要先使用 [Get-DPMCloudSubscriptionSetting](https://technet.microsoft.com/zh-cn/library/jj612793) cmdlet 获取现有（默认）设置中的句柄：
+DPM 服务器在注册到恢复服务保管库后，将使用默认的订阅设置启动。这些订阅设置包括网络、加密和临时区域。若要开始更改订阅设置，需要先使用 [Get-DPMCloudSubscriptionSetting](https://technet.microsoft.com/library/jj612793) cmdlet 获取现有（默认）设置中的句柄：
 
 
 		$setting = Get-DPMCloudSubscriptionSetting -DPMServerName "TestingServer"
@@ -188,7 +226,7 @@ DPM 服务器在注册到 Azure 备份保管库后，将使用默认的订阅设
 1. “组成员”是你要在相同的保护组中保护的所有可保护对象的列表（在 DPM 中也称为“数据源”）。例如，你可能想要保护一个保护组中的生产 VM 与另一个保护组中的 SQL Server 数据库，因为它们可能有不同的备份要求。在可以备份生产服务器上的任何数据源之前，需要确保 DPM 代理已安装在服务器上并受 DPM 的管理。遵循[安装 DPM 代理](https://technet.microsoft.com/zh-cn/library/bb870935.aspx)的步骤，并将代理链接到相应的 DPM 服务器。
 2. “数据保护方法”指定目标备份位置 - 磁带、磁盘和云。在本示例中，我们将在本地磁盘和云中保护数据。
 3. 一个“备份计划”，指定何时需要进行备份，以及应该在 DPM 服务器和生产服务器之间同步数据的频率。
-4. 一个“保留计划”，指定要在 Azure 中保留恢复点多长时间。
+4. 一个**保留计划**，指定要在 Azure 中保留恢复点多长时间。
 
 ### 创建保护组
 首先，使用 [Add-DPMProtectionGroup](https://technet.microsoft.com/zh-cn/library/hh881722) cmdlet 创建新的保护组。
@@ -282,7 +320,7 @@ DPM 服务器在注册到 Azure 备份保管库后，将使用默认的订阅设
 		PS C:\> Set-DPMReplicaCreationMethod -ProtectionGroup $MPG -NOW
 
 ### 更改 DPM 副本和恢复点卷的大小
-你还可以使用 [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/en-us/library/hh881618(v=sc.20).aspx) cmdlet 更改 DPM 副本卷和和卷影复制卷的大小，如以下示例所示：
+你还可以使用 [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/zh-cn/library/hh881618(v=sc.20).aspx) cmdlet 更改 DPM 副本卷和和卷影复制卷的大小，如以下示例所示：
 	
 		Get-DatasourceDiskAllocation -Datasource $DS
 		Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
@@ -329,4 +367,4 @@ DPM 服务器在注册到 Azure 备份保管库后，将使用默认的订阅设
 
 - 有关适用于 DPM 的 Azure 备份的详细信息，请参阅 [DPM 备份简介](/documentation/articles/backup-azure-dpm-introduction/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=AcomDC_0718_2016-->

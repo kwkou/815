@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中规划 VM 备份基础结构 | Azure"
+	pageTitle="在 Azure 中计划 VM 备份基础结构 | Azure"
 	description="规划在 Azure 中备份虚拟机时的重要注意事项"
 	services="backup"
 	documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="02/12/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 # 在 Azure 中计划 VM 备份基础结构
 本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](/documentation/articles/backup-azure-vms-prepare/)，则在开始[备份 VM](/documentation/articles/backup-azure-vms/) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
@@ -28,7 +28,7 @@
 ### 数据一致性
 备份和还原业务关键型数据十分复杂，因为需要在生成数据的应用程序仍在运行时进行备份。为了解决此问题，Azure 备份对 Microsoft 工作负荷进行应用程序一致性备份，使用 VSS 来确保将数据正确写入到存储中。
 
->[AZURE.NOTE]Linux 虚拟机只能使用文件一致性备份，因为 Linux 没有与 VSS 相当的平台。
+>[AZURE.NOTE] Linux 虚拟机只能使用文件一致性备份，因为 Linux 没有与 VSS 相当的平台。
 
 Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完全备份](http://blogs.technet.com/b/filecab/archive/2008/05/21/what-is-the-difference-between-vss-full-backup-and-vss-copy-backup-in-windows-server-2008.aspx)的详细信息）。若要启用 VSS 复制备份，需要在 VM 上设置以下注册表项。
 
@@ -42,7 +42,7 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 
 | 一致性 | 基于 VSS | 解释和详细信息 |
 |-------------|-----------|---------|
-| 应用程序一致性 | 是 | 这是适合 Microsoft 工作负荷的理想的一致性类型，因为它可以确保：<ol><li>VM 启动。<li>不发生数据损坏。<li>不发生数据丢失。<li> 对于使用数据的应用程序，数据将保持一致，因为备份时会使用 VSS 将应用程序纳入考虑。</ol> 大多数 Microsoft 工作负荷都有 VSS 写入器，负责执行与数据一致性相关的工作负荷特定操作。例如，Microsoft SQL Server 的 VSS 写入器可确保正确写入事务日志文件和数据库。<br><br> 对于 Azure VM 备份，获取应用程序一致恢复点意味着备份扩展可以调用 VSS 工作流，并在获取 VM 快照之前*正确*完成。当然，这也意味着会调用 Azure VM 中所有应用程序的 VSS 写入器。<br><br>（了解 [VSS 的基础知识](http://blogs.technet.com/b/josebda/archive/2007/10/10/the-basics-of-the-volume-shadow-copy-service-vss.aspx)，并详细了解其[工作原理](https://technet.microsoft.com/library/cc785914%28v=ws.10%29.aspx)）。 |
+| 应用程序一致性 | 是 | 这是适合 Microsoft 工作负荷的理想的一致性类型，因为它可以确保：<ol><li>VM 启动。<li>不发生数据损坏。<li>不发生数据丢失。<li> 对于使用数据的应用程序，数据将保持一致，因为备份时会使用 VSS 将应用程序纳入考虑。</ol> 大多数 Microsoft 工作负荷都有 VSS 写入器，负责执行与数据一致性相关的工作负荷特定操作。例如，Microsoft SQL Server 的 VSS 写入器可确保正确写入事务日志文件和数据库。<br><br> 对于 Azure VM 备份，获取应用程序一致恢复点意味着备份扩展可以调用 VSS 工作流，并在获取 VM 快照之前正确完成。当然，这也意味着会调用 Azure VM 中所有应用程序的 VSS 写入器。<br><br>（了解 [VSS 的基础知识](http://blogs.technet.com/b/josebda/archive/2007/10/10/the-basics-of-the-volume-shadow-copy-service-vss.aspx)，并详细了解其[工作原理](https://technet.microsoft.com/library/cc785914%28v=ws.10%29.aspx)）。 |
 | 文件系统一致性 | 是 - 对于基于 Windows 的计算机 | 在两种情况下，恢复点可以做到文件系统一致性：<ul><li>在 Azure 中备份 Linux VM，因为 Linux 没有相当于 VSS 的平台。<li>在 Azure 中备份 Windows VM 期间 VSS 失败。</li></ul> 在这两种情况下，最佳做法是确保：<ol><li>VM 启动。<li>不发生数据损坏。<li>不发生数据丢失。</ol> 应用程序需要对还原的数据实施自己的“修复”机制。|
 | 崩溃一致性 | 否 | 这种情况相当于虚拟机“崩溃”（通过软重置或硬重置）。这通常发生于 Azure 虚拟机在备份期间关闭时。对于 Azure 虚拟机备份，获取崩溃一致恢复点意味着 Azure 备份不保证存储媒体上的数据一致 - 无论从操作系统还是应用程序的观点来说都一样。备份时已存在磁盘上的数据才被捕获和备份。<br/> <br/>尽管不会保证，但大多数情况下操作系统都会启动。随后通常是运行磁盘检查过程（如 chkdsk）以修复任何损坏错误。内存中任何未完全刷新到磁盘的数据或写入操作都将丢失。如果需要执行数据回滚，应用程序通常会接着执行其自身的验证机制。<br><br>例如，如果事务日志中的条目不在数据库中，则数据库软件将执行回滚，直到数据一致。当数据分散在多个虚拟磁盘上时（例如跨区卷），崩溃一致恢复点不保证数据的正确性。|
 
@@ -82,6 +82,16 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 - 快照时间，即触发某个快照所花费的时间。在接近计划的备份时间时，将会触发快照。
 - 队列等待时间。由于备份服务要处理来自多个客户的备份，可能不会立即将备份数据从快照复制到 Azure 备份保管库。在负载高峰期，由于要处理的备份数过多，等待时间可能会长达 8 小时。但是，每日备份策略规定的 VM 备份总时间不会超过 24 小时。
 
+## 最佳实践
+我们建议在为虚拟机配置备份时遵循以下最佳做法
+
+- 请不要计划同一云服务中的 4 个以上的经典 VM 同时进行备份。如果你想要配置同一云服务中的更多 VM 进行备份，我们建议将备份计划错开一小时。
+- 请不要计划 40 个以上的 Resource Manager VM 同时进行备份。
+- 请在非高峰时间为 VM 计划备份，以便备份服务可获取 IOPS 将数据从客户存储帐户传输到备份保管库。
+- 请确保在策略中 VM 从不同存储帐户传播。我们建议，如果 VM 中单个存储帐户中存储的磁盘总数超过 20 个，请将 VM 散布到不同备份计划中，以便在备份的传输阶段获取所需的 IOPS。
+- 建议不要将高级存储上运行的 VM 还原到同一存储帐户，因为此操作可能会影响备份操作，并且会减少可用于备份的 IOPS 数。
+- 建议确保每个高级 VM 在不同高级存储帐户上，以便获得良好的备份时间性能。
+
 ## 数据加密
 
 在备份过程中，Azure 备份不会加密数据。但是，你可以在 VM 中加密数据，然后无缝备份保护的数据（阅读有关[备份加密数据](/documentation/articles/backup-azure-vms-encryption/)的详细信息）。
@@ -90,7 +100,7 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 ## 如何计算受保护的实例？
 通过 Azure 备份进行备份的 Azure 虚拟机的收费依据 [Azure 备份定价](/pricing/details/back-up/)。受保护的实例计算基于虚拟机的*实际*大小，即虚拟机中除“资源磁盘”外的所有数据之和。
 
-*不是*按连接到虚拟机的每个受支持数据磁盘的最大大小对你收费，而是按存储在数据磁盘中的实际数据收费。与此类似，备份存储空间的收费是根据通过 Azure 存储空间存储的数据容量，即每个恢复点中实际数据之和。
+不是按连接到虚拟机的每个数据磁盘支持的最大大小对你收费，而是按存储在数据磁盘中的实际数据收费。与此类似，备份存储空间的收费是根据通过 Azure 存储空间存储的数据容量，即每个恢复点中实际数据之和。
 
 以 A2 标准大小的虚拟机为例，该虚拟机有两个额外的数据磁盘，总大小为 1TB。下表提供了每个这样的磁盘上存储的实际数据：
 
@@ -101,11 +111,11 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 | 数据磁盘 1 |	1023 GB | 30 GB |
 | 数据磁盘 2 | 1023 GB | 0 GB |
 
-此示例中，虚拟机的*实际*大小为 17 GB + 30 GB + 0 GB = 47 GB。这就是按月收费所基于的受保护实例大小。随着虚拟机中数据量的增长，用于计费的受保护实例大小也会相应变化。
+此示例中，虚拟机的实际大小为 17 GB + 30 GB + 0 GB = 47 GB。这就是按月收费所基于的受保护实例大小。随着虚拟机中数据量的增长，用于计费的受保护实例大小也会相应变化。
 
 完成第一次成功备份后才会计费。存储和受保护的实例也会在此同时开始计费。只要虚拟机包含 Azure 备份存储的任何备份数据，就会持续计费。如果保留备份数据，执行“停止保护”操作将不会停止计费。
 
-指定的虚拟机只有在停止保护*和*删除全部备份数据后才会停止计费。没有活动的备份作业（已停止保护）时﹐受保护实例大小将根据上次成功备份时的虚拟机大小进行按月计费。
+指定的虚拟机只有在停止保护和删除全部备份数据后才会停止计费。没有活动的备份作业（已停止保护）时﹐受保护实例大小将根据上次成功备份时的虚拟机大小进行按月计费。
 
 ## 有疑问？
 如果你有疑问，或者希望包含某种功能，请[给我们反馈](http://aka.ms/azurebackup_feedback)。
@@ -117,4 +127,4 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms/)
 - [解决 VM 备份问题](/documentation/articles/backup-azure-vms-troubleshoot/)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=AcomDC_0718_2016-->
