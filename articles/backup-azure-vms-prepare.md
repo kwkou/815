@@ -1,19 +1,23 @@
 <properties
-	pageTitle="进行备份 Azure 虚拟机所需的环境准备 | Azure"
+	pageTitle="准备好环境以备份 Azure 虚拟机 | Azure"
 	description="确保对环境进行准备，以便在 Azure 中备份虚拟机"
 	services="backup"
 	documentationCenter=""
 	authors="markgalioto"
-	manager="jwhit"
+	manager="cfreeman"
 	editor=""
 	keywords="备份; 正在备份;"/>
 
 <tags
 	ms.service="backup"
-	ms.date="03/01/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="06/03/2016"
+	wacn.date="07/26/2016"/>
 
 # 进行备份 Azure 虚拟机所需的环境准备
+
+> [AZURE.SELECTOR]
+- [Resource Manager 模型](/documentation/articles/backup-azure-arm-vms-prepare)
+- [经典模型](/documentation/articles/backup-azure-vms-prepare)
 
 在备份 Azure 虚拟机 (VM) 之前，必须满足三个条件。
 
@@ -28,9 +32,7 @@
 
 >[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。以下列表提供了在经典模型中部署时的限制。
 
-- 目前不支持备份基于 Azure Resource Manager (ARM)（即 IaaS V2）的虚拟机。
 - 不支持备份超过 16 个数据磁盘的虚拟机。
-- 不支持备份使用高级存储的虚拟机。
 - 不支持备份使用保留 IP 地址且未定义终结点的虚拟机。
 - 不支持在恢复过程中替换现有虚拟机。首先删除现有虚拟机以及任何关联的磁盘，然后从备份恢复数据。
 - 不支持跨区域备份和恢复。
@@ -53,21 +55,27 @@
 
 创建备份保管库的步骤：
 
-1. 登录到 [Azure 经典管理门户](http://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn/)。
 
-2. 在 Azure 经典管理门户中，单击“新建”>“恢复服务”>“备份”。
+2. 在 Azure 门户中，单击“新建”>“混合集成”>“备份”。单击“备份”时，会自动切换到经典门户（在“注释”之后显示）。
 
-3. 对于“名称”，输入一个友好名称以标识此保管库。名称对于 Azure 订阅需要是唯一的。键入包含 2 到 50 个字符的名称。名称必须以字母开头，只能包含字母、数字和连字符。
+    ![Ibiza 门户](./media/backup-azure-vms-prepare/Ibiza-portal-backup01.png)
+
+    >[AZURE.NOTE] 如果你的订阅上次是在经典门户中使用的，则你的订阅可能会在经典门户中打开。在此情况下，若要创建备份保管库，请单击“新建”>“数据服务”>“恢复服务”>“备份保管库”>“快速创建”（请参见下图）。
+
+    ![创建备份保管库](./media/backup-azure-vms-prepare/backup_vaultcreate.png)
+
+3. 对于“名称”，请输入一个友好名称来标识保管库。名称对于 Azure 订阅需要是唯一的。键入包含 2 到 50 个字符的名称。名称必须以字母开头，只能包含字母、数字和连字符。
 
 4. 在“区域”中，为保管库选择地理区域。保管库必须与你要保护的虚拟机位于同一区域中。如果你在多个区域中具有虚拟机，则必须在每个区域中创建备份保管库。无需指定存储帐户即可存储备份数据 — 备份保管库和 Azure 备份服务会自动处理这种情况。
 
 5. 在“订阅”中，选择要与备份保管库关联的订阅。仅当组织帐户与多个 Azure 订阅关联时，才会有多个选项。
 
-6. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在经典管理门户底部监视状态通知。
+6. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在经典门户底部监视状态通知。
 
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)
 
-7. 一条消息将确认已成功创建保管库。并且将在“恢复服务”页上将保管库列出为“活动”保管库。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/#azure-backup---storage-redundancy-options)的更多内容。
+7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](backup-configure-vault.md#azure-backup---storage-redundancy-options)的更多内容。
 
     ![备份保管库列表](./media/backup-azure-vms-prepare/backup_vaultslist.png)
 
@@ -78,43 +86,70 @@
 
 ## 网络连接
 
-备份扩展需要连接到 Azure 公共 IP 地址才能正常运行，因为它需要将命令发送到 Azure 存储终结点 (HTTP URL) 来管理 VM 的快照。没有正常的 Internet 连接，这些来自 VM 的 HTTP 请求就会超时，备份操作就会失败。
+为了管理 VM 快照，备份扩展需要连接 Azure 公共 IP 地址。如果未建立适当的 Internet 连接，虚拟机的 HTTP 请求将会超时，并且备份操作将会失败。如果你的部署中配置了访问限制（如通过网络安全组 (NSG)），请选择其中一个选项来提供备份流量的明确路径：
 
-### NSG 的网络限制
+- [Whitelist the Azure datacenter IP ranges（将 Azure 数据中心 IP 范围加入白名单）](http://www.microsoft.com/zh-cn/download/details.aspx?id=41653)- 请参阅相关文章以获取有关如何将 IP 地址加入白名单的说明。
+- 部署 HTTP 代理服务器来路由流量。
 
-如果你的部署设置了访问限制（例如，通过网络安全组 (NSG) 设置了访问限制），则需采取其他步骤来确保到备份保管库的备份流量不受影响。
-
-可以通过两种方法来提供备份流量的路径：
-
-1. 将 [Azure 数据中心 IP 范围](http://www.microsoft.com/en-us/download/details.aspx?id=41653)加入允许列表。
-2. 部署 HTTP 代理以路由流量。
-
-需要在可管理性、精细控制和成本之间进行平衡。
+在确定使用哪个选项时，要取舍的不外乎是易管理性、控制粒度和成本等要素。
 
 |选项|优点|缺点|
 |------|----------|-------------|
-|选项 1：将 IP 范围加入白名单| 无额外成本<br><br>若要在 NSG 中打开访问权限，请使用 <i>Set-AzureNetworkSecurityRule</i> cmdlet | 管理起来很复杂，因为受影响的 IP 范围会不断变化；<br>允许访问整个 Azure，而不只是存储空间。|
-|选项 2：HTTP 代理| 通过允许的存储 URL 在代理中进行精细控制；<br>对 VM 进行单点 Internet 访问；<br>不受 Azure IP 地址变化的影响| 通过代理软件运行 VM 带来的额外成本。|
+|将 IP 范围加入白名单| 无额外成本<br><br>若要在 NSG 中打开访问权限，请使用 <i>Set-AzureNetworkSecurityRule</i> cmdlet | 管理起来很复杂，因为受影响的 IP 范围会不断变化。<br><br>允许访问整个 Azure，而不只是存储空间。|
+|HTTP 代理| 通过允许的存储 URL 在代理中进行精细控制；<br>对 VM 进行单点 Internet 访问；<br>不受 Azure IP 地址变化的影响| 通过代理软件运行 VM 带来的额外成本。|
+
+### 将 Azure 数据中心 IP 范围加入白名单
+
+若要将 Azure 数据中心 IP 范围加入白名单，请参阅 [Azure website（Azure 网站）](http://www.microsoft.com/zh-cn/download/details.aspx?id=41653)以获取有关 IP 范围的详细信息和说明。
 
 ### 使用 HTTP 代理进行 VM 备份
-对 VM 进行备份时，会使用 HTTPS API 将快照管理命令从备份扩展发送到 Azure 存储空间。此流量必须通过代理从扩展进行路由，因为只会将代理配置为允许访问公共 Internet。
+备份 VM 时，VM 上的备份扩展会使用 HTTPS API 将快照管理命令发送到 Azure 存储空间。将通过 HTTP 代理路由备份扩展流量，因为它是为了访问公共 Internet 而配置的唯一组件。
 
 >[AZURE.NOTE] 至于应该使用何种代理软件，我们不提供任何建议。请确保你选取的代理可以进行下述配置步骤。
 
-在以下示例中，需要对应用 VM 进行配置，以便将代理 VM 用于所有绑定到公共 Internet 的 HTTP 流量。需要将代理 VM 配置为允许来自虚拟网络中 VM 的传入流量。最后，NSG（也称 *NSG-lockdown*）需要一个新的安全规则，以便允许从代理 VM 流出的出站 Internet 流量。
+以下示例图像显示了使用 HTTP 代理所要执行的三个配置步骤：
+
+- 应用程序 VM 通过代理 VM 路由所有发往公共 Internet 的 HTTP 流量。
+- 代理 VM 允许来自虚拟网络中 VM 的传入流量。
+- 名为 NSF-lockdown 的网络安全组 (NSG) 需要一个安全规则来允许代理 VM 的出站 Internet 流量。
 
 ![NSG 与 HTTP 代理部署图](./media/backup-azure-vms-prepare/nsg-with-http-proxy.png)
 
-**A) 允许传出网络连接：**
+若要使用 HTTP 代理来与公共 Internet 通信，请遵循以下步骤：
 
-1. 对于 Windows 计算机，请在提升的命令提示符处运行以下命令：
+#### 步骤 1。配置传出网络连接
+###### 对于 Windows 计算机
+将设置本地系统帐户的代理服务器配置。
 
-    
-		netsh winhttp set proxy http://<proxy IP>:<proxy port>
-    
-  这样就会设置计算机范围的代理配置，可以用于任何传出的 HTTP/HTTPS 流量。
+1. 下载 [PsExec](https://technet.microsoft.com/sysinternals/bb897553)
+2. 在权限提升的提示符下运行以下命令：
 
-2. 对于 Linux 计算机，可将以下代码行添加到 ```/etc/environment``` 文件：
+     
+     psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"
+     
+     该命令将打开 Internet Explorer 窗口。
+3. 转到“工具”->“Internet 选项”->“连接”->“LAN 设置”。
+4. 验证系统帐户的代理设置。设置代理 IP 和端口。
+5. 关闭 Internet Explorer。
+
+这样就会设置计算机范围的代理配置，可以用于任何传出的 HTTP/HTTPS 流量。
+   
+如果已在当前用户帐户（非本地系统帐户）中设置代理服务器，请使用以下脚本将设置应用到 SYSTEMACCOUNT：
+
+
+		   $obj = Get-ItemProperty -Path Registry::”HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections"
+		   Set-ItemProperty -Path Registry::”HKEY_USERS\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections" -Name DefaultConnectionSettings -Value $obj.DefaultConnectionSettings
+		   Set-ItemProperty -Path Registry::”HKEY_USERS\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections" -Name SavedLegacySettings -Value $obj.SavedLegacySettings
+		   $obj = Get-ItemProperty -Path Registry::”HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+		   Set-ItemProperty -Path Registry::”HKEY_USERS\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyEnable -Value $obj.ProxyEnable
+		   Set-ItemProperty -Path Registry::”HKEY_USERS\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name Proxyserver -Value $obj.Proxyserver
+
+
+>[AZURE.NOTE] 如果在代理服务器日志中发现“(407)需要代理身份验证”，请检查身份验证设置是否正确。
+
+######对于 Linux 计算机 
+
+将以下代码行添加到 ```/etc/environment``` 文件：
 
     
 		http_proxy=http://<proxy IP>:<proxy port>
@@ -127,7 +162,7 @@
 	    HttpProxy.Port=<proxy port>
 	    
 
-**B) 在代理服务器上允许传入连接：**
+#### 步骤 2.在代理服务器上允许传入连接：
 
 1. 在代理服务器上打开 Windows 防火墙。访问防火墙的最简单方法搜索“具有高级安全性的 Windows 防火墙”。
 
@@ -150,16 +185,15 @@
 
     至于该向导的其余部分，可一路单击到最后，然后为此规则指定一个名称。
 
-**C) 向 NSG 添加例外规则：**
+#### 步骤 3.向 NSG 添加例外规则：
 
 在 Azure PowerShell 命令提示符处键入以下命令：
 
+以下命令将在 NSG 中添加一个例外。此例外允许从 10.0.0.5 上的任何端口流向端口 80 (HTTP) 或 443 (HTTPS) 上的任何 Internet 地址的 TCP 流量。如果你需要访问公共 Internet 中的特定端口，请确保也将该端口添加到 ```-DestinationPortRange```。
 
 		Get-AzureNetworkSecurityGroup -Name "NSG-lockdown" |
 		Set-AzureNetworkSecurityRule -Name "allow-proxy " -Action Allow -Protocol TCP -Type Outbound -Priority 200 -SourceAddressPrefix "10.0.0.5/32" -SourcePortRange "*" -DestinationAddressPrefix Internet -DestinationPortRange "80-443"
 
-
-此命令会向 NSG 添加一个例外，允许从 10.0.0.5 上的任何端口流向端口 80 (HTTP) 或 443 (HTTPS) 上的任何 Internet 地址的 TCP 流量。如果你需要访问公共 Internet 中的特定端口，请确保也将它添加到 `-DestinationPortRange`。
 
 确保使用与你的部署相对应的详细信息替换示例中的名称。
 
@@ -198,4 +232,4 @@ VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中
 - [计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)
 - [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms/)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=AcomDC_0718_2016-->

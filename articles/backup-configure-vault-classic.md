@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="05/09/2016"
-	wacn.date="07/13/2016"/>
+	wacn.date="07/26/2016"/>
 
 
 # 使用经典部署模型将 Windows Server 或客户端备份到 Azure
@@ -75,7 +75,7 @@
     d.在左侧导航窗格中单击“恢复服务”，以返回到恢复服务的资源列表。
 
 ## 步骤 2：下载保管库凭据文件
-本地计算机需要先在备份保存库中通过身份验证才能将数据备份到 Azure。身份验证是通过保管库凭据实现的。从经典门户通过安全通道下载保管库凭据文件。证书私钥不会在门户或服务中持久保存。
+本地计算机需要先在备份保存库中通过身份验证才能将数据备份到 Azure。身份验证是通过*保管库凭据*实现的。从经典门户通过安全通道下载保管库凭据文件。证书私钥不会在门户或服务中持久保存。
 
 详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup#what-is-the-vault-credential-file)。
 
@@ -222,4 +222,4 @@
 - [Back up workloads to Azure with Microsoft Azure Backup Server（使用 Microsoft Azure 备份服务器将工作负荷备份到 Azure）](/documentation/articles/backup-azure-microsoft-azure-backup)
 - [Back up workloads to Azure with DPM（使用 DPM 将工作负荷备份到 Azure）](/documentation/articles/backup-azure-dpm-introduction)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=AcomDC_0718_2016-->
