@@ -8,8 +8,8 @@
    editor="mbaldwin" />
 <tags
    ms.service="active-directory"
-   ms.date="04/06/2016"
-   wacn.date="06/23/2016" />
+   ms.date="06/06/2016"
+   wacn.date="07/26/2016" />
 
 # 将应用程序与 Azure Active Directory 集成
 
@@ -27,9 +27,9 @@
 
 如果你正在构建的 Web 应用程序只要求支持用户在 Azure AD 中登录，则你只需按照以下说明操作。如果你的应用程序需要访问 Web API，或者你想要使应用程序成为多租户应用程序，以便其他 Azure AD 租户中的用户能够访问它，则需要先阅读[更新应用程序](#updating-an-application)部分，然后继续配置你的应用程序。
 
-### 在 Azure 经典管理门户注册新应用程序
+### 在 Azure 经典门户注册新应用程序
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 
@@ -48,6 +48,8 @@
 ## 更新应用程序
 
 将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍如何进一步配置你的应用程序。有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
+
+有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](active-directory-authentication-scenarios.md)。
 
 ### 同意框架概述
 
@@ -206,7 +208,9 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 单页面应用程序 (SPA) 通常利用浏览器中运行的 JavaScript 重型前端进行构建，该前端调用应用程序的 Web API 后端来执行其业务逻辑。对于托管在 Azure AD 中的 SPA，可以使用 OAuth 2.0 隐式授权向 Azure AD 验证用户身份，并获取可用来保护从应用程序 JavaScript 客户端到其后端 Web API 的调用的令牌。用户授予同意之后，可以使用同一个身份验证协议来获取令牌以保护客户端与针对应用程序配置的其他 Web API 资源之间的调用。默认情况下，为应用程序禁用了 OAuth 2.0 隐式授权。你也可以通过在[应用程序清单](/documentation/articles/active-directory-application-manifest/)（表示应用程序标识配置的 JSON 文件）中设置 `oauth2AllowImplicitFlow`”` 值，来为应用程序启用 OAuth 2.0 隐式授权。
 
-##### 启用 OAuth 2.0 隐式授权
+默认情况下，为应用程序禁用了 OAuth 2.0 隐式授权。你也可以通过在[应用程序清单](/documentation/articles/active-directory-application-manifest/)（表示应用程序标识配置的 JSON 文件）中设置 `oauth2AllowImplicitFlow`”` 值，来为应用程序启用 OAuth 2.0 隐式授权。
+
+#### 启用 OAuth 2.0 隐式授权 
 
 1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
@@ -231,11 +235,11 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 你可以遵循[利用 Azure AD 开发多租户 Web 应用程序](https://msdn.microsoft.com/library/azure/dn151789.aspx)中的步骤来授予对 Azure AD 中注册的新应用程序的访问权限。必须知道，新同意框架允许的强大应用程序要多得多，并且还允许用户同意这些应用程序，而不仅限于管理员。
 
-#### 生成为外部用户授予访问权限的链接（旧）
+#### 生成为外部用户授予访问权限的链接（旧版）
 
 为了让外部用户使用其组织帐户注册你的应用程序，你需要更新你的应用程序，以显示一个可以链接到 Azure AD 上的页面的按钮，使他们能够授予访问权限。[适用于集成应用程序的品牌准则](/documentation/articles/active-directory-branding-guidelines/)主题中介绍了有关此注册按钮的品牌指导。在用户授予或拒绝访问权限后，Azure AD 访问授权页会将浏览器重定向回你的应用程序并返回响应。有关应用程序属性的详细信息，请参阅[应用程序对象和服务主体](/documentation/articles/active-directory-application-objects/)。
 
-访问授权页由 Azure AD 创建，你可以在 Azure 经典管理门户中应用的“配置”页上找到访问授权页的链接。若要转到“配置”页，请单击 Azure AD 租户的顶部菜单中的“应用程序”链接，单击要配置的应用，然后在“快速启动”页的顶部菜单中单击“配置”。
+访问授权页由 Azure AD 创建，你可以在 Azure 经典门户中应用的“配置”页上找到访问授权页的链接。若要转到“配置”页，请单击 Azure AD 租户的顶部菜单中的“应用程序”链接，单击要配置的应用，然后在“快速启动”页的顶部菜单中单击“配置”。
 
 应用程序的链接如下所示：`http://account.activedirectory.windowsazure.com/Consent.aspx?ClientID=058eb9b2-4f49-4850-9b78-469e3176e247&RequestedPermissions=DirectoryReaders&ConsentReturnURL=https%3A%2F%2Fadatum.com%2FExpenseReport.aspx%3FContextId%3D123456`。下表描述了该链接的组成部分：
 
@@ -247,7 +251,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 指定独立于回复 URL 的 ConsentReturnUrl 可让应用实施独立的逻辑，该逻辑可从回复 URL 处理不同 URL 上的响应（通常会处理用于登录的 SAML 令牌）。你还可以在 ConsentReturnURL 编码的 URL 中指定其他参数；在重定向时，会将这些参数作为查询字符串参数传回给你的应用程序。使用此机制可以维护更多信息，或者将应用程序发出的访问授权请求绑定到来自 Azure AD 的响应。
 
-#### 授予访问权限用户体验和响应（旧）
+#### 授予访问权限用户体验和响应（旧版）
 
 以下示意图显示了当应用程序重定向到访问授权链接时的用户体验。
 
@@ -278,7 +282,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 在应用的整个生存期内，你可能需要更改在调用 Azure AD 以获取用于调用图形 API 的访问令牌时使用的密钥。通常，密钥更改操作划分为两种类别：密钥已泄漏时进行的紧急滚动更新，以及当前密钥即将过期时进行的滚动更新。在刷新密钥时，应遵循以下过程来为应用提供无中断访问（主要适用于第二种情况）。
 
-1. 在 Azure 经典管理门户中，单击你的目录租户，从顶部菜单中单击“应用程序”，然后单击你要配置的应用。“快速启动”页将显示单一登录信息和其他配置信息。
+1. 在 Azure 经典门户中，单击你的目录租户，从顶部菜单中单击“应用程序”，然后单击你要配置的应用。“快速启动”页将显示单一登录信息和其他配置信息。
 
 2. 在顶部菜单中单击“配置”以查看应用的属性列表，同时你将会看到密钥列表。
 
@@ -288,9 +292,9 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 5. 现在，你应该在整个生产环境中应用此更改 – 首先在一个节点上验证更改，然后将它应用到环境中的其他节点。
 
-6. 在整个生产部署中完成更新后，随时可以返回到 Azure 经典管理门户并删除旧密钥。
+6. 在整个生产部署中完成更新后，随时可以返回到 Azure 经典门户并删除旧密钥。
 
-#### 启用访问权限后更改应用属性（旧）
+#### 启用访问权限后更改应用属性（旧版）
 
 为外部用户启用对你的应用的访问权限后，仍可以继续在 Azure 经典管理门户中对应用的属性进行更改。但是，在你进行应用更改之前便已授予对你应用的访问权限的客户在 Azure 经典管理门户中查看有关该应用的详细信息时，将看不到这些更改。将应用提供给客户使用后，在进行某些更改时，你必须保持谨慎。例如，如果你更新了 App ID URI，则在进行此项更改之前授予了访问权限的现有客户将无法使用其公司帐户或学校帐户登录你的应用。
 
@@ -301,11 +305,11 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 本部分说明如何从 Azure AD 租户中删除应用程序。
 
 ### 删除组织编写的应用程序
-这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司拥有的应用程序”筛选器下显示的应用程序。从技术层面讲，这些是通过 Azure 经典管理门户以手动方式注册的应用程序，或者通过 PowerShell 或图形 API 以编程方式注册的应用程序。更具体地说，它们由租户中的应用程序与服务主体对象表示。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
+这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司拥有的应用程序”筛选器下显示的应用程序。从技术层面讲，这些是通过 Azure 经典门户以手动方式注册的应用程序，或者通过 PowerShell 或图形 API 以编程方式注册的应用程序。更具体地说，它们由租户中的应用程序与服务主体对象表示。有关详细信息，请参阅 [Application Objects and Service Principal Objects（应用程序对象和服务主体对象）](active-directory-application-objects.md)。
 
 #### 从目录中删除单租户应用程序
 
-1. 登录到 [Azure 经典管理门户。](https://manage.windowsazure.cn)
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 
@@ -317,7 +321,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 #### 从目录中删除多租户应用程序
 
-1. 登录到 [Azure 经典管理门户。](https://manage.windowsazure.cn)
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 
@@ -343,7 +347,6 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 - 了解 [Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
 
-- 访问 [Active Directory 开发人员指南](/documentation/articles/active-directory-developer/'s guide)
+- 访问 [Active Directory 开发人员指南](/documentation/articles/active-directory-developer's guide)
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=AcomDC_0718_2016-->

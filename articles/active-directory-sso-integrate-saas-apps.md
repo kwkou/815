@@ -43,7 +43,7 @@ Azure AD 提供多种可自定义的方式来向组织中的用户部署应用�
 
 ### 映射用户帐户
 
-用户的标识通常有唯一身份标识符，可能是电子邮件地址或通用个人名称 (UPN)。需要将每个用户的应用程序标识链接（映射）到其各自的 Azure AD 标识。根据应用程序身份验证的要求，有几种方法可实现此目的。
+用户的标识通常有唯一身份标识符，可能是电子邮件地址或用户主体名称 (UPN)。需要将每个用户的应用程序标识链接（映射）到其各自的 Azure AD 标识。根据应用程序身份验证的要求，有几种方法可实现此目的。
 
 有关映射应用程序标识与 Azure AD 标识的详细信息，请参阅[自定义 SAML 令牌中颁发的声明](http://social.technet.microsoft.com/wiki/contents/articles/31257.azure-active-directory-customizing-claims-issued-in-the-saml-token-for-pre-integrated-apps.aspx)。
 
@@ -61,10 +61,10 @@ Azure AD 提供多种可自定义的方式来向组织中的用户部署应用�
 
 如果某个应用不在应用库中，你可以[将该应用作为自定义应用程序添加到 Azure AD 应用库](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)。
 
-Azure.com 库中还提供了有关这些问题的更多详细信息，请先阅读 [Azure Active Directory 的应用程序访问与单一登录是什么](/documentation/articles/active-directory-appssoaccess-whatis/)。
+Azure.com 库中还提供了有关所有这些问题的更多详细信息，请先阅读 [Azure Active Directory 的应用程序访问与单一登录是什么](/documentation/articles/active-directory-appssoaccess-whatis/)。
 
 ## 另请参阅
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

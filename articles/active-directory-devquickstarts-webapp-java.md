@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Java 入门 | Microsoft Azure"
+	pageTitle="Azure AD Java 入门 | Azure"
 	description="如何生成一个可让用户使用工作或学校帐户登录的 Java Web 应用。"
 	services="active-directory"
 	documentationCenter="java"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/19/2016"
-	wacn.date="07/13/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 使用 Azure AD 执行 Java Web 应用登录和注销
@@ -1735,11 +1735,11 @@ Java
 
 ##在 Tomcat 中编译并运行示例
 
-切换回到根目录，并运行以下命令来生成你刚刚使用 `maven` 组成的示例。这会使用你针对依赖项编写的 `pom.xml` 文件。
+更改回根目录，并运行下列命令来生成你刚刚使用 `maven` 组成的示例。这会使用你针对依赖项编写的 `pom.xml` 文件。
 
 `$ mvn package`
 
-`/targets` 目录中现在应包含 `adal4jsample.war` 文件。你可以在 Tomcat 容器中部署该文件并访问 URL
+你的 `/targets` 目录中现在应包含 `adal4jsample.war` 文件。你可以在 Tomcat 容器中部署该文件并访问 URL
 
 `http://localhost:8080/adal4jsample/`
 
@@ -1751,9 +1751,8 @@ Java
 
 祝贺你！ 现在，你已创建一个有效的 Java 应用程序，它可以对用户进行身份验证，使用 OAuth 2.0 安全调用 Web API，并获取有关用户的基本信息。如果你尚未这样做，可以在租户中填充一些用户。
 
-[此处以 .zip 格式提供了](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
+[此处以 .zip 格式提供了](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)完整示例（不包括配置值）供你参考，你也可以从 GitHub 克隆该示例：
 
 		git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=AcomDC_0718_2016-->

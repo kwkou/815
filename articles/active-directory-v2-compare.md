@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/20/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 # v2.0 终结点有什么不同？
 
@@ -54,7 +54,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 在原始的 Azure AD 服务中，应用可充当**资源**或是令牌接收者。资源可以定义它所了解的许多**范围**或 **oAuth2Permissions**，让客户端应用得以针对一组特定范围请求该资源的令牌。请考虑以 Azure AD 图形 API 作为资源的示例：
 
 - 资源标识符，或 `AppID URI`：`https://graph.chinacloudapi.cn/`
-- 范围，或 `OAuth2Permissions`：`Directory.Read`、`Directory.Write` 等等。  
+- 范围，或 `OAuth2Permissions`：`Directory.Read`、`Directory.Write` 等等。
 
 这一切都适用于 v2.0 终结点。应用程序仍可作为资源、定义范围并由 URI 标识。客户端应用程序仍可请求访问这些范围。但是，客户端用于请求这些权限的方式已改变。在过去，Azure AD 的 OAuth 2.0 授权请求可能如下所示：
 
@@ -107,7 +107,7 @@ v2.0 终结点可能需要针对应用使用新的已知权限 — `offline_acce
 
 如果应用未请求 `offline_access` 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow)中兑换 authorization\_code 时，只从 `/token` 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 `/authorize` 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
 
-若要深入了解 OAuth 2.0、refresh\_tokens 和 access\_tokens，请查看 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)。
+若要深入了解 OAuth 2.0、refresh\_token 和 access\_token，请查看 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
 #### OpenID、profile 和 email
 
@@ -126,6 +126,6 @@ v2.0 终结点颁发的令牌中的声明与正式版 Azure AD 终结点颁发�
 若要了解 v2.0 令牌中发出的特定声明，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)。
 
 ## 限制
-使用 v2.0 终结点时有一些要注意的限制。请参阅 [v2.0 限制文档](/documentation/articles/active-directory-v2-limitations/)，以了解特定的方案是否存在任何限制。
+使用 v2.0 终结点时有一些要注意的限制。请参阅 [v2.0 限制文档](/documentation/articles/active-directory-v2-limitations/)，了解任何这些限制是否适用于特定的方案。
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

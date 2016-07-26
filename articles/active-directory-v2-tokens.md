@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/20/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 # v2.0 令牌参考
 
-v2.0 终结点在每个[身份验证流](/documentation/articles/active-directory-v2-flows/)的处理中发出多种安全令牌。本文档说明每种令牌的格式、安全特性和内容。本文档说明每种令牌的格式、安全特征和内容。
+v2.0 终结点在每个[身份验证流](/documentation/articles/active-directory-v2-flows/)的处理中发出多种安全令牌。本文档说明每种令牌的格式、安全特征和内容。
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
@@ -149,4 +149,4 @@ Id\_Token 使用行业标准非对称式加密算法（例如 RSA 256）进行�
 | 授权代码（工作或学校帐户） | 10 分钟 | 授权代码的生存期有意缩短，应在收到时立即兑换 access\_token 和 refresh\_token。 |
 | 授权代码（个人帐户） | 5 分钟 | 授权代码的生存期有意缩短，应在收到时立即兑换 access\_token 和 refresh\_token。代表个人帐户颁发的授权代码也只能使用一次。 |
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

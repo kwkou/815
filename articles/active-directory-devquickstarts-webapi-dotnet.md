@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="01/21/2016"
-	wacn.date="07/13/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 使用 Azure AD 提供的持有者令牌保护 Web API
@@ -125,9 +125,8 @@ C#
 - 在 Azure AD 租户中创建新的应用程序，然后在最终提示中选择“本机客户端应用程序”。
     -	应用程序的“名称”向最终用户描述你的应用程序
     -	为“重定向 URI”值输入 `http://TodoListClient/`。
-- 完成注册后，AAD 将为应用程序分配唯一的**应用程序 ID**。在后面的步骤中将会用到此值，因此，请从“配置”选项卡复制此值。
--	完成注册后，导航到“配置”选项卡并找到“应用 ID URI”字段。为此值输入特定于租户的标识符，例如 `https://contoso.partner.onmschina.cn/TodoListService`
-- 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。单击“添加应用程序”。 在“显示”下拉列表中选择“其他”，然后单击上方的复选标记。找到并单击你的待办事项列表服务，然后单击底部的复选标记以添加该应用程序。从“委托的权限”下拉列表中选择“访问待办事项列表服务”，然后保存配置。
+- 完成注册后，AAD 将为应用程序分配唯一的**客户端 ID**。在后面的步骤中将会用到此值，因此，请从“配置”选项卡复制此值。
+- 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。单击“添加应用程序”。 在“显示”下拉列表中选择“所有应用”，然后单击上方的复选标记。找到并单击你的待办事项列表服务，然后单击底部的复选标记以添加该应用程序。从“委托的权限”下拉列表中选择“访问待办事项列表服务”，然后保存配置。
 
 
 - 在 Visual Studio 中，打开 TodoListClient 项目中的 `App.config`，然后在 `<appSettings>` 节中输入你的配置值。
@@ -141,4 +140,4 @@ C#
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=AcomDC_0718_2016-->

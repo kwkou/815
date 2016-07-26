@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="01/21/2016"
-	wacn.date="07/13/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 
 
@@ -22,7 +22,7 @@
 
 如果你要开发 Windows Phone 8.1 应用，Azure AD 可让你简单直接地使用用户的 Active Directory 帐户对其进行身份验证。它还可以让应用程序安全地使用 Azure AD 保护的任何 Web API，例如 Office 365 API 或 Azure API。
 
-> [AZURE.NOTE] 此代码示例使用 ADAL v2.0。若要体验最新技术，你可以改为尝试[使用 ADAL v3.0 的 Windows 通用教程](/documentation/articles/active-directory-devquickstarts-windowsstore)。如果你确实要构建适用于 Windows Phone 8.1 的应用，本文正是你的理想之选。ADAL v2.0 仍受到完全支持，并且是使用 Azure AD 来针对 Windows Phone 8.1 开发应用的建议方式。
+> [AZURE.NOTE] 此代码示例使用 ADAL v2.0。若要体验最新技术，你可以改为尝试[使用 ADAL v3.0 的 Windows 通用教程](/documentation/articles/active-directory-devquickstarts-windowsstore/)。如果你确实要构建适用于 Windows Phone 8.1 的应用，本文正是你的理想之选。ADAL v2.0 仍受到完全支持，并且是使用 Azure AD 来针对 Windows Phone 8.1 开发应用的建议方式。
 
 对于需要访问受保护资源的 .NET 本机客户端，Azure AD 提供 Active Directory 身份验证库 (ADAL)。在本质上，ADAL 的唯一用途就是方便应用程序获取访问令牌。为了演示操作的简单性，下面我们要生成一个“目录搜索器”Windows Phone 8.1 应用程序，该应用程序可以：
 
@@ -36,7 +36,7 @@
 3. 安装并配置 ADAL。
 5. 使用 ADAL 从 Azure AD 获取令牌。
 
-若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
+若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ## 1.注册目录搜索器应用程序  
 
@@ -178,4 +178,5 @@ C#
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
  
-<!---HONumber=Mooncake_0613_2016-->
+
+<!---HONumber=AcomDC_0718_2016-->

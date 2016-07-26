@@ -2,7 +2,7 @@
 	pageTitle="在 Azure 虚拟网络中安装 Active Directory 林" 
 	description="本教程介绍如何在 Azure 虚拟网络上的虚拟机 (VM) 中创建新的 Active Directory 林。" 
 	services="active-directory, virtual-network"
-    keywords="active directory 虚拟机, 安装 active directory 林, azure active directory 视频"
+    	keywords="active directory 虚拟机, 安装 active directory 林, azure active directory 视频 "
 	documentationCenter="" 
 	authors="markusvi" 
 	manager="stevenpo" 
@@ -14,7 +14,7 @@
 	wacn.date="06/24/2016"/>
 
 
-# 在 Azure 虚拟网络中安装新的 Active Directory 林
+#在 Azure 虚拟网络中安装新的 Active Directory 林
 
 本主题说明如何在 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)上的虚拟机 (VM) 中创建新的 Windows Server Active Directory 环境。在此情况下，Azure 虚拟网络未连接到本地网络。
 
@@ -34,7 +34,7 @@
 
 在 Azure 上安装域控制器与在本地安装域控制器并没有太大的不同。下表列出了主要差别。
 
-配置... | 本地 | Azure 虚拟网络	
+配置... | 本地 | Azure 虚拟网络
 ------------- | -------------  | ------------
 **域控制器的 IP 地址** | 在网络适配器属性中分配静态 IP 地址 | 运行 Set-AzureStaticVNetIP cmdlet 以分配静态 IP 地址
 **DNS 客户端解析器** | 在域成员的网络适配器属性中设置首选和备用 DNS 服务器地址 | 在虚拟网络属性中设置 DNS 服务器地址
@@ -61,7 +61,7 @@
 
 若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms/)
 
-1. 在 Azure 经典管理门户中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
+1. 在经典门户中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 
     在此向导页上... | 指定这些值
 	------------- | -------------
@@ -85,14 +85,14 @@
 
 ## 重置 Azure 虚拟网络的 DNS 服务器
 
-1. 重置新 DC/DNS 服务器上的 DNS 转发器设置。 
-  1. 在服务器管理器中，单击“工具”>“DNS”。 
-  2. 在“DNS 管理器”中，右键单击 DNS 服务器的名称，然后单击“属性”。 
-  3. 在“转发器”选项卡上，单击该转发器的 IP 地址，然后单击“编辑”。选择 IP 地址，然后单击“删除”。 
-  4. 单击“确定”关闭编辑器，然后再次单击“确定”关闭 DNS 服务器属性。 
-2. 更新虚拟网络的 DNS 服务器设置。 
-  1. 单击“虚拟网络”，双击你创建的虚拟网络，单击“配置”>“DNS 服务器”，键入运行 DC/DNS 服务器角色的某个 VM 的名称和 DIP，然后单击“保存”。 
-  2. 选择 VM 并单击“重新启动”触发该 VM，以便使用新 DNS 服务器的 IP 地址配置 DNS 解析器设置。 
+1. 重置新 DC/DNS 服务器上的 DNS 转发器设置。
+  1. 在服务器管理器中，单击“工具”>“DNS”。
+  2. 在“DNS 管理器”中，右键单击 DNS 服务器的名称，然后单击“属性”。
+  3. 在“转发器”选项卡上，单击该转发器的 IP 地址，然后单击“编辑”。选择 IP 地址，然后单击“删除”。
+  4. 单击“确定”关闭编辑器，然后再次单击“确定”关闭 DNS 服务器属性。
+2. 更新虚拟网络的 DNS 服务器设置。
+  1. 单击“虚拟网络”，双击你创建的虚拟网络，单击“配置”>“DNS 服务器”，键入运行 DC/DNS 服务器角色的某个 VM 的名称和 DIP，然后单击“保存”。
+  2. 选择 VM 并单击“重新启动”触发该 VM，以便使用新 DNS 服务器的 IP 地址配置 DNS 解析器设置。
 
 
 ## 为域成员创建 VM
@@ -136,4 +136,4 @@
 <!--Image references-->
 [1]: ./media/active-directory-new-forest-virtual-machine/AD_Forest.png
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=AcomDC_0718_2016-->

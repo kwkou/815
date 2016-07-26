@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="03/17/2015"
-	wacn.date="06/27/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 如何使用 ADAL 在 iOS 上启用跨应用 SSO
@@ -55,7 +55,7 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 这种登录具有以下优点：
 
 -  完全在应用程序存在的用户体验。
--  凭据可跨应用程序共享并由同一个证书签名，为应用程序套件提供单一登录体验。 
+-  凭据可跨应用程序共享并由同一个证书签名，为应用程序套件提供单一登录体验。
 -  围绕体验中的日志记录的控件提供给应用程序之前和之后登录。
 
 这种登录具有以下缺点：
@@ -150,7 +150,7 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 若要跨你拥有的应用程序启用 SSO，需要执行以下操作：
 
-1. 确保所有应用程序使用相同的客户端 ID 或应用程序 ID。 
+1. 确保所有应用程序使用相同的客户端 ID 或应用程序 ID。
 * 确保所有应用程序共享来自 Apple 的相同签名证书，以便可以共享密钥链
 * 请求每个应用程序的相同密钥链授权。
 * 告知 Microsoft 标识 SDK 你要使用的共享密钥链。
@@ -195,7 +195,7 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 ```
 
 
-请注意，下面介绍了这些重定向 URI 的格式。你可以使用任何重定向 URI，除非你想要支持中转站，在这种情况下，它们必须如上所示
+*请注意，下面介绍了这些重定向 URI 的格式。你可以使用任何重定向 URI，除非你想要支持中转站，在这种情况下，它们必须如上所示*
 
 
 
@@ -205,25 +205,25 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 在所需权限设置正确你应看到标题为你的项目目录中的文件 `entitlements.plist`，其中包含类似于下面的内容：
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>keychain-access-groups</key>
-	<array>
-		<string>$(AppIdentifierPrefix)com.myapp.mytestapp</string>
-		<string>$(AppIdentifierPrefix)com.myapp.mycache</string>
-	</array>
-</dict>
-</plist>
-```
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+		<plist version="1.0">
+		<dict>
+			<key>keychain-access-groups</key>
+			<array>
+				<string>$(AppIdentifierPrefix)com.myapp.mytestapp</string>
+				<string>$(AppIdentifierPrefix)com.myapp.mycache</string>
+			</array>
+		</dict>
+		</plist>
+
 
 在每个应用程序中启用密钥链授权，并且你可供使用 SSO 后，请在 `ADAuthenticationSettings` 中使用以下设置来告知 Microsoft 标识 SDK 你要使用的密钥链：
 
-```
-defaultKeychainSharingGroup=@"com.myapp.mycache";
-```
+
+		defaultKeychainSharingGroup=@"com.myapp.mycache";
+
 
 > [AZURE.WARNING] 
 在应用程序之间共享密钥链之后，任何应用程序都可以删除用户，更糟的是，删除整个应用程序的所有令牌。如果你的应用程序依赖于这些令牌来执行后台工作，则这是特别严重的后果。要共享密钥链，就必须十分警惕通过 Microsoft 标识 SDK 执行的任意和所有删除操作。
@@ -259,21 +259,21 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 下面是在项目配置中的显示方式示例。你也可以在 XCode 中执行此操作：
 
-```
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>com.myapp.mytestapp</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>x-msauth-mytestiosapp</string>
-        </array>
-    </dict>
-</array>
-```
+
+		<key>CFBundleURLTypes</key>
+		<array>
+		    <dict>
+		        <key>CFBundleTypeRole</key>
+		        <string>Editor</string>
+		        <key>CFBundleURLName</key>
+		        <string>com.myapp.mytestapp</string>
+		        <key>CFBundleURLSchemes</key>
+		        <array>
+		            <string>x-msauth-mytestiosapp</string>
+		        </array>
+		    </dict>
+		</array>
+
 
 #### 步骤 3：使用 URL 方案建立新的重定向 URI
 
@@ -285,16 +285,16 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 例如：x msauth mytestiosapp://com.myapp.mytestapp
 
-需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
+需要使用 [Azure 经典门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
 
 
 ##### 步骤 3a：在应用和开发人员门户添加重定向 URI，以支持基于证书的身份验证
 
-为支持基于证书身份验证第二个“msauth”需要在应用程序中注册和 [Azure 经典管理门户](https://manage.windowsazure.cn/)处理证书身份验证，如果你想要在你的应用程序中添加该功能的支持。
+为支持基于证书身份验证第二个“msauth”需要在应用程序中注册和 [Azure 经典门户](https://manage.windowsazure.cn/)处理证书身份验证，如果你想要在你的应用程序中添加该功能的支持。
 
 `msauth://code/<broker-redirect-uri-in-url-encoded-form>`
 
-例如：msauth://code/x-msauth-mytestiosapp%3A%2F%2Fcom.myapp.mytestapp
+例如：*msauth://code/x-msauth-mytestiosapp%3A%2F%2Fcom.myapp.mytestapp*
 
 
 #### 步骤 4：iOS9：将配置参数添加到应用
@@ -310,4 +310,4 @@ ADAL 使用 -canOpenURL: 来检查是否在设备上安装了中转站。在 iOS
 
 现在，Microsoft 标识 SDK 将自动在应用程序之间共享凭据并调用中转站（如果在设备上存在）。
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

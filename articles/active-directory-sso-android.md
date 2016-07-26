@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="03/17/2015"
-	wacn.date="06/27/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 如何使用 ADAL 在 Android 上启用跨应用 SSO
@@ -236,7 +236,7 @@ AuthenticationSettings.Instance.setUseBroker(true);
 
 例如：msauth://com.example.userapp/IcB5PxIyvbLkbFVtBI%2FitkW%2Fejk%3D
 
-需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
+需要使用 [Azure 经典门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
 
 
 #### 步骤 3：在应用程序中设置正确的权限
@@ -254,14 +254,4 @@ MANAGE_ACCOUNTS
 ### 你已配置 SSO！
 
 现在，Microsoft 标识 SDK 将自动在应用程序之间共享凭据并调用中转站（如果在设备上存在）。
-
-
-
-
-
-
-
-
-
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0718_2016-->

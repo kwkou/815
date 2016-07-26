@@ -136,4 +136,4 @@ Azure AD 很容易入门；你始终可以在注册免费 Azure 试用版过程�
 - [Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication/)
 - [直接购买 Azure AD Premium 许可证](http://aka.ms/buyaadp)
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=AcomDC_0718_2016-->
