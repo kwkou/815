@@ -106,7 +106,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 -	[我可以为基本缓存或标准缓存配置群集功能吗？](#can-i-configure-clustering-for-a-basic-or-standard-cache)
 -	[能否在 Redis ASP.NET 会话状态和输出缓存提供程序中使用群集功能？](#can-i-use-clustering-with-the-redis-aspnet-session-state-and-output-caching-providers)
 
-### <a name="do-i-need-to-make-any-changes-to-my-client-application-to-use-clustering)"></a> 使用群集功能时，是否需要对客户端应用程序进行更改？
+### <a name="do-i-need-to-make-any-changes-to-my-client-application-to-use-clustering"></a> 使用群集功能时，是否需要对客户端应用程序进行更改？
 
 -	启用群集功能时，仅数据库 0 可用。如果你的客户端应用程序使用多个数据库并尝试读取或写入数据库 0 之外的其他数据库，则会引发以下异常。`Unhandled Exception: StackExchange.Redis.RedisConnectionException: ProtocolFailure on GET --->` `StackExchange.Redis.RedisCommandException: Multiple databases are not supported on this server; cannot switch to database: 6`
 
