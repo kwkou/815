@@ -247,9 +247,7 @@
 
 11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\\Home\\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 `<h2>Submit</h2>` 后面添加以下行。`ViewBag.MessageCount` 当前为空。稍后你将填充它。
 
-	```
 	<p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
-	```
 
 12. 现在，你已实现你的 UI。你可以按 **F5** 运行应用程序并确认其按预期方式运行。
 
@@ -322,7 +320,7 @@
                 }
             }
         }
-	```
+
 
 4.  现在，请确保你的 **Initialize** 方法会被调用。在“解决方案资源管理器”中，双击“Global.asax\Global.asax.cs”。
 
@@ -402,26 +400,26 @@
 
 11. 在 **WorkerRole.cs** 中，将 **QueueName** 变量的值 `"ProcessingQueue"` 更改为 `"OrdersQueue"`，如以下代码所示。
 
-	```
+
 	// The name of your queue.
 	const string QueueName = "OrdersQueue";
-	```
+
 
 12. 在 WorkerRole.cs 文件顶部添加以下 using 语句。
 
-	```
+
 	using FrontendWebRole.Models;
-	```
+
 
 13. 在 `Run()` 函数中，在 `OnMessage()` 调用的内部，将 `try` 子句的内容替换为以下代码。
 
-	```
+
 	Trace.WriteLine("Processing", receivedMessage.SequenceNumber.ToString());
 	// View the message as an OnlineOrder.
 	OnlineOrder order = receivedMessage.GetBody<OnlineOrder>();
 	Trace.WriteLine(order.Customer + ": " + order.Product, "ProcessingMessage");
 	receivedMessage.Complete();
-	```
+
 
 14. 你已完成此应用程序。你可以测试整个应用程序，方法是右键单击“解决方案资源管理器”中的 MultiTierApp 项目，选择“设置为启动项目”，然后按 F5。请注意，消息计数不会递增，因为辅助角色会处理队列中的项并将其标记为完成。你可以通过查看 Azure 计算模拟器 UI 来查看辅助角色的跟踪输出。可通过右击任务栏的通知区域中的模拟器图标并选择“显示计算模拟器 UI”来执行此操作。
 
