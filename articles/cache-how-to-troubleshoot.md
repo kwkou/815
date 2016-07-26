@@ -297,7 +297,7 @@ StackExchange.Redis 使用名为 `synctimeout` 的配置设置进行同步操作
 
     有关详细信息，请参阅[服务器上的内存压力](#memory-pressure-on-the-server)。
 
-## 其他信息
+## <a name="additional-information"></a> 其他信息
 
 -	[我应使用哪种 Redis 缓存产品和大小？](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)
 -	[如何制定基准和测试缓存的性能？](/documentation/articles/cache-faq/#how-can-i-benchmark-and-test-the-performance-of-my-cache)

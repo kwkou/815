@@ -96,21 +96,21 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户 UI、PowerShell 
 
     - **Azure 服务管理方法：**可以使用编程语言的 SDK 启动 Runbook。以下 C# 代码段用于在自动化帐户中启动 Runbook。可以在 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs)中查看完整代码。
 
-        public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
-        {
-            var response = AutomationClient.Jobs.Create(automationAccount, new JobCreateParameters
+            public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
             {
-                Properties = new JobCreateProperties
+                var response = AutomationClient.Jobs.Create(automationAccount, new JobCreateParameters
                 {
-                    Runbook = new RunbookAssociationProperty
+                    Properties = new JobCreateProperties
                     {
-                        Name = runbookName
-                    },
-                        Parameters = parameters
-                }
-            });
-            return response.Job;
-        }
+                        Runbook = new RunbookAssociationProperty
+                        {
+                            Name = runbookName
+                        },
+                            Parameters = parameters
+                    }
+                });
+                return response.Job;
+            }
 
 若要启动此方法，请创建一个字典来存储 Runbook 参数（**VMName** 和 **ServiceName**）及其值。然后启动 Runbook。以下 C# 代码段用于调用上面定义的方法。
 
