@@ -72,7 +72,7 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 -	[为什么在某些子网中创建 Redis 缓存失败，而在其他子网中不会失败？](#why-does-creating-a-redis-cache-fail-in-some-subnets-but-not-others)
 
 
-## Azure Redis 缓存和 VNet 有哪些常见的错误配置问题？
+### <a name="what-are-some-common-misconfiguration-issues-with-azure-redis-cache-and-vnets"></a> Azure Redis 缓存和 VNet 有哪些常见的错误配置问题？
 
 在 VNet 中托管 Azure Redis 缓存时，会使用下表中的端口。如果这些端口受阻，则缓存可能无法正常工作。在 VNet 中使用 Azure Redis 缓存时，阻止这些端口中的一个或多个是最常见的错误配置问题。
 
@@ -98,11 +98,11 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 
 
-### 是否可以对标准或基本缓存使用 VNet？
+### <a name="can-i-use-vnets-with-a-standard-or-basic-cache"></a> 是否可以对标准或基本缓存使用 VNet？
 
 只能对高级缓存使用 VNet。
 
-### 为什么在某些子网中创建 Redis 缓存失败，而在其他子网中不会失败？
+### <a name="why-does-creating-a-redis-cache-fail-in-some-subnets-but-not-others"></a> 为什么在某些子网中创建 Redis 缓存失败，而在其他子网中不会失败？
 
 如果你要将 Azure Redis 缓存部署到 ARM VNet，则该缓存必须在不包含任何其他资源类型的专用子网中。如果尝试将 Azure Redis 缓存部署到包含其他资源的 ARM VNet 子网，则部署将失败。必须先删除该子网中的现有资源，然后才能创建新的 Redis 缓存。
 
@@ -140,7 +140,6 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 -	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
 -	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
--	[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
 
 
 

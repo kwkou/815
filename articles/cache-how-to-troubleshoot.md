@@ -23,7 +23,7 @@
 
 >[AZURE.NOTE] 本指南中的多个故障排除步骤包括了运行 Redis 命令和监视各种性能指标的说明。如需更多信息和说明，请参阅[其他信息](#additional-information)部分的文章。
 
-## 客户端故障排除
+## <a name="client-side-troubleshooting"></a> 客户端故障排除
 
 
 此部分讨论如何排查因客户端应用程序出现状况而发生的问题。
@@ -35,7 +35,7 @@
 -	[请求/响应大小过大](#large-requestresponse-size)
 -	[我在 Redis 中的数据发生了什么情况？](#what-happened-to-my-data-in-redis)
 
-### 客户端内存压力
+### <a name="memory-pressure-on-the-client"></a> 客户端内存压力
 
 #### 问题
 
@@ -51,7 +51,7 @@
 升级客户端，使客户端 VM 大小更大，内存更多，或者对内存使用模式进行深入分析以减少内存消耗。
 
 
-### 流量激增
+### <a name="burst-of-traffic"></a> 流量激增
 
 #### 问题
 
@@ -74,7 +74,7 @@
 配置 [ThreadPool 设置](https://gist.github.com/JonCole/e65411214030f0d823cb)，确保线程池在流量激增的情况下快速进行扩展。
 
 
-### 客户端 CPU 使用率过高
+### <a name="high-client-cpu-usage"></a> 客户端 CPU 使用率过高
 
 #### 问题
 
@@ -92,7 +92,7 @@
 
 
 
-### 超出客户端带宽
+### <a name="client-side-bandwidth-exceeded"></a> 超出客户端带宽
 
 #### 问题
 
@@ -107,7 +107,7 @@
 增加客户端 VM 大小或减少网络带宽消耗。
 
 
-### 请求/响应大小过大
+### <a name="large-requestresponse-size"></a> 请求/响应大小过大
 
 #### 问题
 
@@ -130,12 +130,12 @@
 
 #### 解决方法
 
-1.	Redis 适用于大量的小型值，而不适用于少量的大型值。首选解决方案是将数据分解成较小的相关值。请参阅 [What is the ideal value size range for redis? Is 100KB too large?（Redis 的理想值大小范围是多少？100KB 是否过大？）](https://groups.google.com/forum/#!searchin/redis-db/size/redis-db/n7aa2A4DZDs/3OeEPHSQBAAJ)这个帖子，以详细了解为何我们建议你使用较小值。
+1.	Redis 适用于大量的小型值，而不适用于少量的大型值。首选解决方案是将数据分解成较小的相关值。
 2.	增加 VM 的大小（针对客户端和 Redis 缓存服务器），以便提高带宽能力，减少大型响应的数据传输时间。请注意，不能只提高服务器的带宽，也不能只提高客户端的带宽。测量带宽使用情况，将其与当前 VM 大小所对应的带宽能力进行比较。
 3.	增加所使用的 `ConnectionMultiplexer` 对象数，以及通过不同连接进行的轮询请求数。
 
 
-### 我在 Redis 中的数据发生了什么情况？
+### <a name="what-happened-to-my-data-in-redis"></a> 我在 Redis 中的数据发生了什么情况？
 
 #### 问题
 
@@ -146,7 +146,7 @@
 请参阅 [What happened to my data in Redis?（我在 Redis 中的数据发生了什么情况？）](https://gist.github.com/JonCole/b6354d92a2d51c141490f10142884ea4#file-whathappenedtomydatainredis-md)，了解可能的原因和解决方法。
 
 
-## 服务器端故障排除
+## <a name="server-side-troubleshooting"></a> 服务器端故障排除
 
 此部分讨论如何排查因缓存服务器出现状况而发生的问题。
 
@@ -154,14 +154,14 @@
 -	[CPU 使用率/服务器负载过高](#high-cpu-usage-server-load)
 -	[超出服务器端带宽](#server-side-bandwidth-exceeded)
 
-### 服务器上的内存压力
+### <a name="memory-pressure-on-the-server"></a> 服务器上的内存压力
 
 #### 问题
 
 服务器端的内存压力会导致各种性能问题，从而延缓对请求的处理。出现内存压力时，系统通常必须将数据从物理内存以分页方式转移到磁盘上的虚拟内存。此分页错误导致系统的性能显著下降。这种内存压力可能有多个原因：
 
 1.	缓存中填满了数据。
-2.	Redis 出现大量内存碎片 - 大多数情况下是因为存储了大型对象（Redis 适用于小型对象 - 如需详细信息，请参阅 [What is the ideal value size range for redis? Is 100KB too large?（Redis 的理想值大小范围是多少？100KB 是否过大？）](https://groups.google.com/forum/#!searchin/redis-db/size/redis-db/n7aa2A4DZDs/3OeEPHSQBAAJ)这篇帖子）。
+2.	Redis 出现大量内存碎片 - 大多数情况下是因为存储了大型对象。
 
 #### 度量
 
@@ -177,7 +177,7 @@ Redis 公开了两个指标，你可以通过这两个指标来确定此问题�
 4. [扩展](/documentation/articles/cache-how-to-scale/)到更大型的缓存大小。
 5. 如果你使用的是[启用了 Redis 群集的高级缓存](/documentation/articles/cache-how-to-premium-clustering/)，则可[增加分片数](/documentation/articles/cache-how-to-premium-clustering/#change-the-cluster-size-on-a-running-premium-cache)。
 
-### CPU 使用率/服务器负载过高
+### <a name="high-cpu-usage-server-load"></a> CPU 使用率/服务器负载过高
 
 #### 问题
 
@@ -191,7 +191,7 @@ CPU 使用率高可能意味着，客户端可能无法及时处理 Redis 发出
 
 通过[扩展](/documentation/articles/cache-how-to-scale/)提高缓存层大小和 CPU 容量，或者调查清楚导致 CPU 峰值的原因。
 
-### 超出服务器端带宽
+### <a name="server-side-bandwidth-exceeded"></a> 超出服务器端带宽
 
 #### 问题
 
@@ -206,7 +206,7 @@ CPU 使用率高可能意味着，客户端可能无法及时处理 Redis 发出
 如果你一直很接近定价层和缓存大小所遵循的最大带宽，则可考虑[扩展](/documentation/articles/cache-how-to-scale/)到网络带宽更高的定价层或大小（使用[此表](/documentation/articles/cache-faq/#cache-performance)中的值作为指导）。
 
 
-## StackExchange.Redis 超时异常
+## <a name="stackexchangeredis-timeout-exceptions"></a> StackExchange.Redis 超时异常
 
 StackExchange.Redis 使用名为 `synctimeout` 的配置设置进行同步操作，该设置的默认值为 1000 毫秒。如果同步调用未在规定时间内完成，StackExchange.Redis 客户端会引发类似于以下示例的超时错误。
 

@@ -109,7 +109,7 @@ ConnectTimeout|连接操作的超时，以毫秒为单位。|
 -	重试
 	-	对于 ConnectRetry 和 ConnectTimeout，一般指导原则是快速失败并重试。这取决于工作负载，以及客户端发出 Redis 命令和接收响应平均花费的时间。
 	-	让 StackExchange.Redis 自动重新连接，而不是检查连接状态，然后由你自己重新连接。**避免使用 ConnectionMultiplexer.IsConnected 属性**。
-	-	雪球效应 - 有时，你可能会遇到这样的问题：不断地重试解决，但问题不断累积而永远无法恢复。在这种情况下，你应该根据 Azure.cn 模式和实践组发布的[一般重试指导原则](https://github.com/mspnp/azure-guidance/blob/master/Retry-General.md)中所述，考虑使用指数退让重试算法。
+	-	雪球效应 - 有时，你可能会遇到这样的问题：不断地重试解决，但问题不断累积而永远无法恢复。在这种情况下，你应该根据 Azure.cn 模式和实践组发布的[一般重试指导原则](https://github.com/mspnp/azure-guidance/blob/master/Retry-Policies.md)中所述，考虑使用指数退让重试算法。
 -	超时值
 	-	根据工作负载相应地设置值。如果要存储较大值，应将超时设置为较大值。
 		-	将 ABortOnConnectFail 设置为 false，让 StackExchange.Redis 为你重新连接。
@@ -188,7 +188,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 
 有关下载 Redis 工具的说明，请参阅[如何运行 Redis 命令？](#cache-commands)部分。
 
-##<a name="cache-benchmarking"></a> 如何制定基准和测试缓存的性能？
+##<a name="cache-benchmarking" id="how-can-i-benchmark-and-test-the-performance-of-my-cache"></a> 如何制定基准和测试缓存的性能？
 
 -	你可以使用所选的工具[下载和查看](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring)这些度量值。
 -	可以使用 redis-benchmark.exe 对 Redis 服务器进行负载测试。
@@ -197,7 +197,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 	-	如果你的负载导致出现大量内存碎片，则你应该扩展为更大的缓存大小。
 -	有关下载 Redis 工具的说明，请参阅[如何运行 Redis 命令？](#cache-commands)部分。
 
-##<a name="cache-commands"></a> 如何运行 Redis 命令？
+##<a name="cache-commands" id="how-can-i-run-redis-commands"></a> 如何运行 Redis 命令？
 
 你可以使用 [Redis 命令](http://redis.io/commands#)中列出的任何命令。可以配合多个选项来运行 Redis 命令。
 
@@ -230,7 +230,6 @@ Azure Redis 缓存没有本地模拟器，但可以在本地计算机上从 [Red
 ##<a name="cache-common-patterns"></a> 常见的缓存模式和注意事项有哪些？
 
 -	Azure.cn 模式和实践组制定了以下指导原则。
-	-	[缓存指导原则](https://github.com/mspnp/azure-guidance/blob/master/Caching.md)。
 	-	[Azure 云应用程序设计和实施指导原则](https://github.com/mspnp/azure-guidance)
 -	[使用 Azure Redis 缓存的常见缓存模式](/documentation/articles/cache-howto-common-cache-patterns/)
 
@@ -243,7 +242,7 @@ Azure Redis 缓存基于主流开源 Redis 缓存，让你能够访问由 Azure.
 
 ## 哪种 Azure 缓存产品适合我？
 
->[AZURE.IMPORTANT]按照去年的[公告](https://azure.microsoft.com/blog/azure-managed-cache-and-in-role-cache-services-to-be-retired-on-11-30-2016/)，将于 2016 年 11 月 30 日停用 Azure 托管缓存服务和 Azure 角色中缓存服务。我们建议使用 [Azure Redis 缓存](/home/features/cache/)。有关迁移的信息，请参阅[从托管缓存服务迁移到 Azure Redis 缓存](/documentation/articles/cache-migrate-to-redis/)。
+>[AZURE.IMPORTANT]按照去年的[公告](https://azure.microsoft.com/blog/azure-managed-cache-and-in-role-cache-services-to-be-retired-on-11-30-2016/)，将于 2016 年 11 月 30 日停用 Azure 托管缓存服务和 Azure 角色中缓存服务。我们建议使用 [Azure Redis 缓存](/home/features/redis-cache/)。
 
 ### Azure Redis Cache
 Azure Redis 缓存已正式发布，最大大小为 53 GB，且其可用性 SLA 为 99.9%。全新[高级层](/documentation/articles/cache-premium-tier-intro/)提供的最大大小为 530 GB，且支持群集、VNET 和持久性，并附带 99.9% SLA。

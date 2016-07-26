@@ -60,7 +60,7 @@
 
 - [重置你的 VM 密码](/documentation/articles/virtual-machines-windows-reset-rdp/)。
 
-- 如果仍遇到 RDP 问题，则可以[打开支持请求](https://azure.microsoft.com/support/contact/)或阅读[更详细的 RDP 故障排除概念和步骤](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)。
+- 如果仍遇到 RDP 问题，则可以[打开支持请求](/support/contact/)或阅读[更详细的 RDP 故障排除概念和步骤](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)。
 
 
 ## 故障排除通过使用经典部署模型创建的 VM
@@ -83,7 +83,7 @@
 
 - [重置你的 VM 密码](/documentation/articles/virtual-machines-windows-reset-rdp/)。
 
-- 如果仍遇到 RDP 问题，则可以[打开支持请求](https://azure.microsoft.com/support/contact/)或阅读[更详细的 RDP 故障排除概念和步骤](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)。
+- 如果仍遇到 RDP 问题，则可以[打开支持请求](/support/contact/)或阅读[更详细的 RDP 故障排除概念和步骤](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)。
 
 
 ## 对特定的远程桌面连接错误进行故障排除

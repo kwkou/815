@@ -20,7 +20,7 @@ Azure 自动化中的文本编辑器可以用来编辑 PowerShell 工作流 Runb
 Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布版。你先对 Runbook 的草稿版进行编辑，然后将其发布，这样便可以执行了。无法编辑已发布版本。有关详细信息，请参阅[发布 Runbook](/documentation/articles/automation-creating-importing-runbook/#publishing-a-runbook)。
 
 
-## 使用 Azure 经典管理门户编辑 Runbook
+## <a name="to-edit-a-runbook-with-the-azure-portal"></a> 使用 Azure 经典管理门户编辑 Runbook
 
 通过以下过程打开 Runbook 即可在文本编辑器中进行编辑。
 

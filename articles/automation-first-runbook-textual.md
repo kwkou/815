@@ -16,7 +16,7 @@
 
 本教程将指导你在 Azure 自动化中创建 PowerShell 工作流 Runbook。我们将从一个简单的 Runbook 开始，我们将测试和发布该 Runbook，同时介绍如何跟踪 Runbook 作业的状态。然后我们将通过修改 Runbook 来实际管理 Azure 资源，这种情况下将启动 Azure 虚拟机。然后我们将通过添加 Runbook 参数来使该 Runbook 更稳健。
 
-## 先决条件
+## <a name="prerequisites"></a> 先决条件
 
 为了完成本教程，你需要满足以下条件。
 

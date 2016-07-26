@@ -34,11 +34,12 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 ## 如何自动执行缩放操作
 
 你可以使用 Azure Redis 缓存 PowerShell cmdlet、Azure CLI 和 Azure 管理库 (MAML) 进行缩放。
+
 -	[使用 PowerShell 进行缩放](#scale-using-powershell)
 -	[使用 Azure CLI 进行缩放](#scale-using-azure-cli)
 -	[使用 MAML 进行缩放](#scale-using-maml)
 
-### 使用 PowerShell 进行缩放
+### <a name="scale-using-powershell"></a> 使用 PowerShell 进行缩放
 
 修改 `Size`、`Sku` 或 `ShardCount` 属性后，可以在 PowerShell 中使用 [Set-AzureRmRedisCache](https://msdn.microsoft.com/zh-cn/library/azure/mt634518.aspx) cmdlet 缩放 Azure Redis 缓存实例。以下示例演示了如何将名为 `myCache` 的缓存缩放为 2.5 GB 缓存。
 
@@ -46,13 +47,13 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 有关使用 PowerShell 进行缩放的详细信息，请参阅[使用 PowerShell 缩放 Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell/#scale)。
 
-### 使用 Azure CLI 进行缩放
+### <a name="scale-using-azure-cli"></a> 使用 Azure CLI 进行缩放
 
 若要使用 Azure CLI 缩放 Azure Redis 缓存实例，请调用 `azure rediscache set` 命令并传入所需的配置更改，包括新大小、sku 或群集大小，具体取决于所需的缩放操作。
 
 有关使用 Azure CLI 进行缩放的详细信息，请参阅[更改现有 Redis 缓存的设置](/documentation/articles/cache-manage-cli/#scale)。
 
-### 使用 MAML 进行缩放
+### <a name="scale-using-maml"></a> 使用 MAML 进行缩放
 
 若要使用 [Azure 管理库 (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/) 缩放 Azure Redis 缓存实例，请调用 `IRedisOperations.CreateOrUpdate` 方法并传入 `RedisProperties.SKU.Capacity` 的新大小。
 
@@ -91,7 +92,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 -	[如何判断缩放何时完成？](#how-can-i-tell-when-scaling-is-complete)
 -	[为何此功能处于预览状态？](#why-is-this-feature-in-preview)
 
-### 可以向上缩放到高级缓存，或在其中向下缩放吗？
+### <a name="can-i-scale-to-from-or-within-a-premium-cache"></a> 可以向上缩放到高级缓存，或在其中向下缩放吗？
 
 -	不能从**高级**缓存向下缩放到**基本**或**标准**定价层。
 -	可以从一个**高级**缓存定价层缩放到另一个高级缓存定价层。
@@ -100,25 +101,25 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
     有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集](/documentation/articles/cache-how-to-premium-clustering/)。
 
-### 缩放后，我是否需要更改缓存名称或访问密钥？
+### <a name="after-scaling-do-i-have-to-change-my-cache-name-or-access-keys"></a> 缩放后，我是否需要更改缓存名称或访问密钥？
 
 不需要，在缩放操作期间缓存名称和密钥不变。
 
-### 缩放的工作原理？
+### <a name="how-does-scaling-work"></a> 缩放的工作原理？
 
 -	将**基本**缓存缩放为不同大小时，将关闭该缓存，同时使用新的大小预配一个新缓存。在此期间，缓存不可用，且缓存中的所有数据都将丢失。
 -	将**基本**缓存缩放为**标准**缓存时，将预配副本缓存并将主缓存中的数据复制到副本缓存。在缩放过程中，缓存仍然可用。
 -	将**标准**缓存缩放为不同大小或缩放到**高级**缓存时，将关闭其中一个副本，同时将其重新预配为新的大小，将数据转移，然后，在重新预配另一个副本之前，另一个副本将执行一次故障转移，类似于一个缓存节点发生故障时所发生的过程。
 
-### 在缩放过程中是否会丢失缓存中的数据？
+### <a name="will-i-lose-data-from-my-cache-during-scaling"></a> 在缩放过程中是否会丢失缓存中的数据？
 
 -	将**基本**缓存缩放为新的大小时，所有数据都将丢失，且在缩放操作期间缓存将不可用。
 -	将**基本**缓存缩放为**标准**缓存时，通常将保留缓存中的数据。
 -	将**标准**缓存扩展为更大大小或更大层，或者将**高级**缓存扩展为更大大小时，通常将保留所有数据。将**标准**或**高级**缓存缩小到更小大小时，数据可能会丢失，具体取决于与缩放后的新大小相关的缓存中的数据量。如果缩小时数据丢失，则使用 [allkeys lru](http://redis.io/topics/lru-cache) 逐出策略逐出密钥。
 
-### 在缩放过程中，自定义数据库设置是否会受影响？
+### <a name="is-my-custom-databases-setting-affected-during-scaling"></a> 在缩放过程中，自定义数据库设置是否会受影响？
 
-某些定价层具有不同的[数据库限制](/documentation/articles/cache-configure/#databases)，因此，如果在缓存创建过程中为 `databases` 设置配置了自定义值，则在向下缩放时需注意一些注意事项。
+某些定价层具有不同的数据库限制，因此，如果在缓存创建过程中为 `databases` 设置配置了自定义值，则在向下缩放时需注意一些注意事项。
 
 -	缩放到的定价层的 `databases` 限制低于当前层：
 	-	如果你使用的是默认 `databases` 数（对于所有定价层来说为 16），则不会丢失数据。
@@ -128,12 +129,12 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 注意，当标准和高级缓存有 99.9% 可用性 SLA 时，则没有数据丢失方面的 SLA。
 
-### 在缩放过程中，缓存是否可用？
+### <a name="will-my-cache-be-available-during-scaling"></a> 在缩放过程中，缓存是否可用？
 
 -	**标准**和**高级**缓存在缩放操作期间保持可用。
 -	**基本**缓存在执行缩放为不同大小的缩放操作过程中处于脱机状态，但在从**基本**缓存缩放为**标准**缓存时仍然可用。
 
-### 不支持的操作
+### <a name="operations-that-are-not-supported"></a> 不支持的操作
 
 -	不能从较高的定价层缩放到较低的定价层。
     -    不能从**高级**缓存向下缩放到**标准**或**基本**缓存。
@@ -144,11 +145,11 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 如果缩放操作失败，该服务将尝试还原操作并且缓存将还原为初始大小。
 
-### 缩放需要多长时间？
+### <a name="how-long-does-scaling-take"></a> 缩放需要多长时间？
 
 缩放大约需要 20 分钟，具体取决于缓存中的数据量。
 
-### 如何判断缩放何时完成？
+### <a name="how-can-i-tell-when-scaling-is-complete"></a> 如何判断缩放何时完成？
 
 在 Azure 中国区，目前无法在 Azure 门户预览版中管理 Redis 缓存，因此无法在门户中查看缩放状态。但是，可以使用以下 PowerShell 命令来获取缓存的状态：
 
@@ -156,7 +157,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 在大约 20 分钟后，可以运行以下命令查看缓存大小是否已更改。
 
-### 为何此功能处于预览状态？
+### <a name="why-is-this-feature-in-preview"></a> 为何此功能处于预览状态？
 
 我们现在发布此功能是为了获取反馈。基于该反馈，我们将很快发布此功能的正式版本。
 
