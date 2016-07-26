@@ -53,7 +53,7 @@
 
 6. 在 Program.cs 文件顶部添加以下 `using` 语句。
 
-	```c
+	```
   	using System.ServiceModel;
   	using System.ServiceModel.Channels;
   	using System.ServiceModel.Web;
