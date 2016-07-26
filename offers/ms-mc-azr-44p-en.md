@@ -13,45 +13,34 @@
 > [AZURE.LANGUAGE]
 - [中文](/offers/ms-mc-azr-44p/)
 - [English](/offers/ms-mc-azr-44p-en/)
-#Offer Details
 
-## Azure Operated by 21Vianet
+##1 RMB Trial Offer Details
 
-##1 RMB Trial Offer
+1 RMB Trial offer is designed to provide you with the preliminary experience of Azure services. With payment of 1 RMB, you will get Azure service credits equivalent to 1,500 RMB used within one month.
 
-This is a limited offer for new customers only. After activating your account, we offer a one-month trial for an initial 1 RMB payment which provides you with credits of up to 1,500 RMB to use on Azure services for up to a month.
+With this offering, you can use various of Azure services upon your needs, including Virtual Machines, Cloud Services, Storage, SQL Database and many more.
 
-1RMB Trial Offer is intended only for development and testing. If your purpose is for commercial use, please convert to  [Standard Pay-In-Advance](https://www.azure.cn/offers/ms-mc-arz-33p/) subscription.
+[Click here to apply 1 RMB Trial](/pricing/1rmb-trial-form/)
 
-##Flexibility with Azure Credits
+##Rules of the Offer
 
-You receive 1,500 RMB of Azure credits with the Trial. The choice is now yours on how you use your Azure credits. Use them on the Azure service that meet your needs including, including Virtual Machines, Cloud Services, Storage, SQL Database and many more.
+- Any customer can only apply for this offer once. For example, the same payment account (including UnionPay and Alipay) can only be used once for this offer. Violation of this policy may result in termination of your subscription, deletion of all Customer Data, and forfeiture of the 1 RMB payment.
+- If you run out of 1,500 RMB credits or run out of one-month given (whichever comes first), your subscription will be disabled and your Customer Data will be permanently deleted unless you recharge  within 15 days as detailed in Conversion to Paid Offer below. This will re-activate your subscription but may require re-configuration of related services. 
+- 1 RMB Trial Offer is intended only for development and testing environment. If your purpose is for commercial use, please convert to [Standard Pay-In-Advanc](/offers/ms-mc-arz-33p/) subscription.
 
-If you spend 1,500 RMB or at the end of one month (whichever comes first), your subscription will be disabled and your Customer Data will be permanently deleted unless you add more funds within 90 days as detailed in Conversion to Paid Offer below. This will re-activate your subscription but may require re-configuration of related services. 
+##Update to Standard Pay-In-Advance Subscription
 
-This offer is limited to one offer per new customer. For example, the same paying account (including UnionPay and Alipay) can only be used to pay once for this offer. Violation of this policy may result in termination of your subscription, deletion of all Customer Data, and forfeiture of the 1 RMB payment.
-
-[Apply for 1RMB Trial >](/pricing/1rmb-trial/)
-
-##Conversion to Paid Offer
-
-You may convert your trial subscription into a  [Standard Pay-In-Advance](https://www.azure.cn/offers/ms-mc-arz-33p/) subscription by adding additional funds of 1,000 RMB or more. Your Azure Credits will be increased by the amount of the additional funds you add and are valid for 12 months. You may make subsequent additions of funds that will be valid for 12 months from the date of purchase, but this will not extend Azure Credits previously purchased and any Azure Credits not used within 12 months of their purchase will be forfeited.
-
-[Pay In Advance Now >](/pricing/pia/)
+You could update your subscription into a [Standard Pay-In-Advanc](/offers/ms-mc-arz-33p/) subscription any time during 1 RMB trial period. Please click “update now” in your subscription page, you could enjoy a richer experience of Azure services by adding additional funds of 1,000 RMB or more. Details please refer to [here](/offers/ms-mc-arz-33p/). 
 
 ##Payment Options & Pricing Details
 
-Alipay and China UnionPay (CUP) only.
+We support payment methods including Alipay and China UnionPay.
 
-More details on pricing and billing, including the prices for individual Azure features, can be found on our [Pricing page](https://www.azure.cn/pricing/overview/).
+Friendly reminder: We currently do not support switch payment method after you establish the account. You need to stick with the same payment method as used in the first time.
 
-##Cancelation Policy
+More details on pricing and billing, including the prices for individual Azure features, can be found on our [ Pricing page](/pricing/overview/). 
 
-You may cancel this subscription at any time but will forfeit any prepaid amounts in your account.
-
-##Usage Quotas
-
-The following monthly usage quotas are applied. 
+##Limits on Usage Quotas
 
 **Cloud Services and Virtual Machines**
 
@@ -63,7 +52,7 @@ The standard quota is 4 concurrent Standard Small (A1) compute instances or an e
 |Extra Small (A0) |1 |
 |Small (A1) |1 |
 |Medium (A2)| 2 |
-|Large (A3) or A6 |4 |
+|Large (A3) or (A6)|4 |
 
 **Storage**
 
@@ -79,26 +68,33 @@ The standard quota is 4 concurrent Standard Small (A1) compute instances or an e
 
 An object is an entry in the directory service, represented by its unique distinguished name. An example of an object is a user entry used for authentication purpose.
 
+You need to pay an extra charge if your use of the service exceeds the above limits within the given month.  We reserve the right to suspend your account if the use of the service exceeds the above limits with a prior email notice. 
+
+**CDN Ceilings**
+
+200GB per subscription, there is no limit on the note number (multiple notes could be created under one subscription)
+
 **Data Transfer**
 
-50 GB inbound data transfer
+50GB inbound data transfer
 
-50 GB outbound data transfer
+50GB outbound data transfer
 
 If you exceed the data transfer quota, your account may be suspended without prior notice, and the credit amount will be reset to ‘0.’ You can visit [here](https://account.windowsazure.cn/Subscriptions/) to verify real-time data transfer usage status.
 
-If you will require a higher Data Transfer quota, you will need to convert to a  [Standard Pay-in-Advance Offer](https://www.azure.cn/offers/ms-mc-arz-33p/).
+If you will require a higher Data Transfer quota, you will need to convert to a [Standard Pay-in-Advance Offer](/offers/ms-mc-arz-33p/).
 
-Service Level Agreements
+##Service Level Agreements
 
-We do not provide Service Level Agreements (SLAs) for this trial offer. If you convert to a Pay-In-Advance Offer, we provide a set of robust service level agreements. More details on our SLAs can be found on our  [SLA page](https://www.azure.cn/support/legal/sla/). 
+We do not provide Service Level Agreements (SLAs) for this trial offer. If you convert to a Pay-In-Advance Offer, we will provide a set of robust service level agreements. More details on our SLAs can be found on our [SLA page](/support/legal/sla/). 
 
-Resource Commitment
+##Resource Commitment
 
 Any quota described in the Usage Quotas section is not a commitment that there will be sufficient resources available for you to reach the quota.
 
-For any subscriptions of this offer that are not incurring charges and are inactive for over 90 days, we reserve the right to remove any compute resources including hosted service(s), virtual machines and websites. Please note that no data would be deleted and customers can redeploy at any time. We will also provide advance notice prior to removing any compute resources.
+For any subscriptions of this offer that are not incurring charges and are inactive for over 15 days, we reserve the right to remove any compute resources including hosted service(s), virtual machines and websites. Please note that no data would be deleted and customers can redeploy at any time. We will also provide advance notice prior to removing any compute resources.
 
-You can also avoid having your Compute resources removed by doing either of the following every 90 days:
-- Log into the management [portal](https://manage.windowsazure.cn/)
+You can also avoid having your Compute resources removed by doing either of the following every 15 days:
+
+- Log  into the management [portal](https://manage.windowsazure.cn/)
 - Access your hosted service(s) via our Azure APIs
