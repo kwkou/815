@@ -47,7 +47,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
     此部分介绍如何允许跨域资源共享 (CORS)。我们将讨论跨域访问，以及如何使用 Azure 存储空间内置的 CORS 功能来处理这种访问。
 
-##管理平面安全性
+##<a id="management-plane-security"></a>管理平面安全性
 
 管理平面包含影响存储帐户本身的操作。例如，你可以创建或删除存储帐户、获取订阅中的存储帐户列表、检索存储帐户密钥，或重新生成存储帐户密钥。
 
@@ -191,7 +191,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 	本文介绍如何使用 Active Directory 来控制 Azure 密钥保管库中 Azure 存储空间密钥的访问。此外，说明如何使用 Azure 自动化作业每小时重新生成密钥。
 
-##数据平面安全性
+##<a id="data-plane-security"></a>数据平面安全性
 
 数据平面安全是指用于保护存储在 Azure 存储空间的数据对象（Blob、队列、表和文件）的方法。我们已了解在传输数据期间加密数据和安全的方法，但该从何处着手来允许访问对象？
 
@@ -315,7 +315,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 	-	[SAS 入门教程](https://github.com/Azure-Samples/storage-dotnet-sas-getting-started)
 
-##传输中加密
+##<a id="encryption-in-transit"></a>传输中加密
 
 ###传输级加密 – 使用 HTTPS
 
@@ -464,7 +464,7 @@ SSE 由 Azure 存储空间管理，其管理非常简单。使用 SSE 不是针�
 
 如果已针对 VM 中的磁盘启用 Azure 磁盘加密，并对保存 VHD 文件的存储帐户启用了 SSE，则它将正常运行；它会导致任何新写入的数据加密两次。-->
 
-##存储分析
+##<a id="storage-analytics"></a>存储分析
 
 ###使用存储分析来监视授权类型
 
@@ -540,7 +540,7 @@ SSE 由 Azure 存储空间管理，其管理非常简单。使用 SSE 不是针�
 
 	此文提供 Microsoft Message Analyzer 的参考信息，包括教程、快速入门和功能摘要的链接。
 
-##跨源资源共享 (CORS)
+##<a id="Cross-Origin-Resource-Sharing-CORS"></a>跨源资源共享 (CORS)
 
 ###跨域访问资源
 
