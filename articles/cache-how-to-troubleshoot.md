@@ -276,18 +276,18 @@ StackExchange.Redis 使用名为 `synctimeout` 的配置设置进行同步操作
 11. 如果你使用的是 `RedisSessionStateprovider`，请确保你已经正确设置了重试超时。`retrytimeoutInMilliseconds` 应高于 `operationTimeoutinMilliseonds`，否则不会进行重试。在下面的示例中，`retrytimeoutInMilliseconds` 设置为 3000。有关详细信息，请参阅 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider/)和 [How to use the configuration parameters of Session State Provider and Output Cache Provider（如何使用会话状态提供程序和输出缓存提供程序的配置参数）](https://github.com/Azure/aspnet-redis-providers/wiki/Configuration)。
 
 
-	<add
-	  name="AFRedisCacheSessionStateProvider"
-	  type="Microsoft.Web.Redis.RedisSessionStateProvider"
-	  host="enbwcache.redis.cache.chinacloudapi.cn"
-	  port="6380"
-	  accessKey="…"
-	  ssl="true"
-	  databaseId="0"
-	  applicationName="AFRedisCacheSessionState"
-	  connectionTimeoutInMilliseconds = "5000"
-	  operationTimeoutInMilliseconds = "1000"
-	  retryTimeoutInMilliseconds="3000" />
+		<add
+		name="AFRedisCacheSessionStateProvider"
+		type="Microsoft.Web.Redis.RedisSessionStateProvider"
+		host="enbwcache.redis.cache.chinacloudapi.cn"
+		port="6380"
+		accessKey="…"
+		ssl="true"
+		databaseId="0"
+		applicationName="AFRedisCacheSessionState"
+		connectionTimeoutInMilliseconds = "5000"
+		operationTimeoutInMilliseconds = "1000"
+		retryTimeoutInMilliseconds="3000" />
 
 
 12. 通过监视 `Used Memory RSS` 和 `Used Memory`，了解 Azure Redis 缓存服务器上的内存使用情况。如果实施了逐出策略，则当 `Used_Memory` 达到缓存大小时，Redis 就会开始逐出密钥。理想情况下，`Used Memory RSS` 应只稍高于 `Used memory`。差异过大意味着会出现内存碎片（内部或外部）。如果 `Used Memory RSS` 小于 `Used Memory`，则意味着部分缓存内存已被操作系统更换。如果发生这种情况，则会出现明显的延迟。由于 Redis 无法控制如何将其分配内容映射到内存页，`Used Memory RSS` 过高通常是由于内存使用剧增的缘故。当 Redis 释放内存以后，内存会送回给分配器，而分配器不一定会将内存送回给系统。`Used Memory` 值与操作系统所报告的内存消耗量可能存在差异。这可能是因为内存由 Redis 使用并释放后，并未送回给系统。为了减少内存问题，可执行以下步骤。
