@@ -47,7 +47,6 @@ Azure 的基础结构（从设备到应用程序）经过设计，可同时托�
 
 -   [Azure 多重身份验证 (MFA)](/documentation/articles/multi-factor-authentication/) 是多重身份验证服务，它要求用户使用移动应用程序、手机或短信验证登录。它可用于 Azure AD 以通过 Azure MFA 服务器来保护本地资源安全，它还用于使用 SDK 的自定义应用程序和目录。
 
--   [Azure AD 域服务](https://azure.microsoft.com/zh-cn/services/active-directory-ds/)让你可以将 Azure 虚拟机加入一个域，且无需部署域控制器。用户可以使用其公司的 Active Directory 凭据登录到这些虚拟机中，并使用组策略管理已加入域的虚拟机，以便在你的所有 Azure 虚拟机上强制实施安全基准措施。
 
 ##数据访问控制和加密
 
@@ -59,7 +58,7 @@ Microsoft 所采用的“职责分离”和[最小特权](https://en.wikipedia.o
 
 ### Azure 加密技术
 
-你可以使用 [Azure AD 报告](/documentation/articles/active-directory-reporting-audit-events/)来收集对订阅进行管理性访问的相关详细信息。你可以选择在 Azure 的 VHD（内含敏感信息）上配置 [BitLocker 驱动器加密](https://technet.microsoft.com/zh-cn/library/cc732774.aspx)。
+你可以使用 Azure AD 报告来收集对订阅进行管理性访问的相关详细信息。你可以选择在 Azure 的 VHD（内含敏感信息）上配置 [BitLocker 驱动器加密](https://technet.microsoft.com/zh-cn/library/cc732774.aspx)。
 
 Azure 中其他用于确保数据安全的功能包括：
 
@@ -101,7 +100,7 @@ Azure 使用虚拟机监控程序防火墙（数据包筛选器），该防火�
 
 另一项重要的云安全要求是始终进行隔离，防止在共享型多租户体系结构的部署之间对信息进行未经授权的传输和无意的传输。
 
-Azure 通过 VLAN 隔离、ACL、负载平衡器和 IP 筛选器来实施[网络访问控制](https://azure.microsoft.com/zh-cn/blog/network-isolation-options-for-machines-in-windows-azure-virtual-networks/)和隔离。目标为你的虚拟机的外部入站通信仅限于你所定义的端口和协议。实施网络筛选是为了防止欺骗通信，将传入和传出通信限制到可信平台组件。在边界保护设备上会实施流量策略，这些设备默认情况下会拒绝通信。
+Azure 通过 VLAN 隔离、ACL、负载平衡器和 IP 筛选器来实施网络访问控制和隔离。目标为你的虚拟机的外部入站通信仅限于你所定义的端口和协议。实施网络筛选是为了防止欺骗通信，将传入和传出通信限制到可信平台组件。在边界保护设备上会实施流量策略，这些设备默认情况下会拒绝通信。
 
 ![Azure 中的 Microsoft Antimalware](./media/azure-security-getting-started\sec-azgsfig3.PNG)
 
@@ -127,7 +126,7 @@ Azure 中的[分布式网络和虚拟网络](http://download.microsoft.com/downl
 
 你的订阅可能包含多个隔离的专用网络（并包括防火墙、负载平衡以及网络地址转换）。
 
-Azure 在每个 Azure 群集中提供三种主要级别的网络隔离，可通过逻辑方式来隔离流量。[虚拟局域网](/services/virtual-network/) (VLAN) 用于将客户流量与 Azure 网络的其余部分分开。可以通过负载平衡器对从群集外部访问 Azure 网络进行限制。
+Azure 在每个 Azure 群集中提供三种主要级别的网络隔离，可通过逻辑方式来隔离流量。[虚拟局域网](/documentation/services/networking/) (VLAN) 用于将客户流量与 Azure 网络的其余部分分开。可以通过负载平衡器对从群集外部访问 Azure 网络进行限制。
 
 流向 VM 以及从 VM 流出的网络流量必须经过虚拟机监控程序虚拟交换机。根 OS 中的 IP 筛选器组件将根 VM 与来宾 VM 隔离，以及将来宾 VM 相互隔离。它会对流量进行筛选，将通信限制在租户的节点与公共 Internet 之间（基于客户的服务配置），将这些节点与其他租户隔离开。
 
@@ -141,7 +140,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 - 发送或接收不当的广播流量
 
-你可以将虚拟机置于 [Azure 虚拟网络](/documentation/services/virtual-network/)中。这些虚拟网络类似于你在本地环境中配置的网络，在本地环境中，网络通常与虚拟交换机相关联。连接到同一个 Azure 虚拟网络的虚拟机可以相互通信而无需其他配置。你还可以选择在 Azure 虚拟网络中配置不同的子网。
+你可以将虚拟机置于 [Azure 虚拟网络](/documentation/services/networking/)中。这些虚拟网络类似于你在本地环境中配置的网络，在本地环境中，网络通常与虚拟交换机相关联。连接到同一个 Azure 虚拟网络的虚拟机可以相互通信而无需其他配置。你还可以选择在 Azure 虚拟网络中配置不同的子网。
 
 可以使用以下 Azure 虚拟网络技术来帮助实现 Azure 虚拟网络上的安全通信：
 
@@ -202,7 +201,7 @@ Azure 管理员通过 Web 门户访问日志，对日志进行的访问必须经
 
 Microsoft 使用 Syslog 协议从网络设备收集日志，使用 Microsoft 审核收集服务 (ACS) 从主机服务器收集日志。这些日志放置在日志数据库中，发生可疑事件时，就会生成直接发送给 Microsoft 管理员的警报。管理员可以访问并分析这些日志。
 
-[Azure 诊断](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)是 Azure 的一项功能，你可以通过它从运行在 Azure 中的应用程序收集诊断数据。可以将这些诊断数据用于调试和故障排除、度量性能、监视资源使用状况、进行流量分析和容量规划以及进行审核。收集诊断数据后，可以将其传输到 Azure 存储帐户进行永久保存。可以按计划传输，也可以按需传输。[Azure 安全和审核日志管理](/documentation/articles/azure-security-audit-log-management/)这篇文章详细介绍了如何收集此类信息以及如何对其进行分析。
+[Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)是 Azure 的一项功能，你可以通过它从运行在 Azure 中的应用程序收集诊断数据。可以将这些诊断数据用于调试和故障排除、度量性能、监视资源使用状况、进行流量分析和容量规划以及进行审核。收集诊断数据后，可以将其传输到 Azure 存储帐户进行永久保存。可以按计划传输，也可以按需传输。[Azure 安全和审核日志管理](/documentation/articles/azure-security-audit-log-management/)这篇文章详细介绍了如何收集此类信息以及如何对其进行分析。
 
 ##威胁缓解措施
 
@@ -213,8 +212,6 @@ Microsoft 采取的安全控制和风险管理流程目的是确保其云基础�
 ### Azure 如何实施威胁缓解措施
 
 Azure 建立安全控制的目的是实施威胁缓解措施，同时协助客户减轻其环境中的可能威胁。以下列表总结了 Azure 提供的威胁缓解功能：
-
--   [Azure 反恶意软件](/documentation/articles/azure-security-antimalware/)在所有基础结构服务器上默认启用。你可以在自己的 VM 中选择性地启用它。
 
 -   Microsoft 会持续监视服务器、网络和应用程序以检测各种威胁，防止遭到攻击。自动警报会将异常行为通知给管理员，因此管理员可以针对内部和外部威胁采取纠正性措施。
 
