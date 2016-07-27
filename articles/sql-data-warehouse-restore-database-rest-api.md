@@ -63,11 +63,11 @@
 [REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
 
 <!--MSDN references-->
-[创建数据库还原请求]: https://msdn.microsoft.com/library/azure/dn509571.aspx
-[数据库操作状态]: https://msdn.microsoft.com/library/azure/dn720371.aspx
-[获取可还原的已删除数据库]: https://msdn.microsoft.com/library/azure/dn509574.aspx
-[列出可还原的已删除数据库]: https://msdn.microsoft.com/library/azure/dn509562.aspx
-[Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/library/mt693390.aspx
+[创建数据库还原请求]: https://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx
+[数据库操作状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx
+[获取可还原的已删除数据库]: https://msdn.microsoft.com/zh-cn/library/azure/dn509574.aspx
+[列出可还原的已删除数据库]: https://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx
+[Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt693390.aspx
 
 
 <!--Blog references-->
