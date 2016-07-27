@@ -12,6 +12,8 @@
    ms.date="06/20/2016"
    wacn.date="07/04/2016"/>
 
+#将现有可执行文件部署到 Azure Service Fabric
+
 可以在 Azure Service Fabric 中运行任何类型的应用程序，如 Node.js、Java 或本机应用程序。Service Fabric 术语将这些类型的应用程序称为来宾可执行文件。
 来宾可执行文件由 Service Fabric 如同无状态服务一样进行处理。因此，它们会基于可用性和其他指标位于群集中的节点上。本文介绍如何使用 Visual Studio 或命令行实用工具打包来宾可执行文件并部署到 Service Fabric 群集。
 
