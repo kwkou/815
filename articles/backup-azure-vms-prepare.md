@@ -11,12 +11,11 @@
 <tags
 	ms.service="backup"
 	ms.date="06/03/2016"
-	wacn.date="07/26/2016"/>
+	wacn.date="07/27/2016"/>
 
 # 进行备份 Azure 虚拟机所需的环境准备
 
 > [AZURE.SELECTOR]
-- [Resource Manager 模型](/documentation/articles/backup-azure-arm-vms-prepare)
 - [经典模型](/documentation/articles/backup-azure-vms-prepare)
 
 在备份 Azure 虚拟机 (VM) 之前，必须满足三个条件。
@@ -75,7 +74,7 @@
 
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)
 
-7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](backup-configure-vault.md#azure-backup---storage-redundancy-options)的更多内容。
+7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/#azure-backup---storage-redundancy-options)的更多内容。
 
     ![备份保管库列表](./media/backup-azure-vms-prepare/backup_vaultslist.png)
 
@@ -149,13 +148,13 @@
 
 ######对于 Linux 计算机 
 
-将以下代码行添加到 ```/etc/environment``` 文件：
+将以下代码行添加到 `/etc/environment` 文件：
 
     
 		http_proxy=http://<proxy IP>:<proxy port>
     
 
-  将以下代码行添加到 ```/etc/waagent.conf``` 文件：
+  将以下代码行添加到 `/etc/waagent.conf` 文件：
 
     
 	    HttpProxy.Host=<proxy IP>
@@ -189,7 +188,7 @@
 
 在 Azure PowerShell 命令提示符处键入以下命令：
 
-以下命令将在 NSG 中添加一个例外。此例外允许从 10.0.0.5 上的任何端口流向端口 80 (HTTP) 或 443 (HTTPS) 上的任何 Internet 地址的 TCP 流量。如果你需要访问公共 Internet 中的特定端口，请确保也将该端口添加到 ```-DestinationPortRange```。
+以下命令将在 NSG 中添加一个例外。此例外允许从 10.0.0.5 上的任何端口流向端口 80 (HTTP) 或 443 (HTTPS) 上的任何 Internet 地址的 TCP 流量。如果你需要访问公共 Internet 中的特定端口，请确保也将该端口添加到 `-DestinationPortRange`。
 
 		Get-AzureNetworkSecurityGroup -Name "NSG-lockdown" |
 		Set-AzureNetworkSecurityRule -Name "allow-proxy " -Action Allow -Protocol TCP -Type Outbound -Priority 200 -SourceAddressPrefix "10.0.0.5/32" -SourcePortRange "*" -DestinationAddressPrefix Internet -DestinationPortRange "80-443"

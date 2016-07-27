@@ -11,7 +11,7 @@
 <tags
    ms.service="backup" 
    ms.date="04/14/2016"
-   wacn.date="05/18/2016"/>
+   wacn.date="07/27/2016"/>
    
 # 先睹为快：将文件和文件夹从 Windows Server 或客户端备份到 Azure
 

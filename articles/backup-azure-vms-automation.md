@@ -335,8 +335,7 @@
 
 3. 使用 JSON 配置文件来创建 VM 配置。
 
-    
-  	PS C:\> $vm = New-AzureRmVMConfig -VMSize $obj.HardwareProfile.VirtualMachineSize -VMName "testrestore"
+    	PS C:\> $vm = New-AzureRmVMConfig -VMSize $obj.HardwareProfile.VirtualMachineSize -VMName "testrestore"
     
 
 4. 附加 OS 磁盘和数据磁盘。
