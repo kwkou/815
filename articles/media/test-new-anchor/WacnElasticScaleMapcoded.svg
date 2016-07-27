@@ -1,0 +1,1956 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   viewBox="0 0 1072.9 1350.0"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="100%"
+   height="100%"
+   sodipodi:docname="WacnElasticScaleMapcoded.svg">
+  <defs
+     id="defs295" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1320"
+     inkscape:window-height="997"
+     id="namedview293"
+     showgrid="false"
+     inkscape:zoom="0.98890193"
+     inkscape:cx="478.3047"
+     inkscape:cy="1160.3869"
+     inkscape:window-x="1467"
+     inkscape:window-y="1"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <g
+     id="layer1"
+     transform="translate(-0.36757466,-0.01255)">
+    <path
+       id="path5780"
+       fill-rule="evenodd"
+       fill="#EEE"
+       d="m1.0005,116.8,0,648.96,925.6,0,0-648.96-925.6,0z" />
+  </g>
+  <style
+     id="style3376"
+     type="text/css">.hover_group:hover path
+    {
+      stroke:#26a9e0;
+      stroke-width:2px;
+    }</style>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <a
+     id="a3404"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-get-started/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <path
+       id="path6068"
+       d="m70.983,73.205,0,41.543,239.02,0,0-41.543-239.02,0z"
+       fill="#FFF"
+       fill-rule="evenodd" />
+    <path
+       id="path6070"
+       fill-rule="evenodd"
+       fill="#37b34a"
+       d="m368.76,82.093c6.7849,0,12.181,5.4755,12.181,12.062,0,6.7452-5.5152,12.062-12.181,12.062-6.7849,0-12.181-5.4358-12.181-12.062-0.11903-6.5865,5.3962-12.062,12.181-12.062zm0,1.5474c-5.912,0-10.634,4.682-10.634,10.515,0,5.8723,4.7216,10.554,10.634,10.554,5.912,0,10.634-4.682,10.634-10.554,0-5.8326-4.7216-10.515-10.634-10.515z" />
+    <path
+       id="path6072"
+       fill-rule="evenodd"
+       fill="#37b34a"
+       d="m370.95,92.885-3.7297-3.4123,3.0948,0,4.9994,4.682-4.9994,4.7216-3.0948,0,3.7297-3.452-8.7291,0,0-2.5394,8.7291,0z" />
+    <text
+       id="text6074"
+       style="writing-mode:lr-tb;text-anchor:start;text-align:start;"
+       font-family="Segoe UI"
+       xml:space="preserve"
+       font-size="22px"
+       font-style="normal"
+       font-stretch="normal"
+       line-height="125%"
+       font-variant="normal"
+       y="100.0993"
+       x="30.148125"
+       font-weight="normal"
+       fill="#37b34a">Try the Elastic Scale Sample App</text>
+    <title
+       id="itemTitle">Click here to run the sample app</title>
+    <desc
+       id="desc3411">Click here to run the sample app</desc>
+  </a>
+  <path
+     id="path5802"
+     d="m502.83,34.6c0-18.926-15.316-34.281-34.281-34.281-18.926,0-34.282,15.355-34.282,34.281,0,18.966,15.355,34.281,34.282,34.281,18.966,0,34.281-15.316,34.281-34.281"
+     fill="#f05a32"
+     fill-rule="evenodd" />
+  <path
+     id="path5804"
+     stroke-linejoin="miter"
+     d="m502.83,34.6c0-18.926-15.316-34.281-34.281-34.281-18.926,0-34.282,15.355-34.282,34.281,0,18.966,15.355,34.281,34.282,34.281,18.966,0,34.281-15.316,34.281-34.281"
+     stroke="#c8c8c8"
+     stroke-linecap="square"
+     stroke-miterlimit="4"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none"
+     style="stroke:#c8c8c8;stroke-opacity:1;stroke-width:0.635;stroke-miterlimit:4;stroke-dasharray:none" />
+  <text
+     id="text5806"
+     style="text-anchor:start;text-align:start;"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="15.23622036px"
+     font-style="normal"
+     y="29.921021"
+     x="453.12207"
+     font-family="Segoe UI"
+     fill="#feffff">Start</text>
+  <text
+     id="text5808"
+     style="text-anchor:start;text-align:start;"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="15.23622036px"
+     font-style="normal"
+     y="48.20459"
+     x="453.92935"
+     font-family="Segoe UI"
+     fill="#feffff">here</text>
+  <path
+     id="path5810"
+     stroke-linejoin="round"
+     d="m469.98,68.882,0,66.698"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5812"
+     d="m473.51,134.71-3.5313,7.023-3.4916-7.023,7.023,0z"
+     fill="#000"
+     fill-rule="evenodd" />
+  <path
+     id="path5916"
+     stroke-linejoin="round"
+     d="m925.63,766.41-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.809,0,0-0.95226,3.809,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226zm-5.7136,0-3.8091,0,0-0.95226,3.8091,0,0,0.95226z"
+     fill-rule="nonzero"
+     stroke="#929497"
+     stroke-linecap="butt"
+     stroke-dasharray="none"
+     stroke-width="0.03967766px"
+     fill="#929497" />
+  <path
+     id="path5918"
+     stroke-linejoin="round"
+     d="m925.63,115.07-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.809,0,0-0.9523,3.809,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523zm-5.7136,0-3.8091,0,0-0.9523,3.8091,0,0,0.9523z"
+     fill-rule="nonzero"
+     stroke="#929497"
+     stroke-linecap="butt"
+     stroke-dasharray="none"
+     stroke-width="0.03967766px"
+     fill="#929497" />
+  <path
+     id="path5920"
+     d="m11.456,952.26,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+     fill="#26a9e0"
+     fill-rule="evenodd" />
+  <path
+     id="path5940"
+     d="m11.456,877.99,0,69.198,151.41,0,0-69.198-151.41,0z"
+     fill="#26a9e0"
+     fill-rule="evenodd" />
+  <text
+     id="text5942"
+     style="writing-mode:lr-tb;text-anchor:start;text-align:start;"
+     line-height="125%"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="18px"
+     font-style="normal"
+     font-stretch="normal"
+     font-variant="normal"
+     y="917.47107"
+     x="36.663067"
+     font-family="Segoe UI"
+     fill="#ffffff">Management</text>
+  <path
+     id="path5956"
+     d="m394.27,877.99,0,69.198,151.41,0,0-69.198-151.41,0z"
+     fill="#26a9e0"
+     fill-rule="evenodd" />
+  <text
+     id="text5958"
+     style="writing-mode:lr-tb;text-anchor:start;text-align:start;"
+     line-height="125%"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="18px"
+     font-style="normal"
+     font-stretch="normal"
+     font-variant="normal"
+     y="917.47107"
+     x="428.38708"
+     font-family="Segoe UI"
+     fill="#ffffff">Migration</text>
+  <path
+     id="path5960"
+     d="m585.68,877.99,0,69.198,151.41,0,0-69.198-151.41,0z"
+     fill="#26a9e0"
+     fill-rule="evenodd" />
+  <text
+     id="text5962"
+     style="writing-mode:lr-tb;text-anchor:start;text-align:start;"
+     line-height="125%"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="18px"
+     font-style="normal"
+     font-stretch="normal"
+     font-variant="normal"
+     y="917.47107"
+     x="629.94727"
+     font-family="Segoe UI"
+     fill="#ffffff">Videos</text>
+  <path
+     id="path5964"
+     d="m774.22,877.99,0,69.198,151.41,0,0-69.198-151.41,0z"
+     fill="#26a9e0"
+     fill-rule="evenodd" />
+  <text
+     id="text5966"
+     style="writing-mode:lr-tb;text-anchor:start;text-align:start;"
+     line-height="125%"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="18px"
+     font-style="normal"
+     font-stretch="normal"
+     font-variant="normal"
+     y="917.47107"
+     x="831.84393"
+     font-family="Segoe UI"
+     fill="#ffffff">Blogs</text>
+  <path
+     id="path5968"
+     stroke-linejoin="round"
+     d="m469.98,736.1,0,135.74"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5970"
+     d="m487.84,873.38-3.5313,7.023-3.4916-7.023,7.023,0z"
+     fill="#000"
+     fill-rule="evenodd" />
+  <!--<a id="a3666" aria-labeledby="itemTitle" target="_blank" xlink:href="http://go.microsoft.com/?linkid=9862608" transform="translate(-14.334115,-2.41875)" cursor="pointer">
+  <g id="g3668" class="hover_group">
+   <path id="path6014" fill-rule="evenodd" fill="#26a9e0" d="m788.55,954.68,0,50.153,3.3329,0,0-50.153-3.3329,0z"/>
+   <path id="path6016" fill-rule="evenodd" fill="#EEE" d="m791.41,954.68,0,50.153,148.55,0,0-50.153-148.55,0z"/>
+   <text id="text6018" style="text-anchor:start;text-align:start;" font-family="Segoe UI" xml:space="preserve" font-size="15.23622036px" font-style="normal" y="975.50171" x="800.86591" font-weight="normal" fill="#000000">Introduction to </text>
+   <text id="text6020" style="text-anchor:start;text-align:start;" font-family="Segoe UI" xml:space="preserve" font-size="15.23622036px" font-style="normal" y="993.78522" x="800.86591" font-weight="normal" fill="#000000">Elastic Scale</text>
+   <title id="title3674">Blog introductino to elastic scale</title>
+   <desc id="desc3676">Blog introductino to elastic scale</desc>
+  </g>
+ </a>-->
+  <!--<a id="a3678" aria-labeledby="itemTitle" target="_blank" xlink:href="http://go.microsoft.com/?linkid=9862982" transform="translate(-14.334115,78.608917)" cursor="pointer">
+  <g id="g3680" class="hover_group">
+   <path id="path6022" fill-rule="evenodd" fill="#26a9e0" d="m600.01,1033.7,0,78.403,3.3329,0,0-78.403-3.3329,0z"/>
+   <path id="path6024" fill-rule="evenodd" fill="#EEE" d="m602.86,1033.7,0,78.403,148.55,0,0-78.403-148.55,0z"/>
+   <text id="text6026" style="text-anchor:start;text-align:start;" font-family="Segoe UI" xml:space="preserve" font-size="15.23622036px" font-style="normal" y="1059.5233" x="612.31769" font-weight="normal" fill="#000000">Migrate a </text>
+   <text id="text6028" style="text-anchor:start;text-align:start;" font-family="Segoe UI" xml:space="preserve" font-size="15.23622036px" font-style="normal" y="1077.8068" x="612.31769" font-weight="normal" fill="#000000">Federations </text>
+   <text id="text6030" style="text-anchor:start;text-align:start;" font-family="Segoe UI" xml:space="preserve" font-size="15.23622036px" font-style="normal" y="1096.0903" x="612.31769" font-weight="normal" fill="#000000">Application</text>
+   <title id="title3687">Migrate a federations app</title>
+   <desc id="desc3689">Migrate a federations app</desc>
+  </g>
+ </a>-->
+  <path
+     id="path6040"
+     stroke-linejoin="round"
+     d="m469.98,736.1,0,86.973-382.81,0,0,48.764"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6042"
+     d="m90.696,870.96-3.5313,7.023-3.4916-7.023,7.0229,0z"
+     fill="#000"
+     fill-rule="evenodd" />
+  <path
+     id="path6044"
+     stroke-linejoin="round"
+     d="m469.98,736.1,0,86.973,191.41,0,0,48.764"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6046"
+     d="m664.91,870.96-3.5313,7.023-3.4916-7.023,7.0229,0z"
+     fill="#000"
+     fill-rule="evenodd" />
+  <path
+     id="path6048"
+     stroke-linejoin="round"
+     d="m469.98,736.1,0,86.973,379.95,0,0,48.764"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6050"
+     d="m853.46,870.96-3.5313,7.023-3.4916-7.023,7.0229,0z"
+     fill="#000"
+     fill-rule="evenodd" />
+  <path
+     id="path6052"
+     d="m202.87,877.99,0,69.198,151.41,0,0-69.198-151.41,0z"
+     fill="#26a9e0"
+     fill-rule="evenodd" />
+  <text
+     id="text6054"
+     style="writing-mode:lr-tb;text-anchor:start;text-align:start;"
+     line-height="125%"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="18px"
+     font-style="normal"
+     font-stretch="normal"
+     font-variant="normal"
+     y="917.47107"
+     x="228.69609"
+     font-family="Segoe UI"
+     fill="#ffffff">Development</text>
+  <path
+     id="path6056"
+     stroke-linejoin="round"
+     d="m469.98,736.1,0,86.973-189.98,0,0,48.764"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6058"
+     d="m283.53,870.96-3.5313,7.023-3.4916-7.023,7.0229,0z"
+     fill="#000"
+     fill-rule="evenodd" />
+  <text
+     id="text6060"
+     style="text-anchor:start;text-align:start;"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="11.42716503px"
+     font-style="normal"
+     y="103.79321"
+     x="788.18256"
+     font-family="Calibri"
+     fill="#929497">Click                        </text>
+  <path
+     id="path6062"
+     d="m816.16,91.736,0,16.665,37.337,0,0-16.665-37.337,0z"
+     fill="#e6e7e8"
+     fill-rule="evenodd" />
+  <path
+     id="path6064"
+     d="m814.93,91.736,0,16.665,1.2697,0,0-16.665-1.2697,0z"
+     fill="#26a9e0"
+     fill-rule="evenodd" />
+  <text
+     id="text6066"
+     style="text-anchor:start;text-align:start;"
+     font-weight="normal"
+     xml:space="preserve"
+     font-size="11.42716503px"
+     font-style="normal"
+     y="103.79309"
+     x="856.58685"
+     font-family="Calibri"
+     fill="#929497">to open topics</text>
+  <path
+     id="path5782"
+     d="m394.26,141.73,0,50.153,151.41,0,0-50.153-151.41,0z"
+     fill-rule="evenodd"
+     fill="#26a9e0" />
+  <text
+     id="text5786"
+     font-size="15.23622036px"
+     font-family="Segoe UI"
+     xml:space="preserve"
+     style="text-anchor:start;text-align:start;"
+     y="180.83165"
+     x="453.01428"
+     font-weight="normal"
+     font-style="normal"
+     fill="#ffffff">Scale</text>
+  <path
+     id="path5854"
+     stroke-linejoin="round"
+     d="m469.97,191.88,0,113.91"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5788"
+     d="m394.26,251.95,0,50.153,151.41,0,0-50.153-151.41,0z"
+     fill-rule="evenodd"
+     fill="#26a9e0" />
+  <text
+     id="text5790"
+     font-size="15.23622036px"
+     font-family="Segoe UI"
+     xml:space="preserve"
+     style="text-anchor:start;text-align:start;"
+     y="272.76523"
+     x="409.68219"
+     font-weight="normal"
+     font-style="normal"
+     fill="#ffffff">Learn Elastic Scale </text>
+  <text
+     id="text5792"
+     font-size="15.23622036px"
+     font-family="Segoe UI"
+     xml:space="preserve"
+     style="text-anchor:start;text-align:start;"
+     y="291.04877"
+     x="438.9978"
+     font-weight="normal"
+     font-style="normal"
+     fill="#ffffff">Concepts</text>
+  <path
+     id="path5794"
+     d="m394.26,376.61,0,50.153,151.41,0,0-50.153-151.41,0z"
+     fill-rule="evenodd"
+     fill="#26a9e0" />
+  <text
+     id="text5796"
+     font-size="15.23622036px"
+     font-family="Segoe UI"
+     xml:space="preserve"
+     style="text-anchor:start;text-align:start;"
+     y="406.57401"
+     x="455.84457"
+     font-weight="normal"
+     font-style="normal"
+     fill="#ffffff">APIs</text>
+  <path
+     id="path5944"
+     stroke-linejoin="round"
+     d="m469.97,550.46,0,129.33"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <g
+     id="g12315"
+     transform="translate(-0.36757466,5.987422)">
+    <path
+       id="path5798"
+       d="m394.63,502.32,0,50.153,151.41,0,0-50.153-151.41,0z"
+       fill-rule="evenodd"
+       fill="#26a9e0" />
+    <text
+       id="text5800"
+       style="text-anchor:start;text-align:start;"
+       font-family="Segoe UI"
+       xml:space="preserve"
+       font-size="15.23622036px"
+       y="532.2854"
+       x="428.17606"
+       font-weight="normal"
+       font-style="normal"
+       fill="#ffffff">Run samples</text>
+  </g>
+  <path
+     id="path5814"
+     stroke-linejoin="round"
+     d="m469.97,426.77,0,75.396"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5816"
+     d="m473.5,501.29-3.5313,7.0229-3.4916-7.0229,7.023,0z"
+     fill-rule="evenodd"
+     fill="#000" />
+  <path
+     id="path5826"
+     stroke-linejoin="round"
+     d="m545.67,166.81,138.55-0.0794"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5834"
+     stroke-linejoin="round"
+     d="m651.37,166.81,0,53.406,32.853,0"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5850"
+     stroke-linejoin="round"
+     d="m394.26,275.61-108.56,0,0-32.139-36.094,0"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5852"
+     stroke-linejoin="round"
+     d="m285.7,275.02,0,34.377-37.109-0.26517"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5856"
+     d="m473.5,244.92-3.5313,7.023-3.4916-7.023,7.023,0z"
+     fill-rule="evenodd"
+     fill="#000" />
+  <path
+     id="path5870"
+     stroke-linejoin="round"
+     d="m545.67,401.69,105.7,0,0-24.997,32.853,0"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5874"
+     stroke-linejoin="round"
+     d="m469.97,302.1,0,68.365"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path5876"
+     d="m473.5,369.59-3.5313,7.023-3.4916-7.023,7.023,0z"
+     fill-rule="evenodd"
+     fill="#000" />
+  <path
+     id="path5932"
+     d="m394.26,685.95,0,50.153,151.41,0,0-50.153-151.41,0z"
+     fill-rule="evenodd"
+     fill="#f05a32" />
+  <path
+     id="path5934"
+     stroke-linejoin="miter"
+     d="m394.26,736.1,151.41,0,0-50.153-151.41,0,0,50.153z"
+     stroke="#c8c8c8"
+     stroke-linecap="square"
+     stroke-miterlimit="4"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <text
+     id="text5936"
+     font-size="15.23622036px"
+     font-family="Segoe UI"
+     xml:space="preserve"
+     style="text-anchor:start;text-align:start;"
+     y="715.90833"
+     x="412.85529"
+     font-weight="normal"
+     font-style="normal"
+     fill="#feffff">Ready to dive in</text>
+  <text
+     id="text5938"
+     font-size="15.23622036px"
+     font-family="Segoe UI"
+     xml:space="preserve"
+     style="text-anchor:start;text-align:start;"
+     y="715.90833"
+     x="520.88544"
+     font-weight="normal"
+     font-style="normal"
+     fill="#feffff">?</text>
+  <path
+     id="path5946"
+     d="m473.5,678.92-3.5313,7.0229-3.4916-7.0229,7.023,0z"
+     fill-rule="evenodd"
+     fill="#000" />
+  <path
+     id="path6076"
+     stroke-linejoin="round"
+     d="m248.67,371.07,37.038-0.0884"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6078"
+     stroke-linejoin="miter"
+     d="m254.28,428.11,31.425,0,0-59.278"
+     stroke="#eaeff7"
+     stroke-linecap="square"
+     stroke-miterlimit="4"
+     stroke-dasharray="none"
+     stroke-width="0.95226377px"
+     fill="none" />
+  <path
+     id="path6080"
+     stroke-linejoin="round"
+     d="m285.7,305.15,0,179.98"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6082"
+     stroke-linejoin="round"
+     d="m248.7,427.34,37.005,0.0573"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6084"
+     stroke-linejoin="round"
+     d="m248.78,485.25,36.925,0"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6110"
+     stroke-linejoin="round"
+     d="m545.67,527.39,139.98-0.0793"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6112"
+     stroke-linejoin="round"
+     d="m651.37,527.31,0,170.07"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6114"
+     stroke-linejoin="round"
+     d="m685.65,642.38-34.282,0"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path6116"
+     stroke-linejoin="round"
+     d="m685.65,697.3-34.282,0.0794"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <text
+     id="text5784"
+     font-size="15.23622036px"
+     font-family="Segoe UI"
+     xml:space="preserve"
+     style="text-anchor:start;text-align:start;"
+     y="162.54808"
+     x="401.35004"
+     font-weight="normal"
+     font-style="normal"
+     fill="#ffffff">Tell me about Elastic </text>
+  <path
+     id="path12295"
+     stroke-linejoin="round"
+     d="m651.37,401.6,0,29.097,32.853,0"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <path
+     id="path12313"
+     stroke-linejoin="round"
+     d="m685.65,584.38-34.282,0"
+     stroke="#000"
+     stroke-linecap="round"
+     stroke-dasharray="none"
+     stroke-width="0.63484251px"
+     fill="none" />
+  <a
+     id="001"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-introduction/"
+     transform="translate(-14.334115,-2.4187988)"
+     cursor="pointer">
+    <g
+       id="g3415"
+       class="hover_group">
+      <path
+         id="path5818"
+         d="m698.56,144.15,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5820"
+         d="m701.42,144.15,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5822"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="164.96654"
+         x="710.87701"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Introduction to </text>
+      <text
+         id="text5824"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="183.25008"
+         x="710.87701"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Elastic Scale</text>
+      <title
+         id="title3421">Introduction to  Elastic Scale</title>
+      <desc
+         id="desc3423">Introduction to  Elastic Scale</desc>
+    </g>
+  </a>
+  <a
+     id="002"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-glossary/"
+     transform="translate(-14.334115,-2.4188085)"
+     cursor="pointer">
+    <g
+       id="g3428"
+       class="hover_group">
+      <path
+         id="path5828"
+         d="m698.56,197.63,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5830"
+         d="m701.42,197.63,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5832"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="227.5939"
+         x="710.87701"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Glossary</text>
+      <title
+         id="title3433">These are the terms used in Elastic Scale</title>
+      <desc
+         id="desc3435">These are the terms used in Elastic Scale</desc>
+    </g>
+  </a>
+  <a
+     id="003"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-shard-map-management/"
+     transform="translate(0.00345518,-2.4188085)"
+     cursor="pointer">
+    <g
+       id="g3407"
+       class="hover_path">
+      <path
+         id="path5838"
+         fill-rule="evenodd"
+         fill="#FFF"
+         d="m102.87,212.76,0,61.58,143.28,0,0-61.58-143.28,0z" />
+      <path
+         id="path5836"
+         fill-rule="evenodd"
+         fill="#26a9e0"
+         d="m246.21,212.85,0,61.58,3.2139,0,0-61.58-3.2139,0z" />
+      <text
+         id="text5840"
+         style="text-anchor:start;text-align:start;"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="249.84726"
+         x="107.32903"
+         font-weight="normal"
+         fill="#000000">Create a Shard Map</text>
+    </g>
+  </a>
+  <a
+     id="a3451"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-data-dependent-routing/"
+     transform="matrix(0.98132732,0,0,1,-12.14549,-62.418779)"
+     cursor="pointer">
+    <g
+       id="g3453"
+       class="hover_group">
+      <path
+         id="path5842"
+         d="m262.55,341.11,0,61.58,3.2139,0,0-61.58-3.2139,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5844"
+         d="m117.21,341.11,0,61.58,145.78,0,0-61.58-145.78,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5846"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="367.63995"
+         x="126.66315"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Connect to a </text>
+      <text
+         id="text5848"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="385.92349"
+         x="126.66315"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Shard</text>
+      <title
+         id="title3459">Connect to a shard directly</title>
+      <desc
+         id="desc3461">Connect to a shard directly</desc>
+    </g>
+  </a>
+  <a
+     id="a3463"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-multishard-querying/"
+     transform="matrix(0.96285944,0,0,1,-9.9813297,-62.418779)"
+     cursor="pointer">
+    <g
+       id="g3465"
+       class="hover_group">
+      <path
+         id="path5878"
+         d="m265.32,408.4,0,50.153,3.2932,0,0-50.153-3.2932,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5880"
+         d="m117.21,408.4,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5882"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="429.21976"
+         x="126.66316"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Query Across Many </text>
+      <text
+         id="text5884"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="447.5033"
+         x="126.66316"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Shards</text>
+      <!--<text id="text5886" style="text-anchor:start;text-align:start;" font-weight="normal" xml:space="preserve" font-size="15.23622036px" font-style="normal" y="438.36169" x="191.00966" font-family="Calibri" fill="#5b9bd5">`</text>-->
+      <title
+         id="title3471">Learn how to query across shards</title>
+      <desc
+         id="desc3473">Learn how to query across shards</desc>
+    </g>
+  </a>
+  <a
+     id="a3475"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-add-a-shard/"
+     transform="matrix(0.96285944,0,0,1,-9.9813297,-62.418779)"
+     cursor="pointer">
+    <g
+       id="g3477"
+       class="hover_group">
+      <path
+         id="path5888"
+         d="m265.32,465.54,0,50.153,3.2932,0,0-50.153-3.2932,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5890"
+         d="m117.21,465.54,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5892"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="486.3555"
+         x="126.66315"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Add a Shard for </text>
+      <text
+         id="text5894"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="504.63904"
+         x="126.66315"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">New Data</text>
+      <title
+         id="title3483">Add shards as needed</title>
+      <desc
+         id="desc3485">Add shards as needed</desc>
+    </g>
+  </a>
+  <a
+     id="a3487"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/"
+     transform="matrix(0.96285944,0,0,1,-9.9808697,-62.418579)"
+     cursor="pointer">
+    <g
+       id="g3489"
+       class="hover_group">
+      <path
+         id="path5896"
+         d="m265.32,522.67,0,50.153,3.2932,0,0-50.153-3.2932,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5898"
+         d="m117.21,522.67,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5900"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="543.49133"
+         x="126.66316"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Split or Merge </text>
+      <text
+         id="text5902"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="561.77484"
+         x="126.66316"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Shards</text>
+      <title
+         id="title3495">Learn how to split or merge a shard</title>
+      <desc
+         id="desc3497">Learn how to split or merge a shard</desc>
+    </g>
+  </a>
+  <a
+     id="a3503"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://go.microsoft.com/?linkid=9862605"
+     transform="translate(-14.334115,-62.418808)"
+     cursor="pointer">
+    <g
+       id="g3505"
+       class="hover_group">
+      <path
+         id="path5858"
+         d="m698.56,414.12,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5860"
+         d="m701.42,414.12,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5862"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="444.0752"
+         x="710.87701"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Get Client Library</text>
+      <title
+         id="title3510">Get the library to start coding</title>
+      <desc
+         id="desc3512">Get the library to start coding</desc>
+    </g>
+  </a>
+  <a
+     id="a3514"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     transform="translate(-14.334115,-62.418808)"
+     cursor="pointer"
+     xlink:href="http://msdn.microsoft.com/zh-cn/library/azure/dn765902.aspx">
+    <g
+       id="g3516"
+       class="hover_group">
+      <path
+         id="path5864"
+         d="m698.56,469.43,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path5866"
+         d="m701.42,469.43,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text5868"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="499.38589"
+         x="710.87701"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">API Documentation</text>
+      <title
+         id="title3521">API reference</title>
+      <desc
+         id="desc3523">API reference</desc>
+    </g>
+  </a>
+  <a
+     id="a12297"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://code.msdn.microsoft.com/vstudio/Elastic-Scale-with-Azure-a80d8dc6"
+     transform="translate(-14.334115,-56.418808)"
+     cursor="pointer">
+    <g
+       id="g12299"
+       class="hover_group">
+      <path
+         id="path12301"
+         d="m699.99,564.73,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path12303"
+         d="m702.85,564.73,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text12305"
+         style="text-anchor:start;text-align:start;"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         y="593.54968"
+         x="712.30542"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Getting Started</text>
+      <title
+         id="title12309">Get Started Sample App</title>
+      <desc
+         id="desc12311">Get Started Sample App</desc>
+    </g>
+  </a>
+  <a
+     id="a3525"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="https://code.msdn.microsoft.com/vstudio/Elastic-Scale-with-Azure-bae904ba"
+     transform="translate(-14.334115,-2.4188085)"
+     cursor="pointer">
+    <g
+       id="g3527"
+       class="hover_group">
+      <path
+         id="path6086"
+         d="m699.99,564.73,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path6088"
+         d="m702.85,564.73,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text6090"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="585.54968"
+         x="712.30542"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Entity Framework </text>
+      <text
+         id="text6092"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="603.83319"
+         x="712.30542"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Integration</text>
+      <title
+         id="title3533">Integrate with Entity Framework</title>
+      <desc
+         id="desc3535">Integrate with Entity Framework</desc>
+    </g>
+  </a>
+  <a
+     id="a3537"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="https://code.msdn.microsoft.com/vstudio/Elastic-Scale-with-Azure-603e0cef"
+     transform="translate(-14.334115,-2.4188085)"
+     cursor="pointer">
+    <g
+       id="g3539"
+       class="hover_group">
+      <path
+         id="path6094"
+         d="m699.99,619.8,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path6096"
+         d="m702.85,619.8,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text6098"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="640.62225"
+         x="712.30542"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Shard SQL </text>
+      <text
+         id="text6100"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="658.90576"
+         x="712.30542"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Command</text>
+      <title
+         id="title3545">SQL commands for elasticity</title>
+      <desc
+         id="desc3547">SQL commands for elasticity</desc>
+    </g>
+  </a>
+  <a
+     id="a3722"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="https://gallery.technet.microsoft.com/scriptcenter/Elastic-Scale-Shard-c9530cbe"
+     transform="translate(-14.334115,-2.4188085)"
+     cursor="pointer">
+    <g
+       id="g3724"
+       class="hover_group">
+      <path
+         id="path6102"
+         d="m699.99,674.72,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill-rule="evenodd"
+         fill="#26a9e0" />
+      <path
+         id="path6104"
+         d="m702.85,674.72,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill-rule="evenodd"
+         fill="#FFF" />
+      <text
+         id="text6106"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="695.53613"
+         x="712.30542"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Shard Elasticity </text>
+      <text
+         id="text6108"
+         font-size="15.23622036px"
+         font-family="Segoe UI"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         y="713.81964"
+         x="712.30542"
+         font-weight="normal"
+         font-style="normal"
+         fill="#000000">Scripts</text>
+      <title
+         id="title3730">PowerShell Scripts for elasticity</title>
+      <desc
+         id="desc3732">PowerShell Scripts for elasticity</desc>
+    </g>
+  </a>
+  <a
+     id="a3556"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3558"
+       class="hover_group">
+      <path
+         id="path5922"
+         d="m28.647,954.68,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text5924"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="975.50171"
+         x="38.102627"
+         font-family="Segoe UI"
+         fill="#000000">Getting Started </text>
+      <text
+         id="text5926"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="993.78522"
+         x="38.102627"
+         font-family="Segoe UI"
+         fill="#000000">with Split</text>
+      <text
+         id="text5928"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="993.78522"
+         x="100.35711"
+         font-family="Segoe UI"
+         fill="#000000">-</text>
+      <text
+         id="text5930"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="993.78522"
+         x="106.45011"
+         font-family="Segoe UI"
+         fill="#000000">Merge</text>
+      <title
+         id="title3565">Configururation for split-merge operations</title>
+      <desc
+         id="desc3567">Configururation for split-merge operations</desc>
+    </g>
+  </a>
+  <a
+     id="a3577"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-configure-security/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3579"
+       class="hover_group">
+      <path
+         id="path5948"
+         d="m25.79,1006.7,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path5950"
+         d="m28.647,1006.7,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text5952"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1027.5588"
+         x="38.102627"
+         font-family="Segoe UI"
+         fill="#000000">Security </text>
+      <text
+         id="text5954"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1045.8423"
+         x="38.102627"
+         font-family="Segoe UI"
+         fill="#000000">Considerations</text>
+      <title
+         id="title3585">Configururation for security</title>
+      <desc
+         id="desc3587">Configururation for security</desc>
+    </g>
+  </a>
+  <a
+     id="a3596"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-elasticity/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3598"
+       class="hover_group">
+      <path
+         id="path5972"
+         d="m25.79,1058.8,0,50.152,3.3329,0,0-50.152-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path5974"
+         d="m28.647,1058.8,0,50.152,148.55,0,0-50.152-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text5976"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1088.7578"
+         x="38.102627"
+         font-family="Segoe UI"
+         fill="#000000">Shard Elasticity</text>
+      <title
+         id="title3604">More about elasticity</title>
+      <desc
+         id="desc3606">More about elasticity</desc>
+    </g>
+  </a>
+  <a
+     id="a3608"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-sharding-overview/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3610"
+       class="hover_group">
+      <path
+         id="path5978"
+         d="m217.2,954.68,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path5980"
+         d="m220.05,954.68,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text5982"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="984.64362"
+         x="229.50764"
+         font-family="Segoe UI"
+         fill="#000000">Sharding Overview</text>
+      <title
+         id="title3615">Understand sharding</title>
+      <desc
+         id="desc3617">Understand sharding</desc>
+    </g>
+  </a>
+  <a
+     id="a3619"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-add-references-visual-studio/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3621"
+       class="hover_group">
+      <path
+         id="path5984"
+         d="m217.2,1006.7,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path5986"
+         d="m220.05,1006.7,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text5988"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="13.96653557px"
+         font-style="normal"
+         y="1027.9399"
+         x="229.50764"
+         font-family="Segoe UI"
+         fill="#000000">Reference Elastic </text>
+      <text
+         id="text5990"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="13.96653557px"
+         font-style="normal"
+         y="1044.6998"
+         x="229.50764"
+         font-family="Segoe UI"
+         fill="#000000">Scale in a VS Project</text>
+      <title
+         id="title3627">Add references to VS projects</title>
+      <desc
+         id="desc3629">Add references to VS projects</desc>
+    </g>
+  </a>
+  <a
+     id="a3738"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-manage-credentials/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3740"
+       class="hover_group">
+      <path
+         id="path6118"
+         d="m217.2,1058.8,0,50.152,3.3329,0,0-50.152-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path6120"
+         d="m220.05,1058.8,0,50.152,148.55,0,0-50.152-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text6122"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1088.7578"
+         x="229.50764"
+         font-family="Segoe UI"
+         fill="#000000">Credentials</text>
+      <title
+         id="title3745">Understand credentials</title>
+      <desc
+         id="desc3747">Understand credentials</desc>
+    </g>
+  </a>
+  <a
+     id="a3749"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3751"
+       class="hover_group">
+      <path
+         id="path6124"
+         d="m217.2,1110.9,0,50.152,3.3329,0,0-50.152-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path6126"
+         d="m220.05,1110.9,0,50.152,148.55,0,0-50.152-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text6128"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1131.673"
+         x="229.50764"
+         font-family="Segoe UI"
+         fill="#000000">Entity Framework </text>
+      <text
+         id="text6130"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1149.9565"
+         x="229.50764"
+         font-family="Segoe UI"
+         fill="#000000">Integration</text>
+      <title
+         id="title3757">Integrate with Entity Framework</title>
+      <desc
+         id="desc3759">Integrate with Entity Framework</desc>
+    </g>
+  </a>
+  <a
+     id="a3631"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-federation-migration/"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3633"
+       class="hover_group">
+      <path
+         id="path5992"
+         d="m408.6,954.68,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path5994"
+         d="m411.46,954.68,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text5996"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="975.50171"
+         x="420.91269"
+         font-family="Segoe UI"
+         fill="#000000">Federations </text>
+      <text
+         id="text5998"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="993.78522"
+         x="420.91269"
+         font-family="Segoe UI"
+         fill="#000000">Migration</text>
+      <title
+         id="title3639">Add references to VS projects</title>
+      <desc
+         id="desc3641">Add references to VS projects</desc>
+    </g>
+  </a>
+  <a
+     id="a3643"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://go.microsoft.com/?linkid=9862613"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3645"
+       class="hover_group">
+      <path
+         id="path6000"
+         d="m408.6,1008.3,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path6002"
+         d="m411.46,1008.3,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text6004"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1029.1459"
+         x="420.91269"
+         font-family="Segoe UI"
+         fill="#000000">Federation </text>
+      <text
+         id="text6006"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1047.4294"
+         x="420.91269"
+         font-family="Segoe UI"
+         fill="#000000">Migration Utility</text>
+      <title
+         id="title3651">Utility for migration of federation apps</title>
+      <desc
+         id="desc3653">Utility for migration of federation apps</desc>
+    </g>
+  </a>
+  <a
+     id="a3655"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://go.microsoft.com/?linkid=9862983"
+     transform="translate(-14.334115,-2.418731)"
+     cursor="pointer">
+    <g
+       id="g3657"
+       class="hover_group">
+      <path
+         id="path6008"
+         d="m600.01,955.64,0,75.546,3.3329,0,0-75.546-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path6010"
+         d="m602.86,955.64,0,75.546,148.55,0,0-75.546-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text6012"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="998.29279"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">Get Started Sample</text>
+      <title
+         id="title3662">Get started with elastic scale</title>
+      <desc
+         id="desc3664">Get started with elastic scale</desc>
+    </g>
+  </a>
+  <a
+     id="a12319"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Elastic-Scale"
+     transform="translate(-14.334115,-83.363414)"
+     cursor="pointer">
+    <g
+       id="g12321"
+       class="hover_group">
+      <path
+         id="path12323"
+         fill-rule="evenodd"
+         fill="#26a9e0"
+         d="m600.01,1114.7,0,78.403,3.3329,0,0-78.403-3.3329,0z" />
+      <path
+         id="path12325"
+         fill-rule="evenodd"
+         fill="#EEE"
+         d="m602.86,1114.7,0,78.403,148.55,0,0-78.403-148.55,0z" />
+      <text
+         id="text12327"
+         font-size="15.23622036px"
+         font-weight="normal"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         font-style="normal"
+         y="1149.6073"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">Introduction to</text>
+      <text
+         id="text12329"
+         font-size="15.23622036px"
+         font-weight="normal"
+         xml:space="preserve"
+         style="text-anchor:start;text-align:start;"
+         font-style="normal"
+         y="1167.8907"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">Elastic Scale Video</text>
+      <title
+         id="title12331">Introduction to Elastic Scale (video)</title>
+      <desc
+         id="desc12333">Introduction to Elastic Scale (video)</desc>
+    </g>
+  </a>
+  <a
+     id="a3678"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://go.microsoft.com/?linkid=9862982"
+     transform="translate(-14.334115,78.608917)"
+     cursor="pointer">
+    <g
+       id="g3680"
+       class="hover_group">
+      <path
+         id="path6022"
+         d="m600.01,1033.7,0,78.403,3.3329,0,0-78.403-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path6024"
+         d="m602.86,1033.7,0,78.403,148.55,0,0-78.403-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text6026"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1059.5233"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">Migrate a </text>
+      <text
+         id="text6028"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1077.8068"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">Federations </text>
+      <text
+         id="text6030"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1096.0903"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">Application</text>
+      <title
+         id="title3687">Migrate a federations app</title>
+      <desc
+         id="desc3689">Migrate a federations app</desc>
+    </g>
+  </a>
+  <a
+     id="a3691"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://go.microsoft.com/?linkid=9862984"
+     transform="translate(-14.334115,78.581248)"
+     cursor="pointer">
+    <g
+       id="g3693"
+       class="hover_group">
+      <path
+         id="path6032"
+         d="m600.01,1114.7,0,78.403,3.3329,0,0-78.403-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path6034"
+         d="m602.86,1114.7,0,78.403,148.55,0,0-78.403-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text6036"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1149.6073"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">Create a New Azure </text>
+      <text
+         id="text6038"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="1167.8907"
+         x="612.31769"
+         font-family="Segoe UI"
+         fill="#000000">SQL 数据库</text>
+      <title
+         id="title3699">Create a new SQL Azure database</title>
+      <desc
+         id="desc3701">Create a new SQL Azure database</desc>
+    </g>
+  </a>
+  <a
+     id="a3666"
+     aria-labeledby="itemTitle"
+     target="_blank"
+     xlink:href="http://go.microsoft.com/?linkid=9862608"
+     transform="translate(-14.334115,-2.41875)"
+     cursor="pointer">
+    <g
+       id="g3668"
+       class="hover_group">
+      <path
+         id="path6014"
+         d="m788.55,954.68,0,50.153,3.3329,0,0-50.153-3.3329,0z"
+         fill="#26a9e0"
+         fill-rule="evenodd" />
+      <path
+         id="path6016"
+         d="m791.41,954.68,0,50.153,148.55,0,0-50.153-148.55,0z"
+         fill="#EEE"
+         fill-rule="evenodd" />
+      <text
+         id="text6018"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="975.50171"
+         x="800.86591"
+         font-family="Segoe UI"
+         fill="#000000">Introduction to </text>
+      <text
+         id="text6020"
+         style="text-anchor:start;text-align:start;"
+         font-weight="normal"
+         xml:space="preserve"
+         font-size="15.23622036px"
+         font-style="normal"
+         y="993.78522"
+         x="800.86591"
+         font-family="Segoe UI"
+         fill="#000000">Elastic Scale</text>
+      <title
+         id="title3674">Blog introduction to elastic scale</title>
+      <desc
+         id="desc3676">Blog introductino to elastic scale</desc>
+    </g>
+  </a>
+</svg>
