@@ -19,7 +19,7 @@
 
 作为示例，本文说明如何在 Ubuntu VM 上使用后端 MariaDB SQL 数据库快速设置 WordPress 博客，但你也可以使用 Compose 设置更复杂的应用程序。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql)。
 
 
 如果你不熟悉 Docker 和容器，请参阅 [Docker 高级白板](https://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/)。

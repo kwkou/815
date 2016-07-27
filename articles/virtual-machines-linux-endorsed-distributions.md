@@ -18,7 +18,7 @@
 
 #Azure 认可的分发中的 Linux
 
-Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)中的指南自备 Linux。
+Azure 库或者应用市场中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)中的指南自备 Linux。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -33,17 +33,25 @@ Azure Linux 代理已预安装在 Azure 库映像中，并通常可从分发的�
 
 分发|版本|驱动程序|代理
 ---|---|---|---
-CentOS by OpenLogic |CentOS 6.3+、7.0+| CentOS 6.3：[LIS 下载](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+：在内核中|包：在“WALinuxAgent”下的 <a href="http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/">OpenLogic 存储库中<p><p>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
-由 Credativ 提供的 Debian |Debian 7.9+、8.2+|在内核中|包：在“waagent”下的存储库中<p><p>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
-SUSE Linux Enterprise |SLES 11 SP3+、SLES 12+ 和 <p><p> SLES for SAP 11.3+ |在内核中|包：在“WALinuxAgent”下的 [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) 存储库中<p><p>源代码：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
-openSUSE |openSUSE 13.1+|在内核中|包：在“WALinuxAgent”下的 [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) 存储库中<p><p>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
-Ubuntu|Ubuntu 12.04、14.04、15.10 和 16.04|在内核中|包：在“walinuxagent”下的存储库中<p><p>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
+CentOS by OpenLogic |CentOS 6.3+、7.0+| CentOS 6.3：[LIS 下载](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+：在内核中|包：在“WALinuxAgent”下的 [OpenLogic 存储库](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/)中<br/>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
+[CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)|494.4.0+ |在内核中|源代码：[GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent)
+由 Credativ 提供的 Debian |Debian 7.9+、8.2+|在内核中|包：在“waagent”下的存储库中<br/>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
+SUSE Linux Enterprise |SLES 11 SP4、SLES 12+ 和 <p> SLES for SAP 11.3+ |在内核中|包：在“WALinuxAgent”下的 [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) 存储库中<br/>源代码：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+openSUSE |openSUSE 13.3+|在内核中|包：在“WALinuxAgent”下的 [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) 存储库中<br/>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
+Ubuntu|Ubuntu 12.04、14.04、15.10 和 16.04|在内核中|包：在“walinuxagent”下的存储库中<br/>源代码：[GitHub](https://github.com/Azure/WALinuxAgent)
 ## 合作伙伴
 
 ### OpenLogic
 [http://www.openlogic.com/azure](http://www.openlogic.com/azure)
 
 OpenLogic 是针对云和数据中心的企业开放源解决方案的行业领先的提供商。OpenLogic 帮助各个行业数以百计的领先企业安全获取、支持和控制开源软件。OpenLogic 为 OpenLogic 专家社区支持的 600 个开放源包提供商业级技术支持和保护（包括针对 CentOS 的企业级支持），同时作为在 Azure 上提供基于 CentOS 的映像的产品发布合作伙伴。
+
+### CoreOS
+[https://coreos.com/docs/running-coreos/cloud-providers/azure/](https://coreos.com/docs/running-coreos/cloud-providers/azure/)
+
+从 CoreOS 网站：
+
+*CoreOS 在设计时就已考虑到了安全性、一致性和可靠性。CoreOS 使用 Linux 容器在更高的抽象级别管理你的服务，而不是通过 yum 或 apt 来安装程序包。单个服务的代码和所有依赖项都打包在一个容器中，这个容器可以运行在一个或多个 CoreOS 计算机中。*
 
 ### Credativ
 [http://www.credativ.co.uk/credativ-blog/debian-images-microsoft-azure](http://www.credativ.co.uk/credativ-blog/debian-images-microsoft-azure)

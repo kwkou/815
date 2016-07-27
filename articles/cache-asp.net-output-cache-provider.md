@@ -32,7 +32,7 @@ Redis 输出缓存提供程序 NuGet 包依赖于 StackExchange.Redis.StrongName
 NuGet 包会下载并添加所需的程序集引用，并将以下部分添加到你的 web.config 文件，包含 ASP.NET 应用程序所需的配置，以使用 Redis 输出缓存提供程序。
 
     <caching>
-      <outputCachedefaultProvider="MyRedisOutputCache">
+      <outputCachedefault Provider="MyRedisOutputCache">
         <providers>
           <!--
           <add name="MyRedisOutputCache" 
@@ -46,7 +46,7 @@ NuGet 包会下载并添加所需的程序集引用，并将以下部分添加�
             operationTimeoutInMilliseconds = "5000" [number]
           />
           -->
-          <add name="MyRedisOutputCache"type="Microsoft.Web.Redis.RedisOutputCacheProvider"host="127.0.0.1"accessKey="" ssl="false"/>
+          <add name="MyRedisOutputCache" type="Microsoft.Web.Redis.RedisOutputCacheProvider"host="127.0.0.1"accessKey="" ssl="false"/>
         </providers>
       </outputCache>
     </caching>
