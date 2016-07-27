@@ -14,7 +14,7 @@
 	ms.date="06/14/2016"
 	wacn.date="07/25/2016"/>
 
-# 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
+# 对 Windows Azure 虚拟机的远程桌面连接进行基本故障排除
 
 与基于 Windows 的 Azure 虚拟机 (VM) 的远程桌面协议 (RDP) 连接可能会由于各种原因而失败。此问题可能出在 VM 上的远程桌面服务、网络连接或主机计算机上的远程桌面客户端。本文为你提供了解决 RDP 连接问题的一些常见方法。如果此处未列出你的问题或你仍然无法通过 RDP 连接到 VM，你还可以阅读[更详细的 RDP 故障排除概念和步骤](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)。
 
