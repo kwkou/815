@@ -42,8 +42,8 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 | --- | --- | --- | --- |
 | Azure 备份代理 | <p>**是**</p> <p>Azure 备份代理可以部署在 Azure 中运行的任何 Windows Server VM 上。</p> | <p>**是**</p> <p>该备份代理可以部署在任何 Windows Server VM 或物理计算机上。</p> | <p>Azure 备份保管库</p> |
 | System Center Data Protection Manager (DPM) | <p>**是**</p><p>详细了解[如何使用 System Center DPM 保护 Azure 中的工作负荷](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx)。</p> | <p>**是**</p> <p>详细了解[如何保护数据中心的工作负荷和 VM](https://technet.microsoft.com/library/hh758173.aspx)。</p> | <p>本地附加的磁盘、</p><p>Azure 备份保管库、</p><p>磁带（仅限本地）</p> |
-| Azure 备份服务器 | <p>**是**</p><p>详细了解[如何使用 Azure 备份服务器保护 Azure 中的工作负荷](backup-azure-microsoft-azure-backup.md)。</p> | <p>**是**</p> <p>详细了解[如何使用 Azure 备份服务器保护 Azure 中的工作负荷](backup-azure-microsoft-azure-backup.md)。</p> | <p>本地附加的磁盘、</p><p>Azure 备份保管库</p> |
-| Azure 备份（VM 扩展） | <p>**是**</p><p>Azure 结构的一部分</p><p>专门用于[备份 Azure 基础结构即服务 (IaaS) 虚拟机](backup-azure-vms-introduction.md)。</p> | <p>**否**</p> <p>使用 System Center DPM 备份数据中心的虚拟机。</p> | <p>Azure 备份保管库</p> |
+| Azure 备份服务器 | <p>**是**</p> | <p>**是**</p>| <p>本地附加的磁盘、</p><p>Azure 备份保管库</p> |
+| Azure 备份（VM 扩展） | <p>**是**</p><p>Azure 结构的一部分</p><p>专门用于[备份 Azure 基础结构即服务 (IaaS) 虚拟机](/documentation/articles/backup-azure-vms-introduction/)。</p> | <p>**否**</p> <p>使用 System Center DPM 备份数据中心的虚拟机。</p> | <p>Azure 备份保管库</p> |
 
 ### 组件级别的优势和限制
 
@@ -58,13 +58,13 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 
 | 工作负载 | 源计算机 | Azure 备份解决方案 |
 | --- | --- |---|
-| 文件和文件夹 | Windows Server | <p>[Azure 备份代理](/documentation/articles/backup-configure-vault/)、</p><p>[System Center DPM](/documentation/articles/backup-azure-dpm-introduction/)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)</p> |
-| 文件和文件夹 | Windows 客户端 | <p>[Azure 备份代理](/documentation/articles/backup-configure-vault/)、</p><p>[System Center DPM](/documentation/articles/backup-azure-dpm-introduction/)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)</p> |
-| Hyper-V 虚拟机 (Windows) | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)</p> |
-| Hyper-V 虚拟机 (Linux) | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)</p> |
-| Microsoft SQL Server | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)</p> |
-| Microsoft SharePoint | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)</p> |
-| Microsoft Exchange | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)</p> |
+| 文件和文件夹 | Windows Server | <p>[Azure 备份代理](/documentation/articles/backup-configure-vault/)、</p><p>[System Center DPM](/documentation/articles/backup-azure-dpm-introduction/)、</p> |
+| 文件和文件夹 | Windows 客户端 | <p>[Azure 备份代理](/documentation/articles/backup-configure-vault/)、</p><p>[System Center DPM](/documentation/articles/backup-azure-dpm-introduction/)、</p>|
+| Hyper-V 虚拟机 (Windows) | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p> |
+| Hyper-V 虚拟机 (Linux) | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p> |
+| Microsoft SQL Server | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p>|
+| Microsoft SharePoint | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p> |
+| Microsoft Exchange | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql/)、</p> |
 | Azure IaaS VM (Windows)| - | [Azure 备份（VM 扩展）](/documentation/articles/backup-azure-vms-introduction/)|
 | Azure IaaS VM (Linux) | - | [Azure 备份（VM 扩展）](/documentation/articles/backup-azure-vms-introduction/)|
 ## ARM 和 Linux 支持

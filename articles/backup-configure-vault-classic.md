@@ -17,8 +17,8 @@
 # 使用经典部署模型将 Windows Server 或客户端备份到 Azure
 
 > [AZURE.SELECTOR]
-- [经典门户](/documentation/articles/backup-configure-vault-classic)
-- [Azure 门户](/documentation/articles/backup-configure-vault)
+- [经典门户](/documentation/articles/backup-configure-vault-classic/)
+- [Azure 门户](/documentation/articles/backup-configure-vault/)
 
 本文介绍你需要遵循哪些过程来准备你的环境，以及将 Windows Server（或客户端）备份到 Azure。此外，还说明了部署备份解决方案的注意事项。如果你对 Azure 备份感兴趣，本文可引导你快速完成相关过程。
 
@@ -219,7 +219,6 @@
 有关备份 VM 或其他工作负荷的详细信息，请参阅：
 
 - [Back up IaaS VMs（备份 IaaS VM）](/documentation/articles/backup-azure-vms-prepare)
-- [Back up workloads to Azure with Microsoft Azure Backup Server（使用 Microsoft Azure 备份服务器将工作负荷备份到 Azure）](/documentation/articles/backup-azure-microsoft-azure-backup)
 - [Back up workloads to Azure with DPM（使用 DPM 将工作负荷备份到 Azure）](/documentation/articles/backup-azure-dpm-introduction)
 
 <!---HONumber=AcomDC_0718_2016-->

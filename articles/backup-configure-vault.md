@@ -25,7 +25,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。
 
 ## 开始之前
-若要将服务器或客户端备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需几分钟的时间就能创建一个[免费帐户](/pricing/free-trial/)。
+若要将服务器或客户端备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需几分钟的时间就能创建一个[试用帐户](/pricing/1rmb-trial/)。
 
 ## 步骤 1：创建恢复服务保管库
 
@@ -33,7 +33,7 @@
 
 ### 创建恢复服务保管库
 
-1. 如果你尚未登录 [Azure 门户](https://portal.azure.com/)，请使用你的 Azure 订阅登录。
+1. 如果你尚未登录 [Azure 新门户](https://portal.azure.cn/)，请使用你的 Azure 订阅登录。
 
 2. 在“中心”菜单中，单击“浏览”，然后在资源列表中，键入“恢复服务”。当你开始键入时，会根据你的输入筛选该列表。单击“恢复服务保管库”。
 
@@ -53,7 +53,7 @@
 
 5. 单击“订阅”查看可用订阅列表。如果不确定要使用哪个订阅，请使用默认（或建议）的订阅。仅当组织帐户与多个 Azure 订阅关联时，才会有多个选项。
 
-6. 单击“资源组”查看可用资源组列表，或单击“新建”以创建新的资源组。有关资源组的完整信息，请参阅 [Using the Azure Portal to deploy and manage your Azure resources（使用 Azure 门户部署和管理 Azure 资源）](../azure-portal/resource-group-portal.md)
+6. 单击“资源组”查看可用资源组列表，或单击“新建”以创建新的资源组。有关资源组的完整信息，请参阅 [Using the Azure Portal to deploy and manage your Azure resources（使用 Azure 门户部署和管理 Azure 资源）](/documentation/articles/resource-group-portal/)
 
 7. 单击“位置”，为保管库选择地理区域。此选项决定了备份数据要发送到的地理区域。选择靠近你所在位置的地理区域可以减少备份到 Azure 时的网络延迟。
 
@@ -72,7 +72,7 @@
 
     ![恢复服务保管库列表](./media/backup-configure-vault/choose-storage-configuration.png)
 
-    默认情况下，保管库具有异地冗余存储。如果你使用 Azure 作为主要备份存储终结点，则继续使用异地冗余存储。如果使用 Azure 作为非主要备份存储终结点，则选择本地冗余存储，以减少在 Azure 中存储数据的成本。请在此[概述](../storage/storage-redundancy.md)中深入了解[异地冗余](../storage/storage-redundancy.md#geo-redundant-storage)和[本地冗余](../storage/storage-redundancy.md#locally-redundant-storage)存储选项。
+    默认情况下，保管库具有异地冗余存储。如果你使用 Azure 作为主要备份存储终结点，则继续使用异地冗余存储。如果使用 Azure 作为非主要备份存储终结点，则选择本地冗余存储，以减少在 Azure 中存储数据的成本。请在此[概述](/documentation/articles/storage-redundancy/)中深入了解[异地冗余](/documentation/articles/storage-redundancy/#geo-redundant-storage)和[本地冗余](/documentation/articles/storage-redundancy/#locally-redundant-storage)存储选项。
 
     选择好保管库的存储选项后，可以开始将文件和文件夹与保管库相关联。
 
@@ -124,7 +124,7 @@
     - 提供已下载的保管库凭据
     - 将加密通行短语保存在安全的位置。
 
-    >[AZURE.NOTE] 如果你丢失或忘记了通行短语，Microsoft 无法帮助你恢复备份数据。请将文件保存在安全的位置。还原备份时需要用到此文件。
+    >[AZURE.NOTE] 如果你丢失或忘记了通行短语，Azure 无法帮助你恢复备份数据。请将文件保存在安全的位置。还原备份时需要用到此文件。
 
 现已安装代理，且已向保管库注册计算机。接下来可以配置和计划备份。
 

@@ -16,8 +16,8 @@
 # Azure 虚拟机备份疑难解答
 
 > [AZURE.SELECTOR]
-- [恢复服务保管库](/documentation/articles/backup-azure-vms-troubleshoot)
-- [备份保管库](/documentation/articles/backup-azure-vms-troubleshoot-classic)
+- [恢复服务保管库](/documentation/articles/backup-azure-vms-troubleshoot/)
+- [备份保管库](/documentation/articles/backup-azure-vms-troubleshoot-classic/)
 
 你可以参考下表中所列的信息，排查使用 Azure 备份时遇到的错误。
 
@@ -44,7 +44,7 @@
 | -------- | -------- | -------|
 | 备份 | 从备份保管库复制 VHD 超时 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持。 | 要复制的数据太多时会发生此问题。请检查你的数据磁盘是否少于 16 个。 |
 | 备份 | 无法与 VM 代理通信，因此无法获取快照状态。快照 VM 子任务超时。请参阅故障排除指南以了解如何解决此问题。 | 如果 VM 代理出现问题，或以某种方式阻止了对 Azure 基础结构的网络访问，则会引发此错误。详细了解如何[调试 VM 快照问题](/documentation/articles/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout)。<br>如果 VM 代理未导致任何问题，则重新启动 VM。有时 VM 状态不正确可能会导致问题，而重新启动 VM 则会重置此“错误状态” |
-| 备份 | 发生内部错误，备份失败 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持 | 可能会出于 2 个原因发生此错误：<ol><li>访问 VM 存储时发生暂时性问题。请检查“[Azure 状态](https://azure.microsoft.com/zh-cn/status/)”，以确定区域中的计算/存储/网络是否存在任何相关问题。解决问题后，请重试备份。<li>已删除原始 VM，因此无法进行备份。若要保留已删除 VM 的备份数据但要防止备份错误，请取消保护 VM 并选择保留数据。这样即可停止备份计划以及重复出现的错误消息。 |
+| 备份 | 发生内部错误，备份失败 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持 | 可能会出于 2 个原因发生此错误：<ol><li>访问 VM 存储时发生暂时性问题。/存储/网络是否存在任何相关问题。解决问题后，请重试备份。<li>已删除原始 VM，因此无法进行备份。若要保留已删除 VM 的备份数据但要防止备份错误，请取消保护 VM 并选择保留数据。这样即可停止备份计划以及重复出现的错误消息。 |
 | 备份 | 无法在选择的项上安装 Azure 恢复服务扩展 - VM 代理是 Azure 恢复服务扩展的必备组件。请安装 Azure VM 代理并重新启动注册操作 | <ol> <li>检查是否已正确安装 VM 代理。<li>确定已正确设置 VM 配置中的标志。</ol> [详细了解](#validating-vm-agent-installation)如何安装 VM 代理以及如何验证 VM 代理安装。 |
 | 备份 | 命令执行失败 - 此项上当前正在进行另一项操作。请等到前一项操作完成，然后重试 | VM 的现有备份或还原作业正在运行，而当现有作业正在运行时，无法启动新的作业。 |
 | 备份 | 扩展安装失败，出现错误“COM+ 无法与 Microsoft 分布式事务处理协调器通信”。 | 这通常意味着到 COM+ 服务未运行。请与 Microsoft 支持部门联系，以获取解决此问题所需的帮助。 |

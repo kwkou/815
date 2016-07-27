@@ -15,8 +15,8 @@
 # 使用经典部署模型将文件还原到 Windows Server 或 Windows 客户端计算机
 
 > [AZURE.SELECTOR]
-- [经典门户](/documentation/articles/backup-azure-restore-windows-server-classic)
-- [Azure 门户](/documentation/articles/backup-azure-restore-windows-server)
+- [经典门户](/documentation/articles/backup-azure-restore-windows-server-classic/)
+- [Azure 门户](/documentation/articles/backup-azure-restore-windows-server/)
 
 本文介绍执行两种还原操作所需的步骤：
 
@@ -111,12 +111,12 @@
 11. 提供输入后，单击“恢复”，随即将会触发在提供的目标中还原备份文件的操作。
 
 ## 后续步骤
-- [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
+- [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)
 - 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)。
 
 ## 了解详细信息
 - [Azure 备份概述](http://go.microsoft.com/fwlink/p/?LinkId=222425)
-- [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-introduction)
-- [备份 Microsoft 工作负荷](/documentation/articles/backup-azure-dpm-introduction)
+- [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-introduction/)
+- [备份 Microsoft 工作负荷](/documentation/articles/backup-azure-dpm-introduction/)
 
 <!---HONumber=Mooncake_0606_2016-->

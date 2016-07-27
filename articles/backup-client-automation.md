@@ -43,45 +43,44 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 1. 如果你是首次使用 Azure 备份，则必须使用 **Register-AzureRMResourceProvider** cmdlet 注册用于订阅的 Azure 恢复服务提供程序。
 
     
-    PS C:\> Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
+    	PS C:\> Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     
 
 2. 恢复服务保管库是一种 ARM 资源，因此需要将它放在资源组中。可以使用现有资源组，也可以创建新组。创建新的资源组时，请指定资源组的名称和位置。
 
     
-    PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "West US"
+    	PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "West US"
     
 
 3. 使用 **New-AzureRmRecoveryServicesVault** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。
-
     
-    PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
+		PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
     
 
-4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](../storage/storage-redundancy.md#locally-redundant-storage) 或[异地冗余存储 (GRS)](../storage/storage-redundancy.md#geo-redundant-storage)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
+4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
 
     > [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。出于此原因，在变量中存储备份恢复服务保管库对象可提供方便。
 
-    
-    PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault –Name "testVault"
-    PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
-    
+	    
+	    PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault –Name "testVault"
+	    PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
+	    
 
 ## 在订阅中查看保管库
 使用 **Get-AzureRmRecoveryServicesVault** 查看当前订阅中所有保管库的列表。可以使用此命令来查看是否创建了新的保管库，或者查看订阅中的可用保管库。
 
 运行 Get-AzureRmRecoveryServicesVault 命令即可列出订阅中的所有保管库。
 
-```
-PS C:\> Get-AzureRmRecoveryServicesVault
-Name              : Contoso-vault
-ID                : /subscriptions/1234
-Type              : Microsoft.RecoveryServices/vaults
-Location          : WestUS
-ResourceGroupName : Contoso-docs-rg
-SubscriptionId    : 1234-567f-8910-abc
-Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
-```
+		
+		PS C:\> Get-AzureRmRecoveryServicesVault
+		Name              : Contoso-vault
+		ID                : /subscriptions/1234
+		Type              : Microsoft.RecoveryServices/vaults
+		Location          : WestUS
+		ResourceGroupName : Contoso-docs-rg
+		SubscriptionId    : 1234-567f-8910-abc
+		Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
+
 
 ## 安装 Azure 备份代理
 在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。可以从 [Microsoft 下载中心](http://aka.ms/azurebackup_agent)或恢复服务保管库的“仪表板”页获取最新版本的安装程序。将安装程序保存到方便访问的位置，例如 C:\\Downloads。

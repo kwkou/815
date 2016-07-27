@@ -16,12 +16,12 @@
 # 先睹为快：备份 Azure 虚拟机
 
 > [AZURE.SELECTOR]
-- [备份经典模式 VM](/documentation/articles/backup-azure-vms-first-look)
+- [备份经典模式 VM](/documentation/articles/backup-azure-vms-first-look/)
 
 本教程将引导你完成将 Azure 虚拟机 (VM) 备份到 Azure 的步骤。若要顺利完成本教程，必须满足以下先决条件：
 
 - 已在 Azure 订阅中创建 VM。
-- VM 已连接到 Azure 公共 IP 地址。有关更多信息，请参阅[网络连接](./backup-azure-vms-prepare.md#network-connectivity)。
+- VM 已连接到 Azure 公共 IP 地址。有关更多信息，请参阅[网络连接](/documentation/articles/backup-azure-vms-prepare/#network-connectivity)。
 
 若要备份 VM，需要执行五个主要步骤：
 

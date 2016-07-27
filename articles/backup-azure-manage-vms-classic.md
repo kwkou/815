@@ -16,8 +16,8 @@
 # 管理和监视 Azure 虚拟机备份
 
 > [AZURE.SELECTOR]
-- [管理 Azure VM 备份](/documentation/articles/backup-azure-manage-vms)
-- [管理 经典 VM 备份](/documentation/articles/backup-azure-manage-vms-classic)
+- [管理 Azure VM 备份](/documentation/articles/backup-azure-manage-vms/)
+- [管理 经典 VM 备份](/documentation/articles/backup-azure-manage-vms-classic/)
 
 本文针对在 Azure 中受保护的经典模型虚拟机介绍了几种常见的管理和监视任务。
 
@@ -231,11 +231,11 @@
 基于事件的警报会受到以下限制：
 
 1. 警报在备份保管库的所有虚拟机上触发。你不能通过自定义来获取备份保管库中特定虚拟机集的警报。
-2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples#create-alert-rules)
+2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples/#create-alert-rules)
 3. 你将收到来自“alerts-noreply@mail.windowsazure.com”的警报。目前你无法修改电子邮件发件人。
 
 ## 后续步骤
 
-- [还原 Azure VM](/documentation/articles/backup-azure-restore-vms)
+- [还原 Azure VM](/documentation/articles/backup-azure-restore-vms/)
 
 <!---HONumber=Mooncake_0704_2016-->

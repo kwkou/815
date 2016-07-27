@@ -16,10 +16,10 @@
 # 准备使用 Azure 备份服务器来备份工作负荷
 
 > [AZURE.SELECTOR]
-- [Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup)
-- [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
-- [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic)
-- [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic)
+- [Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)
+- [SCDPM](/documentation/articles/backup-azure-dpm-introduction/)
+- [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic/)
+- [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic/)
 
 
 本文介绍如何准备环境，以使用 Azure 备份服务器来备份工作负荷。使用 Azure 备份服务器，可以从单个控制台保护应用程序工作负荷，例如 Hyper-V VM、Microsoft SQL Server、SharePoint Server、Microsoft Exchange 和 Windows 客户端。
@@ -200,7 +200,7 @@ Azure 备份服务器需要连接到 Azure 备份服务才能成功运行。若�
 ## 故障排除
 
 如果 Microsoft Azure 备份服务器在安装阶段（或备份或还原时）失败并出现错误，请参阅此[错误代码文档](https://support.microsoft.com/kb/3041338)以获取详细信息。
-此外，还可以参考 [Azure 备份相关的常见问题](/documentation/articles/backup-azure-backup-faq)
+此外，还可以参考 [Azure 备份相关的常见问题](/documentation/articles/backup-azure-backup-faq/)
 
 
 ## 后续步骤
@@ -209,8 +209,8 @@ Azure 备份服务器需要连接到 Azure 备份服务才能成功运行。若�
 
 请参阅这些文章，以深入了解如何使用 Microsoft Azure 备份服务器来保护工作负荷。
 
-- [SQL Server 备份](/documentation/articles/backup-azure-backup-sql)
-- [SharePoint Server 备份](/documentation/articles/backup-azure-backup-sharepoint)
-- [备用服务器备份](/documentation/articles/backup-azure-alternate-dpm-server)
+- [SQL Server 备份](/documentation/articles/backup-azure-backup-sql/)
+- [SharePoint Server 备份](/documentation/articles/backup-azure-backup-sharepoint/)
+- [备用服务器备份](/documentation/articles/backup-azure-alternate-dpm-server/)
 
 <!---HONumber=Mooncake_0606_2016-->
