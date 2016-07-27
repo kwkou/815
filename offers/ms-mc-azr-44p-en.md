@@ -26,11 +26,11 @@ With this offering, you can use various of Azure services upon your needs, inclu
 
 - Any customer can only apply for this offer once. For example, the same payment account (including UnionPay and Alipay) can only be used once for this offer. Violation of this policy may result in termination of your subscription, deletion of all Customer Data, and forfeiture of the 1 RMB payment.
 - If you run out of 1,500 RMB credits or run out of one-month given (whichever comes first), your subscription will be disabled and your Customer Data will be permanently deleted unless you recharge  within 15 days as detailed in Conversion to Paid Offer below. This will re-activate your subscription but may require re-configuration of related services. 
-- 1 RMB Trial Offer is intended only for development and testing environment. If your purpose is for commercial use, please convert to [Standard Pay-In-Advanc](/offers/ms-mc-arz-33p/) subscription.
+- 1 RMB Trial Offer is intended only for development and testing environment. If your purpose is for commercial use, please convert to [Standard Pay-In-Advance](/offers/ms-mc-arz-33p/) subscription.
 
-##Update to Standard Pay-In-Advance Subscription
+##Update to Standard Pay-In-Advance Subscription 
 
-You could update your subscription into a [Standard Pay-In-Advanc](/offers/ms-mc-arz-33p/) subscription any time during 1 RMB trial period. Please click “update now” in your subscription page, you could enjoy a richer experience of Azure services by adding additional funds of 1,000 RMB or more. Details please refer to [here](/offers/ms-mc-arz-33p/). 
+You could update your subscription into a [Standard Pay-In-Advance](/offers/ms-mc-arz-33p/) subscription any time during 1 RMB trial period. Please click “update now” in your subscription page, you could enjoy a richer experience of Azure services by adding additional funds of 1,000 RMB or more. Details please refer to [here](/offers/ms-mc-arz-33p/). 
 
 ##Payment Options & Pricing Details
 
