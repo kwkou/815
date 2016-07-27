@@ -10,7 +10,7 @@
 
 <tags ms.service="what-is-new_archives" ms.date="" wacn.date="" wacn.lang="cn"/>
 
-# Microsoft Azure
+# Azure
 ## 2016年1月时事通讯
 
 ### 公告
