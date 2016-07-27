@@ -154,7 +154,7 @@ Polybase 易于使用，可让你通过使用熟悉的 T-SQL 命令来利用不�
 <!--Article references-->
 [Create Support Ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
 [数据仓库工作负荷]: /documentation/articles/sql-data-warehouse-overview-workload/
-[如何加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-load-sample-databases/
+[如何加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
 [如何预配]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 [迁移文档]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [《SQL Data Warehouse solution partners》（SQL 数据仓库解决方案合作伙伴）]: /documentation/articles/sql-data-warehouse-integrate-solution-partners/

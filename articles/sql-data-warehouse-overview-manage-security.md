@@ -88,8 +88,8 @@ Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密
 <!--Article references-->
 [连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-develop-connections/
 [SQL 数据库审核入门]: /documentation/articles/sql-database-auditing-get-started/
-[透明数据加密 (TDE) 入门]: /documentation/articles/sql-data-warehouse-encryption-tde/
-[使用 Azure Active Directory 身份验证连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect-aad-authentication
+[透明数据加密 (TDE) 入门]: /documentation/articles/sql-data-warehouse-encryption-tde-sql/
+[使用 Azure Active Directory 身份验证连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-authentication/
 
 <!--MSDN references-->
 [Azure SQL 数据库防火墙]: /documentation/articles/sql-database-firewall-configure/
