@@ -17,7 +17,7 @@
 
 Apache Tomcat（或简称 Tomcat，以前也称为 Jakarta Tomcat）是由 Apache Software Foundation (ASF) 开发的一个开源 Web 服务器和 servlet 容器。Tomcat 实现了 Sun Microsystems 提出的 Java Servlet 和 JavaServer Pages (JSP) 规范，并提供了用于运行 Java 代码的纯 Java HTTP Web 服务器环境。在最简单的配置中，Tomcat 在单个操作系统进程中运行。此进程运行 Java 虚拟机 (JVM)。浏览器向 Tomcat 发出的每个 HTTP 请求都作为 Tomcat 进程中的单独线程进行处理。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 在本指南中，将在 Linux 映像上安装 tomcat7，并将其部署在 Azure 中。
 
@@ -31,10 +31,10 @@ Apache Tomcat（或简称 Tomcat，以前也称为 Jakarta Tomcat）是由 Apach
 
 本主题假定你具有 tomcat 和 Linux 的基本专业知识。
 
-##阶段 1：创建映像
+## 阶段 1：创建映像
 在此阶段中，你将在 Azure 中使用 Linux 映像创建虚拟机。
 
-###步骤 1：生成 SSH 身份验证密钥
+### 步骤 1：生成 SSH 身份验证密钥
 SSH 是面向系统管理员的重要工具。但是，基于人工确定的密码配置访问安全性并不是最佳做法。恶意用户可以根据用户名和弱密码侵入你的系统。
 
 好消息是，有办法使远程访问保持打开状态，而无需担心密码。此方法包括使用非对称加密进行身份验证。用户的私钥是授予身份验证的密钥。你甚至可以锁定用户的帐户，以完全禁止密码身份验证。

@@ -13,9 +13,9 @@
 	ms.date="04/15/2015"
 	wacn.date="06/08/2016"/>
 
-# MariaDB (MySQL) 群集 - Azure 教程
+# MariaDB (MySQL) 
 
-我们正在创建的是 [MariaDB](https://mariadb.org/en/about/) 的多主机 [Galera](http://galeracluster.com/products/) 群集，这是 MySQL 的嵌入式替代版本，具有稳健性、可扩展性和可靠性，可在 Azure 虚拟机上的高度可用环境中使用。
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 体系结构概述
 
