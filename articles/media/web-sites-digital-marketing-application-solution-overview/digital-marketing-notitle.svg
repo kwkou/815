@@ -1,0 +1,3041 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"[]>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"
+  width="9.35396in"
+  height="6.63113in"
+  viewBox="0 0 673.485 477.442"
+  xml:space="preserve"
+  color-interpolation-filters="sRGB"
+  class="st75">
+	<v:documentProperties
+    v:langID="1033">
+		<v:userDefs>
+			<v:ud
+        v:nameU="msvNoAutoConnect"
+        v:val="VT0(1):26" />
+			<v:ud
+        v:nameU="msvConvertTheme" />
+			<v:ud
+        v:nameU="msvWarnOnPersonalInfo"
+        v:val="VT0(1):5" />
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style
+    type="text/css">
+	<![CDATA[
+    .hover_group:hover text, .hover_group:hover path, .hover_group:hover ellipse, .hover_group:hover rect{stroke:#26a9e0;stroke-width:2px;} 
+		.st1 {fill:#dbeef3;stroke:#00bcf2;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st2 {fill:#00bcf2;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st3 {fill:#00bcf2;font-family:Segoe UI Light;font-size:0.75em;font-weight:bold}
+		.st4 {stroke:#7f7f7f;stroke-dasharray:0.25,0.5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st5 {fill:#ffffff;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st6 {fill:#7030a0;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st7 {fill:#7030a0;font-family:Segoe UI Light;font-size:0.666664em}
+		.st8 {fill:#2759ab;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st9 {fill:#2759ab;font-family:Segoe UI Light;font-size:0.666664em}
+		.st10 {font-size:1em}
+		.st11 {fill:none;stroke:#00bcf2;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.25}
+		.st12 {fill:#00bcf2;font-family:Segoe UI Light;font-size:0.666664em}
+		.st13 {marker-start:url(#mrkr4-96);stroke:#2759ab;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st14 {fill:#2759ab;fill-opacity:1;stroke:#2759ab;stroke-opacity:1;stroke-width:0.08695652173913}
+		.st15 {fill:#2759ab;font-family:Segoe UI Light;font-size:0.499992em}
+		.st16 {marker-start:url(#mrkr4-120);stroke:#0c0c0c;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st17 {fill:#0c0c0c;fill-opacity:1;stroke:#0c0c0c;stroke-opacity:1;stroke-width:0.08695652173913}
+		.st18 {fill:#595959;font-family:Segoe UI Light;font-size:0.499992em}
+		.st19 {marker-start:url(#mrkr4-127);stroke:#7030a0;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st20 {fill:#7030a0;fill-opacity:1;stroke:#7030a0;stroke-opacity:1;stroke-width:0.08695652173913}
+		.st21 {fill:#7030a0;font-family:Segoe UI Light;font-size:0.499992em}
+		.st22 {marker-start:url(#mrkr4-140);stroke:#00bcf2;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st23 {fill:#00bcf2;fill-opacity:1;stroke:#00bcf2;stroke-opacity:1;stroke-width:0.08695652173913}
+		.st24 {fill:#00bcf2;font-family:Segoe UI Light;font-size:0.499992em}
+		.st25 {fill:#7f7f7f;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st26 {fill:#7f7f7f;font-family:Segoe UI Light;font-size:0.666664em;font-style:italic}
+		.st27 {marker-end:url(#mrkr4-167);marker-start:url(#mrkr4-140);stroke:#00bcf2;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st28 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st29 {fill:#3f3f3f;font-family:Segoe UI;font-size:1.00001em;font-weight:bold}
+		.st30 {fill:#3f3f3f;font-family:Segoe UI;font-size:0.499992em;font-weight:bold}
+		.st31 {stroke:#7f7f7f;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25}
+		.st32 {fill:#3d70b6;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st33 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st34 {fill:#000000;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st35 {fill:#000000;font-family:Segoe UI Light;font-size:0.666664em}
+		.st36 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st37 {marker-start:url(#mrkr13-273);stroke:#2759ab;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st38 {fill:#000000;stroke:none;stroke-linecap:butt;stroke-width:0.364937}
+		.st39 {fill:#f2f2f2;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st40 {fill:#00b050;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st41 {fill:#00b050;font-family:Segoe UI Light;font-size:0.666664em}
+		.st42 {marker-end:url(#mrkr4-349);marker-start:url(#mrkr4-347);stroke:#00b050;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st43 {fill:#00b050;fill-opacity:1;stroke:#00b050;stroke-opacity:1;stroke-width:0.08695652173913}
+		.st44 {fill:#00b050;font-family:Segoe UI Light;font-size:0.499992em}
+		.st45 {marker-end:url(#mrkr13-389);marker-start:url(#mrkr13-387);stroke:#00b050;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st46 {fill:#00188f;stroke:none;stroke-linecap:butt;stroke-width:0.217949}
+		.st47 {fill:#00188f;font-family:Arial;font-size:0.666664em}
+		.st48 {fill:none}
+		.st49 {stroke:#00aeef;stroke-linecap:butt;stroke-width:0.653846}
+		.st50 {fill:#000000;font-family:Arial;font-size:0.666664em}
+		.st51 {fill:#00188f}
+		.st52 {stroke:#ee2d2f;stroke-linecap:butt;stroke-width:0.00695437}
+		.st53 {stroke:#010101;stroke-linecap:butt;stroke-width:0.0118799}
+		.st54 {marker-end:url(#mrkr4-444);stroke:#4677bf;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st55 {fill:#4677bf;fill-opacity:1;stroke:#4677bf;stroke-opacity:1;stroke-width:0.08695652173913}
+		.st56 {fill:#ffffff;stroke:none;stroke-linecap:butt}
+		.st57 {fill:#000000;font-family:Arial;font-size:0.499992em}
+		.st58 {marker-start:url(#mrkr4-452);stroke:#4677bf;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st59 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st60 {fill:#00bcf2;font-family:Segoe UI Light;font-size:0.499992em;font-weight:bold}
+		.st61 {fill:#00b0f0;stroke:#00b0f0;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st62 {fill:#ffffff;font-family:Segoe UI;font-size:0.333344em}
+		.st63 {fill:none;stroke:#00b0f0;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st64 {fill:#7f7f7f;font-family:Segoe UI;font-size:0.499992em;font-weight:bold}
+		.st65 {fill:#2759ab;stroke:none;stroke-linecap:butt;stroke-width:0.364937}
+		.st66 {fill:#7f7f7f;font-family:Segoe UI Light;font-size:0.499992em}
+		.st67 {fill:#f26522;stroke:none;stroke-linecap:butt;stroke-width:0.364937}
+		.st68 {fill:#8dc63f;stroke:none;stroke-linecap:butt;stroke-width:0.364937}
+		.st69 {fill:#00aeef;stroke:none;stroke-linecap:butt;stroke-width:0.364937}
+		.st70 {fill:#ffc20e;stroke:none;stroke-linecap:butt;stroke-width:0.364937}
+		.st71 {fill:#60a9dc;stroke:none;stroke-linecap:butt;stroke-width:0.364937}
+		.st72 {fill:#3c5a99;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st73 {fill:none;stroke:#88e4ff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+		.st74 {fill:#00bcf2;font-family:Segoe UI Light;font-size:0.833336em}
+		.st75 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs
+    id="Markers">
+		<g
+      id="lend4">
+			<path
+        d="M 2 1 L 0 0 L 2 -1 L 2 1 "
+        style="stroke:none" />
+		</g>
+		<marker
+      id="mrkr4-96"
+      class="st14"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="21.5"
+      refX="21.5"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-120"
+      class="st17"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="21.5"
+      refX="21.5"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-127"
+      class="st20"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="21.5"
+      refX="21.5"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-140"
+      class="st23"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="21.5"
+      refX="21.5"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-167"
+      class="st23"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="23"
+      refX="-23"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(-11.5,-11.5) " />
+		</marker>
+		<g
+      id="lend13">
+			<path
+        d="M 3 1 L 0 0 L 3 -1 L 3 1 "
+        style="stroke:none" />
+		</g>
+		<marker
+      id="mrkr13-273"
+      class="st14"
+      v:arrowType="13"
+      v:arrowSize="2"
+      v:setback="33"
+      refX="33"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend13"
+        transform="scale(11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-347"
+      class="st43"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="21.5"
+      refX="21.5"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-349"
+      class="st43"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="23"
+      refX="-23"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(-11.5,-11.5) " />
+		</marker>
+		<marker
+      id="mrkr13-387"
+      class="st43"
+      v:arrowType="13"
+      v:arrowSize="2"
+      v:setback="33"
+      refX="33"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend13"
+        transform="scale(11.5) " />
+		</marker>
+		<marker
+      id="mrkr13-389"
+      class="st43"
+      v:arrowType="13"
+      v:arrowSize="2"
+      v:setback="34.5"
+      refX="-34.5"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend13"
+        transform="scale(-11.5,-11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-444"
+      class="st55"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="23"
+      refX="-23"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(-11.5,-11.5) " />
+		</marker>
+		<marker
+      id="mrkr4-452"
+      class="st55"
+      v:arrowType="4"
+      v:arrowSize="2"
+      v:setback="21.5"
+      refX="21.5"
+      orient="auto"
+      markerUnits="strokeWidth"
+      overflow="visible">
+			<use
+        xlink:href="#lend4"
+        transform="scale(11.5) " />
+		</marker>
+	</defs>
+	<g
+    v:mID="42"
+    v:index="3"
+    v:groupContext="foregroundPage">
+		<v:pageProperties
+      v:drawingScale="1"
+      v:pageScale="1"
+      v:drawingUnits="0"
+      v:shadowOffsetX="9"
+      v:shadowOffsetY="-9" />
+		<v:layer
+      v:name="Connector"
+      v:index="0" />
+		<v:layer
+      v:name="Flowchart"
+      v:index="1" />
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-get-started/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group377-1"
+        transform="translate(291.018,-166.699)"
+        v:mID="377"
+        v:groupContext="group"
+        class="hover_group">
+				<title>See how you can create an ASP.NET MVC 4 web app and deploy it to Azure Web App from Visual Studio in just a few minutes. Then, learn about the superior management features available through the Azure Portal and Visual Studio that let you easily monitor your application, view logs, and scale your app to use reserved resources.</title>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-get-started/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape7-2"
+            v:mID="7"
+            v:groupContext="shape"
+            v:layerMember="1">
+						<v:custProps>
+							<v:cp
+                v:nameU="Cost"
+                v:lbl="Cost"
+                v:type="7"
+                v:format="@"
+                v:langID="1033" />
+							<v:cp
+                v:nameU="Duration"
+                v:lbl="Duration"
+                v:type="2"
+                v:langID="1033" />
+							<v:cp
+                v:nameU="Resources"
+                v:lbl="Resources"
+                v:langID="1033" />
+						</v:custProps>
+						<v:userDefs>
+							<v:ud
+                v:nameU="visVersion"
+                v:val="VT0(11):26" />
+						</v:userDefs>
+						<rect
+              x="0"
+              y="363.197"
+              width="238.542"
+              height="114.245"
+              rx="4.5"
+              ry="4.5"
+              class="st1" />
+					</g>
+				</a>
+				<g
+          id="group28-4"
+          transform="translate(28.6201,-78.8907)"
+          v:mID="28"
+          v:groupContext="group">
+					<g
+            id="shape29-5"
+            v:mID="29"
+            v:groupContext="shape">
+						<path
+              d="M23.52 473.05 C21.28 474.76 18.64 475.6 16.03 475.6 C12.32 475.6 8.65 473.93 6.22 470.76 C2.08 465.34&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.1 457.61 8.52 453.46 C10.76 451.74 13.4 450.92 16.01 450.92 C19.72 450.92 23.39 452.59 25.82&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 455.76 C29.96 461.17 28.93 468.91 23.52 473.05 ZM27.28 454.63 C24.49 450.98 20.27 449.07 16.01&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 449.07 C13.01 449.07 9.96 450.03 7.39 451.99 C1.18 456.76 -0 465.66 4.76 471.88 C7.55 475.53&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 11.77 477.44 16.03 477.44 C19.04 477.44 22.07 476.5 24.64 474.52 C30.86 469.76 32.04 460.85&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 27.28 454.63 Z"
+              class="st2" />
+					</g>
+				</g>
+				<g
+          id="group30-7"
+          transform="translate(33.7124,-83.2896)"
+          v:mID="30"
+          v:groupContext="group">
+					<g
+            id="group31-8"
+            transform="translate(0.350438,-0.177375)"
+            v:mID="31"
+            v:groupContext="group">
+						<g
+              id="group32-9"
+              transform="translate(0.44925,5.68434E-014)"
+              v:mID="32"
+              v:groupContext="group">
+							<g
+                id="shape33-10"
+                v:mID="33"
+                v:groupContext="shape">
+								<path
+                  d="M3.72 470.41 C2.9 469.6 2.23 468.82 1.71 468.06 C0.52 470.48 0.1 472.96 0 474.95 C0.12 475.11&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0.12 475.23 0.23 475.39 C0.83 476.14 1.57 476.86 2.29 477.44 C2.18 475.82 2.34 473.16&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.72 470.41 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group34-12"
+              transform="translate(3.3825,-8.98515)"
+              v:mID="34"
+              v:groupContext="group">
+							<g
+                id="shape35-13"
+                v:mID="35"
+                v:groupContext="shape">
+								<path
+                  d="M5.07 469.94 C3.96 470.71 2.81 471.69 1.66 472.92 C1.02 473.59 0.48 474.28 0 474.97 C0.49&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.77 1.14 476.59 1.95 477.44 C2.56 476.58 3.31 475.72 4.21 474.87 C5.35 473.81 6.42&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.95 7.43 472.27 C6.61 471.51 5.81 470.74 5.07 469.94 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group36-15"
+              transform="translate(10.2079,-15.2074)"
+              v:mID="36"
+              v:groupContext="group">
+							<g
+                id="shape37-16"
+                v:mID="37"
+                v:groupContext="shape">
+								<path
+                  d="M10.04 475.36 C9.5 474.68 8.9 474.08 8.26 473.54 C6.35 473.25 3.39 473.28 0 475.08 C0.78&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.92 1.55 476.7 2.3 477.44 C6.82 475 10.04 475.36 10.04 475.36 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group38-18"
+              transform="translate(0,-9.38775)"
+              v:mID="38"
+              v:groupContext="group">
+							<g
+                id="shape39-19"
+                v:mID="39"
+                v:groupContext="shape">
+								<path
+                  d="M2.16 477.44 C2.5 476.76 2.91 476.06 3.38 475.37 C1.44 472.3 1.53 469.77 1.74 468.58 C1.26&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469.09 0.8 469.61 0.41 470.18 C0.02 471.79 0 474.35 2.16 477.44 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group40-21"
+              transform="translate(4.16269,-0.740813)"
+              v:mID="40"
+              v:groupContext="group">
+							<g
+                id="shape41-22"
+                v:mID="41"
+                v:groupContext="shape">
+								<path
+                  d="M3.51 471.33 C2.6 470.61 1.83 469.89 1.17 469.2 C0.7 469.85 0.32 470.5 0 471.15 C0.62 471.77&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 1.33 472.4 2.14 473.05 C7.2 477.06 12.23 477.44 15.05 477.44 C15.24 477.44 16.12 476.24&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 16.63 475.5 C15.37 475.76 9.97 476.44 3.51 471.33 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group42-24"
+              transform="translate(2.16112,-7.03613)"
+              v:mID="42"
+              v:groupContext="group">
+							<g
+                id="shape43-25"
+                v:mID="43"
+                v:groupContext="shape">
+								<path
+                  d="M0 475.09 C0.53 475.85 1.18 476.63 2 477.44 C2.32 476.8 2.71 476.14 3.17 475.49 C2.36 474.64&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 1.72 473.82 1.22 473.02 C0.74 473.71 0.34 474.4 0 475.09 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group44-27"
+              transform="translate(10.809,-5.32838)"
+              v:mID="44"
+              v:groupContext="group">
+							<g
+                id="shape45-28"
+                v:mID="45"
+                v:groupContext="shape">
+								<path
+                  d="M0 468.61 C4.61 472.87 10.07 476.5 11.46 477.44 C11.6 477.09 11.69 476.75 11.79 476.39 C10.3&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.28 6.39 472.23 1.7 467.56 C1.15 467.86 0.59 468.21 0 468.61 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group46-30"
+              transform="translate(5.12419,-16.4848)"
+              v:mID="46"
+              v:groupContext="group">
+							<g
+                id="shape47-31"
+                v:mID="47"
+                v:groupContext="shape">
+								<path
+                  d="M5.08 476.35 C3.95 475.17 2.81 473.91 1.63 472.55 C1.07 472.73 0.53 472.95 0 473.21 C0.86&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.63 2.03 476.05 3.33 477.44 C3.93 477.02 4.5 476.66 5.08 476.35 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group48-33"
+              transform="translate(8.45888,-14.1645)"
+              v:mID="48"
+              v:groupContext="group">
+							<g
+                id="shape49-34"
+                v:mID="49"
+                v:groupContext="shape">
+								<path
+                  d="M1.75 474.03 C1.17 474.34 0.59 474.7 0 475.12 C0.74 475.91 1.53 476.68 2.35 477.44 C2.95&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.04 3.51 476.7 4.05 476.4 C3.3 475.67 2.53 474.87 1.75 474.03 Z"
+                  class="st2" />
+							</g>
+						</g>
+					</g>
+					<g
+            id="group50-36"
+            transform="translate(15.2696,-6.24319)"
+            v:mID="50"
+            v:groupContext="group">
+						<g
+              id="shape51-37"
+              v:mID="51"
+              v:groupContext="shape">
+							<path
+                d="M1.38 472.35 C0.23 473.24 -0 474.9 0.89 476.06 C1.78 477.23 3.45 477.44 4.61 476.56 C5.77 475.68&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 5.99 474.01 5.11 472.85 C4.21 471.69 2.55 471.46 1.38 472.35 Z"
+                class="st2" />
+						</g>
+					</g>
+					<g
+            id="group52-39"
+            transform="translate(9.9159,1.7053E-013)"
+            v:mID="52"
+            v:groupContext="group">
+						<g
+              id="shape53-40"
+              v:mID="53"
+              v:groupContext="shape">
+							<path
+                d="M1.27 472.73 C0.2 473.55 -0 475.1 0.81 476.17 C1.64 477.24 3.18 477.44 4.26 476.62 C5.33 475.8&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 5.53 474.26 4.71 473.19 C3.89 472.11 2.35 471.91 1.27 472.73 Z"
+                class="st2" />
+						</g>
+					</g>
+					<g
+            id="group54-42"
+            transform="translate(0,-5.36869)"
+            v:mID="54"
+            v:groupContext="group">
+						<g
+              id="shape55-43"
+              v:mID="55"
+              v:groupContext="shape">
+							<path
+                d="M1.94 470.28 C0.31 471.53 0 473.86 1.25 475.49 C2.5 477.13 4.85 477.44 6.48 476.19 C8.11 474.94&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.42 472.6 7.17 470.95 C5.92 469.34 3.57 469.02 1.94 470.28 Z"
+                class="st2" />
+						</g>
+					</g>
+				</g>
+				<g
+          id="shape56-45"
+          v:mID="56"
+          v:groupContext="shape"
+          transform="translate(13.9263,-74.0365)">
+					<desc>Azure web app</desc>
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="110.442"
+            cy="464.313"
+            width="123.21"
+            height="22.86" />
+					<text
+            x="48.84"
+            y="460.98"
+            class="st3"
+            v:langID="1033"><v:paragraph /><v:tabList />Azure web app</text>				</g>
+			</g>
+		</a>
+		<g
+      id="shape1-47"
+      v:mID="1"
+      v:groupContext="shape"
+      v:layerMember="0"
+      transform="translate(624.06,-147.423)">
+			<path
+        d="M0 470.24 L-604.77 470.24"
+        class="st4" />
+		</g>
+		<g
+      id="shape2-50"
+      v:mID="2"
+      v:groupContext="shape"
+      v:layerMember="0"
+      transform="translate(623.61,-286.782)">
+			<path
+        d="M0 470.24 L-143.69 470.24 A6 6 -180 0 0 -155.69 470.24 L-604.32 470.24"
+        class="st4" />
+		</g>
+		<g
+      id="shape5-53"
+      v:mID="5"
+      v:groupContext="shape"
+      transform="translate(324.128,-385.56)">
+			<rect
+        x="0"
+        y="463.042"
+        width="14.4"
+        height="14.4"
+        class="st5" />
+		</g>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/web-sites-traffic-manager/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="shape11-55"
+        v:mID="11"
+        v:groupContext="shape"
+        transform="translate(319.638,-342.36)"
+        class="hover_group">
+				<title>Use Azure Traffic Manager to maintain high availability and load balance Azure Web Apps.</title>
+				<desc>Traffic Manager</desc>
+				<v:textBlock
+          v:margins="rect(0,0,0,0)"
+          v:verticalAlign="0" />
+				<v:textRect
+          cx="13.0676"
+          cy="490.896"
+          width="68.88"
+          height="24.4963" />
+				<path
+          d="M17.06 467.2 L15.31 469.02 L15.31 463.75 L20.69 463.75 L18.74 465.56 L23.65 470.34 L23.65 460.09 L16.72&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 452.95 L6.94 452.95 L5.16 454.78 L10.74 460.65 L13.22 458.1 L13.22 465.91 L5.62 465.91 L8 463.35 L2.5&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 457.73 L0 460.31 L0 470.29 L6.93 477.44 L15.51 477.44 L8.91 470.77 L7.65 472.19 L7.65 468.07 L11.52&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 468.07 L10.39 469.38 L17.47 476.79 L21.81 472.31 L17.06 467.2 Z"
+          class="st6" />
+				<text
+          x="-13.18"
+          y="485.85"
+          class="st7"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />Traffic Manager</text>			</g>
+		</a>
+		<a
+      xlink:href="http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group12-58"
+        transform="translate(185.342,-250.533)"
+        v:mID="12"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Media Services offer the flexibility, scalability and reliability of a cloud platform to handle high quality media experiences for a global audience.</title>
+				<desc>Media Services</desc>
+				<g
+          id="group13-59"
+          v:mID="13"
+          v:groupContext="group">
+					<g
+            id="group14-60"
+            transform="translate(0,-16.0931)"
+            v:mID="14"
+            v:groupContext="group">
+						<g
+              id="shape15-61"
+              v:mID="15"
+              v:groupContext="shape">
+							<path
+                d="M0.42 477.28 C2.47 477.28 3.36 477.44 3.99 475.75 C5.43 471.8 8.91 468.39 13.69 468.39 L13.72&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 468.39 C18.51 468.39 21.98 471.8 23.42 475.75 C24.05 477.44 24.96 477.33 27.1 477.33 C27.42&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.33 26.88 477.34 27.12 477.34 L27.02 471.08 L13.75 463.65 L0.4 471.29 L0.42 477.28 C0.46&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.28 0.49 477.28 0.49 477.28 C0.49 477.28 0 477.28 0.42 477.28 Z"
+                class="st8" />
+						</g>
+					</g>
+					<g
+            id="group16-63"
+            transform="translate(0.211312,1.7053E-013)"
+            v:mID="16"
+            v:groupContext="group">
+						<g
+              id="shape17-64"
+              v:mID="17"
+              v:groupContext="shape">
+							<path
+                d="M26.7 464.79 L25.35 464.79 C24.06 464.89 23.53 465.17 23.21 466.05 C21.76 470 18.3 472.98 13.51&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.98 L13.49 472.98 C8.69 472.98 5.22 470 3.77 466.05 C3.39 465.04 2.85 464.91 1.62 464.82&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L0.16 464.82 C0.05 464.82 0 464.82 0 464.82 C-0 464.82 0.41 464.82 0.16 464.82 L0.16 470.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L13.65 477.44 L26.88 469.79 L26.88 465 C26.65 465 27.01 464.79 26.7 464.79 Z"
+                class="st8" />
+						</g>
+					</g>
+				</g>
+				<g
+          id="group18-66"
+          transform="translate(6.23531,-7.18575)"
+          v:mID="18"
+          v:groupContext="group">
+					<g
+            id="shape19-67"
+            v:mID="19"
+            v:groupContext="shape">
+						<path
+              d="M5.71 474.39 L5.71 465.78 L12.22 470.07 L5.71 474.39 ZM12.35 465.1 C9.68 462.43 5.35 462.43 2.67&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 465.1 C0 467.77 -0 472.11 2.67 474.78 C5.35 477.44 9.68 477.44 12.35 474.78 C15.02 472.11 15.02&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 467.78 12.35 465.1 Z"
+              class="st8" />
+					</g>
+				</g>
+				<g
+          id="shape12-69"
+          v:mID="12"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="14.9059"
+            cy="486.272"
+            width="103.51"
+            height="15.4525" />
+					<text
+            x="4.52"
+            y="485.75"
+            class="st9"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Media <v:newlineChar /><tspan
+              x="1.6"
+              dy="1.2em"
+              class="st10">Services</tspan></text>				</g>
+			</g>
+		</a>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group20-72"
+        transform="translate(142.453,-252.097)"
+        v:mID="20"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Send push notifications to any platform, from any backend</title>
+				<desc>Notification Hub</desc>
+				<g
+          id="shape21-73"
+          v:mID="21"
+          v:groupContext="shape"
+          transform="translate(0.00075,-17.0092)">
+					<path
+            d="M2.2 477.44 L27.11 477.44 L20.25 471.37 L20.25 474.44 L2.25 474.44 L2.25 471.94 C2.25 470.76 3.16 469.94&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 4.34 469.94 L22.8 469.94 C23.99 469.94 24.75 470.76 24.75 471.94 L24.75 473.01 L27 474.91 L27 471.91&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C27 469.55 25.2 467.69 22.83 467.69 L4.32 467.69 C1.95 467.69 0 469.55 0 471.91 L0 477.44 L2 477.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L2.2 477.44 Z"
+            class="st8" />
+				</g>
+				<g
+          id="shape22-75"
+          v:mID="22"
+          v:groupContext="shape">
+					<path
+            d="M24.88 461.93 L0.03 461.93 L6 467.62 L6 464.18 L24.75 464.18 L24.75 466.99 C24.75 468.18 23.99 469.43&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 22.8 469.43 L4.34 469.43 C3.16 469.43 2.25 468.18 2.25 466.99 L2.25 465.92 L0 464.02 L0 467.02 C0&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469.38 1.95 470.93 4.32 470.93 L8.39 470.93 L17.52 477.44 L16.81 470.93 L22.83 470.93 C25.2 470.93&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 27 469.38 27 467.02 L27 461.93 L25.27 461.93 L24.88 461.93 Z"
+            class="st8" />
+				</g>
+				<g
+          id="shape20-77"
+          v:mID="20"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="15.8666"
+            cy="493.702"
+            width="90"
+            height="26.7593" />
+					<text
+            x="-3.29"
+            y="487.52"
+            class="st9"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Notification <v:newlineChar /><tspan
+              x="8.78"
+              dy="1.2em"
+              class="st10">Hub</tspan></text>				</g>
+			</g>
+		</a>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group24-80"
+        transform="translate(103.947,-251.776)"
+        v:mID="24"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Quickly add a cloud-based backend service to an app in minutes using Azure Mobile Services.</title>
+				<desc>Mobile Services</desc>
+				<g
+          id="shape25-81"
+          v:mID="25"
+          v:groupContext="shape">
+					<path
+            d="M18.5 443.99 L18.5 443.98 L1.5 443.98 L1.51 443.99 C0.02 444.04 0 444.38 0 446.19 L0 475.25 C0 477.06&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0.03 477.39 1.5 477.43 C1.5 477.43 1.94 477.44 2.02 477.44 L17.98 477.44 C18.06 477.44 18.5 477.43&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 18.5 477.43 C19.98 477.39 20 477.05 20 475.25 L20 446.19 C20.01 444.38 19.98 444.04 18.5 443.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; ZM7.65 445.12 L12.36 445.12 C12.45 445.12 12.51 445.21 12.51 445.3 C12.52 445.39 12.44 445.48 12.36&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 445.48 L7.65 445.48 C7.57 445.48 7.49 445.39 7.49 445.3 C7.49 445.21 7.57 445.12 7.65 445.12 ZM7.78&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.71 L6.63 475.71 C6.44 475.71 6.28 475.63 6.28 475.44 C6.28 475.25 6.44 475.18 6.63 475.18 L7.78&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.18 C7.97 475.18 8.12 475.25 8.12 475.44 C8.12 475.63 7.97 475.71 7.78 475.71 ZM10.79 475.9 L9.22&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.9 C8.96 475.9 8.75 475.8 8.75 475.54 C8.75 475.28 8.96 475.18 9.22 475.18 L10.79 475.18 C11.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.18 11.26 475.28 11.26 475.54 C11.26 475.8 11.05 475.9 10.79 475.9 ZM13.4 475.71 L12.25 475.71&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C12.07 475.71 11.91 475.63 11.91 475.44 C11.91 475.25 12.07 475.18 12.25 475.18 L13.4 475.18 C13.59&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.18 13.74 475.25 13.74 475.44 C13.74 475.63 13.59 475.71 13.4 475.71 ZM18.57 472.32 C18.57 473.85&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 18.42 474.18 16.99 474.21 L9.25 474.21 L3.02 474.21 C1.59 474.18 1.44 473.85 1.44 472.32 L1.44 448.14&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C1.44 446.53 1.6 446.53 3.2 446.53 L9.25 446.53 L16.81 446.53 C18.41 446.53 18.57 446.53 18.57 448.14&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L18.57 472.32 Z"
+            class="st8" />
+				</g>
+				<g
+          id="shape26-83"
+          v:mID="26"
+          v:groupContext="shape"
+          transform="translate(2.41425,-4.33275)">
+					<path
+            d="M15.18 453.45 C15.18 451.9 14.98 451.9 13.43 451.9 L1.7 451.9 C0.15 451.9 0 451.9 0 453.45 L0 475.62&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C0 477.16 0.16 477.44 1.71 477.44 L13.44 477.44 C14.98 477.44 15.18 477.16 15.18 475.61 L15.18 453.45&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; ZM7.14 469.82 L2.33 467.05 L2.33 461.47 L7.14 464.25 L7.14 469.82 ZM2.8 460.71 L7.59 457.94 L12.42&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 460.72 L7.62 463.49 L2.8 460.71 ZM12.85 467.05 L8.04 469.82 L8.04 464.29 L12.85 461.51 L12.85 467.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; Z"
+            class="st8" />
+				</g>
+				<g
+          id="shape24-85"
+          v:mID="24"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="9.58221"
+            cy="497.692"
+            width="81"
+            height="33.4605" />
+					<text
+            x="-1.89"
+            y="488.16"
+            class="st9"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Mobile <v:newlineChar /><tspan
+              x="-3.73"
+              dy="1.2em"
+              class="st10">Services</tspan></text>				</g>
+			</g>
+		</a>
+		<a
+      xlink:href="http://curah.microsoft.com/52143/using-the-webjobs-feature-of-windows-azure-web-sites"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="shape27-88"
+        v:mID="27"
+        v:groupContext="shape"
+        v:layerMember="1"
+        transform="translate(303.355,-210.181)"
+        class="hover_group">
+				<title>Use WebJobs to run custom jobs (executables or scripts) on your web app in one of three ways: on demand, continuously, or on a schedule.</title>
+				<desc>Webjobs</desc>
+				<v:custProps>
+					<v:cp
+            v:nameU="Cost"
+            v:lbl="Cost"
+            v:type="7"
+            v:format="@"
+            v:langID="1033" />
+					<v:cp
+            v:nameU="Duration"
+            v:lbl="Duration"
+            v:type="2"
+            v:langID="1033" />
+					<v:cp
+            v:nameU="Resources"
+            v:lbl="Resources"
+            v:langID="1033" />
+				</v:custProps>
+				<v:userDefs>
+					<v:ud
+            v:nameU="visVersion"
+            v:val="VT0(11):26" />
+				</v:userDefs>
+				<v:textBlock
+          v:margins="rect(2,2,2,2)" />
+				<v:textRect
+          cx="24.1076"
+          cy="464.062"
+          width="48.22"
+          height="26.7593" />
+				<rect
+          x="0"
+          y="450.682"
+          width="48.2153"
+          height="26.7593"
+          rx="4.5"
+          ry="4.5"
+          class="st11" />
+				<text
+          x="9.41"
+          y="466.46"
+          class="st12"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />Webjobs</text>			</g>
+		</a>
+		<g
+      id="shape57-91"
+      v:mID="57"
+      v:groupContext="shape"
+      transform="translate(676.565,63.6288) rotate(90)">
+			<desc>streaming</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="67.8686"
+        cy="477.442"
+        width="135.74"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L135.74 477.44"
+        class="st13" />
+			<text
+        x="52.48"
+        y="475.64"
+        class="st15"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />STREAMING<v:newlineChar /></text>		</g>
+		<g
+      id="shape58-98"
+      v:mID="58"
+      v:groupContext="shape"
+      transform="translate(592.282,63.6288) rotate(90)">
+			<desc>Mobile service</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="64.0618"
+        cy="477.442"
+        width="128.13"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L128.12 477.44"
+        class="st13" />
+			<text
+        x="42.75"
+        y="482.84"
+        class="st15"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList /><v:newlineChar />MOBILE SERVICE                      </text>		</g>
+		<g
+      id="shape59-104"
+      v:mID="59"
+      v:groupContext="shape"
+      transform="translate(633.511,64.1744) rotate(90)">
+			<desc>notifications</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="67.7182"
+        cy="477.442"
+        width="135.44"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L135.44 477.44"
+        class="st13" />
+			<text
+        x="47.14"
+        y="475.64"
+        class="st15"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />NOTIFICATIONS<v:newlineChar /></text>		</g>
+		<g
+      id="shape60-110"
+      v:mID="60"
+      v:groupContext="shape"
+      transform="translate(143.324,685.71) rotate(179.369)">
+			<path
+        d="M5.16 477.44 L5.52 477.44 L13.29 477.44"
+        class="st13" />
+		</g>
+		<g
+      id="shape61-115"
+      v:mID="61"
+      v:groupContext="shape"
+      transform="translate(716.211,63.0815) rotate(90)">
+			<desc>email</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="89.9992"
+        cy="477.442"
+        width="180"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L180 477.44"
+        class="st16" />
+			<text
+        x="82.06"
+        y="475.64"
+        class="st18"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />EMAIL<v:newlineChar /></text>		</g>
+		<g
+      id="shape63-122"
+      v:mID="63"
+      v:groupContext="shape"
+      transform="translate(-146.029,195.11) rotate(-89.8335)">
+			<desc>from closest node</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="31.8745"
+        cy="477.684"
+        width="47.02"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L47.02 477.44"
+        class="st19" />
+			<text
+        x="24.03"
+        y="475.88"
+        class="st21"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList /><v:newlineChar />FROM <tspan
+          x="20.34"
+          dy="1.2em"
+          class="st10">CLOSEST </tspan><tspan
+          x="23.94"
+          dy="1.2em"
+          class="st10">NODE</tspan></text>		</g>
+		<a
+      xlink:href="http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="shape64-131"
+        v:mID="64"
+        v:groupContext="shape"
+        v:layerMember="1"
+        transform="translate(439.012,-211.117)"
+        class="hover_group">
+				<title>Deploy your web app to different slots, easily perform A/B tests on new features, analyze effectiveness based on user patterns. </title>
+				<desc>A/B Testing (Test in Production)</desc>
+				<v:custProps>
+					<v:cp
+            v:nameU="Cost"
+            v:lbl="Cost"
+            v:type="7"
+            v:format="@"
+            v:langID="1033" />
+					<v:cp
+            v:nameU="Duration"
+            v:lbl="Duration"
+            v:type="2"
+            v:langID="1033" />
+					<v:cp
+            v:nameU="Resources"
+            v:lbl="Resources"
+            v:langID="1033" />
+				</v:custProps>
+				<v:userDefs>
+					<v:ud
+            v:nameU="visVersion"
+            v:val="VT0(11):26" />
+				</v:userDefs>
+				<v:textBlock
+          v:margins="rect(2,2,2,2)" />
+				<v:textRect
+          cx="34.9076"
+          cy="464.062"
+          width="69.82"
+          height="26.7593" />
+				<rect
+          x="0"
+          y="450.682"
+          width="69.8153"
+          height="26.7593"
+          rx="4.5"
+          ry="4.5"
+          class="st11" />
+				<text
+          x="15.65"
+          y="461.66"
+          class="st12"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />A/B Testing<v:newlineChar /><tspan
+            x="2.4"
+            dy="1.2em"
+            class="st10">(</tspan>Test in Production)</text>			</g>
+		</a>
+		<g
+      id="shape65-135"
+      v:mID="65"
+      v:groupContext="shape"
+      transform="translate(254.937,-223.809) rotate(0.286389)">
+			<desc>email</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="25.4027"
+        cy="477.442"
+        width="50.81"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L50.81 477.44"
+        class="st22" />
+			<text
+        x="17.46"
+        y="475.64"
+        class="st24"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />EMAIL<v:newlineChar /></text>		</g>
+		<g
+      id="shape66-142"
+      v:mID="66"
+      v:groupContext="shape"
+      transform="translate(214.724,-265.476) rotate(-0.0178894)">
+			<desc>media content</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="38.0726"
+        cy="477.442"
+        width="76.15"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L76.15 477.44"
+        class="st22" />
+			<text
+        x="15.69"
+        y="475.64"
+        class="st24"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />MEDIA CONTENT<v:newlineChar /></text>		</g>
+		<g
+      id="shape67-148"
+      v:mID="67"
+      v:groupContext="shape"
+      transform="translate(-146.214,103.145) rotate(-89.5375)">
+			<desc>Global Traffic</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="29.2168"
+        cy="477.684"
+        width="43.1"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L43.1 477.44"
+        class="st19" />
+			<text
+        x="18.66"
+        y="475.88"
+        class="st21"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />GLOBAL <v:newlineChar /><tspan
+          x="18.79"
+          dy="1.2em"
+          class="st10">TRAFFIC</tspan></text>		</g>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/sendgrid-dotnet-how-to-send-email/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group70-155"
+        transform="translate(225.917,-213.902)"
+        v:mID="70"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Learn how to use SendGrid with Azure to include email functionality in your apps.</title>
+				<desc>SendGrid App</desc>
+				<g
+          id="shape71-156"
+          v:mID="71"
+          v:groupContext="shape">
+					<path
+            d="M23.76 458.12 L1.28 458.12 C0.57 458.12 0 458.7 0 459.4 L0 476.16 C0 476.87 0.57 477.44 1.28 477.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L23.76 477.44 C24.47 477.44 25.04 476.87 25.04 476.16 L25.04 459.4 C25.04 458.7 24.47 458.12 23.76&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 458.12 ZM21.87 460.69 L12.34 468.08 L2.86 460.69 L21.87 460.69 ZM2.57 474.88 L2.57 463.71 L11.55&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 470.71 C11.78 470.9 12.06 470.99 12.34 470.99 C12.62 470.99 12.89 470.9 13.13 470.72 L22.48 463.46&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L22.48 474.88 L2.56 474.88 L2.57 474.88 Z"
+            class="st25" />
+				</g>
+				<g
+          id="shape70-158"
+          v:mID="70"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="13.2029"
+            cy="488.438"
+            width="80.44"
+            height="19.3177" />
+					<text
+            x="-9.58"
+            y="485.98"
+            class="st26"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />SendGrid App</text>				</g>
+			</g>
+		</a>
+		<g
+      id="shape82-160"
+      v:mID="82"
+      v:groupContext="shape"
+      transform="translate(38.0786,196.498) rotate(-90)">
+			<path
+        d="M5.16 477.44 L5.52 477.44 L31.1 477.44"
+        class="st27" />
+		</g>
+		<g
+      id="shape126-168"
+      v:mID="126"
+      v:groupContext="shape"
+      transform="translate(18.36,-18.36)">
+			<desc>AZURE</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="65.796"
+        cy="466.642"
+        width="131.6"
+        height="21.6" />
+			<rect
+        x="0"
+        y="455.842"
+        width="131.592"
+        height="21.6"
+        class="st28" />
+			<text
+        x="4"
+        y="470.24"
+        class="st29"
+        v:langID="1033"><v:paragraph /><v:tabList />AZURE</text>		</g>
+		<g
+      id="shape133-171"
+      v:mID="133"
+      v:groupContext="shape"
+      transform="translate(18.36,-133.023)">
+			<desc>DATA TIER</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)"
+        v:verticalAlign="0" />
+			<v:textRect
+        cx="50.4"
+        cy="466.642"
+        width="100.8"
+        height="21.6" />
+			<rect
+        x="0"
+        y="455.842"
+        width="100.8"
+        height="21.6"
+        class="st28" />
+			<text
+        x="4"
+        y="465.24"
+        class="st30"
+        v:langID="1033"><v:paragraph /><v:tabList />DATA TIER</text>		</g>
+		<g
+      id="shape134-174"
+      v:mID="134"
+      v:groupContext="shape"
+      transform="translate(18.36,-154.623)">
+			<desc>SERVICES TIER</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)"
+        v:verticalAlign="2" />
+			<v:textRect
+        cx="50.4"
+        cy="466.642"
+        width="100.8"
+        height="21.6" />
+			<rect
+        x="0"
+        y="455.842"
+        width="100.8"
+        height="21.6"
+        class="st28" />
+			<text
+        x="4"
+        y="471.64"
+        class="st30"
+        v:langID="1033"><v:paragraph /><v:tabList />SERVICES TIER</text>		</g>
+		<g
+      id="shape135-177"
+      v:mID="135"
+      v:groupContext="shape"
+      transform="translate(18.36,-293.263)">
+			<desc>INTERNET TIER</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)"
+        v:verticalAlign="2" />
+			<v:textRect
+        cx="50.4"
+        cy="466.642"
+        width="100.8"
+        height="21.6" />
+			<rect
+        x="0"
+        y="455.842"
+        width="100.8"
+        height="21.6"
+        class="st28" />
+			<text
+        x="4"
+        y="471.64"
+        class="st30"
+        v:langID="1033"><v:paragraph /><v:tabList />INTERNET TIER</text>		</g>
+		<g
+      id="shape136-180"
+      v:mID="136"
+      v:groupContext="shape"
+      v:layerMember="0"
+      transform="translate(654.36,-407.16)">
+			<path
+        d="M0 470.24 L-635.07 470.24"
+        class="st31" />
+		</g>
+		<g
+      id="shape137-183"
+      v:mID="137"
+      v:groupContext="shape"
+      transform="translate(18.36,-420.817)">
+			<desc>ENDUSERS</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="50.4"
+        cy="466.642"
+        width="100.8"
+        height="21.6" />
+			<rect
+        x="0"
+        y="455.842"
+        width="100.8"
+        height="21.6"
+        class="st28" />
+			<text
+        x="4"
+        y="470.24"
+        class="st29"
+        v:langID="1033"><v:paragraph /><v:tabList />ENDUSERS</text>		</g>
+		<g
+      id="group164-186"
+      transform="translate(308.129,-430.113)"
+      v:mID="164"
+      v:groupContext="group">
+			<g
+        id="group165-187"
+        transform="translate(5.97802,-9.55418)"
+        v:mID="165"
+        v:groupContext="group">
+				<g
+          id="shape166-188"
+          v:mID="166"
+          v:groupContext="shape">
+					<path
+            d="M5.48 462.6 C2.02 463.45 0 467.27 0.96 471.15 C1.92 475.01 5.51 477.44 8.97 476.59 C12.42 475.72 14.45&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 471.89 13.49 468.03 C12.52 464.16 8.94 461.73 5.48 462.6 Z"
+            class="st32" />
+				</g>
+			</g>
+			<g
+        id="group167-190"
+        v:mID="167"
+        v:groupContext="group">
+				<g
+          id="shape168-191"
+          v:mID="168"
+          v:groupContext="shape">
+					<path
+            d="M18.92 468.05 C18.26 468.01 17.53 469.26 16.57 469.7 C15.61 470.14 14.56 471.03 11.79 469.7 C9.01 468.36&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.57 467.23 6.2 467.23 C3.85 467.23 0.07 471.4 0 477.44 L23.65 477.44 C23.61 477.44 23.39 473.29&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 22.09 471.01 C20.44 468.13 19.55 468.1 18.92 468.05 Z"
+            class="st32" />
+				</g>
+			</g>
+		</g>
+		<g
+      id="group169-193"
+      transform="translate(381.689,-430.681)"
+      v:mID="169"
+      v:groupContext="group">
+			<desc>computer</desc>
+			<g
+        id="group170-194"
+        v:mID="170"
+        v:groupContext="group">
+				<g
+          id="shape171-195"
+          v:mID="171"
+          v:groupContext="shape"
+          transform="translate(3.81717,-5.68434E-014)">
+					<rect
+            x="0"
+            y="457.582"
+            width="26.8415"
+            height="19.8591"
+            class="st33" />
+				</g>
+				<g
+          id="shape172-197"
+          v:mID="172"
+          v:groupContext="shape">
+					<path
+            d="M31.59 472.77 C31.59 457.89 31.59 457.89 31.59 457.89 C31.59 457.18 30.89 456.62 30.08 456.62 C4.37&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 456.62 4.37 456.62 4.37 456.62 C3.55 456.62 2.9 457.18 2.9 457.89 C2.9 472.77 2.9 472.77 2.9 472.77&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C-0 475.88 0 475.88 0 475.88 C-0 476.73 0.82 477.44 1.8 477.44 C32.65 477.44 32.65 477.44 32.65&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 C33.63 477.44 34.44 476.73 34.44 475.88 L31.59 472.77 ZM19.63 476.24 C14.28 476.24 14.28&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.24 14.28 476.24 C14 476.24 13.75 476.13 13.75 475.99 C14.37 475 14.37 475 14.37 475 C14.37 474.89&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 14.57 474.82 14.81 474.82 C19.1 474.82 19.1 474.82 19.1 474.82 C19.3 474.82 19.51 474.89 19.51 475&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C20.16 475.99 20.16 475.99 20.16 475.99 C20.16 476.13 19.91 476.24 19.63 476.24 ZM30.53 472.77 C4.04&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.77 4.04 472.77 4.04 472.77 C4.04 458.1 4.04 458.1 4.04 458.1 C4.04 457.75 4.37 457.47 4.77 457.47&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C29.79 457.47 29.79 457.47 29.79 457.47 C30.2 457.47 30.52 457.75 30.52 458.1 L30.53 472.77 Z"
+            class="st34" />
+				</g>
+			</g>
+			<g
+        id="group173-199"
+        transform="translate(10.0124,-5.36)"
+        v:mID="173"
+        v:groupContext="group">
+				<g
+          id="group174-200"
+          v:mID="174"
+          v:groupContext="group">
+					<g
+            id="shape175-201"
+            v:mID="175"
+            v:groupContext="shape">
+						<path
+              d="M10.78 475.43 C9.75 476.21 8.55 476.6 7.35 476.6 C5.64 476.6 3.96 475.83 2.85 474.38 C0.95 471.9&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 1.42 468.35 3.91 466.45 C4.93 465.66 6.14 465.29 7.34 465.29 C9.04 465.29 10.72 466.05 11.83&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 467.5 C13.73 469.98 13.26 473.53 10.78 475.43 ZM12.51 466.99 C11.22 465.31 9.29 464.44 7.34&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 464.44 C5.96 464.44 4.57 464.88 3.39 465.78 C0.54 467.96 0 472.04 2.18 474.89 C3.46 476.57 5.39&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 7.35 477.44 C8.73 477.44 10.12 477.01 11.3 476.1 C14.14 473.92 14.68 469.84 12.51 466.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; Z"
+              class="st2" />
+					</g>
+				</g>
+				<g
+          id="group176-203"
+          transform="translate(2.33416,-2.01633)"
+          v:mID="176"
+          v:groupContext="group">
+					<g
+            id="group177-204"
+            transform="translate(0.16063,-0.0813031)"
+            v:mID="177"
+            v:groupContext="group">
+						<g
+              id="group178-205"
+              transform="translate(0.205922,5.68434E-014)"
+              v:mID="178"
+              v:groupContext="group">
+							<g
+                id="shape179-206"
+                v:mID="179"
+                v:groupContext="shape">
+								<path
+                  d="M1.7 474.22 C1.33 473.85 1.02 473.49 0.78 473.14 C0.24 474.25 0.05 475.39 0 476.3 C0.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.37 0.05 476.43 0.11 476.5 C0.38 476.85 0.72 477.18 1.05 477.44 C1 476.7 1.07 475.48&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 1.7 474.22 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group180-208"
+              transform="translate(1.55043,-4.11851)"
+              v:mID="180"
+              v:groupContext="group">
+							<g
+                id="shape181-209"
+                v:mID="181"
+                v:groupContext="shape">
+								<path
+                  d="M2.33 474 C1.82 474.36 1.29 474.81 0.76 475.37 C0.47 475.68 0.22 475.99 0 476.31 C0.23 476.67&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0.52 477.05 0.89 477.44 C1.17 477.05 1.52 476.65 1.93 476.26 C2.45 475.78 2.94 475.38&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.4 475.07 C3.03 474.72 2.66 474.37 2.33 474 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group182-211"
+              transform="translate(4.67897,-6.97058)"
+              v:mID="182"
+              v:groupContext="group">
+							<g
+                id="shape183-212"
+                v:mID="183"
+                v:groupContext="shape">
+								<path
+                  d="M4.6 476.49 C4.35 476.18 4.08 475.9 3.79 475.65 C2.91 475.52 1.55 475.53 0 476.36 C0.36&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.74 0.71 477.1 1.06 477.44 C3.13 476.32 4.6 476.49 4.6 476.49 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group184-214"
+              transform="translate(0,-4.30305)"
+              v:mID="184"
+              v:groupContext="group">
+							<g
+                id="shape185-215"
+                v:mID="185"
+                v:groupContext="shape">
+								<path
+                  d="M0.99 477.44 C1.15 477.13 1.34 476.81 1.55 476.49 C0.66 475.09 0.7 473.92 0.8 473.38 C0.58&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.61 0.37 473.85 0.19 474.11 C0.01 474.85 -0 476.03 0.99 477.44 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group186-217"
+              transform="translate(1.90804,-0.339565)"
+              v:mID="186"
+              v:groupContext="group">
+							<g
+                id="shape187-218"
+                v:mID="187"
+                v:groupContext="shape">
+								<path
+                  d="M1.61 474.64 C1.19 474.31 0.84 473.98 0.54 473.66 C0.32 473.96 0.15 474.26 0 474.56 C0.28&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.84 0.61 475.13 0.98 475.43 C3.3 477.27 5.61 477.44 6.9 477.44 C6.98 477.44 7.39&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.89 7.62 476.55 C7.05 476.67 4.57 476.98 1.61 474.64 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group188-220"
+              transform="translate(0.990592,-3.22514)"
+              v:mID="188"
+              v:groupContext="group">
+							<g
+                id="shape189-221"
+                v:mID="189"
+                v:groupContext="shape">
+								<path
+                  d="M0 476.36 C0.24 476.71 0.54 477.07 0.92 477.44 C1.06 477.15 1.24 476.85 1.45 476.55 C1.08&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.16 0.79 475.78 0.56 475.42 C0.34 475.73 0.16 476.05 0 476.36 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group190-223"
+              transform="translate(4.9545,-2.44236)"
+              v:mID="190"
+              v:groupContext="group">
+							<g
+                id="shape191-224"
+                v:mID="191"
+                v:groupContext="shape">
+								<path
+                  d="M0 473.39 C2.11 475.35 4.62 477.01 5.25 477.44 C5.32 477.28 5.36 477.12 5.41 476.96 C4.72&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.45 2.93 475.05 0.78 472.91 C0.53 473.05 0.27 473.21 0 473.39 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group192-226"
+              transform="translate(2.34877,-7.5561)"
+              v:mID="192"
+              v:groupContext="group">
+							<g
+                id="shape193-227"
+                v:mID="193"
+                v:groupContext="shape">
+								<path
+                  d="M2.33 476.94 C1.81 476.4 1.29 475.82 0.75 475.2 C0.49 475.28 0.24 475.38 0 475.5 C0.4 476.15&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0.93 476.8 1.53 477.44 C1.8 477.25 2.06 477.08 2.33 476.94 Z"
+                  class="st2" />
+							</g>
+						</g>
+						<g
+              id="group194-229"
+              transform="translate(3.87728,-6.49256)"
+              v:mID="194"
+              v:groupContext="group">
+							<g
+                id="shape195-230"
+                v:mID="195"
+                v:groupContext="shape">
+								<path
+                  d="M0.8 475.88 C0.54 476.02 0.27 476.19 0 476.38 C0.34 476.74 0.7 477.09 1.08 477.44 C1.35&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.26 1.61 477.1 1.86 476.96 C1.51 476.63 1.16 476.26 0.8 475.88 Z"
+                  class="st2" />
+							</g>
+						</g>
+					</g>
+					<g
+            id="group196-232"
+            transform="translate(6.99911,-2.86168)"
+            v:mID="196"
+            v:groupContext="group">
+						<g
+              id="shape197-233"
+              v:mID="197"
+              v:groupContext="shape">
+							<path
+                d="M0.63 475.11 C0.1 475.52 -0 476.28 0.41 476.81 C0.82 477.35 1.58 477.44 2.11 477.04 C2.64 476.63&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 2.75 475.87 2.34 475.33 C1.93 474.81 1.17 474.7 0.63 475.11 Z"
+                class="st2" />
+						</g>
+					</g>
+					<g
+            id="group198-235"
+            transform="translate(4.54514,1.13687E-013)"
+            v:mID="198"
+            v:groupContext="group">
+						<g
+              id="shape199-236"
+              v:mID="199"
+              v:groupContext="shape">
+							<path
+                d="M0.58 475.28 C0.09 475.66 -0 476.37 0.37 476.86 C0.75 477.35 1.46 477.44 1.95 477.07 C2.44 476.69&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 2.54 475.98 2.16 475.49 C1.78 475 1.08 474.9 0.58 475.28 Z"
+                class="st2" />
+						</g>
+					</g>
+					<g
+            id="group200-238"
+            transform="translate(0,-2.46084)"
+            v:mID="200"
+            v:groupContext="group">
+						<g
+              id="shape201-239"
+              v:mID="201"
+              v:groupContext="shape">
+							<path
+                d="M0.89 474.16 C0.14 474.73 0 475.8 0.57 476.55 C1.15 477.3 2.22 477.44 2.97 476.87 C3.72 476.29&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.86 475.22 3.29 474.47 C2.71 473.73 1.64 473.58 0.89 474.16 Z"
+                class="st2" />
+						</g>
+					</g>
+				</g>
+			</g>
+			<g
+        id="shape169-241"
+        v:mID="169"
+        v:groupContext="groupContent">
+				<v:textBlock
+          v:margins="rect(0,4,4,4)"
+          v:verticalAlign="0" />
+				<v:textRect
+          cx="18.4343"
+          cy="487.556"
+          width="54.94"
+          height="20.8251" />
+				<text
+          x="2.22"
+          y="484.34"
+          class="st35"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />computer</text>			</g>
+		</g>
+		<g
+      id="group202-243"
+      transform="translate(196.279,-428.76)"
+      v:mID="202"
+      v:groupContext="group">
+			<desc>Android</desc>
+			<g
+        id="shape203-244"
+        v:mID="203"
+        v:groupContext="shape">
+				<path
+          d="M16.43 476.62 L16.43 451.15 C16.43 450.74 16.07 450.42 15.66 450.42 L0.76 450.42 C0.36 450.42 0 450.74 0&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 451.15 L0 476.62 C-0 477.03 0.36 477.44 0.76 477.44 L15.66 477.44 C16.07 477.44 16.43 477.03 16.43 476.62&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; ZM1.76 453.35 L14.69 453.35 L14.69 473.92 L1.76 473.92 L1.76 473.89 L1.76 453.35 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape204-246"
+        v:mID="204"
+        v:groupContext="shape"
+        transform="translate(3.52511,-10.9372)">
+				<path
+          d="M1.18 476.84 C1.18 477.17 0.91 477.44 0.59 477.44 C0.26 477.44 0 477.17 0 476.84 L0 473.8 C0 473.47 0.26&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.2 0.59 473.2 C0.91 473.2 1.18 473.47 1.18 473.8 L1.18 476.84 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape205-248"
+        v:mID="205"
+        v:groupContext="shape"
+        transform="translate(11.7504,-10.9372)">
+				<path
+          d="M1.18 476.84 C1.18 477.17 0.91 477.44 0.59 477.44 C0.26 477.44 0 477.17 0 476.84 L0 473.8 C-0 473.47 0.26&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.2 0.59 473.2 C0.91 473.2 1.18 473.47 1.18 473.8 L1.18 476.84 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape206-250"
+        v:mID="206"
+        v:groupContext="shape"
+        transform="translate(5.28767,-7.63891)">
+				<path
+          d="M0 469.86 L0 474.38 C0 474.89 0.38 475.3 0.84 475.3 L1.23 475.3 L1.23 476.83 C1.23 477.17 1.48 477.44 1.79&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 C2.1 477.44 2.35 477.17 2.35 476.83 L2.35 475.3 L3.53 475.3 L3.53 476.83 C3.53 477.17 3.78 477.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 4.09 477.44 C4.4 477.44 4.65 477.17 4.65 476.83 L4.65 475.3 L5.19 475.3 C5.66 475.3 5.88 474.89 5.88&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.38 L5.88 469.86 L0 469.86 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape207-252"
+        v:mID="207"
+        v:groupContext="shape"
+        transform="translate(5.06323,-15.8565)">
+				<path
+          d="M6.36 477.44 C6.36 477.44 6.37 477.39 6.37 477.34 C6.37 475.75 4.94 474.46 3.18 474.46 C1.43 474.46 0 475.75&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0 477.34 C-0 477.39 0.01 477.44 0.01 477.44 L6.36 477.44 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape208-254"
+        v:mID="208"
+        v:groupContext="shape"
+        transform="translate(5.95097,-17.5316)">
+				<path
+          d="M1.19 477.19 C1.23 477.27 1.21 477.36 1.13 477.4 C1.06 477.44 0.97 477.42 0.93 477.34 L0.04 475.75 C0 475.68&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0.03 475.59 0.1 475.55 C0.17 475.51 0.26 475.53 0.31 475.61 L1.19 477.19 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape209-256"
+        v:mID="209"
+        v:groupContext="shape"
+        transform="translate(9.30923,-17.5316)">
+				<path
+          d="M0.04 477.19 C0 477.27 0.03 477.36 0.1 477.4 C0.17 477.44 0.27 477.42 0.31 477.34 L1.19 475.75 C1.23 475.68&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 1.21 475.59 1.13 475.55 C1.06 475.51 0.97 475.53 0.93 475.61 L0.04 477.19 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape210-258"
+        v:mID="210"
+        v:groupContext="shape"
+        transform="translate(6.48503,-17.038)">
+				<path
+          d="M0.59 477.15 C0.59 477.31 0.46 477.44 0.29 477.44 C0.13 477.44 0 477.31 0 477.15 C0 476.99 0.13 476.85 0.29&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.85 C0.46 476.85 0.59 476.99 0.59 477.15 Z"
+          class="st36" />
+			</g>
+			<g
+        id="shape211-260"
+        v:mID="211"
+        v:groupContext="shape"
+        transform="translate(9.42262,-17.0369)">
+				<ellipse
+          cx="0.293759"
+          cy="477.148"
+          rx="0.293759"
+          ry="0.293759"
+          class="st36" />
+			</g>
+			<g
+        id="shape212-262"
+        v:mID="212"
+        v:groupContext="shape"
+        transform="translate(6.48503,-25.2633)">
+				<rect
+          x="0"
+          y="476.854"
+          width="3.52511"
+          height="0.587518"
+          class="st36" />
+			</g>
+			<g
+        id="shape213-264"
+        v:mID="213"
+        v:groupContext="shape"
+        transform="translate(7.07255,-0.587518)">
+				<ellipse
+          cx="1.17504"
+          cy="476.266"
+          rx="1.17504"
+          ry="1.17504"
+          class="st36" />
+			</g>
+			<g
+        id="shape202-266"
+        v:mID="202"
+        v:groupContext="groupContent">
+				<v:textBlock
+          v:margins="rect(0,0,0,0)"
+          v:verticalAlign="0" />
+				<v:textRect
+          cx="8.49665"
+          cy="485.563"
+          width="50.97"
+          height="14.1004" />
+				<text
+          x="-5.02"
+          y="485.71"
+          class="st35"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />Android</text>			</g>
+		</g>
+		<g
+      id="shape214-268"
+      v:mID="214"
+      v:groupContext="shape"
+      transform="translate(250.96,-441.094)">
+			<path
+        d="M7.92 477.44 L8.28 477.44 L57.36 477.44"
+        class="st37" />
+		</g>
+		<g
+      id="shape215-274"
+      v:mID="215"
+      v:groupContext="shape"
+      transform="translate(379.56,513.789) rotate(180)">
+			<path
+        d="M7.92 477.44 L8.28 477.44 L47.68 477.44"
+        class="st37" />
+		</g>
+		<g
+      id="group216-279"
+      transform="translate(154.094,-430.113)"
+      v:mID="216"
+      v:groupContext="group">
+			<g
+        id="group217-280"
+        v:mID="217"
+        v:groupContext="group">
+				<desc>Windows</desc>
+				<g
+          id="shape218-281"
+          v:mID="218"
+          v:groupContext="shape">
+					<path
+            d="M16.56 450.42 L1.76 450.42 C0.79 450.42 0 451.25 0 452.26 L0 475.61 C0 476.63 0.79 477.44 1.76 477.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L16.56 477.44 C17.54 477.44 18.33 476.63 18.33 475.61 L18.33 452.26 C18.33 451.25 17.55 450.42 16.56&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 450.42 ZM6.4 451.31 L11.99 451.31 C12.42 451.31 12.79 451.37 12.79 451.87 C12.79 452.36 12.43 452.36&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 11.99 452.36 L6.4 452.36 C5.96 452.36 5.6 452.36 5.6 451.87 C5.6 451.37 5.96 451.31 6.4 451.31 ZM10.77&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.61 L7.66 475.61 C7.34 475.61 7.08 475.35 7.08 475.03 C7.08 474.71 7.34 474.45 7.66 474.45 L10.77&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.45 C11.09 474.45 11.35 474.71 11.35 475.03 C11.35 475.35 11.09 475.61 10.77 475.61 ZM16.5 472.73&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L1.85 472.73 L1.86 453.24 L16.51 453.24 L16.5 472.73 Z"
+            class="st34" />
+				</g>
+				<g
+          id="shape217-283"
+          v:mID="217"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="8.29249"
+            cy="492.974"
+            width="106.17"
+            height="27.0201" />
+					<text
+            x="-6.99"
+            y="486.66"
+            class="st35"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Windows</text>				</g>
+			</g>
+			<g
+        id="group219-285"
+        transform="translate(4.87994,-10.258)"
+        v:mID="219"
+        v:groupContext="group">
+				<g
+          id="shape220-286"
+          v:mID="220"
+          v:groupContext="shape"
+          transform="translate(4.01619,-4.60516)">
+					<path
+            d="M0 477.44 L5.05 477.44 L5.05 472.98 L0 473.69 L0 477.44 Z"
+            class="st38" />
+				</g>
+				<g
+          id="shape221-288"
+          v:mID="221"
+          v:groupContext="shape"
+          transform="translate(0,-4.60516)">
+					<rect
+            x="3.86499"
+            y="473.709"
+            width="3.86499"
+            height="3.73219"
+            class="st38" />
+				</g>
+				<g
+          id="shape222-290"
+          v:mID="222"
+          v:groupContext="shape"
+          transform="translate(4.01619,0)">
+					<rect
+            x="0"
+            y="472.988"
+            width="5.04754"
+            height="3.74915"
+            class="st38" />
+				</g>
+				<g
+          id="shape223-292"
+          v:mID="223"
+          v:groupContext="shape"
+          transform="translate(0,-0.725512)">
+					<path
+            d="M3.86 473.71 L0 473.71 L0 476.9 L3.86 477.44 L3.86 473.71 Z"
+            class="st38" />
+				</g>
+			</g>
+		</g>
+		<g
+      id="group224-294"
+      transform="translate(231.984,-428.76)"
+      v:mID="224"
+      v:groupContext="group">
+			<desc>iPhone</desc>
+			<g
+        id="shape225-295"
+        v:mID="225"
+        v:groupContext="shape">
+				<path
+          d="M14.84 450.67 L1.62 450.67 C0.73 450.67 0 451.41 0 452.33 L0 475.78 C0 476.7 0.93 477.44 1.83 477.44 L14.6&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 C15.5 477.44 16.43 476.83 16.43 475.78 L16.43 452.33 C16.43 451.41 15.73 450.67 14.84 450.67&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape226-297"
+        v:mID="226"
+        v:groupContext="shape"
+        transform="translate(1.82549,-4.25886)">
+				<path
+          d="M0 457.97 L12.78 457.97 L12.78 477.44 L0 477.44 L0 457.97 Z"
+          class="st39" />
+			</g>
+			<g
+        id="shape227-299"
+        v:mID="227"
+        v:groupContext="shape"
+        transform="translate(7.13765,-1.21638)">
+				<path
+          d="M2.15 476.37 C2.15 475.77 1.67 475.29 1.08 475.29 C0.48 475.29 0 475.77 0 476.37 C-0 476.96 0.48 477.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 1.08 477.44 C1.67 477.44 2.15 476.96 2.15 476.37 Z"
+          class="st36" />
+			</g>
+			<g
+        id="shape228-301"
+        v:mID="228"
+        v:groupContext="shape"
+        transform="translate(6.69345,-24.3392)">
+				<path
+          d="M0 476.83 L3.04 476.83 L3.04 477.44 L0 477.44 L0 476.83 Z"
+          class="st36" />
+			</g>
+			<g
+        id="shape229-303"
+        v:mID="229"
+        v:groupContext="shape"
+        transform="translate(3.65158,-8.51771)">
+				<path
+          d="M8.8 469.99 C8.36 469.44 7.77 468.91 6.87 468.91 C6.24 468.91 5.71 469.54 4.84 469.54 C4.15 469.54 3.87&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 468.94 3.11 468.94 C1.55 468.94 0 470.33 0 472.15 C0 473.11 0.32 474.59 1.02 475.89 C1.53 476.83 2.17&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 2.87 477.44 C3.38 477.44 3.99 476.92 4.71 476.92 C5.34 476.92 5.92 477.4 6.5 477.4 C7.86 477.4&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.13 475.63 9.13 474.45 C9.13 474.39 9.11 474.34 9.11 474.3 L9.11 474.22 C8.22 473.74 7.74 473.03 7.74&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.01 C7.74 471.19 8.11 470.47 8.76 470 L8.8 469.99 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape230-305"
+        v:mID="230"
+        v:groupContext="shape"
+        transform="translate(8.45869,-17.0616)">
+				<path
+          d="M0.08 477.44 C1.1 477.13 2.01 476.36 2.01 475.03 C2.01 474.92 2 474.78 1.98 474.63 L1.97 474.57 C0.93 474.86&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0 475.67 0 476.95 C0 477.07 0.05 477.22 0.08 477.38 L0.08 477.44 Z"
+          class="st34" />
+			</g>
+			<g
+        id="shape224-307"
+        v:mID="224"
+        v:groupContext="groupContent">
+				<v:textBlock
+          v:margins="rect(0,4,4,4)"
+          v:verticalAlign="0" />
+				<v:textRect
+          cx="8.21468"
+          cy="486.812"
+          width="34.47"
+          height="16.3074" />
+				<text
+          x="-3.33"
+          y="485.86"
+          class="st35"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />iPhone</text>			</g>
+		</g>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group240-309"
+        transform="translate(495.81,-90.3979)"
+        v:mID="240"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Learn how to build a secure ASP.NET Web Forms application that stores and accesses data from a SQL database and enables users to log in with credentials from Facebook, Yahoo, and Google.</title>
+				<desc>Azure SQL Database</desc>
+				<g
+          id="shape241-310"
+          v:mID="241"
+          v:groupContext="shape"
+          transform="translate(10.6998,-17.0646)">
+					<path
+            d="M0.35 477.06 C0.45 477.2 0.58 477.29 0.72 477.35 C0.86 477.41 1.01 477.44 1.17 477.44 C1.32 477.44 1.46&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.41 1.59 477.35 C1.73 477.29 1.86 477.19 1.96 477.05 C2.07 476.93 2.16 476.76 2.22 476.56 C2.28&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.36 2.32 476.12 2.32 475.84 C2.32 475.61 2.3 475.4 2.25 475.2 C2.2 474.99 2.14 474.81 2.04 474.66&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C1.96 474.51 1.84 474.39 1.7 474.3 C1.56 474.21 1.39 474.16 1.2 474.16 C0.99 474.16 0.8 474.21 0.65&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.3 C0.5 474.39 0.38 474.5 0.27 474.65 C0.18 474.8 0.11 474.97 0.07 475.18 C0.02 475.38 0 475.59&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0 475.81 C-0 476.1 0.03 476.35 0.09 476.56 C0.16 476.76 0.25 476.93 0.35 477.06 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape242-312"
+          v:mID="242"
+          v:groupContext="shape"
+          transform="translate(1.65867E-013,-4.16646)">
+					<path
+            d="M15.77 470.58 C16.04 470.58 16.31 470.6 16.58 470.64 C17.88 468.02 20.52 466.3 23.49 466.18 L23.49 450.95&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C23.49 448.51 18.22 446.18 11.74 446.18 C5.26 446.18 0 448.4 0 450.83 L0 472.79 C-0 474.99 4.31&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.07 9.93 477.44 C9.88 477.13 9.85 476.82 9.85 476.5 C9.85 473.24 12.51 470.58 15.77 470.58 ZM19.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 466.06 L15.92 466.06 L15.92 459.76 L17.82 459.76 L17.82 464.57 L19.98 464.57 L19.98 466.06 L19.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 466.06 ZM11.73 447.87 C16.35 447.87 20.1 449.01 20.1 450.43 C20.1 451.85 16.35 452.99 11.73 452.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C7.11 452.99 3.36 451.85 3.36 450.43 C3.36 449.01 7.11 447.87 11.73 447.87 ZM8.21 464.6 C8.18 464.76&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.13 464.91 8.04 465.06 C7.97 465.21 7.86 465.35 7.72 465.48 C7.59 465.61 7.42 465.74 7.22 465.84&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C7.02 465.94 6.77 466.02 6.5 466.07 C6.22 466.14 5.9 466.17 5.53 466.17 C5.33 466.17 5.14 466.16&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 4.96 466.13 C4.79 466.11 4.63 466.09 4.47 466.06 C4.32 466.03 4.17 465.99 4.05 465.95 C3.92 465.91&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.82 465.87 3.72 465.83 L3.72 464.11 C3.83 464.18 3.95 464.27 4.09 464.34 C4.22 464.42 4.37 464.48&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 4.52 464.55 C4.67 464.6 4.83 464.65 5 464.69 C5.16 464.74 5.32 464.76 5.48 464.76 C5.61 464.76 5.73&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 464.74 5.81 464.71 C5.9 464.69 5.96 464.65 6.01 464.61 C6.06 464.57 6.09 464.52 6.11 464.47 C6.13&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 464.42 6.14 464.37 6.14 464.31 C6.14 464.22 6.11 464.13 6.07 464.06 C6.02 463.99 5.95 463.93 5.87&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 463.87 C5.77 463.81 5.67 463.76 5.56 463.71 C5.44 463.65 5.29 463.61 5.15 463.55 C4.88 463.45 4.64&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 463.32 4.45 463.18 C4.26 463.04 4.1 462.9 3.98 462.74 C3.85 462.58 3.77 462.4 3.71 462.22 C3.66&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 462.04 3.63 461.85 3.63 461.66 C3.63 461.35 3.69 461.07 3.81 460.82 C3.94 460.57 4.12 460.37 4.33&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 460.19 C4.56 460.02 4.83 459.88 5.14 459.79 C5.45 459.7 5.8 459.65 6.19 459.65 C6.4 459.65 6.59&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 459.66 6.77 459.67 C6.95 459.69 7.11 459.71 7.25 459.74 C7.39 459.75 7.51 459.78 7.63 459.81 C7.74&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 459.84 7.84 459.87 7.93 459.9 L7.93 461.5 C7.83 461.45 7.74 461.39 7.62 461.35 C7.51 461.29 7.38&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.24 7.25 461.2 C7.12 461.16 6.98 461.13 6.83 461.1 C6.68 461.07 6.53 461.06 6.37 461.06 C6.16&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.06 5.99 461.1 5.86 461.18 C5.73 461.26 5.66 461.36 5.66 461.51 C5.66 461.57 5.68 461.64 5.71&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.69 C5.73 461.75 5.78 461.8 5.84 461.85 C5.9 461.89 5.99 461.95 6.09 462 C6.2 462.05 6.32 462.11&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 6.47 462.17 C6.73 462.27 6.97 462.38 7.19 462.5 C7.41 462.63 7.6 462.77 7.76 462.93 C7.92 463.08&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.04 463.26 8.13 463.46 C8.22 463.65 8.27 463.89 8.27 464.15 C8.27 464.29 8.25 464.44 8.21 464.6&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; ZM8.91 464.28 C8.76 463.9 8.68 463.47 8.68 462.99 C8.68 462.5 8.76 462.04 8.92 461.64 C9.08 461.22&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.3 460.88 9.59 460.58 C9.87 460.28 10.21 460.06 10.61 459.9 C11 459.74 11.44 459.65 11.91 459.65&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C12.37 459.65 12.78 459.73 13.17 459.88 C13.54 460.03 13.87 460.25 14.15 460.53 C14.42 460.8 14.64&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.14 14.8 461.55 C14.95 461.94 15.02 462.39 15.02 462.89 C15.02 463.25 14.98 463.59 14.89 463.9&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C14.81 464.21 14.68 464.49 14.52 464.74 C14.37 464.99 14.18 465.21 13.98 465.4 C13.76 465.59 13.53&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 465.74 13.28 465.85 L15.4 467.66 L12.99 467.66 L11.6 466.17 C11.2 466.14 10.82 466.05 10.47 465.9&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C10.12 465.74 9.8 465.53 9.54 465.26 C9.28 464.98 9.07 464.66 8.91 464.28 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape243-314"
+          v:mID="243"
+          v:groupContext="shape"
+          transform="translate(10.6664,5.68434E-014)">
+					<path
+            d="M23.08 474.46 C23.08 472.88 21.85 471.58 20.3 471.48 C20.39 471.02 20.44 470.55 20.44 470.08 C20.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 466.07 17.17 462.8 13.16 462.8 C10.16 462.8 7.48 464.63 6.39 467.4 C5.97 467.29 5.54 467.23 5.1&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 467.23 C2.29 467.23 0 469.52 0 472.34 C0 475.11 2.22 477.37 5.02 477.44 L20.31 477.44 L20.88 477.43&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L20.85 477.34 C22.14 477 23.08 475.82 23.08 474.46 ZM20.27 476.62 L5.1 476.63 C2.74 476.63 0.81&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.7 0.81 472.34 C0.81 469.97 2.74 468.04 5.1 468.04 C5.58 468.04 6.05 468.12 6.51 468.28 L6.9&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 468.42 L7.03 468.03 C7.91 465.39 10.37 463.62 13.16 463.62 C16.72 463.62 19.62 466.52 19.62 470.08&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C19.62 470.66 19.55 471.23 19.39 471.79 L19.23 472.38 L19.84 472.3 C19.92 472.29 20.01 472.29 20.1&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.29 C21.3 472.29 22.27 473.26 22.27 474.46 C22.27 475.58 21.39 476.53 20.27 476.62 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape240-316"
+          v:mID="240"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="15.075"
+            cy="494.618"
+            width="92.25"
+            height="35.425" />
+					<text
+            x="5.22"
+            y="484.1"
+            class="st41"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Azure <v:newlineChar /><tspan
+              x="-8.48"
+              dy="1.2em"
+              class="st10">SQL Database</tspan></text>				</g>
+			</g>
+		</a>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/storage-dotnet-how-to-use-blobs/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group244-319"
+        transform="translate(361.824,-95.7485)"
+        v:mID="244"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Store your static content such as images in Azure Blob Storage and serve them from Azure CDN.</title>
+				<desc>Blob Storage</desc>
+				<g
+          id="shape245-320"
+          v:mID="245"
+          v:groupContext="shape">
+					<path
+            d="M22.46 450.78 L7.49 450.78 L0 464.11 L7.49 477.44 L22.46 477.44 L29.95 464.11 L22.46 450.78 ZM22.5 470.07&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C22.5 471.22 21.59 472.15 20.47 472.15 L9.47 472.15 C8.35 472.15 7.45 471.22 7.45 470.07 L7.45 458.15&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C7.45 457.01 8.35 456.08 9.47 456.08 L17.63 456.08 C18.44 456.08 19.15 456.08 19.15 456.08 L19.37&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 456.08 L22.5 459.25 L22.5 460.94 L22.5 470.07 L22.5 470.07 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape246-322"
+          v:mID="246"
+          v:groupContext="shape"
+          transform="translate(12.5307,-8.60763)">
+					<path
+            d="M1.28 474.86 C1.25 474.74 1.22 474.63 1.19 474.55 C1.15 474.47 1.11 474.4 1.06 474.35 C1.01 474.3 0.95&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.26 0.89 474.24 C0.83 474.22 0.76 474.21 0.68 474.21 C0.54 474.21 0.43 474.24 0.35 474.31 C0.26&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.38 0.19 474.48 0.14 474.61 C0.09 474.74 0.05 474.91 0.03 475.11 C0.01 475.3 0 475.54 0 475.8&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C0 476.12 0.01 476.39 0.04 476.6 C0.06 476.81 0.1 476.98 0.15 477.1 C0.21 477.23 0.28 477.32 0.36&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.37 C0.44 477.42 0.55 477.44 0.66 477.44 C0.75 477.44 0.83 477.43 0.9 477.4 C0.97 477.37 1.03&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.32 1.08 477.27 C1.13 477.21 1.17 477.14 1.21 477.05 C1.24 476.96 1.27 476.85 1.29 476.74 C1.31&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.62 1.32 476.49 1.33 476.34 C1.34 476.2 1.35 476.03 1.35 475.86 C1.35 475.64 1.34 475.45 1.33&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.29 C1.32 475.12 1.3 474.98 1.28 474.86 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape247-324"
+          v:mID="247"
+          v:groupContext="shape"
+          transform="translate(16.0675,-14.8221)">
+					<path
+            d="M1.28 474.86 C1.25 474.74 1.22 474.63 1.19 474.55 C1.15 474.47 1.11 474.4 1.06 474.35 C1.01 474.3 0.95&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.26 0.89 474.24 C0.83 474.22 0.76 474.21 0.68 474.21 C0.54 474.21 0.43 474.24 0.35 474.31 C0.26&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.38 0.19 474.48 0.14 474.61 C0.09 474.74 0.05 474.91 0.03 475.11 C0.01 475.3 0 475.54 0 475.8&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C0 476.12 0.01 476.39 0.04 476.6 C0.06 476.81 0.1 476.98 0.15 477.1 C0.21 477.23 0.28 477.32 0.36&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.37 C0.44 477.42 0.55 477.44 0.66 477.44 C0.75 477.44 0.83 477.43 0.9 477.4 C0.97 477.37 1.03&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.32 1.08 477.27 C1.13 477.21 1.17 477.14 1.2 477.05 C1.24 476.96 1.27 476.85 1.29 476.74 C1.31&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.62 1.32 476.49 1.33 476.34 C1.34 476.2 1.34 476.03 1.34 475.86 C1.34 475.64 1.34 475.45 1.33&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.29 C1.32 475.12 1.3 474.98 1.28 474.86 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape248-326"
+          v:mID="248"
+          v:groupContext="shape"
+          transform="translate(8.55445,-6.43078)">
+					<path
+            d="M10.34 463.65 C10.05 463.65 9.59 463.65 9.07 463.65 L0.91 463.65 C0.41 463.65 0 464.08 0 464.59 L0 476.5&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C0 477.02 0.41 477.44 0.91 477.44 L11.92 477.44 C12.42 477.44 12.84 477.02 12.84 476.5 L12.84 466.27&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L10.34 466.27 L10.34 463.65 ZM3.39 466.02 C3.39 465.99 3.4 465.96 3.4 465.93 C3.41 465.91 3.43 465.88&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.44 465.87 C3.46 465.85 3.48 465.83 3.51 465.81 L4.45 465.18 C4.46 465.17 4.48 465.17 4.5 465.16&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C4.51 465.16 4.54 465.15 4.56 465.15 C4.59 465.14 4.63 465.14 4.67 465.14 C4.71 465.14 4.77 465.14&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 4.84 465.14 C4.93 465.14 5 465.14 5.05 465.14 C5.11 465.15 5.15 465.15 5.17 465.16 C5.2 465.17 5.22&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 465.18 5.23 465.2 C5.24 465.21 5.24 465.23 5.24 465.25 L5.24 468.99 L5.96 468.99 C5.98 468.99 6&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469 6.02 469.01 C6.03 469.02 6.05 469.04 6.06 469.07 C6.07 469.1 6.08 469.14 6.09 469.18 C6.09 469.23&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 6.1 469.28 6.1 469.35 C6.1 469.42 6.09 469.47 6.09 469.52 C6.08 469.56 6.07 469.6 6.06 469.63 C6.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469.65 6.03 469.67 6.01 469.68 C6 469.7 5.98 469.7 5.96 469.7 L3.53 469.7 C3.51 469.7 3.49 469.7&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.48 469.68 C3.46 469.67 3.45 469.65 3.43 469.63 C3.42 469.6 3.41 469.56 3.41 469.52 C3.4 469.47&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.4 469.42 3.4 469.35 C3.4 469.28 3.4 469.23 3.4 469.18 C3.41 469.14 3.42 469.1 3.43 469.07 C3.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469.04 3.46 469.02 3.47 469.01 C3.49 469 3.51 468.99 3.53 468.99 L4.35 468.99 L4.35 466.04 L3.64&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 466.45 C3.59 466.47 3.55 466.49 3.51 466.49 C3.48 466.5 3.45 466.49 3.43 466.47 C3.41 466.45 3.4&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 466.42 3.4 466.37 C3.39 466.32 3.39 466.25 3.39 466.16 C3.38 466.11 3.39 466.06 3.39 466.02 ZM6.14&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.61 C6.08 474.9 5.99 475.15 5.86 475.36 C5.73 475.56 5.57 475.72 5.36 475.83 C5.16 475.94 4.9&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476 4.61 476 C4.3 476 4.05 475.94 3.86 475.84 C3.66 475.73 3.5 475.58 3.39 475.38 C3.27 475.18 3.19&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.93 3.14 474.65 C3.1 474.36 3.07 474.03 3.07 473.67 C3.07 473.31 3.1 472.98 3.16 472.69 C3.22&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.4 3.31 472.15 3.44 471.94 C3.57 471.74 3.74 471.58 3.94 471.47 C4.15 471.36 4.4 471.3 4.69 471.3&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C4.99 471.3 5.24 471.36 5.44 471.46 C5.64 471.57 5.8 471.72 5.91 471.92 C6.03 472.12 6.11 472.37&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 6.16 472.65 C6.2 472.94 6.22 473.27 6.22 473.63 C6.22 473.99 6.2 474.32 6.14 474.61 ZM9.62 475.73&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C9.61 475.78 9.6 475.81 9.59 475.84 C9.58 475.87 9.57 475.89 9.55 475.9 C9.53 475.91 9.52 475.92&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.49 475.92 L7.06 475.92 C7.04 475.92 7.03 475.91 7.01 475.9 C7 475.89 6.98 475.87 6.97 475.84 C6.96&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.81 6.95 475.78 6.94 475.73 C6.93 475.69 6.93 475.63 6.93 475.57 C6.93 475.5 6.93 475.44 6.94&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.4 C6.94 475.35 6.95 475.31 6.97 475.29 C6.98 475.26 6.99 475.24 7.01 475.22 C7.02 475.21 7.04&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.21 7.06 475.21 L7.88 475.21 L7.88 472.26 L7.18 472.66 C7.12 472.69 7.08 472.7 7.05 472.71 C7.02&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.71 6.99 472.71 6.97 472.69 C6.95 472.67 6.94 472.63 6.93 472.58 C6.92 472.53 6.92 472.47 6.92&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.38 C6.92 472.32 6.92 472.27 6.92 472.24 C6.93 472.2 6.93 472.17 6.94 472.15 C6.95 472.12 6.96&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 472.1 6.98 472.08 C6.99 472.07 7.02 472.05 7.04 472.03 L7.99 471.4 C8 471.39 8.02 471.38 8.03 471.38&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C8.05 471.37 8.07 471.37 8.1 471.36 C8.13 471.36 8.16 471.36 8.21 471.36 C8.25 471.35 8.31 471.35&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.38 471.35 C8.46 471.35 8.53 471.36 8.59 471.36 C8.64 471.36 8.68 471.37 8.71 471.38 C8.74 471.39&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.75 471.4 8.76 471.41 C8.77 471.43 8.78 471.44 8.78 471.46 L8.78 475.21 L9.49 475.21 C9.52 475.21&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.53 475.21 9.55 475.23 C9.57 475.24 9.58 475.26 9.6 475.29 C9.61 475.31 9.62 475.35 9.62 475.4&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C9.63 475.44 9.63 475.5 9.63 475.57 C9.63 475.63 9.63 475.69 9.62 475.73 ZM9.68 468.4 C9.62 468.69&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.53 468.94 9.4 469.14 C9.27 469.35 9.1 469.51 8.9 469.62 C8.69 469.73 8.44 469.78 8.14 469.78 C7.84&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469.78 7.59 469.73 7.39 469.62 C7.2 469.52 7.04 469.36 6.92 469.16 C6.81 468.96 6.73 468.72 6.68&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 468.43 C6.63 468.14 6.61 467.82 6.61 467.45 C6.61 467.09 6.64 466.77 6.7 466.47 C6.75 466.18 6.85&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 465.93 6.98 465.73 C7.1 465.52 7.27 465.36 7.48 465.25 C7.68 465.15 7.93 465.09 8.23 465.09 C8.53&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 465.09 8.78 465.14 8.98 465.25 C9.18 465.36 9.33 465.51 9.45 465.71 C9.57 465.91 9.65 466.15 9.69&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 466.44 C9.74 466.73 9.76 467.05 9.76 467.42 C9.76 467.78 9.73 468.11 9.68 468.4 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape244-328"
+          v:mID="244"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="15.8158"
+            cy="488.631"
+            width="65.25"
+            height="15.3648" />
+					<text
+            x="8.34"
+            y="488.15"
+            class="st41"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Blob<v:newlineChar /><tspan
+              x="2.84"
+              dy="1.2em"
+              class="st10">Storage</tspan></text>				</g>
+			</g>
+		</a>
+		<a
+      xlink:href="http://azure.microsoft.com/blog/2014/12/09/azure-hdinsight-introduces-built-in-integration-with-azure-websites-to-do-web-log-analytics/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group251-331"
+        transform="translate(288.806,-95.6153)"
+        v:mID="251"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Use HDInsight to make sense of site metrics like overall web traffic, the length of time someone stays on the site, the effectiveness of certain pages or campaigns, etc.</title>
+				<desc>HDInsight (Hadoop)</desc>
+				<g
+          id="shape252-332"
+          v:mID="252"
+          v:groupContext="shape"
+          transform="translate(17.8864,-1.23548)">
+					<path
+            d="M3.48 473.96 C3.34 473.45 2.72 472.47 2.72 472.47 C2.72 472.47 2.61 473.9 1.66 475.31 C0.7 476.71 0.06&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.96 0.06 476.96 C0.06 476.96 -0 477.44 0.51 477.44 C0.67 477.44 2.81 477.44 3.17 477.44 C3.54&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 3.85 477.1 3.85 476.68 C3.85 476.26 3.51 475.84 3.51 475.84 C3.51 475.84 3.65 474.44 3.48&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.96 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape253-334"
+          v:mID="253"
+          v:groupContext="shape"
+          transform="translate(0.533502,-2.89214)">
+					<path
+            d="M1.8 472.33 C1.8 472.3 1.8 472.3 1.8 472.33 C1.8 472.3 0.98 473.26 0.51 473.96 C-0 474.63 0.37 475.11&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0.37 475.11 C0.37 475.11 1.8 477.44 3 477.13 C3.4 477.02 3.71 476.37 3.71 476.37 C3.71 476.37 3.23&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.7 2.78 474.86 C2.27 473.85 1.88 472.53 1.8 472.33 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape254-336"
+          v:mID="254"
+          v:groupContext="shape">
+					<path
+            d="M33.89 459.22 C33.69 454.73 32.46 453.52 32.12 453.55 C31.65 453.57 31.5 454.33 31 454.7 C30.35 455.2&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 29.88 455.09 29.48 455.51 C29.09 455.93 29.9 456.94 29.76 459.58 C29.65 462.05 28.08 462.95 28.08&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 462.95 C28.08 462.95 28.81 461.86 28.95 461.13 C29.06 460.59 28.72 460.45 28.5 460.29 C28.02 459.89&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 27.12 460.9 26.87 461.16 C27.26 460.73 27.91 460.17 27.66 459.72 C27.21 458.97 26.25 459.5 26.03&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 459.56 C26.23 459.44 26.7 459.27 26.62 458.83 C26.45 458.04 25.66 458.24 25.52 458.26 C25.83 458.12&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 26.06 457.95 26.93 457.98 C27.43 458.01 27.32 457.51 26.98 457.06 C26.51 456.44 26.17 456.24 25.72&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 456.07 C25.27 455.9 24.37 456.02 24.37 456.02 C24.37 456.02 24.99 455.62 25.33 455.68 C24.85 455.09&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 23.39 452.79 20.83 452.68 C16.2 452.45 14.83 455.46 14.83 455.46 L17.07 455.34 C17.07 455.34 16.4&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 455.6 14.99 455.85 C13.93 456.02 13.96 456.02 13.65 456.1 C13.11 456.21 11.85 457.81 10.61 459.16&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C9.38 460.51 8.14 462.25 8.14 462.92 C8.14 463.6 8.82 464.08 9.21 464.64 C9.6 465.2 9.74 465.51&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.74 465.51 L11.37 463.57 L9.43 467.56 C9.43 467.56 10.36 468.77 11.32 468.62 C12.05 468.54 13.67&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 467.22 14.74 467.02 C15.81 466.83 16.29 467 16.29 467 C16.29 467 17.02 465.06 16.71 463.68 C16.12&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.21 16.57 459.95 17.04 459.11 C16.62 462.33 17.75 462.59 17.69 464.69 C17.63 466.27 17.13 467.98&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 17.13 467.98 C17.13 467.98 15.58 467.45 14.38 468.06 C13.17 468.68 12.07 469.61 10.92 469.61 C9.72&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469.61 8.17 467.59 8.17 467.59 L9.01 466.32 C9.01 466.32 8.93 465.96 8.56 465.51 C8.03 464.86 7.22&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 463.96 7.16 463.21 C7.08 461.97 8.37 460.62 8.82 460.06 C9.27 459.5 10.64 457.98 10.64 457.98 C10.64&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 457.98 6.65 458.52 5.03 460.48 C3.03 462.87 2.75 463.57 2.02 463.68 C1.29 463.8 1.01 462.98 1.01&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 462.98 C1.01 462.98 1.57 462.92 1.49 462.25 C1.35 461.16 1.66 460.51 1.66 460.51 C1.66 460.51 0.45&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.24 0.22 462 C-0 462.76 0.53 462.98 0.53 462.98 C0.53 462.98 0.53 464.33 1.35 464.64 C2.13 464.97&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 2.78 464.72 2.78 464.72 C2.78 464.72 2.27 467.22 2.95 469.02 C3.62 470.81 5.03 472.84 5.03 472.84&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C5.03 472.84 4.89 474.21 4.75 474.55 C4.6 474.89 4.1 475.7 4.91 476.26 C5.73 476.82 7.72 477.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.17 476.77 C8.62 476.49 8.54 475.67 8.56 475.39 C8.59 475.11 9.27 473.99 9.35 473.68 C9.43 473.37&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.41 471.63 9.32 471.07 C9.43 471.35 9.94 472.64 11.82 472.7 C13.53 472.75 14.07 471.83 14.12 471.24&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C14.15 471.54 14.24 472.75 14.07 473.01 C13.9 473.26 13.37 473.4 12.89 473.71 C12.41 474.02 11.71&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.38 12.8 475.76 C14.07 477.33 14.29 477.44 15.36 476.6 C16.43 475.76 17.58 474.97 18.39 473.96&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C19.21 472.95 20.61 469.19 20.61 469.19 C20.61 469.19 19.77 468.6 19.21 467.89 C18.78 467.36 18.7&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 467 18.7 467 C18.7 467 19.85 468.12 21.06 468.43 C21.51 468.93 22.27 469.66 22.88 469.92 C25.22&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 470.87 25.95 467.95 25.95 467.95 L25.61 467.89 C25.61 467.89 24.99 469.38 23.92 469.27 C21.9 469.02&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 22.52 464.86 22.52 464.86 C22.52 464.86 24.54 467.84 28.72 467.73 C31.2 467.64 34.12 464.67 33.89&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 459.22 ZM19.46 459.05 C19.46 459.05 19.66 457.11 20.02 456.86 C20.53 456.49 21.87 456.94 21.87 456.94&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C21.87 456.94 21 456.94 20.5 457.39 C20.08 457.79 19.46 459.05 19.46 459.05 ZM22.77 460.73 C22.15&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.21 21.59 461.89 21.59 461.89 C21.59 461.89 21.68 461.6 21.79 461.41 C21.9 461.21 22.1 460.96&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 22.1 460.96 C22.1 460.96 21.87 460.9 21.59 460.62 C21.4 460.45 21.34 460.26 21.31 460.17 C21.31&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 460.17 21.17 460.26 21.03 460.4 C20.89 460.54 20.61 460.82 20.61 460.82 C20.61 460.82 21.14 459.72&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 21.99 459.19 C22.83 458.66 23.67 458.66 23.67 458.66 C23.67 458.66 23.56 458.66 23.25 458.8 C22.94&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 458.94 22.94 458.97 22.94 458.97 C22.94 458.97 23.22 459.05 23.45 459.3 C23.7 459.58 23.7 459.92&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 23.7 459.92 C23.7 459.92 23.75 459.89 24.04 459.81 C24.32 459.72 24.63 459.7 24.63 459.7 C24.63&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 459.7 23.67 460.03 22.77 460.73 ZM31.36 455.65 C30.69 456.19 29.96 456.21 29.88 455.99 C29.79 455.76&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 29.93 455.76 29.93 455.76 C29.93 455.76 30.66 455.51 31.08 455.17 C31.62 454.78 32.07 453.86 32.21&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 454.11 C32.35 454.36 31.9 455.26 31.36 455.65 Z"
+            class="st40" />
+				</g>
+				<g
+          id="shape251-338"
+          v:mID="251"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="15.1724"
+            cy="493.942"
+            width="88.29"
+            height="24.9904" />
+					<text
+            x="-1.22"
+            y="488.65"
+            class="st41"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />HDInsight<v:newlineChar /><tspan
+              x="-0.74"
+              dy="1.2em"
+              class="st10">(</tspan>Hadoop)</text>				</g>
+			</g>
+		</a>
+		<g
+      id="shape256-341"
+      v:mID="256"
+      v:groupContext="shape"
+      transform="translate(-168.282,357.451) rotate(-90.0483)">
+			<desc>logs</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="23.153"
+        cy="477.442"
+        width="46.31"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L40.79 477.44"
+        class="st42" />
+			<text
+        x="16"
+        y="475.64"
+        class="st44"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />LOGS<v:newlineChar /></text>		</g>
+		<g
+      id="shape257-351"
+      v:mID="257"
+      v:groupContext="shape"
+      transform="translate(-99.801,351.45) rotate(-89.917)">
+			<desc>graphics</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="20.6996"
+        cy="477.442"
+        width="41.4"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L35.88 477.44"
+        class="st42" />
+			<text
+        x="7.44"
+        y="475.64"
+        class="st44"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />GRAPHICS<v:newlineChar /></text>		</g>
+		<g
+      id="shape258-359"
+      v:mID="258"
+      v:groupContext="shape"
+      transform="translate(30.1805,347.078) rotate(-89.9405)">
+			<desc>Data</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="18.4158"
+        cy="477.442"
+        width="36.84"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L31.31 477.44"
+        class="st42" />
+			<text
+        x="11.09"
+        y="475.64"
+        class="st44"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />DATA<v:newlineChar /></text>		</g>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/web-sites-custom-domain-name/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="shape273-367"
+        v:mID="273"
+        v:groupContext="shape"
+        v:layerMember="1"
+        transform="translate(363.96,-210.181)"
+        class="hover_group">
+				<title>Map your web app to your own domain name, such as contoso.com, for web apps both with and without Traffic Manager.</title>
+				<desc>Custom Domain Name</desc>
+				<v:custProps>
+					<v:cp
+            v:nameU="Cost"
+            v:lbl="Cost"
+            v:type="7"
+            v:format="@"
+            v:langID="1033" />
+					<v:cp
+            v:nameU="Duration"
+            v:lbl="Duration"
+            v:type="2"
+            v:langID="1033" />
+					<v:cp
+            v:nameU="Resources"
+            v:lbl="Resources"
+            v:langID="1033" />
+				</v:custProps>
+				<v:userDefs>
+					<v:ud
+            v:nameU="visVersion"
+            v:val="VT0(11):26" />
+				</v:userDefs>
+				<v:textBlock
+          v:margins="rect(2,2,2,2)" />
+				<v:textRect
+          cx="30.426"
+          cy="464.062"
+          width="60.86"
+          height="26.7593" />
+				<rect
+          x="0"
+          y="450.682"
+          width="60.852"
+          height="26.7593"
+          rx="4.5"
+          ry="4.5"
+          class="st11" />
+				<text
+          x="3.27"
+          y="461.66"
+          class="st12"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />Custom Domain <tspan
+            x="20.31"
+            dy="1.2em"
+            class="st10">Name</tspan></text>			</g>
+		</a>
+		<a
+      xlink:href="http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group305-371"
+        transform="translate(426.993,-93.4069)"
+        v:mID="305"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Learn how to use the Azure Redis Cache for fast caching of your web app in Azure.</title>
+				<desc>Redis Cache</desc>
+				<g
+          id="group306-372"
+          transform="translate(0,-0.265313)"
+          v:mID="306"
+          v:groupContext="group">
+					<g
+            id="shape307-373"
+            v:mID="307"
+            v:groupContext="shape">
+						<path
+              d="M3.64 450.54 C3.64 449.49 7.03 448.63 11.21 448.63 C15.39 448.63 18.77 449.49 18.77 450.54 C18.77&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 451.59 15.39 452.44 11.21 452.44 C7.03 452.44 3.64 451.59 3.64 450.54 ZM10.36 475.83 L10.36&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 457.66 C10.36 455.4 13.9 454.35 19.08 454.35 C20.27 454.35 21.39 454.42 22.43 454.56 L22.43&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 450.54 C22.43 448.59 17.41 447 11.21 447 C5.02 447 0 448.59 0 450.54 L0 473.9 C-0 475.85 5.02&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 11.21 477.44 L11.98 477.42 C10.96 476.98 10.36 476.43 10.36 475.83 Z"
+              class="st40" />
+					</g>
+				</g>
+				<g
+          id="group308-375"
+          transform="translate(11.6807,-5.68434E-014)"
+          v:mID="308"
+          v:groupContext="group">
+					<g
+            id="shape309-376"
+            v:mID="309"
+            v:groupContext="shape">
+						<path
+              d="M7.78 459.88 C4.78 459.88 2.33 459.26 2.33 458.5 C2.33 457.75 4.78 457.12 7.78 457.12 C10.79 457.12&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 13.22 457.75 13.22 458.5 C13.22 459.26 10.79 459.88 7.78 459.88 ZM12.51 467.48 L2.55 475.73&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L6.39 469.36 L3.05 469.36 L13 461.11 L9.16 467.48 L12.51 467.48 ZM7.78 455.52 C3.32 455.52 0&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 456.61 0 458.02 L0 474.84 C0 476.25 3.32 477.44 7.78 477.44 C12.24 477.44 15.85 476.3 15.85&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 474.89 L15.85 458.07 C15.85 456.67 12.24 455.52 7.78 455.52 Z"
+              class="st40" />
+					</g>
+				</g>
+				<g
+          id="shape305-378"
+          v:mID="305"
+          v:groupContext="groupContent">
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="12.8796"
+            cy="486.6"
+            width="63"
+            height="15.3543" />
+					<text
+            x="4.03"
+            y="486.12"
+            class="st41"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Redis <v:newlineChar /><tspan
+              x="2.48"
+              dy="1.2em"
+              class="st10">Cache</tspan></text>				</g>
+			</g>
+		</a>
+		<g
+      id="shape310-381"
+      v:mID="310"
+      v:groupContext="shape"
+      transform="translate(493.56,843.771) rotate(180)">
+			<path
+        d="M7.92 477.44 L8.28 477.44 L28.68 477.44"
+        class="st45" />
+		</g>
+		<g
+      id="shape311-390"
+      v:mID="311"
+      v:groupContext="shape"
+      transform="translate(-39.7088,350.531) rotate(-90.1355)">
+			<desc>Cached Data</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="19.3299"
+        cy="477.442"
+        width="38.66"
+        height="0" />
+			<path
+        d="M5.16 477.44 L5.52 477.44 L33.14 477.44"
+        class="st42" />
+			<text
+        x="8.17"
+        y="475.64"
+        class="st44"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />CACHED <v:newlineChar /><tspan
+          x="12"
+          dy="1.2em"
+          class="st10">DATA</tspan></text>		</g>
+		<g
+      id="shape312-399"
+      v:mID="312"
+      v:groupContext="shape"
+      v:layerMember="1"
+      transform="translate(301.545,-176.76)">
+			<desc>Gallery</desc>
+			<v:custProps>
+				<v:cp
+          v:nameU="Cost"
+          v:lbl="Cost"
+          v:type="7"
+          v:format="@"
+          v:langID="1033" />
+				<v:cp
+          v:nameU="Duration"
+          v:lbl="Duration"
+          v:type="2"
+          v:langID="1033" />
+				<v:cp
+          v:nameU="Resources"
+          v:lbl="Resources"
+          v:langID="1033" />
+			</v:custProps>
+			<v:userDefs>
+				<v:ud
+          v:nameU="visVersion"
+          v:val="VT0(11):26" />
+			</v:userDefs>
+			<v:textBlock
+        v:margins="rect(2,2,2,2)" />
+			<v:textRect
+        cx="103.641"
+        cy="481.774"
+        width="207.29"
+        height="8.6658" />
+			<rect
+        x="0"
+        y="450.682"
+        width="207.282"
+        height="26.7593"
+        rx="4.5"
+        ry="4.5"
+        class="st11" />
+		</g>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/web-sites-publish-source-control/#Step7"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="shape343-406"
+        v:mID="343"
+        v:groupContext="shape"
+        transform="translate(568.095,-187.644)"
+        class="hover_group">
+				<title>Deploying from BitBucket, CodePlex, Dropbox, GitHub, or Mercurial enables the continuous deployment process where Azure Web Apps will pull in the most recent updates from your project.</title>
+				<desc>GitHub</desc>
+				<v:textBlock
+          v:margins="rect(0,0,0,0)" />
+				<v:textRect
+          cx="8.92949"
+          cy="484.642"
+          width="25.35"
+          height="13.9703" />
+				<path
+          d="M8.18 461.09 C3.63 461.09 0 464.77 0 469.26 C0 473.81 3.69 477.44 8.18 477.44 C12.67 477.44 16.36 473.76&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 16.36 469.26 C16.41 464.72 12.72 461.09 8.18 461.09 ZM10.35 476.38 L10.35 474.97 C10.35 474.41 10.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.96 9.59 473.66 C9.64 473.66 9.64 473.66 9.69 473.66 C10.45 473.55 11.16 473.3 11.16 473.3 C11.16&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.3 12.17 473 12.72 472.34 C13.28 471.69 13.43 470.68 13.43 470.68 C13.43 470.68 13.63 469.57 13.43&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 468.76 C13.23 467.95 12.62 467.35 12.62 467.35 C12.62 467.35 12.82 466.79 12.82 466.23 C12.82 465.68&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 12.57 465.12 12.57 465.12 C12.57 465.12 12.12 465.07 11.56 465.28 C10.95 465.53 10.25 465.98 10.25 465.98&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C10.25 465.98 9.79 465.83 9.24 465.78 C8.73 465.73 8.13 465.68 8.13 465.68 C8.13 465.68 7.52 465.68&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 7.02 465.78 C6.46 465.83 6.01 465.98 6.01 465.98 C6.01 465.98 5.35 465.48 4.69 465.28 C4.19 465.07 3.69&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 465.12 3.69 465.12 C3.69 465.12 3.43 465.68 3.43 466.23 C3.43 466.79 3.63 467.35 3.63 467.35 C3.63 467.35&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.03 467.9 2.83 468.76 C2.62 469.62 2.83 470.68 2.83 470.68 C2.83 470.68 2.98 471.69 3.53 472.34 C4.09&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473 5.1 473.3 5.1 473.3 C5.1 473.3 5.81 473.55 6.56 473.66 C6.61 473.66 6.61 473.66 6.66 473.66 C6.21&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.96 5.91 474.41 5.91 474.97 L5.91 476.38 C2.88 475.47 0.66 472.65 0.66 469.26 C0.66 465.17 3.99 461.84&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.08 461.84 C12.17 461.84 15.5 465.17 15.5 469.26 C15.65 472.6 13.43 475.47 10.35 476.38 Z"
+          class="st46" />
+				<text
+          x="-3.52"
+          y="487.04"
+          class="st47"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />GitHub</text>			</g>
+		</a>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/web-sites-deploy/#ftp"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="shape344-409"
+        v:mID="344"
+        v:groupContext="shape"
+        transform="translate(563.628,-254.61)"
+        class="hover_group">
+				<title>Deploy content to your web app in Azure by using FTP to copy files.</title>
+				<desc>FTP</desc>
+				<v:textBlock
+          v:margins="rect(0,0,0,0)" />
+				<v:textRect
+          cx="12.6705"
+          cy="484.14"
+          width="25.35"
+          height="15.7498" />
+				<path
+          d="M22.62 477.44 L5.35 477.44 C5.35 477.44 5.35 477.44 5.35 477.44 C2.42 477.44 0 475.07 0 472.09 C0 469.16&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 2.37 466.74 5.35 466.74 C5.96 466.74 6.56 466.84 7.12 467.04 C8.18 463.96 11.11 461.69 14.54 461.69&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C18.83 461.69 22.36 465.17 22.36 469.52 C22.36 470.22 22.26 470.93 22.06 471.59 C22.16 471.59 22.31&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 471.59 22.41 471.59 C24.03 471.59 25.34 472.9 25.34 474.51 C25.34 476.08 24.13 477.29 22.62 477.44 ZM18.37&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 468.86 L12.92 468.86 L12.62 467.75 C12.62 467.7 12.57 467.65 12.52 467.65 L8.43 467.65 C8.38 467.65&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 8.33 467.7 8.33 467.75 L8.33 469.16 L8.33 470.27 L8.33 475.22 C8.33 475.37 8.48 475.52 8.63 475.52 L18.43&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.52 C18.58 475.52 18.73 475.37 18.73 475.22 L18.73 469.16 C18.63 469.01 18.53 468.86 18.37 468.86&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; Z"
+          class="st46" />
+				<text
+          x="5.12"
+          y="486.54"
+          class="st47"
+          v:langID="1033"><v:paragraph
+            v:horizAlign="1" /><v:tabList />FTP</text>			</g>
+		</a>
+		<g
+      id="shape351-412"
+      v:mID="351"
+      v:groupContext="shape"
+      transform="translate(546.951,-166.699)">
+			<desc>Deploy</desc>
+			<v:textBlock
+        v:margins="rect(0,0,0,0)" />
+			<v:textRect
+        cx="21.0089"
+        cy="356.678"
+        width="42.02"
+        height="13.0377" />
+			<path
+        d="M42.02 363.2 L8.33 363.2 C3.75 363.2 0 365.15 0 367.54 L0 473.1 C0 475.49 3.75 477.44 8.33 477.44 L42.02 477.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L42.02 363.2 Z"
+        class="st48" />
+			<path
+        d="M42.02 363.2 L8.33 363.2 C3.75 363.2 0 365.15 0 367.54 L0 473.1 C0 475.49 3.75 477.44 8.33 477.44 L42.02 477.44"
+        class="st49" />
+			<text
+        x="8.56"
+        y="359.08"
+        class="st50"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />Deploy</text>		</g>
+		<g
+      id="shape372-439"
+      v:mID="372"
+      v:groupContext="shape"
+      v:layerMember="0"
+      transform="translate(473.919,-237.876)">
+			<title>Map your web app to your own domain name, such as contoso.com, for web apps both with and without Traffic Manager.</title>
+			<desc>staging.contoso.azurewebsites.net</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="-83.284"
+        cy="358.558"
+        width="101.73"
+        height="15.2035"
+        transform="rotate(-90)" />
+			<path
+        d="M0 477.44 L0 410.85 L-78.76 410.85 L-78.76 306.48"
+        class="st54" />
+			<rect
+        v:rectContext="textBkgnd"
+        x="-404.585"
+        y="-86.8837"
+        width="92.055"
+        height="7.20016"
+        transform="rotate(-90)"
+        class="st56" />
+			<text
+        x="-404.59"
+        y="-81.48"
+        transform="rotate(-90)"
+        class="st57"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />staging.contoso.azurewebsites.net</text>		</g>
+		<g
+      id="shape374-447"
+      v:mID="374"
+      v:groupContext="shape"
+      v:layerMember="0"
+      transform="translate(380.76,-414.36)">
+			<title>Map your web app to your own domain name, such as contoso.com, for web apps both with and without Traffic Manager.</title>
+			<desc>contoso.azurewebsites.net</desc>
+			<v:textBlock
+        v:margins="rect(4,4,4,4)" />
+			<v:textRect
+        cx="-5.28247"
+        cy="525.002"
+        width="80.72"
+        height="15.2035"
+        transform="rotate(-90)" />
+			<path
+        d="M-0 482.6 L-0 482.96 L-0 587.34 L93.16 587.34 L93.16 653.93"
+        class="st58" />
+			<rect
+        v:rectContext="textBkgnd"
+        x="-560.522"
+        y="-8.88217"
+        width="71.0409"
+        height="7.20016"
+        transform="rotate(-90)"
+        class="st59" />
+			<text
+        x="-560.52"
+        y="-3.48"
+        transform="rotate(-90)"
+        class="st57"
+        v:langID="1033"><v:paragraph
+          v:horizAlign="1" /><v:tabList />contoso.azurewebsites.net</text>		</g>
+		<a
+      xlink:href="http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group378-455"
+        transform="translate(468.988,-249.989)"
+        v:mID="378"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Troy Hunt, the creator of haveibeenpwned.com, talks about his learnings when traffic to his web app in Azure increased 60-fold overnight.</title>
+				<g
+          id="shape69-456"
+          v:mID="69"
+          v:groupContext="shape"
+          transform="translate(2.19824E-014,-3.14277)">
+					<desc>autoscale</desc>
+					<v:textBlock
+            v:margins="rect(4,4,4,4)" />
+					<v:textRect
+            cx="17.686"
+            cy="472.461"
+            width="35.38"
+            height="9.96138" />
+					<rect
+            x="0"
+            y="467.48"
+            width="35.3719"
+            height="9.96138"
+            class="st28" />
+					<text
+            x="5.9"
+            y="474.26"
+            class="st60"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />autoscale</text>				</g>
+				<g
+          id="shape260-459"
+          v:mID="260"
+          v:groupContext="shape"
+          transform="translate(32.805,5.68434E-014)">
+					<desc>ON</desc>
+					<v:textBlock
+            v:margins="rect(4,4,4,4)" />
+					<v:textRect
+            cx="8.12346"
+            cy="469.318"
+            width="16.25"
+            height="16.2469" />
+					<ellipse
+            cx="8.12346"
+            cy="469.318"
+            rx="8.12346"
+            ry="8.12346"
+            class="st61" />
+					<text
+            x="5.12"
+            y="470.52"
+            class="st62"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />ON</text>				</g>
+			</g>
+		</a>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group379-462"
+        transform="translate(427.974,-317.563)"
+        v:mID="379"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Learn how to build a secure ASP.NET Web Forms application that stores and accesses data from a SQL database and enables users to log in with credentials from Facebook, Yahoo, and Google.</title>
+				<g
+          id="shape6-463"
+          v:mID="6"
+          v:groupContext="shape"
+          v:layerMember="1">
+					<desc>SOCIAL LOGIN</desc>
+					<v:custProps>
+						<v:cp
+              v:nameU="Cost"
+              v:lbl="Cost"
+              v:type="7"
+              v:format="@"
+              v:langID="1033" />
+						<v:cp
+              v:nameU="Duration"
+              v:lbl="Duration"
+              v:type="2"
+              v:langID="1033" />
+						<v:cp
+              v:nameU="Resources"
+              v:lbl="Resources"
+              v:langID="1033" />
+					</v:custProps>
+					<v:userDefs>
+						<v:ud
+              v:nameU="visVersion"
+              v:val="VT0(11):26" />
+					</v:userDefs>
+					<v:textBlock
+            v:margins="rect(2,2,2,2)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="80.8531"
+            cy="442.908"
+            width="161.71"
+            height="69.068" />
+					<rect
+            x="0"
+            y="408.374"
+            width="161.706"
+            height="69.068"
+            rx="4.5"
+            ry="4.5"
+            class="st63" />
+					<text
+            x="60.34"
+            y="415.77"
+            class="st64"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />SOCIAL LOGIN</text>				</g>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape86-466"
+            v:mID="86"
+            v:groupContext="shape"
+            transform="translate(55.1255,-20.9097)">
+						<path
+              d="M8.57 460.79 C9.1 461.22 10.21 462.15 10.21 463.88 C10.21 465.59 9.22 466.39 8.26 467.16 C7.98 467.44&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 7.64 467.78 7.64 468.28 C7.64 468.77 7.98 469.05 8.23 469.27 C9.04 469.89 9.04 469.89 9.04 469.89&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C10.06 470.75 10.98 471.53 10.98 473.11 C10.98 475.27 8.88 477.44 4.95 477.44 C1.61 477.44 0&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 475.86 0 474.16 C0 473.36 0.43 472.18 1.79 471.37 C3.22 470.51 5.14 470.38 6.16 470.32 C5.85&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 469.89 5.48 469.46 5.48 468.74 C5.48 468.37 5.6 468.12 5.69 467.85 C5.45 467.88 5.2 467.91 4.98&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 467.91 C2.54 467.91 1.18 466.08 1.18 464.32 C1.18 463.26 1.64 462.09 2.63 461.22 C3.93 460.14&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 5.51 459.98 6.75 459.98 C11.45 459.98 11.45 459.98 11.45 459.98 C10 460.79 10 460.79 10 460.79&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C8.57 460.79 8.57 460.79 8.57 460.79 ZM6.93 470.97 C6.74 470.97 6.65 470.97 6.4 470.97 C6.22&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 470.97 4.98 471 3.99 471.31 C3.5 471.5 2.04 472.06 2.04 473.7 C2.04 475.31 3.62 476.48 6.06&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.48 C8.26 476.48 9.44 475.43 9.44 474 C9.44 472.83 8.69 472.21 6.93 470.97 ZM7.61 466.61&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C8.14 466.08 8.17 465.37 8.17 464.94 C8.17 463.29 7.18 460.73 5.29 460.73 C4.7 460.73 4.05 461.03&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 3.68 461.47 C3.28 461.96 3.19 462.58 3.19 463.17 C3.19 464.72 4.08 467.26 6.03 467.26 C6.62&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 467.26 7.24 466.98 7.61 466.61 Z"
+              class="st65" />
+					</g>
+				</a>
+				<g
+          id="shape87-468"
+          v:mID="87"
+          v:groupContext="shape"
+          transform="translate(55.1255,-20.9097)">
+					<desc>Google</desc>
+					<v:textBlock
+            v:margins="rect(0,0,0,0)"
+            v:verticalAlign="0" />
+					<v:textRect
+            cx="5.68949"
+            cy="488.783"
+            width="28.8"
+            height="17.4587" />
+					<text
+            x="-3.49"
+            y="485.45"
+            class="st66"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Google</text>				</g>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape88-470"
+            v:mID="88"
+            v:groupContext="shape"
+            transform="translate(20.1244,-30.7788)">
+						<rect
+              x="0"
+              y="469.023"
+              width="8.41845"
+              height="8.41845"
+              class="st67" />
+					</g>
+				</a>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape89-472"
+            v:mID="89"
+            v:groupContext="shape"
+            transform="translate(29.4193,-30.7788)">
+						<rect
+              x="0"
+              y="469.023"
+              width="8.41824"
+              height="8.41845"
+              class="st68" />
+					</g>
+				</a>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape90-474"
+            v:mID="90"
+            v:groupContext="shape"
+            transform="translate(20.1244,-21.4806)">
+						<rect
+              x="0"
+              y="469.023"
+              width="8.41824"
+              height="8.41845"
+              class="st69" />
+					</g>
+				</a>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape91-476"
+            v:mID="91"
+            v:groupContext="shape"
+            transform="translate(29.4193,-21.4806)">
+						<rect
+              x="0"
+              y="469.023"
+              width="8.41824"
+              height="8.41845"
+              class="st70" />
+					</g>
+				</a>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape92-478"
+            v:mID="92"
+            v:groupContext="shape"
+            transform="translate(20.1244,-21.4806)">
+						<desc>Microsoft</desc>
+						<v:textBlock
+              v:margins="rect(0,0,0,0)"
+              v:verticalAlign="0" />
+						<v:textRect
+              cx="8.7531"
+              cy="485.163"
+              width="38.83"
+              height="8.38141" />
+						<text
+              x="-2.93"
+              y="486.37"
+              class="st66"
+              v:langID="1033"><v:paragraph
+                v:horizAlign="1" /><v:tabList />Microsoft</text>					</g>
+				</a>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape93-480"
+            v:mID="93"
+            v:groupContext="shape"
+            transform="translate(117.324,-21.8196)">
+						<desc>Twitter</desc>
+						<v:textBlock
+              v:margins="rect(0,0,0,0)"
+              v:verticalAlign="0" />
+						<v:textRect
+              cx="9.78067"
+              cy="489.327"
+              width="38.04"
+              height="16.5488" />
+						<path
+              d="M20.36 462.85 C19.61 463.18 18.81 463.41 17.96 463.51 C18.83 462.99 19.49 462.17 19.8 461.2 C18.99&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 461.68 18.1 462.02 17.15 462.21 C16.39 461.4 15.3 460.89 14.1 460.89 C11.79 460.89 9.92 462.76&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 9.92 465.07 C9.92 465.4 9.96 465.72 10.03 466.02 C6.56 465.85 3.48 464.19 1.42 461.66 C1.06&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 462.27 0.85 462.99 0.85 463.76 C0.85 465.21 1.59 466.49 2.71 467.24 C2.03 467.21 1.38 467.03&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 0.82 466.71 C0.82 466.73 0.82 466.75 0.82 466.77 C0.82 468.79 2.26 470.48 4.17 470.86 C3.82&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 470.96 3.45 471.01 3.07 471.01 C2.8 471.01 2.54 470.98 2.28 470.93 C2.81 472.59 4.36 473.8 6.19&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 473.83 C4.76 474.95 2.95 475.62 1 475.62 C0.66 475.62 0.33 475.6 0 475.56 C1.85 476.75 4.05&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 6.4 477.44 C14.09 477.44 18.29 471.08 18.29 465.55 C18.29 465.37 18.29 465.19 18.28 465.01&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; C19.09 464.43 19.8 463.69 20.36 462.85 Z"
+              class="st71" />
+						<text
+              x="1.32"
+              y="486.45"
+              class="st66"
+              v:langID="1033"><v:paragraph
+                v:horizAlign="1" /><v:tabList />Twitter</text>					</g>
+				</a>
+				<g
+          id="shape268-483"
+          v:mID="268"
+          v:groupContext="shape"
+          transform="translate(83.863,-20.8287)">
+					<path
+            d="M16.57 477.44 C17.11 477.44 17.54 477.01 17.54 476.47 L17.54 460.87 C17.54 460.34 17.11 459.9 16.57&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 459.9 L0.97 459.9 C0.43 459.9 0 460.34 0 460.87 L0 476.47 C0 477.01 0.43 477.44 0.97 477.44 L16.57&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 477.44 Z"
+            class="st72" />
+				</g>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="shape269-485"
+            v:mID="269"
+            v:groupContext="shape"
+            transform="translate(90.9458,-20.8287)">
+						<path
+              d="M5.02 477.44 L5.02 470.65 L7.3 470.65 L7.64 468 L5.02 468 L5.02 466.31 C5.02 465.55 5.23 465.02&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 6.33 465.02 L7.73 465.02 L7.73 462.66 C7.49 462.62 6.66 462.55 5.69 462.55 C3.67 462.55 2.29&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 463.78 2.29 466.05 L2.29 468 L0 468 L0 470.65 L2.29 470.65 L2.29 477.44 L5.02 477.44 Z"
+              class="st36" />
+					</g>
+				</a>
+				<g
+          id="shape270-487"
+          v:mID="270"
+          v:groupContext="shape"
+          transform="translate(83.863,-20.8287)">
+					<desc>Facebook</desc>
+					<v:textBlock
+            v:margins="rect(4,4,4,4)" />
+					<v:textRect
+            cx="9.39828"
+            cy="483.708"
+            width="43.2"
+            height="6.73976" />
+					<text
+            x="-2.7"
+            y="485.51"
+            class="st66"
+            v:langID="1033"><v:paragraph
+              v:horizAlign="1" /><v:tabList />Facebook</text>				</g>
+			</g>
+		</a>
+		<a
+      xlink:href="http://www.azure.cn/documentation/articles/app-service-vnet-integration-powershell/"
+      cursor="pointer"
+      target="_blank"
+      tabindex="0"
+      aria-labelledby="">
+			<g
+        id="group380-489"
+        transform="translate(83.16,-48.8842)"
+        v:mID="380"
+        v:groupContext="group"
+        class="hover_group">
+				<title>Integrate with Azure Virtual Network to connect to existing cloud resources.</title>
+				<g
+          id="shape3-490"
+          v:mID="3"
+          v:groupContext="shape"
+          transform="translate(0,-5.47584)">
+					<rect
+            x="0"
+            y="135.531"
+            width="540"
+            height="341.91"
+            class="st73" />
+				</g>
+				<a
+          xlink:href="http://www.azure.cn/documentation/articles/app-service-vnet-integration-powershell/"
+          cursor="pointer"
+          target="_blank"
+          tabindex="0"
+          aria-labelledby="">
+					<g
+            id="group145-492"
+            transform="translate(10.3471,5.68434E-014)"
+            v:mID="145"
+            v:groupContext="group">
+						<g
+              id="shape146-493"
+              v:mID="146"
+              v:groupContext="shape"
+              transform="translate(-1.29896E-013,-0.0298412)">
+							<rect
+                x="0"
+                y="464.796"
+                width="24.48"
+                height="12.646"
+                class="st5" />
+						</g>
+						<g
+              id="group147-495"
+              transform="translate(-456.579,477.442) rotate(-90)"
+              v:mID="147"
+              v:groupContext="group">
+							<desc>Azure Virtual Network</desc>
+							<g
+                id="shape148-496"
+                v:mID="148"
+                v:groupContext="shape">
+								<path
+                  d="M6.32 477.44 L7.74 476.22 L12.65 472 L11.84 471.32 L6.32 476.07 L0.8 471.32 L0 472 L4.9&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 476.22 L6.32 477.44 Z"
+                  class="st2" />
+							</g>
+							<g
+                id="shape149-498"
+                v:mID="149"
+                v:groupContext="shape"
+                transform="translate(1.25899E-013,-13.9997)">
+								<path
+                  d="M6.32 471.32 L7.74 472.54 L12.65 476.76 L11.84 477.44 L6.32 472.69 L0.8 477.44 L0 476.76&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; L4.9 472.54 L6.32 471.32 Z"
+                  class="st2" />
+							</g>
+							<g
+                id="shape150-500"
+                v:mID="150"
+                v:groupContext="shape"
+                transform="translate(4.88252,-12.4862)">
+								<path
+                  d="M1.44 477.44 C0.65 477.44 0 476.89 0 476.21 C0 475.52 0.65 474.97 1.44 474.97 C2.24 474.97&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; 2.88 475.52 2.88 476.21 C2.88 476.89 2.23 477.44 1.44 477.44 Z"
+                  class="st2" />
+							</g>
+							<g
+                id="shape151-502"
+                v:mID="151"
+                v:groupContext="shape"
+                transform="translate(4.88679,-8.82665)">
+								<ellipse
+                  cx="1.43664"
+                  cy="476.206"
+                  rx="1.43664"
+                  ry="1.2358"
+                  class="st2" />
+							</g>
+							<g
+                id="shape152-504"
+                v:mID="152"
+                v:groupContext="shape"
+                transform="translate(4.88337,-5.16284)">
+								<ellipse
+                  cx="1.44006"
+                  cy="476.203"
+                  rx="1.44006"
+                  ry="1.23836"
+                  class="st2" />
+							</g>
+							<g
+                id="shape147-506"
+                v:mID="147"
+                v:groupContext="groupContent">
+								<v:textBlock
+                  v:margins="rect(0,0,0,0)" />
+								<v:textRect
+                  cx="5.58289"
+                  cy="534.103"
+                  width="106.66"
+                  height="11.1658"
+                  transform="rotate(90)" />
+								<rect
+                  v:rectContext="textBkgnd"
+                  x="480.778"
+                  y="-11.583"
+                  width="92.0366"
+                  height="12.0001"
+                  transform="rotate(90)"
+                  class="st59" />
+								<text
+                  x="480.78"
+                  y="-2.58"
+                  transform="rotate(90)"
+                  class="st74"
+                  v:langID="1033"><v:paragraph /><v:tabList />Azure Virtual Network</text>							</g>
+						</g>
+					</g>
+				</a>
+			</g>
+		</a>
+		<g
+      id="shape381-509"
+      v:mID="381"
+      v:groupContext="shape"
+      transform="translate(529.56,-223.821)">
+			<path
+        d="M5.16 477.44 L5.52 477.44 L17.39 477.44"
+        class="st22" />
+		</g>
+	</g>
+</svg>
