@@ -340,7 +340,7 @@ Azure CLI 将使用默认的 VM 大小创建虚拟机。它还将创建存储帐
 [signuporg]: /documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/zh-cn/library/jj573650#createAzureTenant
 [portal]: https://manage.windowsazure.cn/
-[clisetup]: /documentation/articles/xplat-cli
+[clisetup]: /documentation/articles/xplat-cli-install/
 [psrm]: /documentation/articles/resource-group-portal/
 
 <!---HONumber=70-->

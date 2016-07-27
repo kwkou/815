@@ -36,7 +36,7 @@
 >[AZURE.NOTE] CLI 的 Azure Resource Manager 模式与 asm 模式互斥。即在一种模式下创建的资源不能从另一种模式进行管理。
 
 ## 管理帐户信息和发布设置
-CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](xplat-cli-connect.md)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。你只需导入你的发布设置一次。
+CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。你只需导入你的发布设置一次。
 
 **account download [options]**
 
@@ -652,7 +652,7 @@ Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务
 
 ##<a name="Commands_to_manage_your_Azure_certificates"></a>用于管理 Azure 证书的命令
 
-Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。有关 Azure 证书的详细信息，请参阅[管理证书](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)。
+Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。
 
 **service cert list [options]**
 
