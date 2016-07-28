@@ -1,7 +1,7 @@
 <!-- ARM: tested -->
 
 <properties 
-	pageTitle="Azure 中的业务线应用程序 | Microsoft Azure" 
+	pageTitle="Azure 中的业务线应用程序 | Azure" 
 	description="了解 Azure 中的业务线应用程序的价值、设置测试环境，以及部署高可用性配置。" 
 	services="virtual-machines-windows" 
 	documentationCenter="" 
@@ -20,7 +20,7 @@
 > [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 
-在 Microsoft Azure 中设置你的第一个或下一个仅限 Intranet 的业务线应用程序，并利用配置的简便性和相关功能快速扩展应用程序以包括新增能力。
+在 Azure 中设置你的第一个或下一个仅限 Intranet 的业务线应用程序，并利用配置的简便性和相关功能快速扩展应用程序以包括新增能力。
  
 借助 Azure 基础结构服务的虚拟机和虚拟网络功能，你可以快速部署并运行可供你组织的用户访问的业务线应用程序。例如，你可以进行此设置。
 

@@ -38,7 +38,7 @@
 
     >[AZURE.NOTE] 如果你选择大一点的虚拟机，将会产生额外的费用。详情请参阅[虚拟机价格详情](/pricing/details/virtual-machines/)
 
-1. 在 Visual Studio 中创建的虚拟机需要云服务。在“云服务设置”页上，选择虚拟机的云服务，如果你还没有云服务或想要使用新的云服务，请单击下拉列表中的“<新建...>”。还需要一个存储帐户，因此请在“存储帐户”下拉列表框中选择存储帐户（或创建新的存储帐户）。有关详细信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction/)。
+1. 在 Visual Studio 中创建的虚拟机需要云服务。在“云服务设置”页上，选择虚拟机的云服务，如果你还没有云服务或想要使用新的云服务，请单击下拉列表中的“<新建...>”。还需要一个存储帐户，因此请在“存储帐户”下拉列表框中选择存储帐户（或创建新的存储帐户）。有关详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)。
 
 1. 如果你想要指定虚拟网络（可选操作），请在“虚拟网络”和“子网”下拉列表框中进行选择。
 
@@ -132,7 +132,7 @@
 
 ### 将虚拟机还原到以前保存的状态
 
-- 遵循 [Step-by-Step: Perform Cloud Restores of Azure Virtual Machines using PowerShell - Part 2（分步说明：使用 PowerShell 执行 Microsoft Azure 虚拟机的云还原 - 第 2 部分）](http://blogs.technet.com/b/keithmayer/archive/2014/02/04/step-by-step-perform-cloud-restores-of-windows-azure-virtual-machines-using-powershell-part-2.aspx)中概述的步骤。
+- 遵循 [Step-by-Step: Perform Cloud Restores of Azure Virtual Machines using PowerShell - Part 2（分步说明：使用 PowerShell 执行 Azure 虚拟机的云还原 - 第 2 部分）](http://blogs.technet.com/b/keithmayer/archive/2014/02/04/step-by-step-perform-cloud-restores-of-windows-azure-virtual-machines-using-powershell-part-2.aspx)中概述的步骤。
 
 ### 删除检查点
 

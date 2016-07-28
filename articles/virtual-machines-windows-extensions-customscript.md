@@ -1,7 +1,7 @@
 <!-- ARM: tested -->
 
 <properties
-   pageTitle="在 Windows VM 上使用模板自定义脚本 | Microsoft Azure"
+   pageTitle="在 Windows VM 上使用模板自定义脚本 | Azure"
    description="通过将自定义脚本扩展与资源管理器模板配合使用，自动执行 Windows 的 Azure VM 配置任务"
    services="virtual-machines-windows"
    documentationCenter=""

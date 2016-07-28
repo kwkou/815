@@ -112,7 +112,7 @@
 
 
 ## 常规链接
-下面是 Microsoft 博客、Technet 页和外部站点的链接，而不是上述 Azure.com 文档的链接。因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，以下链接都已过时，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/wacn/techcontent)提交一个拉取请求。
+下面是 Microsoft 博客、Technet 页和外部站点的链接，而不是上述 Azure.cn 文档的链接。因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，以下链接都已过时，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/wacn/techcontent)提交一个拉取请求。
 
 - [使用 Docker 容器在 Linux 上运行 ASP.NET 5](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
 - [如何从 OpenLogic 部署 CentOS VM 映像](https://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)

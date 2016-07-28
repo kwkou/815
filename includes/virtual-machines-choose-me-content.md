@@ -22,7 +22,7 @@
 
 **图：Azure 虚拟机提供“基础结构即服务”。**
 
-可以使用基于浏览器的经典管理门户、支持脚本的命令行工具或直接通过 REST API 管理 VM。Microsoft 合作伙伴（如 RightScale 和 ScaleXtreme）也提供依赖 REST API 的管理服务。
+可以使用基于浏览器的经典管理门户、支持脚本的命令行工具或直接通过 REST API 管理 VM。Azure.cn 合作伙伴（如 RightScale 和 ScaleXtreme）也提供依赖 REST API 的管理服务。
 
 除了操作系统以外，可对 VM 使用的其他配置选项包括：
 
