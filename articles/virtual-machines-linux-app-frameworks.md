@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="使用模板部署常用应用程序框架 | Azure"
    description="使用 Azure Resource Manager 模板在 Linux 虚拟机创建常用应用程序框架，以便安装 Active Directory、Docker，等等。"

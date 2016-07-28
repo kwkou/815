@@ -1,6 +1,6 @@
 <properties
    pageTitle="虚拟机上的 MATLAB 群集 | Azure"
-   description="使用 Microsoft Azure 虚拟机可以创建 MATLAB 分布式计算服务器群集，以运行计算密集型并行 MATLAB 工作负荷。"
+   description="使用 Azure 虚拟机可以创建 MATLAB 分布式计算服务器群集，以运行计算密集型并行 MATLAB 工作负荷。"
    services="virtual-machines-windows"
    documentationCenter=""
    authors="mscurrell"
@@ -14,7 +14,7 @@
 
 # 在 Azure VM 上创建 MATLAB 分布式计算服务器群集 
 
-使用 Microsoft Azure 虚拟机可以创建一个或多个 MATLAB 分布式计算服务器群集，以运行计算密集型并行 MATLAB 工作负荷。在 VM 上安装 MATLAB 分布式计算服务器软件以用作基本映像，并使用 Azure 快速入门模板或 Azure PowerShell 脚本（可在 [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster) 上获取）来部署和管理群集。部署之后，可连接到群集来运行工作负荷。
+使用 Azure 虚拟机可以创建一个或多个 MATLAB 分布式计算服务器群集，以运行计算密集型并行 MATLAB 工作负荷。在 VM 上安装 MATLAB 分布式计算服务器软件以用作基本映像，并使用 Azure 快速入门模板或 Azure PowerShell 脚本（可在 [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster) 上获取）来部署和管理群集。部署之后，可连接到群集来运行工作负荷。
 
 ## 关于 MATLAB 和 MATLAB 分布式计算服务器 
 

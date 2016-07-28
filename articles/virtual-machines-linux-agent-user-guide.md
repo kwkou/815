@@ -45,7 +45,7 @@ Azure Linux 代理 (/usr/sbin/waagent) 管理虚拟机与 Azure 结构控制器�
 * **SCVMM 部署**
     - 当用于 Linux 的 VMM 代理在 System Center Virtual Machine Manager 2012 R2 环境中运行时对其进行检测并启动
 * **VM 扩展**
-    - 将 Microsoft 和合作伙伴授权的组件注入 Linux VM (IaaS)，以便实现软件和配置的自动化
+    - 将 Azure.cn 和合作伙伴授权的组件注入 Linux VM (IaaS)，以便实现软件和配置的自动化
     - [https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions) 上的 VM 扩展引用实现
 
 

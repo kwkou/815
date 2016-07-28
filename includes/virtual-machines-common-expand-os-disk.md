@@ -9,7 +9,7 @@
 ## 调整 OS 驱动器的大小
 在本文中，我们将使用 [Azure Powershell](/documentation/articles/powershell-install-configure/) 的 Resource Manager 模块，完成调整 OS 驱动器大小的任务。在管理模式下打开 Powershell ISE 或 Powershell 窗口，并遵循以下步骤：
 
-1.  在资源管理模式下登录你的 Microsoft Azure 帐户，然后选择你的订阅，如下所示：
+1.  在资源管理模式下登录你的 Azure 帐户，然后选择你的订阅，如下所示：
 
 	    Login-AzureRmAccount
 	    Select-AzureRmSubscription -SubscriptionName 'my-subscription-name'

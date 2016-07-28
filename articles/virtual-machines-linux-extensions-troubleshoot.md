@@ -1,7 +1,7 @@
 <!-- ARM: tested -->
 
 <properties
-   pageTitle="对 Linux VM 扩展故障进行故障排除 | Microsoft Azure"
+   pageTitle="对 Linux VM 扩展故障进行故障排除 | Azure"
    description="了解如何对 Azure Linux VM 扩展故障进行故障排除"
    services="virtual-machines-linux"
    documentationCenter=""
