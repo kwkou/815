@@ -66,7 +66,7 @@ Azure Web 应用构建于一种平台即服务的模型之上，可提供大量�
 
 ### 企业类托管 ###
 
-Azure Web 应用提供了一个稳定、可靠的平台，后者已被证实能够满足从小型内部开发和测试工作负荷到高度可扩展的高流量 Web 应用的各种业务需求。通过使用 Azure Web 应用，您可以使用与 Microsoft 公司用于处理高价值 Web 工作负荷相同的企业类托管平台。Azure Web 应用以及 Azure 平台上的所有服务均符合安全要求和遵从法规要求，如 ISO (ISO/IEC 27001:2005）；SOC1 和 SOC2 SSAE 16/ISAE 3402 Attestations、HIPAA BAA、PCI 和 Fedramp，是每个元素和功能的核心，有关详细信息，请参阅[http://aka.ms/azurecompliance](/support/trust-center/compliance/)。
+Azure Web 应用提供了一个稳定、可靠的平台，后者已被证实能够满足从小型内部开发和测试工作负荷到高度可扩展的高流量 Web 应用的各种业务需求。通过使用 Azure Web 应用，您可以使用与 Microsoft 公司用于处理高价值 Web 工作负荷相同的企业类托管平台。Azure Web 应用以及 Azure 平台上的所有服务均符合安全要求和遵从法规要求，如 ISO (ISO/IEC 27001:2005）；SOC1 和 SOC2 SSAE 16/ISAE 3402 Attestations、HIPAA BAA、PCI 和 Fedramp，是每个元素和功能的核心，有关详细信息，请参阅[http://aka.ms/azurecompliance](https://www.trustcenter.cn/zh-cn/compliance/default.html)。
 
 Azure 平台支持基于角色的身份验证控制，从而支持对 Azure Web 应用内的资源进行企业级别控制。RBAC 支持企业在 Azure 环境中为其所有资产实施自己的访问管理策略，将用户分配到组并反过来根据 Web 应用等资产将所需的权限分配给这些组。通过利用 Azure Web 应用，您可以确保将 Web 应用部署在安全可靠的环境中，并完全地控制要将资产部署到的区域。
 ## 解决方案详细信息 ##

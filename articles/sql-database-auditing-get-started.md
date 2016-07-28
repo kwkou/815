@@ -17,7 +17,7 @@ Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写�
 
 审核可帮助你一直保持遵从法规、了解数据库活动，以及深入了解可以指明业务考量因素或疑似安全违规的偏差和异常。
 
-审核工具有助于遵从法规标准，但不能保证遵从法规。有关可帮助你遵从标准的 Azure 计划的详细信息，请参阅 [Azure 信任中心](/support/trust-center/compliance)。
+审核工具有助于遵从法规标准，但不能保证遵从法规。有关可帮助你遵从标准的 Azure 计划的详细信息，请参阅 [Azure 信任中心](https://www.trustcenter.cn/zh-cn/compliance/default.html)。
 
 + [Azure SQL 数据库审核基础知识]
 + [为数据库设置审核]
