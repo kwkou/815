@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="automation"
-   ms.date="02/23/2016"
-   wacn.date="06/30/2016" />
+   ms.date="05/24/2016"
+   wacn.date="07/28/2016" />
 
 # Azure 自动化中的变量资产
 

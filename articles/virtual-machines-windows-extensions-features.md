@@ -10,8 +10,8 @@
 
 <tags
  	ms.service="virtual-machines-windows"
- 	ms.date="12/08/2015"
- 	wacn.date="01/29/2016"/>
+ 	ms.date="05/27/2016"
+ 	wacn.date="07/28/2016"/>
 
 #关于虚拟机扩展和功能
 

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="10/21/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="05/27/2016"
+	wacn.date="07/28/2016"/>
 
 # Azure 基础结构服务实施准则
 

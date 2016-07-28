@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/25/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="05/17/2016"
+	wacn.date="07/28/2016"/>
 
 # 将 Hive 与 HDInsight 配合使用来分析来自网站的日志
 

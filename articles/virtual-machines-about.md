@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="03/10/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/15/2016"
+	wacn.date="07/28/2016"/>
 
 #关于 Azure 中的 Linux 虚拟机 
 

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="03/31/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/13/2016"
+	wacn.date="07/28/2016"/>
     
 # 从本地 Git 部署到 Azure
 

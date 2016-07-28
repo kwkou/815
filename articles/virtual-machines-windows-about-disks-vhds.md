@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="03/10/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/16/2016"
+	wacn.date="07/28/2016"/>
 
 # 关于 Azure 虚拟机的磁盘和 VHD
 

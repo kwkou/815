@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="02/24/2016"
-	wacn.date="04/25/2016"/>
+	ms.date="06/03/2016"
+	wacn.date="07/28/2016"/>
 
 # VM 和角色实例的名称解析
 

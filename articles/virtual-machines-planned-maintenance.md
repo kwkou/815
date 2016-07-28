@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="07/28/2016"/>
 
 
 # Azure 中 Linux 虚拟机的计划内维护

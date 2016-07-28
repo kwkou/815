@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="03/18/2016"
-	wacn.date="04/26/2016"/>
+	ms.date="06/06/2016"
+	wacn.date="07/28/2016"/>
 
 # Apache Storm on HDInsight 的示例 Storm 拓扑和组件
 

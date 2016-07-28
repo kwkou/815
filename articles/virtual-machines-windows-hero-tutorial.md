@@ -12,8 +12,8 @@
 	tags="azure-resource-manager"/>
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="05/05/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/07/2016"
+	wacn.date="07/28/2016"/>
 
 # 在 Azure 门户预览中创建第一个 Windows 虚拟机
 

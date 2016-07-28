@@ -9,8 +9,8 @@
 
 <tags
    ms.service="virtual-machines-windows"
-   ms.date="11/12/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="05/26/2016"
+   wacn.date="07/28/2016"/>
 
 
 # AzureLogCollector 扩展

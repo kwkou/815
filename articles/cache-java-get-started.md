@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="03/04/2016"
-	wacn.date="04/26/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/28/2016"/>
 
 # 如何将 Azure Redis 缓存与 Java 配合使用
 

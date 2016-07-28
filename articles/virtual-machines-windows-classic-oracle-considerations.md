@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/22/2015"
-	wacn.date="12/31/2015" />
+	ms.date="05/17/2016"
+	wacn.date="07/28/2016" />
 
 #有关 Oracle 虚拟机映像的其他注意事项
 

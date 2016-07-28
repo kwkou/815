@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="traffic-manager"
-	ms.date="02/09/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="06/10/2016"
+	wacn.date="07/28/2016"/>
 
 
 # 流量管理器的性能注意事项
