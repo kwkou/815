@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/12/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/14/2016"
+	wacn.date="07/28/2016"/>
 
 
 # 如何捕获经典 Linux 虚拟机以用作映像

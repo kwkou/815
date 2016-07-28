@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="03/04/2016"
-	wacn.date="05/30/2016"/>
+	ms.date="05/24/2016"
+	wacn.date="07/28/2016"/>
 
 # 使用模板创建 Web 应用和 Redis 缓存
 

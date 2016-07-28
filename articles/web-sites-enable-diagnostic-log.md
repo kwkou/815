@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/06/2016"
-	wacn.date="05/30/2016"/>
+	ms.date="06/06/2016"
+	wacn.date="07/28/2016"/>
 
 # 在 Azure 中启用 Web 应用的诊断日志记录
 

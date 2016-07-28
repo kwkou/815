@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="10/21/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="06/05/2016"
+	wacn.date="07/28/2016"/>
 
 # 适用于 Azure 上的 Linux 的 Docker 虚拟机扩展
 

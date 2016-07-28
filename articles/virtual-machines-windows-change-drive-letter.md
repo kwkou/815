@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="03/10/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="06/16/2016"
+	wacn.date="07/28/2016"/>
 
 # 使用 D 盘作为 Windows VM 上的数据驱动器 
 

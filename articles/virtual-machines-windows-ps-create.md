@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/02/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="06/07/2016"
+	wacn.date="07/28/2016"/>
 
 # 使用 Resource Manager 和 PowerShell 创建 Windows VM
 

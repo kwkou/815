@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="03/14/2016"
-	wacn.date="04/26/2016"/>
+	ms.date="06/01/2016"
+	wacn.date="07/28/2016"/>
 
 # 什么是 Azure WebJobs SDK
 

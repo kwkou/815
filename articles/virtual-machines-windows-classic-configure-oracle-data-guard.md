@@ -8,8 +8,8 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/22/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="05/17/2016"
+	wacn.date="07/28/2016"/>
 
 #为 Azure 配置 Oracle Data Guard
 

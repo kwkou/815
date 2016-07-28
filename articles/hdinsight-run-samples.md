@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/04/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="05/18/2016"
+	wacn.date="07/28/2016"/>
 
 #在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例
 

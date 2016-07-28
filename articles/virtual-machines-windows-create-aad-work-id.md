@@ -10,8 +10,8 @@
 
 <tags
    ms.service="virtual-machines-windows"
-   ms.date="12/08/2015"
-   wacn.date="05/24/2016"/>
+   ms.date="06/06/2016"
+   wacn.date="07/28/2016"/>
 
 # 在 Azure Active Directory 中创建工作或学校标识以配合 Windows 虚拟机使用
 

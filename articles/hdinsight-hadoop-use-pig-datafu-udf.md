@@ -9,8 +9,8 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="03/18/2016"
-	wacn.date="04/26/2016"/>
+	ms.date="06/06/2016"
+	wacn.date="07/28/2016"/>
 
 #在 HDInsight 上通过 pig 使用 DataFu
 
