@@ -86,7 +86,7 @@ Azure 平台支持基于角色的身份验证控制，从而支持对 Azure Web 
 当迁移应用程序来自本地环境时，您可能需要记住 Azure Web 应用的几个限制。以下是将 Web 应用迁移到 Azure Web 应用时需要注意的一些关键主题 ([http://www.movemetothecloud.net/resources](http://www.movemetothecloud.net/resources))：
 
 -	端口绑定 - Azure Web 应用仅支持用于 HTTP 的端口 80 和用于 HTTPS 通信的端口 443。如果您的应用程序使用任何其他端口，则一旦迁移，应用程序将对 HTTP 通信使用端口 80，对 HTTPS 通信使用端口 443。这通常是一个无害的问题，因为在本地部署中使用不同的端口以克服域名的使用是很常见的情况，尤其是在开发和测试环境中
--	身份验证 – 默认情况下 Azure Web 应用支持匿名身份验证，而且还支持由应用程序鉴定的表单身份验证。当应用程序仅与 Azure Active Directory 和 ADFS 集成时，Azure Web 应用可以提供 Windows 身份验证。此功能在[此处](/documentation/articles/web-sites-business-application-solution-overview/)有更详细的讨论 
+-	身份验证 – 默认情况下 Azure Web 应用支持匿名身份验证，而且还支持由应用程序鉴定的表单身份验证。当应用程序仅与 Azure Active Directory 和 ADFS 集成时，Azure Web 应用可以提供 Windows 身份验证。
 -	基于 GAC 的程序集 – Azure Web 应用不允许将程序集部署到全局程序集缓存 (GAC) 中。因此，如果迁移的应用程序在本地利用此功能，请考虑将这些程序集移到该应用程序的 bin 文件夹。
 -	IIS5 兼容模式 – Azure Web 应用不支持 IIS5 兼容模式，因此每个 Azure Web 应用实例和父 Azure Web 应用实例下的所有 Web 应用均在单个应用程序池内相同的工作进程中运行。
 -	使用 COM 库 – Azure Web 应用不允许 COM 组件在平台上注册。因此如果该应用程序正在使用 COM 组件，就需要将这些在托管代码中进行重写并使用该应用程序进行部署。
