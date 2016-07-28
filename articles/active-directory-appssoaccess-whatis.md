@@ -99,8 +99,6 @@ Azure AD 允许对支持 SAML 2.0、WS 联合身份验证或 OpenID Connect 协�
 
 ###使用 Azure 应用程序库
 
-[Azure Active Directory 应用程序库](http://azure.microsoft.com/zh-cn/marketplace/active-directory/all/)提供了一份已知能够支持 Azure Active Directory 单一登录的应用程序列表。
-
 ![][1]
 
 以下是有关了解应用支持哪些功能的一些提示：
@@ -158,7 +156,7 @@ Azure AD 提供多种可自定义的方式来向组织中的用户部署应用�
 
 ###Azure AD 访问面板
 
-https://myapps.microsoft.com 上的访问面板是一个基于 Web 的门户，它允许在 Azure Active Directory 中拥有组织帐户的最终用户查看和启动 Azure AD 管理员已向他们授予其访问权限的基于云的应用程序。如果你是使用 [Azure Active Directory Premium](https://azure.microsoft.com/pricing/details/active-directory/) 的最终用户，则还可以通过访问面板利用自助服务组管理功能。
+https://myapps.microsoft.com 上的访问面板是一个基于 Web 的门户，它允许在 Azure Active Directory 中拥有组织帐户的最终用户查看和启动 Azure AD 管理员已向他们授予其访问权限的基于云的应用程序。如果你是使用 [Azure Active Directory Premium](/pricing/details/identity/) 的最终用户，则还可以通过访问面板利用自助服务组管理功能。
 
 ![][3]
 

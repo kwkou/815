@@ -19,8 +19,6 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 有关详细信息，请参阅 [What is Azure Active Directory?（什么是 Azure Active Directory？）](/documentation/articles/active-directory-whatis/)。
 
-
-
 ## 访问 Azure 和 Azure Active Directory
 
 
@@ -46,8 +44,6 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 
 ---
-
-
 
 ## 混合 Azure AD 入门
 

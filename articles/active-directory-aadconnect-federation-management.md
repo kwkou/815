@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/04/2016"
-	wacn.date="07/11/2016"/>
+	wacn.date="07/27/2016"/>
 
 # 使用 Azure AD Connect 进行 Active Directory 联合身份验证服务的管理和自定义
 
@@ -219,10 +219,10 @@ AD FS 提供指定用于发布声明的自定义规则的选项。它支持丰�
 ![默认发布者 ID 声明](.\media\active-directory-aadconnect-federation-management\issuer_id_default.png)
 
 默认规则只需使用 UPN 后缀，并将其用于发布者 ID 声明中。例如，John 是 sub.contoso.com 中的用户，而 contoso.com 与 Azure AD 联合。John 在登录 Azure AD 时输入 john@sub.contoso.com 作为用户名，则 AD FS 中的默认发布者 ID 声明规则将按以下方式对其进行处理：
-
-c:[Type == “http://schemas.xmlsoap.org/claims/UPN“]
-
-=> issue(Type = “http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid“, Value = regexreplace(john@sub.contoso.com, “.+@(?<domain>.+)“, “http://${domain}/adfs/services/trust/“));
+		
+		c:[Type == “http://schemas.xmlsoap.org/claims/UPN“]
+		
+		=> issue(Type = “http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid“, Value = regexreplace(john@sub.contoso.com, “.+@(?<domain>.+)“, “http://${domain}/adfs/services/trust/“));
 
 **声明值：**http://sub.contoso.com/adfs/services/trust/
 

@@ -192,7 +192,7 @@ Azure AD 还为 `Assertion` 元素签名，但这两个 Signature 元素各自�
 		    <samlp:StatusMessage>AADSTS75006: An error occurred while processing a SAML2 Authentication request. AADSTS90011: The SAML authentication request property 'NameIdentifierPolicy/SPNameQualifier' is not supported.
 		Trace ID: 66febed4-e737-49ff-ac23-464ba090d57c
 		Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
-  </samlp:Status>
+		</samlp:Status>
 
 
 ### Assertion

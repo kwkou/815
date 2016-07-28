@@ -48,7 +48,7 @@ Azure Active Directory Connect 同步服务（Azure AD Connect 同步）是 Azur
 [Synchronization Service Manager](/documentation/articles/active-directory-aadconnectsync-service-manager-ui/) | 介绍 Synchronization Service Manager UI，包括“[操作](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/)”、“[连接器](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)”、“[Metaverse 设计器](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-mvdesigner/)”和“[Metaverse 搜索](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-mvsearch/)”选项卡。
 [操作任务和注意事项](/documentation/articles/active-directory-aadconnectsync-operations/) | 描述操作注意事项，例如灾难恢复。
 **详细信息和参考** |
-[端口](/documentation/articles/active-directory-aadconnect-ports.md) | 列出需要在同步引擎以及本地目录与 Azure AD 之间打开的端口。
+[端口](/documentation/articles/active-directory-aadconnect-ports/) | 列出需要在同步引擎以及本地目录与 Azure AD 之间打开的端口。
 [与 Azure Active Directory 同步的属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/) | 列出在本地 AD 与 Azure AD 之间同步的所有属性。
 [函数引用](/documentation/articles/active-directory-aadconnectsync-functions-reference/) | 列出声明性预配中可用的所有函数。
 

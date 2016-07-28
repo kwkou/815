@@ -14,7 +14,7 @@
 
 # 向 Azure Active Directory 添加新用户或具有 Microsoft 帐户的用户
 
-请添加用户以填充你的目录。本文说明如何在组织中添加新用户，以及如何添加具有 Microsoft 帐户的用户。有关在 Azure Active Directory 中添加来自其他目录的用户或添加来自合作伙伴公司的用户的详细信息，请参阅[在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户](active-directory-create-users-external.md)。默认情况下，添加的用户没有管理员权限，但你随时可以向他们分配角色。
+请添加用户以填充你的目录。本文说明如何在组织中添加新用户，以及如何添加具有 Microsoft 帐户的用户。有关在 Azure Active Directory 中添加来自其他目录的用户或添加来自合作伙伴公司的用户的详细信息，请参阅[在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户](/documentation/articles/active-directory-create-users-external/)。默认情况下，添加的用户没有管理员权限，但你随时可以向他们分配角色。
 
 ## 添加用户
 
@@ -27,7 +27,7 @@
 	- **具有现有 Microsoft 帐户的用户** — 将现有 Microsoft 使用者帐户添加到你的目录（例如 Outlook 帐户）
 
 5. 根据“用户类型”输入用户名（适用于新用户）或电子邮件地址（适用于具有 Microsoft 帐户的用户）。
-6. 在用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD（在 Azure AD 中分配管理员角色）](active-directory-assign-admin-roles.md)。指定是否要为用户**启用 Multi-Factor Authentication**。
+6. 在用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD（在 Azure AD 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。指定是否要为用户**启用 Multi-Factor Authentication**。
 7. 在“获取临时密码”页上，选择“创建”。
 
 > [AZURE.IMPORTANT]

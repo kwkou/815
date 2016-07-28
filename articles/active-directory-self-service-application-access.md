@@ -16,7 +16,7 @@
 
 为最终用户启用自助服务功能是常见的企业 IT 方案。许多用户、许多应用程序以及最有把握做出访问权授与决策的人员可能不是目录管理员。通常，决定谁可以访问应用程序的最佳人选是小组负责人或委派的其他管理员。但是，在一天结束时，使用应用的人是用户，而用户知道他们需要什么才能完成其作业。
 
-自助应用程序访问是 [Azure Active Directory Premium](/trial/get-started-active-directory/) 的一项功能，可让目录管理员执行以下操作：
+自助应用程序访问是 Azure Active Directory Premium 的一项功能，可让目录管理员执行以下操作：
 
 * 允许用户使用 [Azure AD 访问面板](/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users)中的“获取更多应用程序”磁贴访问应用程序
 * 设置用户可以请求访问哪些应用程序
@@ -47,7 +47,7 @@
 
 审批人可以是组织中具有 Azure AD 帐户并且可能负责帐户预配、许可或组织在授予应用访问权限前要求执行的任何其他业务流程的任何用户。审批人甚至可以是一个或多个共享帐户组的组所有者，可以将用户分配给其中一个组，使他们能够通过共享帐户进行访问。
 
-如果不需要审批，用户会立即将应用程序添加到其 Azure AD 访问面板。这适用于应用程序已设置了[自动用户预配](active-directory-saas-app-provisioning.md)，或已设置[“用户管理的”密码 SSO 模式](active-directory-appssoaccess-whatis.md#password-based-single-sign-on)，而该模式中的用户已有帐户并知道密码的情况。
+如果不需要审批，用户会立即将应用程序添加到其 Azure AD 访问面板。这适用于应用程序已设置了[自动用户预配](active-directory-saas-app-provisioning.md)，或已设置[“用户管理的”密码 SSO 模式](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on)，而该模式中的用户已有帐户并知道密码的情况。
 
 **7：**如果应用程序已设置为使用基于密码的单一登录，则审批人还可以使用一个选项来代表每个用户设置 SSO 凭据。有关详细信息，请参阅下一部分中有关委派访问管理的信息。
 

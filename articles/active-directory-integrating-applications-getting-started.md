@@ -49,7 +49,7 @@
 也许你暂时无法回答所有这些问题，但没有关系。本指南可帮助你回答其中一些问题并做出明智的决策。
 
 ## 先决条件
-- 一个 Azure 订阅和一个 Azure Active Directory 目录。如果你还没有 Azure 订阅，可以尝试注册 Azure 30 天试用版。[试试看！](/pricing/1rmb-trial-full/?v=c&form-type=waitinglist)
+- 一个 Azure 订阅和一个 Azure Active Directory 目录。如果你还没有 Azure 订阅，可以尝试注册 Azure 30 天试用版。[试试看！](/pricing/1rmb-trial/)
 
 ## 将应用程序与 Azure AD 集成
 ### 使用 Cloud App Discovery 查找未经认可的云应用程序

@@ -158,7 +158,7 @@ PowerShell 使用 machine.config 中的配置来联系代理。winhttp/netsh 中
 身份验证成功。你不是全局管理员。
 
 ### PrivilegedIdentityManagement
-身份验证成功。已启用 Privileged Identity Management，但你目前不是全局管理员。有关详细信息，请参阅 [Privileged Identity Management](active-directory-privileged-identity-management-getting-started.md)。
+身份验证成功。已启用 Privileged Identity Management，但你目前不是全局管理员。
 
 ### CompanyInfoUnavailable
 身份验证成功。无法从 Azure AD 检索公司信息。

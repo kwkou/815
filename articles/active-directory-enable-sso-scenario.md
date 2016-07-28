@@ -46,16 +46,6 @@
 
 - 安全和监视工具需要额外的定制和集成才能实现全面的 E2E 方案。
 
-## 将 Azure Active Directory 与应用程序集成
-
-Azure Active Directory 是 Microsoft 的综合性标识即服务 (IDaaS) 解决方案，它可以：
-
-- 启用 IAM 作为云服务 
-
-- 提供中心访问管理、单一登录 (SSO) 及报告功能
-
-- 支持应用程序库中[数千个应用程序](https://azure.microsoft.com/marketplace/active-directory/)（包括 Salesforce、Google Apps、Box、Concur 等）的集成访问管理。
-
 
 借助 Azure Active Directory，你为合作伙伴与客户（企业或消费者）发布的所有应用程序都具有相同的标识和访问管理功能。<br> 
 这可让你大幅降低运营成本。

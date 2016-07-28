@@ -20,7 +20,7 @@
 
 ### Azure AD
 
-- Azure 订阅或 [Azure 试用版订阅](pricing/free-trial/)。这只是用来访问 Azure 经典管理门户，而不是用于 Azure AD Connect。如果你正在使用 PowerShell 或 Office 365，则无需 Azure 订阅即可使用 Azure AD Connect。如果你有 Office 365 许可证，则还可以使用 Office 365 门户。使用付费的 Office 365 许可证，还可以从 Office 365 门户访问 Azure 经典管理门户。
+- Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。这只是用来访问 Azure 经典管理门户，而不是用于 Azure AD Connect。如果你正在使用 PowerShell 或 Office 365，则无需 Azure 订阅即可使用 Azure AD Connect。如果你有 Office 365 许可证，则还可以使用 Office 365 门户。使用付费的 Office 365 许可证，还可以从 Office 365 门户访问 Azure 经典管理门户。
 - [添加并验证](/documentation/articles/active-directory-add-domain/)要在 Azure AD 中使用的域。例如，如果你计划让用户使用 contoso.com，请确保此域已经过验证，并且不是直接使用 contoso.onmicrosoft.com 默认域。
 - Azure AD 目录默认允许 5 万个对象。在验证域后，该限制将增加到 30 万个对象。如果在 Azure AD 中需要更多的对象，则需要开具支持案例来请求增大此限制。如果需要 50 万个以上的对象，则需要购买 Office 365、Azure AD Basic、Azure AD Premium 或 Enterprise Mobility Suite 等许可证。
 
@@ -111,16 +111,16 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
 
 1. 无法在 Windows Server 2008 上启用 TLS 1.2。需要 Windows Server 2008R2 或更高版本。请确保已为操作系统安装了 .Net 4.5.1 修补程序，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。在你的服务器上可能已经安装了此版本或更高版本。
 2. 如果使用 Windows Server 2008R2，请确保已启用 TLS 1.2。Windows Server 2012 服务器及更高版本的服务器操作系统上应该已经启用了 TLS 1.2。
-```
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
-```
+		
+		[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
+		[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+		[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+
 3. 对于所有操作系统，设置此注册表项并重新启动服务器。
-```
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319
-"SchUseStrongCrypto"=dword:00000001
-```
+
+		HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319
+		"SchUseStrongCrypto"=dword:00000001
+
 4. 如果还想在同步引擎服务器和远程 SQL Server之间启用 TLS 1.2，请确保你已为 [TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/kb/3135244)（适用于 Microsoft SQL Server 的 TLS 1.2 支持）安装了所需的版本。
 
 ## 联合身份验证安装和配置的先决条件

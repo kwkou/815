@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure AD Connect：支持的拓扑 | Azure"
+   pageTitle="Azure AD Connect：支持的拓扑 | Azure"
    description="本主题详细说明 Azure AD Connect 的受支持和不受支持的拓扑"
    services="active-directory"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
    ms.service="active-directory"
-    ms.date="05/19/2016"
+   ms.date="05/19/2016"
    wacn.date="07/19/2016"/>
 
 # Azure AD Connect 的拓扑
@@ -64,7 +64,7 @@ Azure AD Connect 同步中的默认配置假设：
 - 如果你有多个活动帐户或多个邮箱，同步引擎将选择其中一个并忽略其他的帐户或邮箱。
 - 没有其他活动帐户的链接邮箱不会导出到 Azure AD。用户帐户不会显示为任何组中的成员。DirSync 中的链接邮箱始终显示为普通邮箱，因此这项更改是有意的行为，目的是更好地支持多林方案。
 
-可以在[了解默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration)中找到更多详细信息。
+可以在[了解默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration/)中找到更多详细信息。
 
 ### 多个林，多个同步服务器连接到单个 Azure AD 目录
 ![不支持多林多同步](./media/active-directory-aadconnect-topologies/MultiForestMultiSyncUnsupported.png)

@@ -14,7 +14,7 @@
 
 # 将 Azure AD 集成到 Android 应用程序中
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
@@ -26,7 +26,7 @@
 -	获取用户的待办事项列表
 -	将用户注销。
 
-若要开始，你需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
+若要开始，你需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ## 步骤 1：下载并运行 Node.js REST API TODO 示例服务器
 
@@ -166,13 +166,13 @@ xml
 ### 步骤 5：在项目中添加对 Android ADAL 的引用
 
 
-2. 添加对项目的引用，并将其指定为 Android 库。如果你不确定如何执行此操作，请[单击此处了解详细信息](http://developer.android.com/intl/zh-cn/tools/projects/projects-eclipse.html)
+1. 添加对项目的引用，并将其指定为 Android 库。如果你不确定如何执行此操作，请[单击此处了解详细信息](http://developer.android.com/intl/zh-cn/tools/projects/projects-eclipse.html)
 
-3. 在项目设置中添加用于调试的项目依赖关系
+2. 在项目设置中添加用于调试的项目依赖关系
 
-4. 更新项目的 AndroidManifest.xml 文件以包括：
+3. 更新项目的 AndroidManifest.xml 文件以包括：
 
-    Java
+Java
 
 		      <uses-permission android:name="android.permission.INTERNET" />
 		      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -191,18 +191,18 @@ xml
 		      <application/>
 		    
 
-7. 在主要活动中创建 AuthenticationContext 的实例。有关此调用的详细信息超出了本自述文件的范畴，但你可以通过查看 [Android 本机客户端示例](https://github.com/AzureADSamples/NativeClient-Android)来获得一个良好的起点。下面是一个示例：
+4. 在主要活动中创建 AuthenticationContext 的实例。有关此调用的详细信息超出了本自述文件的范畴，但你可以通过查看 [Android 本机客户端示例](https://github.com/AzureADSamples/NativeClient-Android)来获得一个良好的起点。下面是一个示例：
 
-    Java
+Java
 
 		    // Authority is in the form of https://login.windows.net/yourtenant.onmicrosoft.com
 		    mContext = new AuthenticationContext(MainActivity.this, authority, true); // This will use SharedPreferences as            default cache
 		    
   * 注意：mContext 是活动中的一个字段
 
-8. 复制此代码块，以便在用户输入凭据并收到授权代码后处理 AuthenticationActivity 的结束：
+5. 复制此代码块，以便在用户输入凭据并收到授权代码后处理 AuthenticationActivity 的结束：
 
-    Java
+Java
 
 		     @Override
 		     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -213,9 +213,9 @@ xml
 		     }
 		    
 
-9. 若要请求令牌，你可以定义一个回调
+6. 若要请求令牌，你可以定义一个回调
 
-    Java
+Java
 
 		    private AuthenticationCallback<AuthenticationResult> callback = new AuthenticationCallback<AuthenticationResult>() {
 		
@@ -247,36 +247,36 @@ xml
 		            }
 		        };
     
-10. 最后，使用该回调请求令牌：
+7. 最后，使用该回调请求令牌：
 
-    Java
+Java
 
 		     mContext.acquireToken(MainActivity.this, resource, clientId, redirect, user_loginhint, PromptBehavior.Auto, "",
 		                    callback);
 		    
 
-参数说明：
+	参数说明：
 
-  * Resource 是必需的，它是你尝试访问的资源。
-  * Clientid 是必需的，它来自 AzureAD 门户。
-  * 你可以将 redirectUri 设置为包名称。对于 acquireToken 调用，不需要提供此参数。
-  * PromptBehavior 可帮助请求凭据以跳过缓存和 Cookie。
-  * 在交换令牌的授权代码后，将调用 Callback。
+	  * Resource 是必需的，它是你尝试访问的资源。
+	  * Clientid 是必需的，它来自 AzureAD 门户。
+	  * 你可以将 redirectUri 设置为包名称。对于 acquireToken 调用，不需要提供此参数。
+	  * PromptBehavior 可帮助请求凭据以跳过缓存和 Cookie。
+	  * 在交换令牌的授权代码后，将调用 Callback。
+	
+	  Callback 具有一个包含 accesstoken、过期日期和 idtoken 信息的 AuthenticationResult 对象。
+	
+	可选：**acquireTokenSilent**
+	
+	可以调用 **acquireTokenSilent** 来处理缓存和令牌刷新。它也提供了同步版本。它接受使用 userid 作为参数。
+	
+java
+		
+		     	mContext.acquireTokenSilent(resource, clientid, userId, callback );
+		    
 
-  Callback 具有一个包含 accesstoken、过期日期和 idtoken 信息的 AuthenticationResult 对象。
+8. **Broker**：Microsoft Intune 的公司门户应用程序将提供代理组件。如果在验证器中创建了一个用户帐户并且开发人员选择不跳过代理帐户，ADAL 将使用代理帐户。开发人员可以使用以下操作跳过代理用户：
 
-可选：**acquireTokenSilent**
-
-可以调用 **acquireTokenSilent** 来处理缓存和令牌刷新。它也提供了同步版本。它接受使用 userid 作为参数。
-
-    java
-
-     	mContext.acquireTokenSilent(resource, clientid, userId, callback );
-    
-
-11. **Broker**：Microsoft Intune 的公司门户应用程序将提供代理组件。如果在验证器中创建了一个用户帐户并且开发人员选择不跳过代理帐户，ADAL 将使用代理帐户。开发人员可以使用以下操作跳过代理用户：
-
-    java
+java
 
      	AuthenticationSettings.Instance.setSkipBroker(true);
     
@@ -285,8 +285,8 @@ xml
 
  当前代理模型针对一个用户。AuthenticationContext 提供用于获取代理用户的 API 方法。
 
- java
- 		String brokerAccount =  mContext.getBrokerUser();
+java
+		String brokerAccount =  mContext.getBrokerUser();
  
  如果帐户有效，将返回代理用户。
 
@@ -318,11 +318,13 @@ ADFS 不会识别为生产 STS，因此，你需要关闭实例发现，并在 A
 ### 查询缓存项
 
 ADAL 在 SharedPreferences 中提供默认缓存，以及一些简单的缓存查询函数。你可以使用以下命令从 AuthenticationContext 中获取当前缓存：
+
 Java
 
- 		ITokenCacheStore cache = mContext.getCache();
+		ITokenCacheStore cache = mContext.getCache();
 
 你还可以提供缓存实现（如果你想要对其进行自定义）。
+
 Java
 
 		mContext = new AuthenticationContext(MainActivity.this, authority, true, yourCache);
@@ -336,7 +338,7 @@ ADAL 提供用于指定提示行为的选项。如果刷新令牌无效并且需
 
 此方法不使用 UI 弹出，并且不需要活动。它将从缓存返回令牌（如果可用）。如果令牌已过期，它将尝试刷新令牌。如果刷新令牌已过期或失败，它将返回 AuthenticationException。
 
-    Java
+Java
 
 		Future<AuthenticationResult> result = mContext.acquireTokenSilent(resource, clientid, userId, callback );
     
@@ -396,6 +398,7 @@ Java
 + 详细（更多详细信息）
 
 可按如下所述设置日志级别：
+
 Java
 
 		Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
@@ -404,7 +407,6 @@ Java
  除了将所有日志消息发送到任何自定义日志回调以外，还将其发送到 logcat。
 可以将日志从 logcat 提取到文件，如下所示：
 
- 
 		adb logcat > "C:\logmsg\logfile.txt"
  
  有关 adb 命令的更多示例：https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
@@ -458,8 +460,6 @@ Java
 		<string name="http_auth_dialog_login">Login</string>
 		<string name="http_auth_dialog_cancel">Cancel</string>
 
-
-=======
 
 ### NTLM 对话
 ADAL 版本 1.1.0 支持通过 WebViewClient 中的 onReceivedHttpAuthRequest 事件处理的 NTLM 对话。你可以自定义对话布局和字符串。

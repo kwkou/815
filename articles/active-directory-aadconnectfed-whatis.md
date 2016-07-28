@@ -35,7 +35,7 @@
 | [添加新的联合域](/documentation/articles/active-directory-aadconnect-federation-management/#add-a-new-federated-domain) | 添加另一个域来与 Azure AD 联合 |
 |**安装后任务**||
 | [添加自定义公司徽标/插图](/documentation/articles/active-directory-aadconnect-federation-management/#add-custom-company-logo-or-illustration)| 通过指定将在 AD FS 登录页显示的自定义徽标来调整登录体验 |
-| [添加登录说明](active-directory-aadconnect-federation-management#add-sign-in-description) | 更改 AD FS 登录页上的登录说明 | 
+| [添加登录说明](/documentation/articles/active-directory-aadconnect-federation-management/#add-sign-in-description) | 更改 AD FS 登录页上的登录说明 | 
 | [修改 AD FS 声明规则](/documentation/articles/active-directory-aadconnect-federation-management/#modifying-ad-fs-claim-rules) | 对应于 Azure AD Connect 同步配置修改/添加 AD FS 中的声明规则 |
 
 

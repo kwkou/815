@@ -221,9 +221,9 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 #### 步骤 1：在应用程序中启用中转站模式
 应用程序使用了中转站的功能被打开的当你创建的设置或身份验证的实例的初始设置。通过在代码中设置 ApplicationSettings 类型中执行此操作：
 
-```
-AuthenticationSettings.Instance.setUseBroker(true);
-```
+
+		AuthenticationSettings.Instance.setUseBroker(true);
+
 
 
 #### 步骤 2：使用 URL 方案建立新的重定向 URI
@@ -245,11 +245,11 @@ Android 中的中转站应用程序使用 Android OS 的帐户管理器功能来
 
 具体而言，这些权限如下：
 
-```
-GET_ACCOUNTS
-USE_CREDENTIALS
-MANAGE_ACCOUNTS
-```
+		
+		GET_ACCOUNTS
+		USE_CREDENTIALS
+		MANAGE_ACCOUNTS
+
 
 ### 你已配置 SSO！
 

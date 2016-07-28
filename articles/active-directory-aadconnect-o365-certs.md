@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="06/16/2016"
-	wacn.date="07/18/2016"/>
+	wacn.date="07/28/2016"/>
 
 
 # 续订 Office 365 和 Azure AD 的联合身份验证证书
@@ -103,7 +103,7 @@ Azure AD 会尝试监视联盟元数据，并按照联盟元数据的指示更�
 
 https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
-其中，`(your_FS_name) ` 将替换为你组织使用的联合身份验证服务主机名，例如 fs.contoso.com。如果你能够成功验证这两项设置，则无需执行任何其他操作。
+其中，`(your_FS_name)` 将替换为你组织使用的联合身份验证服务主机名，例如 fs.contoso.com。如果你能够成功验证这两项设置，则无需执行任何其他操作。
 
 示例：https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
 
@@ -153,7 +153,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 5.	运行 Update-MSOLFederatedDomain –DomainName <domain>。此 cmdlet 会将 AD FS 中的设置更新到云服务中，并配置两者之间的信任关系。
 
 
->[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅[支持多个顶级域](/documentation/articles/active-directory-aadconnect-multiple-domains)。
+>[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅[支持多个顶级域](/documentation/articles/active-directory-aadconnect-multiple-domains/)。
 
 ## 使用 AAD Connect 修复 Azure AD 信任 <a name="connectrenew"></a>
 

@@ -56,11 +56,9 @@ Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结�
 ## Azure AD Connect Health 入门
 Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 
-1. [获取 Azure AD Premium](/documentation/articles/active-directory-get-started-premium/) 或[开始试用](https://azure.microsoft.com/trial/get-started-active-directory/)
+1. 在标识服务器上[下载并安装 Azure AD Connect Health 代理](#download-and-install-azure-ad-connect-health-agent)。
 
-2. 在标识服务器上[下载并安装 Azure AD Connect Health 代理](#download-and-install-azure-ad-connect-health-agent)。
-
-3. 在 [https://aka.ms/aadconnecthealth](https://aka.ms/aadconnecthealth) 上查看 Azure AD Connect Health 仪表板
+2. 在 [https://aka.ms/aadconnecthealth](https://aka.ms/aadconnecthealth) 上查看 Azure AD Connect Health 仪表板
 
 >[AZURE.NOTE]请记住在查看 Azure AD Connect Health 仪表板中的任何数据之前，你将需要在目标服务器上安装 Azure AD Connect Health 代理。
 
@@ -69,7 +67,7 @@ Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 - 请参阅 Azure AD Connect Health 的[要求](/documentation/articles/active-directory-aadconnect-health-agent-install/#Requirements)
 
 - 若要开始使用适用于 AD FS 的 Azure AD Connect Health，可在此处下载最新版本的代理：[下载适用于 AD FS 的 Azure AD Connect Health 代理](http://go.microsoft.com/fwlink/?LinkID=518973)。
-[](active-directory-aadconnect-health-agent-install.md#installing-the-azure-ad-connect-health-agent-for-ad-fs)
+[文档](/documentation/articles/active-directory-aadconnect-health-agent-install#installing-the-azure-ad-connect-health-agent-for-ad-fs)
 
 - 若要开始使用用于同步的 Azure AD Connect Health，请下载并安装[最新版本的 Azure AD Connect](http://go.microsoft.com/fwlink/?linkid=615771)。在安装 Azure AD Connect 的过程中，将会安装 Health 代理（版本 1.0.9125.0 或更高）。Azure AD Connect 支持从以前的版本就地升级。
 

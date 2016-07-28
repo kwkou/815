@@ -49,7 +49,7 @@
 - [在 Azure 门户预览中配置仅限云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)
 - [在 Azure 经典管理门户中配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)
 - [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
-- [在 Azure 上安装副本 Active Directory 域控制器 ](/documentation/articles/virtual-network/virtual-networks-install-replica-active-directory-domain-controller)
+- [在 Azure 上安装副本 Active Directory 域控制器 ](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)
 - [Microsoft Azure IT Pro IaaS：(01) 虚拟机基础知识](https://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
 - [Microsoft Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](https://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 
@@ -61,7 +61,7 @@
 
 将 Azure 虚拟机连回本地企业网络需要 Azure 虚拟网络，其中包括可无缝连接 Azure 虚拟机和本地虚拟机的站点到站点或站点到点虚拟专用网络 (VPN) 组件。此 VPN 组件还可使本地域成员计算机可访问在 Azure 虚拟机上独占托管其域控制器的 Windows Server Active Directory 域。但是，如果 VPN 失败，则依赖于 Windows Server Active Directory 的身份验证和其他操作也将失败，注意到这一点很重要。虽然用户也许能够使用现有缓存的凭据进行登录，但其票证尚未发出或已过时的所有对等或客户端对服务器身份验证尝试都将失败。
 
-请参阅[虚拟网络](http://azure.microsoft.com/documentation/services/virtual-network/)，观看演示视频并获得分步教程的列表，包括在 Azure 经典管理门户中[配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)。
+请参阅[虚拟网络](/documentation/services/virtual-network/)，观看演示视频并获得分步教程的列表，包括在 Azure 经典管理门户中[配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)。
 
 > [AZURE.NOTE] 也可以在未与本地网络连接的 Azure 虚拟网络上部署 Windows Server Active Directory。但是，本主题中的准则假设使用 Azure 虚拟网络，因为它提供对 Windows Server 至关重要的 IP 寻址功能。
 
@@ -129,7 +129,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 > [AZURE.NOTE] 有一个[创建点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 的选项可将单独的基于 Windows 的计算机直接连接到 Azure 虚拟网络。
 
-- 无论是否创建虚拟网络，Azure 均按传出流量收费，而不按传入流量收费。选择各种 Windows Server Active Directory 设计都会影响部署生成多少传出流量。例如，部署只读域控制器 (RODC) 将限制传出流量，因为它在出站时不进行复制。但部署 RODC 的决定将需要根据是否需要对 DC 执行写入操作以及站点中的应用程序和服务与 RODC 的[兼容性](https://technet.microsoft.com/library/cc755190)来进行权衡。有关流量收费的详细信息，请参阅 [Azure pricing at-a-glance（Azure 价格一览表）](http://azure.microsoft.com/pricing/)。
+- 无论是否创建虚拟网络，Azure 均按传出流量收费，而不按传入流量收费。选择各种 Windows Server Active Directory 设计都会影响部署生成多少传出流量。例如，部署只读域控制器 (RODC) 将限制传出流量，因为它在出站时不进行复制。但部署 RODC 的决定将需要根据是否需要对 DC 执行写入操作以及站点中的应用程序和服务与 RODC 的[兼容性](https://technet.microsoft.com/library/cc755190)来进行权衡。有关流量收费的详细信息，请参阅 [Azure pricing at-a-glance（Azure 价格一览表）](/pricing/)。
 
 - 虽然可以全面控制 Azure 上要用于本地 VM 的服务器资源（如 RAM 数量、磁盘大小等），但仍必须从预先配置的服务器大小的列表中进行选择。对于 DC，除了操作系统磁盘之外，还需要数据磁盘以存储 Windows Server Active Directory 数据库。
 
@@ -309,7 +309,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
 #### 方案注意事项和技术领域如何适用于方案
 
-- [网络拓扑](#BKMK_NetworkTopology)：创建 Azure 虚拟网络并[配置跨界连接](../vpn-gateway/vpn-gateway-site-to-site-create.md)。
+- [网络拓扑](#BKMK_NetworkTopology)：创建 Azure 虚拟网络并[配置跨界连接](/documentation/articles/vpn-gateway-site-to-site-create)。
 
  > [AZURE.NOTE] 对于每个 Windows Server AD FS 证书，确保在 Azure 上运行的 Windows Server AD FS 实例可访问在证书模板和所得证书中定义的 URL。这可能需要与 PKI 基础结构的各部分具有跨界连接。例如，如果 CRL 的终结点基于 LDAP，并以独占方式托管在本地，则将需要跨界连接。如果这样不可取，则可能必须使用可通过 Internet 访问其 CRL 的 CA 颁发的证书。
 
@@ -337,7 +337,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
 - [网络拓扑](#BKMK_NetworkTopology)：使用[跨界连接](/documentation/articles/vpn-gateway-site-to-site-create/)创建 Azure 虚拟网络。
 
-- [安装方法](#BKMK_InstallMethod)：从企业 Windows Server Active Directory 域中部署副本 DC。对于副本 DC，可在 VM 上安装 Windows Server AD DS，并可使用“从介质安装”(IFM) 功能减少在安装期间需要复制到新 DC 的数据量。有关教程，请参阅 [Install a replica Active Directory domain controller on Azure（在 Azure 上安装副本 Active Directory 域控制器）](../virtual-network/virtual-networks-install-replica-active-directory-domain-controller.md)。即使使用 IFM，在本地生成虚拟 DC 再将整个虚拟硬盘 (VHD) 移至云也比在安装期间复制 Windows Server AD DS 更加高效。为安全起见，建议将 VHD 复制到 Azure 后立即从本地网络中删除它。
+- [安装方法](#BKMK_InstallMethod)：从企业 Windows Server Active Directory 域中部署副本 DC。对于副本 DC，可在 VM 上安装 Windows Server AD DS，并可使用“从介质安装”(IFM) 功能减少在安装期间需要复制到新 DC 的数据量。有关教程，请参阅 [Install a replica Active Directory domain controller on Azure（在 Azure 上安装副本 Active Directory 域控制器）](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)。即使使用 IFM，在本地生成虚拟 DC 再将整个虚拟硬盘 (VHD) 移至云也比在安装期间复制 Windows Server AD DS 更加高效。为安全起见，建议将 VHD 复制到 Azure 后立即从本地网络中删除它。
 
 - [Windows Server Active Directory 站点拓扑](#BKMK_ADSiteTopology)：在 Active Directory 站点和服务中新建一个 Azure 站点。创建一个 Windows Server Active Directory 子网对象以表示 Azure 虚拟网络，然后将该子网添加到站点中。新建包括新 Azure 站点和 Azure 虚拟网络 VPN 终结点所在站点的站点链接以控制和优化 Azure 往返 Windows Server Active Directory 的流量。
 
@@ -386,13 +386,13 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
 为了满足 Windows Server AD DS 的 IP 地址一致性和 DNS 要求，必须首先创建一个 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)，然后将虚拟机连接到该网络。在其创建期间，必须决定是否（可选）将连接扩展到本地企业网络，这样将 Azure 虚拟机透明地连接到本地虚拟机 - 使用传统 VPN 技术实现这一点，其中要求在企业网络的边缘公开 VPN 终结点。即，从 Azure 发起通向企业网络的 VPN，反之则不然。
 
-请注意，将虚拟网络扩展到本地网络后超出适用于每个 VM 的标准收费时将额外收费。具体而言，将按 Azure 虚拟网络网关的 CPU 时间以及通过 VPN 与本地虚拟机通信的每个 VM 产生的传出流量收费。有关网络流量收费的详细信息，请参阅 [Azure pricing at-a-glance（Azure 价格一览表）](http://azure.microsoft.com/pricing/)。
+请注意，将虚拟网络扩展到本地网络后超出适用于每个 VM 的标准收费时将额外收费。具体而言，将按 Azure 虚拟网络网关的 CPU 时间以及通过 VPN 与本地虚拟机通信的每个 VM 产生的传出流量收费。有关网络流量收费的详细信息，请参阅 [Azure pricing at-a-glance（Azure 价格一览表）](/pricing/)。
 
 ### <a name="BKMK_DeploymentConfig"></a>DC 部署配置
 
 配置 DC 的方式取决于要在 Azure 上运行的服务的要求。例如，你可能部署一个新林，与你自己的企业林隔离，用于测试概念验证、新应用程序或某些需要目录服务但并不具体访问内部企业资源的其他短期项目。
 
-优点是隔离的林 DC 对于本地 DC 不进行复制，导致系统自身产生的出站网络流量较少，从而直接降低成本。有关网络流量收费的详细信息，请参阅 [Azure pricing at-a-glance（Azure 价格一览表）](http://azure.microsoft.com/pricing/)。
+优点是隔离的林 DC 对于本地 DC 不进行复制，导致系统自身产生的出站网络流量较少，从而直接降低成本。有关网络流量收费的详细信息，请参阅 [Azure pricing at-a-glance（Azure 价格一览表）](/pricing/)。
 
 另举一例，假设你对于服务有隐私方面的要求，但该服务需要访问内部 Windows Server Active Directory。如果允许在云中托管该服务的数据，则可能在 Azure 上为内部林部署新子域。在这种情况下，可为该新子域部署 DC（无全局目录以帮助解决地址私密性问题）。此方案与副本 DC 部署一起，需要一个虚拟网络与本地 DC 相连。
 

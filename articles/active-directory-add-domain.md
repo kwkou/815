@@ -20,7 +20,7 @@
 2. 在域名注册机构中为域名添加 DNS 条目
 3. 在 Azure AD 中验证自定义域名
 
-> [AZURE.NOTE] 如果你打算配置自定义域名以搭配 Active Directory 联合身份验证服务 (AD FS) 或公司网络上的其他安全令牌服务 (STS) 使用，请按照[添加和配置域以便与 Azure Active Directory 联盟](active-directory-add-domain-federated.md)中的说明操作。如果你打算将公司目录中的用户同步到 Azure AD，但[密码哈希同步](active-directory-aadconnectsync-implement-password-synchronization.md)不符合你的要求，这样做将非常有用。
+> [AZURE.NOTE] 如果你打算配置自定义域名以搭配 Active Directory 联合身份验证服务 (AD FS) 或公司网络上的其他安全令牌服务 (STS) 使用，请按照[添加和配置域以便与 Azure Active Directory 联盟](/documentation/articles/active-directory-add-domain-federated/)中的说明操作。如果你打算将公司目录中的用户同步到 Azure AD，但[密码哈希同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)不符合你的要求，这样做将非常有用。
 
 ## 将自定义域名添加到目录
 
@@ -62,7 +62,7 @@
 
 4. 在对话框中选择“验证”以完成验证。
 
-现在，你可以[分配包含自定义域名的用户名](active-directory-add-domain-add-users.md)。
+现在，你可以[分配包含自定义域名的用户名](/documentation/articles/active-directory-add-domain-add-users/)。
 
 ## 故障排除
 
@@ -72,7 +72,7 @@
 
 2.	**确保已输入正确的 DNS 记录**。请在该域的域名注册机构网站上完成此步骤。如果 DNS 条目不在 DNS 区域文件中，或者与 Azure AD 提供给你的 DNS 条目不完全匹配，则 Azure AD 无法验证域名。如果你无权访问域名注册机构以更新域的 DNS 记录，请与组织内具有此访问权限的个人或团队共享 DNS 条目，并请他们添加 DNS 条目。
 
-3.	**从 Azure AD 的另一个目录删除域名**。域名只能在单个目录中验证。如果域名先前在另一个目录中验证过，则必须先在那里将其删除后，才可在新的目录中验证。若要了解如何删除域名，请参阅[管理自定义域名](active-directory-add-manage-domain-names.md)。
+3.	**从 Azure AD 的另一个目录删除域名**。域名只能在单个目录中验证。如果域名先前在另一个目录中验证过，则必须先在那里将其删除后，才可在新的目录中验证。若要了解如何删除域名，请参阅[管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)。
 
 
 ## 添加更多自定义域名
