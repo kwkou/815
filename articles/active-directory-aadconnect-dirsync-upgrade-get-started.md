@@ -10,13 +10,13 @@
 <tags 
    ms.service="active-directory" 
    ms.date="05/31/2016"
-   wacn.date="07/18/2016"/>
+   wacn.date="07/26/2016"/>
 
 
 # Azure AD Connect：从 DirSync 升级
 Azure AD Connect 是 DirSync 的后继产品。你将在本主题中了解可从 DirSync 升级的方式。这些步骤不适用于从另一个版本的 Azure AD Connect 或从 Azure AD Sync 升级。
 
-在开始安装 Azure AD Connect 之前，请确保[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) 并完成 [Azure AD Connect：硬件和先决条件](active-directory-aadconnect-prerequisites.md)中的预先准备步骤。
+在开始安装 Azure AD Connect 之前，请确保[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) 并完成 [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/)中的预先准备步骤。
 
 如果不是从 DirSync 升级，请参阅[相关文档](#related-documentation)中的其他方案。
 
@@ -54,7 +54,7 @@ Azure AD Connect 是 DirSync 的后继产品。你将在本主题中了解可从
 
 ![已阻止升级](./media/active-directory-aadconnect-dirsync-upgrade-get-started/analysisblocked.png)
 
-在这种情况下，建议在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)下安装新的 Azure AD Connect 服务器，并验证旧的 DirSync 及新的 Azure AD Connect 配置。使用自定义配置重新应用所有更改，如 [Azure AD Connect 同步自定义配置](active-directory-aadconnectsync-whatis.md)中所述。
+在这种情况下，建议在[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)下安装新的 Azure AD Connect 服务器，并验证旧的 DirSync 及新的 Azure AD Connect 配置。使用自定义配置重新应用所有更改，如 [Azure AD Connect 同步自定义配置](/documentation/articles/active-directory-aadconnectsync-whatis/)中所述。
 
 无法检索且不会迁移 DirSync 用于服务帐户的密码。这些密码会在升级期间重置。
 

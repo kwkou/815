@@ -26,7 +26,7 @@
 
 本教程的代码[在 GitHub 上](https://github.com/Azure-Samples/active-directory-node-webapi)维护。
 
-> [AZURE.NOTE] 本文未涵盖如何使用 Azure AD B2C 来实施登录、注册和配置文件管理，而是着重介绍如何在用户已通过身份验证后调用 Web API。你应该先从[如何与 Azure Active Directory 集成文档](/documentation/articles/active-directory-how-to-integrate)开始（如果还没有进行），以了解 Azure Active Directory 的基础知识。
+> [AZURE.NOTE] 本文未涵盖如何使用 Azure AD B2C 来实施登录、注册和配置文件管理，而是着重介绍如何在用户已通过身份验证后调用 Web API。你应该先从[如何与 Azure Active Directory 集成文档](/documentation/articles/active-directory-how-to-integrate/)开始（如果还没有进行），以了解 Azure Active Directory 的基础知识。
 
 
 我们已在 GitHub 中的 MIT 许可证下发布了此运行示例的所有源代码，你可以任意克隆（甚至分发！）这些代码，并提供反馈和发出请求。
@@ -40,11 +40,11 @@
 
 ## 1\.注册 Azure AD 租户
 
-若要使用本示例，你需要一个 Azure Active Directory 租户。如果你不确定什么是租户或者如何获取租户，请参阅[如何获取 Azure AD 租户](/documentation/articles/active-directory-howto-tenant)。
+若要使用本示例，你需要一个 Azure Active Directory 租户。如果你不确定什么是租户或者如何获取租户，请参阅[如何获取 Azure AD 租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ## 2\.创建应用程序
 
-你现在需要在目录中创建应用，以便为 Azure AD 提供一些必要信息，让它与应用安全地通信。在此案例中，因为客户端应用和 Web API 会组成一个逻辑应用，所以将由单一**应用程序 ID** 表示。若要创建应用，请遵循[这些说明](/documentation/articles/active-directory-how-applications-are-added)。如果你要生成业务线应用，[这些附加说明可能很有用](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications)。
+你现在需要在目录中创建应用，以便为 Azure AD 提供一些必要信息，让它与应用安全地通信。在此案例中，因为客户端应用和 Web API 会组成一个逻辑应用，所以将由单一**应用程序 ID** 表示。若要创建应用，请遵循[这些说明](/documentation/articles/active-directory-how-applications-are-added/)。如果你要生成业务线应用，[这些附加说明可能很有用](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications/)。
 
 请务必：
 

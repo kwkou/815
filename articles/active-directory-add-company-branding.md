@@ -24,7 +24,7 @@
 
 > [AZURE.NOTE]
 >
-- 只有在升级到 Azure Active Directory 高级或基本版后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](active-directory-editions.md)。
+- 只有在升级到 Azure Active Directory 高级或基本版后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
 - 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Microsoft Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。
 
 

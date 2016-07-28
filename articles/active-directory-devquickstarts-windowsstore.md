@@ -15,9 +15,9 @@
 
 # 将 Azure AD 与 Windows 应用商店应用集成
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 如果你要开发 Windows 应用商店应用程序，Azure AD 可让你简单直接地使用用户的 Active Directory 帐户对其进行身份验证。它还可以让应用程序安全地使用 Azure AD 保护的任何 Web API，例如 Office 365 API 或 Azure API。
 
@@ -65,9 +65,9 @@
 
 -	你现在需要发现 Windows 应用商店应用的回叫 URI。在 `MainPage` 方法中的此行上设置一个断点：
 
-```
-redirectURI = Windows.Security.Authentication.Web.WebAuthenticationBroker.GetCurrentApplicationCallbackUri();
-```
+
+		redirectURI = Windows.Security.Authentication.Web.WebAuthenticationBroker.GetCurrentApplicationCallbackUri();
+
 - 生成解决方案，并确保还原所有程序包引用。如果缺少程序包，请打开 Nuget 程序包管理器并还原程序包。
 - 运行应用程序，并在到达断点时，将 `redirectUri` 的值复制到单独的位置。该值应类似于
 

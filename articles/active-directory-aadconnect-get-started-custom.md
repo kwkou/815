@@ -16,7 +16,7 @@
 # Azure AD Connect 的自定义安装
 当你希望更多的安装选项时，可以使用 Azure AD Connect“自定义设置”。如果你拥有多个林或希望配置未覆盖在快速安装中的可选功能，可以使用它。它可用于在 [**快速安装**](/documentation/articles/active-directory-aadconnect-get-started-express)选项不能满足部署或拓扑的所有情况下。
 
-在开始安装 Azure AD Connect 之前，请确保[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) 并完成 [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/)中的预先准备步骤。此外请确保你拥有[Azure AD Connect 帐户和权限](active-directory-aadconnect-accounts-permissions.md)所述的可用的必需帐户。
+在开始安装 Azure AD Connect 之前，请确保[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) 并完成 [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/)中的预先准备步骤。此外请确保你拥有[Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/)所述的可用的必需帐户。
 
 如果自定义的设置不匹配拓扑，例如，若要升级 DirSync，有关其他情况，请参阅 [相关文档](#related-documentation)。
 
@@ -33,7 +33,7 @@
 可选配置 | 说明
 ------------- | -------------
 使用现有的 SQL Server | 用于指定 SQL Server 名称和实例名称。如果你已有一个要使用的数据库服务器，请选择此选项。如果你的 SQL Server 没有启用浏览，请在“实例名称”中输入实例名称后接逗号和端口号。
-使用现有的服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器或使用需要身份验证的代理，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。确保运行安装的用户是 SQL 中的 SA，以便可以创建服务帐户的登录名。请参阅 [Azure AD Connect 帐户和权限](active-directory-aadconnect-accounts-permissions.md#custom-settings-installation)
+使用现有的服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器或使用需要身份验证的代理，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。确保运行安装的用户是 SQL 中的 SA，以便可以创建服务帐户的登录名。请参阅 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#custom-settings-installation)
 指定自定义同步组 | 默认情况下，在安装同步服务时，Azure AD Connect 将在服务器本地创建四个组。这些组是：管理员组、操作员组、浏览组和密码重置组。在此你可以指定自己的组。组必须在服务器本地，并且不能位于域中。
 
 ### 用户登录
@@ -71,7 +71,7 @@
 此页可让你查看本地 AD DS 中存在的 UPN 域，以及已在 Azure AD 中验证的 UPN 域。此页还可让你配置要用于 userPrincipalName 的属性。
 
 ![未验证的域](./media/active-directory-aadconnect-get-started-custom/aadsigninconfig.png)  
-查看标记为“未添加”和“未验证”的每个域。确保使用的域都已在 Azure AD 中验证。验证域后，请单击“刷新”符号。有关详细信息，请参阅[添加和验证域](active-directory-add-domain.md)
+查看标记为“未添加”和“未验证”的每个域。确保使用的域都已在 Azure AD 中验证。验证域后，请单击“刷新”符号。有关详细信息，请参阅[添加和验证域](/documentation/articles/active-directory-add-domain/)
 
 **UserPrincipalName** - 属性 userPrincipalName 是用户登录 Azure AD 和 Office 365 时使用的属性。应在同步处理用户前在 Azure AD 中对使用的域（也称为 UPN 后缀）进行验证。Microsoft 建议保留默认属性 userPrincipalName。如果此属性不可路由且无法验证，则可以选择另一个属性。例如，可以选择 email 作为保存登录 ID 的属性。使用除 userPrincipalName 以外的其他属性称为**替代 ID**。“替代 ID”属性值必须遵循 RFC822 标准。替代 ID 可以配合密码同步和联合使用。
 
@@ -101,7 +101,7 @@
 sAMAccountName 和 MailNickName | 此选项根据预期可以在其中找到用户登录 ID 的属性进行联接。
 特定的属性 | 此选项允许你选择自己的属性。**限制：**确保选择已可在 Metaverse 中找到的属性。如果你选择自定义属性（不在 Metaverse 中），向导将无法完成。
 
-**源定位点** - sourceAnchor 属性是一个在用户对象的生命周期内不会改变的属性。它是链接本地用户与 Azure AD 中用户的主密钥。由于无法更改该属性，因此你必须规划好要使用的合适属性。objectGUID 就是不错的候选项。除非在林/域之间移动用户帐户，否则此属性不会更改。在要在林间移动帐户的多林环境中，必须使用另一个属性，例如具有 employeeID 的属性。避免某人结婚时会改变的属性，或会更改分配的属性。由于不可以使用带有 @ 符号的属性，因此无法使用 email 和 userPrincipalName。属性也区分大小写，因此在林间移动对象时，请务必保留大写/小写。二进制属性采用 base64 编码，但其他属性类型会保留未编码状态。在联合方案和某些 Azure AD 接口中，此属性也称为 immutableID。可以在[设计概念](active-directory-aadconnect-design-concepts.md#sourceAnchor)中找到有关源定位点的详细信息。
+**源定位点** - sourceAnchor 属性是一个在用户对象的生命周期内不会改变的属性。它是链接本地用户与 Azure AD 中用户的主密钥。由于无法更改该属性，因此你必须规划好要使用的合适属性。objectGUID 就是不错的候选项。除非在林/域之间移动用户帐户，否则此属性不会更改。在要在林间移动帐户的多林环境中，必须使用另一个属性，例如具有 employeeID 的属性。避免某人结婚时会改变的属性，或会更改分配的属性。由于不可以使用带有 @ 符号的属性，因此无法使用 email 和 userPrincipalName。属性也区分大小写，因此在林间移动对象时，请务必保留大写/小写。二进制属性采用 base64 编码，但其他属性类型会保留未编码状态。在联合方案和某些 Azure AD 接口中，此属性也称为 immutableID。可以在[设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/#sourceAnchor)中找到有关源定位点的详细信息。
 
 ### <a name="sync-filtering-based-on-groups"></a>根据组同步筛选
 根据组筛选功能可让你只同步一小部分的对象来进行试验。若要使用此功能，请在本地 Active Directory 中针对此目的创建一个组。然后添加应该以直属成员身份与 Azure AD 同步的用户和组。稍后可以在此组中添加和删除用户，以维护应该要在 Azure AD 中显示的对象列表。要同步的所有对象必须是组的直属成员。用户、组、联系人和计算机/设备都必须是直属成员。系统不会解析嵌套组成员身份。当你添加某个组作为成员时，只会添加该组本身，而不添加其成员。
@@ -255,9 +255,9 @@ AD Connect 尝试在配置阶段验证域。如果你继续进行配置但未添
 
 主题 |  
 --------- | ---------
-Azure AD Connect 概述 | [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
-使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express)
-从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started)
-用于安装的帐户 | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions)
+Azure AD Connect 概述 | [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
+使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express/)
+从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/)
+用于安装的帐户 | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions/)
 
 <!---HONumber=Mooncake_0711_2016-->

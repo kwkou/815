@@ -412,7 +412,7 @@ HTML
 
 现在，可以转到更高级的主题。你可能想要尝试：
 
-[使用 Azure AD 保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
+[使用 Azure AD 保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 <!---HONumber=Mooncake_0718_2016-->

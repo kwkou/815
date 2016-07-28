@@ -245,10 +245,10 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 #### 步骤 1：在应用程序中启用中转站模式
 创建“上下文”或身份验证对象的初始安装时，应用程序使用了中转站的功能被打开的。通过在代码中设置凭据类型中执行此操作：
 
-```
-/*! See the ADCredentialsType enumeration definition for details */
-@propertyADCredentialsType credentialsType;
-```
+		
+		/*! See the ADCredentialsType enumeration definition for details */
+		@propertyADCredentialsType credentialsType;
+
 `AD_CREDENTIALS_AUTO` 设置允许 Microsoft 标识 SDK 尝试调用中转站，而 `AD_CREDENTIALS_EMBEDDED` 阻止 Microsoft 标识 SDK 调用中转站。
 
 #### 步骤 2：注册 URL 方案
@@ -301,10 +301,10 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 ADAL 使用 -canOpenURL: 来检查是否在设备上安装了中转站。在 iOS 9 中，Apple 锁定了应用程序可以查询的方案。你需要将“msauth”添加到 `info.plist file` 的 LSApplicationQueriesSchemes 节。
 
-<key>LSApplicationQueriesSchemes</key>
-<array>
-     <string>msauth</string>
-</array>
+		<key>LSApplicationQueriesSchemes</key>
+		<array>
+		     <string>msauth</string>
+		</array>
 
 ### 你已配置 SSO！
 

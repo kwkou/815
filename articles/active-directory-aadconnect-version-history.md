@@ -22,8 +22,8 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 主题 |  
 --------- | --------- |
-从 Azure AD Connect 升级的步骤 | [从旧版升级到最新版](/documentation/articles/active-directory-aadconnect-upgrade-previous-version) Azure AD Connect 的不同方法。
-所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions#upgrade)
+从 Azure AD Connect 升级的步骤 | [从旧版升级到最新版](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/) Azure AD Connect 的不同方法。
+所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#upgrade)
 下载| [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
 
 ## 1\.1.189.0
@@ -32,7 +32,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **已解决的问题和改进：**
 
 - Azure AD Connect 现在可以安装于符合 FIPS 的服务器上。
-    - 有关密码同步，请参阅[密码同步和 FIPS](active-directory-aadconnectsync-implement-password-synchronization.md#password-synchronization-and-fips)
+    - 有关密码同步，请参阅[密码同步和 FIPS](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#password-synchronization-and-fips)
 - 已修复下列问题：NetBIOS 名称无法解析为 Active Directory 连接器中的 FQDN。
 
 ## 1\.1.180.0
@@ -41,8 +41,8 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **新功能：**
 
 - 警告并帮助你验证域（如果你在运行 Azure AD Connect 之前未执行此操作）。
-- 添加了对[德国 Microsoft 云](active-directory-aadconnect-instances.md#microsoft-cloud-germany)的支持。
-- 添加了对最新 [Microsoft Azure 政府云](active-directory-aadconnect-instances.md#microsoft-azure-government-cloud)基础结构的支持，以及新的 URL 要求。
+- 添加了对[德国 Microsoft 云](/documentation/articles/active-directory-aadconnect-instances/#microsoft-cloud-germany)的支持。
+- 添加了对最新 [Microsoft Azure 政府云](/documentation/articles/active-directory-aadconnect-instances/#microsoft-azure-government-cloud)基础结构的支持，以及新的 URL 要求。
 
 **已解决的问题和改进：**
 

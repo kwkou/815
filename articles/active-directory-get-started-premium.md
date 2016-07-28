@@ -26,7 +26,7 @@
 **Microsoft 批量许可** - 可以通过 [Microsoft 企业协议](https://www.microsoft.com/zh-cn/licensing/licensing-programs/enterprise.aspx)（250 或更多许可证）或[开放批量许可](https://www.microsoft.com/zh-cn/licensing/licensing-programs/open-license.aspx)（5-250 个许可证）计划获取 Azure Active Directory Premium。
 
 
-本主题说明如何开始使用通过批量许可计划购买的 Azure Active Directory Premium。如果你还不熟悉 Azure Active Directory 的不同版本，请参阅 [Azure Active Directory editions（Azure Active Directory 版本）](active-directory-editions.md)。
+本主题说明如何开始使用通过批量许可计划购买的 Azure Active Directory Premium。如果你还不熟悉 Azure Active Directory 的不同版本，请参阅 [Azure Active Directory editions（Azure Active Directory 版本）](/documentation/articles/active-directory-editions/)。
 
 > [AZURE.NOTE]
 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Microsoft Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。

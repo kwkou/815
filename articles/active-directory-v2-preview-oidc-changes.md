@@ -183,9 +183,6 @@ v2.0 终结点大量使用 JWT 令牌，其中包含标头参数部分以及令�
 
 		https://login.microsoftonline.com/{some-guid}/v2.0 
 
-
-
-
 > [AZURE.IMPORTANT] **你的工作：确保应用在颁发者验证期间接受包含或不含尾部斜杠的颁发者值。**
 
 ## 为何更改？

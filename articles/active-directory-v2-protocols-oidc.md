@@ -19,7 +19,7 @@ OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
     
-[OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) 扩展了 OAuth 2.0 授权协议，以将其用作身份验证协议，从而允许你使用 OAuth 执行单一登录。它引入了 `id_token` 的概念，这是一种安全令牌，可让客户端验证用户的标识，并获取有关用户的基本配置文件信息。由于它扩展了 OAuth 2.0，因此还可让应用程序安全地获取 **access\_tokens**，而这些令牌可用于访问[授权服务器](active-directory-v2-protocols.md#the-basics)保护的资源。如果要构建的 [Web 应用程序](active-directory-v2-flows.md#web-apps)托管在服务器中并通过浏览器访问，我们建议使用 OpenID Connect。
+[OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) 扩展了 OAuth 2.0 授权协议，以将其用作身份验证协议，从而允许你使用 OAuth 执行单一登录。它引入了 `id_token` 的概念，这是一种安全令牌，可让客户端验证用户的标识，并获取有关用户的基本配置文件信息。由于它扩展了 OAuth 2.0，因此还可让应用程序安全地获取 **access\_tokens**，而这些令牌可用于访问[授权服务器](/documentation/articles/active-directory-v2-protocols/#the-basics)保护的资源。如果要构建的 [Web 应用程序](/documentation/articles/active-directory-v2-flows/#web-apps)托管在服务器中并通过浏览器访问，我们建议使用 OpenID Connect。
 
 ## 协议图 - 登录
 最基本的登录流包含以下步骤 - 下面详细描述了每个步骤。
@@ -27,7 +27,7 @@ OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用
 ![OpenId Connect Swimlanes](./media/active-directory-v2-flows/convergence_scenarios_webapp.png)
 
 ## 发送登录请求
-当 Web 应用需要对用户进行身份验证时，可以将用户定向到 `/authorize` 终结点。此请求类似于 [OAuth 2.0 授权代码流](active-directory-v2-protocols-oauth-code.md)的第一个阶段，不过有几个重要的区别：
+当 Web 应用需要对用户进行身份验证时，可以将用户定向到 `/authorize` 终结点。此请求类似于 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols-oauth-code/)的第一个阶段，不过有几个重要的区别：
 
 - 该请求必须在 `scope` 参数中包含范围 `openid`。
 - `response_type` 参数必须包含 `id_token`
@@ -51,7 +51,7 @@ OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 该请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基本信息](active-directory-v2-protocols.md#endpoints)。 |
+| tenant | 必填 | 该请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基本信息](/documentation/articles/active-directory-v2-protocols/#endpoints)。 |
 | client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
 | response\_type | 必填 | 必须包含用于 OpenID Connect 登录的 `id_token`。还可以包含其他 response\_type，例如 `code`。 |
 | redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
@@ -62,7 +62,7 @@ OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用
 | prompt | 可选 | 表示需要的用户交互类型。此时仅有的有效值为“登录”、“无”和“同意”。`prompt=login` 强制用户在该请求上输入凭据，取消单一登录。`prompt=none` 则相反 - 它确保不对用户显示任何交互式提示。如果请求无法通过单一登录以静默方式完成，v2.0 终结点将返回错误。`prompt=consent` 在用户登录之后将触发 OAuth 同意对话框，询问用户是否要授予权限给应用程序。 |
 | login\_hint | 可选 | 如果事先知道其用户名称，可用于预先填充用户登录页面的用户名称/电子邮件地址字段。通常在已经使用 `preferred_username` 声明从上一个登录中提取用户名的情况下，应用会在重新身份验证期间使用此参数。 |
 | domain\_hint | 可选 | 可以是 `consumers` 或 `organizations`。如果包含，它跳过用户在 v2.0 登录页面上经历的基于电子邮件的发现过程，导致稍微更加流畅的用户体验。通常应用会在重新身份验证期间使用此参数，方法是从 id\_token 中提取 `tid` 声明。如果 `tid` 声明值是 `9188040d-6c67-4c5b-b112-36a304b66dad`，则应该使用 `domain_hint=consumers`。否则使用 `domain_hint=organizations`。 |
-此时，请求用户输入其凭据并完成身份验证。v2.0 终结点也将确保用户已经同意 `scope` 查询参数所示的权限。如果用户未曾同意这些权限的任何一项，就请求用户同意请求的权限。[此处提供了权限、同意与多租户应用](active-directory-v2-scopes.md)的详细信息。
+此时，请求用户输入其凭据并完成身份验证。v2.0 终结点也将确保用户已经同意 `scope` 查询参数所示的权限。如果用户未曾同意这些权限的任何一项，就请求用户同意请求的权限。[此处提供了权限、同意与多租户应用](/documentation/articles/active-directory-v2-scopes/)的详细信息。
 
 用户经过身份验证并同意后，v2.0 终结点将使用 `response_mode` 参数中指定的方法，将返回对位于指定的 `redirect_uri` 的应用程序的响应。
 
@@ -198,5 +198,5 @@ You can simply redirect the user to the `end_session_endpoint` listed in the Ope
 | error | 用于分类发生的错误类型与响应错误的错误码字符串。 |
 | error\_description | 帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
 
-获取授权 `code` 和 `id_token` 之后，可以让用户登录，并代表他们获取访问令牌。若要让用户登录，必须确切地按[上面](#validating-the-id-token)所述验证 `id_token`。若要获取访问令牌，可以遵循 [OAuth 协议文档](active-directory-v2-protocols-oauth-code.md#request-an-access-token)中所述的步骤。
+获取授权 `code` 和 `id_token` 之后，可以让用户登录，并代表他们获取访问令牌。若要让用户登录，必须确切地按[上面](#validating-the-id-token)所述验证 `id_token`。若要获取访问令牌，可以遵循 [OAuth 协议文档](/documentation/articles/active-directory-v2-protocols-oauth-code/#request-an-access-token)中所述的步骤。
 <!---HONumber=Mooncake_0718_2016-->

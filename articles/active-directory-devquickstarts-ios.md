@@ -223,8 +223,8 @@ ObjC
 ## 其他方案
 现在，你可以转到其他方案。你可能想要尝试：
 
-- [使用 Azure AD 保护 Node.JS Web API](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
-- 了解[如何使用 ADAL 在 iOS 上启用跨应用 SSO](/documentation/articles/active-directory-sso-ios)  
+- [使用 Azure AD 保护 Node.JS Web API](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
+- 了解[如何使用 ADAL 在 iOS 上启用跨应用 SSO](/documentation/articles/active-directory-sso-ios/)  
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
 <!---HONumber=Mooncake_0613_2016-->

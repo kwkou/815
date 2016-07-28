@@ -16,7 +16,7 @@
 Azure AD Connect 最常用于全球范围内的 Azure AD 和 Office 365 实例。但也有其他实例，这些实例对 URL 具有不同的要求并且具有其他的特殊注意事项。
 
 ## 德国 Microsoft 云
-[德国 Microsoft 云](http://www.microsoft.de/cloud-deutschland)是由德国数据信托运营的最高等级的云。
+[德国 Microsoft 云](http://www.microsoft.de/cloud-deutschland/)是由德国数据信托运营的最高等级的云。
 
 此云目前提供预览版。许多通常可以由自己完成的方案（如验证域）必须由运营商完成。有关如何参加使用预览版的详细信息，请与你当地的 Microsoft 代表联系。
 
@@ -35,7 +35,6 @@ Azure AD Connect 最常用于全球范围内的 Azure AD 和 Office 365 实例�
 - 密码写回未提供。
 
 ## Microsoft Azure 政府版云
-[Microsoft Azure 政府版云](https://azure.microsoft.com/features/gov/)是用于美国政府的云。
 
 DirSync 的早期版本支持该云。从 Azure AD Connect 的 1.1.180 版本起，将支持下一代云。这一代使用的是基于仅限美国的终结点，并具有不同的 URL 列表，可在你的代理服务器中打开。
 
