@@ -30,7 +30,7 @@ Azure 中的安全性有两个级别：
 - 你的 Azure Web 应用与外部资源（例如 PowerShell 管理、命令行界面、Azure SDK、REST API 和混合连接）之间的所有通信都经过正确加密。
 - 24 小时威胁管理可保护 Azure 资源免受恶意软件、分布式拒绝服务 (DDoS)、中间人 (MITM) 和其他威胁的危害。 
 
-有关 Azure 中的基础结构和平台安全性的详细信息，请参阅 [Azure 信任中心](/support/trust-center/security/)。
+有关 Azure 中的基础结构和平台安全性的详细信息，请参阅 [Azure 信任中心](https://www.trustcenter.cn/zh-cn/security/default.html)。
 
 #### 应用程序安全性
 
@@ -100,7 +100,7 @@ Azure 通过 **FTPS** 提供对你的应用文件系统的安全 FTP 访问。�
 
 ##<a name="next"></a>后续步骤
 
-若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对站点执行**渗透测试**，请参阅 [Azure 信任中心](/support/trust-center/security/)的安全部分。
+若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对站点执行**渗透测试**，请参阅 [Azure 信任中心](https://www.trustcenter.cn/zh-cn/security/default.html)的安全部分。
 
 有关 Azure Web 应用中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure Web 应用中解锁的配置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
 

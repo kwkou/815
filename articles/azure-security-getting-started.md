@@ -223,7 +223,7 @@ Azure 建立安全控制的目的是实施威胁缓解措施，同时协助客�
 
 ##后续步骤
 
-[Azure 信任中心](/support/trust-center/)
+[Azure 信任中心](https://www.trustcenter.cn/)
 
 [Azure 安全团队博客](http://blogs.msdn.com/b/azuresecurity/)
 

@@ -575,7 +575,7 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 ## 其他资源
 以下资源提供有关 Azure 和相关的 Microsoft 服务的常规信息：
 
-- [Azure 信任中心](/support/trust-center/)
+- [Azure 信任中心](https://www.trustcenter.cn/)
 
     有关如何为 Azure 开发嵌入安全和隐私的信息以及 Azure 如何满足广泛的国际和特定于行业的合规性标准的信息
 

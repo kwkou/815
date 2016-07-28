@@ -47,7 +47,7 @@ Azure 行业领先的 99.99% 可用性服务级别协议 [(SLA)](/support/legal/
 
 ## 保护数据
 
-SQL Server 的数据安全性一贯可靠，SQL 数据库也包含类似的功能，可以限制访问、保护数据，并帮助你监视活动。有关你在 SQL 数据库中拥有的安全选项的快速概览，请参阅[保护你的 SQL 数据库](/documentation/articles/sql-database-security/)。有关更全面的安全功能视图，请参阅 [SQL Server 数据库引擎和 SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)。有关 Azure 平台安全性的信息，请访问 [Azure 信任中心](/support/trust-center/security/)。
+SQL Server 的数据安全性一贯可靠，SQL 数据库也包含类似的功能，可以限制访问、保护数据，并帮助你监视活动。有关你在 SQL 数据库中拥有的安全选项的快速概览，请参阅[保护你的 SQL 数据库](/documentation/articles/sql-database-security/)。有关更全面的安全功能视图，请参阅 [SQL Server 数据库引擎和 SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)。有关 Azure 平台安全性的信息，请访问 [Azure 信任中心](https://www.trustcenter.cn/zh-cn/security/default.html)。
 
 
 ## 后续步骤
