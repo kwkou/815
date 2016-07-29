@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Azure Java SDK 创建 VM" 
-	description="本文介绍如何使用 Azure Java SDK 创建 VM" 
+	pageTitle="使用 Azure Java SDK 管理 VM" 
+	description="本文介绍如何使用 Azure Java SDK 管理 VM" 
 	services="" 
 	documentationCenter="" 
 	authors=""
@@ -11,7 +11,7 @@
 	ms.date="" 
 	wacn.date="07/29/2016"/>
 
-# 使用 Azure Java SDK 创建 VM
+# 使用 Azure Java SDK 管理 VM
 
 ### 本文包以下内容
 - [Azure Java Management SDK 介绍](#introduction)
