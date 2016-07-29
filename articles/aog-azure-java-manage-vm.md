@@ -49,9 +49,9 @@ Azure SDK 提供多种认证方式，以下主要提供两种认证方式，publ
 
     **示例代码**
 
-	Configuration config = PublishSettingsLoader.createManagementConfiguration("&lt;publishsettings file path&gt;", "&lt;Sub Id&gt;");  
-    ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);  
-    VirtualMachineOperations vmop = computeManagementClient.getVirtualMachinesOperations();
+		Configuration config = PublishSettingsLoader.createManagementConfiguration("&lt;publishsettings file path&gt;", "&lt;Sub Id&gt;");  
+    	ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);  
+    	VirtualMachineOperations vmop = computeManagementClient.getVirtualMachinesOperations();
 
     
 2. 证书认证
@@ -66,9 +66,9 @@ Azure SDK 提供多种认证方式，以下主要提供两种认证方式，publ
     
     **示例代码**
     
-    Configuration config = Configuration.configure(new URI("https://management.core.chinacloudapi.cn"), &lt;sub Id&gt;, &lt;cert location&gt;, &lt;cert password&gt;);  
-	ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);  
-    VirtualMachineOperations vmop = computeManagementClient.getVirtualMachinesOperations();
+    	Configuration config = Configuration.configure(new URI("https://management.core.chinacloudapi.cn"), &lt;sub Id&gt;, &lt;cert location&gt;, &lt;cert password&gt;);  
+		ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);  
+    	VirtualMachineOperations vmop = computeManagementClient.getVirtualMachinesOperations();
     
 
 ## <a id="createVM"></a>在云服务中创建 VM
