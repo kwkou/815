@@ -11,7 +11,7 @@
 <tags 
     ms.service="documentdb" 
     ms.date="06/14/2016" 
-    wacn.date="6/30/2016"/>
+    wacn.date="08/01/2016"/>
 
 # 使用逻辑应用针对新增或已更改的 DocumentDB 资源发送通知
 
@@ -56,8 +56,9 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 3. 将此值 POST 到 API 应用，这会进行 DocumentDB 查询。此值用于查询中。
 
-    SQL
-     	SELECT * FROM Patients p WHERE (p._ts >= @unixTimeStamp)
+SQL
+
+		SELECT * FROM Patients p WHERE (p._ts >= @unixTimeStamp)
     
 
 > [AZURE.NOTE] \_ts 表示所有 DocumentDB 资源的时间戳元数据。
@@ -101,7 +102,7 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 让我们在代码视图中看一下完整的逻辑应用。
 
-		JSON
+JSON
 		   
 		   	"$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2015-08-01-preview/workflowdefinition.json#",
 		    "actions": {
@@ -241,7 +242,7 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 在此工作流中，你会使用 [HTTP Webhook 触发器](https://sendgrid.com/blog/whats-webhook/)。如果查看上述代码，你会看到以下示例所示的参数。
 
-		C#
+C#
 		
 		    =@{triggerBody()['Subject']}
 
@@ -254,7 +255,7 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 如先前所述，你可以使用设计器来分配参数，或在代码视图中分配参数。
 如果在代码视图中分配参数，你会接着定义需有值的属性，如下列代码示例所示。
 
-		JSON
+JSON
 		
 			"triggers": {
 				"manual": {
@@ -291,7 +292,7 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 **代码视图**
 
-		JSON
+JSON
 		
 			"GetUtcDate": {
 				    "conditions": [],
@@ -318,7 +319,7 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 **请求**
 		
-		JSON
+JSON
 		
 			{
 			    "uri": "https://docdbnotificationapi-debug.azurewebsites.net/api/Authorization",
@@ -358,7 +359,7 @@ JSON
 
 ##### 代码视图
 
-		JSON
+JSON
 		
 			"Conversion": {
 			    "conditions": [
@@ -389,7 +390,7 @@ JSON
 
 ##### 请求
 
-		JSON
+JSON
 		
 			{
 			    "uri": "https://docdbnotificationapi-debug.azurewebsites.net/api/Conversion",
@@ -402,7 +403,7 @@ JSON
 
 ##### 响应
 
-		JSON
+JSON
 		
 			{
 			    "statusCode": 200,
@@ -428,7 +429,7 @@ JSON
 
 ##### 代码视图
 
-		JSON
+JSON
 		
 			"GetDocuments": {
 			    "conditions": [
@@ -454,7 +455,7 @@ JSON
 在 GetDocuments 操作中，你将传入来自 Conversion 操作的响应主体。这是 Uri 中的参数：
 
 		 
-		C#
+C#
 		
 			unixTimeStamp=@{body('Conversion')}
 
@@ -468,7 +469,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 ##### 请求
 
-		JSON
+JSON
 		
 			{
 			    "uri": "https://docdbnotificationapi-debug.azurewebsites.net/api/Patient",
@@ -481,7 +482,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 ##### 响应
 
-		JSON
+JSON
 		
 			{
 			    "statusCode": 200,
@@ -553,7 +554,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 ##### 代码视图
 
-		JSON
+JSON
 		
 			{
 		    "host": {
@@ -624,7 +625,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 ##### 请求
 
-		JSON
+JSON
 		
 			"host": {
 		        "api": {
@@ -691,7 +692,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 ##### 响应
 
-		JSON
+JSON
 		
 			{
 			    "statusCode": 200,
@@ -730,9 +731,8 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 ##### 代码视图
 
-		JSON
-		
-		
+JSON
+			
 			"sendMail": {
 			    "conditions": [
 				{
@@ -759,7 +759,7 @@ HTTP 操作是一个 POST。
 
 授权参数位于触发器属性中
 
-		JSON
+JSON
 		
 			},
 				"sendgridPassword": {
@@ -794,7 +794,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 ##### 请求
 
-		JSON
+JSON
 		
 			{
 			    "uri": "https://api.sendgrid.com/api/mail.send.json",
@@ -809,7 +809,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 ##### 响应
 
-		JSON
+JSON
 		
 			{
 			    "statusCode": 200,
@@ -829,7 +829,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 最后，你要能够在 Azure 门户预览上看到逻辑应用的结果。若要这么做，请向 outputs 节添加参数。
 
 
-		JSON
+JSON
 		
 			"outputs": {
 				"Results": {
@@ -856,7 +856,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 ![](./media/documentdb-change-notification/trigger-recurrence.png)
 
-		JSON
+JSON
 		
 			{
 			    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2015-08-01-preview/workflowdefinition.json#",
@@ -906,7 +906,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 ##### 请求
 
-		JSON
+JSON
 		
 			{
 			    "uri": "https://prod-01.westus.logic.azure.com:443/workflows/12a1de57e48845bc9ce7a247dfabc887/triggers/manual/run?api-version=2015-08-01-preview&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ObTlihr529ATIuvuG-dhxOgBL4JZjItrvPQ8PV6973c",
@@ -924,7 +924,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 ##### 响应
 
-		JSON
+JSON
 		
 			{
 			    "statusCode": 202,
@@ -972,7 +972,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 #### GetUtcDate
 
-		C#
+C#
 		
 		    /// <summary>
 			/// Gets the current UTC Date value
@@ -996,7 +996,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 #### ConvertToTimeStamp
 
-		 C#
+C#
 		
 		        /// <summary>
 		        ///     Converts DateTime to double
@@ -1037,7 +1037,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 #### QueryForNewPatientDocuments
 
-		C#
+C#
 		
 			    /// <summary>
 		        ///     Query for new Patient Documents
@@ -1075,7 +1075,8 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 此操作会使用 [DocumentDB .NET SDK](/documentation/articles/documentdb-sdk-dotnet/) 创建文档查询。
 
-		C#
+C#
+
 		     CreateDocumentQuery<Document>(collectionLink, filterQuery, options).AsEnumerable();
 
 
@@ -1095,7 +1096,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 在 PowerShell 中调用它，如下所示：
 
-		powershell
+powershell
 		
 			ArmClient.exe post https://management.azure.cn/subscriptions/[YOUR SUBSCRIPTION ID/resourcegroups/[YOUR RESOURCE GROUP]/providers/Microsoft.Logic/workflows/[YOUR LOGIC APP NAME/triggers/manual/listcallbackurl?api-version=2015-08-01-preview
 
@@ -1103,7 +1104,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 结果应如下所示：
 
-		powershell
+powershell
 		
 			https://prod-02.westus.logic.azure.com:443/workflows/12a1de57e48845bc9ce7a247dfabc887/triggers/manual/run?api-version=2015-08-01-prevaiew&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XXXXXXXXXXXXXXXXXXX
 
