@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-network-aog" ms.date="" wacn.date="06/08/2016"/>
+<tags ms.service="virtual-network-aog" ms.date="" wacn.date="08/01/2016"/>
 
 #使用 Powershell 设置 VNET 中的静态 IP 
 
@@ -34,7 +34,7 @@
 ## <a id="cancle"></a>取消对已有虚机设置的静态 Internal IP 
 
 	PS C:\> $VM2=Get-AzureVM -ServiceName 'dnstest01' -name 'test12'
-	PS C:\> Remove-AzureStaticVNetIP $vm2 |Update-AzureVM
+	PS C:\> Remove-AzureStaticVNetIP -vm $vm2 |Update-AzureVM
  
 ## <a id="create"></a>创建静态 Internal IP 的虚机
 
@@ -51,7 +51,7 @@
 
 *选择 Linux 虚拟机镜像并创建 Linux 虚机：
 
-	PS C:\> $imagename='f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-65-20140121'	
+	PS C:\> $imagename='f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-72-20160617'	
 	PS C:\> $vm1=New-AzureVMConfig -Name 'test12' -ImageName $imagename -InstanceSize Small |Add-AzureProvisioningConfig -Linux -LinuxUser 'crane' -Password '*****'; Set-AzureSubnet -VM $vm1 -SubnetNames 'testtest1'; Set-AzureStaticVNetIP -IPAddress 10.0.1.10 -VM $vm1; New-AzureVM -ServiceName 'test11' -vm $vm1 -VNetName 'test001'
 
 *选择 Windows 虚拟机镜像并创建 Windows 虚机：
