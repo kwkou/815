@@ -47,7 +47,7 @@
 
 审批人可以是组织中具有 Azure AD 帐户并且可能负责帐户预配、许可或组织在授予应用访问权限前要求执行的任何其他业务流程的任何用户。审批人甚至可以是一个或多个共享帐户组的组所有者，可以将用户分配给其中一个组，使他们能够通过共享帐户进行访问。
 
-如果不需要审批，用户会立即将应用程序添加到其 Azure AD 访问面板。这适用于应用程序已设置了[自动用户预配](active-directory-saas-app-provisioning.md)，或已设置[“用户管理的”密码 SSO 模式](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on)，而该模式中的用户已有帐户并知道密码的情况。
+如果不需要审批，用户会立即将应用程序添加到其 Azure AD 访问面板。这适用于应用程序已设置了[自动用户预配](/documentation/articles/active-directory-saas-app-provisioning/)，或已设置[“用户管理的”密码 SSO 模式](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on)，而该模式中的用户已有帐户并知道密码的情况。
 
 **7：**如果应用程序已设置为使用基于密码的单一登录，则审批人还可以使用一个选项来代表每个用户设置 SSO 凭据。有关详细信息，请参阅下一部分中有关委派访问管理的信息。
 
