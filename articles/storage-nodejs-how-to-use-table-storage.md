@@ -1,16 +1,16 @@
-<properties 
+<properties
 	pageTitle="如何通过 Node.js 使用 Azure 表存储 | Azure"
 	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
-	services="storage" 
-	documentationCenter="nodejs" 
-	authors="MikeWasson" 
-	manager="wpickett" 
+	services="storage"
+	documentationCenter="nodejs"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="04/29/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/01/2016"/>
 
 
 # 如何通过 Node.js 使用 Azure 表存储
@@ -61,7 +61,7 @@
 
 将以下代码添加到您的应用程序中的 **server.js** 文件的顶部：
 
-    var azure = require('azure-storage');
+	var azure = require('azure-storage');
 
 ## 设置 Azure 存储连接
 
@@ -73,14 +73,14 @@ Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS
 
 下面的代码创建 **TableService** 对象并使用它来创建一个新表。将以下代码添加到 **server.js** 的顶部附近。
 
-    var tableSvc = azure.createTableService();
+	var tableSvc = azure.createTableService();
 
 调用 **createTableIfNotExists** 将创建具有指定名称的一个新表（如果该表尚不存在）。下面的示例将创建一个名为“mytable”的新表（如果该表尚不存在）：
 
-    tableSvc.createTableIfNotExists('mytable', function(error, result, response){
-		if(!error){
-			// Table exists or created
-		}
+	tableSvc.createTableIfNotExists('mytable', function(error, result, response){
+	  if(!error){
+	    // Table exists or created
+	  }
 	});
 
 如果创建了新表，`result.created` 将为 `true`，如果表已存在，则为 `false`。`response` 将包含有关该请求的信息。
@@ -89,11 +89,11 @@ Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS
 
 可选的筛选操作可应用于使用 **TableService** 执行的操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
-		function handle (requestOptions, next)
+	function handle (requestOptions, next)
 
 在对请求选项执行预处理后，该方法需要调用“next”并且传递具有以下签名的回调：
 
-		function (returnObject, finalCallback, next)
+	function (returnObject, finalCallback, next)
 
 在此回调中并且在处理 returnObject（来自对服务器请求的响应）后，回调需要调用 next（如果它存在，以便继续处理其他筛选器）或只调用 finalCallback 以便结束服务调用。
 
@@ -126,19 +126,19 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 您还可以使用 **entityGenerator** 来创建实体。下面的示例使用 **entityGenerator** 来创建相同的任务实体。
 
 	var entGen = azure.TableUtilities.entityGenerator;
-    var task = {
+	var task = {
 	  PartitionKey: entGen.String('hometasks'),
-      RowKey: entGen.String('1'),
-      description: entGen.String('take out the trash'),
-      dueDate: entGen.DateTime(new Date(Date.UTC(2015, 6, 20))),
-    };
+	  RowKey: entGen.String('1'),
+	  description: entGen.String('take out the trash'),
+	  dueDate: entGen.DateTime(new Date(Date.UTC(2015, 6, 20))),
+	};
 
 要将实体添加到表中，应将实体对象传递给 **insertEntity** 方法。
 
 	tableSvc.insertEntity('mytable',task, function (error, result, response) {
-		if(!error){
-			// Entity inserted
-		}
+	  if(!error){
+	    // Entity inserted
+	  }
 	});
 
 如果操作成功，`result` 将包含插入的记录的 [ETag](http://zh.wikipedia.org/wiki/HTTP_ETag)，而 `response` 将包含有关操作的信息。
@@ -178,7 +178,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 > 2. 对某个实体执行更新操作时，请将以前检索的 ETag 信息添加到新的实体。例如：
 >
 >     `entity2['.metadata'].etag = currentEtag;`
->    
+>
 > 3. 执行更新操作。如果实体在您检索 ETag 值后已被修改，例如被应用程序的其他实例修改，则会返回一条 `error`，指出未满足请求中指定的更新条件。
 
 对于 **replaceEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果你希望存储某个实体而不考虑它是否已存在，请使用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
@@ -191,7 +191,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
  下面的示例演示了在一个批次中提交两个实体：
 
-    var task1 = {
+	var task1 = {
 	  PartitionKey: {'_':'hometasks'},
 	  RowKey: {'_': '1'},
 	  description: {'_':'Take out the trash'},
@@ -235,11 +235,11 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 如果您想要返回基于 **PartitionKey** 和 **RowKey** 的特定实体，请使用 **retrieveEntity** 方法。
 
-    tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, response){
+	tableSvc.retrieveEntity('mytable', 'hometasks', '1', function(error, result, response){
 	  if(!error){
 	    // result contains the entity
 	  }
-    });
+	});
 
 此操作完成后，`result` 将包含该实体。
 
@@ -272,7 +272,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 null，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，第三个参数请使用 null。
+如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 *null*，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，第三个参数请使用 *null*。
 
 ### 查询一部分实体属性
 
@@ -292,9 +292,9 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  RowKey: {'_': '1'}
 	};
 
-    tableSvc.deleteEntity('mytable', task, function(error, response){
+	tableSvc.deleteEntity('mytable', task, function(error, response){
 	  if(!error) {
-		// Entity deleted
+	    // Entity deleted
 	  }
 	});
 
@@ -304,7 +304,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 以下代码从存储帐户中删除一个表。
 
-    tableSvc.deleteTable('mytable', function(error, response){
+	tableSvc.deleteTable('mytable', function(error, response){
 		if(!error){
 			// Table deleted
 		}
@@ -375,7 +375,7 @@ dc.table.queryEntities(tableName,
 
 	sharedTableService.queryEntities(query, null, function(error, result, response) {
 	  if(!error) {
-		// result contains the entities
+	    // result contains the entities
 	  }
 	});
 
@@ -438,4 +438,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site/
   [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0725_2016-->

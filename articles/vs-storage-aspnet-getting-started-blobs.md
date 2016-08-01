@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/08/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="06/28/2016"
+	wacn.date="08/01/2016"/>
 
 # 开始使用 blob 存储和 Visual Studio 连接服务 (ASP.NET)
 
@@ -18,7 +18,7 @@
 
 本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 应用中创建或引用 Azure 存储帐户之后，如何开始使用 Azure Blob 存储。本文演示如何创建 blob 容器和执行其他常见任务（如上载、列出、下载和删除 blob）。示例是用 C# 编写的，并使用了 [Azure .NET 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
- - 有关使用 Azure Blob 存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。 
+ - 有关使用 Azure Blob 存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
  - 有关 ASP.NET 项目的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
 
 
@@ -35,7 +35,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 1. 在您希望以编程方式访问 Azure 存储的任何 C# 文件中，将以下代码命名空间声明添加到文件的顶部。
 
-		using Microsoft.Framework.Configuration;
+		using Microsoft.Azure;
 		using Microsoft.WindowsAzure.Storage;
 		using Microsoft.WindowsAzure.Storage.Auth;
 		using Microsoft.WindowsAzure.Storage.Blob;
@@ -46,7 +46,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 		CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 		   CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
-    > [AZURE.NOTE]在接下来的部分中，将在代码的前面使用先前的全部代码。
+    > [AZURE.NOTE] 在接下来的部分中，将在代码的前面使用先前的全部代码。
 
 3. 获取 **CloudBlobClient** 对象，以引用存储帐户中的现有容器。
 
@@ -56,7 +56,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
         // Get a reference to a container named “mycontainer.”
         CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-> [AZURE.NOTE]在 ASP.NET 5 中执行调出 Azure 存储的一些 API 是异步的。有关详细信息，请参阅[使用 Async 和 Await 进行异步编程](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。
+> [AZURE.NOTE] 在 ASP.NET 5 中执行调出 Azure 存储的一些 API 是异步的。有关详细信息，请参阅[使用 Async 和 Await 进行异步编程](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。
 
 
 ## 使用代码创建 blob 容器
@@ -223,5 +223,4 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0725_2016-->

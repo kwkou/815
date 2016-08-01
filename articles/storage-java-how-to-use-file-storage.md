@@ -7,11 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe" />
 
-<tags 
-	ms.service="storage" 
-
-	ms.date="05/04/2016"
-	wacn.date="06/06/2016"/>
+<tags
+	ms.service="storage"
+	ms.date="06/24/2016"
+	wacn.date="08/01/2016"/>
 
 # 如何通过 Java 使用文件存储
 
@@ -214,4 +213,6 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_0530_2016-->
+[Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
+
+<!---HONumber=Mooncake_0725_2016-->

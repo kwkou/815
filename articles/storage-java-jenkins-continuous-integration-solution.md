@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="04/08/2016" 
-	wacn.date="05/23/2016"/>
+	ms.date="06/24/2016" 
+	wacn.date="08/01/2016"/>
 
 # 将 Azure 存储空间用于 Jenkins 持续集成解决方案
 
@@ -54,7 +54,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
 - 一个 Azure 帐户。注册 Azure 帐户的位置位于 <http://www.azure.cn>。
 
-- 一个 Azure 存储帐户。如果你还没有存储帐户，则可使用[创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中的步骤创建一个存储帐户。
+- 一个 Azure 存储帐户。如果你还没有存储帐户，则可使用[创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中的步骤创建一个。
 
 - 建议熟悉 Jenkins CI 解决方案（但不是必需的），因为以下内容将使用一个基本示例向你演示使用 Blob 服务作为 Jenkins CI 生成项目的存储库时所需的步骤。
 
@@ -76,10 +76,10 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“配置系统”。
 3. 在“Azure 存储帐户配置”部分：
-    1. 输入你的存储帐户名称，获取该帐户名称可以通过 Azure 经典管理门户 (<https://manage.windowsazure.cn>)。
-    2. 输入你的存储帐户密钥，同样可以从 Azure 经典管理门户获取该密钥。
-    3. 如果你在使用公共 Azure 云，对于“Blob 服务终结点 URL”，请使用默认值。如果你在使用其他 Azure 云，则使用在 Azure 经典管理门户中为你的存储帐户指定的终结点。 
-    4. 单击“验证存储凭据”以验证你的存储帐户。 
+    1. 输入你的存储帐户名称，可以从 [Azure 门户预览](https://portal.azure.cn)获取该帐户名称。
+    2. 输入你的存储帐户密钥，同样可以从 [Azure 门户预览](https://portal.azure.cn)获取该密钥。
+    3. 如果你在使用公共 Azure 云，对于“Blob 服务终结点 URL”，请使用默认值。如果你在使用其他 Azure 云，则使用在 [Azure 门户预览](https://portal.azure.cn)中为你的存储帐户指定的终结点。
+    4. 单击“验证存储凭据”以验证你的存储帐户。
     5. [可选]如果你有其他存储帐户并且希望其可供 Jenkins CI 使用，请单击“添加更多存储帐户”。
     6. 单击“保存”以保存你的设置。
 
@@ -106,14 +106,14 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
     
     在你为"执行 Windows 批处理命令"输入脚本的"命令"部分下方，有一个指向 Jenkins 识别的环境变量的链接。单击此链接可了解环境变量名称和说明。请注意，不允许将包含特殊字符的环境变量（如 BUILD_URL 环境变量）用作容器名称或通用虚拟路径。
 
-8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本主题的范围。你可以在 [Shared Access Signatures: Understanding the SAS Model（共享访问签名：了解 SAS 模型）](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)中了解有关共享访问签名的详细信息。）
+8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本主题的范围。若要了解有关共享访问签名的详细信息，可参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。）
 9. [可选]如果你希望在上载生成项目之前清除容器的内容，请单击“在上载前清除容器”（如果你不希望清除容器的内容，则使该复选框保持未选中状态）。
-10. 对于“要上载的项目列表”，请输入 **text/*.txt**。
+10. 对于“要上传的项目列表”，请输入 **text/*.txt**。
 11. 在本教程中，对于“已上载项目的通用虚拟路径”，请输入 **${BUILD\_ID}/${BUILD\_NUMBER}**。
 12. 单击“保存”以保存你的设置。
 13. 在 Jenkins 仪表板中，单击“立即生成”以运行 **MyJob**。检查控制台输出中的状态。当生成后操作开始上载生成项目时，Azure 存储的状态消息将包括在控制台输出中。
 14. 成功完成此作业后，你可通过打开公共 Blob 检查生成项目。
-    1. 登录到 Azure 经典管理门户 (<https://manage.windowsazure.cn>)。
+    1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
     2. 单击“存储”。
     3. 单击你用于 Jenkins 的存储帐户名称。
     4. 单击“容器”。
@@ -146,9 +146,9 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
     
-    （以上格式适用于公共 Azure 云。如果你在使用其他 Azure 云，请使用 Azure 经典管理门户中的终结点来确定你的 URL 终结点。）
+    （以上格式适用于公共 Azure 云。如果你在使用其他 Azure 云，请使用 [Azure 门户预览](https://portal.azure.cn)中的终结点来确定你的 URL 终结点。）
 
-    在以上格式中，`storageaccount` 表示存储帐户的名称，`container_name` 表示容器的名称，而 `blob_name` 表示 Blob 的名称。在容器名称中，你可具有多个由正斜杠 **/** 分隔的路径。本教程的示例容器名称为 **MyJob**，**${BUILD\_ID}/${BUILD\_NUMBER}** 用于通用虚拟路径，从而导致 Blob 具有以下格式的 URL：
+    在以上格式中，`storageaccount` 表示存储帐户的名称，`container_name` 表示容器的名称，而 `blob_name` 表示 Blob 的名称。在容器名称中，你可具有多个由正斜杠 ** /** 分隔的路径。本教程的示例容器名称为 **MyJob**，**${BUILD\_ID}/${BUILD\_NUMBER}** 用于通用虚拟路径，从而导致 Blob 具有以下格式的 URL：
 
     `http://example.blob.core.chinacloudapi.cn/myjob/2014-04-14_23-57-00/1/hello.txt`
 
@@ -162,6 +162,4 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
-
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0725_2016-->

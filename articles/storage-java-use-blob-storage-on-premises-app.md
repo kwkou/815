@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/08/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/01/2016"/>
 
 # 使用 Blob 存储的本地应用程序
 
@@ -22,7 +22,7 @@
 
 - 已安装 Java 开发人员工具包 (JDK) 版本1.6 或更高版本。
 - 已安装 Azure SDK。
-- 适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。有关安装 Azure Libraries for Java 的信息，请参阅[下载 Azure SDK for Java](/documentation/articles/java-download-azure-sdk/)。
+- 适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。若要了解如何安装用于 Java 的 Azure Libraries，请参阅[下载用于 Java 的 Azure SDK](/documentation/articles/java-download-azure-sdk/)。
 - 已设置了一个 Azure 存储帐户。本文中的代码将使用存储帐户的帐户名称和帐户密钥。有关创建存储帐户的信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)；有关检索帐户密钥的信息，请参阅[查看并复制存储访问密钥](/documentation/articles/storage-create-storage-account/#view-and-copy-storage-access-keys)。
 
 - 您已创建存储在路径 c:\\myimages\\image1.jpg 处的已命名本地图像文件。或者，在示例中修改 **FileInputStream** 构造函数以使用其他图像路径和文件名。
@@ -87,8 +87,7 @@
     // Container name must be lower case.
     container = serviceClient.getContainerReference("gettingstarted");
 
-创建该容器。如果该容器不存在，此方法将创建该容器（并返回 true）。如果该容器存在，则此方法将返回
-**false**。createIfNotExist 的一个替代方法是 create 方法（如果该容器已存在，该方法将返回错误）。
+创建该容器。如果该容器不存在，此方法将创建该容器（并返回 **true**）。如果该容器存在，则此方法将返回 **false**。**createIfNotExists** 的一个替代方法是 **create** 方法（如果该容器已存在，该方法将返回错误）。
 
     container.createIfNotExists();
 
@@ -100,8 +99,7 @@
     containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
     container.uploadPermissions(containerPermissions);
 
-获取对块 Blob 的引用，它将表示
-Azure 存储空间中的 Blob。
+获取对块 Blob 的引用，它将表示 Azure 存储空间中的 Blob。
 
     blob = container.getBlockBlobReference("image1.jpg");
 
@@ -109,8 +107,7 @@ Azure 存储空间中的 Blob。
 
     File fileReference = new File ("c:\\myimages\\image1.jpg");
 
-通过调用 CloudBlockBlob.upload 方法上载该本地文件。**CloudBlockBlob.upload** 方法的第一个参数为
-**FileInputStream**对象，它表示将上载到 Azure 存储空间的本地文件。第二个参数是此文件的大小（以字节为单位）。
+通过调用 **CloudBlockBlob.upload** 方法上载该本地文件。**CloudBlockBlob.upload** 方法的第一个参数是表示将上载到 Azure 存储的本地文件的 **FileInputStream** 对象。第二个参数是此文件的大小（以字节为单位）。
 
     blob.upload(new FileInputStream(fileReference), fileReference.length());
 
@@ -127,8 +124,7 @@ Azure 存储空间中的 Blob。
 
 处理下列异常：
 
--   **FileNotFoundException**：可由 **FileInputStream**
-    或 **FileOutputStream** 构造函数引发。
+-   **FileNotFoundException**：可由 **FileInputStream** 或 **FileOutputStream** 构造函数引发。
 -   **StorageException**：可由 Azure 客户端存储库引发。
 -   **URISyntaxException**：可由 **ListBlobItem.getUri** 方法引发。
 -   **Exception**：一般异常处理。
@@ -178,8 +174,7 @@ Azure 存储空间中的 Blob。
     stream.println("<header/>");
     stream.println("<body>");
 
-循环访问已上载 Blob 的列表。对于 HTML 页中的每个 Blob，创建一个 **&lt;img&gt;** 元素，并将该元素的 **src** 属性发送到 Blob 的 URI（如同它存在于你的 Azure 存储帐户中一样）。
-虽然你仅在此示例中添加了一个图像，但如果添加更多图像，此代码将循环访问所有这些图像。
+循环访问已上载 Blob 的列表。对于 HTML 页中的每个 Blob，创建一个 **&lt;img&gt;** 元素，并将该元素的 **src** 属性发送到 Blob 的 URI（如同它存在于你的 Azure 存储帐户中一样）。虽然你仅在此示例中添加了一个图像，但如果添加更多图像，此代码将循环访问所有这些图像。
 
 为简单起见，此示例假定上载的每个 Blob 都是一个图像。如果你更新了图像之外的 Blob，或者更新了页面 Blob 而不是块 Blob，则请根据需要调整代码。
 
@@ -221,10 +216,8 @@ Azure 存储空间中的 Blob。
                        "AccountKey=your_account_name;" +
 		       "EndpointSuffix=core.chinacloudapi.cn";
 
-        public static void main(String[] args) 
-        {
-            try
-            {
+        public static void main(String[] args) {
+            try {
                 CloudStorageAccount account;
                 CloudBlobClient serviceClient;
                 CloudBlobContainer container;
@@ -255,27 +248,19 @@ Azure 存储空间中的 Blob。
                 System.out.println("Processing complete.");
                 System.out.println("Open index.html to see the images stored in your storage account.");
 
-            }
-            catch (FileNotFoundException fileNotFoundException)
-            {
+            } catch (FileNotFoundException fileNotFoundException) {
                 System.out.print("FileNotFoundException encountered: ");
                 System.out.println(fileNotFoundException.getMessage());
                 System.exit(-1);
-            }
-            catch (StorageException storageException)
-            {
+            } catch (StorageException storageException) {
                 System.out.print("StorageException encountered: ");
                 System.out.println(storageException.getMessage());
                 System.exit(-1);
-            }
-            catch (URISyntaxException uriSyntaxException)
-            {
+            } catch (URISyntaxException uriSyntaxException) {
                 System.out.print("URISyntaxException encountered: ");
                 System.out.println(uriSyntaxException.getMessage());
                 System.exit(-1);
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.print("Exception encountered: ");
                 System.out.println(e.getMessage());
                 System.exit(-1);
@@ -376,5 +361,4 @@ Azure 存储空间中的 Blob。
 - [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0725_2016-->
