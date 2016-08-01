@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="06/08/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/01/2016"/>
 
 # 使用示例性 UI 探索 Azure IoT 中心设备管理
 
@@ -46,7 +46,7 @@
 
 6.  设备网格：查看你向 IoT 中心实例注册的所有设备，该实例包括默认属性（“设备 ID”、“状态”和“标记”）。
 
-[设备管理概述][lnk-dm-overview]引入了“设备克隆”概念，它表示 Azure IoT 中心中的物理（或模拟）设备。从设备网格可以选择任何已注册的设备，从设备列表可以查看和编辑该设备的设备克隆。
+[设备管理概述][lnk-dm-overview]引入了“设备克隆”概念，它表示 Azure IoT 中心的物理（或模拟）设备。从设备网格可以选择任何已注册的设备，从设备列表可以查看和编辑该设备的设备克隆。
 
 通过选择相应的设备行，然后单击“编辑”按钮（也可以双击该行或在搜索框中输入设备 ID），在第一台模拟设备“Device11 7ce4a850”中输入此详细视图。
 
@@ -107,13 +107,20 @@
 
 ## 后续步骤
 
-你现在已使用示例性设备管理 UI 体验完成了设备管理概念的引导式探索。如果想要深入了解设备管理 API 并尝试一些代码示例，请访问以下开发人员教程：
+你现在已使用示例性设备管理 UI 体验完成了设备管理概念的引导式探索。如果想要深入了解设备管理 API 并尝试一些代码示例，请访问以下开发人员教程和资源：
 
 - [如何使用设备克隆][lnk-tutorial-twin]
 - [如何使用查询查找设备克隆][lnk-tutorial-queries]
 - [如何使用设备作业更新设备固件][lnk-tutorial-jobs]
+- [在 IoT 网关后启用托管设备][lnk-dm-gateway]
 - [Azure IoT 中心设备管理客户端库介绍][lnk-library-c]
 
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 [1]: ./media/iot-hub-device-management-ui-sample/image1.png
 [2]: ./media/iot-hub-device-management-ui-sample/image2.png
 [3]: ./media/iot-hub-device-management-ui-sample/image3.png
@@ -130,5 +137,11 @@
 [lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
 [lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
 [lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
+[lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
 
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 <!---HONumber=Mooncake_0627_2016-->

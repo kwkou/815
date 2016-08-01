@@ -9,8 +9,8 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="04/05/2016"
- wacn.date="05/30/2016"/>
+ ms.date="06/23/2016"
+ wacn.date="08/01/2016"/>
 
 # IoT 中心 SDK
 
@@ -58,6 +58,14 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 - [适用于 Java 的 Azure IoT 服务 SDK][]
 - [Azure IoT 网关 SDK][]
 
+## 后续步骤
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 [Azure IoT SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [适用于 C 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/c/readme.md
 [适用于 .NET 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/csharp/device/readme.md
@@ -78,5 +86,9 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 [适用于 Java 的 Azure IoT 服务 SDK]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/index.html
 [适用于 Node.js 的 Azure IoT 服务 SDK]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iothub/1.0.3/index.html
 [Azure IoT 网关 SDK]: http://azure.github.io/azure-iot-gateway-sdk/api_reference/c/html/
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0523_2016-->

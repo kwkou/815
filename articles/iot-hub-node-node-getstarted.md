@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="03/22/2016"
-     wacn.date="07/04/2016"/>
+     ms.date="06/16/2016"
+     wacn.date="08/01/2016"/>
 
 # 适用于 Node.js 的 Azure IoT 中心入门
 
@@ -22,7 +22,7 @@
 * **ReadDEviceToCloudMessages.js**，显示模拟设备发送的遥测数据。
 * **SimulatedDevice.js**，它使用前面创建的设备标识连接到 IoT 中心，并使用 AMQPS 协议每秒发送一次遥测消息。
 
-> [AZURE.NOTE] [IoT 中心 SDK][lnk-hub-sdks] 一文提供了有关多种 SDK 的信息，你可以使用这些 SDK 构建可在设备和解决方案后端上运行的应用程序。
+> [AZURE.NOTE] [IoT 中心 SDK][lnk-hub-sdks] 一文提供了各种 SDK 的相关信息，你可以使用这些 SDK 构建可在设备和解决方案后端上运行的应用程序。
 
 若要完成本教程，你需要以下各项：
 
@@ -72,7 +72,7 @@
 
     ```
     var device = new iothub.Device(null);
-    device.deviceId = 'myFirstDevice';
+    device.deviceId = 'myFirstNodeDevice';
     registry.create(device, function(err, deviceInfo, res) {
       if (err) {
         registry.get(device.deviceId, printDeviceInfo);
@@ -104,7 +104,7 @@
 
 ## 接收设备到云的消息
 
-在本部分中，你将创建一个 Node.js 控制台应用程序，用于读取来自 IoT 中心的设备到云消息。IoT 中心公开与[事件中心][lnk-event-hubs-overview]兼容的终结点，以让你读取设备到云的消息。为了简单起见，本教程创建的基本读取器不适用于高吞吐量部署。[处理设备到云的消息][lnk-process-d2c-tutorial]教程介绍了如何大规模处理设备到云的消息。[事件中心入门][lnk-eventhubs-tutorial]教程更详细介绍了如何处理来自事件中心的消息，此教程也适用于与 IoT 中心事件中心兼容的终结点。
+在本部分中，你将创建一个 Node.js 控制台应用程序，用于读取来自 IoT 中心的设备到云消息。IoT 中心公开与[事件中心][lnk-event-hubs-overview]兼容的终结点，以便你可读取设备到云的消息。为了简单起见，本教程创建的基本读取器不适用于高吞吐量部署。[处理设备到云的消息][lnk-process-d2c-tutorial]教程介绍了如何大规模处理设备到云的消息。[事件中心入门][lnk-eventhubs-tutorial]教程更详细地介绍了如何处理来自事件中心的消息，此教程也适用于与 IoT 中心事件中心兼容的终结点。
 
 > [AZURE.NOTE] 读取设备到云消息的事件中心兼容终结点始终使用 AMQPS 协议。
 
@@ -150,7 +150,7 @@
     };
     ```
 
-7. 添加以下代码以创建 **EventHubClient**，打开与 IoT 中心的连接，并为每个分区创建接收器。在创建开始运行后只读取发送到 IoT 中心的消息的接收方时，此应用程序将使用筛选器。这很适合测试环境，因为这样你只看到当前的消息集，但在生产环境中，代码应该要确保它能处理所有消息。有关详细信息，请参阅[如何处理 IoT 中心设备到云的消息][lnk-process-d2c-tutorial]教程：
+7. 添加以下代码以创建 **EventHubClient**，打开与 IoT 中心的连接，并为每个分区创建接收器。在创建开始运行后只读取发送到 IoT 中心的消息的接收方时，此应用程序将使用筛选器。这很适合测试环境，因为这样你将仅看到当前的消息集；但在生产环境中，代码应确保它能处理所有消息。有关详细信息，请参阅[如何处理 IoT 中心设备到云的消息][lnk-process-d2c-tutorial]教程：
 
     ```
     var client = EventHubClient.fromConnectionString(connectionString);
@@ -197,10 +197,10 @@
     var Message = require('azure-iot-device').Message;
     ```
 
-5. 添加 **connectionString** 变量，并使用它创建一个设备客户端。将 **{youriothubname}** 替换为你的 IoT 中心名称，将 **{yourdeviceid}** 和 **{yourdevicekey}** 替换为你在创建设备标识部分中生成的设备值：
+5. 添加 **connectionString** 变量，并使用它创建一个设备客户端。将 **{youriothostname}** 替换为在“创建 IoT 中心”部分创建的 IoT 中心名称，将 **{yourdevicekey}** 替换为在“创建设备标识”部分中生成的设备密钥值：
 
     ```
-    var connectionString = 'HostName={youriothubname}.azure-devices.cn;DeviceId={yourdeviceid};SharedAccessKey={yourdevicekey}';
+    var connectionString = 'HostName={youriothostname};DeviceId=myFirstNodeDevice;SharedAccessKey={yourdevicekey}';
     
     var client = clientFromConnectionString(connectionString);
     ```
@@ -228,11 +228,11 @@
         // Create a message and send it to the IoT Hub every second
         setInterval(function(){
             var windSpeed = 10 + (Math.random() * 4);
-            var data = JSON.stringify({ deviceId: 'mydevice', windSpeed: windSpeed });
+            var data = JSON.stringify({ deviceId: 'myFirstNodeDevice', windSpeed: windSpeed });
             var message = new Message(data);
             console.log("Sending message: " + message.getData());
             client.sendEvent(message, printResultFor('send'));
-        }, 2000);
+        }, 1000);
       }
     };
     ```
@@ -245,7 +245,7 @@
 
 9. 保存并关闭 **SimulatedDevice.js** 文件。
 
-> [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，你应该按 MSDN 文章 [Transient Fault Handling（暂时性故障处理）][lnk-transient-faults]中所述实施重试策略（例如指数性的回退）。
+> [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
 
 
 ## 运行应用程序
@@ -268,24 +268,23 @@
 
     ![][8]
 
-3. [Azure 门户预览][lnk-portal]中的“使用情况”磁贴显示了发送到中心的消息数：
+3. [Azure 门户][lnk-portal]中的“使用情况”磁贴显示了发送到中心的消息数：
 
     ![][43]
 
 ## 后续步骤
 
-在本教程中，你已在门户预览中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。你已使用此设备标识来让模拟设备应用向中心发送设备到云的消息，并创建了用于显示中心所接收消息的应用。可以使用以下教程继续探索 IoT 中心功能和其他 IoT 方案：
+在本教程中，你已在门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。你已使用此设备标识来让模拟设备应用向中心发送设备到云的消息，并创建了用于显示中心所接收消息的应用。
 
-- [使用 IoT 中心发送云到设备的消息][lnk-c2d-tutorial]介绍了如何将消息发送到设备，并处理 IoT 中心生成的传送反馈。
-- [处理设备到云的消息][lnk-process-d2c-tutorial]介绍了如何可靠地处理来自设备的遥测数据和交互消息。
-- [从设备上载文件][lnk-upload-tutorial]介绍了一种模式，该模式利用云到设备的消息来帮助从设备上载文件。
+若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
+
+- [连接你的设备][lnk-connect-device]
+- [设备管理入门][lnk-device-management]
+- [网关 SDK 入门][lnk-gateway-SDK]
+
+若要了解如何扩展 IoT 解决方案和如何大规模处理设备到云的消息，请参阅[处理设备到云的消息][lnk-process-d2c-tutorial]教程。
 
 <!-- Images. -->
-[1]: ./media/iot-hub-node-node-getstarted/create-iot-hub1.png
-[2]: ./media/iot-hub-node-node-getstarted/create-iot-hub2.png
-[3]: ./media/iot-hub-node-node-getstarted/create-iot-hub3.png
-[4]: ./media/iot-hub-node-node-getstarted/create-iot-hub4.png
-[5]: ./media/iot-hub-node-node-getstarted/create-iot-hub5.png
 [6]: ./media/iot-hub-node-node-getstarted/create-iot-hub6.png
 [7]: ./media/iot-hub-node-node-getstarted/runapp1.png
 [8]: ./media/iot-hub-node-node-getstarted/runapp2.png
@@ -299,13 +298,14 @@
 [lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
-[lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 [lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
-[lnk-upload-tutorial]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-free-trial]: /pricing/1rmb-trial/
-[lnk-resource-groups]: /documentation/articles/resource-group-portal/
 [lnk-portal]: https://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0307_2016-->
+[lnk-device-management]: /documentation/articles/iot-hub-device-management-get-started/
+[lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
+[lnk-connect-device]: /develop/iot/
+
+<!---HONumber=Mooncake_0725_2016-->

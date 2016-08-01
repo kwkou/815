@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/01/2016"/>
 
 # 引入 Azure IoT 中心设备管理 (DM) 客户端库
 
@@ -122,7 +122,7 @@ LWM2M 数据模型引入了对象和资源的概念：
 
 我们刚才已说明了实现设备特定的逻辑以执行设备作业的方法。现在，我们将说明哪些对象可供你使用。
 
-其中一些对象是必需的，这意味着你需要实现设备特定的逻辑，以便使其成为 IoT 中心设备管理的一部分。其他对象是可选的，这样你可以根据服务需求进行选择（例如：你可以选择不想要使用 IoT 中心执行固件更新）。以下是每种情况的说明：
+其中一些对象是必需的，这意味着你需要实现特定于设备的逻辑，以便使其成为 IoT 中心设备管理的一部分。其他对象是可选的，这样你可以根据服务需求进行选择（例如：你可以选择不想要使用 IoT 中心执行固件更新）。以下是每种情况的说明：
 
 - **设备对象（必需）**：提供设备特定的信息，如制造商信息、型号、序列号、设备时间。该服务可以读取此信息，并在某些情况下更新它。它还定义了服务可以对设备执行的两种操作：重新启动和出厂重置。
 - **服务器对象（必需）**：包含用来连接到 IoT 中心的连接参数和设置，例如注册和传输绑定的生存期。该服务只能读取此信息。
@@ -147,8 +147,7 @@ LWM2M 数据模型引入了对象和资源的概念：
 若要获取动手体验，可以访问以下资源：
 
 - Intel Edison 固件更新示例：通过使用 Intel Edison 设备启用的设备管理功能的示例。请参阅 [iotdm\_edison\_sample][lnk-edison-sample]。
-- 模拟设备示例：在 Li
-- 示例。请参阅 [iotdm\_simple\_sample][lnk-simple-sample]
+- 模拟设备示例：在 Linux 和 Windows 设备上运行的平台独立设备示例。请参阅 [iotdm\_simple\_sample][lnk-simple-sample]
 - 若要了解有关 LWM2M 对象的详细信息，请参阅 [OMA LWM2M object and resource registry（OMA LWM2M 对象和资源注册表）][lnk-oma]
 
 ## 附录：目前支持的 LWM2M 对象和资源
@@ -201,10 +200,14 @@ LWM2M 数据模型引入了对象和资源的概念：
 | 值 | 读取写入 | String | | 唯一地标识要读取或更新的配置值。 |
 | 应用 | 执行 | | | 对设备应用配置更改。 |
 
+## 后续步骤
 
+若要进一步探索 IoT 中心的功能，请参阅：
 
-
-
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 [img-library-overview]: ./media/iot-hub-device-management-library/library.png
 [lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
@@ -217,11 +220,14 @@ LWM2M 数据模型引入了对象和资源的概念：
 [Wakaama]: https://github.com/eclipse/wakaama
 [OMA LWM2M Object and resource registry]: http://technical.openmobilealliance.org/Technical/technical-information/omna/lightweight-m2m-lwm2m-object-registry
 
-[lnk-run-linux]: http://TODO
 [lnk-Wakaama]: https://github.com/eclipse/wakaama
 [lnk-github1]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c/iotdm_client/lwm2m_objects
 [lnk-github2]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c/iotdm_client/lwm2m_objects
 [lnk-oma]: http://technical.openmobilealliance.org/Technical/technical-information/omna/lightweight-m2m-lwm2m-object-registry
 
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0523_2016-->

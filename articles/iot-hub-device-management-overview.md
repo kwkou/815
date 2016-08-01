@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/01/2016"/>
 
 # IoT 中心设备管理概述（预览版）
 
@@ -101,6 +101,8 @@ DM 客户端库在设备管理方面主要负责以下两项任务：
 
 ## 后续步骤
 
+你可以使用 IoT 设备 SDK 在各种设备硬件平台和操作系统上实现客户端应用程序。IoT 设备 SDK 包含库，可协助将遥测数据发送到 IoT 中心，并接收云到设备的命令。使用 SDK 时，可从数个网络协议中进行选择，以便与 IoT 中心通信。若要了解详细信息，请参阅[有关设备 SDK 的信息][lnk-device-sdks]。
+
 若要继续了解 Azure IoT 中心设备管理功能，请参阅 [Azure IoT 中心设备管理入门][lnk-get-started]教程。
 
 <!-- Images and links -->
@@ -114,5 +116,6 @@ DM 客户端库在设备管理方面主要负责以下两项任务：
 [lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
 [lnk-apidocs]: http://azure.github.io/azure-iot-sdks/
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
+[lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
 
 <!---HONumber=Mooncake_0523_2016-->

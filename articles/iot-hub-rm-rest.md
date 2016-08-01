@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="05/31/2016"
-     wacn.date="07/04/2016"/>
+     wacn.date="08/01/2016"/>
 
 # 教程：使用 C# 程序和 REST API 创建 IoT 中心
 
@@ -169,8 +169,20 @@
 
 既然你已使用 REST API 部署了一个 IoT 中心，接下来可以进一步进行探索：
 
-- 探索 [IoT 中心资源提供程序 REST API][lnk-rest-api] 的功能。
+- 阅读 [IoT 中心资源提供程序 REST API][lnk-rest-api] 的相关功能。
 - 有关 Azure Resource Manager 功能的详细信息，请参阅 [Azure Resource Manager 概述][lnk-azure-rm-overview]。
+
+若要深入了解如何开发 IoT 中心，请参阅以下内容：
+
+- [C SDK 简介][lnk-c-sdk]
+- [IoT 中心 SDK][lnk-sdks]
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Links -->
 [lnk-free-trial]: /pricing/1rmb-trial/
@@ -178,5 +190,12 @@
 [lnk-powershell-install]: /documentation/articles/powershell-install-configure/
 [lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
 [lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
+[lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
+[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
 
-<!---HONumber=Mooncake_0307_2016-->
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0725_2016-->

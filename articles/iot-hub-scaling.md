@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="03/14/2016"
- wacn.date="04/25/2016"/>
+ wacn.date="08/01/2016"/>
 
 # 缩放 IoT 中心
 
@@ -34,6 +34,7 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 | ---- | -------------------- | ------------------- |
 | S1 | 每个计价单位最多 1111 KB/分钟<br/>（1.5 GB/天/计价单位） | 每个计价单位平均 278 条消息/分钟<br/>（400,000 条消息/天/计价单位） |
 | S2 | 每个计价单位最多 16 MB/分钟<br/>（22.8 GB/天/计价单位） | 每个计价单位平均 4167 条消息/分钟<br/>（600 万条消息/天/计价单位） |
+| S3 | 每个计价单位最多 814 MB/分钟<br/>（1144.4 GB/天/计价单位） | 每个计价单位平均 208,333 条消息/分钟<br/>（3 亿条消息/天/计价单位） |
 
 云到设备的消息的性能根据每个设备缩放，每个设备每分钟最多接收 5 条消息。
 
@@ -41,7 +42,7 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 
 由于大多数 IoT 中心标识注册表操作都与设备预配相关，因此不认为这些操作是运行时操作。
 
-有关具体的喷发性能数字，请参阅 [IoT 中心配额和限制][]。
+有关具体的突发性能数字，请参阅 [IoT 中心配额和限制][]。
 
 ## 分片
 
@@ -49,15 +50,25 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 
 ## 后续步骤
 
-若要了解有关 Azure IoT 中心的详细信息，请参阅以下链接：
+若要进一步探索 IoT 中心的功能，请参阅：
 
-- [IoT 中心入门（教程）][lnk-get-started]
-- [Azure IoT 中心是什么？][]
+- [开发人员指南][lnk-devguide]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [lnk-pricing]: /pricing/details/iot-hub/
 [IoT 中心配额和限制]: /documentation/articles/iot-hub-devguide/#throttling
 
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
-[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-mqtt]: /documentation/articles/iot-hub-mqtt-support/
+[lnk-devices]: /documentation/articles/iot-hub-tested-configurations/
+[lnk-protocols]: /documentation/articles/iot-hub-protocol-gateway/
+[lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
+[lnk-scaling]: /documentation/articles/iot-hub-scaling/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0307_2016-->

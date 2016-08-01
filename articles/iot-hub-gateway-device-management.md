@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="08/01/2016"/>
  
 # 在 IoT 网关后启用托管设备
 
@@ -38,7 +38,7 @@
 
 ## 解决方案：Azure IoT 设备管理和网关 SDK 
 
-公共预览版 [Azure IoT 设备管理][lnk-device-management]和 Beta 版 [Azure IoT 网关 SDK] 支持此方案。网关处理以下每个数据流：
+[Azure IoT 设备管理][lnk-device-management]的公共预览版和 [Azure IoT 网关 SDK] 的 Beta 版支持此方案。网关处理以下每个数据流：
 
 -   **遥测数据**：可以使用网关 SDK 来生成理解、筛选以及将遥测数据发送到云中的管道。网关 SDK 提供代表开发人员实现此管道各个部分的代码。有关 SDK 体系结构的详细信息，请参阅 [IoT 网关 SDK - 入门][lnk-gateway-get-started]教程。
 
@@ -57,7 +57,14 @@
 - [IoT 网关 SDK - 使用 Linux 入门][lnk-gateway-get-started]
 - [IoT 网关 SDK – 使用 Linux 通过模拟设备发送设备至云消息][lnk-gateway-simulated]
 
-有关使用 IoT 中心进行设备管理的详细信息，请参阅 [Azure IoT 中心设备管理概述][lnk-device-management]。
+若要深入了解如何使用 IoT 中心管理设备，请参阅 [Azure IoT 中心设备管理客户端库简介][lnk-library-c]。
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Images and links -->
 [1]: ./media/iot-hub-gateway-device-management/overview.png
@@ -69,7 +76,15 @@
 [lnk-gateway-get-started]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-gateway-simulated]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/
+[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
+[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
+[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
+[lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
 
-
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0523_2016-->
