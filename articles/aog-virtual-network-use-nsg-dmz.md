@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-network-aog" ms.date="" wacn.date="06/08/2016"/>
+<tags ms.service="virtual-network-aog" ms.date="" wacn.date="08/01/2016"/>
 
 #使用 NSG 实现 DMZ 区域
 
@@ -32,7 +32,7 @@
    Subnet-1 可以与 Subnet-2 通信，Subnet-1 不能与 Subnet-3 通信。<br>
    Subnet-2 可以与 Subnet-1 和 Subnet-3 通信，Subnet-2 屏蔽掉公网（进出流量都被屏蔽）。<br>
    Subnet-3 可以与 Subnet-2 通信，不能与 Subnet-1 通信。Subnet-3 屏蔽掉公网（进出流量都被屏蔽）。<br>
-   大致的拓扑关系如下（红色表示不通，绿色标识连通）：<br>
+   大致的拓扑关系如下（红色表示不通，绿色表示连通）：<br>
    ![](./media/aog-virtual-network-use-nsg-dmz/nsg-relation.png)<br>
  
 3. 针对三个子网配置 NSG，脚本如下：
@@ -53,7 +53,6 @@
 		 
 		# set DMZ zone(Subnet-1) security rules
 		$DMZNSG | Set-AzureNetworkSecurityRule -Name "RDPInternet-DMZ" -Type Inbound -Priority 200 -Action Allow -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "10.0.0.0/27" -DestinationPortRange 3389 -Protocol TCP;
-		$DMZNSG | Set-AzureNetworkSecurityRule -Name "RDPInternet-DMZ" -Type Inbound -Priority 200 -Action Allow -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "10.0.0.0/27" -DestinationPortRange 22 -Protocol TCP;
 		$DMZNSG | Set-AzureNetworkSecurityRule -Name "HTTPInternet-DMZ" -Type Inbound -Priority 201 -Action Allow -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "10.0.0.0/27" -DestinationPortRange 80 -Protocol TCP;
 		$DMZNSG | Set-AzureNetworkSecurityRule -Name "PowershellInternet-DMZ" -Type Inbound -Priority 202 -Action Allow -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "10.0.0.0/27" -DestinationPortRange 5986 -Protocol TCP;
 		$DMZNSG | Set-AzureNetworkSecurityRule -Name "TelnetInternet-DMZ" -Type Inbound -Priority 203 -Action Allow -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "10.0.0.0/27" -DestinationPortRange 23 -Protocol TCP;

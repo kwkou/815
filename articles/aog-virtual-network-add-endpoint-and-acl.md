@@ -7,7 +7,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-network-aog" ms.date="" wacn.date="06/08/2016"/>
+<tags ms.service="virtual-network-aog" ms.date="" wacn.date="08/01/2016"/>
 
 #虚拟机添加相应端口并配置 ACL
 
@@ -24,7 +24,7 @@
 
 **私有端口**：虚拟机使用私有端口侦听通常发送到虚拟机上运行的应用程序或服务的传入流量。
 
-举个简单例子，配置数据库服务器，使的我们可以通过 Internet 连接到 SQL Server 数据库引擎，我们需要配置 1433 端口，假如我们设置公用端口为 57500，私有端口为 1433，在SSMS连接是我们需要 mycloudservice.chinacloudapp.cn,57500，但是真正是通过私有端口 1433 访问的数据库服务器。
+举个简单例子，配置数据库服务器，使得我们可以通过 Internet 连接到 SQL Server 数据库引擎，我们需要配置 1433 端口，假如我们设置公用端口为 57500，私有端口为 1433，在使用SQL Server Management Studio时我们需要指定连接地址为 mycloudservice.chinacloudapp.cn,57500，但是真正是通过私有端口 1433 访问的数据库服务器。
 
 **ACL**：我们可以创建、管理和删除允许或拒绝通过 Access Control 列表(ACL)访问虚拟机的端点的规则
 

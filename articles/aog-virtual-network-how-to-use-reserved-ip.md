@@ -52,6 +52,7 @@
 *以下价格均为含税价格。
 
 *每月价格的估算基于每个月 744 小时的使用量。
+*从2016 年 4 月 1 日起，保留的 IP 地址价格会下调 25.5%，以下是下调后的新价格：
 
  <table cellspacing="1" cellpadding="2">
     <tbody>
@@ -66,12 +67,12 @@
     </tr> 
  <tr align="left" valign="top">
 		<td>附加的保留 IP 地址</td>
-		<td>¥0.04 每个 IP 每小时 (~¥30 每个 IP 每月)
+		<td>¥0.03 每个 IP 每小时（(~¥22.32 每个 IP 每月)
 	</td>
     </tr> 
  <tr align="left" valign="top">
 		<td>未使用的保留 IP 地址</td>
-		<td>¥0.04 每个 IP 每小时 (~¥30 每个 IP 每月)
+		<td>¥0.03 每个 IP 每小时（(~¥22.32 每个 IP 每月)
 	</td>
     </tr>    
     </tbody>
