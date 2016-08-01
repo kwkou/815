@@ -1,16 +1,16 @@
 <properties
 	pageTitle="设计用于灾难恢复的网络基础结构 | Azure"
 	description="本文讨论 Azure Site Recovery 的网络设计注意事项"
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="rayne-wiselman" 
-	manager="jwhit" 
+	services="site-recovery"
+	documentationCenter=""
+	authors="prateek9us"
+	manager="jwhit"
 	editor=""/>
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="03/08/2016"
-	wacn.date="04/05/2016"/>
+	ms.date="06/21/2016"
+	wacn.date="08/01/2016"/>
 
 #  设计用于灾难恢复的网络基础结构
 
@@ -32,7 +32,7 @@ ASR 让故障转移变为可能，第一步是将指定的虚拟机从主要数�
 
 设计恢复站点的网络时，管理员有两种选择：
 
-- 对恢复站点的网络使用不同的 IP 地址范围。在这种情况下，虚拟机在故障转移之后会获取新的 IP 地址，管理员必须进行 DNS 更新。在[此处](/documentation/articles/site-recovery-vmm-to-vmm/#test-your-deployment)详细了解如何进行 DNS 更新 
+- 对恢复站点的网络使用不同的 IP 地址范围。在这种情况下，虚拟机在故障转移之后会获取新的 IP 地址，管理员必须进行 DNS 更新。在[此处](/documentation/articles/site-recovery-vmm-to-vmm/#test-your-deployment)详细了解如何进行 DNS 更新
 - 对恢复站点的网络使用相同的 IP 地址范围。在某些情况下，即使在故障转移之后，管理员也想在主站点上保留他们的 IP 地址。在正常情况下，管理员必须更新路由以指示 IP 地址的新位置。但是，对于在主站点和恢复站点之间部署了延伸 VLAN 的情况，保留虚拟机的 IP 地址会变成一个不错的选择。保留相同 IP 地址可省去故障转移后的所有网络相关步骤，从而简化了恢复过程。
 
 
@@ -116,11 +116,11 @@ Woodgrove 决定将来自 IP 地址范围（172.16.1.0/24、172.16.2.0/24）的 
 为了帮助 Woodgrove 满足他们的业务需求，我们必须实施下列工作流：
 
 - 创建额外的网络，我们叫它恢复网络，故障转移的虚拟机将在这里创建。
-- 为了确保 VM 的 IP 会在故障转移之后保留，请转到 VM 属性下的“配置”选项卡，指定 VM 在本地使用的相同 IP，然后单击“保存”。当 VM 故障转移时，Azure Site Recovery 将为虚拟机分配所提供的 IP。 
+- 为了确保 VM 的 IP 会在故障转移之后保留，请转到 VM 属性下的“配置”选项卡，指定 VM 在本地使用的相同 IP，然后单击“保存”。当 VM 故障转移时，Azure Site Recovery 将为虚拟机分配所提供的 IP。
 
 ![网络属性](./media/site-recovery-network-design/network-design8.png)
 
-一旦触发故障转移，并在恢复网络中以所需的 IP 地址创建虚拟机后，可以使用 Vnet 到 Vnet 连接建立与此网络的连接。如果需要，此操作可以编写脚本。如我们在关于子网故障转移的上一节所讨论的那样，如果故障转移到 Azure，路由也必须适当地修改，以反映 192.168.1.0/24 现在已移到 Azure。
+一旦触发故障转移，并在恢复网络中以所需的 IP 地址创建虚拟机后，就可使用 [Vnet 到 Vnet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)建立与此网络的连接。如果需要，此操作可以编写脚本。如我们在关于子网故障转移的上一节所讨论的那样，如果故障转移到 Azure，路由也必须适当地修改，以反映 192.168.1.0/24 现在已移到 Azure。
 
 ![在子网故障转移之后](./media/site-recovery-network-design/network-design9.png)
 
@@ -131,7 +131,7 @@ Woodgrove 决定将来自 IP 地址范围（172.16.1.0/24、172.16.2.0/24）的 
 
 ## 选项 2：更改 IP 地址
 
-据我们所见，这种方法似乎最普遍。其采取的做法是更改故障转移中每个 VM 的 IP 地址。此方法的缺点是传入网络需要“学习”原本在 IPx 的应用程序现在在 IPy。即使 IPx 和 IPy 是逻辑名称，通常也需要在整个网络中更改或刷新 DNS 条目，而且必须更新或刷新网络表中的缓存条目，因此，停机时间取决于 DNS 基础结构如何设置。对于 Intranet 应用程序，可以使用低 TTL 值，对于基于 Internet 的应用程序，可以使用[带有 ASR 的 Azure 流量管理器](http://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/)来缓解这些问题
+据我们所见，这种方法似乎最普遍。其采取的做法是更改故障转移中每个 VM 的 IP 地址。此方法的缺点是传入网络需要“学习”原本在 IPx 的应用程序现在在 IPy。即使 IPx 和 IPy 是逻辑名称，通常也需要在整个网络中更改或刷新 DNS 条目，而且必须更新或刷新网络表中的缓存条目，因此，停机时间取决于 DNS 基础结构如何设置。对于 Intranet 应用程序，可以使用低 TTL 值；对于基于 Internet 的应用程序，可以使用 [带有 ASR 的 Azure 流量管理器](http://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/)来缓解这些问题
 
 ### 更改 IP 地址 — 插图
 
@@ -175,4 +175,4 @@ Woodgrove 决定将来自 IP 地址范围（172.16.1.0/24、172.16.2.0/24）的 
 
 [了解](/documentation/articles/site-recovery-network-mapping/)当 VMM 服务器用于管理主站点时，Site Recovery 如何映射源和目标网络。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0725_2016-->

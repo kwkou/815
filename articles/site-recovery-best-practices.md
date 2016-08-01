@@ -9,20 +9,20 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="03/29/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="07/06/2016"
+	wacn.date="08/01/2016"/>
 
 # 准备 Azure Site Recovery 部署
 
-阅读本文可大致了解 Azure Site Recovery 服务支持的每种复制方案的部署要求。在阅读每种方案的一般要求之后，请通过链接阅读每篇部署文章的先决条件部分中所述的特定部署详细信息。
+阅读本文可大致了解 Azure Site Recovery 服务支持的每种复制方案的部署要求。在阅读每种方案的一般要求之后，可将每个部署链接到特定部署详细信息。
 
 阅读本文后，请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
 ## 概述
 
-组织需要制定业务连续性和灾难恢复 (BCDR) 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略的重点在于，发生灾难时提供确保业务数据的安全性和可恢复性以及工作负荷的持续可用性的解决方案。
+组织需要制定 BCDR 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略应保持业务数据的安全性和可恢复性，并确保在发生灾难时工作负荷持续可用。
 
-站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息。
+站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。有关详细信息，请参阅[什么是 Site Recovery？](/documentation/articles/site-recovery-overview/)
 
 
 ## 复制 Hyper-V 虚拟机的要求
@@ -33,7 +33,7 @@
 **Hyper-V** | 本地数据中心内有一个或多个 Hyper-V 主机服务器至少运行 Windows Server 2012 R2。Hyper-V 服务器必须位于 VMM 云中的主机组中。 | 源和目标站点中有一个或多个至少运行 Windows Server 2012 R2 的 Hyper-V 服务器。 | 源和目标站点中有一个或多个至少运行 Windows Server 2012（装有最新更新）的 Hyper-V 服务器。Hyper-V 服务器必须位于 VMM 云中的主机组中。
 **虚拟机** | 源 Hyper-V 服务器上至少需要一个 VM。复制到 Azure 的 VM 必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)。<br>使用[此处](https://technet.microsoft.com/zh-cn/library/hh846766.aspx#BKMK_step4)提供的步骤，在 VM 中安装或升级[集成服务](https://technet.microsoft.com/zh-cn/library/dn798297.aspx)。 | 源 Hyper-V 服务器上至少有一个 VM。复制到 Azure 的 VM 必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)。<br>使用[此处](https://technet.microsoft.com/zh-cn/library/hh846766.aspx#BKMK_step4)提供的步骤，在 VM 中安装或升级[集成服务](https://technet.microsoft.com/zh-cn/library/dn798297.aspx)。 | 源 VMM 云中至少有一个 VM。<br>使用[此处](https://technet.microsoft.com/zh-cn/library/hh846766.aspx#BKMK_step4)提供的步骤，在 VM 中安装或升级[集成服务](https://technet.microsoft.com/zh-cn/library/dn798297.aspx)。
 **Azure 帐户** | 需要一个 [Azure](https://azure.cn/) 帐户和订阅。 | 不适用 | 需要一个 [Azure](https://azure.cn/) 帐户和订阅。
-**Azure 存储空间** | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用 | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。
+**Azure 存储空间** | 你将需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用 | 你将需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。
 **提供程序/代理** | 在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，并在 Hyper-V 主机服务器上安装 Azure 恢复服务代理。该提供程序将与 Azure Site Recovery 进行通信。该代理将处理源和目标 Hyper-V 服务器之间的复制。不会在 VM 上安装任何软件。 | 在部署期间，将在 Hyper-V 主机服务器或群集上安装 Azure Site Recovery 提供程序和 Azure 恢复服务代理。不会在 VM 上安装任何软件。 | 在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，以便与 Azure Site Recovery 通信。通过 LAN/VPN 在 Hyper-V 源和目标服务器之间进行复制。
 **提供程序/代理连接** | 如果提供程序将通过代理连接到站点恢复服务，则需要确保该代理可以访问站点恢复 URL。 | 如果提供程序将通过代理连接到站点恢复，则需要确保该代理可以访问站点恢复 URL。 | 如果提供程序将通过代理连接到站点恢复，则需要确保该代理可以访问站点恢复 URL。
 **Internet 连接** | 从 VMM 服务器和 Hyper-V 主机连接。 | 从 Hyper-V 主机连接。 | 仅在 VMM 服务器上。
@@ -49,7 +49,7 @@
 
 此表汇总了将 VMware VM 和 Windows/Linux 物理服务器复制到 Azure 和辅助站点的要求。
 
->[AZURE.NOTE] 可以使用[增强的](/documentation/articles/site-recovery-vmware-to-azure-classic/)部署模型或用于较旧部署的[旧版](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/)模型将 VMware VM 和物理服务器复制到 Azure。下表包含每个增强模型的部署要求。
+>[AZURE.NOTE] 可使用[增强型](/documentation/articles/site-recovery-vmware-to-azure-classic/)部署模型或用于较旧部署的[旧版](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/)模型将 VMware VM 和物理服务器复制到 Azure。下表包含每个增强模型的部署要求。
 
 **组件** | **复制到 Azure（增强型）** | **复制到辅助站点**
 ---|---|---
@@ -58,7 +58,7 @@
 **VMware vCenter/ESXi** | 如果要在主站点中复制 VMware VM（或要故障回复物理服务器），主站点中需要有 vSphere ESX/ESXi。我们还建议使用 vCenter 服务器来管理 ESXi 主机。 | 主站点和辅助站点中需要一个或多个 VMware ESXi 主机（并根据需要配置 vCenter 服务器）。 
 **故障回复** | 即使复制的是物理服务器，也需要有 VMware 环境才能从 Azure 故障回复。<br/><br/>需要将某个进程服务器设置为 Azure VM<br/><br/>配置服务器充当主目标服务器，但如果要故障回复大量流量，可以设置更多的本地主目标服务器。[了解详细信息](/documentation/articles/site-recovery-failback-azure-to-vmware-classic/)| 即使你要故障转移物理机，从辅助站点到主要站台的故障回复也仍仅限于 VMware。对于故障回复，需要将主目标服务器设置为主 vSphere 服务器上的 VM。
 **Azure 帐户** | 需要一个 [Azure](https://azure.cn/) 帐户和订阅。 | 不适用
-**Azure 存储空间** | 需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用
+**Azure 存储空间** | 你将需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用
 **Azure 虚拟网络** | 你需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。若要在故障转移后进行故障回复，需要设置从 Azure 网络到本地站点的 VPN 连接（或 Azure ExpressRoute）。 | 不适用
 **受保护的计算机** | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装移动服务。 | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装统一代理。
 **连接** | 如果管理服务器将通过代理连接到站点恢复，则需要确保代理服务器可以连接到特定 URL。 | 配置服务器需要访问 Internet。
@@ -72,15 +72,15 @@
 **功能** | **要求** | **详细信息**
 ---|---|---
 Hyper-V 主机 | 应运行 Windows Server 2012 R2 | 如果操作系统不受支持，先决条件检查将会失败
-VMware 虚拟机监控程序 | 支持的操作系统 | 检查要求
-来宾操作系统 | 对于从 Hyper-V 到 Azure 的复制，站点恢复支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统。<br/><br/>对于 VMware 和物理服务器复制，请检查 Windows 和 Linux 先决条件 | 如果不支持，先决条件检查将会失败。 
+VMware 虚拟机监控程序 | 支持的操作系统 | [检查要求](/documentation/articles/site-recovery-vmware-to-azure-classic/#before-you-start-deployment) 
+来宾操作系统 | 对于从 Hyper-V 到 Azure 的复制，站点恢复支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统。<br/><br/>对于 VMware 和物理服务器复制，请检查 Windows 和 Linux [先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic/#before-you-start-deployment) | 如果不支持，先决条件检查将会失败。 
 来宾操作系统体系结构 | 64 位 | 如果不支持，先决条件检查将会失败
 操作系统磁盘大小 | 最大 1023 GB | 如果不支持，先决条件检查将会失败
 操作系统磁盘计数 | 1 | 如果不支持，先决条件检查将会失败。
 数据磁盘计数 | 16 或更少（最大值取决于所创建的虚拟机大小。16 = XL） | 如果不支持，先决条件检查将会失败
 数据磁盘 VHD 大小 | 最大 1023 GB | 如果不支持，先决条件检查将会失败
 网络适配器 | 支持多个适配器 |
-静态 IP 地址 | 支持 | 如果主虚拟机使用的是静态 IP 地址，则你可为要在 Azure 中创建的虚拟机指定静态 IP 地址。请注意，不支持为 Hyper-v 上运行的 linux 虚拟机指定静态 IP 地址。 
+静态 IP 地址 | 支持 | 如果主虚拟机使用的是静态 IP 地址，则你可为要在 Azure 中创建的虚拟机指定静态 IP 地址。请注意，不支持为 Hyper-v 上运行的 linux 虚拟机指定静态 IP 地址。
 iSCSI 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 共享 VHD | 不支持 | 如果不支持，先决条件检查将会失败
 FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
@@ -103,11 +103,23 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 	- **ExpressRoute**：可以配合 Azure ExpressRoute 和 WAN 优化器（如 Riverbed）来使用 Site Recovery。[详细了解](http://blogs.technet.com/b/virtualization/archive/2014/07/20/expressroute-and-azure-site-recovery.aspx)有关 ExpressRoute 的信息。
 	- **复制流量**：Site Recovery 用户只能使用数据块（而不是整个 VHD）执行智能初始复制。在复制过程中，只会复制更改。
 	- **网络流量**：你可以通过使用基于目标 IP 地址和端口的策略设置 [Windows QoS](https://technet.microsoft.com/zh-cn/library/hh967468.aspx)，来控制用于复制的网络流量。此外，如果要使用 Azure 备份代理复制到 Azure Site Recovery，你可以配置该代理的限制。[了解详细信息](https://support.microsoft.com/zh-cn/kb/3056159)。
-- **RTO**：如果你想要度量使用 Site Recovery 时预期的恢复时间目标 (RTO)，我们建议你运行测试故障转移并查看 Site Recovery 作业，以分析完成操作所花费的时间。如果你要故障转移到 Azure，为实现最佳 RTO，我们建议你通过与 Azure 自动化和恢复计划集成来自动化所有手动操作。
-- **RPO**：当你复制到 Azure 时，Site Recovery 支持近乎同步的恢复点目标 (RPO)。这种效果假设数据中心和 Azure 之间有足够的带宽。
+- **RTO**：若要度量使用 Site Recovery 时预期的恢复时间目标 (RTO)，建议你运行测试故障转移并查看 Site Recovery 作业，以分析完成操作所花费的时间。如果你要故障转移到 Azure，为实现最佳 RTO，我们建议你通过与 Azure 自动化和恢复计划集成来自动化所有手动操作。
+- **RPO**：当你复制到 Azure 时，Site Recovery 支持近乎同步的恢复点目标 (RPO)。这假设数据中心和 Azure 之间有足够的带宽。
 
 
+##服务 URL
+确保可通过以下服务器访问 URL
 
+
+**URL** | **VMM 到 VMM** | **VMM 到 Azure** | **Hyper-V 站点到 Azure** | **VMware 到 Azure**
+---|---|---|---|---
+ *.accesscontrol.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
+ *.backup.windowsazure.cn | | 需要访问权限 | 需要访问权限 | 需要访问权限
+ *.hypervrecoverymanager.windowsazure.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
+ *.store.core.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
+ *.blob.core.chinacloudapi.cn | | 需要访问权限 | 需要访问权限 | 需要访问权限
+ https://www.msftncsi.com/ncsi.txt | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
+ https://dev.mysql.com/get/archives/mysql-5.5/mysql-5.5.37-win32.msi | | | | 需要访问权限
 
 
 ## 后续步骤
@@ -121,4 +133,4 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 - [使用 SAN 将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-san/)
 - [复制 Hyper-V VM（带单个 VMM 服务器）](/documentation/articles/site-recovery-single-vmm/)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0725_2016-->

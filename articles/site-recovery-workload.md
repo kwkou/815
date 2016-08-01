@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="03/27/2016" 
-	wacn.date="05/16/2016"/>
+	ms.date="07/06/2016" 
+	wacn.date="08/01/2016"/>
 
 # 可以通过 Azure Site Recovery 保护哪些工作负荷？
 
@@ -35,7 +35,7 @@ Site Recovery 集成 Microsoft 应用程序，其中包括 SharePoint、Exchange
 - 几乎同步的复制，RPO 低至 30 秒，满足大多数关键业务应用的需要。
 - 针对单层或多层应用程序的应用一致性快照。
 - 集成 SQL Server AlwaysOn，纳入了其他应用程序级复制技术，其中包括 AD 复制、SQL AlwaysOn、Exchange 数据库可用性组 (DAG) 和 Oracle 数据防护。
-- 灵活的恢复计划，一次单击即可恢复整个应用程序堆栈，包括在计划中使用外部脚本和手动操作。 
+- 灵活的恢复计划，一次单击即可恢复整个应用程序堆栈，包括在计划中使用外部脚本和手动操作。
 - 站点恢复和 Azure 中的高级网络管理可以简化应用的网络要求，包括保留 IP 地址、配置负载平衡器或集成 Azure 流量管理器以降低 RTO 网络切换数。
 -  丰富的自动化库，提供特定于应用程序的生产就绪型脚本，可以下载并与恢复计划集成。
 
@@ -73,7 +73,7 @@ Active Directory 和 DNS 基础结构对于大多数企业应用而言至关重�
 
 SQL Server 是本地数据中心许多业务应用的数据服务基础。站点恢复可与 SQL Server HA/DR 技术一起用于保护采用 SQL Server 的多层企业应用。Site Recovery 提供：
 
-- 为 SQL Server 提供简单且经济高效的灾难恢复解决方案。将多个版本的 SQL Server 独立服务器和群集复制到 Azure 或辅助站点。  
+- 为 SQL Server 提供简单且经济高效的灾难恢复解决方案。将多个版本的 SQL Server 独立服务器和群集复制到 Azure 或辅助站点。
 - 集成 SQL AlwaysOn 可用性组，使用 Azure Site Recovery 恢复计划管理故障转移和故障回复。
 - 适用于应用程序中所有层（包括 SQL Server 数据库）的端到端恢复计划。
 - 在出现高峰负载时使用站点恢复扩展 SQL Server，让这些负载“迸发”到 Azure 中更大型的 IaaS 虚拟机中。
@@ -144,5 +144,4 @@ Azure Site Recovery 可通过以下方式帮助你保护 Dynamics AX ERP 解决�
 
 [准备](/documentation/articles/site-recovery-best-practices/)站点恢复部署
 
-
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0725_2016-->

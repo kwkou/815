@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="12/14/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="07/06/2016" 
+	wacn.date="08/01/2016"/>
 	
 # 监视虚拟机和物理服务器的保护及其故障排除
 
@@ -25,14 +25,13 @@
 
 ### 用于在本地站点之间复制的 VMM 站点部署。
 
-在两个本地位置之间设置 DR 的一部分操作；需要下载 Azure 站点恢复提供者并将其安装在 VMM 服务器上。提供者需要 Internet 连接，以确保从 Azure 门户触发的所有操作都将转换成本地操作，例如启用保护、在故障排除过程中关闭主端虚拟机，等等。
+在两个本地位置之间设置 DR 的一部分操作；需要下载 Azure 站点恢复提供者并将其安装在 VMM 服务器上。提供者需要 Internet 连接，以确保从 Azure 经典管理门户触发的所有操作都将转换成本地操作，例如启用保护、在故障排除过程中关闭主端虚拟机，等等。
 
 ![用于在本地站点之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image1.png)
 
 ### 用于在本地与 Azure 之间复制的 VMM 站点部署。
 
 在本地和 Azure 之间设置 DR 的一部分操作；下载 Azure Site Recovery 提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
-需要下载恢复提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。
 
 ![用于在本地与 Azure 之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image2.png)
 
@@ -90,6 +89,22 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 
 ![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image13.png)
 
+在虚拟机复制已暂停的情况下，右键单击虚拟机并选择“复制”->“继续复制”
+
+![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image19.png)
+
+如果虚拟机将迁移通过 ASR 配置的新 Hyper-V 主机（在群集或独立计算机中），虚拟机的复制不受影响。确保新 Hyper-V 主机符合所有先决条件并已使用 ASR 进行配置。
+
+### 事件日志
+
+| 事件源 | 详细信息 |
+|-------------------------	|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **应用程序和服务日志/Microsoft/VirtualMachineManager/Server/Admin**（VMM 服务器） | 提供有用的日志用于排查许多不同的 VMM 问题。 |
+| **应用程序和服务日志/MicrosoftAzureRecoveryServices/Replication**（Hyper-V 主机） | 提供有用的日志用于排查许多 Azure 恢复服务代理问题。<br/> ![Hyper-V 主机的事件源](./media/site-recovery-monitoring-and-troubleshooting/eventviewer03.png) |
+| **应用程序和服务日志/Microsoft/Azure Site Recovery/Provider/Operational**（Hyper-V 主机） | 提供有用的日志用于排查许多 Azure Site Recovery 服务问题。<br/> ![Hyper-V 主机的事件源](./media/site-recovery-monitoring-and-troubleshooting/eventviewer02.png) |
+| **应用程序和服务日志/Microsoft/Windows/Hyper-V-VMMS/Admin**（Hyper-V 主机） | 提供有用的日志用于排查许多 Hyper-V 虚拟机管理问题。<br/> ![Hyper-V 主机的事件源](./media/site-recovery-monitoring-and-troubleshooting/eventviewer01.png) |
+
+
 ### Hyper-V 复制日志记录选项
 
 与 Hyper-V 复本相关的所有事件都会记录在位于“应用程序和服务日志\\Microsoft\\Windows”下的 Hyper-V-VMMS\\Admin 日志中。此外，可以针对 Hyper-V-VMMS 启用分析日志。若要启用此日志，请先在“事件查看器”中显示“分析”与“调试”日志。开启事件查看器，然后在“查看”菜单中，单击“显示分析和调试日志”。
@@ -131,7 +146,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 -   [如何为已故障转移或迁移到 Azure 的受保护虚拟机保留驱动器号](http://support.microsoft.com/zh-cn/kb/3031135)
 -   [如何管理本地到 Azure 保护的网络带宽用量](https://support.microsoft.com/zh-cn/kb/3056159)
 -   [ASR：尝试为虚拟机启用保护时发生“找不到群集资源”错误](http://support.microsoft.com/zh-cn/kb/3010979)
--   [了解 Hyper-V 副本及其故障排除指南](http://www.microsoft.com/en-in/download/details.aspx?id=29016) 
+-   [了解 Hyper-V 副本及其故障排除指南](http://www.microsoft.com/en-in/download/details.aspx?id=29016)
 
 ##<a id="common-asr-errors-and-their-resolutions"></a> 常见 ASR 错误及其解决方法	
 
@@ -154,7 +169,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 ### 保护
 - <span style="color:green;">新</span> [启用保护失败并发生错误“无法为虚拟机配置保护”。错误 60007、40003](http://social.technet.microsoft.com/wiki/contents/articles/32194.azure-site-recovery-enable-protection-failing-with-error-protection-couldn-t-be-configured-for-the-virtual-machine-error-60007-40003.aspx)
 - <span style="color:green;">新</span> [启用保护失败并发生错误“无法为虚拟机启用保护。” 错误 70094](http://social.technet.microsoft.com/wiki/contents/articles/32195.azure-site-recovery-enable-protection-failing-with-error-protection-couldn-t-be-enabled-for-the-virtual-machine-error-70094.aspx)
-- <span style="color:green;">新</span> [实时迁移错误 23848 - 将使用 Live 类型移动虚拟机。这可能会中断虚拟机的恢复保护状态。](http://social.technet.microsoft.com/wiki/contents/articles/32021.live-migration-error-23848-the-virtual-machine-is-going-to-be-moved-using-type-live-this-could-break-the-recovery-protection-status-of-the-virtual-machine.aspx) 
+- <span style="color:green;">新</span> [实时迁移错误 23848 - 将使用 Live 类型移动虚拟机。这可能会中断虚拟机的恢复保护状态。](http://social.technet.microsoft.com/wiki/contents/articles/32021.live-migration-error-23848-the-virtual-machine-is-going-to-be-moved-using-type-live-this-could-break-the-recovery-protection-status-of-the-virtual-machine.aspx)
 - [启用保护失败，因为主机上未安装代理](http://social.technet.microsoft.com/wiki/contents/articles/31105.enable-protection-failed-since-agent-not-installed-on-host-machine.aspx)
 - [找不到适合副本虚拟机的主机 - 因为计算资源较少](http://social.technet.microsoft.com/wiki/contents/articles/25501.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-low-compute-resources.aspx)
 - [找不到适合副本虚拟机的主机 - 因为没有连接逻辑网络](http://social.technet.microsoft.com/wiki/contents/articles/25502.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-no-logical-network-attached.aspx)
@@ -175,12 +190,14 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 -   [虚拟机发生带外操作且提交故障转移失败](http://social.technet.microsoft.com/wiki/contents/articles/25507.the-virtual-machine-isn-t-ready-for-planned-failover.aspx)
 -   测试故障转移
     -   [无法启动故障转移，因为正在进行测试故障转移](http://social.technet.microsoft.com/wiki/contents/articles/31111.failover-could-not-be-initiated-since-test-failover-is-in-progress.aspx)
+-   <span style="color:green;">新</span> 故障转移将超时，显示 'PreFailoverWorkflow 任务 WaitForScriptExecutionTask 超时'，这是与虚拟机或虚拟机所属的子网相关联的网络安全组的配置设置造成的。有关详细信息，请参阅['PreFailoverWorkflow 任务 WaitForScriptExecutionTask 超时’](http://social.technet.microsoft.com/wiki/contents/articles/34503.failover-operation-timed-out-due-to-prefailoverworkflow-task-waitforscriptexecutiontask-timed-out.aspx)。
+
 
 ### 配置服务器、进程服务器、主目标
 配置服务器 (CS)、进程服务器 (PS)、主目标 (MT)
--   [PS/CS 作为 VM 托管所在的 ESXi 主机发生故障，出现死机紫屏。](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
+-   [PS/CS 作为虚拟机托管所在的 ESXi 主机发生故障，出现死机紫屏。](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
 
 ### 故障转移后进行远程桌面故障排除
 -   许多客户在连接到 Azure 中已故障转移的 VM 时会遇到问题。[参考故障排除文档使用 RDP 连接到 VM](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0725_2016-->
