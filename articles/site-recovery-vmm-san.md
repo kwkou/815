@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="03/30/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="07/06/2016"
+	wacn.date="08/01/2016"/>
 
 # 通过 Azure Site Recovery 使用 SAN 将 VMM 云中的 Hyper-V VM 复制到辅助站点
 
@@ -23,7 +23,7 @@
 
 组织需要制定业务连续性和灾难恢复 (BCDR) 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略的重点在于，发生灾难时提供确保业务数据的安全性和可恢复性以及工作负荷的持续可用性的解决方案。
 
-站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息。
+站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
 
 本文说明了使用 SAN 复制设置从一个 VMM 站点到其他 VMM 站点的 Hyper-V 虚拟机的复制。本文包含架构概述、部署先决条件和说明。你可以发现和分类 VMM 中的 SAN 存储，设置 LUN，以及向 Hyper-V 群集分配存储。本文最后指导你测试故障转移，以确保一切都按预期进行。
 
@@ -36,8 +36,8 @@
 - 利用企业存储合作伙伴通过光纤通道和 iSCSI 存储提供的 SAN 复制功能。请查看我们的 [SAN 存储合作伙伴](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)。
 - 利用现有的 SAN 基础结构来保护 Hyper-V 群集中部署的任务关键型应用程序。
 - 为来宾群集提供支持。
-- 确保使用 RTO 和 RPO 较低的同步复制以及灵活性较高的异步复制（取决于存储阵列功能），在不同的应用程序层实现复制一致性。  
-- 与 VMM 的集成可以在 VMM 控制台中提供 SAN 管理，VMM 中的 SMI-S 可发现现有的存储。  
+- 确保使用 RTO 和 RPO 较低的同步复制以及灵活性较高的异步复制（取决于存储阵列功能），在不同的应用程序层实现复制一致性。
+- 与 VMM 的集成可以在 VMM 控制台中提供 SAN 管理，VMM 中的 SMI-S 可发现现有的存储。
 
 ## 体系结构
 
@@ -192,13 +192,13 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 		- *.hypervrecoverymanager.windowsazure.cn
 		- *.accesscontrol.chinacloudapi.cn
 		- *.backup.windowsazure.cn
-		- *.blob.core.chinacloudapi.cn
-		- *.store.core.chinacloudapi.cn
-	- 允许 Azure 数据中心 IP 范围中所述的 IP 地址，以及 HTTPS (443) 协议。必须将你打算使用的 Azure 区域以及中国东部的 IP 范围加入允许列表。 
+		- *.blob.core.chinacloudapi.cn 
+		- *.store.core.chinacloudapi.cn 
+	- 允许 [Azure 数据中心 IP 范围](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx)中所述的 IP 地址，以及 HTTPS (443) 协议。必须将你打算使用的 Azure 区域以及中国东部的 IP 范围加入允许列表。
 	- 如果你使用自定义代理，则将使用指定的代理凭据自动创建一个 VMM 运行身份帐户 (DRAProxyAccount)。对代理服务器进行配置以便该帐户可以成功通过身份验证。可以在 VMM 控制台中修改 VMM 运行身份帐户设置。若要执行此操作，请打开“设置”工作区，展开“安全性”，单击“运行身份帐户”，然后修改 DRAProxyAccount 的密码。你将需要重新启动 VMM 服务以使此设置生效。
 
 10. 在“注册密钥”中，选择你从 Azure Site Recovery 下载并复制到 VMM 服务器的密钥。
-11. 在“保管库名称”中，验证将要在其中注册服务器的保管库的名称。 
+11. 在“保管库名称”中，验证将要在其中注册服务器的保管库的名称。
 
 	![服务器注册](./media/site-recovery-vmm-san/vault-creds.png)
 
@@ -235,7 +235,7 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 
 其中的参数如下：
 
- - **/Credentials**：用于指定注册密钥文件所在位置的必需参数  
+ - **/Credentials**：用于指定注册密钥文件所在位置的必需参数
  - **/FriendlyName**：在 Azure Site Recovery 门户中显示的 Hyper-V 主机服务器名称的必需参数。
  - **/EncryptionEnabled**：仅当你需要在 Azure 中以静止方式为虚拟机加密时，才需要在 VMM 到 Azure 方案中使用这个可选参数。请确保提供的文件名具有 **.pfx** 扩展名。
  - **/proxyAddress**：可选参数，用于指定代理服务器的地址。
@@ -360,4 +360,4 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 
 运行测试故障转移以确保环境功能正常以后，请[了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0725_2016-->

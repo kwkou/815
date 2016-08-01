@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="site-recovery"  
-	ms.date="02/22/2016"
-	wacn.date="04/05/2016"/>
+	ms.service="site-recovery"
+	ms.date="07/06/2016"
+	wacn.date="08/01/2016"/>
 
 
 # 准备存储映射，以便通过 Azure Site Recovery 在两个本地数据中心之间进行 Hyper-V 虚拟机复制
@@ -96,4 +96,4 @@ VM5 | C:\ClusterStorage\SourceVolume3 | 不适用 | 无映射，因此将使用 
 
 现在，你已经对存储映射有了更好的了解，因此可以[准备部署 Azure Site Recovery](/documentation/articles/site-recovery-best-practices/) 了。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0725_2016-->
