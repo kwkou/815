@@ -1,6 +1,6 @@
 <properties 
  pageTitle="计划程序 PowerShell Cmdlet 参考" 
- description="" 
+ description="计划程序 PowerShell Cmdlet 参考"
  services="scheduler" 
  documentationCenter=".NET" 
  authors="krisragh" 
@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="03/09/2016"
- wacn.date="04/11/2016"/>
+ ms.date="06/30/2016"
+ wacn.date="08/01/2016"/>
  
 # 计划程序 PowerShell Cmdlet 参考
 
@@ -44,7 +44,9 @@
  [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
  
  [计划程序高可用性和高可靠性](/documentation/articles/scheduler-high-availability-reliability/)
+ 
  [Azure 计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors/)
+ 
  [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
  
   
@@ -52,4 +54,4 @@
 
   
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0725_2016-->
