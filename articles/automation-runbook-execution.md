@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="03/21/2016"
-   wacn.date="06/30/2016" />
+   wacn.date="08/01/2016" />
 
 # 在 Azure 自动化中执行 Runbook
 
@@ -38,7 +38,7 @@
 |正在运行，正在等待资源|作业已卸载，因为它已达到[公平份额](#fairshare)限制。片刻之后，它将从其上一个检查点恢复。|
 |已停止|作业在完成之前已被用户停止。|
 |正在停止|系统正在停止作业。|
-|已挂起|作业已被用户、系统或 Runbook 中的命令暂停。挂起的作业可以重新启动，并且将从其上一个检查点恢复，如果没有检查点，则从 Runbook 的开始处恢复。只有在出现异常时，系统才会挂起 Runbook。默认情况下，ErrorActionPreference 设置为 **Continue**，表示出错时作业将保持运行。如果此首选项变量设置为 **Stop**，则出错时作业将会挂起。仅适用于 PowerShell 工作流 Runbook。|
+|已挂起|作业已被用户、系统或 Runbook 中的命令暂停。挂起的作业可以重新启动，并且将从其上一个检查点恢复，如果没有检查点，则从 Runbook 的开始处恢复。只有在出现异常时，系统才会挂起 Runbook。默认情况下，ErrorActionPreference 设置为 **Continue**，表示出错时作业将保持运行。如果此首选项变量设置为 **Stop**，则出错时作业将会挂起。|
 |正在暂停|系统正在尝试按用户请求暂停作业。Runbook 只有在达到其下一个检查点后才能挂起。如果 Runbook 越过了最后一个检查点，则只有在完成后才能挂起。|
 
 ## 使用 Azure 经典管理门户查看作业状态
@@ -79,10 +79,10 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 
 以下示例命令将检索示例 Runbook 的最后一个作业，并显示其状态、为 Runbook 参数提供的值以及作业的输出。
 
-	$job = (Get-AzureAutomationJob -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" | sort LastModifiedDate –desc)[0]
+	$job = (Get-AzureAutomationJob -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" | sort LastModifiedDate -desc)[0]
 	$job.Status
 	$job.JobParameters
-	Get-AzureAutomationJobOutput -AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+	Get-AzureAutomationJobOutput -AutomationAccountName "MyAutomationAccount" -Id $job.Id -Stream Output
 
 ## 公平份额
 
@@ -90,7 +90,7 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 
 如果 Runbook 连续三次从同一个检查点或者从 Runbook 的开始处重启，则会终止并显示状态“失败，正在等待资源”。这是为了防止 Runbook 无限期运行而无法完成，因为在不重新卸载的情况下，它们无法到达下一个检查点。在此情况下，你将会收到以下异常和失败。
 
-该作业无法继续运行，因为它已反复被系统从同一个检查点逐出。请确保你的 Runbook 在未保持其状态的情况下没有执行冗长的操作。
+*该作业无法继续运行，因为它已反复被系统从同一个检查点逐出。请确保你的 Runbook 在未保持其状态的情况下没有执行冗长的操作。*
 
 在创建 Runbook 时，应确保在两个检查点之间运行任何活动的时间不超过 3 小时。你可能需要向 Runbook 添加检查点以确保它不会达到此 3 小时限制，或者需要将长时间运行的操作进行分解。例如，你的 Runbook 可能对大型 SQL 数据库执行了重新编制索引。如果这一项操作未在公平份额限制内完成，则作业将会卸载并从开始处重启。在此情况下，你应该将重新编制索引操作拆分成多个步骤（例如，一次重新编制一个表的索引），然后在每项操作的后面插入一个检查点，使作业能够在上次操作后恢复并得以完成。
 
@@ -100,4 +100,4 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 
 - [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0725_2016-->

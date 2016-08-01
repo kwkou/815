@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="06/09/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/01/2016"/>
 
 # Azure 自动化中的凭据资产
 
@@ -78,4 +78,4 @@
 
 
  
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

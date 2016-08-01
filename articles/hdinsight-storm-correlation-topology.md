@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/19/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/01/2016"/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
 
@@ -21,11 +21,11 @@
 
 ## 先决条件
 
--	HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+-	Visual Studio 和 HDInsight Tools for Visual Studio：有关安装信息，请参阅 [Get started using the HDInsight tools for Visual Studio（HDInsight Tools for Visual Studio 入门）](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
--	Apache Storm on HDInsight 群集
+-	Apache Storm on HDInsight 群集（基于 Windows）。这将运行 Storm 拓扑，以便处理传入的数据并将其存储在 HBase 中。
 
--	Apache HBase on HDInsight 群集
+-	Apache HBase on HDInsight 群集（基于 Windows）。这是本示例的数据存储。
 
 ## 体系结构
 
@@ -53,7 +53,7 @@
 
 会话启动时，**开始**事件将通过拓扑接收，然后记录到 HBase。收到**结束**事件后，拓扑会检索**开始**事件并计算两个事件之间的时间。然后会将此**持续时间**值存储到 HBase 中，同时存储的还有**结束**事件信息。
 
-> [AZURE.IMPORTANT]虽然此拓扑演示了基本的模式，但生产型解决方案需要针对以下情况进行设计：
+> [AZURE.IMPORTANT] 虽然此拓扑演示了基本的模式，但生产型解决方案需要针对以下情况进行设计：
 >
 > - 事件在到达时混乱无序
 > - 重复的事件
@@ -87,7 +87,7 @@
 
 -	版本：“cf”系列设置为每行保留 5 个版本
 
-	> [AZURE.NOTE]可以使用版本来记录以前为特定行键存储的值。默认情况下，HBase 只返回行的最新版本的值。在这种情况下，同一行将用于所有事件（开始、结束）。每个版本的行通过时间戳值来标识。这样即可通过历史视图来查看针对特定 ID 记录的事件。
+	> [AZURE.NOTE] 可以使用版本来记录以前为特定行键存储的值。默认情况下，HBase 只返回行的最新版本的值。在这种情况下，同一行将用于所有事件（开始、结束）。每个版本的行通过时间戳值来标识。这样即可通过历史视图来查看针对特定 ID 记录的事件。
 
 ## 下载项目
 
@@ -141,7 +141,7 @@
 
 	- 	HBaseTableColumnFamily：列系列名称。该名称包含的列系列名称应该与 SessionInfo 项目中使用的相同
 
-	> [AZURE.IMPORTANT]请勿更改 HBaseTableColumnNames，因为其默认值是 **SessionInfo** 用来检索数据的名称。
+	> [AZURE.IMPORTANT] 请勿更改 HBaseTableColumnNames，因为其默认值是 **SessionInfo** 用来检索数据的名称。
 
 4.  保存属性，然后生成项目。
 
@@ -151,7 +151,7 @@
 
 6.	在**“提交拓扑”**对话框中，选择将运行此拓扑的 Storm 群集。
 
-	> [AZURE.NOTE]第一次提交拓扑时，可能需要几秒钟来检索 HDInsight 群集名称。
+	> [AZURE.NOTE] 第一次提交拓扑时，可能需要几秒钟来检索 HDInsight 群集名称。
 
 7.	一旦上载拓扑并将其提交到该群集，**“Storm 拓扑视图”**将打开并显示正在运行的拓扑。选择 **CorrelationTopology**，然后使用页面右上角的刷新按钮刷新拓扑信息。
 
@@ -159,7 +159,7 @@
 
 	当拓扑开始生成数据时，**“已发出”**列中的值将递增。
 
-	> [AZURE.NOTE]如果**“Storm 拓扑视图”**不会自动打开，可使用以下步骤将其打开：
+	> [AZURE.NOTE] 如果**“Storm 拓扑视图”**不会自动打开，可使用以下步骤将其打开：
 	>
 	> 1. 在“解决方案资源管理器”中，展开“Azure”，然后展开“HDInsight”。
 	>
@@ -183,19 +183,18 @@
 
 	Session fc9fa8e6-6892-4073-93b3-a587040d892e lasted 2 minutes, and ended at 6/5/2015 6:12:15 PM
 
-> [AZURE.NOTE]虽然你输入的时间值为本地时间，但从查询返回的时间将是 UTC。
+> [AZURE.NOTE] 虽然你输入的时间值为本地时间，但从查询返回的时间将是 UTC。
 
 ##停止拓扑
 
 当你准备停止拓扑时，请返回到 Visual Studio 中的 **CorrelationTopology** 项目。在**“Storm 拓扑视图”**中，选择拓扑，然后使用拓扑视图顶部的**“终止”**按钮。
 
-## 删除集群
+##删除群集
 
 [AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ##后续步骤
 
 如需更多 Storm 示例，请参阅[Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
- 
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0725_2016-->

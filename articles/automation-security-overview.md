@@ -9,11 +9,12 @@
    keywords="自动化安全性, 安全的自动化" />
 <tags
 	ms.service="automation"
-	ms.date="05/10/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="07/06/2016"
+	wacn.date="08/01/2016"/>
 
-# Azure 自动化安全
-Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。为了使 Runbook 执行所需操作，Runbook 必须有权使用订阅中所需的最小权限来安全地访问资源。  
+# Azure 自动化安全性
+
+Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。为了使 Runbook 执行所需操作，Runbook 必须有权使用订阅中所需的最小权限来安全地访问资源。
 本文将介绍 Azure 自动化支持的各种身份验证方案，并介绍如何根据你需要管理的单个或多个环境来入门。
 
 ## 自动化帐户概述
@@ -33,7 +34,7 @@ Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。�
 
 方法 | 环境 | 文章
 ----------|----------|----------
-Azure AD 用户帐户 | Azure 资源管理器和 Azure 服务管理 | [Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-sec-configure-aduser-account/)
-Azure AD 服务主体对象 | Azure 资源管理器 | -
+Azure AD 用户帐户 | Azure Resource Manager 和 Azure 服务管理 | [Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-sec-configure-aduser-account/)
+Azure AD 服务主体对象 | Azure Resource Manager  | -
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

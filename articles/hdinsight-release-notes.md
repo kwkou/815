@@ -10,11 +10,43 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="07/07/2016"
+	wacn.date="08/01/2016"/>
 
 
 # Azure HDInsight 上的 Hadoop 组件发行说明
+
+## HDInsight 03/10/2016 发行说明
+
+随此版本一起部署的 HDInsight 群集的所有版本号包括：
+
+* HDInsight (Windows) 2.1.10.859.2123216（HDP 1.3.12.0-01795 - 保持不变）
+* HDInsight (Windows) 3.0.6.859.2123216（HDP 2.0.13.0-2117 - 保持不变）
+* HDInsight (Windows) 3.1.4.859.2123216（HDP 2.1.15.0-2374 - 保持不变）
+* HDInsight (Windows) 3.2.7.859.2123216 (HDP 2.2.9.1-7)
+* SDK 1.5.8
+
+此版本包含以下更新。
+
+| 标题 | 说明 | 受影响区域（例如服务、组件或 SDK） | 群集类型（例如 Hadoop、HBase 或 STORM） | JIRA（如果适用） |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| 更新所有 HDInsight 群集的 HDInsight 版本 | 此发行版已更新所有 HDInsight 群集的 HDInsight 版本| 服务 | 全部| 不适用
+
+## HDInsight 01/27/2016 发行说明
+
+随此版本一起部署的 HDInsight 群集的所有版本号包括：
+
+* HDInsight (Windows) 2.1.10.817.2028315（HDP 1.3.12.0-01795 - 保持不变）
+* HDInsight (Windows) 3.0.6.817.2028315（HDP 2.0.13.0-2117 - 保持不变）
+* HDInsight (Windows) 3.1.4.817.2028315（HDP 2.1.15.0-2374 - 保持不变）
+* HDInsight (Windows) 3.2.7.817.2028315 (HDP 2.2.9.1-1)
+* SDK 1.5.8
+
+此版本包含以下更新。
+
+| 标题 | 说明 | 受影响区域（例如服务、组件或 SDK） | 群集类型（例如 Hadoop、HBase 或 STORM） | JIRA（如果适用） |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| 更新所有 HDInsight 群集的 HDInsight 版本 | 此发行版已更新所有 HDInsight 群集的 HDInsight 版本| 服务 | 全部| 不适用
 
 ## HDInsight 11/30/2015 版发行说明
 
@@ -244,7 +276,7 @@
 
 <tr>
 <td>修复 Storm 群集的 502 网关不正确错误</td>
-<td>此版本修复了影响作业提交 API 并导致 Web 应用在重新启动后关闭的 Bug。</td>
+<td>此版本修复了影响作业提交 API 并导致网站在重新启动后关闭的 Bug。</td>
 <td>服务</td>
 <td>Storm</td>
 <td>不适用</td>
@@ -560,8 +592,8 @@
 </tr>
 
 <tr>
-<td>升级到 Azure Storage SDK for Java 2.0</td>
-<td>HDInsight 版本 3.2 已升级为使用最新版本的 Azure Storage SDK for Java。与 0.6.0 版本相比，现在包含几个重要的 bug 修复程序。</td>
+<td>升级到 Microsoft Azure Storage SDK for Java 2.0</td>
+<td>HDInsight 版本 3.2 已升级为使用最新版本的 Microsoft Azure Storage SDK for Java。与 0.6.0 版本相比，现在包含几个重要的 bug 修复程序。</td>
 <td>HDP</td>
 <td>全部</td>
 <td>不适用</td>
@@ -809,7 +841,7 @@
 <td><p>在此版本中，HDInsight 查询控制台具有两个其他示例：</p>
 
 <p><b>Twitter 趋势分析</b><br>
-Twitter 等 Web 应用所提供的公共 API 是一类用于分析和了解流行趋势的有用数据源。在此教程中，你可以学习如何使用 Hive 获取发送包含特定文字的多数推文的 Twitter 用户列表。</p>
+Twitter 等网站所提供的公共 API 是一类用于分析和了解流行趋势的有用数据源。在此教程中，你可以学习如何使用 Hive 获取发送包含特定文字的多数推文的 Twitter 用户列表。</p>
 
 <p><b>Mahout 电影推荐</b><br>
 Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理数据的算法（例如筛选、分类和群集）。在本教程中，你将要使用一个推荐引擎根据你的好友观看的电影生成电影推荐。</p></td>
@@ -877,7 +909,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 <tr>
 <td><a href = "/documentation/articles/hdinsight-hadoop-customize-cluster-v1/" target="_blank">群集自定义正式发布</a></td>
-<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，你现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这是通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了安装流行的 <a href = "/documentation/articles/hdinsight-hadoop-r-scripts/" target="_blank">R</a>、<a href = "/documentation/articles/hdinsight-hadoop-solr-install-v1/" target="_blank">Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install-v1/" target="_blank">Giraph</a> 模块的过程。这个版本也添加让客户通过 Azure 经典管理门户指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导方针最佳作法和最佳作法，并提供有关如何测试脚本操作的指导方针。</p></td>
+<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，你现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这是通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了安装流行的 <a href = "/documentation/articles/hdinsight-hadoop-r-scripts/" target="_blank">R</a>、<a href = "/documentation/articles/hdinsight-hadoop-solr-install-v1/" target="_blank">Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install-v1/" target="_blank">Giraph</a> 模块的过程。这个版本也添加让客户通过 Azure 经典管理门户指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导方针最佳作法和最佳作法，并提供有关如何测试脚本操作的指导。</p></td>
 <td>功能正式发布</td>
 <td>全部</td>
 <td>不适用</td>
@@ -1017,7 +1049,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 </tr>
 
 <tr>
-<td>为 Azure Web 应用与存储日志分析预先生成作业</td>
+<td>为 Azure 网站与存储日志分析预先生成作业</td>
 <td>HDInsight 查询控制台有一个入门库，它支持处理数据或示例数据的解决方案。
 <p>**处理数据的解决方案**：<br>
 我们已经为最常见的部分数据分析方案创建作业，作为你创建自己的解决方案的起点。你可以运行作业来使用自己的数据，以查看其运作方式。就绪后，使用已学得的知识来创建你在预先生成作业后所制作的解决方案模型。</p>
@@ -1075,7 +1107,12 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 <tr>
 <td>YARN Timeline Server</td>
-<td>YARN Timeline Server（也称为 Generic Application History Server）默认情况下已启用。Timeline Server 提供已完成应用程序的一般相关信息，例如应用程序 ID、应用程序名称、应用程序状态、应用程序提交时间和应用程序完成时间。可访问 URI http://headnodehost:8188 或运行 YARN 命令：yarn application -list -appStates ALL，以从头节点检索此应用程序信息。也可以通过 REST API（位于 https://{ClusterDnsName}. azurehdinsight.cn/ws/v1/applicationhistory/）远程检索此信息。有关详细信息，请参阅 <a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a>。</td>
+<td>YARN Timeline Server（也称为 Generic Application History Server）默认情况下已启用。Timeline Server 提供已完成应用程序的一般相关信息，例如应用程序 ID、应用程序名称、应用程序状态、应用程序提交时间和应用程序完成时间。
+
+可访问 URI http://headnodehost:8188 或运行 YARN 命令：yarn application -list -appStates ALL，以从头节点检索此应用程序信息。
+
+也可以通过 REST API（位于 https://{ClusterDnsName}. azurehdinsight.cn/ws/v1/applicationhistory/）远程检索此信息。
+有关详细信息，请参阅 <a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a>。</td>
 <td>服务、YARN</td>
 <td>Hadoop、HBase</td>
 <td>不适用</td>
@@ -1091,7 +1128,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 </table>
 <br>
 
-**注意：**这个版本已修复防止经典管理门户显示完整版本号或者防止 SDK 或 Windows PowerShell 返回完整版本号的错误。
+**注意：**这个版本已修复防止门户显示完整版本号或者防止 SDK 或 Windows PowerShell 返回完整版本号的错误。
 
 ## 10/15/2014 版发行说明
 
@@ -1100,19 +1137,31 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 ## 10/7/2014 版发行说明
 
-* 使用 Ambari 终结点“https://{clusterDns}.azurehdinsight.cn/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.cn/services/{servicename}/components/{componentname}”时，*host\_name* 字段会返回节点的完全限定域名 (FQDN)，而不只是主机名。例如，你会看到 FQDN“**headnode0.{ClusterDNS}.azurehdinsight.cn**”，而不是返回“**headnode0**”。需要这种改变促进实现可以在一个虚拟网络中部署多个群集类型（如 HBase 和 Hadoop）的方案。例如，使用 HBase 作为 Hadoop 的后端平台时，会发生这种情况。
+* 使用 Ambari 终结点“https://{clusterDns}.azurehdinsight.cn/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.cn/services/{servicename}/components/{componentname}”时，host\_name 字段会返回节点的完全限定域名 (FQDN)，而不只是主机名。例如，你会看到 FQDN“**headnode0.{ClusterDNS}.azurehdinsight.cn**”，而不是返回“**headnode0**”。需要这种改变促进实现可以在一个虚拟网络中部署多个群集类型（如 HBase 和 Hadoop）的方案。例如，使用 HBase 作为 Hadoop 的后端平台时，会发生这种情况。
 
 * 我们已为 HDInsight 群集的默认部署提供新内存设置。以前的默认内存设置没有充分考虑部署 CPU 内核数指南。根据 Hortonworks 建议，这些新的内存设置应该会提供更好的默认值。若要更改，请参阅 SDK 参考文档来更改群集配置。下表中逐项列出了默认 4 CPU 内核（8 容器）HDInsight 群集使用的新内存设置。（附带还提供了在本次发布之前使用的值）。
 
-<table border="1"> <tr><th>组件</th><th>内存分配</th></tr> <tr><td> yarn.scheduler.minimum-allocation</td><td>768 MB（以前为 512 MB）</td></tr> <tr><td> yarn.scheduler.maximum-allocation</td><td>6144 MB（保持不变）</td></tr> <tr><td>yarn.nodemanager.resource.memory</td><td>6144 MB（保持不变）</td></tr> <tr><td>mapreduce.map.memory</td><td>768 MB（以前为 512 MB）</td></tr> <tr><td>mapreduce.map.java.opts</td><td>opts=-Xmx512m（以前为 -Xmx410m）</td></tr> <tr><td>mapreduce.reduce.memory</td><td>1536 MB（以前为 1024 MB）</td></tr> <tr><td>mapreduce.reduce.java.opts</td><td>opts=-Xmx1024m（以前为 -Xmx819m）</td></tr> <tr><td>yarn.app.mapreduce.am.resource</td><td>768 MB（以前为 1024 MB）</td></tr> <tr><td>yarn.app.mapreduce.am.command</td><td>opts=-Xmx512m（以前为 -Xmx819m）</td></tr> <tr><td>mapreduce.task.io.sort</td><td>256 MB（以前为 200 MB）</td></tr> <tr><td>tez.am.resource.memory</td><td>1536 MB（保持不变）</td></tr>
+<table border="1">
+<tr><th>组件</th><th>内存分配</th></tr>
+<tr><td> yarn.scheduler.minimum-allocation</td><td>768 MB（以前为 512 MB）</td></tr>
+<tr><td> yarn.scheduler.maximum-allocation</td><td>6144 MB（无变化）</td></tr>
+<tr><td>yarn.nodemanager.resource.memory</td><td>6144 MB（无变化）</td></tr>
+<tr><td>mapreduce.map.memory</td><td>768 MB（以前为 512 MB）</td></tr>
+<tr><td>mapreduce.map.java.opts</td><td>opts=-Xmx512m（以前为 -Xmx410m）</td></tr>
+<tr><td>mapreduce.reduce.memory</td><td>1536 MB（以前为 1024 MB）</td></tr>
+<tr><td>mapreduce.reduce.java.opts</td><td>opts=-Xmx1024m（以前为 -Xmx819m）</td></tr>
+<tr><td>yarn.app.mapreduce.am.resource</td><td>768 MB（以前为 1024 MB）</td></tr>
+<tr><td>yarn.app.mapreduce.am.command</td><td>opts=-Xmx512m（以前为 -Xmx819m）</td></tr>
+<tr><td>mapreduce.task.io.sort</td><td>256 MB（以前为 200 MB）</td></tr>
+<tr><td>tez.am.resource.memory</td><td>1536 MB（无变化）</td></tr>
 
-</table>
+</table><br>
 
-有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.15/bk_installing_manually_book/content/rpm-chap1-11.html)。Hortonworks 还提供了一款工具用于计算合适的内存设置。
+有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1-11.html)。Hortonworks 还提供了一款工具用于计算合适的内存设置。
 
 关于 Azure PowerShell 和 HDInsight SDK 错误消息：“群集未配置 HTTP 服务访问”：
 
-* 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，起因于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。但旧版的 HDInsight SDK 或 Azure PowerShell 无法正确解释此功能。结果造成某些作业提交操作失败。如果你使用 HDInsight SDK API 或 Azure PowerShell cmdlet 来提交作业（**Use-AzureHDInsightCluster** 或 **Invoke-Hive**），这些作业可能失败并返回错误消息“群集 <clustername> 未配置 HTTP 服务访问”。 或者（根据具体的操作），你可能会收到其他错误消息，例如“无法连接到群集”。
+* 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，起因于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。但旧版的 HDInsight SDK 或 Azure PowerShell 无法正确解释此功能。结果造成某些作业提交操作失败。如果你使用 HDInsight SDK API 或 Azure PowerShell cmdlet 来提交作业（**Use-AzureRmHDInsightCluster** 或 **Invoke-AzureRmHDInsightHiveJob**），这些作业可能失败并返回错误消息“未在群集 <群集名称> 上配置 HTTP 服务访问权限”。 或者（根据具体的操作），你可能会收到其他错误消息，例如“无法连接到群集”。
 
 * 在最新版 HDInsight SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 获取最新的 HDInsight SDK，从[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 获取 Azure PowerShell 工具。
 
@@ -1133,10 +1182,10 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 	* 这项更改解决了某些 Hive 查询由于内存限制较低而遇到的以下错误：“容器即将超出物理内存限制”。
 	* 若要恢复到旧默认值，你可以在创建群集时使用以下命令通过 Azure PowerShell 将此配置值设置为 512：
 
-		Add-AzureHDInsightConfigValues -Core @{"templeton.mapper.memory.mb"="512";}
+		Add-AzureRmHDInsightConfigValues -Core @{"templeton.mapper.memory.mb"="512";}
 
 
-* zookeeper 角色的主机名已更改为 *zookeeper*。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 *zookeepernode* 主机名，则需更新这些组件，让其使用新名称。三个 zookeeper 节点的新名称为：
+* zookeeper 角色的主机名已更改为 zookeeper。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 zookeepernode 主机名，则需更新这些组件，让其使用新名称。三个 zookeeper 节点的新名称为：
 	* zookeeper0
 	* zookeeper1
 	* zookeeper2
@@ -1144,7 +1193,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 ## 2014/8/15 之前创建的群集的注意事项
 
-由于 Azure PowerShell 或 HDInsight SDK 与群集之间的版本不同，你可能会遇到 Azure PowerShell 或 HDInsight SDK 错误消息“群集 <clustername> 未配置 HTTP 服务访问”（或者根据操作，遇到其他错误消息，如：“无法连接到群集”）。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。旧版本 Azure PowerShell 或 HDInsight SDK 无法正确解释此功能，导致提交作业操作失败。如果使用 HDInsight SDK API 或 Azure PowerShell cmdlet（例如 Use-AzureHDInsightCluster 或 Invoke-AzureHDInsightHiveJob）来提交作业，这些作业可能失败并返回上述其中一个错误消息。
+由于 Azure PowerShell 或 HDInsight SDK 与群集之间的版本不同，你可能会遇到 Azure PowerShell 或 HDInsight SDK 错误消息“未在群集 <群集名称> 上配置 HTTP 服务访问权限”（或者根据操作，遇到其他错误消息，如：“无法连接到群集”）。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。旧版本 Azure PowerShell 或 HDInsight SDK 无法正确解释此功能，导致提交作业操作失败。如果使用 HDInsight SDK API 或 Azure PowerShell cmdlet（例如 Use-AzureRmHDInsightCluster 或 Invoke-AzureRmHDInsightHiveJob）来提交作业，这些作业可能失败并返回上述其中一个错误消息。
 
 在最新版 HDInsight SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [NuGet][nuget-link] 访问最新的 HDInsight SDK。可以使用 [Microsoft Web 平台安装程序][webpi-link]访问 Azure PowerShell 工具。
 
@@ -1154,10 +1203,14 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 * **HDInsight 已在新区域推出：**我们已将 HDInsight 的地理位置据点扩展到三个新的区域。HDInsight 客户可以在这些区域创建群集。
 	* 中国北部
 	* 中国东部
-* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 经典管理门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1/)页。
+* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 经典管理门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureRmHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1/)页。
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改：
 
-<table border="1"> <tr><th>HDP</th><th>更改</th></tr> <tr><td>HDP 1.3 / HDI 2.1</td><td>无更改</td></tr> <tr><td>HDP 2.0 / HDI 3.0</td><td>无更改</td></tr> <tr><td>HDP 2.1 / HDI 3.1</td><td>zookeeper：['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
+<table border="1">
+<tr><th>HDP</th><th>更改</th></tr>
+<tr><td>HDP 1.3/HDI 2.1</td><td>无更改</td></tr>
+<tr><td>HDP 2.0/HDI 3.0</td><td>无更改</td></tr>
+<tr><td>HDP 2.1/HDI 3.1</td><td>zookeeper: ['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
 
 
 </table>
@@ -1167,9 +1220,9 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 此版本包含 HDInsight 服务的几项新的增强功能：
 
 * **HDP 2.1 可用性**：HDInsight 3.1（包含 HDP 2.1）已正式发布，并成为新群集的默认版本。
-* **HBase - Azure 经典管理门户改进**：我们将在预览版中提供 HBase 群集。你只需单击几下鼠标，就能从经典管理门户创建 HBase 群集： 
+* **HBase - Azure 经典管理门户改进**：我们将在预览版中提供 HBase 群集。你只需单击几下鼠标，就能从门户创建 HBase 群集：
 
-借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式 Web 应用，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，也可以通过 Azure PowerShell 和 Hive 群集仪表板完成这种分析。
+借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式网站，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，也可以通过 Azure PowerShell 和 Hive 群集仪表板完成这种分析。
 
 ### Apache Mahout 已预装在 HDInsight 3.1 上
 
@@ -1179,7 +1232,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 		mahout org.apache.mahout.classifier.df.BreimanExample -d /user/hdp/glass.data -ds /user/hdp/glass.info -i 10 -t 100
 
-有关此过程的更完整说明，请参阅 Apache Mahout Web 应用上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。
+有关此过程的更完整说明，请参阅 Apache Mahout 网站上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。
 
 
 ### Hive 查询可以在 HDInsight 3.1 中使用 Tez
@@ -1210,14 +1263,38 @@ Oozie 元存储连接到特定群集，无法在群集之间共享。
 
 ###重大变化
 
-**前缀语法**：HDInsight 3.1 和 3.0 群集仅支持“wasb://”语法。较早的“asv://”语法在 HDInsight 2.1 和 1.6 群集中受支持，但在 HDInsight 3.1 或 3.0 群集中不受支持。这意味着提交到 HDInsight 3.1 或 3.0 群集的任何显式使用“asv://”语法的作业都将会失败。应改用“wasb://”语法。而且，提交到任何 HDInsight 3.1 或 3.0 群集的作业，如果是使用现有元存储创建的，而该元存储包含对使用“asv://”语法的资源的显式引用，则这些作业也会失败。这些元存储将需要使用“wasb://”语法重新创建以确定资源地址。
+**前缀语法**：
+HDInsight 3.1 和 3.0 群集仅支持“wasb://”语法。较早的“asv://”语法在 HDInsight 2.1 和 1.6 群集中受支持，但在 HDInsight 3.1 或 3.0 群集中不受支持。这意味着提交到 HDInsight 3.1 或 3.0 群集的任何显式使用“asv://”语法的作业都将会失败。应改用“wasb://”语法。而且，提交到任何 HDInsight 3.1 或 3.0 群集的作业，如果是使用现有元存储创建的，而该元存储包含对使用“asv://”语法的资源的显式引用，则这些作业也会失败。这些元存储将需要使用“wasb://”语法重新创建以确定资源地址。
 
 
 **端口**：HDInsight 服务使用的端口已更改。以前使用的端口号在 Windows 操作系统瞬息端口范围内。端口是从预定义的临时范围自动分配的，该范围适用于基于 Internet 协议的短期通信。新的一组允许的 Hortonworks 数据平台 (HDP) 服务端口号在此范围外，目的是避免遇到头节点上运行的服务所使用的端口时出现冲突。新端口号将不会导致任何重大变化。使用的端口号如下所示：
 
- **HDInsight 1.6 (HDP 1.1)** <table border="1"> <tr><th>名称</th><th>值</th></tr> <tr><td>dfs.http.address</td><td>namenodehost:30070</td></tr> <tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr> <tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr> <tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr> <tr><td>dfs.secondary.http.address</td><td>0.0.0.0:30090</td></tr> <tr><td>mapred.job.tracker.http.address</td><td>jobtrackerhost:30030</td></tr> <tr><td>mapred.task.tracker.http.address</td><td>0.0.0.0:30060</td></tr> <tr><td>mapreduce.history.server.http.address</td><td>0.0.0.0:31111</td></tr> <tr><td>templeton.port</td><td>30111</td></tr> </table><br>
+ **HDInsight 1.6 (HDP 1.1)**
+<table border="1">
+<tr><th>名称</th><th>值</th></tr>
+<tr><td>dfs.http.address</td><td>namenodehost:30070</td></tr>
+<tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr>
+<tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr>
+<tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr>
+<tr><td>dfs.secondary.http.address</td><td>0.0.0.0:30090</td></tr>
+<tr><td>mapred.job.tracker.http.address</td><td>jobtrackerhost:30030</td></tr>
+<tr><td>mapred.task.tracker.http.address</td><td>0.0.0.0:30060</td></tr>
+<tr><td>mapreduce.history.server.http.address</td><td>0.0.0.0:31111</td></tr>
+<tr><td>templeton.port</td><td>30111</td></tr>
+</table><br>
 
- **HDInsight 3.1 和 3.0（HDP 2.1 和 2.0）** <table border="1"> <tr><th>名称</th><th>值</th></tr> <tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr> <tr><td>dfs.namenode.https-address</td><td>headnodehost:30470</td></tr> <tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr> <tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr> <tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr> <tr><td>dfs.namenode.secondary.http-address</td><td>0.0.0.0:30090</td></tr> <tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr> <tr><td>templeton.port</td><td>30111</td></tr> </table><br>
+ **HDInsight 3.1 和 3.0（HDP 2.1 和 2.0）**
+<table border="1">
+<tr><th>名称</th><th>值</th></tr>
+<tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr>
+<tr><td>dfs.namenode.https-address</td><td>headnodehost:30470</td></tr>
+<tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr>
+<tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr>
+<tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr>
+<tr><td>dfs.namenode.secondary.http-address</td><td>0.0.0.0:30090</td></tr>
+<tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr>
+<tr><td>templeton.port</td><td>30111</td></tr>
+</table><br>
 
 ###依赖项
 
@@ -1319,7 +1396,7 @@ HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
 
 
 ### 驱动程序
-SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/)。
+SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-odbc-driver/)。
 
 
 ### Bug 修复
@@ -1360,4 +1437,4 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0725_2016-->

@@ -12,7 +12,7 @@
 	ms.date="05/16/2016"
 	wacn.date="07/11/2016"/>
 
-#发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办
+# 发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办
 
 Azure.cn 的同仁兢兢业业，只为确保在任何时候都能提供你需要的服务。但有时候会因为不可抗力的影响，造成服务意外中断。
 
@@ -26,7 +26,7 @@ Azure 已在平台中内置多种功能，用于支持高度可用的应用程�
 
 为帮助你处理这些罕见事件，我们提供以下 Azure 虚拟机指导，以应对 Azure 虚拟机应用程序部署所在的整个区域发生服务中断的情况。
 
-##选项 1：等待恢复
+## 选项 1：等待恢复
 在此情况下，你不需要采取任何操作。但你要知道，我们正在努力还原服务的可用性。
 
 >[AZURE.NOTE]如果发生中断前尚未设置 Azure Site Recovery、虚拟机备份、读取访问权限异地冗余存储或异地冗余存储，这便是你的最佳选项。如果存储 VM 虚拟硬盘 (VHD) 的存储帐户已设置异地冗余存储或读取访问权限异地冗余存储，你可以指望恢复基本映像 VHD，并尝试用它预配新的 VM。因为除非使用 Azure VM 备份或 Azure Site Recovery，否则不保证能够同步处理数据，所以这不是首选的选项。因此，不保证此选项可行。
@@ -35,19 +35,19 @@ Azure 已在平台中内置多种功能，用于支持高度可用的应用程�
 
 >[AZURE.NOTE]注意，以下两个选项都有可能丢失部分数据。
 
-##选项 2：从备份还原 VM
+## 选项 2：从备份还原 VM
 对于已配置 VM 备份的客户，你可以从备份和恢复点来还原 VM。
 
 若要从 Azure 备份还原新的 VM，请参阅[还原 Azure 中的虚拟机](/documentation/articles/backup-azure-restore-vms/)。
 
 请参阅[在 Azure 中计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)，帮助计划你的 Azure 虚拟机备份基础结构。
 
-##选项 3：使用 Azure Site Recovery 启动故障转移
+## 选项 3：使用 Azure Site Recovery 启动故障转移
 如果已将 Azure Site Recovery 配置为用于受影响的 Azure 虚拟机，则可以从副本还原 VM。这些副本可以位于 Azure 上，也可以位于本地。如此，你就可以用现有副本来创建新的 VM。若要从 Azure Site Recovery 副本还原 VM，请参阅[使用 Azure Site Recovery 在 Azure 区域之间迁移 Azure IaaS 虚拟机](/documentation/articles/site-recovery-migrate-azure-to-azure/)。
 
 >[AZURE.NOTE]虽然 Azure 虚拟机的操作系统和数据磁盘会复制到次要 VHD，但如果它们位于异地冗余存储或读取访问权限异地冗余存储帐户中，则会各自复制每个 VHD。此级别的复制不保证已复制 VHD 的一致性。如果使用这些数据磁盘的应用程序和/或数据库彼此有依赖关系，则不保证所有 VHD 复制为一个快照。也不保证异地冗余存储或读取访问权限异地冗余存储中的 VHD 副本能生成应用程序一致的快照来引导 VM。
 
-##后续步骤
+## 后续步骤
 若要了解如何备份 VM，请参阅[备份 Azure 虚拟机](/documentation/articles/backup-azure-vms/)。
 
 若要了解如何使用 Azure Site Recovery 来安排和自动保护 VMWare 和 Hyper-V VM 上运行的物理（和虚拟）Windows 和 Linux 计算机，请参阅 [Azure Site Recovery](/documentation/services/site-recovery/)。

@@ -9,11 +9,11 @@
 <tags
    ms.service="automation"
    ms.date="03/18/2016"
-   wacn.date="04/20/2016" />
+   wacn.date="08/01/2016" />
 
 # Azure 自动化中的计划
 
-自动化计划用于安排自动运行 Runbook。可能是在单一日期和时间运行一次 Runbook。也可以是用于多次启动 Runbook 的重复执行的每日或每小时计划。通常不从 Runbook 中访问计划。
+自动化计划用于安排自动运行 Runbook。可能是在单一日期和时间运行一次 Runbook。也可以是用于多次启动 Runbook 的重复执行的每小时、每日、每周或每月计划。通常不从 Runbook 中访问计划。
 
 ## Windows PowerShell Cmdlet
 
@@ -47,12 +47,11 @@
 	$scheduleName = "My Daily Schedule"
 	$startTime = (Get-Date).Date.AddDays(1).AddHours(12)
 	$expiryTime = $startTime.AddYears(1)
-	
-	New-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –StartTime $startTime –ExpiryTime $expiryTime –DayInterval 1
+
+	New-AzureAutomationSchedule -AutomationAccountName $automationAccountName -Name $scheduleName -StartTime $startTime -ExpiryTime $expiryTime -DayInterval 1
 
 
 ## 另请参阅
 - [在 Azure 自动化中计划 Runbook](/documentation/articles/automation-scheduling-a-runbook/)
- 
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0725_2016-->

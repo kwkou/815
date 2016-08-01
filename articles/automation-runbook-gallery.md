@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="06/14/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/01/2016"/>
 
 
 # Azure 自动化的 Runbook 和模块库
@@ -46,27 +46,26 @@ Azure 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook �
 
 - 上载内容必须是单个 .ps1 文件。如果 Runbook 需要任何模块、子 Runbook 或资产，则你应该在提交内容的说明和 Runbook 的注释部分列出这些内容。如果你的方案需要多个 Runbook，请单独上载每个 Runbook 并在各自的说明中列出相关 Runbook 的名称。请确保使用相同的标记，以便它们在同一类别中显示。用户阅读说明后才会知道，方案要正常工作需要其他 Runbook。
 
-- 使用“插入代码段”图标将 PowerShell 工作流代码段插入说明中。
+- 使用“插入代码段”图标将 PowerShell 工作流代码片段插入说明中。
 
 - Runbook 库结果中将显示上载摘要，因此，你应该提供详细信息，以帮助用户了解 Runbook 的功能。
 
 - 你应该为上载内容分配一到三个以下标记。Runbook 将在向导中与标记匹配的类别下列出。该向导将忽略不在此列表中的所有标记。如果你未指定任何匹配的标记，则 Runbook 将在“其他”类别下列出。
 
- - 备份
- - 容量管理
- - 更改控制
- - 合规性
- - 开发/测试环境
- - 灾难恢复
- - 监视
- - 修补
- - 设置
- - 补救
- - VM 生命周期管理
+    - 备份
+    - 容量管理
+    - 更改控制
+    - 合规性
+    - 开发/测试环境
+    - 灾难恢复
+    - 监视
+    - 修补
+    - 设置
+    - 补救
+    - VM 生命周期管理
 
 
-- 自动化每小时更新一次该库，因此，你无法立即看见上载内容。如果一小时后你在该库中看不到你的 Runbook，请查看[将 Runbook 添加到 Runbook 库](#AddRunbook)部分中所述的要求。
-
+- 自动化每小时更新一次该库，因此，你无法立即看见上载内容。
 
 ## 请求 Runbook 或模块
 
@@ -77,4 +76,4 @@ Azure 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook �
 - 若要开始使用 Runbook，请参阅[在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
 - [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow/)
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

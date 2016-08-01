@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="02/23/2016"
-   wacn.date="03/24/2016" />
+   wacn.date="08/01/2016" />
 
 # Azure 自动化中的证书资产
 
@@ -63,7 +63,7 @@
 	$certPath = '.\MyCert.pfx'
 	$certPwd = ConvertTo-SecureString -String 'P@$$w0rd' -AsPlainText -Force
 	
-	New-AzureAutomationCertificate -AutomationAccountName "MyAutomationAccount" -Name $certName -Path $certPath –Password $certPwd -Exportable
+	New-AzureAutomationCertificate -AutomationAccountName "MyAutomationAccount" -Name $certName -Path $certPath -Password $certPwd -Exportable
 
 ## 使用证书
 
@@ -75,7 +75,7 @@
 
 	$serviceName = 'MyCloudService'
 	$cert = Get-AutomationCertificate -Name 'MyCertificate'
-	$certPwd = Get-AutomationVariable –Name 'MyCertPassword'
+	$certPwd = Get-AutomationVariable -Name 'MyCertPassword'
 	Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0725_2016-->

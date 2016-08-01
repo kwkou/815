@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="01/27/2016"
-   wacn.date="06/30/2016" />
+   wacn.date="08/01/2016" />
 
 # Azure 自动化中的连接资产
 
@@ -87,4 +87,4 @@
 
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0725_2016-->

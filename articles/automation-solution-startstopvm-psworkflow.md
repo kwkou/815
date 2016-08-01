@@ -8,8 +8,8 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="06/14/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="07/06/2016"
+	wacn.date="08/01/2016"/>
 
 # Azure 自动化方案 - 启动和停止虚拟机
 
@@ -32,7 +32,7 @@
 | Stop-AzureVMs | [停止 Azure 经典 VM](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell 工作流 | 停止自动化帐户中的所有虚拟机，或者停止所有具有特定服务名称的虚拟机。 |
 
 
-##<a id="installing-and-configuring-the-scenario"></a> 安装和配置方案
+##<a id="installing-and-configuring-the-scenario" name="installing-the-solution"></a> 安装和配置方案
 
 ### 1\.安装 Runbook
 
@@ -49,9 +49,9 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 | 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount -Environment AzureChinaCloud** 活动的 **Credential** 参数中指定其他凭据资产。 |
 | 变量 | AzureSubscriptionId | 包含你的 Azure 订阅的订阅 ID。 |
 
-##<a id="using-the-scenario"></a> 使用方案
+##<a id="using-the-scenario" name="using-the-solution"></a> 使用方案
 
-### Parameters
+### 参数
 
 每个 Runbook 具有以下参数。必需参数必须提供值，其他参数则可根据要求选择性地提供值。
 
@@ -100,7 +100,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 下面是此方案中 Runbook 的明细。你可以使用此信息来自定义 Runbook，或只是从中学习如何创作自己的自动化方案。
 
-### Parameters
+### 参数
 
     param (
         [Parameter(Mandatory=$false)] 
@@ -182,7 +182,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 ## 后续步骤
 
-- [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/)
-- [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
+- 若要了解有关使用子 Runbook 的详细信息，请参阅 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/)
+- 若要详细了解执行 Runbook 期间的输出消息和日志记录以帮助进行故障排除，请参阅 [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->
