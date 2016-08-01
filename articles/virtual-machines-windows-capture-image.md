@@ -56,8 +56,6 @@
 
 ### 使用 PowerShell
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 本文假定你已安装 Azure PowerShell 1.0.x 版。我们建议你使用此版本，因为新的 Resource Manager 功能将不会添加到旧的 PowerShell 版本中。如果你还没有安装 PowerShell，请参阅[如何安装配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，查看安装步骤。
 
 1. 打开 Azure PowerShell 并登录到你的 Azure 帐户。

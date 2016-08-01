@@ -16,8 +16,6 @@
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Windows 虚拟机映像
 
-[AZURE.INCLUDE [arm-api-version-both](../includes/arm-api-version-both.md)]
-
 ## 常用 Windows 映像表
 
 | PublisherName | 产品 | SKU |

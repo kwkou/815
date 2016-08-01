@@ -17,8 +17,6 @@
 
 # 使用 Resource Manager 和 PowerShell 创建 Windows VM
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 本文将说明如何使用 [Resource Manager](/documentation/articles/resource-group-overview/) 和 PowerShell 快速创建运行 Windows Server 的 Azure 虚拟机及其所需的资源。
 
 若要创建虚拟机，必须执行本文中的所有步骤，这需要花费大约 30 分钟时间。

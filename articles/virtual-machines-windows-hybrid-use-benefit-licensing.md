@@ -28,8 +28,6 @@
 
 ### 安装 Azure PowerShell
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。即使你要使用 Resource Manager 模板部署 VM，仍需要安装 Azure PowerShell 才能上载 Windows Server VHD（请参阅下一步骤）。
 
 ### 上载 Windows Server VHD

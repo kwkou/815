@@ -46,8 +46,6 @@
 
 ## 阶段 1：配置 TestLab 虚拟网络
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 按照[基本配置测试环境](/documentation/articles/virtual-machines-windows-test-config-env/)中的说明，在名为 TestLab 的 Azure 虚拟网络中配置 DC1、APP1 和 CLIENT1 计算机。
 
 接下来，请启动 Azure PowerShell 提示符。

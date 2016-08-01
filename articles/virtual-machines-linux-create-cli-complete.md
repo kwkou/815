@@ -17,8 +17,6 @@
 
 # 使用 Azure CLI 创建完整的 Linux 环境
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 让我们构建一个简单网络，其中包含一个负载平衡器，以及一对可用于开发和简单计算的 VM。你将通过强制性的逐条命令方式逐步完成整个环境，直到创建一个可通过 Internet 从任何位置连接的有效且安全的 Linux VM。然后，你可以继续构建更复杂的网络和环境。
 
 在此过程中，你将了解 Resource Manager 部署模型提供给你的依赖性层次结构及其提供的功能。明白系统是如何构建的以后，即可使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)更快速地重新构建系统。了解环境的部件如何彼此配合运行后，你可以更轻松地创建模板来将它们自动化。

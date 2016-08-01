@@ -76,8 +76,6 @@
 
 ## 阶段 3：配置目录同步服务器 (DS1)
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 从 Azure 门户预览启动 DC2 计算机（如果需要）。
 
 接下来，在本地计算机上的 Azure PowerShell 命令提示符下使用这些命令创建适用于 DS1 的 Azure 虚拟机。在运行这些命令之前，请填写变量值并删除 < and > 字符。

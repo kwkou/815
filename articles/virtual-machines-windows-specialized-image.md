@@ -70,8 +70,6 @@
 
 ## 使用复制的 VHD 创建 VM
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 通过使用上述步骤中复制的 VHD，现在可以使用 Azure PowerShell 在新虚拟网络中创建基于 Resource Manager 的 Windows VM。VHD 应与要创建的新虚拟机位于同一存储帐户中。
 
 

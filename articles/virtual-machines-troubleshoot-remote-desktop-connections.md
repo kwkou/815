@@ -24,8 +24,6 @@
 
 在执行每个故障排除步骤之后，请尝试连接到 VM。
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 > [AZURE.TIP] 如果门户中的“连接”按钮灰显，并且你未通过 [Express Route](/documentation/articles/expressroute-introduction/) 或[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/) 连接连接到 Azure，则必须首先为 VM 创建并分配一个公共 IP 地址才能使用 RDP。你可以深入了解 [Azure 中的公共 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm/)。
 
 - 使用 PowerShell 重置远程访问。
