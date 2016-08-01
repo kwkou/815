@@ -1,6 +1,6 @@
 <properties 
  pageTitle="计划程序高可用性和可靠性" 
- description="" 
+ description="计划程序高可用性和可靠性"
  services="scheduler" 
  documentationCenter=".NET" 
  authors="krisragh" 
@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="03/09/2016"
- wacn.date="07/21/2016"/>
+ ms.date="06/30/2016"
+ wacn.date="08/01/2016"/>
  
  
 # 计划程序高可用性和可靠性
@@ -26,7 +26,7 @@ Azure 计划程序已在中国的两个区域推出：中国东部和中国北�
 
 不只是 Azure 计划程序前端可用于管理请求，你自己的作业也会经过地域复制。当一个区域中的服务中断时，Azure 计划程序将故障转移，并确保配对地理区域中的另一个数据中心运行作业。
 
-例如，如果你已在美国中南部创建了一个作业，Azure 计划程序会自动在美国中北部复制该作业。如果美国中南部发生故障，Azure 计划程序可确保从美国中北部运行该作业。[有关 Azure 异地复制功能的深入说明，请参阅本主题。](/documentation/articles/sql-database-business-continuity-scenarios/)
+例如，如果你已在美国中南部创建了一个作业，Azure 计划程序会自动在美国中北部复制该作业。如果美国中南部发生故障，Azure 计划程序可确保从美国中北部运行该作业。
 
 ![][1]
 
@@ -52,7 +52,7 @@ Azure 计划程序允许你配置重试策略。默认情况下，如果某个�
 
 ![][2]
 
-请注意，相同的重试策略适用于原始操作和备用错误操作。备用错误操作的操作类型还可以不同于主要操作的操作类型。例如，虽然主要操作可能要调用的 HTTP 终结点，错误操作而可能存储队列操作执行错误日志记录。
+请注意，相同的重试策略适用于原始操作和备用错误操作。备用错误操作的操作类型还可以不同于主要操作的操作类型。例如，虽然主要操作可能调用 HTTP 终结点，但错误操作可能是存储队列操作执行错误日志记录。
 
 若要了解如何配置备用终结点，请参阅 [errorAction](/documentation/articles/scheduler-concepts-terms/#action-and-erroraction)。
 
@@ -81,5 +81,4 @@ Azure 计划程序允许你配置重试策略。默认情况下，如果某个�
 
 [2]: ./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image2.png
 
-
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0725_2016-->

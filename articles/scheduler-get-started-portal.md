@@ -1,6 +1,6 @@
 <properties 
  pageTitle="开始在管理门户中使用 Azure 计划程序 | Azure"
- description="" 
+ description="Azure 门户中的 Azure 计划程序入门"
  services="scheduler" 
  documentationCenter=".NET" 
  authors="krisragh" 
@@ -8,8 +8,8 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="03/09/2016"
- wacn.date="04/11/2016"/>
+ ms.date="06/30/2016"
+ wacn.date="08/01/2016"/>
 
 # Azure 经典管理门户中的 Azure 计划程序入门
 
@@ -27,15 +27,15 @@
 
 5.  单击箭头键以创建作业集合并转到下一阶段 – 创建作业。
 
-6.  让我们来创建一个作业，这只需要使用 GET 请求访问 http://www.microsoft.com/。在“作业操作”屏幕中，为请求的表单字段定义以下值：
+6.  让我们来创建一个作业，这只需要使用 GET 请求访问 http://www.microsoft.com/ 。在“作业操作”屏幕中，为请求的表单字段定义以下值：
 
     1.  **名称：**` getmicrosoft`  
 
-    2.  **操作类型：**` HTTP`
+    2.  **操作类型：**` HTTP`  
 
-    3.  **方法：**` GET`
+    3.  **方法：**` GET`  
 
-    4.  **URI：**` http://www.microsoft.com`
+    4.  **URI：**` http://www.microsoft.com`  
 
    	![][4]
 
@@ -43,9 +43,9 @@
 
     1.  **执行间隔：**` 12 Hours`  
 
-    2.  **开始时间：**` Now`
+    2.  **开始时间：**` Now`  
 
-    3.  **结束时间：**` Select date 2 days after current day and any time`
+    3.  **结束时间：**` Select date 2 days after current day and any time`  
 
    	![][5]
 
@@ -68,11 +68,11 @@
 
 1.  仪表板  
 
-2.  缩放
+2.  缩放  
 
-3.  历史记录
+3.  历史记录  
 
-4.  作业
+4.  作业  
 
 以下主题更为详细地介绍了这些选项卡。
 
@@ -88,15 +88,15 @@
 
 1.  当前作业  
 
-2.  已完成的作业
+2.  已完成的作业  
 
-3.  出错的作业
+3.  出错的作业  
 
-4.  已启用的作业
+4.  已启用的作业  
 
-5.  已禁用的作业
+5.  已禁用的作业  
 
-6.  作业执行次数
+6.  作业执行次数  
 
 #### 速览
 
@@ -104,13 +104,13 @@
 
 1.  状态  
 
-2.  区域
+2.  区域  
 
-3.  错误数
+3.  错误数  
 
-4.  错误发生次数
+4.  错误发生次数  
 
-5.  URI
+5.  URI  
 
 ### 缩放
 
@@ -128,9 +128,9 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
 
 1.  最大作业数  
 
-2.  最大频率
+2.  最大频率  
 
-3.  最大间隔
+3.  最大间隔  
 
 ### 历史记录
 
@@ -148,13 +148,13 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
 
 1.  状态  
 
-2.  详细信息
+2.  详细信息  
 
-3.  重试次数
+3.  重试次数  
 
-4.  执行次数（第一次、第二次、第三次等）
+4.  执行次数（第一次、第二次、第三次等）  
 
-5.  执行的时间戳
+5.  执行的时间戳  
 
 你可以单击“查看历史记录详细信息”以查看每次执行的响应情况。此对话框还允许你将响应复制到剪贴板。
 
@@ -180,21 +180,21 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
 
 1.  名称  
 
-2.  上次运行时间
+2.  上次运行时间  
 
-3.  下次运行时间
+3.  下次运行时间  
 
-4.  状态
+4.  状态  
 
-5.  频率
+5.  频率  
 
-6.  失败数
+6.  失败数  
 
-7.  错误数
+7.  错误数  
 
-8.  执行次数
+8.  执行次数  
 
-9.  操作类型
+9.  操作类型  
 
 ### 配置作业
 
@@ -247,4 +247,5 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
 [13]: ./media/scheduler-get-started-portal/scheduler-get-started-portal013.png
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
-<!---HONumber=Mooncake_0405_2016-->
+
+<!---HONumber=Mooncake_0725_2016-->

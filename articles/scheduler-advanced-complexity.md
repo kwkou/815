@@ -1,15 +1,15 @@
-<properties 
- pageTitle="如何使用 Azure 计划程序生成复杂的计划和高级循环" 
- description="" 
- services="scheduler" 
- documentationCenter=".NET" 
- authors="krisragh" 
- manager="dwrede" 
+<properties
+ pageTitle="如何使用 Azure 计划程序生成复杂的计划和高级循环"
+ description="如何使用 Azure 计划程序生成复杂的计划和高级循环"
+ services="scheduler"
+ documentationCenter=".NET"
+ authors="krisragh"
+ manager="dwrede"
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.date="03/09/2016"
- wacn.date="04/11/2016"/>
+<tags
+ ms.service="scheduler"
+ ms.date="06/30/2016"
+ wacn.date="08/01/2016"/>
 
 # 如何使用 Azure 计划程序生成复杂的计划和高级循环  
 
@@ -27,7 +27,7 @@ Azure 计划程序允许你为作业指定不同的一次性计划和重复性�
 -	图像处理 – 例如，在每个工作日的非高峰时间，使用云计算来压缩当天上载的图像
 
 
-在本文中，我们将会演练你可以使用 Azure 计划程序创建的示例作业。我们将提供用于描述每个计划的 JSON 数据。如果你熟悉[计划程序 REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn528946.aspx)，可以使用与此相同的 JSON 来[创建 Azure 计划程序作业](https://msdn.microsoft.com/zh-CN/library/azure/dn528937.aspx)。
+在本文中，我们将会演练你可以使用 Azure 计划程序创建的示例作业。我们将提供用于描述每个计划的 JSON 数据。如果你熟悉[计划程序 REST API](https://msdn.microsoft.com/zh-cn/library/mt629143.aspx)，可以使用与此相同的 JSON 来[创建 Azure 计划程序作业](https://msdn.microsoft.com/zh-cn/library/mt629145.aspx)。
 
 ## 支持的方案
 
@@ -88,13 +88,13 @@ Azure 计划程序作业中的日期时间引用遵循 [ISO-8601 规范](http://
 
 |**JSON 名称**|**值类型**|**必需？**|**默认值**|**有效值**|**示例**|
 |:---|:---|:---|:---|:---|:---|
-|**startTime**|字符串|否|无|ISO-8601 日期时间|<code>"startTime" :"2013-01-09T09:30:00-08:00"</code>|
-|**recurrence**|对象|否|无|Recurrence 对象|<code>"recurrence" : { "frequency" : "monthly", "interval" : 1 }</code>|
-|**frequency**|字符串|是|无|"minute"、"hour"、"day"、"week"、"month"|<code>"frequency" :"hour"</code> |
-|**interval**|数字|否|1|1 到 1000。|<code>"interval":10</code>|
-|**endTime**|字符串|否|无|代表将来某个时间的日期时间值|<code>"endTime" :"2013-02-09T09:30:00-08:00"</code> |
-|**count**|数字|否|无|>= 1 |<code>"count":5</code>|
-|**schedule**|对象|否|无|Schedule 对象|<code>"schedule" : { "minute" : [30], "hour" : [8,17] }</code>|
+|**_startTime_**|String|否|无|ISO-8601 日期时间|<code>"startTime" : "2013-01-09T09:30:00-08:00"</code>|
+|**_recurrence_**|Object|否|无|Recurrence 对象|<code>"recurrence" : { "frequency" : "monthly", "interval" : 1 }</code>|
+|**_frequency_**|String|是|无|"minute"、"hour"、"day"、"week"、"month"|<code>"frequency" : "hour"</code> |
+|**_interval_**|Number|否|1|1 到 1000。|<code>"interval":10</code>|
+|**_endTime_**|String|否|无|代表将来某个时间的日期时间值|<code>"endTime" : "2013-02-09T09:30:00-08:00"</code> |
+|**_count_**|Number|否|无|>= 1|<code>"count": 5</code>|
+|**_schedule_**|Object|否|无|Schedule 对象|<code>"schedule" : { "minute" : [30], "hour" : [8,17] }</code>|
 
 ## 深入探讨：startTime
 
@@ -173,25 +173,26 @@ Azure 计划程序作业中的日期时间引用遵循 [ISO-8601 规范](http://
 |<code>{"minutes":[15,45],"hours":[5,17],"monthlyOccurrences":[{"day":"wednesday","occurrence":3}]}</code>|在每月第三个星期三的 5:15AM、5:45AM、5:15PM 和 5:45PM 运行|
 
 ## 另请参阅
- 
+
+
  [计划程序是什么？](/documentation/articles/scheduler-intro/)
  
- [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms/)
+ [Azure 计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms/)
  
  [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal/)
  
  [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing/)
  
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
  
- [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
+ [Azure 计划程序 PowerShell cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
  
- [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability/)
+ [Azure 计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability/)
  
- [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors/)
+ [Azure 计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors/)
  
- [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
+ [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
  
   
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0725_2016-->

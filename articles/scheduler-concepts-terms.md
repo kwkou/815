@@ -1,15 +1,15 @@
 <properties 
  pageTitle="计划程序的概念、术语和实体 | Azure"
  description="Azure 计划程序的概念、术语和实体层次结构，包括作业和作业集合。显示了一个计划作业的综合示例。"
- services="scheduler" 
- documentationCenter=".NET" 
- authors="krisragh" 
- manager="dwrede" 
+ services="scheduler"
+ documentationCenter=".NET"
+ authors="krisragh"
+ manager="dwrede"
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="03/09/2016"
- wacn.date="04/11/2016"/>
+ ms.date="06/30/2016"
+ wacn.date="08/01/2016"/>
 
 # 计划程序的概念、术语和实体层次结构
 
@@ -105,7 +105,7 @@
 
 如上面的示例计划作业中所示，一个作业定义具有若干部分：
 
-- 开始时间（“startTime”）  
+- 开始时间（“startTime”）
 
 - 操作（“action”），包括错误操作（“errorAction”）
 
@@ -179,7 +179,7 @@
 
 若要设置重试策略，可指定两个附加设置：重试间隔 (**retryInterval**) 和重试次数 (**retryCount**)。
 
-重试间隔使用 **retryInterval** 对象指定，表示两次重试之间的时间间隔。其默认值为 1 分钟，其最小值为 1 分钟，其最大值为 18 个月。它使用 ISO 8601 格式定义。同样，重试次数的值使用 **retryCount** 对象指定；它是尝试重试的次数。其默认值为 5，其最大值为 20。**retryInterval** 和 **retryCount** 都是可选的。如果 **retryType** 设为 **fixed** 并且未为它们显式指定任何值，则为它们赋予默认值。
+重试间隔使用 **retryInterval** 对象指定，表示两次重试之间的时间间隔。其默认值为 30 秒，最小可配置值为 15 秒，最大值为 18 个月。空闲作业集合中的作业的最小可配置值为 1 小时。它使用 ISO 8601 格式定义。同样，重试次数的值使用 **retryCount** 对象指定；它是尝试重试的次数。其默认值为 4，其最大值为 20。**retryInterval** 和 **retryCount** 都是可选的。如果 **retryType** 设为 **fixed** 并且未为它们显式指定任何值，则为它们赋予默认值。
 
 ## 另请参阅
 
@@ -189,17 +189,17 @@
 
  [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing/)
 
- [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity/)
+ [如何使用 Azure 计划程序生成复杂的计划和高级循环](/documentation/articles/scheduler-advanced-complexity/)
 
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
 
- [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
+ [Azure 计划程序 PowerShell cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
 
- [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability/)
+ [Azure 计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability/)
 
- [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors/)
+ [Azure 计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors/)
 
- [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
+ [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0725_2016-->

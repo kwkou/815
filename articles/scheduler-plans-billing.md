@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="03/09/2016"
- wacn.date="04/11/2016"/>
+ ms.date="06/30/2016"
+ wacn.date="08/01/2016"/>
  
 # Azure 计划程序中的计划和计费方式
 
@@ -21,7 +21,8 @@
 |:---|:---|:---|:---|:---|
 |**免费**|每个作业集合 5 个作业|每小时一次。执行作业的频率不能超过每小时一次|一个订阅最多允许 1 个免费作业集合|无法使用 [HTTP 出站授权对象](/documentation/articles/scheduler-outbound-authentication/)
 |**标准**|每个作业集合 50 个作业|每分钟一次。执行作业的频率不能超过每分钟一次|一个订阅最多允许 100 个标准作业集合|访问计划程序的完整功能集|
-|**高级**|每个作业集合 50 个作业|每分钟一次。执行作业的频率不能超过每分钟一次|一个订阅最多允许 10,000 个高级作业集合。有关详细信息，<a href="mailto:wapteams@microsoft.com">请联系我们</a>。|访问计划程序的完整功能集|
+|**P10 高级**|每个作业集合 50 个作业|每分钟一次。执行作业的频率不能超过每分钟一次|一个订阅最多允许 10,000 个 P10 高级作业集合。如果需要更多，请[联系我们](/support/contact/)|访问计划程序的完整功能集|
+|**P20 高级**|每个作业集合 1,000 个作业|每分钟一次。执行作业的频率不能超过每分钟一次|一个订阅最多允许 500 个 P20 高级作业集合。如果需要更多，请[联系我们](/support/contact/)|访问计划程序的完整功能集|
 
 ## 升级和降级作业集合计划
 
@@ -63,9 +64,10 @@
 有关定价详细信息，请参阅[计划程序定价](/pricing/details/scheduler/)。
 
 ## 另请参阅
- 
+
 
  [计划程序是什么？](/documentation/articles/scheduler-intro/)
+ 
  [Azure 计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms/)
 
  [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal/)
@@ -84,4 +86,4 @@
 
   
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0725_2016-->
