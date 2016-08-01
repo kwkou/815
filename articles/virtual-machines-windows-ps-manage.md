@@ -17,8 +17,6 @@
 
 # 使用 Resource Manager 与 PowerShell 来管理 Azure 虚拟机
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 ## 安装 Azure PowerShell
  
 有关如何安装最新版 Azure PowerShell 的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。

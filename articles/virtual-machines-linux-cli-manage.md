@@ -17,8 +17,6 @@
 
 # Linux 和 Mac 上的常用 Azure CLI 命令
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 通过 Resource Manager 命令和模板使用 Azure CLI 以利用资源组部署 Azure 资源和工作负荷之前，你将需要一个 Azure 帐户。如果没有帐户，你可以[在此处获取 Azure 试用帐户](/pricing/1rmb-trial/)。
 
 如果你尚未安装 Azure CLI 并连接到订阅，请参阅 [Install the Azure CLI（安装 Azure CLI）](/documentation/articles/xplat-cli-install/)以使用 `azure config mode arm` 将模式设置为 `arm`，并使用 `azure login -e AzureChinaCloud` 命令连接到 Azure。

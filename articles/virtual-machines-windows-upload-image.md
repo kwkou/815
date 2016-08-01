@@ -107,8 +107,6 @@ Azure 只能接受以 VHD 文件格式保存的[第 1 代虚拟机](http://blogs
 
 ### 使用 PowerShell 创建或查找 Azure 存储帐户
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 1. 打开 Azure PowerShell 1.0.x 并登录到你的 Azure 帐户。
 
 		Login-AzureRmAccount

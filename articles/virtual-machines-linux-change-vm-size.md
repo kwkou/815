@@ -18,8 +18,6 @@
 
 # 如何调整 Linux VM 的大小
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 ## 概述 
 
 预配虚拟机 (VM) 后，可以通过更改 [VM 大小][vm-sizes]来扩展或缩减 VM。在某些情况下，必须先解除分配 VM。如果新大小在托管 VM 的硬件群集上不可用，则可能会出现这种情况。

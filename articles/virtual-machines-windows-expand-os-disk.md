@@ -17,8 +17,6 @@
 
 # 如何扩展 Azure 资源组中虚拟机的 OS 驱动器
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 [AZURE.INCLUDE [virtual-machine-common-expand-os-disk](../includes/virtual-machines-common-expand-os-disk.md)]
 
 <!---HONumber=Mooncake_0425_2016-->

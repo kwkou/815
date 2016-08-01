@@ -53,8 +53,6 @@
  
 ## 阶段 2：配置 SQL Server 计算机 (SQL1)
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 从 Azure 门户预览启动 DC2 计算机（如果需要）。
 
 在 Azure 门户预览中使用 CORP\\User1 凭据连接到 DC2。

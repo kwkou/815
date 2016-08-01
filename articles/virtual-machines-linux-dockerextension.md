@@ -16,8 +16,6 @@
 
 # 使用 Docker VM 扩展部署环境
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 Docker 是流行的容器管理和映像处理平台，可让你在 Linux（和 Windows）上快速操作容器。通过 Azure，你可以根据需求使用几个不同的方式灵活部署 Docker：
 
 - 若要快速制作应用原型，或如果你已经知道如何使用 Docker Machine，则可以[使用 Docker Machine Azure 驱动程序](/documentation/articles/virtual-machines-linux-docker-machine/)在 Azure 中部署 Docker 主机。

@@ -15,8 +15,6 @@
 
 # 将经典 VNet 连接到新 VNet
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 Azure 资源管理器 (ARM)。如果 Azure 已经使用了一段时间，则你的 Azure VM 和实例角色可能是在经典 VNet 上运行。而较新的 VM 和角色实例可能是在 ARM 中创建的 VNet 上运行。
 
 在此类情况下，你需确保新的基础结构能够与经典资源进行通信。为此，可以在两个 VNet 之间创建一个 VPN 连接。下图显示了包含两个 VNet（经典和 ARM）的示例环境，VNet 之间建立了安全的隧道连接。

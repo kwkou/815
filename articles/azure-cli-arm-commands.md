@@ -1675,8 +1675,6 @@
 
 ## azure vm：用于管理 Azure 虚拟机的命令
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 **创建 VM**
 
 	vm create [options] <resource-group> <name> <location> <os-type>

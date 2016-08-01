@@ -66,8 +66,6 @@ Azure 有三种不同的方法可在 Linux VM 启动时进行更改。
 
 ### 将 cloud-init 脚本添加使用 Azure CLI 创建 VM 的操作中
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 在 Azure 中创建 VM 时，若要启动 cloud-init 脚本，请使用 Azure CLI `--custom-data` 开关来指定 cloud-init 文件。
 
 注意：本文介绍内容尽管是使用 `--custom-data` 开关处理 cloud-init 文件，但也可以使用此参数来发送任意代码或文件。如果 Linux VM 已知道要用此类文件做什么，它们将自动执行。

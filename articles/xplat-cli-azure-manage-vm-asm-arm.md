@@ -16,8 +16,6 @@
 
 # 执行 VM 任务的常见资源管理器模型 Azure CLI 命令
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 本文介绍用于在 Azure 资源管理器模式中创建和管理 Azure VM 的等效 Azure 命令行界面 (Azure CLI) 命令。
 
 [AZURE.INCLUDE [virtual-machines-common-cli-manage](../includes/virtual-machines-common-cli-manage.md)]

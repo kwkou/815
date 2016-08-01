@@ -17,8 +17,6 @@
 
 # 使用 Azure 模板创建受保护的 Linux VM
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 若要从模板创建 Linux VM，需要使用 Resource Manager 模式的 [Azure CLI](/documentation/articles/xplat-cli-install/) (`azure config mode arm`)。
 
 ## 快速命令摘要

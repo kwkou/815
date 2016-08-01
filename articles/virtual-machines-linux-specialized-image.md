@@ -39,8 +39,6 @@
 
 ## 将 VHD 复制到 Resource Manager 存储帐户
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 1. 执行以下两个选项之一，以释放源 VM 使用的 VHD：
 
 	- 如果你想要复制源虚拟机，请停止并解除分配该虚拟机。在门户中，单击“浏览”>“虚拟机”或“虚拟机(经典)”> “你的 VM” >“停止”。对于在 Resource Manager 部署模型中创建的 VM，也可以使用 Azure CLI 命令 `azure vm stop <yourResourceGroup> <yourVmName>`，后接 `azure vm deallocate <yourResourceGroup> <yourVmName>`。请注意，门户中的 VM 状态将从“正在运行”更改为“已停止(已解除分配)”。

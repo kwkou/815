@@ -21,8 +21,6 @@
 - [PowerShell - Template](/documentation/articles/virtual-machines-windows-extensions-configuration-samples/)
 - [CLI - Template](/documentation/articles/virtual-machines-linux-extensions-configuration-samples/)
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 <br>
 
 本文提供为 Windows VM 配置 Azure VM 扩展的示例配置。
