@@ -40,7 +40,7 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 ## 获取模块和配置 
 
-你可以获取包含 cmdlet 的 [PowerShell 模块](/documentation/articles/automation-runbook-gallery/#modules-in-powershell-gallery)，这些 cmdlet 可以用于 [PowerShell 库](http://www.powershellgallery.com/)中的 Runbook。你可以下载并手动导入它们。你不能直接从 Azure 经典管理门户安装这些模块，但可以在下载之后进行安装，就像使用任何其他模块一样。
+你可以获取包含 cmdlet 的 PowerShell 模块，这些 cmdlet 可以用于 [PowerShell 库](http://www.powershellgallery.com/)中的 Runbook。你可以下载并手动导入它们。你不能直接从 Azure 经典管理门户安装这些模块，但可以在下载之后进行安装，就像使用任何其他模块一样。
 
 
 ## Azure 自动化实际应用示例 
