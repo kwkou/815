@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="06/06/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/01/2016"/>
 
 # Azure IoT 中心是什么？
 
@@ -23,7 +23,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 - 可广泛监视设备连接性和设备标识管理事件。
 - 包含最流行语言和平台的设备库。
 
-[IoT 中心与事件中心的比较][lnk-compare]一文描述这两个服务之间的主要差异，并强调说明在 IoT 解决方案中使用 IoT 中心的优点。
+[IoT 中心与事件中心的比较][lnk-compare]一文描述这两个服务之间的主要差异，并重点说明了在 IoT 解决方案中使用 IoT 中心的优点。
 
 ![在物联网解决方案中充当云网关的 Azure IoT 中心][img-architecture]
 
@@ -47,7 +47,7 @@ IoT 中心和设备库可帮助你应对挑战，即如何以可靠且安全的�
 
 Azure IoT 中心以下列方式应对设备连接性挑战：
 
--   **每个设备的身份验证和安全连接性**。你可以为每个设备设置独有的 [安全密钥][lnk-devguide-security]，让它连接到 IoT 中心。[IoT 中心标识注册表][lnk-devguide-identityregistry]会在解决方案中存储设备标识和密钥。解决方案后端可将个别设备加入白名单或黑名单，以便完全控制设备访问权限。
+-   **每个设备的身份验证和安全连接性**。你可以为每个设备设置独有的[安全密钥][lnk-devguide-security]，让它连接到 IoT 中心。[IoT 中心标识注册表][lnk-devguide-identityregistry]会在解决方案中存储设备标识和密钥。解决方案后端可将个别设备加入允许列表或方块列表，以便完全控制设备访问权限。
 
 -   **设备连接操作监视**。你可以收到有关设备标识管理操作与设备连接事件的详细操作日志。这可让 IoT 解决方案轻松识别连接问题，例如，尝试使用错误凭据进行连接的设备、消息发送太频繁，或拒绝所有云到设备的消息。
 
@@ -64,7 +64,7 @@ Azure IoT 中心以下列方式应对设备连接性挑战：
 
 -   **基于事件的设备到云引入。** IoT 中心可以从你的设备每秒可靠地收到数百万个事件。它可以接着使用事件处理器引擎，在热路径上处理这些事件。也可以将它们存储在冷路径上以供分析。IoT 中心可保留最多 7 天的事件数据，以保证可靠的处理并消减负载峰值。
 
--   **可靠的云到设备消息传送（或命令）。** 解决方案后端可以使用 IoT 中心将消息发送到单个设备（含至少一次的传递保证）。每条消息都有单独的生存时间设置，且后端可以请求传递和过期回执。这可确保完全了解云到设备消息的生命周期。之后，你就可以实现包含设备上运行的操作的业务逻辑。
+-   **可靠的云到设备消息传送（或*命令*）。** 解决方案后端可以使用 IoT 中心将消息发送到单个设备（含至少一次的传递保证）。每条消息都有单独的生存时间设置，且后端可以请求传递和过期回执。这可确保完全了解云到设备消息的生命周期。之后，你就可以实现包含设备上运行的操作的业务逻辑。
 
 -   **将文件和缓存的传感器数据上载到云。** 你的设备可以使用 SAS URI 将 IoT 中心为你托管的文件上载到 Azure 存储空间。当文件到达云时，IoT 中心可以生成通知，使后端可以处理这些文件。
 
@@ -88,18 +88,18 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 - 对于因为电源或连接性而导致连接不稳定的设备而言，可通过保留命令和设备通知直到设备连接并接收它们，进而促进其双向通信。IoT 中心会为发送的命令维护设备特定的队列。
 - 针对通过网关到特定服务的受保护传输，应用程序有效负载数据会受到单独保护。
 
-移动行业已大规模地成功使用服务辅助通信模式来实现推送通知服务，例如 [Windows 推送通知服务][lnk-wns] 和 [Apple Push Notification 服务][lnk-apple-push]。
+移动行业已大规模地成功使用服务辅助通信模式来实现推送通知服务，例如 [Windows 推送通知服务][lnk-wns]和 [Apple Push Notification 服务][lnk-apple-push]。
 
 ## 后续步骤
 
-若要了解有关 Azure IoT 中心的详细信息，请参阅以下链接：
+若要了解 Azure IoT 中心如何实现标准的 IoT 设备管理，以便远程管理、配置和更新设备，请参阅 [Azure IoT 中心设备管理概述][lnk-device-management]。
 
-* [IoT 中心入门][lnk-get-started]
-* [连接你的设备][lnk-connect-device]
-* [处理设备到云的消息][lnk-d2c]
+你可以使用 IoT 设备 SDK 在各种设备硬件平台和操作系统上实现客户端应用程序。IoT 设备 SDK 包含库，可协助将遥测数据发送到 IoT 中心，并接收云到设备的命令。使用 SDK 时，可从数个网络协议中进行选择，以便与 IoT 中心通信。若要了解详细信息，请参阅[设备 SDK 的相关信息][lnk-device-sdks]。
 
+若要开始编写一些代码并运行一些示例，请参阅 [IoT 中心入门][lnk-get-started]教程。
 
 [img-architecture]: ./media/iot-hub-what-is-iot-hub/hubarchitecture.png
+
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-connect-device]: /develop/iot/
 [lnk-d2c]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
@@ -116,3 +116,4 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
+[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/

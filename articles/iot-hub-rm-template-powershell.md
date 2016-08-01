@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="04/07/2016"
-     wacn.date="05/05/2016"/>
+     ms.date="05/03/2016"
+     wacn.date="08/01/2016"/>
 
 # 使用 PowerShell 创建 IoT 中心
 
@@ -54,7 +54,7 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 
 使用 JSON 模板在资源组中创建新的 IoT 中心。还可以使用模板更改现有的 IoT 中心。
 
-1. 使用文本编辑器创建名为 **template.json** 的 ARM 模板，并指定以下资源定义来创建新的标准 IoT 中心。本示例在**中国东部**区域添加 IoT 中心，并使用 **2016-02-03** API 版本。此模板还要求你在名为 **hubName** 的参数中传入 IoT 中心名称。
+1. 使用文本编辑器创建名为 **template.json** 的 ARM 模板，并指定以下资源定义来创建新的标准 IoT 中心。此示例会在“中国东部”区域添加 IoT 中心，在与事件中心兼容的终结点上创建两个使用者组（**cg1** 和 **cg2**），并使用 **2016-02-03** API 版本。此模板还要求你在名为 **hubName** 的参数中传入 IoT 中心名称。
 
     ```
     {
@@ -108,10 +108,10 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 
 2. 将模板文件保存在你的本地计算机上。本示例假设将它保存在名为 **c:\\templates** 的文件夹中。
 
-3. 运行以下命令部署新的 IoT 中心，并传递 IoT 中心的名称作为参数。在此示例中，IoT 中心的名称为 **myiothub**（请注意此名称必须全局唯一）：
+3. 运行以下命令部署新的 IoT 中心，并传递 IoT 中心的名称作为参数。在本实例中，IoT 中心名称是 **abcmyiothub**（请注意，此名称必须全局唯一，因此应包含你的姓名或姓名的首字母缩写）：
 
     ```
-    New-AzureRmResourceGroupDeployment -ResourceGroupName MyIoTRG1 -TemplateFile C:\templates\template.json -hubName myiothub
+    New-AzureRmResourceGroupDeployment -ResourceGroupName MyIoTRG1 -TemplateFile C:\templates\template.json -hubName abcmyiothub
     ```
 
 4. 输出将显示你创建的 IoT 中心的密钥。
@@ -124,8 +124,20 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 
 既然你已使用 REST API 和 PowerShell 部署了一个 IoT 中心，接下来可以进一步进行探索：
 
-- 阅读有关 [IoT 中心资源提供程序 REST API][lnk-rest-api] 的功能。
+- 阅读 [IoT 中心资源提供程序 REST API][lnk-rest-api] 的相关功能。
 - 有关 Azure Resource Manager 功能的详细信息，请参阅 [Azure Resource Manager 概述][lnk-azure-rm-overview]。
+
+若要深入了解如何开发 IoT 中心，请参阅以下内容：
+
+- [C SDK 简介][lnk-c-sdk]
+- [IoT 中心 SDK][lnk-sdks]
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Links -->
 [lnk-free-trial]: /pricing/1rmb-trial/
@@ -133,6 +145,12 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 [lnk-powershell-install]: /documentation/articles/powershell-install-configure/
 [lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
 [lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
-[lnk-powershell-arm]: /documentation/articles/powershell-azure-resource-manager/
+[lnk-powershell-arm]: /documentation/articles/powershell-azure-resource-manager
+[lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
+[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
 
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 <!---HONumber=Mooncake_0307_2016-->

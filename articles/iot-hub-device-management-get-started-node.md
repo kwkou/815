@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/01/2016"/>
 
 # 使用 node.js 进行 Azure IoT 中心设备管理入门（预览版）
 
@@ -39,7 +39,7 @@
 
 ## 创建支持设备管理的 IoT 中心
 
-需要针对要连接到的模拟设备创建支持设备管理的 IoT 中心。以下步骤说明如何使用 Azure 门户预览完成此任务。
+需要针对要连接到的模拟设备创建支持设备管理的 IoT 中心。以下步骤说明如何使用 Azure 门户完成此任务。
 
 1.  登录到 [Azure 门户预览]。
 2.  在跳转栏中，依次单击“新建”、“物联网”和“Azure IoT 中心”。
@@ -180,15 +180,17 @@
 
 ## 后续步骤
 
-若要继续了解 Azure IoT 中心设备管理功能，请参阅[使用示例 UI 了解 Azure IoT 中心设备管理][lnk-sample-ui]教程。
+若要继续完成 IoT 中心的入门内容，请参阅[网关 SDK 入门][lnk-gateway-SDK]。
+
+若要详细了解 Azure IoT 中心设备管理功能，请参阅[使用示例 UI 了解 Azure IoT 中心设备管理][lnk-sample-ui]教程。
 
 <!-- images and links -->
-[img-new-hub]: ./media/iot-hub-device-management-get-started/image1.png
-[img-configure-hub]: ./media/iot-hub-device-management-get-started/image2.png
-[img-monitor]: ./media/iot-hub-device-management-get-started/image3.png
-[img-keys]: ./media/iot-hub-device-management-get-started/image4.png
-[img-connection]: ./media/iot-hub-device-management-get-started/image5.png
-[img-output]: ./media/iot-hub-device-management-get-started/image6.png
+[img-new-hub]: ./media/iot-hub-device-management-get-started-node/image1.png
+[img-configure-hub]: ./media/iot-hub-device-management-get-started-node/image2.png
+[img-monitor]: ./media/iot-hub-device-management-get-started-node/image3.png
+[img-keys]: ./media/iot-hub-device-management-get-started-node/image4.png
+[img-connection]: ./media/iot-hub-device-management-get-started-node/image5.png
+[img-output]: ./media/iot-hub-device-management-get-started-node/image6.png
 [img-dm-ui]: media/iot-hub-device-management-get-started-node/dmui.png
 
 [lnk-free-trial]: /pricing/1rmb-trial/
@@ -196,5 +198,6 @@
 [使用资源组管理 Azure 资源]: /documentation/articles/resource-group-portal/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management
 [lnk-sample-ui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 
 <!---HONumber=Mooncake_0523_2016-->

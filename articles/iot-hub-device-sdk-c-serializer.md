@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="05/17/2016"
-     wacn.date="07/04/2016"/>
+     wacn.date="08/01/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 
@@ -21,6 +21,8 @@
 最后，本文将回顾前面文章中涵盖的一些主题，例如消息和属性处理。我们将会发现，使用**序列化程序**库时，这些功能的运行方式与使用 **IoTHubClient** 库时相同。
 
 本文中所述的所有内容都基于**序列化程序** SDK 示例。如果你想要遵循这些内容，请参阅适用于 C 语言的 Azure IoT 设备 SDK 中包含的 **simplesample\_amqp** 和 **simplesample\_http** 应用程序。
+
+你可在 [Microsoft Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) GitHub 存储库中找到**适用于 C 语言的Azure IoT 设备 SDK**，并可在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
 
 ## 建模语言
 
@@ -96,7 +98,7 @@ WITH_DATA(TestType, Test)
 );
 ```
 
-我们模型包含 **TestType** 类型的单个数据事件。**TestType** 是包含多个成员的复杂类型，这些成员共同演示了**序列化程序**建模语言支持的基元类型。
+我们的模型包含 **TestType** 类型的单个数据事件。**TestType** 是包含多个成员的复杂类型，这些成员共同演示了**序列化程序**建模语言支持的基元类型。
 
 使用类似于这样的模型，我们可以编写代码，以将数据发送到 IoT 中心，如下所示：
 
@@ -187,7 +189,7 @@ EDM_DATE_TIME_OFFSET GetDateTimeOffset(time_t time)
 
 此示例演示使用**序列化程序**库的优点 -- 它可让我们将 JSON 发送到云，而不需要在应用程序中显式处理序列化。我们只需考虑如何在模型中设置数据事件的值，然后调用简单的 API 将这些事件发送到云。
 
-有了此信息，我们便可以定义包含受支持数据类型范围的模型，这些数据类型包括复杂类型（甚至可以包含其他复杂类型内的复杂类型）。不过，上述示例生成的序列化 JSON 突显了一个重点。如何利用**序列化程序**库发送数据完全确定了 JSON 的构成形式。此特定要点就是接下来要讨论的内容。
+有了此信息，我们便可以定义包含受支持数据类型范围的模型，这些数据类型包括复杂类型（甚至可以包含其他复杂类型内的复杂类型）。不过，上述示例生成的序列化 JSON 突显了一个重点。如何利用**序列化程序**库发送数据完全决定了 JSON 的构成形式。此特定要点就是接下来要讨论的内容。
 
 ## 有关序列化的详细信息
 
@@ -364,11 +366,11 @@ if (SERIALIZE(&destination, &destinationSize, thermostat->Temperature, thermosta
 
 ]
 
-换而言之，你可能预期此代码在分别发送**温度**和**湿度**时是一样的。这样就可以方便将两个事件在同一个调用中传递到 **SERIALIZE**。不过，事实并非如此。上述代码会将此单个数据事件发送到 IoT 中心：
+换而言之，你可能预期此代码在分别发送**温度**和**湿度**时是一样的。这样就可以方便地将两个事件在同一个调用中传递到 **SERIALIZE**。不过，事实并非如此。上述代码会将此单个数据事件发送到 IoT 中心：
 
 {"Temperature":75, "Humidity":45}
 
-这样似乎很奇怪，因为模型将**温度**和**湿度**定义为两个独立的事件：
+这样似乎很奇怪，因为模型将**温度**和**湿度**定义为两个*独立的*事件：
 
 ```
 DECLARE_MODEL(Thermostat,
@@ -378,7 +380,7 @@ WITH_DATA(EDM_DATE_TIME_OFFSET, Time)
 );
 ```
 
-此外，没有建模这些**温度**和**湿度**位于同一结构的事件：
+更确切点说，我们并没有建模这些**温度**和**湿度**位于同一结构的事件：
 
 ```
 DECLARE_STRUCT(TemperatureAndHumidityEvent,
@@ -426,7 +428,7 @@ if (SERIALIZE(&destination, &destinationSize, thermostat->Temperature, thermosta
 {"Temperature":75, "Time":"2015-09-17T18:45:56Z"}
 ```
 
-这将生成如同已使用 **Temperature** 和 **Time** 成员来定义 **TemperatureEvent** 一样（就像在模型 1 所做的一样）的完全相同序列化事件。在本例中，我们可以使用不同的模型（模型 2）来生成完全相同的序列化事件，因为我们以不同的方式调用了 **SERIALIZE**。
+这将生成如同使用 **Temperature** 和 **Time** 成员来定义 **TemperatureEvent** 一样（就像在模型 1 所做的一样）的完全相同序列化事件。在本例中，我们可以使用不同的模型（模型 2）来生成完全相同的序列化事件，因为我们以不同的方式调用了 **SERIALIZE**。
 
 重点是，如果将多个数据事件传递给 **SERIALIZE**，则它会假设每个事件都是单个 JSON 对象中的一个属性。
 
@@ -592,7 +594,7 @@ WITH_DATA(int, MyData)
 
 请注意，将这些值增大到足够高的数目可能会超出编译器限制。对于这一点，**nMacroParameters** 是要考虑的主要参数。C99 规范规定，宏定义中至少允许 127 个参数。Microsoft 编译器完全遵循此规范（限制为 127），因此无法将 **nMacroParameters** 增大到超过默认值。其他编译器可能允许这么做（例如 GNU 编译器支持更高的限制）。
 
-到目前为止，我们介绍了有关如何使用**序列化程序**库编写代码你所要知道的几乎所有内容。在做出总结之前，让我们先从以前的文章回顾一些你可能想知道的主题。
+到目前为止，我们介绍了你在使用**序列化程序**库编写代码时需要知道的几乎所有内容。在做出总结之前，让我们先从以前的文章回顾一些你可能想知道的主题。
 
 ## 较低级别 API
 
@@ -626,7 +628,7 @@ WITH_DATA(int, MyData)
 
 ## 其他主题
 
-值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些都是[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)中所涵盖的主题。重点在于，所有这些功能不论是与**序列化程序**库配合，还是与 **IoTHubClient** 库配合，其运行方式都相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
+值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些都是[前一篇文章](iot-hub-device-sdk-c-iothubclient.md)中所涵盖的主题。重点在于，所有这些功能与**序列化程序**库配合使用的方式与和 **IoTHubClient** 库配合使用的方式相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
 
 ```
 MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);
@@ -660,6 +662,23 @@ serializer_deinit();
 
 本文详细介绍了**适用于 C 语言的 Azure IoT 设备 SDK** 中包含的**序列化程序**库的独特方面。通过文中提供的信息，你应该能充分了解如何使用模型来发送事件和接收来自 IoT 中心的消息。
 
-本文还结束了有关如何使用**适用于 C 语言的 Azure IoT 设备 SDK** 来开发应用程序的由三个部分组成的系列教程的学习。这些信息应该不仅足以让你入门，还能让你彻底了解 API 的工作原理。请了解其他信息，因为还有一些 SDK 中的示例未涵盖在本文中。除此之外，[SDK 文档](https://github.com/Azure/azure-iot-sdks)是获取其他信息的绝佳资源。
+本文也是通过**适用于 C 语言的 Azure IoT 设备 SDK** 开发应用程序这一系列教程（由三部分组成）的最后一部分。这些信息应该不仅足以让你入门，还能让你彻底了解 API 的工作原理。请了解其他信息，因为还有一些 SDK 中的示例未涵盖在本文中。除此之外，[SDK 文档](https://github.com/Azure/azure-iot-sdks)是获取其他信息的绝佳资源。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+若要详细了解如何针对 IoT 中心进行开发，请参阅 [IoT 中心 SDK][lnk-sdks]。
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+
+[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
+
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0725_2016-->

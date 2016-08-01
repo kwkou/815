@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="03/29/2016"
-     wacn.date="07/04/2016"/>
+     wacn.date="08/01/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK 简介
 
@@ -22,13 +22,11 @@
 
 本文将介绍适用于 C 语言的 Azure IoT 设备 SDK 的体系结构。我们将演示如何初始化设备库，将事件发送到 IoT 中心，以及从 IoT 中心接收消息。本文中的信息应足以让你开始使用 SDK，但同时也提供了有关库的其他信息的链接。
 
->> [AZURE.NOTE] 本文不包括有关如何使用 SDK 中的 C 语言库的设备管理功能的信息。若要了解如何使用设备管理功能，请参阅 [Introducing the Azure IoT Hub device management library for C（适用于 C 语言的 Azure IoT 中心设备管理库简介）](/documentation/articles/iot-hub-device-management-library/)。
+>> [AZURE.NOTE] 本文不包括有关如何使用 SDK 中的 C 语言库的设备管理功能的信息。若要了解如何使用设备管理功能，请参阅[适用于 C 语言的 Azure IoT 中心设备管理库简介](/documentation/articles/iot-hub-device-management-library/)。
 
 ## SDK 体系结构
 
-可以在以下 GitHub 存储库中找到**适用于 C 语言的 Azure IoT 设备 SDK**：
-
-[azure-iot-sdks](https://github.com/Azure/azure-iot-sdks)
+你可在 [Microsoft Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) GitHub 存储库中找到**适用于 C 语言的Azure IoT 设备 SDK**，并可在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
 
 在此存储库的 **master** 分支中可找到最新版本的库：
 
@@ -93,7 +91,7 @@ SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdks/tree/mast
 
 ### 获取设备凭据
 
-现在你已设置好开发环境，下一步要做的就是获取一组设备凭据。若要使设备能够访问 IoT 中心，必须先将该设备添加到 IoT 中心设备注册表。添加设备时，你将获取一组所需的设备凭据，以便设备能够连接到 IoT 中心。下一部分中所述的示例应用程序预期的凭据的格式为**设备连接字符串**。
+现在你已设置好开发环境，下一步要做的就是获取一组设备凭据。若要使设备能够访问 IoT 中心，必须先将该设备添加到 IoT 中心设备注册表。添加设备时，你将获取一组所需的设备凭据，以便设备能够连接到 IoT 中心。下一部分所述示例应用程序的预期凭据格式为**设备连接字符串**。
 
 SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中心。一个是称为设备资源管理器的 Windows 应用程序，另一个是称为 iothub-explorer 的基于 node.js 的跨平台 CLI 工具。你可以在[此处](https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md)了解更多有关这两种工具的信息。
 
@@ -464,7 +462,25 @@ serializer_deinit();
 
 ## 后续步骤
 
-本文介绍了有关使用**适用于 C 语言的 Azure IoT 设备 SDK**中的库的基本知识。其中提供了足够的信息来让你了解 SDK 中包含哪些组件及其体系结构，以及如何开始使用 Windows 示例。下一篇文章通过讲解[有关 IoTHubClient 库的详细信息](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)来继续介绍该 SDK。
+本文介绍了有关使用**适用于 C 语言的 Azure IoT 设备 SDK** 中的库的基本知识。其中提供了足够的信息来让你了解 SDK 中包含哪些组件及其体系结构，以及如何开始使用 Windows 示例。下一篇文章通过讲解[有关 IoTHubClient 库的详细信息](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)来继续介绍该 SDK。
 若要了解如何使用**适用于 C 的 Azure IoT 设备 SDK** 中的设备管理功能，请参阅[适用于 C 语言的 Azure IoT 中心设备管理库简介](/documentation/articles/iot-hub-device-management-library/)。
+若要详细了解如何针对 IoT 中心进行开发，请参阅 [IoT 中心 SDK][lnk-sdks]。
 
-<!---HONumber=Mooncake_0307_2016-->
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+
+[lnk-file upload]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
+[lnk-create-hub]: /documentation/articles/iot-hub-rm-template-powershell/
+[lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
+[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
+
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0725_2016-->

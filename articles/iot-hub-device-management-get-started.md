@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/01/2016"/>
 
 # 使用 C# 进行 Azure IoT 中心设备管理入门（预览版）
 
@@ -94,7 +94,7 @@
 
 此脚本执行以下任务：
 
-1.  运行 **cmake** 创建模拟设备的 Visual Studio 2015 解决方案。此项目文件是 **azure-iot-sdks\\csharp\\service\\samples\\cmake\\iotdm\_client\\samples\\iotdm\_simple\_sample\\iotdm\_simple\_sample.vcxproj**。注意，源文件位于文件夹 **azure-iot-sdks\\c\\iotdm\_client\\samples\\iotdm\_simple\_sample** 中。
+1.  运行 **cmake** 创建模拟设备的 Visual Studio 2015 解决方案。此项目文件是 **azure-iot-sdks\\csharp\\service\\samples\\cmake\\iotdm\_client\\samples\\iotdm\_simple\_sample\\iotdm\_simple\_sample.vcxproj**。注意，源文件位于文件夹 ***azure-iot-sdks\\c\\iotdm\_client\\samples\\iotdm\_simple\_sample** 中。
 
 2.  生成模拟设备项目 **iotdm\_simple\_sample.vcxproj**。
 
@@ -171,7 +171,9 @@
 
 ## 后续步骤
 
-若要继续了解 Azure IoT 中心设备管理功能，请参阅[使用示例 UI 了解 Azure IoT 中心设备管理][lnk-sample-ui]教程。
+若要继续完成 IoT 中心的入门内容，请参阅[网关 SDK 入门][lnk-gateway-SDK]。
+
+若要详细了解 Azure IoT 中心设备管理功能，请参阅[使用示例 UI 了解 Azure IoT 中心设备管理][lnk-sample-ui]教程。
 
 <!-- images and links -->
 [img-new-hub]: ./media/iot-hub-device-management-get-started/image1.png
@@ -187,5 +189,6 @@
 [使用资源组管理 Azure 资源]: /documentation/articles/resource-group-portal/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management
 [lnk-sample-ui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 
 <!---HONumber=Mooncake_0523_2016-->

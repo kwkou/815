@@ -9,29 +9,30 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="02/03/2016"
- wacn.date="07/04/2016"/>
+ ms.date="07/07/2016"
+ wacn.date="08/01/2016"/>
 
 # 操作监视简介
 
 IoT 中心操作监视可让用户实时监视其 IoT 中心上的操作状态。IoT 中心跟踪多个操作类别的事件，用户可以选择将一个或多个类别的事件发送到其 IoT 中心终结点进行处理。用户可以监视数据中是否有错误，或根据数据模式设置更复杂的处理行为。
 
-IoT 中心监视四种类别的事件：
+IoT 中心监视 5 种类别的事件：
 
 - 设备标识操作
 - 设备遥测
 - 云到设备的命令
 - 连接
+- 文件上传
 
 ## 如何启用操作监视
 
-1. 创建 IoT 中心。可以在[入门][lnk-get-started]指南中找到有关如何创建 IoT 中心的说明。
+1. 创建 IoT 中心。有关如何创建 IoT 中心的说明，请参阅[入门][lnk-get-started]指南。
 
 2. 打开 IoT 中心的边栏选项卡。在此处单击“所有设置”，然后单击“操作监视”。
 
     ![][1]
 
-3. 选择要监视的监视类别，然后单击“保存”。可以从“监视设置”中所列的、与事件中心兼容的终结点读取事件。IoT 中心终结点称为 `messages/operationsmonitoringevents`。
+3. 选择要监视的监视类别，然后单击“保存”。可以从“监视设置”中所列的与事件中心兼容的终结点读取事件。IoT 中心终结点称为 `messages/operationsmonitoringevents`。
 
     ![][2]
 
@@ -118,13 +119,35 @@ IoT 中心监视四种类别的事件：
          "deviceId": "device-ID"
     }
 
+### 文件上传
+
+文件上传类别跟踪在 IoT 中心发生的、与文件上传功能相关的错误。这包括下述情况发生的错误：SAS URI（例如，当它在设备向中心通知某上传已完毕之前到期时）、设备报告的失败上传，以及创建中心通知消息期间未在存储空间中找到文件时。请注意，此类别不能捕获在设备将文件上传到存储空间时直接发生的错误。
+
+    {
+         "authType": "{"scope":"hub","type":"sas","issuer":"iothub"}",
+         "protocol": "HTTP",
+         "time": " UTC timestamp",
+         "operationName": "ingress",
+         "category": "fileUpload",
+         "level": "Error",
+         "statusCode": 4XX,
+         "statusType": 4XX001,
+         "statusDescription": "MessageDescription",
+         "deviceId": "device-ID",
+         "blobUri": "http//bloburi.com",
+         "durationMs": 1234
+    }
+
 ## 后续步骤
 
-现在你已了解操作监视的概述，接下来请单击以下链接来了解更多信息：
+现在你已大概了解了操作监视，请参阅[管理 IoT 中心的访问权限][lnk-itpro]，了解有关管理 IoT 中心的其他信息。
 
-- [IoT 中心诊断度量值][lnk-diagnostic-metrics]
-- [缩放 IoT 中心][lnk-scaling]
-- [IoT 中心高可用性和灾难恢复][lnk-dr]
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
 
 <!-- Links and images -->
 [1]: ./media/iot-hub-operations-monitoring/enable-OM-1.png
@@ -135,4 +158,11 @@ IoT 中心监视四种类别的事件：
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-dr]: /documentation/articles/iot-hub-ha-dr/
 
-<!---HONumber=Mooncake_0425_2016-->
+[lnk-itpro]: /documentation/articles/iot-hub-itpro-info/
+
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+
+<!---HONumber=Mooncake_0725_2016-->

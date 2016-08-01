@@ -9,8 +9,8 @@
 
 <tags
    ms.service="iot-hub"
-   ms.date="02/03/2016"
-   wacn.date="03/18/2016"/>
+   ms.date="04/18/2016"
+   wacn.date="08/01/2016"/>
 
 # 支持 IoT 中心的其他协议
 
@@ -35,4 +35,23 @@ MQTT 适配器还会演示用来为其他协议构建协议适配器的编程模
 * [GitHub 上的 Azure IoT 协议网关存储库](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md)
 * [Azure IoT 协议网关开发人员指南](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/docs/DeveloperGuide.md)
 
-<!---HONumber=Mooncake_0307_2016-->
+若要深入了解如何规划 IoT 中心部署，请参阅：
+
+- [与事件中心比较][lnk-compare]
+- [缩放、HA 和 DR][lnk-scaling]
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [开发人员指南][lnk-devguide]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+
+[lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
+[lnk-scaling]: /documentation/articles/iot-hub-scaling/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0725_2016-->

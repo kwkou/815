@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="04/20/2016"
-     wacn.date="07/04/2016"/>
+     wacn.date="08/01/2016"/>
 
 
 # IoT 网关 SDK（Beta 版）– 使用 Linux 通过模拟设备发送设备至云消息
@@ -22,7 +22,7 @@
 开始之前，必须：
 
 - [设置开发环境][lnk-setupdevbox]，以便在 Linux 上使用 SDK。
-- 在 Azure 订阅中创建 IoT 中心，将需要中心的名称来完成此演练。如果还没有 Azure 订阅，可以获取一个[帐户][lnk-free-trial]。
+- 在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，将需要中心的名称才能完成此演练。如果还没有 Azure 订阅，可以获取一个[帐户][lnk-free-trial]。
 - 将两个设备添加到 IoT 中心，并记下其 ID 和设备密钥。可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具来将设备添加到在上一步中创建的 IoT 中心，并检索其密钥。
 
 生成示例：
@@ -117,7 +117,18 @@
 
 ## 后续步骤
 
-若要了解如何使用网关 SDK，请参阅 GitHub 上的 [Azure IoT 网关 SDK][lnk-gateway-sdk]。
+如果想要深入了解网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
+
+- [使用网关 SDK 从实际设备发送设备到云的消息][lnk-physical-device]
+- [管理网关设备][lnk-manage-devices]
+- [Azure IoT 网关 SDK][lnk-gateway-sdk]
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Links -->
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
@@ -126,7 +137,12 @@
 [lnk-explorer-tools]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 
+[lnk-physical-device]: /documentation/articles/iot-hub-gateway-sdk-physical-device/
+[lnk-manage-devices]: /documentation/articles/iot-hub-gateway-sdk-device-management/
 
-
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0523_2016-->

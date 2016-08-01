@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/01/2016"/>
 
 # 设计你的解决方案
 
@@ -63,7 +63,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 下面是令牌服务模式的主要步骤：
 
-1. 为 IoT 中心创建包含 [DeviceConnect][lnk-devguide-security] 权限的 **IoT 中心共享访问策略**。可以在 [Azure 门户预览][lnk-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
+1. 为 IoT 中心创建包含 [DeviceConnect][lnk-devguide-security] 权限的 **IoT 中心共享访问策略**。可以在 [Azure 门户][lnk-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
 2. 当设备需要访问 IoT 中心时，将向令牌服务请求已签名的令牌。设备可以使用自定义设备标识注册表/身份验证方案来进行身份验证，以确定令牌服务用来创建令牌的设备标识。
 3. 令牌服务返回令牌。使用 `/devices/{deviceId}` 作为 `resourceURI`（其中 `deviceId` 是要身份验证的设备），并根据 [IoT 中心开发人员指南的安全部分][lnk-devguide-security]创建令牌。令牌服务使用共享访问策略来构造令牌。
 4. 设备直接通过 IoT 中心使用令牌。
@@ -80,21 +80,30 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 ## 设备检测信号 <a id="heartbeat"></a>
 
-[IoT 中心标识注册表][lnk-devguide-identityregistry]包含名为 **connectionState** 的字段。你只应在开发和调试期间使用 **connectionState** 字段，IoT 解决方案不应在运行时查询该字段（例如，为了检查设备是否已连接以确定是否要发送云到设备的消息或 SMS）。
-如果 IoT 解决方案需要知道设备是否已连接（在运行时，或在比 **connectionState** 属性提供的值更精确时），解决方案应该实施检测信号模式。
+[IoT 中心标识注册表][lnk-devguide-identityregistry]包含名为 **connectionState** 的字段。你只应在开发和调试期间使用 **connectionState** 字段，IoT 解决方案不应在运行时查询该字段（例如，为了检查设备是否已连接以确定是否要发送云到设备的消息或 SMS）。如果 IoT 解决方案需要知道设备是否已连接（在运行时，或在比 **connectionState** 属性提供的值更精确时），解决方案应该实施检测信号模式。
 
 在检测信号模式下，设备每隔固定时间至少发送一次设备到云的消息（例如，每小时至少一次）。这意味着，即使设备没有任何要发送的数据，仍会发送空的设备到云的消息（通常具有可供识别其属于检测信号的属性）。在服务端，解决方案维护一份图表，其中包含每个设备所收到的最后一次检测信号，并假设如果设备没有在预期时间内收到检测信号消息，即表示设备有问题。
 
-更复杂的实现可以包含来自[操作监视][lnk-devguide-opmon]的信息，以便识别尝试连接或通信但失败的设备。实施检测信号模式时，请务必查看 [IoT 中心配额与限制][]。
+更复杂的实现可包含来自[操作监视][lnk-devguide-opmon]的信息，以便识别尝试连接或通信但失败的设备。实施检测信号模式时，请务必查看 [IoT 中心配额与限制][]。
 
 > [AZURE.NOTE] 如果 IoT 解决方案只根据设备连接状态来决定是否发送云到设备的消息，并且没有把消息广播到大量设备，则可以考虑使用更简单的模式，即使用较短的到期时间。它达到的效果与使用检测信号模式维护设备连接状态达到的效果一样，而且更加有效。IoT 中心还可以通过请求消息确认来通知哪些设备可以接收消息、哪些设备脱机或不能接收消息。有关 C2D 消息的详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-messaging]。
 
 ## 后续步骤
 
-若要了解有关 Azure IoT 中心的详细信息，请参阅以下链接：
+若要深入了解如何规划 IoT 中心部署，请参阅：
 
-- [IoT 中心入门（教程）][lnk-get-started]
-- [Azure IoT 中心是什么？][lnk-what-is-hub]
+- [MQTT 支持][lnk-mqtt]
+- [支持的设备][lnk-devices]
+- [支持其他协议][lnk-protocols]
+- [与事件中心比较][lnk-compare]
+- [缩放、HA 和 DR][lnk-scaling]
+
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [开发人员指南][lnk-devguide]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal-manage]
 
 [img-tokenservice]: ./media/iot-hub-guidance/tokenservice.png
 
@@ -117,5 +126,14 @@ IoT 解决方案存储有关单个设备的数据，例如：
 [lnk-java-sas]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/com/microsoft/azure/iot/service/auth/IotHubServiceSasToken.html
 [IoT 中心配额与限制]: /documentation/articles/iot-hub-devguide/#throttling
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
+[lnk-mqtt]: /documentation/articles/iot-hub-mqtt-support/
+[lnk-devices]: /documentation/articles/iot-hub-tested-configurations/
+[lnk-protocols]: /documentation/articles/iot-hub-protocol-gateway/
+[lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
+[lnk-scaling]: /documentation/articles/iot-hub-scaling/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal-manage]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0307_2016-->
