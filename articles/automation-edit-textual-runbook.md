@@ -9,7 +9,7 @@
 <tags 
 	ms.service="automation"
 	ms.date="02/23/2016"
-	wacn.date="06/30/2016" />
+	wacn.date="08/01/2016" />
 
 # 在 Azure 自动化中编辑文本 Runbook
 
@@ -64,7 +64,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ## 使用 Windows PowerShell 编辑 Azure 自动化 Runbook
 
-若要使用 Windows PowerShell 来编辑 Runbook，可使用所选编辑器进行操作，然后将其保存到 .ps1 文件。你可以先使用 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 来检索 Runbook 的内容，然后使用 [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet 将现有的草稿 Runbook 替换为修改的 Runbook。
+若要使用 Windows PowerShell 来编辑 Runbook，可使用所选编辑器进行操作，然后将其保存到 .ps1 文件。你可以先使用 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 来检索 Runbook 的内容，然后使用 [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet 将现有的草稿 Runbook 替换为已修改的 Runbook。
 
 ### 使用 Windows PowerShell 检索 Runbook 的内容
 
@@ -88,7 +88,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
     $scriptPath = "c:\runbooks\Sample-TestRunbook.ps1"
 
     Set-AzureAutomationRunbookDefinition -AutomationAccountName $automationAccountName -Name $runbookName -Path $scriptPath -Overwrite
-    Publish-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
+    Publish-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName
 
 ## 相关文章
 
@@ -100,4 +100,4 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 - [计划](/documentation/articles/automation-schedules/)
 - [变量](/documentation/articles/automation-variables/)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0725_2016-->

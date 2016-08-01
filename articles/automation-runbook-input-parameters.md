@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="04/25/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/01/2016"/>
 
 # Runbook 输入参数
 
@@ -34,7 +34,6 @@ Windows PowerShell 支持的输入参数属性比此处所列的多，例如验�
 
 PowerShell 工作流 Runbook 中的参数定义采用以下常规格式，其中，多个参数必须以逗号分隔。
 
-
      Param
      (
          [Parameter (Mandatory= $true/$false)]
@@ -44,8 +43,7 @@ PowerShell 工作流 Runbook 中的参数定义采用以下常规格式，其中
          [Type] Name2 = <Default value>
      )
 
-
->[AZURE.NOTE] 定义参数时，如果未指定 **Mandatory** 属性，则会按默认将参数视为可选。此外，如果在 PowerShell 工作流 Runbook 中设置某个参数的默认值，则 PowerShell 会将其视为可选参数，而不管 **Mandatory** 属性值为何。
+>[AZURE.NOTE] 定义参数时，如果未指定 **Mandatory** 属性，则会按默认将参数视为可选。此外，如果在 PowerShell 工作流 Runbook 中设置某个参数的默认值，则 PowerShell 会将其视为可选参数，而不管 **Mandatory** 属性值如何。
 
 例如，让我们为输出有关虚拟机（可以是单个 VM 或服务中的所有 VM）的详细信息的 PowerShell 工作流 Runbook 配置输入参数。如以下屏幕截图中所示，此 Runbook 有两个参数：虚拟机的名称和服务的名称。
 
@@ -96,21 +94,21 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户 UI、PowerShell 
 
     - **Azure 服务管理方法：**可以使用编程语言的 SDK 启动 Runbook。以下 C# 代码段用于在自动化帐户中启动 Runbook。可以在 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs)中查看完整代码。
 
-            public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
+	        public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
+	        {
+            var response = AutomationClient.Jobs.Create(automationAccount, new JobCreateParameters
             {
-                var response = AutomationClient.Jobs.Create(automationAccount, new JobCreateParameters
+                Properties = new JobCreateProperties
                 {
-                    Properties = new JobCreateProperties
+                    Runbook = new RunbookAssociationProperty
                     {
-                        Runbook = new RunbookAssociationProperty
-                        {
-                            Name = runbookName
-                        },
-                            Parameters = parameters
-                    }
-                });
-                return response.Job;
-            }
+                        Name = runbookName
+                    },
+                        Parameters = parameters
+                }
+            });
+            return response.Job;
+	        }
 
 若要启动此方法，请创建一个字典来存储 Runbook 参数（**VMName** 和 **ServiceName**）及其值。然后启动 Runbook。以下 C# 代码段用于调用上面定义的方法。
 
@@ -172,4 +170,4 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户 UI、PowerShell 
 - 有关以不同方式启动 Runbook 的详细信息，请参阅[启动 Runbook](/documentation/articles/automation-starting-a-runbook/)。
 - 若要编辑文本 Runbook，请参阅[编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook/)。
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

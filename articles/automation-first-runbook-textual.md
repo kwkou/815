@@ -10,7 +10,7 @@
 <tags
 	ms.service="automation"
 	ms.date="06/02/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/01/2016"/>
 
 # 我的第一个 PowerShell 工作流 Runbook
 
@@ -29,15 +29,15 @@
 我们首先创建一个输出文本 *Hello World* 的简单 Runbook 。
 
 1. 在 Azure 经典管理门户中，单击“新建”>“应用程序服务”>“自动化”>“RUNBOOK”>“快速创建”。
-2. 输入 **RUNBOOK 名称**和**说明**，然后选择一个**自动化帐户**。如果你没有自动化帐户，可以通过选择“创建新的自动化帐户”并输入“帐户名”来创建一个
-3. 创建 Runbook 后，可以在自动化帐户的“RUNBOOK”磁贴中找到它。
+2. 输入 **RUNBOOK 名称**和**说明**，然后选择一个**自动化帐户**。如果你没有自动化帐户，可以通过选择“创建新的自动化帐户”并输入**帐户名**来创建一个
+3. 创建 Runbook 后，可在自动化帐户的“RUNBOOK”磁贴下找到该 Runbook。
 4. 单击 Runbook 的“创作”磁贴以启用文本编辑器。
 
 ## 步骤 2 - 将代码添加到 Runbook
 
 你可以直接将代码键入 Runbook 中，或者通过“库”控件选择 cmdlet、Runbook 和资产，并使用任何相关的参数将它们添加到 Runbook。在本演练中，我们将直接键入 Runbook。
 
-1.	我们的 Runbook 目前是空的，只有必需的*工作流*关键字、Runbook 名称以及括住整个工作流的大括号。
+1.	我们的 Runbook 目前是空的，只有必需的 *workflow* 关键字、Runbook 名称以及括住整个工作流的大括号。
 
 	    Workflow MyFirstRunbook-Workflow
 	    {
@@ -50,7 +50,7 @@
 	      Write-Output "Hello World"
 	    }
 
-3.	单击“保存”以保存 Runbook。
+3.	通过单击“保存”来保存该 Runbook。
 
 ## 步骤 3 - 测试 Runbook
 
@@ -64,11 +64,11 @@
 我们刚刚创建的 Runbook 仍处于草稿模式。我们需要发布该 Runbook，然后才可将其用于生产。当发布 Runbook 时，你可以用草稿版本覆盖现有的已发布版本。在本例中，我们还没有已发布版本，因为我们刚刚创建 Runbook。
 
 1. 单击“发布”以发布该 Runbook，然后在出现提示时单击“是”。
-2. 如果你在自动化帐户的“Runbook”磁贴中查看该 Runbook，它的“创作状态”会显示为“已发布”。
+2. 如果现在你在自动化帐户的“Runbook”磁贴中查看该 Runbook，它的“创作状态”会显示为“已发布”。
 4. 单击“启动”以启动 Runbook，然后在出现提示时单击“是”。
 5. 单击“查看作业”以查看刚刚启动的作业的摘要。
 6. 作业状态显示在“作业摘要”中，几秒钟后，“输出”下面会显示前面执行测试后的相同输出。
-9. 返回到你的 Runbook。在“作业”磁贴下，你可以看到创建的作业列表将筛选上述 Runbook。
+9. 返回到你的 Runbook。在“作业”磁贴下，你可以看到创建的作业列表将筛选上述作业。
 10. 单击一个作业，你可以看到该作业的“摘要”和“历史记录”。
 
 ## 步骤 5 - 添加身份验证来管理 Azure 资源
@@ -79,14 +79,14 @@
 2.  我们不再需要 **Write-Output** 行，因此请直接删除它。
 3.  将光标放在大括号之间的空白行上。
 3.  单击“插入”>“设置”>“获取 Windows PowerShell 凭据”，然后选择所需的凭据。
-4.  如果你没有凭据，可以通过单击“管理”>“添加凭据”来创建一个凭据。
+4.  如果你没有凭据，可以通过单击“管理”>“添加凭据”来创建并添加一个凭据。
 5.  在 **Get-AutomationPSCredential** 前面，输入 *$Credential =* 以将凭据分配给变量。
-3.  在下一行中键入 *Add-AzureRmAccount -Credential $Credential –EnvironmentName AzureChinaCloud*。
+3.  在下一行中键入 *Add-AzureRmAccount -Credential $Credential -EnvironmentName AzureChinaCloud*。
 
 		workflow test
 		{
     		$Credential = Get-AutomationPSCredential -Name "<your credential>"
-    		Add-AzureRmAccount –Credential $Credential –EnvironmentName AzureChinaCloud
+    		Add-AzureRmAccount -Credential $Credential -EnvironmentName AzureChinaCloud
 		}
 
 3. 单击“测试”，然后在出现提示时单击“是”。
@@ -107,8 +107,9 @@
 
 	    workflow MyFirstRunbook-Workflow
 	    {
-	     $Credential = Get-AutomationPSCredential -Name "<your credential>"
-    	 Add-AzureRmAccount –Credential $Credential –EnvironmentName AzureChinaCloud
+	     $Conn = Get-AutomationConnection -Name AzureRunAsConnection 
+	     Add-AzureRmAccount –EnvironmentName AzureChinaCloud -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+
 	     Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'ResourceGroupName'
 	    }
 
@@ -126,8 +127,8 @@
 	        [string]$VMName,
 	        [string]$ResourceGroupName
 	       )  
-	     $Credential = Get-AutomationPSCredential -Name "<your credential>"
-    	 Add-AzureRmAccount –Credential $Credential –EnvironmentName AzureChinaCloud
+	     $Conn = Get-AutomationConnection -Name AzureRunAsConnection 
+	     Add-AzureRmAccount –EnvironmentName AzureChinaCloud -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
 	     Start-AzureRmVM -Name $VMName -ResourceGroupName $ResourceGroupName
 	    }
 
@@ -138,4 +139,4 @@
 6.	单击“启动”以启动 Runbook。键入要启动的虚拟机的 **VMName** 和 **ResourceGroupName**。
 7.	一旦 Runbook 完成后，检查已启动的虚拟机。
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

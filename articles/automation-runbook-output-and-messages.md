@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="06/08/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/01/2016"/>
 
 # Azure 自动化中的 Runbook 输出和消息
 
@@ -149,12 +149,12 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 以下示例将启动一个示例 Runbook，然后等待该 Runbook 完成。完成后，将从作业收集该 Runbook 的输出流。
 
 	$job = Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" 
-	
+
 	$doLoop = $true
 	While ($doLoop) {
 	   $job = Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" -Id $job.Id
 	   $status = $job.Status
-	   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped") 
+	   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped")
 	}
 	
 	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
@@ -164,4 +164,4 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 - 若要详细了解 Runbook 执行方式、如何监视 Runbook 作业和其他技术详细信息，请参阅[跟踪 Runbook 作业](/documentation/articles/automation-runbook-execution/)
 - 若要了解如何设计和使用子 Runbook，请参阅 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/)
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

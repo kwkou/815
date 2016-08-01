@@ -4,12 +4,12 @@
    services="automation"
    documentationCenter=""
    authors="mgoedtel"
-   manager="stevenka"
+   manager="jwhit"
    editor="tysonn" />
 <tags 
    ms.service="automation"
    ms.date="05/24/2016"
-   wacn.date="07/28/2016" />
+   wacn.date="08/01/2016" />
 
 # Azure 自动化中的变量资产
 
@@ -19,7 +19,7 @@
 
 - 在同一 Runbook 中的多个作业之间共享某个值。
 
-- 从经典管理门户或通过 Runbook 使用的 Windows PowerShell 命令行管理某个值。
+- 从门户或通过 Runbook 使用的 Windows PowerShell 命令行管理某个值。
 
 自动化变量将保留，以便在 Runbook 失败时它们仍然继续可用。这也允许一个 Runbook 设置的值随后由另一个 Runbook 使用，或由同一 Runbook 在下次运行时使用。
 
@@ -29,7 +29,7 @@
 
 ##<a id="variable-types"></a> 变量类型
 
-当使用 Azure 经典管理门户创建变量时，你必须通过下拉列表指定一个数据类型，以便经典管理门户可以显示用于输入变量值的相应控件。该变量并不局限于此数据类型，但如果您想要指定不同类型的值，则必须使用 Windows PowerShell 设置该变量。如果指定为“未定义”，则该变量的值将设置为 **$null**，并且你必须使用 [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet 或 **Set-AutomationVariable** 活动来设置该值。无法在该经典管理门户中创建或更改复杂变量类型的值，但您可以使用 Windows PowerShell 提供任何类型的值。复杂类型将作为 [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx) 返回。
+当使用 Azure 经典管理门户创建变量时，你必须通过下拉列表指定一个数据类型，以便门户可以显示用于输入变量值的相应控件。该变量并不局限于此数据类型，但如果您想要指定不同类型的值，则必须使用 Windows PowerShell 设置该变量。如果指定为“未定义”，则该变量的值将设置为 **$null**，并且你必须使用 [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet 或 **Set-AutomationVariable** 活动来设置该值。无法在该门户中创建或更改复杂变量类型的值，但您可以使用 Windows PowerShell 提供任何类型的值。复杂类型将作为 [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx) 返回。
 
 您可以通过创建一个数组或哈希表并将其保存到变量，来将多个值存储到单一变量。
 
@@ -51,7 +51,7 @@
 |Get-AutomationVariable|检索现有变量的值。|
 |Set-AutomationVariable|设置现有变量的值。|
 
->[AZURE.NOTE] 应避免在 **Get-AutomationVariable** 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与自动化变量之间的依赖关系变得复杂化。
+>[AZURE.NOTE] 应避免在 Runbook 中的 **Get-AutomationVariable** 的 -Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与自动化变量之间的依赖关系变得复杂化。
 
 ## 创建新的自动化变量
 
@@ -71,15 +71,15 @@
 下面的示例命令演示如何创建字符串类型的变量，然后返回其值。
 
 
-	New-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable' –Encrypted $false –Value 'My String'
-	$string = (Get-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable').Value
+	New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable' -Encrypted $false -Value 'My String'
+	$string = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable').Value
 
 下面的示例命令演示如何创建复杂类型的变量，然后返回其属性。在这种情况下，会使用来自 **Get-AzureVM** 的虚拟机对象。
 
-	$vm = Get-AzureVM –ServiceName "MyVM" –Name "MyVM"
-	New-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable" –Encrypted $false –Value $vm
+	$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
+	New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable" -Encrypted $false -Value $vm
 	
-	$vmValue = (Get-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable").Value
+	$vmValue = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable").Value
 	$vmName = $vmValue.Name
 	$vmIpAddress = $vmValue.IpAddress
 
@@ -105,7 +105,7 @@
 	for ($i = 1; $i -le $NumberOfIterations; $i++) {
 	   Write-Output "$i`: $SampleMessage"
 	}
-	Set-AutomationVariable –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
+	Set-AutomationVariable -Name NumberOfRunnings -Value ($NumberOfRunnings += 1)
 
 
 #### 设置和检索变量中的复杂对象
@@ -141,6 +141,4 @@
 	   }
 	}
 
- 
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0725_2016-->

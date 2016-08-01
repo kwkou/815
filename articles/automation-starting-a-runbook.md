@@ -1,16 +1,16 @@
 <properties
    pageTitle="在 Azure 自动化中启动 Runbook | Azure"
-   description="汇总了可用于在 Azure 自动化中启动 Runbook 的不同方法，并提供有关使用 Azure 经典管理门户和 Windows PowerShell 的详细信息。"
+   description="汇总了可用于在 Azure 自动化中启动 Runbook 的不同方法，并提供有关如何使用 Azure 经典管理门户和 Windows PowerShell 的详细信息。"
    services="automation"
    documentationCenter=""
    authors="mgoedtel"
-   manager="stevenka"
+   manager="jwhit"
    editor="tysonn" />
 
  <tags
    ms.service="automation"
    ms.date="06/06/2016"
-   wacn.date="07/28/2016"/>
+   wacn.date="08/01/2016"/>
 
 # 在 Azure 自动化中启动 Runbook
 
@@ -22,11 +22,10 @@
 | [Windows PowerShell](https://msdn.microsoft.com/zh-cn/library/dn690259.aspx) | <li>使用 Windows PowerShell cmdlet 从命令行调用。<br> <li>可以使用多个步骤包含在自动化解决方案中。<br> <li>使用证书或 OAuth 用户主体/服务主体对请求进行身份验证。<br> <li>提供简单和复杂的参数值。<br> <li>跟踪作业状态。<br> <li>支持 PowerShell cmdlet 所需的客户端。 |
 | [Azure 自动化 API](http://msdn.microsoft.com/zh-cn/library/azure/mt163849.aspx) | <li>最有弹性的方法，但也最复杂。<br> <li>从任何可发出 HTTP 请求的自定义代码调用。<br> <li>使用证书或 OAuth 用户主体/服务主体对请求进行身份验证。<br> <li>提供简单和复杂的参数值。<br> <li>跟踪作业状态。 |
 | [Webhook](/documentation/articles/automation-webhooks/) | <li>从单个 HTTP 请求启动 Runbook。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>客户端无法覆盖创建 Webhook 时指定的参数值。Runbook 可以定义填入了 HTTP 请求详细信息的单个参数。<br> <li>无法通过 Webhook URL 跟踪作业状态。 |
-| [响应 Azure 警报](/documentation/articles/automation-webhooks/) | <li>启动 Runbook 以响应 Azure 警报。<br> <li>为 Runbook 配置 Webhook 并链接到警报。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>当前仅对度量值支持警报。 |
-| [计划](/documentation/articles/automation-scheduling-a-runbook/) | <li>按每小时、每天或每周计划自动启动 Runbook。<br> <li>通过 Azure 经典管理门户、PowerShell cmdlet 或 Azure API 来操作计划。<br> <li>提供与计划配置使用的参数值。 |
+| [计划](/documentation/articles/automation-scheduling-a-runbook/) | <li>按每小时、每天或每周计划自动启动 Runbook。<br> <li>通过 Azure 经典管理门户、PowerShell cmdlet 或 Azure API 来操作计划。<br> <li>提供要用于计划的参数值。 |
 | [从另一个 Runbook](/documentation/articles/automation-child-runbooks/) | <li>使用一个 Runbook 作为另一个 Runbook 中的活动。<br> <li>对多个 Runbook 使用的功能很有用。<br> <li>为子 Runbook 提供参数值，并使用父 Runbook 中的输出。 |
 
-下图演示了 Runbook 生命周期的详细分步过程。其中包括在 Azure 自动化中启动 Runbook 的不同方式、本地计算机执行 Azure 自动化 Runbook 时所需的组件，以及不同组件之间的交互。
+下图演示了 Runbook 生命周期的详细分步过程。它包括在 Azure 自动化中启动 Runbook 的不同方式、本地计算机执行 Azure 自动化 Runbook 所需的组件以及不同组件之间的交互方式。
 
 ![Runbook 体系结构](./media/automation-starting-runbook/runbooks-architecture.png)
 
@@ -47,21 +46,24 @@
 
 Start-AzureAutomationRunbook 将返回一个作业对象，启动 Runbook 后，你可以使用该对象来跟踪 Runbook 的状态。然后可以将此作业对象与 [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) 结合使用来确定作业的状态，并将它与 [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/azure/dn690268.aspx) 结合使用以获取作业的输出。以下示例代码将启动名为 Test-Runbook 的 Runbook，等待它完成，然后显示其输出。
 
-	$job = Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook"
-	
+	$runbookName = "Test-Runbook"
+	$AutomationAcct = "MyAutomationAccount"
+
+	$job = Start-AzureAutomationRunbook -AutomationAccountName $AutomationAcct -Name $runbookName
+
 	$doLoop = $true
 	While ($doLoop) {
-	   $job = Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" -Id $job.Id
+	   $job = Get-AzureAutomationJob -AutomationAccountName $AutomationAcct -Id $job.Id
 	   $status = $job.Status
-	   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped") 
+	   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped"))
 	}
 	
-	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+	Get-AzureAutomationJobOutput -AutomationAccountName $AutomationAcct -Id $job.Id -Stream Output
 
 如果 Runbook 需要参数，则你必须以[哈希表](http://technet.microsoft.com/zh-cn/library/hh847780.aspx)的形式提供参数，其中，哈希表的密钥与参数名称匹配，值为参数值。以下示例演示如何启动包含两个名称分别为 FirstName 和 LastName 的字符串参数、一个名为 RepeatCount 的整数和一个名为 Show 的布尔参数的 Runbook。有关参数的其他信息，请参阅下面的 [Runbook 参数](#Runbook-parameters)。
 
 	$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
-	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" –Parameters $params
+	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -Parameters $params
 
 ##<a name="runbook-parameters"></a> Runbook 参数
 
@@ -71,7 +73,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 命名值
 
-如果参数的数据类型为 object，则你可以使用以下 JSON 格式向它发送命名值列表：*{"Name1":Value1, "Name2":Value2, "Name3":Value3}*。这些值必须使用简单类型。Runbook 将以 [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/azure/system.management.automation.pscustomobject(v=vs.85).aspx) 的形式接收参数，该对象的属性对应于每个命名值。
+如果参数的数据类型为 object，则你可以使用以下 JSON 格式向它发送命名值列表：_{"Name1":Value1, "Name2":Value2, "Name3":Value3}_。这些值必须使用简单类型。Runbook 将以 [PSCustomObject](https://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject(v=vs.85).aspx) 的形式接收参数，该对象的属性对应于每个命名值。
 
 请考虑以下接受名为 user 的参数的测试 Runbook。
 
@@ -101,7 +103,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 数组
 
-如果参数是数组（如 array 或 string），则你可以使用以下 JSON 格式向它发送值列表：*[Value1,Value2,Value3]*。这些值必须使用简单类型。
+如果参数是数组（如 array 或 string），则你可以使用以下 JSON 格式向它发送值列表：_[Value1,Value2,Value3]_。这些值必须使用简单类型。
 
 请考虑以下接受名为 *user* 的参数的测试 Runbook。
 
@@ -155,4 +157,4 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 -	本文中的 Runbook 体系结构提供了有关子 Runbook 的概括说明，若要了解详细信息，请参阅 [Child runbooks in Azure Automation（Azure 自动化中的子 Runbook）](/documentation/articles/automation-child-runbooks/)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0725_2016-->
