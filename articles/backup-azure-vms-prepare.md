@@ -122,9 +122,8 @@
 
 1. 下载 [PsExec](https://technet.microsoft.com/sysinternals/bb897553)
 2. 在权限提升的提示符下运行以下命令：
-
      
-     psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"
+     	psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"
      
      该命令将打开 Internet Explorer 窗口。
 3. 转到“工具”->“Internet 选项”->“连接”->“LAN 设置”。

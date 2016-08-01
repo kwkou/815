@@ -10,7 +10,7 @@
 <tags 
 	ms.service="backup"
 	ms.date="05/19/2016"
-	wacn.date="09/04/2016"/>
+	wacn.date="08/01/2016"/>
 
 
 # 使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份
@@ -67,6 +67,7 @@
     选择此选项后，将在 DPM 服务器上运行备份一致性检查，以避免由于在 Exchange Server 上运行 **eseutil** 命令而产生的 I/O 流量。
 
     >[AZURE.NOTE]若要使用此选项，必须将 Ese.dll 和 Eseutil.exe 文件复制到 DPM 服务器上的 C:\\Program Files\\Microsoft System Center 2012 R2\\DPM\\DPM\\bin 目录。否则会触发以下错误：  
+    
     ![eseutil 错误](./media/backup-azure-backup-exchange-server/eseutil-error.png)
 
 8. 单击**“下一步”**。
