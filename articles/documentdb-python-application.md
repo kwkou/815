@@ -46,8 +46,8 @@
 - 来自 [python.org][2] 的 Python 2.7。我们使用的是 Python 2.7.11。 
 
 > [AZURE.IMPORTANT] 如果首次安装 Python 2.7，请确保在自定义 Python 2.7.11 屏幕中，选择“向路径添加 python.exe”。
-> 
->    ![自定义 Python 2.7.11 屏幕的屏幕截图，你需要在该屏幕中选择“向路径添加 python.exe”](./media/documentdb-python-application/image2.png)
+
+   ![自定义 Python 2.7.11 屏幕的屏幕截图，你需要在该屏幕中选择“向路径添加 python.exe”](./media/documentdb-python-application/image2.png)
 
 - 来自 [Microsoft 下载中心][3]的Microsoft Visual C++ Compiler for Python 2.7。
 
@@ -132,7 +132,8 @@
 1. 在解决方案资源管理器中，右键单击“教程”项目，单击“添加”，然后单击“新建项”。选择“空 Python 文件”并将该文件命名为 **forms.py**。  
 2. 将以下代码添加到 forms.py 文件，然后保存该文件。
 
-		python
+python
+
 		from flask.ext.wtf import Form
 		from wtforms import RadioField
 		
@@ -149,18 +150,19 @@
 1. 在解决方案资源管理器中，展开 **tutorial** 文件夹并打开 **views.py** 文件。 
 2. 将以下导入语句添加到 **views.py** 文件的顶部，然后保存该文件。这些语句将导入 DocumentDB 的 PythonSDK 和 Flask 包。
 
-		python
+python
+
 		from forms import VoteForm
 		import config
 		import pydocumentdb.document_client as document_client
 		
 
-
 ### 创建数据库、集合和文档
 
 - 仍在 **views.py** 中，将以下代码添加到文件末尾。这将创建窗体使用的数据库。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
 
-		python
+python
+
 		@app.route('/create')
 		def create():
 		    """Renders the contact page."""
@@ -202,7 +204,8 @@
 
 - 仍在 **views.py** 中，将以下代码添加到文件末尾。这将设置窗体、读取数据库、集合和文档。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
 
-		python
+python
+
 		@app.route('/vote', methods=['GET', 'POST'])
 		def vote(): 
 		    form = VoteForm()
@@ -257,18 +260,20 @@
 3. 重复步骤 1 和步骤 2，以创建另外两个 HTML 文件：results.html 和 vote.html。
 4. 将以下代码添加到 `<body>` 元素中的 **create.html**。它将显示一条消息，说明我们创建了新的数据库、集合和文档。
 
-		html
-		{% extends "layout.html" %}
-		{% block content %}
-		<h2>{{ title }}.</h2>
-		<h3>{{ message }}</h3>
-		<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
-		{% endblock %}
+html
+
+			{% extends "layout.html" %}
+			{% block content %}
+			<h2>{{ title }}.</h2>
+			<h3>{{ message }}</h3>
+			<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
+			{% endblock %}
 	
 
 5. 将以下代码添加到 `<body`> 元素中的 **results.html**。它将显示轮询结果。
 
-		html
+html
+
 		{% extends "layout.html" %}
 		{% block content %}
 		<h2>Results of the vote</h2>
@@ -294,29 +299,31 @@
 
 6. 将以下代码添加到 `<body`> 元素中的 **vote.html**。它将显示轮询并接受投票。注册投票时，控件权将传递到 views.py 中，我们将在该位置识别投票并相应地追加文档。
 
-	html
-	{% extends "layout.html" %}
-	{% block content %}
-	<h2>What is your favorite way to host an application on Azure?</h2>
-	<form action="" method="post" name="vote">
-		{{form.hidden_tag()}}
-	        {{form.deploy_preference}}
-	        <button class="btn btn-primary" type="submit">Vote</button>
-	</form>
-	{% endblock %}
-	
+html
+
+		{% extends "layout.html" %}
+		{% block content %}
+		<h2>What is your favorite way to host an application on Azure?</h2>
+		<form action="" method="post" name="vote">
+			{{form.hidden_tag()}}
+		        {{form.deploy_preference}}
+		        <button class="btn btn-primary" type="submit">Vote</button>
+		</form>
+		{% endblock %}
+		
 
 7. 在 **templates** 文件夹中，使用以下内容替换 **index.html** 的内容。这将作为你的应用程序的登录页。
 	
-	html
-	{% extends "layout.html" %}
-	{% block content %}
-	<h2>Python + DocumentDB Voting Application.</h2>
-	<h3>This is a sample DocumentDB voting application using PyDocumentDB</h3>
-	<p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Create/Clear the Voting Database &raquo;</a></p>
-	<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
-	{% endblock %}
-	
+html
+
+		{% extends "layout.html" %}
+		{% block content %}
+		<h2>Python + DocumentDB Voting Application.</h2>
+		<h3>This is a sample DocumentDB voting application using PyDocumentDB</h3>
+		<p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Create/Clear the Voting Database &raquo;</a></p>
+		<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
+		{% endblock %}
+		
 
 ### 添加配置文件并更改 \_\_init\_\_.py
 
@@ -324,7 +331,8 @@
 
 2. 将以下代码添加到 config.py，你需要在下一步更改 **DOCUMENTDB\_HOST** 和 **DOCUMENTDB\_KEY** 的值。
 
-	python
+python
+
 	CSRF_ENABLED = True
 	SECRET_KEY = 'you-will-never-guess'
 	
@@ -344,7 +352,8 @@
 
     因此，该文件的内容应为：
 
-	python
+python
+
 	from flask import Flask
 	app = Flask(__name__)
 	app.config.from_object('config')
@@ -407,7 +416,7 @@
 
 如果这是你在计算机上运行的第一个 Python 应用程序，请确保下列文件夹（或等效的安装位置）包括在 PATH 变量中：
 
-    C:\Python27\site-packages;C:\Python27\;C:\Python27\Scripts;
+    	C:\Python27\site-packages;C:\Python27\;C:\Python27\Scripts;
 
 如果在投票页上收到了错误，并且已将项目命名为“教程”以外的名称，请确保 **\_\_init\_\_.py** 引用行中正确的项目名称：`import tutorial.view`。
 

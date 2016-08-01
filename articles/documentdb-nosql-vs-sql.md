@@ -99,7 +99,6 @@ Microsoft 提供了五种 SQL 产品/服务：
 - [Azure SQL 数据库](/services/sql-databases/)
 - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
 - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
-- [分析平台系统（本地设备）](https://www.microsoft.com/zh-cn/server-cloud/products/analytics-platform-system/)
 
 如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)，了解两者区别的详细信息。
 
@@ -116,7 +115,7 @@ Microsoft 提供了五种 SQL 产品/服务：
     - [作为 HDInsight 一部分的 Azure HBase](/documentation/services/hdinsight/)
     - [Azure Redis Cache](/documentation/services/redis-cache/)
     - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
-    - [Azure SQL 数据库](/documentation/services/sql-database/)
+    - [Azure SQL 数据库](/documentation/services/sql-databases/)
     - [Azure 表存储](/documentation/services/storage/)
 
 - 你可以下载 [SQL Server 评估版](https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016)。
