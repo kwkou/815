@@ -10,8 +10,8 @@
 
 <tags
    ms.service="best-practice"
-   ms.date="04/01/2016"
-   wacn.date="07/08/2016"/>
+   ms.date="07/14/2016"
+   wacn.date="08/01/2016"/>
 
 # 缓存指南
 
@@ -144,8 +144,7 @@
 
 采用此方法需要经过慎重的配置，以防止本地缓存相对于共享缓存而言太过时。但在无法访问共享缓存时，它可以充当缓冲区。图 3 显示了此结构。
 
-![将本地、专用和共享缓存配合使用](./media/best-practices-caching/Caching3.png)
-图 3：将本地、专用和共享缓存配合使用
+![将本地、专用和共享缓存配合使用](./media/best-practices-caching/Caching3.png)图 3：将本地、专用和共享缓存配合使用
 
 为了支持保存相对长期数据的大型缓存，某些缓存服务在缓存不可用时，提供实施自动故障转移的高可用性选项。这种方法通常涉及到将存储在主缓存服务器上的缓存数据复制到辅助缓存服务器，并在主服务器故障或断开连接时切换到辅助服务器。
 
@@ -199,7 +198,7 @@ Azure Redis 缓存是高性能缓存解决方案，提供可用性、可缩放�
 >
 > 此外，Azure 支持角色中缓存。此功能可让你创建云服务专用的缓存。缓存由 Web 角色或辅助角色的实例托管，只能由以同一云服务部署单位的一部分来操作的角色进行访问。（部署单位是作为云服务部署到特定区域的角色实例集合。） 缓存已组建群集，托管缓存的同一部署单位中的所有角色实例将成为同一缓存群集的一部分。但是，不再建议使用此选项，提供此选项只是为了支持构建为使用此选项的现有应用程序。针对所有新的开发，请改用 Azure Redis 缓存。
 >
-> Azure 托管缓存服务和 Azure 角色中缓存目前已预定于 2016 年 11 月 16 日停用。建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。有关详细信息，请访问 Microsoft 网站上的 [What is Azure Redis Cache offering and what size should I use?](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)（我应使用哪种 Azure Redis 缓存产品和大小？）
+> Azure 托管缓存服务和 Azure 角色中缓存目前已预定于 2016 年 11 月 16 日停用。建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。有关详细信息，请访问 Microsoft 网站上的[我应使用哪种 Azure Redis 缓存产品和大小？](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
 
 
 ### Redis 的功能
@@ -331,8 +330,7 @@ Azure Redis 缓存充当底层 Redis 服务器的机制。目前它支持固定�
 
 因为你在实施复制时可能需要创建多个 VM 作为主节点和从属节点，这可能是一个复杂的过程。此外，如果想要创建群集，你需要多个主服务器和从属服务器。一个可以提供高度可用性和可缩放性，并且至少包含 6 个 VM 并组织成 3 对主/从服务器（一个群集必须至少包含 3 个主节点）的精简群集复制拓扑。
 
-每个主/从对应彼此靠近
-以降低延迟。但如果想要找出靠近的应用程序（该应用程序很可能会使用缓存数据），每一组对可以在位于不同区域的不同 Azure 数据中心运行。Microsoft 网站上的 [Running Redis on a CentOS Linux VM in Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx)（在 Azure 中的 CentOS Linux VM 上运行 Redis）页逐步讲解了一个示例，演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
+每个主/从对应彼此靠近以降低延迟。但如果想要找出靠近的应用程序（该应用程序很可能会使用缓存数据），每一组对可以在位于不同区域的不同 Azure 数据中心运行。Microsoft 网站上的 [Running Redis on a CentOS Linux VM in Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx)（在 Azure 中的 CentOS Linux VM 上运行 Redis）页逐步讲解了一个示例，演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
 
 请注意，如果以这种方式实施自己的 Redis 缓存，你需要负责监视、管理和保护服务。
 
@@ -909,7 +907,7 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 
 - Microsoft 网站上的 [MemoryCache class](http://msdn.microsoft.com/zh-cn/library/system.runtime.caching.memorycache.aspx)（MemoryCache 类）页
 - Microsoft 网站上的 [Azure Redis Cache documentation](/documentation/services/cache/)（Azure Redis 缓存文档）页
-- Microsoft 网站上的 [Azure Redis Cache FAQ](/documentation/articles/cache-faq/)（Azure Redis 缓存常见问题）页
+- Microsoft 网站上的 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/)页
 - Microsoft 网站上的 [Configuration model](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh914149.aspx)（配置模型）页
 - Microsoft 网站上的 [Task-based Asynchronous Pattern](http://msdn.microsoft.com/zh-cn/library/hh873175.aspx)（基于任务的异步模式）页
 - StackExchange.Redis GitHub 存储库上的 [Pipelines and multiplexers](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md)（管道和多路复用器）页
@@ -922,17 +920,11 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 - Redis 网站上的 [Redis security](http://redis.io/topics/security)（Redis 安全性）页
 - Azure 博客上的 [Lap around Azure Redis Cache](https://azure.microsoft.com/blog/2014/06/04/lap-around-azure-redis-cache-preview/)（浏览 Azure Redis 缓存）页
 - Microsoft 网站上的 [Running Redis on a CentOS Linux VM in Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx)（在 Azure 中的 CentOS Linux VM 上运行 Redis）页
-- Microsoft 网站上的 [ASP.NET session state provider for Azure Redis Cache](/documentation/articles/cache-aspnet-session-state-provider/)（Azure Redis 缓存的 ASP.NET 会话状态提供程序）页
-- Microsoft 网站上的 [ASP.NET output cache provider for Azure Redis Cache](/documentation/articles/cache-aspnet-output-cache-provider/)（Azure Redis 缓存的 ASP.NET 输出缓存提供程序）页
+- Microsoft 网站上的 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider/)页
+- Microsoft 网站上的 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider/)页
 - Redis 网站上的 [An Introduction to Redis data types and abstractions](http://redis.io/topics/data-types-intro)（Redis 数据类型和抽象简介）页
 - StackExchange.Redis 网站上的 [Basic usage](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)（基本用法）页
 - StackExchange.Redis 存储库上的 [Transactions in Redis](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md)（Redis 中的事务）页
 - Microsoft 网站上的 [Data partitioning guide](http://msdn.microsoft.com/zh-cn/library/dn589795.aspx)（数据分区指南）
 
-##其他最佳实践
-- [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)
-- [可伸缩性清单](/documentation/articles/best-practices-scalability-checklist/)
-- [监视和诊断指南](/documentation/articles/best-practices-monitoring/)
-- [数据分区指南](/documentation/articles/best-practices-data-partitioning/)
-
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0725_2016-->
