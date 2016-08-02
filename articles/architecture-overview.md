@@ -34,9 +34,9 @@ Microsoft 发布了一套高级别的 [体系结构蓝图](http://aka.ms/azbluep
 
 每个蓝图包含一个
 
-- 平面的基于**2D Visio** 2003 的文件，供你下载和修改 
+- 平面的基于**2D Visio** 2003 的文件，供你下载和修改
 - 彩色 **3D perspective PDF** 文件为较少的技术受众介绍蓝图
-- **Video** 通过 3D 版本运行。 
+- **Video** 通过 3D 版本运行。
 
 该蓝图使用[云和企业符号集](#symbol-and-icon-sets)。
 
@@ -51,7 +51,7 @@ Microsoft 发布了一套高级别的 [体系结构蓝图](http://aka.ms/azbluep
 该模板在本课程外也可用。
 
 - 下载 [Microsoft 3d Blueprint Visio Template](http://aka.ms/3DBlueprintTemplate)
-- 下载与 3D 模板配合使用的[云和企业符号](#drawing-symbol-and-icon-sets) 
+- 下载与 3D 模板配合使用的[云和企业符号](#drawing-symbol-and-icon-sets)
 
 提供反馈，或者需要提培训材料无法答复的具体问题，请发邮件至 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com)。可用性是模板的主要目标之一，让我们了解其优点和缺点
 
@@ -80,4 +80,4 @@ Microsoft 发布了几个与体系结构相关的海报/信息图。它们包括
 
 ![Azure 体系结构信息图](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0725_2016-->

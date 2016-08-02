@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="06/07/2016" 
-	wacn.date="07/04/2016"/>
+	ms.date="06/24/2016" 
+	wacn.date="08/01/2016"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690946.aspx -->
 
@@ -29,11 +29,11 @@
 
 1. 启动 Eclipse。
 
-1. 在 Eclipse 中的菜单上，依次单击“帮助”、“安装新软件”，如下图中所示。
+1. Eclipse 打开后，单击 “帮助”菜单，然后单击“安装新软件”，如下图所示。
 
     ![安装 Azure Toolkit for Eclipse][01]
 
-1. 在“可用软件”对话框的“使用”文本框中，键入 **http://dl.microsoft.com/eclipse**，然后按 **Enter** 键。
+1. 在“可用软件”对话框的“使用”文本框中，键入**http://dl.microsoft.com/eclipse**，然后按 **Enter **键。
 
 1. 在“名称”窗格中，选中“Azure Toolkit for Eclipse”，并取消选中“在安装过程中访问所有更新站点以查找所需的软件”。你的屏幕应与下图中所示类似：
 
@@ -75,13 +75,12 @@
 
 - [适用于 Eclipse 的 Azure 工具包]
   - 安装 Azure Toolkit for Eclipse（本文）
-  <!-- - [在 Eclipse 中创建 Azure 的 Hello World Web 应用] -->
+  - [在 Eclipse 中创建 Azure 的 Hello World Web 应用]
   - [Azure Toolkit for Eclipse 的新增功能]
-
-<!--
 - [Azure Toolkit for IntelliJ]
   - [安装 Azure Toolkit for IntelliJ]
-  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用] -->
+  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用]
+  - [Azure Toolkit for IntelliJ 中的新增功能]
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]。
 
@@ -91,8 +90,10 @@
 [Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij/
 [在 Eclipse 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-eclipse-create-hello-world-web-app/
 [在 IntelliJ 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-intellij-create-hello-world-web-app/
+[Installing the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation
 [安装 Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij-installation/
 [Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
+[Azure Toolkit for IntelliJ 中的新增功能]: /documentation/articles/azure-toolkit-for-intellij-whats-new
 
 [Azure Java 开发人员中心]: /develop/java/
 
@@ -105,5 +106,4 @@
 [05]: ./media/azure-toolkit-for-eclipse-installation/eclipse-installation-05.png
 [06]: ./media/azure-toolkit-for-eclipse-installation/eclipse-installation-06.png
 
-
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0725_2016-->

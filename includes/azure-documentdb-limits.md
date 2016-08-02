@@ -1,14 +1,9 @@
 =======
-实体|配额（标准优惠）
+实体|默认配额（标准优惠）
 ---|---
-数据库帐户*|50
-每个数据库帐户的最大文档存储* |1 TB（应请求可更高）
-预配的文档存储*/集合|250 GB（应请求可更高）
-每个集合的最大[请求单位](/documentation/articles/documentdb/documentdb-request-units)*/秒|250,000 RU/s（应请求可更高）
-文档的最大请求大小 |512KB
-存储过程和触发器的最长执行时间|5 秒
-每个查询的最大 AND 子句数量* |200		
-每个查询的最大 OR 子句数量* |200
-最大响应大小|1 MB
+每个集合的文档存储|250 GB*
+每个集合的吞吐量，以每个集合每秒的[请求单位](/documentation/articles/documentdb-request-units/)为单位|250,000 RU/s*
+请求文档的大小 |512 KB*
+响应文档的大小|1 MB*
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0725_2016-->
