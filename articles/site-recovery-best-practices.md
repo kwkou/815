@@ -44,25 +44,6 @@
 
 
 
-<!--
-## 复制 VMware VM 和物理服务器的要求
-
-此表汇总了将 VMware VM 和 Windows/Linux 物理服务器复制到 Azure 和辅助站点的要求。
-
->[AZURE.NOTE] 可使用[增强型](/documentation/articles/site-recovery-vmware-to-azure-classic/)部署模型或用于较旧部署的[旧版](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/)模型将 VMware VM 和物理服务器复制到 Azure。下表包含每个增强模型的部署要求。
-
-**组件** | **复制到 Azure（增强型）** | **复制到辅助站点**
----|---|---
-**本地主站点** | 安装可运行所有站点恢复组件（配置、过程、主目标）的管理服务器。 | 安装进程服务器，以便在复制数据发送到辅助角色站点之前缓存、压缩和加密复制数据。可以安装其他进程服务器来实现负载平衡或容错。 
-**本地辅助站点** | 不适用 | 安装用于配置、管理和监视部署的单个配置服务器。<br/><br>我们建议安装 vContinuum 服务器来方便进行配置服务器管理。<br/><br/>你需要将主目标服务器设置为在辅助 vSphere 服务器上运行的 VM。 
-**VMware vCenter/ESXi** | 如果要在主站点中复制 VMware VM（或要故障回复物理服务器），主站点中需要有 vSphere ESX/ESXi。我们还建议使用 vCenter 服务器来管理 ESXi 主机。 | 主站点和辅助站点中需要一个或多个 VMware ESXi 主机（并根据需要配置 vCenter 服务器）。 
-**故障回复** | 即使复制的是物理服务器，也需要有 VMware 环境才能从 Azure 故障回复。<br/><br/>需要将某个进程服务器设置为 Azure VM<br/><br/>配置服务器充当主目标服务器，但如果要故障回复大量流量，可以设置更多的本地主目标服务器。[了解详细信息](/documentation/articles/site-recovery-failback-azure-to-vmware-classic/)| 即使你要故障转移物理机，从辅助站点到主要站台的故障回复也仍仅限于 VMware。对于故障回复，需要将主目标服务器设置为主 vSphere 服务器上的 VM。
-**Azure 帐户** | 需要一个 [Azure](https://azure.cn/) 帐户和订阅。 | 不适用
-**Azure 存储空间** | 你将需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。 | 不适用
-**Azure 虚拟网络** | 你需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。若要在故障转移后进行故障回复，需要设置从 Azure 网络到本地站点的 VPN 连接（或 Azure ExpressRoute）。 | 不适用
-**受保护的计算机** | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装移动服务。 | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装统一代理。
-**连接** | 如果管理服务器将通过代理连接到站点恢复，则需要确保代理服务器可以连接到特定 URL。 | 配置服务器需要访问 Internet。
-**详细信息** | 详细的部署先决条件 | [下载](http://download.microsoft.com/download/E/0/8/E08B3BCE-3631-4CED-8E65-E3E7D252D06D/InMage_Scout_Standard_User_Guide_8.0.1.pdf) InMage Scout 用户指南。-->
 
 ##<a id="virtual-machines"></a> Azure 虚拟机要求
 
