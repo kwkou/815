@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/23/2016"
-   wacn.date="05/23/2016"/>
+   ms.date="06/30/2016"
+   wacn.date="08/01/2016"/>
 
 # SQL 数据仓库中的存储过程 
 
@@ -93,5 +93,4 @@ SQL 数据仓库中未实现 Transact-SQL 存储过程的某些方面。
 
 <!--Other Web references-->
 
-
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0725_2016-->
