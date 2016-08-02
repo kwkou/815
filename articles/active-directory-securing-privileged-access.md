@@ -4,13 +4,13 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="kgremban"
-	manager="stevenpo"
+	manager="femila"
 	editor="mwahl"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="04/15/2016"
-	wacn.date="07/26/2016"/>
+	ms.date="07/14/2016"
+	wacn.date="08/02/2016"/>
 
 
 # 保护 Azure AD 中的特权访问
@@ -59,11 +59,8 @@ Azure Multi-Factor Authentication 可帮助保护对数据和应用程序的访�
 ![设置使用 MFA 的条件性访问规则][4]
 
 
-## 角色模型
+## 相关文章
 
-若要降低安全风险，应该审查角色和委托模型以调整云服务管理角色，并纳入管理员可用性作为一项主要宗旨。此模型应利用“适时使用”功能。
-
-## 后续步骤
 
 - 启用 [Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-get-started-cloud/)
 - 启用 [Azure AD Privileged Identity Management](/documentation/articles/active-directory-privileged-identity-management-configure/)
@@ -79,4 +76,4 @@ Azure Multi-Factor Authentication 可帮助保护对数据和应用程序的访�
 [3]: ./media/active-directory-identityprotection/29.png
 [4]: ./media/active-directory-conditional-access/conditionalaccess-saas-apps.png
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

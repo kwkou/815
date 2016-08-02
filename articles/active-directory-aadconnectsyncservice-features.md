@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/19/2016"
-	wacn.date="07/26/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/01/2016"/>
 
 # Azure AD Connect 同步服务功能
 
@@ -97,4 +97,4 @@ UserWriteback | 目前不支持。
 
 - [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)。
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

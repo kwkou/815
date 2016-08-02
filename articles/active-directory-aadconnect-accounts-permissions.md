@@ -9,13 +9,13 @@
 
 <tags
    ms.service="active-directory"  
-   ms.date="05/19/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="06/27/2016"
+   wacn.date="08/01/2016"/>
 
 
 # Azure AD Connect：帐户和权限
 
-<a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导设备写回提供提供两种不同的路径：
+<a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导提供提供两种不同的路径：
 
 - 在“快速设置”中，我们需要更多权限，以便轻松设置配置，而无需创建用户或单独配置权限。
 
@@ -24,18 +24,18 @@
 ## 相关文档
 如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的文档，下表提供了相关主题的链接。
 
-| 主题 | |
-| --------- | --------- |
-| 使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express/) |
-| 使用自定义设置安装 | [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom/) |
-| 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/) |
+主题 |  
+--------- | ---------
+使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express/)
+使用自定义设置安装 | [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom/)
+从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/)
 
 
 ## 快速设置安装
 在快速设置中，安装向导将要求提供 AD DS 企业管理员凭据，以便配置本地 Active Directory，使其具有 Azure AD Connect 所需的权限。如果从 DirSync 升级，AD DS 企业管理员凭据可用于重置 DirSync 所用帐户的密码。此外，还需要 Azure AD 全局管理员凭据。
 
 向导页 | 收集的凭据 | 所需的权限| 用途
-------------- | ------------- |------------- |------------- |
+------------- | ------------- |------------- |-------------
 不适用|运行安装向导的用户| 本地服务器的管理员| <li>创建用作[同步引擎服务帐户](#azure-ad-connect-sync-service-account)的本地帐户。
 连接到 Azure AD| Azure AD 目录凭据 | Azure AD 中的全局管理员角色 | <li>在 Azure AD 目录中启用同步。</li> <li>创建将在 Azure AD 中用于进行中同步操作的 [Azure AD 帐户](#azure-ad-service-account)。</li>
 连接到 AD DS | 本地 Active Directory 凭据 | Active Directory 中企业管理员 (EA) 组的成员| <li>在 Active Directory 中创建一个[帐户](#active-directory-account)并向其授予权限。在同步期间，将使用这个创建的帐户读取和写入目录信息。</li>
@@ -59,7 +59,7 @@
 重置密码 | 准备启用密码写回
 
 ## 自定义设置安装
-使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。你必须授予此帐户的权限可在[创建 AD DS 帐户](#create-the-ad-ds-account)中找到。
+使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。授予此帐户的权限可在[创建 AD DS 帐户](#create-the-ad-ds-account)中找到。
 
 向导页 | 收集的凭据 | 所需的权限| 用途
 ------------- | ------------- |------------- |-------------
@@ -77,20 +77,20 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 
 需要哪些权限取决于你启用的可选功能。如果你有多个域，则必须对林中的所有域授予权限。如果你未启用任何一项功能，则默认的**域用户**权限就已足够。
 
-| 功能 | 权限 |
-| ------ | ------ |
-| 密码同步 | <li>复制目录更改</li><li>复制所有目录更改。 |
-| 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/#step-4-set-up-the-appropriate-active-directory-permissions)中叙述了对用户的属性的写入权限。 |
-| 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。|
+功能 | 权限
+------ | ------
+密码同步 | <li>复制目录更改</li><li>复制所有目录更改。
+密码写回 | [密码管理入门](active-directory-passwords-getting-started.md#step-4-set-up-the-appropriate-active-directory-permissions)中叙述了对用户的属性的写入权限。
+组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。
 
 ## 升级
 从 Azure AD Connect 的一个版本升级到新版本时，你需要拥有以下权限：
 
-| 主体 | 所需的权限 | 用途 |
-| ---- | ---- | ---- |
-| 运行安装向导的用户 | 本地服务器的管理员 | 更新二进制文件 |
-| 运行安装向导的用户 | ADSyncAdmins 的成员 | 对同步规则和其他配置进行更改。 |
-| 运行安装向导的用户 | 如果使用完整 SQL 服务器：需有同步引擎数据库的 DBO 权限（或类似权限） | 进行数据库级别的更改，例如使用新列更新表。 |
+主体 | 所需的权限 | 用途
+---- | ---- | ----
+运行安装向导的用户 | 本地服务器的管理员 | 更新二进制文件
+运行安装向导的用户 | ADSyncAdmins 的成员 | 对同步规则和其他配置进行更改。
+运行安装向导的用户 | 如果使用完整 SQL 服务器：需有同步引擎数据库的 DBO 权限（或类似权限） | 进行数据库级别的更改，例如使用新列更新表。
 
 ## 有关所创建帐户的详细信息
 
@@ -128,4 +128,4 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0725_2016-->
