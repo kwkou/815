@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.date="06/23/2016"
+	wacn.date="08/02/2016"/>
 
 # 单一登录 SAML 协议
 
@@ -297,4 +297,4 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 		</AuthnStatement>
 
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->
