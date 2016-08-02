@@ -3,14 +3,14 @@
 	description="了解如何从 Azure 将安全推送通知发送到 iOS 应用。代码示例是使用 .Objective-C 和 C# 编写的。"
 	documentationCenter="ios"
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""
 	services="notification-hubs"/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="02/29/2016"
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/02/2016"/>
 
 #Azure 通知中心安全推送
 
@@ -37,9 +37,9 @@
 
 请务必注意，在之前的流程（以及本教程中）中，我们假设此设备会在用户登录后在本地存储中存储身份验证令牌。这可以保证完全无缝的体验，因为该设备可以使用此令牌检索通知的安全有效负载。如果您的应用程序未在设备上存储身份验证令牌，或者如果这些令牌可能已过期，此设备应用在收到通知时应显示提示用户启动应用的通用通知。然后，应用对用户进行身份验证并显示通知有效负载。
 
-本安全推送教程演示如何安全地发送推送通知。本教程以[通知用户](/documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification)教程为基础，因此您应该先完成该教程中的步骤。
+本安全推送教程演示如何安全地发送推送通知。本教程以[通知用户](/documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification/)教程为基础，因此您应该先完成该教程中的步骤。
 
-> [AZURE.NOTE] 本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started) 中所述创建并配置了通知中心。
+> [AZURE.NOTE] 本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/) 中所述创建并配置了通知中心。
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush)]
 
@@ -61,7 +61,7 @@
 
 3. 然后将以下代码添加到实现部分，将占位符 `{back-end endpoint}` 替换为先前获取的后端终结点：
 
-```
+
 		NSString *const GetNotificationEndpoint = @"{back-end endpoint}/api/notifications";
 
 		- (void) retrieveSecurePayloadWithId:(int)payloadId completion: (void(^)(NSString*, NSError*)) completion;
@@ -106,7 +106,7 @@
 		    }];
 		    [dataTask resume];
 		}
-```
+
 
 此方法使用存储在共享首选项中的凭据调用应用后端来检索通知内容。
 
@@ -154,4 +154,4 @@
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-secure-push/secure-push-ios-1.png
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0725_2016-->

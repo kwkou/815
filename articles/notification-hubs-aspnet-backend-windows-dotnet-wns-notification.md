@@ -3,14 +3,14 @@
 	description="了解如何在 Azure 中发送安全推送通知。代码示例是使用 .NET API 通过 C# 编写的。"
 	documentationCenter="windows"
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	services="notification-hubs"
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="02/29/2016"
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/02/2016"/>
 
 #Azure 通知中心 - 使用 .NET 后端通知用户
 
@@ -378,9 +378,9 @@
 
 
 <!-- URLs. -->
-[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
-[安全推送]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification
-[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns
+[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification-wns-push-notification-wns-push-notification/
+[安全推送]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification/
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0725_2016-->
