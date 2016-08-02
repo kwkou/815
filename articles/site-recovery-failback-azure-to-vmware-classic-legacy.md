@@ -30,8 +30,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ## 体系结构
 
-此图显示了故障转移和故障回复方案。蓝线是故障转移期间使用的连接。红线是故障回复期间使用的连接。箭头线将通过 Internet。
-
+此图显示了故障转移和故障回复方案。蓝线是故障转移期间使用的连接。红线是故障回复期间使用的连接。箭头线将通过 Internet。  
 ![](./media/site-recovery-failback-azure-to-vmware/vconports.png)
 
 ## 开始之前 
@@ -52,8 +51,10 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 1.  [下载 vContinuum](http://go.microsoft.com/fwlink/?linkid=526305)。
 2.  然后下载 [vContinuum 更新](http://go.microsoft.com/fwlink/?LinkID=533813)版本。
-3. 安装最新版本的 vContinuum。在“欢迎”页上，单击“下一步”。
+3.  安装最新版本的 vContinuum。在“欢迎”页上，单击“下一步”。
+
 	![](./media/site-recovery-failback-azure-to-vmware/image2.png)
+
 4.  在向导的第一页上，指定 CX 服务器 IP 地址和 CX 服务器端口。选择“使用 HTTPS”。
 
 	![](./media/site-recovery-failback-azure-to-vmware/image3.png)
@@ -74,6 +75,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	![](./media/site-recovery-failback-azure-to-vmware/image7.png)
 
 9. 安装完成后，可以启动 vContinuum。
+
     ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
 
 
