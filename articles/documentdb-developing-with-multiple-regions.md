@@ -10,7 +10,7 @@
 <tags
    ms.service="documentdb"
    ms.date="06/14/2016"
-   wacn.date="07/22/2016"/>
+   wacn.date="08/02/2016"/>
    
 # 使用多区域 DocumentDB 帐户进行开发
 
@@ -139,4 +139,4 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 [regions]: https://azure.microsoft.com/regions/
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0725_2016-->

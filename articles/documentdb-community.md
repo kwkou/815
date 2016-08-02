@@ -9,23 +9,19 @@
 
 <tags
   ms.service="documentdb"
-  ms.date="06/20/2016"
+  ms.date="07/06/2016"
   wacn.date="06/30/2016"/>
 
-# 社区门户预览
-
-<hr/>
+# 社区门户
 
 ## 社区聚焦
 
-<hr/>
-
-让我们推销你的项目！ 让我们看看你使用 DocumentDB 开发的绝佳项目，我们很乐意与全世界分享你的才华。若要展示给我们你使用DocumentDB开发的绝佳项目，请联系：[askdocdb@microsoft.com](mailto:askdocdb@microsoft.com)。
+让我们推销你的项目！ 让我们看看你使用 DocumentDB 进行的绝佳项目，我们很乐意与全世界分享你的才华。若要提交你的项目，请向我们发送电子邮件：[askdocdb@microsoft.com](mailto:askdocdb@microsoft.com)。
 
 
 ### documentdb-lumenize
 
-作者：Larry Maccherone
+*作者：Larry Maccherone*
 
 DocumentDB 中以存储过程形式提供的聚合（分组依据、数据透视表和 N 维多维数据集）和时序转换功能。
 
@@ -34,7 +30,7 @@ DocumentDB 中以存储过程形式提供的聚合（分组依据、数据透视
 
 ### DocumentDB Studio
 
-作者：Ming Liu
+*作者：Ming Liu*
 
 Azure DocumentDB 服务的客户端管理查看器/资源管理器。
 
@@ -43,9 +39,9 @@ Azure DocumentDB 服务的客户端管理查看器/资源管理器。
 
 ### DoQmentDB
 
-作者：Ariel Mashraki
+*作者：Ariel Mashraki*
 
-DoQmentDB 是一个以 Node.js Promise 为基础的客户端，可在DocumentDB的顶层提供类似 MongoDB 的平台。
+DoQmentDB 是一个以 Node.js Promise 为基础的客户端，可在 DocumentDB 的顶端提供类似 MongoDB 的层。
 
 在 [Github](https://github.com/a8m/doqmentdb) 和 [npm](https://www.npmjs.com/package/doqmentdb) 上了解相关信息。
 
@@ -61,27 +57,17 @@ DoQmentDB 是一个以 Node.js Promise 为基础的客户端，可在DocumentDB�
 
 ### fluent-plugin-documentdb
 
-作者：Yoichi Kawasaki
+*作者：Yoichi Kawasaki*
 
 fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件。
 
 在 [Github](https://github.com/yokawasa/fluent-plugin-documentdb) 和 [rubygems](https://rubygems.org/gems/fluent-plugin-documentdb) 上了解相关信息。
 
-<br/><br/>
-
-在 [GitHub](https://github.com/search?p=4&q=documentdb&type=Repositories) 上查找更多开放源代码 DocumentDB 项目。
-
-<br/><br/>
-
-<hr/>
+*在 [GitHub](https://github.com/search?p=4&q=documentdb&type=Repositories) 上查找更多开放源代码 DocumentDB 项目。*
 
 ## 新闻、博客和文章
 
-<hr/>
-
 你可以关注[我们的博客](https://azure.microsoft.com/blog/tag/documentdb/)，随时了解最新的 DocumentDB 新闻和功能。
-
-<br/>
 
 **社区贴文：**
 
@@ -171,8 +157,6 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 ## 开放源代码项目
 
-<hr/>
-
 这些项目由 Azure DocumentDB 团队与我们的开放源代码社区共同积极开发。
 
 ### SDK
@@ -191,15 +175,11 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 | Hadoop 连接器 | [azure-documentdb-hadoop](https://github.com/Azure/azure-documentdb-hadoop) | [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-documentdb-hadoop%22) |
 | 数据迁移工具 | [azure-documentdb-datamigrationtool](https://github.com/Azure/azure-documentdb-datamigrationtool) | [Microsoft 下载中心](http://www.microsoft.com/zh-cn/download/details.aspx?id=46436) |
 
-<hr/>
-
 ## DocumentDB 奇才
 
-<hr/>
-
 DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们在 Azure DocumentDB 上的经验的最佳典范。他们和社区及 DocumentDB 团队分享了他们超乎常人的热情、实用的知识以及专业技术。
-      
-                                                                                                                                                                                                                                                                                                           Wizard | Picture 
+
+向导 | 图片 
  --- | --- 
  [Allan Mitchell](https://twitter.com/allansqlis) | [![Allan Mitchell](./media/documentdb-community/wizard-allan-mitchell.jpg)](https://twitter.com/allansqlis) 
  [Jen Stirrup](https://twitter.com/jenstirrup) | [![Jen Stirrup](./media/documentdb-community/wizard-jen-stirrup.jpg)](https://twitter.com/jenstirrup)            
@@ -210,4 +190,4 @@ DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们
 
 想要成为 DocumentDB 奇才？ 由于是否能成为 DocumentDB 奇才并没有任何评判基准，因此我们会针对部分条件来评估，包括被提名人对在线论坛（例如 StackOverflow 和 MSDN；Wiki 和在线内容；会议和用户组；播客；网站；博客和社交媒体；以及文章与书籍）的贡献所产生的影响。如果你想提名自己或其他人，[请向我们发送电子邮件](mailto:askdocdb@microsoft.com)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0725_2016-->
