@@ -10,8 +10,8 @@
 
 <tags 
   ms.service="storage" 
-  ms.date="06/08/2016" 
-  wacn.date="07/25/2016"/>
+  ms.date="06/23/2016" 
+  wacn.date="08/01/2016"/>
 
 # Azure 存储复制
 
@@ -76,4 +76,5 @@
 - [Azure 存储冗余选项和读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
 - [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
  
-<!---HONumber=Mooncake_0718_2016-->
+
+<!---HONumber=Mooncake_0725_2016-->

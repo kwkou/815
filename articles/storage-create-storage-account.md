@@ -3,14 +3,14 @@
 	description="创建新的存储帐户、管理帐户访问密钥，或删除 Azure 门户中的存储帐户。了解标准和高级存储帐户。"
 	services="storage"
 	documentationCenter=""
-	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="05/09/2016"
-	wacn.date="07/05/2016"/>
+	ms.date="06/23/2016"
+	wacn.date="08/01/2016"/>
 
 
 # 关于 Azure 存储帐户
@@ -47,7 +47,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*。
 
-此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name/)。对于 ARM 存储帐户，此功能尚未添加到 [Azure 门户预览](https://portal.azure.cn)，但你可以使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
+此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name/)。对于 Resource Manager 存储帐户，此功能尚未添加到 [Azure 门户预览](https://portal.azure.cn)，但你可以使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
 
 ## 创建存储帐户
 
@@ -69,13 +69,13 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 	如果已选择“常规用途”，则指定性能层：“标准”或“高级”。默认值为“标准”。有关标准和高级存储帐户的更多详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)和[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
-	如果已选择“Blob 存储”，则指定访问层：“经常访问”或“不常访问”。默认值为“经常访问”。有关更多详细信息，请参阅 [Azure Blob 存储：不常访问和经常访问的层](/documentation/articles/storage-blob-storage-tiers/)。
+	如果已选择“Blob 存储”，则指定访问层：“经常访问”或“不常访问”。默认值为“经常访问”。有关更多详细信息，请参阅 [Azure Blob 存储：冷层和热层](/documentation/articles/storage-blob-storage-tiers/)。
 
-6. 选择存储帐户的复制选项：“LRS”、“GRS”、“RA-GRS”。默认值为“RA-GRS”。有关 Azure 存储空间复制选项的详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy/)。
+6. 选择存储帐户的复制选项：“LRS”、“GRS”、“RA-GRS”。默认值为“RA-GRS”。有关 Azure 存储空间复制选项的更多详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy/)。
 
 7. 选择想在其中创建新存储帐户的订阅。
 
-8. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
+8. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。
 
 9. 选择存储帐户的地理区域。
 
@@ -133,7 +133,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 若要删除与 Azure 虚拟机相关联的存储帐户，必须首先确保已删除所有虚拟机磁盘。如果不先删除虚拟机磁盘，则当你尝试删除存储帐户时，将看到如下错误消息：
 
-无法删除存储帐户 \<vm-storage-account-name\>。无法删除存储帐户 \<vm-storage-account-name\>：存储帐户 \<vm-storage-account-name\> 有一些活动映像和/或磁盘。删除此存储帐户前，请确保删除这些映像和/或磁盘。
+无法删除存储帐户 <vm-storage-account-name>。无法删除存储帐户 <vm-storage-account-name>：存储帐户 <vm-storage-account-name> 有一些活动映像和/或磁盘。删除此存储帐户前，请确保删除这些映像和/或磁盘。
 
 如果存储帐户使用经典部署模型，你可以通过在 [Azure 经典管理门户](https://manage.windowsazure.cn)中执行以下步骤来删除虚拟机磁盘：
 
@@ -147,10 +147,10 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 ## 后续步骤
 
-- [Azure Blob 存储：不常访问和经常访问的层](/documentation/articles/storage-blob-storage-tiers/)
+- [Azure Blob 存储：冷层和热层](/documentation/articles/storage-blob-storage-tiers/)
 - [Azure 存储空间复制](/documentation/articles/storage-redundancy/)
 - [配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0725_2016-->

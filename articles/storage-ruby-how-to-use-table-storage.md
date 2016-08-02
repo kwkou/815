@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="04/29/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/01/2016"/>
 
 
 # 如何通过 Ruby 使用 Azure 表存储
@@ -53,15 +53,20 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your azure storage access key>"
 
-获取这些值：
+从 Azure 门户预览或 Resource Manager 存储帐户中获取这些值：
 
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+2. 导航到要使用的存储帐户。
+3. 在右侧的“设置”边栏选项卡中，单击“访问密钥”。
+4. 在出现的“访问密钥”边栏选项卡中，将看到访问密钥 1 和访问密钥 2。你可以使用其中任意一个。
+5. 单击复制图标以将键复制到剪贴板。
 
-从经典管理门户中的存储帐户中获取这些值：
+从 Azure 经典管理门户中的存储帐户中获取这些值：
 
-1. 登录到[经典管理门户](https://manage.windowsazure.cn)。
+1. 登录到[Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 导航到要使用的存储帐户。
 3. 单击导航窗格底部的“管理访问密钥”。
-4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，您可以使用主访问密钥，也可以使用辅助访问密钥。 
+4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，您可以使用主访问密钥，也可以使用辅助访问密钥。
 5. 单击复制图标以将键复制到剪贴板。
 
 ## 创建表
@@ -155,4 +160,4 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - GitHub 上的 [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0725_2016-->
