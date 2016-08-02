@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/03/2016"
-	wacn.date="06/24/2016"/>
+	wacn.date="08/02/2016"/>
 	
 	
 
@@ -126,7 +126,7 @@
 | 文章指南 | |
 | :---: | --- |
 | Azure AD 访问管理功能的概述 | [有关管理对应用的访问的简介](/documentation/articles/active-directory-managing-access-to-apps/)<br /><br />[Azure AD 中访问管理的工作原理](/documentation/articles/active-directory-manage-groups/)<br /><br />[如何使用组来管理对 SaaS 应用程序的访问](/documentation/articles/active-directory-accessmanagement-group-saasapps/) |
-| 启用应用程序和组的自助管理 | [自助应用程序管理](/documentation/articles/active-directory-self-service-application-access/)<br /><br />[自助组管理](/documentation/articles/active-directory-accessmanagement-self-service-group-management/) |
+| 启用应用程序和组的自助管理 | <br /><br />[自助组管理](/documentation/articles/active-directory-accessmanagement-self-service-group-management/) |
 | 有关在 Azure AD 中设置组的说明 | [如何创建安全组](/documentation/articles/active-directory-accessmanagement-manage-groups/)<br /><br />[如何指定组的所有者](/documentation/articles/active-directory-accessmanagement-managing-group-owners/)<br /><br />[如何使用“所有用户”组](/documentation/articles/active-directory-accessmanagement-dedicated-groups/) |
 | 使用动态组通过基于属性的成员资格规则自动填充组成员资格 | [动态组成员资格：简单规则](/documentation/articles/active-directory-accessmanagement-simplerulegroup/)<br /><br />[动态组成员资格：高级规则](/documentation/articles/active-directory-accessmanagement-groups-with-advanced-rules/)<br /><br />[动态组成员资格疑难解答](/documentation/articles/active-directory-accessmanagement-troubleshooting/) |
 

@@ -11,7 +11,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="05/19/2016"
-	wacn.date="06/24/2016"/>
+	wacn.date="08/02/2016"/>
 
 
 # 将本地标识与 Azure Active Directory 集成
@@ -33,14 +33,14 @@ Azure AD Connect 会将你的本地目录与 Azure Active Directory 集成。这
 
 ### Azure AD Connect 工作原理
 
-Azure Active Directory Connect 由三个主要组件构成：同步服务、可选的 Active Directory 联合身份验证服务组件和名为 [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/active-directory-aadconnect-health) 的监视组件。
+Azure Active Directory Connect 由三个主要组件构成：同步服务、可选的 Active Directory 联合身份验证服务组件和名为 Azure AD Connect Health 的监视组件。
 
 <center>![Azure AD Connect 堆栈](./media/active-directory-aadconnect-how-it-works/AADConnectStack2.png)
 </center>
 
 - 同步 - 此组件负责创建用户、组和其他对象。它还负责确保本地用户和组的标识信息与云匹配。
 - AD FS - 联合身份验证是 Azure AD Connect 的可选部件，可用于使用本地 AD FS 基础结构配置混合环境。组织可以使用此部件来解决复杂的部署，例如域加入 SSO、实施 AD 登录策略和智能卡或第三方 MFA。
-- 运行状况监视 - Azure AD Connect Health 提供可靠监视，并在 Azure 经典管理门户中提供一个中心位置用于查看此活动。有关更多信息，请参阅 [Azure Active Directory Connect Health](/documentation/articles/active-directory-aadconnect-health/)。
+- 运行状况监视 - Azure AD Connect Health 提供可靠监视，并在 Azure 经典管理门户中提供一个中心位置用于查看此活动。
 
 ## 安装 Azure AD Connect
 
@@ -144,7 +144,7 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 版本历史记录 | [版本历史记录](/documentation/articles/active-directory-aadconnect-version-history/) |
 | Azure AD 的非 ADFS 兼容性列表 | [Azure AD 联合身份验证兼容性列表](/documentation/articles/active-directory-aadconnect-federation-compatibility/) |
 | 同步的属性 | [同步的属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/) |
-| 使用 Azure AD Connect Health 进行监视 | [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/) |
+
 | 常见问题 | [Azure AD Connect 常见问题](/documentation/articles/active-directory-aadconnect-faq/) |
 
 

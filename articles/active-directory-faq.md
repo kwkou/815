@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/20/2016"
-	wacn.date="07/26/2016"/>
+	wacn.date="08/02/2016"/>
 
 # Azure Active Directory 常见问题
 
@@ -78,14 +78,6 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 有关详细信息，请参阅 [Introduction to the Access Panel（访问面板简介）](/documentation/articles/active-directory-saas-access-panel-introduction/)。
 
 
-
----
-
-**问：Azure AD 是否可以帮助我管理本地基础结构？**
-
-**答：**可以。Azure AD Premium Edition 提供 **Connect Health**。Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结构和同步服务。
-
-有关详细信息，请参阅 [Monitor your on-premises identity infrastructure and synchronization services in the cloud（在云中监视本地标识基础结构和同步服务）](/documentation/articles/active-directory-aadconnect-health)。
 
 ---
 
