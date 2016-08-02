@@ -24,8 +24,6 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 ## 概述
 
 本文介绍从本地站点复制到 Azure 之后如何将 VMware 虚拟机和 Windows/Linux 物理服务器从 Azure 故障回复到本地站点。
-<!--
->[AZURE.NOTE] 本文介绍旧方案。如果使用[这些旧说明](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/)复制到 Azure，则仅应使用本文中的说明。如果使用[增强版部署](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/)设置复制，那么请按照[本文](/documentation/articles/site-recovery-failback-azure-to-vmware-classic/)中的说明进行故障回复。-->
 
 
 ## 体系结构
