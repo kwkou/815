@@ -45,6 +45,8 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 ---
 
+
+
 ## 混合 Azure AD 入门
 
 
@@ -144,4 +146,4 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

@@ -1,17 +1,17 @@
-<properties 
-	pageTitle="Azure AD Connect：自定义安装 | Azure"
+<properties
+	pageTitle="Azure AD Connect 的自定义安装 | Azure"
 	description="本文档详细介绍了 Azure AD Connect 的自定义安装选项。使用本文中的说明来通过 Azure AD Connect 安装 Active Directory。"
 	services="active-directory"
-        keywords="什么是 Azure AD Connect, 安装 Active Directory, Azure AD 所需的组件"
+    keywords="什么是 Azure AD Connect, 安装 Active Directory, Azure AD 所需的组件"
 	documentationCenter=""
-	authors="billmath"
+	authors="andkjell"
 	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory"
-	ms.date="05/10/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/01/2016"/>
 
 # Azure AD Connect 的自定义安装
 当你希望更多的安装选项时，可以使用 Azure AD Connect“自定义设置”。如果你拥有多个林或希望配置未覆盖在快速安装中的可选功能，可以使用它。它可用于在 [**快速安装**](/documentation/articles/active-directory-aadconnect-get-started-express)选项不能满足部署或拓扑的所有情况下。
@@ -132,15 +132,16 @@ Azure AD 应用程序和属性筛选 | 通过启用 Azure AD 应用和属性筛�
 目录扩展属性同步 | 通过启用目录扩展属性同步，可将指定的属性同步到 Azure AD。有关详细信息，请参阅 [Directory extensions（目录扩展）](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)。 |
 
 ### Azure AD 应用程序和属性筛选
-如果你希望限制要同步到 Azure AD 的属性，则一开始请选择要使用哪些服务。如果你配置此页面，则必须重新运行安装向导来明确选择任何新服务。
+如果想要限制同步到 Azure AD 的属性，请通过选择正在使用的服务来启动。如果在此页面上进行配置更改，则必须通过重新运行安装向导来明确选择新的服务。
 
-![可选功能](./media/active-directory-aadconnect-get-started-custom/azureadapps2.png)
+![可选功能 - 应用](./media/active-directory-aadconnect-get-started-custom/azureadapps2.png)
 
-此页面将根据上一步选择的服务来显示要同步的所有属性。此列表是要同步的所有对象类型的组合。如果你需要禁止同步某些特定属性，可以取消选中它们。
+此页面将根据上一步选择的服务来显示要同步的所有属性。此列表是要同步的所有对象类型的组合。如果你需要禁止同步某些特定属性，可以取消选中这些属性。
 
-![可选功能](./media/active-directory-aadconnect-get-started-custom/azureadattributes2.png)
+![可选功能 - 属性](./media/active-directory-aadconnect-get-started-custom/azureadattributes2.png)
 
->[AZURE.WARNING] 删除属性可能会影响功能。有关最佳实践和建议，请参阅[属性同步](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/#attributes-to-synchronize)。
+>[AZURE.WARNING]
+删除属性可能会影响功能。有关最佳实践和建议，请参阅[属性同步](active-directory-aadconnectsync-attributes-synchronized.md#attributes-to-synchronize)。
 
 ### 目录扩展属性同步
 可以使用组织添加的自定义属性或 Active Directory 中的其他属性，在 Azure AD 中扩展架构。若要使用这项功能，请在“可选功能”页上选择“目录扩展属性同步”。可以在此页上选择要同步的其他属性。
@@ -251,7 +252,9 @@ AD Connect 尝试在配置阶段验证域。如果你继续进行配置但未添
 
 安装 Azure AD Connect 后，可以[验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next/)。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
+了解有关这些常见主题的详细信息，请参阅[计划程序以及如何触发同步](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+## 相关文档
 
 主题 |  
 --------- | ---------
@@ -260,4 +263,4 @@ Azure AD Connect 概述 | [将本地标识与 Azure Active Directory 集成](/do
 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/)
 用于安装的帐户 | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0725_2016-->

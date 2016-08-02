@@ -9,8 +9,8 @@
 
 <tags 
    ms.service="active-directory" 
-   ms.date="05/31/2016"
-   wacn.date="07/26/2016"/>
+   ms.date="06/27/2016"
+   wacn.date="08/01/2016"/>
 
 
 # Azure AD Connect：从 DirSync 升级
@@ -204,6 +204,18 @@ Azure AD Connect 现为你的活动服务器。
 ## 后续步骤
 安装 Azure AD Connect 后，可以[验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next/)。
 
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
+有关这些新功能（在安装过程中已启用）的详细信息，请参阅[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)，[防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/)。
 
-<!---HONumber=Mooncake_0711_2016-->
+了解有关这些常见主题的详细信息，请参阅[计划程序以及如何触发同步](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
+## 相关文档
+
+主题 |  
+--------- | ---------
+Azure AD Connect 概述 | [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
+从先前的 Connect 版本升级 | [从先前的 Connect 版本升级](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/)
+使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express/)
+使用自定义设置安装 | [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom/)
+用于安装的帐户 | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions/)
+
+<!---HONumber=Mooncake_0725_2016-->

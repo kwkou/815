@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/19/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/01/2016"/>
 
 
 # 升级 Microsoft Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync)
@@ -35,10 +35,10 @@ Azure AD Connect 是 DirSync 和 Azure AD Sync 的后继产品。它结合了两
 
 如果你使用 Azure AD Sync，我们建议使用就地升级。如果需要，也可以并行安装新的 Azure AD Connect 服务器，并运行从 Azure AD 同步服务器到 Azure AD Connect 的交叉迁移。
 
-| 解决方案 | 方案 |
-| ----- | ----- |
-| [从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/) | <li>如果你有已在运行的现有 DirSync 服务器。</li>
-| [从 Azure AD Sync 升级](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/)| <li>如果要从 Azure AD Sync 迁移。</li>
+解决方案 | 方案
+----- | -----
+[从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/) | <li>如果你有已在运行的现有 DirSync 服务器。</li>
+[从 Azure AD Sync 升级](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/)| <li>如果要从 Azure AD Sync 迁移。</li>
 
 如果你想要了解如何从 DirSync Azure AD Connect 执行就地升级，请参阅第 9 频道视频：
 
@@ -61,4 +61,4 @@ Azure AD Connect 是 DirSync 和 Azure AD Sync 的后继产品。它结合了两
 
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0725_2016-->

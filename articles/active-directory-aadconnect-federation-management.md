@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/04/2016"
-	wacn.date="07/27/2016"/>
+	wacn.date="08/01/2016"/>
 
 # 使用 Azure AD Connect 进行 Active Directory 联合身份验证服务的管理和自定义
 
@@ -82,7 +82,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 ### 添加新的 AD FS Web 应用程序代理服务器
 
-> [AZURE.NOTE] Azure AD Connect 要求 PFX 证书文件添加 Web 应用程序代理服务器。因此，只有使用 Azure AD Connect 配置了 AD FS 场，才能够执行此操作。
+> [AZURE.NOTE] Azure AD Connect 需要具有 PFX 证书文件才能添加 Web 应用程序代理服务器。因此，只有使用 Azure AD Connect 配置了 AD FS 场，才能够执行此操作。
 
 从可用任务列表中选择“部署 Web 应用程序代理”。
 
@@ -98,7 +98,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 ![](.\media\active-directory-aadconnect-federation-management\WapServer4.PNG)
 
-在下一页上，添加将作为 Web 应用程序代理添加的服务器。因为 Web 应用程序代理服务器可能加入或可能未加入到域，因此向导将要求向正被添加的服务器添加管理凭据。
+在下一页上，添加将作为 Web 应用程序代理添加的服务器。因为 Web 应用程序代理服务器不一定已经加入到域，因此向导将要求提供正在添加的服务器的管理凭据。
 
 ![](.\media\active-directory-aadconnect-federation-management\WapServer5.PNG)
 
@@ -234,7 +234,6 @@ AD FS 提供指定用于发布声明的自定义规则的选项。它支持丰�
 
 ## 后续步骤
 
-请了解[用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/)的详细信息
+了解关于[用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/)的更多信息
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0725_2016-->

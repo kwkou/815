@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/19/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="06/27/2016"
+   wacn.date="08/01/2016"/>
 
 # Azure AD Connect：自动升级
 此功能是随内部版本 1.1.105.0（于 2016 年 2 月发布）一起推出的。
@@ -89,4 +89,4 @@ UpgradeNotSupportedUserWritebackEnabled | 你已启用[用户写回](/documentat
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0725_2016-->
