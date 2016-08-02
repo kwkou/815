@@ -72,8 +72,8 @@
 **功能** | **要求** | **详细信息**
 ---|---|---
 Hyper-V 主机 | 应运行 Windows Server 2012 R2 | 如果操作系统不受支持，先决条件检查将会失败
-VMware 虚拟机监控程序 | 支持的操作系统 | [检查要求](/documentation/articles/site-recovery-vmware-to-azure-classic/#before-you-start-deployment) 
-来宾操作系统 | 对于从 Hyper-V 到 Azure 的复制，站点恢复支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统。<br/><br/>对于 VMware 和物理服务器复制，请检查 Windows 和 Linux [先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic/#before-you-start-deployment) | 如果不支持，先决条件检查将会失败。 
+VMware 虚拟机监控程序 | 支持的操作系统 | 检查要求
+来宾操作系统 | 对于从 Hyper-V 到 Azure 的复制，站点恢复支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统 | 如果不支持，先决条件检查将会失败。 
 来宾操作系统体系结构 | 64 位 | 如果不支持，先决条件检查将会失败
 操作系统磁盘大小 | 最大 1023 GB | 如果不支持，先决条件检查将会失败
 操作系统磁盘计数 | 1 | 如果不支持，先决条件检查将会失败。
