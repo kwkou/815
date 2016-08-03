@@ -182,7 +182,7 @@
 [img-keys]: ./media/iot-hub-device-management-get-started/image4.png
 [img-connection]: ./media/iot-hub-device-management-get-started/image5.png
 [img-output]: ./media/iot-hub-device-management-get-started/image6.png
-[img-dm-ui]: media/iot-hub-device-management-get-started/dmui.png
+[img-dm-ui]: ./media/iot-hub-device-management-get-started/dmui.png
 
 [lnk-free-trial]: /pricing/1rmb-trial/
 [Azure 门户预览]: https://portal.azure.cn/
