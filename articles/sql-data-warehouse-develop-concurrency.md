@@ -376,7 +376,7 @@ SQL 数据仓库具有以下等待类型。
 
 ## 后续步骤
 
-有关如何管理数据库用户和安全性的详细信息，请参阅[保护 SQL 数据仓库中的数据库][]。有关如何通过更大型资源类来改进聚集列存储索引质量的详细信息，请参阅[重新生成索引以提高段质量]。
+有关如何管理数据库用户和安全性的详细信息，请参阅[保护 SQL 数据仓库中的数据库][]。
 
 <!--Image references-->
 
@@ -385,7 +385,7 @@ SQL 数据仓库具有以下等待类型。
 [重新生成索引以提高段质量]: /documentation/articles/sql-data-warehouse-tables-index#rebuilding-indexes-to-improve-segment-quality/
 
 <!--MSDN references-->
-[在 Azure SQL 数据库中管理数据库和登录名]: https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
+[在 Azure SQL 数据库中管理数据库和登录名]: /documentation/articles/sql-database-manage-logins/
 
 <!--Other Web references-->
 

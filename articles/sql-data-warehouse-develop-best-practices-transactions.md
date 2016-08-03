@@ -409,7 +409,6 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 
 <!--Article references-->
 [SQL 数据仓库中的事务]: /documentation/articles/sql-data-warehouse-develop-transactions/
-[表分区]: /documentation/articles/sql-data-warehouse-tables-partition/
 [并发]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/

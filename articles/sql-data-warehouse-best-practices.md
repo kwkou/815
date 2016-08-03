@@ -107,18 +107,8 @@ SQL 数据仓库有多个 DMV 可用于监视查询执行。以下监视相关�
 [Create a support ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
 [并发性和工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [Create Table As Select (CTAS)]: /documentation/articles/sql-data-warehouse-develop-ctas/
-[表概述]: /documentation/articles/sql-data-warehouse-tables-overview/
-[表数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types/
-[表数据分布]: /documentation/articles/sql-data-warehouse-tables-distribute/
-[表索引]: /documentation/articles/sql-data-warehouse-tables-index/
-[列存储索引质量差的原因]: /documentation/articles/sql-data-warehouse-tables-index#causes-of-poor-columnstore-index-quality/
-[表分区]: /documentation/articles/sql-data-warehouse-tables-partition/
-[管理表统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
-[临时表]: /documentation/articles/sql-data-warehouse-tables-temporary/
 [PolyBase 使用指南]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
 [加载数据]: /documentation/articles/sql-data-warehouse-overview-load/
-[使用 Azure 数据工厂移动数据]: /documentation/articles/data-factory/data-factory-azure-sql-data-warehouse-connector/
-[使用 Azure 数据工厂加载数据]: /documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory/
 [Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
 [Load data with PolyBase]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
 [使用 DMV 监视工作负荷]: /documentation/articles/sql-data-warehouse-manage-monitor/

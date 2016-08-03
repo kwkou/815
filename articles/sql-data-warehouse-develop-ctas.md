@@ -418,7 +418,7 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 有关更多开发技巧，请参阅[开发概述][]。
 
 <!--Image references-->
-[1]: media/sql-data-warehouse-develop-ctas/ctas-results.png
+[1]: ./media/sql-data-warehouse-develop-ctas/ctas-results.png
 
 <!--Article references-->
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
