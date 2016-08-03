@@ -24,8 +24,6 @@
 2. 不需要唯一的资源名称，不过，提供的名称应可帮助识别上下文。
 3. 通用的资源名称。
 
-有关建立命名约定的帮助，请参阅 [Infrastructure naming guidelines](./virtual-machines/virtual-machines-windows-infrastructure-naming-guidelines.md)（基础结构命名指南）。有关资源名称限制的信息，请参阅 [Recommended naming conventions for Azure resources](./guidance/guidance-naming-conventions.md)（Azure 资源的建议命名约定）。
-
 ### 唯一的资源名称
 
 对于具有数据访问终结点的任何资源类型，必须提供唯一的资源名称。需要唯一名称的一些常见类型包括：
@@ -42,7 +40,7 @@
 
 此外，存储帐户名必须使用小写字母，包含 24 个或更少的字符，并且不包含任何连字符。
 
-如果不为这些资源名称提供参数并且不想要在部署期间试图猜测唯一名称，你可以创建一个使用 [uniqueString()](resource-group-template-functions.md#uniquestring) 函数的变量来生成名称。通常，还需要在 **uniqueString** 中添加一个前缀或后缀，这样，只需查看名称就能更轻松地确定资源类型。例如，可以使用以下变量生成存储帐户的唯一名称。
+如果不为这些资源名称提供参数并且不想要在部署期间试图猜测唯一名称，你可以创建一个使用 [uniqueString()](/documentation/articles/resource-group-template-functions/#uniquestring) 函数的变量来生成名称。通常，还需要在 **uniqueString** 中添加一个前缀或后缀，这样，只需查看名称就能更轻松地确定资源类型。例如，可以使用以下变量生成存储帐户的唯一名称。
 
     "variables": {
         "storageAccountName": "[concat(uniqueString(resourceGroup().id),'storage')]"
@@ -153,7 +151,7 @@
 
 1. 针对需要在模板中多次使用的值使用变量。如果一次只使用一个值，则硬编码值可使模板更易于阅读。
 
-1. 不能在 variables 节中使用 [reference](resource-group-template-functions.md#reference) 函数。reference 函数从资源的运行时状态中派生其值，但变量是在初始模板分析期间解析的。应直接在模板的 **resources** 或 **outputs** 节中构造需要 **reference** 函数的值。
+1. 不能在 variables 节中使用 [reference](/documentation/articles/resource-group-template-functions/#reference) 函数。reference 函数从资源的运行时状态中派生其值，但变量是在初始模板分析期间解析的。应直接在模板的 **resources** 或 **outputs** 节中构造需要 **reference** 函数的值。
 
 1. 根据[资源名称](#resource-names)中所述，针对需要保持唯一的资源名称包含变量。
 
@@ -180,8 +178,6 @@
  
      > [AZURE.NOTE] 复杂对象不能包含从复杂对象引用值的表达式。若要进行这种引用，可以定义一个单独的变量。
 
-     有关使用复杂对象作为变量的更高级示例，请参阅 [Sharing state in Azure Resource Manager templates](best-practices-resource-manager-state.md)（在 Azure Resource Manager 模板中共享状态）。
-
 ## 资源
 
 1. 为模板中的每个资源指定**注释**，以帮助其他参与者理解该资源的用途。
@@ -197,7 +193,7 @@
           }
         ]
 
-1. 使用标记将元数据添加到可让你添加有关资源的其他信息的资源。例如，可以将元数据添加到某个资源以显示计费详细信息。有关详细信息，请参阅[使用标记来组织 Azure 资源](resource-group-using-tags.md)。
+1. 使用标记将元数据添加到可让你添加有关资源的其他信息的资源。例如，可以将元数据添加到某个资源以显示计费详细信息。有关详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
 1. 如果在模板中使用**公共终结点**（例如 Blob 存储公共终结点），请**不要**将命名空间硬编码。使用 **reference** 函数可动态检索命名空间。这样，你便可以将模板部署到不同的公共命名空间环境，而无需在模板中手动更改终结点。在模板中将 apiVersion 设置为用于 storageAccount 的同一版本。
 
@@ -239,11 +235,10 @@
 1. 仅当应用程序有需要时，才将 publicIPAddresses 分配到虚拟机。若要建立连接以进行调试或管理，请使用 inboundNatRules、virtualNetworkGateways 或 jumpbox。
 
      有关连接到虚拟机的详细信息，请参阅：
-     - [Running VMs for an N-tier architecture on Azure](./guidance/guidance-compute-3-tier-vm.md)（在 Azure 上运行 N 层体系结构所用的 VM）
-     - [为 Azure Resource Manager 中的虚拟机设置 WinRM 访问权限](./virtual-machines/virtual-machines-windows-winrm.md)
-     - [使用 Azure 门户对 VM 实现外部访问](./virtual-machines/virtual-machines-windows-nsg-quickstart-portal.md)
-     - [使用 PowerShell 对 VM 实现外部访问](./virtual-machines/virtual-machines-windows-nsg-quickstart-powershell.md)
-     - [打开端口和终结点](./virtual-machines/virtual-machines-linux-nsg-quickstart.md)
+     - [为 Azure Resource Manager 中的虚拟机设置 WinRM 访问权限](/documentation/articles/virtual-machines-windows-winrm/)
+     - [使用 Azure 门户对 VM 实现外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
+     - [使用 PowerShell 对 VM 实现外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)
+     - [打开端口和终结点](/documentation/articles/virtual-machines-linux-nsg-quickstart/)
 
 1. publicIPAddresses 的 **domainNameLabel** 属性必须唯一。domainNameLabel 必须包含 3 到 63 个字符，并遵循正则表达式 `^[a-z][a-z0-9-]{1,61}[a-z0-9]$` 指定的规则。在以下示例中，由于 uniqueString 函数将生成包含 13 个字符的字符串，因此假设会检查 dnsPrefixString 前缀字符串的长度是否不超过 50 个字符并符合这些规则。
 
@@ -301,7 +296,7 @@
 1. 可将解决方案分解为目标组件
 2. 可在不同的主模板中重复使用嵌套模板
 
-如果你确定要将模板设计分解为多个嵌套模板，以下指导可帮助你将设计标准化。这些指导以 [patterns for designing Azure Resource Manager templates](best-practices-resource-manager-design-templates.md)（设计 Azure Resource Manager模板的模式）文档为基础。建议的设计包括以下模板。
+如果你确定要将模板设计分解为多个嵌套模板，以下指导可帮助你将设计标准化。建议的设计包括以下模板。
 
 + **主模板** (azuredeploy.json)。用于输入参数。
 + **共享的资源模板**。部署其他所有资源使用的共享资源（例如虚拟网络、可用性集）。表达式 dependsOn 强制在其他模板之前部署此模板。
@@ -311,7 +306,7 @@
 
 ![嵌套模板](./media/resource-manager-template-best-practices/nestedTemplateDesign.png)
 
-有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](resource-group-linked-templates.md)。
+有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates/)。
 
 ## 有条件地链接到嵌套模板
 
@@ -353,8 +348,6 @@
 
 ## 后续步骤
 
-1. 有关为虚拟机构建解决方案的指导，请参阅 [Running a Windows VM on Azure](./guidance/guidance-compute-single-vm.md)（在 Azure 上运行 Windows VM）和 [Running a Linux VM on Azure](./guidance/guidance-compute-single-vm-linux.md)（在 Azure 上运行 Linux VM）。
-2. 有关设置存储帐户的指导，请参阅 [Microsoft Azure Storage Performance and Scalability Checklist](./storage/storage-performance-checklist.md)（Microsoft Azure 存储空间的性能和可缩放性清单）。
-3. 有关虚拟网络的帮助，请参阅 [Networking infrastructure guidelines](./virtual-machines/virtual-machines-windows-infrastructure-networking-guidelines.md)（网络基础结构指南）。
+1. 有关设置存储帐户的指导，请参阅 [Microsoft Azure Storage Performance and Scalability Checklist](./storage/storage-performance-checklist/)（Microsoft Azure 存储空间的性能和可缩放性清单）。
 
 <!---HONumber=Mooncake_0725_2016-->
