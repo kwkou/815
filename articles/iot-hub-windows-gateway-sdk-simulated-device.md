@@ -118,7 +118,6 @@
 如果想要深入了解网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
 
 - [使用网关 SDK 从实际设备发送设备到云的消息][lnk-physical-device]
-- [管理网关设备][lnk-manage-devices]
 - [Azure IoT 网关 SDK][lnk-gateway-sdk]
 
 若要进一步探索 IoT 中心的功能，请参阅：
