@@ -505,7 +505,7 @@ var customer1 = cache.Wait(task1);
 var customer2 = cache.Wait(task2);
 ```
 
-Microsoft 网站上的 [Azure Redis Cache documentation](/documentation/services/cache/)（Azure Redis 缓存文档）页提供了有关如何编写可以使用 Azure Redis 缓存的客户端应用程序的详细信息。StackExchange.Redis 网站上的 [Basic usage page](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)（基本用法）页提供了更多信息。
+Microsoft 网站上的 [Azure Redis Cache documentation](/documentation/services/redis-cache/)（Azure Redis 缓存文档）页提供了有关如何编写可以使用 Azure Redis 缓存的客户端应用程序的详细信息。StackExchange.Redis 网站上的 [Basic usage page](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)（基本用法）页提供了更多信息。
 
 同一网站上的 [Pipelines and multiplexers](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md)（管道与多路复用器）页提供了有关使用 Redis 和 StackExchange 库执行异步操作和管道传输的详细信息。本文的下一部分“使用 Redis 缓存”提供了一些更高级技巧的示例，你可以对 Redis 缓存中保存的数据运用这些技巧。
 

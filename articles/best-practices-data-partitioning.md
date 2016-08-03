@@ -374,13 +374,13 @@ Azure DocumentDB 是可以存储文档的 NoSQL 数据库。DocumentDB 数据库
 
 图 8 演示了 DocumentDB 体系结构的高级结构。
 
-![DocumentDB 的结构](media/best-practices-data-partitioning/DocumentDBStructure.png)
+![DocumentDB 的结构](./media/best-practices-data-partitioning/DocumentDBStructure.png)
 
 图 8.DocumentDB 体系结构
 
 客户端应用程序负责将请求定向到适当的分片，这通常是根据定义分片键的某些数据属性，通过实施自身的映射机制来实现的。图 9 显示了两个 DocumentDB 数据库，每个数据库包含两个充当分片的集合。数据按租户 ID 分片，并包含特定租户的数据。数据库在独立的 DocumentDB 帐户中创建。这些帐户与数据所在的租户位于相同的区域。客户端应用程序中的路由逻辑使用租户 ID 作为分片键。
 
-![使用 Azure DocumentDB 实施分片](media/best-practices-data-partitioning/DocumentDBPartitions.png)
+![使用 Azure DocumentDB 实施分片](./media/best-practices-data-partitioning/DocumentDBPartitions.png)
 
 图 9.使用 Azure DocumentDB 数据库实施分片
 
@@ -514,36 +514,33 @@ Redis 网站上的 [Partitioning: how to split data among multiple Redis instanc
 - Microsoft 网站上的 [What is Azure SQL Database?]（什么是 Azure SQL 数据库？）页提供了有关如何创建和使用 SQL 数据库的详细文档。
 - Microsoft 网站上的 [Elastic Database features overview]（弹性数据库功能概述）页提供了有关弹性数据库的综合介绍。
 - Microsoft 网站上的 [Scaling using the Elastic Database split-merge tool]（使用弹性数据库拆分/合并工具进行缩放）页包含有关使用拆分/合并服务管理弹性数据库分片的信息。
-- Microsoft 网站上的 [Azure storage scalability and performance targets](https://msdn.microsoft.com/library/azure/dn249410.aspx)（Azure 存储空间可缩放性和性能目标）页介绍了 Azure 存储空间的当前大小和吞吐量限制。
+- Microsoft 网站上的 [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets/)（Azure 存储空间可缩放性和性能目标）页介绍了 Azure 存储空间的当前大小和吞吐量限制。
 - Microsoft 网站上的 [Performing entity group transactions]（执行实体组事务）页提供了有关通过存储在 Azure 表存储的实体执行事务操作的详细信息。
 - Microsoft 网站上的 [Azure 存储空间表设计指南]一文包含有关在 Azure 表存储中分区数据的详细信息。
 - Microsoft 网站上的 [Using Azure Content Delivery Network]（使用 Azure 内容交付网络）页介绍了如何使用 Azure 内容交付网络复制保存在 Azure Blob 存储中的数据。
 - Microsoft 网站上的 [管理 DocumentDB 容量需求]页包含有关 Azure DocumentDB 数据库如何分配资源的信息。
-- Microsoft 网站上的 [What is Azure Search?]（什么是 Azure 搜索？）页全面介绍了 Azure 搜索提供的功能。
-- Microsoft 网站上的 [Service limits in Azure Search]（Azure 搜索中的服务限制）页包含有关每个 Azure 搜索实例的容量的信息。
-- Microsoft 网站上的 [Supported data types (Azure Search)]（支持的数据类型（Azure 搜索））页汇总了你可以在可搜索文档和索引中使用的数据类型。
 - Microsoft 网站上的 [Azure Redis Cache]（Azure Redis 缓存）页提供了 Azure Redis 缓存的介绍。
 - Redis 网站上的 [Partitioning: how to split data among multiple Redis instances]（分区：如何在多个 Redis 实例之间拆分数据）页提供了有关如何使用 Redis 实施分区的信息。
 - Microsoft 网站上的 [Running Redis on a CentOS Linux VM in Azure]（在 Azure 中的 CentOS Linux VM 上运行 Redis）页逐步讲解了一个示例，演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
 - Redis 网站上的 [Data types]（数据类型）页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
 
-[Azure Redis Cache]: /services/cache/
+[Azure Redis Cache]: /services/redis-cache/
 [Azure Storage Scalability and Performance Targets]: /documentation/articles/storage-scalability-targets/
 [Azure 存储空间表设计指南]: /documentation/articles/storage-table-design-guide/
 [Building a Polyglot Solution]: https://msdn.microsoft.com/zh-cn/library/dn313279.aspx
 [Data Access for Highly-Scalable Solutions: Using SQL, NoSQL, and Polyglot Persistence]: https://msdn.microsoft.com/zh-cn/library/dn271399.aspx
-[Data consistency primer]: http://aka.ms/Data-Consistency-Primer
+[Data consistency primer]: https://msdn.microsoft.com/zh-cn/library/dn589800.aspx
 [Data Partitioning Guidance]: https://msdn.microsoft.com/zh-cn/library/dn589795.aspx
 [Data Types]: http://redis.io/topics/data-types
 [DocumentDB limits and quotas]: /documentatin/articles/documentdb-limits/
 [DocumentDB 限制和配额]: /documentatin/articles/documentdb-limits/
 [Elastic Database features overview]: /documentation/articles/sql-database-elastic-scale-introduction/
 [Federations Migration Utility]: https://code.msdn.microsoft.com/vstudio/Federations-Migration-ce61e9c1
-[索引表模式]: http://aka.ms/Index-Table-Pattern
+[索引表模式]: https://msdn.microsoft.com/zh-cn/library/dn589791.aspx
 [Manage DocumentDB capacity needs]: /documentation/articles/documentdb-manage/
 [管理 DocumentDB 容量需求]: /documentation/articles/documentdb-manage/
-[具体化视图模式]: http://aka.ms/Materialized-View-Pattern
-[Multi-shard querying]: /documentation/articles/sql-database-elastic-scale-multishard-querying.md/
+[具体化视图模式]: https://msdn.microsoft.com/zh-cn/library/dn589782.aspx
+[Multi-shard querying]: /documentation/articles/sql-database-elastic-scale-multishard-querying/
 [Partitioning: how to split data among multiple Redis instances]: http://redis.io/topics/partitioning
 [DocumentDB 中的性能级别]: /documentation/articles/documentdb-performance-levels/
 [Performing Entity Group Transactions]: https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx

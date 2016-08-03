@@ -34,12 +34,8 @@
 
 - [适用于 Eclipse 的 Azure 工具包]
   - [安装 Azure Toolkit for Eclipse]
-  - [在 Eclipse 中创建 Azure 的 Hello World Web 应用]
-  - [Azure Toolkit for Eclipse 的新增功能]
 - Azure Toolkit for IntelliJ（本文）
   - [安装 Azure Toolkit for IntelliJ]
-  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用]
-  - [Azure Toolkit for IntelliJ 中的新增功能]
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]。
 
@@ -48,8 +44,6 @@
 [Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse/
 [适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
 [Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij
-[在 Eclipse 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-eclipse-create-hello-world-web-app/
-[在 IntelliJ 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-intellij-create-hello-world-web-app/
 [安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [安装 Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij-installation/
 [Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
