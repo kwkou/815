@@ -37,12 +37,12 @@ Azure Active Directory Connect 由三个主要组件构成：同步服务、可�
 
 <center>![Azure AD Connect 堆栈](./media/active-directory-aadconnect-how-it-works/AADConnectStack2.png)
 </center>
-
+health
 - 同步 - 此组件负责创建用户、组和其他对象。它还负责确保本地用户和组的标识信息与云匹配。
 - AD FS - 联合身份验证是 Azure AD Connect 的可选部件，可用于使用本地 AD FS 基础结构配置混合环境。组织可以使用此部件来解决复杂的部署，例如域加入 SSO、实施 AD 登录策略和智能卡或第三方 MFA。
 - 运行状况监视 - Azure AD Connect Health 提供可靠监视，并在 Azure 经典管理门户中提供一个中心位置用于查看此活动。
 
-## 安装 Azure AD Connect
+## <a name="install-azure-ad-connect"></a>安装 Azure AD Connect
 
 可以在 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkId=615771)找到 Azure AD Connect 的下载文件。
 
@@ -80,7 +80,7 @@ Azure Active Directory Connect 由三个主要组件构成：同步服务、可�
 | 操作规划 | [Azure AD Connect 同步：操作任务和注意事项](/documentation/articles/active-directory-aadconnectsync-operations/) |
 | 用户登录选项 | [Azure AD Connect 用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/) |
 
-## 配置功能
+## <a name="configure-features"></a>配置功能
 Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能。在某些情况下，有些功能可能需要在特定方案和拓扑中进行其他配置。
 
 如果你要限制可将哪些对象同步到 Azure AD，可以使用[筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)。默认情况下，会同步所有用户、联系人、组和 Windows 10 计算机，但你可以根据域、OU 或属性限制这些对象。
@@ -104,7 +104,7 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 | 防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/) |
 | 自动升级 | [Azure AD Connect：自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)|
 
-## 自定义 Azure AD Connect 同步errors/500?aspxerrorpath=
+## <a name="customize-azure-ad-connect-sync"></a>自定义 Azure AD Connect 同步
 Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配置。但总会有一些情况使得默认配置不适用，因此你必须进行调整。你可以根据本部分和链接主题中所述进行更改。
 
 如果你以前没有用过同步拓扑，请先了解基本概念和术语。Azure AD Connect 是在 MIIS2003、ILM2007 和 FIM2010 基础上演进而来的。即使有些功能相同，但改变的部分也有很多。
@@ -125,7 +125,7 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 更改默认配置 | [更改默认配置的最佳做法](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration/) |
 
 ## 配置联合身份验证功能
-可将 ADFS 配置为支持[多个域](/documentation/articles/active-directory-aadconnect-multiple-domains)。例如，你可能在联合身份验证功能中需要使用多个顶级域。
+可将 ADFS 配置为支持多个域。例如，你可能在联合身份验证功能中需要使用多个顶级域。
 
 如果你的 ADFS 服务器未配置为自动更新 Azure AD 中的证书，或者如果你使用非 ADFS 解决方案，那么在需要[更新证书](/documentation/articles/active-directory-aadconnect-o365-certs)时会通知你。
 
@@ -137,7 +137,7 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 管理 AD FS 场 | [使用 Azure AD Connect 管理和自定义 AD FS](/documentation/articles/active-directory-aadconnect-federation-management) |
 | 手动更新联合身份验证证书 | [续订 Office 365 和 Azure AD 的联合身份验证证书](/documentation/articles/active-directory-aadconnect-o365-certs) |
 
-## 详细信息和参考
+## <a name="more-information-and-references"></a>详细信息和参考
 
 | 主题 | |
 | --------- | --------- |
