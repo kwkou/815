@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle=""
     description=""
     services=""
@@ -11,8 +11,8 @@
 <tags ms.service="legal" ms.date="03/2016" wacn.date="03/2016" wacn.lang="cn"/>
 
 > [AZURE.LANGUAGE]
-- [中文](/support/sla/cdn/)
-- [English](/support/sla/cdn-en/)
+- [中文](/support/sla/cdn-v1/)
+- [English](/support/sla/cdn-en-v1/)
 #CDN 的服务级别协议
 
 我们保证至少在 99.9% 的时间 CDN 将响应客户端请求并交付请求的内容，而不会出现错误。我们将检查并接受来自您选择用来监控内容的任何商业上合理的独立度量系统的数据。您必须从测量系统中的标准代理列表中选择一组普遍可用的代理，这些代理通常可用且代表中华人民共和国的主要大城市区域中的至少五个不同的地理位置。
@@ -143,16 +143,6 @@
 
 每月正常服务时间百分比 | 服务费抵扣 
 ---|---  
-<99.9% | 5%  
+<99.5% | 5%  
 <99% | 20% 
-
-##版本历史记录
-
-
-[1.1](/support/sla/cdn/)最后更新日期：2016 年 3 月
-
-发布说明：更新每月正常服务时间的百分比为 <99.9%
-
-[1.0](/support/sla/cdn-v1/)最后更新日期：2015 年 12 月
-
 
