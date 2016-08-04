@@ -136,7 +136,7 @@ csharp
 
 ### 应用程序部署
 
-使用 Batch 的[应用程序包](batch-application-packages.md)功能，可以轻松地部署任务在计算节点上执行的应用程序并对其进行版本控制。
+使用 Batch 的[应用程序包](/documentation/articles/batch-application-packages)功能，可以轻松地部署任务在计算节点上执行的应用程序并对其进行版本控制。
 
 ### 安装应用程序和暂存数据
 
