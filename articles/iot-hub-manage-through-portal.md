@@ -167,14 +167,14 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 - [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 
-  [4]: ./media/iot-hub-manage-through-portal/create-iothub.png
-  [5]: ./media/iot-hub-manage-through-portal/location1.png
-  [8]: ./media/iot-hub-manage-through-portal/portal-settings.png
-  [10]: ./media/iot-hub-manage-through-portal/shared-access-policies.png
-  [11]: ./media/iot-hub-manage-through-portal/messaging-settings.png
-  [12]: ./media/iot-hub-manage-through-portal/pricing-error.png
-  [13]: ./media/iot-hub-manage-through-portal/file-upload-settings.png
-  [14]: ./media/iot-hub-manage-through-portal/file-upload-container-selection.png
+[4]: ./media/iot-hub-manage-through-portal/create-iothub.png
+[5]: ./media/iot-hub-manage-through-portal/location1.png
+[8]: ./media/iot-hub-manage-through-portal/portal-settings.png
+[10]: ./media/iot-hub-manage-through-portal/shared-access-policies.png
+[11]: ./media/iot-hub-manage-through-portal/messaging-settings.png
+[12]: ./media/iot-hub-manage-through-portal/pricing-error.png
+[13]: ./media/iot-hub-manage-through-portal/file-upload-settings.png
+[14]: ./media/iot-hub-manage-through-portal/file-upload-container-selection.png
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/
