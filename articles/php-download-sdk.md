@@ -56,6 +56,8 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 
 		php composer.phar install
 
+>[AZURE.NOTE] 安装完毕后，需要对终结点做一个全局的替换--把“windows.net”替换为“chinacloudapi.cn”，不然工具将会尝试连接到 Azure 全球，而不是 Azure 中国。
+
 ##Azure PowerShell 和 Azure 模拟器
 
 Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服务和虚拟机）的 PowerShell cmdlet。Azure 模拟器是一系列云服务和数据管理服务的模拟器，允许你在本地测试应用程序。这些组件仅受 Windows 支持。
