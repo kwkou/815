@@ -10,7 +10,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="06/14/2016" 
-	wacn.date="06/29/2016"/>
+	wacn.date="08/04/2016"/>
 
 # DocumentDB SDK
 
@@ -22,17 +22,19 @@
 
 ##DocumentDB .NET SDK
 
-<table>
-<tr><td>**下载**</td><td>[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/)</td></tr>
-<tr><td>**文档**</td><td>[.NET SDK 参考文档](https://msdn.microsoft.com/library/azure/dn948556.aspx)</td></tr>
-<tr><td>**示例**</td><td>[.NET 代码示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples)</td></tr>
-<tr><td>**入门**</td><td>[DocumentDB .NET SDK 入门](/documentation/articles/documentdb-get-started/)</td></tr>
-<tr><td>**当前受支持的框架**</td><td>[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)</td></tr>
-</table></br>
+
+任务 | API 参考
+--- | ---  
+**下载**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/)
+**文档**|[.NET SDK 参考文档](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+**示例**|[.NET 代码示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples)
+**入门**|[DocumentDB .NET SDK 入门](/documentation/articles/documentdb-get-started/)
+**当前受支持的框架**|[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)  
+
 
 ## 发行说明
 
-### <a name="1.8.0"/>[1\.8.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.8.0)
+### <a name="1.8.0"/></a>[1\.8.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.8.0)
   - 添加了对多区域数据库帐户的支持。
   - 添加了对重试限制请求的支持。用户可以通过配置 ConnectionPolicy.RetryOptions 属性来自定义重试次数和最长等待时间。
   - 添加新的 IDocumentClient 接口，用于定义所有 DocumenClient 属性和方法的签名。在做出此项更改的同时，已将用于创建 IQueryable 和 IOrderedQueryable 的扩展方法更改为 DocumentClient 类本身的方法。
@@ -40,29 +42,29 @@
   - 已弃用 IPartitionResolver 及其实现。对 IPartitionResolver 的支持现已过时。建议使用分区集合来提高存储和吞吐量。
 
 
-### <a name="1.7.1"/>[1\.7.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.7.1)
+### <a name="1.7.1"/></a>[1\.7.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.7.1)
   - 向采用 RequestOptions 作为参数的基于 Uri 的 ExecuteStoredProcedureAsync 方法添加了重载。
   
-### <a name="1.7.0"/>[1\.7.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.7.0)
+### <a name="1.7.0"/></a>[1\.7.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.7.0)
   - 对文档添加了生存时间 (TTL) 支持。
 
-### <a name="1.6.3"/>[1\.6.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.6.3)
+### <a name="1.6.3"/></a>[1\.6.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.6.3)
   - 修复了用于将其打包为 Azure 云服务解决方案的一部分的 .NET SDK 的 Nuget 包中的 Bug。
   
-### <a name="1.6.2"/>[1\.6.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.6.2)
+### <a name="1.6.2"/></a>[1\.6.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.6.2)
   - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
 
-### <a name="1.5.3"/>[1\.5.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.3)
+### <a name="1.5.3"/></a>[1\.5.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.3)
   - **[已修复]** 查询 DocumentDB 终结点引发：System.Net.Http.HttpRequestException：将内容复制到流时出错。
 
-### <a name="1.5.2"/>[1\.5.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.2)
+### <a name="1.5.2"/></a>[1\.5.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.2)
   - 扩展的 LINQ 支持，包括用于分页、条件表达式和范围比较的新运算符。
     - Take 运算符在 LINQ 中启用 SELECT TOP 行为
     - CompareTo 运算符使能够进行字符串范围比较
     - Conditional (?) 和 coalesce 运算符 (??)
   - **[已修复]** 合并模型投影与 linq 查询中的 Where-In 时出现 ArgumentOutOfRangeException。[#81](https://github.com/Azure/azure-documentdb-dotnet/issues/81)
 
-### <a name="1.5.1"/>[1\.5.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.1)
+### <a name="1.5.1"/></a>[1\.5.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.1)
  - **[已修复]** 如果 Select 不是最后一个表达式，则 LINQ 提供程序假定没有投影，并且错误地生成 SELECT *。[#58](https://github.com/Azure/azure-documentdb-dotnet/issues/58)
 
 ### <a name="1.5.0"/>[1\.5.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.0)
@@ -73,10 +75,10 @@
  - **[已修复]** BackoffRetryUtility 再次使用相同的 HttpRequestMessage 而不是在重试时创建一个新的
  - **[已过时]** UriFactory.CreateCollection --> 现在应使用 UriFactory.CreateDocumentCollection
  
-### <a name="1.4.1"/>[1\.4.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.1)
+### <a name="1.4.1"/></a>[1\.4.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.1)
  - **[已修复]** 使用非 en 区域性信息（如 NL-NL 等）时出现本地化问题。 
  
-### <a name="1.4.0"/>[1\.4.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.0)
+### <a name="1.4.0"/></a>[1\.4.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.0)
   - 基于 ID 的路由
     - 用于协助构建基于 ID 的资源链接的新 UriFactory 帮助器
     - DocumentClient 上的新重载以采用 URI
@@ -87,7 +89,7 @@
     - **数组** - Concat、Contains、Count
     - **IN** 运算符
 
-### <a name="1.3.0"/>[1\.3.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.3.0)
+### <a name="1.3.0"/></a>[1\.3.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.3.0)
   - 添加了对修改索引策略的支持
     - DocumentClient 中的新 ReplaceDocumentCollectionAsync 方法
     - ResourceResponse 中的新 IndexTransformationProgress 属性<T>，用于跟踪索引策略更改的百分比进度
@@ -97,7 +99,7 @@
     - 用于索引存储在 DocumentDB 中的 GeoJSON 数据的新 SpatialIndex 类
   - **[已修复]**：从 linq 表达式生成的不正确的 SQL 查询 [#38](https://github.com/Azure/azure-documentdb-net/issues/38)
 
-### <a name="1.2.0"/>[1\.2.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.2.0)
+### <a name="1.2.0"/></a>[1\.2.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.2.0)
 - 对 Newtonsoft.Json v5.0.7 的依赖关系 
 - 更改为支持 Order By
   - LINQ 提供程序支持 OrderBy() 或 OrderByDescending()
@@ -107,20 +109,20 @@
   
     	如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。如果你没有任何自定义索引策略，此更改不会影响你。
 
-### <a name="1.1.0"/>[1\.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.1.0)
+### <a name="1.1.0"/></a>[1\.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.1.0)
 - 通过使用新的 HashPartitionResolver 和 RangePartitionResolver 类以及 IPartitionResolver 支持对数据进行分区
 - DataContract 序列化
 - LINQ 提供程序中的 Guid 支持
 - LINQ 中的 UDF 支持
 
-### <a name="1.0.0"/>[1\.0.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.0.0)
+### <a name="1.0.0"/></a>[1\.0.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.0.0)
 - GA SDK
 
 > [AZURE.NOTE]
 预览版和 GA 版之间的 NuGet 程序包名称有所更改。从 **Microsoft.Azure.Documents.Client** 移动到了 **Microsoft.Azure.DocumentDB** <br/>
 
 
-### <a name="0.9.x-preview"/>[0\.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
+### <a name="0.9.x-preview"/></a>[0\.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
 - 预览版 SDK[已过时]
 
 ## 发布和停用日期
