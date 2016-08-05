@@ -10,11 +10,11 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="06/27/2016" 
-	wacn.date="08/02/2016"/>
+	wacn.date="08/05/2016"/>
 
 # 提升你的 DocumentDB 帐户
 
-请按照以下步骤利用你的 Azure DocumentDB S1 帐户已增加的吞吐量。几乎不需要额外的费用，就可以将现有 S1 帐户的吞吐量从 250 [RU/s](documentdb-request-units.md) 增加到 400 RU/s，甚至更多！
+请按照以下步骤利用你的 Azure DocumentDB S1 帐户已增加的吞吐量。几乎不需要额外的费用，就可以将现有 S1 帐户的吞吐量从 250 [RU/s](/documentation/articles/documentdb-request-units/) 增加到 400 RU/s，甚至更多！
 
 
 ## 在 Azure 门户中更改为用户定义的性能
@@ -32,7 +32,7 @@
 
 6. 返回到“设置”边栏选项卡中，“定价层”已更改为“标准”，“吞吐量 (RU/s)”框显示默认值 400。单击“确定”保存你的更改。
 
-    > [AZURE.NOTE] 你可以在 400 和 10,000 [请求单位](../articles/documentdb/documentdb-request-units.md)/秒 (RU/s) 之间设置吞吐量。页面底部的“定价摘要”将自动更新以提供月成本估计值。
+    > [AZURE.NOTE] 你可以在 400 和 10,000 [请求单位](/documentation/articles/documentdb-request-units/)/秒 (RU/s) 之间设置吞吐量。页面底部的“定价摘要”将自动更新以提供月成本估计值。
     
 	![显示在何处更改吞吐量值的“设置”边栏选项卡屏幕截图](./media/documentdb-supercharge-your-account/documentdb-change-performance-set-thoughput.png)
 
