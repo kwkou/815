@@ -29,15 +29,15 @@
 |SharedLogSizeInMB|兆字节|8192|指定以静态方式分配给共享日志的磁盘空间 MB 数。此值必须为 2048 或更大。|
 
 ### 群集清单节示例
-```xml
-   <Section Name="KtlLogger">
-     <Parameter Name="WriteBufferMemoryPoolMinimumInKB" Value="8192" />
-     <Parameter Name="WriteBufferMemoryPoolMaximumInKB" Value="8192" />
-     <Parameter Name="SharedLogId" Value="{7668BB54-FE9C-48ed-81AC-FF89E60ED2EF}"/>
-     <Parameter Name="SharedLogPath" Value="f:\SharedLog.Log"/>
-     <Parameter Name="SharedLogSizeInMB" Value="16383"/>
-   </Section>
-```
+
+	   <Section Name="KtlLogger">
+	     <Parameter Name="WriteBufferMemoryPoolMinimumInKB" Value="8192" />
+	     <Parameter Name="WriteBufferMemoryPoolMaximumInKB" Value="8192" />
+	     <Parameter Name="SharedLogId" Value="{7668BB54-FE9C-48ed-81AC-FF89E60ED2EF}"/>
+	     <Parameter Name="SharedLogPath" Value="f:\SharedLog.Log"/>
+	     <Parameter Name="SharedLogSizeInMB" Value="16383"/>
+	   </Section>
+
 
 ### 备注
 记录器具有一个从未分页的内核内存分配的内存全局池，节点上的所有 Reliable Services 都可以使用该池在将状态数据写入与可靠服务副本关联的专用日志之前缓存这些数据。池大小由 WriteBufferMemoryPoolMinimumInKB 和 WriteBufferMemoryPoolMaximumInKB 设置控制。WriteBufferMemoryPoolMinimumInKB 指定此内存池的初始大小，以及内存池可以缩小到的大小下限。WriteBufferMemoryPoolMaximumInKB 是内存池可以增长到的大小上限。每个打开的可靠服务副本都可能会增加内存池的大小，增加幅度从系统决定的数量到 WriteBufferMemoryPoolMaximumInKB。如果内存池的内存需求大于可用的内存，则会延迟内存请求，直到有可用的内存。因此，如果写入缓冲区内存池对特定配置而言太小，则性能可能会受到影响。
@@ -92,57 +92,57 @@ ReplicatorConfig
 
 
 ### 通过代码进行配置的示例
-```csharp
-class Program
-{
-    /// <summary>
-    /// This is the entry point of the service host process.
-    /// </summary>
-    static void Main()
-    {
-        ServiceRuntime.RegisterServiceAsync("HelloWorldStatefulType",
-            context => new HelloWorldStateful(context, 
-                new ReliableStateManager(context, 
-        new ReliableStateManagerConfiguration(
-                        new ReliableStateManagerReplicatorSettings()
-            {
-                RetryInterval = TimeSpan.FromSeconds(3)
-                        }
-            )))).GetAwaiter().GetResult();
-    }
-}    
-```
-```csharp
-class MyStatefulService : StatefulService
-{
-    public MyStatefulService(StatefulServiceContext context, IReliableStateManagerReplica stateManager)
-        : base(context, stateManager)
-    { }
-    ...
-}
-```
+
+	class Program
+	{
+	    /// <summary>
+	    /// This is the entry point of the service host process.
+	    /// </summary>
+	    static void Main()
+	    {
+	        ServiceRuntime.RegisterServiceAsync("HelloWorldStatefulType",
+	            context => new HelloWorldStateful(context, 
+	                new ReliableStateManager(context, 
+	        new ReliableStateManagerConfiguration(
+	                        new ReliableStateManagerReplicatorSettings()
+	            {
+	                RetryInterval = TimeSpan.FromSeconds(3)
+	                        }
+	            )))).GetAwaiter().GetResult();
+	    }
+	}    
+
+
+	class MyStatefulService : StatefulService
+	{
+	    public MyStatefulService(StatefulServiceContext context, IReliableStateManagerReplica stateManager)
+	        : base(context, stateManager)
+	    { }
+	    ...
+	}
+
 
 
 ### 示例配置文件
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
-   <Section Name="ReplicatorConfig">
-      <Parameter Name="ReplicatorEndpoint" Value="ReplicatorEndpoint" />
-      <Parameter Name="BatchAcknowledgementInterval" Value="0.05"/>
-      <Parameter Name="CheckpointThresholdInMB" Value="512" />
-   </Section>
-   <Section Name="ReplicatorSecurityConfig">
-      <Parameter Name="CredentialType" Value="X509" />
-      <Parameter Name="FindType" Value="FindByThumbprint" />
-      <Parameter Name="FindValue" Value="9d c9 06 b1 69 dc 4f af fd 16 97 ac 78 1e 80 67 90 74 9d 2f" />
-      <Parameter Name="StoreLocation" Value="LocalMachine" />
-      <Parameter Name="StoreName" Value="My" />
-      <Parameter Name="ProtectionLevel" Value="EncryptAndSign" />
-      <Parameter Name="AllowedCommonNames" Value="My-Test-SAN1-Alice,My-Test-SAN1-Bob" />
-   </Section>
-</Settings>
-```
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+	   <Section Name="ReplicatorConfig">
+	      <Parameter Name="ReplicatorEndpoint" Value="ReplicatorEndpoint" />
+	      <Parameter Name="BatchAcknowledgementInterval" Value="0.05"/>
+	      <Parameter Name="CheckpointThresholdInMB" Value="512" />
+	   </Section>
+	   <Section Name="ReplicatorSecurityConfig">
+	      <Parameter Name="CredentialType" Value="X509" />
+	      <Parameter Name="FindType" Value="FindByThumbprint" />
+	      <Parameter Name="FindValue" Value="9d c9 06 b1 69 dc 4f af fd 16 97 ac 78 1e 80 67 90 74 9d 2f" />
+	      <Parameter Name="StoreLocation" Value="LocalMachine" />
+	      <Parameter Name="StoreName" Value="My" />
+	      <Parameter Name="ProtectionLevel" Value="EncryptAndSign" />
+	      <Parameter Name="AllowedCommonNames" Value="My-Test-SAN1-Alice,My-Test-SAN1-Bob" />
+	   </Section>
+	</Settings>
+
 
 
 ### 备注

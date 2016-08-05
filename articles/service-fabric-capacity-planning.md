@@ -32,10 +32,10 @@
 
 为了获得最大性能所需的节点数目可根据以下公式计算：
 
-```
-Number of Nodes = (DB_Size * RF)/Node_Size
 
-```
+	Number of Nodes = (DB_Size * RF)/Node_Size
+
+
 
 
 ## 考虑增长

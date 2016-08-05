@@ -115,7 +115,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 1.	获取保管库设置文件并设置上下文：
 	
-	```
+	
 	
 		$VaultName = "<testvault123>"
 		$VaultGeo  = "<China North>"
@@ -123,79 +123,79 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	
 		$VaultSetingsFile = Get-AzureSiteRecoveryVaultSettingsFile -Location $VaultGeo -Name $VaultName -Path $OutputPathForSettingsFile;
 	
-	```
+	
 	
 2.	通过运行以下命令设置保管库上下文：
 	
-	```	
+	
 		$VaultSettingFilePath = $vaultSetingsFile.FilePath 
 		$VaultContext = Import-AzureSiteRecoveryVaultSettingsFile -Path $VaultSettingFilePath -ErrorAction Stop
-```
+
 
 ## 步骤 4：安装 Azure Site Recovery 提供者
 
 1.	在 VMM 计算机上，通过运行以下命令创建一个目录：
 	
-	```
+	
 	
 		pushd C:\ASR\
 	
-	```
+	
 	
 2. 通过运行以下命令，使用下载的提供者提取文件
 	
-	```
+	
 	
 		AzureSiteRecoveryProvider.exe /x:. /q
 	
-	```
+	
 	
 3. 使用以下命令安装提供者：
 	
 
 	
-	.\SetupDr.exe /i
+		.\SetupDr.exe /i
+		
 	
-
+		
 	
-
+		
+		$installationRegPath = "hklm:\software\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter"
+		do
+		{
+		                $isNotInstalled = $true;
+		                if(Test-Path $installationRegPath)
+		                {
+		                                $isNotInstalled = $false;
+		                }
+		}While($isNotInstalled)
+		
 	
-	$installationRegPath = "hklm:\software\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter"
-	do
-	{
-	                $isNotInstalled = $true;
-	                if(Test-Path $installationRegPath)
-	                {
-	                                $isNotInstalled = $false;
-	                }
-	}While($isNotInstalled)
-	
-
-	等待安装完成。
+		等待安装完成。
 	
 4. 使用以下命令在保管库中注册服务器：
 	
-	```
 	
-	$BinPath = $env:SystemDrive+"\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin"
-	pushd $BinPath
-	$encryptionFilePath = "C:\temp"
-	.\DRConfigurator.exe /r /Credentials $VaultSettingFilePath /vmmfriendlyname $env:COMPUTERNAME /dataencryptionenabled $encryptionFilePath /startvmmservice
 	
-	```
+		$BinPath = $env:SystemDrive+"\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin"
+		pushd $BinPath
+		$encryptionFilePath = "C:\temp"
+		.\DRConfigurator.exe /r /Credentials $VaultSettingFilePath /vmmfriendlyname $env:COMPUTERNAME /dataencryptionenabled $encryptionFilePath /startvmmservice
+	
+	
 	
 ## 步骤 5：创建 Azure 存储帐户
 
 如果你没有 Azure 存储帐户，请运行以下命令来创建启用异地复制的帐户：
 
-```
 
-$StorageAccountName = "teststorageacc1"
-$StorageAccountGeo  = "China North"
 
-New-AzureStorageAccount -StorageAccountName $StorageAccountName -Label $StorageAccountName -Location $StorageAccountGeo;
+	$StorageAccountName = "teststorageacc1"
+	$StorageAccountGeo  = "China North"
+	
+	New-AzureStorageAccount -StorageAccountName $StorageAccountName -Label $StorageAccountName -Location $StorageAccountGeo;
+	
 
-```
 
 请注意，存储帐户必须位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。
 
@@ -206,41 +206,41 @@ New-AzureStorageAccount -StorageAccountName $StorageAccountName -Label $StorageA
 
 在所有 VMM 主机上运行以下命令：
 
-```
+
 
 	marsagentinstaller.exe /q /nu
 
-```
+
 
 
 ## 步骤 7：配置云保护设置
 
 1.	通过运行以下命令在 Azure 中创建云保护配置文件：
 	
-	```
+
 	
-	$ReplicationFrequencyInSeconds = "300";
-	$ProfileResult = New-AzureSiteRecoveryProtectionProfileObject -ReplicationProvider 	HyperVReplica -RecoveryAzureSubscription $AzureSubscriptionName `
-	-RecoveryAzureStorageAccount $StorageAccountName -ReplicationFrequencyInSeconds 	$ReplicationFrequencyInSeconds;
-	
-	```
+		$ReplicationFrequencyInSeconds = "300";
+		$ProfileResult = New-AzureSiteRecoveryProtectionProfileObject -ReplicationProvider 	HyperVReplica -RecoveryAzureSubscription $AzureSubscriptionName `
+		-RecoveryAzureStorageAccount $StorageAccountName -ReplicationFrequencyInSeconds 	$ReplicationFrequencyInSeconds;
+		
+
 	
 2.	通过运行以下命令获取保护容器：
 	
-	```
+
 	
 		$PrimaryCloud = "testcloud"
 		$protectionContainer = Get-AzureSiteRecoveryProtectionContainer -Name $PrimaryCloud;	
 	
-	```
+
 	
 3.	开始将保护容器与云相关联：
 	
-	```
+
 	
 		$associationJob = Start-AzureSiteRecoveryProtectionProfileAssociationJob -	ProtectionProfile $profileResult -PrimaryProtectionContainer $protectionContainer;		
 	
-	```
+
 	
 4.	在作业完成后，运行以下命令：
 
@@ -249,6 +249,7 @@ New-AzureStorageAccount -StorageAccountName $StorageAccountName -Label $StorageA
 			{
 				$isJobLeftForProcessing = $true;
 			}
+
 5. 在作业完成处理后，运行以下命令：
 
 	

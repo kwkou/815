@@ -39,31 +39,31 @@ Service Fabric 的群集资源管理器通常通过将负载（通过指标表�
 
 Powershell
 
-``` posh
-New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MaximumNodes 3
-Update-ServiceFabricApplication –Name fabric:/AppName –MaximumNodes 5
-```
+
+	New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MaximumNodes 3
+	Update-ServiceFabricApplication –Name fabric:/AppName –MaximumNodes 5
+
 
 C#
 
-``` csharp
-ApplicationDescription ad = new ApplicationDescription();
-ad.ApplicationName = new Uri("fabric:/AppName");
-ad.ApplicationTypeName = "AppType1";
-ad.ApplicationTypeVersion = "1.0.0.0";
-ad.MaximumNodes = 3;
-fc.ApplicationManager.CreateApplicationAsync(ad);
 
-ApplicationUpdateDescription adUpdate = new ApplicationUpdateDescription(new Uri("fabric:/AppName"));
-adUpdate.MaximumNodes = 5;
-fc.ApplicationManager.UpdateApplicationAsync(adUpdate);
+	ApplicationDescription ad = new ApplicationDescription();
+	ad.ApplicationName = new Uri("fabric:/AppName");
+	ad.ApplicationTypeName = "AppType1";
+	ad.ApplicationTypeVersion = "1.0.0.0";
+	ad.MaximumNodes = 3;
+	fc.ApplicationManager.CreateApplicationAsync(ad);
+	
+	ApplicationUpdateDescription adUpdate = new ApplicationUpdateDescription(new Uri("fabric:/AppName"));
+	adUpdate.MaximumNodes = 5;
+	fc.ApplicationManager.UpdateApplicationAsync(adUpdate);
+	
+	var appMetric = new ApplicationMetricDescription();
+	appMetric.Name = "Metric1";
+	appMetric.TotalApplicationCapacity = 1000;
+	
+	adUpdate.Metrics.Add(appMetric);
 
-var appMetric = new ApplicationMetricDescription();
-appMetric.Name = "Metric1";
-appMetric.TotalApplicationCapacity = 1000;
-
-adUpdate.Metrics.Add(appMetric);
-```
 
 ## 应用程序指标、负载和容量
 应用程序组还允许你定义与特定应用程序实例关联的指标，以及这些指标相关的应用程序的容量。因此，举例来说，你可以根据需要定义任意数量的指标，只要不超过可在其中创建指标的服务数即可
@@ -97,10 +97,10 @@ adUpdate.Metrics.Add(appMetric);
 
 例如，可以使用以下 PowerShell cmdlet 检索负载：
 
-``` posh
-Get-ServiceFabricApplicationLoad –ApplicationName fabric:/MyApplication1
 
-```
+	Get-ServiceFabricApplicationLoad –ApplicationName fabric:/MyApplication1
+
+
 
 此查询的输出包含已针对应用程序指定的应用程序容量的基本信息，例如最小节点数和最大节点数。另外还提供有关应用程序当前使用的节点数的信息。因此，将会针对每个负载指标提供以下相关信息：
 - 指标名称：指标的名称。
@@ -111,10 +111,10 @@ Get-ServiceFabricApplicationLoad –ApplicationName fabric:/MyApplication1
 ## 删除应用程序容量
 为应用程序设置应用程序容量参数后，可以使用更新应用程序 API 或 PowerShell cmdlet 来删除这些参数。例如：
 
-``` posh
-Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicationCapacity
 
-```
+	Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicationCapacity
+
+
 
 此命令从应用程序删除所有应用程序容量参数，Service Fabric 群集资源管理器开始将此应用程序视为群集中未定义这些参数的任何其他应用程序。该命令将立即产生效果，群集资源管理器将删除此应用程序的所有应用程序容量参数；再次指定它们需要使用适当的参数调用更新应用程序 API。
 
@@ -128,21 +128,20 @@ Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicat
 
 在（客户端）创建应用程序和在（服务器端）更新应用程序期间都会强制实施限制。在创建期间，这是明显违反要求的一个例子，因为 MaximumNodes 小于 MinimumNodes，在将请求发送到 Service Fabric 群集之前，客户端中的命令就会失败：
 
-``` posh
-New-ServiceFabricApplication –Name fabric:/MyApplication1 –MinimumNodes 6 –MaximumNodes 2
-```
+
+	New-ServiceFabricApplication –Name fabric:/MyApplication1 –MinimumNodes 6 –MaximumNodes 2
+
 
 无效更新的示例如下。如果我们采用现有应用程序并将最大节点数更新为某个值，则会传递更新：
 
-``` posh
-Update-ServiceFabricApplication –Name fabric:/MyApplication1 6 –MaximumNodes 2
-```
+
+	Update-ServiceFabricApplication –Name fabric:/MyApplication1 6 –MaximumNodes 2
+
 
 接下来，我们可以尝试更新最小节点数：
 
-``` posh
-Update-ServiceFabricApplication –Name fabric:/MyApplication1 6 –MinimumNodes 6
-```
+	Update-ServiceFabricApplication –Name fabric:/MyApplication1 6 –MinimumNodes 6
+
 
 客户端不提供有关应用程序的足够上下文，因此允许将更新传递到 Service Fabric 群集。但是，在群集中，Service Fabric 将验证新参数与现有参数，由于最小节点数的值大于最大节点数的值，因此更新操作将会失败。在此情况下，应用程序容量参数将保持不变。
 

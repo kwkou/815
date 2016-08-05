@@ -158,10 +158,10 @@
 
     b.使用你之前传递给 `CreateAndUpload-Certificate.ps1` 的密码，打开管理员 PowerShell 提示符并运行以下命令。
 
-        ```
+        
         $password = Read-Host -AsSecureString
         Import-PfxCertificate -FilePath <path/to/cert.pfx> -CertStoreLocation Cert:\LocalMachine\My -Password $password -Exportable
-        ```
+       
 
 2.	运行证书管理器：
 

@@ -100,9 +100,9 @@ Azure Service Fabric 允许在运行 Windows Server 的任何虚拟机或计算�
 
 可以在对群集配置文件中列为节点的所有计算机具有管理访问权限的任何计算机上运行此脚本。运行此脚本的计算机不一定是群集的一部分。
 
-```
-.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath C:\Microsoft.Azure.ServiceFabric.WindowsServer.5.0.135.9590\ClusterConfig.JSON -MicrosoftServiceFabricCabFilePath C:\Microsoft.Azure.ServiceFabric.WindowsServer.5.0.135.9590\MicrosoftAzureServiceFabric.cab
-```
+
+	.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath C:\Microsoft.Azure.ServiceFabric.WindowsServer.5.0.135.9590\ClusterConfig.JSON -MicrosoftServiceFabricCabFilePath C:\Microsoft.Azure.ServiceFabric.WindowsServer.5.0.135.9590\MicrosoftAzureServiceFabric.cab
+
 
 ## 后续步骤
 

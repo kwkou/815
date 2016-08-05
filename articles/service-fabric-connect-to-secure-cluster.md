@@ -19,83 +19,83 @@
 
 运行以下 PowerShell cmdlet，在要用于访问群集的计算机上设置证书。
 
-```powershell
-Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
-        -FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
-        -Password (ConvertTo-SecureString -String test -AsPlainText -Force)
-```
+
+	Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
+	        -FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
+	        -Password (ConvertTo-SecureString -String test -AsPlainText -Force)
+
 
 如果它是自签名证书，则需要将其导入计算机的“受信任人”存储中才能使用此证书连接到安全群集。
 
-```powershell
-Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\TrustedPeople `
--FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
--Password (ConvertTo-SecureString -String test -AsPlainText -Force)
-```
+
+	Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\TrustedPeople `
+	-FilePath C:\docDemo\certs\DocDemoClusterCert.pfx `
+	-Password (ConvertTo-SecureString -String test -AsPlainText -Force)
+
 
 <a id="connectsecurecluster"></a>
 ## 使用 PowerShell 连接到安全群集
 
 运行以下 PowerShell 命令连接到安全群集。证书详细信息必须与群集节点上的证书匹配。
 
-```powershell
-Connect-ServiceFabricCluster -ConnectionEndpoint <Cluster FQDN>:19000 `
-          -KeepAliveIntervalInSec 10 `
-          -X509Credential -ServerCertThumbprint <Certificate Thumbprint> `
-          -FindType FindByThumbprint -FindValue <Certificate Thumbprint> `
-          -StoreLocation CurrentUser -StoreName My
-```
+
+	Connect-ServiceFabricCluster -ConnectionEndpoint <Cluster FQDN>:19000 `
+	          -KeepAliveIntervalInSec 10 `
+	          -X509Credential -ServerCertThumbprint <Certificate Thumbprint> `
+	          -FindType FindByThumbprint -FindValue <Certificate Thumbprint> `
+	          -StoreLocation CurrentUser -StoreName My
+
 
 例如，上述 PowerShell 命令应该类似于以下内容：
 
-```powershell
-Connect-ServiceFabricCluster -ConnectionEndpoint clustername.chinaeast.chinacloudapp.cn:19000 `
-          -KeepAliveIntervalInSec 10 `
-          -X509Credential -ServerCertThumbprint C179E609BBF0B227844342535142306F3913D6ED `
-          -FindType FindByThumbprint -FindValue C179E609BBF0B227844342535142306F3913D6ED `
-          -StoreLocation CurrentUser -StoreName My
-```
+
+	Connect-ServiceFabricCluster -ConnectionEndpoint clustername.chinaeast.chinacloudapp.cn:19000 `
+	          -KeepAliveIntervalInSec 10 `
+	          -X509Credential -ServerCertThumbprint C179E609BBF0B227844342535142306F3913D6ED `
+	          -FindType FindByThumbprint -FindValue C179E609BBF0B227844342535142306F3913D6ED `
+	          -StoreLocation CurrentUser -StoreName My
+
 
 ## 使用 FabricClient API 连接到安全群集
 请参阅下面的 [FabricClient](https://msdn.microsoft.com/zh-cn/library/system.fabric.fabricclient.aspx)。群集中的节点必须具有有效的证书，在 SAN 中，这些证书的公用名或 DNS 名出现在 [FabricClient](https://msdn.microsoft.com/zh-cn/library/system.fabric.fabricclient.aspx) 上设置的 [RemoteCommonNames 属性](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.x509credentials.remotecommonnames.aspx)中。这样就可以在客户端与群集节点之间进行相互身份验证。
 
-```csharp
-string thumb = "C179E609BBF0B227844342535142306F3913D6ED";
-string CommonName = "www.clustername.westus.azure.com";
-string connection = "clustername.chinaeast.chinacloudapp.cn:19000";
 
-X509Credentials xc = GetCredentials(thumb, CommonName);
-FabricClient fc = new FabricClient(xc, connection);
-Task<bool> t = fc.PropertyManager.NameExistsAsync(new Uri("fabric:/any"));
-try
-{
-    bool result = t.Result;
-    Console.WriteLine("Cluster is connected");
-}
-catch (AggregateException ae)
-{
-    Console.WriteLine("Connect failed: {0}", ae.InnerException.Message);
-}
-catch (Exception e)
-{
-    Console.WriteLine("Connect failed: {0}", e.Message);
-}
+	string thumb = "C179E609BBF0B227844342535142306F3913D6ED";
+	string CommonName = "www.clustername.westus.azure.com";
+	string connection = "clustername.chinaeast.chinacloudapp.cn:19000";
+	
+	X509Credentials xc = GetCredentials(thumb, CommonName);
+	FabricClient fc = new FabricClient(xc, connection);
+	Task<bool> t = fc.PropertyManager.NameExistsAsync(new Uri("fabric:/any"));
+	try
+	{
+	    bool result = t.Result;
+	    Console.WriteLine("Cluster is connected");
+	}
+	catch (AggregateException ae)
+	{
+	    Console.WriteLine("Connect failed: {0}", ae.InnerException.Message);
+	}
+	catch (Exception e)
+	{
+	    Console.WriteLine("Connect failed: {0}", e.Message);
+	}
+	
+	...
+	
+	static X509Credentials GetCredentials(string thumb, string name)
+	{
+	    X509Credentials xc = new X509Credentials();
+	    xc.StoreLocation = StoreLocation.CurrentUser;
+	    xc.StoreName = "MY";
+	    xc.FindType = X509FindType.FindByThumbprint;
+	    xc.FindValue = thumb;
+	    xc.RemoteCertThumbprints.Add(thumb);
+	    xc.RemoteCommonNames.Add(name);
+	    xc.ProtectionLevel = ProtectionLevel.EncryptAndSign;
+	    return xc;
+	}
 
-...
-
-static X509Credentials GetCredentials(string thumb, string name)
-{
-    X509Credentials xc = new X509Credentials();
-    xc.StoreLocation = StoreLocation.CurrentUser;
-    xc.StoreName = "MY";
-    xc.FindType = X509FindType.FindByThumbprint;
-    xc.FindValue = thumb;
-    xc.RemoteCertThumbprints.Add(thumb);
-    xc.RemoteCommonNames.Add(name);
-    xc.ProtectionLevel = ProtectionLevel.EncryptAndSign;
-    return xc;
-}
-```
 
 
 ## 后续步骤

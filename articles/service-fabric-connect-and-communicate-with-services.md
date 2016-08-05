@@ -59,7 +59,6 @@ Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到�
         	</Endpoints>
     	</Resources>
 
-    ```csharp
         class HttpCommunicationListener : ICommunicationListener
         {
             ...
@@ -94,7 +93,7 @@ Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到�
             
             ...
         }
-    ```
+    
   
 2. 在 Azure 中创建 Service Fabric 群集，并将端口 **80** 指定为将承载服务的节点类型的自定义终结点端口。如果具有多种节点类型，则可以对服务设置“放置约束”，以确保它只在打开了自定义终结点端口的节点类型上运行。
 

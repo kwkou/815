@@ -47,16 +47,16 @@
 ## 应用程序包文件结构
 为了将应用程序部署到 Service Fabric，应用程序需要遵循预定义的目录结构。下面是该结构的一个示例。
 
-```
-|-- ApplicationPackage
-	|-- code
-		|-- existingapp.exe
-	|-- config
-		|-- Settings.xml
-  |-- data    
-  |-- ServiceManifest.xml
-|-- ApplicationManifest.xml
-```
+
+	|-- ApplicationPackage
+		|-- code
+			|-- existingapp.exe
+		|-- config
+			|-- Settings.xml
+	  |-- data    
+	  |-- ServiceManifest.xml
+	|-- ApplicationManifest.xml
+
 
 根目录包含定义应用程序的 ApplicationManifest.xml 文件。应用程序中包含的每个服务的子目录用于包含服务需要的所有项目 — ServiceManifest.xml 以及通常以下三个目录：
 
@@ -98,43 +98,43 @@ Service Fabric 对应用程序根目录下的内容执行了 xcopy，因此除�
 
 下面是 `ServiceManifest.xml` 文件的一个示例：
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<ServiceManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="NodeApp" Version="1.0.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
-   <ServiceTypes>
-      <StatelessServiceType ServiceTypeName="NodeApp" UseImplicitHost="true"/>
-   </ServiceTypes>
-   <CodePackage Name="code" Version="1.0.0.0">
-      <SetupEntryPoint>
-         <ExeHost>
-             <Program>scripts\launchConfig.cmd</Program>
-         </ExeHost>
-      </SetupEntryPoint>
-      <EntryPoint>
-         <ExeHost>
-            <Program>node.exe</Program>
-            <Arguments>bin/www</Arguments>
-            <WorkingFolder>CodePackage</WorkingFolder>
-         </ExeHost>
-      </EntryPoint>
-   </CodePackage>
-   <Resources>
-      <Endpoints>
-         <Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" Type="Input" />
-      </Endpoints>
-   </Resources>
-</ServiceManifest>
-```
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<ServiceManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="NodeApp" Version="1.0.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+	   <ServiceTypes>
+	      <StatelessServiceType ServiceTypeName="NodeApp" UseImplicitHost="true"/>
+	   </ServiceTypes>
+	   <CodePackage Name="code" Version="1.0.0.0">
+	      <SetupEntryPoint>
+	         <ExeHost>
+	             <Program>scripts\launchConfig.cmd</Program>
+	         </ExeHost>
+	      </SetupEntryPoint>
+	      <EntryPoint>
+	         <ExeHost>
+	            <Program>node.exe</Program>
+	            <Arguments>bin/www</Arguments>
+	            <WorkingFolder>CodePackage</WorkingFolder>
+	         </ExeHost>
+	      </EntryPoint>
+	   </CodePackage>
+	   <Resources>
+	      <Endpoints>
+	         <Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" Type="Input" />
+	      </Endpoints>
+	   </Resources>
+	</ServiceManifest>
+
 
 我们先了解一下你需要更新的文件的不同部分：
 
 ### ServiceTypes
 
-```xml
-<ServiceTypes>
-  <StatelessServiceType ServiceTypeName="NodeApp" UseImplicitHost="true" />
-</ServiceTypes>
-```
+
+	<ServiceTypes>
+	  <StatelessServiceType ServiceTypeName="NodeApp" UseImplicitHost="true" />
+	</ServiceTypes>
+
 
 - 可以为 `ServiceTypeName` 选取所需的任何名称。该值在 `ApplicationManifest.xml` 文件中用于标识服务。
 - 你需要指定 `UseImplicitHost="true"`。此属性告知 Service Fabric 服务基于自包含的应用，因此 Service Fabric 只需要将其作为进程启动并监视其运行状况。
@@ -142,35 +142,35 @@ Service Fabric 对应用程序根目录下的内容执行了 xcopy，因此除�
 ### CodePackage
 CodePackage 元素指定服务代码的位置（和版本）。
 
-```xml
-<CodePackage Name="Code" Version="1.0.0.0">
-```
+
+	<CodePackage Name="Code" Version="1.0.0.0">
+
 
 `Name` 元素用于在应用程序包中指定包含服务代码的目录的名称。`CodePackage` 还具有 `version` 属性。这可以用于指定代码的版本 — 还可能用于通过使用 Service Fabric 应用程序生命周期管理基础结构来升级服务的代码。
 ### SetupEntrypoint
 
-```xml
-<SetupEntryPoint>
-   <ExeHost>
-       <Program>scripts\launchConfig.cmd</Program>
-   </ExeHost>
-</SetupEntryPoint>
-```
+
+	<SetupEntryPoint>
+	   <ExeHost>
+	       <Program>scripts\launchConfig.cmd</Program>
+	   </ExeHost>
+	</SetupEntryPoint>
+
 SetupEntrypoint 元素用于指定在启动服务代码之前应执行的任何可执行文件或批处理文件。它是可选元素，因此在无需初始化/设置时无需包含在内。每次重新启动服务时，会执行 SetupEntryPoint。
 
 只有一个 SetupEntrypoint，因此如果应用程序的设置/配置需要多个脚本，则设置/配置脚本需要捆绑在单个批处理文件中。与 SetupEntryPoint 元素一样，SetupEntrypoint 可以执行任何类型的文件 — 可执行文件、批处理文件和 PowerShell cmdlet。在上面的示例中，SetupEntrypoint 基于一个批处理文件 LaunchConfig.cmd，该文件位于代码目录的 `scripts` 子目录中（假定 WorkingFolder 元素设置为 code）。
 
 ### 入口点
 
-```xml
-<EntryPoint>
-  <ExeHost>
-    <Program>node.exe</Program>
-    <Arguments>bin/www</Arguments>
-    <WorkingFolder>CodeBase</WorkingFolder>
-  </ExeHost>
-</EntryPoint>
-```
+
+	<EntryPoint>
+	  <ExeHost>
+	    <Program>node.exe</Program>
+	    <Arguments>bin/www</Arguments>
+	    <WorkingFolder>CodeBase</WorkingFolder>
+	  </ExeHost>
+	</EntryPoint>
+
 
 服务清单文件中的 `Entrypoint` 元素用于指定如何启动该服务。`ExeHost` 元素指定应用于启动该服务的可执行文件（和参数）。
 
@@ -195,38 +195,38 @@ SetupEntrypoint 元素用于指定在启动服务代码之前应执行的任何�
 
 配置 `Servicemanifest.xml` 文件之后，你需要对 `ApplicationManifest.xml` 文件进行一些更改，以确保使用正确的服务类型和名称。
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="NodeAppType" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
-   <ServiceManifestImport>
-      <ServiceManifestRef ServiceManifestName="NodeApp" ServiceManifestVersion="1.0.0.0" />
-   </ServiceManifestImport>
-</ApplicationManifest>
-```
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="NodeAppType" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+	   <ServiceManifestImport>
+	      <ServiceManifestRef ServiceManifestName="NodeApp" ServiceManifestVersion="1.0.0.0" />
+	   </ServiceManifestImport>
+	</ApplicationManifest>
+
 
 ### ServiceManifestImport
 
 在 `ServiceManifestImport` 元素中，你可以指定一个或多个希望包含在应用中的服务。服务使用 `ServiceManifestName` 进行引用，后者指定 `ServiceManifest.xml` 文件所在的目录的名称。
 
-```xml
-<ServiceManifestImport>
-  <ServiceManifestRef ServiceManifestName="NodeApp" ServiceManifestVersion="1.0.0.0" />
-</ServiceManifestImport>
-```
+
+	<ServiceManifestImport>
+	  <ServiceManifestRef ServiceManifestName="NodeApp" ServiceManifestVersion="1.0.0.0" />
+	</ServiceManifestImport>
+
 
 ### 设置日志记录
 对于来宾可执行文件，能够查看控制台日志以查明应用程序和配置脚本是否显示了任何错误会非常有用。可以使用 `ConsoleRedirection` 元素在 `ServiceManifest.xml` 文件中配置控制台重定向。
 
-```xml
-<EntryPoint>
-  <ExeHost>
-    <Program>node.exe</Program>
-    <Arguments>bin/www</Arguments>
-    <WorkingFolder>CodeBase</WorkingFolder>
-    <ConsoleRedirection FileRetentionCount="5" FileMaxSizeInKb="2048"/>
-  </ExeHost>
-</EntryPoint>
-```
+
+	<EntryPoint>
+	  <ExeHost>
+	    <Program>node.exe</Program>
+	    <Arguments>bin/www</Arguments>
+	    <WorkingFolder>CodeBase</WorkingFolder>
+	    <ConsoleRedirection FileRetentionCount="5" FileMaxSizeInKb="2048"/>
+	  </ExeHost>
+	</EntryPoint>
+
 
 * `ConsoleRedirection` 可用于将控制台输出（stdout 和 stderr）重定向至工作目录，以便可以将它们用于验证在 Service Fabric 群集中安装或执行应用程序期间没有错误。
 
@@ -238,21 +238,21 @@ SetupEntrypoint 元素用于指定在启动服务代码之前应执行的任何�
 ### 部署
 最后一步是部署应用程序。下面的 PowerShell 脚本演示如何将应用程序部署到本地开发群集并启动新的 Service Fabric 服务。
 
-```PowerShell
 
-Connect-ServiceFabricCluster localhost:19000
 
-Write-Host 'Copying application package...'
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath 'C:\Dev\MultipleApplications' -ImageStoreConnectionString 'file:C:\SfDevCluster\Data\ImageStoreShare' -ApplicationPackagePathInImageStore 'nodeapp'
+	Connect-ServiceFabricCluster localhost:19000
+	
+	Write-Host 'Copying application package...'
+	Copy-ServiceFabricApplicationPackage -ApplicationPackagePath 'C:\Dev\MultipleApplications' -ImageStoreConnectionString 'file:C:\SfDevCluster\Data\ImageStoreShare' -ApplicationPackagePathInImageStore 'nodeapp'
+	
+	Write-Host 'Registering application type...'
+	Register-ServiceFabricApplicationType -ApplicationPathInImageStore 'nodeapp'
+	
+	New-ServiceFabricApplication -ApplicationName 'fabric:/nodeapp' -ApplicationTypeName 'NodeAppType' -ApplicationTypeVersion 1.0
+	
+	New-ServiceFabricService -ApplicationName 'fabric:/nodeapp' -ServiceName 'fabric:/nodeapp/nodeappservice' -ServiceTypeName 'NodeApp' -Stateless -PartitionSchemeSingleton -InstanceCount 1
+	
 
-Write-Host 'Registering application type...'
-Register-ServiceFabricApplicationType -ApplicationPathInImageStore 'nodeapp'
-
-New-ServiceFabricApplication -ApplicationName 'fabric:/nodeapp' -ApplicationTypeName 'NodeAppType' -ApplicationTypeVersion 1.0
-
-New-ServiceFabricService -ApplicationName 'fabric:/nodeapp' -ServiceName 'fabric:/nodeapp/nodeappservice' -ServiceTypeName 'NodeApp' -Stateless -PartitionSchemeSingleton -InstanceCount 1
-
-```
 Service Fabric 服务可以采用各种“配置”进行部署。 例如，可以将其作为单个或多个实例部署，或者可以将其以这样一种方式部署：在 Service Fabric 群集的每个节点上都有一个服务实例。
 
 `New-ServiceFabricService` cmdlet 的 `InstanceCount` 参数用于指定应在 Service Fabric 群集中启动的服务实例的数量。你可以设置 `InstanceCount` 值，具体取决于要部署的应用程序的类型。最常见的两种方案是：
@@ -293,7 +293,10 @@ Visual Studio 提供 Service Fabric 服务模板来帮助你将来宾可执行�
   	- *CodeBase*：指定工作目录将设置为应用程序包中的 code 目录（结构中的 `Code` 目录如下所示）
     - *CodePackage*：指定要设置为应用程序包的根目录的工作目录 (`MyServicePkg`)。
 4. 为服务命名，然后单击“确定”。
-5. 如果你的服务需要使用终结点进行通信，现在你可以在 ServiceManifest.xml 文件中添加协议、端口和类型，例如：```<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" Type="Input" />```。
+5. 如果你的服务需要使用终结点进行通信，现在你可以在 ServiceManifest.xml 文件中添加协议、端口和类型，例如：
+
+		<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" Type="Input" />
+
 6. 现在，可以通过在 Visual Studio 中调试解决方案，尝试针对本地群集执行打包和发布操作。准备就绪后，可以将应用程序发布到远程群集，或者将解决方案签入源代码管理。
 
 >[AZURE.NOTE] 在 Visual Studio 中创建应用程序项目时，可以使用链接的文件夹。这将会从项目内部链接到源位置，使你能够在来宾可执行文件的源目标中对它进行更新，并在生成时使这些更新成为应用程序包的一部分。

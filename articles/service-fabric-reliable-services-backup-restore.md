@@ -52,13 +52,13 @@ Azure Service Fabric 是一个高可用性平台，用于复制多个节点中�
 
 如下所示，**BackupAsync** 采用 **BackupDescription** 对象，用户可以在其中指定完整或增量备份，以及指定在本地创建备份文件夹并准备好移出到某个外部存储时调用的回叫函数 **Func<< BackupInfo, CancellationToken, Task<bool>>>**。
 
-```C#
 
-BackupDescription myBackupDescription = new BackupDescription(backupOption.Incremental,this.BackupCallbackAsync);
 
-await this.BackupAsync(myBackupDescription);
+	BackupDescription myBackupDescription = new BackupDescription(backupOption.Incremental,this.BackupCallbackAsync);
+	
+	await this.BackupAsync(myBackupDescription);
+	
 
-```
 
 进行增量备份的请求可能会失败，并出现 **FabricFullBackupMissingException**，这指示副本从未进行完整备份或是自上次备份以来的一些日志记录已截断。用户可以通过修改 **CheckpointThresholdInMB** 来修改截断速率。
 
@@ -66,16 +66,16 @@ await this.BackupAsync(myBackupDescription);
 
 以下代码演示如何使用 **BackupCallbackAsync** 方法将备份上载到 Azure 存储空间：
 
-```C#
-private async Task<bool> BackupCallbackAsync(BackupInfo backupInfo, CancellationToken cancellationToken)
-{
-    var backupId = Guid.NewGuid();
 
-    await externalBackupStore.UploadBackupFolderAsync(backupInfo.Directory, backupId, cancellationToken);
+	private async Task<bool> BackupCallbackAsync(BackupInfo backupInfo, CancellationToken cancellationToken)
+	{
+	    var backupId = Guid.NewGuid();
+	
+	    await externalBackupStore.UploadBackupFolderAsync(backupInfo.Directory, backupId, cancellationToken);
+	
+	    return true;
+	}
 
-    return true;
-}
-```
 
 在上面的示例中，**ExternalBackupStore** 是用于与 Azure Blob 存储进行交互的示例类，**UploadBackupFolderAsync** 是压缩文件夹并将其放置在 Azure Blob 存储中的方法。
 
@@ -115,19 +115,19 @@ private async Task<bool> BackupCallbackAsync(BackupInfo backupInfo, Cancellation
 
 以下是 **OnDataLossAsync** 方法的实现示例：
 
-```C#
 
-protected override async Task<bool> OnDataLossAsync(RestoreContext restoreCtx, CancellationToken cancellationToken)
-{
-    var backupFolder = await this.externalBackupStore.DownloadLastBackupAsync(cancellationToken);
 
-    var restoreDescription = new RestoreDescription(backupFolder);
+	protected override async Task<bool> OnDataLossAsync(RestoreContext restoreCtx, CancellationToken cancellationToken)
+	{
+	    var backupFolder = await this.externalBackupStore.DownloadLastBackupAsync(cancellationToken);
+	
+	    var restoreDescription = new RestoreDescription(backupFolder);
+	
+	    await restoreCtx.RestoreAsync(restoreDescription);
+	
+	    return true;
+	}
 
-    await restoreCtx.RestoreAsync(restoreDescription);
-
-    return true;
-}
-```
 
 传入到 **RestoreContext.RestoreAsync** 调用的 **RestoreDescription** 包含一个名为 **BackupFolderPath** 的成员。
 还原单个完整备份时，此 **BackupFolderPath** 应设置为包含完整备份的文件夹的本地路径。

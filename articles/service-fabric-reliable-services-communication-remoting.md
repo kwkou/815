@@ -23,36 +23,36 @@
 
 例如，以下无状态服务公开了一个方法，此方法通过远程过程调用获取“Hello World”。
 
-```csharp
-using Microsoft.ServiceFabric.Services.Communication.Runtime;
-using Microsoft.ServiceFabric.Services.Remoting;
-using Microsoft.ServiceFabric.Services.Remoting.Runtime;
-using Microsoft.ServiceFabric.Services.Runtime;
 
-public interface IMyService : IService
-{
-    Task<string> GetHelloWorld();
-}
+	using Microsoft.ServiceFabric.Services.Communication.Runtime;
+	using Microsoft.ServiceFabric.Services.Remoting;
+	using Microsoft.ServiceFabric.Services.Remoting.Runtime;
+	using Microsoft.ServiceFabric.Services.Runtime;
+	
+	public interface IMyService : IService
+	{
+	    Task<string> GetHelloWorld();
+	}
+	
+	class MyService : StatelessService, IMyService
+	{
+	    public MyService(StatelessServiceContext context)
+	        : base (context)
+	{
+	    }
+	
+	    public Task HelloWorld()
+	    {
+	        return Task.FromResult("Hello!");
+	    }
+	
+	    protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
+	    {
+	        return new[] { new ServiceInstanceListener(context => 
+	            this.CreateServiceRemotingListener(context)) };
+	    }
+	}
 
-class MyService : StatelessService, IMyService
-{
-    public MyService(StatelessServiceContext context)
-        : base (context)
-{
-    }
-
-    public Task HelloWorld()
-    {
-        return Task.FromResult("Hello!");
-    }
-
-    protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-    {
-        return new[] { new ServiceInstanceListener(context => 
-            this.CreateServiceRemotingListener(context)) };
-    }
-}
-```
 > [AZURE.NOTE] 服务接口中的参数和返回类型可以是任何简单、复杂或自定义的类型，但它们必须是 .NET [DataContractSerializer](https://msdn.microsoft.com/zh-cn/library/ms731923.aspx) 可序列化的类型。
 
 

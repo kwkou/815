@@ -39,9 +39,9 @@ Web 平台安装程序为 Service Fabric 开发提供三种配置：
 
 Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署 Visual Studio 中的应用程序。默认情况下，Windows 会阻止这些脚本运行。若要启用它们，你必须修改你的 PowerShell 执行策略。以管理员身份打开 PowerShell 并输入以下命令：
 
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
-```
+
+	Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
+
 
 ## 后续步骤
 设置开发环境之后，你可以开始构建和运行应用。

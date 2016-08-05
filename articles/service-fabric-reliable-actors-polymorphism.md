@@ -27,37 +27,37 @@ Reliable Actors 框架要求至少定义一个要由执行组件类型实现的�
 
 你还可以创建执行组件类型的层次结构，这些类型派生自由平台提供的执行组件基类。如果是形状，你可能具有一个 `Shape` 基类型：
 
-```csharp
-public abstract class Shape : Actor, IShape
-{
-    public abstract Task<int> GetVerticeCount();
-    
-    public abstract Task<double> GetAreaAsync();
-}
-```
+
+	public abstract class Shape : Actor, IShape
+	{
+	    public abstract Task<int> GetVerticeCount();
+	    
+	    public abstract Task<double> GetAreaAsync();
+	}
+
 
 `Shape` 的子类型可以重写基类型的方法。
 
-```csharp
-[ActorService(Name = "Circle")]
-[StatePersistence(StatePersistence.Persisted)]
-public class Circle : Shape, ICircle
-{
-    public override Task<int> GetVerticeCount()
-    {
-        return Task.FromResult(0);
-    }
 
-    public override async Task<double> GetAreaAsync()
-    {
-        CircleState state = await this.StateManager.GetStateAsync<CircleState>("circle");
+	[ActorService(Name = "Circle")]
+	[StatePersistence(StatePersistence.Persisted)]
+	public class Circle : Shape, ICircle
+	{
+	    public override Task<int> GetVerticeCount()
+	    {
+	        return Task.FromResult(0);
+	    }
+	
+	    public override async Task<double> GetAreaAsync()
+	    {
+	        CircleState state = await this.StateManager.GetStateAsync<CircleState>("circle");
+	
+	        return Math.PI *
+	            state.Radius *
+	            state.Radius;
+	    }
+	}
 
-        return Math.PI *
-            state.Radius *
-            state.Radius;
-    }
-}
-```
 
 请注意执行组件类型中的 `ActorService` 属性。此属性告知 Reliable Actor 框架，它应自动创建用于托管此类型的执行组件的服务。在某些情况下，你可能想要创建仅用于与子类型共享功能，并且始终不会用于实例化具体的执行组件的基类型。在这些情况下，应使用 `abstract` 关键字表示你始终不会基于此类型创建执行组件。
 

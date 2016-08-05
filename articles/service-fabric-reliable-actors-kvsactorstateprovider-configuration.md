@@ -60,27 +60,27 @@ Azure Service Fabric 运行时在 settings.xml 文件中查找预定义的节名
 
 ## 示例配置文件
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
-   <Section Name="MyActorServiceReplicatorConfig">
-      <Parameter Name="ReplicatorEndpoint" Value="MyActorServiceReplicatorEndpoint" />
-      <Parameter Name="BatchAcknowledgementInterval" Value="0.05"/>
-   </Section>
-   <Section Name="MyActorServiceLocalStoreConfig">
-      <Parameter Name="MaxVerPages" Value="8192" />
-   </Section>
-   <Section Name="MyActorServiceReplicatorSecurityConfig">
-      <Parameter Name="CredentialType" Value="X509" />
-      <Parameter Name="FindType" Value="FindByThumbprint" />
-      <Parameter Name="FindValue" Value="9d c9 06 b1 69 dc 4f af fd 16 97 ac 78 1e 80 67 90 74 9d 2f" />
-      <Parameter Name="StoreLocation" Value="LocalMachine" />
-      <Parameter Name="StoreName" Value="My" />
-      <Parameter Name="ProtectionLevel" Value="EncryptAndSign" />
-      <Parameter Name="AllowedCommonNames" Value="My-Test-SAN1-Alice,My-Test-SAN1-Bob" />
-   </Section>
-</Settings>
-```
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+	   <Section Name="MyActorServiceReplicatorConfig">
+	      <Parameter Name="ReplicatorEndpoint" Value="MyActorServiceReplicatorEndpoint" />
+	      <Parameter Name="BatchAcknowledgementInterval" Value="0.05"/>
+	   </Section>
+	   <Section Name="MyActorServiceLocalStoreConfig">
+	      <Parameter Name="MaxVerPages" Value="8192" />
+	   </Section>
+	   <Section Name="MyActorServiceReplicatorSecurityConfig">
+	      <Parameter Name="CredentialType" Value="X509" />
+	      <Parameter Name="FindType" Value="FindByThumbprint" />
+	      <Parameter Name="FindValue" Value="9d c9 06 b1 69 dc 4f af fd 16 97 ac 78 1e 80 67 90 74 9d 2f" />
+	      <Parameter Name="StoreLocation" Value="LocalMachine" />
+	      <Parameter Name="StoreName" Value="My" />
+	      <Parameter Name="ProtectionLevel" Value="EncryptAndSign" />
+	      <Parameter Name="AllowedCommonNames" Value="My-Test-SAN1-Alice,My-Test-SAN1-Bob" />
+	   </Section>
+	</Settings>
+
 ## 备注
 
 BatchAcknowledgementInterval 参数用于控制复制延迟。“0”值导致可能的最低延迟，但代价是牺牲吞吐量（因为必须发送和处理更多的确认消息，每个包含较少的确认）。

@@ -41,12 +41,12 @@ Service Fabric 群集资源管理器主要与分布负载方面的平衡有关 -
 
 ClusterManifest.xml：
 
-```xml
-<Section Name="DefragmentationMetrics">
-    <Parameter Name="Disk" Value="true" />
-    <Parameter Name="CPU" Value="false" />
-</Section>
-```
+
+	<Section Name="DefragmentationMetrics">
+	    <Parameter Name="Disk" Value="true" />
+	    <Parameter Name="CPU" Value="false" />
+	</Section>
+
 
 ## 后续步骤
 - 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)的文章

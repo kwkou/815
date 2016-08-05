@@ -93,16 +93,16 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 下面是群集清单的摘录。若要定义应用程序类型映射中的条目，请在参数名称前面添加“ApplicationTypeMaxPercentUnhealthyApplications-”，后接应用程序类型名称。
 
-```xml
-<FabricSettings>
-  <Section Name="HealthManager/ClusterHealthPolicy">
-    <Parameter Name="ConsiderWarningAsError" Value="False" />
-    <Parameter Name="MaxPercentUnhealthyApplications" Value="20" />
-    <Parameter Name="MaxPercentUnhealthyNodes" Value="20" />
-    <Parameter Name="ApplicationTypeMaxPercentUnhealthyApplications-ControlApplicationType" Value="0" />
-  </Section>
-</FabricSettings>
-```
+
+	<FabricSettings>
+	  <Section Name="HealthManager/ClusterHealthPolicy">
+	    <Parameter Name="ConsiderWarningAsError" Value="False" />
+	    <Parameter Name="MaxPercentUnhealthyApplications" Value="20" />
+	    <Parameter Name="MaxPercentUnhealthyNodes" Value="20" />
+	    <Parameter Name="ApplicationTypeMaxPercentUnhealthyApplications-ControlApplicationType" Value="0" />
+	  </Section>
+	</FabricSettings>
+
 
 ### 应用程序运行状况策略
 [应用程序运行状况策略](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.applicationhealthpolicy.aspx)说明如何对应用程序及其子项进行事件和子项状态聚合评估。它可以在应用程序清单（应用程序包中的 **ApplicationManifest.xml**）中定义。如果未指定任何策略，则当运行状况报告或子项处于“警告”或“错误”运行状况状态时，Service Fabric 会假设实体不正常。可配置的策略是：
@@ -126,7 +126,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 下面是应用程序清单的摘录：
 
-```xml
+
     <Policies>
         <HealthPolicy ConsiderWarningAsError="true" MaxPercentUnhealthyDeployedApplications="20">
             <DefaultServiceTypeHealthPolicy
@@ -144,7 +144,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
             </ServiceTypeHealthPolicy>
         </HealthPolicy>
     </Policies>
-```
+
 
 ## 运行状况评估
 用户和自动化服务可以随时评估任何实体的运行状况。若要评估实体运行状况，运行状况存储聚合实体上的所有运行状况报告，并评估其所有子项（如果适用）。运行状况聚合算法使用运行状况策略，这类策略指定如何评估运行状况报告以及如何聚合子项运行状况状态（如果适用）。

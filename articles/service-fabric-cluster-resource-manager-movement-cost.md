@@ -24,9 +24,9 @@ Service Fabric 资源管理器有两种方式来计算成本和限制它们。�
 
 代码
 
-```csharp
-this.ServicePartition.ReportMoveCost(MoveCost.Medium);
-```
+
+	this.ServicePartition.ReportMoveCost(MoveCost.Medium);
+
 
 MoveCost 有四个级别：零、低、中和高。再次提醒 – 这些只是相对于彼此，但“零”除外，“零”表示移动副本是免费的，不应算入解决方案的分数中。将移动成本设置为“高”*不*保证副本不移动，只是除非有移动的好理由，否则我们不移动它。
 

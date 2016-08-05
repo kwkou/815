@@ -25,11 +25,11 @@
 
 若要获取构成群集的 VM 缩放集的列表，请运行以下 cmdlet：
 
-```powershell
-Get-AzureRmResource -ResourceGroupName <RGname> -ResourceType Microsoft.Network/VirtualMachineScaleSets
 
-Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <VM Scale Set name>
-```
+	Get-AzureRmResource -ResourceGroupName <RGname> -ResourceType Microsoft.Network/VirtualMachineScaleSets
+	
+	Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <VM Scale Set name>
+
 
 ## 为节点类型/VM 缩放集设置自动缩放规则
 

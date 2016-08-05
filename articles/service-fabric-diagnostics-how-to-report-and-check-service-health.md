@@ -55,7 +55,7 @@
 
     ![Service Fabric 资源管理器中运行状况正常的应用程序](./media/service-fabric-diagnostics-how-to-report-and-check-service-health/sfx-healthy-app.png)
 
-6. 也可以使用 PowerShell 来检查运行状况。可以使用 ```Get-ServiceFabricApplicationHealth``` 检查应用程序的运行状况，并可以使用 ```Get-ServiceFabricServiceHealth``` 来检查服务的运行状况。PowerShell 中针对同一应用程序的运行状况报告如下图所示。
+6. 也可以使用 PowerShell 来检查运行状况。可以使用 `Get-ServiceFabricApplicationHealth` 检查应用程序的运行状况，并可以使用 `Get-ServiceFabricServiceHealth` 来检查服务的运行状况。PowerShell 中针对同一应用程序的运行状况报告如下图所示。
 
     ![PowerShell 中运行状况正常的应用程序](./media/service-fabric-diagnostics-how-to-report-and-check-service-health/ps-healthy-app-report.png)
 
@@ -138,18 +138,18 @@ Visual Studio 中的 Service Fabric 项目模板包含相同的代码。以下�
 
 我们建议在最细微的级别（在本例中为副本）报告运行状况。你也可以报告 `Partition` 的运行状况。
 
-```csharp
-HealthInformation healthInformation = new HealthInformation("ServiceCode", "StateDictionary", HealthState.Error);
-this.Partition.ReportPartitionHealth(healthInformation);
-```
+
+	HealthInformation healthInformation = new HealthInformation("ServiceCode", "StateDictionary", HealthState.Error);
+	this.Partition.ReportPartitionHealth(healthInformation);
+
 
 若要报告 `Application`、`DeployedApplication` 和 `DeployedServicePackage` 的运行状况，请使用 `CodePackageActivationContext`。
 
-```csharp
-HealthInformation healthInformation = new HealthInformation("ServiceCode", "StateDictionary", HealthState.Error);
-var activationContext = FabricRuntime.GetActivationContext();
-activationContext.ReportApplicationHealth(healthInformation);
-```
+
+	HealthInformation healthInformation = new HealthInformation("ServiceCode", "StateDictionary", HealthState.Error);
+	var activationContext = FabricRuntime.GetActivationContext();
+	activationContext.ReportApplicationHealth(healthInformation);
+
 
 ## 后续步骤
 [深入了解 Service Fabric 运行状况](/documentation/articles/service-fabric-health-introduction/)

@@ -320,22 +320,22 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 在查询时，在查询对象实例和回调函数之间可能会提供继续标记参数：
 
-```
-var nextContinuationToken = null;
-dc.table.queryEntities(tableName,
-    query,
-    nextContinuationToken,
-    function (error, results) {
-        if (error) throw error;
 
-        // iterate through results.entries with results
+	var nextContinuationToken = null;
+	dc.table.queryEntities(tableName,
+	    query,
+	    nextContinuationToken,
+	    function (error, results) {
+	        if (error) throw error;
+	
+	        // iterate through results.entries with results
+	
+	        if (results.continuationToken) {
+	            nextContinuationToken = results.continuationToken;
+	        }
+	
+	    });
 
-        if (results.continuationToken) {
-            nextContinuationToken = results.continuationToken;
-        }
-
-    });
-```
 
 如果你检查 `continuationToken` 对象，你会发现 `nextPartitionKey`、`nextRowKey` 和 `targetLocation` 等属性可用于循环访问所有结果。
 

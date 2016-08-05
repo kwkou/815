@@ -67,10 +67,10 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 
 或者，也可以下载 Resource Manager 示例，进行更改，然后在 Azure PowerShell 窗口中输入 `New-AzureRmResourceGroupDeployment` 命令，使用修改后的模板创建群集。请参阅以下信息获取需要传入命令的参数。有关如何使用 PowerShell 部署资源组的详细信息，请参阅 [Deploy a Resource Group with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署资源组）一文
 
-```powershell
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $deploymentName -TemplateFile $pathToARMConfigJsonFile -TemplateParameterFile $pathToParameterFile –Verbose
-```
+
+	New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $deploymentName -TemplateFile $pathToARMConfigJsonFile -TemplateParameterFile $pathToParameterFile –Verbose
+
 
 ### 将诊断扩展部署到现有群集
 如果现有的群集上未部署诊断或者你要修改现有配置，可以使用以下步骤来添加或更新配置。修改用于创建现有群集的 ARM 模板或从门户下载模板，如上所述。通过运行以下任务来修改 **template.json** 文件：
@@ -78,26 +78,26 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $
 通过将存储资源添加到 resources 节将其添加到模板。
 
 ##### 更新 resources 节
-```json
-{
-  "apiVersion": "2015-05-01-preview",
-  "type": "Microsoft.Storage/storageAccounts",
-  "name": "[parameters('applicationDiagnosticsStorageAccountName')]",
-  "location": "[parameters('computeLocation')]",
-  "properties": {
-    "accountType": "[parameters('applicationDiagnosticsStorageAccountType')]"
-  },
-  "tags": {
-    "resourceType": "Service Fabric",
-    "clusterName": "[parameters('clusterName')]"
-  }
-},
-```
+
+	{
+	  "apiVersion": "2015-05-01-preview",
+	  "type": "Microsoft.Storage/storageAccounts",
+	  "name": "[parameters('applicationDiagnosticsStorageAccountName')]",
+	  "location": "[parameters('computeLocation')]",
+	  "properties": {
+	    "accountType": "[parameters('applicationDiagnosticsStorageAccountType')]"
+	  },
+	  "tags": {
+	    "resourceType": "Service Fabric",
+	    "clusterName": "[parameters('clusterName')]"
+	  }
+	},
+
 
  接下来，将参数节添加到存储帐户定义之后、“supportLogStorageAccountName”与“vmNodeType0Name”之间。将占位符文本 *storage account name goes here* 替换为所需存储帐户的名称。
 
 ##### 更新 parameters 节
-```json
+
     "applicationDiagnosticsStorageAccountType": {
       "type": "string",
       "allowedValues": [
@@ -116,64 +116,64 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $
         "description": "Name for the storage account that contains application diagnostics data from the cluster"
       }
     },
-```
+
 然后通过在“extensions”数组中添进行下内容以更新 **template.json** 的 *VirtualMachineProfile* 节。根据插入的位置，请务必在开头或末尾添加逗点。
 
 ##### 添加到 VirtualMachineProfile 的 extensions 数组
-```json
-{
-	"name": "[concat(parameters('vmNodeType0Name'),'_Microsoft.Insights.VMDiagnosticsSettings')]",
-	"properties": {
-		"type": "IaaSDiagnostics",
-		"autoUpgradeMinorVersion": true,
-		"protectedSettings": {
-		"storageAccountName": "[parameters('applicationDiagnosticsStorageAccountName')]",
-		"storageAccountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('applicationDiagnosticsStorageAccountName')),'2015-05-01-preview').key1]",
-		"storageAccountEndPoint": "https://core.chinacloudapi.cn/"
-		},
-		"publisher": "Microsoft.Azure.Diagnostics",
-		"settings": {
-		"WadCfg": {
-			"DiagnosticMonitorConfiguration": {
-			"overallQuotaInMB": "50000",
-			"EtwProviders": {
-				"EtwEventSourceProviderConfiguration": [
-				{
-					"provider": "Microsoft-ServiceFabric-Actors",
-					"scheduledTransferKeywordFilter": "1",
-					"scheduledTransferPeriod": "PT5M",
-					"DefaultEvents": {
-					"eventDestination": "ServiceFabricReliableActorEventTable"
+
+	{
+		"name": "[concat(parameters('vmNodeType0Name'),'_Microsoft.Insights.VMDiagnosticsSettings')]",
+		"properties": {
+			"type": "IaaSDiagnostics",
+			"autoUpgradeMinorVersion": true,
+			"protectedSettings": {
+			"storageAccountName": "[parameters('applicationDiagnosticsStorageAccountName')]",
+			"storageAccountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('applicationDiagnosticsStorageAccountName')),'2015-05-01-preview').key1]",
+			"storageAccountEndPoint": "https://core.chinacloudapi.cn/"
+			},
+			"publisher": "Microsoft.Azure.Diagnostics",
+			"settings": {
+			"WadCfg": {
+				"DiagnosticMonitorConfiguration": {
+				"overallQuotaInMB": "50000",
+				"EtwProviders": {
+					"EtwEventSourceProviderConfiguration": [
+					{
+						"provider": "Microsoft-ServiceFabric-Actors",
+						"scheduledTransferKeywordFilter": "1",
+						"scheduledTransferPeriod": "PT5M",
+						"DefaultEvents": {
+						"eventDestination": "ServiceFabricReliableActorEventTable"
+						}
+					},
+					{
+						"provider": "Microsoft-ServiceFabric-Services",
+						"scheduledTransferPeriod": "PT5M",
+						"DefaultEvents": {
+						"eventDestination": "ServiceFabricReliableServiceEventTable"
+						}
 					}
-				},
-				{
-					"provider": "Microsoft-ServiceFabric-Services",
-					"scheduledTransferPeriod": "PT5M",
-					"DefaultEvents": {
-					"eventDestination": "ServiceFabricReliableServiceEventTable"
+					],
+					"EtwManifestProviderConfiguration": [
+					{
+						"provider": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
+						"scheduledTransferLogLevelFilter": "Information",
+						"scheduledTransferKeywordFilter": "4611686018427387904",
+						"scheduledTransferPeriod": "PT5M",
+						"DefaultEvents": {
+						"eventDestination": "ServiceFabricSystemEventTable"
+						}
 					}
+					]
 				}
-				],
-				"EtwManifestProviderConfiguration": [
-				{
-					"provider": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
-					"scheduledTransferLogLevelFilter": "Information",
-					"scheduledTransferKeywordFilter": "4611686018427387904",
-					"scheduledTransferPeriod": "PT5M",
-					"DefaultEvents": {
-					"eventDestination": "ServiceFabricSystemEventTable"
-					}
 				}
-				]
-			}
-			}
-		},
-		"StorageAccount": "[parameters('applicationDiagnosticsStorageAccountName')]"
-		},
-		"typeHandlerVersion": "1.5"
+			},
+			"StorageAccount": "[parameters('applicationDiagnosticsStorageAccountName')]"
+			},
+			"typeHandlerVersion": "1.5"
+		}
 	}
-}
-```
+
 
 如上所述修改 **template.json** 文件之后，重新发布 ARM 模板。如果已导出模板，则运行 **deploy.ps1** 文件会重新发布模板。部署后，请确保 *ProvisioningState* 为 *Succeeded*。
 

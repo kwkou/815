@@ -425,27 +425,27 @@ FIO 是一种常用工具，可以在 Linux VM 上对存储进行基准测试。
 最大写入 IOPS  
 使用以下规范创建作业文件，以便获得最大写入 IOPS。将其命名为“fiowrite.ini”。
 
-```
-[global]
-size=30g
-direct=1
-iodepth=256
-ioengine=libaio
-bs=8k
 
-[writer1]
-rw=randwrite
-directory=/mnt/nocache
-[writer2]
-rw=randwrite
-directory=/mnt/nocache
-[writer3]
-rw=randwrite
-directory=/mnt/nocache
-[writer4]
-rw=randwrite
-directory=/mnt/nocache
-```
+	[global]
+	size=30g
+	direct=1
+	iodepth=256
+	ioengine=libaio
+	bs=8k
+	
+	[writer1]
+	rw=randwrite
+	directory=/mnt/nocache
+	[writer2]
+	rw=randwrite
+	directory=/mnt/nocache
+	[writer3]
+	rw=randwrite
+	directory=/mnt/nocache
+	[writer4]
+	rw=randwrite
+	directory=/mnt/nocache
+
 
 请注意以下重要事项，这些事项必须符合前面部分讨论的设计准则。这些规范是实现最大 IOPS 所必需的。
 -   较高的队列深度：256。  
@@ -462,27 +462,27 @@ directory=/mnt/nocache
 最大读取 IOPS  
 使用以下规范创建作业文件，以便获得最大读取 IOPS。将其命名为“fioread.ini”。
 
-```
-[global]
-size=30g
-direct=1
-iodepth=256
-ioengine=libaio
-bs=8k
 
-[reader1]
-rw=randread
-directory=/mnt/readcache
-[reader2]
-rw=randread
-directory=/mnt/readcache
-[reader3]
-rw=randread
-directory=/mnt/readcache
-[reader4]
-rw=randread
-directory=/mnt/readcache
-```
+	[global]
+	size=30g
+	direct=1
+	iodepth=256
+	ioengine=libaio
+	bs=8k
+	
+	[reader1]
+	rw=randread
+	directory=/mnt/readcache
+	[reader2]
+	rw=randread
+	directory=/mnt/readcache
+	[reader3]
+	rw=randread
+	directory=/mnt/readcache
+	[reader4]
+	rw=randread
+	directory=/mnt/readcache
+
 
 请注意以下重要事项，这些事项必须符合前面部分讨论的设计准则。这些规范是实现最大 IOPS 所必需的。
 
@@ -500,44 +500,44 @@ directory=/mnt/readcache
 最大读取和写入 IOPS  
 使用以下规范创建作业文件，以便获得最大组合型读取和写入 IOPS。将其命名为“fioreadwrite.ini”。
 
-```
-[global]
-size=30g
-direct=1
-iodepth=128
-ioengine=libaio
-bs=4k
 
-[reader1]
-rw=randread
-directory=/mnt/readcache
-[reader2]
-rw=randread
-directory=/mnt/readcache
-[reader3]
-rw=randread
-directory=/mnt/readcache
-[reader4]
-rw=randread
-directory=/mnt/readcache
+	[global]
+	size=30g
+	direct=1
+	iodepth=128
+	ioengine=libaio
+	bs=4k
+	
+	[reader1]
+	rw=randread
+	directory=/mnt/readcache
+	[reader2]
+	rw=randread
+	directory=/mnt/readcache
+	[reader3]
+	rw=randread
+	directory=/mnt/readcache
+	[reader4]
+	rw=randread
+	directory=/mnt/readcache
+	
+	[writer1]
+	rw=randwrite
+	directory=/mnt/nocache
+	rate_iops=12500
+	[writer2]
+	rw=randwrite
+	directory=/mnt/nocache
+	rate_iops=12500
+	[writer3]
+	rw=randwrite
+	directory=/mnt/nocache
+	rate_iops=12500
+	[writer4]
+	rw=randwrite
+	directory=/mnt/nocache
+	rate_iops=12500
 
-[writer1]
-rw=randwrite
-directory=/mnt/nocache
-rate_iops=12500
-[writer2]
-rw=randwrite
-directory=/mnt/nocache
-rate_iops=12500
-[writer3]
-rw=randwrite
-directory=/mnt/nocache
-rate_iops=12500
-[writer4]
-rw=randwrite
-directory=/mnt/nocache
-rate_iops=12500
-```
 
 请注意以下重要事项，这些事项必须符合前面部分讨论的设计准则。这些规范是实现最大 IOPS 所必需的。
 

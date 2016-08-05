@@ -50,25 +50,25 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 
 以下代码显示 System.FM 事件，且节点正常运行时的运行状况状态为正常：
 
-```powershell
 
-PS C:\> Get-ServiceFabricNodeHealth -NodeName Node.1
-NodeName              : Node.1
-AggregatedHealthState : Ok
-HealthEvents          :
-                        SourceId              : System.FM
-                        Property              : State
-                        HealthState           : Ok
-                        SequenceNumber        : 2
-                        SentAt                : 4/24/2015 5:27:33 PM
-                        ReceivedAt            : 4/24/2015 5:28:50 PM
-                        TTL                   : Infinite
-                        Description           : Fabric node is up.
-                        RemoveWhenExpired     : False
-                        IsExpired             : False
-                        Transitions           : ->Ok = 4/24/2015 5:28:50 PM
 
-```
+	PS C:\> Get-ServiceFabricNodeHealth -NodeName Node.1
+	NodeName              : Node.1
+	AggregatedHealthState : Ok
+	HealthEvents          :
+	                        SourceId              : System.FM
+	                        Property              : State
+	                        HealthState           : Ok
+	                        SequenceNumber        : 2
+	                        SentAt                : 4/24/2015 5:27:33 PM
+	                        ReceivedAt            : 4/24/2015 5:28:50 PM
+	                        TTL                   : Infinite
+	                        Description           : Fabric node is up.
+	                        RemoveWhenExpired     : False
+	                        IsExpired             : False
+	                        Transitions           : ->Ok = 4/24/2015 5:28:50 PM
+
+
 
 
 ### 证书过期日期
@@ -97,26 +97,26 @@ HealthEvents          :
 
 以下代码显示 **fabric:/WordCount** 应用程序上的状态事件：
 
-```powershell
-PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount -ServicesFilter None -DeployedApplicationsFilter None
 
-ApplicationName                 : fabric:/WordCount
-AggregatedHealthState           : Ok
-ServiceHealthStates             : None
-DeployedApplicationHealthStates : None
-HealthEvents                    :
-                                  SourceId              : System.CM
-                                  Property              : State
-                                  HealthState           : Ok
-                                  SequenceNumber        : 82
-                                  SentAt                : 4/24/2015 6:12:51 PM
-                                  ReceivedAt            : 4/24/2015 6:12:51 PM
-                                  TTL                   : Infinite
-                                  Description           : Application has been created.
-                                  RemoveWhenExpired     : False
-                                  IsExpired             : False
-                                  Transitions           : ->Ok = 4/24/2015 6:12:51 PM
-```
+	PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount -ServicesFilter None -DeployedApplicationsFilter None
+	
+	ApplicationName                 : fabric:/WordCount
+	AggregatedHealthState           : Ok
+	ServiceHealthStates             : None
+	DeployedApplicationHealthStates : None
+	HealthEvents                    :
+	                                  SourceId              : System.CM
+	                                  Property              : State
+	                                  HealthState           : Ok
+	                                  SequenceNumber        : 82
+	                                  SentAt                : 4/24/2015 6:12:51 PM
+	                                  ReceivedAt            : 4/24/2015 6:12:51 PM
+	                                  TTL                   : Infinite
+	                                  Description           : Application has been created.
+	                                  RemoveWhenExpired     : False
+	                                  IsExpired             : False
+	                                  Transitions           : ->Ok = 4/24/2015 6:12:51 PM
+
 
 ## 服务系统运行状况报告
 **System.FM** 表示故障转移管理器服务，是管理服务信息的主管服务。
@@ -129,28 +129,28 @@ HealthEvents                    :
 
 以下代码显示服务 **fabric:/WordCount/WordCountService** 上的状态事件：
 
-```powershell
-PS C:\> Get-ServiceFabricServiceHealth fabric:/WordCount/WordCountService
 
-ServiceName           : fabric:/WordCount/WordCountService
-AggregatedHealthState : Ok
-PartitionHealthStates :
-                        PartitionId           : 875a1caa-d79f-43bd-ac9d-43ee89a9891c
-                        AggregatedHealthState : Ok
+	PS C:\> Get-ServiceFabricServiceHealth fabric:/WordCount/WordCountService
+	
+	ServiceName           : fabric:/WordCount/WordCountService
+	AggregatedHealthState : Ok
+	PartitionHealthStates :
+	                        PartitionId           : 875a1caa-d79f-43bd-ac9d-43ee89a9891c
+	                        AggregatedHealthState : Ok
+	
+	HealthEvents          :
+	                        SourceId              : System.FM
+	                        Property              : State
+	                        HealthState           : Ok
+	                        SequenceNumber        : 3
+	                        SentAt                : 4/24/2015 6:12:51 PM
+	                        ReceivedAt            : 4/24/2015 6:13:01 PM
+	                        TTL                   : Infinite
+	                        Description           : Service has been created.
+	                        RemoveWhenExpired     : False
+	                        IsExpired             : False
+	                        Transitions           : ->Ok = 4/24/2015 6:13:01 PM
 
-HealthEvents          :
-                        SourceId              : System.FM
-                        Property              : State
-                        HealthState           : Ok
-                        SequenceNumber        : 3
-                        SentAt                : 4/24/2015 6:12:51 PM
-                        ReceivedAt            : 4/24/2015 6:13:01 PM
-                        TTL                   : Infinite
-                        Description           : Service has been created.
-                        RemoveWhenExpired     : False
-                        IsExpired             : False
-                        Transitions           : ->Ok = 4/24/2015 6:13:01 PM
-```
 
 ### 未放置副本冲突
 如果 **System.PLB** 找不到放置一或多个服务副本的位置，则报告警告。当报告过期时被删除。

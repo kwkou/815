@@ -25,34 +25,34 @@
 
 本文假设 Service Fabric 群集中的节点上未安装 Node.js。因此，你需要在打包之前，先将 Node.exe 添加到节点应用程序的根目录中。Node.js 应用程序（使用 Express Web 框架和 Jade 模板引擎）的目录结构看起来应该与以下类似：
 
-```
-|-- NodeApplication
-	|-- bin
-        |-- www
-	|-- node_modules
-        |-- .bin
-        |-- express
-        |-- jade
-        |-- etc.
-	|-- public
-        |-- images
-        |-- etc.
-	|-- routes
-        |-- index.js
-        |-- users.js
-    |-- views
-        |-- index.jade
-        |-- etc.
-    |-- app.js
-    |-- package.json
-    |-- node.exe
-```
+
+	|-- NodeApplication
+		|-- bin
+	        |-- www
+		|-- node_modules
+	        |-- .bin
+	        |-- express
+	        |-- jade
+	        |-- etc.
+		|-- public
+	        |-- images
+	        |-- etc.
+		|-- routes
+	        |-- index.js
+	        |-- users.js
+	    |-- views
+	        |-- index.jade
+	        |-- etc.
+	    |-- app.js
+	    |-- package.json
+	    |-- node.exe
+
 
 在下一个步骤中，你将为 Node.js 应用程序创建应用程序包。以下代码会创建包含 Node.js 应用程序的 Service Fabric 应用程序包。
 
-```
-.\ServiceFabricAppPackageUtil.exe /source:'[yourdirectory]\MyNodeApplication' /target:'[yourtargetdirectory] /appname:NodeService /exe:'node.exe' /ma:'bin/www' /AppType:NodeAppType
-```
+
+	.\ServiceFabricAppPackageUtil.exe /source:'[yourdirectory]\MyNodeApplication' /target:'[yourtargetdirectory] /appname:NodeService /exe:'node.exe' /ma:'bin/www' /AppType:NodeAppType
+
 
 下面描述了所使用的参数：
 
@@ -67,37 +67,37 @@
 
 如果浏览到 /target 参数中指定的目录，则可以看到工具已创建完全正常运行的 Service Fabric 包，如下所示：
 
-```
-|--[yourtargetdirectory]
-    |-- NodeApplication
-        |-- C
-		      |-- bin
-              |-- data
-              |-- node_modules
-              |-- public
-              |-- routes
-              |-- views
-              |-- app.js
-              |-- package.json
-              |-- node.exe
-        |-- config
-		      |--Settings.xml
-	    |-- ServiceManifest.xml
-    |-- ApplicationManifest.xml
-```
+
+	|--[yourtargetdirectory]
+	    |-- NodeApplication
+	        |-- C
+			      |-- bin
+	              |-- data
+	              |-- node_modules
+	              |-- public
+	              |-- routes
+	              |-- views
+	              |-- app.js
+	              |-- package.json
+	              |-- node.exe
+	        |-- config
+			      |--Settings.xml
+		    |-- ServiceManifest.xml
+	    |-- ApplicationManifest.xml
+
 所生成的 ServiceManifest.xml 现在有一个描述应该如何启动 Node.js Web 服务器的节，如以下代码段所示：
 
-```xml
-<CodePackage Name="C" Version="1.0">
-    <EntryPoint>
-        <ExeHost>
-            <Program>node.exe</Program>
-            <Arguments>'bin/www'</Arguments>
-            <WorkingFolder>CodePackage</WorkingFolder>
-        </ExeHost>
-    </EntryPoint>
-</CodePackage>
-```
+
+	<CodePackage Name="C" Version="1.0">
+	    <EntryPoint>
+	        <ExeHost>
+	            <Program>node.exe</Program>
+	            <Arguments>'bin/www'</Arguments>
+	            <WorkingFolder>CodePackage</WorkingFolder>
+	        </ExeHost>
+	    </EntryPoint>
+	</CodePackage>
+
 在此示例中，Node.js Web 服务器会侦听端口 3000，所以你需要更新 ServiceManifest.xml 文件中的终结点信息，如下所示。
 
 

@@ -55,45 +55,45 @@
 
 代码：
 
-```csharp
-StatefulServiceDescription serviceDescription = new StatefulServiceDescription();
-StatefulServiceLoadMetricDescription memoryMetric = new StatefulServiceLoadMetricDescription();
-memoryMetric.Name = "MemoryInMb";
-memoryMetric.PrimaryDefaultLoad = 20;
-memoryMetric.SecondaryDefaultLoad = 5;
-memoryMetric.Weight = ServiceLoadMetricWeight.High;
 
-StatefulServiceLoadMetricDescription primaryCountMetric = new StatefulServiceLoadMetricDescription();
-primaryCountMetric.Name = "PrimaryCount";
-primaryCountMetric.PrimaryDefaultLoad = 1;
-primaryCountMetric.SecondaryDefaultLoad = 0;
-primaryCountMetric.Weight = ServiceLoadMetricWeight.Medium;
+	StatefulServiceDescription serviceDescription = new StatefulServiceDescription();
+	StatefulServiceLoadMetricDescription memoryMetric = new StatefulServiceLoadMetricDescription();
+	memoryMetric.Name = "MemoryInMb";
+	memoryMetric.PrimaryDefaultLoad = 20;
+	memoryMetric.SecondaryDefaultLoad = 5;
+	memoryMetric.Weight = ServiceLoadMetricWeight.High;
+	
+	StatefulServiceLoadMetricDescription primaryCountMetric = new StatefulServiceLoadMetricDescription();
+	primaryCountMetric.Name = "PrimaryCount";
+	primaryCountMetric.PrimaryDefaultLoad = 1;
+	primaryCountMetric.SecondaryDefaultLoad = 0;
+	primaryCountMetric.Weight = ServiceLoadMetricWeight.Medium;
+	
+	StatefulServiceLoadMetricDescription replicaCountMetric = new StatefulServiceLoadMetricDescription();
+	replicaCountMetric.Name = "ReplicaCount";
+	replicaCountMetric.PrimaryDefaultLoad = 1;
+	replicaCountMetric.SecondaryDefaultLoad = 1;
+	replicaCountMetric.Weight = ServiceLoadMetricWeight.Low;
+	
+	StatefulServiceLoadMetricDescription totalCountMetric = new StatefulServiceLoadMetricDescription();
+	totalCountMetric.Name = "Count";
+	totalCountMetric.PrimaryDefaultLoad = 1;
+	totalCountMetric.SecondaryDefaultLoad = 1;
+	totalCountMetric.Weight = ServiceLoadMetricWeight.Low;
+	
+	serviceDescription.Metrics.Add(memoryMetric);
+	serviceDescription.Metrics.Add(primaryCountMetric);
+	serviceDescription.Metrics.Add(replicaCountMetric);
+	serviceDescription.Metrics.Add(totalCountMetric);
+	
+	await fabricClient.ServiceManager.CreateServiceAsync(serviceDescription);
 
-StatefulServiceLoadMetricDescription replicaCountMetric = new StatefulServiceLoadMetricDescription();
-replicaCountMetric.Name = "ReplicaCount";
-replicaCountMetric.PrimaryDefaultLoad = 1;
-replicaCountMetric.SecondaryDefaultLoad = 1;
-replicaCountMetric.Weight = ServiceLoadMetricWeight.Low;
-
-StatefulServiceLoadMetricDescription totalCountMetric = new StatefulServiceLoadMetricDescription();
-totalCountMetric.Name = "Count";
-totalCountMetric.PrimaryDefaultLoad = 1;
-totalCountMetric.SecondaryDefaultLoad = 1;
-totalCountMetric.Weight = ServiceLoadMetricWeight.Low;
-
-serviceDescription.Metrics.Add(memoryMetric);
-serviceDescription.Metrics.Add(primaryCountMetric);
-serviceDescription.Metrics.Add(replicaCountMetric);
-serviceDescription.Metrics.Add(totalCountMetric);
-
-await fabricClient.ServiceManager.CreateServiceAsync(serviceDescription);
-```
 
 Powershell：
 
-```posh
-New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName –Stateful -MinReplicaSetSize 2 -TargetReplicaSetSize 3 -PartitionSchemeSingleton –Metric @("Memory,High,20,5”,"PrimaryCount,Medium,1,0”,"ReplicaCount,Low,1,1”,"Count,Low,1,1”)
-```
+
+	New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName –Stateful -MinReplicaSetSize 2 -TargetReplicaSetSize 3 -PartitionSchemeSingleton –Metric @("Memory,High,20,5”,"PrimaryCount,Medium,1,0”,"ReplicaCount,Low,1,1”,"Count,Low,1,1”)
+
 
 （提醒一下，如果你只想要使用默认指标，则根本不需要处理指标集合。）
 
@@ -119,9 +119,9 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 
 代码：
 
-```csharp
-this.ServicePartition.ReportLoad(new List<LoadMetric> { new LoadMetric("Memory", 1234), new LoadMetric("metric1", 42) });
-```
+
+	this.ServicePartition.ReportLoad(new List<LoadMetric> { new LoadMetric("Memory", 1234), new LoadMetric("metric1", 42) });
+
 
 服务副本或实例只能针对它们配置要使用的指标报告负载。创建每个服务时将设置指标列表。如果服务副本或实例尝试针对当前未配置要使用的指标报告负载，Service Fabric 将记录该报告但予以忽略，这意味着我们在计算或报告群集的状态时不会使用该指标。这是理想的结果，因为可以改善体验 – 代码可以测量并报告它知道做法的所有内容，而操作员无需更改代码，就可以快速配置、调整和更新该服务的资源平衡规则。例如，这可能包括禁用有错误报告的指标、根据行为重新设置指标的权重，或仅在部署和验证代码之后启用新的指标。
 
@@ -132,9 +132,9 @@ this.ServicePartition.ReportLoad(new List<LoadMetric> { new LoadMetric("Memory",
 
 Powershell：
 
-```posh
-New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName –Stateful -MinReplicaSetSize 2 -TargetReplicaSetSize 3 -PartitionSchemeSingleton –Metric @("Memory,High,21,11”,"PrimaryCount,Medium,1,0”,"ReplicaCount,Low,1,1”,"Count,Low,1,1”)
-```
+
+	New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName –Stateful -MinReplicaSetSize 2 -TargetReplicaSetSize 3 -PartitionSchemeSingleton –Metric @("Memory,High,21,11”,"PrimaryCount,Medium,1,0”,"ReplicaCount,Low,1,1”,"Count,Low,1,1”)
+
 
 我们前面讨论过此语法（MetricName、MetricWeight、PrimaryDefaultLoad、SecondaryDefaultLoad），但我们稍后将详细讨论权重的特定值有何意义。
 

@@ -354,30 +354,30 @@ Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记
 可以在 Azure SQL 数据库的日志中搜索有关问题事件的条目。在 **master** 数据库中尝试运行以下 Transact-SQL SELECT 语句：
 
 
-```
-SELECT
-   object_name
-  ,CAST(f.event_data as XML).value
-      ('(/event/@timestamp)[1]', 'datetime2')                      AS [timestamp]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="error"]/value)[1]', 'int')             AS [error]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="state"]/value)[1]', 'int')             AS [state]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="is_success"]/value)[1]', 'bit')        AS [is_success]
-  ,CAST(f.event_data as XML).value
-      ('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
-FROM
-  sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
-WHERE
-  object_name != 'login_event'  -- Login events are numerous.
-  and
-  '2015-06-21' < CAST(f.event_data as XML).value
-        ('(/event/@timestamp)[1]', 'datetime2')
-ORDER BY
-  [timestamp] DESC
-;
-```
+
+	SELECT
+	   object_name
+	  ,CAST(f.event_data as XML).value
+	      ('(/event/@timestamp)[1]', 'datetime2')                      AS [timestamp]
+	  ,CAST(f.event_data as XML).value
+	      ('(/event/data[@name="error"]/value)[1]', 'int')             AS [error]
+	  ,CAST(f.event_data as XML).value
+	      ('(/event/data[@name="state"]/value)[1]', 'int')             AS [state]
+	  ,CAST(f.event_data as XML).value
+	      ('(/event/data[@name="is_success"]/value)[1]', 'bit')        AS [is_success]
+	  ,CAST(f.event_data as XML).value
+	      ('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
+	FROM
+	  sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
+	WHERE
+	  object_name != 'login_event'  -- Login events are numerous.
+	  and
+	  '2015-06-21' < CAST(f.event_data as XML).value
+	        ('(/event/@timestamp)[1]', 'datetime2')
+	ORDER BY
+	  [timestamp] DESC
+	;
+
 
 
 #### 将返回 sys.fn\_xe\_telemetry\_blob\_target\_read\_file 中的若干行
@@ -386,11 +386,11 @@ ORDER BY
 下面是返回行的类似内容。显示的 null 值在其他行中通常不是 null。
 
 
-```
-object_name                   timestamp                    error  state  is_success  database_name
 
-database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL        AdventureWorks
-```
+	object_name                   timestamp                    error  state  is_success  database_name
+	
+	database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL        AdventureWorks
+
 
 
 <a id="l-enterprise-library-6" name="l-enterprise-library-6"></a>

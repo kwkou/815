@@ -96,24 +96,24 @@
 
 登录到你的 Azure 帐户。如果此 PowerShell 命令由于某些原因而失败，你应该检查 Azure PowerShell 是否已正确安装。
 
-```
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-```
+
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+
 
 运行以下命令获取有关负载平衡器的详细信息，在值中，你将会找到 **inboundNatPools** 的描述：
 
-```
-Get-AzureRmResource -ResourceGroupName <RGname> -ResourceType Microsoft.Network/loadBalancers -ResourceName <load balancer name>
-```
+
+	Get-AzureRmResource -ResourceGroupName <RGname> -ResourceType Microsoft.Network/loadBalancers -ResourceName <load balancer name>
+
 
 现在，将 *frontendPortRangeStart* 和 *frontendPortRangeEnd* 设置为所需的值。
 
-```
-$PropertiesObject = @{
-	#Property = value;
-}
-Set-AzureRmResource -PropertyObject $PropertiesObject -ResourceGroupName <RG name> -ResourceType Microsoft.Network/loadBalancers -ResourceName <load Balancer name> -ApiVersion <use the API version that get returned> -Force
-```
+
+	$PropertiesObject = @{
+		#Property = value;
+	}
+	Set-AzureRmResource -PropertyObject $PropertiesObject -ResourceGroupName <RG name> -ResourceType Microsoft.Network/loadBalancers -ResourceName <load Balancer name> -ApiVersion <use the API version that get returned> -Force
+
 
 
 ## 后续步骤

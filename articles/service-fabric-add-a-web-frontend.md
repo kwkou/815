@@ -81,17 +81,17 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 
 5. 在类库中，使用单个方法 `GetCountAsync` 创建接口，并从 IService 扩展接口。
 
-    ```c#
-    namespace MyStatefulService.Interfaces
-    {
-        using Microsoft.ServiceFabric.Services.Remoting;
 
-        public interface ICounter: IService
-        {
-            Task<long> GetCountAsync();
-        }
-    }
-    ```
+	    namespace MyStatefulService.Interfaces
+	    {
+	        using Microsoft.ServiceFabric.Services.Remoting;
+	
+	        public interface ICounter: IService
+	        {
+	            Task<long> GetCountAsync();
+	        }
+	    }
+
 
 
 ### 在有状态服务中实现接口
@@ -104,32 +104,32 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 
 2. 找到继承自 `StatefulService` 的类（例如 `MyStatefulService`），然后扩展它以实现 `ICounter` 接口。
 
-    ```c#
-    using MyStatefulService.Interfaces;
 
-    ...
+	    using MyStatefulService.Interfaces;
+	
+	    ...
+	
+	    public class MyStatefulService : StatefulService, ICounter
+	    {        
+	          // ...
+	    }
 
-    public class MyStatefulService : StatefulService, ICounter
-    {        
-          // ...
-    }
-    ```
 
 3. 现在实现 `ICounter` 接口中定义的单个方法，即 `GetCountAsync`。
 
-    ```c#
-    public async Task<long> GetCountAsync()
-    {
-      var myDictionary =
-        await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
 
-        using (var tx = this.StateManager.CreateTransaction())
-        {          
-            var result = await myDictionary.TryGetValueAsync(tx, "Counter");
-            return result.HasValue ? result.Value : 0;
-        }
-    }
-    ```
+	    public async Task<long> GetCountAsync()
+	    {
+	      var myDictionary =
+	        await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
+	
+	        using (var tx = this.StateManager.CreateTransaction())
+	        {          
+	            var result = await myDictionary.TryGetValueAsync(tx, "Counter");
+	            return result.HasValue ? result.Value : 0;
+	        }
+	    }
+
 
 
 ### 使用服务远程侦听器公开有状态服务
@@ -140,21 +140,21 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 
 在本例中，我们将替换现有的 `CreateServiceReplicaListeners` 方法，并提供 `ServiceRemotingListener` 的实例，该实例通过 `ServiceProxy` 来创建可从客户端调用的 RPC 终结点。
 
-```c#
-using Microsoft.ServiceFabric.Services.Remoting.Runtime;
 
-...
+	using Microsoft.ServiceFabric.Services.Remoting.Runtime;
+	
+	...
+	
+	protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
+	{
+	    return new List<ServiceReplicaListener>()
+	    {
+	        new ServiceReplicaListener(
+	            (context) =>
+	                this.CreateServiceRemotingListener(context))
+	    };
+	}
 
-protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
-{
-    return new List<ServiceReplicaListener>()
-    {
-        new ServiceReplicaListener(
-            (context) =>
-                this.CreateServiceRemotingListener(context))
-    };
-}
-```
 
 
 ### 使用 ServiceProxy 类来与服务交互
@@ -167,22 +167,22 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
 
 3. 在 **Controllers** 文件夹中，打开 `ValuesController` 类。请注意，`Get` 方法目前只返回“value1”和“value2”的硬编码字符串数组，这符合前面在浏览器中看到的内容。使用以下代码替换此实现：
 
-    ```c#
-    using MyStatefulService.Interfaces;
-    using Microsoft.ServiceFabric.Services.Remoting.Client;
 
-    ...
+	    using MyStatefulService.Interfaces;
+	    using Microsoft.ServiceFabric.Services.Remoting.Client;
+	
+	    ...
+	
+	    public async Task<IEnumerable<string>> Get()
+	    {
+	        ICounter counter =
+	            ServiceProxy.Create<ICounter>(0, new Uri("fabric:/MyApplication/MyStatefulService"));
+	
+	        long count = await counter.GetCountAsync();
+	
+	        return new string[] { count.ToString() };
+	    }
 
-    public async Task<IEnumerable<string>> Get()
-    {
-        ICounter counter =
-            ServiceProxy.Create<ICounter>(0, new Uri("fabric:/MyApplication/MyStatefulService"));
-
-        long count = await counter.GetCountAsync();
-
-        return new string[] { count.ToString() };
-    }
-    ```
 
     第一行代码是关键代码。若要创建有状态服务的 ICounter Proxy，必须提供两项信息：分区 ID 和服务名称。
 

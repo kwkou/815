@@ -54,55 +54,55 @@ VM 停止 | `OnStop()` | 不适用
 
 ### 辅助角色
 
-```C#
 
-using Microsoft.WindowsAzure.ServiceRuntime;
 
-namespace WorkerRole1
-{
-    public class WorkerRole : RoleEntryPoint
-    {
-        public override void Run()
-        {
-        }
+	using Microsoft.WindowsAzure.ServiceRuntime;
+	
+	namespace WorkerRole1
+	{
+	    public class WorkerRole : RoleEntryPoint
+	    {
+	        public override void Run()
+	        {
+	        }
+	
+	        public override bool OnStart()
+	        {
+	        }
+	
+	        public override void OnStop()
+	        {
+	        }
+	    }
+	}
 
-        public override bool OnStart()
-        {
-        }
 
-        public override void OnStop()
-        {
-        }
-    }
-}
-
-```
 
 ### Service Fabric 无状态服务
 
-```C#
 
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.ServiceFabric.Services.Communication.Runtime;
-using Microsoft.ServiceFabric.Services.Runtime;
 
-namespace Stateless1
-{
-    public class Stateless1 : StatelessService
-    {
-        protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-        {
-        }
+	using System.Collections.Generic;
+	using System.Threading;
+	using System.Threading.Tasks;
+	using Microsoft.ServiceFabric.Services.Communication.Runtime;
+	using Microsoft.ServiceFabric.Services.Runtime;
+	
+	namespace Stateless1
+	{
+	    public class Stateless1 : StatelessService
+	    {
+	        protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
+	        {
+	        }
+	
+	        protected override Task RunAsync(CancellationToken cancelServiceInstance)
+	        {
+	        }
+	    }
+	}
 
-        protected override Task RunAsync(CancellationToken cancelServiceInstance)
-        {
-        }
-    }
-}
 
-```
 
 两者都有可从中开始处理的主要“Run”重写。Service Fabric 服务将 `Run`、`Start` 和 `Stop` 合并为单一入口点 `RunAsync`。当 `RunAsync` 启动时，服务应开始工作；发出 `RunAsync` 方法的 CancellationToken 信号时，应停止工作。
 
@@ -122,7 +122,7 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 --- | --- | ---
 配置设置和更改通知 | `RoleEnvironment` | `CodePackageActivationContext`
 本地存储 | `RoleEnvironment` | `CodePackageActivationContext`
-终结点信息 | `RoleInstance` <ul><li>当前实例：`RoleEnvironment.CurrentRoleInstance`</li><li>其他角色和实例：`RoleEnvironment.Roles`</li> | <ul><li>`NodeContext`（适用于当前的节点地址）</li><li>`FabricClient` 和 `ServicePartitionResolver`（适用于服务终结点发现）</li> 
+终结点信息 | `RoleInstance` <ul><li>当前实例：`RoleEnvironment.CurrentRoleInstance`</li><li>其他角色和实例：`RoleEnvironment.Roles`</li></ul> | <ul><li>`NodeContext`（适用于当前的节点地址）</li><li>`FabricClient` 和 `ServicePartitionResolver`（适用于服务终结点发现）</li></ul>
 环境模拟 | `RoleEnvironment.IsEmulated` | 不适用
 同时更改事件 | `RoleEnvironment` | 不适用
 
@@ -142,11 +142,11 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 可通过 `RoleEnvironment` 访问 ServiceConfiguration.*.cscfg 中的配置设置。这些设置可全局提供给同一云服务部署中的所有角色实例使用。
 
-```C#
 
-string value = RoleEnvironment.GetConfigurationSettingValue("Key");
 
-```
+	string value = RoleEnvironment.GetConfigurationSettingValue("Key");
+
+
 
 #### ServiceFabic
 
@@ -154,43 +154,43 @@ string value = RoleEnvironment.GetConfigurationSettingValue("Key");
 
 通过服务的 `CodePackageActivationContext` 可在每个服务实例中访问配置设置。
 
-```C#
 
-ConfigurationPackage configPackage = this.ServiceInitializationParameters.CodePackageActivationContext.GetConfigurationPackageObject("Config");
 
-// Access Settings.xml
-KeyedCollection<string, ConfigurationProperty> parameters = configPackage.Settings.Sections["MyConfigSection"].Parameters;
+	ConfigurationPackage configPackage = this.ServiceInitializationParameters.CodePackageActivationContext.GetConfigurationPackageObject("Config");
+	
+	// Access Settings.xml
+	KeyedCollection<string, ConfigurationProperty> parameters = configPackage.Settings.Sections["MyConfigSection"].Parameters;
+	
+	string value = parameters["Key"]?.Value;
+	
+	// Access custom configuration file:
+	using (StreamReader reader = new StreamReader(Path.Combine(configPackage.Path, "CustomConfig.json")))
+	{
+	    MySettings settings = JsonConvert.DeserializeObject<MySettings>(reader.ReadToEnd());
+	}
 
-string value = parameters["Key"]?.Value;
 
-// Access custom configuration file:
-using (StreamReader reader = new StreamReader(Path.Combine(configPackage.Path, "CustomConfig.json")))
-{
-    MySettings settings = JsonConvert.DeserializeObject<MySettings>(reader.ReadToEnd());
-}
-
-```
 
 ### 配置更新事件
 #### 云服务
 
 当环境中发生更改（例如配置更改）时，将使用 `RoleEnvironment.Changed` 事件来通知所有角色实例。通过此事件可以使用配置更新，却无需回收角色实例或重新启动辅助角色进程。
 
-```C#
 
-RoleEnvironment.Changed += RoleEnvironmentChanged;
 
-private void RoleEnvironmentChanged(object sender, RoleEnvironmentChangedEventArgs e)
-{
-   // Get the list of configuration changes
-   var settingChanges = e.Changes.OfType<RoleEnvironmentConfigurationSettingChange>();
-foreach (var settingChange in settingChanges) 
-   {
-      Trace.WriteLine("Setting: " + settingChange.ConfigurationSettingName, "Information");
-   }
-}
+	RoleEnvironment.Changed += RoleEnvironmentChanged;
+	
+	private void RoleEnvironmentChanged(object sender, RoleEnvironmentChangedEventArgs e)
+	{
+	   // Get the list of configuration changes
+	   var settingChanges = e.Changes.OfType<RoleEnvironmentConfigurationSettingChange>();
+	foreach (var settingChange in settingChanges) 
+	   {
+	      Trace.WriteLine("Setting: " + settingChange.ConfigurationSettingName, "Information");
+	   }
+	}
 
-```
+
 
 #### ServiceFabic
 
@@ -198,18 +198,18 @@ foreach (var settingChange in settingChanges)
 
 通过这些事件可以使用服务包中的更改，而无需重新启动服务实例。
  
-```C#
 
-this.ServiceInitializationParameters.CodePackageActivationContext.ConfigurationPackageModifiedEvent +=
-                    this.CodePackageActivationContext_ConfigurationPackageModifiedEvent;
 
-private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(object sender, PackageModifiedEventArgs<ConfigurationPackage> e)
-{
-    this.UpdateCustomConfig(e.NewPackage.Path);
-    this.UpdateSettings(e.NewPackage.Settings);
-}
+	this.ServiceInitializationParameters.CodePackageActivationContext.ConfigurationPackageModifiedEvent +=
+	                    this.CodePackageActivationContext_ConfigurationPackageModifiedEvent;
+	
+	private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(object sender, PackageModifiedEventArgs<ConfigurationPackage> e)
+	{
+	    this.UpdateCustomConfig(e.NewPackage.Path);
+	    this.UpdateSettings(e.NewPackage.Settings);
+	}
 
-```
+
 
 ## 启动任务
 

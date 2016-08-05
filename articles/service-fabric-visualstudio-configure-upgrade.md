@@ -46,21 +46,21 @@ Azure Service Fabric 的 Visual Studio 工具提供发布到本地或远程群�
 
     每个参数都有默认值。可选参数 DefaultServiceTypeHealthPolicy 采用哈希表输入。下面是 DefaultServiceTypeHealthPolicy 的哈希表输入格式示例：
 
-	```
-    @{ ConsiderWarningAsError = "false"; MaxPercentUnhealthyDeployedApplications = 0; MaxPercentUnhealthyServices = 0; MaxPercentUnhealthyPartitionsPerService = 0; MaxPercentUnhealthyReplicasPerPartition = 0 }
-	```
+	
+	    @{ ConsiderWarningAsError = "false"; MaxPercentUnhealthyDeployedApplications = 0; MaxPercentUnhealthyServices = 0; MaxPercentUnhealthyPartitionsPerService = 0; MaxPercentUnhealthyReplicasPerPartition = 0 }
+		
 
     ServiceTypeHealthPolicyMap 是另一个接受哈希表输入（格式如下）的可选参数：
 
-	```    
-	@ {"ServiceTypeName" : "MaxPercentUnhealthyPartitionsPerService,MaxPercentUnhealthyReplicasPerPartition,MaxPercentUnhealthyServices"}
-	```
+	    
+		@ {"ServiceTypeName" : "MaxPercentUnhealthyPartitionsPerService,MaxPercentUnhealthyReplicasPerPartition,MaxPercentUnhealthyServices"}
+		
 
     下面是一个真实示例：
 
-    ```
-	@{ "ServiceTypeName01" = "5,10,5"; "ServiceTypeName02" = "5,5,5" }
-	```
+    
+		@{ "ServiceTypeName01" = "5,10,5"; "ServiceTypeName02" = "5,5,5" }
+	
 
 3. 如果选择 UnmonitoredManual 升级模式，则必须手动启动 PowerShell 控制台才能继续并完成升级过程。若要了解手动升级的工作方式，请参阅 [Service Fabric应用程序升级：高级主题](/documentation/articles/service-fabric-application-upgrade-advanced/)。
 
@@ -74,19 +74,19 @@ Service Fabric 应用程序中的每个服务可能有自身的运行状况策�
 
 以下示例演示如何对应用程序列表中的每个服务应用唯一的运行状况检查策略。
 
-```
-<Policies>
-    <HealthPolicy ConsiderWarningAsError="false" MaxPercentUnhealthyDeployedApplications="20">
-        <DefaultServiceTypeHealthPolicy MaxPercentUnhealthyServices="20"               
-                MaxPercentUnhealthyPartitionsPerService="20"
-                MaxPercentUnhealthyReplicasPerPartition="20" />
-        <ServiceTypeHealthPolicy ServiceTypeName="ServiceTypeName1"
-                MaxPercentUnhealthyServices="20"
-                MaxPercentUnhealthyPartitionsPerService="20"
-                MaxPercentUnhealthyReplicasPerPartition="20" />      
-    </HealthPolicy>
-</Policies>
-```
+
+	<Policies>
+	    <HealthPolicy ConsiderWarningAsError="false" MaxPercentUnhealthyDeployedApplications="20">
+	        <DefaultServiceTypeHealthPolicy MaxPercentUnhealthyServices="20"               
+	                MaxPercentUnhealthyPartitionsPerService="20"
+	                MaxPercentUnhealthyReplicasPerPartition="20" />
+	        <ServiceTypeHealthPolicy ServiceTypeName="ServiceTypeName1"
+	                MaxPercentUnhealthyServices="20"
+	                MaxPercentUnhealthyPartitionsPerService="20"
+	                MaxPercentUnhealthyReplicasPerPartition="20" />      
+	    </HealthPolicy>
+	</Policies>
+
 ## 后续步骤
 有关部署应用程序的详细信息，请参阅[在 Azure Service Fabric 中部署现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 

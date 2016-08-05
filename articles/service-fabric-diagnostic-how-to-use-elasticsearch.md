@@ -45,10 +45,10 @@ Service Fabric 运行时会使用 ETW 来获取诊断信息（跟踪）。它也
 
 3. 假设 Git 已安装，但未包含在系统路径中，请打开 Azure PowerShell 窗口并运行下列命令：
 
-    ```powershell
-    $ENV:PATH += ";<Git installation folder>\usr\bin"
-    $ENV:OPENSSL_CONF = "<Git installation folder>\usr\ssl\openssl.cnf"
-    ```
+    
+	    $ENV:PATH += ";<Git installation folder>\usr\bin"
+	    $ENV:OPENSSL_CONF = "<Git installation folder>\usr\ssl\openssl.cnf"
+	    
 
     用你计算机上的 Git 位置替换 `<Git installation folder>`；默认值为 **"C:\\Program Files\\Git"**。请注意第一个路径开头的分号字符。
 
@@ -71,9 +71,9 @@ Service Fabric 运行时会使用 ETW 来获取诊断信息（跟踪）。它也
 
 你现在可以开始运行脚本。发出以下命令：
 
-```powershell
-CreateElasticSearchCluster -ResourceGroupName <es-group-name> -Region <azure-region> -EsPassword <es-password>
-```
+
+	CreateElasticSearchCluster -ResourceGroupName <es-group-name> -Region <azure-region> -EsPassword <es-password>
+
 
 其中
 
@@ -172,62 +172,62 @@ Microsoft.Diagnostic.Listeners 库是 PartyCluster 示例 Service Fabric 应用�
 ### Elasticsearch 侦听器实例化和配置
 将诊断数据发送到 Elasticsearch 所需的最后一个步骤，就是创建 `ElasticSearchListener` 的实例并使用 Elasticsearch 连接数据来配置它。侦听器会自动捕获所有通过服务项目中定义的 EventSource 类引发的事件。它必须在服务的生存期内保持活动状态，所以创建它的最佳位置是在服务初始化代码中。以下是无状态服务的初始化代码在完成必要更改后的样子（以 `****` 开头的注释指出新增的部分）：
 
-```csharp
-using System;
-using System.Diagnostics;
-using System.Fabric;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.ServiceFabric.Services.Runtime;
 
-// **** Add the following directives
-using Microsoft.Diagnostics.EventListeners;
-using Microsoft.Diagnostics.EventListeners.Fabric;
+	using System;
+	using System.Diagnostics;
+	using System.Fabric;
+	using System.Threading;
+	using System.Threading.Tasks;
+	using Microsoft.ServiceFabric.Services.Runtime;
+	
+	// **** Add the following directives
+	using Microsoft.Diagnostics.EventListeners;
+	using Microsoft.Diagnostics.EventListeners.Fabric;
+	
+	namespace Stateless1
+	{
+	    internal static class Program
+	    {
+	        /// <summary>
+	        /// This is the entry point of the service host process.
+	        /// </summary>        
+	        private static void Main()
+	        {
+	            try
+	            {
+	                // **** Instantiate ElasticSearchListener
+	                var configProvider = new FabricConfigurationProvider("ElasticSearchEventListener");
+	                ElasticSearchListener esListener = null;
+	                if (configProvider.HasConfiguration)
+	                {
+	                    esListener = new ElasticSearchListener(configProvider);
+	                }
+	
+	                // The ServiceManifest.XML file defines one or more service type names.
+	                // Registering a service maps a service type name to a .NET type.
+	                // When Service Fabric creates an instance of this service type,
+	                // an instance of the class is created in this host process.
+	
+	                ServiceRuntime.RegisterServiceAsync("Stateless1Type", 
+	                    context => new Stateless1(context)).GetAwaiter().GetResult();
+	
+	                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(Stateless1).Name);
+	
+	                // Prevents this host process from terminating so services keep running.
+	                Thread.Sleep(Timeout.Infinite);
+	
+	                // **** Ensure that the ElasticSearchListner instance is not garbage-collected prematurely
+	                GC.KeepAlive(esListener);
+	            }
+	            catch (Exception e)
+	            {
+	                ServiceEventSource.Current.ServiceHostInitializationFailed(e);
+	                throw;
+	            }
+	        }
+	    }
+	}
 
-namespace Stateless1
-{
-    internal static class Program
-    {
-        /// <summary>
-        /// This is the entry point of the service host process.
-        /// </summary>        
-        private static void Main()
-        {
-            try
-            {
-                // **** Instantiate ElasticSearchListener
-                var configProvider = new FabricConfigurationProvider("ElasticSearchEventListener");
-                ElasticSearchListener esListener = null;
-                if (configProvider.HasConfiguration)
-                {
-                    esListener = new ElasticSearchListener(configProvider);
-                }
-
-                // The ServiceManifest.XML file defines one or more service type names.
-                // Registering a service maps a service type name to a .NET type.
-                // When Service Fabric creates an instance of this service type,
-                // an instance of the class is created in this host process.
-
-                ServiceRuntime.RegisterServiceAsync("Stateless1Type", 
-                    context => new Stateless1(context)).GetAwaiter().GetResult();
-
-                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(Stateless1).Name);
-
-                // Prevents this host process from terminating so services keep running.
-                Thread.Sleep(Timeout.Infinite);
-
-                // **** Ensure that the ElasticSearchListner instance is not garbage-collected prematurely
-                GC.KeepAlive(esListener);
-            }
-            catch (Exception e)
-            {
-                ServiceEventSource.Current.ServiceHostInitializationFailed(e);
-                throw;
-            }
-        }
-    }
-}
-```
 
 Elasticsearch 连接数据应该放在服务配置文件 (**PackageRoot\\Config\\Settings.xml**) 中的单独节中。该节的名称必须与传递给 `FabricConfigurationProvider` 构造函数的值对应，例如：
 
