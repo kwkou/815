@@ -86,16 +86,6 @@ Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点�
 
 这个高级管理界面提供了“概览”，“域名管理”，“流量报表”，“带宽报表”，“缓存刷新”，“内容预取”，“日志下载”以及“服务检查”等功能。具体的使用和配置方式，可以点击进入相应的功能模块，然后查看对应的帮助文件。或者通过左侧导航栏的“帮助文档”，直接查看。
 
-
-
-
-[步骤 1:创建存储帐户，云服务, Web 应用或媒体服务]: https://github.com/mccdn/cdndoc/blob/master/wacn/azurecdn.md#步骤-1创建存储帐户云服务 Web 应用或媒体服务
-[步骤 2:创建新的 CDN 终结点]: #%E6%AD%A5%E9%AA%A4-2%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84-cdn-%E7%BB%88%E7%BB%93%E7%82%B9
-[步骤 3:访问 CDN 内容]: #%E6%AD%A5%E9%AA%A4-3%E8%AE%BF%E9%97%AE-cdn-%E5%86%85%E5%AE%B9
-[步骤 4:删除 CDN 中的内容]: #%E6%AD%A5%E9%AA%A4-4%E5%88%A0%E9%99%A4-cdn-%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9
-[步骤 5:使用高级管理功能]: #%E6%AD%A5%E9%AA%A4-5%E4%BD%BF%E7%94%A8%E9%AB%98%E7%BA%A7%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD
-
-
 <!--Image references-->
 [1]: ./media/cdn/image005.png
 [2]: ./media/cdn/image002.png
