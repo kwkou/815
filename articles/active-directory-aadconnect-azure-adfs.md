@@ -169,39 +169,39 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 
 **6.2.配置 ILB 后端池**
 
-在“负载平衡器”面板中选择新建的 ILB。此时将打开设置面板。
-1.	从设置面板中选择后端池
-2.	在“添加后端池”面板中，单击“添加虚拟机”
-3.	此时会显示一个面板，你可以在其中选择可用性集
-4.	选择 AD FS 可用性集
+在“负载平衡器”面板中选择新建的 ILB。此时将打开设置面板。  
+1.	从设置面板中选择后端池  
+2.	在“添加后端池”面板中，单击“添加虚拟机”  
+3.	此时会显示一个面板，你可以在其中选择可用性集  
+4.	选择 AD FS 可用性集  
 
 ![配置 ILB 后端池](./media/active-directory-aadconnect-azure-adfs/ilbdeployment3.png)
  
 **6.3.配置探测**
 
-在 ILB 设置面板中选择“探测”。
-1.	单击“添加”
-2.	提供探测详细信息
-  a.**名称**：探测名称
-  b.**协议**：TCP
-  c.**端口**：443 (HTTPS)
-  d.**间隔**：5（默认值）– 这是 ILB 在后端池中探测计算机的间隔
-  e.**不正常阈值限制**：2（默认值）– 这是连续探测失败阈值，达到此阈值后，ILB 会将后端池中的计算机声明为无响应，并停止向它发送流量。
-
+在 ILB 设置面板中选择“探测”。  
+1.	单击“添加”  
+2.	提供探测详细信息    
+  a.**名称**：探测名称  
+  b.**协议**：TCP  
+  c.**端口**：443 (HTTPS)  
+  d.**间隔**：5（默认值）– 这是 ILB 在后端池中探测计算机的间隔  
+  e.**不正常阈值限制**：2（默认值）– 这是连续探测失败阈值，达到此阈值后，ILB 会将后端池中的计算机声明为无响应，并停止向它发送流量。  
+ 
 ![配置 ILB 探测](./media/active-directory-aadconnect-azure-adfs/ilbdeployment4.png)
  
 **6.4.创建负载平衡规则**
 
-为了有效地平衡流量，应该为 ILB 设置负载平衡规则。若要创建负载平衡规则，请执行以下操作：
-1.	在 ILB 的设置面板中选择“负载平衡规则”
-2.	在“负载平衡规则”面板中单击“添加”
-3.	在“添加负载平衡规则”面板中，指定以下值：
-  a. **名称**：提供规则的名称
-  b.**协议**：选择“TCP”
-  c.**端口**：443
-  d.**后端端口**：443
-  e.**后端池**：选择前面为 AD FS 群集创建的池
-  f.**探测**：选择前面为 AD FS 服务器创建的探测
+为了有效地平衡流量，应该为 ILB 设置负载平衡规则。若要创建负载平衡规则，请执行以下操作：  
+1.	在 ILB 的设置面板中选择“负载平衡规则”  
+2.	在“负载平衡规则”面板中单击“添加”  
+3.	在“添加负载平衡规则”面板中，指定以下值：  
+  a. **名称**：提供规则的名称  
+  b.**协议**：选择“TCP”  
+  c.**端口**：443  
+  d.**后端端口**：443  
+  e.**后端池**：选择前面为 AD FS 群集创建的池   
+  f.**探测**：选择前面为 AD FS 服务器创建的探测  
 
 ![配置 ILB 平衡规则](./media/active-directory-aadconnect-azure-adfs/ilbdeployment5.png)
 
@@ -226,10 +226,10 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 
 **8.1.创建面向 Internet 的（公共）负载平衡器**
  
-在 Azure 门户中选择“负载平衡器”，然后单击“添加”。在“创建负载平衡器”面板中输入以下信息
-1. **名称**：负载平衡器的名称
-2. **方案**：公共 – 此选项告知 Azure，此负载平衡器需要公共地址。
-3. **IP 地址**：创建新 IP 地址（动态）
+在 Azure 门户中选择“负载平衡器”，然后单击“添加”。在“创建负载平衡器”面板中输入以下信息  
+1. **名称**：负载平衡器的名称  
+2. **方案**：公共 – 此选项告知 Azure，此负载平衡器需要公共地址。  
+3. **IP 地址**：创建新 IP 地址（动态）  
 
 ![面向 Internet 的负载平衡器](./media/active-directory-aadconnect-azure-adfs/elbdeployment1.png)
 
@@ -239,10 +239,10 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
  
 **8.2.向公共 IP 分配 DNS 标签**
 
-在“负载平衡器”面板中单击新建的负载平衡器条目，以显示配置面板。遵循以下步骤来配置公共 IP 的 DNS 标签：
-1.	单击该公共 IP 地址。此时将打开公共 IP 及其设置的面板
-2.	单击“配置”
-3.	提供 DNS 标签。此标签将成为可从任意位置访问的公共 DNS 标签，例如 contosofs.westus.cloudapp.azure.com。可以在外部 DNS 中添加用于联合身份验证服务的条目（例如 fs.contoso.com），该条目将解析为外部负载平衡器的 DNS 标签 (contosofs.westus.cloudapp.azure.com)。
+在“负载平衡器”面板中单击新建的负载平衡器条目，以显示配置面板。遵循以下步骤来配置公共 IP 的 DNS 标签：  
+1.	单击该公共 IP 地址。此时将打开公共 IP 及其设置的面板  
+2.	单击“配置”  
+3.	提供 DNS 标签。此标签将成为可从任意位置访问的公共 DNS 标签，例如 contosofs.westus.chinacloudapi.azure.com。可以在外部 DNS 中添加用于联合身份验证服务的条目（例如 fs.contoso.com），该条目将解析为外部负载平衡器的 DNS 标签 (contosofs.westus.chinacloudapi.azure.com)。  
 
 ![配置面向 Internet 的负载平衡器](./media/active-directory-aadconnect-azure-adfs/elbdeployment3.png)
 
@@ -297,15 +297,19 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 
 ###10\.测试 AD FS 登录
 
-测试 AD FS 的最简单方法是使用 IdpInitiatedSignon.aspx 页。若要执行此操作，必须在 AD FS 属性中启用 IdpInitiatedSignOn。请遵循以下步骤来验证你的 AD FS 设置
-1.	使用 PowerShell 在 AD FS 服务器上运行以下 cmdlet，以将它设置为启用。
-	Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
-2.	从任一外部计算机访问 https://adfs.thecloudadvocate.com/adfs/ls/IdpInitiatedSignon.aspx
-3.	你应会看到如下所示的 AD FS 页：
+测试 AD FS 的最简单方法是使用 IdpInitiatedSignon.aspx 页。若要执行此操作，必须在 AD FS 属性中启用 IdpInitiatedSignOn。请遵循以下步骤来验证你的 AD FS 设置  
+
+1.	使用 PowerShell 在 AD FS 服务器上运行以下 cmdlet，以将它设置为启用。  
+
+		Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
+
+2.	从任一外部计算机访问 https://adfs.thecloudadvocate.com/adfs/ls/IdpInitiatedSignon.aspx  
+
+3.	你应会看到如下所示的 AD FS 页：  
 
 ![测试登录页](./media/active-directory-aadconnect-azure-adfs/test1.png)
 
-成功登录后，该页将提供如下所示的成功消息：
+成功登录后，该页将提供如下所示的成功消息：  
 
 ![测试成功](./media/active-directory-aadconnect-azure-adfs/test2.png)
 

@@ -144,7 +144,7 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
  		     - 服务器管理器中的“所有服务器”选项卡：右键单击 WAP 服务器并选择“以下列身份进行管理...”，然后输入 WAP 计算机的本地（非域）凭据
  		     - 若要验证远程 PSH 连接，请在服务器管理器的“所有服务器”选项卡中：右键单击 WAP 服务器，然后选择“Windows PowerShell”。此时应会打开远程 PSH 会话，以确保可以建立远程 PowerShell 会话。
 
-## <a name="ssl-certificate-requirements"></a> ### SSL 证书要求
+## <a name="ssl-certificate-requirements"></a> SSL 证书要求
 
 **重要说明：**强烈建议在你的 AD FS 场的所有节点中以及所有 Web 应用程序代理服务器中使用相同的 SSL 证书。
 

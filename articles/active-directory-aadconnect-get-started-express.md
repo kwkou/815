@@ -35,7 +35,7 @@
 ![连接到 AD DS](./media/active-directory-aadconnect-get-started-express/connectad.png)
 7. 只有在未完成[必备组件](/documentation/articles/active-directory-aadconnect-prerequisites)中的[验证域](/documentation/articles/active-directory-add-domain/)时，才会显示[“Azure AD 登录配置”](/documentation/articles/active-directory-aadconnect-user-signin#azure-ad-sign-in-configuration)页面。
 ![未验证的域](./media/active-directory-aadconnect-get-started-express/unverifieddomain.png)  
-如果你看到此页，请查看标记为“未添加”和“未验证”的每个域。确保使用的域都已在 Azure AD 中验证。验证域后，请单击“刷新”符号。有关详细信息，请参阅[添加和验证域](active-directory-add-domain.md)
+如果你看到此页，请查看标记为“未添加”和“未验证”的每个域。确保使用的域都已在 Azure AD 中验证。验证域后，请单击“刷新”符号。有关详细信息，请参阅[添加和验证域](/documentation/articles/active-directory-add-domain/)
 8. 在“已准备好配置”屏幕上，单击“安装”。
 	- 在“已准备好配置”页上，可以取消选中“配置完成后立即开始同步过程”复选框。如果想要进行其他配置（例如[筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)），应取消选中此复选框。如果取消选择此选项，向导将配置同步，但会保持禁用计划程序。在[重新运行安装向导](/documentation/articles/active-directory-aadconnectsync-installation-wizard/)以手动启用计划程序之前，计划程序不会运行。
 	- 如果本地 Active Directory 中有 Exchange，也可以选择启用 [**Exchange 混合部署**](https://technet.microsoft.com/library/jj200581.aspx)。如果你打算同时在云中和本地设置 Exchange 邮箱，请启用此选项。

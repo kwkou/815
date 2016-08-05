@@ -46,10 +46,10 @@ DirSync 的早期版本支持该云。从 Azure AD Connect 的 1.1.180 版本起
 
 Azure AD Connect 不能自动检测到你的 Azure AD 目录位于政府版的云中。当你安装 Azure AD Connect 时，需要改为执行以下操作。
 
-1. 开始 Azure AD Connect 安装。
-2. 当你看到第一页后，这时应该接受 EULA，请不要继续，而是让安装向导运行。
-3. 启动 regedit 并将注册表项 `HKLM\SOFTWARE\Microsoft\Azure AD Connect\AzureInstance` 更改为值 `2`。
-4. 返回 Azure AD Connect 安装向导，接受 EULA，然后继续。在安装期间，请确保使用“自定义配置”安装路径（而不是快速安装）。然后，像往常一样继续安装。
+1. 开始 Azure AD Connect 安装。  
+2. 当你看到第一页后，这时应该接受 EULA，请不要继续，而是让安装向导运行。  
+3. 启动 regedit 并将注册表项 `HKLM\SOFTWARE\Microsoft\Azure AD Connect\AzureInstance` 更改为值 `2`。  
+4. 返回 Azure AD Connect 安装向导，接受 EULA，然后继续。在安装期间，请确保使用“自定义配置”安装路径（而不是快速安装）。然后，像往常一样继续安装。  
 
 Microsoft Azure 政府版云中当前不存在的功能：
 

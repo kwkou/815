@@ -197,7 +197,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 		}.
 
 
-`id_token` 参数包含以下声明类型。有关 JSON Web 令牌的详细信息，请参阅 [JWT IETF 草案规范](http://go.microsoft.com/fwlink/?LinkId=392344)。有关令牌类型和声明的详细信息，请阅读 [Supported Token and Claim Types（支持的令牌和声明类型）](active-directory-token-and-claims.md)
+`id_token` 参数包含以下声明类型。有关 JSON Web 令牌的详细信息，请参阅 [JWT IETF 草案规范](http://go.microsoft.com/fwlink/?LinkId=392344)。有关令牌类型和声明的详细信息，请阅读 [Supported Token and Claim Types（支持的令牌和声明类型）](/documentation/articles/active-directory-token-and-claims/)
 
 | 声明类型 | 说明 |
 |------------|-------------|
