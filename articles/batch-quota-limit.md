@@ -23,26 +23,38 @@
 >[AZURE.NOTE] 配额是一种信用限制，不附带容量保证。如果你有大规模的容量需求，请联系 Azure 支持。
 
 ## 订阅配额
-资源|默认限制|最大限制
+**资源**|**默认限制**|**最大限制**
 ---|---|---
-每个区域每个订阅的 Batch 帐户数|1|50
+每个区域每个订阅的 Batch 帐户数 | 1 | 50
 
 ## Batch 帐户配额
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
 ## 其他限制
-资源|最大限制
+**资源**|**最大限制**
 ---|---
-每个计算节点的任务数 | 4 x 节点核心数
-每个 Batch 帐户的应用程序数 | 20
+每个计算节点的[并发任务](/documentation/articles/batch-parallel-node-tasks)数 | 4 x 节点核心数
+每个 Batch 帐户的[应用程序](/documentation/articles/batch-application-packages)数 | 20
 每个应用程序的应用程序包数 | 40
 应用程序包大小（每个） | 约 195 GB<sup>1</sup>
 
 <sup>1</sup> 最大的块 Blob 大小的 Azure 存储空间限制
 
-## <a name="increase-a-quota"></a>增加配额
+## 查看 Batch 配额
 
-在 Azure 门户中使用以下步骤请求增加配额（也可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中请求增加）。
+可在 [Azure 门户][portal]中查看 Batch 帐户配额。
+
+1. 在门户中，单击“Batch 帐户”，然后单击你的 Batch 帐户的名称。
+
+2. 在帐户边栏选项卡中，单击“所有设置”>“属性”。
+
+	![Batch 帐户配额][account_quotas]
+
+3. “属性”边栏选项卡显示了当前应用于 Batch 帐户的配额。
+
+## 提高配额
+
+执行以下步骤，使用 [Azure 门户][portal]来请求提高配额。
 
 1. 在门户仪表板上选择“帮助 + 支持”磁贴，或单击门户右上角的问号 (**?**)。
 
@@ -80,6 +92,7 @@
 
 ## 相关主题
 
+* [创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)
 * [Azure Batch 功能概述](/documentation/articles/batch-api-basics/)
 
 * [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)

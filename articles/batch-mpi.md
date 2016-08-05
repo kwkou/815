@@ -184,7 +184,8 @@
 		    if (subtask.State == TaskState.Completed)
 		    {
 		        ComputeNode node =
-					await batchClient.PoolOperations.GetComputeNodeAsync(subtask.ComputeNodeInformation.PoolId,		                                                                 subtask.ComputeNodeInformation.ComputeNodeId);
+			await batchClient.PoolOperations.GetComputeNodeAsync(subtask.ComputeNodeInformation.PoolId,
+                                                                 subtask.ComputeNodeInformation.ComputeNodeId);
 		
 		        NodeFile stdOutFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardOutFileName);
 		        NodeFile stdErrFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardErrorFileName);
