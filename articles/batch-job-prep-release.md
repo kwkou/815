@@ -169,6 +169,5 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 [net_list_task_files]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.listnodefiles.aspx
 [net_list_tasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
 
-[1]: ./media/batch-job-prep-release/batchexplorer-01.png
-
+[1]: ./media/batch-job-prep-release/portal-jobprep-01.png
 <!---HONumber=Mooncake_0704_2016-->
