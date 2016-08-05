@@ -41,7 +41,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 ### DocumentDB 如何提供可预测的性能？
 请求单位 (RU) 是 DocumentDB 中吞吐量的衡量单位。1 个 RU 相当于读取 1KB 文档的吞吐量。在 DocumentDB 中进行的每个操作（包括读、写、SQL 查询和执行存储过程）都将具有一个确定的请求单位值，该值基于完成该操作所需的吞吐量。你无需考虑 CPU、IO 和内存，以及它们会怎样影响你的应用程序吞吐量，而是从单个请求单位度量值的角度进行考虑。
 
-每个 DocumentDB 集合都可以保留以每秒 RU 表示的预配吞吐量。对于任何规模的应用程序，你都可以将单个请求设为基准以测量其 RU 值，并预配集合以处理所有请求的请求单位总和。你也可以随着应用程序的发展需求，相应增加或减少集合的吞吐量。如需请求单位的详细信息以及帮助确定你的集合需求，请阅读[管理性能和容量](documentdb-manage.md)并尝试使用[吞吐量计算器](https://www.documentdb.com/capacityplanner)。
+每个 DocumentDB 集合都可以保留以每秒 RU 表示的预配吞吐量。对于任何规模的应用程序，你都可以将单个请求设为基准以测量其 RU 值，并预配集合以处理所有请求的请求单位总和。你也可以随着应用程序的发展需求，相应增加或减少集合的吞吐量。如需请求单位的详细信息以及帮助确定你的集合需求，请阅读[管理性能和容量](/documentation/articles/documentdb-manage/)并尝试使用[吞吐量计算器](https://www.documentdb.com/capacityplanner)。
 
 ### DocumentDB 是否符合 HIPAA 标准？
 是，DocumentDB 符合 HIPAA 标准。HIPAA 针对可识别个人身份的健康信息的使用、泄露与保护制定了要求。有关详细信息，请参阅 [Microsoft 信任中心](https://www.microsoft.com/zh-cn/TrustCenter/Compliance/HIPAA)。
@@ -56,7 +56,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 请参考 [DocumentDB 定价详细信息](/pricing/details/documentdb/)页面了解详细信息。DocumentDB 使用量费用取决于正在使用的集合数目、集合的在线小时数，以及每个集合的已使用存储和已预配吞吐量。
 
 ### 有免费的帐户吗？
-如果你不熟悉 Azure，可以注册 [Azure 试用帐户](/pricing/free-trial/)，这样可以得到 30 天试用期和 200 美元的 Azure 信用额度，让你试用所有 Azure 服务。
+如果你不熟悉 Azure，可以注册 [Azure 试用帐户](/pricing/1rmb-trial-full/?form-type=identityauth)，这样可以得到 30 天试用期和 200 美元的 Azure 信用额度，让你试用所有 Azure 服务。
 
 ### 如何获取 DocumentDB 的其他帮助？
 如果你需要任何帮助，请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)或 [Azure DocumentDB MSDN 开发人员论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB)联系我们，或者安排[与 DocumentDB 工程团队进行 1 对 1 交谈](http://www.askdocdb.com/)。

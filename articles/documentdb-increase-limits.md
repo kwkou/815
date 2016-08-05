@@ -57,6 +57,6 @@
 
 
 ##<a name="NextSteps"></a>后续步骤
-- 若要了解有关 DocumentDB 的详细信息，请单击[此处](http://azure.com/docdb)。
+- 若要了解有关 DocumentDB 的详细信息，请单击[此处](/services/documentdb/)。
 
 <!---HONumber=Mooncake_0725_2016-->
