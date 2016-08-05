@@ -26,14 +26,14 @@ Service Fabric 群集资源管理器可用于报告动态负载、对群集中�
 
 ClusterManifest.xml：
 
-``` xml
+
         <Section Name="PlacementAndLoadBalancing">
             <Parameter Name="PLBRefreshGap" Value="0.1" />
             <Parameter Name="MinPlacementInterval" Value="1.0" />
             <Parameter Name="MinConstraintCheckInterval" Value="1.0" />
             <Parameter Name="MinLoadBalancingInterval" Value="5.0" />
         </Section>
-```
+
 
 今天我们一次只依序执行其中一项操作。例如，我们已响应任何请求，已在继续平衡群集之前创建新副本。如你所见，我们可以根据指定的默认时间间隔扫描并检查我们需要非常频繁执行的任何操作，这意味着我们在轮次末尾所做的更改集通常比较小：我们不是扫描群集中数小时的更改并尝试一次更正全部，并尝试在事情发生时进行处理，而是在同时有许多事情发生时进行某种批处理。这使得 Service Fabric 资源管理器对于群集中发生的事情保持极高的响应度。
 
@@ -44,12 +44,12 @@ ClusterManifest.xml：
 
 ClusterManifest.xml
 
-``` xml
+
     <Section Name="MetricBalancingThresholds">
       <Parameter Name="MetricName1" Value="2"/>
       <Parameter Name="MetricName2" Value="3.5"/>
     </Section>
-```
+
 
 指标的平衡阈值是一个比率。如果负载最重的节点的负载量除以负载最轻的节点的负载量超过此比率，此群集将被视为不平衡，并在下一次运行资源管理器的状态节点期间触发平衡。
 
@@ -72,11 +72,11 @@ ClusterManifest.xml
 
 ClusterManifest.xml
 
-``` xml
+
     <Section Name="MetricActivityThresholds">
       <Parameter Name="Memory" Value="1536"/>
     </Section>
-```
+
 
 ## 一起平衡服务
 值得一提的是，群集是否不平衡是群集范围的决策，但解决这种情况的方法是移动单个服务副本和实例。这种说法很合理，是吗？ 如果内存堆积在某一个节点上，则可能是由多个副本或实例造成的，因此需要移动所有使用受影响、不平衡指标的副本或实例。

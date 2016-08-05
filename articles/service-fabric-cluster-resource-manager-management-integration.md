@@ -95,7 +95,7 @@ Service Fabric 群集资源管理器不是负责处理管理操作（如应用�
 
 ClusterManifest.xml
 
-```xml
+
         <Section Name="PlacementAndLoadBalancing">
             <Parameter Name="PlacementConstraintPriority" Value="0" />
             <Parameter Name="CapacityConstraintPriority" Value="0" />
@@ -104,7 +104,7 @@ ClusterManifest.xml
             <Parameter Name="UpgradeDomainConstraintPriority" Value="1" />
             <Parameter Name="PreferredLocationConstraintPriority" Value="2" />
         </Section>
-```
+
 
 在此处你会发现，有针对升级域和容错域定义的约束，容错域约束为“硬”约束，而升级域约束为“软”约束。此外，还有一个奇怪的具有优先级的“PreferredLocation”约束。这是什么？
 

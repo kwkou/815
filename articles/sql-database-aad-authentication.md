@@ -165,34 +165,34 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 以下脚本为一个名为 **Group-23** 的资源组中的 **demo\_server** 服务器预配一个 Azure AD 管理员组，其名为 **DBA\_Group**（对象 ID `40b79501-b343-44ed-9ce7-da4c8cc7353f`）：
 
-```
-Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
-–ServerName "demo_server" -DisplayName "DBA_Group"
-```
+
+	Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
+	–ServerName "demo_server" -DisplayName "DBA_Group"
+
 
 **DisplayName** 输入参数接受 Azure AD 显示名称或用户主体名称。例如，``DisplayName="John Smith"`` 和 ``DisplayName="johns@contoso.com"``。对于 Azure AD 组，只支持 Azure AD 显示名称。
 
-> [AZURE.NOTE] Azure PowerShell 命令 ```Set-AzureRmSqlServerActiveDirectoryAdministrator``` 不会阻止你为不受支持的用户预配 Azure AD 管理员。可以设置不受支持的用户，但其无法连接到数据库。（请参阅上述 **Azure AD 功能和限制**中受支持的管理员列表。）
+> [AZURE.NOTE] Azure PowerShell 命令 `Set-AzureRmSqlServerActiveDirectoryAdministrator` 不会阻止你为不受支持的用户预配 Azure AD 管理员。可以设置不受支持的用户，但其无法连接到数据库。（请参阅上述 **Azure AD 功能和限制**中受支持的管理员列表。）
 
 以下示例使用可选的 **ObjectID**：
 
-```
-Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
-–ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
-```
+
+	Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
+	–ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
+
 
 > [AZURE.NOTE] 在 **DisplayName** 不唯一时，需要使用 Azure AD **ObjectID**。若要检索 **ObjectID** 和 **DisplayName** 值，请使用 Azure 经典管理门户的 Active Directory 部分，并查看用户或组的属性。
 
 下面的示例针对 Azure SQL Server 的当前 Azure AD 管理员返回相关信息：
 
-```
-Get-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
-```
+
+	Get-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
+
 
 下面的示例删除一个 Azure AD 管理员：
-```
-Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
-```
+
+	Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
+
 
 也可以使用 REST API 来预配 Azure Active Directory 管理员。有关详细信息，请参阅 [Azure SQL 数据库的 Service Management REST API 参考和操作](https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx)。
 

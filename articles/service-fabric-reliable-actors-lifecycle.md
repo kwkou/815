@@ -51,24 +51,24 @@
 
 通常不需要更改这些默认值。但是，如果有必要，可在注册[执行组件服务](/documentation/articles/service-fabric-reliable-actors-platform/)时通过 `ActorServiceSettings` 更改这些时间间隔。
 
-```csharp
-public class Program
-{
-    public static void Main(string[] args)
-    {
-        ActorRuntime.RegisterActorAsync<MyActor>((context, actorType) =>
-                new ActorService(context, actorType,
-                    settings:
-                        new ActorServiceSettings()
-                        {
-                            ActorGarbageCollectionSettings =
-                                new ActorGarbageCollectionSettings(10, 2)
-                        }))
-            .GetAwaiter()
-            .GetResult();
-    }
-}
-```
+
+	public class Program
+	{
+	    public static void Main(string[] args)
+	    {
+	        ActorRuntime.RegisterActorAsync<MyActor>((context, actorType) =>
+	                new ActorService(context, actorType,
+	                    settings:
+	                        new ActorServiceSettings()
+	                        {
+	                            ActorGarbageCollectionSettings =
+	                                new ActorGarbageCollectionSettings(10, 2)
+	                        }))
+	            .GetAwaiter()
+	            .GetResult();
+	    }
+	}
+
 
 对于每个活动的执行组件，执行组件运行时将持续跟踪其处于空闲状态（即未使用）的时间。执行组件运行时每 `ScanIntervalInSeconds` 检查每个执行组件，以查看是否可以对它执行垃圾回收，并且如果它已空闲 `IdleTimeoutInSeconds`，则对其予以回收。
 
@@ -95,14 +95,14 @@ public class Program
 
 [执行组件服务](/documentation/articles/service-fabric-reliable-actors-platform/)提供了一个函数，用于从远程调用方删除执行组件：
 
-```csharp
-ActorId actorToDelete = new ActorId(id);
 
-IActorService myActorServiceProxy = ActorServiceProxy.Create(
-    new Uri("fabric:/MyApp/MyService"), actorToDelete);
-            
-await myActorServiceProxy.DeleteActorAsync(actorToDelete, cancellationToken)
-```
+	ActorId actorToDelete = new ActorId(id);
+	
+	IActorService myActorServiceProxy = ActorServiceProxy.Create(
+	    new Uri("fabric:/MyApp/MyService"), actorToDelete);
+	            
+	await myActorServiceProxy.DeleteActorAsync(actorToDelete, cancellationToken)
+
 
 删除一个执行组件将出现以下结果，具体取决于当前执行组件是否处于活动状态：
 

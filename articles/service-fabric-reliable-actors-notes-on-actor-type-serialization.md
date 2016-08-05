@@ -21,26 +21,26 @@
 
 在此示例中，以下执行组件接口定义了一个返回自定义数据类型（名为 `VoicemailBox`）的方法。
 
-```csharp
-public interface IVoiceMailBoxActor : IActor
-{
-    Task<VoicemailBox> GetMailBoxAsync();
-}
-```
+
+	public interface IVoiceMailBoxActor : IActor
+	{
+	    Task<VoicemailBox> GetMailBoxAsync();
+	}
+
 
 此接口由使用状态管理器来存储 `VoicemailBox` 对象的执行组件实现：
 
-```csharp
-[StatePersistence(StatePersistence.Persisted)]
-public class VoiceMailBoxActor : Actor, IVoicemailBoxActor
-{
-    public Task<VoicemailBox> GetMailboxAsync()
-    {
-        return this.StateManager.GetStateAsync<VoicemailBox>("Mailbox");
-    }
-}
 
-```
+	[StatePersistence(StatePersistence.Persisted)]
+	public class VoiceMailBoxActor : Actor, IVoicemailBoxActor
+	{
+	    public Task<VoicemailBox> GetMailboxAsync()
+	    {
+	        return this.StateManager.GetStateAsync<VoicemailBox>("Mailbox");
+	    }
+	}
+
+
 
 在此示例中，如果 `VoicemailBox` 对象出现以下情况，将序列化该对象：
  - 在执行组件实例和调用方之间传输该对象。
@@ -48,37 +48,37 @@ public class VoiceMailBoxActor : Actor, IVoicemailBoxActor
  
 Reliable Actor 框架使用 DataContract 序列化。因此，自定义数据对象及其成员必须分别使用 **DataContract** 和 **DataMember** 属性进行批注
 
-```csharp
-[DataContract]
-public class Voicemail
-{
-    [DataMember]
-    public Guid Id { get; set; }
 
-    [DataMember]
-    public string Message { get; set; }
+	[DataContract]
+	public class Voicemail
+	{
+	    [DataMember]
+	    public Guid Id { get; set; }
+	
+	    [DataMember]
+	    public string Message { get; set; }
+	
+	    [DataMember]
+	    public DateTime ReceivedAt { get; set; }
+	}
 
-    [DataMember]
-    public DateTime ReceivedAt { get; set; }
-}
-```
 
-```csharp
-[DataContract]
-public class VoicemailBox
-{
-    public VoicemailBox()
-    {
-        this.MessageList = new List<Voicemail>();
-    }
 
-    [DataMember]
-    public List<Voicemail> MessageList { get; set; }
+	[DataContract]
+	public class VoicemailBox
+	{
+	    public VoicemailBox()
+	    {
+	        this.MessageList = new List<Voicemail>();
+	    }
+	
+	    [DataMember]
+	    public List<Voicemail> MessageList { get; set; }
+	
+	    [DataMember]
+	    public string Greeting { get; set; }
+	}
 
-    [DataMember]
-    public string Greeting { get; set; }
-}
-```
 
 ## 后续步骤
  - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)

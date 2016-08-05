@@ -100,29 +100,29 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 1. 使用 [Add-AzureAccount](http://msdn.microsoft.com/zh-cn/library/azure/dn722528.aspx) cmdlet 将 Azure 用户帐户添加到 PowerShell 窗口中：
 
-	```
-	Add-AzureAccount -Environment AzureChinaCloud
-	```
+	
+		Add-AzureAccount -Environment AzureChinaCloud
+	
 
 2. 在"登录 Azure"窗口中，键入与你的帐户关联的电子邮件地址和密码。Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 3. 通过在 PowerShell 窗口中执行以下命令，将默认存储帐户设置为用于本教程的存储帐户：
 
-	```
-	$SubscriptionName = 'Your subscription name'
-	$StorageAccountName = 'yourstorageaccount' 
-	Set-AzureSubscription -Environment AzureChinaCloud -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName 
-	```
+	
+		$SubscriptionName = 'Your subscription name'
+		$StorageAccountName = 'yourstorageaccount' 
+		Set-AzureSubscription -Environment AzureChinaCloud -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName 
+		
 
 4. 为 Blob 服务启用存储日志记录：
  
-	```
-	Set-AzureStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations Read,Write,Delete -PassThru -RetentionDays 7 -Version 1.0 
-	```
+
+		Set-AzureStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations Read,Write,Delete -PassThru -RetentionDays 7 -Version 1.0 
+
 5. 为 Blob 服务启用存储度量值，确保将 **-MetricsType** 设置为 `Minute`：
 
-	```
-	Set-AzureStorageServiceMetricsProperty -ServiceType Blob -MetricsType Minute -MetricsLevel ServiceAndApi -PassThru -RetentionDays 7 -Version 1.0 
-	```
+
+		Set-AzureStorageServiceMetricsProperty -ServiceType Blob -MetricsType Minute -MetricsLevel ServiceAndApi -PassThru -RetentionDays 7 -Version 1.0 
+
 
 ### 配置 .NET 客户端日志记录
 
@@ -152,9 +152,9 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 5. 在“高级设置”对话框中，单击“提供程序”选项卡。
 6. 在“主机名筛选器”字段中，指定存储终结点，以空格分隔。例如，可按如下所示指定终结点；将 `storagesample` 更改为你的存储帐户名称：
 	
-	```	
-	storagesample.blob.core.chinacloudapi.cn storagesample.queue.core.chinacloudapi.cn storagesample.table.core.chinacloudapi.cn 
-	```
+
+		storagesample.blob.core.chinacloudapi.cn storagesample.queue.core.chinacloudapi.cn storagesample.table.core.chinacloudapi.cn 
+
 
 7. 退出对话框，然后单击“重新启动”，在启用主机名筛选器的情况下开始收集跟踪，以便仅在跟踪中包含 Azure 存储网络通信。
 

@@ -20,14 +20,14 @@ Reliable services 框架使服务创作者能够选择他们要用于其服务�
 
 假设我们有 `ICalculator` 类型的服务协定
 
-```csharp
-[ServiceContract]
-public interface ICalculator
-{
-    [OperationContract]
-    Task<int> Add(int value1, int value2);
-}
-```
+
+	[ServiceContract]
+	public interface ICalculator
+	{
+	    [OperationContract]
+	    Task<int> Add(int value1, int value2);
+	}
+
 
 我们可以通过下列方式在服务中创建 WCF 通信侦听器。
 
@@ -83,31 +83,31 @@ public interface ICalculator
 
 客户端代码可以使用 **WcfCommunicationClientFactory** 以及用于实现 **ServicePartitionClient** 的 **WcfCommunicationClient** 来确定服务终结点，并与服务通信。
 
-```csharp
-// Create binding
-Binding binding = WcfUtility.CreateTcpClientBinding();
-// Create a partition resolver
-IServicePartitionResolver partitionResolver = ServicePartitionResolver.GetDefault();
-// create a  WcfCommunicationClientFactory object.
-var wcfClientFactory = new WcfCommunicationClientFactory<ICalculator>
-    (clientBinding: binding, servicePartitionResolver: partitionResolver);
 
-//
-// Create a client for communicating with the ICalculator service that has been created with the
-// Singleton partition scheme.
-//
-var calculatorServiceCommunicationClient =  new WcfCommunicationClient(
-                wcfClientFactory,
-                ServiceUri,
-                ServicePartitionKey.Singleton);
+	// Create binding
+	Binding binding = WcfUtility.CreateTcpClientBinding();
+	// Create a partition resolver
+	IServicePartitionResolver partitionResolver = ServicePartitionResolver.GetDefault();
+	// create a  WcfCommunicationClientFactory object.
+	var wcfClientFactory = new WcfCommunicationClientFactory<ICalculator>
+	    (clientBinding: binding, servicePartitionResolver: partitionResolver);
+	
+	//
+	// Create a client for communicating with the ICalculator service that has been created with the
+	// Singleton partition scheme.
+	//
+	var calculatorServiceCommunicationClient =  new WcfCommunicationClient(
+	                wcfClientFactory,
+	                ServiceUri,
+	                ServicePartitionKey.Singleton);
+	
+	//
+	// Call the service to perform the operation.
+	//
+	var result = calculatorServiceCommunicationClient.InvokeWithRetryAsync(
+	                client => client.Channel.Add(2, 3)).Result;
+	
 
-//
-// Call the service to perform the operation.
-//
-var result = calculatorServiceCommunicationClient.InvokeWithRetryAsync(
-                client => client.Channel.Add(2, 3)).Result;
-
-```
 >[AZURE.NOTE] 默认 ServicePartitionResolver 假设客户端正在与服务相同的群集中运行。如果不是这样，请创建 ServicePartitionResolver 对象，并传入群集连接终结点。
 
 ## 后续步骤

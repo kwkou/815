@@ -51,47 +51,47 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 
 1. 一个模板变量，用于定义端口的 TCP 端口值：
 
-	```json
-	"loadBalancedAppPort1": "80"
-	```
+	
+		"loadBalancedAppPort1": "80"
+	
 
 2. 一个探测，用于定义 Azure 负载平衡器在故障转移到另一个节点之前，尝试使用特定 Service Fabric 节点的频率和时间长短。探测是负载平衡器资源的一部分。下面是第一个默认应用程序端口的探测定义：
 
-	```json
-	{
-        "name": "AppPortProbe1",
-        "properties": {
-            "intervalInSeconds": 5,
-            "numberOfProbes": 2,
-            "port": "[variables('loadBalancedAppPort1')]",
-            "protocol": "Tcp"
-        }
-    }
-	```
+	
+		{
+	        "name": "AppPortProbe1",
+	        "properties": {
+	            "intervalInSeconds": 5,
+	            "numberOfProbes": 2,
+	            "port": "[variables('loadBalancedAppPort1')]",
+	            "protocol": "Tcp"
+	        }
+	    }
+	
 
 3. 一个负载平衡规则，用于将端口和探测绑定在一起，并在一组 Service Fabric 群集节点之间实现负载平衡：
 
-    ```json
-	{
-	    "name": "AppPortLBRule1",
-	    "properties": {
-	        "backendAddressPool": {
-	            "id": "[variables('lbPoolID0')]"
-	        },
-	        "backendPort": "[variables('loadBalancedAppPort1')]",
-	        "enableFloatingIP": false,
-	        "frontendIPConfiguration": {
-	            "id": "[variables('lbIPConfig0')]"
-	        },
-	        "frontendPort": "[variables('loadBalancedAppPort1')]",
-	        "idleTimeoutInMinutes": 5,
-	        "probe": {
-	            "id": "[concat(variables('lbID0'),'/probes/AppPortProbe1')]"
-	        },
-	        "protocol": "Tcp"
-	    }
-	}
-    ```
+    
+		{
+		    "name": "AppPortLBRule1",
+		    "properties": {
+		        "backendAddressPool": {
+		            "id": "[variables('lbPoolID0')]"
+		        },
+		        "backendPort": "[variables('loadBalancedAppPort1')]",
+		        "enableFloatingIP": false,
+		        "frontendIPConfiguration": {
+		            "id": "[variables('lbIPConfig0')]"
+		        },
+		        "frontendPort": "[variables('loadBalancedAppPort1')]",
+		        "idleTimeoutInMinutes": 5,
+		        "probe": {
+		            "id": "[concat(variables('lbID0'),'/probes/AppPortProbe1')]"
+		        },
+		        "protocol": "Tcp"
+		    }
+		}
+    
 如果你要部署到群集的应用程序需要更多端口，可以创建额外的探测和负载平衡规则定义来添加端口。有关如何通过 Resource Manager 模板使用 Azure 负载平衡器的详细信息。
 
 ## 使用 Visual Studio 部署模板

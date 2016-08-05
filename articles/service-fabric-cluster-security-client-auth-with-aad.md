@@ -35,9 +35,9 @@ Service Fabric 群集提供其管理功能的各种入口点（包括基于 Web 
 
 4. 运行 `SetupApplications.ps1` 并提供 TenantId、ClusterName 和 WebApplicationReplyUrl 作为参数。例如：
 
-    ```powershell
-    .\SetupApplications.ps1 -TenantId '690ec069-8200-4068-9d01-5aaf188e557a' -ClusterName 'mycluster' -WebApplicationReplyUrl 'https://mycluster.chinaeast.chinacloudapp.cn:19080/Explorer/index.html'
-    ```
+    
+    	.\SetupApplications.ps1 -TenantId '690ec069-8200-4068-9d01-5aaf188e557a' -ClusterName 'mycluster' -WebApplicationReplyUrl 'https://mycluster.chinaeast.chinacloudapp.cn:19080/Explorer/index.html'
+    
 
     可以通过在 Azure 经典管理门户中查看租户的 URL 来查找 **TenantId**。该 URL 中嵌入的 GUID 就是 TenantId。例如：
 
@@ -66,13 +66,13 @@ Service Fabric 群集提供其管理功能的各种入口点（包括基于 Web 
 
 将 `SetupApplication` 脚本的 ARM 模板代码段输出作为对方项添加到 fabricSettings、managementEndpoint 等。如果你关闭了窗口，也会显示如下代码：
 
-```json
-  "azureActiveDirectory": {
-    "tenantId": "<your_tenant_id>",
-    "clusterApplication": "<your_cluster_application_client_id>",
-    "clientApplication": "<your_native_application_client_id>"
-  }
-```
+
+	  "azureActiveDirectory": {
+	    "tenantId": "<your_tenant_id>",
+	    "clusterApplication": "<your_cluster_application_client_id>",
+	    "clientApplication": "<your_native_application_client_id>"
+	  }
+
 
 clusterApplication 表示在上一部分创建的 Web 应用程序。你可以在 SetupApplication 脚本输出中找到其ID（称为 `WebAppId`）。clientApplication 表示本机应用程序，在 SetupApplication 输出中，其客户端 ID 以 NativeClientAppId 的形式提供。
 
@@ -103,13 +103,13 @@ clusterApplication 表示在上一部分创建的 Web 应用程序。你可以�
 
 在 Visual Studio 中，你可以修改发布配置文件以添加所需的属性，如下所示：
 
-```xml
-<ClusterConnectionParameters     
-    ConnectionEndpoint="<your_cluster_endpoint>:19000"  
-    AzureActiveDirectory="true"
-    ServerCertThumbprint="<your_cert_thumbprint>"
-    />
-```
+
+	<ClusterConnectionParameters     
+	    ConnectionEndpoint="<your_cluster_endpoint>:19000"  
+	    AzureActiveDirectory="true"
+	    ServerCertThumbprint="<your_cert_thumbprint>"
+	    />
+
 
 当你发布到群集时，Visual Studio 将弹出一个可在其中向群集进行身份验证的登录窗口。
 
@@ -119,9 +119,9 @@ clusterApplication 表示在上一部分创建的 Web 应用程序。你可以�
 
 在 PowerShell 中，你可以提供 Connect-ServiceFabricCluster cmdlet 的所需参数，如下所示：
 
-```PowerShell
-Connect-ServiceFabricCluster -AzureActiveDirectory -ConnectionEndpoint <cluster_endpoint>:19000 -ServerCertThumbprint <server_cert_thumbprint>
-```
+
+	Connect-ServiceFabricCluster -AzureActiveDirectory -ConnectionEndpoint <cluster_endpoint>:19000 -ServerCertThumbprint <server_cert_thumbprint>
+
 
 与在 Visual Studio 中一样，PowerShell 将显示用于身份验证的安全登录窗口。
 

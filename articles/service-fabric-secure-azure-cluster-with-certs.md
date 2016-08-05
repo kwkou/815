@@ -135,18 +135,18 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 - **群集保护级别**：请参阅此[保护级别文档](https://msdn.microsoft.com/zh-cn/library/aa347692.aspx)，了解每个值的含义。尽管我们允许在此处使用三个值（EncryptAndSign、Sign 和 None），但除非你知道的意图，否则最好保留默认值 EncryptAndSign。
 - **源保管库**：这是密钥保管库的资源 ID。其格式应该是：
 
-    ```
-    /subscriptions/<Sub ID>/resourceGroups/<Resource group name>/providers/Microsoft.KeyVault/vaults/<vault name>
-    ```
+    
+    	/subscriptions/<Sub ID>/resourceGroups/<Resource group name>/providers/Microsoft.KeyVault/vaults/<vault name>
+    
 
 - **证书 URL**：这是密钥保管库中证书所上载到的位置 URL。其格式应该是：
 
-	```
-    https://<name of the vault>.vault.chinacloudapi.cn:443/secrets/<exact location>
-	```
-	```
-    https://chackdan-kmstest-eastus.vault.chinacloudapi.cn:443/secrets/MyCert/6b5cc15a753644e6835cb3g3486b3812
-	```
+	
+    	https://<name of the vault>.vault.chinacloudapi.cn:443/secrets/<exact location>
+	
+	
+    	https://chackdan-kmstest-eastus.vault.chinacloudapi.cn:443/secrets/MyCert/6b5cc15a753644e6835cb3g3486b3812
+	
 
 - **证书指纹**：这是证书的指纹，可以在前面指定的 URL 中找到。
 

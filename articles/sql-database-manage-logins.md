@@ -58,26 +58,26 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
 1.	使用管理员帐户连接到虚拟 master 数据库。
 2.	可选步骤：使用 [CREATE LOGIN](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx) 语句创建 SQL Server 身份验证登录名。示例语句：
 
-     ```
-     CREATE LOGIN Mary WITH PASSWORD = '<strong_password>';
-     ```
+     
+     	CREATE LOGIN Mary WITH PASSWORD = '<strong_password>';
+     
 
      > [AZURE.NOTE] 创建登录名或包含数据库用户时必须使用强密码。有关详细信息，请参阅[强密码](https://msdn.microsoft.com/zh-cn/library/ms161962.aspx)。
 
 3.	在虚拟 master 数据库中，使用 [CREATE USER](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx) 语句创建一个用户。该用户可以是 Azure Active Directory 身份验证包含数据库用户（如果你已针对 Azure AD 身份验证配置了环境），可以是 SQL Server 身份验证包含数据库用户，也可以是基于 SQL Server 身份验证登录名（在前一步骤中创建）的 SQL Server 身份验证用户。 示例语句：
 
-     ```
-     CREATE USER [mike@contoso.com] FROM EXTERNAL PROVIDER;
-     CREATE USER Tran WITH PASSWORD = '<strong_password>';
-     CREATE USER Mary FROM LOGIN Mary; 
-     ```
+     
+	     CREATE USER [mike@contoso.com] FROM EXTERNAL PROVIDER;
+	     CREATE USER Tran WITH PASSWORD = '<strong_password>';
+	     CREATE USER Mary FROM LOGIN Mary; 
+     
 
 4.	使用 [ALTER ROLE](https://msdn.microsoft.com/zh-cn/library/ms189775.aspx) 语句将新用户添加到 **dbmanager** 数据库角色。示例语句：
 
-     ```
-     ALTER ROLE dbmanager ADD MEMBER Mary; 
-     ALTER ROLE dbmanager ADD MEMBER [mike@contoso.com];
-     ```
+
+	     ALTER ROLE dbmanager ADD MEMBER Mary; 
+	     ALTER ROLE dbmanager ADD MEMBER [mike@contoso.com];
+
 
      > [AZURE.NOTE] dbmanager 是虚拟 master 数据库中的数据库角色，因此只能向该 dbmanager 角色添加用户。不能向数据库级角色添加服务器级登录名。
 
@@ -95,16 +95,16 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
 
 若要创建用户，请先连接到数据库，然后执行如下所示的语句：
 
-```
-CREATE USER Mary FROM LOGIN Mary; 
-CREATE USER [mike@contoso.com] FROM EXTERNAL PROVIDER;
-```
+
+	CREATE USER Mary FROM LOGIN Mary; 
+	CREATE USER [mike@contoso.com] FROM EXTERNAL PROVIDER;
+
 
 开始时，仅其中一个管理员或数据库所有者可以创建用户。若要授权其他用户来创建新用户，可通过如下所示语句向该选定用户授予 `ALTER ANY USER` 权限：
 
-```
-GRANT ALTER ANY USER TO Mary;
-```
+
+	GRANT ALTER ANY USER TO Mary;
+
 
 若要向其他用户授予对数据库的完全控制权限，可通过 `ALTER ROLE` 语句让这些用户成为 **db\_owner** 固定数据库角色的成员。
 

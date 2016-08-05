@@ -70,13 +70,13 @@
 
 若要防范这种可能性，请务必定期[将状态备份到](/documentation/articles/service-fabric-reliable-services-backup-restore/)异地冗余存储，并确保已验证你能够还原备份。执行备份的频率取决于恢复点目标 (RPO)。即使你尚未完全实现备份和还原，但还是应该实现 `OnDataLoss` 事件的处理程序，以便在发生该事件时进行记录，如下所示：
 
-```c#
-protected virtual Task<bool> OnDataLoss(CancellationToken cancellationToken)
-{
-  ServiceEventSource.Current.ServiceMessage(this, "OnDataLoss event received.");
-  return Task.FromResult(true);
-}
-```
+
+	protected virtual Task<bool> OnDataLoss(CancellationToken cancellationToken)
+	{
+	  ServiceEventSource.Current.ServiceMessage(this, "OnDataLoss event received.");
+	  return Task.FromResult(true);
+	}
+
 
 
 ### 软件故障和其他数据丢失根源

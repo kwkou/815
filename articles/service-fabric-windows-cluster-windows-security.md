@@ -23,19 +23,19 @@
 ## 配置 Windows 安全性
 随 [Microsoft.Azure.ServiceFabric.WindowsServer.<version>.zip](http://go.microsoft.com/fwlink/?LinkId=730690) 独立群集包一起下载的示例 *ClusterConfig.Windows.JSON* 配置文件包含用于配置 Windows 安全性的模板。在 **Properties** 节中配置 Windows 安全性：
 
-```
-"security": {
-            "ClusterCredentialType": "Windows",
-            "ServerCredentialType": "Windows",
-            "WindowsIdentities": {
-		"ClusterIdentity" : "[domain\machinegroup]",
-                "ClientIdentities": [{
-                    "Identity": "[domain\username]",
-                    "IsAdmin": true
-                }]
-            }
-        }
-```
+
+	"security": {
+	            "ClusterCredentialType": "Windows",
+	            "ServerCredentialType": "Windows",
+	            "WindowsIdentities": {
+			"ClusterIdentity" : "[domain\machinegroup]",
+	                "ClientIdentities": [{
+	                    "Identity": "[domain\username]",
+	                    "IsAdmin": true
+	                }]
+	            }
+	        }
+
 
 |**配置设置**|**说明**|
 |-----------------------|--------------------------|
@@ -53,19 +53,19 @@
 
 以下示例 **security** 节将配置 Windows 安全性，指定 *ServiceFabric/clusterA.contoso.com* 中的计算机是群集的一部分，并且 *CONTOSO\\usera* 具有管理员客户端访问权限：
 
-```
-"security": {
-    "ClusterCredentialType": "Windows",
-    "ServerCredentialType": "Windows",
-    "WindowsIdentities": {
-		"ClusterIdentity" : "ServiceFabric/clusterA.contoso.com",
-        "ClientIdentities": [{
-            "Identity": "CONTOSO\\usera",
-        "IsAdmin": true
-        }]
-    }
-},
-```
+
+	"security": {
+	    "ClusterCredentialType": "Windows",
+	    "ServerCredentialType": "Windows",
+	    "WindowsIdentities": {
+			"ClusterIdentity" : "ServiceFabric/clusterA.contoso.com",
+	        "ClientIdentities": [{
+	            "Identity": "CONTOSO\\usera",
+	        "IsAdmin": true
+	        }]
+	    }
+	},
+
 
 ## 后续步骤
 

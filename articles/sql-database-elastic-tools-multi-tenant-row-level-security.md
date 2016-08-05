@@ -191,26 +191,26 @@ RLS 在 T-SQL 中实现：用户定义的函数用于定义访问逻辑，安全
 
 若要启用 RLS，请使用 Visual Studio (SSDT)、SSMS 或项目中包含的 PowerShell 脚本对所有分片执行以下 T-SQL（或者，如果你正在使用[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview/)，可以使用它来对所有分片自动执行此 T-SQL）：
 
-```
-CREATE SCHEMA rls -- separate schema to organize RLS objects 
-GO
 
-CREATE FUNCTION rls.fn_tenantAccessPredicate(@TenantId int)     
-	RETURNS TABLE     
-	WITH SCHEMABINDING
-AS
-	RETURN SELECT 1 AS fn_accessResult          
-		WHERE DATABASE_PRINCIPAL_ID() = DATABASE_PRINCIPAL_ID('dbo') -- the user in your application’s connection string (dbo is only for demo purposes!)         
-		AND CAST(SESSION_CONTEXT(N'TenantId') AS int) = @TenantId
-GO
+	CREATE SCHEMA rls -- separate schema to organize RLS objects 
+	GO
+	
+	CREATE FUNCTION rls.fn_tenantAccessPredicate(@TenantId int)     
+		RETURNS TABLE     
+		WITH SCHEMABINDING
+	AS
+		RETURN SELECT 1 AS fn_accessResult          
+			WHERE DATABASE_PRINCIPAL_ID() = DATABASE_PRINCIPAL_ID('dbo') -- the user in your application’s connection string (dbo is only for demo purposes!)         
+			AND CAST(SESSION_CONTEXT(N'TenantId') AS int) = @TenantId
+	GO
+	
+	CREATE SECURITY POLICY rls.tenantAccessPolicy
+		ADD FILTER PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Blogs,
+		ADD BLOCK PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Blogs,
+		ADD FILTER PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Posts,
+		ADD BLOCK PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Posts
+	GO 
 
-CREATE SECURITY POLICY rls.tenantAccessPolicy
-	ADD FILTER PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Blogs,
-	ADD BLOCK PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Blogs,
-	ADD FILTER PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Posts,
-	ADD BLOCK PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.Posts
-GO 
-```
 
 > [AZURE.TIP] 对于需要在数百个表中添加谓词的更复杂项目，你可以使用一个帮助器存储过程，通过在架构中的所有表内添加谓词，来自动生成安全策略。请参阅[向所有表应用行级安全性 – 帮助器脚本（博客）](http://blogs.msdn.com/b/sqlsecurity/archive/2015/03/31/apply-row-level-security-to-all-tables-helper-script)。
 
@@ -218,75 +218,75 @@ GO
 
 如果以后添加了新表，只需更改安全策略，并在新表中添加筛选和阻塞谓词：
 
-```
-ALTER SECURITY POLICY rls.tenantAccessPolicy     
-	ADD FILTER PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.MyNewTable,
-	ADD BLOCK PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.MyNewTable
-GO 
-```
+
+	ALTER SECURITY POLICY rls.tenantAccessPolicy     
+		ADD FILTER PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.MyNewTable,
+		ADD BLOCK PREDICATE rls.fn_tenantAccessPredicate(TenantId) ON dbo.MyNewTable
+	GO 
+
 
 ### 添加默认约束以自动填充 INSERT 的 TenantId 
 
 你可以对每个表施加默认约束，以便在插入行时向 TenantId 自动填充当前存储在 SESSION\_CONTEXT 中的值。例如：
 
-```
--- Create default constraints to auto-populate TenantId with the value of SESSION_CONTEXT for inserts 
-ALTER TABLE Blogs     
-	ADD CONSTRAINT df_TenantId_Blogs      
-	DEFAULT CAST(SESSION_CONTEXT(N'TenantId') AS int) FOR TenantId 
-GO
 
-ALTER TABLE Posts     
-	ADD CONSTRAINT df_TenantId_Posts      
-	DEFAULT CAST(SESSION_CONTEXT(N'TenantId') AS int) FOR TenantId 
-GO 
-```
+	-- Create default constraints to auto-populate TenantId with the value of SESSION_CONTEXT for inserts 
+	ALTER TABLE Blogs     
+		ADD CONSTRAINT df_TenantId_Blogs      
+		DEFAULT CAST(SESSION_CONTEXT(N'TenantId') AS int) FOR TenantId 
+	GO
+	
+	ALTER TABLE Posts     
+		ADD CONSTRAINT df_TenantId_Posts      
+		DEFAULT CAST(SESSION_CONTEXT(N'TenantId') AS int) FOR TenantId 
+	GO 
+
 
 现在，应用程序在插入行时不需要指定 TenantId：
 
-```
-SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() => 
-{   
-	using (var db = new ElasticScaleContext<int>(sharding.ShardMap, tenantId, connStrBldr.ConnectionString))
-	{
-		var blog = new Blog { Name = name }; // default constraint sets TenantId automatically     
-		db.Blogs.Add(blog);     
-		db.SaveChanges();   
-	} 
-}); 
-```
+
+	SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() => 
+	{   
+		using (var db = new ElasticScaleContext<int>(sharding.ShardMap, tenantId, connStrBldr.ConnectionString))
+		{
+			var blog = new Blog { Name = name }; // default constraint sets TenantId automatically     
+			db.Blogs.Add(blog);     
+			db.SaveChanges();   
+		} 
+	}); 
+
 
 > [AZURE.NOTE] 如果你对实体框架项目使用默认约束，则不建议在 EF 数据模型中包括 TenantId 列。这是因为实体框架查询会自动提供默认值，而这些值会重写 T-SQL 中创建的、使用 SESSION\_CONTEXT 的默认约束。举例来说，若要在示例项目中使用默认约束，你应该从 DataClasses.cs 中删除 TenantId（并在 Package Manager Console 中运行 Add-Migration），然后使用 T-SQL 来确保该字段仅存在于数据库表中。这样，在插入数据时，EF 不会自动提供错误的默认值。
 
 ### （可选）启用“超级用户”来访问所有行
 有些应用程序可能需要创建一个能够访问所有行“超级用户”，例如，为了跨所有分片上的所有租户来生成报告，或在涉及到数据库之间移动租户行的分片上执行拆分/合并操作。为此，你应该在每个分片数据库中创建新的 SQL 用户（在本例中为 “superuser”）。然后使用新的谓词函数更改安全策略，以允许此用户访问所有行：
 
-```
--- New predicate function that adds superuser logic
-CREATE FUNCTION rls.fn_tenantAccessPredicateWithSuperUser(@TenantId int)
-    RETURNS TABLE
-    WITH SCHEMABINDING
-AS
-    RETURN SELECT 1 AS fn_accessResult 
-        WHERE 
-        (
-            DATABASE_PRINCIPAL_ID() = DATABASE_PRINCIPAL_ID('dbo') -- note, should not be dbo!
-            AND CAST(SESSION_CONTEXT(N'TenantId') AS int) = @TenantId
-        ) 
-        OR
-        (
-            DATABASE_PRINCIPAL_ID() = DATABASE_PRINCIPAL_ID('superuser')
-        )
-GO
 
--- Atomically swap in the new predicate function on each table
-ALTER SECURITY POLICY rls.tenantAccessPolicy
-    ALTER FILTER PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Blogs,
-    ALTER BLOCK PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Blogs,
-    ALTER FILTER PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Posts,
-    ALTER BLOCK PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Posts
-GO
-```
+	-- New predicate function that adds superuser logic
+	CREATE FUNCTION rls.fn_tenantAccessPredicateWithSuperUser(@TenantId int)
+	    RETURNS TABLE
+	    WITH SCHEMABINDING
+	AS
+	    RETURN SELECT 1 AS fn_accessResult 
+	        WHERE 
+	        (
+	            DATABASE_PRINCIPAL_ID() = DATABASE_PRINCIPAL_ID('dbo') -- note, should not be dbo!
+	            AND CAST(SESSION_CONTEXT(N'TenantId') AS int) = @TenantId
+	        ) 
+	        OR
+	        (
+	            DATABASE_PRINCIPAL_ID() = DATABASE_PRINCIPAL_ID('superuser')
+	        )
+	GO
+	
+	-- Atomically swap in the new predicate function on each table
+	ALTER SECURITY POLICY rls.tenantAccessPolicy
+	    ALTER FILTER PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Blogs,
+	    ALTER BLOCK PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Blogs,
+	    ALTER FILTER PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Posts,
+	    ALTER BLOCK PREDICATE rls.fn_tenantAccessPredicateWithSuperUser(TenantId) ON dbo.Posts
+	GO
+
 
 
 ### 维护 

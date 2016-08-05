@@ -422,9 +422,9 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 #### I.通过 Azure CLI 创建高级存储帐户
 
-````
-azure storage account create "premiumtestaccount" -l "China East" --type PLRS
-````
+
+	azure storage account create "premiumtestaccount" -l "China East" --type PLRS
+
 
 #### II.通过 Azure CLI 创建 DS 系列虚拟机
 

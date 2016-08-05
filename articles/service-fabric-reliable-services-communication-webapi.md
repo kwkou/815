@@ -47,73 +47,73 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 **ValuesController.cs**
 
-```csharp
-using System.Collections.Generic;
-using System.Web.Http;
-    
-namespace WebService.Controllers
-{
-    public class ValuesController : ApiController
-    {
-        // GET api/values 
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/values/5 
-        public string Get(int id)
-        {
-            return "value";
-        }
+	using System.Collections.Generic;
+	using System.Web.Http;
+	    
+	namespace WebService.Controllers
+	{
+	    public class ValuesController : ApiController
+	    {
+	        // GET api/values 
+	        public IEnumerable<string> Get()
+	        {
+	            return new string[] { "value1", "value2" };
+	        }
+	
+	        // GET api/values/5 
+	        public string Get(int id)
+	        {
+	            return "value";
+	        }
+	
+	        // POST api/values 
+	        public void Post([FromBody]string value)
+	        {
+	        }
+	
+	        // PUT api/values/5 
+	        public void Put(int id, [FromBody]string value)
+	        {
+	        }
+	
+	        // DELETE api/values/5 
+	        public void Delete(int id)
+	        {
+	        }
+	    }
+	}
 
-        // POST api/values 
-        public void Post([FromBody]string value)
-        {
-        }
 
-        // PUT api/values/5 
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5 
-        public void Delete(int id)
-        {
-        }
-    }
-}
-
-```
 
 接着，在项目根目录中添加一个 Startup 类，用于注册路由、格式化程序和任何其他配置设置。这也是 Web API 插入到主机中的位置（会在以后再次重新访问）。
 
 **Startup.cs**
 
-```csharp
-using System.Web.Http;
-using Owin;
 
-namespace WebService
-{
-    public static class Startup
-    {
-        public static void ConfigureApp(IAppBuilder appBuilder)
-        {
-            // Configure Web API for self-host. 
-            HttpConfiguration config = new HttpConfiguration();
+	using System.Web.Http;
+	using Owin;
+	
+	namespace WebService
+	{
+	    public static class Startup
+	    {
+	        public static void ConfigureApp(IAppBuilder appBuilder)
+	        {
+	            // Configure Web API for self-host. 
+	            HttpConfiguration config = new HttpConfiguration();
+	
+	            config.Routes.MapHttpRoute(
+	                name: "DefaultApi",
+	                routeTemplate: "api/{controller}/{id}",
+	                defaults: new { id = RouteParameter.Optional }
+	            );
+	
+	            appBuilder.UseWebApi(config);
+	        }
+	    }
+	}
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            appBuilder.UseWebApi(config);
-        }
-    }
-}
-```
 
 应用程序部分就是这样。此时，我们只是设置了基本的 Web API 项目布局。到当前为止，看起来应该与过去可能已编写的 Web API 项目或基本的 Web API 模板有太多不同。你的业务逻辑同往常一样放入控制器和模型中。
 
@@ -123,35 +123,35 @@ namespace WebService
 
 在 Service Fabric 中，服务在服务主机进程（运行服务代码的可执行文件）中运行。当你使用 Reliable Services API 编写服务时，服务项目只编译成注册服务类型并运行代码的可执行文件。当你在 .NET 中的 Service Fabric 上编写服务时，在大多数情况下都是如此。如果你打开无状态服务项目中的 Program.cs，则应该看到：
 
-```csharp
-using System;
-using System.Diagnostics;
-using System.Threading;
-using Microsoft.ServiceFabric.Services.Runtime;
 
-internal static class Program
-{
-    private static void Main()
-    {
-        try
-        {
-            ServiceRuntime.RegisterServiceAsync("WebServiceType",
-                context => new WebService(context)).GetAwaiter().GetResult();
+	using System;
+	using System.Diagnostics;
+	using System.Threading;
+	using Microsoft.ServiceFabric.Services.Runtime;
+	
+	internal static class Program
+	{
+	    private static void Main()
+	    {
+	        try
+	        {
+	            ServiceRuntime.RegisterServiceAsync("WebServiceType",
+	                context => new WebService(context)).GetAwaiter().GetResult();
+	
+	            ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(WebService).Name);
+	
+	            // Prevents this host process from terminating so services keeps running. 
+	            Thread.Sleep(Timeout.Infinite);
+	        }
+	        catch (Exception e)
+	        {
+	            ServiceEventSource.Current.ServiceHostInitializationFailed(e.ToString());
+	            throw;
+	        }
+	    }
+	}
 
-            ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(WebService).Name);
 
-            // Prevents this host process from terminating so services keeps running. 
-            Thread.Sleep(Timeout.Infinite);
-        }
-        catch (Exception e)
-        {
-            ServiceEventSource.Current.ServiceHostInitializationFailed(e.ToString());
-            throw;
-        }
-    }
-}
-
-```
 
 如果这看上去疑似控制台应用程序的入口点，这是因为它是。
 
@@ -185,34 +185,34 @@ Web 服务器（以及可能在将来使用的任何其他通信堆栈，如 Web
 
 **OwinCommunicationListener.cs**
 
-```csharp
-using Microsoft.Owin.Hosting;
-using Microsoft.ServiceFabric.Services.Communication.Runtime;
-using Owin;
-using System;
-using System.Fabric;
-using System.Globalization;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace WebService
-{
-    public class OwinCommunicationListener : ICommunicationListener
-    {
-        public void Abort()
-        {
-        }
+	using Microsoft.Owin.Hosting;
+	using Microsoft.ServiceFabric.Services.Communication.Runtime;
+	using Owin;
+	using System;
+	using System.Fabric;
+	using System.Globalization;
+	using System.Threading;
+	using System.Threading.Tasks;
+	
+	namespace WebService
+	{
+	    public class OwinCommunicationListener : ICommunicationListener
+	    {
+	        public void Abort()
+	        {
+	        }
+	
+	        public Task CloseAsync(CancellationToken cancellationToken)
+	        {
+	        }
+	
+	        public Task<string> OpenAsync(CancellationToken cancellationToken)
+	        {
+	        }
+	    }
+	}
 
-        public Task CloseAsync(CancellationToken cancellationToken)
-        {
-        }
-
-        public Task<string> OpenAsync(CancellationToken cancellationToken)
-        {
-        }
-    }
-}
-```
 
 ICommunicationListener 接口提供了三个方法来为服务管理通信侦听器：
 
@@ -222,57 +222,57 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 
 若要开始操作，请为侦听器运行所需的项目添加私有类成员。这些成员会通过构造函数初始化，并在后面设置侦听 URL 时使用。
 
-```csharp
-public class OwinCommunicationListener : ICommunicationListener
-{
-    private readonly ServiceEventSource eventSource;
-    private readonly Action<IAppBuilder> startup;
-    private readonly ServiceContext serviceContext;
-    private readonly string endpointName;
-    private readonly string appRoot;
 
-    private IDisposable webApp;
-    private string publishAddress;
-    private string listeningAddress;
+	public class OwinCommunicationListener : ICommunicationListener
+	{
+	    private readonly ServiceEventSource eventSource;
+	    private readonly Action<IAppBuilder> startup;
+	    private readonly ServiceContext serviceContext;
+	    private readonly string endpointName;
+	    private readonly string appRoot;
+	
+	    private IDisposable webApp;
+	    private string publishAddress;
+	    private string listeningAddress;
+	
+	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName)
+	        : this(startup, serviceContext, eventSource, endpointName, null)
+	    {
+	    }
+	
+	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName, string appRoot)
+	    {
+	        if (startup == null)
+	        {
+	            throw new ArgumentNullException(nameof(startup));
+	        }
+	
+	        if (serviceContext == null)
+	        {
+	            throw new ArgumentNullException(nameof(serviceContext));
+	        }
+	
+	        if (endpointName == null)
+	        {
+	            throw new ArgumentNullException(nameof(endpointName));
+	        }
+	
+	        if (eventSource == null)
+	        {
+	            throw new ArgumentNullException(nameof(eventSource));
+	        }
+	
+	        this.startup = startup;
+	        this.serviceContext = serviceContext;
+	        this.endpointName = endpointName;
+	        this.eventSource = eventSource;
+	        this.appRoot = appRoot;
+	    }
+	   
+	
+	    ...
+	
 
-    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName)
-        : this(startup, serviceContext, eventSource, endpointName, null)
-    {
-    }
-
-    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName, string appRoot)
-    {
-        if (startup == null)
-        {
-            throw new ArgumentNullException(nameof(startup));
-        }
-
-        if (serviceContext == null)
-        {
-            throw new ArgumentNullException(nameof(serviceContext));
-        }
-
-        if (endpointName == null)
-        {
-            throw new ArgumentNullException(nameof(endpointName));
-        }
-
-        if (eventSource == null)
-        {
-            throw new ArgumentNullException(nameof(eventSource));
-        }
-
-        this.startup = startup;
-        this.serviceContext = serviceContext;
-        this.endpointName = endpointName;
-        this.eventSource = eventSource;
-        this.appRoot = appRoot;
-    }
-   
-
-    ...
-
-```
 
 ## 实现 OpenAsync
 
@@ -300,45 +300,45 @@ public class OwinCommunicationListener : ICommunicationListener
 
 返回到 OwinCommunicationListener.cs 中，现在可以开始实现 OpenAsync。从此处启动 Web 服务器。首先，获取终结点信息，并创建服务将侦听的 URL。视侦听器用于无状态服务还是有状态服务而定，URL 会有所不同。如果用于有状态服务，侦听器必须针对它所侦听的每个有状态服务副本创建唯一的地址。如果用于无状态服务，此地址可以简单得多。
 
-```csharp
-public Task<string> OpenAsync(CancellationToken cancellationToken)
-{
-    var serviceEndpoint = this.serviceContext.CodePackageActivationContext.GetEndpoint(this.endpointName);
-    int port = serviceEndpoint.Port;
 
-    if (this.serviceContext is StatefulServiceContext)
-    {
-        StatefulServiceContext statefulServiceContext = this.serviceContext as StatefulServiceContext;
+	public Task<string> OpenAsync(CancellationToken cancellationToken)
+	{
+	    var serviceEndpoint = this.serviceContext.CodePackageActivationContext.GetEndpoint(this.endpointName);
+	    int port = serviceEndpoint.Port;
+	
+	    if (this.serviceContext is StatefulServiceContext)
+	    {
+	        StatefulServiceContext statefulServiceContext = this.serviceContext as StatefulServiceContext;
+	
+	        this.listeningAddress = string.Format(
+	            CultureInfo.InvariantCulture,
+	            "http://+:{0}/{1}{2}/{3}/{4}",
+	            port,
+	            string.IsNullOrWhiteSpace(this.appRoot)
+	                ? string.Empty
+	                : this.appRoot.TrimEnd('/') + '/',
+	            statefulServiceContext.PartitionId,
+	            statefulServiceContext.ReplicaId,
+	            Guid.NewGuid());
+	    }
+	    else if (this.serviceContext is StatelessServiceContext)
+	    {
+	        this.listeningAddress = string.Format(
+	            CultureInfo.InvariantCulture,
+	            "http://+:{0}/{1}",
+	            port,
+	            string.IsNullOrWhiteSpace(this.appRoot)
+	                ? string.Empty
+	                : this.appRoot.TrimEnd('/') + '/');
+	    }
+	    else
+	    {
+	        throw new InvalidOperationException();
+	    }
+	    
+	    ...
+	
 
-        this.listeningAddress = string.Format(
-            CultureInfo.InvariantCulture,
-            "http://+:{0}/{1}{2}/{3}/{4}",
-            port,
-            string.IsNullOrWhiteSpace(this.appRoot)
-                ? string.Empty
-                : this.appRoot.TrimEnd('/') + '/',
-            statefulServiceContext.PartitionId,
-            statefulServiceContext.ReplicaId,
-            Guid.NewGuid());
-    }
-    else if (this.serviceContext is StatelessServiceContext)
-    {
-        this.listeningAddress = string.Format(
-            CultureInfo.InvariantCulture,
-            "http://+:{0}/{1}",
-            port,
-            string.IsNullOrWhiteSpace(this.appRoot)
-                ? string.Empty
-                : this.appRoot.TrimEnd('/') + '/');
-    }
-    else
-    {
-        throw new InvalidOperationException();
-    }
-    
-    ...
-
-```
 
 请注意，此处使用了“http://+”。这是为了确保 Web 服务器侦听所有可用的地址，包括 localhost、FQDN 和计算机 IP。
 
@@ -346,32 +346,32 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 明确这一点后，OpenAsync 会启动 Web 服务器，并返回它所侦听的地址。请注意它侦听“http://+”，但在 OpenAsync 返回地址之前，“+”会替换为它当前所处节点的 IP 或 FQDN。此方法所返回的地址就是向系统注册的地址。它也是客户端和其他服务在请求服务地址时所看到的地址。要使客户端可以正确连接到它，它们在地址中需要实际 IP 或 FQDN。
 
-```csharp
-    ...
+	
+	    ...
+	
+	    this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
+	
+	    try
+	    {
+	        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
+	
+	        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
+	
+	        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
+	
+	        return Task.FromResult(this.publishAddress);
+	    }
+	    catch (Exception ex)
+	    {
+	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open. " + ex.ToString());
+	
+	        this.StopWebServer();
+	
+	        throw;
+	    }
+	}
+	
 
-    this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-
-    try
-    {
-        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
-
-        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
-
-        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
-
-        return Task.FromResult(this.publishAddress);
-    }
-    catch (Exception ex)
-    {
-        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open. " + ex.ToString());
-
-        this.StopWebServer();
-
-        throw;
-    }
-}
-
-```
 
 请注意，这会引用在构造函数中传入到 OwinCommunicationListener 的 Startup 类。此启动实例由 Web 服务器用于启动 Web API 应用程序。
 
@@ -420,16 +420,16 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 你现在已准备好创建并返回 OwinCommunicationListener 的实例以启动 Web 服务器。返回到 Service 类 (Service.cs) 中，重写 `CreateServiceInstanceListeners()` 方法：
 
-```csharp
-protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-{
-    return new ServiceInstanceListener[]
-    {
-        new ServiceInstanceListener(serviceContext => 
-            new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, "ServiceEndpoint"))
-    };
-}
-```
+
+	protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
+	{
+	    return new ServiceInstanceListener[]
+	    {
+	        new ServiceInstanceListener(serviceContext => 
+	            new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, "ServiceEndpoint"))
+	    };
+	}
+
 
 这是 Web API 应用程序和 OWIN 主机最后相会之处。为主机 (OwinCommunicationListener) 指定应用程序实例（通过 startup 的 Web API）。然后，Service Fabric 将管理其生命周期。通常任何通信堆栈都可以遵循这一相同模式。
 
@@ -439,186 +439,186 @@ protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceLis
 
 最终的服务实现应该非常简单。它只需创建通信侦听器：
 
-```csharp
-using System.Collections.Generic;
-using System.Fabric;
-using Microsoft.ServiceFabric.Services.Communication.Runtime;
-using Microsoft.ServiceFabric.Services.Runtime;
 
-namespace WebService
-{
-    internal sealed class WebService : StatelessService
-    {
-        public WebService(StatelessServiceContext context)
-            : base(context)
-        { }
+	using System.Collections.Generic;
+	using System.Fabric;
+	using Microsoft.ServiceFabric.Services.Communication.Runtime;
+	using Microsoft.ServiceFabric.Services.Runtime;
+	
+	namespace WebService
+	{
+	    internal sealed class WebService : StatelessService
+	    {
+	        public WebService(StatelessServiceContext context)
+	            : base(context)
+	        { }
+	
+	        protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
+	        {
+	            return new ServiceInstanceListener[]
+	            {
+	                new ServiceInstanceListener(serviceContext => 
+	                    new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, "ServiceEndpoint"))
+	            };
+	        }
+	    }
+	}
 
-        protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-        {
-            return new ServiceInstanceListener[]
-            {
-                new ServiceInstanceListener(serviceContext => 
-                    new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, "ServiceEndpoint"))
-            };
-        }
-    }
-}
-```
 
 完整的 `OwinCommunicationListener` 类：
 
-```csharp
-using System;
-using System.Diagnostics;
-using System.Fabric;
-using System.Globalization;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Owin.Hosting;
-using Microsoft.ServiceFabric.Services.Communication.Runtime;
-using Owin;
 
-namespace WebService
-{
-    internal class OwinCommunicationListener : ICommunicationListener
-    {
-    private readonly ServiceEventSource eventSource;
-    private readonly Action<IAppBuilder> startup;
-    private readonly ServiceContext serviceContext;
-    private readonly string endpointName;
-    private readonly string appRoot;
+	using System;
+	using System.Diagnostics;
+	using System.Fabric;
+	using System.Globalization;
+	using System.Threading;
+	using System.Threading.Tasks;
+	using Microsoft.Owin.Hosting;
+	using Microsoft.ServiceFabric.Services.Communication.Runtime;
+	using Owin;
+	
+	namespace WebService
+	{
+	    internal class OwinCommunicationListener : ICommunicationListener
+	    {
+	    private readonly ServiceEventSource eventSource;
+	    private readonly Action<IAppBuilder> startup;
+	    private readonly ServiceContext serviceContext;
+	    private readonly string endpointName;
+	    private readonly string appRoot;
+	
+	    private IDisposable webApp;
+	    private string publishAddress;
+	    private string listeningAddress;
+	
+	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName)
+	        : this(startup, serviceContext, eventSource, endpointName, null)
+	    {
+	    }
+	
+	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName, string appRoot)
+	    {
+	        if (startup == null)
+	        {
+	            throw new ArgumentNullException(nameof(startup));
+	        }
+	
+	        if (serviceContext == null)
+	        {
+	            throw new ArgumentNullException(nameof(serviceContext));
+	        }
+	
+	        if (endpointName == null)
+	        {
+	            throw new ArgumentNullException(nameof(endpointName));
+	        }
+	
+	        if (eventSource == null)
+	        {
+	            throw new ArgumentNullException(nameof(eventSource));
+	        }
+	
+	        this.startup = startup;
+	        this.serviceContext = serviceContext;
+	        this.endpointName = endpointName;
+	        this.eventSource = eventSource;
+	        this.appRoot = appRoot;
+	    }
+	
+	        public bool ListenOnSecondary { get; set; }
+	
+	        public Task<string> OpenAsync(CancellationToken cancellationToken)
+	        {
+	            var serviceEndpoint = this.serviceContext.CodePackageActivationContext.GetEndpoint(this.endpointName);
+	            int port = serviceEndpoint.Port;
+	
+	            if (this.serviceContext is StatefulServiceContext)
+	            {
+	                StatefulServiceContext statefulServiceContext = this.serviceContext as StatefulServiceContext;
+	
+	                this.listeningAddress = string.Format(
+	                    CultureInfo.InvariantCulture,
+	                    "http://+:{0}/{1}{2}/{3}/{4}",
+	                    port,
+	                    string.IsNullOrWhiteSpace(this.appRoot)
+	                        ? string.Empty
+	                        : this.appRoot.TrimEnd('/') + '/',
+	                    statefulServiceContext.PartitionId,
+	                    statefulServiceContext.ReplicaId,
+	                    Guid.NewGuid());
+	            }
+	            else if (this.serviceContext is StatelessServiceContext)
+	            {
+	                this.listeningAddress = string.Format(
+	                    CultureInfo.InvariantCulture,
+	                    "http://+:{0}/{1}",
+	                    port,
+	                    string.IsNullOrWhiteSpace(this.appRoot)
+	                        ? string.Empty
+	                        : this.appRoot.TrimEnd('/') + '/');
+	            }
+	            else
+	            {
+	                throw new InvalidOperationException();
+	            }
+	
+	    this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
+	
+	    try
+	    {
+	        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
+	
+	        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
+	
+	        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
+	
+	        return Task.FromResult(this.publishAddress);
+	    }
+	    catch (Exception ex)
+	    {
+	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open. " + ex.ToString());
+	
+	        this.StopWebServer();
+	
+	        throw;
+	    }
+	}
+	
+	        public Task CloseAsync(CancellationToken cancellationToken)
+	        {
+	            this.eventSource.ServiceMessage(this.serviceContext, "Closing web server");
+	
+	            this.StopWebServer();
+	
+	            return Task.FromResult(true);
+	        }
+	
+	        public void Abort()
+	        {
+	            this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server");
+	
+	            this.StopWebServer();
+	        }
+	
+	        private void StopWebServer()
+	        {
+	            if (this.webApp != null)
+	            {
+	                try
+	                {
+	                    this.webApp.Dispose();
+	                }
+	                catch (ObjectDisposedException)
+	                {
+	                    // no-op
+	                }
+	            }
+	        }
+	    }
+	}
+	
 
-    private IDisposable webApp;
-    private string publishAddress;
-    private string listeningAddress;
-
-    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName)
-        : this(startup, serviceContext, eventSource, endpointName, null)
-    {
-    }
-
-    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName, string appRoot)
-    {
-        if (startup == null)
-        {
-            throw new ArgumentNullException(nameof(startup));
-        }
-
-        if (serviceContext == null)
-        {
-            throw new ArgumentNullException(nameof(serviceContext));
-        }
-
-        if (endpointName == null)
-        {
-            throw new ArgumentNullException(nameof(endpointName));
-        }
-
-        if (eventSource == null)
-        {
-            throw new ArgumentNullException(nameof(eventSource));
-        }
-
-        this.startup = startup;
-        this.serviceContext = serviceContext;
-        this.endpointName = endpointName;
-        this.eventSource = eventSource;
-        this.appRoot = appRoot;
-    }
-
-        public bool ListenOnSecondary { get; set; }
-
-        public Task<string> OpenAsync(CancellationToken cancellationToken)
-        {
-            var serviceEndpoint = this.serviceContext.CodePackageActivationContext.GetEndpoint(this.endpointName);
-            int port = serviceEndpoint.Port;
-
-            if (this.serviceContext is StatefulServiceContext)
-            {
-                StatefulServiceContext statefulServiceContext = this.serviceContext as StatefulServiceContext;
-
-                this.listeningAddress = string.Format(
-                    CultureInfo.InvariantCulture,
-                    "http://+:{0}/{1}{2}/{3}/{4}",
-                    port,
-                    string.IsNullOrWhiteSpace(this.appRoot)
-                        ? string.Empty
-                        : this.appRoot.TrimEnd('/') + '/',
-                    statefulServiceContext.PartitionId,
-                    statefulServiceContext.ReplicaId,
-                    Guid.NewGuid());
-            }
-            else if (this.serviceContext is StatelessServiceContext)
-            {
-                this.listeningAddress = string.Format(
-                    CultureInfo.InvariantCulture,
-                    "http://+:{0}/{1}",
-                    port,
-                    string.IsNullOrWhiteSpace(this.appRoot)
-                        ? string.Empty
-                        : this.appRoot.TrimEnd('/') + '/');
-            }
-            else
-            {
-                throw new InvalidOperationException();
-            }
-
-    this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-
-    try
-    {
-        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
-
-        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
-
-        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
-
-        return Task.FromResult(this.publishAddress);
-    }
-    catch (Exception ex)
-    {
-        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open. " + ex.ToString());
-
-        this.StopWebServer();
-
-        throw;
-    }
-}
-
-        public Task CloseAsync(CancellationToken cancellationToken)
-        {
-            this.eventSource.ServiceMessage(this.serviceContext, "Closing web server");
-
-            this.StopWebServer();
-
-            return Task.FromResult(true);
-        }
-
-        public void Abort()
-        {
-            this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server");
-
-            this.StopWebServer();
-        }
-
-        private void StopWebServer()
-        {
-            if (this.webApp != null)
-            {
-                try
-                {
-                    this.webApp.Dispose();
-                }
-                catch (ObjectDisposedException)
-                {
-                    // no-op
-                }
-            }
-        }
-    }
-}
-
-```
 
 所有部分都准备就绪后，项目现在应类似于具有 Reliable Services API 入口点和 OWIN 主机的典型 Web API 应用程序：
 
@@ -644,11 +644,11 @@ namespace WebService
 
 扩展无状态 Web 应用通常意味着添加更多计算机并在其上运行 Web 应用。每当向群集添加新节点时，Service Fabric 的业务流程引擎可以为你执行此操作。创建无状态服务的实例时，可以指定要创建的实例数。Service Fabric 将该数目的实例放置在群集中的节点上。它可以确保不会在任一节点上创建多个实例。还可以通过为实例计数指定 **-1**，指示 Service Fabric 始终在每个节点上创建一个实例。这可保证每当添加节点以扩展群集时，都会在新节点上创建无状态服务的实例。此值是服务实例的属性，因此它是在你创建服务实例时设置的：可以通过 PowerShell 设置：
 
-```powershell
 
-New-ServiceFabricService -ApplicationName "fabric:/WebServiceApplication" -ServiceName "fabric:/WebServiceApplication/WebService" -ServiceTypeName "WebServiceType" -Stateless -PartitionSchemeSingleton -InstanceCount -1
 
-```
+	New-ServiceFabricService -ApplicationName "fabric:/WebServiceApplication" -ServiceName "fabric:/WebServiceApplication/WebService" -ServiceTypeName "WebServiceType" -Stateless -PartitionSchemeSingleton -InstanceCount -1
+
+
 
 也可以在 Visual Studio 无状态服务项目中定义默认服务时设置：
 
