@@ -30,7 +30,7 @@
 
 ### 帐户
 
-- **Azure 帐户**：如果你没有 Azure 订阅，可以[创建一个免费 Azure 帐户][azure_free_account]。
+- **Azure 帐户**：如果你没有 Azure 订阅，可以[创建一个试用 Azure 帐户][azure_free_account]。
 - **Batch 帐户**：获取 Azure 订阅后，请[创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
 - **存储帐户**：请参阅 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)中的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 
