@@ -75,9 +75,6 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 **答：**是的，Azure Active Directory 提供 [Azure AD 访问面板](http://myapps.microsoft.com)，方便用户进行自助服务和应用程序访问。如果你是 Office 365 客户，可以在 Office 365 门户中找到许多相同的功能。
 
-有关详细信息，请参阅 [Introduction to the Access Panel（访问面板简介）](/documentation/articles/active-directory-saas-access-panel-introduction/)。
-
-
 
 ---
 
