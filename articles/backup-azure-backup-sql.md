@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="02/08/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="07/01/2016"
+	wacn.date="08/08/2016"/>
 
 
 # 使用 DPM 为 SQL 工作负荷配置 Azure 备份
@@ -48,7 +48,7 @@
 
     ![选择 SQL DB](./media/backup-azure-backup-sql/pg-databases.png)
 
-6. 提供要创建的保护组的名称。请确保选择“**我需要在线保护**”选项。
+6. 提供要创建的保护组的名称。请确保选择“我需要在线保护”选项。
 
     ![数据保护方法 - 短期磁盘和在线 Azure](./media/backup-azure-backup-sql/pg-name.png)
 
@@ -58,7 +58,7 @@
 
     ![短期目标](./media/backup-azure-backup-sql/pg-shortterm.png)
 
-    >[AZURE.NOTE]在每天晚上 8:00（根据屏幕输入），将会创建一个备份点，以便传输自前一天晚上 8:00 的备份点以来进行了修改的数据。此过程称为**快速完整备份**。虽然事务日志每 15 分钟同步一次，但如果需要在晚上 9:00 恢复数据库，则会重播自上一个快速完整备份点（在本示例中为晚上 8 点）以来的日志，从而创建备份点。
+    >[AZURE.NOTE] 在每天晚上 8:00（根据屏幕输入），将会创建一个备份点，以便传输自前一天晚上 8:00 的备份点以来进行了修改的数据。此过程称为**快速完整备份**。虽然事务日志每 15 分钟同步一次，但如果需要在晚上 9:00 恢复数据库，则会重播自上一个快速完整备份点（在本示例中为晚上 8 点）以来的日志，从而创建备份点。
 
 8. 单击“下一步”
 
@@ -170,4 +170,4 @@
 
 • [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0801_2016-->
