@@ -23,7 +23,7 @@
 
 使用一个命令来部署 CoreOS VM 并附加 SSH 密钥：
 
-	azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q OpenLogic:Centos:7.2:latest
+	azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q Centos
 
 ## 部署 Linux VM
 
@@ -31,23 +31,23 @@
 
 ## 使用 ImageUR
 
-下表列出了 Linux 分发版（从 Azure CLI 0.9 版起）。
+下表列出了 Linux 分发版（从 Azure CLI 0.10 版起）。
 
-| 发布者 | 产品 | SKU | 版本 |
-|:----------|:-------------|:------------|:--------|
-| OpenLogic | Centos | 7\.2 | 最新 |
-| SUSE | openSUSE | 13\.2 | 最新 |
-| Canonical | UbuntuServer | 14\.04.3-LTS | 最新 |
+| Alias     | 发布者 | 产品 | SKU | 版本 |
+|:----------|:----------|:-------------|:------------|:--------|
+| CentOS    | OpenLogic | Centos | 7\.2 | 最新 |
+| openSUSE  | SUSE | openSUSE | 13\.2 | 最新 |
+| UbuntuLTS | Canonical | UbuntuServer | 14\.04.3-LTS | 最新 |
 
 
 
-对于 **ImageURN** 选项 (`-Q`)，我们将使用 `Canonical:UbuntuServer:14.04.3-LTS:latest` 来部署 Canonical Ubuntu 14.04.3-LTS。（这 3 个映像代表 Azure 上可用 OS 的一小部分；通过在应用商店中[搜索映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)来查找更多映像，或者[上载自己的自定义映像](/documentation/articles/virtual-machines-linux-create-upload-generic/)。）
+对于 **ImageURN** 选项 (`-Q`)，我们将使用 `UbuntuLTS` 来部署 Canonical Ubuntu 14.04.3-LTS。（这 3 个映像代表 Azure 上可用 OS 的一小部分；通过在应用商店中[搜索映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)来查找更多映像，或者[上载自己的自定义映像](/documentation/articles/virtual-machines-linux-create-upload-generic/)。）
 
 在下面的命令演练中，请将提示替换为你自己环境中的值。我们将使用“示例”值。
 
 遵循提示并输入你自己的名称
 
-	azure vm quick-create -M ~/.ssh/id_rsa.pub -Q Canonical:UbuntuServer:14.04.3-LTS:latest
+	azure vm quick-create -M ~/.ssh/id_rsa.pub -Q UbuntuLTS
 
 输出应类似于以下输出块。
 
