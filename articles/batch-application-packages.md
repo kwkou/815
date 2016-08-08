@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="batch"
-	ms.date="05/20/2016"
-	wacn.date="08/05/2016" />
+	ms.date="06/30/2016"
+	wacn.date="08/08/2016" />
 
 # 使用 Azure Batch 应用程序包部署应用程序
 
@@ -22,7 +22,7 @@ Azure Batch 的应用程序包功能可为池中的计算节点提供简单的�
 
 ## 应用程序包要求
 
-本文所讨论的应用程序包功能*仅*能与 2016 年 3 月 10 日后创建的 Batch 池兼容。应用程序包将无法部署到在此日期之前创建r 池中的计算节点。
+本文所讨论的应用程序包功能仅能与 2016 年 3 月 10 日后创建的 Batch 池兼容。应用程序包将无法部署到在此日期之前创建r 池中的计算节点。
 
 [Batch REST API][api_rest] 2015-12-01.2.2 版和对应的 [Batch .NET][api_net] 库 3.1.0 版引入了此功能。使用 Batch 时，我们建议始终使用最新的 API 版本。
 
@@ -30,7 +30,7 @@ Azure Batch 的应用程序包功能可为池中的计算节点提供简单的�
 
 ## 关于应用程序和应用程序包
 
-在 Azure Batch 中，**应用程序**是指一组已创建版本的二进制文件，这些文件可自动下载到池中的计算节点。**应用程序包**指的是这些二进制文件中的一组“特定组合”，其代表应用程序的特定“版本”。
+在 Azure Batch 中，**应用程序**是指一组已创建版本的二进制文件，这些文件可自动下载到池中的计算节点。**应用程序包**指的是这些二进制文件中的一组特定组合，其代表应用程序的特定版本。
 
 ![应用程序和应用程序包的统括示意图][1]
 
@@ -62,7 +62,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包存储及部�
 
 若要使用应用程序包，必须先链接 Azure 存储帐户与 Batch 帐户。如果还没有为 Batch 帐户配置存储帐户，Azure 门户在第一次单击 Batch 帐户边栏选项卡中的“应用程序”磁贴时显示警告。
 
-> [AZURE.IMPORTANT] Batch 目前*仅*支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。将某个 Azure 存储帐户链接到你的 Batch 帐户时，“只会”链接**常规用途**的存储帐户。
+> [AZURE.IMPORTANT] Batch 目前仅支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。将某个 Azure 存储帐户链接到你的 Batch 帐户时，只会链接**常规用途**的存储帐户。
 
 ![Azure 门户中显示的未配置存储帐户警告][9]
 
@@ -194,22 +194,23 @@ csharp
 		// the pool, the specified application package will be installed on each.
 		await myCloudPool.CommitAsync();
 		
+将每个计算节点加入池以及该节点重新启动或重置映像时，为池指定的应用程序包将安装在该节点上。如果应用程序包部署出于任何原因而失败，Batch 服务会将该节点标记为 [unusable][net_nodestate]，并且不会在该节点上计划执行任何任务。在这种情况下，你应该**重新启动**该节点，以重新启动包部署（重新启动节点也会在节点上重新启用任务计划）。
 
 ## 执行安装的应用程序
 
 当每个计算节点添加池（或者重新启动或重置映像），指定的包下载及解压缩到节点上 `AZ_BATCH_ROOT_DIR` 内指定的目录中。Batch 还为任务命令行创建环境变量，以在调用应用程序二进制文件时使用；此变量遵守以下命名方案：
 
-	`AZ_BATCH_APP_PACKAGE_appid#version`
+`AZ_BATCH_APP_PACKAGE_appid#version`
 
-例如，如果指定要安装应用程序 *blender* 的 2.7 版，任务可以通过在其命令行中引用以下环境变量来访问应用程序二进制文件：
+例如，如果指定要安装应用程序 blender 的 2.7 版，任务可以通过在其命令行中引用以下环境变量来访问应用程序二进制文件：
 
-	`AZ_BATCH_APP_PACKAGE_BLENDER#2.7`
+`AZ_BATCH_APP_PACKAGE_BLENDER#2.7`
 
-如果应用程序指定默认版本，你可以引用不含版本字符串后缀的环境变量。例如，如果已在 Azure 门户中指定应用程序 *blender* 的默认版本 2.7，任务可以引用以下环境变量：
+如果应用程序指定默认版本，你可以引用不含版本字符串后缀的环境变量。例如，如果已在 Azure 门户中指定应用程序 blender 的默认版本 2.7，任务可以引用以下环境变量：
 
-	`AZ_BATCH_APP_PACKAGE_BLENDER`
+`AZ_BATCH_APP_PACKAGE_BLENDER`
 
-以下代码片段演示当已指定应用程序 *blender* 的默认版本时如何配置任务。
+以下代码片段演示当已指定应用程序 blender 的默认版本时如何配置任务。
 
 csharp
 
@@ -228,7 +229,7 @@ csharp
 * 在更新包引用时，已在池中的计算节点不会自动安装新应用程序包 - 必须将这些节点重新启动或重置映像才能接收新包。
 * 部署新包后，创建的环境变量将反映新的应用程序包引用。
 
-在此示例中，现有池已将应用程序 *blender* 的 2.7 版设置为其中一个 [CloudPool][net_cloudpool].[ApplicationPackageReferences][net_cloudpool_pkgref]。若要将池的节点更新为 2.76b 版，请将 [ApplicationPackageReference][net_pkgref] 指定为新版本并提交更改。
+在此示例中，现有池已将应用程序 blender 的 2.7 版设置为其中一个 [CloudPool][net_cloudpool].[ApplicationPackageReferences][net_cloudpool_pkgref]。若要将池的节点更新为 2.76b 版，请将 [ApplicationPackageReference][net_pkgref] 指定为新版本并提交更改。
 
 csharp
 		
@@ -243,7 +244,7 @@ csharp
 		await boundPool.CommitAsync();
 
 
-配置新版本后，任何加入池的“新”节点都将部署 2.76b 版。若要将 2.76b 安装到*已在*池中的节点上，请重新启动节点（或重置映像）。请注意，重新启动的节点保留前次包部署的文件。
+配置新版本后，任何加入池的新节点都将部署 2.76b 版。若要将 2.76b 安装到已在池中的节点上，请重新启动节点（或重置映像）。请注意，重新启动的节点保留前次包部署的文件。
 
 ## 列出 Batch 帐户中的应用程序
 
@@ -301,4 +302,4 @@ csharp
 [11]: ./media/batch-application-packages/app_pkg_11.png 
 [12]: ./media/batch-application-packages/app_pkg_12.png 
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->
