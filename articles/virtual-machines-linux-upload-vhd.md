@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="07/15/2016"
-	wacn.date=""/>
+	wacn.date="08/08/2016"/>
 
 # 上载自定义磁盘映像并从其创建 VM
 

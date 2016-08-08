@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="06/23/2016"
-	wacn.date=""/>
+	wacn.date="08/08/2016"/>
 
 # 连接到 Azure 上的 SQL Server 虚拟机（经典部署）
 

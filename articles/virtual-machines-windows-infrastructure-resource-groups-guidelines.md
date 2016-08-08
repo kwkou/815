@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="06/30/2016"
-	wacn.date=""/>
+	wacn.date="08/08/2016"/>
 
 # Azure 资源组准则
 

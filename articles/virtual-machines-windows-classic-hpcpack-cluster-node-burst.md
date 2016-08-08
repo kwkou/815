@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/15/2016"
-	wacn.date=""/>
+	wacn.date="08/08/2016"/>
 
 # 在 Azure 中将按需“突发”节点添加到 HPC Pack 群集
 
