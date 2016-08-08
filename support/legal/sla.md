@@ -39,6 +39,7 @@
 - [Redis 缓存]
 - [存储]
 - [MySQL Database on Azure]
+- [DocumentDB]
 
 ##分析
 - [HDInsight]
@@ -107,3 +108,4 @@
 [自动化]: /support/sla/automation/
 [密钥保管库]: /support/sla/key-vault/
 [Service Fabric]: /support/sla/service-fabric/
+[DocumentDB]: /support/sla/documentdb/

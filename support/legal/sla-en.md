@@ -41,6 +41,7 @@ This agreement describes the commitment about uptime and connectivity of Microso
 - [Radis Cache]
 - [Storage]
 - [MySQL Database on Azure]
+- [DocumentDB]
 
 ##Analytics
 - [HDInsight]
@@ -108,3 +109,4 @@ Click [here](https://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/d
 [Automation]: /support/sla/automation-en/
 [Key Vault]: /support/sla/key-vault-en/
 [Service Fabric]: /support/sla/service-fabric-en/
+[DocumentDB]: /support/sla/documentdb-en/
