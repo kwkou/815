@@ -14,7 +14,7 @@
 
 # 使用基于 Azure Resource Manager 的 PowerShell 来管理 Azure Web Apps#
 
-发行的 Azure PowerShell 版本 1.0.0 中添加了新新命令，可让用户使用基于 Azure Resource Manager 的 PowerShell 命令来管理 Web Apps。
+发行的 Azure PowerShell 版本 1.0.0 中添加了新命令，可让用户使用基于 Azure Resource Manager 的 PowerShell 命令来管理 Web Apps。
 
 若要了解如何管理资源组，请参阅[将 Azure PowerShell 与 Azure Resource Manager 搭配使用](/documentation/articles/powershell-azure-resource-manager/)。
 

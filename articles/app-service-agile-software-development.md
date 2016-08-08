@@ -36,7 +36,7 @@
 
 -	部署体系结构分成三个不同的环境（或 Azure 中的[资源组](/documentation/articles/resource-group-overview/)），各有其自身的 App Service 计划、[缩放](/documentation/articles/web-sites-scale/)设置和 SQL 数据库。 
 -	你可以单独管理每个环境。它们甚至可以存在于不同的订阅中。
--	过渡和生产环境实现为相同 Web 应用应用的两个槽。
+-	过渡和生产环境实现为相同 Web 应用的两个槽。
 -	在过渡槽（包含生产数据）上验证主分支的提交时，已验证的过渡应用将交换到生产槽，且[不会造成停机](/documentation/articles/web-sites-staged-publishing/)。
 
 生产和过渡环境由 [*&lt;repository\_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) 中的模板定义。
@@ -53,11 +53,6 @@
 -	一个 [GitHub](https://github.com/) 帐户
 -	Git Shell（与 [GitHub for Windows](https://windows.github.com/) 一起安装）- 可让你在相同的会话中运行 Git 和 PowerShell 命令 
 -	最新的 [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi) 软件
-	
-	>[AZURE.NOTE] 如果使用的是 Auzre PowerShell 1.0 或更高版本，需要对“deploy.ps1”进行大量修改。
-	><p> 1. 需要删除所有 `Switch-AzureMode` 命令。
-	><p> 2. 将 `Get-AzureResource` 替换为 `Get-AzureRmResource`，并删除 `-OutputObjectFormat` 参数
-	><p> 3. 将 `New-AzureResourceGroup` 解构为 `New-AzureRmResourceGroup` 和 `New-AzureRmResourceGroupDeployment`，例如 `New-AzureRmResourceGroup -Name $RG_Name -Location $RG_Location` 和 `New-AzureRmResourceGroupDeployment -Verbose -name $RG_Name -ResourceGroupName $RG_Name -TemplateFile ".\$TemplateFile" -TemplateParameterFile ".\temp.json" -ErrorAction Stop`
 
 -	基本了解以下知识：
 	-	[Azure 资源管理器](/documentation/articles/resource-group-overview/)模板部署
@@ -90,7 +85,7 @@
 	><p> 1. 打开文件“ProdAndStage.json”，然后搜索“sourcecontrols”。
 	><p> 2. 在块和 fater `"branch": "[parameters('branch')]"` 中添加 `"IsManualIntegration": true`
 	><p> 3. 在“ProdAndStage.json”和“deploy.ps1”中，将“West US”或“East US”替换为“China East”或“China North”
-	><p> 由于 Ibiza 门户尚未在 Azure 中国区推出，因此我们无法设置 GitHub 凭据。
+	><p> 在 Azure 中国区还不能使用 Ibiza 门户来管理 Azure Web 应用，因此我们无法设置 GitHub 凭据。
 
 4.	出现提示时，键入所需的用户名和密码来访问数据库。
 
@@ -105,8 +100,6 @@
 		.\swap -Name ToDoApp<unique_string>master
 
 	![](./media/app-service-agile-software-development/production-4-swap.png)
-
-	>[AZURE.NOTE] 对于 Azure PowerShell 1.0 和更高版本，请删除“swap.ps1”中的所有 `Switch-AzureMode` 命令。
 
 7.	脚本完成后，请返回浏览到前端的地址 (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/)，以查看在生产环境中运行的应用程序。
  
@@ -186,7 +179,7 @@
 
 就这么简单！
 
-转到测试环境的 Web 应用边栏选项卡，以查看新提交是否已推送到测试环境（合并到 NewUpdate 分支）。然后，单击“浏览”查看样式更改是否在 Azure 中实时运行。
+转到测试环境的 Web 应用管理页面，以查看新提交是否已推送到测试环境（合并到 NewUpdate 分支）。然后，单击“浏览”查看样式更改是否在 Azure 中实时运行。
 
 ## 将更新部署到生产环境 ##
 
