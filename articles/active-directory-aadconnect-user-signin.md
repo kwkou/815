@@ -19,7 +19,8 @@
 Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你可以从多个不同方式中选择启用此设置的方式。
 
 ## 选择用户登录方法
-由于大多数组织只想让用户登录 Office 365、SaaS 应用程序和其他基于 Azure AD 的资源，因此建议使用默认的密码同步选项。然而，某些组织出于特定的原因而需要使用联合登录选项（例如 AD FS）。其中包括：
+由于大多数组织只想让用户登录 Office 365、SaaS 应用程序和其他基于 Azure AD 的资源，因此建议使用默认的密码同步选项。
+然而，某些组织出于特定的原因而需要使用联合登录选项（例如 AD FS）。其中包括：
 
 - 组织已部署 AD FS 或第三方联合身份验证提供者
 - 安全策略禁止将密码哈希同步到云
@@ -35,7 +36,7 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
 
 <center>![云](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
-[有关密码同步的详细信息](https://msdn.microsoft.com/library/azure/dn246918.aspx)
+[有关密码同步的详细信息](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)
 
 
 ### 使用 Windows Server 2012 R2 场中新的或现有 AD FS 的联合
@@ -76,7 +77,8 @@ Azure Active Directory 中的每个目录随附内置域名，格式为 contoso.
 ## Azure AD 登录配置
 
 ### 使用 Azure AD Connect 配置 Azure AD 登录
-Azure AD 登录体验取决于 Azure AD是否能够匹配要同步到 Azure AD 目录中已验证的某个自定义域的用户的用户主体名后缀。Azure AD Connect 在配置 Azure AD 登录设置时将提供帮助，以便用户在云中的登录体验类似于本地体验。Azure AD Connect 将列出针对域定义的 UPN 后缀，尝试将它们与 Azure AD 中的自定义域进行匹配，并帮助你根据需要采取的相应操作。Azure AD 的登录页列出了针对本地 Active directory 定义的 UPN 后缀，并根据每个后缀显示相应的状态。状态值可以是下列其中一项：
+Azure AD 登录体验取决于 Azure AD是否能够匹配要同步到 Azure AD 目录中已验证的某个自定义域的用户的用户主体名后缀。Azure AD Connect 在配置 Azure AD 登录设置时将提供帮助，以便用户在云中的登录体验类似于本地体验。Azure AD Connect 将列出针对域定义的 UPN 后缀，尝试将它们与 Azure AD 中的自定义域进行匹配，并帮助你根据需要采取的相应操作。
+Azure AD 的登录页列出了针对本地 Active directory 定义的 UPN 后缀，并根据每个后缀显示相应的状态。状态值可以是下列其中一项：
 
 * 已验证：Azure AD Connect 可在 Azure AD 中找到匹配的已验证域，不需要采取任何操作
 * 未验证：Azure AD Connect 可在 Azure AD 中找到匹配的但未验证的自定义域。用户应验证自定义域，以确保用户的 UPN 后缀不会在同步之后更改为默认的 .partner.onmschina.cn 后缀。
@@ -134,7 +136,6 @@ UserPrincipalName - 属性 userPrincipalName 是用户登录 Azure AD 和 Office
 >[AZURE.NOTE] 如果你只是要暂时切换到密码同步，请选中“不要转换用户帐户”。不选中该选项会导致将每个用户转换为联合登录
   
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
-了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/)的详细信息
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/)的详细信息
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0801_2016-->

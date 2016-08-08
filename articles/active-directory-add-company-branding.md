@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="04/16/2016" 
-	wacn.date="07/19/2016"/>
+	ms.date="07/13/2016"
+	wacn.date="08/08/2016"/>
 
 # 在登录页和访问面板页中添加公司品牌
 
@@ -35,12 +35,12 @@
 
 如果你已对登录页应用了更改，最多需要一小时更改才会出现。
 
-仅当你使用租户特定的 URL（例如 https://outlook.com/**contoso**.com 或 https://mail.**contoso**.com ）访问服务时，才出现带有品牌的登录页。
+仅当你使用租户特定的 URL（例如 https://outlook.com/**contoso**.com 或 https://mail.**contoso**.com）访问服务时，才出现带有品牌的登录页。
 
-当你使用非租户特定的 URL（例如 https://mail.office365.com ）访问服务时，将出现没有品牌的登录页。在此情况下，输入你的用户 ID 或选择用户磁贴之后，品牌就会出现。
+当你使用非租户特定的 URL（例如 https://mail.office365.com）访问服务时，将出现没有品牌的登录页。在此情况下，输入你的用户 ID 或选择用户磁贴之后，品牌就会出现。
 
-
-
+> [AZURE.NOTE]
+>
 - 在已配置品牌的 Azure 经典门户的“Active Directory”>“目录”>“域”部分中，你的域名必须显示为“活动”。
 
 - 登录页品牌不会带到 Microsoft 的使用者登录页。如果你使用个人 Microsoft 帐户登录，则可以看到 Azure AD 呈现的经过品牌打造的用户磁贴列表，但你组织的品牌将不会应用于 Microsoft 帐户登录页。
@@ -116,8 +116,8 @@
 
 假设有以下配置：
 
-- 默认的横幅徽标和英文登录页文本 
-- 特定于德语的登录页文本 
+- 默认的横幅徽标和英文登录页文本
+- 特定于德语的登录页文本
 
 如果你的语言首选项是德语，则会显示默认的横幅标志，但文本是德语。
 
@@ -165,7 +165,8 @@
     e.删除所有文本框中的文本。
 
 4. 单击“保存”按钮以删除这些元素。
-5. 如有必要，请再次单击“自定义品牌”，然后对需要删除的所有特定于语言的品牌重复这些步骤。当你单击“自定义品牌”并看到未配置任何现有设置的“自定义默认品牌”表单时，所有品牌设置均已删除。
+5. 如有必要，请再次单击“自定义品牌”，然后对需要删除的所有特定于语言的品牌重复这些步骤。
+当你单击“自定义品牌”并看到未配置任何现有设置的“自定义默认品牌”表单时，所有品牌设置均已删除。
 
 ## 测试和示例
 
@@ -173,8 +174,8 @@
 
 **若要验证是否已应用你的品牌，请执行以下操作：**
 
-1. 打开 InPrivate 或 Incognito 浏览器会话。 
-2. 访问 https://outlook.com/contoso.com （将 contoso.com 替换为你自定义的域）。 
+1. 打开 InPrivate 或 Incognito 浏览器会话。
+2. 访问 https://outlook.com/contoso.com（将 contoso.com 替换为你自定义的域）。
 
 这一点同样适用于类似于 contoso.onmicrosoft.com 的域。
 
@@ -214,5 +215,4 @@ Name | 说明 | 约束 | 建议
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
-
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="05/19/2016"
-	wacn.date="08/02/2016"/>
+	ms.date="07/14/2016"
+	wacn.date="08/08/2016"/>
 
 
 # 将本地标识与 Azure Active Directory 集成
@@ -23,7 +23,7 @@ Azure AD Connect 会将你的本地目录与 Azure Active Directory 集成。这
 ![什么是 Azure AD Connect](./media/active-directory-aadconnect/arch.png)
 
 ## 为何使用 Azure AD Connect
-将本地目录与 Azure AD 集成后，可以让用户使用通用标识访问位于云中和本地的资源，从而提高他们的生产率。通过这种集成，用户和组织可以享受到以下好处：
+将本地目录与 Azure AD 集成后，可以让用户使用通用标识访问位于云中和本地的资源，从而提高他们的生产率。用户和组织可以享受到以下好处：
 
 - 用户可以使用单个标识来访问本地应用程序和云服务，例如 Office 365。
 
@@ -47,13 +47,13 @@ health
 可以在 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkId=615771)找到 Azure AD Connect 的下载文件。
 
 
-| 解决方案 | 方案 |
-| ----- | ----- |
-| 开始之前 | <li>[Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/)</li> |
-| [快速设置](/documentation/articles/active-directory-aadconnect-get-started-express/) | <li>适用于单林 AD 的推荐默认选项。</li> <li>使用密码同步以同一密码进行用户登录。</li>
-| [自定义设置](/documentation/articles/active-directory-aadconnect-get-started-custom/) | <li>有多个林时使用。支持许多[本地拓扑](/documentation/articles/active-directory-aadconnect-topologies/)。</li> <li>自定义登录选项，例如用于联合身份验证的 ADFS，或使用第三方标识提供者。</li> <li>自定义同步功能，例如筛选和写回。</li>
-| [从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/) | <li>如果你有已在运行的现有 DirSync 服务器。</li>
-| [从 Azure AD Sync 或 Azure AD Connect 升级](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/)| <li>根据你的偏好，你可以选择多种不同的方法。</li>
+ 解决方案 | 方案 
+ ----- | ----- |
+开始之前 - [硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites) | <li>开始安装 Azure AD Connect 之前所要完成的步骤。</li>
+[快速设置](/documentation/articles/active-directory-aadconnect-get-started-express) | <li>如果你只有一个林 AD，则建议使用此选项。</li> <li>使用密码同步以同一密码进行用户登录。</li>
+ [自定义设置](/documentation/articles/active-directory-aadconnect-get-started-custom) | <li>有多个林时使用。支持许多[本地拓扑](/documentation/articles/active-directory-aadconnect-topologies)。</li> <li>自定义登录选项，例如用于联合身份验证的 ADFS，或使用第三方标识提供者。</li> <li>自定义同步功能，例如筛选和写回。</li>
+ [从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started) | <li>如果你有已在运行的现有 DirSync 服务器。</li>
+ [从 Azure AD Sync 或 Azure AD Connect 升级](/documentation/articles/active-directory-aadconnect-upgrade-previous-version)| <li>根据你的偏好，你可以选择多种不同的方法。</li>
 
 
 [安装后](/documentation/articles/active-directory-aadconnect-whats-next/)，你应该验证程序是否按预期工作，并将许可证分配给用户。
@@ -72,16 +72,16 @@ health
 
 你还要预先了解[操作](/documentation/articles/active-directory-aadconnectsync-operations/)注意事项。你可能要部署一台待机服务器，以便在发生[灾难](/documentation/articles/active-directory-aadconnectsync-operations/#disaster-recovery)时轻松故障转移。如果你要频繁进行配置更改，则应该计划部署一台[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)服务器。
 
-| 主题 | |
-| --------- | --------- |
-| 支持的拓扑 | [Azure AD Connect 的拓扑](/documentation/articles/active-directory-aadconnect-topologies/) |
-| 设计概念 | [Azure AD Connect 设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/) |
-| 用于安装的帐户 | [有关 Azure AD Connect 凭据和权限的更多信息](/documentation/articles/active-directory-aadconnect-accounts-permissions/) |
-| 操作规划 | [Azure AD Connect 同步：操作任务和注意事项](/documentation/articles/active-directory-aadconnectsync-operations/) |
-| 用户登录选项 | [Azure AD Connect 用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/) |
+主题 |  
+ --------- | --------- 
+ 支持的拓扑 | [Azure AD Connect 的拓扑](/documentation/articles/active-directory-aadconnect-topologies) 
+ 设计概念 | [Azure AD Connect 设计概念](/documentation/articles/active-directory-aadconnect-design-concepts) 
+ 用于安装的帐户 | [有关 Azure AD Connect 凭据和权限的更多信息](/documentation/articles/active-directory-aadconnect-accounts-permissions) 
+ 操作规划 | [Azure AD Connect 同步：操作任务和注意事项](/documentation/articles/active-directory-aadconnectsync-operations) 
+ 用户登录选项 | [Azure AD Connect 用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/) 
 
-## <a name="configure-features"></a>配置功能
-Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能。在某些情况下，有些功能可能需要在特定方案和拓扑中进行其他配置。
+## <a name="configure-features"></a>配置同步功能
+Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能。在某些方案和拓扑中，有些功能可能需要进行其他配置。
 
 如果你要限制可将哪些对象同步到 Azure AD，可以使用[筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)。默认情况下，会同步所有用户、联系人、组和 Windows 10 计算机，但你可以根据域、OU 或属性限制这些对象。
 
@@ -96,13 +96,13 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 
 ### 功能配置后续步骤
 
-| 主题 | |
-| --------- | --------- |
-| 配置筛选 | [Azure AD Connect 同步：配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/) |
-| 密码同步 | [Azure AD Connect 同步：实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/) |
-| 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/) |
-| 防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/) |
-| 自动升级 | [Azure AD Connect：自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)|
+ 主题 |  
+ --------- | --------- |
+ 配置筛选 | [Azure AD Connect 同步：配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering) 
+ 密码同步 | [Azure AD Connect 同步：实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization) 
+ 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started) 
+ 防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes) 
+ 自动升级 | [Azure AD Connect：自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade)
 
 ## <a name="customize-azure-ad-connect-sync"></a>自定义 Azure AD Connect 同步
 Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配置。但总会有一些情况使得默认配置不适用，因此你必须进行调整。你可以根据本部分和链接主题中所述进行更改。
@@ -153,5 +153,4 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 
 有关将本地目录扩展到云的 Ignite 2015 演示文稿。
 
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

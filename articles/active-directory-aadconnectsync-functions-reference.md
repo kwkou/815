@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/23/2016"
-	wacn.date="07/19/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/08/2016"/>
 
 
 # Azure AD Connect 同步：函数参考
@@ -198,7 +198,7 @@ ConvertFromBase64 函数将指定的 base64 编码值转换为规则的字符串
 `ConvertFromBase64("SABlAGwAbABvACAAdwBvAHIAbABkACEA")`  
 `ConvertFromBase64("SGVsbG8gd29ybGQh", UTF8)`
 
-这两个示例均返回 "*Hello world!*"
+这两个示例均返回 "Hello world!"
 
 ----------
 ### ConvertFromUTF8Hex
@@ -217,7 +217,7 @@ ConvertFromUTF8Hex 函数将指定的 UTF8 Hex 编码值转换为字符串。
 
 **示例：**  
 `ConvertFromUTF8Hex("48656C6C6F20776F726C6421")`  
-返回 "*Hello world!*"
+返回 "Hello world!"
 
 ----------
 ### ConvertToBase64
@@ -288,7 +288,7 @@ CStr 函数转换为字符串数据类型。
 **语法：**  
 `str CStr(num value)`  
 `str CStr(ref value)`  
-`str CStr(bool value)`
+`str CStr(bool value)`  
 
 - value：可以是数字值、引用属性或布尔值。
 
@@ -1123,4 +1123,4 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 * [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/06/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="07/14/2016"
+	wacn.date="08/08/2016"/>
 
 
 # Azure AD Connect 和联合身份验证
@@ -42,5 +42,6 @@
 ## 其他资源
 
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
+* [Azure 中的 AD FS 部署](/documentation/articles/active-directory-aadconnect-azure-adfs/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/19/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="06/27/2016"
+   wacn.date="08/08/2016"/>
 
 # Azure AD Connect：从旧版升级到最新版本
 本主题介绍可将 Azure AD Connect 安装升级到最新版本的不同方法。我们建议你使用最新版本的 Azure AD Connect。
@@ -83,4 +83,4 @@
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/19/2016"
-	wacn.date="07/21/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/08/2016"/>
 
 
 # Azure AD Connect 同步：Synchronization Service Manager
@@ -38,16 +38,16 @@ completed-*-warnings | 运行已完成，但某些数据并未处于预期的状
 当你选择某一行时，底部将更新以显示该运行的详细信息。在底部的最左边，可能会有一份显示“步骤编号”的列表。仅当林中有多个域，而且每个域都以一个步骤表示时，才会显示此列表。你可以在“分区”标题下方找到域名。在“同步统计信息”下方，可以找到有关已处理更改次数的详细信息。你可以单击链接，获取已更改对象的列表。如果有对象发生错误，这些对象将显示在“同步错误”下方。
 
 ## 排查“操作”选项卡中的错误
-![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/errorsync.png)  
+![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/errorsync.png) 
 当你遇到错误时，发生错误的对象与错误本身都是链接，这些链接将提供更多信息。
 
 先单击错误字符串（上图中的 **sync-rule-error-function-triggered**）。你会先看到对象概述。若要查看实际的错误，可单击“堆栈跟踪”按钮。这将提供错误的调试级别信息。
 
 **提示：**你可以在“调用堆栈信息”框中单击右键，然后依次选择“全选”、“复制”。接着可以复制堆栈，并在最喜爱的编辑器（例如记事本）中查看此错误。
 
-- 如果错误来自 **SyncRulesEngine**，则调用堆栈信息首先会列出对象上的所有属性。向下滚动，直到你看到 **InnerException =>** 标题为止。  
-![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/errorinnerexception.png)  
-- 下一行将显示错误。在上图中，错误来自所创建的自定义同步规则 Fabrikam。
+- 如果错误来自 **SyncRulesEngine**，则调用堆栈信息首先会列出对象上的所有属性。向下滚动，直到你看到 **InnerException =>** 标题为止。
+![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/errorinnerexception.png) 
+下一行将显示错误。在上图中，错误来自所创建的自定义同步规则 Fabrikam。
 
 如果错误本身未提供足够的信息，则请查看数据本身。你可以单击对象标识符的链接，然后[在整个系统中跟踪对象及其数据](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#follow-an-object-and-its-data-through-the-system)。
 
@@ -56,4 +56,4 @@ completed-*-warnings | 运行已完成，但某些数据并未处于预期的状
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="06/27/2016"
-	wacn.date="08/01/2016"/>
+	wacn.date="08/08/2016"/>
 
 
 # Azure AD Connect 同步：Synchronization Service Manager
@@ -32,4 +32,4 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0801_2016-->
