@@ -45,7 +45,7 @@
 
 1. 在同一个终端中登录到 Azure，如下所示：
 
-        azure login -e AzureChinaCloud -u <your username>
+        azure login -e AzureChinaCloud
 
     根据提示，在浏览器中继续使用具有 Azure 订阅的 Microsoft 帐户登录。
 

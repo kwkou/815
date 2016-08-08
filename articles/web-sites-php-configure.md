@@ -57,7 +57,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 1. 打开终端，并登录到你的帐户。
 
-        azure login -e AzureChinaCloud -u <your account>
+        azure login -e AzureChinaCloud
 
 2. 设置 Web 应用的 PHP 版本。
 

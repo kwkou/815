@@ -26,7 +26,7 @@ Azure CLI 是从任何平台管理 Azure 基础结构的好办法。本文演示
 
 -	你必须具有 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个[试用帐户](/pricing/1rmb-trial/)。
 -	[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。
--	将 Azure CLI 安装与个人 Azure 帐户或者工作或学校 Azure 帐户关联，然后使用 `azure login -e AzureChinaCloud -u <your account>` 命令从 Azure CLI 登录。若要了解区别并进行选择，请参阅[从 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
+-	将 Azure CLI 安装与个人 Azure 帐户或者工作或学校 Azure 帐户关联，然后使用 `azure login -e AzureChinaCloud` 命令从 Azure CLI 登录。若要了解区别并进行选择，请参阅[从 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 -	在运行以下任何命令之前，通过运行 `azure config mode arm` 命令将 Azure CLI 切换到资源管理器模式下。
 
 ## Redis 缓存属性
