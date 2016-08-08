@@ -103,7 +103,7 @@
 - mystorageaccount.queue.core.chinacloudapi.cn
 
 
-## 后续步骤
+## <a name="next-steps"></a> 后续步骤
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

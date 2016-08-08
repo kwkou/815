@@ -2,7 +2,7 @@
 
 > [AZURE.NOTE] Azure 具有两个不同的部署模型：[Resource Manager][resource-manager-overview] 和经典。本文使用 Resource Manager，Azure 建议将它用于新部署。
 
-建议不要对生产工作负荷使用单个 VM，因为 Azure 上的单个 VM 没有正常运行时间 SLA。若要获取 SLA，必须在可用性集中部署多个 VM。有关详细信息，请参阅[在 Azure 上运行多个 Windows VM][multi-vm]。
+建议不要对生产工作负荷使用单个 VM，因为 Azure 上的单个 VM 没有正常运行时间 SLA。若要获取 SLA，必须在可用性集中部署多个 VM。
 
 ## 体系结构关系图
 
@@ -36,7 +36,7 @@
 
 - 建议使用 DS 系列。有关详细信息，请参阅[虚拟机大小][virtual-machine-sizes]。将现有工作负荷移到 Azure 时，最初是使用与本地服务器最匹配的 VM 大小。然后测量与 CPU、内存和磁盘 IOPS 有关的实际工作负荷的性能，并根据需要调整大小。此外，如果需要多个 NIC，请注意每种大小的 NIC 限制。
 
-- 当你预配 VM 和其他资源时，必须指定位置。通常，选择离你的内部用户或客户最近的位置。但是，并非所有 VM 大小都可在所有位置中使用。有关详细信息，请参阅[服务（按区域）][services-by-region]。若要列出给定位置中可用的 VM 大小，请运行以下 Azure CLI 命令：
+- 当你预配 VM 和其他资源时，必须指定位置。通常，选择离你的内部用户或客户最近的位置。但是，并非所有 VM 大小都可在所有位置中使用。若要列出给定位置中可用的 VM 大小，请运行以下 Azure CLI 命令：
 
         azure vm sizes --location <location>
 
@@ -70,7 +70,7 @@
 
 - 你可以通过[更改 VM 大小][vm-resize]来扩大或缩小 VM。
 
-- 若要水平扩大，请将两个或更多 VM 放入负载平衡器后面的可用性集中。有关详细信息，请参阅[在 Azure 上运行多个 Windows VM][multi-vm]。
+- 若要水平扩大，请将两个或更多 VM 放入负载平衡器后面的可用性集中。
 
 ## 可用性注意事项
 
@@ -84,7 +84,7 @@
 
 ## 可管理性注意事项
 
-- **资源组**。 将共享相同生命周期的紧密耦合资源放入同一[资源组][resource-manager-overview]中。资源组可让你以组的形式部署和监视资源，并按资源组汇总计费成本。你还可以删除作为集的资源，这对于测试部署非常有用。为资源指定有意义的名称。这样，可更轻松地找到特定资源并了解其角色。请参阅 [Azure 资源的建议命名约定][naming conventions]。
+- **资源组**。 将共享相同生命周期的紧密耦合资源放入同一[资源组][resource-manager-overview]中。资源组可让你以组的形式部署和监视资源，并按资源组汇总计费成本。你还可以删除作为集的资源，这对于测试部署非常有用。为资源指定有意义的名称。这样，可更轻松地找到特定资源并了解其角色。
 
 - **VM 诊断**。 启用监视和诊断，包括基本运行状况指标、诊断基础结构日志和[启动诊断][boot-diagnostics]。如果你的 VM 陷入不可启动状态，启动诊断可帮助你诊断启动失败。有关详细信息，请参阅[启用监视和诊断][enable-monitoring]。使用 [Azure 日志收集][log-collector]扩展收集 Azure 平台日志并将其上载到 Azure 存储空间。
 
@@ -106,11 +106,6 @@
 
 ## 安全注意事项
 
-- 使用 [Azure 安全中心][security-center]，可获得 Azure 资源的安全状态的核心概况。安全中心监视潜在的安全问题，如系统更新、反恶意软件，并全面描述了你的部署的安全运行状况。
-
-    - 安全中心针对每个 Azure 订阅进行配置。按[使用安全中心]中所述，启用安全数据收集。
-    - 启用数据收集后，安全中心将自动扫描该订阅下创建的所有 VM。
-
 - **修补程序管理**。 如果启用，安全中心将检查是否缺少安全更新和关键更新。使用 VM 上的[组策略设置][group-policy]可启用自动系统更新。
 
 - **反恶意软件**。 如果启用，安全中心将检查是否已安装反恶意软件。还可以使用安全中心从 Azure 门户中安装反恶意软件。
@@ -125,13 +120,9 @@
 
 - 使用[审核日志][audit-logs]可查看预配操作和其他 VM 事件。
 
-- 如果需要加密 OS 磁盘和数据磁盘，请考虑使用 [Azure 磁盘加密][disk-encryption]。
-
 ## 解决方案组件
 
 以下 Windows 批处理脚本执行 [Azure CLI][azure-cli] 命令以部署单个 VM 实例及相关的网络和存储资源，如上图中所示。
-
-该脚本使用 [Azure 资源的建议命名约定][naming conventions]中所述的命名约定。
 
     ECHO OFF
     SETLOCAL
@@ -244,7 +235,7 @@
 
 ## 后续步骤
 
--要使[虚拟机的 SLA][vm-sla] 适用，必须在一个可用性集中部署两个或更多实例。有关详细信息，请参阅[在 Azure 上运行多个 Windows VM][multi-vm]。
+-要使[虚拟机的 SLA][vm-sla] 适用，必须在一个可用性集中部署两个或更多实例。
 
 <!-- links -->
 
@@ -278,7 +269,7 @@
 [Resize-VHD]: https://technet.microsoft.com/zh-cn/library/hh848535.aspx
 [Resize virtual machines]: https://azure.microsoft.com/blog/resize-virtual-machines/
 [resource-lock]: /documentation/articles/resource-group-lock-resources/
-[resource-manager-overview]: ../articles/documentation/articles/resource-group-overview
+[resource-manager-overview]: /documentation/articles/resource-group-overview
 [security-center]: https://azure.microsoft.com/services/security-center/
 [select-vm-image]: /documentation/articles/virtual-machines-windows-cli-ps-findimage/
 [services-by-region]: https://azure.microsoft.com/regions/#services
@@ -288,7 +279,7 @@
 [virtual-machine-sizes]: /documentation/articles/virtual-machines-windows-sizes/
 [vm-disk-limits]: /documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits
 [vm-resize]: /documentation/articles/virtual-machines-linux-change-vm-size/
-[vm-sla]: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/
+[vm-sla]: /support/sla/virtual-machines/
 [0]: ./media/guidance-blueprints/compute-single-vm.png "Azure VM 的一般体系结构"
 
 <!---HONumber=Mooncake_0801_2016-->

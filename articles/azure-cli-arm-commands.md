@@ -1673,7 +1673,7 @@
 
 	tag show [options] [name]
 
-## azure vm：用于管理 Azure 虚拟机的命令
+## <a name="azure-vm-commands-to-manage-your-azure-virtual-machines"></a> azure vm：用于管理 Azure 虚拟机的命令
 
 **创建 VM**
 

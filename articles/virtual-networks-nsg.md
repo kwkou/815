@@ -58,7 +58,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 - **INTERNET:** 此默认标记表示虚拟网络外部的 IP 地址空间，可以通过公共 Internet 进行访问。此范围还包括 [Azure 拥有的公共 IP 空间](https://www.microsoft.com/download/details.aspx?id=41653)。
 
-###<a name="Default-Rules"></a> 默认规则
+###<a name="Default-Rules" id="default-rules"></a> 默认规则
 
 所有 NSG 都包含一组默认规则。默认规则无法删除，但由于给它们分配的优先级最低，可以用创建的规则来重写它们。
 

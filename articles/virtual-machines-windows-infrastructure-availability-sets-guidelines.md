@@ -44,7 +44,7 @@ Azure 中的底层基础结构分为更新域和容错域。这些域是按将�
 可对每个应用程序层利用负载平衡器，使其与可用性集一起工作，确保始终可将流量路由到正在运行的实例。不使用负载平衡器，你的 VM 可能在计划内和计划外维护事件中继续运行，但如果主 VM 不可用，最终用户可能无法解决这些问题。
 
 
-## 后续步骤
+## <a name="next-steps"></a> 后续步骤
 [AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

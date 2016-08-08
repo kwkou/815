@@ -28,7 +28,7 @@
 
 * **HPC Pack 安装媒体** - 若要安装 HPC Pack 客户端实用工具，可从 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkId=328024)下载最新版 HPC Pack (HPC Pack 2012 R2) 的免费安装包。确保下载与头节点 VM 上安装的版本相同的 HPC Pack 版本。
 
-## 步骤 1：在头节点上安装并配置 Web 组件
+## <a name="step-1:-install-and-configure-the-web-components-on-the-head-node"></a> 步骤 1：在头节点上安装并配置 Web 组件
 
 若要启用通过 HTTPS 以 REST 接口将作业提交到群集的功能，请在 HPC Pack 头节点上安装并配置 HPC Pack Web 组件（如果尚未配置）。必须先运行 HpcWebComponents.msi 安装文件，以安装 Web 组件。然后，通过运行 HPC PowerShell 脚本 Set-HPCWebComponents.ps1 来配置组件。
 

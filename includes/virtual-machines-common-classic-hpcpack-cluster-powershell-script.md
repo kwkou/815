@@ -36,7 +36,7 @@
 
 * **AdminPassword** - 指定管理员的密码。如果未在命令行中指定，脚本将提示你输入密码。
 
-* **HPCImageName**（可选）- 指定用于部署 HPC 群集的 HPC Pack VM 映像名称。它必须是 Microsoft 通过 Azure 库提供的 HPC Pack 映像。如果未指定（在大多数情况下建议不要指定），脚本将选择最新发布的 [HPC Pack 映像](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/)。最新映像基于装有 HPC Pack 2012 R2 Update 3 的 Windows Server 2012 R2 Datacenter。
+* **HPCImageName**（可选）- 指定用于部署 HPC 群集的 HPC Pack VM 映像名称。它必须是 Microsoft 通过 Azure 库提供的 HPC Pack 映像。如果未指定（在大多数情况下建议不要指定），脚本将选择最新发布的 HPC Pack 映像。最新映像基于装有 HPC Pack 2012 R2 Update 3 的 Windows Server 2012 R2 Datacenter。
 
     >[AZURE.NOTE] 指定无效的 HPC Pack 映像会导致部署失败。
 
