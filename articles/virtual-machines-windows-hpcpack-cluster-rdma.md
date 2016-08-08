@@ -223,7 +223,7 @@ Microsoft HPC Pack 是一个免费提供的工具，可在 Azure 中创建基于
 * 使用 HPC Pack 的替代方法是使用 Azure Batch 服务进行开发，以便在 Azure 中的计算节点池上运行 MPI 应用程序。请参阅 [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch（在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序）](/documentation/articles/batch-mpi/)。
 
 <!--Image references-->
-[burst]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/burst.png
+
 [iaas]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/iaas.png
 [pingpong1]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/pingpong1.png
 [pingpong2]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/pingpong2.png

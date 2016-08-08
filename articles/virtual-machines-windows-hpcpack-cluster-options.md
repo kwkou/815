@@ -54,9 +54,4 @@
 * [增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)
 
 
-## 为 MPI 工作负荷创建 RDMA 群集
-
-* [使用 HPC Pack 设置一个运行 MPI 应用程序的 Windows RDMA 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-rdma-cluster/)
-
-
 <!---HONumber=Mooncake_1207_2015-->
