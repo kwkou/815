@@ -18,7 +18,7 @@
 Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。
 
 
-> [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册试用的 Azure 帐户](/pricing/1rmb-trial/)。
+> [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册免费的 Azure 帐户](/pricing/1rmb-trial/)。
 
 
 Azure AD 的主要功能之一是管理对资源的访问。这些资源可以是目录的一部分（例如，用于通过目录中的角色管理对象的权限）、目录外部的资源（例如 SaaS 应用程序、Azure 服务以及 SharePoint 站点）或者本地资源。可通过四种方式向用户分配资源访问权限：

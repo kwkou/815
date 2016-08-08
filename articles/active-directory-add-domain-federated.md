@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/18/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="06/08/2016"
+	wacn.date="07/26/2016"/>
 
 # 将自定义域名添加到 Azure Active Directory
 
@@ -69,6 +69,6 @@
 -   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)
 -   [了解 Azure AD 中的域管理概念](/documentation/articles/active-directory-add-domain-concepts/)
 -   [在用户登录时显示公司的品牌](/documentation/articles/active-directory-add-company-branding/)
--   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains/)
+-   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=AcomDC_0718_2016-->

@@ -49,7 +49,7 @@
 
 将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍如何进一步配置你的应用程序。有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
-有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
+有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](active-directory-authentication-scenarios.md)。
 
 ### 同意框架概述
 
@@ -305,7 +305,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 本部分说明如何从 Azure AD 租户中删除应用程序。
 
 ### 删除组织编写的应用程序
-这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司拥有的应用程序”筛选器下显示的应用程序。从技术层面讲，这些是通过 Azure 经典门户以手动方式注册的应用程序，或者通过 PowerShell 或图形 API 以编程方式注册的应用程序。更具体地说，它们由租户中的应用程序与服务主体对象表示。有关详细信息，请参阅 [Application Objects and Service Principal Objects（应用程序对象和服务主体对象）](/documentation/articles/active-directory-application-objects/)。
+这些应用程序是 Azure AD 租户的“应用程序”主页面上“我的公司拥有的应用程序”筛选器下显示的应用程序。从技术层面讲，这些是通过 Azure 经典门户以手动方式注册的应用程序，或者通过 PowerShell 或图形 API 以编程方式注册的应用程序。更具体地说，它们由租户中的应用程序与服务主体对象表示。有关详细信息，请参阅 [Application Objects and Service Principal Objects（应用程序对象和服务主体对象）](active-directory-application-objects.md)。
 
 #### 从目录中删除单租户应用程序
 
@@ -347,6 +347,6 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 - 了解 [Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
 
-- 访问 [Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
+- 访问 [Active Directory 开发人员指南](/documentation/articles/active-directory-developer's guide)
 
 <!---HONumber=AcomDC_0718_2016-->

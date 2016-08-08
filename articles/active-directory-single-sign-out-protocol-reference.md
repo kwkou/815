@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/23/2016"
-	wacn.date="08/02/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 单一注销 SAML 协议
@@ -82,4 +82,4 @@ Azure AD 将此值设置为 `https://login.microsoftonline.com/<TenantIdGUID>/`�
 
 Azure AD 使用 `Status` 元素中的 `StatusCode` 元素指示注销的成功或失败。如果注销尝试失败，`StatusCode` 元素值还包含自定义错误消息。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=AcomDC_0718_2016-->

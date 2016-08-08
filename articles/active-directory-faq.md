@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/20/2016"
-	wacn.date="08/02/2016"/>
+	wacn.date="07/26/2016"/>
 
 # Azure Active Directory 常见问题
 
@@ -18,6 +18,8 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 
 有关详细信息，请参阅 [What is Azure Active Directory?（什么是 Azure Active Directory？）](/documentation/articles/active-directory-whatis/)。
+
+
 
 ## 访问 Azure 和 Azure Active Directory
 
@@ -75,6 +77,17 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 **答：**是的，Azure Active Directory 提供 [Azure AD 访问面板](http://myapps.microsoft.com)，方便用户进行自助服务和应用程序访问。如果你是 Office 365 客户，可以在 Office 365 门户中找到许多相同的功能。
 
+有关详细信息，请参阅 [Introduction to the Access Panel（访问面板简介）](/documentation/articles/active-directory-saas-access-panel-introduction/)。
+
+
+
+---
+
+**问：Azure AD 是否可以帮助我管理本地基础结构？**
+
+**答：**可以。Azure AD Premium Edition 提供 **Connect Health**。Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结构和同步服务。
+
+有关详细信息，请参阅 [Monitor your on-premises identity infrastructure and synchronization services in the cloud（在云中监视本地标识基础结构和同步服务）](/documentation/articles/active-directory-aadconnect-health)。
 
 ---
 
@@ -135,4 +148,4 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=AcomDC_0718_2016-->

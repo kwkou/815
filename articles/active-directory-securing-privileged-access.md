@@ -4,13 +4,13 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="kgremban"
-	manager="femila"
+	manager="stevenpo"
 	editor="mwahl"/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/14/2016"
-	wacn.date="08/02/2016"/>
+	ms.date="04/15/2016"
+	wacn.date="07/26/2016"/>
 
 
 # 保护 Azure AD 中的特权访问
@@ -47,7 +47,7 @@ Azure Multi-Factor Authentication 可帮助保护对数据和应用程序的访�
 
 ## 攻击检测
 
-Azure Active Directory Identity Protection 提供一个整合的视图来让你查看影响组织标识的风险事件和潜在漏洞。Identity Protection 根据风险事件计算每个用户的用户风险级别，让你配置基于风险的策略来自动保护组织的标识。将这些策略和 Azure Active Directory 与 EMS 提供的其他条件访问控制相结合，可以自动阻止用户，或者提供有关重置密码和强制实施多重身份验证等的建议。
+[Azure Active Directory Identity Protection](/documentation/articles/active-directory-identityprotection/) 提供一个整合的视图来让你查看影响组织标识的风险事件和潜在漏洞。Identity Protection 根据风险事件计算每个用户的用户风险级别，让你配置基于风险的策略来自动保护组织的标识。将这些策略和 Azure Active Directory 与 EMS 提供的其他条件访问控制相结合，可以自动阻止用户，或者提供有关重置密码和强制实施多重身份验证等的建议。
 
 ![Azure AD Identity Protection][3]
 
@@ -59,10 +59,15 @@ Azure Active Directory Identity Protection 提供一个整合的视图来让你�
 ![设置使用 MFA 的条件性访问规则][4]
 
 
-## 相关文章
+## 角色模型
 
+若要降低安全风险，应该审查角色和委托模型以调整云服务管理角色，并纳入管理员可用性作为一项主要宗旨。此模型应利用“适时使用”功能。
+
+## 后续步骤
 
 - 启用 [Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-get-started-cloud/)
+- 启用 [Azure AD Privileged Identity Management](/documentation/articles/active-directory-privileged-identity-management-configure/)
+- 启用 [Azure AD Identity Protection](/documentation/articles/active-directory-identityprotection/)
 - 启用[条件访问控制](/documentation/articles/active-directory-conditional-access/)
 
 
@@ -74,4 +79,4 @@ Azure Active Directory Identity Protection 提供一个整合的视图来让你�
 [3]: ./media/active-directory-identityprotection/29.png
 [4]: ./media/active-directory-conditional-access/conditionalaccess-saas-apps.png
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=AcomDC_0718_2016-->

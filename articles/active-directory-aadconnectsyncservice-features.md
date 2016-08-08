@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/27/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="05/19/2016"
+	wacn.date="07/26/2016"/>
 
 # Azure AD Connect 同步服务功能
 
@@ -42,6 +42,7 @@ DirSyncFeature | 注释
 
 DirSyncFeature | 注释
 --- | ---
+DeviceWriteback | [Azure AD Connect：启用设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback/)
 DirectoryExtensions | [Azure AD Connect 同步：目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)
 PasswordSync | [使用 Azure AD Connect 同步实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)
 UnifiedGroupWriteback | [预览：组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback)
@@ -96,4 +97,4 @@ UserWriteback | 目前不支持。
 
 - [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=AcomDC_0718_2016-->

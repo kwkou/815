@@ -186,6 +186,25 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 - [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
 
+
+#### 安全/使用情况报告
+
+**类型：**常用功能
+
+
+**可用性：**
+
+| 免费版| 基本版| Premium Edition| 仅限 Office 365 应用 |
+| :-: | :-: | :-: | :-: |
+| 3 个基本报告| 3 个基本报告| 高级报告| 3 个基本报告|
+
+**更多详细信息：**
+
+- [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports/)
+
+<br>
+<hr>
+
 ## Premium 和 Basic 功能
 #### 基于组的访问管理/预配
 
@@ -308,7 +327,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 **更多详细信息：**
 
-- [什么是 Azure Multi-Factor Authentication？](/documentation/articles/multi-factor-authentication/)
+- [什么是 Azure Multi-Factor Authentication？](/documentation/articles/multi-factor-authentication/multi-factor-authentication)
 
 <br>
 <hr>
