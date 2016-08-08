@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/07/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="07/11/2016"
+   wacn.date="08/08/2016"/>
 
 # 使用 PowerShell 创建 SQL 数据仓库
 
@@ -18,7 +18,7 @@
 - [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)
 
-### 先决条件
+## 先决条件
 在开始之前，请确保符合以下先决条件。
 
 - **Azure 帐户**：若要创建帐户，请参阅 [Azure 试用版][]或 [MSDN Azure 信用额度][]。
@@ -28,7 +28,7 @@
 
 > [AZURE.NOTE] 创建新的 SQL 数据仓库可能会导致新的计费服务。有关定价的详细信息，请参阅 [SQL 数据仓库定价][]。
 
-## 创建 SQL 数据仓库数据库
+## 创建 SQL 数据仓库
 1. 打开 Windows PowerShell。
 2. 运行此 cmdlet 以登录到 Azure Resource Manager 中。
 
@@ -48,7 +48,7 @@
 
 此 cmdlet 所需的参数：
 
-- **RequestedServiceObjectiveName**：请求的 DWU 数量，采用“DWXXX”格式。DWU 表示 CPU 和内存分配。各 DWU 值表示这些资源的线性增加。目前支持的值为：100、200、300、400、500、600、1000、1200、1500、2000。
+- **RequestedServiceObjectiveName**：请求的 [DWU][] 数量。支持的值包括：DW100、DW200、DW300、DW400、DW500、DW600、DW1000、DW1200、DW1500、DW2000、DW3000 和 DW6000。
 - **DatabaseName**：要创建的 SQL 数据仓库的名称。
 - **ServerName**：用于创建过程的服务器名称（必须是 V12）。
 - **ResourceGroupName**：要使用的资源组。若要查找订阅中可用的资源，请使用 Get-AzureResource。
@@ -58,6 +58,7 @@
 有关命令参考，请参阅 [New-AzureRmSqlDatabase][]
 
 ## 后续步骤
+
 完成 SQL 数据仓库预配之后，你可能想要尝试 [加载示例数据][] 或了解如何[开发][]、[加载][]或[迁移][]数据。
 
 如果有兴趣进一步了解如何以编程方式管理 SQL 数据仓库，请查看我们有关如何使用 [PowerShell cmdlet 和 REST API][] 的文章。
@@ -65,14 +66,15 @@
 <!--Image references-->
 
 <!--Article references-->
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-load-with-bcp/
 [load sample data]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [Powershell]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
-[firewall rules]: /documentation/articles/sql-database-configure-firewall-settings
+[firewall rules]: /documentation/articles/sql-database-configure-firewall-settings/
 
-[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
+[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [how to create a SQL Data Warehouse from the Azure Portal]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started#create-an-azure-sql-database-logical-server/
 [使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell#database-setup-create-a-resource-group-server-and-firewall-rule/
@@ -89,4 +91,4 @@
 [Azure 试用版]: /pricing/1rmb-trial/
 [MSDN Azure 信用额度]: /pricing/member-offers/
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->
