@@ -4,12 +4,12 @@
 	services="notification-hubs"
 	documentationCenter=""
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="02/29/2016" 
+	ms.date="06/29/2016" 
 	wacn.date="07/12/2016"/>
 
 # 企业推送架构指南
@@ -18,7 +18,8 @@
 
 一个常见需求是在后端系统中发生了用户感兴趣的事件时，通过其移动应用程序向用户发送推送通知。例如，某个在 iPhone 上安装了银行应用的客户想要在记入她帐户的借方金额超过特定值时收到通知，或者在 Intranet 方案中，某个在 Windows Phone 上安装了预算审批应用的财务部门员工，希望在收到审批请求时获得通知。
 
-银行帐户或审批处理很可能要在某个后端系统中完成，该系统必须启动到用户的推送。可能有多个此类后端系统，所有这些系统在事件触发通知时都必须生成同样的逻辑来实现推送。此处的复杂性在于将多个后端系统与单个推送系统集成在一起，在此系统中，最终用户可能已订阅不同通知，甚至可能存在多个移动应用程序，例如，对于 Intranet 移动应用来说，一个移动应用程序可能需要从多个此类后端系统接收通知。后端系统不知道或不需要知道推送语义/技术，因此在这里常见的解决方案通常是引入一个组件，该组件轮询后端系统是否有任何感兴趣的事件并负责将推送消息发送到客户端。在这里我们将讨论一个更好的解决方案，该解决方案使用 Azure Service Bus - 主题/订阅模型，在使解决方案可缩放的同时降低了复杂性。
+银行帐户或审批处理很可能要在某个后端系统中完成，该系统必须启动到用户的推送。可能有多个此类后端系统，所有这些系统在事件触发通知时都必须生成同样的逻辑来实现推送。此处的复杂性在于将多个后端系统与单个推送系统集成在一起，在此系统中，最终用户可能已订阅不同通知，甚至可能存在多个移动应用程序，例如，对于 Intranet 移动应用来说，一个移动应用程序可能需要从多个此类后端系统接收通知。后端系统不知道或不需要知道推送语义/技术，因此在这里常见的解决方案通常是引入一个组件，该组件轮询后端系统是否有任何感兴趣的事件并负责将推送消息发送到客户端。
+在这里我们将讨论一个更好的解决方案，该解决方案使用 Azure Service Bus - 主题/订阅模型，在使解决方案可缩放的同时降低了复杂性。
 
 下面是该解决方案的一般体系结构（普遍用于多个移动应用，但在只有一个移动应用时也同样适用）
 
@@ -57,7 +58,7 @@
 
 1. **EnterprisePushBackendSystem**
 
-	a.此项目使用 WindowsAzure.ServiceBus Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
+	a.此项目使用 *WindowsAzure.ServiceBus* Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
 
 	b.这是一个简单 C# 控制台应用，模拟启动要传送到移动应用的消息的 LoB 系统。
 
@@ -121,7 +122,7 @@
 
 2. **ReceiveAndSendNotification**
 
-	a.此项目使用 WindowsAzure.ServiceBus 和 Microsoft.Web.WebJobs.Publish Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
+	a.此项目使用 *WindowsAzure.ServiceBus* 和 *Microsoft.Web.WebJobs.Publish* Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
 
 	b.这是另一个 C# 控制台应用，我们将它作为 [Azure WebJob] 运行，因为它必须连续运行以侦听来自 LoB/后端系统的消息。它将是移动后端的一部分。
 	
@@ -220,7 +221,7 @@
 
 	b.确保应用程序已启用接收 toast 通知。
 
-	c.确保在应用启动时（替换 HubName 和 DefaultListenSharedAccessSignature 后）调用以下通知中心注册代码：
+	c.确保在应用启动时（替换 *HubName* 和 *DefaultListenSharedAccessSignature* 后）调用以下通知中心注册代码：
 
 	        private async void InitNotificationsAsync()
 	        {
@@ -267,4 +268,4 @@
 [通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [Azure 经典门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -5,13 +5,13 @@
 	documentationCenter="ios"
     keywords="推送通知, 推送通知, ios 推送通知"
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/14/2016"
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/08/2016"/>
 
 # 通过 Azure 通知中心向 iOS 发送推送通知
 
@@ -54,8 +54,8 @@
 
 <ol start="6">
 <li>
-<p>单击“设置”边栏选项卡中的“通知服务”按钮，然后选择“Apple (APNS)”。<b></b><b></b><b></b>单击“上载证书”，然后选择你先前导出的 <b>.p12</b> 文件。<b></b>确保同时指定正确的密码。</p>
-<p>由于此项目用于开发，因此请务必选择“沙箱”模式。<b></b>仅当你想要将推送通知发送给从应用商店购买你应用的用户时，才使用“生产”模式。<b></b></p>
+<p>单击<b>“设置”</b>边栏选项卡中的<b>“通知服务”</b>按钮，然后选择<b>“Apple (APNS)”</b>。单击<b>“上载证书”</b>，然后选择你先前导出的 <b>.p12</b> 文件。确保同时指定正确的密码。</p>
+<p>由于此项目用于开发，因此请务必选择<b>“沙箱”</b>模式。仅当你想要将推送通知发送给从应用商店购买你应用的用户时，才使用<b>“生产”</b>模式。</p>
 </li>
 </ol>
 &emsp;&emsp;![在 Azure 门户中配置 APNS](./media/notification-hubs-ios-get-started/notification-hubs-apple-config.png)
@@ -163,6 +163,8 @@
 
 
 ## （可选）从应用发送推送通知
+
+>[AZURE.IMPORTANT] 提供这个从客户端应用发送通知查询的示例仅供学习。由于这需要将 `DefaultFullSharedAccessSignature` 呈现在客户端应用中，这使你的通知中心面临这样的风险：即用户可能会获得相应访问权限将未经授权的通知发送到你的客户端。
 
 如果你要从应用内发送推送通知，本节提供如何使用 REST 接口执行此操作的示例。
 
@@ -455,9 +457,9 @@
 
 ##后续步骤
 
-在这个简单的示例中，你已将推送通知广播到所有已注册的 iOS 设备。建议你转到 [Azure Notification Hubs Notify Users for iOS with .NET backend（Azure 通知中心 — 使用 .NET 后端通知 iOS 用户）]教程开始下一步的学习，该教程将引导你使用标记创建后端以发送推送通知。
+在这个简单的示例中，你已将推送通知广播到所有已注册的 iOS 设备。建议你转到 [Azure Notification Hubs Notify Users for iOS with .NET backend（Azure 通知中心 - 使用 .NET 后端通知 iOS 用户）]教程开始下一步的学习，该教程将引导你使用标记创建后端以发送推送通知。
 
-如果要按兴趣组划分用户，可以进一步阅读 [Use Notification Hubs to send breaking news（使用通知中心发送最新消息）]教程。
+如果要按兴趣组划分用户，可以进一步阅读 [Use Notification Hubs to send breaking news（使用通知中心发送突发新闻）]教程。
 
 有关通知中心的常规信息，请参阅[通知中心指南]。
 
@@ -494,11 +496,11 @@
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
-[Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
-[Azure Notification Hubs Notify Users for iOS with .NET backend（Azure 通知中心 — 使用 .NET 后端通知 iOS 用户）]: /documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification
-[Use Notification Hubs to send breaking news（使用通知中心发送最新消息）]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification
+[Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push/
+[Azure Notification Hubs Notify Users for iOS with .NET backend（Azure 通知中心 - 使用 .NET 后端通知 iOS 用户）]: /documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification/
+[Use Notification Hubs to send breaking news（使用通知中心发送突发新闻）]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
 
 [本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 [Azure 门户]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->
