@@ -3,14 +3,14 @@
    description="Service Fabric Reliable Actors 的计时器和提醒简介。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # 执行组件计时器和提醒
 执行组件可通过注册计时器或提醒来计划自身的定期工作。本文演示如何使用计时器和提醒，并说明它们之间的差异。
@@ -24,30 +24,30 @@
 	class VisualObjectActor : Actor, IVisualObject
 	{
 	    private IActorTimer _updateTimer;
-	
+
 	    protected override Task OnActivateAsync()
 	    {
 	        ...
-	
+
 	        _updateTimer = RegisterTimer(
 	            MoveObject,                     // Callback method
 	            null,                           // Parameter to pass to the callback method
 	            TimeSpan.FromMilliseconds(15),  // Amount of time to delay before the callback is invoked
 	            TimeSpan.FromMilliseconds(15)); // Time interval between invocations of the callback method
-	
+
 	        return base.OnActivateAsync();
 	    }
-	
+
 	    protected override Task OnDeactivateAsync()
 	    {
 	        if (_updateTimer != null)
 	        {
 	            UnregisterTimer(_updateTimer);
 	        }
-	
+
 	        return base.OnDeactivateAsync();
 	    }
-	
+
 	    private Task MoveObject(object state)
 	    {
 	        ...
@@ -72,7 +72,7 @@
 	{
 	    string reminderName = "Pay cell phone bill";
 	    int amountInDollars = 100;
-	
+
 	    IActorReminder reminderRegistration = await this.RegisterReminderAsync(
 	        reminderName,
 	        BitConverter.GetBytes(amountInDollars),
@@ -102,7 +102,7 @@
 
 触发提醒时，Reliable Actors 运行时将对执行组件调用 `ReceiveReminderAsync` 方法。一个执行组件可以注册多个提醒，而 `ReceiveReminderAsync` 方法将在触发其中任一提醒时调用。执行组件可以使用传入给 `ReceiveReminderAsync` 方法的提醒名称来找出触发的提醒。
 
-执行组件运行时将在 `ReceiveReminderAsync` 调用完成时保存执行组件状态。如果在保存状态时发生错误，则会停用该执行组件对象并激活一个新实例。要指定在提醒回调完成时无需保存状态，可以在调用 `RegisterReminder` 方法来创建提醒时在 `attributes` 参数中设置 `ActorReminderAttributes.ReadOnly` 标志。
+执行组件运行时将在 `ReceiveReminderAsync` 调用完成时保存执行组件的状态。如果在保存状态时发生错误，则会停用该执行组件对象并激活一个新实例。
 
 为了注销提醒，执行组件将调用 `UnregisterReminder` 方法，如以下示例中所示。
 
@@ -120,4 +120,4 @@
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

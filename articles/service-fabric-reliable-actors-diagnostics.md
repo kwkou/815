@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/28/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/05/2016"
+   wacn.date="08/08/2016"/>
 
 # Reliable Actors 的诊断和性能监视
 Reliable Actors 运行时发出 [EventSource](https://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource.aspx) 事件和[性能计数器](https://msdn.microsoft.com/zh-cn/library/system.diagnostics.performancecounter.aspx)，可用于深入了解运行时如何操作并帮助进行故障排除和性能监视。
@@ -50,9 +50,9 @@ Reliable Actors 运行时定义以下性能计数器类别。
 
 `ServiceFabricPartitionID_ActorsRuntimeInternalID`
 
-ServiceFabricPartitionID 是与性能计数器实例关联的 Service Fabric 分区 ID 的字符串表示。分区 ID 是 GUID，并且其字符串表示是通过使用格式说明符“D”的 [`Guid.ToString`](https://msdn.microsoft.com/zh-cn/library/97af8hh4.aspx) 方法生成的。
+*ServiceFabricPartitionID* 是与性能计数器实例关联的 Service Fabric 分区 ID 的字符串表示。分区 ID 是 GUID，并且其字符串表示是通过使用格式说明符“D”的 [`Guid.ToString`](https://msdn.microsoft.com/zh-cn/library/97af8hh4.aspx) 方法生成的。
 
-ActorRuntimeInternalID 是由 Fabric 执行组件运行时生成的供其内部使用的 64 位整数的字符串表示。这包括在性能计数器实例名称中，以确保其唯一性并避免与其他性能计数器实例名称发生冲突。用户不应尝试解释此部分的性能计数器实例名称。
+*ActorRuntimeInternalID* 是由 Fabric 执行组件运行时生成的供其内部使用的 64 位整数的字符串表示。这包括在性能计数器实例名称中，以确保其唯一性并避免与其他性能计数器实例名称发生冲突。用户不应尝试解释此部分的性能计数器实例名称。
 
 下面是属于 `Service Fabric Actor` 类别的计数器的计数器实例名称的示例：
 
@@ -65,13 +65,13 @@ ActorRuntimeInternalID 是由 Fabric 执行组件运行时生成的供其内部�
 
 `MethodName_ActorsRuntimeMethodId_ServiceFabricPartitionID_ActorsRuntimeInternalID`
 
-MethodName 是与性能计数器实例关联的执行组件方法的名称。方法名称的格式是根据 Fabric 执行组件运行时中的一些逻辑来确定的，该逻辑可以平衡名称的可读性和 Windows 上对性能计数器实例名称的最大长度的约束。
+*MethodName* 是与性能计数器实例关联的执行组件方法的名称。方法名称的格式是根据 Fabric 执行组件运行时中的一些逻辑来确定的，该逻辑可以平衡名称的可读性和 Windows 上对性能计数器实例名称的最大长度的约束。
 
-ActorsRuntimeMethodId 是由 Fabric 执行组件运行时生成的供其内部使用的 32 位整数的字符串表示。这包括在性能计数器实例名称中，以确保其唯一性并避免与其他性能计数器实例名称发生冲突。用户不应尝试解释此部分的性能计数器实例名称。
+*ActorsRuntimeMethodId* 是由 Fabric 执行组件运行时生成的供其内部使用的 32 位整数的字符串表示。这包括在性能计数器实例名称中，以确保其唯一性并避免与其他性能计数器实例名称发生冲突。用户不应尝试解释此部分的性能计数器实例名称。
 
-ServiceFabricPartitionID 是与性能计数器实例关联的 Service Fabric 分区 ID 的字符串表示。分区 ID 是 GUID，并且其字符串表示是通过使用格式说明符“D”的 [`Guid.ToString`](https://msdn.microsoft.com/zh-cn/library/97af8hh4.aspx) 方法生成的。
+*ServiceFabricPartitionID* 是与性能计数器实例关联的 Service Fabric 分区 ID 的字符串表示。分区 ID 是 GUID，并且其字符串表示是通过使用格式说明符“D”的 [`Guid.ToString`](https://msdn.microsoft.com/zh-cn/library/97af8hh4.aspx) 方法生成的。
 
-ActorRuntimeInternalID 是由 Fabric 执行组件运行时生成的供其内部使用的 64 位整数的字符串表示。这包括在性能计数器实例名称中，以确保其唯一性并避免与其他性能计数器实例名称发生冲突。用户不应尝试解释此部分的性能计数器实例名称。
+*ActorRuntimeInternalID* 是由 Fabric 执行组件运行时生成的供其内部使用的 64 位整数的字符串表示。这包括在性能计数器实例名称中，以确保其唯一性并避免与其他性能计数器实例名称发生冲突。用户不应尝试解释此部分的性能计数器实例名称。
 
 下面是属于 `Service Fabric Actor Method` 类别的计数器的计数器实例名称的示例：
 
@@ -82,7 +82,7 @@ ActorRuntimeInternalID 是由 Fabric 执行组件运行时生成的供其内部�
 ## 事件和性能计数器的列表
 
 ### 执行组件方法事件和性能计数器
-Reliable Actors 运行时发出与 [执行组件方法](/documentation/articles/service-fabric-reliable-actors-introduction/#actors)相关的以下事件。
+Reliable Actors 运行时发出与 [Actor 方法](/documentation/articles/service-fabric-reliable-actors-introduction/#actors)相关的以下事件。
 
 |事件名称|事件 ID|级别|关键字|说明|
 |---|---|---|---|---|
@@ -165,4 +165,4 @@ Reliable Actors 运行时发布以下与执行组件激活和停用相关的性�
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -3,14 +3,14 @@
    description="介绍 Reliable Actors 如何在 Reliable Services 上进行分层以及如何使用 Service Fabric 平台的功能。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
-   editor=""/>
+   editor="amanbha"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # Reliable Actors 如何使用 Service Fabric 平台
 
@@ -35,7 +35,7 @@
 
  - 服务备份和还原。
  - 共享给所有执行组件的功能，例如断路器。
- - 对执行组件服务自身以及每个执行组件的远程过程调用。 
+ - 对执行组件服务自身以及每个执行组件的远程过程调用。
 
 ### 使用执行组件服务
 
@@ -59,7 +59,7 @@
 	    private static void Main()
 	    {
 	        ActorRuntime.RegisterActorAsync<MyActor>().GetAwaiter().GetResult();
-	
+
 	        Thread.Sleep(Timeout.Infinite);
 	    }
 	}
@@ -75,7 +75,7 @@
 	        ActorRuntime.RegisterActorAsync<MyActor>(
 	            (context, actorType) => new ActorService(context, actorType, () => new MyActor()))
 	            .GetAwaiter().GetResult();
-	
+
 	        Thread.Sleep(Timeout.Infinite);
 	    }
 	}
@@ -93,16 +93,16 @@
 
 	IActorService actorServiceProxy = ActorServiceProxy.Create(
 	    new Uri("fabric:/MyApp/MyService"), partitionKey);
-	
+
 	ContinuationToken continuationToken = null;
 	List<ActorInformation> activeActors = new List<ActorInformation>();
-	
+
 	do
 	{
 	    PagedResult<ActorInformation> page = await actorServiceProxy.GetActorsAsync(continuationToken, cancellationToken);
-	                
+                
 	    activeActors.AddRange(page.Items.Where(x => x.IsActive));
-	
+
 	    continuationToken = page.ContinuationToken;
 	}
 	while (continuationToken != null);
@@ -114,10 +114,10 @@
 
 
 	ActorId actorToDelete = new ActorId(id);
-	
+
 	IActorService myActorServiceProxy = ActorServiceProxy.Create(
 	    new Uri("fabric:/MyApp/MyService"), actorToDelete);
-	            
+            
 	await myActorServiceProxy.DeleteActorAsync(actorToDelete, cancellationToken)
 
 
@@ -144,7 +144,7 @@
 	        ActorRuntime.RegisterActorAsync<MyActor>(
 	            (context, actorType) => new MyActorService(context, actorType, () => new MyActor()))
 	            .GetAwaiter().GetResult();
-	
+
 	        Thread.Sleep(Timeout.Infinite);
 	    }
 	}
@@ -160,16 +160,29 @@
 	{
 	    Task BackupActorsAsync();
 	}
-	
+
 	class MyActorService : ActorService, IMyActorService
 	{
 	    public MyActorService(StatefulServiceContext context, ActorTypeInformation typeInfo, Func<ActorBase> newActor)
 	        : base(context, typeInfo, newActor)
 	    { }
-	
+
 	    public Task BackupActorsAsync()
 	    {
-	        return this.BackupAsync(new BackupDescription(...));
+	        return this.BackupAsync(new BackupDescription(PerformBackupAsync));
+	    }
+    
+	    private async Task<bool> PerformBackupAsync(BackupInfo backupInfo, CancellationToken cancellationToken)
+	    {
+	        try
+	        {
+	           // store the contents of backupInfo.Directory
+	           return true;
+	        }
+	        finally
+	        {
+	           Directory.Delete(backupInfo.Directory, recursive: true);
+	        }
 	    }
 	}
 
@@ -179,7 +192,7 @@
 
 	IMyActorService myActorServiceProxy = ActorServiceProxy.Create<IMyActorService>(
 	    new Uri("fabric:/MyApp/MyService"), ActorId.CreateRandom());
-	
+
 	await myActorServiceProxy.BackupActorsAsync();
 
 
@@ -234,7 +247,7 @@
  - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management/)
  - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
- - [代码示例](https://github.com/Azure/servicefabric-samples)
+ - [代码示例](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 
  
 <!--Image references-->
@@ -243,4 +256,5 @@
 [3]: ./media/service-fabric-reliable-actors-platform/actor-partition-info.png
 [4]: ./media/service-fabric-reliable-actors-platform/actor-replica-role.png
 [5]: ./media/service-fabric-reliable-actors-introduction/distribution.png
-<!---HONumber=Mooncake_0503_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

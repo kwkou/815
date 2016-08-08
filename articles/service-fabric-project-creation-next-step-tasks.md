@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/27/2016"
-   wacn.date="07/07/2016"/>
+   ms.date="07/08/2016"
+   wacn.date="08/08/2016"/>
 
 # Service Fabric 应用程序和后续步骤
 已创建你的 Azure Service Fabric 应用程序。本文说明项目的构成以及有可能要执行的一些后续步骤。
@@ -43,7 +43,11 @@
 执行组件项目提供所需的方法用于设置和获取可靠保存在执行组件状态中的计数器的值。接口项目提供其他服务可用来调用执行组件的接口。
 
 ### 无状态 Web API
-无状态 Web API 项目提供一个基本 Web 服务，可用于向外部客户端打开你的应用程序。有关如何构建该项目的信息，请参阅 [Service Fabric Web API services with OWIN self-hosting（Service Fabric Web API 服务与 OWIN 自托管）](/documentation/articles/service-fabric-reliable-services-communication-webapi/)。
+无状态 Web API 项目提供一个基本 Web 服务，可用于向外部客户端打开你的应用程序。有关如何构建该项目的信息，请参阅 [Service Fabric Web API services with OWIN self-hosting](/documentation/articles/service-fabric-reliable-services-communication-webapi/)（Service Fabric Web API 服务与 OWIN 自托管）。
+
+### ASP.NET core
+
+Service Fabric SDK 提供相同的一组可用于独立 ASP.NET Core 项目的 ASP.NET Core 模板：空的，[Web API][aspnet-webapi] 和 [Web 应用程序][aspnet-webapp]。
 
 ## 后续步骤
 ### 创建 Azure 群集
@@ -54,17 +58,16 @@ Service Fabric SDK 提供一个用于开发和测试的本地群集。若要在 
 如果你要尝试在 Azure 中部署和管理应用程序且不设置自己的群集，可以使用免费的[合作群集服务](http://tryazureservicefabric.chinaeast.chinacloudapp.cn/)。-->
 
 ### 将应用程序发布到 Azure
-可以直接从 Visual Studio 将应用程序发布到 Azure 群集。若要了解操作方法，请参阅 [Publishing your application to Azure（将应用程序发布到 Azure）][publish-app-to-azure]。
+可以直接从 Visual Studio 将应用程序发布到 Azure 群集。若要了解操作方法，请参阅 [Publishing your application to Azure][publish-app-to-azure]（将应用程序发布到 Azure）。
 
 ### 使用 Service Fabric 资源管理器可视化群集
-Service Fabric 资源管理器提供一种用于可视化群集（包括已部署的应用程序和物理布局）的简易方法。有关详细信息，请参阅 [Visualizing your cluster by using Service Fabric Explorer（使用 Service Fabric 资源管理器可视化群集）][visualize-with-sfx]。
+Service Fabric 资源管理器提供一种用于可视化群集（包括已部署的应用程序和物理布局）的简易方法。有关详细信息，请参阅 [Visualizing your cluster by using Service Fabric Explorer][visualize-with-sfx]（使用 Service Fabric 资源管理器可视化群集）。
 
 ### 对服务进行版本控制和升级
-Service Fabric 支持单独对应用程序中的独立服务进行版本控制和升级。若要了解详细信息，请参阅 [Versioning and upgrading your services（对服务进行版本控制和升级）][app-upgrade-tutorial]。
+Service Fabric 支持单独对应用程序中的独立服务进行版本控制和升级。若要了解详细信息，请参阅 [Versioning and upgrading your services][app-upgrade-tutorial]（对服务进行版本控制和升级）。
 
 ### 配置与 Visual Studio Team Services 的持续集成
-若要了解如何为 Service Fabric 应用程序设置持续集成过程，请参阅 [Configure continuous integration with Visual Studio Team Services（配置与 Visual Studio Team Services 的持续集成）][ci-with-vso]。
-
+若要了解如何为 Service Fabric 应用程序设置持续集成过程，请参阅 [Configure continuous integration with Visual Studio Team Services][ci-with-vso]（配置与 Visual Studio Team Services 的持续集成）。
 
 
 <!-- Links -->
@@ -75,5 +78,7 @@ Service Fabric 支持单独对应用程序中的独立服务进行版本控制�
 [ci-with-vso]: /documentation/articles/service-fabric-set-up-continuous-integration/
 [reliable-services-webapi]: /documentation/articles/service-fabric-reliable-services-communication-webapi/
 [app-upgrade-tutorial]: /documentation/articles/service-fabric-application-upgrade-tutorial/
+[aspnet-webapi]: https://docs.asp.net/en/latest/tutorials/first-web-api.html
+[aspnet-webapp]: https://docs.asp.net/en/latest/tutorials/first-mvc-app/index.html
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->

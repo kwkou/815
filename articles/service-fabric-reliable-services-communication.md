@@ -3,14 +3,14 @@
    description="概述 Reliable Services 通信模型，包括在服务上打开侦听器、解析终结点，以及在服务之间进行通信。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="BharatNarasimman"
-   manager="vipulm"
-   editor=""/>
+   authors="vturecek"
+   manager="timlt"
+   editor="BharatNarasimman"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # 如何使用 Reliable Services 通信 API
 
@@ -24,11 +24,11 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 
 	public interface ICommunicationListener
 	{
-    	Task<string> OpenAsync(CancellationToken cancellationToken);
+	    Task<string> OpenAsync(CancellationToken cancellationToken);
 
-    	Task CloseAsync(CancellationToken cancellationToken);
+	    Task CloseAsync(CancellationToken cancellationToken);
 
-    	void Abort();
+	    void Abort();
 	}
 
 
@@ -65,7 +65,7 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 
 在无状态服务中，重写将返回 ServiceInstanceListeners 的集合。ServiceInstanceListener 包含一个用于创建 ICommunicationListener 并为其命名的函数。对于有状态服务，重写将返回 ServiceReplicaListeners 集合。这与它的无状态对应项稍有不同，因为 ServiceReplicaListener 可以选择在辅助副本上打开 ICommunicationListener。你不仅可以在服务中使用多个通信侦听器，而且还可以指定哪些侦听器要在辅助副本上接受请求，以及哪些侦听器只能在主副本上进行侦听。
 
-例如，你可以创建一个只在主副本上接受 RPC 调用的 ServiceRemotingListener，并创建另一个可在辅助副本上接受读取请求的自定义侦听器：
+例如，你可以创建一个只在主副本上接受 RPC 调用的 ServiceRemotingListener，并创建另一个可通过 HTTP 在辅助副本上接受读取请求的自定义侦听器：
 
 
 	protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -73,10 +73,10 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 	    return new[]
 	    {
 	        new ServiceReplicaListener(context =>
-	            new MyCustomListener(context),
-	            "customReadonlyEndpoint",
+	            new MyCustomHttpListener(context),
+	            "HTTPReadonlyEndpoint",
 	            true),
-	
+
 	        new ServiceReplicaListener(context =>
 	            this.CreateServiceRemotingListener(context),
 	            "rpcPrimaryEndpoint",
@@ -85,14 +85,16 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 	}
 
 
+> [AZURE.NOTE] 为一个服务创建多个侦听器时，**必须**为每个侦听器指定一个唯一名称。
+
 最后，在[服务清单](/documentation/articles/service-fabric-application-model/)中有关终结点的节下面描述服务所需的终结点。
 
 
 	<Resources>
-    	<Endpoints>
-      		<Endpoint Name="WebServiceEndpoint" Protocol="http" Port="80" />
-      		<Endpoint Name="OtherServiceEndpoint" Protocol="tcp" Port="8505" />
-    	<Endpoints>
+	    <Endpoints>
+	      <Endpoint Name="WebServiceEndpoint" Protocol="http" Port="80" />
+	      <Endpoint Name="OtherServiceEndpoint" Protocol="tcp" Port="8505" />
+	    <Endpoints>
 	</Resources>
 
 
@@ -102,7 +104,7 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 
 	var codePackageActivationContext = serviceContext.CodePackageActivationContext;
 	var port = codePackageActivationContext.GetEndpoint("ServiceEndpoint").Port;
-	
+
 
 
 > [AZURE.NOTE] 终结点资源对于整个服务包是通用的，由 Service Fabric 在激活服务包时分配。托管在同一 ServiceHost 中的多个服务副本可能共享同一个端口。这意味着通信侦听器应支持端口共享。实现此目标的一种推荐方法是通信侦听器在生成侦听地址时使用分区 ID 和副本/实例 ID。
@@ -116,15 +118,16 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 	{
 	    EndpointResourceDescription serviceEndpoint = serviceContext.CodePackageActivationContext.GetEndpoint("ServiceEndpoint");
 	    int port = serviceEndpoint.Port;
-	
+
 	    this.listeningAddress = string.Format(
 	                CultureInfo.InvariantCulture,
-	                "http://+:{0}/");
-	                        
+	                "http://+:{0}/",
+	                port);
+                        
 	    this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-	            
+            
 	    this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
-	    
+    
 	    // the string returned here will be published in the Naming Service.
 	    return Task.FromResult(this.publishAddress);
 	}
@@ -140,10 +143,10 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 ### 服务终结点解析
 与服务通信的第一步是解析你想要通信的服务的分区或实例的终结点地址。`ServicePartitionResolver` 实用工具类是一个基本基元，可帮助客户端在运行时确定服务的终结点。确定服务终结点的过程在 Service Fabric 术语中称为服务终结点解析。
 
-若要连接到群集内的服务，可创建 `ServicePartitionResolver` 且不需任何参数：
+若要连接到群集内的服务，可使用默认设置创建 `ServicePartitionResolver`。这是针对大多数情况的建议用法：
 
 
-	ServicePartitionResolver resolver = new  ServicePartitionResolver();
+	ServicePartitionResolver resolver = ServicePartitionResolver.GetDefault();
 
 
 若要连接到不同群集中的服务，可利用一组群集网关终结点来创建 `ServicePartitionResolver`。请注意，网关终结点只是可用来连接到相同群集的不同终结点。例如：
@@ -152,13 +155,13 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 	ServicePartitionResolver resolver = new  ServicePartitionResolver("mycluster.chinacloudapp.cn:19000", "mycluster.chinacloudapp.cn:19001");
 
 
-可为 `ServicePartitionResolver` 指定一个函数来创建 `FabricClient`，以便在内部使用。
+或者，可为 `ServicePartitionResolver` 指定一个函数来创建 `FabricClient`，以便在内部使用：
  
 
 	public delegate FabricClient CreateFabricClientDelegate();
 
 
-`FabricClient` 是用于与 Service Fabric 群集通信以便在群集上实现各种管理操作的对象。当你想要更好地控制 `ServicePartitionClient` 与群集交互的方式时，这非常有用。`FabricClient` 会在内部执行缓存，但创建成本通常很高，因此一定要尽可能重复使用 `FabricClient` 实例。
+`FabricClient` 是用于与 Service Fabric 群集通信以便在群集上实现各种管理操作的对象。当你想要更好地控制 `ServicePartitionResolver` 与群集交互的方式时，这非常有用。`FabricClient` 会在内部执行缓存，但创建成本通常很高，因此一定要尽可能重复使用 `FabricClient` 实例。
 
 
 	ServicePartitionResolver resolver = new  ServicePartitionResolver(() => CreateMyFabricClient());
@@ -167,8 +170,8 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 接下来，使用解析方法来检索服务的地址或已分区服务的服务分区的地址。
 
 
-	ServicePartitionResolver resolver = new ServicePartitionResolver();
-	
+	ServicePartitionResolver resolver = ServicePartitionResolver.GetDefault();
+
 	ResolvedServicePartition partition =
 	    await resolver.ResolveAsync(new Uri("fabric:/MyApp/MyService"), new ServicePartitionKey(), cancellationToken);
 
@@ -189,9 +192,9 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 	class MyCommunicationClient : ICommunicationClient
 	{
 	    public ResolvedServiceEndpoint Endpoint { get; set; }
-	
+
 	    public string ListenerName { get; set; }
-	
+
 	    public ResolvedServicePartition ResolvedServicePartition { get; set; }
 	}
 
@@ -204,15 +207,15 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 	    protected override void AbortClient(MyCommunicationClient client)
 	    {
 	    }
-	
+
 	    protected override Task<MyCommunicationClient> CreateClientAsync(string endpoint, CancellationToken cancellationToken)
 	    {
 	    }
-	
+
 	    protected override bool ValidateClient(MyCommunicationClient clientChannel)
 	    {
 	    }
-	
+
 	    protected override bool ValidateClient(string endpoint, MyCommunicationClient client)
 	    {
 	    }
@@ -221,31 +224,31 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 
 最后，异常处理程序负责确定发生异常时要采取的操作。异常分为**可重试**和**不可重试**两种类型。
 
- - **不可重试**的异常只会重新引发回调用方。 
+ - **不可重试**的异常只会重新引发回调用方。
  - **可重试**的异常进一步分为**暂时性**和**非暂时性**两种类型。
-  - **暂时性**异常是只会重试而不会重新解析服务终结点地址的异常。这类异常包括暂时性网络问题或服务错误响应，但不包括指出服务终结点地址不存在的异常。 
-  - **非暂时性**异常是需要重新解析服务终结点地址的异常。这类异常包括指出无法访问服务终结点（表示服务已移至其他节点）的异常。 
+  - **暂时性**异常是只会重试而不会重新解析服务终结点地址的异常。这类异常包括暂时性网络问题或服务错误响应，但不包括指出服务终结点地址不存在的异常。
+  - **非暂时性**异常是需要重新解析服务终结点地址的异常。这类异常包括指出无法访问服务终结点（表示服务已移至其他节点）的异常。
 
 `TryHandleException` 针对给定异常做出决定。如果它**不知道**要对异常做出哪些决定，则应返回 **false**。如果它**知道**如何做决定，则应该相应地设置结果并返回 **true**。
  
 
 	class MyExceptionHandler : IExceptionHandler
 	{
-    	public bool TryHandleException(ExceptionInformation exceptionInformation, OperationRetrySettings retrySettings, out ExceptionHandlingResult result)
-    	{
-        	// if exceptionInformation.Exception is known and is transient (can be retried without re-resolving)
-        	result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, true, retrySettings, retrySettings.DefaultMaxRetryCount);
-        	return true;
+	    public bool TryHandleException(ExceptionInformation exceptionInformation, OperationRetrySettings retrySettings, out ExceptionHandlingResult result)
+	    {
+	        // if exceptionInformation.Exception is known and is transient (can be retried without re-resolving)
+	        result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, true, retrySettings, retrySettings.DefaultMaxRetryCount);
+	        return true;
 
 
-        	// if exceptionInformation.Exception is known and is not transient (indicates a new service endpoint address must be resolved)
-        	result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, false, retrySettings, retrySettings.DefaultMaxRetryCount);
-        	return true;
+	        // if exceptionInformation.Exception is known and is not transient (indicates a new service endpoint address must be resolved)
+	        result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, false, retrySettings, retrySettings.DefaultMaxRetryCount);
+	        return true;
 
-        	// if exceptionInformation.Exception is unknown (let the next IExceptionHandler attempt to handle it)
-        	result = null;
-        	return false;
-    	}
+	        // if exceptionInformation.Exception is unknown (let the next IExceptionHandler attempt to handle it)
+	        result = null;
+	        return false;
+	    }
 	}
 
 ### 汇总
@@ -254,17 +257,18 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 
 	private MyCommunicationClientFactory myCommunicationClientFactory;
 	private Uri myServiceUri;
-	
+
 	var myServicePartitionClient = new ServicePartitionClient<MyCommunicationClient>(
 	    this.myCommunicationClientFactory,
 	    this.myServiceUri,
 	    myPartitionKey);
-	
+
 	var result = await myServicePartitionClient.InvokeWithRetryAsync(async (client) =>
 	   {
 	      // Communicate with the service using the client.
 	   },
 	   CancellationToken.None);
+
 
 
 ## 后续步骤
@@ -276,4 +280,4 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 
  - [使用 Reliable Services 的 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

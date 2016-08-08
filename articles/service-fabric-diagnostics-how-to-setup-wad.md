@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="05/20/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/24/2016"
+   wacn.date="08/08/2016"/>
 
 
 # 如何使用 Azure 诊断收集日志
@@ -24,7 +24,7 @@
 * [Azure 资源管理器](/documentation/articles/resource-group-overview/)
 * [Azure PowerShell](/documentation/articles/powershell-install-configure/)
 * [Azure Resource Manager 客户端](https://github.com/projectkudu/ARMClient)
-* [使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles//virtual-machines-windows-extensions-diagnostics-template)
+* [使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)
 
 
 ## 可以收集的不同日志源
@@ -54,7 +54,8 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 5. 选择“导出模板”可显示“模板”面板
 6. 选择“保存到文件”可导出包含模板、参数和 PowerShell 文件的 .zip 文件。
 
-导出文件后，需要进行修改。编辑 **parameters.json** 文件并删除 **adminPassword** 元素。这样，在运行部署脚本时会出现密码提示。运行部署脚本时，可能需要修复 null 参数值。使用下载的模板更新配置
+导出文件后，需要进行修改。编辑 **parameters.json** 文件并删除 **adminPassword** 元素。这样，在运行部署脚本时会出现密码提示。运行部署脚本时，可能需要修复 null 参数值。
+使用下载的模板更新配置
 
 1. 将内容解压缩到本地计算机上的某个文件夹
 2. 修改内容以反映新配置
@@ -94,30 +95,30 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 	},
 
 
- 接下来，将参数节添加到存储帐户定义之后、“supportLogStorageAccountName”与“vmNodeType0Name”之间。将占位符文本 *storage account name goes here* 替换为所需存储帐户的名称。
+ 接下来，将参数节添加到存储帐户定义之后、“supportLogStorageAccountName”与“vmNodeType0Name”之间。将占位符文本 storage account name goes here 替换为所需存储帐户的名称。
 
 ##### 更新 parameters 节
 
-    "applicationDiagnosticsStorageAccountType": {
-      "type": "string",
-      "allowedValues": [
-        "Standard_LRS",
-        "Standard_GRS"
-      ],
-      "defaultValue": "Standard_LRS",
-      "metadata": {
-        "description": "Replication option for the application diagnostics storage account"
-      }
-    },
-    "applicationDiagnosticsStorageAccountName": {
-      "type": "string",
-      "defaultValue": "storage account name goes here",
-      "metadata": {
-        "description": "Name for the storage account that contains application diagnostics data from the cluster"
-      }
-    },
+	    "applicationDiagnosticsStorageAccountType": {
+	      "type": "string",
+	      "allowedValues": [
+	        "Standard_LRS",
+	        "Standard_GRS"
+	      ],
+	      "defaultValue": "Standard_LRS",
+	      "metadata": {
+	        "description": "Replication option for the application diagnostics storage account"
+	      }
+	    },
+	    "applicationDiagnosticsStorageAccountName": {
+	      "type": "string",
+	      "defaultValue": "storage account name goes here",
+	      "metadata": {
+	        "description": "Name for the storage account that contains application diagnostics data from the cluster"
+	      }
+	    },
 
-然后通过在“extensions”数组中添进行下内容以更新 **template.json** 的 *VirtualMachineProfile* 节。根据插入的位置，请务必在开头或末尾添加逗点。
+然后通过在“extensions”数组中添进行下内容以更新 **template.json** 的 VirtualMachineProfile 节。根据插入的位置，请务必在开头或末尾添加逗点。
 
 ##### 添加到 VirtualMachineProfile 的 extensions 数组
 
@@ -175,11 +176,11 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 	}
 
 
-如上所述修改 **template.json** 文件之后，重新发布 ARM 模板。如果已导出模板，则运行 **deploy.ps1** 文件会重新发布模板。部署后，请确保 *ProvisioningState* 为 *Succeeded*。
+如上所述修改 **template.json** 文件之后，重新发布 ARM 模板。如果已导出模板，则运行 **deploy.ps1** 文件会重新发布模板。部署后，请确保 ProvisioningState 为 Succeeded。
 
 
 ## 更新诊断以从新的 EventSource 通道收集并上载日志
-若要更新诊断从新的 EventSource 通道（表示将要部署的新应用程序）收集日志，只需要执行[上述部分](#deploywadarm)中相同的步骤即可，其中描述了现有群集的诊断设置。在使用 *New-AzureRmResourceGroupDeployment* PowerShell 命令应用配置更新之前，需要更新 **template.json** 中的 *EtwEventSourceProviderConfiguration* 节，以添加新的 EventSources 条目。事件源的名称定义为 Visual Studio 生成的 **ServiceEventSource.cs** 文件中的代码的一部分。
+若要更新诊断从新的 EventSource 通道（表示将要部署的新应用程序）收集日志，只需要执行[上述部分](#deploywadarm)中相同的步骤即可，其中描述了现有群集的诊断设置。在使用 New-AzureRmResourceGroupDeployment PowerShell 命令应用配置更新之前，需要更新 **template.json** 中的 EtwEventSourceProviderConfiguration 节，以添加新的 EventSources 条目。事件源的名称定义为 Visual Studio 生成的 **ServiceEventSource.cs** 文件中的代码的一部分。
 
 
 ## 后续步骤
@@ -188,5 +189,6 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 
 ## 相关文章
 * [了解如何使用诊断扩展收集性能计数器或日志](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
+* [Log Analytics 中的 Service Fabric 解决方案](/documentation/articles/log-analytics-service-fabric/)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0801_2016-->

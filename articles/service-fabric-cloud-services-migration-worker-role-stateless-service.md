@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="02/29/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
  
 # 将 Web 角色和辅助角色转换成 Service Fabric 无状态服务的指南
 
@@ -57,7 +57,7 @@ VM 停止 | `OnStop()` | 不适用
 
 
 	using Microsoft.WindowsAzure.ServiceRuntime;
-	
+
 	namespace WorkerRole1
 	{
 	    public class WorkerRole : RoleEntryPoint
@@ -65,11 +65,11 @@ VM 停止 | `OnStop()` | 不适用
 	        public override void Run()
 	        {
 	        }
-	
+
 	        public override bool OnStart()
 	        {
 	        }
-	
+
 	        public override void OnStop()
 	        {
 	        }
@@ -87,7 +87,7 @@ VM 停止 | `OnStop()` | 不适用
 	using System.Threading.Tasks;
 	using Microsoft.ServiceFabric.Services.Communication.Runtime;
 	using Microsoft.ServiceFabric.Services.Runtime;
-	
+
 	namespace Stateless1
 	{
 	    public class Stateless1 : StatelessService
@@ -95,7 +95,7 @@ VM 停止 | `OnStop()` | 不适用
 	        protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 	        {
 	        }
-	
+
 	        protected override Task RunAsync(CancellationToken cancelServiceInstance)
 	        {
 	        }
@@ -134,7 +134,7 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
  - **配置：**服务的所有配置文件和设置。
  - **数据：**与服务关联的静态数据文件。
 
-其中每个包可独立设置版本和进行升级。与云服务类似，可通过 API 以编程方式访问配置包。发生配置包更改时，系统会提供事件来通知服务。Settings.xml 文件可用于键-值配置和编程访问。但是，与云服务不同的是，Service Fabric 配置包可以包含任何格式的任何配置文件，不管是 XML、JSON、YAML 还是自定义的二进制格式。
+其中每个包可独立设置版本和进行升级。与云服务类似，可通过 API 以编程方式访问配置包。发生配置包更改时，系统会提供事件来通知服务。Settings.xml 文件可用于键-值配置和编程访问，这与 App.config 文件的应用设置部分类似。但是，与云服务不同的是，Service Fabric 配置包可以包含任何格式的任何配置文件，不管是 XML、JSON、YAML 还是自定义的二进制格式。
 
 
 ### 访问配置
@@ -148,7 +148,7 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 
 
-#### ServiceFabic
+#### Service Fabric
 
 每个服务都有自身的独立配置包。可供群集中所有应用程序访问的全局配置设置没有内置机制。使用配置包中的 Service Fabric 特殊配置文件 Settings.xml 时，Settings.xml 中的值可以在应用程序级别覆盖，实现应用程序级别的配置设置。
 
@@ -156,13 +156,13 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 
 
-	ConfigurationPackage configPackage = this.ServiceInitializationParameters.CodePackageActivationContext.GetConfigurationPackageObject("Config");
-	
+	ConfigurationPackage configPackage = this.Context.CodePackageActivationContext.GetConfigurationPackageObject("Config");
+
 	// Access Settings.xml
 	KeyedCollection<string, ConfigurationProperty> parameters = configPackage.Settings.Sections["MyConfigSection"].Parameters;
-	
+
 	string value = parameters["Key"]?.Value;
-	
+
 	// Access custom configuration file:
 	using (StreamReader reader = new StreamReader(Path.Combine(configPackage.Path, "CustomConfig.json")))
 	{
@@ -179,7 +179,7 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 
 	RoleEnvironment.Changed += RoleEnvironmentChanged;
-	
+
 	private void RoleEnvironmentChanged(object sender, RoleEnvironmentChangedEventArgs e)
 	{
 	   // Get the list of configuration changes
@@ -200,9 +200,9 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
  
 
 
-	this.ServiceInitializationParameters.CodePackageActivationContext.ConfigurationPackageModifiedEvent +=
+	this.Context.CodePackageActivationContext.ConfigurationPackageModifiedEvent +=
 	                    this.CodePackageActivationContext_ConfigurationPackageModifiedEvent;
-	
+
 	private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(object sender, PackageModifiedEventArgs<ConfigurationPackage> e)
 	{
 	    this.UpdateCustomConfig(e.NewPackage.Path);
@@ -227,15 +227,16 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 
 	<ServiceDefinition>
-    	<Startup>
-        	<Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" >
-            	<Environment>
-                	<Variable name="MyVersionNumber" value="1.0.0.0" />
-            	</Environment>
-        	</Task>
-    	</Startup>
-    	...
+	    <Startup>
+	        <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" >
+	            <Environment>
+	                <Variable name="MyVersionNumber" value="1.0.0.0" />
+	            </Environment>
+	        </Task>
+	    </Startup>
+	    ...
 	</ServiceDefinition>
+
 
 
 ### Service Fabric
@@ -245,14 +246,15 @@ Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个�
 
 
 	<ServiceManifest>
-  	<CodePackage Name="Code" Version="1.0.0">
-    	<SetupEntryPoint>
-      	<ExeHost>
-        	<Program>Startup.bat</Program>
-      	</ExeHost>
-    	</SetupEntryPoint>
-    	...
+	  <CodePackage Name="Code" Version="1.0.0">
+	    <SetupEntryPoint>
+	      <ExeHost>
+	        <Program>Startup.bat</Program>
+	      </ExeHost>
+	    </SetupEntryPoint>
+	    ...
 	</ServiceManifest>
+
 
 
 ## 有关开发环境的说明
@@ -271,4 +273,4 @@ Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个�
 [3]: ./media/service-fabric-cloud-services-migration-worker-role-stateless-service/service-fabric-cloud-service-projects.png
 [4]: ./media/service-fabric-cloud-services-migration-worker-role-stateless-service/worker-role-to-stateless-service.png
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0801_2016-->

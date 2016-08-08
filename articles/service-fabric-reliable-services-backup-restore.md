@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="05/13/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/19/2016"
+   wacn.date="08/08/2016"/>
 
 # 备份和还原 Reliable Services 及 Reliable Actors
 
@@ -32,35 +32,43 @@ Azure Service Fabric 是一个高可用性平台，用于复制多个节点中�
 
 ## 备份的类型
 
-有两个备份选项：完整和增量。完整备份是包含重新创建副本状态所需的所有数据的备份：检查点和所有日志记录。因为它具有检查点和日志，所以完整备份可以自行还原。
+有两个备份选项：完整和增量。
+完整备份是包含重新创建副本状态所需的所有数据的备份：检查点和所有日志记录。
+因为它具有检查点和日志，所以完整备份可以自行还原。
 
-当检查点较大时，会出现与完整备份有关的问题。例如，具有 16 GB 状态的副本的检查点合计大约有 16 GB。如果我们的恢复点目标是 5 分钟，则副本需要每 5 分钟备份一次。每次备份时，需要复制 16 GB 的检查点以及 50 MB（可使用 **CheckpointThresholdInMB** 进行配置）的日志。
-
+当检查点较大时，会出现与完整备份有关的问题。
+例如，具有 16 GB 状态的副本的检查点合计大约有 16 GB。
+如果我们的恢复点目标是 5 分钟，则副本需要每 5 分钟备份一次。
+每次备份时，需要复制 16 GB 的检查点以及 50 MB（可使用 **CheckpointThresholdInMB** 进行配置）的日志。
 ![完整备份示例。](./media/service-fabric-reliable-services-backup-restore/FullBackupExample.PNG)
 
 此问题的解决方案是增量备份，这种备份只备份自上次备份以来的日志记录。
 
 ![增量备份示例。](./media/service-fabric-reliable-services-backup-restore/IncrementalBackupExample.PNG)
 
-由于增量备份只在自上次备份以来更改（不包括检查点），因此它们往往更快，但无法自行还原。若要还原增量备份，需要整个备份链。备份链是从完整备份开始，随后是一些连续增量备份的链。
+由于增量备份只在自上次备份以来更改（不包括检查点），因此它们往往更快，但无法自行还原。
+若要还原增量备份，需要整个备份链。
+备份链是从完整备份开始，随后是一些连续增量备份的链。
 
 ## 备份 Reliable Services
 
 服务创建者可完全控制何时进行备份，以及将备份存储在何处。
 
-若要开始备份，服务需要调用继承的成员函数 **BackupAsync**。仅可从主副本创建备份，并且需要授予这些备份写入状态。
+若要开始备份，服务需要调用继承的成员函数 **BackupAsync**。
+仅可从主副本创建备份，并且需要授予这些备份写入状态。
 
 如下所示，**BackupAsync** 采用 **BackupDescription** 对象，用户可以在其中指定完整或增量备份，以及指定在本地创建备份文件夹并准备好移出到某个外部存储时调用的回叫函数 **Func<< BackupInfo, CancellationToken, Task<bool>>>**。
 
 
 
 	BackupDescription myBackupDescription = new BackupDescription(backupOption.Incremental,this.BackupCallbackAsync);
-	
+
 	await this.BackupAsync(myBackupDescription);
-	
 
 
-进行增量备份的请求可能会失败，并出现 **FabricFullBackupMissingException**，这指示副本从未进行完整备份或是自上次备份以来的一些日志记录已截断。用户可以通过修改 **CheckpointThresholdInMB** 来修改截断速率。
+
+进行增量备份的请求可能会失败，并出现 **FabricMissingFullBackupException**，这指示副本从未进行完整备份或是自上次备份以来的一些日志记录已截断。
+用户可以通过修改 **CheckpointThresholdInMB** 来修改截断速率。
 
 **BackupInfo** 提供有关备份的信息，包括运行时保存备份的文件夹的位置 (**BackupInfo.Directory**)。此回叫函数可以将 **BackupInfo.Directory** 移到外部存储或其他位置。此函数也返回一个布尔值，此值表示是否已成功将备份文件夹移动到其目标位置。
 
@@ -70,9 +78,9 @@ Azure Service Fabric 是一个高可用性平台，用于复制多个节点中�
 	private async Task<bool> BackupCallbackAsync(BackupInfo backupInfo, CancellationToken cancellationToken)
 	{
 	    var backupId = Guid.NewGuid();
-	
+
 	    await externalBackupStore.UploadBackupFolderAsync(backupInfo.Directory, backupId, cancellationToken);
-	
+
 	    return true;
 	}
 
@@ -120,21 +128,16 @@ Azure Service Fabric 是一个高可用性平台，用于复制多个节点中�
 	protected override async Task<bool> OnDataLossAsync(RestoreContext restoreCtx, CancellationToken cancellationToken)
 	{
 	    var backupFolder = await this.externalBackupStore.DownloadLastBackupAsync(cancellationToken);
-	
+
 	    var restoreDescription = new RestoreDescription(backupFolder);
-	
+
 	    await restoreCtx.RestoreAsync(restoreDescription);
-	
+
 	    return true;
 	}
 
 
-传入到 **RestoreContext.RestoreAsync** 调用的 **RestoreDescription** 包含一个名为 **BackupFolderPath** 的成员。
-还原单个完整备份时，此 **BackupFolderPath** 应设置为包含完整备份的文件夹的本地路径。
-还原一个完整备份和一些增量备份时，**BackupFolderPath** 应设置为包含完整备份以及所有增量备份的文件夹的本地路径。
-如果提供的 **BackupFolderPath** 不包含完整备份，则 **RestoreAsync** 调用可能会引发 **FabricFullBackupMissingException**。
-如果 **BackupFolderPath** 具有断开的增量备份链，则它还可能会引发 **ArgumentException**。
-例如，如果它包含完整备份、第一个增量备份和第三个增量备份，但不包含第二个增量备份。
+传入到 **RestoreContext.RestoreAsync** 调用的 **RestoreDescription** 包含一个名为 **BackupFolderPath** 的成员。还原单个完整备份时，此 **BackupFolderPath** 应设置为包含完整备份的文件夹的本地路径。还原一个完整备份和一些增量备份时，**BackupFolderPath** 应设置为包含完整备份以及所有增量备份的文件夹的本地路径。如果提供的 **BackupFolderPath** 不包含完整备份，则 **RestoreAsync** 调用可能会引发 **FabricMissingFullBackupException**。如果 **BackupFolderPath** 具有断开的增量备份链，则它还可能会引发 **ArgumentException**。例如，如果它包含完整备份、第一个增量备份和第三个增量备份，但不包含第二个增量备份。
 
 >[AZURE.NOTE] 默认情况下，RestorePolicy 设置为安全。这表示如果检测到备份文件夹中包含的状态早于或等于此副本中包含的状态，则 **RestoreAsync** API 将因 ArgumentException 而失败。可以使用 **RestorePolicy.Force** 来跳过此安全检查。这会指定为 **RestoreDescription** 的一部分。
 
@@ -190,7 +193,7 @@ Reliable Actors 的备份和还原以 Reliable Services 提供的备份和还原
 
 ### 还原
 
-可靠状态管理器具有使用 **RestoreAsync** API 从备份还原的功能。  
+可靠状态管理器具有使用 **RestoreAsync** API 从备份还原的功能。
 只能在 **OnDataLossAsync** 方法内部调用 **RestoreContext** 上的 **RestoreAsync** 方法。
 由 **OnDataLossAsync** 返回的布尔值指示服务是否从外部源还原其状态。
 如果 **OnDataLossAsync** 返回 true，则 Service Fabric 将使用此主副本重新生成所有其他副本。Service Fabric 可确保将接收 **OnDataLossAsync** 调用的副本先转换为主角色，但不会授予其读取状态或写入状态。
@@ -198,11 +201,17 @@ Reliable Actors 的备份和还原以 Reliable Services 提供的备份和还原
 然后，将在新的主副本上调用 **OnDataLossAsync**。
 将一次调用一回 API，如此循环，直到服务成功完成此 API（返回 true 或 false），并完成相关的重新配置。
 
-**RestoreAsync** 首先删除调用它的主副本中的所有现有状态。  
-之后，可靠状态管理器创建备份文件夹中存在的所有可靠对象。  
-接下来，指示可靠对象从备份文件夹中的它们的检查点还原。  
-最后，可靠性状态管理器从备份文件夹中的日志记录中恢复其自己的状态，并执行恢复。  
-作为恢复过程的一部分，将对可靠对象重播从“起始点”开始的操作，该起始点已提交备份文件夹中的日志记录。  
+**RestoreAsync** 首先删除调用它的主副本中的所有现有状态。
+之后，可靠状态管理器创建备份文件夹中存在的所有可靠对象。
+接下来，指示可靠对象从备份文件夹中的它们的检查点还原。
+最后，可靠性状态管理器从备份文件夹中的日志记录中恢复其自己的状态，并执行恢复。
+作为恢复过程的一部分，将对可靠对象重播从“起始点”开始的操作，该起始点已提交备份文件夹中的日志记录。
 此步骤可以确保恢复的状态是一致的。
 
-<!---HONumber=Mooncake_0523_2016-->
+## 后续步骤
+
+- [Reliable Services 快速启动](/documentation/articles/service-fabric-reliable-services-quick-start/)
+- [Reliable Services 通知](/documentation/articles/service-fabric-reliable-services-notifications/)
+- [Reliable Collections 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.data.collections.aspx)
+
+<!---HONumber=Mooncake_0801_2016-->

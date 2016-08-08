@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="04/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/11/2016"
+   wacn.date="08/08/2016"/>
 
 # 查看 Service Fabric 运行状况报告
 Azure Service Fabric 引入了一种由运行状况实体组成的[运行状况模型](/documentation/articles/service-fabric-health-introduction/)，系统组件和监视器可以在其上报告它们监视的本地状况。[运行状况存储](/documentation/articles/service-fabric-health-introduction/#health-store)聚合所有运行状况数据以确定实体是否正常运行。
@@ -25,7 +25,7 @@ Service Fabric 提供多种方式来获取实体聚合运行状况：
 
 - 常规查询，返回将运行状况作为属性之一的实体的列表（通过 PowerShell、API 或 REST）
 
-为了演示这些选项，让我们使用一个具有五个节点的本地群集。**fabric:/System** 应用程序（原本即已存在）旁边，已部署其他一些应用程序。其中之一是 **fabric:/WordCount**。该应用程序包含一个配置有七个副本的有状态服务。由于只有五个节点，因此系统组件显示分区低于目标计数的警告。
+为了演示这些选项，让我们使用一个具有五个节点的本地群集。fabric:/System 应用程序（原本即已存在）旁边，已部署其他一些应用程序。其中之一是 fabric:/WordCount。该应用程序包含一个配置有七个副本的有状态服务。由于只有五个节点，因此系统组件显示分区低于目标计数的警告。
 
 
 	<Service Name="WordCountService">
@@ -66,7 +66,7 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 
 实体运行状况包含以下信息：
 
-- 实体的聚合运行状况状态。这由运行状况存储依据实体运行状况报告、子项运行状况（在适用时）和运行状况策略计算。了解有关[实体运行状况评估](/documentation/articles/service-fabric-health-introduction/#entity-health-evaluation)的详细信息。  
+- 实体的聚合运行状况状态。这由运行状况存储依据实体运行状况报告、子项运行状况（在适用时）和运行状况策略计算。了解有关[实体运行状况评估](/documentation/articles/service-fabric-health-introduction/#entity-health-evaluation)的详细信息。
 
 - 实体上的运行状况事件。
 
@@ -84,7 +84,7 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 - [可选] 事件、节点和应用程序的筛选，指定对那些项目感到兴趣，并且应该在结果中返回（例如，仅限错误、或警告和错误）。请注意，所有事件、节点及应用程序都用于评估实体聚合运行状况，无论筛选器为何。
 
 ### API
-若要获取群集运行状况，请创建 **FabricClient** 并在其 **HealthManager** 上调用 [**GetClusterHealthAsync**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.healthclient.getclusterhealthasync.aspx) 方法。
+若要获取群集运行状况，请创建 `FabricClient` 并在其 **HealthManager** 上调用 [GetClusterHealthAsync](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.healthclient.getclusterhealthasync.aspx) 方法。
 
 以下代码获取群集运行状况：
 
@@ -92,7 +92,7 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 	ClusterHealth clusterHealth = await fabricClient.HealthManager.GetClusterHealthAsync();
 
 
-以下代码使用针对节点和应用程序的自定义运行状况策略和筛选器获取群集运行状况。请注意，它将创建包含所有输入数据的 [ClusterHealthQueryDescription](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.description.clusterhealthquerydescription.aspx)**。
+以下代码使用针对节点和应用程序的自定义运行状况策略和筛选器获取群集运行状况。请注意，它将创建包含所有输入数据的 [ClusterHealthQueryDescription](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.description.clusterhealthquerydescription.aspx)。
 
 
 	var policy = new ClusterHealthPolicy()
@@ -432,7 +432,7 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 	ServiceHealth serviceHealth = await fabricClient.HealthManager.GetServiceHealthAsync(serviceName);
 
 
-以下代码通过 [ServiceHealthQueryDescription](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.description.servicehealthquerydescription.aspx) 指定筛选器和自定义策略，从而获取指定服务名称 (URI) 的服务运行状况。
+以下代码通过 [ServiceHealthQueryDescription](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.description.servicehealthquerydescription.aspx) 指定筛选器和自定义策略，从而获取指定服务名称 (URI) 的服务运行状况：
 
 
 	var queryDescription = new ServiceHealthQueryDescription(serviceName)
@@ -637,7 +637,7 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 ### PowerShell
 用于获取已部署应用程序的运行状况的 cmdlet 为 [Get-ServiceFabricDeployedApplicationHealth](https://msdn.microsoft.com/zh-cn/library/mt163523.aspx)。首先使用 [Connect-ServiceFabricCluster](https://msdn.microsoft.com/zh-cn/library/mt125938.aspx) cmdlet 连接到群集。若要了解应用程序的部署位置，请运行 [Get-ServiceFabricApplicationHealth](https://msdn.microsoft.com/zh-cn/library/mt125976.aspx) 并查看已部署应用程序子项。
 
-以下 cmdlet 获取部署在 **\_Node\_2** 上的 **fabric:/WordCount** 应用程序的运行状况。
+以下 cmdlet 获取部署在 **_Node_2** 上的 **fabric:/WordCount** 应用程序的运行状况。
 
 
 	PS C:\> Get-ServiceFabricDeployedApplicationHealth -ApplicationName fabric:/WordCount -NodeName _Node_2
@@ -683,13 +683,13 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 
 
 	DeployedServicePackageHealth health = await fabricClient.HealthManager.GetDeployedServicePackageHealthAsync(
-    new DeployedServicePackageHealthQueryDescription(applicationName, nodeName, serviceManifestName));
+	    new DeployedServicePackageHealthQueryDescription(applicationName, nodeName, serviceManifestName));
 
 
 ### PowerShell
 用于获取已部署服务包的运行状况的 cmdlet 为 [Get-ServiceFabricDeployedServicePackageHealth](https://msdn.microsoft.com/zh-cn/library/mt163525.aspx)。首先使用 [Connect-ServiceFabricCluster](https://msdn.microsoft.com/zh-cn/library/mt125938.aspx) cmdlet 连接到群集。若要查看应用程序的部署位置，请运行 [Get-ServiceFabricApplicationHealth](https://msdn.microsoft.com/zh-cn/library/mt125976.aspx) 并查看已部署应用程序。若要查看一个应用程序中有哪些服务包，请在 [Get-ServiceFabricDeployedApplicationHealth](https://msdn.microsoft.com/zh-cn/library/mt163523.aspx) 输出中查看已部署服务包子项。
 
-以下 cmdlet 获取部署在 **\_Node\_2** 上的 **fabric:/WordCount** 应用程序的 **WordCountServicePkg** 服务包的运行状况。此实体的 **System.Hosting** 报告包含成功的服务包和入口点激活以及成功的服务类型注册。
+以下 cmdlet 获取部署在 **_Node_2** 上的 **fabric:/WordCount** 应用程序的 **WordCountServicePkg** 服务包的运行状况。此实体的 **System.Hosting** 报告包含成功的服务包和入口点激活以及成功的服务类型注册。
 
 
 	PS C:\> Get-ServiceFabricDeployedApplication -ApplicationName fabric:/WordCount -NodeName _Node_2 | Get-ServiceFabricDeployedServicePackageHealth -ServiceManifestName WordCountServicePkg
@@ -882,38 +882,38 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 	HealthState                  : Error
 	NodeHealthStateChunks        : None
 	ApplicationHealthStateChunks :
-                               		TotalCount            : 1
+	                               TotalCount            : 1
 
-                               		ApplicationName       : fabric:/WordCount
-                               		ApplicationTypeName   : WordCount
-                               		HealthState           : Error
-                               		ServiceHealthStateChunks :
-                                   		TotalCount            : 1
+	                               ApplicationName       : fabric:/WordCount
+	                               ApplicationTypeName   : WordCount
+	                               HealthState           : Error
+	                               ServiceHealthStateChunks :
+	                                   TotalCount            : 1
 
-                                   	ServiceName           : fabric:/WordCount/WordCountService
-                                   	HealthState           : Error
-                                   	PartitionHealthStateChunks :
-                                       	TotalCount            : 1
+	                                   ServiceName           : fabric:/WordCount/WordCountService
+	                                   HealthState           : Error
+	                                   PartitionHealthStateChunks :
+	                                       TotalCount            : 1
 
-                                       	PartitionId           : a1f83a35-d6bf-4d39-b90d-28d15f39599b
-                                       	HealthState           : Error
-                                       	ReplicaHealthStateChunks :
-                                           	TotalCount            : 5
+	                                       PartitionId           : a1f83a35-d6bf-4d39-b90d-28d15f39599b
+	                                       HealthState           : Error
+	                                       ReplicaHealthStateChunks :
+	                                           TotalCount            : 5
 
-                                           	ReplicaOrInstanceId   : 131031502143040223
-                                           	HealthState           : Ok
+	                                           ReplicaOrInstanceId   : 131031502143040223
+	                                           HealthState           : Ok
 
-                                           	ReplicaOrInstanceId   : 131031502346844060
-                                           	HealthState           : Ok
+	                                           ReplicaOrInstanceId   : 131031502346844060
+	                                           HealthState           : Ok
 
-                                           	ReplicaOrInstanceId   : 131031502346844059
-                                           	HealthState           : Ok
+	                                           ReplicaOrInstanceId   : 131031502346844059
+	                                           HealthState           : Ok
 
-                                           	ReplicaOrInstanceId   : 131031502346844061
-                                           	HealthState           : Ok
+	                                           ReplicaOrInstanceId   : 131031502346844061
+	                                           HealthState           : Ok
 
-                                           	ReplicaOrInstanceId   : 131031502346844058
-                                           	HealthState           : Error
+	                                           ReplicaOrInstanceId   : 131031502346844058
+	                                           HealthState           : Error
 
 
 以下 cmdlet 返回某个节点上所有已部署的实体。
@@ -937,39 +937,39 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 	HealthState                  : Error
 	NodeHealthStateChunks        : None
 	ApplicationHealthStateChunks :
-                               		TotalCount            : 2
+	                               TotalCount            : 2
 
-                               		ApplicationName       : fabric:/System
-                               		HealthState           : Ok
-                               		DeployedApplicationHealthStateChunks :
-                                   	TotalCount            : 1
+	                               ApplicationName       : fabric:/System
+	                               HealthState           : Ok
+	                               DeployedApplicationHealthStateChunks :
+	                                   TotalCount            : 1
 
-                                   	NodeName              : _Node_2
-                                   	HealthState           : Ok
-                                   	DeployedServicePackageHealthStateChunks :
-                                       	TotalCount            : 1
+	                                   NodeName              : _Node_2
+	                                   HealthState           : Ok
+	                                   DeployedServicePackageHealthStateChunks :
+	                                       TotalCount            : 1
 
-                                       	ServiceManifestName   : FAS
-                                       	HealthState           : Ok
+	                                       ServiceManifestName   : FAS
+	                                       HealthState           : Ok
 
 
 
-                               		ApplicationName       : fabric:/WordCount
-                               		ApplicationTypeName   : WordCount
-                               		HealthState           : Error
-                               		DeployedApplicationHealthStateChunks :
-                                   		TotalCount            : 1
+	                               ApplicationName       : fabric:/WordCount
+	                               ApplicationTypeName   : WordCount
+	                               HealthState           : Error
+	                               DeployedApplicationHealthStateChunks :
+	                                   TotalCount            : 1
 
-                                   	NodeName              : _Node_2
-                                   	HealthState           : Ok
-                                   	DeployedServicePackageHealthStateChunks :
-                                       	TotalCount            : 2
+	                                   NodeName              : _Node_2
+	                                   HealthState           : Ok
+	                                   DeployedServicePackageHealthStateChunks :
+	                                       TotalCount            : 2
 
-                                       	ServiceManifestName   : WordCountServicePkg
-                                       	HealthState           : Ok
+	                                       ServiceManifestName   : WordCountServicePkg
+	                                       HealthState           : Ok
 
-                                       	ServiceManifestName   : WordCountWebServicePkg
-                                       	HealthState           : Ok
+	                                       ServiceManifestName   : WordCountWebServicePkg
+	                                       HealthState           : Ok
 
 
 ## 常规查询
@@ -1016,6 +1016,7 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 
 以下 cmdlet 获取 fabric:/WordCount 应用程序的详细信息。请注意，运行状况状态为警告。
 
+
 	PS C:\> Get-ServiceFabricApplication -ApplicationName fabric:/WordCount
 
 	ApplicationName        : fabric:/WordCount
@@ -1052,9 +1053,9 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 ## 群集和应用程序升级
 在群集与应用程序的受监视升级期间，Service Fabric 将检查运行状况，以确保一切都能维持在运行状况良好的状态。如果实体通过使用已设置的运行状况策略评估为状况不良，升级过程将应用升级特定的策略来确定后续措施。升级可能会暂停，以允许用户交互（例如修复错误条件或更改策略），或是它自动回滚到以前的正常版本。
 
-在“群集”升级期间，你可以获取群集升级状态。这包括任何状况不正常的评估，指向群集中状况不正常的项目。如果升级因运行状况问题而回滚，则升级状态将保留最后的不正常原因。这可以让管理员能够调查发生的问题。
+在群集升级期间，你可以获取群集升级状态。这包括任何状况不正常的评估，指向群集中状况不正常的项目。如果升级因运行状况问题而回滚，则升级状态将保留最后的不正常原因。这可以让管理员能够调查发生的问题。
 
-同样地，在“应用程序”升级期间，应用程序升级状态也会包含任何不正常的评估。
+同样地，在应用程序升级期间，应用程序升级状态也会包含任何不正常的评估。
 
 以下代码显示修改后的 fabric:/WordCount 应用程序的升级状态。监视程序在其中一个副本上报告一个错误。因为运行状况检查不合格，升级回滚。
 
@@ -1122,8 +1123,10 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 
 [添加自定义 Service Fabric 运行状况报告](/documentation/articles/service-fabric-report-health/)
 
+[如何报告和检查服务运行状况](/documentation/articles/service-fabric-diagnostics-how-to-report-and-check-service-health/)
+
 [在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)
 
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0801_2016-->

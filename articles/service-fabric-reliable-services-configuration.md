@@ -4,13 +4,14 @@
    services="Service-Fabric"
    documentationCenter=".net"
    authors="sumukhs"
-   manager="anuragg"
-   editor=""/>
+   manager="timlt"
+   editor="vturecek"/>
 
 <tags
    ms.service="Service-Fabric"
-   ms.date="03/30/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/30/2016"
+   wacn.date="08/08/2016"/>
+# 配置有状态 Reliable Services
 
 有两组配置设置可供 Reliable Services 使用。一组适用于群集中的所有 Reliable Services，而另一组特定于特定的 Reliable Services。
 
@@ -89,7 +90,7 @@ ReplicatorConfig
 |MaxRecordSizeInKB|KB|1024|复制器可以在日志中写入的最大记录大小。此值必须是 4 的倍数，且大于 16。|
 |SharedLogId|GUID|""|指定要用于标识与此副本一起使用的共享日志文件的唯一 GUID。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogId，则也必须指定 SharedLogPath。|
 |SharedLogPath|完全限定的路径名|""|指定将在其中创建此副本共享日志文件的完全限定路径。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogPath，则也必须指定 SharedLogId。|
-
+|SlowApiMonitoringDuration|秒|300|设置托管 API 调用的监视间隔。示例：用户提供的备份回调函数。此间隔时间过去后，将向运行状况管理器发送一个警告运行状况报告。|
 
 ### 通过代码进行配置的示例
 
@@ -159,6 +160,4 @@ SharedLogId 和 SharedLogPath 设置始终一起使用，使服务可以使用�
  - [在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
  - [Reliable Services 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)
 
-
-
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

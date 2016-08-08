@@ -9,15 +9,15 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="04/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/11/2016"
+   wacn.date="08/08/2016"/>
 
 # Service Fabric 运行状况监视简介
 Azure Service Fabric 引入了一个运行状况模型，该模型提供丰富、灵活且可扩展的运行状况评估和报告。这包括对群集的状态和在其中运行的服务进行近实时监视。你可以轻松地获取运行状况信息，并在潜在问题级联和造成大规模停机之前采取措施对其予以更正。在典型的模型中，服务基于其本地视图发送报告，并聚合信息，以提供整体的群集级别视图。
 
 Service Fabric 组件使用此运行状况模型报告其当前状态。你可以使用相同的机制报告应用程序中的运行状况。特定于你的自定义条件的运行状况报告的质量和丰富程度将决定你能够针对运行的应用程序检测和修复问题的轻松程度。
 
-> [AZURE.NOTE] 我们根据需要为监视的升级启动运行状况子系统。Service Fabric 提供监视的升级，该升级了解如何在没有停机时间、无用户干预最小化，并具有完整的群集和应用程序可用性的情况下升级群集或应用程序。若要执行此操作，升级会基于配置的升级策略检查运行状况，并且仅当运行状况遵从所需的阈值时允许升级继续。否则，升级会自动回滚或暂停，以便让管理员有机会修复问题。若要了解有关应用程序升级的详细信息，请参阅[本文](/documentation/articles/service-fabric-application-upgrade/)。
+> [AZURE.NOTE] 我们根据需要为监视的升级启动运行状况子系统。Service Fabric 提供监视的升级，该升级了解如何在没有停机时间、无用户干预最小化，并具有完整的群集和应用程序可用性的情况下升级群集或应用程序。若要执行此操作，升级会基于配置的升级策略检查运行状况，并且仅当运行状况遵从所需的阈值时允许升级继续。否则，升级会自动回滚或暂停，以便让管理员有机会修复问题。若要了解有关应用程序升级的详细信息，请参阅[此文](/documentation/articles/service-fabric-application-upgrade/)。
 
 ## 运行状况存储
 运行状况存储保留群集中关于实体的运行状况相关信息，以进行轻松的检索和评估。它作为 Service Fabric 保留的有状态服务进行实现，以确保高度可用性和可缩放性。运行状况存储是 **fabric:/System** 应用程序的一部分，并且只要群集已启动并正在运行，即可使用。
@@ -27,7 +27,7 @@ Service Fabric 组件使用此运行状况模型报告其当前状态。你可�
 
 运行状况实体镜像 Service Fabric 实体。（例如，**运行状况应用程序实体**匹配群集中部署的应用程序实例，**运行状况节点实体**匹配 Service Fabric 群集节点。） 运行状况层次结构捕获系统实体的交互并且是进行高级运行状况评估的基础。你可以通过 [Service Fabric 技术概述](/documentation/articles/service-fabric-technical-overview/)了解 Service Fabric 的关键概念。有关应用程序的详细信息，请参阅 [Service Fabric 应用程序模型](/documentation/articles/service-fabric-application-model/)。
 
-利用运行状况实体和层次结构，你能够有效地报告、调试和监视群集和应用程序。运行状况模型为群集中许多移动片段的运行状况提供准确而“精细”的表示。
+利用运行状况实体和层次结构，你能够有效地报告、调试和监视群集和应用程序。运行状况模型为群集中许多移动片段的运行状况提供准确而精细的表示。
 
 ![运行状况实体。][1]
 运行状况实体基于父-子关系在层次结构中进行组织。
@@ -48,7 +48,7 @@ Service Fabric 组件使用此运行状况模型报告其当前状态。你可�
 
 - **副本**。表示有状态服务副本或无状态服务实例的运行状况。这是监视器和系统组件可针对应用程序进行报告的最小单位。对于有状态服务，示例如下：如果主要副本不能将操作复制到辅助副本以及复制未按预期进度继续执行，主要副本就会进行报告。此外，如果无状态的实例耗尽了资源或存在连接问题，就会进行报告。副本实体由分区 ID (GUID) 和副本或实例 ID（长型值）标识。
 
-- **DeployedApplication**。表示“在节点上运行的应用程序”的运行状况。已部署应用程序运行状况报告说明特定于节点上的应用程序的条件，该条件不能缩小到部署在同一个节点上的服务包。示例包括当不能在该节点上下载应用程序包以及当在节点上设置应用程序安全主体时出现问题时。已部署应用程序由应用程序名称 (URI) 和节点名称（字符串）标识。
+- **DeployedApplication**。表示在节点上运行的应用程序的运行状况。已部署应用程序运行状况报告说明特定于节点上的应用程序的条件，该条件不能缩小到部署在同一个节点上的服务包。示例包括当不能在该节点上下载应用程序包以及当在节点上设置应用程序安全主体时出现问题时。已部署应用程序由应用程序名称 (URI) 和节点名称（字符串）标识。
 
 - **DeployedServicePackage**。表示在群集节点中运行的应用程序的服务包运行状况。它说明特定于服务包的条件，该条件不会影响同一个应用程序的同一节点上的其他服务包。示例包括服务包中的代码包无法启动以及配置包无法读取。已部署服务包由应用程序名称 (URI)、节点名称（字符串）和服务清单名称（字符串）标识。
 
@@ -56,7 +56,8 @@ Service Fabric 组件使用此运行状况模型报告其当前状态。你可�
 
 运行状况层次结构由父-子关系组成。群集由节点和应用程序组成。应用程序包含服务和已部署的应用程序。已部署的应用程序包含已部署的服务包。服务具有分区，并且每个分区都有一个或多个副本。节点和已部署实体之间具有特殊关系。如果其机构系统组件（故障转移管理器服务）报告某一节点不正常，则它会影响已部署应用程序、服务包和在其上部署的副本。
 
-运行状况层次结构基于最新的运行状况报告表示系统的最新状态，该报告几乎是实时信息。基于应用程序特定的逻辑或监视的自定义条件，内部和外部的监视器可以针对相同实体进行报告。用户报告与系统报告共存。
+运行状况层次结构基于最新的运行状况报告表示系统的最新状态，该报告几乎是实时信息。
+基于应用程序特定的逻辑或监视的自定义条件，内部和外部的监视器可以针对相同实体进行报告。用户报告与系统报告共存。
 
 当设计大型云服务时，花时间规划如何报告和响应运行状况，可让该服务更轻松地进行调试、监视和后续操作。
 
@@ -81,7 +82,8 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 默认情况下，Service Fabric 针对父-子层次结构关系应用严格的规则（所有内容都必须正常）。只要其中一个子项具有一个不正常事件，父项则被视为不正常。
 
 ### 群集运行状况策略
-[群集运行状况策略](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.clusterhealthpolicy.aspx)用于评估群集运行状况状态和节点运行状况状态。可以在群集清单中对它进行定义。如果该策略不存在，则会使用默认策略（不容许失败）。群集运行状况策略包含：
+[群集运行状况策略](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.clusterhealthpolicy.aspx)用于评估群集运行状况状态和节点运行状况状态。可以在群集清单中对它进行定义。如果该策略不存在，则会使用默认策略（不容许失败）。
+群集运行状况策略包含：
 
 - [ConsiderWarningAsError](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.clusterhealthpolicy.considerwarningaserror.aspx)。指定是否在运行状况评估期间将“警告”运行状况报告视为错误。默认值：false。
 
@@ -89,7 +91,8 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 - [MaxPercentUnhealthyNodes](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.clusterhealthpolicy.maxpercentunhealthynodes.aspx)。指定群集被视为“错误”之前可以保留不正常的节点的最大容忍百分比。在大型群集中，始终会有一些要关闭或需要修复的节点，因此应配置此百分比以便容忍这种情况。
 
-- [ApplicationTypeHealthPolicyMap](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.clusterhealthpolicy.applicationtypehealthpolicymap.aspx)。应用程序类型的运行状况策略对应可以在群集运行状况评估期间，用于描述特殊的应用程序类型。默认情况下，所有的应用程序都放入池，并使用 MaxPercentUnhealthyApplications 进行评估。如果有一个或多个特殊的应用程序类型，并且应该使用不同的方式来处理，则可将它们从全局池中取出，并根据映射中与其应用程序类型名称关联的百分比进行评估。例如，在群集中，有数千个不同类型的应用程序，以及某个特殊应用程序类型的多个控制应用程序实例。控制应用程序应该永远不发生错误。因此用户可以将全局的 MaxPercentUnhealthyApplications 指定为 20%，以容许一些失败，但如果应用程序类型为“ControlApplicationType”，请将 MaxPercentUnhealthyApplications 设为 0。如此一来，如果其中许多应用程序的状况不良，但低于全局状况不良的百分比，则将群集评估为 Warning。Warning 运行状况并不影响群集升级或由 Error 运行状况触发的其他监视。但即使只有一个控制应用程序发生错误都使群集运行状况发生错误，其可以恢复或防止群集升级。对于映射中定义的应用程序类型，所有应用程序实例都是从应用程序的全局池中所取出。系统使用映射中的特定 MaxPercentUnhealthyApplications 根据应用程序类型的应用程序总数来评估它们。所有其他应用程序都保留于全局池中，并使用 MaxPercentUnhealthyApplications 进行评估。
+- [ApplicationTypeHealthPolicyMap](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.clusterhealthpolicy.applicationtypehealthpolicymap.aspx)。应用程序类型的运行状况策略对应可以在群集运行状况评估期间，用于描述特殊的应用程序类型。默认情况下，所有的应用程序都放入池，并使用 MaxPercentUnhealthyApplications 进行评估。如果有一个或多个特殊的应用程序类型，并且应该使用不同的方式来处理，则可将它们从全局池中取出，并根据映射中与其应用程序类型名称关联的百分比进行评估。例如，在群集中，有数千个不同类型的应用程序，以及某个特殊应用程序类型的多个控制应用程序实例。控制应用程序应该永远不发生错误。因此用户可以将全局的 MaxPercentUnhealthyApplications 指定为 20%，以容许一些失败，但如果应用程序类型为“ControlApplicationType”，请将 MaxPercentUnhealthyApplications 设为 0。如此一来，如果其中许多应用程序的状况不良，但低于全局状况不良的百分比，则将群集评估为 Warning。Warning 运行状况并不影响群集升级或由 Error 运行状况触发的其他监视。但即使只有一个控制应用程序发生错误都使群集运行状况发生错误，其可以恢复或防止群集升级。
+对于映射中定义的应用程序类型，所有应用程序实例都是从应用程序的全局池中所取出。系统使用映射中的特定 MaxPercentUnhealthyApplications 根据应用程序类型的应用程序总数来评估它们。所有其他应用程序都保留于全局池中，并使用 MaxPercentUnhealthyApplications 进行评估。
 
 下面是群集清单的摘录。若要定义应用程序类型映射中的条目，请在参数名称前面添加“ApplicationTypeMaxPercentUnhealthyApplications-”，后接应用程序类型名称。
 
@@ -105,7 +108,8 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 
 ### 应用程序运行状况策略
-[应用程序运行状况策略](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.applicationhealthpolicy.aspx)说明如何对应用程序及其子项进行事件和子项状态聚合评估。它可以在应用程序清单（应用程序包中的 **ApplicationManifest.xml**）中定义。如果未指定任何策略，则当运行状况报告或子项处于“警告”或“错误”运行状况状态时，Service Fabric 会假设实体不正常。可配置的策略是：
+[应用程序运行状况策略](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.applicationhealthpolicy.aspx)说明如何对应用程序及其子项进行事件和子项状态聚合评估。它可以在应用程序清单（应用程序包中的 **ApplicationManifest.xml**）中定义。如果未指定任何策略，则当运行状况报告或子项处于“警告”或“错误”运行状况状态时，Service Fabric 会假设实体不正常。
+可配置的策略是：
 
 - [ConsiderWarningAsError](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.applicationhealthpolicy.considerwarningaserror.aspx)。指定是否在运行状况评估期间将“警告”运行状况报告视为错误。默认值：false。
 
@@ -152,7 +156,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 ### 运行状况报告聚合
 一个实体可以具有由不同属性上的不同报告器（系统组件或监视器）发送的多个运行状况报告。聚合使用关联的运行状况策略，尤其是应用程序或群集运行状况策略的 ConsiderWarningAsError 成员。该策略指定如何评估警告。
 
-已聚合运行状况状态由实体上“最差”的运行状况报告触发。如果至少有一个“错误”运行状况报告，已聚合运行状况状态则为“错误”。
+已聚合运行状况状态由实体上最差的运行状况报告触发。如果至少有一个“错误”运行状况报告，已聚合运行状况状态则为“错误”。
 
 ![运行状况报告与“错误”报告聚合。][2]
 
@@ -188,7 +192,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 - 如果具有“错误”状态的子项遵从不正常子项的最大允许百分比，已聚合运行状况状态则为“警告”。
 
 ## 运行状况报告
-系统组件、系统结构应用程序和内部/外部监视器可以针对 Service Fabric 实体进行报告。报告器基于它们正在监视的条件对监视的实体的运行状况进行“本地”判断。它们无需查看任何全局状态或聚合数据。之所以不需要，原因是它会使报告器成为复杂的有机体，届时需要查看很多内容，以便推断要发送的信息。
+系统组件、系统结构应用程序和内部/外部监视器可以针对 Service Fabric 实体进行报告。报告器基于它们正在监视的条件对监视的实体的运行状况进行本地判断。它们无需查看任何全局状态或聚合数据。之所以不需要，原因是它会使报告器成为复杂的有机体，届时需要查看很多内容，以便推断要发送的信息。
 
 若要将运行状况数据发送到运行状况存储，报告器需要标识受影响的实体并创建运行状况报告。然后，报告可以通过使用 [FabricClient.HealthClient.ReportHealth](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.healthclient_members.aspx) 的 API、通过 PowerShell 或通过 REST 进行发送。
 
@@ -215,7 +219,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
   - DeployedServicePackage。应用程序名称 (URI)、节点名称（字符串）和服务清单名称（字符串）。
 
-- **属性**。允许报告器对实体的特定属性的运行状况事件进行分类的“字符串”（不是固定的枚举）。例如，报告器 A 可以报告 Node01“存储”属性的运行状况，报告器 B 可以报告 Node01“连接”属性的运行状况。在运行状况存储中，这两个报告均被视为 Node01 实体的单独运行状况事件。
+- **属性**。允许报告器对实体的特定属性的运行状况事件进行分类的字符串（不是固定的枚举）。例如，报告器 A 可以报告 Node01“存储”属性的运行状况，报告器 B 可以报告 Node01“连接”属性的运行状况。在运行状况存储中，这两个报告均被视为 Node01 实体的单独运行状况事件。
 
 - **说明**。报告器用于提供有关运行状况事件的详细信息的字符串。**SourceId**、**属性**和 **HealthState** 应完整说明报告。说明中添加了用户可读的报告相关信息。这有助于让管理员和用户更容易理解。
 
@@ -328,10 +332,13 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 [使用系统运行状况报告进行故障排除](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports/)
 
+[如何报告和检查服务运行状况](/documentation/articles/service-fabric-diagnostics-how-to-report-and-check-service-health/)
+
 [添加自定义 Service Fabric 运行状况报告](/documentation/articles/service-fabric-report-health/)
 
 [在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)
 
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
  
-<!---HONumber=Mooncake_0523_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

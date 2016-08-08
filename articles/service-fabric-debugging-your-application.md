@@ -3,14 +3,14 @@
    description="通过在本地开发群集上采用 Visual Studio 进行开发和调试，来提高服务的可靠性和性能。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/31/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/21/2016"
+   wacn.date="08/08/2016"/>
 
 # 使用 Visual Studio 调试 Service Fabric 应用程序
 
@@ -18,7 +18,7 @@
 
 可以通过在本地计算机开发群集中部署和调试 Azure Service Fabric 应用程序来节省时间和资金。Visual Studio 可以将应用程序部署到本地群集并自动将调试器连接到应用程序的所有实例。
 
-1. 按 [Setting up your Service Fabric development environment（设置 Service Fabric 开发环境）](/documentation/articles/service-fabric-get-started/) 中的步骤创建本地开发群集。
+1. 按 [Setting up your Service Fabric development environment](/documentation/articles/service-fabric-get-started/)（设置 Service Fabric 开发环境）中的步骤创建本地开发群集。
 
 2. 按“F5”或单击“调试”>“启动调试”。
 
@@ -66,7 +66,7 @@
 1. 在“云资源管理器”中导航到群集，单击右键并选择“启用调试”
 
     ![启用远程调试][enableremotedebugging]
-    
+
     这将开始在群集节点上启用远程调试扩展的过程，以及所需的网络配置。
 
 2. 在“云资源管理器”中右键单击群集节点，然后选择“附加调试器”
@@ -76,20 +76,20 @@
 3. 在“附加到进程”对话框中，选择要调试的进程，然后单击“附加”
 
     ![选择进程][chooseprocess]
-    
+
     想要附加到的进程名称等于服务项目组件名称。
 
     调试器将复制到运行进程的所有节点。
     - 在调试无状态服务的情况下，所有节点上此服务的所有实例都是调试会话的一部分。
     - 如果正在调试有状态服务，任何分区都只有主副本处于活动状态，因而遭到调试器捕获。如果在调试会话期间移动主副本，仍在调试会话中处理该副本。
     - 若只要捕获特定服务的相关分区或实例，可以使用条件性断点只中断特定的分区或实例。
-        
+
     ![条件性断点][conditionalbreakpoint]
-    
+
     > [AZURE.NOTE] 目前我们不支持使用具有相同服务可执行文件名的多个实例调试 Service Fabric 群集。
-    
+
 4. 完成应用程序调试后，可以通过在“云资源管理器”中右键单击群集并选择“禁用调试”，来禁用远程调试扩展
-    
+
     ![禁用远程调试][disableremotedebugging]
 
 ## 从远程群集节点流式传输跟踪
@@ -105,17 +105,17 @@
 1. 在“云资源管理器”中导航到群集，单击右键并选择“启用流跟踪”
 
     ![启用远程流跟踪][enablestreamingtraces]
-    
+
     这将开始在群集节点上启用流跟踪扩展的过程，以及所需的网络配置。
 
 2. 展开“云资源管理器”中的“节点”元素，右键单击要流跟踪的节点，然后选择“查看流跟踪”
 
     ![查看远程流跟踪][viewremotestreamingtraces]
-    
+
     针对想要查看其跟踪的任意数目的节点重复步骤 2。每个节点流将显示在专用窗口中。
-    
+
     现在，你可以查看 Service Fabric 以及服务发出的跟踪。如果你想要筛选事件以便只显示特定的应用程序，只需在筛选器中键入应用程序的名称即可。
-    
+
     ![查看流跟踪][viewingstreamingtraces]
 
 4. 完成从群集流式传输跟踪后，可以通过在“云资源管理器”中右键单击群集并选择“禁用流跟踪”，来禁用远程流跟踪
@@ -142,4 +142,5 @@
 [viewingstreamingtraces]: ./media/service-fabric-debugging-your-application/viewingstreamingtraces.png
 [viewremotestreamingtraces]: ./media/service-fabric-debugging-your-application/viewremotestreamingtraces.png
 [disablestreamingtraces]: ./media/service-fabric-debugging-your-application/disablestreamingtraces.png
-<!---HONumber=Mooncake_0425_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

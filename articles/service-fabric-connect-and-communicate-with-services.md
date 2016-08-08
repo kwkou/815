@@ -3,14 +3,14 @@
    description="了解如何在 Service Fabric 中解析服务、建立连接以及与之通信。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="kunaldsingh"
+   authors="vturecek"
    manager="timlt"
-   editor=""/>
+   editor="msfussell"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="04/18/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/05/2016"
+   wacn.date="08/08/2016"/>
 # 在 Service Fabric 中与服务建立连接和通信
 在 Service Fabric 中，服务在 Service Fabric 群集（通常分布在多个 VM 间）中的某个位置运行。它可以从一个位置移动到另一个位置（由服务所有者移动或由 Service Fabric 自动移动）。服务不以静态方式绑定到特定计算机或地址。
  
@@ -44,7 +44,7 @@ Service Fabric 提供一种服务发现和解析服务，称为“命名服务�
 
 ## Azure 中的 Service Fabric
 
-Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到群集的所有外部流量都必须穿过该负载平衡器。该负载平衡器会自动在给定端口上将入站流量转发到打开了相同端口的随机“节点”。Azure Load Balancer 只了解“节点” 上打开的端口，它不了解各个*服务* 打开的端口。
+Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到群集的所有外部流量都必须穿过该负载平衡器。该负载平衡器会自动在给定端口上将入站流量转发到打开了相同端口的随机节点。Azure Load Balancer 只了解节点上打开的端口，它不了解各个服务打开的端口。
 
 ![Azure Load Balancer 和 Service Fabric 拓扑][3]
 
@@ -95,7 +95,7 @@ Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到�
         }
     
   
-2. 在 Azure 中创建 Service Fabric 群集，并将端口 **80** 指定为将承载服务的节点类型的自定义终结点端口。如果具有多种节点类型，则可以对服务设置“放置约束”，以确保它只在打开了自定义终结点端口的节点类型上运行。
+2. 在 Azure 中创建 Service Fabric 群集，并将端口 **80** 指定为将承载服务的节点类型的自定义终结点端口。如果具有多种节点类型，则可以对服务设置放置约束，以确保它只在打开了自定义终结点端口的节点类型上运行。
 
     ![在节点类型上打开端口][4]
 
@@ -107,7 +107,7 @@ Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到�
 
     ![在 Azure Load Balancer 中转发流量][8]
 
-请务必记住，Azure Load Balancer 和探测只了解“节点”，而不了解在节点上运行的*服务*。Azure Load Balancer 始终将流量发送到响应探测的节点，因此必须格外小心以确保服务在能够响应探测的节点上可用。
+请务必记住，Azure Load Balancer 和探测只了解节点，而不了解在节点上运行的服务。Azure Load Balancer 始终将流量发送到响应探测的节点，因此必须格外小心以确保服务在能够响应探测的节点上可用。
 
 ## 内置通信 API 选项
 Reliable Services 框架附带几个预建的通信选项。你可以根据所选的编程模型、通信框架和编写服务时使用的编程语言来决定哪个选项最适合自己。
@@ -132,4 +132,5 @@ Reliable Services 框架附带几个预建的通信选项。你可以根据所�
 [5]: ./media/service-fabric-connect-and-communicate-with-services/loadbalancerport.png
 [7]: ./media/service-fabric-connect-and-communicate-with-services/distributedservices.png
 [8]: ./media/service-fabric-connect-and-communicate-with-services/loadbalancerprobe.png
-<!---HONumber=Mooncake_0523_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

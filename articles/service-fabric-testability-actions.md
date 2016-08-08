@@ -3,14 +3,14 @@
    description="本文介绍了 Microsoft Azure Service Fabric 中的可测试性操作。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="heeldin"
+   authors="motanv"
    manager="timlt"
-   editor=""/>
+   editor="toddabel"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/08/2016"
+   wacn.date="08/08/2016"/>
 
 # 可测试性操作
 为了模拟一个不可靠的基础结构，Azure Service Fabric 向你（即开发人员）提供众多方式来模拟各种现实世界故障和状态转换。这些方式被称为可测试操作。这些操作属于低级别 API，导致具体的故障注入、状态转换或验证。结合使用这些操作，你可以为你的服务编写全面的测试方案。
@@ -81,7 +81,7 @@ Restart-ServiceFabricNode -NodeName Node1 -CompletionMode DoNotVerify
 
 应使用 **Restart-ServiceFabricNode** 来重新启动群集中的一个 Service Fabric 节点。这将停止会重新启动驻留在该节点上的所有系统服务和用户服务副本的 Fabric.exe 进程。使用此 API 来测试你的服务有助于沿故障转移恢复路径发现 Bug。它帮助模拟群集中的节点故障。
 
-以下屏幕截图显示操作中的 **Restart-ServiceFabricNode** 可测试性命令。
+以下屏幕快照显示操作中的 **Restart-ServiceFabricNode** 可测试性命令。
 
 ![](./media/service-fabric-testability-actions/Restart-ServiceFabricNode.png)
 
@@ -91,10 +91,9 @@ Restart-ServiceFabricNode -NodeName Node1 -CompletionMode DoNotVerify
 
 针对 Azure 群集运行一个可测试性操作（使用 PowerShell）与针对本地群集运行一个操作类似。唯一的区别在于：在能够运行操作之前，不是连接到本地群集，而是需要首先连接到 Azure 群集。
 
-## 运行可测试性操作
+## 使用 C# 运行可测试性操作；
 
-若要使用 C# 运行可测试性操作，首先你需要使用 FabricClient 连接到群集。然后获取运行该操作所需的参数。可用不同的参数来运行相同的操作。
-请看一看 RestartServiceFabricNode 操作，运行该操作的方式之一是在群集中使用节点信息（节点名称和节点实例 ID）。
+若要使用 C# 运行可测试性操作，首先你需要使用 FabricClient 连接到群集。然后获取运行该操作所需的参数。可用不同的参数来运行相同的操作。请看一看 RestartServiceFabricNode 操作，运行该操作的方式之一是在群集中使用节点信息（节点名称和节点实例 ID）。
 
 
 	RestartNodeAsync(nodeName, nodeInstanceId, completeMode, operationTimeout, CancellationToken.None)
@@ -102,7 +101,7 @@ Restart-ServiceFabricNode -NodeName Node1 -CompletionMode DoNotVerify
 
 参数说明：
 
-- **CompleteMode** 指定该模式不应该验证实际上是否成功执行了重新启动操作。将完成模式指定为“Verify”会让其验证实际是否成功执行了重新启动操作。  
+- **CompleteMode** 指定该模式不应该验证实际上是否成功执行了重新启动操作。将完成模式指定为“Verify”会让其验证实际是否成功执行了重新启动操作。
 - **OperationTimeout** 设置在引发 TimeoutException 异常之前等待操作完成的时间量。
 - **CancellationToken** 允许取消挂起调用。
 
@@ -233,4 +232,5 @@ ReplicaSelector 是在可测试性中运用的一个帮助程序，用于帮助�
    - [在服务工作负荷期间模拟故障](/documentation/articles/service-fabric-testability-workload-tests/)
    - [服务到服务通信失败](/documentation/articles/service-fabric-testability-scenarios-service-communication/)
  
-<!---HONumber=Mooncake_0503_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

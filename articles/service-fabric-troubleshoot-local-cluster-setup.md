@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="04/06/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/08/2016"
+   wacn.date="08/08/2016"/>
 
 # 排除本地开发群集安装的故障
 
@@ -88,10 +88,11 @@
 
 确保在你的解决方案中没有将任何服务项目设置为启动项目。只应将 Service Fabric 应用程序项目设置为启动项目。
 
+>[AZURE.TIP] 如果本地群集在设置后开始出现异常行为，则可使用本地群集管理器系统托盘应用程序来重置它。该操作将删除现有群集，然后设置一个新的。请注意，所有部署的应用程序和关联的数据都会被删除。
 
 ## 后续步骤
 
 - [使用系统运行状况报告了解群集并排除故障](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports/)
 - [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -3,14 +3,14 @@
    description="概述如何帮助保护 Azure Service Fabric 群集中运行的 Reliable Services 的通信。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="punewa"
+   authors="suchiagicha"
    manager="timlt"
    editor="vturecek"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/22/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # 在 Azure Service Fabric 中帮助保护服务的通信
 
@@ -305,4 +305,4 @@
 
 * [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->

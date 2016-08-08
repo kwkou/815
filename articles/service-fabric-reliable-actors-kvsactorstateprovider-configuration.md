@@ -4,13 +4,13 @@
    services="Service-Fabric"
    documentationCenter=".net"
    authors="sumukhs"
-   manager="anuragg"
+   manager="timlt"
    editor=""/>
 
 <tags
    ms.service="Service-Fabric"
-   ms.date="04/12/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/30/2016"
+   wacn.date="08/08/2016"/>
 
 # 配置 Reliable Actors - KVSActorStateProvider
 通过更改 Microsoft Visual Studio 程序包根目录下的指定执行组件的 Config 文件夹中生成的 settings.xml 文件，可以修改 KVSActorStateProvider 的默认配置。
@@ -85,5 +85,6 @@ Azure Service Fabric 运行时在 settings.xml 文件中查找预定义的节名
 
 BatchAcknowledgementInterval 参数用于控制复制延迟。“0”值导致可能的最低延迟，但代价是牺牲吞吐量（因为必须发送和处理更多的确认消息，每个包含较少的确认）。
 BatchAcknowledgementInterval 的值越大，整体复制吞吐量就越高，但代价是导致更高的操作延迟。这直接转换为事务提交的延迟。
- 
-<!---HONumber=Mooncake_0503_2016-->
+
+
+<!---HONumber=Mooncake_0801_2016-->

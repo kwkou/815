@@ -3,418 +3,124 @@
    description="大致了解如何使用 Visual Studio Team Services (VSTS) 为 Service Fabric 应用程序设置持续集成。"
    services="service-fabric"
    documentationCenter="na"
-   authors="cawams"
+   authors="mthalman-msft"
    manager="timlt"
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="03/29/2016"
-   wacn.date="07/07/2016" />
+   ms.date="06/28/2016"
+   wacn.date="08/08/2016" />
 
 # 使用 Visual Studio Team Services 为 Service Fabric 应用程序设置持续集成
 
-本文介绍使用 Visual Studio Team Services (VSTS) 为 Azure Service Fabric 应用程序设置持续集成，从而确保以自动方式生成、打包和部署应用程序的步骤。请注意，这些说明每次都将从零开始重新创建群集。
+本文介绍使用 Visual Studio Team Services (VSTS) 为 Azure Service Fabric 应用程序设置持续集成，从而确保以自动方式生成、打包和部署应用程序的步骤。
 
 本文档反映当前过程，应随时间推移而更改。
 
 ## 先决条件
 
-首先，请在 Visual Studio Team Services 上设置项目：
+请按照以下步骤开始：
 
-1. 如果你尚未创建 Team Services 帐户，请使用你的 [Microsoft 帐户](http://www.microsoft.com/account)设置它。
+1. 确保你有权访问 Team Services 帐户，否则请自行[创建一个](https://www.visualstudio.com/docs/setup-admin/team-services/sign-up-for-visual-studio-team-services)。
 
-2. 使用 Microsoft 帐户在 Team Services 上创建新项目。
+2. 确保你有权访问 Team Services 团队项目，否则请自行[创建一个](https://www.visualstudio.com/docs/setup-admin/create-team-project)。
 
-3. 将新的或现有 Service Fabric 应用的源推送到此项目。
+3. 确保你有一个可以向其部署应用程序的 Service Fabric 群集，或者使用 [Azure Resource Manager 模板](/documentation/articles/service-fabric-cluster-creation-via-arm/)或 [Visual Studio](/documentation/articles/service-fabric-cluster-creation-via-visual-studio/) 创建一个。
 
-有关处理 Team Services 项目的详细信息，请参阅[连接到 Visual Studio](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online)。
+4. 确保已创建 Service Fabric 应用程序 (.sfproj) 项目。
 
-## 设置服务主体
+>[AZURE.NOTE] 不再需要自定义生成代理。Team Services 托管的生成代理现在预装了 Service Fabric 群集管理软件，因此可以直接从这些代理部署应用程序。
 
-### 为自动化设置身份验证
+## 配置和共享源文件
 
-你需要先创建生成代理将用于对 Azure 进行身份验证的[服务主体](/documentation/articles/resource-group-create-service-principal-portal/)，才能设置生成计算机。你还需要创建证书并将其上载到 Azure 密钥保管库，因为密钥保管库不支持服务主体身份验证。可以从任意计算机进行这些步骤。你的开发计算机是一个不错的选择。
+你首先要做的事就是准备一个发布配置文件，供将要在 Team Services 中执行的部署进程使用。应将发布配置文件配置为针对此前已准备好的群集：
 
-### 安装 Azure PowerShell 并登录
-
-1.  安装 PowerShellGet。
-
-    a.如果正在运行具有最新更新的 Windows 10，则可以跳过此步骤（已安装 PowerShellGet）。
-
-    b.如果未运行，则安装 [Windows Management Framework 5.0](http://www.microsoft.com/download/details.aspx?id=48729)，它包括 PowerShellGet。
-
-2.	安装和更新 AzureRM 模块。
-如果你安装了 Azure PowerShell 的任何以前版本，请将其删除：
-
-    a.右键单击“开始”按钮，然后选择“添加/删除程序”。
-
-    b.搜索“Azure PowerShell”并将其卸载。
-
-    c.打开 PowerShell 命令提示符。
-
-    d.使用命令 `Install-Module AzureRM` 安装 AzureRM 模块。
-
-    e.使用命令 `Update-AzureRM` 更新 AzureRM 模块。
-
-3.	禁用（或启用）Azure 数据收集。
-
-    Azure cmdlet 将提示你选择加入或退出数据收集，直到你做出选择为止。这些提示将阻止自动化，同时等待用户输入。若要取消这些提示，请通过运行下列命令之一提前进行选择：
-
-    - Enable-AzureRmDataCollection
-
-    - 禁用 AzureRmDataCollection
-
-4.	登录到 Azure PowerShell：
-
-    a.运行命令 `Login-AzureRmAccount -EnvironmentName AzureChinaCloud`。
-
-    b.在出现的对话框中，输入你的 Azure 凭据。
-
-    c.运行命令 `Get-AzureRmSubscription`。
-
-    d.找到你想要使用的订阅。
-
-    e.运行命令 `Select-AzureRmSubscription -SubscriptionId <ID for your subscription>`。
-
-### 创建服务主体
-
-1. 请按照[这些说明](https://blogs.msdn.microsoft.com/visualstudioalm/2015/10/04/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/)，为你的项目创建服务主体和服务终结点。
-
-2. 请注意，值会打印在脚本输出的末尾。你需要这些值才能设置生成定义。
-
-### 创建证书并将其上传到新的 Azure 密钥保管库
-
->[AZURE.NOTE] 此示例脚本生成自签名证书，这不是安全的做法，仅可接受将其用于试验。按照组织的指导原则改为获取合法证书。这些说明也会针对服务器和客户端使用单一证书。在生产环境中，你应该使用不同的服务器和客户端证书。
-
-1. 下载 [ServiceFabricContinuousIntegrationScripts.zip](https://gallery.technet.microsoft.com/Set-up-continuous-f8b251f6) 并将其解压缩到此计算机上的文件夹。
-
-2. 在管理员 PowerShell 提示符下，更改为目录 `<extracted zip>/Manual`。
-
-3. 使用以下参数运行 PowerShell 脚本 `CreateAndUpload-Certificate.ps1`：
-
-| 参数 | 值 |
-| --- | --- |
-| KeyVaultLocation | 任何值。此参数必须与你打算在其中创建群集的位置匹配。 |
-| CertificateSecretName | 任何值。 |
-| CertificateDnsName | 必须匹配群集的 DNS 名称。 |
-| SecureCertificatePassword | 任何值。在生成计算机上导入证书时，使用此参数。 |
-| KeyVaultResourceGroupName | 任何值。但是，请勿使用计划用于群集的资源组名称。 |
-| KeyVaultName | 任何值。 |
-| PfxFileOutputPath| 任何值。使用此文件将证书导入到生成计算机上。 |
-
-在脚本结束后，它将输出下列三个值。请注意这些值，因为它们被用作生成变量。
-
- - `ServiceFabricCertificateThumbprint`
- - `ServiceFabricKeyVaultId`
- - `ServiceFabricCertificateSecretId`
-
-## 设置生成计算机
-
-### 安装 Visual Studio 2015
-
-如果你已经预配计算机（或打算提供你自己的计算机），请在所选计算机上安装 [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)。
-
-如果还没有计算机，可以使用预安装的 Visual Studio 2015 快速预配 Azure 虚拟机 (VM)。为此，请按以下步骤操作：
-
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
-
-2. 选择屏幕左上角的“新建”命令。
-
-3. 选择“应用商店”。
-
-4. 搜索 **Visual Studio 2015**。
-
-5. 选择“计算”>“虚拟机”>“从库中”。
-
-6. 选择映像 **Visual Studio Enterprise 2015 Update 1 With Azure SDK 2.8 on Windows Server 2012 R2**。
-
-    >[AZURE.NOTE] Azure SDK 不是必需组件，但是当前没有任何可用的且仅安装有 Visual Studio 2015 的映像。
-
-7.	按照对话框中的说明创建 VM。
-
-### 安装 Service Fabric SDK
-
-在计算机上安装 [Service Fabric SDK](/home/features/service-fabric)。
-
-### 安装 Azure PowerShell
-
-若要安装 Azure PowerShell，请遵循上一节“安装 Azure PowerShell 并登录”中的步骤。跳过“登录到 Azure PowerShell”步骤。
-
-### 使用网络服务帐户注册 Azure PowerShell 模块
-
->[AZURE.NOTE] 执行这项操作*之后*再启动生成代理。否则，它不会接受新的环境变量。
-
-1. 按 Windows 徽标键 + R，键入 **regedit**，再按 Enter。
-
-2. 右键单击节点 `HKEY_Users\.Default\Environment`，然后选择“新建”>“可扩展字符串值”。
-
-3. 输入 `PSModulePath` 作为名称，输入 `%PROGRAMFILES%\WindowsPowerShell\Modules` 作为值。将 `%PROGRAMFILES%` 替换为 `PROGRAMFILES` 环境变量的值。
-
-### 导入你的自动化证书
-
-1.	将证书导入到你的生成计算机上。为此，请按以下步骤操作：
-
-    a.将由脚本 CreateAndUpload-Certificate.ps1 创建的 PFX 文件复制到生成计算机。
-
-    b.使用你之前传递给 `CreateAndUpload-Certificate.ps1` 的密码，打开管理员 PowerShell 提示符并运行以下命令。
-
-        
-        $password = Read-Host -AsSecureString
-        Import-PfxCertificate -FilePath <path/to/cert.pfx> -CertStoreLocation Cert:\LocalMachine\My -Password $password -Exportable
-       
-
-2.	运行证书管理器：
-
-    a.在 Windows 中打开控制面板。右键单击“开始”按钮，然后选择“控制面板”。
-
-    b.搜索**证书**。
-
-    c.选择“管理工具”>“管理计算机证书”。
-
-3.	授权网络服务帐户使用自动化证书：
-
-    a.在“证书 - 本地计算机”下，展开“个人”，然后选择“证书”。
-
-    b.在列表中查找你的证书。
-
-    c.右键单击你的证书，然后选择“所有任务”>“管理私钥”。
-
-    d.选择“添加”按钮，输入“网络服务”，然后选择“检查名称”。
-
-    e.选择“确定”，然后关闭证书管理器。
-
-    ![屏幕截图：授予本地服务帐户权限的步骤](./media/service-fabric-set-up-continuous-integration/windows-certificate-manager.png)
-
-4.  将证书复制到 `Trusted People` 文件夹。
-
-    a.你的证书已导入到“个人/证书”，但我们需要将其添加到“受信任人”。右键单击证书并选择“复制”。然后，右键单击“受信任人”文件夹，并选择“粘贴”。
-
-### 注册你的生成代理
-
-1.	下载 agent.zip。为此，请按以下步骤操作：
-
-    a.登录到你的团队项目，如 **https://[your-VSTS-account-name].visualstudio.com**。
-
-    b.选择屏幕右上角的齿轮图标。
-
-    c.选择“代理池”选项卡。
-
-    d.选择“下载代理”下载 agent.zip 文件。
-
-    >[AZURE.NOTE] 如果未开始下载，请检查你的弹出窗口阻止程序。
-
-    e.将 agent.zip 复制到先前创建的生成计算机。
-
-    f.将 agent.zip 解压缩到生成计算机上的 `C:\agent`（或任何具有短路径的位置）。
-
-    >[AZURE.NOTE] 如果你打算使用 ASP.NET 5 Web 服务，建议为此文件夹选择可能的最短名称，以免在部署期间遇到 **PathTooLongExceptions** 错误。当 ASP.NET Core 发行时，即可缓解此问题。
-
-2.	在管理员命令提示符下，运行 `C:\agent\ConfigureAgent.cmd`。该脚本会提示你输入以下参数：
-
-|参数|值|
-|---|---|
-|代理名称|接受默认值 `Agent-[machine name]`。|
-|TFS Url|输入团队项目的 URL，如 `https://[your-VSTS-account-name].visualstudio.com`。|
-|代理池|输入代理池的名称。（如果尚未创建代理池，则接受默认值。）|
-|工作文件夹|接受默认值。生成代理将在此文件夹中实际生成你的应用程序。如果你打算使用 ASP.NET 5 Web 服务，建议为此文件夹选择可能的最短名称，以免在部署期间遇到 PathTooLongExceptions 错误。|
-|安装为 Windows 服务？|默认值是 N。将该值更改为 **Y**。|
-|用于运行服务的用户帐户|接受默认值 `NT AUTHORITY\NetworkService`。|
-|`NT AUTHORITY\Network Service` 的密码|网络服务帐户没有密码，但会拒绝空白密码。输入任何非空字符串作为密码（将忽略你所输入的内容）。|
-|是否取消配置现有代理？|接受默认值 **N**。|
-
-3.  当系统提示你输入凭据时，输入有权访问你的团队项目的 Microsoft 帐户的凭据。
-
-4.  请确认你的生成代理已注册并配置其功能。为此，请按以下步骤操作：
-
-    a.返回到 Web 浏览器 (`https://[your-VSTS-account-name].visualstudio.com/_admin/_AgentPool`)，并刷新页面。
-
-    b.选择你之前在运行 ConfigureAgent.ps1 时选择的代理池。
-
-    c.验证你的生成代理显示于列表中且其状态突出显示为绿色。如果突出显示为红色，则表示生成代理连接到 Team Services 时遇到问题。
-
-    ![屏幕截图：显示生成代理的状态](./media/service-fabric-set-up-continuous-integration/vso-configured-agent.png)
-
-    d.选择生成代理，然后选择“功能”选项卡。
-
-    e.添加名为 **azureps** 的功能以及任何值。对 VSTS 而言，这表示此计算机上已安装 Azure PowerShell，而需有该模块才能使用 VSTS 提供的某些生成任务。
-
+1.	在应用程序项目中选择一个发布配置文件，以便将其用于持续集成工作流，然后按照[发布说明](/documentation/articles/service-fabric-publish-app-remote-cluster/)将应用程序发布到远程群集。不过，你实际上不需要发布你的应用程序。正确地完成配置操作以后，单击发布对话框中的“保存”超链接即可。
+2.	如果你希望每次在 Team Services 中进行部署时都升级应用程序，则需对发布配置文件进行配置，使之允许升级。在步骤 1 所使用的同一个发布对话框中，确保已勾选“升级应用程序”复选框。详细了解如何[配置其他升级设置](/documentation/articles/service-fabric-visualstudio-configure-upgrade/)。单击“保存”超链接，将设置保存到发布配置文件。
+3.	确保将更改保存到发布配置文件以后，即可取消发布对话框。
+4.	现在可以在 Team Services 中[共享应用程序项目源文件](https://www.visualstudio.com/docs/setup-admin/team-services/connect-to-visual-studio-team-services#vs)。能够在 Team Services 中访问源文件以后，即可转到下一步，即创建生成。
 
 ## 创建生成定义
 
->[AZURE.NOTE] 即使在单独的计算机上，按照这些说明创建的生成定义也不支持多个并发生成。这是因为每个生成会争夺同一个资源组/群集。如果想要运行多个生成代理，你将需要修改以下说明/脚本，以防止这种干扰。
+Team Services 生成定义所描述的工作流由一系列按顺序执行的生成步骤组成。之所以要创建生成定义，其目的是生成一个 Service Fabric 应用程序包，并增加一些其他的补充性文件，然后即可使用该程序包将应用程序最终部署到群集。详细了解 Team Services [生成定义](https://www.visualstudio.com/docs/build/define/create)。
 
-### 将 Service Fabric Azure Resource Manager 模板添加到应用程序
+### 从 Service Fabric 应用程序生成模板创建定义
 
-1. 从[此示例](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype-wad)下载 `azuredeploy.json` 和 `azuredeploy.parameters.json`。
+1.	在 Visual Studio Team Services 中打开团队项目。
+2.	选择“生成”选项卡。
+3.	选择绿色的 **+** 号以创建新的生成定义。
+4.	在打开的对话框的“生成”模板类别中选择“Service Fabric 应用程序”。
+5.	选择“下一步”。
+6.	选择与 Service Fabric 应用程序关联的存储库和分支。
+7.	勾选“持续集成”复选框，确保更新分支时触发此生成。
+8.	选择要使用的代理队列。支持托管代理。
+9.	选择“创建”。
+10.	保存生成定义并为其命名。
+11. 下面是由此模板生成的生成步骤的说明：
 
-2. 打开 `azuredeploy.parameters.json` 并编辑以下参数：
+| 生成步骤 | 说明 |
+| --- | --- |
+| Nuget 还原 | 还原解决方案的 NuGet 包。 |
+| 生成解决方案 | 生成整个解决方案。 |
+| 打包应用程序 | 生成将要用于部署应用程序的 Service Fabric 应用程序包。请注意，已将应用程序包位置指定为生成的项目目录。 |
+| 更新 Service Fabric 应用版本 | 更新应用程序包的清单文件中包含的版本值，使之支持升级。有关详细信息，请参阅[任务文档页](https://go.microsoft.com/fwlink/?LinkId=820529)。 |
+| 复制项目项 | 将发布配置文件和应用程序参数文件复制到生成的项目中，使之能够用来进行部署。 |
+| 发布项目 | 发布生成的项目。这样即可以通过发布定义来使用生成的项目。 |
 
-    |参数|值|
-    |---|---|
-    |clusterLocation|必须匹配密钥保管库的位置。示例：`westus`|
-    |clusterName|必须匹配证书的 DNS 名称。例如，如果证书的 DNS 名称为 `mycluster.westus.cloudapp.net`，则 `clusterName` 必须为 `mycluster`。|
-    |adminPassword|8-123 个字符，包含以下字符类型中的至少 3 种类型：大写、小写、数字、特殊字符。|
-    |certificateThumbprint|来自 `CreateAndUpload-Certificate.ps1` 的输出|
-    |sourceVaultValue|来自 `CreateAndUpload-Certificate.ps1` 的输出|
-    |certificateUrlvalue|来自 `CreateAndUpload-Certificate.ps1` 的输出|
+### 验证模板默认值
 
-3. 将新文件添加到源控件，并推送到 VSTS。
-
-### 创建生成定义
-
-1.	创建空的生成定义。为此，请按以下步骤操作：
-
-    a.在 Visual Studio Team Services 中打开你的项目。
-
-    b.选择“生成”选项卡。
-
-    c.选择绿色 **+** 号以创建新的生成定义。
-
-    d.选择“空”，然后选择“下一步”。
-
-    e.验证是否选择了正确的存储库和分支。
-
-    f.选择向其注册生成代理的代理队列，然后选中“持续集成”复选框。
-
-2.	在“变量”选项卡上，使用这些值创建以下变量。
-
-    |变量|值|密钥|允许在队列时|
-    |---|---|---|---|
-    |BuildConfiguration|版本||X|
-    |BuildPlatform|x64||||
-
-3.  保存生成定义并为其命名。稍后可根据需要更改此名称。
-
-### 添加“还原 NuGet 包”步骤
-
-1. 在“生成”选项卡上，选择“添加生成步骤...”命令。
-
-2. 选择“包”>“NuGet 安装程序”
-
-3. 选择生成步骤名称旁边的铅笔图标，并将其重命名为“还原 NuGet 包”。
-
-4. 选择“解决方案”字段旁边的“...”按钮，然后选择你的 .sln 文件。
-
-5. 保存生成定义。
-
-### 添加“生成”步骤。
-
-1.	在“生成”选项卡上，选择“添加生成步骤...”命令。
-
-2.	选择“生成”>“MSBuild”。
-
-3.	选择生成步骤名称旁边的铅笔图标，然后将其重命名为“生成”。
-
-4. 选择以下值：
-
-    |设置名称|值|
-    |---|---|
-    |解决方案|单击“...”按钮，然后选择解决方案的 `.sln` 文件。|
-    |平台|`$(BuildPlatform)`|
-    |配置|`$(BuildConfiguration)`|
-
-5.	保存生成定义。
-
-### 添加“包”步骤
-
-1.	在“生成”选项卡上，选择“添加生成步骤...”命令。
-
-2.	选择“生成”>“MSBuild”。
-
-3.	选择生成步骤名称旁边的铅笔图标，然后将其重命名为“包”。
-
-4. 选择以下值：
-
-    |设置名称|值|
-    |---|---|
-    |解决方案|单击“...”按钮，然后选择应用程序项目的 `.sfproj` 文件。|
-    |平台|`$(BuildPlatform)`|
-    |配置|`$(BuildConfiguration)`|
-    |MSBuild 参数|`/t:Package`|
-
-5.	保存生成定义。
-
-### 添加“删除群集资源组”步骤
-
-如果上一个生成在其自身后未清理（例如，如果由于取消了生成而未完成清理），可能存在与新资源组冲突的现有资源组。为了避免冲突，在创建新资源组前，请清理任何剩余的资源组（及其关联资源）。
-
-1.	在“生成”选项卡上，选择“添加生成步骤...”命令。
-
-2.	选择“部署”>“Azure 资源组部署”。
-
-3.	选择生成步骤名称旁边的铅笔图标，然后将其重命名为“删除群集资源组”。
-
-4. 选择以下值：
-
-    |设置名称|值|
-    |---|---|
-    |AzureConnectionType|**Azure 资源管理器**|
-    |Azure RM 订阅|选择你在“创建服务主体”部分中创建的连接终结点。|
-    |操作|**删除资源组**|
-    |资源组|输入任何未使用的名称。在下一步中，必须使用相同的名称。|
-
-5.	保存生成定义。
-
-### 添加“预配安全群集”步骤
-
-1.	在“生成”选项卡上，选择“添加生成步骤...”命令。
-
-2.	选择“部署”>“Azure 资源组部署”。
-
-3.	选择生成步骤名称旁边的铅笔图标，然后将其重命名为“预配安全群集”。
-
-4. 选择以下值：
-
-    |设置名称|值|
-    |---|---|
-    |AzureConnectionType|**Azure 资源管理器**|
-    |Azure RM 订阅|选择你在“创建服务主体”部分中创建的连接终结点。|
-    |操作|**创建或更新资源组**|
-    |资源组|必须匹配你在上一步中使用的名称。|
-    |位置|必须匹配密钥保管库的位置。|
-    |模板|单击“...”按钮，然后选择 `azuredeploy.json`|
-    |模板参数|单击“...”按钮，然后选择 `azuredeploy.parameters.json`|
-
-5.	保存生成定义。
-
-### 添加“部署”步骤
-
-1.	在“生成”选项卡上，选择“添加生成步骤...”命令。
-
-2.	选择“实用工具”>“PowerShell”。
-
-3.	选择生成步骤名称旁边的铅笔图标，然后将其重命名为“部署”。
-
-4. 选择以下值：
-
-    |设置名称|值|
-    |---|---|
-    |类型|**文件路径**|
-    |脚本文件名|单击“...”按钮，并导航到应用程序项目内的 **Scripts** 目录。选择 `Deploy-FabricApplication.ps1`。|
-    |参数|`-PublishProfileFile path/to/MySolution/MyApplicationProject/PublishProfiles/MyPublishProfile.xml -ApplicationPackagePath path/to/MySolution/MyApplicationProject/pkg/$(BuildConfiguration)`|
-
-5.	保存生成定义。
+1.	验证“NuGet 还原”和“生成解决方案”生成步骤的“解决方案”输入字段。默认情况下，会根据关联的存储库中包含的所有解决方案文件执行这些生成步骤。如果你只想在这其中的一个解决方案文件上运行生成定义，则需显式更新该文件的路径。
+2.	验证“打包应用程序”生成步骤的“解决方案”输入字段。默认情况下，此生成步骤假定存储库中只存在一个 Service Fabric 应用程序项目 (.sfproj)。如果存储库中有多个这样的文件，而你只想针对其中一个来完成此生成定义，则需显式更新该文件的路径。如果你想将多个应用程序项目打包到存储库中，则需在生成定义中创建其他 **Visual Studio Build** 步骤，使每个步骤都对应一个应用程序项目。然后，你还需针对每个这样的生成步骤更新“MSBuild 参数”字段，使包位置对每个这样的生成步骤来说都是唯一的。
+3.	验证“更新 Service Fabric 应用版本”生成步骤中定义的版本控制行为。默认情况下，此生成步骤会将生成号追加到应用程序包的清单文件中的所有版本值。有关详细信息，请参阅[任务文档页](https://go.microsoft.com/fwlink/?LinkId=820529)。这对提供应用程序升级支持很有用，因为每个升级部署都需要前一部署中的不同版本值。如果你不打算在工作流中使用应用程序升级，则可考虑禁用此生成步骤。
+4.	保存对生成定义所做的任何更改。
 
 ### 试用
 
-选择“为生成排队”以启动生成。在推送或签入时也将触发生成。
+选择“为生成排队”以手动启动生成。在推送或签入时也将触发生成。验证生成可以成功执行以后，即可继续操作，以便定义将应用程序部署到群集的发布定义。
 
-## 备选解决方案
+## 创建发布定义
 
-前面的说明为每个生成创建新的群集，并在生成的末尾删除它。如果你希望改为让每个生成执行应用程序升级（到现有群集），请使用以下步骤：
+Team Services 发布定义所描述的工作流由一系列按顺序执行的任务组成。之所以要创建发布定义，其目的是获取应用程序包并将其部署到群集。一起使用时，生成定义和发布定义可以执行从开始到结束的整个工作流，即一开始只有源文件，而结束时群集中会有一个运行的应用程序。详细了解 Team Services [发布定义](https://www.visualstudio.com/docs/release/author-release-definition/more-release-definition)。
 
-1.	按照[这些说明](/documentation/articles/service-fabric-cluster-creation-via-arm/)，通过 Azure PowerShell 手动创建测试群集。
+### 从 Service Fabric 应用程序发布模板创建定义
 
-2.	按照[这些说明](/documentation/articles/service-fabric-visualstudio-configure-upgrade/)配置发布配置文件，以支持应用程序升级。
+1.	在 Visual Studio Team Services 中打开你的项目。
+2.	选择“发布”选项卡。
+3.	选择绿色的 **+** 号以创建新的发布定义，然后在菜单中选择“创建发布定义”。
+4.	在打开的对话框的“部署”模板类别中选择“Service Fabric 应用程序”。
+5.	选择“下一步”。
+6.	选择生成定义，以便将其用作此发布定义的源。发布定义将引用由所选生成定义生成的项目。
+7.	如果你希望在生成完成时 Team Services 能够自动创建新发布并部署 Service Fabric 应用程序，请勾选“连续部署”复选框。
+8.	选择要使用的代理队列。支持托管代理。
+9.	选择“创建”。
+10.	通过单击页面顶部的铅笔图标编辑定义名称。
+11.	选择群集，以便将你的应用程序从“部署 Service Fabric 应用程序”任务的“群集连接”输入字段部署到其中。群集连接提供的必要信息可以让部署任务连接到群集。如果你尚未为群集设置群集连接，可选择字段旁的“管理”超链接添加一个。在打开的页面上，执行以下步骤：
+    1. 选择“新建服务终结点”，然后从菜单中选择“Azure Service Fabric”。
+    2. 选择此终结点针对的群集所要使用的身份验证类型。
+    2. 在“连接名称”字段中定义连接的名称。通常情况下，你会使用群集的名称。
+    3. 在“群集终结点”字段中定义客户端连接终结点 URL。示例：https://contoso.chinaeast.chinacloudapp.cn:19000。
+    4. 对于 Azure Active Directory 凭据，可在“用户名”和“密码”字段中定义需要用来连接到群集的凭据。
+    5. 对于基于证书的身份验证，可在“客户端证书”字段中定义对客户端证书文件的 Base64 编码。若要了解如何获取该值，请参阅有关该字段的弹出帮助。如果证书受密码保护，可在“密码”字段中定义密码。
+    6. 单击“确定”确认所做的更改。导航回发布定义以后，单击“群集连接”字段的刷新图标即可查看刚添加的终结点。
+12.	保存发布定义。
 
-4.	从你的生成定义中删除“删除群集资源组”和“预配群集”生成步骤。
+创建的定义包含一个任务：**部署 Service Fabric 应用程序**。有关此任务的详细信息，请参阅[任务文档页](https://go.microsoft.com/fwlink/?LinkId=820528)。
+
+### 验证模板默认值
+
+1.	验证“部署 Service Fabric 应用程序”任务的“发布配置文件”输入字段。默认情况下，此字段引用包含在生成的项目中的名为 Cloud.xml 的发布配置文件。如果你要引用其他发布配置文件，或者如果生成在其项目中包含多个应用程序包，则需对路径进行相应更新。
+2.	验证“部署 Service Fabric 应用程序”任务的“应用程序包”输入字段。默认情况下，此项引用在生成定义模板中使用的默认应用程序包路径。如果已在生成定义中修改默认应用程序包路径，则还需在此处对路径进行相应更新。
+
+### 试用
+
+从“发布”按钮菜单中选择“创建发布”，以便手动创建发布。在打开的对话框中，按需要选择发布所基于的生成，然后单击“创建”。如果已启用连续部署，则当关联的生成定义完成某个生成时，也会自动创建发布。
 
 ## 后续步骤
 
 若要了解有关与 Service Fabric 应用程序持续集成的详细信息，请阅读以下文章：
 
-- [生成文档主页](https://msdn.microsoft.com/zh-cn/Library/vs/alm/Build/overview)
-- [部署生成代理](https://msdn.microsoft.com/zh-cn/Library/vs/alm/Build/agents/windows)
-- [创建和配置生成定义](https://msdn.microsoft.com/zh-cn/Library/vs/alm/Build/vs/define-build)
+ - [Team Services 文档主页](https://www.visualstudio.com/docs/overview)
+ - [Team Services 中的生成管理](https://www.visualstudio.com/docs/build/overview)
+ - [Team Services 中的发布管理](https://www.visualstudio.com/docs/release/overview)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->
