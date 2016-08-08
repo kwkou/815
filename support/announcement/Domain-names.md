@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle=""
     description=""
     services=""
@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal" ms.date="08/2016" wacn.date="08/2016" wacn.lang="cn"/>
+<tags ms.service="announcement" ms.date="08/2016" wacn.date="08/2016" wacn.lang="cn"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/announcement/Domain-names/)
