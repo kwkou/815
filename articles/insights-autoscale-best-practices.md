@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="azure-portal"
-	ms.date="03/30/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="07/15/2016"
+	wacn.date="08/08/2016"/>
 
 # Azure Insights 自动缩放的最佳做法
 
