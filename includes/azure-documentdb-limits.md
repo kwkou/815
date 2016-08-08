@@ -6,4 +6,4 @@
 请求文档的大小 |512 KB*
 响应文档的大小|1 MB*
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0801_2016-->
