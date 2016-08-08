@@ -28,7 +28,7 @@
 
 ### 帐户
 
-- **Azure 帐户** -- 如果你没有 Azure 订阅，可以 [创建一个 试用 Azure 帐户][azure\_free\_account]。
+- **Azure 帐户** -- 如果你没有 Azure 订阅，可以 [创建一个 试用 Azure 帐户][azure_free_account]。
 - **Batch 帐户**
 - **存储帐户**：请参阅 [About Azure storage accounts](/documentation/articles/storage-create-storage-account/)（关于 Azure 存储帐户）中的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 
@@ -56,16 +56,17 @@
 
 ![Batch 示例工作流][8]
 
-[**步骤 1.**](#step-1-create-storage-containers) 在 Azure Blob 存储中创建**容器**。<br/>
-[**步骤 2.**](#step-2-upload-task-application-and-data-files) 将任务应用程序文件和输入文件上载到容器。<br/>
-[**步骤 3.**](#step-3-create-batch-pool) 创建 Batch **池**。<br/>&nbsp;&nbsp;&nbsp;&nbsp;**3a.** 池 **StartTask** 在节点加入池时将任务二进制文件 (TaskApplication) 下载到节点。<br/>
-[**步骤 4.**](#step-4-create-batch-job) 创建 Batch **作业**。<br/>
-[**步骤 5.**](#step-5-add-tasks-to-job) 将**任务**添加到作业。<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;**5a.** 任务计划在节点上执行。<br/>
-	&nbsp;&nbsp;&nbsp;&nbsp;**5b.** 每项任务从 Azure 存储空间下载其输入数据，然后开始执行。<br/>
-[**步骤 6.**](#step-6-monitor-tasks) 监视任务。<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;**6a.** 当任务完成时，会将其输出数据上载到 Azure 存储空间。<br/>
-[**步骤 7.**](#step-7-download-task-output) 从存储空间下载任务输出。
+[**步骤 1.**](#step-1-create-storage-containers) 在 Azure Blob 存储中创建**容器**。  
+[**步骤 2.**](#step-2-upload-task-application-and-data-files) 将任务应用程序文件和输入文件上载到容器。  
+[**步骤 3.**](#step-3-create-batch-pool) 创建 Batch **池**。  
+			**3a.** 池 **StartTask** 在节点加入池时将任务二进制文件 (TaskApplication) 下载到节点。  
+[**步骤 4.**](#step-4-create-batch-job) 创建 Batch **作业**。  
+[**步骤 5.**](#step-5-add-tasks-to-job) 将**任务**添加到作业。  
+			**5a.** 任务计划在节点上执行。  
+			**5b.** 每项任务从 Azure 存储空间下载其输入数据，然后开始执行。  
+[**步骤 6.**](#step-6-monitor-tasks) 监视任务。   
+		**6a.** 当任务完成时，会将其输出数据上载到 Azure 存储空间。  
+[**步骤 7.**](#step-7-download-task-output) 从存储空间下载任务输出。  
 
 如前所述，并非每个 Batch 解决方案都会执行这些具体步骤，此类方案可能包含更多步骤，但 *DotNetTutorial* 示例应用程序将演示 Batch 方案中的常见过程。
 
@@ -103,7 +104,7 @@
 
 导航到 *DotNetTutorial* 项目的 `Program.cs` 文件中 `MainAsync` 方法的顶部，开始执行步骤 1。以下每个步骤大致遵循 `MainAsync` 中方法调用的进度。
 
-## 步骤 1：创建存储容器
+## <a name="step-1-create-storage-containers"></a>步骤 1：创建存储容器
 
 ![在 Azure 存储空间中创建容器][1] <br/>
 
@@ -159,7 +160,7 @@ Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中�
 
 > [AZURE.TIP] [How to use Blob Storage from .NET](/documentation/articles/storage-dotnet-how-to-use-blobs/) 对如何使用 Azure 存储容器和 blob 进行了很好的概述。当你开始使用 Batch 时，它应该位于阅读列表顶部附近。
 
-## 步骤 2：上载任务应用程序和数据文件
+## <a name="step-2-upload-task-application-and-data-files"></a>步骤 2：上载任务应用程序和数据文件
 
 ![将任务应用程序和输入（数据）文件上载到容器][2] <br/>
 
@@ -249,7 +250,7 @@ DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask
 
 > [AZURE.TIP] 请查看有关共享访问签名的两篇系列教程的[第 1 部分：了解共享访问签名 (SAS) 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[第 2 部分：创建共享访问签名 (SAS) 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)，以详细了解如何提供对存储帐户中数据的安全访问。
 
-## 步骤 3：创建 Batch 池
+## <a name="step-3-create-batch-pool"></a>步骤 3：创建 Batch 池
 
 ![创建 Batch 池][3] <br/>
 
@@ -318,7 +319,7 @@ DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask
 
 > [AZURE.TIP] 若要深入了解 Batch 池中计算节点上可用的环境变量，以及有关任务工作目录的信息，请参阅 [Azure Batch 功能概述](/documentation/articles/batch-api-basics/)中的“任务的环境设置”及“文件和目录”部分。
 
-## 步骤 4：创建 Batch 作业
+## <a name="step-4-create-batch-job"></a>步骤 4：创建 Batch 作业
 
 ![创建 Batch 作业][4]
 
@@ -342,7 +343,7 @@ Batch 作业实质上是与计算节点池关联的任务的集合。它不仅�
 
 创建作业后，可以添加任务来执行工作。
 
-## 步骤 5：将任务添加到作业
+## <a name="step-5-add-tasks-to-job"></a>步骤 5：将任务添加到作业
 
 ![将任务添加到作业][5]<br/>
 (1) 将任务添加到作业；(2) 将任务计划为在节点上运行；(3) 任务下载要处理的数据文件
@@ -420,7 +421,7 @@ Batch 作业实质上是与计算节点池关联的任务的集合。它不仅�
 		}
 
 
-## 步骤 6：监视任务
+## <a name="step-6-monitor-tasks"></a>步骤 6：监视任务
 
 ![监视任务][6]<br/>客户端应用程序将会：(1) 监视任务的完成和成功状态；(2) 监视将结果数据上载到 Azure 存储空间的任务
 
@@ -512,7 +513,7 @@ DotNetTutorial 的 `Program.cs` 中的 `MonitorTasks` 方法内有三个 Batch .
 		}
 
 
-## 步骤 7：下载任务输出
+## <a name="step-7-download-task-output"></a>步骤 7：下载任务输出
 
 ![从存储空间下载任务输出][7]
 
@@ -640,13 +641,12 @@ BatchClient 的 [JobOperations][net_joboperations] 和 [PoolOperations][net_pool
 熟悉 Batch 解决方案的基本工作流后，接下来可以深入了解 Batch 服务的其他功能。
 
 - 建议所有 Batch 新用户阅读 [Batch feature overview for developers](/documentation/articles/batch-api-basics/)（面向开发人员的 Batch 功能概述）。
-- 从 [Batch learning path][batch_learning_path]（Batch 学习路径）中 **Development in-depth**（深度开发）下面列出的其他 Batch 开发文章着手。
 - 通过 [TopNWords][github_topnwords] 示例了解有关使用 Batch 处理“前 N 个单词”工作负荷的不同实现方式。
 
 [azure_batch]: /services/batch/
 [azure_free_account]: /free/
 [azure_portal]: https://portal.azure.cn
-[batch_learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
+
 [github_dotnettutorial]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/DotNetTutorial
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_samples_common]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/Common
@@ -689,16 +689,16 @@ BatchClient 的 [JobOperations][net_joboperations] 和 [PoolOperations][net_pool
 [storage_explorers]: http://storageexplorer.com/
 [visual_studio]: https://www.visualstudio.com/products/vs-2015-product-editions
 
-[1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png "在 Azure 存储空间中创建容器"
-[2]: ./media/batch-dotnet-get-started/batch_workflow_02_sm.png "将任务应用程序和输入（数据）文件上载到容器"
-[3]: ./media/batch-dotnet-get-started/batch_workflow_03_sm.png "创建 Batch 池"
-[4]: ./media/batch-dotnet-get-started/batch_workflow_04_sm.png "创建 Batch 作业"
-[5]: ./media/batch-dotnet-get-started/batch_workflow_05_sm.png "将任务添加到作业"
-[6]: ./media/batch-dotnet-get-started/batch_workflow_06_sm.png "监视任务"
-[7]: ./media/batch-dotnet-get-started/batch_workflow_07_sm.png "从存储空间下载任务输出"
-[8]: ./media/batch-dotnet-get-started/batch_workflow_sm.png "Batch 解决方案工作流（完整流程图）"
-[9]: ./media/batch-dotnet-get-started/credentials_batch_sm.png "门户中的 Batch 凭据"
-[10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png "门户中的存储空间凭据"
-[11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png "Batch 解决方案工作流（精简流程图）"
+[1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png
+[2]: ./media/batch-dotnet-get-started/batch_workflow_02_sm.png
+[3]: ./media/batch-dotnet-get-started/batch_workflow_03_sm.png
+[4]: ./media/batch-dotnet-get-started/batch_workflow_04_sm.png
+[5]: ./media/batch-dotnet-get-started/batch_workflow_05_sm.png
+[6]: ./media/batch-dotnet-get-started/batch_workflow_06_sm.png
+[7]: ./media/batch-dotnet-get-started/batch_workflow_07_sm.png
+[8]: ./media/batch-dotnet-get-started/batch_workflow_sm.png
+[9]: ./media/batch-dotnet-get-started/credentials_batch_sm.png
+[10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png
+[11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png
 
 <!---HONumber=Mooncake_0704_2016-->
