@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="06/14/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="07/06/2016"
+	wacn.date="08/08/2016"/>
 
 # 还原已启用延伸的数据库
 
@@ -62,9 +62,14 @@ Azure 上的 SQL Server Stretch Database 服务在删除数据库之前会创建
 
 	-   指定是否要制作远程数据的副本并连接到该副本（推荐）。
 
-        	DECLARE @credentialName nvarchar(128);   
-        	SET @credentialName = N'<existing_database_scoped_credential_name>';   
-        	EXEC sp_rda_reauthorize_db @credential = @credentialName, @with_copy = 1;  
+
+	    	USE <Stretch-enabled database name>;
+		GO
+		EXEC sp_rda_reauthorize_db
+		    @credential = N'<existing_database_scoped_credential_name>',
+			@with_copy = 1 ;  
+		GO
+
 
 ## 另请参阅
 
@@ -74,4 +79,4 @@ Azure 上的 SQL Server Stretch Database 服务在删除数据库之前会创建
 
 [备份和还原 SQL Server 数据库](https://msdn.microsoft.com/zh-cn/library/ms187048.aspx)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="06/14/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/08/2016"/>
 
 # 延伸数据库的管理和故障排除
 
@@ -24,12 +24,15 @@
 若要查看已启用延伸的表在 SQL Server 中使用的空间量，请运行以下语句。
 
 
-	EXEC sp_spaceused '<table name>', 'true', 'LOCAL_ONLY';
+	USE <Stretch-enabled database name>;
+	GO
+	EXEC sp_spaceused '<Stretch-enabled table name>', 'true', 'LOCAL_ONLY';
+	GO
 
 ## 管理数据迁移
 
-### 检查应用于表的筛选器谓词
-打开目录视图 **sys.remote\_data\_archive\_tables** 并检查 **filter\_predicate** 列的值，以标识 Stretch Database 正在使用来选择要迁移的行的函数。如果值为 null，则整个表符合迁移条件。有关详细信息，请参阅 [sys.remote\_data\_archive\_tables (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935003.aspx)。
+### 检查应用于表的筛选器函数
+打开目录视图 **sys.remote\_data\_archive\_tables** 并检查 **filter\_predicate** 列的值，以标识 Stretch Database 正在使用来选择要迁移的行的函数。如果值为 null，则整个表符合迁移条件。有关详细信息，请参阅 [sys.remote\_data\_archive\_tables (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935003.aspx) 和[使用筛选器函数选择要迁移的行](/documentation/articles/sql-server-stretch-database-predicate-function/)。
 
 ### <a name="Migration"></a>检查数据迁移状态
 在 SQL Server Management Studio 中选择数据库对应的“任务 | 延伸 | 监视”，以便在 Stretch Database 监视器中监视数据迁移。有关详细信息，请参阅[数据迁移的监视和故障排除 (Stretch Database)](/documentation/articles/sql-server-stretch-database-monitor/)。
@@ -44,6 +47,13 @@
 ### <a name="RemoteInfo"></a>获取有关 Stretch Database 使用的远程数据库和表的信息
 打开目录视图 **sys.remote\_data\_archive\_databases** 和 **sys.remote\_data\_archive\_tables**，以查看有关存储迁移数据的远程数据库和表的信息。有关详细信息，请参阅 [sys.remote\_data\_archive\_databases (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn934995.aspx) 和 [sys.remote\_data\_archive\_tables (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935003.aspx)。
 
+若要查看已启用延伸的表在 Azure 中使用的空间量，请运行以下语句。
+
+	USE <Stretch-enabled database name>;
+	GO
+	EXEC sp_spaceused '<Stretch-enabled table name>', 'true', 'REMOTE_ONLY';
+	GO
+
 ### 删除迁移的数据  
 如果你希望删除已经迁移到 Azure 的数据，请按照 [sys.sp\_rda\_reconcile\_batch](https://msdn.microsoft.com/zh-cn/library/mt707768.aspx) 中所述步骤进行操作。
 
@@ -53,11 +63,11 @@
 不要更改与针对延伸数据库配置的 SQL Server 表相关联的远程 Azure 表的架构。具体而言，请不要修改列的名称或数据类型。延伸数据库功能会在与 SQL Server 表架构关联的远程表架构方面做出多种假设。如果你更改了远程架构，所更改表的延伸数据库将停止工作。
 
 ### 协调表列  
-如果你意外地从远程表中删除了列，可运行 **sp\_rda\_reconcile\_columns** 将列添加到远程表中，该表在启用了延伸的 SQL Server 表中存在但在远程表中不存在。有关详细信息，请参阅 [sys.sp\_rda\_reconcile\_columns](https://msdn.microsoft.com/zh-cn/library/mt707765.aspx)。
+如果你意外地从远程表中删除了列，可运行 **sp\_rda\_reconcile\_columns** 将列添加到远程表中，这些列在启用了延伸的 SQL Server 表中存在但在远程表中不存在。有关详细信息，请参阅 [sys.sp\_rda\_reconcile\_columns](https://msdn.microsoft.com/zh-cn/library/mt707765.aspx)。
 
   > [!重要] 当 **sp\_rda\_reconcile\_columns** 重新创建你意外从远程表中删除的列时，它不会还原之前存在于删除的列中的数据。
 
-**sp\_rda\_reconcile\_columns** 不会从在远程表中存在但在启用了延伸的 SQL Server 表中不存在的远程表中删除列。如果远程 Azure 表中具有不再存在于启用了延伸的 SQL Server 表的列，这些额外的列不会妨碍 Stretch Database 的正常运作。你可以选择手动删除额外的列。
+**sp\_rda\_reconcile\_columns** 不会从远程表中删除在远程表中存在但在启用了延伸的 SQL Server 表中不存在的列。如果远程 Azure 表中具有不再存在于启用了延伸的 SQL Server 表的列，这些额外的列不会妨碍 Stretch Database 的正常运作。你可以选择手动删除额外的列。
 
 ## 管理性能和成本  
 
@@ -80,9 +90,9 @@
 ### 更改所有用户进行的所有查询的范围  
  若要更改所有用户进行的所有查询的范围，请运行存储过程 **sys.sp\_rda\_set\_query\_mode**。你可以将范围缩小到仅查询本地数据、禁用所有查询，或还原默认设置。有关详细信息，请参阅 [sys.sp\_rda\_set\_query\_mode](https://msdn.microsoft.com/zh-cn/library/mt703715.aspx)。
 
-### <a name="queryHints"></a>更改管理员进行的单个查询的范围  
+### <a name="queryHints"></a>更改管理员进行的单个查询的查询范围  
  若要更改 db\_owner 角色的成员进行的单个查询的范围，请将 **WITH ( REMOTE\_DATA\_ARCHIVE\_OVERRIDE = *value* )** 查询提示添加到 SELECT 语句。REMOTE\_DATA\_ARCHIVE\_OVERRIDE 查询提示可具有以下值。
- -   **LOCAL\_ONLY**。仅查询本地数据。  
+ -   **LOCAL\_ONLY**。仅查询本地数据。
 
  -   **REMOTE\_ONLY**。仅查询远程数据。
 
@@ -90,11 +100,14 @@
 
 例如，以下查询仅返回本地结果。
 
-    SELECT * FROM Stretch_enabled_table WITH (REMOTE_DATA_ARCHIVE_OVERRIDE = LOCAL_ONLY) WHERE ...  
+	 USE <Stretch-enabled database name>;
+	 GO
+	 SELECT * FROM <Stretch_enabled table name> WITH (REMOTE_DATA_ARCHIVE_OVERRIDE = LOCAL_ONLY) WHERE ... ;
+	 GO
 
 ## <a name="adminHints"></a>进行管理更新和删除操作  
- 默认情况下，在启用了延伸的表中不能“更新”或“删除”可进行迁移的行或已迁移的行。当你遇到必须解决的问题时，db\_owner 角色的成员可以通过将 **WITH ( REMOTE\_DATA\_ARCHIVE\_OVERRIDE = *value* )** 查询提示添加到语句来运行“更新”或“删除”操作。REMOTE\_DATA\_ARCHIVE\_OVERRIDE 查询提示可具有以下值。
- -   **LOCAL\_ONLY**。仅更新或删除本地数据。  
+ 默认情况下，在启用了延伸的表中不能“更新”或“删除”可进行迁移的行或已迁移的行。当你必须解决问题时，db\_owner 角色的成员可以通过将 **WITH ( REMOTE\_DATA\_ARCHIVE\_OVERRIDE = *value* )** 查询提示添加到语句来运行“更新”或“删除”操作。REMOTE\_DATA\_ARCHIVE\_OVERRIDE 查询提示可具有以下值。
+ -   **LOCAL\_ONLY**。仅更新或删除本地数据。
 
  -   **REMOTE\_ONLY**。仅更新或删除远程数据。
 
@@ -104,9 +117,8 @@
 
 [监视 Stretch Database](/documentation/articles/sql-server-stretch-database-monitor/)
 
-
 [备份启用了延伸的数据库](/documentation/articles/sql-server-stretch-database-backup/)
 
 [还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-restore/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->
