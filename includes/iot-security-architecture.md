@@ -53,7 +53,7 @@ Microsoft 产品在威胁模型方面历史悠久，并已公开发表公司的�
 - 数据流（其中数据将在应用程序的其他元素之间移动）
 - 外部实体（与系统交互但不在应用程序控制之下的任何要素，例如用户和附属源）
 
-体系结构图中的所有元素都受限于各种威胁；针对这些威胁，我们将使用 STRIDE 助记符。请阅读 [Threat Modeling Again, STRIDE（威胁建模重点 STRIDE）](https://blogs.msdn.microsoft.com/larryosterman/2007/09/04/threat-modeling-again-stride)以详细了解 STRIDE 元素。
+体系结构图中的所有元素都受限于各种威胁；针对这些威胁，我们将使用 STRIDE 助记符。请阅读 [Threat Modeling Again, STRIDE](https://blogs.msdn.microsoft.com/larryosterman/2007/09/04/threat-modeling-again-stride/)（再次威胁建模 STRIDE）以详细了解 STRIDE 元素。
 
 应用程序图表的不同元素受限于特定 STRIDE 威胁：
 
@@ -216,7 +216,9 @@ Microsoft 使用上述体系结构来对 Azure IoT 进行威胁建模。因此�
 
 **欺骗**：攻击者可能拦截或部分覆盖广播，从而欺骗发起方（中间人）
 
-**篡改**：攻击者可能拦截或部分覆盖广播，并发送虚假的信息。信息泄漏：攻击者可能窃听广播并未经授权获取信息。拒绝服务：攻击者可能阻塞广播信号，并拒绝信息分发
+**篡改**：攻击者可能拦截或部分覆盖广播，并发送虚假的信息。
+信息泄漏：攻击者可能窃听广播并未经授权获取信息。
+拒绝服务：攻击者可能阻塞广播信号，并拒绝信息分发
 
 #### 存储
 
@@ -239,7 +241,7 @@ Microsoft 使用上述体系结构来对 Azure IoT 进行威胁建模。因此�
 
 控制系统（或控制器）是一种软件解决方案，可与设备、现场网关或云网关对接来控制一个或多个设备，以便收集、存储和/或分析设备数据，进行演示或后续控制。在本文的范畴内，控制系统是唯一可立即帮助与人交互的实体。设备上的中间物理控制面（类似于可让用户关闭设备或更改其他属性的开关）则属例外情况，它们没有能够以数字方式访问的对等功能。
 
-在中间物理控制面中，任何类型的控制逻辑都可限制实体控制面的功能，使对等功能可以从远程启动或避免远程输入的输入冲突 – 此类元控制面在概念上是连接到本地控制系统，该系统运用的基础功能与设备可并行附加的任何其他远程控制系统相同。请参阅 [Cloud Security Alliance (CSA)（云安全联盟）](https://cloudsecurityalliance.org/research/top-threats)页，以了解云计算的头号威胁。
+在中间物理控制面中，任何类型的控制逻辑都可限制实体控制面的功能，使对等功能可以从远程启动或避免远程输入的输入冲突 – 此类元控制面在概念上是连接到本地控制系统，该系统运用的基础功能与设备可并行附加的任何其他远程控制系统相同。请参阅 [Cloud Security Alliance (CSA)](https://cloudsecurityalliance.org/research/top-threats)（云安全联盟）页，以了解云计算的头号威胁。
 
 
 ## 其他资源
@@ -248,7 +250,7 @@ Microsoft 使用上述体系结构来对 Azure IoT 进行威胁建模。因此�
 
 - [SDL Threat Modeling Tool（SDL 威胁建模工具）](https://www.microsoft.com/sdl/adopt/threatmodeling.aspx)
 
-- [Azure IoT reference architecture（Microsoft Azure IoT 参考体系结构）](https://azure.microsoft.com/updates/microsoft-azure-iot-reference-architecture-available)
+- [Azure IoT reference architecture（Microsoft Azure IoT 参考体系结构）](http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf)
  
 
 <!---HONumber=Mooncake_0523_2016-->

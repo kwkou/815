@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="06/06/2016"
- wacn.date="07/04/2016"/>
+ wacn.date="08/08/2016"/>
 
 # IoT 中心与事件中心的比较
 
@@ -34,10 +34,14 @@ Azure IoT 中心的主要用例之一是从设备收集遥测数据。因此，�
 
 ## 后续步骤
 
-若要了解有关 Azure IoT 中心的详细信息，请参阅以下链接：
+若要深入了解如何规划 IoT 中心部署，请参阅[缩放、HA 和 DR][lnk-scaling]。
 
-- [Azure IoT 中心入门（教程）][lnk-get-started]
-- [Azure IoT 中心是什么？][]
+若要进一步探索 IoT 中心的功能，请参阅：
+
+- [开发人员指南][lnk-devguide]
+- [使用 UI 示例探索设备管理][lnk-dmui]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [Azure 事件中心]: /documentation/articles/event-hubs-what-is-event-hubs/
 [IoT 中心开发人员指南的“安全性”部分]: /documentation/articles/iot-hub-devguide/#security
@@ -45,8 +49,12 @@ Azure IoT 中心的主要用例之一是从设备收集遥测数据。因此，�
 [Event Hub publisher policies]: /documentation/articles/event-hubs-overview/#common-publisher-tasks
 [Azure 服务总线配额]: /documentation/articles/service-bus-quotas/
 [Azure IoT Hub SDKs]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
-[lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
-[Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/
 [lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 
-<!---HONumber=Mooncake_0307_2016-->
+[lnk-scaling]: /documentation/articles/iot-hub-scaling/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0801_2016-->

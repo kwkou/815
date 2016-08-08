@@ -3,14 +3,14 @@
 	description="Azure IoT 中心设备管理教程，描述如何使用查询查找设备克隆。"
 	services="iot-hub"
 	documentationCenter=".net"
-	authors="ellenfosborne"
+	authors="juanjperez"
 	manager="timlt"
 	editor=""/>
 
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="08/08/2016"/>
 
 # 教程：如何将查询用于 C# 以查找设备克隆（预览版）
 
@@ -203,13 +203,18 @@ var foundDevices = await registryManager.QueryDevicesAsync(new[] { "bacon" }, 10
 
 若要了解有关 Azure IoT 中心设备管理功能的详细信息，可学习以下教程：
 
-- [如何使用设备克隆][lnk-twin-tutorial]
-- [如何使用设备作业更新设备固件][lnk-jobs-tutorial]
+- [如何使用设备作业更新设备固件][lnk-tutorial-jobs]
+- [在 IoT 网关后启用托管设备][lnk-dm-gateway]
+- [Azure IoT 中心设备管理客户端库介绍][lnk-library-c]
 
+若要进一步探索 IoT 中心的功能，请参阅：
 
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- images and links -->
-
 [lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-twin-tutorial]: /documentation/articles/iot-hub-device-management-device-twin/
@@ -218,4 +223,13 @@ var foundDevices = await registryManager.QueryDevicesAsync(new[] { "bacon" }, 10
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 [lnk-query-expression-guide]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/node/service/devdoc/query_expression_requirements.md
 
-<!---HONumber=Mooncake_0523_2016-->
+[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
+[lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
+
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0801_2016-->

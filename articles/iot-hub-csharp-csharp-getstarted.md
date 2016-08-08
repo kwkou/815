@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="06/16/2016"
-     wacn.date="07/04/2016"/>
+     wacn.date="08/08/2016"/>
 
 # 适用于 .NET 的 Azure IoT 中心入门
 
@@ -22,7 +22,7 @@
 * **ReadDeviceToCloudMessages**，显示模拟设备发送的遥测数据。
 * **SimulatedDevice**，它使用前面创建的设备标识连接到 IoT 中心，并使用 AMQPS 协议每秒发送一次遥测消息。
 
-> [AZURE.NOTE] 有关各种 SDK 的信息（你可以使用这些 SDK 构建可在设备和解决方案后端上运行的应用程序），请参阅 [IoT 中心 SDK][lnk-hub-sdks]。
+> [AZURE.NOTE] 有关各种 SDK 的信息（你可以使用这些 SDK 构建可在设备和解决方案后端上运行的应用程序），请参阅 [IoT Hub SDKs][lnk-hub-sdks]（IoT 中心 SDK）。
 
 若要完成本教程，你需要以下各项：
 
@@ -36,7 +36,7 @@
 
 ## 创建设备标识
 
-在本部分中，你将创建一个 Windows 控制台应用程序，用于在 IoT 中心的标识注册表中创建新的设备标识。设备无法连接到 IoT 中心，除非它在设备标识注册表中具有条目。有关详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-identity]的“设备标识注册表”部分。当你运行此控制台应用时，它将生成唯一的设备 ID 和密钥，当设备向 IoT 中心发送设备到云的消息时，可以用于标识设备本身。
+在本部分中，你将创建一个 Windows 控制台应用程序，用于在 IoT 中心的标识注册表中创建新的设备标识。设备无法连接到 IoT 中心，除非它在设备标识注册表中具有条目。有关详细信息，请参阅 [IoT Hub Developer Guide][lnk-devguide-identity]（IoT 中心开发人员指南）中的“Device identity registry”（设备标识注册表）部分。当你运行此控制台应用时，它将生成唯一的设备 ID 和密钥，当设备向 IoT 中心发送设备到云的消息时，可以用于标识设备本身。
 
 1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将新的 Visual C# Windows 经典桌面项目添加到当前解决方案。确保 .NET Framework 版本为 4.5.1 或更高。将项目命名为 **CreateDeviceIdentity**。
 
@@ -220,15 +220,16 @@
 
 
 > [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，你应该按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
+
 ## 运行应用程序
 
 现在，你已准备就绪，可以运行应用程序了。
 
-1.	在 Visual Studio 的“解决方案资源管理器”中右键单击你的解决方案，然后单击“设置启动项目”。选择“多个启动项目”，然后针对 **ProcessDeviceToCloudMessages** 和 **SimulatedDevice** 项目选择“启动”作为操作。
+1.	在 Visual Studio 的“解决方案资源管理器”中右键单击你的解决方案，然后单击“设置启动项目”。选择“多个启动项目”，然后针对“ReadDeviceToCloudMessages”和“SimulatedDevice”项目选择“启动”作为“操作”。
 
    	![启动项目属性][41]
 
-2.	按 **F5** 启动这两个应用，使其运行。来自 **SimulatedDevice** 应用的控制台输出会显示模拟设备发送给 IoT 中心的消息。来自 **ProcessDeviceToCloudMessages** 应用的控制台输出则会显示 IoT 中心接收的消息。
+2.	按 **F5** 启动这两个应用，使其运行。来自 **SimulatedDevice** 应用的控制台输出会显示模拟设备发送给 IoT 中心的消息。来自 **ReadDeviceToCloudMessages** 应用的控制台输出则会显示 IoT 中心接收的消息。
 
    	![来自应用的控制台输出][42]
 
@@ -239,18 +240,17 @@
 
 ## 后续步骤
 
-在本教程中，你已在门户预览中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。你已使用此设备标识来让模拟设备应用向中心发送设备到云的消息，并创建了用于显示中心所接收消息的应用。可以使用以下教程继续探索 IoT 中心功能和其他 IoT 方案：
+在本教程中，你已在门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。你已使用此设备标识来让模拟设备应用向中心发送设备到云的消息，并创建了用于显示中心所接收消息的应用。
 
-- [使用 IoT 中心发送云到设备的消息][lnk-c2d-tutorial]说明如何将消息发送到设备，并处理 IoT 中心生成的传送反馈。
-- [处理设备到云的消息][lnk-process-d2c-tutorial]说明如何可靠地处理来自设备的遥测数据和交互消息。
-- [从设备上载文件][lnk-upload-tutorial]介绍了一种模式，该模式利用云到设备的消息来帮助从设备上载文件。
+若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
+
+- [连接你的设备][lnk-connect-device]
+- [设备管理入门][lnk-device-management]
+- [网关 SDK 入门][lnk-gateway-SDK]
+
+若要了解如何扩展 IoT 解决方案和如何大规模处理设备到云的消息，请参阅[处理设备到云的消息][lnk-process-d2c-tutorial]教程。
 
 <!-- Images. -->
-[1]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub1.png
-[2]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub2.png
-[3]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub3.png
-[4]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub4.png
-[5]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub5.png
 [41]: ./media/iot-hub-csharp-csharp-getstarted/run-apps1.png
 [42]: ./media/iot-hub-csharp-csharp-getstarted/run-apps2.png
 [43]: ./media/iot-hub-csharp-csharp-getstarted/usage.png
@@ -259,9 +259,7 @@
 [12]: ./media/iot-hub-csharp-csharp-getstarted/create-identity-csharp3.png
 
 <!-- Links -->
-[lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 [lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
-[lnk-upload-tutorial]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-free-trial]: /pricing/1rmb-trial/
@@ -275,5 +273,8 @@
 [lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [lnk-connected-service]: https://visualstudiogallery.msdn.microsoft.com/e254a3a5-d72e-488e-9bd3-8fee8e0cd1d6
+[lnk-device-management]: /documentation/articles/iot-hub-device-management-get-started/
+[lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
+[lnk-connect-device]: /develop/iot/
 
 <!---HONumber=Mooncake_0627_2016-->

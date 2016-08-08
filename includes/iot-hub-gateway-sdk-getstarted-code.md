@@ -36,7 +36,7 @@
 
 ### 创建网关
 
-开发人员必须编写网关进程。该程序创建内部基础结构（消息总线）、加载模块，以及进行正常运行所需的所有设置。该 SDK 提供 **Gateway\_Create\_From\_JSON** 函数，允许你从 JSON 文件启动网关。若要使用 **Gateway\_Create\_From\_JSON** 函数，必须将 JSON 文件的路径传递给它，以便指定要加载的模块。
+开发人员必须编写*网关进程*。该程序创建内部基础结构（消息总线）、加载模块，以及进行正常运行所需的所有设置。该 SDK 提供 **Gateway\_Create\_From\_JSON** 函数，允许你从 JSON 文件启动网关。若要使用 **Gateway\_Create\_From\_JSON** 函数，必须将 JSON 文件的路径传递给它，以便指定要加载的模块。
 
 你可以在 Hello World 示例的 [main.c][lnk-main-c] 文件中找到网关进程的代码。为了增强可读性，下面的代码段显示的是简化版网关进程代码。该程序创建一个网关，在卸除该网关之前，会等待用户按 **Enter** 键。
 
@@ -198,13 +198,11 @@ static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHan
 - [IoT 网关 SDK – 使用 Linux 通过模拟设备发送设备至云消息][lnk-gateway-simulated]。
 - GitHub 上的 [Azure IoT Gateway SDK（Azure IoT 网关 SDK）][lnk-gateway-sdk]。
 
-有关使用 IoT 中心进行设备管理的详细信息，请参阅 [Azure IoT 中心设备管理概述][lnk-device-management]。
-
 <!-- Links -->
 [lnk-main-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/samples/hello_world/src/main.c
 [lnk-helloworld-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/hello_world/src/hello_world.c
 [lnk-logger-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/logger/src/logger.c
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 [lnk-gateway-simulated]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/
-<!---HONumber=Mooncake_0523_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->
