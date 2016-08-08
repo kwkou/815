@@ -64,7 +64,7 @@
 
 3. 如下所示登录到 Azure：
 
-        azure login -e AzureChinaCloud -u <your account>
+        azure login -e AzureChinaCloud
 
 4. 在 Azure 中以下一个命令创建具有唯一应用名称的 Azure Web 应用资源。出现提示时，请指定所需区域数目。
 

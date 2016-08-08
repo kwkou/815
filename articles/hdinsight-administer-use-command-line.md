@@ -31,7 +31,7 @@
 - **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 - 使用以下命令**连接到 Azure**：
 
-		azure login -e AzureChinaCloud -u <your account>
+		azure login -e AzureChinaCloud
 
 	有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 	
