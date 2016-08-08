@@ -49,7 +49,7 @@
 随着规模的扩大，为虚拟网络和子网创建集中式资源组可让你更轻松地为混合连接选项生成跨界网络连接，而不用让每个应用程序都拥有需要单独配置和维护的虚拟网络。[基于角色的访问控制](/documentation/articles/role-based-access-control-what-is/)提供一种精细的方式来控制资源组访问。对于生产应用程序，可以控制能访问那些资源的用户；对于核心基础结构资源，可以限制为只有基础结构工程师可以使用它们。你的应用程序所有者将只能访问其资源组内的应用程序组件，而不能访问环境的核心 Azure 基础结构。在设计环境时，请考虑需要访问资源的用户，并据此设计资源组。
 
 
-## 后续步骤
+## <a name="next-steps"></a> 后续步骤
 
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 

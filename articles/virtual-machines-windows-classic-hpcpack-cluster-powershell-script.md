@@ -14,7 +14,9 @@
 
 # 使用 HPC Pack IaaS 部署脚本创建 Windows 高性能计算 (HPC) 群集
 
-运行 HPC Pack IaaS 部署 PowerShell 脚本，以便为 Azure 虚拟机中部署适用于 Windows 工作负荷的完整 HPC 群集。群集包含运行 Windows Server 和 Microsoft HPC Pack 的已加入 Active Directory 的头节点以及你指定的其他 Windows 计算资源。如果你想要在 Azure 中部署适用于 Linux 工作负荷的 HPC Pack 群集，请参阅[使用 HPC Pack IaaS 部署脚本创建 Linux HPC 群集](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/)。你还可以使用 Azure 资源管理器模板来部署 HPC Pack 群集。有关示例，请参阅[创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)和[使用自定义计算节点映像创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/)。
+运行 HPC Pack IaaS 部署 PowerShell 脚本，以便为 Azure 虚拟机中部署适用于 Windows 工作负荷的完整 HPC 群集。群集包含运行 Windows Server 和 Microsoft HPC Pack 的已加入 Active Directory 的头节点以及你指定的其他 Windows 计算资源。你还可以使用 Azure 资源管理器模板来部署 HPC Pack 群集。有关示例，请参阅[创建 HPC 群集](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster)和[使用自定义计算节点映像创建 HPC 群集](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster-custom-image)。
+
+>[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 

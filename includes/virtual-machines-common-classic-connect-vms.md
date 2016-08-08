@@ -16,7 +16,7 @@
 
 ![为虚拟机选择云服务](./media/virtual-machines-common-classic-connect-vms/VMConfig1.png)
 
-## 连接独立云服务中的 VM
+## <a name="connect-vms-in-a-standalone-cloud-service"></a> 连接独立云服务中的 VM
 
 若要连接独立云服务中的虚拟机，请执行以下步骤：
 

@@ -7,7 +7,6 @@
 - [Azure 网络准则](/documentation/articles/virtual-machines-linux-infrastructure-networking-guidelines/)
 - [Azure 可用性集准则](/documentation/articles/virtual-machines-linux-infrastructure-availability-sets-guidelines/)
 - [Azure 虚拟机准则](/documentation/articles/virtual-machines-linux-infrastructure-virtual-machine-guidelines/)
-
 - [Azure 示例基础结构演练](/documentation/articles/virtual-machines-linux-infrastructure-example/)
 
 <!---HONumber=Mooncake_0801_2016-->

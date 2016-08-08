@@ -50,7 +50,7 @@ VM 等组件在逻辑上组合在一起，以便使用 [Azure 资源组](/docume
 你可以构建由声明性 JSON 文件定义的模板以创建 VM。模板通常还将随 VM 本身生成所需存储、网络、网络接口、IP 寻址等。你可以使用模板来创建一致的可重现开发和测试环境以轻松复制生产环境，反之亦然。可参阅有关[构建和使用模板](/documentation/articles/resource-group-overview/#template-deployment)的详细信息，以了解如何用其创建和部署 VM。
 
 
-## 后续步骤
+## <a name="next-steps"></a> 后续步骤
 [AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

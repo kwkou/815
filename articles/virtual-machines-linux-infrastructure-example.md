@@ -124,7 +124,7 @@ Adventure Works Cycles 决定为其 Azure VM 使用以下名称：
 - 单个资源组
 
 
-## 后续步骤
+## <a name="next-steps"></a> 后续步骤
 
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 

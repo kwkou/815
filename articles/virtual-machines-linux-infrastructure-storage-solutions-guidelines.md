@@ -77,7 +77,7 @@ Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于 VM �
 有关不同 Azure 存储空间选项的 I/O 功能及一些建议最大值的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 
-## 后续步骤
+## <a name="next-steps"></a> 后续步骤
 
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
