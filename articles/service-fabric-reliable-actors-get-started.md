@@ -3,14 +3,14 @@
    description="本教程将向你演示使用 Service Fabric Reliable Actors 创建、调试和部署简单的基于执行组件的服务的步骤。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 # Reliable Actors 入门
 本文介绍了 Azure Service Fabric Reliable Actors 的基础知识，并演示了如何在 Visual Studio 中创建、调试和部署简单的 Reliable Actor 应用程序。
 
@@ -28,10 +28,11 @@
 	* 它可以解析名称。它能够在群集中找到执行组件（查找托管它的群集节点）。
 	* 它可以处理故障。例如，在需要将执行组件重新定位到群集中另一个节点的故障之后，它可以重试方法调用和重新确定执行组件的位置。
 
-有必要提一下以下与执行组件接口方法有关的规则：
+有必要提一下以下与执行组件接口有关的规则：
 
 - 不能重载执行组件接口方法。
 - 执行组件接口方法不能有 out、ref 或可选参数。
+- 不支持泛型接口。
 
 ## 在 Visual Studio 中创建新项目
 安装了适用于 Visual Studio 的 Service Fabric 工具之后，你可以创建新的项目类型。新的项目类型位于“新建项目”对话框的“云”类别下面。
@@ -53,7 +54,7 @@
 
 典型的 Reliable Actors 解决方案由 3 个项目组成：
 
-* **应用程序项目 (MyActorApplication)**。这是将所有服务打包在一起以进行部署的项目。它包含用于管理应用程序的 ApplicationManifest.xml 和 PowerShell 脚本。
+* **应用程序项目 (MyActorApplication)**。这是将所有服务打包在一起以进行部署的项目。它包含用于管理应用程序的 *ApplicationManifest.xml* 和 PowerShell 脚本。
 
 * **接口项目 (MyActor.Interfaces)**。这是包含执行组件的接口定义的项目。在 MyActor.Interfaces 项目中，你可以定义在解决方案中执行组件所使用的接口。可在任何项目中使用任何名称定义执行组件接口。不过，因为该接口定义了执行组件实现和调用执行组件的客户端所共享的执行组件协定，所以合理的做法是在独立于执行组件实现的程序集中定义接口，并且其他多个项目可以共享接口。
 
@@ -123,7 +124,7 @@
  - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management/)
  - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
-- [代码示例](https://github.com/Azure/servicefabric-samples)
+ - [代码示例](https://github.com/Azure/servicefabric-samples)
 
 
 <!--Image references-->
@@ -133,4 +134,4 @@
 [4]: ./media/service-fabric-reliable-actors-get-started/vs-context-menu.png
 [5]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-newproject1.PNG
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

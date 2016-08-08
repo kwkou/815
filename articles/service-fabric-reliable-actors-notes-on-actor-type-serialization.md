@@ -3,14 +3,14 @@
    description="讨论了定义可序列化类的基本要求，这些类可用于定义 Service Fabric Reliable Actors 的状态和接口"
    services="service-fabric"
    documentationCenter=".net"
-   authors="clca"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2015"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2015"
+   wacn.date="08/08/2016"/>
 
 # 有关 Service Fabric Reliable Actors 类型序列化的说明
 
@@ -54,10 +54,10 @@ Reliable Actor 框架使用 DataContract 序列化。因此，自定义数据对
 	{
 	    [DataMember]
 	    public Guid Id { get; set; }
-	
+
 	    [DataMember]
 	    public string Message { get; set; }
-	
+
 	    [DataMember]
 	    public DateTime ReceivedAt { get; set; }
 	}
@@ -71,10 +71,10 @@ Reliable Actor 框架使用 DataContract 序列化。因此，自定义数据对
 	    {
 	        this.MessageList = new List<Voicemail>();
 	    }
-	
+
 	    [DataMember]
 	    public List<Voicemail> MessageList { get; set; }
-	
+
 	    [DataMember]
 	    public string Greeting { get; set; }
 	}
@@ -88,5 +88,4 @@ Reliable Actor 框架使用 DataContract 序列化。因此，自定义数据对
  - [执行组件多态性和面向对象的设计模式](/documentation/articles/service-fabric-reliable-actors-polymorphism/)
  - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
 
-
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

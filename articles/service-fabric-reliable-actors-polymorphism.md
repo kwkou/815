@@ -5,12 +5,12 @@
    documentationCenter=".net"
    authors="seanmck"
    manager="timlt"
-   editor=""/>
+   editor="vturecek"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/07/2016"
+   wacn.date="08/08/2016"/>
 
 # Reliable Actors 框架中的多态性技术
 
@@ -31,7 +31,7 @@ Reliable Actors 框架要求至少定义一个要由执行组件类型实现的�
 	public abstract class Shape : Actor, IShape
 	{
 	    public abstract Task<int> GetVerticeCount();
-	    
+
 	    public abstract Task<double> GetAreaAsync();
 	}
 
@@ -47,11 +47,11 @@ Reliable Actors 框架要求至少定义一个要由执行组件类型实现的�
 	    {
 	        return Task.FromResult(0);
 	    }
-	
+
 	    public override async Task<double> GetAreaAsync()
 	    {
 	        CircleState state = await this.StateManager.GetStateAsync<CircleState>("circle");
-	
+
 	        return Math.PI *
 	            state.Radius *
 	            state.Radius;
@@ -71,13 +71,4 @@ Reliable Actors 框架要求至少定义一个要由执行组件类型实现的�
 
 [shapes-interface-hierarchy]: ./media/service-fabric-reliable-actors-polymorphism/Shapes-Interface-Hierarchy.png
 
-## 后续步骤
- - [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management/)
- - [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
- - [执行组件计时器和提醒](/documentation/articles/service-fabric-reliable-actors-timers-reminders/)
- - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events/)
- - [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)
- - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
-
-
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -3,14 +3,14 @@
    description="了解如何监视和诊断本地开发计算机上使用 Microsoft Azure Service Fabric 编写的服务。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="kunaldsingh"
-   manager="samgeo"
+   authors="ms-toddabel"
+   manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/30/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/20/2016"
+   wacn.date="08/08/2016"/>
 
 
 # 在本地计算机开发安装过程中监视和诊断服务
@@ -45,16 +45,15 @@ Service Fabric Visual Studio 项目模板包含示例代码。该代码演示如
 
 对于从**Actor 模板**（无状态或有状态）创建的项目：
 
-1. 打开 **"ProjectName".cs** 文件，其中，ProjectName 是为你的 Visual Studio 项目选择的名称。  
-2. 在 DoWorkAsync 方法中查找代码 `ActorEventSource.Current.ActorMessage(this, "Doing Work");`。这是根据应用程序代码编写的自定义 ETW 跟踪的一个示例。  
+1. 打开 **"ProjectName".cs** 文件，其中，ProjectName 是为你的 Visual Studio 项目选择的名称。
+2. 在 DoWorkAsync 方法中查找代码 `ActorEventSource.Current.ActorMessage(this, "Doing Work");`。这是根据应用程序代码编写的自定义 ETW 跟踪的一个示例。
 3. 在 **ActorEventSource.cs** 文件中，你会找到 `ActorEventSource.ActorMessage` 方法的重载，由于性能方面的原因，应该将其用于高频率事件。
 
 将自定义 ETW 跟踪添加到你的服务代码之后，可以再次生成、部署和运行应用程序以在诊断事件查看器中查看你的事件。如果使用 **F5** 调试应用程序，则将自动打开诊断事件查看器。
 
 ## 后续步骤
 你添加到上述应用程序用于进行本地诊断的相同跟踪代码将与工具一起工作，在 Azure 群集上运行应用程序时，你可以使用这些工具查看这些事件。请查看以下文章，其中介绍了不同的工具选项，以及如何设置这些选项。
-
-* [如何使用 Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad/)  
+* [如何使用 Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad-operational-insights/)
 * [Using ElasticSearch as a Service Fabric application trace store（将 ElasticSearch 用作 Service Fabric 应用程序跟踪存储）](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->

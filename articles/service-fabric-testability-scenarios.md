@@ -3,14 +3,14 @@
    description="使用 Service Fabric 混沌测试和故障转移测试方案来引发故障，然后验证服务的可靠性。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="anmolah"
+   authors="motanv"
    manager="timlt"
-   editor=""/>
+   editor="toddabel"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/08/2016"
+   wacn.date="08/08/2016"/>
 
 # 可测试性方案
 大型分布式系统，例如云基础结构，在本质上都是不可靠的。Azure Service Fabric 使开发人员能够编写出可以在不可靠基础结构上运行的服务。若要编写高质量的服务，开发人员需要能够引入这种不可靠的基础结构来测试其服务的稳定性。
@@ -242,5 +242,4 @@ PowerShell
 	
 	Invoke-ServiceFabricFailoverTestScenario -TimeToRunMinute $timeToRun -MaxServiceStabilizationTimeoutSec $maxStabilizationTimeSecs -WaitTimeBetweenFaultsSec $waitTimeBetweenFaultsSec -ServiceName $serviceName -PartitionKindSingleton
 
-
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -3,14 +3,14 @@
    description="Service Fabric 资源管理器是一个用于检验和管理 Microsoft Azure Service Fabric 群集中的云应用程序和节点的 Web 工具。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="seanmck"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="04/05/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/07/2016"
+   wacn.date="08/08/2016"/>
 
 # 使用 Service Fabric 资源管理器可视化群集
 
@@ -40,7 +40,7 @@ Service Fabric 群集中的节点横跨容错域和升级域的二维网格放�
 
 你可以使用应用程序视图来导航 Service Fabric 的逻辑层次结构：应用程序、服务、分区和副本。
 
-在以下示例中，应用程序 **MyApp** 由两个服务 **MyStatefulService** 与 **WebService** 组成。由于 **MyStatefulService** 是有状态的，因此它包含一个分区，其中有一个主副本和两个辅助副本。相反，WebSvcService 是无状态的，只包含单个实例。
+在以下示例中，应用程序 MyApp 由两个服务 MyStatefulService 与 WebService 组成。由于 MyStatefulService 是有状态的，因此它包含一个分区，其中有一个主副本和两个辅助副本。相反，WebSvcService 是无状态的，只包含单个实例。
 
 ![Service Fabric 资源管理器应用程序视图][sfx-application-tree]
 
@@ -95,9 +95,9 @@ Azure 门户的群集基本信息窗格中也提供了完整 URL。
 
 ### 连接到安全群集
 
-可以请求客户端提供用于连接到 Service Fabric 群集的证书，以控制对该群集的访问。
+你可以通过[证书](/documentation/articles/service-fabric-cluster-security/)或 [Azure Active Directory (AAD)](/documentation/articles/service-fabric-cluster-security-client-auth-with-aad/) 控制客户端对 Service Fabric 群集的访问。
 
-如果你尝试连接到安全群集上的 Service Fabric 资源管理器，浏览器将请求你提供用于获取访问权限的证书。
+如果你尝试在安全群集上连接到 Service Fabric Explorer，则需提供客户端证书或使用 AAD 登录，具体取决于为群集的管理终结点设置的安全类型。
 
 ## 后续步骤
 
@@ -112,4 +112,4 @@ Azure 门户的群集基本信息窗格中也提供了完整 URL。
 [sfx-service-essentials]: ./media/service-fabric-visualizing-your-cluster/SfxServiceEssentials.png
 [sfx-delete-application]: ./media/service-fabric-visualizing-your-cluster/SfxDeleteApplication.png
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

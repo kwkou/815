@@ -3,26 +3,22 @@
    description="使用 Visual Studio 来创建、开发、打包、部署和调试 Service Fabric 应用程序和服务。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="seanmck"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="02/02/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/07/2016"
+   wacn.date="08/08/2016"/>
 
 # 使用 Visual Studio 简化 Service Fabric 应用程序的编写和管理
 
 你可以通过 Visual Studio 管理 Azure Service Fabric 应用程序和服务。[设置开发环境](/documentation/articles/service-fabric-get-started/)之后，你可以使用 Visual Studio 创建 Service Fabric 应用程序、添加服务，或在本地开发群集中打包、注册和部署应用程序。
 
-若要管理应用程序，请在解决方案资源管理器中右键单击你的应用程序项目。
-
-![通过右键单击应用程序项目来管理你的 Service Fabric 应用程序][manageservicefabric]
-
 ## 部署 Service Fabric 应用程序
 
-部署一个应用程序会将以下步骤合并为一个简单的操作。
+默认情况下，部署一个应用程序会将以下步骤合并为一个简单的操作：
 
 1. 创建应用程序包
 2. 将应用程序包上载到映像存储
@@ -32,26 +28,28 @@
 
 在 Visual Studio 中按 **F5** 还可以部署应用程序，并将调试器附加到所有应用程序实例。你可以使用 **Ctrl + F5** 部署应用程序而不进行调试，或者使用发布配置文件将应用程序发布到本地或远程群集。有关详细信息，请参阅[使用 Visual Studio 将应用程序发布到远程群集](/documentation/articles/service-fabric-publish-app-remote-cluster/)。
 
-### 保留测试运行之间的数据
+### 应用程序调试模式
 
-通常在本地对服务进行测试，具体方法是添加测试数据输入，修改一些代码块，然后再在本地进行调试。Visual Studio Service Fabric 工具提供了一个称为**启动时保留数据**的便捷属性，用于保留你在上一个会话中输入的数据，以便于你再次使用。
+默认情况下，当你停止调试或（如果你在部署应用时未附加调试器）当你重新部署应用程序时，Visual Studio 会删除你的应用程序类型的现有实例。在这种情况下，该应用程序的所有数据都将被删除。进行本地调试时，当你在测试应用程序的新版本时，可能会想要保留已经创建的数据。Visual Studio Service Fabric 工具提供一个名为“应用程序调试模式”的属性，该属性控制在调试会话结束之后，“F5”操作是卸载应用程序还是保留应用程序。
 
-#### 要启用“启动时保留数据”属性
+#### 设置“应用程序调试模式”属性
 
 1. 在应用程序项目的快捷菜单上，选择“属性”（或按 **F4** 键）。
-1. 在“属性”窗口中，将“启动时保留数据”属性设置为“是”。
+2. 在“属性”窗口中，将“应用程序调试模式”属性设置为“删除”或“自动升级”。
 
-	![设置“启动时保留数据”属性][preservedata]
+    ![设置“应用程序调试模式”属性][debugmodeproperty]
 
-当你再次运行应用程序，部署脚本会将此部署视为一次升级，使用无监控的自动模式将此应用程序快速升级到附加了日期字符串的较新的版本。此升级过程会保留你在上一个调试会话中输入的任何数据。
+将此属性的值设置为“自动升级”将使应用程序继续在本地群集上运行。再次使用 **F5** 时，该操作会将该部署视为一次升级，使用无监控的自动模式将此应用程序快速升级到附加了日期字符串的较新的版本。此升级过程会保留你在上一个调试会话中输入的任何数据。
 
-![附加了日期的新应用程序版本的示例][preservedate]
+![附加了日期 1 的新应用程序版本的示例][preservedate]
 
-通过在 Service Fabric 平台中使用升级功能保留了数据。有关升级应用程序的详细信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)。
+将通过利用 Service Fabric 的应用程序升级功能保存数据，但会出于性能优化而非安全性的目的将数据进行优化。有关升级应用程序和在真实环境中如何执行升级的详细信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)。
+
+>[AZURE.NOTE] 1.1 版之前的适用于 Visual Studio 的 Service Fabric 工具版本不具有此属性。对于 1.1 版之前的版本，请使用 “启动时保留数据”属性来达到相同的效果。
 
 ## 向 Service Fabric 应用程序添加服务
 
-可以向你的应用程序中添加新的 Fabric 服务来扩展其功能。若要确保你的应用程序包中包含服务，请通过“新 Fabric 服务...”菜单项添加服务。
+可以向你的应用程序中添加新的服务来扩展其功能。若要确保你的应用程序包中包含服务，请通过“新 Fabric 服务...”菜单项添加服务。
 
 ![将新的 Fabric 服务添加到你的应用程序中][newservice]
 
@@ -67,14 +65,14 @@
 
 要将应用程序及其服务部署到群集中，你需要创建应用程序包。该包会组织应用程序清单、服务清单和特定布局的其他必要文件。Visual Studio 设置和管理“pkg”目录中应用程序项目的文件夹中的包。从“应用程序”上下文菜单中单击“包”以创建或更新应用程序包。如果使用自定义 Powershell 脚本部署应用程序，你可能要执行此操作。
 
-## 删除应用程序
+## 使用云资源管理器删除应用程序和应用程序类型
 
-你可以使用 Service Fabric 资源管理器从你的本地群集中撤销应用程序类型。可从群集的 HTTP 网关终结点（通常为 19080 或 19007）例如 http://localhost:19080/Explorer 访问群集资源管理器。此操作会还原上述部署步骤：
-
-1. 删除任何正在运行的应用程序实例
-2. 取消注册应用程序类型
+可以使用云资源管理器从 Visual Studio 内部执行基本的群集管理操作，可以从“视图”菜单启动该管理器。例如，可以删除本地或远程群集上的应用程序和取消设置其上的应用程序类型。
 
 ![删除应用程序](./media/service-fabric-manage-application-in-visual-studio/removeapplication.png)
+
+>[AZURE.TIP] 有关更丰富的群集管理功能，请参阅[使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
+
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
@@ -92,5 +90,6 @@
 [newserviceapplicationmanifest]: ./media/service-fabric-manage-application-in-visual-studio/newserviceapplicationmanifest.png
 [preservedata]: ./media/service-fabric-manage-application-in-visual-studio/preservedata.png
 [preservedate]: ./media/service-fabric-manage-application-in-visual-studio/preservedate.png
+[debugmodeproperty]: ./media/service-fabric-manage-application-in-visual-studio/debugmodeproperty.png
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0801_2016-->

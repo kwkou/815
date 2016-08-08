@@ -3,14 +3,14 @@
    description="介绍有关数据序列化的最佳实践，以及数据序列化如何影响应用程序滚动升级。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
    editor=""/>
 
 <tags
     ms.service="service-fabric"
-   ms.date="04/14/2016"
-    wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+    wacn.date="08/08/2016"/>
 
 
 # 数据序列化如何影响应用程序升级
@@ -20,7 +20,7 @@
 
 ## 数据格式由哪些部分构成？
 
-在 Azure Service Fabric 中，保留和复制的数据来自于你的 C# 类。对于使用 [Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections/) 的应用程序，它是可靠词典和队列中的对象。对于使用 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/) 应用程序，它是执行组件的备用状态。这些 C# 类必须可序列化，以进行保留和复制。因此，数据格式由已序列化的字段和属性及其序列化方式定义。例如，在 `IReliableDictionary<int, MyClass>` 中，数据是一个序列化的 `int` 和一个序列化的 `MyClass`。
+在 Azure Service Fabric 中，保留和复制的数据来自于你的 C# 类。对于使用 [Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections/) 的应用程序，它是可靠词典和队列中的对象。对于使用 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/) 的应用程序，它是执行组件的备用状态。这些 C# 类必须可序列化，以进行保留和复制。因此，数据格式由已序列化的字段和属性及其序列化方式定义。例如，在 `IReliableDictionary<int, MyClass>` 中，数据是一个序列化的 `int` 和一个序列化的 `MyClass`。
 
 ### 导致数据格式更改的代码更改
 
@@ -62,4 +62,4 @@
 
 参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # Service Fabric 可测试性方案：服务通信
 
@@ -77,7 +77,7 @@
 
 使用 Service Fabric 中的可测试性工具可以注入一个引入仲裁丢失的故障作为测试。尽管这种情况很少见，但是取决于有状态服务的客户端和服务准备好处理无法向有状态服务进行写请求的情形非常重要。有状态服务本身知晓这种可能性并且能够以得当的方式将其告知调用方也非常重要。
 
-可以使用 **Invoke-ServiceFabricPartitionQuorumLoss** PowerShell cmdlet 引入仲裁丢失：
+可以使用 Invoke-ServiceFabricPartitionQuorumLoss PowerShell cmdlet 引入仲裁丢失：
 
 
 
@@ -93,4 +93,4 @@
 
 [了解有关可测试性方案的详细信息](/documentation/articles/service-fabric-testability-scenarios/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

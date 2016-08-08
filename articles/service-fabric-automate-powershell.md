@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-fabric"
-	ms.date="04/15/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="07/15/2016"
+	wacn.date="08/08/2016"/>
 
 # 使用 PowerShell 自动化应用程序生命周期
 
@@ -20,8 +20,8 @@
 在进一步讨论文章中的任务之前，请务必：
 
 + 熟悉 [Service Fabric 技术概述](/documentation/articles/service-fabric-technical-overview/)中所述的 Service Fabric 概念。
-+ [安装运行时、SDK 和工具](/documentation/articles/service-fabric-get-started/)，它还将安装 **ServiceFabric** PowerShell 模块。
-+ [启用 PowerShell 脚本执行](/documentation/articles/service-fabric-get-started/#enable-powershell-script-execution)。
++ [安装运行时、SDK 和工具](/documentation/articles/service-fabric-get-started/)，同时还将安装 **ServiceFabric** PowerShell 模块。
++ [允许执行 PowerShell 脚本](/documentation/articles/service-fabric-get-started/#enable-powershell-script-execution)。
 + 启动本地群集。以管理员身份启动新的 PowerShell 窗口，然后从 SDK 文件夹运行群集设置脚本：`& "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1"`
 + 在运行本文中的任何 PowerShell 命令之前，请先使用 [**Connect-ServiceFabricCluster**](https://msdn.microsoft.com/zh-cn/library/azure/mt125938.aspx) 连接到本地 Service Fabric 群集：`Connect-ServiceFabricCluster localhost:19000`
 + 以下任务需要用于部署的 v1 应用程序包和用于升级的 v2 应用程序包。下载 [**WordCount** 示例应用程序](http://aka.ms/servicefabricsamples)（位于“入门”示例中）。在 Visual Studio 中生成和打包应用程序（右键单击解决方案资源管理器中的 **WordCount**，然后选择“打包”）。将 `C:\ServiceFabricSamples\Services\WordCount\WordCount\pkg\Debug` 中的 v1 包复制到 `C:\Temp\WordCount`。将 `C:\Temp\WordCount` 复制到 `C:\Temp\WordCountV2`，创建用于升级的 v2 应用程序包。在文本编辑器中打开 `C:\Temp\WordCountV2\ApplicationManifest.xml`。在 **ApplicationManifest** 元素中，将 **ApplicationTypeVersion** 属性从“1.0.0”更改为“2.0.0”。这将更新应用程序的版本号。保存更改后的 ApplicationManifest.xml 文件。
@@ -60,12 +60,11 @@
 
 
 	Get-ServiceFabricApplication
-	
+
 	Get-ServiceFabricApplication | Get-ServiceFabricService
 
 
 ## 任务：升级 Service Fabric 应用程序
-
 可以使用已更新的应用程序包升级以前部署的 Service Fabric 应用程序。此任务将升级以前在“任务：部署 Service Fabric 应用程序”中部署的 WordCount 应用程序。 有关详细信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)。
 
 为简单起见，此示例仅在系统必备组件中创建的 WordCountV2 应用程序包中更新了应用程序版本号。更加实际的方案则包括更新服务代码、配置或数据文件，然后使用已更新的版本号重新生成并打包应用程序。
@@ -87,7 +86,7 @@ WordCount v1 应用程序已准备好升级。如果以管理员身份打开 Pow
 
 
 ### 步骤 3：开始升级
-可将各种升级参数、超时和运行状况标准应用到应用程序升级。若要了解详细信息，请参阅[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)和[升级过程](/documentation/articles/service-fabric-application-upgrade/)文档。所有服务和实例在升级之后都应该运行正常。将 **HealthCheckStableDuration** 设置为 60 秒（这样该服务在进行下一个升级域的升级之前将至少保持 20 秒的运行状况正常）。同时，请将 **UpgradeDomainTimeout** 设置为 1200 秒，将 **UpgradeTimeout** 设置为 3000 秒。最后，将 **UpgradeFailureAction** 设置为 **rollback**，以便在升级期间遇到任何错误时，请求 Service Fabric 将应用程序回滚到前一版本。
+可将各种升级参数、超时和运行状况标准应用到应用程序升级。若要了解详细信息，请参阅[应用程序升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)和[升级过程](/documentation/articles/service-fabric-application-upgrade/)文档。所有服务和实例在升级之后都应该_运行正常_。将 **HealthCheckStableDuration** 设置为 60 秒（这样该服务在进行下一个升级域的升级之前将至少保持 20 秒的运行状况正常）。同时，请将 **UpgradeDomainTimeout** 设置为 1200 秒，将 **UpgradeTimeout** 设置为 3000 秒。最后，将 **UpgradeFailureAction** 设置为 **rollback**，以便在升级期间遇到任何错误时，请求 Service Fabric 将应用程序回滚到前一版本。
 
 现在你可以使用 [**Start-ServiceFabricApplicationUpgrade**](https://msdn.microsoft.com/zh-cn/library/azure/mt125975.aspx) cmdlet 开始升级应用程序：
 
@@ -118,7 +117,7 @@ WordCount v1 应用程序已准备好升级。如果以管理员身份打开 Pow
 	$maxStabilizationTimeSecs = 180
 	$concurrentFaults = 3
 	$waitTimeBetweenIterationsSec = 60
-	
+
 	Invoke-ServiceFabricChaosTestScenario -TimeToRunMinute $timeToRun -MaxClusterStabilizationTimeoutSec $maxStabilizationTimeSecs -MaxConcurrentFaults $concurrentFaults -EnableMoveReplicaFaults -WaitTimeBetweenIterationsSec $waitTimeBetweenIterationsSec
 
 
@@ -130,7 +129,7 @@ WordCount v1 应用程序已准备好升级。如果以管理员身份打开 Pow
 	$maxStabilizationTimeSecs = 180
 	$waitTimeBetweenFaultsSec = 10
 	$serviceName = "fabric:/WordCount/WordCountService"
-	
+
 	Invoke-ServiceFabricFailoverTestScenario -TimeToRunMinute $timeToRun -MaxServiceStabilizationTimeoutSec $maxStabilizationTimeSecs -WaitTimeBetweenFaultsSec $waitTimeBetweenFaultsSec -ServiceName $serviceName -PartitionKindUniformInt64 -PartitionKey 1
 
 
@@ -169,4 +168,4 @@ WordCount v1 应用程序已准备好升级。如果以管理员身份打开 Pow
 
 [Azure Service Fabric 可测试性 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125844.aspx)
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->

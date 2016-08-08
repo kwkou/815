@@ -1,4 +1,5 @@
 <properties
+
    pageTitle="Service Fabric 中的应用程序生命周期 | Azure"
    description="介绍如何开发、部署、测试、升级、维护和删除 Service Fabric 应用程序。"
    services="service-fabric"
@@ -10,8 +11,8 @@
 
 <tags
     ms.service="service-fabric"
-	ms.date="04/14/2016"
-    wacn.date="07/04/2016"/>
+   ms.date="07/11/2016"
+    wacn.date="08/08/2016"/>
 
 
 # Service Fabric 应用程序生命周期
@@ -53,13 +54,13 @@
 有关示例，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)。
 
 ## 测试
-1. 部署到本地开发群集或测试群集后，服务开发人员使用 [**FailoverTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenarioparameters.aspx) 和 [**FailoverTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenario.aspx) 类或 [**Invoke ServiceFabricFailoverTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125935.aspx) 运行内置的故障转移测试方案。故障转移测试方案在重要转换和故障转移中运行指定的服务，以确保其仍然可用并正在工作。
+1. 部署到本地开发群集或测试群集后，服务开发人员使用 [**FailoverTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenarioparameters.aspx) 和 [**FailoverTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenario.aspx) 类或 [**Invoke ServiceFabricFailoverTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt644783.aspx) 运行内置的故障转移测试方案。故障转移测试方案在重要转换和故障转移中运行指定的服务，以确保其仍然可用并正在工作。
 
-2. 然后，服务开发人员使用 [**ChaosTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenarioparameters.aspx) 和 [**ChaosTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenario.aspx) 类，或 [**Invoke ServiceFabricChaosTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt126036.aspx) 运行内置的混乱测试方案。任意混合测试方案会将多个节点、代码包和副本错误包括到群集中。
+2. 然后，服务开发人员使用 [**ChaosTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenarioparameters.aspx) 和 [**ChaosTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenario.aspx) 类，或 [**Invoke ServiceFabricChaosTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt644774.aspx) 运行内置的混乱测试方案。任意混合测试方案会将多个节点、代码包和副本错误包括到群集中。
 
 3. 服务开发人员通过创建围绕群集移动主副本的测试方案，来[测试服务之间的通信](/documentation/articles/service-fabric-testability-scenarios-service-communication/)。
 
-有关详细信息，请参阅 [Introduction to the Fault Analysis Service](/documentation/articles/service-fabric-testability-overview/)（故障分析服务简介）。
+有关详细信息，请参阅[故障分析服务简介](/documentation/articles/service-fabric-testability-overview/)。
 
 ## 升级
 1. 服务开发人员将更新实例化应用程序的构成服务并/或修复 bug，并提供服务清单的新版本。
@@ -70,7 +71,7 @@
 
 4. 操作员使用 [**CopyApplicationPackage** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage.aspx)或 [**Copy-ServiceFabricApplicationPackage** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125905.aspx)，将更新的应用程序包上载到群集映像存储中。应用程序包包含应用程序清单和服务包集合。
 
-5. 操作员使用 [**ProvisionApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync.aspx)、[**Register-ServiceFabricApplicationType** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125958.aspx) 或[**预配应用程序**REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707672.aspx)，在目标群集中预配应用程序的新版本。
+5. 操作员使用 [**ProvisionApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync.aspx)、[**Register-ServiceFabricApplicationType** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125958.aspx) 或[**预配应用程序 **REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707672.aspx)，在目标群集中预配应用程序的新版本。
 
 6. 操作员使用 [**UpgradeApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.upgradeapplicationasync.aspx)、[**Start-ServiceFabricApplicationUpgrade** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125975.aspx) 或[**升级应用程序** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707633.aspx)将目标应用程序升级到新版本。
 
@@ -96,7 +97,7 @@
 5. 当新节点被添加到群集中或从群集中删除现有节点时，Service Fabric 自动负载平衡正在群集中的所有节点上运行的应用程序，以获得最佳性能。
 
 ## 删除
-1. 操作员可以使用 [**DeleteServiceAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.deleteserviceasync.aspx)、[**Remove-ServiceFabricService** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt126033.aspx) 或[**删除服务** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707687.aspx)来删除群集中正在运行的服务的特定实例，并且不会删除整个应用程序。  
+1. 操作员可以使用 [**DeleteServiceAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.deleteserviceasync.aspx)、[**Remove-ServiceFabricService** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt126033.aspx) 或[**删除服务** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707687.aspx)来删除群集中正在运行的服务的特定实例，并且不会删除整个应用程序。
 
 2. 操作员还可以使用 [**DeleteApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.deleteapplicationasync.aspx)、[**Remove-ServiceFabricApplication** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125914.aspx)，或[**删除应用程序** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707651.aspx)，来删除应用程序实例及其所有服务。
 
@@ -117,4 +118,4 @@
 - [可测试性概述](/documentation/articles/service-fabric-testability-overview/)
 - [基于 REST 的应用程序生命周期示例](/documentation/articles/service-fabric-rest-based-application-lifecycle-sample/)
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->

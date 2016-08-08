@@ -3,14 +3,14 @@
    description="Service Fabric 远程处理允许客户端和服务使用远程过程调用来与服务进行通信。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="BharatNarasimman"
+   authors="vturecek"
    manager="timlt"
-   editor="vturecek"/>
+   editor="BharatNarasimman"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # 通过 Reliable Services 进行服务远程处理
 对于不依赖于特定的通信协议或堆栈的服务，如 WebAPI、Windows Communication Foundation (WCF) 或其他服务，Reliable Services 框架提供一种远程处理机制，以便快速而轻松地为这些服务设置远程过程调用。
@@ -28,24 +28,24 @@
 	using Microsoft.ServiceFabric.Services.Remoting;
 	using Microsoft.ServiceFabric.Services.Remoting.Runtime;
 	using Microsoft.ServiceFabric.Services.Runtime;
-	
+
 	public interface IMyService : IService
 	{
 	    Task<string> GetHelloWorld();
 	}
-	
+
 	class MyService : StatelessService, IMyService
 	{
 	    public MyService(StatelessServiceContext context)
 	        : base (context)
-	{
+	    {
 	    }
-	
+
 	    public Task HelloWorld()
 	    {
 	        return Task.FromResult("Hello!");
 	    }
-	
+
 	    protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 	    {
 	        return new[] { new ServiceInstanceListener(context => 
@@ -62,7 +62,7 @@
 
 
 
-	IHelloWorldStateful helloWorldClient = ServiceProxy.Create<IHelloWorldStateful>(new Uri("fabric:/MyApplication/MyHelloWorldService"));
+	IMyService helloWorldClient = ServiceProxy.Create<IMyService>(new Uri("fabric:/MyApplication/MyHelloWorldService"));
 
 	string message = await helloWorldClient.GetHelloWorld();
 
@@ -78,4 +78,4 @@
 
 * [确保 Reliable Services 的通信安全](/documentation/articles/service-fabric-reliable-services-secure-communication/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

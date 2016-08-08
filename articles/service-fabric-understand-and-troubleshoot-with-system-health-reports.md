@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="04/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/11/2016"
+   wacn.date="08/08/2016"/>
 
 # 使用系统运行状况报告进行故障排除
 
@@ -35,7 +35,7 @@ System.Federation 在检测到邻居丢失时会报告一个错误。报告来�
 报告将全局租约超时指定为生存时间。只要条件仍处于活动状态，就会在每半个 TTL 期间重新发送一次报告。事件到期后将被自动删除，因此，如果报告节点关闭，则仍然能够从运行状况存储正确地清除事件。
 
 - **SourceId**：System.Federation
-- **属性**：以 “Neighborhood” 开头并包含节点信息。
+- **属性**：以 Neighborhood 开头并包含节点信息。
 - **后续步骤**：调查网络上邻居丢失的原因（例如，检查群集节点之间的通信）。
 
 ## 节点系统运行状况报告
@@ -467,6 +467,65 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 - **SourceId**：System.Replicator
 - **属性**：**PrimaryReplicationQueueStatus** 或 **SecondaryReplicationQueueStatus**，视副本角色而定
 
+### 命名操作速度慢
+
+当命名操作所花时间过长而导致无法接受时，**System.NamingService** 会报告其主副本的运行状况。[CreateServiceAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt124028.aspx) 或 [DeleteServiceAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt124029.aspx) 都是命名操作的示例。在 FabricClient 下可找到更多方法，例如，可在[服务管理方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.aspx)或[属性管理方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.propertymanagementclient.aspx)下找到更多方法。
+
+> [AZURE.NOTE] 命名服务将服务名称解析到群集中的某个位置，并允许用户管理服务名称和属性。它是一个 Service Fabric 分区型持久服务。其中一个分区代表“颁发机构所有者”，内含与所有 System Fabric 名称和服务相关的元数据。Service Fabric 名称映射到不同的分区，这些分区称为“名称所有者”分区，因此该服务是可扩展的。阅读有关[命名服务](/documentation/articles/service-fabric-architecture/)的更多内容。
+
+当某个命名操作所需时间超出预期时，将会在为操作提供服务的命名服务分区的主副本上使用警告报告对该操作进行标记。如果操作成功完成，将清除该警告。如果操作在完成时出现错误，则运行状况报告中会包括有关该错误的详细信息。
+
+- **SourceId**：System.NamingService
+- **属性**：以前缀 **Duration\_** 开头，用于确定速度过慢的操作以及在其上应用该操作的 Service Fabric 名称。例如，如果使用名称 fabric:/MyApp/MyService 创建服务的操作耗时过长，则属性为 Duration\_AOCreateService.fabric:/MyApp/MyService。AO 指向此名称和操作的命名分区的角色。
+- **后续步骤**：查看命名操作失败的原因。每个操作可能会有不同的根本原因。例如，删除服务可能会在某个节点上受阻，因为应用程序主机总是在某个节点上崩溃，原因是服务代码中存在用户 Bug。
+
+下面显示了创建服务操作。该操作花的时间超过配置的持续时间。AO 重试并将工作发送到 NO。NO 在完成上一个操作时出现超时。在这种情况下，同一个副本对于 AO 和 NO 角色来说都是主副本。
+
+
+	PartitionId           : 00000000-0000-0000-0000-000000001000
+	ReplicaId             : 131064359253133577
+	AggregatedHealthState : Warning
+	UnhealthyEvaluations  : 
+	                        Unhealthy event: SourceId='System.NamingService', Property='Duration_AOCreateService.fabric:/MyApp/MyService', HealthState='Warning', ConsiderWarningAsError=false.
+                        
+	HealthEvents          : 
+	                        SourceId              : System.RA
+	                        Property              : State
+	                        HealthState           : Ok
+	                        SequenceNumber        : 131064359308715535
+	                        SentAt                : 4/29/2016 8:38:50 PM
+	                        ReceivedAt            : 4/29/2016 8:39:08 PM
+	                        TTL                   : Infinite
+	                        Description           : Replica has been created.
+	                        RemoveWhenExpired     : False
+	                        IsExpired             : False
+	                        Transitions           : Error->Ok = 4/29/2016 8:39:08 PM, LastWarning = 1/1/0001 12:00:00 AM
+                        
+	                        SourceId              : System.NamingService
+	                        Property              : Duration_AOCreateService.fabric:/MyApp/MyService
+	                        HealthState           : Warning
+	                        SequenceNumber        : 131064359526778775
+	                        SentAt                : 4/29/2016 8:39:12 PM
+	                        ReceivedAt            : 4/29/2016 8:39:38 PM
+	                        TTL                   : 00:05:00
+	                        Description           : The AOCreateService started at 2016-04-29 20:39:08.677 is taking longer than 30.000.
+	                        RemoveWhenExpired     : True
+	                        IsExpired             : False
+	                        Transitions           : Error->Warning = 4/29/2016 8:39:38 PM, LastOk = 1/1/0001 12:00:00 AM
+                        
+	                        SourceId              : System.NamingService
+	                        Property              : Duration_NOCreateService.fabric:/MyApp/MyService
+	                        HealthState           : Warning
+	                        SequenceNumber        : 131064360657607311
+	                        SentAt                : 4/29/2016 8:41:05 PM
+	                        ReceivedAt            : 4/29/2016 8:41:08 PM
+	                        TTL                   : 00:00:15
+	                        Description           : The NOCreateService started at 2016-04-29 20:39:08.689 completed with FABRIC_E_TIMEOUT in more than 30.000.
+	                        RemoveWhenExpired     : True
+	                        IsExpired             : False
+	                        Transitions           : Error->Warning = 4/29/2016 8:39:38 PM, LastOk = 1/1/0001 12:00:00 AM
+
+
 ## DeployedApplication 系统运行状况报告
 **System.Hosting** 是已部署实体的主管组件。
 
@@ -486,22 +545,22 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 	NodeName                           : Node.1
 	AggregatedHealthState              : Ok
 	DeployedServicePackageHealthStates :
-                                     	ServiceManifestName   : WordCountServicePkg
-                                     	NodeName              : Node.1
-                                     	AggregatedHealthState : Ok
+	                                     ServiceManifestName   : WordCountServicePkg
+	                                     NodeName              : Node.1
+	                                     AggregatedHealthState : Ok
 
 	HealthEvents                       :
-                                     	SourceId              : System.Hosting
-                                     	Property              : Activation
-                                     	HealthState           : Ok
-                                     	SequenceNumber        : 130743727751144415
-                                     	SentAt                : 4/24/2015 6:12:55 PM
-                                     	ReceivedAt            : 4/24/2015 6:13:03 PM
-                                     	TTL                   : Infinite
-                                     	Description           : The application was activated successfully.
-                                     	RemoveWhenExpired     : False
-                                     	IsExpired             : False
-                                     	Transitions           : ->Ok = 4/24/2015 6:13:03 PM
+	                                     SourceId              : System.Hosting
+	                                     Property              : Activation
+	                                     HealthState           : Ok
+	                                     SequenceNumber        : 130743727751144415
+	                                     SentAt                : 4/24/2015 6:12:55 PM
+	                                     ReceivedAt            : 4/24/2015 6:13:03 PM
+	                                     TTL                   : Infinite
+	                                     Description           : The application was activated successfully.
+	                                     RemoveWhenExpired     : False
+	                                     IsExpired             : False
+	                                     Transitions           : ->Ok = 4/24/2015 6:13:03 PM
 
 
 ### 下载
@@ -598,8 +657,10 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 ## 后续步骤
 [查看 Service Fabric 运行状况报告](/documentation/articles/service-fabric-view-entities-aggregated-health/)
 
+[如何报告和检查服务运行状况](/documentation/articles/service-fabric-diagnostics-how-to-report-and-check-service-health/)
+
 [在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)
 
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
- 
-<!---HONumber=Mooncake_0523_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

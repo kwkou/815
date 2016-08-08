@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # Service Fabric Reliable Actors 简介
 
@@ -101,7 +101,7 @@ Reliable Actors 客户端 API 提供一个执行组件实例和一个执行组�
 
 Reliable Actors 运行时提供简单的基于轮次的访问模型用于访问执行组件方法。这意味着任何时候执行组件对象的代码内仅有一个活动线程。基于轮次的访问极大简化了并发系统，因为无需使用数据访问的同步机制。它还意味着系统的设计必须特别考虑每个执行组件实例的单线程访问性质。
 
- - 单个执行组件实例一次只能处理一个请求。如果需要处理并发请求，那么一个执行组件实例会导致出现吞吐量瓶颈。 
+ - 单个执行组件实例一次只能处理一个请求。如果需要处理并发请求，那么一个执行组件实例会导致出现吞吐量瓶颈。
  - 如果两个执行组件之间存在一个循环请求，并且同时向其中一个执行组件发送外部请求，那么这两个执行组件就会发生互相死锁的情况。执行组件运行时在执行组件调用上将自动超时，并向调用方抛出异常，以便中断可能出现的死锁情况。
 
 ![Reliable Actors 通信][3]
@@ -112,7 +112,7 @@ Reliable Actors 运行时提供简单的基于轮次的访问模型用于访问�
 
 通过在轮次的开始获取按执行组件锁并在轮次的结束释放锁，执行组件运行时强制执行基于轮次的并发。因此，基于按执行组件基础而非所有执行组件强制执行基于轮次的并发。执行组件方法和计时器/提醒回调可以代表不同执行组件同时执行。
 
-以下示例对上述概念进行了说明。请考虑实现两个异步方法（即 Method1 和 Method2）、一个计时器和一个提醒的执行组件类型。下图的示例显示了代表属于此执行组件类型的两个执行组件（ActorId1 和 ActorId2）执行这些方法和回调的时间线。
+以下示例对上述概念进行了说明。请考虑实现两个异步方法（即 *Method1* 和 *Method2*）、一个计时器和一个提醒的执行组件类型。下图的示例显示了代表属于此执行组件类型的两个执行组件（*ActorId1* 和 *ActorId2*）执行这些方法和回调的时间线。
 
 ![Reliable Actors 运行时基于轮次的并发执行和访问][1]
 
@@ -125,14 +125,14 @@ Reliable Actors 运行时提供简单的基于轮次的访问模型用于访问�
 
 要重点考虑的几点：
 
-- 当代表 ActorId2 执行 Method1，以响应客户端请求 xyz789 时，另一个客户端请求 (abc123) 到达，也要求由 ActorId2 执行 Method1。但是，在前面的执行完成之前，不会开始此 Method1 的第二次执行。同样，当正在执行 Method1，以响应客户端请求 xyz789 时，ActorId2 注册的提醒会启动。仅在这两个 Method1 执行都完成之后才执行提醒回调。所有这些都是由于正在为 ActorId2 强制执行基于轮次的并发。
-- 同样，也会针对 ActorId1 强制执行基于轮次的并发，如代表 ActorId1 以串行方式执行 Method1、Method2 和计时器回调所演示的。
-- 代表 ActorId1 执行 Method1 与代表 ActorId2 对其执行重叠。这是因为仅在同一个执行组件内，而不是在不同执行组件之间强制执行基于轮次的并发执行。
+- 当代表 *ActorId2* 执行 *Method1*，以响应客户端请求 *xyz789* 时，另一个客户端请求 (*abc123*) 到达，也要求由 *ActorId2* 执行 *Method1*。但是，在前面的执行完成之前，不会开始此 *Method1* 的第二次执行。同样，当正在执行 *Method1*，以响应客户端请求 *xyz789* 时，*ActorId2* 注册的提醒会启动。仅在这两个 *Method1* 执行都完成之后才执行提醒回调。所有这些都是由于正在为 *ActorId2* 强制执行基于轮次的并发。
+- 同样，也会针对 *ActorId1* 强制执行基于轮次的并发，如代表 *ActorId1* 以串行方式执行 *Method1*、*Method2* 和计时器回调所演示的。
+- 代表 *ActorId1* 执行 *Method1* 与代表 *ActorId2* 对其执行重叠。这是因为仅在同一个执行组件内，而不是在不同执行组件之间强制执行基于轮次的并发执行。
 - 在某些方法/回调执行中，此方法/回调返回的 `Task` 在方法返回之后完成。在其他一些执行中，在方法/回调返回之前 `Task` 已完成。在这两种情况下，仅在方法/回调已返回，且 `Task` 已完成后才会释放每个执行组件锁。
 
 #### 重新进入
 
-执行组件运行时默认情况下允许重新进入。这意味着如果 Actor A 的执行组件方法调用 Actor B 上的方法，后者反过来又调用 Actor A 上的另一个方法，则允许这“另一个”方法运行。这是因为它是同一逻辑调用链上下文的一部分。所有计时器和提醒调用都使用新的逻辑上下文开始。有关详细信息，请参阅 [Reliable Actors 可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)。
+执行组件运行时默认情况下允许重新进入。这意味着如果 *Actor A* 的执行组件方法调用 *Actor B* 上的方法，后者反过来又调用 *Actor A* 上的另一个方法，则允许这“另一个”方法运行。这是因为它是同一逻辑调用链上下文的一部分。所有计时器和提醒调用都使用新的逻辑上下文开始。有关详细信息，请参阅 [Reliable Actors 可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)。
 
 #### 并发保证的范围
 
@@ -153,4 +153,5 @@ Reliable Actors 运行时提供简单的基于轮次的访问模型用于访问�
 [1]: ./media/service-fabric-reliable-actors-introduction/concurrency.png
 [2]: ./media/service-fabric-reliable-actors-introduction/distribution.png
 [3]: ./media/service-fabric-reliable-actors-introduction/actor-communication.png
-<!---HONumber=Mooncake_0503_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

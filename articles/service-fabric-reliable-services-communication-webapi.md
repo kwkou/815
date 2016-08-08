@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/08/2016"/>
 
 # 入门：Service Fabric Web API 服务与 OWIN 自托管 | Microsoft Azure
 
@@ -21,7 +21,7 @@ Azure Service Fabric 让你有权决定你希望你的服务如何与用户以�
 
 ASP.NET Web API 是一个常用的强大框架，用于在 .NET Framework 之上构建 HTTP API。如果你不熟悉此框架，请参阅 [ASP.NET Web API 2 入门](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)以深入了解。
 
-Service Fabric 中的 Web API 是你熟知并喜爱的相同 ASP.NET Web API。不同之处在于如何*托管* Web API 应用程序。你将不会使用 Microsoft Internet Information Services (IIS)。为了更好地了解区别，我们将它划分为两个部分：
+Service Fabric 中的 Web API 是你熟知并喜爱的相同 ASP.NET Web API。不同之处在于如何托管 Web API 应用程序。你将不会使用 Microsoft Internet Information Services (IIS)。为了更好地了解区别，我们将它划分为两个部分：
 
  1. Web API 应用程序（包括控制器和模型）
  2. 主机（Web 服务器，通常是 IIS）
@@ -35,7 +35,9 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 ![创建新的 Service Fabric 应用程序](./media/service-fabric-reliable-services-communication-webapi/webapi-newproject.png)
 
-使用 Web API 的无状态服务有 Visual Studio 模板可供使用。在本教程中，我们将生成一个项目，这就是你选择此模板时所会得到的结果。此时，你可以从无状态服务 Web API 着手并依照指示进行，或从空的无状态服务着手并从头开始生成。
+使用 Web API 的无状态服务有 Visual Studio 模板可供使用。在本教程中，我们将从头开始构建一个 Web API 项目，这就是你选择此模板时所会得到的结果。
+
+选择一个空白的无状态服务项目以了解如何从头开始构建一个 Web API 项目，或者你可以使用无状态服务 Web API 模板，按照指示操作即可。
 
 ![创建单个无状态服务](./media/service-fabric-reliable-services-communication-webapi/webapi-newproject2.png)
 
@@ -50,7 +52,7 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 	using System.Collections.Generic;
 	using System.Web.Http;
-	    
+    
 	namespace WebService.Controllers
 	{
 	    public class ValuesController : ApiController
@@ -60,23 +62,23 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 	        {
 	            return new string[] { "value1", "value2" };
 	        }
-	
+
 	        // GET api/values/5 
 	        public string Get(int id)
 	        {
 	            return "value";
 	        }
-	
+
 	        // POST api/values 
 	        public void Post([FromBody]string value)
 	        {
 	        }
-	
+
 	        // PUT api/values/5 
 	        public void Put(int id, [FromBody]string value)
 	        {
 	        }
-	
+
 	        // DELETE api/values/5 
 	        public void Delete(int id)
 	        {
@@ -93,7 +95,7 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 	using System.Web.Http;
 	using Owin;
-	
+
 	namespace WebService
 	{
 	    public static class Startup
@@ -102,13 +104,13 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 	        {
 	            // Configure Web API for self-host. 
 	            HttpConfiguration config = new HttpConfiguration();
-	
+
 	            config.Routes.MapHttpRoute(
 	                name: "DefaultApi",
 	                routeTemplate: "api/{controller}/{id}",
 	                defaults: new { id = RouteParameter.Optional }
 	            );
-	
+
 	            appBuilder.UseWebApi(config);
 	        }
 	    }
@@ -128,7 +130,7 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 	using System.Diagnostics;
 	using System.Threading;
 	using Microsoft.ServiceFabric.Services.Runtime;
-	
+
 	internal static class Program
 	{
 	    private static void Main()
@@ -137,9 +139,9 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 	        {
 	            ServiceRuntime.RegisterServiceAsync("WebServiceType",
 	                context => new WebService(context)).GetAwaiter().GetResult();
-	
+
 	            ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(WebService).Name);
-	
+
 	            // Prevents this host process from terminating so services keeps running. 
 	            Thread.Sleep(Timeout.Infinite);
 	        }
@@ -157,11 +159,11 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 有关服务主机进程和服务注册的更多详细信息已超出本文的范围。但是现在请务必了解服务代码已在它自身的进程中运行。
 
-## 自托管 Web API 与 OWIN 主机
+## 使用 OWIN 主机自行托管 Web API
 
 考虑到 Web API 应用程序代码在其自己的进程中托管，你该如何将它挂接到 Web 服务器？ 进入 [OWIN](http://owin.org/)。OWIN 只是 .NET Web 应用程序与 Web 服务器之间的协定。传统上使用 ASP.NET（最高为 MVC 5）时，Web 应用程序通过 System.Web 与 IIS 紧密耦合。但是，Web API 实现 OWIN，这使你可以编写一个与托管其自身的 Web 服务器分离的 Web 应用程序。因此，你可以使用可在自己的进程中启动的自托管 OWIN Web 服务器。这样完全符合我们前面提到的 Service Fabric 托管模型。
 
-在本文中，我们将使用 Katana 作为 Web API 应用程序的 OWIN 主机。Katana 是一种开源 OWIN 主机实现。
+在本文中，我们将使用 Katana 作为 Web API 应用程序的 OWIN 主机。Katana 是基于 [System.Net.HttpListener](https://msdn.microsoft.com/zh-cn/library/system.net.httplistener.aspx) 和 Windows [HTTP Server API](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa364510.aspx) 的开源 OWIN 主机实现。
 
 > [AZURE.NOTE] 若要了解有关 Katana 的详细信息，请转到 [Katana 站点](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana)。有关如何使用 Katana 自托管 Web API 的快速概述，请参阅[使用 OWIN 自托管 ASP.NET Web API 2](http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api)。
 
@@ -174,8 +176,8 @@ Reliable Services API 提供通信入口点，可在其中插入通信堆栈，�
 
 	protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 	{
-    	...
-	}	
+	    ...
+	}
 
 
 
@@ -194,7 +196,7 @@ Web 服务器（以及可能在将来使用的任何其他通信堆栈，如 Web
 	using System.Globalization;
 	using System.Threading;
 	using System.Threading.Tasks;
-	
+
 	namespace WebService
 	{
 	    public class OwinCommunicationListener : ICommunicationListener
@@ -202,11 +204,11 @@ Web 服务器（以及可能在将来使用的任何其他通信堆栈，如 Web
 	        public void Abort()
 	        {
 	        }
-	
+
 	        public Task CloseAsync(CancellationToken cancellationToken)
 	        {
 	        }
-	
+
 	        public Task<string> OpenAsync(CancellationToken cancellationToken)
 	        {
 	        }
@@ -216,9 +218,9 @@ Web 服务器（以及可能在将来使用的任何其他通信堆栈，如 Web
 
 ICommunicationListener 接口提供了三个方法来为服务管理通信侦听器：
 
- - OpenAsync。开始侦听请求。
- - CloseAsync。停止侦听请求，完成任何正在进行的请求，然后正常关闭。
- - Abort。取消所有内容并立即停止。
+ - *OpenAsync*。开始侦听请求。
+ - *CloseAsync*。停止侦听请求，完成任何正在进行的请求，然后正常关闭。
+ - *Abort*。取消所有内容并立即停止。
 
 若要开始操作，请为侦听器运行所需的项目添加私有类成员。这些成员会通过构造函数初始化，并在后面设置侦听 URL 时使用。
 
@@ -230,48 +232,48 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 	    private readonly ServiceContext serviceContext;
 	    private readonly string endpointName;
 	    private readonly string appRoot;
-	
+
 	    private IDisposable webApp;
 	    private string publishAddress;
 	    private string listeningAddress;
-	
+
 	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName)
 	        : this(startup, serviceContext, eventSource, endpointName, null)
 	    {
 	    }
-	
+
 	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName, string appRoot)
 	    {
 	        if (startup == null)
 	        {
 	            throw new ArgumentNullException(nameof(startup));
 	        }
-	
+
 	        if (serviceContext == null)
 	        {
 	            throw new ArgumentNullException(nameof(serviceContext));
 	        }
-	
+
 	        if (endpointName == null)
 	        {
 	            throw new ArgumentNullException(nameof(endpointName));
 	        }
-	
+
 	        if (eventSource == null)
 	        {
 	            throw new ArgumentNullException(nameof(eventSource));
 	        }
-	
+
 	        this.startup = startup;
 	        this.serviceContext = serviceContext;
 	        this.endpointName = endpointName;
 	        this.eventSource = eventSource;
 	        this.appRoot = appRoot;
 	    }
-	   
-	
+   
+
 	    ...
-	
+
 
 
 ## 实现 OpenAsync
@@ -288,9 +290,9 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 
 
 	<Resources>
-    	<Endpoints>
-        	<Endpoint Name="ServiceEndpoint" Type="Input" Protocol="http" Port="8281" />
-    	</Endpoints>
+	    <Endpoints>
+	        <Endpoint Name="ServiceEndpoint" Type="Input" Protocol="http" Port="8281" />
+	    </Endpoints>
 	</Resources>
 
 
@@ -304,15 +306,17 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 	public Task<string> OpenAsync(CancellationToken cancellationToken)
 	{
 	    var serviceEndpoint = this.serviceContext.CodePackageActivationContext.GetEndpoint(this.endpointName);
+	    var protocol = serviceEndpoint.Protocol;
 	    int port = serviceEndpoint.Port;
-	
+
 	    if (this.serviceContext is StatefulServiceContext)
 	    {
 	        StatefulServiceContext statefulServiceContext = this.serviceContext as StatefulServiceContext;
-	
+
 	        this.listeningAddress = string.Format(
 	            CultureInfo.InvariantCulture,
-	            "http://+:{0}/{1}{2}/{3}/{4}",
+	            "{0}://+:{1}/{2}{3}/{4}/{5}",
+	            protocol,
 	            port,
 	            string.IsNullOrWhiteSpace(this.appRoot)
 	                ? string.Empty
@@ -325,7 +329,8 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 	    {
 	        this.listeningAddress = string.Format(
 	            CultureInfo.InvariantCulture,
-	            "http://+:{0}/{1}",
+	            "{0}://+:{1}/{2}",
+	            protocol,
 	            port,
 	            string.IsNullOrWhiteSpace(this.appRoot)
 	                ? string.Empty
@@ -335,9 +340,9 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 	    {
 	        throw new InvalidOperationException();
 	    }
-	    
+    
 	    ...
-	
+
 
 
 请注意，此处使用了“http://+”。这是为了确保 Web 服务器侦听所有可用的地址，包括 localhost、FQDN 和计算机 IP。
@@ -346,31 +351,31 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 明确这一点后，OpenAsync 会启动 Web 服务器，并返回它所侦听的地址。请注意它侦听“http://+”，但在 OpenAsync 返回地址之前，“+”会替换为它当前所处节点的 IP 或 FQDN。此方法所返回的地址就是向系统注册的地址。它也是客户端和其他服务在请求服务地址时所看到的地址。要使客户端可以正确连接到它，它们在地址中需要实际 IP 或 FQDN。
 
-	
+
 	    ...
-	
+
 	    this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-	
+
 	    try
 	    {
 	        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
-	
+
 	        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
-	
+
 	        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
-	
+
 	        return Task.FromResult(this.publishAddress);
 	    }
 	    catch (Exception ex)
 	    {
-	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open. " + ex.ToString());
-	
+	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open endpoint {0}. {1}", this.endpointName, ex.ToString());
+
 	        this.StopWebServer();
-	
+
 	        throw;
 	    }
 	}
-	
+
 
 
 请注意，这会引用在构造函数中传入到 OwinCommunicationListener 的 Startup 类。此启动实例由 Web 服务器用于启动 Web API 应用程序。
@@ -384,33 +389,33 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	public Task CloseAsync(CancellationToken cancellationToken)
 	{
-    	this.eventSource.ServiceMessage(this.serviceContext, "Closing web server");
+	    this.eventSource.ServiceMessage(this.serviceContext, "Closing web server on endpoint {0}", this.endpointName);
             
-    	this.StopWebServer();
+	    this.StopWebServer();
 
-    	return Task.FromResult(true);
+	    return Task.FromResult(true);
 	}
 
 	public void Abort()
 	{
-    	this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server");
+	    this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server on endpoint {0}", this.endpointName);
     
-    	this.StopWebServer();
+	    this.StopWebServer();
 	}
 
 	private void StopWebServer()
 	{
-    	if (this.serverHandle != null)
-    	{
-        	try
-        	{
-            	this.serverHandle.Dispose();
-        	}
-        	catch (ObjectDisposedException)
-        	{
-            	// no-op
-        	}
-    	}
+	    if (this.serverHandle != null)
+	    {
+	        try
+	        {
+	            this.serverHandle.Dispose();
+	        }
+	        catch (ObjectDisposedException)
+	        {
+	            // no-op
+	        }
+	    }
 	}
 
 
@@ -423,11 +428,12 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 	{
-	    return new ServiceInstanceListener[]
-	    {
-	        new ServiceInstanceListener(serviceContext => 
-	            new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, "ServiceEndpoint"))
-	    };
+	    var endpoints = Context.CodePackageActivationContext.GetEndpoints()
+	                           .Where(endpoint => endpoint.Protocol == EndpointProtocol.Http || endpoint.Protocol == EndpointProtocol.Https)
+	                           .Select(endpoint => endpoint.Name);
+
+	    return endpoints.Select(endpoint => new ServiceInstanceListener(
+	        serviceContext => new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, endpoint), endpoint));
 	}
 
 
@@ -440,11 +446,14 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 最终的服务实现应该非常简单。它只需创建通信侦听器：
 
 
+	using System;
 	using System.Collections.Generic;
 	using System.Fabric;
+	using System.Fabric.Description;
+	using System.Linq;
 	using Microsoft.ServiceFabric.Services.Communication.Runtime;
 	using Microsoft.ServiceFabric.Services.Runtime;
-	
+
 	namespace WebService
 	{
 	    internal sealed class WebService : StatelessService
@@ -452,14 +461,15 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	        public WebService(StatelessServiceContext context)
 	            : base(context)
 	        { }
-	
+
 	        protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 	        {
-	            return new ServiceInstanceListener[]
-	            {
-	                new ServiceInstanceListener(serviceContext => 
-	                    new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, "ServiceEndpoint"))
-	            };
+	            var endpoints = Context.CodePackageActivationContext.GetEndpoints()
+	                                   .Where(endpoint => endpoint.Protocol == EndpointProtocol.Http || endpoint.Protocol == EndpointProtocol.Https)
+	                                   .Select(endpoint => endpoint.Name);
+
+	            return endpoints.Select(endpoint => new ServiceInstanceListener(
+	                serviceContext => new OwinCommunicationListener(Startup.ConfigureApp, serviceContext, ServiceEventSource.Current, endpoint), endpoint));
 	        }
 	    }
 	}
@@ -477,7 +487,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	using Microsoft.Owin.Hosting;
 	using Microsoft.ServiceFabric.Services.Communication.Runtime;
 	using Owin;
-	
+
 	namespace WebService
 	{
 	    internal class OwinCommunicationListener : ICommunicationListener
@@ -487,59 +497,61 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	    private readonly ServiceContext serviceContext;
 	    private readonly string endpointName;
 	    private readonly string appRoot;
-	
+
 	    private IDisposable webApp;
 	    private string publishAddress;
 	    private string listeningAddress;
-	
+
 	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName)
 	        : this(startup, serviceContext, eventSource, endpointName, null)
 	    {
 	    }
-	
+
 	    public OwinCommunicationListener(Action<IAppBuilder> startup, ServiceContext serviceContext, ServiceEventSource eventSource, string endpointName, string appRoot)
 	    {
 	        if (startup == null)
 	        {
 	            throw new ArgumentNullException(nameof(startup));
 	        }
-	
+
 	        if (serviceContext == null)
 	        {
 	            throw new ArgumentNullException(nameof(serviceContext));
 	        }
-	
+
 	        if (endpointName == null)
 	        {
 	            throw new ArgumentNullException(nameof(endpointName));
 	        }
-	
+
 	        if (eventSource == null)
 	        {
 	            throw new ArgumentNullException(nameof(eventSource));
 	        }
-	
+
 	        this.startup = startup;
 	        this.serviceContext = serviceContext;
 	        this.endpointName = endpointName;
 	        this.eventSource = eventSource;
 	        this.appRoot = appRoot;
 	    }
-	
+
 	        public bool ListenOnSecondary { get; set; }
-	
+
 	        public Task<string> OpenAsync(CancellationToken cancellationToken)
 	        {
 	            var serviceEndpoint = this.serviceContext.CodePackageActivationContext.GetEndpoint(this.endpointName);
+	            var protocol = serviceEndpoint.Protocol;
 	            int port = serviceEndpoint.Port;
-	
+
 	            if (this.serviceContext is StatefulServiceContext)
 	            {
 	                StatefulServiceContext statefulServiceContext = this.serviceContext as StatefulServiceContext;
-	
+
 	                this.listeningAddress = string.Format(
 	                    CultureInfo.InvariantCulture,
-	                    "http://+:{0}/{1}{2}/{3}/{4}",
+	                    "{0}://+:{1}/{2}{3}/{4}/{5}",
+	                    protocol,
 	                    port,
 	                    string.IsNullOrWhiteSpace(this.appRoot)
 	                        ? string.Empty
@@ -552,7 +564,8 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	            {
 	                this.listeningAddress = string.Format(
 	                    CultureInfo.InvariantCulture,
-	                    "http://+:{0}/{1}",
+	                    "{0}://+:{1}/{2}",
+	                    protocol,
 	                    port,
 	                    string.IsNullOrWhiteSpace(this.appRoot)
 	                        ? string.Empty
@@ -562,45 +575,45 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	            {
 	                throw new InvalidOperationException();
 	            }
-	
+
 	    this.publishAddress = this.listeningAddress.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-	
+
 	    try
 	    {
 	        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
-	
+
 	        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
-	
+
 	        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
-	
+
 	        return Task.FromResult(this.publishAddress);
 	    }
 	    catch (Exception ex)
 	    {
-	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open. " + ex.ToString());
-	
+	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open endpoint {0}. {1}", this.endpointName, ex.ToString());
+
 	        this.StopWebServer();
-	
+
 	        throw;
 	    }
 	}
-	
+
 	        public Task CloseAsync(CancellationToken cancellationToken)
 	        {
-	            this.eventSource.ServiceMessage(this.serviceContext, "Closing web server");
-	
+	            this.eventSource.ServiceMessage(this.serviceContext, "Closing web server on endpoint {0}", this.endpointName);
+
 	            this.StopWebServer();
-	
+
 	            return Task.FromResult(true);
 	        }
-	
+
 	        public void Abort()
 	        {
-	            this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server");
-	
+	            this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server on endpoint {0}", this.endpointName);
+
 	            this.StopWebServer();
 	        }
-	
+
 	        private void StopWebServer()
 	        {
 	            if (this.webApp != null)
@@ -617,7 +630,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	        }
 	    }
 	}
-	
+
 
 
 所有部分都准备就绪后，项目现在应类似于具有 Reliable Services API 入口点和 OWIN 主机的典型 Web API 应用程序：
@@ -655,11 +668,11 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 
 	<DefaultServices>
-  		<Service Name="WebService">
-    		<StatelessService ServiceTypeName="WebServiceType" InstanceCount="-1">
-      		<SingletonPartition />
-    	</StatelessService>
-  		</Service>
+	  <Service Name="WebService">
+	    <StatelessService ServiceTypeName="WebServiceType" InstanceCount="-1">
+	      <SingletonPartition />
+	    </StatelessService>
+	  </Service>
 	</DefaultServices>
 
 
@@ -670,4 +683,4 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 [使用 Visual Studio 调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->

@@ -5,12 +5,12 @@
    documentationCenter=".net"
    authors="mcoskun"
    manager="timlt"
-   editor="masnider,jessebenson"/>
+   editor="masnider,vturecek"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/19/2016"
+   wacn.date="08/08/2016"/>
 
 
 # Azure Service Fabric 有状态服务中的可靠集合简介
@@ -24,7 +24,7 @@ Reliable Collections 与其他高可用性技术（如 Redis、Azure 表服务�
 
 ![集合演变图。](./media/service-fabric-reliable-services-reliable-collections/ReliableCollectionsEvolution.png)
 
-可以将可靠集合视作 **System.Collections** 类的自然演变：它们是一组新的集合，专为云应用程序和多计算机应用程序设计，且不会为开发人员增加复杂性。因此，可靠集合的特性如下：
+可以将可靠集合视作 System.Collections 类的自然演变：它们是一组新的集合，专为云应用程序和多计算机应用程序设计，且不会为开发人员增加复杂性。因此，可靠集合的特性如下：
 
 - 可复制：复制状态更改以实现高可用性。
 - 可保存：数据会保存至磁盘，可在发生大规模中断（例如，数据中心断电）时保障持续性。
@@ -32,10 +32,10 @@ Reliable Collections 与其他高可用性技术（如 Redis、Azure 表服务�
 - 事务性：API 利用事务抽象方法，让你可以在某个服务内轻松管理多个可靠集合。
 
 Reliable Collections 提供全新的非常一致保证，使应用程序状态推断变得更轻松。
-非常一致通过以下方法实现：确保仅在对额定数量的副本（包括主副本）应用整个事务后，才完成事务提交。
+非常一致通过以下方法实现：确保仅对副本的多数仲裁（包括主副本）记录整个事务后，才完成事务提交。
 若要实现较弱的一致性，应用程序可以在异步提交返回之前，回头向客户端/请求者进行确认。
 
-可靠集合 API 由并发集合 API（位于 **System.Collections.Concurrent** 命名空间中）演变而来：
+可靠集合 API 由并发集合 API（位于 System.Collections.Concurrent 命名空间中）演变而来：
 
 - 异步：返回任务；不同于并发集合，其操作会受到复制及保存。
 - 无输出参数：使用 `ConditionalValue<T>` 返回 bool 和值，而不是返回输出参数。`ConditionalValue<T>` 与 `Nullable<T>` 类似，但 T 可以不是结构。
@@ -55,7 +55,12 @@ Reliable Collections 将根据副本的操作和角色，为指定读取操作�
 Reliable Collections 支持两种隔离级别：
 
 - **可重复的读取**：指定语句不能读取已由其他事务修改但尚未提交的数据，并且指定，其他任何事务都不能在当前事务完成之前修改由当前事务读取的数据。有关更多详细信息，请参阅 [https://msdn.microsoft.com/zh-cn/library/ms173763.aspx](https://msdn.microsoft.com/zh-cn/library/ms173763.aspx)。
-- **快照**：指定事务中任何语句读取的数据都将是在事务开始时便存在的数据的事务上一致的版本。事务只能识别在其开始之前提交的数据修改。在当前事务中执行的语句将看不到在当前事务开始以后由其他事务所做的数据修改。其效果就好像事务中的语句获得了已提交数据的快照，因为该数据在事务开始时就存在。有关更多详细信息，请参阅 [https://msdn.microsoft.com/zh-cn/library/ms173763.aspx](https://msdn.microsoft.com/zh-cn/library/ms173763.aspx)。
+- **快照**：指定事务中任何语句读取的数据都将是在事务开始时便存在的数据的事务上一致的版本。
+事务只能识别在其开始之前提交的数据修改。
+在当前事务中执行的语句将看不到在当前事务开始以后由其他事务所做的数据修改。
+其效果就好像事务中的语句获得了已提交数据的快照，因为该数据在事务开始时就存在。
+快照跨 Reliable Collections 一致。
+有关更多详细信息，请参阅 [https://msdn.microsoft.com/zh-cn/library/ms173763.aspx](https://msdn.microsoft.com/zh-cn/library/ms173763.aspx)。
 
 Reliable Dictionary 和 Reliable Queue 都支持“读取你的写入”。
 换而言之，事务中的任何写入都将对属于同一事务的后续读取可见。
@@ -121,24 +126,33 @@ Reliable Collections 始终采用排他锁。
 
 ## 建议
 
-- 切勿修改读取操作返回的自定义类型的对象（例如 `TryPeekAsync` 或 `TryGetAsync`）。Reliable Collections 与 Concurrent Collections 一样，将返回对这些对象的引用，而非副本。
+- 切勿修改读取操作返回的自定义类型的对象（例如 `TryPeekAsync` 或 `TryGetValueAsync`）。Reliable Collections 与 Concurrent Collections 一样，将返回对这些对象的引用，而非副本。
 - 在修改返回的自定义类型的对象之前，务必对其进行深层复制。由于结构和内置类型均按值传递，因此无需对其进行深层复制。
 - 切勿对超时值使用 `TimeSpan.MaxValue`。应使用超时值来检测死锁。
+- 切勿在已提交、中止或释放一个事务之后使用该事务。
+- 在事务范围内构造的枚举器不应在事务范围之外使用。
 - 切勿在另一个事务的 `using` 语句内创建事务，因为它可能会导致死锁。
+- 务必确保你的 `IComparable<TKey>` 实现是正确的。系统采用其上的依赖关系以合并检查点。
+- 请考虑使用备份和还原功能来进行灾难恢复。
 
 需谨记以下几点：
 
 - 所有可靠集合 API 的默认超时值均为 4 秒。大多数用户不应重写此值。
 - 所有 Reliable Collections API 中的默认取消标记均为 `CancellationToken.None`。
-- 可靠字典的键类型参数 (TKey) 必须正确实现 `GetHashCode()` 和 `Equals()`。键必须不可变。
-- 单个集合内的枚举可保持快照的一致性。但是，多个集合的枚举不会跨集合保持一致。
+- 可靠字典的键类型参数 (*TKey*) 必须正确实现 `GetHashCode()` 和 `Equals()`。键必须不可变。
 - 若要实现 Reliable Collections 的高可用性，每个服务应至少有一个目标，并且最小副本集大小必须为 3。
+- 针对辅助副本的读取操作可能会读取未提交仲裁的版本。
+这意味着从单个辅助副本读取的数据版本可能被错误处理。
+当然，从主副本读取的数据将始终是可靠的，绝不会被错误处理。
 
 ## 后续步骤
 
 - [Reliable Services 快速启动](/documentation/articles/service-fabric-reliable-services-quick-start/)
+- [Reliable Services 通知](/documentation/articles/service-fabric-reliable-services-notifications/)
+- [Reliable Services 备份和还原（灾难恢复）](/documentation/articles/service-fabric-reliable-services-backup-restore/)
+- [可靠状态管理器和配置](/documentation/articles/service-fabric-reliable-services-configuration/)
 - [Service Fabric Web API 服务入门](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 - [Reliable Services 编程模型的高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)
+- [Reliable Collections 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.data.collections.aspx)
 
-
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0801_2016-->
