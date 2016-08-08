@@ -9,7 +9,7 @@
 	
 <tags
 	ms.service="batch"
-	ms.date="04/21/2016"
+	ms.date="06/22/2016"
 	wacn.date="06/06/2016"/>
 
 # 在 Azure 批处理( Batch ) 计算节点上运行作业准备和完成任务
@@ -24,7 +24,7 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 
 ## 何时使用作业准备和释放任务
 
-许多情况可受益于作业准备和释放任务。下面只是其中的几种情况：
+每当需要为节点准备作业特定的配置或数据（以及清除或保存任务结果数据）时，便适合使用操作准备和释放任务。此类情况的示例如下：
 
 **通用任务数据的传输**
 
@@ -52,7 +52,7 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 
 > [AZURE.NOTE] 作业删除操作也会执行作业释放任务。但是，如果已经终止了某个作业，则以后删除该作业时，释放任务不会再次运行。
 
-## Batch .NET API 中的作业准备和释放任务
+## 使用 Batch .NET 执行作业准备和释放任务
 
 若要使用作业准备任务，可以创建并配置 [JobPreparationTask][net_job_prep] 对象，然后将它分配到作业的 [CloudJob.JobPreparationTask][net_job_prep_cloudjob] 属性。同样，初始化 [JobReleaseTask][net_job_release] 并将它分配到作业的 [CloudJob.JobReleaseTask][net_job_prep_cloudjob] 属性可以设置作业的释放任务。
 
@@ -77,9 +77,7 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 		// thus you need not call Terminate if you typically delete your jobs upon task completion.
 		await myBatchClient.JobOperations.TerminateJobAsync("JobPrepReleaseSampleJob");
 
-## 后续步骤
-
-### GitHub 上的示例项目
+## GitHub 上的代码示例
 
 查看 GitHub 上的 [JobPrepRelease][job_prep_release_sample] 示例项目，了解作业准备和释放的操作实践。此控制台应用程序将执行以下操作：
 
@@ -96,56 +94,71 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 
 		
 		Attempting to create pool: JobPrepReleaseSamplePool
-		The pool already existed when we tried to create it
+		Created pool JobPrepReleaseSamplePool with 2 small nodes
 		Checking for existing job JobPrepReleaseSampleJob...
 		Job JobPrepReleaseSampleJob not found, creating...
 		Submitting tasks and awaiting completion...
 		All tasks completed.
-		Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
+
+		Contents of shared\job_prep_and_release.txt on tvm-2434664350_1-20160623t173951z:
 		-------------------------------------------
-		tvm-3105992504_1-20151015t150030z tasks:
+		tvm-2434664350_1-20160623t173951z tasks:
 		  task001
-		  task002
-		  task006
-		  task007
-		Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
-		-------------------------------------------
-		tvm-3105992504_2-20151015t150030z tasks:
-		  task003
-		  task005
 		  task004
+		  task005
+		  task006
+
+		Contents of shared\job_prep_and_release.txt on tvm-2434664350_2-20160623t173951z:
+		-------------------------------------------
+		tvm-2434664350_2-20160623t173951z tasks:
 		  task008
+		  task002
+		  task003
+		  task007
+
 		Waiting for job JobPrepReleaseSampleJob to reach state Completed
-		....
-		tvm-3105992504_1-20151015t150030z:
+		...
+
+		tvm-2434664350_1-20160623t173951z:
 		  Prep task exit code:    0
 		  Release task exit code: 0
-		tvm-3105992504_2-20151015t150030z:
+
+		tvm-2434664350_2-20160623t173951z:
 		  Prep task exit code:    0
 		  Release task exit code: 0
+
 		Delete job? [yes] no
 		yes
 		Delete pool? [yes] no
-		no
+		yes
+
 		Sample complete, hit ENTER to exit...
 
+>[AZURE.NOTE] 由于新池中各个节点的创建和启动时间并不一样（某些节点比其他节点更早做好任务准备），你可能看到不同的输出。具体而言，因为任务快速完成，池的某个节点可能执行作业的所有任务。如果发生这种情况，你会发现未执行任何任务的节点没有作业准备和作业释放任务存在。
 
-### 使用 Batch 资源管理器检查作业准备和释放任务
+### 在 Azure 门户中检查作业准备和释放任务
 
-[批处理( Batch ) 资源管理器][batch_explorer_article]（在 GitHub 上的[示例代码存储库][batch_explorer_project]中也能找到）是在 Azure 批处理( Batch ) 中开发解决方案时可以使用的绝佳工具。例如，在运行上述示例应用程序时，你可以使用批处理( Batch ) 资源管理器查看作业及其任务的属性，甚至可以下载作业任务修改的共享文本文件。
+在运行上述示例应用程序时，你可以使用 [Azure 门户][portal]查看作业及其任务的属性，甚至可以下载作业任务修改的共享文本文件。
 
-以下屏幕截图突出显示了当你在“作业”选项卡中选择 *JobPrepReleaseSampleJob* 作业时，“作业详细信息”窗格中显示的作业准备和释放任务属性。
+下面的屏幕截图显示了在运行示例应用程序之后，Azure 门户中出现的**准备任务边栏选项卡**。在任务完成之后（但在删除作业与池之前），导航到 JobPrepReleaseSampleJob 属性，然后单击“准备任务”或“释放任务”以查看其属性。
 
-![批处理( Batch )资源管理器][1]
+![Azure 门户中的作业准备属性][1]
 
-显示作业准备和释放任务的 Batch 资源管理器屏幕截图
+## 后续步骤
+
+### 应用程序包
+
+除了作业准备任务外，你还可以使用 Batch 的[应用程序包](batch-application-packages.md)功能来为计算节点做好任务执行准备。此功能特别适合用于部署不需要运行安装程序的应用程序、包含许多（100 个以上）文件的应用程序，或需要严格版本控制的应用程序。
+
+### 安装应用程序和暂存数据
+
+有关准备节点以运行任务的各种方法的概述，请查看 Azure Batch 论坛中的帖子 [Installing applications and staging data on Batch compute nodes][forum_post]（在 Batch 计算节点上安装应用程序和暂存数据）。此帖子由 Azure Batch 团队的一名成员编写，是一个很好的入门教程，它介绍了如何在计算节点上以不同方式获取文件（包括应用程序和任务输入数据），以及每种方法要考虑到的一些特殊注意事项。
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
 [api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
 [azure_storage]: /services/storage/
-[batch_explorer_article]: http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx
-[batch_explorer_project]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
+[portal]: https://portal.azure.cn
 [job_prep_release_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/JobPrepRelease
 [net_batch_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
 [net_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
@@ -170,4 +183,5 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 [net_list_tasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
 
 [1]: ./media/batch-job-prep-release/portal-jobprep-01.png
-<!---HONumber=Mooncake_0704_2016-->
+
+<!---HONumber=Mooncake_0801_2016-->

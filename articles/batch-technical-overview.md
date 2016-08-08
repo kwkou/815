@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="batch"
-	ms.date="06/16/2016"
-	wacn.date="07/14/2016"/>
+	ms.date="07/06/2016"
+	wacn.date="08/08/2016"/>
 
 # Azure 批处理 ( Batch ) 基础知识
 
@@ -42,7 +42,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 ## 使用 Batch 进行开发
 
-当你构建解决方案来使用 Azure Batch 处理并行工作负荷时，可以使用 [Batch API](#batch-development-apis) 来编程。Batch API 可让你创建和管理计算节点（虚拟机）池，以及计划作业和任务在这些节点上运行。编写的客户端应用程序或服务使用 Batch API 来与 Batch 服务通信。
+使用 Batch 处理并行工作负荷通常是使用 [Batch API](#batch-development-apis) 之一以编程方式实现的。Batch API 可让你创建和管理计算节点（虚拟机）池，以及计划作业和任务在这些节点上运行。编写的客户端应用程序或服务使用 Batch API 来与 Batch 服务通信。
 
 > [AZURE.TIP] 当你准备钻研 Batch API 以深入了解它所提供的功能时，请参阅 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articles/batch-api-basics)。
 
@@ -72,11 +72,11 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 除了客户端 API 以外，还可以使用以下功能来管理 Batch 帐户中的资源。
 
-- [Batch PowerShell cmdlet][batch_ps] - [Azure PowerShell](/documentation/articles/powershell-install-configure/) 模块中的 Batch PowerShell cmdlet 可让你使用 PowerShell 来管理 Batch 资源。
+- [Batch PowerShell cmdlet][batch_ps]：[Azure PowerShell](/documentation/articles/powershell-install-configure/) 模块中的 Azure Batch cmdlet 可让你使用 PowerShell 来管理 Batch 资源。
 
 - [Azure CLI](/documentation/articles/xplat-cli-install/)：Azure 命令行接口 (Azure CLI) 是一个跨平台工具集，提供用来与许多 Azure 服务（包括 Batch）交互的 shell 命令。
 
-- Batch Management .NET客户端库：也可以通过 [NuGet][api_net_mgmt_nuget] 获取。你可以使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户、配额和应用程序包。[MSDN][api_net_mgmt] 上提供了管理库的参考信息。
+- [Batch Management .NET](/documentation/articles/batch-management-dotnet/) 客户端库：也可以通过 [NuGet][api_net_mgmt_nuget] 获取。你可以使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户、配额和应用程序包。[MSDN][api_net_mgmt] 上提供了管理库的参考信息。
 
 ## 方案：扩大并行工作负荷
 
@@ -137,4 +137,4 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 [1]: ./media/batch-technical-overview/tech_overview_01.png
 [2]: ./media/batch-technical-overview/tech_overview_02.png
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->
