@@ -3,14 +3,14 @@
 	description="Azure IoT 中心设备管理教程，描述如何使用设备作业来执行远程固件更新等操作。"
 	services="iot-hub"
 	documentationCenter=".net"
-	authors="ellenfosborne"
+	authors="juanjperez"
 	manager="timlt"
 	editor=""/>
 
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="08/08/2016"/>
 
 # 教程：如何使用设备作业更新设备固件（预览版）
 
@@ -153,11 +153,16 @@ Azure IoT 中心设备管理客户端库处理设备与服务之间的通信，�
 
 若要了解有关 Azure IoT 中心设备管理功能的详细信息，可学习以下教程：
 
+- [在 IoT 网关后启用托管设备][lnk-dm-gateway]
+- [Azure IoT 中心设备管理客户端库介绍][lnk-library-c]
 - Azure IoT 中心 DM 客户端库提供了使用 [Intel Edison 设备][lnk-edison]的端到端示例。
 
-- [如何使用设备克隆][lnk-twin-tutorial]
+若要进一步探索 IoT 中心的功能，请参阅：
 
-- [如何使用查询查找设备克隆][lnk-tutorial-queries]
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Images and links -->
 
@@ -174,5 +179,12 @@ Azure IoT 中心设备管理客户端库处理设备与服务之间的通信，�
 [lnk-github-firmware]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/c/iotdm_client/samples/iotdm_simple_sample/iotdm_simple_sample.c
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 
+[lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
 
-<!---HONumber=Mooncake_0523_2016-->
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0801_2016-->

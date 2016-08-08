@@ -3,14 +3,14 @@
 	description="Azure IoT 中心设备管理教程，描述如何使用设备克隆。"
 	services="iot-hub"
 	documentationCenter=".net"
-	authors="ellenfosborne"
+	authors="juanjperez"
 	manager="timlt"
 	editor=""/>
 
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="08/08/2016"/>
 
 # 教程：如何将设备克隆用于 C#（预览版）
 
@@ -66,7 +66,7 @@ Azure IoT 中心设备管理引入了设备克隆，它是物理设备的一种�
 
 ### 浅度读取
 
-浅度读取和深度读取/写入之间存在区别。浅度读取从存储在 Azure IoT 中心内的设备克隆返回所请求属性的值。它将是上一个值通知操作所得的值。无法进行浅度写入，因为物理设备是设备属性的权威来源。浅度读取仅从设备克隆读取属性：
+*浅度*读取和*深度*读取/写入之间存在区别。浅度读取从存储在 Azure IoT 中心内的设备克隆返回所请求属性的值。它将是上一个值通知操作所得的值。无法进行浅度写入，因为物理设备是设备属性的权威来源。浅度读取仅从设备克隆读取属性：
 
 ```
 device.DeviceProperties[DevicePropertyNames.BatteryLevel].Value.ToString();
@@ -118,12 +118,17 @@ set_device_batterylevel(0, level);
 若要了解有关 Azure IoT 中心设备管理功能的详细信息，可学习以下教程：
 
 - [如何使用查询查找设备克隆][lnk-tutorial-queries]
-
-- [如何使用设备作业更新设备固件][lnk-dm-jobs]
-
+- [如何使用设备作业更新设备固件][lnk-tutorial-jobs]
+- [在 IoT 网关后启用托管设备][lnk-dm-gateway]
+- [Azure IoT 中心设备管理客户端库介绍][lnk-library-c]
 - 设备管理客户端库提供了使用 [Intel Edison 设备][lnk-edison]的端到端示例。
 
+若要进一步探索 IoT 中心的功能，请参阅：
 
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- images and links -->
 [img-twin]: ./media/iot-hub-device-management-device-twin/image1.png
@@ -137,4 +142,15 @@ set_device_batterylevel(0, level);
 [lnk-dm-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
 [lnk-edison]: https://github.com/Azure/azure-iot-sdks/tree/dmpreview/c/iotdm_client/samples/iotdm_edison_sample
 
-<!---HONumber=Mooncake_0523_2016-->
+
+[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
+[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
+[lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
+
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0801_2016-->

@@ -3,14 +3,14 @@
 	description="Azure IoT 中心设备管理教程，描述如何使用设备作业来执行远程固件更新等操作。"
 	services="iot-hub"
 	documentationCenter=".net"
-	authors="ellenfosborne"
+	authors="juanjperez"
 	manager="timlt"
 	editor=""/>
 
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="08/08/2016"/>
 
 # 教程：如何使用设备作业更新设备固件（预览版）
 
@@ -30,7 +30,7 @@ Azure IoT 中心设备管理当前提供 6 种类型的设备作业（如果客�
 
 有关如何使用上述每个作业的详细信息，请参阅 [API 文档][lnk-apidocs]。
 
-可查询作业历史记录以了解已启动的作业的状态。有关示例查询，请参阅[our query expression library（我们的查询表达式库）][lnk-query-samples]。
+可查询作业历史记录以了解已启动的作业的状态。有关示例查询，请参阅[our query expression library][lnk-query-samples]（我们的查询表达式库）。
 
 ## 使用设备作业执行固件更新：体系结构
 
@@ -62,9 +62,9 @@ Azure IoT 中心设备管理当前提供 6 种类型的设备作业（如果客�
 
 若要启动该示例，需要运行 `jobClient_scheduleJob.js`。这将在所有模拟设备上启动固件更新进程。按照以下步骤启动示例：
 
-1.  从克隆 **azure-iot-sdks** 存储库的根文件夹，导航到 **azure-iot-sdks/node/service/samples** 目录。  
+1.  从克隆 **azure-iot-sdks** 存储库的根文件夹，导航到 **azure-iot-sdks/node/service/samples** 目录。
 
-2.  打开 **jobClient\_scheduleJob.js** 并将占位符替换为你的 IoT 中心连接字符串。
+2.  打开 **jobClient_scheduleJob.js** 并将占位符替换为你的 IoT 中心连接字符串。
 
 4.  运行 `node jobClient_scheduleJob.js`。
 
@@ -102,11 +102,16 @@ Azure IoT 中心设备管理客户端库处理设备与服务之间的通信，�
 
 若要了解有关 Azure IoT 中心设备管理功能的详细信息，可学习以下教程：
 
+- [在 IoT 网关后启用托管设备][lnk-dm-gateway]
+- [Azure IoT 中心设备管理客户端库介绍][lnk-library-c]
 - Azure IoT 中心 DM 客户端库提供了使用 [Intel Edison 设备][lnk-edison]的端到端示例。
 
-- [如何使用设备克隆][lnk-twin-tutorial]
+若要进一步探索 IoT 中心的功能，请参阅：
 
-- [如何使用查询查找设备克隆][lnk-tutorial-queries]
+- [设计你的解决方案][lnk-design]
+- [开发人员指南][lnk-devguide]
+- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Images and links -->
 
@@ -123,5 +128,12 @@ Azure IoT 中心设备管理客户端库处理设备与服务之间的通信，�
 [lnk-github-firmware]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/c/iotdm_client/samples/iotdm_simple_sample/iotdm_simple_sample.c
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 
+[lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
+[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
 
-<!---HONumber=Mooncake_0523_2016-->
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+<!---HONumber=Mooncake_0801_2016-->
