@@ -4,13 +4,13 @@
 	services="notification-hubs"
 	documentationCenter=""
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/28/2016" 
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016" 
+	wacn.date="08/08/2016"/>
 
 # 使用通知中心向用户发送跨平台通知
 
@@ -98,10 +98,10 @@
 [Push to users Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 [Visual Studio 2012 Express for Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
 
-[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/
 [Azure Notification Hubs]: http://go.microsoft.com/fwlink/p/?LinkId=314257
-[使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-notification
+[使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-notification/
 [Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->

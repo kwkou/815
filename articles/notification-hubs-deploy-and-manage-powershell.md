@@ -4,13 +4,13 @@
 	services="notification-hubs" 
 	documentationCenter="" 
 	authors="wesmc7777" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" />
 
 <tags 
 	ms.service="notification-hubs" 
-	ms.date="03/28/2016" 
-	wacn.date="07/25/2016"/>
+	ms.date="06/29/2016" 
+	wacn.date="08/08/2016"/>
 
 # 使用 PowerShell 部署和管理通知中心
 
@@ -166,4 +166,4 @@ powershell
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/library/azure/dn495113.aspx
  
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0801_2016-->
