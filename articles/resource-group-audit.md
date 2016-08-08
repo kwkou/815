@@ -11,7 +11,7 @@
 <tags
 	ms.service="azure-resource-manager"
 	ms.date="06/13/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/08/2016"/>
 
 # 使用资源管理器执行审核操作
 
@@ -90,8 +90,8 @@
 
 ## 后续步骤
 
+- 若要了解如何设置安全策略，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 - 若要了解对部署进行故障排除的命令，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
-- 若要了解如何防止对所有用户的资源执行删除操作，请参阅[使用 Azure Resource Manager 锁定资源](/documentation/articles/resource-group-lock-resources/)。
+- 若要了解如何防止删除所有用户的资源，请参阅[使用 Azure Resource Manager 锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0801_2016-->
