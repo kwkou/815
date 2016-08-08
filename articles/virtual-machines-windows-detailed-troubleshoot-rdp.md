@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date="08/08/2016"/>
 
 # 对无法连接到 Azure 中 Windows 虚拟机的远程桌面的问题的详细疑难解答
 

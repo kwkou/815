@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/07/2016"
-	wacn.date=""/>
+	wacn.date="08/08/2016"/>
 
 # 使用 HPC Pack IaaS 部署脚本创建 Windows 高性能计算 (HPC) 群集
 

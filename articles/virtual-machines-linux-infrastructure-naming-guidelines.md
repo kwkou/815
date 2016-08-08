@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/22/2016"
-	wacn.date=""/>
+	wacn.date="08/08/2016"/>
 
 # 基础结构命名准则
 
