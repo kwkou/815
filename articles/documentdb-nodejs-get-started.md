@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="documentdb"
-    ms.date="04/26/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="08/08/2016"/>
 
 # NoSQL Node.js 教程：DocumentDB Node.js 控制台应用程序  
 
@@ -57,11 +57,11 @@
 1. 打开你最爱的终端。
 2. 找到你想要在其中保存 Node.js 应用程序的文件夹或目录。
 3. 使用以下命令创建两个空的 JavaScript 文件：
-	- Windows:    
-	    * ```fsutil file createnew app.js 0```
+  - Windows:
+      * ```fsutil file createnew app.js 0```
         * ```fsutil file createnew config.js 0```
-	- Linux/OS X： 
-	    * ```touch app.js```
+  - Linux/OS X：
+      * ```touch app.js```
         * ```touch config.js```
 4. 通过 npm 安装 documentdb 模块。请使用以下命令：
     * ```npm install documentdb --save```
@@ -72,9 +72,9 @@
 
 在喜爱的文本编辑器中打开 ```config.js```
 
-然后，创建名为 ```config``` 的空对象并将属性 ```config.endpoint``` 和 ```config.authKey``` 设置为 DocumentDB 终结点和授权密钥。两种配置都可以在 [Azure 门户预览](https://portal.azure.cn)中找到。
+然后，复制并粘贴以下代码片段，并将属性 ```config.endpoint``` 和 ```config.primaryKey``` 设置为 DocumentDB 终结点 URI 和主密钥。这两项配置都可以在 [Azure 门户](https://portal.azure.cn)中找到。
 
-![Node.js 教程 - Azure 门户预览的屏幕截图，显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示 URI、主密钥、辅助密钥的值 - 节点数据库][keys]
+![Node.js 教程 - Azure 新门户的屏幕截图，显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示 URI、主密钥、辅助密钥的值 - 节点数据库][keys]
 
     // ADD THIS PART TO YOUR CODE
     var config = {}
@@ -618,4 +618,4 @@ DocumentDB 支持删除 JSON 文档。
 
 [keys]: ./media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0801_2016-->

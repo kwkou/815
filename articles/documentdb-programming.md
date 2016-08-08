@@ -11,7 +11,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="03/30/2016" 
-	wacn.date="06/29/2016"/>
+	wacn.date="08/08/2016"/>
 
 # DocumentDB 服务器端编程：存储过程、数据库触发器和 UDF
 
@@ -471,7 +471,9 @@ UDF 随后可以用在诸如下面示例的查询中：
 ## JavaScript 语言集成的查询 API
 除了使用 DocumentDB 的 SQL 语法发起查询外，服务器端 SDK 还允许你在没有任何 SQL 知识的情况下使用流畅的 JavaScript 接口来执行优化的查询。JavaScript 查询 API 允许你使用与 ECMAScript5 的数组内置项类似的语法和如 lodash 等热门的 JavaScript 库，通过将谓词函数传递到可链的函数调用中以编程方式生成查询。使用 DocumentDB 的索引进行有效执行的 JavaScript 运行时将对查询进行分析。
 
-> [AZURE.NOTE] `__`（双下划线）是 `getContext().getCollection()` 的别名。<br/>换言之，你可以使用 `__` 或 `getContext().getCollection()` 来访问 JavaScript 查询 API。
+> [AZURE.NOTE] `__`（双下划线）是 `getContext().getCollection()` 的别名。
+> <br/>
+> 换言之，你可以使用 `__` 或 `getContext().getCollection()` 来访问 JavaScript 查询 API。
 
 支持的函数包括：
 <ul>
@@ -536,7 +538,7 @@ UDF 随后可以用在诸如下面示例的查询中：
 
 当在其中包含谓词和/或选择器函数时，以下 JavaScript 构造将自动优化以在 DocumentDB 索引上直接运行：
 
-* 简单的运算符：= + - * / % | ^ &amp; == != === !=== &lt; &gt; &lt;= &gt;= || &amp;&amp; &lt;&lt; &gt;&gt; &gt;&gt;&gt;! ~
+* 简单运算符：= + - * / %| ^ &amp; == != === !=== &lt; &gt; &lt;= &gt;= || &amp;&amp; &lt;&lt; &gt;&gt; &gt;&gt;&gt;! ~
 * 文本（包括对象文本）：{}
 * var, return
 
@@ -903,7 +905,7 @@ JavaScript 存储过程和触发器经过沙盒处理，以使一个脚本的效
 
 ## 后续步骤
 
-在你创建了一个或多个存储过程、触发器和用户定义的函数之后，可以使用脚本资源管理器在 Azure 门户预览中加载和查看它们。有关详细信息，请参阅[使用 DocumentDB 脚本资源管理器查看存储过程、触发器和用户定义的函数](/documentation/articles/documentdb-view-scripts/)。
+在你创建了一个或多个存储过程、触发器和用户定义的函数之后，可以使用脚本资源管理器在 Azure 新门户中加载和查看它们。有关详细信息，请参阅[使用 DocumentDB 脚本资源管理器查看存储过程、触发器和用户定义的函数](/documentation/articles/documentdb-view-scripts/)。
 
 还可以查找以下参考和资源，可帮助你了解更多有关 DocumentDB 服务器端编程的信息：
 
@@ -916,4 +918,4 @@ JavaScript 存储过程和触发器经过沙盒处理，以使一个脚本的效
 - [面向服务的数据库体系结构](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 - [在 Microsoft SQL 服务器中托管 .NET 运行时](http://dl.acm.org/citation.cfm?id=1007669)
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->

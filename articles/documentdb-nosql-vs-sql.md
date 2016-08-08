@@ -1,6 +1,6 @@
 <properties
 	pageTitle="何时使用 NoSQL 与 SQL | Azure"
-	description="比较使用非关系 NoSQL 解决方案与使用 SQL 解决方案的好处。了解 Microsoft Azure NoSQL 服务还是 SQL Server 解决方案最适合你的方案。"
+	description="比较使用 NoSQL 非关系解决方案与使用 SQL 解决方案的好处。了解 Microsoft Azure NoSQL 服务还是 SQL Server 最适合你的方案。"
 	keywords="nosql 与 sql, 何时使用 NoSQL, sql 与 nosql"
 	services="documentdb"
 	documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="03/28/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/08/2016"/>
 
 # NoSQL 与 SQL
 
@@ -122,5 +122,4 @@ Microsoft 提供了五种 SQL 产品/服务：
     - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
     - [Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
 
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0801_2016-->
