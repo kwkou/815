@@ -251,7 +251,7 @@ Java
 
 Java
 
-		     mContext.acquireToken(MainActivity.this, resource, clientId, redirect, user_loginhint, PromptBehavior.Auto, "",
+	mContext.acquireToken(MainActivity.this, resource, clientId, redirect, user_loginhint, PromptBehavior.Auto, "",
 		                    callback);
 		    
 
@@ -286,6 +286,7 @@ java
  当前代理模型针对一个用户。AuthenticationContext 提供用于获取代理用户的 API 方法。
 
 java
+
 		String brokerAccount =  mContext.getBrokerUser();
  
  如果帐户有效，将返回代理用户。
