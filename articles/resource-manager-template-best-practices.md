@@ -348,6 +348,6 @@
 
 ## 后续步骤
 
-1. 有关设置存储帐户的指导，请参阅 [Microsoft Azure Storage Performance and Scalability Checklist](./storage/storage-performance-checklist/)（Microsoft Azure 存储空间的性能和可缩放性清单）。
+1. 有关设置存储帐户的指导，请参阅 [Microsoft Azure Storage Performance and Scalability Checklist](/documentation/articles/storage-performance-checklist/)（Microsoft Azure 存储空间的性能和可缩放性清单）。
 
 <!---HONumber=Mooncake_0725_2016-->

@@ -97,7 +97,7 @@ Azure Resource Manager 模板是用于描述资源和相关依赖性的 JSON 文
 1. 打开 PowerShell 命令提示符
 2. 若要登录，请键入：
 
-        Login-AzureRmAccount 
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 3. 如果你有多个订阅，请使用以下命令获取订阅列表：
 
@@ -115,7 +115,7 @@ Azure Resource Manager 模板是用于描述资源和相关依赖性的 JSON 文
 1. 打开终端窗口
 2. 若要登录，请键入：
 
-        azure login 
+        azure login -e AzureChinaCloud
 
 3. 如果你有多个订阅，请使用以下命令选择适当的订阅：
 
