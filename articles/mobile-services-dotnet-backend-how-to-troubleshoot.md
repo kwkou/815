@@ -4,13 +4,13 @@
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="wesmc7777" 
-	manager="dwrede" 
+	manager="erikre"
 	editor="mollybos"/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/07/2016" 
-	wacn.date="03/28/2016"/>
+	ms.date="07/13/2016" 
+	wacn.date="08/08/2016"/>
 
 # 移动服务 .NET 后端故障排除
 
@@ -27,13 +27,13 @@
 
 使用移动服务开发应用程序时，通常会将移动服务客户端 SDK 用于你所使用的平台（Windows 应用商店、iOS、Android 等）。但有时候，深入了解 HTTP 级别并观察网络上发生的原始调用可能会有所帮助。此方法在调试连接和序列化问题时特别有用。通过移动服务 .NET 后端，你可以将此方法与 Visual Studio 本地和远程调试搭配使用（下一部分将详细说明），以了解 HTTP 调用在调用服务代码之前所创建的路径。
 
-你可以使用任何 HTTP 调试器来发送和检查 HTTP 流量。[Fiddler](http://www.telerik.com/fiddler) 是开发人员针对此目的而经常使用的工具。为了让开发人员的工作更轻松，移动服务捆绑了基于 Web 的 HTTP 调试器（也称为测试客户端），以减少使用外部工具的需求。当你在本地托管移动服务时，可从类似于 http://localhost:59233 的 URI 获取该移动服务；而托管在云中时，此 URI 的格式为 [http://todo-list.azure-mobile.net](http://todo-list.azure-mobile.net)。无论在何处托管服务，以下步骤都会以相同方式运行：
+你可以使用任何 HTTP 调试器来发送和检查 HTTP 流量。[Fiddler](http://www.telerik.com/fiddler) 是开发人员针对此目的而经常使用的工具。为了让开发人员的工作更轻松，移动服务捆绑了基于 Web 的 HTTP 调试器（也称为测试客户端），以减少使用外部工具的需求。当你在本地托管移动服务时，可从类似于 `http://localhost:59233` 的 URI 获取该移动服务；而托管在云中时，此 URI 的格式为 `http://todo-list.azure-mobile.net`。无论在何处托管服务，以下步骤都会以相同方式运行：
 
 1. 首先，在 **Visual Studio 2013 Update 2** 或更高版本中打开移动服务服务器项目。如果你尚无此项目，可以通过依次选择“文件”、“新建”、“项目”、“云”节点和“Microsoft Azure 移动服务”模板来创建一个项目。
 2. 按 **F5**，以生成并运行该项目。在起始页上，选择“试用”。 
 
     >[AZURE.NOTE]
-    >如果服务在本地托管，则单击链接会定向至下一页。但是，如果在云中托管，则系统会提示你提供一组凭据。这是为了确保未经授权的用户无法访问你的 API 和负载的相关信息。若要查看该页，你需要使用**空白用户名**以及**应用程序密钥**（充当密码）来登录。若要获取应用程序密钥，你可以在 Azure 经典管理门户中导航至移动服务的“仪表板”选项卡，并选择“管理密钥”。
+    如果服务在本地托管，则单击链接会定向至下一页。但是，如果在云中托管，则系统会提示你提供一组凭据。这是为了确保未经授权的用户无法访问你的 API 和负载的相关信息。若要查看该页，你需要使用**空白用户名**以及**应用程序密钥**（充当密码）来登录。若要获取应用程序密钥，你可以在 Azure 经典管理门户中导航至移动服务的“仪表板”选项卡，并选择“管理密钥”。
     >
     > ![访问帮助页时的身份验证提示][HelpPageAuth]
 
@@ -65,7 +65,7 @@
 
     ![配置符号加载][SymbolLoading]
 
-3. 选择左边的“符号”节点，并使用 URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) 添加对 [SymbolSource] 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
+3. 使用 URI `http://srv.symbolsource.org/pdb/Public` 选择左边的“符号”节点，并添加对 [SymbolSource] 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
 
     ![配置符号服务器][SymbolServer]
 
@@ -128,9 +128,9 @@
 此问题很容易解决：只需恢复到所需程序集的支持版本，然后重新发布服务。
 
 <a name="EFMigrations"></a>
-## 实体框架迁移故障排除
+## Entity Framework 迁移故障排除
 
-使用包含 SQL 数据库的移动服务 .NET 后端时，将以实体框架作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为架构）如何随着代码中指定的模型类的更改而更改。此过程称为[代码优先迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
+使用包含 SQL 数据库的移动服务 .NET 后端时，将以 Entity Framework (EF) 作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为架构）如何随着代码中指定的模型类的更改而更改。此过程称为 [Code First 迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
 
 迁移可能很复杂，只有数据库状态与 EF 模型保持同步才能成功。有关如何处理移动服务的迁移和可能发生的错误的说明，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)。
 
@@ -153,6 +153,6 @@
 
 
 <!-- Links -->
-[SymbolSource]: http://symbolsource.org
+[SymbolSource]: http://www.symbolsource.org/Public
 
 <!---HONumber=Mooncake_0118_2016-->
