@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="04/14/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/08/2016"/>
 
 
 # Azure AD Connect 同步：了解声明性预配表达式
@@ -127,4 +127,4 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

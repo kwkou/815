@@ -4,13 +4,13 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="jeffsta"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="04/20/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="08/08/2016"/>
 
 # 将用户分配到自定义域
 
@@ -24,7 +24,7 @@
 
 若要更改现有用户帐户的域，请执行以下操作：
 
-1.  使用全局管理员或用户管理员帐户打开 Azure 经典管理门户。
+1.  使用全局管理员或用户管理员帐户打开 Azure 经典门户。
 
 2.  打开你的目录。
 
@@ -38,7 +38,7 @@
 
 ## 创建新用户时选择自定义域
 
-1.  使用全局管理员或用户管理员帐户打开 Azure 经典管理门户。
+1.  使用全局管理员或用户管理员帐户打开 Azure 经典门户。
 
 2.  打开你的目录。
 
@@ -58,4 +58,4 @@
 
 -   [了解 Azure AD 中的域管理概念](/documentation/articles/active-directory-add-domain-concepts/)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0801_2016-->

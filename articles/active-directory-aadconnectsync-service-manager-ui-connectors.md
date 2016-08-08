@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/19/2016"
-	wacn.date="07/21/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/08/2016"/>
 
 
 # Azure AD Connect 同步：Synchronization Service Manager
@@ -48,26 +48,26 @@
 
 这两个选项都会同步所有对象，并更新 Metaverse 对象。这是一项长时间运行的操作。
 
-### 配置运行配置文件
+### <a name="configure-run-profiles"></a>配置运行配置文件
 此选项可让你查看为连接器配置的运行配置文件。
 
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/configurerunprofiles.png)
 
-### 搜索连接器空间
+### <a name="search-connector-space"></a>搜索连接器空间
 查找对象和排查数据问题时，搜索连接器空间操作非常有用。
 
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cssearch.png)
 
 先选择一个“范围”。你可以基于数据（RDN、DN、定位点、子树）或对象状态（所有其他选项）进行搜索。  
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cssearchscope.png)  
-例如，如果进行子树搜索，将获取某个 OU 中的所有对象。  
-![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cssearchsubtree.png)  
+例如，如果进行子树搜索，将获取某个 OU 中的所有对象。
+![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cssearchsubtree.png)
 你可以从此处选择对象，选择“属性”，并且从源连接器空间到 Metaverse 再到目标连接器空间一直[跟踪对象](#follow-an-object-and-its-data-through-the-system)。
 
-## 在整个系统中跟踪对象及其数据
+## <a name="follow-an-object-and-its-data-through-the-system"></a>在整个系统中跟踪对象及其数据
 当你排查数据问题时，从源连接器空间到 Metaverse 再到目标连接器空间一直跟踪对象是一个关键过程，可从中了解为什么数据没有预期值。
 
-### 连接器空间对象属性
+### <a name="connector-space-object-properties"></a>连接器空间对象属性
 **导入**  
 当你打开 cs 对象时，顶端会出现数个选项卡。“导入”选项卡显示导入后暂存的数据。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/csimport.png)
@@ -83,7 +83,7 @@
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cslineageout.png)
 在“PasswordSync”列中，我们也会发现入站连接器空间可进行密码更改，因为有一个同步规则的值为 **True**。此密码接着会通过出站规则发送到 Azure AD。
 
-从“沿袭”选项卡中，可以单击“[Metaverse 对象属性](#metaverse-object-properties)”转到 Metaverse。
+从“沿袭”选项卡中，可以单击[“Metaverse 对象属性”](#metaverse-object-properties)转到 Metaverse。
 
 所有选项卡的底部都有两个按钮：“预览”和“日志”。
 
@@ -96,7 +96,7 @@
 **日志**  
 “日志”页面可用于查看密码同步状态和历史记录。有关详细信息，请参阅[排查密码同步问题](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshoot-password-synchronization)。
 
-### Metaverse 对象属性
+### <a name="metaverse-object-properties"></a>Metaverse 对象属性
 **属性**  
 在“属性”选项卡中，可以看到值，以及是由哪一个连接器提供它。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/mvattributes.png)
@@ -110,4 +110,4 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

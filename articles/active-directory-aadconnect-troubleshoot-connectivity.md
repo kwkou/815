@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/19/2016"
-	wacn.date="07/19/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/08/2016"/>
 
 # 使用 Azure AD Connect 排查连接问题
 本文说明 Azure AD Connect 与 Azure AD 之间的连接的工作方式，以及如何排查连接问题。这些问题很有可能出现在包含代理服务器的环境中。
@@ -50,7 +50,7 @@ secure.aadcdn.microsoftonline p.com | HTTPS/443 | 用于 MFA。
 ![nomachineconfig](./media/active-directory-aadconnect-troubleshoot-connectivity/nomachineconfig.png)
 
 - 如果你看到此错误，请验证是否已正确配置 [machine.config](/documentation/articles/active-directory-aadconnect-prerequisites/#connectivity)。
-- 如果配置看起来正确，请遵循[验证代理连接](#verify-proxy-connectivity)中的步骤，查看问题是否也出现在向导外部的位置。
+- 如果配置看起来正确，请按照[验证代理连接](#verify-proxy-connectivity)中的步骤，查看问题是否也出现在向导外部的位置。
 
 ### 无法访问 MFA 终结点
 如果无法访问终结点 **https://secure.aadcdn.microsoftonline-p.com**，并且你的全局系统管理员启用了 MFA，则会出现此错误。  
@@ -58,13 +58,13 @@ secure.aadcdn.microsoftonline p.com | HTTPS/443 | 用于 MFA。
 
 - 如果你看到此错误，请验证是否已将 secure.aadcdn.microsoftonline-p.com 终结点添加到代理。
 
-### 无法验证密码
+### <a name="the-password-cannot-be-verified"></a>无法验证密码
 如果安装向导已成功连接到 Azure AD，但无法验证密码本身，你将看到此错误：
 ![badpassword](./media/active-directory-aadconnect-troubleshoot-connectivity/badpassword.png)
 
 - 密码是否为临时密码并且必须更改？ 它确实是正确的密码吗？ 请尝试登录到 https://login.microsoftonline.com （在 Azure AD Connect 服务器以外的另一台计算机上），然后验证该帐户是否可用。
 
-### 验证代理连接
+### <a name="verify-proxy-connectivity"></a>验证代理连接
 为了验证 Azure AD Connect 服务器是否确实与代理和 Internet 建立了连接，我们将使用一些 PowerShell 来查看代理是否允许 Web 请求。在 PowerShell 命令提示符下运行 `Invoke-WebRequest -Uri https://adminwebservice.microsoftonline.com/ProvisioningService.svc`。（从技术上讲，第一个调用是对 https://login.microsoftonline.com 发出的并且是可行的，但另一个 URI 的响应速度更快。）
 
 PowerShell 使用 machine.config 中的配置来联系代理。winhttp/netsh 中的设置应该不会影响这些 cmdlet。
@@ -100,26 +100,26 @@ PowerShell 使用 machine.config 中的配置来联系代理。winhttp/netsh 中
 --- | ---
 1/11/2016 8:31 | connect://login.microsoftonline.com:443
 1/11/2016 8:31 | connect://adminwebservice.microsoftonline.com:443
-1/11/2016 8:32 | connect://*bba800-anchor*.microsoftonline.com:443
+1/11/2016 8:32 | connect://bba800-anchor.microsoftonline.com:443
 1/11/2016 8:32 | connect://login.microsoftonline.com:443
 1/11/2016 8:33 | connect://provisioningapi.microsoftonline.com:443
-1/11/2016 8:33 | connect://*bwsc02-relay*.microsoftonline.com:443
+1/11/2016 8:33 | connect://bwsc02-relay.microsoftonline.com:443
 
 **配置**
 
 时间 | URL
 --- | ---
 1/11/2016 8:43 | connect://login.microsoftonline.com:443
-1/11/2016 8:43 | connect://*bba800-anchor*.microsoftonline.com:443
+1/11/2016 8:43 | connect://bba800-anchor.microsoftonline.com:443
 1/11/2016 8:43 | connect://login.microsoftonline.com:443
 1/11/2016 8:44 | connect://adminwebservice.microsoftonline.com:443
-1/11/2016 8:44 | connect://*bba900-anchor*.microsoftonline.com:443
+1/11/2016 8:44 | connect://bba900-anchor.microsoftonline.com:443
 1/11/2016 8:44 | connect://login.microsoftonline.com:443
 1/11/2016 8:44 | connect://adminwebservice.microsoftonline.com:443
-1/11/2016 8:44 | connect://*bba800-anchor*.microsoftonline.com:443
+1/11/2016 8:44 | connect://bba800-anchor.microsoftonline.com:443
 1/11/2016 8:44 | connect://login.microsoftonline.com:443
 1/11/2016 8:46 | connect://provisioningapi.microsoftonline.com:443
-1/11/2016 8:46 | connect://*bwsc02-relay*.microsoftonline.com:443
+1/11/2016 8:46 | connect://bwsc02-relay.microsoftonline.com:443
 
 **初始同步**
 
@@ -127,8 +127,8 @@ PowerShell 使用 machine.config 中的配置来联系代理。winhttp/netsh 中
 --- | ---
 1/11/2016 8:48 | connect://login.windows.net:443
 1/11/2016 8:49 | connect://adminwebservice.microsoftonline.com:443
-1/11/2016 8:49 | connect://*bba900-anchor*.microsoftonline.com:443
-1/11/2016 8:49 | connect://*bba800-anchor*.microsoftonline.com:443
+1/11/2016 8:49 | connect://bba900-anchor.microsoftonline.com:443
+1/11/2016 8:49 | connect://bba800-anchor.microsoftonline.com:443
 
 ## 身份验证错误
 本部分说明可能从 ADAL（Azure AD Connect 使用的身份验证库）和 PowerShell 返回的错误。其中说明的错误可帮助你了解后续步骤。
@@ -183,4 +183,4 @@ PowerShell 使用 machine.config 中的配置来联系代理。winhttp/netsh 中
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0801_2016-->

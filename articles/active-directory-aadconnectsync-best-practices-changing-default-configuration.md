@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"
-	ms.date="05/10/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/08/2016"/>
 
 
 # Azure AD Connect 同步：有关更改默认配置的最佳实践
@@ -111,4 +111,4 @@ Fabrikam 中有对名字、姓氏和显示名称使用本地字母的林。以�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0801_2016-->
