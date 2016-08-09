@@ -18,7 +18,6 @@
 > [AZURE.SELECTOR]
 - [Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup)
 - [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
-- [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic)
 - [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic)
 
 
