@@ -1,3 +1,4 @@
+<!-- Temp remove overview, partition, statistics and temporary -->
 <properties
    pageTitle="为 SQL 数据仓库中的表编制索引 | Azure"
    description="Azure SQL 数据仓库中的表索引入门。"
@@ -15,13 +16,15 @@
 # 为 SQL 数据仓库中的表编制索引
 
 > [AZURE.SELECTOR]
-- [概述][]
 - [数据类型][]
 - [分布][]
 - [索引][]
+<!-- 
+- [概述][]
 - [Partition][]
 - [统计信息][]
 - [临时][]
+-->
 
 SQL 数据仓库提供多种索引选项，包括[聚集列存储索引][]、[聚集索引和非聚集索引][]。此外，它还提供一个无索引选项，也称为[堆][]。本文介绍每种索引类型的优点，并提供通过索引获得最大性能的提示。有关如何在 SQL 数据仓库中创建表的详细信息，请参阅 [create table syntax][]（创建表语法）。
 
@@ -302,7 +305,7 @@ SQL 数据仓库提供多种索引选项，包括[聚集列存储索引][]、[�
 
 ## 后续步骤
 
-有关详细信息，请参阅有关[表概述][Overview]、[表数据类型][Data Types]、[分布表][Distribute]、[将表分区][Partition]、[维护表统计信息][Statistics]和[临时表][Temporary]的文章。有关最佳实践的详细信息，请参阅 [SQL Data Warehouse Best Practices][]（SQL 数据仓库最佳实践）。
+有关详细信息，请参阅有关<!-- [表概述][Overview]、--> [表数据类型][Data Types]、[分布表][Distribute] <!--、 [将表分区][Partition]、[维护表统计信息][Statistics]和[临时表][Temporary]--> 的文章。有关最佳实践的详细信息，请参阅 [SQL Data Warehouse Best Practices][]（SQL 数据仓库最佳实践）。
 
 <!--Image references-->
 
