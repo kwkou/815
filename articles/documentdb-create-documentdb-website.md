@@ -34,9 +34,9 @@
 ##<a id="CreateDB"></a>步骤 1：下载模板文件 ##
 让我们从下载模板文件开始，我们将在本教程中使用这些文件。
 
-1. 将[创建 DocumentDB 帐户、Web Apps 和部署演示应用程序示例](https://portalcontent.blob.core.windows.net/samples/DocDBWebsiteTodo.json)模板下载到本地文件夹（例如 C:\\DocumentDBTemplates）。此模板将部署 DocumentDB 帐户、App Service Web 应用和 Web 应用程序。它还会自动配置 Web 应用程序，以连接到 DocumentDB 帐户。
+1. 将[创建 DocumentDB 帐户、Web Apps 和部署演示应用程序示例](https://portalcontent.blob.core.chinacloudapi.cn/samples/DocDBWebsiteTodo.json)模板下载到本地文件夹（例如 C:\\DocumentDBTemplates）。此模板将部署 DocumentDB 帐户、App Service Web 应用和 Web 应用程序。它还会自动配置 Web 应用程序，以连接到 DocumentDB 帐户。
 
-2. 将[创建 DocumentDB 帐户和 Web Apps 示例](https://portalcontent.blob.core.windows.net/samples/DocDBWebSite.json)模板下载到本地文件夹（例如 C:\\DocumentDBTemplates）。此模板将部署 DocumentDB 帐户、App Service Web 应用，并修改站点的应用程序设置以便轻松地呈现 DocumentDB 连接信息，但不包含 Web 应用程序。
+2. 将[创建 DocumentDB 帐户和 Web Apps 示例](https://portalcontent.blob.core.chinacloudapi.cn/samples/DocDBWebSite.json)模板下载到本地文件夹（例如 C:\\DocumentDBTemplates）。此模板将部署 DocumentDB 帐户、App Service Web 应用，并修改站点的应用程序设置以便轻松地呈现 DocumentDB 连接信息，但不包含 Web 应用程序。
 
 <a id="Build"></a>
 ##步骤 2：部署 DocumentDB 帐户、App Service Web 应用和演示应用程序示例
