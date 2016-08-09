@@ -9,8 +9,8 @@
    tags="azure-resource-manager"/>
 <tags 
    ms.service="expressroute"
-   ms.date="04/14/2016"
-   wacn.date="06/06/2016" />
+   ms.date="06/09/2016"
+   wacn.date="08/08/2016" />
 
 # 将虚拟网络链接到 ExpressRoute 线路
 
@@ -74,7 +74,7 @@
 	Add-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit -Name "MyAuthorization1"
 	Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $circuit
 
-		$auth1 = Get-AzureRmExpressRouteCircuitAuthorization -Circuit $circuit -Name "MyAuthorization1"
+	$auth1 = Get-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit -Name "MyAuthorization1"
 		
 
 对此操作的响应将包含授权密钥和状态：
@@ -93,7 +93,7 @@
 线路所有者可以通过运行以下 cmdlet 来查看针对特定线路发出的所有授权：
 
 	$circuit = Get-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
-	$authorizations = Get-AzureRmExpressRouteCircuitAuthorization -Circuit $circuit
+	$authorizations = Get-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit
 	
 
 #### 添加授权
@@ -105,7 +105,7 @@
 	Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $circuit
 	
 	$circuit = Get-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
-	$authorizations = Get-AzureRmExpressRouteCircuitAuthorization -Circuit $circuit
+	$authorizations = Get-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit
 
 	
 #### 删除授权
