@@ -184,7 +184,7 @@ xml
 			<display-name>Archetype Created Web Application</display-name>
 			<context-param>
 				<param-name>authority</param-name>
-				<param-value>https://login.windows.net/</param-value>
+				<param-value>https://login.chinacloudapi.cn/</param-value>
 			</context-param>
 			<context-param>
 				<param-name>tenant</param-name>
@@ -234,7 +234,7 @@ xml
 
 - `YOUR_CLIENT_ID` 是在注册门户中为应用分配的**应用程序 ID**。
 - `YOUR_CLIENT_SECRET` 是你在门户中创建的**应用程序机密**。
-- `YOUR_TENANT_NAME` 是应用的**租户名称**，例如 contoso.onmicrosoft.com
+- `YOUR_TENANT_NAME` 是应用的**租户名称**，例如 contoso.partner.onmschina.cn
 
 将其余的配置参数保持不变。
 
@@ -1448,7 +1448,7 @@ Java
 		    }
 		
 		    private String getUsernamesFromGraph(String accessToken, String tenant) throws Exception {
-		        URL url = new URL(String.format("https://graph.windows.net/%s/users?api-version=2013-04-05", tenant,
+		        URL url = new URL(String.format("https://graph.chinacloudapi.cn/%s/users?api-version=2013-04-05", tenant,
 		                accessToken));
 		
 		        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -1624,7 +1624,7 @@ Java
 		            context = new AuthenticationContext(authority + tenant + "/", true,
 		                    service);
 		            Future<AuthenticationResult> future = context.acquireToken(
-		                    "https://graph.windows.net", new ClientCredential(clientId,
+		                    "https://graph.chinacloudapi.cn", new ClientCredential(clientId,
 		                            clientSecret), null);
 		            result = future.get();
 		        } catch (ExecutionException e) {
@@ -1710,7 +1710,7 @@ Java
 		                + this.tenant
 		                + "/oauth2/authorize?response_type=code%20id_token&scope=openid&response_mode=form_post&redirect_uri="
 		                + URLEncoder.encode(currentUri, "UTF-8") + "&client_id="
-		                + clientId + "&resource=https%3a%2f%2fgraph.windows.net"
+		                + clientId + "&resource=https%3a%2f%2fgraph.chinacloudapi.cn"
 		                + "&nonce=" + UUID.randomUUID() + "&site_id=500879";
 		        return redirectUrl;
 		    }

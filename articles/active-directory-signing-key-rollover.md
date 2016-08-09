@@ -180,7 +180,7 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 		            TokenValidationParameters validationParams = new TokenValidationParameters()
 		            {
 		                AllowedAudience = "[Your App ID URI goes here, as registered in the Azure Classic Portal]",
-		                ValidIssuer = "[The issuer for the token goes here, such as https://sts.windows.net/68b98905-130e-4d7c-b6e1-a158a9ed8449/]",
+		                ValidIssuer = "[The issuer for the token goes here, such as https://sts.chinacloudapi.cn/68b98905-130e-4d7c-b6e1-a158a9ed8449/]",
 		                SigningTokens = GetSigningCertificates(MetadataAddress)
 		
 		                // Cache the signing tokens by your desired mechanism
@@ -274,7 +274,7 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 1. 验证你的应用程序正在使用上面的代码后，打开 **Web.config** 文件并导航到 **<issuerNameRegistry>** 块中，特别是要找到以下几行：
 		
 		<issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
-		        <authority name="https://sts.windows.net/ec4187af-07da-4f01-b18f-64c2f5abecea/">
+		        <authority name="https://sts.chinacloudapi.cn/ec4187af-07da-4f01-b18f-64c2f5abecea/">
 		          <keys>
 		            <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
 		          </keys>

@@ -36,7 +36,7 @@ URL | 端口 | 说明
 mscrl.microsoft.com | HTTP/80 | 用于下载 CRL 列表。
 *.verisign.com | HTTP/80 | 用于下载 CRL 列表。
 *.entrust.com | HTTP/80 | 用于为 MFA 下载 CRL 列表。
-*.windows.net | HTTPS/443 | 用于登录 Azure AD。
+*.chinacloudapi.cn | HTTPS/443 | 用于登录 Azure AD。
 secure.aadcdn.microsoftonline p.com | HTTPS/443 | 用于 MFA。
 *.microsoftonline.com | HTTPS/443 | 用于配置 Azure AD 目录并导入/导出数据。
 

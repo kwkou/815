@@ -28,7 +28,7 @@
 
 ## 重复属性复原的行为
 Azure Active Directory 并不是完全无法预配或更新具有重复属性的对象，而是“隔离”违反唯一性约束的重复属性。如果预配时需要此属性（例如 UserPrincipalName），则服务将分配占位符值。这些临时值的格式为  
-“**<原始前缀>+<4 位数>@<初始租户域>.onmicrosoft.com**”。  
+“**<原始前缀>+<4 位数>@<初始租户域>.partner.onmschina.cn**”。  
 如果不需要此属性（例如 **ProxyAddress**），则 Azure Active Directory 只隔离冲突属性并继续创建或更新对象。
 
 隔离属性后，有关冲突的信息将以旧行为中使用的相同错误报告电子邮件发送。但是，此信息只出现在错误报告中一次，发生隔离时，将不继续记录在以后的电子邮件中。此外，由于此对象已成功导出，因此同步客户端不会记录错误，并且不会在后续的同步周期中重试创建/更新操作。
@@ -158,7 +158,7 @@ ProxyAddress 冲突的电子邮件通知示例如下所示：
 
     a. **UserA@contoso.com** 有非唯一的 UPN，因为另一个对象的 ProxyAddress 也有该值。
 
-    b.UserA 获取临时 **MOERA UPN** (**UserA1234@contoso.onmicrosoft.com**)，真正的 UPN 值将被隔离（符合预期）。
+    b.UserA 获取临时 **MOERA UPN** (**UserA1234@contoso.partner.onmschina.cn**)，真正的 UPN 值将被隔离（符合预期）。
 
     c.其他冲突对象的 ProxyAddress 随后将被删除。
 
@@ -186,7 +186,7 @@ ProxyAddress 冲突的电子邮件通知示例如下所示：
 
     b.然后，尝试使用 **UPN = User@contoso.com** 同步**用户 B**。
 
-    c.**用户 B** 的 UPN 已更改为 **User1234@contoso.onmicrosoft.com**，**User@contoso.com** 已添加到 **DirSyncProvisioningErrors**。
+    c.**用户 B** 的 UPN 已更改为 **User1234@contoso.partner.onmschina.cn**，**User@contoso.com** 已添加到 **DirSyncProvisioningErrors**。
 
     d.**用户 B** 的错误消息应指出**用户 A** 已有用作 UPN 的 **User@contoso.com**，但却显示**用户 B** 自己的 displayName。
 

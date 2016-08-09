@@ -23,10 +23,10 @@ Azure AD Connect 最常用于全球范围内的 Azure AD 和 Office 365 实例�
 在代理服务器中打开的 URL |
 --- |
 *.microsoftonline.de |
-*.windows.net |
+*.chinacloudapi.cn |
 \+ 证书吊销列表 |
 
-在登录你的 Azure AD 目录时，必须使用 onmicrosoft.de 域中的帐户。
+在登录你的 Azure AD 目录时，必须使用 partner.onmschina.de 域中的帐户。
 
 德国 Microsoft 云中当前不存在的功能：
 

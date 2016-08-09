@@ -83,7 +83,7 @@
 
 
 -	在快速入门项目中，打开 plist 文件 `settings.plist`。替换节中的元素值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
-    -	`tenant` 是 Azure AD 租户的域，例如 contoso.onmicrosoft.com
+    -	`tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`clientId` 是从门户复制的应用程序 clientId。
     -	`redirectUri` 是在门户中注册的 URL。
 

@@ -115,7 +115,7 @@
 
 | 参数 | 说明 |
 |-----------|-------------|
-| authorization\_uri | 授权服务器的 URI（物理终结点）。此值还用作查找键，从一个发现终结点中获取有关服务器的详细信息。<p><p>客户端必须验证授权服务器是否受信任。由 Azure AD 对资源进行保护时，只需验证 URL 是否以 Azure AD 支持的 https://login.windows.net 或其他主机名开头即可。特定于租户的资源应始终返回特定于租户的授权 URI。 |
+| authorization\_uri | 授权服务器的 URI（物理终结点）。此值还用作查找键，从一个发现终结点中获取有关服务器的详细信息。<p><p>客户端必须验证授权服务器是否受信任。由 Azure AD 对资源进行保护时，只需验证 URL 是否以 Azure AD 支持的 https://login.chinacloudapi.cn 或其他主机名开头即可。特定于租户的资源应始终返回特定于租户的授权 URI。 |
 | error | [OAuth 2.0 授权框架](http://tools.ietf.org/html/rfc6749)第 5.2 部分中定义的错误代码值。|
 | error\_description | 错误的更详细说明。此消息不是最终用户友好的。|
 | resource\_id | 返回资源的唯一标识符。客户端应用程序在请求资源的令牌时，可以使用此标识符作为 `resource` 参数的值。<p><p>客户端应用程序必须验证此值，否则，恶意服务可能会引发**提升权限**攻击<p><p>若要防止攻击，建议的策略是验证 `resource_id` 是否与要访问的 Web API URL 基相匹配。例如，如果要访问的是 https://service.contoso.com/data，则 `resource_id` 可以是 htttps://service.contoso.com/。客户端应用程序必须拒绝不以基 URL 开头的 `resource_id`，除非存在可靠的替代方法来验证该 ID。 |

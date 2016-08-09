@@ -509,7 +509,7 @@
                 <li>
 										然后，你将连接器的 AAD 凭据（使用旧的同步 UI）更改为 （注意，它是同一租户但不同的域名）。<br\><br\></li>
                 <li>
-										现在，你尝试启用/禁用密码写回。向导将使用凭据将连接器的名称构造为“abc.onmicrosoft.com - AAD”并将其传递给密码写回 cmdlet。此操作将会失败，因为没有使用此名称创建的连接器。<br\><br\></li>
+										现在，你尝试启用/禁用密码写回。向导将使用凭据将连接器的名称构造为“abc.partner.onmschina.cn - AAD”并将其传递给密码写回 cmdlet。此操作将会失败，因为没有使用此名称创建的连接器。<br\><br\></li>
               </ol>
               <p>此问题在我们的最新内部版本中已修复。如果你具有较早的内部版本，一个解决方法是使用 powershell cmdlet 来启用/禁用该功能。有关如何执行此操作的详细信息，请参阅<a href="/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-or-change-their-ad-passwords">如何启用/禁用密码写回</a>中的“步骤 2：在 Directory Sync 计算机上启用密码写回并配置防火墙规则”。</p>
             </td>

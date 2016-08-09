@@ -69,7 +69,7 @@ js
 
 
 -	要使 SPA 后端待办事项列表 API 接受来自浏览器的令牌，后端需要有关应用程序注册的配置信息。在 TodoSPA 项目中，打开 `web.config`。替换 `<appSettings>` 中的元素值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
-    -	`ida:Tenant` 是 Azure AD 租户的域，例如 contoso.onmicrosoft.com
+    -	`ida:Tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`ida:Audience` 必须是从门户复制的应用程序的**客户端 ID**。
 
 ## *3.使用 ADAL 来保护 SPA 中的页面*
@@ -91,7 +91,7 @@ js
 		adalProvider.init(
 		  {
 		      instance: 'https://login.microsoftonline.com/',
-		      tenant: 'Enter your tenant name here e.g. contoso.onmicrosoft.com',
+		      tenant: 'Enter your tenant name here e.g. contoso.partner.onmschina.cn',
 		      clientId: 'Enter your client ID here e.g. e9a5a8b6-8af7-4719-9821-0deef255f68e',
 		      extraQueryParameter: 'nux=1',
 		      //cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.

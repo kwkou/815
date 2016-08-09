@@ -195,7 +195,7 @@ Java
 
 Java
 
-		    // Authority is in the form of https://login.windows.net/yourtenant.onmicrosoft.com
+		    // Authority is in the form of https://login.chinacloudapi.cn/yourtenant.partner.onmschina.cn
 		    mContext = new AuthenticationContext(MainActivity.this, authority, true); // This will use SharedPreferences as            default cache
 		    
   * 注意：mContext 是活动中的一个字段
@@ -314,7 +314,7 @@ java
 
 ADFS 不会识别为生产 STS，因此，你需要关闭实例发现，并在 AuthenticationContext 构造函数中传递 false。
 
-机构 URL 需要 STS 实例和租户名称：https://login.windows.net/yourtenant.onmicrosoft.com
+机构 URL 需要 STS 实例和租户名称：https://login.chinacloudapi.cn/yourtenant.partner.onmschina.cn
 
 ### 查询缓存项
 
