@@ -191,4 +191,15 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [Azure IoT 开发人员中心]: /develop/iot
 
+
+[lnk-create-hub]: /documentation/articles/iot-hub-rm-template-powershell/
+[lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
+[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
+
+[lnk-design]: /documentation/articles/iot-hub-guidance/
+[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
+[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+
 <!---HONumber=Mooncake_0307_2016-->
