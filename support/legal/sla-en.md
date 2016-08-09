@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal-en" ms.date="05/2016" wacn.date="05/2016" wacn.lang="en"/>
+<tags ms.service="legal-en" ms.date="08/2016" wacn.date="08/2016" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/legal/sla/)
@@ -79,7 +79,7 @@ This agreement describes the commitment about uptime and connectivity of Microso
 
 [Summary of the SLA for all Azure Services](/support/sla/abstract-en/#a)
 
-Click [here](https://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/Consolidated_SLA_English_0715.pdf) to download SLA for most Azure Services
+Click [here](https://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/Consolidated_SLA_English_0809.docx) to download SLA for most Azure Services
 
 [Virtual Machines]: /support/sla/virtual-machines-en/
 [Cloud Services]: /support/sla/cloud-services-en/
