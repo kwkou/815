@@ -33,7 +33,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 发出一个 HTTP POST 请求以在你的 Azure 搜索服务中创建新的数据源，包括以下请求标头。
 
-    POST https://[Search service name].search.windows.net/datasources?api-version=[api-version]
+    POST https://[Search service name].search.chinacloudapi.cn/datasources?api-version=[api-version]
     Content-Type: application/json
     api-key: [Search service admin key]
 
@@ -118,7 +118,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 如果你还没有目标 Azure 搜索索引，请创建一个。你可以通过使用[创建索引 API](https://msdn.microsoft.com/library/azure/dn798941.aspx)。
 
-	POST https://[Search service name].search.windows.net/indexes?api-version=[api-version]
+	POST https://[Search service name].search.chinacloudapi.cn/indexes?api-version=[api-version]
 	Content-Type: application/json
 	api-key: [Search service admin key]
 
@@ -167,7 +167,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 可以通过使用具有以下标头的 HTTP POST 请求来在 Azure 搜索服务中创建新的索引器。
 
-    POST https://[Search service name].search.windows.net/indexers?api-version=[api-version]
+    POST https://[Search service name].search.chinacloudapi.cn/indexers?api-version=[api-version]
     Content-Type: application/json
     api-key: [Search service admin key]
 
@@ -208,7 +208,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 除按计划定期运行以外，也可以通过发出以下 HTTP POST 请求来按需调用索引器：
 
-    POST https://[Search service name].search.windows.net/indexers/[indexer name]/run?api-version=[api-version]
+    POST https://[Search service name].search.chinacloudapi.cn/indexers/[indexer name]/run?api-version=[api-version]
     api-key: [Search service admin key]
 
 ###响应
@@ -219,7 +219,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 你可以发出 HTTP GET 请求来检索索引器的当前状态和执行历史记录：
 
-    GET https://[Search service name].search.windows.net/indexers/[indexer name]/status?api-version=[api-version]
+    GET https://[Search service name].search.chinacloudapi.cn/indexers/[indexer name]/status?api-version=[api-version]
     api-key: [Search service admin key]
 
 ###响应

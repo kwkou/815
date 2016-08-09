@@ -34,7 +34,7 @@
 	<tr><th>Hadoop 连接器版本</th>
 		<td>1.2.0</td></tr>
 	<tr><th>脚本 URI</th>
-		<td>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v04.ps1</td></tr>
+		<td>https://portalcontent.blob.core.chinacloudapi.cn/scriptaction/documentdb-hadoop-installer-v04.ps1</td></tr>
 	<tr><th>修改日期</th>
 		<td>2016/04/26</td></tr>
 	<tr><th>支持的 HDInsight 版本</th>
@@ -162,7 +162,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 			<td>指定脚本操作的名称。</td></tr>
 		<tr><td>脚本 URI</td>
 			<td>指定要调用来自定义群集的脚本的 URI。</br></br>
-			请输入： </br> <strong>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v03.ps1</strong>。</td></tr>
+			请输入： </br> <strong>https://portalcontent.blob.core.chinacloudapi.cn/scriptaction/documentdb-hadoop-installer-v03.ps1</strong>。</td></tr>
 		<tr><td>节点类型</td>
 			<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。</br></br>
 			请选择“所有节点”<strong></strong>。</td></tr>
