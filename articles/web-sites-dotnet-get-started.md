@@ -41,7 +41,7 @@
 
 ## <a name="setupdevenv"></a>设置开发环境
 
-本教程专为配合使用 Visual Studio 2015 和 Azure SDK for .NET 2.9 或更高版本编写。
+本教程专为配合使用 Visual Studio 2015 和 [Azure SDK for .NET](/documentation/articles/dotnet-sdk/) 2.9 或更高版本编写。
 
 * [下载最新的 Azure SDK for Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003)。该 SDK 将会安装 Visual Studio 2015（如果尚未安装）。
 
