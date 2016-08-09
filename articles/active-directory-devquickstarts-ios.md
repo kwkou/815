@@ -29,7 +29,7 @@
 3. 安装并配置 ADAL。
 5. 使用 ADAL 从 Azure AD 获取令牌。
 
-若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip)。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](active-directory-howto-tenant)。
+若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip)。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ## 1.确定用于 iOS 的重定向 URI
 
@@ -37,9 +37,7 @@
 
 重定向 URI 的 iOS 格式为：
 
-
 		<app-scheme>://<bundle-id>
-
 
 - 	**aap-scheme** - 已在 XCode 项目中注册。它是其他应用程序与你联系的方式。可以在 Info.plist -> URL types -> URL Identifier 下找到此信息。如果尚未配置一个或多个方案，则你应该创建一个。
 - 	**bundle-id** - 这是在 XCode 项目设置中“identity”下可找到的捆绑标识符。
