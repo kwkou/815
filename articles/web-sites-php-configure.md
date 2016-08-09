@@ -74,7 +74,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 ### 更改 PHP\_INI\_USER、PHP\_INI\_PERDIR、PHP\_INI\_ALL 配置设置
 
 1. 将 [.user.ini] 文件添加到根目录。
-2. 使用你将在 **php.ini** 文件中使用的同一语法，将配置设置添加到 `.user.ini` 文件。例如，如果你希望打开 `display_errors` 设置，并将 `upload_max_filesize` 设置设为 10 分钟，你的 `.user.ini` 文件将包含此文本：
+2. 使用你将在 `php.ini` 文件中使用的同一语法，将配置设置添加到 `.user.ini` 文件。例如，如果你希望打开 `display_errors` 设置，并将 `upload_max_filesize` 设置设为 10 分钟，你的 `.user.ini` 文件将包含此文本：
 
 		; Example Settings
 		display_errors=On
@@ -87,8 +87,8 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 ### 更改 PHP\_INI\_SYSTEM 配置设置
 
-1. 使用键 `PHP_INI_SCAN_DIR` 和值 **d:\\home\\site\\ini** 将应用设置添加到你的 Web 应用
-2. 使用 FTP 在 **d:\\home\\site\\ini** 目录中创建 `settings.ini` 文件。
+1. 使用键 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到你的 Web 应用
+2. 使用 FTP 在 `d:\home\site\ini` 目录中创建 `settings.ini` 文件。
 3. 使用你将在 php.ini 文件中使用的语法，将配置设置添加到 `settings.ini` 文件。例如，如果你希望将 `curl.cainfo` 设置指向 `*.crt` 文件并将“wincache.maxfilesize”设置为 512K，则 `settings.ini` 文件将包含此文本：
 
 		; Example Settings
@@ -101,10 +101,10 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 ### 通过 ini 设置进行配置
 
-1. 将 `ext` 目录添加到 **d:\\home\\site** 目录。
-2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 **php\_mongo.dll** 和 **php\_xdebug.dll**）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
-3. 使用键 **PHP\_INI\_SCAN\_DIR** 和值 **d:\\home\\site\\ini** 将应用设置添加到你的 Web 应用
-4. 在 **d:\\home\\site\\ini** 中创建一个名为 `extensions.ini` 的 **ini** 文件。
+1. 将 `ext` 目录添加到 `d:\home\site` 目录。
+2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 `php_mongo.dll` 和 `php_xdebug.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
+3. 使用键 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到你的 Web 应用
+4. 在 `d:\home\site\ini` 中创建一个名为 `extensions.ini` 的 `ini` 文件。
 5. 使用你将在 php.ini 文件中使用的语法，将配置设置添加到 `extensions.ini` 文件。例如，如果你想要启用 MongoDB 和 XDebug 扩展，则 `extensions.ini` 文件将包含此文本：
 
 		; Enable Extensions
@@ -115,14 +115,14 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 ### 通过应用设置进行配置
 
 1. 将 `bin` 目录添加到根目录。
-2. 将 `.dll` 扩展文件置于 `bin` 目录中（例如 **php\_mongo.dll**）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
+2. 将 `.dll` 扩展文件置于 `bin` 目录中（例如 `php_mongo.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
 3. 部署你的 Web 应用。
 
 1. 导航到 Azure 经典管理门户中站点的仪表板，然后单击“配置”。
 
 	![ Web 应用仪表板上的“配置”选项卡][configure]
 
-1. 在“应用设置”部分，创建密钥 **PHP\_EXTENSIONS** 和值 **bin\\your-ext-file**。若要启用多个扩展，请包括 `.dll` 文件的逗号分隔列表。
+1. 在“应用设置”部分，创建密钥 `PHP_EXTENSIONS` 和值 **bin\\your-ext-file**。若要启用多个扩展，请包括 `.dll` 文件的逗号分隔列表。
 
 	![启用应用程序设置中的扩展][app-settings]
 
@@ -130,22 +130,22 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 	![保存配置设置][save-button]
 
-通过使用 **PHP\_ZENDEXTENSIONS** 键也支持 Zend 扩展。若要启用多个扩展，请包括应用设置值的 `.dll` 文件的逗号分隔列表。
+通过使用 `PHP_ZENDEXTENSIONS` 键也支持 Zend 扩展。若要启用多个扩展，请包括应用设置值的 `.dll` 文件的逗号分隔列表。
 
 
 ##<a name="UseCustomPHP"></a> 如何：使用自定义 PHP 运行时
-Azure Web 应用可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。提供的运行时可由同时提供的 **php.ini** 文件配置。若要在 Web 应用中使用自定义 PHP 运行时，请执行下列步骤。
+Azure Web 应用可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。提供的运行时可由同时提供的 `php.ini` 文件配置。若要在 Web 应用中使用自定义 PHP 运行时，请执行下列步骤。
 
 1. 获取非线程安全、VC9 或 VC11 兼容版本的 PHP for Windows。可在此处找到 PHP for Windows 最新版本：[http://windows.php.net/download/]。可在此处的存档中找到旧版本：[http://windows.php.net/downloads/releases/archives/]。
-2. 修改运行时的 **php.ini** 文件。请注意， Web 应用将忽略作为任何仅在系统级别使用的指令的配置设置。（有关仅在系统级别使用的指令的信息，请参阅 [php.ini 指令的列表]。）
-3. （可选）将扩展添加到 PHP 运行时并在 **php.ini** 文件中启用这些扩展。
+2. 修改运行时的 `php.ini` 文件。请注意， Web 应用将忽略作为任何仅在系统级别使用的指令的配置设置。（有关仅在系统级别使用的指令的信息，请参阅 [php.ini 指令的列表]。）
+3. （可选）将扩展添加到 PHP 运行时并在 `php.ini` 文件中启用这些扩展。
 4. 将 `bin` 目录添加到根目录，并将包含 PHP 运行时的目录置于该目录中（例如 `bin\php`）。
 5. 部署你的 Web 应用。
 1. 导航到 Azure 经典管理门户中站点的仪表板，然后单击“配置”。
 
 	![ Web 应用仪表板上的“配置”选项卡][configure]
 
-1. 在“处理程序映射”部分中，将 `*.php` 添加到 EXTENSION，并添加指向 **php-cgi.exe** 可执行文件的路径。如果你将 PHP 运行时放在应用程序的根目录中的 `bin` 目录下，路径将为 `D:\home\site\wwwroot\bin\php\php-cgi.exe`。
+1. 在“处理程序映射”部分中，将 `*.php` 添加到 EXTENSION，并添加指向 `php-cgi.exe` 可执行文件的路径。如果你将 PHP 运行时放在应用程序的根目录中的 `bin` 目录下，路径将为 `D:\home\site\wwwroot\bin\php\php-cgi.exe`。
 
 	![指定处理程序映射中的处理程序][handler-mappings]
 
