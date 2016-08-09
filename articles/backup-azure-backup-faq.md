@@ -118,7 +118,7 @@ A14.使用同一个保管库注册的任何服务器将能够恢复由使用同�
 - *.Microsoft.com
 - *.WindowsAzure.com
 - *.microsoftonline.com
-- *.windows.net
+- *.chinacloudapi.cn
 
 **问 21.可以在已由 Azure 备份服务备份的 Azure VM 上使用 VM 扩展来安装 Azure 备份代理吗？** <br/>
 答 21.绝对是。Azure 备份使用 VM 扩展为 Azure VM 提供 VM 级别备份。你可以在来宾 Windows OS 上安装 Azure 备份代理，以保护该来宾 OS 上的文件和文件夹。
