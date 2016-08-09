@@ -43,27 +43,27 @@
 
 ###<a id="stgemulator"></a>Microsoft Azure 存储模拟器
 
-[Azure 存储模拟器](http://msdn.microsoft.com/library/hh403989.aspx)使用 SQL Server 实例和本地文件系统来模拟 Azure 存储空间（队列、表、Blob），以便在本地进行测试。
+[Azure 存储模拟器](/documentation/articles/storage-use-emulator/)使用 SQL Server 实例和本地文件系统来模拟 Azure 存储空间（队列、表、Blob），以便在本地进行测试。
 
 ###<a id="stgtools"></a>Microsoft Azure 存储工具
 
-这将安装命令行工具 [AzCopy](http://aka.ms/AzCopy)，可以使用它将数据传入和传出 Azure 存储帐户。
+这将安装命令行工具 [AzCopy](/documentation/articles/storage-use-azcopy/)，可以使用它将数据传入和传出 Azure 存储帐户。
 
 ### <a id="auth"></a>Azure 创作工具
 
 其中包括：
 
-* [CSPack 命令行工具](http://msdn.microsoft.com/zh-cn/library/gg432988.aspx)，用于创建部署程序包。
-* [CSEncrypt 命令行工具](http://msdn.microsoft.com/zh-cn/library/hh404001.aspx)，用于加密密码，以便使用密码通过远程桌面连接访问云服务角色实例。
+* CSPack 命令行工具，用于创建部署程序包。
+* CSEncrypt 命令行工具，用于加密密码，以便使用密码通过远程桌面连接访问云服务角色实例。
 * 运行时二进制文件，云服务项目需要使用该文件与运行时环境通信以及进行诊断。这些二进制文件在 NuGet 包中不提供。
 
 ### <a id="emulator"></a>Azure 模拟器
 
-[Azure 模拟器](http://msdn.microsoft.com/zh-cn/library/dn339018.aspx)模拟云服务环境，这样您就可以先在本地计算机上测试云服务项目，然后再将其部署到 Azure。
+Azure 模拟器模拟云服务环境，这样您就可以先在本地计算机上测试云服务项目，然后再将其部署到 Azure。
 
 ###<a id="hdinsight"></a>HDInsight Tools for Visual Studio，和 Microsoft Hive ODBC 驱动程序
 
-在服务器资源管理器中的 HDInsight 工具，可以导航 Hive 数据库和 HDInsight 群集的链接存储帐户、创建表，并创建和提交 Hive 查询。有关详细信息，请参阅 [HDInsight Hadoop Tools for Visual Studio 入门](hdinsight/hdinsight-hadoop-visual-studio-tools-get-started.md)。
+在服务器资源管理器中的 HDInsight 工具，可以导航 Hive 数据库和 HDInsight 群集的链接存储帐户、创建表，并创建和提交 Hive 查询。有关详细信息，请参阅 [HDInsight Hadoop Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 ###用于 .NET 的 Microsoft Azure 库
 
@@ -71,10 +71,6 @@
 
 * 用于 Azure 存储空间、Service Bus 和 Caching 的 NuGet 包，存储在你的计算机上，方便 Visual Studio 脱机创建新的云服务项目。
 * Visual Studio 插件，允许[角色中缓存](http://msdn.microsoft.com/zh-cn/library/dn386103.aspx)项目在 Visual Studio 中本地运行。 
-
-### <a id="mobile">Azure Mobile App SDK
-
-用于 [Azure App Service Mobile Apps](/documentation/articles/app-service-mobile-value-prop/) 的工具。
 
 ### <a id="ps"></a>Azure PowerShell
 
@@ -84,31 +80,18 @@
 
 这使您可以使用 Azure 资源，主要是云服务和虚拟机：
 
-* [创建、打开和发布云服务项目](cloud-services/cloud-services-dotnet-get-started.md)。
-* [创建云服务项目的部署包](http://msdn.microsoft.com/library/ff683672.aspx)。
-* [在创建新的 Web 项目时创建 Azure 虚拟机](virtual-machines/virtual-machines-windows-classic-web-app-visual-studio.md)。
-* [在创建新的虚拟机时创建 PowerShell 脚本](http://msdn.microsoft.com/library/dn642480.aspx)。
-* [查看和管理 Visual Studio 项目属性窗口中的云服务项目设置](http://msdn.microsoft.com/library/ee405486.aspx)。
-* 在服务器资源管理器中查看和管理[云服务](http://msdn.microsoft.com/library/ff683675.aspx)、[虚拟机](http://msdn.microsoft.com/library/jj131259.aspx)和[服务总线](http://msdn.microsoft.com/library/jj149828.aspx)。
-* [针对云服务和虚拟机在调试模式下远程运行](http://msdn.microsoft.com/library/ff683670.aspx)。
-* [使用 Azure 资源组部署项自动执行资源预配](https://msdn.microsoft.com/library/dn872471.aspx)
+* [创建、打开和发布云服务项目](/documentation/archive/cloud-services-dotnet-get-started/)。
+* [在创建新的 Web 项目时创建 Azure 虚拟机](/documentation/archive/virtual-machines-windows-classic-web-app-visual-studio/)。
 
 ###<a id="wte"></a>Microsoft App Service Tools for Visual Studio
 
 这使你可以使用 Azure 网站：
 
-* [将 Web 项目发布到 Azure 网站](app-service-web/web-sites-dotnet-get-started.md)。
-* [将控制台应用程序项目发布到 Azure WebJobs](app-service-web/websites-dotnet-deploy-webjobs.md)。
+* [将 Web 项目发布到 Azure 网站](/documentation/articles/web-sites-dotnet-get-started/)。
+* [将控制台应用程序项目发布到 Azure WebJobs](/documentation/articles/websites-dotnet-deploy-webjobs)。
 * 在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库资源。
-* [在创建新网站时创建 PowerShell 部署脚本](http://msdn.microsoft.com/library/dn642480.aspx)。
-* [在服务器资源管理器中管理和故障诊断 Azure 网站](app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md#sitemanagement)。
-* [在调试模式下针对网站和 WebJobs 远程运行](app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md#remotedebug)。
 
 >[AZURE.NOTE] 无需安装用于 .NET 的 Azure SDK 即可使用这些功能；它们还包括在 Visual Studio 更新中。
-
-##<a id="datalake"></a>Microsoft Azure Data Lake Tools for Visual Studio
-
-有关详细信息，请参阅[：使用 Data Lake Tools for Visual Studio 开发 U-SQL 脚本](data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md)。
 
 ##<a id="notincluded"></a>在安装用于 .NET 的 Azure SDK 时未获得的内容
 
@@ -149,7 +132,7 @@
 
 ###<a id="olderversions"></a>哪里可以找到较旧版本的用于 .NET 的 Azure SDK？
 
-如需较旧版本，请参阅 [用于 .NET 的 Azure SDK](/downloads/archive-net-downloads/) 下载页。
+如需较旧版本，请参阅 [用于 .NET 的 Azure SDK](/downloads/) 下载页。
 
 ###<a id="lifecycle"></a>用于 .NET 的 Azure SDK 版本的生命周期策略是什么？
 
@@ -157,7 +140,7 @@
 
 ###哪些来宾操作系统版本是用于 .NET 的 Azure SDK 兼容的？
 
-请参阅 [Azure 来宾 OS 版本和 SDK 兼容性矩阵](http://msdn.microsoft.com/zh-cn/library/ee924680.aspx)。
+请参阅 [Azure 来宾 OS 版本和 SDK 兼容性矩阵](/documentation/articles/cloud-services-guestos-update-matrix/)。
 
 ###<a id="uninstall"></a>我如何卸载用于 .NET 的 Azure SDK？
 
@@ -177,7 +160,7 @@
 
 ##<a id="versions"></a>版本
 
-若要查看哪一个版本是最新版本或者需要下载较旧版本，请参阅 [用于 .NET 的 Azure SDK 版本历史记录](/downloads/archive-net-downloads/)页。
+若要查看哪一个版本是最新版本或者需要下载较旧版本，请参阅 [用于 .NET 的 Azure SDK 版本历史记录](/downloads/)页。
 
 ##<a id="resources"></a>资源
 
@@ -185,6 +168,6 @@
 
 如需用于 .NET 的 Azure SDK 源代码，包括客户端库，请参阅 [GitHub.com/Azure](https://github.com/azure/)。
 
-有关 Azure 客户端库的参考文档，请参阅 [Azure.NET 参考](/documentation/api/)。
+有关 Azure 客户端库的参考文档，请参阅 [Azure.NET 参考](https://azure.microsoft.com/en-us/documentation/api/)。
 
 <!---HONumber=Mooncake_0801_2016-->
