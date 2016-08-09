@@ -29,7 +29,7 @@
 [在移动应用中使用验证码登录](#signing-in-with-the-mobile-app-using-verification-code)|这是在移动应用中使用验证码登录时所能预期到的情况。
 [使用替代方法登录](#signing-in-with-an-alternate-method)|说明使用替代方法时所能预期到的情况。
 
-## 使用手机或办公电话登录
+## <a name="signing-in-with-mobile-or-office-phone"></a>使用手机或办公电话登录
 
 以下信息介绍在使用手机或办公电话执行多重身份验证时的体验。
 
@@ -46,7 +46,7 @@
 
 - 现在你应已登录。</li>
 
-## 在移动应用中使用通知登录
+## <a name="signing-in-with-the-mobile-app-using-notification"></a>在移动应用中使用通知登录
 
 以下信息介绍在系统向你发送通知后，你在移动应用上使用多重身份验证的体验。
 
@@ -66,7 +66,7 @@
 - 现在你应已登录。
 
 
-## 在移动应用中使用验证码登录
+## <a name="signing-in-with-the-mobile-app-using-verification-code"></a>在移动应用中使用验证码登录
 
 以下信息介绍当你使用验证码执行身份验证时，在移动应用上使用多重身份验证的体验。
 
@@ -84,7 +84,7 @@
 - 现在你应已登录。
 
 
-## 使用替代方法登录
+## <a name="signing-in-with-an-alternate-method"></a>使用替代方法登录
 
 
 以下部分将会说明当你的主要方法不可用时，如何使用替代方法进行登录。
