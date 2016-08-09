@@ -63,7 +63,7 @@
 		StartTask startTask = new StartTask
 		{
 		    CommandLine = "cmd /c MSMpiSetup.exe -unattend -force",
-		    ResourceFiles = new List<ResourceFile> { new ResourceFile("https://mystorageaccount.blob.core.windows.net/mycontainer/MSMpiSetup.exe", "MSMpiSetup.exe") },
+		    ResourceFiles = new List<ResourceFile> { new ResourceFile("https://mystorageaccount.blob.core.chinacloudapi.cn/mycontainer/MSMpiSetup.exe", "MSMpiSetup.exe") },
 		    RunElevated = true,
 		    WaitForSuccess = true
 		};
