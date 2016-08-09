@@ -1,3 +1,4 @@
+<!-- Temp remove statistics and table overview -->
 <properties
    pageTitle="将数据从 SQL Server 载入 Azure SQL 数据仓库 (bcp) | Azure"
    description="对于少量的数据，可以使用 bcp 将数据从 SQL Server 导出到平面文件，然后将数据直接导入 Azure SQL 数据仓库。"
@@ -132,7 +133,7 @@ DateId |CalendarQuarter |FiscalQuarter
 
 ## 4\.创建统计信息
 
-SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得最佳查询性能，在首次加载数据或者在数据发生重大更改之后，必须针对所有表的所有列创建统计信息。有关统计信息的详细说明，请参阅 [Statistics][]（统计信息）。
+SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得最佳查询性能，在首次加载数据或者在数据发生重大更改之后，必须针对所有表的所有列创建统计信息。<!-- 有关统计信息的详细说明，请参阅 [Statistics][]（统计信息）。-->
 
 运行以下命令针对新加载的表创建统计信息。
 
@@ -180,7 +181,7 @@ SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获�
 ## 后续步骤
 有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][]。
 有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][]。
-有关在 SQL 数据仓库中创建表的详细信息，请参阅 [Table Overview][]（表概述）或 [CREATE TABLE syntax][]（CREATE TABLE 语法）。
+有关在 SQL 数据仓库中创建表的详细信息，请参阅 <!-- [Table Overview][]（表概述）或 --> [CREATE TABLE syntax][]（CREATE TABLE 语法）。
 
 <!--Image references-->
 

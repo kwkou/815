@@ -60,7 +60,7 @@
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-overview-load/
-[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-load-sample-databases/
+[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server
 [使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
 [资源组]: /documentation/articles/resource-group-portal/

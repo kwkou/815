@@ -1,3 +1,4 @@
+<!-- Temp remove tables-overview, next task on -->
 <properties
    pageTitle="SQL 数据仓库中表的数据类型 | Azure"
    description="Azure SQL 数据仓库表的数据类型入门。"
@@ -15,26 +16,28 @@
 # SQL 数据仓库中表的数据类型
 
 > [AZURE.SELECTOR]
-- [概述][]
 - [数据类型][]
 - [分布][]
 - [索引][]
+<!-- 
+- [概述][]
 - [Partition][]
 - [统计信息][]
 - [临时][]
+-->
 
 SQL 数据仓库支持最常用的数据类型。下面是 SQL 数据仓库支持的数据类型列表。有关支持的数据类型的详细信息，请参阅[创建表][]。
 
-|**支持的数据类型**|||
+|**支持的数据类型**|    |    |
 |---|---|---|
-[bigint][]|[decimal][]|[smallint][]|
-[binary][]|[float][]|[smallmoney][]|
-[bit][]|[int][]|[sysname][]|
-[char][]|[money][]|[time][]|
-[date][]|[nchar][]|[tinyint][]|
-[datetime][]|[nvarchar][]|[uniqueidentifier][]|
-[datetime2][]|[real][]|[varbinary][]|
-[datetimeoffset][]|[smalldatetime][]|[varchar][]|
+|[bigint][]|[decimal][]|[smallint][]|
+|[binary][]|[float][]|[smallmoney][]|
+|[bit][]|[int][]|[sysname][]|
+|[char][]|[money][]|[time][]|
+|[date][]|[nchar][]|[tinyint][]|
+|[datetime][]|[nvarchar][]|[uniqueidentifier][]|
+|[datetime2][]|[real][]|[varbinary][]|
+|[datetimeoffset][]|[smalldatetime][]|[varchar][]|
 
 
 ## 数据类型最佳实践
@@ -77,7 +80,7 @@ SQL 数据仓库支持最常用的数据类型。下面是 SQL 数据仓库支�
 
 ## 后续步骤
 
-有关详细信息，请参阅有关[表概述][Overview]、[分布表][Distribute]、[为表编制索引][Index]、[将表分区][Partition]、[维护表统计信息][Statistics]和[临时表][Temporary]的文章。有关最佳实践详细信息，请参阅 [SQL Data Warehouse Best Practices][]（SQL 数据仓库最佳实践）。
+有关详细信息，请参阅有关 <!-- [表概述][Overview]、--> [分布表][Distribute]、[为表编制索引][Index] <!-- 、[将表分区][Partition]、[维护表统计信息][Statistics]和[临时表][Temporary] --> 的文章。有关最佳实践详细信息，请参阅 [SQL Data Warehouse Best Practices][]（SQL 数据仓库最佳实践）。
 
 <!--Image references-->
 

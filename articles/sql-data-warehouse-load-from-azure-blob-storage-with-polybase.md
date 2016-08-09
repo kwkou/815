@@ -346,7 +346,7 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 <!--Image references-->
 
 <!--Article references-->
-[Create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision/
+[Create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 [Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [管理列存储索引]: /documentation/articles/sql-data-warehouse-tables-index
