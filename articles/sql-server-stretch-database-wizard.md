@@ -47,7 +47,7 @@
 |**名称**|指定表中的列名。|
 |(无标题)|此列中的符号可能表示不会阻止你为所选表启用延伸的警告。它也可能表示会阻止你为所选表启用延伸的阻止问题，例如，因为该表使用不支持的数据类型。将鼠标悬停于符号上可在工具提示中显示更多信息。有关详细信息，请参阅 [Stretch Database 的限制](/documentation/articles/sql-server-stretch-database-limitations/)。|
 |**已延伸**|指示该表是否已启用延伸。|
-|**迁移**|你可以迁移整个表（**整个表**），也可以对表中的现有列指定一个筛选器。如果想要使用不同的筛选器函数来选择要迁移的行，请运行 ALTER TABLE 语句以在退出向导后指定筛选器函数。有关筛选器函数的详细信息，请参阅[使用筛选器函数选择要迁移的行](sql-server-stretch-database-predicate-function.md)。有关如何应用函数的详细信息，请参阅[为表启用 Stretch Database](sql-server-stretch-database-enable-table.md) 或 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx)。|
+|**迁移**|你可以迁移整个表（**整个表**），也可以对表中的现有列指定一个筛选器。如果想要使用不同的筛选器函数来选择要迁移的行，请运行 ALTER TABLE 语句以在退出向导后指定筛选器函数。有关筛选器函数的详细信息，请参阅[使用筛选器函数选择要迁移的行](/documentation/articles/sql-server-stretch-database-predicate-function/)。有关如何应用函数的详细信息，请参阅[为表启用 Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/) 或 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。|
 |**行**|指定表中的行数。|
 |**大小(KB)**|指定表的大小，以 KB 为单位。|
 
@@ -79,7 +79,7 @@
 
 -   退出向导并运行 ALTER TABLE 语句，以便为表启用延伸，并指定筛选器函数。有关详细信息，请参阅[为表启用 Stretch Database](sql-server-stretch-database-enable-table.md)。
 
--   退出向导后，运行 ALTER TABLE 语句，以便指定筛选器函数。有关所需步骤，请参阅[运行向导后添加筛选器函数](sql-server-stretch-database-predicate-function.md#addafterwiz)。
+-   退出向导后，运行 ALTER TABLE 语句，以便指定筛选器函数。有关所需步骤，请参阅[运行向导后添加筛选器函数](/documentation/articles/sql-server-stretch-database-predicate-function#addafterwiz)。
 
 ## <a name="Configure"></a>配置 Azure 部署
 
