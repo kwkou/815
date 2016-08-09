@@ -1,3 +1,5 @@
+<!-- not to be customized -->
+
 <properties
 	pageTitle="在 Azure 中创建 .NET Web 作业 | Azure"
 	description="使用 ASP.NET MVC 和 Azure 创建多层应用。前端在 Azure 中的 Web 应用中运行，后端以 Web 作业的形式运行。应用程序使用实体框架、SQL 数据库和 Azure 存储队列和 Blob。"
@@ -256,6 +258,8 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	只有在学习下一部分时在 Azure 环境中设置了连接字符串后，你才可以使用该 Web 应用。你将会看到错误页或主页，具体取决于你在前面选择的 Web 应用和数据库创建选项。
 
+<!-- not to be customized -->
+
 ### 将 Web 应用配置为使用你的 Azure SQL 数据库和存储帐户。
 
 最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。你可以使用**服务器资源管理器**、Azure 经典管理门户、Windows PowerShell 或跨平台命令行接口在 Azure 中设置这些值。
@@ -296,7 +300,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	如果未显示缩略图，你可能需要等待一分钟左右，让 Web 作业重新启动。如果经过一段时间后刷新页面时仍未显示缩略图，原因可能是 Web 作业未自动启动。在此情况下，转到[经典管理门户](https://manage.windowsazure.cn)页中 Web 应用的“Web 作业”选项卡，然后单击“启动”。
 
-###<a name="view-the-webjobs-sdk-dashboard"></a>查看 Web 作业 SDK 仪表板
+### <a name="view-the-webjobs-sdk-dashboard"></a>查看 Web 作业 SDK 仪表板
 
 1. 在[经典管理门户](https://manage.windowsazure.cn)中，选择你的 Web 应用。
 

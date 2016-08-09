@@ -127,12 +127,12 @@
 
      - 将当前 MySQL 目录复制到其新位置，然后删除旧目录
     
-    		cpccp -avr /var/lib/mysql /mnt/data  
+    		cp -avr /var/lib/mysql /mnt/data  
     		rm -rf /var/lib/mysql
       
      - 相应地设置新目录上的权限
         
-        	chochown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
+        	chown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
             
      - 创建一个符号链接，将旧目录指向 RAID 分区上的新位置
     
@@ -152,11 +152,11 @@
             
     - 保护 MySQL 安装、设置根密码、删除匿名用户，禁用远程根登录并删除测试数据库
     		
-            mysql_smysql_secure_installation
+            mysql_secure_installation
             
     - 在数据库上创建一个用户，以便在群集操作中使用，也可以选择在应用程序中使用
    
-			mysql -mysql -u root -p
+			mysql -u root -p
 			GRANT ALL PRIVILEGES ON *.* TO 'cluster'@'%' IDENTIFIED BY 'p@ssw0rd' WITH GRANT OPTION; FLUSH PRIVILEGES;
             exit
    
