@@ -32,7 +32,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 ![内部通信][1]
 
 ## 从群集外部访问微服务
-微服务的默认外部通信模型为“选择加入”，即默认情况下，不能直接从外部客户端访问每个服务。[Azure Load Balancer](/documentation/articles/load-balancer-overview/) 充当微服务和外部客户端之间的网络边界，可以进行网络地址转换并将外部请求转发到内部的 **IP:端口**终结点。若要允许外部客户端直接访问微服务的终结点，必须先将 Azure Load Balancer 配置为将流量转发到群集中服务使用的每个端口。另外，大多数微服务（尤其是有状态微服务）并不是位于群集的所有节点上，这些微服务在故障转移时可以在节点之间移动，因此在这样的情况下，Azure Load Balancer 无法有效地确定副本的目标节点的位置，无法向其转发流量。
+微服务的默认外部通信模型为“选择加入”，即默认情况下，不能直接从外部客户端访问每个服务。 Azure Load Balancer 充当微服务和外部客户端之间的网络边界，可以进行网络地址转换并将外部请求转发到内部的 **IP:端口**终结点。若要允许外部客户端直接访问微服务的终结点，必须先将 Azure Load Balancer 配置为将流量转发到群集中服务使用的每个端口。另外，大多数微服务（尤其是有状态微服务）并不是位于群集的所有节点上，这些微服务在故障转移时可以在节点之间移动，因此在这样的情况下，Azure Load Balancer 无法有效地确定副本的目标节点的位置，无法向其转发流量。
 
 ### 从群集外部通过 SF 反向代理访问微服务
 
@@ -102,7 +102,6 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 不过，副本或服务实例可能会共享主机进程，在通过基于 http.sys 的 Web 服务器进行托管的情况下还可能会共享端口，这些 Web 服务器包括：
 
  - [System.Net.HttpListener](https://msdn.microsoft.com/zh-cn/library/system.net.httplistener%28v=vs.110%29.aspx)
- - [ASP.NET Core WebListener](https://docs.asp.net/latest/fundamentals/servers.html#weblistener)
  - [Katana](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OwinSelfHost/)
 
 在这样的情形下，可能会出现 Web 服务器出现在主机进程中并且能够响应请求，而被解析的服务实例或副本却再也不能在主机上使用的情况。这种情况下，网关会从 Web 服务器收到 HTTP 404 响应。因此，HTTP 404 具有两种不同的含义：

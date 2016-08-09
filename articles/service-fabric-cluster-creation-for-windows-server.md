@@ -137,7 +137,7 @@ ClusterConfig.json 文件对群集进行了描述。有关此文件中相关部�
 5. 运行 AddNode.ps1 Powershell，使用参数来描述要添加的新节点。以下示例将名为 VM5、类型为 NodeType0 且 IP 地址为 182.17.34.52 的新节点添加到 UD1 和 FD1 中。ExistingClusterConnectionEndPoint 是现有群集中已有节点的连接终结点。你可以在群集中针对此项选择任意节点 IP 地址。
 
 
-	.\\AddNode.ps1 -MicrosoftServiceFabricCabFilePath .\\MicrosoftAzureServiceFabric.cab -NodeName VM5 -NodeType NodeType0 -NodeIPAddressorFQDN 182.17.34.52 -ExistingClusterConnectionEndPoint 182.17.34.50:19000 -UpgradeDomain UD1 -FaultDomain FD1
+		.\\AddNode.ps1 -MicrosoftServiceFabricCabFilePath .\\MicrosoftAzureServiceFabric.cab -NodeName VM5 -NodeType NodeType0 -NodeIPAddressorFQDN 182.17.34.52 -ExistingClusterConnectionEndPoint 182.17.34.50:19000 -UpgradeDomain UD1 -FaultDomain FD1
 
 
 ## 从群集中删除节点
@@ -148,7 +148,7 @@ ClusterConfig.json 文件对群集进行了描述。有关此文件中相关部�
 4. 运行 RemoveNode.ps1 Powershell。以下示例从群集中删除当前节点。ExistingClusterConnectionEndPoint 是现有群集中已有节点的连接终结点。你可以在群集中针对此项选择任意节点 IP 地址。
 
 
-	.\\RemoveNode.ps1 -MicrosoftServiceFabricCabFilePath .\\MicrosoftAzureServiceFabric.cab -ExistingClusterConnectionEndPoint 182.17.34.50:19000
+		.\\RemoveNode.ps1 -MicrosoftServiceFabricCabFilePath .\\MicrosoftAzureServiceFabric.cab -ExistingClusterConnectionEndPoint 182.17.34.50:19000
 
 
 ## 删除群集
