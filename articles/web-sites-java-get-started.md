@@ -33,7 +33,7 @@
 
 	你可能想要托管一个自定义 Java 应用程序，该程序不部署在 Azure Web 应用所提供的任何 Web 容器中。例如：
 	
-	* 你的 Java 应用程序需要 Azure 不直接支持，或者库中不提供的 Tomcat 或 Jetty 版本。
+	* 你的 Java 应用程序需要 Azure 不直接支持的 Tomcat 或 Jetty 版本。
 	* 你的 Java 应用程序接受 HTTP 请求，不以 WAR 的形式部署到预先存在的 Web 容器中。
 	* 你想要从头开始自行配置 Web 容器。 
 	* 你想要使用在 Azure 中不受支持的 Java 版本，且想要自行上载它。

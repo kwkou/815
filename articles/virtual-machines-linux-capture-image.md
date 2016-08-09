@@ -18,9 +18,6 @@
 
 # 如何捕获 Linux 虚拟机以用作资源管理器模板
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-machines-linux-classic-capture-image/)。
-
-
 使用 Azure 命令行界面 (CLI) 来捕获运行 Linux 的 Azure 虚拟机，以便你可以将其用作 Azure 资源管理器模板来创建其他虚拟机。此模板包括操作系统磁盘和附加到虚拟机的数据磁盘，但不包括创建 Azure 资源管理器 VM 所需的虚拟网络资源，因此大多数情况下，你需要在创建另一个使用此模板的虚拟机之前，先单独设定。
 
 ## 开始之前

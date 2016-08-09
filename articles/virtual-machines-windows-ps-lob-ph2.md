@@ -17,9 +17,6 @@
 
 # 业务线应用程序工作负荷阶段 2：配置域控制器
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
- 
-
 在 Azure 基础结构服务中部署高可用性组业务线应用程序的这个阶段，你将在 Azure 虚拟网络中配置两个副本域控制器，以便可以在 Azure 虚拟网络中对针对 Web 资源的客户端 Web 请求进行身份验证，而不必将身份验证流量通过连接发送到你的本地网络。
 
 你必须在转到[阶段 3](/documentation/articles/virtual-machines-windows-ps-lob-ph3/) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview/)。

@@ -17,9 +17,6 @@
 
 # 业务线应用程序工作负荷阶段 4：配置 web 服务器
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
- 
-
 在 Azure 基础结构服务中部署高可用性业务线应用程序的这个阶段，你将构建 web 服务器并在其上加载业务线应用程序。
 
 你必须在转到[阶段 5](/documentation/articles/virtual-machines-windows-ps-lob-ph5/) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview/)。

@@ -17,8 +17,6 @@
 
 # 业务线应用程序工作负荷阶段 3：配置 SQL Server 基础结构
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
-
 在 Azure 基础结构服务中部署高可用性业务线应用程序的这个阶段，你将配置两台运行 SQL Server 的计算机和一台群集多数节点计算机，然后将它们组合成 Windows Server 群集。
 
 你必须在转到[阶段 4](/documentation/articles/virtual-machines-windows-ps-lob-ph4/) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview/)。
