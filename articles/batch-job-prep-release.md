@@ -148,11 +148,11 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 
 ### 应用程序包
 
-除了作业准备任务外，你还可以使用 Batch 的[应用程序包](batch-application-packages.md)功能来为计算节点做好任务执行准备。此功能特别适合用于部署不需要运行安装程序的应用程序、包含许多（100 个以上）文件的应用程序，或需要严格版本控制的应用程序。
+除了作业准备任务外，你还可以使用 Batch 的[应用程序包](/documentation/articles/batch-application-packages/)功能来为计算节点做好任务执行准备。此功能特别适合用于部署不需要运行安装程序的应用程序、包含许多（100 个以上）文件的应用程序，或需要严格版本控制的应用程序。
 
 ### 安装应用程序和暂存数据
 
-有关准备节点以运行任务的各种方法的概述，请查看 Azure Batch 论坛中的帖子 [Installing applications and staging data on Batch compute nodes][forum_post]（在 Batch 计算节点上安装应用程序和暂存数据）。此帖子由 Azure Batch 团队的一名成员编写，是一个很好的入门教程，它介绍了如何在计算节点上以不同方式获取文件（包括应用程序和任务输入数据），以及每种方法要考虑到的一些特殊注意事项。
+有关准备节点以运行任务的各种方法的概述，请查看 Azure Batch 论坛中的帖子[在 Batch 计算节点上安装应用程序和暂存数据](https://social.msdn.microsoft.com/Forums/zh-cn/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch)。此帖子由 Azure Batch 团队的一名成员编写，是一个很好的入门教程，它介绍了如何在计算节点上以不同方式获取文件（包括应用程序和任务输入数据），以及每种方法要考虑到的一些特殊注意事项。
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
