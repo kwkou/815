@@ -11,8 +11,8 @@
 <tags ms.service="legal-en" ms.date="03/2016" wacn.date="03/2016" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
-- [中文](/support/sla/storage/)
-- [English](/support/sla/storage-en/)
+- [中文](/support/sla/storage-v1/)
+- [English](/support/sla/storage-en-v1/)
 # SLA for Storage
 
 We guarantee that at least 99.9% of the time, we will successfully process requests to append, update, read, or delete data (Provided that the format is correct), Storage Account may connect to our Internet gateway.
@@ -215,3 +215,11 @@ Failed Storage Transactions do not include:
 	----------------------------|---------
 	<99.95%				        |10% 
 	<99%				        |25% 
+
+##Version History
+
+[1.1](/support/sla/storage-en/)Last updated: August 2016
+
+Release notes: Updated SLA for the newly introduced Blob Storage Accounts with the Cool Access Tier.
+
+[1.0](/support/sla/storage-en-v1/)Last updated: March 2016
