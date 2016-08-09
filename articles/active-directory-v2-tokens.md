@@ -56,8 +56,8 @@ Id\_token 已签名，但目前不会加密。当应用收到 id\_token 时，�
 | 访问令牌哈希 | `at_hash` | `SGCPtt01wxwfgnYZy2VJtQ` | 仅当在 id\_token 中随 OAuth 2.0 访问令牌一起颁发时，访问令牌才包含在 id\_token 中。它可用于验证访问令牌的真实性。有关执行此验证的详细信息，请参阅 [OpenID Connect 规范](http://openid.net/specs/openid-connect-core-1_0.html)。 |
 | Nonce | `nonce` | `12345` | Nonce 是缓和令牌重放攻击的策略。你的应用可通过使用 `nonce` 查询参数，在授权请求中指定 nonce。在请求中提供的值将在 id\_token 的 `nonce` 声明中发出（未经修改）。这可让应用根据在请求上指定的值验证此值，使应用的会话与给定的 id\_token 相关联。应用应该在 id\_token 验证过程中执行这项验证。 |
 | Name | `name` | `Babe Ruth` | 此名称声明提供了标识令牌使用者的人工可读值。此值不一定唯一，它是可变的，旨在仅用于显示目的。需要 `profile` 范围才能接收此声明。 |
-| 电子邮件 | `email` | `thegreatbambino@nyy.onmicrosoft.com` | 与用户帐户关联的主要电子邮件地址（如果有）。其值可变，对给定的用户而言会随着时间改变。需要 `email` 范围才能接收此声明。 |
-| 首选用户名 | `preferred_username` | `thegreatbambino@nyy.onmicrosoft.com` | 用于表示 v2.0 终结点中用户的主要用户名。它可以是电子邮件地址、电话号码或未指定格式的一般用户名。其值可变，对给定的用户而言会随着时间改变。需要 `profile` 范围才能接收此声明。 |
+| 电子邮件 | `email` | `thegreatbambino@nyy.partner.onmschina.cn` | 与用户帐户关联的主要电子邮件地址（如果有）。其值可变，对给定的用户而言会随着时间改变。需要 `email` 范围才能接收此声明。 |
+| 首选用户名 | `preferred_username` | `thegreatbambino@nyy.partner.onmschina.cn` | 用于表示 v2.0 终结点中用户的主要用户名。它可以是电子邮件地址、电话号码或未指定格式的一般用户名。其值可变，对给定的用户而言会随着时间改变。需要 `profile` 范围才能接收此声明。 |
 | 使用者 | `sub` | `MF4f-ggWMEji12KynJUNQZphaUTvLcQug5jdF2nl01Q` | 令牌针对其断言信息的主体，例如应用的用户。此值不可变且不能重新分配或重复使用，因此可以使用它来安全地执行授权检查，例如，当使用令牌访问资源时。因为使用者始终会在 Azure AD 颁发的令牌中存在，我们建议在通用授权系统中使用此值。 |
 | ObjectId | `oid` | `a1dbdde8-e4f9-4571-ad93-3059e3750d23` | Azure AD 系统中工作或学校帐户的对象 ID。不会针对个人 Microsoft 帐户发出此声明。需要 `profile` 范围才能接收此声明。 |
 

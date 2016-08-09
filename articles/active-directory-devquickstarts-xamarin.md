@@ -57,23 +57,17 @@ Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备
 ## *2.安装并配置 ADAL*
 将应用程序注册到 Azure AD 后，可以安装 ADAL 并编写标识相关的代码。为了使 ADAL 能够与 Azure AD 通信，需要为 ADAL 提供一些有关应用程序的注册信息。
 -	首先，使用程序包管理器控制台将 ADAL 添加到解决方案中的各个项目。
-
 		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirectorySearcherLib	
-		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Android	
-		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Desktop	
-		
-		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-iOS		
-		
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirectorySearcherLib
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Android
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Desktop
+		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-iOS	
 		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Universal
-
 
 - 你应会发现，每个项目中添加了两个库 - ADAL 的 PCL 部分，和特定于平台的部分。
 
 -	在 DirectorySearcherLib 项目中，打开 `DirectorySearcher.cs`。更改类成员值以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
-    -	`tenant` 是 Azure AD 租户的域，例如 contoso.onmicrosoft.com
+    -	`tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`clientId` 是从门户复制的应用程序 clientId。
     - `returnUri` 是你在门户中输入的 redirectUri，例如 `http://DirectorySearcher`。
 
@@ -176,7 +170,7 @@ C#
 
 [此处](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip)提供了已完成示例（无需配置值）供你参考。现在，你可以转到其他标识方案。你可能想要尝试：
 
-[使用 Azure AD 保护 .NET Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
+[使用 Azure AD 保护 .NET Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet/)
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
 

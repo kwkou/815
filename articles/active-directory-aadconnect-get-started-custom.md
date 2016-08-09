@@ -48,7 +48,7 @@
 不要配置 | 不安装和配置任一功能。如果你已有第三方联合服务器或部署了另一个现有解决方案，请选择此选项。
 
 ### 连接到 Azure AD
-在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。如果在前一个页面选择了“与 AD FS 联合”，不要以计划启用联合的域中的帐户登录。建议使用随附于 Azure AD 目录的默认 **onmicrosoft.com** 域中的帐户。
+在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。如果在前一个页面选择了“与 AD FS 联合”，不要以计划启用联合的域中的帐户登录。建议使用随附于 Azure AD 目录的默认 **partner.onmschina.cn** 域中的帐户。
 
 此帐户只会用于在 Azure AD 中创建服务帐户，在向导完成后将不会使用。  
 ![用户登录](./media/active-directory-aadconnect-get-started-custom/connectaad.png)

@@ -176,7 +176,7 @@
 		&state=12345
 		&token_type=Bearer
 		&expires_in=3600
-		&scope=https%3A%2F%2Fgraph.windows.net%2Fdirectory.read
+		&scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read
 
 
 | 参数 | 说明 |

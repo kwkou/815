@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。独立于租户的令牌的允许值为租户标识符，例如 `8eaef023-2b34-4da1-9baa-8bc8c9d6a490`、`contoso.onmicrosoft.com` 或 `common` |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。独立于租户的令牌的允许值为租户标识符，例如 `8eaef023-2b34-4da1-9baa-8bc8c9d6a490`、`contoso.partner.onmschina.cn` 或 `common` |
 | client\_id | 必填 | 将应用注册到 Azure AD 时，分配给应用的应用程序 ID。可以在 Azure 管理门户中找到此值。单击“Active Directory”，单击目录，单击应用程序，然后单击“配置” |
 | response\_type | 必填 | 必须包括授权代码流的 `code`。 |
 | redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。对于本机和移动应用，应使用默认值 `urn:ietf:wg:oauth:2.0:oob`。 |
@@ -113,7 +113,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。独立于租户的令牌的允许值为租户标识符，例如 `8eaef023-2b34-4da1-9baa-8bc8c9d6a490`、`contoso.onmicrosoft.com` 或 `common` |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。独立于租户的令牌的允许值为租户标识符，例如 `8eaef023-2b34-4da1-9baa-8bc8c9d6a490`、`contoso.partner.onmschina.cn` 或 `common` |
 | client\_id | 必填 | 将应用注册到 Azure AD 时，分配给应用的应用程序 ID。可以在 Azure 经典门户中找到此信息。单击“Active Directory”，单击目录，单击应用程序，然后单击“配置” |
 | grant\_type | 必填 | 必须是授权代码流的 `authorization_code`。 |
 | 代码 | 必填 | 在上一部分中获取的 `authorization_code` |

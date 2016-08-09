@@ -55,7 +55,7 @@
 - 根据提示创建一个新的 **Web 应用程序和/或 WebAPI**。
     - 应用程序的**名称**向最终用户描述你的应用程序
     - “登录 URL”是应用程序的基本 URL。示例代码的默认值是 `https://localhost:8080`。
-    - “应用程序 ID URI”是应用程序的唯一标识符。约定是使用 `https://<tenant-domain>/<app-name>`，例如 `https://contoso.onmicrosoft.com/my-first-aad-app`
+    - “应用程序 ID URI”是应用程序的唯一标识符。约定是使用 `https://<tenant-domain>/<app-name>`，例如 `https://contoso.partner.onmschina.cn/my-first-aad-app`
 - 完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
 
 - 提醒：为你的应用程序创建一个**应用程序密码**并复制下来。稍后您将需要它。

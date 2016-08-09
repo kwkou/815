@@ -31,7 +31,7 @@
  订阅 | Office 365 | Azure
   -------------- | ------------- | -------------------------------
  显示名称 | Contoso | 默认的 Azure Active Directory (Azure AD) 目录
- 域名 | contoso.com | msmithhotmail.onmicrosoft.com
+ 域名 | contoso.com | msmithhotmail.partner.onmschina.cn
 
 他希望在使用 Microsoft 帐户登录到 Azure 时管理 Contoso 目录中的用户身份，以便启用 Azure AD 功能，如多重身份验证。下图可帮助你了解该过程。
 
@@ -48,7 +48,7 @@
 1.	以 msmith@hotmail.com 身份登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 2.	单击“新建”>“应用程序服务”>“Active Directory”>“目录”>“自定义创建”。
 3.	单击“使用现有目录”，然后选中“已准备好立即注销”。
-4.	以 Contoso.onmicrosoft.com 的全局管理员身份（例如 msmith@contoso.com）登录到 Azure 经典门户。
+4.	以 Contoso.partner.onmschina.cn 的全局管理员身份（例如 msmith@contoso.com）登录到 Azure 经典门户。
 5.	当系统提示“是否要将 Contoso 目录用于 Azure?”时，单击“继续”。
 6.	单击“立即注销”。
 7.	以 msmith@hotmail.com 身份登录到 Azure 经典门户。Contoso 目录和默认目录将显示在 Active Directory 扩展中。

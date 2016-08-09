@@ -61,7 +61,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 
 		GET https://login.microsoftonline.com/common/oauth2/authorize?
 		client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-		&resource=https%3A%2F%2Fgraph.windows.net%2F
+		&resource=https%3A%2F%2Fgraph.chinacloudapi.cn%2F
 		...
 
 
@@ -70,7 +70,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 
 		GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
 		client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-		&scope=https%3A%2F%2Fgraph.windows.net%2Fdirectory.read%20https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
+		&scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.write
 		...
 
 
@@ -92,7 +92,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 
 		GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
 		client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-		&scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
+		&scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.write
 		...
 
 

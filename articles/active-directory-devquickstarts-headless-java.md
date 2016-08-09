@@ -226,7 +226,7 @@ Java
 		            service = Executors.newFixedThreadPool(1);
 		            context = new AuthenticationContext(AUTHORITY, false, service);
 		            Future<AuthenticationResult> future = context.acquireToken(
-		                    "https://graph.windows.net", CLIENT_ID, username, password,
+		                    "https://graph.chinacloudapi.cn", CLIENT_ID, username, password,
 		                    null);
 		            result = future.get();
 		        } finally {

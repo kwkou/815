@@ -55,7 +55,7 @@ v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 
 | `common` | 允许用户使用个人的 Microsoft 帐户和工作/学校帐户从 Azure Active Directory 登录应用程序。 |
 | `organizations` | 仅允许用户使用工作/学校帐户从 Azure Active Directory 登录应用程序。 |
 | `consumers` | 仅允许用户使用个人的 Microsoft 帐户 (MSA) 登录应用程序。 |
-| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` 或 `contoso.onmicrosoft.com` | 仅允许用户使用工作/学校帐户从特定的 Azure Active Directory 租户登录应用程序。可以使用 Azure AD 租户的友好域名或租户的 GUID 标识符。 |
+| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` 或 `contoso.partner.onmschina.cn` | 仅允许用户使用工作/学校帐户从特定的 Azure Active Directory 租户登录应用程序。可以使用 Azure AD 租户的友好域名或租户的 GUID 标识符。 |
 
 有关如何与这些终结点交互的详细信息，请选择以下特定的应用类型。
 

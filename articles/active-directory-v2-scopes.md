@@ -24,7 +24,7 @@
 Azure AD 实施 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/) 授权协议，此方法允许第三方应用程序代表用户访问 Web 托管的资源。任何与 Azure AD 集成的 Web 托管资源都有资源标识符或**应用程序 ID URI**。例如，Microsoft 的某些 Web 托管资源包括：
 
 - Office 365 统一邮件 API：`https://outlook.office.com`
-- Azure AD 图形 API：`https://graph.windows.net`
+- Azure AD 图形 API：`https://graph.chinacloudapi.cn`
 - Microsoft Graph：`https://graph.microsoft.com`
 
 这也适用于已与 Azure AD 集成的任何第三方资源。这些资源还可以定义一组可用于将该资源的功能分区成较小区块的权限。例如，Microsoft Graph 定义了以下几个权限：

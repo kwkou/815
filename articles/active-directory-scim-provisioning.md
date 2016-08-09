@@ -276,7 +276,7 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 ###处理终结点身份验证
 
-来自 Azure Active Directory 的请求包括 OAuth 2.0 持有者令牌。接收请求的任何服务应该代表所需的 Azure Active Directory 租户将颁发者作为 Azure Active Directory 进行身份验证，以访问 Azure Active Directory 的 Graph Web 服务。在令牌中，颁发者由 iss 声明，例如："iss":"https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/" 。在此示例中，声明值的基地址 https://sts.windows.net 将 Azure Active Directory 标识为颁发者，而相对地址段 cbb1a5ac-f33b-45fa-9bf5-f37db0fed422 代表颁发令牌时 Azure Active Directory 租户的唯一标识符。如果颁发的令牌用于访问 Azure Active Directory 的 Graph Web 服务，该服务的标识符 00000002-0000-0000-c000-000000000000 应在令牌的 aud 声明值中。
+来自 Azure Active Directory 的请求包括 OAuth 2.0 持有者令牌。接收请求的任何服务应该代表所需的 Azure Active Directory 租户将颁发者作为 Azure Active Directory 进行身份验证，以访问 Azure Active Directory 的 Graph Web 服务。在令牌中，颁发者由 iss 声明，例如："iss":"https://sts.chinacloudapi.cn/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/" 。在此示例中，声明值的基地址 https://sts.chinacloudapi.cn 将 Azure Active Directory 标识为颁发者，而相对地址段 cbb1a5ac-f33b-45fa-9bf5-f37db0fed422 代表颁发令牌时 Azure Active Directory 租户的唯一标识符。如果颁发的令牌用于访问 Azure Active Directory 的 Graph Web 服务，该服务的标识符 00000002-0000-0000-c000-000000000000 应在令牌的 aud 声明值中。
 
 使用 Microsoft 提供的通用语言基础结构库构建 SCIM 服务的开发人员可以按照以下步骤使用 Microsoft.Owin.Security.ActiveDirectory 包对 Azure Active Directory 的请求进行身份验证：
 

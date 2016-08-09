@@ -132,9 +132,9 @@ Azure AD 只会向已知的应用程序颁发令牌。在从应用程序使用 A
 
 javascript
 
-		    var authority = "https://login.windows.net/common",
+		    var authority = "https://login.chinacloudapi.cn/common",
 		    redirectUri = "http://MyDirectorySearcherApp",
-		    resourceUri = "https://graph.windows.net",
+		    resourceUri = "https://graph.chinacloudapi.cn",
 		    clientId = "a5d92493-ae5a-4a9f-bcbf-9f1d354067d3",
 		    graphApiVersion = "2013-11-08";
 
