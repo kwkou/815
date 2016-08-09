@@ -196,4 +196,6 @@ MONTHLY UPTIME PERCENTAGE |	SERVICE CREDIT
 
 [1.1](/support/sla/storage-en/)Last updated: August 2016
 
+Release notes: Updated SLA for the newly introduced Blob Storage Accounts with the Cool Access Tier.
+
 [1.0](/support/sla/storage-en-v1/)Last updated: March 2016

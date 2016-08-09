@@ -11,8 +11,8 @@
 <tags ms.service="legal" ms.date="03/2016" wacn.date="03/2016" wacn.lang="cn"/>
 
 > [AZURE.LANGUAGE]
-- [中文](/support/sla/storage/)
-- [English](/support/sla/storage-en/)
+- [中文](/support/sla/storage-v1/)
+- [English](/support/sla/storage-en-v1/)
 # 存储的服务级别协议
 
 在至少 99.9% 的时间里成功处理所收到的添加、更新、读取和删除数据请求（前提是格式正确），存储帐户可以连接到我们的互联网网关。
@@ -215,3 +215,12 @@ GRS 和 RA-GRS 帐户的“**异地复制延迟**” 是指将存储帐户主要
 	--------------------|---------
 	<99.95%				|10% 
 	<99%				|25% 
+
+##版本历史记录
+
+
+[1.1](/support/sla/storage/)最后更新日期：2016 年 8 月
+
+发布说明：更新了新推出的带冷访问层的 Blob 存储帐户的服务级别协议。
+
+[1.0](/support/sla/storage-v1/)最后更新日期：2016 年 3 月
