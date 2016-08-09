@@ -16,7 +16,7 @@
 # Azure AD Connect 同步：理解和自定义同步
 Azure Active Directory Connect 同步服务（Azure AD Connect 同步）是 Azure AD Connect 的一个主要组件，负责与本地环境和云中 Azure AD 之间同步标识数据相关的所有操作。Azure AD Connect 同步是 DirSync、Azure AD Sync 和 Forefront Identity Manager 的后继版本，同时配置了 Azure Active Directory 连接器。
 
-本主题是 Azure AD Connect 同步（也称为同步引擎）的主页，其中列出了与其相关的所有其他主题的链接。有关 Azure AD Connect 的链接，请参阅[将本地标识与 Azure Active Directory 集成](active-directory-aadconnect.md)。
+本主题是 Azure AD Connect 同步（也称为同步引擎）的主页，其中列出了与其相关的所有其他主题的链接。有关 Azure AD Connect 的链接，请参阅[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)。
 
 同步服务包括两个组件，本地“Azure AD Connect 同步”组件和 Azure AD 中称为“Azure AD Connect 同步服务”的服务端组件。该服务是 DirSync、Azure AD Sync 和 Azure AD Connect 的常见服务。
 
@@ -30,7 +30,7 @@ Azure Active Directory Connect 同步服务（Azure AD Connect 同步）是 Azur
 [Azure AD Connect 的拓扑](/documentation/articles/active-directory-aadconnect-topologies/) | 介绍同步引擎支持的各种拓扑和方案。
 **自定义配置** |
 [再次运行安装向导](/documentation/articles/active-directory-aadconnectsync-installation-wizard/) | 介绍再次运行 Azure AD Connect 安装向导时可以使用的选项。
-[了解默认配置]/documentation/articles/(active-directory-aadconnectsync-understanding-default-configuration/)| 描述现成的规则和默认配置。此外还描述规则如何一起工作，以供现成的方案使用。
+[了解默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration/)| 描述现成的规则和默认配置。此外还描述规则如何一起工作，以供现成的方案使用。
 [了解用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts/) | 延续前一个主题，并说明用户和联系人的配置如何一起工作（尤其是在多林环境中）。
 [了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions/) | 深入了解配置模型的工作原理和表达式语言的语法。
 [更改默认配置的最佳做法](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration/) | 如果你了解上述主题的详细信息并需要更改现成的配置，以配合方案或要求使用时，可以阅读此主题。

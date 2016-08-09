@@ -118,7 +118,6 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 主题 | |
 | --------- | --------- |
 | 所有 Azure AD Connect 同步文章 | [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/) |
-| 技术概念 | [Azure AD Connect 同步：技术概念](/documentation/articles/active-directory-aadconnect-technical-concepts/) |
 | 了解默认配置 | [Azure AD Connect 同步：了解默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration/) |
 | 了解用户和联系人 | [Azure AD Connect 同步：了解用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts/) |
 | 声明性预配 | [Azure AD Connect Sync：了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions/) |
@@ -133,7 +132,6 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 
 | 主题 | |
 | --------- | --------- |
-| 配置带有子域的 ADFS | [与 Azure AD 联合的多域支持](/documentation/articles/active-directory-aadconnect-multiple-domains) |
 | 管理 AD FS 场 | [使用 Azure AD Connect 管理和自定义 AD FS](/documentation/articles/active-directory-aadconnect-federation-management) |
 | 手动更新联合身份验证证书 | [续订 Office 365 和 Azure AD 的联合身份验证证书](/documentation/articles/active-directory-aadconnect-o365-certs) |
 
@@ -144,7 +142,6 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 版本历史记录 | [版本历史记录](/documentation/articles/active-directory-aadconnect-version-history/) |
 | Azure AD 的非 ADFS 兼容性列表 | [Azure AD 联合身份验证兼容性列表](/documentation/articles/active-directory-aadconnect-federation-compatibility/) |
 | 同步的属性 | [同步的属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/) |
-
 | 常见问题 | [Azure AD Connect 常见问题](/documentation/articles/active-directory-aadconnect-faq/) |
 
 

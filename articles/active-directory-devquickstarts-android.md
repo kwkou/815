@@ -271,7 +271,7 @@ Java
 	
 java
 		
-		     	mContext.acquireTokenSilent(resource, clientid, userId, callback );
+		mContext.acquireTokenSilent(resource, clientid, userId, callback );
 		    
 
 8. **Broker**：Microsoft Intune 的公司门户应用程序将提供代理组件。如果在验证器中创建了一个用户帐户并且开发人员选择不跳过代理帐户，ADAL 将使用代理帐户。开发人员可以使用以下操作跳过代理用户：
