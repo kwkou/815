@@ -53,7 +53,8 @@ Service Fabric Visual Studio 项目模板包含示例代码。该代码演示如
 
 ## 后续步骤
 你添加到上述应用程序用于进行本地诊断的相同跟踪代码将与工具一起工作，在 Azure 群集上运行应用程序时，你可以使用这些工具查看这些事件。请查看以下文章，其中介绍了不同的工具选项，以及如何设置这些选项。
-* [如何使用 Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad-operational-insights/)
+
+* [如何使用 Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad/)
 * [Using ElasticSearch as a Service Fabric application trace store（将 ElasticSearch 用作 Service Fabric 应用程序跟踪存储）](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)
 
 <!---HONumber=Mooncake_0801_2016-->
