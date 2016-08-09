@@ -185,7 +185,7 @@ Azure 备份服务器需要连接到 Azure 备份服务才能成功运行。若�
 - *.Microsoft.com
 - *.WindowsAzure.com
 - *.microsoftonline.com
-- *.windows.net
+- *.chinacloudapi.cn
 
 在 Azure 备份服务器计算机上还原与 Azure 的连接之后，可执行的操作取决于 Azure 订阅状态。上表详细列出了有关计算机在“连接”之后允许的操作的信息。
 
