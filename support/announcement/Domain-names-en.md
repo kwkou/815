@@ -21,7 +21,7 @@
 
 According to the [Administrative Regulations on the Registration of Non-commercial Internet Information Services (ICP)](http://www.miitbeian.gov.cn/state/outPortal/queryMutualityDownloadInfo.action?id=11) issued by the Ministry of Industry and Information Technology of the People’s Republic of China, you are required to do the ICP filing for providing non-commercial ICP service within the PRC.  
 
-Consequently, without ICP filing, the domain names you used on Microsoft Azure operated by 21Vianet could be blocked after **August 18th , 2016**.
+Consequently, without [ICP filing](/icp/), the domain names you used on Microsoft Azure operated by 21Vianet could be blocked after **August 18th , 2016**.
 
 If your website has the above mentioned problem, please contact your web administrator ASAP.
 
