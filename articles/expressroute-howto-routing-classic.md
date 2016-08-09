@@ -9,8 +9,8 @@
    tags="azure-service-management"/>
 <tags
    ms.service="expressroute"
-   ms.date="04/08/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="06/27/2016"
+   wacn.date="08/08/2016"/>
 
 # 使用 PowerShell 创建和修改 ExpressRoute 线路的路由
 
@@ -225,9 +225,8 @@
 
 ## 后续步骤
 
-下一步，[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)。
-
-- 有关工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows/)。
-- 有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings/)。
+接下来，请[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)。
+-  有关工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows/)。
+-  有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings/)。
 
 <!---HONumber=Mooncake_1207_2015-->

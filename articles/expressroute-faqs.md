@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="06/13/2016"
-   wacn.date="07/11/2016"/>
+   wacn.date="08/08/2016"/>
 
 # ExpressRoute 常见问题
 
