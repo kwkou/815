@@ -181,7 +181,7 @@ Stretch Database 筛选器谓词所需的内联表值函数类似于以下示例
 
 如果你想使用在“启用数据库延伸”向导中无法创建的函数，则可以在退出该向导后运行 ALTER TABLE 语句来指定函数。但是，在应用函数之前，你必须停止已在进行的数据迁移并取回已迁移的数据。（有关这样做必要的原因的详细信息，请参阅[替换现有的筛选器函数](#replacePredicate)）。
 
-1. 反向迁移，并取回已迁移的数据。启动此操作后将无法取消此操作。你还会在 Azure 上为出站数据传输（传出）产生费用。有关详细信息，请参阅 [Azure 如何定价](https://azure.microsoft.com/pricing/details/data-transfers/)。
+1. 反向迁移，并取回已迁移的数据。启动此操作后将无法取消此操作。你还会在 Azure 上为出站数据传输（传出）产生费用。有关详细信息，请参阅 [Azure 如何定价](/pricing/details/data-transfers/)。
 
       
         ALTER TABLE <table name>  
@@ -550,7 +550,7 @@ Stretch Database 使用 CROSS APPLY 运算符对表应用筛选器函数并确�
 删除筛选器函数后，表中的所有行都符合迁移条件。因此，稍后不能为同一个表指定筛选器函数，除非你先从 Azure 取回该表的所有远程数据。存在此限制是为了避免这样的情况，即当你提供新的筛选器函数时不符合迁移条件的行已迁移到 Azure。
 
 ## 检查应用于表的筛选器函数
-若要检查应用于表的筛选器函数，请打开目录视图 **sys.remote\_data\_archive\_tables** 并检查 **filter\_predicate** 列的值。如果值为 null，则整个表符合存档条件。有关详细信息，请参阅 [sys.remote\_data\_archive\_tables (Transact-SQL)](https://msdn.microsoft.com/library/dn935003.aspx)。
+若要检查应用于表的筛选器函数，请打开目录视图 **sys.remote\_data\_archive\_tables** 并检查 **filter\_predicate** 列的值。如果值为 null，则整个表符合存档条件。有关详细信息，请参阅 [sys.remote\_data\_archive\_tables (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935003.aspx)。
 
 ## 筛选器函数的安全注意事项  
 具有 db\_owner 特权的盗用帐户可以执行以下操作。
