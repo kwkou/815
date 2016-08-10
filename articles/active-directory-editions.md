@@ -24,7 +24,7 @@ Azure Active Directory 是在云中为员工、合作伙伴和客户提供全面
 Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 功能。
 
 
-> [AZURE.NOTE]有关这些版本的定价选项，请参阅 [Azure Active Directory 定价](/pricing/details/active-directory/)。<br>中国地区目前不支持 Azure Active Directory Premium 和 Azure Active Directory 基本版。有关详细信息，请通过 Azure Active Directory 论坛与我们联系。
+> [AZURE.NOTE]有关这些版本的定价选项，请参阅 [Azure Active Directory 定价](/pricing/details/identity/)。<br>中国地区目前不支持 Azure Active Directory Premium 和 Azure Active Directory 基本版。有关详细信息，请通过 Azure Active Directory 论坛与我们联系。
 
 > [AZURE.NOTE]
 > 许多 Azure Active Directory 功能以“即付即用”版本的形式提供：
