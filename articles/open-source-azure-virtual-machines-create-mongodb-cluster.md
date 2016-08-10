@@ -10,13 +10,13 @@
 
 <tags
 	ms.service="open-source-mongodb"
-	wacn.date="06/20/2016"/>
+	wacn.date="08/10/2016"/>
 
 #在 Azure 虚拟机上快速搭建 MongoDB 集群
 
 [MongoDB](https://www.mongodb.org/) 是目前在 NoSQL 市场上非常受欢迎的一个数据库，本文介绍如何使用 Azure PowerShell 和 Azure CLI 在 Azure 虚拟机上搭建单节点 MongoDB（测试使用）和包含主从复制以及分片集群的多节点 MongoDB（生产环境使用）。
 
->[AZURE.NOTE]说明目前脚本仅支持 CentOS (6.5, 6.6, 6.7, 7.0, 7.1, 7.2)。
+>[AZURE.NOTE]目前脚本仅支持 CentOS (6.5, 6.6, 6.7, 7.0, 7.1, 7.2)。
 
 
 ##准备步骤 
@@ -31,7 +31,7 @@
 
 - 如果你选择 Azure CLI 方式搭建 MongoDB，那么请[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。然后请确保你是处于[资源管理器模式](/documentation/articles/resource-manager-deployment-model/)下，可通过运行以下命令来验证：
 		
-		azure config mode asm
+		azure config mode arm
 
 现在，通过运行以下命令并遵循提示进行 Azure 帐户的交互式登录体验，来使用[工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)： 
  
@@ -39,7 +39,7 @@
 
 然后你需要创建一个 Azure 资源组( Resource Group )，创建 Azure 虚拟机和搭建 MongoDB 都在该资源组中进行，运行以下命令创建 Azure 资源组：  
 
-		zure group create "YOUR-RESOURCE-GROUP-NAME" "China East"
+		azure group create "YOUR-RESOURCE-GROUP-NAME" "China East"
 
 ##开始动手
 
@@ -49,9 +49,9 @@
 >ZabbixServerIPAddress：可选项，指定 Zabbix 服务器地址，安装 MongoDB 过程中会在虚拟机上自动安装 Zabbix agent。      
 
 PowerShell脚本运行注意事项
->[AZURE.WARNING]PowerShell 脚本运行注意事项  
+>[AZURE.WARNING]
 需要以管理员权限运行 PowerShell，使用之前需运行如下命令：  
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted  
+`Set-ExecutionPolicy -ExecutionPolicy Unrestricted  `
 
 ###1.在Azure虚拟机上搭建单节点 MongoDB
 默认情况下，以下脚本将创建1台 CentOS 虚机，构成一个单节点 MongoDB。
@@ -69,7 +69,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
   
 
 **Azure CLI 方式**   
-你需要在安装好 Azure CLI 的机器上，运行如下命令下载 azuredeploy.parameters-mongodb-centos.json 参数配置文件：  
+你需要在安装好 Azure CLI 的机器上，运行如下命令下载 azuredeploy.parameters.json 参数配置文件：  
 
 		wget http://msmirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-single-node/azuredeploy.parameters.json -O azuredeploy.parameters.json
 
@@ -214,7 +214,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 **Azure CLI 方式**  
 
-你需要在安装好 Azure CLI 的机器上，运行如下命令下载 azuredeploy.parameters-mongodb-centos.json 参数配置文件：  
+你需要在安装好 Azure CLI 的机器上，运行如下命令下载 azuredeploy.parameters.json 参数配置文件：  
 
 		wget http://msmirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-centos/azuredeploy.parameters.json -O azuredeploy.parameters.json
   
