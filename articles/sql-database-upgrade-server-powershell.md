@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="06/06/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/10/2016"/>
 
 # 使用 PowerShell 升级到 Azure SQL 数据库 V12
 
@@ -39,12 +39,12 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 
-升级到 V12 之后，[服务层建议](/documentation/articles/sql-database-service-tier-advisor/)和[弹性池建议](/documentation/articles/sql-database-elastic-pool-create-powershell/)将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
+升级到 V12 之后，服务层建议和[弹性池建议](/documentation/articles/sql-database-elastic-pool-create-powershell/)将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
 
 
 ## 准备升级
 
-- **升级所有 Web 和企业数据库**：请参阅下面的[升级所有 Web 和企业数据库](/documentation/articles/sql-database-v12-upgrade/#upgrade-all-web-and-business-databases)部分，或[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell/)。
+- **升级所有 Web 和企业数据库**：请参阅[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell/)。
 - **检查和暂停异地复制**：如果你的 Azure SQL 数据库已针对异地复制进行配置，则你应记录其当前配置并停止异地复制。升级完成后，请重新为异地复制配置数据库。
 - **如果客户端在 Azure VM 上，请打开这些端口**：如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。有关详细信息，请参阅 [SQL 数据库 V12 的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)。
 
