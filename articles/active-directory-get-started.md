@@ -12,7 +12,7 @@
 	ms.date="05/16/2016"
 	wacn.date="06/21/2016"/>
 
-# 如何开始使用 Azure AD
+# 如何使用 Azure AD
 
 ###本主题的其他相关文章
 > [AZURE.SELECTOR]
