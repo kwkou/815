@@ -40,7 +40,7 @@ CNAME 记录将*特定的* DNS 名称（例如 **mail.contoso.com** 或 **www.co
 
 1. 在你的浏览器中，打开 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
-2. 在“Web Apps”边栏选项卡中，单击 Web 应用的名称，选择“配置”，然后从页面底部选择“自定义域和 SSL”。
+2. 在“Web Apps”，单击 Web 应用的名称，选择“仪表板”，然后从页面底部选择“管理域名”。
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
