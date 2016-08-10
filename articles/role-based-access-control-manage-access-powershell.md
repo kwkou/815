@@ -33,7 +33,7 @@ Azure 门户中基于角色的访问控制 (RBAC) 和 Azure 资源管理 API 可
 ### 列出所有可用的角色
 若要列举可以进行分配的 RBAC 角色，并检查其授权访问的操作，请使用：
 
-		Get-AzureRmRoleDefinition
+	Get-AzureRmRoleDefinition
 
 ![RBAC PowerShell - Get-AzureRmRoleDefinition - 屏幕截图](./media/role-based-access-control-manage-access-powershell/1-get-azure-rm-role-definition1.png)
 

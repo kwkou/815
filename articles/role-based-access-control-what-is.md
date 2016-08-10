@@ -47,7 +47,7 @@ Azure 中的其他 RBAC 角色允许对特定的 Azure 资源进行管理。例�
 - 将参与者角色分配给资源组范围内的应用程序。它可以管理该资源组中所有类型的资源，但不能管理订阅中的其他资源组。
 
 ## Azure RBAC 与经典订阅管理员
-经典订阅管理员和共同管理员具有对 Azure 订阅的完全访问权限。他们可以将 [Azure 门户](https://portal.azure.cn)和 Azure Resource Manager API 配合使用或使用 [Azure 经典门户](https://manage.windowsazure.cn) 和 Azure 服务管理 API 来管理资源。在 RBAC 模型中，经典管理员具有订阅范围内的所有者角色。
+经典订阅管理员和共同管理员具有对 Azure 订阅的完全访问权限。他们可以将 [Azure 新门户](https://portal.azure.cn)和 Azure Resource Manager API 配合使用或使用 [Azure 经典门户](https://manage.windowsazure.cn) 和 Azure 服务管理 API 来管理资源。在 RBAC 模型中，经典管理员具有订阅范围内的所有者角色。
 
 仅 Azure 门户和新的 Azure Resource Manager API 支持 Azure RBAC。分配了 RBAC 角色的用户和应用程序不能使用经典管理门户和 Azure 服务管理 API。
 
