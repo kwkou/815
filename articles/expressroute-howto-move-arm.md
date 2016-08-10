@@ -31,7 +31,7 @@
 
 首先需要收集有关 ExpressRoute 线路的信息。
 
-登录到 Azure 经典环境并收集服务密钥。可以使用以下 PowerShell 代码段来收集信息：
+登录到 Azure 经典环境并收集服务密钥。使用以下 PowerShell 代码段来收集信息：
 
 	# Sign in to your Azure account
 	Add-AzureAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
@@ -46,7 +46,7 @@
 	# Get the service keys of all your ExpressRoute circuits
 	Get-AzureDedicatedCircuit
 
-复制你要转移到 Resource Manager 部署模型的线路的**服务密钥**。
+复制要转移到 Resource Manager 部署模型的线路的**服务密钥**。
 
 ### 步骤 2：登录到 Resource Manager 环境并创建新的资源组
 
@@ -65,9 +65,9 @@
 
 ### 步骤 3：将 ExpressRoute 线路转移到 Resource Manager 部署模型
 
-现在，你可以将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型。在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move/)中提供的信息。
+现在可以将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型。在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move/)中提供的信息。
 
-可以运行以下代码段来实现此目的：
+可以运行以下代码段来实现：
 
 	Move-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Location "China East" -ServiceKey "<Service-key>"
 
@@ -113,11 +113,11 @@
     # Update circuit
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-成功完成此操作后，你将无法在经典部署模型中查看线路。
+成功完成此操作后，你无法在经典部署模型中查看线路。
 
 ## 后续步骤
 
-创建你的线路后，请确保执行以下操作：
+创建线路后，请确保执行以下操作：
 
 - [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm/)
 - [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)

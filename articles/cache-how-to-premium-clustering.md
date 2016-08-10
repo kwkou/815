@@ -20,12 +20,12 @@ Azure Redis 缓存高级级别包括群集、暂留和虚拟网络支持。本�
 有关其他高级缓存功能的信息，请参阅[如何配置高级 Azure Redis 缓存的暂留](/documentation/articles/cache-how-to-premium-persistence/)和[如何配置高级 Azure Redis 缓存的虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)。
 
 ## 什么是 Redis 群集？
-Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io/topics/cluster-tutorial)的一样。Redis 群集具有以下优势。
+Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io/topics/cluster-tutorial)的一样。Redis 群集优势如下：
 
--	能够在多个节点中自动拆分数据集。
+-	能够在多个节点自动拆分数据集。
 -	能够在部分节点遇到故障或无法与群集其余部分通信的情况下继续运行。
 -	更大的吞吐量：增加分片数时，吞吐量呈线性增加。
--	更大的内存大小：增加分片数时，内存大小呈线性增加。
+-	更大的内存：增加分片数时，内存大小呈线性增加。
 
 有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
 
@@ -52,15 +52,16 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 群集中最多可以包含 10 个分片，上述脚本将创建“分片计数”为 2（可以是介于 1 和 10 之间的数字）的缓存。
 
-每个分片都是一个由 Azure 管理的主/副缓存对，而缓存的总大小则通过将定价层中选择的缓存大小乘以分片数来计算。
+每个分片都是一个由 Azure 管理的主/副缓存对，而缓存的总大小为定价层中选择的缓存大小与分片数的乘积。
 
-创建缓存后，即可连接到缓存并使用缓存，就像该缓存没有进行群集一样，而 Redis 则会将数据分布到整个缓存分片中。
+缓存创建好后，即可连接到缓存，并像非群集缓存一样使用；Redis将数据分布在整个缓存分片中。
 
 有关在 StackExchange.Redis 客户端中使用群集的示例代码，请参阅 [Hello World](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) 示例的 [clustering.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) 部分。
 
 <a name="move-exceptions"></a>
 
->[AZURE.IMPORTANT] 使用 StackExchange.Redis 连接已启用群集的 Azure Redis 缓存时，你可能会遇到问题并收到 `MOVE` 异常。这是因为 StackExchange.Redis 缓存客户端收集缓存群集中节点信息的间隔时间较短。如果你是第一次连接缓存，并在客户端完成收集此信息前立即调用缓存，便会发生这些异常。在应用程序中解决此问题的最简单方法是连接缓存，然后等待一秒后再对缓存进行任何调用。为此，请按以下示例代码中所示添加 `Thread.Sleep(1000)`。请注意，只会在首次连接到缓存期间发生 `Thread.Sleep(1000)`。有关详细信息，请参阅 [StackExchange.Redis.RedisServerException - MOVED #248](https://github.com/StackExchange/StackExchange.Redis/issues/248)。我们正在开发此问题的修复程序，如有任何更新，将发布在本页面。**更新**：此问题在最新[预发布 1.1.572-alpha](https://www.nuget.org/packages/StackExchange.Redis/1.1.572-alpha) 版的 StackExchange.Redis 中已解决。请查看 [StackExchange.Redis NuGet 页](https://www.nuget.org/packages/StackExchange.Redis/)获取最新版本。
+>[AZURE.IMPORTANT] 使用 StackExchange.Redis 连接已启用群集的 Azure Redis 缓存时，可能会遇到问题，收到 MOVE 异常。这是因为 StackExchange.Redis 缓存客户端收集缓存群集中节点信息的间隔时间较短。如果首次连接缓存，并在客户端完成此信息收集前立即调用，便会发生这些异常。解决此问题的最简单方法是连接缓存，然后等待一秒后再对缓存进行调用。请按以下示例代码中所示添加 
+`Thread.Sleep(1000)`。请注意，只会在首次连接到缓存期间发生 `Thread.Sleep(1000)`。有关详细信息，请参阅  [StackExchange.Redis.RedisServerException - MOVED #248](https://github.com/StackExchange/StackExchange.Redis/issues/248)。此问题的修复程序正在开发中，如有任何更新，将发布在本页面。更新: 此问题已经在最新版本 [预发布 1.1.572-alpha](https://www.nuget.org/packages/StackExchange.Redis/1.1.572-alpha) 中解决。 在 [StackExchange.Redis NuGet 页](https://www.nuget.org/packages/StackExchange.Redis/) 中查看最新版本。
 
 
 	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
@@ -119,18 +120,18 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 ### <a name="how-are-keys-distributed-in-a-cluster"></a> 密钥在群集中是如何分布的？
 
-请参阅 Redis [密钥分布模型](http://redis.io/topics/cluster-spec#keys-distribution-model)文档：密钥空间拆分成 16384 个槽。每个密钥都经过哈希处理并分配到其中一个槽，这些槽分布在群集的节点中。对密钥的哪部分进行哈希处理是可以配置的，这样可确保多个使用哈希标记的密钥位于同一分片。
+请参阅 Redis [密钥分布模型](http://redis.io/topics/cluster-spec#keys-distribution-model)文档：密钥空间拆分成 16384 个槽。每个密钥都经过哈希处理并分配到其中一个槽，这些槽分布在群集的节点中。可自主配置秘钥来进行哈希处理，确保使用哈希标记的秘钥位于同一分片。
 
 -	使用哈希标记的密钥 - 如果将密钥的任意部分括在 `{` 和 `}` 中，则只会对密钥的该部分进行哈希处理，以便确定密钥的哈希槽。例如，以下 3 个密钥将位于同一分片中：`{key}1`、`{key}2` 和 `{key}3`，因为只对名称的 `key` 部分进行了哈希处理。如需密钥哈希标记规范的完整列表，请参阅[密钥哈希标记](http://redis.io/topics/cluster-spec#keys-hash-tags)。
 -	没有哈希标记的密钥 - 使用整个密钥名称进行哈希处理。从统计学意义上来说，这样会导致密钥平均分布到缓存的各个分片中。
 
-为了优化性能和吞吐量，我们建议你让密钥平均分布。如果你使用带哈希标记的密钥，则应用程序会负责确保密钥平均分布。
+为了优化性能和吞吐量，建议平均分布密钥。如果你使用带哈希标记的密钥，则应用程序会负责确保密钥平均分布。
 
 有关详细信息，请参阅[密钥分布模型](http://redis.io/topics/cluster-spec#keys-distribution-model)、[Redis 群集数据分片](http://redis.io/topics/cluster-tutorial#redis-cluster-data-sharding)和[密钥哈希标记](http://redis.io/topics/cluster-spec#keys-hash-tags)。
 
 有关在 StackExchange.Redis 客户端中使用群集和查找同一分片中的密钥的示例代码，请参阅 [Hello World](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) 示例的 [clustering.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) 部分。
 
-### <a name="what-is-the-largest-cache-size-i-can-create"></a> 我可以创建的最大缓存大小是多大？
+### <a name="what-is-the-largest-cache-size-i-can-create"></a> 缓存大小有无限制？最大多少？
 
 高级缓存的最大大小为 53 GB。你可以创建多达 10 个分片，因此最大大小为 530 GB。如果你需要的大小更大，则可请求更多。有关详细信息，请参阅 [Azure Redis 缓存定价](/pricing/details/redis-cache/)。
 
@@ -142,11 +143,11 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 ### <a name="how-do-i-connect-to-my-cache-when-clustering-is-enabled"></a> 启用群集功能后，如何连接到我的缓存？
 
-可以使用连接到未启用群集功能的缓存时使用的相同终结点、端口和密钥连接到你的缓存。Redis 在后端管理群集功能，因此不需要你通过客户端来管理它。
+连接缓存时，使用的终结点、端口和密钥与连接到未启用群集功能的缓存时使用的相同。Redis 在后端管理群集功能，因此不需要你通过客户端来管理它。
 
 ### <a name="can-i-directly-connect-to-the-individual-shards-of-my-cache"></a> 我可以直接连接到缓存的各个分片吗？
 
-尚未正式提供此方面的支持。话虽如此，但每个分片都是由主/副缓存对组成的，该缓存对统称缓存实例。你可以在 GitHub 上通过 Redis 存储库的[不稳定](http://redis.io/download)分支使用 redis-cli 实用程序连接到这些缓存实例。使用 `-c` 开关启动后，此版本可实现基本的支持。有关详细信息，请参阅 [http://redis.io](http://redis.io) 上的 [Redis 群集教程](http://redis.io/topics/cluster-tutorial)中的[操作群集](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)。
+尚未正式提供此方面的支持。但每个分片都是由主/副缓存对组成的，该缓存对统称缓存实例。你可以在 GitHub 上通过 Redis 存储库的[不稳定](http://redis.io/download)分支使用 redis-cli 实用程序连接到这些缓存实例。使用 `-c` 开关启动后，此版本可实现基本的支持。有关详细信息，请参阅 [http://redis.io](http://redis.io) 上的 [Redis 群集教程](http://redis.io/topics/cluster-tutorial)中的[操作群集](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)。
 
 对于非 ssl，请使用以下命令。
 
