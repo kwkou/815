@@ -20,7 +20,7 @@
 - 从另一作为整体解决方案一部分的 Runbook 调用 Runbook。
 - 使用 Runbook 作为教程来学习 Runbook 创作概念。
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
 ## 获取方案
 
