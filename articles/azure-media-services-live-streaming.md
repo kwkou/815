@@ -33,9 +33,7 @@
 
 	在 Azure Media Service 进行直播需要一个本地实时编码器的配合。从 Azure 官方文档可以了解到 Elemental Live、FMLE、Telestream Wirecast、NewTek TriCaster [四种编码器的配置方法](/documentation/articles/media-services-live-encoders-overview/)。
 
-	本例中使用 Telestream Wirecast 7.0.1 软件。 Wirecast 是一款知名的 RTMP 编码器，可实现直播流媒体的捕捉、实时制作和编码，以进行广播。我们将从 USB 摄像头采集的影像发送至 Azure 媒体服务并进行实时直播。
-
-    下载地址：http://www.telestream.net/wirecast/overview.htm
+	本例中使用 Telestream Wirecast 7.0.1 软件。 Wirecast 是一款知名的 RTMP 编码器，可实现直播流媒体的捕捉、实时制作和编码，以进行广播。我们将从 USB 摄像头采集的影像发送至 Azure 媒体服务并进行实时直播。[下载 Telestream Wirecast 7.0.1](http://www.telestream.net/wirecast/overview.htm)
 
 ##Step 2：使用 Azure 媒体服务进行在线直播
 
@@ -130,7 +128,7 @@
 
 	![24](./media/azure-media-services-live-streaming/24.png)
 
-	（Azure Media Player 地址：http://ampdemo.azureedge.net/azuremediaplayer.html）
+	[下载 Azure Media Player](http://ampdemo.azureedge.net/azuremediaplayer.html)
 
 如果不是很快进行直播，可以参照下面 Step 3 先关闭直播频道及流式处理端点，以避免不必要的花费。直播开始前半小时前再开启。
 
