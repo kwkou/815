@@ -122,7 +122,6 @@ Azure SQL 数据库可提供大量业务连续性解决方案。业务连续性�
 
 - 若要了解有关 Azure SQL 数据库自动备份的信息，请参阅 [SQL Database automated backups（SQL 数据库自动备份）](/documentation/articles/sql-database-automated-backups)
 - 若要了解如何使用 Azure SQL 数据库自动备份进行数据库的时间点还原，请参阅 [Point-in-time restore（时间点还原）](/documentation/articles/sql-database-point-in-time-restore)
-- 若要了解如何使用 Azure SQL 数据库自动备份来还原已删除的数据库，请参阅 [Restore deleted database（还原已删除的数据库）](/documentation/articles/sql-database-restore-deleted-database)
 - 若要了解如何使用 Azure SQL 数据库自动备份进行数据库的异地还原，请参阅 [Geo-Restore（异地还原）](/documentation/articles/sql-database-geo-restore)
 - 若要了解如何使用配置和使用活动异地复制来实现业务连续性，请参阅 [Active Geo-Replication（活动异地复制）](/documentation/articles/sql-database-geo-replication-overview)
 

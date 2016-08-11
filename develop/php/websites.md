@@ -18,8 +18,6 @@
 <h3>指南：<a href="/documentation/articles/fundamentals-application-models/#WebSites">什么是 Azure 网站？</a></h3>
 <p>Azure 为运行的应用程序提供三种计算模型：Azure 网站、Azure 虚拟机和 Azure 云服务。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。</p>
 <h2 id="header-1">创建</h2>
-<h3>功能指南：<a href="/documentation/articles/web-sites-php-create-web-sites/">创建 PHP 网站</a></h3>
-<p>了解如何使用 Azure 门户、用于 Mac 和 Linux 的 Azure 命令行工具或 Azure PowerShell cmdlet 在 Azure 网站中创建 PHP 网站。</p>
 <h3>教程：<a href="/documentation/articles/web-sites-php-mysql-deploy-use-git/">带 MySQL 的 PHP 网站（使用 Git）</a></h3>
 <p>实现允许发送和检索存储在 MySQL 数据库中的注册信息的简单网站。使用所选的文本编辑器，然后使用 Git 上载应用程序。</p>
 <h3>教程：<a href="/documentation/articles/web-sites-php-sql-database-deploy-use-git/">带 SQL 数据库 的 PHP 网站（使用 Git）</a></h3>
@@ -29,8 +27,6 @@
 <p>了解如何通过市场创建新网站并立即部署该网站。只需不到 5 分钟的时间，你即可启动并运行新的 WordPress 网站。</p>
 <h3>教程：<a href="/documentation/articles/web-sites-php-mysql-use-webmatrix/">带 MySQL 的 PHP 网站（使用 WebMatrix）</a></h3>
 <p>实现允许检索和创建存储在 MySQL 数据库中的待办事项的简单网站。使用 WebMatrix IDE 构建和部署应用程序。</p>-->
-<h3>教程：<a href="/documentation/articles/web-sites-php-sql-database-use-webmatrix/">带 SQL 数据库 的 PHP 网站（使用 WebMatrix）</a></h3>
-<p>实现允许检索和创建存储在 Azure SQL 数据库实例中的待办事项的简单网站。使用 WebMatrix IDE 构建和部署应用程序。</p>
 
 <h3>教程：<a href="/documentation/articles/web-sites-php-mysql-deploy-use-ftp/">带 MySQL 的 PHP 网站（使用 FTP）</a></h3>
 <p>实现允许检索和创建存储在 MySQL 数据库中的待办事项的简单网站。使用所选的文本编辑器，然后使用 FTP 上载应用程序。</p>

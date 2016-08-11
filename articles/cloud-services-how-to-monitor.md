@@ -41,7 +41,7 @@
 - 创建用于存储监视数据的存储帐户。你可以对不同的角色使用不同的存储帐户。
 
 
-- 为你的云服务角色启用 Azure 诊断。请参阅[为云服务配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx#BK_EnableBefore)。
+- 为你的云服务角色启用 Azure 诊断。请参阅为云服务配置诊断。
 
 确保“角色”配置中存在诊断连接字符串。只有在先启用 Azure Diagnostics 并在“角色”配置中包含了诊断连接字符串之后，才能启用详细监视。
 

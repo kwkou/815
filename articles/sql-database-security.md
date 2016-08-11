@@ -69,7 +69,6 @@
 * 精细[权限](https://msdn.microsoft.com/zh-cn/library/ms191291)可让你控制可以对数据库中单个列、表、视图、过程和其他对象执行的操作。
 * [模拟](https://msdn.microsoft.com/zh-cn/library/vstudio/bb669087)和[模块签名](https://msdn.microsoft.com/zh-cn/library/bb669102)可用于安全地暂时提升权限。
 * [行级安全性](https://msdn.microsoft.com/zh-cn/library/dn765131)可用于限制用户可访问的行。
-* [数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started/)可用于限制敏感数据的公开。
 * [存储过程](https://msdn.microsoft.com/zh-cn/library/ms190782)可用于限制可对数据库执行的操作。
 
 从 Azure 经典管理门户或使用 Azure 资源管理器 API 管理数据库和逻辑服务器的操作将会根据你的门户用户帐户的角色分配进行控制。有关此主题的详细信息，请参阅 [Azure 经典管理门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
@@ -77,7 +76,7 @@
 
 ## 加密
 
-Azure SQL 数据库将会帮助你通过使用[透明数据加密](http://go.microsoft.com/fwlink/?LinkId=526242)来加密处于“静止”状态或存储在数据库文件的数据，从而保护你的数据。若要加密你的数据库，请以数据库所有者身份连接，然后执行：
+Azure SQL 数据库将会帮助你通过使用[透明数据加密](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx)来加密处于“静止”状态或存储在数据库文件的数据，从而保护你的数据。若要加密你的数据库，请以数据库所有者身份连接，然后执行：
 
 
 	ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
@@ -93,8 +92,7 @@ Azure SQL 数据库将会帮助你通过使用[透明数据加密](http://go.mic
 
 审核和跟踪数据库事件可帮助你保持合规性，以及识别可疑活动。SQL 数据库审核可让你将数据库中的事件记录到 Azure 存储帐户中的审核日志。SQL 数据库审核还与 Microsoft Power BI 集成，以帮助向下钻取报告和分析数据。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started/)。
 
-SQL 数据库威胁检测除审核之外，还提供额外的安全层。通过提供对异常活动的安全警报，它使你可以在威胁发生时就对其作出响应。有关详细信息，请参阅 [SQL 数据库威胁检测入门](/documentation/articles/sql-database-threat-detection-get-started/)。
-
+SQL 数据库威胁检测除审核之外，还提供额外的安全层。通过提供对异常活动的安全警报，它使你可以在威胁发生时就对其作出响应。
 ## 合规性
 
 除了上述可帮助应用程序符合各项安全法规要求的特性和功能以外，Azure SQL 数据库还定期参与审核，并已通过许多法规标准的认证。有关详细信息，请参阅 [Azure 信任中心](https://www.trustcenter.cn/)，你可以在其中找到 [SQL 数据库法规认证](https://www.trustcenter.cn/zh-cn/compliance/default.html)的最新列表。
