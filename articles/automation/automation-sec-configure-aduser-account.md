@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="05/10/2016"
-   wacn.date="08/01/2016" />
+   wacn.date="08/11/2016" />
 
 # 使用 Azure 服务管理对 Runbook 进行身份验证
 

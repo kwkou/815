@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	wacn.date="08/11/2016"/>
 
 # 学习 Windows PowerShell 工作流
 
