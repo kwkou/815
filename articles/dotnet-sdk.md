@@ -80,8 +80,8 @@ Azure 模拟器模拟云服务环境，这样您就可以先在本地计算机�
 
 这使您可以使用 Azure 资源，主要是云服务和虚拟机：
 
-* [创建、打开和发布云服务项目](/documentation/archive/cloud-services-dotnet-get-started/)。
-* [在创建新的 Web 项目时创建 Azure 虚拟机](/documentation/archive/virtual-machines-windows-classic-web-app-visual-studio/)。
+* [创建、打开和发布云服务项目](/documentation/articles/cloud-services-dotnet-get-started/)。
+* [在创建新的 Web 项目时创建 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio/)。
 
 ###<a id="wte"></a>Microsoft App Service Tools for Visual Studio
 
