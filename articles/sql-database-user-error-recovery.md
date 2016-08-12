@@ -68,6 +68,5 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 - [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
 - [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
 - [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq/)
 
 <!---HONumber=Mooncake_0718_2016-->
