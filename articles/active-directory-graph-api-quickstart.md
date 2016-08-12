@@ -7,7 +7,8 @@
    manager="msmbaldwin"
    editor=""
    tags=""/>
-   <tags
+
+<tags
       ms.service="active-directory"
       ms.date="03/28/2016"
       wacn.date="07/04/2016"/>

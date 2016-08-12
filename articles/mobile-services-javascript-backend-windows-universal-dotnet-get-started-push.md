@@ -66,15 +66,15 @@
 <br/>了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
 
 + [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/)
-<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
+	<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
 + [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notification/)
-<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
+	<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
 
 	通过以下主题了解有关移动服务和通知中心的详细信息：
 
 * [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-push-notification-fixer/)
-<br/>了解如何排查推送通知问题。
+	<br/>了解如何排查推送通知问题。
 
 * [身份验证入门]
   <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。

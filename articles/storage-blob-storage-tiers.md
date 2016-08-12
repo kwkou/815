@@ -118,9 +118,7 @@ Blob 存储帐户使用基于存储层的 Blob 存储的新定价模型。使用
 - **出站数据传输成本**：出站数据传输（传出 Azure 区域的数据）会按每 GB 产生带宽使用费，与通用存储帐户一致。
 - **更改存储层**：将存储层从“冷”更改为“热”将会产生费用，此费用等于读取每个转换的存储帐户中存在的所有数据的费用。另一方面，将存储层从“热”更改为“冷”则免费。
 
-
 > [AZURE.NOTE] 为了使用户能够试用新的存储层并在上市后验证功能，在 2016 年 6 月 30 日之前，将免收将存储层从“冷”更改为“热”的费用。从 2016 年 7 月 1 日 开始，将对所有从“冷”到“热”的转换收取费用。有关 Blob 存储帐户的定价模型的详细信息，请参阅 [Azure 存储空间定价](/pricing/details/storage/)页。有关出站数据传输费用的详细信息，请参阅[数据传输定价详细信息](/pricing/details/data-transfer/)页。
-
 
 ## 快速启动
 
@@ -337,7 +335,7 @@ AzCopy 是一个 Windows 命令行实用程序，旨在实现高性能地将数�
 
 [通过启用 Azure 存储空间度量值来评估当前存储帐户的使用情况](/documentation/articles/storage-enable-and-view-metrics/)
 
-[按区域检查 Blob 存储定价](/home/features/storage/pricing/)
+[按区域检查 Blob 存储定价](/pricing/details/storage/)
 
 [检查数据传输定价](/pricing/details/data-transfer/)
 

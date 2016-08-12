@@ -131,4 +131,4 @@ RFC 6750 规范为在响应中使用 WWW-Authenticate 标头和持有者方案�
 | 403 | insufficient\_scope | 访问令牌不包含访问资源所需的模拟权限。 | 将新的授权请求发送到授权终结点。如果响应包含 scope 参数，则在对资源的请求中使用 scope 值。 |
 | 403 | insufficient\_access | 令牌的使用者没有访问该资源所需的权限。 | 提示用户使用其他帐户或请求对指定资源的权限。 |
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

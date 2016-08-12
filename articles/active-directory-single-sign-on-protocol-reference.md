@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.date="06/23/2016"
+	wacn.date="08/02/2016"/>
 
 # 单一登录 SAML 协议
 
@@ -192,7 +192,7 @@ Azure AD 还为 `Assertion` 元素签名，但这两个 Signature 元素各自�
 		    <samlp:StatusMessage>AADSTS75006: An error occurred while processing a SAML2 Authentication request. AADSTS90011: The SAML authentication request property 'NameIdentifierPolicy/SPNameQualifier' is not supported.
 		Trace ID: 66febed4-e737-49ff-ac23-464ba090d57c
 		Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
-  </samlp:Status>
+		</samlp:Status>
 
 
 ### Assertion
@@ -297,4 +297,4 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 		</AuthnStatement>
 
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0725_2016-->

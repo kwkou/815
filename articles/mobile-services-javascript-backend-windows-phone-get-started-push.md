@@ -146,7 +146,7 @@
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
 * [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-push-notification-fixer/)
-  <br/>了解如何排查推送通知问题。
+	<br/>了解如何排查推送通知问题。
 
 * [身份验证入门]
   <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。

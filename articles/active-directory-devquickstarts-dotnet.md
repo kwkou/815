@@ -29,9 +29,9 @@
 
 若要生成完整的工作应用程序，你需要：
 
-2. 将应用程序注册到 Azure AD。
-3. 安装并配置 ADAL。
-5. 使用 ADAL 从 Azure AD 获取令牌。
+1. 将应用程序注册到 Azure AD。
+2. 安装并配置 ADAL。
+3. 使用 ADAL 从 Azure AD 获取令牌。
 
 若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/NativeClient-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-DotNet/archive/complete.zip)。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
@@ -67,6 +67,7 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，它只
 -	在 `DirectorySearcher` 项目中，打开 `MainWindow.xaml.cs` 并找到 `MainWindow()` 方法。第一步是初始化应用程序的 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标，并告诉 ADAL 如何缓存令牌。
 
 C#
+
 		public MainWindow()
 		{
 		    InitializeComponent();
@@ -129,6 +130,7 @@ C#
 - 但是，如果用户未单击“注销”按钮，则你需要保留用户下次运行 DirectorySearcher 时的会话。当应用程序启动时，你可以检查现有令牌的 ADAL 令牌缓存，并相应地更新 UI。在 `CheckForCachedToken()` 方法中，再次调用 `AcquireTokenAsync(...)`，不过，这一次请传入 `PromptBehavior.Never` 参数。`PromptBehavior.Never` 将告知 ADAL 不应提示用户登录；如果 ADAL 无法返回令牌，则应引发异常。
 
 C#
+
 		public async void CheckForCachedToken() 
 		{
 		    // As the application starts, try to get an access token without prompting the user.  If one exists, show the user as signed in.
