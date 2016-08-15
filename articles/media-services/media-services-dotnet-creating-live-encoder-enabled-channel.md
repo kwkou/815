@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako,anilmur" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="05/05/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/15/2016"/>
 
 
 #如何使用 Azure 媒体服务执行实时流式处理以通过 .NET 创建多比特率流
@@ -27,7 +27,7 @@
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。
 
-有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
+有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务实时传送视频流以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 
 ##常见的实时流方案
@@ -85,7 +85,7 @@
 
 以下是完成本教程所需具备的条件。
 
-- 若要完成本教程，你需要一个 Azure 帐户。 
+- 若要完成本教程，你需要一个 Azure 帐户。
 	
 	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure Web 应用中的 Web Apps 功能。
 - 一个媒体服务 帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
@@ -509,11 +509,4 @@
 	    }
 	}	
 
-
-
-
-### 想要寻找其他内容吗？
-
-如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

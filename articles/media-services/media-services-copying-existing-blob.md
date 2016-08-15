@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="03/14/2016" 
-	wacn.date="04/05/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/15/2016"/>
 
 #将现有 Blob 复制到媒体服务资产中
 
@@ -31,7 +31,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 
 在本部分中，你将创建和设置一个 C# 控制台应用程序项目。
 
-1. 使用 Visual Studio 创建包含 C# 控制台应用程序项目的新解决方案。 
+1. 使用 Visual Studio 创建包含 C# 控制台应用程序项目的新解决方案。
 2. 为“名称”输入 CopyExistingBlobsIntoAsset，然后单击“确定”。
 1. 使用 Nuget 添加对媒体服务相关 DLL 的引用。在 Visual Studio 主菜单中，选择“工具”->“库程序包管理器”->“程序包管理器控制台”。在控制台窗口中，键入 Install-Package windowsazure.mediaservices，然后按 Enter。
 1. 添加此项目所需的其他引用：System.Configuration。
@@ -68,7 +68,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 
 下面的代码示例执行以下任务：
 
-1. 创建 CloudMediaContext 实例。 
+1. 创建 CloudMediaContext 实例。
 1. 创建 CloudStorageAccount 实例：\_sourceStorageAccount 和\_destinationStorageAccount。
 1. 将本地目录中的平滑流文件上载到位于 \_sourceStorageAccount 中的 Blob 容器内。
 1. 创建一个新资产。为此资产创建的 Blob 容器位于 \_destinationStorageAccount 中。
@@ -77,7 +77,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 	>[AZURE.NOTE]如果定位符已过期，复制操作不会引发异常。
 
 1. 由于在本示例中我们要复制平滑流文件，因此示例演示了如何将 .ism 文件设置为主文件。例如，如果我们复制了一个 .mp4 文件，则该 mp4 文件将设置为主文件。
-1. 为与此资产关联的 OnDemandOrigin 定位符创建平滑流 URL。 
+1. 为与此资产关联的 OnDemandOrigin 定位符创建平滑流 URL。
 			
 		class Program
 		{
@@ -318,5 +318,4 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 
  
 
-
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
- 	ms.date="04/18/2016"   
-	wacn.date="07/01/2016"/>
+	ms.date="06/22/2016"  
+	wacn.date="08/15/2016"/>
 
 
 # 使用媒体服务 REST API 连接到媒体服务帐户
@@ -125,5 +125,4 @@
 
 
 
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0808_2016-->

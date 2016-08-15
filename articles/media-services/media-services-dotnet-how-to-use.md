@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"  
-	wacn.date="06/20/2016"/>
+ 	ms.date="07/12/2016"  
+	wacn.date="08/15/2016"/>
 
 #使用 .NET 进行媒体服务开发
 
@@ -41,16 +41,16 @@
 
 2. 生成解决方案。
 
-2. 使用 “NuGet” 安装和添加 “Azure 媒体服务 .NET SDK 扩展”。安装此包也会安装“媒体服务 .NET SDK” 并添加所有其他必需的依赖项。
+2. 使用 **NuGet** 安装和添加 **Azure 媒体服务 .NET SDK 扩展**。安装此包也会安装**媒体服务 .NET SDK** 并添加所有其他必需的依赖项。
 1. 确保已安装最新版本的 NuGet。有关详细信息和安装说明，请参阅 [NuGet](http://nuget.codeplex.com/)。
 
 2. 在“解决方案资源管理器”中，右键单击项目名称，然后选择“管理 NuGet 包”。
 
 此时将显示“管理 NuGet 包”对话框。
 
-	3. 在“联机”库中，搜索 Azure MediaServices Extensions，选择“Azure Media Services .NET SDK Extensions”，然后单击“安装”按钮。
- 
-		此时将修改项目并添加对 Media Services .NET SDK Extensions、Media Services .NET SDK 和其他依赖程序集的引用。
+3. 在“联机”库中，搜索 Azure 媒体服务 扩展，选择“Azure 媒体服务.NET SDK 扩展”，然后单击“安装”按钮。
+
+此时将修改项目并添加对适用于 .NET 的媒体服务 SDK 扩展、适用于 .NET 的媒体服务 SDK 和其他依赖程序集的引用。
 
 4. 若要升级更干净的开发环境，请考虑启用 NuGet 包还原。有关详细信息，请参阅 [NuGet 包还原](http://docs.nuget.org/consume/package-restore)。
 
@@ -68,15 +68,15 @@
 
 4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。
 
-若要获取“帐户名”和“帐户密钥”信息，请打开“Azure 经典管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
+若要获取**帐户名**和**帐户密钥**信息，请打开“Azure 经典管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
 
-	<configuration> 
-		... 
-		<appSettings> 
-			<add key="MediaServicesAccountName" value="Media-Services-Account-Name" /> 
-			<add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /> 
-		</appSettings>
+	<configuration>
+	...
+	  <appSettings>
+	    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+	    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+	  </appSettings>
 	  
 	</configuration>
 
@@ -94,7 +94,4 @@
 
 现在，你可以开始开发媒体服务应用程序了。
 
-
-
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/19/2016"    
-	wacn.date="07/11/2016"/>
+	ms.date="06/22/2016"   
+	wacn.date="08/15/2016"/>
 
 
 #使用媒体编码器标准版进行高级编码
 
 ##概述
 
-本主题演示如何使用媒体编码器标准版执行高级编码任务。本主题说明[如何使用 .NET 创建一个编码任务，以及用于执行此任务的作业](/documentation/articles/media-services-advanced-encoding-with-mes/#encoding_with_dotnet)。此外，还说明如何向编码任务提供自定义预设。有关预设所用元素的说明，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
+本主题演示如何使用媒体编码器标准版执行高级编码任务。本主题演示[如何使用 .NET 创建编码任务和执行此任务的作业](/documentation/articles/media-services-advanced-encoding-with-mes/#encoding_with_dotnet)。此外，还说明如何向编码任务提供自定义预设。有关预设所用元素的说明，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
 
 下面演示了执行以下编码任务的自定义预设：
 
@@ -28,6 +28,8 @@
 - [禁用自动取消隔行扫描](/documentation/articles/media-services-advanced-encoding-with-mes/#deinterlacing)
 - [仅音频预设](/documentation/articles/media-services-advanced-encoding-with-mes/#audio_only)
 - [连接两个或更多个视频文件](/documentation/articles/media-services-advanced-encoding-with-mes/#concatenate)
+- [使用媒体编码器标准版裁剪视频](/documentation/articles/media-services-advanced-encoding-with-mes/#crop)
+
 
 ##<a id="encoding_with_dotnet"></a>使用媒体服务 .NET SDK 进行编码
 
@@ -37,9 +39,9 @@
 - 获取对媒体编码器标准版编码器的引用。
 - 加载自定义 XML 或 JSON 预设。可以在某个文件中保存 XML 或 JSON（例如 [XML](/documentation/articles/media-services-advanced-encoding-with-mes/#xml) 或 [JSON](/documentation/articles/media-services-advanced-encoding-with-mes/#json)），然后使用以下代码加载该文件。
 
-			// Load the XML (or JSON) from the local file.
-		    string configuration = File.ReadAllText(fileName);  
-- 将编码任务添加到作业。 
+		// Load the XML (or JSON) from the local file.
+	    string configuration = File.ReadAllText(fileName);  
+- 将编码任务添加到作业。
 - 指定要编码的输入资产。
 - 创建将包含所编码资产的输出资产。
 - 添加事件处理程序以检查作业进度。
@@ -853,7 +855,7 @@
 	</Preset>
 
 
-##<a id="silent_audio"></a>在输入不包含音频时插入静音音轨
+##<a id="silent_audio"></a>在输入不包含音频时插入静音曲目
 
 默认情况下，如果你要向编码器发送仅包含视频而不包含音频的输入，输出资产将包含仅有视频数据的文件。某些播放器可能无法处理此类输出流。对于这种方案，你可以使用此设置来强制编码器将静音曲目添加到输出。
 
@@ -976,7 +978,7 @@
 - 代码片段和 JSON 预设显示连接两个视频文件的示例。你可以将其扩展至两个以上的视频，方法是：
 
 	1. 重复调用 task. InputAssets.Add() 以便依次添加更多视频。
-	2. 通过按相同顺序添加更多条目，对 JSON 中的“Sources”元素进行相应编辑。 
+	2. 通过按相同顺序添加更多条目，对 JSON 中的“Sources”元素进行相应编辑。
 
 
 ###.NET 代码
@@ -1068,11 +1070,13 @@
 	    }
 	  ]
 	}
-	
 
+##<a id="crop"></a>使用媒体编码器标准版裁剪视频
+
+请参阅主题[《Crop videos with Media Encoder Standard》](/documentation/articles/media-services-crop-video/)（使用媒体编码器标准版裁剪视频）。
 
 ##另请参阅 
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->
