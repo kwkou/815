@@ -24,7 +24,7 @@
 - [设置邮件通知](#settingmailnotification)
 - [自定义监控项](#customizemonitoringitems)
 
-## 介绍
+##<a id="introduction"></a> 介绍
 
 Zabbix 是一个的企业级的开源监控解决方案，它支持从服务器、虚拟机和网络设备大规模采集数据并进行实时监控。
 Zabbix 由2部分构成，zabbix server 与可选组件 zabbix agent。
@@ -36,7 +36,7 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
 我们将会在一台虚拟机上安装 zabbix server 软件包作为 zabbix server，在被监控的虚拟机上安装 zabbix 客户端软件包。
 
 
-## 安装 zabbix server
+##<a id="install-zabbix-server"></a> 安装 zabbix server
 
 如果您还没有 Azure 下的 LINUX 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 创建 LINUX 虚拟机。
 
@@ -192,7 +192,7 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
 
 
 
-## 安装 zabbix agent
+##<a id="install-zabbix-agent"></a> 安装 zabbix agent
 
 连接到您的 LINUX 虚拟机。如果这是您第一次使用 Azure 的 LINUX 虚拟机，请参考
  [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 连接到虚拟机。
@@ -368,7 +368,7 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
 
 
 
-## 监控虚拟机
+##<a id="Monitor-virtual-machines"></a> 监控虚拟机
 
 1.	打开网址 *http://zabbix server ip:/zabbix* , 输入 admin/zabbix, 点击 ‘Configuration’ -- > ‘Hosts’ -- > ‘Create host’
     

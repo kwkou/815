@@ -12,7 +12,7 @@
 	ms.date=""
 	wacn.date="06/14/2016"/>
  
-#使用Zabbix监控Nginx
+#使用 Zabbix 监控 Nginx
 
 1.	Nginx server 必须安装 zabbix agent 软件包，以及打开10050,10051和它的服务端口，比如80. 然后启动 zabbix agent 进程，添加到监控列表。
 
