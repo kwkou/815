@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="02/18/2016" 
-	wacn.date="04/05/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/15/2016"/>
 
 #保护内容概述
 
@@ -28,27 +28,41 @@
 
 >[AZURE.NOTE]若要使用动态加密，首先必须获取你想要从中流式传输加密内容的流式处理终结点的至少一个流式处理保留单元。
 
-##概念
-
-###资产加密选项
+##资产加密选项
 
 根据你要上载、存储和传递的内容的不同类型，媒体服务提供了多个加密选项供你选择。
 
-**无**：不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。
+###无 
+
+不使用加密。这是默认值。使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。
 
 如果计划使用渐进式下载交付 MP4，则使用此选项上载内容。
 
-**StorageEncrypted** - 使用此选项可以通过 AES 256 位加密在本地加密明文内容，然后将其上载到 Azure 存储空间中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上载为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
+###StorageEncrypted 
+
+使用 **StorageEncrypted** 通过 AES 256 位加密算法在本地加密明文内容，然后将其上传到 Azure 存储空间中，并以加密形式静态存储。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上载为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
 
 若要传送存储加密资产，必须配置资产的传送策略，以使媒体服务了解要如何传送你的内容。在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传传送策略（例如 AES、通用加密或无加密）流式传输你的内容。
 
-**CommonEncryptionProtected** - 如果要采用“通用加密”加密内容（或上载已加密的内容），请使用此选项。PlayReady 和 Widewine 都是按通用加密 (CENC) 规范加密的，且都受 AMS 支持。
+####实现详细信息
 
-**EnvelopeEncryptionProtected** - 如果要保护（或上载已加密的）采用高级加密标准 (AES) 加密的 HTTP 实时流 (HLS)，请使用此选项。请注意，如果上载已采用 AES 加密的 HLS，则该 HLS 必须已经由 Transform Manager 加密。
+AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CTR 模式是一分组加密，无需填充便可对任意长度的数据进行加密。它采用 AES 算法加密计数器分组，然后使用要加密或解密的数据对 AES 的输出执行异或运算。通过将 InitializationVector 的值复制到计数器值的 0 到 7 字节来构造所用的计数器分组，而计数器值的 8 到 15 字节设置为零。在长度为 16 字节的计数器分组中，8 到 15 字节（即，最少有效字节）用作简单的 64 位无符号整数，对于所处理数据的每个后续分组，该整数都会递增 1 并保留网络字节顺序。请注意，如果此整数达到最大值 (0xFFFFFFFFFFFFFFFF)，则递增会将分组计数器重置为零（8 到 15 字节），且不会影响其他 64 位计数器（即 0 到 7 字节）。为了维护 AES-CTR 模式加密的安全性，指定 KID 的 InitializationVector 值对每个文件必须是唯一的，且文件长度应小于 2^64 个块。这是为了确保计数器值永远不会重复用于给定密钥。有关 CTR 模式的详细信息，请参阅[此 wiki 页](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CTR)（此 wiki 文章使用术语“Nonce”取代“InitializationVector”）。
+
+如果想要了解基本算法的原理，请查看以下方法的 AMS .NET 实现：
+
+- [ApplyEncryptionTransform](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.BlobTransfer/BlobTransferBase.cs)
+- [AesCtr](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/FileEncryptionTransform.cs)
 
 
+###CommonEncryptionProtected 
 
-###动态加密
+如果要采用“通用加密”加密内容（或上载已加密的内容），请使用 **CommonEncryptionProtected** 选项。PlayReady 和 Widewine 都是按通用加密 (CENC) 规范加密的，且都受 AMS 支持。
+
+###EnvelopeEncryptionProtected
+
+如果要保护（或上载已加密的）采用高级加密标准 (AES) 加密的 HTTP Live Streaming (HLS)，请使用 **EnvelopeEncryptionProtected** 选项。请注意，如果上载已采用 AES 加密的 HLS，则该 HLS 必须已经由 Transform Manager 加密。
+
+##动态加密
 
 借助 Azure 媒体服务，你可以传送使用高级加密标准（AES，使用 128 位加密密钥）以及 PlayReady 和/或 Widevine DRM 动态加密的内容。
 
@@ -62,11 +76,13 @@
 
 >[AZURE.NOTE]若要利用动态加密，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
-###许可证和密钥传送服务
+##许可证和密钥传送服务
 
 媒体服务提供用于向已授权客户端传送 DRM（PlayReady 和 Widevine）许可证和 AES 明文密钥的服务。你可以使用 Azure 经典管理门户、REST API 或适用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
 
 请注意，如果使用门户，则你可以配置一个 AES 策略（将应用到所有 AES 加密内容）和一个 PlayReady 策略（将应用到所有 PlayReady 加密内容）。如果你想要以更大的力度控制配置，请使用适用于 .NET 的媒体服务 SDK。
+
+##DRM 许可证 
 
 ###PlayReady 许可证 
 
@@ -80,12 +96,11 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 
 从媒体服务 .NET SDK 版本 3.5.2 开始，媒体服务允许你配置 [Widevine 许可证模板](/documentation/articles/media-services-widevine-license-template-overview/)并获取 Widevine 许可证。你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
 
-###令牌限制
+##令牌限制
 
 内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用简单 Web 令牌 (SWT) 格式和 JSON Web 令牌 (JWT) 格式的令牌。媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名。如果令牌有效，而且令牌中的声明与为密钥（或许可证）配置的声明相匹配，则媒体服务密钥传送服务会将请求的密钥（或许可证）返回到客户端。
 
 在配置令牌限制策略时，必须指定主验证密钥、颁发者和受众参数。主验证密钥包含用来为令牌签名的密钥，颁发者是颁发令牌的安全令牌服务。受众（有时称为范围）描述该令牌的意图，或者令牌授权访问的资源。媒体服务密钥交付服务将验证令牌中的这些值是否与模板中的值匹配。
-
 
 ##常见方案
 
@@ -100,6 +115,9 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 1. 通过创建 OnDemand 定位符来发布资产。
 1. 流式传输已发布的内容。
 
+有关详细信息，请参阅：[《Protect with AES》](/documentation/articles/media-services-protect-with-aes128/)（使用 AES 进行保护）和[《Protect with PlayReady and/or Widevine》](/documentation/articles/media-services-protect-with-drm/)（使用 PlayReady 和/或 Widevine 进行保护）。
+
+
 ###结合你自己的加密和流式处理服务使用 Media Service 密钥和许可证交付服务
 
 有关详细信息，请参阅[如何将 Azure PlayReady 许可证服务与你自己的加密程序/流式处理服务器集成](http://mingfeiy.com/integrate-azure-playready-license-service-encryptorstreaming-server)。
@@ -109,7 +127,7 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 [使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration/)
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 
 
 ##相关链接
@@ -128,4 +146,4 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0808_2016-->

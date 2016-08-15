@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="05/11/2016" 
-	wacn.date="07/11/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/15/2016"/>
 
 #Azure 媒体服务概念 
 
@@ -27,7 +27,7 @@
 确定要将哪些媒体内容上载和存储到资产中时，需注意以下事项：
 
 - 资产应仅包含一个唯一的媒体内容实例。例如，一段电视剧、电影或广告剪辑。
-- 资产不应包含多版视听文件或多段视听剪辑。其中一种不当使用资产的示例包括：尝试在资产中存储多段电视剧、广告或某一作品的不同拍摄角度。在资产中存储多版或多段视听文件会对提交编码作业、流式处理和保障资产后续在工作流中的传送造成困难。  
+- 资产不应包含多版视听文件或多段视听剪辑。其中一种不当使用资产的示例包括：尝试在资产中存储多段电视剧、广告或某一作品的不同拍摄角度。在资产中存储多版或多段视听文件会对提交编码作业、流式处理和保障资产后续在工作流中的传送造成困难。
 
 ###资产文件 
 [AssetFile](https://msdn.microsoft.com/zh-cn/library/azure/hh974275.aspx) 表示 Blob 容器中存储的实际视频或音频文件。一个资产文件始终与一个资产关联，而一个资产则可能包含一个或多个文件。如果资产文件对象未与 BLOB 容器中的数字文件关联，则媒体服务编码器任务将失败。
@@ -135,7 +135,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 - [使用能够使用 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)
 - [使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)
-- [配额和限制](/documentation/articles/media-services-quotas-and-limitations/)  
+- [配额和限制](/documentation/articles/media-services-quotas-and-limitations/)
 
 ##保护内容
 
@@ -242,5 +242,4 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递�
 
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

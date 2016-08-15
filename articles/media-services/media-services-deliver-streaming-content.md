@@ -2,15 +2,15 @@
 	pageTitle="如何从媒体服务传送流内容" 
 	description="了解如何创建用于生成流 URL 的定位符。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。" 
 	authors="juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" 
 	services="media-services" 
 	documentationCenter=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/15/2016"/>
 
 
 #如何：传送流内容
@@ -36,10 +36,10 @@
 
    1. 如果内容已加密，则定义访问策略。
    2. 创建 OnDemand 流式处理定位符。
-   3. 如果你想要流式处理，请获取资产中的流式处理清单文件 (.ism)。 
+   3. 如果你想要流式处理，请获取资产中的流式处理清单文件 (.ism)。
    		
-	如果你想要渐进式下载，请获取资产中的 MP4 文件名。  
-   4. 生成清单文件或 MP4 文件的 URL。 
+	如果你想要渐进式下载，请获取资产中的 MP4 文件名。
+   4. 生成清单文件或 MP4 文件的 URL。
    
 
 ###使用媒体服务 .NET SDK 
@@ -158,6 +158,7 @@
 
 ##另请参阅
 
-[下载资产](/documentation/articles/media-services-deliver-asset-download/) 
+[下载资产](/documentation/articles/media-services-deliver-asset-download/)
 [配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)
-<!---HONumber=Mooncake_0613_2016-->
+
+<!---HONumber=Mooncake_0808_2016-->

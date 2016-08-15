@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="02/22/2016"
-	wacn.date="04/05/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/15/2016"/>
 
 
 #将内容传送到客户概述
@@ -21,11 +21,12 @@
 
 要实现此目标：
 
-- 将你的流编码成多比特率（自适应比特率）视频流（这将会负责处理质量和网络条件），并 
+- 将你的流编码成多比特率（自适应比特率）视频流（这将会负责处理质量和网络条件），并
 - 使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将你的流动态地重新打包成不同的协议（这将会负责不同设备上的流式处理）。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
 本主题概述了重要的内容传送概念。
 
+若要查看已知的问题，请参阅[本节内容](/documentation/articles/media-services-deliver-content-overview/#known-issues)。
 
 ##动态打包
 
@@ -54,7 +55,7 @@
 若要为用户提供一个可用来流式传输内容或下载内容的 URL，你首先需要通过创建定位符来“发布”资产。定位符提供访问资产中包含的文件的入口点。媒体服务支持两种类型的定位符：
 
 - 用于流媒体（例如 MPEG DASH、HLS 或平滑流）或逐进式下载文件的 **OnDemandOrigin** 定位符。
--  用于将媒体文件下载到本地计算机的 **SAS**（访问签名）URL 定位符。 
+-  用于将媒体文件下载到本地计算机的 **SAS**（访问签名）URL 定位符。
 
 **访问策略**用于定义客户端可以访问给定资产的权限（如读取、写入和列出）和持续时间。请注意，创建 OrDemandOrigin 定位符时，不应使用列表权限 (AccessPermissions.List)。
 
@@ -82,7 +83,7 @@
 
 ##流 URL 格式
 
-**MPEG DASH 格式**
+###MPEG DASH 格式
 
 {流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=mpd-time-csf)
 
@@ -92,28 +93,28 @@
 
 
 
-**Apple HTTP 实时流 (HLS) V4 格式**
+###Apple HTTP 实时流 (HLS) V4 格式
 
 {流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=m3u8-aapl)
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl)
 
-**Apple HTTP 实时流 (HLS) V3 格式**
+###Apple HTTP 实时流 (HLS) V3 格式
 
 {流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=m3u8-aapl-v3)
 	
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
 
-**Apple HTTP 实时流 (HLS) 格式，带“仅音频”筛选器**
+###Apple HTTP 实时流 (HLS) 格式，带“仅音频”筛选器
 
 默认情况下，仅音频轨道已包括在 HLS 清单中。这是针对手机网络进行 Apple 应用商店认证所必需的。在这种情况下，如果客户端没有足够的带宽，或者是通过 2G 连接进行的连接，则会切换成“仅音频”播放。这样可以在不进行缓冲的情况下保持流式播放的连续性，但缺点是没有视频。但在某些情况下，相当于仅播放音频来说，用户更愿意选择缓冲播放视频。如果你希望删除“仅音频”轨道，可在 URL 中添加 (audio-only=false) 将其删除。
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
 
-有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support)。
+有关详细信息，请参阅[此博客](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/)。
 
 
-**平滑流格式**
+###平滑流格式
 
 {流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest
 
@@ -121,7 +122,7 @@
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest
 
-**平滑流 2.0 清单（旧清单）**
+###<a id="fmp4_v20"></a>平滑流式处理 2.0 清单（旧清单）
 
 默认情况下，平滑流清单格式包含重复标记（r 标记）。但是，一些播放器不支持 r 标记。此类客户端可以使用禁用 r 标记的格式：
 
@@ -129,12 +130,11 @@
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=fmp4-v20)
 
-**HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）**
+###HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）
 
 {流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=f4m-f4f)
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f)
-
 
 ##渐进式下载 
 
@@ -147,7 +147,6 @@
 请注意以下事项：
 
 - 你必须解密你希望从源服务进行流式处理的任何存储加密的资产，然后才能进行渐进式下载。
-
 
 ##下载
 
@@ -162,11 +161,38 @@
 - 你必须解密你希望从源服务进行流式处理的任何存储加密的资产，然后才能进行渐进式下载。
 - 未在 12 小时内完成的下载将会失败。
 
-
-
 ##流式处理终结点
 
 **流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容传送网络 (CDN) 以进一步分发。流式传输终结点服务的出站流可以是实时流，也可以是你的媒体服务帐户中的视频点播资产。此外，还可以通过调整流式传输保留单元来控制流式处理终结点服务处理不断增长的带宽需求的能力。你至少应该为生产环境中的应用程序分配一个保留单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+
+##已知问题
+
+### 更改为平滑流式处理清单版本
+
+在 2016 年 7 月 服务发布之前，当使用媒体编码器标准版生成资产、使用动态打包流式处理媒体编码器高级版工作流或旧版的 Azure 媒体编码器时，返回的平滑流式处理清单将遵从版本 2.0 的要求，其片段持续时间不使用所谓的重复（“r”）标记。例如：
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<SmoothStreamingMedia MajorVersion="2" MinorVersion="0" Duration="8000" TimeScale="1000">
+		<StreamIndex Chunks="4" Type="video" Url="QualityLevels({bitrate})/Fragments(video={start time})" QualityLevels="3" Subtype="" Name="video" TimeScale="1000">
+			<QualityLevel Index="0" Bitrate="1000000" FourCC="AVC1" MaxWidth="640" MaxHeight="360" CodecPrivateData="00000001674D4029965201405FF2E02A100000030010000003032E0A000F42400040167F18E3050007A12000200B3F8C70ED0B16890000000168EB7352" />
+			<c t="0" d="2000" n="0" />
+			<c d="2000" />
+			<c d="2000" />
+			<c d="2000" />
+		</StreamIndex>
+	</SmoothStreamingMedia>
+
+在 2016 年 7 月服务发布之后，生成的平滑流式处理清单遵从版本 2.2 的要求，其片段持续时间使用重复标记。例如：
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<SmoothStreamingMedia MajorVersion="2" MinorVersion="2" Duration="8000" TimeScale="1000">
+		<StreamIndex Chunks="4" Type="video" Url="QualityLevels({bitrate})/Fragments(video={start time})" QualityLevels="3" Subtype="" Name="video" TimeScale="1000">
+			<QualityLevel Index="0" Bitrate="1000000" FourCC="AVC1" MaxWidth="640" MaxHeight="360" CodecPrivateData="00000001674D4029965201405FF2E02A100000030010000003032E0A000F42400040167F18E3050007A12000200B3F8C70ED0B16890000000168EB7352" />
+			<c t="0" d="2000" r="4" />
+		</StreamIndex>
+	</SmoothStreamingMedia>
+
+一些旧的平滑流式处理客户端可能不支持此重复标记，并且无法加载清单。若要解决此问题，可以使用旧的清单 format 参数 **(format=fmp4-v20)**（有关详细信息，请参阅[本节内容](/documentation/articles/media-services-deliver-content-overview/#fmp4_v20)），或将客户端更新到支持重复标记的最新版本。
 
 
 
@@ -175,4 +201,4 @@
 [轮转存储密钥后更新媒体服务定位符](/documentation/articles/media-services-roll-storage-access-keys/)
  
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0808_2016-->

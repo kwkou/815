@@ -3,14 +3,14 @@
 	description="本文介绍如何使用 Azure 媒体服务(AMS) 传送 AMS 使用 PlayReady 和 Widevine DRM 动态加密的流。PlayReady 许可证来自媒体服务 PlayReady 许可证服务器，而 Widevine 许可证则由 castLabs 许可证服务器传送。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Mingfeiy,willzhan,Juliako" 
-	manager="dwrede" 
+	authors="Mingfeiy" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"    
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016"  
+	wacn.date="08/15/2016"/>
 
 
 #使用 castLabs 将 Widevine 许可证传送到 Azure 媒体服务
@@ -32,10 +32,10 @@
 
 - 媒体内容存储在 AMS 中。
 - 内容密钥的密钥 ID 存储在 castLabs 和 AMS 中。
-- castLabs 和 AMS 均内置了令牌身份验证。以下部分讨论身份验证令牌。 
-- 当客户端请求流式传输视频时，内容将使用 **通用加密** (CENC) 进行动态加密，并由 AMS 动态打包成平滑流和 DASH。我们还针对 HLS 流式处理协议提供 PlayReady M2TS 基本流加密。
-- PlayReady 许可证从 AMS 许可证服务器检索，而 Widevine 许可证则从 castLabs 许可证服务器检索。 
-- Media Player 将自动根据客户端平台功能决定要提取哪个许可证。 
+- castLabs 和 AMS 均内置了令牌身份验证。以下部分讨论身份验证令牌。
+- 当客户端请求流式传输视频时，内容将使用**通用加密** (CENC) 进行动态加密，并由 AMS 动态打包成平滑流和 DASH。我们还针对 HLS 流式处理协议提供 PlayReady M2TS 基本流加密。
+- PlayReady 许可证从 AMS 许可证服务器检索，而 Widevine 许可证则从 castLabs 许可证服务器检索。
+- Media Player 将自动根据客户端平台功能决定要提取哪个许可证。
 
 ##用于获取许可证的身份验证令牌生成
 
@@ -100,13 +100,12 @@ jti|有关此令牌的唯一标识符（每个令牌只能在 castLabs 系统中
 1.	打开新选项卡并启动 STS：http://[yourStsName].chinacloudsites.cn/api/token/assetid/[yourCastLabsAssetId]/contentkeyid/[thecontentkeyid]。
 2.	转到 [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 3.	粘贴到流 URL 中。
-4.	单击 **“高级选项”** 复选框。
+4.	单击**“高级选项”**复选框。
 5.	在“保护”下拉列表中选择 PlayReady 和/或 Widevine。
-6.	将从 STS 获取的令牌粘贴到“令牌”文本框中。 
+6.	将从 STS 获取的令牌粘贴到“令牌”文本框中。
 	
-	castLab 许可证服务器不需要在令牌前面添加“Bearer=”前缀。因此，请在提交令牌之前删除该前缀。
+	castLab 许可证服务器不需要在令牌前面加“Bearer=”前缀。因此，请在提交令牌之前删除该前缀。
 7.	更新播放器。
 8.	视频应正在播放。
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

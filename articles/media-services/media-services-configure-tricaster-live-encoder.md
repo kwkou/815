@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako,cenkdin,anilmur" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/03/2016" 
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/15/2016"/>
 
 #使用 NewTek TriCaster 编码器发送单比特率实时流
 
@@ -67,22 +67,22 @@
 
 **视频**：
  
-- 编解码器：H.264 
-- 配置文件：高（等级 4.0） 
-- 比特率：5000 kbps 
-- 关键帧：2 秒（60 秒） 
+- 编解码器：H.264
+- 配置文件：高（等级 4.0）
+- 比特率：5000 kbps
+- 关键帧：2 秒（60 秒）
 - 帧速率：30
  
 **音频**：
 
-- 编码解码器：AAC (LC) 
-- 比特率：192 kbps 
+- 编码解码器：AAC (LC)
+- 比特率：192 kbps
 - 采样速率：44.1 kHz
 
 
 ###配置步骤
 
-1. 根据所用的视频输入源创建一个新的 **NewTek TriCaster** 项目。 
+1. 根据所用的视频输入源创建一个新的 **NewTek TriCaster** 项目。
 2. 进入该项目以后，找到“流”按钮，单击该按钮旁边的齿轮图标，以便访问流配置菜单。
 
 	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster3.png)
@@ -119,12 +119,12 @@
 
 	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster11.png)
 
->[AZURE.IMPORTANT] 在单击“流”之前，**必须**确保频道已就绪。 
->另外，请确保不要让频道在没有一个输入/贡献源的情况下处于就绪状态的时间超出 15 分钟。
+>[AZURE.IMPORTANT] 在单击“流”之前，**必须**确保频道已就绪。
+另外，请确保不要让频道在没有一个输入/贡献源的情况下处于就绪状态的时间超出 15 分钟。
 
 ##测试播放
   
-1. 导航回 AMSE 工具，然后右键单击要测试的频道。在菜单中，将鼠标悬停在“播放预览”上方，然后选择“使用 Azure Media Player”。  
+1. 导航回 AMSE 工具，然后右键单击要测试的频道。在菜单中，将鼠标悬停在“播放预览”上方，然后选择“使用 Azure Media Player”。
 
 	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster8.png)
 
@@ -134,18 +134,18 @@
 
 ##创建节目
 
-1. 一旦确认频道可以播放，则可创建节目。在 AMSE 工具的“实时”选项卡下，右键单击节目区域，然后选择“创建新节目”。  
+1. 一旦确认频道可以播放，则可创建节目。在 AMSE 工具的“实时”选项卡下，右键单击节目区域，然后选择“创建新节目”。
 
 	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster9.png)
 
 2. 为节目命名，然后根据需要调整“存档时段长度”（默认为 4 小时）。你还可以指定存储位置，也可以将其保留为默认值。
 3. 选中“立即启动节目”框。
-4. 单击“创建节目”。  
+4. 单击“创建节目”。
   
 	注意：创建节目需要的时间比创建频道需要的时间少。
  
 5. 可以运行节目以后，可通过下述方式来确认其是否能够播放：右键单击该节目，导航到“播放节目”，然后选择“使用 Azure Media Player”。
-6. 确认以后，再次右键单击该节目，然后选择“将输出 URL 复制到剪贴板”（也可通过菜单从“节目信息和设置”选项检索此信息）。 
+6. 确认以后，再次右键单击该节目，然后选择“将输出 URL 复制到剪贴板”（也可通过菜单从“节目信息和设置”选项检索此信息）。
 
 现在可以将流嵌入到播放器中，也可将其分发给受众进行实时观看。
 
@@ -154,5 +154,4 @@
 
 请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming/)主题以获取相关指导。
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

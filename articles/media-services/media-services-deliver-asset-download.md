@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/15/2016"/>
 
 #如何：通过下载交付资产
 
@@ -74,5 +74,4 @@
 
 [交付流内容](/documentation/articles/media-services-deliver-streaming-content/)
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

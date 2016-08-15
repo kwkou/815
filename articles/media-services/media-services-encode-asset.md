@@ -3,14 +3,14 @@
 	description="本主题概括介绍并比较了 Azure 按需媒体编码器。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
-	manager="dwrede" 
+	authors="juliako" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/25/2016"  
-	wacn.date="04/05/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/15/2016"/>
 
 #简要介绍并比较 Azure 按需媒体编码器
 
@@ -76,7 +76,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 ###概述
 
-[在 Azure 媒体服务中引入高级编码](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
+[在 Azure 媒体服务中引入高级编码](https://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services/)
 
 ###如何使用
 
@@ -231,4 +231,4 @@ TransientError|涵盖暂时性问题（例如 Azure 存储空间发生暂时性�
 <!--Reference links in article-->
 [1]: /pricing/details/media-services/
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0808_2016-->

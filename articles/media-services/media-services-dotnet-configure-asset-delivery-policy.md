@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-  	ms.date="03/18/2016"
-	wacn.date="04/05/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/15/2016"/>
 
 #使用 .NET SDK 配置资产传送策略
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
@@ -55,8 +55,8 @@ HDS
 
 - 如果某个资产存在 OnDemand（流式处理）定位符，则不能与该资产关联的 AssetDeliveryPolicy。在删除策略之前，建议先从资产中删除该策略。
 - 如果未设置资产传送策略，则无法在存储加密的资产上创建流式处理定位符。如果资产未经过存储加密，则即使未设置资产传送策略，系统也可让你顺利地创建定位符和流式处理资产。
-- 可将多个资产传送策略关联到单个资产，但只能指定一种方法来处理给定的 AssetDeliveryProtocol。也就是说，如果你尝试链接两个指定 AssetDeliveryProtocol.SmoothStreaming 协议的传送策略，则会导致出错，因为当客户端发出平滑流请求时，系统不知道你要应用哪个策略。  
-- 如果你的资产包含现有的流式处理定位符，则不能将新策略链接到该资产（可以取消现有策略与资产的链接，或者更新与该资产关联的传送策略）。必须先删除流式传输定位符，再调整策略，然后重新创建流式传输定位符。在重新创建流式传输定位符时可以使用同一个 locatorId，但应确保该操作不会导致客户端出现问题，因为内容可能已被来源或下游 CDN 缓存。  
+- 可将多个资产传送策略关联到单个资产，但只能指定一种方法来处理给定的 AssetDeliveryProtocol。也就是说，如果你尝试链接两个指定 AssetDeliveryProtocol.SmoothStreaming 协议的传送策略，则会导致出错，因为当客户端发出平滑流请求时，系统不知道你要应用哪个策略。
+- 如果你的资产包含现有的流式处理定位符，则不能将新策略链接到该资产（可以取消现有策略与资产的链接，或者更新与该资产关联的传送策略）。必须先删除流式传输定位符，再调整策略，然后重新创建流式传输定位符。在重新创建流式处理定位符时可以使用同一个 locatorId，但应确保该操作不会导致客户端出现问题，因为内容可能已被来源或下游 CDN 缓存。
 
 
 ##清除资产传送策略 
@@ -120,7 +120,7 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         // For example: https://amsaccount1.keydelivery.mediaservices.chinacloudapi.cn/Widevine/?KID=268a6dcb-18c8-4648-8c95-f46429e4927c.  
         // The WidevineBaseLicenseAcquisitionUrl (used below) also tells Dynamaic Encryption 
         // to append /? KID =< keyId > to the end of the url when creating the manifest.
-        // As a result Widevine license aquisition URL will have KID appended twice, 
+        // As a result Widevine license acquisition URL will have KID appended twice, 
         // so we need to remove the KID that in the URL when we call GetKeyDeliveryUrl.
 
         Uri widevineUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
@@ -349,6 +349,4 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         WidevineLicenseAcquisitionUrl
     }
 
-
-
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -2,15 +2,15 @@
 	pageTitle="开发视频播放器应用程序" 
 	description="本主题提供了可用来开发自己的客户端应用程序（这些应用程序使用媒体服务中的流媒体）的播放器框架和插件的链接。" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" 
 	services="media-services" 
 	documentationCenter=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/15/2016"/>
 
 
 #开发视频播放器应用程序
@@ -28,14 +28,13 @@ Azure 媒体服务允许播放使用 DASH、平滑流和 HLS 流格式提供的�
 更多相关信息：
 
 - [Azure 媒体播放器](/documentation/services/media-services/)
-- [Azure 媒体播放器文档](http://amp.azure.net/libs/amp/latest/docs/) 
+- [Azure 媒体播放器文档](http://amp.azure.net/libs/amp/latest/docs/)
 - [Azure 媒体播放器入门博客](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player)
 - [注册以保持最新版本的 Azure 媒体播放器](http://amp.azure.net/signup/)
 - [添加新的功能请求、想法和反馈](/product-feedback/) 
 
 
 ##用于创建播放器应用程序的其他工具
-<a name="other-tools-for-creating-player-applications"></a>
 
 你也可以使用以下任意 SDK：
 
@@ -72,4 +71,4 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 [GitHub dash.js 存储库](https://github.com/Dash-Industry-Forum/dash.js)
  
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->
