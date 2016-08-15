@@ -23,7 +23,7 @@
 - **存储** - 对所需的存储帐户提供支持，存储帐户存储虚拟机的 VHD，包括其操作系统和其附加的数据磁盘。
 - **网络** - 对所需的 NIC、虚拟机 IP 地址和虚拟网络内的子网及可选的负载平衡器、负载平衡器 IP 地址和网络安全组提供支持。
 
-对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。<! -- 如果你已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅 [Platform supported migration of IaaS resources from Classic to Azure Resource Manager（平台支持从经典部署迁移到 Azure Resource Manager 部署的 IaaS 资源）](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)。 -->
+对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。<!-- 如果你已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅 [Platform supported migration of IaaS resources from Classic to Azure Resource Manager（平台支持从经典部署迁移到 Azure Resource Manager 部署的 IaaS 资源）](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)。 -->
 
 若要了解应使用哪种模型来部署资源，让我们回顾这两个模型。
 

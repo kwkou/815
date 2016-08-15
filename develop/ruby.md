@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="RUBY"
     ms.date=""
-    wacn.date="04/07/2016"
+    wacn.date="08/11/2016"
     />
 
 #Ruby开发人员中心
@@ -24,7 +24,6 @@ editor="Eric Chen" />
 
 ###计算
 - [在 Linux 虚拟机上托管 Web 应用](/zh-cn/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)
-- [使用 Capistrano 部署](/zh-cn/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/)
 - [使用命令行部署](/zh-cn/documentation/articles/xplat-cli-install/)
 - [全部显示](/zh-cn/develop/ruby/compute)
   

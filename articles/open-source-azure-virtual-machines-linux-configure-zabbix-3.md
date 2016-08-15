@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在Azure Linux虚拟机上配置zabbix监控（三）"
-	description="本文介绍如何在Azure Linux虚拟机上配置zabbix监控（三）"
+	pageTitle="使用 Zabbix 监控 MySQL"
+	description="本文介绍如何在 Azure Linux 虚拟机上使用 Zabbix 监控 MySQL"
 	services="open-source"
 	documentationCenter=""
 	authors=""
@@ -12,7 +12,7 @@
 	ms.date=""
 	wacn.date="06/14/2016"/>
 
-#在Azure Linux虚拟机上配置zabbix监控（三）
+#使用 Zabbix 监控 MySQL
 
 
 ##监控 MySQL 和 MySQL 主从复制
