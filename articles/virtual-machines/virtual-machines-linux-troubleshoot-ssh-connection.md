@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date="08/15/2016"/>
 
 # 对通过 SSH 连接到 Azure Linux VM 失败、出现错误或被拒绝进行故障排除
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/07/2016"
-	wacn.date=""/>
+	wacn.date="08/15/2016"/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 

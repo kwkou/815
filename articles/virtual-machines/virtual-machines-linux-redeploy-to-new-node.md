@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/28/2016"
-	wacn.date=""/>
+	wacn.date="08/15/2016"/>
 
 # 将虚拟机重新部署到新的 Azure 节点
 
