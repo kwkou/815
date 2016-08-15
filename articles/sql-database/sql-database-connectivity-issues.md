@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/30/2016"
-	wacn.date="07/21/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/15/2016"/>
 
 
 # 排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误
@@ -79,7 +79,7 @@
 
 我们建议在第一次重试前延迟 5 秒钟。如果在少于 5 秒的延迟后重试，云服务有超载的风险。对于后续的每次重试，延迟应以指数级增大，最大值为 60 秒。
 
-[SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx) 中提供了有关使用 ADO.NET 的客户端的*阻塞期*的说明。
+[SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx) 中提供了有关使用 ADO.NET 的客户端的阻塞期的说明。
 
 你还可能想要设置程序在自行终止之前的重试次数上限。
 
@@ -89,7 +89,7 @@
 
 以下位置提供了采用各种编程语言的重试逻辑代码示例：
 
-- [快速入门代码示例](/documentation/articles/sql-database-libraries/)
+- [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)
 
 
 <a id="k-test-retry-logic" name="k-test-retry-logic"></a>
@@ -211,6 +211,12 @@
 如果你忘记了配置 IP 地址，你的程序将失败，并显示简单的错误消息，指出所需的 IP 地址。
 
 
+[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
+
+
+有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
+
+
 <a id="c-connection-ports" name="c-connection-ports"></a>
 
 ### 连接：端口
@@ -300,19 +306,20 @@ ADO.NET 4.6.1：
 在 Windows 上，[PortQry.exe](http://www.microsoft.com/en-us/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
  
 
-	[C:\Users\johndoe]
+
+	[C:\Users\johndoe\]
 	>> portqry.exe -n johndoesvr9.database.chinacloudapi.cn -p tcp -e 1433
-	
+
 	Querying target system called:
 	 johndoesvr9.database.chinacloudapi.cn
-	
+
 	Attempting to resolve name to IP address...
 	Name resolved to 23.100.117.95
-	
+
 	querying...
 	TCP port 1433 (ms-sql-s service): LISTENING
-	
-	[C:\Users\johndoe]
+
+	[C:\Users\johndoe\]
 	>>
 
 
@@ -388,7 +395,7 @@ Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记
 
 
 	object_name                   timestamp                    error  state  is_success  database_name
-	
+
 	database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL        AdventureWorks
 
 
@@ -408,11 +415,6 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - [4 - 坚持不懈是一切成功的秘密：使用暂时性故障处理应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440719%28v=pandp.60%29.aspx)
 
 
-在其重试逻辑中使用 EntLib60 的简短 C# 代码示例可从以下链接中找到：
-
-- [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-dotnet-simple/)
-
-
 > [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。
 
 <a id="entlib60-classes-for-transient-errors-and-retry" name="entlib60-classes-for-transient-errors-and-retry"></a>
@@ -422,7 +424,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 以下 EntLib60 类对重试逻辑特别有用。所有这些类都包含在 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 命名空间或其子级中：
 
-在命名空间 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 中：
+在命名空间 Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling 中：
 
 - **RetryPolicy** 类
  - **ExecuteAction** 方法
@@ -479,7 +481,8 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 为了注重易读性，我们在此副本中删除了大量的 **//comment** 行。
 
-	
+
+
 	public bool IsTransient(Exception ex)
 	{
 	  if (ex != null)
@@ -499,15 +502,15 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 	            // Decode the reason code from the error message to
 	            // determine the grounds for throttling.
 	            var condition = ThrottlingCondition.FromError(err);
-	
+
 	            // Attach the decoded values as additional attributes to
 	            // the original SQL exception.
 	            sqlException.Data[condition.ThrottlingMode.GetType().Name] =
 	              condition.ThrottlingMode.ToString();
 	            sqlException.Data[condition.GetType().Name] = condition;
-	
+
 	            return true;
-	
+
 	          case 10928:
 	          case 10929:
 	          case 10053:
@@ -540,22 +543,19 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 	      }
 	    }
 	  }
-	
+
 	  return false;
 	}
 
 
 
-## 详细信息
-
-
 ## 后续步骤
 
-- 有关其他常见的 Azure SQL 数据库连接问题的疑难解答，请访问 [Azure SQL 数据库的常见连接问题疑难解答](/documentation/articles/sql-database-troubleshoot-common-connection-issues/)。
+- 有关其他常见的 Azure SQL 数据库连接问题的疑难解答，请访问 [Azure SQL 数据库的连接问题疑难解答](/documentation/articles/sql-database-troubleshoot-common-connection-issues/)。
 
 - [SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx)
 
 
 - [重试是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0808_2016-->

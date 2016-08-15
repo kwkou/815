@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="针对 SQL 数据库审核的下层客户端支持和 IP 终结点更改 | Azure" 
 	description="了解有关针对 SQL 数据库审核的下层客户端支持和 IP 终结点更改的信息。"
-	services="sql-database" 
-	documentationCenter="" 
-	authors="nadavhelfman" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="ronitr"
+	manager="jhubbard"
 	editor=""/>
 
 <tags 
-	ms.service="sql-database"
-	ms.date="05/17/2016"
-	wacn.date="07/11/2016"/>
+	ms.service="sql-database" 
+	ms.date="07/10/2016"
+	wacn.date="08/15/2016"/>
  
 # SQL 数据库 - 针对审核的下层客户端支持和 IP 终结点更改
 
@@ -48,5 +48,4 @@
 | 中国北部 | 139\.217.29.176、139.217.28.254 |
 | 中国东部 | 42\.159.245.65、42.159.246.245 |
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/17/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="07/10/2016"
+	wacn.date="08/15/2016"/>
  
 # SQL 数据库审核入门
 Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
@@ -102,7 +102,7 @@ SQL 数据库审核可让你：
 3. 返回审核配置边栏选项卡，将“存储访问密钥”从“辅助”切换为“主要”，然后单击“保存”。
 
 4. 返回存储 UI 并**重新生成**辅助访问密钥（为下一个密钥刷新周期做好准备）。
-  
+
 ##<a id="subheading-7"></a>自动化
 可以使用多个 PowerShell cmdlet 来配置 Azure SQL 数据库中的审核：
 
@@ -137,7 +137,4 @@ SQL 数据库审核可让你：
 [7]: ./media/sql-database-auditing-get-started/7_auditing_get_started_classic_portal_storage.png
 [8]: ./media/sql-database-auditing-get-started/8_auditing_get_started_storage_key_rotation.png
 
-
- 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -10,16 +10,16 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/11/2016"
-	wacn.date="06/14/2016" />
+	ms.date="06/30/2016"
+	wacn.date="08/15/2016" />
 
 # Azure SQL 数据库的单一数据库性能指导
 
-## 概述 
+## 概述
 
 Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-service-tiers/)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
 
->[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq/)。
+>[AZURE.NOTE] 企业和 Web 版服务层已于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq/)。有关将现有 Web 和企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 本文提供了一些指导，帮助你确定此预览版提供的哪个服务层适合你的应用程序，并提供了一些应用程序优化建议，让你充分利用 Azure SQL 数据库。
 
@@ -35,10 +35,10 @@ Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-
 
 Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自动 HA 和内置管理。
 
-### 自动高可用性 (HA) 
+### 自动高可用性 (HA)
  Azure SQL 数据库为每个用户数据库保留至少三个副本，并具有一种逻辑，可自动将每个更改同步地提交到副本仲裁。这样可确保任何单计算机故障均不会导致数据丢失。此外，每个副本均放在不同的硬件机架上，以使断电或网络交换机停运不会影响你的数据库。最后，还有一种逻辑，如果失去计算机，则自动重建副本，以使系统自动保留所需的运行状况属性，即使计算机的运行状况变得不正常也是如此。这些机制可避免当前在安装和配置高可用性解决方案时所需的漫长过程。通过为你的数据预先配置 HA 解决方案，可消除在使用传统方法生成任务关键型数据库解决方案时的另一个重大难题。
 
-### 内置管理 
+### 内置管理
  Azure SQL 数据库以服务的形式运行。这意味着为每个数据库定义了运行时间目标，避免产生漫长的维护停机时间。Microsoft 对于服务提供单供应商解决方案，这意味着如有任何问题，只需致电一家公司即可。另外，Microsoft 不断更新服务、添加功能、提高容量并寻找在我们进行的每次更新中改善体验的方法。更新以透明方式进行，不产生停机时间，这意味着更新集成在我们正常的 HA 故障转移机制内。这样，我们一宣布推出新功能，你即可使用这些功能，而不必等待在未来某个停机时间内升级服务器。
 
 所有服务层都提供所有这些功能，并且起点价格低廉，每月只需几美元。这远远低于采购并运行自有服务器的成本，意味着即使是最小的项目也可利用 Azure 而不必花费大量资金。
@@ -57,6 +57,8 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 通过标准和高级服务层中的性能级别设置，你只需为所需容量付费，并可根据工作负荷变化情况扩展或缩减容量。例如，如果数据库工作负荷在返校购物季期间繁忙，则可在这段时间内提高数据库的性能级别，而在高峰期结束之后降低性能级别。这样一来，你就可以按业务的季节性因素优化云环境，将支出降至最低。此模型也很适合软件产品发布环节。测试团队可在进行测试运行时分配容量，一旦测试完毕，即释放该容量。这些容量请求很适合只为所需容量付款而避免在很少使用的专用资源上支出的模型。这样产生的体验与许多 Microsoft 客户曾用于 SQL Server 的传统专用式硬件模型非常接近。这样应可在 Azure SQL 数据库上更轻松地运行规模更大的一组应用程序。
 
 有关服务层、性能级别和 DTU 的详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)。
+
+
 
 ## 使用服务层的原因
 
@@ -80,6 +82,20 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 所需的确切级别取决于每个资源维度的峰值负载要求。某些应用程序可能对于某种资源仅少量使用，但对于另一种资源需要大量使用。
 
 有关服务层的详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)。
+
+## 计费和定价信息
+
+弹性数据库池按以下情况计费：
+
+- 弹性池一创建即计费，即使池中没有数据库。
+- 弹性池按小时计费。该计量频率与单一数据库性能级别的计量频率相同。
+- 如果将弹性池的大小调整为新的 eDTU 量，则在调整操作完成之前，不会按新的 eDTU 量计费。这种计费所遵循的模式与更改独立数据库的性能级别所遵循的模式相同。
+
+
+- 弹性池的价格取决于池的 eDTU 数。弹性池的价格与池内弹性数据库的利用率无关。
+- 价格的计算公式为：（池 eDTU 的数量）x（每 eDTU 的单位价格）。
+
+弹性池的 eDTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)。
 
 ## 服务层功能和限制
 每个服务层和性能级别都与不同的限制和性能特征相关联。下表描述单个数据库的这些特征。
@@ -106,9 +122,12 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 异地还原适用于所有服务层，不需支付额外的费用。发生中断时，你可以使用最新的地域冗余备份将数据库还原到任何 Azure 区域。
 
-标准和活动异地复制提供的灾难恢复功能是类似的，但恢复点目标 (RPO) 要低得多。例如，使用异地还原，RPO 只需不到 1 小时的时间（换句话说，备份最多只需从 1 小时前开始）。但对于异地复制来说，RPO 只需不到 5 秒的时间。
+[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)提供的灾难恢复功能是类似的，但恢复点目标 (RPO) 要低得多。例如，使用异地还原，RPO 只需不到 1 小时的时间（换句话说，备份最多只需从 1 小时前开始）。但对于活动异地复制来说，RPO 只需不到 5 秒的时间。
 
 有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
+
+### 最大内存中 OLTP 存储
+**最大内存中 OLTP 存储**是指可供高级数据库的内存中 OLTP 预览版使用的最大存储空间量。这有时也称为 XTP 内存中存储。你可以使用 Azure 经典门户或 **sys.dm\_db\_resource\_stats** 视图来监视内存中存储的使用情况。有关监视的详细信息，请参阅[监视内存中 OLTP 存储](/documentation/articles/sql-database-in-memory-oltp-monitoring/)。
 
 >[AZURE.NOTE] 内存中 OLTP 预览版目前仅适用于单一数据库，不适用于弹性数据库池中的数据库。
 
@@ -116,12 +135,12 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 **最大并发请求数**是指在数据库中同时执行的最大并发用户/应用程序请求数。若要查看并发请求数，请在 SQL 数据库中运行以下 Transact-SQL 查询：
 
-	SELECT COUNT(*) AS [Concurrent_Requests] 
+	SELECT COUNT(*) AS [Concurrent_Requests]
 	FROM sys.dm_exec_requests R
 
 如果你要分析本地 SQL Server 数据库的工作负荷，则应修改此查询，以便针对所要分析的特定数据库进行筛选。例如，如果你有一个名为 MyDatabase 的本地数据库，则以下 Transact-SQL 查询会返回该数据库中并发请求的计数。
 
-	SELECT COUNT(*) AS [Concurrent_Requests] 
+	SELECT COUNT(*) AS [Concurrent_Requests]
 	FROM sys.dm_exec_requests R
 	INNER JOIN sys.databases D ON D.database_id = R.database_id
 	AND D.name = 'MyDatabase'
@@ -166,17 +185,17 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 ### 使用 sys.dm\_db\_resource\_stats
 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) 视图存在于每个 SQL 数据库中，提供了最近的相对于服务层的资源使用数据。CPU 平均百分比、数据 IO、日志写入以及内存每 15 秒记录一次，持续记录 1 小时。
 
-由于此视图提供了资源使用方面的更细致的信息，你应该首先使用 **sys.dm\_db\_resource\_stats** 进行当前状态分析或故障排除。例如，以下查询显示了当前数据库在过去 1 小时的平均资源使用率和最大资源使用率：
+由于此视图提供了资源使用方面的更细致的信息，你应该首先使用 **sys.dm\_db\_resource\_stats ** 进行当前状态分析或故障排除。例如，以下查询显示了当前数据库在过去 1 小时的平均资源使用率和最大资源使用率：
 
 	SELECT  
-	    AVG(avg_cpu_percent) AS 'Average CPU Utilization In Percent', 
-	    MAX(avg_cpu_percent) AS 'Maximum CPU Utilization In Percent', 
-	    AVG(avg_data_io_percent) AS 'Average Data IO In Percent', 
-	    MAX(avg_data_io_percent) AS 'Maximum Data IO In Percent', 
-	    AVG(avg_log_write_percent) AS 'Average Log Write Utilization In Percent', 
-	    MAX(avg_log_write_percent) AS 'Maximum Log Write Utilization In Percent', 
-	    AVG(avg_memory_usage_percent) AS 'Average Memory Usage In Percent', 
-	    MAX(avg_memory_usage_percent) AS 'Maximum Memory Usage In Percent' 
+	    AVG(avg_cpu_percent) AS 'Average CPU Utilization In Percent',
+	    MAX(avg_cpu_percent) AS 'Maximum CPU Utilization In Percent',
+	    AVG(avg_data_io_percent) AS 'Average Data IO In Percent',
+	    MAX(avg_data_io_percent) AS 'Maximum Data IO In Percent',
+	    AVG(avg_log_write_percent) AS 'Average Log Write Utilization In Percent',
+	    MAX(avg_log_write_percent) AS 'Maximum Log Write Utilization In Percent',
+	    AVG(avg_memory_usage_percent) AS 'Average Memory Usage In Percent',
+	    MAX(avg_memory_usage_percent) AS 'Maximum Memory Usage In Percent'
 	FROM sys.dm_db_resource_stats;  
 
 对于其他查询，请参阅 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) 中的示例。
@@ -199,9 +218,9 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource\
 
 以下示例演示如何公开此视图中的数据：
 
-	SELECT TOP 10 * 
-	FROM sys.resource_stats 
-	WHERE database_name = 'resource1' 
+	SELECT TOP 10 *
+	FROM sys.resource_stats
+	WHERE database_name = 'resource1'
 	ORDER BY start_time DESC
 
 ![sys 资源统计信息](./media/sql-database-performance-guidance/sys_resource_stats.png)
@@ -211,16 +230,16 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource\
 >[AZURE.NOTE] **sys.resource\_stats** 的某些列在当前的 V12 数据库中已更改，因此以下示例中的示例性查询可能会生成错误。以后对本主题进行更新时，将会提供新版本的查询来解决此问题。
 
 1. 例如，若要查看过去一周数据库“userdb1”的资源用量，可运行以下查询。
-	
-		SELECT * 
-		FROM sys.resource_stats 
-		WHERE database_name = 'userdb1' AND 
+
+		SELECT *
+		FROM sys.resource_stats
+		WHERE database_name = 'userdb1' AND
 		      start_time > DATEADD(day, -7, GETDATE())
 		ORDER BY start_time DESC;
-	
+
 2. 若要评估你的工作负荷在相应性能级别的适合情况，必须向下钻取资源度量指标的每个不同方面：CPU、读取次数、写入次数、辅助进程数和会话数。下面是修订后的查询，其中使用 sys.resource\_stats 报告这些资源度量指标的平均值和最大值。
-	
-		SELECT 
+
+		SELECT
 		    avg(avg_cpu_percent) AS 'Average CPU Utilization In Percent',
 		    max(avg_cpu_percent) AS 'Maximum CPU Utilization In Percent',
 		    avg(avg_physical_data_read_percent) AS 'Average Physical Data Read Utilization In Percent',
@@ -231,41 +250,41 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource\
 		    max(active_session_count) AS 'Maximum # of Sessions',
 		    avg(active_worker_count) AS 'Average # of Workers',
 		    max(active_worker_count) AS 'Maximum # of Workers'
-		FROM sys.resource_stats 
+		FROM sys.resource_stats
 		WHERE database_name = 'userdb1' AND start_time > DATEADD(day, -7, GETDATE());
-	
+
 3. 使用每个资源度量指标的上述平均值和最大值信息，可以评估你的工作负荷在所选性能级别的适合情况。在大多数情况下，来自 sys.resource\_stats 的平均值可提供一个用于目标大小的良好基准。它应该是你的主要测量标杆。例如，如果使用性能级别为 S2 的标准服务层，CPU、读取和写入操作的平均使用率百分比低于 40%，平均辅助进程数低于 50，平均会话数低于 200，则你的工作负荷可能适合 S1 性能级别。很轻松就能判断你的数据库是否在辅助进程和会话限制范围内。若要判断数据库在 CPU、读取和写入操作方面是否适合更低的性能级别，请将更低性能级别的 DTU 数量除以当前性能级别的 DTU 数量，再乘以 100：
-	
+
 	**S1 DTU / S2 DTU * 100 = 20 / 50 * 100 = 40**
-	
+
 	该结果是两个性能级别之间的相对性能差异（百分比）。如果你的使用率不超过此百分比，则你的工作负荷可能适合更低性能级别。但是，你需要查看资源用量值的所有范围，并确定数据库工作负荷适合更低性能级别的频率（以百分比计）。以下查询将会根据上面计算得出的阈值 40%，输出每个资源维度的适合性百分比。
-	
-		SELECT 
+
+		SELECT
 		    (COUNT(database_name) - SUM(CASE WHEN avg_cpu_percent >= 40 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'CPU Fit Percent'
 		    ,(COUNT(database_name) - SUM(CASE WHEN avg_log_write_percent >= 40 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'Log Write Fit Percent'
 		    ,(COUNT(database_name) - SUM(CASE WHEN avg_physical_data_read_percent >= 40 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'Physical Data Read Fit Percent'
 		FROM sys.resource_stats
 		WHERE database_name = 'userdb1' AND start_time > DATEADD(day, -7, GETDATE());
-	
+
 	你可以根据数据库服务级别目标 (SLO) 来确定工作负荷是否适合更低性能级别。如果你的数据库工作负荷 SLO 为 99.9%，而上述查询针对所有三个资源维度返回的值大于 99.9，则你的工作负荷很可能适合更低性能级别。
-	
+
 	查看适合性百分比还可以深入分析是否需要转到下一个更高的性能级别以满足 SLO。例如，“userdb1”显示过去一周的使用率如下。
-	
+
 	| 平均 CPU 百分比 | 最大 CPU 百分比 |
 	|---|---|
 	| 24\.5 | 100\.00 |
-	
+
 	平均 CPU 大约是性能级别限制的四分之一，这意味着它很适合数据库的性能级别。但是，最大值显示该数据库达到了性能级别的限制。在这种情况下，是否需要转到下一个更高的性能级别呢？ 如前所述，你需要查看工作负荷达到 100% 的次数，并将这种情况与数据库工作负荷 SLO 进行比较。
-	
-		SELECT 
+
+		SELECT
 		(COUNT(database_name) - SUM(CASE WHEN avg_cpu_percent >= 100 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'CPU Fit Percent'
 		,(COUNT(database_name) - SUM(CASE WHEN avg_log_write_percent >= 100 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'Log Write Fit Percent’
 		,(COUNT(database_name) - SUM(CASE WHEN avg_physical_data_read_percent >= 100 THEN 1 ELSE 0 END) * 1.0) / COUNT(database_name) AS 'Physical Data Read Fit Percent'
 		FROM sys.resource_stats
 		WHERE database_name = 'userdb1' AND start_time > DATEADD(day, -7, GETDATE());
-	
+
 	如果上述查询针对三个资源维度中的任何一个返回的值小于 99.9，则应考虑转到下一个更高的性能级别，或使用应用程序优化技术来减少 Azure SQL 数据库上的负载。
-	
+
 4. 上述做法还应将未来预计的工作负荷增长考虑在内。
 
 ## 优化应用程序
@@ -284,6 +303,10 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource\
 ## 优化方法
 本部分介绍可用于优化 Azure SQL 数据库的方法，该方法可使应用程序达到最佳性能并以尽可能低的性能级别运行。有许多方法可与传统的 SQL Server 优化最佳实践搭配使用，但有些方法专用于 Azure SQL 数据库。在某些情况下，可扩展传统的 SQL Server 方法，通过检查数据库使用的资源找到要进一步优化的区域，使这些方法也可在 Azure SQL 数据库上发挥作用。
 
+
+
+有关每个工具及其使用方法的详细信息，请参阅以前的链接。下面两个部分讲述缺失的索引和查询优化，其中提供的其他方法可以用于手动查找和纠正类似的性能问题。我们建议你首先在门户中尝试这些工具，以便更有效地诊断和纠正问题。特殊情况使用手动优化方式。
+
 ### 缺少索引
 OLTP 数据库性能有一个常见问题与物理数据库设计有关。设计和交付数据库架构时，经常不进行规模（负载或数据卷）测试。遗憾的是，在规模较小时，查询计划的性能可能尚可接受，但面对生产级数据卷时，性能就会大幅降低。此问题最常见的原因是缺乏相应的索引，无法满足筛选器或查询中的其他限制。这种情况经常导致表扫描，而此时索引搜寻即可满足要求。
 
@@ -301,37 +324,37 @@ OLTP 数据库性能有一个常见问题与物理数据库设计有关。设计
 	END
 	COMMIT TRANSACTION;
 	GO
-	SELECT m1.col1 
-	FROM dbo.missingindex m1 INNER JOIN dbo.missingindex m2 ON(m1.col1=m2.col1) 
+	SELECT m1.col1
+	FROM dbo.missingindex m1 INNER JOIN dbo.missingindex m2 ON(m1.col1=m2.col1)
 	WHERE m1.col2 = 4;
 
 ![缺少索引的查询计划](./media/sql-database-performance-guidance/query_plan_missing_indexes.png)
 
 Azure SQL 数据库包含一些功能，可帮助向数据库管理员提示如何查找并修复常见的缺少索引情况。Azure SQL 数据库内置的动态管理视图 (DMV) 将查找其中索引会大幅降低运行查询的估算成本的查询编译。在查询执行期间，它跟踪每个查询计划的执行频率，以及执行查询计划与想象其中存在该索引的查询计划之间的差距。这样可以让数据库管理员迅速推测出哪些物理数据库设计更改可能减少给定数据库的总工作负荷成本及其真实工作负荷。
 
->[AZURE.NOTE] 在使用 DMV 查找缺失的索引之前，请先查看与 [Query Performance Insight 和索引顾问](#query-performance-insight-and-index-advisor)相关的部分。
+>[AZURE.NOTE] 在使用 DMV 查找缺失的索引之前，请先查看与 [Query Performance Insight 和 SQL 数据库](#query-performance-insight-and-index-advisor)相关的部分。
 
 以下查询可用于计算得出可能缺少的索引。
 
-	SELECT CONVERT (varchar, getdate(), 126) AS runtime, 
-	    mig.index_group_handle, mid.index_handle, 
-	    CONVERT (decimal (28,1), migs.avg_total_user_cost * migs.avg_user_impact * 
-	            (migs.user_seeks + migs.user_scans)) AS improvement_measure, 
-	    'CREATE INDEX missing_index_' + CONVERT (varchar, mig.index_group_handle) + '_' + 
-	              CONVERT (varchar, mid.index_handle) + ' ON ' + mid.statement + ' 
-	              (' + ISNULL (mid.equality_columns,'') 
-	              + CASE WHEN mid.equality_columns IS NOT NULL 
-	                          AND mid.inequality_columns IS NOT NULL 
+	SELECT CONVERT (varchar, getdate(), 126) AS runtime,
+	    mig.index_group_handle, mid.index_handle,
+	    CONVERT (decimal (28,1), migs.avg_total_user_cost * migs.avg_user_impact *
+	            (migs.user_seeks + migs.user_scans)) AS improvement_measure,
+	    'CREATE INDEX missing_index_' + CONVERT (varchar, mig.index_group_handle) + '_' +
+	              CONVERT (varchar, mid.index_handle) + ' ON ' + mid.statement + '
+	              (' + ISNULL (mid.equality_columns,'')
+	              + CASE WHEN mid.equality_columns IS NOT NULL
+	                          AND mid.inequality_columns IS NOT NULL
 	                     THEN ',' ELSE '' END + ISNULL (mid.inequality_columns, '')
-	              + ')' 
-	              + ISNULL (' INCLUDE (' + mid.included_columns + ')', '') AS create_index_statement, 
-	    migs.*, 
-	    mid.database_id, 
+	              + ')'
+	              + ISNULL (' INCLUDE (' + mid.included_columns + ')', '') AS create_index_statement,
+	    migs.*,
+	    mid.database_id,
 	    mid.[object_id]
 	FROM sys.dm_db_missing_index_groups AS mig
-	INNER JOIN sys.dm_db_missing_index_group_stats AS migs 
+	INNER JOIN sys.dm_db_missing_index_group_stats AS migs
 	    ON migs.group_handle = mig.index_group_handle
-	INNER JOIN sys.dm_db_missing_index_details AS mid 
+	INNER JOIN sys.dm_db_missing_index_details AS mid
 	    ON mig.index_handle = mid.index_handle
 	ORDER BY migs.avg_total_user_cost * migs.avg_user_impact * (migs.user_seeks + migs.user_scans) DESC
 
@@ -356,7 +379,7 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 
 	DROP TABLE psptest1;
 	CREATE TABLE psptest1(col1 int primary key identity, col2 int, col3 binary(200));
-	
+
 	DECLARE @a int = 0;
 	SET NOCOUNT ON;
 	BEGIN TRANSACTION
@@ -369,16 +392,16 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 	COMMIT TRANSACTION
 	CREATE INDEX i1 on psptest1(col2);
 	GO
-	
+
 	CREATE PROCEDURE psp1 (@param1 int)
 	AS
 	BEGIN
-	    INSERT INTO t1 SELECT * FROM psptest1 
+	    INSERT INTO t1 SELECT * FROM psptest1
 	    WHERE col2 = @param1
 	    ORDER BY col2;
 	END
 	GO
-	
+
 	CREATE PROCEDURE psp2 (@param2 int)
 	AS
 	BEGIN
@@ -387,7 +410,7 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 	    OPTION (OPTIMIZE FOR (@param2 UNKNOWN))
 	END
 	GO
-	
+
 	CREATE TABLE t1 (col1 int primary key, col2 int, col3 binary(200));
 	GO
 
@@ -398,7 +421,7 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 	-- Prime Procedure Cache with scan plan
 	EXEC psp1 @param1=1;
 	TRUNCATE TABLE t1;
-	
+
 	-- Iterate multiple times to show the performance difference
 	DECLARE @i int = 0;
 	WHILE @i < 1000
@@ -412,7 +435,7 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 
 	EXEC psp2 @param2=1;
 	TRUNCATE TABLE t1;
-	
+
 	DECLARE @i int = 0;
 	WHILE @i < 1000
 	BEGIN
@@ -437,9 +460,9 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 
 可通过检查 **sys.resource\_stats** 表发现这种情况产生的影响（注意：从执行测试的时间到数据填入表中的时间将存在一段延迟）。对于本例，将在 22:25:00 时间范围内执行第 1 部分，在 22:35:00 执行第 2 部分。请注意，越早的时间范围使用的资源比越晚的时间范围要多（因计划效率提高）。
 
-	SELECT TOP 1000 * 
-	FROM sys.resource_stats 
-	WHERE database_name = 'resource1' 
+	SELECT TOP 1000 *
+	FROM sys.resource_stats
+	WHERE database_name = 'resource1'
 	ORDER BY start_time DESC
 
 ![查询优化](./media/sql-database-performance-guidance/query_tuning_4.png)
@@ -476,4 +499,4 @@ SQL Server 用户经常将许多功能集中在单一数据库内。例如，如
 
 在 Azure SQL 数据库中的服务层使你能够增加在云中生成的应用程序的类型。再加上坚持不懈地优化应用程序，你的应用程序的性能可变得既强大又可预测。本文档概述了可根据某个性能级别优化数据库资源使用的推荐技术。优化是云模型中一个持续的过程，管理员可以通过服务层及其性能级别，在 Azure 平台上最大程度地提高性能，同时将成本降至最低。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0808_2016-->

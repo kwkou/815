@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="05/13/2016"
-   wacn.date="06/14/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/15/2016"/>
    
 # Azure SQL 数据库提供安全和保护
 
@@ -29,9 +29,9 @@ Azure SQL 数据库支持云中数以百万计的任务关键型数据库，它�
 
 ## 最大的合规性项目组合
 
-SQL 数据库提供行业里最大的合规性项目组合。所以如果你需要 HIPPA 或 FERPA，或甚至是新加坡 MTCS 第 3 级，不用担心 - 我们的合规性项目组合已涵盖了这些标准。
+SQL 数据库提供行业里最大的合规性项目组合。所以如果你需要 HIPPA 合规性或 FERPA，或甚至是新加坡 MTCS 第 3 级，不用担心 - 我们的合规性项目组合已涵盖了这些标准。
 
-[阅读文档](https://www.microsoft.com/TrustCenter/Compliance/default.aspx)
+[阅读文档](https://www.trustcenter.cn/zh-cn/compliance/default.html)
 
 ## 保护层
 
@@ -46,12 +46,10 @@ SQL 数据库提供多层数据保护。通过在空闲时、运转中或使用�
 
 获取 [Azure 订阅](/pricing/1rmb-trial)，并[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
 
-## 了解详细信息
+## 其他资源
 
 浏览所有 [SQL 数据库的功能](/home/features/sql-database)。
  
 查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 
-
-
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0808_2016-->
