@@ -542,7 +542,7 @@ azure-c-shared-utility\\macro\_utils\_h\_generator.
 
 此文件夹包含名为 **macro\_utils\_h\_generator.sln** 的 Visual Studio 解决方案：
 
-  ![](media/iot-hub-device-sdk-c-serializer/01-macro_utils_h_generator.PNG)
+  ![](./media/iot-hub-device-sdk-c-serializer/01-macro_utils_h_generator.PNG)
 
 此解决方案中的程序将生成 **macro\_utils.h** 文件。SDK 随附了一个默认的 macro\_utils.h 文件。此解决方案可让你修改某些参数，然后根据这些参数重新创建标头文件。
 
