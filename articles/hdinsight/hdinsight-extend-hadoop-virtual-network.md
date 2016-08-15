@@ -17,7 +17,7 @@
 
 Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例如 SQL Server），或者在云中资源之间创建安全的专用网络。
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell-and-cli.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell-and-cli.md)]
 
 
 ##<a id="whatis"></a>Azure 虚拟网络是什么？

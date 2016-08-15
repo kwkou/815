@@ -91,7 +91,7 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 ## 暂停计算
 
-[AZURE.INCLUDE [SQL Data Warehouse pause description（SQL 数据仓库暂停说明）](../includes/sql-data-warehouse-pause-description.md)]
+[AZURE.INCLUDE [SQL Data Warehouse pause description（SQL 数据仓库暂停说明）](../../includes/sql-data-warehouse-pause-description.md)]
 
 若要暂停数据库，请使用下列任意方法之一。
 
@@ -103,7 +103,7 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 ## 恢复计算
 
-[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../includes/sql-data-warehouse-resume-description.md)]
+[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../../includes/sql-data-warehouse-resume-description.md)]
 
 若要恢复数据库，请使用下列任意方法之一。
 

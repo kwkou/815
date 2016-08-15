@@ -182,6 +182,6 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 ## 后续步骤
 
-[AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../includes/vs-storage-dotnet-tables-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
 
 <!---HONumber=Mooncake_0606_2016-->

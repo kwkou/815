@@ -15,7 +15,7 @@
 
 # 将 Azure Active Directory 单一登录与 SaaS 应用相集成  
 
-[AZURE.INCLUDE [active-directory-sso-use-case-intro](../includes/active-directory-sso-use-case-intro.md)]
+[AZURE.INCLUDE [active-directory-sso-use-case-intro](../../includes/active-directory-sso-use-case-intro.md)]
 
 若要开始为组织中安装的应用设置单一登录，你将要使用 Azure Active Directory (Azure AD) 中的现有目录。你可以使用通过 Microsoft Azure、Office 365 或 Windows Intune 获取的 Azure AD 目录。如果有两个或更多个目录，请参阅[管理 Azure AD 目录](/documentation/articles/active-directory-administer/)来确定要使用哪一个。
 

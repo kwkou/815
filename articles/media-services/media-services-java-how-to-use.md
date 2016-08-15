@@ -14,7 +14,7 @@
 
 #如何将媒体服务与 Java 结合使用
 
-[AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
+[AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 ##<a id="setup-account"></a>为媒体服务设置 Azure 帐户
 

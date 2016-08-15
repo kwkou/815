@@ -28,9 +28,9 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 在 Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-premium-create.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-premium-create.md)]
 
 
 使用以下 PowerShell 脚本创建缓存：

@@ -15,7 +15,7 @@
 
 #使用 PowerShell 对 HDInsight 上的 Hadoop 运行 Hive 查询
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 本文档提供使用 Azure PowerShell 在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业的示例。
 
@@ -27,7 +27,7 @@
 
 - **配备 Azure PowerShell 的工作站**。
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>使用 Azure PowerShell 运行 MapReduce 作业
 
@@ -37,7 +37,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 * **Add-AzureAccount**：向 Azure 订阅进行 Azure PowerShell 身份验证
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
 * **New-AzureHDInsightMapReduceJobDefinition**：使用指定的 MapReduce 信息创建新的*作业定义*
 

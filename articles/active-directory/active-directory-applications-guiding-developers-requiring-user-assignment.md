@@ -27,6 +27,6 @@
 现在，必须将用户和/或组分配到应用程序。请参阅[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)。
 
 ## 后续步骤
-[AZURE.INCLUDE [active-directory-applications-guiding-developers-for-lob-applications-toc](../includes/active-directory-applications-guiding-developers-for-lob-applications-toc.md)]
+[AZURE.INCLUDE [active-directory-applications-guiding-developers-for-lob-applications-toc](../../includes/active-directory-applications-guiding-developers-for-lob-applications-toc.md)]
 
 <!---HONumber=Mooncake_0613_2016-->

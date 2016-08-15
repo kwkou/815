@@ -57,9 +57,9 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 ![Azure 存储资源](./media/storage-introduction/storage-concepts.png)
 
-[AZURE.INCLUDE [storage-account-types-include](../includes/storage-account-types-include.md)]
+[AZURE.INCLUDE [storage-account-types-include](../../includes/storage-account-types-include.md)]
 
-[AZURE.INCLUDE [storage-versions-include](../includes/storage-versions-include.md)]
+[AZURE.INCLUDE [storage-versions-include](../../includes/storage-versions-include.md)]
 
 ## Blob 存储
 
@@ -163,7 +163,7 @@ AzCopy 在 [Azure 数据移动库](https://www.nuget.org/packages/Microsoft.Azur
 
 ## 定价
 
-[AZURE.INCLUDE [storage-account-billing-include](../includes/storage-account-billing-include.md)]
+[AZURE.INCLUDE [storage-account-billing-include](../../includes/storage-account-billing-include.md)]
 
 ## 存储 API、库和工具
 

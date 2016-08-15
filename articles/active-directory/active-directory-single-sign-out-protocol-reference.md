@@ -15,7 +15,7 @@
 
 # 单一注销 SAML 协议
 
-[AZURE.INCLUDE [active-directory-protocols](../includes/active-directory-protocols.md)]
+[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
 
 Azure Active Directory (Azure AD) 支持 SAML 2.0 Web 浏览器单一注销配置文件。要使单一注销正常工作，Azure AD 必须在注册应用程序期间注册其元数据 URL。Azure AD 从元数据中获取注销 URL 和云服务的签名密钥。Azure AD 使用签名密钥来验证传入 LogoutRequest 上的签名，并在用户注销后，使用 LogoutURL 来重定向用户。
 

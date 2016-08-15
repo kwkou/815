@@ -18,7 +18,7 @@
 
 查找在经典部署模型中创建和管理基于 Windows 的虚拟机时需要参考的所有文档。
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 概述
 

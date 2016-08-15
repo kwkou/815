@@ -271,7 +271,7 @@ MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKe
 通过本文档中概述的步骤，EF 应用程序可以通过重构 EF 应用程序中使用的 **DbContext** 子类的构造函数来使用弹性数据库客户端库的数据相关路由功能。这将所需的更改限制到 **DbContext** 类已经存在的位置。此外，EF 应用程序可以通过将调用必要的 EF 迁移的步骤与新分片的注册和分片映射中的映射进行结合，来继续从自动架构部署中受益。
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/sample.png

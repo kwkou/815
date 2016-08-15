@@ -14,7 +14,7 @@
 
 # 使用 C# 程序和 ARM 模板创建 IoT 中心
 
-[AZURE.INCLUDE [iot-hub-resource-manager-selector](../includes/iot-hub-resource-manager-selector.md)]
+[AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 ## 介绍
 
@@ -29,7 +29,7 @@
 - 可用于存储模板文件的 [Azure 存储帐户][lnk-storage-account]。
 - [Azure PowerShell 1.0][lnk-powershell-install] 或更高版本。
 
-[AZURE.INCLUDE [iot-hub-prepare-resource-manager](../includes/iot-hub-prepare-resource-manager.md)]
+[AZURE.INCLUDE [iot-hub-prepare-resource-manager](../../includes/iot-hub-prepare-resource-manager.md)]
 
 ## 准备 Visual Studio 项目
 
@@ -65,7 +65,7 @@
     static string deploymentName = "{Deployment name}";
     ```
 
-[AZURE.INCLUDE [iot-hub-get-access-token](../includes/iot-hub-get-access-token.md)]
+[AZURE.INCLUDE [iot-hub-get-access-token](../../includes/iot-hub-get-access-token.md)]
 
 ## 提交模板以创建 IoT 中心
 

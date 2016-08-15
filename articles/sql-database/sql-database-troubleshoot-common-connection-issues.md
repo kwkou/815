@@ -17,7 +17,7 @@
 与 Azure SQL 数据库的连接失败时，你将收到[错误信息](/documentation/articles/sql-database-develop-error-messages/)。本文是一个集中介绍对 Azure SQL 数据库连接问题进行故障排除的主题。本文介绍了连接问题的[常见原因](#cause)，推荐了可帮助你识别问题的[故障排除工具](#try-the-troubleshooter-for-azure-sql-database-connectivity-issues)，以及提供了故障排除步骤来解决[暂时性错误](#troubleshoot-transient-errors)和[永久或非暂时性错误](#troubleshoot-the-persistent-errors)。最后，本文列出了 [Azure SQL 数据库连接问题的所有相关的文章](#all-topics-for-azure-sql-database-connection-problems)。
 
 如果你遇到连接问题，请尝试本文中介绍的故障排除步骤。
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 原因
 

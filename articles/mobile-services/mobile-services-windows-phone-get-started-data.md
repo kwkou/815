@@ -16,7 +16,7 @@
 #  将移动服务添加到现有应用程序
 
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data.md)]
 
 ##概述
 
@@ -50,11 +50,11 @@
 
 ##<a name="create-service"></a>在 Azure 经典管理门户中创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data](../../includes/mobile-services-create-new-service-data.md)]
 
 ## <a name="add-table"></a>将新表添加到移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service-data-2](../includes/mobile-services-create-new-service-data-2.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data-2](../../includes/mobile-services-create-new-service-data-2.md)]
 
 ## <a name="update-app"></a>更新应用程序以使用移动服务进行数据访问
 

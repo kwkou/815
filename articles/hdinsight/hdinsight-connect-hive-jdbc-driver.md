@@ -15,7 +15,7 @@
 
 #使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
 
-[AZURE.INCLUDE [ODBC-JDBC-selector](../includes/hdinsight-selector-odbc-jdbc.md)]
+[AZURE.INCLUDE [ODBC-JDBC-selector](../../includes/hdinsight-selector-odbc-jdbc.md)]
 
 在本文档中，你将学习如何使用 Java 应用程序中的 JDBC 将 Hive 查询远程提交到 HDInsight 群集。你将学习如何从 SQuirreL SQL 客户端进行连接，以及如何通过 Java 以编程方式进行连接。
 

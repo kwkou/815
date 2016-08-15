@@ -28,7 +28,7 @@
 每个区域每个订阅的 Batch 帐户数 | 1 | 50
 
 ## Batch 帐户配额
-[AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
+[AZURE.INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
 ## 其他限制
 **资源**|**最大限制**

@@ -20,7 +20,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 
 [OAuth 2.0 规范第 4.1 部分](https://tools.ietf.org/html/rfc6749#section-4.1)描述了 OAuth 2.0 授权代码流。它用于在大部分的应用类型（包括 Web 应用和本机安装的应用）中执行身份验证与授权。
 
-[AZURE.INCLUDE [active-directory-protocols-getting-started](../includes/active-directory-protocols-getting-started.md)]
+[AZURE.INCLUDE [active-directory-protocols-getting-started](../../includes/active-directory-protocols-getting-started.md)]
 
 
 ## OAuth 2.0 授权流

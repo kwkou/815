@@ -14,15 +14,15 @@
 
 # 如何通过 Python 使用 Azure 文件存储
 
-[AZURE.INCLUDE [storage-selector-file-include](../includes/storage-selector-file-include.md)]
+[AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
 
 ## 概述
 
 本文将演示如何使用文件存储执行常见方案。这些示例通过 Python 编写并使用 [Azure Storage SDK for Python]。涉及的方案包括上传、列出、下载以及删除文件。
 
-[AZURE.INCLUDE [storage-file-concepts-include](../includes/storage-file-concepts-include.md)]
+[AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建共享
 

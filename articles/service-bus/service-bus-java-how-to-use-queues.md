@@ -14,7 +14,7 @@
 
 # 如何使用 Service Bus 队列
 
-[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
 本文介绍了如何使用服务总线队列。这些示例是采用 Java 编写的并且使用了 [Azure SDK for Java][]。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
 

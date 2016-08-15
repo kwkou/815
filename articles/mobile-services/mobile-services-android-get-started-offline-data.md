@@ -14,7 +14,7 @@
 
 # 将脱机数据同步添加到 Android 移动服务应用
 
-[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 
 ## 摘要
@@ -28,7 +28,7 @@
 
 ## 入门所需操作
 
-[AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
+[AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
 
 
 ## 更新应用以支持脱机同步

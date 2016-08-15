@@ -15,7 +15,7 @@
 
 # 使用 .NET SDK 管理 HDInsight 中的 Hadoop 群集
 
-[AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-portal-management-selector.md)]
 
 了解如何使用 [HDInsight.NET SDK](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx) 管理 HDInsight 群集。
 

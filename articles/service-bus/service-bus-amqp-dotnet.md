@@ -13,7 +13,7 @@
 
 # 使用 AMQP 1.0 通过 .NET 使用服务总线
 
-[AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
+[AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
 
 ## 下载服务总线 SDK
 

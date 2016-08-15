@@ -28,7 +28,7 @@
 - 还原已删除的数据库
 - 从另一个 Azure 地理区域还原不能访问的数据库
 
-[AZURE.INCLUDE [SQL 数据仓库备份保留策略](../includes/sql-data-warehouse-backup-retention-policy)]
+[AZURE.INCLUDE [SQL 数据仓库备份保留策略](../../includes/sql-data-warehouse-backup-retention-policy)]
 
 
 ## 开始之前

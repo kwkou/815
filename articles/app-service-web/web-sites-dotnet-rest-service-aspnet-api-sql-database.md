@@ -33,7 +33,7 @@
 
 ![ Web 应用屏幕截图][intro001]
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ### 创建项目
 

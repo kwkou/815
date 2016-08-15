@@ -237,7 +237,7 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 
 选择**“门户”**、**.NET**、**REST API** 以了解如何创建和管理频道和节目。
 
-[AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
+[AZURE.INCLUDE [media-services-selector-manage-channels](../../includes/media-services-selector-manage-channels.md)]
 
 
 

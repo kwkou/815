@@ -66,7 +66,7 @@
 
 多分片查询不会验证查询的分片上的 shardlet 是否参与了正在进行的拆分/合并操作。（请参阅[使用弹性数据库拆分/合并工具进行缩放](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。） 这可能会导致不一致问题，即为同一多分片查询中的多个分片显示同一 shardlet 中的行。请注意这些限制并在执行多分片查询时，考虑关闭正在进行的合拆分操作以及对分片映射的更改。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 ## 另请参阅
 [System.Data.SqlClient](http://msdn.microsoft.com/zh-cn/library/System.Data.SqlClient.aspx) 类和方法。

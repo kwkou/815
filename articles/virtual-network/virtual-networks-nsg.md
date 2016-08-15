@@ -84,7 +84,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 可以将 NSG 关联到 VM 和子网，具体取决于你使用的部署模型。
 
-[AZURE.INCLUDE [learn-about-deployment-models-both-include.md](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models-both-include.md](../../includes/learn-about-deployment-models-both-include.md)]
  
 - **将 NSG 关联到 VM（仅限经典部署）。** 将 NSG 关联到 VM 时，NSG 中的网络访问规则将应用到传入和传出 VM 的所有流量。 
 

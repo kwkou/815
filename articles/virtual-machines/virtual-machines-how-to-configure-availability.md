@@ -15,8 +15,8 @@
 
 # 如何在经典部署模型中为虚拟机配置可用性集
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../includes/virtual-machines-common-classic-configure-availability.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../../includes/virtual-machines-common-classic-configure-availability.md)]
 
 <!---HONumber=Mooncake_0215_2016-->

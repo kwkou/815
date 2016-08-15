@@ -35,7 +35,7 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 ### 使用共享密钥凭据进行身份验证
 
-[AZURE.INCLUDE [storage-emulator-connection-string-include](../includes/storage-emulator-connection-string-include.md)]
+[AZURE.INCLUDE [storage-emulator-connection-string-include](../../includes/storage-emulator-connection-string-include.md)]
 
 有关连接字符串的详细信息，请参阅[配置到 Azure 存储的连接字符串](/documentation/articles/storage-configure-connection-string/)。
 

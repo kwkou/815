@@ -23,7 +23,7 @@
 
 ## 概念
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
 
 Azure 备份文档中的 [Azure IaaS VM 备份简介](/documentation/articles/backup-azure-vms-introduction)。
 

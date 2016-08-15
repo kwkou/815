@@ -15,7 +15,7 @@
 
 #使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 在本文中，你将了解如何使用适用于 Visual Studio 的 HDInsight 工具将 Hive 查询提交到 HDInsight 群集。
 

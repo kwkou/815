@@ -24,13 +24,13 @@
 
 **关于 Azure 部署模型**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 **VNet 到 VNet 的部署模型和工具**
 
 可以通过使用多种不同工具在这两种部署模型中配置 VNet 到 VNet 的连接。有关更多信息，请参见下表。我们将在由可用于此配置的新文章、新部署模型和其他工具时更新此表。当有文章可用时，我们将从表中直接链接到该文章。
 
-[AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
 
 ## 关于 VNet 到 VNet 的连接

@@ -14,7 +14,7 @@
 
 # 使用移动服务将图像上载到 Azure 存储空间
 
-[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 ##概述
 本主题说明如何借助 Azure 移动服务，使应用程序能够在 Azure 存储空间中上载和存储用户生成的图像。移动服务使用 SQL 数据库存储数据。但是，将二进制大型对象 (BLOB) 数据存储在 Azure Blob 存储服务中可以提高效率。
@@ -33,9 +33,9 @@
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]。
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
 
-[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-upload-to-blob-storage](../includes/mobile-services-windows-universal-dotnet-upload-to-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-upload-to-blob-storage](../../includes/mobile-services-windows-universal-dotnet-upload-to-blob-storage.md)]
 
 ##后续步骤
 

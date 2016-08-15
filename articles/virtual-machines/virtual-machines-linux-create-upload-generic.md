@@ -15,7 +15,7 @@
 
 # <a id="nonendorsed"> </a>有关未认可分发的信息 #
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 **重要提示**：仅当使用某个[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。

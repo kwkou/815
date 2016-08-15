@@ -32,7 +32,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 在 Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
 
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 
 使用以下 PowerShell 脚本创建具有 Redis 持久性的高级缓存：

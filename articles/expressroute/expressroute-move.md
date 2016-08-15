@@ -15,7 +15,7 @@
 
 本文概述将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型的效果。
 
-[AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 可以使用一条 ExpressRoute 线路连接到在经典部署模型和 Resource Manager 部署模型中部署的虚拟网络。无论 ExpressRoute 线路的创建方式为何，现在都可以链接到这两种部署模型中的虚拟网络。
 

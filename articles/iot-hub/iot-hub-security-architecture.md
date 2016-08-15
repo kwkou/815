@@ -13,7 +13,7 @@
  ms.date="06/03/2016"
  wacn.date="07/04/2016"/>
  
-[AZURE.INCLUDE [iot-security-architecture](../includes/iot-security-architecture.md)]
+[AZURE.INCLUDE [iot-security-architecture](../../includes/iot-security-architecture.md)]
 
 
 

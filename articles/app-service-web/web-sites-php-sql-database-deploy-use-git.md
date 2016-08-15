@@ -28,7 +28,7 @@
 
 ![Azure PHP Web 应用](./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png)
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ##创建 Azure Web 应用并设置 Git 发布
 

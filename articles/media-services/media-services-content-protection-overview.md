@@ -109,7 +109,7 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 [使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration/)
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 
 ##相关链接

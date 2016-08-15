@@ -15,7 +15,7 @@
 
 # 将 Pig 与 HDInsight 上的 Hadoop 配合使用
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
 [Apache Pig](http://pig.apache.org/) 是一个平台，可以使用名为 *Pig Latin* 的过程语言，为 Hadoop 创建程序。Pig 可以替代 Java 来创建 *MapReduce* 解决方案，已包括在 Azure HDInsight 中。
 

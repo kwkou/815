@@ -84,7 +84,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 ## 服务层功能和限制
 每个服务层和性能级别都与不同的限制和性能特征相关联。下表描述单个数据库的这些特征。
 
-[AZURE.INCLUDE [SQL 数据库服务层表](../includes/sql-database-service-tiers-table.md)]
+[AZURE.INCLUDE [SQL 数据库服务层表](../../includes/sql-database-service-tiers-table.md)]
 
 以下部分提供了上表中每个区域的详细信息。
 

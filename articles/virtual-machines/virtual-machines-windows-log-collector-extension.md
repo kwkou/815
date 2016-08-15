@@ -15,6 +15,6 @@
 
 # AzureLogCollector 扩展
 
-[AZURE.INCLUDE [virtual-machines-common-log-collector-extension](../includes/virtual-machines-common-log-collector-extension.md)]
+[AZURE.INCLUDE [virtual-machines-common-log-collector-extension](../../includes/virtual-machines-common-log-collector-extension.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

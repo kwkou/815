@@ -15,7 +15,7 @@
 
 # 如何通过 Node.js 使用 Azure 表存储
 
-[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 
 ## 概述
@@ -29,9 +29,9 @@
 - [生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app/)（使用 Windows PowerShell）
 
 
-[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 
 ## 创建用于访问 Azure 存储的应用程序

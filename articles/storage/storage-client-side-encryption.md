@@ -15,7 +15,7 @@
 
 # Azure 存储空间的客户端加密和 Azure 密钥保管库
 
-[AZURE.INCLUDE [storage-selector-client-side-encryption-include](../includes/storage-selector-client-side-encryption-include.md)]
+[AZURE.INCLUDE [storage-selector-client-side-encryption-include](../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## 概述
 

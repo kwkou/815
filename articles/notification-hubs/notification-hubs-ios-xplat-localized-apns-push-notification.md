@@ -167,7 +167,7 @@
 
 ##（可选）通过 .NET 控制台应用发送本地化的模板通知。
 
-[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../../includes/notification-hubs-localized-back-end.md)]
 
 
 

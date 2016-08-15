@@ -36,7 +36,7 @@
 下表可以帮助你为解决方案确定最佳的连接选项。
 
 
-[AZURE.INCLUDE [vpn-gateway-cross-premises](../includes/vpn-gateway-cross-premises-include.md)]
+[AZURE.INCLUDE [vpn-gateway-cross-premises](../../includes/vpn-gateway-cross-premises-include.md)]
 
 
 
@@ -50,7 +50,7 @@
 - 标准
 - 高性能
 
-[AZURE.INCLUDE [vpn-gateway-table-requirements](../includes/vpn-gateway-table-requirements-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-requirements](../../includes/vpn-gateway-table-requirements-include.md)]
 
 
 
@@ -59,7 +59,7 @@
 下表显示网关类型和估计的聚合吞吐量。估计的聚合吞吐量可能是设计时的决定因素。网关 SKU 之间并无定价差异。
 有关定价的信息，请参阅 [VPN 网关定价](/pricing/details/vpn-gateway/)。此表适用于 Resource Manager 与经典部署模型。
 
-[AZURE.INCLUDE [vpn-gateway-table-gwtype-aggtput](../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-gwtype-aggtput](../../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
 
 
 
@@ -125,12 +125,12 @@
 
 每个配置需要特定的 VPN 类型才能正常运行。如果要合并两个配置，例如创建连往相同 VNet 的站点到站点连接和点到站点连接，你必须使用同时符合这两个连接要求的 VPN 类型。在点到站点和站点到站点并存连接的情况下，使用 Azure Resource Manager 部署模型时必须使用基于路由的 VPN 类型，而使用经典部署模式时必须使用动态网关。
 
-[AZURE.INCLUDE [vpn-gateway-vpntype](../includes/vpn-gateway-vpntype-include.md)]
+[AZURE.INCLUDE [vpn-gateway-vpntype](../../includes/vpn-gateway-vpntype-include.md)]
 
 下表显示了映射到每个连接配置的 VPN 类型。请确保网关的 VPN 类型与你想要创建的配置匹配。
 
 
-[AZURE.INCLUDE [vpn-gateway-table-vpntype](../includes/vpn-gateway-table-vpntype-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-vpntype](../../includes/vpn-gateway-table-vpntype-include.md)]
 
 ### <a name="devices"></a>站点到站点连接的 VPN 设备
 
@@ -155,7 +155,7 @@
 
 可以使用不同的工具在这两种部署模型中配置强制隧道连接。有关更多信息，请参见下表。我们将在由可用于此配置的新文章、新部署模型和其他工具时更新此表。当有文章可用时，我们将从表中直接链接到该文章。
 
-[AZURE.INCLUDE [vpn-gateway-table-forcedtunnel](../includes/vpn-gateway-table-forcedtunnel-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-forcedtunnel](../../includes/vpn-gateway-table-forcedtunnel-include.md)]
 
 
 

@@ -14,7 +14,7 @@
 
 # 使用 Visual Studio 将 ASP.NET Web 应用部署到 Azure
 
-[AZURE.INCLUDE [选项卡](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 ## 概述
 

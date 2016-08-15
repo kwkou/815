@@ -48,7 +48,7 @@
 
 		Select-AzureSubscription <AzureSubscriptionName>
 
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 - **建立了 VPN 连接的两个 Azure 虚拟网络**。有关说明，请参阅 [在两个 Azure 虚拟网络之间配置 VPN 连接][hdinsight-hbase-replication-vnet]。
 

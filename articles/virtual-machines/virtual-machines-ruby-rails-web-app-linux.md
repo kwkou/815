@@ -23,7 +23,7 @@
 
 本教程使用 Ubuntu Server 14.04 LTS 进行了验证。如果你使用不同 Linux 分发，则可能需要修改安装 Rails 的步骤。
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 创建 Azure VM
 

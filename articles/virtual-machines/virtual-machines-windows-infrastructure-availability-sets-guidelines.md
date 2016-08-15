@@ -15,7 +15,7 @@
 
 # 可用性集准则
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
 
 本文重点介绍可用性集的必需规划步骤，按照这些步骤可确保应用程序在计划内或计划外事件期间保持可访问性。
 
@@ -45,6 +45,6 @@ Azure 中的底层基础结构分为更新域和容错域。这些域是按将�
 
 
 ## <a name="next-steps"></a> 后续步骤
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

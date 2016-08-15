@@ -42,14 +42,14 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 ##<a name="create-cache" id="create-a-cache"></a>创建缓存
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
 <a name="NuGet">
 ## 配置缓存客户端
 
-[AZURE.INCLUDE [redis-cache-configure](../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
+[AZURE.INCLUDE [redis-cache-configure](../../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
 
 在配置了你的客户端项目的缓存后，你可以使用以下各节中介绍的方法来使用你的缓存。
 
@@ -98,7 +98,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 有关高级连接配置选项的详细信息，请参阅 [StackExchange.Redis 配置模型][]。
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-access-keys.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
 建立连接后，通过调用 `ConnectionMultiplexer.GetDatabase` 方法返回对 Redis 缓存数据库的引用。从 `GetDatabase` 方法返回的对象是一个轻型直通对象，不需要存储。
 

@@ -35,7 +35,7 @@
 
 ## 备份策略
 
-[AZURE.INCLUDE [SQL 数据仓库备份保留策略](../includes/sql-data-warehouse-backup-retention-policy)]
+[AZURE.INCLUDE [SQL 数据仓库备份保留策略](../../includes/sql-data-warehouse-backup-retention-policy)]
 
 
 ## 数据库还原功能

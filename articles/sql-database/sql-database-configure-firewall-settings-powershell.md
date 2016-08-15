@@ -28,7 +28,7 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
 > [AZURE.IMPORTANT] 若要允许来自 Azure 的应用程序连接到数据库服务器，则必须启用 Azure 连接。有关防火墙规则和启用来自 Azure 的连接的详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。如果要在 Azure 云边界内部建立连接，可能需要打开其他一些 TCP 端口。有关详细信息，请参阅[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)中的 **SQL 数据库 V12：内部与外部**部分
 
 
-[AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
+[AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 ## 创建服务器防火墙规则
 

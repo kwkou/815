@@ -16,8 +16,8 @@
 
 #将自定义数据注入到 Azure 虚拟机中
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-inject-custom-data](../includes/virtual-machines-common-classic-inject-custom-data.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-inject-custom-data](../../includes/virtual-machines-common-classic-inject-custom-data.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

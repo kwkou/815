@@ -14,9 +14,9 @@
 
 # 使用 Microsoft HPC Pack 在 Azure 中创建和管理 Windows 高性能计算 (HPC) 群集时可用的选项
 
-[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../includes/virtual-machines-common-hpcpack-cluster-options.md)]
+[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../../includes/virtual-machines-common-hpcpack-cluster-options.md)]
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## 在 Azure VM 中运行 HPC Pack 群集
 

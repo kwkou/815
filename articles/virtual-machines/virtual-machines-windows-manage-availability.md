@@ -17,11 +17,11 @@
 
 了解如何设置和管理多个虚拟机，以确保 Windows 应用程序在 Azure 中的高可用性。你也可以[管理 Linux 虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 有关在使用经典部署模型时创建和使用可用性集的说明，请参阅[如何配置可用性集](/documentation/articles/virtual-machines-windows-classic-configure-availability/)。
 
-[AZURE.INCLUDE [virtual-machines-common-manage-availability](../includes/virtual-machines-common-manage-availability.md)]
+[AZURE.INCLUDE [virtual-machines-common-manage-availability](../../includes/virtual-machines-common-manage-availability.md)]
 
 ## 后续步骤
 

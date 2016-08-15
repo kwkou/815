@@ -20,7 +20,7 @@
 
 本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 **经典** 部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。如果要使用 **资源管理器** 部署模型创建和修改 ExpressRoute 线路，请参阅[使用资源管理器部署模型创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)。
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 
 ## 开始之前

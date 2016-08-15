@@ -13,7 +13,7 @@
 
 # 使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除
 
-[AZURE.INCLUDE [storage-selector-portal-e2e-troubleshooting](../includes/storage-selector-portal-e2e-troubleshooting.md)]
+[AZURE.INCLUDE [storage-selector-portal-e2e-troubleshooting](../../includes/storage-selector-portal-e2e-troubleshooting.md)]
 
 ## 概述
 

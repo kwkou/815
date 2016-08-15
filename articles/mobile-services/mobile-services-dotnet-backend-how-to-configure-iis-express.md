@@ -18,6 +18,6 @@
 
 若要使用模拟器、虚拟机或独立工作站上运行的客户端在本地测试移动服务，你必须配置本地 Web 服务器和主机，以允许连接到工作站的 IP 地址和端口。本主题将说明如何配置 IIS Express，以允许连接到本地托管的移动服务。
 
-[AZURE.INCLUDE [mobile-services-how-to-configure-iis-express](../includes/mobile-services-how-to-configure-iis-express.md)]
+[AZURE.INCLUDE [mobile-services-how-to-configure-iis-express](../../includes/mobile-services-how-to-configure-iis-express.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

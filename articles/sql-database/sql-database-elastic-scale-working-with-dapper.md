@@ -164,7 +164,7 @@ Microsoft 模式和实践团队发布了[暂时性故障处理应用程序块](h
 
 使用 Dapper 和 DapperExtensions 的应用程序很容易从 Azure SQL 数据库的弹性数据库工具受益。通过本文档中所述的步骤，这些应用程序可以使用该工具的功能，通过将新 [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) 对象的创建和打开方式更改为使用弹性数据库客户端库的 [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) 调用，来实现数据相关的路由。这会将应用程序更改限制为已创建和打开新连接的位置。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-working-with-dapper/dapperimage1.png

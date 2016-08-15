@@ -74,7 +74,7 @@ Azure 在物理上和逻辑上划分为称为区域的单位。一个区域由�
 
 必须了解异地复制会将数据复制到哪里，这样才能知道，对于要求与存储保持区域关系的数据，应将其实例部署到哪里。下表显示了配对的主要位置和辅助位置：
 
-[AZURE.INCLUDE [paired-region-list](../includes/paired-region-list.md)]
+[AZURE.INCLUDE [paired-region-list](../../includes/paired-region-list.md)]
 
 ###异地复制定价：
 

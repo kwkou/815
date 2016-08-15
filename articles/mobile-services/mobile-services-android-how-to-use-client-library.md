@@ -15,7 +15,7 @@
 
 # 如何使用适用于移动服务的 Android 客户端库
 
-[AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
+[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
  
 本指南说明如何使用适用于 Azure 移动服务的 Android 客户端执行常见任务。所述的任务包括：查询数据；插入、更新和删除数据；对用户进行身份验证；处理错误；自定义客户端。
 
@@ -23,7 +23,7 @@
 
 <!-- 可以在[此处](http://go.microsoft.com/fwlink/p/?LinkId=298735)找到有关 Android 客户端库的 Javadocs API 参考。-->
 
-[AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
+[AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
 
 ##<a name="setup"></a>安装与先决条件
 
@@ -649,7 +649,7 @@
 
 自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api/)。
 
-[AZURE.INCLUDE [mobile-services-android-call-custom-api](../includes/mobile-services-android-call-custom-api.md)]
+[AZURE.INCLUDE [mobile-services-android-call-custom-api](../../includes/mobile-services-android-call-custom-api.md)]
 
 
 ##<a name="authentication"></a>如何对用户进行身份验证

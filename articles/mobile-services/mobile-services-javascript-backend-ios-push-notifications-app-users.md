@@ -15,7 +15,7 @@
 
 #  向经过身份验证的用户发送推送通知
 
-[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
 
 
 在本主题中，你将学习如何向 iOS 上已经过身份验证的用户发送推送通知。在开始本教程之前，请先完成[身份验证入门]和[推送通知入门]教程。
@@ -25,7 +25,7 @@
 
 ## <a name="register"></a>更新服务以要求对注册进行身份验证
 
-[AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
+[AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
 
 将 `insert` 函数替换为以下代码，然后单击“保存”。此插入脚本将使用用户 ID 标记从已登录用户向所有 iOS 应用程序注册发送推送通知：
 
@@ -49,11 +49,11 @@
 
 ## <a name="update-app"></a>更新应用程序以要求在注册之前登录
 
-[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-login](../includes/mobile-services-ios-push-notifications-app-users-login.md)]
+[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-login](../../includes/mobile-services-ios-push-notifications-app-users-login.md)]
 
 ##<a name="test"></a>测试应用
 
-[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-test-app](../includes/mobile-services-ios-push-notifications-app-users-test-app.md)]
+[AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-test-app](../../includes/mobile-services-ios-push-notifications-app-users-test-app.md)]
 
 
 

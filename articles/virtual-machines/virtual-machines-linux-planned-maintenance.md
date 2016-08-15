@@ -18,7 +18,7 @@
 
 了解什么事 Azure 计划内维护，以及它怎么影响你的 Linux 虚拟机的可用性。这篇文章同样适用于 [Windows 虚拟机](/documentation/articles/virtual-machines-windows-planned-maintenance/)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Azure 为何要执行计划内维护
 
@@ -28,6 +28,6 @@ Azure 在全球范围内定期执行更新，以提高虚拟机所基于的主�
 
 请注意，有两类维护可能会影响虚拟机的可用性：计划内维护和计划外维护。本页介绍 Azure 如何执行计划内维护。有关计划外维护的详细信息，请参阅[了解计划内与计划外维护](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
-[AZURE.INCLUDE [virtual-machines-common-planned-maintenance](../includes/virtual-machines-common-planned-maintenance.md)]
+[AZURE.INCLUDE [virtual-machines-common-planned-maintenance](../../includes/virtual-machines-common-planned-maintenance.md)]
 
 <!---HONumber=Mooncake_0321_2016-->

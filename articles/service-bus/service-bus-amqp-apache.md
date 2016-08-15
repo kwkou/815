@@ -13,7 +13,7 @@
 
 # 在 Azure Linux VM 上安装 Apache Qpid Proton-C
 
-[AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
+[AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
 
 本部分演示如何使用 Azure 虚拟机创建 CentOS Linux VM，以及如何下载、构建和安装 Apache Qpid Proton-C 库及 Python 和 PHP 语言绑定。完成这些步骤后，你将能够运行本指南附带的 Python 和 PHP 示例。
 

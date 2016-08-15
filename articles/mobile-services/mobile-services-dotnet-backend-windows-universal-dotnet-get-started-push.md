@@ -14,7 +14,7 @@
 
 # 向移动服务应用程序添加推送通知
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 ##概述
 本主题说明如何结合使用 Azure 移动服务和 .NET 后端向通用 Windows 应用程序发送推送通知。在本教程中，你将在通用 Windows 应用程序项目中使用 Azure 通知中心来启用推送通知。完成后，每当在 TodoList 表中插入一条记录时，移动服务都会从 .NET 后端向所有已注册的 Windows 应用商店和 Windows Phone 应用商店应用程序发送一条推送通知。创建的通知中心可在移动服务中任意使用，可独立于移动服务进行管理，并可供其他应用程序和服务使用。
@@ -26,7 +26,7 @@
 
 ##<a id="register"></a>为推送通知注册应用程序
 
-[AZURE.INCLUDE [mobile-services-create-new-push-vs2013](../includes/mobile-services-create-new-push-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-create-new-push-vs2013](../../includes/mobile-services-create-new-push-vs2013.md)]
 
 &nbsp;&nbsp;6.浏览到 `\Services\MobileServices\your_service_name` 项目文件夹，打开生成的 push.register.cs 代码文件，并检查 **UploadChannel** 方法是否将设备的通道 URL 注册到通知中心。
  
@@ -42,11 +42,11 @@
 
 以下步骤将更新现有的 TodoItemController 类，以便在插入新项时将推送通知发送到所有已注册的设备。你可以在任何自定义的 [ApiController](https://msdn.microsoft.com/zh-cn/library/system.web.http.apicontroller.aspx)、[TableController](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.tables.tablecontroller.aspx) 或后端服务中的其他任何位置实现类似的代码。
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-update-server-push](../includes/mobile-services-dotnet-backend-update-server-push.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-update-server-push](../../includes/mobile-services-dotnet-backend-update-server-push.md)]
 
 ##<a id="local-testing"></a>启用推送通知以进行本地测试
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-local-push-vs2013](../includes/mobile-services-dotnet-backend-configure-local-push-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-configure-local-push-vs2013](../../includes/mobile-services-dotnet-backend-configure-local-push-vs2013.md)]
 
 本节中的剩余步骤是可选的。使用这些步骤可以针对本地计算机上运行的移动服务测试你的应用程序。如果你计划使用 Azure 中运行的移动服务测试推送通知，则可以直接跳到最后一节。这是因为“添加推送通知”向导已将你的应用程序配置为连接到 Azure 中运行的服务。
 
@@ -66,7 +66,7 @@
 
 ##<a id="test"></a>在应用程序中测试推送通知
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-windows-universal-test-push](../includes/mobile-services-dotnet-backend-windows-universal-test-push.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-windows-universal-test-push](../../includes/mobile-services-dotnet-backend-windows-universal-test-push.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -17,7 +17,7 @@
 
 # 如何在 Windows VM 中重置远程桌面服务或其登录密码
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 如果你由于忘记了密码或远程桌面服务配置有问题而无法连接到 Windows 虚拟机，你可以重置本地管理员密码或重置远程桌面服务配置。你可以使用 Azure 门户预览或 Azure PowerShell 中的 VM 访问扩展重置密码。如果使用 PowerShell，请务必在工作计算机上安装最新的 PowerShell 模块，并登录 Azure 订阅。有关详细步骤，请阅读[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 

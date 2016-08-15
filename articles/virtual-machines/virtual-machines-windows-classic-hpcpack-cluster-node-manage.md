@@ -16,7 +16,7 @@
 
 如果你在 Azure VM 中创建了一个 HPC Pack 群集，你可能希望有轻松添加、删除、启动（设置）或停止（取消设置）群集中大量计算节点 VM 的方法。若要执行这些任务，请运行头节点 VM 中安装的 Azure PowerShell 脚本。这些脚本可帮助你控制 HPC Pack 群集资源的数量和可用性，以便你可以控制成本。
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 先决条件
 

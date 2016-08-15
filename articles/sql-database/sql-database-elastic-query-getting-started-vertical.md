@@ -96,7 +96,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 有关定价信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database)。
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 

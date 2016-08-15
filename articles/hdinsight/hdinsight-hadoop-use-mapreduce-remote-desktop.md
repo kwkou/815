@@ -15,7 +15,7 @@
 
 # 通过远程桌面在 HDInsight 上的 Hadoop 中使用 MapReduce
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 在本文中，你将学习如何通过使用远程桌面连接到 HDInsight 群集上的 Hadoop，然后通过使用 Hadoop 命令运行 MapReduce 作业。
 

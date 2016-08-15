@@ -153,7 +153,7 @@ GSM 和 LSM 可能因以下原因变得不同步：
 
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 
 <!--Image references-->

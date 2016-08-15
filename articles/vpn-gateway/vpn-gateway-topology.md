@@ -41,7 +41,7 @@
 
 **可用的部署模型和方法**
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
 ## VNet 到 VNet
 
@@ -57,7 +57,7 @@ Azure 当前有两种部署模式：Azure 服务管理（称为经典）和 Azur
 
 **可用的部署模型和方法**
 
-[AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
 
 
@@ -73,7 +73,7 @@ ExpressRoute 可以从你的 WAN 与 Microsoft 服务（包括 Azure）直接建
 
 **可用的部署模型和方法**
 
-[AZURE.INCLUDE [vpn-gateway-table-coexist](../includes/vpn-gateway-table-coexist-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-coexist](../../includes/vpn-gateway-table-coexist-include.md)]
 
 
 ## 点到站点
@@ -88,7 +88,7 @@ ExpressRoute 可以从你的 WAN 与 Microsoft 服务（包括 Azure）直接建
 
 **可用的部署模型和方法**
 
-[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../includes/vpn-gateway-table-point-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)]
 
 ## 后续步骤
 

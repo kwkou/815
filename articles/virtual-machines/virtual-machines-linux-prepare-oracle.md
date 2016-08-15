@@ -13,7 +13,7 @@
 
 #为 Azure 准备 Oracle Linux 虚拟机
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 -   [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd/#oracle6)
 

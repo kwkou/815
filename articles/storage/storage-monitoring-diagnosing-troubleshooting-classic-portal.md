@@ -14,7 +14,7 @@
 
 # 监视、诊断和排查 Azure 存储空间问题
 
-[AZURE.INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
+[AZURE.INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
 
 ## 概述
 

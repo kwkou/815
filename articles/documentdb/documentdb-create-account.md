@@ -26,7 +26,7 @@
 
 可以使用 Azure 门户预览、Azure Resource Manager 模板或 Azure 命令行接口 (CLI) 来创建 DocumentDB 帐户。本文说明如何使用 Azure 门户预览创建数据库帐户。若要使用 Azure Resource Manager 或 Azure CLI 创建帐户，请参阅 [Automate DocumentDB database account creation（自动创建 DocumentDB 数据库帐户）](/documentation/articles/documentdb-automation-resource-manager-cli/)。
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
 ## 后续步骤
 

@@ -23,7 +23,7 @@
 
 ## 安装 Azure PowerShell
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
 
 Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的基础上进行了一些重大的更改，尤其是对 cmdlet 的命名方式进行了更改。1.0 版 cmdlet 遵循命名模式 {谓词}-AzureRm{名词}；而 0.9.8 名称不包括 **Rm**（例如，使用 New-AzureResourceGroup 而不是 New-AzureRmResourceGroup）。在使用 Azure PowerShell 0.9.8 时，首先必须通过运行 **Switch-AzureMode AzureResourceManager** 命令启用资源管理器模式。此命令在 1.0 或更高版中并不需要。
 
@@ -32,7 +32,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 [下载最新的 PowerShell 版本](https://github.com/Azure/azure-powershell/releases)（所需最低版本：1.0.0）
 
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
 
 ## 创建备份保管库

@@ -15,7 +15,7 @@
 
 ## 计划程序配额、限制、默认值和中止值
 
-[AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
+[AZURE.INCLUDE [scheduler-limits-table](../../includes/scheduler-limits-table.md)]
 
 ## x-ms-request-id 标头
 

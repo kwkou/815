@@ -85,7 +85,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 ## 将应用程序部署到 Azure
 
-[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
 ### 下载 Azure 发布设置
 

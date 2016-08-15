@@ -14,6 +14,6 @@
 
 # 向移动服务应用程序添加推送通知
 
-[AZURE.INCLUDE [mobile-services-content-not-ready](../includes/mobile-services-content-not-ready.md)]
+[AZURE.INCLUDE [mobile-services-content-not-ready](../../includes/mobile-services-content-not-ready.md)]
 
 <!---HONumber=Mooncake_0405_2016-->

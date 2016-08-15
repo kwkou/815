@@ -25,7 +25,7 @@
 
 **关于 Azure 部署模型**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## 连接关系图 
 
@@ -33,7 +33,7 @@
 
 **用于站点到站点连接的部署模型和工具**
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
 如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology/)一文。
 
@@ -74,7 +74,7 @@
 如果你已拥有一个包含 /29 或更大网关子网的虚拟网络，则可以往前跳转到[添加本地网关](#localnet)。
 
 
-[AZURE.INCLUDE [vpn-gateway-no-nsg](../includes/vpn-gateway-no-nsg-include.md)]
+[AZURE.INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
 ### 若要创建虚拟网络和网关子网
 
@@ -183,13 +183,13 @@ Azure 使用指定的 IP 地址前缀来识别要发送到本地位置的流量�
 
 VPN 连接有几种不同的验证方式。下面我们将讨论如何使用 Azure 门户预览和 PowerShell 执行基本验证。
 
-[AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../includes/vpn-gateway-verify-connection-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../../includes/vpn-gateway-verify-connection-rm-include.md)]
 
 ## <a name="modify"></a>修改本地网关的 IP 地址前缀
 
 如果需要更改局域网网关的前缀，请使用下面的说明。提供了两套说明。要选择哪套说明取决于你是否已创建 VPN 网关连接。
 
-[AZURE.INCLUDE [vpn-gateway-modify-ip-prefix-rm](../includes/vpn-gateway-modify-ip-prefix-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-modify-ip-prefix-rm](../../includes/vpn-gateway-modify-ip-prefix-rm-include.md)]
 
 
 ## 后续步骤

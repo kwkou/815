@@ -21,7 +21,7 @@
 
 本主题提供了用于执行许多 Azure SQL 数据库任务的 PowerShell 命令。
 
-[AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
+[AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 
 ## 创建资源组

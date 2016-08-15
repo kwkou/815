@@ -15,7 +15,7 @@
 
 # 示例 Azure 基础结构演练
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
 
 本文将逐步讲述如何构建示例应用程序基础结构。我们将详细介绍如何设计简单在线商店的基础结构，此在线商店可将关于命名约定、可用性集、虚拟网络及负载平衡器的所有准则和决策聚集在一起；以及如何实际部署你的虚拟机 (VM)。
 
@@ -126,6 +126,6 @@ Adventure Works Cycles 决定为其 Azure VM 使用以下名称：
 
 ## <a name="next-steps"></a> 后续步骤
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

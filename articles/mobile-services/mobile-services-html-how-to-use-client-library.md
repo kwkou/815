@@ -14,13 +14,13 @@
 
 #  如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端
 
-[AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
+[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
 
 ## 概述
 
 本指南说明如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端（包括 Windows 应用商店 JavaScript 和 PhoneGap/Cordova 应用程序）执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-html-get-started/)。快速入门教程可帮助你配置帐户并创建第一个移动服务。
 
-[AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
+[AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
 
 ## <a name="create-client"></a>如何创建移动服务客户端
 

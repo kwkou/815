@@ -58,7 +58,7 @@
 脚本完成时，会输出池要包含目标服务器中所有候选数据库所需要的 eDTU 估算数目。此估算的 eDTU 可用于创建和配置池。创建池并将数据库移动到池中后，请密切监控池数天，并根据需要对池 eDTU 配置进行调整。请参阅[监视、管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-powershell/)。
 
 
-   [AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)
+   [AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)
     
     param (
     [Parameter(Mandatory=$true)][string]$AzureSubscriptionName, # Azure Subscription name - can be found on the Azure portal: https://manage.windowsazure.cn/

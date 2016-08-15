@@ -17,6 +17,6 @@
 
 ## 消息传送配额
 
-[AZURE.INCLUDE [service-bus-quotas-table](../includes/service-bus-quotas-table.md)]
+[AZURE.INCLUDE [service-bus-quotas-table](../../includes/service-bus-quotas-table.md)]
 
 <!---HONumber=82-->

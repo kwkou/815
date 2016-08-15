@@ -15,7 +15,7 @@
 
 # 使用 HDInsight .NET SDK 运行 Hive 查询
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 
 了解如何使用 HDInsight .NET SDK 提交 Hive 查询。

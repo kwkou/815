@@ -17,7 +17,7 @@
 
 # 使用 VM 扩展创作 Linux 资源管理器模板。
 
-[AZURE.INCLUDE [virtual-machines-common-extensions-authoring-templates](../includes/virtual-machines-common-extensions-authoring-templates.md)]
+[AZURE.INCLUDE [virtual-machines-common-extensions-authoring-templates](../../includes/virtual-machines-common-extensions-authoring-templates.md)]
 
 从 Azure CLI，运行以下命令：
 

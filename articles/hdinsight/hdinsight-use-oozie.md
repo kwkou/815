@@ -16,7 +16,7 @@
 
 # 在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流
 
-[AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
+[AZURE.INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
 
 了解如何定义工作流，以及如何在 HDInsight 上运行工作流。若要了解 Oozie 协调器，请参阅[将基于时间的 Hadoop Oozie 协调器与 HDInsight 配合使用][hdinsight-oozie-coordinator-time]。
 
@@ -54,7 +54,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 
 - **配备 Azure PowerShell 的工作站**。
 
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 	若要执行 Windows PowerShell 脚本，必须以管理员身份运行并将执行策略设为 *RemoteSigned*。有关详细信息，请参阅[运行 Windows PowerShell 脚本][powershell-script]。
 

@@ -13,7 +13,7 @@
 	wacn.date="07/11/2016"/>
 
 # Resource Manager 中的经典终结点
-[AZURE.INCLUDE [virtual-machines-common-endpoints-in-resource-manager](../includes/virtual-machines-common-endpoints-in-resource-manager.md)]
+[AZURE.INCLUDE [virtual-machines-common-endpoints-in-resource-manager](../../includes/virtual-machines-common-endpoints-in-resource-manager.md)]
 
 ## 后续步骤
 你可以从下列文章中，阅读与此处讨论的技术相关的更为详细的信息，以及有关如何使用网络安全组的快速入门指南：

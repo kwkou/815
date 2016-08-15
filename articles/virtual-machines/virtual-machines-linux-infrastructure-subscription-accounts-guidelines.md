@@ -15,7 +15,7 @@
 
 # 订阅和帐户准则
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)]
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)]
 
 本文重点介绍如何随环境和用户群的增长实行订阅和帐户管理。
 
@@ -63,6 +63,6 @@ Microsoft 通过可下载的文件为企业协议中的单个帐户或所有帐�
 
 ## <a name="next-steps"></a> 后续步骤
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

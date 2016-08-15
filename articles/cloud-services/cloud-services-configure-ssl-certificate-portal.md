@@ -29,7 +29,7 @@
 
 如果尚未创建云服务，请首先阅读[本信息](/documentation/articles/cloud-services-how-to-create-deploy-portal/)。
 
-[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
+[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 ## 步骤 1：获取 SSL 证书
 

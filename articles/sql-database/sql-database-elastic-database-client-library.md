@@ -63,7 +63,7 @@
 [GitHub](https://github.com/Azure/elastic-db-tools) 以开源软件的形式提供该库。
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
 <!--Image references-->

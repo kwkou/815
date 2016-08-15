@@ -14,7 +14,7 @@
 
 # 教程：如何使用 IoT 中心和 Node.js 发送云到设备的消息
 
-[AZURE.INCLUDE [iot-hub-selector-c2d](../includes/iot-hub-selector-c2d.md)]
+[AZURE.INCLUDE [iot-hub-selector-c2d](../../includes/iot-hub-selector-c2d.md)]
 
 ## 介绍
 

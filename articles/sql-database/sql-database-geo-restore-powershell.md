@@ -21,7 +21,7 @@
 
 本文展示了如何使用 PowerShell 通过异地还原将数据库还原到新服务器中。
 
-[AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
+[AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 ## 将你的数据库异地还原到独立数据库
 

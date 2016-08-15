@@ -36,7 +36,7 @@
 
 ## 确定侦听器的可访问性
 
-[AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
+[AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
 本文重点介绍如何创建使用**外部负载平衡**的侦听器。如果你想要创建专用于虚拟网络的侦听器，请参阅本文的另一个版本，其中提供了设置[使用 ILB 的侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)的步骤
 
@@ -44,7 +44,7 @@
 
 外部负载平衡使用托管 VM 的云服务的公共虚拟 IP 地址。因此，在这种情况下，你不需要创建或配置负载平衡器。
 
-[AZURE.INCLUDE [load-balanced-endpoints](../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
+[AZURE.INCLUDE [load-balanced-endpoints](../../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
 
 1. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（这里为某些参数提供了默认值）。请注意，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
 
@@ -62,15 +62,15 @@
 
 ## 如果需要，请验证是否已安装 KB2854082
 
-[AZURE.INCLUDE [kb2854082](../includes/virtual-machines-ag-listener-kb2854082.md)]
+[AZURE.INCLUDE [kb2854082](../../includes/virtual-machines-ag-listener-kb2854082.md)]
 
 ## 在可用性组节点中打开防火墙端口
 
-[AZURE.INCLUDE [防火墙](../includes/virtual-machines-ag-listener-open-firewall.md)]
+[AZURE.INCLUDE [防火墙](../../includes/virtual-machines-ag-listener-open-firewall.md)]
 
 ## 创建可用性组侦听器
 
-[AZURE.INCLUDE [防火墙](../includes/virtual-machines-ag-listener-create-listener.md)]
+[AZURE.INCLUDE [防火墙](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
 1. 对于外部负载平衡，你必须获取包含副本的云服务的公共虚拟 IP 地址。登录到 Azure 经典管理门户。导航到包含你的可用性组 VM 的云服务。打开“仪表板”视图。 
 
@@ -97,15 +97,15 @@
 
 ## 使侦听器联机
 
-[AZURE.INCLUDE [Bring-Listener-Online](../includes/virtual-machines-ag-listener-bring-online.md)]
+[AZURE.INCLUDE [Bring-Listener-Online](../../includes/virtual-machines-ag-listener-bring-online.md)]
 
 ## 后续操作项
 
-[AZURE.INCLUDE [Follow-up](../includes/virtual-machines-ag-listener-follow-up.md)]
+[AZURE.INCLUDE [Follow-up](../../includes/virtual-machines-ag-listener-follow-up.md)]
 
 ## 测试可用性组侦听器（在同一 VNet 中）
 
-[AZURE.INCLUDE [Test-Listener-Within-VNET](../includes/virtual-machines-ag-listener-test.md)]
+[AZURE.INCLUDE [Test-Listener-Within-VNET](../../includes/virtual-machines-ag-listener-test.md)]
 
 ## 测试可用性组侦听器（通过 Internet）
 
@@ -119,6 +119,6 @@
 
 ## 后续步骤
 
-[AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
+[AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
 <!---HONumber=76-->

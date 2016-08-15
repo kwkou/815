@@ -15,7 +15,7 @@
 
 # 为 Azure 准备 Ubuntu 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## 正式 Ubuntu 云映像
 Ubuntu 现已发布正式 Azure VHD，可从 [http://cloud-images.ubuntu.com/](http://cloud-images.ubuntu.com/) 下载。如果你需要为 Azure 构建自己专用的 Ubuntu 映像，而不是使用以下手动过程，则我们建议你先使用这些已知良好的 VHD，并根据需要进行自定义。

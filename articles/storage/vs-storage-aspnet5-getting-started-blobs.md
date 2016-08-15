@@ -149,6 +149,6 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 ## 后续步骤
 
-[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
 <!---HONumber=Mooncake_0606_2016-->

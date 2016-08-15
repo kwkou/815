@@ -5,6 +5,6 @@
     wacn.lang="en"
     />
 
-[AZURE.INCLUDE [cdn](../includes/cdn-enus.md)]
+[AZURE.INCLUDE [cdn](../../includes/cdn-enus.md)]
 
-  [cdn]: ../includes/cdn.md
+  [cdn]: ../../includes/cdn.md

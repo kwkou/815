@@ -41,7 +41,7 @@
 
 > [AZURE.NOTE] 本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/) 中所述创建并配置了通知中心。
 
-[AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush)]
+[AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../../includes/notification-hubs-aspnet-backend-securepush)]
 
 ## 修改 iOS 项目
 

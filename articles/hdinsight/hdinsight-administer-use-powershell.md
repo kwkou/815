@@ -15,7 +15,7 @@
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
 
-[AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-portal-management-selector.md)]
 
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。在本文中，你将要学习如何通过使用 Windows PowerShell 借助于本地 Azure PowerShell 控制台来管理 Azure HDInsight 中的 Hadoop 群集。有关 HDInsight PowerShell cmdlet 的列表，请参阅 [HDInsight cmdlet 参考][hdinsight-powershell-reference]。
 
@@ -59,11 +59,11 @@ HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 
 - HDInsight 使用 Azure 存储帐户的 Blob 容器作为默认文件系统。你需要先拥有 Azure 存储帐户和存储容器，然后才能创建 HDInsight 群集。默认存储帐户和 HDInsight 群集必须位于同一位置。
 
-[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
+[AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
 **连接到 Azure**
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
 	Add-AzureAccount -Environment AzureChinaCloud
 	Get-AzureSubscription  # list your subscriptions and get your subscription ID
@@ -75,7 +75,7 @@ HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 
 	New-AzureStorageAccount -StorageAccountName <Azure Storage Account Name> -Location "<Azure Location>" -Type <AccountType> # account type example: Standard_LRS for zero redundancy storage
 	
-[AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]
+[AZURE.INCLUDE [数据中心列表](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
 如果你已有存储帐户但是不知道帐户名称和帐户密钥，可以使用以下命令来检索该信息：

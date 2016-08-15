@@ -28,13 +28,13 @@
 
 	Get-Module azure | format-table version
 
-[AZURE.INCLUDE [powershell 预览](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell 预览](../../includes/powershell-preview-inline-include.md)]
 
 首先，必须使用以下命令登录到 Azure。
 
 	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 在 Azure 登录对话框中指定 Azure 帐户的电子邮件地址及其密码。
 

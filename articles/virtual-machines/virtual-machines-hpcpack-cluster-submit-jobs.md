@@ -14,7 +14,7 @@
 
 # 将 HPC 作业从本地计算机提交到部署在 Azure 中的 HPC Pack 群集
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 配置运行 Windows 的本地客户端计算机，使其运行 HPC Pack 作业提交工具，以通过 HTTPS 来与 Azure 中的 HPC Pack 群集通信。这为各种群集用户提供了一种直截了当的灵活方法来向基于云的 HPC Pack 群集提交作业，不需要直接连接到头节点 VM 或访问 Azure 订阅来运行作业提交工具。
 

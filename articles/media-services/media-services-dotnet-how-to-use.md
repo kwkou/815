@@ -14,7 +14,7 @@
 
 #使用 .NET 进行媒体服务开发
 
-[AZURE.INCLUDE [media-services-selector-setup](../includes/media-services-selector-setup.md)]
+[AZURE.INCLUDE [media-services-selector-setup](../../includes/media-services-selector-setup.md)]
 
 本主题介绍如何开始使用 .NET 开发媒体服务应用程序。
 

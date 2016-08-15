@@ -14,7 +14,7 @@
 
 # 使用负载平衡集群集化 Linux 上的 MySQL
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 介绍
 

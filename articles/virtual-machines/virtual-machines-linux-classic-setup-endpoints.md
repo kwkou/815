@@ -21,7 +21,7 @@
 
 在 Azure 经典管理门户中创建 Linux 虚拟机时，通常会为你自动创建用于安全外壳 (SSH) 的终结点，具体取决于你选择的操作系统。你可以在创建虚拟机时或之后根据需要配置其他终结点。
 
-[AZURE.INCLUDE [virtual-machines-common-classic-setup-endpoints](../includes/virtual-machines-common-classic-setup-endpoints.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-setup-endpoints](../../includes/virtual-machines-common-classic-setup-endpoints.md)]
 
 ## 下一步
 

@@ -15,7 +15,7 @@
 	wacn.date="07/11/2016"/>
 
 # 使用 Azure 门户预览对 VM 实现外部访问
-[AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../includes/virtual-machines-common-nsg-quickstart.md)]
+[AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 ## 快速命令
 你也可以[通过 Azure PowerShell 执行这些步骤](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)。

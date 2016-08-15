@@ -18,7 +18,7 @@
 
 >[AZURE.NOTE] 这仅适用于在 Azure SDK 1.0 到 1.4 中使用 Web 角色和辅助角色。
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 为什么空间会不足？
 

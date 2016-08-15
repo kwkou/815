@@ -14,15 +14,15 @@
 
 # 如何通过 Java 使用文件存储
 
-[AZURE.INCLUDE [storage-selector-file-include](../includes/storage-selector-file-include.md)]
+[AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
 
 ## 概述
 
 在本指南中，你将学习如何针对 Azure 文件存储服务执行基本的操作。通过以 Java 编写的示例，你将学习如何创建共享和目录，以及如何上载、列出和删除文件。如果你不熟悉 Azure 的文件存储服务，则若要了解这些示例，你需要学习后续部分的概念。
 
-[AZURE.INCLUDE [storage-file-concepts-include](../includes/storage-file-concepts-include.md)]
+[AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 Java 应用程序
 

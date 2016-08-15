@@ -14,7 +14,7 @@
 
 # 从 Android 设备将图像上载到 Azure 存储空间
 
-[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 本主题演示如何使 Android Azure 移动服务应用能够将图像上载到 Azure 存储空间。
 
@@ -48,7 +48,7 @@
 
 ## 在 Azure 经典管理门户中更新已注册的插入脚本
 
-[AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-configure-blob-storage](../../includes/mobile-services-configure-blob-storage.md)]
 
 
 ## 更新快速入门应用以捕获和上载图像

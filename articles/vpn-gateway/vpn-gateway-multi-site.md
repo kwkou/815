@@ -19,11 +19,11 @@
 
 **关于 Azure 部署模型**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 **用于多站点连接的部署模型和工具**
 
-[AZURE.INCLUDE [vpn-gateway-table-multi-site](../includes/vpn-gateway-table-multisite-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-multi-site](../../includes/vpn-gateway-table-multisite-include.md)]
 
 
 ## 关于连接

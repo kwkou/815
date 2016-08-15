@@ -15,6 +15,6 @@
 
 本部分列出 Azure 事件中心的基本配额和限制。
 
-[AZURE.INCLUDE [service-bus-quotas-table](../includes/event-hubs-limits.md)]
+[AZURE.INCLUDE [service-bus-quotas-table](../../includes/event-hubs-limits.md)]
 
 <!---HONumber=AcomDC_0718_2016-->

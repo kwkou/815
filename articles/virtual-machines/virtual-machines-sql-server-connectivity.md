@@ -84,11 +84,11 @@
 
 ![连接到 SQL Server 虚拟机](./media/virtual-machines-sql-server-connection-steps/SQLServerinVMConnectionMap.png)
 
-[AZURE.INCLUDE [连接到 VM 中的 SQL Server（经典 TCP 终结点）](../includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md)]
+[AZURE.INCLUDE [连接到 VM 中的 SQL Server（经典 TCP 终结点）](../../includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md)]
 
-[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../includes/virtual-machines-sql-server-connection-steps.md)]
+[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../../includes/virtual-machines-sql-server-connection-steps.md)]
 
-[AZURE.INCLUDE [连接到 VM 中的 SQL Server（经典步骤）](../includes/virtual-machines-sql-server-connection-steps-classic.md)]
+[AZURE.INCLUDE [连接到 VM 中的 SQL Server（经典步骤）](../../includes/virtual-machines-sql-server-connection-steps-classic.md)]
 
 ## 后续步骤
 

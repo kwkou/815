@@ -15,7 +15,7 @@
 
 # IoT 网关 SDK（Beta 版）– 使用 Windows 通过模拟设备发送设备至云消息
 
-[AZURE.INCLUDE [iot-hub-gateway-sdk-simulated-selector](../includes/iot-hub-gateway-sdk-simulated-selector.md)]
+[AZURE.INCLUDE [iot-hub-gateway-sdk-simulated-selector](../../includes/iot-hub-gateway-sdk-simulated-selector.md)]
 
 ## 生成并运行示例
 

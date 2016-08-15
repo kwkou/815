@@ -15,7 +15,7 @@
 
 # 虚拟机准则
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
 
 本文重点介绍在 Azure 环境中创建和管理虚拟机 (VM) 所需的规划步骤。
 
@@ -51,6 +51,6 @@ VM 等组件在逻辑上组合在一起，以便使用 [Azure 资源组](/docume
 
 
 ## <a name="next-steps"></a> 后续步骤
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

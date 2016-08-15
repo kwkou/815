@@ -15,9 +15,9 @@
 
 # 如何使用 Azure AD 保护 AngularJS 单页面应用程序
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide)]
 
 使用 Azure AD 可以简单直接地在单页面应用程序中添加登录、注销和安全 OAuth API 调用。它允许应用程序使用用户的 Active Directory 帐户对用户进行身份验证，并使用 Azure AD 保护的任何 Web API（例如 Office 365 API 或 Azure API）。
 
@@ -152,6 +152,6 @@ js
 
 [从 SPA 调用 CORS Web API >>](https://github.com/AzureAdSamples/SinglePageApp-WebAPI-AngularJS-DotNet)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources)]
 
 <!---HONumber=Mooncake_0711_2016-->

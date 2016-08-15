@@ -139,7 +139,7 @@
 ## 后续步骤
 [安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation/)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security/)。另请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png

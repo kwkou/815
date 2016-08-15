@@ -14,7 +14,7 @@
 
 # 教程：使用 C# 程序和 REST API 创建 IoT 中心
 
-[AZURE.INCLUDE [iot-hub-resource-manager-selector](../includes/iot-hub-resource-manager-selector.md)]
+[AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 ## 介绍
 
@@ -28,7 +28,7 @@
 - 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 - [Microsoft Azure PowerShell 1.0][lnk-powershell-install] 或更高版本。
 
-[AZURE.INCLUDE [iot-hub-prepare-resource-manager](../includes/iot-hub-prepare-resource-manager.md)]
+[AZURE.INCLUDE [iot-hub-prepare-resource-manager](../../includes/iot-hub-prepare-resource-manager.md)]
 
 ## 准备 Visual Studio 项目
 
@@ -69,7 +69,7 @@
     static string iotHubName = "{IoT Hub name including your initials}";
     ```
 
-[AZURE.INCLUDE [iot-hub-get-access-token](../includes/iot-hub-get-access-token.md)]
+[AZURE.INCLUDE [iot-hub-get-access-token](../../includes/iot-hub-get-access-token.md)]
 
 ## 使用 REST API 创建 IoT 中心
 

@@ -15,7 +15,7 @@
 
 # IoT 网关 SDK（Beta 版）- 使用 Windows 入门
 
-[AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
+[AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
 ## 如何生成示例
 
@@ -65,7 +65,7 @@
   build\samples\hello_world\Debug\hello_world_sample.exe samples\hello_world\src\hello_world_win.json
   ```
 
-[AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-code](../includes/iot-hub-gateway-sdk-getstarted-code.md)]
+[AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-code](../../includes/iot-hub-gateway-sdk-getstarted-code.md)]
 
 <!-- Links -->
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md

@@ -14,13 +14,13 @@
 
 # 如何使用 Azure 移动服务的托管客户端库
 
-[AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
+[AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
 
 ##概述 
 
 本指南说明如何在 Windows 应用和 Xamarin 应用中使用 Azure 移动服务的托管客户端库执行常见方案。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started/)教程。
 
-[AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
+[AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
 
 ##<a name="setup"></a>安装与先决条件
 

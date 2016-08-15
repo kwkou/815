@@ -15,7 +15,7 @@
 
 #使用 Curl 在 HDInsight 中以 Hadoop 运行 Hive 查询
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 在本文档中，你将学习如何使用 Curl 在 Azure HDInsight 群集上对 Hadoop 运行 Hive 查询。
 

@@ -15,7 +15,7 @@
 
 # 使用 Azure AD 提供的持有者令牌保护 Web API
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
 如果你正在生成的应用程序会提供对受保护资源的访问，则你需要知道如何防止有人在未经授权的情况下访问这些资源。
 借助 Azure AD，你只需编写几行代码，就能使用 OAuth Bearer 2.0 访问令牌简单直接地保护 Web API。
@@ -138,6 +138,6 @@ C#
 
 [此处](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/complete.zip)提供了已完成示例（无需配置值）供你参考。现在，你可以转到其他标识方案。
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
 <!---HONumber=AcomDC_0718_2016-->

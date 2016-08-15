@@ -15,7 +15,7 @@
 
 #使用 Curl 配合 HDInsight 上的 Hadoop 运行 Pig 作业
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
 在本文档中，你将学习如何使用 Curl 在 Azure HDInsight 群集上运行 Pig Latin 作业。可以使用 Pig Latin 编程语言来描述应用到输入数据以生成所需输出的转换。
 

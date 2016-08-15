@@ -64,7 +64,7 @@
 
 [弹性数据库功能概述](/documentation/articles/sql-database-elastic-scale-introduction)
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
 <!--Image references-->

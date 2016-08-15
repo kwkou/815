@@ -15,15 +15,15 @@
 
 # 向 iOS 应用和 .NET 后端添加推送通知
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-dotnet-backend-ios-get-started/)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
 
-[AZURE.INCLUDE [启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [启用 Apple 推送通知](../../includes/enable-apple-push-notifications.md)]
 
 ## <a id="configure"></a>配置 Azure 以发送推送通知
 
-[AZURE.INCLUDE [在 Azure 移动服务中配置推送通知](../includes/mobile-services-apns-configure-push.md)]
+[AZURE.INCLUDE [在 Azure 移动服务中配置推送通知](../../includes/mobile-services-apns-configure-push.md)]
 
 ##<a id="update-server"></a>更新后端代码以发送推送通知
 
@@ -52,11 +52,11 @@
 
 ##<a name="publish-the-service"></a>将移动服务发布到 Azure
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../../includes/mobile-services-dotnet-backend-publish-service.md)]
 
-[AZURE.INCLUDE [向应用程序添加推送通知](../includes/add-push-notifications-to-app.md)]
+[AZURE.INCLUDE [向应用程序添加推送通知](../../includes/add-push-notifications-to-app.md)]
 
-[AZURE.INCLUDE [在应用程序中测试推送通知](../includes/test-push-notifications-in-app.md)]
+[AZURE.INCLUDE [在应用程序中测试推送通知](../../includes/test-push-notifications-in-app.md)]
 
 <!-- Anchors.  -->
 [Generate the certificate signing request]: #certificates

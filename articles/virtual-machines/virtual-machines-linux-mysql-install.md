@@ -19,7 +19,7 @@
 
 在本文中，你将了解如何在运行 Linux 的 Azure 虚拟机上安装和配置 MySQL。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 ##在虚拟机上安装 MySQL

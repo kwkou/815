@@ -15,7 +15,7 @@
 
 # 如何使用 Service Bus 主题/订阅
 
-[AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
+[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
 本指南介绍如何从 Ruby 应用程序使用服务总线主题和订阅。涉及的任务包括**创建主题和订阅、创建订阅筛选器、将消息发送到主题**、**从订阅接收消息**以**及删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤](#next-steps)部分。
 

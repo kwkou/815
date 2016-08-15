@@ -38,7 +38,7 @@
 - [使用“快速创建”设置群集](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
 - [使用“自定义创建”设置群集](/documentation/articles/hdinsight-provision-clusters-v1/#portal)
 
-[AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]
+[AZURE.INCLUDE [数据中心列表](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
 ##自定义 HDInsight 群集

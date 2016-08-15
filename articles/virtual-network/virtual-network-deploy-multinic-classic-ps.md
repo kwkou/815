@@ -15,13 +15,13 @@
 
 #使用 PowerShell 部署多 NIC VM（经典）
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-classic-selectors-include.md](../includes/virtual-network-deploy-multinic-classic-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-classic-selectors-include.md](../../includes/virtual-network-deploy-multinic-classic-selectors-include.md)]
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../../includes/virtual-network-deploy-multinic-intro-include.md)]
 
 > [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](/documentation/articles/virtual-network-deploy-multinic-arm-ps/)。
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
 由于目前你不能使用具有单个 NIC 的 VM 以及具有同一个云服务中的多个 NIC 的 VM，因此你将在一个云服务中实现后端服务器，而在其他云服务中实现方案中的所有其他组件。以下步骤使用名为 *IaaSStory* 的云服务作为主资源，并在名为 *IaaSStory-BackEnd* 的云服务中实现后端服务器。
 
@@ -29,7 +29,7 @@
 
 在部署后端服务器之前，你需要先使用此方案的所有必需资源部署主云服务。至少，你需要创建包含后端子网的虚拟网络。若要了解如何部署虚拟网络，请访问[使用 PowerShell 创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps/)。
 
-[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 ## 部署后端 VM
 

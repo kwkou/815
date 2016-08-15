@@ -14,7 +14,7 @@
 
 #  向移动服务应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users-legacy](../includes/mobile-services-selector-get-started-users-legacy.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users-legacy](../../includes/mobile-services-selector-get-started-users-legacy.md)]
 
 ##概述
 
@@ -28,13 +28,13 @@
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
 
 
 ## <a name="permissions"></a>将权限限制给已经过身份验证的用户
 
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;3. 在 Visual Studio 中，打开在完成教程[将移动服务添加到现有应用](/documentation/articles/mobile-services-windows-phone-get-started-data/)时创建的项目。
@@ -45,11 +45,11 @@
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app](../includes/mobile-services-windows-phone-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app](../../includes/mobile-services-windows-phone-authenticate-app.md)]
 
 ## <a name="tokens"></a>在客户端上存储授权令牌
 
-[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app-with-token](../includes/mobile-services-windows-phone-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-services-windows-phone-authenticate-app-with-token](../../includes/mobile-services-windows-phone-authenticate-app-with-token.md)]
 
 ##  <a name="next-steps"></a>后续步骤
 

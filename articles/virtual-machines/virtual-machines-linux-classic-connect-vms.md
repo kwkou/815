@@ -17,7 +17,7 @@
 
 # 如何将 Linux 虚拟机连接到虚拟网络或云服务
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 使用经典部署模型创建的 Linux 虚拟机一律放置在云服务中。云服务充当容器，并提供唯一的公用 DNS 名称、公用 IP 地址，以及一组通过 Internet 访问虚拟机的终结点。云服务可以位于虚拟网络中，但这不是必要条件。你也可以[将 Windows 虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-windows-classic-connect-vms/).
 
@@ -25,7 +25,7 @@
 
 如果你将虚拟机放在相同的独立云服务中，你仍然可以使用负载平衡和可用性集。有关详细信息，请参阅[对虚拟机进行负载平衡](/documentation/articles/virtual-machines-linux-load-balance/)和[管理虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。不过，你无法组织子网上的虚拟机，也无法将独立云服务连接到本地网络。下面是一个示例：
 
-[AZURE.INCLUDE [virtual-machines-common-classic-connect-vms](../includes/virtual-machines-common-classic-connect-vms.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-connect-vms](../../includes/virtual-machines-common-classic-connect-vms.md)]
 
 ##下一步
 

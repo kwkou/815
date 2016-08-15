@@ -27,7 +27,7 @@
 
 下表可以帮助你为解决方案确定最佳的连接选项。
 
-[AZURE.INCLUDE [vpn-gateway-cross-premises](../includes/vpn-gateway-cross-premises-include.md)]
+[AZURE.INCLUDE [vpn-gateway-cross-premises](../../includes/vpn-gateway-cross-premises-include.md)]
 
 ## 站点到站点连接
 
@@ -48,7 +48,7 @@
 
 **S2S 可用的部署模型和方法**
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
 
 ## 点到站点连接
@@ -71,7 +71,7 @@
 
 **P2S 可用的部署模型和方法**
 
-[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../includes/vpn-gateway-table-point-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)]
 
 ## ExpressRoute 连接
 

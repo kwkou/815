@@ -14,7 +14,7 @@
 
 # 教程：如何使用设备作业更新设备固件（预览版）
 
-[AZURE.INCLUDE [iot-hub-device-management-job-selector](../includes/iot-hub-device-management-jobs-selector.md)]
+[AZURE.INCLUDE [iot-hub-device-management-job-selector](../../includes/iot-hub-device-management-jobs-selector.md)]
 
 ## 介绍
 Azure IoT 设备管理允许你使用设备作业与物理设备进行交互。一旦确定设备克隆（物理设备的服务表示形式），即可使用设备作业与其相应物理设备进行交互。设备作业允许对多台设备上的复杂进程进行协调。此进程可能包括多个步骤和长时间运行操作。

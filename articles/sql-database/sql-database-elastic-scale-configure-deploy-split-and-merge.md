@@ -327,7 +327,7 @@
 
 在这种情况下，请检查你的配置文件，尤其是 **WorkerRoleSynchronizationStorageAccountConnectionString** 的设置。此错误通常表示辅助角色无法成功初始化首次使用的元数据数据库。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/allowed-services.png

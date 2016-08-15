@@ -44,9 +44,9 @@
 
 让我们首先创建 DocumentDB 帐户。如果你已有帐户，则可以跳到[创建新的 ASP.NET MVC 应用程序](#_Toc395637762)。
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-[AZURE.INCLUDE [documentdb-keys](../includes/documentdb-keys.md)]
+[AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
 <br/>
 现在，我们将演练如何从头开始创建新的 ASP.NET MVC 应用程序。

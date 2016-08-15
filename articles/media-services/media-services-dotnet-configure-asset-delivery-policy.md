@@ -13,7 +13,7 @@
 	wacn.date="04/05/2016"/>
 
 #使用 .NET SDK 配置资产传送策略
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
+[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
 
 ##概述
 

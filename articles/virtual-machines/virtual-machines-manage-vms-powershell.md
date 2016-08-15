@@ -15,7 +15,7 @@
 
 # 使用 Azure PowerShell 管理虚拟机
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 每天执行的许多管理 VM 的任务都可通过使用 Azure PowerShell cmdlet 自动执行。本文提供较简单任务的示例命令，并提供演示更复杂任务的命令的文章链接。
 

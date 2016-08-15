@@ -53,9 +53,9 @@
 
 让我们首先创建 DocumentDB 帐户。如果你已有帐户，则可以跳到[步骤 2：创建新的 Node.js 应用程序](#_Toc395783178)。
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-[AZURE.INCLUDE [documentdb-keys](../includes/documentdb-keys.md)]
+[AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
 ## <a name="_Toc395783178"></a>步骤 2：了解如何创建新的 Node.js 应用程序
 

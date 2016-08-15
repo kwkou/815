@@ -35,7 +35,7 @@
 
 如果你特别技术狂，则还可以尝试使用 [用于 Windows 的 **OpenSSH** 工具集新端口](http://blogs.msdn.com/b/powershell/archive/2015/10/19/openssh-for-windows-update.aspx)。但是，请注意这是当前处于开发阶段的代码，用于生产系统之前，你应该查看代码库。
 
-> [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+> [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## 你需要创建哪些密钥文件？
 

@@ -15,17 +15,17 @@
 
 # 关于 Azure 存储帐户
 
-[AZURE.INCLUDE [storage-selector-portal-create-storage-account](../includes/storage-selector-portal-create-storage-account.md)]
+[AZURE.INCLUDE [storage-selector-portal-create-storage-account](../../includes/storage-selector-portal-create-storage-account.md)]
 
 ## 概述
 
 Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存储空间数据对象。存储帐户中的所有对象会作为组共同计费。默认情况下，只有你，即帐户所有者，才能使用你的帐户中的数据。
 
-[AZURE.INCLUDE [storage-account-types-include](../includes/storage-account-types-include.md)]
+[AZURE.INCLUDE [storage-account-types-include](../../includes/storage-account-types-include.md)]
 
 ## 存储帐户计费
 
-[AZURE.INCLUDE [storage-account-billing-include](../includes/storage-account-billing-include.md)]
+[AZURE.INCLUDE [storage-account-billing-include](../../includes/storage-account-billing-include.md)]
 
 > [AZURE.NOTE] 当你创建 Azure 虚拟机时，如果在部署位置中还没有存储帐户，则会在该位置自动创建一个存储帐户。因此，没有必要按照下面的步骤来创建虚拟机磁盘的存储帐户。存储帐户名称将基于虚拟机名称。请参阅 [Azure 虚拟机文档](/documentation/services/virtual-machines/)以了解更多详细信息。
 

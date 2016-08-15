@@ -50,11 +50,11 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 2. **下载保管库凭据** — 在 Azure 备份中，将你创建的管理证书上载到保管库。
 3. **安装 Azure 备份代理并注册服务器** — 通过 Azure 备份，在每个 DPM 服务器上安装代理，并在备份保管库中注册 DPM 服务器。
 
-[AZURE.INCLUDE [backup-create-vault](../includes/backup-create-vault.md)]
+[AZURE.INCLUDE [backup-create-vault](../../includes/backup-create-vault.md)]
 
-[AZURE.INCLUDE [backup-download-credentials](../includes/backup-download-credentials.md)]
+[AZURE.INCLUDE [backup-download-credentials](../../includes/backup-download-credentials.md)]
 
-[AZURE.INCLUDE [backup-install-agent](../includes/backup-install-agent.md)]
+[AZURE.INCLUDE [backup-install-agent](../../includes/backup-install-agent.md)]
 
 
 ## 要求和限制

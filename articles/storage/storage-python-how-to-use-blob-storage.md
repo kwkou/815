@@ -14,15 +14,15 @@
 
 # 如何通过 Python 使用 Azure Blob 存储
 
-[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
 
 本指南将演示如何使用 Blob 存储执行常见方案。这些示例通过 Python 编写并使用 [Azure Storage SDK for Python][]。涉及的任务包括上载、列出、下载和删除 Blob。
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建容器
 
@@ -34,7 +34,7 @@
 
 	block_blob_service = BlockBlobService(account_name='myaccount', account_key='mykey', endpoint_suffix='core.chinacloudapi.cn')
 
-[AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
+[AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
 在以下代码示例中，如果容器不存在，可以使用 **BlockBlobService** 对象来创建它。
 

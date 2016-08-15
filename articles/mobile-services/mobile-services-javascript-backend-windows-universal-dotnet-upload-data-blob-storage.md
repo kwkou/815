@@ -14,7 +14,7 @@
 
 # 使用移动服务将图像上载到 Azure Blob 存储
 
-[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 ##概述 
 
@@ -36,9 +36,9 @@
 
 ##在 Azure 经典管理门户中更新已注册的插入脚本
 
-[AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-configure-blob-storage](../../includes/mobile-services-configure-blob-storage.md)]
 
-[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-upload-to-blob-storage](../includes/mobile-services-windows-universal-dotnet-upload-to-blob-storage.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-upload-to-blob-storage](../../includes/mobile-services-windows-universal-dotnet-upload-to-blob-storage.md)]
 
 ##后续步骤
 

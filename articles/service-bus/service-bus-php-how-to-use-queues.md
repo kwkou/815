@@ -14,11 +14,11 @@
 
 # 如何使用 Service Bus 队列
 
-[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
 本指南说明如何使用服务总线队列。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk/)。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
 
-[AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
+[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 ## 创建 PHP 应用程序
 
@@ -30,7 +30,7 @@
 
 ## 获取 Azure 客户端库
 
-[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
 
 ## 配置应用程序以使用 Service Bus
 

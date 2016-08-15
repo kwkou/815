@@ -23,7 +23,7 @@
 
 ![Azure Node Web 应用][webmatrix-node-completed]
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## 登录 Azure
 

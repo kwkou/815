@@ -36,7 +36,7 @@
 
 ## 登录到虚拟机
 
-[AZURE.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
+[AZURE.INCLUDE [virtual-machines-log-on-win-server](../../includes/virtual-machines-log-on-win-server.md)]
 
 
 ## 后续步骤

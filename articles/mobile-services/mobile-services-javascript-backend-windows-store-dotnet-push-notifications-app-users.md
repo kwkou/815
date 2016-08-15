@@ -15,7 +15,7 @@
 
 # 向经过身份验证的用户发送推送通知
 
-[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
 
 ##概述
 本主题说明如何向任何已注册设备上已经过身份验证的用户发送推送通知。与前面的[向应用程序添加推送通知]教程不同，本教程将指导你更改移动服务，以要求先对用户进行身份验证，然后，才可以将客户端注册到通知中心以发送推送通知。此外，你还要修改注册，以根据分配的用户 ID 添加标记。最后，服务器脚本会更新为仅对经过身份验证的用户 （而不是向所有注册用户）发送通知。
@@ -40,7 +40,7 @@
 
 ##<a name="register"></a>更新服务以要求对注册进行身份验证
 
-[AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
+[AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
 
 &nbsp;&nbsp;5.将 insert 函数替换为以下代码，然后单击“保存”：
 
@@ -75,11 +75,11 @@
 
 ##<a name="update-app"></a>更新应用程序以要求在注册之前登录
 
-[AZURE.INCLUDE [mobile-services-windows-store-dotnet-push-notifications-app-users](../includes/mobile-services-windows-store-dotnet-push-notifications-app-users.md)]
+[AZURE.INCLUDE [mobile-services-windows-store-dotnet-push-notifications-app-users](../../includes/mobile-services-windows-store-dotnet-push-notifications-app-users.md)]
 
 ##<a name="test"></a>测试应用程序
 
-[AZURE.INCLUDE [mobile-services-windows-test-push-users](../includes/mobile-services-windows-test-push-users.md)]
+[AZURE.INCLUDE [mobile-services-windows-test-push-users](../../includes/mobile-services-windows-test-push-users.md)]
 
 <!-- Anchors. -->
 [更新服务以要求对注册进行身份验证]: #register

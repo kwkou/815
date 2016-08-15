@@ -185,7 +185,7 @@ Sp\_execute\_remote 使用调用参数中提供的外部数据源在远程数据
 
 若要查询水平分区的数据库（也称为分片数据库），请参阅[跨分片云数据库（水平分区）的查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning/)。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 
 <!--Image references-->

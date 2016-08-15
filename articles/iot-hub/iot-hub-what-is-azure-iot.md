@@ -12,7 +12,7 @@
  ms.date="04/29/2016"
  wacn.date="08/01/2016"/>
 
-[AZURE.INCLUDE [iot-azure-and-iot](../includes/iot-azure-and-iot.md)]
+[AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## 后续步骤
 

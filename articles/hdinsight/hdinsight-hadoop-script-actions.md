@@ -27,7 +27,7 @@
 
 在 Windows 操作系统上预配 HDInsight 群集时，脚本操作为 Azure PowerShell 脚本。以下是有关配置站点配置文件的示例脚本：
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 	param (
 	    [parameter(Mandatory)][string] $ConfigFileName,

@@ -17,7 +17,7 @@
 
 本教程介绍有关如何生成一个方便移动的 ASP.NET MVC 5 Web 应用并将其部署到 Azure Web 应用的基础知识。对于本教程中，你需要 [Visual Studio Express 2013 for Web][Visual Studio Express 2013] 或者 Visual Studio 专业版（如果你已具有）。你可以使用 [Visual Studio 2015]，但屏幕快照将会有所不同并且你必须使用 ASP.NET 4.x 模板。
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## 你将生成
 

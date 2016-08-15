@@ -49,7 +49,7 @@
 
 不会。对于**拆分**操作，必须存在目标数据库和相应的架构，并且必须注册到分片映射管理器。对于**合并**操作，必须从分片映射管理器中删除分片，然后删除数据库。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
 <!---HONumber=Mooncake_0314_2016-->

@@ -15,7 +15,7 @@
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
 
-[AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
+[AZURE.INCLUDE [mobile-services-selector-adal-sso](../../includes/mobile-services-selector-adal-sso.md)]
 
 ##概述
 
@@ -36,7 +36,7 @@
 * Microsoft Azure 移动服务 SDK NuGet 包
 * Active Directory 身份验证库 NuGet 包 
 
-[AZURE.INCLUDE [mobile-services-dotnet-adal-register-service](../includes/mobile-services-dotnet-adal-register-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-adal-register-service](../../includes/mobile-services-dotnet-adal-register-service.md)]
 
 ##向 Azure Active Directory 注册你的应用程序
 
@@ -107,13 +107,13 @@
 
 ##将移动服务配置为要求身份验证
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 ##向客户端应用程序添加身份验证代码
 
 1. 在 Visual Studio 中打开 Windows 应用商店客户端应用程序项目。
 
-[AZURE.INCLUDE [mobile-services-dotnet-adal-install-nuget](../includes/mobile-services-dotnet-adal-install-nuget.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-adal-install-nuget](../../includes/mobile-services-dotnet-adal-install-nuget.md)]
 
 4. 在 Visual Studio 的“解决方案资源管理器”窗口中，打开 MainPage.cs 文件，并添加以下 using 语句。
 

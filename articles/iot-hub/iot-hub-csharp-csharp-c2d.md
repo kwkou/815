@@ -14,7 +14,7 @@
 
 # 教程：如何使用 IoT 中心发送云到设备的消息
 
-[AZURE.INCLUDE [iot-hub-selector-c2d](../includes/iot-hub-selector-c2d.md)]
+[AZURE.INCLUDE [iot-hub-selector-c2d](../../includes/iot-hub-selector-c2d.md)]
 ## 介绍
 
 Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT 设备和一个应用程序后端之间实现安全可靠的双向通信。[Get started with IoT Hub]（IoT 中心入门）教程说明如何创建 IoT 中心、在其中预配设备标识，以及编写模拟设备用于发送设备到云的消息。

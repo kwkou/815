@@ -13,7 +13,7 @@
  ms.date="05/16/2016"
  wacn.date="05/30/2016"/>
  
-[AZURE.INCLUDE [iot-security-best-practices](../includes/iot-security-best-practices.md)]
+[AZURE.INCLUDE [iot-security-best-practices](../../includes/iot-security-best-practices.md)]
 
 
 

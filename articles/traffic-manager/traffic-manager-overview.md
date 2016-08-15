@@ -31,7 +31,7 @@
 - **组合使用本地应用程序和基于云的应用程序** - 流量管理器支持外部非 Azure 终结点，因此可以用于混合云部署和本地部署，包括“云爆发”、“云迁移”和“云故障转移”方案。
 - **针对大型复杂部署分配流量** - 可以通过[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles/)组合使用各种流量路由方法来创建复杂且灵活的流量路由配置，以满足更大型、更复杂部署的需求。 
 
-[AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../includes/load-balancer-compare-tm-ag-lb-include.md)]
+[AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../../includes/load-balancer-compare-tm-ag-lb-include.md)]
 
 ## 后续步骤
 

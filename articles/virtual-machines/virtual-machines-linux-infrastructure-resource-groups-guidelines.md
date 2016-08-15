@@ -15,7 +15,7 @@
 
 # Azure 资源组准则
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)]
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)]
 
 本文着重于了解如何以逻辑方式构建环境并将所有组件集合在资源组中。
 
@@ -51,6 +51,6 @@
 
 ## <a name="next-steps"></a> 后续步骤
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

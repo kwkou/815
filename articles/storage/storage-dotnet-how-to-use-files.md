@@ -13,7 +13,7 @@
 
 # 在 Windows 上开始使用 Azure 文件存储
 
-[AZURE.INCLUDE [storage-selector-file-include](../includes/storage-selector-file-include.md)]
+[AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
 
 ## 概述
 
@@ -27,9 +27,9 @@ Azure 文件存储是一种使用标准[服务器消息块 (SMB) 协议](https:/
 
 有关文件存储的可伸缩性和性能目标的信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/#scalability-targets-for-blobs-queues-tables-and-files)。
 
-[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
+[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
-[AZURE.INCLUDE [storage-file-concepts-include](../includes/storage-file-concepts-include.md)]
+[AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
 
 ## 关于本教程
 
@@ -290,7 +290,7 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 	using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage
 	using Microsoft.WindowsAzure.Storage.File; // Namespace for File storage
 
-[AZURE.INCLUDE [storage-cloud-configuration-manager-include](../includes/storage-cloud-configuration-manager-include.md)]
+[AZURE.INCLUDE [storage-cloud-configuration-manager-include](../../includes/storage-cloud-configuration-manager-include.md)]
 
 ### 以编程方式访问文件共享
 

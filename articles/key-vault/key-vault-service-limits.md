@@ -16,6 +16,6 @@
 
 以下是适用于 Azure 密钥保管库的服务限制。
 
-[AZURE.INCLUDE [key-vault-limits](../includes/key-vault-limits.md)]
+[AZURE.INCLUDE [key-vault-limits](../../includes/key-vault-limits.md)]
 
 <!---HONumber=Mooncake_1207_2015-->

@@ -169,7 +169,7 @@ GitHub 上也提供了这些工具：[Azure/elastic-db-tools](https://github.com
 
 使用拆分/合并工具在多租户模型与单租户模型之间来回移动数据。请参阅[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-convert-to-use-elastic-tools/listmapping.png

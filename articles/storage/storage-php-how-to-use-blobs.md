@@ -14,7 +14,7 @@
 
 # 如何通过 PHP 使用 Blob 存储
 
-[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
 
@@ -22,9 +22,9 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 本指南将演示如何使用 Azure Blob 服务执行常见方案。示例是用 PHP 编写的并使用了 [Azure SDK for PHP][download]。涉及的任务包括**上传**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#next-steps)部分。
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 PHP 应用程序
 
@@ -34,7 +34,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 <h2><a id="GetClientLibrary"></a>获取 Azure 客户端库</h2>
 
-[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
 
 <h2><a id="ConfigureStorage"></a>配置你的应用程序以访问 Blob 服务</h2>
 
@@ -82,7 +82,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
 <h2><a id="CreateContainer"></a>创建容器</h2>
-[AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
+[AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
 利用 **BlobRestProxy** 对象，您可以使用 **createContainer** 方法创建 Blob 容器。创建容器时，可以在该容器上设置选项，但此操作不是必需的。（下面的示例演示了如何设置容器访问控制列表 (ACL) 和容器元数据。）
 

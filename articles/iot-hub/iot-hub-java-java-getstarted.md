@@ -14,7 +14,7 @@
 
 # 适用于 Java 的 Azure IoT 中心入门
 
-[AZURE.INCLUDE [iot-hub-selector-get-started](../includes/iot-hub-selector-get-started.md)]
+[AZURE.INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 在本教程结束时，你将有三个 Java 控制台应用程序：
 
@@ -32,7 +32,7 @@
 
 + 有效的 Azure 帐户。（如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。）
 
-[AZURE.INCLUDE [iot-hub-get-started-create-hub](../includes/iot-hub-get-started-create-hub.md)]
+[AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
 最后一步，记下“主密钥”值，然后在 IoT 中心边栏选项卡上单击“设置”，接着在“设置”边栏选项卡上单击“消息传送”。在“消息传送”边栏选项卡上，记下“与事件中心兼容的名称”和“与事件中心兼容的终结点”。创建 **read-d2c-messages** 应用程序时，将要用到这 3 个值。
 

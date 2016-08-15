@@ -65,7 +65,7 @@
 ## 弹性池和弹性数据库的 eDTU 和存储限制
 
 
-[AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
+[AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 
 ## 弹性池操作延迟

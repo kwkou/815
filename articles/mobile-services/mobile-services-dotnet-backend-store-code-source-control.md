@@ -24,7 +24,7 @@
 
 ##<a name="enable-source-control"></a>在移动服务中启用源代码管理
 
-[AZURE.INCLUDE [mobile-services-enable-source-control](../includes/mobile-services-enable-source-control.md)]
+[AZURE.INCLUDE [mobile-services-enable-source-control](../../includes/mobile-services-enable-source-control.md)]
 
 ##<a name="clone-repo"></a>安装 Git 并创建本地存储库
 
