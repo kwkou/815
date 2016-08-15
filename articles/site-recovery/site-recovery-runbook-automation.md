@@ -274,7 +274,7 @@ CloudServiceName | 要在其下创建虚拟机的 Azure 云服务名称。
 
 4.  在 Azure Runbook 中，选择你创作的 Runbook。
 
-	![](media/site-recovery-runbook-automation/16.png)
+	![](./media/site-recovery-runbook-automation/16.png)
 
 ## 主端脚本
 
