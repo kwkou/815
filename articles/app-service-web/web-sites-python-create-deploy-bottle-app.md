@@ -52,7 +52,7 @@
 1. 登录到 [Azure 经典管理门户]。
 1. 在页面底部，依次单击“新建”、“计算”、“ Web 应用”和“快速创建”。提供 Web 应用的“URL”，并选择 Web 应用的“区域”。最后，单击“创建 Web 应用”。
 
-    ![选择“快速创建” Web 应用](./media/web-sites-php-create-web-sites/select-quickcreate-Website.png)
+    ![选择“快速创建” Web 应用](./media/web-sites-php-create-web-sites/select-quickcreate-website.png)
 
 6. 按照[在 Azure Web 应用中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)的说明为新创建的 Web 应用配置 Git 发布。
  
