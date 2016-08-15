@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/14/2016"
-	wacn.date=""/>
+	wacn.date="08/15/2016"/>
 
 # 使用 C 部署 Azure 资源# 
 

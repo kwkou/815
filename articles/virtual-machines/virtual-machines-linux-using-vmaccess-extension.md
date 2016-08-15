@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/29/2016"
-	wacn.date=""/>
+	wacn.date="08/15/2016"/>
 
 # 管理用户、SSH，并使用 VMAccess 扩展检查或修复 Azure Linux VM 上的磁盘
 

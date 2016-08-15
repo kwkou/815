@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/14/2016"
-	wacn.date=""/>
+	wacn.date="08/15/2016"/>
 
 # 适用于 SQL Server VM 的 SQL Server 代理扩展（经典）
 
