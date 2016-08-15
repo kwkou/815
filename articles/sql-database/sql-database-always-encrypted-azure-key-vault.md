@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/09/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="08/15/2016"/>
 
 # 始终加密 - 使用数据加密保护 SQL 数据库中的敏感数据并将加密密钥存储在 Azure 密钥保管库中
 
@@ -36,15 +36,13 @@
 - 创建一个数据库表并加密部分列。
 - 创建一个可以从已加密列插入、选择和显示数据的应用程序。
 
-> [AZURE.NOTE] Azure SQL 数据库的始终加密目前为预览版。
-
 
 ## 先决条件
 
 在本教程中，你需要：
 
 - 在开始之前，你需要有 Azure 帐户和订阅。如果没有，请注册[试用版](/pricing/1rmb-trial)。
-- [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 13.0.700.242 或更高版本。
+- [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 版本 13.0.700.242 或更高版本。
 - [.NET Framework 4.6](https://msdn.microsoft.com/zh-cn/library/w0x726c2.aspx) 或更高版本（在客户端计算机上）。
 - [Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)。
 - [Azure PowerShell](/documentation/articles/powershell-install-configure/)，最低版本为 1.0。
@@ -56,19 +54,19 @@
 
 首先必须通过设置所需的身份验证并获取在下面的代码中对应用程序进行身份验证所需的 *ClientId* 和 *Secret*，使客户端应用程序可以访问 SQL 数据库服务。
 
-1. 打开[管理门户](http://manage.windowsazure.cn)。
+1. 打开[经典管理门户](http://manage.windowsazure.cn)。
 2. 在左侧菜单中选择“Active Directory”，然后单击应用程序将使用的 Active Directory。
 3. 单击“应用程序”，然后单击“添加”（位于底部）。
 4. 键入应用程序的名称（例如：*myClientApp*），选择“WEB 应用程序”，然后单击箭头以继续。
-5. 对于“登录 URL”和“应用 ID URI”，可以只键入一个有效 url（例如：**http://myClientApp*），然后继续。
+5. 对于“登录 URL”和“应用 ID URI”，可以只键入一个有效 url（例如：*http://myClientApp*），然后继续。
 6. 单击“配置”。
 7. 复制“客户端 ID”（稍后在代码中会需要此值）。
 8. 在密钥部分中，将“选择持续时间”下拉菜单设置为“1 年”（我们会在下面保存之后复制密钥）。
 11. 向下滚动并单击“添加应用程序”。
 12. 将“显示”保留设置为“Microsoft 应用”，然后找到并选择“Azure 服务管理”，单击复选标记以继续。
-13. 在“Azure 服务管理…”行上，单击“委托的权限”下拉列表，然后选择“访问 Azure 服务管理”。
+13. 在“Azure 服务管理…”行上，单击“委派权限”下拉列表，然后选择“访问 Azure 服务管理”。
 14. 单击“保存”（位于底部）。
-15. 保存完成之后，在“密钥”部分中找到并复制密钥值（稍后在代码中会需要此值）。 
+15. 保存完成之后，在“密钥”部分中找到并复制密钥值（稍后在代码中会需要此值）。
 
 
 
@@ -99,17 +97,19 @@
     Set-AzureRmKeyVaultAccessPolicy  -VaultName $vaultName  -ResourceGroupName $resourceGroupName -ServicePrincipalName $clientId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
 
 
+
+
 ## 使用 SSMS 连接到数据库
 
 打开 SSMS，连接到包含 Clinic 数据库的服务器。
 
 
-1. 打开 SSMS（单击“连接”>“数据库引擎...”打开“连接到服务器”窗口（如果尚未打开））。
-2. 输入服务器名称和凭据。服务器名称可以在 SQL 数据库边栏选项卡以及你此前复制的连接字符串中找到。键入完整的服务器名称，例如 *database.chinacloudapi.cn*。
+1. 打开 SSMS（如果未打开，单击“连接”>“数据库引擎...”，打开“连接到服务器”窗口）。
+2. 输入服务器名称和凭据。服务器名称可以在 SQL 数据库边栏选项卡以及你此前复制的连接字符串中找到。键入完整的服务器名称，包括 *database.chinacloudapi.cn*。
 
 	![复制连接字符串](./media/sql-database-always-encrypted-azure-key-vault/ssms-connect.png)
 
-3. 如果“新建防火墙规则”窗口打开，请登录到 Azure，让 SSMS 为你创建防火墙规则。
+3. 如果“新建防火墙规则”窗口打开，请登录到 Azure，让 SSMS 为你创建新的防火墙规则。
 
 
 ## 创建表
@@ -141,7 +141,7 @@
 SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设置列主密钥 (CMK)、列加密密钥 (CEK) 和已加密列即可。
 
 1. 展开“数据库”>“Clinic”>“表”。
-2. 右键单击“患者”表，然后选择“加密列...”以打开始终加密向导：
+2. 右键单击 **Patients** 表，然后选择“加密列...”以打开“始终加密”向导：
 
     ![加密列](./media/sql-database-always-encrypted-azure-key-vault/encrypt-columns.png)
 
@@ -149,9 +149,9 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 
     单击“简介”页上的“下一步”打开“列选择”页，在该页中，你可以选择要加密的列、要使用的[加密类型和列加密密钥 (CEK)](https://msdn.microsoft.com/zh-cn/library/mt459280.aspx#Anchor_2)。
 
-    我们需要加密每位患者的“身份证号”和“出生日期”信息。SSN 列将使用确定性加密，该加密支持相等性查找、联接和分组方式。BirthDate 列将使用随机加密，该加密不支持操作。
+    我们需要加密每位患者的 **SSN** 和 **BirthDate** 信息。SSN 列将使用确定性加密，该加密支持相等性查找、联接和分组方式。BirthDate 列将使用随机加密，该加密不支持操作。
 
-    选择“身份证号”列的“加密类型”并将其设置为“确定”，将“出生日期”列设置为“随机”，然后单击“下一步”。
+    选择 SSN 列的“加密类型”并将其设置为“确定”，将 BirthDate 列设置为“随机”，然后单击“下一步”。
 
     ![加密列](./media/sql-database-always-encrypted-azure-key-vault/column-selection.png)
 
@@ -174,7 +174,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 
 6. **摘要**
 
-    确保设置全都正确，然后单击“完成”完成始终加密的设置。
+    验证设置是否全都正确，然后单击“完成”以完成“始终加密”的设置。
 
 
     ![摘要](./media/sql-database-always-encrypted-azure-key-vault/summary.png)
@@ -188,7 +188,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 - 创建列加密密钥 (CEK) 并将它存储在 Azure 密钥保管库中。
 - 配置了所选列的加密。（我们的“患者”表目前尚无数据，但所选列中的任何现有数据都会进行加密。）
 
-你可以验证 SSMS 中创建的密钥，只需展开“Clinic”>“安全”>“始终加密密钥”即可。现在，你可以看到向导为你生成的新密钥了。
+你可以验证 SSMS 中密钥的创建，只需展开“Clinic”>“安全”>“始终加密密钥”即可。现在，你可以看到向导为你生成的新密钥了。
 
 
 ## 创建处理已加密数据的客户端应用程序
@@ -205,7 +205,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 	![新建控制台应用程序](./media/sql-database-always-encrypted-azure-key-vault/console-app.png)
 
 
-3. 通过单击“工具”>“NuGet 包管理器”>“包管理器控制台”，来安装以下 NuGet 包。
+3. 通过单击“工具”>“NuGet 包管理器”>“包管理器控制台”来安装以下 NuGet 包。
 
 在包管理器控制台中运行以下 2 行代码：
     
@@ -216,10 +216,10 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
    
 ## 修改连接字符串以启用始终加密
 
-本节只介绍如何在数据库连接字符串中启用始终加密。在下一节（即“始终加密示例控制台应用程序”）中，你需要实际修改刚创建的控制台应用。
+本节只介绍如何在数据库连接字符串中启用始终加密。在下一节（即“始终加密示例控制台应用程序”）中，你将实际修改刚创建的控制台应用。
 
 
-若要启用始终加密，你需要将 **Column Encryption Setting** 关键字添加到连接字符串中，并将其设置为 **Enabled**。
+若要启用“始终加密”，你需要将 **Column Encryption Setting** 关键字添加到连接字符串中，并将其设置为 **Enabled**。
 
 你可以在连接字符串中直接进行该设置，也可以使用 [SqlConnectionStringBuilder](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnectionstringbuilder.aspx) 进行设置。下一节中的示例应用程序演示如何使用 **SqlConnectionStringBuilder**。
 
@@ -234,7 +234,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 
 ### 通过 SqlConnectionStringBuilder 启用始终加密
 
-以下代码显示了如何通过将 [SqlConnectionStringBuilder.ColumnEncryptionSetting](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnectionstringbuilder.columnencryptionsetting.aspx) 设置为 [Enabled](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnectioncolumnencryptionsetting.aspx) 来启用始终加密。
+以下代码显示了如何通过将 [SqlConnectionStringBuilder.ColumnEncryptionSetting](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnectionstringbuilder.columnencryptionsetting.aspx) 设置为 [Enabled](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnectioncolumnencryptionsetting.aspx) 来启用“始终加密”。
 
     // Instantiate a SqlConnectionStringBuilder.
     SqlConnectionStringBuilder connStringBuilder = 
@@ -271,7 +271,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 此示例演示了如何执行以下操作：
 
 - 修改连接字符串以启用始终加密。
-- 将 Azure 密钥保管库注册为应用程序的密钥存储提供程序。  
+- 将 Azure 密钥保管库注册为应用程序的密钥存储提供程序。
 - 将数据插入已加密列。
 - 通过在已加密列中筛选出特定的值来选择记录。
 
@@ -668,4 +668,4 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 - [始终加密向导](https://msdn.microsoft.com/zh-cn/library/mt459280.aspx)
 - [始终加密博客](http://blogs.msdn.com/b/sqlsecurity/archive/tags/always-encrypted)
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -9,8 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="06/14/2016"
-    wacn.date="07/21/2016"/>
+    ms.date="07/18/2016"
+    wacn.date="08/15/2016"/>
 
 # 使用 Transact-SQL 为 Azure SQL 数据库配置异地复制
 
@@ -21,7 +21,7 @@
 
 本文说明如何使用 Transact-SQL 为 Azure SQL 数据库配置活动异地复制。
 
-若要启动故障转移，请参阅[为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)。
+若要使用 Transact-SQL 启动故障转移，请参阅[使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)。
 
 >[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。非可读辅助类型将在 2017 年 4 月停用，现有的非可读数据库将自动升级到可读辅助数据库。
 
@@ -31,7 +31,10 @@
 - 逻辑 Azure SQL 数据库服务器 <MyLocalServer> 和 SQL 数据库 <MyDB> - 你要复制的主数据库。
 - 一个或多个逻辑 Azure SQL 数据库服务器 <MySecondaryServer(n)> - 可充当伙伴服务器（将在其中创建辅助数据库）的逻辑服务器。
 - 主数据库上 DBManager 的登录名，拥有你要异地复制的本地数据库的 db\_ownership 权限，并且是你要配置异地复制的伙伴服务器上的 DBManager。
-- 最新版本的 SQL Server Management Studio - 若要获取最新版本的 SQL Server Management Studio (SSMS)，请转到[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。有关使用 SQL Server Management Studio 管理 Azure SQL 数据库逻辑服务器和数据库的详细信息，请参阅[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)
+- SQL Server Management Studio (SSMS)
+
+> [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+
 
 ## 添加辅助数据库
 
@@ -52,7 +55,7 @@
 
 2. 打开“数据库”文件夹、展开“系统数据库”、右键单击“master”，然后单击“新建查询”。
 
-3. 使用以下 ALTER DATABASE 语句使本地数据库成为 MySecondaryServer1 中不可读辅助数据库的异地复制主数据库，其中，MySecondaryServer1 是服务器的友好名称。
+3. 使用以下 **ALTER DATABASE** 语句使本地数据库成为具有 MySecondaryServer1 上不可读辅助数据库的异地复制主数据库，其中，MySecondaryServer1 是服务器的友好名称。
 
         ALTER DATABASE <MyDB>
            ADD SECONDARY ON SERVER <MySecondaryServer1> WITH (ALLOW_CONNECTIONS = NO);
@@ -130,7 +133,7 @@
 
 ## 监视异地复制配置和运行状况
 
-监视任务包括监视异地复制配置和监视数据复制运行状况。可以使用 master 数据库中的 **sys.dm\_geo\_replication\_links** 动态管理视图返回 Azure SQL 数据库逻辑服务器上每个数据库的所有现有复制链接的相关信息。此视图针对每个主数据库和辅助数据库之间的复制链接包含一行。可以使用 **sys.dm\_replication\_status** 动态管理视图针对当前参与复制链接的每个 Azure SQL 数据库返回一行。这包括主数据库和辅助数据库。如果给定主数据库有多个连续复制链接，此表将对每种关系包含一行。将在所有数据库（包括逻辑 master）中创建该视图。但是，在逻辑 master 中查询此视图会返回空集。可以使用 **sys.dm\_operation\_status** 动态管理视图来显示所有数据库操作的状态，包括复制链接的状态。有关详细信息，请参阅 [sys.geo\_replication\_links (Azure SQL Database)（sys.geo\_replication\_links（Azure SQL 数据库））](https://msdn.microsoft.com/zh-cn/library/mt575501.aspx)、[sys.dm\_geo\_replication\_link\_status (Azure SQL Database)（sys.dm\_geo\_replication\_link\_status（Azure SQL 数据库））](https://msdn.microsoft.com/zh-cn/library/mt575504.aspx) 和 [sys.dm\_operation\_status (Azure SQL Database)（sys.dm\_operation\_status（Azure SQL 数据库））](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx)。
+监视任务包括监视异地复制配置和监视数据复制运行状况。可以使用 master 数据库中的 **sys.dm\_geo\_replication\_links** 动态管理视图返回 Azure SQL 数据库逻辑服务器上每个数据库的所有现有复制链接的相关信息。此视图针对每个主数据库和辅助数据库之间的复制链接包含一行。可以使用 **sys.dm\_replication\_status** 动态管理视图针对当前参与复制链接的每个 Azure SQL 数据库返回一行。这包括主数据库和辅助数据库。如果给定主数据库有多个连续复制链接，此表将对每种关系包含一行。将在所有数据库（包括逻辑 master）中创建该视图。但是，在逻辑 master 中查询此视图会返回空集。可以使用 **sys.dm\_operation\_status** 动态管理视图来显示所有数据库操作的状态，包括复制链接的状态。有关详细信息，请参阅 [sys.geo\_replication\_links（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575501.aspx)、[sys.dm\_geo\_replication\_link\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575504.aspx)和 [sys.dm\_operation\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx)。
 
 使用以下步骤监视异地复制合作关系。
 
@@ -156,22 +159,28 @@
 
 9. 单击“执行”运行查询。
 
+## 将不可读辅助数据库升级为可读辅助数据库
+
+非可读辅助类型将在 2017 年 4 月停用，现有的非可读数据库将自动升级到可读辅助数据库。如果你目前使用的是不可读辅助数据库，而你想要将它们升级为可读辅助数据库，则可以针对每个辅助数据库执行下列简单步骤。
+
+> [AZURE.IMPORTANT] 并没有自助升级方法能够将不可读辅助数据库就地升级为可读辅助数据库。如果删除唯一的辅助数据库，主数据库将会维持未受保护的状态，直到新的辅助数据库完全同步为止。如果你的应用程序 SLA 要求主数据库始终受到保护，你应该考虑在其他服务器中创建并行辅助数据库，然后再应用上述升级步骤。请注意，每个主数据库最多可以有 4 个辅助数据库。
+
+
+1. 首先，连接到辅助服务器，然后删除不可读辅助数据库：
+        
+        DROP DATABASE <MyNonReadableSecondaryDB>;
+
+2. 现在，连接到主服务器，然后添加新的可读辅助数据库
+
+        ALTER DATABASE <MyDB>
+            ADD SECONDARY ON SERVER <MySecondaryServer> WITH (ALLOW_CONNECTIONS = ALL);
+
+
 
 
 ## 后续步骤
 
-- [为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
+- 若要了解有关活动异地复制的详细信息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- 若要了解业务连续性设计和恢复方案，请参阅[连续性方案](/documentation/articles/sql-database-business-continuity-scenarios/)
 
-
-## 其他资源
-
-- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

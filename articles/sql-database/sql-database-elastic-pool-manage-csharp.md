@@ -3,14 +3,14 @@
     description="使用 C# 数据库开发技术来管理 Azure SQL 数据库弹性数据库池。"
     services="sql-database"
     documentationCenter=""
-    authors="sidneyh"
+    authors="srinia"
     manager="jhubbard"
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="05/27/2016"
-    wacn.date="07/18/2016"/>
+    ms.date="07/05/2016"
+    wacn.date="08/15/2016"/>
 
 # 使用 C&#x23; 监视和管理弹性数据库池 
 
@@ -20,13 +20,11 @@
 - [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
 
 
-了解如何使用 C&#x23; 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
+了解如何使用 C# 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
 有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
-弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
-
-此示例使用[适用于 .NET 的 SQL 数据库库](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx)安装库，方法是在 Visual Studio 的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）中运行以下命令：
+下面的示例使用[适用于 .NET 的 SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx)，因此如果你尚未安装此库，需要先行安装再继续操作。你可以通过在 Visual Studio 中的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）中运行以下命令来安装此库：
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
 
@@ -105,7 +103,7 @@
     PM> Install-Package Microsoft.Azure.Management.Resources –Pre
     PM> Install-Package Microsoft.Azure.Common.Authentication –Pre
 
-创建控制台应用并将 Program.cs 的内容替换为以下内容。若要获取必需的客户端 ID 和相关的值，请参阅[注册应用并获取所需的客户端值以便将你的应用连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys/)。
+创建控制台应用并将 Program.cs 的内容替换为以下内容。若要获取所需的客户端 ID 和相关的值，请参阅[注册应用并获取所需的客户端值以便将你的应用连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys/)。
 
     using Microsoft.Azure;
     using Microsoft.Azure.Management.Resources;
@@ -168,7 +166,7 @@
             Console.WriteLine("Creation of pool " + epool.ElasticPool.Name + ": " + epool.Status.ToString());
 
             // Open the portal so we can see our operations in action
-            string portalPage = @"https://manage.windowsazure.cn/#resource/subscriptions/"
+            string portalPage = @"https://portal.azure.cn/#resource/subscriptions/"
                 + subscriptionId
                 + @"/resourceGroups/"
                 + resourceGroupName
@@ -409,7 +407,7 @@
                 ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                ("https://management.chinacloudapi.cn/"/* the Azure Resource Management endpoint */,
                     clientId,
             new Uri(redirectUri) /* redirect URI */,
             PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -425,7 +423,6 @@
 - [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 - [使用 C# 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/)
 - [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance/)
-- 请参阅[使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
+- 请参阅[使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -1,17 +1,17 @@
 <properties
    pageTitle="使用动态管理视图监视 Azure SQL 数据库 | Azure"
-   description="了解如何通过使用动态管理视图检测常见性能问题来监视 Azure SQL 数据库。"
+   description="了解如何通过使用动态管理视图监视 Azure SQL 数据库来检测并诊断常见性能问题。"
    services="sql-database"
    documentationCenter=""
-   authors="BYHAM"
-   manager="jeffreyg"
+   authors="carlrabeler"
+   manager="jhubbard"
    editor=""
    tags=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="01/22/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="07/05/2016"
+   wacn.date="08/15/2016"/>
 
 # 使用动态管理视图监视 Azure SQL 数据库
 
@@ -30,7 +30,7 @@ SQL 数据库部分支持三种类别的动态管理视图：
 在 SQL 数据库中，查询动态管理视图需要 **VIEW DATABASE STATE** 权限。**VIEW DATABASE STATE** 权限返回有关当前数据库中的所有对象的信息。
 若要向特定数据库用户授予 **VIEW DATABASE STATE**权限，请运行以下查询：
 
-	GRANT VIEW DATABASE STATE TO database_user; 
+	GRANT VIEW DATABASE STATE TO database_user;
 
 在本地 SQL Server 的实例中，动态管理视图会返回服务器状态信息。在 SQL 数据库中，这些视图会返回只与当前逻辑数据库相关的信息。
 
@@ -132,4 +132,5 @@ SQL 数据库部分支持三种类别的动态管理视图：
 ## 另请参阅
 
 [SQL 数据库简介](/documentation/articles/sql-database-technical-overview/)
-<!---HONumber=Mooncake_0321_2016-->
+
+<!---HONumber=Mooncake_0808_2016-->

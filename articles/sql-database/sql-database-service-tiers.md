@@ -6,16 +6,16 @@
 	documentationCenter=""
 	authors="carlrabeler"
 	manager="jhubbard"
-	editor="jeffreyg"/>
+	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/25/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/15/2016"/>
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
 
-[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)具有多个服务层，用于处理不同的工作负荷。你可以随时更改服务层，不会给应用程序造成中断。你还可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started/)。也可以通过创建弹性数据库池来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。这些层中的数据库选项类似于单个数据库和弹性池，只是针对弹性池提供了其他注意事项。本文提供了单一数据库和弹性数据库的服务层的详细信息。
+[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)具有多个服务层，用于处理不同的工作负荷。你可以随时[更改服务层](/documentation/articles/sql-database-scale-up/)，并将给应用程序造成的停机时间降至最低（通常平均为 4 秒以下）。你还可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started/)。也可以通过[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。这些层中的数据库选项类似于单个数据库和弹性池，只是针对弹性池提供了其他注意事项。本文提供了单一数据库和弹性数据库的服务层的详细信息。
 
 ## 服务层和数据库选项
 基本、标准和高级服务层都提供 99.99% 的运行时间 SLA 和可预测的性能、灵活的业务连续性选项、安全功能和按小时计费。下表提供了最适用于不同应用程序工作负荷的层的示例。
@@ -26,10 +26,10 @@
 | **标准** | 大多数云应用程序的首选选项，支持多个并发查询。示例包括工作组或 Web 应用程序。 |
 | **高级** | 专为高事务量设计，支持大量并发用户，并且需要最高级别的业务连续性功能。示例包括支持任务关键型应用程序的数据库。 |
 
->[AZURE.NOTE] Web Edition 和 Business Edition 已停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/pricing/details/sql-database//web-business)。
+>[AZURE.NOTE] Web Edition 和 Business Edition 已停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/pricing/details/sql-database/)。
 
 ## 单一数据库服务层和性能级别
-对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层，**且不会给应用程序造成任何中断。** 
+对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层。有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up/)。
 
 此处列出的性能特征适用于使用 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/) 创建的数据库。在 Azure 中的基础硬件托管多个数据库的情况下，你的数据库仍可确保获得一系列资源，数据库的预期性能特征将不受影响。
 
@@ -48,7 +48,7 @@
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-池中的每个数据库也遵循该层的单一数据库特征。例如，基本池具有每池最大会话数为 2400 - 28800 的限制，但该池中单个数据库具有 300 个会话数的数据库限制（即在上一节中指定的单个基本数据库的限制）。
+池中的每个数据库也遵循该层的单一数据库特征。例如，基本池具有每池最大会话数为 4800 - 28800 的限制，但该池中单个数据库具有 300 个会话数的数据库限制（即在上一节中指定的单个基本数据库的限制）。
 
 ## 了解 DTU
 
@@ -57,7 +57,11 @@
 ## 后续步骤
 - [SQL 数据库定价](/pricing/details/sql-database/)中提供了有关这些层的价格详细信息。
 - 了解有关[弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance/)和[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)的详细信息。
-- 了解如何[监视单一数据库的性能](/documentation/articles/sql-database-single-database-monitor/)。
+- 了解如何[监视、管理弹性池和调整其大小](/documentation/articles/sql-database-elastic-pool-manage-powershell/)以及如何[监视单个数据库的性能](/documentation/articles/sql-database-single-database-monitor/)。
 - 现在，你已了解有关 SQL 数据库层的信息，欢迎单击“试用”来试用这些[层](/pricing/1rmb-trial)，并了解[如何创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started/)。
 
-<!---HONumber=Mooncake_0606_2016-->
+## 其他资源
+
+有关多租户软件即服务 (SaaS) 数据库应用程序的常见数据体系结构模式的信息，请参阅 [Design Patterns for Multi-tenant SaaS Applications with Azure SQL Database（使用 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式）](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。
+
+<!---HONumber=Mooncake_0808_2016-->

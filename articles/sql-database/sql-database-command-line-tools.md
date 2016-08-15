@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="05/09/2016" 
-	wacn.date="06/14/2016"/>
+	ms.date="07/07/2016" 
+	wacn.date="08/15/2016"/>
 
 # 使用 PowerShell 管理 Azure SQL 数据库
 
@@ -48,7 +48,7 @@
 
 若要创建防火墙规则以访问服务器，请使用 [New-AzureRmSqlServerFirewallRule](https://msdn.microsoft.com/zh-cn/library/azure/mt603860.aspx) 命令。运行以下命令，将开始和结尾的 IP 地址替换为你客户端的有效值。
 
-如果你的服务器需要允许到其他 Azure 服务的访问，请添加 **-AllowAllAzureIPs** 开关，以便添加一个特殊的防火墙规则，允许到服务器的所有 Azure 流量访问。
+如果你的服务器需要允许到其他 Azure 服务的访问，请添加 “-AllowAllAzureIPs”开关，以便添加一个特殊的防火墙规则，允许到服务器的所有 Azure 流量访问。
 
 	New-AzureRmSqlServerFirewallRule -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -FirewallRuleName "clientFirewallRule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
@@ -78,14 +78,14 @@
 
 也可以使用 [Remove-AzureRmSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603488.aspx) 命令删除服务器。以下示例将删除名为 server12 的服务器。
 
+
+>[AZURE.NOTE]  删除操作是异步的，而且可能需要花费一些时间，因此应先验证该操作已结束，再执行任何其他依赖于已彻底删除的服务器的操作 - 例如，创建具有相同名称的新服务器。
+
+
 	Remove-AzureRmSqlServer -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12"
 
 
 
-如果你要再次创建这些 Azure SQL 资源或类似资源，可以：
-
-- 将这个命令集另存为 PowerShell 脚本文件 (*.ps1)
-- 在 Azure 经典管理门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
 
 ## 后续步骤
 
@@ -101,4 +101,4 @@
 
 - [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx)
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0808_2016-->

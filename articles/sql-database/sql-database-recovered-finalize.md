@@ -3,14 +3,14 @@
    description="时间点还原, Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 经典管理门户, Azure 经典管理门户"
    services="sql-database"
    documentationCenter=""
-   authors="elfisher"
-   manager="jeffreyg"
+   authors="carlrabeler"
+   manager="jhubbard"
    editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="02/09/2016"
-   wacn.date="07/21/2016"/>
+   ms.date="07/05/2016"
+   wacn.date="08/15/2016"/>
 
 # 确认已恢复的 Azure SQL 数据库
 
@@ -25,7 +25,7 @@
   + 已恢复的数据库使用的名称不同于源数据库名称
   + 已恢复的数据库所在的服务器不同于源服务器
 
-有关更改连接字符串的详细信息，请参阅[以编程方式连接到 Azure SQL 数据库时的准则](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)和[到 Azure SQL 数据库的连接：中心建议](/documentation/articles/sql-database-develop-overview/)。
+有关更改连接字符串的详细信息，请参阅[有关以编程方式连接到 Azure SQL 数据库时的准则](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)和[SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)。
  
 ## 修改防火墙规则
 在服务器级别和数据库级别验证防火墙规则，并确保已启用从客户端计算机或 Azure 到服务器以及最近恢复的数据库的连接。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)和[如何：配置防火墙设置（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx)。
@@ -51,4 +51,4 @@
 
 如果需要通过审核来访问数据库，你需要在恢复数据库后启用审核。如果客户端应用程序使用了 *.database.secure.chinacloudapi.cn 模式的安全连接字符串，则就充分表明需要审核。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started/)。
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0808_2016-->

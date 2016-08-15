@@ -8,8 +8,8 @@
    editor="monicar" />
 <tags
    ms.service="sql-database"
-   ms.date="04/11/2016"
-   wacn.date="05/16/2016" />
+   ms.date="06/21/2016"
+   wacn.date="08/15/2016" />
 
 # Azure SQL 数据库的一般性限制和指导原则
 
@@ -31,7 +31,7 @@ Azure SQL 数据库不支持 SQL Server 代理或作业。但是，你可以在�
 
 ## SQL Server 排序规则支持
 
-Azure SQL 数据库使用的默认数据库排序规则是 SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS。其中 LATIN1\_GENERAL 是英语（美国），CP1 是代码页 1252，CI 是不区分大小写，AS 是区分重音。可以使用 Transact-SQL 改变 V12 数据库的排序规则。有关如何设置定序的详细信息，请参阅 [COLLATE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms184391.aspx)。
+Azure SQL 数据库使用的默认数据库排序规则是 SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS。其中 LATIN1\_GENERAL 是英语（美国），CP1 是代码页 1252，CI 是不区分大小写，AS 是区分重音。无法改变 V12 数据库的排序规则。有关如何设置定序的详细信息，请参阅 [COLLATE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms184391.aspx)。
 
 ## 命名要求
 
@@ -59,4 +59,4 @@ Azure SQL 数据库使用的默认数据库排序规则是 SQL\_LATIN1\_GENERAL\
 
 - 有关驱动程序可用性和 SQL 数据库支持的信息，请参阅 [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -3,14 +3,14 @@
 	description="本教程帮助你 Azure SQL 数据同步（预览版）入门。"
 	services="sql-database"
 	documentationCenter=""
-	authors="jhubbard"
+	authors="jennieHubbard"
 	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/26/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="07/11/2016"
+	wacn.date="08/15/2016"/>
 
 
 #Azure SQL 数据同步入门（预览版）
@@ -44,7 +44,7 @@
 
 - **.NET Framework 4.0**
 
- 你可以从[此处](http://go.microsoft.com/fwlink/?linkid=205836)安装 .NET Framework 4.0。
+ 从[此处](http://go.microsoft.com/fwlink/?linkid=205836)安装 .NET Framework 4.0。
 
 - **Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86)**
 
@@ -200,4 +200,4 @@
 
  
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0808_2016-->

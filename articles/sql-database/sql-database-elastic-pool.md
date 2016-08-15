@@ -4,14 +4,14 @@
 	keywords="弹性数据库,sql 数据库"
 	services="sql-database"
 	documentationCenter=""
-	authors="sidneyh"
+	authors="CarlRabeler"
 	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/27/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/15/2016"/>
 
 
 # 什么是 Azure 弹性数据库池？
@@ -22,7 +22,7 @@
 
 ## 工作原理
 
-常见的 SaaS 应用程序模式是单租户数据库模型：每个客户都有一个数据库。每个客户（数据库）对内存、IO 和 CPU 具有不可预知的资源要求。由于需求有高峰和低谷，如何分配资源？ 通常有两个选项：(1) 基于高峰使用情况过度设置资源，因此需要支付额外的费用，或者 (2) 为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。弹性数据库池通过确保数据库在必要时获取所需的效能资源，同时在可预测的预算内提供简单的资源分配机制，以此来解决此问题。若要了解有关使用弹性池的 SaaS 应用程序的设计模式的详细信息，请参阅 [Design Patterns for Multi-tenant SaaS Applications with Azure SQL Database（使用 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式）](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。
+常见的 SaaS 应用程序模式是单租户数据库模型：每个客户都有一个数据库。每个客户（数据库）对内存、IO 和 CPU 具有不可预知的资源要求。由于需求有高峰和低谷，如何分配资源？ 通常有两个选项：(1) 基于高峰使用情况过度设置资源，因此需要支付额外的费用，或者 (2) 为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。弹性数据库池通过确保数据库在必要时获取所需的效能资源，同时在可预测的预算内提供简单的资源分配机制，以此来解决此问题。若要了解有关使用弹性池的 SaaS 应用程序的设计模式的详细信息，请参阅[具有 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。
 
 
 在 SQL 数据库中，单一数据库在数据库事务单位 (DTU) 中相对衡量数据库处理资源需求的能力，弹性数据库池则在弹性 DTU (eDTU) 中衡量此能力。请参阅 [Introduction to SQL Database（SQL 数据库简介）](/documentation/articles/sql-database-technical-overview/#understand-dtus)，了解有关 DTU 和 eDTU 的详细信息。
@@ -47,6 +47,8 @@
 ## 弹性池和弹性数据库的 eDTU 和存储限制
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
+
+如果使用了弹性池的所有 DTU，那么池中的每个数据库将接收相同数量的资源来处理查询。SQL DB 服务通过确保相等的计算时间片，在数据库之间提供资源共享的公平性。此资源共享公平性的应用程序是在将每个数据库的 DTU 最小值设为非零值时，对另外为每个数据库保证的任意资源量的补充。
 
 ## 弹性数据库池属性
 
@@ -74,21 +76,21 @@
 
 ## 弹性数据库作业
 
-借助池，可以通过在**[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)**中运行脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分麻烦。若要开始使用该作业，请参阅 [Getting started with Elastic Database jobs（弹性数据库作业入门）](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
+借助池，可以通过在**[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)**中运行脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分麻烦。若要开始使用该作业，请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
 
 
 ## 池中数据库的业务连续性功能
 
-弹性数据库通常支持可用于 V12 服务器上单一数据库的相同的[业务连续性功能](/documentation/articles/sql-database-business-continuity/)。
+弹性数据库通常支持和可用于 V12 服务器上的单一数据库相同的[业务连续性功能](/documentation/articles/sql-database-business-continuity/)。
 
 
 ### 时间点还原
 
-时间点还原使用自动的数据库备份将池中的数据库恢复到特定的时间点。请参阅 [Recover an Azure SQL Database from a user error（在发生用户错误后恢复 Azure SQL 数据库）](/documentation/articles/sql-database-user-error-recovery/)
+时间点还原使用自动的数据库备份将池中的数据库恢复到特定的时间点。请参阅[在发生用户错误后恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery/)
 
 ### 异地还原
 
-当数据库因其所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。请参阅 [Recover an Azure SQL Database from an outage（在中断后恢复 Azure SQL 数据库）](/documentation/articles/sql-database-disaster-recovery/)
+当数据库因其所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery/)
 
 ### 活动异地复制
 
@@ -98,4 +100,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

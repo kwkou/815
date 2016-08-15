@@ -3,14 +3,14 @@
     description="使用 C# 数据库开发技术在 Azure SQL 数据库中创建可缩放的弹性数据库池，以便可以在多个数据库之间共享资源。"
     services="sql-database"
     documentationCenter=""
-    authors="sidneyh"
+    authors="srinia"
     manager="jhubbard"
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="05/27/2016"
-    wacn.date="07/18/2016"/>
+    ms.date="07/05/2016"
+    wacn.date="08/15/2016"/>
 
 # 使用 C&#x23; 创建新的弹性数据库池
 
@@ -19,13 +19,11 @@
 - [C#](/documentation/articles/sql-database-elastic-pool-create-csharp/)
 
 
-了解如何使用 C&#x23; 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
+了解如何使用 C# 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
 有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
-弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
-
-这些示例使用[适用于 .NET 的 SQL 数据库库](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx)，因此你需要安装此库。你可以通过在 Visual Studio 中的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）中运行以下命令来进行安装：
+下面的示例使用 [适用于 .NET 的 SQL 数据库库](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx)，因此如果没有安装此库，你需要在继续之前进行安装。你可以通过在 Visual Studio 中的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）中运行以下命令来安装此库：
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
 
@@ -82,7 +80,7 @@
     Install-Package Microsoft.Azure.Management.Resources –Pre
     Install-Package Microsoft.Azure.Common.Authentication –Pre
 
-创建控制台应用并将 Program.cs 的内容替换为以下内容。若要获取必需的客户端 ID 和相关的值，请参阅[注册应用并获取所需的客户端值以便将你的应用连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys/)。使用 [Get-AzureRmSubscription](https://msdn.microsoft.com/zh-cn/library/mt619284.aspx) cmdlet 检索 subscriptionId 的值。
+创建控制台应用并将 Program.cs 的内容替换为以下内容。若要获取所需的客户端 ID 和相关的值，请参阅[注册应用并获取所需的客户端值以便将你的应用连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys/)。使用 [Get-AzureRmSubscription](https://msdn.microsoft.com/zh-cn/library/mt619284.aspx) cmdlet 检索 subscriptionId 的值。
 
     using Microsoft.Azure;
     using Microsoft.Azure.Management.Resources;
@@ -223,7 +221,7 @@
                 ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                ("https://management.chinacloudapi.cn"/* the Azure Resource Management endpoint */,
                     clientId,
             new Uri(redirectUri) /* redirect URI */,
             PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -239,11 +237,11 @@
 
 - [管理你的池](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
 - [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)：弹性作业可以根据池中数据库的数目来运行 T-SQL 脚本。
-- [使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展。
+- [使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具进行扩展。
 
 ## 其他资源
 
 - [SQL 数据库](/documentation/services/sql-databases)
 - [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->
