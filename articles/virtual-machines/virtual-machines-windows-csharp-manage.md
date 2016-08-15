@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="使用 Azure Resource Manager 和 C# 管理 VM | Azure"
 	description="使用 Azure Resource Manager 和 C# 来管理虚拟机。"
@@ -12,14 +10,16 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/17/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="06/24/2016"
+	wacn.date=""/>
 
 # 使用 Azure Resource Manager 与 C 来管理 Azure 虚拟机#  
 
+本文中的任务显示了如何管理虚拟机，如启动、停止和更新。
+
 若要完成本文中的任务，你需要：
 
-- [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)。
+- [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal/)
 
 ## 创建 Visual Studio 项目并安装包
@@ -32,9 +32,9 @@
 
 3. 在解决方案资源管理器中右键单击项目名称，然后单击“管理 NuGet 包”。
 
-4. 在搜索框中键入 Active Directory，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
+4. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 Microsoft.Azure.Management.Compute，单击“计算 .NET 库”的“安装”，然后按照说明安装该包。
+5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.Compute*，单击“计算 .NET 库”的“安装”，然后按照说明安装该包。
 
 现在，你已准备好开始使用这些库来管理虚拟机。
 
@@ -61,28 +61,24 @@
     
 3. 将以下方法添加到 Program 类，以获取创建凭据所需的令牌。
 
-	    private static string GetAuthorizationHeader()
+	    private static async Task<AuthenticationResult> GetAccessTokenAsync()
 	    {
-          ClientCredential cc = new ClientCredential("{application-id}", "{password}");
+          var cc = new ClientCredential("{client-id}", "{client-secret}");
           var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
           var result = context.AcquireTokenAsync("https://management.chinacloudapi.cn/", cc);
-
           if (result == null)
           {
-            throw new InvalidOperationException("Failed to obtain the JWT token");
+            throw new InvalidOperationException("Could not get the token");
           }
-
-          string token = result.Result.AccessToken;
-
           return token;
         }
 	
-    将 {application-id} 替换为前面记下的应用程序标识符，将 {password} 替换为你为 AD 应用程序选择的密码，将 {tenant-id} 替换为订阅的租户标识符。
+    将 {client-id} 替换为 Azure Active Directory 应用程序的标识符，将 {client-secret} 替换为 AD 应用程序的访问密钥，并将 {tenant-id} 替换为你的订阅的租户标识符。可以通过运行 Get-AzureRmSubscription 找到租户 ID。可以使用 Azure 门户找到访问密钥。
     
 4. 将以下代码添加到 Program.cs 中的 Main 方法，以创建凭据：
 
-        var token = GetAuthorizationHeader();
-        var credential = new TokenCredentials(token);
+        var token = GetAccessTokenAsync();
+        var credential = new TokenCredentials(token.Result.AccessToken);
 
 5. 保存 Program.cs 文件。
 
@@ -90,7 +86,7 @@
 
 1. 将以下方法添加到前面创建的项目中的 Program 类：
 
-        public static void GetVirtualMachine(
+        public static async void GetVirtualMachineAsync(
           TokenCredentials credential, 
           string groupName, 
           string vmName, 
@@ -98,9 +94,9 @@
         {
           Console.WriteLine("Getting information about the virtual machine...");
 
-          var computeManagementClient = new ComputeManagementClient(credential);
-          computeManagementClient.SubscriptionId = subscriptionId;
-          var vmResult = computeManagementClient.VirtualMachines.Get(
+          var computeManagementClient = new ComputeManagementClient(credential)
+            { SubscriptionId = subscriptionId };
+          var vmResult = await computeManagementClient.VirtualMachines.GetAsync(
             groupName, 
             vmName, 
             InstanceViewTypes.InstanceView);
@@ -172,11 +168,12 @@
             Console.WriteLine("  level: " + istat.Level);
             Console.WriteLine("  displayStatus: " + istat.DisplayStatus);
           }
+          
         }
 
 2. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        GetVirtualMachine(
+        GetVirtualMachineAsync(
           credential,
           groupName,
           vmName,
@@ -257,21 +254,21 @@
 
 2. 将以下方法添加到 Program 类：
 
-        public static void StartVirtualMachine(
+        public static async void StartVirtualMachineAsync(
           TokenCredentials credential, 
           string groupName, 
           string vmName, 
           string subscriptionId)
         {
           Console.WriteLine("Starting the virtual machine...");
-          var computeManagementClient = new ComputeManagementClient(credential);
-          computeManagementClient.SubscriptionId = subscriptionId;
-          computeManagementClient.VirtualMachines.Start(groupName, vmName);
+          var computeManagementClient = new ComputeManagementClient(credential)
+            { SubscriptionId = subscriptionId };
+          await computeManagementClient.VirtualMachines.StartAsync(groupName, vmName);
         }
 
 3. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        StartVirtualMachine(
+        StartVirtualMachineAsync(
           credential,
           groupName,
           vmName,
@@ -293,16 +290,16 @@
 
 2. 将以下方法添加到 Program 类：
 
-        public static void StopVirtualMachine(
+        public static void StopVirtualMachineAsync(
           TokenCredentials credential, 
           string groupName, 
           string vmName, 
           string subscriptionId)
         {
           Console.WriteLine("Stopping the virtual machine...");
-          var computeManagementClient = new ComputeManagementClient(credential);
-          computeManagementClient.SubscriptionId = subscriptionId;
-          computeManagementClient.VirtualMachines.PowerOff(groupName, vmName);
+          var computeManagementClient = new ComputeManagementClient(credential)
+            { SubscriptionId = subscriptionId };
+          await computeManagementClient.VirtualMachines.PowerOffAsync(groupName, vmName);
         }
 
 	如果你要解除分配虚拟机，请将 PowerOff 调用更改为：
@@ -311,7 +308,7 @@
 
 3. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        StopVirtualMachine(
+        StopVirtualMachineAsync(
           credential,
           groupName,
           vmName,
@@ -331,21 +328,21 @@
 
 2. 将以下方法添加到 Program 类：
 
-        public static void RestartVirtualMachine(
+        public static async void RestartVirtualMachineAsync(
           TokenCredentials credential,
           string groupName,
           string vmName,
           string subscriptionId)
         {
           Console.WriteLine("Restarting the virtual machine...");
-          var computeManagementClient = new ComputeManagementClient(credential);
-          computeManagementClient.SubscriptionId = subscriptionId;
-          computeManagementClient.VirtualMachines.Restart(groupName, vmName);
+          var computeManagementClient = new ComputeManagementClient(credential)
+            { SubscriptionId = subscriptionId };
+          await computeManagementClient.VirtualMachines.RestartAsync(groupName, vmName);
         }
 
 3. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        RestartVirtualMachine(
+        RestartVirtualMachineAsync(
           credential,
           groupName,
           vmName,
@@ -363,21 +360,21 @@
 
 2. 将以下方法添加到 Program 类：
 
-        public static void DeleteVirtualMachine(
+        public static async void DeleteVirtualMachineAsync(
           TokenCredentials credential, 
           string groupName, 
           string vmName, 
           string subscriptionId)
         {
           Console.WriteLine("Deleting the virtual machine...");
-          var computeManagementClient = new ComputeManagementClient(credential);
-          computeManagementClient.SubscriptionId = subscriptionId;
-          computeManagementClient.VirtualMachines.Delete(groupName, vmName);
+          var computeManagementClient = new ComputeManagementClient(credential)
+            { SubscriptionId = subscriptionId };
+          await computeManagementClient.VirtualMachines.DeleteAsync(groupName, vmName);
         }
 
 3. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        DeleteVirtualMachine(
+        DeleteVirtualMachineAsync(
           credential,
           groupName,
           vmName,
@@ -397,23 +394,23 @@
 
 2. 将以下方法添加到 Program 类：
 
-        public static void UpdateVirtualMachine(
+        public static async void UpdateVirtualMachineAsync(
           TokenCredentials credential, 
           string groupName, 
           string vmName, 
           string subscriptionId)
         {
           Console.WriteLine("Updating the virtual machine...");
-          var computeManagementClient = new ComputeManagementClient(credential);
-          computeManagementClient.SubscriptionId = subscriptionId;
-          var vmResult = computeManagementClient.VirtualMachines.Get(groupName, vmName);
+          var computeManagementClient = new ComputeManagementClient(credential)
+            { SubscriptionId = subscriptionId };
+          var vmResult = await computeManagementClient.VirtualMachines.GetAsync(groupName, vmName);
           vmResult.HardwareProfile.VmSize = "Standard_A1";
-          computeManagementClient.VirtualMachines.CreateOrUpdate(groupName, vmName, vmResult);
+          await computeManagementClient.VirtualMachines.CreateOrUpdateAsync(groupName, vmName, vmResult);
         }
 
 3. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        UpdateVirtualMachine(
+        UpdateVirtualMachineAsync(
           credential,
           groupName,
           vmName,
@@ -426,5 +423,9 @@
 5. 在 Visual Studio 中单击“启动”，然后使用用于订阅的相同用户名和密码登录到 Azure AD。
 
     你应会看到虚拟机的大小更改为 Standard\_A1
+    
+## 后续步骤
 
-<!---HONumber=Mooncake_0425_2016-->
+如果部署出现问题，请参阅[使用 Azure 门户对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
+
+<!---HONumber=Mooncake_0808_2016-->

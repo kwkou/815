@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="将磁盘添加到 Linux VM | Azure"
 	description="了解如何将持久性磁盘添加到 Linux VM"
@@ -14,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/29/2016"
-	wacn.date="06/27/2016"/>
+	wacn.date=""/>
 
 # 将磁盘添加到 Linux VM
 
@@ -39,7 +37,6 @@
 	info:    New data disk location: https://cliexxx.blob.core.chinacloudapi.cn/vhds/myuniquevmname-20150526-0xxxxxxx43.vhd
 	+ Updating VM "myuniquevmname"
 	info:    vm disk attach-new command OK
-
 
 ## 连接到 Linux VM 以装入新磁盘
 
@@ -185,10 +182,33 @@
 
 > [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。
 
+
+### Azure 中对 Linux 的 TRIM/UNMAP 支持
+某些 Linux 内核将支持 TRIM/UNMAP 操作以放弃磁盘上未使用的块。这主要适用于标准存储，以通知 Azure 已删除的页不再有效可以丢弃。如果你创建了较大的文件，然后将其删除，则这可以节省成本。
+
+在 Linux VM 中有两种方法可以启用 TRIM 支持。与往常一样，有关建议的方法，请参阅你的分发：
+
+- 在 `/etc/fstab` 中使用 `discard` 装载选项，例如：
+
+		UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,discard   1   2
+
+- 此处，还可以从命令行手动运行 `fstrim` 命令，或将其添加到 crontab 以定期运行：
+
+	**Ubuntu**
+
+		# sudo apt-get install util-linux
+		# sudo fstrim /datadrive
+
+	**RHEL/CentOS**
+
+		# sudo yum install util-linux
+		# sudo fstrim /datadrive
+
+
 ## 后续步骤
 
 - 请记住，即使重新启动 VM，你的新磁盘通常也无法供 VM 使用，除非你将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件。
 - 请查看[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议，以确保 Linux VM 正确配置。
 - 通过添加更多的磁盘来扩展存储容量，并[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 以提高性能。
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0808_2016-->
