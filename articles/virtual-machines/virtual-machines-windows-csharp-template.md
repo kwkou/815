@@ -1,5 +1,3 @@
-<!-- Ibiza portal: tested -->
-
 <properties
 	pageTitle="使用 C# 和 Resource Manager 模板部署 VM | Azure"
 	description="了解如何使用 C# 和 Resource Manager 模板部署 Azure VM。"
@@ -12,33 +10,29 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/24/2016"
+	wacn.date=""/>
 
 # 使用 C# 和 Resource Manager 模板部署 Azure 虚拟机
 
 使用资源组和模板，可以统一管理为你的应用程序提供支持的所有资源。本文说明如何使用 Azure PowerShell 设置身份验证和存储，然后使用 C# 创建 Azure 资源以构建和部署模板。
 
-若要完成本教程，你需要：
+首先需要确保你已完成此操作：
 
-- [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
-- [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
-- [身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal/)
+- 安装 [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
+- 验证是否安装了 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
+- 获取[身份验证令牌](/documentation/articles/resource-group-authenticate-service-principal/)
 
 完成这些步骤大约需要 30 分钟。
-
-## 步骤 1：安装 Azure PowerShell
-
-有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。
     
-## 步骤 2：为模板存储创建资源组
+## 步骤 1：为模板存储创建资源组
 
-必须在资源组中部署所有资源。有关详细信息，请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview/)。
+必须在资源组中部署所有资源。有关详细信息，请参阅 [Azure Resource Manager overview](/documentation/articles/resource-group-overview/)（Azure Resource Manager 概述）。
 
 1. 获取可以创建资源的可用位置列表。
 
 	    Get-AzureRmLocation | sort Location | Select Location
-
+        
 2. 使用列表中的位置（例如 **chinanorth**）替换 **$locName** 的值。创建变量。
 
         $locName = "location name"
@@ -56,7 +50,7 @@
         Tags              :
         ResourceId        : /subscriptions/{subscription-id}/resourceGroups/myrg1
     
-## 步骤 3：创建存储帐户和模板容器
+## 步骤 2：创建存储帐户和模板容器
 
 需要存储帐户才能存储即将创建及部署的模板。
 
@@ -69,9 +63,9 @@
     
 2. 现在，请运行以下命令来创建存储帐户。
     
-        New-AzureRmStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_LRS" -Location $locName
-
-3. 将 {blob-storage-endpoint} 替换为你帐户中 Blob 存储的终结点。将 {storage-account-name} 替换为你的存储帐户名称。将 {primary-storage-key} 替换为主存储密钥。运行以下命令以创建用于存储文件的容器。可以从 Azure 门户预览获取终结点和密钥值。
+        New-AzureRmStorageAccount -ResourceGroupName $rgName -Name $stName -SkuName "Standard_LRS" -Kind "Storage" -Location $locName
+        
+3. 将 {blob-storage-endpoint} 替换为你帐户中 Blob 存储的终结点。将 {storage-account-name} 替换为你的存储帐户名称。将 {primary-storage-key} 替换为主存储密钥。运行以下命令以创建用于存储文件的容器。可以从 Azure 门户预览版获取终结点和密钥值。
 
         $ConnectionString = "DefaultEndpointsProtocol=http;BlobEndpoint={blob-storage-endpoint};AccountName={storage-account-name};AccountKey={primary-storage-key}"
         $ctx = New-AzureStorageContext -ConnnectionString $ConnectionString
@@ -81,7 +75,7 @@
 
 ### 创建模板文件
 
-借助 Azure 资源管理器模板，你可以使用资源和关联部署参数的 JSON 描述来统一部署和管理 Azure 资源。在本教程中生成的模板非常类似于可在模板库中找到的模板。
+借助 Azure 资源管理器模板，你可以使用资源和关联部署参数的 JSON 描述来统一部署和管理 Azure 资源。
 
 在 Visual Studio 中执行以下操作：
 
@@ -306,7 +300,7 @@
           }
         }
 
-    >[AZURE.NOTE] 本文创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
+    >[AZURE.NOTE] 本文创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)（使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像）。
 
 4. 保存创建的参数文件。
 
@@ -316,7 +310,7 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 1. 打开云资源管理器，然后导航到前面创建的存储帐户中的模板容器。
 
-2. 在模板容器窗格的右上角，单击“上载 Blob”图标，浏览到你创建的 VirtualMachineTemplate.json 文件，然后单击“打开”。
+2. 在模板容器窗口的右上角，单击“上载 Blob”图标，浏览到你创建的 VirtualMachineTemplate.json 文件，然后单击“打开”。
 
 3. 再次单击“上载 Blob”图标，浏览到你创建的 Parameters.json 文件，然后单击“打开”。
 
@@ -328,7 +322,7 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 2. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-4. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.ResourceManager*，单击“Azure 资源管理库”旁边的“安装”，然后根据说明安装该包。
+4. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.ResourceManager*，单击“Azure 资源管理库”旁边的“安装”，然后根据说明安装该包。
 
 现在，你可以开始使用这些库来创建应用程序了。
 
@@ -340,33 +334,30 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
         using Microsoft.Azure;
         using Microsoft.IdentityModel.Clients.ActiveDirectory;
-        using Microsoft.Azure.Management.Resources;
-        using Microsoft.Azure.Management.Resources.Models;
+        using Microsoft.Azure.Management.ResourceManager;
+        using Microsoft.Azure.Management.ResourceManager.Models;
         using Microsoft.Rest;
 
 2.	将以下方法添加到 Program 类，以获取创建凭据所需的令牌：
 
-        private static string GetAuthorizationHeader()
+        private static async Task<AuthenticationResult> GetAccessTokenAsync()
         {
-          ClientCredential cc = new ClientCredential("{application-id}", "{password}");
+          var cc = new ClientCredential("{client-id}", "{client-secret}");
           var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
-          var result = context.AcquireTokenAsync("https://management.chinacloudapi.cn/", cc);
-          if (result == null)
+          var token = await context.AcquireTokenAsync("https://management.chinacloudapi.cn/", cc);
+          if (token == null)
           {
-            throw new InvalidOperationException("Failed to obtain the JWT token");
+            throw new InvalidOperationException("Could not get the token.");
           }
-
-          string token = result.Result.AccessToken;
-
           return token;
         }
 
-    将 {application-id} 替换为前面记下的应用程序标识符，将 {password} 替换为你为 AD 应用程序选择的密码，将 {tenant-id} 替换为订阅的租户标识符。可以通过运行 Get-AzureRmSubscription 找到租户 ID。
+    将 {client-id} 替换为 Azure Active Directory 应用程序的标识符，将 {client-secret} 替换为 AD 应用程序的访问密钥，并将 {tenant-id} 替换为你的订阅的租户标识符。可以通过运行 Get-AzureRmSubscription 找到租户 ID。可以使用 Azure 门户找到访问密钥。
 
 3. 将以下代码添加到 Program.cs 文件中的 Main 方法，以创建凭据：
 
-        var token = GetAuthorizationHeader();
-        var credential = new TokenCredentials(token);
+        var token = GetAccessTokenAsync();
+        var credential = new TokenCredentials(token.Result.AccessToken);
 
 4. 保存 Program.cs 文件。
 
@@ -378,10 +369,6 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
         var groupName = "resource group name";
         var storageName = "storage account name";
-        var vmName = "virtual machine name";  
-        var deploymentName = "deployment name";
-        var adminName = "administrator account name";
-        var adminPassword = "administrator account password";
         var location = "location name";
         var subscriptionId = "subsciption id";
 
@@ -389,34 +376,32 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
     
 2. 将以下方法添加到 Program 类，以创建资源组：
 
-        public static void CreateResourceGroup(
+        public static async Task<ResourceGroup> CreateResourceGroupAsync(
           TokenCredentials credential,
           string groupName,
           string subscriptionId,
           string location)
         {
           Console.WriteLine("Creating the resource group...");
-          var resourceManagementClient = new ResourceManagementClient(credential);
-          resourceManagementClient.SubscriptionId = subscriptionId;
-          var resourceGroup = new ResourceGroup {
-            Location = location
-          };
-          var rgResult = resourceManagementClient.ResourceGroups.CreateOrUpdate(groupName, resourceGroup);
-          Console.WriteLine(rgResult.Properties.ProvisioningState);
+          var resourceManagementClient = new ResourceManagementClient(credential) 
+            { SubscriptionId = subscriptionId };
+          var resourceGroup = new ResourceGroup { Location = location };
+          return await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync(groupName, resourceGroup);
         }
 
 2. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        CreateResourceGroup(
+        var rgResult = CreateResourceGroupAsync(
           credential,
           groupName,
           subscriptionId,
           location);
+        Console.WriteLine(rgResult.Result.Properties.ProvisioningState);
         Console.ReadLine();
 
 3. 将以下方法添加到 Program 类，以使用你定义的模板将资源部署到资源组：
 
-        public static void CreateTemplateDeployment(
+        public static async Task<DeploymentExtended> CreateTemplateDeploymentAsync(
           TokenCredentials credential,
           string groupName,
           string storageName,
@@ -437,23 +422,23 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
               Uri = "https://" + storageName + ".blob.core.chinacloudapi.cn/templates/Parameters.json"
             }
           };
-          var resourceManagementClient = new ResourceManagementClient(credential);
-          resourceManagementClient.SubscriptionId = subscriptionId;
-          var dpResult = resourceManagementClient.Deployments.CreateOrUpdate(
+          var resourceManagementClient = new ResourceManagementClient(credential) 
+            { SubscriptionId = subscriptionId };
+          return await resourceManagementClient.Deployments.CreateOrUpdateAsync(
             groupName,
             deploymentName,
             deployment);
-          Console.WriteLine(dpResult.Properties.ProvisioningState);
         }
 
 4. 将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        CreateTemplateDeployment(
+        var dpResult = CreateTemplateDeploymentAsync(
           credential,
           groupName",
           storageName,
           deploymentName,
           subscriptionId);
+        Console.WriteLine(dpResult.Result.Properties.ProvisioningState);
         Console.ReadLine();
 
 ##步骤 7：添加代码以删除资源
@@ -462,36 +447,40 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 1.	将以下方法添加到 Program 类，以删除资源组：
 
-        public static void DeleteResourceGroup(
+        public static async void DeleteResourceGroupAsync(
           TokenCredentials credential,
-          string groupName)
+          string groupName,
+          string subscriptionId)
         {
           Console.WriteLine("Deleting resource group...");
-          var resourceGroupClient = new ResourceManagementClient(credential);
-          resourceGroupClient.ResourceGroups.DeleteAsync(groupName);
+          var resourceManagementClient = new ResourceManagementClient(credential)
+            { SubscriptionId = subscriptionId };
+          return await resourceManagementClient.ResourceGroups.DeleteAsync(groupName);
         }
 
 2.	将以下代码添加到 Main 方法，以调用你刚刚添加的方法：
 
-        DeleteResourceGroup(
+        DeleteResourceGroupAsync(
           credential,
-          groupName);
+          groupName,
+          subscriptionId);
         Console.ReadLine();
 
 ##步骤 8：运行控制台应用程序
 
-1.	若要运行控制台应用程序，请在 Visual Studio 中单击“启动”，然后使用用于订阅的相同用户名和密码登录到 Azure AD。
+1.	若要运行控制台应用程序，请在 Visual Studio 中单击“启动”，然后使用用于订阅的相同凭据登录到 Azure AD。
 
 2.	在显示“已接受”状态之后按 **Enter**。
 
-	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 门户预览中花几分钟时间来验证资源的创建。
+	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 门户预览版中花费几分钟时间来验证资源的创建。
 
-3. 在 Azure 门户预览中浏览到“审核日志”，以查看资源的状态：
+3. 在 Azure 门户预览版中浏览到“审核日志”，以查看资源的状态：
 
-	![在 Azure 门户预览中浏览审核日志](./media/virtual-machines-windows-csharp-template/crpportal.png)
+	![在 Azure 门户预览版中浏览审核日志](./media/virtual-machines-windows-csharp-template/crpportal.png)
 
 ## 后续步骤
 
-- 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage/)，了解如何管理刚创建的虚拟机。
+- 如果部署出现问题，下一步是参阅 [Troubleshooting resource group deployments with Azure Portal Preview](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)（使用 Azure 门户预览版对资源组部署进行故障排除）。
+- 查看 [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-windows-csharp-manage/)（使用 Azure Resource Manager 和 PowerShell 管理虚拟机），了解如何管理刚创建的虚拟机。
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->
