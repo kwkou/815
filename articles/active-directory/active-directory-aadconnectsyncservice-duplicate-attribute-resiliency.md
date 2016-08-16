@@ -73,7 +73,7 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 6. [以有限的数量或全部](#in-a-limited-quantity-or-all)
 
 
-#### 查看全部
+#### <a name="see-all"></a>查看全部
 连接后，若要查看租户中属性预配错误的常规列表，请运行：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict`
@@ -82,7 +82,7 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
  ![Get-MsolDirSyncProvisioningError](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/1.png)  
 
 
-#### 按属性类型
+#### <a name="by-property-type></a>按属性类型
 若要按属性类型查看错误，请添加带有 **UserPrincipalName** 或 **ProxyAddresses** 参数的 **-PropertyName** 标志：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName UserPrincipalName`
@@ -91,18 +91,18 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
-#### 按冲突值
+#### <a name="by-conflicting-value"></a>按冲突值
 若要查看与特定属性相关的错误，请添加 **-PropertyValue** 标志（添加此标志时还必须使用 **-PropertyName**）：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyValue User@domain.com -PropertyName UserPrincipalName`
 
 
-#### 使用字符串搜索
+#### <a name="using-a-string-search"></a>使用字符串搜索
 若要进行广泛的字符串搜索，请使用 **-SearchString** 标志。此标志可以独立于上述所有标志使用，但 **-ErrorCategory PropertyConflict** 除外（此标志始终是必需的）：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -SearchString User`
 
-#### 已排序
+#### <a name="sorted"></a>已排序
 有两个标志可用于排序给定查询的结果：
 
 1.	**SortField**：有效参数包括 DisplayName 和 UserPrincipalName
@@ -111,7 +111,7 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -SortField UserPrincipalName -SortDirection Ascending`
 
-#### 以有限的数量或全部
+#### <a name="in-a-limited-quantity-or-all"></a>以有限的数量或全部
 1. **MaxResults <Int>** 可用于将查询限制为特定数目的值。
 
 2. **All** 可用于确保在有大量错误的情况下检索所有结果。

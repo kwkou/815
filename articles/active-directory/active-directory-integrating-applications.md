@@ -45,7 +45,7 @@
 
 >[AZURE.NOTE] 默认情况下，新建的应用程序注册已配置为允许你的目录中的用户登录到你的应用程序。
 
-## 更新应用程序
+## <a name="updating-an-application"></a>更新应用程序
 
 将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍如何进一步配置你的应用程序。有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 

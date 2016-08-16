@@ -62,7 +62,7 @@
 
 ## “同步”部分下的页面
 
-### 连接你的目录
+### <a name="connect-your-directories"></a>连接你的目录
 若要连接到你的 Active Directory 域服务，Azure AD Connect 工具需要使用具有足够权限的帐户的凭据。此帐户可以是普通的用户帐户，因为该帐户只需默认的读取权限。不过，根据你的方案，可能会需要其他权限。有关详细信息，请参阅 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#create-the-ad-ds-account)
 
 ![连接目录](./media/active-directory-aadconnect-get-started-custom/connectdir.png)
@@ -113,7 +113,7 @@ sAMAccountName 和 MailNickName | 此选项根据预期可以在其中找到用�
 
 在成熟的生产部署中，往往很难维护单个要同步所有对象的组。在这种情况下，你应该使用[配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)中所述的方法之一。
 
-### 可选功能
+### <a name="optional-features></a>可选功能
 此屏幕可让你针对特定方案选择可选功能。
 
 ![可选功能](./media/active-directory-aadconnect-get-started-custom/optional.png)
@@ -131,7 +131,7 @@ Azure AD 应用程序和属性筛选 | 通过启用 Azure AD 应用和属性筛�
 
 目录扩展属性同步 | 通过启用目录扩展属性同步，可将指定的属性同步到 Azure AD。有关详细信息，请参阅 [Directory extensions（目录扩展）](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)。 |
 
-### Azure AD 应用程序和属性筛选
+### <a name="azure-ad-app-and-attribute-filtering"></a>Azure AD 应用程序和属性筛选
 如果想要限制同步到 Azure AD 的属性，请通过选择正在使用的服务来启动。如果在此页面上进行配置更改，则必须通过重新运行安装向导来明确选择新的服务。
 
 ![可选功能 - 应用](./media/active-directory-aadconnect-get-started-custom/azureadapps2.png)
@@ -150,14 +150,14 @@ Azure AD 应用程序和属性筛选 | 通过启用 Azure AD 应用和属性筛�
 
 有关详细信息，请参阅 [Directory extensions（目录扩展）](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)。
 
-## 配置与 AD FS 的联合
+## <a name="configuring-federation-with-ad-fs"></a>配置与 AD FS 的联合
 只需单击几下鼠标，请能使用 Azure AD Connect 配置 AD FS。配置之前需要做好以下准备。
 
 - 已启用远程管理的、用作联合服务器的 Windows Server 2012 R2 服务器
 - 已启用远程管理的、用作 Web 应用程序代理服务器的 Windows Server 2012 R2 服务器
 - 你想要使用的联合身份验证服务名称（例如 sts.contoso.com）的 SSL 证书
 
-### AD FS 配置先决条件
+### <a name="ad-fs-configuration-pre-requisites"></a>AD FS 配置先决条件
 若要使用 Azure AD Connect 配置 AD FS 场，请确保已在远程服务器上启用 WinRM。此外，请满足[表 3 - Azure AD Connect 和联合服务器/WAP](/documentation/articles/active-directory-aadconnect-ports/#table-3---azure-ad-connect-and-federation-serverswap) 中列出的端口要求。
 
 ### 创建新的 AD FS 场或使用现有的 AD FS 场
@@ -207,7 +207,7 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 ![Azure AD 域](./media/active-directory-aadconnect-get-started-custom/adfs6.png)
 
 
-### 验证选择用于联合的 Azure AD 域
+### <a name="verify-the-azure-ad-domain-selected-for-federation"></a>验证选择用于联合的 Azure AD 域
 当你选择要联合的域时，Azure AD Connect 将提供所需的信息来验证尚未验证的域。有关如何使用此信息，请参阅 [Add and verify the domain（添加和验证域）](/documentation/articles/active-directory-add-domain/)。
 
 ![Azure AD 域](./media/active-directory-aadconnect-get-started-custom/verifyfeddomain.png)
@@ -254,7 +254,8 @@ AD Connect 尝试在配置阶段验证域。如果你继续进行配置但未添
 
 了解有关这些常见主题的详细信息，请参阅[计划程序以及如何触发同步](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)。
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
-## 相关文档
+
+## <a name="related-documentation"></a>相关文档
 
 主题 |  
 --------- | ---------

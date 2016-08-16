@@ -74,7 +74,7 @@ Azure AD Connect 是 DirSync 的后继产品。你将在本主题中了解可从
 * 你当前正在使用完全版 SQL Server - 本地或远程
 * 要同步的对象超过 50,000 个
 
-## 就地升级
+## <a name="in-place-upgrade"></a>就地升级
 
 1. 启动 Azure AD Connect 安装程序 (MSI)。
 2. 查看并同意许可条款和隐私声明。
@@ -100,7 +100,7 @@ Azure AD Connect 是 DirSync 的后继产品。你将在本主题中了解可从
 ![已准备好配置](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ReadyToConfigure.png)
 8. 安装完成后，请注销并再次登录到 Windows，然后即可使用同步服务管理器或同步规则编辑器，或者尝试进行其他任何配置更改。
 
-## 并行部署
+## <a name="parallel-deployment"></a>并行部署
 
 ### 导出 DirSync 配置
 **对象数超过 50,000 时执行并行部署**
@@ -132,7 +132,7 @@ Azure AD Connect 是 DirSync 的后继产品。你将在本主题中了解可从
 
 成功导出设置后，可以退出 DirSync 服务器上的 Azure AD Connect 向导。继续执行下一步，以[在不同的服务器上安装 Azure AD Connect](#installation-of-azure-ad-connect-on-separate-server)
 
-### 在不同的服务器上安装 Azure AD Connect
+### <a name="installation-of-azure-ad-connect-on-separate-server"></a>在不同的服务器上安装 Azure AD Connect
 
 在新的服务器上安装 Azure AD Connect 时，会假设你想要运行 Azure AD Connect 的全新安装。由于你想要使用 DirSync 配置，因此还要执行一些额外的步骤：
 
@@ -208,7 +208,8 @@ Azure AD Connect 现为你的活动服务器。
 
 了解有关这些常见主题的详细信息，请参阅[计划程序以及如何触发同步](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)。
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
-## 相关文档
+
+## <a name="related-documentation"></a>相关文档
 
 主题 |  
 --------- | ---------

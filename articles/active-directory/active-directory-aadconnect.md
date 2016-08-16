@@ -145,9 +145,6 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 常见问题 | [Azure AD Connect 常见问题](/documentation/articles/active-directory-aadconnect-faq/) |
 
 
-**其他资源**
 
-
-有关将本地目录扩展到云的 Ignite 2015 演示文稿。
 
 <!---HONumber=Mooncake_0801_2016-->

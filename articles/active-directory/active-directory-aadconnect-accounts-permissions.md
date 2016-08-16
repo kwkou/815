@@ -83,7 +83,7 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/#step-4-set-up-the-appropriate-active-directory-permissions)中叙述了对用户的属性的写入权限。
 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。
 
-## 升级
+## <a name="upgrade"></a>升级
 从 Azure AD Connect 的一个版本升级到新版本时，你需要拥有以下权限：
 
 主体 | 所需的权限 | 用途

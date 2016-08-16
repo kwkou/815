@@ -31,7 +31,7 @@
 
 
 
-## 入门
+## <a name="getting-started"></a>入门
 
 以下教程是专门针对多种平台编写的，可帮助你快速开始使用 Azure Active Directory 进行开发。作为先决条件，你必须[获取一个 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant/)。
 

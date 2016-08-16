@@ -38,7 +38,7 @@
 刷新架构 | 刷新缓存架构。最好改在安装向导中使用此选项，因为它也会更新同步规则。
 [搜索连接器空间](#search-connector-space) | 用于查找对象，以及[在整个系统中跟踪对象及其数据](#follow-an-object-and-its-data-through-the-system)。
 
-### 删除
+### <a name="delete"></a>删除
 删除操作适用于两种不同的用途。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/connectordelete.png)
 

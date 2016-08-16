@@ -41,7 +41,7 @@ HTTPS|443 (TCP/UDP)|用来与 Azure AD 同步。
 
 有关 Office 365 端口和 IP 地址的列表，请参阅 [Office 365 URL 和 IP 地址范围](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)。
 
-## 表 3 - Azure AD Connect 和联合服务器/WAP
+## <a name="table-3---azure-ad-connect-and-federation-serverswap"></a>表 3 - Azure AD Connect 和联合服务器/WAP
 此表描述了 Azure AD Connect 服务器与 联合服务器/WAP 服务器之间通信所需的端口和协议。
 
 协议 |端口 |说明

@@ -99,7 +99,7 @@
 ![cs1](.\media\active-directory-aadconnectsync-connector-genericsql-step-by-step\cs1.png)  
 ![cs2](.\media\active-directory-aadconnectsync-connector-genericsql-step-by-step\cs2.png)  
 
-## 附录 A
+## <a name="appendix-a"></a>附录 A
 **用于创建示例数据库的 SQL 脚本**
 
 SQL

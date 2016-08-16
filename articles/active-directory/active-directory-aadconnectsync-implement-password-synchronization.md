@@ -180,7 +180,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 | MigratedCheckDetailsForMoreInfo | 日志条目创建于版本 1.0.9125.0 之前，并且以其旧状态显示。 |
 
 
-## 触发所有密码的完全同步
+## <a name="trigger-a-full-sync-of-all-passwords"></a>触发所有密码的完全同步
 
 一般情况下，不需要对所有密码触发完全同步。
 但如果必要，你可以使用以下脚本对所有密码触发完全同步：

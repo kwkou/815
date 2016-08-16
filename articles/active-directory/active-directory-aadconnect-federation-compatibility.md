@@ -54,7 +54,7 @@ Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单
 
 >仅使用 WS 联合和 WS 信任协议测试这些第三方标识提供者与 Microsoft 云服务的互操作性。测试不包括使用 SAML 协议。
 
-## Azure Active Directory 
+## <a name="azure-active-directory"></a>Azure Active Directory 
 Azure Active Directory 可以通过与本地 Active-Directory 联合，或者在没有本地联合服务器的情况下通过使用密码同步，来对用户进行身份验证。
 
 下面是此登录体验的方案支持对照表：
@@ -72,7 +72,7 @@ Azure Active Directory 可以通过与本地 Active-Directory 联合，或者在
 有关将 Azure Active Directory 与密码同步配合使用的详细信息，请参阅 [Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。
 
 
-## Optimal IDM Virtual Identity Server Federation Services 
+## <a name="optimal-idm-virtual-identity-server-federation-services"></a>Optimal IDM Virtual Identity Server Federation Services 
 Optimal IDM Virtual Identity Server Federation Services 可以对位于客户本地 Active Directory 的用户进行身份验证。
 
 下面是此单一登录体验的方案支持对照表：
@@ -86,7 +86,7 @@ Optimal IDM Virtual Identity Server Federation Services 可以对位于客户本
 
 
 
-## PingFederate 6.11 
+## <a name="pingfederate-611"></a>PingFederate 6.11 
 
 PingFederate 6.11 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
@@ -101,7 +101,7 @@ PingFederate 6.11 实施广泛使用的 WS 联合标识标准以提供单一登�
 
 有关如何配置此 STS 从而为你的 Active Directory 用户提供单一登录体验的 PingFederate 说明，请从[此处](http://go.microsoft.com/fwlink/?LinkID=266321)下载 pdf 文件。
 
-## PingFederate 7.2 
+## <a name="pingfederate-72"></a>PingFederate 7.2 
 PingFederate 7.2 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -115,7 +115,7 @@ PingFederate 7.2 实施广泛使用的 WS 联合标识标准以提供单一登�
 
 有关如何配置此 STS 从而为你的 Active Directory 用户提供单一登录体验的 PingFederate 说明，请查看[此处](http://documentation.pingidentity.com/display/PF72/PingFederate+7.2)。
 
-## PingFederate 8.x 
+## <a name="pingfederate-8.x"></a>PingFederate 8.x 
 PingFederate 8.x 实现了广泛使用的 WS 联合身份验证/WS-Trust 标识标准，以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -129,7 +129,7 @@ PingFederate 8.x 实现了广泛使用的 WS 联合身份验证/WS-Trust 标识�
 
 有关如何配置此 STS 从而为你的 Active Directory 用户提供单一登录体验的 PingFederate 说明，请查看[此处](http://documentation.pingidentity.com/display/PFS/SSO+to+Office+365+Introduction)。
 
-## Centrify 
+## <a name="centrify"></a>Centrify 
 Centrify 帮助提供针对 Office 365 的联合单一登录体验，而无需托管本地联合服务器。
 
 下面是此单一登录体验的方案支持对照表：
@@ -143,7 +143,7 @@ Centrify 帮助提供针对 Office 365 的联合单一登录体验，而无需�
 
 有关 Centrify 的详细信息，请查看[此处](http://www.centrify.com/cloud/apps/single-sign-on-for-office-365.asp)。|
 
-## IBM Tivoli Federated Identity Manager 6.2.2 
+## <a name="ibm-tivoli-federated-identity-manager-622"></a>IBM Tivoli Federated Identity Manager 6.2.2 
 适用于 Microsoft Applications 1.4 的装有 IBM Security Access Manager 的 IBM Tivoli Federated Identity Manager 6.2.2 实施了广泛使用的 WS 联合/WS 信任标识标准，以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -156,7 +156,7 @@ Centrify 帮助提供针对 Office 365 的联合单一登录体验，而无需�
 
 有关 IBM Tivoli Federated Identity Manager 的详细信息，请参阅 [IBM Security Access Manager for Microsoft Applications（Microsoft 应用程序的 IBM 安全访问管理）](http://www-01.ibm.com/support/docview.wss?uid=swg24029517)。
 
-## SecureAuth IdP 7.2.0 
+## <a name="secureauth-idp-720"></a>SecureAuth IdP 7.2.0 
 SecureAuth IdP 7.2.0 实施广泛使用的 WS 联合/WS 信任身份标准，以提供单一登录体验和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -169,7 +169,7 @@ SecureAuth IdP 7.2.0 实施广泛使用的 WS 联合/WS 信任身份标准，以
 
 有关 SecureAuth 的详细信息，请参阅 [SecureAuth IdP](http://go.microsoft.com/?linkid=9845293)。
 
-## CA SiteMinder 12.52 
+## <a name="ca-siteminder-1252"></a>CA SiteMinder 12.52 
 CA SiteMinder Federation 12.52 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -182,7 +182,7 @@ CA SiteMinder Federation 12.52 实施广泛使用的 WS 联合标识标准以提
 
 有关 CA SiteMinder 详细信息，请参阅 [CA SiteMinder Federation](http://www.ca.com/us/products/ca-single-sign-on.html)。
 
-## RadiantOne CFS 3.0 
+## <a name="radiantone-cfs-30"></a>RadiantOne CFS 3.0 
 RadiantOne Cloud Federation Service (CFS) 3.0 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -196,7 +196,7 @@ RadiantOne Cloud Federation Service (CFS) 3.0 实施广泛使用的 WS 联合标
 有关 RadiantOne CFS 的详细信息，请参阅 [RadiantOne CFS](http://www.radiantlogic.com/products/radiantone-cfs/)。
 
 
-## Okta 
+## <a name="okta"></a>Okta 
 Okta 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -210,7 +210,7 @@ Okta 实施广泛使用的 WS 联合标识标准以提供单一登录和属性�
 
 有关 Okta 的详细信息，请参阅 [Okta](https://www.okta.com/)。
  
-## OneLogin 
+## <a name="onelogin"></a>OneLogin 
 2014 年 5 月测试的 OneLogin 实施广泛使用的 WS 联合/WS 信任标识标准，以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -223,7 +223,7 @@ Okta 实施广泛使用的 WS 联合标识标准以提供单一登录和属性�
 
 有关 OneLogin 的详细信息，请参阅 [OneLogin](https://www.onelogin.com/)。
 
-## NetIQ Access Manager 4.0.1 
+## <a name="netiq-access-manager-401"></a>NetIQ Access Manager 4.0.1 
 NetIQ Access Manager 4.0.1 实施广泛使用的 WS 联合/WS 信任标识标准，以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -236,7 +236,7 @@ NetIQ Access Manager 4.0.1 实施广泛使用的 WS 联合/WS 信任标识标准
 
 *NetIQ 支持通过配置 Kerberos 约定实现 Kerberos 身份验证。如需此配置的帮助，请联系 NetIQ 或查看设置指南。有关 NetIQ Access Manager 的详细信息，请参阅 [NetIQ Access Manager。](https://www.netiq.com/documentation/netiqaccessmanager4/identityserverhelp/data/b12iqp0m.html)
 
-## BIG-IP with Access Policy Manager BIG-IP ver.11.3x – 11.6x 
+## <a name="big-ip-with-access-policy-manager-big-ip-ver-113x-116x"></a>BIG-IP with Access Policy Manager BIG-IP ver.11.3x – 11.6x 
 BIG-IP with Access Policy Manager (APM) BIG-IP ver.11.3x – 11.6x 实施广泛使用的 SAML 标识标准以提供单一登录体验和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -251,7 +251,7 @@ BIG-IP with Access Policy Manager (APM) BIG-IP ver.11.3x – 11.6x 实施广泛�
 
 有关如何将 STS 配置为向 Active Directory 用户提供单一登录体验的说明，请从[此处](http://www.f5.com/pdf/deployment-guides/microsoft-office-365-idp-dg.pdf)下载 pdf 文件，以获取 BIG-IP Access Policy Manager 的说明。
 
-## VMware Workspace Portal version 2.1 
+## <a name="vmware-workspace-portal-version-21"></a>VMware Workspace Portal version 2.1 
 VMware Workspace Portal version 2.1 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -264,7 +264,7 @@ VMware Workspace Portal version 2.1 实施广泛使用的 WS 联合标识标准�
 
 有关 VMware Workspace Portal 2.1 版的详细信息，请从[此处](http://pubs.vmware.com/workspace-portal-21/topic/com.vmware.ICbase/PDF/workspace-portal-21-resource.pdf)下载 PDF 文件。
 
-## Sign&go 5.3 
+## <a name="signampgo-53"></a>Sign&go 5.3 
 Sign&go 5.3 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -279,7 +279,7 @@ Sign&go 5.3 实施广泛使用的 WS 联合标识标准以提供单一登录和�
 Sign&go 5.3 支持通过配置 Kerberos 约定实现 Kerberos 身份验证。如需此配置的帮助，请联系 Ilex 或查看[此处](http://www.ilex-international.com/docs/sign&go_wsfederation_en.pdf)的设置指南。
 
 
-## IceWall Federation Version 3.0 
+## <a name="icewall-federation-version-30"></a>IceWall Federation Version 3.0 
 IceWall Federation Version 3.0 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -292,7 +292,7 @@ IceWall Federation Version 3.0 实施广泛使用的 WS 联合标识标准以提
 
 有关 IceWall Federation 的详细信息，请参阅[此处](http://h50146.www5.hp.com/products/software/security/icewall/eng/federation/)和[此处](http://h50146.www5.hp.com/products/software/security/icewall/federation/office365.html)。
 
-## CA Secure Cloud 
+## <a name="ca-secure-cloud"></a>CA Secure Cloud 
 
 CA Secure Cloud 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
@@ -306,7 +306,7 @@ CA Secure Cloud 实施广泛使用的 WS 联合标识标准以提供单一登录
 
 有关 CA Secure Cloud 详细信息，请参阅 [CA Secure Cloud](http://www.ca.com/us/products/security-as-a-service.aspx)。
 
-## Dell One Identity Cloud Access Manager v7.1 
+## <a name="dell-one-identity-cloud-access-manager-v71"></a>Dell One Identity Cloud Access Manager v7.1 
 Dell One Identity Cloud Access Manager 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -321,7 +321,7 @@ Dell One Identity Cloud Access Manager 实施广泛使用的 WS 联合标识标�
 
  有关如何配置此 STS 从而为你的 Office 365 用户提供单一登录体验的说明，请参阅 [Configure Office 365 Users（配置 Office 365 用户）](http://documents.software.dell.com/dell-one-identity-cloud-access-manager/7.1/how-to-configure-microsoft-office-365)。
 
-## AuthAnvil Single Sign On 4.5 
+## <a name="authavil-single-sign-on-45"></a>AuthAnvil Single Sign On 4.5 
 AuthAnvil Single Sign On 4.5 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：

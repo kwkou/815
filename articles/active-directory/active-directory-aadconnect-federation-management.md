@@ -16,11 +16,11 @@
 
 本文详细介绍了各种 Active Directory 联合身份验证服务 (AD FS) 相关的且可以使用 Azure AD Connect 执行的任务，以及完整配置 AD FS 场可能需要的其他常见 AD FS 任务。
 
-## AD FS 管理
+## <a name="ad-fs-management"></a>AD FS 管理
 
 Azure AD Connect 提供了各种 AD FS 相关的任务，通过使用 Azure AD Connect 向导，可以用最少的用户干预执行这些任务。在通过运行向导来完成安装 Azure AD Connect 后，你可以再次运行向导，以执行其他任务。
 
-### 修复信任
+### <a name="reparing-the-trust"></a>修复信任
 
 Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并采取适当措施来修复信任。请按照以下步骤来修复 Azure AD 和 AD FS 信任。
 
@@ -48,7 +48,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 >[AZURE.NOTE] Azure AD Connect 只能对自签名的证书进行修复/采取措施。Azure AD connect 无法修复第三方证书。
 
-### 添加新的 AD FS 服务器
+### <a name="adding-a-new-ad-fs-server"></a>添加新的 AD FS 服务器
 
 > [AZURE.NOTE] Azure AD Connect 要求 PFX 证书文件添加 AD FS 服务器。因此，只有使用 Azure AD Connect 配置了 AD FS 场，才能够执行此操作。
 
@@ -80,7 +80,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 ![](./media/active-directory-aadconnect-federation-management/AddNewADFSServer8.PNG)
 
-### 添加新的 AD FS Web 应用程序代理服务器
+### <a name="adding-a-new-wap-server"></a>添加新的 AD FS Web 应用程序代理服务器
 
 > [AZURE.NOTE] Azure AD Connect 需要具有 PFX 证书文件才能添加 Web 应用程序代理服务器。因此，只有使用 Azure AD Connect 配置了 AD FS 场，才能够执行此操作。
 
@@ -114,7 +114,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 ![](./media/active-directory-aadconnect-federation-management/WapServer8.PNG)
 
-### 添加新的联合域
+### <a name="add-a-new-federated-domain"></a>添加新的联合域
 
 使用 Azure AD Connect 很容易添加与 Azure AD 联合的新域。Azure AD Connect 不仅添加新域用于联合身份验证，而且修改了声明规则，以便在你有多个域与 Azure AD 联合时，正确反映发布者。
 
@@ -144,7 +144,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 
 以下各节提供了有关如何执行一些常见任务的详细信息。为了自定义 AD FS 登录页，你可能必须完成这些任务。
 
-### 添加自定义公司徽标或插图
+### <a name="add-custom-company-logo-or-illustration"></a>添加自定义公司徽标或插图
 
 若要更改在登录页上显示的公司徽标，请使用以下 PowerShell Windows PowerShell cmdlet 和语法。
 
@@ -155,13 +155,13 @@ Azure AD Connect 可以检查 AD FS 和 Azure ADtrust 的当前运行状况并�
 > [AZURE.NOTE] TargetName 参数是必需项。随 AD FS 一起发布的默认主题名为“默认”。
  
 
-### 添加登录说明
+### <a name="add-sign-in-description"></a>添加登录说明
 
 若要将登录页描述添加到登录页上，请使用以下 Windows PowerShell PowerShell cmdlet 和语法。
 
     Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information.</p>"
 
-### 修改 AD FS 声明规则
+### <a name="modifying-ad-fs-claim-rules"></a>修改 AD FS 声明规则
 
 AD FS 提供指定用于发布声明的自定义规则的选项。它支持丰富的声明语言，让你可以使用可用的资源创建自定义声明规则。有关详细信息，你可以查看[此处](https://technet.microsoft.com/library/dd807118.aspx)的文章。
 

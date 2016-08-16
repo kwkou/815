@@ -22,7 +22,7 @@
 
 > [AZURE.NOTE] 如果你打算配置自定义域名以搭配 Active Directory 联合身份验证服务 (AD FS) 或公司网络上的其他安全令牌服务 (STS) 使用，请按照[添加和配置域以便与 Azure Active Directory 联盟](/documentation/articles/active-directory-add-domain-federated/)中的说明操作。如果你打算将公司目录中的用户同步到 Azure AD，但[密码哈希同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)不符合你的要求，这样做将非常有用。
 
-## 将自定义域名添加到目录
+## <a name="add-your-custom-domain-name-to-azure-active-directory"></a>将自定义域名添加到目录
 
 1. 使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 

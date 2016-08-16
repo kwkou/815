@@ -31,7 +31,7 @@
 3. 使用 ADAL4J 库向 Azure AD 发出登录和注销请求。
 4. 列显有关用户的数据。
 
-若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](active-directory-howto-tenant.md)。
+若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ## 1\.将应用程序注册到 Azure AD
 若要使应用程序对用户进行身份验证，你首先需要在租户中注册新的应用程序。

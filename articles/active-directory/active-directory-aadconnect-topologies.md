@@ -31,7 +31,7 @@ Azure AD 目录 |![AAD](./media/active-directory-aadconnect-topologies/LegendAAD
 
 
 
-## 单个林，单个 Azure AD 目录
+## <a name="each-object-only-once-in-an-azure-ad-directory"></a>单个林，单个 Azure AD 目录
 ![单林单目录](./media/active-directory-aadconnect-topologies/SingleForestSingleDirectory.png)
 
 最常见的拓朴是包含一个或多个域的单个本地林，以及单个 Azure AD 目录（也称为“租户”）。Azure AD 身份验证使用密码同步。Azure AD Connect 的快速安装仅支持此拓扑。
