@@ -29,7 +29,7 @@
 - 暂停计算
 - 恢复计算
 
-若要了解相关信息，请参阅[管理计算能力概述][]。
+若要了解相关信息，请参阅[管理计算概述][]。
 
 <a name="scale-performance-bk"></a>
 <a name="scale-compute-bk"></a>
@@ -85,7 +85,7 @@ POST https://management.chinacloudapi.cn/subscriptions{subscription-id}/resource
 
 <!--Article references-->
 [管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
-[管理计算能力概述]: /documentation/articles/sql-data-warehouse-overview-manage-compute/
+[管理计算概述]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 
 <!--MSDN references-->
 [暂停数据库]: https://msdn.microsoft.com/zh-cn/library/azure/mt718817.aspx
@@ -94,6 +94,6 @@ POST https://management.chinacloudapi.cn/subscriptions{subscription-id}/resource
 
 <!--Other Web references-->
 
-[Azure portal]: http://manage.windowsazure.cn/
+[Azure portal]: http://portal.azure.cn/
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.date="05/31/2016"
-   wacn.date="07/18/2016"/>
+   wacn.date="08/15/2016"/>
 
 #在 SQL 数据仓库中利用其他服务
 除了本身的核心功能以外，SQL 数据仓库还允许用户利用 Azure 中的其他许多服务。具体而言，我们目前已采取多种措施深度集成了以下服务：
@@ -42,4 +42,4 @@ Azure 流分析是复杂、完全托管的基础结构，用于处理和使用�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

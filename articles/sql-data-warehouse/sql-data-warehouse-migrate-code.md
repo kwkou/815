@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/03/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="06/30/2016"
+   wacn.date="08/15/2016"/>
 
 # 将 SQL 代码迁移到 SQL 数据仓库
 
@@ -124,10 +124,9 @@ SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复�
 [通过视图更新]: /documentation/articles/sql-data-warehouse-develop-views/
 [使用 select 分配变量]: /documentation/articles/sql-data-warehouse-develop-variable-assignment/
 [动态 SQL 字符串没有 MAX 数据类型]: /documentation/articles/sql-data-warehouse-develop-dynamic-sql/
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->
