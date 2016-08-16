@@ -27,7 +27,7 @@
 
 ## 使用审核日志进行故障排除
 
-[AZURE.INCLUDE [resource-manager-audit-limitations](../includes/resource-manager-audit-limitations.md)]
+[AZURE.INCLUDE [resource-manager-audit-limitations](../../includes/resource-manager-audit-limitations.md)]
 
 若要查看部署相关的错误，请使用以下步骤：
 

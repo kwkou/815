@@ -5,12 +5,12 @@
 	documentationCenter="na"
 	authors="ravbhatnagar"
 	manager="ryjones"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="04/18/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/15/2016"/>
 
 # 使用策略来管理资源和控制访问
 
@@ -19,8 +19,6 @@ Azure 资源管理器现在可让你通过自定义策略来控制访问。使�
 你可以创建策略定义来描述会明确遭到拒绝的操作或资源。你可以在所需范围（例如订阅、资源组或是单个资源）分配这些策略定义。
 
 在本文中，我们将说明可用于创建策略的策略定义语言的基本结构。然后说明如何在不同范围应用这些策略，最后演示有关如何通过 REST API 实现此目的的一些示例。
-
-策略当前以预览版提供。
 
 ## 策略与 RBAC 有什么不同？
 
@@ -63,7 +61,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 使用 HTTP PUT 创建资源或部署模板时，将评估策略。部署模板时，将在模板中的每个资源创建期间评估策略。
 
-注意：策略不会评估不支持标记、种类和位置的资源类型，例如 Microsoft.Resources/deployments。将来会添加此支持。若要避免向后兼容问题，编写策略时显式指定类型是最佳做法。例如，未指定类型的标记策略将应用到所有类型，因此，添加资源类型以便在将来评估时，如果存在不支持标记的嵌套资源，模板部署可能会失败。
+> [AZURE.NOTE] 当前，策略不对不支持标记、种类和位置的资源类型进行评估，例如 Microsoft.Resources/deployments 资源类型。将来会添加此支持。若要避免向后兼容问题，创作策略时应显式指定类型。例如，未指定类型的标记策略将应用于所有类型。在此情况下，如果有嵌套资源不支持标记，并且部署资源类型已添加到策略评估中，则模板部署可能会在将来失败。
 
 ## 逻辑运算符
 
@@ -89,15 +87,13 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 | In | "in" : [ "&lt;value1&gt;","&lt;value2&gt;" ]|
 | ContainsKey | "containsKey" : "&lt;keyName&gt;" |
 
-### 字段和源
+### 字段
 
 条件是使用字段和源构成的。字段显示用于描述资源状态的资源请求负载属性。源表示请求本身的特征。
 
 支持以下字段和源：
 
 字段：**name**、**kind**、**type**、**location**、**tags**、**tags.*** 和 **property alias**。
-
-源：**action**
 
 ### 属性别名 
 属性别名可在策略定义中用于访问资源类型特定属性，例如设置和 SKU。它适用于所有具有属性的 API 版本。可使用以下 REST API 来检索别名（将来会添加 Powershell 支持）：
@@ -131,7 +127,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 | 别名名称 | 说明 |
 | ---------- | ----------- |
-| {resourceType}/sku.name | 支持的资源类型为：Microsoft.Compute/virtualMachines、<br />Microsoft.Storage/storageAccounts、<br />Microsoft.Scheduler/jobcollections、<br />Microsoft.DocumentDB/databaseAccounts、<br />Microsoft.Cache/Redis、<br />Microsoft..CDN/profiles |
+| {resourceType}/sku.name | 支持的资源类型为：Microsoft.Compute/virtualMachines、<br />Microsoft.Storage/storageAccounts、<br />Microsoft.Web/serverFarms、<br />Microsoft.Scheduler/jobcollections、<br />Microsoft.DocumentDB/databaseAccounts、<br />Microsoft.Cache/Redis、<br />Microsoft..CDN/profiles |
 | {resourceType}/sku.family | 支持的资源类型为 Microsoft.Cache/Redis |
 | {resourceType}/sku.capacity | 支持的资源类型为 Microsoft.Cache/Redis |
 | Microsoft.Compute/virtualMachines/imagePublisher | |
@@ -140,16 +136,22 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 | Microsoft.Compute/virtualMachines/imageVersion | |
 | Microsoft.Cache/Redis/enableNonSslPort | |
 | Microsoft.Cache/Redis/shardCount | |
+| Microsoft.SQL/servers/version | |
+| Microsoft.SQL/servers/databases/requestedServiceObjectiveId | |
+| Microsoft.SQL/servers/databases/requestedServiceObjectiveName | |
+| Microsoft.SQL/servers/databases/edition | |
+| Microsoft.SQL/servers/databases/elasticPoolName | |
+| Microsoft.SQL/servers/elasticPools/dtu | |
+| Microsoft.SQL/servers/elasticPools/edition | |
 
-
-若要获取有关操作的详细信息，请参阅 [RBAC - 内置角色](/documentation/articles/role-based-access-built-in-roles)。目前，策略仅适用于 PUT 请求。
+目前，策略仅适用于 PUT 请求。
 
 ## 效果
-策略支持三种类型的影响 -**deny**、**audit** 和 **append**。
+策略支持三种类型的效果 - **deny**、**audit** 和 **append**。
 
 - Deny 将在审核日志中生成一个事件，并使请求失败
 - Audit 将在审核日志中生成一个事件，但不会使请求失败
-- Append 会将定义的字段集添加到请求 
+- Append 会将定义的字段集添加到请求
 
 对于 **append**，必须提供如下所示的详细信息：
 
@@ -248,7 +250,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 ### 服务策展：选择服务目录
 
-以下示例演示如何使用源。它显示只允许对 Microsoft.Resources/\*、Microsoft.Compute/\*、Microsoft.Storage/\*、Microsoft.Network/\* 类型的服务执行的操作。其他任何请求将被拒绝。
+以下示例演示如何使用源。它显示只允许对 Microsoft.Resources/、Microsoft.Compute/*、Microsoft.Storage/*、Microsoft.Network/ 类型的服务执行的操作。其他任何请求将被拒绝。
 
     {
       "if" : {
@@ -337,8 +339,8 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
                 }
               },
               {
-                "source": "action",
-                "like": "Microsoft.Storage/*"
+                "field": "type",
+                "equals": "Microsoft.Storage/storageAccounts"
               }
             ]
         },
@@ -385,7 +387,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
     }
 
 
-策略定义可以定义为如上所示的示例之一。对于 api-version，请使用 *2015-10-01-preview*。有关示例与其他详细信息，请参阅[用于策略定义的 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt588471.aspx)。
+策略定义可以定义为如上所示的示例之一。对于 api-version，请使用 *2016-04-01*。有关示例与其他详细信息，请参阅[用于策略定义的 REST API](https://msdn.microsoft.com/library/azure/mt588471.aspx)。
 
 ### 使用 PowerShell 创建策略定义
 
@@ -418,7 +420,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
     PUT https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
 
-{policy-assignment} 是策略分配的名称。对于 api-version，请使用 2015-10-01-preview。
+{policy-assignment} 是策略分配的名称。对于 api-version，请使用 *2016-04-01*。
 
 使用类似于下面的请求正文：
 
@@ -462,5 +464,4 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
     Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
     
 
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0808_2016-->

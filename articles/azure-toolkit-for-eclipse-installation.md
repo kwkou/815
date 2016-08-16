@@ -23,7 +23,7 @@
 
 以下步骤说明如何安装 Azure Toolkit for Eclipse。
 
-[AZURE.INCLUDE [azure-toolkit-for-eclipse-prerequisites](../includes/azure-toolkit-for-eclipse-prerequisites.md)]
+[AZURE.INCLUDE [azure-toolkit-for-eclipse-prerequisites](../../includes/azure-toolkit-for-eclipse-prerequisites.md)]
 
 ## 安装 Azure Toolkit for Eclipse
 

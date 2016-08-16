@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="06/13/2016"
-   wacn.date="07/25/2016"/>
+   ms.date="06/30/2016"
+   wacn.date="08/15/2016"/>
 
 # 在 Azure 资源管理器中创建多个资源实例
 
@@ -76,7 +76,7 @@
 - examplecopy-2
 - examplecopy-3
 
-## 与数组一起使用
+## 对数组使用复制
    
 当使用数组时，复制操作十分有用，因为可迭代数组中的每个元素。部署具有以下名称的三个网站：
 
@@ -206,282 +206,118 @@
         ...
     }]
 
-## 为一个虚拟机创建多个数据磁盘
+## 当复制不可用时创建多个实例
 
-一种常见的情况是为一个虚拟机创建多个数据磁盘。你不能将 **copy** 与数据磁盘配合使用，因为 **dataDisks** 是虚拟机上的属性，而不是它自己的资源类型。**copy** 只能配合资源使用。你可以创建链接模板，在其中定义所需的数据磁盘数目，然后输出具有指定数据磁盘数目的数组。你可以从部署模板链接到此模板，并传入要返回的数据磁盘数目。在部署模板中，将 **dataDisks** 属性设置为来自链接模板的输出值。
+只能对资源类型，而不能对资源类型中的属性使用**复制**。当你想要创建属于资源一部分的某事物的多个实例时，这可能会对你造成问题。一种常见的情况是为一个虚拟机创建多个数据磁盘。你无法对数据磁盘使用**复制**，因为 **dataDisks** 是虚拟机的一个属性，而不是它的资源类型。你可以根据需要使用足够多的数据磁盘创建数组，并传递要创建的数据磁盘的实际数量。在虚拟机定义中，使用 **take** 函数从数组中仅获取实际需要的元素数。
 
-[使用动态选择的数据磁盘创建 VM](https://azure.microsoft.com/documentation/templates/201-vm-dynamic-data-disks-selection/) 模板中显示了此模式的完整示例。
+[使用动态选择的数据磁盘创建 VM](/documentation/templates/201-vm-dynamic-data-disks-selection/) 模板中显示了此模式的完整示例。
 
-部署模板的相关节如下所示。已删除模板中的大多数节，以便突出显示动态创建多个数据磁盘时所涉及的节。请注意参数 **numDataDisks**，它可让你传入要创建的磁盘数目。名为 **diskSelection** 的链接模板在 resources 节中指定。该链接模板的输出将分配到虚拟机上的 **dataDisks** 属性。
+部署模板的相关节如下所示。已删除模板中的大多数节，以便突出显示动态创建多个数据磁盘时所涉及的节。请注意参数 **numDataDisks**，它可让你传入要创建的磁盘数目。
 
-    {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-      "contentVersion": "1.0.0.0",
-      "parameters": {
-        ...
-        "numDataDisks": {
-          "type": "string",
-          "allowedValues": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "32"
-          ],
-          "metadata": {
-            "description": "This parameter allows the user to select the number of disks they want"
-          }
-        }
-      },
-      "variables": {
-        "artifactsLocation": "https://raw.githubusercontent.com/singhkay/azure-quickstart-templates/master/201-vm-dynamic-data-disks-selection/", 
-        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'dynamicdisk')]",
-        "sizeOfDataDisksInGB": 100,
-        "diskCaching": "ReadWrite",
-        ...
-      },
-      "resources": [
-        {
-          "apiVersion": "2015-01-01",
-          "name": "diskSelection",
-          "type": "Microsoft.Resources/deployments",
-          "properties": {
-            "mode": "Incremental",
-            "templateLink": {
-              "uri": "[concat(variables('artifactsLocation'), 'disksSelector', '.json')]",
-              "contentVersion": "1.0.0.0"
-            },
-            "parameters": {
-              "numDataDisks": {
-                "value": "[parameters('numDataDisks')]"
-              },
-              "diskStorageAccountName": {
-                "value": "[variables('storageAccountName')]"
-              },
-              "diskCaching": {
-                "value": "[variables('diskCaching')]"
-              },
-              "diskSizeGB": {
-                "value": "[variables('sizeOfDataDisksInGB')]"
-              }
-            }
-          }
-        },
-        ...
-        {
-          "type": "Microsoft.Compute/virtualMachines",
-          "properties": {
-            "storageProfile": {
-              ...
-              "dataDisks": "[reference('diskSelection').outputs.dataDiskArray.value]"
-            },
-            ...
-          }
-        }
-      ]
-    }
 
-链接的模板定义要返回的数组。下面所示的模板省略了介于 3 和 32 之间的重复磁盘定义，但在实际模板中需要包含所有这些定义。如果你需要 32 个以上的数据磁盘，可以继续使用此模式。请注意，不会通过此模板部署任何资源；它只返回一个数组，其中包含定义数据磁盘的对象的请求数目。
+	{
+	  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	  "contentVersion": "1.0.0.0",
+	  "parameters": {
+	    ...
+	    "numDataDisks": {
+	      "type": "int",
+	      "maxValue": 64,
+	      "metadata": {
+	        "description": "This parameter allows you to select the number of disks you want"
+	      }
+	    }
+	  },
+	  "variables": {
+	    "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'dynamicdisk')]",
+	    "sizeOfDataDisksInGB": 100,
+	    "diskCaching": "ReadWrite",
+	    "diskArray": [
+	      {
+	        "name": "datadisk1",
+	        "lun": 0,
+	        "vhd": {
+	          "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk1.vhd')]"
+	        },
+	        "createOption": "Empty",
+	        "caching": "[variables('diskCaching')]",
+	        "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
+	      },
+	      {
+	        "name": "datadisk2",
+	        "lun": 1,
+	        "vhd": {
+	          "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk2.vhd')]"
+	        },
+	        "createOption": "Empty",
+	        "caching": "[variables('diskCaching')]",
+	        "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
+	      },
+	      {
+	        "name": "datadisk3",
+	        "lun": 2,
+	        "vhd": {
+	          "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk3.vhd')]"
+	        },
+	        "createOption": "Empty",
+	        "caching": "[variables('diskCaching')]",
+	        "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
+	      },
+	      {
+	        "name": "datadisk4",
+	        "lun": 3,
+	        "vhd": {
+	          "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk4.vhd')]"
+	        },
+	        "createOption": "Empty",
+	        "caching": "[variables('diskCaching')]",
+	        "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
+	      },
+	      ...
+	      {
+	        "name": "datadisk63",
+	        "lun": 62,
+	        "vhd": {
+	          "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk63.vhd')]"
+	        },
+	        "createOption": "Empty",
+	        "caching": "[variables('diskCaching')]",
+	        "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
+	      },
+	      {
+	        "name": "datadisk64",
+	        "lun": 63,
+	        "vhd": {
+	          "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk64.vhd')]"
+	        },
+	        "createOption": "Empty",
+	        "caching": "[variables('diskCaching')]",
+	        "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
+	      }
+	    ]
+	  },
+	  "resources": [
+	    ...
+	    {
+	      "type": "Microsoft.Compute/virtualMachines",
+	      "properties": {
+	        ...
+	        "storageProfile": {
+	          ...
+	          "dataDisks": "[take(variables('diskArray'),parameters('numDataDisks'))]"
+	        },
+	        ...
+	      }
+	      ...
+	    }
+	  ]
+	}
 
-```
-{
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "numDataDisks": {
-      "type": "string",
-      "allowedValues": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "32"
-      ],
-      "metadata": {
-        "description": "This parameter allows the user to select the number of disks they want"
-      }
-    },
-    "diskStorageAccountName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the storage account where the data disks are stored"
-      }
-    },
-    "diskCaching": {
-      "type": "string",
-      "allowedValues": [
-        "None",
-        "ReadOnly",
-        "ReadWrite"
-      ],
-      "metadata": {
-        "description": "Caching type for the data disks"
-      }
-    },
-    "diskSizeGB": {
-      "type": "int",
-      "minValue": 1,
-      "maxValue": 1023,
-      "metadata": {
-        "description": "Size of the data disks"
-      }
-    }
-  },
-  "variables": {
-    "disksArray": {
-      "1": "[variables('dataDisks')['1']]",
-      "2": "[concat(variables('dataDisks')['1'], variables('dataDisks')['2'])]",
-      "3": "[concat(variables('dataDisks')['1'], variables('dataDisks')['2'], variables('dataDisks')['3'])]",
-      "4": "[variables('diskDeltas')['4delta']]",
-      "5": "[concat(variables('diskDeltas')['4delta'], variables('dataDisks')['5'])]",
-      "6": "[concat(variables('diskDeltas')['4delta'], variables('dataDisks')['5'], variables('dataDisks')['6'])]",
-      "7": "[concat(variables('diskDeltas')['4delta'], variables('dataDisks')['5'], variables('dataDisks')['6'], variables('dataDisks')['7'])]",
-      "8": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'])]",
-      "9": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('dataDisks')['9'])]",
-      "10": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('dataDisks')['9'], variables('dataDisks')['10'])]",
-      "11": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('dataDisks')['9'], variables('dataDisks')['10'], variables('dataDisks')['11'])]",
-      "12": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('diskDeltas')['12delta'])]",
-      "13": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('diskDeltas')['12delta'], variables('dataDisks')['13'])]",
-      "14": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('diskDeltas')['12delta'], variables('dataDisks')['13'], variables('dataDisks')['14'])]",
-      "15": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('diskDeltas')['12delta'], variables('dataDisks')['13'], variables('dataDisks')['14'], variables('dataDisks')['15'])]",
-      "16": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('diskDeltas')['12delta'], variables('diskDeltas')['16delta'])]",
-      "32": "[concat(variables('diskDeltas')['4delta'], variables('diskDeltas')['8delta'], variables('diskDeltas')['12delta'], variables('diskDeltas')['16delta'], variables('diskDeltas')['32delta'])]"
-    },
-    "dataDisks": {
-      "1": [
-        {
-          "name": "datadisk1",
-          "lun": 0,
-          "vhd": {
-            "uri": "[concat('http://', parameters('diskStorageAccountName'),'.blob.core.windows.net/vhds/', 'datadisk1.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
-          "diskSizeGB": "[parameters('diskSizeGB')]"
-        }
-      ],
-      "2": [
-        {
-          "name": "datadisk2",
-          "lun": 1,
-          "vhd": {
-            "uri": "[concat('http://', parameters('diskStorageAccountName'),'.blob.core.windows.net/vhds/', 'datadisk2.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
-          "diskSizeGB": "[parameters('diskSizeGB')]"
-        }
-      ],
-      "3": [
-        {
-          "name": "datadisk3",
-          "lun": 2,
-          "vhd": {
-            "uri": "[concat('http://', parameters('diskStorageAccountName'),'.blob.core.windows.net/vhds/', 'datadisk3.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
-          "diskSizeGB": "[parameters('diskSizeGB')]"
-        }
-      ],
-      ...
-      "32": [
-        {
-          "name": "datadisk32",
-          "lun": 31,
-          "vhd": {
-            "uri": "[concat('http://', parameters('diskStorageAccountName'),'.blob.core.windows.net/vhds/', 'datadisk32.vhd')]"
-          },
-          "createOption": "Empty",
-          "caching": "[parameters('diskCaching')]",
-          "diskSizeGB": "[parameters('diskSizeGB')]"
-        }
-      ]
-    },
-    "_comment2": "The delta arrays below build the difference from 0 to 4, 4 to 8, 8 to 12 disks and so on",
-    "diskDeltas": {
-      "4delta": [
-        "[variables('dataDisks')['1'][0]]",
-        "[variables('dataDisks')['2'][0]]",
-        "[variables('dataDisks')['3'][0]]",
-        "[variables('dataDisks')['4'][0]]"
-      ],
-      "8delta": [
-        "[variables('dataDisks')['5'][0]]",
-        "[variables('dataDisks')['6'][0]]",
-        "[variables('dataDisks')['7'][0]]",
-        "[variables('dataDisks')['8'][0]]"
-      ],
-      "12delta": [
-        "[variables('dataDisks')['9'][0]]",
-        "[variables('dataDisks')['10'][0]]",
-        "[variables('dataDisks')['11'][0]]",
-        "[variables('dataDisks')['12'][0]]"
-      ],
-      "16delta": [
-        "[variables('dataDisks')['13'][0]]",
-        "[variables('dataDisks')['14'][0]]",
-        "[variables('dataDisks')['15'][0]]",
-        "[variables('dataDisks')['16'][0]]"
-      ],
-      "32delta": [
-        "[variables('dataDisks')['17'][0]]",
-        "[variables('dataDisks')['18'][0]]",
-        "[variables('dataDisks')['19'][0]]",
-        "[variables('dataDisks')['20'][0]]",
-        "[variables('dataDisks')['21'][0]]",
-        "[variables('dataDisks')['22'][0]]",
-        "[variables('dataDisks')['23'][0]]",
-        "[variables('dataDisks')['24'][0]]",
-        "[variables('dataDisks')['25'][0]]",
-        "[variables('dataDisks')['26'][0]]",
-        "[variables('dataDisks')['27'][0]]",
-        "[variables('dataDisks')['28'][0]]",
-        "[variables('dataDisks')['29'][0]]",
-        "[variables('dataDisks')['30'][0]]",
-        "[variables('dataDisks')['31'][0]]",
-        "[variables('dataDisks')['32'][0]]"
-      ]
-    }
-  },
-  "resources": [],
-  "outputs": {
-    "dataDiskArray": {
-      "type": "array",
-      "value": "[variables('disksArray')[parameters('numDataDisks')]]"
-    }
-  }
-}
 
-```
 
 ## 后续步骤
 - 若要了解有关模板区段的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 - 有关可在模板中使用的函数列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)
 - 若要了解如何部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0808_2016-->
