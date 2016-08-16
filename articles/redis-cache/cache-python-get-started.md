@@ -31,15 +31,15 @@
 
 ## 在 Azure 上创建 Redis 缓存
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
 ## 获取 host name 和 access keys
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-access-keys.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
 ## 启用非 SSL 终结点
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-non-ssl-port.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-non-ssl-port.md)]
 
 ## 在缓存中添加一些内容并检索此内容
 

@@ -14,7 +14,7 @@
 
 #  向移动服务应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
 <p>本主题说明如何通过 Xamarin.Android 应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。</p>
 
@@ -30,12 +30,12 @@
 
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
 
 ## <a name="permissions"></a>将权限限制给已经过身份验证的用户
 
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
 3. 在 Xamarin Studio 中，打开你在完成[移动服务入门]教程后创建的项目。

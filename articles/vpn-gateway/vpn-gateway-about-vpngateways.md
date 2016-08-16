@@ -67,7 +67,7 @@ VPN 网关用于在虚拟网络和本地位置之间发送网络流量。VPN 网
 下表显示网关类型和估计的聚合吞吐量。网关 SKU 之间并无定价差异。 
 有关定价的信息，请参阅 [VPN 网关定价](/pricing/details/vpn-gateway/)。此表适用于 Resource Manager 与经典部署模型。
 
-[AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
 
 ## <a name="vpntype"></a>VPN 类型
 
@@ -79,7 +79,7 @@ VPN 网关用于在虚拟网络和本地位置之间发送网络流量。VPN 网
 
 有两种 VPN 类型：
 
-[AZURE.INCLUDE [vpn-gateway-vpntype](../includes/vpn-gateway-vpntype-include.md)]
+[AZURE.INCLUDE [vpn-gateway-vpntype](../../includes/vpn-gateway-vpntype-include.md)]
 
 此 Resource Manager 部署模型示例将 `-VpnType` 指定为 *RouteBased*。在创建网关时，你必须确保用于配置的 -VpnType 正确。
 
@@ -125,7 +125,7 @@ VPN 网关用于在虚拟网络和本地位置之间发送网络流量。VPN 网
 ##<a name="requirements" id="gateway-requirements"></a> 网关要求
 
 
-[AZURE.INCLUDE [vpn-gateway-table-requirements](../includes/vpn-gateway-table-requirements-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-requirements](../../includes/vpn-gateway-table-requirements-include.md)]
 
 
 ## 后续步骤

@@ -13,7 +13,7 @@
 
 # 使用集成了 AMQP 1.0 的 Python 中的服务总线。
 
-[AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
+[AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
 
 Proton-Python 是绑定到 Proton-C 的 Python 语言；也就是说，Proton-Python 是作为 C 中实现的引擎周围的包装器实现的。
 

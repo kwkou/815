@@ -20,7 +20,7 @@
 
 你将使用 Django Web 框架创建应用程序（请参阅本教程针对 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/) 的备选版本）。你将创建 Web 应用，设置 Git 部署以及在本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 <a name="prerequisites"></a>
 ## 先决条件
@@ -120,11 +120,11 @@ IIS 配置文件。部署脚本将使用适当的 web.x.y.config，并将其复�
 
 ### 可选文件 - 自定义部署
 
-[WACOM.INCLUDE [web-sites-python-customizing-deployment](../includes/web-sites-python-customizing-deployment.md)]
+[WACOM.INCLUDE [web-sites-python-customizing-deployment](../../includes/web-sites-python-customizing-deployment.md)]
 
 ### 可选文件 - Python 运行时
 
-[WACOM.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
+[WACOM.INCLUDE [web-sites-python-customizing-runtime](../../includes/web-sites-python-customizing-runtime.md)]
 
 ### 服务器上的其他文件
 
@@ -406,12 +406,12 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 <a name="troubleshooting-package-installation"></a>
 ## 故障排除 - 软件包安装
 
-[WACOM.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
+[WACOM.INCLUDE [web-sites-python-troubleshooting-package-installation](../../includes/web-sites-python-troubleshooting-package-installation.md)]
 
 <a name="troubleshooting-virtual-environment"></a>
 ## 故障排除 - 虚拟环境
 
-[WACOM.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
+[WACOM.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
 <a name="troubleshooting-static-files"></a>
 ## 疑难解答 — 静态文件

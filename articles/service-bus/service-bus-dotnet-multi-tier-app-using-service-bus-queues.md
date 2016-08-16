@@ -25,7 +25,7 @@
 -   如何使用 Web 角色和辅助角色在 Azure 中创建多层应用程序。
 -   如何使用服务总线队列在各层之间进行通信。
 
-[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
 在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端将为 ASP.NET MVC Web 角色，后端将为使用服务总线队列的辅助角色。你可以创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#nextsteps)部分。你还可以试用 [.NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)教程。
 

@@ -15,15 +15,15 @@
 
 # 如何通过 Python 使用表存储
 
-[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 ## 概述
 
 本指南将演示如何使用 Azure 表存储服务执行常见方案。这些示例通过 Python 编写并使用 [Azure Storage SDK for Python]。涉及的方案包括创建和删除表、以及在表中插入和查询实体。
 
-[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建表
 

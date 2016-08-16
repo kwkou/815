@@ -13,7 +13,7 @@
 	wacn.date="05/23/2016"/>
 
 # <a name="getting-started"></a>移动服务入门
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
 以下是完成的应用程序的屏幕快照：
 
@@ -25,7 +25,7 @@
 
 ##  <a name="create-new-service"></a>创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
 
 ##  创建新的 Xamarin iOS 应用程序
 
@@ -95,7 +95,7 @@
 
 
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started

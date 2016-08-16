@@ -27,6 +27,6 @@
 | OpenLogic                        | CentOS                                     | 7.1                              |
 | Canonical                        | UbuntuServer                               | 14.04.3-LTS                      |
 
-[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../includes/virtual-machines-common-cli-ps-findimage.md)]
+[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../../includes/virtual-machines-common-cli-ps-findimage.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

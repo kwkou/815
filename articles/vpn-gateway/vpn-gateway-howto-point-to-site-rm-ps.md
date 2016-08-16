@@ -26,11 +26,11 @@
 
 **关于 Azure 部署模型**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 **用于点到站点连接的部署模型和工具**
 
-[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../includes/vpn-gateway-table-point-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)]
 
 ![点到站点连接示意图](./media/vpn-gateway-point-to-site-create/point2site.png "点到站点")
 

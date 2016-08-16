@@ -332,7 +332,7 @@
 
 ## 将移动服务配置为要求身份验证
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 
 ## 使用测试客户端测试登录流

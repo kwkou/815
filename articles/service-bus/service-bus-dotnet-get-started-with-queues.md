@@ -14,7 +14,7 @@
 
 # 服务总线队列入门
 
-[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
 ## 将要完成的任务
 
@@ -34,19 +34,19 @@
 
 2. Azure 订阅。
 
-[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
 ## 1\.使用 Azure 门户创建命名空间
 
 如果你已创建服务总线命名空间，请跳转到[使用 Azure 门户创建队列](#2-create-a-queue-using-the-azure-portal)部分。
 
-[AZURE.INCLUDE [service-bus-create-namespace-portal](../includes/service-bus-create-namespace-portal.md)]
+[AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## 2\.使用 Azure 门户创建队列
 
 如果你已创建服务总线队列，请跳转到[将消息发送到队列](#3-send-messages-to-the-queue)部分。
 
-[AZURE.INCLUDE [service-bus-create-queue-portal](../includes/service-bus-create-queue-portal.md)]
+[AZURE.INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 
 ## 3\.将消息发送到队列
 

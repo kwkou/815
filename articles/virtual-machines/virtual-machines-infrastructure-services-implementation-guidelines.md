@@ -15,8 +15,8 @@
 
 # Azure 基础结构服务实施准则
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-infrastructure-service-guidelines](../includes/virtual-machines-common-infrastructure-service-guidelines.md)]
+[AZURE.INCLUDE [virtual-machines-common-infrastructure-service-guidelines](../../includes/virtual-machines-common-infrastructure-service-guidelines.md)]
 
 <!---HONumber=Mooncake_1207_2015-->

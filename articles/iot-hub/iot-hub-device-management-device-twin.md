@@ -14,7 +14,7 @@
 
 # 教程：如何将设备克隆用于 C#（预览版）
 
-[AZURE.INCLUDE [iot-hub-device-management-twin-selector](../includes/iot-hub-device-management-twin-selector.md)]
+[AZURE.INCLUDE [iot-hub-device-management-twin-selector](../../includes/iot-hub-device-management-twin-selector.md)]
 ## 介绍
 
 Azure IoT 中心设备管理引入了设备克隆，它是物理设备的一种服务方表示形式。下图显示了设备克隆的各个组件。

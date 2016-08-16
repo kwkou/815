@@ -14,7 +14,7 @@
 
 # Azure 中的 Node.js Web 应用入门
 
-[AZURE.INCLUDE [选项卡](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 本教程说明如何创建一个简单的 [Node.js][NODEJS] 应用程序，然后通过 cmd.exe 或 bash 等命令行环境将它部署到 [Azure Web 应用]。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 

@@ -14,7 +14,7 @@
 
 # 使用 C# 进行 Azure IoT 中心设备管理入门（预览版）
 
-[AZURE.INCLUDE [iot-hub-device-management-get-started-selector](../includes/iot-hub-device-management-get-started-selector.md)]
+[AZURE.INCLUDE [iot-hub-device-management-get-started-selector](../../includes/iot-hub-device-management-get-started-selector.md)]
 
 ## 介绍
 若要开始进行 Azure IoT 中心设备管理，必须创建 Azure IoT 中心、在 IoT 中心预配设备、启动多台模拟设备以及在设备管理示例 UI 中查看这些设备。本教程将指导你完成这些步骤。

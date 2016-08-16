@@ -20,7 +20,7 @@
 
 Azure 库或者应用市场中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)中的指南自备 Linux。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 ## 支持的分发和版本 ##

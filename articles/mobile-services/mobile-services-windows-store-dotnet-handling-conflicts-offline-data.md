@@ -15,7 +15,7 @@
 
 # 在“移动服务”中处理与脱机数据同步的冲突
 
-[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
 
 ##概述
 

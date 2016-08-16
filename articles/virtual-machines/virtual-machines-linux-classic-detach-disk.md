@@ -15,9 +15,9 @@
 
 # 如何从 Linux 虚拟机分离磁盘
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [howto-detach-disk-windows-linux](../includes/howto-detach-disk-linux.md)]
+[AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-linux.md)]
 
 ## 后续步骤
 你可以阅读下列文章，进一步了解如何使用 Linux VM：

@@ -61,7 +61,7 @@
 
 ![Contoso 广告体系结构](./media/websites-dotnet-webjobs-sdk-get-started/apparchitecture.png)
 
-[AZURE.INCLUDE [install-sdk](../includes/install-sdk-2015-2013.md)]
+[AZURE.INCLUDE [install-sdk](../../includes/install-sdk-2015-2013.md)]
 
 本教程中的说明不适用于 Azure SDK for .NET 2.7.1 或更高版本。
 

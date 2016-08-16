@@ -221,6 +221,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 ## 后续步骤
 
-[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
 <!---HONumber=Mooncake_0725_2016-->

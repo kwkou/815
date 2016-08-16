@@ -18,7 +18,7 @@
 
 注册和计划备份 Azure 备份的 Azure 虚拟机 (VM) 之后，Azure 服务通过与 VM 中的备份扩展通信来获取时间点快照，以便在计划的时间启动备份作业。某些情况可能造成无法触发快照，从而导致备份失败。本文提供排查 Azure VM 备份失败相关问题以及快照超时错误的步骤。
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 症状
 

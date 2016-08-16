@@ -14,9 +14,9 @@
 
 # 将 Azure AD 集成到 Android 应用程序中
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
 如果你要开发桌面应用程序，Azure AD 可让你简单直接地使用用户的 Active Directory 帐户对其进行身份验证。它还可以让应用程序安全地使用 Azure AD 保护的任何 Web API，例如 Office 365 API 或 Azure API。
 
@@ -469,6 +469,6 @@ ADAL 版本 1.1.0 支持通过 WebViewClient 中的 onReceivedHttpAuthRequest �
 了解[如何使用 ADAL 在 Android 上启用跨应用 SSO](/documentation/articles/active-directory-sso-android/)
 
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
 <!---HONumber=Mooncake_0613_2016-->

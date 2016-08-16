@@ -16,11 +16,11 @@
 	
 # 创建运行 Windows 的自定义虚拟机
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-createportal](../includes/virtual-machines-common-classic-createportal.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-createportal](../../includes/virtual-machines-common-classic-createportal.md)]
 
-[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-windowsvm.md)]
+[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
 ## 下一步
 

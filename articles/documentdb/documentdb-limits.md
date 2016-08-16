@@ -17,7 +17,7 @@
 
 下表描述了 Azure DocumentDB 数据库资源的默认配额。
 
-[AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
+[AZURE.INCLUDE [azure-documentdb-limits](../../includes/azure-documentdb-limits.md)]
 
 [可联系 Azure 支持部门调整](/documentation/articles/documentdb-increase-limits/)带星号 (*) 的配额。
 

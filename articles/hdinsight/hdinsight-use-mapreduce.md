@@ -15,7 +15,7 @@
 
 # 在 HDInsight 上的 Hadoop 中使用 MapReduce
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 在本文中，你将学习如何在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业。我们将运行一个实现为 Java MapReduce 作业的基本单词计数操作。
 

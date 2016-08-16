@@ -14,7 +14,7 @@
 
 # 在 Azure 中创建 Java Web 应用
 
-[AZURE.INCLUDE [选项卡](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 本教程演示如何通过 [Azure 经典管理门户](https://manage.windowsazure.cn/)[在 Azure 中创建 Java Web 应用](/documentation/services/web-sites/)。Azure 经典管理门户是可用于管理 Azure 资源的 Web 界面。
 

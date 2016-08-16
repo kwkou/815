@@ -353,7 +353,7 @@ EventHubSpout 定期检查点其状态为 Zookeeper 节点，将保存当前的�
 
 ## 删除群集
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ##故障排除
 

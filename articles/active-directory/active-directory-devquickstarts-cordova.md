@@ -14,9 +14,9 @@
 
 # 将 Azure AD Apache Cordova 应用程序集成
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
 Apache Cordova 可让你开发能够在移动设备上运行的完全成熟的 HTML5/JavaScript 本机应用程序。
 使用 Azure AD，可以向 Cordova 应用程序添加企业级身份验证功能。得益于在 iOS、Android、Windows 应用商店和 Windows Phone 上包装 Azure AD 本机 SDK 的 Cordova 插件，你可以增强应用程序以支持使用用户的 AD 帐户登录，访问 Office 365 和 Azure API，甚至保护对你自己的自定义 Web API 的调用。
@@ -277,6 +277,6 @@ javascript
 
 [使用 Azure AD 保护 Node.js Web API>>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
 <!---HONumber=Mooncake_0718_2016-->

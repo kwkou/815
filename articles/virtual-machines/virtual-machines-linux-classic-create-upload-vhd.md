@@ -15,7 +15,7 @@
 
 # 创建并上载包含 Linux 操作系统的虚拟硬盘
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 本文介绍如何创建和上载虚拟硬盘 (VHD)，以便可以使用它作为自己的映像在 Azure 中创建虚拟机。你将学习如何准备操作系统，以便使用它来根据该映像创建多个虚拟机。
 

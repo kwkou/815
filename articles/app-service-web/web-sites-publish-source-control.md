@@ -13,6 +13,6 @@
 	wacn.date="04/26/2016"/>
 
 # 在 Azure 中使用 GIT 进行连续部署
-[WACOM.INCLUDE [publishing-with-git](../includes/publishing-with-git.md)]
+[WACOM.INCLUDE [publishing-with-git](../../includes/publishing-with-git.md)]
 
 <!---HONumber=76-->

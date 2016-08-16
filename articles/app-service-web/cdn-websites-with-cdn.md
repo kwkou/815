@@ -24,7 +24,7 @@
 - 在同一 Visual Studio 界面中管理 Web 应用程序和 CDN 提供的内容
 - 将 ASP.NET 绑定和缩减与 Azure CDN 集成
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## 要生成的项目 ##
 

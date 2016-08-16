@@ -14,7 +14,7 @@
 
 # 如何通过 Xamarin（预览版）使用 Blob 存储
 
-[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
 
@@ -22,7 +22,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 本教程演示了如何将 Azure Blob 存储用于 Xamarin Android 应用程序。若要在深入分析代码之前了解有关 Azure 存储空间的更多内容，请参阅本文档末尾的[后续步骤](#next-steps)。
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 生成共享访问签名
 

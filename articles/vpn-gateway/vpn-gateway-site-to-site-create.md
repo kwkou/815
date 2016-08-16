@@ -25,7 +25,7 @@
 
 **关于 Azure 部署模型**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## 连接关系图
  
@@ -33,7 +33,7 @@
 
 **用于站点到站点连接的部署模型和工具**
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
  
 如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，请参阅[为经典部署模型配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology/)一文。
 
@@ -97,7 +97,7 @@
 
 单击页面底部的复选标记，此时将开始创建虚拟网络。创建完成时，将在 Azure 经典管理门户的“网络”页上看到“状态”下列出的“已创建”。在创建 VNet 之后，你就可以配置虚拟网络网关。
 
-[AZURE.INCLUDE [vpn-gateway-no-nsg](../includes/vpn-gateway-no-nsg-include.md)]
+[AZURE.INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
 ## 配置虚拟网络网关
 

@@ -31,11 +31,11 @@
 
 通过以下链接来执行使用 [C#](/documentation/articles/sql-database-get-started-csharp/) 或 [PowerShell](/documentation/articles/sql-database-get-started-powershell/) 的这些相同任务。
 
-[AZURE.INCLUDE [登录](../includes/azure-getting-started-portal-login.md)]
+[AZURE.INCLUDE [登录](../../includes/azure-getting-started-portal-login.md)]
 
-[AZURE.INCLUDE [创建 SQL 数据库数据库](../includes/sql-database-create-new-database-portal.md)]
+[AZURE.INCLUDE [创建 SQL 数据库数据库](../../includes/sql-database-create-new-database-portal.md)]
 
-[AZURE.INCLUDE [创建 SQL 数据库数据库](../includes/sql-database-create-new-server-firewall-portal.md)]
+[AZURE.INCLUDE [创建 SQL 数据库数据库](../../includes/sql-database-create-new-server-firewall-portal.md)]
 
 ## 后续步骤
 现在，你已完成本 SQL 数据库教程并创建了包含一些示例数据的数据库，接下来可以使用偏好的工具来探索其他功能。

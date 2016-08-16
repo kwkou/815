@@ -16,7 +16,7 @@
 
 #使用 .NET 将文件上载到媒体服务帐户
 
-[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
+[AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
 在媒体服务中，可以将数字文件上载（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏字幕文件（以及有关这些文件的元数据。） 上载文件完成后，相关内容即安全地存储在云中供后续处理和流式处理。
 

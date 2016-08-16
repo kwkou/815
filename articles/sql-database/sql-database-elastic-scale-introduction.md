@@ -96,7 +96,7 @@ VM 和 blob 存储可以轻松实现云应用程序的弹性和缩放需求 - �
 
 若要查看弹性数据库池的具体信息，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)，或者参考[教程](/documentation/articles/sql-database-elastic-pool-create-powershell/)创建新池。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
 <!--Image references-->

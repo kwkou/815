@@ -293,7 +293,7 @@
 2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples/#create-alert-rules)
 3. 警报从“alerts-noreply@mail.windowsazure.com”发送。目前你无法修改电子邮件发件人。
 
-[AZURE.INCLUDE [backup-create-backup-policy-for-vm](../includes/backup-create-backup-policy-for-vm.md)]
+[AZURE.INCLUDE [backup-create-backup-policy-for-vm](../../includes/backup-create-backup-policy-for-vm.md)]
 
 ## 后续步骤
 

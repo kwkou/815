@@ -23,9 +23,9 @@
 
 当你尝试启动已停止的 Azure 虚拟机 (VM)，或调整现有 Azure VM 的大小时，经常遇到的错误是分配失败。当群集或区域没有可用的资源或无法支持所请求的 VM 大小时，将发生此错误。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 收集审核日志
 

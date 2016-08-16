@@ -17,9 +17,9 @@
 
 就像其他任何计算机一样，Azure 中的虚拟机将磁盘用作存储操作系统、应用程序和数据的位置。所有 Azure 虚拟机都至少有两个磁盘，即操作系统磁盘和临时磁盘。操作系统磁盘基于映像创建，操作系统磁盘和该映像实际上都存储在 Azure 存储帐户中的虚拟硬盘 (VHD) 内。虚拟机还可以有一个或多个数据磁盘，而这些磁盘也存储为 VHD。这篇文章同时也支持 [Linux 虚拟机](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-about-disks-vhds](../includes/virtual-machines-common-about-disks-vhds.md)]
+[AZURE.INCLUDE [virtual-machines-common-about-disks-vhds](../../includes/virtual-machines-common-about-disks-vhds.md)]
 
 ## 后续步骤
 

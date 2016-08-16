@@ -55,7 +55,7 @@
 
 让我们首先创建 DocumentDB 帐户。如果你已有帐户，则可以跳到[步骤 2：新建 Python Flask Web 应用程序](#step-2:-create-a-new-python-flask-web-application)。
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
 <br/> 现在，我们将演练如何从头开始新建 Python Flask Web 应用程序。
 

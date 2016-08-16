@@ -33,7 +33,7 @@
 
 此处列出的性能特征适用于使用 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/) 创建的数据库。在 Azure 中的基础硬件托管多个数据库的情况下，你的数据库仍可确保获得一系列资源，数据库的预期性能特征将不受影响。
 
-[AZURE.INCLUDE [SQL 数据库服务层表](../includes/sql-database-service-tiers-table.md)]
+[AZURE.INCLUDE [SQL 数据库服务层表](../../includes/sql-database-service-tiers-table.md)]
 
 若要更好地了解 DTU，请参阅本主题中的 [DTU 部分](#understanding-dtus)。
 
@@ -46,13 +46,13 @@
 
 下表描述了池服务层的特征。
 
-[AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
+[AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 池中的每个数据库也遵循该层的单一数据库特征。例如，基本池具有每池最大会话数为 2400 - 28800 的限制，但该池中单个数据库具有 300 个会话数的数据库限制（即在上一节中指定的单个基本数据库的限制）。
 
 ## 了解 DTU
 
-[AZURE.INCLUDE [SQL 数据库 DTU 说明](../includes/sql-database-understanding-dtus.md)]
+[AZURE.INCLUDE [SQL 数据库 DTU 说明](../../includes/sql-database-understanding-dtus.md)]
 
 ## 后续步骤
 - [SQL 数据库定价](/pricing/details/sql-database/)中提供了有关这些层的价格详细信息。

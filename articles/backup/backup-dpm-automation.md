@@ -23,7 +23,7 @@
 
 ## 设置 PowerShell 环境
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
 
 在可以使用 PowerShell 管理 Data Protection Manager 的 Azure 备份之前，需要在 PowerShell 中设置适当的环境。在 PowerShell 会话开始时，请确保运行以下命令，以便导入正确的模块以及正确引用 DPM cmdlet：
 

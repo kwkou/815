@@ -20,7 +20,7 @@
 
 当你尝试连接到基于 Linux 的 Azure 虚拟机 (VM) 时，有许多原因可能会导致安全外壳 (SSH) 错误。本文将帮助你找出原因并更正问题。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 如果对本文中的任何部分需要帮助，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/) 上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并选择“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure support FAQ（Azure 支持常见问题）](/support/faq/)。
 

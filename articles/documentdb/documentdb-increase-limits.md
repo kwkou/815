@@ -25,7 +25,7 @@
 
 下表描述了 DocumentDB 配额。可联系 Azure 支持部门调整带星号 (*) 的配额：
 
-[AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
+[AZURE.INCLUDE [azure-documentdb-limits](../../includes/azure-documentdb-limits.md)]
 
 
 ##<a id="RequestQuotaIncrease"></a> 请求配额调整

@@ -36,7 +36,7 @@
 
 ## 缩放计算能力
 
-[AZURE.INCLUDE [SQL Data Warehouse scale DWUs description（SQL 数据仓库缩放 DWU 说明）](../includes/sql-data-warehouse-scale-dwus-description)]
+[AZURE.INCLUDE [SQL Data Warehouse scale DWUs description（SQL 数据仓库缩放 DWU 说明）](../../includes/sql-data-warehouse-scale-dwus-description)]
 
 若要更改 DWU，请使用[创建或更新数据库][] REST API。以下示例将托管在服务器 MyServer 上的数据库 MySQLDW 的服务级别目标设置为 DW1000。该服务器位于名为 ResourceGroup1 的 Azure 资源组中。
 
@@ -55,7 +55,7 @@ Content-Type: application/json; charset=UTF-8
 
 ## 暂停计算
 
-[AZURE.INCLUDE [SQL Data Warehouse pause description（SQL 数据仓库暂停说明）](../includes/sql-data-warehouse-pause-description)]
+[AZURE.INCLUDE [SQL Data Warehouse pause description（SQL 数据仓库暂停说明）](../../includes/sql-data-warehouse-pause-description)]
 
 若要暂停数据库，请使用[暂停数据库][] REST API。以下示例将暂停 Server01 服务器上托管的 Database02 数据库。该服务器位于名为 ResourceGroup1 的 Azure 资源组中。
 
@@ -67,7 +67,7 @@ POST https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourc
 
 ## 恢复计算
 
-[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../includes/sql-data-warehouse-resume-description)]
+[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../../includes/sql-data-warehouse-resume-description)]
 
 若要启动数据库，请使用[恢复数据库][] REST API。以下示例将启动 Server01 服务器上托管的 Database02 数据库。该服务器位于名为 ResourceGroup1 的 Azure 资源组中。
 

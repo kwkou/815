@@ -14,15 +14,15 @@
 
 # 如何通过 PHP 使用队列存储
 
-[AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
+[AZURE.INCLUDE [storage-selector-queue-include](../../includes/storage-selector-queue-include.md)]
 
 ## 概述
 
 本指南将演示如何使用 Azure 队列存储服务执行常见方案。这些示例使用来自 Windows SDK for PHP 中的类编写。介绍的方案包括插入、扫视、获取和删除队列消息以及创建和删除队列。
 
-[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../../includes/storage-queue-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 PHP 应用程序
 
@@ -32,7 +32,7 @@
 
 ## 获取 Azure 客户端库
 
-[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
 
 ## 配置应用程序以访问队列存储
 

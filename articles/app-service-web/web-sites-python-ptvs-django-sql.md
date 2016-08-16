@@ -33,7 +33,7 @@
  - [Python 2.7（32 位）]
  - Django 1.6 或者更早
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## 创建项目
 

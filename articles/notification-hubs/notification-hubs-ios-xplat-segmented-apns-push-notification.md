@@ -14,7 +14,7 @@
 
 # 使用通知中心发送突发新闻
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##概述
@@ -221,7 +221,7 @@
 
 如果你无权访问 Visual Studio，可以跳到下一部分，并从应用内部发送通知。你还可以在 [Azure 经典门户]中使用通知中心的调试选项卡发送适当的模板通知。
 
-[AZURE.INCLUDE [notification-hubs-send-categories-template](../includes/notification-hubs-send-categories-template.md)]
+[AZURE.INCLUDE [notification-hubs-send-categories-template](../../includes/notification-hubs-send-categories-template.md)]
 
 
 ##（可选）从设备发送通知

@@ -34,7 +34,7 @@
 
 ![显示 Azure 上的 hello world 页面的浏览器窗口](./media/virtual-machines-linux-python-django-web-app/mac-linux-django-helloworld-browser.png)
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## 创建并配置 Azure 虚拟机以托管 Django
 

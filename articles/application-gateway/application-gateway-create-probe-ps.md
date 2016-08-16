@@ -15,13 +15,13 @@
 
 # 使用适用于 Azure 资源管理器的 PowerShell 创建 Azure 应用程序网关的自定义探测
 
-[AZURE.INCLUDE [azure-probe-intro-include](../includes/application-gateway-create-probe-intro-include.md)]
+[AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)]
 
 
 > [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/application-gateway-create-probe-classic-ps/)。
 
 
-[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 
 ### 步骤 1

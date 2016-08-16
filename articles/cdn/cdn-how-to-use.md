@@ -5,6 +5,6 @@
     wacn.lang="cn"
     />
 
-[AZURE.INCLUDE [cdn](../includes/cdn.md)]
+[AZURE.INCLUDE [cdn](../../includes/cdn.md)]
 
-  [cdn]: ../includes/cdn.md
+  [cdn]: ../../includes/cdn.md

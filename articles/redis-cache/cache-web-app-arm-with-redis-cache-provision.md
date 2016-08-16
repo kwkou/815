@@ -29,9 +29,9 @@
 
 ## 要指定的参数
 
-[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../includes/app-service-web-deploy-web-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
-[AZURE.INCLUDE [cache-deploy-parameters](../includes/cache-deploy-parameters.md)]
+[AZURE.INCLUDE [cache-deploy-parameters](../../includes/cache-deploy-parameters.md)]
 
 ## 名称变量
 
@@ -46,7 +46,7 @@
 
 ## 要部署的资源
 
-[AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 ### Redis Cache
 
@@ -114,7 +114,7 @@
 
 ## 运行部署的命令
 
-[AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 

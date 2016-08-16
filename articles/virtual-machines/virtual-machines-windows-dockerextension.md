@@ -14,8 +14,8 @@
 
 # 适用于 Azure 上的 Linux 的 Docker 虚拟机扩展
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-dockerextension](../includes/virtual-machines-common-dockerextension.md)]
+[AZURE.INCLUDE [virtual-machines-common-dockerextension](../../includes/virtual-machines-common-dockerextension.md)]
 
 <!---HONumber=Mooncake_1207_2015-->

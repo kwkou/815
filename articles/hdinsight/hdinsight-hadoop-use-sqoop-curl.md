@@ -15,7 +15,7 @@
 
 #使用 Curl 在 HDInsight 中的 Hadoop 上运行 Sqoop 作业
 
-[AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
+[AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
 
 在本文档中，你将学习如何使用 Curl 在 Azure HDInsight 群集中的 Hadoop 上运行 Sqoop 作业。
 

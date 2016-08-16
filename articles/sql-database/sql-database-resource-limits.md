@@ -43,11 +43,11 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 
 对于单一数据库，数据库服务层和性能级别定义了数据库限制。下表描述了基本、标准和高级数据库在不同性能级别上的特征。
 
-[AZURE.INCLUDE [SQL 数据库服务层表](../includes/sql-database-service-tiers-table.md)]
+[AZURE.INCLUDE [SQL 数据库服务层表](../../includes/sql-database-service-tiers-table.md)]
 
 [弹性数据库池](/documentation/articles/sql-database-elastic-pool/)共享池中的数据库中的资源。下表描述了基本、标准和高级弹性数据库池的特征。
 
-[AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
+[AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 有关上述表中列出的每个资源的扩展定义，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance/#service-tier-capabilities-and-limits)中的描述。有关服务层的概述，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)。
 

@@ -15,15 +15,15 @@
 
 # 如何通过 Ruby 使用队列存储
 
-[AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
+[AZURE.INCLUDE [storage-selector-queue-include](../../includes/storage-selector-queue-include.md)]
 
 ## 概述
 
 本指南演示如何使用 Azure 队列存储服务执行常见方案。相关示例是使用 Ruby Azure API 编写的。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
 
-[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
+[AZURE.INCLUDE [storage-queue-concepts-include](../../includes/storage-queue-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 Ruby 应用程序
 

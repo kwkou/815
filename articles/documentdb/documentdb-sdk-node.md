@@ -160,7 +160,7 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 
 ## 常见问题
-[AZURE.INCLUDE [documentdb sdk 常见问题](../includes/documentdb-sdk-faq.md)]
+[AZURE.INCLUDE [documentdb sdk 常见问题](../../includes/documentdb-sdk-faq.md)]
 
 ## 另请参阅
 

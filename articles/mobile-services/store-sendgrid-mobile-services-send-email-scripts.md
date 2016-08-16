@@ -15,7 +15,7 @@
 
 # 使用 SendGrid 从移动服务发送电子邮件
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
 
 &nbsp;
 
@@ -34,7 +34,7 @@ SendGrid 是一项[基于云的电子邮件服务]，该服务提供了可靠的
 
 ## <a name="sign-up"></a>创建新的 SendGrid 帐户
 
-[AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
+[AZURE.INCLUDE [sendgrid-sign-up](../../includes/sendgrid-sign-up.md)]
 
 ## <a name="add-script"></a>注册发送电子邮件的新脚本
 

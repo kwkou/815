@@ -13,15 +13,15 @@
 
 # 如何通过 iOS 使用 Blob 存储
 
-[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
 
 本文将演示如何使用 Azure Blob 存储执行常见任务。示例是用 Objective-C 编写的，并使用了 [Azure Storage Client Library for iOS（适用于 iOS 的 Azure 存储客户端库）](https://github.com/Azure/azure-storage-ios)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#next-steps)部分。你也可以下载[示例应用](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample)以快速了解如何在 iOS 应用程序中使用 Azure 存储空间。
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 生成框架文件
 若要使用 Azure 存储空间 iOS 库，首先需要生成框架文件。

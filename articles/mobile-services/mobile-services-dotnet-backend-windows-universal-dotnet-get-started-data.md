@@ -14,7 +14,7 @@
 
 # 将移动服务添加到现有应用程序
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data.md)]
  
 
 ##概述
@@ -34,11 +34,11 @@
 
 ##下载 GetStartedWithData 项目
 
-[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-download-project](../includes/mobile-services-windows-universal-dotnet-download-project.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-download-project](../../includes/mobile-services-windows-universal-dotnet-download-project.md)]
 
 ##在 Visual Studio 中创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service-vs2013](../includes/mobile-services-dotnet-backend-create-new-service-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service-vs2013](../../includes/mobile-services-dotnet-backend-create-new-service-vs2013.md)]
 
 &nbsp;&nbsp;7.在解决方案资源管理器中，打开 GetStartedWithData.Shared 项目文件夹中的 App.xaml.cs 代码文件，并查看已添加到 Windows 应用商店应用程序条件编译块中 **App** 类的新静态字段，如以下示例中所示：
 
@@ -57,30 +57,30 @@
 
 ##在本地测试移动服务项目
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
 
 
 ##更新应用程序以使用移动服务
 
 在本部分中，你将要更新通用 Windows 应用程序，以将移动服务用作应用程序的后端服务。只需对 GetStartedWithData.Shared 项目文件夹中的 MainPage.cs 项目文件进行更改。
 
-[AZURE.INCLUDE [mobile-services-windows-dotnet-update-data-app](../includes/mobile-services-windows-dotnet-update-data-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-dotnet-update-data-app](../../includes/mobile-services-windows-dotnet-update-data-app.md)]
 
 
 ##将移动服务发布到 Azure
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 
 ##测试在 Azure 中托管的移动服务
 
 现在，我们可以针对 Azure 中托管的移动服务，测试这两个版本的通用 Windows 应用程序。
 
-[AZURE.INCLUDE [mobile-services-windows-universal-test-app](../includes/mobile-services-windows-universal-test-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-test-app](../../includes/mobile-services-windows-universal-test-app.md)]
 
 ##查看 SQL 数据库中存储的数据
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-view-sql-data](../includes/mobile-services-dotnet-backend-view-sql-data.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-view-sql-data](../../includes/mobile-services-dotnet-backend-view-sql-data.md)]
  
 本教程到此结束。
 

@@ -237,7 +237,7 @@
 -    分片键在主键或唯一索引定义中应该是起始列。这可以确保拆分或合并验证查询和实际的数据移动和删除操作（始终在分片键范围上执行）的最佳性能。
 -    将拆分/合并服务共置于数据库所在的区域和数据中心。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 
 

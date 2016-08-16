@@ -23,7 +23,7 @@
 -   如何创建或修改现有 Web 服务以供 Web 解决方案使用。
 -   如何使用 Azure 服务总线中继功能在 Azure 应用程序和托管于其他某处的 Web 服务之间共享数据。
 
-[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
 ##服务总线中继功能将为混合解决方案带来哪些帮助
 

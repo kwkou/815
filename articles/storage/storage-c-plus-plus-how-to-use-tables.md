@@ -14,15 +14,15 @@
 
 # 如何通过 C++ 使用表存储
 
-[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 ## 概述  
 本指南将演示如何使用 Azure 表存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储空间客户端库](https://github.com/Azure/azure-storage-cpp/blob/master/README.md)。涉及的方案包括**创建和删除表**，以及**使用表实体**。
 
 >[AZURE.NOTE] 本指南主要面向适用于 C++ 的 Azure 存储空间客户端库 1.0.0 版及更高版本。建议的版本是存储空间客户端库 2.2.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/Azure/azure-storage-cpp/) 获得。
 
-[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 
 ## 创建 C++ 应用程序  

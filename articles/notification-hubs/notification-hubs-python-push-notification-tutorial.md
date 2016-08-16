@@ -13,7 +13,7 @@
 	wacn.date="07/25/2016"/>
 
 # 如何通过 Python 使用通知中心
-[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 		
 如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。
 

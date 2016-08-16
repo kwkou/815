@@ -21,7 +21,7 @@
 
 本文概述如何使用自定义脚本扩展编写 Azure 资源管理器模板，用于引导 Linux 或 Windows VM 上的工作负荷。
 
-[AZURE.INCLUDE [virtual-machines-common-extensions-customscript](../includes/virtual-machines-common-extensions-customscript.md)]
+[AZURE.INCLUDE [virtual-machines-common-extensions-customscript](../../includes/virtual-machines-common-extensions-customscript.md)]
 
 ## Linux VM 模板示例
 

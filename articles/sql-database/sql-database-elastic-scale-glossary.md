@@ -78,7 +78,7 @@ Azure SQL 数据库的[弹性数据库工具](/documentation/articles/sql-databa
 
 **纵向缩放**：向上（或向下）缩放单个分片的性能水平的行为。例如，将分片从标准版更改为高级版（这会导致需要更多的计算资源）。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-glossary/glossary.png

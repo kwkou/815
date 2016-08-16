@@ -27,6 +27,6 @@
 | MicrosoftWindowsServerHPCPack    | WindowsServerHPCPack                       | 2012R2                           |
 
 
-[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../includes/virtual-machines-common-cli-ps-findimage.md)]
+[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../../includes/virtual-machines-common-cli-ps-findimage.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

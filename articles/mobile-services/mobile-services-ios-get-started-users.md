@@ -14,7 +14,7 @@
 
 #  向现有应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
 
 在本教程中，你将要使用支持的标识提供者向[移动服务快速入门教程]项目添加身份验证。
@@ -23,19 +23,19 @@
 
 ## <a name="register"></a>注册应用程序以进行身份验证
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
 
 ## <a name="permissions"></a>将数据权限限制给已经过身份验证的用户
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-services-ios-authenticate-app](../includes/mobile-services-ios-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-ios-authenticate-app](../../includes/mobile-services-ios-authenticate-app.md)]
 
 ## <a name="store-authentication"></a>在应用程序中存储身份验证令牌
 
-[AZURE.INCLUDE [mobile-services-ios-authenticate-app-with-token](../includes/mobile-services-ios-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-services-ios-authenticate-app-with-token](../../includes/mobile-services-ios-authenticate-app-with-token.md)]
 
 ##  <a name="next-steps"></a>后续步骤
 

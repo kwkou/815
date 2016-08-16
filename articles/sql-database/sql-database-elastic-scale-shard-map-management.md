@@ -328,7 +328,7 @@
 
 但是，在需要移动数据的情况下，需要拆分/合并工具并结合使用必要的分片映射更新，才能安排在分片之间移动数据。有关使用拆分/合并工具的详细信息，请参阅[拆分/合并概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-shard-map-management/listmapping.png

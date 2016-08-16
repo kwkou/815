@@ -14,7 +14,7 @@
 
 # 向移动服务应用程序添加身份验证 
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
 ## 概述
 
@@ -26,13 +26,13 @@
 
 ##<a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-aad-server-extension](../includes/mobile-services-dotnet-backend-aad-server-extension.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-aad-server-extension](../../includes/mobile-services-dotnet-backend-aad-server-extension.md)]
 
 ##<a name="permissions"></a>将权限限制给已经过身份验证的用户
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 &nbsp;&nbsp;6.在 Visual Studio 中，右键单击 TodoList 应用程序的 Windows 应用商店项目，然后单击“设为启动项目”。
 
@@ -48,7 +48,7 @@
 
 ##<a name="add-authentication"></a>向应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app](../includes/mobile-windows-universal-dotnet-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app](../../includes/mobile-windows-universal-dotnet-authenticate-app.md)]
 
 >[AZURE.NOTE]如果已将 Windows 应用商店应用程序包信息注册到移动服务，则应该为 *useSingleSignOn* 参数提供 **true** 值以调用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a> 方法。如果不这样做，你的用户将继续显示登录提示每次调用 login 方法。
 
@@ -58,7 +58,7 @@
 
 >[AZURE.NOTE]无论你使用客户端管理的还是服务管理的身份验证，都可以缓存由移动服务颁发的令牌。本教程使用服务管理的身份验证。
 
-[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
 
 
 ## <a name="next-steps"></a>后续步骤

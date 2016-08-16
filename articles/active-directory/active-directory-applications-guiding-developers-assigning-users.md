@@ -27,6 +27,6 @@
 10. 出现提示时单击“是”。
 
 ## 后续步骤
-[AZURE.INCLUDE [guiding-developers-for-lob-applications-toc.md](../includes/active-directory-applications-guiding-developers-for-lob-applications-toc.md)]
+[AZURE.INCLUDE [guiding-developers-for-lob-applications-toc.md](../../includes/active-directory-applications-guiding-developers-for-lob-applications-toc.md)]
 
 <!---HONumber=Mooncake_0411_2016-->

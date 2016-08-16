@@ -14,7 +14,7 @@
 
 #  在移动服务中使用脱机数据同步
 
-[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 
 本主题将指导你通过 Azure 移动服务的脱机同步功能在 todo 列表快速入门应用程序中。脱机同步可轻松地创建应用程序即使在最终用户不具有任何网络访问权限时才可用。
@@ -142,7 +142,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 ## 摘要
 
-[AZURE.INCLUDE [mobile-services-offline-summary-csharp](../includes/mobile-services-offline-summary-csharp.md)]
+[AZURE.INCLUDE [mobile-services-offline-summary-csharp](../../includes/mobile-services-offline-summary-csharp.md)]
 
 ##  后续步骤
 

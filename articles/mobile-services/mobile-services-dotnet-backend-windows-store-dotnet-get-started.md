@@ -15,7 +15,7 @@
 
 # <a name="getting-started"> </a>移动服务入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
 
 本教程说明如何使用 Azure 移动服务向通用 Windows 应用程序添加基于云的后端服务。通用 Windows 应用程序解决方案包括 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序的项目，以及常见的共享项目。有关详细信息，请参阅[生成面向 Windows 和 Windows Phone 的通用 Windows 应用程序](http://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx)。
@@ -25,7 +25,7 @@
 >[AZURE.NOTE]本主题说明如何使用 Azure 经典管理门户创建新的移动服务项目和通用 Windows 应用。通过使用 Visual Studio 2013 Update 3，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data/)。
 
 >若要将移动服务添加到 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序项目，请参阅[将移动服务添加到现有的 Windows Phone 应用程序](/documentation/articles/mobile-services-windows-phone-get-started-data/)。
-[AZURE.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-get-started](../../includes/mobile-services-windows-universal-get-started.md)]
 
 若要完成本教程，您需要以下各项：
 
@@ -34,7 +34,7 @@
 
 ## 创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 ## 创建新的通用 Windows 应用程序
 
@@ -58,13 +58,13 @@
 
 ## 针对本地移动服务测试应用程序
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-dotnet](../includes/mobile-services-dotnet-backend-test-local-service-dotnet.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-dotnet](../../includes/mobile-services-dotnet-backend-test-local-service-dotnet.md)]
 
 >[AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 MainPage.xaml.cs 文件中。
 
 ## 发布移动服务
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 <ol start="4">
 <li><p>在共享代码项目中，打开 App.xaml.cs 文件，找到创建 <a href="http://msdn.microsoft.com/zh-cn/library/Windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx" target="_blank">MobileServiceClient</a> 实例的代码，注释掉使用 <em>localhost</em> 创建此客户端的代码，然后取消注释使用如下所示远程移动服务 URL 创建客户端的代码：</p>
@@ -80,7 +80,7 @@
 
 发布移动服务并将客户端连接到 Azure 中托管的远程移动服务后，我们可以使用 Azure 作为项存储来运行应用程序。
 
-[AZURE.INCLUDE [mobile-services-windows-universal-test-app](../includes/mobile-services-windows-universal-test-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-test-app](../../includes/mobile-services-windows-universal-test-app.md)]
 
 
 ## 后续步骤
@@ -104,7 +104,7 @@
 
 有关通用 Windows 应用程序的详细信息，请参阅[通过单个移动服务支持多个设备平台](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#shared-vs)。
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 

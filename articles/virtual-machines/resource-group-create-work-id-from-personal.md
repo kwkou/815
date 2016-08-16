@@ -19,8 +19,8 @@
 
 此外，利用最近所做的更改，你可以使用[此处](/documentation/articles/xplat-cli-connect/)所述的 `azure login -e AzureChinaCloud` 交互式登录方法，通过任何类型的 Azure 帐户管理你的订阅。你可以使用该机制，也可以遵循后面的说明。你也可[在 Azure 活动目录创建一个工作或学校账户来使用 Windows VM](/documentation/articles/virtual-machines-windows-create-aad-work-id/)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-create-aad-work-id](../includes/virtual-machines-common-create-aad-work-id.md)]
+[AZURE.INCLUDE [virtual-machines-common-create-aad-work-id](../../includes/virtual-machines-common-create-aad-work-id.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

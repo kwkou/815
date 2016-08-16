@@ -14,7 +14,7 @@
 
 # 教程：如何将设备克隆用于 Node.js（预览版）
 
-[AZURE.INCLUDE [iot-hub-device-management-twin-selector](../includes/iot-hub-device-management-twin-selector.md)]
+[AZURE.INCLUDE [iot-hub-device-management-twin-selector](../../includes/iot-hub-device-management-twin-selector.md)]
 
 ## 介绍
 

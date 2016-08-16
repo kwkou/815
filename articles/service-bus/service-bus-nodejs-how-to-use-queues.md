@@ -14,11 +14,11 @@
 
 # 如何使用 Service Bus 队列
 
-[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
 本文介绍如何通过 Node.js 使用服务总线队列。示例用 JavaScript 编写并使用 Node.js Azure 模块。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。有关队列的详细信息，请参阅 [后续步骤][] 部分。
 
-[AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
+[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 ## 创建 Node.js 应用程序
 

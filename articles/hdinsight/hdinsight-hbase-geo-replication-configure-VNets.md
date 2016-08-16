@@ -52,7 +52,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 		Select-AzureSubscription <AzureSubscriptionName>
 
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 >[AZURE.NOTE]Azure 服务名称和虚拟机名称必须是唯一的。本教程中使用的名称是 Contoso-[Azure Service/VM name]-[CN/CE]。例如，Contoso-VNet-CN 是位于中国北部数据中心的 Azure 的虚拟网络；Contoso-DNS-CE 是位于美国东部数据中心的 DNS 服务器 VM。你必须选择适合自己的名称。
  

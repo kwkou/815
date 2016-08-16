@@ -16,7 +16,7 @@
 
 如果你正查找 Microsoft Azure 服务限制全集，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
 
-[AZURE.INCLUDE [AAD-service-limits](../includes/active-directory-service-limits-include.md)]
+[AZURE.INCLUDE [AAD-service-limits](../../includes/active-directory-service-limits-include.md)]
 
 ## 后续步骤
 - [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)

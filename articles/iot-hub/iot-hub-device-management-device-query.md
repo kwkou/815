@@ -14,7 +14,7 @@
 
 # 教程：如何将查询用于 C# 以查找设备克隆（预览版）
 
-[AZURE.INCLUDE [iot-hub-device-management-query-selector](../includes/iot-hub-device-management-query-selector.md)]
+[AZURE.INCLUDE [iot-hub-device-management-query-selector](../../includes/iot-hub-device-management-query-selector.md)]
 
 通过 Azure IoT 设备管理，可通过查询查找设备克隆，即物理设备的服务表示形式。可根据设备属性、服务属性或中设备克隆中的标记进行查询。可使用标记和属性进行查询：
 

@@ -14,7 +14,7 @@
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
 
-[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../includes/mobile-services-selector-register-identity-provider.md)]
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
 
 ##概述
 

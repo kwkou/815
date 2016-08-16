@@ -14,7 +14,7 @@
 
 # 向移动服务 Android 应用添加身份验证
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
 
 ## 摘要
@@ -26,17 +26,17 @@
 
 ## 先决条件
 
-[AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
+[AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
 
 ##<a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-aad-server-extension](../includes/mobile-services-dotnet-backend-aad-server-extension.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-aad-server-extension](../../includes/mobile-services-dotnet-backend-aad-server-extension.md)]
 
 ##<a name="permissions"></a>将权限限制给已经过身份验证的用户
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 6. 打开你在完成[移动服务入门]教程后创建的项目。 
 
@@ -48,15 +48,15 @@
 
 ##<a name="add-authentication"></a>向应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app](../includes/mobile-services-android-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app](../../includes/mobile-services-android-authenticate-app.md)]
 
 ## <a name="cache-tokens"></a>在客户端上缓存身份验证令牌
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app-with-token](../includes/mobile-services-android-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app-with-token](../../includes/mobile-services-android-authenticate-app-with-token.md)]
 
 ## <a name="refresh-tokens"></a>刷新令牌缓存
 
-[AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../includes/mobile-services-android-authenticate-app-refresh-token.md)]
+[AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../../includes/mobile-services-android-authenticate-app-refresh-token.md)]
 
 ##<a name="next-steps"></a>后续步骤
 

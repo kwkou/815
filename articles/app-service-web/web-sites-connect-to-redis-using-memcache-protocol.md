@@ -32,7 +32,7 @@ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是�
 
 在 Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 ### 添加 REDIS\_HOST 应用设置
 

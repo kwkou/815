@@ -76,7 +76,7 @@
 有关版本历史记录，请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 
 <!--Image references-->

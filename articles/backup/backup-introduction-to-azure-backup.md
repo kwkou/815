@@ -76,7 +76,7 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 | Azure 备份服务器 (MABS) | 是（来宾中的代理） | 仅限 Hyper-V（非 Azure VM），只能进行文件一致的备份（与 DPM 相同） |
 | Azure IaaS VM 备份 | 公共预览版 | 在公开预览中 - Resource Manager 部署模型中的 Linux VM<br>（文件系统级一致性）<br><br>是（对于经典部署模型中的 Linux VM） |
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
 
 
 ## 备份和还原高级存储 VM

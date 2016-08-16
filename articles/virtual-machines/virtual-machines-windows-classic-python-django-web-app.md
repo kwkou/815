@@ -22,7 +22,7 @@
 - [Windows](/documentation/articles/virtual-machines-windows-classic-python-django-web-app/)
 - [Mac/Linux](/documentation/articles/virtual-machines-linux-python-django-web-app/)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
  
 本教程介绍如何在 Azure 中使用 Windows Server 虚拟机托管基于 Django 的 Web 应用。本教程假定您之前未使用过 Azure。完成本教程之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
@@ -37,7 +37,7 @@
 
 ![显示 Azure 上的 hello world 页面的浏览器窗口][1]
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## 创建并配置 Azure 虚拟机以托管 Django
 

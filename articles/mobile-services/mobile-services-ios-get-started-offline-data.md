@@ -14,7 +14,7 @@
 
 #  移动服务中的脱机数据同步入门
 
-[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 借助脱机同步，即使在没有网络连接的情况下，你也可以查看、添加或修改移动应用中的数据。在本程中，你将了解应用如何在本地脱机数据库中自动存储更改，并在重新联机时同步这些更改。
 

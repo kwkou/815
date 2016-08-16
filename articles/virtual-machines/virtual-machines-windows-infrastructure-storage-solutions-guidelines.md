@@ -15,7 +15,7 @@
 
 # 存储基础结构准则
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
 
 本文着重于了解实现最佳虚拟机 (VM) 性能的存储需求和设计注意事项。
 
@@ -79,6 +79,6 @@ Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于 VM �
 
 ## <a name="next-steps"></a> 后续步骤
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

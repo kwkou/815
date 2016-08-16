@@ -15,7 +15,7 @@
 
 # 如何使用服务总线主题和订阅
 
-[AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
+[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
 本指南介绍如何使用服务总线主题和订阅。这些示例是采用 Java 编写的并且使用了 [Azure SDK for Java][]。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
 

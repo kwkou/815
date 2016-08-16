@@ -139,7 +139,7 @@
 * 建议阅读可让完整的工作示例在几分钟内运行的分步教程：[弹性数据库查询入门 - 水平分区（分片）](/documentation/articles/sql-database-elastic-query-getting-started/)。
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-query-overview/overview.png

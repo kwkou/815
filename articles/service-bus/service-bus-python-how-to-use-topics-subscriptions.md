@@ -14,11 +14,11 @@
 
 # 如何使用服务总线主题和订阅
 
-[AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
+[AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
 本文介绍了如何使用服务总线主题和订阅。相关示例是使用 Python 编写的，并使用 [Python Azure 包][]。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤](#next-steps)部分。
 
-[AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
+[AZURE.INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
 
 **注意：**如果你需要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install/)。
 

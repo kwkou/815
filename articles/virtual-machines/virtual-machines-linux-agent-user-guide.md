@@ -17,7 +17,7 @@
 
 # Azure Linux 代理用户指南
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## 介绍
 

@@ -16,7 +16,7 @@
 
 # 将凭据传递到 Azure DSC 扩展处理程序 #
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 本文介绍 Azure 的 Desired State Configuration 扩展。有关 DSC 扩展处理程序的概述，请参阅 [Introduction to the Azure Desired State Configuration extension handler（Azure Desired State Configuration 扩展处理程序简介）](/documentation/articles/virtual-machines-windows-extensions-dsc-overview/)。
 

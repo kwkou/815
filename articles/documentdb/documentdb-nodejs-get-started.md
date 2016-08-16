@@ -50,7 +50,7 @@
 
 让我们创建一个 DocumentDB 帐户。如果已经有想要使用的帐户，可以跳到[安装 Node.js 应用程序](#SetupNode)。
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
 ##<a id="SetupNode"></a>步骤 2：安装 Node.js 应用程序
 

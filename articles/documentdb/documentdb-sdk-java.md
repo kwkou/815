@@ -104,7 +104,7 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 |0.9.0-prelease | 2014 年 12 月 10 日 | 2016 年 2 月 29 日
 
 ## 常见问题
-[AZURE.INCLUDE [documentdb sdk 常见问题](../includes/documentdb-sdk-faq.md)]
+[AZURE.INCLUDE [documentdb sdk 常见问题](../../includes/documentdb-sdk-faq.md)]
 
 ## 另请参阅
 

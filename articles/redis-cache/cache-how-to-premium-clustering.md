@@ -36,7 +36,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 在 Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
 
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 
 使用以下 PowerShell 脚本创建缓存：

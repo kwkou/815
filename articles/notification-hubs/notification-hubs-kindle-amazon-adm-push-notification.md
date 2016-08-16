@@ -14,7 +14,7 @@
 
 # 通知中心入门（Kindle 应用）
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
 ##概述
 

@@ -27,21 +27,21 @@
 
 - **现有的 .NET 后端移动服务**<br/>遵循[移动服务入门]教程，从 [Azure 经典管理门户]创建和下载新的 .NET 后端移动服务。
 
-[AZURE.INCLUDE [hybrid-connections-prerequisites](../includes/hybrid-connections-prerequisites.md)]
+[AZURE.INCLUDE [hybrid-connections-prerequisites](../../includes/hybrid-connections-prerequisites.md)]
 
 ## 安装 SQL Server Express，启用 TCP/IP 并在本地创建一个 SQL Server 数据库
 
-[AZURE.INCLUDE [hybrid-connections-create-on-premises-database](../includes/hybrid-connections-create-on-premises-database.md)]
+[AZURE.INCLUDE [hybrid-connections-create-on-premises-database](../../includes/hybrid-connections-create-on-premises-database.md)]
 
 ## 创建混合连接
 
-[AZURE.INCLUDE [hybrid-connections-create-new](../includes/hybrid-connections-create-new.md)]
+[AZURE.INCLUDE [hybrid-connections-create-new](../../includes/hybrid-connections-create-new.md)]
 
 
 ## 安装本地混合连接管理器以完成连接
 
 
-[AZURE.INCLUDE [hybrid-connections-install-connection-manager](../includes/hybrid-connections-install-connection-manager.md)]
+[AZURE.INCLUDE [hybrid-connections-install-connection-manager](../../includes/hybrid-connections-install-connection-manager.md)]
 
 ## 配置移动服务项目以连接到 SQL Server 数据库
 
@@ -84,7 +84,7 @@
 
 在发布到 Azure 并使用混合连接之前，最好先确保数据库连接能够在本地运行时正常工作。这样，你就可以更轻松地诊断并更正任何连接问题，然后重新发布并开始使用混合连接。
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
 
 ## 更新 Azure 以使用本地连接字符串
 

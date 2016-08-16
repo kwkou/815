@@ -70,6 +70,6 @@
 
 [弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 <!---HONumber=Mooncake_0711_2016-->

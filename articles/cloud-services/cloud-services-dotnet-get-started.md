@@ -68,7 +68,7 @@
 
 ![Contoso 广告体系结构](./media/cloud-services-dotnet-get-started/apparchitecture.png)
 
-[AZURE.INCLUDE [install-sdk](../includes/install-sdk-2015-2013.md)]
+[AZURE.INCLUDE [install-sdk](../../includes/install-sdk-2015-2013.md)]
 
 ## 下载并运行已完成的解决方案
 

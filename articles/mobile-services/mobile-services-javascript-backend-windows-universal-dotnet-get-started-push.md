@@ -15,7 +15,7 @@
 
 #  向移动服务应用程序添加推送通知
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
  
 本主题说明如何结合使用 Azure 移动服务和 JavaScript 后端向通用 Windows 应用程序发送推送通知。在本教程中，你将在通用 Windows 应用程序项目中使用 Azure 通知中心来启用推送通知。完成后，当每次在 TodoList 表中插入一条记录时，你的移动服务将从 JavaScript 后端向所有已注册的 Windows 应用商店和 Windows Phone 应用商店应用发送一条推送通知。创建的通知中心可在移动服务中任意使用，可独立于移动服务进行管理，并可供其他应用程序和服务使用。
@@ -35,7 +35,7 @@
 
 ## <a id="register"></a>为推送通知注册应用程序
 
-[AZURE.INCLUDE [mobile-services-create-new-push-vs2013](../includes/mobile-services-create-new-push-vs2013.md)]
+[AZURE.INCLUDE [mobile-services-create-new-push-vs2013](../../includes/mobile-services-create-new-push-vs2013.md)]
 
 &nbsp;&nbsp;6.浏览到 `\Services\MobileServices\your_service_name` 项目文件夹，打开生成的 push.register.cs 代码文件，并检查 **UploadChannel** 方法是否将设备的通道 URL 注册到通知中心。
 
@@ -51,12 +51,12 @@
 
 以下步骤更新注册到 TodoItem 表的插入脚本。在任何服务器脚本中或在后端服务中的其他任何地方，您都可以实施类似的代码。
 
-[AZURE.INCLUDE [mobile-services-javascript-update-script-notification-hubs](../includes/mobile-services-javascript-update-script-notification-hubs.md)]
+[AZURE.INCLUDE [mobile-services-javascript-update-script-notification-hubs](../../includes/mobile-services-javascript-update-script-notification-hubs.md)]
 
 
 ## <a id="test"></a>在应用程序中测试推送通知
 
-[AZURE.INCLUDE [mobile-services-javascript-backend-windows-universal-test-push](../includes/mobile-services-javascript-backend-windows-universal-test-push.md)]
+[AZURE.INCLUDE [mobile-services-javascript-backend-windows-universal-test-push](../../includes/mobile-services-javascript-backend-windows-universal-test-push.md)]
 
 ##  <a name="next-steps"></a>后续步骤
 

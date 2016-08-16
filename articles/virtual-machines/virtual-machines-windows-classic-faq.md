@@ -16,8 +16,8 @@
 	
 # 使用经典部署模型创建的 Azure 虚拟机的常见问题
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-faq](../includes/virtual-machines-common-classic-faq.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-faq](../../includes/virtual-machines-common-classic-faq.md)]
 
 <!---HONumber=Mooncake_0314_2016-->

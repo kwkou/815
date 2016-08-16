@@ -197,7 +197,7 @@
 连接到 Azure SQL 数据库所需的连接字符串与连接到 Microsoft SQL Server 所需的字符串稍有不同。可以从 [Azure 经典管理门户](https://manage.windowsazure.cn)复制数据库的连接字符串。
 
 
-[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../includes/sql-database-include-connection-string-20-portalshots.md)]
+[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
 
 
 <a id="b-connection-ip-address" name="b-connection-ip-address"></a>

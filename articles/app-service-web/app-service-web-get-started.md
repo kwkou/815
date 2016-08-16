@@ -15,7 +15,7 @@
 	
 # 在 5 分钟内将第一个 Web 应用部署到 Azure
 
-[AZURE.INCLUDE [选项卡](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 本教程帮助你将第一个 Web 应用部署到 [Azure Web 应用](/documentation/services/web-sites)。Azure 允许你创建 Web 应用。
 

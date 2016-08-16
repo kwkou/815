@@ -14,7 +14,7 @@
 
 # 使用 .NET (C#) 连接到 SQL 数据库
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 ## 步骤 1：配置开发环境
 
@@ -26,7 +26,7 @@
 
 ## 步骤 3：获取连接字符串
 
-[AZURE.INCLUDE [sql-database-include-connection-string-dotnet-20-portalshots](../includes/sql-database-include-connection-string-dotnet-20-portalshots.md)]
+[AZURE.INCLUDE [sql-database-include-connection-string-dotnet-20-portalshots](../../includes/sql-database-include-connection-string-dotnet-20-portalshots.md)]
 
 ## 步骤 4：运行示例代码
 

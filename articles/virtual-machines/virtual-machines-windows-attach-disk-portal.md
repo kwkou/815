@@ -25,7 +25,7 @@
 - 对于新磁盘，你不必首先创建它，因为 Azure 将在附加磁盘时创建该磁盘。
 - 对于现有磁盘，Azure 存储帐户中必须要有可用的 .vhd 文件。你可以使用已经存在的 .vhd（如果该磁盘没有附加到另一虚拟机），或者将你自己的 .vhd 文件上载到存储帐户。
 
-[AZURE.INCLUDE [virtual-machines-common-attach-disk-portal](../includes/virtual-machines-common-attach-disk-portal.md)]
+[AZURE.INCLUDE [virtual-machines-common-attach-disk-portal](../../includes/virtual-machines-common-attach-disk-portal.md)]
 
 ## <a id="initializeinWS"></a>如何：在 Windows Server 中初始化新的数据磁盘
 

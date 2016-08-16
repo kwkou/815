@@ -18,7 +18,7 @@
 
 本文介绍如何按需将 Azure“突发”节点（在云服务中运行的辅助角色实例）作为计算资源添加到 Azure 的现有 HPC Pack 头节点。这可让你按需增加 Azure 中 HPC 群集的计算能力，而无需维护一组预配置的计算节点 VM。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ![突发节点][burst]
 

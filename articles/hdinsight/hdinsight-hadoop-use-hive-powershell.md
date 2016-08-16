@@ -15,7 +15,7 @@
 
 #使用 PowerShell 运行 Hive 查询
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 > [AZURE.NOTE] 本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)。
 
@@ -27,7 +27,7 @@
 - **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）** 
 - **配备 Azure PowerShell 的工作站**。
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>使用 Azure PowerShell 运行 Hive 查询
 
@@ -37,7 +37,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 
 * **Add-AzureAccount**：在 Azure 订阅中进行 Azure PowerShell 身份验证
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
 * **New-AzureHDInsightHiveJobDefinition**：使用指定的 HiveQL 语句创建新的*作业定义*
 

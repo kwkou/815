@@ -28,25 +28,25 @@
 
 ##<a id="scalability-targets-for-standard-storage-accounts"></a> Blob、队列、表和文件的可伸缩性目标
 
-[AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
+[AZURE.INCLUDE [azure-storage-limits](../../includes/azure-storage-limits.md)]
 
 ## 虚拟机磁盘的可伸缩性目标
 
-[AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
+[AZURE.INCLUDE [azure-storage-limits-vm-disks](../../includes/azure-storage-limits-vm-disks.md)]
 
 请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes/)或 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)了解其他详细信息。
 
 ### 标准存储帐户
 
-[AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../includes/azure-storage-limits-vm-disks-standard.md)]
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../../includes/azure-storage-limits-vm-disks-standard.md)]
 
 ###<a id="scalability-targets-for-premium-storage-accounts"></a> 高级存储帐户
 
-[AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../includes/azure-storage-limits-vm-disks-premium.md)]
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../../includes/azure-storage-limits-vm-disks-premium.md)]
 
 ## Azure 资源管理器的可伸缩性目标
 
-[AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
+[AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../../includes/azure-storage-limits-azure-resource-manager.md)]
 
 ## Azure 存储中的分区
 

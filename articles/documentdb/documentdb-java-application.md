@@ -46,9 +46,9 @@
 
 让我们首先创建 DocumentDB 帐户。如果你已经有一个帐户，则可以跳到[步骤 2：创建 Java JSP 应用程序](#CreateJSP)。
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-[AZURE.INCLUDE [documentdb-keys](../includes/documentdb-keys.md)]
+[AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
 ##<a id="CreateJSP"></a>步骤 2：创建 Java JSP 应用程序
 

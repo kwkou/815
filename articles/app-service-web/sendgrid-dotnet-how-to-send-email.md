@@ -41,7 +41,7 @@ SendGrid 是一项[基于云的电子邮件服务]，该服务提供了可靠的
 <a name="createaccount"></a> 
 ## 创建 SendGrid 帐户
 
-[AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
+[AZURE.INCLUDE [sendgrid-sign-up](../../includes/sendgrid-sign-up.md)]
 
 <a name="reference"></a>
 ## 引用 SendGrid.NET 类库

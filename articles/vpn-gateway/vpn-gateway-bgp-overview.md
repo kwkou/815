@@ -54,7 +54,7 @@ BGP 使多个网关可以从不同网络获知和传播前缀，而无论它们�
 ## BGP 常见问题
 
 
-[AZURE.INCLUDE [vpn-gateway-bgp-faq-include](../includes/vpn-gateway-bpg-faq-include.md)]
+[AZURE.INCLUDE [vpn-gateway-bgp-faq-include](../../includes/vpn-gateway-bpg-faq-include.md)]
 
 
 

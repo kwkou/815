@@ -397,7 +397,7 @@
 
 ## 删除集群
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 后续步骤
 

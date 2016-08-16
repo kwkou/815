@@ -43,7 +43,7 @@
 
 例如，若要使用 Azure PowerShell 为 jobhistoryserver 启用堆转储，请执行以下操作：
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 	$MapRedConfigValues = new-object 'Microsoft.WindowsAzure.Management.HDInsight.Cmdlet.DataObjects.AzureHDInsightMapReduceConfiguration'
 

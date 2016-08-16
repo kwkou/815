@@ -15,6 +15,6 @@
 
 # 在 Azure 上开发 WordPress
 
-[AZURE.INCLUDE [app-service-blueprint-guide-for-wordpress](../includes/app-service-blueprint-guide-for-wordpress.md)]
+[AZURE.INCLUDE [app-service-blueprint-guide-for-wordpress](../../includes/app-service-blueprint-guide-for-wordpress.md)]
 
 <!---HONumber=Mooncake_0307_2016-->

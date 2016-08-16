@@ -15,7 +15,7 @@
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
  
 借助 Azure，您可以使用虚拟机来处理需要进行大量计算的任务。例如，虚拟机可以处理任务并将结果传送给客户端计算机或移动应用程序。阅读完本文后，你将了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的虚拟机。
 
@@ -39,7 +39,7 @@
 
 ![旅行商问题客户端][client_output]
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## 创建虚拟机
 

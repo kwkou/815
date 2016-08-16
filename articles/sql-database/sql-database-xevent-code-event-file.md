@@ -17,7 +17,7 @@
 
 # SQL 数据库中扩展事件的事件文件目标代码
 
-[AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../includes/sql-database-xevents-selectors-1-include.md)]
+[AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
 
 你需要一个完整的代码示例来可靠捕获和报告扩展事件的信息。
 

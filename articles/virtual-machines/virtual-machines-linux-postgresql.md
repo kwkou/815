@@ -21,7 +21,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 在本文中，你将了解如何在运行 Linux 的 Azure 虚拟机上安装和配置 PostgreSQL。
 
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 ## 安装 PostgreSQL

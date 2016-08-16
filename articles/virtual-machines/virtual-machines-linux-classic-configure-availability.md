@@ -17,7 +17,7 @@
 
 > [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。还可在 Resource Manager 部署中[配置可用性集](/documentation/articles/azure-cli-arm-commands/#azure-availset-commands-to-manage-your-availability-sets)。
 
-[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../includes/virtual-machines-common-classic-configure-availability.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../../includes/virtual-machines-common-classic-configure-availability.md)]
 
 
 ## 后续步骤 

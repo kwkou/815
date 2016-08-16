@@ -92,7 +92,7 @@
 首次使用时，系统会将 Visual Studio 连接到 Azure SQL 数据库的 **AdventureWorksLT** 数据库。
 
 
-[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../includes/sql-database-include-connection-string-20-portalshots.md)]
+[AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
 
 
 ## 步骤 5：将连接字符串添加到 App.config 文件
@@ -273,7 +273,7 @@
 在将客户端计算机的 IP 地址添加到 SQL 数据库防火墙之前，客户端 C# 程序无法连接到 SQL 数据库。你的程序将失败，并显示简单的错误消息，指出必需的 IP 地址。
 
 
-[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
+[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
 

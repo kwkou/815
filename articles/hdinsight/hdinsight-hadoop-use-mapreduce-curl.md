@@ -15,7 +15,7 @@
 
 #使用 Curl 在 HDInsight 上的 Hadoop 上远程运行 MapReduce 作业
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 在本文档中，你将学习如何使用 Curl 在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业。
 

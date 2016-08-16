@@ -199,7 +199,7 @@ Sp\_execute\_remote 使用调用参数中提供的外部数据源在远程数据
 
 * 弹性查询最适合大部分计算可以在分片上完成的查询。使用可以在分片或联接上通过分区键求值的选择性筛选器谓词（可以在所有分片上以分区对齐方式执行），通常可以获得最佳查询性能。其他查询模式可能需要从分片将大量数据加载到头节点并且可能会执行效果不佳
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-query-horizontal-partitioning/horizontalpartitioning.png

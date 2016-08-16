@@ -14,7 +14,7 @@
 
 # 适用于 .NET 的 Azure IoT 中心入门
 
-[AZURE.INCLUDE [iot-hub-selector-get-started](../includes/iot-hub-selector-get-started.md)]
+[AZURE.INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
 
 本教程最后提供了三个 Windows 控制台应用程序：
 
@@ -30,7 +30,7 @@
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 
-[AZURE.INCLUDE [iot-hub-get-started-create-hub](../includes/iot-hub-get-started-create-hub.md)]
+[AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
 现已创建 IoT 中心，因此已具有完成本教程的其余部分所需的主机名和连接字符串。
 

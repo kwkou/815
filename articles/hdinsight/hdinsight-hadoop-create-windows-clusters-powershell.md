@@ -15,14 +15,14 @@
 
 # 使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
 
-[AZURE.INCLUDE [选择器](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
 
 了解如何使用 Azure PowerShell 创建 HDInsight 群集。Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。有关其他群集创建工具和功能，请单击本页面顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters-v1/#cluster-creation-methods)。
 
 
 ###先决条件：
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 在开始按照本文中的说明操作之前，你必须具有以下内容：
 

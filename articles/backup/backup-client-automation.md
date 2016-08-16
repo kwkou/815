@@ -23,7 +23,7 @@
 
 ## 安装 Azure PowerShell
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
 
 本文重点介绍让你能够在资源组中使用恢复服务保管库的 Azure Resource Manager (ARM) PowerShell cmdlet。
 
@@ -34,7 +34,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 [下载最新的 PowerShell 版本](https://github.com/Azure/azure-powershell/releases)（所需最低版本：1.0.0）
 
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
 ## 创建恢复服务保管库
 

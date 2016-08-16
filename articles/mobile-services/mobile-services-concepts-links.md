@@ -16,7 +16,7 @@
 
 下面链接的主题提供有关 Azure 移动服务的具体行为的信息。Azure 经典管理门户中也提供了这些主题作为帮助信息。
 
-[AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
+[AZURE.INCLUDE [mobile-services-concepts](../../includes/mobile-services-concepts.md)]
 
 [概述主题](https://msdn.microsoft.com/zh-cn/library/azure/jj193167.aspx)介绍了移动服务的优势，以及可在 Azure 经典管理门户中执行的任务。有关移动服务的一般信息以及如何在应用中使用移动服务的示例，请参阅[移动服务教程和资源](/documentation/services/mobile-services/)。
 

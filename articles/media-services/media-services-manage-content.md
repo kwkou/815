@@ -32,7 +32,7 @@
 ##<a id="upload"></a>如何：上载内容
 
 
-[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
+[AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
 
 1. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。

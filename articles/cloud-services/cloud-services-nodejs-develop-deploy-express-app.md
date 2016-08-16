@@ -33,7 +33,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 	![Azure PowerShell 图标](./media/cloud-services-nodejs-develop-deploy-express-app/azure-powershell-start.png)
 
-	[AZURE.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
+	[AZURE.INCLUDE [install-dev-tools](../../includes/install-dev-tools.md)]
 
 2. 将目录切换到 **c:\\node** 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
 

@@ -40,23 +40,23 @@
 
 ###获取示例代码
 
-[AZURE.INCLUDE [download-android-sample-code](../includes/download-android-sample-code.md)]
+[AZURE.INCLUDE [download-android-sample-code](../../includes/download-android-sample-code.md)]
 
 ###检查并运行示例代码
 
-[AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
+[AZURE.INCLUDE [mobile-services-android-run-sample-code](../../includes/mobile-services-android-run-sample-code.md)]
 
 ## 在 Azure 经典管理门户中创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data](../../includes/mobile-services-create-new-service-data.md)]
 
 ## 将新表添加到移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service-data-2](../includes/mobile-services-create-new-service-data-2.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service-data-2](../../includes/mobile-services-create-new-service-data-2.md)]
 
 ## 更新应用程序以使用移动服务进行数据访问
 
-[AZURE.INCLUDE [mobile-services-android-getting-started-with-data](../includes/mobile-services-android-getting-started-with-data.md)]
+[AZURE.INCLUDE [mobile-services-android-getting-started-with-data](../../includes/mobile-services-android-getting-started-with-data.md)]
 
 
 ## 针对新移动服务测试应用程序
@@ -85,7 +85,7 @@
 
 ###验证 Android SDK 版本
 
-[AZURE.INCLUDE [验证 SDK](../includes/mobile-services-verify-android-sdk-version.md)]
+[AZURE.INCLUDE [验证 SDK](../../includes/mobile-services-verify-android-sdk-version.md)]
 
 ## 后续步骤
 

@@ -525,7 +525,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 ##删除群集
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 说明
 

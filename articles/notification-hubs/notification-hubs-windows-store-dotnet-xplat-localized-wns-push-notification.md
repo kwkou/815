@@ -187,7 +187,7 @@
 
 ##从后端发送本地化的通知
 
-[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../../includes/notification-hubs-localized-back-end.md)]
 
 
 

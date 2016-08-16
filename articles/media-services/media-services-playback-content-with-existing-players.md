@@ -77,7 +77,7 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 ##提供反馈
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png

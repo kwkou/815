@@ -15,7 +15,7 @@
 
 # 使用查询控制台运行 Hive 查询
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 在本文中，你将了解如何在浏览器中使用 HDInsight 查询控制台在 HDInsight Hadoop 群集上运行 Hive 查询。
 

@@ -133,7 +133,7 @@ Web 应用必须在“标准”模式下运行才能启用多个部署槽。
 
 Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azure 的 cmdlet，包括对管理 Azure Web 应用中 Web 应用部署槽的支持。
 
-[AZURE.INCLUDE [AzureRm PowerShell 与中国 Azure 云](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [AzureRm PowerShell 与中国 Azure 云](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 - 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。  
 
@@ -185,7 +185,7 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 
 Azure CLI 提供了适用于 Azure 的跨平台命令，包括对 Web 应用部署槽的管理支持。
 
-[AZURE.INCLUDE [Azure CLI 与中国 Azure 云](../includes/azure-cli-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [Azure CLI 与中国 Azure 云](../../includes/azure-cli-azurechinacloud-environment-parameter.md)]
 
 - 有关安装和配置 Azure CLI 的说明（包括有关如何将 Azure CLI 连接到 Azure 订阅的信息），请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 

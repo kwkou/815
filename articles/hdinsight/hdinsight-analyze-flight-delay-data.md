@@ -45,7 +45,7 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 
 - **配备 Azure PowerShell 的工作站**。
 
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 **本教程中使用的文件**
 

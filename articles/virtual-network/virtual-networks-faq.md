@@ -13,6 +13,6 @@
 
 # 虚拟网络常见问题解答
 
-[AZURE.INCLUDE [virtual-networks-vnet-faq-include](../includes/virtual-networks-vnet-faq-include.md)]
+[AZURE.INCLUDE [virtual-networks-vnet-faq-include](../../includes/virtual-networks-vnet-faq-include.md)]
 
 <!---HONumber=82-->

@@ -14,7 +14,7 @@
 
 # <a name="getting-started"></a>移动服务入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
 
 本教程说明如何使用 Azure 移动服务向 iOS 应用程序添加基于云的后端服务。
@@ -25,7 +25,7 @@
 
 ##  <a name="create-new-service"></a>创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
 
 ##  创建新的 iOS 应用程序
 
@@ -41,7 +41,7 @@
 
 ##  运行新的 iOS 应用程序
 
-[AZURE.INCLUDE [mobile-services-ios-run-app](../includes/mobile-services-ios-run-app.md)]
+[AZURE.INCLUDE [mobile-services-ios-run-app](../../includes/mobile-services-ios-run-app.md)]
 
 <ol start="4"><li><p>返回 [Azure 经典管理门户]，单击“数据”选项卡，然后单击“TodoItem”表。这样，你便可以浏览应用程序在表中插入的数据。<p></li></ol></p>
 
@@ -57,7 +57,7 @@
 * [向现有应用程序添加推送通知]
 <br/>了解如何向应用程序发送一条很基本的推送通知。
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 
 <!-- Anchors. -->

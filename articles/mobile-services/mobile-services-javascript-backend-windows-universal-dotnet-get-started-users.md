@@ -14,7 +14,7 @@
 
 # 向通用 Windows 8.1 应用添加身份验证
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
 
 本主题说明如何通过通用 Windows 8.1 应用对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
@@ -25,7 +25,7 @@
 
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
-[AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
+[AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
 
 ## <a name="permissions"></a>将权限限制给已经过身份验证的用户
 
@@ -33,7 +33,7 @@
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-authenticate-app](../includes/mobile-services-windows-universal-dotnet-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-services-windows-universal-dotnet-authenticate-app](../../includes/mobile-services-windows-universal-dotnet-authenticate-app.md)]
 
 现在，已由受信任标识提供者进行身份验证的任何用户都可访问 *TodoItem* 表。为了进一步提高用户特定数据的安全性，你还必须实施授权。为此，需要获取给定用户的用户 ID，然后根据该 ID 来确定该用户对给定的资源具有哪种级别的访问权限。
 
@@ -43,7 +43,7 @@
 
 >[AZURE.NOTE]无论你使用客户端管理的还是服务管理的身份验证，都可以缓存由移动服务颁发的令牌。本教程使用服务管理的身份验证。
 
-[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
 
 ##  <a name="next-steps"></a>后续步骤
 

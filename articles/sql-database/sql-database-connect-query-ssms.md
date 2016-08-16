@@ -23,11 +23,11 @@
 
 本文介绍如何使用最新版本的 SQL Server Management Studio (SSMS) 连接到 Azure SQL 数据库并使用 Transact-SQL (T-SQL) 语句执行简单查询。
 
-[AZURE.INCLUDE [登录](../includes/azure-getting-started-portal-login.md)]
+[AZURE.INCLUDE [登录](../../includes/azure-getting-started-portal-login.md)]
 
-[AZURE.INCLUDE [SSMS 安装](../includes/sql-server-management-studio-install.md)]
+[AZURE.INCLUDE [SSMS 安装](../../includes/sql-server-management-studio-install.md)]
 
-[AZURE.INCLUDE [SSMS 连接](../includes/sql-database-sql-server-management-studio-connect-server-principal.md)]
+[AZURE.INCLUDE [SSMS 连接](../../includes/sql-database-sql-server-management-studio-connect-server-principal.md)]
 
 ## 运行示例查询
 

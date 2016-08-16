@@ -15,7 +15,7 @@
 
 # 使用 HDInsight 中的 Azure PowerShell for Hadoop 运行 Sqoop 作业
 
-[AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
+[AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
 
 了解如何使用 Azure PowerShell 运行 HDInsight 中的 Sqoop 作业，以在 HDInsight 群集和 Azure SQL 数据库或 SQL Server 数据库之间进行导入和导出。
 

@@ -17,9 +17,9 @@
 
 # 如何从 Windows 虚拟机分离磁盘
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [howto-detach-disk-windows-linux](../includes/howto-detach-disk-windows-linux.md)]
+[AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-windows-linux.md)]
 
 ## 其他资源
 

@@ -13,7 +13,7 @@
 	wacn.date="07/12/2016"/>
 
 # 如何通过 Java 使用通知中心
-[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 		
 本主题将向你介绍完全受支持的全新官方 Azure 通知中心 Java SDK 的主要功能。这是一个开源项目，你可以在 [Java SDK] 查看完整的 SDK 代码。
 

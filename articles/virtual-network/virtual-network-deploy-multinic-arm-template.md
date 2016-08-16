@@ -17,13 +17,13 @@
 
 # 使用模板部署多 NIC VM
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-arm-selectors-include.md](../includes/virtual-network-deploy-multinic-arm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-arm-selectors-include.md](../../includes/virtual-network-deploy-multinic-arm-selectors-include.md)]
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../../includes/virtual-network-deploy-multinic-intro-include.md)]
 
 > [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-network-deploy-multinic-classic-ps/)。
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
 由于目前你不能使用具有单个 NIC 的 VM 以及具有同一个资源组中的多个 NIC 的 VM，因此你将在一个资源组中实现后端服务器，而在另一个安全组中实现所有其他组件。以下步骤使用名为 *IaaSStory* 的资源组作为主资源组，并在名为 *IaaSStory-BackEnd* 的资源组中实现后端服务器。
 
@@ -214,7 +214,7 @@
 
 若要使用 PowerShell 部署下载的模板，请执行以下步骤。
 
-[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+[AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
 3. 运行 **New-AzureResourceGroup** cmdlet 以使用模板创建资源组。
 

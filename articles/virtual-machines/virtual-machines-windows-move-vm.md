@@ -18,6 +18,6 @@
 
 # 将 Windows VM 移动到其他 Azure 订阅 
 
-[AZURE.INCLUDE [virtual-machines-common-move-vm](../includes/virtual-machines-common-move-vm.md)]
+[AZURE.INCLUDE [virtual-machines-common-move-vm](../../includes/virtual-machines-common-move-vm.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

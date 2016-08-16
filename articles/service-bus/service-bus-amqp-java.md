@@ -13,7 +13,7 @@
 
 # 使用 AMQP 1.0 通过 Java 使用服务总线
 
-[AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
+[AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
 
 Java 消息服务 (JMS) 是一种标准 API，用于处理 Java 平台上面向消息的中间件。Azure 服务总线已使用 Apache Qpid 项目开发的基于 AMQP 1.0 的 JMS 客户端库进行测试。此库支持完整的 JMS 1.1 API，并可用于任何 AMQP 1.0 兼容的消息服务。[Windows Server 服务总线](https://msdn.microsoft.com/zh-cn/library/dn282144.aspx)（本地服务总线）中也支持此方案。有关详细信息，请参阅[适用于 Windows Server 的服务总线中的 AMQP][]。
 

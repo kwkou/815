@@ -15,15 +15,15 @@
 
 # 如何通过 PHP 使用表存储
 
-[AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
+[AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 ## 概述
 
 本指南演示如何使用 Azure 表服务执行常见任务。示例是用 PHP 编写的并使用了 [Azure SDK for PHP][download]。所涉及的任务包括“创建和删除表以及在表中插入、删除和查询实体”。有关 Azure 表服务的详细信息，请参阅[后续步骤](#next-steps)部分。
 
-[AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
+[AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 PHP 应用程序
 
@@ -33,7 +33,7 @@
 
 ## 获取 Azure 客户端库
 
-[AZURE.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
+[AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
 
 ## 配置你的应用程序以访问表服务
 

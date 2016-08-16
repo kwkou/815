@@ -16,7 +16,7 @@
 
 # 在 Azure 中使用 Linux 虚拟机的根权限
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 默认情况下，禁止在 Azure 中的 Linux 虚拟机上使用 `root` 用户。用户可以通过 `sudo` 命令使用提升的权限来运行各种命令。但是，体验可能因系统设置方式而异。
 

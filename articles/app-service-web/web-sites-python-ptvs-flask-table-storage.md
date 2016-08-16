@@ -34,7 +34,7 @@
  - [Azure SDK Tools for VS 2013] 或 [Azure SDK Tools for VS 2015]
  - [Python 2.7（32 位）]或 [Python 3.4（32 位）]
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## 创建项目
 

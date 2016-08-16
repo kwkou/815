@@ -21,7 +21,7 @@
 1. 在 Azure 中具有运行的 Linux VM。
 2. 使用 SHH 连接到该 Linux VM。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 > [AZURE.NOTE] 如果你将从 Windows 计算机执行此任务，则可以使用 PuTTY 通过 SSH 登录到 Linux 计算机。有关详细信息，请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-log-on/)。

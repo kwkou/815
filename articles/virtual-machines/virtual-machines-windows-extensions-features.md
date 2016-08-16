@@ -15,6 +15,6 @@
 
 #关于虚拟机扩展和功能
 
-[AZURE.INCLUDE [virtual-machines-common-extensions-features](../includes/virtual-machines-common-extensions-features.md)]
+[AZURE.INCLUDE [virtual-machines-common-extensions-features](../../includes/virtual-machines-common-extensions-features.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

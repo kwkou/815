@@ -22,7 +22,7 @@
 
 ![备份过程的步骤](./media/backup-configure-vault/initial-backup-process.png)
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。
 
 ## 开始之前
 若要将服务器或客户端备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需几分钟的时间就能创建一个[试用帐户](/pricing/1rmb-trial/)。

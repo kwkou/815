@@ -15,11 +15,11 @@
 
 # 如何使用 Service Bus 队列
 
-[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
 本文介绍了如何使用服务总线队列。相关示例是使用 Python 编写的，并使用 [Python Azure 包][]。涉及的任务包括**创建队列、发送和接收消息**以及**删除队列**。
 
-[AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
+[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 > [AZURE.NOTE] 若要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install/)。
 

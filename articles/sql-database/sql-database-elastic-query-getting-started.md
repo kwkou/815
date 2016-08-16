@@ -131,7 +131,7 @@
 有关价格信息，请参阅 [SQL 数据库定价详细信息](/pricing/details/sql-database/)。
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-query-getting-started/cmd-prompt.png

@@ -30,7 +30,7 @@
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 若要完成本教程，你需要以下项目：
 
@@ -341,7 +341,7 @@
 - [Active Directory 联合身份验证服务概述](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)
 - [WS-Federation 1.1 规范](http://download.boulder.ibm.com/ibmdl/pub/software/dw/specs/ws-fed/WS-Federation-V1-1B.pdf?S_TACT=105AGX04&S_CMP=LP)
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
  
  
 

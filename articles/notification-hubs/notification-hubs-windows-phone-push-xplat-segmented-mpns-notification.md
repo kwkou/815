@@ -14,7 +14,7 @@
 
 # 使用通知中心发送突发新闻
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##概述
@@ -260,7 +260,7 @@
 
 ##发送带标记的通知
 
-[AZURE.INCLUDE [notification-hubs-send-categories-template](../includes/notification-hubs-send-categories-template.md)]
+[AZURE.INCLUDE [notification-hubs-send-categories-template](../../includes/notification-hubs-send-categories-template.md)]
 
 ##运行应用并生成通知
 

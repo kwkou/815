@@ -487,5 +487,5 @@
 
 对此数据库中存储的凭据进行加密。但是，最佳做法是，确保服务部署的 Web 角色和辅助角色保持最新且是安全的，因为它们都有权访问元数据数据库和用于加密和解密存储凭据的证书。
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 <!---HONumber=Mooncake_0711_2016-->

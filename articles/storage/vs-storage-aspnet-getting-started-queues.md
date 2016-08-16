@@ -150,6 +150,6 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 ## 后续步骤
 
-[AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../includes/vs-storage-dotnet-queues-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
 
 <!---HONumber=Mooncake_0718_2016-->

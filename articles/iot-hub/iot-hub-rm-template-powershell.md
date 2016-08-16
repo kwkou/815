@@ -14,7 +14,7 @@
 
 # 使用 PowerShell 创建 IoT 中心
 
-[AZURE.INCLUDE [iot-hub-resource-manager-selector](../includes/iot-hub-resource-manager-selector.md)]
+[AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 ## 介绍
 

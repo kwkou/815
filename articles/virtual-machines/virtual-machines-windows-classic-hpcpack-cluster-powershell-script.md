@@ -18,9 +18,9 @@
 
 >[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-hpcpack-cluster-powershell-script](../includes/virtual-machines-common-classic-hpcpack-cluster-powershell-script.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-hpcpack-cluster-powershell-script](../../includes/virtual-machines-common-classic-hpcpack-cluster-powershell-script.md)]
 
 ##<a name="Example-configuration-files"></a> 示例配置文件
 

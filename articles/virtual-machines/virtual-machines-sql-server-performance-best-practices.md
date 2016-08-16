@@ -23,7 +23,7 @@
 
 本文重点介绍获得 SQL Server 在 Azure VM 上的最佳性能。如果你的工作负荷要求较低，可能不需要下面列出的每项优化。评估这些建议时应考虑性能需求和工作负荷模式。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## 快速检查列表
 

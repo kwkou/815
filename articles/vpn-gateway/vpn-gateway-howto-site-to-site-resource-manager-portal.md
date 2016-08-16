@@ -29,7 +29,7 @@
 
 **关于 Azure 部署模型**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## 连接关系图
 
@@ -37,7 +37,7 @@
 
 **用于站点到站点连接的部署模型和工具**
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site-table](../includes/vpn-gateway-table-site-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site-table](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
 如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology/)一文。
 
@@ -81,13 +81,13 @@
 
 ### 创建虚拟网络
 
-[AZURE.INCLUDE [vpn-gateway-basic-vnet-rm-portal](../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
+[AZURE.INCLUDE [vpn-gateway-basic-vnet-rm-portal](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
 
 ## 2\.添加其他地址空间和子网
 
 可以将其他地址空间和子网添加到已创建的 VNet。
 
-[AZURE.INCLUDE [vpn-gateway-additional-address-space](../includes/vpn-gateway-additional-address-space-include.md)]
+[AZURE.INCLUDE [vpn-gateway-additional-address-space](../../includes/vpn-gateway-additional-address-space-include.md)]
 
 ## <a name="dns"></a>3.指定 DNS 服务器
 
@@ -95,7 +95,7 @@
 
 ### 指定 DNS 服务器
 
-[AZURE.INCLUDE [vpn-gateway-add-dns-rm-portal](../includes/vpn-gateway-add-dns-rm-portal-include.md)]
+[AZURE.INCLUDE [vpn-gateway-add-dns-rm-portal](../../includes/vpn-gateway-add-dns-rm-portal-include.md)]
 
 ## 4\.创建网关子网
 
@@ -107,9 +107,9 @@
 
 ### 创建网关子网
 
-[AZURE.INCLUDE [vpn-gateway-no-nsg](../includes/vpn-gateway-no-nsg-include.md)]
+[AZURE.INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
-[AZURE.INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
+[AZURE.INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
 
 ## 5\.创建虚拟网络网关
 
@@ -117,7 +117,7 @@
 
 ### 创建虚拟网络网关
 
-[AZURE.INCLUDE [vpn-gateway-add-gw-rm-portal](../includes/vpn-gateway-add-gw-rm-portal-include.md)]
+[AZURE.INCLUDE [vpn-gateway-add-gw-rm-portal](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
 ## 6\.创建局域网网关
 
@@ -127,11 +127,11 @@
 
 ### 创建局域网网关
 
-[AZURE.INCLUDE [vpn-gateway-add-lng-rm-portal](../includes/vpn-gateway-add-lng-rm-portal-include.md)]
+[AZURE.INCLUDE [vpn-gateway-add-lng-rm-portal](../../includes/vpn-gateway-add-lng-rm-portal-include.md)]
 
 ## 7\.配置 VPN 设备
 
-[AZURE.INCLUDE [vpn-gateway-configure-vpn-device-rm](../includes/vpn-gateway-configure-vpn-device-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-configure-vpn-device-rm](../../includes/vpn-gateway-configure-vpn-device-rm-include.md)]
 
 ## 8\.创建站点到站点 VPN 连接
 
@@ -142,13 +142,13 @@
 ### 创建 VPN 连接
 
 
-[AZURE.INCLUDE [vpn-gateway-add-site-to-site-connection-rm-portal](../includes/vpn-gateway-add-site-to-site-connection-rm-portal-include.md)]
+[AZURE.INCLUDE [vpn-gateway-add-site-to-site-connection-rm-portal](../../includes/vpn-gateway-add-site-to-site-connection-rm-portal-include.md)]
 
 ## 9\.验证 VPN 连接
 
 你可以在门户预览中或使用 PowerShell 验证 VPN 连接。
 
-[AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../includes/vpn-gateway-verify-connection-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../../includes/vpn-gateway-verify-connection-rm-include.md)]
 
 ## 后续步骤
 

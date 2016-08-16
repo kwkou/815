@@ -35,7 +35,7 @@
 
 ## 确定侦听器的可访问性
 
-[AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
+[AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
 本文重点介绍如何创建使用**内部负载平衡器 (ILB)** 的侦听器。如果你需要一个公共/外部侦听器，请参阅本文的另一个版本，其中提供了有关设置[外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)的步骤
 
@@ -43,7 +43,7 @@
 
 对于 ILB，必须先创建内部负载平衡器。以下脚本将执行此操作。
 
-[AZURE.INCLUDE [load-balanced-endpoints](../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
+[AZURE.INCLUDE [load-balanced-endpoints](../../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
 
 8. 对于 **ILB**，应该分配一个静态 IP 地址。首先，通过运行以下命令检查当前 VNet 配置：
 
@@ -81,15 +81,15 @@
 
 ## 如果需要，请验证是否已安装 KB2854082
 
-[AZURE.INCLUDE [kb2854082](../includes/virtual-machines-ag-listener-kb2854082.md)]
+[AZURE.INCLUDE [kb2854082](../../includes/virtual-machines-ag-listener-kb2854082.md)]
 
 ## 在可用性组节点中打开防火墙端口
 
-[AZURE.INCLUDE [防火墙](../includes/virtual-machines-ag-listener-open-firewall.md)]
+[AZURE.INCLUDE [防火墙](../../includes/virtual-machines-ag-listener-open-firewall.md)]
 
 ## 创建可用性组侦听器
 
-[AZURE.INCLUDE [防火墙](../includes/virtual-machines-ag-listener-create-listener.md)]
+[AZURE.INCLUDE [防火墙](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
 10. 对于 ILB，必须使用前面创建的内部负载平衡器 (ILB) 的 IP 地址。在 PowerShell 中使用以下脚本获取此 IP 地址。
 
@@ -117,18 +117,18 @@
 
 ## 使侦听器联机
 
-[AZURE.INCLUDE [Bring-Listener-Online](../includes/virtual-machines-ag-listener-bring-online.md)]
+[AZURE.INCLUDE [Bring-Listener-Online](../../includes/virtual-machines-ag-listener-bring-online.md)]
 
 ## 后续操作项
 
-[AZURE.INCLUDE [Follow-up](../includes/virtual-machines-ag-listener-follow-up.md)]
+[AZURE.INCLUDE [Follow-up](../../includes/virtual-machines-ag-listener-follow-up.md)]
 
 ## 测试可用性组侦听器（在同一 VNet 中）
 
-[AZURE.INCLUDE [Test-Listener-Within-VNET](../includes/virtual-machines-ag-listener-test.md)]
+[AZURE.INCLUDE [Test-Listener-Within-VNET](../../includes/virtual-machines-ag-listener-test.md)]
 
 ## 后续步骤
 
-[AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
+[AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
 <!---HONumber=Mooncake_1221_2015-->

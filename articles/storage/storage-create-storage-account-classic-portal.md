@@ -15,7 +15,7 @@
 
 # 关于 Azure 存储帐户
 <!--
-[AZURE.INCLUDE [storage-selector-portal-create-storage-account](../includes/storage-selector-portal-create-storage-account.md)]-->
+[AZURE.INCLUDE [storage-selector-portal-create-storage-account](../../includes/storage-selector-portal-create-storage-account.md)]-->
 
 ## 概述
 

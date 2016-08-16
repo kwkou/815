@@ -15,8 +15,8 @@
 
 # 关于虚拟机的映像
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-about-images](../includes/virtual-machines-common-classic-about-images.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-about-images](../../includes/virtual-machines-common-classic-about-images.md)]
 
 <!---HONumber=79-->

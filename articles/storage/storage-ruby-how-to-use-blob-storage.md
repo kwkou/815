@@ -15,7 +15,7 @@
 
 # 如何通过 Ruby 使用 Blob 存储
 
-[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
 
@@ -23,9 +23,9 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 本指南将演示如何使用 Blob 存储执行常见方案。相关示例是使用 Ruby API 编写的。涉及的任务包括“上载”、“列出”、“下载”和“删除”Blob。
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 Ruby 应用程序
 
@@ -73,7 +73,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 ## 创建容器
 
-[AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
+[AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
 使用 **Azure::Blob::BlobService** 对象可以对容器和 Blob 进行操作。若要创建容器，请使用 **create_container()** 方法。
 

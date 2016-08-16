@@ -14,7 +14,7 @@
 
 # 启用存储度量值并查看度量值数据
 
-[AZURE.INCLUDE [storage-selector-portal-enable-and-view-metrics](../includes/storage-selector-portal-enable-and-view-metrics.md)]
+[AZURE.INCLUDE [storage-selector-portal-enable-and-view-metrics](../../includes/storage-selector-portal-enable-and-view-metrics.md)]
 
 ## 概述
 

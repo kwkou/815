@@ -16,7 +16,7 @@
 # 开始使用 Azure 经典管理门户按需传送内容
 
 
-[AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
+[AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
 本教程将引导你完成使用 Azure 经典管理门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。

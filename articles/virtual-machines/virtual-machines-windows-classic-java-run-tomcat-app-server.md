@@ -15,7 +15,7 @@
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 通过 Azure，你可使用虚拟机提供服务器功能。例如，在 Azure 上运行的虚拟机可配置为托管 Java 应用程序服务器，如 Apache Tomcat。完成本指南之后，你将会了解如何创建在 Azure 上运行的虚拟机并将其配置为运行 Java 应用程序服务器。
 
@@ -31,7 +31,7 @@
 
 ![运行 Apache Tomcat 的虚拟机][virtual_machine_tomcat]
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## 创建虚拟机
 

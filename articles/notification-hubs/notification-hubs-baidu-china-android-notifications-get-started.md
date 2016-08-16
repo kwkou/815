@@ -14,7 +14,7 @@
 
 # 通过百度开始使用通知中心
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
 ##概述
 

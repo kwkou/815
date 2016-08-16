@@ -14,7 +14,7 @@
 
 #  在移动服务中使用脱机数据同步
 
-[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 
 
@@ -156,7 +156,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 ## 摘要
 
-[AZURE.INCLUDE [mobile-services-offline-summary-csharp](../includes/mobile-services-offline-summary-csharp.md)]
+[AZURE.INCLUDE [mobile-services-offline-summary-csharp](../../includes/mobile-services-offline-summary-csharp.md)]
 
 
 <!-- Anchors. -->

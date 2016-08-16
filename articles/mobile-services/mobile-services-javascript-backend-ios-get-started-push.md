@@ -14,18 +14,18 @@
 
 #  向 iOS 应用程序和 JavaScript 后端添加推送通知
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-ios-get-started/)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
 
 > [AZURE.NOTE][IOS 模拟器不支持推送通知](https://developer.apple.com/zh-cn/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html)，因此你必须使用物理 iOS 设备。你还需要付费注册 [Apple 开发人员计划成员身份](https://developer.apple.com/programs/ios/)。
 
-[AZURE.INCLUDE [启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [启用 Apple 推送通知](../../includes/enable-apple-push-notifications.md)]
 
 
 ##  <a id="configure"></a>配置 Azure 以发送推送通知
 
-[AZURE.INCLUDE [在 Azure 移动服务中配置推送通知](../includes/mobile-services-apns-configure-push.md)]
+[AZURE.INCLUDE [在 Azure 移动服务中配置推送通知](../../includes/mobile-services-apns-configure-push.md)]
 
 ##  <a id="update-scripts"></a>更新后端脚本以发送推送通知
 
@@ -50,9 +50,9 @@
         }
 	```
 
-[AZURE.INCLUDE [向应用程序添加推送通知](../includes/add-push-notifications-to-app.md)]
+[AZURE.INCLUDE [向应用程序添加推送通知](../../includes/add-push-notifications-to-app.md)]
 
-[AZURE.INCLUDE [在应用程序中测试推送通知](../includes/test-push-notifications-in-app.md)]
+[AZURE.INCLUDE [在应用程序中测试推送通知](../../includes/test-push-notifications-in-app.md)]
 
 
 <!-- Anchors. -->

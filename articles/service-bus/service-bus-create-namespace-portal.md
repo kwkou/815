@@ -20,7 +20,7 @@
 2.	[ARM 模板][create-namespace-using-arm]
 
 ##在 Azure 门户中创建命名空间
-[AZURE.INCLUDE [service-bus-create-namespace-portal](../includes/service-bus-create-namespace-portal.md)]
+[AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 祝贺你！ 现已创建一个服务总线命名空间。
 

@@ -31,7 +31,7 @@
 
 有关缩放编码单位的详细信息，请参阅以下**门户**和 **.NET** 主题。
 
-[AZURE.INCLUDE [media-services-selector-scale-encoding-units](../includes/media-services-selector-scale-encoding-units.md)]
+[AZURE.INCLUDE [media-services-selector-scale-encoding-units](../../includes/media-services-selector-scale-encoding-units.md)]
 
 请注意，编码和索引任务的保留单位相同。
 

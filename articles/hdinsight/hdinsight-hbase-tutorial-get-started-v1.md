@@ -24,7 +24,7 @@
 
 **先决条件**
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 在开始阅读本 HBase 教程前，你必须具有：
 
@@ -33,7 +33,7 @@
 
 ##<a name="create-hbase-cluster"></a> 设置 HBase 群集
 
-[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
+[AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
 **通过使用 Azure 经典管理门户设置 HBase 群集**
 
@@ -315,7 +315,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 ## 删除集群
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 后续步骤
 在针对 HDInsight 的本 HBase 教程中，你已学习如何设置 HBase 群集，如何创建表，以及如何从 HBase shell 查看这些表中的数据。你还学习了如何对 HBase 表中的数据使用 Hive 查询，以及如何使用 HBase C# REST API 创建 HBase 表并从该表中检索数据。

@@ -52,25 +52,25 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 
 你可以在以下部分中检查资源的各个属性。
 
-[AZURE.INCLUDE [virtual-networks-nrp-pip-include](../includes/virtual-networks-nrp-pip-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-pip-include](../../includes/virtual-networks-nrp-pip-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-nic-include](../includes/virtual-networks-nrp-nic-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-nic-include](../../includes/virtual-networks-nrp-nic-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../includes/virtual-networks-nrp-nsg-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../../includes/virtual-networks-nrp-nsg-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-udr-include](../includes/virtual-networks-nrp-udr-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-udr-include](../../includes/virtual-networks-nrp-udr-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../includes/virtual-networks-nrp-vnet-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../../includes/virtual-networks-nrp-vnet-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-dns-include](../includes/virtual-networks-nrp-dns-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-dns-include](../../includes/virtual-networks-nrp-dns-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../includes/virtual-networks-nrp-lb-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../../includes/virtual-networks-nrp-lb-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../includes/virtual-networks-nrp-appgw-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../../includes/virtual-networks-nrp-appgw-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../includes/virtual-networks-nrp-vpn-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../../includes/virtual-networks-nrp-vpn-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-tm-include](../includes/virtual-networks-nrp-tm-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-tm-include](../../includes/virtual-networks-nrp-tm-include.md)]
 
 ## 管理界面
 可以使用不同界面来管理你的 Azure 网络资源。在本文档中，我们将针对这些界面重点介绍其中两种：REST API 和模板。

@@ -13,7 +13,7 @@
 	wacn.date="07/11/2016"/>
 
 # 使用 PowerShell 对 VM 实现外部访问
-[AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../includes/virtual-machines-common-nsg-quickstart.md)]
+[AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 ## 快速命令
 若要创建网络安全组和 ACL 规则，你需要 [ 安装最新版本的 Azure PowerShell](/documentation/articles/powershell-install-configure/)。你也可以 [ 使用 Azure 门户预览执行这些步骤](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。

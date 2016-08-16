@@ -15,7 +15,7 @@
 
 # 网络基础结构准则
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)]
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)]
 
 本文着重于了解 Azure 内虚拟网络的必要计划步骤，以及现有本地环境之间的连接性。
 
@@ -101,6 +101,6 @@
 
 ## <a name="next-steps"></a> 后续步骤
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

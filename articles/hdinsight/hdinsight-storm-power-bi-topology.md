@@ -148,7 +148,7 @@ Power BI 允许你以可视方式将数据显示为报表。使用适用于 Stor
 
 ## 删除群集
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 后续步骤
 

@@ -16,7 +16,7 @@
 # 使用 .NET SDK 开始传送点播内容
 
 
-[AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
+[AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
 >[AZURE.NOTE]

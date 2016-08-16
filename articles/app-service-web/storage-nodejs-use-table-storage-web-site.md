@@ -43,7 +43,7 @@
 * [Git]
 
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## 创建存储帐户
 

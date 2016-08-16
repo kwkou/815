@@ -36,7 +36,7 @@ HTTP 第 7 层负载平衡适合用于：
 - 希望 Web 服务器场不产生 SSL 终端开销的应用程序。
 - 要求长时间运行的同一 TCP 连接上多个 HTTP 请求路由到或负载平衡到不同后端服务器的应用程序（例如内容传送网络）。
 
-[AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../includes/load-balancer-compare-tm-ag-lb-include.md)]
+[AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../../includes/load-balancer-compare-tm-ag-lb-include.md)]
 
 ## 网关大小和实例
 

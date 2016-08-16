@@ -15,6 +15,6 @@
 
 #在 Azure 中启用 Web 应用的 HTTPS
 
-[AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]
+[AZURE.INCLUDE [configure-ssl-web-site](../../includes/configure-ssl-web-site.md)]
 
 <!---HONumber=Mooncake_1207_2015-->

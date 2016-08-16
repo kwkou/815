@@ -18,7 +18,7 @@
 
 本主题演示如何使用 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library</a> 将对象及其他数据结构序列化为流，以便将它们持久保存到内存、数据库或文件中，同时还演示如何对这些流进行反序列化以恢复原始对象。
 
-[AZURE.INCLUDE [仅适用于 Windows](../includes/hdinsight-windows-only.md)]
+[AZURE.INCLUDE [仅适用于 Windows](../../includes/hdinsight-windows-only.md)]
 
 ##<a name="apacheAvro"></a>Apache Avro
 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library</a> 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 <a href="http://www.json.org" target="_blank">JSON</a> 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 <a href="http://avro.apache.org/docs/current/spec.html" target="_blank">Apache Avro 规范</a>中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。

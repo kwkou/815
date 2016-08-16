@@ -14,7 +14,7 @@
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
-[AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
+[AZURE.INCLUDE [mobile-services-selector-adal-sso](../../includes/mobile-services-selector-adal-sso.md)]
 
 ##概述
 
@@ -37,11 +37,11 @@
 * Azure 移动服务 SDK
 * [适用于 iOS 的 Active Directory 身份验证库]
 
-[AZURE.INCLUDE [mobile-services-dotnet-adal-register-client](../includes/mobile-services-dotnet-adal-register-client.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-adal-register-client](../../includes/mobile-services-dotnet-adal-register-client.md)]
 
 ##将移动服务配置为要求身份验证
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
+[AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
 ##向客户端应用程序添加身份验证代码
 

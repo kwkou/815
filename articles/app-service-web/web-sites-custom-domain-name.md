@@ -25,7 +25,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/) 上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
 
-[AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
+[AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
 
 ##<a name="overview"></a> 概述
 
@@ -41,7 +41,7 @@
 - 映射子域。例如 **blogs.contoso.com**。可以将不同的子域映射到不同的 Web 应用。
 - 映射通配符。例如 ***.contoso.com**。通配符条目会应用到域的所有子域。
 
-[AZURE.INCLUDE [模式](../includes/custom-dns-web-site-modes.md)]
+[AZURE.INCLUDE [模式](../../includes/custom-dns-web-site-modes.md)]
 
 
 ##<a name="dns-record-types"></a> DNS 记录类型
@@ -116,7 +116,7 @@
 
 ##<a name="enable-the-domain-name-on-your-web-app"></a> 在 Web 应用上启用域名
 
-[AZURE.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-web-site.md)]
+[AZURE.INCLUDE [模式](../../includes/custom-dns-web-site-enable-on-web-site.md)]
 
 
 <!-- Anchors. -->

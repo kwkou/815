@@ -16,6 +16,6 @@
 
 # 故障排除：无法启用、访问或连接到运行于 Azure 虚拟机的应用程序
 
-[AZURE.INCLUDE [virtual-machines-common-troubleshoot-app-connection](../includes/virtual-machines-common-troubleshoot-app-connection.md)]
+[AZURE.INCLUDE [virtual-machines-common-troubleshoot-app-connection](../../includes/virtual-machines-common-troubleshoot-app-connection.md)]
 
 <!---HONumber=Mooncake_0801_2016-->

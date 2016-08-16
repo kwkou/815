@@ -15,8 +15,8 @@
 
 # 使用 Visual Studio 创建用于Web 应用程序的虚拟机
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-web-app-visual-studio](../includes/virtual-machines-common-classic-web-app-visual-studio.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-web-app-visual-studio](../../includes/virtual-machines-common-classic-web-app-visual-studio.md)]
 
 <!---HONumber=Mooncake_0215_2016-->

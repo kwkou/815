@@ -15,6 +15,6 @@
 
 
 
-[AZURE.INCLUDE [virtual-machines-common-classic-manage-visual-studio](../includes/virtual-machines-common-classic-manage-visual-studio.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-manage-visual-studio](../../includes/virtual-machines-common-classic-manage-visual-studio.md)]
 
 <!---HONumber=Mooncake_0503_2016-->

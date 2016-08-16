@@ -14,10 +14,10 @@
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
 ##概述
 
@@ -39,7 +39,7 @@
 
 ##  <a name="create-new-service"></a>创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
 
 ## 创建 TodoItems 表
 
@@ -705,7 +705,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 有关 Sencha Touch 入门的详细信息，请访问整套[指南](http://docs.sencha.com/touch/#!/guide)
 
 
-[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- images -->
 

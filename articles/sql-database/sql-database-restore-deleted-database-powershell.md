@@ -17,7 +17,7 @@
 
 
 
-[AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
+[AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 
 ## 将已删除的数据库还原到独立数据库

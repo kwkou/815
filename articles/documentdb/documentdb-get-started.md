@@ -51,7 +51,7 @@
 
 让我们创建一个 DocumentDB 帐户。如果已经有一个想要使用的帐户，可以跳到[设置 Visual Studio 解决方案](#SetupVS)。
 
-[AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
+[AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
 ##<a id="SetupVS"></a>第 2 步：设置 Visual Studio 解决方案
 

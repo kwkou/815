@@ -14,13 +14,13 @@
 
 # 如何使用 Service Bus 队列
 
-[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
 本文介绍了如何使用服务总线队列。相关示例采用 C# 编写且使用 .NET API。涉及的方案包括创建队列以及发送和接收消息。有关队列的详细信息，请参阅[后续步骤](#next-steps)部分。
 
-[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-[AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
+[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 ## 添加服务总线 NuGet 包
 

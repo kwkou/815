@@ -16,7 +16,7 @@
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 
 在本教程中，你将学习如何在 HDInsight 上使用 Hadoop 中的 Apache Hive，以及选择如何运行 Hive 作业。此外，你还将了解 HiveQL 以及如何分析一个示例 Apache log4j 文件。

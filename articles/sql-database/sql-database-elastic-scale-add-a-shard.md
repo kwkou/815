@@ -72,7 +72,7 @@
 **重要说明**：仅当你确定所更新映射的范围为空时，才使用此方法。上述方法不会在数据中检查要移动的范围，因此最好在代码中包含检查操作。如果要移动的范围中存在行，则实际数据分发将不匹配更新的分片映射。在这种情况下，请改用[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)来执行操作。
 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
 <!---HONumber=Mooncake_0711_2016-->

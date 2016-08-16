@@ -14,7 +14,7 @@
 
 # 与 Azure Active Directory 集成
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
 Azure Active Directory 为组织的云应用程序提供企业级标识管理。Azure AD 集成可以简化用户登录体验，并帮助你的应用程序符合 IT 策略。
 

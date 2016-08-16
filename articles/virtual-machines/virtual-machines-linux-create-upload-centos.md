@@ -19,7 +19,7 @@
 - [为 Azure 准备 CentOS 6.x 虚拟机](#centos-6.x)
 - [为 Azure 准备 CentOS 7.0+ 虚拟机](#centos-7.0+)
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ##先决条件##
 

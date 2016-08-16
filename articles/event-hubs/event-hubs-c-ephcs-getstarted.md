@@ -14,7 +14,7 @@
 
 # 事件中心入门
 
-[AZURE.INCLUDE [service-bus-selector-get-started](../includes/service-bus-selector-get-started.md)]
+[AZURE.INCLUDE [service-bus-selector-get-started](../../includes/service-bus-selector-get-started.md)]
 
 ## 介绍
 
@@ -32,11 +32,11 @@
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial" target="_blank">Azure 试用</a>。
 
-[AZURE.INCLUDE [event-hubs-create-event-hub](../includes/event-hubs-create-event-hub.md)]
+[AZURE.INCLUDE [event-hubs-create-event-hub](../../includes/event-hubs-create-event-hub.md)]
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-c](../includes/service-bus-event-hubs-get-started-send-c.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-c](../../includes/service-bus-event-hubs-get-started-send-c.md)]
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
 
 ## 运行应用程序
 

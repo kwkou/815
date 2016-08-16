@@ -17,13 +17,13 @@
 
 #在 Resource Manager 中使用模板创建用户定义的路由 (UDR)
 
-[AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../includes/virtual-network-create-udr-arm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../../includes/virtual-network-create-udr-arm-selectors-include.md)]
 
-[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../../includes/virtual-network-create-udr-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。
 
-[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]
 
 ## 模板文件中的 UDR 资源
 
@@ -108,7 +108,7 @@
 
 若要使用 PowerShell 部署下载的 ARM 模板，请执行以下步骤。
 
-[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+[AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
 1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 

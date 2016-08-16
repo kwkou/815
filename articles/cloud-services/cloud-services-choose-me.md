@@ -15,7 +15,7 @@
 
 Azure 云服务是适合你的选择吗？ Azure 提供了用于运行应用程序的不同托管模型。每种模型提供一组不同服务，而你选择哪种模型完全取决于你要做什么。
 
-[AZURE.INCLUDE [compute-table](../includes/compute-options-table.md)]
+[AZURE.INCLUDE [compute-table](../../includes/compute-options-table.md)]
 
 <a name="tellmecs"></a>
 ## 告诉我有关云服务的信息

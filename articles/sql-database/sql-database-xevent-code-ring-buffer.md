@@ -17,7 +17,7 @@
 
 # SQL 数据库中扩展事件的环形缓冲区目标代码
 
-[AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../includes/sql-database-xevents-selectors-1-include.md)]
+[AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
 
 你需要完整的代码示例以最简单快速的方式在测试期间捕获和报告扩展事件的信息。扩展事件数据最简单的目标是[环形缓冲区目标](http://msdn.microsoft.com/zh-cn/library/ff878182.aspx)。
 

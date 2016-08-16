@@ -15,7 +15,7 @@
 
 #  使用移动服务中的脱机数据处理冲突
 
-[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
 
 本主题演示在使用 Azure 移动服务的脱机功能时如何同步数据和处理冲突。本教程基于[脱机数据入门]教程编写。
 

@@ -59,7 +59,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 
 - **配备 Azure PowerShell 的工作站**。
 
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 - **一个 HDInsight 群集**。有关创建 HDInsight 群集的信息，请参阅[创建 HDInsight 群集][hdinsight-provision]或 [HDInsight 入门][hdinsight-get-started]。你将需要以下数据才能完成本教程：
 

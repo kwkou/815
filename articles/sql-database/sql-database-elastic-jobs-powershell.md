@@ -668,7 +668,7 @@
 	-ContentName $dacpacName -TargetId $target.TargetId
 	Write-Output $job 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-powershell/cmd-prompt.png

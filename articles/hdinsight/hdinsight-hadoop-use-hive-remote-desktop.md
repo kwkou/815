@@ -15,7 +15,7 @@
 
 # 通过远程桌面将 Hive 与 HDInsight 上的 Hadoop 配合使用
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 在本文中，你将学习如何通过使用远程桌面连接到 HDInsight 群集，然后通过使用 Hive 命令行界面 (CLI) 运行 Hive 查询。
 

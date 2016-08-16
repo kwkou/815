@@ -16,7 +16,7 @@
 
 发行的 Azure PowerShell 版本 1.1.0 中添加了新的 cmdlet，可让用户将现有的或新的 SSL 证书绑定到现有的 Web 应用。
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 若要了解如何使用基于 Azure Resource Manager 的 Azure PowerShell cmdlet 来管理 Web Apps，请查看[适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
 

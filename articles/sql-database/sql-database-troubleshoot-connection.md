@@ -13,7 +13,7 @@
 	wacn.date="07/21/2016"/>
 
 # 排查“&lt;x&gt;服务器上的&lt;y&gt;数据库当前不可用。请稍后重试连接”错误
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 当应用程序连接到 Azure SQL 数据库时，你将收到以下错误消息：
 

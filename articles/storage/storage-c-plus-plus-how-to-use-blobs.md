@@ -14,15 +14,15 @@
 
 # 如何通过 C++ 使用 Blob 存储  
 
-[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
+[AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
 本指南将演示如何使用 Azure Blob 存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储空间客户端库](http://github.com/Azure/azure-storage-cpp/blob/master/README.md)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。
 
 >[AZURE.NOTE] 本指南主要面向适用于 C++ 的 Azure 存储空间客户端库 1.0.0 版及更高版本。建议的版本是存储空间客户端库 2.2.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/Azure/azure-storage-cpp) 获得。
 
-[AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
-[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
+[AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
+[AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 C++ 应用程序
 在本指南中，你将使用存储功能，这些功能可以在 C++ 应用程序中运行。
@@ -70,7 +70,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：创建容器
 
-[AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
+[AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
 此示例演示如何创建一个容器（如果该容器不存在）：
 

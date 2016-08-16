@@ -20,7 +20,7 @@
 
 本文将向你说明如何使用 PowerShell 将数据库从 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)还原到以前的时间点。
 
-[AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
+[AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 ## 将数据库还原到作为独立数据库的某个时间点
 

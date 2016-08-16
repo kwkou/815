@@ -34,7 +34,7 @@
 - [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
 - 一个有效的 Azure 订阅
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 <a id="virtualmachine"></a>
 ## 创建虚拟机和安装 MongoDB ##

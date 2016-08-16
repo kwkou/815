@@ -16,7 +16,7 @@
 
 本文将讨论部署问题的一些常见原因，并提供故障排除技巧以帮助你解决这些问题。当角色实例无法启动，或者在“正在初始化”、“忙”和“正在停止”状态之间循环时，则指示应用程序存在问题。
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 缺少运行时依赖项
 

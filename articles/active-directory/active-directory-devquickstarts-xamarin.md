@@ -15,9 +15,9 @@
 
 # 将 Azure AD 集成到 Xamarin 应用程序中
 
-[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../includes/active-directory-devquickstarts-switcher.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-switcher](../../includes/active-directory-devquickstarts-switcher.md)]
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
+[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
 Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备和电脑）上运行的移动应用。如果你要使用 Xamarin 生成应用程序，Azure AD 可让你简单直接地使用用户的 Active Directory 帐户对其进行身份验证。它还可以让应用程序安全地使用 Azure AD 保护的任何 Web API，例如 Office 365 API 或 Azure API。
 
@@ -173,7 +173,7 @@ C#
 
 [使用 Azure AD 保护 .NET Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet/)
 
-[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../includes/active-directory-devquickstarts-additional-resources.md)]
+[AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
  
 <!---HONumber=Mooncake_0718_2016-->

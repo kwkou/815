@@ -46,7 +46,7 @@
 
 	若要执行 PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅 [使用 Set-ExecutionPolicy cmdlet][2]。
 
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 - **已配置 VPN 连接和 DNS 的两个 Azure 虚拟网络**。有关说明，请参阅[在两个 Azure 虚拟网络之间配置 VPN 连接][hdinsight-hbase-replication-vnet]和[在两个 Azure 虚拟网络之间配置 DNS][hdinsight-hbase-replication-dns]。
 

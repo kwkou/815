@@ -16,7 +16,7 @@
 
 以下是一些与无法启动的 Azure 云服务角色相关的常见问题和解决方案。
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 缺少 DLL 或依赖项
 

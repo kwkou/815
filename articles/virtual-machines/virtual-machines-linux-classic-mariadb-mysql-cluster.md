@@ -15,7 +15,7 @@
 
 # MariaDB (MySQL) 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 体系结构概述
 

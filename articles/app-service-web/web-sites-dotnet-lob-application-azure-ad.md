@@ -32,7 +32,7 @@
 
 ##<a name="bkmk_need"></a> 所需的项目 ##
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 若要完成本教程，你需要以下项目：
 

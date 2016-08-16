@@ -156,6 +156,6 @@
 
 
 ## RBAC 主题
-[AZURE.INCLUDE [role-based-access-control-toc.md](../includes/role-based-access-control-toc.md)]
+[AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
 
 <!---HONumber=Mooncake_0627_2016-->

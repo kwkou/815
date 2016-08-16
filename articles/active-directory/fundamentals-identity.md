@@ -14,6 +14,6 @@
 
 
 # Azure 标识管理基础知识
-[AZURE.INCLUDE [identity](../includes/identity.md)]
+[AZURE.INCLUDE [identity](../../includes/identity.md)]
 
 <!---HONumber=Mooncake_0613_2016-->

@@ -31,14 +31,14 @@
 
 为开发环境选择“.NET”或“REST API”。
 
-[AZURE.INCLUDE [media-services-selector-setup](../includes/media-services-selector-setup.md)]
+[AZURE.INCLUDE [media-services-selector-setup](../../includes/media-services-selector-setup.md)]
 
 <a id="connect"></a>
 ## 以编程方式连接
 
 选择“.NET”或“REST API”以编程方式连接到 Azure 媒体服务。
 
-[AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
+[AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
 
 
 <!---HONumber=Mooncake_0620_2016-->

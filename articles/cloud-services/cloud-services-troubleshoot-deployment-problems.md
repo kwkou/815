@@ -23,7 +23,7 @@
 
 > [AZURE.NOTE] 你可以通过单击“属性”窗格右上角的图标将该窗格的内容复制到剪贴板。
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 问题：我无法访问我的网站，但我的部署已启动且所有角色实例均已就绪
 
