@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="事件中心概述 | Azure"
-   description="Azure 事件中心的简介和概述。"
-   services="event-hubs"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="" />
+    pageTitle="Azure 事件中心概述 | Azure"
+    description="Azure 事件中心的简介和概述。"
+    services="event-hubs"
+    documentationCenter="na"
+    authors="sethmanheim"
+    manager="timlt"
+    editor="" />
 <tags 
-   ms.service="event-hubs"
+    ms.service="event-hubs"
     ms.date="04/15/2016"
-   wacn.date="05/23/2016" />
+    wacn.date="08/15/2016" />
 
 # Azure 事件中心概述
 
-许多新型解决方案旨在通过连续反馈和自动遥测提供自适应客户体验或改善产品。此类解决方案面临着这样的挑战：如何安全可靠地从多个并发发布服务器引入极大量的信息。Azure 事件中心是一个托管平台服务，为各种方案中的大规模数据引入提供基础。这种方案的示例包括移动应用中的行为跟踪、从 Web 场中采集流量信息、控制台游戏中的游戏内事件捕获，或者从工业机器或互联汽车中收集遥测数据。事件中心在解决方案体系结构中所扮演的常见角色是充当事件管道的“前门”，通常称为*事件引入器*。事件引入器是位于事件生成者与事件使用者之间的组件或服务，可以将事件流的生成与这些事件的使用分离开来。
+许多新型解决方案旨在通过连续反馈和自动遥测提供自适应客户体验或改善产品。此类解决方案面临着这样的挑战：如何安全可靠地从多个并发发布服务器引入极大量的信息。Azure 事件中心是一个托管平台服务，为各种方案中的大规模数据引入提供基础。这种方案的示例包括移动应用中的行为跟踪、从 Web 场中采集流量信息、控制台游戏中的游戏内事件捕获，或者从工业机器或互联汽车中收集遥测数据。事件中心在解决方案体系结构中所扮演的常见角色是充当事件管道的“前门”，通常称为*事件引入器*。事件引入器是位于事件发布者与事件使用者之间的组件或服务，可以将事件流的生成与这些事件的使用分离开来。
 
 ![事件中心](./media/event-hubs-overview/IC759856.png)
 
@@ -39,7 +39,7 @@ Azure 事件中心是一种事件处理服务，用于向云提供大规模的�
 
 分区数在创建事件中心时指定，它必须介于 2 和 32 之间（默认值为 4）。分区是一种数据组织机制，主要与消费应用程序中所需的下游并行度而不是事件中心吞吐量相关。因此，事件中心内分区数的选择与你预期获得的并发读取者数目直接相关。创建事件中心后，分区计数不可更改，因此你应该从长远预期并行度考虑此数字。可以通过联系服务总线团队来增加 32 个分区这一限制。
 
-尽管分区是可识别的并且可以直接向其发送数据，但通常最好不要向特定分区发送数据，而可以使用“[事件发布者](#event-publisher)”和“[发布者策略](#capacity-and-security)”部分中介绍的更高级构造。
+尽管分区是可识别的并且可以直接向其发送数据，但通常最好不要向特定分区发送数据，而可以使用“事件发布者”和“发布者策略”部分中介绍的更高级构造[](#event-publisher)[](#capacity-and-security)。
 
 事件数据在事件中心上下文中，消息称为事件数据。事件数据包含事件的正文、用户定义的属性包和有关事件的各种元数据，例如，它在分区中的偏移量，以及它在流序列中的编号。分区中填充了事件数据的序列。
 
@@ -159,8 +159,9 @@ Azure 事件中心提供缩放性超高的事件与遥测处理服务，可用�
 - 使用服务总线队列的[队列消息解决方案]。
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
-[事件中心教程]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started/
+[事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [使用事件中心的完整示例应用程序]: https://github.com/Azure-Samples/
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
+[队列消息解决方案]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/
  
-<!---HONumber=Mooncake_0321_2016-->
+
+<!---HONumber=Mooncake_0808_2016-->

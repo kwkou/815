@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="事件中心编程指南 | Azure"
-   description="介绍如何使用 Azure.NET SDK 进行 Azure 事件中心编程。"
+    pageTitle="Azure 事件中心编程指南 | Azure"
+    description="介绍如何使用 Azure.NET SDK 进行 Azure 事件中心编程。"
     services="event-hubs"
     documentationCenter="na"
     authors="sethmanheim"
@@ -9,7 +9,7 @@
 <tags 
     ms.service="event-hubs"
     ms.date="04/15/2016"
-   wacn.date="05/23/2016" />
+    wacn.date="08/15/2016" />
 
 # 事件中心编程指南
 
@@ -181,4 +181,4 @@ while(receive)
 - [事件中心代码示例](https://code.msdn.microsoft.com/site/search?query=event%20hub&f%5B0%5D.Value=event%20hub&f%5B0%5D.Type=SearchText&ac=5)
 - [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0808_2016-->
