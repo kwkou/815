@@ -11,9 +11,15 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.date="05/18/2016"
-   wacn.date="07/25/2016"/>
+   wacn.date="08/15/2016"/>
 
 # 保护 SQL 数据仓库中的数据库
+
+> [AZURE.SELECTOR]
+- [安全性概述](/documentation/articles/sql-data-warehouse-overview-manage-security/)
+- [加密（门户）](/documentation/articles/sql-data-warehouse-encryption-tde/)
+- [加密 (T-SQL)](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
+
 
 本文逐步讲述有关保护 Azure SQL 数据仓库数据库的基本知识。具体而言，本文将帮助你了解如何使用相应的资源，在数据库中限制访问、保护数据和监视活动。
 
@@ -21,7 +27,7 @@
 
 连接安全性是指如何使用防火墙规则和连接加密来限制和保护数据库连接。
 
-服务器和数据库使用防火墙规则来拒绝源自未明确列入白名单的 IP 地址的连接企图。若要从应用程序或客户端计算机的公共 IP 地址进行连接，必须先使用 Azure 经典管理门户、REST API 或 PowerShell 创建服务器级防火墙规则。作为最佳实践，应该尽量通过服务器防火墙来限制允许的 IP 地址范围。若要从你的本地计算机访问 Azure SQL 数据仓库，请确保你的网络和本地计算机上的防火墙允许在 TCP 端口 1433 上的传出通信。有关详细信息，请参阅 [Azure SQL 数据库防火墙][]。
+服务器和数据库使用防火墙规则来拒绝源自未明确列入允许列表的 IP 地址的连接企图。若要从应用程序或客户端计算机的公共 IP 地址进行连接，必须先使用 Azure 经典管理门户、REST API 或 PowerShell 创建服务器级防火墙规则。作为最佳实践，应该尽量通过服务器防火墙来限制允许的 IP 地址范围。若要从你的本地计算机访问 Azure SQL 数据仓库，请确保你的网络和本地计算机上的防火墙允许在 TCP 端口 1433 上的传出通信。有关详细信息，请参阅 [Azure SQL 数据库防火墙][]。
 
 连接到 SQL 数据仓库时，可以在连接字符串中设置加密模式，以便对连接进行加密。为连接启用加密时，其语法因协议而异。导航到 Azure 经典管理门户中的数据库即可设置连接字符串。在“概要”下面，单击“显示数据库连接字符串”。
 
@@ -40,7 +46,7 @@
 	-- Connect to master database and create a login
 	CREATE LOGIN ApplicationLogin WITH PASSWORD = 'strong_password';
 
-然后，使用服务器管理员登录名连接到 **SQL 数据仓库数据库**，并基于刚刚创建的服务器登录名创建数据库用户。
+然后，使用服务器管理员登录名连接到“SQL 数据仓库数据库”，并基于刚刚创建的服务器登录名创建数据库用户。
 
 
     -- Connect to SQL DW database and create a database user
@@ -103,4 +109,4 @@ Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密
 <!--Other Web references-->
 [[Azure 门户中基于角色的访问控制]: /documentation/articles/role-based-access-control-configure/
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -16,7 +16,10 @@
 
 以下文章包含有关 SQL 数据仓库的参考信息。
 
-[Transact-SQL 语言元素][] [Transact-SQL 语句][] [Transact-SQL 系统视图][] [PowerShell cmdlet][]
+[Transact-SQL 语言元素][]
+[Transact-SQL 语句][]
+[Transact-SQL 系统视图][]
+[PowerShell cmdlets][]
 
 
 
@@ -35,4 +38,4 @@
 
 <!--MSDN references-->
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0808_2016-->

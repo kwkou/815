@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.date="05/06/2016"
-   wacn.date="06/13/2016"/>
+   wacn.date="08/15/2016"/>
 
 # 管理 Azure SQL 数据仓库中的计算能力 (T-SQL)
 
@@ -30,6 +30,8 @@
 
 若要暂停或恢复某个数据库，请在本文顶部选择其他平台选项之一。
 
+若要了解相关信息，请参阅[管理计算能力概述][]。
+
 <a name="current-dwu-bk"></a>
 
 ## 查看当前的 DWU 设置
@@ -38,17 +40,17 @@
 
 1. 在 Visual Studio 2015 中打开“SQL Server 对象资源管理器”。
 2. 连接到与逻辑 SQL 数据库服务器关联的 master 数据库。
-2. 从 sys.database\_service\_objectives 动态管理视图中选择。下面是一个示例： 
+2. 从 sys.database\_service\_objectives 动态管理视图中选择。下面是一个示例：
 
-```
-SELECT
- db.name [Database],
- ds.edition [Edition],
- ds.service_objective [Service Objective]
-FROM
- sys.database_service_objectives ds
- JOIN sys.databases db ON ds.database_id = db.database_id
-```
+
+	SELECT
+	 db.name [Database],
+	 ds.edition [Edition],
+	 ds.service_objective [Service Objective]
+	FROM
+	 sys.database_service_objectives ds
+	 JOIN sys.databases db ON ds.database_id = db.database_id
+
 
 <a name="scale-dwu-bk"></a>
 <a name="scale-compute-bk"></a>
@@ -61,13 +63,13 @@ FROM
 
 
 1. 连接到与逻辑 SQL 数据库服务器关联的 master 数据库。
-2. 使用 [ALTER DATABASE][] TSQL 语句。以下示例将数据库 MySQLDW 的服务级别目标设置为 DW1000。 
+2. 使用 [ALTER DATABASE][] TSQL 语句。以下示例将数据库 MySQLDW 的服务级别目标设置为 DW1000。
 
-```Sql
-ALTER DATABASE MySQLDW
-MODIFY (SERVICE_OBJECTIVE = 'DW1000')
-;
-```
+
+	ALTER DATABASE MySQLDW
+	MODIFY (SERVICE_OBJECTIVE = 'DW1000')
+	;
+
 
 <a name="next-steps-bk"></a>
 
@@ -89,6 +91,6 @@ MODIFY (SERVICE_OBJECTIVE = 'DW1000')
 
 <!--Other Web references-->
 
-[Azure portal]: http://manage.windowsazure.cn/
+[Azure portal]: http://portal.azure.cn/
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0808_2016-->
