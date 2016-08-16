@@ -335,9 +335,9 @@ text|实际文本
 
 
 
-
+<!--
 ##相关链接
 
-[Azure Media Services Analytics Overview（Azure 媒体服务分析概述）](/documentation/articles/media-services-analytics-overview/)
+[Azure Media Services Analytics Overview（Azure 媒体服务分析概述）](/documentation/articles/media-services-analytics-overview/)-->
 
 <!---HONumber=Mooncake_0808_2016-->
