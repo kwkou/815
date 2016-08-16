@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="事件中心 API 概述 | Azure"
-   description="汇总了一些重要的事件中心 .NET 客户端 API。"
-   services="event-hubs"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="" />
+    pageTitle="Azure 事件中心 API 概述 | Azure"
+    description="汇总了一些重要的事件中心 .NET 客户端 API。"
+    services="event-hubs"
+    documentationCenter="na"
+    authors="sethmanheim"
+    manager="timlt"
+    editor="" />
 <tags 
    ms.service="event-hubs"
-    ms.date="04/15/2016"
-   wacn.date="05/23/2016" />
+    ms.date="07/11/2016"
+   wacn.date="08/15/2016" />
 
 # 事件中心 API 概述
 
@@ -185,4 +185,4 @@ public class SimpleEventProcessor : IEventProcessor
 - [服务总线和事件中心 .NET API 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx)
 - [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0808_2016-->
