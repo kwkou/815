@@ -313,7 +313,7 @@
         $sudo chmod 755 /usr/local/zabbix/bin/mysql_innodb_status.sh
         $sudo chown zabbix:zabbix /usr/local/zabbix/bin/mysql_innodb_status.sh
 
-6.	可以去到 zabbix 官网 Zabbix 官网模板下载相应的 mysql 模板并依据相关的指导完成 mysql 模板的导入和设置。步骤7-9是用从 zabbix community 社区找到的 mysql 模板所做的相关测试。模板放置在链接下载此 mysql 模板，并关联到 mysql 主服务器。（注：此模板非官方提供，由社区贡献，如有顾虑，建议从官网下载 mysql 模板。）
+6.	可以去到 [zabbix 模板官网]( https://www.zabbix.org/wiki/Zabbix_Templates#Official_templates)下载相应的 mysql 模板并依据相关的指导完成 mysql 模板的导入和设置。步骤7-9是用从 zabbix community 社区找到的 mysql 模板所做的相关测试。模板放置在[链接](https://github.com/joey100/ZabbixTemplates)。下载此 mysql 模板，并关联到 mysql 主服务器。（注：此模板非官方提供，由社区贡献，如有顾虑，建议从官网下载 mysql 模板。）
 
 7.	导入 mysql 模板 ，关联到 mysq l主服务器。
 

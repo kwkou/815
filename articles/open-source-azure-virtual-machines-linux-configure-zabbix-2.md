@@ -131,7 +131,7 @@
 
         $sudo /etc/init.d/zabbix_agentd restart
         
-13.	可以去到 zabbix 官网 Zabbix 官网模板下载相应的 nginx 模板并依据相关的指导完成 nginx 模板的导入和设置。步骤14-19是用从 zabbix community 社区找到的 nginx 模板所做的相关测试。模板放置在链接下载此 nginx 模板 并关联到 nginx server。（注：此模板非官方提供，由社区贡献，如有顾虑，建议从官网下载 nginx 模板。）
+13.	可以去到 [zabbix 模板官网](https://www.zabbix.org/wiki/Zabbix_Templates#Official_templates)下载相应的 nginx 模板并依据相关的指导完成 nginx 模板的导入和设置。步骤14-19是用从 zabbix community 社区找到的 nginx 模板所做的相关测试。模板放置在[链接](https://github.com/joey100/ZabbixTemplates)。下载此 nginx 模板 并关联到 nginx server。（注：此模板非官方提供，由社区贡献，如有顾虑，建议从官网下载 nginx 模板。）
 
 14.	点击“Configuration” -- > “Templates” -- > “Import”
  
