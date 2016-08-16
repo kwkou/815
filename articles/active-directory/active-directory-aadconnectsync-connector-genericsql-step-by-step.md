@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="05/24/2016"
-   wacn.date="07/12/2016"/>
+   wacn.date="08/16/2016"/>
 
 # 通用 SQL 连接器分步说明
 本主题是一个分步指南。它将创建一个简单的示例 HR 数据库，并使用它导入一些用户及其组成员身份。
@@ -20,7 +20,7 @@
 
 ![对象模型](./media/active-directory-aadconnectsync-connector-genericsql-step-by-step/objectmodel.png)
 
-还会创建要用于连接到数据库的用户。在本演练中，用户名为 FABRIKAM\\SQLUser 并位于域中。
+还会创建要用于连接到数据库的用户。在本演练中，用户名为 FABRIKAM//SQLUser 并位于域中。
 
 ## 创建 ODBC 连接文件
 通用 SQL 连接器使用 ODBC 连接到远程服务器。首先，需要创建一个包含 ODBC 连接信息的文件。
