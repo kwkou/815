@@ -5,13 +5,13 @@
    services="azure-resource-manager,key-vault"
    documentationCenter="na"
    authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+   manager="timlt"
+   editor="tysonn"/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="05/16/2016"
-   wacn.date="06/20/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/15/2016"/>
 
 # 在部署期间传递安全值
 
@@ -21,13 +21,13 @@
 
 ## 部署密钥保管库和机密
 
-若要创建可从其他资源管理器模板引用的密钥保管库，必须将 **enabledForTemplateDeployment** 属性设置为 **true**，并且必须向相应的用户或服务主体授予访问权限，使其能够执行引用机密的部署。
+若要创建可从其他 Resource Manager 模板引用的密钥保管库，必须将 **enabledForTemplateDeployment** 属性设置为 **true**，并且必须向相应的用户或服务主体授予访问权限，使其能够执行引用机密的部署。
 
 若要了解如何部署密钥保管库和机密，请参阅[密钥保管库架构](/documentation/articles/resource-manager-template-keyvault/)和[密钥保管库机密架构](/documentation/articles/resource-manager-template-keyvault-secret/)。
 
-## 引用机密
+## 通过静态 ID 引用机密
 
-从用于将值传递到模板的参数文件内部引用机密。你可以通过传递密钥保管库的资源标识符和机密的名称来引用机密。
+从用于将值传递到模板的参数文件内部引用机密。你可以通过传递密钥保管库的资源标识符和机密的名称来引用机密。在本示例中，密钥保管库机密必须已存在，而且你用的是其资源 ID 的静态值。
 
     "parameters": {
       "adminPassword": {
@@ -93,7 +93,49 @@
         "outputs": { }
     }
 
+## 通过动态 ID 引用机密
 
+上一部分介绍了如何传递密钥保管库机密的静态资源 ID。但是，在某些情况下，你需要引用随当前部署而变的密钥保管库机密。在这种情况下，你不能在参数文件中对资源 ID 进行硬编码。遗憾的是，你不能在参数文件中动态生成资源 ID，因为参数文件中不允许模板表达式。
+
+若要动态生成密钥保管库机密的资源 ID，必须将需要机密的资源移至嵌套式模板中。你需要在主模板中添加嵌套式模板，然后传入包含动态生成的资源 ID 的参数。
+
+    {
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "vaultName": {
+          "type": "string"
+        },
+        "secretName": {
+          "type": "string"
+        }
+      },
+      "resources": [
+        {
+          "apiVersion": "2015-01-01",
+          "name": "nestedTemplate",
+          "type": "Microsoft.Resources/deployments",
+          "properties": {
+            "mode": "incremental",
+            "templateLink": {
+              "uri": "https://www.contoso.com/AzureTemplates/newVM.json",
+              "contentVersion": "1.0.0.0"
+            },
+            "parameters": {
+              "adminPassword": {
+                "reference": {
+                  "keyVault": {
+                    "id": "[concat(resourceGroup().id, '/providers/Microsoft.KeyVault/vaults/', parameters('vaultName'))]"
+                  },
+                  "secretName": "[parameters('secretName')]"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "outputs": {}
+    }
 
 
 ## 后续步骤
@@ -102,4 +144,4 @@
 <!-- - 有关对虚拟机使用密钥保管库的信息，请参阅 [Azure Resource Manager 的安全注意事项](/documentation/articles/best-practices-resource-manager-security/)。 -->
 - 有关引用密钥机密的完整示例，请参阅[密钥保管库示例](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)。
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0808_2016-->

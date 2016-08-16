@@ -23,7 +23,7 @@
 - 操作的状态
 - 其他可能有助于你研究操作的属性的值
 
-[AZURE.INCLUDE [resource-manager-audit-limitations](../includes/resource-manager-audit-limitations.md)]
+[AZURE.INCLUDE [resource-manager-audit-limitations](../../includes/resource-manager-audit-limitations.md)]
 
 本主题着重于审核操作。 <!-- 若要了解如何使用审核日志对部署进行故障排除，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。 -->
 

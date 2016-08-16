@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="04/18/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/15/2016"/>
 
 
 # 使用标记来组织 Azure 资源
@@ -78,6 +78,32 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
       }]
     }
 
+
+## 门户中的标记
+
+可以通过门户向现有资源和资源组添加标记。使用“浏览”中心导航到要标记的资源或资源组，然后在边栏选项卡顶部的“概览”部分中单击“标记”部件。
+
+![资源和资源组边栏选项卡上的“标记”部件](./media/resource-group-using-tags/tag-icon.png)
+
+此时将打开一个边栏选项卡，其中包含已应用的标记列表。如果这是你的第一个标记，该列表将为空。若要添加标记，只需指定名称和值，然后按 Enter。添加若干个标记后，系统会根据预先存在的标记名称和值提供自动填充选项，以更好地确保各项资源的分类保持一致，并避免常见错误，如拼写错误。
+
+![使用名称/值对标记资源](./media/resource-group-using-tags/tag-resources.png)
+
+若要在门户中查看标记的分类，请选择“浏览”和“标记”。
+
+![通过“浏览”中心查找标记](./media/resource-group-using-tags/select-tags.png)
+
+你会在订阅中看到标记的摘要。
+
+![显示所有标记](./media/resource-group-using-tags/show-tag-summary.png)
+
+选择这些标记中的任意标记都会显示带有该标记的资源和资源组。
+
+![显示带标记的资源](./media/resource-group-using-tags/show-tagged-resources.png)
+
+将最重要的标记固定到仪表板，以便快速进行访问。
+
+![将标记固定到启动板](./media/resource-group-using-tags/show-pinned-tag.png)
 
 ## 标记和 PowerShell
 
@@ -269,7 +295,9 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 ## 后续步骤
 
-- 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。
-<!-- - 有关使用门户预览的说明，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/) -->
+- 你可以使用自定义策略对订阅应用限制和约定。你定义的策略可能要求为所有资源设置特定的标记。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
+- 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
+- 有关部署资源时使用 Azure CLI 的说明，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
+- 有关使用门户的说明，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles/resource-group-portal/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0808_2016-->

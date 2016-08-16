@@ -23,7 +23,7 @@
 
 可以通过 Azure 门户查看部署操作。当你在部署过程中收到错误时，可能最想要查看操作，因此本文将重点介绍如何查看已失败的操作。该门户提供了一个界面让你轻松找到错误并确定可能的解决方法。
 
-[AZURE.INCLUDE [resource-manager-troubleshoot-introduction](../includes/resource-manager-troubleshoot-introduction.md)]
+[AZURE.INCLUDE [resource-manager-troubleshoot-introduction](../../includes/resource-manager-troubleshoot-introduction.md)]
 
 ## 使用部署操作进行故障排除
 
@@ -59,7 +59,7 @@
 
 ## 使用审核日志进行故障排除
 
-[AZURE.INCLUDE [resource-manager-audit-limitations](../includes/resource-manager-audit-limitations.md)]
+[AZURE.INCLUDE [resource-manager-audit-limitations](../../includes/resource-manager-audit-limitations.md)]
 
 若要查看部署相关的错误，请使用以下步骤：
 

@@ -14,9 +14,9 @@
 
 # 下载 Azure SDK for Java
 
-[AZURE.INCLUDE [download\_libraries](../includes/download_libraries.md)]
+[AZURE.INCLUDE [download\_libraries](../../includes/download_libraries.md)]
 
-[AZURE.INCLUDE [download\_eclipse](../includes/download_eclipse.md)]
+[AZURE.INCLUDE [download\_eclipse](../../includes/download_eclipse.md)]
 
 ## 后续步骤
 

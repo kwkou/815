@@ -1,6 +1,6 @@
 <!-- Remove Portal, Temp remove REST API -->
 <properties
-   pageTitle="使用资源管理器模板部署资源 | Azure"
+   pageTitle="使用 PowerShell 和模板部署资源 | Azure"
    description="使用 Azure Resource Manager 和 Azure PowerShell 将资源部署到 Azure。资源在 Resource Manager 模板中定义。"
    services="azure-resource-manager"
    documentationCenter="na"
@@ -10,8 +10,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="06/08/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="07/11/2016"
+   wacn.date="08/15/2016"/>
 
 # 使用 Resource Manager 模板和 Azure PowerShell 部署资源
 
@@ -31,7 +31,18 @@
 > - [使用 Azure PowerShell 查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)，以了解如何获取有助于排查错误的信息
 > - [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，以了解如何解决常见的部署错误
 
-[AZURE.INCLUDE [resource-manager-deployments](../includes/resource-manager-deployments.md)]
+你的模板可以是本地文件或是可通过 URI 访问的外部文件。如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
+
+## 快速部署步骤
+
+本文介绍了部署过程中可用的所有不同选项。但是，通常你只需要两个简单的命令。若要快速开始进行部署，请使用以下命令：
+
+    New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China East"
+    New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathToTemplate> -TemplateParameterFile <PathToParameterFile>
+
+若要了解有关更适合于你的应用场景的部署选项的详细信息，请继续阅读本文。
+
+[AZURE.INCLUDE [resource-manager-deployments](../../includes/resource-manager-deployments.md)]
 
 ## 使用 PowerShell 进行部署
 
@@ -71,7 +82,7 @@
 
         Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathToTemplate>
 
-5. 若要为资源组创建新部署，请运行 **New-AzureRmResourceGroupDeployment** 命令并提供所需的参数。参数包括部署的名称、资源组的名称、所创建模板的路径，以及方案所需的任何其他参数。如果未指定 **Mode** 参数，将使用 **Incremental** 的默认值。若要运行完整部署，请将 **Mode** 设置为 **Complete**。使用完整模式时要小心，因为可能会无意中删除不在模板中的资源。
+5. 若要为资源组创建新部署，请运行 **New-AzureRmResourceGroupDeployment** 命令并提供所需的参数。参数包括部署的名称、资源组的名称、所创建模板的路径，以及方案所需的任何其他参数。如果未指定 **Mode** 参数，将使用默认值 **Incremental**。若要运行完整部署，请将 **Mode** 设置为 **Complete**。使用完整模式时要小心，因为可能会无意中删除不在模板中的资源。
 
      若要部署本地模板，请使用 **TemplateFile** 参数：
 
@@ -109,13 +120,13 @@
         Mode              : Incremental
         ...
 
-     如果模板包括名称与部署模板命令中的参数之一匹配的参数（例如，在模板中包括名为 **ResourceGroupName** 的参数，这与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数相同），系统将提示你为后缀为 **FromTemplate** 的参数（例如 **ResourceGroupNameFromTemplate**）提供值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
+     如果模板的一个参数的名称与部署模板的命令中的一个参数的名称一致（例如，模板中包括名为 **ResourceGroupName** 的参数，这与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数名称相同），系统将提示你为后缀为 **FromTemplate** 的参数（例如 **ResourceGroupNameFromTemplate**）提供值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
 
 6. 如果要记录可能帮助你排查任何部署错误的有关部署的其他信息，请使用 **DeploymentDebugLogLevel** 参数。你可以指定在对部署操作进行日志记录时记录请求内容或/和响应内容。
 
         New-AzureRmResourceGroupDeployment -Name ExampleDeployment -DeploymentDebugLogLevel All -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate>
         
-     有关使用此调试内容解决部署问题的详细信息，请参阅[使用 Azure PowerShell 对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)。
+     有关使用此调试内容解决部署问题的详细信息，请参阅[《Troubleshooting resource group deployments with Azure PowerShell》](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)（使用 Azure PowerShell 对资源组部署进行故障排除）。
 
 ## 使用 SAS 令牌从存储空间部署模板
 
@@ -163,15 +174,14 @@
 
         New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri $templateuri
 
-有关将 SAS 令牌与链接模板配合使用的示例，请参阅 [Using linked templates with Azure Resource Manager（将链接模板与 Azure Resource Manager 配合使用）](/documentation/articles/resource-group-linked-templates)。
+有关将 SAS 令牌与链接模板配合使用的示例，请参阅[《Using linked templates with Azure Resource Manager》](/documentation/articles/resource-group-linked-templates/)（将链接模板与 Azure Resource Manager 配合使用）。
 
-[AZURE.INCLUDE [resource-manager-parameter-file](../includes/resource-manager-parameter-file.md)]
+[AZURE.INCLUDE [resource-manager-parameter-file](../../includes/resource-manager-parameter-file.md)]
 
 ## 后续步骤
 - 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/virtual-machines-windows-csharp-template/)。
-- 若要在模板中定义参数，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates#parameters)。
+- 若要在模板中定义参数，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/#parameters)。
 - 有关将解决方案部署到不同环境的指南，请参阅 [Microsoft Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments/)。
-- 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅 [Pass secure values during deployment（在部署期间传递安全值）](/documentation/articles/resource-manager-keyvault-parameter/)。
+- 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

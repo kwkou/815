@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="04/04/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/15/2016"/>
 
 # 在 Azure 资源管理器模板中定义依赖关系
 
@@ -91,8 +91,7 @@
 
 ## 引用函数
 
-引用函数使表达式能够从其他 JSON 名值对或运行时资源中派生其值。引用表达式隐式声明一个资源依赖于另一个资源。
-以下 **propertyPath** 表示的属性是可选的，如果未指定数据，则引用将指向该资源。
+引用函数使表达式能够从其他 JSON 名值对或运行时资源中派生其值。引用表达式隐式声明一个资源依赖于另一个资源。以下 **propertyPath** 表示的属性是可选的，如果未指定数据，则引用将指向该资源。
 
     reference('resourceName').propertyPath
 
@@ -102,8 +101,7 @@
 
 ## 后续步骤
 
-- 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。 
+- 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 - 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0808_2016-->

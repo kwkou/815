@@ -22,13 +22,13 @@
 
 如果你在将资源部署到 Azure 时收到错误，可能想要查看有关已执行的部署操作的更多详细信息。Azure CLI 提供命令来让你查找错误并确定可能的解决方法。
 
-[AZURE.INCLUDE [resource-manager-troubleshoot-introduction](../includes/resource-manager-troubleshoot-introduction.md)]
+[AZURE.INCLUDE [resource-manager-troubleshoot-introduction](../../includes/resource-manager-troubleshoot-introduction.md)]
 
 如果部署之前先验证模板和基础结构，则可以避免一些错误。你还可以在部署过程中记录其他请求和响应信息，以方便以后进行故障排除。若要了解有关验证和记录请求和响应信息的内容，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy-cli/)。
 
 ## 使用审核日志进行故障排除
 
-[AZURE.INCLUDE [resource-manager-audit-limitations](../includes/resource-manager-audit-limitations.md)]
+[AZURE.INCLUDE [resource-manager-audit-limitations](../../includes/resource-manager-audit-limitations.md)]
 
 若要查看部署相关的错误，请使用以下步骤：
 

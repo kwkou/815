@@ -10,16 +10,16 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="06/08/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="07/11/2016"
+   wacn.date="08/15/2016"/>
 
 # 使用 Resource Manager 模板和 Azure CLI 部署资源
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-group-template-deploy)
 - [Azure CLI](/documentation/articles/resource-group-template-deploy-cli)
-<!--
 - [REST API](/documentation/articles/resource-group-template-deploy-rest)
+<!--
 - [门户](/documentation/articles/resource-group-template-deploy-portal)
 - [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)
 -->
@@ -28,14 +28,25 @@
 
 > [AZURE.TIP] 有关在部署过程中调试错误的帮助，请参阅：
 >
-> - [使用 Azure CLI 查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-cli)，以了解如何获取有助于排查错误的信息
-> - [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors)，以了解如何解决常见的部署错误
+> - [使用 Azure CLI 查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)，以了解如何获取有助于排查错误的信息
+> - [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，以了解如何解决常见的部署错误
 
-[AZURE.INCLUDE [resource-manager-deployments](../includes/resource-manager-deployments.md)]
+你的模板可以是本地文件或是可通过 URI 访问的外部文件。如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
+
+## 快速部署步骤
+
+本文介绍了部署过程中可用的所有不同选项。但是，通常你只需要两个简单的命令。若要快速开始进行部署，请使用以下命令：
+
+    azure group create -n ExampleResourceGroup -l "China East"
+    azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
+
+若要了解有关更适合于你的应用场景的部署选项的详细信息，请继续阅读本文。
+
+[AZURE.INCLUDE [resource-manager-deployments](../../includes/resource-manager-deployments.md)]
 
 ## 使用 Azure CLI 进行部署
 
-如果你以前没有对资源管理器使用过 Azure CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
+如果你以前没有对资源管理器使用过 Azure CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。
 
@@ -48,7 +59,7 @@
 
         azure account set <YourSubscriptionNameOrId>
 
-3. 切换到 Azure Resource Manager 模块。你将收到新模式确认。
+3. 切换到 Azure 资源管理器模块。你将收到新模式确认。
 
         azure config mode arm
    
@@ -70,7 +81,7 @@
         data:
         info:    group create command OK
 
-5. 先验证你的部署，然后通过运行 **azure group template validate** 命令执行部署。测试部署时，请提供与执行部署时所提供的完全相同的参数（如下一步中所示）。
+5. 在执行部署之前先运行 **azure group template validate** 命令验证部署。测试部署时，请提供与执行部署时所提供的完全相同的参数（如下一步中所示）。
 
         azure group template validate -f <PathToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup
 
@@ -150,15 +161,14 @@
 
         azure group deployment create --template-uri $fullurl -g ExampleResourceGroup
 
-有关将 SAS 令牌与链接模板配合使用的示例，请参阅 [Using linked templates with Azure Resource Manager（将链接模板与 Azure Resource Manager 配合使用）](/documentation/articles/resource-group-linked-templates)。
+有关将 SAS 令牌与链接模板配合使用的示例，请参阅[《Using linked templates with Azure Resource Manager》](/documentation/articles/resource-group-linked-templates/)（将链接模板与 Azure Resource Manager 配合使用）。
 
-[AZURE.INCLUDE [resource-manager-parameter-file](../includes/resource-manager-parameter-file.md)]
+[AZURE.INCLUDE [resource-manager-parameter-file](../../includes/resource-manager-parameter-file.md)]
 
 ## 后续步骤
-- 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/virtual-machines-windows-csharp-template)。
+- 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/virtual-machines-windows-csharp-template/)。
 - 若要在模板中定义参数，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates#parameters)。
-- 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments)。
-- 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅 [Pass secure values during deployment（在部署期间传递安全值）](/documentation/articles/resource-manager-keyvault-parameter)。
+- 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments/)。
+- 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

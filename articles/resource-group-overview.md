@@ -1,6 +1,6 @@
 <!-- Remove best practices -->
 <properties
-   pageTitle="Azure 资源管理器概述 | Azure"
+   pageTitle="Azure Resource Manager 概述 | Azure"
    description="介绍如何使用 Azure 资源管理器在 Azure 上部署和管理资源以及对其进行访问控制。"
    services="azure-resource-manager"
    documentationCenter="na"
@@ -10,12 +10,22 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="05/27/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="07/14/2016"
+   wacn.date="08/15/2016"/>
 
 # Azure 资源管理器概述
 
 应用程序的体系结构通常由许多组件构成 – 其中可能包括虚拟机、存储帐户、虚拟网络、Web 应用、数据库、数据库服务器和第三方服务。这些组件不会以独立的实体出现，而是以单个实体的相关部件和依赖部件出现。如果你希望以组的方式部署、管理和监视这些这些组件，那么，你可以使用 Azure 资源管理器以组的方式处理解决方案中的资源。你可以通过一个协调的操作为解决方案部署、更新或删除所有资源。你可以使用一个模板来完成部署，该模板适用于不同的环境，例如测试、过渡和生产。资源管理器提供安全、审核和标记功能，以帮助你在部署后管理资源。
+
+## 术语
+
+如果你不熟悉 Azure Resource Manager，则可能不熟悉某些术语。
+
+- **资源** — 属于 Azure 解决方案一部分的项。部分常见资源包括虚拟机、存储帐户、Web 应用、数据库和虚拟网络，但这只是其中一小部分。
+- **资源组** — 一个容器，用于保存应用程序的相关资源。资源组可以包含应用程序的所有资源，也可以只包含分组在一起的资源。你可以根据对组织有利的原则，决定如何将资源分配到资源组。请参阅[资源组](#resource-groups)。
+- **资源提供程序** — 一种服务，提供可以通过 Resource Manager 进行部署和管理的资源。每个资源提供程序提供用于处理所部署资源的操作。部分常见资源提供程序包括 Microsoft.Compute（提供虚拟机资源）、Microsoft.Storage（提供存储帐户资源）和 Microsoft.Web（提供与 Web 应用相关的资源）。请参阅[资源提供程序](#resource-providers)。
+- **Resource Manager 模板** — 一个 JavaScript 对象表示法 (JSON) 文件，用于定义一个或多个要部署到资源组的资源。它也会定义所部署资源之间的依赖关系。使用模板能够以一致方式反复部署资源。请参阅[模板部署](#template-deployment)。
+- **声明性语法** — 一种语法，允许你声明“以下是我想要创建的项目”，而不需要编写一系列编程命令来进行创建。Resource Manager 模板便是声明性语法的其中一个示例。在该文件中，你可以定义要部署到 Azure 的基础结构的属性。
 
 ## 使用资源管理器的优势
 
@@ -23,11 +33,11 @@
 
 - 可以以组的形式部署、管理和监视解决方案的所有资源，而不是单独处理这些资源。
 - 你可以在整个开发生命周期内重复部署解决方案，并确保以一致的状态部署资源。
-- 您可以使用声明性模板来定义您的部署。
+- 你可以通过声明性模板而非脚本来管理基础结构。
 - 您可以定义各资源之间的依赖关系，以便按正确的顺序进行部署。
 - 您可以将访问控制应用到资源组中的所有服务，因为基于角色的访问控制 (RBAC) 已在本机集成到管理平台。
 - 您可以将标记应用到资源，以按照逻辑组织订阅中的所有资源。
-- 你可以通过查看整个组或共享相同标记的资源组的累积费用，明确组织的帐单开支。  
+- 你可以通过查看整个组或共享相同标记的资源组的累积费用，明确组织的帐单开支。
 
 资源管理器提供了一种新方法来部署和管理您的解决方案。如果你使用早期的部署模型并想要了解这些更改，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
@@ -42,8 +52,6 @@
 
 ## 资源组
 
-资源组是一个容器，包含应用程序的相关资源。资源组可以包含应用程序的所有资源，也可以只包含逻辑分组在一起的资源。你可以根据对组织有利的原则，决定如何将资源分配到资源组。
-
 定义资源组时，需要考虑以下几个重要因素：
 
 1. 组中的所有资源应该共享相同的生命周期。一起部署、更新和删除这些资源。如果某个资源（例如数据库服务器）需要采用不同的部署周期，则它应在另一个资源组中。
@@ -52,21 +60,19 @@
 4. 可以将资源从一个资源组移到另一个组。有关详细信息，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 4. 资源组可以包含位于不同区域的资源。
 5. 资源组可用于划分对管理操作的访问控制。
-6. 资源可以链接到另一个资源组中的资源，前提是两个资源必须彼此交互，但不共享相同的生命周期（例如，多个应用连接到一个数据库）。有关详细信息，请参阅[在 Azure 资源管理器中链接资源](/documentation/articles/resource-group-link-resources/)。
+6. 资源可以与另一个资源组中的资源交互，前提是两个资源有关联，但不共享相同的生命周期（例如，一个 Web Apps 连接到一个数据库）。
 
 ## 资源提供程序
 
-资源提供程序是一种服务，提供可以通过资源管理器进行部署和管理的资源。每个资源提供程序提供 REST API 操作用于处理资源。例如，如果你想要部署 Azure 密钥保管库来存储密钥和机密，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型用于创建密钥保管库，提供名为 **vaults/secrets** 的资源类型用于在密钥保管库中创建机密。你可以通过查看 REST API 操作（如 [密钥保管库 REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)）了解有关资源提供程序的信息。
+每个资源提供程序都会提供一组用于技术区域的资源和操作。例如，如果你想要存储密钥和密码，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型用于创建密钥保管库，提供名为 **vaults/secrets** 的资源类型用于在密钥保管库中创建密码。它还通过[密钥保管库 REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)来提供操作。你可以直接调用 REST API，也可以使用[密钥保管库 PowerShell cmdlet](https://msdn.microsoft.com/library/dn868052.aspx) 和[密钥保管库 Azure CLI](/documentation/articles/key-vault-manage-with-cli) 来管理密钥保管库。你还可以使用许多编程语言来使用大多数资源。有关详细信息，请参阅 [SDK 和示例](#sdks-and-samples)。
 
-若要部署和管理基础结构，需要了解有关资源提供程序的详细信息；例如，它提供的资源类型、REST API 操作的版本号码、它支持的操作以及设置要创建的资源类型值时要使用的架构。若要了解支持的资源提供程序，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
+若要部署和管理基础结构，需要了解有关资源提供程序的详细信息；例如，它提供的资源类型、REST API 操作的版本号码、它支持的操作以及设置要创建的资源类型值时要使用的架构。若要了解支持的资源提供程序，请参阅 [Resource Manager 提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
 
 ## 模板部署
 
-使用资源管理器可以创建一个简单的模板（采用 JSON 格式），用于定义应用程序的部署和配置。此模板称为资源管理器模板，让你以声明性方式定义部署。使用模板可以在整个应用程序生命周期内反复部署该应用程序，并确保以一致的状态部署资源。
+使用资源管理器可以创建一个简单的模板（采用 JSON 格式），用于定义应用程序的部署和配置。使用模板可以在整个应用程序生命周期内反复部署该应用程序，并确保以一致的状态部署资源。Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建资源。有关详细信息，请参阅[在 Azure 资源管理器模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies)。
 
-在模板中，可以定义应用程序的基础结构、如何配置该基础结构，以及如何将应用程序代码发布到该基础结构。你无需担心部署的顺序，因为 Azure 资源管理器会分析依赖关系，以确保按正确的顺序创建资源。有关详细信息，请参阅[在 Azure 资源管理器模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies/)。
-
-从应用商店创建解决方案时，该解决方案将自动包含部署模板。你无需从头开始创建模板，因为你可以从解决方案的模板着手，并根据你的特定需求自定义该模板。可以通过将资源组的当前状态导出到模板或查看特定部署所用的模板，来检索现有资源组的模板。查看导出的模板是了解模板语法的有用方法。若要了解有关使用导出的模板的详细信息，请参阅 [Export an Azure Resource Manager template from existing resources](/documentation/articles/resource-manager-export-template)（从现有资源导出 Azure Resource Manager 模板）。
+从门户创建解决方案时，该解决方案将自动包含部署模板。你无需从头开始创建模板，因为你可以从解决方案的模板着手，并根据你的特定需求自定义该模板。可以通过将资源组的当前状态导出到模板或查看特定部署所用的模板，来检索现有资源组的模板。查看导出的模板是了解模板语法的有用方法。若要了解有关使用导出的模板的详细信息，请参阅[从现有资源导出 Azure Resource Manager 模板](/documentation/articles/resource-manager-export-template)。
 
 无需在单个模板中定义整个基础结构。通常，合理的做法是将部署要求划分成一组有针对性的模板。你可以轻松地将这些模板重复用于不同的解决方案。若要部署特定的解决方案，请创建链接所有所需模板的主模板。有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates/)。
 
@@ -130,6 +136,6 @@ Azure Resource Manager 支持跨域资源共享 (CORS)。使用 CORS 时，你�
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)
 
 <!--
-- 有关将 Visual Studio 与 Resource Manager 配合使用的信息，请参阅[通过 Visual Studio 创建和部署 Azure 资源组](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) -->
+- 有关将 VS Code 与 Resource Manager 配合使用的信息，请参阅[在 Visual Studio Code 中使用 Azure Resource Manager 模板](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) -->
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->
