@@ -5,11 +5,11 @@
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" />
+    editor="" />
 <tags 
    ms.service="service-bus"
-    ms.date="03/16/2016"
-   wacn.date="04/05/2016" />
+    ms.date="06/21/2016"
+   wacn.date="08/15/2016" />
 
 # 创建使用服务总线队列的应用程序
 
@@ -19,7 +19,7 @@
 
 ![Service-Bus-Queues-Img1](./media/service-bus-create-queues/IC657161.gif)
 
-每个 POS 终端通过将消息发送到 **DataCollectionQueue** 来报告其销售数据。这些消息将保留在此队列中，直到库存管理系统检索到它们。此模式通常称为*异步消息传送*，因为 POS 终端无需等待库存管理系统的回应即可继续进行处理。
+每个 POS 终端通过将消息发送到 **DataCollectionQueue** 来报告其销售数据。这些消息将保留在此队列中，直到库存管理系统检索到它们。此模式通常称为异步消息传送，因为 POS 终端无需等待库存管理系统的回应即可继续进行处理。
 
 ## 为什么要使用队列？
 
@@ -49,13 +49,13 @@
 
 以下部分介绍了使用服务总线生成此应用程序的方法。
 
-### 注册服务总线帐户和订阅
+### 注册 Azure 帐户
 
 需要 Azure 帐户才能开始使用服务总线。如果你尚无订阅，可以在[此处](/pricing/1rmb-trial/?WT.mc_id=A85619ABF)注册试用版。
 
 ### 创建服务命名空间
 
-拥有订阅后，即可创建新命名空间。请为新命名空间指定在所有服务总线帐户中唯一的名称。每个命名空间都可充当一组服务总线实体的作用域容器。
+拥有订阅后，即可[创建新命名空间](/documentation/articles/service-bus-create-namespace-portal/)。每个命名空间都可充当一组服务总线实体的作用域容器。请为新命名空间指定在所有服务总线帐户中唯一的名称。
 
 ### 安装 NuGet 包
 
@@ -104,7 +104,7 @@ sender.Send(bm);
 
 ### 从队列接收消息
 
-从订阅接收消息的最简单方法是使用 [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) 对象，可使用 [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx) 从 [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) 直接创建它。消息接收方可在两种不同模式下工作：**ReceiveAndDelete** 和 **PeekLock**。创建消息接收方时，[ReceiveMode](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) 将会被设置为 [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx) 调用的一个参数。
+若要从队列接收消息，可使用 [MessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.aspx) 对象，该对象是你使用 [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx) 从 [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) 直接创建的。消息接收方可在两种不同模式下工作：**ReceiveAndDelete** 和 **PeekLock**。创建消息接收方时，[ReceiveMode](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) 将会被设置为 [CreateMessageReceiver](https://msdn.microsoft.com/zh-cn/library/azure/hh322642.aspx) 调用的一个参数。
 
 
 当使用 **ReceiveAndDelete** 模式时，接收是一个单次操作。即，当服务总线收到请求时，它会将该消息标记为“已使用”并将其返回给应用程序。**ReceiveAndDelete** 模式是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于服务总线将消息标记为“已使用”，因此当应用程序重新启动并重新开始使用消息时，它会漏掉在发生崩溃前使用的消息。
@@ -113,7 +113,7 @@ sender.Send(bm);
 
 可能会出现另外两种结果。第一种，如果应用程序出于某种原因无法处理消息，它可以对收到的消息调用 [Abandon](https://msdn.microsoft.com/zh-cn/library/azure/hh181837.aspx)（而不是 [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx)）。这将引起服务总线解锁消息，使得同一个使用方或其他竞争使用方能够重新接收它。第二种，存在与锁定关联的超时，如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），服务总线将解锁该消息并使它可再次被接收。
 
-请注意，如果应用程序在处理消息之后，但在发出 [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) 请求之前发生崩溃，则在应用程序重新启动时会将该消息重新传送给它。这通常称为*至少一次*处理。这表示每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案不容许重复处理，则应用程序中需要用于检测重复的其他逻辑。可以根据消息的 [MessageId](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) 属性实现此要求。在多次传送尝试中，此属性的值将保持不变。这称为*仅一次*处理。
+请注意，如果应用程序在处理消息之后，但在发出 [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) 请求之前发生崩溃，则在应用程序重新启动时会将该消息重新传送给它。这通常称为“至少一次”处理。这表示每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案不容许重复处理，则应用程序中需要用于检测重复的其他逻辑。可以根据消息的 [MessageId](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) 属性实现此要求。在多次传送尝试中，此属性的值将保持不变。这称为仅一次处理。
 
 此处显示的代码使用 **PeekLock** 模式接收和处理消息，如果未显式提供 [ReceiveMode](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) 值，则这是默认设置。
 
@@ -154,6 +154,6 @@ catch (Exception e)
 
 ## 后续步骤
 
-了解了有关队列的基础知识，即可参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions/)，使用服务总线中转消息传送的发布/订阅功能继续这一讨论。
+了解了队列的基础知识后，请参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions/)，以使用服务总线主题和订阅的发布/订阅功能继续这一讨论。
 
 <!---HONumber=Mooncake_0215_2016-->

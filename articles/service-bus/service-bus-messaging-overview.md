@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="03/09/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="06/20/2016"
+	wacn.date="08/15/2016"/>
 
 
 # 服务总线消息传送：在云中灵活传送数据
@@ -21,7 +21,7 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 消息发送方也可能需要各种传送特征，包括事务、重复数据检测、基于时间的过期，以及批处理。这些模式也具有类似于邮递服务的特征：重复传送、需要签名、地址更改或撤回。
 
-服务总线支持两种不同的消息传递模式：*中继*消息传送和*中转*消息传送。
+服务总线支持两种不同的消息传递模式：中继消息传送和中转消息传送。
 
 ## 中继消息传送
 
@@ -35,7 +35,7 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 ## <a name="Brokered-messaging"></a>中转消息传送
 
-对照中继消息传送方案，可认为[中转消息传送](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)是异步的，或者“暂时分离的”。 消息生产者（发送者）和使用者（接收者）不必同时处于联机状态。消息传送基础结构将消息可靠地存储在“中转站”中（例如一个队列），直到使用方准备好接收它们。这将允许分布式应用程序的组件断开连接，例如，为进行维护而自动断开，或因组件故障断开连接，而不会影响整个系统。此外，接收应用程序可能仅需在一天中某个时间处于联机状态，例如库存管理系统只需在工作日结束时运行。
+对照中继消息传送方案，可认为[中转消息传送](/documentation/articles/service-bus-queues-topics-subscriptions/)是异步的，或者“暂时分离的”。 消息生产者（发送者）和使用者（接收者）不必同时处于联机状态。消息传送基础结构将消息可靠地存储在“中转站”中（例如一个队列），直到使用方准备好接收它们。这将允许分布式应用程序的组件断开连接，例如，为进行维护而自动断开，或因组件故障断开连接，而不会影响整个系统。此外，接收应用程序可能仅需在一天中某个时间处于联机状态，例如库存管理系统只需在工作日结束时运行。
 
 服务总线中转消息传送基础结构的核心组件是队列、主题和订阅。两者的主要差别在于，主题支持可用于基于内容的复杂路由和传送逻辑的发布/订阅功能，包括发送到多个接收方。这些组件启用新的异步消息传送方案，例如暂时分离、发布/订阅和负载平衡。有关消息传送实体的详细信息，请参阅[服务总线队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)。
 
@@ -45,10 +45,10 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 若要了解有关服务总线消息传送的详细信息，请参阅以下主题。
 
-- [服务总线队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
+- [服务总线队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)
 - [服务总线体系结构](/documentation/articles/service-bus-architecture/)
-- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
+- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 
 - [如何使用服务总线主题](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/)
 

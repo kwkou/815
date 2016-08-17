@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="03/16/2016"
-	wacn.date="06/21/2016"/>
+	wacn.date="08/15/2016"/>
 
 # 服务总线高级和标准消息传送层 
 
