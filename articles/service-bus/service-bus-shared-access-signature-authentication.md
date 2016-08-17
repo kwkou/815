@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="03/09/2016"
-   wacn.date="01/14/2016" />
+    ms.date="06/22/2016"
+   wacn.date="08/15/2016" />
 
 # 服务总线的共享访问签名身份验证
 
@@ -25,7 +25,7 @@ Azure SDK 2.0 版和更高版本包括 SAS 身份验证支持。有关服务总�
 
 SAS 身份验证使用以下元素：
 
-- [共享访问授权规则](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)：采用 Base64 表示的 256 位主加密密钥、一个可选的配用密钥，以及密钥名称和关联的权限（*侦听*、*发送*、*管理*权限的集合）。
+- [共享访问授权规则](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)：采用 Base64 表示的 256 位主加密密钥、一个可选的配用密钥，以及密钥名称和关联的权限（侦听、发送、管理权限的集合）。
 
 - [共享访问签名](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.sharedaccesssignaturetokenprovider.sharedaccesssignature.aspx)令牌：使用 HMAC-SHA256 资源字符串生成的，包括访问的资源 URI 和一个具有加密密钥的过期时间。该签名和以下各节所述的其他元素已被格式化为字符串，用于形成 [SharedAccessSignature](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.sharedaccesssignaturetokenprovider.sharedaccesssignature.aspx) 令牌。
 
@@ -37,18 +37,18 @@ SAS 身份验证使用以下元素：
 
 ![SAS](./media/service-bus-shared-access-signature-authentication/IC676272.gif)
 
-在此图中，*manageRuleNS*、*sendRuleNS*，以及 *listenRuleNS* 授权规则适用于队列 Q1 和主题 T1，而 *listenRuleQ*、*sendRuleQ* 仅适用于队列 Q1，*sendRuleT* 仅适用于主题 T1。
+在此图中，manageRuleNS、sendRuleNS，以及 listenRuleNS 授权规则适用于队列 Q1 和主题 T1，而 listenRuleQ、sendRuleQ 仅适用于队列 Q1，sendRuleT 仅适用于主题 T1。
 
 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 的密钥参数如下：
 
 |参数|说明|
 |---|---|
-|*KeyName*|描述授权规则的字符串。|
-|*PrimaryKey*|用于签名和验证 SAS 令牌的 Base64 编码的 256 位主密钥。|
-|*SecondaryKey*|用于签名和验证 SAS 令牌的 Base64 编码的 256 位备用密钥。|
-|*AccessRights*|授权规则授予的访问权限列表。这些权限可以是侦听、发送和管理权限的任何集合。|
+|KeyName|描述授权规则的字符串。|
+|PrimaryKey|用于签名和验证 SAS 令牌的 Base64 编码的 256 位主密钥。|
+|SecondaryKey|用于签名和验证 SAS 令牌的 Base64 编码的 256 位备用密钥。|
+|AccessRights|授权规则授予的访问权限列表。这些权限可以是侦听、发送和管理权限的任何集合。|
 
-如果预配了服务总线命名空间，默认情况下，将创建 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)，其中，[KeyName](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.keyname.aspx) 设置为 **RootManageSharedAccessKey**。两个默认 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 对象同样被配置为通知中心：一个具有侦听、发送和管理权限，另一个只具有侦听权限。
+如果预配了服务总线命名空间，默认情况下，将创建 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)，其中，[KeyName](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.keyname.aspx) 设置为 **RootManageSharedAccessKey**。
 
 ## 重新生成和吊销共享访问授权规则的密钥。
 
@@ -80,7 +80,7 @@ SAS 令牌对于签名字符串中使用的 `<resourceURI>` 下的所有资源�
 
 SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.keyname.aspx) 是指用于生成令牌的共享访问授权规则的 **keyName**。
 
-*URL-encoded-resourceURI* 必须与在签名计算期间签名字符串中使用的 URI 相同。它应该是[百分比编码](https://msdn.microsoft.com/zh-cn/library/4fkewx0t.aspx)。
+URL-encoded-resourceURI 必须与在签名计算期间签名字符串中使用的 URI 相同。它应该是[百分比编码](https://msdn.microsoft.com/zh-cn/library/4fkewx0t.aspx)。
 
 ## 如何使用服务总线的共享访问签名身份验证
 
@@ -90,7 +90,7 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 
 ## 访问命名空间上的共享访问授权规则
 
-在服务总线命名空间根路径上的操作需要证书身份验证。你必须上载用于 Azure 订阅的管理证书若要上载管理证书，请在 [Azure 经典管理门户][] 的左窗格中单击“设置”。有关 Azure 管理证书的详细信息，请参阅[为 Azure 创建管理证书](https://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx)。
+在服务总线命名空间根路径上的操作需要证书身份验证。你必须上载用于 Azure 订阅的管理证书若要上传管理证书，请在 [Azure 经典管理门户][]的左窗格中单击“设置”。有关 Azure 管理证书的详细信息，请参阅 [Azure 证书概述](/documentation/articles/cloud-services-certs-create/#what-are-management-certificates)。
 
 访问服务总线命名空间上的共享访问授权规则的终结点如下所示：
 

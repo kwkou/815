@@ -9,8 +9,8 @@
 
 <tags
     ms.service="service-bus"
-    ms.date="04/22/2016"
-    wacn.date="06/27/2016"/>
+    ms.date="07/11/2016"
+    wacn.date="08/15/2016"/>
 
 # 使用 Azure Resource Manager 模板创建服务总线资源
 
@@ -18,7 +18,7 @@
 
 Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源，以及指定可用于为不同环境输入值的参数和变量。模板中包含可用于构造部署值的 JSON 和表达式。有关编写 Azure Resource Manager 模板的详细信息，以及模板格式的讨论，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
 
->[AZURE.NOTE] 本文中的示例演示如何使用 Azure Resource Manager 来创建服务总线命名空间和消息实体（队列）。有关其他模板示例，请参阅 [Azure 快速入门模板库][]并搜索“服务总线”。
+>[AZURE.NOTE] 本文中的示例演示如何使用 Azure Resource Manager 来创建服务总线命名空间和消息实体（队列）。<!-- For other template examples, visit the [Azure Quickstart Templates gallery][] and search for "Service Bus." -->
 
 ## 服务总线和事件中心 Resource Manager 模板
 
@@ -32,7 +32,7 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 
 ## 使用 PowerShell 进行部署
 
-以下过程描述如何使用 PowerShell 部署 Azure Resource Manager 模板以创建**标准**层服务总线命名空间和该命名空间中的一个队列。本示例基于[创建包含队列的服务总线命名空间](https://github.com/Azure/azure-quickstart-templates/tree/master/201-servicebus-create-queue)模板。大概的工作流如下所示：
+以下过程描述如何使用 PowerShell 部署 Azure Resource Manager 模板以创建“标准”层服务总线命名空间和该命名空间中的一个队列。本示例基于[创建包含队列的服务总线命名空间](https://github.com/Azure/azure-quickstart-templates/tree/master/201-servicebus-create-queue)模板。大概的工作流如下所示：
 
 1. 安装 PowerShell。
 2. 创建模板和（可选）参数文件。
@@ -140,7 +140,7 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 }
 ```
 
-有关详细信息，请参阅[参数文件](/documentation/articles/resource-group-template-deploy/#parameter-file)一文。
+有关详细信息，请参阅[参数文件](/documentation/articles/resource-group-template-deploy/#parameter-file)主题。
 
 ### 登录到 Azure 并设置 Azure 订阅
 
@@ -150,13 +150,13 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 ```
 
-系统将提示你登录到 Azure 帐户。登录后，运行以下命令以查看可用订阅：
+系统将提示你登录到 Azure 帐户。登录后，运行以下命令以查看可用订阅。
 
 ```
 Get-AzureRMSubscription
 ```
 
-此命令返回可用 Azure 订阅的列表。通过运行以下命令为当前会话选择订阅。将 `<YourSubscriptionId>` 替换为要使用的 Azure 订阅的 GUID：
+此命令返回可用 Azure 订阅的列表。通过运行以下命令为当前会话选择订阅。将 `<YourSubscriptionId>` 替换为要使用的 Azure 订阅的 GUID。
 
 ```
 Set-AzureRmContext -SubscriptionID <YourSubscriptionId>
@@ -164,13 +164,13 @@ Set-AzureRmContext -SubscriptionID <YourSubscriptionId>
 
 ### 设置资源组
 
-如果目前没有资源组，请使用 **New-AzureRmResourceGroup** 命令创建新的资源组。提供资源组的名称，以及要使用的位置。例如：
+如果目前没有资源组，请使用“New-AzureRmResourceGroup”命令创建新的资源组。提供资源组的名称，以及要使用的位置。例如：
 
 ```
 New-AzureRmResourceGroup -Name MyDemoRG -Location "China East"
 ```
 
-如果成功，则会显示新的资源组的摘要：
+如果成功，则会显示新的资源组的摘要。
 
 ```
 ResourceGroupName : MyDemoRG
@@ -198,7 +198,7 @@ Test-AzureRmResourceGroupDeployment -ResourceGroupName MyDemoRG -TemplateFile <p
 New-AzureRmResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json
 ```
 
-若要改为使用参数文件，请使用以下命令。
+若要改为指定参数文件，请使用以下命令。
 
 ```
 New-AzureRmResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json -TemplateParameterFile <path to parameters file>\azuredeploy.parameters.json
@@ -240,12 +240,12 @@ Parameters        :
 
 你现在已了解用于部署 Azure Resource Manager 模板的基本工作流和命令。有关更多详细信息，请访问以下链接：
 
-- [Azure Resource Manager 概述][]
+- [Azure 资源管理器概述][]
 - [使用 Azure Resource Manager 模板部署资源][]
 - [创作模板](/documentation/articles/resource-group-authoring-templates/)
 
 
-[Azure Resource Manager 概述]: /documentation/articles/resource-group-overview/
+[Azure 资源管理器概述]: /documentation/articles/resource-group-overview/
 [使用 Azure Resource Manager 模板部署资源]: /documentation/articles/resource-group-template-deploy/
 [Azure 快速入门模板库]: https://azure.microsoft.com/zh-cn/documentation/templates/?term=service+bus
 <!---HONumber=Mooncake_0620_2016-->

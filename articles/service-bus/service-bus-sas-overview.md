@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-bus"
-    ms.date="03/16/2016"
-   wacn.date="04/05/2016"/>
+    ms.date="06/22/2016"
+   wacn.date="08/15/2016"/>
 
 # 共享访问签名
 

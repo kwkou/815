@@ -8,8 +8,8 @@
    editor="" /> 
 <tags 
    ms.service="service-bus"
-   ms.date="05/06/2016"
-   wacn.date="06/27/2016" />
+    ms.date="07/05/2016"
+   wacn.date="08/15/2016" />
 
 # 使用 AMQP 1.0 通过 .NET 使用服务总线
 
@@ -17,11 +17,11 @@
 
 ## 下载服务总线 SDK
 
-AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [NuGet][] 下载最新的服务总线位。
+AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。为确保使用最新版本，你可以从 [NuGet][] 下载服务总线安装包。
 
 ## 将 .NET 应用程序配置为使用 AMQP 1.0
 
-默认情况下，服务总线 .NET 客户端库使用基于 SOAP 的专用协议与服务总线服务通信。若要使用 AMQP 1.0 而非默认协议，需要对服务总线连接字符串进行显式配置，如下一部分所述。除了此更改之外，在使用 AMQP 1.0 时应用程序代码基本保持不变。
+默认情况下，Service Bus .NET 客户端库使用基于 SOAP 的专用协议与 Service Bus 服务通信。若要使用 AMQP 1.0 而非默认协议，需要对服务总线连接字符串进行显式配置，如下一部分所述。除了此更改之外，在使用 AMQP 1.0 时应用程序代码基本保持不变。
 
 在当前版本中，有一些在使用 AMQP 时不受支持的 API 功能。这些不受支持的功能将在后面的[不支持的功能、限制和行为差异](#unsupported-features-restrictions-and-behavioral-differences)部分中列出。在使用 AMQP 时，一些高级配置设置还具有不同的含义。
 
@@ -55,12 +55,12 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 
 | .NET 正文对象类型 | 映射的 AMQP 类型 | AMQP 正文部分类型 |
 |--------------------------------|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bool | boolean | AMQP 值 |
-| byte | ubyte | AMQP 值 |
+| bool | 布尔值 | AMQP 值 |
+| 字节 | ubyte | AMQP 值 |
 | ushort | ushort | AMQP 值 |
 | uint | uint | AMQP 值 |
 | ulong | ulong | AMQP 值 |
-| sbyte | byte | AMQP 值 |
+| sbyte | 字节 | AMQP 值 |
 | short | short | AMQP 值 |
 | int | int | AMQP 值 |
 | long | long | AMQP 值 |
@@ -70,10 +70,10 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 | char | char | AMQP 值 |
 | DateTime | timestamp | AMQP 值 |
 | Guid | uuid | AMQP 值 |
-| byte[] | binary | AMQP 值 |
-| string | string | AMQP 值 |
+| 字节 | binary | AMQP 值 |
+| 字符串 | 字符串 | AMQP 值 |
 | System.Collections.IList | list | AMQP 值：集合中包含的项只能是此表中定义的类型。 |
-| System.Array | array | AMQP 值：集合中包含的项只能是此表中定义的类型。 |
+| System.Array | 数组 | AMQP 值：集合中包含的项只能是此表中定义的类型。 |
 | System.Collections.IDictionary | map | AMQP 值：集合中包含的项只能是此表中定义的类型。注意：仅支持字符串键。 |
 | Uri | 描述型 string（请参阅下表） | AMQP 值 |
 | DateTimeOffset | 描述型 long（请参阅下表） | AMQP 值 |
@@ -95,51 +95,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 
 -   通过传输目标发送。
 
--   按消息序列号接收。
-
--   消息和会话浏览。
-
--   会话状态。
-
--   基于 Batch 的 API。
-
 -   扩大接收。
-
--   订阅规则的运行时操作。
-
--   会话锁定续订。
-
-具体而言，在使用 AMQP 时，目前不支持以下 API：
-
-- [Microsoft.ServiceBus.Messaging.MessagingFactory.AcceptMessageSession][]
-- [Microsoft.ServiceBus.Messaging.MessagingFactory.CreateMessageSender(System.String,System.String)][]
-
-- [Microsoft.ServiceBus.Messaging.MessageSender.SendBatch(System.Collections.Generic.IEnumerable{Microsoft.ServiceBus.Messaging.BrokeredMessage})][]
-
-- [Microsoft.ServiceBus.Messaging.MessageReceiver.Receive(System.Int64)][]
-- [Microsoft.ServiceBus.Messaging.MessageReceiver.ReceiveBatch][]
-- [Microsoft.ServiceBus.Messaging.MessageReceiver.CompleteBatch(System.Collections.Generic.IEnumerable{System.Guid})][]
-- [Microsoft.ServiceBus.Messaging.MessageReceiver.Peek][]
-- [Microsoft.ServiceBus.Messaging.MessageReceiver.PeekBatch][]
-
-- [Microsoft.ServiceBus.Messaging.QueueClient.Peek][]
-- [Microsoft.ServiceBus.Messaging.QueueClient.PeekBatch][]
-
-- [Microsoft.ServiceBus.Messaging.TopicClient.SendBatch(System.Collections.Generic.IEnumerable{Microsoft.ServiceBus.Messaging.BrokeredMessage})][]
-
-- [Microsoft.ServiceBus.Messaging.SubscriptionClient.Receive(System.Int64)][]
-- [Microsoft.ServiceBus.Messaging.SubscriptionClient.ReceiveBatch][]
-- [Microsoft.ServiceBus.Messaging.SubscriptionClient.CompleteBatch(System.Collections.Generic.IEnumerable{System.Guid})][]
-- [Microsoft.ServiceBus.Messaging.SubscriptionClient.Peek][]
-- [Microsoft.ServiceBus.Messaging.SubscriptionClient.PeekBatch][]
-- [Microsoft.ServiceBus.Messaging.SubscriptionClient.AddRule][]
-- [Microsoft.ServiceBus.Messaging.SubscriptionClient.RemoveRule(System.String)][]
-
-- [Microsoft.ServiceBus.Messaging.MessageSession.GetState][]
-- [Microsoft.ServiceBus.Messaging.MessageSession.SetState(System.IO.Stream)][]
-- [Microsoft.ServiceBus.Messaging.MessageSession.RenewLock][]
-
-- [Microsoft.ServiceBus.Messaging.BrokeredMessage.RenewLock][]
 
 在使用 AMQP 时，与默认协议相比，在服务总线 .NET API 的行为方面也有一些细微的差异：
 
@@ -167,35 +123,15 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 - [针对服务总线分区队列和主题的 AMQP 1.0 支持]
 - [适用于 Windows Server 的服务总线中的 AMQP]
 
-  [如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
+  [如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
   [DataContractSerializer]: https://msdn.microsoft.com/zh-cn/library/azure/system.runtime.serialization.datacontractserializer.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
   [Microsoft.ServiceBus.Messaging.MessagingFactory.AcceptMessageSession]: https://msdn.microsoft.com/zh-cn/library/azure/jj657638.aspx
   [Microsoft.ServiceBus.Messaging.MessagingFactory.CreateMessageSender(System.String,System.String)]: https://msdn.microsoft.com/zh-cn/library/azure/jj657703.aspx
-  [Microsoft.ServiceBus.Messaging.MessageSender.SendBatch(System.Collections.Generic.IEnumerable{Microsoft.ServiceBus.Messaging.BrokeredMessage})]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.sendbatch.aspx
-  [Microsoft.ServiceBus.Messaging.MessageReceiver.Receive(System.Int64)]: https://msdn.microsoft.com/zh-cn/library/azure/hh322665.aspx
-  [Microsoft.ServiceBus.Messaging.MessageReceiver.ReceiveBatch]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.receivebatch.aspx
-  [Microsoft.ServiceBus.Messaging.MessageReceiver.CompleteBatch(System.Collections.Generic.IEnumerable{System.Guid})]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.completebatch.aspx
-  [Microsoft.ServiceBus.Messaging.MessageReceiver.Peek]: https://msdn.microsoft.com/zh-cn/library/azure/jj908731.aspx
-  [Microsoft.ServiceBus.Messaging.MessageReceiver.PeekBatch]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagereceiver.peekbatch.aspx
-  [Microsoft.ServiceBus.Messaging.QueueClient.Peek]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.peek.aspx
-  [Microsoft.ServiceBus.Messaging.QueueClient.PeekBatch]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.peekbatch.aspx
-  [Microsoft.ServiceBus.Messaging.TopicClient.SendBatch(System.Collections.Generic.IEnumerable{Microsoft.ServiceBus.Messaging.BrokeredMessage})]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.sendbatch.aspx
-  [Microsoft.ServiceBus.Messaging.SubscriptionClient.Receive(System.Int64)]: https://msdn.microsoft.com/zh-cn/library/azure/hh293110.aspx
-  [Microsoft.ServiceBus.Messaging.SubscriptionClient.ReceiveBatch]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.receivebatch.aspx
-  [Microsoft.ServiceBus.Messaging.SubscriptionClient.CompleteBatch(System.Collections.Generic.IEnumerable{System.Guid})]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.completebatch.aspx
-  [Microsoft.ServiceBus.Messaging.SubscriptionClient.Peek]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.peek.aspx
-  [Microsoft.ServiceBus.Messaging.SubscriptionClient.PeekBatch]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.peekbatch.aspx
-  [Microsoft.ServiceBus.Messaging.SubscriptionClient.AddRule]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.addrule.aspx
-  [Microsoft.ServiceBus.Messaging.SubscriptionClient.RemoveRule(System.String)]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.removerule.aspx
-  [Microsoft.ServiceBus.Messaging.MessageSession.GetState]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesession.getstate.aspx
-  [Microsoft.ServiceBus.Messaging.MessageSession.SetState(System.IO.Stream)]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesession.setstate.aspx
-  [Microsoft.ServiceBus.Messaging.MessageSession.RenewLock]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesession.renewlock.aspx
-  [Microsoft.ServiceBus.Messaging.BrokeredMessage.RenewLock]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx
   [OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 
-[Azure 经典管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 [针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx

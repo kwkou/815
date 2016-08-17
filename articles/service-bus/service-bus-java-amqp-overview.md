@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="03/09/2016" 
-	wacn.date="12/17/2015"/>
+	wacn.date="08/15/2016"/>
 
 
 # 服务总线的 AMQP 1.0 支持

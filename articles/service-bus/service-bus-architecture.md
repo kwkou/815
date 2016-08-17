@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="服务总线体系结构 | Microsoft Azure"
+   pageTitle="服务总线体系结构 | Azure"
    description="介绍 Azure 服务总线的消息处理体系结构。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" />
+    editor="" />
 <tags 
    ms.service="service-bus"
-    ms.date="04/19/2016"
-   wacn.date="06/27/2016" />
+    ms.date="07/11/2016"
+   wacn.date="08/15/2016" />
 
 # 服务总线体系结构
 
-本文介绍 Azure 服务总线的消息处理体系结构。
+本文介绍 Azure 服务总线的消息和中继处理体系结构。
 
 ## 服务总线缩放单位
 
@@ -49,7 +49,7 @@
 
 ## 后续步骤
 
-在阅读有关服务总线工作原理的概述后，请访问以下链接：
+在阅读有关服务总线体系结构的概述后，请访问以下链接：
 
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)

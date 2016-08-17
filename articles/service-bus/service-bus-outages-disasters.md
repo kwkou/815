@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
     ms.date="05/06/2016"
-   wacn.date="06/21/2016" />
+   wacn.date="08/15/2016" />
 
 # 使应用程序免受服务总线中断和灾难影响的最佳实践
 
@@ -51,13 +51,13 @@
 
 ## 保护队列和主题免受数据中心中断或灾难的影响
 
-为了在使用中转消息传送时实现针对数据中心中断的恢复，服务总线支持两种方法：*主动*和*被动*复制。对于每一种方法，如果必须在数据中心中断的情况下仍可访问给定的队列或主题，你可以将其创建在两个命名空间中。两个实体可以具有相同的名称。例如，可在 **contosoPrimary.servicebus.chinacloudapi.cn/myQueue** 下访问主要队列，而在 **contosoSecondary.servicebus.chinacloudapi.cn/myQueue** 下访问其辅助副本。
+为了在使用中转消息传送时实现针对数据中心中断的恢复，服务总线支持两种方法：主动和被动复制。对于每一种方法，如果必须在数据中心中断的情况下仍可访问给定的队列或主题，你可以将其创建在两个命名空间中。两个实体可以具有相同的名称。例如，可在 **contosoPrimary.servicebus.chinacloudapi.cn/myQueue** 下访问主要队列，而在 **contosoSecondary.servicebus.chinacloudapi.cn/myQueue** 下访问其辅助副本。
 
 如果应用程序不需要发送方到接收方的持续通信，则该应用程序可实施一个用于防止消息丢失的持久客户端队列，从而保护发送方免受任何暂时性服务总线故障的影响。
 
 ## 主动复制
 
-主动复制对于每个操作都将使用这两个服务命名空间中的实体。任何发送消息的客户端都将发送同一条消息的两个副本。将第一个副本发送到主要实体（例如 **contosoPrimary.servicebus.chinacloudapi.cn/sales**），并将该消息的第二个副本发送到辅助实体（例如 **contosoSecondary.servicebus.chinacloudapi.cn/sales**）。
+主动复制对于每个操作都使用这两个命名空间中的实体。任何发送消息的客户端都将发送同一条消息的两个副本。第一个副本将发送到主要实体（例如 **contosoPrimary.servicebus.chinacloudapi.cn/sales**），该消息的第二个副本将发送到辅助实体（例如 **contosoSecondary.servicebus.chinacloudapi.cn/sales**）。
 
 客户端从两个队列接收消息。如果接收方处理了消息的第一个副本，则第二个副本将被取消。要取消重复的消息，发送方必须用唯一标识符标记每一条消息。必须用同一标识符标记消息的两个副本。你可以使用 [BrokeredMessage.MessageId][] 或 [BrokeredMessage.Label][] 属性或自定义属性对消息进行标记。接收方必须保留已接收消息的列表。
 
@@ -94,7 +94,7 @@
 若要了解有关灾难恢复的详细信息，请参阅这些文章：
 
 - [Azure SQL 数据库业务连续性][]
-- [Azure 业务连续性技术指南][]
+- [Azure 复原技术指南][]
 
   [服务总线身份验证]: /documentation/articles/service-bus-authentication-and-authorization/
   [分区消息实体]: /documentation/articles/service-bus-partitioning/
@@ -105,6 +105,7 @@
   [使用服务总线中转消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-f5688664
   [持久消息发送方]: http://code.msdn.microsoft.com/Service-Bus-Durable-Sender-0763230d
   [Azure SQL 数据库业务连续性]: /documentation/articles//sql-database-business-continuity
+  [Azure 复原技术指南]: /documentation/articles/resiliency-technical-guidance/
   [Azure 业务连续性技术指南]: https://msdn.microsoft.com/zh-cn/library/azure/hh873027.aspx
 
 <!---HONumber=74-->

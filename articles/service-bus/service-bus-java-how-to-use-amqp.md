@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 AMQP 1.0 用于 Java 服务总线 API | Microsoft Azure" 
+	pageTitle="配合使用 AMQP 1.0 与 Java 服务总线 API | Azure" 
 	description="了解如何将 Java 消息服务 (JMS) 用于 Azure 服务总线和高级消息队列"
 	services="service-bus"
 	documentationCenter="java"
@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="03/09/2016" 
-	wacn.date="01/14/2016"/>
-
+	ms.date="06/20/2016" 
+	wacn.date="08/14/2016"/>
 
 # 如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0
 
@@ -23,11 +22,11 @@
 
 ## 服务总线入门
 
-此指南假定你已具有包含名为“queue1”的队列的 Service Bus 命名空间。 如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
+本指南假定你已拥有包含名为“queue1”的队列的服务总线命名空间，如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
 
 ### 下载 AMQP 1.0 JMS 客户端库
 
-有关从哪里下载 Apache Qpid JMS AMQP 1.0 客户端库的最新版本的信息，请访问 [http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html](http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html)。
+有关从哪里下载 Apache Qpid JMS AMQP 1.0 客户端库的最新版本的信息，请访问 [https://qpid.apache.org/download.html](https://qpid.apache.org/download.html)。
 
 使用 Service Bus 构建和运行 JMS 应用程序时必须将以下 4 个 JAR 文件从 Apache Qpid JMS AMQP 1.0 分发存档添加到 Java CLASSPATH：
 
@@ -79,7 +78,7 @@ amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 - **[namespace]**：服务总线命名空间。
 - **[username]**：服务总线颁发者名称。
-- **[password]**：服务总线颁发者密钥的 URL 编码格式。
+- **[password]**：URL 编码格式的服务总线颁发者密钥。
 
 > [AZURE.NOTE]必须手动为密码进行 URL 编码。在 [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) 上提供了一个有用的 URL 编码实用工具。
 
@@ -312,7 +311,7 @@ exit
 
 在将 JMS over AMQP 1.0 用于 Service Bus 时存在以下限制，即：
 
-* 每个**会话**只允许一个 **MessageProducer** 或 **MessageConsumer**。如果你需要在应用程序中创建多个 **MessageProducers** 或 **MessageConsumers**，请分别为它们创建专用**会话**。
+* 每个**会话**只允许一个 **MessageProducer** 或 **MessageConsumer**。如果你需要在应用程序中创建多个 **MessageProducer** 或 **MessageConsumer**，请分别为它们创建专用**会话**。
 * 当前不支持易失性主题订阅。
 * 当前不支持 **MessageSelectors**。
 * 当前不支持临时目标（即 **TemporaryQueue** 和 **TemporaryTopic**），以及使用这些目标的 **QueueRequestor** 和 **TopicRequestor** API。
@@ -329,6 +328,6 @@ exit
 * [Azure Service Bus 中的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview/)
 * [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing/)
 * [服务总线 AMQP 1.0 开发人员指南](/documentation/articles/service-bus-amqp-dotnet/)
-* [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
+* [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 
 <!---HONumber=Mooncake_0104_2016-->

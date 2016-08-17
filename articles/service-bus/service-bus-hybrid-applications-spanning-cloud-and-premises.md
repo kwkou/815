@@ -10,12 +10,11 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="05/06/2016" 
-	wacn.date="06/21/2016"/>
+	wacn.date="08/15/2016"/>
 
 # 启用跨云和本地的混合应用程序
 
 混合云/本地应用程序在现代 IT 环境中已成为现实。Microsoft Azure 服务总线可帮助你利用现有本地资产，创建安全可靠的解决方案来补充和扩展当前的基础结构。
-
 
 ## 探究
 
@@ -32,7 +31,8 @@
  
 ## 热门
 - [服务总线定价信息](/pricing/details/service-bus/)
-- [服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq/)
+- [服务总线常见问题解答](/documentation/articles/service-bus-faq/)
+- [服务总线 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
 - [服务总线 REST API 参考](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh780717.aspx)
 - [注册 Azure 试用帐户](/pricing/1rmb-trial/)
  
