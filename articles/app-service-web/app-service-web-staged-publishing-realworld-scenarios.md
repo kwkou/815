@@ -336,7 +336,7 @@
 9. 重复步骤 4 至 6
 
 ## 参考
-[使用 Azure Web 应用进行灵便软件开发](/documentation/articles/app-service-agile-software-development/)
+[使用 Azure Web 应用进行敏捷软件开发](/documentation/articles/app-service-agile-software-development/)
 
 [为 Azure 中的 Web 应用设置过渡环境](/documentation/articles/web-sites-staged-publishing/)
 

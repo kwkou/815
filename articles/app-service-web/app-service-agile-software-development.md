@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Azure Web 应用进行灵便软件开发"
-	description="学习如何使用支持灵便软件开发的方式，通过 Azure Web 应用创建高缩放性的复杂应用程序。"
+	pageTitle="使用 Azure Web 应用进行敏捷软件开发"
+	description="学习如何使用支持敏捷软件开发的方式，通过 Azure Web 应用创建高缩放性的复杂应用程序。"
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -13,13 +13,13 @@
 	wacn.date="05/24/2016"/>
 
 
-# 使用 Azure Web 应用进行灵便软件开发 #
+# 使用 Azure Web 应用进行敏捷软件开发 #
 
-在本教程中，你将学习如何使用支持[灵便软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure Web 应用](/home/features/web-site/)创建高缩放性的复杂应用程序。
+在本教程中，你将学习如何使用支持[敏捷软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure Web 应用](/home/features/web-site/)创建高缩放性的复杂应用程序。
 
-技术流程限制通常会妨碍成功的实施灵便方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview/)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/web-sites-publish-source-control/)、[过渡环境](/documentation/articles/web-sites-staged-publishing/)（槽）和[监视](/documentation/articles/web-sites-monitor/)等功能的 Azure Web 应用是非常适合采用灵便软件开发的开发人员的解决方案。
+技术流程限制通常会妨碍成功的实施敏捷方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview/)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/web-sites-publish-source-control/)、[过渡环境](/documentation/articles/web-sites-staged-publishing/)（槽）和[监视](/documentation/articles/web-sites-monitor/)等功能的 Azure Web 应用是非常适合采用敏捷软件开发的开发人员的解决方案。
 
-下表是灵便开发的相关要求以及 Azure 服务如何启用它们的简短列表。
+下表是敏捷开发的相关要求以及 Azure 服务如何启用它们的简短列表。
 
 | 要求 | Azure 如何实现 |
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -112,7 +112,7 @@
 
 ## 创建开发和测试分支 ##
 
-现在，你已在 Azure 的生产环境中创建了一个复杂应用程序，接下来，你要使用灵便方法来更新应用程序。在本部分中，你将要创建需要进行必要更新的开发和测试分支。
+现在，你已在 Azure 的生产环境中创建了一个复杂应用程序，接下来，你要使用敏捷方法来更新应用程序。在本部分中，你将要创建需要进行必要更新的开发和测试分支。
 
 1.	首先创建测试环境。在 Git Shell 会话中，运行以下命令来创建名为 **NewUpdate** 的新分支的环境。 
 
@@ -201,7 +201,7 @@
 	cd <repository_root>\ARMTemplates
 	.\swap.ps1 -Name ToDoApp<unique_string>master
 
-祝贺你！ 你已成功地将新的更新发布到生产 Web 应用。不仅如此，完成的方式也只是轻松地创建开发和测试环境，以及构建和测试每项提交。这些是灵便软件开发的重要构建块。
+祝贺你！ 你已成功地将新的更新发布到生产 Web 应用。不仅如此，完成的方式也只是轻松地创建开发和测试环境，以及构建和测试每项提交。这些是敏捷软件开发的重要构建块。
 
 <a name="delete"></a>
 ## 删除开发和测试环境 ##
@@ -217,11 +217,11 @@
 
 ## 摘要 ##
 
-对于许多想要采用 Azure 作为其应用程序平台的公司而言，灵便软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure Web 应用和 Azure 资源管理器配合使用，以创建提供灵便方法的 DevOps 解决方案。接下来，你可以通过执行高级 DevOps 技术，基于此方案生成项目。
+对于许多想要采用 Azure 作为其应用程序平台的公司而言，敏捷软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure Web 应用和 Azure 资源管理器配合使用，以创建提供敏捷方法的 DevOps 解决方案。接下来，你可以通过执行高级 DevOps 技术，基于此方案生成项目。
 
 ## 更多资源 ##
 
--	[灵便开发实践：有关现代化开发周期的提示和技巧](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
+-	[敏捷开发实践：有关现代化开发周期的提示和技巧](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
 -	[使用资源管理器模板为 Azure Web 应用制定高级部署策略](http://channel9.msdn.com/Events/Build/2015/2-620)
 -	[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)
 -	[JSONLint – JSON 验证程序](http://jsonlint.com/)
