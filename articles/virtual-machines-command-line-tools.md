@@ -42,7 +42,7 @@ CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息
 
 此命令启动浏览器以从 Azure 经典管理门户下载你的 .publishsettings 文件。
 
-	~$ azure account download
+	~$ azure account download -e AzureChinaCloud
 	info:   Executing command account download
 	info:   Launching browser to https://windows.azure.com/download/publishprofile.aspx
 	help:   Save the downloaded file, then execute the command
@@ -110,7 +110,7 @@ CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息
 
 此命令创建新的地缘组
 
-	~$ azure account affinity-group create opentec -l "China North"
+	~$ azure account affinity-group create opentec -l "China North" -e AzureChinaCloud
 	info:    Executing command account affinity-group create
 	+ Creating affinity group
 	info:    account affinity-group create command OK
@@ -211,7 +211,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 **-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br />
 **-t, --ssh-cert** 指定 SSH 证书。<br /> **-s** 订阅。<br />
 **-o, --community** 指定的映像是社区映像。<br />
-**-w** 虚拟网络名称。<br/> **-l, --location** 指定位置（例如，“North Central US”）。<br />
+**-w** 虚拟网络名称。<br/> **-l, --location** 指定位置（例如，“China North”）。<br />
 **-a, --affinity-group** 指定地缘组。<br />
 **-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br />
 **-b, --subnet-names** 指定要分配虚拟机的子网名称。
@@ -796,7 +796,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机�
 
 此命令支持以下附加选项：
 
-****-q 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
+**-q** 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
 
 
 **site start [options] [name]**
@@ -819,7 +819,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机�
 	info:   Site mysite has been stopped
 	info:   site stop command OK
 
-****site restart [options] [name]
+**site restart [options] [name]**
 
 此命令停止然后启动指定的 Web 应用。
 

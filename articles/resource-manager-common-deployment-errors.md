@@ -78,7 +78,7 @@
     Code=StorageAccountAlreadyTaken 
     Message=The storage account named mystorage is already taken.
 
-可将命名约定与 [uniqueString](resource-group-template-functions.md#uniquestring) 函数的结果连接起来创建一个唯一名称。
+可将命名约定与 [uniqueString](/documentation/articles/resource-group-template-functions#uniquestring) 函数的结果连接起来创建一个唯一名称。
 
     "name": "[concat('contosostorage', uniqueString(resourceGroup().id))]",
     "type": "Microsoft.Storage/storageAccounts",

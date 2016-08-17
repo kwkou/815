@@ -45,7 +45,7 @@
    
 3. 在执行部署之前，然后通过运行[验证模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790547.aspx)操作来验证部署。测试部署时，请提供与执行部署时所提供的完全相同的参数（如下一步中所示）。
 
-3. 新建部署。提供你的订阅 ID、要部署的资源组的名称、部署的名称以及模板的链接。有关模板文件的信息，请参阅[参数文件](./#parameter-file)。有关使用 REST API 创建资源组的详细信息，请参阅[创建模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx)。请注意，“mode”设置为“Incremental”。若要运行完整部署，请将 **mode** 设置为 **Complete**。使用完整模式时要小心，因为可能会无意中删除不在模板中的资源。
+3. 新建部署。提供你的订阅 ID、要部署的资源组的名称、部署的名称以及模板的链接。有关模板文件的信息，请参阅[参数文件](#parameter-file)。有关使用 REST API 创建资源组的详细信息，请参阅[创建模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx)。请注意，“mode”设置为“Incremental”。若要运行完整部署，请将 **mode** 设置为 **Complete**。使用完整模式时要小心，因为可能会无意中删除不在模板中的资源。
     
         PUT https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
           <common headers>

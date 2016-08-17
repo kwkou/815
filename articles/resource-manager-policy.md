@@ -387,7 +387,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
     }
 
 
-策略定义可以定义为如上所示的示例之一。对于 api-version，请使用 *2016-04-01*。有关示例与其他详细信息，请参阅[用于策略定义的 REST API](https://msdn.microsoft.com/library/azure/mt588471.aspx)。
+策略定义可以定义为如上所示的示例之一。对于 api-version，请使用 *2016-04-01*。有关示例与其他详细信息，请参阅[用于策略定义的 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt588471.aspx)。
 
 ### 使用 PowerShell 创建策略定义
 
