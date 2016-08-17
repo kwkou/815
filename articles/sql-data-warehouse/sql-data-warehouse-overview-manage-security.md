@@ -17,7 +17,6 @@
 
 > [AZURE.SELECTOR]
 - [安全性概述](/documentation/articles/sql-data-warehouse-overview-manage-security/)
-- [加密（门户）](/documentation/articles/sql-data-warehouse-encryption-tde/)
 - [加密 (T-SQL)](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
 
 

@@ -341,7 +341,7 @@ SQL 数据仓库不提供相当于 SQL Server 中 [sp\_create\_stats][] 的系�
 
 > [AZURE.NOTE] 更新表中的所有统计信息时，SQL 数据仓库将执行扫描，以针对每个统计信息进行表采样。如果表很大、包含许多列和许多统计信息，则根据需要更新各项统计信息可能比较有效率。
 
-有关 `UPDATE STATISTICS` 过程的实现，请参阅[临时表][Temporary]一文。实现方法与上述 `CREATE STATISTICS` 过程略有不同，但最终结果相同。
+<!-- 有关 `UPDATE STATISTICS` 过程的实现，请参阅[临时表][Temporary]一文。实现方法与上述 `CREATE STATISTICS` 过程略有不同，但最终结果相同。 -->
 
 有关完整语法，请参阅 MSDN 上的[更新统计信息][]。
 
