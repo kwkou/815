@@ -17,7 +17,7 @@ Azure Resource Manager SDK 适用于多种语言和平台。每种语言实现�
 
 其中每个 SDK 中的代码是从 [Azure RESTful API 规范](https://github.com/azure/azure-rest-api-specs)生成的。这些规范是开源代码，基于 Swagger 2.0 规范。SDK 代码是通过名为 [AutoRest](https://github.com/azure/autorest) 的开源项目生成的。AutoRest 将这些 RESTful API 规范转换成采用多种语言的客户端库。如果你想要改进 SDK 中生成的代码的任何方面，则可以使用整个工具集来创建 SDK，该工具集属于开放式工具集，免费提供且基于广泛采用的 API 规范格式。
 
-[用于 .NET 的 Azure SDK](https://azure.microsoft.com/downloads/) 是一组 NuGet 包，可用于调用大多数 Azure Resource Manager API。如果该 SDK 未提供所需的功能，你可以轻松地将该 SDK 与在后台对 Resource Manager REST API 的常规调用相结合。
+[用于 .NET 的 Azure SDK](/downloads/) 是一组 NuGet 包，可用于调用大多数 Azure Resource Manager API。如果该 SDK 未提供所需的功能，你可以轻松地将该 SDK 与在后台对 Resource Manager REST API 的常规调用相结合。
 
 本文不会介绍用于 .NET 的 Azure SDK、Azure Resource Manager API 或 Visual Studio 的所有方面，而只介绍快速入门方法。
 
@@ -34,9 +34,9 @@ Azure Resource Manager SDK 适用于多种语言和平台。每种语言实现�
 ## 身份验证
 Azure Active Directory (Azure AD) 负责处理 Resource Manager 的身份验证。若要连接到任何 API，首先需要使用 Azure AD 进行身份验证，以接收可传递给每个请求的访问令牌。若要获取此令牌，需创建 Azure AD 应用程序和一个用于登录的服务主体。有关分步说明，请参阅下面的某篇文章：
 
-- [使用 Azure PowerShell 创建可访问资源的 Active Directory 应用程序](resource-group-authenticate-service-principal.md)
-- [使用 Azure CLI 创建可访问资源的 Active Directory 应用程序](resource-group-authenticate-service-principal-cli.md)
-- [使用 Azure 门户创建可访问资源的 Active Directory 应用程序](resource-group-create-service-principal-portal.md)
+- [使用 Azure PowerShell 创建可访问资源的 Active Directory 应用程序](/documentation/articles/resource-group-authenticate-service-principal/)
+- [使用 Azure CLI 创建可访问资源的 Active Directory 应用程序](/documentation/articles/resource-group-authenticate-service-principal-cli/)
+- [使用 Azure 门户创建可访问资源的 Active Directory 应用程序](/documentation/articles/resource-group-create-service-principal-portal/)
 
 创建服务主体后，你会获得：
 

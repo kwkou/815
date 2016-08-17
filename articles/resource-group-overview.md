@@ -64,7 +64,7 @@
 
 ## 资源提供程序
 
-每个资源提供程序都会提供一组用于技术区域的资源和操作。例如，如果你想要存储密钥和密码，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型用于创建密钥保管库，提供名为 **vaults/secrets** 的资源类型用于在密钥保管库中创建密码。它还通过[密钥保管库 REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)来提供操作。你可以直接调用 REST API，也可以使用[密钥保管库 PowerShell cmdlet](https://msdn.microsoft.com/library/dn868052.aspx) 和[密钥保管库 Azure CLI](/documentation/articles/key-vault-manage-with-cli) 来管理密钥保管库。你还可以使用许多编程语言来使用大多数资源。有关详细信息，请参阅 [SDK 和示例](#sdks-and-samples)。
+每个资源提供程序都会提供一组用于技术区域的资源和操作。例如，如果你想要存储密钥和密码，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型用于创建密钥保管库，提供名为 **vaults/secrets** 的资源类型用于在密钥保管库中创建密码。它还通过[密钥保管库 REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)来提供操作。你可以直接调用 REST API，也可以使用[密钥保管库 PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/dn868052.aspx) 和[密钥保管库 Azure CLI](/documentation/articles/key-vault-manage-with-cli/) 来管理密钥保管库。你还可以使用许多编程语言来使用大多数资源。有关详细信息，请参阅 [SDK 和示例](#sdks-and-samples)。
 
 若要部署和管理基础结构，需要了解有关资源提供程序的详细信息；例如，它提供的资源类型、REST API 操作的版本号码、它支持的操作以及设置要创建的资源类型值时要使用的架构。若要了解支持的资源提供程序，请参阅 [Resource Manager 提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
 

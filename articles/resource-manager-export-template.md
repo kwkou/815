@@ -21,7 +21,7 @@ Resource Manager 允许你从订阅的现有资源中导出 Resource Manager 模
 - 可以导出部署时使用过的实际模板。导出的模板中包括的所有参数和变量与原始模板中定义的完全一样。如果你已通过门户部署资源，而现在想要了解如何通过构建模板来创建这些资源，则此方法特别有用。
 - 你可以导出表示资源组当前状态的模板。导出的模板不基于任何已用于部署的模板。与之相反，它所创建的模板为资源组的快照。导出的模板会有许多硬编码的值，其参数可能没有你通常定义的那么多。如果你已通过门户或脚本修改资源组，并且现在需要捕获资源组作为模板，则可使用此方法。
 
-本主题对这两种方法都进行了说明。在[自定义导出的 Azure Resource Manager 模板](resource-manager-customize-template.md)一文中，你将了解如何获取从资源组的当前状态生成的模板并使之在重新部署你的解决方案时更有用。
+本主题对这两种方法都进行了说明。在[自定义导出的 Azure Resource Manager 模板](/documentation/articles/resource-manager-customize-template/)一文中，你将了解如何获取从资源组的当前状态生成的模板并使之在重新部署你的解决方案时更有用。
 
 在本教程中，你将登录到 Azure 门户，创建存储帐户，并导出该存储帐户的模板。你将添加虚拟网络以修改资源组。最后，你将导出表示其当前状态的新模板。尽管本文重点介绍简化的基础结构，但你也可以使用这些相同的步骤为更复杂的解决方案导出模板。
 
@@ -189,7 +189,7 @@ Resource Manager 允许你从订阅的现有资源中导出 Resource Manager 模
      
 ![show error](./media/resource-manager-export-template/show-error-details.png)
 
-下面显示了一些常用修补程序。若要实现这些资源，需要将参数添加到模板。有关详细信息，请参阅[自定义和重新部署导出的模板](resource-manager-customize-template.md)。
+下面显示了一些常用修补程序。若要实现这些资源，需要将参数添加到模板。有关详细信息，请参阅[自定义和重新部署导出的模板](/documentation/articles/resource-manager-customize-template/)。
 
 ### 连接字符串
 
@@ -250,7 +250,7 @@ Resource Manager 允许你从订阅的现有资源中导出 Resource Manager 模
 
 ### 虚拟机扩展
 
-如需虚拟机扩展的示例，请参阅 [Azure Windows VM 扩展配置示例](./virtual-machines/virtual-machines-windows-extensions-configuration-samples.md)。
+如需虚拟机扩展的示例，请参阅 [Azure Windows VM 扩展配置示例](./virtual-machines/virtual-machines-windows-extensions-configuration-samples/)。
 
 ### 虚拟网络网关
 

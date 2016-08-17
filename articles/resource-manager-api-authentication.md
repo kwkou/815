@@ -96,7 +96,7 @@ Azure AD 还支持应用程序的证书凭据：创建自签名证书、保留�
 
     http://login.microsoftonline.com/{directory_domain_name}/OAuth2/Authorize
 
-[Authorization Code Grant Flow](https://msdn.microsoft.com/zh-cn/library/azure/dn645542.aspx)（授权代码授予流）主题中介绍了适用于此请求的查询字符串参数。
+[Authorization Code Grant Flow](/documentation/articles/active-directory-protocols-oauth-code/)（授权代码授予流）主题中介绍了适用于此请求的查询字符串参数。
 
 以下示例演示如何请求 OAuth2.0 授权：
 
@@ -152,7 +152,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 
     https://login.microsoftonline.com/{directory_domain_name}/OAuth2/Token
 
-[授权代码授予流](https://msdn.microsoft.com/zh-cn/library/azure/dn645542.aspx)主题介绍了适用于此请求的查询字符串参数。
+[授权代码授予流](/documentation/articles/active-directory-protocols-oauth-code/)主题介绍了适用于此请求的查询字符串参数。
 
 以下示例演示如何使用密码凭据来请求代码授予令牌：
 
