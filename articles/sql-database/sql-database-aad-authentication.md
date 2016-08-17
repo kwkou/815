@@ -102,7 +102,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 如果你已经拥有一个数据库，通过连接到该数据库（例如使用 SQL Server Management Studio）并执行 `SELECT @@VERSION;` 来验证其是否托管在 SQL 数据库 V12 中。SQL 数据库 V12 中数据库的预期输出至少是 **Microsoft SQL Azure (RTM) - 12.0**。
 
-如果你的数据库未在 SQL 数据库 V12 中托管，请参阅[计划并准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade/)，然后访问 Azure 经典管理门户将数据库迁移到 SQL 数据库 V12。
+如果你的数据库未在 SQL 数据库 V12 中托管，请参阅[计划并准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell/)，然后访问 Azure 经典管理门户将数据库迁移到 SQL 数据库 V12。
 
 或者，可以按照[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)中列出的步骤，在 SQL 数据库 V12 中创建一个新数据库。**提示**：请先阅读下一步，然后再为新的数据库选择订阅。
 
