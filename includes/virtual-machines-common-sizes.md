@@ -96,7 +96,6 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 |Standard\_D12\_v2 |4|28 GB|4|临时磁盘 (SSD) = 200 GB |8|8x500| 高 |
 |Standard\_D13\_v2 |8|56 GB|8|临时磁盘 (SSD) = 400 GB |16|16x500| 高 |
 |Standard\_D14\_v2 |16|112 GB|8|临时磁盘 (SSD) = 800 GB |32|32x500| 很高 |
-|Standard\_D15\_v2 |20|140 GB|10|临时 (SSD) = 1 TB |40|40x500| 很高 |
 
 
 ##<a name="ds-series"></a> DS 系列*
