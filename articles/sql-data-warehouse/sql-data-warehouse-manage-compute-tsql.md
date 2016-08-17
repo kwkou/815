@@ -82,7 +82,7 @@
 <!--Article references-->
 [Service capacity limits]: /documentation/articles/sql-data-warehouse-service-capacity-limits/
 [管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
-[管理计算能力概述]: /documentation/articles/sql-data-warehouse-overview-manage-compute-power/
+[管理计算能力概述]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 
 <!--MSDN references-->
 
