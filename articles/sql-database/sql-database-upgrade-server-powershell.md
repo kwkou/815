@@ -177,7 +177,7 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
 其他监视信息：
 
-- [Azure SQL 数据库的单一数据库性能指导](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx)。
+- [Azure SQL 数据库的单一数据库性能指导](/documentation/articles/sql-database-performance-guidance/)。
 - [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 - [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs/)
 
@@ -194,7 +194,7 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
 - [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)，并将部分或全部数据库添加到该池。
 
-- [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up/)。
+- [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up-powershell/)。
 
 
 
