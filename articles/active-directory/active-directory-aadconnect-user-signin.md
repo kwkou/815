@@ -86,7 +86,7 @@ Azure AD 的登录页列出了针对本地 Active directory 定义的 UPN 后缀
 
 Azure AD 的登录页列出了针对本地 Active Directory 定义的 UPN 后缀，以及 Azure AD 中对应的自定义域与当前验证状态。在自定义安装中，现在你可以在“Azure AD 登录”页上选择用户主体名的属性。
 
-![Azure AD 登录页](.\media\active-directory-aadconnect-user-signin\custom_azure_sign_in.png)
+![Azure AD 登录页](./media/active-directory-aadconnect-user-signin/custom_azure_sign_in.png)
 
 可以单击“刷新”按钮，从 Azure AD 中重新提取最新的自定义域状态。
 
