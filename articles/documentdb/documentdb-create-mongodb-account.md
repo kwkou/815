@@ -16,7 +16,7 @@
 
 若要创建具有 MongoDB 协议支持的 DocumentDB 帐户，必须：
 
-- 有一个 Azure 帐户。如果你没有 Azure 帐户，可以获取[免费 Azure 帐户](/pricing/1rmb-trial-full/?form-type=identityauth)。
+- 有一个 Azure 帐户。如果你没有 Azure 帐户，可以获取[试用 Azure 帐户](/pricing/1rmb-trial-full/?form-type=identityauth)。
 
 ## 创建帐户  
 
