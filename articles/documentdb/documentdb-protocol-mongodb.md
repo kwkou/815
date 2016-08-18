@@ -11,7 +11,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="05/31/2016" 
-	wacn.date="06/29/2016"/>
+	wacn.date="08/18/2016"/>
 
 # DocumentDB 的 MongoDB 协议支持
 
