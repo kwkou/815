@@ -1,7 +1,7 @@
 <properties
  pageTitle="将突发节点添加到 HPC Pack 群集 | Azure"
- description="了解如何按需将云服务中运行的辅助角色实例作为计算资源添加到 Azure 中的 HPC Pack 头节点。"
- services="virtual-machines"
+ description="了解如何通过添加在云服务中运行的辅助角色实例来按需扩展 HPC Pack 群集容量"
+ services="virtual-machines-windows"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
@@ -9,24 +9,26 @@
  tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/13/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="07/15/2016"
+	wacn.date="08/08/2016"/>
 
-# 将按需“突发”节点（辅助角色实例）作为计算资源添加到 Azure 中的 HPC Pack 群集
+# 在 Azure 中将按需“突发”节点添加到 HPC Pack 群集
+
+
 
 本文介绍如何按需将 Azure“突发”节点（在云服务中运行的辅助角色实例）作为计算资源添加到 Azure 的现有 HPC Pack 头节点。这可让你按需增加 Azure 中 HPC 群集的计算能力，而无需维护一组预配置的计算节点 VM。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ![突发节点][burst]
-
->[AZURE.TIP] 如果使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)在 Azure 中创建群集，则可以在自动化部署中包含 Azure 突发节点。请参阅该文中的示例。
 
 本文中的步骤有助于你将 Azure 节点快速添加到基于云的 HPC Pack 头节点 VM，进行测试或概念证明部署。此过程实质上与“迸发到 Azure”的过程相同，用于为本地 HPC Pack 群集添加云计算能力。有关教程，请参阅[使用 Microsoft HPC Pack 设置混合计算群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster/)。有关生产部署的详细指南和注意事项，请参阅[使用 Microsoft HPC Pack 迸发到 Azure ](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)。
 
 ## 先决条件
 
-* **Azure VM 中部署的 HPC Pack 头节点** — 请参阅[在 Azure VM 中部署 HPC Pack 头节点](/documentation/articles/virtual-machines-windows-hpcpack-cluster-headnode/)，了解在经典（服务管理）部署模型中创建群集头节点的步骤。
+* **Azure VM 中部署的 HPC Pack 头节点** - 你可以使用独立的或属于更大群集的头节点 VM。若要创建独立头节点，请参阅[在 Azure VM 中部署 HPC Pack 头节点](/documentation/articles/virtual-machines-windows-hpcpack-cluster-headnode/)。有关自动 HPC Pack 群集部署选项，请参阅[使用 Microsoft HPC Pack 在 Azure 中创建和管理 Windows HPC 群集的选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)。
+
+    >[AZURE.TIP] 如果使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)在 Azure 中创建群集，则可以在自动化部署中包含 Azure 突发节点。请参阅该文中的示例。
 
 * **Azure 订阅** — 若要添加 Azure 节点，可以选择与用来部署头节点 VM 的订阅相同的订阅，也可以选择一个（或多个）不同的订阅。
 
@@ -54,7 +56,7 @@
 
 若要将 Azure 节点添加为计算资源，在头节点上需要有一个管理证书，并将相应证书上载到用于部署的 Azure 订阅。
 
-对于此案例，可以选择 HPC Pack 在头节点上自动安装和配置的**默认 HPC Azure 管理证书**。此证书对进行测试和概念证明部署很有用。若要使用此证书，只需从头节点 VM 将文件 C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer 上载到订阅即可。
+对于此案例，可以选择 HPC Pack 在头节点上自动安装和配置的**默认 HPC Azure 管理证书**。此证书对进行测试和概念证明部署很有用。若要使用此证书，只需从头节点 VM 将文件 C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer 上载到订阅即可。可在 [Azure 经典管理门户](https://manage.windowsazure.cn)中执行此操作。单击“设置”>“管理证书”。
 
 有关配置管理证书的其他选项，请参阅[为 Azure 突发部署配置 Azure 管理证书的方案](http://technet.microsoft.com/zh-cn/library/gg481759.aspx)。
 
@@ -76,9 +78,9 @@
 
 ## 后续步骤
 
-* 如果你想要有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少 Azure 计算资源，请参阅[自动增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)。
+* 如果你想根据群集上作业及任务的当前工作负荷自动增加或减少 Azure 计算资源，请参阅[自动增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)。
 
 <!--Image references-->
 [burst]: ./media/virtual-machines-windows-classic-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0801_2016-->
