@@ -1,24 +1,24 @@
-{"service": "Azure What's New Archives", 
+{"service": "Azure 历史公告", 
 "id": "leftnav_support_what-is-new_archives", 
 "navigation": 
 [
-	{"group": "Archives", 
+	{"group": "历史公告", 
 	"id": "leftnav_support_what-is-new_archives_list", 
 	"articles": 
 		[
-			{"link": "/support/what-is-new/archives/2016/february/", 
+			{"link": "/what-is-new/archives/2016/february/", 
 			"id": "leftnav_support_what-is-new_2016_february", 
 			"title": "2016年2月"}, 
-			{"link": "/support/what-is-new/archives/2016/january/", 
+			{"link": "/what-is-new/archives/2016/january/", 
 			"id": "leftnav_support_what-is-new_2016_january", 
 			"title": "2016年1月"},
-			{"link": "/support/what-is-new/archives/2015/", 
+			{"link": "/what-is-new/archives/2015/", 
 			"id": "leftnav_support_what-is-new_2015", 
 			"title": "2015年"},
-			{"link": "/support/what-is-new/archives/2014/", 
+			{"link": "/what-is-new/archives/2014/", 
 			"id": "leftnav_support_what-is-new_2014", 
 			"title": "2014年"},
-			{"link": "/support/what-is-new/archives/2013/", 
+			{"link": "/what-is-new/archives/2013/", 
 			"id": "leftnav_support_what-is-new_2013", 
 			"title": "2013年"}
 		]
