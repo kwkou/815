@@ -13,7 +13,7 @@
 	ms.date="06/15/2016"
 	wacn.date="07/28/2016"/>
 
-#关于 Azure 中的 Linux 虚拟机 
+# 关于 Azure 中的 Linux 虚拟机 
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 

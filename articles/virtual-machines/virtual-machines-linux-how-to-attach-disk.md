@@ -11,11 +11,11 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/07/2016"
-	wacn.date="07/18/2016"/>
+	wacn.date="08/15/2016"/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 [Resource Manager 模型](/documentation/articles/virtual-machines-linux-add-disk/)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。请参阅如何[使用 Resource Manager 部署模型附加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。
 
 你可以将空磁盘和包含数据的磁盘附加到 Azure VM。这两种类型的磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。就像将任何磁盘添加到 Linux 计算机一样，连接之后需要将它初始化和格式化才可供使用。本文将详细说明如何附加空磁盘和附加包含数据的磁盘到 VM，以及初始化和格式化新磁盘的方法。
 
@@ -119,7 +119,7 @@
 
 11. 将新驱动器添加到 /etc/fstab：
 
-	若要确保在重新引导后自动重新装载驱动器，必须将其添加到 /etc/fstab 文件。此外，强烈建议在 /etc/fstab 中使用 UUID（全局唯一标识符）来引用驱动器而不是只使用设备名称（即 /dev/sdc1）。若要查找新驱动器的 UUID，可以使用 blkid 实用程序：
+	若要确保在重新引导后自动重新装载驱动器，必须将其添加到 /etc/fstab 文件。此外，强烈建议在 /etc/fstab 中使用 UUID（全局唯一标识符）来引用驱动器而不是只使用设备名称（即 /dev/sdc1）。如果 OS 在启动过程中检测到磁盘错误，这样可以避免将错误的磁盘装载到给定位置，然后为剩余的数据磁盘分配这些设备 ID。若要查找新驱动器的 UUID，可以使用 blkid 实用程序：
 
 		# sudo -i blkid
 
@@ -157,6 +157,28 @@
 
 >[AZURE.NOTE] 之后，在不编辑 fstab 的情况下删除数据磁盘可能会导致 VM 无法引导。如果这是一种常见情况，则请注意，大多数分发都提供了 `nofail` 和/或 `nobootwait` fstab 选项，这些选项使系统在磁盘无法装载的情况下也能引导。有关这些参数的详细信息，请查阅您的分发文档。
 
+### Azure 中对 Linux 的 TRIM/UNMAP 支持
+某些 Linux 内核将支持 TRIM/UNMAP 操作以放弃磁盘上未使用的块。这主要适用于标准存储，以通知 Azure 已删除的页不再有效可以丢弃。如果你创建了较大的文件，然后将其删除，则这可以节省成本。
+
+在 Linux VM 中有两种方法可以启用 TRIM 支持。与往常一样，有关建议的方法，请参阅你的分发：
+
+- 在 `/etc/fstab` 中使用 `discard` 装载选项，例如：
+
+		UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,discard   1   2
+
+- 此处，还可以从命令行手动运行 `fstrim` 命令，或将其添加到 crontab 以定期运行：
+
+	**Ubuntu**
+
+		# sudo apt-get install util-linux
+		# sudo fstrim /datadrive
+
+	**RHEL/CentOS**
+
+		# sudo yum install util-linux
+		# sudo fstrim /datadrive
+
+
 ## 后续步骤
 你可以阅读下列文章，进一步了解如何使用 Linux VM：
 
@@ -170,4 +192,4 @@
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide/
 [Logon]: /documentation/articles/virtual-machines-linux-classic-log-on/
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->
