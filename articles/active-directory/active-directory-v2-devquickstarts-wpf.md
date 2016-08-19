@@ -29,7 +29,7 @@ v2.0 终结点可让你快速地将身份验证添加桌面应用，同时支持
 
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet/archive/skeleton.zip)，或克隆该骨架：
 
-		git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
+	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
 
 本教程末尾也提供完成的应用。
 
@@ -209,8 +209,6 @@ C#
 		
 				...
 
-
-
 - When the user is done managing their To-Do List, they may finally sign out of the app by clicking the "Clear Cache" button.
 
 C#
@@ -242,7 +240,7 @@ C#
 
 [此处以 .zip 格式提供了](https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
 
-		git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
+	git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
 
 ## 后续步骤
 

@@ -301,10 +301,10 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 ADAL 使用 -canOpenURL: 来检查是否在设备上安装了中转站。在 iOS 9 中，Apple 锁定了应用程序可以查询的方案。你需要将“msauth”添加到 `info.plist file` 的 LSApplicationQueriesSchemes 节。
 
-		<key>LSApplicationQueriesSchemes</key>
-		<array>
-		     <string>msauth</string>
-		</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>msauth</string>
+	</array>
 
 ### 你已配置 SSO！
 

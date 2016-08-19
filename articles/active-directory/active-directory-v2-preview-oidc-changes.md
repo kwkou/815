@@ -19,7 +19,7 @@
 任何已编写为使用 v2.0 聚合身份验证终结点的应用，
 
 
-		https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+	https://login.microsoftonline.com/common/oauth2/v2.0/authorize
 
 
 有关 v2.0 终结点的详细信息可以在[此处](/documentation/articles/active-directory-appmodel-v2-overview/)找到。
@@ -30,7 +30,7 @@
 任何已根据生产 Azure AD 身份验证终结点编写的应用，
 
 
-		https://login.microsoftonline.com/common/oauth2/authorize
+	https://login.microsoftonline.com/common/oauth2/authorize
 
 
 此协议一定都是如此，不会发生任何更改。
@@ -60,7 +60,7 @@ v2.0 终结点大量使用 JWT 令牌，其中包含标头参数部分以及令�
 以前，v2.0 终结点一直在称为 `profile_info` 的令牌响应中返回 base64 编码的 JSON 对象。当通过向下列对象发送请求，从 v2.0 终结点请求访问令牌时：
 
 
-		https://login.microsoftonline.com/common/oauth2/v2.0/token
+	https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 
 响应看起来将类似于下列 JSON 对象：
@@ -100,7 +100,7 @@ v2.0 终结点大量使用 JWT 令牌，其中包含标头参数部分以及令�
 与 `profile_info` 相似，我们同时也从响应中删除 `id_token_expires_in` 参数。以前，v2.0 终结点会返回 `id_token_expires_in` 的值以及每个 id\_token 响应，例如在授权响应中：
 
 
-		https://myapp.com?id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsI...&id_token_expires_in=3599...
+	https://myapp.com?id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsI...&id_token_expires_in=3599...
 
 
 或令牌响应中：
@@ -175,13 +175,13 @@ v2.0 终结点大量使用 JWT 令牌，其中包含标头参数部分以及令�
 以前，v2.0 终结点的令牌中显示的颁发者值采用以下格式：
 
 
-		https://login.microsoftonline.com/{some-guid}/v2.0/
+	https://login.microsoftonline.com/{some-guid}/v2.0/
 
 
 其中 guid 是颁发令牌的 Azure AD 租户的 tenantId。进行这些更改之后，这两个令牌和 OpenID Connect 发现文档中的颁发者值将变为
 
 
-		https://login.microsoftonline.com/{some-guid}/v2.0 
+	https://login.microsoftonline.com/{some-guid}/v2.0 
 
 > [AZURE.IMPORTANT] **你的工作：确保应用在颁发者验证期间接受包含或不含尾部斜杠的颁发者值。**
 

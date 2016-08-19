@@ -45,7 +45,7 @@
 
 任一类型的用户源自另一个目录，并且将添加为**外部用户**。外部用户可与目录中的其他用户协作，而无需添加新帐户和凭据。当外部用户登录时，系统会使用这些用户的主目录对其进行身份验证，这种身份验证适用于这些用户添加到的其他所有目录。
 
-## 外部用户管理和限制
+## <a name="guest-user-management-and-limitations"></a>外部用户管理和限制
 
 将另一个目录中的用户添加到你的目录时，该用户是新目录中的外部用户。显示名称和用户名是从用户的主目录复制的，将用于目录中的外部用户。此后，外部用户帐户的属性是完全独立的。如果你对主目录中的用户进行属性更改，这些更改不会传播到你目录中的外部用户帐户。
 
@@ -63,7 +63,7 @@
 - **Dynamics CRM**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics CRM 中的已授权资源。
 - **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。适用于 [Azure AD 外部用户](#known-limitations-of-azure-ad-external-users)和[来宾用户](#guest-user-management-and-limitations)的限制同样适用于 Dynamics AX 中的外部用户。
 
-### Azure AD 外部用户的已知限制
+### <a name="known-limitations-of-azure-ad-external-users"></a>Azure AD 外部用户的已知限制
 
 - 身为管理员的外部用户无法将来自合作伙伴公司的用户添加到其主目录以外的目录（B2B 协作）
 - 外部用户无法同意在其主目录以外的目录中的多租户应用程序

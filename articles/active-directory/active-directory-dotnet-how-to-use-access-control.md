@@ -19,7 +19,7 @@
 本指南演示如何使用 Azure Active Directory 访问控制（也称为访问控制服务或 ACS）在标识提供者（如 Microsoft、Google、Yahoo 和 Facebook）用户尝试获取对 Web 应用程序的访问权限时对其进行身份验证。
 
 
-## 什么是 ACS？
+## <a name="what-is"></a>什么是 ACS？
 
 大多数开发人员都不是标识专家，他们都不想花时间开发针对其应用程序和服务的身份验证和授权机制。ACS 是一项 Azure 服务，可用于轻松对访问您的 Web 应用程序和服务的用户进行身份验证，而不必将复杂的身份验证逻辑添加到代码中。
 
@@ -33,7 +33,7 @@ ACS 具有以下可用功能：
 
 有关 ACS 的详细信息，请参阅[访问控制服务 2.0][]。
 
-## <span class="short-header">概念</span>
+## <a name="concepts"></a><span class="short-header">概念</span>
 
 ACS 在基于声明的标识主体的基础上构建，它是一种创建针对本地运行或在云中运行的应用程序的身份验证机制的一致性方法。通常，应用程序和服务可使用基于声明的标识来获取所需的有关其组织内、其他组织内以及 Internet 上的用户的标识信息。
 
@@ -66,7 +66,7 @@ ACS 在基于声明的标识主体的基础上构建，它是一种创建针对�
 6.  ACS 验证 IP 所颁发的安全令牌，将此令牌中的标识声明输入 ACS 规则引擎，计算输出标识声明，并颁发包含这些输出声明的新安全令牌。
 7.  ACS 定向客户端以将 ACS 所颁发的安全令牌发送给 RP。RP 将验证安全令牌上的签名，提取应用程序业务逻辑所使用的声明，并返回最初请求的页面。
 
-## <span class="short-header">先决条件</span>
+## <a name="pre"></a><span class="short-header">先决条件</span>
 
 若要完成本指南中的任务，你将需要：
 
@@ -75,7 +75,7 @@ ACS 在基于声明的标识主体的基础上构建，它是一种创建针对�
 -	Identity and Access Tool for Visual Studio 2012（若要下载，请参阅[标识和访问工具][]）
 
 
-## 创建 Access Control 命名空间
+## <a name="create-namespace"></a>创建 Access Control 命名空间
 
 要在 Azure 中使用 Active Directory Access Control，请创建 Access Control 命名空间。该命名空间提供了一个唯一范围，用于在应用程序中对 ACS 资源进行寻址。
 
@@ -95,7 +95,7 @@ ACS 在基于声明的标识主体的基础上构建，它是一种创建针对�
 
 Azure 将创建并激活该命名空间。
 
-## 创建 ASP.NET MVC 应用程序
+## <a name="create-web-app"></a>创建 ASP.NET MVC 应用程序
 
 在此步骤中，您将创建一个 ASP.NET MVC 应用程序。在后续步骤中，我们将此简单的 Web 窗体应用程序与 ACS 集成。
 
@@ -139,7 +139,7 @@ Azure 将创建并激活该命名空间。
 
 1. 按 F5 运行应用程序。默认的 ASP.NET MVC 应用程序将显示在 Web 浏览器中。
 
-## 将您的 Web 应用程序与 ACS 集成
+## <a name="Identity-Access"></a>将您的 Web 应用程序与 ACS 集成
 
 在此任务中，您将 ASP.NET web 应用程序与 ACS 集成。
 
@@ -183,7 +183,7 @@ Azure 将创建并激活该命名空间。
 
 	![][5]
 
-## 测试与 ACS 的集成
+## <a name="Test-ACS"></a>测试与 ACS 的集成
 
 本任务说明如何测试 RP 应用程序与 ACS 的集成。
 
@@ -195,7 +195,7 @@ Azure 将创建并激活该命名空间。
 
 祝贺你！ 您已成功将 ACS 与 ASP.NET Web 应用程序集成。ACS 现在正在使用用户的 Microsoft 帐户凭据处理用户的身份验证。
 
-## 查看 ACS 发送的声明
+## <a name="acs-portal"></a>查看 ACS 发送的声明
 
 在本节中，我们将修改应用程序以查看 ACS 发送的声明。身份验证和访问工具已创建一个将 IP 中的所有声明传递给应用程序的规则组。请注意，不同的标识提供程序会发送不同的声明。
 
@@ -314,7 +314,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
 在下一节中，我们将使用 ACS 经典管理门户的功能来对 Web 应用程序进行更改 -- 只是为了说明此操作是多么容易完成。
 
-## 添加标识提供程序
+## <a name="add-IP"></a>添加标识提供程序
 
 下面我们使用 ACS 经典管理门户来更改 MvcACS 应用程序的身份验证。在此示例中，我们将添加 Google 作为 MvcACS 的标识提供程序。
 
@@ -341,7 +341,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
 在用户选择标识提供程序后，浏览器将转到标识提供程序登录页。
 
-## 后续步骤
+## <a name="whats-next"></a>后续步骤
 
 您已创建与 ACS 集成的 Web 应用程序。但这只是开始！ 您可以在此方案的基础上进行扩展。
 

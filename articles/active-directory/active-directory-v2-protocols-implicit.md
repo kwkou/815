@@ -221,7 +221,7 @@ When you wish to sign the user out of the  app, it is not sufficient to clear yo
 You can simply redirect the user to the `end_session_endpoint` listed in the OpenID Connect metadata document:
 
 		
-		GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
+	GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
 		post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 
 

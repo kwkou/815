@@ -107,7 +107,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 如果你再次更改本地密码，新密码则会同步到云，并会手动覆盖更新的密码。
 
 
-## 启用密码同步
+## <a name="managing-password-synchronization"></a>启用密码同步
 
 当你使用“快速设置”安装 Azure AD Connect 时，便会自动启用密码同步。有关详细信息，请参阅 [Getting started with Azure AD Connect using express settings（通过快速设置开始使用 Azure AD Connect）](/documentation/articles/active-directory-aadconnect-get-started-express/)。
 
@@ -117,7 +117,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 ![启用密码同步](./media/active-directory-aadconnectsync-implement-password-synchronization/usersignin.png)
 
 
-### 密码同步和 FIPS
+### <a name="password-synchronization-and-fips"></a>密码同步和 FIPS
 
 如果已经根据美国联邦信息处理标准 (FIPS) 锁定服务器，则已禁用 MD5。
 

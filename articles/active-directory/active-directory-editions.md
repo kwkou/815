@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="06/07/2016"
-	wacn.date="07/26/2016" />
+	wacn.date="08/19/2016" />
 
 # Azure Active Directory 版本
 
@@ -98,7 +98,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 - [MDM 自动注册、自助 Bitlocker 恢复、其他本地管理员通过 Azure AD Join 加入 Windows 10 设备](#mdm-auto-enrolment-self-service-bitlocker-recovery-additional-local-administrators-to-windows-10-devices-via-azure-ad-join)
 
 ## 常用功能
-#### 目录对象 
+#### <a name="directory-objects"></a>目录对象 
 
 **类型：**常用功能
 
@@ -113,7 +113,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 
-#### 用户/组管理（添加/更新/删除）/基于用户的预配、设备注册
+#### <a name="usergroup-management-addupdatedelete-user-based-provisioning-device-registration"></a>用户/组管理（添加/更新/删除）/基于用户的预配、设备注册
 
 **类型：**常用功能
 
@@ -132,7 +132,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 
-#### 单一登录 (SSO)
+#### <a name="single-sign-on-sso"></a>单一登录 (SSO)
 
 **类型：**常用功能
 
@@ -145,7 +145,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 [1] 借助 Azure AD Free 和 Azure AD Basic，已获权访问 SaaS 应用的最终用户可以在其访问面板中看到最多 10 个应用并获得对这些应用的 SSO 访问权限。管理员可配置 SSO，并为使用 Free 和 Basic 的用户分配访问所需数量的 SaaS 应用的权限，但最终用户在其访问面板中一次只能看到 10 个应用。
 
-[2] 通过使用应用程序库菜单中提供的模板，自助集成支持 SAML、SCIM 或基于窗体的身份验证的任何应用程序。有关更多详细信息，请参阅[针对不在 Azure Active Directory 应用程序库中的应用程序配置单一登录](/documentation/articles/active-directory-saas-custom-apps/)。
+
 
 **更多详细信息：**
 
@@ -153,7 +153,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 
-#### 云用户的自助密码更改
+####  <a name="self-service-password-change-for-cloud-users"></a>云用户的自助密码更改
 
 **类型：**常用功能
 
@@ -187,7 +187,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 ## Premium 和 Basic 功能
-#### 基于组的访问管理/预配
+#### <a name="group-based-access-managementprovisioning"></a>基于组的访问管理/预配
 
 **类型：**基本功能
 
@@ -200,7 +200,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 <br>
 <hr>
-#### 云用户的自助密码重置
+#### <a name="self-service-password-reset-for-cloud-users">云用户的自助密码重置
 
 **类型：**基本功能
 
@@ -217,7 +217,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 <br>
 <hr>
-#### 公司品牌（登录页/访问面板自定义）
+#### <a name="company-branding-logon-pagesaccess-panel-customization"></a>公司品牌（登录页/访问面板自定义）
 
 **类型：**Basic 功能
 
@@ -234,7 +234,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 <br>
 <hr>
-#### 应用程序代理
+#### <a name="application-proxy"></a>应用程序代理
 
 **类型：**基本功能
 
@@ -246,7 +246,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 | | ![勾选标记][12]| ![勾选标记][12]| |
 <br>
 <hr>
-#### SLA 99.9%
+#### <a name="sla-999"></a>SLA 99.9%
 
 **类型：**基本功能
 
@@ -321,7 +321,6 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 
 ## 后续步骤
 
-- [Azure Active Directory 高级版入门](/documentation/articles/active-directory-get-started-premium/)
 - [向“登录”和“访问面板”页添加公司品牌](/documentation/articles/active-directory-add-company-branding/)
 
 

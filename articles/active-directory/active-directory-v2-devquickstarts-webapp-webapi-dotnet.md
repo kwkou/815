@@ -25,11 +25,11 @@
 
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet/archive/skeleton.zip)，或克隆该骨架：
 
-		git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet.git
+	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet.git
 
 或者，你可以[将已完成的应用程序下载为 .zip](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet/archive/complete.zip)，或克隆已完成的应用程序：
 
-		git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet.git
+	git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet.git
 
 ## 注册应用程序
 在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
@@ -44,9 +44,9 @@
 使用包管理器控制台将 OWIN 中间件 NuGet 包添加到 `TodoList-WebApp` 项目。OWIN 中间件将用于发出登录和注销请求、管理用户的会话、获取有关用户的信息，等等。
 
 
-		PM> Install-Package Microsoft.Owin.Security.OpenIdConnect -ProjectName TodoList-WebApp
-		PM> Install-Package Microsoft.Owin.Security.Cookies -ProjectName TodoList-WebApp
-		PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoList-WebApp
+	PM> Install-Package Microsoft.Owin.Security.OpenIdConnect -ProjectName TodoList-WebApp
+	PM> Install-Package Microsoft.Owin.Security.Cookies -ProjectName TodoList-WebApp
+	PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoList-WebApp
 
 
 ## 登录用户
@@ -106,7 +106,7 @@ C#
 
 - 首先，安装 ADAL 预览版：
 
-		PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease
+	PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease
 - 在 `App_Start\Startup.Auth.cs` 文件中为 ADAL 添加另一个 `using` 语句。
 - 现在添加一个新方法，即 `OnAuthorizationCodeReceived` 事件处理程序。此处理程序将使用 ADAL 获取待办事项列表 API 的访问令牌，并将 ADAL 令牌缓存中的令牌存储起来以供稍后使用：
 
@@ -136,7 +136,7 @@ C#
 
 - 此处可再次使用 ADAL，从 ADAL 缓存检索 access\_tokens。首先，将 ADAL 的 `using` 语句添加到此文件。
 
-    	using Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory;
+    using Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory;
 
 - 在 `Index` 操作中，使用 ADAL 的 `AcquireTokenSilentAsync` 方法获取可用于读取待办事项列表服务数据的 access\_token：
 

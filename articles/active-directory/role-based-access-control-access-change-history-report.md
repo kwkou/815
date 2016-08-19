@@ -20,7 +20,7 @@
 若要在 PowerShell 中创建访问权限更改历史记录报告，请使用下列命令：
 
 
-		Get-AzureRMAuthorizationChangeLog
+	Get-AzureRMAuthorizationChangeLog
 
 
 可指定你要列出的分配的属性，包括以下方面：
@@ -43,7 +43,7 @@
 此示例命令列出过去 7 天订阅中所有访问权限的更改：
 
 		
-		Get-AzureRMAuthorizationChangeLog -StartTime ([DateTime]::Now - [TimeSpan]::FromDays(7)) | FT Caller,Action,RoleName,PrincipalType,PrincipalName,ScopeType,ScopeName
+	Get-AzureRMAuthorizationChangeLog -StartTime ([DateTime]::Now - [TimeSpan]::FromDays(7)) | FT Caller,Action,RoleName,PrincipalType,PrincipalName,ScopeType,ScopeName
 
 
 ![PowerShell Get-AzureRMAuthorizationChangeLog - 屏幕快照](./media/role-based-access-control-configure/access-change-history.png)

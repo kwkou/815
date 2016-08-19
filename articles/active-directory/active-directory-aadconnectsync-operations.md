@@ -32,7 +32,7 @@
 
 对于熟悉旧式同步技术的人员而言，暂存模式是不同的，因为服务器有自身的 SQL 数据库。这样，便可以将暂存模式服务器放置在不同的数据中心。
 
-### 验证服务器的配置
+### <a name="verify-the-configuration-of-a-server"></a>验证服务器的配置
 若要应用此方法，请遵循以下步骤：
 
 1. 准备
@@ -79,7 +79,7 @@
 2. 在处于“暂存模式”的服务器上运行安装向导，然后禁用“暂存模式”。
 ![ReadyToConfigure](./media/active-directory-aadconnectsync-operations/additionaltasks.png)
 
-## 灾难恢复
+## <a name="disaster-recovery"></a>灾难恢复
 实现设计的一部分是规划在灾难中失去同步服务器时如何应对。有不同的模型可用，要使用哪一种模型取决于许多因素，包括：
 
 -	停机期间无法对 Azure AD 中的对象进行更改的容限度如何？

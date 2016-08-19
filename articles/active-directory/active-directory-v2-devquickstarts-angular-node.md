@@ -27,13 +27,13 @@
 若要开始，你需要下载并安装 [node.js](https://nodejs.org)。然后可以克隆或[下载](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-NodeJS/archive/skeleton.zip)骨架应用：
 
 
-		git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-NodeJS.git
+	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-NodeJS.git
 
 
 该骨架应用包含简单 AngularJS 应用的重复使用代码，但是缺少与标识相关的所有部分。如果你不想要延用该应用，可以克隆或[下载](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-NodeJS/archive/complete.zip)完整的示例。
 
 
-		git clone https://github.com/AzureADSamples/SinglePageApp-AngularJS-NodeJS.git
+	git clone https://github.com/AzureADSamples/SinglePageApp-AngularJS-NodeJS.git
 
 
 ## 注册应用程序
@@ -49,7 +49,7 @@
 ## 安装 adal.js
 若要开始，请导航到下载的项目并安装 adal.js。如果已安装 [bower](http://bower.io/)，只要运行以下命令即可。如有任何依赖版本不匹配的情况，只需选择较高的版本。
 
-		bower install adal-angular#experimental
+	bower install adal-angular#experimental
 
 
 或者，你可以手动下载 [adal.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal.min.js) 和 [adal-angular.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal-angular.min.js)。将这两个文件添加到 `app/lib/adal-angular-experimental/dist` 目录。
@@ -227,17 +227,17 @@ html
 
 js
 
-		// app/scripts/todoListSvc.js
+	// app/scripts/todoListSvc.js
 		
-		...
-		return $http.get('/api/tasks');
-		...
+	...
+	return $http.get('/api/tasks');
+	...
 
 
 祝贺你！ 你现已完成创建 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行以下命令以尝试使用该应用：
 
 
-		node server.js
+	node server.js
 
 
 在浏览器中，导航到 `http://localhost:8080`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果你需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)（免费）。

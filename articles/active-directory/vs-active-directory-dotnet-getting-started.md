@@ -8,7 +8,7 @@
 	editor=""/>
   
 <tags 
-	ms.service="active-directory"  
+	ms.service="active-directory" 
 	ms.date="03/28/2016" 
 	wacn.date="07/05/2016"/>
 

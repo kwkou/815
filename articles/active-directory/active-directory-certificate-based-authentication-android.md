@@ -194,9 +194,6 @@
 
 		Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0] 
 
-
-
-
 ## 测试 Office 移动应用程序  
 
 若要在 Office 移动应用程序上测试证书身份验证，请执行以下操作：

@@ -152,7 +152,7 @@ C#
 
 [此处以 .zip 格式提供了](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
 
-		git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git
+	git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git
 
 ## 后续步骤
 现在，你可以转到其他主题。你可能想要尝试：
