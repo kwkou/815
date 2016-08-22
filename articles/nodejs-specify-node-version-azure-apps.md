@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="05/04/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/22/2016"/>
 
 # 在 Azure 应用程序中指定 Node.js 版本
 

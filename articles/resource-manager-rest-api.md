@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="03/10/2016"
-   ms.author="04/19/2016"/>
+   ms.date="06/23/2016"
+   ms.author="08/22/2016"/>
    
 # Resource Manager REST API
 在每次调用 Azure Resource Manager、每次部署模板以及每次配置存储帐户时，都会对 Azure Resource Manager 的 RESTful API 进行一次或多次调用。本主题专门介绍这些 API 以及如何在完全不使用任何 SDK 的情况下调用它们。如果你想要完全控制对 Azure 的所有请求，或者你偏好语言的 SDK 无法使用或不支持你想要执行的操作，这些 API 可能非常有用。

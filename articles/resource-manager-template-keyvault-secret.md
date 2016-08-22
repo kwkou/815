@@ -5,12 +5,14 @@
    documentationCenter="na"
    authors="tfitzmac"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="04/05/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/22/2016"/>  
+
 
 # 密钥保管库机密模板架构
 
@@ -36,13 +38,14 @@
 
 | 名称 | 值 |
 | ---- | ---- | 
-| type | 枚举<br />必需<br />**secrets**（部署为密钥保管库的子资源时）或<br /> **Microsoft.KeyVault/vaults/secrets**（部署为顶级资源时）<br /><br />要创建的资源类型。 |
-| apiVersion | 枚举<br />必需<br />**2015-06-01** 或 **2014-12-19-preview**<br /><br />要用于创建该资源的 API 版本。 | 
+| type | 枚举<br />必需<br />**secret**（部署为密钥保管库的子资源时）或 <br />**Microsoft.KeyVault/vaults/secrets**（部署为顶级资源时）<br /><br />要创建的资源类型。 |
+| apiVersion | 枚举<br /><br />**2015-06-01** 或 **2014-12-19-preview**<br /><br />用于创建资源的 API 版本。 | 
 | name | 字符串<br />必需<br />一个单词（部署为密钥保管库的子资源时），采用格式 **{key-vault-name}/{secret-name}**（部署为要添加到现有密钥保管库的顶级资源时）。<br /><br />要创建的机密的名称。 |
 | properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于指定要创建的机密的值。 |
 | dependsOn | 数组<br />可选<br />资源名称或资源唯一标识符的逗号分隔列表。<br /><br />此链接所依赖的资源的集合。如果将机密的密钥保管库部署在同一个模板中，请在此元素中包含密钥保管库的名称，以确保首先部署它。 |
 
 <a id="properties"></a>
+
 ### 属性对象
 
 | 名称 | 值 |
@@ -67,13 +70,13 @@
             "tenantId": {
                 "type": "string",
                 "metadata": {
-                   "description": "Tenant Id for the subscription and use assigned access to the vault. Available from the Get-AzureRMSubscription PowerShell cmdlet"
+                   "description": "Tenant ID for the subscription and use assigned access to the vault. Available from the Get-AzureRmSubscription PowerShell cmdlet"
                 }
             },
             "objectId": {
                 "type": "string",
                 "metadata": {
-                    "description": "Object Id of the AAD user or service principal that will have access to the vault. Available from the Get-AzureRMADUser or the Get-AzureRMADServicePrincipal cmdlets"
+                    "description": "Object ID of the AAD user or service principal that will have access to the vault. Available from the Get-AzureRmADUser or the Get-AzureRmADServicePrincipal cmdlets"
                 }
             },
             "keysPermissions": {
@@ -223,6 +226,4 @@
 - 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)。
 - 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
-
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0815_2016-->
