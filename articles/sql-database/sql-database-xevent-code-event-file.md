@@ -6,13 +6,15 @@
 	authors="MightyPen" 
 	manager="jhubbard" 
 	editor="" 
-	tags=""/>
+	tags=""/>  
+
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="06/08/2016" 
-	wacn.date="07/25/2016"/>
+	ms.date="06/24/2016" 
+	wacn.date="08/22/2016"/>
+
 
 
 # SQL 数据库中扩展事件的事件文件目标代码
@@ -51,7 +53,7 @@
  - Azure 建议定期更新 ssms.exe。在某些情况下，ssms.exe 将每个月更新。
 
 
-- 你必须安装 [Azure PowerShell 模块](http://go.microsoft.com/?linkid=9811175)。
+- 必须安装 [Azure PowerShell 模块](http://go.microsoft.com/?linkid=9811175)。
  - 这些模块提供 **New-AzureStorageAccount** 等命令。
 
 
@@ -64,7 +66,7 @@
 
 
 
-1. 将 PowerShell 脚本粘贴到 Notepad.exe 等简单文本编辑器，并将脚本保存到扩展名为 **.ps1** 的文件。
+1. 将 PowerShell 脚本粘贴到 Notepad.exe 等简单的文本编辑器中，并将脚本保存为扩展名为 **.ps1** 的文件。
 
 2. 以管理员身份启动 PowerShell ISE。
 
@@ -73,7 +75,7 @@
 4. 在 PowerShell ISE 中打开你的 **.ps1** 文件。运行该脚本。
 
 5. 该脚本会先启动新的窗口让你登录 Azure。
- - 如果你想要重复运行脚本而不中断会话，可以很方便地选择注释掉 **Add-AzureAccount** 命令。
+ - 如果你想要重新运行脚本而不中断会话，可以很方便地选择注释禁止 **Add-AzureAccount** 命令。
 
 
 		![在准备运行脚本之前，必须准备好已装有 Azure 模块的 PowerShell ISE。][30_powershell_ise]
@@ -99,6 +101,8 @@
 			TODO: Edit the values assigned to these variables, especially the first few!
 			'
 			
+			# Ensure the current date is between
+			# the Expiry and Start time values that you edit here.
 			$subscriptionName       = 'YOUR_SUBSCRIPTION_NAME'
 			$policySasExpiryTime = '2016-01-28T23:44:56Z'
 			$policySasStartTime  = '2015-08-01'
@@ -277,6 +281,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 6. 保存然后运行该脚本。
 
 
+> [AZURE.WARNING] 之前 PowerShell 脚本生成的 SAS 密钥值可能以“?”（问号）开头。在以下 T-SQL 脚本中使用 SAS 密钥时，必须*删除前导“?”*。否则，安全性可能会阻止你的操作。
 		---- TODO: First, run the PowerShell portion of this two-part code sample.
 		---- TODO: Second, find every 'TODO' in this Transact-SQL file, and edit each.
 		
@@ -514,24 +519,37 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 	  </data>
 	  <action name="sql_text" package="sqlserver">
 	    <value>
-	
+
 	SELECT 'BEFORE_Updates', EmployeeKudosCount, * FROM gmTabEmployee;
-	
+
 	UPDATE gmTabEmployee
 	    SET EmployeeKudosCount = EmployeeKudosCount + 2
 	    WHERE EmployeeDescr = 'Jane Doe';
-	
+
 	UPDATE gmTabEmployee
 	    SET EmployeeKudosCount = EmployeeKudosCount + 13
 	    WHERE EmployeeDescr = 'Jane Doe';
-	
+
 	SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 	</value>
 	  </action>
 	</event>
 
 
- 
+&nbsp;
+
+
+前面的 Transact-SQL 脚本使用以下系统函数来读取 event\_file：
+
+- [sys.fn\_xe\_file\_target\_read\_file (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/cc280743.aspx)
+
+
+用于查看扩展事件数据的高级选项的说明可在此处获取：
+
+- [扩展事件的目标数据的高级视图](http://msdn.microsoft.com/zh-cn/library/mt752502.aspx)
+
+&nbsp;
+
 
 ## 转换代码示例以在 SQL Server 上运行
 
@@ -552,20 +570,15 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 ## 详细信息
 
 
-有关 Azure SQL 数据库中扩展事件的主要主题是：
-
-- [SQL 数据库中的扩展事件](/documentation/articles/sql-database-xevent-db-diff-from-svr/) - 有关 Azure SQL 数据库中扩展事件的主要主题。
- - 对比 Azure SQL 数据库与 Microsoft SQL Server 的扩展事件的不同方面。
-
-
-- [SQL 数据库中扩展事件的环形缓冲区目标代码](/documentation/articles/sql-database-xevent-code-ring-buffer/) - 提供一个可以快速方便上手的辅助代码示例，但该示例主要适用于简单测试，而对于大型活动则不够可靠。
-
-
 有关 Azure 存储空间服务中帐户和容器的详细信息，请参阅：
 
 - [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 - [命名和引用容器、Blob 与元数据](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)
 - [使用根容器](http://msdn.microsoft.com/zh-cn/library/azure/ee395424.aspx)
+- [第 1 课：在 Azure 容器上创建存储访问策略和共享访问签名](http://msdn.microsoft.com/zh-cn/library/dn466430.aspx)
+- [第 2 课：使用共享访问签名创建 SQL Server 凭据](http://msdn.microsoft.com/zh-cn/library/dn466435.aspx)
+
+
 
 
 <!--
@@ -574,5 +587,4 @@ Image references.
 
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
 
-
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0815_2016-->

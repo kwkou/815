@@ -3,15 +3,17 @@
 	description="本主题介绍在 Azure SQL 数据库的性能测量中使用的 Azure SQL 数据库基准检验。"
 	services="sql-database"
 	documentationCenter="na"
-	authors="rothja"
-	manager="jeffreyg"
-	editor="monicar" />
+	authors="carlrabeler"
+	manager="jhubbard"
+	editor="monicar" />  
+
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/15/2015"
-	wacn.date="05/16/2016" />
+	ms.date="06/21/2016"
+	wacn.date="08/22/2016" />
+
 
 # Azure SQL 数据库基准检验概述
 
@@ -126,4 +128,4 @@ Azure SQL 数据库基准检验可以度量在所有可用的服务层和性能�
 
 [单一数据库的性能指南](/documentation/articles/sql-database-performance-guidance/)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0815_2016-->

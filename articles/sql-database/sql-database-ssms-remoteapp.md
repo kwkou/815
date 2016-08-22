@@ -4,12 +4,14 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="adhurwit"
-	manager=""/>
+	manager=""/>  
+
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/12/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/22/2016"/>
+
 
 # 在 Azure RemoteApp 中使用 SQL Server Management Studio 连接到 SQL 数据库
 
@@ -148,6 +150,7 @@ sysprep 在完成后会关闭 VM。
 
 
 <!--Image references-->
+
 [1]: ./media/sql-database-ssms-remoteapp/ssms.png
 [2]: ./media/sql-database-ssms-remoteapp/newcloudcollection.png
 [3]: ./media/sql-database-ssms-remoteapp/mfa.png
@@ -155,4 +158,4 @@ sysprep 在完成后会关闭 VM。
 [5]: ./media/sql-database-ssms-remoteapp/publish.png
 [6]: ./media/sql-database-ssms-remoteapp/user.png
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0815_2016-->
