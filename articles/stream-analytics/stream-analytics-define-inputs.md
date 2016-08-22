@@ -6,12 +6,14 @@
 	documentationCenter=""
 	authors="jeffstokes72"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="06/15/2016"
-	wacn.date="05/30/2016"/>
+	ms.date="07/13/2016"
+	wacn.date="08/22/2016"/>  
+
 # 数据连接：了解从事件到流分析的数据流输入
 
 连接到流分析的数据连接是数据源提供的事件所组成的数据流。这称为“输入”。 流分析与 Azure 数据流源（事件中心、IoT 中心和 Blob 存储）进行第一类集成，这些数据流源可能与你的分析作业来自同一个 Azure 订阅，也可能来自不同的 Azure 订阅。
@@ -115,6 +117,8 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 
 需要注意的是，流分析中 Blob 存储事件的默认时间戳是上次修改 blob 的时间戳，即 *isBlobLastModifiedUtcTime*。若要在事件负载中使用时间戳以流方式处理数据，必须使用 [TIMESTAMP BY](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx) 关键字。
 
+另请注意，CSV 格式的输入**需要**标头行，以便为数据集定义字段。而且，标头行字段必须都**唯一**。
+
 > [AZURE.NOTE] 流分析不支持将内容添加到现有 Blob。流分析只会查看 Blob 一次，在这项读取操作后所做的任何更改都不会得到处理。最佳实践是一次性上载所有数据，而不要在 Blob 存储中添加其他任何事件。
 
 下表在属性说明中介绍了 Blob 存储输入选项卡中的每个属性：
@@ -202,6 +206,7 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!--Link references-->
+
 [stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide/
 [stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs/
 [stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction/
@@ -209,4 +214,4 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0815_2016-->
