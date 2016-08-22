@@ -5,12 +5,14 @@
    documentationCenter="NA"
    authors="barbkess"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
    ms.date="05/31/2016"
-   wacn.date="07/25/2016"/>
+   wacn.date="08/22/2016"/>  
+
 
 #Transact-SQL 主题
 
@@ -111,16 +113,17 @@
 
 
 ## 后续步骤
-有关更多 TSQL 示例，请参阅 [SQL 数据仓库开发概述][]。
+有关更多 TSQL 示例，请参阅 [SQL 数据仓库参考概述][]。
 
 <!--Image references-->
 
+
 <!--Article references-->
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-reference/
+[SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
 
 <!--MSDN references-->
 
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -1,22 +1,25 @@
 <properties
    pageTitle="还原 Azure SQL 数据仓库（门户）| Azure"
-   description="用于还原 SQL 数据仓库的 Azure 门户预览任务。"
+   description="用于还原 SQL 数据仓库的 Azure 门户任务。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="elfisher"
+   authors="sonyam"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/17/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="06/28/2016"
+   wacn.date="08/22/2016"/>
 
 # 还原 Azure SQL 数据仓库（门户）
 
 > [AZURE.SELECTOR]
 - [概述][]
 - [门户][]
+- [PowerShell][]
+- [REST][]
 
 在本文中，你会学习如何使用 Azure 门户预览还原 Azure SQL 数据仓库。
 
@@ -108,6 +111,7 @@
 [如何查看和提高 DTU 配额]: https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/
 
 <!--Other Web references-->
+
 [Azure 门户预览]: https://portal.azure.cn/
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -5,12 +5,14 @@
    documentationCenter="NA"
    authors="elfisher"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/17/2016"
-   wacn.date="07/25/2016"/>
+   ms.date="06/28/2016"
+   wacn.date="08/22/2016"/>  
+
 
 # 还原 Azure SQL 数据仓库 (PowerShell)
 
@@ -30,7 +32,7 @@
 
 ### 安装 PowerShell
 
-若要对 SQL 数据仓库使用 Azure PowerShell，需要安装 Azure PowerShell 1.0 或更高版本。可以通过运行 **Get-Module -ListAvailable -Name Azure** 来检查版本。可以通过 [Microsoft Web 平台安装程序][]安装最新版本。有关安装最新版本的详细信息，请参阅[如何安装和配置 Azure PowerShell][]。
+若要对 SQL 数据仓库使用 Azure PowerShell，需要安装 Azure PowerShell 1.0 或更高版本。可以通过运行 **Get-Module -ListAvailable -Name AzureRM** 来检查版本。可以通过 [Microsoft Web 平台安装程序][]安装最新版本。有关安装最新版本的详细信息，请参阅[如何安装和配置 Azure PowerShell][]。
 
 ## 还原活动或暂停的数据库
 
@@ -98,13 +100,13 @@
         Get-AzureRmSubscription
         Select-AzureRmSubscription -SubscriptionName $SubscriptionName
         
-        # Get the deleted database to restore
+	# 获取要还原的已删除数据库
         $DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $ResourceGroupNam -ServerName $ServerName -DatabaseName $DatabaseName
         
-        # Restore deleted database
+	# 还原已删除的数据库
         $RestoredDatabase = Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $DeletedDatabase.ResourceID
         
-        # Verify the status of restored database
+	# 验证已还原的数据库的状态
         $RestoredDatabase.status
 
 
@@ -122,18 +124,22 @@
 5. 创建对数据库的恢复请求。
 6. 验证异地还原的数据库的状态。
 
-        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-        Get-AzureRmSubscription
-        Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
-        
-        # Get the database you want to recover
-        $GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
-        
-        # Recover database
-        $GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
-        
-        # Verify that the geo-restored database is online
-        $GeoRestoredDatabase.status
+
+
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+	Get-AzureRmSubscription
+	Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+
+	# 获取要恢复的数据库
+	$GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
+
+	# 恢复数据库
+	$GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
+
+	# 验证异地还原的数据库是否处于联机状态
+	$GeoRestoredDatabase.status
+
+
 
 >[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
@@ -145,6 +151,7 @@
 若要了解 Azure SQL 数据库版本的业务连续性功能，请阅读 [Azure SQL 数据库业务连续性概述][]。
 
 <!--Image references-->
+
 
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
@@ -166,4 +173,4 @@
 [Azure Portal]: https://portal.azure.cn/
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -5,12 +5,13 @@
    documentationCenter="NA"
    authors="sonyam"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/01/2016"
-   wacn.date="07/25/2016"/>
+   ms.date="07/11/2016"
+   wacn.date="08/22/2016"/>
 
 # SQL 数据仓库容量限制
 
@@ -21,10 +22,10 @@
 
 | 类别 | 说明 | 最大值 |
 | :------------------ | :------------------------------------------- | :----------------- |
-| 数据仓库单位 (DWU)| 计算、内存和 IO 资源 | 2000 |
+| [数据仓库单位 (DWU)][]| 计算、内存和 IO 资源 | 6000 |
 | 数据库连接 | 并发打开的会话 | 1024<br/><br/>我们支持最多 1024 个活动连接，每个活动连接可同时将请求提交到 SQL 数据仓库数据库。请注意，实际可并发执行的查询数量是有限制的。当超出并发限制时，请求将进入内部队列等待处理。|
 | 数据库连接 | 预处理语句的最大内存 | 20 MB |
-| 工作负荷管理 | 并发查询数上限 | 32<br/><br/>默认情况下，SQL 数据仓库可执行最多 32 个并发查询，剩余的查询将排队。<br/><br/>当为用户分配了更高的资源类时，并发级别可能会降低。某些查询（如 DMV 查询）始终可以运行。有关详细信息，请参阅 [并发性和工作负荷管理][]。|
+| [工作负荷管理][] | 并发查询数上限 | 32<br/><br/>默认情况下，SQL 数据仓库可执行最多 32 个并发查询，剩余的查询将排队。<br/><br/>当为用户分配了更高的资源类时，并发级别可能会降低。某些查询（如 DMV 查询）始终可以运行。|
 
 
 ## 数据库对象
@@ -36,7 +37,7 @@
 | 表 | 每个数据库的表数 | 20 亿 |
 | 表 | 每个表的列数 | 1024 个列 |
 | 表 | 每个列的字节数 | 8000 字节 |
-| 表 | 每行的字节数，定义的大小 | 8060 字节<br/><br/>每行字节数的计算方式同于已启用页面压缩的 SQL Server。与 SQL Server 一样，SQL 数据仓库支持行溢出存储，使可变长度列能够脱行推送。主记录中只存储脱行推送行的可变长度列的 24 字节根。有关详细信息，请参阅 SQL Server 联机丛书中的 [Row-Overflow Data Exceeding 8 KB（超过 8 KB 的行溢出数据）][]主题。<br/><br/>有关 SQL 数据仓库数据类型大小的列表，请参阅 [CREATE TABLE (Azure SQL Data Warehouse)（CREATE TABLE（Azure SQL 数据仓库））][]。 |
+| 表 | 每行的字节数，定义的大小 | 8060 字节<br/><br/>每行字节数的计算方式同于已启用页面压缩的 SQL Server。与 SQL Server 一样，SQL 数据仓库支持行溢出存储，使可变长度列能够脱行推送。主记录中只存储脱行推送行的可变长度列的 24 字节根。有关详细信息，请参阅 SQL Server 联机丛书中的 [Row-Overflow Data Exceeding 8 KB][]（超过 8 KB 的行溢出数据）主题。<br/><br/>有关 SQL 数据仓库数据类型大小的列表，请参阅 [CREATE TABLE (Azure SQL Data Warehouse)][]（CREATE TABLE（Azure SQL 数据仓库））。 |
 | 表 | 每个表的分区数 | 15,000<br/><br/>为了实现高性能，我们建议在满足你的业务需求的情况下尽量减少所需的分区数。随着分区数目的增长，数据定义语言 (DDL) 和数据操作语言 (DML) 操作的开销也会增长，导致性能下降。|
 | 表 | 每个分区边界值的字符数。| 4000 |
 | 索引 | 每个表的非聚集索引数。 | 999<br/><br/>仅适用于行存储表。|
@@ -56,7 +57,7 @@
 
 | 类别 | 说明 | 最大值 |
 | :---------------- | :------------------------------------------- | :----------------- |
-| Polybase 加载 | 每行的字节数 | 32768<br/><br/>Polybase 加载限制为加载小于 32k 的行，并且无法加载到 VARCHR(MAX)、NVARCHAR(MAX) 或 VARBINARY(MAX)。虽然此限制目前仍存在，但将很快去除。<br/><br/>
+| Polybase 加载 | 每行的字节数 | 32,768<br/><br/>Polybase 加载限制为加载小于 32K 的行，并且无法加载到 VARCHR(MAX)、NVARCHAR(MAX) 或 VARBINARY(MAX)。虽然此限制目前仍存在，但将很快去除。<br/><br/>
 
 
 ## 查询
@@ -73,7 +74,7 @@
 | SELECT | 每个 JOIN 的列数 | 1024 列<br/><br/>JOIN 中的列数始终不得超过 1024。无法保证最大值始终为 1024。如果 JOIN 计划需要列数多于 JOIN 结果的临时表，那么将 1024 限制应用于此临时表。 |
 | SELECT | 每个 GROUP BY 列的字节数。 | 8060<br/><br/>GROUP BY 子句中的列的字节数最大为 8060 字节。|
 | SELECT | 每个 ORDER BY 列的字节数 | 8060 字节。<br/><br/>ORDER BY 子句中的列的字节数最大为 8060 字节。|
-| 每个语句的标识符和常量数 | 被引用的标识符和常量的数量。 | 65,535<br/><br/>SQL 数据仓库限制一条查询的单个表达式中可包含的标识符和常量数。此限制为 65,535。超过此数字将导致 SQL Server 错误 8632。有关详细信息，请参阅 [Internal error: An expression services limit has been reached（内部错误：已达到表达式服务限制）][]。|
+| 每个语句的标识符和常量数 | 被引用的标识符和常量的数量。 | 65,535<br/><br/>SQL 数据仓库限制一条查询的单个表达式中可包含的标识符和常量数。此限制为 65,535。超过此数字将导致 SQL Server 错误 8632。有关详细信息，请参阅 [Internal error: An expression services limit has been reached][]（内部错误：已达到表达式服务限制）。|
 
 
 ## Metadata
@@ -97,12 +98,14 @@
 <!--Image references-->
 
 <!--Article references-->
+[数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is.md#data-warehouse-units/
 [SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
-[并发性和工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 
 <!--MSDN references-->
-[Row-Overflow Data Exceeding 8 KB（超过 8 KB 的行溢出数据）]: https://msdn.microsoft.com/zh-cn/library/ms186981.aspx
-[CREATE TABLE (Azure SQL Data Warehouse)（CREATE TABLE（Azure SQL 数据仓库））]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
-[Internal error: An expression services limit has been reached（内部错误：已达到表达式服务限制）]: https://support.microsoft.com/kb/913050
 
-<!---HONumber=Mooncake_0718_2016-->
+[Row-Overflow Data Exceeding 8 KB]: https://msdn.microsoft.com/zh-cn/library/ms186981.aspx
+[CREATE TABLE (Azure SQL Data Warehouse)]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
+[Internal error: An expression services limit has been reached]: https://support.microsoft.com/kb/913050
+
+<!---HONumber=Mooncake_0815_2016-->
