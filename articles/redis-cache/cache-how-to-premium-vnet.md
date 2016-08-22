@@ -110,7 +110,7 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 只要你有足够的可用 IP 地址，就可以将多种类型的资源部署到经典 VNet。
 
-### 在 VNET 中托管缓存时，是否可以使用所有缓存功能？
+### <a name="do-all-cache-features-work-when-hosting-a-cache-in-a-vnet"></a> 在 VNET 中托管缓存时，是否可以使用所有缓存功能？
 
 如果缓存是 VNET 的一部分，则只允许 VNET 中的客户端访问缓存，因此在目前情况下，以下缓存管理功能无法使用。
 
@@ -149,9 +149,6 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 -	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
 -	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
--	[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
-
-
 
 
 

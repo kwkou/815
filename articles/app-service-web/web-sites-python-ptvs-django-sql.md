@@ -192,7 +192,6 @@
 [Azure 经典管理门户]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
-[]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 for Visual Studio 示例 VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517190

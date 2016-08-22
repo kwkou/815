@@ -204,7 +204,7 @@
 [portal]: https://manage.windowsazure.cn/
 
 <!-- IMAGES -->
-[Select Website]: ./media/web-sites-scale/01SelectWebsite.png
+[Select Website]: ./media/web-sites-scale/01SelectWebSite.png
 [SelectScaleTab]: ./media/web-sites-scale/02SelectScaleTab.png
 [ChooseBasicInstanceSize]: ./media/web-sites-scale/03bChooseBasicInstanceSize.png
 [ChooseBasicInstanceCount]: ./media/web-sites-scale/04ChooseBasicInstanceCount.png
@@ -231,7 +231,6 @@
 [SetThirdRule]: ./media/web-sites-scale/scale8AutoScaleThirdRule.png
 [SetRulesFinal]: ./media/web-sites-scale/scale9AutoScaleFinal.png
 [ResourceGroup]: ./media/web-sites-scale/scale10ResourceGroup.png
-[ScaleDatabase]: ./media/web-sites-scale/scale11SQLScale.png
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
