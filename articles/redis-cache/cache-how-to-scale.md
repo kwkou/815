@@ -31,7 +31,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 如果确定缓存不再满足应用程序的要求，可以更改到适合应用程序的更大或更小缓存定价层。有关确定应使用哪个缓存定价层的详细信息，请参阅[我应当使用哪些 Redis 缓存产品/服务和大小](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
 
-## 如何自动执行缩放操作
+## <a name="how-to-automate-a-scaling-operation"></a> 如何自动执行缩放操作
 
 你可以使用 Azure Redis 缓存 PowerShell cmdlet、Azure CLI 和 Azure 管理库 (MAML) 进行缩放。
 

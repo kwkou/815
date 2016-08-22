@@ -558,7 +558,7 @@
 
 你可以使用 `Import-AzureRmRedisCache` cmdlet 将数据导入 Azure Redis 缓存实例。
 
->[AZURE.IMPORTANT] 导入/导出仅适用于[高级层](/documentation/articles/cache-premium-tier-intro/)缓存。有关导入/导出的详细信息，请参阅[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)。
+>[AZURE.IMPORTANT] 导入/导出仅适用于[高级层](/documentation/articles/cache-premium-tier-intro/)缓存。
 
 若要查看 `Import-AzureRmRedisCache` 的可用参数列表及其说明，请运行以下命令。
 
@@ -617,7 +617,7 @@
 
 你可以使用 `Export-AzureRmRedisCache` cmdlet 将数据从 Azure Redis 缓存实例导出。
 
->[AZURE.IMPORTANT] 导入/导出仅适用于[高级层](/documentation/articles/cache-premium-tier-intro/)缓存。有关导入/导出的详细信息，请参阅[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)。
+>[AZURE.IMPORTANT] 导入/导出仅适用于[高级层](/documentation/articles/cache-premium-tier-intro/)缓存。
 
 若要查看 `Export-AzureRmRedisCache` 的可用参数列表及其说明，请运行以下命令。
 
@@ -677,7 +677,7 @@
 
 你可以使用 `Reset-AzureRmRedisCache` cmdlet 重新启动 Azure Redis 缓存实例。
 
->[AZURE.IMPORTANT] 重新启动仅适用于[高级层](/documentation/articles/cache-premium-tier-intro/)缓存。有关如何重新启动缓存的详细信息，请参阅[缓存管理 - 重新启动](/documentation/articles/cache-administration/#reboot)。
+>[AZURE.IMPORTANT] 重新启动仅适用于[高级层](/documentation/articles/cache-premium-tier-intro/)缓存。
 
 若要查看 `Reset-AzureRmRedisCache` 的可用参数列表及其说明，请运行以下命令。
 
@@ -787,7 +787,7 @@
 
 - [MSDN 上的 Azure Redis 缓存 cmdlet 文档](https://msdn.microsoft.com/zh-cn/library/azure/mt634513.aspx)
 - [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx)：了解如何在 AzureResourceManager 模块中使用这些 cmdlet。
-- [使用资源组来管理 Azure 资源](/documentation/articles/resource-group-template-deploy-portal/)：了解如何在 Azure 门户中创建和管理资源组。
+- [使用资源组来管理 Azure 资源](/documentation/articles/resource-group-portal/)：了解如何在 Azure 门户中创建和管理资源组。
 - [Azure 博客](/blog/)：了解 Azure 中的新功能。
 - [Windows PowerShell 博客](http://blogs.msdn.com/powershell)：了解 Windows PowerShell 中的新功能。
 - [“你好，脚本编写专家！” 博客](http://blogs.technet.com/b/heyscriptingguy/)：从 Windows PowerShell 社区获取实用提示和技巧。

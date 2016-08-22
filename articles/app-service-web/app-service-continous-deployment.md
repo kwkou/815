@@ -79,9 +79,7 @@
 * [Git 文档]
 * [项目 Kudu](https://github.com/projectkudu/kudu/wiki)
 
->[AZURE.NOTE] 如果想要在注册 Azure 帐户之前开始使用 Azure，请转到[试用 Azure Web 应用](https://tryappservice.azure.com/)，你可以在 Azure 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
-
-[Azure Web 应用]: /documentation/articles/app-service-changes-existing-services/
+[Azure Web 应用]: /documentation/services/web-sites/
 [Azure 经典管理门户]: https://manage.windowsazure.cn
 [VSTS Portal]: https://www.visualstudio.com/products/visual-studio-team-services-vs.aspx
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git

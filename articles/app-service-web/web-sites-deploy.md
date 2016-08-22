@@ -81,7 +81,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 - 需要对相关 SCM 服务有一定的了解。
 
 ###<a name="vsts"></a>如何从基于云的源代码管理服务连续部署
-在 [Azure 门户](https://portal.azure.cn)中，可以从 GitHub、Bitbucket 和 Visual Studio Team Services 配置连续部署。
+在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，可以从 GitHub、Bitbucket 和 Visual Studio Team Services 配置连续部署。
 
 * [连续部署到 Azure Web 应用](/documentation/articles/app-service-continous-deployment/)。
 
