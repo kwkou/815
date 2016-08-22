@@ -7,9 +7,9 @@
    manager="carmonm"
    editor="tysonn"/>
 <tags
-   ms.service="application-gateway"
-   ms.date="04/05/2016"
-   wacn.date="05/12/2016"/>
+	ms.service="application-gateway"
+	ms.date="04/05/2016"
+	wacn.date="08/22/2016"/>
 
 
 # 使用 Azure 资源管理器创建、启动或删除应用程序网关
@@ -22,6 +22,11 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 - [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
 - [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
 
+
+<BR>  
+
+
+
 本文将指导你完成创建、配置、启动和删除应用程序网关的步骤。
 
 
@@ -32,7 +37,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 ## 开始之前
 
 1. 使用 Web 平台安装程序安装最新版本的 Azure PowerShell cmdlet。可以从[下载页面](/downloads)的“Windows PowerShell”部分下载并安装最新版本。
-2. 你将为应用程序网关创建虚拟网络和子网。请确保没有虚拟机或云部署正在使用子网。应用程序网关必须单独位于虚拟网络子网中。
+2. 如果你有现有的虚拟网络，请选择现有一个空子网，或者在现有虚拟网络中创建一个新子网，专门供应用程序网关使用。应用程序网关部署到的虚拟网络必须与要部署在应用程序网关后面的资源相同。
 3. 要配置为使用应用程序网关的服务器必须存在，或者在虚拟网络中为其创建终结点，或者为其分配公共 IP/VIP。
 
 ## 创建应用程序网关需要什么？
@@ -42,13 +47,13 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 - **后端服务器池设置：**每个池都有一些设置，例如端口、协议和基于 Cookie 的关联性。这些设置绑定到池，并会应用到池中的所有服务器。
 - **前端端口：**此端口是应用程序网关上打开的公共端口。流量将抵达此端口，然后重定向到后端服务器之一。
 - **侦听器：**侦听器具有前端端口、协议（Http 或 Https，区分大小写）和 SSL 证书名称（如果要配置 SSL 卸载）。
-- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。 
+- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。
 
 
 
 ## 创建新的应用程序网关
 
-使用 Azure 经典管理门户和 Azure 资源管理器的差别在于创建应用程序网关的顺序和需要配置的项。
+使用 Azure 经典门户和 Azure 资源管理器的差别在于创建应用程序网关的顺序和需要配置的项。
 
 使用资源管理器，组成应用程序网关的所有项都将分开配置，然后放在一起创建应用程序网关资源。
 
@@ -66,7 +71,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 确保使用最新版本的 Azure PowerShell。[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)中提供了详细信息。
 
 ### 步骤 1
-登录到 Azure。
+登录到 Azure
 
 		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -90,7 +95,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 在上面的示例中，我们在位置“中国北部”创建了名为“appgw-RG”的资源组。
 
->[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅[使用 PowerShell 创建带自定义探测的应用程序网关](/documentation/articles/application-gateway-create-probe-ps/)。有关详细信息，请查看[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview/)。
+>[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-ps/)（使用 PowerShell 创建带自定义探测的应用程序网关）。有关详细信息，请查看 [custom probes and health monitoring](/documentation/articles/application-gateway-probe-overview/)（自定义探测和运行状况监视）。
 
 
 
@@ -183,13 +188,37 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 	$sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
 
->[AZURE.NOTE]  InstanceCount 的默认值为 2，最大值为 10。GatewaySize 的默认值为 Medium。你可以在 Standard\_Small、Standard\_Medium 和 Standard\_Large 之间进行选择。
+>[AZURE.NOTE]  *InstanceCount* 的默认值为 2，最大值为 10。*GatewaySize* 的默认值为 Medium。你可以在 Standard\_Small、Standard\_Medium 和 Standard\_Large 之间进行选择。
 
 ## 使用 New-AzureRmApplicationGateway 创建应用程序网关
 
 创建包含上述步骤中所有配置项的应用程序网关。示例中的应用程序网关名为“appgwtest”。
 
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
+
+### 步骤 9
+从附加到应用程序网关的公共 IP 资源中检索应用程序网关的 DNS 和 VIP 详细信息。
+
+	Get-AzureRmPublicIpAddress -Name publicIP01 -ResourceGroupName appgw-rg  
+
+	Name                     : publicIP01
+	ResourceGroupName        : appgwtest 
+	Location                 : chinanorth
+	Id                       : /subscriptions/<sub_id>/resourceGroups/appgw-rg/providers/Microsoft.Network/publicIPAddresses/publicIP01
+	Etag                     : W/"12302060-78d6-4a33-942b-a494d6323767"
+	ResourceGuid             : ee9gd76a-3gf6-4236-aca4-gc1f4gf14171
+	ProvisioningState        : Succeeded
+	Tags                     : 
+	PublicIpAllocationMethod : Dynamic
+	IpAddress                : 137.116.26.16
+	IdleTimeoutInMinutes     : 4
+	IpConfiguration          : {
+	                             "Id": "/subscriptions/<sub_id>/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/frontendIPConfigurations/fipconfig01"
+	                           }
+	DnsSettings              : {
+	                             "Fqdn": "ee7aca47-4344-4810-a999-2c631b73e3cd.chinacloudapp.cn"
+	                           } 
+
 
 
 ## 删除应用程序网关
@@ -231,13 +260,12 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl/)。
+如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/)（配置应用程序网关以进行 SSL 卸载）。
 
-如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
+如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/)（创建具有内部负载平衡器 (ILB) 的应用程序网关）。
 
 如需负载平衡选项的其他常规信息，请参阅：
 
-<!--- [Azure 负载平衡器](/documentation/services/load-balancer)-->
-- [Azure 流量管理器](/documentation/services/traffic-manager)
+- [Azure 流量管理器](/documentation/services/traffic-manager/)
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0815_2016-->
