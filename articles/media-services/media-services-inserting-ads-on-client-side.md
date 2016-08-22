@@ -4,13 +4,15 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
+
 
 
 #在客户端上插入广告
@@ -156,9 +158,9 @@ Application/x-javascript - 资源显示在 HTML <**脚本**> 标记中。
 
 Application/x-shockwave-flash – 资源显示在 Flash Player 中。
 
-**<IFrameResource>** 描述可以在 IFrame 中显示的 HTML 资源。**<HTMLResource>** 描述可以插入网页中的一段 HTML 代码。**<TrackingEvents>** 指定跟踪事件以及事件发生时要请求的 URI。在此示例中，跟踪了 acceptInvitation 事件和折叠事件。有关 **<NonLinearAds>** 元素及其子元素的详细信息，请参阅 IAB.NET/VAST。请注意，**<TrackingEvents>** 元素位于 **<NonLinearAds>** 元素内，而不是 **<NonLinear>** 元素内。
+**<IFrameResource>** 描述可以在 IFrame 中显示的 HTML 资源。**<HTMLResource>** 描述可以插入网页中的一段 HTML 代码。**<TrackingEvents>** 指定跟踪事件以及事件发生时要请求的 URI。在此示例中，跟踪了 acceptInvitation 事件和折叠事件。有关 **<NonLinearAds>** 元素及其子元素的详细信息，请参阅 IAB.NET/VAST。请注意，**<TrackingEvents>** 元素位于** <NonLinearAds>** 元素而非 **<NonLinear>** 元素内。
 
-在 <CompanionAds> 元素内定义伴随广告。<CompanionAds> 元素可以包含一个或多个 <Companion> 元素。每个 <Companion> 元素均描述一个伴随广告，并且可以包含以与非线性广告相同的方式定义的 <StaticResource><IFrameResource> 或 <HTMLResource>。VAST 文件可以包含多个伴随广告，播放器应用程序可以选择最适合显示的广告。有关 VAST 的详细信息，请参阅 [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf)。
+在 <CompanionAds> 元素内定义伴随广告。<CompanionAds> 元素可以包含一个或多个 <Companion> 元素。每个 <Companion> 元素均描述一个伴随广告，并且可以包含以与非线性广告相同的方式指定的 <StaticResource>、<IFrameResource> 或 <HTMLResource>。VAST 文件可以包含多个伴随广告，播放器应用程序可以选择最适合显示的广告。有关 VAST 的详细信息，请参阅 [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf)。
 
 ###使用数字视频多广告播放列表 (VMAP) 文件
 
@@ -227,7 +229,7 @@ VMAP 文件以 <VMAP> 元素开头，该元素包含一个或多个 <AdBreak> �
 <**AdSource**> 元素为播放器提供线内广告响应或对广告响应的引用。它可包含以下元素之一：
 
 - <VASTAdData> 表示 VMAP 文件中嵌入了一个 VAST 广告响应
-- <AdTagURI> 引用另一个系统中的广告响应的 URI
+- <AdTagURI>：引用另一个系统中的广告响应的 URI
 - <CustomAdData> 表示非 VAST 响应的任意字符串
 
 在此示例中，线内广告响应是使用包含 VAST 广告响应的 <VASTAdData> 元素指定的。有关其他元素的详细信息，请参阅 [VMAP](http://www.iab.net/guidelines/508676/digitalvideo/vsuite/vmap)。
@@ -310,9 +312,9 @@ MAST 文件允许指定定义何时显示广告的触发器。以下是一个示
 
  
 
-MAST 文件以 **<MAST>** 元素开头，该元素包含一个 **<triggers>** 元素。<triggers> 元素包含一个或多个 **<trigger>** 定义应何时播放广告的元素。
+MAST 文件以 **<MAST>** 元素开头，该元素包含一个 **<triggers>** 元素。<triggers> 元素包含一个或多个定义应何时播放广告的 **<trigger>** 元素。
 
-**<trigger>** 元素包含一个 **<startConditions>** 元素，后者指定应开始播放广告的时间。**<startConditions>** 元素包含一个或多个 <condition> 元素。当每个 <condition> 评估结果为 true 时，将启动或撤销一个触发器，具体取决于 <condition> 是否分别包含在 **< startConditions**> 或 **<endConditions>** 元素中。有多个 <condition> 元素时，将它们视为隐式 OR，任何评估结果为 true 的条件均将导致触发器启动。<condition> 元素可以嵌套。预设了子 <condition> 元素时，将它们视为隐式 AND；若要启动触发器，则所有条件的评估结果必须都为 true。<condition> 元素包含定义条件的以下属性：
+**<trigger>** 元素包含一个 **<startConditions>** 元素，后者指定应开始播放广告的时间。**<startConditions>** 元素包含一个或多个 <condition> 元素。当每个 <condition> 评估结果为 true 时，将启动或撤销一个触发器，具体取决于 <condition> 是否分别包含在 **<startConditions**> 或 **<endConditions>** 元素中。有多个 <condition> 元素时，将它们视为隐式 OR，任何评估结果为 true 的条件均将导致触发器启动。<condition> 元素可以嵌套。预设了子 <condition> 元素时，将它们视为隐式 AND；若要启动触发器，则所有条件的评估结果必须都为 true。<condition> 元素包含定义条件的以下属性：
 
 1. **type** – 指定的条件、事件或属性的类型
 1. **name** – 要在评估过程中使用的属性或事件的名称
@@ -395,7 +397,7 @@ Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器�
 
 ###AdSchedulingPage
 
-此示例还使用 AdSchedulerPlugin。它会安排三种广告：前置式广告、中置式广告和后置式广告。在 <RemoteAdSource> 元素中指定每种广告的 VAST 文件的 URI。
+此示例还使用 AdSchedulerPlugin。它会安排三种广告：前置式广告、中置式广告和后置式广告。在 <RemoteAdSource> 元素中指定每个广告的 VAST 的 URI。
 	
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.chinacloudapi.cn/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
@@ -618,9 +620,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
         [self logFrameworkError];
     }
          
-
-以下示例演示如何安排早期绑定 VAST 广告。
-
+   以下示例演示如何安排早期绑定 VAST 广告。
     //Example:4 Schedule an early binding VAST ad
     //Download the VAST file
     if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.chinacloudapi.cn/vast/PlayerTestVAST.xml"]])
@@ -812,4 +812,4 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 
 [开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -4,13 +4,15 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"  
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
+
 
 
 #配额和限制
@@ -19,5 +21,4 @@
 
 [AZURE.INCLUDE [azure-mediaservices-limits](../../includes/azure-mediaservices-limits.md)]
 
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -4,13 +4,15 @@
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako,Mingfeiy"
-	manager="dwrede"
-	editor=""/>
+	manager="erikre"
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/03/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
+
 
 
 #使用 PlayReady 和/或 Widevine DRM 动态通用加密
@@ -25,7 +27,7 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 媒体服务提供传送 PlayReady 和 Widevine DRM 许可证的服务。媒体服务还提供用于配置所需权限和限制的 API，这样当用户播放受保护的内容时，PlayReady 或者 Widevine DRM 运行时便会强制实施这些权限和限制。当用户请求受 DRM 保护的内容时，播放器应用程序将从 AMS 许可证服务请求许可证。如果播放器已获授权，AMS 许可证服务将向播放器颁发许可证。PlayReady 或者 Widevine 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
 
 
-你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。有关详细信息，请参阅：与 [castLabs](/documentation/articles/media-services-castlabs-integration/) 集成。
+你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)有关详细信息，请参阅：与 [castLabs](/documentation/articles/media-services-castlabs-integration/) 集成。
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行授权。内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅“配置内容密钥授权策略”。
 
@@ -44,13 +46,13 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 
 下面是使用 PlayReady 保护资产时需要执行的常规步骤，这些步骤使用媒体服务许可证传送服务，也使用动态加密。
 
-1. 创建资产并将文件上载到资产。 
+1. 创建资产并将文件上载到资产。
 1. 将包含文件的资产编码为自适应比特率 MP4 集。
-1. 创建内容密钥并将其与编码资产相关联。在媒体服务中，内容密钥包含资产的加密密钥。 
+1. 创建内容密钥并将其与编码资产相关联。在媒体服务中，内容密钥包含资产的加密密钥。
 1. 配置内容密钥授权策略。你必须配置内容密钥授权策略，客户端必须遵守该策略，才能将内容密钥传送到客户端。
 
-	在创建内容密钥授权策略时，需要指定以下信息：传送方法（PlayReady 或 Widevine）、限制（开放或令牌），以及用于定义如何将密钥传送到客户端的密钥传送类型的具体信息（[PlayReady](/documentation/articles/media-services-playready-license-template-overview/) 或 [Widevine](/documentation/articles/media-services-widevine-license-template-overview/) 许可证模板）。 
-1. 为资产配置传送策略。传送策略配置包括：传送协议（例如 MPEG DASH、HLS、HDS、平滑流式处理或全部）、动态加密类型（例如常用加密）、PlayReady 或 Widevine 许可证获取 URL。 
+	在创建内容密钥授权策略时，需要指定以下信息：传送方法（PlayReady 或 Widevine）、限制（开放或令牌），以及用于定义如何将密钥传送到客户端的密钥传送类型的具体信息（[PlayReady](/documentation/articles/media-services-playready-license-template-overview/) 或 [Widevine](/documentation/articles/media-services-widevine-license-template-overview/) 许可证模板）。
+1. 为资产配置传送策略。传送策略配置包括：传送协议（例如 MPEG DASH、HLS、HDS、平滑流式处理或全部）、动态加密类型（例如常用加密）、PlayReady 或 Widevine 许可证获取 URL。
  
 	你可以将不同的策略应用到同一资产上的每个协议。例如，可以将 PlayReady 加密应用到平滑流/DASH，将 AES 信封应用到 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
 1. 创建 OnDemand 定位符以获取流 URL。
@@ -99,9 +101,9 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 
 为资产配置传送策略。资产传送策略配置包括：
 
-- DRM 许可证获取 URL。 
-- 资产传送协议（例如 MPEG DASH、HLS、HDS、平滑流或全部）。 
-- 动态加密类型（在本示例中为“常用加密”）。 
+- DRM 许可证获取 URL。
+- 资产传送协议（例如 MPEG DASH、HLS、HDS、平滑流或全部）。
+- 动态加密类型（在本示例中为“常用加密”）。
 
 有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
 
@@ -625,4 +627,4 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 [使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

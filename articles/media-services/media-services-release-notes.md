@@ -4,13 +4,15 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"
-	wacn.date="07/21/2016"/>
+	ms.date="07/14/2016"
+	wacn.date="08/22/2016"/>
+
 
 
 # Azure 媒体服务发行说明
@@ -21,6 +23,7 @@
 
 - [当前已知的问题](#issues)
 - [REST API 版本历史记录](#rest_version_history)
+- [2016 年 7 月版本](#july_changes16)
 - [2016 年 4 月版本](#apr_changes16)
 - [2016 年 2 月版本](#feb_changes16)
 - [2016 年 1 月版本](#jan_changes_16)
@@ -43,8 +46,8 @@
 - [2014 年 8 月版本](#august_changes_14)
 - [2014 年 7 月版本](#july_changes_14)
 - [2014 年 5 月版本](#may_changes_14)
-- [2014 年 4 月版本](#april_changes_14) 
-- [2014 年 1/2 月版本](#jan_feb_changes_14) 
+- [2014 年 4 月版本](#april_changes_14)
+- [2014 年 1/2 月版本](#jan_feb_changes_14)
 - [2013 年 12 月版本](#december_changes_13)
 - [2013 年 11 月版本](#november_changes_13)
 - [2013 年 8 月版本](#august_changes_13)
@@ -65,7 +68,7 @@ REST API 中未提供几种常见的 HTTP 标头。|如果你使用 REST API 来
 Azure 存储空间 SDK 版本 3.x 中的 ListBlobs 方法将失败。|媒体服务基于 [2012-02-12](http://msdn.microsoft.com/zh-cn/library/azure/dn592123.aspx) 版本生成 SAS URL。如果你希望使用 Azure 存储空间 SDK 来列出 BLOB 容器中的 BLOB，请使用 Azure 存储空间 SDK 版本 2.x 中的 [CloudBlobContainer.ListBlobs](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx) 方法。Azure 存储空间 SDK 版本 3.x 中的 ListBlobs 方法将失败。
 媒体服务限制机制会限制那些发出过多服务请求的应用程序的资源使用情况。该服务可能返回“服务不可用”(503) HTTP 状态代码。|有关详细信息，请参阅 [Azure 媒体服务错误代码](http://msdn.microsoft.com/zh-cn/library/azure/dn168949.aspx)主题中 503 HTTP 状态代码的说明。
 查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。 | 你需要使用[此 .NET 示例](/documentation/articles/media-services-dotnet-manage-entities/#enumerating-through-large-collections-of-entities)和[此 REST API 示例](/documentation/articles/media-services-rest-manage-entities/#enumerating-through-large-collections-of-entities)中所述的 **Skip** 和 **Take** (.NET)/ **top** (REST)。 
-
+某些客户端可能会在平滑流式处理清单中碰到重复标记问题。|有关详细信息，请参阅[此](/documentation/articles/media-services-deliver-content-overview/#known-issues)部分。
 
 ### <a id="dotnet_issues"></a>适用于 .NET 的媒体服务 SDK 存在的问题
 
@@ -76,6 +79,26 @@ SDK 中的媒体服务对象无法进行序列化，因此无法与 Azure Cachin
 ##<a id="rest_version_history"></a>REST API 版本历史记录
 
 有关媒体服务 REST API 版本历史记录的信息，请参阅 [Azure 媒体服务 REST API 参考]。
+
+##<a id="july_changes16"></a>2016 年 7 月版本
+
+###通过编码任务生成的清单文件 (*.ISM) 的更新
+
+将某个编码任务提交到媒体编码器标准版或 Azure 媒体编码器以后，该编码任务会在输出资产中生成[流式处理清单文件](/documentation/articles/media-services-deliver-content-overview/) (*.ism) 文件。最新的服务版本已更新此流式处理清单文件的语法。
+
+>[AZURE.NOTE]流式处理清单 (.ism) 文件的语法保留供内部使用，在将来的版本中可能会更改。请勿修改或操作此文件的内容。
+
+###当某个编码任务输出一个或多个 MP4 文件时，将在输出资产中生成新的客户端清单 (*.ISMC) 文件
+
+从最新服务版本开始，在完成编码任务以生成一个或多个 MP4 文件以后，输出资产中也会包含流式处理客户端清单 (*.ismc) 文件。该 .ismc 文件有助于改进动态流式处理的性能。
+
+>[AZURE.NOTE]客户端清单 (.ismc) 文件的语法保留供内部使用，在将来的版本中可能会更改。请勿修改或操作此文件的内容。
+
+有关详细信息，请参阅[此](https://blogs.msdn.microsoft.com/randomnumber/2016/07/08/encoder-changes-within-azure-media-services-now-create-ismc-file/)博客。
+
+### 已知问题
+
+某些客户端可能会在平滑流式处理清单中碰到重复标记问题。有关详细信息，请参阅[此](/documentation/articles/media-services-deliver-content-overview/#known-issues)部分。
 
 ##<a id="apr_changes16"></a>2016 年 4 月版本
 

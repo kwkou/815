@@ -4,13 +4,14 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="04/25/2016"   
-	wacn.date="07/21/2016"/>
+	ms.date="06/22/2016"  
+	wacn.date="08/22/2016"/>
 
 
 # 使用 Azure 经典管理门户管理 Azure 媒体服务的内容
@@ -43,7 +44,7 @@
 	![UploadContentDialog][uploadcontent]
 
 5. 在“上载内容”对话框中，单击勾选按钮以接受文件和内容名称。
-6. 随后将开始上载，你可以从门户底部跟踪进度。  
+6. 随后将开始上载，你可以从门户底部跟踪进度。
 
 	![JobStatus][status]
 
@@ -73,7 +74,7 @@
 ##<a id="encode"></a>如何：对内容进行编码
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)
+- [.NET](/documentation/articles/media-services-dotnet-encode-asset/)
 - [REST](/documentation/articles/media-services-rest-encode-asset/)
 - [门户](/documentation/articles/media-services-manage-content/#encode)
 
@@ -98,7 +99,8 @@
 4. 在“处理”对话框中，选择“媒体编码器标准版”处理器。
 5. 选择其中一个“编码配置”。
 
-![Process2][process2]
+![Process2][process2]  
+
 
 
 [媒体编码器标准版的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
@@ -119,7 +121,7 @@
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流式处理文件（编码步骤将在[编码](#encode)部分演示）。
 - 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
-- 配置“默认 aes 明文密钥服务策略”或“默认 playready 许可证服务策略”。有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-portal-configure-content-key-auth-policy/)。  
+- 配置“默认 aes 明文密钥服务策略”或“默认 playready 许可证服务策略”。有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-portal-configure-content-key-auth-policy/)。
 
 
 	当你准备好启用加密时，请按“内容”页底部的“加密”按钮。
@@ -173,10 +175,11 @@ SAS URL 采用以下格式：
 
 若要使用门户发布资产，请执行以下操作：
 
-1. 选择资源。 
-2. 然后单击发布按钮。 
+1. 选择资源。
+2. 然后单击发布按钮。
 	
- ![PublishedContent][publishedcontent]
+ ![PublishedContent][publishedcontent]  
+
 
 
 ## 如何：从门户播放内容
@@ -190,9 +193,11 @@ SAS URL 采用以下格式：
 - 确保视频已发布。
 - **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 
-![AMSPlayer][AMSPlayer]
+![AMSPlayer][AMSPlayer]  
+
 
 <!-- Images -->
+
 [portaloverview]: ./media/media-services-manage-content/media-services-content-page.png
 [publishedcontent]: ./media/media-services-manage-content/media-services-upload-content-published.png
 [uploadcontent]: ./media/media-services-manage-content/UploadContent.png
@@ -205,4 +210,4 @@ SAS URL 采用以下格式：
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

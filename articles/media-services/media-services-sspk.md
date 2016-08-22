@@ -4,13 +4,14 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="xpouyat,vsood" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="06/06/2016"  
-	wacn.date="07/11/2016"/>
+	ms.date="06/22/2016"  
+	wacn.date="08/22/2016"/>
 
 #授权 Microsoft® 平滑流式处理客户端移植工具包
 
@@ -100,6 +101,7 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Saffron Digital Limited
 - Sichuan Changhong Electric Co., Ltd
 - SoftAtHome
+- Sony Corporation
 - Tatung Technology Inc.
 - Vestel Elektronik Sanayi ve Ticaret A.S.
 - VisualOn, Inc.
@@ -138,9 +140,11 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Shenzhen Jiuzhou Electric Co.,Ltd
 - Shenzhen Skyworth Digital Technology Co., Ltd
 - Sichuan Changhong Electric Co., Ltd.
+- Skardin Industrial Corp.
 - Sky Deutschland Fernsehen GmbH & Co. KG
 - SmarDTV S.A.
 - SoftAtHome
+- Sony Corporation
 - TCL Overseas Marketing (Macao Commercial Offshore) Limited
 - Technicolor Delivery Technologies, SAS
 - Toshiba Lifestyle Products & Services Corporation
@@ -149,5 +153,4 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Wistron Corporation
 - ZTE Corporation
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->

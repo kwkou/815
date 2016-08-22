@@ -4,13 +4,15 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/03/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
+
 
 
 #使用现有播放器播放内容
@@ -75,10 +77,9 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 有关如何开发自己的播放器的信息，请参阅[开发视频播放器](/documentation/articles/media-services-develop-video-players/)
 
-##提供反馈
 
-[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

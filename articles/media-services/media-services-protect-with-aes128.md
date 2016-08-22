@@ -4,13 +4,15 @@
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
-	manager="dwrede"
-	editor=""/>
+	manager="erikre"
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="06/16/2016" 
-	wacn.date="07/11/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
+
 
 #使用 AES-128 动态加密和密钥传送服务
 
@@ -35,11 +37,11 @@
 
 下面是使用 AES 加密资产时需要执行的常规步骤，这些步骤使用媒体服务密钥传送服务，也使用动态加密。
 
-1. [创建资产并将文件上载到资产](/documentation/articles/media-services-protect-with-aes128/#create_asset)。 
+1. [创建资产并将文件上载到资产](/documentation/articles/media-services-protect-with-aes128/#create_asset)。
 1. [将包含文件的资产编码为自适应比特率 MP4 集](/documentation/articles/media-services-protect-with-aes128/#encode_asset)。
 1. [创建内容密钥并将其与编码资产相关联](/documentation/articles/media-services-protect-with-aes128/#create_contentkey)。在媒体服务中，内容密钥包含资产的加密密钥。
-1. [配置内容密钥授权策略](/documentation/articles/media-services-protect-with-aes128/#configure_key_auth_policy)。你必须配置内容密钥授权策略，客户端必须遵守该策略，才能将内容密钥传送到客户端。 
-1. [为资产配置传送策略](/documentation/articles/media-services-protect-with-aes128/#configure_asset_delivery_policy)。传送策略配置包括：密钥获取 URL 和初始化向量 (IV)（进行加密和解密时，AES 128 要求提供同一个初始化向量）、传送协议（例如 MPEG DASH、HLS、HDS、平滑流或全部）、动态加密类型（例如信封或无动态加密）。 
+1. [配置内容密钥授权策略](/documentation/articles/media-services-protect-with-aes128/#configure_key_auth_policy)。你必须配置内容密钥授权策略，客户端必须遵守该策略，才能将内容密钥传送到客户端。
+1. [为资产配置传送策略](/documentation/articles/media-services-protect-with-aes128/#configure_asset_delivery_policy)。传送策略配置包括：密钥获取 URL 和初始化向量 (IV)（进行加密和解密时，AES 128 要求提供同一个初始化向量）、传送协议（例如 MPEG DASH、HLS、HDS、平滑流或全部）、动态加密类型（例如信封或无动态加密）。
 
 	你可以将不同的策略应用到同一资产上的每个协议。例如，可以将 PlayReady 加密应用到平滑流/DASH，将 AES 信封应用到 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
 
@@ -87,10 +89,10 @@
 
 为资产配置传送策略。资产传送策略配置包括：
 
-- 密钥获取 URL。 
-- 用于信封加密的初始化向量 (IV)。进行加密和解密时，AES - 128 要求提供同一个 IV。 
+- 密钥获取 URL。
+- 用于信封加密的初始化向量 (IV)。进行加密和解密时，AES - 128 要求提供同一个 IV。
 - 资产传送协议（例如 MPEG DASH、HLS、HDS、平滑流或全部）。
-- 动态加密类型（例如 AES 信封）或无动态加密。 
+- 动态加密类型（例如 AES 信封）或无动态加密。
 
 有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
 
@@ -141,7 +143,7 @@
 
 对于 HLS，根清单将划分成段文件。
 
-例如，根清单是：http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl) ，并且包含段文件名的列表。
+例如，根清单是：http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl)，并且包含段文件名的列表。
 	
 	. . . 
 	#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=630133,RESOLUTION=424x240,CODECS="avc1.4d4015,mp4a.40.2",AUDIO="audio"
@@ -150,7 +152,7 @@
 	QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
 	…
 
-如果在文本编辑器中打开某个段文件（例如 http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl)） ，它应包含 #EXT-X-KEY，指示文件已加密。
+如果在文本编辑器中打开某个段文件（例如 http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl)），它应包含 #EXT-X-KEY，指示文件已加密。
 	
 	#EXTM3U
 	#EXT-X-VERSION:4
@@ -629,6 +631,4 @@
 		    }
 		}
 
-
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->

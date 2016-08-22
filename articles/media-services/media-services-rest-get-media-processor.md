@@ -4,13 +4,14 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="03/01/2016"  
-	wacn.date="07/21/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
 
 
 #如何：获取媒体处理器实例
@@ -30,7 +31,7 @@
 ---|---|---
 媒体编码器标准版|为按需编码提供标准功能。 |[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset/)
 媒体编码器高级工作流|允许你使用媒体编码器高级工作流运行编码任务。|[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset/)
-Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[Azure Media Indexer](/documentation/articles/media-services-index-content/)
+Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[Azure Media Indexer](/documentation/articles/media-services-index-content/)。
 Azure Media Hyperlapse（预览）|使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。|[Azure Media Hyperlapse](/documentation/articles/media-services-hyperlapse-content/)
 Azure Media Encoder|已过时
 存储解密| 已过时|
@@ -86,4 +87,4 @@ Azure 媒体加密器|已过时|
 
 了解如何获取媒体处理器实例后，请转到[如何对资产进行编码](/documentation/articles/media-services-rest-get-started/)主题，其中说明了如何使用媒体编码器标准版对资产进行编码。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0815_2016-->

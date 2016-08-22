@@ -4,13 +4,15 @@
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
-	manager="dwrede"
-	editor=""/>
+	manager="erikre"
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="02/25/2016"
-	wacn.date="04/05/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
+
 
 
 # 开始使用 Azure 经典管理门户按需传送内容
@@ -30,7 +32,7 @@
 2.  配置流式处理终结点。
 1.  上载视频文件。
 1.  将源文件编码为一组自适应比特率 MP4 文件。
-1.  发布资产并获取流式处理和渐进式下载 URL。  
+1.  发布资产并获取流式处理和渐进式下载 URL。
 1.  播放内容。
 
 
@@ -69,7 +71,7 @@
 
 若要使用动态打包，必须执行下列操作：
 
-- 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。  
+- 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
 - 针对你要传送内容的*流式处理终结点*，获取至少一个流式处理单位。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
@@ -103,7 +105,7 @@
 	![UploadContentDialog][uploadcontent]
 
 5. 在“上载内容”对话框中，单击勾选按钮以接受“文件”和“内容名称”。
-6. 随后将开始上载，你可以从门户底部跟踪进度。  
+6. 随后将开始上载，你可以从门户底部跟踪进度。
 
 	![JobStatus][status]
 
@@ -135,15 +137,16 @@
 
 ### 编码
 
-本部分介绍通过 Azure 经典管理门户使用 Azure 媒体编码器为内容编码时可以执行的步骤。
+本部分介绍通过 Azure 经典管理门户使用媒体编码器标准版为内容编码时可以执行的步骤。
 
 1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
-4. 在“处理”对话框中，选择“Azure 媒体编码器”处理器。
+4. 在“处理”对话框中，选择“媒体编码器标准版”处理器。
 5. 选择其中一个“编码配置”。
 
-	![Process2][process2]
+	![Process2][process2]  
 
-	[媒体编码器标准的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
+
+	[媒体编码器标准版的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
 
 5. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
 6. 选择“确定”。
@@ -193,7 +196,8 @@ SAS URL 采用以下格式。
 1. 选择资源。
 2. 然后单击发布按钮。
 
- ![PublishedContent][publishedcontent]
+ ![PublishedContent][publishedcontent]  
+
 
 
 ## 从门户播放内容
@@ -208,7 +212,8 @@ Azure 经典管理门户提供了可用于测试视频的内容播放器。
 - **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 
 
-![AMSPlayer][AMSPlayer]
+![AMSPlayer][AMSPlayer]  
+
 
 
 
@@ -233,4 +238,4 @@ Azure 经典管理门户提供了可用于测试视频的内容播放器。
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0815_2016-->

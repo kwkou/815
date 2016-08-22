@@ -3,14 +3,16 @@
 	description="此文将提供有关在轮转存储访问密钥后如何更新媒体服务的指导。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako,milangada,cenkdin" 
-	manager="dwrede" 
-	editor=""/>
+	authors="Juliako"
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/26/2016" 
-	wacn.date="07/11/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
+
 
 #如何：轮转存储访问密钥后更新媒体服务
 
@@ -138,4 +140,4 @@
 使用[步骤 3](/documentation/articles/media-services-roll-storage-access-keys/#step-3-update-locators) 中所述的相同过程。
 
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->

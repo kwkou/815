@@ -4,13 +4,15 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="05/05/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
+
 
 
 #如何在使用 Azure 媒体服务时配置本地编码器以创建多比特率流
@@ -38,4 +40,5 @@
 ## 另请参阅
 
 [使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

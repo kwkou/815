@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016" 
-	wacn.date="07/21/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 
 
 #使用 REST API 将文件上载到媒体服务帐户
@@ -455,6 +455,7 @@ IngestManifestFile 代表将作为批量引入资产的一部分上载的实际�
 如果你的资产将使用加密，则在创建资产文件之前，必须创建用于加密的 ContentKey。对于存储空间加密，应在请求正文中包括以下属性。
  
 请求正文属性 | 说明
+---|---
 ID | 我们使用以下格式自行生成的 ContentKey ID：“nb:kid:UUID:<NEW GUID>”。
 ContentKeyType | 这是此内容密钥的内容密钥类型（为整数）。我们为存储加密传递了值 1。
 EncryptedContentKey | 我们创建一个新的内容密钥值，这是一个 256 位（32 字节）的值。此密钥使用存储加密 X.509 证书进行加密，该证书是我们通过执行 GetProtectionKeyId 和 GetProtectionKey 方法的 HTTP GET 请求从 Azure 媒体服务中检索到的。
@@ -499,7 +500,7 @@ ContentKey 通过发送 HTTP POST 请求关联到一个或多个资产。以下�
 
 **HTTP 响应**
 
-	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/IngestManifests(('nb:mid:UUID:5c77f186-414f-8b48-8231-17f9264e2048') HTTP/1.1
+	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/IngestManifests(('nb:mid:UUID:5c77f186-414f-8b48-8231-17f9264e2048') HTTP/1.1
 	Content-Type: application/json;odata=verbose
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
@@ -511,4 +512,5 @@ ContentKey 通过发送 HTTP POST 请求关联到一个或多个资产。以下�
  
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor/
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

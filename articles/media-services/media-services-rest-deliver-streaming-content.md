@@ -2,15 +2,16 @@
 	pageTitle="如何从媒体服务传送流内容" 
 	description="了解如何创建用于生成流 URL 的定位符。代码使用 REST API。" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"  
-	wacn.date="07/21/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 
 
 #如何：传送流内容
@@ -38,10 +39,10 @@
 
    1. 如果内容已加密，则定义访问策略。
    2. 创建 OnDemand 流式处理定位符。
-   3. 如果你想要流式处理，请获取资产中的流式处理清单文件 (.ism)。 
+   3. 如果你想要流式处理，请获取资产中的流式处理清单文件 (.ism)。
    		
-	如果你想要渐进式下载，请获取资产中的 MP4 文件名。 
-   4. 生成清单文件或 MP4 文件的 URL。 
+	如果你想要渐进式下载，请获取资产中的 MP4 文件名。
+   4. 生成清单文件或 MP4 文件的 URL。
    5. 请注意，你无法使用包含写入或删除权限的 AccessPolicy 创建流式处理定位符。
 
 
@@ -69,7 +70,7 @@
 	Cache-Control: no-cache
 	Content-Length: 311
 	Content-Type: application/json;odata=minimalmetadata;streaming=true;charset=utf-8
-	Location: https:/wamsshaclus001rest-hs.chinacloudapp.cn/api/AccessPolicies('nb%3Apid%3AUUID%3A69c80d98-7830-407f-a9af-e25f4b0d3e5f')
+	Location: https://wamsshaclus001rest-hs.chinacloudapp.cn/api/AccessPolicies('nb%3Apid%3AUUID%3A69c80d98-7830-407f-a9af-e25f4b0d3e5f')
 	Server: Microsoft-IIS/8.5
 	request-id: a877528a-bdb4-4414-9862-273f8e64f882
 	x-ms-request-id: a877528a-bdb4-4414-9862-273f8e64f882
@@ -179,4 +180,5 @@ URL：**路径** + 资产文件 mp4 名称
 ##另请参阅
 
 [配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

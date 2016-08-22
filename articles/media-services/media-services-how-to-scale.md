@@ -4,13 +4,15 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"  
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
+
 
 
 #如何缩放媒体服务  
@@ -39,7 +41,4 @@
 
 有关详细信息，请参阅[跨多个存储帐户管理媒体服务资产](/documentation/articles/meda-services-managing-multiple-storage-accounts/)和[使用 Azure 存储空间](/documentation/services/storage/)。
 
-
-
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -3,14 +3,14 @@
 	description="本主题概述了如何使用 Azure 媒体服务实时传送视频流。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="cenkdin,Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	authors="Juliako" 
+	manager="erikre" 
+	editor=""/>  
 
 <tags
 	ms.service="media-services"
-	ms.date="05/18/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 #使用 Azure 媒体服务实时传送视频流概述
 
 ##概述
@@ -38,9 +38,9 @@
 
 **频道**表示用于处理实时流内容的管道。频道可以通过以下方式接收实时输入流：
 
-- 本地实时编码器将多比特率 **RTMP** 或“平滑流”（分片 MP4）发送到经配置可以进行“直通”传递的通道。“直通”传递是指引入的流将会直接通过“通道”，而不会经过任何进一步的处理。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder (FMLE)、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的频道，并不建议这样做。收到请求时，媒体服务会将该流传递给客户。
+- 本地实时编码器将多比特率 **RTMP** 或“平滑流式处理”（分片 MP4）发送到经配置可以进行“直通”传递的通道。“直通”传递是指引入的流将会直接通过“通道”，而不会经过任何进一步的处理。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder (FMLE)、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的频道，并不建议这样做。收到请求时，媒体服务会将该流传递给客户。
 
-	>[AZURE.NOTE] 当你需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，则可使用直通这种最经济的方法来实时传送视频流。请参见[定价](/pricing/details/media-services/)详细信息。
+	>[AZURE.NOTE] 当你需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，则可使用直通这种最经济的方法来实时传送视频流。请参阅[定价](/pricing/details/media-services/)详细信息。
 	
 	
 - 本地实时编码器（采用以下格式之一：RTMP 或平滑流式处理（分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的频道。RTP (MPEG-TS) 也是支持的，但前提是你有到 Azure 数据中心的专用连接。以下提供 RTMP 输出的实时编码器可以使用此类型的通道：Telestream Wirecast、FMLE。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传递给客户。
@@ -48,7 +48,7 @@
 
 从媒体服务2.10 发行版开始，在创建频道时，可以指定你想要频道接收输入流的方式，以及是否想要频道对流执行实时编码。可以使用两个选项：
 
-- **无**（直通）- 如果你打算使用输出多比特率流（直通流）的本地实时编码器，请指定此值。在这种情况下，传入流将传递到输出，而不会进行任何编码。这是 2.10 发行版以前的频道行为。  
+- **无**（直通）- 如果你打算使用输出多比特率流（直通流）的本地实时编码器，请指定此值。在这种情况下，传入流将传递到输出，而不会进行任何编码。这是 2.10 发行版以前的频道行为。
 
 - **标准** - 如果你打算使用媒体服务将单比特率实时流编码为多比特率流，请选择此值。若要针对不频繁发生的事件快速地向上缩放，此方法可以节省资金。请注意，实时编码会影响计费，你应该记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
@@ -75,7 +75,8 @@
 
 下图显示的是“直通”工作流中涉及的 AMS 平台的主要组成部分。
 
-![实时工作流](./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png)
+![实时工作流](./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png)  
+
 
 有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)。
 
@@ -83,7 +84,8 @@
 
 下图显示的是实时流式处理工作流中所涉及的 AMS 平台的主要组成部分，该工作流中的频道能够通过媒体服务执行实时编码。
 
-![实时工作流](./media/media-services-live-streaming-workflow/media-services-live-streaming-new.png)
+![实时工作流](./media/media-services-live-streaming-workflow/media-services-live-streaming-new.png)  
+
 
 有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
@@ -127,7 +129,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 - **已停止**。这是通道在创建后的初始状态（除非在门户中选择了自动启动）。 此状态下不会发生计费。在此状态下，可以更新频道属性，但不允许进行流式传输。
 - **正在启动**。频道正在启动。此状态下不会发生计费。在此状态下，不允许进行更新或流式传输。如果发生错误，则频道会返回到“已停止”状态。
-- **正在运行**。频道能够处理实时流。现在会计收使用费。你必须停止通道以防止进一步计费。 
+- **正在运行**。频道能够处理实时流。现在会计收使用费。你必须停止通道以防止进一步计费。
 - **正在停止**。频道正在停止。此暂时性状态下不会发生计费。在此状态下，不允许进行更新或流式传输。
 - **正在删除**。频道正被删除。此暂时性状态下不会发生计费。在此状态下，不允许进行更新或流式传输。
 
@@ -156,4 +158,4 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 [媒体服务概念](/documentation/articles/media-services-concepts/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/03/2016"    
-	wacn.date="06/27/2016"/>
+ 	ms.date="06/22/2016"    
+	wacn.date="08/22/2016"/>
 
 
 # 使用 Azure 媒体包装器完成静态打包任务
@@ -38,7 +38,7 @@
 
 ## 验证使用外部编码器编码的自适应比特率 MP4
 
-如果你要使用一组未使用媒体服务编码器编码的自适应比特率（多码率）MP4 文件，则应在进一步处理前验证这些文件。媒体服务包装程序可以验证包含一组 MP4 文件的资产，并可检查该资产是否可以打包成平滑流或 HLS。如果验证任务失败，则处理该任务的作业将完成并显示错误。用于定义验证任务的预设的 XML 可以在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx)主题中找到。
+如果你要使用一组未使用媒体服务的编码器编码的自适应比特率（多码率）MP4 文件，则应在进一步处理前验证这些文件。媒体服务包装程序可以验证包含一组 MP4 文件的资产，并可检查该资产是否可以打包成平滑流或 HLS。如果验证任务失败，则处理该任务的作业将完成并显示错误。用于定义验证任务的预设的 XML 可以在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx)主题中找到。
 
 >[AZURE.NOTE]请使用媒体编码器标准版来生成内容，或使用媒体服务包装程序来验证内容，以避免运行时问题。如果按需流式处理服务器在运行时无法解析你的源文件，则你会收到 HTTP 1.1 错误“415 不支持的媒体类型”。服务器多次未能解析你的源文件会影响按需流式处理服务器的性能，并且可能会减少服务于其他请求的可用带宽。Azure 媒体服务在其按需流式处理服务上提供一个服务级别协议 (SLA)；但是，如果以上述方式滥用服务器，则无法遵循此 SLA。
 
@@ -594,7 +594,7 @@
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://www.windowsazure.cn/documentation/articles/media-services-static-packaging.
+	            // https://www.azure.cn/documentation/articles/media-services-static-packaging.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));
@@ -1344,7 +1344,7 @@
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://www.windowsazure.cn/documentation/articles/media-services-static-packaging.
+	            // https://www.sazure.cn/documentation/articles/media-services-static-packaging.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));
@@ -1435,5 +1435,4 @@
 	    }
 	}
 
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->
