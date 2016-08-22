@@ -1,3 +1,5 @@
+
+
 ## 使用 SSMS 创建新数据库用户
 
 通过以下步骤使用 SSMS 在现有数据库中创建新的数据库用户。
@@ -10,12 +12,13 @@
 
 2. 右键单击选定的数据库，然后单击“查询”。
 
-     ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-2.png)
+     ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-2.png)  
+
 
 3. 在查询窗口中，编辑并使用以下 Transact-SQL 语句在用户数据库中创建包含的用户。
 
 		CREATE USER user1 WITH PASSWORD ='p@ssw0rd1';
 
-     ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-3.png)
+     ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-3.png)  
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0815_2016-->
