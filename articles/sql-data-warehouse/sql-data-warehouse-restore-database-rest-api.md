@@ -3,14 +3,16 @@
    description="用于还原 SQL 数据仓库的 REST API 任务。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="elfisher"
+   authors="sonyama"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/10/2016"
-   wacn.date="07/25/2016"/>
+   ms.date="06/28/2016"
+   wacn.date="08/22/2016"/>
+
 
 # 还原 Azure SQL 数据仓库 (REST API)
 
@@ -53,6 +55,7 @@
 
 <!--Image references-->
 
+
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
 [确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
@@ -74,7 +77,8 @@
 [如何查看和提高 DTU 配额]: https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/
 
 <!--Other Web references-->
+
 [Azure Portal]: https://portal.azure.cn/
 [Microsoft Web Platform Installer]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0815_2016-->
