@@ -139,7 +139,7 @@ A14.使用同一个保管库注册的任何服务器将能够恢复由使用同�
 答 26.是的。
 
 **问 27.是否可以将备份服务配置为在备份作业失败时发送邮件？** <br/>
-答 27.是，备份服务有多个可与 PowerShell 脚本配合使用的基于事件的警报。有关完整说明，请参阅 [Alert notifications（警报通知）](/documentation/articles/backup-azure-manage-vms/#alert-notifications)
+答 27.是，备份服务有多个可与 PowerShell 脚本配合使用的基于事件的警报。有关完整说明，请参阅 [Alert notifications（警报通知）](/documentation/articles/backup-azure-manage-vms-classic/#alert-notifications)
 
 
 

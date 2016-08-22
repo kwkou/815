@@ -15,10 +15,6 @@
 
 # 管理和监视 Azure 虚拟机备份
 
-> [AZURE.SELECTOR]
-- [管理 Azure VM 备份](/documentation/articles/backup-azure-manage-vms/)
-- [管理 经典 VM 备份](/documentation/articles/backup-azure-manage-vms-classic/)
-
 本文针对在 Azure 中受保护的经典模型虚拟机介绍了几种常见的管理和监视任务。
 
 >[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 部署模型和经典部署模型](/documentation/articles/resource-manager-deployment-model)。有关使用经典部署模型 VM 的详细信息，请参阅[准备好环境以备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-prepare)。
@@ -203,7 +199,7 @@
 
     ![操作详细信息](./media/backup-azure-manage-vms/ops-logs-details-window.png)
 
-## 警报通知
+## <a name="alert-notifications"></a>警报通知
 你可以获取门户中作业的自定义警报通知。为此，你需要针对操作日志事件定义基于 PowerShell 的警报规则。我们建议使用 PowerShell 1.3.0 或更高版本。
 
 若要定义自定义通知以便在备份失败时发出警报，可使用如下所示的示例命令：

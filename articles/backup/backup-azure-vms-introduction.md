@@ -123,7 +123,7 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 ## 后续步骤
 
 - [备份虚拟机](/documentation/articles/backup-azure-vms/)
-- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms/)
+- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms-classic/)
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms/)
 - [解决 VM 备份问题](/documentation/articles/backup-azure-vms-troubleshoot/)
 
