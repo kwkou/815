@@ -5,12 +5,13 @@
 	documentationCenter="nodejs"
 	authors="cephalin"
 	manager="wpickett"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="app-service-web"
-	ms.date="06/01/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="07/01/2016"
+	wacn.date="08/22/2016"/>
 
 # Azure 中的 Node.js Web 应用入门
 
@@ -18,14 +19,13 @@
 
 本教程说明如何创建一个简单的 [Node.js][NODEJS] 应用程序，然后通过 cmd.exe 或 bash 等命令行环境将它部署到 [Azure Web 应用]。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 
-<a name="prereq"></a>
-## 先决条件
+## <a name="prereq"></a>先决条件
 
-- **Node.js**（[单击此处进行安装][NODEJS]）
-- **Bower**（[单击此处进行安装][BOWER]）
-- **Yeoman**（[单击此处进行安装][YEOMAN]）
-- **Git**（[单击此处进行安装][GIT]）
-- **Azure CLI**（[单击此处进行安装][Azure CLI]）
+- **Node.js**（[单击此处安装][NODEJS]）
+- **Bower**（[单击此处安装][BOWER]）
+- **Yeoman**（[单击此处安装][YEOMAN]）
+- **Git**（[单击此处安装][GIT]）
+- **Azure CLI**（[单击此处安装][Azure CLI]）
 - 一个 Azure 帐户。如果你没有帐户，可以[注册试用版]。
 
 ## 创建并部署简单的 Node.js Web 应用
@@ -37,7 +37,7 @@
 2. 通过 `CD` 进入工作目录，并使用下列语法生成 express 应用：
 
         yo express
-        
+
     出现提示时选择以下选项：
 
     `? Would you like to create a new directory for your project?` **Yes**  
@@ -53,7 +53,7 @@
         npm start
 
     在浏览器中导航到 <http://localhost:3000> 以确保可以看到 Express 主页。确认应用正常运行后，请使用 `Ctrl-C` 将它停止。
-    
+
 1. 如下所示登录到 Azure（为此需要 [Azure CLI](#prereq)）：
 
         azure login -e AzureChinaCloud
@@ -77,7 +77,7 @@
         }
 
     这样，你的 Node.js 应用便可以在 iisnode 侦听的默认端口上响应 Web 请求。
-    
+
 4. 保存更改，然后使用 git 将应用部署到 Azure：
 
         git add .
@@ -91,13 +91,14 @@
         azure site browse
 
     现在，你应会看到 Node.js Web 应用在 Azure Web 应用中实时运行。
-    
-    ![浏览到已部署应用程序的示例。][deployed-express-app]
+
+    ![浏览到已部署应用程序的示例。][deployed-express-app]  
+
 
 ## 更新 Node.js Web 应用
 
 若要更新 Azure Web 应用中运行的 Node.js Web 应用，只需和首次部署 Web 应用时一样运行 `git add`、`git commit` 和 `git push`。
-     
+
 ## Azure 如何部署 Node.js 应用
 
 Azure 使用 [iisnode] 来运行 Node.js 应用。Azure CLI 和 Kudu 引擎（Git 部署）合作，让你在通过命令行开发和部署 Node.js 应用时获得顺畅的体验。
@@ -108,7 +109,7 @@ Azure 使用 [iisnode] 来运行 Node.js 应用。Azure CLI 和 Kudu 引擎（Gi
     - 如果 package.json 位于存储库根目录中，请运行 `npm install --production`。
     - 在 package.json 中为指向启动脚本的 iisnode 生成 Web.config（例如 server.js 或 app.js）。
     - 自定义 Web.config 以让应用程序准备好使用 Node-Inspector 进行调试。
-    
+
 ## 使用 Node.js 框架
 
 如果使用了流行的 Node.js 框架（例如 [Sails.js][SAILSJS] 或 [MEAN.js][MEANJS]）来开发应用，则可将这些应用部署到 Azure Web 应用。流行的 Node.js 框架有其特定的行为模式，并且其包依赖性不断更新。但是，Azure 为你提供 stdout 和 stderr 日志，让你确切地了解应用中发生了什么并做出相应的更改。有关详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](#iisnodelog)。
@@ -121,7 +122,8 @@ Azure 使用 [iisnode] 来运行 Node.js 应用。Azure CLI 和 Kudu 引擎（Gi
 
 ## 使用特定的 Node.js 引擎
 
-与平常在 package.json 中所做的一样，你可以在典型工作流中告知 Azure 使用特定的 Node.js 引擎。例如：
+与平常在 package.json 中所做的一样，你可以在典型工作流中告知 Azure 使用特定的 Node.js 引擎。
+例如：
 
     "engines": {
         "node": "5.5.0"
@@ -133,7 +135,7 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 - 接下来，查看 package.json 以确认是否已在 `engines` 对象中指定 `"node": "..."`。如果是，则使用它。
 - 默认情况下会选择默认的 Node.js 版本。
 
-##<a name="iisnodelog"></a> 从 iisnode 获取 stdout 和 stderr 日志
+## <a name="iisnodelog"></a> 从 iisnode 获取 stdout 和 stderr 日志
 
 若要读取 iisnode 日志，请使用以下步骤。
 
@@ -145,22 +147,36 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 
         loggingEnabled: true
         logDirectory: iisnode
-    
-    这两个参数相结合，告诉 App Service 中的 iisnode 要将其 stdout 和 stderror 输出放在 D:\\home\\site\\wwwroot**iisnode** 目录中。
+
+    这两个参数相结合，告诉 Azure Web 应用中的 iisnode 要将其 stdout 和 stderror 输出放在 D:\home\site\wwwroot**iisnode** 目录中。
 
 3. 保存更改，然后使用以下 Git 命令将更改推送到 Azure：
 
         git add .
         git commit -m "{your commit message}"
         git push azure master
-   
+
    现已配置 iisnode。接下来的步骤演示如何访问这些日志。
      
-4. 使用 FTP，并导航到 D:\\home\\site\\wwwroot\\iisnode
+4. 在浏览器中访问应用的 Kudu 调试控制台，位置为：
+
+        https://{appname}.scm.chinacloudsites.cn/DebugConsole 
+
+    请注意，此 URL 不同于 Web 应用 URL，它的 DNS 名称中包含“*.scm*”。如果在 URL 中省略此部分，你将收到 404 错误。
+
+5. 导航到 D:\home\site\wwwroot\iisnode
+
+    ![导航到 iisnode 日志文件所在的位置。][iislog-kudu-console-find]
 
 6. 单击要读取的日志的“编辑”图标。如果需要，也可以单击“下载”或“删除”。
 
-    现在可以查看日志以帮助调试 Azure 部署。
+    ![打开 iisnode 日志文件。][iislog-kudu-console-open]  
+
+
+    现在可以查看日志以帮助调试 Azure Web 应用部署。
+    
+    ![检查 iisnode 日志文件。][iislog-kudu-console-read]  
+
 
 ## 使用 Node-Inspector 调试应用
 
@@ -168,7 +184,7 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 
 若要启用 Node-Inspector，请遵循以下步骤：
 
-1. 打开位于存储库根目录中的 iisnode.yml，并指定以下参数： 
+1. 打开位于存储库根目录中的 iisnode.yml，并指定以下参数：
 
         debuggingEnabled: true
         debuggerExtensionDll: iisnode-inspector.dll
@@ -178,28 +194,30 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
         git add .
         git commit -m "{your commit message}"
         git push azure master
-   
+
 4. 现在，只需在 URL 中添加 /debug 以导航到 package.json 中的启动脚本指定的应用启动文件。例如，
 
         http://{appname}.chinacloudsites.cn/server.js/debug
-    
+
     或者，
-    
+
         http://{appname}.chinacloudsites.cn/app.js/debug
 
 ## 更多资源
 
 - [在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps/)
+- [Azure 上的 Node.js 应用程序的最佳实践和故障排除指南](/documentation/articles/app-service-web-nodejs-best-practices-and-troubleshoot-guide/)
 - [如何在 Azure 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)
 - [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
 - [Azure Web Apps: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx)
 - [Node.js 开发人员中心](/develop/nodejs/)
 - [Azure 中的 Web 应用入门](/documentation/articles/app-service-web-get-started/)
+- [探索神秘无比的 Kudu 调试控制台]
 
 <!-- URL List -->
 
 [Azure CLI]: /documentation/articles/xplat-cli-install/
-[Azure Web 应用]: /documentation/services/web-sites
+[Azure Web 应用]: /documentation/services/web-sites/
 [activate your Visual Studio subscriber benefits]: /pricing/1rmb-trial/
 [BOWER]: http://bower.io/
 [Create a Node.js chat application with Socket.IO in Azure Web App（在 Azure Web 应用使用 Socket.IO 创建 Node.js 聊天应用程序）]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
@@ -213,7 +231,7 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 [NODEJS]: http://nodejs.org
 [SAILSJS]: http://sailsjs.org/
 [注册试用版]: /pricing/1rmb-trial/
-[Web 应用]: /home/features/web-site
+[web app]: /home/features/web-site/
 [YEOMAN]: http://yeoman.io/
 
 <!-- IMG List -->
@@ -223,4 +241,4 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 [iislog-kudu-console-open]: ./media/app-service-web-nodejs-get-started/iislog-kudu-console-open.png
 [iislog-kudu-console-read]: ./media/app-service-web-nodejs-get-started/iislog-kudu-console-read.png
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0815_2016-->
