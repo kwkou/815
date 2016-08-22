@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multiple" 
-	ms.date="05/04/2016" 
-	wacn.date="06/20/2016"/>
+	ms.date="06/24/2016" 
+	wacn.date="08/22/2016"/>
 
 # 将证书添加到 Java CA 证书存储
 以下步骤演示如何将证书颁发机构 (CA) 证书添加到 Java CA 证书 (cacerts) 存储。使用的示例适用于 Twilio 服务所需的 CA 证书。本主题中稍后提供的信息将介绍如何安装 Azure Service Bus 的 CA 证书。

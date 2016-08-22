@@ -5,12 +5,14 @@
    documentationCenter="na"
    authors="tfitzmac"
    manager="wpickett"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="04/04/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/22/2016"/>  
+
 
 # 密钥保管库模板架构
 
@@ -76,6 +78,7 @@
 | sku | 对象<br />必需<br />[sku 对象](#sku)<br /><br />密钥保管库的 SKU。 |
 
 <a id="accesspolicies" /></a>
+
 ### properties.accessPolicies 对象
 
 | 名称 | 值 |
@@ -85,6 +88,7 @@
 | 权限 | 对象<br />必需<br />[permissions 对象](#permissions)<br /><br />向 Active Directory 对象授予的对此保管库的权限。 |
 
 <a id="permissions" /></a>
+
 ### properties.accessPolicies.permissions 对象
 
 | 名称 | 值 |
@@ -93,6 +97,7 @@
 | secrets | 数组<br />必需<br />**all**、**delete**、**get**、**list**、**set**<br /><br />向此 Active Directory 对象授予的，对此保管库中机密的权限。必须将此值指定为一个或多个允许值的数组。 |
 
 <a id="sku" /></a>
+
 ### properties.sku 对象
 
 | 名称 | 值 |
@@ -118,13 +123,13 @@
             "tenantId": {
                 "type": "string",
                 "metadata": {
-                   "description": "Tenant Id for the subscription and use assigned access to the vault. Available from the Get-AzureRMSubscription PowerShell cmdlet"
+                   "description": "Tenant ID for the subscription and use assigned access to the vault. Available from the Get-AzureRmSubscription PowerShell cmdlet"
                 }
             },
             "objectId": {
                 "type": "string",
                 "metadata": {
-                    "description": "Object Id of the AAD user or service principal that will have access to the vault. Available from the Get-AzureRMADUser or the Get-AzureRMADServicePrincipal cmdlets"
+                    "description": "Object ID of the AAD user or service principal that will have access to the vault. Available from the Get-AzureRmADUser or the Get-AzureRmADServicePrincipal cmdlets"
                 }
             },
             "keysPermissions": {
@@ -241,5 +246,4 @@
 - 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)。
 - 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0815_2016-->
