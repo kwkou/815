@@ -228,6 +228,6 @@ VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中
 
 - [备份虚拟机](/documentation/articles/backup-azure-vms/)
 - [计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)
-- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms/)
+- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms-classic/)
 
 <!---HONumber=AcomDC_0718_2016-->

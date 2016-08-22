@@ -174,7 +174,7 @@
 
 ## 后续步骤
 
-- [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms/)
+- [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms-classic/)
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms/)
 
 <!---HONumber=Mooncake_0503_2016-->

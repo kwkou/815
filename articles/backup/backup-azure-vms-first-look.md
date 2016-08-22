@@ -210,7 +210,7 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。�
 ## 后续步骤
 成功备份 VM 后，你可能需要执行几个相关的步骤。最合理的步骤是熟悉将数据还原到 VM 的操作。但是，有几个管理任务可帮助你了解如何确保数据安全和成本最小化。
 
-- [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms/)
+- [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms-classic/)
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms/)
 - [故障排除指南](/documentation/articles/backup-azure-vms-troubleshoot/)
 
