@@ -2,15 +2,15 @@
 	pageTitle="Widevine 许可证模板概述" 
 	description="本主题概述了用于配置 Widevine 许可证的 Widevine 许可证模板。" 
 	authors="juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" 
 	services="media-services" 
 	documentationCenter=""/>
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"  
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016"  
+	wacn.date="08/22/2016"/>
 
 #Widevine 许可证模板概述
 
@@ -198,4 +198,4 @@ override_provider_client_token | 布尔值。true 或 false |如果为 false 并
 
 [使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

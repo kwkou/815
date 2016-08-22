@@ -5,12 +5,13 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor="jimbe"/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"  
-	wacn.date="07/21/2016"/>
+	ms.date="06/22/2016"   
+	wacn.date="08/22/2016"/>
 
 #如何将媒体服务与 Java 结合使用
 
@@ -69,7 +70,7 @@
 	public class HelloMediaServices
 	{
 	    // Media Services account credentials configuration
-	    private static String mediaServiceUri = "https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/";
+	    private static String mediaServiceUri = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
 	    private static String oAuthUri = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn/v2/OAuth2-13";
 	    private static String clientId = "account name";
 	    private static String clientSecret = "account key";
@@ -259,9 +260,11 @@
 
 <!-- URLs. -->
 
+
   [Azure Java 开发人员中心]: /develop/java/
   [适用于 Java 的 Azure 库文档]: http://azure.github.io/azure-sdk-for-java/
   [Media Services Client Development]: /documentation/articles/media-services-develop-video-players/
 
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

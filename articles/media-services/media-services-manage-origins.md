@@ -5,13 +5,14 @@
 	documentationCenter="" 
 	authors="Juliako" 
 	writer="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 
 
 #<a id="managemediaservicesorigins"></a>如何在媒体服务帐户中管理流式处理终结点
@@ -119,7 +120,7 @@
 
 一旦启用，则将禁用下列配置：**自定义主机名**和**访问控制**。
 
-![流式处理终结点启用 CDN][streaming-endpoint-enable-cdn]
+![流式处理终结点启用 CDN][streaming-endpoint-enable-cdn]  
 
 
 ###其他注意事项
@@ -137,4 +138,5 @@
 [configure-origin]: ./media/media-services-manage-origins/media-services-origins-configure.png
 [configure-origin-configure-custom-host-names]: ./media/media-services-manage-origins/media-services-configure-custom-host-names.png
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

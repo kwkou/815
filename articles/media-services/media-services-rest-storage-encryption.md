@@ -5,12 +5,13 @@
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="media-services" 
- 	ms.date="05/02/2016"   
-	wacn.date="6/20/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 
 
 #使用 AMS REST API 通过存储空间加密来加密内容
@@ -371,4 +372,4 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	   "ContentChecksum":null
 	}
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0815_2016-->

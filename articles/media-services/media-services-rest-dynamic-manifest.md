@@ -3,14 +3,15 @@
 	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性流。"
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako,cenkdin" 
+	authors="Juliako" 
 	manager="dwrede" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"  
-	wacn.date="07/21/2016"/>
+	ms.date="06/22/2016"  
+	wacn.date="08/22/2016"/>
 
 #使用 Azure 媒体服务 REST API 创建筛选器
 
@@ -60,7 +61,7 @@
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
 	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
-	Host:wamsshaclus001rest-hs.chinacloudapp.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 
 请求正文
 
@@ -116,7 +117,7 @@
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
 	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
-	Host: wamsshaclus001rest-hs.chinacloudapp.cn  
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 请求正文
 
@@ -169,7 +170,7 @@
 	Accept-Charset: UTF-8 
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
-	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	
 ### 获取与资产关联的 **AssetFilter**。
 
@@ -321,7 +322,7 @@
 	Accept-Charset: UTF-8 
 	Authorization: Bearer <token value> 
 	x-ms-version: 2.11 
-	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
+	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
 ##生成使用筛选器的流 URL
 
@@ -359,4 +360,4 @@
 
  
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

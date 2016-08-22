@@ -6,12 +6,14 @@
 	manager="dwrede" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/03/2016" 
-	wacn.date="07/21/2016"/>
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
+
 
 #使用 REST API 管理媒体服务实体
 
@@ -97,7 +99,9 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
-	The following example returns all JobTemplates with the name "SampleTemplate."
+
+以下示例返回名为“SampleTemplate”的所有 JobTemplate。
+
 	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/JobTemplates?$filter=startswith(Name,%20'SampleTemplate') HTTP/1.1
 	Content-Type: application/json;odata=verbose
 	Accept: application/json;odata=verbose
@@ -159,6 +163,4 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 0
 
-
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

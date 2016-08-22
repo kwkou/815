@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="05/03/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 
 
 
@@ -401,4 +401,4 @@ package
 
 [适用于 OSMF 的 Microsoft 自适应流式处理插件更新](https://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

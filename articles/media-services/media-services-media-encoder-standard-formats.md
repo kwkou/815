@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="媒体编码器标准格式和编解码器" 
-	description="本主题概述 Azure 媒体编码器标准格式和编解码器。" 
+	description="本主题概述媒体编码器标准格式和编解码器。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
-	manager="dwrede" 
-	editor=""/>
+	authors="juliako" 
+	manager="erikre" 
+	editor=""/>  
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="07/17/2016"
+	wacn.date="08/22/2016"/>
 
 #媒体编码器标准格式和编解码器
 
@@ -108,4 +108,4 @@ MPEG2-TS |H.264（High、Main 和 Baseline Profile）|AAC-LC、HE-AAC v1、HE-AA
 
 [如何使用媒体编码器标准版进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

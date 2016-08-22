@@ -2,15 +2,17 @@
 	pageTitle="使用 PowerShell 管理 Azure 媒体服务帐户" 
 	description="了解如何使用 PowerShell cmdlet 管理 Azure 媒体服务帐户。" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
+
 
 
 #使用 PowerShell 管理 Azure 媒体服务帐户
@@ -108,4 +110,5 @@ Azure 媒体服务使用 Azure 存储空间来存储媒体内容。当你创建�
 
 
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

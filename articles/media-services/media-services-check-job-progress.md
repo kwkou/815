@@ -4,13 +4,14 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"    
-	wacn.date="06/20/2016"/>
+	ms.date="06/22/2016"   
+	wacn.date="08/22/2016"/>
 
 #如何：检查作业进度
 
@@ -115,7 +116,7 @@ Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/docume
 在开发使用 Azure 存储队列的媒体服务应用程序时，请注意以下几点。
 
 - 队列服务不保证按照先进先出 (FIFO) 的顺序传递消息。有关详细信息，请参阅 [Azure 队列和 Azure 服务总线队列比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)。
-- Azure 存储队列不是推送服务；你必须轮询队列。 
+- Azure 存储队列不是推送服务；你必须轮询队列。
 - 可以有任意数目的队列。有关详细信息，请参阅[队列服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179363.aspx)。
 - Azure 存储队列存在一些限制，有关具体的说明，请参阅以下文章：[Azure 队列和 Azure 服务总线队列比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)。
 
@@ -128,10 +129,10 @@ Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/docume
 1. 创建一个接收编码作业相关通知消息的队列。
 1. 创建一个映射到队列的通知终结点。
 1. 将通知终结点附加到作业，然后提交编码作业。可以将多个通知终结点附加到一个作业。
-1. 在本示例中，我们只想知道作业的最终状态，因此我们将 **NotificationJobState.FinalStatesOnly** 传递给 **AddNew** 方法。 
+1. 在本示例中，我们只想知道作业的最终状态，因此我们将 **NotificationJobState.FinalStatesOnly** 传递给 **AddNew** 方法。
 		
 		job.JobNotificationSubscriptions.AddNew(NotificationJobState.FinalStatesOnly, _notificationEndPoint);
-1. 如果传递 NotificationJobState.All，则会获得所有状态更改通知：“已排队”->“已计划”->“处理中”->“已完成”。不过，如前所述，Azure 存储队列服务不保证按顺序传递。可以使用 Timestamp 属性（在以下示例的 EncodingJobMessage 类型中定义）来为消息排序。你可能会收到重复的通知消息。使用 ETag 属性（在 EncodingJobMessage 类型中定义）可以检查重复项。请注意，某些状态更改通知也有可能被跳过。 
+1. 如果传递 NotificationJobState.All，则会获得所有状态更改通知：“已排队”->“已计划”->“处理中”->“已完成”。不过，如前所述，Azure 存储队列服务不保证按顺序传递。可以使用 Timestamp 属性（在以下示例的 EncodingJobMessage 类型中定义）来为消息排序。你可能会收到重复的通知消息。使用 ETag 属性（在 EncodingJobMessage 类型中定义）可以检查重复项。请注意，某些状态更改通知也有可能被跳过。
 1. 每隔 10 秒检查队列一次，等待作业进入“已完成”状态。处理消息后删除消息。
 1. 删除队列和通知终结点。
 
@@ -424,4 +425,4 @@ Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/docume
 	State: Finished
 	
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0815_2016-->

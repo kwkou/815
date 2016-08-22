@@ -4,15 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016" 
-	wacn.date="06/27/2016"/>
-
-
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"/>
 
 #<a id="monitormediaservicesaccount"></a>如何监视媒体服务帐户
 
@@ -55,8 +53,10 @@ Azure 媒体服务仪表板显示了可用于管理媒体服务帐户的使用�
 
 
 <!-- Images -->
+
 [dashboard]: ./media/media-services-monitor-services-account/media-services-dashboard.png
 [storage_options_scoped]: ./media/media-services-monitor-services-account/storagemonitoringoptions_scoped.png
 
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->
