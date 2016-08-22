@@ -5,11 +5,13 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />
+   editor="" />  
+
 <tags
    ms.service="multiple"
    ms.date="05/08/2016"
-   wacn.date="05/16/2016" />
+   wacn.date="08/22/2016" />  
+
 
 # 设置命名的身份验证凭据
 
@@ -29,13 +31,13 @@ Visual Studio 使用订阅 ID 和证书数据作为凭据。订阅文件（.publ
 
 从“新建/编辑订阅”对话框中，可以编辑订阅信息，如本主题后面所述。
 
-如果要自行创建证书，可以参阅 [创建并上载管理证书](/documentation/articles/cloud-services-certs-create/)（创建并上载管理证书）中所述的说明，然后将证书手动上载到经典管理门户。
+如果要自行创建证书，可以参阅 [创建并上传 Azure 管理证书](/documentation/articles/cloud-services-certs-create/)中的说明，然后将证书手动上传到[Azure 经典管理门户](http://manage.windowsazure.cn/)。
 
 >[AZURE.NOTE] Visual Studio 管理云服务所需的凭据不同于针对 Azure 存储空间服务验证请求所需的凭据。
 
 ## 在 Visual Studio 中修改或导出身份验证凭据
 
-在“新建/编辑订阅”对话框中，还可以设置、修改或导出身份验证凭据。该对话框在执行下列任一操作时出现：
+在“新建订阅”对话框中，还可以设置、修改或导出身份验证凭据。该对话框在执行下列任一操作时出现：
 
 - 在“服务器资源管理器”中，打开“Azure”节点的快捷菜单，选择“管理订阅”，选择“证书”选项卡，然后选择“添加”或“编辑”按钮。
 
@@ -49,15 +51,15 @@ Visual Studio 使用订阅 ID 和证书数据作为凭据。订阅文件（.publ
 
 1. 选择“复制完整路径”按钮。证书（.cer 文件）的路径将复制到剪贴簿。
 
-    >[AZURE.IMPORTANT] 若要从 Visual Studio 中发布 Azure 应用程序，必须将此证书上载到经典管理门户。
+    >[AZURE.IMPORTANT] 若要从 Visual Studio 中发布 Azure 应用程序，必须将此证书上载到 [Azure 经典管理门户](http://manage.windowsazure.cn/)。
 
-1. 将证书上载到 Azure 经典管理门户，请执行以下操作：
+1. 将证书上载到 [Azure 经典门户](http://manage.windowsazure.cn/)，请执行以下操作：
 
     1. 选择“Azure 经典管理门户”链接。
 
-         此时将打开 [Azure 经典管理门户](http://go.microsoft.com/fwlink/?LinkID=213885)。
+         [Azure 经典管理门户](http://manage.windowsazure.cn/)随即打开。
 
-    1. 使用你的 Microsoft 帐户登录到 Azure 经典管理门户，然后选择“云服务”按钮。
+    1. 登录到 [Azure 经典管理门户](http://manage.windowsazure.cn/)，然后选择“云服务”按钮。
 
     1. 选择所需的云服务。
 
@@ -67,4 +69,4 @@ Visual Studio 使用订阅 ID 和证书数据作为凭据。订阅文件（.publ
 
     1. 粘贴刚刚创建 .cer 文件的完整路径，然后输入指定的密码。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0815_2016-->

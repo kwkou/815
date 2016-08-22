@@ -5,17 +5,19 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />
+   editor="" />  
+
 <tags
    ms.service="multiple"
    ms.date="06/01/2016"
-   wacn.date="06/20/2016" />
+   wacn.date="08/22/2016" />  
+
 
 # 如何：通过 Visual Studio 将 Web 应用程序迁移和发布到 Azure 云服务
 
 若要利用 Azure 的托管服务和可缩放性，你可能要将 Web 应用程序迁移和发布到 Azure 云服务。只需对现有 Web 应用程序进行最小程度的更改，便可在 Azure 中运行它。
 
->[AZURE.NOTE] 本主题是关于如何部署到云服务，而不是部署到网站。有关如何部署到网站的信息，请参阅 [Deploy a web app in Azure App Service](/documentation/articles/web-sites-deploy/)（在 Azure App Service 中部署 Web 应用）。
+>[AZURE.NOTE] 本主题是关于如何部署到云服务，而不是部署到网站。有关如何部署到网站的信息，请参阅[在 Azure App Service 中部署 Web 应用](/documentation/articles/web-sites-deploy/)。
 
 有关 Visual C# 和 Visual Basic 支持的特定模板列表，请参阅本主题稍后的**支持的项目模板**部分。
 
@@ -23,7 +25,8 @@
 
 ![将 Web 应用程序发布到 Microsft Azure](./media/vs-azure-tools-migrate-publish-web-app-to-cloud-service/IC748917.png)
 
->[AZURE.NOTE] 仅为解决方案中的 Web 项目显示“转换”>“转换为 Azure 云服务项目”命令。例如，该命令对解决方案中的 Silverlight 项目不可用。当你创建服务包或者将应用程序发布到 Azure 时，可能会出现警告或错误。这些警告和错误可以帮助你在部署到 Azure 之前解决问题。例如，你可能会收到有关缺少程序集的警告。有关如何将任何警告视为错误的详细信息，请参阅 [Configure an Azure Cloud Service Project with Visual Studio](/documentation/articles/vs-azure-tools-configuring-an-azure-project/)（使用 Visual Studio 配置 Azure 云服务项目）。当你生成应用程序、使用计算模拟器本地运行应用程序，或者将它发布到 Azure 时，可能会在“错误列表”窗口看到以下错误：“指定的路径和/或文件名太长”。出现此错误的原因是 Azure 项目的完全限定名称太长。项目名称，包括完整路径的长度不能超过 146 个字符。例如，以下是完整的项目名称，包括为 Silverlight 应用程序创建的 Azure 项目的文件路径：`c:\users<user name>\documents\visual studio 2015\Projects\SilverlightApplication4\SilverlightApplication4.Web.Azure.ccproj`。你可能需要将解决方案移到路径较短的不同目录，以减少完全限定的项目名称的长度。
+>[AZURE.NOTE] 仅为解决方案中的 Web 项目显示“转换”>“转换为 Azure 云服务项目”命令。例如，该命令对解决方案中的 Silverlight 项目不可用。
+当你创建服务包或者将应用程序发布到 Azure 时，可能会出现警告或错误。这些警告和错误可以帮助你在部署到 Azure 之前解决问题。例如，你可能会收到有关缺少程序集的警告。有关如何将任何警告视为错误的详细信息，请参阅[使用 Visual Studio 配置 Azure 云服务项目](/documentation/articles/vs-azure-tools-configuring-an-azure-project/)。当你生成应用程序、使用计算模拟器本地运行应用程序，或者将它发布到 Azure 时，可能会在“错误列表”窗口看到以下错误：“指定的路径和/或文件名太长”。出现此错误的原因是 Azure 项目的完全限定名称太长。项目名称，包括完整路径的长度不能超过 146 个字符。例如，以下是完整的项目名称，包括为 Silverlight 应用程序创建的 Azure 项目的文件路径：`c:\users<user name>\documents\visual studio 2015\Projects\SilverlightApplication4\SilverlightApplication4.Web.Azure.ccproj`。你可能需要将解决方案移到路径较短的不同目录，以减少完全限定的项目名称的长度。
 
 若要从 Visual Studio 将 Web 应用程序迁移和发布到 Azure，请执行以下步骤。
 
@@ -55,11 +58,11 @@
 
 ### 为连接字符串使用 Web 角色中的 SQL 数据库实例
 
-1. 若要在 Azure 经典管理门户中创建 SQL 数据库的实例，请执行以下文章中所述的步骤：[Create a SQL Database Server](http://go.microsoft.com/fwlink/?LinkId=225109)（创建 SQL 数据库服务器）。
+1. 若要在 Azure 管理门户中创建 SQL 数据库的实例，请执行以下文章中所述的步骤：[Create a SQL Database Server（创建 SQL 数据库服务器）](http://go.microsoft.com/fwlink/?LinkId=225109)。
 
     >[AZURE.NOTE] 为 SQL 数据库实例设置防火墙规则时，必须选中“允许其他 Azure 服务访问此服务器”复选框。
 
-1. 若要创建用于连接字符串的 SQL 数据库实例，请在下一部分中执行以下文章中所述的步骤：[Create a SQL Database](http://go.microsoft.com/fwlink/?LinkId=225110)（创建 SQL 数据库）。
+1. 若要创建用于连接字符串的 SQL 数据库实例，请在下一部分中执行以下文章中所述的步骤：[Create a SQL Database（创建 SQL 数据库）](http://go.microsoft.com/fwlink/?LinkId=225110)。
 
 1. 若要复制 ADO.NET 连接字符串以用作你的连接字符串，请在 Azure 经典管理门户中执行以下步骤。
 
@@ -117,11 +120,11 @@
 
     此时将显示“启动 Azure 调试环境”对话框，并在浏览器中启动应用程序。有关如何在计算模拟器中启动每种类型的 Web 应用程序的具体信息，请参阅本部分中的表格。
 
-1. 若要设置应用程序的服务以将其发布到 Azure，你必须准备好一个 Microsoft 帐户和 Azure 订阅。使用以下主题中所述的步骤来设置服务：[准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
+1. 若要设置应用程序的服务以将其发布到 Azure，你必须准备好一个 Microsoft 帐户和 Azure 订阅。使用以下主题中所述的步骤来设置服务：[Prepare to publish or deploy an Azure application from Visual Studio（准备从 Visual Studio 发布或部署 Azure 应用程序）](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
 
 1. 若要将 Web 应用程序发布到 Azure，请打开 Web 项目的快捷菜单，然后选择“发布到 Azure”。
 
-    此时将显示“发布 Azure 应用程序”对话框，Visual Studio 将启动部署过程。有关如何发布应用程序的详细信息，请参阅 [使用 Azure Tools 发布云服务](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)中的 **从 Visual Studio 发布 Azure 应用程序**部分。
+    此时将显示“发布 Azure 应用程序”对话框，Visual Studio 将启动部署过程。有关如何发布应用程序的详细信息，请参阅 [Publishing a Cloud Service using the Azure Tools（使用 Azure Tools 发布云服务）](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/) 中的 **Publish an Azure Application from Visual Studio**（从 Visual Studio 发布 Azure 应用程序）部分。
 
     >[AZURE.NOTE] 你还可以从 Azure 项目发布 Web 应用程序。为此，请打开 Azure 项目的快捷菜单，然后选择“发布”。
 
@@ -172,7 +175,7 @@
     <addname="tempdbEntities"connectionString="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=";data source=<server name>\SQLEXPRESS;initial catalog=<database name>;integrated security=True;multipleactiveresultsets=True;App=EntityFramework";"providerName="System.Data.EntityClient"/>
     ```
 
-    使用 SQL Azure 数据库的 ADO.NET 连接字符串更新 *connectionString* 值，如下所示：
+    使用 SQL Azure 数据库的 ADO.NET 连接字符串更新 connectionString 值，如下所示：
 
     ```
     XMLCopy<addname="tempdbEntities"connectionString="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=";Server=tcp:<SQL Azure server name>.database.chinacloudapi.cn,1433;Database=<database name>;User ID=<user name>;Password=<password>;Trusted_Connection=False;Encrypt=True;multipleactiveresultsets=True;App=EntityFramework";"providerName="System.Data.EntityClient"/>
@@ -202,6 +205,6 @@
 |工作流|WCF 工作流服务应用程序|
 
 ## 后续步骤
-关于发布的详细信息，请参阅 [准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。另请参阅 [设置命名的身份验证凭据](/documentation/articles/vs-azure-tools-setting-up-named-authentication-credentials/)。
+关于发布的详细信息，请参阅[准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。另请参阅 [设置命名的身份验证凭据](/documentation/articles/vs-azure-tools-setting-up-named-authentication-credentials/)。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -5,11 +5,12 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />
+   editor="" />  
+
 <tags
    ms.service="multiple"
    ms.date="06/01/2016"
-   wacn.date="06/20/2016" />
+   wacn.date="08/22/2016" />
 
 # 使用多种服务配置来配置 Azure 项目
 
@@ -23,7 +24,7 @@ Azure Tools for Microsoft Visual Studio 提供可用于设置存储在这些文�
 
 ![VS\_Solution\_Explorer\_Roles\_Properties](./media/vs-azure-tools-multiple-services-project-configurations/IC784076.png)
 
-有关服务定义文件和服务配置文件的基础架构信息，请参阅 [架构参考](https://msdn.microsoft.com/zh-cn/library/azure/dd179398.aspx)。有关服务配置的详细信息，请参阅 [如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)。
+有关服务定义文件和服务配置文件的基础架构信息，请参阅 [Schema Reference（架构参考](https://msdn.microsoft.com/zh-cn/library/azure/dd179398.aspx)）。有关服务配置的详细信息，请参阅[如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)。
 
 ## 配置角色属性
 
@@ -39,7 +40,7 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 将“实例计数”属性设置为服务应为此角色运行的实例的数目。
 
-将“VM 大小”属性设置为“特小”、“小”、“中”、“大”或“特大”。有关详细信息，请参阅 [云服务的大小](/documentation/articles/cloud-services-sizes-specs/)。
+将“VM 大小”属性设置为“特小”、“小”、“中”、“大”或“特大”。有关详细信息，请参阅[云服务的大小](/documentation/articles/cloud-services-sizes-specs/)。
 
 **启动操作**（仅适用于 Web 角色）
 
@@ -49,9 +50,9 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 如果已添加 HTTPS 终结点，则按默认启用“HTTPS 终结点”选项，Visual Studio 除了为 HTTP 终结点启动浏览器之外，还将在开始调试时为此终结点启动浏览器。此处假设两个启动选项都已启用。
 
-**Diagnostics**
+诊断
 
-默认情况下，将对 Web 角色启用诊断。Azure 云服务项目和存储帐户都设置为使用本地存储模拟器。准备好部署到 Azure 后，可以单击生成器按钮 (**…**) 来更新存储帐户，以便在云中使用 Azure 存储空间。可以根据需要或自动计划的间隔，将诊断数据传输到存储帐户。有关 Azure 诊断的详细信息，请参阅 [使用 Azure 诊断收集日志记录数据](/documentation/articles/cloud-services-dotnet-diagnostics/)。
+默认情况下，将对 Web 角色启用诊断。Azure 云服务项目和存储帐户都设置为使用本地存储模拟器。准备好部署到 Azure 后，可以选择生成器按钮 (**…**) 来更新存储帐户，以便在云中使用 Azure 存储空间。可以根据需要或自动计划的间隔，将诊断数据传输到存储帐户。有关 Azure 诊断的详细信息，请参阅 [在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 ## “设置”页
 
@@ -61,9 +62,9 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 连接字符串是一个配置设置，它为存储模拟器或 Azure 存储帐户提供连接和身份验证信息。只要代码必须从角色中运行的代码访问 Azure 存储服务数据（即，blob、队列或表数据），就必须为该存储帐户定义连接字符串。
 
-指向 Azure 存储帐户的连接字符串必须使用定义的格式。有关如何创建连接字符串的信息，请参阅 [配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)。
+指向 Azure 存储帐户的连接字符串必须使用定义的格式。有关如何创建连接字符串的信息，请参阅[配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)。
 
-在准备好对 Azure 存储服务测试你的服务时，或在准备好将你的云服务部署到 Azure 时，可以更改任何连接字符串的值以指向 Azure 存储帐户。单击 (**…**)，选择“输入存储帐户凭据”。输入包含你的帐户名和帐户密钥的帐户信息。此外，还可以在“存储帐户连接字符串”对话框中，指示是希望使用默认 HTTPS 终结点（默认选项）、默认 HTTP 终结点还是自定义终结点。如果已为服务注册了自定义域名，则可以决定使用自定义终结点，如 [为 Azure 存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name/)中所述。
+在准备好对 Azure 存储服务测试你的服务时，或在准备好将你的云服务部署到 Azure 时，可以更改任何连接字符串的值以指向 Azure 存储帐户。选择 (**…**)，选择“输入存储帐户凭据”。输入包含你的帐户名和帐户密钥的帐户信息。此外，还可以在“存储帐户连接字符串”对话框中，指示是希望使用默认 HTTPS 终结点（默认选项）、默认 HTTP 终结点还是自定义终结点。如果已为服务注册了自定义域名，则可以决定使用自定义终结点，如 [为 Azure 存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name/)中所述。
 
 >[AZURE.IMPORTANT] 在部署服务之前，必须修改连接字符串以指向 Azure 存储帐户。否则，可能导致角色无法启动，或是在初始化、忙碌、停止状态之间循环。
 
@@ -81,7 +82,7 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 ## “本地存储”页
 
-可以使用“本地存储”属性页来保留某个角色的一个或多个本地存储资源。本地存储资源是运行角色实例的 Azure 虚拟机的文件系统中的保留目录。有关如何使用本地存储资源的详细信息，请参阅 [配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources/)。
+可以使用“本地存储”属性页来保留某个角色的一个或多个本地存储资源。本地存储资源是运行角色实例的 Azure 虚拟机的文件系统中的保留目录。有关如何使用本地存储资源的详细信息，请参阅[配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources/)。
 
 ## “证书”页
 
@@ -106,4 +107,4 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 |开发|在此页中，可以指定生成配置说明，以及运行任何生成后事件的条件。|
 |Web|在此页中，可以配置与 Web 服务器相关的设置。|
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0815_2016-->

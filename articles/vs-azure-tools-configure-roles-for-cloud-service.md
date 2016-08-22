@@ -5,11 +5,12 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />
+   editor="" />  
+
 <tags
    ms.service="multiple"
    ms.date="06/01/2016"
-   wacn.date="06/20/2016" />
+   wacn.date="08/22/2016" />
 
 # 使用 Visual Studio 配置 Azure 云服务的角色
 
@@ -53,7 +54,7 @@
 
 ## 更改角色实例的数目
 
-若要提高云服务的性能，可根据用户或某个特定角色的预期负载的数目，更改正在运行的角色实例的数目。当云服务在 Azure 中运行时，将为每个角色实例创建单独的虚拟机。这将会影响部署此云服务的计费。
+若要提高云服务的性能，可根据用户或某个特定角色的预期负载的数目，更改正在运行的角色实例的数目。当云服务在 Azure 中运行时，将为每个角色实例创建单独的虚拟机。这将会影响部署此云服务的计费。有关计费的详细信息，请参阅[了解你的 Azure 帐单](/documentation/articles/billing-understand-your-bill/)。
 
 ### 更改角色的实例数目
 
@@ -97,7 +98,7 @@
 
 1. 若要使用 Azure 中的存储帐户，请选择“你的订阅”选项并选择所需的存储帐户。
 
-1. 若要使用自定义凭据，请选择“手动输入的凭据”选项按钮。输入存储帐户名称和主密钥或辅助密钥。有关如何创建存储帐户以及如何在“创建存储连接字符串”对话框中输入存储帐户详细信息的更多信息，请参阅 [Prepare to publish or deploy an Azure application from Visual Studio（准备从 Visual Studio 发布或部署 Azure 应用程序）](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
+1. 若要使用自定义凭据，请选择“手动输入的凭据”选项按钮。输入存储帐户名称和主密钥或辅助密钥。有关如何创建存储帐户以及如何在“创建存储连接字符串”对话框中输入存储帐户详细信息的更多信息，请参阅[准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
 
 1. 若要删除某个连接字符串，请选择该连接字符串，然后选择“删除设置”按钮。
 
@@ -179,7 +180,7 @@
 
 ## 管理每个角色实例的本地存储
 
-可以为角色的每个实例添加本地文件系统存储。可在此处存储其他角色不需要访问的本地数据。不需要保存到表、Blob 或 SQL 数据库存储的任何数据都可以存储在此处。例如，可以使用此本地存储缓存可能需要再次使用的数据。角色的其他实例无法访问此处存储的数据。有关本地存储资源的详细信息，请参阅 [Configure Local Storage Resources（配置本地存储资源）](/documentation/articles/cloud-services-configure-local-storage-resources/)。
+可以为角色的每个实例添加本地文件系统存储。可在此处存储其他角色不需要访问的本地数据。不需要保存到表、Blob 或 SQL 数据库存储的任何数据都可以存储在此处。例如，可以使用此本地存储缓存可能需要再次使用的数据。角色的其他实例无法访问此处存储的数据。有关本地存储资源的详细信息，请参阅[配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources/)。
 
 本地存储设置将应用到所有服务配置。你只能添加、删除或修改所有服务配置的本地存储。
 
@@ -203,7 +204,7 @@
 
 1. 若要将这些更改保存到服务配置文件，请选择工具栏上的“保存”图标。
 
-1. 若要访问已添加到服务配置文件的本地存储，必须获取本地资源配置设置的值。使用以下代码行访问此值，创建名为 “MyStorageTest.txt” 的文件，然后将一行测试数据写入该文件。可以将此代码添加到前面过程中使用的 `Button_Click` 方法：
+1. 若要访问已添加到服务配置文件的本地存储，必须获取本地资源配置设置的值。使用以下代码行访问此值，创建名为 **MyStorageTest.txt** 的文件，然后将一行测试数据写入该文件。可以将此代码添加到前面过程中使用的 `Button_Click` 方法：
 
 1. 需确保将以下 using 语句添加到 Default.aspx.cs：
 
@@ -231,7 +232,7 @@
 
 1. （可选）若要查看在本地运行云服务时创建的此文件，请使用以下步骤：
 
-  1. 运行 Web 角色，然后单击“Button1”确保调用 `Button1_Click` 中的代码。
+  1. 运行 Web 角色，然后选择“Button1”确保调用 `Button1_Click` 中的代码。
 
   1. 在通知区域中，打开 Azure 图标的快捷菜单并选择“显示计算模拟器 UI”。此时将显示“Azure 计算模拟器”对话框。
 
@@ -239,7 +240,7 @@
 
   1. 在菜单栏上，选择“工具”、“打开本地存储”。此时将显示“Windows 资源管理器”窗口。
 
-  1. 在菜单栏上的“搜索”文本框中输入 “MyStorageTest.txt”，然后按 “Enter” 开始搜索。
+  1. 在菜单栏上的“搜索”文本框中输入 **MyStorageTest.txt**，然后按 **Enter** 开始搜索。
 
     文件将显示在搜索结果中。
 
@@ -271,12 +272,12 @@
 
 1. 若要使用本地连接字符串的存储帐户，请选择“手动输入的凭据”选项。
 
-    有关如何创建存储帐户以及如何在“创建存储连接字符串”对话框中输入存储帐户详细信息的信息，请参阅 [Prepare to publish or deploy an Azure application from Visual Studio（准备从 Visual Studio 发布或部署 Azure 应用程序）](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
+    有关如何创建存储帐户以及如何在“创建存储连接字符串”对话框中输入存储帐户详细信息的信息，请参阅[准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
 
 1. 在“帐户名称”中选择你要使用的存储帐户。
 
-    如果手动输入存储帐户凭据，请在“帐户密钥”中复制或键入你的主密钥。可从 Azure 经典管理门户复制此密钥。若要复制此密钥，请在 Azure 经典管理门户的“存储帐户”视图中遵循以下步骤：
-
+    如果手动输入存储帐户凭据，请在“帐户密钥”中复制或键入你的主密钥。可从 [Azure 经典门户](http://manage.windowsazure.cn)复制此密钥。若要复制此密钥，请在 [Azure 经典门户](http://manage.windowsazure.cn)的“存储帐户”视图中遵循以下步骤：
+    
   1. 选择要用于云服务的存储帐户。
 
   1. 选择位于屏幕底部的“管理访问密钥”按钮。此时将显示“管理访问密钥”对话框。
@@ -289,9 +290,9 @@
 
 ## 更改用于每个角色的虚拟机大小
 
-你可以设置每个角色的虚拟机大小。只能针对所有服务配置设置此大小。如果选择较小的计算机大小，将分配较少的 CPU 核心、内存和本地磁盘存储空间。分配的带宽也将较小。
+你可以设置每个角色的虚拟机大小。只能针对所有服务配置设置此大小。如果选择较小的计算机大小，将分配较少的 CPU 核心、内存和本地磁盘存储空间。分配的带宽也将较小。有关这些大小和分配的资源的详细信息，请参阅[云服务的大小](/documentatioin/articles/cloud-services-sizes-specs)。
 
-在 Azure 中每个虚拟机所需的资源将影响在 Azure 中运行云服务的成本。有关 Azure 计费的详细信息，请参阅 [Understand your bill for Azure（了解你的 Azure 帐单）](/documentation/articles/billing-understand-your-bill/)。
+在 Azure 中每个虚拟机所需的资源将影响在 Azure 中运行云服务的成本。有关 Azure 计费的详细信息，请参阅[了解你的 Azure 帐单](/documentation/articles/billing-understand-your-bill/)。
 
 ### 更改虚拟机的大小
 
@@ -370,6 +371,6 @@
 1. 选择工具栏中的“保存”按钮，将这些更改保存到服务配置文件。
 
 ## 后续步骤
-阅读 [Configuring an Azure Project（配置 Azure 项目）](/documentation/articles/vs-azure-tools-configuring-an-azure-project/)详细了解 Visual Studio 中的 Azure 项目。阅读 [Schema Reference（架构参考）](https://msdn.microsoft.com/zh-cn/library/azure/dd179398)详细了解云服务架构。
+阅读[配置 Azure 项目](/documentation/articles/vs-azure-tools-configuring-an-azure-project/)以详细了解 Visual Studio 中的 Azure 项目。阅读[架构参考](https://msdn.microsoft.com/zh-cn/library/azure/dd179398)以详细了解云服务架构。
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0815_2016-->

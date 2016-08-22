@@ -5,11 +5,13 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />
+   editor="" />  
+
 <tags 
    ms.service="multiple"
    ms.date="05/08/2016"
-   wacn.date="05/23/2016" />
+   wacn.date="08/22/2016" />
+
 
 # 使用 Visual Studio 访问私有 Azure 云
 
@@ -31,11 +33,13 @@
 
 1. 在“导入 Microsoft Azure 订阅”对话框中，浏览到保存发布设置文件的文件夹，选择文件，然后选择“导入”按钮。这会将发布设置文件中的证书导入到 Visual Studio 中。现在，你应该能够与你的私有云资源进行交互。
 
-    ![导入发布设置](./media/vs-azure-tools-access-private-azure-clouds-with-visual-studio/IC790780.png)
+    ![导入发布设置](./media/vs-azure-tools-access-private-azure-clouds-with-visual-studio/IC790780.png)  
+
 
 ## 后续步骤
 
-[How to: Download and Import Publish Settings and Subscription Information（如何：下载并导入发布设置和订阅信息）](https://msdn.microsoft.com/zh-cn/library/dn385850(v=nav.70).aspx)
+[从 Visual Studio 发布到 Azure 云服务](https://msdn.microsoft.com/zh-cn/library/azure/ee460772.aspx)
 
+[如何：下载并导入发布设置和订阅信息](https://msdn.microsoft.com/zh-cn/library/dn385850(v=nav.70).aspx)
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -5,11 +5,13 @@
    documentationCenter="n/a"
    authors="TomArcher"
    manager="douge"
-   editor="" />
+   editor="" />  
+
 <tags
    ms.service="visual-studio-online"
    ms.date="04/19/2016"
-   wacn.date="05/16/2016" />
+   wacn.date="08/22/2016" />  
+
 
 
 # 使用 Emulator Express 在本地计算机上运行和调试云服务
@@ -48,6 +50,6 @@
 
 ## 后续步骤
 
-[调试云服务](/documentation/articles/vs-azure-tools-performance-profiling-cloud-services/)
+[调试云服务](https://msdn.microsoft.com/zh-cn/library/azure/ee405479.aspx)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0815_2016-->

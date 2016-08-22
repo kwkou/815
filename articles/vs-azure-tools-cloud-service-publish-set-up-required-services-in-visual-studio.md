@@ -5,11 +5,12 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />
+   editor="" />  
+
 <tags
    ms.service="multiple"
    ms.date="05/08/2016"
-   wacn.date="05/23/2016" />
+   wacn.date="08/22/2016" />
 
 # 准备从 Visual Studio 发布或部署 Azure 应用程序
 
@@ -94,7 +95,7 @@
 
 1. 在区域列表中，选择大多数用户所在的区域。
 
-1. 指定是否启用异地复制。如果启用异地复制，数据将保存在多个物理位置，降低丢失的机率。此功能会提高存储成本，但在创建存储帐户时启用地理位置，而非稍后添加此功能，便可以降低成本。有关详细信息，请参阅 [异地复制](http://go.microsoft.com/fwlink/?LinkId=253108)。
+1. 指定是否启用异地复制。如果启用异地复制，数据将保存在多个物理位置，降低丢失的机率。此功能会提高存储成本，但在创建存储帐户时启用地理位置，而非稍后添加此功能，便可以降低成本。有关详细信息，请参阅 [Geo-replication（异地复制）](http://go.microsoft.com/fwlink/?LinkId=253108)。
 
 1. 在窗口底部，选择“创建存储帐户”链接。
 
@@ -104,7 +105,7 @@
 
 ## 将应用配置为使用存储帐户提供的服务
 
-必须配置访问存储服务以使用你创建的 Azure 存储空间服务的任何角色。为此，可为 Azure 项目使用多个服务配置。默认情况下，其中两个配置是在 Azure 项目中创建的。通过使用多个服务配置，你可以在代码中使用相同的连接字符串，但在每个服务配置中为连接字符串使用不同的值。例如，你可以使用一个服务配置通过本地 Azure 存储模拟器来运行和调试应用程序，并使用另一个服务配置将应用程序发布到 Azure。有关服务配置的详细信息，请参阅 [Configuring Your Azure Project Using Multiple Service Configurations（使用多种服务配置来配置 Azure 项目）](/documentation/articles/vs-azure-tools-multiple-services-project-configurations/)。
+必须配置访问存储服务以使用你创建的 Azure 存储空间服务的任何角色。为此，可为 Azure 项目使用多个服务配置。默认情况下，其中两个配置是在 Azure 项目中创建的。通过使用多个服务配置，你可以在代码中使用相同的连接字符串，但在每个服务配置中为连接字符串使用不同的值。例如，你可以使用一个服务配置通过本地 Azure 存储模拟器来运行和调试应用程序，并使用另一个服务配置将应用程序发布到 Azure。有关服务配置的详细信息，请参阅 [使用多种服务配置来配置 Azure 项目](/documentation/articles/vs-azure-tools-multiple-services-project-configurations/)。
 
 ### 将应用程序配置为使用存储帐户提供的服务
 
@@ -112,7 +113,7 @@
 
 1. 在角色的属性页中，选择“设置”。
 
-1. 在“服务配置”列表中，选择你要编辑的服务配置名称。如果要对角色的所有服务配置进行更改，则可选择“所有配置”。有关如何更新服务配置的详细信息，请参阅主题 [Configure the Roles for an Azure Cloud Service with Visual Studio](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)（使用 Visual Studio 配置 Azure 云服务的角色）中的 **Manage Connection Strings for Storage Accounts**（管理存储帐户的连接字符串）部分。
+1. 在“服务配置”列表中，选择你要编辑的服务配置名称。如果要对角色的所有服务配置进行更改，则可选择“所有配置”。有关如何更新服务配置的详细信息，请参阅主题 [使用 Visual Studio 配置 Azure 云服务的角色](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)中的**管理存储帐户的连接字符串**部分。
 
 1. 若要修改任何连接字符串设置，请选择该设置旁边的“…”按钮。此时将显示“创建存储连接字符串”对话框。
 
@@ -126,9 +127,9 @@
 
 1. 在“帐户名称”框中，输入存储帐户的名称。
 
-    >[AZURE.NOTE] 登录到经典管理门户，然后选择“存储”按钮。门户将显示存储帐户的列表。如果你选择一个帐户，将打开该帐户的页面。从中可以复制存储帐户的名称。如果你正在使用以前版本的经典管理门户，存储帐户的名称将显示在经典管理门户的“存储帐户”视图中。若要复制此名称，请在此视图的“属性”窗口中突出显示它，然后按 Ctrl+C 键。若要将此名称粘贴到 Visual Studio 中，请选择“帐户名称”文本框，然后按 Ctrl+V 键。
+    >[AZURE.NOTE] 登录到经典[Azure 经典门户](http://manage.windowsazure.cn/)，然后选择“存储”按钮。门户将显示存储帐户的列表。如果你选择一个帐户，将打开该帐户的页面。从中可以复制存储帐户的名称。如果你正在使用以前版本的经典管理门户，存储帐户的名称将显示在经典管理门户的“存储帐户”视图中。若要复制此名称，请在此视图的“属性”窗口中突出显示它，然后按 Ctrl+C 键。若要将此名称粘贴到 Visual Studio 中，请选择“帐户名称”文本框，然后按 Ctrl+V 键。
 
-1. 在“帐户密钥”框中，输入主密钥，或从 [Azure 经典管理门户](http://manage.windowsazure.cn)中进行复制粘贴。从经典管理门户中复制此密钥：
+1. 在“帐户密钥”框中，输入主密钥，或从 [Azure 经典管理门户](http://manage.windowsazure.cn)中进行复制粘贴。若要复制此密钥，请执行以下操作：
 
     1. 在相应存储帐户的页面底部，选择“管理密钥”按钮。
 
@@ -139,14 +140,14 @@
     1. 必须选择以下选项之一来确定该服务将如何访问存储帐户：
         - **使用 HTTP**。这是标准选项。例如，`http://<account name>.blob.core.chinacloudapi.cn`。
         - **使用 HTTPS**：用于建立安全连接。例如，`https://<accountname>.blob.core.chinacloudapi.cn`。
-        - **指定自定义终结点**：适用于三种服务中的任何一种。然后，可将这些终结点键入特定服务的字段中。
+        - 为三项服务分别**指定自定义终结点**。然后，可将这些终结点键入特定服务的字段中。
 
-        >[AZURE.NOTE] 如果你创建自定义终结点，则可以创建更复杂的连接字符串。当你使用此字符串格式时，可以指定包含已为 Blob 服务的存储帐户注册的自定义域名存储服务终结点。你还可以通过共享访问签名只授予对单个容器中的 Blob 资源的访问权限。有关如何创建自定义终结点的详细信息，请参阅 [Configure Azure Storage Connection Strings（配置 Azure 存储空间连接字符串）](/documentation/articles/storage-configure-connection-string/)。
+        >[AZURE.NOTE] 如果你创建自定义终结点，则可以创建更复杂的连接字符串。当你使用此字符串格式时，可以指定包含已为 Blob 服务的存储帐户注册的自定义域名存储服务终结点。你还可以通过共享访问签名只授予对单个容器中的 Blob 资源的访问权限。有关如何创建自定义终结点的详细信息，请参阅 [配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)。
 
 1. 若要保存这些连接字符串更改，请选择“确定”按钮，然后选择工具栏上的“保存”按钮。保存这些更改后，可以通过在代码中使用 [GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 获取此连接字符串的值。将应用程序发布到 Azure 时，请选择包含连接字符串的 Azure 存储帐户的服务配置。发布应用程序后，验证应用程序是否按预期方式针对 Azure 存储服务正常工作
 
 ## 后续步骤
 
-若要详细了解如何将应用从 Visual Studio 发布到 Azure，请参阅 [Publishing a Cloud Service using the Azure Tools（使用 Azure Tools 发布云服务）](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)。
+若要详细了解如何将应用从 Visual Studio 发布到 Azure，请参阅[使用 Azure Tools 发布云服务](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)。
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0815_2016-->
