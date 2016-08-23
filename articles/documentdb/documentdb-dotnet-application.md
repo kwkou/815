@@ -130,7 +130,7 @@
 
 2. 将新类命名为 **Item.cs**，然后单击“添加”。
 
-3. 在这个新的 **Item.cs** 文件中，将下列代码添加到最后一个 using 语句后面。
+3. 在这个新的 **Item.cs** 文件中，将下列代码添加到最后一个 *using 语句*后面。
 		
 		using Newtonsoft.Json;
 	
@@ -188,7 +188,7 @@
 
 现在，我们可以开始创建 MVC 中的 **V**（视图）：
 
-- [添加“项索引”视图](#AddItemIndexView)。
+- [添加“项索引”视图](#AddItemIndexView)
 - [添加“新建项”视图](#AddNewIndexView)。
 - [添加“编辑项”视图](#_Toc395888515)。
 
@@ -337,7 +337,7 @@
 		<add key="database" value="ToDoList"/>
 		<add key="collection" value="Items"/>
 	
-4. 现在，使用 Azure 门户预览的“密钥”边栏选项卡来更新端点和 authKey 的值。使用“密钥”边栏选项卡中的“URI”作为终结点设置的值，使用“密钥”边栏选项卡中的“主密钥”或“辅助密钥”作为 authKey 设置的值。
+4. 现在，使用 Azure 门户的“密钥”边栏选项卡来更新终结点和 authKey 的值。使用“密钥”边栏选项卡中的“URI”作为终结点设置的值，使用“密钥”边栏选项卡中的“主密钥”或“辅助密钥”作为 authKey 设置的值。
 
 
 	我们已经连接了 DocumentDB 存储库，现在让我们添加应用程序逻辑。
@@ -449,7 +449,7 @@
 
 	此代码会调用到 DocumentDBRepository，并使用 CreateItemAsync 方法将新的待办事项保存到数据库。
  
-	**安全说明**：此处所使用的 **ValidateAntiForgeryToken** 属性可帮助此应用程序防止跨网站请求伪造攻击。这不仅仅是添加此属性，你的视图也必须使用此防伪令牌。有关此主题的详细信息以及如何正确实施此操作的示例，请参阅[防止跨网站请求伪造][]。[GitHub][] 上提供的源代码已有完整实现。
+	**安全说明**：此处所使用的 **ValidateAntiForgeryToken** 属性可帮助此应用程序防止跨站点请求伪造攻击。这不仅仅是添加此属性，你的视图也必须使用此防伪令牌。有关此主题的详细信息以及如何正确实施此操作的示例，请参阅 [Preventing Cross-Site Request Forgery（防止跨站点请求伪造）][]。[GitHub][] 上提供的源代码已有完整实现。
 
 	**安全说明**：我们也会在方法参数上使用 **Bind** 属性，以帮助防范 over-posting 攻击。有关更多详细信息，请参阅 [ASP.NET MVC 中的基本 CRUD 操作][]。
 

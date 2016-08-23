@@ -11,7 +11,7 @@
 <tags
 	ms.service="documentdb"
 	ms.date="05/16/2016"
-	wacn.date="08/02/2016"/>
+	wacn.date="08/23/2016"/>
 
 # NoSQL 教程︰构建 DocumentDB C# 控制台应用程序
 
@@ -108,41 +108,41 @@ DocumentDB 客户端库的程序包 ID 是 [Microsoft.Azure.DocumentDB](https://
 
 在 **Main** 方法中，添加名为 **GetStartedDemo** 的这个新异步任务，它将实例化我们的新 **DocumentClient**。
 
-		static void Main(string[] args)
-		{
-		}
-	
-		// ADD THIS PART TO YOUR CODE
-		private async Task GetStartedDemo()
-		{
-			this.client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
-		}
+	static void Main(string[] args)
+	{
+	}
+
+	// ADD THIS PART TO YOUR CODE
+	private async Task GetStartedDemo()
+	{
+		this.client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
+	}
 
 添加以下代码以从 **Main** 方法中运行异步任务。**Main** 方法将捕获异常并将它们写到控制台上。
 
-		static void Main(string[] args)
-		{
-				// ADD THIS PART TO YOUR CODE
-				try
-				{
-						Program p = new Program();
-						p.GetStartedDemo().Wait();
-				}
-				catch (DocumentClientException de)
-				{
-						Exception baseException = de.GetBaseException();
-						Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
-				}
-				catch (Exception e)
-				{
-						Exception baseException = e.GetBaseException();
-						Console.WriteLine("Error: {0}, Message: {1}", e.Message, baseException.Message);
-				}
-				finally
-				{
-						Console.WriteLine("End of demo, press any key to exit.");
-						Console.ReadKey();
-				}
+	static void Main(string[] args)
+	{
+			// ADD THIS PART TO YOUR CODE
+			try
+			{
+					Program p = new Program();
+					p.GetStartedDemo().Wait();
+			}
+			catch (DocumentClientException de)
+			{
+					Exception baseException = de.GetBaseException();
+					Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
+			}
+			catch (Exception e)
+			{
+					Exception baseException = e.GetBaseException();
+					Console.WriteLine("Error: {0}, Message: {1}", e.Message, baseException.Message);
+			}
+			finally
+			{
+					Console.WriteLine("End of demo, press any key to exit.");
+					Console.ReadKey();
+			}
 
 按 **F5** 运行应用程序。
 
@@ -153,50 +153,50 @@ DocumentDB 客户端库的程序包 ID 是 [Microsoft.Azure.DocumentDB](https://
 
 复制并粘贴 **GetStartedDemo** 方法下的 **WriteToConsoleAndPromptToContinue** 方法。
 
-		// ADD THIS PART TO YOUR CODE
-		private void WriteToConsoleAndPromptToContinue(string format, params object[] args)
-		{
-				Console.WriteLine(format, args);
-				Console.WriteLine("Press any key to continue ...");
-				Console.ReadKey();
-		}
+	// ADD THIS PART TO YOUR CODE
+	private void WriteToConsoleAndPromptToContinue(string format, params object[] args)
+	{
+			Console.WriteLine(format, args);
+			Console.WriteLine("Press any key to continue ...");
+			Console.ReadKey();
+	}
 
 可以通过使用 **DocumentClient** 类的 [CreateDatabaseAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdatabaseasync.aspx) 方法来创建 DocumentDB [数据库](/documentation/articles/documentdb-resources/#databases)。数据库是跨集合分区的 JSON 文档存储的逻辑容器。
 
 复制并粘贴 **WriteToConsoleAndPromptToContinue** 方法下的 **CreateDatabaseIfNotExists** 方法。
 
+	// ADD THIS PART TO YOUR CODE
+	private async Task CreateDatabaseIfNotExists(string databaseName)
+	{
+			// Check to verify a database with the id=FamilyDB does not exist
+			try
+			{
+					await this.client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(databaseName));
+					this.WriteToConsoleAndPromptToContinue("Found {0}", databaseName);
+			}
+			catch (DocumentClientException de)
+			{
+					// If the database does not exist, create a new database
+					if (de.StatusCode == HttpStatusCode.NotFound)
+					{
+							await this.client.CreateDatabaseAsync(new Database { Id = databaseName });
+							this.WriteToConsoleAndPromptToContinue("Created {0}", databaseName);
+					}
+					else
+					{
+							throw;
+					}
+			}
+	}
+
+将以下代码复制并粘贴到客户端创建下方的 **GetStartedDemo** 方法。这将创建一个名为 *FamilyDB* 的数据库。
+
+	private async Task GetStartedDemo()
+	{
+		this.client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
+
 		// ADD THIS PART TO YOUR CODE
-		private async Task CreateDatabaseIfNotExists(string databaseName)
-		{
-				// Check to verify a database with the id=FamilyDB does not exist
-				try
-				{
-						await this.client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(databaseName));
-						this.WriteToConsoleAndPromptToContinue("Found {0}", databaseName);
-				}
-				catch (DocumentClientException de)
-				{
-						// If the database does not exist, create a new database
-						if (de.StatusCode == HttpStatusCode.NotFound)
-						{
-								await this.client.CreateDatabaseAsync(new Database { Id = databaseName });
-								this.WriteToConsoleAndPromptToContinue("Created {0}", databaseName);
-						}
-						else
-						{
-								throw;
-						}
-				}
-		}
-
-将以下代码复制并粘贴到客户端创建下方的 **GetStartedDemo** 方法。这将创建一个名为 FamilyDB 的数据库。
-
-		private async Task GetStartedDemo()
-		{
-			this.client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
-	
-			// ADD THIS PART TO YOUR CODE
-			await this.CreateDatabaseIfNotExists("FamilyDB");
+		await this.CreateDatabaseIfNotExists("FamilyDB");
 
 按 **F5** 运行应用程序。
 
@@ -204,54 +204,54 @@ DocumentDB 客户端库的程序包 ID 是 [Microsoft.Azure.DocumentDB](https://
 
 ##<a id="CreateColl"></a>第 5 步：创建集合  
 
-> [AZURE.WARNING] **CreateDocumentCollectionAsync** 将创建一个具有保留吞吐量的新集合，它牵涉定价。有关详细信息，请访问我们的[定价页](/pricing/details/documentdb/)。
+> [AZURE.WARNING] **CreateDocumentCollectionAsync** 将创建一个具有保留吞吐量的新集合，且包含定价。有关详细信息，请访问我们的[定价页](/pricing/details/documentdb/)。
 
 可以通过使用 **DocumentClient** 类的 [CreateDocumentCollectionAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentcollectionasync.aspx) 方法来创建[集合](/documentation/articles/documentdb-resources/#collections)。集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。
 
 复制并粘贴 **CreateDatabaseIfNotExists** 方法下的 **CreateDocumentCollectionIfNotExists** 方法。
 
-		// ADD THIS PART TO YOUR CODE
-		private async Task CreateDocumentCollectionIfNotExists(string databaseName, string collectionName)
+	// ADD THIS PART TO YOUR CODE
+	private async Task CreateDocumentCollectionIfNotExists(string databaseName, string collectionName)
+	{
+		try
 		{
-			try
+			await this.client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(databaseName, collectionName));
+			this.WriteToConsoleAndPromptToContinue("Found {0}", collectionName);
+		}
+		catch (DocumentClientException de)
+		{
+			// If the document collection does not exist, create a new collection
+			if (de.StatusCode == HttpStatusCode.NotFound)
 			{
-				await this.client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(databaseName, collectionName));
-				this.WriteToConsoleAndPromptToContinue("Found {0}", collectionName);
-			}
-			catch (DocumentClientException de)
-			{
-				// If the document collection does not exist, create a new collection
-				if (de.StatusCode == HttpStatusCode.NotFound)
-				{
-					DocumentCollection collectionInfo = new DocumentCollection();
-					collectionInfo.Id = collectionName;
-	
-					// Configure collections for maximum query flexibility including string range queries.
-					collectionInfo.IndexingPolicy = new IndexingPolicy(new RangeIndex(DataType.String) { Precision = -1 });
-	
-					// Here we create a collection with 400 RU/s.
-					await this.client.CreateDocumentCollectionAsync(
-						UriFactory.CreateDatabaseUri(databaseName),
+				DocumentCollection collectionInfo = new DocumentCollection();
+				collectionInfo.Id = collectionName;
+
+				// Configure collections for maximum query flexibility including string range queries.
+				collectionInfo.IndexingPolicy = new IndexingPolicy(new RangeIndex(DataType.String) { Precision = -1 });
+
+				// Here we create a collection with 400 RU/s.
+				await this.client.CreateDocumentCollectionAsync(
+					UriFactory.CreateDatabaseUri(databaseName),
 					collectionInfo,
-						new RequestOptions { OfferThroughput = 400 });
-	
-					this.WriteToConsoleAndPromptToContinue("Created {0}", collectionName);
-				}
-				else
-				{
-					throw;
-				}
+					new RequestOptions { OfferThroughput = 400 });
+
+				this.WriteToConsoleAndPromptToContinue("Created {0}", collectionName);
+			}
+			else
+			{
+				throw;
 			}
 		}
+	}
 
 将以下代码复制并粘贴到数据库创建下方的 **GetStartedDemo** 方法。这将创建一个名为 *FamilyCollection* 的文档集合。
 
-			this.client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
-	
-			await this.CreateDatabaseIfNotExists("FamilyDB");
-	
-			// ADD THIS PART TO YOUR CODE
-			await this.CreateDocumentCollectionIfNotExists("FamilyDB", "FamilyCollection");
+		this.client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
+
+		await this.CreateDatabaseIfNotExists("FamilyDB");
+
+		// ADD THIS PART TO YOUR CODE
+		await this.CreateDocumentCollectionIfNotExists("FamilyDB", "FamilyCollection");
 
 按 **F5** 运行应用程序。
 
@@ -264,79 +264,79 @@ DocumentDB 客户端库的程序包 ID 是 [Microsoft.Azure.DocumentDB](https://
 
 复制 **Family**、**Parent**、**Child**、**Pet** 和 **Address** 类并粘贴到 **WriteToConsoleAndPromptToContinue** 方法下。
 
-		private void WriteToConsoleAndPromptToContinue(string format, params object[] args)
+	private void WriteToConsoleAndPromptToContinue(string format, params object[] args)
+	{
+		Console.WriteLine(format, args);
+		Console.WriteLine("Press any key to continue ...");
+		Console.ReadKey();
+	}
+
+	// ADD THIS PART TO YOUR CODE
+	public class Family
+	{
+		[JsonProperty(PropertyName = "id")]
+		public string Id { get; set; }
+		public string LastName { get; set; }
+		public Parent[] Parents { get; set; }
+		public Child[] Children { get; set; }
+		public Address Address { get; set; }
+		public bool IsRegistered { get; set; }
+		public override string ToString()
 		{
-			Console.WriteLine(format, args);
-			Console.WriteLine("Press any key to continue ...");
-			Console.ReadKey();
+				return JsonConvert.SerializeObject(this);
 		}
-	
-		// ADD THIS PART TO YOUR CODE
-		public class Family
-		{
-			[JsonProperty(PropertyName = "id")]
-			public string Id { get; set; }
-			public string LastName { get; set; }
-			public Parent[] Parents { get; set; }
-			public Child[] Children { get; set; }
-			public Address Address { get; set; }
-			public bool IsRegistered { get; set; }
-			public override string ToString()
-			{
-					return JsonConvert.SerializeObject(this);
-			}
-		}
-	
-		public class Parent
-		{
-			public string FamilyName { get; set; }
-			public string FirstName { get; set; }
-		}
-	
-		public class Child
-		{
-			public string FamilyName { get; set; }
-			public string FirstName { get; set; }
-			public string Gender { get; set; }
-			public int Grade { get; set; }
-			public Pet[] Pets { get; set; }
-		}
-	
-		public class Pet
-		{
-			public string GivenName { get; set; }
-		}
-	
-		public class Address
-		{
-			public string State { get; set; }
-			public string County { get; set; }
-			public string City { get; set; }
-		}
-	
+	}
+
+	public class Parent
+	{
+		public string FamilyName { get; set; }
+		public string FirstName { get; set; }
+	}
+
+	public class Child
+	{
+		public string FamilyName { get; set; }
+		public string FirstName { get; set; }
+		public string Gender { get; set; }
+		public int Grade { get; set; }
+		public Pet[] Pets { get; set; }
+	}
+
+	public class Pet
+	{
+		public string GivenName { get; set; }
+	}
+
+	public class Address
+	{
+		public string State { get; set; }
+		public string County { get; set; }
+		public string City { get; set; }
+	}
+
 复制并粘贴 **CreateDocumentCollectionIfNotExists** 方法下的 **CreateFamilyDocumentIfNotExists** 方法。
-	
-		// ADD THIS PART TO YOUR CODE
-		private async Task CreateFamilyDocumentIfNotExists(string databaseName, string collectionName, Family family)
+
+	// ADD THIS PART TO YOUR CODE
+	private async Task CreateFamilyDocumentIfNotExists(string databaseName, string collectionName, Family family)
+	{
+		try
 		{
-			try
+			await this.client.ReadDocumentAsync(UriFactory.CreateDocumentUri(databaseName, collectionName, family.Id));
+			this.WriteToConsoleAndPromptToContinue("Found {0}", family.Id);
+		}
+		catch (DocumentClientException de)
+		{
+			if (de.StatusCode == HttpStatusCode.NotFound)
 			{
-				await this.client.ReadDocumentAsync(UriFactory.CreateDocumentUri(databaseName, collectionName, family.Id));
-				this.WriteToConsoleAndPromptToContinue("Found {0}", family.Id);
+				await this.client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(databaseName, collectionName), family);
+				this.WriteToConsoleAndPromptToContinue("Created Family {0}", family.Id);
 			}
-			catch (DocumentClientException de)
+			else
 			{
-				if (de.StatusCode == HttpStatusCode.NotFound)
-				{
-					await this.client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(databaseName, collectionName), family);
-					this.WriteToConsoleAndPromptToContinue("Created Family {0}", family.Id);
-				}
-				else
-				{
-					throw;
-				}
+				throw;
 			}
 		}
+	}
 
 然后插入两个文档，Andersen Family 和 Wakefield Family 各一个。
 

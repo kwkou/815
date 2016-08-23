@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="06/14/2016" 
-	wacn.date="06/30/2016"/>
+	ms.date="07/07/2016" 
+	wacn.date="08/22/2016"/>
 
 # DocumentDB SDK
 
@@ -32,6 +32,13 @@
 
 ## 发行说明
 
+### <a name="1.9.0"/>[1\.9.0](https://pypi.python.org/pypi/pydocumentdb/1.9.0)
+- 对限制添加了重试策略支持。（限制请求收到请求速率太大的异常，错误代码 429。） 默认情况下，遇到错误代码 429 时，DocumentDB 将针对每个请求重试九次，具体取决于响应标头中的 retryAfter 时间。如果想要忽略重试之间由服务器返回的 retryAfter 时间，现在可以对 ConnectionPolicy 对象设置固定的重试间隔时间，并将其作为 RetryOptions 属性的一部分。DocumentDB 现在对每个要中止的请求等待最多 30 秒（不考虑重试计数），并返回错误代码为 429 的响应。还可以在 ConnectionPolicy 对象的 RetryOptions 属性中替代该时间。
+
+- DocumentDB 现在将 x-ms-throttle-retry-count 和 x-ms-throttle-retry-wait-time-ms 作为每个请求的响应标头返回，以表示限制重试计数和重试之间请求所等待的累计时间。
+
+- 已移除 document\_client 类上公开的 RetryPolicy 类以及相应的属性 (retry\_policy)，引入了在 ConnectionPolicy 对象上公开 RetryOptions 属性的 RetryOptions 类，该类可用于覆盖一些默认的重试选项。
+
 ### <a name="1.8.0"/>[1\.8.0](https://pypi.python.org/pypi/pydocumentdb/1.8.0)
   - 添加了对多区域数据库帐户的支持。
 
@@ -42,7 +49,7 @@
 - 与服务器端分区相关的 bug 修复，以允许在 partitionkey 路径中使用特殊字符。
 
 ### <a name="1.6.0"/>[1\.6.0](https://pypi.python.org/pypi/pydocumentdb/1.6.0)
-- 已实现[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
+- 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ### <a name="1.5.0"/>[1\.5.0](https://pypi.python.org/pypi/pydocumentdb/1.5.0)
 - 添加哈希和范围分区冲突解决程序以协助跨多个分区对应用程序进行分片。
@@ -57,16 +64,16 @@
 - 将新标头“索引转换进度”添加到 ResourceResponse。
 
 ### <a name="1.1.0"/>[1\.1.0](https://pypi.python.org/pypi/pydocumentdb/1.1.0)
-- 实现 V2 索引策略
+- 实施 V2 索引策略。
 
 ### <a name="1.0.1"/>[1\.0.1](https://pypi.python.org/pypi/pydocumentdb/1.0.1)
-- 支持代理连接
+- 支持代理连接。
 
 ### <a name="1.0.0"/>[1\.0.0](https://pypi.python.org/pypi/pydocumentdb/1.0.0)
-- GA SDK
+- GA SDK。
 
 ## 发布和停用日期
-Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便顺利过渡到更新的/受支持的版本。
+Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺利转换到更新的/受支持的版本。
 
 新特性和功能以及优化仅添加到当前 SDK，因此建议你始终尽早升级到最新 SDK 版本。
 
@@ -79,6 +86,7 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
+| [1\.9.0](#1.9.0) | 2016 年 7 月 7 日 |---
 | [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
 | [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |---
 | [1\.6.1](#1.6.1) | 2016 年 4 月 8 日 |---
@@ -103,4 +111,4 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0808_2016-->

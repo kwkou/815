@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="06/14/2016" 
-	wacn.date="08/04/2016"/>
+	ms.date="07/15/2016" 
+	wacn.date="08/22/2016"/>
 
 # DocumentDB SDK
 
@@ -34,7 +34,18 @@
 
 ## 发行说明
 
-### <a name="1.8.0"/></a>[1\.8.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.8.0)
+对于 .NET SDK 版本 1.9.0，当查询跨越 32 位进程中的多个分区时，如果试图提取分区路由信息，将出现已知问题。此问题会导致以下异常：System.BadImageFormatException: 未能加载文件或程序集 Microsoft.Azure.Documents.ServiceInterop.dll 或它的某一个依赖项。该模块应包含一个程序集清单，请将平台设置为 x64 并重新生成应用程序，以解决此问题。
+
+### <a name="1.9.0"/>[1\.9.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.9.0)
+  - 已将 .NET 客户端的默认连接模式更改为 ConnectionMode.Direct，以通过结合使用直接连接和 TCP 来提高性能。已弃用 ConnectionPolicy.ConnectionProtocol 属性并向 ConnectionMode 枚举添加一个 DirectHttps 值。
+  - 已修复全局复制帐户中的 Bug，此 Bug 会使 Upsert 调用定向至读取位置而非写入位置。
+  - 已添加 IDocumentClient 接口丢失的方法，包括：将 mediaStream 与选项作为参数的 UpsertAttachmentAsync 方法、将选项作为参数的 CreateAttachmentAsync 方法，以及将 querySpec 作为参数的 CreateOfferQuery 方法。
+  - 已解封 IDocumentClient 接口中公开的公共类。
+  - 已对分区集合添加并行查询支持。
+  - 已对分区集合添加跨分区排序依据支持。
+  
+
+### <a name="1.8.0"/>[1\.8.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.8.0)
   - 添加了对多区域数据库帐户的支持。
   - 添加了对重试限制请求的支持。用户可以通过配置 ConnectionPolicy.RetryOptions 属性来自定义重试次数和最长等待时间。
   - 添加新的 IDocumentClient 接口，用于定义所有 DocumenClient 属性和方法的签名。在做出此项更改的同时，已将用于创建 IQueryable 和 IOrderedQueryable 的扩展方法更改为 DocumentClient 类本身的方法。
@@ -105,9 +116,9 @@
   - LINQ 提供程序支持 OrderBy() 或 OrderByDescending()
   - 支持 Order By 的 IndexingPolicy 
   
-		**注意：可能非常重大的更改** 
+		**NB: 可能的重大更改** 
   
-    	如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。如果你没有任何自定义索引策略，此更改不会影响你。
+    	如果你当前具有用自定义索引策略预配集合的代码，则现有代码将需要进行更新以支持新的 IndexingPolicy 类。如果你没有自定义索引策略，则此更改不会影响你。
 
 ### <a name="1.1.0"/></a>[1\.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.1.0)
 - 通过使用新的 HashPartitionResolver 和 RangePartitionResolver 类以及 IPartitionResolver 支持对数据进行分区
@@ -119,26 +130,27 @@
 - GA SDK
 
 > [AZURE.NOTE]
-预览版和 GA 版之间的 NuGet 程序包名称有所更改。从 **Microsoft.Azure.Documents.Client** 移动到了 **Microsoft.Azure.DocumentDB** <br/>
+预览版和 GA 版之间的 NuGet 程序包名称有所更改。从 **Microsoft.Azure.Documents.Client** 移到了 **Microsoft.Azure.DocumentDB** <br/>
 
 
 ### <a name="0.9.x-preview"/></a>[0\.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
 - 预览版 SDK[已过时]
 
 ## 发布和停用日期
-Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便顺利过渡到更新的/受支持的版本。
+Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺利转换到更新的/受支持的版本。
 
 新特性和功能以及优化仅添加到当前 SDK，因此建议你始终尽早升级到最新 SDK 版本。
 
 使用已停用的 SDK 对 DocumentDB 发出的任何请求都将被服务拒绝。
 
 > [AZURE.WARNING]
-**1.0.0** 版之前的 Azure DocumentDB SDK for .NET 的所有版本都将在 **2016 年 2 月 29 日**停用。
+**1.0.0** 版之前的所有 Azure DocumentDB SDK for .NET 版本都将在 **2016 年 2 月 29 日**停用。
  
 <br/>
  
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
+| [1\.9.0](#1.9.0) | 2016 年 7 月 9 日 |---
 | [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
 | [1\.7.1](#1.7.1) | 2016 年 5 月 6 日 |---
 | [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |---
@@ -166,4 +178,4 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0808_2016-->

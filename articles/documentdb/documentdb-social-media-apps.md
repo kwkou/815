@@ -10,8 +10,9 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="03/28/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="06/29/2016" 
+	wacn.date=""/>  
+
 
 # 使用 DocumentDB 进行社交
 
@@ -98,9 +99,36 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
 
 我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query/#where-clause) 向 DocumentDB 发布单个查询以一次性获取帖子的所有页面。
 
-可以使用 [Azure App Service](/services/app-service/) 的后台处理程序 [Webjobs](/documentation/articles/web-sites-create-web-jobs/) 创建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/services/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Webjobs（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
+可以使用 [Azure App Service](/services/app-service/) 的后台进程 - [Web 作业](/documentation/articles/web-sites-create-web-jobs/) - 来构建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/documentation/services/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Web 作业（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
 
 通过使用这种相同的技术创建最终一致性环境还可以以延迟方式处理评分和点赞。
+
+至于关注者，则需要有更多的技巧来处理。DocumentDB 的文档大小限制为 512Kb，因此你可以考虑使用以下结构，以文档形式存储关注者：
+
+    {
+    	"id":"234d-sd23-rrf2-552d",
+    	"followersOf": "dse4-qwe2-ert4-aad2",
+    	"followers":[
+    		"ewr5-232d-tyrg-iuo2",
+    		"qejh-2345-sdf1-ytg5",
+    		//...
+    		"uie0-4tyg-3456-rwjh"
+    	]
+    }
+
+这可能适用于有数千位关注者的用户，但是，如果有一些名人添加我们的行列，此处理方法最终将达到文档大小上限。
+
+为了解决此问题，我们可以使用一种混合方法。我们可以在用户统计信息文档中存储关注者人数：
+
+    {
+    	"id":"234d-sd23-rrf2-552d",
+    	"user": "dse4-qwe2-ert4-aad2",
+    	"followers":55230,
+    	"totalPosts":452,
+    	"totalPoints":11342
+    }
+
+然后使用一个[扩展](https://github.com/richorama/AzureStorageExtensions#azuregraphstore)，将实际的关注者图形存储在 Azure 存储表中，以允许进行简单的“A 关注 B”存储和检索。这样，我们就可以将确切的关注者列表的检索过程（当我们需要它时）委托给 Azure 存储表，但为了快速查找数字，我们仍继续使用 DocumentDB。
 
 ## “阶梯”模式和数据重复
 
@@ -142,15 +170,20 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
         "id":"dse4-qwe2-ert4-aad2",
         "name":"John",
         "surname":"Doe",
+        "username":"johndoe"
         "email":"john@doe.com",
-        "twitterHandle":"@john",
-        "totalPoints":100,
-        "totalPosts":24,
-        "following":{
-            "count":2,
-            "list":[
-                UserChunk1, UserChunk2
-            ]
+        "twitterHandle":"@john"
+    }
+
+贴子内容如下所示：
+
+    {
+        "id":"1234-asd3-54ts-199a",
+        "title":"Awesome post!",
+        "date":"2016-01-02",
+        "createdBy":{
+        	"id":"dse4-qwe2-ert4-aad2",
+    		"username":"johndoe"
         }
     }
 
@@ -193,4 +226,4 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/libra
 阅读[对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data/)一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases/)。
 
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0815_2016-->

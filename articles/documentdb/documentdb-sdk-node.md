@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="06/14/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="07/07/2016" 
+	wacn.date="08/22/2016"/>
 
 # DocumentDB SDK
 
@@ -33,6 +33,14 @@
 
 ##发行说明
 
+###<a name="1.9.0"/>1.9.0</a>
+
+- 对限制添加了重试策略支持。（限制请求收到请求速率太大的异常，错误代码 429。） 默认情况下，遇到错误代码 429 时，DocumentDB 将针对每个请求重试九次，具体取决于响应标头中的 retryAfter 时间。如果想要忽略重试之间由服务器返回的 retryAfter 时间，现在可以对 ConnectionPolicy 对象设置固定的重试间隔时间，并将其作为 RetryOptions 属性的一部分。DocumentDB 现在对每个要中止的请求等待最多 30 秒（不考虑重试计数），并返回错误代码为 429 的响应。还可以在 ConnectionPolicy 对象的 RetryOptions 属性中替代该时间。
+
+- DocumentDB 现在将 x-ms-throttle-retry-count 和 x-ms-throttle-retry-wait-time-ms 作为每个请求的响应标头返回，以表示限制重试计数和重试之间请求所等待的累计时间。
+
+- 已添加 RetryOptions 类，从而公开了 ConnectionPolicy 类上可用于替代某些默认重试选项的 RetryOptions 属性。
+
 ###<a name="1.8.0"/>1.8.0</a>
 
   - 添加了对多区域数据库帐户的支持。
@@ -42,31 +50,31 @@
 - 在文档中添加了对生存时间 (TTL) 的支持。
 
 ###<a name="1.6.0"/>1.6.0</a>
-- 已实现[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
+- 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ###<a name="1.5.6"/>1.5.6</a>
 
-- 修复了 RangePartitionResolver.resolveForRead Bug，其会由于结果的错误拼接，它不返回链接
+- 修复了 RangePartitionResolver.resolveForRead Bug，其会由于结果的错误 concat，它不返回链接
 
 ###<a name="1.5.5"/>1.5.5</a>
 
-- 修复了 hashParitionResolver resolveForRead()：当没有提供分区键的时候返回所有已注册的链接
+- 修复了 hashParitionResolver resolveForRead()：这时没有提供的分区键抛出异常，而不是返回所有已注册链接的列表。
 
 ###<a name="1.5.4"/>1.5.4</a>
 
-- 修复问题 [#100](https://github.com/Azure/azure-documentdb-node/issues/100) - 专用 HTTPS 代理：避免修改全局代理。对所有 lib 的请求均使用专用代理。
+- 已修复问题 [#100](https://github.com/Azure/azure-documentdb-node/issues/100) — 专用 HTTPS 代理：避免基于 DocumentDB 用途而修改全局代理。对所有 lib 的请求均使用专用代理。
 
 ###<a name="1.5.3"/>1.5.3</a>
 
-- 修复问题 [#81](https://github.com/Azure/azure-documentdb-node/issues/81) - 正确处理媒体 ID 中的短划线。
+- 已修复问题 [#81](https://github.com/Azure/azure-documentdb-node/issues/81) — 正确处理媒体 ID 中的短划线。
 
 ###<a name="1.5.2"/>1.5.2</a>
 
-- 修复问题 [#95](https://github.com/Azure/azure-documentdb-node/issues/95) - EventEmitter 侦听器泄漏警告
+- 已修复问题 [#95](https://github.com/Azure/azure-documentdb-node/issues/95) — EventEmitter 侦听器泄漏警告
 
 ###<a name="1.5.1"/>1.5.1</a>
 
-- 修复问题 [#92](https://github.com/Azure/azure-documentdb-node/issues/90) - 对区分大小写的系统，将文件夹 Hash 重命名为 hash
+- 已修复问题 [#92](https://github.com/Azure/azure-documentdb-node/issues/90) — 对区分大小写的系统，将文件夹 Hash 重命名为 hash
 
 ### <a name="1.5.0"/>1.5.0</a>
 
@@ -82,13 +90,13 @@
 
 ### <a name="1.2.2"/>1.2.2</a>
 
-- 将 Q promises 封装库移到新的代码库
-- 更新 npm 注册的程序包文件
+- 将 Q 承诺包装拆分到新的存储库
+- 更新到 npm 注册表的程序包文件
 
 ### <a name="1.2.1"/>1.2.1</a>
 
 - 实现基于 ID 的路由
-- 修复问题 [#49](https://github.com/Azure/azure-documentdb-node/issues/49) - 当前属性与方法 current() 发生冲突
+- 已修复问题 [#49](https://github.com/Azure/azure-documentdb-node/issues/49) — 当前属性与方法 current() 发生冲突
 
 ### <a name="1.2.0"/>1.2.0</a>
 
@@ -102,11 +110,11 @@
 
 ### <a name="1.0.3"/>1.0.3</a>
 
-- 问题 [#40](https://github.com/Azure/azure-documentdb-node/issues/40) - 已在核心和 promise SDK 中实现 eslint 和 grunt 配置
+- 问题 [#40](https://github.com/Azure/azure-documentdb-node/issues/40) — 已在核心和 promise SDK 中实现 eslint 和 grunt 配置
 
 ### <a name="1.0.2"/>1.0.2</a>
 
-- 问题 [#45](https://github.com/Azure/azure-documentdb-node/issues/45) - 封装库移除有错误的标头。
+- 问题 [#45](https://github.com/Azure/azure-documentdb-node/issues/45) — Promises 包装器不包含标头并发生错误。
 
 ### <a name="1.0.1"/>1.0.1</a>
 
@@ -119,19 +127,20 @@
 - GA SDK
 
 ## 发布和停用日期
-Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便顺利过渡到更新的/受支持的版本。
+Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺利转换到更新的/受支持的版本。
 
 新特性和功能以及优化仅添加到当前 SDK，因此建议你始终尽早升级到最新 SDK 版本。
 
 使用已停用的 SDK 对 DocumentDB 发出的任何请求都将被服务拒绝。
 
 > [AZURE.WARNING]
-**1.0.0** 版之前的 Azure DocumentDB SDK for Node.js 的所有版本都将在 **2016 年 2 月 29 日**停用。
+**1.0.0** 版之前的所有 Azure DocumentDB SDK for Node.js 版本都将在 **2016 年 2 月 29 日**停用。
 
 <br/>
 
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
+| [1\.9.0](#1.9.0) | 2016 年 7 月 7 日 |---
 | [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
 | [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |---
 | [1\.6.0](#1.6.0) | 2016 年 3 月 29 日 |---
@@ -148,15 +157,15 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 | [1\.2.1](#1.2.1) | 2015 年 8 月 15 日 |---
 | [1\.2.0](#1.2.0) | 2015 年 8 月 5 日 |---
 | [1\.1.0](#1.1.0) | 2015 年 7 月 9 日 |---
-| [1\.0.3](#1.0.3) | 2015 年 6 月 4 日，|---
+| [1\.0.3](#1.0.3) | 2015 年 6 月 4 日 |---
 | [1\.0.2](#1.0.2) | 2015 年 5 月 23 日 |---
 | [1\.0.1](#1.0.1) | 2015 年 5 月 15 日 |---
 | [1\.0.0](#1.0.0) | 2015 年 4 月 8 日 |---
-|0.9.4-prelease | 2015 年 4 月 6 日 | 2016 年 2 月 29 日
-|0.9.3-prelease | 2015 年 1 月 14 日 | 2016 年 2 月 29 日
-|0.9.2-prelease | 2014 年 12 月 18 日 | 2016 年 2 月 29 日
-|0.9.1-prelease | 2014 年 8 月 22 日 | 2016 年 2 月 29 日
-|0.9.0-prelease | 2014 年 8 月 21 日 | 2016 年 2 月 29日
+| 0.9.4-prerelease | 2015 年 4 月 6 日 | 2016 年 2 月 29 日 
+| 0.9.3-prerelease | 2015 年 1 月 14 日 | 2016 年 2 月 29 日 
+| 0.9.2-prerelease | 2014 年 12 月 18 日 | 2016 年 2 月 29 日 
+| 0.9.1-prerelease | 2014 年 8 月 22 日 | 2016 年 2 月 29 日 
+| 0.9.0-prerelease | 2014 年 8 月 21 日 | 2016 年 2 月 29日
 
 
 ## 常见问题
@@ -166,4 +175,4 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0808_2016-->

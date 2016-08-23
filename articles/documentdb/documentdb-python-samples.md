@@ -3,15 +3,15 @@
 	description="在 github 上找到 NoSQL Python 示例用于 DocumentDB 中的普通任务，包括 NoSQL 数据库中的 JSON 文档的 CRUD 操作。" 
 	keywords="Python 示例"
 	services="documentdb" 
-	authors="ryancrawcour" 
+	authors="aliuy" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter="python"/>
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="03/22/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="04/18/2016" 
+	wacn.date="08/22/2016"/>
 
 
 # DocumentDB Python SDK 示例
@@ -22,7 +22,7 @@
 - [Python 示例](/documentation/articles/documentdb-python-samples/)
 - [Azure 代码示例库](https://azure.microsoft.com/documentation/samples/?service=documentdb)
 
-对 DocumentDB 资源执行 CRUD 操作和其他常见操作的示例解决方案包括在 [azure-documentdb-python](https://github.com/Azure/azure-documentdb-python/tree/master/samples) GitHub 存储库。本文将提供：
+对 Azure DocumentDB 资源执行 CRUD 操作和其他常见操作的示例解决方案包括在 [azure-documentdb-python](https://github.com/Azure/azure-documentdb-python/tree/master/samples) GitHub 存储库。本文将提供：
 
 - 每个 Python 示例项目文件中的任务链接。 
 - 指向相关的 API 参考内容的链接。
@@ -57,8 +57,8 @@
 [创建集合](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L84-L135) | [document\_client.CreateCollection](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
 [在数据库中读取所有集合的列表](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L198-L225) | [document\_client.ListCollections](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
 [按 ID 获取集合](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L178-L195) | [document\_client.ReadCollection](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
-[获取集合的性能等级](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L139-L161) | [DocumentQueryable.QueryOffers](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
-[更改集合的性能等级](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L163-L175) | [document\_client.ReplaceOffer](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
+[获取集合的性能层](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L139-L161) | [DocumentQueryable.QueryOffers](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
+[更改集合的性能层](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L163-L175) | [document\_client.ReplaceOffer](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
 [删除集合](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/CollectionManagement/Program.py#L212-L225) | [document\_client.DeleteCollection](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html#CreateCollection)
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0808_2016-->

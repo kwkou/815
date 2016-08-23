@@ -10,11 +10,11 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="03/30/2016" 
-	wacn.date="07/22/2016"/>
+	ms.date="07/07/2016" 
+	wacn.date=""/>  
 
 # DocumentDB 中的 SQL 查询和 SQL 语法
-Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。DocumentDB 是真正无架构的。凭借其数据库引擎内建对 JSON 数据模型的支持，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。
+Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。DocumentDB 是真正无架构的。凭借其对数据库引擎内 JSON 数据模型的直接承诺，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。
 
 在设计 DocumentDB 的查询语言时，我们有两个目标：
 
@@ -151,10 +151,10 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 
 我们希望通过我们目前已看到的示例让你注意到 DocumentDB 查询语言一些值得注意的方面：
  
--	由于 DocumentDB SQL 适用于 JSON 值，因此它可以处理三种形式的实体，而不是行和列。因此，该语言可让你在任意深度引用树的节点，如 `Node1.Node2.Node3…..Nodem`，这类似于引用 `<table>.<column>` 的两个部分引用的关系 SQL。   
--	结构化查询语言适用于无架构的数据。因此，需要动态绑定类型系统。相同的表达式在不同文档上可能会产生不同的类型。查询的结果是一个有效的 JSON 值，但不保证它为固定的架构。  
--	DocumentDB 仅支持严格的 JSON 文档。这意味着类型系统和表达式仅限于处理 JSON 类型。有关更多详细信息，请参阅 [JSON specification（JSON 规范）](http://www.json.org/)。  
--	DocumentDB 集合是 JSON 文档的一个无构架容器。集合中，文档内和跨文档的数据实体的关系是按包含关系隐式存在的，而不是按主键和外键关系。考虑到稍后将在本文中讨论文档内联接，因此这是一个值得注意的重要方面。
+-	由于 DocumentDB SQL 适用于 JSON 值，因此它可以处理三种形式的实体，而不是行和列。因此，该语言可让你在任意深度引用树的节点，如 `Node1.Node2.Node3…..Nodem`，这类似于引用 `<table>.<column>` 的两个部分引用的关系 SQL。
+-	结构化查询语言适用于无架构的数据。因此，需要动态绑定类型系统。相同的表达式在不同文档上可能会产生不同的类型。查询的结果是一个有效的 JSON 值，但不保证它为固定的架构。
+-	DocumentDB 仅支持严格的 JSON 文档。这意味着类型系统和表达式仅限于处理 JSON 类型。有关更多详细信息，请参阅 [JSON specification（JSON 规范）](http://www.json.org/)。
+-	DocumentDB 集合是 JSON 文档的一个无构架容器。集合中，文档内和跨文档的数据实体的关系是按包含关系隐式捕获的，而不是按主键和外键关系。考虑到稍后将在本文中讨论文档内联接，因此这是一个值得注意的重要方面。
 
 ## DocumentDB 索引
 
@@ -294,7 +294,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 <td>=、!=、&lt;、>、&lt;=、>=、&lt;></td>
 </tr>
 <tr>
-<td>String</td>	
+<td>字符串</td>	
 <td>||（连接）</td>
 </tr>
 </table>  
@@ -571,7 +571,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 ### 逻辑（AND、OR 和 NOT）运算符
 逻辑运算符对布尔值进行运算。下表显示了这些运算符的逻辑真值表。
 
-或者|True|False|Undefined
+或|True|False|Undefined
 ---|---|---|---
 True|True|True|True
 False|True|False|Undefined
@@ -601,8 +601,6 @@ IN 关键字可用于检查指定的值是否与列表中的任意值匹配。�
     SELECT *
     FROM Families 
     WHERE Families.address.state IN ("NY", "WA", "CA", "PA", "OH", "OR", "MI", "WI", "MN", "FL")
-
-IN 等效于链接多个 OR 子句，但是由于可以使用单一索引处理它，因此 DocumentDB 支持对 IN 子句内指定的参数数量实现更高[限制](/documentation/articles/documentdb-limits/)。
 
 ### 三元 (?) 和联合 (??) 运算符
 三元和联合运算符可以用于生成条件表达式，类似于常用的编程语言（如 C# 和 JavaScript）。
@@ -690,7 +688,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
 	}]
 
 
-让我们看看此处的 `$1` 角色。`SELECT` 子句需要创建 JSON 对象，并且由于没有提供任何键，因此我们使用以 `$1` 开头的隐式参数变量名。例如，此查询返回了两个隐式参数变量，标为 `$1` 和 `$2`。
+让我们看看此处的 `$1` 角色。`SELECT` 子句需要创建 JSON 对象，并且由于没有提供任何密钥，因此我们使用以 `$1` 开头的隐式参数变量名。例如，此查询返回了两个隐式参数变量，标为 `$1` 和 `$2`。
 
 **查询**
 
@@ -860,8 +858,8 @@ DocumentDB SQL 的另一个重要功能是数组/对象创建。请注意，在�
 	]
 
 
-###* 运算符
-支持使用特殊运算符 (*) 按原样投影文档。在使用时，它必须仅为投影的字段。当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
+###\*运算符：
+支持使用特殊运算符 (\*) 按原样投影文档。在使用时，它必须仅为投影的字段。当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
 
 **查询**
 
@@ -1048,7 +1046,7 @@ TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER B
 ### 联接
 在关系数据库中，跨表联接的要求是非常重要的。设计规范化的架构是一项逻辑要求。与此相反，DocumentDB 则处理无架构文档的非规范化数据模型。这在逻辑上等效于“自联接”。
 
-语言支持的语法是 <from_source1> JOIN <from_source2> JOIN ...JOIN <from_sourceN>。总体而言，此语法返回一组 **N** 元组（带有 **N** 个值的元组）。每个元组拥有通过对它们相应的集遍历所有集合别名所产生的值。换言之，这是加入联接的集的完整叉积。
+语言支持的语法为 < from\_source1 > JOIN < from\_source2 > JOIN ...JOIN < from\_sourceN >。总体而言，此语法返回一组 **N** 元组（带有 **N** 个值的元组）。每个元组拥有通过对它们相应的集遍历所有集合别名所产生的值。换言之，这是加入联接的集的完整叉积。
 
 下面的示例演示了 JOIN 子句是如何工作的。在下面的示例中，由于源中每个文档和空集的叉积为空，因此结果为空。
 
@@ -1197,13 +1195,13 @@ JOIN 真正实用的地方通过以其他方式难以投影的形式基于叉积
 ## JavaScript 集成
 DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaScript 的应用程序逻辑提供编程模型。这允许以下两种情况：
 
--	借助直接在数据库引擎内深度集成 JavaScript 运行时，能够对集合中的文档执行高性能事务性 CRUD 操作和查询。 
--	供控制流、可变的作用域以及异常处理与数据库事务的集成。有关 DocumentDB 对 JavaScript 集成的支持的更多详细信息，请参阅《JavaScript 服务器端可编程性》文档。
+-	借助直接在数据库引擎内深度集成 JavaScript 运行时，能够对集合中的文档执行高性能事务性 CRUD 操作和查询。
+-	控制流、变量范围和分配的自然建模和将异常处理基元与数据库事务集成。有关 DocumentDB 对 JavaScript 集成的支持的更多详细信息，请参阅《JavaScript 服务器端可编程性》文档。
 
 ###用户定义的函数 (UDF)
 除了本文中已定义的类型外，DocumentDB SQL 也对用户定义的函数 (UDF) 提供支持。具体而言，支持标量 UDF，开发人员可在其中传入零个或许多参数并返回单个参数结果。检查每个参数是否是合法的 JSON 值。
 
-扩展 DocumentDB SQL 语法以支持使用这些用户定义的函数的自定义应用程序逻辑。可使用 DocumentDB 注册 UDF，然后作为 SQL 查询的一部分引用这些函数。事实上，UDF 经过精心设计，可由查询调用。因此，UDF 不能访问其他 JavaScript 类型（存储过程和触发器）所拥有的上下文对象。由于查询以只读方式执行，因此它们可以在主要或次要副本上运行。因此，UDF 设计为在次要副本上运行，这与其他 JavaScript 类型不同。
+扩展 DocumentDB SQL 语法以支持使用这些用户定义的函数的自定义应用程序逻辑。可使用 DocumentDB 注册 UDF，然后作为 SQL 查询的一部分引用这些函数。事实上，UDF 经过精心设计，可由查询调用。作为此选择的必然结果，UDF 不能访问其他 JavaScript 类型（存储过程和触发器）所拥有的上下文对象。由于查询以只读方式执行，因此它们可以在主要或次要副本上运行。因此，UDF 设计为在次要副本上运行，这与其他 JavaScript 类型不同。
 
 以下是如何在 DocumentDB 数据库中（特别是在文档集合下）注册 UDF 的示例。
 
@@ -1309,11 +1307,10 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
 
 DocumentDB SQL 在处理 UDF 当前阶段（WHERE 子句或 SELECT 子句），为源中每个文档的 UDF 提供参数。将结果无缝地纳入总体执行管道中。如果由 UDF 参数引用的属性在 JSON 值中不可用，则参数将被视为未定义，因此会完全跳过 UDF 调用。同样，如果未定义 UDF的结果，则它不会包含在结果中。
 
-总而言之，如果查询中需要处理复杂业务逻辑，那么 UDF 是重要的工具。
+总而言之，UDF 是作为查询的一部分处理复杂业务逻辑重要的工具。
 
 ### 运算符评估
-
-DocumentDB 是一个 JSON 数据库，与 JavaScript 运算符以及其评估语义具有许多相似之处。就 JSON 支持而言，当 DocumentDB 尝试保留 JavaScript 语义时，操作评估在某些实例中有所不同。
+DocumentDB 是一个 JSON 数据库，与 JavaScript 运算符以及其评估语义具有许多相似之处。就 JSON 支持而言，当 DocumentDB 尝试保留 JavaScript 语义时，操作评估在某些实例中有所偏移。
 
 在 DocumentDB SQL 中，与在传统 SQL 中不同，在实际从数据库中检索出值之前，值类型经常是未知的。为了高效执行查询，大多数运算符具有严格的类型要求。
 
@@ -1617,8 +1614,7 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
     }]
 
 ### 数组函数
-
-下面的函数对输入的数组值执行操作，并返回数值、布尔值或数组值。以下是内置数组函数表：
+下面的标量函数对数组输入值执行操作，并返回数值、布尔值或数组值。以下是内置数组函数表：
 
 使用情况|说明
 ---|---
@@ -1752,10 +1748,10 @@ ST\_ISVALID 和 ST\_ISVALIDDETAILED 可用来检查空间对象是否有效。�
       	}
     }]
     
-这就是空间函数和 DocumentDB 的 SQL 语法。现在，让我们来看看 LINQ 查询的工作方式，以及它如何与我们目前为止所看到的语法进行交互。
+这会完成空间函数和 DocumentDB 的 SQL 语法。现在，让我们来看看 LINQ 查询的工作方式，以及它如何与我们目前为止所看到的语法进行交互。
 
 ## LINQ 到 DocumentDB SQL
-LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。DocumentDB 提供一个客户端库，通过 JSON 与 .NET 对象之间的转换，以及从 LINQ 查询的子集到 DocumentDB 查询的映射，来与 LINQ 进行交互。
+LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。DocumentDB 提供一个客户端库，通过促进 JSON 与 .NET 对象之间的转换，以及从 LINQ 查询的子集到 DocumentDB 查询的映射，来与 LINQ 进行交互。
 
 下面的图片展示了使用 DocumentDB 支持 LINQ 查询的体系结构。使用 DocumentDB 客户端，开发人员可以创建直接查询 DocumentDB 查询提供程序的 **IQueryable** 对象，该提供程序随后会将 LINQ 查询转换为 DocumentDB 查询。该查询会被传递到 DocumentDB 服务器以检索一组 JSON 格式的结果。在客户端上，返回的结果会反序列化为 .NET 对象的流。
 
@@ -2229,7 +2225,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
 
 
 	foreach (var family in client.CreateDocumentQuery(collectionLink, 
-	    "SELECT * FROM Families f WHERE f.id = "AndersenFamily""))
+	    "SELECT * FROM Families f WHERE f.id = \"AndersenFamily\""))
 	{
 	    Console.WriteLine("\tRead {0} from SQL", family);
 	}
@@ -2375,4 +2371,4 @@ DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaS
 [introduction]: /documentation/articles/documentdb-introduction/
 [consistency-levels]: /documentation/articles/documentdb-consistency-levels/
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0815_2016-->
