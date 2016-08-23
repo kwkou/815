@@ -25,7 +25,7 @@
 
 在这两种情况下，都将从 Azure 备份保管库检索数据。
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)] 资源管理器部署模型。
 
 ## 将数据恢复到同一台计算机
 如果你意外删除了某个文件并想要在同一台计算机（备份位置）中还原文件，以下步骤可帮助你恢复数据。
