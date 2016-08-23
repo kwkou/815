@@ -14,7 +14,7 @@
   ms.date="05/16/2016"
   wacn.date="08/22/2016"/>
   
-# azureiotsuite.com 站点权限
+# azureiotsuite.cn 站点权限
 
 ## 登录时发生的情况
 

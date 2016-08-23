@@ -104,9 +104,6 @@ _如果你要查找有关如何预配远程监视预配置解决方案的演练�
 
 13. 单击“收到 HTTP 请求时”触发器，并复制“此 URL 的 Http Post”值。本教程稍后需要此 URL。
 
-<!-- > [AZURE.NOTE] Logic Apps enable you to run [many different types of action][lnk-logic-apps-actions] including actions in Office 365. -->
-
-
 ## 设置 EventProcessor Web 作业
 
 在本部分中，你要将用于触发逻辑应用的 URL 添加到当设备传感器值超过阈值时激发的操作，以便将预配置的解决方案连接到创建的逻辑应用。
