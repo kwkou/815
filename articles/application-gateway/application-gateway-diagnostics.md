@@ -10,8 +10,8 @@
 
 <tags 
    ms.service="application-gateway"
-   ms.date="04/11/2016"
-   wacn.date="06/30/2016" />
+   ms.date="07/14/2016"
+   wacn.date="08/23/2016" />
 
 #应用程序网关的诊断日志记录
 

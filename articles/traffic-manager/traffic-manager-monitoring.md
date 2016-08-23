@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="06/04/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="07/01/2016"
+	wacn.date="08/23/2016"/>
 
 # 流量管理器终结点监视和故障转移
 

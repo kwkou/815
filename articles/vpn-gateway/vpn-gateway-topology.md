@@ -9,8 +9,8 @@
    tags="azure-resource-manager,azure-service-management"/>
 <tags 
    ms.service="vpn-gateway"
-   ms.date="03/18/2016"
-   wacn.date="05/10/2016" />
+   ms.date="07/13/2016"
+   wacn.date="08/23/2016" />
 
 # Azure VPN 网关连接拓扑
 

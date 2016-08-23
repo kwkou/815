@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/26/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="07/01/2016"
+	wacn.date="08/23/2016"/>
 
 # Azure 上的操作系统功能 #
 

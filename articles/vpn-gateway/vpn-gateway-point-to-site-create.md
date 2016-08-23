@@ -10,8 +10,8 @@
 
 <tags
    ms.service="vpn-gateway"
-   ms.date="03/30/2016"
-   wacn.date="08/01/2016"/>
+   ms.date="07/18/2016"
+   wacn.date="08/23/2016"/>
 
 # 使用经典管理门户配置与 VNet 的点到站点 VPN 连接
 

@@ -9,8 +9,8 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/19/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/23/2016"/>
 
 #使用 Azure 存储空间共享访问签名来限制使用 HDInsight 访问数据
 

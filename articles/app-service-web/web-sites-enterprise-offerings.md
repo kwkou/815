@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/20/2016" 
-	wacn.date="05/24/2016"/>
+	ms.date="06/29/2016" 
+	wacn.date="08/23/2016"/>
 
 # Azure Web 应用企业产品白皮书 #
 

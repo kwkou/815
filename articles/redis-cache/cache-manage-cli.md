@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="04/13/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/28/2016"
+	wacn.date="08/23/2016"/>
 
 # 如何使用 Azure 命令行界面 (Azure CLI) 创建和管理 Azure Redis 缓存
 

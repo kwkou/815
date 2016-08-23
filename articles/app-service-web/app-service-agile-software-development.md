@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/07/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="07/01/2016"
+	wacn.date="08/23/2016"/>
 
 
 # 使用 Azure Web 应用进行敏捷软件开发 #

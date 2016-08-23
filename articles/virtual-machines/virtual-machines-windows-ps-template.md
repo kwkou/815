@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="07/14/2016"
+	wacn.date="08/23/2016"/>
 
 # 使用资源管理器模板创建 Windows 虚拟机
 

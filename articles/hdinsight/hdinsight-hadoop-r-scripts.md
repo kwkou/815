@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/05/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="06/28/2016"
+	wacn.date="08/23/2016"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
 

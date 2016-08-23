@@ -10,8 +10,8 @@
 
    <tags
    ms.service="virtual-machines-windows"
-   ms.date="03/31/2016"
-   wacn.date="05/24/2016"/>
+   ms.date="07/01/2016"
+   wacn.date="08/23/2016"/>
 
 # 使用 Azure PowerShell 管理虚拟机
 

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/03/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="06/27/2016"
+	wacn.date="08/23/2016"/>
 
 # 如何在 Hudson 连续集成中使用 Azure Slave 插件
 
