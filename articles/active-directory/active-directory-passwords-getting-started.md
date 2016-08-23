@@ -5,15 +5,18 @@
 	keywords="Active Directory 密码管理, 密码管理, 重置 Azure AD 密码"
 	documentationCenter=""
 	authors="asteen"
-	manager="kbrint"
-	editor="billmath"/>
+	manager="femila"
+	editor="curtand"/>  
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="02/16/2016" 
-	wacn.date="06/21/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>  
 
 # 密码管理入门
+
+> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+
 只要完成几个简单的步骤，就能让你的用户管理他们自己的云 Azure Active Directory 密码或本地 Active Directory 密码。在确保符合几个简单的先决条件之后，你将在不知不觉中为整个组织启用密码更改和重置。本文将引导你完成以下操作思路：
 
 * [**如何让用户重置其云 Azure Active Directory 密码**](#enable-users-to-reset-their-azure-ad-passwords)
@@ -350,4 +353,4 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 [031]: ./media/active-directory-passwords-getting-started/031.jpg "Image_031.jpg"
 [032]: ./media/active-directory-passwords-getting-started/032.jpg "Image_032.jpg"
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

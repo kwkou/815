@@ -9,10 +9,13 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="02/16/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>  
 
 # 了解有关密码管理的详细信息
+
+> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+
 如果你已部署密码管理，或只是想要在部署之前深入了解密码管理工作原理的技术细节，则本部分可让你大致了解该服务背后的技术概念。本部分将介绍以下内容：
 
 * [**密码写回概述**](#password-writeback-overview)
@@ -166,7 +169,7 @@
             </td>
             <td>
               <p>AuthenticationPhone</p>
-              <p>或者</p>
+              <p>或</p>
               <p>MobilePhone</p>
               <p>（如果存在数据，则使用身份验证电话，否则将退回到移动电话字段）。</p>
               <p>例如 Set-MsolUser -UserPrincipalName JWarner@contoso.com -MobilePhone "+1 1234567890x1234"</p>
@@ -300,22 +303,22 @@
 若要开始，首先需要[下载并安装 Azure AD PowerShell 模块](https://msdn.microsoft.com/library/azure/jj151815.aspx#bkmk_installmodule)。安装后，你可以遵照以下步骤配置每个字段。
 
 #####备用电子邮件
-```
-Connect-MsolService
-Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com")
-```
+
+	Connect-MsolService
+	Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com")
+
 
 #####移动电话
-```
-Connect-MsolService
-Set-MsolUser -UserPrincipalName user@domain.com -MobilePhone "+1 1234567890"
-```
+
+	Connect-MsolService
+	Set-MsolUser -UserPrincipalName user@domain.com -MobilePhone "+1 1234567890"
+
 
 #####办公电话
-```
-Connect-MsolService
-Set-MsolUser -UserPrincipalName user@domain.com -PhoneNumber "+1 1234567890"
-```
+
+	Connect-MsolService
+	Set-MsolUser -UserPrincipalName user@domain.com -PhoneNumber "+1 1234567890"
+
 
 ####使用 PowerShell 读取密码重置数据
 可以使用 Azure AD PowerShell 读取以下字段的值。
@@ -329,39 +332,39 @@ Set-MsolUser -UserPrincipalName user@domain.com -PhoneNumber "+1 1234567890"
 若要开始，首先需要[下载并安装 Azure AD PowerShell 模块](https://msdn.microsoft.com/library/azure/jj151815.aspx#bkmk_installmodule)。安装后，你可以遵照以下步骤配置每个字段。
 
 #####备用电子邮件
-```
-Connect-MsolService
-Get-MsolUser -UserPrincipalName user@domain.com | select AlternateEmailAddresses
-```
+
+	Connect-MsolService
+	Get-MsolUser -UserPrincipalName user@domain.com | select AlternateEmailAddresses
+
 
 #####移动电话
-```
-Connect-MsolService
-Get-MsolUser -UserPrincipalName user@domain.com | select MobilePhone
-```
+
+	Connect-MsolService
+	Get-MsolUser -UserPrincipalName user@domain.com | select MobilePhone
+
 
 #####办公电话
-```
-Connect-MsolService
-Get-MsolUser -UserPrincipalName user@domain.com | select PhoneNumber
-```
+
+	Connect-MsolService
+	Get-MsolUser -UserPrincipalName user@domain.com | select PhoneNumber
+
 
 #####身份验证电话
-```
-Connect-MsolService
-Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select PhoneNumber
-```
+
+	Connect-MsolService
+	Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select PhoneNumber
+
 
 #####身份验证电子邮件
-```
-Connect-MsolService
-Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select Email
-```
+
+	Connect-MsolService
+	Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select Email
+
 
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password/) - 了解如何以系统用户的身份重置或更改自己的密码
+* **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
 * [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works/) - 了解六个不同的服务组件及其功能
 * [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
 * [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
@@ -375,4 +378,5 @@ Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthentic
 [001]: ./media/active-directory-passwords-learn-more/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-learn-more/002.jpg "Image_002.jpg"
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

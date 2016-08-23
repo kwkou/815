@@ -10,10 +10,12 @@
 <tags
 	ms.service="active-directory"
 	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	wacn.date="08/22/2016"/>
 
 
 # Azure Active Directory 中 OAuth 2.0 的最佳实践
+
+[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
 
 ## 使用 State 参数
 

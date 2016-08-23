@@ -1,16 +1,16 @@
 <properties
 	pageTitle="Azure Active Directory 版本 | Azure"
 	description="一个介绍 Azure Active Directory 的免费版和付费版选项的主题。Azure Active Directory Basic 是免费版，而 Azure Active Directory Premium 是付费版。"
-	services="active-directory" 
-	documentationCenter="" 
+	services="active-directory"
+	documentationCenter=""
 	authors="MarkusVi"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="06/07/2016"
-	wacn.date="08/19/2016" />
+	ms.date="07/08/2016"
+	wacn.date="08/22/2016" />
 
 # Azure Active Directory 版本
 
@@ -103,7 +103,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 | 免费版| 基本版| Premium Edition| 仅限 Office 365 应用 |
 | :-: | :-: | :-: | :-: |
-| 每个用户 10 个应用 [1]（预先集成的 SaaS 和开发人员集成的应用）| 每个用户 10 个应用 [1]（免费层 + 应用程序代理应用） | 无限制 [2]（免费层、基本层 + 自助应用集成模板）| 每个用户 10 个应用 [1]（预先集成的 SaaS 和开发人员集成的应用）|
+| 每个用户 10 个应用 (1) | 每个用户 10 个应用 (1) | 无限制 (2) | 每个用户 10 个应用 (1)|
 
 [1] 借助 Azure AD Free 和 Azure AD Basic，已获权访问 SaaS 应用的最终用户可以在其访问面板中看到最多 10 个应用并获得对这些应用的 SSO 访问权限。管理员可配置 SSO，并为使用 Free 和 Basic 的用户分配访问所需数量的 SaaS 应用的权限，但最终用户在其访问面板中一次只能看到 10 个应用。
 
@@ -156,4 +156,4 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0808_2016-->

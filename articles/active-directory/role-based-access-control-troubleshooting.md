@@ -1,16 +1,16 @@
 <properties
-	pageTitle="基于角色的访问控制故障排除"
-	description="使用不同资源类型进行基于角色的访问控制。"
+	pageTitle="基于角色的访问控制故障排除 | Azure"
+	description="获取有关基于角色的访问控制资源问题或疑问的帮助。"
 	services="azure-portal"
 	documentationCenter="na"
 	authors="kgremban"
-	manager="stevenpo"
-	editor=""/>
+	manager="femila"
+	editor=""/>  
 
 <tags
 	ms.service="active-directory"
-	ms.date="04/18/2016"
-	wacn.date="07/05/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>  
 
 # 基于角色的访问控制故障排除
 
@@ -18,7 +18,7 @@
 
 [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)是强大的功能，允许你委托 Azure 中的资源的精细访问权限。这意味着你可以确信授予特定人员他们刚好所需的权限，但仅此而已。但是，有时 Azure 资源的资源模型可能十分复杂，并且可能难于完全了解要授予对什么的权限。
 
-本文档会让你了解在 Azure 门户中使用一些角色时的预期步骤。以下三种角色涵盖了所有的资源类型：
+本文档会让你了解在 Azure 门户中使用一些角色时的预期步骤。以下三种角色涵盖所有资源类型：
 
 - 所有者  
 - 参与者  
@@ -94,4 +94,4 @@
 - [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)：了解如何创建自定义角色，以满足访问需要。
 - [创建访问权限更改历史记录报告](/documentation/articles/role-based-access-control-access-change-history-report/)：记录 RBAC 中的角色分配更改。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0815_2016-->

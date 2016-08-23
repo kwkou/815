@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="04/26/2016"
-	wacn.date="06/27/2016"/>
+	wacn.date="08/22/2016"/>
 
 # Azure AD 服务限制和局限性
 

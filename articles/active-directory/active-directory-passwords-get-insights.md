@@ -4,13 +4,13 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
-	manager="kbrint" 
-	editor="billmath"/>
+	manager="femila"
+	editor="curtand"/>  
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="02/16/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>  
 
 # 如何使用密码管理报告获取 Operational Insights
 本部分介绍如何使用 Azure Active Directory 的密码管理报告来查看组织中用户对密码重置和更改的使用情况。
@@ -151,4 +151,5 @@
 [002]: ./media/active-directory-passwords-get-insights/002.jpg "Image_002.jpg"
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

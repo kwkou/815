@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/16/2016"
-   wacn.date="07/26/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/22/2016"/>  
 
 # 支持的令牌和声明类型
 
@@ -157,7 +157,7 @@ IssuedAt 声明存储颁发令牌的时间。它通常用于度量令牌新鲜�
 
     "family_name": "Miller"
 
-### Name
+### 名称
 
 此名称声明提供了标识令牌使用者的人工可读值。此值不一定在租户中唯一，它旨在仅用于显示目的。在 SAML 令牌中，名称出现在 Name 属性中。
 
@@ -409,4 +409,4 @@ SubjectConfirmation 不是声明。它描述如何对令牌的使用者进行验
 
 [Azure Active Directory 身份验证协议](/documentation/articles/active-directory-authentication-protocols/)
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0815_2016-->

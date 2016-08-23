@@ -4,17 +4,18 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
-	manager="stevenpo"
-	editor=""/>
+	manager="femila"
+	editor=""/>  
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/16/2016"
-	wacn.date="07/26/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>
 
 
 # 在 Azure Active Directory 中设置密码过期策略
-> [AZURE.NOTE] 本主题为依赖于 Microsoft Azure Active Directory 提供标识和目录服务的云服务（如 Microsoft Intune 和 Office 365）提供联机帮助内容。
+
+> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
 
 作为 Microsoft 云服务的全局管理员，你可以使用适用于 Windows PowerShell 的 Microsoft Azure Active Directory 模块将用户密码设置为永不过期。你还可以使用 Windows PowerShell cmdlet 删除永不过期配置，或者查看已将哪些用户密码设置为永不过期。
 
@@ -28,7 +29,7 @@
 
 - [设置密码过期](#set-a-password-to-expire)
 
-- [将密码设置为永不过期](#set-a-password-not-to-expire)
+- [将密码设置为永不过期](#set-a-password-to-never-expire)
 
 ## <a name="how-to-check-expiration-policy-for-a-password"></a>如何检查密码过期策略
 
@@ -50,7 +51,7 @@
   	
 	- 若要将组织中所有用户的密码设置为会过期，请使用以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$false`
 
-## <a name="set-a-password-not-to-expire"></a>将密码设置为永不过期
+## <a name="set-a-password-to-never-expire"></a>将密码设置为永不过期
 
 1. 使用公司管理员凭据连接到 Windows PowerShell。
 
@@ -60,4 +61,4 @@
 
 	- 若要将组织中所有用户的密码设置为永不过期，请运行以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$true`
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0815_2016-->

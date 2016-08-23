@@ -1753,6 +1753,6 @@ Java
 
 [此处以 .zip 格式提供了](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)完整示例（不包括配置值）供你参考，你也可以从 GitHub 克隆该示例：
 
-		git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git
+	git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git
 
 <!---HONumber=AcomDC_0718_2016-->

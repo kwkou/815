@@ -49,9 +49,9 @@
 -	若要开始，请使用 Package Manager Console 将 OWIN 中间件 NuGet 包添加到项目。
 
 		
-		PM> Install-Package Microsoft.Owin.Security.OpenIdConnect
-		PM> Install-Package Microsoft.Owin.Security.Cookies
-		PM> Install-Package Microsoft.Owin.Host.SystemWeb
+	PM> Install-Package Microsoft.Owin.Security.OpenIdConnect
+	PM> Install-Package Microsoft.Owin.Security.Cookies
+	PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 
 -	将称为 `Startup.cs` 的 OWIN 启动类添加到项目。右键单击项目，选择“添加”-->“新建项”，然后搜索“OWIN”。当你的应用程序启动时，该 OWIN 中间件将调用 `Configuration(...)` 方法。
@@ -59,33 +59,33 @@
 
 C#
 		
-		public partial class Startup
-		{
-		    public void Configuration(IAppBuilder app)
-		    {
-		        ConfigureAuth(app);
-		    }
-		}
+	public partial class Startup
+	{
+	    public void Configuration(IAppBuilder app)
+	    {
+	        ConfigureAuth(app);
+	    }
+	}
 		
 
 -	打开文件 `App_Start\Startup.Auth.cs` 并实现 `ConfigureAuth(...)` 方法。在 `OpenIDConnectAuthenticationOptions` 中提供的参数将充当应用程序与 Azure AD 通信时使用的坐标。你还需要设置 Cookie 身份验证 - OpenID Connect 中间件将在幕后使用 Cookie。
 
 C#
-		
-		public void ConfigureAuth(IAppBuilder app)
-		{
-		    app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
-		
-		    app.UseCookieAuthentication(new CookieAuthenticationOptions());
-		
-		    app.UseOpenIdConnectAuthentication(
-		        new OpenIdConnectAuthenticationOptions
-		        {
-		            ClientId = clientId,
-		            Authority = authority,
-		            PostLogoutRedirectUri = postLogoutRedirectUri,
-		        });
-		}
+
+	public void ConfigureAuth(IAppBuilder app)
+	{
+	    app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
+
+	    app.UseCookieAuthentication(new CookieAuthenticationOptions());
+
+	    app.UseOpenIdConnectAuthentication(
+	        new OpenIdConnectAuthenticationOptions
+	        {
+	            ClientId = clientId,
+	            Authority = authority,
+	            PostLogoutRedirectUri = postLogoutRedirectUri,
+	        });
+	}
 		
 
 -	最后，打开位于项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入你的配置值。
@@ -99,59 +99,59 @@ C#
 - 可以在控制器中使用授权标记，要求用户在访问特定页面之前登录。打开 `Controllers\HomeController.cs`，然后将 `[Authorize]` 标记添加到 About 控制器。
 
 C#
-		
-		[Authorize]
-		public ActionResult About()
-		{
-		  ...
+
+	[Authorize]
+	public ActionResult About()
+	{
+ 	 ...
 
 
 -	还可以使用 OWIN 直接从代码内部发出身份验证请求。打开 `Controllers\AccountController.cs`。在 SignIn() 和 SignOut() 操作中，分别发出 OpenID Connect 质询和注销请求。
 
 C#
 		
-		public void SignIn()
-		{
-		    // Send an OpenID Connect sign-in request.
-		    if (!Request.IsAuthenticated)
-		    {
-		        HttpContext.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" }, OpenIdConnectAuthenticationDefaults.AuthenticationType);
-		    }
-		}
-		public void SignOut()
-		{
-		    // Send an OpenID Connect sign-out request.
-		    HttpContext.GetOwinContext().Authentication.SignOut(
-		        OpenIdConnectAuthenticationDefaults.AuthenticationType, CookieAuthenticationDefaults.AuthenticationType);
-		}
+	public void SignIn()
+	{
+	    // Send an OpenID Connect sign-in request.
+	    if (!Request.IsAuthenticated)
+	    {
+	        HttpContext.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" }, OpenIdConnectAuthenticationDefaults.AuthenticationType);
+	    }
+	}
+	public void SignOut()
+	{
+	    // Send an OpenID Connect sign-out request.
+	    HttpContext.GetOwinContext().Authentication.SignOut(
+	        OpenIdConnectAuthenticationDefaults.AuthenticationType, CookieAuthenticationDefaults.AuthenticationType);
+	}
 
 
 -	现在，请打开 `Views\Shared\_LoginPartial.cshtml`。你将在其中向用户显示应用程序的登录和注销链接，用户名将在视图中列显。
 
 HTML
 		
-		@if (Request.IsAuthenticated)
-		{
-		    <text>
-		        <ul class="nav navbar-nav navbar-right">
-		            <li class="navbar-text">
-		                Hello, @User.Identity.Name!
-		            </li>
-		            <li>
-		                @Html.ActionLink("Sign out", "SignOut", "Account")
-		            </li>
-		        </ul>
-		    </text>
-		}
-		else
-		{
-		    <ul class="nav navbar-nav navbar-right">
-		        <li>@Html.ActionLink("Sign in", "SignIn", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-		    </ul>
-		}
+	@if (Request.IsAuthenticated)
+	{
+	    <text>
+	        <ul class="nav navbar-nav navbar-right">
+	            <li class="navbar-text">
+	                Hello, @User.Identity.Name!
+	            </li>
+	            <li>
+	                @Html.ActionLink("Sign out", "SignOut", "Account")
+	            </li>
+	        </ul>
+	    </text>
+	}
+	else
+	{
+	    <ul class="nav navbar-nav navbar-right">
+	        <li>@Html.ActionLink("Sign in", "SignIn", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+	    </ul>
+	}
 
 
-## 4.显示用户信息
+## *4.显示用户信息*
 使用 OpenID Connect 对用户进行身份验证时，Azure AD 将向应用程序返回 id\_token，其中包含有关用户的“声明”或断言。你可以使用这些声明来个性化应用程序：
 
 - 打开 `Controllers\HomeController.cs` 文件。可以通过 `ClaimsPrincipal.Current` 安全主体对象访问控制器中的用户声明。

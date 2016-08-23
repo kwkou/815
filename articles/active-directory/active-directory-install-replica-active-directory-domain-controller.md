@@ -117,4 +117,4 @@ DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相�
 <!--Image references-->
 [1]: ./media/active-directory-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

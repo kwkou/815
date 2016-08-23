@@ -40,9 +40,9 @@
 
 **我正在执行什么操作？**
 
-Microsoft Active Directory 支持添加两种类型的应用程序。Web API，用于向访问这些 Web API 的用户和应用程序（在 Web 上或者设备中运行的应用程序上）提供服务。在此步骤中，你将注册你在本地运行的用于测试此示例的 Web API。通常，此 Web API 是一个 REST 服务，它提供应用需要访问的功能。Microsoft Azure Active Directory 可以保护任何终结点！
+*Microsoft Active Directory 支持添加两种类型的应用程序。Web API，用于向访问这些 Web API 的用户和应用程序（在 Web 上或者设备中运行的应用程序上）提供服务。在此步骤中，你将注册你在本地运行的用于测试此示例的 Web API。通常，此 Web API 是一个 REST 服务，它提供应用需要访问的功能。Microsoft Azure Active Directory 可以保护任何终结点！*
 
-此处我们假设你要注册上面引用的 TODO REST API，但这也适用于你希望 Azure Active Directory 保护的任何 Web API。
+*此处我们假设你要注册上面引用的 TODO REST API，但这也适用于你希望 Azure Active Directory 保护的任何 Web API。*
 
 在 Microsoft Azure AD 中注册 Web API 的步骤
 
@@ -52,7 +52,7 @@ Microsoft Active Directory 支持添加两种类型的应用程序。Web API，�
 4. 单击“应用程序”选项卡。
 5. 在抽屉中，单击“添加”。
 6. 单击“添加我的组织正在开发的应用程序”。
-7. 为应用程序输入一个友好的名称，例如“TodoListService”，选择“网站和/或 Web API”，然后单击“下一步”。
+7. 为应用程序输入一个友好的名称，例如“TodoListService”，选择“Web 应用程序和/或 Web API”，然后单击“下一步”。
 8. 对于登录 URL，请输入示例的基 URL，默认情况下为 `https://localhost:8080`。
 9. 对于应用程序 ID URI，请输入 `https://<your_tenant_name>/TodoListService`，并将 `<your_tenant_name>` 替换为你的 Azure AD 租户的名称。单击“确定”完成注册。
 10. 仍然在 Azure 门户中，单击你的应用程序的“配置”选项卡。
@@ -96,7 +96,7 @@ Microsoft Active Directory 支持添加两种类型的应用程序。Web API，�
   * 使用 SDK 19 设置模拟器
   * 转到存储库克隆到的根文件夹
   * 运行命令：mvn clean install
-  * 将目录切换到快速入门项目示例：cd samples\\hello
+  * 将目录切换到快速入门项目示例：cd samples\hello
   * 运行命令：mvn android:deploy android:run
   * 你应会看到应用程序正在启动
   * 输入测试用户凭据以尝试启动！
@@ -127,21 +127,21 @@ Microsoft Active Directory 支持添加两种类型的应用程序。Web API，�
 
 gradle
 
-			repositories {
-			    mavenCentral()
-			    flatDir {
-			        dirs 'libs'
-			    }
-			    maven {
-			        url "YourLocalMavenRepoPath\\.m2\\repository"
-			    }
-			}
-			dependencies {
-			    compile fileTree(dir: 'libs', include: ['*.jar'])
-			    compile('com.microsoft.aad:adal:1.1.1') {
-			        exclude group: 'com.android.support'
-			    } // Recent version is 1.1.1
-			}
+		repositories {
+		    mavenCentral()
+		    flatDir {
+		        dirs 'libs'
+		    }
+		    maven {
+		        url "YourLocalMavenRepoPath\\.m2\\repository"
+		    }
+		}
+		dependencies {
+		    compile fileTree(dir: 'libs', include: ['*.jar'])
+		    compile('com.microsoft.aad:adal:1.1.1') {
+		        exclude group: 'com.android.support'
+		    } // Recent version is 1.1.1
+		}
 
 
 ####选项 4：通过 Maven 获取 aar
@@ -196,7 +196,8 @@ Java
 Java
 
 		    // Authority is in the form of https://login.chinacloudapi.cn/yourtenant.partner.onmschina.cn
-		    mContext = new AuthenticationContext(MainActivity.this, authority, true); // This will use SharedPreferences as            default cache
+		    mContext = new AuthenticationContext(MainActivity.this, authority, true); 
+		    // This will use SharedPreferences as            default cache
 		    
   * 注意：mContext 是活动中的一个字段
 
@@ -293,9 +294,9 @@ java
 
  应用程序清单应有权使用 AccountManager 帐户：http://developer.android.com/reference/android/accounts/AccountManager.html
 
- * GET\_ACCOUNTS
- * USE\_CREDENTIALS
- * MANAGE\_ACCOUNTS
+ * GET_ACCOUNTS
+ * USE_CREDENTIALS
+ * MANAGE_ACCOUNTS
 
 
 使用本演练时，你应会获得与 Azure Active Directory 成功集成所需的项目。有关此工作的更多示例，请访问 GitHub 上的 AzureADSamples/ 存储库。
@@ -436,8 +437,8 @@ AuthenticationParameters 类提供通过 Oauth2 持有者质询获取 authorizat
 ### Webview 中的会话 Cookie
 
 在关闭应用程序后，Android Webview 不会清除会话 Cookie。你可以使用以下示例代码来处理此问题：
-java
-
+Java
+		
 		CookieSyncManager.createInstance(getApplicationContext());
 		CookieManager cookieManager = CookieManager.getInstance();
 		cookieManager.removeSessionCookie();
@@ -462,6 +463,8 @@ Java
 		<string name="http_auth_dialog_cancel">Cancel</string>
 
 
+
+
 ### NTLM 对话
 ADAL 版本 1.1.0 支持通过 WebViewClient 中的 onReceivedHttpAuthRequest 事件处理的 NTLM 对话。你可以自定义对话布局和字符串。
 
@@ -471,4 +474,4 @@ ADAL 版本 1.1.0 支持通过 WebViewClient 中的 onReceivedHttpAuthRequest �
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

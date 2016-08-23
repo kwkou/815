@@ -4,15 +4,18 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
-	manager="kbrint" 
-	editor="billmath"/>
+	manager="femila"
+	editor="curtand"/>  
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="02/16/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>  
 
 # 密码管理常见问题
+
+> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](active-directory-passwords-update-your-own-password/)。
+
 下面是与密码管理相关的所有方面的一些常见问题。
 
 如果你不知道问题的答案，或者要对所面临的具体问题寻求帮助，你可以参阅以下内容，查看我们是否涵盖了该问题。如果此处未涉及该问题，不用担心！ 你可以随意提出 [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)上所未涵盖的问题，我们将尽快予以解答。
@@ -34,7 +37,7 @@
  
  - **问：我能否从本地同步安全问题数据？**
  
- > **答：**目前还不行，但我们正在考虑这一点。
+ > **答：**目前还不行，但我们正在考虑实现。
  
  - **问：我的用户在注册数据时能否选择不让其他用户看到？**
  
@@ -54,7 +57,7 @@
 
  - **问：用户何时才会被视为已注册用户？**
  
- > **答：**如果用户已经定义了至少 N 个身份验证信息部分（其中 N 是你在 [Azure 经典管理门户](https://manage.windowsazure.cn)中设置的“所需身份验证方法数量”），则此用户即会被视为已注册用户。若要了解更多信息，请参阅“自定义用户密码重置策略”。
+ > **答：**如果用户已经定义了至少 N 项身份验证信息（其中 N 是你在 [Azure 管理门户](https://manage.windowsazure.cn)中设置的“所需身份验证方法数量”），则此用户即会被视为已注册用户。若要了解更多信息，请参阅“自定义用户密码重置策略”。
 
 
 ## <a name="password-reset"></a>密码重置
@@ -91,7 +94,7 @@
 
  - **问：我能否针对不同的区域设置设定不同的安全问题？**
  
- > **答：**目前还不行，但我们正在考虑这一点。
+ > **答：**目前还不行，但我们正在考虑实现。
 
  - **问：我们可以为“安全问题”身份验证选项配置多少个问题？**
  
@@ -151,7 +154,7 @@
  > **答：**是的。密码写回具有极高的安全性。若要阅读有关密码写回服务实施的 4 个安全层的详细信息，请查看“密码写回的工作原理”中的[密码写回安全模型](/documentation/articles/active-directory-passwords-learn-more/#password-writeback-security-model)。
 
 
-<br/> <br/> <br/>
+
 
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
@@ -168,4 +171,5 @@
 [001]: ./media/active-directory-passwords-faq/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-faq/002.jpg "Image_002.jpg"
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

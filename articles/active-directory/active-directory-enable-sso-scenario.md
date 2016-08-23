@@ -24,11 +24,11 @@
 
 在计算术语中：
 
-- 谁称为标识 — 用于管理用户和组
+- “谁”称为“标识” - 用于管理用户和组
 
-- 什么称为访问管理 — 用于管理对受保护资源的访问权限
+- “什么”称为“访问管理” - 用于管理对受保护资源的访问权限
 
-这两个组成部分统称为标识和访问管理 (IAM)，[Gartner](http://www.gartner.com/it-glossary/identity-and-access-management-iam) 小组将其定义为“允许适当的人员在适当的时间出于适当的理由访问适当的资源的安全策略”。
+这两个组成部分统称为“标识和访问管理 (IAM)”，[Gartner](http://www.gartner.com/it-glossary/identity-and-access-management-iam) 小组将其定义为“允许适当的人员在适当的时间出于适当的理由访问适当的资源的安全策略”。
 
 那么，这有什么问题呢？ 如果不使用一个集中式解决方案在一个位置管理 IAM：
 
@@ -45,6 +45,14 @@
 - 云应用程序的部署费用通常高于 IT 组织集成现有 IAM 解决方案的费用。
 
 - 安全和监视工具需要额外的定制和集成才能实现全面的 E2E 方案。
+
+## 将 Azure Active Directory 与应用程序集成
+
+Azure Active Directory 是 Microsoft 的综合性标识即服务 (IDaaS) 解决方案，它可以：
+
+- 启用 IAM 作为云服务
+
+- 提供中心访问管理、单一登录 (SSO) 及报告功能
 
 
 借助 Azure Active Directory，你为合作伙伴与客户（企业或消费者）发布的所有应用程序都具有相同的标识和访问管理功能。<br> 
@@ -122,4 +130,4 @@ Azure AD 提供预先集成的报告和监控功能，使你能够知道谁有�
 
 [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

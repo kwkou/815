@@ -10,9 +10,11 @@
 <tags
 	ms.service="active-directory"
 	ms.date="07/18/2016"
-	wacn.date="08/02/2016"/>
+	wacn.date="08/22/2016"/>
 
 # Azure Active Directory 中的签名密钥滚动更新
+
+[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
 
 本主题介绍你需要了解的有关 Azure Active Directory (Azure AD) 中用来为安全令牌签名的公钥的信息。必须注意的是，这些密钥每 6 周按计划滚动更新一次。在紧急情况下，密钥可以远远不到 6 周就更改一次。所有使用 Azure AD 的应用程序应该都能以编程方式处理密钥滚动更新过程。请继续阅读以了解密钥的工作原理，以及如何更新应用程序以处理密钥滚动更新。
 
@@ -63,27 +65,26 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 
 你可以通过查看应用程序的 Startup.cs 或 Startup.Auth.cs 中的以下代码片段，来确认应用程序是否正在使用上述任何中间件
 
-		
-		app.UseOpenIdConnectAuthentication(
-			 new OpenIdConnectAuthenticationOptions
-			 {
-				 // ...
-			 });
-		
-		
-		app.UseWsFederationAuthentication(
-		    new WsFederationAuthenticationOptions
-		    {
+
+	app.UseOpenIdConnectAuthentication(
+		 new OpenIdConnectAuthenticationOptions
+		 {
 			 // ...
-		 	});
-		
-		
-		 app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-			 new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-			 {
-			 // ...
-			 });
-		
+		 });
+
+	app.UseWsFederationAuthentication(
+	    new WsFederationAuthenticationOptions
+	    {
+		 // ...
+	 	});
+
+	
+	 app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+		 new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+		 {
+		 // ...
+		 });
+
 
 ### <a name="owincore"></a>使用 .NET Core OpenID Connect 或 JwtBearerAuthentication 中间件保护资源的 Web 应用程序/API
 
@@ -91,40 +92,40 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 
 你可以通过查看应用程序的 Startup.cs 或 Startup.Auth.cs 中的以下代码片段，来确认应用程序是否正在使用上述任何中间件
 
-		
-		app.UseOpenIdConnectAuthentication(
-			 new OpenIdConnectAuthenticationOptions
-			 {
-				 // ...
-			 });
-		
-		
-		app.UseJwtBearerAuthentication(
-		    new JwtBearerAuthenticationOptions
-		    {
+
+	app.UseOpenIdConnectAuthentication(
+		 new OpenIdConnectAuthenticationOptions
+		 {
 			 // ...
-		 	});
-		
+		 });
+
+
+	app.UseJwtBearerAuthentication(
+	    new JwtBearerAuthenticationOptions
+	    {
+		 // ...
+	 	});
+
 
 ### <a name="passport"></a>使用 Node.js passport-azure-ad 模块保护资源的 Web 应用程序/API
 
 如果你的应用程序使用 Node.js passport-ad 模块，则它已包含必要的逻辑来自动处理密钥滚动更新。
 
 你可以通过搜索应用程序的 app.js 中的以下代码片段，来确认应用程序是否正在使用 passport-ad
-		
-		
-		var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
-		
-		passport.use(new OIDCStrategy({
-			//...
-		));
-		
+
+
+	var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
+	
+	passport.use(new OIDCStrategy({
+		//...
+	));
+
 
 ### <a name="vs2015"></a>保护资源的和使用 Visual Studio 2015 创建的 Web 应用程序/API
 
 如果你的应用程序是使用 Visual Studio 2015 中的 Web 应用程序模板构建的，并且你从“更改身份验证”菜单中选择了“工作和学校帐户”，则应用程序已包含必要的逻辑来自动处理密钥滚动更新。此逻辑嵌入在 OWIN OpenID Connect 中间件中，可检索和缓存来自 OpenID Connect 发现文档中的密钥并定期刷新它们。
 
-如果你已手动将身份验证添加到解决方案，则应用程序可能不包含必要的密钥滚动更新逻辑。你需要自行编写该逻辑，或遵循[使用任何其他库保护资源或手动实现任何受支持协议的 Web 应用程序/API](#other) 中的步骤。
+如果你已手动将身份验证添加到解决方案，则应用程序可能不包含必要的密钥滚动更新逻辑。你需要自行编写该逻辑，或遵循[使用任何其他库或手动实现任何受支持协议的 Web 应用程序/API](#other) 中的步骤。
 
 ### <a name="vs2013"></a>保护资源的和使用 Visual Studio 2013 创建的 Web 应用程序
 
@@ -138,7 +139,7 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 2. 依次展开“数据连接”、DefaultConnection 和“表”。找到 **IssuingAuthorityKeys** 表，右键单击它，然后单击“显示表数据”。
 3. 在 **IssuingAuthorityKeys** 表中将至少有一行与密钥的指纹值相对应。删除该表中的所有行。
 4. 右键单击“Tenants”表，然后单击“显示表数据”。
-5. 在 **Tenants** 表中，至少有一行与唯一的目录租户标识符相对应。删除该表中的所有行。如果未同时删除 **IssuingAuthorityKeys** 和 **Tenants** 表中的行，则运行时你将收到错误。
+5. 在 **Tenants** 表中，至少有一行与唯一的目录租户标识符相对应。删除该表中的所有行。如果未同时删除 **Tenants** 和 **IssuingAuthorityKeys** 表中的行，则运行时你将收到错误。
 6. 构建并运行应用程序。登录到你的帐户后，可以停止应用程序。
 7. 返回到“服务器资源管理器”，查看 **IssuingAuthorityKeys** 和 **Tenants** 表中的值。你会注意到，已自动使用联合元数据文档中的相应信息对这两个表进行重新填充。
 
@@ -147,93 +148,93 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 如果你在 Visual Studio 2013 中使用 Web API 模板创建了 Web API 应用程序，然后从“更改身份验证”菜单中选择了“组织帐户”，则应用程序中已包含必需的逻辑。如果你已手动配置身份验证，请参阅下面的说明，了解如何配置 Web API 来自动更新其密钥信息。
 
 以下代码片段演示如何从联合元数据文档获取最新密钥，然后使用 [JWT 令牌处理程序](https://msdn.microsoft.com/library/dn205065.aspx)来验证令牌。该代码片段假设你使用自己的缓存机制来持久保存密钥（以便验证将来从 Azure AD 获取的令牌），无论是将它保存在数据库中、配置文件中，还是保存在其他位置。
-		
-		
-		using System;
-		using System.Collections.Generic;
-		using System.Linq;
-		using System.Text;
-		using System.Threading.Tasks;
-		using System.IdentityModel.Tokens;
-		using System.Configuration;
-		using System.Security.Cryptography.X509Certificates;
-		using System.Xml;
-		using System.IdentityModel.Metadata;
-		using System.ServiceModel.Security;
-		using System.Threading;
-		
-		namespace JWTValidation
-		{
-		    public class JWTValidator
-		    {
-		        private string MetadataAddress = "[Your Federation Metadata document address goes here]";
-		
-		        // Validates the JWT Token that's part of the Authorization header in an HTTP request.
-		        public void ValidateJwtToken(string token)
-		        {
-		            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler()
-		            {
-		                // Do not disable for production code
-		                CertificateValidator = X509CertificateValidator.None
-		            };
-		
-		            TokenValidationParameters validationParams = new TokenValidationParameters()
-		            {
-		                AllowedAudience = "[Your App ID URI goes here, as registered in the Azure Classic Portal]",
-		                ValidIssuer = "[The issuer for the token goes here, such as https://sts.chinacloudapi.cn/68b98905-130e-4d7c-b6e1-a158a9ed8449/]",
-		                SigningTokens = GetSigningCertificates(MetadataAddress)
-		
-		                // Cache the signing tokens by your desired mechanism
-		            };
-		
-		            Thread.CurrentPrincipal = tokenHandler.ValidateToken(token, validationParams);
-		        }
-		
-		        // Returns a list of certificates from the specified metadata document.
-		        public List<X509SecurityToken> GetSigningCertificates(string metadataAddress)
-		        {
-		            List<X509SecurityToken> tokens = new List<X509SecurityToken>();
-		
-		            if (metadataAddress == null)
-		            {
-		                throw new ArgumentNullException(metadataAddress);
-		            }
-		
-		            using (XmlReader metadataReader = XmlReader.Create(metadataAddress))
-		            {
-		                MetadataSerializer serializer = new MetadataSerializer()
-		                {
-		                    // Do not disable for production code
-		                    CertificateValidationMode = X509CertificateValidationMode.None
-		                };
-		
-		                EntityDescriptor metadata = serializer.ReadMetadata(metadataReader) as EntityDescriptor;
-		
-		                if (metadata != null)
-		                {
-		                    SecurityTokenServiceDescriptor stsd = metadata.RoleDescriptors.OfType<SecurityTokenServiceDescriptor>().First();
-		
-		                    if (stsd != null)
-		                    {
-		                        IEnumerable<X509RawDataKeyIdentifierClause> x509DataClauses = stsd.Keys.Where(key => key.KeyInfo != null && (key.Use == KeyType.Signing || key.Use == KeyType.Unspecified)).
-		                                                             Select(key => key.KeyInfo.OfType<X509RawDataKeyIdentifierClause>().First());
-		
-		                        tokens.AddRange(x509DataClauses.Select(token => new X509SecurityToken(new X509Certificate2(token.GetX509RawData()))));
-		                    }
-		                    else
-		                    {
-		                        throw new InvalidOperationException("There is no RoleDescriptor of type SecurityTokenServiceType in the metadata");
-		                    }
-		                }
-		                else
-		                {
-		                    throw new Exception("Invalid Federation Metadata document");
-		                }
-		            }
-		            return tokens;
-		        }
-		    }
-		}
+
+
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	using System.IdentityModel.Tokens;
+	using System.Configuration;
+	using System.Security.Cryptography.X509Certificates;
+	using System.Xml;
+	using System.IdentityModel.Metadata;
+	using System.ServiceModel.Security;
+	using System.Threading;
+	
+	namespace JWTValidation
+	{
+	    public class JWTValidator
+	    {
+	        private string MetadataAddress = "[Your Federation Metadata document address goes here]";
+	
+	        // Validates the JWT Token that's part of the Authorization header in an HTTP request.
+	        public void ValidateJwtToken(string token)
+	        {
+	            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler()
+	            {
+	                // Do not disable for production code
+	                CertificateValidator = X509CertificateValidator.None
+	            };
+	
+	            TokenValidationParameters validationParams = new TokenValidationParameters()
+	            {
+	                AllowedAudience = "[Your App ID URI goes here, as registered in the Azure Classic Portal]",
+	                ValidIssuer = "[The issuer for the token goes here, such as https://sts.chinacloudapi.cn/68b98905-130e-4d7c-b6e1-a158a9ed8449/]",
+	                SigningTokens = GetSigningCertificates(MetadataAddress)
+	
+	                // Cache the signing tokens by your desired mechanism
+	            };
+	
+	            Thread.CurrentPrincipal = tokenHandler.ValidateToken(token, validationParams);
+	        }
+	
+	        // Returns a list of certificates from the specified metadata document.
+	        public List<X509SecurityToken> GetSigningCertificates(string metadataAddress)
+	        {
+	            List<X509SecurityToken> tokens = new List<X509SecurityToken>();
+	
+	            if (metadataAddress == null)
+	            {
+	                throw new ArgumentNullException(metadataAddress);
+	            }
+	
+	            using (XmlReader metadataReader = XmlReader.Create(metadataAddress))
+	            {
+	                MetadataSerializer serializer = new MetadataSerializer()
+	                {
+	                    // Do not disable for production code
+	                    CertificateValidationMode = X509CertificateValidationMode.None
+	                };
+	
+	                EntityDescriptor metadata = serializer.ReadMetadata(metadataReader) as EntityDescriptor;
+	
+	                if (metadata != null)
+	                {
+	                    SecurityTokenServiceDescriptor stsd = metadata.RoleDescriptors.OfType<SecurityTokenServiceDescriptor>().First();
+	
+	                    if (stsd != null)
+	                    {
+	                        IEnumerable<X509RawDataKeyIdentifierClause> x509DataClauses = stsd.Keys.Where(key => key.KeyInfo != null && (key.Use == KeyType.Signing || key.Use == KeyType.Unspecified)).
+	                                                             Select(key => key.KeyInfo.OfType<X509RawDataKeyIdentifierClause>().First());
+	
+	                        tokens.AddRange(x509DataClauses.Select(token => new X509SecurityToken(new X509Certificate2(token.GetX509RawData()))));
+	                    }
+	                    else
+	                    {
+	                        throw new InvalidOperationException("There is no RoleDescriptor of type SecurityTokenServiceType in the metadata");
+	                    }
+	                }
+	                else
+	                {
+	                    throw new Exception("Invalid Federation Metadata document");
+	                }
+	            }
+	            return tokens;
+	        }
+	    }
+	}
 
 ### <a name="vs2012"></a>保护资源的和使用 Visual Studio 2012 创建的 Web 应用程序
 
@@ -243,41 +244,41 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 
 1. 在“解决方案资源管理器”中，添加对相应项目的 **System.IdentityModel** 程序集的引用。
 2. 打开 **Global.asax.cs** 文件并添加以下 using 指令：
-		
-		using System.Configuration;
-		using System.IdentityModel.Tokens;
+
+	using System.Configuration;
+	using System.IdentityModel.Tokens;
 
 3. 在 **Global.asax.cs** 文件中添加以下方法：
 
-		protected void RefreshValidationSettings()
-		{
-		    string configPath = AppDomain.CurrentDomain.BaseDirectory + "\" + "Web.config";
-		    string metadataAddress =
-		                  ConfigurationManager.AppSettings["ida:FederationMetadataLocation"];
-		    ValidatingIssuerNameRegistry.WriteToConfig(metadataAddress, configPath);
-		}
+	protected void RefreshValidationSettings()
+	{
+	    string configPath = AppDomain.CurrentDomain.BaseDirectory + "\\" + "Web.config";
+	    string metadataAddress =
+	                  ConfigurationManager.AppSettings["ida:FederationMetadataLocation"];
+	    ValidatingIssuerNameRegistry.WriteToConfig(metadataAddress, configPath);
+	}
 
 4. 在 **Global.asax.cs** 中的 **Application\_Start()** 方法内调用 **RefreshValidationSettings()** 方法，如下所示：
-		
-		protected void Application_Start()
-		{
-		    AreaRegistration.RegisterAllAreas();
-		    ...
-		    RefreshValidationSettings();
-		}
+
+	protected void Application_Start()
+	{
+	    AreaRegistration.RegisterAllAreas();
+	    ...
+	    RefreshValidationSettings();
+	}
 
 
 执行这些步骤后，系统将使用联合元数据文档中的最新信息（包括最新密钥）更新应用程序的 Web.config。每次在 IIS 中回收应用程序池时，都会进行此更新；默认情况下，IIS 设置为每 29 个小时回收一次应用程序。
 
 遵循以下步骤验证密钥滚动更新逻辑是否正常工作。
 
-1. 验证你的应用程序正在使用上面的代码后，打开 **Web.config** 文件并导航到 **<issuerNameRegistry>** 块中，特别是要找到以下几行：
-		
-		<issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
-		        <authority name="https://sts.chinacloudapi.cn/ec4187af-07da-4f01-b18f-64c2f5abecea/">
-		          <keys>
-		            <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
-		          </keys>
+1. 确认你的应用程序正在使用上面的代码后，打开 **Web.config** 文件并导航到 **<issuerNameRegistry>** 块中，特别是要找到以下几行：
+
+	<issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
+	        <authority name="https://sts.chinacloudapi.cn/ec4187af-07da-4f01-b18f-64c2f5abecea/">
+	          <keys>
+	            <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
+	          </keys>
 
 2. 在 **<add thumbprint=””>** 设置中，通过将任一字符替换为不同的字符来更改指纹值。保存 **Web.config** 文件。
 
@@ -309,19 +310,19 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 2. 复制 jwks\_uri 值中的链接
 3. 在浏览器中打开新的选项卡，并转到你刚复制的 URL。你将看到 JSON Web 密钥集文档的内容。
 4. 为了更新应用程序以使用新密钥，请找到每个 **x5c** 元素，然后复制每个元素的值。例如：
-		
-		keys: [
-			{
-				kty: "RSA",
-				use: "sig",
-				kid: "MnC_VZcATfM5pOYiJHMba9goEKY",
-				x5t: "MnC_VZcATfM5pOYiJHMba9goEKY",
-				n: "vIqz-4-ER_vNW...ixLUQ",
-				e: "AQAB",
-				x5c: [
-					"MIIC4jCCAcqgAw...dhXsIIKvJQ=="
-				]
-			},
+	
+	keys: [
+		{
+			kty: "RSA",
+			use: "sig",
+			kid: "MnC_VZcATfM5pOYiJHMba9goEKY",
+			x5t: "MnC_VZcATfM5pOYiJHMba9goEKY",
+			n: "vIqz-4-ER_vNW...ixLUQ",
+			e: "AQAB",
+			x5c: [
+				"MIIC4jCCAcqgAw...dhXsIIKvJQ=="
+			]
+		},
 
 5. 在复制 **<X509Certificate>** 元素的值之后，打开纯文本编辑器并粘贴该值。请务必删除任何尾随空格，然后使用 **.cer** 扩展名保存该文件。
 
@@ -329,15 +330,19 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 
 1. 在 Web 浏览器中，转到 `https://login.microsoftonline.com/your_directory_name/federationmetadata/2007-06/federationmetadata.xml`。你将看到联合元数据 XML 文档的内容。有关此文档的详细信息，请参阅 [Federation Metadata（联合元数据）](/documentation/articles/active-directory-federation-metadata/)主题。
 2. 为了更新应用程序以使用新密钥，请找到每个 **<RoleDescriptor>** 块，然后复制每个块的 **<X509Certificate>** 元素的值。例如：
-
-		<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:SecurityTokenServiceType">
-		      <KeyDescriptor use="signing">
-		            <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-		                <X509Data>
-		                    <X509Certificate>MIIDPjC…BcXWLAIarZ</X509Certificate>
+	
+	<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:SecurityTokenServiceType">
+	      <KeyDescriptor use="signing">
+	            <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+	                <X509Data>
+	                    <X509Certificate>MIIDPjC…BcXWLAIarZ</X509Certificate>
 
 3. 在复制 **<X509Certificate>** 元素的值之后，打开纯文本编辑器并粘贴该值。请务必删除任何尾随空格，然后使用 **.cer** 扩展名保存该文件。
 
 现已创建用作 Azure AD 公钥的 X509 证书。使用此证书的详细信息（如指纹和过期日期），可以通过手动或编程方式检查应用程序当前使用的证书和指纹是否有效。
 
-<!---HONumber=AcomDC_0718_2016-->
+## 如何测试应用程序以确定它是否会受影响
+
+可以下载脚本并遵循[此 GitHub 存储库](https://github.com/AzureAD/azure-activedirectory-powershell-tokenkey)中的说明，来验证你的应用程序是否支持自动密钥滚动更新。
+
+<!---HONumber=Mooncake_0815_2016-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="06/23/2016"
-	wacn.date="07/26/2016"/>
+	wacn.date="08/22/2016"/>
 
 
 # Azure Active Directory 如何使用 SAML 协议
@@ -32,4 +32,4 @@ Azure Active Directory 公开特定于租户的和公用的（独立于租户的
 
 有关 Azure AD 发布的联合元数据文档的信息，请参阅 [Federation Metadata（联合元数据）](/documentation/articles/active-directory-federation-metadata/)。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0815_2016-->

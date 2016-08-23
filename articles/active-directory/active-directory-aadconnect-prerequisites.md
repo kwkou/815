@@ -163,7 +163,7 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
 - 如果要部署多个 AD FS 服务器或 Web 应用程序代理服务器，请确保配置负载平衡器，以及指向负载平衡器的 AD FS 联合身份验证服务名称（例如 sts.contoso.com）的 DNS 记录。
 - 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 sts.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。
 
-## Azure AD Connect 支持组件
+## <a name="enable-tls-12-for-azure-ad-connect"></a>Azure AD Connect 支持组件
 下面列出了 Azure AD Connect 在要安装 Azure AD Connect 的服务器上安装的组件。此列表针对基本快速安装。如果在“安装同步服务”页上选择使用不同的 SQL Server，则不会在本地安装 SQL Express LocalDB。
 
 - Azure AD Connect Health

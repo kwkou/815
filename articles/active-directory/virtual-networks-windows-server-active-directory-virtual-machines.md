@@ -4,13 +4,14 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="markusvi" 
-	manager="stevenpo" 
-	tags="azure-classic-portal"/>
+	manager="femila"
+	tags="azure-classic-portal"/>  
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="04/07/2016" 
-	wacn.date="07/04/2016"/>
+	ms.date="07/13/2016"
+	wacn.date="08/22/2016"/>  
+
 
 
 # Azure VM 上的 Windows Server Active Directory
@@ -34,8 +35,4 @@
 - [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
 - [Azure 标识](/documentation/articles/fundamentals-identity/)
 
-
-
-
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

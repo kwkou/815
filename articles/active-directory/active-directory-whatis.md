@@ -4,13 +4,13 @@
     services="active-directory"
     documentationCenter=""
     authors="markusvi"
-    manager="swadhwa"
-    editor=""/>
+    manager="femila"
+    editor=""/>  
 
 <tags 
 	ms.service="active-directory" 
-    ms.date="04/07/2016"
-	wacn.date="06/03/2016" />
+    	ms.date="07/13/2016"
+	wacn.date="08/22/2016" />  
 
 
 # 什么是 Azure Active Directory？
@@ -78,4 +78,4 @@ Azure AD 的多租户、地理分布、高可用性设计意味着你可以依�
 - [使用 Azure Active Directory 组管理对资源的访问](/documentation/articles/active-directory-manage-groups/)
 
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0815_2016-->

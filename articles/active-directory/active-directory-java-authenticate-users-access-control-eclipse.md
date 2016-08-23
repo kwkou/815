@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-    ms.date="05/04/2016" 
-	wacn.date="06/21/2016"/>
+	ms.date="06/24/2016" 
+	wacn.date="08/22/2016"/>
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证
 
@@ -72,7 +72,7 @@ Azure ACS 在基于声明的标识的主体的基础上构建，它是一种创�
 - Java 开发人员工具包 (JDK) 1.6 版或更高版本。
 - Eclipse IDE for Java EE Developers, Indigo 或更高版本。可以从 <http://www.eclipse.org/downloads/> 下载。 
 - 分发基于 Java 的 Web 服务器或应用程序服务器，例如 Apache Tomcat、GlassFish、JBoss 应用程序服务器或 Jetty。
-- Azure 订阅，可以从 </pricing/overview/> 获取。
+- Azure 订阅，可以从 </pricing/purchase-options/> 获取。
 - Azure Toolkit for Eclipse 2014 年 4 月版或更高版本。有关详细信息，请参阅[安装 Azure Toolkit for Eclipse](/documentation/articles/azure-toolkit-for-eclipse-installation/)。
 - 要用于应用程序的 X.509 证书。你将需要此证书的公用证书 (.cer) 格式版和个人信息交换 (.PFX) 格式版。（本教程后面将介绍用于创建此证书的选项）。
 - 熟悉[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)中介绍的 Azure 计算模拟器和部署技术。
@@ -117,7 +117,7 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
 4.  单击“保存”。
 
-现在你已成功完成对 Java Web 应用的配置，该应用程序在 Azure 计算模拟器（位于 http://localhost:8080/）中运行时将作为 ACS 命名空间中的 RP。接下来，创建 ACS 用于处理 RP 的声明的规则。
+现在你已成功完成对 Java Web 应用程序的配置，该应用程序在 Azure 计算模拟器（位于 http://localhost:8080/）中运行时将作为 ACS 命名空间中的 RP。接下来，创建 ACS 用于处理 RP 的声明的规则。
 
 ## <a name="create-rules"></a>创建规则
 
@@ -165,7 +165,7 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
     ![为 ACS 示例添加 JSP 文件][add_jsp_file_acs]
 
-    单击“下一步”。
+    单击**“下一步”**。
 
 4. 在“选择 JSP 模板”对话框中，选择“新建 JSP 文件 (html)”，然后单击“完成”。
 5. 在 Eclipse 中打开 index.jsp 文件后，添加文本以便在现有 `<body>` 元素中显示 **Hello ACS World!**。更新后的 `<body>` 内容应与下图中所示类似：
@@ -185,8 +185,8 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
     ![添加 ACS 筛选器库][add_acs_filter_lib]
 
-5. 使用已打开经典管理门户的“登录页集成”页的浏览器，复制“选项 1: 链接到托管 ACS 的登录页”字段中列出的 URL，并将其粘贴到 Eclipse 对话框的“ACS 身份验证终结点”字段。
-6. 使用已打开经典管理门户的“编辑信赖方应用程序”页的浏览器，复制“领域”字段中列出的 URL，并将其复制到 Eclipse 对话框的“信赖方领域”字段。
+5. 使用已打开管理门户的“登录页集成”页的浏览器，复制“选项 1: 链接到托管 ACS 的登录页”字段中列出的 URL，并将其粘贴到 Eclipse 对话框的“ACS 身份验证终结点”字段。
+6. 使用已打开管理门户的“编辑信赖方应用程序”页的浏览器，复制“领域”字段中列出的 URL，并将其复制到 Eclipse 对话框的“信赖方领域”字段。
 7. 在 Eclipse 对话框的“安全性”部分，如果需要使用现有证书，请单击“浏览”，导航到要使用的证书，选中它，然后单击“打开”。或者，如果需要创建新证书，请单击“新建”以显示“新建证书”对话框，然后为新证书指定密码、.cer 文件的名称和 .pfx 文件的名称。
 8. 选中“在 WAR 文件中嵌入证书”。以此方式嵌入证书会将证书包含在部署中，而不需要你将证书作为组件手动添加。（相反，如果你必须从 WAR 文件外部存储证书，则可将证书作为角色组件添加并取消选中“在 WAR 文件中嵌入证书”。）
 9. [可选] 让“需要 HTTPS 连接”保持选中状态。如果你设置此选项，则将需要使用 HTTPS 协议访问你的应用程序。如果你不需要 HTTPS 连接，请取消选中此选项。
@@ -225,8 +225,8 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 4. 使“登录页集成”页在浏览器中保持打开状态，你很快将需要从中进行复制。
 5. 在 Eclipse 的项目资源管理器中，右键单击“MyACSHelloWorld”，单击“生成路径”，然后单击“配置生成路径”。
 6. 依次单击“库”选项卡、“Azure 访问控制服务筛选器”和“编辑”。
-7. 使用已打开经典管理门户的“登录页集成”页的浏览器，复制“选项 1: 链接到托管 ACS 的登录页”字段中列出的 URL，并将其粘贴到 Eclipse 对话框的“ACS 身份验证终结点”字段。
-8. 使用已打开经典管理门户的“编辑信赖方应用程序”页的浏览器，复制“领域”字段中列出的 URL，并将其复制到 Eclipse 对话框的“信赖方领域”字段。
+7. 使用已打开管理门户的“登录页集成”页的浏览器，复制“选项 1: 链接到托管 ACS 的登录页”字段中列出的 URL，并将其粘贴到 Eclipse 对话框的“ACS 身份验证终结点”字段。
+8. 使用已打开管理门户的“编辑信赖方应用程序”页的浏览器，复制“领域”字段中列出的 URL，并将其复制到 Eclipse 对话框的“信赖方领域”字段。
 9. 在 Eclipse 对话框的“安全性”部分，如果需要使用现有证书，请单击“浏览”，导航到要使用的证书，选中它，然后单击“打开”。或者，如果需要创建新证书，请单击“新建”以显示“新建证书”对话框，然后为新证书指定密码、.cer 文件的名称和 .pfx 文件的名称。
 10. 让“在 WAR 文件中嵌入证书”保持选中状态，假使你要在 WAR 文件中嵌入证书。
 11. [可选] 让“需要 HTTPS 连接”保持选中状态。如果你设置此选项，则将需要使用 HTTPS 协议访问你的应用程序。如果你不需要 HTTPS 连接，请取消选中此选项。
@@ -251,7 +251,7 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
 1. 在“Azure 访问控制服务筛选器”对话框的“安全性”部分，键入 **${env.JAVA\_HOME}/mycert.cer** 并取消选中“在 WAR 文件中嵌入证书”。（如果你的证书文件名不同，请调整 mycert.cer。） 单击“完成”关闭对话框。
 2. 在部署中将证书作为组件复制：在 Eclipse 的项目资源管理器中，展开“MyAzureACSProject”，右键单击“WorkerRole1”，单击“属性”，展开“Azure 角色”，然后单击“组件”。
-3. 单击“添加”。
+3. 单击**“添加”**。
 4. 在“添加组件”对话框中：
     1. 在“导入”部分中：
         1. 使用“文件”按钮导航到要使用的证书。 
@@ -305,4 +305,4 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 [create_acs_hello_world]: ./media/active-directory-java-authenticate-users-access-control-eclipse/CreateACSHelloWorld.png
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->
