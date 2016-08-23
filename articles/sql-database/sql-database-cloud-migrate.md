@@ -27,7 +27,7 @@ SQL Server 提供多种方法来完成每个任务。本文将提供可供每个
 
   ![VSSSDT 迁移示意图](./media/sql-database-cloud-migrate/03VSSSDTDiagram.png)
   
- > [AZURE.NOTE] 若要将非 SQL Server 数据库（包括 Microsoft Access、Sybase、MySQL Oracle 和 DB2）迁移到 Azure SQL 数据库，请参阅 [SQL Server 迁移助手](http://blogs.msdn.com/b/ssma)。
+ > [AZURE.NOTE] 若要将非 SQL Server 数据库（包括 Microsoft Access、Sybase、MySQL Oracle 和 DB2）迁移到 Azure SQL 数据库，请参阅 [SQL Server 迁移助手](https://blogs.msdn.microsoft.com/ssma/)。
 
 ## 数据库迁移工具将测试 SQL Server 数据库与 SQL 数据库的兼容性
 

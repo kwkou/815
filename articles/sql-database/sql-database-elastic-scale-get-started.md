@@ -52,8 +52,8 @@
 ### 重要的代码示例片段
 
 1. **管理分片和分片映射：**该代码演示如何在文件 **ShardMapManagerSample.cs** 中处理分片、范围和映射。你可以在以下位置找到有关此主题的详细信息：[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。  
-2. **数据相关的路由**：**DataDependentRoutingSample.cs** 中演示了如何向正确的分片路由事务。有关详细信息，请参阅[数据相关的路由](http://go.microsoft.com/?linkid=9862596)。
-3. **查询多个分片**：文件 **MultiShardQuerySample.cs** 中演示了如何查询多个分片。有关详细信息，请参阅[多分片查询](http://go.microsoft.com/?linkid=9862597)。
+2. **数据相关的路由**：**DataDependentRoutingSample.cs** 中演示了如何向正确的分片路由事务。有关详细信息，请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)。
+3. **查询多个分片**：文件 **MultiShardQuerySample.cs** 中演示了如何查询多个分片。有关详细信息，请参阅[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying/)。
 4. **添加空分片**：文件 **AddNewShardsSample.cs** 中的代码以迭代方式添加新的空分片。以下位置提供了此主题的详细信息：[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 
 ### 其他弹性缩放操作
