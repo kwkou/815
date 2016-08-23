@@ -391,7 +391,7 @@
 		
 		module.exports = config;
 
-3. 在 **config.js** 文件中，使用在 [Azure 门户预览](https://portal.azure.cn)上 DocumentDB 帐户的“密钥”边栏选项卡中找到的值更新 HOST 和 AUTH\_KEY 的值：
+3. 在 **config.js** 文件中，使用在 [Azure 门户](https://portal.azure.cn)上 DocumentDB 帐户的“密钥”边栏选项卡中找到的值更新 HOST 和 AUTH\_KEY 的值：
 
 4. 保存并关闭 **config.js** 文件。
  

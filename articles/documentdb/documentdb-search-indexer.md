@@ -9,19 +9,21 @@
 
 <tags
     ms.service="documentdb"
-    ms.date="03/09/2016"
-    wacn.date="06/29/2016"/>
+    ms.date="07/08/2016"
+    wacn.date="08/22/2016"/>
 
 #使用索引器连接 DocumentDB 和 Azure 搜索
 
 如果你希望对 DocumentDB 数据实现强大的搜索体验，请对 DocumentDB 使用 Azure 搜索索引器！ 在本文中，我们将展示如何将 Azure DocumentDB 与 Azure 搜索进行集成且无需编写代码以保持索引编制基础结构。
 
+要对此进行设置，你需要[设置 Azure 搜索帐户](/documentation/articles/search-create-service-portal)（不需要升级到标准搜索），然后调用 [Azure 搜索 REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) 以创建 DocumentDB **数据源**和用于该数据源的**索引器**。
+为了发送请求以与 REST API 交互，你可以使用 [Postman](https://www.getpostman.com/)、[Fiddler](http://www.telerik.com/fiddler)，或你喜欢的任何工具。
 
-##<a id="Concepts"></a>Azure 搜素索引器概念
+##<a id="Concepts"></a>Azure 搜索索引器概念
 
 Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这些数据源操作的索引器。
 
-**数据源**指定哪些数据需要编制索引、用于访问数据的凭据和启用 Azure 搜索的策略，以有效地标识数据 中的更改（如你的集合内已修改或已删除的文档）。数据源定义为独立的资源，以便它可以被多个索引器使用。
+**数据源**指定需要编制索引的数据、用于访问数据的凭据，以及用于启用 Azure 搜索的策略，以便有效地标识数据中的更改（如集合内已修改或已删除的文档）。数据源定义为独立的资源，以便它可以被多个索引器使用。
 
 **索引器**描述数据从你的数据源流动到目标搜索索引的方式。你应该计划为每个目标索引和数据源组合创建一个索引器。虽然可以有多个索引器写入到相同的索引，但一个索引器只能写入到一个索引。索引器用于：
 
@@ -41,7 +43,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 请求正文包含数据源定义，其中应包括以下字段：
 
-- **名称**：数据源的名称。
+- **名称**：选择任何名称来表示你的 DocumentDB 数据库。
 
 - **类型**：使用 `documentdb`。
 
@@ -51,7 +53,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 - **容器**：
 
-    - **名称**：必需。指定要编制索引的 DocumentDB 集合。
+    - **名称**：必需。指定要编制索引的 DocumentDB 集合的 ID。
 
     - **查询**：可选。你可以指定一个查询来将一个任意 JSON 文档平整成 Azure 搜索可编制索引的平面架构。
 
@@ -59,7 +61,9 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 - **dataDeletionDetectionPolicy**：可选。请参阅下面的[数据删除检测策略](#DataDeletionDetectionPolicy)。
 
-###<a id="DataChangeDetectionPolicy"></a>获取已更改的文档
+请参阅下面的[请求正文示例](#CreateDataSourceExample)。
+
+###<a id="DataChangeDetectionPolicy"></a>捕获已更改的文档
 
 数据更改检测策略旨在有效识别已更改的数据项。目前，唯一支持的策略是 DocumentDB 提供的使用 `_ts` 上次修改时间戳属性的 `High Water Mark` 策略 - 它按如下所示指定：
 
@@ -68,12 +72,12 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
         "highWaterMarkColumnName" : "_ts"
     }
 
-你还需要在投影中添加 `_ts` 和用于查询的 `WHERE` 子句。例如：
+你还需要为查询在投影中添加 `_ts` 和 `WHERE` 子句。例如：
 
     SELECT s.id, s.Title, s.Abstract, s._ts FROM Sessions s WHERE s._ts > @HighWaterMark
 
 
-###<a id="DataDeletionDetectionPolicy"></a>获取已删除的文档
+###<a id="DataDeletionDetectionPolicy"></a>捕获已删除的文档
 
 在源表中删除行时，你也应该从搜索索引中删除这些行。数据删除检测策略旨在有效识别已删除的数据项。目前，唯一支持的策略是 `Soft Delete` 策略（删除标有某种类型的标志），它按如下所示指定：
 
@@ -83,7 +87,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
         "softDeleteMarkerValue" : "the value that identifies a document as deleted"
     }
 
-> [AZURE.NOTE] 如果你使用的是自定义投影，则将需要在 SELECT 子句中包含该属性。
+> [AZURE.NOTE] 如果你使用的是自定义投影，则将需要在 SELECT 子句中包含 softDeleteColumnName 属性。
 
 ###<a id="CreateDataSourceExample"></a>请求正文示例
 
@@ -125,6 +129,8 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 确保目标索引的架构与源 JSON 文档的架构或自定义查询投影的输出的架构兼容。
 
+>[AZURE.NOTE] 对于分区集合，默认文档键是 DocumentDB 的 `_rid` 属性，它在 Azure 搜索中重命名为 `rid`。此外，DocumentDB 的 `_rid` 值包含在 Azure 搜索键中无效的字符；因此，`_rid` 值采用 Base64 编码。
+
 ###图 A：JSON 数据类型与 Azure 搜索数据类型之间的映射
 
 | JSON 数据类型|	兼容的目标索引字段类型|
@@ -133,7 +139,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 |类似于整数的数字|Edm.Int32、Edm.Int64、Edm.String|
 |类似于浮点的数字|Edm.Double、Edm.String|
 |String|Edm.String|
-|基本类型的数组，如“a”、“b”、“c” |集合 (Edm.String)|
+|基元类型的数组，如“a”、“b”、“c” |集合 (Edm.String)|
 |类似于日期的字符串| Edm.DateTimeOffset、Edm.String|
 |GeoJSON 对象，如 { "type": "Point", "coordinates": [ long, lat ] } | Edm.GeographyPoint |
 |其他 JSON 对象|不适用|
@@ -185,13 +191,13 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 一个索引器可以选择指定一个计划。如果存在计划，则索引器将按计划定期运行。计划具有以下属性：
 
-- **间隔**：必需。指定索引器运行的间隔或时段的持续时间值。允许的最小间隔为 5 分钟；最长为一天。必须将其格式化为 XSD "dayTimeDuration" 值（[ISO 8601 持续时间](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)值的有受限的子集）。它的模式是：`P(nD)(T(nH)(nM))`。示例：`PT15M` 为每隔 15 分钟，`PT2H` 为每隔 2 小时。
+- **间隔**：必需。指定索引器运行的间隔或时段的持续时间值。允许的最小间隔为 5 分钟；最长为一天。必须将其格式化为 XSD“dayTimeDuration”值（[ISO 8601 持续时间](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)值的受限子集）。它的模式为：`P(nD)(T(nH)(nM))`。示例：`PT15M` 为每隔 15 分钟，`PT2H` 为每隔 2 小时。
 
 - **startTime**：必需。指定索引器应何时开始运行的 UTC 日期时间。
 
 ###<a id="CreateIndexerExample"></a>请求正文示例
 
-下面的示例创建一个索引器，该索引器将数据从 `myDocDbDataSource` 数据源引用的集合复制到于 UTC 2015 年 1 月 1 日开始并每小时运行一次的计划上的 `mySearchIndex` 索引。
+下面的示例创建一个索引器，该索引器按计划（从 2015 年 1 月 1 日 UTC 开始，每小时运行一次），将数据从 `myDocDbDataSource` 数据源引用的集合复制到 `mySearchIndex` 索引。
 
     {
         "name" : "mysearchindexer",
@@ -260,8 +266,8 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 祝贺你！ 你已学习了如何使用 DocumentDB 索引器将 Azure DocumentDB 与 Azure 搜索进行集成。
 
- - 要了解有关 Azure DocumentDB 的详细信息，请参阅 [DocumentDB 服务页](/services/documentdb/)。
+ - 若要了解有关 Azure DocumentDB 的详细信息，请参阅 [DocumentDB 服务页](/services/documentdb/)。
 
  - 要了解有关 Azure 搜索的详细信息，请参阅[搜索服务页](https://azure.microsoft.com/services/search/)。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0808_2016-->

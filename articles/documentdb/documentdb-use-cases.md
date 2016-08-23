@@ -9,8 +9,9 @@
 
 <tags 
     ms.service="documentdb" 
-    ms.date="04/04/2016" 
-    wacn.date="06/29/2016"/>
+    ms.date="07/08/2016" 
+    wacn.date="08/23/2016"/>  
+
 
 # 常见 DocumentDB 用例
 本文概述了 DocumentDB 的几个常见用例。本文中的建议可以作为使用 DocumentDB 开发应用程序的一个起点。
@@ -27,7 +28,7 @@
 ## DocumentDB 的常见用例
 Azure DocumentDB 是一种通用型 NoSQL 数据库，广泛用于应用程序和用例。它对于需要低延迟毫秒级响应时间或需要快速伸缩的任何应用程序都是一个不错的选择。下面介绍了 DocumentDB 的几个属性，这些属性使其非常适用于高性能应用程序。
 
-- DocumentDB 采用本机分享对数据进行分区，以实现高可用性和可伸缩性。
+- DocumentDB 采用本机方式对数据进行分区，以实现高可用性和可伸缩性。
 - DocumentDB 采用由 SSD 提供支持的存储，具有低延迟毫秒级响应时间。
 - DocumentDB 支持最终、会话和受限停滞等一致性级别，从而实现较低的价格/性能比。 
 - DocumentDB 提供了灵活的数据友好型定价模式，独立测量存储和吞吐量。
@@ -87,7 +88,7 @@ Azure 提供了可为 IoT 用例所利用的丰富服务。Azure IoT 服务是�
 
 ## 后续步骤
  
-若要开始使用 DocumentDB，你可以创建一个[帐户](https://www.azure.cn/pricing/free-trial/)
+若要开始使用 DocumentDB，你可以创建一个[帐户](/pricing/free-trial/)。
 
 或者，如果想要了解有关使用 DocumentDB 的客户的详细信息，可以参阅下面的客户案例：
 
@@ -100,4 +101,4 @@ Azure 提供了可为 IoT 用例所利用的丰富服务。Azure IoT 服务是�
 - [Telenor](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18608)。全球领先企业 Telenor 使用云以初创企业的速度发展。 
 - [XOMNI](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667)。未来的存储依赖于数据的快速搜索和轻松流动。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0815_2016-->

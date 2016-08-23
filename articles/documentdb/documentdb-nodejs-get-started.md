@@ -11,7 +11,7 @@
 <tags
 	ms.service="documentdb"
 	ms.date="04/26/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="08/23/2016"/>
 
 # NoSQL Node.js 教程：DocumentDB Node.js 控制台应用程序  
 
@@ -58,21 +58,21 @@
 2. 找到你想要在其中保存 Node.js 应用程序的文件夹或目录。
 3. 使用以下命令创建两个空的 JavaScript 文件：
   - Windows:
-      * ```fsutil file createnew app.js 0```
-        * ```fsutil file createnew config.js 0```
+      * `fsutil file createnew app.js 0`
+        * `fsutil file createnew config.js 0`
   - Linux/OS X：
-      * ```touch app.js```
-        * ```touch config.js```
+      * `touch app.js`
+        * `touch config.js`
 4. 通过 npm 安装 documentdb 模块。请使用以下命令：
-    * ```npm install documentdb --save```
+    * `npm install documentdb --save`
 
 很好！ 既然已完成安装设置，让我们开始编写一些代码。
 
 ##<a id="Config"></a>步骤 3：设置应用程序的配置
 
-在喜爱的文本编辑器中打开 ```config.js```
+在喜爱的文本编辑器中打开 `config.js`
 
-然后，复制并粘贴以下代码片段，并将属性 ```config.endpoint``` 和 ```config.primaryKey``` 设置为 DocumentDB 终结点 URI 和主密钥。这两项配置都可以在 [Azure 门户](https://portal.azure.cn)中找到。
+然后，复制并粘贴以下代码片段，并将属性 `config.endpoint` 和 `config.primaryKey` 设置为 DocumentDB 终结点 URI 和主密钥。这两项配置都可以在 [Azure 门户](https://portal.azure.cn)中找到。
 
 ![Node.js 教程 - Azure 新门户的屏幕截图，显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示 URI、主密钥、辅助密钥的值 - 节点数据库][keys]
 
@@ -82,7 +82,7 @@
     config.endpoint = "~your DocumentDB endpoint uri here~";
     config.primaryKey = "~your primary key here~";
 
-复制 ```database id```、```collection id``` 和 ```JSON documents``` 并将其粘贴到在其中设置了 ```config.endpoint``` 和 ```config.authKey``` 属性的 ```config``` 对象下面。如果已经有想要在数据库中存储的数据，则可以使用 DocumentDB 的[数据迁移工具](documentdb-import-data.md)而不是添加文档定义。
+复制 `database id`、`collection id` 和 `JSON documents` 并将其粘贴到在其中设置了 `config.endpoint` 和 `config.authKey` 属性的 `config` 对象下面。如果已经有想要在数据库中存储的数据，则可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data/)而不是添加文档定义。
 
     config.endpoint = "~your DocumentDB endpoint uri here~";
     config.primaryKey = "~your primary key here~";
@@ -154,9 +154,9 @@
     };
 
 
-数据库、集合和文档定义将充当 DocumentDB ```database id```、```collection id``` 和文档的数据。
+数据库、集合和文档定义将充当 DocumentDB `database id`、`collection id` 和文档的数据。
 
-最后，导出你的 ```config``` 对象，以便你可以在 ```app.js``` 文件中引用。
+最后，导出你的 `config` 对象，以便你可以在 `app.js` 文件中引用。
 
             },
             "isRegistered": false
@@ -168,7 +168,7 @@
 
 ##<a id="Connect"></a>步骤 4：连接到 DocumentDB 帐户
 
-在文本编辑器中打开空的 ```app.js``` 文件。复制并粘贴以下代码，以导入 ```documentdb``` 模块和新建的 ```config``` 模块。
+在文本编辑器中打开空的 `app.js` 文件。复制并粘贴以下代码，以导入 `documentdb` 模块和新建的 `config` 模块。
 
     // ADD THIS PART TO YOUR CODE
     "use strict";
@@ -177,7 +177,7 @@
     var config = require("./config");
     var url = require('url');
 
-复制并粘贴以下代码，以使用前面保存的 ```config.endpoint``` 和 ```config.primaryKey``` 来创建新的 DocumentClient。
+复制并粘贴以下代码，以使用前面保存的 `config.endpoint` 和 `config.primaryKey` 来创建新的 DocumentClient。
 
     var config = require("./config");
     var url = require('url');
@@ -197,9 +197,9 @@
     var databaseUrl = `dbs/${config.database.id}`;
     var collectionUrl = `${databaseUrl}/colls/${config.collection.id}`;
 
-可以通过使用 **DocumentClient** 类的 [createDatabase](https://azure.github.io/azure-documentdb-node/DocumentClient.html) 函数创建[数据库](documentdb-resources.md#databases)。数据库是跨集合分区的文档存储的逻辑容器。
+可以通过使用 **DocumentClient** 类的 [createDatabase](https://azure.github.io/azure-documentdb-node/DocumentClient.html) 函数创建[数据库](/documentation/articles/documentdb-resources/#databases)。数据库是跨集合分区的文档存储的逻辑容器。
 
-复制并粘贴 **getDatabase** 函数，以使用 ```config``` 对象中指定的 ```id``` 在 app.js 文件中创建新数据库。该函数将检查是否不存在具有相同 ```FamilyRegistry``` 的数据库。如果确实存在，我们将返回该数据库而不是创建新的。
+复制并粘贴 **getDatabase** 函数，以使用 `config` 对象中指定的 `id` 在 app.js 文件中创建新数据库。该函数将检查是否不存在具有相同 `FamilyRegistry` 的数据库。如果确实存在，我们将返回该数据库而不是创建新的。
 
     var collectionUrl = `${databaseUrl}/colls/${config.collection.id}`;
 
@@ -247,7 +247,7 @@
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-在你的终端中，找到你的 ```app.js``` 文件并运行命令：```node app.js```
+在你的终端中，找到你的 `app.js` 文件并运行命令：`node app.js`
 
 祝贺你！ 你已成功创建 DocumentDB 数据库。
 
@@ -255,9 +255,9 @@
 
 > [AZURE.WARNING] **CreateDocumentCollectionAsync** 将创建新的集合，它牵涉定价。有关详细信息，请访问我们的[定价页](https://azure.microsoft.com/pricing/details/documentdb/)。
 
-可以通过使用 **DocumentClient** 类的 [createCollection](https://azure.github.io/azure-documentdb-node/DocumentClient.html) 函数创建[集合](documentdb-resources.md#collections)。集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。
+可以通过使用 **DocumentClient** 类的 [createCollection](https://azure.github.io/azure-documentdb-node/DocumentClient.html) 函数创建[集合](/documentation/articles/documentdb-resources/#collections)。集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。
 
-将 **getCollection** 函数复制并粘贴到 **getDatabase** 函数下面，以使用 ```config``` 对象中指定的 ```id``` 创建新集合。同样，我们将首先检查以确保不存在具有相同 ```FamilyCollection``` ID 的集合。如果确实存在，我们将返回该集合而不是创建新的。
+将 **getCollection** 函数复制并粘贴到 **getDatabase** 函数下面，以使用 `config` 对象中指定的 `id` 创建新集合。同样，我们将首先检查以确保不存在具有相同 `FamilyCollection` ID 的集合。如果确实存在，我们将返回该集合而不是创建新的。
 
                 } else {
                     resolve(result);
@@ -299,14 +299,14 @@
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-在你的终端中，找到你的 ```app.js``` 文件并运行命令：```node app.js```
+在你的终端中，找到你的 `app.js` 文件并运行命令：`node app.js`
 
 祝贺你！ 你已成功创建 DocumentDB 集合。
 
 ##<a id="CreateDoc"></a>步骤 7：创建文档
 可以通过使用 **DocumentClient** 类的 [createDocument](https://azure.github.io/azure-documentdb-node/DocumentClient.html) 函数创建[文档](/documentation/articles/documentdb-resources/#documents)。文档为用户定义的（任意）JSON 内容。现在，你可以将文档插入 DocumentDB。
 
-将 **getFamilyDocument** 函数复制并粘贴到 **getCollection** 函数下面，以创建包含 ```config``` 对象中保存的 JSON 数据的文档。同样，我们将首先检查以确保不存在具有相同 ID 的文档。
+将 **getFamilyDocument** 函数复制并粘贴到 **getCollection** 函数下面，以创建包含 `config` 对象中保存的 JSON 数据的文档。同样，我们将首先检查以确保不存在具有相同 ID 的文档。
 
                 } else {
                     resolve(result);
@@ -351,7 +351,7 @@
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-在你的终端中，找到你的 ```app.js``` 文件并运行命令：```node app.js```
+在你的终端中，找到你的 `app.js` 文件并运行命令：`node app.js`
 
 祝贺你！ 你已成功创建 DocumentDB 文档。
 
@@ -359,9 +359,9 @@
 
 ##<a id="Query"></a>步骤 8：查询 DocumentDB 资源
 
-DocumentDB 对存储在每个集合中的 JSON 文档都支持丰富[查询](documentdb-sql-query.md)。下面的示例代码演示你可针对集合中文档运行的查询。
+DocumentDB 对存储在每个集合中的 JSON 文档都支持丰富[查询](/documentation/articles/documentdb-sql-query/)。下面的示例代码演示你可针对集合中文档运行的查询。
 
-将 **queryCollection** 函数复制并粘贴到 **getFamilyDocument** 函数下面。DocumentDB 支持类似 SQL 的查询，如下所示。有关构建复杂查询的详细信息，请参阅 [Query Playground](https://www.documentdb.com/sql/demo) 和[查询文档](documentdb-sql-query.md)。
+将 **queryCollection** 函数复制并粘贴到 **getFamilyDocument** 函数下面。DocumentDB 支持类似 SQL 的查询，如下所示。有关构建复杂查询的详细信息，请参阅 [Query Playground](https://www.documentdb.com/sql/demo) 和[查询文档](/documentation/articles/documentdb-sql-query/)。
 
                 } else {
                     resolve(result);
@@ -411,7 +411,7 @@ DocumentDB 对存储在每个集合中的 JSON 文档都支持丰富[查询](doc
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-在你的终端中，找到你的 ```app.js``` 文件并运行命令：```node app.js```
+在你的终端中，找到你的 `app.js` 文件并运行命令：`node app.js`
 
 祝贺你！ 你已成功查询 DocumentDB 文档。
 
@@ -458,7 +458,7 @@ DocumentDB 支持替换 JSON 文档。
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-在你的终端中，找到你的 ```app.js``` 文件并运行命令：```node app.js```
+在你的终端中，找到你的 `app.js``` 文件并运行命令：`node app.js`
 
 祝贺你！ 你已成功替换 DocumentDB 文档。
 
@@ -502,7 +502,7 @@ DocumentDB 支持删除 JSON 文档。
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-在你的终端中，找到你的 ```app.js``` 文件并运行命令：```node app.js```
+在你的终端中，找到你的 `app.js` 文件并运行命令：`node app.js`
 
 祝贺你！ 你已成功删除 DocumentDB 文档。
 
@@ -558,7 +558,7 @@ DocumentDB 支持删除 JSON 文档。
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-在你的终端中，找到你的 ```app.js``` 文件并运行命令：```node app.js```
+在你的终端中，找到你的 `app.js` 文件并运行命令：`node app.js`
 
 你应该看到已启动应用的输出。输出应该匹配下面的示例文本。
 
@@ -589,7 +589,6 @@ DocumentDB 支持删除 JSON 文档。
     Anderson.1
 
     Cleaning up by deleting database FamilyDB
-
     Completed successfully
     Press any key to exit
 
@@ -602,9 +601,9 @@ DocumentDB 支持删除 JSON 文档。
 -   GitHub 上可用的 [GetStarted](https://github.com/Azure-Samples/documentdb-node-getting-started) 解决方案。
 
 通过 npm 安装 **documentdb** 模块。请使用以下命令：
-* ```npm install documentdb --save```
+* `npm install documentdb --save`
 
-如[步骤 3：设置应用的配置](#Config)中所述，接下来在 ```config.js``` 文件中更新 config.endpoint 和 config.authKey 的值。
+如[步骤 3：设置应用的配置](#Config)中所述，接下来在 `config.js` 文件中更新 config.endpoint 和 config.authKey 的值。
 
 ## 后续步骤
 

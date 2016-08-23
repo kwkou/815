@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="06/14/2016" 
-	wacn.date="07/04/2016"/>
+	ms.date="06/30/2016" 
+	wacn.date="08/22/2016"/>
 
 # DocumentDB SDK
 
@@ -31,6 +31,10 @@
 </table></br>
 
 ## 发行说明
+
+### <a name="1.8.1"/>[1\.8.1](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.8.1)
+  - 修复了 PartitionKeyDefinitionMap 中的一个 bug，以便缓存单个分区集合，而不进行额外的提取分区键的请求。
+  - 修复了一个 bug，以便在提供不正确的分区键值时不重试。
 
 ### <a name="1.8.0"/>[1\.8.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.8.0)
   - 添加了对多区域数据库帐户的支持。
@@ -71,7 +75,7 @@
 - GA SDK
 
 ## 发布和停用日期
-Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便顺利过渡到更新的/受支持的版本。
+Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺利转换到更新的/受支持的版本。
 
 新特性和功能以及优化仅添加到当前 SDK，因此建议你始终尽早升级到最新 SDK 版本。
 
@@ -84,6 +88,7 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
+| [1\.8.1](#1.8.1) | 2016 年 6 月 30 日 |---
 | [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
 | [1\.7.1](#1.7.1) | 2016 年 4 月 30 日 |---
 | [1\.7.0](#1.7.0) | 2016 年 4 月 27 日 |---
@@ -110,4 +115,4 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0808_2016-->

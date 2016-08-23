@@ -51,7 +51,7 @@
 
 	![支持票证资源选取器的屏幕截图](./media/documentdb-increase-limits/supportrequest3.png)
 
-创建支持票证后，你会通过电子邮件收到支持请求编号。你还可以通过单击**帮助与支持**边栏选项卡上的**管理支持请求**来查看支持请求。
+创建支持票证后，你会通过电子邮件收到支持请求编号。你还可以通过单击“帮助+支持”边栏选项卡上的“管理支持请求”来查看支持请求。
 
 ![支持请求边栏选项卡的屏幕截图](./media/documentdb-increase-limits/supportrequest4.png)
 

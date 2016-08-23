@@ -134,14 +134,14 @@
 
 python
 
-		from flask.ext.wtf import Form
-		from wtforms import RadioField
-		
-		class VoteForm(Form):
-			deploy_preference  = RadioField('Deployment Preference', choices=[
-		        ('Web Site', 'Web Site'),
-		        ('Cloud Service', 'Cloud Service'),
-		        ('Virtual Machine', 'Virtual Machine')], default='Web Site')
+	from flask.ext.wtf import Form
+	from wtforms import RadioField
+
+	class VoteForm(Form):
+		deploy_preference  = RadioField('Deployment Preference', choices=[
+	        ('Web Site', 'Web Site'),
+	        ('Cloud Service', 'Cloud Service'),
+	        ('Virtual Machine', 'Virtual Machine')], default='Web Site')
 
 
 
@@ -152,9 +152,9 @@ python
 
 python
 
-		from forms import VoteForm
-		import config
-		import pydocumentdb.document_client as document_client
+	from forms import VoteForm
+	import config
+	import pydocumentdb.document_client as document_client
 		
 
 ### 创建数据库、集合和文档
@@ -163,38 +163,38 @@ python
 
 python
 
-		@app.route('/create')
-		def create():
-		    """Renders the contact page."""
-		    client = document_client.DocumentClient(config.DOCUMENTDB_HOST, {'masterKey': config.DOCUMENTDB_KEY})
-		
-		    # Attempt to delete the database.  This allows this to be used to recreate as well as create
-		    try:
-		        db = next((data for data in client.ReadDatabases() if data['id'] == config.DOCUMENTDB_DATABASE))
-		        client.DeleteDatabase(db['_self'])
-		    except:
-		        pass
-		
-		    # Create database
-		    db = client.CreateDatabase({ 'id': config.DOCUMENTDB_DATABASE })
-		
-		    # Create collection
-		    collection = client.CreateCollection(db['_self'],{ 'id': config.DOCUMENTDB_COLLECTION }, { 'offerType': 'S1' })
-		
-		    # Create document
-		    document = client.CreateDocument(collection['_self'],
-		        { 'id': config.DOCUMENTDB_DOCUMENT,
-		          'Web Site': 0,
-		          'Cloud Service': 0,
-		          'Virtual Machine': 0,
-		          'name': config.DOCUMENTDB_DOCUMENT 
-		        })
-		
-		    return render_template(
-		       'create.html',
-		        title='Create Page',
-		        year=datetime.now().year,
-		        message='You just created a new database, collection, and document.  Your old votes have been deleted')
+	@app.route('/create')
+	def create():
+	    """Renders the contact page."""
+	    client = document_client.DocumentClient(config.DOCUMENTDB_HOST, {'masterKey': config.DOCUMENTDB_KEY})
+
+	    # Attempt to delete the database.  This allows this to be used to recreate as well as create
+	    try:
+	        db = next((data for data in client.ReadDatabases() if data['id'] == config.DOCUMENTDB_DATABASE))
+	        client.DeleteDatabase(db['_self'])
+	    except:
+	        pass
+
+	    # Create database
+	    db = client.CreateDatabase({ 'id': config.DOCUMENTDB_DATABASE })
+
+	    # Create collection
+	    collection = client.CreateCollection(db['_self'],{ 'id': config.DOCUMENTDB_COLLECTION }, { 'offerType': 'S1' })
+
+	    # Create document
+	    document = client.CreateDocument(collection['_self'],
+	        { 'id': config.DOCUMENTDB_DOCUMENT,
+	          'Web Site': 0,
+	          'Cloud Service': 0,
+	          'Virtual Machine': 0,
+	          'name': config.DOCUMENTDB_DOCUMENT 
+	        })
+
+	    return render_template(
+	       'create.html',
+	        title='Create Page',
+	        year=datetime.now().year,
+	        message='You just created a new database, collection, and document.  Your old votes have been deleted')
 
 
 > [AZURE.TIP] **CreateCollection** 方法采用可选的 **RequestOptions** 作为第三个参数。这可以用于指定集合的产品/服务类型。如果没有提供任何 offerType 值，则将使用默认的产品/服务类型创建集合。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
@@ -206,50 +206,50 @@ python
 
 python
 
-		@app.route('/vote', methods=['GET', 'POST'])
-		def vote(): 
-		    form = VoteForm()
-		    replaced_document ={}
-		    if form.validate_on_submit(): # is user submitted vote  
-		        client = document_client.DocumentClient(config.DOCUMENTDB_HOST, {'masterKey': config.DOCUMENTDB_KEY})
-		
-		        # Read databases and take first since id should not be duplicated.
-		        db = next((data for data in client.ReadDatabases() if data['id'] == config.DOCUMENTDB_DATABASE))
-		
-		        # Read collections and take first since id should not be duplicated.
-		        coll = next((coll for coll in client.ReadCollections(db['_self']) if coll['id'] == config.DOCUMENTDB_COLLECTION))
-		
-		        # Read documents and take first since id should not be duplicated.
-		        doc = next((doc for doc in client.ReadDocuments(coll['_self']) if doc['id'] == config.DOCUMENTDB_DOCUMENT))
-		
-		        # Take the data from the deploy_preference and increment our database
-		        doc[form.deploy_preference.data] = doc[form.deploy_preference.data] + 1
-		        replaced_document = client.ReplaceDocument(doc['_self'], doc)
-		
-		        # Create a model to pass to results.html
-		        class VoteObject:
-		            choices = dict()
-		            total_votes = 0
-		
-		        vote_object = VoteObject()
-		        vote_object.choices = {
-		            "Web Site" : doc['Web Site'],
-		            "Cloud Service" : doc['Cloud Service'],
-		            "Virtual Machine" : doc['Virtual Machine']
-		        }
-		        vote_object.total_votes = sum(vote_object.choices.values())
-		
-		        return render_template(
-		            'results.html', 
-		            year=datetime.now().year, 
-		            vote_object = vote_object)
-		
-		    else :
-		        return render_template(
-		            'vote.html', 
-		            title = 'Vote',
-		            year=datetime.now().year,
-		            form = form)
+	@app.route('/vote', methods=['GET', 'POST'])
+	def vote(): 
+	    form = VoteForm()
+	    replaced_document ={}
+	    if form.validate_on_submit(): # is user submitted vote  
+	        client = document_client.DocumentClient(config.DOCUMENTDB_HOST, {'masterKey': config.DOCUMENTDB_KEY})
+
+	        # Read databases and take first since id should not be duplicated.
+	        db = next((data for data in client.ReadDatabases() if data['id'] == config.DOCUMENTDB_DATABASE))
+
+	        # Read collections and take first since id should not be duplicated.
+	        coll = next((coll for coll in client.ReadCollections(db['_self']) if coll['id'] == config.DOCUMENTDB_COLLECTION))
+
+	        # Read documents and take first since id should not be duplicated.
+	        doc = next((doc for doc in client.ReadDocuments(coll['_self']) if doc['id'] == config.DOCUMENTDB_DOCUMENT))
+
+	        # Take the data from the deploy_preference and increment our database
+	        doc[form.deploy_preference.data] = doc[form.deploy_preference.data] + 1
+	        replaced_document = client.ReplaceDocument(doc['_self'], doc)
+
+	        # Create a model to pass to results.html
+	        class VoteObject:
+	            choices = dict()
+	            total_votes = 0
+
+	        vote_object = VoteObject()
+	        vote_object.choices = {
+	            "Web Site" : doc['Web Site'],
+	            "Cloud Service" : doc['Cloud Service'],
+	            "Virtual Machine" : doc['Virtual Machine']
+	        }
+	        vote_object.total_votes = sum(vote_object.choices.values())
+
+	        return render_template(
+	            'results.html', 
+	            year=datetime.now().year, 
+	            vote_object = vote_object)
+
+	    else :
+	        return render_template(
+	            'vote.html', 
+	            title = 'Vote',
+	            year=datetime.now().year,
+	            form = form)
 
 
 
@@ -262,67 +262,66 @@ python
 
 html
 
-			{% extends "layout.html" %}
-			{% block content %}
-			<h2>{{ title }}.</h2>
-			<h3>{{ message }}</h3>
-			<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
-			{% endblock %}
+	{% extends "layout.html" %}
+	{% block content %}
+	<h2>{{ title }}.</h2>
+	<h3>{{ message }}</h3>
+	<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
+	{% endblock %}
 	
 
 5. 将以下代码添加到 `<body`> 元素中的 **results.html**。它将显示轮询结果。
 
 html
 
-		{% extends "layout.html" %}
-		{% block content %}
-		<h2>Results of the vote</h2>
-			<br />
-			
-		{% for choice in vote_object.choices %}
-		<div class="row">
-			<div class="col-sm-5">{{choice}}</div>
-		        <div class="col-sm-5">
-		        	<div class="progress">
-		        		<div class="progress-bar" role="progressbar" aria-valuenow="{{vote_object.choices[choice]}}" aria-valuemin="0" aria-valuemax="{{vote_object.total_votes}}" style="width: {{(vote_object.choices[choice]/vote_object.total_votes)*100}}%;">
-		                    		{{vote_object.choices[choice]}}
-					</div>
-				</div>
-		        </div>
-		</div>
-		{% endfor %}
-		
+	{% extends "layout.html" %}
+	{% block content %}
+	<h2>Results of the vote</h2>
 		<br />
-		<a class="btn btn-primary" href="{{ url_for('vote') }}">Vote again?</a>
-		{% endblock %}
+		
+	{% for choice in vote_object.choices %}
+	<div class="row">
+		<div class="col-sm-5">{{choice}}</div>
+	        <div class="col-sm-5">
+	        	<div class="progress">
+	        		<div class="progress-bar" role="progressbar" aria-valuenow="{{vote_object.choices[choice]}}" aria-valuemin="0" aria-valuemax="{{vote_object.total_votes}}" style="width: {{(vote_object.choices[choice]/vote_object.total_votes)*100}}%;">
+	                    		{{vote_object.choices[choice]}}
+				</div>
+			</div>
+	        </div>
+	</div>
+	{% endfor %}
+	
+	<br />
+	<a class="btn btn-primary" href="{{ url_for('vote') }}">Vote again?</a>
+	{% endblock %}
 		
 
 6. 将以下代码添加到 `<body`> 元素中的 **vote.html**。它将显示轮询并接受投票。注册投票时，控件权将传递到 views.py 中，我们将在该位置识别投票并相应地追加文档。
 
 html
-
-		{% extends "layout.html" %}
-		{% block content %}
-		<h2>What is your favorite way to host an application on Azure?</h2>
-		<form action="" method="post" name="vote">
-			{{form.hidden_tag()}}
-		        {{form.deploy_preference}}
-		        <button class="btn btn-primary" type="submit">Vote</button>
-		</form>
-		{% endblock %}
+	{% extends "layout.html" %}
+	{% block content %}
+	<h2>What is your favorite way to host an application on Azure?</h2>
+	<form action="" method="post" name="vote">
+		{{form.hidden_tag()}}
+	        {{form.deploy_preference}}
+	        <button class="btn btn-primary" type="submit">Vote</button>
+	</form>
+	{% endblock %}
 		
 
 7. 在 **templates** 文件夹中，使用以下内容替换 **index.html** 的内容。这将作为你的应用程序的登录页。
 	
 html
 
-		{% extends "layout.html" %}
-		{% block content %}
-		<h2>Python + DocumentDB Voting Application.</h2>
-		<h3>This is a sample DocumentDB voting application using PyDocumentDB</h3>
-		<p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Create/Clear the Voting Database &raquo;</a></p>
-		<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
-		{% endblock %}
+	{% extends "layout.html" %}
+	{% block content %}
+	<h2>Python + DocumentDB Voting Application.</h2>
+	<h3>This is a sample DocumentDB voting application using PyDocumentDB</h3>
+	<p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Create/Clear the Voting Database &raquo;</a></p>
+	<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
+	{% endblock %}
 		
 
 ### 添加配置文件并更改 \_\_init\_\_.py

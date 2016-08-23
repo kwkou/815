@@ -25,10 +25,10 @@
  - 区分由应用程序读取和写入的操作数据与用于提供商业智能 (BI) 的分析数据，以帮助确定符合你需求的技术。
  - 关系技术的简要概述。
  - 每种 Azure NoSQL 技术的简介：DocumentDB、表存储、HBase 和 HDInsight。
- - NoSQL 技术与 Azure SQL 数据库的比较。 
- - 何时使用 DocumentDB、表存储、HBase、HDInsight 与 SQL 数据库。
+ - NoSQL 技术与 Azure SQL 数据库的比较。
+ - 何时使用 Azure DocumentDB、表存储、HBase、HDInsight 与 SQL 数据库。
 
 
  
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0815_2016-->

@@ -10,14 +10,14 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="02/16/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="05/13/2016" 
+	wacn.date=""/>  
 
 # DocumentDB SQL 备忘单 PDF
 
-**DocumentDB SQL 查询备忘单**通过在易于打印的 PDF 参考表中显示常见的查询、关键字、内置函数和运算符，有助于你编写用于 DocumentDB 数据的查询。
+**DocumentDB SQL 查询备忘单**通过在易于打印的 PDF 参考表中显示常见的数据库查询、关键字、内置函数和运算符，有助于你编写用于 DocumentDB 数据的查询。
 
-DocumentDB 支持使用 [SQL](/documentation/articles/documentdb-sql-query/) 语言对JSON文档进行相关性查询、分层查询和空间查询，而不要求JSON文档有特定的格式或指定辅助索引。除标准的 ANSI SQL 关键字和运算符之外，DocumentDB 还支持 JavaScript 用户定义的函数 (UDF)、JavaScript 运算符和大量内置函数。
+DocumentDB 支持使用 [SQL](/documentation/articles/documentdb-sql-query/) 的 JSON 文档的相关性查询、分层查询和空间查询，而无需指定一个架构或辅助索引。除标准的 ANSI SQL 关键字和运算符之外，DocumentDB 还支持 JavaScript 用户定义的函数 (UDF)、JavaScript 运算符和大量内置函数。
 
 ## 下载 DocumentDB SQL 查询备忘单 PDF
 
@@ -35,5 +35,4 @@ DocumentDB 支持使用 [SQL](/documentation/articles/documentdb-sql-query/) 语
 - 有关 DocumentDB 中可用的查询选项的演练操作，请参阅 [DocumentDB 查询](/documentation/articles/documentdb-sql-query/)。
 - 有关参考文档的相关信息，请参阅 [DocumentDB SQL 查询语言](https://msdn.microsoft.com/library/azure/dn782250.aspx)。
 
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0815_2016-->

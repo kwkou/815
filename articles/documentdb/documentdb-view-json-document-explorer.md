@@ -1,6 +1,6 @@
 <properties
-	pageTitle="DocumentDB 文档资源管理器（用于查看 JSON）| Azure"
-	description="DocumentDB 文档资源管理器是一个 Azure 门户预览工具，使用 NoSQL 文档数据库 DocumentDB 查看 JSON、编辑、创建和上传 JSON 文档。"
+	pageTitle="用于查看 JSON 的 DocumentDB 文档资源管理器 | Azure"
+	description="DocumentDB 文档资源管理器是一个 Azure 门户工具，使用 NoSQL 文档数据库 DocumentDB 查看 JSON、编辑、创建和上传 JSON 文档。"
     keywords="查看 JSON"
 	services="documentdb"
 	authors="AndrewHoh"
@@ -10,16 +10,18 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="03/30/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="06/28/2016"
+	wacn.date="08/23/2016"/>
 
 # 使用 DocumentDB 文档资源管理器查看、编辑、创建和上传 JSON 文档
 
-本文概述了 [Azure DocumentDB](/documentation/services/documentdb/) 文档资源管理器，这是一个 Azure 门户预览工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
+本文概述了 [Azure DocumentDB](/documentation/services/documentdb/) 文档资源管理器，这是一个 Azure 新门户工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
+
+请注意，具有 MongoDB 协议支持的 DocumentDB 帐户未启用文档资源管理器。启用此功能后，此页将会更新。
 
 ## 启动文档资源管理器
 
-1. 在 Azure 门户预览的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
+1. 在 Azure 门户的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
 
 2. 在“DocumentDB 帐户”边栏选项卡的顶部，单击“文档资源管理器”。
  
@@ -100,7 +102,8 @@
 
 	![文档资源管理器“设置”边栏选项卡的屏幕截图](./media/documentdb-view-JSON-document-explorer/documentexplorerfiltersettings2.png)
 
-	文档资源管理器将自动刷新与筛选查询匹配的文档结果。阅读关于 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query/)一文中的 DocumentDB SQL 语法信息或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet/)的副本。
+
+	文档资源管理器将自动刷新与筛选查询匹配的文档结果。在 [SQL query and SQL syntax（SQL 查询和 SQL 语法）](/documentation/articles/documentdb-sql-query/)一文中阅读有关 DocumentDB SQL 语法的信息，或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet/)的副本。
 
     可使用“数据库”和“集合”下拉列表框轻松更改当前查看其中文档的集合，而无需关闭并重新启动文档资源管理器。
 
@@ -142,9 +145,9 @@
 
 4. 操作完成后，你可以选择另外最多 100 个文档进行上传。
 
-## 在门户预览外使用 JSON 文档
+## 在门户外使用 JSON 文档
 
-Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。你还可以通过 [REST API](https://msdn.microsoft.com/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 使用文档。有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples/#document-examples)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples/#document-examples)。
+Azure 门户中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。你也可以通过 [REST API](https://msdn.microsoft.com/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 来处理文档。有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples/#document-examples)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples/#document-examples)。
 
 如果需要从其他源（JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB 或 HBase）导入或迁移文件，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data/)将数据快速导入到 DocumentDB。
 
@@ -152,4 +155,4 @@ Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文�
 
 有关文档资源管理器中支持的 DocumentDB SQL 语法的详细信息，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query/)一文或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet/)。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0815_2016-->
