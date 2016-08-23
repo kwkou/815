@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="cache"
-   ms.date="04/27/2016"
-	wacn.date="06/29/2016"/>
+   ms.date="07/12/2016"
+	wacn.date="08/23/2016"/>
 
 # Azure Redis 缓存的 ASP.NET 会话状态提供程序
 

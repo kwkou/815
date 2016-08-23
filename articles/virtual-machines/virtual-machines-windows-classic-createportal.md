@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/29/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="07/06/2016"
+	wacn.date="08/23/2016"/>
 
 	
 # 创建运行 Windows 的自定义虚拟机

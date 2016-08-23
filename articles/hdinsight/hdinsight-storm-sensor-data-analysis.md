@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/07/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/23/2016"/>
 
 # 使用 Apache Storm、事件中心和 HDInsight 中的 HBase (Hadoop) 分析传感器数据
 

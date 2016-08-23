@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="05/04/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/23/2016"/>
 
 
 # 使用 WebMatrix 构建 Node.js Web 应用并将其部署到 Azure

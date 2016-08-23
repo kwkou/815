@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="04/08/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/23/2016"/>
 
 # 在 Azure 中创建 Node.js Web 应用
 

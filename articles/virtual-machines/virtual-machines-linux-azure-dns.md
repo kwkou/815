@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="03/11/2016"
-	wacn.date="05/12/2016"/>
+	ms.date="06/21/2016"
+	wacn.date="08/23/2016"/>
 
 # Azure 中 Linux VM 的 DNS 名称解析选项
 

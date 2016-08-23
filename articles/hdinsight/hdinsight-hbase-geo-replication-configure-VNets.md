@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="03/04/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/28/2016"
+	wacn.date="08/23/2016"/>
 
 # 在两个 Azure 虚拟网络之间配置 VPN 连接  
 

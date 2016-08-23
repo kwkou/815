@@ -9,8 +9,8 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/18/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="07/14/2016"
+	wacn.date="08/23/2016"/>
 
 # 在 Azure 虚拟机（经典）中对 SQL Server 进行自动备份
 
