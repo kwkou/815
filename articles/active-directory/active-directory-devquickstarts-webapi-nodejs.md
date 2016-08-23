@@ -260,18 +260,18 @@ Javascript
 
 Javascript
 
-		 exports.creds = {
-		     mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
-		     clientID: 'your client ID',
-		     audience: 'your application URL',
-		    // you cannot have users from multiple tenants sign in to your server unless you use the common endpoint
-		  // example: https://login.microsoftonline.com/common/.well-known/openid-configuration
-		     identityMetadata: 'https://login.microsoftonline.com/<your client id>/.well-known/openid-configuration', 
-		     validateIssuer: true, // if you have validation on, you cannot have users from multiple tenants sign in to your server
-		     passReqToCallback: false,
-		     loggingLevel: 'info' // valid are 'info', 'warn', 'error'. Error always goes to stderr in Unix.
-		
-		 };
+	 exports.creds = {
+	     mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
+	     clientID: 'your client ID',
+	     audience: 'your application URL',
+	    // you cannot have users from multiple tenants sign in to your server unless you use the common endpoint
+	  // example: https://login.microsoftonline.com/common/.well-known/openid-configuration
+	     identityMetadata: 'https://login.microsoftonline.com/<your tenant id>/.well-known/openid-configuration', 
+	     validateIssuer: true, // if you have validation on, you cannot have users from multiple tenants sign in to your server
+	     passReqToCallback: false,
+	     loggingLevel: 'info' // valid are 'info', 'warn', 'error'. Error always goes to stderr in Unix.
+
+	 };
 
 
 
@@ -289,50 +289,50 @@ Javascript
 
 Javascript
 
-		var config = require('./config');
+	var config = require('./config');
 
 然后，在 `server.js` 中替换包含以下代码的新节：
 
 Javascript
 
-		var options = {
-		    // The URL of the metadata document for your app. We will put the keys for token validation from the URL found in the jwks_uri tag of the in the metadata.
-		    identityMetadata: config.creds.identityMetadata,
-		    clientID: config.creds.clientID,
-		    validateIssuer: config.creds.validateIssuer,
-		    audience: config.creds.audience,
-		    passReqToCallback: config.creds.passReqToCallback,
-		    loggingLevel: config.creds.loggingLevel
-		
-		};
-		
-		// array to hold logged in users and the current logged in user (owner)
-		var users = [];
-		var owner = null;
-		
-		// Our logger
-		var log = bunyan.createLogger({
-		    name: 'Azure Active Directory Bearer Sample',
-		         streams: [
-		        {
-		            stream: process.stderr,
-		            level: "error",
-		            name: "error"
-		        }, 
-		        {
-		            stream: process.stdout,
-		            level: "warn",
-		            name: "console"
-		        }, ]
-		});
-		
-		  // if logging level specified, switch to it.
-		  if (config.creds.loggingLevel) { log.levels("console", config.creds.loggingLevel); }
-		
-		// MongoDB setup
-		// Setup some configuration
-		var serverPort = process.env.PORT || 8080;
-		var serverURI = (process.env.PORT) ? config.creds.mongoose_auth_mongohq : config.creds.mongoose_auth_local;
+	var options = {
+	    // The URL of the metadata document for your app. We will put the keys for token validation from the URL found in the jwks_uri tag of the in the metadata.
+	    identityMetadata: config.creds.identityMetadata,
+	    clientID: config.creds.clientID,
+	    validateIssuer: config.creds.validateIssuer,
+	    audience: config.creds.audience,
+	    passReqToCallback: config.creds.passReqToCallback,
+	    loggingLevel: config.creds.loggingLevel
+
+	};
+
+	// array to hold logged in users and the current logged in user (owner)
+	var users = [];
+	var owner = null;
+
+	// Our logger
+	var log = bunyan.createLogger({
+	    name: 'Azure Active Directory Bearer Sample',
+	         streams: [
+	        {
+	            stream: process.stderr,
+	            level: "error",
+	            name: "error"
+	        }, 
+	        {
+	            stream: process.stdout,
+	            level: "warn",
+	            name: "console"
+	        }, ]
+	});
+
+	  // if logging level specified, switch to it.
+	  if (config.creds.loggingLevel) { log.levels("console", config.creds.loggingLevel); }
+
+	// MongoDB setup
+	// Setup some configuration
+	var serverPort = process.env.PORT || 8080;
+	var serverURI = (process.env.PORT) ? config.creds.mongoose_auth_mongohq : config.creds.mongoose_auth_local;
 
 
 保存文件。
@@ -372,22 +372,22 @@ COMPLETED - 任务是否已完成。一个**布尔值**
 
 Javascript
 		
-		// Connect to MongoDB
-		global.db = mongoose.connect(serverURI);
-		var Schema = mongoose.Schema;
-		log.info('MongoDB Schema loaded');
-		
-		// Here we create a schema to store our tasks and users. Pretty simple schema for now.
-		var TaskSchema = new Schema({
-		    owner: String,
-		    task: String,
-		    completed: Boolean,
-		    date: Date
-		});
-		
-		// Use the schema to register a model
-		mongoose.model('Task', TaskSchema);
-		var Task = mongoose.model('Task');
+	// Connect to MongoDB
+	global.db = mongoose.connect(serverURI);
+	var Schema = mongoose.Schema;
+	log.info('MongoDB Schema loaded');
+
+	// Here we create a schema to store our tasks and users. Pretty simple schema for now.
+	var TaskSchema = new Schema({
+	    owner: String,
+	    task: String,
+	    completed: Boolean,
+	    date: Date
+	});
+
+	// Use the schema to register a model
+	mongoose.model('Task', TaskSchema);
+	var Task = mongoose.model('Task');
 
 从该代码中可以看到，我们将会创建架构，然后创建在定义**路由**时，将在整个代码中用于存储数据的模型对象。
 
@@ -402,21 +402,21 @@ Restify 中路由的工作原理，与使用 Express 堆栈时的路由工作原
 Restify 路由的典型模式是：
 
 Javascript
-		
-		function createObject(req, res, next) {
-		
-		// do work on Object
-		
-		 _object.name = req.params.object; // passed value is in req.params under object
-		
-		 ///...
-		
-		return next(); // keep the server going
-		}
-		
-		....
-		
-		server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
+
+	function createObject(req, res, next) {
+
+	// do work on Object
+
+	 _object.name = req.params.object; // passed value is in req.params under object
+
+	 ///...
+
+	return next(); // keep the server going
+	}
+
+	....
+
+	server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
 
 
 
@@ -434,189 +434,189 @@ Javascript
 在偏好的编辑器中打开 `server.js` 文件，并在前面创建的数据库条目下面添加以下信息：
 
 Javascript
-		
-		/**
-		 *
-		 * APIs for our REST Task server
-		 */
-		
-		// Create a task
-		
-		function createTask(req, res, next) {
-		
-		    // Resitify currently has a bug which doesn't allow you to set default headers
-		    // This headers comply with CORS and allow us to mongodbServer our response to any origin
-		
-		    res.header("Access-Control-Allow-Origin", "*");
-		    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-		
-		    // Create a new task model, fill it up and save it to Mongodb
-		    var _task = new Task();
-		
-		    if (!req.params.task) {
-		        req.log.warn('createTodo: missing task');
-		        next(new MissingTaskError());
-		        return;
-		    }
-		
-		    _task.owner = owner;
-		    _task.task = req.params.task;
-		    _task.date = new Date();
-		
-		    _task.save(function(err) {
-		        if (err) {
-		            req.log.warn(err, 'createTask: unable to save');
-		            next(err);
-		        } else {
-		            res.send(201, _task);
-		
-		        }
-		    });
-		
-		    return next();
-		
-		}
-		
-		
-		// Delete a task by name
-		
-		function removeTask(req, res, next) {
-		
-		    Task.remove({
-		        task: req.params.task,
-		        owner: owner
-		    }, function(err) {
-		        if (err) {
-		            req.log.warn(err,
-		                'removeTask: unable to delete %s',
-		                req.params.task);
-		            next(err);
-		        } else {
-		            log.info('Deleted task:', req.params.task);
-		            res.send(204);
-		            next();
-		        }
-		    });
-		}
-		
-		// Delete all tasks
-		
-		function removeAll(req, res, next) {
-		    Task.remove();
-		    res.send(204);
-		    return next();
-		}
-		
-		
-		// Get a specific task based on name
-		
-		function getTask(req, res, next) {
-		
-		    log.info('getTask was called for: ', owner);
-		    Task.find({
-		        owner: owner
-		    }, function(err, data) {
-		        if (err) {
-		            req.log.warn(err, 'get: unable to read %s', owner);
-		            next(err);
-		            return;
-		        }
-		
-		        res.json(data);
-		    });
-		
-		    return next();
-		}
-		
-		/// Simple returns the list of TODOs that were loaded.
-		
-		function listTasks(req, res, next) {
-		    // Resitify currently has a bug which doesn't allow you to set default headers
-		    // This headers comply with CORS and allow us to mongodbServer our response to any origin
-		
-		    res.header("Access-Control-Allow-Origin", "*");
-		    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-		
-		    log.info("listTasks was called for: ", owner);
-		
-		    Task.find({
-		        owner: owner
-		    }).limit(20).sort('date').exec(function(err, data) {
-		
-		        if (err) {
-		            return next(err);
-		        }
-		
-		        if (data.length > 0) {
-		            log.info(data);
-		        }
-		
-		        if (!data.length) {
-		            log.warn(err, "There is no tasks in the database. Did you initalize the database as stated in the README?");
-		        }
-		
-		        if (!owner) {
-		            log.warn(err, "You did not pass an owner when listing tasks.");
-		        } else {
-		
-		            res.json(data);
-		
-		        }
-		    });
-		
-		    return next();
-		}
+
+	/**
+	 *
+	 * APIs for our REST Task server
+	 */
+
+	// Create a task
+
+	function createTask(req, res, next) {
+
+	    // Resitify currently has a bug which doesn't allow you to set default headers
+	    // This headers comply with CORS and allow us to mongodbServer our response to any origin
+
+	    res.header("Access-Control-Allow-Origin", "*");
+	    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+	    // Create a new task model, fill it up and save it to Mongodb
+	    var _task = new Task();
+
+	    if (!req.params.task) {
+	        req.log.warn('createTodo: missing task');
+	        next(new MissingTaskError());
+	        return;
+	    }
+
+	    _task.owner = owner;
+	    _task.task = req.params.task;
+	    _task.date = new Date();
+
+	    _task.save(function(err) {
+	        if (err) {
+	            req.log.warn(err, 'createTask: unable to save');
+	            next(err);
+	        } else {
+	            res.send(201, _task);
+
+	        }
+	    });
+
+	    return next();
+
+	}
+
+
+	// Delete a task by name
+
+	function removeTask(req, res, next) {
+
+	    Task.remove({
+	        task: req.params.task,
+	        owner: owner
+	    }, function(err) {
+	        if (err) {
+	            req.log.warn(err,
+	                'removeTask: unable to delete %s',
+	                req.params.task);
+	            next(err);
+	        } else {
+	            log.info('Deleted task:', req.params.task);
+	            res.send(204);
+	            next();
+	        }
+	    });
+	}
+
+	// Delete all tasks
+
+	function removeAll(req, res, next) {
+	    Task.remove();
+	    res.send(204);
+	    return next();
+	}
+
+
+	// Get a specific task based on name
+
+	function getTask(req, res, next) {
+
+	    log.info('getTask was called for: ', owner);
+	    Task.find({
+	        owner: owner
+	    }, function(err, data) {
+	        if (err) {
+	            req.log.warn(err, 'get: unable to read %s', owner);
+	            next(err);
+	            return;
+	        }
+
+	        res.json(data);
+	    });
+
+	    return next();
+	}
+
+	/// Simple returns the list of TODOs that were loaded.
+
+	function listTasks(req, res, next) {
+	    // Resitify currently has a bug which doesn't allow you to set default headers
+	    // This headers comply with CORS and allow us to mongodbServer our response to any origin
+
+	    res.header("Access-Control-Allow-Origin", "*");
+	    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+	    log.info("listTasks was called for: ", owner);
+
+	    Task.find({
+	        owner: owner
+	    }).limit(20).sort('date').exec(function(err, data) {
+
+	        if (err) {
+	            return next(err);
+	        }
+
+	        if (data.length > 0) {
+	            log.info(data);
+	        }
+
+	        if (!data.length) {
+	            log.warn(err, "There is no tasks in the database. Did you initalize the database as stated in the README?");
+	        }
+
+	        if (!owner) {
+	            log.warn(err, "You did not pass an owner when listing tasks.");
+	        } else {
+
+	            res.json(data);
+
+	        }
+	    });
+
+	    return next();
+	}
 
 
 
 ### 2\.接下来，让我们在 API 中添加一些错误处理方式：
 
 		
-		
-		///--- Errors for communicating something interesting back to the client
-		
-		function MissingTaskError() {
-		    restify.RestError.call(this, {
-		        statusCode: 409,
-		        restCode: 'MissingTask',
-		        message: '"task" is a required parameter',
-		        constructorOpt: MissingTaskError
-		    });
-		
-		    this.name = 'MissingTaskError';
-		}
-		util.inherits(MissingTaskError, restify.RestError);
-		
-		
-		function TaskExistsError(owner) {
-		    assert.string(owner, 'owner');
-		
-		    restify.RestError.call(this, {
-		        statusCode: 409,
-		        restCode: 'TaskExists',
-		        message: owner + ' already exists',
-		        constructorOpt: TaskExistsError
-		    });
-		
-		    this.name = 'TaskExistsError';
-		}
-		util.inherits(TaskExistsError, restify.RestError);
-		
-		
-		function TaskNotFoundError(owner) {
-		    assert.string(owner, 'owner');
-		
-		    restify.RestError.call(this, {
-		        statusCode: 404,
-		        restCode: 'TaskNotFound',
-		        message: owner + ' was not found',
-		        constructorOpt: TaskNotFoundError
-		    });
-		
-		    this.name = 'TaskNotFoundError';
-		}
-		
-		util.inherits(TaskNotFoundError, restify.RestError);
+
+	///--- Errors for communicating something interesting back to the client
+
+	function MissingTaskError() {
+	    restify.RestError.call(this, {
+	        statusCode: 409,
+	        restCode: 'MissingTask',
+	        message: '"task" is a required parameter',
+	        constructorOpt: MissingTaskError
+	    });
+
+	    this.name = 'MissingTaskError';
+	}
+	util.inherits(MissingTaskError, restify.RestError);
+
+
+	function TaskExistsError(owner) {
+	    assert.string(owner, 'owner');
+
+	    restify.RestError.call(this, {
+	        statusCode: 409,
+	        restCode: 'TaskExists',
+	        message: owner + ' already exists',
+	        constructorOpt: TaskExistsError
+	    });
+
+	    this.name = 'TaskExistsError';
+	}
+	util.inherits(TaskExistsError, restify.RestError);
+
+
+	function TaskNotFoundError(owner) {
+	    assert.string(owner, 'owner');
+
+	    restify.RestError.call(this, {
+	        statusCode: 404,
+	        restCode: 'TaskNotFound',
+	        message: owner + ' was not found',
+	        constructorOpt: TaskNotFoundError
+	    });
+
+	    this.name = 'TaskNotFoundError';
+	}
+
+	util.inherits(TaskNotFoundError, restify.RestError);
 
 
 
@@ -628,96 +628,96 @@ Restify（和 Express）允许你对 REST API 执行大量的深度自定义，�
 
 Javascript
 		
-		/**
-		 * Our Server
-		 */
-		
-		
-		var server = restify.createServer({
-		    name: "Azure Active Directroy TODO Server",
-		    version: "2.0.1"
-		});
-		
-		// Ensure we don't drop data on uploads
-		server.pre(restify.pre.pause());
-		
-		// Clean up sloppy paths like //todo//////1//
-		server.pre(restify.pre.sanitizePath());
-		
-		// Handles annoying user agents (curl)
-		server.pre(restify.pre.userAgentConnection());
-		
-		// Set a per request bunyan logger (with requestid filled in)
-		server.use(restify.requestLogger());
-		
-		// Allow 5 requests/second by IP, and burst to 10
-		server.use(restify.throttle({
-		    burst: 10,
-		    rate: 5,
-		    ip: true,
-		}));
-		
-		// Use the common stuff you probably want
-		server.use(restify.acceptParser(server.acceptable));
-		server.use(restify.dateParser());
-		server.use(restify.queryParser());
-		server.use(restify.gzipResponse());
-		server.use(restify.bodyParser({
-		    mapParams: true
-		})); // Allows for JSON mapping to REST
+	/**
+	 * Our Server
+	 */
+
+
+	var server = restify.createServer({
+	    name: "Azure Active Directroy TODO Server",
+	    version: "2.0.1"
+	});
+
+	// Ensure we don't drop data on uploads
+	server.pre(restify.pre.pause());
+
+	// Clean up sloppy paths like //todo//////1//
+	server.pre(restify.pre.sanitizePath());
+
+	// Handles annoying user agents (curl)
+	server.pre(restify.pre.userAgentConnection());
+
+	// Set a per request bunyan logger (with requestid filled in)
+	server.use(restify.requestLogger());
+
+	// Allow 5 requests/second by IP, and burst to 10
+	server.use(restify.throttle({
+	    burst: 10,
+	    rate: 5,
+	    ip: true,
+	}));
+
+	// Use the common stuff you probably want
+	server.use(restify.acceptParser(server.acceptable));
+	server.use(restify.dateParser());
+	server.use(restify.queryParser());
+	server.use(restify.gzipResponse());
+	server.use(restify.bodyParser({
+	    mapParams: true
+	})); // Allows for JSON mapping to REST
 
 
 ## 16\.将路由添加到服务器（目前不包括身份验证）
 
 Javascript
 		
-		/// Now the real handlers. Here we just CRUD
-		/**
-		/*
-		/* Each of these handlers are protected by our OIDCBearerStrategy by invoking 'oidc-bearer'
-		/* in the pasport.authenticate() method. We set 'session: false' as REST is stateless and
-		/* we don't need to maintain session state. You can experiement removing API protection
-		/* by removing the passport.authenticate() method like so:
-		/*
-		/* server.get('/tasks', listTasks);
-		/*
-		**/
-		server.get('/tasks', listTasks);
-		server.get('/tasks', listTasks);
-		server.get('/tasks/:owner', getTask);
-		server.head('/tasks/:owner', getTask);
-		server.post('/tasks/:owner/:task', createTask);
-		server.post('/tasks', createTask);
-		server.del('/tasks/:owner/:task', removeTask);
-		server.del('/tasks/:owner', removeTask);
-		server.del('/tasks', removeTask);
-		server.del('/tasks', removeAll, function respond(req, res, next) {
-		res.send(204);
-		next();
-		});
-		// Register a default '/' handler
-		server.get('/', function root(req, res, next) {
-		var routes = [
-		'GET /',
-		'POST /tasks/:owner/:task',
-		'POST /tasks (for JSON body)',
-		'GET /tasks',
-		'PUT /tasks/:owner',
-		'GET /tasks/:owner',
-		'DELETE /tasks/:owner/:task'
-		];
-		res.send(200, routes);
-		next();
-		});
-		server.listen(serverPort, function() {
-		var consoleMessage = '\n Microsoft Azure Active Directory Tutorial';
-		consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++';
-		consoleMessage += '\n %s server is listening at %s';
-		consoleMessage += '\n Open your browser to %s/tasks\n';
-		consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n';
-		consoleMessage += '\n !!! why not try a $curl -isS %s | json to get some ideas? \n';
-		consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n\n';
-		});
+	/// Now the real handlers. Here we just CRUD
+	/**
+	/*
+	/* Each of these handlers are protected by our OIDCBearerStrategy by invoking 'oidc-bearer'
+	/* in the pasport.authenticate() method. We set 'session: false' as REST is stateless and
+	/* we don't need to maintain session state. You can experiement removing API protection
+	/* by removing the passport.authenticate() method like so:
+	/*
+	/* server.get('/tasks', listTasks);
+	/*
+	**/
+	server.get('/tasks', listTasks);
+	server.get('/tasks', listTasks);
+	server.get('/tasks/:owner', getTask);
+	server.head('/tasks/:owner', getTask);
+	server.post('/tasks/:owner/:task', createTask);
+	server.post('/tasks', createTask);
+	server.del('/tasks/:owner/:task', removeTask);
+	server.del('/tasks/:owner', removeTask);
+	server.del('/tasks', removeTask);
+	server.del('/tasks', removeAll, function respond(req, res, next) {
+	res.send(204);
+	next();
+	});
+	// Register a default '/' handler
+	server.get('/', function root(req, res, next) {
+	var routes = [
+	'GET /',
+	'POST /tasks/:owner/:task',
+	'POST /tasks (for JSON body)',
+	'GET /tasks',
+	'PUT /tasks/:owner',
+	'GET /tasks/:owner',
+	'DELETE /tasks/:owner/:task'
+	];
+	res.send(200, routes);
+	next();
+	});
+	server.listen(serverPort, function() {
+	var consoleMessage = '\n Microsoft Azure Active Directory Tutorial';
+	consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++';
+	consoleMessage += '\n %s server is listening at %s';
+	consoleMessage += '\n Open your browser to %s/tasks\n';
+	consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n';
+	consoleMessage += '\n !!! why not try a $curl -isS %s | json to get some ideas? \n';
+	consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n\n';
+	});
 
 
 ## 17\.在添加 OAuth 支持之前，让我们先运行服务器。
@@ -742,21 +742,20 @@ Javascript
 `$ curl -isS http://127.0.0.1:8080 | json`
 
 Shell
-		
-		HTTP/1.1 200 OK
-		Connection: close
-		Content-Type: application/json
-		Content-Length: 171
-		Date: Tue, 14 Jul 2015 05:43:38 GMT
-		[
-		"GET /",
-		"POST /tasks/:owner/:task",
-		"POST /tasks (for JSON body)",
-		"GET /tasks",
-		"PUT /tasks/:owner",
-		"GET /tasks/:owner",
-		"DELETE /tasks/:owner/:task"
-		]
+	HTTP/1.1 200 OK
+	Connection: close
+	Content-Type: application/json
+	Content-Length: 171
+	Date: Tue, 14 Jul 2015 05:43:38 GMT
+	[
+	"GET /",
+	"POST /tasks/:owner/:task",
+	"POST /tasks (for JSON body)",
+	"GET /tasks",
+	"PUT /tasks/:owner",
+	"GET /tasks/:owner",
+	"DELETE /tasks/:owner/:task"
+	]
 
 
 然后，我们按如下所示添加一个任务：
@@ -767,14 +766,14 @@ Shell
 
 Shell
 		
-		HTTP/1.1 201 Created
-		Connection: close
-		Access-Control-Allow-Origin: *
-		Access-Control-Allow-Headers: X-Requested-With
-		Content-Type: application/x-www-form-urlencoded
-		Content-Length: 5
-		Date: Tue, 04 Feb 2014 01:02:26 GMT
-		Hello
+	HTTP/1.1 201 Created
+	Connection: close
+	Access-Control-Allow-Origin: *
+	Access-Control-Allow-Headers: X-Requested-With
+	Content-Type: application/x-www-form-urlencoded
+	Content-Length: 5
+	Date: Tue, 04 Feb 2014 01:02:26 GMT
+	Hello
 
 我们可以按如下所示列出 Brandon 的任务：
 
@@ -801,10 +800,10 @@ Shell
 
 Javascript
 		
-		// Let's start using Passport.js
-		
-		server.use(passport.initialize()); // Starts passport
-		server.use(passport.session()); // Provides session support
+	// Let's start using Passport.js
+
+	server.use(passport.initialize()); // Starts passport
+	server.use(passport.session()); // Provides session support
 
 
 > [AZURE.TIP]
@@ -813,51 +812,51 @@ Javascript
 接下来，我们将使用 passport-azure-ad 随附的 Bearer 策略。先看看下面的代码，稍后我将进行解释。将此代码放在上面粘贴的内容后面：
 
 Javascript
-		
-		/**
-		/*
-		/* Calling the OIDCBearerStrategy and managing users
-		/*
-		/* Passport pattern provides the need to manage users and info tokens
-		/* with a FindorCreate() method that must be provided by the implementor.
-		/* Here we just autoregister any user and implement a FindById().
-		/* You'll want to do something smarter.
-		**/
-		
-		var findById = function(id, fn) {
-		    for (var i = 0, len = users.length; i < len; i++) {
-		        var user = users[i];
-		        if (user.sub === id) {
-		            log.info('Found user: ', user);
-		            return fn(null, user);
-		        }
-		    }
-		    return fn(null, null);
-		};
-		
-		
-		var bearerStrategy = new BearerStrategy(options,
-		    function(token, done) {
-		        log.info('verifying the user');
-		        log.info(token, 'was the token retreived');
-		        findById(token.sub, function(err, user) {
-		            if (err) {
-		                return done(err);
-		            }
-		            if (!user) {
-		                // "Auto-registration"
-		                log.info('User was added automatically as they were new. Their sub is: ', token.sub);
-		                users.push(token);
-		                owner = token.sub;
-		                return done(null, token);
-		            }
-		            owner = token.sub;
-		            return done(null, user, token);
-		        });
-		    }
-		);
-		
-		passport.use(bearerStrategy);
+
+	/**
+	/*
+	/* Calling the OIDCBearerStrategy and managing users
+	/*
+	/* Passport pattern provides the need to manage users and info tokens
+	/* with a FindorCreate() method that must be provided by the implementor.
+	/* Here we just autoregister any user and implement a FindById().
+	/* You'll want to do something smarter.
+	**/
+
+	var findById = function(id, fn) {
+	    for (var i = 0, len = users.length; i < len; i++) {
+	        var user = users[i];
+	        if (user.sub === id) {
+	            log.info('Found user: ', user);
+	            return fn(null, user);
+	        }
+	    }
+	    return fn(null, null);
+	};
+
+
+	var bearerStrategy = new BearerStrategy(options,
+	    function(token, done) {
+	        log.info('verifying the user');
+	        log.info(token, 'was the token retreived');
+	        findById(token.sub, function(err, user) {
+	            if (err) {
+	                return done(err);
+	            }
+	            if (!user) {
+	                // "Auto-registration"
+	                log.info('User was added automatically as they were new. Their sub is: ', token.sub);
+	                users.push(token);
+	                owner = token.sub;
+	                return done(null, token);
+	            }
+	            owner = token.sub;
+	            return done(null, user, token);
+	        });
+	    }
+	);
+
+	passport.use(bearerStrategy);
 
 
 Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有策略写入器都依循类似的模式。查看该策略，你会发现，我们已将它作为 function() 来传递，其中包含一个令牌和一个用作参数的 done。策略完成所有工作之后，便尽责地返回。完成后，我们需要存储用户并隐藏令牌，因此不需要再次请求它。
@@ -872,40 +871,40 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 让我们在服务器代码编辑路由，以做一些更有趣的事：
 
 Javascript
-		
-		server.get('/tasks', passport.authenticate('oauth-bearer', {
-		session: false
-		}), listTasks);
-		server.get('/tasks', passport.authenticate('oauth-bearer', {
-		session: false
-		}), listTasks);
-		server.get('/tasks/:owner', passport.authenticate('oauth-bearer', {
-		session: false
-		}), getTask);
-		server.head('/tasks/:owner', passport.authenticate('oauth-bearer', {
-		session: false
-		}), getTask);
-		server.post('/tasks/:owner/:task', passport.authenticate('oauth-bearer', {
-		session: false
-		}), createTask);
-		server.post('/tasks', passport.authenticate('oauth-bearer', {
-		session: false
-		}), createTask);
-		server.del('/tasks/:owner/:task', passport.authenticate('oauth-bearer', {
-		session: false
-		}), removeTask);
-		server.del('/tasks/:owner', passport.authenticate('oauth-bearer', {
-		session: false
-		}), removeTask);
-		server.del('/tasks', passport.authenticate('oauth-bearer', {
-		session: false
-		}), removeTask);
-		server.del('/tasks', passport.authenticate('oauth-bearer', {
-		session: false
-		}), removeAll, function respond(req, res, next) {
-		res.send(204);
-		next();
-		});
+
+	server.get('/tasks', passport.authenticate('oauth-bearer', {
+	session: false
+	}), listTasks);
+	server.get('/tasks', passport.authenticate('oauth-bearer', {
+	session: false
+	}), listTasks);
+	server.get('/tasks/:owner', passport.authenticate('oauth-bearer', {
+	session: false
+	}), getTask);
+	server.head('/tasks/:owner', passport.authenticate('oauth-bearer', {
+	session: false
+	}), getTask);
+	server.post('/tasks/:owner/:task', passport.authenticate('oauth-bearer', {
+	session: false
+	}), createTask);
+	server.post('/tasks', passport.authenticate('oauth-bearer', {
+	session: false
+	}), createTask);
+	server.del('/tasks/:owner/:task', passport.authenticate('oauth-bearer', {
+	session: false
+	}), removeTask);
+	server.del('/tasks/:owner', passport.authenticate('oauth-bearer', {
+	session: false
+	}), removeTask);
+	server.del('/tasks', passport.authenticate('oauth-bearer', {
+	session: false
+	}), removeTask);
+	server.del('/tasks', passport.authenticate('oauth-bearer', {
+	session: false
+	}), removeAll, function respond(req, res, next) {
+	res.send(204);
+	next();
+	});
 
 
 ## 19\.再次运行服务器应用程序并确保它拒绝你
@@ -927,11 +926,11 @@ Javascript
 
 Shell
 		
-		HTTP/1.1 401 Unauthorized
-		Connection: close
-		WWW-Authenticate: Bearer realm="Users"
-		Date: Tue, 14 Jul 2015 05:45:03 GMT
-		Transfer-Encoding: chunked
+	HTTP/1.1 401 Unauthorized
+	Connection: close
+	WWW-Authenticate: Bearer realm="Users"
+	Date: Tue, 14 Jul 2015 05:45:03 GMT
+	Transfer-Encoding: chunked
 
 
 401 在这里是正常的响应，表明 Passport 层正在尝试重定向到授权终结点，这正是你所希望的。
@@ -953,4 +952,4 @@ Shell
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -53,8 +53,8 @@
 -	若要开始，请打开解决方案，然后使用 Package Manager Console 将 OWIN 中间件 NuGet 包添加到 TodoListService 项目。
 		
 		
-		PM> Install-Package Microsoft.Owin.Security.ActiveDirectory -ProjectName TodoListService
-		PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
+	PM> Install-Package Microsoft.Owin.Security.ActiveDirectory -ProjectName TodoListService
+	PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
 
 
 -	将名为 `Startup.cs` 的 OWIN 启动类添加到 TodoListService 项目。右键单击项目，选择“添加”-->“新建项”，然后搜索“OWIN”。当你的应用程序启动时，该 OWIN 中间件将调用 `Configuration(…)` 方法。
@@ -62,37 +62,37 @@
 
 C#
 		
-		public partial class Startup
-		{
-		    public void Configuration(IAppBuilder app)
-		    {
-		        ConfigureAuth(app);
-		    }
-		}
+	public partial class Startup
+	{
+	    public void Configuration(IAppBuilder app)
+	    {
+	        ConfigureAuth(app);
+	    }
+	}
 
 
 -	打开文件 `App_Start\Startup.Auth.cs` 并实现 `ConfigureAuth(…)` 方法。在 `WindowsAzureActiveDirectoryBearerAuthenticationOptions` 中提供的参数将充当应用程序与 Azure AD 通信时使用的坐标。
 
 C#
 		
-		public void ConfigureAuth(IAppBuilder app)
-		{
-		    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-		        new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-		        {
-		            Audience = ConfigurationManager.AppSettings["ida:Audience"],
-		            Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
-		        });
-		}
+	public void ConfigureAuth(IAppBuilder app)
+	{
+	    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+	        new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+	        {
+	            Audience = ConfigurationManager.AppSettings["ida:Audience"],
+	            Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
+	        });
+	}
 
 
 -	现在，你可以使用 `[Authorize]` 属性并结合 JWT 持有者身份验证来保护控制器和操作。使用 authorize 标记修饰 `Controllers\TodoListController.cs` 类。这会强制用户在访问该页面之前登录。
 
 C#
 		
-		[Authorize]
-		public class TodoListController : ApiController
-		{
+	[Authorize]
+	public class TodoListController : ApiController
+	{
 
 
 - 如果已授权的调用方成功调用了某个 `TodoListController` API，该操作可能需要访问有关调用方的信息。OWIN 通过 `ClaimsPrincpal` 对象提供对持有者令牌中的声明的访问。  
@@ -100,18 +100,18 @@ C#
 
 C#
 		
-		public IEnumerable<TodoItem> Get()
-		{
-		    // user_impersonation is the default permission exposed by applications in AAD
-		    if (ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value != "user_impersonation")
-		    {
-		        throw new HttpResponseException(new HttpResponseMessage {
-		          StatusCode = HttpStatusCode.Unauthorized,
-		          ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found"
-		        });
-		    }
-		    ...
-		}
+	public IEnumerable<TodoItem> Get()
+	{
+	    // user_impersonation is the default permission exposed by applications in AAD
+	    if (ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value != "user_impersonation")
+	    {
+	        throw new HttpResponseException(new HttpResponseMessage {
+	          StatusCode = HttpStatusCode.Unauthorized,
+	          ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found"
+	        });
+	    }
+	    ...
+	}
 
 
 -	最后，打开位于 TodoListService 项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入你的配置值。

@@ -124,7 +124,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 - 单租户应用程序：单租户应用程序预定在单个组织中使用。它们通常是由企业开发人员编写的业务线 (LoB) 应用程序。单租户应用程序只需要供单个目录中的用户进行访问，因此，只需要将其设置在单个目录中。这些应用程序通常由组织中的开发人员进行注册。
 
 
-- 多租户应用程序：多租户应用程序预定在许多组织中使用，而不仅是在单个组织中使用。它们通常是由独立软件供应商 (ISV) 编写的软件即服务 (SaaS) 应用程序。多租户应用程序需要设置在将使用它们的每个目录中，需要经过用户或管理员许可才能注册它们。当在目录中注册应用程序并向其授予对 Graph API 或者另一可能的 Web API 的访问权限时，此许可过程即已开始。当其他组织的用户或管理员注册使用应用程序时，会向他们显示一个对话框，其中显示了应用程序要求的权限。然后，用户或管理员可以许可应用程序的要求，这将向应用程序授予对指定数据的访问权限，并最终在其目录中注册该应用程序。
+- 多租户应用程序：多租户应用程序预定在许多组织中使用，而不仅是在单个组织中使用。它们通常是由独立软件供应商 (ISV) 编写的软件即服务 (SaaS) 应用程序。多租户应用程序需要设置在将使用它们的每个目录中，需要经过用户或管理员许可才能注册它们。当在目录中注册应用程序并向其授予对 Graph API 或者另一可能的 Web API 的访问权限时，此许可过程即已开始。当其他组织的用户或管理员注册使用应用程序时，会向他们显示一个对话框，其中显示了应用程序要求的权限。然后，用户或管理员可以许可应用程序的要求，这将向应用程序授予对指定数据的访问权限，并最终在其目录中注册该应用程序。有关详细信息，请参阅[许可框架概述](/documentation/articles/active-directory-integrating-applications/#overview-of-the-consent-framework)。
 
 与开发单租户应用程序相比，当开发多租户应用程序时，会出现一些额外的注意事项。例如，如果要使你的应用程序可供多个目录中的用户使用，你需要一种机制来确定用户在哪个租户中。单租户应用程序只需要在其自己的目录中查找用户，而多租户应用程序需要从 Azure AD 中的所有目录来识别特定用户。为此，Azure AD 提供了一个任何多租户应用程序都可以在其中对登录请求进行定向的通用身份验证终结点，而不是提供特定于租户的终结点。对于 Azure AD 中的所有目录，该终结点都是 https://login.chinacloudapi.cn/common ，而特定于租户的终结点可能是 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn 。在开发应用程序时考虑通用终结点尤为重要，因为在登录、注销和令牌验证期间你将需要必要的逻辑来处理多租户。
 
@@ -134,7 +134,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 ## <a name="application-types-and-scenarios"></a>应用程序类型和方案
 
-本文档所述的每个方案都可以使用各种语言和平台进行开发，并且 [GitHub 上提供了每个方案的完整代码示例](https://github.com/AzureAD)。此外，如果你的应用程序需要某个端到端方案的特定片段，在大多数情况下都可以独立添加该功能。例如，如果你有一个调用某个 Web API 的本机应用程序，则你可以轻松添加也调用该 Web API 的网站。下面的图示介绍了这些方案和应用程序类型，以及可以如何添加各种组件：
+本文档中所述的每个方案可以使用各种语言和平台进行开发。它们都由完整代码示例提供支持（在我们的[代码示例指南](/documentation/articles/active-directory-code-samples/)中提供的，也可以直接从对应的 [Github 示例存储库](https://github.com/Azure-Samples?utf8=%E2%9C%93&query=active-directory)中获取）。此外，如果你的应用程序需要某个端到端方案的特定片段，在大多数情况下都可以独立添加该功能。例如，如果你有一个调用某个 Web API 的本机应用程序，则你可以轻松添加也调用该 Web API 的 Web 应用程序。下面的图示介绍了这些方案和应用程序类型，以及可以如何添加各种组件：
 
 ![应用程序类型和方案](./media/active-directory-authentication-scenarios/application_types_and_scenarios.png)
 
@@ -199,9 +199,9 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 ### <a name="single-page-application-spa"></a>单页面应用程序 (SPA)
 
 
-本部分介绍使用 Azure AD 来保护其 Web API 后端的单页面应用程序的身份验证。通常将单页面应用程序构建为一个 JavaScript 表示层（前端），该表示层不仅在浏览器中运行，还在一个在服务器上运行并实现应用程序业务逻辑的 Web API 中运行。在此方案中，当用户登录时，JavaScript 前端使用 [JavaScript (ADAL.JS) 的 Active Directory 身份验证库](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev)预览版和 OAuth 2.0 隐式授权协议从 Azure AD 获取一个 ID 令牌 (id\_token)。该令牌随后被缓存，当客户端调用使用 OWIN 中间件进行保护的 Web API 后端时，客户端将该令牌作为持有者令牌附加到请求。
+本部分介绍使用 Azure AD 和 OAuth 2.0 隐式授权授予来保护其 Web API 后端的单页面应用程序的身份验证。通常将单页面应用程序构建为一个 JavaScript 表示层（前端），该表示层不仅在浏览器中运行，还在一个在服务器上运行并实现应用程序业务逻辑的 Web API 中运行。若要了解有关隐式授权授予的详细信息，并帮助你决定它是否适合于你的应用程序方案，请参阅[了解 Azure Active Directory 中的 OAuth2 隐式授予流](active-directory-dev-understanding-oauth2-implicit-grant.md)。
 
-
+在此方案中，当用户登录时，JavaScript 前端使用 [JavaScript (ADAL.JS) 的 Active Directory 身份验证库](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev)和隐式授权授予从 Azure AD 获取一个 ID 令牌 (id\_token)。该令牌随后被缓存，当客户端调用使用 OWIN 中间件进行保护的 Web API 后端时，客户端将该令牌作为持有者令牌附加到请求。
 #### 图表
 
 ![单页面应用程序图示](./media/active-directory-authentication-scenarios/single_page_app.png)
@@ -314,7 +314,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 
 
-### <a name="web-application-to-web-api"></a> Web 应用到 Web API
+### <a name="web-application-to-web-api"></a> Web 应用程序到 Web API
 
 本部分介绍了需要从 Web API 获取资源的 Web 应用程序。在此方案中，Web 应用程序可以使用两种标识类型进行身份验证并调用 Web API：应用程序标识或委托用户标识。
 
@@ -382,7 +382,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 #### 代码示例
 
-请参阅 Web 应用到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](/documentation/articles/active-directory-code-samples/#web-application-to-web-api)。
+请参阅 Web 应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](/documentation/articles/active-directory-code-samples/#web-application-to-web-api)。
 
 
 #### 注册
@@ -463,4 +463,4 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

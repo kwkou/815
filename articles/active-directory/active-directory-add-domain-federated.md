@@ -40,7 +40,7 @@
 
 2. 通过添加 Azure AD 提供给你的 DNS 条目来更新域的 DNS 区域文件。此 DNS 条目可让 Azure AD 验证你是否拥有该域。DNS 条目不会更改任何行为，例如邮件路由或 Web 托管。
 
-有关此步骤的帮助，请阅读 [Instructions for adding a DNS entry at popular DNS registrars（有关在常见 DNS 注册机构中添加 DNS 条目的说明）](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)
+有关此步骤的帮助，请阅读 [Instructions for adding a DNS entry at popular DNS registrars](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)（有关在常见 DNS 注册机构中添加 DNS 条目的说明）
 
 ## 使用 Azure AD 验证域名
 
@@ -71,4 +71,4 @@
 -   [在用户登录时显示公司的品牌](/documentation/articles/active-directory-add-company-branding/)
 -   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -10,7 +10,8 @@
 <tags
 	ms.service="active-directory"
 	ms.date="03/18/2016"
-	wacn.date="07/04/2016"/>
+	wacn.date="08/22/2016"/>
+	
 # 我是否应使用 v2.0 终结点？
 
 当你创建与 Azure Active Directory 集成的应用程序时，必须判断 v2.0 终结点和身份验证协议是否符合需求。原有的 Azure AD 应用模型依然完全受到支持，并且在某些方面比 v2.0 的功能更丰富。但是，v2.0 终结点为开发人员[带来了明显的优势](/documentation/articles/active-directory-v2-compare/)，使你更乐于使用新的编程模型。随着时间的推移，v2.0 将发展到包含所有 Azure AD 功能，到时你只需使用 v2.0 终结点即可。
@@ -51,6 +52,34 @@ v2.0 终结点目前不支持此流，也就是说，应用只能在发生交互
 
 在新的应用程序注册门户中注册的应用目前限制为一组有限的 redirect\_uri 值。Web 应用和服务的 redirect\_uri 必须以方案或 `https` 开头，而所有其他平台的 redirect\_uri 必须使用 `urn:ietf:oauth:2.0:oob` 的硬编码值。
 
+## 重定向 URI 的限制
+对于 Web 应用，redirect\_uri 值必须全部共享单个 DNS 域。例如，不能注册具有 redirect\_uris 的 Web 应用程序：
+
+`https://login-east.contoso.com`  
+`https://login-west.contoso.com`
+
+注册系统会将现有 redirect\_uri 的完整 DNS 名称与要添加的 redirect\_uri 的 DNS 名称相比较。如果新 redirect\_uri 的完整 DNS 名称与现有 redirect\_uri 的 DNS 名称不完全匹配，或者新 redirect\_uri 的完整 DNS 名称不是现有 redirect\_uri 的子域，则添加请求将失败。例如，如果应用当前拥有以下 redirect\_uri：
+
+`https://login.contoso.com`  
+
+
+则可以添加：
+
+`https://login.contoso.com/new`
+
+因为它与 DNS 名称完全匹配，或：
+
+`https://new.login.contoso.com`  
+
+
+因为它是 login.contoso.com 的 DNS 子域。如果你希望拥有使用 login-east.contoso.com 和 login-west.contoso.com 作为 redirect\_uris 的应用，则必须按顺序添加以下 redirect\_uris：
+
+`https://contoso.com`  
+`https://login-east.contoso.com`  
+`https://login-west.contoso.com`  
+
+可以添加后两个 redirect\_uri，因为它们是第一个 (contoso.com) 的子域。即将发布的版本中将取消此限制。
+
 若要了解如何在新的应用程序注册门户中注册应用，请参阅[此文](/documentation/articles/active-directory-v2-app-registration/)。
 
 ## 服务和 API 限制
@@ -85,7 +114,7 @@ v2.0 终结点仅支持 Open ID Connect 和 OAuth 2.0。但是，并非每个协
 - OpenID Connect `end_sesssion_endpoint`
 - OAuth 2.0 客户端凭据授权
 
-若要进一步了解 v2.0 终结点支持的协议功能范围，请阅读 [OpenID Connect & OAuth 2.0 Protocol Reference（OpenID Connect 和 OAuth 2.0 协议参考）](/documentation/articles/active-directory-v2-protocols/)。
+若要进一步了解 v2.0 终结点支持的协议功能范围，请阅读 [OpenID Connect 和 OAuth 2.0 协议参考](/documentation/articles/active-directory-v2-protocols)。
 
 ## 高级 Azure AD 开发人员功能
 Azure Active Directory 服务提供一组开发人员功能（v2.0 终结点尚不支持这些功能），包括：
@@ -93,4 +122,4 @@ Azure Active Directory 服务提供一组开发人员功能（v2.0 终结点尚�
 - Azure AD 用户的组声明
 - 应用程序角色和角色声明
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0815_2016-->

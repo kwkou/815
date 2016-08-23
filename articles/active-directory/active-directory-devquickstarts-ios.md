@@ -37,7 +37,7 @@
 
 重定向 URI 的 iOS 格式为：
 
-		<app-scheme>://<bundle-id>
+	<app-scheme>://<bundle-id>
 
 - 	**aap-scheme** - 已在 XCode 项目中注册。它是其他应用程序与你联系的方式。可以在 Info.plist -> URL types -> URL Identifier 下找到此信息。如果尚未配置一个或多个方案，则你应该创建一个。
 - 	**bundle-id** - 这是在 XCode 项目设置中“identity”下可找到的捆绑标识符。
@@ -62,24 +62,24 @@
 -	首先，使用 Cocapods 将 ADAL 添加到 DirectorySearcher 项目。
 
 
-		$ vi Podfile
+	$ vi Podfile
 
 将以下内容添加到 podfile：
 
 
-		source 'https://github.com/CocoaPods/Specs.git'
-		link_with ['QuickStart']
-		xcodeproj 'QuickStart'
-		
-		pod 'ADALiOS'
+	source 'https://github.com/CocoaPods/Specs.git'
+	link_with ['QuickStart']
+	xcodeproj 'QuickStart'
+
+	pod 'ADALiOS'
 
 
 现在，请使用 cocoapods 加载 podfile。这会创建你要加载的新 XCode 工作区。
 
 		
-		$ pod install
-		...
-		$ open QuickStart.xcworkspace
+	$ pod install
+	...
+	$ open QuickStart.xcworkspace
 
 
 -	在快速入门项目中，打开 plist 文件 `settings.plist`。替换节中的元素值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
@@ -135,73 +135,73 @@ ObjC
 - 现在，我们需要使用此令牌在图形中搜索用户。查找 `// TODO: implement SearchUsersList` 注释。此方法将向 Azure AD 图形 API 发出 GET 请求，以查询其 UPN 以给定搜索词开头的用户。但是，若要查询 Graph API，你需要在请求的 `Authorization` 标头中包含 access\_token - 这是 ADAL 传入的位置。
 
 ObjC
-	
-			+(void) searchUserList:(NSString*)searchString
-			                parent:(UIViewController*) parent
-			       completionBlock:(void (^) (NSMutableArray* Users, NSError* error)) completionBlock
-			{
-			    if (!loadedApplicationSettings)
-			    {
-			        [self readApplicationSettings];
-			    }
-			    
-			    AppData* data = [AppData getInstance];
-			    
-			    NSString *graphURL = [NSString stringWithFormat:@"%@%@/users?api-version=%@&$filter=startswith(userPrincipalName, '%@')", data.taskWebApiUrlString, data.tenant, data.apiversion, searchString];
-			
-			    
-			    [self craftRequest:[self.class trimString:graphURL]
-			                parent:parent
-			     completionHandler:^(NSMutableURLRequest *request, NSError *error) {
-			         
-			         if (error != nil)
-			         {
-			             completionBlock(nil, error);
-			         }
-			         else
-			         {
-			             
-			             NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-			             
-			             [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-			                 
-			                 if (error == nil && data != nil){
-			                     
-			                     NSDictionary *dataReturned = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-			                     
-			                     // We can grab the top most JSON node to get our graph data.
-			                     NSArray *graphDataArray = [dataReturned objectForKey:@"value"];
-			                     
-			                     // Don't be thrown off by the key name being "value". It really is the name of the
-			                     // first node. :-)
-			                     
-			                     //each object is a key value pair
-			                     NSDictionary *keyValuePairs;
-			                     NSMutableArray* Users = [[NSMutableArray alloc]init];
-			                     
-			                     for(int i =0; i < graphDataArray.count; i++)
-			                     {
-			                         keyValuePairs = [graphDataArray objectAtIndex:i];
-			                         
-			                         User *s = [[User alloc]init];
-			                         s.upn = [keyValuePairs valueForKey:@"userPrincipalName"];
-			                         s.name =[keyValuePairs valueForKey:@"givenName"];
-			                         
-			                         [Users addObject:s];
-			                     }
-			                     
-			                     completionBlock(Users, nil);
-			                 }
-			                 else
-			                 {
-			                     completionBlock(nil, error);
-			                 }
-			                 
-			             }];
-			         }
-			     }];
-			    
-			}
+
+	+(void) searchUserList:(NSString*)searchString
+	                parent:(UIViewController*) parent
+	       completionBlock:(void (^) (NSMutableArray* Users, NSError* error)) completionBlock
+	{
+	    if (!loadedApplicationSettings)
+	    {
+	        [self readApplicationSettings];
+	    }
+    
+	    AppData* data = [AppData getInstance];
+    
+	    NSString *graphURL = [NSString stringWithFormat:@"%@%@/users?api-version=%@&$filter=startswith(userPrincipalName, '%@')", data.taskWebApiUrlString, data.tenant, data.apiversion, searchString];
+
+    
+	    [self craftRequest:[self.class trimString:graphURL]
+	                parent:parent
+	     completionHandler:^(NSMutableURLRequest *request, NSError *error) {
+         
+	         if (error != nil)
+	         {
+	             completionBlock(nil, error);
+	         }
+	         else
+	         {
+             
+	             NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+             
+	             [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                 
+	                 if (error == nil && data != nil){
+                     
+	                     NSDictionary *dataReturned = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                     
+	                     // We can grab the top most JSON node to get our graph data.
+	                     NSArray *graphDataArray = [dataReturned objectForKey:@"value"];
+                     
+	                     // Don't be thrown off by the key name being "value". It really is the name of the
+	                     // first node. :-)
+                     
+	                     //each object is a key value pair
+	                     NSDictionary *keyValuePairs;
+	                     NSMutableArray* Users = [[NSMutableArray alloc]init];
+                     
+	                     for(int i =0; i < graphDataArray.count; i++)
+	                     {
+	                         keyValuePairs = [graphDataArray objectAtIndex:i];
+                         
+	                         User *s = [[User alloc]init];
+	                         s.upn = [keyValuePairs valueForKey:@"userPrincipalName"];
+	                         s.name =[keyValuePairs valueForKey:@"givenName"];
+                         
+	                         [Users addObject:s];
+	                     }
+                     
+	                     completionBlock(Users, nil);
+	                 }
+	                 else
+	                 {
+	                     completionBlock(nil, error);
+	                 }
+                 
+	             }];
+	         }
+	     }];
+    
+	}
 
 
 - 当应用程序通过调用 `getToken(...)` 请求令牌时，ADAL 将尝试返回一个令牌，而不要求用户输入凭据。如果 ADAL 确定用户需要登录以获取令牌，将显示登录对话框，收集用户的凭据，并在身份验证成功后返回令牌。如果 ADAL 出于任何原因无法返回令牌，则会引发 `AdalException`。
@@ -225,4 +225,4 @@ ObjC
 - 了解[如何使用 ADAL 在 iOS 上启用跨应用 SSO](/documentation/articles/active-directory-sso-ios/)  
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

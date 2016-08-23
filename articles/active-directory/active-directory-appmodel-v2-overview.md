@@ -35,6 +35,7 @@
 ## 引用
 这些链接有助于深入地利用平台：
 
+- Build 2016：[Getting Started with Microsoft Identities: Enterprise Grade Sign In For Your Apps（开始使用 Microsoft 标识：应用的企业级登录）](https://azure.microsoft.com/documentation/videos/build-2016-getting-started-with-microsoft-identities-enterprise-grade-sign-in-for-your-apps/)
 - 使用 [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory) 或 [adal](http://stackoverflow.com/questions/tagged/adal) 标记获取有关堆栈溢出的帮助。
 - [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)
 - [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)

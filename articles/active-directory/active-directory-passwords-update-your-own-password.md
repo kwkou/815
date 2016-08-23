@@ -4,13 +4,13 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
-	manager="kbrint" 
-	editor="billmath"/>
+	manager="femila"
+	editor="curtand"/>  
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/16/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>
 
 # 如何更新自己的密码
 如果你不确定如何管理自己的工作或学校帐户密码，来这里就对了！ 请阅读以下内容，了解如何执行常见的步骤，例如更改密码、重置密码或注册密码重置。
@@ -73,7 +73,7 @@
 
 请遵循以下步骤，从任何工作或学校帐户登录屏幕更改工作或学校帐户密码。
 
- >[AZURE.IMPORTANT]仅当你的管理员启用了此功能时，你才可以使用此功能。如果未启用，你将看到一条消息，指出没有为你的帐户启用此功能。在此情况下，你可以使用“联系管理员”链接来与管理员联系，以解锁你的帐户。<br><br>如果管理员为你启用了此功能，则你首先需要注册才可使用它。可以在此处完成注册：http://aka.ms/ssprsetup。
+ >[AZURE.IMPORTANT] 仅当你的管理员启用了此功能时，你才可以使用此功能。如果未启用，你将看到一条消息，指出没有为你的帐户启用此功能。在此情况下，你可以使用“请与管理员联系”链接来与管理员联系，以解锁你的帐户。<br><br>如果管理员为你启用了此功能，则你首先需要注册才可使用它。可以在此处完成注册：http://aka.ms/ssprsetup。
  
 
  1. 在任何工作或学校帐户登录页面上，单击“无法访问帐户?”或“忘记了密码?”链接，或直接导航到 https://passwordreset.microsoftonline.com。
@@ -250,4 +250,5 @@
 [013]: ./media/active-directory-passwords-update-your-own-password/013.jpg "Image_013.jpg"
 [014]: ./media/active-directory-passwords-update-your-own-password/014.jpg "Image_014.jpg"
 [015]: ./media/active-directory-passwords-update-your-own-password/015.jpg "Image_015.jpg"
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

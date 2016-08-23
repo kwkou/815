@@ -47,7 +47,7 @@
 
 ## <a name="updating-an-application"></a>更新应用程序
 
-将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍如何进一步配置你的应用程序。有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
+将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍可以通过哪些不同的方法来进一步配置应用程序。首先，我们将概述同意框架。如果你要构建资源/API 应用程序，并且这些应用程序将由你的组织或其他组织中的开发人员构建的应用程序使用，则必须了解此框架。
 
 有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
@@ -107,19 +107,19 @@
 
 ### 将资源应用程序配置为公开 Web API
 
-你可以开发一个 Web API，并通过公开权限范围使其可供其他客户端应用程序使用。可以像提供其他 Microsoft Web API（包括图形 API 和 Office 365 API）一样提供正确配置的 Web API。可通过应用程序的清单公开权限范围。该清单是表示应用程序标识配置的 JSON 文件。若要公开权限范围，请在 Azure 经典管理门户中导航到你的应用程序，然后单击命令栏上的“应用程序清单”按钮。
+你可以开发一个 Web API，并通过公开访问权限范围使其可供其他客户端应用程序使用。可以像提供其他 Microsoft Web API（包括图形 API 和 Office 365 API）一样提供正确配置的 Web API。可通过应用程序的清单公开访问权限范围。该清单是表示应用程序标识配置的 JSON 文件。若要公开范围，请在 Azure 经典门户中导航到你的应用程序，然后单击命令栏上的“应用程序清单”按钮。
 
 #### 将权限范围添加到资源应用程序
 
 1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
-1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
+2. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 
-1. 在顶部菜单中，单击“应用程序”，然后单击要配置的资源应用程序。“快速启动”页将显示单一登录信息和其他配置信息。
+3. 在顶部菜单中，单击“应用程序”，然后单击要配置的资源应用程序。“快速启动”页将显示单一登录信息和其他配置信息。
 
-1. 在命令栏中单击“管理清单”按钮，然后选择“下载清单”。
+4. 在命令栏中单击“管理清单”按钮，然后选择“下载清单”。
 
-1. 打开 JSON 应用程序清单文件，并将 “oauth2Permissions” 节点替换为以下 JSON 代码段。此示例代码段演示了如何公开称为用户模拟的权限范围。请确保根据自己的应用程序更改文本和值：
+5. 打开 JSON 应用程序清单文件，并将 “oauth2Permissions” 节点替换为以下 JSON 代码段。此示例代码段演示了如何公开称为用户模拟的权限范围。请确保根据自己的应用程序更改文本和值：
 
 		"oauth2Permissions": [
 		{
@@ -138,13 +138,13 @@
 
 	>[AZURE.NOTE] 以后你可以根据需要公开其他权限作用域。请考虑你的 Web API 可能要公开与各种不同功能关联的多个权限。现在，你可以通过使用所收到的 OAuth 2.0 JWT 令牌中的范围 (scp) 声明来控制对 Web API 的访问。
 
-1. 保存更新的 JSON 文件，然后将其上载，方法是单击命令栏中的“管理清单”按钮，选择“上载清单”，浏览到更新的清单文件，然后将其选中。上载后，你的 Web API 便已配置为可供目录中的其他应用程序使用。
+6. 保存更新的 JSON 文件，然后将其上载，方法是单击命令栏中的“管理清单”按钮，选择“上载清单”，浏览到更新的清单文件，然后将其选中。上载后，你的 Web API 便已配置为可供目录中的其他应用程序使用。
 
 #### 验证 Web API 是否已公开给目录中其他应用程序的步骤
 
-1. 在顶部菜单中，单击“应用程序”，选择你要为其配置 Web API 访问权限的所需客户端应用程序，然后单击“配置”。
+7. 在顶部菜单中，单击“应用程序”，选择你要为其配置 Web API 访问权限的所需客户端应用程序，然后单击“配置”。
 
-1. 向下滚动到“对其他应用程序的权限”部分。单击“选择应用程序”下拉菜单，然后便可以选择刚刚为其公开了权限的 Web API。从“委托的权限”下拉菜单中选择新的权限。
+8. 向下滚动到“对其他应用程序的权限”部分。单击“选择应用程序”下拉菜单，然后便可以选择刚刚为其公开了权限的 Web API。从“委托的权限”下拉菜单中选择新的权限。
 
 ![显示“待办事项”权限](./media/active-directory-integrating-applications/listpermissions.png)
 
@@ -160,7 +160,7 @@
 
 如前文所述，除了在自己的资源应用程序上公开/访问 API 以外，你还可以更新客户端应用程序以访问 Microsoft 资源公开的 API。默认情况下，Azure AD 图形 API（在其他应用程序的“权限”列表中称为“Azure Active Directory”）可供注册到 Azure AD 的所有应用程序使用。如果要在 Office 365 预配的 Azure AD 租户中注册客户端应用程序，你也可以访问 API 向各种 Office 365 资源公开的所有权限。
 
-有关以下各项公开的权限范围的完整介绍：
+有关以下各项公开的访问权限范围的完整介绍：
 
 - Azure AD 图形 API，请参阅[权限范围 | 图形 API 概念](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)一文。
 - Office 365 API，请参阅[使用通用同意框架进行身份验证和授权](https://msdn.microsoft.com/office/office365/howto/application-manifest)一文。有关如何生成可与 Office 365 API 集成的客户端应用的更详细介绍，请参阅[设置 Office 365 开发环境](https://msdn.microsoft.com/office/office365/HowTo/setup-development-environment)。
@@ -182,9 +182,9 @@
 
 >[AZURE.NOTE] 在启用多租户时，必须确保应用程序的应用 ID URI 属于已验证的域。此外，返回 URL 必须以 https:// 开头。有关详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 
-##### 为外部用户启用对你的应用程序的访问权限
+若要使外部用户能够向你的应用授予访问权限，请执行以下操作：
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 
@@ -196,7 +196,7 @@
 
 完成上述更改后，其他组织中的用户和管理员可以向你的应用程序授予对其目录和其他数据的访问权限。
 
-### 在运行时触发 Azure AD 同意框架
+#### 在运行时触发 Azure AD 同意框架
 
 若要使用同意框架，多租户客户端应用程序必须使用 OAuth 2.0 请求授权。我们提供了[代码示例](https://azure.microsoft.com/documentation/samples/?service=active-directory&term=multi-tenant)，用于说明 Web 应用程序、本机应用程序或服务器/守护应用程序如何请求授权代码和访问令牌来调用 Web API。
 
@@ -206,7 +206,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 #### 为单页面应用程序启用 OAuth 2.0 隐式授权
 
-单页面应用程序 (SPA) 通常利用浏览器中运行的 JavaScript 重型前端进行构建，该前端调用应用程序的 Web API 后端来执行其业务逻辑。对于托管在 Azure AD 中的 SPA，可以使用 OAuth 2.0 隐式授权向 Azure AD 验证用户身份，并获取可用来保护从应用程序 JavaScript 客户端到其后端 Web API 的调用的令牌。用户授予同意之后，可以使用同一个身份验证协议来获取令牌以保护客户端与针对应用程序配置的其他 Web API 资源之间的调用。默认情况下，为应用程序禁用了 OAuth 2.0 隐式授权。你也可以通过在[应用程序清单](/documentation/articles/active-directory-application-manifest/)（表示应用程序标识配置的 JSON 文件）中设置 `oauth2AllowImplicitFlow`”` 值，来为应用程序启用 OAuth 2.0 隐式授权。
+单页面应用程序 (SPA) 通常利用浏览器中运行的 JavaScript 重型前端进行构建，该前端调用应用程序的 Web API 后端来执行其业务逻辑。对于托管在 Azure AD 中的 SPA，可以使用 OAuth 2.0 隐式授权向 Azure AD 验证用户身份，并获取可用来保护从应用程序 JavaScript 客户端到其后端 Web API 的调用的令牌。用户授予同意之后，可以使用同一个身份验证协议来获取令牌以保护客户端与针对应用程序配置的其他 Web API 资源之间的调用。若要了解有关隐式授权授予的详细信息，并帮助你决定它是否适合于你的应用程序方案，请参阅 [Understanding the OAuth2 implicit grant flow in Azure Active Directory（了解 Azure Active Directory 中的 OAuth2 隐式授予流）](/documentation/articles/active-directory-dev-understanding-oauth2-implicit-grant/。
 
 默认情况下，为应用程序禁用了 OAuth 2.0 隐式授权。你也可以通过在[应用程序清单](/documentation/articles/active-directory-application-manifest/)（表示应用程序标识配置的 JSON 文件）中设置 `oauth2AllowImplicitFlow`”` 值，来为应用程序启用 OAuth 2.0 隐式授权。
 

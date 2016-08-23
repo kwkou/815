@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/16/2016"
-   wacn.date="07/19/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/22/2016"/>
 
 
 # 适用于应用程序的品牌准则
@@ -22,11 +22,11 @@
 
 Microsoft 管理两种类型的用户帐户：
 
-- **个人帐户**（以前称为 Windows Live ID）。这些帐户表示*个人*用户与 Microsoft 之间的关系，用于访问客户设备和 Microsoft 中的服务。这些帐户专供个人使用。
+- **个人帐户**（以前称为 Windows Live ID）。这些帐户表示个人用户与 Microsoft 之间的关系，用于访问客户设备和 Microsoft 中的服务。这些帐户专供个人使用。
 
 - **工作或学校帐户。** 这些帐户由 Microsoft 代表使用 Azure Active Directory 的组织进行管理。这些帐户用于登录 Office 365 和 Microsoft 的其他业务服务。
 
-Microsoft 工作或学校帐户帐户通常由组织（公司、学校、政府机构）分配给最终用户（员工、学生、联邦雇员）。这些帐户可以直接在云中或Azure AD 中直接控制，也可以从本地目录（如 Windows Server Active Directory）同步到 Azure AD。Microsoft 是工作或学校帐户的*监管员*，但这些帐户由组织所有和控制。
+Microsoft 工作或学校帐户帐户通常由组织（公司、学校、政府机构）分配给最终用户（员工、学生、联邦雇员）。这些帐户可以直接在云中或Azure AD 中直接控制，也可以从本地目录（如 Windows Server Active Directory）同步到 Azure AD。Microsoft 是工作或学校帐户的监管员，但这些帐户由组织所有和控制。
 
 ## 在应用程序中引用 Azure AD 帐户
 
@@ -56,25 +56,28 @@ Microsoft 不会向最终用户显示 Azure 或 Active Directory 品牌名称，
 ![应用程序类型和方案](./media/active-directory-branding-guidelines/add-to-my-org.png)
 
 但是，我们建议你编写说明性的文本而不要依赖于按钮。例如：
-> *如果你已使用 Office 365 或 Microsoft 的其他业务服务，则只需授予 <应用名称> 对你的组织数据的访问权限。这样，你的用户便可以使用其现有工作帐户访问 <应用名称>。*
+> 如果你已使用 Office 365 或 Microsoft 的其他业务服务，则只需授予 <应用名称> 对你的组织数据的访问权限。这样，你的用户便可以使用其现有工作帐户访问 <应用名称>。
 
 
 ## 有关登录的可视指南
 你的应用程序应显示登录按钮，用于将用户重定向到对应于用来与 Azure AD 集成的协议的登录终结点。以下部分详细描述了该按钮的外观。
 
-### 象形图和“工作或学校帐户”
-将 Microsoft 徽标和通用的“工作或学校”词语关联之后，即可在你的应用程序支持的其他标识提供程序中以唯一方式来表示 Azure AD。如果没有为“工作或学校帐户”留出足够的空间，可以将它缩短为“工作帐户”。
+### 图标和“通过 Microsoft 登录”
+Microsoft 徽标和“通过 Microsoft 登录”词语的关联可唯一地将 Azure AD 与应用支持的其他标识提供者区别开来。如果没有足够的空间来容纳“通过 Microsoft 登录”，则可以将其缩短为“登录”。
 
-![应用程序类型和方案](./media/active-directory-branding-guidelines/work-or-school-account.png)
+![应用程序类型和方案](./media/active-directory-branding-guidelines/sign-in-with-microsoft-light.png)
 
-![应用程序类型和方案](./media/active-directory-branding-guidelines/work-account.png)
+![应用程序类型和方案](./media/active-directory-branding-guidelines/sign-in-light.png)
 
-你还可以向最终用户提供一些附加说明，帮助他们确认是否可以使用此按钮：
+你还可以对该按钮使用深色方案。
 
-![应用程序类型和方案](./media/active-directory-branding-guidelines/work-account-with-explaination.png)
+![应用程序类型和方案](./media/active-directory-branding-guidelines/sign-in-with-microsoft-dark.png)
+
+![应用程序类型和方案](./media/active-directory-branding-guidelines/sign-in-dark.png)
 
 ## 品牌注意事项
-**要**将“工作或学校帐户”与 Microsoft 徽标结合使用来表示通过 Azure AD 进行的登录如果空间短缺，可以显示为“工作帐户”，但**不要**使用其他词语（例如“企业帐户”、“业务帐户”或“公司帐户”）。
+
+**务必**将“工作或学校帐户”与“通过 Microsoft 登录”按钮结合使用来提供附加说明，以便帮助最终用户识别他们是否可以使用该应用。**请勿**使用“企业帐户”、“业务帐户”或“公司帐户”等其他词语。
 
 **不要**使用“Office 365 ID”或“Azure ID”。Office 365 也是 Microsoft 的消费型产品名称，它不使用 Azure AD 进行身份验证。
 
@@ -86,8 +89,4 @@ Microsoft 不会向最终用户显示 Azure 或 Active Directory 品牌名称，
 
 **要**提供让用户注销以及切换到其他用户帐户的方法。虽然大多数人员只有一个由 Microsoft/Facebook/Google/Twitter 提供的个人帐户，但这些人员通常与多个组织相关联。即将推出支持多个登录用户的功能。
 
-## 在你的应用程序中同时支持 Azure AD 帐户和 Microsoft 帐户
-
-如果你的应用程序同时支持 Azure AD 帐户和 Microsoft 帐户，则需要在应用程序中提供两个单独的登录按钮。我们正在积极处理更新，以便你只需集成一次，就能支持个人帐户和 Microsoft 中的工作帐户。在使用此更新后，你便可以在应用程序中显示“使用 Microsoft 登录”按钮。
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

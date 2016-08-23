@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="03/31/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="06/21/2016"
+	wacn.date="08/22/2016"/>
 
 # 向 Azure Active Directory 添加新用户或具有 Microsoft 帐户的用户
 
@@ -18,7 +18,7 @@
 
 ## 添加用户
 
-1. 使用充当目录全局管理员的帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 使用充当目录全局管理员的帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 2. 选择“Active Directory”，然后选择组织目录的名称。
 3. 选择“用户”选项卡，然后在命令栏中选择“添加用户”。
 4. 在“告诉我们有关此用户的信息”页上的“用户类型”下，选择下列其中一项：
@@ -30,9 +30,9 @@
 6. 在用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD（在 Azure AD 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。指定是否要为用户**启用 Multi-Factor Authentication**。
 7. 在“获取临时密码”页上，选择“创建”。
 
-> [AZURE.IMPORTANT]
-> - 如果你所在的组织使用多个域，在添加用户帐户时你应知道以下问题：
-> - 若要跨域使用同一个用户主体名称 (UPN) 来创建用户帐户，例如，你可以**先**创建 geoffgrisso@contoso.partner.onmschina.cn，**再**创建 geoffgrisso@contoso.com。
+> [AZURE.IMPORTANT] 如果你所在的组织使用多个域，在添加用户帐户时你应知道以下问题：
+>
+> - 若要跨域添加具有相同用户主体名称 (UPN) 的用户帐户，例如，你可以**先**添加 geoffgrisso@contoso.partner.onmschina.cn，**再**添加 geoffgrisso@contoso.com。
 > - **不要**在添加 geoffgrisso@contoso.partner.onmschina.cn之前添加 geoffgrisso@contoso.com。此顺序非常重要，事后想要撤消操作将很麻烦。
 
 ## 更改用户信息
@@ -82,4 +82,4 @@
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0808_2016-->

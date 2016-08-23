@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/08/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="08/22/2016"/>
 
 # 将自定义域名添加到 Azure Active Directory
 
@@ -24,7 +24,7 @@
 
 ## <a name="add-your-custom-domain-name-to-azure-active-directory"></a>将自定义域名添加到目录
 
-1. 使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
+1. 使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
 
 2. 在“Active Directory”中打开你的目录，然后选择“域”选项卡。
 
@@ -52,7 +52,7 @@
 
 如果“添加域”向导仍保持打开，请在向导的第三页上选择“验证”。当你选择“验证”时，Azure AD 会在 DNS 区域文件中查找域的 DNS 条目。只有在 DNS 记录传播完成之后，Azure AD 才能验证域名。此传播通常只需要几秒钟，但有时可能需要一小时以上。如果第一次验证不成功，请稍后重试。
 
-如果“添加域”向导未保持打开，可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中验证域。
+如果“添加域”向导未保持打开，可以在 [Azure 经典门户](https://manage.windowsazure.cn/)中验证域。
 
 1.  使用充当 Azure AD 目录全局管理员的用户帐户登录。
 
@@ -87,4 +87,4 @@
 -   [在用户登录时显示公司的品牌](/documentation/articles/active-directory-add-company-branding/)
 -   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

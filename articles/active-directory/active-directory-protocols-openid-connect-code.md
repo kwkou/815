@@ -15,6 +15,8 @@
 
 # 使用 OpenID Connect 和 Azure Active Directory 来授权访问 Web 应用程序
 
+[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
+
 [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) 是构建在 OAuth 2.0 协议顶层的简单标识层。OAuth 2.0 定义了一些机制用于获取和使用**访问令牌**来访问受保护资源，但未定义用于提供标识信息的标准方法。OpenID Connect 以 OAuth 2.0 授权过程的扩展形式实现身份验证，以 `id_token` 的形式（验证用户的标识）提供有关用户的信息，并提供有关用户的基本配置文件信息。
 
 如果要构建的 Web 应用程序托管在服务器中并通过浏览器访问，我们建议使用 OpenID Connect。
@@ -37,16 +39,16 @@
 下面是一个示例请求：
 
 		
-		// Line breaks for legibility only
+	// Line breaks for legibility only
 		
-		GET https://login.microsoftonline.com/{tenant}/oauth2/authorize?
-		client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-		&response_type=id_token
-		&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-		&response_mode=form_post
-		&scope=openid
-		&state=12345
-		&nonce=7362CAEA-9CA5-4B43-9BA3-34D7C303EBA7
+	GET https://login.microsoftonline.com/{tenant}/oauth2/authorize?
+	client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+	&response_type=id_token
+	&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+	&response_mode=form_post
+	&scope=openid
+	&state=12345
+	&nonce=7362CAEA-9CA5-4B43-9BA3-34D7C303EBA7
 
 
 | 参数 | | 说明 |
@@ -70,11 +72,11 @@
 下面是在对用户进行身份验证后的示例响应：
 
 		
-		POST /myapp/ HTTP/1.1
-		Host: localhost
-		Content-Type: application/x-www-form-urlencoded
+	POST /myapp/ HTTP/1.1
+	Host: localhost
+	Content-Type: application/x-www-form-urlencoded
 		
-		id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
+	id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 
 
 | 参数 | 说明 |
@@ -86,11 +88,11 @@
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理：
 
 		
-		POST /myapp/ HTTP/1.1
-		Host: localhost
-		Content-Type: application/x-www-form-urlencoded
+	POST /myapp/ HTTP/1.1
+	Host: localhost
+	Content-Type: application/x-www-form-urlencoded
 		
-		error=access_denied&error_description=the+user+canceled+the+authentication
+	error=access_denied&error_description=the+user+canceled+the+authentication
 
 
 | 参数 | 说明 |
@@ -98,7 +100,7 @@
 | error | 用于分类发生的错误类型与响应错误的错误码字符串。 |
 | error\_description | 帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
 
-#### 授权终结点错误的错误代码
+#### <a name="error-codes-for-authorization-endpoint-errors"></a>授权终结点错误的错误代码
 
 下表描述了可在错误响应的 `error` 参数中返回的各个错误代码。
 
@@ -134,8 +136,8 @@
 你只需将用户重定向到 OpenID Connect 元数据文档中所列的 `end_session_endpoint`：
 		
 		
-		GET https://login.microsoftonline.com/common/oauth2/logout?
-		post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+	GET https://login.microsoftonline.com/common/oauth2/logout?
+	post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 		
 
 
@@ -152,17 +154,17 @@
 若要获取访问令牌，需要修改上述登录请求：
 
 		
-		// Line breaks for legibility only
+	// Line breaks for legibility only
 		
-		GET https://login.microsoftonline.com/{tenant}/oauth2/authorize?
-		client_id=6731de76-14a6-49ae-97bc-6eba6914391e		// Your registered Application Id
-		&response_type=id_token+code
-		&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F 	  // Your registered Redirect Uri, url encoded
-		&response_mode=form_post						      // form_post', or 'fragment'
-		&scope=openid
-		&resource=https%3A%2F%2Fservice.contoso.com%2F									 
-		&state=12345						 				 // Any value, provided by your app
-		&nonce=678910										 // Any value, provided by your app
+	GET https://login.microsoftonline.com/{tenant}/oauth2/authorize?
+	client_id=6731de76-14a6-49ae-97bc-6eba6914391e		// Your registered Application Id
+	&response_type=id_token+code
+	&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F 	  // Your registered Redirect Uri, url encoded
+	&response_mode=form_post						      // form_post', or 'fragment'
+	&scope=openid
+	&resource=https%3A%2F%2Fservice.contoso.com%2F									 
+	&state=12345						 				 // Any value, provided by your app
+	&nonce=678910										 // Any value, provided by your app
 
 
 通过在请求中包含权限范围并使用 `response_type=code+id_token`，`authorize` 终结点可确保用户已经同意 `scope` 查询参数中指示的权限，并且将授权代码返回到应用以交换访问令牌。
@@ -172,11 +174,11 @@
 使用 `response_mode=form_post` 的成功响应如下所示：
 
 		
-		POST /myapp/ HTTP/1.1
-		Host: localhost
-		Content-Type: application/x-www-form-urlencoded
+	POST /myapp/ HTTP/1.1
+	Host: localhost
+	Content-Type: application/x-www-form-urlencoded
 		
-		id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&state=12345
+	id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&state=12345
 
 
 | 参数 | 说明 |
@@ -190,11 +192,11 @@
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理：
 		
 		
-		POST /myapp/ HTTP/1.1
-		Host: localhost
-		Content-Type: application/x-www-form-urlencoded
+	POST /myapp/ HTTP/1.1
+	Host: localhost
+	Content-Type: application/x-www-form-urlencoded
 		
-		error=access_denied&error_description=the+user+canceled+the+authentication
+	error=access_denied&error_description=the+user+canceled+the+authentication
 
 
 | 参数 | 说明 |
@@ -202,7 +204,6 @@
 | error | 用于分类发生的错误类型与响应错误的错误码字符串。 |
 | error\_description | 帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
 
-有关可能的错误代码的描述及其建议的客户端操作，请参阅[授权终结点错误的错误代码](#error-codes-for-authorization-endpoint-errors)。
-获取授权 `code` 和 `id_token` 之后，可以将用户登录，并代表他们获取访问令牌。若要将用户登录，必须确切地按上面所述验证 `id_token`。若要获取访问令牌，可以遵循 [OAuth 协议文档](/documentation/articles/active-directory-protocols-oauth-code/#Use-the-Authorization-Code-to-Request-an-Access-Token)中所述的步骤。
+有关可能的错误代码的描述及其建议的客户端操作，请参阅[授权终结点错误的错误代码](#error-codes-for-authorization-endpoint-errors)。获取授权 `code` 和 `id_token` 之后，可以将用户登录，并代表他们获取访问令牌。若要将用户登录，必须确切地按上面所述验证 `id_token`。若要获取访问令牌，可以遵循 [OAuth 协议文档](/documentation/articles/active-directory-protocols-oauth-code/#Use-the-Authorization-Code-to-Request-an-Access-Token)中所述的步骤。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0815_2016-->

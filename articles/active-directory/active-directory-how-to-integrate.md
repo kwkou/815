@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="05/16/2016"
-   wacn.date="07/26/2016" />
+   wacn.date="08/22/2016" />
 
 # 与 Azure Active Directory 集成
 
@@ -60,9 +60,6 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 **多重身份验证。** Azure AD 提供本机多重身份验证。IT 管理员可以要求访问应用程序之前经过多重身份验证，因此你无需编写此项支持的代码。了解有关 [Multi-Factor Authentication](/documentation/services/multi-factor-authentication/) 的详细信息。
 
-**异常登录检测。** Azure AD 每天要处理十亿次以上的登录，同时，使用机器学习算法来检测可疑活动，并通知 IT 管理员可能存在的问题。通过支持 Azure AD 登录，你的应用程序将从这种保护中受益。
-
-**条件性访问。** 除了多重身份验证以外，管理员可以要求用户在登录应用程序之前满足特定的条件。可设置的条件包括客户端设备的 IP 地址范围、指定的组中的成员资格，以及用于访问的设备的状态。
 
 ### 易于开发
 

@@ -4,13 +4,13 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
-	manager="kbrint" 
-	editor="billmath"/>
+	manager="femila"
+	editor="curtand"/>  
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>  
 
 # 部署密码管理并向用户培训其用法
 启用密码重置之后，必须执行的下一个步骤就是让用户使用你组织中的服务。为此，需要确保已正确将用户配置为使用该服务，同时你必须培训用户，使他们可以顺利地管理其自己的密码。本文将解释以下概念：
@@ -20,7 +20,7 @@
   * [自行填充身份验证数据的方式](#ways-to-populate-authentication-data)
 * [**组织启用密码重置的最佳方式**](#what-is-the-best-way-to-roll-out-password-reset-for-users)
   * [基于电子邮件的启用方式与示例电子邮件通信](#email-based-rollout)
-  * [为用户创建自己的自定义密码经典管理门户](#creating-your-own-password-portal)
+  * [为用户创建自己的自定义密码管理门户](#creating-your-own-password-portal)
   * [如何使用强制注册来强制用户在登录时注册](#using-enforced-registration)
   * [如何上载用户帐户的身份验证数据](#uploading-data-yourself)
 * [**示例用户和支持培训材料（即将推出！）**](#sample-training-materials)
@@ -130,7 +130,7 @@
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password/) - 了解如何以系统用户的身份重置或更改自己的密码
+* **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
 * [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works/) - 了解六个不同的服务组件及其功能
 * [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
 * [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
@@ -147,4 +147,5 @@
 [005]: ./media/active-directory-passwords-best-practices/005.jpg "Image_005.jpg"
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
 [007]: ./media/active-directory-passwords-best-practices/007.jpg "Image_007.jpg"
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

@@ -72,7 +72,7 @@ Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备
     -	`clientId` 是从门户复制的应用程序 clientId。
     - `returnUri` 是你在门户中输入的 redirectUri，例如 `http://DirectorySearcher`。
 
-## 3.使用 ADAL 从 Azure AD 获取令牌
+## *3.使用 ADAL 从 Azure AD 获取令牌*
 几乎所有的应用程序身份验证逻辑都在 `DirectorySearcher.SearchByAlias(...)` 中。在特定于平台的项目中，所要做的一切就是将上下文参数传递到 `DirectorySearcher` PCL。
 
 - 首先打开 `DirectorySearcher.cs`，然后将一个新参数添加到 `SearchByAlias(...)` 方法。`IPlatformParameters` 是上下文参数，用于封装 ADAL 需要对其执行身份验证的特定于平台的对象。
@@ -108,9 +108,9 @@ C#
 
 C#
 		
-		...
-		    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-		...
+	...
+	    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+	...
 
 
 这就是需要针对 `DirectorySearcher` PCL 和应用程序标识相关代码执行的所有操作。余下的操作是在每个平台的视图中调用 `SearchByAlias(...)` 方法，并根据需要添加代码来正确处理 UI 生命周期。
@@ -120,19 +120,19 @@ C#
 
 C#
 
-		List<User> results = await DirectorySearcher.SearchByAlias(searchTermText.Text, new PlatformParameters(this));
+	List<User> results = await DirectorySearcher.SearchByAlias(searchTermText.Text, new PlatformParameters(this));
 
 - 还需要重写 `OnActivityResult` 生命周期方法，以将任何身份验证重定向转发回到相应的方法。ADAL 在 Android 中为此提供了帮助器方法：
 
 C#
 		
-		...
-		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-		{
-		    base.OnActivityResult(requestCode, resultCode, data);
-		    AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(requestCode, resultCode, data);
-		}
-		...
+	...
+	protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+	{
+	    base.OnActivityResult(requestCode, resultCode, data);
+	    AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(requestCode, resultCode, data);
+	}
+	...
 
 
 ####Windows 桌面：
@@ -140,9 +140,9 @@ C#
 
 C#
 		
-		List<User> results = await DirectorySearcher.SearchByAlias(
-		  SearchTermText.Text,
- 		 new PlatformParameters(PromptBehavior.Auto, this.Handle));
+	List<User> results = await DirectorySearcher.SearchByAlias(
+	  SearchTermText.Text,
+	  new PlatformParameters(PromptBehavior.Auto, this.Handle));
 
 
 ####iOS：
@@ -150,9 +150,9 @@ C#
 
 C#
 		
-		List<User> results = await DirectorySearcher.SearchByAlias(
-		  SearchTermText.Text,
-		  new PlatformParameters(PromptBehavior.Auto, this.Handle));
+	List<User> results = await DirectorySearcher.SearchByAlias(
+	  SearchTermText.Text,
+	  new PlatformParameters(PromptBehavior.Auto, this.Handle));
 
 
 ####Windows 通用：
@@ -160,9 +160,9 @@ C#
 
 C#
 
-		...
-		    List<User> results = await DirectorySearcherLib.DirectorySearcher.SearchByAlias(SearchTermText.Text, new PlatformParameters(PromptBehavior.Auto, false));
-		...
+	...
+	    List<User> results = await DirectorySearcherLib.DirectorySearcher.SearchByAlias(SearchTermText.Text, new PlatformParameters(PromptBehavior.Auto, false));
+	...
 
 
 祝贺你！ 现在，你已创建一个有效的 Xamarin 应用程序，它可以对用户进行身份验证，并使用 OAuth 2.0 在五个不同的平台上安全调用 Web API。如果你尚未这样做，可以在租户中填充一些用户。运行你的 DirectorySearcher 应用程序，并使用这些用户之一进行登录。根据用户的 UPN 搜索其他用户。

@@ -4,13 +4,13 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="03/31/2016"
-	/documentation/articles//>
+	ms.date="06/21/2016"
+	wacn.date="08/22/2016"/>
 
 # 在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户
 
@@ -18,7 +18,7 @@
 
 ## 添加用户
 
-1. 使用充当目录全局管理员的帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 使用充当目录全局管理员的帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 选择 **Active Directory**，然后打开你的目录。
 
@@ -27,6 +27,7 @@
 4. 在“告诉我们有关此用户的信息”页上的“用户类型”下，选择下列其中一项：
 
 	- **另一个 Azure AD 目录中的用户** - 将源自另一个 Azure AD 目录的用户帐户添加到你的目录。仅当你也是另一目录的成员时，才可以选择该目录中的用户。
+	- **合作伙伴公司的用户** - 邀请并授权合作伙伴公司用户使用目录（请参阅 [Azure Active Directory B2B 协作](/documentation/articles/active-directory-b2b-what-is-azure-ad-b2b/)）。你需要[上传指定电子邮件地址的 CSV 文件](/documentation/articles/active-directory-b2b-references-csv-file-format/)。
 
 6. 在用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD（在 Azure AD 中分配管理员角色）](/documentation/articles/active-directory-assign-admin-roles/)。指定是否要为用户**启用 Multi-Factor Authentication**。
 
@@ -37,7 +38,7 @@
 > - 若要跨域添加具有相同用户主体名称 (UPN) 的用户帐户，例如，你可以**先**添加 geoffgrisso@contoso.onmschina.cn，**再**添加 geoffgrisso@contoso.com。
 > - **不要**在添加 geoffgrisso@contoso.onmschina.cn 之前添加 geoffgrisso@contoso.com。此顺序非常重要，事后想要撤消操作将很麻烦。
 
-如果你更改身份与本地 Active Directory 服务同步的用户的信息，则无法更改 Azure 经典管理门户中的用户信息。若要更改该用户信息，请使用本地 Active Directory 管理工具。
+如果你更改身份与本地 Active Directory 服务同步的用户的信息，则无法更改 Azure 经典门户中的用户信息。若要更改该用户信息，请使用本地 Active Directory 管理工具。
 
 ## 创建外部用户
 
@@ -58,7 +59,7 @@
 
 ### 目前支持 Azure AD 外部用户访问的服务
 
-- **Azure 经典管理门户**：允许身为多个目录的管理员的外部用户管理这些目录。
+- **Azure 经典门户**：允许身为多个目录的管理员的外部用户管理这些目录。
 - **SharePoint Online**：如果启用外部共享，则允许外部用户访问 SharePoint Online 的已授权资源。
 - **Dynamics CRM**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics CRM 中的已授权资源。
 - **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。适用于 [Azure AD 外部用户](#known-limitations-of-azure-ad-external-users)和[来宾用户](#guest-user-management-and-limitations)的限制同样适用于 Dynamics AX 中的外部用户。
@@ -79,4 +80,4 @@
 - [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords/)
 - [在 Azure AD 中管理组](/documentation/articles/active-directory-manage-groups/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

@@ -167,4 +167,5 @@ C#
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
-<!---HONumber=Mooncake_0718_2016-->
+
+<!---HONumber=Mooncake_0808_2016-->

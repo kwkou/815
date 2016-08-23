@@ -4,15 +4,18 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
-	manager="kbrint" 
-	editor="billmath"/>
+	manager="femila"
+	editor="curtand"/>  
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="02/16/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>  
 
 # 如何排查密码管理问题
+
+> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+
 如果你有密码管理方面的问题，我们随时可提供帮助。你可能会遇到的大多数问题都可以通过以下简单故障排除步骤来解决，请阅读以下内容来排查你的部署问题：
 
 * [**你需要帮助时应提供的信息**](#information-to-include-when-you-need-help)
@@ -37,7 +40,8 @@
 
     ![][001]
 
- - **用户 ID** – 看到错误的用户的 ID（例如 user@contoso.com)?）
+
+ - **用户 ID** – 看到错误的用户的 ID 是什么（例如 user@contoso.com）？
  - **有关用户的信息** – 用户是否已联合、密码哈希是否已同步、是否只在云中？ 用户是否已获 AAD Premium 或 AAD Basic 授权？
  - **应用程序事件日志** – 如果你使用密码写回，而且错误位于你的本地基础结构中，请将 Azure AD Connect 服务器中的应用程序事件日志副本进行压缩，然后连同请求一起发送。
 
@@ -1449,4 +1453,5 @@
 [004]: ./media/active-directory-passwords-troubleshoot/004.jpg "Image_004.jpg"
 
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->

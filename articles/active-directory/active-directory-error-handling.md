@@ -14,7 +14,9 @@
 
 # OAuth 2.0 中的错误处理
 
-在本文中，我们将了解在使用 Azure Active Directory (Azure AD) 为应用程序授权时可能遇到的常见错误类的一些最佳做法。有关授权终结点和令牌颁发终结点的详细信息，请参阅 [Authentication flow for an application in Azure AD（Azure AD 中应用程序的身份验证流）](/documentation/articles/active-directory-protocols-oauth-code/)。
+[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
+
+在本文中，我们将了解在使用 Azure Active Directory (Azure AD) 为应用程序授权时可能遇到的常见错误类的一些最佳做法。有关授权终结点和令牌颁发终结点的详细信息，请参阅 [Azure AD 中应用程序的身份验证流](/documentation/articles/active-directory-protocols-oauth-code/)。
 
 ## 授权终结点错误
 

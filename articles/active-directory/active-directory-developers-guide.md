@@ -9,14 +9,14 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="06/06/2016"
-   wacn.date="07/19/2016"/>
+   ms.date="07/06/2016"
+   wacn.date="08/22/2016"/>
 
 
 # Azure Active Directory 开发人员指南
 
 ## 概述
-作为标识管理即服务 (IDMaaS) 平台，Azure Active Directory 为开发人员提供了有效的方法将标识管理功能集成到其应用程序中。以下文章概述了 Azure Active Directory 的实现和主要功能。我们建议你按顺序阅读这些文章。<!-- 如果你要深入了解，请转到[入门](#getting-started)。-->
+作为标识管理即服务 (IDMaaS) 平台，Azure Active Directory (AD) 为开发人员提供了有效的方法将标识管理功能集成到其应用程序中。以下文章概述了 Azure AD 的实现和主要功能。我们建议你按顺序阅读这些文章。如果你要深入了解，请转到[入门](#getting-started)。
 
 
 1. [Azure Active Directory 集成的好处](/documentation/articles/active-directory-how-to-integrate/)：了解与 Azure Active Directory 集成为何能够为安全登录和授权提供最佳解决方案。
@@ -86,7 +86,7 @@
 
 - [ADAL for .NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)：.NET 身份验证库文档。
 
-### Graph API
+### 图形 API
 
 - [图形 API 参考](https://msdn.microsoft.com/library/azure/hh974476.aspx)：Azure Active Directory 图形 API 的 REST 参考。[查看交互式图形 API 参考体验](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)。
 
@@ -96,16 +96,16 @@
 
 - [SAML 2.0 协议参考](https://msdn.microsoft.com/library/azure/dn195591.aspx)：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
 
+- [WS-Federation 1.2 协议](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html)：Azure Active Directory 根据 Web 服务联合身份验证版本 1.2 规范支持 WS-Federation 1.2。有关联合元数据文档的详细信息，请参阅 [Federation Metadata](/documentation/articles/active-directory-federation-metadata)（联合元数据）。
 
-- [OAuth 2.0 协议参考](https://msdn.microsoft.com/library/azure/dn645545.aspx)：可以使用 OAuth 2.0 协议授权访问 Azure Active Directory 租户中的 Web 应用程序和 Web API。
-
-
-- [OpenID Connect 1.0 协议参考](https://msdn.microsoft.com/library/azure/dn645541.aspx)：OpenID Connect 1.0 协议扩展了 OAuth 2.0，使其能够用作身份验证协议。
+- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)：你可以通过本指南来了解和评估 SAML 2.0 令牌与 JSON Web 令牌 (JWT) 令牌中的声明。
 
 
-- [WS 联合身份验证 1.2 协议参考](https://msdn.microsoft.com/library/azure/dn903702.aspx)：Web Services 联合身份验证版本 1.2 规范中指定了 WS 联合身份验证 1.2 协议。
+### 构建
 
-- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)：你可以通过本指南来了解和评估 SAML 2.0 令牌与 JSON Web 令牌 (JWT) 令牌中的声明。
+这些概述演示文稿是关于使用本身就在工程团队中工作的 Azure Active Directory 功能发言人来开发应用。演示文稿涵盖了各重要主题，包括 IDMaaS、身份验证、联合身份验证以及单一登录。
+
+
 
 ## 社交
 
@@ -117,4 +117,4 @@
 
 - [Twitter 上的 Azure Active Directory](https://twitter.com/azuread)：以 140 个或更少的字符发布的 Azure Active Directory 公告。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0808_2016-->

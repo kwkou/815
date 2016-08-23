@@ -9,12 +9,10 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/31/2016"
-   wacn.date="07/26/2016"/>
+   ms.date="06/23/2016"
+   wacn.date="08/22/2016"/>
 
 # 联合元数据
-
-
 
 对于配置为接受 Azure Active Directory 颁发的安全令牌的服务，Azure AD 发布了一个联合元数据文档。在扩展了 [OASIS 安全断言标记语言 (SAML) v2.0 元数据](http://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf)的 [Web 服务联合语言（WS 联合身份验证）版本 1.2](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html) 中描述了联合元数据文档格式。
 
@@ -24,22 +22,21 @@ Azure AD 发布了特定于租户和独立于租户的终结点。
 
 特定于租户的终结点面向特定的租户。特定于租户的联合元数据包含有关租户的信息，包括特定于租户的颁发者和终结点信息。限制访问单个租户的应用程序使用特定于租户的终结点。
 
-独立于租户的终结点提供所有 Azure AD 租户通用的信息。此信息适用于托管在 login.microsoftonline.com 上的租户，并在租户间共享。对于多租户应用程序，建议使用独立于租户的终结点，因为它们不与任何特定租户相关联。
+独立于租户的终结点提供所有 Azure AD 租户通用的信息。此信息适用于托管在 *login.microsoftonline.com* 上的租户，并在租户间共享。对于多租户应用程序，建议使用独立于租户的终结点，因为它们不与任何特定租户相关联。
 
 ## 联合元数据终结点
 
-Azure AD 在 https://login.chinacloudapi.cn/<TenantDomainName\>/FederationMetadata/2007-06/FederationMetadata.xml 上发布联合元数据，其中，\<TenantDomainName\> 的值可以是“common”或特定于租户的值。
-这些终结点可寻址，因此你可以转到地址站点，以查看租户的联合元数据。
+Azure AD 会在 `https://login.chinacloudapi.cn/<TenantDomainName>/FederationMetadata/2007-06/FederationMetadata.xml` 上发布联合元数据。
 
-对于**特定于租户的终结点**，\<TenantDomainName\> 可以是以下类型之一：
+对于**特定于租户的终结点**，`TenantDomainName` 可以是以下类型之一：
 
 - Azure AD 租户的已注册域名，例如：contoso.partner.onmschina.cn。
 
-- 域的不可变租户 ID，例如 72f988bf-86f1-41af-91ab-2d7cd011db45。
+- 域的不可变租户 ID，例如 `72f988bf-86f1-41af-91ab-2d7cd011db45`。
 
-对于**独立于租户的终结点**，\<TenantDomainName\> 为 **common**。此名称指示只能使用托管在 login.chinacloudapi.cn 上的所有 Azure AD 租户通用的联合元数据元素。
+对于**独立于租户的终结点**，`TenantDomainName` 为 `common`。此文档仅列出了托管在 login.microsoftonline.com 上的所有 Azure AD 租户通用的联合元数据元素。
 
-例如，特定于租户的终结点可以是 https://login.chinacloudapi.cn/contoso.partner.onmschina.cnFederationMetadata/2007-06/FederationMetadata.xml。 独立于租户的终结点为 https://login.chinacloudapi.cn/common/FederationMetadata/2007-06/FederationMetadata.xml。
+例如，特定于租户的终结点可以是 `https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/FederationMetadata/2007-06/FederationMetadata.xml`。独立于租户的终结点是 [https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/common/FederationMetadata/2007-06/FederationMetadata.xml](https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/common/FederationMetadata/2007-06/FederationMetadata.xml)。你可以在浏览器中键入此 URL 以查看联合元数据文档。
 
 ## 联合元数据的内容
 
@@ -47,9 +44,9 @@ Azure AD 在 https://login.chinacloudapi.cn/<TenantDomainName\>/FederationMetada
 
 ### EntityID
 
-**EntityDescriptor** 元素包含 **EntityID** 属性。**EntityID** 属性的值表示颁发者，即，颁发令牌的安全令牌服务 (STS)。必须验证颁发者，以确认令牌是由哪个租户颁发的。
+`EntityDescriptor` 元素包含 `EntityID` 属性。`EntityID` 属性的值表示颁发者，即，颁发令牌的安全令牌服务 (STS)。请务必在收到令牌时验证颁发者。
 
-以下元数据显示了包含 **EntityID** 元素的特定于租户的 **EntityDescriptor** 元素示例。
+以下元数据显示了包含 `EntityID` 元素的特定于租户的 `EntityDescriptor` 元素示例。
 
     <EntityDescriptor 
     xmlns="urn:oasis:names:tc:SAML:2.0:metadata" 
@@ -58,7 +55,7 @@ Azure AD 在 https://login.chinacloudapi.cn/<TenantDomainName\>/FederationMetada
 
 可以将独立于租户的终结点中的租户 ID 替换为你的租户 ID，以创建特定于租户的 `EntityID` 值。生成的值将与令牌颁发者的值相同。该策略允许多租户应用程序验证给定租户的颁发者。
 
-以下元数据显示了独立于租户的 `EntityID` 元素示例。请注意，`{tenant}` 是一个文本而不是占位符。
+以下元数据显示了独立于租户的 `EntityID` 元素示例。请注意，`{tenant}` 是文本而不是占位符。
 
     <EntityDescriptor 
     xmlns="urn:oasis:names:tc:SAML:2.0:metadata" 
@@ -71,7 +68,7 @@ Azure AD 在 https://login.chinacloudapi.cn/<TenantDomainName\>/FederationMetada
 
 Azure AD 发布的联合元数据文档可以包含多个签名密钥，例如，当 Azure AD 准备更新签名证书时。如果联合元数据文档包含多个证书，验证令牌的服务应该支持文档中的所有证书。
 
-以下元数据显示了一个包含签名密钥的示例 `KeyDescriptor` 元素。
+以下元数据显示了一个包含签名密钥的 `KeyDescriptor` 元素示例。
 
     <KeyDescriptor use="signing">
     <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
@@ -83,11 +80,11 @@ Azure AD 发布的联合元数据文档可以包含多个签名密钥，例如�
     </KeyInfo>
     </KeyDescriptor>
 
-**KeyDescriptor** 元素出现在联合元数据文档中的两个位置：特定于 WS 联合身份验证的部分中，和特定于 SAML 的部分中。在这两个部分中发布的证书将是相同的。
+`KeyDescriptor` 元素出现在联合元数据文档中的两个位置：特定于 WS 联合身份验证的部分中，以及特定于 SAML 的部分中。在这两个部分中发布的证书将是相同的。
 
-在特定于 WS 联合身份验证的部分中，WS 联合身份验证元数据读取器将读取 **SecurityTokenServiceType** 类型的 **RoleDescriptor** 元素中的证书。
+在特定于 WS 联合身份验证的部分中，WS 联合身份验证元数据读取器将读取 `SecurityTokenServiceType` 类型的 `RoleDescriptor` 元素中的证书。
 
-以下元数据显示了一个示例 **RoleDescriptor** 元素。
+以下元数据显示了一个 `RoleDescriptor` 元素示例。
 
     <RoleDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706"
     xsi:type="fed:SecurityTokenServiceType"protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706">`
@@ -101,9 +98,10 @@ Azure AD 发布的联合元数据文档可以包含多个签名密钥，例如�
 特定于租户和独立于租户的证书格式没有差别。
 
 ### WS 联合身份验证终结点 URL
-联合元数据包括 Azure AD 用于在 WS 联合身份验证协议中进行单一登录和单一注销的 URL。此终结点显示在 **PassiveRequestorEndpoint** 元素中。
 
-以下元数据显示了特定于租户的终结点的示例 **PassiveRequestorEndpoint** 元素。
+联合元数据包括 Azure AD 用于在 WS 联合身份验证协议中进行单一登录和单一注销的 URL。此终结点显示在 `PassiveRequestorEndpoint` 元素中。
+
+以下元数据显示了特定于租户的终结点的 `PassiveRequestorEndpoint` 元素示例。
 
     <fed:PassiveRequestorEndpoint>
     <EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
@@ -129,13 +127,13 @@ Azure AD 发布的联合元数据文档可以包含多个签名密钥，例如�
 
 登录和注销 URL 分别显示在 `SingleSignOnService` 和 `SingleLogoutService` 元素中。
 
-以下元数据显示了特定于租户的终结点的示例 `PassiveResistorEndpoint`。
-	
-	 <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-	 …
-	 <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/saml2" />
-	 <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https:// login.chinacloudapi.cn/contoso.partner.onmschina.cn /saml2" />
-	 </IDPSSODescriptor>
+以下元数据显示了特定于租户的终结点的 `PassiveResistorEndpoint` 示例。
+
+	<IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+	…
+	<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/saml2" />
+	<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https:// login.chinacloudapi.cn/contoso.partner.onmschina.cn /saml2" />
+	</IDPSSODescriptor>
 
 同样，通用 SAML 2.0 协议终结点的终结点发布在独立于租户的联合元数据中，如以下示例中所示。
 
@@ -146,5 +144,4 @@ Azure AD 发布的联合元数据文档可以包含多个签名密钥，例如�
 	<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/common/saml2" />
 	</IDPSSODescriptor>
 
-
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0808_2016-->

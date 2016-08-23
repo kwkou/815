@@ -4,15 +4,18 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
-	manager="kbrint" 
-	editor="billmath"/>
+	manager="femila"
+	editor="curtand"/>  
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	ms.date="07/12/2016"
+	wacn.date="08/22/2016"/>
 
 # 密码管理的工作原理
+
+> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+
 Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件。请单击每个链接以了解有关该组件的详细信息。
 
 - [**密码管理配置门户**](#password-management-configuration-portal) – 管理员可以通过导航到 [Azure 经典管理门户](https://manage.windowsazure.cn)中其目录的“配置”选项卡来控制如何在其租户中管理密码的不同方面。
@@ -90,7 +93,7 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password/) - 了解如何以系统用户的身份重置或更改自己的密码
+* **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
 * [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
 * [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
 * [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices/) - 了解如何快速部署且有效管理组织的密码
@@ -109,4 +112,5 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 [006]: ./media/active-directory-passwords-how-it-works/006.jpg "Image_006.jpg"
 [007]: ./media/active-directory-passwords-how-it-works/007.jpg "Image_007.jpg"
  
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0815_2016-->
