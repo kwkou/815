@@ -4,13 +4,13 @@
 	services="notification-hubs"
 	documentationCenter=""
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="02/29/2016"
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016"/>
 
 # 通知中心入门（Kindle 应用）
 
@@ -278,4 +278,4 @@
 [6]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-new-java-class.png
 [7]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-notification.png
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

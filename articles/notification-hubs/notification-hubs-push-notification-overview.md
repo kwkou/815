@@ -2,15 +2,15 @@
 	pageTitle="Azure 通知中心"
 	description="了解如何在 Azure 中使用通知中心。代码示例是使用 .NET API 通过 C# 编写的。"
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""
 	services="notification-hubs"
 	documentationCenter=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="02/11/2016"
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016"/>
 
 
 #Azure 通知中心
@@ -84,8 +84,7 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 通知中心提供了随时可用的推送通知基础结构，该基础结构具有以下优势：
 
 - **多个平台。**
-	+  支持所有主要移动平台。通知中心可将推送通知发送到 Windows 应用商店、iOS 
-	+  和 Windows Phone 应用程序。
+	+  支持所有主要移动平台。通知中心可将推送通知发送到 iOS 和 Windows Phone 应用程序。
 
 	+  通知中心提供了用于将通知发送到所有受支持平台的常见界面。不需要特定于平台的协议。应用程序后端可以采用特定于平台的格式或独立于平台的格式发送通知。应用程序只与通知中心通信。
 
@@ -167,4 +166,4 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [Azure 门户]: https://portal.azure.cn
   [标记]: http://msdn.microsoft.com/library/azure/dn530749.aspx
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

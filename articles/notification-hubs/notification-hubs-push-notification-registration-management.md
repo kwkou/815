@@ -4,13 +4,13 @@
 	services="notification-hubs"
 	documentationCenter=".net"
 	authors="wesmc7777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="04/11/2016"
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016"
+	wacn.date=""/>
 
 # 注册管理
 
@@ -328,4 +328,4 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 
 后端必须处理注册更新之间的并发性。服务总线为注册管理提供了乐观并发控制。在 HTTP 级别，这是通过对注册管理操作使用 ETag 来实现的。Microsoft SDK 以透明方式使用此功能，如果由于并发原因拒绝了更新，则会引发异常。应用后端负责处理这些异常并在需要时重试更新。
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

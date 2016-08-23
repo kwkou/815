@@ -4,13 +4,13 @@
 	services="notification-hubs"
 	documentationCenter="windows"
 	authors="wesmc7777"
-	manager="dwrede"
-	editor=""/>
+	manager="erikre"
+	editor=""/>  
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/28/2016" 
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016" 
+	wacn.date="08/23/2016"/>  
 
 # 使用通知中心发送突发新闻
 
@@ -71,7 +71,7 @@
 
         // Registration task to complete registration in the ChannelUriUpdated event handler
         private TaskCompletionSource<Registration> registrationTask;
-模板
+
         public Notifications(string hubName, string listenConnectionString)
         {
             hub = new NotificationHub(hubName, listenConnectionString);
@@ -183,10 +183,10 @@
         }
 
 
-    此类使用隔离存储区存储此设备要接收的新闻类别。它还包含用于通过[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages)通知注册来注册这些类别的方法。
+    此类使用隔离存储区存储此设备要接收的新闻类别。它还包含用于通过[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages/)通知注册来注册这些类别的方法。
 
 
-4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 DefaultListenSharedAccessSignature 的连接字符串。
+4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
 
 		public Notifications notifications = new Notifications("<hub name>", "<connection string with listen access>");
 
@@ -303,6 +303,4 @@
 [Use Notification Hubs to broadcast localized breaking news]: /documentation/articles/breakingnews-localized-wp8
 [Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 
-
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->

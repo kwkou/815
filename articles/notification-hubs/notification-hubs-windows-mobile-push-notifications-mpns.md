@@ -3,15 +3,15 @@
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows Phone 8 或 Windows Phone 8.1 Silverlight 应用程序。"
 	services="notification-hubs"
 	documentationCenter="windows"
-    keywords="推送通知,push notification,windows phone 推送"
+	keywords="推送通知,push notification,windows phone 推送"
 	authors="wesmc7777"
-	manager="dwrede"
-	editor="dwrede"/>
+	manager="erikre"
+	editor="erikre"/>  
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/10/2016"
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016"/>  
 
 # 在 Windows Phone 上借助 Azure 通知中心发送推送通知
 
@@ -151,8 +151,8 @@
         {
             NotificationHubClient hub = NotificationHubClient
 				.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            string toast = "<?xml version="1.0" encoding="utf-8"?>" +
-                "<wp:Notification xmlns:wp="WPNotification">" +
+            string toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+                "<wp:Notification xmlns:wp=\"WPNotification\">" +
                    "<wp:Toast>" +
                         "<wp:Text1>Hello from a .NET App!</wp:Text1>" +
                    "</wp:Toast> " +
@@ -216,5 +216,4 @@
 [磁贴目录]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
 [通知中心 - Windows Phone Silverlight 教程]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->
