@@ -6,7 +6,7 @@
 	authors="cephalin"
 	manager="wpickett"
 	editor=""
-	tags="top-support-issue
+	tags="top-support-issue"
 	keywords="web 应用性能, 应用运行缓慢, 应用速度缓慢"/>
 
 <tags

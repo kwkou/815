@@ -108,7 +108,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 ###  <a name="what-is-the-largest-cache-size-i-can-create"></a>我可以创建的最大缓存大小是多大？
 
-高级缓存的最大大小为 53 GB。你可以创建多达 10 个分片，因此最大大小为 530 GB。如果你需要的大小更大，则可[请求更多](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase)。有关详细信息，请参阅 [Azure Redis 缓存定价](/pricing/details/redis-cache/)。
+高级缓存的最大大小为 53 GB。你可以创建多达 10 个分片，因此最大大小为 530 GB。如果你需要的大小更大，则可[请求更多](/support/support-azure/)。有关详细信息，请参阅 [Azure Redis 缓存定价](/pricing/details/redis-cache/)。
 
 ### <a name="do-all-redis-clients-support-clustering"></a> 是否所有 Redis 客户端都支持群集功能？
 
