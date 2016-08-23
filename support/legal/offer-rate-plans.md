@@ -25,7 +25,7 @@
 优惠项目名称							|优惠项目代码
 ---|---
 [Azure 标准预付费产品]				|MS-MC-AZR-33P
-[Azure 免费信用额度]					|-
+[Azure 免费使用额度]					|-
 [Azure 1元试用]						|MS-MC-AZR-0044P
 [Windows Server Essentials 客户优惠]	|MS-MC-AZR-90P
 [MSDN 订阅 Azure 优惠]				|<p>Visual Studio Professional (subscriber benefit)： MS-MC-AZR-59P</p><p>Visual Studio Test Professional (subscriber benefit)： MS-MC-AZR-60P</p><p>MSDN Platforms (subscriber benefit)： MS-MC-AZR-62P</p><p>Visual Studio Enterprise (subscriber benefit)： MS-MC-AZR-63P</p>
@@ -37,7 +37,7 @@
 [Azure 免费试用]						|MS-MC-AZR-01P
  
 [Azure 标准预付费产品]: /offers/ms-mc-arz-33p/
-[Azure 免费信用额度]: /offers/azure-monetary-credit/
+[Azure 免费使用度]: /offers/azure-monetary-credit/
 [Azure 1元试用]: /offers/ms-mc-azr-44p/
 [Windows Server Essentials 客户优惠]: /offers/ms-mc-azr-90p/
 [MSDN 订阅 Azure 优惠]: /offers/ms-mc-arz-msdn/
