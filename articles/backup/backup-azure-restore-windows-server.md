@@ -9,16 +9,23 @@
 
 <tags
 	ms.service="backup"
-	ms.date="01/25/2016"
-	wacn.date="04/12/2016"/>
+	 ms.date="05/10/2016"
+	 wacn.date="08/22/2016"/>
+	
+# 使用 Resource Manager 部署模型将文件还原到 Windows Server 或 Windows 客户端计算机
 
-# 将文件还原到 Windows Server 或 Windows 客户端计算机
+> [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/backup-azure-restore-windows-server/)
+- [经典门户](/documentation/articles/backup-azure-restore-windows-server-classic/)
+
 本文介绍执行两种还原操作所需的步骤：
 
 - 将数据还原到备份时所在的同一台计算机。
 - 将数据还原到其他任何计算机。
 
-在这两种情况下，都将从 Azure 备份保管库检索数据。
+在这两种情况下，都将从 Azure 恢复服务保管库检索数据。
+
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。
 
 ## 将数据恢复到同一台计算机
 如果你意外删除了某个文件并想要在同一台计算机（备份位置）中还原文件，以下步骤可帮助你恢复数据。
@@ -65,12 +72,12 @@
 
 - 源计算机 – 从中创建备份并且当前不可用的原始计算机。
 - 目标计算机 – 要将数据恢复到的计算机。
-- 示例保管库 – 源计算机和目标计算机注册到的备份保管库。<br/>
+- 示例保管库 – 源计算机和目标计算机注册到的恢复服务保管库。<br/>
 
 > [AZURE.NOTE] 从一台计算机创建的备份无法在运行更低版本操作系统的计算机上还原。例如，如果备份是从 Windows 7 计算机创建的，它可以在 Windows 8 或更高版本的计算机上还原。但是，如果反过来则无法还原。
 
 1. 在“目标计算机”中打开“Microsoft Azure 备份”管理单元。
-2. 确保“目标计算机”和“源计算机”已还原到同一个备份保管库。
+2. 确保“目标计算机”和“源计算机”已还原到同一个恢复服务保管库。
 3. 单击“恢复数据”以启动工作流。
 
     ![恢复数据](./media/backup-azure-restore-windows-server/recover.png)
@@ -104,12 +111,6 @@
 11. 提供输入后，单击“恢复”，随即将会触发在提供的目标中还原备份文件的操作。
 
 ## 后续步骤
-- [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)
-- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)。
+- 恢复文件和文件夹后，你可以[管理备份](/documentation/articles/backup-azure-manage-windows-server/)。
 
-## 了解详细信息
-- [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)
-- [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-introduction/)
-- [备份 Microsoft 工作负荷](/documentation/articles/backup-azure-dpm-introduction/)
-
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0808_2016-->
