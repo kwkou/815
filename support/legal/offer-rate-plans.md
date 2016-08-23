@@ -37,7 +37,7 @@
 [Azure 免费试用]						|MS-MC-AZR-01P
  
 [Azure 标准预付费产品]: /offers/ms-mc-arz-33p/
-[Azure 免费使用度]: /offers/azure-monetary-credit/
+[Azure 免费使用额度]: /offers/azure-monetary-credit/
 [Azure 1元试用]: /offers/ms-mc-azr-44p/
 [Windows Server Essentials 客户优惠]: /offers/ms-mc-azr-90p/
 [MSDN 订阅 Azure 优惠]: /offers/ms-mc-arz-msdn/
