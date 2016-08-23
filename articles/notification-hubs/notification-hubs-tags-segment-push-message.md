@@ -4,13 +4,13 @@
 	services="notification-hubs"
 	documentationCenter=".net"
 	authors="wesmc7777"
-	manager="dwrede"
-	editor=""/>
+	manager="erikre"
+	editor=""/>  
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/28/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016"/>  
 
 # 路由和标记表达式
 
@@ -108,4 +108,4 @@
 	"You want info on the Red Socks</text></binding></visual></toast>";
 	outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->

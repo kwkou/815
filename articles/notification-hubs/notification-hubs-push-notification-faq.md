@@ -4,14 +4,14 @@
 	services="notification-hubs"
 	documentationCenter="mobile"
 	authors="wesmc7777"
-	manager="dwrede"
-    keywords="推送通知, 推送通知, iOS 推送通知, android 推送通知, ios 推送, android 推送"
+	manager="erikre"
+	keywords="推送通知, 推送通知, iOS 推送通知, android 推送通知, ios 推送, android 推送"
 	editor="" />
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/09/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016"/>
 
 #使用 Azure 通知中心推送通知 — 常见问题
 
@@ -190,4 +190,4 @@ Azure 通知中心支持在 [Azure 经典门户]中查看遥测数据。你可�
 [Azure Mobile Apps]: /services/mobile-services/
 [App Service 定价]: /pricing/details/mobile-services/
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0808_2016-->

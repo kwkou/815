@@ -77,7 +77,7 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
 
 ![Azure 门户 — 通知中心](./media/notification-hubs-nodejs-how-to-use-notification-hubs/notification-hubs-portal.png)
 
-> [AZURE.NOTE] 还可以使用 [Azure PowerShell](/documentation/articles/powershell-install-configure) 提供的 **Get-AzureSbNamespace** cmdlet 或者在 [Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install) 中使用 **azure sb namespace show** 命令检索连接字符串。
+> [AZURE.NOTE] 还可以使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 提供的 **Get-AzureSbNamespace** cmdlet 或者在 [Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install) 中使用 **azure sb namespace show** 命令检索连接字符串。
 
 ##一般体系结构
 

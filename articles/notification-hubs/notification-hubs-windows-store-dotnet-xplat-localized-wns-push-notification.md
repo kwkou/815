@@ -4,13 +4,13 @@
 	services="notification-hubs"
 	documentationCenter="windows"
 	authors="wesmc7777"
-	manager="dwrede"
-	editor=""/>
+	manager="erikre"
+	editor=""/>  
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/28/2016" 
-	wacn.date="07/12/2016"/>
+	ms.date="06/29/2016" 
+	wacn.date=""/>  
 
 # 使用通知中心发送本地化的突发新闻
 
@@ -58,8 +58,8 @@
 
 	<toast>
 	  <visual>
-	    <binding template="ToastText01">
-	      <text id="1">$(News_English)</text>
+	    <binding template=\"ToastText01\">
+	      <text id=\"1\">$(News_English)</text>
 	    </binding>
 	  </visual>
 	</toast>
@@ -108,7 +108,7 @@
 
 ##构建 Windows 应用商店客户端应用程序
 
-1. 在 Notifications 类中，将一个区域设置参数添加到 StoreCategoriesAndSubscribe 和 SubscribeToCateories 方法。
+1. 在 Notifications 类中，将一个区域设置参数添加到 *StoreCategoriesAndSubscribe* 和 *SubscribeToCateories* 方法。
 
         public async Task<Registration> StoreCategoriesAndSubscribe(string locale, IEnumerable<string> categories)
         {
@@ -133,7 +133,7 @@
             return await hub.RegisterTemplateAsync(channel.Uri, templateBodyWNS, "localizedWNSTemplateExample", categories);
         }
 
-	请注意，不是调用 RegisterNativeAsync 方法，我们调用的是 RegisterTemplateAsync：我们将注册特定的通知格式，在其中模板依赖于区域设置。我们还提供模板的名称（“localizedWNSTemplateExample”），因为我们可能要注册多个模板（例如一个用于 toast 通知，一个用于磁贴），需要命名它们以便可以更新或删除它们。
+	请注意，不是调用 *RegisterNativeAsync* 方法，我们调用的是 *RegisterTemplateAsync*：我们将注册特定的通知格式，在其中模板依赖于区域设置。我们还提供模板的名称（“localizedWNSTemplateExample”），因为我们可能要注册多个模板（例如一个用于 toast 通知，一个用于磁贴），需要命名它们以便可以更新或删除它们。
 
 	请注意，如果一个设备使用同一标签注册多个模板，针对该标签的传入消息将导致多个通知发送到设备（每个通知对应一个模板）。当同一逻辑消息必须导致多个可视通知时，此行为很有用，例如在 Windows 应用商店应用程序显示徽章和 toast。
 
@@ -204,6 +204,7 @@
 <!-- Images. -->
 
 <!-- URLs. -->
+
 [Mobile Service]: /develop/mobile/tutorials/get-started
 [Notify users with Notification Hubs: ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
 [Notify users with Notification Hubs: Mobile Services]: /manage/services/notification-hubs/notify-users
@@ -212,11 +213,11 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
+
 
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->

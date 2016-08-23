@@ -4,13 +4,13 @@
 	services="notification-hubs"
 	documentationCenter="windows"
 	authors="wesmc7777"
-	manager="dwrede"
-	editor="dwrede"/>
+	manager="erikre"
+	editor="erikre"/>  
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="03/28/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016"/>  
 
 # 通知中心入门（Windows 应用商店应用）
 
@@ -256,6 +256,7 @@
 
 
 <!-- Images. -->
+
 [2]: ./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-create-windows-universal-app.png
 [3]: ./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-associate-win8-app.png
 [4]: ./media/notification-hubs-windows-store-dotnet-get-started/mobile-services-select-app-name.png
@@ -280,4 +281,4 @@
 [磁贴目录]: http://msdn.microsoft.com/library/windows/apps/hh761491.aspx
 [锁屏提醒]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0815_2016-->
