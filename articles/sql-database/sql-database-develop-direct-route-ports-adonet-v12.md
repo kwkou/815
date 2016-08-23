@@ -108,7 +108,7 @@
 - [TDS 协议版本列表](http://www.freetds.org/userguide/tdshistory.htm)
 
 
-- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations/)
+- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-develop-overview/)
 
 
 - [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)

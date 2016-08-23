@@ -165,7 +165,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 	![Remove-AzureService 命令的状态][The status of the Remove-AzureService command]
 
-	> [AZURE.NOTE] 删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。有关删除存储帐户的详细信息，请参阅[如何从 Azure 订阅中删除存储帐户]。
+	> [AZURE.NOTE] 删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。
 
 ## 后续步骤
 
@@ -174,7 +174,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 <!-- URL List -->
 
 [Azure 网站、云服务和虚拟机的比较]: /documentation/articles/choose-web-site-cloud-service-vm/
-[使用轻型 Web 应用]:/documentation/articles/web-sites-nodejs-develop-deploy-mac/">
+[使用轻型 Web 应用]:/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 [Azure Powershell]: /documentation/articles/powershell-install-configure/
 [Azure SDK for .NET 2.7]: http://www.microsoft.com/en-us/download/details.aspx?id=48178
 [将 PowerShell 连接]: /documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription

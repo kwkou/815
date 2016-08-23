@@ -411,8 +411,8 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 [Azure Blob 存储]: /documentation/articles/storage-dotnet-how-to-use-blobs/
 
 [HDInsight (Hadoop)]: /documentation/services/hdinsight/
-[Service Bus Queue]: /documentation/articles/service-bus/service-bus-dotnet-get-started-with-queues
-[服务总线队列]: /documentation/articles/service-bus/service-bus-dotnet-get-started-with-queues
+[Service Bus Queue]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
+[服务总线队列]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
 
 
 
@@ -426,9 +426,9 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 [Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [Azure IoT 开发人员中心]: /develop/iot
-[lnk-service-fabric]: https://azure.microsoft.com/documentation/services/service-fabric/
-[lnk-stream-analytics]: https://azure.microsoft.com/documentation/services/stream-analytics/
-[lnk-event-hubs]: https://azure.microsoft.com/documentation/services/event-hubs/
+[lnk-service-fabric]: /documentation/services/service-fabric/
+[lnk-stream-analytics]: /documentation/services/stream-analytics/
+[lnk-event-hubs]: /documentation/services/event-hubs/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh675232.aspx
 
 <!-- Links -->
