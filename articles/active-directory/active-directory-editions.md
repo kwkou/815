@@ -57,7 +57,6 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 - [Connect（将本地目录扩展到 Azure Active Directory 的同步引擎）](#connect-sync-engine-that-extends-on-premises-directories-to-azure-active-directory)
 
-- [安全性/使用情况报告](#securityusage-reports)
 
 ## 常用功能
 #### <a name="directory-objects"></a>目录对象 
@@ -132,7 +131,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 
-#### Connect（将本地目录扩展到 Azure Active Directory 的同步引擎） 
+#### <a name="connect-sync-engine-that-extends-on-premises-directories-to-azure-active-directory"></a>Connect（将本地目录扩展到 Azure Active Directory 的同步引擎） 
 
 **类型：**常用功能
 

@@ -140,7 +140,6 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 JavaScript
 
 	// Passport session setup. (Section 2)
-
 	//   To support persistent login sessions, Passport needs to be able to
 	//   serialize users into and deserialize users out of the session.  Typically,
 	//   this will be as simple as storing the user ID when serializing, and finding
@@ -175,10 +174,7 @@ JavaScript
 JavaScript
 
 	// configure Express (Section 2)
-
 	var app = express();
-
-
 	app.configure(function() {
 	  app.set('views', __dirname + '/views');
 	  app.set('view engine', 'ejs');
@@ -202,7 +198,6 @@ JavaScript
 JavaScript
 
 	// Our Auth routes (Section 3)
-
 	// POST /auth/openid
 	//   Use passport.authenticate() as route middleware to authenticate the
 	//   request.  The first step in OpenID authentication will involve redirecting
@@ -250,7 +245,6 @@ JavaScript
 JavaScript
 
 	//Routes (Section 4)
-
 	app.get('/', function(req, res){
 	  res.render('index', { user: req.user });
 	});
@@ -258,7 +252,6 @@ JavaScript
 	app.get('/account', ensureAuthenticated, function(req, res){
 	  res.render('account', { user: req.user });
 	});
-
 	app.get('/login',
 	  passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
 	  function(req, res) {
@@ -285,7 +278,6 @@ JavaScript
 JavaScript
 
 	// Simple route middleware to ensure user is authenticated. (Section 4)
-
 	//   Use this route middleware on any resource that needs to be protected.  If
 	//   the request is authenticated (typically via a persistent login session),
 	//   the request will proceed.  Otherwise, the user will be redirected to the

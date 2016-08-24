@@ -65,21 +65,21 @@ CocoaPods 是 Xcode 项目的依赖关系管理器。它会自动管理上述安
 1. 将以下内容添加到 podfile：
 
 		
-	platform :ios, '8.0'
+		platform :ios, '8.0'
 	
-	target 'QuickStart' do
+		target 'QuickStart' do
 	
-	pod 'NXOAuth2Client'
+		pod 'NXOAuth2Client'
 	
-	end
+		end
 		
 
 2. 使用 CocoaPods 加载 podfile。这会创建你要加载的新 Xcode 工作区。
 
 		
-	$ pod install
-	...
-	$ open QuickStart.xcworkspace
+		$ pod install
+		...
+		$ open QuickStart.xcworkspace
 		
 
 ## 浏览项目结构
@@ -255,7 +255,8 @@ objc
 
 
 objc
-	- (void)setupOAuth2AccountStore {
+
+		- (void)setupOAuth2AccountStore {
 	
 	
 	        AppData* data = [AppData getInstance];
@@ -373,8 +374,8 @@ objc
 
 objc
 	
-	-(void)lookupInGraph:(NSString *)searchText {
-	if (searchText.length > 0) {
+		-(void)lookupInGraph:(NSString *)searchText {
+		if (searchText.length > 0) {
 	
 	    };
 	
@@ -563,30 +564,30 @@ objc
 最后，来看看你要如何将数据返回到 MasterViewController。数据会以序列化方式返回，而且该数据必须反序列化并加载到 MainViewController 可使用的对象中。出于此目的，主干具有的 `User.m/h` 文件可以创建 User 对象。你会使用图形中的信息填充该 User 对象。
 
 objc
-
-                           // We can grab the top most JSON node to get our graph data.
-                           NSArray *graphDataArray = [dataReturned objectForKey:@"value"];
-
-                           // Don't be thrown off by the key name being "value". It really is the name of the
-                           // first node. :-)
-
-                           //each object is a key value pair
-                           NSDictionary *keyValuePairs;
-                           NSMutableArray* Users = [[NSMutableArray alloc]init];
-
-                           for(int i =0; i < graphDataArray.count; i++)
-                           {
-                               keyValuePairs = [graphDataArray objectAtIndex:i];
-
-                               User *s = [[User alloc]init];
-                               s.upn = [keyValuePairs valueForKey:@"userPrincipalName"];
-                               s.name =[keyValuePairs valueForKey:@"displayName"];
-                               s.mail =[keyValuePairs valueForKey:@"mail"];
-                               s.businessPhones =[keyValuePairs valueForKey:@"businessPhones"];
-                               s.mobilePhones =[keyValuePairs valueForKey:@"mobilePhone"];
-
-
-                               [Users addObject:s];
+	
+	// We can grab the top most JSON node to get our graph data.
+	NSArray *graphDataArray = [dataReturned objectForKey:@"value"];
+	
+	// Don't be thrown off by the key name being "value". It really is the name of the
+	// first node. :-)
+	
+	//each object is a key value pair
+	NSDictionary *keyValuePairs;
+	NSMutableArray* Users = [[NSMutableArray alloc]init];
+	
+	for(int i =0; i < graphDataArray.count; i++)
+	{
+	    keyValuePairs = [graphDataArray objectAtIndex:i];
+	
+	    User *s = [[User alloc]init];
+	    s.upn = [keyValuePairs valueForKey:@"userPrincipalName"];
+	    s.name =[keyValuePairs valueForKey:@"displayName"];
+	    s.mail =[keyValuePairs valueForKey:@"mail"];
+	    s.businessPhones =[keyValuePairs valueForKey:@"businessPhones"];
+	    s.mobilePhones =[keyValuePairs valueForKey:@"mobilePhone"];
+	
+	
+	    [Users addObject:s];
 
 
 

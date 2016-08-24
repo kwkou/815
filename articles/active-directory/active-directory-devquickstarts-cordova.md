@@ -96,33 +96,33 @@ Azure AD 只会向已知的应用程序颁发令牌。在从应用程序使用 A
 
 在 shell 或命令行中键入以下命令：
 
-    	git clone -b skeleton https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-Cordova.git
+    git clone -b skeleton https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-Cordova.git
 
 ## *3.创建 Cordova 应用程序*
 
 可通过多种方式创建 Cordova 应用程序。在本教程中，我们将使用 Cordova 命令行界面 (CLI)。
 在 shell 或命令行中键入以下命令：
 
-     	cordova create DirSearchClient --copy-from="NativeClient-MultiTarget-Cordova/DirSearchClient"
+     cordova create DirSearchClient --copy-from="NativeClient-MultiTarget-Cordova/DirSearchClient"
 
 这会创建 Cordova 项目的文件夹结构和基架，并在 www 子文件夹中复制初学者项目的内容。
 切换到新的 DirSearchClient 文件夹。
 
-    	cd .\DirSearchClient
+    cd .\DirSearchClient
 
 添加调用 Graph API 时所需的允许列表插件。
 
-     	cordova plugin add cordova-plugin-whitelist
+     cordova plugin add cordova-plugin-whitelist
 
 接下来，添加你要支持的所有平台。为了获得一个有效示例，至少需要执行下列其中一个命令。请注意，你无法在 Windows 上模拟 iOS，或者在 Mac 上模拟 Windows/Windows Phone。
 
-	    cordova platform add android
-	    cordova platform add ios
-	    cordova platform add windows
+	cordova platform add android
+	cordova platform add ios
+	cordova platform add windows
 
 最后，可以将 ADAL for Cordova 插件添加到项目。
 
-    	cordova plugin add cordova-plugin-ms-adal
+    cordova plugin add cordova-plugin-ms-adal
 
 ## *3.添加代码以便对用户进行身份验证并从 AAD 获取令牌*
 
@@ -132,11 +132,11 @@ Azure AD 只会向已知的应用程序颁发令牌。在从应用程序使用 A
 
 javascript
 
-		    var authority = "https://login.chinacloudapi.cn/common",
-		    redirectUri = "http://MyDirectorySearcherApp",
-		    resourceUri = "https://graph.chinacloudapi.cn",
-		    clientId = "a5d92493-ae5a-4a9f-bcbf-9f1d354067d3",
-		    graphApiVersion = "2013-11-08";
+	var authority = "https://login.chinacloudapi.cn/common",
+	redirectUri = "http://MyDirectorySearcherApp",
+	resourceUri = "https://graph.chinacloudapi.cn",
+	clientId = "a5d92493-ae5a-4a9f-bcbf-9f1d354067d3",
+	graphApiVersion = "2013-11-08";
 
 
 `redirectUri` 和 `clientId` 值应与 AAD 中用于描述应用程序的值匹配。如本教程前面步骤 1 中所述，你可以在 Azure 门户的“配置”选项卡中找到这些值。
@@ -146,11 +146,11 @@ javascript
 
 javascript
 		
-		    // Shows user authentication dialog if required.
-		    authenticate: function (authCompletedCallback) {
+		// Shows user authentication dialog if required.
+		  authenticate: function (authCompletedCallback) {
 		
-		        app.context = new Microsoft.ADAL.AuthenticationContext(authority);
-		        app.context.tokenCache.readItems().then(function (items) {
+		     app.context = new Microsoft.ADAL.AuthenticationContext(authority);
+		      app.context.tokenCache.readItems().then(function (items) {
 		            if (items.length > 0) {
 		                authority = items[0].authority;
 		                app.context = new Microsoft.ADAL.AuthenticationContext(authority);
@@ -166,34 +166,34 @@ javascript
 		            });
 		        });
 		
-		    },
+		},
 
 让我们通过将它分解成两个主要部分来检查运行情况。
 此示例应适用于任何租户，而不只是与某个特定租户相关。它使用了“/common”终结点，因此，用户在身份验证时可以输入任何帐户，并可将请求定向到它所属的租户。
 该方法的第一部分将检查 ADAL 缓存，以确定是否已有一个存储的令牌 - 如果有，则使用该令牌的来源租户重新初始化 ADAL。要避免额外的提示，必须执行此操作，因为使用“/common”总会导致要求用户输入新帐户。
 javascript
 
-		        app.context = new Microsoft.ADAL.AuthenticationContext(authority);
-		        app.context.tokenCache.readItems().then(function (items) {
-		            if (items.length > 0) {
-		                authority = items[0].authority;
-		                app.context = new Microsoft.ADAL.AuthenticationContext(authority);
-		            }
+	app.context = new Microsoft.ADAL.AuthenticationContext(authority);
+	app.context.tokenCache.readItems().then(function (items) {
+		 if (items.length > 0) {
+		     authority = items[0].authority;
+		      app.context = new Microsoft.ADAL.AuthenticationContext(authority);
+		}
 
 该方法的第二部分将执行适当的 tokewn 请求。
 `acquireTokenSilentAsync` 方法请求 ADAL 返回指定资源的令牌，且不显示任何 UX。如果缓存中已经存储了一个适当的访问令牌，或者有一个刷新令牌可用于获取新访问令牌且不显示任何提示，则可能会发生这种情况。
 如果该尝试失败，我们将在 `acquireTokenAsync` 上回退 - 这会以可视方式提示用户进行身份验证。
 javascript
 	
-	            // Attempt to authorize user silently
-	            app.context.acquireTokenSilentAsync(resourceUri, clientId)
-	            .then(authCompletedCallback, function () {
-	                // We require user cridentials so triggers authentication dialog
-	                app.context.acquireTokenAsync(resourceUri, clientId, redirectUri)
-	                .then(authCompletedCallback, function (err) {
-	                    app.error("Failed to authenticate: " + err);
-	                });
+	      // Attempt to authorize user silently
+	         app.context.acquireTokenSilentAsync(resourceUri, clientId)
+	        .then(authCompletedCallback, function () {
+	          // We require user cridentials so triggers authentication dialog
+	           app.context.acquireTokenAsync(resourceUri, clientId, redirectUri)
+	          .then(authCompletedCallback, function (err) {
+	            app.error("Failed to authenticate: " + err);
 	            });
+	        });
 
 现在，我们已经获得了令牌，最后，我们可以调用 Graph API 并执行所需的搜索查询。在 `authenticate` 定义的正下方插入以下代码段。
 

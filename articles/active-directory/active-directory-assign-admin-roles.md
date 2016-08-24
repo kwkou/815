@@ -105,8 +105,6 @@ Privileged Identity Management | <ul><li>安全读取者角色的所有权限。
 
 ## 后续步骤
 
-- 若要了解有关如何更改 Azure 订阅管理员的详细信息，请参阅[如何添加或更改 Azure 管理员角色](/documentation/articles/billing-add-change-azure-subscription-administrator/)
-
 - 若要了解有关如何在 Microsoft Azure 中控制资源访问的详细信息，请参阅[了解 Azure 中的资源访问权限](/documentation/articles/active-directory-understanding-resource-access/)
 
 - 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
