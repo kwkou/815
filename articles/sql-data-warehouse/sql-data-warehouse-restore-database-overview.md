@@ -59,7 +59,7 @@ Azure SQL 数据仓库可通过本地冗余存储和自动执行的备份来保�
 
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
-[本地冗余 (LRS)]: /documentation/articles/storage/storage-redundancy/
+[本地冗余 (LRS)]: /documentation/articles/storage-redundancy/
 [概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
 [PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
