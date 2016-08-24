@@ -58,7 +58,7 @@
     static const char* deviceId = "[Device Id]";
     static const char* deviceKey = "[Device Key]";
     static const char* hubName = "[IoTHub Name]";
-    static const char* hubSuffix = "[IoTHub Suffix, i.e. azure-devices.net]";
+    static const char* hubSuffix = "[IoTHub Suffix, i.e. azure-devices.cn]";
     ```
 
 7. 将 [Device Id] 和 [Device Key] 替换为设备数据以便使示例程序可以连接到 IoT 中心。使用 IoT 中心主机名替换 [IoTHub Name] 和 [IoTHub Suffix, i.e. azure-devices.cn] 占位符。例如，如果 IoT 中心主机名是 **contoso.azure-devices.cn**，则 **contoso** 是 **hubName**，其后的所有内容是 **hubSuffix**：

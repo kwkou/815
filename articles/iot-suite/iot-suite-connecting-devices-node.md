@@ -44,7 +44,7 @@
     如果 IoT 中心主机名是 **contoso** 并且设备 ID 是 **mydevice**，则连接字符串将如下所示：
 
     ```
-    var connectionString = "HostName=contoso.azure-devices.net;DeviceId=mydevice;SharedAccessKey=2s ... =="
+    var connectionString = "HostName=contoso.azure-devices.cn;DeviceId=mydevice;SharedAccessKey=2s ... =="
     ```
 
 5. 保存文件。在包含这些文件的文件夹中的命令提示符处运行以下命令，以安装所需包，然后运行示例应用程序：

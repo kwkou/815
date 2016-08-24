@@ -89,7 +89,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 ## 手动设置应用程序角色
 
-以下过程描述如何将 **Admin** 和 **ReadOnly** 应用程序角色添加到预配置解决方案中。请注意，从 azureiotsuite.com 站点预配的预配置解决方案已经包含 **Admin** 和 **ReadOnly** 角色。
+以下过程描述如何将 **Admin** 和 **ReadOnly** 应用程序角色添加到预配置解决方案中。请注意，从 azureiotsuite.cn 站点预配的预配置解决方案已经包含 **Admin** 和 **ReadOnly** 角色。
 
 **ReadOnly** 角色的成员可以看到仪表板和设备列表，但不能添加设备、更改设备属性或发送命令。**Admin** 角色的成员具有对解决方案中所有功能的完全访问权限。
 
@@ -143,7 +143,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 11. 现在已将 **Admin** 和 **ReadOnly** 角色添加到应用程序中。
 
-12. 若要将其中一个角色分配给你目录中的用户，请参阅 [azureiotsuite.com 站点上的权限][lnk-permissions]。
+12. 若要将其中一个角色分配给你目录中的用户，请参阅 [azureiotsuite.cn 站点上的权限][lnk-permissions]。
 
 ## 反馈
 

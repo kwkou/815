@@ -131,7 +131,7 @@ Azure 管理员角色可控制将 Azure 订阅映射到 AD 租户的能力。
 
 如果你确定具有 Azure 订阅，请验证订阅的租户映射，并确保在下拉列表中选择正确租户。如果验证了所需租户是正确的，请按照上图并验证订阅和此 AAD 租户的映射。
 
-[img-flowchart]: 。/media/iot-suite-permissions/flowchart.png
+[img-flowchart]: ./media/iot-suite-permissions/flowchart.png
 
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
 [lnk-github-repo]: https://github.com/Azure/azure-iot-solution
