@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="05/27/2016"
-    wacn.date="07/18/2016"/>
+    wacn.date="08/24/2016"/>
 
 # 使用 Transact-SQL 监视和管理弹性数据库池  
 
@@ -22,7 +22,7 @@
 使用 [Create Database（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)和 [Alter Database（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx)命令可以创建数据库并将它们移入和移出弹性池。必须先有弹性池才可以使用这些命令。这些命令只影响数据库。无法使用 T-SQL 命令更改新池的创建和池属性（例如最小和最大 eDTU）的设置。
 
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
+> [AZURE.NOTE] 弹性数据库池仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 
 ## 在弹性池中创建新数据库
