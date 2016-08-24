@@ -18,7 +18,6 @@
 
 弹性池是一种简单的低成本高效益的解决方案，用于管理使用模式变化很大且不可预测的多个数据库的性能目标。
 
-> [AZURE.NOTE] 弹性池目前在中国北部提供预览版。
 
 ## 工作原理
 
@@ -42,7 +41,7 @@
 [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。
+> [AZURE.NOTE] 弹性数据库池仅适用于 SQL 数据库 V12 服务器。
 
 ## 弹性池和弹性数据库的 eDTU 和存储限制
 

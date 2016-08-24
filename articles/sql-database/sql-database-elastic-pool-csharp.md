@@ -11,7 +11,7 @@
 <tags
     ms.service="sql-database"
     ms.date="05/03/2016"
-    wacn.date="07/21/2016"/>
+    wacn.date="08/24/2016"/>
 
 # C&#x23; 数据库开发：为 SQL 数据库创建和配置弹性数据库池
 
@@ -22,7 +22,7 @@
 
 本文说明如何为来自使用 C# 数据库开发技术的应用程序 SQL 数据库创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
+> [AZURE.NOTE] 弹性数据库池仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 这些示例使用了[适用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
 为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。

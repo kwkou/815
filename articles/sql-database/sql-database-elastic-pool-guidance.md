@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="05/23/2016"
-	wacn.date="07/18/2016" />
+	wacn.date="08/24/2016" />
 
 
 # 何时使用弹性数据库池？
@@ -18,7 +18,7 @@
 
 - 有关池的概述，请参阅 [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
-> [AZURE.NOTE] 弹性数据库池为预览版，仅适用于 SQL 数据库 V12 服务器。
+> [AZURE.NOTE] 弹性数据库池仅适用于 SQL 数据库 V12 服务器。
 
 ## 弹性数据库池
 
