@@ -112,7 +112,7 @@ Hive 分区的实现方法是将未经处理的数据刷新成新的目录，而
 	    WHERE lineitem.L_SHIPDATE = ‘5/23/1996 12:00:00 AM’
 
 	    ALTER TABLE lineitem_part ADD PARTITION (L_SHIPDATE = ‘5/23/1996 12:00:00 AM’))
-	    LOCATION ‘wasb://sampledata@ignitedemo.blob.core.chinacloudapi.cn/partitions/5_23_1996/'
+	    LOCATION ‘wasbs://sampledata@ignitedemo.blob.core.chinacloudapi.cn/partitions/5_23_1996/'
 
 - **动态分区**表示你希望 Hive 自动为你创建分区。由于我们已经基于暂存表创建了分区表，我们需要做的就是将数据插入分区表，如下所示：
 

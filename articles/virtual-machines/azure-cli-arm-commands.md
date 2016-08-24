@@ -33,13 +33,6 @@
 
 >[AZURE.NOTE] Azure 资源管理器模式与 Azure 服务管理模式互斥。即在一种模式下创建的资源不能从另一种模式进行管理。
 
-## 命令性和声明性方法
-
-与 [Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools/)一样，Azure CLI 的 Resource Manager 模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
-
-但是，使用用于描述资源组的资源组模板是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview/)。
-
-
 ## azure account：管理你的帐户信息
 该工具使用你的 Azure 订阅信息连接到你的帐户。
 

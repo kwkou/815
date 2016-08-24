@@ -76,15 +76,15 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 5. 通过运行以下命令，为网关创建 IP 配置对象。注意网关子网的 ID。该子网必须存在于 VNet 中。
 
 		$ipconfig = New-AzureRmVirtualNetworkGatewayIpConfig `
-			-Name ipconfig -PrivateIpAddress 10.1.2.4 `
-			-SubnetId $subnet.id -PublicIpAddressId $ipaddress.id
+		-Name ipconfig -SubnetId $subnet.id `
+		-PublicIpAddressId $ipaddress.id
 
 	>[AZURE.IMPORTANT] “SubnetId” 和 “PublicIpAddressId” 参数必须分别从子网和 IP 地址对象传递 ID 属性。不能使用简单字符串。
 	
 5. 通过运行以下命令，创建 ARM VNet 网关。
 
 		New-AzureRmVirtualNetworkGateway -Name v1v2Gateway -ResourceGroupName RG1 `
-			-Location "China East" -GatewayType Vpn -IpConfigurations $ipconfig `
+			-Location "China East" -GatewaySKU Standard -GatewayType Vpn -IpConfigurations $ipconfig `
 			-EnableBgp $false -VpnType RouteBased
 
 6. VPN 网关创建完成后，运行以下命令以检索其公有 IP 地址。复制 IP 地址，为经典 VNet 配置本地网络时需要该地址。

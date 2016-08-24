@@ -55,8 +55,8 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 
 <table border="1">
 <tr><th>文件</th><th>说明</th></tr>
-<tr><td>wasb://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql</td><td>你要运行的 Hive 作业所用的 HiveQL 脚本文件。此脚本已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-b">附录 B</a> 提供了有关准备此文件以及将其上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
-<tr><td>wasb://flightdelay@hditutorialdata.blob.core.windows.net/2013Data</td><td>Hive 作业的输入的数据。这些数据已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-a">附录 A</a> 提供了有关获取数据以及将数据上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
+<tr><td>wasbs://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql</td><td>你要运行的 Hive 作业所用的 HiveQL 脚本文件。此脚本已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-b">附录 B</a> 提供了有关准备此文件以及将其上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
+<tr><td>wasbs://flightdelay@hditutorialdata.blob.core.windows.net/2013Data</td><td>Hive 作业的输入的数据。这些数据已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-a">附录 A</a> 提供了有关获取数据以及将数据上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
 <tr><td>\tutorials\flightdelays\output</td><td>Hive 作业的输出路径。默认容器用于存储输出数据。</td></tr>
 <tr><td>\tutorials\flightdelays\jobstatus</td><td>默认容器上的 Hive 作业状态文件夹。</td></tr>
 </table>
@@ -138,7 +138,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 		#endregion
 
 		#region - Hive job variables
-		[String]$hqlScriptFile = "wasb://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql" # The HiveQL script is located in a public Blob container. Update this URI if you want to use your own script file.
+		[String]$hqlScriptFile = "wasbs://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql" # The HiveQL script is located in a public Blob container. Update this URI if you want to use your own script file.
 
 		[String]$jobStatusFolder = "/tutorials/flightdelays/jobstatus" # The script saves both the output data and the job status file to the default container.
 		                                                               # The output data path is set in the HiveQL file.
@@ -279,7 +279,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 		Write-Host "`nSubmitting the Sqoop job ..." -ForegroundColor Green
 		Write-Host "`tCurrent system time: " (get-date) -ForegroundColor Yellow
 
-		[String]$exportDir = "wasb://$blobContainerName@$storageAccountName.blob.core.chinacloudapi.cn/tutorials/flightdelays/output"
+		[String]$exportDir = "wasbs://$blobContainerName@$storageAccountName.blob.core.chinacloudapi.cn/tutorials/flightdelays/output"
 
 
 		$sqoopDef = New-AzureHDInsightSqoopJobDefinition -Command "export --connect $sqlDatabaseConnectionString --table $sqlDatabaseTableName --export-dir $exportDir --fields-terminated-by \001 "
@@ -440,7 +440,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 
 如果你选择使用其他方法上载文件，请确保文件路径是 tutorials/flightdelay/data。用于访问文件的语法是：
 
-	wasb://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/tutorials/flightdelay/data
+	wasbs://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/tutorials/flightdelay/data
 
 路径 tutorials/flightdelay/data 是你在上载文件时创建的虚拟文件夹。验证是否有 12 个文件，每个月对应一个文件。
 
@@ -570,7 +570,7 @@ HiveQL 脚本将执行以下操作：
 		    "ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' " +
 		    "LINES TERMINATED BY '\n' " +
 		    "STORED AS TEXTFILE " +
-		    "LOCATION 'wasb://flightdelay@hditutorialdata.blob.core.windows.net/2013Data';"
+		    "LOCATION 'wasbs://flightdelay@hditutorialdata.blob.core.windows.net/2013Data';"
 
 		$hqlDropDelays = "DROP TABLE delays;"
 

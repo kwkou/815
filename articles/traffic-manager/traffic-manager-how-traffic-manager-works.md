@@ -51,7 +51,7 @@ Contoso Corp 开发了一个新的合作伙伴门户。此门户的 URL 将是 h
 
 1.	客户端（电脑、手机等）向其配置的递归 DNS 服务发出针对“partners.contoso.com”的 DNS 查询。（递归 DNS 服务有时称为“本地 DNS”服务，并不直接托管 DNS 域，但客户端可以使用它将联系各种权威 DNS 服务的必要工作转移到整个 Internet，以便解析 DNS 名称。）
 2.	递归 DNS 服务现在可以解析“partners.contoso.com”DNS 名称了。首先，递归 DNS 服务查找“contoso.com”域的名称服务器。然后，它会联系这些名称服务器以请求“partners.contoso.com”DNS 记录。将返回指向 contoso.trafficmanager.cn 的 CNAME。
-3.	递归 DNS 服务此时会查找“trafficmanager.net”域的名称服务器，这些服务器由 Azure 流量管理器服务提供。它会联系这些名称服务器以请求“contoso.trafficmanager.cn”DNS 记录。
+3.	递归 DNS 服务此时会查找“trafficmanager.cn”域的名称服务器，这些服务器由 Azure 流量管理器服务提供。它会联系这些名称服务器以请求“contoso.trafficmanager.cn”DNS 记录。
 4.	流量管理器名称服务器接收该请求。然后，这些名称服务器会根据以下标准选择应返回的终结点：
 a.	每个终结点的“已启用/已禁用”状态（不返回已禁用的终结点）
 b.	每个终结点的当前运行状况，可通过流量管理器运行状况检查来确定。有关详细信息，请参阅“流量管理器终结点监视”。

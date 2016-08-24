@@ -19,7 +19,7 @@
 
 将 Web Apps 与 Azure CDN 集成具有以下优点：
 
-- 在 Web 应用的[部署](/documentation/articles/web-sites-publish-source-control/)过程中集成内容部署（映像、脚本和样式表）
+- 在 Web 应用的[连续部署](/documentation/articles/app-service-continous-deployment/)过程中集成内容部署（映像、脚本和样式表）
 - 轻松升级 Azure 的 Web 应用中的 NuGet 包，例如 jQuery 或 Bootstrap 版本 
 - 在同一 Visual Studio 界面中管理 Web 应用程序和 CDN 提供的内容
 - 将 ASP.NET 绑定和缩减与 Azure CDN 集成

@@ -124,7 +124,7 @@ RunHiveScript 有几个变量。在从工作站使用 Azure PowerShell 提交 Oo
 <table border = "1">
 <tr><th>工作流变量</th><th>说明</th></tr>
 <tr><td>${jobTracker}</td><td>指定 Hadoop 作业跟踪器的 URL。在 HDInsight 版本 3.0 和 2.1 中使用 <strong>jobtrackerhost:9010</strong>。</td></tr>
-<tr><td>${nameNode}</td><td>指定 Hadoop 名称节点的 URL。请使用默认文件系统地址，例如 <i>wasb://&lt;containerName>@&lt;storageAccountName>.blob.core.chinacloudapi.cn</i>。</td></tr>
+<tr><td>${nameNode}</td><td>指定 Hadoop 名称节点的 URL。请使用默认文件系统地址，例如 <i>wasbs://&lt;containerName>@&lt;storageAccountName>.blob.core.chinacloudapi.cn</i>。</td></tr>
 <tr><td>${queueName}</td><td>指定要将作业提交到的队列名称。使用<strong>默认值</strong>。</td></tr>
 </table>
 
@@ -150,9 +150,9 @@ RunHiveScript 有几个变量。在从工作站使用 Azure PowerShell 提交 Oo
 
 你将运行 Windows PowerShell 脚本来执行以下操作：
 
-- 将 HiveQL 脚本 (useoozie.hql) 复制到 Azure 存储空间 (wasb:///tutorials/useoozie/useoozie.hql)。
-- 将 workflow.xml 复制到 wasb:///tutorials/useoozie/workflow.xml。
-- 将数据文件 (/example/data/sample.log) 复制到 wasb:///tutorials/useoozie/data/sample.log。 
+- 将 HiveQL 脚本 (useoozie.hql) 复制到 Azure 存储空间 (wasbs:///tutorials/useoozie/useoozie.hql)。
+- 将 workflow.xml 复制到 wasbs:///tutorials/useoozie/workflow.xml。
+- 将数据文件 (/example/data/sample.log) 复制到 wasbs:///tutorials/useoozie/data/sample.log。 
 - 创建用于存储 Sqoop 导出数据的 Azure SQL 数据库表。表的名称为 *log4jLogCount*。
 
 **了解 HDInsight 存储**
@@ -163,14 +163,14 @@ HDInsight 使用 Azure 存储空间中的 Blob 来存储数据。有关详细信
 
 	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/<path>/<filename>
 
-> [AZURE.NOTE]HDInsight 版本 3.0 群集仅支持 **wasb://* 语法。较早的 **asv://* 语法在 HDInsight 2.1 和 1.6 群集中受支持，但在 HDInsight 3.0 群集中不受支持。
+> [AZURE.NOTE]HDInsight 版本 3.0 群集仅支持 **wasbs://* 语法。较早的 **asv://* 语法在 HDInsight 2.1 和 1.6 群集中受支持，但在 HDInsight 3.0 群集中不受支持。
 
-> [AZURE.NOTE]wasb:// 路径是虚拟路径。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]。
+> [AZURE.NOTE]wasbs:// 路径是虚拟路径。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]。
 
 存储在默认文件系统容器中的文件可以使用以下任一 URI 从 HDInsight 进行访问（以下代码使用 workflow.xml 为例）：
 
-	wasb://mycontainer@mystorageaccount.blob.core.chinacloudapi.cn/tutorials/useoozie/workflow.xml
-	wasb:///tutorials/useoozie/workflow.xml
+	wasbs://mycontainer@mystorageaccount.blob.core.chinacloudapi.cn/tutorials/useoozie/workflow.xml
+	wasbs:///tutorials/useoozie/workflow.xml
 	/tutorials/useoozie/workflow.xml
 
 如果要从存储帐户直接访问该文件，则请注意，该文件的 Blob 名称是：
@@ -298,7 +298,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 		#Azure Blob storage variables
 		$storageAccountName = "<StorageAccountName>"
 		$storageContainerName = "<BlobContainerName>"
-		$storageUri="wasb://$storageContainerName@$storageAccountName.blob.core.chinacloudapi.cn"
+		$storageUri="wasbs://$storageContainerName@$storageAccountName.blob.core.chinacloudapi.cn"
 		
 		#Azure SQL database variables
 		$sqlDatabaseServer = "<SQLDatabaseServerName>"

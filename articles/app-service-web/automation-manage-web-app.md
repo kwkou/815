@@ -20,7 +20,7 @@
 
 ## 什么是 Azure Automation？
 
-[Azure 自动化](/home/features/automation/)是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure 自动化可以自动完成那些人工操作、经常重复、长时间运行且易出错的任务，从而改善组织的可靠性、效率和价值生成时间。
+[Azure 自动化](/documentation/articles/automation-intro/)是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure 自动化可以自动完成那些人工操作、经常重复、长时间运行且易出错的任务，从而改善组织的可靠性、效率和价值生成时间。
 
 Azure Automation 提供了具有高可靠性和高可用性的工作流执行引擎，该引擎可以根据你的需求进行扩展。在 Azure Automation 中，流程可以手动、通过第三方系统或按计划的间隔启动，使任务能够完全根据需求进行。
 
@@ -36,7 +36,7 @@ Azure Automation 提供了具有高可靠性和高可用性的工作流执行引
 
 在了解 Azure Automation 以及如何使用它来管理 Azure Web 应用的基础知识后，请使用以下链接了解有关 Azure Automation 的更多信息。
 
-* 请参阅 Azure Automation [入门教程](/documentation/articles/automation-intro/)
+* 请参阅 Azure Automation [入门教程](/documentation/articles/automation-first-runbook-textual/)
  
 
 <!---HONumber=Mooncake_1207_2015-->

@@ -16,7 +16,7 @@
 # 适用于经典部署模型中 Windows VM 的技术文章
 
 
-查找在经典部署模型中创建和管理基于 Windows 的虚拟机时需要参考的所有文档。
+查找在经典部署模型中创建和管理基于 Windows 的 Azure 虚拟机时需要参考的所有文档。
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
@@ -79,8 +79,6 @@
 ## 管理
 
 [使用 Azure PowerShell 管理虚拟机](/documentation/articles/virtual-machines-windows-classic-manage-psh/)
-
-[适合使用 Azure 命令行界面执行 VM 任务的等效资源管理器和服务管理命令](/documentation/articles/virtual-machines-windows-cli-manage/)
 
 [将经典 VNet 连接到新的 VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto/)
 	

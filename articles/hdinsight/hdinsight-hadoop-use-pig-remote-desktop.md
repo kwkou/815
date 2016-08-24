@@ -45,7 +45,7 @@
 
 3. 输入以下语句：
 
-		LOGS = LOAD 'wasb:///example/data/sample.log';
+		LOGS = LOAD 'wasbs:///example/data/sample.log';
 
 	此命令会将 sample.log 文件的内容加载到 LOGS 文件中。你可以通过使用以下方法查看该文件的内容：
 
@@ -79,7 +79,7 @@
 
 6. 你也可以使用 `STORE` 语句保存转换结果。例如，以下命令将 `RESULT` 保存到群集的默认存储容器上的 **/example/data/pigout** 目录：
 
-		STORE RESULT into 'wasb:///example/data/pigout'
+		STORE RESULT into 'wasbs:///example/data/pigout'
 
 	> [AZURE.NOTE]数据将存储到指定目录中名为 **part-nnnnn** 的文件中。如果该目录已存在，则你将会收到错误消息。
 
@@ -95,7 +95,7 @@
 
 4. 在 **pigbatch.pig** 文件中键入或粘贴以下行，然后保存它：
 
-		LOGS = LOAD 'wasb:///example/data/sample.log';
+		LOGS = LOAD 'wasbs:///example/data/sample.log';
 		LEVELS = foreach LOGS generate REGEX_EXTRACT($0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;
 		FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;
 		GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;

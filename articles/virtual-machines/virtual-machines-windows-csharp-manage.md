@@ -65,12 +65,12 @@
 	    {
           var cc = new ClientCredential("{client-id}", "{client-secret}");
           var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
-          var result = context.AcquireTokenAsync("https://management.chinacloudapi.cn/", cc);
+          var result = await context.AcquireTokenAsync("https://management.chinacloudapi.cn/", cc);
           if (result == null)
           {
             throw new InvalidOperationException("Could not get the token");
           }
-          return token;
+          return result;
         }
 	
     将 {client-id} 替换为 Azure Active Directory 应用程序的标识符，将 {client-secret} 替换为 AD 应用程序的访问密钥，并将 {tenant-id} 替换为你的订阅的租户标识符。可以通过运行 Get-AzureRmSubscription 找到租户 ID。可以使用 Azure 门户找到访问密钥。

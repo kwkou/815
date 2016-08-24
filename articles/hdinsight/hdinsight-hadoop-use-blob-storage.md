@@ -23,7 +23,7 @@ Azure Blob 存储是一种稳健、通用的存储解决方案，它与 HDInsigh
 
 通过将数据存储在 Blob 存储中，你可以安全删除用于计算的 HDInsight 群集而不会丢失用户数据。
 
-> [AZURE.NOTE]	HDInsight 版本 3.0 群集不支持 *asv://* 语法。这意味着提交到 HDInsight 版本 3.0 群集的任何显式使用 *asv://* 语法的作业都将会失败。应改用 *wasb://* 语法。而且，提交到任何 HDInsight 版本 3.0 群集的作业，如果是使用现有元存储创建的，而该元存储包含对使用 asv:// 语法的资源的显式引用，则这些作业也会失败。这些元存储将需要使用 wasb:// 语法重新创建以确定资源地址。
+> [AZURE.NOTE]	HDInsight 版本 3.0 群集不支持 *asv://* 语法。这意味着提交到 HDInsight 版本 3.0 群集的任何显式使用 *asv://* 语法的作业都将会失败。应改用 *wasbs://* 语法。而且，提交到任何 HDInsight 版本 3.0 群集的作业，如果是使用现有元存储创建的，而该元存储包含对使用 asv:// 语法的资源的显式引用，则这些作业也会失败。这些元存储将需要使用 wasbs:// 语法重新创建以确定资源地址。
 ><p> HDInsight 目前只支持块 Blob。
 ><p> 大多数 HDFS 命令（例如 <b>ls</b>、<b>copyFromLocal</b> 和 <b>mkdir</b>）仍按预期工作。只有特定于本机 HDFS 实现（称作 DFS）的命令在 Azure Blob 存储上会显示不同的行为，例如 <b>fschk</b> 和 <b>dfsadmin</b>。
 
@@ -137,18 +137,18 @@ Blob 存储可用于结构化和非结构化数据。Blob 存储容器将数据�
 	wasb[s]://<BlobStorageContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/<path>
 
 
-> [AZURE.NOTE] 用于在存储模拟器上确定文件地址的语法（在 HDInsight 模拟器上运行）是 <i>wasb://&lt;ContainerName&gt;@storageemulator</i>。
+> [AZURE.NOTE] 用于在存储模拟器上确定文件地址的语法（在 HDInsight 模拟器上运行）是 <i>wasbs://&lt;ContainerName&gt;@storageemulator</i>。
 
 
 
-URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 SSL 加密访问。建议尽量使用 *wasbs*，即使在访问位于同一 Azure 数据中心内的数据时也是如此。
+URI 方案提供了使用 *wasbs:* 前缀的未加密访问和使用 *wasbs* 的 SSL 加密访问。建议尽量使用 *wasbs*，即使在访问位于同一 Azure 数据中心内的数据时也是如此。
 
 &lt;BlobStorageContainerName&gt; 标识 Azure Blob 存储中的容器名称。&lt;StorageAccountName&gt; 标识 Azure 存储帐户名。完全限定域名 (FQDN) 是必需的。
 
 如果既没有指定 &lt;BlobStorageContainerName&gt; 也没有指定 &lt;StorageAccountName&gt;，则会使用默认文件系统。对于默认文件系统中的文件，你可以使用相对路径或绝对路径。例如，可以使用以下任一方式引用随 HDInsight 群集提供的 *hadoop-mapreduce-examples.jar* 文件：
 
-	wasb://mycontainer@myaccount.blob.core.chinacloudapi.cn/example/jars/hadoop-mapreduce-examples.jar
-	wasb:///example/jars/hadoop-mapreduce-examples.jar
+	wasbs://mycontainer@myaccount.blob.core.chinacloudapi.cn/example/jars/hadoop-mapreduce-examples.jar
+	wasbs:///example/jars/hadoop-mapreduce-examples.jar
 	/example/jars/hadoop-mapreduce-examples.jar
 
 > [AZURE.NOTE] 在 HDInsight 版本 2.1 和 1.6 群集中，文件名是 <i>hadoop-examples.jar</i>。
@@ -281,7 +281,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 	$defines = @{}
 	$defines.Add("fs.azure.account.key.$undefinedStorageAccount.blob.core.chinacloudapi.cn", $undefinedStorageKey)
 
-	Invoke-Hive -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.chinacloudapi.cn/;"
+	Invoke-Hive -Defines $defines -Query "dfs -ls wasbs://$undefinedContainer@$undefinedStorageAccount.blob.core.chinacloudapi.cn/;"
 
 ##<a id="nextsteps"></a>后续步骤
 

@@ -80,7 +80,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 一个订阅中允许的虚拟网络数是有限制的，请参阅 [Azure 网络限制](/documentation/articles/azure-subscription-service-limits/#networking-limits)以获取更多信息。
 
 ## 定价
-在 Azure 中使用虚拟网络不需支付额外的费用。在 Vnet 中启动的计算实例将按标准费率计费，如 [Azure VM 定价](/pricing/details/virtual-machines/)中所述。在 VNet 中使用的公共 IP 地址也将按标准费率计费。
+在 Azure 中使用虚拟网络不需支付额外的费用。在 Vnet 中启动的计算实例将按标准费率计费，如 [Azure VM 定价](/pricing/details/virtual-machines/)中所述。在 VNet 中使用的[公共 IP 地址](/pricing/details/reserved-ip-addresses/)也将按标准费率计费。
 
 ## 后续步骤
 

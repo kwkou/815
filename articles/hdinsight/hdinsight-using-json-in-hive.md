@@ -52,7 +52,7 @@
 	    ]
 	}
 
-可以在 wasb://processjson@hditutorialdata.blob.core.windows.net/ 上找到该文件。有关将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage/)。如果需要，你可以将该文件复制到群集的默认容器。
+可以在 wasbs://processjson@hditutorialdata.blob.core.windows.net/ 上找到该文件。有关将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage/)。如果需要，你可以将该文件复制到群集的默认容器。
 
 在本教程中，你将使用 Hive 控制台。有关打开 Hive 控制台的说明，请参阅[通过远程桌面将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop/)。
 
@@ -61,7 +61,7 @@
 下一部分中所列的方法需要 JSON 文档在单一行中。因此，你必须将 JSON 文档平展成字符串。如果 JSON 文档已平展，则你可以跳过此步骤，直接转到有关分析 JSON 数据的下一部分。
 
 	DROP TABLE IF EXISTS StudentsRaw;
-	CREATE EXTERNAL TABLE StudentsRaw (textcol string) STORED AS TEXTFILE LOCATION "wasb://processjson@hditutorialdata.blob.core.windows.net/";
+	CREATE EXTERNAL TABLE StudentsRaw (textcol string) STORED AS TEXTFILE LOCATION "wasbs://processjson@hditutorialdata.blob.core.windows.net/";
 	
 	DROP TABLE IF EXISTS StudentsOneLine;
 	CREATE EXTERNAL TABLE StudentsOneLine
@@ -77,7 +77,7 @@
 	
 	SELECT * FROM StudentsOneLine
 
-原始 JSON 文件位于 **wasb://processjson@hditutorialdata.blob.core.windows.net/**。 *StudentsRaw* Hive 表指向原始的未平展 JSON 文档。
+原始 JSON 文件位于 **wasbs://processjson@hditutorialdata.blob.core.windows.net/**。 *StudentsRaw* Hive 表指向原始的未平展 JSON 文档。
 
 *StudentsOneLine* Hive 表将数据存储在 HDInsight 默认文件系统中的 */json/students/* 路径下。
 

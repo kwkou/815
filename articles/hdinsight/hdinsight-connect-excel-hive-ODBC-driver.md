@@ -55,7 +55,7 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 	属性|说明
 	---|---
 	数据源名称|为你的数据源提供名称
-	主机|输入 <HDInsightClusterName>.azurehdinsight.cn。例如 myHDICluster.azurehdinsight.cn
+	主机|输入 &lt;HDInsightClusterName>.azurehdinsight.cn。例如 myHDICluster.azurehdinsight.cn
 	端口|使用 <strong>443</strong>。（此端口已从 563 更改为 443。）
 	数据库|使用“默认”。<strong></strong>
 	Hive 服务器类型|选择“Hive Server 2”<strong></strong>

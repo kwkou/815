@@ -463,11 +463,11 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 		$containerName_Default =  $stringPrefix + "hdicluster"
 
 		# The MapReduce job variables
-		$jarFile = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/jars/WordCount.jar"
+		$jarFile = "wasbs://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/jars/WordCount.jar"
 		$className = "org.apache.hadoop.examples.WordCount"
-		$mrInput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Input/"
-		$mrOutput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Output/"
-		$mrStatusOutput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/MRStatusOutput/"
+		$mrInput = "wasbs://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Input/"
+		$mrOutput = "wasbs://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Output/"
+		$mrStatusOutput = "wasbs://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/MRStatusOutput/"
 		
 		# Create a PSCredential object. The username and password are hardcoded here.  You can change them if you want.
 		$password = ConvertTo-SecureString "Pass@word1" -AsPlainText -Force

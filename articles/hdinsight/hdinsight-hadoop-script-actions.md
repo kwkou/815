@@ -200,7 +200,7 @@ Name | 脚本
 
 若要将多个参数传递给 Add-AzureHDInsightScriptAction cmdlet，你需要将字符串值的格式设置为包含脚本的所有参数。例如：
 
-	"-CertifcateUri wasb:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
+	"-CertifcateUri wasbs:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
  
 或
 
