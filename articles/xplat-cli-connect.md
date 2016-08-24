@@ -1,4 +1,3 @@
-<!-- Remove authandsub -->
 <properties
 	pageTitle="通过 CLI 登录到 Azure | Azure"
 	description="从适用于 Mac、Linux 和 Windows 的 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅"
@@ -22,9 +21,9 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 通过 Azure CLI 有两种方式可以连接到你的订阅：
 
-* **使用工作或学校帐户或 Microsoft 帐户标识登录 Azure** - 使用 `azure login` 命令以及任何类型的帐户标识，以通过 Azure Active Directory 进行身份验证。大多数创建新的 Azure 部署的客户应使用该方法。对于某些帐户，`azure login` 命令要求通过 web 门户以交互方式登录。
+* **使用工作或学校帐户或 Microsoft 帐户标识登录 Azure** - 使用 `azure login` 命令以及任何类型的帐户标识，以通过 Azure Active Directory 进行身份验证。大多数创建新的 Azure 部署的客户应使用该方法。对于某些帐户，`azure login -e AzureChinaCloud` 命令要求通过 web 门户以交互方式登录。
 
-    还可以使用 `azure login` 命令来对 Azure Active Directory 应用程序的服务主体进行身份验证，这对于运行自动化服务非常有用。
+    还可以使用 `azure login -e AzureChinaCloud` 命令来对 Azure Active Directory 应用程序的服务主体进行身份验证，这对于运行自动化服务非常有用。
     
     使用支持的帐户标识登录后，可以使用 Azure Resource Manager 模式或 Azure 服务管理模式 CLI 命令。
 
@@ -79,7 +78,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 ## 使用 azure 登录名与服务主体
 
-如果已创建 Active Directory 应用程序的服务主体，并且服务主体拥有针对订阅的权限，就可以使用 `azure login` 命令来对服务主体进行身份验证。根据你的应用场景，可以提供服务主体的凭据作为 `azure login` 命令的显式参数，或通过 CLI 脚本或应用程序代码。你也可以使用证书以非交互方式对自动化方案的服务主体进行身份验证。有关详细信息与示例，请参阅[使用 Azure Resource Manager 对服务主体进行身份验证](resource-group-authenticate-service-principal.md)。
+如果已创建 Active Directory 应用程序的服务主体，并且服务主体拥有针对订阅的权限，就可以使用 `azure login` 命令来对服务主体进行身份验证。根据你的应用场景，可以提供服务主体的凭据作为 `azure login` 命令的显式参数，或通过 CLI 脚本或应用程序代码。你也可以使用证书以非交互方式对自动化方案的服务主体进行身份验证。有关详细信息与示例，请参阅[使用 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
 
 ## 使用发布设置文件
 
