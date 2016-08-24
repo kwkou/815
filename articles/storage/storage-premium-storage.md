@@ -54,7 +54,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 有关可用 Azure VM 类型和 Windows VM 大小的信息，请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes/)。有关 Linux VM 的 VM 类型和大小的信息，请参阅 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。
 
-以下是 DS、DSv2 和 GS 系列 VM 的一些功能：
+以下是 DS、DSv2 VM 的一些功能：
 
 **云服务**：可以将 DS 系列 VM 添加到仅包含 DS 系列 VM 的云服务。请不要将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。你可以将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](../virtual-network/virtual-networks-instance-level-public-ip.md)。
 
@@ -363,13 +363,61 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 ##<a id="create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk"></a> 为虚拟机器数据磁盘创建和使用高级存储帐户
 
-在本部分，我们将使用Azure PowerShell 和 Azure CLI 演示以下方案：
+在本部分，我们将使用 Azure 门户预览、Azure PowerShell 和 Azure CLI 演示以下方案：
+
 - 如何创建高级存储帐户。
 - 如何在使用高级存储时创建虚拟机并将数据磁盘附加到该虚拟机。
 - 如何更改已附加到虚拟机的数据磁盘的磁盘缓存策略：
 
+### 通过 Azure 门户预览使用高级存储创建 Azure 虚拟机
 
+#### I.在 Azure 门户预览中创建高级存储帐户
 
+本部分说明如何使用 Azure 门户预览创建高级存储帐户。
+
+1.	登录到 [Azure 门户预览](https://portal.azure.cn)。如果你没有订阅，请查看[试用](/pricing/1rmb-trial/)优惠产品。
+
+2. 在“中心”菜单上，选择“新建”->“数据 + 存储”->“存储帐户”。
+
+3. 输入你的存储帐户的名称。
+
+	> [AZURE.NOTE] 存储帐户名称必须为 3 到 24 个字符，并且只能包含数字和小写字母。
+	>  
+	> 你的存储帐户名称在 Azure 中必须是唯一的。Azure 门户预览将指出你选择的存储帐户名称是否已被使用。
+
+4. 指定要使用的部署模型：**Resource Manager** 或**经典**。建议使用 **Resource Manager** 部署模型。有关详细信息，请参阅[了解 Resource Manager 部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
+
+5. 将存储帐户的性能层指定为“高级”。
+
+6. **本地冗余存储 (LRS)** 是高级存储中唯一可用的复制选项。有关 Azure 存储空间复制选项的更多详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy/)。
+
+7. 选择想在其中创建新存储帐户的订阅。
+
+8. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。
+
+9. 选择存储帐户的地理区域。
+
+10. 单击“创建”以创建存储帐户。
+
+#### II.通过 Azure 门户预览创建 Azure 虚拟机
+
+只有创建了 DS、DSv2 系列 VM 才能使用高级存储。请遵照[在 Azure 门户预览中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)中的步骤创建新的 DS、DSv2 虚拟机。
+
+#### III.通过 Azure 门户预览附加高级存储数据磁盘
+
+1. 在 Azure 门户预览中查找新的或现有的 DS、DSv2 VM。
+2. 在 VM 的“所有设置”中，转到“磁盘”，然后单击“附加新磁盘”。
+3. 输入数据磁盘的名称，然后在“类型”中选择“高级”。选择所需的“大小”和“主机缓存”设置。
+
+	![高级磁盘][Image1]
+
+有关更详细的步骤，请参阅[如何在 Azure 门户预览中附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal/)。
+
+#### IV.通过 Azure 门户预览更改磁盘缓存策略
+
+1. 在 Azure 门户预览中查找新的或现有的 DS、DSv2 VM。
+2. 在 VM 的“所有设置”中，转到“磁盘”，然后单击你要更改的磁盘。
+3. 将“主机缓存”选项更改为所需的值：None、ReadOnly 或 ReadWrite
 
 ### 通过 Azure PowerShell 使用高级存储创建 Azure 虚拟机
 
