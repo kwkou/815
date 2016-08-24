@@ -2,13 +2,17 @@
 
 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
 
-标准大小包括多个系列：A、D 和 DS。其中某些大小的注意事项包括：
+标准大小包括多个系列：A、D、DS、F 和 Fs。其中某些大小的注意事项包括：
 
 *   D 系列的 VM 旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。
 
 *   Dv2 系列是原 D 系列的后续系列，其特点是 CPU 功能更强大。Dv2 系列 CPU 比 D 系列 CPU 快大约 35%。该系列基于最新一代的 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) 处理器，通过 Intel Turbo Boost Technology 2.0 可以达到 3.1 GHz。Dv2 系列的内存和磁盘配置与 D 系列相同。
 
-*   DS 系列和 DvS 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
+* F 系列是基于 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) 处理器，通过 Intel Turbo Boost Technology 2.0 可以达到 3.1 GHz。这是跟 Dv2 系列 VM 一样的 CPU 性能。F 系列每小时的定价更低，在 Azure 产品组合中，对于每一核心的 Azure 计算单位（ACU）而言，具有更高的性价比。
+
+	F 系列使用了新的 Azure VM 大小命名标准。针对这个系列和未来发行的 VM 大小，系列名称字母后面的数值将会是对应的 CPU 核心数目。额外功能（例如对高级存储的最优化）将会以 CPU 核心数后面的字母指定。此命名格式将用于未来发行的 VM 大小，但不会影响现在已经发行的 VM 大小。
+
+*   DS 系列、DvS 系列和 Fs 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
 	>[AZURE.NOTE] 目前，DS 系列虽然已经可以直接在 Azure 门户预览上创建，但是创建的过程中无法选择高级存储作为系统磁盘。不过，你可以通过 Azure PowerShell 新建 DS 的虚拟机。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
@@ -23,6 +27,8 @@
 
 
 *	Dv2 系列、D 系列是请求更快速的 CPU、更好的本地磁盘性能，或有更高内存要求之应用程序的最佳选择。它们为许多企业级应用程序提供强大的组合。
+
+*	对应需要较快的 CPU 但是每一个 CPU 核心却不需要太多内存或本地 SSD 的，F 系列 VM 是一个绝佳的选择。分析，游戏服务器，web 服务器，和批处理之类的工作负荷，都将因 F 系列的价值而受益。
 
 *   Azure 数据中心内的一些物理主机可能不支持更大的虚拟机大小，例如 A5 - A7。因此，在以下情况下，可能会显示错误消息**<machine name>**“未能配置虚拟机”或**<machine name>**“未能创建虚拟机”：将现有虚拟机的大小调整为新的大小时；在 2013 年 4 月 16 日之前创建的虚拟网络中创建新的虚拟机时；或者向现有的云服务中添加新的虚拟机时。有关每个部署方案的解决方法，请参阅支持论坛上的[错误：“未能配置虚拟机”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows)。  
 
@@ -43,6 +49,8 @@
 |[D1-14](#d-series) |160 |
 |[D1-14v2](#dv2-series) |210 - 250 *|
 |[DS1-14](#ds-series) |160 |
+|[F1-F16](#f-series) | 210-250*|
+|[F1s-F16s](#fs-series) | 210-250*|
 
 ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。提升量可能因 VM 大小、工作负荷和同一主机上运行的其他工作负荷而有所不同。
 
@@ -112,6 +120,31 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 |Standard\_DS14 |16|112|8|本地 SSD 磁盘 = 224 GB |32|576| 50,000 每秒 512 MB | 很高 |
 
 **DS 系列 VM 可能的最大每秒输入/输出操作次数 (IOPS) 和吞吐量（带宽）受磁盘大小影响。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
+
+## <a name="f-series"></a>F-series
+
+
+|大小 |CPU 核心数|内存|NIC 数（最大值）|最大磁盘大小|最大数据磁盘（每个 1023 GB）|高速缓存大小 (GB)|最大 IOPS（每个磁盘 500 次）| 最大网络带宽 |
+|--------------|-----------|--------|------------|-------------------------|--------------------------|--------------------------|-------------|
+| Standard_F1  | 1         | 2 GB   | 1          | 临时磁盘 (SSD) =16 GB  | 2                        | 2x500                    | 中    |
+| Standard_F2  | 2         | 4 GB   | 2          | 临时磁盘 (SSD) =32 GB  | 4                        | 4x500                    | 高       |
+| Standard_F4  | 4         | 8 GB   | 4          | 临时磁盘 (SSD) =64 GB  | 8                        | 8x500                    | 高        |
+| Standard_F8  | 8         | 16 GB  | 8          | 临时磁盘 (SSD) =128 GB | 16                       | 16x500                   | 高        |
+| Standard_F16 | 16        | 32 GB  | 8          | 临时磁盘 (SSD) =256 GB | 32                       | 32x500                   | 很高   |
+
+
+
+## <a name="fs-series"></a>Fs-series*
+
+|大小 |CPU 核心数|内存|NIC 数（最大值）|最大磁盘大小|最大数据磁盘（每个 1023 GB）|高速缓存大小 (GB)|最大磁盘 IOPS 和带宽| 最大网络带宽 |
+|---------------|-----------|--------|------------|------------------------|-----------|-----------|----------------------------|------------|
+| Standard_F1s  | 1         | 2      | 1          | 本地 SSD 磁盘 = 4 GB  | 2         | 12        | 3,200 48 MB 每秒     | 中   |
+| Standard_F2s  | 2         | 4      | 2          | 本地 SSD 磁盘 = 8 GB  | 4         | 24        | 6,400 96 MB 每秒     | 高       |
+| Standard_F4s  | 4         | 8      | 4          | 本地 SSD 磁盘 = 16 GB | 8         | 48        | 12,800 192 MB 每秒   | 高       |
+| Standard_F8s  | 8         | 16     | 8          | 本地 SSD 磁盘 = 32 GB | 16        | 96        | 25,600 384 MB 每秒   | 高       |
+| Standard_F16s | 16        | 32     | 8          | 本地 SSD 磁盘 = 64 GB | 32        | 192       | 51,200 768 MB 每秒   | 很高  |
+
+*Fs 系列 VM 可能的最大每秒输入/输出操作次数 (IOPS) 和吞吐量（带宽）受磁盘大小影响。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
 ## 注意：使用 CLI 和 Powershell 的标准 A0 - A4 
 
