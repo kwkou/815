@@ -55,7 +55,7 @@ Azure 中的访问控制首先体现在计费方面。Azure 帐户的所有者�
 ## 后续步骤
 
 
-- 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated directory/)
+- 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的详细信息，请参阅[Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
 
 - 有关如何在 Azure AD 中分配角色的详细信息，请参阅[在 Azure Active Directory 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)
 

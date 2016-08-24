@@ -227,23 +227,22 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 在偏好的编辑器中创建 `server.js` 文件，然后添加以下信息：
 
 Javascript
-		
-			'use strict';
-		
-			/**
-		 	* Module dependencies.
-		 	*/
-		
-			var fs = require('fs');
-			var path = require('path');
-			var util = require('util');
-			var assert = require('assert-plus');
-			var bunyan = require('bunyan');
-			var getopt = require('posix-getopt');
-			var mongoose = require('mongoose/');
-			var restify = require('restify');
-		  var OIDCBearerStrategy = require('passport-azure-ad').BearerStrategy;
-		
+
+	'use strict';
+
+	/**
+ 	* Module dependencies.
+ 	*/
+
+	var fs = require('fs');
+	var path = require('path');
+	var util = require('util');
+	var assert = require('assert-plus');
+	var bunyan = require('bunyan');
+	var getopt = require('posix-getopt');
+	var mongoose = require('mongoose/');
+	var restify = require('restify');
+	var OIDCBearerStrategy = require('passport-azure-ad').BearerStrategy;
 
 保存文件。稍后我们将会使用该文件。
 

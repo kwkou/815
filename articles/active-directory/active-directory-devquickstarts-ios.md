@@ -94,42 +94,41 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，它只
 
 ObjC
 
-		+(void) getToken : (BOOL) clearCache
-		           parent:(UIViewController*) parent
-		completionHandler:(void (^) (NSString*, NSError*))completionBlock;
-		{
-		    AppData* data = [AppData getInstance];
-		    if(data.userItem){
-		        completionBlock(data.userItem.accessToken, nil);
-		        return;
-		    }
-		    
-		    ADAuthenticationError *error;
-		    authContext = [ADAuthenticationContext authenticationContextWithAuthority:data.authority error:&error];
-		    authContext.parentController = parent;
-		    NSURL *redirectUri = [[NSURL alloc]initWithString:data.redirectUriString];
-		    
-		    [ADAuthenticationSettings sharedInstance].enableFullScreen = YES;
-		    [authContext acquireTokenWithResource:data.resourceId
-		                                 clientId:data.clientId
-		                              redirectUri:redirectUri
-		                           promptBehavior:AD_PROMPT_AUTO
-		                                   userId:data.userItem.userInformation.userId
-		                     extraQueryParameters: @"nux=1" // if this strikes you as strange it was legacy to display the correct mobile UX. You most likely won't need it in your code.
-		                          completionBlock:^(ADAuthenticationResult *result) {
-		                              
-		                              if (result.status != AD_SUCCEEDED)
-		                              {
-		                                  completionBlock(nil, result.error);
-		                              }
-		                              else
-		                              {
-		                                  data.userItem = result.tokenCacheStoreItem;
-		                                  completionBlock(result.tokenCacheStoreItem.accessToken, nil);
-		                              }
-		                          }];
-		}
-		
+	+(void) getToken : (BOOL) clearCache
+	           parent:(UIViewController*) parent
+	completionHandler:(void (^) (NSString*, NSError*))completionBlock;
+	{
+	    AppData* data = [AppData getInstance];
+	    if(data.userItem){
+	        completionBlock(data.userItem.accessToken, nil);
+	        return;
+	    }
+	    
+	    ADAuthenticationError *error;
+	    authContext = [ADAuthenticationContext authenticationContextWithAuthority:data.authority error:&error];
+	    authContext.parentController = parent;
+	    NSURL *redirectUri = [[NSURL alloc]initWithString:data.redirectUriString];
+	    
+	    [ADAuthenticationSettings sharedInstance].enableFullScreen = YES;
+	    [authContext acquireTokenWithResource:data.resourceId
+	                                 clientId:data.clientId
+	                              redirectUri:redirectUri
+	                           promptBehavior:AD_PROMPT_AUTO
+	                                   userId:data.userItem.userInformation.userId
+	                     extraQueryParameters: @"nux=1" // if this strikes you as strange it was legacy to display the correct mobile UX. You most likely won't need it in your code.
+	                          completionBlock:^(ADAuthenticationResult *result) {
+	                              
+	                              if (result.status != AD_SUCCEEDED)
+	                              {
+	                                  completionBlock(nil, result.error);
+	                              }
+	                              else
+	                              {
+	                                  data.userItem = result.tokenCacheStoreItem;
+	                                  completionBlock(result.tokenCacheStoreItem.accessToken, nil);
+	                              }
+	                          }];
+	}
 
 
 - 现在，我们需要使用此令牌在图形中搜索用户。查找 `// TODO: implement SearchUsersList` 注释。此方法将向 Azure AD 图形 API 发出 GET 请求，以查询其 UPN 以给定搜索词开头的用户。但是，若要查询 Graph API，你需要在请求的 `Authorization` 标头中包含 access\_token - 这是 ADAL 传入的位置。

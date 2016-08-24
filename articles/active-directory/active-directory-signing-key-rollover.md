@@ -331,11 +331,11 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 1. 在 Web 浏览器中，转到 `https://login.microsoftonline.com/your_directory_name/federationmetadata/2007-06/federationmetadata.xml`。你将看到联合元数据 XML 文档的内容。有关此文档的详细信息，请参阅 [Federation Metadata（联合元数据）](/documentation/articles/active-directory-federation-metadata/)主题。
 2. 为了更新应用程序以使用新密钥，请找到每个 **<RoleDescriptor>** 块，然后复制每个块的 **<X509Certificate>** 元素的值。例如：
 	
-	<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:SecurityTokenServiceType">
-	      <KeyDescriptor use="signing">
-	            <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-	                <X509Data>
-	                    <X509Certificate>MIIDPjC…BcXWLAIarZ</X509Certificate>
+		<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:SecurityTokenServiceType">
+		      <KeyDescriptor use="signing">
+		            <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+		                <X509Data>
+		                    <X509Certificate>MIIDPjC…BcXWLAIarZ</X509Certificate>
 
 3. 在复制 **<X509Certificate>** 元素的值之后，打开纯文本编辑器并粘贴该值。请务必删除任何尾随空格，然后使用 **.cer** 扩展名保存该文件。
 

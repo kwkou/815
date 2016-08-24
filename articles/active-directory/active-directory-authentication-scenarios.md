@@ -199,7 +199,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 ### <a name="single-page-application-spa"></a>单页面应用程序 (SPA)
 
 
-本部分介绍使用 Azure AD 和 OAuth 2.0 隐式授权授予来保护其 Web API 后端的单页面应用程序的身份验证。通常将单页面应用程序构建为一个 JavaScript 表示层（前端），该表示层不仅在浏览器中运行，还在一个在服务器上运行并实现应用程序业务逻辑的 Web API 中运行。若要了解有关隐式授权授予的详细信息，并帮助你决定它是否适合于你的应用程序方案，请参阅[了解 Azure Active Directory 中的 OAuth2 隐式授予流](active-directory-dev-understanding-oauth2-implicit-grant.md)。
+本部分介绍使用 Azure AD 和 OAuth 2.0 隐式授权授予来保护其 Web API 后端的单页面应用程序的身份验证。通常将单页面应用程序构建为一个 JavaScript 表示层（前端），该表示层不仅在浏览器中运行，还在一个在服务器上运行并实现应用程序业务逻辑的 Web API 中运行。若要了解有关隐式授权授予的详细信息，并帮助你决定它是否适合于你的应用程序方案，请参阅[了解 Azure Active Directory 中的 OAuth2 隐式授予流](/documentation/articles/active-directory-dev-understanding-oauth2-implicit-grant/)。
 
 在此方案中，当用户登录时，JavaScript 前端使用 [JavaScript (ADAL.JS) 的 Active Directory 身份验证库](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev)和隐式授权授予从 Azure AD 获取一个 ID 令牌 (id\_token)。该令牌随后被缓存，当客户端调用使用 OWIN 中间件进行保护的 Web API 后端时，客户端将该令牌作为持有者令牌附加到请求。
 #### 图表
