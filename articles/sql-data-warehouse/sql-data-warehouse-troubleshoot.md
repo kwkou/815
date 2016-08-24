@@ -86,8 +86,8 @@
 [Create support ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
 [缩放 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 [Learning how to monitor your queries]: /documentation/articles/sql-data-warehouse-manage-monitor/
-[预配说明]: /documentation/articles/sql-data-warehouse-get-started-provision/
-[为客户端 IP 配置服务器防火墙访问权限]: /documentation/articles/sql-data-warehouse-get-started-provision/#create-a-new-azure-sql-server-level-firewall
+[预配说明]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[为客户端 IP 配置服务器防火墙访问权限]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/#create-a-new-azure-sql-server-level-firewall
 [Visual Studio 2013 或 2015]: /documentation/articles/sql-data-warehouse-get-started-connect/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [表大小]: /documentation/articles/sql-data-warehouse-tables-overview/#table-size-queries
@@ -107,7 +107,7 @@
 [UPDATE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#ansi-join-replacement-for-update-statements
 [DELETE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#ansi-join-replacement-for-delete-statements
 [MERGE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#replace-merge-statements
-[存储过程限制]: /sql-data-warehouse-develop-stored-procedures/#limitations
+[存储过程限制]: /documentation/articles/sql-data-warehouse-develop-stored-procedures/#limitations
 [向 Azure SQL 数据仓库进行身份验证]: /documentation/articles/sql-data-warehouse-authentication/
 [Working around the PolyBase UTF-8 requirement]: /documentation/articles/sql-data-warehouse-load-polybase-guide/#working-around-the-polybase-utf-8-requirement
 
