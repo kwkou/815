@@ -27,7 +27,7 @@
 
 当你将其他工作负荷（例如企业应用程序）移至 Azure 时，最好也将任何依赖 SQL Server 数据库移至 Azure，以改善性能。不过，在 Azure VM 中托管 SQL Server 可提供其他优势。例如，你会自动获取多个数据中心的访问权限，从而获得全局支持和灾难恢复能力。有关完整的方案和优势列表，请参阅 [Azure VM 产品页上的 SQL Server](/home/features/virtual-machines/#home_vm_overview_info)。
 
-> [AZURE.NOTE] 当你评估 Azure VM 上的 SQL Server 时，也要查看 Azure 上的其他存储和 SQL 选项，例如 [SQL 数据库](/documentation/articles/sql-database-technical-overview/)、[SQL 数据仓库](/documentation/articles/sql-data-warehouse-overview-what-is/)和 [SQL Server Stretch Databsae](../sql -server-stretch-database/sql-server-stretch-database-overview.md)。有关详细的比较，请参阅[选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)。
+> [AZURE.NOTE] 当你评估 Azure VM 上的 SQL Server 时，也要查看 Azure 上的其他存储和 SQL 选项，例如 [SQL 数据库](/documentation/articles/sql-database-technical-overview/)、[SQL 数据仓库](/documentation/articles/sql-data-warehouse-overview-what-is/)和 [SQL Server Stretch Databsae](../sql -server-stretch-database/sql-server-stretch-database-overview.md)。有关详细的比较，请参阅[选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/)。
 
 当你决定要在 Azure VM 上运行 SQL Server 之后，所做的第一个决策之一即是否使用包含 SQL Server 许可成本的 VM 映像。另一个选项是自带许可 (BYOL)，而只支付 VM 本身。下面两节会介绍这些选项。
 
@@ -74,7 +74,7 @@
 有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
 ### 备份数据
-你可以手动把数据库备份到 Blob 存储。有关详细信息，请参阅[使用 Azure 存储空间进行 SQL Server 备份和还原](/documentation/articles/storage-use-storage-sql-server-backup-restore/)。有关所有备份和还原选项的概述，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。
+你可以手动把数据库备份到 Blob 存储。有关详细信息，请参阅[使用 Azure 存储空间进行 SQL Server 备份和还原](/documentation/articles/virtual-machines-windows-use-storage-sql-server-backup-restore/)。有关所有备份和还原选项的概述，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。
 
 ### 自动更新
 Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching/)来安排维护时段，以便自动安装重要的 Windows 和 SQL Server 更新。

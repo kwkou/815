@@ -64,7 +64,7 @@ Web 应用必须在“标准”模式下运行才能启用多个部署槽。
 	![部署槽标题][StagingTitle]
 	
 
-创建部署槽后没有任何内容。您可以从其他存储库分支或完全不同的存储库部署到槽。您还可以更改此槽的配置。使用与内容更新部署槽关联的发布配置文件或部署凭证。例如，你可以[使用 git 发布到此槽](/documentation/articles/web-sites-publish-source-control/)。
+创建部署槽后没有任何内容。您可以从其他存储库分支或完全不同的存储库部署到槽。您还可以更改此槽的配置。使用与内容更新部署槽关联的发布配置文件或部署凭证。例如，你可以[使用 git 发布到此槽](/documentation/articles/app-service-deploy-local-git/)。
 
 <a name="AboutConfiguration"></a>
 ## 部署槽的配置 ##

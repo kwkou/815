@@ -187,9 +187,9 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 #### 2\.创建 TestVNet1 到 Site5 的连接
 
-在此步骤中，你将创建从 TestVNet1 到 Site5 的连接。必须指定“-EnableBGP True”，以便为此连接启用 BGP。如前所述，同一 Azure VPN 网关可以同时具有 BGP 连接和非 BGP 连接。除非在连接属性中启用了 BGP，否则 Azure 不会为此连接启用 BGP，即使已在这两个网关上配置了 BGP 参数，也是如此。
+在此步骤中，你将创建从 TestVNet1 到 Site5 的连接。必须指定“-EnableBGP $True”，以便为此连接启用 BGP。如前所述，同一 Azure VPN 网关可以同时具有 BGP 连接和非 BGP 连接。除非在连接属性中启用了 BGP，否则 Azure 不会为此连接启用 BGP，即使已在这两个网关上配置了 BGP 参数，也是如此。
 
-	New-AzureRmVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP True
+	New-AzureRmVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $True
 
 
 下面的示例列出了你将在本地 VPN 设备上的 BGP 配置节中为此练习输入的参数：
@@ -216,7 +216,7 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 必须确保新虚拟网络的 IP 地址空间 TestVNet2 不与任何 VNet 范围重叠。
 
-在此示例中，虚拟网络属于同一订阅。你可以在不同订阅之间设置 VNet 到 VNet 连接，若要了解更多详细信息，请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。请确保在创建连接时添加“-EnableBgp True”以启用 BGP。
+在此示例中，虚拟网络属于同一订阅。你可以在不同订阅之间设置 VNet 到 VNet 连接，若要了解更多详细信息，请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。请确保在创建连接时添加“-EnableBgp $True”以启用 BGP。
 
 #### 1\.声明变量
 
@@ -280,9 +280,9 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 在此步骤中，你将创建从 TestVNet1 到 TestVNet2 的连接，以及从 TestVNet2 到 TestVNet1 的连接。
 
-	New-AzureRmVirtualNetworkGatewayConnection -Name $Connection12 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -VirtualNetworkGateway2 $vnet2gw -Location $Location1 -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3' -EnableBgp True
+	New-AzureRmVirtualNetworkGatewayConnection -Name $Connection12 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -VirtualNetworkGateway2 $vnet2gw -Location $Location1 -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3' -EnableBgp $True
 
-	New-AzureRmVirtualNetworkGatewayConnection -Name $Connection21 -ResourceGroupName $RG2 -VirtualNetworkGateway1 $vnet2gw -VirtualNetworkGateway2 $vnet1gw -Location $Location2 -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3' -EnableBgp True
+	New-AzureRmVirtualNetworkGatewayConnection -Name $Connection21 -ResourceGroupName $RG2 -VirtualNetworkGateway1 $vnet2gw -VirtualNetworkGateway2 $vnet1gw -Location $Location2 -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3' -EnableBgp $True
 
 >[AZURE.IMPORTANT] 请确保为这两个连接启用 BGP。
 

@@ -138,7 +138,7 @@ Python 虚拟环境。如果在应用上尚不存在兼容的虚拟环境，请�
 
 ### 克隆存储库
 
-首先，使用 Azure 经典管理门户 Web 应用上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
+首先，使用 Azure 经典管理门户 Web 应用上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -205,7 +205,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -284,7 +284,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control/)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>

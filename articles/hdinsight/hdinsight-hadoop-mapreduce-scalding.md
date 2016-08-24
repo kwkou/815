@@ -200,7 +200,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 5. 完成上载后，使用以下命令运行作业：
 
-        $jobDef=New-AzureHDInsightMapReduceJobDefinition -JobName ScaldingWordCount -JarFile wasb:///example/jars/scaldingwordcount-1.0-SNAPSHOT.jar -ClassName com.microsoft.example.WordCount -arguments "--hdfs", "--input", "wasb:///example/data/gutenberg/davinci.txt", "--output", "wasb:///example/wordcountout"
+        $jobDef=New-AzureHDInsightMapReduceJobDefinition -JobName ScaldingWordCount -JarFile wasbs:///example/jars/scaldingwordcount-1.0-SNAPSHOT.jar -ClassName com.microsoft.example.WordCount -arguments "--hdfs", "--input", "wasbs:///example/data/gutenberg/davinci.txt", "--output", "wasbs:///example/wordcountout"
         $job = start-azurehdinsightjob -cluster $clusterName -jobdefinition $jobDef
         wait-azurehdinsightjob -Job $job -waittimeoutinseconds 3600
 

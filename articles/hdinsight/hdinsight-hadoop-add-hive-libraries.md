@@ -43,7 +43,7 @@ __要求__
     
     * 在链接的存储容器上的容器中。例如，在经典管理门户中可以使用“可选配置”、“链接存储帐户”添加额外的存储空间。
 
-* 必须指定容器的 WASB 路径作为脚本操作的参数。例如，如果 jar 存储在名为 __mystorage__ 的存储帐户上名为 __libs__ 的容器中，则该参数应为 __wasb://libs@mystorage.blob.core.chinacloudapi.cn/__。
+* 必须指定容器的 WASB 路径作为脚本操作的参数。例如，如果 jar 存储在名为 __mystorage__ 的存储帐户上名为 __libs__ 的容器中，则该参数应为 __wasbs://libs@mystorage.blob.core.chinacloudapi.cn/__。
 
     > [AZURE.NOTE] 本文档假定你已创建存储帐户、blob 容器，并已将文件上载到该容器。
     >
@@ -60,7 +60,7 @@ __要求__
     * __标头__：选中此选项
     * __辅助角色__：选中此选项。
     * __ZOOKEEPER__：将此项留空。
-    * __参数__：输入包含 jar 的容器和存储帐户的 WASB 地址。例如，__wasb://libs@mystorage.blob.core.chinacloudapi.cn/__。
+    * __参数__：输入包含 jar 的容器和存储帐户的 WASB 地址。例如，__wasbs://libs@mystorage.blob.core.chinacloudapi.cn/__。
 
 3. 在“脚本操作”的底部，使用“选择”按钮保存配置。
 

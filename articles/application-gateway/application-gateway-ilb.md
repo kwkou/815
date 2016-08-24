@@ -170,7 +170,7 @@
 配置网关后，使用 `Start-AzureApplicationGateway` cmdlet 来启动网关。成功启动网关后，将开始计收应用程序网关的费用。
 
 
-**注意：**`Start-AzureApplicationGateway` cmdlet 最多可能需要 15 到 20 分钟才能完成。
+> [AZURE.NOTE] `Start-AzureApplicationGateway` cmdlet 最多可能需要 15 到 20 分钟才能完成。
    
 	PS C:\> Start-AzureApplicationGateway AppGwTest 
 
@@ -184,7 +184,7 @@
 
 使用 `Get-AzureApplicationGateway` cmdlet 检查网关的状态。如果前一步骤中的 *Start-AzureApplicationGateway* 成功，则 State 应为 *Running*，Vip 和 DnsName 应包含有效的条目。此示例在第一行显示 cmdlet，接着显示输出。在此示例中，网关正在运行并准备好接收流量。
 
-**注意：**在此示例中，应用程序网关配置为在配置的 ILB 终结点 10.0.0.10 上接受流量。
+> [AZURE.NOTE] 在此示例中，应用程序网关配置为在配置的 ILB 终结点 10.0.0.10 上接受流量。
 
 	PS C:\> Get-AzureApplicationGateway AppGwTest 
 

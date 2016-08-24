@@ -15,7 +15,7 @@
 
 # 规划和设计 Azure 虚拟网络
 
-创建要用于试验的 VNet 非常简单，但却可能是，你将在一段时间内部署多个 VNet 以支持组织的生产需要。通过进行一些规划和设计，你将能够更有效地部署 VNet 和连接所需的资源。如果你不熟悉 VNet，建议你[了解 VNet](/documentation/articles/virtual-networks-overview/) 和[如何部署](/documentation/articles/virtual-networks-create-vnet-arm-ps/) VNet 后再继续。
+创建要用于试验的 VNet 非常简单，但却可能是，你将在一段时间内部署多个 VNet 以支持组织的生产需要。通过进行一些规划和设计，你将能够更有效地部署 VNet 和连接所需的资源。如果你不熟悉 VNet，建议你[了解 VNet](/documentation/articles/virtual-networks-overview/) 和[如何部署](/documentation/articles/virtual-networks-create-vnet-arm-pportal/) VNet 后再继续。
 
 ## 计划
 

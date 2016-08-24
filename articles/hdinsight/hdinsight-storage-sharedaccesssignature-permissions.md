@@ -181,25 +181,25 @@ HDInsight 使用 Azure 存储空间 Blob 来存储数据。HDInsight 必须对�
 
 1. 在提示符下键入以下命令。将 __SASCONTAINER__ 替换为针对 SAS 存储帐户创建的容器名称。将 __SASACCOUNTNAME__ 替换为用于 SAS 的存储帐户名称：
 
-        hdfs dfs -ls wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/
+        hdfs dfs -ls wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/
     
     这会列出容器的内容，其中应包含创建容器和 SAS 时上载的文件。
     
 2. 使用以下命令验证是否可以读取该文件的内容。如同上一步骤替换 __SASCONTAINER__ 和 __SASACCOUNTNAME__。将 __FILENAME__ 替换为前一个命令中显示的名称：
 
-        hdfs dfs -text wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME
+        hdfs dfs -text wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME
         
     这会列出文件的内容。
     
 3. 使用以下命令将文件下载到本地文件系统：
 
-        hdfs dfs -get wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME testfile.txt
+        hdfs dfs -get wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME testfile.txt
     
     这会将该文件下载到名为 __testfile.txt__ 的本地文件中。
 
 4. 使用以下命令将本地文件上载到 SAS 存储上名为 __testupload.txt__ 的新文件中：
 
-        hdfs dfs -put testfile.txt wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/testupload.txt
+        hdfs dfs -put testfile.txt wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/testupload.txt
     
     你将收到类似于下面的消息：
     
@@ -207,7 +207,7 @@ HDInsight 使用 Azure 存储空间 Blob 来存储数据。HDInsight 必须对�
         
     发生此错误的原因是存储位置是只读+仅限列出的。使用以下命令将数据放在群集的可写默认存储中：
     
-        hdfs dfs -put testfile.txt wasb:///testupload.txt
+        hdfs dfs -put testfile.txt wasbs:///testupload.txt
         
     这一次操作应会成功完成。
     

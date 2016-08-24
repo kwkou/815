@@ -41,9 +41,9 @@
 
 2. 若要使用 **Hadoop** 命令运行示例 MapReduce 作业，请使用以下命令：
 
-		hadoop jar hadoop-mapreduce-examples.jar wordcount wasb:///example/data/gutenberg/davinci.txt wasb:///example/data/WordCountOutput
+		hadoop jar hadoop-mapreduce-examples.jar wordcount wasbs:///example/data/gutenberg/davinci.txt wasbs:///example/data/WordCountOutput
 
-	这将启动 **wordcount** 类（包含在当前目录中的 **hadoop-mapreduce-examples.jar** 文件内）。它使用 **wasb://example/data/gutenberg/davinci.txt** 文档作为输入，输出将存储到 **wasb:///example/data/WordCountOutput**。
+	这将启动 **wordcount** 类（包含在当前目录中的 **hadoop-mapreduce-examples.jar** 文件内）。它使用 **wasbs://example/data/gutenberg/davinci.txt** 文档作为输入，输出将存储到 **wasbs:///example/data/WordCountOutput**。
 
 	> [AZURE.NOTE]有关此 MapReduce 作业和示例数据的详细信息，请参阅<a href="/documentation/articles/hdinsight-use-mapreduce/">在 HDInsight Hadoop 中使用 MapReduce</a>。
 
@@ -54,9 +54,9 @@
 		File Output Format Counters
         Bytes Written=337623
 
-3. 在作业完成时，使用以下命令以列出存储在 **wasb://example/data/WordCountOutput** 上的输出文件：
+3. 在作业完成时，使用以下命令以列出存储在 **wasbs://example/data/WordCountOutput** 上的输出文件：
 
-		hadoop fs -ls wasb:///example/data/WordCountOutput
+		hadoop fs -ls wasbs:///example/data/WordCountOutput
 
 	这应会显示两个文件：**\_SUCCESS** 和 **part-r-00000**。**part-r-00000** 文件包含此作业的输出。
 
@@ -64,9 +64,9 @@
 
 4. 若要查看输出，请使用以下命令：
 
-		hadoop fs -cat wasb:///example/data/WordCountOutput/part-r-00000
+		hadoop fs -cat wasbs:///example/data/WordCountOutput/part-r-00000
 
-	这会显示 **wasb://example/data/gutenberg/davinci.txt** 文件中包含的单词列表，以及每个单词的出现次数。下面是要包含在文件中的数据示例：
+	这会显示 **wasbs://example/data/gutenberg/davinci.txt** 文件中包含的单词列表，以及每个单词的出现次数。下面是要包含在文件中的数据示例：
 
 		wreathed        3
 		wreathing       1

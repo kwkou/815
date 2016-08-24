@@ -556,7 +556,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 		azure storage account create [options] <StorageAccountName>
 
-	出现指定位置的提示时，请选择 HDInsight 群集可以设置到的位置。该存储位置必须与 HDInsight 群集所在的位置相同。目前，只有**中国北部**和**中国东部**区域可以托管 HDInsight 群集。
+	出现指定位置的提示时，请选择 HDInsight 群集可以设置到的位置。该存储位置必须与 HDInsight 群集所在的位置相同。
 
 有关使用 Azure 经典管理门户创建 Azure 存储帐户的信息，请参阅 [Create, manage, or delete a storage account（创建、管理或删除存储帐户）](/documentation/articles/storage-create-storage-account/)。
 

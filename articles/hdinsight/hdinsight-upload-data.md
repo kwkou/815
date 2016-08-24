@@ -162,7 +162,7 @@ AzCopy 语法为：
 
 由于 HDInsight 的默认文件系统在 Azure Blob 存储中，/example/data.txt 实际是在 Azure Blob 存储中。你也可以将该文件表示为：
 
-	wasb:///example/data/data.txt
+	wasbs:///example/data/data.txt
 
 或
 

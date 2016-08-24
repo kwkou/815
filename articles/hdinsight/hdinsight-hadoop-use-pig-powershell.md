@@ -59,7 +59,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 		$statusFolder = "/tutorial/pig/status"
 
 		#Store the Pig Latin into $QueryString
-		$QueryString =  "LOGS = LOAD 'wasb:///example/data/sample.log';" +
+		$QueryString =  "LOGS = LOAD 'wasbs:///example/data/sample.log';" +
 		"LEVELS = foreach LOGS generate REGEX_EXTRACT(`$0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;" +
 		"FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;" +
 		"GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;" +

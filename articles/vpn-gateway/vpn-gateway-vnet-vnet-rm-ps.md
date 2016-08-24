@@ -21,6 +21,8 @@
 
 本文将引导你使用资源管理器部署模型和 PowerShell 来创建虚拟网络间的连接。虚拟网络可以位于来自相同或不同订阅的相同或不同区域中。
 
+[AZURE.INCLUDE [vpn-gateway-peering](../../includes/vpn-gateway-vnetpeeringlink-include.md)]
+
 
 **关于 Azure 部署模型**
 
@@ -136,7 +138,7 @@
 - TestVNet2：10.41.0.0/16 和 10.42.0.0/16
 - FrontEnd：10.41.0.0/24
 - BackEnd：10.42.0.0/24
-- GatewaySubnet：10.42.255.0.0/27
+- GatewaySubnet：10.42.255.0/27
 - 资源组：TestRG4
 - 位置：中国北部
 - DNS 服务器：8.8.8.8

@@ -36,7 +36,7 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
     #sudo yum install waagent
 
-对于 Oracle Linux，请确保已启用 `Addons` 存储库。选择编辑文件 `/etc/yum.repo.d/public-yum-ol6.repo`(Oracle Linux 6) 或 `/etc/yum.repo.d/public-yum-ol7.repo`(Oracle Linux)，并在此文件中 **[ol6\_addons]** 或 **[ol7\_addons]** 下将行 `enabled=0` 更改为 `enabled=1`。
+对于 Oracle Linux，请确保已启用 `Addons` 存储库。选择编辑文件 `/etc/yum.repos.d/public-yum-ol6.repo`(Oracle Linux 6) 或 `/etc/yum.repos.d/public-yum-ol7.repo`(Oracle Linux)，并在此文件中 **[ol6\_addons]** 或 **[ol7\_addons]** 下将行 `enabled=0` 更改为 `enabled=1`。
 
 然后，要安装最新版本的 Azure Linux 代理，请键入：
 

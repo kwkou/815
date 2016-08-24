@@ -306,7 +306,7 @@ HdfsBolt 一般用于将数据存储到 Hadoop 分布式文件系统 (HDFS)。�
 
 7. 在“查询控制台”上，选择“Hive 编辑器”并将默认的 `select * from hivesampletable` 替换为以下内容：
 
-        create external table devicedata (deviceid string, devicevalue int) row format delimited fields terminated by ',' stored as textfile location 'wasb:///devicedata/';
+        create external table devicedata (deviceid string, devicevalue int) row format delimited fields terminated by ',' stored as textfile location 'wasbs:///devicedata/';
         select * from devicedata limit 10;
 
     单击“选择”以运行查询。这会返回 10 行由 EventHubReader 写入 Azure 存储空间 (WASB) 的数据。完成查询后，你应会看到类似于下面的数据：

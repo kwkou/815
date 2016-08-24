@@ -113,7 +113,7 @@
 HBase 提供了多种方法用于将数据载入表中。有关详细信息，请参阅[批量加载](http://hbase.apache.org/book.html#arch.bulk.load)。
 
 
-已将示例数据文件上载到公共 Azure Blob 容器 wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt。该数据文件的内容为：
+已将示例数据文件上载到公共 Azure Blob 容器 wasbs://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt。该数据文件的内容为：
 
 	8396	Calvin Raji		230-555-0191	230-555-0191	5415 San Gabriel Dr.
 	16600	Karen Wu		646-555-0113	230-555-0192	9265 La Paz
@@ -137,7 +137,7 @@ HBase 提供了多种方法用于将数据载入表中。有关详细信息，�
 
 3. 运行以下命令，将数据文件转换成 StoreFiles 并将其存储在 Dimporttsv.bulk.output 指定的相对路径：
 
-		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:Phone, Office:Phone, Office:Address" -Dimporttsv.bulk.output="/example/data/storeDataFileOutput" Contacts wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
+		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:Phone, Office:Phone, Office:Address" -Dimporttsv.bulk.output="/example/data/storeDataFileOutput" Contacts wasbs://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
 
 4. 运行以下命令，将数据从 /example/data/storeDataFileOutput 上载到 HBase 表：
 

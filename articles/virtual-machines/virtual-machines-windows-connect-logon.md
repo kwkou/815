@@ -41,6 +41,6 @@
 
 ## 后续步骤
 
-如果在尝试连接时遇到故障，请参阅[对基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)。此文将指导你完成诊断和解决常见问题。
+如果在尝试连接时遇到故障，请参阅[对远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)。此文将指导你完成诊断和解决常见问题。
 
 <!---HONumber=Mooncake_0704_2016-->

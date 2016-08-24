@@ -67,9 +67,9 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 		# -JarFile = the JAR containing the MapReduce application
 		# -ClassName = the class of the application
 		# -Arguments = The input file, and the output directory
-		$wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
+		$wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasbs:///example/jars/hadoop-mapreduce-examples.jar" `
 		                          -ClassName "wordcount" `
-		                          -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput"
+		                          -Arguments "wasbs:///example/data/gutenberg/davinci.txt", "wasbs:///example/data/WordCountOutput"
 
 		#Submit the job to the cluster
 		Write-Host "Start the MapReduce job..." -ForegroundColor Green
@@ -107,7 +107,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 ##查看输出
 
-MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为作业参数的 **wasb:///example/data/WordCountOutput** 路径中）。可以通过 Azure PowerShell 访问 Azure Blob 存储，但你必须知道存储帐户名称、密钥，以及 HDInsight 群集用来直接访问文件的容器。
+MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为作业参数的 **wasbs:///example/data/WordCountOutput** 路径中）。可以通过 Azure PowerShell 访问 Azure Blob 存储，但你必须知道存储帐户名称、密钥，以及 HDInsight 群集用来直接访问文件的容器。
 
 幸运的是，你可以通过使用以下 Azure PowerShell Cmdlet 获得此信息：
 
@@ -116,7 +116,7 @@ MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为�
 * **Get-AzureStorageBlob**：如果指定内容对象和容器名称，则会返回容器内的 Blob 列表。
 * **Get-AzureStorageBlobContent**：如果指定内容对象、文件路径和名称以及容器名称（从 **Get-AzureHDinsightCluster** 返回），则会从 Azure Blob 存储下载文件。
 
-以下示例将检索存储信息，然后从 **wasb:///example/data/WordCountOutput** 下载输出。将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
+以下示例将检索存储信息，然后从 **wasbs:///example/data/WordCountOutput** 下载输出。将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
 		#Login to your Azure subscription
 		# Is there an active Azure subscription?
@@ -140,13 +140,13 @@ MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为�
 		#Create the context object
 		$context = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 
-		#Download the files from wasb:///example/data/WordCountOutput
+		#Download the files from wasbs:///example/data/WordCountOutput
 		#Use the -blob switch to filter only blobs contained in example/data/WordCountOutput
 		Get-AzureStorageBlob -Container $storageContainer -Blob example/data/WordCountOutput/* -Context $context | Get-AzureStorageBlobContent -Context $context
 
 > [AZURE.NOTE]此示例会将下载的文件存储到你从中运行脚本的目录中的 **example/data/WordCountOutput** 文件夹。
 
-MapReduce 作业的输出会存储在名称为 *part-r-#####* 的文件中。使用文本编辑器打开 **example/data/WordCountOutput/part-r-00000** 文件，以查看作业生成的单词和计数。
+使用文本编辑器打开 **output.txt** 文件，以查看作业生成的单词和计数。
 
 > [AZURE.NOTE]MapReduce 作业的输出文件是固定不变的。因此，如果你重新运行此示例，将需要更改输出文件的名称。
 

@@ -27,7 +27,7 @@
 
 1. **SQL VM 与 SQL 数据库服务之间的差别是什么？**
 
-	从概念上讲，在 Azure 虚拟机上运行 SQL Server 与在远程数据中心运行 SQL Server 并没什么不同。相比之下，[SQL 数据库](/documentation/articles/sql-database-technical-overview/)可提供数据库即服务。使用 SQL 数据库时，无法访问托管数据库的计算机。有关完整比较，请参阅 [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS)（选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)）](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)。
+	从概念上讲，在 Azure 虚拟机上运行 SQL Server 与在远程数据中心运行 SQL Server 并没什么不同。相比之下，[SQL 数据库](/documentation/articles/sql-database-technical-overview/)可提供数据库即服务。使用 SQL 数据库时，无法访问托管数据库的计算机。有关完整比较，请参阅 [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS)（选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)）](/documentation/articles/sql-database-paas-vs-sql-server-iaas/)。
 
 1. **如何将本地 SQL Server 数据库迁转到云中？**
 

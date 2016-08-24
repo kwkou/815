@@ -428,7 +428,7 @@ tags="azure-portal"/>
         $storage = GetStorage -clusterName $clusterName
         
         # The JAR
-        $jarFile = "wasb:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
+        $jarFile = "wasbs:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
         
         # The job definition
         $jobDefinition = New-AzureHDInsightMapReduceJobDefinition `

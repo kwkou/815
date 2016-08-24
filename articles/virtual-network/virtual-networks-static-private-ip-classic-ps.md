@@ -42,12 +42,12 @@
 下面的 PowerShell 脚本将创建名为 *TestService* 的全新云服务，然后从 Azure 中检索映像，在新的云服务中使用检索到的映像创建名为 *DNS01* 的 VM，对该 VM 进行设置，使之位于名为 *FrontEnd* 的子网中，最后再将 *192.168.1.7* 设置为该 VM 的静态专用 IP 地址：
 
 	New-AzureService -ServiceName TestService -Location "China North"
-	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
-	New-AzureVMConfig -Name DNS01 -InstanceSize Small -ImageName $image.ImageName `
-	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
-	| Set-AzureSubnet –SubnetNames FrontEnd `
-	| Set-AzureStaticVNetIP -IPAddress 192.168.1.7 `
-	| New-AzureVM -ServiceName "TestService" –VNetName TestVNet
+	$image = Get-AzureVMImage | where {$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
+	New-AzureVMConfig -Name DNS01 -InstanceSize Small -ImageName $image.ImageName |
+	  Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! |
+	  Set-AzureSubnet -SubnetNames FrontEnd |
+	  Set-AzureStaticVNetIP -IPAddress 192.168.1.7 |
+	  New-AzureVM -ServiceName TestService -VNetName TestVNet
 
 预期输出：
 
@@ -94,9 +94,9 @@
 ## 如何从 VM 中删除静态专用 IP 地址
 若要删除使用上述脚本添加到 VM 的静态专用 IP 地址，请运行以下 PowerShell 命令：
 	
-	Get-AzureVM -ServiceName TestService -Name DNS01 `
-	| Remove-AzureStaticVNetIP `
-	| Update-AzureVM
+	Get-AzureVM -ServiceName TestService -Name DNS01 |
+	  Remove-AzureStaticVNetIP |
+	  Update-AzureVM
 
 预期输出：
 
@@ -107,9 +107,9 @@
 ## 如何将静态专用 IP 地址添加到现有 VM
 若要向使用上述脚本创建的 VM 添加静态专用 IP 地址，请运行以下命令：
 
-	Get-AzureVM -ServiceName TestService -Name DNS01 `
-	| Set-AzureStaticVNetIP -IPAddress 192.168.1.7 `
-	| Update-AzureVM
+	Get-AzureVM -ServiceName TestService -Name DNS01 |
+	  Set-AzureStaticVNetIP -IPAddress 192.168.1.7 |
+	  Update-AzureVM
 
 预期输出：
 
