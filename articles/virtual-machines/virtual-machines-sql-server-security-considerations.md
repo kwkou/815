@@ -9,8 +9,8 @@
    tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="03/23/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="06/24/2016"
+	wacn.date="08/23/2016"/>
 
 # Azure 虚拟机中的 SQL Server 的安全注意事项
 
