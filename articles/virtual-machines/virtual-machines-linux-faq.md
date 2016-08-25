@@ -44,7 +44,7 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 ## 我是否可以复制或克隆现有的 Azure VM？
 
-是的。相关说明请参阅[如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本](/documentation/articles/virtual-machines-linux-specialized-image/)。
+是的。相关说明请参阅[如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本](/documentation/articles/virtual-machines-linux-copy-vm/)。
 
 ## VM 创建以后，我还能给它添加 NIC 吗？
 
