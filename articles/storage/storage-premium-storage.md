@@ -56,7 +56,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 以下是 DS、DSv2 VM 的一些功能：
 
-**云服务**：可以将 DS 系列 VM 添加到仅包含 DS 系列 VM 的云服务。请不要将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。你可以将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](../virtual-network/virtual-networks-instance-level-public-ip.md)。
+**云服务**：可以将 DS 系列 VM 添加到仅包含 DS 系列 VM 的云服务。请不要将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。你可以将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](/documentation/articles/virtual-networks-instance-level-public-ip/)。
 
 **操作系统磁盘**：可以将 DS、DSv2 系列 Azure 虚拟机配置为使用标准存储帐户或高级存储帐户上托管的操作系统 (OS) 磁盘。建议使用基于高级存储的 OS 磁盘，以获得最佳体验。
 
@@ -204,7 +204,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 若要了解如何使用高级存储针对高性能进行设计，请阅读[使用高级存储针对性能进行设计](/documentation/articles/storage-premium-storage-performance/)一文。
 
-##<a id="snapshots-and-copy-blob-when-using-premium-storage"></a> 快照和复制 Blob
+##<a id="snapshots-and-copy-blob"></a> 快照和复制 Blob
 可以像使用标准存储时创建快照的方式来为高级存储创建快照。由于高级存储仅支持使用本地冗余存储 (LRS) 作为复制选项，因此建议你创建快照，并将那些快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅 [Azure 存储冗余选项](/documentation/articles/storage-redundancy/)。
 
 如果磁盘已附加到 VM，在备份磁盘的页 Blob 上不允许某些 API 操作。例如，只要磁盘附加到 VM，你就无法在该 Blob 上执行[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 操作。此时，你必须先使用[快照 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691971.aspx) REST API 方法创建该 Blob 的快照，然后对该快照执行[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 以复制附加的磁盘。或者，可以中断附加磁盘，然后在基础 Blob 上执行任何必要的操作。
@@ -352,7 +352,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 **高级存储快照**：高级存储上的快照会因为使用的额外容量而产生费用。有关快照的详细信息，请参阅[创建 Blob 的快照](http://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)。
 
-**出站数据传输**：[出站数据传输](/pricing/details/data-transfers/)（Azure 数据中心送出的数据）会产生带宽使用费。
+**出站数据传输**：[出站数据传输](/pricing/details/data-transfer/)（Azure 数据中心送出的数据）会产生带宽使用费。
 
 有关高级存储、DS 系列、DSv2 系列 VM 定价的详细信息，请参阅：
 
