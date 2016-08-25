@@ -454,11 +454,11 @@
 
 ### PowerShell
 
-    New-AzureRmResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json
+    New-AzureRmResourceGroupDeployment -TemplateFile path/to/azuredeploy.json
 
 ### Azure CLI
 
-    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json
+    azure group deployment create --template-file path/to/azuredeploy.json
 
 
  

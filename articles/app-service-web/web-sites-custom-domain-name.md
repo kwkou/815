@@ -27,7 +27,7 @@
 
 [AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
 
-##<a name="overview"></a> 概述
+## <a name="overview"></a> 概述
 
 如果你已有域名，或想要保留来自其他域注册机构的域，以下是为 Web 应用引入自定义域的常规步骤：
 
@@ -44,7 +44,7 @@
 [AZURE.INCLUDE [模式](../../includes/custom-dns-web-site-modes.md)]
 
 
-##<a name="dns-record-types"></a> DNS 记录类型
+## <a name="dns-record-types"></a> DNS 记录类型
 
 域名系统 (DNS) 使用数据记录将域名映射到 IP 地址。有几种类型的 DNS 记录。对于 Web 应用，将创建 *A* 记录或 *CNAME* 记录。
 
@@ -56,7 +56,7 @@
 > [AZURE.NOTE]如果你删除 Web 应用后再重新创建，或是将 Web 应用模式更改回免费，则 IP 地址可能会更改。
 
 
-##<a name="find-the-virtual-ip-address"></a> 查找虚拟 IP 地址
+## <a name="find-the-virtual-ip-address"></a> 查找虚拟 IP 地址
 
 如果你要创建 CNAME 记录，可跳过此步骤。若要创建 A 记录，你需要 Web 应用的虚拟 IP 地址。获取该 IP 地址：
 
@@ -69,7 +69,7 @@
 4.	IP 地址列在接近对话框底部的地方。
 
 	![](./media/web-sites-custom-domain-name/ipaddress.png)
-##<a name="create-the-dns-records"></a> 创建 DNS 记录
+## <a name="create-the-dns-records"></a> 创建 DNS 记录
 
 登录域注册机构，并使用他们的工具添加 A 记录或 CNAME 记录。每个注册机构的 Web 应用都会稍有不同，但以下是一些通用准则。
 
@@ -105,7 +105,7 @@
 - **contoso.com** 映射到 42.159.132.179。
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
 
-##<a name="awverify"></a> 创建 awverify 记录（仅 A 记录）
+## <a name="awverify"></a> 创建 awverify 记录（仅 A 记录）
 
 如果创建 A 记录， Web 应用还需要特殊的 CNAME 记录，用于验证你是否拥有尝试要使用的域。此 CNAME 记录必须采用以下形式。
 
@@ -114,7 +114,7 @@
 
 你的 Web 应用的访客不会看到 awverify 子域；这只供 Azure 验证域使用。
 
-##<a name="enable-the-domain-name-on-your-web-app"></a> 在 Web 应用上启用域名
+## <a name="enable-the-domain-name-on-your-web-app"></a> 在 Web 应用上启用域名
 
 [AZURE.INCLUDE [模式](../../includes/custom-dns-web-site-enable-on-web-site.md)]
 

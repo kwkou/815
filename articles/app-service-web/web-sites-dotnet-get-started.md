@@ -85,7 +85,7 @@
 
 6. 单击**“确定”**
 
-##<a name="deploy-the-application-to-azure"></a>将项目部署到网站
+## <a name="deploy-the-application-to-azure"></a>将项目部署到网站
 
 在本部分中，你要将 Web 项目部署到 Web 应用。
 
@@ -132,13 +132,13 @@
 	> [AZURE.TIP] 可以启用“Web 单键发布”工具栏以快速完成部署。单击“视图”>“工具栏”，然后选择“Web 单键发布”。你可以通过工具栏选择一个配置文件，然后单击相关按钮进行发布，或者单击相关按钮以打开“发布 Web”向导。
 	> ![Web 单键发布工具栏](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
-##<a name="troubleshooting"></a> 故障排除
+## <a name="troubleshooting"></a> 故障排除
 
 如果在学习本教程的过程中遇到问题，请确保你使用的是最新版本的 Azure SDK for .NET。检查版本的最简单方法是[下载 Azure SDK for Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003)。如果你已安装最新版本，Web 平台安装程序会指出不需要进行安装。
 
 如果你在企业网络中并尝试通过防火墙部署到 Azure，请确保已针对 Web 部署打开端口 443 和 8172。如果无法打开这些端口，请参阅下面的“后续步骤”部分以了解其他部署选项。
 
-##<a name="next-steps"></a>后续步骤
+## <a name="next-steps"></a>后续步骤
 
 在本教程中，你已了解如何创建简单的 Web 应用程序并将其部署到 Azure Web 应用。你可以通过以下相关主题和资源来详细了解 Azure Web 应用：
 

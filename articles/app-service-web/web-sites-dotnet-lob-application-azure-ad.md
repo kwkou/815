@@ -20,7 +20,7 @@
 
 >[AZURE.NOTE]对于 Azure Web 应用，只需单击几下鼠标，就能配置针对 Azure Active Directory 租户的身份验证。有关详细信息，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)。
 
-##<a name="bkmk_build"></a> 要生成的项目 ##
+## <a name="bkmk_build"></a> 要生成的项目 ##
 
 你将在 Azure 中生成用于跟踪工作项并具有以下功能的简单的业务线创建-读取-更新-删除 (CRUD) 应用程序：
 
@@ -30,7 +30,7 @@
 - 使用 [Azure Active Directory 图形 API](http://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx) 查询 Azure Active Directory 数据
 - 使用 [Microsoft.Owin](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana)（而不是 Windows Identity Foundation (WIF)），它代表了 ASP.NET 的未来发展方向，与 WIF 相比，它的身份验证和授权设置要简单得多
 
-##<a name="bkmk_need"></a> 所需的项目 ##
+## <a name="bkmk_need"></a> 所需的项目 ##
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
@@ -41,7 +41,7 @@
 - Visual Studio 2013
 - [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 或更高版本
 
-##<a name="bkmk_sample"></a> 将示例应用程序用作业务线模板 ##
+## <a name="bkmk_sample"></a> 将示例应用程序用作业务线模板 ##
 
 本教程中的示例应用程序 [WebApp-RoleClaims-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) 由 Azure Active Directory 团队创建，可用作模板来轻松创建新的业务线应用程序。该示例应用程序具有以下内置功能：
 
@@ -49,7 +49,7 @@
 - 示例 `TaskTracker` 控制器演示了如何才能授权对应用程序，其中包括 `[Authorize]` 的标准用法中的特定操作的不同角色的控制器。 
 - 一个多租户应用程序，其中包含可立即分配给用户和组的预定义角色。 
 
-##<a name="bkmk_run" ></a> 运行示例应用程序 ##
+## <a name="bkmk_run" ></a> 运行示例应用程序 ##
 
 1.	克隆或下载 [WebApp-RoleClaims-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) 中的示例解决方案到本地目录。
 
@@ -65,7 +65,7 @@
 
 5.	如果你已正确配置 Azure Active Directory 应用程序，并在 Web.config 中设置了相应的设置，则应会重定向到登录页。你只需使用在 Azure 经典管理门户中创建 Azure Active Directory 应用程序时所用的帐户登录，因为该帐户是 Azure Active Directory 应用程序的默认所有者。
 	
-##<a name="bkmk_deploy"></a> 将示例应用程序部署到 Azure Web 应用
+## <a name="bkmk_deploy"></a> 将示例应用程序部署到 Azure Web 应用
 
 现在，你需要将应用程序发布到 Azure 中的 Web 应用。[README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) 中已经提供了有关部署到 Azure Web 应用的说明，但这些步骤还取消了本地调试环境的配置。下面将介绍如何在保留调试配置的同时进行部署。
 
@@ -140,7 +140,7 @@
 
 如果你想要附加到已发布的 Web 应用调试器（必须上载的已发布的 Web 应用中的代码的调试符号），你可以创建的调试配置对于 Azure 调试，但使用的 Azure Active Directory 设置从 Web.Release.config 自己自定义 Web.config 转换（例如 Web.AzureDebug.config）克隆。这样，你可以跨不同的环境中维护静态配置。
 
-##<a name="bkmk_crud"></a> 将业务线功能添加到示例应用程序
+## <a name="bkmk_crud"></a> 将业务线功能添加到示例应用程序
 
 在本教程的本部分，你将学习如何基于示例应用程序生成所需的业务线功能。你将创建一个简单 CRUD 的工作项跟踪程序，类似于 TaskTracker 控制器，但使用标准的 CRUD 基架和设计模式。你还将使用包含的 Scripts\\AadPickerLibrary.js 从 Azure Active Directory 图形 API 丰富应用程序与数据。
 
@@ -228,11 +228,11 @@
 
 	> [AZURE.NOTE]你可能已注意到某些操作带有 <code>[ValidateAntiForgeryToken]</code> 修饰。由于存在 [Brock Allen](https://twitter.com/BrockLAllen) 在 [MVC 4、AntiForgeryToken 和声明](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/)中所述的行为，HTTP POST 可能无法完成防伪令牌验证，因为： + Azure Active Directory 不会发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider，而默认情况下防伪令牌需要此项。+ 如果 Azure Active Directory 是与 AD FS 进行同步处理的目录，则默认情况下 AD FS 信任不发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider 声明，不过你可以手动将 AD FS 配置为发送此声明。你将在下一步对此进行处理。
 
-12.  在 App\_Start\\Startup.Auth.cs 中，将以下代码行添加到 `ConfigureAuth` 方法中。右键单击每个命名解析错误并修复错误。
+12. 在 App\_Start\\Startup.Auth.cs 中，将以下代码行添加到 `ConfigureAuth` 方法中。右键单击每个命名解析错误并修复错误。
 
-		AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
-	
-	`ClaimTypes.NameIdentifies` 指定 Azure Active Directory 提供的声明 `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`。既然你已注意了授权部分（严格来讲，这并不长），你可以将时间投入到操作的实际功能。
+        AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
+
+    `ClaimTypes.NameIdentifies` 指定 Azure Active Directory 提供的声明 `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`。既然你已注意了授权部分（严格来讲，这并不长），你可以将时间投入到操作的实际功能。
 
 13.	在 Create() 和 Edit() 中添加以下代码，使某些变量可在后面的 JavaScript 中使用。右键单击每个命名解析错误并修复错误。
 
@@ -317,7 +317,6 @@
     
     	</pre>
    
-   
     在脚本中，AadPicker 对象将调用 [Azure Active Directory 图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) 来搜索与输入内容匹配的用户和组。
 
 15. 打开[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)并运行 **Enable-migrations-EnableAutomaticMigrations**。与你在将应用发布到 Azure 时选择的选项类似，当你在 Visual Studio 中调试应用时，此命令将帮助你在 [LocalDB](https://msdn.microsoft.com/zh-cn/library/hh510202.aspx) 中更新应用的数据库架构。
@@ -338,7 +337,7 @@
 
 ![](./media/web-sites-dotnet-lob-application-azure-ad/11-edit-unauthorized.png)
 
-##<a name="bkmk_resources"></a> 其他资源
+## <a name="bkmk_resources"></a> 其他资源
 
 - [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)

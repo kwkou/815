@@ -510,11 +510,9 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	![包含待办事项列表项的索引页面][rxFFchrome]
 	
-
 	IE 将提示你打开或保存联系人。
 
 	![Web API 保存对话框][addwebapi006]
-	
 	
 	你可以在记事本或浏览器中打开返回的联系人。
 	
@@ -704,7 +702,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 
 该应用程序现在是运行在云中，使用 SQL 数据库存储其数据。在 Azure 中测试应用程序完成后，将其删除。该应用程序是公开的并且没有限制访问的机制。
 
-##<a name="nextsteps"></a>后续步骤
+## <a name="nextsteps"></a>后续步骤
 
 实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用。
 

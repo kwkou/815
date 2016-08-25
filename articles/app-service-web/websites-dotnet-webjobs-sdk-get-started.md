@@ -582,7 +582,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
 		<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
 
-###<a name="ResolveBlobName" id="resolveblobname"></a> ContosoAdsWeb - AdController.cs
+### <a name="ResolveBlobName" id="resolveblobname"></a> ContosoAdsWeb - AdController.cs
 
 在 *AdController.cs* 文件中，构造函数调用 `InitializeStorage` 方法来创建 Azure 存储客户端库对象，它提供一个用于处理 Blob 和队列的 API。
 

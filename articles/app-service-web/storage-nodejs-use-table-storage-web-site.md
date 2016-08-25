@@ -557,8 +557,6 @@
 
 	* **TABLE\_NAME** -“tasks”
 
-	![应用程序设置][app-settings]
-
 4. 最后，单击页面底部的“保存”图标，将此更改提交到运行时环境。
 
 	![保存应用程序设置][app-settings-save]

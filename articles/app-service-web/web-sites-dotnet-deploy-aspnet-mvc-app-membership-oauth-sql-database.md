@@ -87,7 +87,7 @@
 
 这就是你创建将要部署到 Azure 的应用程序目前所需的全部操作。
 
-##<a name="bkmk_deploytowindowsazure1"></a> 将应用程序部署到 Azure
+## <a name="bkmk_deploytowindowsazure1"></a> 将应用程序部署到 Azure
 
 1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
 
@@ -149,7 +149,7 @@
 
 	 ![FireFox 证书警告](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss30.PNG)
 
-##<a name="bkmk_addadatabase"></a> 向应用程序添加数据库
+## <a name="bkmk_addadatabase"></a> 向应用程序添加数据库
 
 接下来，你将更新应用程序以添加显示和更新联系人以及在数据库中存储数据的功能。应用程序将使用 Entity Framework (EF) 创建数据库并读取和更新数据。
 
@@ -227,7 +227,6 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 2. 在“包管理器控制台”窗口中，输入以下命令：
 
 		add-migration Initial
-
 
 	**add-migration Initial** 命令将在 Migrations 文件夹中生成一个名为 **&lt;date\_stamp&gt;Initial** 的文件。此文件中的代码将生成数据库表。第一个参数 (**Initial**) 用于创建文件的名称。你可以在“解决方案资源管理器”中查看新的类文件。
 
@@ -308,7 +307,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	![数据的 MVC 视图][rx2]
 
-##<a name="addOauth"></a> 添加 OAuth2 提供程序
+## <a name="addOauth"></a> 添加 OAuth2 提供程序
 
 [OAuth](http://oauth.net/ "http://oauth.net/") 是一种开放协议，允许以一种简单而标准的方法从 Web、移动和桌面应用程序进行安全授权。ASP.NET MVC Internet 模板使用 OAuth 公开将 Facebook、Twitter、Google 和 Microsoft 作为身份验证提供程序。虽然本教程仅使用 Google 作为身份验证提供程序，但你可轻松修改代码以使用其中任一提供程序。实施其他提供程序的步骤与你将在本教程中看到的步骤非常类似。若要将 Facebook 用作身份验证提供程序，请参阅[使用 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录名创建 MVC 5 应用](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)。
 
@@ -320,7 +319,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 2. 如果想要创建具有特定提供程序图标的社交登录按钮，请参阅 [ASP.NET MVC 5 的美观社交登录按钮](http://www.jerriepelser.com/blog/pretty-social-login-buttons-for-asp-net-mvc-5)
 
-##<a name="mbrDB"></a> 使用成员资格 API
+## <a name="mbrDB"></a> 使用成员资格 API
 
 在本节中，你会将本地用户和 canEdit 角色添加到成员资格数据库。只有具有 canEdit 角色的用户才能编辑数据。最佳做法是按照角色可以执行的操作命名这些角色，因此 canEdit 优于名为 admin 的角色。在你的应用程序升级后，你可以添加新角色，例如 canDeleteMembers，而不是描述性较差的 superAdmin。
 
@@ -421,7 +420,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 **Update-Database** 命令将运行 **Seed** 方法，而该方法将运行你前面添加的 **AddUserAndRole** 方法。**AddUserAndRole** 方法将创建用户 user1@contoso.com 并将其添加到 canEdit 角色。
 
-##<a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a> 通过 SSL 和 Authorize 属性保护应用程序 ##
+## <a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a> 通过 SSL 和 Authorize 属性保护应用程序 ##
 
 在本部分中，你将应用 [Authorize](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.authorizeattribute.aspx) 属性以限制对操作方法的访问。匿名用户将只能查看主控制器的 **Index** 操作方法。注册用户将能够查看联系人数据（Cm 控制器的“索引”和“详细信息”页）、“关于”页和“联系人”页。只有具有 canEdit 角色的用户才能访问可更改数据的操作方法。
 
@@ -507,13 +506,12 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 1. 单击页面上的编辑链接，你将被重定向到登录页（因为新的本地用户未添加到 canEdit 角色）。
 
 1. 使用帐户 user1@contoso.com 和密码“P\_assw0rd1”（“word”中的“0”是零）登录。你将重定向到之前选择的编辑页。
-2. 
 
 	如果你无法使用该帐户和密码登录，请尝试从源代码中复制密码并粘贴它。如果你仍然无法登录，请检查 **AspNetUsers** 表的 **UserName** 列，以验证是否已添加 user1@contoso.com。
 
 1. 验证你是否能执行数据更改。
 
-##<a name="bkmk_deploytowindowsazure11"></a> 将应用部署到 Azure
+## <a name="bkmk_deploytowindowsazure11"></a> 将应用部署到 Azure
 
 1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
 
@@ -556,7 +554,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 5. 在“解决方案资源管理器”中，右键单击该项目并选择“发布”。
 
-	   ![项目上下文菜单中的“发布”](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
+	![项目上下文菜单中的“发布”](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
 	
 4. 单击“开始预览”按钮。只会部署需要更新的文件。
 
@@ -622,7 +620,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
  
 3. 验证 **UserId** 是否来自 user1@contoso.com 和你注册的 Google 帐户。
 
-##<a name="troubleshooting"></a> 疑难解答
+## <a name="troubleshooting"></a> 疑难解答
 
 如果你遇到了问题，请尝试遵循以下建议。
 
