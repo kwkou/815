@@ -188,7 +188,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
     ![列出设备操作][img-actions]  
 
 
-> [AZURE.NOTE] 可以定义一些这样的操作：发送电子邮件或短信以响应规则，或通过[逻辑应用][lnk-logic-apps]与业务线系统集成。有关详细信息，请参阅 [Connect Logic App to your Azure IoT Suite Remote Monitoring preconfigured solution][lnk-logicapptutorial]（将逻辑应用连接到 Azure IoT 套件远程监视预配置解决方案）。
+> [AZURE.NOTE] 可以定义一些这样的操作：发送电子邮件或短信以响应规则。有关详细信息，请参阅 [Connect Logic App to your Azure IoT Suite Remote Monitoring preconfigured solution][lnk-logicapptutorial]（将逻辑应用连接到 Azure IoT 套件远程监视预配置解决方案）。
 
 ## 其他功能
 
@@ -252,16 +252,15 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 [img-search]: ./media/iot-suite-getstarted-preconfigured-solutions/solutionportal_07.png
 [img-disable]: ./media/iot-suite-getstarted-preconfigured-solutions/solutionportal_08.png
 [1rmb-trial]: /pricing/1rmb-trial/
-[lnk-preconfigured-solutions]: /documentation/articles/iot-suite/iot-suite-what-are-preconfigured-solutions/
+[lnk-preconfigured-solutions]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn
-[lnk-customize]: /documentation/articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[lnk-predictive]: /documentation/articles/iot-suite/iot-suite-predictive-overview/
-[lnk-connecting-devices]: /documentation/articles/iot-suite/iot-suite-connecting-devices/
-[lnk-permissions]: /documentation/articles/iot-suite/iot-suite-permissions/
-[lnk-logic-apps]: /documentation/services/app-service/logic/
+[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
+[lnk-predictive]: /documentation/articles/iot-suite-predictive-overview/
+[lnk-connecting-devices]: /documentation/articles/iot-suite-connecting-devices/
+[lnk-permissions]: /documentation/articles/iot-suite-permissions/
 [lnk-portal]: http://portal.azure.cn/
 [lnk-rmgithub]: https://github.com/Azure/azure-iot-remote-monitoring
-[lnk-devicemetadata]: /documentation/articles/iot-suite/iot-suite-what-are-preconfigured-solutions/#device-identity-registry-and-documentdb
-[lnk-logicapptutorial]: /documentation/articles/iot-suite/iot-suite-logic-apps-tutorial/
+[lnk-devicemetadata]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/#device-identity-registry-and-documentdb
+[lnk-logicapptutorial]: /documentation/articles/iot-suite-logic-apps-tutorial/
 
 <!---HONumber=Mooncake_0815_2016-->

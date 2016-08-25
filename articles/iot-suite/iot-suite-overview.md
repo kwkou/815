@@ -37,7 +37,7 @@ Azure 物联网 (IoT) 服务提供有各种功能。这些企业级服务让你�
 
 - [Azure 存储空间][lnk-azure-storage]和 [Azure DocumentDB][lnk-document-db] 提供数据存储功能。预配置解决方案使用 blob 存储来存储遥测数据并使其可用于分析。这些解决方案使用 DocumentDB 来存储设备元数据，以及启用解决方案的设备管理功能。
 
-- [Azure Web Apps][lnk-web-apps] 和 [Microsoft Power BI][lnk-power-bi] 提供数据可视化功能。借助 Power BI 的灵活性，你可以快速生成自己的交互式仪表板（使用 IoT 套件数据）。
+- [Microsoft Power BI][lnk-power-bi] 提供数据可视化功能。借助 Power BI 的灵活性，你可以快速生成自己的交互式仪表板（使用 IoT 套件数据）。
 
 有关典型 IoT 解决方案体系结构的概述，请参阅 [Azure 和物联网 (IoT)][iot-suite-what-is-azure-iot]。
 
@@ -62,10 +62,9 @@ IoT 套件包含预配置解决方案，可让你快速地开始使用，并浏�
 [lnk-azure-storage]: /documentation/services/storage/
 [lnk-document-db]: /documentation/services/documentdb/
 [lnk-power-bi]: https://powerbi.microsoft.com/
-[lnk-web-apps]: /documentation/services/app-service/web/
-[iot-suite-what-is-azure-iot]: /documentation/articles/iot-suite/iot-suite-what-is-azure-iot/
-[lnk-what-are-preconfig]: /documentation/articles/iot-suite/iot-suite-what-are-preconfigured-solutions/
-[lnk-preconfig-start]: /documentation/articles/iot-suite/iot-suite-getstarted-preconfigured-solutions/
+[iot-suite-what-is-azure-iot]: /documentation/articles/iot-suite-what-is-azure-iot/
+[lnk-what-are-preconfig]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/
+[lnk-preconfig-start]: /documentation/articles/iot-suite-getstarted-preconfigured-solutions/
 [lnk-iot-hub]: /documentation/services/iot-hub/
 
 <!---HONumber=Mooncake_0815_2016-->

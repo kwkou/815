@@ -249,8 +249,8 @@
 [image5]: ./media/iot-suite-dynamic-telemetry/image5.png
 
 [lnk_free_trial]: /pricing/1rmb-trial/
-[lnk-customize]: /documentation/articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[lnk-predictive]: /documentation/articles/iot-suite/iot-suite-predictive-overview/
+[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
+[lnk-predictive]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-node]: http://nodejs.org
 [node-linux]: https://github.com/nodejs/node-v0.x-archive/wiki/Installing-Node.js-via-package-manager
 [lnk-github-repo]: https://github.com/Azure/azure-iot-sdks

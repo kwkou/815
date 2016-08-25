@@ -167,11 +167,11 @@ _如果你要查找有关如何预配远程监视预配置解决方案的演练�
 现在，你已使用逻辑应用将预配置的解决方案连接到业务流程，接下来可以详细了解[如何自定义预配置解决方案][lnk-customize]或者[如何将物理设备添加到解决方案][lnk-connect]。
 
 [lnk-internetofthings]: /documentation/suites/iot-suite/
-[lnk-getstarted]: /documentation/articles/iot-suite/iot-suite-getstarted-preconfigured-solutions/
-[lnk-customize]: /documentation/articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[lnk-connect]: /documentation/articles/iot-suite/iot-suite-connecting-devices/
+[lnk-getstarted]: /documentation/articles/iot-suite-getstarted-preconfigured-solutions/
+[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
+[lnk-connect]: /documentation/articles/iot-suite-connecting-devices/
 [lnk-azureportal]: https://portal.azure.cn
-[lnk-logic-apps-actions]: /documentation/articles/connectors/apis-list/
+[lnk-logic-apps-actions]: /documentation/articles/apis-list/
 [lnk-rmgithub]: https://github.com/Azure/azure-iot-remote-monitoring
 [lnk-devsetup]: https://github.com/Azure/azure-iot-remote-monitoring/blob/master/Docs/dev-setup.md
 [lnk-localdeploy]: https://github.com/Azure/azure-iot-remote-monitoring/blob/master/Docs/local-deployment.md
