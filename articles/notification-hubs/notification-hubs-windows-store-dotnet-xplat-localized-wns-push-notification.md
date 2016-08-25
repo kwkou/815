@@ -15,8 +15,8 @@
 # 使用通知中心发送本地化的突发新闻
 
 > [AZURE.SELECTOR]
-- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification)
-- [iOS](/documentation/articles/notification-hubs-ios-xplat-localized-apns-push-notification)
+- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/)
+- [iOS](/documentation/articles/notification-hubs-ios-xplat-localized-apns-push-notification/)
 
 ##概述
 
@@ -188,9 +188,6 @@
 ##从后端发送本地化的通知
 
 [AZURE.INCLUDE [notification-hubs-localized-back-end](../../includes/notification-hubs-localized-back-end.md)]
-
-
-
 
 
 
