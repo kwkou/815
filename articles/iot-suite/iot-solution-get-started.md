@@ -15,7 +15,7 @@
 
 # MyDriving IoT 系统：快速入门
 
-MyDriving 系统用于演示典型[物联网](/documentation/articles/iot-suite/iot-suite-overview/) (IoT) 解决方案的设计和实现，物联网解决方案可从设备收集遥测、在云中处理收集的数据，并应用机器学习来提供自适应响应。通过使用你的移动电话中的数据和从你的汽车控制系统中收集信息的适配器中的数据，此演示记录有关你的汽车行程的数据。它使用此数据来提供有关你相较于其他用户的驾驶方式的反馈。
+MyDriving 系统用于演示典型[物联网](/documentation/articles/iot-suite-overview/) (IoT) 解决方案的设计和实现，物联网解决方案可从设备收集遥测、在云中处理收集的数据，并应用机器学习来提供自适应响应。通过使用你的移动电话中的数据和从你的汽车控制系统中收集信息的适配器中的数据，此演示记录有关你的汽车行程的数据。它使用此数据来提供有关你相较于其他用户的驾驶方式的反馈。
 
 MyDriving 的真正目的是帮助你开始创建你自己的 IoT 解决方案。但在此之前，让我们帮助你以我们的测试用户小组成员的身份开始使用 MyDriving 应用。在你深入了解体系结构之前，这将使你以消费者的身份体验该应用及其背后的系统。它还会向你介绍 HockeyApp，一种用于对将你的应用的 alpha 和 beta 版分发给测试用户进行管理的绝佳方法。
 
@@ -159,7 +159,7 @@ MyDriving 的真正目的是帮助你开始创建你自己的 IoT 解决方案�
 
 -   浏览 [MyDriving Reference Guide（MyDriving 参考指南）](http://aka.ms/mydrivingdocs)，了解我们如何设计并生成整个 MyDriving 系统。
 
--   使用我们的 Azure Resource Manager 脚本[创建和部署你自己的系统](/documentation/articles/iot-suite/iot-solution-build-system/)。[MyDriving Reference Guide（MyDriving 参考指南）](http://aka.ms/mydrivingdocs)还将指导你了解你将进行最多自定义操作的区域。
+-   使用我们的 Azure Resource Manager 脚本[创建和部署你自己的系统](/documentation/articles/iot-solution-build-system/)。[MyDriving Reference Guide（MyDriving 参考指南）](http://aka.ms/mydrivingdocs)还将指导你了解你将进行最多自定义操作的区域。
 
   [从 GitHub]: https://github.com/Azure-Samples/MyDriving
   [使用 Xamarin]: https://developer.xamarin.com/guides/ios/getting_started/installation/

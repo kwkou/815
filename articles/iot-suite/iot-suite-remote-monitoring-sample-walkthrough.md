@@ -213,11 +213,11 @@ Web 应用程序中的此页面使用 PowerBI javascript 控件（请参阅 [Pow
 - [IoT Suite - Remote Monitoring - Adding Live and Simulated Devices（IoT 套件 - 远程监视 - 添加实时与模拟设备）](http://social.technet.microsoft.com/wiki/contents/articles/32975.iot-suite-remote-monitoring-adding-live-and-simulated-devices.aspx)
 
 
-[lnk-preconfigured-solutions]: /documentation/articles/iot-suite/iot-suite-what-are-preconfigured-solutions/
-[lnk-customize]: /documentation/articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[lnk-connectyourdevice]: /documentation/articles/iot-suite/iot-suite-connecting-devices/
+[lnk-preconfigured-solutions]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/
+[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
+[lnk-connectyourdevice]: /documentation/articles/iot-suite-connecting-devices/
 [lnk-iothub]: /documentation/services/iot-hub/
 [lnk-asa]: /documentation/services/stream-analytics/
-[lnk-webjobs]: /documentation/articles/app-service-web/websites-webjobs-resources/
+[lnk-webjobs]: /documentation/articles/websites-webjobs-resources/
 
 <!---HONumber=Mooncake_0815_2016-->

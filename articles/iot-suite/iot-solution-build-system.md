@@ -21,7 +21,7 @@ MyDriving 是一个物联网 (IoT) 解决方案，它可收集你汽车的数据
 
 我们创建了 MyDriving 解决方案以帮助你快速开始创建自己的 IoT 系统。你可以从 [MyDriving repository on GitHub（GitHub 上的 MyDriving 存储库）](https://github.com/Azure-Samples/MyDriving)获取 Azure Resource Manager 脚本，以将后端体系结构部署到你自己的 Azure 帐户。然后，你可以重新配置不同的服务，并修改查询，以遍实现适应你自己数据等用途。你可以在MyDriving 存储库中找到这些脚本，以及移动应用和 Azure App Service API 项目等的代码。
 
-如果你还没有尝试使用该应用，请查看[入门指南](/documentation/articles/iot-suite/iot-solution-get-started/)。
+如果你还没有尝试使用该应用，请查看[入门指南](/documentation/articles/iot-solution-get-started/)。
 
 [MyDriving Reference Guide（MyDriving 参考指南）](http://aka.ms/mydrivingdocs)中提供了有关体系结构的详细帐户。总之，我们设置了几个部分，你可通过设置这些部分来创建类似的项目：
 
@@ -75,7 +75,7 @@ Xamarin、Git、仿真程序和其他有用的组件都与 Visual Studio 集成�
 
 -   [用于 Visual Studio 2015 的 Azure SDK](https://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409)。为你提供用于在 Azure 中运行应用的 SDK 以及用于管理 Azure 的命令行工具。
 
--   [Azure Service Fabric SDK](http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric)。对生成[微服务](/documentation/articles/service-fabric/service-fabric-get-started/)扩展来说是必需的。
+-   [Azure Service Fabric SDK](http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric)。对生成[微服务](/documentation/articles/service-fabric-get-started/)扩展来说是必需的。
 
 此外，请确保具有正确的 Visual Studio 扩展。在“工具”下查看，你将看到“Android、iOS、Xamarin...”。如果没有，请打开控制面板，然后选择“程序和功能”>“Microsoft”>“Visual Studio 2015”>“修改”。在“跨平台开发”下，选择“C# /.Net (Xamarin)”。此时，请检查已安装 **GitHub**。
 
@@ -273,9 +273,7 @@ Azure 提供了大量可用于生成云应用程序的不同服务。尽管许�
 | Azure IoT 中心 | 建立与每个连接的设备的双向连接。在 MyDriving 解决方案中，移动应用充当现场网关，将数据发送到 Azure IoT 中心。然后 Azure IoT 中心将作为流分析的输入。 |
 | Azure 事件中心 | 流分析作业的输出，将输出加入使用 Azure Service Fabric 创建的扩展队列。                                                                                               
 | Azure SQL 数据仓库 |                                                                                                                                                                                                            
-| 流分析作业 | 将输入和输出与查询连接起来，可用于为 App Service API、Azure 机器学习、扩展和 Power BI 聚合实时和历史数据。                               
-| 机器学习工作区 | 包括试验、R 代码和 API 服务。                                                                                                                                                              
-| Azure 数据工厂 | 计划的机器学习重新培训。                                                                                                                                                                     
+| 流分析作业 | 将输入和输出与查询连接起来，可用于为 App Service API、扩展和 Power BI 聚合实时和历史数据。                               
 | Service Fabric 托管计划 | 用于扩展。                                                                                                                                                                                            
 | App Service（“移动应用”） | 托管为移动应用提供终结点的 Mobile Apps API 项目。必须从 Visual Studio 向 App Service 部署 API 代码。                                                         
 | 警报规则 | 如果应用响应指示失败，则将向你发送电子邮件。                                                                                                                                            
@@ -378,9 +376,9 @@ Azure 提供了大量可用于生成云应用程序的不同服务。尽管许�
 
 ## 通过使用 Application Insights 探索遥测
 
-[Application Insights](/documentation/articles/application-insights/app-insights-overview/) 收集有关 Web 服务的性能和使用情况的遥测。Application Insights SDK 将遥测从服务发送到 Azure 中的 Application Insights 资源。
+[Application Insights](/documentation/articles/app-insights-overview/) 收集有关 Web 服务的性能和使用情况的遥测。Application Insights SDK 将遥测从服务发送到 Azure 中的 Application Insights 资源。
 
-浏览到模板配置的 Application Insights 资源。你可以在那里浏览你的 [Mobile App Service 项目](https://github.com/Azure-Samples/MyDriving/tree/master/src/MobileAppService)的性能图表。它们会显示服务器请求和响应时间、故障和异常计数。此外，还有一个依赖项响应时间图表，即，对数据库和对 REST API（如机器学习）的调用。如果有任何性能问题，你将能够看到是系统的哪一部分导致了这些问题。
+浏览到模板配置的 Application Insights 资源。你可以在那里浏览你的 [Mobile App Service 项目](https://github.com/Azure-Samples/MyDriving/tree/master/src/MobileAppService)的性能图表。它们会显示服务器请求和响应时间、故障和异常计数。此外，还有一个依赖项响应时间图表，即，对数据库和对 REST API 的调用。如果有任何性能问题，你将能够看到是系统的哪一部分导致了这些问题。
 
 ![示例性能图表](./media/iot-solution-build-system/image11.png)
 
@@ -390,13 +388,13 @@ Azure 提供了大量可用于生成云应用程序的不同服务。尽管许�
 
 此功能是通过使用 Application Insights SDK 检测你的应用程序来实现的。
 
-可以通过在开发时[添加 Application Insights SDK](/documentation/articles/application-insights/app-insights-asp-net/) 来添加自定义遥测（或检测在 Azure 外部运行的应用程序）。这对于记录依赖于应用程序的指标（如用户的平均行程长度或总里程）非常有用。在 Visual Studio 中，右键单击该项目，然后选择“添加 Application Insights”。
+可以通过在开发时[添加 Application Insights SDK](/documentation/articles/app-insights-asp-net/) 来添加自定义遥测（或检测在 Azure 外部运行的应用程序）。这对于记录依赖于应用程序的指标（如用户的平均行程长度或总里程）非常有用。在 Visual Studio 中，右键单击该项目，然后选择“添加 Application Insights”。
 
 ![用于选择“添加 Application Insights”以添加自定义遥测的接口](./media/iot-solution-build-system/image10.png)
 
 如果 Application Insights 看到异常的失败响应数，它将发送警报电子邮件。你还可以按照不同的指标（如响应时间）设置你自己警报。
 
-如果只是要确保你的 Web 服务始终保持正常运行，可以设置[可用性测试](/documentation/articles/application-insights/app-insights-monitor-web-app-availability/)。这些测试将每隔 15 分钟从世界各地的不同位置对你的站点进行 ping 操作。同样，如果出现问题你将收到一封电子邮件。
+如果只是要确保你的 Web 服务始终保持正常运行，可以设置[可用性测试](/documentation/articles/app-insights-monitor-web-app-availability/)。这些测试将每隔 15 分钟从世界各地的不同位置对你的站点进行 ping 操作。同样，如果出现问题你将收到一封电子邮件。
 
 ## 估计运营成本
 
@@ -419,7 +417,6 @@ Azure 提供了大量可用于生成云应用程序的不同服务。尽管许�
 | [Visual Studio 2015 Community](https://www.visualstudio.com/products/visual-studio-community-vs) with [Xamarin](https://visualstudiogallery.msdn.microsoft.com/dcd5b7bd-48f0-4245-80b6-002d22ea6eee) <br/>跨平台开发环境| Visual Studio Community。（需要 [Visual Studio Professional](https://www.visualstudio.com/vs-2015-product-editions) for [Xamarin.Forms](https://xamarin.com/forms) 从单个代码库设计跨平台。） | $0 |
 | [Azure IoT 中心](https://azure.microsoft.com/pricing/details/iot-hub)<br/>与设备的双向数据连接 | 8,000 条消息 + 0.5 KB/消息免费。 | $0 |
 | [流分析](https://azure.microsoft.com/pricing/details/stream-analytics)<br/>高容量流数据处理 | 启用时，每小时对每个流式处理单位收费 $0.031。选择所需的流式处理单位数；更多情况下会增加。 | $23 |
-| [机器学习](/documentation/services/machine-learning)<br/>自适应响应 | $10/席位/月。<br/> + 3 小时试验 * $1/试验小时。<br/> + 3.5 小时 API CPU * $2/生产 CPU 小时。<br/> API CPU 时间假定 5 分钟/天重新导流，尽管这会导致输入数据增多。<br/> + 每天 2 分钟可每天处理 400 次行程。 | $20 |
 | [App Service](https://azure.microsoft.com/pricing/details/app-service) <br/>托管移动后端 | B1 层--生产 Web 应用。 | $56 |
 | [Visual Studio Team Services ](https://azure.microsoft.com/pricing/details/visual-studio-team-services)<br/>生成、单元测试和发布管理；任务管理 | 私有 Agent，五个用户。| $0 |
 | [Application Insights](https://azure.microsoft.com/pricing/details/application-insights) <br/>监视 Web 服务和网站的性能及使用情况| 免费层。 | $0 |

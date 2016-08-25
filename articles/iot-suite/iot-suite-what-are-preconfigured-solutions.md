@@ -122,15 +122,15 @@ IoT 中心通过服务端遥测数据读取终结点使收到的遥测数据可�
 
 [img-remote-monitoring-arch]: ./media/iot-suite-what-are-preconfigured-solutions/remote-monitoring-arch1.png
 [img-dashboard]: ./media/iot-suite-what-are-preconfigured-solutions/dashboard.png
-[lnk-what-is-azure-iot]: /documentation/articles/iot-suite/iot-suite-what-is-azure-iot/
+[lnk-what-is-azure-iot]: /documentation/articles/iot-suite-what-is-azure-iot/
 [lnk-asa]: /documentation/services/stream-analytics/
-[lnk-event-processor]: /documentation/articles/event-hubs/event-hubs-programming-guide/#event-processor-host
-[lnk-web-job]: /documentation/articles/app-service-web/web-sites-create-web-jobs/
+[lnk-event-processor]: /documentation/articles/event-hubs-programming-guide/#event-processor-host
+[lnk-web-job]: /documentation/articles/web-sites-create-web-jobs/
 [lnk-document-db]: /documentation/services/documentdb/
-[lnk-identity-registry]: /documentation/articles/iot-hub/iot-hub-devguide/#device-identity-registry
-[lnk-suite-overview]: /documentation/articles/iot-suite/iot-suite-overview/
-[lnk-preconf-get-started]: /documentation/articles/iot-suite/iot-suite-getstarted-preconfigured-solutions/
-[lnk-predictive-maintenance]: /documentation/articles/iot-suite/iot-suite-predictive-overview/
+[lnk-identity-registry]: /documentation/articles/iot-hub-devguide/#device-identity-registry
+[lnk-suite-overview]: /documentation/articles/iot-suite-overview/
+[lnk-preconf-get-started]: /documentation/articles/iot-suite-getstarted-preconfigured-solutions/
+[lnk-predictive-maintenance]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 

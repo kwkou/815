@@ -272,13 +272,13 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 [img-device-remove]: ./media/iot-suite-remote-monitoring-device-info/image3.png
 
 [lnk-iot-hub]: /documentation/services/iot-hub/
-[lnk-identity-registry]: /documentation/articles/iot-hub/iot-hub-devguide/#device-identity-registry
+[lnk-identity-registry]: /documentation/articles/iot-hub-devguide/#device-identity-registry
 [lnk-docdb]: /documentation/services/documentdb/
 [lnk-ref-arch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
-[lnk-connect-custom]: /documentation/articles/iot-suite/iot-suite-connecting-devices/
-[lnk-customize]: /documentation/articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions/
+[lnk-connect-custom]: /documentation/articles/iot-suite-connecting-devices/
+[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
-[lnk-dm-preview]: /documentation/articles/iot-hub/iot-hub/iot-hub-device-management-overview/
-[lnk-dynamic-telemetry]: /documentation/articles/iot-suite/iot-suite-dynamic-telemetry/
+[lnk-dm-preview]: /documentation/articles/iot-hub-device-management-overview/
+[lnk-dynamic-telemetry]: /documentation/articles/iot-suite-dynamic-telemetry/
 
 <!---HONumber=Mooncake_0815_2016-->

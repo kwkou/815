@@ -153,8 +153,8 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 有关 IoT 设备的详细信息，请参阅 [Azure IoT 开发人员站点](/develop/iot)以查找链接和文档。
 
-[IoT 设备 SDK]: /documentation/articles/iot-hub/iot-hub-sdks-summary/
-[lnk-permissions]: /documentation/articles/iot-suite/iot-suite-permissions/
+[IoT 设备 SDK]: /documentation/articles/iot-hub-sdks-summary/
+[lnk-permissions]: /documentation/articles/iot-suite-permissions/
 [lnk-dashboard-controller]: https://github.com/Azure/azure-iot-remote-monitoring/blob/3fd43b8a9f7e0f2774d73f3569439063705cebe4/DeviceAdministration/Web/Controllers/DashboardController.cs#L27
 [lnk-telemetry-api-controller-01]: https://github.com/Azure/azure-iot-remote-monitoring/blob/3fd43b8a9f7e0f2774d73f3569439063705cebe4/DeviceAdministration/Web/WebApiControllers/TelemetryApiController.cs#L27
 [lnk-telemetry-api-controller-02]: https://github.com/Azure/azure-iot-remote-monitoring/blob/e7003339f73e21d3930f71ceba1e74fb5c0d9ea0/DeviceAdministration/Web/WebApiControllers/TelemetryApiController.cs#L25

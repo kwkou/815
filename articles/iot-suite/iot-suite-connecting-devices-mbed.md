@@ -221,6 +221,6 @@
 [lnk-mbed-home]: https://developer.mbed.org/platforms/FRDM-K64F/
 [lnk-mbed-getstarted]: https://developer.mbed.org/platforms/FRDM-K64F/#getting-started-with-mbed
 [lnk-mbed-pcconnect]: https://developer.mbed.org/platforms/FRDM-K64F/#pc-configuration
-[lnk-serializer]: /documentation/articles/iot-hub/iot-hub-device-sdk-c-intro/#serializer
+[lnk-serializer]: /documentation/articles/iot-hub-device-sdk-c-intro/#serializer
 
 <!---HONumber=Mooncake_0815_2016-->

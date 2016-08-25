@@ -18,7 +18,7 @@
 
 ## 介绍
 
-IoT 套件预见性维护预配置解决方案是一个用于商业应用场景的端到端解决方案，可预测可能发生故障的时间点。你可以主动对优化维护等活动运用此预配置解决方案。此解决方案结合主要的 Azure IoT 套件服务，包括带有实验的 [Azure 机器学习][lnk_machine_learning]工作区，可根据公用示例数据集预测飞机引擎的剩余使用年限 (RUL)。此解决方案提供完整的商业应用场景实现作为你规划和实施此类型 IoT 解决方案的起点，以满足你自己的特定业务需求。
+IoT 套件预见性维护预配置解决方案是一个用于商业应用场景的端到端解决方案，可预测可能发生故障的时间点。你可以主动对优化维护等活动运用此预配置解决方案。此解决方案结合主要的 Azure IoT 套件服务，可根据公用示例数据集预测飞机引擎的剩余使用年限 (RUL)。此解决方案提供完整的商业应用场景实现作为你规划和实施此类型 IoT 解决方案的起点，以满足你自己的特定业务需求。
 
 ## 逻辑体系结构
 
@@ -59,10 +59,6 @@ IoT 中心会提供设备命令确认。
 
 **事件处理器**会采用已完成周期的平均传感器值，并将这些值传递到可公开机器学习定型模型的 API，以便计算引擎的 RUL。
 
-## Azure 机器学习
-
-有关如何根据原始数据集创建该模型的详细信息，请参阅 [Cortana Intelligence Gallery Predictive Maintenance Template][lnk-cortana-analytics]（Cortana Intelligence 库预见性维护模板）。
-
 ## 让我们开始
 
 本节将逐步解说解决方案的组件、说明预期的用例，并提供示例。
@@ -80,9 +76,6 @@ Web 应用程序中的此页面会使用 PowerBI JavaScript 控件（请参阅 [
 
 ![][img-resource-group]
 
-预配该预配置解决方案时，你会收到一封电子邮件，其中包含机器学习工作区的链接。如果此机器学习工作区处于“就绪”状态，你也可以从已预配解决方案的 [azureiotsuite.cn][lnk-azureiotsuite] 页面导航到此工作区。
-
-![][img-machine-learning]
 
 在解决方案门户中，你可以看到本示例预配了四个模拟设备，表示各有 2 个引擎的 2 架飞机，而每个引擎有 4 个传感器。当你第一次导航到解决方案门户时，模拟便会停止。
 
@@ -111,16 +104,14 @@ Web 应用程序中的此页面会使用 PowerBI JavaScript 控件（请参阅 [
   
 [img-architecture]: ./media/iot-suite-predictive-walkthrough/architecture.png
 [img-resource-group]: ./media/iot-suite-predictive-walkthrough/resource-group.png
-[img-machine-learning]: ./media/iot-suite-predictive-walkthrough/machine-learning.png
 [img-simulation-stopped]: ./media/iot-suite-predictive-walkthrough/simulation-stopped.png
 [img-simulation-running]: ./media/iot-suite-predictive-walkthrough/simulation-running.png
 [img-simulation-warning]: ./media/iot-suite-predictive-walkthrough/simulation-warning.png
 
 [lnk-powerbi]: https://www.github.com/Microsoft/PowerBI-visuals
-[lnk_machine_learning]: /home/features/machine-learning/
-[lnk-remote-monitoring]: /documentation/articles/iot-suite/iot-suite-remote-monitoring-sample-walkthrough/
+[lnk-remote-monitoring]: /documentation/articles/iot-suite-remote-monitoring-sample-walkthrough/
 [lnk-cortana-analytics]: http://gallery.cortanaintelligence.com/Collection/Predictive-Maintenance-Template-3
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
-[lnk-customize]: /documentation/articles/iot-suite/iot-suite-guidance-on-customizing-preconfigured-solutions/
+[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
 
 <!---HONumber=Mooncake_0815_2016-->

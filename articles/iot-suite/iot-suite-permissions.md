@@ -135,10 +135,10 @@ Azure 管理员角色可控制将 Azure 订阅映射到 AD 租户的能力。
 
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
 [lnk-github-repo]: https://github.com/Azure/azure-iot-solution
-[lnk-aad-admin]: /documentation/articles/active-directory/active-directory-assign-admin-roles/
+[lnk-aad-admin]: /documentation/articles/active-directory-assign-admin-roles/
 [lnk-classic-portal]: https://manage.windowsazure.cn/
-[lnk-create-edit-users]: /documentation/articles/active-directory/active-directory-create-users/
-[lnk-assign-app-roles]: /documentation/articles/active-directory/active-directory-application-manifest/
+[lnk-create-edit-users]: /documentation/articles/active-directory-create-users/
+[lnk-assign-app-roles]: /documentation/articles/active-directory-application-manifest/
 [lnk-service-admins]: /support/changing-service-admin-and-co-admin/
 [lnk-admin-roles]: /documentation/articles/billing-add-change-azure-subscription-administrator/
 [lnk-resource-cs]: https://github.com/Azure/azure-iot-remote-monitoring/blob/master/DeviceAdministration/Web/Security/RolePermissions.cs
