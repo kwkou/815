@@ -74,7 +74,7 @@
 有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
 ### 备份数据
-你可以手动把数据库备份到 Blob 存储。有关详细信息，请参阅[使用 Azure 存储空间进行 SQL Server 备份和还原](/documentation/articles/storage-use-storage-sql-server-backup-restore/)。有关所有备份和还原选项的概述，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。
+你可以手动把数据库备份到 Blob 存储。有关详细信息，请参阅[使用 Azure 存储空间进行 SQL Server 备份和还原](/documentation/articles/virtual-machines-windows-use-storage-sql-server-backup-restore/)。有关所有备份和还原选项的概述，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-windows-sql-backup-recovery/)。
 
 ### 自动更新
 Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching/)来安排维护时段，以便自动安装重要的 Windows 和 SQL Server 更新。

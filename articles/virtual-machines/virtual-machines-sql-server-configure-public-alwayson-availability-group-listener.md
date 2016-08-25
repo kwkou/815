@@ -9,8 +9,8 @@
 	tags="azure-service-management" />
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="05/08/2016"
-	wacn.date="06/29/2016" />
+	ms.date="07/12/2016"
+	wacn.date="08/23/2016" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组的外部侦听器
 

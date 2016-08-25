@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/19/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="07/13/2016"
+	wacn.date="08/23/2016"/>
 
 # 如何在经典 Azure Linux 虚拟机上设置终结点
 
