@@ -50,7 +50,7 @@
 
 ##<a name="storage-guidance"></a> 存储指导原则
 
-DS 系列（以及 DSv2 系列）VM 支持[高级存储](/documentation/articles/storage-premium-storage/)。对于生产工作负荷，建议使用高级存储。
+DS 系列VM 支持[高级存储](/documentation/articles/storage-premium-storage/)。对于生产工作负荷，建议使用高级存储。
 
 > [AZURE.WARNING] 标准存储具有不同的延迟和带宽，建议仅用于开发/测试工作负荷。生产工作负荷应使用高级存储。
 
@@ -78,7 +78,7 @@ Azure VM 上有三种主要磁盘类型：
 
 D 系列和 Dv2 系列 VM 上的临时驱动器基于 SSD。如果你的工作负荷重度使用 TempDB（例如，要处理临时对象或复杂联接），在 **D** 驱动器上存储 TempDB 可能会提高 TempDB 吞吐量并降低 TempDB 延迟。
 
-对于支持高级存储的 VM（DS 系列、DSv2 系列），建议将 TempDB 和/或缓冲池扩展存储在支持高级存储且已启用读取缓存的磁盘上。这项建议有一种例外情况；如果 TempDB 的使用是写入密集型的，你可以通过将 TempDB 存储在本地 **D** 驱动器（在这些计算机大小上也是基于 SSD）上来实现更高性能。
+对于支持高级存储的 VM（DS 系列），建议将 TempDB 和/或缓冲池扩展存储在支持高级存储且已启用读取缓存的磁盘上。这项建议有一种例外情况；如果 TempDB 的使用是写入密集型的，你可以通过将 TempDB 存储在本地 **D** 驱动器（在这些计算机大小上也是基于 SSD）上来实现更高性能。
 
 ### 数据磁盘数
 

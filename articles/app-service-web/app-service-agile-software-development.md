@@ -83,7 +83,7 @@
 
 	>[AZURE.NOTE] 在使用这些模板之前，你需要进行以下编辑，以适应 Azure 中国区的云环境：
 	><p> 1. 打开文件“ProdAndStage.json”，然后搜索“sourcecontrols”。
-	><p> 2. 在块和 fater `"branch": "[parameters('branch')]"` 中添加 `"IsManualIntegration": true`
+	><p> 2. 在 "properties" 中添加 `"IsManualIntegration": true`
 	><p> 3. 在“ProdAndStage.json”和“deploy.ps1”中，将“West US”或“East US”替换为“China East”或“China North”
 	><p> 在 Azure 中国区还不能使用 Azure 门户预览来管理 Azure Web 应用，因此我们无法设置 GitHub 凭据。
 
