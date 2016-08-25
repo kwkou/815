@@ -18,10 +18,10 @@
 
 ##概述
 
-利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证并生成通知，如指南主题[从应用后端注册](/documentation/articles/notification-hubs-push-notification-registration-management#registration-management-from-a-backend)中所述。
+利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证并生成通知，如指南主题[从应用后端注册](/documentation/articles/notification-hubs-push-notification-registration-management/#registration-management-from-a-backend)中所述。
 
-> [AZURE.NOTE] 本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started) 中所述创建并配置了通知中心。此外，只有在学习本教程后，才可以学习[安全推送 (iOS)](/documentation/articles/notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification) 教程。
-> 如果你要使用 Mobile Apps 作为后端服务，请参阅 [Mobile Apps Get Started with Push（Mobile Apps 中的推送通知入门）](/documentation/articles/app-service-mobile-ios-get-started-push)。
+> [AZURE.NOTE] 本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started) 中所述创建并配置了通知中心。此外，只有在学习本教程后，才可以学习[安全推送 (iOS)](/documentation/articles/notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification/) 教程。
+> 如果你要使用 Mobile Apps 作为后端服务，请参阅 [Mobile Apps Get Started with Push（Mobile Apps 中的推送通知入门）](/documentation/articles/app-service-mobile-ios-get-started-push/)。
 
 
 
@@ -29,7 +29,7 @@
 
 ## 修改 iOS 应用
 
-1. 打开你在[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started) 教程中创建的“单页视图”应用。
+1. 打开你在[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/) 教程中创建的“单页视图”应用。
 
 	> [AZURE.NOTE] 在本节中我们假定你的项目已配置了空的组织名称。如果未配置，你将需要在所有类名前面追加组织名称。
 
@@ -40,7 +40,7 @@
 	+ **用户名**：包含占位符文本“输入用户名”的 UITextField，直接位于发送结果标签的下面并受左边距和右边距约束。
 	+ **密码**：包含占位符文本“输入密码”的 UITextField，直接位于用户名文本字段的下面并受左边距和右边距约束。选中属性检查器中“返回密钥”下的“安全文本输入”选项。
 	+ **登录**：在密码文本字段的直接下方标记的 UIButton 并取消选中属性检查器中“控件内容”下的“已启用”选项
-	+ **WNS**：标签和开关，用于已在中心设置 Windows 通知服务时，启用将通知发送到 Windows 通知服务。请参阅 [Windows 入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)教程。
+	+ **WNS**：标签和开关，用于已在中心设置 Windows 通知服务时，启用将通知发送到 Windows 通知服务。请参阅 [Windows 入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)教程。
 	+ **APNS**：标签和开关，用于启用将通知发送到 Apple 平台通知服务。
 	+ **收件人用户名**：包含占位符文本“收件人用户名标记”的 UITextField，直接位于 GCM 标签的下面并受左边距和右边距约束。
 
@@ -258,7 +258,7 @@
 
 		@end
 
-	上面的代码使用 NSURLSession 对应用后端执行 REST 调用并使用 NSUserDefaults 在本地存储通知中心返回的 registrationId，实现了指南文章[从应用后端注册](/documentation/articles/notification-hubs-push-notification-registration-management#registration-management-from-a-backend)中所述的逻辑。
+	上面的代码使用 NSURLSession 对应用后端执行 REST 调用并使用 NSUserDefaults 在本地存储通知中心返回的 registrationId，实现了指南文章[从应用后端注册](/documentation/articles/notification-hubs-push-notification-registration-management/#registration-management-from-a-backend)中所述的逻辑。
 
 	请注意，此类需要设置其属性 **authorizationHeader**，才能正常工作。登录后，由 **ViewController** 类设置此属性。
 

@@ -21,7 +21,7 @@
 
 ##概述
 
-本主题演示如何使用 Azure 通知中心的[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages)功能广播已按语言和设备本地化的突发新闻通知。在本教程中，你从在[使用通知中心发送突发新闻]中创建的 iOS 应用开始操作。完成时，你将可以注册感兴趣的突发新闻类别，指定要接收通知的语言并仅接收采用该语言的这些类别的推送通知。
+本主题演示如何使用 Azure 通知中心的[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages/)功能广播已按语言和设备本地化的突发新闻通知。在本教程中，你从在[使用通知中心发送突发新闻]中创建的 iOS 应用开始操作。完成时，你将可以注册感兴趣的突发新闻类别，指定要接收通知的语言并仅接收采用该语言的这些类别的推送通知。
 
 
 此方案包含两个部分：
