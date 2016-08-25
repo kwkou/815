@@ -22,13 +22,13 @@
 
 ##DocumentDB Python SDK
 
-<table>
-<tr><td>**下载**</td><td>[PyPI](https://pypi.python.org/pypi/pydocumentdb)</td></tr>
-<tr><td>**参与**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-python)</td></tr>
-<tr><td>**文档**</td><td>[Python SDK 参考文档](http://azure.github.io/azure-documentdb-python/)</td></tr>
-<tr><td>**入门**</td><td>[Python SDK 入门](/documentation/articles/documentdb-python-application/)</td></tr>
-<tr><td>**当前受支持的平台**</td><td>[Python 2.7](https://www.python.org/download/releases/2.7/)</td></tr>
-</table></br>
+任务 | API 参考
+--- | ---  
+**下载**| [PyPI](https://pypi.python.org/pypi/pydocumentdb)
+**参与**| [GitHub](https://github.com/Azure/azure-documentdb-python)
+**文档**| [Python SDK 参考文档](http://azure.github.io/azure-documentdb-python/)
+**入门**| [Python SDK 入门](/documentation/articles/documentdb-python-application/)
+**当前受支持的平台**| [Python 2.7](https://www.python.org/download/releases/2.7/)
 
 ## 发行说明
 
