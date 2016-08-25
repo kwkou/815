@@ -15,7 +15,7 @@
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
-- [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+- [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification/)
 
 
 

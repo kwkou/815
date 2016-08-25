@@ -21,7 +21,7 @@
 
 ## 定向到特定注册
 
-定向到特定注册的唯一方法是将这些注册与标记相关联，然后定向到这些标记。如[注册管理](/documentation/articles/notification-hubs-push-notification-registration-management)中所述，应用要接收推送通知，必须在通知中心内注册设备句柄。在通知中心内创建注册后，应用程序后端便可向它发送推送通知。应用程序后端可以通过以下方式选择要将特定通知定向到的注册：
+定向到特定注册的唯一方法是将这些注册与标记相关联，然后定向到这些标记。如[注册管理](/documentation/articles/notification-hubs-push-notification-registration-management/)中所述，应用要接收推送通知，必须在通知中心内注册设备句柄。在通知中心内创建注册后，应用程序后端便可向它发送推送通知。应用程序后端可以通过以下方式选择要将特定通知定向到的注册：
 
 1. **广播**：通知中心内的所有注册均将收到通知。
 2. **标记**：包含指定标记的所有注册将收到通知。
@@ -35,7 +35,7 @@
 
 在此图中，标记为 **Beatles** 的消息仅传送到使用标记 **Beatles** 注册的平板电脑。
 
-有关针对标记创建注册的详细信息，请参阅[注册管理](/documentation/articles/notification-hubs-push-notification-registration-management)。
+有关针对标记创建注册的详细信息，请参阅[注册管理](/documentation/articles/notification-hubs-push-notification-registration-management/)。
 
 你可以使用 [Microsoft Azure 通知中心](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) SDK 中 `Microsoft.Azure.NotificationHubs.NotificationHubClient` 类的 send notifications 方法将通知发送到标记。你还可以使用 Node.js 或推送通知 REST API。下面是使用 SDK 的示例。
 
@@ -65,7 +65,7 @@
 
 虽然你可以在标记中对多个关注进行编码（例如，“band\_Beatles”或“follows\_Chanrlie”），但标记只是简单的字符串，并不是具有值的属性。只有存在或缺少特定标记时，才会匹配某一注册。
 
-有关如何使用标记发送到相关组的完整分步教程，请参阅[突发新闻](/documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns)。
+有关如何使用标记发送到相关组的完整分步教程，请参阅[突发新闻](/documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/)。
 
 
 ## 使用标记定向到用户

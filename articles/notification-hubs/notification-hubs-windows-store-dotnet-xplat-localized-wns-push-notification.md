@@ -66,7 +66,7 @@
 
 
 
-模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages)一文中了解其更多信息。
+模板是很强大的功能，你可以在[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages/)一文中了解其更多信息。
 
 
 ##应用程序用户界面
@@ -202,10 +202,8 @@
 
 <!-- URLs. -->
 
-[Mobile Service]: /develop/mobile/tutorials/get-started
-[Notify users with Notification Hubs: ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[Notify users with Notification Hubs: Mobile Services]: /manage/services/notification-hubs/notify-users
-[使用通知中心发送突发新闻]: /manage/services/notification-hubs/breaking-news-dotnet
+
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/
 
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039

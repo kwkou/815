@@ -19,9 +19,9 @@
 
 ##概述
 
-本主题演示如何使用 Azure 通知中心将突发新闻通知广播到 Windows Phone 8.0/8.1 Silverlight 应用。如果你要以 Windows 应用商店或 Phone 8.1 应用为目标，请参阅 [Windows Universal](/documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns) 版本。完成时，你可以注册感兴趣的突发新闻类别并仅接收这些类别的推送通知。此方案对于很多应用程序来说是常见模式，在其中必须将通知发送到以前声明过对它们感兴趣的一组用户，这样的应用程序有 RSS 阅读器、针对音乐迷的应用程序等。
+本主题演示如何使用 Azure 通知中心将突发新闻通知广播到 Windows Phone 8.0/8.1 Silverlight 应用。如果你要以 Windows 应用商店或 Phone 8.1 应用为目标，请参阅 [Windows Universal](/documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/) 版本。完成时，你可以注册感兴趣的突发新闻类别并仅接收这些类别的推送通知。此方案对于很多应用程序来说是常见模式，在其中必须将通知发送到以前声明过对它们感兴趣的一组用户，这样的应用程序有 RSS 阅读器、针对音乐迷的应用程序等。
 
-在创建通知中心的注册时，通过加入一个或多个标记来启用广播方案。将通知发送到标签时，已注册该标签的所有设备将接收通知。因为标签是简单的字符串，它们不必提前设置。有关标记的详细信息，请参阅[通知中心路由和标记表达式](/documentation/articles/notification-hubs-tags-segment-push-message)。
+在创建通知中心的注册时，通过加入一个或多个标记来启用广播方案。将通知发送到标签时，已注册该标签的所有设备将接收通知。因为标签是简单的字符串，它们不必提前设置。有关标记的详细信息，请参阅[通知中心路由和标记表达式](/documentation/articles/notification-hubs-tags-segment-push-message/)。
 
 ##先决条件
 
@@ -300,7 +300,6 @@
 
 <!-- URLs.-->
 [通知中心入门]: /documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/
-[Use Notification Hubs to broadcast localized breaking news]: /documentation/articles/breakingnews-localized-wp8
-[Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+
 
 <!---HONumber=Mooncake_0815_2016-->
