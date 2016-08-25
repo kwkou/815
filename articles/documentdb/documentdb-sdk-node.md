@@ -22,14 +22,14 @@
 
 ##DocumentDB Node.js SDK
 
-<table>
-<tr><td>**下载**</td><td>[NPM](https://www.npmjs.com/package/documentdb)</td></tr>
-<tr><td>**参与**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)</td></tr>
-<tr><td>**文档**</td><td>[Node.js SDK 参考文档](http://azure.github.io/azure-documentdb-node/)</td></tr>
-<tr><td>**示例**</td><td>[Node.js 代码示例](https://github.com/Azure/azure-documentdb-node/tree/master/samples)</td></tr>
-<tr><td>**入门**</td><td>[Node.js SDK 入门](/documentation/articles/documentdb-nodejs-get-started/)</td></tr>
-<tr><td>**当前受支持的平台**</td><td>[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr>
-</table></br>
+任务 | API 参考
+--- | ---  
+**下载**| [NPM](https://www.npmjs.com/package/documentdb)
+**参与**| [GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)
+**文档**| [Node.js SDK 参考文档](http://azure.github.io/azure-documentdb-node/)
+**示例**| [Node.js 代码示例](https://github.com/Azure/azure-documentdb-node/tree/master/samples)
+**入门**| [Node.js SDK 入门](/documentation/articles/documentdb-nodejs-get-started/)
+**当前受支持的平台**| [Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)
 
 ##发行说明
 

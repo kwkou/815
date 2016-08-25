@@ -22,13 +22,13 @@
 
 ##DocumentDB Java SDK
 
-<table>
-<tr><td>**下载**</td><td>[Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)</td></tr>
-<tr><td>**参与**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr>
-<tr><td>**文档**</td><td>[Java SDK 参考文档](http://azure.github.io/azure-documentdb-java/)</td></tr>
-<tr><td>**入门**</td><td>[Java SDK 入门](/documentation/articles/documentdb-java-application/)</td></tr>
-<tr><td>**当前受支持的运行时**</td><td>[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)</td></tr>
-</table></br>
+任务 | API 参考
+--- | ---  
+**下载**| [Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)
+**参与**| [GitHub](https://github.com/Azure/azure-documentdb-java/)
+**文档**| [Java SDK 参考文档](http://azure.github.io/azure-documentdb-java/)
+**入门**| [Java SDK 入门](/documentation/articles/documentdb-java-application/)
+**当前受支持的运行时**| [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 
 ## 发行说明
 

@@ -27,7 +27,7 @@ DocumentDB 支持使用 [SQL](/documentation/articles/documentdb-sql-query/) 的
 
 ![DocumentDB SQL 查询备忘单：DocumentDB 支持的 SQL 语法的快速参考 PDF - SQL 备忘单、SQL 备忘单 PDF、SQL 快速参考][cheat-sheet]
 
-[cheat-sheet]: ./media/documentdb-sql-query-cheat-sheet/microsoft-documentdb-sql-query-cheat-sheet-v2.png
+[cheat-sheet]: ./media/documentdb-sql-query-cheat-sheet/microsoft-documentdb-sql-query-cheat-sheet-v4.png
 
 
 ## 编写 SQL 查询的更多帮助
