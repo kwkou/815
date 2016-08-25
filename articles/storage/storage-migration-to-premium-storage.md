@@ -11,7 +11,7 @@
 <tags 
     ms.service="storage" 
     ms.date="03/28/2016"
-    wacn.date="05/23/2016"/>
+    wacn.date="08/25/2016"/>
 
 
 # 迁移到 Azure 高级存储
@@ -42,7 +42,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 ### 先决条件
 - 你将需要 Azure 订阅。如果你没有，则可以创建一个月的[试用](/pricing/1rmb-trial/)订阅或访问 [Azure 定价](/pricing/)以获得更多选项。
 - 若要执行 PowerShell cmdlet，你将需要 Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads/)。
-- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列、DSv2 系列VM。你可以将标准和高级存储磁盘同时用于 DS 系列、DSv2 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)和[云服务大小](/documentation/articles/cloud-services-sizes-specs/)。
+- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列VM。你可以将标准和高级存储磁盘同时用于 DS 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)和[云服务大小](/documentation/articles/cloud-services-sizes-specs/)。
 
 ### 注意事项
 
@@ -143,7 +143,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 创建用于维护 VHD 的存储帐户。规划 VHD 的存储位置时，应注意以下几点：
 
 - 目标存储帐户可以是标准或高级存储，具体取决于你的应用程序需求。
-- 存储帐户位置必须与你将在最后阶段创建的 DS 系列、DSv2 系列 Azure VM 所在位置相同。你可以复制到新的存储帐户，也可以根据你的需求计划使用同一存储帐户。
+- 存储帐户位置必须与你将在最后阶段创建的 DS 系列 Azure VM 所在位置相同。你可以复制到新的存储帐户，也可以根据你的需求计划使用同一存储帐户。
 - 为下一阶段复制并保存目标存储帐户的存储帐户密钥。
 - 对于数据磁盘，你可以选择在标准存储帐户中保留一些数据磁盘（例如，具有冷却存储功能的磁盘），而将 IOPS 密集型的磁盘移到高级存储帐户。
 
@@ -240,7 +240,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 #### 要附加到新的 Azure VM 实例的数据磁盘 VHD
 
-将数据磁盘 VHD 上传到存储帐户后，将其注册为 Azure 数据磁盘，以便可以将它附加到新的 DS 系列、DSv2 系列 Azure VM 实例。
+将数据磁盘 VHD 上传到存储帐户后，将其注册为 Azure 数据磁盘，以便可以将它附加到新的 DS 系列 Azure VM 实例。
 
 使用这些 PowerShell cmdlet 将你的 VHD 注册为 Azure 数据磁盘。提供 VHD 已复制到的完整容器 URL。
 
@@ -248,9 +248,9 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 复制并保存这个新的 Azure 数据磁盘的名称。在上面的示例中，它是 DataDisk。
 
-### 创建 Azure DS 系列、DSv2 系列 VM
+### 创建 Azure DS 系列 VM
 
-注册 OS 映像或 OS 磁盘后，请创建新的 DS 系列、DSv2 系列 VM。你将使用你注册的操作系统映像或操作系统磁盘名称。从高级存储层选择 VM 类型。在以下示例中，我们将使用 Standard_DS2 VM 大小。
+注册 OS 映像或 OS 磁盘后，请创建新的 DS 系列 VM。你将使用你注册的操作系统映像或操作系统磁盘名称。从高级存储层选择 VM 类型。在以下示例中，我们将使用 Standard_DS2 VM 大小。
 
 >[AZURE.NOTE] 更新磁盘大小，以确保它满足你的容量、性能要求和可用的 Azure 磁盘大小。
 
@@ -296,7 +296,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 ### 附加数据磁盘
 
-最后，如果你已注册数据磁盘 VHD，请将它们附加到新的 DS 系列、DSv2 系列 Azure VM。
+最后，如果你已注册数据磁盘 VHD，请将它们附加到新的 DS 系列 Azure VM。
 
 使用以下 PowerShell cmdlet 将数据磁盘附加到新的 VM，并指定缓存策略。在以下示例中，缓存策略设为 ReadOnly。
 
@@ -312,7 +312,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 如果你当前有使用标准存储磁盘的 Azure VM，请按照下述过程将该 Azure VM 迁移到高级存储。位于高层次的迁移包括两个阶段：
 -	将磁盘从标准存储帐户迁移到高级存储帐户
--	将 VM 大小从 A/D/G 转换为使用高级存储磁盘所需的 DS、DSv2。
+-	将 VM 大小从 A/D/G 转换为使用高级存储磁盘所需的 DS。
 
 此外，请参阅上一节有关注意事项的内容以了解可以对高级存储执行的各种优化。根据适用于你的应用程序的优化，迁移过程可能归入以下迁移方案之一。
 
@@ -322,7 +322,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 #### 准备工作
 1. 确保高级存储在你要迁移到的区域中可用。
-2. 决定你要使用的新 VM 系列。它应为 DS 系列、DSv2 系列，具体取决于区域中的可用性和你的需求。
+2. 决定你要使用的新 VM 系列。它应为 DS 系列，具体取决于区域中的可用性和你的需求。
 3. 决定你要使用的确切 VM 大小。VM 大小需要足够大以支持你所拥有的数据磁盘数。例如，如果你有 4 个数据磁盘，则 VM 必须具有 2 个或更多核心。此外，还应考虑处理能力、内存和网络带宽需求。
 4. 在目标区域中创建高级存储帐户。这是将用于新 VM 的帐户。
 5. 手边具备当前 VM 详细信息，包括磁盘和对应的 VHD blob 的列表。
@@ -340,7 +340,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
     示例脚本：
           Add-AzureDisk -DiskName "NewOSDisk1" -MediaLocation "https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/MyOSDisk.vhd" -OS "Windows"
-5. 接下来，使用上面的 OS 磁盘和数据磁盘创建 DS 系列 VM（或 DSv2 系列）。
+5. 接下来，使用上面的 OS 磁盘和数据磁盘创建 DS 系列 VM。
 
     用于创建新的云服务并在该服务中创建新 VM 的脚本示例：
         New-AzureService -ServiceName “NewServiceName” -Location “中国东部"
