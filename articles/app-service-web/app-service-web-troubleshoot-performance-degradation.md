@@ -75,7 +75,7 @@
 
 ### <a name="collect"></a> 2.收集数据
 
-####	使用 FTP 诊断日志
+#### 使用 FTP 诊断日志
 
 在 Web 应用的“仪表板”页中找到“FTP 诊断日志”链接，该链接通常类似于 `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`。单击该链接下载 **eventlog.xml**
 
@@ -113,7 +113,7 @@ Kudu 的另一项有用功能是，如果应用程序引发第一次异常，你
 
 ### <a name="mitigate"></a> 3.缓解问题
 
-####	缩放 Web 应用
+#### 缩放 Web 应用
 
 在 Azure Web 应用中，为了提高性能和吞吐量，你可以调整运行应用程序的规模。向上缩放 Web 应用涉及到两个相关操作：将 App Service 计划更改为较高的定价层，以及在切换到较高的定价层后配置特定的设置。
 

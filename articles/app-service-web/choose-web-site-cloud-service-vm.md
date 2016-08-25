@@ -18,7 +18,7 @@
 
 Azure 提供几种托管网站的方式：[Azure Web 应用][]、[虚拟机][]、[Service Fabric][] 和[云服务][]。本文可帮助你了解这几种方式，并针对你的 Web 应用程序做出正确的选择。
 
-Azure Web 应用是大多数 Web 应用的最佳选择。部署和管理都已集成到平台，站点可以快速缩放以应对高流量负载，而内置的负载平衡和流量管理器可以实现高可用性。你可以使用[联机迁移工具](https://www.migratetoazure.net/)，轻松地将现有站点转移到 Azure Web 应用，或者使用自己选择的框架和工具创建新站点。利用 [WebJobs][] 功能，可以轻松地将后台作业处理添加到你的 Azure Web 应用。
+Azure Web 应用是大多数 Web 应用的最佳选择。部署和管理都已集成到平台，站点可以快速缩放以应对高流量负载，而内置的负载平衡和流量管理器可以实现高可用性。你可以使用自己选择的框架和工具创建新站点。利用 [WebJobs][] 功能，可以轻松地将后台作业处理添加到你的 Azure Web 应用。
 
 如果你要创建新应用或重新编写现有应用以使用微服务体系结构，Service Fabric 是不错的选择。在共享计算机池上运行的应用可以从小规模开始，根据需要扩展为包含成百上千个计算机的大规模。有状态服务可轻松地以一致且可靠的方式存储应用状态，而 Service Fabric 会自动为你管理服务分区、缩放和可用性。Service Fabric 也支持具有 Open Web Interface for .NET (OWIN) 和 ASP.NET Core 的 WebAPI。与 Azure Web 应用相比，Service Fabric 也能更好地控制或直接访问基础结构。你可以远程登录服务器，或配置服务器启动任务。云服务的控制和易用程度类似于 Service Fabric，但它现在是旧版服务，因此建议将 Service Fabric 用于新的开发。
 
@@ -134,7 +134,7 @@ WebMatrix 支持|X||X||
 访问 Service Bus、存储空间、SQL 数据库之类的服务|X|X|X|X|
 托管多层体系结构的 web 或 web 服务层|X|X|X|X|
 托管多层体系结构的中间层|X|X|X|X|Azure Web Apps 可以轻松地托管 REST API 中间层，而 [WebJobs](/documentation/articles/websites-webjobs-resources/) 功能可以托管后台处理作业。你可以在专用网站中运行 WebJobs，以实现层的独立可扩展性。
-集成的 MySQL-as-a-service 支持|X|X|X||云服务可以通过 ClearDB 的产品集成“MySQL 即服务”，但不作为 Azure 经典管理门户工作流的一部分。
+集成的 MySQL-as-a-service 支持|X||X||
 支持 ASP.NET、经典 ASP、Node.js、PHP、Python|X|X|X|X|Service Fabric 支持使用 [ASP.NET 5](/documentation/articles/service-fabric-add-a-web-frontend/) 创建 Web 前端，或者，你也可以通过[来宾可执行文件](/documentation/articles/service-fabric-deploy-existing-app/)的形式部署任何类型的应用程序（Node.js、Java 等）。
 向外扩展到多个实例且无需重新部署|X|X|X|X|虚拟机可以扩大到多个实例，但必须编写这些虚拟机上运行的服务，来处理向外扩展。你需要配置负载平衡器，跨计算机路由请求；还需要创建地缘组，防止因维护或硬件故障导致同时重新启动所有实例。
 支持 SSL|X|X|X|X|对于 Azure Web 应用，只有基本和标准模式支持自定义域名称的 SSL。有关结合使用 SSL 和 Web Apps 的信息，请参阅[为 Azure 网站配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate/)。

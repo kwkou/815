@@ -72,7 +72,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 > [AZURE.NOTE] 也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
-##<a name="download"></a> 如何：下载日志
+## <a name="download"></a> 如何：下载日志
 
 存储到 Web 应用文件系统的诊断信息可使用 FTP 直接访问。还可使用 Azure PowerShell 或 Azure 命令行界面将这些信息作为 Zip 存档下载。
 
@@ -114,7 +114,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 > [AZURE.NOTE] 如果尚未安装 Azure 命令行界面 (Azure CLI)，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
-##<a name="streamlogs"></a> 如何：流式传输日志
+## <a name="streamlogs"></a> 如何：流式传输日志
 
 开发应用程序时，以近乎实时的方式查看日志记录信息通常很有用。通过使用 Azure PowerShell 或 Azure 命令行界面将日志记录信息流式传输到你的开发环境，可以实现这一点。
 
@@ -160,7 +160,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 > [AZURE.NOTE] 如果尚未安装 Azure 命令行界面，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install/)。
 
-##<a name="understandlogs"></a> 如何：了解诊断日志
+## <a name="understandlogs"></a> 如何：了解诊断日志
 
 ### 应用程序诊断日志
 
@@ -235,7 +235,7 @@ Web 服务器日志使用 [W3C 扩展日志文件格式](http://msdn.microsoft.c
 
 > [AZURE.NOTE] Azure Web 应用生成的日志不支持 __s-computername__、__s-ip__ 或 __cs-version__ 字段。
 
-##<a name="nextsteps"></a>后续步骤
+## <a name="nextsteps"></a>后续步骤
 
 - [如何监视 Web Apps](/documentation/articles/web-sites-monitor/)
 - [在 HDInsight 中分析 Web 应用日志](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)

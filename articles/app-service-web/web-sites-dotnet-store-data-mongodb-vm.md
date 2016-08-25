@@ -435,7 +435,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 
 在本部分中，你将创建一个网站并使用 Git 部署 My Task List ASP.NET 应用程序。
 
-###<a id="createwebsite"></a>创建 Azure 网站###
+### <a id="createwebsite"></a>创建 Azure 网站 ###
 本部分中，你将创建一个 Azure 网站。
 
 1. 打开 Web 浏览器并浏览至 [Azure 经典管理门户][AzurePortal]。使用您的 Azure 帐户进行登录。 
@@ -450,7 +450,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 
 ![WAWSDashboardMyTaskListApp][WAWSDashboardMyTaskListApp]
 
-###<a id="deployapp"></a>使用 Git 将 ASP.NET 应用程序部署到网站
+### <a id="deployapp"></a>使用 Git 将 ASP.NET 应用程序部署到网站
 在本部分中，你将使用 Git 部署 My Task List 应用程序。
 
 1. 在“网站”中单击你的网站名称，然后单击“仪表板”。在右侧的“速览”下，单击“从源代码管理设置部署”。
