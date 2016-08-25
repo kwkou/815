@@ -254,7 +254,7 @@
 
 10. 将以下代码添加到该类中：
 
-		public class ConfigurationSettings {
+	public class ConfigurationSettings {
 		        public static String API_KEY = "...";
 				public static String NotificationHubName = "...";
 				public static String NotificationHubConnectionString = "...";
@@ -384,13 +384,13 @@
 
 13. 打开 **MainActivity.java**，并将以下内容添加到 **onCreate** 方法中：
 
-	        PushManager.startWork(getApplicationContext(),
-	                PushConstants.LOGIN_TYPE_API_KEY, ConfigurationSettings.API_KEY);
+		PushManager.startWork(getApplicationContext(),
+	    PushConstants.LOGIN_TYPE_API_KEY, ConfigurationSettings.API_KEY);
 
 14. 打开顶部的以下 import 语句：
 
-			import com.baidu.android.pushservice.PushConstants;
-			import com.baidu.android.pushservice.PushManager;
+		import com.baidu.android.pushservice.PushConstants;
+		import com.baidu.android.pushservice.PushManager;
 
 ##向应用程序发送通知
 
@@ -444,8 +444,8 @@
 
 5. 在 **Main** 方法中添加下列行：
 
-         SendNotificationAsync();
-		 Console.ReadLine();
+		SendNotificationAsync();
+		Console.ReadLine();
 
 ##测试应用程序
 

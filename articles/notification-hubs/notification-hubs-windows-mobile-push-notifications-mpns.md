@@ -37,16 +37,21 @@
 
 ##创建通知中心
 
-[AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
-<ol start="6">
-<li><p>单击“通知服务”部分（位于“设置”内），然后单击“Windows Phone (MPNS)”并选中“启用未经身份验证的推送”复选框。<b></b><i></i><b></b><b></b></p>
+<ol start="1">
+<li><p>单击“应用程序服务”->“服务总线”->“通知中心”</p>
 </li>
 </ol>
 
-&emsp;&emsp;![Azure 门户 - 启用未经身份验证的推送通知](./media/notification-hubs-windows-phone-get-started/azure-portal-unauth.png)
+&emsp;&emsp;![Azure 门户 - 启用未经身份验证的推送通知](./media/notification-hubs-windows-phone-get-started/create-1.png)
 
-你的中心现已创建，并已配置为向 Windows Phone 发送未经身份验证的通知。
+<ol start="2">
+<li><p>单击“通知中心”->“快速创建”，填上“通知中心名称”和选择“区域”</p>
+</li>
+</ol>
+&emsp;&emsp;![Azure 门户 - 启用未经身份验证的推送通知](./media/notification-hubs-windows-phone-get-started/create-2.png)
+
+你的中心现已创建。
 
 > [AZURE.NOTE] 本教程使用未经身份验证模式下的 MPNS。MPNS 未经身份验证的模式对你可以发送到每个通道的通知有一些限制。通知中心支持 [MPNS 身份验证模式](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx)，它允许你上载证书。
 
@@ -166,8 +171,8 @@
 
 4. 在 `Main` 方法中添加以下行：
 
-         SendNotificationAsync();
-		 Console.ReadLine();
+ 		SendNotificationAsync();
+		Console.ReadLine();
 
 5. 在 Windows Phone 模拟器正在运行且应用已关闭的情况下，将控制台应用程序项目设置为默认启动项目，然后按 `F5` 键运行应用。
 

@@ -333,9 +333,6 @@
 
 ![](./media/notification-hubs-geofence/ms-live-services.png)
 
-记下站点上的“应用程序机密”和“包 SID”。在 Azure 门户中需要用到这两项信息 – 打开通知中心、单击“设置”>“通知服务”>“Windows (WNS)”，然后在必填字段中输入信息。
-
-![](./media/notification-hubs-geofence/notification-hubs-wns.png)
 
 单击“保存”。
 
