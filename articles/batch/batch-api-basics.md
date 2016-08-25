@@ -108,7 +108,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层；Batch 池提供大�
 
 	[Sizes for Cloud Services（云服务的大小）](/documentation/articles/cloud-services-sizes-specs/)中列出了**云服务配置**计算节点大小。Batch 支持 `ExtraSmall` 以外的所有云服务大小。
 
-	[Sizes for virtual machines in Azure（Azure 中虚拟机的大小）](/documentation/articles/virtual-machines-linux-sizes/)(Linux) 和 [Sizes for virtual machines in Azure（Azure 中虚拟机的大小）](/documentation/articles/virtual-machines-windows-sizes/)(Windows) 中列出了**虚拟机配置**计算节点大小。Batch 支持除 `STANDARD_A0` 和高级存储大小（`STANDARD_GS`、`STANDARD_DS` 和 `STANDARD_DSV2` 系列）以外所有的 Azure VM 大小。
+	[Sizes for virtual machines in Azure（Azure 中虚拟机的大小）](/documentation/articles/virtual-machines-linux-sizes/)(Linux) 和 [Sizes for virtual machines in Azure（Azure 中虚拟机的大小）](/documentation/articles/virtual-machines-windows-sizes/)(Windows) 中列出了**虚拟机配置**计算节点大小。Batch 支持除 `STANDARD_A0` 和高级存储大小（`STANDARD_DS` 系列）以外所有的 Azure VM 大小。
 
 	选择节点大小时，应考虑到要在计算节点上运行的一个或多个应用程序的特征和要求。通常，选择节点大小时会假设某个任务要在节点上运行一次。考虑应用程序是否是多线程的以及其消耗的内存量等因素有助于确定最合适且经济高效的节点大小。系统可能要运行多个任务，因此对多个应用程序实例采取[并行运行](/documentation/articles/batch-parallel-node-tasks/)的方式；在此情况下，通常应选择较大的节点。请参阅下面的“任务计划策略”以获取详细信息。
 

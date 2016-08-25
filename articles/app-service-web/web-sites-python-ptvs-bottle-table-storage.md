@@ -69,7 +69,7 @@
 
 1.  登录到 [Azure 门户预览版](https://portal.azure.cn/)。
 
-1. 单击门户左下角的“新建”图标，然后单击“数据服务”>“存储帐户”。单击“创建”按钮，然后为存储帐户指定一个唯一名称，并为其新建一个[资源组](/documentation/articles/resource-group-overview/)。
+1. 单击门户左下角的“新建”图标，然后单击“数据服务”>“存储帐户”。单击“创建”按钮，然后为存储帐户指定一个唯一名称，并为其新建一个[资源组](/documentation/articles/resource-group-overview/)。请选择经典部署模型，不然在 Visual Studio 中是查看不到该存储账户。
 
   	![快速创建](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png)  
 
