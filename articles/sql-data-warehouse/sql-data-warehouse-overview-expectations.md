@@ -1,7 +1,7 @@
 <!-- Remove create ticket function -->
 <properties
-   pageTitle="SQL 数据仓库预览版的预期功能 | Azure"
-   description="SQL 数据仓库公共预览版功能摘要，以及正式版的目标。"
+   pageTitle="SQL 数据仓库的预期功能 | Azure"
+   description="SQL 数据仓库公共功能摘要，以及正式版的目标。"
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="happynicolle"
@@ -14,9 +14,9 @@
    wacn.date="07/18/2016"/>
 
 
-# SQL 数据仓库预览版的预期功能
+# SQL 数据仓库的预期功能
 
-本文介绍 SQL 数据仓库预览版的功能，以及正式版 (GA) 的服务目标。在增强公共预览版功能的过程中，我们将不断更新本文中的信息。
+本文介绍 SQL 数据仓库的功能，以及正式版 (GA) 的服务目标。在增强公共功能的过程中，我们将不断更新本文中的信息。
 
 我们的 SQL 数据仓库目标：
 
@@ -24,7 +24,7 @@
 - 所有数据仓库操作均具有高可靠性
 - 短时间即可跨关系数据和非关系数据完成从数据加载到数据洞察在内的操作
 
-在 SQL 数据仓库预览版使用期间，我们会继续努力实现这些目标。
+在 SQL 数据仓库使用期间，我们会继续努力实现这些目标。
 
 ## 可预测且可缩放的性能
 
@@ -51,7 +51,7 @@ SQL 数据仓库会定期进行升级，以便添加新功能和安装关键修�
 
 ## 后续步骤
 
-公共预览版[入门][]。
+公共[入门][]。
 
 <!--Image references-->
 
