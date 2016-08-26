@@ -108,7 +108,7 @@
                 ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                ("https://management.chinacloudapi.cn/"/* the Azure Resource Management endpoint */,
                     clientId,
             new Uri(redirectUri) /* redirect URI */,
             PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -402,7 +402,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
                 ("https://login.chinacloudapi.cn/" + domainName /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                ("https://management.chinacloudapi.cn/"/* the Azure Resource Management endpoint */,
                     clientId,
             new Uri(redirectUri) /* redirect URI */,
             PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
