@@ -90,25 +90,26 @@
 5. 还原已删除的数据库。
 6. 验证已还原的数据库是否处于联机状态。
 
-        $SubscriptionName="<YourSubscriptionName>"
-        $ResourceGroupName="<YourResourceGroupName>"
-        $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
-        $DatabaseName="<YourDatabaseName>"
-        $NewDatabaseName="<YourDatabaseName>"
+```
+$SubscriptionName="<YourSubscriptionName>"
+$ResourceGroupName="<YourResourceGroupName>"
+$ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
+$DatabaseName="<YourDatabaseName>"
+$NewDatabaseName="<YourDatabaseName>"
         
-        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-        Get-AzureRmSubscription
-        Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+Get-AzureRmSubscription
+Select-AzureRmSubscription -SubscriptionName $SubscriptionName
         
-	# 获取要还原的已删除数据库
-        $DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $ResourceGroupNam -ServerName $ServerName -DatabaseName $DatabaseName
+# 获取要还原的已删除数据库
+$DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $ResourceGroupNam -ServerName $ServerName -DatabaseName $DatabaseName
         
-	# 还原已删除的数据库
-        $RestoredDatabase = Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $DeletedDatabase.ResourceID
+# 还原已删除的数据库
+$RestoredDatabase = Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $DeletedDatabase.ResourceID
         
-	# 验证已还原的数据库的状态
-        $RestoredDatabase.status
-
+# 验证已还原的数据库的状态
+$RestoredDatabase.status
+```
 
 >[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
@@ -124,22 +125,17 @@
 5. 创建对数据库的恢复请求。
 6. 验证异地还原的数据库的状态。
 
-
-
-	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-	Get-AzureRmSubscription
-	Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
-
-	# 获取要恢复的数据库
-	$GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
-
-	# 恢复数据库
-	$GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
-
-	# 验证异地还原的数据库是否处于联机状态
-	$GeoRestoredDatabase.status
-
-
+```
+Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+Get-AzureRmSubscription
+Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+# 获取要恢复的数据库
+$GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
+# 恢复数据库
+$GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
+# 验证异地还原的数据库是否处于联机状态
+$GeoRestoredDatabase.status
+```
 
 >[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 

@@ -363,9 +363,9 @@ UPDATE STATISTICS dbo.table1;
 | [sys.objects][] | 针对数据库中的每个对象提供一行。 | |
 | [sys.schemas][] | 针对数据库中的每个架构提供一行。 | |
 | [sys.stats][] | 针对每个统计信息对象提供一行。 |
-| [sys.stats\_columns][] | 针对统计信息对象中的每个列提供一行。链接回到 sys.columns。 |
+| [sys.stats\_columns](https://msdn.microsoft.com/zh-cn/library/ms187340.aspx) | 针对统计信息对象中的每个列提供一行。链接回到 sys.columns。 |
 | [sys.tables][] | 针对每个表（包括外部表）提供一行。 |
-| [sys.table\_types][] | 针对每个数据类型提供一行。 |
+| [sys.table\_types](https://msdn.microsoft.com/zh-cn/library/bb510623.aspx) | 针对每个数据类型提供一行。 |
 
 
 ### 统计信息的系统函数

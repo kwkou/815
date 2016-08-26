@@ -20,9 +20,9 @@
 
 [Sys.dm\_pdw\_exec\_sessions][] 视图允许你监视与 Azure SQL 数据仓库数据库的连接。此视图包含活动会话，以及最近断开连接的会话的历史记录。session\_id 是此视图的主键，并为每次新的登录按顺序分配。
 
-```sql
-SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed';
-```
+
+      SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed';
+
 
 ## 调查查询执行情况
 若要监视查询执行情况，请使用 [sys.dm\_pdw\_exec\_requests][] 启动。此视图包含进行中的查询，以及最近完成的查询的历史记录。request\_id 对每个查询进行唯一标识，并且为此视图的主键。按顺序对每个新的查询分配 request\_id。针对给定 session\_id 查询此表将显示给定登录的所有查询。
@@ -31,37 +31,35 @@ SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed';
 
 ### 步骤 1：查找要调查的查询
 
-```sql
--- Monitor running queries
-SELECT * FROM sys.dm_pdw_exec_requests WHERE status = 'Running';
 
--- Find 10 queries which ran the longest
-SELECT TOP 10 * FROM sys.dm_pdw_exec_requests ORDER BY total_elapsed_time DESC;
-```
+      -- Monitor running queries
+      SELECT * FROM sys.dm_pdw_exec_requests WHERE status = 'Running';
+
+      -- Find 10 queries which ran the longest
+      SELECT TOP 10 * FROM sys.dm_pdw_exec_requests ORDER BY total_elapsed_time DESC;
+
 
 请记下你想要调查的查询的请求 ID。
 
 ### 步骤 2：检查查询是否正在等待资源
 
-```sql
--- Find waiting tasks for your session.
--- Replace request_id with value from Step 1.
+      -- Find waiting tasks for your session.
+      -- Replace request_id with value from Step 1.
 
-SELECT waits.session_id,
-      waits.request_id,  
-      requests.command,
-      requests.status,
-      requests.start_time,  
-      waits.type,  
-      waits.object_type,
-      waits.object_name,  
-      waits.state  
-FROM   sys.dm_pdw_waits waits
-   JOIN  sys.dm_pdw_exec_requests requests
-   ON waits.request_id=requests.request_id
-WHERE waits.request_id = 'QID33188'
-ORDER BY waits.object_name, waits.object_type, waits.state;
-```
+      SELECT waits.session_id,
+            waits.request_id,  
+            requests.command,
+            requests.status,
+            requests.start_time,  
+            waits.type,  
+            waits.object_type,
+            waits.object_name,  
+            waits.state  
+      FROM   sys.dm_pdw_waits waits
+      JOIN  sys.dm_pdw_exec_requests requests
+      ON waits.request_id=requests.request_id
+      WHERE waits.request_id = 'QID33188'
+      ORDER BY waits.object_name, waits.object_type, waits.state;
 
 上述查询的结果将显示查询的等待状态。
 
@@ -72,15 +70,13 @@ ORDER BY waits.object_name, waits.object_type, waits.state;
 
 使用请求 ID 从 [sys.dm\_pdw\_request\_steps][] 中检索查询计划步骤的列表。通过查看总已用时间，查找长时间运行的步骤。
 
-```sql
+      -- Find the distributed query plan steps for a specific query.
+      -- Replace request_id with value from Step 1.
 
--- Find the distributed query plan steps for a specific query.
--- Replace request_id with value from Step 1.
+      SELECT * FROM sys.dm_pdw_request_steps
+      WHERE request_id = 'QID33209'
+      ORDER BY step_index;
 
-SELECT * FROM sys.dm_pdw_request_steps
-WHERE request_id = 'QID33209'
-ORDER BY step_index;
-```
 
 保存长时间运行步骤的步骤索引。
 
@@ -93,50 +89,42 @@ ORDER BY step_index;
 
 使用请求 ID 和步骤索引来从 [sys.dm\_pdw\_sql\_requests][] 中检索信息，其中包含有关 SQL Server 分布式实例的查询执行情况的详细信息。如果查询仍在运行并且你想要从 SQL Server 分发获取计划，请记下分发 ID 和 SPID。
 
-```sql
--- Find the distribution run times for a SQL step.
--- Replace request_id and step_index with values from Step 1 and 3.
 
-SELECT * FROM sys.dm_pdw_sql_requests
-WHERE request_id = 'QID33209' AND step_index = 2;
-```
+      -- Find the distribution run times for a SQL step.
+      -- Replace request_id and step_index with values from Step 1 and 3.
+
+      SELECT * FROM sys.dm_pdw_sql_requests
+      WHERE request_id = 'QID33209' AND step_index = 2;
+
 
 
 如果查询当前正在运行，则可以使用 [DBCC PDW\_SHOWEXECUTIONPLAN][] 检索特定分发的当前正在运行的 SQL 步骤的 SQL Server 执行计划。
 
-```sql
--- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node.
--- Replace distribution_id and spid with values from previous query.
+      -- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node.
+      -- Replace distribution_id and spid with values from previous query.
 
-DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
-
-```
+      DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 
 ### 步骤 4b：查找 DMS 步骤的执行进度
 
 使用请求 ID 和步骤索引检索对 [sys.dm\_pdw\_dms\_workers][] 的每个分发运行的数据移动步骤的相关信息。
 
-```sql
--- Find the information about all the workers completing a Data Movement Step.
--- Replace request_id and step_index with values from Step 1 and 3.
+      -- Find the information about all the workers completing a Data Movement Step.
+      -- Replace request_id and step_index with values from Step 1 and 3.
 
-SELECT * FROM sys.dm_pdw_dms_workers
-WHERE request_id = 'QID33209' AND step_index = 2;
-
-```
+      SELECT * FROM sys.dm_pdw_dms_workers
+      WHERE request_id = 'QID33209' AND step_index = 2;
 
 - 检查 total\_elapsed\_time 列，以查看是否有特定分布在数据移动上比其他分布花费了更多时间。
 - 对于长时间运行的分布，请检查 rows\_processed 列，以查看从该分布移动的行数是否远远多于其他分布。如果是这样，这可能表示底层数据的偏斜。
 
 如果查询当前正在运行，则可以使用 [DBCC PDW\_SHOWEXECUTIONPLAN][] 检索特定分发的当前正在运行的 DMS 步骤的 SQL Server 执行计划。
 
-```sql
--- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node.
--- Replace distribution_id and spid with values from previous query.
+      -- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node.
+      -- Replace distribution_id and spid with values from previous query.
 
-DBCC PDW_SHOWEXECUTIONPLAN(55, 238);
+      DBCC PDW_SHOWEXECUTIONPLAN(55, 238);
 
-```
 
 ## 后续步骤
 有关动态管理视图 (DMV) 的详细信息，请参阅[系统视图][]。  

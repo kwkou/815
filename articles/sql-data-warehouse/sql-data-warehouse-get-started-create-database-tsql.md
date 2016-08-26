@@ -51,7 +51,7 @@
 `MAXSIZE` 可介于 250 GB 和 240 TB 之间。`SERVICE_OBJECTIVE` 可以介于 DW100 与 DW2000 [DWU][] 之间。有关所有有效值的列表，请参阅 [CREATE DATABASE][] 的 MSDN 文档。MAXSIZE 和 SERVICE\_OBJECTIVE 还可通过 [ALTER DATABASE][] T-SQL 命令进行更改。更改 SERVICE\_OBJECTIVE 时应谨慎，因为这会导致服务重新启动而取消所有正在进行的查询。更改 MAXSIZE 不会重启服务，因为这只是简单的元数据操作。
 
 ## 后续步骤
-完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]，或[迁移][]数据。
+完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]或[迁移][]数据。
 
 <!--Article references-->
 [DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units

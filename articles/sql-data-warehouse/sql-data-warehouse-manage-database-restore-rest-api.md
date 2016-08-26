@@ -82,7 +82,9 @@
 [Azure SQL Database business continuity overview]: /documentation/articles/sql-database-business-continuity/
 [确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
 [How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure/
-
+[列出可恢复的数据库]:https://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx
+[获取可恢复的数据库]:https://msdn.microsoft.com/zh-cn/library/azure/dn509574.aspx
+[创建数据库恢复请求]:https://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx
 <!--MSDN references-->
 [创建数据库还原请求]: https://msdn.microsoft.com/zh-cn/library/azure/dn509571.aspx
 [数据库操作状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx

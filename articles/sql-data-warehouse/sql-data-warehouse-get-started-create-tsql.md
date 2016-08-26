@@ -62,7 +62,7 @@ SERVICE\_OBJECTIVE 指示启动实例时使用的 DWU 数目，接受以下值�
 有关这些参数的计费影响信息，请参阅我们的[定价页][]。
 
 ## 后续步骤
-完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]，或[迁移][]数据。
+完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]或[迁移][]数据。
 
 [连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect/
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/

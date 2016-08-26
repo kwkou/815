@@ -63,9 +63,6 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - Azure Active Directory 身份验证使用包含的数据库用户以数据库级别对标识进行身份验证。
 - Azure Active Directory 支持对连接到 SQL 数据仓库的应用程序进行基于令牌的身份验证。
 
-<!-- 
-> [AZURE.IMPORTANT] Azure Active Directory 身份验证是一个预览功能，并遵守许可协议（例如，企业协议、Azure 协议或 Microsoft 在线订阅协议）中的预览条款以及任何适用的[Azure 预览版补充使用条款](/support/legal/preview-supplemental-terms/)。-->
-
 ### 配置步骤
 
 配置步骤包括配置和使用 Azure Active Directory 身份验证的以下过程。
