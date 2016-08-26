@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="04/19/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/22/2016"/>
 
 # Azure 云服务证书概述
 证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于通过管理 API 进行身份验证（[管理证书](#what-are-management-certificates)，适用于使用 Azure 经典管理门户而不是 ARM 的场合）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)以及将其[部署](#deploy)到 Azure。
@@ -63,6 +63,12 @@ $password = ConvertTo-SecureString -String "your-password" -Force -AsPlainText
 Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $password
 ```
 
+如果你想要[在经典管理门户中使用此证书](/documentation/articles/azure-api-management-certs/)，请将它导出到 **.cer** 文件：
+
+```powershell
+Export-Certificate -Type CERT -Cert $cert -FilePath .\my-cert-file.cer
+```
+
 ### Internet 信息服务 (IIS)
 
 在 internet 上有许多页面，包含了有关如何使用 IIS 实现此操作的信息。[此处](https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-in-iis-7.html)就是一个很棒的页面，我认为其说明很不错。
@@ -75,9 +81,9 @@ Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $pass
 
 ## 后续步骤
 
-[上载服务证书到 Azure 管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)。
+[上载服务证书到 Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)（或 [Azure 门户预览](/documentation/articles/cloud-services-configure-ssl-certificate-portal/)）。
 
-将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 管理门户。
+将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 经典管理门户。
 
 >[AZURE.NOTE] Azure 门户不使用管理证书来访问 API，而是使用用户帐户。
 

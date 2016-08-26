@@ -10,11 +10,12 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="04/14/2016"
-	wacn.date="05/12/2016"/>
+	ms.date="07/14/2016"
+	wacn.date="08/22/2016"/>
 
 
-# 使用 Microsoft HPC Pack 和按需 Azure 辅助角色实例设置混合高性能计算 (HPC) 群集
+
+# 使用 Microsoft HPC Pack 和按需 Azure 计算节点设置混合高性能计算 (HPC) 群集
 
 使用 Microsoft HPC Pack 2012 R2 和 Azure 可以设置小型混合高性能计算 (HPC) 群集该群集将由一个本地头节点（运行 Windows Server 操作系统和 HPC Pack 的计算机）和一些计算节点（在 Azure 云服务中作为辅助角色实例按需部署）构成。你可以在混合群集上运行计算作业。
 
@@ -29,11 +30,9 @@
 
 * **Azure 订阅** - 如果你没有 Azure 订阅，只需要花费几分钟就能创建一个[试用版](/pricing/1rmb-trial)。
 
-* **运行 Windows Server 2012 R2 或 Windows Server 2012 的本地计算机** - 该计算机将是 HPC 群集的头节点。如果你尚未运行 Windows Server，可下载并安装[评估版](http://technet.microsoft.com/evalcenter/dn205286.aspx)。
+* **运行 Windows Server 2012 R2 或 Windows Server 2012 的本地计算机** - 该计算机将是 HPC 群集的头节点。如果你尚未运行 Windows Server，可下载并安装[评估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)。
 
-	* 该计算机必须加入 Active Directory 域中。
-
-	* 确保未安装任何其他服务器角色或角色服务。
+	* 该计算机必须加入 Active Directory 域中。对于使用 Windows Server 全新安装的测试方案，可以添加 Active Directory 域服务服务器角色并将头节点计算机提升为新域林中的域控制器 （请参阅 Windows Server 文档）。
 
 	* 为了支持 HPC Pack，必须采用以下语言之一安装操作系统：英语、日语或简体中文。
 
@@ -88,7 +87,7 @@
 
 - 创建 Azure 存储帐户
 
-	>[AZURE.NOTE]另外请记下你的 Azure 订阅 ID，后面将需要用到它。可以在你的 Azure 帐户信息中找到它。
+	>[AZURE.NOTE]另外请记下你的 Azure 订阅 ID，后面将需要用到它。可以在经典门户中单击“设置”>“订阅”来找到此信息。
 
 ### 上载默认管理证书
 HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书的自签名证书，你可以将此证书作为 Azure 管理证书上载。此证书是为进行测试和概念证明部署提供的。
@@ -191,7 +190,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 对于本教程，你将添加两个小型节点。
 
-1. 在 HPC 群集管理器中的“节点管理”（在某些版本的 HPC Pack 中称为“资源管理”）中，然后在“操作”窗格中单击“添加节点”。
+1. 在 HPC 群集管理器中的“节点管理”（在最新版本的 HPC Pack 中称为“资源管理”）中，然后在“操作”窗格中单击“添加节点”。
 
 	![添加节点][add_node1]
 
@@ -203,7 +202,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![指定节点][add_node2]
 
-	有关可用大小的详细信息，请参阅 [Sizes for Cloud Services](/documentation/articles/cloud-services-sizes-specs/)（云服务的大小）。
+	有关可用大小的详细信息，请参阅 [Sizes for Cloud Services（云服务的大小）](/documentation/articles/cloud-services-sizes-specs/)。
 
 4. 在“完成添加节点向导”页上，单击“完成”。
 
@@ -214,7 +213,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 ## 启动 Azure 节点
 当你希望在 Azure 中使用群集资源时，请使用 HPC 群集管理器启动（设置）Azure 节点并使它们联机。
 
-1.	在 HPC 群集管理器中的“节点管理”（在某些版本的 HPC Pack 中称为“资源管理”）中，单击这两个或其中一个节点，然后在“操作”窗格中，单击“启动”。
+1.	在 HPC 群集管理器中的“节点管理”（在最新版本的 HPC Pack 中称为“资源管理”）中，单击这两个或其中一个节点，然后在“操作”窗格中，单击“启动”。
 
 	![启动节点][add_node4]
 
@@ -256,7 +255,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 ## 运行测试作业
 
-现在，提交在混合群集上运行的测试作业。此示例是一个简单的参数扫描作业（一种固有的并行计算）。此示例将运行多个子任务，这些子任务通过使用 **set /a** 命令向其本身添加整数。群集中的所有节点都参与完成针对 1 到 100 的整数的子任务。
+现在，提交在混合群集上运行的测试作业。此示例是一个极简单的参数扫描作业（一种固有的并行计算）。此示例将运行多个子任务，这些子任务通过使用 **set /a** 命令向其本身添加整数。群集中的所有节点都参与完成针对 1 到 100 的整数的子任务。
 
 1. 在 HPC 群集管理器的“作业管理”中，在“操作”窗格上单击“新建参数分析作业”。
 
@@ -280,7 +279,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 在你试用群集后，可停止 Azure 节点，以免向你的帐户收取不必要的费用。这将停止云服务并且删除 Azure 角色实例。
 
-1. 在 HPC 群集管理器中的“节点管理”（在某些版本的 HPC Pack 中称为“资源管理”）中，选择这两个 Azure 节点。然后，在“操作”窗格中，单击“停止”。
+1. 在 HPC 群集管理器中的“节点管理”（在最新版本的 HPC Pack 中称为“资源管理”）中，选择这两个 Azure 节点。然后，在“操作”窗格中，单击“停止”。
 
 	![停止节点][stop_node1]
 

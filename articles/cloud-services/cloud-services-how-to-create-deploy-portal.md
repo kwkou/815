@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何创建和部署云服务 | Azure"
-	description="了解如何使用 Azure 门户预览创建和部署云服务。"
+	description="了解如何使用 Azure 门户创建和部署云服务。"
 	services="cloud-services"
 	documentationCenter=""
 	authors="Thraka"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="04/15/2016"
-	wacn.date="05/31/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/22/2016"/>
 
 
 
@@ -56,7 +56,7 @@ Azure 门户预览为你提供两种创建和部署云服务的方法：“快�
 
 ## 开始之前
 
-- 如果你尚未安装 Azure SDK，请单击“安装 Azure SDK”以打开[ Azure 下载页](/downloads)，然后下载你选择用于开发代码的相应语言的 SDK。（你也可以稍后执行此操作。）
+- 如果你尚未安装 Azure SDK，请单击“安装 Azure SDK”以打开[ Azure 下载页](/downloads/)，然后下载你选择用于开发代码的相应语言的 SDK。（你也可以稍后执行此操作。）
 
 - 如果任何角色实例需要证书，请创建这些证书。云服务需要带有私钥的 .pfx 文件。你可以在创建和部署云服务时[将这些证书上载到 Azure]()。
 
@@ -105,10 +105,13 @@ Azure 门户预览为你提供两种创建和部署云服务的方法：“快�
 
     ![云服务\_速览](./media/cloud-services-how-to-create-deploy-portal/running.png)
 
+
+[TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796
+
 ## 后续步骤
 
 * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal/)。
-* [配置自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal/)
+* [配置自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal/)。
 * [管理云服务](/documentation/articles/cloud-services-how-to-manage-portal/)。
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal/)。
 

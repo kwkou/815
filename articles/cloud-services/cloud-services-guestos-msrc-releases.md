@@ -9,12 +9,41 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="04/18/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="06/21/2016"
+   wacn.date="08/22/2016"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 6 月来宾 OS 
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-035 | [3141780] | .NET Framework 安全更新，解决绕过安全功能问题 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| 公告 | [3155527] | 更新 FalseStart 的加密套件 | 4\.33、3.40 | 2016 年 6 月 14 日 |
+| MS16-063 | [3163649] | Internet Explorer 的累积安全更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| MS16-069 | [3163640] | JScript 和 VBScript 的累积安全更新 | 2\.52 | 2016 年 6 月 14 日 |
+| MS16-071 | [3164065] | Microsoft Windows DNS 服务器的安全更新 | 4\.33、3.40 | 2016 年 6 月 14 日 |
+| MS16-072 | [3163622] | 组策略的安全更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| MS16-073 | [3164028] | 内核模式驱动程序的安全更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| MS16-074 | [3164036] | Microsoft 图形组件的安全更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| MS16-075 | [3164038] | Windows SMB 服务器的安全更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| MS16-076 | [3167691] | Netlogon 的安全更新 | 4\.33 | 2016 年 6 月 14 日 |
+| MS16-077 | [3165191] | WPAD 的安全更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| MS16-080 | [3164302] | Microsoft Windows PDF 的安全更新 | 4\.33、3.40 | 2016 年 6 月 14 日 |
+| MS16-081 | [3160352] | Active Directory 的安全更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+| | [2922223] | 如果在 Windows 中启用 RealTimeIsUniversal 注册表项，则无法更改系统时间 | 2\.52 | 2016 年 6 月 14 日 |
+| | [3121255] | FsRtlNotifyFilterReportChange 中出现 "0x00000024" 停止错误，并且在 Windows 中复制文件可能失败 | 2\.52 | 2016 年 6 月 14 日 |
+| | [3125424] | LSASS 死锁导致 Windows Server 2012 R2 或 Windows Server 2012 无响应 | 4\.33、3.40 | 2016 年 6 月 14 日 |
+| | [3125574] | 适用于 Windows 7 SP1 和 Windows Server 2008 R2 SP1 的便利汇总更新 | 2\.52 | 2016 年 6 月 14 日 |
+| | [3140245] | 此更新可启用 TLS 1.1 和 TLS 1.2 作为 Windows 的 WinHTTP 中的默认安全协议 | 3\.40、2.52 | 2016 年 6 月 14 日 |
+| | [3146604] | WMI 服务在 Windows Server 2012 R2 或 Windows Server 2012 中随机崩溃 | 4\.33、3.40 | 2016 年 6 月 14 日 |
+| | [3149157] | Windows 8.1 和 Windows Server 2012 R2 的 TCP/IP 中的可靠性和可缩放性改善 | 4\.33 | 2016 年 6 月 14 日 |
+| | [3156416] | 适用于 Windows Server 2012 的 2016 年 5 月更新汇总 | 3\.40 | 2016 年 6 月 14 日 |
+| | [3156418] | 适用于 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的 2016 年 5 月更新汇总 | 4\.33 | 2016 年 6 月 14 日 |
+| | [3153731] | 适用于阿塞拜疆、智利、海地和摩洛哥版 Windows 的 2016 年 5 月 DST 更新 | 4\.33、3.40、2.52 | 2016 年 6 月 14 日 |
+
 
 ## 5 月来宾 OS 
 
@@ -283,6 +312,49 @@
 | 不适用 | [3007054][3007054] | 在 Windows 的 Windows 应用商店应用程序中打印文档时，始终显示 PIN 保护的打印选项 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2999802][2999802] | 在 Windows 中打印时，虚线变成实线 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
+
+
+[3141780]: http://support.microsoft.com/zh-cn/kb/3141780
+[3155527]: http://support.microsoft.com/zh-cn/kb/3155527
+[3163649]: http://support.microsoft.com/zh-cn/kb/3163649
+[3163640]: http://support.microsoft.com/zh-cn/kb/3163640
+[3164065]: http://support.microsoft.com/zh-cn/kb/3164065
+[3163622]: http://support.microsoft.com/zh-cn/kb/3163622
+[3164028]: http://support.microsoft.com/zh-cn/kb/3164028
+[3164036]: http://support.microsoft.com/zh-cn/kb/3164036
+[3164038]: http://support.microsoft.com/zh-cn/kb/3164038
+[3167691]: http://support.microsoft.com/zh-cn/kb/3167691
+[3165191]: http://support.microsoft.com/zh-cn/kb/3165191
+[3164302]: http://support.microsoft.com/zh-cn/kb/3164302
+[3160352]: http://support.microsoft.com/zh-cn/kb/3160352
+[2922223]: http://support.microsoft.com/zh-cn/kb/2922223
+[3121255]: http://support.microsoft.com/zh-cn/kb/3121255
+[3125424]: http://support.microsoft.com/zh-cn/kb/3125424
+[3125574]: http://support.microsoft.com/zh-cn/kb/3125574
+[3140245]: http://support.microsoft.com/zh-cn/kb/3140245
+[3146604]: http://support.microsoft.com/zh-cn/kb/3146604
+[3149157]: http://support.microsoft.com/zh-cn/kb/3149157
+[3156416]: http://support.microsoft.com/zh-cn/kb/3156416
+[3156418]: http://support.microsoft.com/zh-cn/kb/3156418
+[3153731]: http://support.microsoft.com/zh-cn/kb/3153731
+
+
+[3155533]: http://support.microsoft.com/zh-cn/kb/3155533
+[3156764]: http://support.microsoft.com/zh-cn/kb/3156764
+[3156754]: http://support.microsoft.com/zh-cn/kb/3156754
+[3156987]: http://support.microsoft.com/zh-cn/kb/3156987
+[3141083]: http://support.microsoft.com/zh-cn/kb/3141083
+[3154846]: http://support.microsoft.com/zh-cn/kb/3154846
+[3155520]: http://support.microsoft.com/zh-cn/kb/3155520
+[3158222]: http://support.microsoft.com/zh-cn/kb/3158222
+[3156757]: http://support.microsoft.com/zh-cn/kb/3156757
+[3155784]: http://support.microsoft.com/zh-cn/kb/3155784
+[3148851]: http://support.microsoft.com/zh-cn/kb/3148851
+[3133977]: http://support.microsoft.com/zh-cn/kb/3133977
+[3133681]: http://support.microsoft.com/zh-cn/kb/3133681
+[3123245]: http://support.microsoft.com/zh-cn/kb/3123245
+[禁用 RC4]: https://blogs.msdn.microsoft.com/azuresecurity/2016/04/12/azure-cipher-suite-change-removes-rc4-support/
+
 
 [3148531]: http://support.microsoft.com/zh-cn/kb/3148531
 [3148522]: http://support.microsoft.com/zh-cn/kb/3148522

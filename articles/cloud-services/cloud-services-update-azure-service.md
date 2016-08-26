@@ -3,13 +3,13 @@ pageTitle="如何更新云服务 | Azure"
 description="了解如何在 Azure 中更新云服务。了解如何云服务上进行更新以确保可用性。"
 services="cloud-services"
 documentationCenter=""
-authors="kenazk"
+authors="Thraka"
 manager="timlt"
 editor=""/>
 <tags
 ms.service="cloud-services"
-ms.date="10/26/2015"
-wacn.date="07/18/2016"/>
+ms.date="05/05/2016"
+wacn.date="08/22/2016"/>
 
 # 如何更新云服务
 
@@ -22,7 +22,7 @@ Azure 将你的角色实例划分为称为升级域 (UD) 的逻辑组。升级�
 
 升级域的默认数量为 5 个。可以在服务定义文件 (.csdef) 中包含 upgradeDomainCount 属性以指定不同数量的升级域。有关 upgradeDomainCount 属性的详细信息，请参阅 [WebRole 架构](https://msdn.microsoft.com/zh-cn/library/azure/gg557553.aspx)或 [WorkerRole 架构](https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx)。
 
-在为你的服务中的一个或多个角色执行就地更新时，Azure 将根据所属的升级域更新角色实例集。Azure 更新给定升级域中的所有实例（停止这些实例，更新这些实例并将它们重新联机），然后移到下一个域上。通过仅停止在当前升级域中运行的实例，Azure 确保在执行更新时将对运行的服务造成的影响降到最低。有关详细信息，请参阅本文后面的[如何进行更新](https://msdn.microsoft.com/zh-cn/library/azure/Hh472157.aspx#proceed)。
+在为你的服务中的一个或多个角色执行就地更新时，Azure 将根据所属的升级域更新角色实例集。Azure 更新给定升级域中的所有实例（停止这些实例，更新这些实例并将它们重新联机），然后移到下一个域上。通过仅停止在当前升级域中运行的实例，Azure 确保在执行更新时将对运行的服务造成的影响降到最低。有关详细信息，请参阅本文后面的[如何进行更新](#howanupgradeproceeds)。
 
 > [AZURE.NOTE]虽然**更新**和**升级**术语在 Azure 上下文中的含义略有不同，但在本文中的功能过程和描述中可以互换。
 
@@ -132,38 +132,38 @@ Azure 将你的角色实例划分为称为升级域 (UD) 的逻辑组。升级�
 
 此功能是由以下功能提供的：
 
--   “[回滚更新或升级](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)”操作；只要服务中至少有一个实例尚未更新为新版本，就可以在配置更新上调用该操作（通过调用“[更改部署配置](https://msdn.microsoft.com/zh-cn/library/azure/ee460809.aspx)”触发），或者在升级上调用该操作（通过调用“[升级部署](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)”触发）。
--   Locked 和 RollbackAllowed 元素；这是作为“[获取部署](https://msdn.microsoft.com/zh-cn/library/azure/ee460804.aspx)”和“[获取云服务属性](https://msdn.microsoft.com/zh-cn/library/azure/ee460806.aspx)”操作响应正文的一部分返回的：
+-   [“回滚更新或升级”](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)操作；只要服务中至少有一个实例尚未更新为新版本，就可以在配置更新上调用该操作（通过调用[“更改部署配置”](https://msdn.microsoft.com/zh-cn/library/azure/ee460809.aspx)触发），或者在升级上调用该操作（通过调用[“升级部署”](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)触发）。
+-   Locked 和 RollbackAllowed 元素；这是作为[“获取部署”](https://msdn.microsoft.com/zh-cn/library/azure/ee460804.aspx)和[“获取云服务属性”](https://msdn.microsoft.com/zh-cn/library/azure/ee460806.aspx)操作响应正文的一部分返回的：
     1.  Locked 元素用于检测何时可以在给定部署上调用变动操作。
-    2.  RollbackAllowed 元素用于检测何时可以在给定部署上调用“[回滚更新或升级](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)”操作。
+    2.  RollbackAllowed 元素用于检测何时可以在给定部署上调用[“回滚更新或升级”](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)操作。
 
     若要执行回滚，你不需要检查 Locked 和 RollbackAllowed 元素。确认 RollbackAllowed 设置为 true 就足够了。只有在使用设置为“x-ms-version: 2011-10-01”或更高版本的请求标头调用这些方法时，才会返回这些元素。有关版本控制标头的详细信息，请参阅[服务管理版本控制](https://msdn.microsoft.com/zh-cn/library/azure/gg592580.aspx)。
 
 在某些情况下，不支持回滚更新或升级，这些情况包括：
 
--   本地资源减少 - 如果更新增加了角色的本地资源，则 Azure 平台不允许进行回滚。有关如何配置角色的本地资源的详细信息，请参阅[配置本地存储资源](https://msdn.microsoft.com/zh-cn/library/azure/ee758708.aspx)。
+-   本地资源减少 - 如果更新增加了角色的本地资源，则 Azure 平台不允许进行回滚。
 -   配额限制 - 如果更新减少操作，你可能没有足够的计算配额来完成回滚操作。每个 Azure 订阅具有关联的配额，以指定属于该订阅的所有托管服务可以使用的最大内核数。如果执行给定更新的回滚操作而导致订阅超过配额，则不会启用回滚。
 -   争用情况 - 如果初始更新已完成，则无法进行回滚。
 
-回滚更新可能是非常有用的，其中的一个例子是，在手动模式下使用“[升级部署](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)”操作控制为你的 Azure 托管服务部署主要就地升级的速度。
+回滚更新可能是非常有用的，其中的一个例子是，在手动模式下使用[“升级部署”](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)操作控制为你的 Azure 托管服务部署主要就地升级的速度。
 
-在升级部署期间，你可以在手动模式下调用“[升级部署](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)”并开始依次更新升级域。在监视升级时，如果你在某些时候注意到你检查的第一批升级域中的某些角色实例停止响应，你可以在部署上调用“[回滚更新或升级](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)”操作，这会将尚未升级的实例保持不变，并将已升级的实例回滚到以前的服务包和配置。
+在升级部署期间，你可以在手动模式下调用[“升级部署”](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx) 并开始依次更新升级域。在监视升级时，如果你在某些时候注意到你检查的第一批升级域中的某些角色实例停止响应，你可以在部署上调用[“回滚更新或升级”](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)操作，这会将尚未升级的实例保持不变，并将已升级的实例回滚到以前的服务包和配置。
 
 ## 在进行的部署上启动多个变动操作
-在某些情况下，你可能需要在进行的部署上启动多个同时的变动操作。例如，你可能执行一个服务更新，并在你的服务中部署该更新的同时希望进行一些更改，例如，回滚更新，应用不同的更新，甚至删除部署。一种可能需要执行此操作的情况是，服务升级包含错误的代码，而导致升级的角色实例反复崩溃。在这种情况下，Azure 结构控制器无法继续应用该升级，因为升级域中的正常实例数不足。这种状态称为*卡住的部署*。你可以回滚更新或应用全新的更新以覆盖失败的更新，从而纠正卡住的部署状态。
+在某些情况下，你可能需要在进行的部署上启动多个同时的变动操作。例如，你可能执行一个服务更新，并在你的服务中部署该更新的同时希望进行一些更改，例如，回滚更新，应用不同的更新，甚至删除部署。一种可能需要执行此操作的情况是，服务升级包含错误的代码，而导致升级的角色实例反复崩溃。在这种情况下，Azure 结构控制器无法继续应用该升级，因为升级域中的正常实例数不足。这种状态称为卡住的部署。你可以回滚更新或应用全新的更新以覆盖失败的更新，从而纠正卡住的部署状态。
 
 在 Azure 结构控制器收到更新或升级服务的初始请求后，你可以启动后续的变动操作。也就是说，你不必等待初始操作完成，即可启动其他变动操作。
 
 在进行第一个更新的同时启动第二个更新操作将以类似回滚操作的方式执行。如果第二个更新是在自动模式下执行的，将立即升级第一个升级域，这可能会导致多个升级域中的实例在同一时刻处于脱机状态。
 
-变动操作如下：“[更改部署配置](https://msdn.microsoft.com/zh-cn/library/azure/ee460809.aspx)”、“[升级部署](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)”、“[更新部署状态](https://msdn.microsoft.com/zh-cn/library/azure/ee460808.aspx)”、“[删除部署](https://msdn.microsoft.com/zh-cn/library/azure/ee460815.aspx)”和“[回滚更新或升级](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)”。
+变动操作如下：[“更改部署配置”](https://msdn.microsoft.com/zh-cn/library/azure/ee460809.aspx)、[“升级部署”](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)、[“更新部署状态”](https://msdn.microsoft.com/zh-cn/library/azure/ee460808.aspx)、[“删除部署”](https://msdn.microsoft.com/zh-cn/library/azure/ee460815.aspx)和[“回滚更新或升级”](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)。
 
-“[获取部署](https://msdn.microsoft.com/zh-cn/library/azure/ee460804.aspx)”和“[获取云服务属性](https://msdn.microsoft.com/zh-cn/library/azure/ee460806.aspx)”这两个操作返回 Locked 标志，可以检查该标志以确定是否可以在给定部署上调用变动操作。
+[“获取部署”](https://msdn.microsoft.com/zh-cn/library/azure/ee460804.aspx)和[“获取云服务属性”](https://msdn.microsoft.com/zh-cn/library/azure/ee460806.aspx)这两个操作返回 Locked 标志，可以检查该标志以确定是否可以在给定部署上调用变动操作。
 
 若要调用返回 Locked 标志的这些方法版本，必须将请求标头设置为“x-ms-version: 2011-10-01”或更高版本。有关版本控制标头的详细信息，请参阅[服务管理版本控制](https://msdn.microsoft.com/zh-cn/library/azure/gg592580.aspx)。
 
 ## 在升级域之间分配角色
-Azure 在设置的升级域数之间平均分配角色的实例，可以将升级域数配置为服务定义 (.csdef) 文件的一部分。升级域的最大数目为 20 个，默认值为 5 个。有关如何修改服务定义文件的详细信息，请参阅 [Azure 服务定义架构（.csdef 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)。
+Azure 在设置的升级域数之间平均分配角色的实例，可以将升级域数配置为服务定义 (.csdef) 文件的一部分。升级域的最大数目为 20 个，默认值为 5 个。有关如何修改服务定义文件的详细信息，请参阅 [Azure 服务定义架构（.csdef 文件）](/documentation/articles/cloud-services-model-and-package/#csdef)。
 
 例如，如果你的角色具有 10 个实例，则每个升级域默认包含两个实例。如果你的角色具有 14 个实例，则四个升级域分别包含 3 个实例，第五个域包含 2 个实例。
 
