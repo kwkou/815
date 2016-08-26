@@ -56,7 +56,7 @@
 
     $SubscriptionName="<YourSubscriptionName>"
     $ResourceGroupName="<YourResourceGroupName>"
-    $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
+    $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.chinacloudapi.cn
     $DatabaseName="<YourDatabaseName>"
     $NewDatabaseName="<YourDatabaseName>"
     
@@ -84,7 +84,7 @@
 
 ```
 
->[AZURE.NOTE] 对于服务器 foo.database.windows.net，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
+>[AZURE.NOTE] 对于服务器 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
 
 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
@@ -103,7 +103,7 @@
 
     $SubscriptionName="<YourSubscriptionName>"
     $ResourceGroupName="<YourResourceGroupName>"
-    $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
+    $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.chinacloudapi.cn
     $DatabaseName="<YourDatabaseName>"
     $NewDatabaseName="<YourDatabaseName>"
     
@@ -122,7 +122,7 @@
 
 ```
 
->[AZURE.NOTE] 对于服务器 foo.database.windows.net，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
+>[AZURE.NOTE] 对于服务器 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
 
 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 

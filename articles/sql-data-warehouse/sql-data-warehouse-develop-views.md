@@ -66,7 +66,7 @@ SQL 数据仓库中的视图只是元数据。因此无法使用以下选项：
 [SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
-
+[CREATE VIEW]: https://msdn.microsoft.com/zh-cn/library/ms187956.aspx
 <!--Other Web references-->
 
 <!---HONumber=Mooncake_0801_2016-->

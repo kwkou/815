@@ -119,6 +119,7 @@ SQL 数据仓库有多个 DMV 可用于监视查询执行。以下监视相关�
 [优化事务]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions/
 [故障诊断]: /documentation/articles/sql-data-warehouse-troubleshoot/
 [LABEL]: /documentation/articles/sql-data-warehouse-develop-label/
+[表分区]: /documentation/articles/sql-data-warehouse-tables-partition
 
 <!--MSDN references-->
 [ALTER TABLE]: https://msdn.microsoft.com/zh-cn/library/ms190273.aspx

@@ -54,26 +54,25 @@ CREATE MASTER KEY;
 
 4. 检查你是否已有任何数据库凭据。为此，请使用 sys.database\_credentials 系统视图，而不要使用只显示服务器凭据的 sys.credentials。
 
-``` 
-    -- 检查是否存在数据库范围的凭据。SELECT * FROM sys.database\_credentials;
-```
+		-- 检查是否存在数据库范围的凭据。
+		SELECT * FROM sys.database\_credentials;
+
 5. 使用 [CREATE CREDENTIAL (Transact-SQL)][] 为你想要访问的每个 Azure 存储帐户创建数据库范围的凭据。在此示例中，IDENTITY 是凭据的友好名称。它不影响对 Azure 存储空间的身份验证。SECRET 是 Azure 存储帐户密钥。
 
-```
-    -- 创建数据库范围凭据：
-    CREATE DATABASE SCOPED CREDENTIAL ASBSecret
-    WITH IDENTITY = 'joe' 
-    , Secret = '<azure_storage_account_key>' 
-    ; 
-    ```
+
+		-- 创建数据库范围凭据：
+		CREATE DATABASE SCOPED CREDENTIAL ASBSecret
+		WITH IDENTITY = 'joe' 
+		, Secret = '<azure_storage_account_key>' 
+		; 
+
 
 6. 如果需要删除某个数据库范围的凭据，请使用 [DROP CREDENTIAL (Transact-SQL)][]：
 
-```
--- Dropping credential
-DROP DATABASE SCOPED CREDENTIAL ASBSecret
-;
-```
+		-- Dropping credential
+		DROP DATABASE SCOPED CREDENTIAL ASBSecret
+		;
+
 
 ## 步骤 2：创建外部数据源
 外部数据源是存储 Azure Blob 存储数据位置及访问信息的数据库对象。使用 [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][] 为你想要访问的每个 Azure 存储 Blob 定义外部数据源。
@@ -90,13 +89,13 @@ DROP DATABASE SCOPED CREDENTIAL ASBSecret
     ;
 ```
 
-如果需要删除外部表，请使用 [DROP EXTERNAL DATA SOURCE][]：
+如果需要删除外部表，请使用 [DROP EXTERNAL DATA SOURCE (Transact-SQL)][]：
 
-```
+
     -- Drop an external data source
     DROP EXTERNAL DATA SOURCE azure_storage
     ;
-```
+
 
 ## 步骤 3：创建外部文件格式
 外部文件格式是指定外部数据格式的数据库对象。PolyBase 可以处理压缩和未压缩的数据，包括分隔的文本、Hive RCFILE 和 HIVE ORC 格式。

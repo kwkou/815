@@ -55,7 +55,7 @@
 - **Edition**：必须将版本设置为“DataWarehouse”才能创建 SQL 数据仓库。
 
 有关参数选项的更多详细信息，请参阅[创建数据库（Azure SQL 数据仓库）][]。
-有关命令参考，请参阅 [New-AzureRmSqlDatabase][]
+有关命令参考，请参阅 [New-AzureRmSqlDatabase][]。
 
 ## 后续步骤
 
@@ -70,9 +70,10 @@
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-load-with-bcp/
-[load sample data]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [Powershell]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 [firewall rules]: /documentation/articles/sql-database-configure-firewall-settings/
+[owerShell cmdlet 和 REST API]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets
 
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [how to create a SQL Data Warehouse from the Azure Portal]: /documentation/articles/sql-data-warehouse-get-started-provision/

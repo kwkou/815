@@ -60,7 +60,7 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 ##加密 DMV  
 
 - [sys.databases][] 
-- [sys.dm\_pdw\_nodes\_database\_encryption\_keys][]
+- [sys.dm\_pdw\_nodes\_database\_encryption\_keys](https://msdn.microsoft.com/zh-cn/library/mt203922.aspx)
 
 
 <!--Anchors-->
