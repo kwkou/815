@@ -64,9 +64,11 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
 
-		azure login -e AzureChinaCloud
+		azure config mode asm
+		azure account clear
+		azure account download -e AzureChinaCloud
 
-	出现提示时，输入订阅的用户名和密码。
+		azure account import path/to/<subscription name>-<date>-credentials.publishsettings
 
 3. 使用以下命令，列出订阅的存储帐户：
 
@@ -119,7 +121,8 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 
 		Switch-AzureMode -Name AzureResourceManager
 
-		Add-AzureAccount -Environment AzureChinaCloud
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		Select-AzureSubscription $subscriptionName
 
 		# Get the storage account key

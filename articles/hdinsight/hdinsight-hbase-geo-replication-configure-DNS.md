@@ -42,7 +42,8 @@
 
 	在运行 PowerShell 脚本之前，请确保你已使用以下 cmdlet 连接到 Azure 订阅：
 
-		Add-AzureAccount -Environment AzureChinaCloud
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 
 	如果你有多个 Azure 订阅，请使用以下 cmdlet 来设置当前订阅：
 
@@ -103,7 +104,9 @@ DNS 服务器需要静态 IP 地址。不能从 Azure 经典管理门户完成�
 1. 打开 Windows PowerShell ISE。
 2. 运行以下 cmdlet：  
 
-		Add-AzureAccount -Environment AzureChinaCloud
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		
 		Select-AzureSubscription [YourAzureSubscriptionName]
 		
 		Get-AzureVM -ServiceName Contoso-DNS-CN -Name Contoso-DNS-CN | Set-AzureStaticVNetIP -IPAddress 10.1.0.4 | Update-AzureVM

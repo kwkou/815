@@ -120,7 +120,10 @@ Blob 存储可用于结构化和非结构化数据。Blob 存储容器将数据�
 	$containerName="<BlobContainerToBeCreated>" # The Blob container name that you will create
 
 	# Connect to your Azure account and selec the current subscription
-	Add-AzureAccount # The connection will expire in 12 hours.
+	
+	Clear-AzureProfile
+	Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+
 	Select-AzureSubscription $subscriptionName #only required if you have multiple subscriptions
 
 	# Create a storage context object
@@ -204,8 +207,7 @@ URI 方案提供了使用 *wasbs:* 前缀的未加密访问和使用 *wasbs* 的
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
 	
-	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount # The connection is good for 12 hours
+	# Use Import-AzurePublishSettingsFile if you haven't connected to your Azure subscription
 
 	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"
@@ -229,8 +231,7 @@ URI 方案提供了使用 *wasbs:* 前缀的未加密访问和使用 *wasbs* 的
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
 
-	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount -Environment AzureChinaCloud # The connection is good for 12 hours
+	# Use Import-AzurePublishSettingsFile if you haven't connected to your Azure subscription
 
 	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"
@@ -251,8 +252,7 @@ URI 方案提供了使用 *wasbs:* 前缀的未加密访问和使用 *wasbs* 的
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blobPrefix = "example/data/"
 
-	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount -Environment AzureChinaCloud # The connection is good for 12 hours
+	# Use Import-AzurePublishSettingsFile if you haven't connected to your Azure subscription
 
 	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"

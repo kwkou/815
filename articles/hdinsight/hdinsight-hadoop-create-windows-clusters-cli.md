@@ -32,9 +32,11 @@
 
 使用以下命令连接到 Azure：
 
-	azure login -e AzureChinaCloud
+	azure config mode asm
+	azure account clear
+	azure account download -e AzureChinaCloud
 
-有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
+	azure account import path/to/<subscription name>-<date>-credentials.publishsettings
 
 若要获得帮助，请使用 **-h** 开关。例如：
 
