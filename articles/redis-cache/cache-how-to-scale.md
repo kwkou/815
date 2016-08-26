@@ -151,7 +151,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ### <a name="how-can-i-tell-when-scaling-is-complete"></a> 如何判断缩放何时完成？
 
-在 Azure 中国区，目前无法在 Azure 门户预览版中管理 Redis 缓存，因此无法在门户中查看缩放状态。但是，可以使用以下 PowerShell 命令来获取缓存的状态：
+可以使用以下 PowerShell 命令来获取缓存的状态：
 
 	Get-AzureRmRedisCache -ResourceGroupName myGroup -Name myRedisCache
 
