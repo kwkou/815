@@ -105,7 +105,7 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 
 
 	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-	Invoke-AddCertToKeyVault -SubscriptionId 35389201-c0b3-405e-8a23-9f1450994307 -ResourceGroupName chackdankeyvault4doc -Location westus -VaultName chackdankeyvault4doc  -CertificateName chackdantestcertificate3 -Password abcd123 -CreateSelfSignedCertificate -DnsName www.chackdan.westus.azure.com -OutputPath C:\MyCertificates
+	Invoke-AddCertToKeyVault -SubscriptionId 35389201-c0b3-405e-8a23-9f1450994307 -ResourceGroupName chackdankeyvault4doc -Location westus -VaultName chackdankeyvault4doc  -CertificateName chackdantestcertificate3 -Password abcd123 -CreateSelfSignedCertificate -DnsName www.chackdan.chinaeast.chinacloudapi.cn -OutputPath C:\MyCertificates
 
 
 脚本成功完成时，你将看到类似于下面的输出。执行步骤 3 时需要用到这些数据。

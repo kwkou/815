@@ -588,7 +588,7 @@ Azure 存储空间允许你启用 CORS – 跨域资源共享。对于每个存�
 
 有关 CORS 及其启用方法的详细信息，请参阅以下资源。
 
--   [Azure.cn 上的 Cross-Origin Resource Sharing (CORS) Support for the Azure Storage Services on Azure.com（对 Azure 存储服务的跨域资源共享 (CORS) 支持）](/documentation/articles/storage-cors-support/)
+-   [Azure.cn 上的 Cross-Origin Resource Sharing (CORS) Support for the Azure Storage Services on Azure.cn（对 Azure 存储服务的跨域资源共享 (CORS) 支持）](/documentation/articles/storage-cors-support/)
 
 	此文概述 CORS，以及如何为不同的存储服务设置规则。
 

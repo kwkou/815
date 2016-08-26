@@ -136,7 +136,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	- 如果希望使用自定义代理，则应当在安装该提供程序之前设置它。当配置自定义代理设置时，会运行测试来检查代理连接。
 	- 如果你确实使用自定义代理，或者你的默认代理要求进行身份验证，则需要输入代理详细信息，包括代理地址和端口。
 	- 以下 URL 应可从 VMM 服务器和 Hyper-v 主机访问
-		- *.hypervrecoverymanager.windowsazure.com
+		- *.hypervrecoverymanager.windowsazure.cn
 		- *.accesscontrol.chinacloudapi.cn
 		- *.backup.windowsazure.cn
 		- *.blob.core.chinacloudapi.cn
