@@ -146,7 +146,10 @@ Bootstrap 的使用方式有 2 种：
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
     try{Get-AzureContext}
-    catch{Add-AzureAccount -Environment AzureChinaCloud}
+    catch{
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
     #endregion
 
     Write-Host "Creating the default storage account and default blob container ..."  -ForegroundColor Green

@@ -35,7 +35,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 
 在远程 HDInsight 群集上运行 Hive 查询时，将使用以下 Cmdlet：
 
-* **Add-AzureAccount**：在 Azure 订阅中进行 Azure PowerShell 身份验证
+* **Import-AzurePublishSettingsFile**：在 Azure 订阅中进行 Azure PowerShell 身份验证
 
 [AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
@@ -64,7 +64,8 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount -Environment AzureChinaCloud
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		}
 
 		#HiveQL

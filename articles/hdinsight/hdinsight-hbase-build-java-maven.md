@@ -529,7 +529,7 @@ tags="azure-portal"/>
             $sub = Get-AzureSubscription -ErrorAction SilentlyContinue
             if(-not($sub))
             {
-                throw "No active Azure subscription found! If you have a subscription, use the Add-AzureAccount cmdlet to login to your subscription."
+                throw "No active Azure subscription found! If you have a subscription, use the Import-AzurePublishSettingsFile cmdlet to login to your subscription."
             }
         }
         

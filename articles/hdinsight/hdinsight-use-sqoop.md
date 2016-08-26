@@ -262,7 +262,10 @@ PowerShell 示例将执行以下步骤：
 	catch{Login-AzureRmAccount -EnvironmentName AzureChinaCloud}
 
     try{Get-AzureSubscription}
-	catch{Add-AzureAccount -Environment AzureChinaCloud}
+	catch{
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
 	#endregion
 	
 	#region - Create Azure resouce group

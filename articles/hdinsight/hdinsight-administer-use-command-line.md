@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
-##先决条件
+## 先决条件
 
 在开始阅读本文前，你必须具有：
 
@@ -31,20 +31,21 @@
 - **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)。
 - 使用以下命令**连接到 Azure**：
 
-		azure login -e AzureChinaCloud
+		azure config mode asm
+		azure account clear
+		azure account download -e AzureChinaCloud
 
-	有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
-	
+		azure account import path/to/<subscription name>-<date>-credentials.publishsettings
 
 若要获得帮助，请使用 **-h** 开关。例如：
 
 	azure hdinsight cluster create -h
 	
-##创建群集
+## 创建群集
 
 参阅[使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli/)。
 
-##列出并显示群集详细信息
+## 列出并显示群集详细信息
 使用以下命令来列出和显示群集详细信息：
 
 	azure hdinsight cluster list
@@ -53,12 +54,12 @@
 ![HDI.CLIListCluster][image-cli-clusterlisting]
 
 
-##删除群集
+## 删除群集
 使用以下命令来删除群集：
 
 	azure hdinsight cluster delete <Cluster Name>
 
-##后续步骤
+## 后续步骤
 在本文中，你已了解如何执行不同的 HDInsight 群集管理任务。若要了解更多信息，请参阅下列文章：
 
 * [使用 Azure 经典管理门户管理 HDInsight][hdinsight-admin-portal]

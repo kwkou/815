@@ -53,7 +53,8 @@
 
 	在运行 PowerShell 脚本之前，请确保你已使用以下 cmdlet 连接到 Azure 订阅：
 
-		Add-AzureAccount -Environment AzureChinaCloud
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 
 	如果你有多个 Azure 订阅，请使用以下 cmdlet 来设置当前订阅：
 
@@ -90,7 +91,8 @@ Azure 经典管理门户不支持使用自定义配置选项设置 HDInsight 群
 		$blobContainerName = $hbaseClusterName.ToLower()  #Use the cluster name as the default container name.
 		
 		#connect to your Azure subscription
-		Add-AzureAccount -Environment AzureChinaCloud 
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		Select-AzureSubscription $azureSubscriptionName
 		
 		# Create a storage account used by the HBase cluster
@@ -140,7 +142,8 @@ Azure 经典管理门户不支持使用自定义配置选项设置 HDInsight 群
 
 	由于你已连接到 Azure 帐户，因此不再需要运行以下 cmdlet：
 
-		Add-AzureAccount -Environment AzureChinaCloud 
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		Select-AzureSubscription $azureSubscriptionName
 
 

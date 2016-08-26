@@ -154,7 +154,10 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 		#region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 		Write-Host "`tCurrent system time: " (get-date) -ForegroundColor Yellow
-		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
+		if (-not (Get-AzureAccount)){
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
 		#endregion
 
 		#region - Validate user input, and provision HDInsight cluster if needed
@@ -390,7 +393,10 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 
 		#Region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
+		if (-not (Get-AzureAccount)){
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
 		#EndRegion
 
 		#Region - Validate user input
@@ -534,7 +540,8 @@ HiveQL 脚本将执行以下操作：
 		$azureAccounts= Get-AzureAccount
 		if (! $azureAccounts)
 		{
-		    Add-AzureAccount -Environment AzureChinaCloud
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		}
 		#endregion
 
@@ -705,7 +712,8 @@ HiveQL 脚本将执行以下操作：
 		$azureAccounts= Get-AzureAccount
 		if (! $azureAccounts)
 		{
-		Add-AzureAccount -Environment AzureChinaCloud
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		}
 		#endregion
 

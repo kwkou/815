@@ -297,7 +297,8 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 **连接到 Azure 帐户**
 
-	Add-AzureAccount -Environment AzureChinaCloud
+	Clear-AzureProfile
+	Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 
 系统将提示你输入 Azure 帐户凭据。
 
