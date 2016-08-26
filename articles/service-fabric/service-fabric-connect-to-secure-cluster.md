@@ -61,7 +61,7 @@
 
 
 	string thumb = "C179E609BBF0B227844342535142306F3913D6ED";
-	string CommonName = "www.clustername.westus.azure.com";
+	string CommonName = "www.clustername.chinaeast.chinacloudapi.cn";
 	string connection = "clustername.chinaeast.chinacloudapp.cn:19000";
 	
 	X509Credentials xc = GetCredentials(thumb, CommonName);

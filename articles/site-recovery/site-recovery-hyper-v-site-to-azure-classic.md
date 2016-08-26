@@ -56,7 +56,7 @@
 - 建议你始终运行最新版本的提供程序和代理。可以在站点恢复门户中获取这些程序。
 - 保管库中的所有 Hyper-V 服务器应有相同版本的提供程序和代理。
 - 服务器上运行的提供程序通过 Internet 连接到站点恢复。你可以使用 Hyper-V 服务器上当前配置的代理设置或者使用你在安装提供程序期间配置的自定义代理设置，在不使用代理的情况下完成部署。需确保你要使用的代理服务器可以访问这些 URL 以连接到 Azure：
-	- **.hypervrecoverymanager.windowsazure.com
+	- **.hypervrecoverymanager.windowsazure.cn
 	- **.accesscontrol.chinacloudapi.cn
 	- **.backup.windowsazure.cn
 	- **.blob.core.chinacloudapi.cn
