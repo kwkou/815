@@ -82,7 +82,7 @@
          [State] [char](2) NULL,
          [BirthDate] [date] NOT NULL
          PRIMARY KEY CLUSTERED ([PatientId] ASC) ON [PRIMARY] );
-         GO
+         
 
 
 ## 加密某些列（配置始终加密）

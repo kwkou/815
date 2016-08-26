@@ -46,7 +46,7 @@
 弹性数据库池是 Azure SQL 数据库中“ElasticPool”类型的 Azure 资源管理器 资源。
 
 - **命名空间**：Microsoft.Sql/ElasticPool
-- 用于 REST API 调用的**管理终结点**（资源管理器）：https://management.azure.com
+- 用于 REST API 调用的**管理终结点**（资源管理器）：https://management.chinacloudapi.cn
 
 
 

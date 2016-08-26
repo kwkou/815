@@ -172,7 +172,7 @@
                 ("https://login.chinacloudapi.cn/" + ndomainName /* Tenant ID or AAD domain */);
 
             token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                ("https://management.chinacloudapi.cn/"/* the Azure Resource Management endpoint */,
                     nclientId,
             new Uri(nredirectUri),
             PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
@@ -195,7 +195,7 @@
             ClientCredential cc = new ClientCredential(wclientId, wkey);
 
             AuthenticationResult token = authContext.AcquireToken(
-                "https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                "https://management.chinacloudapi.cn/"/* the Azure Resource Management endpoint */,
                 cc);
 
             return token;
@@ -209,7 +209,7 @@
                 + ndomainName /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken(
-                "https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                "https://management.chinacloudapi.cn/"/* the Azure Resource Management endpoint */,
                 nclientId /* application client ID from AAD*/,
                 new Uri(nredirectUri) /* redirect URI */,
                 PromptBehavior.Auto,
