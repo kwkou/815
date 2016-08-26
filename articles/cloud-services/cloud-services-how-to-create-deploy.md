@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="04/15/2016"
-	wacn.date="05/31/2016"/>
+	ms.date="07/05/2016"
+	wacn.date="08/22/2016"/>
 
 
 
@@ -18,6 +18,7 @@
 # 如何创建和部署云服务
 
 > [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/cloud-services-how-to-create-deploy-portal/)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-create-deploy/)
 
 Azure 经典管理门户为你提供两种创建和部署云服务的方法：“快速创建”和“自定义创建”。
@@ -55,7 +56,7 @@ Azure 经典管理门户为你提供两种创建和部署云服务的方法：�
 
 ## 开始之前
 
-- 如果你尚未安装 Azure SDK，请单击“安装 Azure SDK”以打开[ Azure 下载页](/downloads)，然后下载你选择用于开发代码的相应语言的 SDK。（你也可以稍后执行此操作。）
+- 如果你尚未安装 Azure SDK，请单击“安装 Azure SDK”以打开[ Azure 下载页](/downloads/)，然后下载你选择用于开发代码的相应语言的 SDK。（你也可以稍后执行此操作。）
 
 - 如果任何角色实例需要证书，请创建这些证书。云服务需要带有私钥的 .pfx 文件。你可以在创建和部署云服务时[将这些证书上载到 Azure](/documentation/articles/cloud-services-configure-ssl-certificate/#step-3-upload-a-certificate)。
 
@@ -138,6 +139,8 @@ Azure 经典管理门户为你提供两种创建和部署云服务的方法：�
 
     ![云服务\_速览](./media/cloud-services-how-to-create-deploy/CloudServices_QuickGlance.png)
 
+
+[TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796
  
 ## 后续步骤
 

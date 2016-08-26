@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在门户预览中的自动缩放云服务 | Azure"
-	description="了解如何使用门户预览在 Azure 中为云服务 Web 角色或辅助角色配置自动缩放规则。"
+	pageTitle="在门户中的自动缩放云服务 | Azure"
+	description="（经典）了解如何使用经典管理门户在 Azure 中为云服务 Web 角色或辅助角色配置自动缩放规则。"
 	services="cloud-services"
 	documentationCenter=""
 	authors="Thraka"
@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="04/06/2016"
-	wacn.date="05/12/2016"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 
 
 # 如何自动缩放云服务
 
 在 Azure 经典管理门户的“缩放”页中，你可以手动缩放 Web 角色或辅助角色，或者根据 CPU 负载或消息队列启用自动缩放。
 
->[AZURE.NOTE] 本文着重于云服务 Web 和辅助角色。如果你直接创建虚拟机，该虚拟机将托管在云服务中。其中有些信息适用于这些类型的虚拟机。缩放虚拟机的可用性集其实只是根据配置的缩放规则将其关闭或打开。有关虚拟机和可用性集的详细信息，请参阅 [Manage the Availability of Virtual Machines（管理虚拟机的可用性）](/documentation/articles/virtual-machines-windows-classic-configure-availability/)
+>[AZURE.NOTE] 本文着重于云服务 Web 和辅助角色。如果你直接创建虚拟机（经典），该虚拟机将托管在云服务中。其中有些信息适用于这些类型的虚拟机。缩放虚拟机的可用性集其实只是根据配置的缩放规则将其关闭或打开。有关虚拟机和可用性集的详细信息，请参阅 [Manage the Availability of Virtual Machines（管理虚拟机的可用性）](../virtual-machines/virtual-machines-windows-classic-configure-availability.md)
 
 在配置应用程序的缩放之前，应考虑以下信息：
 
