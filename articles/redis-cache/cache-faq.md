@@ -37,12 +37,11 @@
 -	[我应使用哪种 Redis 缓存产品和大小？](#what-redis-cache-offering-and-size-should-i-use)
 -	[可以使用哪些 Redis 缓存客户端？](#what-redis-cache-clients-can-i-use)
 -	[Azure Redis 缓存是否有本地模拟器？](#is-there-a-local-emulator-for-azure-redis-cache)
--	[如何监视缓存的运行状况和性能？](#how-do-i-monitor-the-health-and-performance-of-my-cache)
 
 
 ### <a name="what-is-azure-redis-cache"></a>什么是 Azure Redis 缓存？
 
-Azure Redis 缓存以常用的开放源 [Redis 缓存](http://redis.io)为基础。它使您可以访问 Microsoft 管理的安全专用的 Redis 缓存。可从 Azure 内的任何应用程序进行访问。有关更详细的概述，请参阅 Azure.cn 上的 [Azure Redis 缓存](/home/features/cache/)产品页。
+Azure Redis 缓存以常用的开放源 [Redis 缓存](http://redis.io)为基础。它使您可以访问 Microsoft 管理的安全专用的 Redis 缓存。可从 Azure 内的任何应用程序进行访问。有关更详细的概述，请参阅 Azure.cn 上的 [Azure Redis 缓存](/home/features/redis-cache/)产品页。
 
 
 ### <a name="how-can-i-get-started-with-azure-redis-cache"></a>使用 Azure Redis 缓存？

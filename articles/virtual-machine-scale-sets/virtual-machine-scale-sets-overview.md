@@ -46,7 +46,7 @@
 
 ## 监视 VM 缩放集
 
-[Azure 门户预览](https://portal.azure.cn)列出了规模集并显示了基本属性和规模集中的 VM 列表。有关详细信息，可使用 [Azure 资源浏览器](https://resources.azure.com)来查看 VM 规模集。VM 缩放集是 Microsoft.Compute 下的资源，因此，你可以通过在此站点中展开以下链接来查看它们：
+[Azure 门户预览](https://portal.azure.cn)列出了规模集并显示了基本属性和规模集中的 VM 列表。VM 缩放集是 Microsoft.Compute 下的资源，因此，你可以通过在此站点中展开以下链接来查看它们：
 
 	subscriptions -> your subscription -> resourceGroups -> providers -> Microsoft.Compute -> virtualMachineScaleSets -> your VM scale set -> etc.
 

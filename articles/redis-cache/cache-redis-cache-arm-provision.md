@@ -23,7 +23,7 @@
 >[AZURE.NOTE]适用于新[高级层](/documentation/articles/cache-premium-tier-intro/)的 ARM 模板现已推出。
 >
 >
->若要检查最新模板，请参阅 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/)并搜索 `Redis Cache`。
+>若要检查最新模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)并搜索 `redis-cache`。
 
 ## 将部署的内容
 

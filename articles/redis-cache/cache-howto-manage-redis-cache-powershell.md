@@ -554,7 +554,7 @@
 	[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 
 
-## 导入 Redis 缓存
+## <a name="to-import-a-redis-cache"></a>导入 Redis 缓存
 
 你可以使用 `Import-AzureRmRedisCache` cmdlet 将数据导入 Azure Redis 缓存实例。
 
@@ -613,7 +613,7 @@
 
 	PS C:\>Import-AzureRmRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -Files @("https://mystorageaccount.blob.core.chinacloudapi.cn/mycontainername/blobname?sv=2015-04-05&sr=b&sig=caIwutG2uDa0NZ8mjdNJdgOY8%2F8mhwRuGNdICU%2B0pI4%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwd") -Force
 
-## 导出 Redis 缓存
+## <a name="to-export-a-redis-cache"></a>导出 Redis 缓存
 
 你可以使用 `Export-AzureRmRedisCache` cmdlet 将数据从 Azure Redis 缓存实例导出。
 

@@ -125,7 +125,7 @@
 	- 虚拟网络和子网的 IP 地址名称和前缀。
 	- 虚拟网络、负载平衡器和网络接口的名称和标识符。
 	- 与缩放集中虚拟机关联的帐户的存储帐户名称。
-	- 已安装在虚拟机上的诊断扩展的设置。有关诊断扩展的详细信息，请参阅[使用 Azure Resource Manager 模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template/)。
+	- 已安装在虚拟机上的诊断扩展的设置。有关诊断扩展的详细信息，请参阅[使用 Azure Resource Manager 模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)。
     
 4. 将存储帐户资源添加到已添加到模板中的资源父元素下。此模板使用一个循环来创建建议的 5 个存储帐户，其中将存储操作系统磁盘和诊断数据。这组帐户可在一个缩放集中最多支持 100 个虚拟机，这是当前的最大值。每个存储帐户通过将变量中定义的字母指示符与模板的参数中提供的后缀组合来命名。
 
@@ -194,7 +194,7 @@
           }
         },
 
-7. 添加缩放集使用的负载平衡器资源。有关详细信息，请参阅 [Azure Resource Manager 对负载平衡器的支持](/documentation/articles/load-balancer-arm/)。
+7. 添加缩放集使用的负载平衡器资源。
 
         {
           "apiVersion": "2015-06-15",
@@ -533,10 +533,6 @@
 你可以使用以下方法获取有关虚拟机缩放集的一些信息：
 
  - Azure 门户预览 - 当前使用门户可以获取有限数量的信息。
- - [Azure 资源浏览器](https://resources.azure.com/) - 要浏览缩放集的当前状态，这是最好的工具。遵循此路径，你应该看到所创建的缩放集的实例视图：
-
-        subscriptions > {your subscription} > resourceGroups > vmsstestrg1 > providers > Microsoft.Compute > virtualMachineScaleSets > vmsstest1 > virtualMachines
-
  - Azure PowerShell - 使用此命令可获取一些信息：
 
         Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name"
@@ -562,7 +558,6 @@
 ## 后续步骤
 
 - 使用[在虚拟机规模集中管理虚拟机](/documentation/articles/virtual-machine-scale-sets-windows-manage/)中的信息管理刚刚创建的规模集。
-- 若要了解有关垂直缩放的详细信息，请参阅[虚拟机规模集的垂直缩放](/documentation/articles/virtual-machine-scale-sets-vertical-scale-reprovision/)
 - 在 [Azure Insights PowerShell 快速启动示例](/documentation/articles/insights-powershell-samples/)中查找 Azure Insights 监视功能的示例
 - 在[使用自动缩放操作在 Azure Insights 中发送电子邮件和 Webhook 警报通知](/documentation/articles/insights-autoscale-to-webhook-email/)和[使用审核日志在 Azure Insights 中发送电子邮件和 Webhook 警报通知](/documentation/articles/insights-auditlog-to-webhook-email/)中了解有关通知功能的信息
 

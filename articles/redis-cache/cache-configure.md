@@ -17,7 +17,7 @@
 
 >[AZURE.NOTE] 有关配置和使用高级缓存功能的详细信息，请参阅[如何配置高级 Azure Redis 缓存的持久性](/documentation/articles/cache-how-to-premium-persistence/)、[如何配置高级 Azure Redis 缓存的群集](/documentation/articles/cache-how-to-premium-clustering/)以及[如何配置高级 Azure Redis 缓存的虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)。
 
-## 配置 Redis 缓存设置
+## <a name="configure-redis-cache-settings"></a>配置 Redis 缓存设置
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-browse.md)]
 
@@ -305,7 +305,7 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 
 单击“导出模板”可生成并导出已部署资源的模板，以用于将来部署。有关使用模板的详细信息，请参阅[使用 Azure Resource Manager 模板部署资源](/documentation/articles/resource-group-template-deploy/)。
 
-## 默认 Redis 服务器配置
+## <a name="default-redis-server-configuration"></a>默认 Redis 服务器配置
 
 新的 Azure Redis 缓存实例均已配置以下默认 Redis 配置值。
 
@@ -363,7 +363,7 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 	-	P3 (26 GB - 260 GB) — 最多支持 30,000 个连接
 	-	P4 (53 GB - 530 GB) — 最多支持 40,000 个连接
 
-## Azure Redis 缓存中不支持 Redis 命令
+## <a name="redis-commands-not-supported-in-azure-redis-cache"></a>Azure Redis 缓存中不支持 Redis 命令
 
 >[AZURE.IMPORTANT] 因为 Azure Redis 缓存实例的配置和管理由 Microsoft 进行管理，所以禁用了以下命令。如果尝试调用它们，将收到一条类似于 `"(error) ERR unknown command"` 的错误消息。
 >
