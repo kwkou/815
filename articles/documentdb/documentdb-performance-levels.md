@@ -118,7 +118,7 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 >[AZURE.NOTE] 更改集合的性能级别可能会花费 2 分钟。
 
-## 使用 .NET SDK 更改性能级别
+## <a name="changing-performance-levels-using-the-net-sdk"></a>使用 .NET SDK 更改性能级别
 
 另一个更改集合的性能级别的选项便是通过我们的 SDK 进行操作。本节只涵盖使用我们的 [.NET SDK](https://msdn.microsoft.com/library/azure/dn948556.aspx) 更改集合的性能级别，但对于其他的 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，过程也是相似的。如果你对我们的 .NET SDK 还不熟悉的话，请访问我们的[入门教程](/documentation/articles/documentdb-get-started)。
 
