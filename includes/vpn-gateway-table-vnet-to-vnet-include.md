@@ -6,4 +6,4 @@
 
 (+) 表示这种部署方法仅适用于同一订阅中的 VNet。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0822_2016-->

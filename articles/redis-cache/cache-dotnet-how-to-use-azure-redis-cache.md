@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="06/09/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="08/29/2016"/>
 
 # 如何使用 Azure Redis Cache
 
@@ -21,7 +21,7 @@
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
 
-本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存以常用的开放源 Redis 缓存为基础。它让你可以访问 WindowsAzure.cn 管理的安全专用的 Redis 缓存。你可以通过 Azure 中的任何应用程序访问使用 Azure Redis 缓存创建的缓存。
+本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存以常用的开放源 Redis 缓存为基础。它使您可以访问 Azure.cn 托管的安全专用的 Redis 缓存。你可以通过 Azure 中的任何应用程序访问使用 Azure Redis 缓存创建的缓存。
 
 Azure Redis 缓存提供以下层：
 
@@ -31,7 +31,7 @@ Azure Redis 缓存提供以下层：
 
 每个级别在功能和定价方面存在差异。有关定价信息，请参阅[缓存定价详细信息][]。
 
-本指南说明如何使用以 C# 代码编写的 [StackExchange.Redis][] 客户端。涉及的任务包括**创建和配置缓存**、**配置缓存客户端**，以及**在缓存中添加和删除对象**。有关使用 Azure Redis 缓存的详细信息，请参阅[后续步骤][]部分。有关构建使用 Redis 缓存的 ASP.NET MVC Web 应用的分步教程，请参阅 [How to create a Web App with Redis Cache（如何创建使用 Redis 缓存的 Web 应用）](/documentation/articles/cache-web-app-howto/)。
+本指南说明如何使用以 C# 代码编写的 [StackExchange.Redis][] 客户端。涉及的任务包括**创建和配置缓存**、**配置缓存客户端**，以及**在缓存中添加和删除对象**。有关使用 Azure Redis 缓存的详细信息，请参阅[后续步骤][]部分。有关构建使用 Redis 缓存的 ASP.NET MVC Web 应用的分步教程，请参阅 [How to create a Web App with Redis Cache](/documentation/articles/cache-web-app-howto/)（如何创建使用 Redis 缓存的 Web 应用）。
 
 ## <a name="getting-started-cache-service"></a>Azure Redis 缓存入门
 
@@ -46,8 +46,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-<a name="NuGet">
-## 配置缓存客户端
+## <a name="NuGet"></a>配置缓存客户端
 
 [AZURE.INCLUDE [redis-cache-configure](../../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
 
@@ -144,7 +143,7 @@ Redis 将大多数数据存储为 Redis 字符串，但这些字符串可能包�
 
 	cache.StringSet("key1", "value1", TimeSpan.FromMinutes(90));
 
-## <a name="store-session" id="work-with-net-objects-in-the-cache"></a> 处理缓存中的 .NET 对象
+## <a name="store-session" id="work-with-net-objects-in-the-cache"></a>处理缓存中的 .NET 对象
 
 Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓存 .NET 对象之前，必须对其进行序列化。这是应用程序开发人员的责任，同时赋与开发人员选择序列化程序的弹性。
 
@@ -178,6 +177,9 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 	-	[Azure Redis 缓存 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider/)
 -	查看 [StackExchange.Redis 缓存客户端文档][]。
 	-	可以从许多 Redis 客户端和开发语言访问 azure Redis 缓存。有关详细信息，请参阅 [http://redis.io/clients][]。
+-	Azure Redis 缓存还可与第三方服务和工具搭配使用，如 Redsmin 和 Redis Desktop Manager。
+	-	有关 Redsmin 的详细信息，请参阅[如何检索 Azure Redis 连接字符串并将其用于 Redsmin][]。
+	-	使用 [RedisDesktopManager](https://github.com/uglide/RedisDesktopManager) 通过 GUI 访问和检查 Azure Redis 缓存中的数据。
 -	请参阅 [redis][] 文档并阅读 [redis 数据类型][]和 [Redis 数据类型的十五分钟介绍][]。
 
 
@@ -225,6 +227,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 
    
 <!-- LINKS -->
+
 [http://redis.io/clients]: http://redis.io/clients
 [Develop in other languages for Azure Redis Cache]: /documentation/services/redis-cache
 [如何检索 Azure Redis 连接字符串并将其用于 Redsmin]: https://redsmin.uservoice.com/knowledgebase/articles/485711-how-to-connect-redsmin-to-azure-redis-cache
@@ -268,4 +271,4 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 
 [应用程序字符串和连接字符串的工作原理]: http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0822_2016-->
