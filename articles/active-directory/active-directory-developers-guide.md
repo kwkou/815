@@ -41,7 +41,7 @@
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:
 |[iOS](/documentation/articles/active-directory-devquickstarts-ios/)|[Android](/documentation/articles/active-directory-devquickstarts-android/)|[.NET](/documentation/articles/active-directory-devquickstarts-dotnet/)|[Windows Phone](/documentation/articles/active-directory-devquickstarts-windowsphone/)|[Windows 应用商店](/documentation/articles/active-directory-devquickstarts-windowsstore/)|[Xamarin](/documentation/articles/active-directory-devquickstarts-xamarin/)|[Cordova](/documentation/articles/active-directory-devquickstarts-cordova/)
 
-### Web 应用程序快速入门指南
+### <a name="web-application-quick-start-guides"></a>Web 应用程序快速入门指南
 
 |[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapp-dotnet/)|[![Java](./media/active-directory-developers-guide/java.png)](/documentation/articles/active-directory-devquickstarts-webapp-java/)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](/documentation/articles/active-directory-devquickstarts-angular/)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs/)
 |:--:|:--:|:--:|:--:|
