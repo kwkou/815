@@ -58,13 +58,13 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 单击“审核日志”可查看已对你的缓存执行的操作。你也可以使用筛选来展开此视图，以包含其他资源。有关使用审核日志的详细信息，请参阅[查看事件和审核日志](/documentation/articles/insights-debugging-with-events/)以及[使用 Resource Manager 执行审核操作](/documentation/articles/resource-group-audit/)。有关监视 Azure Redis 缓存事件的详细信息，请参阅[操作和警报](/documentation/articles/cache-how-to-monitor/#operations-and-alerts)。
 
-“资源运行状况”会监视你的资源，并告知资源是否按预期运行。有关 Azure 资源运行状况服务的详细信息，请参阅 [Azure 资源运行状况概述](/documentation/articles/resource-health-overview/)。
+“资源运行状况”会监视你的资源，并告知资源是否按预期运行。
 
 >[AZURE.NOTE] 资源运行状况当前无法报告在虚拟网络中托管的 Azure Redis 缓存实例的运行状况。有关详细信息，请参阅[在 VNET 中托管缓存时，是否可以使用所有缓存功能？](/documentation/articles/cache-how-to-premium-vnet/#do-all-cache-features-work-when-hosting-a-cache-in-a-vnet)
 
 单击“新建支持请求”可建立缓存的支持请求。
 
-## <a name="general-setting"></a>常规设置
+## <a name="general-settings"></a>常规设置
 
 “常规”部分中的设置可让你访问和配置缓存的下列设置。
 
@@ -252,7 +252,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 若要启动缓存的一个或多个节点，请选择所需节点，然后单击“重新启动”。如果高级缓存启用了群集功能，请选择要重新启动的分片，然后单击“重新启动”。几分钟后，所选节点将重新启动，再过几分钟后，又会回到联机状态。
 
->[AZURE.IMPORTANT] 重新启动仅适用于高级层缓存。有关详细信息和说明，请参阅 [Azure Redis 缓存管理 - 重新启动](/documentation/articles/cache-administration/#reboot)。
+>[AZURE.IMPORTANT] 重新启动仅适用于高级层缓存。
 
 ### <a name="schedule-updates"></a>计划更新
 
@@ -265,7 +265,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 若要指定维护时段，请勾选合适的日期，然后指定每天的维护时段开始时间，最后再单击“确定”。请注意，维护时段使用 UTC 时间。
 
->[AZURE.IMPORTANT] 计划更新仅适用于高级层缓存。有关详细信息和说明，请参阅 [Azure Redis 缓存管理 - 计划更新](/documentation/articles/cache-administration/#schedule-updates)。
+>[AZURE.IMPORTANT] 计划更新仅适用于高级层缓存。
 
 ## <a name="diagnostics-settings"></a>诊断设置
 
@@ -341,7 +341,7 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 	-	P2 (13 GB - 130 GB) - 最多支持 32 个数据库
 	-	P3 (26 GB - 260 GB) - 最多支持 48 个数据库
 	-	P4 (53 GB - 530 GB) - 最多支持 64 个数据库
-	-   所有启用了 Redis 群集的高级缓存 - Redis 群集仅支持使用数据库 0，因此任何启用了 Redis 群集的高级缓存的 `databases` 限制实际上是 1，并且不允许使用 [Select](http://redis.io/commands/select) 命令。有关详细信息，请参阅[使用群集功能时，是否需要对客户端应用程序进行更改？](#do-i-need-to-make-any-changes-to-my-client-application-to-use-clustering)
+	-   所有启用了 Redis 群集的高级缓存 - Redis 群集仅支持使用数据库 0，因此任何启用了 Redis 群集的高级缓存的 `databases` 限制实际上是 1，并且不允许使用 [Select](http://redis.io/commands/select) 命令。
 
 
 >[AZURE.NOTE] `databases` 设置只能在创建缓存期间配置，并且只能使用 PowerShell、CLI 或其他管理客户端进行配置。有关在创建缓存期间使用 PowerShell 配置 `databases` 的示例，请参阅 [New-AzureRmRedisCache](/documentation/articles/cache-howto-manage-redis-cache-powershell/#databases)。
