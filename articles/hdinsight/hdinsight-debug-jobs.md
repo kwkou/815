@@ -34,14 +34,14 @@ Azure HDInsight 中的每个 Hadoop 群集都有一个用作默认文件系统�
 - ClusterDnsName
 - ComponentName
 - EventTimestamp
-- 主机
+- Host
 - MALoggingHash
-- 消息
+- Message
 - N
 - PreciseTimeStamp
-- 角色
+- Role
 - RowIndex
-- 租户
+- Tenant
 - TIMESTAMP
 - TraceLevel
 
