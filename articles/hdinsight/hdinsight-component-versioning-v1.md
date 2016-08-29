@@ -13,26 +13,26 @@
 	wacn.date="06/29/2016"/>
 
 
-#HDInsight 提供的 Hadoop 群集版本有哪些新功能？
+# HDInsight 提供的 Hadoop 群集版本有哪些新功能？
 
-##HDInsight 版本和 Hadoop 组件
+## HDInsight 版本和 Hadoop 组件
 Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选项设置 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与 HDInsight 群集版本关联的组件版本。请注意，Azure HDInsight 使用的默认群集版本当前是 3.1（到 11/7/2014 为止）并基于 HDP 2.1.7。
 
 
 <table border="1">
-<tr><th>组件</th><th>HDInsight 版本 3.2</th><th>HDInsight 版本 3.1（默认）</th><th>HDInsight 版本 3.0</th><th>HDInsight 版本 2.1</th></tr>
-<tr><td>Hortonworks 数据平台</td><td>2.2</td><td>2.1.7</td><td>2.0</td><td>1.3</td></tr>
-<tr><td>Apache Hadoop 和 YARN</td><td>2.6.0</td><td>2.4.0</td><td>2.2.0</td><td>1.2.0</td></tr>
-<tr><td>Apache Tez</td><td>0.5.2</td><td>0.4.0</td><td></td><td></td></tr>
-<tr><td>Apache Pig</td><td>0.14.0</td><td>0.12.1</td><td>0.12.0</td><td>0.11.0</td></tr>
-<tr><td>Apache Hive 和 HCatalog</td><td>0.14.0</td><td>0.13.1</td><td>0.12.0</td><td>0.11.0</td></tr>
-<tr><td>Apazhe HBase </td><td>0.98.4</td><td>0.98.0</td><td></td><td></td></tr>
-<tr><td>Apache Sqoop</td><td>1.4.5</td><td>1.4.4</td><td>1.4.4</td><td>1.4.3</td></tr>
-<tr><td>Apache Oozie</td><td>4.1.0</td><td>4.0.0</td><td>4.0.0</td><td>3.3.2</td></tr>
-<tr><td>Apache Zookeeper</td><td>3.4.6</td><td>3.4.5</td><td>3.4.5</td><td></td></tr>
-<tr><td>Apache Storm</td><td>0.9.3</td><td>0.9.1</td><td></td><td></td></tr>
-<tr><td>Apache Mahout</td><td>0.9.0</td><td>0.9.0</td><td></td><td></td></tr>
-<tr><td>Apache Phoenix</td><td>4.2.0</td><td>4.0.0.2.1.7.0-2162</td><td></td><td></td></tr>
+<tr><th>组件</th><th>HDInsight 版本 3.3</th><th>HDInsight 版本 3.2</th><th>HDInsight 版本 3.1（默认）</th><th>HDInsight 版本 3.0</th><th>HDInsight 版本 2.1</th></tr>
+<tr><td>Hortonworks 数据平台</td><td>2.3</td><td>2.2</td><td>2.1.7</td><td>2.0</td><td>1.3</td></tr>
+<tr><td>Apache Hadoop 和 YARN</td><td>2.7.1</td><td>2.6.0</td><td>2.4.0</td><td>2.2.0</td><td>1.2.0</td></tr>
+<tr><td>Apache Tez</td><td>0.7.0</td><td>0.5.2</td><td>0.4.0</td><td></td><td></td></tr>
+<tr><td>Apache Pig</td><td>0.15.0</td><td>0.14.0</td><td>0.12.1</td><td>0.12.0</td><td>0.11.0</td></tr>
+<tr><td>Apache Hive 和 HCatalog</td><td>1.2.1</td><td>0.14.0</td><td>0.13.1</td><td>0.12.0</td><td>0.11.0</td></tr>
+<tr><td>Apazhe HBase </td><td>1.1.1</td><td>0.98.4</td><td>0.98.0</td><td></td><td></td></tr>
+<tr><td>Apache Sqoop</td><td>1.4.6</td><td>1.4.5</td><td>1.4.4</td><td>1.4.4</td><td>1.4.3</td></tr>
+<tr><td>Apache Oozie</td><td>4.2.0</td><td>4.1.0</td><td>4.0.0</td><td>4.0.0</td><td>3.3.2</td></tr>
+<tr><td>Apache Zookeeper</td><td>3.4.6</td><td>3.4.6</td><td>3.4.5</td><td>3.4.5</td><td></td></tr>
+<tr><td>Apache Storm</td><td>0.10.0</td><td>0.9.3</td><td>0.9.1</td><td></td><td></td></tr>
+<tr><td>Apache Mahout</td><td>0.9.0+</td><td>0.9.0</td><td>0.9.0</td><td></td><td></td></tr>
+<tr><td>Apache Phoenix</td><td>4.4.0</td><td>4.2.0</td><td>4.0.0.2.1.7.0-2162</td><td></td><td></td></tr>
 </table>
 
 
@@ -51,7 +51,7 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 如果你使用“快速创建”选项，则在默认情况下将获得 HDInsight 的 3.1 版本用于创建 Hadoop 群集。如果在 Azure 经典管理门户中使用“自定义创建”选项，可以从“群集详细信息”页上的“HDInsight 版本”下拉列表中选择要部署的群集版本。
 
-##功能特点
+## 功能特点
 HDInsight 平台的一些突出功能包括：
 
 
@@ -94,6 +94,7 @@ HDInsight 平台的一些突出功能包括：
 
 <table border="1"> 
 <tr><th>HDInsight 版本</th><th>HDP 版本</a><th>高可用性</th></th><th>发行日期</th><th>可在 Azure 经典管理门户中使用</th><th>支持过期日期</th><th>弃用日期</th></tr> 
+<tr><td>HDI 3.3</td><td>HDP 2.3</td><td>是</td><td>12/02/2015</td><td>是</td><td></td><td></td></tr> 
 <tr><td>HDI 3.2</td><td>HDP 2.2</td><td>是</td><td>2/18/2015</td><td>是</td><td></td><td></td></tr> 
 <tr><td>HDI 3.1</td><td>HDP 2.1</td><td>是</td><td>6/24/2014</td><td>是</td><td></td><td></td></tr> 
 <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>是</td><td>02/11/2014</td><td>是</td><td>09/17/2014</td><td>06/30/2015</td></tr> 

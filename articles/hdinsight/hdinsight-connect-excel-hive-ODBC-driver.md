@@ -13,7 +13,7 @@
 	ms.date="04/28/2016"
 	wacn.date="06/29/2016"/>
 
-#使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
+# 使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
 
 [AZURE.INCLUDE [ODBC-JDBC-selector](../../includes/hdinsight-selector-odbc-jdbc.md)]
 
@@ -30,15 +30,13 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 - 装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的**工作站**。
 
 
-<a id="InstallHiveODBCDriver"></a>
-##安装 Microsoft Hive ODBC 驱动程序
+## <a id="InstallHiveODBCDriver"></a>安装 Microsoft Hive ODBC 驱动程序
 
 从[下载中心][hive-odbc-driver-download]下载并安装 Microsoft Hive ODBC 驱动程序。
 
 此驱动程序可以安装在 32 位或 64 位版本的 Windows 7、Windows 8、Windows 10、Windows Server 2008 R2 和 Windows Server 2012 上，并将允许连接到 Azure HDInsight（1.6 及更高版本）和 Azure HDInsight Emulator（1.0.0.0 及更高版本）。你应安装与你将在其中使用 ODBC 驱动程序的应用程序版本匹配的版本。在本教程中，将通过 Office Excel 使用此驱动程序。
 
-<a id="CreateHiveODBCDataSource"></a>
-##创建 Hive ODBC 数据源
+## <a id="CreateHiveODBCDataSource"></a>创建 Hive ODBC 数据源
 
 下列步骤演示如何创建 Hive ODBC 数据源。
 
@@ -52,27 +50,25 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 
 5. 键入或选择以下值：
 
-	属性|说明
-	---|---
-	数据源名称|为你的数据源提供名称
-	主机|输入 &lt;HDInsightClusterName>.azurehdinsight.cn。例如 myHDICluster.azurehdinsight.cn
-	端口|使用 <strong>443</strong>。（此端口已从 563 更改为 443。）
-	数据库|使用“默认”。<strong></strong>
-	Hive 服务器类型|选择“Hive Server 2”<strong></strong>
-	机制|选择“Azure HDInsight 服务”<strong></strong>
-	HTTP 路径|将此字段留空。
-	用户名|输入 HDInsight 群集用户的用户名。这是在群集设置过程中创建的用户名。如果你使用了“快速创建”选项，则默认用户名是 <strong>admin</strong>。
-	密码|输入 HDInsight 群集用户的密码。
-	</table>
+	|	属性|说明|
+	|------|-------------|
+	|	数据源名称|为你的数据源提供名称|
+	|	主机|输入 &lt;HDInsightClusterName>.azurehdinsight.cn。例如 myHDICluster.azurehdinsight.cn|
+	|	端口|使用 <strong>443</strong>。（此端口已从 563 更改为 443。）|
+	|	数据库|使用<strong>“默认”</strong>。|
+	|	Hive 服务器类型|选择<strong>“Hive Server 2”</strong>|
+	|	机制|选择<strong>“Azure HDInsight 服务”</strong>|
+	|	HTTP 路径|将此字段留空。|
+	|	用户名|输入 HDInsight 群集用户的用户名。这是在群集设置过程中创建的用户名。如果你使用了“快速创建”选项，则默认用户名是 <strong>admin</strong>。|
+	|	密码|输入 HDInsight 群集用户的密码。|
 
 	在单击“高级选项”时，有一些重要参数要注意：
 
-	参数|说明
-	---|---
-	使用本机查询|选择此项时，ODBC 驱动程序将不会尝试将 TSQL 转换为 HiveQL。仅当你 100% 确定提交的是纯 HiveQL 语句时，才应使用此项。连接 SQL Server 或 Azure SQL 数据库时，应将此项保留为未选中状态。
-	每块提取的行数|提取大量记录时，可能需要调整此参数以确保最佳性能。
-	默认字符串列长度、二进制列长度、十进制列小数位数|数据类型长度和精度可能会影响返回数据的方式。由于精度损失和/或截断，可能会返回不正确的信息。
-
+	|	参数|说明|
+	|-------|---------|
+	|	使用本机查询|选择此项时，ODBC 驱动程序将不会尝试将 TSQL 转换为 HiveQL。仅当你 100% 确定提交的是纯 HiveQL 语句时，才应使用此项。连接 SQL Server 或 Azure SQL 数据库时，应将此项保留为未选中状态。|
+	|	每块提取的行数|提取大量记录时，可能需要调整此参数以确保最佳性能。|
+	|	默认字符串列长度、二进制列长度、十进制列小数位数|数据类型长度和精度可能会影响返回数据的方式。由于精度损失和/或截断，可能会返回不正确的信息。|
 
 	![Advanced options][img-HiveOdbc-DataSource-AdvancedOptions]
 
@@ -80,8 +76,7 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 7. 单击“确定”关闭“测试”对话框。现在，新的数据源应该在“ODBC 数据源管理器”中列出。
 8. 单击“确定”退出向导。
 
-<a id="ImportData"></a>
-##将 HDInsight 群集中的数据导入到 Excel 中
+## <a id="ImportData"></a>将 HDInsight 群集中的数据导入到 Excel 中
 
 下列步骤介绍如何使用在上述步骤中创建的 ODBC 数据源将数据从 Hive 表中导入到 Excel 工作簿。
 
@@ -106,8 +101,7 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 12. 单击“确定”关闭“导入数据”对话框。  
 13. 重新输入密码，然后单击“确定”。需要几秒钟时间才能将数据导入到 Excel 中。
 
-<a id="nextsteps"></a>
-##后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 在本文中，你已了解如何使用 Microsoft Hive ODBC 驱动程序将来自 HDInsight 服务的数据检索到 Excel 中。同样地，你也可以将来自 HDInsight 服务的数据检索到 SQL 数据库中。也可以将数据上载到 HDInsight 服务中。若要了解更多信息，请参阅以下文章：
 
