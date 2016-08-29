@@ -17,7 +17,7 @@
 
 使用本文中的任务在虚拟机规模集中管理虚拟机。
 
-执行所有涉及到在规模集中管理虚拟机的任务时，要求您知道要管理的虚拟机的实例 ID。可使用 [Azure 资源浏览器](https://resources.azure.com)查找规模集中的虚拟机的实例 ID。此外还可以使用资源浏览器来验证完成任务的状态。
+执行所有涉及到在规模集中管理虚拟机的任务时，要求您知道要管理的虚拟机的实例 ID。
 
 有关如何安装最新版 Azure PowerShell、选择要使用的订阅和登录到 Azure 帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 

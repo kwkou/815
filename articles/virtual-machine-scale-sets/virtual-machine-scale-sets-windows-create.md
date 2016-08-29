@@ -293,7 +293,6 @@
 使用这些资源来浏览刚才创建的虚拟机规模集：
 
 - Azure 门户预览 - 使用门户可以获取有限数量的信息。
-- [Azure 资源浏览器](https://resources.azure.com/) - 要浏览缩放集的当前状态，这是最好的工具。
 - Azure PowerShell - 使用此命令可获取信息：
 
         Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name"
@@ -307,6 +306,5 @@
 
 - 使用[在虚拟机规模集中管理虚拟机](/documentation/articles/virtual-machine-scale-sets-windows-manage/)中的信息管理刚刚创建的规模集
 - 请考虑使用[自动缩放和虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-autoscale-overview/)中的信息设置规模集的自动缩放
-- 若要了解有关垂直缩放的详细信息，请参阅[虚拟机规模集的垂直缩放](/documentation/articles/virtual-machine-scale-sets-vertical-scale-reprovision/)
 
 <!---HONumber=Mooncake_0822_2016-->

@@ -81,7 +81,7 @@ VPN 网关是设置的集合，这些设置用于在虚拟网络和本地位置�
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
-##  <a name="requirements"></a>网关要求
+##  <a name="requirements" id="gateway-requirements"></a>网关要求
 
 [AZURE.INCLUDE [vpn-gateway-table-requirements](../../includes/vpn-gateway-table-requirements-include.md)]
 

@@ -46,7 +46,7 @@
 
     请尝试使用不同的“容量”设置重新部署 VM 规模集资源，以手动更改 VM 的数目。此处是一个用于执行此操作的示例模板：https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing - 可能需要编辑模板以确保其虚拟机大小和您的规模集正在使用的相同。如果成功手动更改 VM 数目，则可知该问题与自动缩放无关。
 
-- 检查Microsoft.Compute/virtualMachineScaleSet 和 [Azure Resource Explorer](https://resources.azure.com/) 中的 Microsoft.Insights 资源
+- 检查Microsoft.Compute/virtualMachineScaleSet
 
     这是一个不可或缺的疑难解答工具，它显示 Azure Resource Manager 资源的状态。单击您的订阅并查看您要对其进行故障排除的资源组。在计算资源提供程序下查看您创建的 VM 规模集并检查实例视图，它显示部署的状态。此外还应检查 VM 规模集中 VM 的实例视图。然后，转到 Microsoft.Insights 资源提供程序并检查自动缩放规则是否一切正常。
 
@@ -64,9 +64,9 @@
 
 	![存储表][tables]
 
-    如果数据不存在，则意味着问题与在 VM 中运行的诊断扩展相关。如果数据存在，则意味着问题与缩放规则或 Insights 服务相关。检查 [Azure 状态](https://azure.microsoft.com/status/)。
+    如果数据不存在，则意味着问题与在 VM 中运行的诊断扩展相关。如果数据存在，则意味着问题与缩放规则或 Insights 服务相关。
 
-    完成这些步骤后，可以尝试访问 [MSDN](https://social.msdn.microsoft.com/forums/azure/home?category=windowsazureplatform%2Cazuremarketplace%2Cwindowsazureplatformctp) 上的论坛或 [Stack Overflow](http://stackoverflow.com/questions/tagged/azure)，或者电话联系支持人员。准备共享模板和性能数据的视图。
+    完成这些步骤后，可以尝试访问 [MSDN](https://social.msdn.microsoft.com/forums/azure/home?category=windowsazureplatform%2Cazuremarketplace%2Cwindowsazureplatformctp) 上的论坛或 [CSDN Azure](http://azure.csdn.net/)，或者电话联系支持人员。准备共享模板和性能数据的视图。
 
 [audit]: ./media/virtual-machine-scale-sets-troubleshoot/image3.png
 [explorer]: ./media/virtual-machine-scale-sets-troubleshoot/image1.png
