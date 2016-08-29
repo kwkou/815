@@ -8,8 +8,8 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="06/30/2016"
- wacn.date="08/01/2016"/>
+ ms.date="08/10/2016"
+ wacn.date="08/29/2016"/>
 
 # Azure 经典管理门户中的 Azure 计划程序入门
 
