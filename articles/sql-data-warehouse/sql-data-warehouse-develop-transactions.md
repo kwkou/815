@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/11/2016"
-   wacn.date="08/01/2016"/>
+   ms.date="07/31/2016"
+   wacn.date="08/29/2016"/>
 
 # SQL 数据仓库中的事务
 
@@ -52,36 +52,12 @@ SQL 数据仓库实现 ACID 事务。但是，事务支持的隔离仅限于 `RE
 ## 事务状态
 SQL 数据仓库使用 XACT\_STATE() 函数（采用值 -2）来报告失败的事务。这表示事务已失败并标记为仅可回滚
 
-> [AZURE.NOTE] XACT\_STATE 函数使用 -2 表示失败的事务，以代表 SQL Server 中不同的行为。SQL Server 使用值 -1 来代表无法提交的事务。SQL Server 可以容忍事务内的某些错误，而无需将其标记为无法提交。例如，SELECT 1/0 导致错误，但不强制事务进入无法提交状态。SQL Server 还允许读取无法提交的事务。但是，在 SQLDW 中，情况并非如此。如果 SQLDW 事务内发生错误，它就会自动进入 -2 状态：包括 SELECT 1/0 错误。因此，必须查看应用程序代码是否使用 XACT\_STATE()。
+> [AZURE.NOTE] XACT\_STATE 函数使用 -2 表示失败的事务，以代表 SQL Server 中不同的行为。SQL Server 使用值 -1 来代表无法提交的事务。SQL Server 可以容忍事务内的某些错误，而无需将其标记为无法提交。例如，`SELECT 1/0` 导致错误，但不强制事务进入无法提交状态。SQL Server 还允许读取无法提交的事务。但是，SQL 数据仓库不允许执行此操作。如果 SQL 数据仓库事务内部发生错误，它将自动进入 -2 状态，并且在该语句回退之前，您无法执行任何 Select 语句。因此，必须查看应用程序代码是否使用 XACT\_STATE()，因为您可能需要修改代码。
 
-在 SQL Server 中，你可能会看到如下所示的代码片段：
+例如，在 SQL Server 中，您可能会看到如下所示的事务：
 
-
-	BEGIN TRAN
-	    BEGIN TRY
-	        DECLARE @i INT;
-	        SET     @i = CONVERT(int,'ABC');
-	    END TRY
-	    BEGIN CATCH
-
-	        DECLARE @xact smallint = XACT_STATE();
-
-	        SELECT  ERROR_NUMBER()    AS ErrNumber
-	        ,       ERROR_SEVERITY()  AS ErrSeverity
-	        ,       ERROR_STATE()     AS ErrState
-	        ,       ERROR_PROCEDURE() AS ErrProcedure
-	        ,       ERROR_MESSAGE()   AS ErrMessage
-	        ;
-
-	        ROLLBACK TRAN;
-
-	    END CATCH;
-
-
-请注意，`SELECT` 语句出现在 `ROLLBACK` 语句的前面。另外请注意，`@xact` 变量的设置使用 DECLARE 而非 `SELECT`。
-
-在 SQL 数据仓库中，代码需如下所示：
-
+	SET NOCOUNT ON;
+	DECLARE @xact_state smallint = 0;
 
 	BEGIN TRAN
 	    BEGIN TRY
@@ -90,10 +66,56 @@ SQL 数据仓库使用 XACT\_STATE() 函数（采用值 -2）来报告失败的�
 	    END TRY
 	    BEGIN CATCH
 
-	        ROLLBACK TRAN;
+        	SET @xact_state = XACT_STATE();
+	
+	        SELECT  ERROR_NUMBER()    AS ErrNumber
+	        ,       ERROR_SEVERITY()  AS ErrSeverity
+	        ,       ERROR_STATE()     AS ErrState
+	        ,       ERROR_PROCEDURE() AS ErrProcedure
+	        ,       ERROR_MESSAGE()   AS ErrMessage
+	        ;
 
-	        DECLARE @xact smallint = XACT_STATE();
+	        IF @@TRANCOUNT > 0
+	        BEGIN
+	            PRINT 'ROLLBACK';
+	            ROLLBACK TRAN;
+	        END
+	
+	    END CATCH;
+	
+	IF @@TRANCOUNT >0
+	BEGIN
+	    PRINT 'COMMIT';
+	    COMMIT TRAN;
+	END
+	
+	SELECT @xact_state AS TransactionState;
 
+如果将代码按如上所示保持原样，会获得以下错误消息：
+
+Msg 111233, Level 16, State 1, Line 1 111233；当前事务已中止，所有挂起的更改都已回退。原因：仅回退状态的事务未在 DDL、DML 或 SELECT 语句之前显式回退。
+
+您也不会获得 ERROR\_* 函数的输出值。
+
+在 SQL 数据仓库中，该代码需要稍做更改：
+
+	SET NOCOUNT ON;
+	DECLARE @xact_state smallint = 0;
+		
+	BEGIN TRAN
+	    BEGIN TRY
+	        DECLARE @i INT;
+	        SET     @i = CONVERT(int,'ABC');
+	    END TRY
+	    BEGIN CATCH
+	        SET @xact_state = XACT_STATE();
+        		
+	        IF @@TRANCOUNT > 0
+	        BEGIN
+	            PRINT 'ROLLBACK';
+	            ROLLBACK TRAN;
+	        END
+	
 	        SELECT  ERROR_NUMBER()    AS ErrNumber
 	        ,       ERROR_SEVERITY()  AS ErrSeverity
 	        ,       ERROR_STATE()     AS ErrState
@@ -101,11 +123,18 @@ SQL 数据仓库使用 XACT\_STATE() 函数（采用值 -2）来报告失败的�
 	        ,       ERROR_MESSAGE()   AS ErrMessage
 	        ;
 	    END CATCH;
+	
+	IF @@TRANCOUNT >0
+	BEGIN
+	    PRINT 'COMMIT';
+	    COMMIT TRAN;
+	END
+	
+	SELECT @xact_state AS TransactionState;
 
-	SELECT @xact;
+现在观察到了预期行为。事务中的错误得到了管理，并且 ERROR\_* 函数提供了预期值。
 
-
-请注意，事务的回滚必须发生于在 `CATCH` 块中读取错误信息之前。
+所做的一切改变是事务的 `ROLLBACK` 必须发生于在 `CATCH` 块中读取错误信息之前。
 
 ## Error\_Line() 函数
 另外值得注意的是，SQL 数据仓库不实现或支持 ERROR\_LINE() 函数。如果你的代码中包含此函数，需要将它删除才能符合 SQL 数据仓库的要求。请在代码中使用查询标签，而不是实现等效的功能。有关此功能的详细信息，请参阅 [LABEL][] 一文。
@@ -125,6 +154,8 @@ SQL 数据仓库有一些与事务相关的其他限制。
 - 无分布式事务
 - 不允许嵌套事务
 - 不允许保存点
+- 无已命名事务
+- 无已标记事务
 - 不支持 DDL，如用户定义的事务内的 `CREATE TABLE`
 
 ## 后续步骤
@@ -143,4 +174,4 @@ SQL 数据仓库有一些与事务相关的其他限制。
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0822_2016-->

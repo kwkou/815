@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/11/2016"
-   wacn.date="08/08/2016"/>
+   ms.date="07/20/2016"
+   wacn.date="08/29/2016"/>
 
 # 使用 PowerShell 创建 SQL 数据仓库
 
@@ -18,48 +18,51 @@
 - [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)
 
-## 先决条件
-在开始之前，请确保符合以下先决条件。
+本文说明如何使用 PowerShell 创建 SQL 数据仓库。
 
-- **Azure 帐户**：若要创建帐户，请参阅 [Azure 试用版][]或 [MSDN Azure 信用额度][]。
-- **V12 Azure SQL Server**：请参阅[使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器][]或[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器][]。
-- **资源组名称**：若要创建新的资源组，可使用同一资源组作为 V12 Azure SQL Server，或参阅[资源组][]。
+## 先决条件
+
+若要开始，您需要：
+
+- **Azure 帐户**：访问 [Azure 试用版][]，以创建帐户。
+- **Azure SQL Server**：有关详细信息，请参阅[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器][]或[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器][]。
+- **资源组**：可使用同一资源组作为 Azure SQL Server，或参阅[如何创建资源组][]。
 - **PowerShell 1.0.3 或更高版本**：可以通过运行 **Get-Module -ListAvailable -Name Azure** 来检查版本。可以通过 [Microsoft Web 平台安装程序][]安装最新版本。有关安装最新版本的详细信息，请参阅[如何安装和配置 Azure PowerShell][]。
 
 > [AZURE.NOTE] 创建新的 SQL 数据仓库可能会导致新的计费服务。有关定价的详细信息，请参阅 [SQL 数据仓库定价][]。
 
 ## 创建 SQL 数据仓库
+
 1. 打开 Windows PowerShell。
 2. 运行此 cmdlet 以登录到 Azure Resource Manager 中。
 
-	    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 	
 3. 选择要用于当前会话的订阅。
 
 
-	    Get-AzureRmSubscription -SubscriptionName "MySubscription" | Select-AzureRmSubscription
+		Get-AzureRmSubscription	-SubscriptionName "MySubscription" | Select-AzureRmSubscription
 
 
-4.  创建数据库。此示例将在名为“mywesteuroperesgp1”的资源组中的名为“sqldwserver1”的服务器中创建一个名为“mynewsqldw”且服务目标级别为“DW400”的新数据库。**注意：创建新的 SQL 数据仓库数据库可能会导致新的计费费用。有关定价的更多详细信息，请参阅 [SQL 数据仓库定价][]。**
+4.  创建数据库。此示例将在名为“mywesteuroperesgp1”的资源组中的名为“sqldwserver1”的服务器中创建一个名为“mynewsqldw”且服务目标级别为“DW400”的新数据库。**注意：创建新的 SQL 数据仓库数据库可能会导致新的计费费用。有关定价的详细信息，请参阅 [SQL 数据仓库定价][]。**
 
 
-	    New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "mynewsqldw" -ServerName "sqldwserver1" -ResourceGroupName "mywesteuroperesgp1" -Edition "DataWarehouse"
+		New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "mynewsqldw" -ServerName "sqldwserver1" -ResourceGroupName "mywesteuroperesgp1" -Edition "DataWarehouse"
 
 
 此 cmdlet 所需的参数：
 
-- **RequestedServiceObjectiveName**：请求的 [DWU][] 数量。支持的值包括：DW100、DW200、DW300、DW400、DW500、DW600、DW1000、DW1200、DW1500、DW2000、DW3000 和 DW6000。
+- **RequestedServiceObjectiveName**：请求的 [DWU][] 的数量。支持的值包括：DW100、DW200、DW300、DW400、DW500、DW600、DW1000、DW1200、DW1500、DW2000、DW3000 和 DW6000。
 - **DatabaseName**：要创建的 SQL 数据仓库的名称。
 - **ServerName**：用于创建过程的服务器名称（必须是 V12）。
 - **ResourceGroupName**：要使用的资源组。若要查找订阅中可用的资源，请使用 Get-AzureResource。
 - **Edition**：必须将版本设置为“DataWarehouse”才能创建 SQL 数据仓库。
 
-有关参数选项的更多详细信息，请参阅[创建数据库（Azure SQL 数据仓库）][]。
-有关命令参考，请参阅 [New-AzureRmSqlDatabase][]。
+有关参数选项的更多详细信息，请参阅[创建数据库（Azure SQL 数据仓库）][]。有关命令参考，请参阅 [New-AzureRmSqlDatabase][]
 
 ## 后续步骤
 
-完成 SQL 数据仓库预配之后，你可能想要尝试 [加载示例数据][] 或了解如何[开发][]、[加载][]或[迁移][]数据。
+完成 SQL 数据仓库预配之后，您可能想要尝试 [加载示例数据][] 或了解如何[开发][]、[加载][]或[迁移][]数据。
 
 如果有兴趣进一步了解如何以编程方式管理 SQL 数据仓库，请查看我们有关如何使用 [PowerShell cmdlet 和 REST API][] 的文章。
 
@@ -70,16 +73,15 @@
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-load-with-bcp/
-[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[load sample data]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [Powershell]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 [firewall rules]: /documentation/articles/sql-database-configure-firewall-settings/
-[owerShell cmdlet 和 REST API]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets
 
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [how to create a SQL Data Warehouse from the Azure Portal]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started#create-an-azure-sql-database-logical-server/
 [使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell#database-setup-create-a-resource-group-server-and-firewall-rule/
-[资源组]: /documentation/articles/resource-group-portal/
+[resource groups]: /documentation/articles/resource-group-portal/
 
 <!--MSDN references--> 
 [MSDN]: https://msdn.microsoft.com/zh-cn/library/azure/dn546722.aspx
@@ -89,7 +91,7 @@
 <!--Other Web references-->
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 [SQL 数据仓库定价]: /pricing/details/sql-data-warehouse/
-[Azure 试用版]: /pricing/1rmb-trial/
-[MSDN Azure 信用额度]: /pricing/member-offers/
+[Azure 试用版]: /pricing/free-trial/?WT.mc_id=A261C142F
+[MSDN Azure 信用额度]: /pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0822_2016-->
