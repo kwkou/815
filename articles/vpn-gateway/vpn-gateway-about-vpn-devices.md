@@ -6,31 +6,30 @@
    authors="cherylmc"
    manager="carmonm"
    editor=""
-  tags="azure-resource-manager, azure-service-management"/>  
-
+  tags="azure-resource-manager, azure-service-management"/>
 <tags
 	ms.service="vpn-gateway"
-	ms.date="06/29/2016"
-	wacn.date="08/22/2016"/>  
+	ms.date="08/10/2016"
+	wacn.date="08/29/2016"/>  
 
 
 # 关于站点到站点 VPN 网关连接的 VPN 设备
 
 配置站点到站点 (S2S) VPN 连接需要用到 VPN 设备。在创建混合解决方案时，或者每当你想要在本地网络与虚拟网络之间建立安全连接时，可以使用站点到站点连接。本文介绍兼容的 VPN 设备和配置参数。请注意，配置站点到站点连接时，需要为你的 VPN 设备提供面向公众的 IPv4 IP 地址。
 
-如果你的设备没有出现在“已验证 VPN 设备”表中，请参阅本文的“非验证 VPN 设备”部分。你的设备仍可能兼容 Azure。如需 VPN 设备支持，请联系你的设备制造商。
+如果您的设备没有出现在[已验证的 VPN 设备](#devicetable)表中，请参阅本文的[非验证的 VPN 设备](#additionaldevices)部分。你的设备仍可能兼容 Azure。如需 VPN 设备支持，请联系你的设备制造商。
 
 **查看表时的注意事项：**
 
 - 静态和动态路由的术语已更改。这两个术语你可能都会碰到。无功能性更改，只是名称进行了更改。
 	- 静态路由 = 基于策略
 	- 动态路由 = 基于路由
-- 除非另有说明，否则高性能 VPN 网关和基于路由的 VPN 网关的规范是相同的。例如，与基于路由的 VPN 网关兼容的已验证 VPN 设备也与新的 Azure 高性能 VPN 网关兼容。
+- 除非另有说明，否则高性能 VPN 网关和基于路由的 VPN 网关的规范是相同的。例如，与基于路由的 VPN 网关兼容的已验证的 VPN 设备也与 Azure 高性能 VPN 网关相兼容。
 
 
-## 已验证的 VPN 设备 
+## <a name="devicetable"></a>已验证的 VPN 设备 
 
-我们在与设备供应商合作的过程中验证了一系列的标准 VPN 设备。下面的列表中包含的设备系列中的所有设备都应适用于 Azure VPN 网关。请参阅 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)这一文章，以确定你需要为所要配置的解决方案创建哪种网关类型。
+我们在与设备供应商合作的过程中验证了一系列的标准 VPN 设备。以下列表中包含的设备系列中的所有设备都应适用于 Azure VPN 网关。请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)以确定需要为要配置的解决方案创建的网关类型。
 
 若要获取配置 VPN 设备的帮助，请参考对应于各设备系列的链接。
 
@@ -45,11 +44,11 @@
 | 检查点 | 安全网关 | R75.40、R75.40VS | [配置说明](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) | [配置说明](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
 | Cisco | ASA | 8\.3 | [Cisco 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASA) | 不兼容 |
 | Cisco | ASR | IOS 15.1（基于策略）、IOS 15.2（基于路由） | [Cisco 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASR) | [Cisco 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASR) |
-| Cisco | ISR | IOS 15.0（基于策略）、IOS 15.1（基于路由\*） | [Cisco 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR) | [Cisco 示例\*](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR) |
-| Citrix | CloudBridge MPX 设备或 VPX 虚拟设备 | 不适用 | [集成说明](https://www.citrix.com/welcome.html?resource=%2Fdownloads%2Fcloudbridge%2Fbetas-and-tech-previews%2Fcloudbridge-azure-integration) | 不兼容 |
+| Cisco | ISR | IOS 15.0（基于策略）、IOS 15.1（基于路由*） | [Cisco 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR) | [Cisco 示例*](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR) |
+| Citrix | NetScaler MPX，SDX，VPX |10\.1 及以上 | [集成说明](https://docs.citrix.com/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) | 不兼容 |
 | Dell SonicWALL | TZ 系列、NSA 系列、SuperMassive 系列、E 类 NSA 系列 | SonicOS 5.8.x、[SonicOS 5.9.x](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide/supported-platforms?ParentProduct=850)、[SonicOS 6.x](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide/supported-platforms?ParentProduct=646) | [说明 - SonicOS 6.2](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646) [说明 - SonicOS 5.9](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850) | [说明 - SonicOS 6.2](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646) [说明 - SonicOS 5.9](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850) |
 | F5 | BIG-IP 系列 | 不适用 | [配置说明](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) | 不兼容 |
-| Fortinet | FortiGate | FortiOS 5.0.7 | [配置说明](http://docs.fortinet.com/d/fortigate-configuring-ipsec-vpn-between-a-fortigate-and-microsoft-azure) | [配置说明](http://docs.fortinet.com/d/fortigate-configuring-ipsec-vpn-between-a-fortigate-and-microsoft-azure) |
+| Fortinet | FortiGate | FortiOS 5.2.7 | [配置说明](http://docs.fortinet.com/d/fortigate-configuring-ipsec-vpn-between-a-fortigate-and-microsoft-azure) | [配置说明](http://docs.fortinet.com/d/fortigate-configuring-ipsec-vpn-between-a-fortigate-and-microsoft-azure) |
 | Internet Initiative Japan (IIJ) | SEIL 系列 | SEIL/X 4.60、SEIL/B1 4.60、SEIL/x86 3.20 | [配置说明](http://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) | 不兼容 |
 | Juniper | SRX | JunOS 10.2（基于策略）、JunOS 11.4（基于路由） | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SRX) | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SRX) |
 | Juniper | J 系列 | JunOS 10.4r9（基于策略）、JunOS 11.4（基于路由） | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/JSeries) | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/JSeries) |
@@ -63,8 +62,7 @@
 
 (*) ISR 7200 系列路由器仅支持基于策略的 VPN。
 
-
-## <a name="devices-not-on-the-compatible-list"></a> 未验证的 VPN 设备
+## <a name="additionaldevices"></a>非验证的 VPN 设备
 
 如果你没有看到你的设备列在“已验证的 VPN 设备”表（见上）中，该设备仍有可能适用于站点到站点连接。请确保你的 VPN 设备符合[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/#gateway-requirements)一文“网关要求”部分列出的最低要求。满足最低要求的设备也应该兼容 VPN 网关。请联系你的设备制造商了解更多支持和配置说明。
 
@@ -76,7 +74,7 @@
 **编辑示例的步骤：**
 
 1. 使用记事本打开示例。
-1. 搜索所有 < text > 字符串并将其替换为与你的环境相关的值。请确保包含 < 和 >。指定名称时，你选择的名称应是唯一的。如果命令无效，请查看你的设备制造商文档。
+1. 搜索所有 <*text*> 字符串并将其替换为与你的环境相关的值。请确保包含 < 和 >。指定名称时，你选择的名称应是唯一的。如果命令无效，请查看你的设备制造商文档。
 
 | **示例文本** | **更改为** |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -96,7 +94,7 @@
 
 ## IPsec 参数
 
->[AZURE.NOTE] 尽管 Azure VPN 网关支持下面列出的值，但你目前无法从 Azure VPN 网关中选择或指定特定的组合。你必须从本地 VPN 设备指定任何约束。此外，你必须将 MSS 固定在 1350。
+>[AZURE.NOTE] 尽管 Azure VPN 网关支持下表中列出的值，但您目前无法从 Azure VPN 网关中选择或指定特定的组合。你必须从本地 VPN 设备指定任何约束。此外，你必须将 MSS 固定在 1350。
 
 ### IKE 阶段 1 设置
 
@@ -118,8 +116,8 @@
 | 哈希算法 | SHA1(SHA128) | SHA1(SHA128) |
 | 阶段 2 安全关联 (SA) 生命周期（时间） | 3,600 秒 | 3,600 秒 |
 | 阶段 2 安全关联 (SA) 生命周期（吞吐量）| 102,400,000 KB | - |
-| IPsec SA 加密和身份验证产品（按偏好顺序列出）| 1.ESP-AES256 2.ESP-AES128 3.ESP-3DES 4.N/A | 请参阅基于路由的网关 IPsec 安全关联 (SA) 产品（见下）|
-| 完全向前保密 (PFS) | 否 | 是 (DH Group1, 2, 5, 14, 24) | 
+| IPsec SA 加密和身份验证产品（按偏好顺序列出）| 1.ESP-AES256 2.ESP-AES128 3.ESP-3DES 4.N/A | 请参阅*基于路由的网关 IPsec 安全关联 (SA) 产品*（见下）|
+| 完全向前保密 (PFS) | 否 | 是 (DH Group1, 2, 5, 14, 24) |
 | 对等体存活检测 | 不支持 | 支持 |
 
 ### 基于路由的网关 IPsec 安全关联 (SA) 产品
@@ -148,8 +146,8 @@
 | 18 | - | AH MD5，无生命周期 |
 
 
-- 你可以对基于路由的高性能 VPN 网关指定 IPsec ESP NULL 加密。基于 Null 的加密不对传输中的数据提供保护，仅应在需要最大吞吐量和最小延迟时才使用。客户端可以在 VNet 到 VNet 通信方案中选择使用此方法，或者要在解决方案中的其他位置应用加密时使用此方法。
+- 你可以对基于路由的高性能 VPN 网关指定 IPsec ESP NULL 加密。基于 Null 的加密不对传输中的数据提供保护，仅应在需要最大吞吐量和最小延迟时才使用。客户端可以在 VNet 到 VNet 通信方案中选择使用此方法，或者在解决方案中的其他位置应用加密时使用此方法。
 
 - adk 要通过 Internet 建立跨界连接，请使用默认的 Azure VPN 网关设置以及上表中列出的加密和哈希算法，以确保关键通信的安全性。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0822_2016-->

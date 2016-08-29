@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 自动化安全"
+   pageTitle="Azure 自动化安全性 | Azure"
    description="本文概述了 Azure 自动化中自动化帐户的自动化安全性以及可供使用的不同身份验证方法。"
    services="automation"
    documentationCenter=""
@@ -9,11 +9,10 @@
    keywords="自动化安全性, 安全的自动化" />
 <tags
 	ms.service="automation"
-	ms.date="07/06/2016"
-	wacn.date="08/11/2016"/>
+	ms.date="07/29/2016"
+	wacn.date="08/29/2016"/>
 
 # Azure 自动化安全性
-
 Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。为了使 Runbook 执行所需操作，Runbook 必须有权使用订阅中所需的最小权限来安全地访问资源。
 本文将介绍 Azure 自动化支持的各种身份验证方案，并介绍如何根据你需要管理的单个或多个环境来入门。
 
@@ -22,7 +21,7 @@ Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。�
 
 每个自动化帐户的自动化资源与单个 Azure 区域相关联，但自动化帐户可以管理任何区域中的资源。在不同区域中创建自动化帐户的主要原因是，你的策略要求数据和资源隔离到特定的区域。
 
-所有使用 Azure Resource Manager (ARM) 和 Azure 自动化中的 Azure cmdlet 对资源执行的任务必须使用 Azure Active Directory 组织标识基于凭据的身份验证向 Azure 进行身份验证。基于证书的身份验证是使用 Azure 服务管理 (ASM) 模式的原始身份验证方法，但是安装很复杂。在 2014 年引入了使用 Azure AD 用户向 Azure 进行身份验证，不仅简化了配置身份验证帐户的过程，也支持使用在 ASM 和 ARM 模式下均可使用的单个用户帐户向 Azure 进行非交互式身份验证的功能。
+所有使用 Azure Resource Manager 和 Azure 自动化中的 Azure cmdlet 对资源执行的任务必须使用 Azure Active Directory 组织标识基于凭据的身份验证向 Azure 进行身份验证。基于证书的身份验证是使用 Azure 服务管理模式的原始身份验证方法，但是安装很复杂。在 2014 年引入了使用 Azure AD 用户向 Azure 进行身份验证，不仅简化了配置身份验证帐户的过程，也支持使用在 Azure 资源管理器和经典资源模式下均可使用的单个用户帐户向 Azure 进行非交互式身份验证的功能。
 
 基于角色的访问控制在 ARM 模式下可用，以向 Azure AD 用户帐户和服务主体授予允许的操作，并对该服务主体进行身份验证。
 
@@ -32,7 +31,7 @@ Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。�
 
 方法 | 环境 | 文章
 ----------|----------|----------
-Azure AD 用户帐户 | Azure Resource Manager 和 Azure 服务管理 | [Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-sec-configure-aduser-account/)
-Azure AD 服务主体对象 | Azure Resource Manager  | -
+Azure AD 用户帐户 | Azure 资源管理器和 Azure 服务管理 | [Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-sec-configure-aduser-account/)
+Azure AD 服务主体对象 | Azure 资源管理器 | -
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0822_2016-->

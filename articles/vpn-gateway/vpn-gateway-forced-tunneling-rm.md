@@ -9,20 +9,21 @@
    tags="azure-resource-manager"/>
 <tags
 	ms.service="vpn-gateway"
-	ms.date="05/16/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="08/10/2016"
+	wacn.date="08/29/2016"/>  
+
 
 # 使用 Azure Resource Manager 部署模型配置强制隧道
 
 > [AZURE.SELECTOR]
-- [PowerShell - 服务管理](/documentation/articles/vpn-gateway-about-forced-tunneling/)
+- [PowerShell - 经典](/documentation/articles/vpn-gateway-about-forced-tunneling/)
 - [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-forced-tunneling-rm/)
 
 借助强制隧道，你可以通过站点到站点 VPN 隧道，将全部 Internet 绑定流量重定向或“强制”返回到本地位置，以进行检查和审核。这是很多企业 IT 策略的关键安全要求。
 
 没有强制隧道，来自 Azure 中虚拟机的 Internet 绑定流量会始终通过 Azure 网络基础设施直接连接到 Internet。没有该选项，您无法对流量进行检查或审核。未经授权的 Internet 访问可能会导致信息泄漏或其他类型的安全漏洞
 
-本文将引导你配置虚拟网络（通过使用 Resource Manager 部署模型创建）的强制隧道。
+本文将演示如何配置使用 Resource Manager 部署模型创建的虚拟网络的强制隧道。
 
 **关于 Azure 部署模型**
 
@@ -30,7 +31,7 @@
 
 **强制隧道的部署模型和工具**
 
-可以使用不同的工具在这两种部署模型中配置强制隧道连接。有关更多信息，请参见下表。我们将在由可用于此配置的新文章、新部署模型和其他工具时更新此表。当有文章可用时，我们将从表中直接链接到该文章。
+可为经典部署模型和 Resource Manager 部署模型配置强制隧道连接。有关详细信息，请参阅下表。我们将在由可用于此配置的新文章、新部署模型和其他工具时更新此表。当有文章可用时，我们将从表中直接链接到该文章。
 
 [AZURE.INCLUDE [vpn-gateway-table-forced-tunneling](../../includes/vpn-gateway-table-forcedtunnel-include.md)]
 
@@ -44,29 +45,29 @@
 
 在上面的示例中，前端子网没有使用强制隧道。前端子网中的工作负载可以继续直接接受并响应来自 Internet 的客户请求。中间层和后端子网会使用强制隧道。任何从这两个子网到 Internet 的出站连接将通过一个 S2S VPN 隧道重定向或强制返回到本地站点。
 
-这样，在继续支持所需的多层服务体系结构的同时，你可以限制并检查来自虚拟机或 Azure 云服务的 Internet 访问。如果在虚拟网络中没有面向 Internet 的工作负载，您还可以选择在整个虚拟网络应用强制隧道连接。
+这样，在继续支持所需的多层服务体系结构的同时，你可以限制并检查来自虚拟机或 Azure 云服务的 Internet 访问。如果在虚拟网络中没有面向 Internet 的工作负荷，也能选择对整个虚拟网络应用强制隧道连接。
 
 ## 要求和注意事项
 
 在 Azure 中，通过虚拟网络用户定义路由配置强制隧道。将流量重定向到本地站点，这是 Azure VPN 网关的默认路由。有关用户定义路由和虚拟网络的详细信息，请参阅[用户定义路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview/)。
 
-- 每个虚拟网络子网具有内置的系统路由表。系统路由表具有下面的 3 组路由：
+- 每个虚拟网络子网具有内置的系统路由表。系统路由表具有以下三组路由：
 
 	- **本地 VNet 路由：**直接路由到同一个虚拟网络中的目标虚拟机
 	
 	- **本地路由：**路由到 Azure VPN 网关
 	
-	- **默认路由：**直接路由到 Internet。请注意，如果要将数据包发送到不包含在前面两个路由中的专用 IP 地址，数据包将被删除。
+	- **默认路由：**直接路由到 Internet。如果要将数据包发送到不包含在前面两个路由中的专用 IP 地址，数据包将被删除。
 
 -  此过程使用用户定义路由 (UDR) 来创建路由表以添加默认路由，然后将路由表关联到 VNet 子网，在这些子网启用强制隧道。
 
 - 强制隧道必须关联到具有基于路由的 VPN 网关的 VNet。您需要在连接到虚拟网络的跨界本地站点中，设置一个“默认站点”。
 
-- 请注意，ExpressRoute 强制隧道不是通过此机制配置的，而是通过 ExpressRoute BGP 对等会话播发默认路由来启用的。有关详细信息，请参阅 [ExpressRoute 文档](/documentation/services/expressroute/)。
+- ExpressRoute 强制隧道不是通过此机制配置的，而是通过 ExpressRoute BGP 对等会话播发默认路由来启用的。有关详细信息，请参阅 [ExpressRoute 文档](/documentation/services/expressroute/)。
 
 ## 配置概述
 
-下面的过程将帮助你创建资源组和 VNet。然后，你将创建 VPN 网关，并配置强制隧道。在此过程中，虚拟网络“MultiTier-VNet”具有 3 个子网：前端、中间层和后端，具有 4 个跨界连接：一个 *DefaultSiteHQ* 和 3 个分支。
+以下过程将帮助您创建资源组和 VNet。然后，将创建 VPN 网关，并配置强制隧道。在此过程中，虚拟网络“MultiTier-VNet”具有 3 个子网：*前端*、*中间层*和*后端*，具有 4 个跨界连接：一个 *DefaultSiteHQ* 和 3 个*分支*。
 
 以下过程步骤将 *DefaultSiteHQ* 设置为使用强制隧道的默认站点连接，并将中间层和后端子网配置为使用强制隧道。
 
@@ -128,14 +129,14 @@
 		Set-AzureRmVirtualNetworkSubnetConfig -Name "Backend" -VirtualNetwork $vnet -AddressPrefix "10.1.2.0/24" -RouteTable $rt
 		Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
-8. 创建默认站点的网关。此步骤需要一些时间才能完成，有时需要 20 分钟或更长时间，因为你需要创建和配置网关。虽然看起来只是控制台中有几个 cmdlet，但后台有许多进程在执行。请注意，GatewayDefaultSite 是 cmdlet 参数，该参数是强制路由配置所不可或缺的，不能跳过它。它仅在 PowerShell 1.0 或更高版本中提供。
+8. 创建默认站点的网关。此步骤需要一些时间才能完成，有时需要 45 分钟或更长时间，因为您需要创建和配置网关。<br> `-GatewayDefaultSite` 是允许强制路由配置进行工作的 cmdlet 参数，因此请注意正确配置此设置。此参数仅在 PowerShell 1.0 或更高版本中可用。
 
 		$pip = New-AzureRmPublicIpAddress -Name "GatewayIP" -ResourceGroupName "ForcedTunneling" -Location "China North" -AllocationMethod Dynamic
 		$gwsubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
 		$ipconfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name "gwIpConfig" -SubnetId $gwsubnet.Id -PublicIpAddressId $pip.Id
 		New-AzureRmVirtualNetworkGateway -Name "Gateway1" -ResourceGroupName "ForcedTunneling" -Location "China North" -IpConfigurations $ipconfig -GatewayType Vpn -VpnType RouteBased -GatewayDefaultSite $lng1 -EnableBgp $false
 
-9. 建立站点到站点 VPN 连接
+9. 建立站点到站点 VPN 连接。
 
 		$gateway = Get-AzureRmVirtualNetworkGateway -Name "Gateway1" -ResourceGroupName "ForcedTunneling"
 		$lng1 = Get-AzureRmLocalNetworkGateway -Name "DefaultSiteHQ" -ResourceGroupName "ForcedTunneling" 
@@ -151,7 +152,4 @@
 		Get-AzureRmVirtualNetworkGatewayConnection -Name "Connection1" -ResourceGroupName "ForcedTunneling"
 		
 
-
-
-
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0822_2016-->

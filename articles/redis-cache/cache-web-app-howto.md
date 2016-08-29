@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="06/30/2016"
-	wacn.date="08/23/2016"/>
+	ms.date="07/22/2016"
+	wacn.date="08/29/2016"/>
 
 # 如何使用 Redis 缓存创建 Web 应用
 
@@ -39,15 +39,15 @@
 -	[Azure 帐户](#azure-account)
 -	[带有用于 .NET 的 Azure SDK 的 Visual Studio 2015](#visual-studio-2015-with-the-azure-sdk-for-net)
 
-###<a name="azure-account"></a> Azure 帐户
+### <a name="azure-account"></a>Azure 帐户
 
 完成本教程需要有一个 Azure 帐户。你可以：
 
 * [注册一元 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留帐户和使用免费的 Azure 服务和功能。
 
-###<a name="visual-studio-2015-with-the-azure-sdk-for-net"></a> 带有用于 .NET 的 Azure SDK 的 Visual Studio 2015
+### <a name="visual-studio-2015-with-the-azure-sdk-for-net"></a>带有用于 .NET 的 Azure SDK 的 Visual Studio 2015
 
-本教程专为带有用于 [.NET 2.8.2 的 Azure SDK](/documentation/articles/dotnet-sdk/) 的 Visual Studio 2015 或更高版而编写。[单击此处下载最新的用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
+本教程专为配合使用 Visual Studio 2015 和 [用于 .NET 的 Azure SDK](/documentation/articles/dotnet-sdk/) 2.8.2 或更高版本编写。[单击此处下载最新的用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
 
 如果有 Visual Studio 2013，则可以[下载最新的 Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322)。某些屏幕看起来可能与本教程中显示的插图不同。
 
@@ -59,11 +59,13 @@
 
 2. 展开“模板”列表中的“Visual C#”节点，选择“云”，然后单击“ASP.NET Web 应用程序”。确保选中“.NET Framework 4.5.2”。在“名称”框中键入“ContosoTeamStats”，然后单击“确定”。
  
-    ![创建项目][cache-create-project]
+    ![创建项目][cache-create-project]  
 
-3. 选择“MVC”作为项目类型。清除“在云中托管”复选框。在本教程的后续步骤中，你需要[预配 Azure 资源](#provision-the-azure-resources)以及[将应用程序发布到 Azure](#publish-the-application-to-azure)。勾选“在云中托管”即可通过 Visual Studio 预配 Azure Web 应用，如需此方面的示例，请参阅[配合 ASP.NET 和 Visual Studio 使用 Azure 中的 Web Apps 入门](/documentation/articles/web-sites-dotnet-get-started/)。
 
-    ![选择项目模板][cache-select-template]
+3. 选择“MVC”作为项目类型。清除“在云中托管”复选框。本教程的后续步骤介绍了[预配 Azure 资源](#provision-the-azure-resources)以及[将应用程序发布到 Azure](#publish-the-application-to-azure)。勾选“在云中托管”即可通过 Visual Studio 预配 Azure Web 应用，如需此方面的示例，请参阅[配合 ASP.NET 和 Visual Studio 使用 Azure 中的 Web Apps 入门](/documentation/articles/web-sites-dotnet-get-started/)。
+
+    ![选择项目模板][cache-select-template]  
+
 
 4. 单击“确定”以创建该项目。
 
@@ -75,11 +77,12 @@
 -	[添加控制器](#add-the-controller)
 -	[配置视图](#configure-the-views)
 
-###<a name="add-the-model"></a> 添加模型
+### <a name="add-the-model"></a>添加模型
 
-1. 右键单击解决方案资源管理器中的“模型”，然后选择“添加”>“类”。 
+1. 右键单击“解决方案资源管理器”中的“模型”，然后选择“添加”>“类”。
 
-    ![添加模型][cache-model-add-class]
+    ![添加模型][cache-model-add-class]  
+
 
 2. 输入 `Team` 作为类名，然后单击“添加”。
 
@@ -94,7 +97,7 @@
 		using System.Data.Entity.SqlServer;
 
 
-4. 将 `Team` 类的定义替换为以下代码段，其中包含更新的 `Team` 类定义以及某些其他的实体框架帮助器类。有关本教程中使用的实体框架 Code First 方法的详细信息，请参阅[对新数据库使用 Code First](https://msdn.microsoft.com/data/jj193542)。
+4. 将 `Team` 类的定义替换为以下代码片段，其中包含更新的 `Team` 类定义以及某些其他实体框架帮助器类。有关本教程中使用的实体框架 Code First 方法的详细信息，请参阅[对新数据库使用 Code First](https://msdn.microsoft.com/data/jj193542)。
 
 
 		public class Team
@@ -183,18 +186,20 @@
 			<add name="TeamContext" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Teams.mdf;Integrated Security=True" 	providerName="System.Data.SqlClient" />
 		</connectionStrings>
 
-###<a name="add-the-controller"></a> 添加控制器
+### <a name="add-the-controller"></a>添加控制器
 
-1. 按“F6”生成项目。 
+1. 按“F6”生成项目。
 2. 在“解决方案资源管理器”中，右键单击“Controllers”文件夹，然后选择“添加”，再选择“控制器”。
 
-    ![添加控制器][cache-add-controller]
+    ![添加控制器][cache-add-controller]  
 
-3. 选择“使用实体框架的包含视图的 MVC 5 控制器”并单击“添加”。如果在单击“添加”后出现错误，请确保你已先生成该项目。
 
-    ![添加控制器类][cache-add-controller-class]
+3. 选择“使用实体框架的包含视图的 MVC 5 控制器”并单击“添加”。如果在单击“添加”后出现错误，请确保您已先生成该项目。
 
-5. 从“模型类”下拉列表中选择“团队(ContosoTeamStats.Models)”。从“数据上下文类”下拉列表中选择“TeamContext (ContosoTeamStats.Models)”。在“控制器”名称文本框中键入 `TeamsController`（如果尚未自动填充）。单击“添加”创建控制器类并添加默认视图。
+    ![添加控制器类][cache-add-controller-class]  
+
+
+5. 从“模型类”下拉列表中选择“Team (ContosoTeamStats.Models)”。从“数据上下文类”下拉列表中选择“TeamContext (ContosoTeamStats.Models)”。在“控制器”名称文本框中键入 `TeamsController`（如果尚未自动填充）。单击“添加”创建控制器类并添加默认视图。
 
     ![配置控制器][cache-configure-controller]
 
@@ -217,7 +222,8 @@
 
 7. 在“解决方案资源管理器”中展开 `App_Start`，然后双击 `RouteConfig.cs`。
 
-    ![RouteConfig.cs][cache-RouteConfig-cs]
+    ![RouteConfig.cs][cache-RouteConfig-cs]  
+
 
 8. 将以下代码的 `RegisterRoutes` 方法中的 `controller = "Home"` 替换为 `controller = "Teams"`，如以下示例所示。
 
@@ -229,7 +235,7 @@
 	    );
 
 
-###<a name="configure-the-views"></a> 配置视图
+### <a name="configure-the-views"></a>配置视图
 
 1. 在“解决方案资源管理器”中，先展开 **Views** 文件夹，再展开 **Shared** 文件夹，然后双击 **\_Layout.cshtml**。
 
@@ -245,15 +251,16 @@
 	-	之前：`@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })`
 	-	之后：`@Html.ActionLink("Contoso Team Stats", "Index", "Teams", new { area = "" }, new { @class = "navbar-brand" })`
 
-    ![代码更改][cache-layout-cshtml-code]
+    ![代码更改][cache-layout-cshtml-code]  
 
-4. 按“Ctrl+F5”构建并运行应用程序。此版本的应用程序直接从数据库读取结果。请注意已通过“使用实体框架的包含视图的 MVC 5 控制器”基架自动添加到应用程序的“新建”、“编辑”、“详细信息”和“删除”操作。在本教程的下一部分，你需要添加优化数据访问所需的 Redis 缓存，并向应用程序提供其他功能。
+
+4. 按“Ctrl+F5”生成并运行应用程序。此版本的应用程序直接从数据库读取结果。请注意已通过“使用实体框架的包含视图的 MVC 5 控制器”基架自动添加到应用程序的“新建”、“编辑”、“详细信息”和“删除”操作。在本教程的下一部分，你需要添加优化数据访问所需的 Redis 缓存，并向应用程序提供其他功能。
 
 ![入门应用程序][cache-starter-application]
 
-##<a name="configure-the-application-to-use-redis-cache"></a> 配置应用程序以使用 Redis 缓存
+## <a name="configure-the-application-to-use-redis-cache"></a>配置应用程序以使用 Redis 缓存
 
-在本教程的此部分，你需要对示例应用程序进行配置，以便使用 [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) 缓存客户端通过 Azure Redis 缓存实例来存储和检索 Contoso 团队统计信息。
+在本教程的此部分，您需要对示例应用程序进行配置，以便使用 [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) 缓存客户端通过 Azure Redis 缓存实例来存储和检索 Contoso 团队统计信息。
 
 -	[配置应用程序以使用 StackExchange.Redis](#configure-the-application-to-use-stackexchangeredis)
 -	[更新 TeamsController 类，以便从缓存或数据库返回结果](#update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database)
@@ -261,15 +268,17 @@
 -	[更新用于缓存的“团队索引”视图](#update-the-teams-index-view-to-work-with-the-cache)
 
 
-###<a name="configure-the-application-to-use-stackexchangeredis"></a> 配置应用程序以使用 StackExchange.Redis
+### <a name="configure-the-application-to-use-stackexchangeredis"></a>配置应用程序以使用 StackExchange.Redis
 
-1. 若要使用 StackExchange.Redis NuGet 包配置客户端应用程序，请在“解决方案资源管理器”中右键单击项目，然后选择“管理 NuGet 包”。 
+1. 若要使用 StackExchange.Redis NuGet 包配置客户端应用程序，请在“解决方案资源管理器”中右键单击项目，然后选择“管理 NuGet 包”。
 
-    ![管理 NuGet 包][redis-cache-manage-nuget-menu]
+    ![管理 NuGet 包][redis-cache-manage-nuget-menu]  
+
 
 2. 将 **StackExchange.Redis** 键入搜索文本框，从结果中选择所需版本，然后单击“安装”。
 
-    ![StackExchange.Redis NuGet 程序包][redis-cache-stack-exchange-nuget]
+    ![StackExchange.Redis NuGet 程序包][redis-cache-stack-exchange-nuget]  
+
 
     NuGet 程序包会给客户端应用程序下载并添加所需的程序集引用，以访问带 StackExchange.Redis 缓存客户端的 Azure Redis Cache。如果你希望使用 **StackExchange.Redis** 客户端库强名称版本，请选择 **StackExchange.Redis.StrongName**；否则选择 **StackExchange.Redis**。
 
@@ -299,9 +308,9 @@
 	        }
 	    }
   
-1. 在计算机中创建一个名为 `WebAppPlusCacheAppSecrets.config` 的文件，将其置于不会使用示例应用程序的源代码对其进行检查的位置（如果你决定在某个位置对其进行检查）。在此示例中，`AppSettingsSecrets.config` 文件位于 `C:\AppSecrets\WebAppPlusCacheAppSecrets.config`。
+1. 在计算机中创建一个名为 `WebAppPlusCacheAppSecrets.config` 的文件，将其置于不会使用示例应用程序的源代码对其进行检查的位置（如果您决定在某个位置对其进行检查）。在此示例中，`AppSettingsSecrets.config` 文件位于 `C:\AppSecrets\WebAppPlusCacheAppSecrets.config`。
 
-    编辑 `WebAppPlusCacheAppSecrets.config` 文件，添加以下内容。如果在本地运行该应用程序，则可利用此信息连接到 Azure Redis 缓存实例。在本教程中，你随后将预配 Azure Redis 缓存实例并更新缓存名称和密码。如果你不打算在本地运行示例应用程序，则可跳过此文件的创建步骤以及后续的文件引用步骤，因为当你部署到 Azure 时，应用程序会从 Web 应用的应用设置而非从此文件中检索缓存连接信息。由于 `WebAppPlusCacheAppSecrets.config` 不与应用程序一起部署到 Azure，因此除非你要在本地运行应用程序，否则不需要它。
+    编辑 `WebAppPlusCacheAppSecrets.config` 文件，添加以下内容。如果在本地运行该应用程序，则可利用此信息连接到 Azure Redis 缓存实例。在本教程中，你随后将预配 Azure Redis 缓存实例并更新缓存名称和密码。如果你不打算在本地运行示例应用程序，则可跳过此文件的创建步骤以及后续的文件引用步骤，因为当你部署到 Azure 时，应用程序会从 Web 应用的应用设置而非从此文件中检索缓存连接信息。由于 `WebAppPlusCacheAppSecrets.config` 不与应用程序一起部署到 Azure，因此除非您要在本地运行应用程序，否则不需要它。
 
 
 		<appSettings>
@@ -317,10 +326,10 @@
 	-	之前：`<appSettings>`
 	-	之后：` <appSettings file="C:\AppSecrets\WebAppPlusCacheAppSecrets.config">`
 
-    ASP.NET 运行时合并了外部文件的内容以及 `<appSettings>` 元素中的标记。如果找不到指定的文件，运行时将忽略文件属性。应用程序的源代码中将不包括你的机密（连接到缓存的连接字符串）。将 Web 应用部署到 Azure 时，不会部署 `WebAppPlusCacheAppSecrests.config` 文件（这正是你所需要的）。可以通过多种方式在 Azure 中指定这些机密，而在本教程中，当你在后续的教程步骤中[预配 Azure 资源](#provision-the-azure-resources)时，系统将为你自动配置这些机密。有关如何在 Azure 中处理机密的详细信息，请参阅 [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure Web App](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure)（将密码和其他敏感数据部署到 ASP.NET 和 Azure Web 应用的最佳做法）。
+    ASP.NET 运行时合并了外部文件的内容以及 `<appSettings>` 元素中的标记。如果找不到指定的文件，运行时将忽略文件属性。应用程序的源代码中将不包括你的机密（连接到缓存的连接字符串）。将 Web 应用部署到 Azure 时，不会部署 `WebAppPlusCacheAppSecrests.config` 文件（这正是您所需要的）。可以通过多种方式在 Azure 中指定这些机密，而在本教程中，当您在后续的教程步骤中[预配 Azure 资源](#provision-the-azure-resources)时，系统将为您自动配置这些机密。有关如何在 Azure 中处理机密的详细信息，请参阅 [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure Web App](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure)（将密码和其他敏感数据部署到 ASP.NET 和 Azure Web 应用的最佳做法）。
 
 
-###<a name="update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database"></a> 更新 TeamsController 类，以便从缓存或数据库返回结果
+### <a name="update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database"></a>更新 TeamsController 类，以便从缓存或数据库返回结果
 
 在此示例中，团队统计信息可以从数据库或缓存中检索。团队统计信息以序列化 `List<Team>` 的形式存储在缓存中，同时以排序集的形式按 Redis 数据类型存储。从排序集检索项目时，可以检索部分项目或所有项目，也可以查询特定项目。在此示例中，你将按胜利数在排序集中查询排名前 5 的团队。
 
@@ -389,7 +398,7 @@
 		}
 
 
-3. 将以下三种方法添加到 `TeamsController` 类，以便实现在以前的代码段中添加的 switch 语句中的 `playGames`、`clearCache` 和 `rebuildDB` 操作类型。
+3. 将以下三种方法添加到 `TeamsController` 类，以便实现在以前的代码片段中添加的 switch 语句中的 `playGames`、`clearCache` 和 `rebuildDB` 操作类型。
 
     `PlayGames` 方法可以通过对赛季进行模拟来更新团队统计信息，将结果保存到数据库，然后从缓存中清除现已过时的数据。
 
@@ -545,7 +554,7 @@
         }
 
 
-###<a name="update-the-create-edit-and-delete-methods-to-work-with-the-cache"></a> 更新用于缓存的 Create、Edit 和 Delete 方法
+### <a name="update-the-create-edit-and-delete-methods-to-work-with-the-cache"></a>更新用于缓存的 Create、Edit 和 Delete 方法
 
 作为此示例一部分生成的基架代码包括用于添加、编辑和删除团队的方法。只要添加、编辑或删除了团队，缓存中的数据就变成了过时的数据。在本部分，你需要修改这三种清除缓存团队的方法，避免出现缓存与数据库不同步的情况。
 
@@ -614,11 +623,12 @@
 	    }
 
 
-###<a name="update-the-teams-index-view-to-work-with-the-cache"></a> 更新用于缓存的“团队索引”视图
+### <a name="update-the-teams-index-view-to-work-with-the-cache"></a>更新用于缓存的“团队索引”视图
 
 1. 在“解决方案资源管理器”中，先展开 **Views** 文件夹，再展开 **Teams** 文件夹，然后双击“Index.cshtml”。
 
-    ![Index.cshtml][cache-views-teams-index-cshtml]
+    ![Index.cshtml][cache-views-teams-index-cshtml]  
+
 
 2. 在该文件顶部附近查找以下段落元素。
 
@@ -661,23 +671,23 @@
 
         <tr><td colspan="5">@ViewBag.Msg</td></tr>
 
-    此行显示 `ViewBag.Msg` 的值，其中包含有关当前操作的状态报告，当前操作是在你单击前一步骤中的某个操作链接时设置的。
+    此行显示 `ViewBag.Msg` 的值，其中包含有关当前操作的状态报告，当前操作是在您单击前一步骤中的某个操作链接时设置的。
 
     ![状态消息][cache-status-message]
 
 4. 按“F6”生成项目。
 
-##<a name="provision-the-azure-resources"></a> 预配 Azure 资源
+## <a name="provision-the-azure-resources"></a>预配 Azure 资源
 
 若要在 Azure 中托管应用程序，必须先预配应用程序所需的 Azure 服务。本教程中的示例应用程序使用以下 Azure 服务。
 
--	Azure Redis Cache
+-	Azure Redis 缓存
 -	Azure Web 应用
 -	SQL 数据库
 
 从 GitHub 下载[此 ARM 模板](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-redis-cache-sql-database/azuredeploy.json)，并进行以下修改。
 
-对于参数 **skuName**，请删除允许的值“P1”、“P2”、“P3”和“P4”，因为 Premium Web App 在 Azure 中国区不可用。
+对于参数 **skuName**，请删除允许的值“P1”、“P2”、“P3”和“P4”，因为 Premium Web App 在 Azure 中国区尚不可用。
 
 
 完成修改后，请使用以下 PowerShell 命令来部署模板。
@@ -686,9 +696,9 @@
 
     New-AzureRmResourceGroupDeployment -ResourceGroupName MyWebAppPlusCache -TemplateFile azuredeploy.json
 
-注意：可以使用参数对象来指定参数。有关详细信息，请参阅 [Deploy resources with Azure Resource Manager templates](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署资源）。
+注意：可以使用参数对象来指定参数。有关详细信息，请参阅[使用 Azure Resource Manager 模板部署资源](/documentation/articles/resource-group-template-deploy/)。
 
-##<a name="publish-the-application-to-azure"></a> 将应用程序发布到 Azure
+## <a name="publish-the-application-to-azure"></a>将应用程序发布到 Azure
 
 在教程的这一步中，你需要将应用程序发布到 Azure 并在云中运行。
 
@@ -698,7 +708,7 @@
 
 2. 单击“导入”，然后选择已下载的“发布配置文件”。
 
-	如果你尚未创建 Web 应用，可登录到 [Azure Management Portal](https://manage.windowsazure.cn/)（Azure 经典管理门户）创建一个，然后转到“仪表板”页，在“速览”下下载“发布配置文件”。
+	如果你尚未创建 Web 应用，可以登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)创建一个，然后转到“仪表板”页，在“速览”下下载“发布配置文件”。
 
 4. 单击“验证连接”对设置进行验证，然后单击“发布”。
 
@@ -727,10 +737,10 @@
 
 ## 完成应用程序的操作以后，删除相关资源
 
-完成示例性的教程应用程序以后，即可删除所用的 Azure 资源，以便节省成本和资源。如果你的所有资源都包含在同一资源组中，则可通过删除资源组这一个操作来删除所有资源。
+完成示例性的教程应用程序以后，即可删除所用的 Azure 资源，以便节省成本和资源。如果使用[预配 Azure 资源](#provision-the-azure-resources)部分的“部署到 Azure”按钮，并且所有资源都包含在同一资源组中，则可通过删除资源组这一个操作来删除所有资源。
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)，然后单击“资源组”。
-2. 将资源组的名称键入“筛选项目...”文本框中。
+1. 登录到 [Azure 门户](https://portal.azure.cn)，然后单击“资源组”。
+2. 在“筛选项目...”文本框中键入资源组的名称。
 3. 单击资源组右侧的“...”。
 4. 单击“删除”。
 
@@ -738,7 +748,8 @@
 
 5. 键入资源组的名称，然后单击“删除”。
 
-    ![确认删除][cache-delete-confirm]
+    ![确认删除][cache-delete-confirm]  
+
 
 几分钟后，资源组及其包含的所有资源就会被删除。
 
@@ -750,7 +761,7 @@
 
 -	如果你已根据上一部分所述将应用程序发布到 Azure，则可使用在该步骤中预配的 Azure Redis 缓存实例。
 -	如果你有另一个现成的 Azure Redis 缓存实例，则可使用该实例在本地运行此示例。
--	如果你需要创建 Azure Redis 缓存实例，则可按[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)中的步骤来执行操作。
+-	如果需要创建 Azure Redis 缓存实例，则可按[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)中的步骤来执行操作。
 
 选定或创建要使用的缓存以后，即可使用以下 PowerShell 命令来获取缓存的属性和访问密钥。
 
@@ -758,7 +769,7 @@
 
     Get-AzureRmRedisCacheKey -Name <cache name> -ResourceGroupName <resource group name>
 
-1. 使用所选编辑器打开你在本教程的[配置应用程序以使用 Redis 缓存](#configure-the-application-to-use-redis-cache)步骤中创建的 `WebAppPlusCacheAppSecrets.config` 文件。
+1. 使用所选编辑器打开在本教程的[配置应用程序以使用 Redis 缓存](#configure-the-application-to-use-redis-cache)步骤中创建的 `WebAppPlusCacheAppSecrets.config` 文件。
 
 2. 编辑 `value` 属性，将 `MyCache.redis.cache.chinacloudapi.cn` 替换为缓存的主机名，并指定缓存的主密钥或辅助密钥作为密码。
 
@@ -774,18 +785,22 @@
 
 ## 后续步骤
 
--	在 [ASP.NET](http://asp.net/) 站点上了解有关 [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started)（ASP.NET MVC 5 入门）的详细信息。
+-	在 [ASP.NET](http://asp.net/) 站点上了解有关 [ASP.NET MVC 5 入门](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started)的详细信息。
+-	有关在 Azure 中创建 ASP.NET Web 应用的更多示例，请从 [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect [演示](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/)参阅 [在 Azure 中创建和部署 ASP.NET Web 应用](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service)。
+	-	有关 HealthClinic.biz 演示的多个快速入门，请参阅 [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts)（Azure 开发人员工具快速入门）。
 -	详细了解[对新数据库使用 Code First](https://msdn.microsoft.com/data/jj193542) 中介绍的本教程所用实体框架需要的方法。
--	详细了解 [Azure 中的 Web 应用](/home/features/web-site)。
+-	详细了解 [Azure 中的 Web 应用](/home/features/web-site/)。
 
 -	了解 Azure Redis 缓存高级功能
 	-	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
 	-	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
 	-	[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)
-	-	有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
+	-	有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis Cache FAQ](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)（Azure Redis 缓存常见问题解答）。
+
 
 
 <!-- IMAGES -->
+
 [cache-starter-application]: ./media/cache-web-app-howto/cache-starter-application.png
 [cache-added-to-application]: ./media/cache-web-app-howto/cache-added-to-application.png
 [cache-create-project]: ./media/cache-web-app-howto/cache-create-project.png
@@ -818,5 +833,4 @@
 [cache-delete-resource-group]: ./media/cache-web-app-howto/cache-delete-resource-group.png
 [cache-delete-confirm]: ./media/cache-web-app-howto/cache-delete-confirm.png
 
-
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0822_2016-->
