@@ -48,7 +48,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 -	[网络设置](#network-settings)
 -	[资源管理设置](#resource-management-settings)
 
-## 支持和故障排除设置
+## <a name="support-amp-troubleshooting-settings"></a>支持和故障排除设置
 
 “支持 + 疑难解答”部分中的设置为你提供用于解决你的缓存问题的选项。
 
@@ -64,7 +64,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 单击“新建支持请求”可建立缓存的支持请求。
 
-## 常规设置
+## <a name="general-setting"></a>常规设置
 
 “常规”部分中的设置可让你访问和配置缓存的下列设置。
 
@@ -77,28 +77,28 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 -	[高级设置（密钥空间通知）](#keyspace-notifications-advanced-settings)
 -	[Redis 缓存顾问](#redis-cache-advisor)
 
-### 属性
+### <a name="properties"></a>属性
 
 单击“属性”查看有关缓存的信息，包括缓存终结点和端口。
 
 ![Redis 缓存属性](./media/cache-configure/redis-cache-properties.png)  
 
 
-### 访问密钥
+### <a name="access-keys"></a>访问密钥
 
 单击“访问密钥”查看或重新生成缓存访问密钥。通过正在连接到缓存的客户端，从“属性”边栏选项卡将这些密钥与主机名和端口一起使用。
 
 ![Redis 缓存访问密钥](./media/cache-configure/redis-cache-manage-keys.png)  
 
 
-### 访问端口
+### <a name="access-ports"></a>访问端口
 
 默认情况下，为新缓存禁用非 SSL 访问。要启用非 SSL 端口，则单击“访问端口”边栏选项卡，然后单击“否”。
 
 ![Redis 缓存访问端口](./media/cache-configure/redis-cache-access-ports.png)  
 
 
-### Maxmemory-policy 和 maxmemory-reserved
+### <a name="maxmemory-policy-and-maxmemory-reserved"></a>Maxmemory-policy 和 maxmemory-reserved
 
 单击“Maxmemory 策略”为缓存配置内存策略。“maxmemory-policy”设置将为缓存配置逐出策略，“maxmemory-reserved”将为非缓存进程配置保留的内存。
 
@@ -120,7 +120,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 >[AZURE.IMPORTANT] “maxmemory-reserved”设置仅适用于标准缓存和高级缓存。
 
-### 密钥空间通知（高级设置）
+### <a name="keyspace-notifications-advanced-settings"></a>密钥空间通知（高级设置）
 
 单击“高级设置”配置 Redis 密钥空间通知。密钥空间通知让客户端能够在发生特定事件时接收通知。
 
@@ -130,7 +130,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 有关详细信息，请参阅 [Redis 密钥空间通知](http://redis.io/topics/notifications)。有关示例代码，请参阅 [Hello world](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) 示例中的 [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) 文件。
 
-## <a name="recommendations"></a>Redis 缓存顾问
+## <a name="recommendations" id="redis-cache-advisor"></a>Redis 缓存顾问
 
 “建议”边栏选项卡会显示适用于你的缓存的建议。在正常操作期间，不会显示任何建议。
 
@@ -159,7 +159,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 若要升级你的缓存，请单击“立即升级”以更改[定价层](#pricing-tier)并缩放缓存。有关选择定价层的详细信息，请参阅[我应使用哪种 Redis 缓存产品和大小？](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
 
-## 缩放设置
+## <a name="scale-settings"></a>缩放设置
 
 “缩放”部分中的设置可让你访问和配置缓存的下列设置。
 
@@ -169,7 +169,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 -	[定价层](#pricing-tier)
 -	[Redis 群集大小](#cluster-size)
 
-### 定价层
+### <a name="pricing-tier"></a>定价层
 
 单击“定价层”可查看或更改缓存的定价层。有关缩放的详细信息，请参阅[如何缩放 Azure Redis 缓存](/documentation/articles/cache-how-to-scale/)。
 
@@ -189,7 +189,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 >[AZURE.IMPORTANT] Redis 群集仅适用于高级缓存。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集](/documentation/articles/cache-how-to-premium-clustering/)。
 
 
-## 数据管理设置
+## <a name="data-management-settings"></a>数据管理设置
 
 “数据管理”部分中的设置可让你访问和配置缓存的下列设置。
 
@@ -199,7 +199,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 -	[Redis 数据持久性](#redis-data-persistence)
 -	[导入/导出](#importexport)
 
-### Redis 数据持久性
+### <a name="redis-data-persistence"></a>Redis 数据持久性
 
 单击“Redis 数据持久性”可启用、禁用或配置高级缓存的数据持久性。
 
@@ -216,7 +216,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 >[AZURE.IMPORTANT] Redis 数据持久性仅适用于高级缓存。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置持久性](/documentation/articles/cache-how-to-premium-persistence/)。
 
-### 导入/导出
+### <a name="importexport"></a>导入/导出
 
 导入/导出是一种 Azure Redis 缓存数据管理操作，可用于通过从高级缓存导入 Redis 缓存数据库 (RDB) 快照以及将 Redis 缓存数据库 (RDB) 快照导出到 Azure 存储帐户中的页 blob 来相应地将数据导入到 Azure Redis 缓存以及从 Azure Redis 缓存导出数据。这使你可以在不同 Azure Redis 缓存实例之间进行迁移，或者在使用之前使用数据填充缓存。
 
@@ -227,7 +227,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 >[AZURE.IMPORTANT] 导入/导出仅适用于高级层缓存。有关详细信息和说明，请参阅[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)。
 
 
-## 管理设置
+## <a name="administration-settings"></a>管理设置
 
 你可以通过“管理”部分的设置执行针对高级缓存的以下管理任务。
 
@@ -239,7 +239,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 >[AZURE.IMPORTANT] 本部分的设置仅适用于“高级”层缓存。
 
-### 重新启动
+### <a name="reboot"></a>重新启动
 
 你可以通过“重新启动”边栏选项卡重新启动缓存的一个或多个节点。这可以测试应用程序在故障时的还原能力。
 
@@ -254,7 +254,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 >[AZURE.IMPORTANT] 重新启动仅适用于高级层缓存。有关详细信息和说明，请参阅 [Azure Redis 缓存管理 - 重新启动](/documentation/articles/cache-administration/#reboot)。
 
-### 计划更新
+### <a name="schedule-updates"></a>计划更新
 
 可以通过“计划更新”边栏选项卡指定一个维护时段，以便针对缓存进行 Redis 服务器更新。
 
@@ -267,7 +267,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 >[AZURE.IMPORTANT] 计划更新仅适用于高级层缓存。有关详细信息和说明，请参阅 [Azure Redis 缓存管理 - 计划更新](/documentation/articles/cache-administration/#schedule-updates)。
 
-## 诊断设置
+## <a name="diagnostics-settings"></a>诊断设置
 
 “诊断”部分可让你配置 Redis 缓存的诊断。
 
@@ -283,7 +283,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 有关 Azure Redis 缓存诊断的详细信息，请参阅[如何监视 Azure Redis 缓存](/documentation/articles/cache-how-to-monitor/)。
 
 
-## 网络设置
+## <a name="network-settings"></a>网络设置
 
 “网络”部分中的设置可让你访问和配置缓存的下列设置。
 
@@ -292,7 +292,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 >[AZURE.IMPORTANT] 虚拟网络设置仅适用于缓存创建期间利用 VNET 支持配置的高级缓存。有关利用 VNET 支持创建高级缓存并更新其设置的信息，请参阅[如何配置高级 Azure Redis 缓存的虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)。
 
-## 资源管理设置
+## <a name="resource-management-settings"></a>资源管理设置
 
 ![资源管理](./media/cache-configure/redis-cache-resource-management.png)  
 

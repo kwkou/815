@@ -234,7 +234,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 -	[配置和概念](#configuration-and-concepts)
 -	[性能测试](#performance-testing)
 
-#### StackExchange.Redis 的最佳做法
+#### <a name="stackexchangeredis-best-practices"></a>StackExchange.Redis 的最佳做法
 
 -	将 `AbortConnect` 设置为 false，然后使 ConnectionMultiplexer 自动重新连接。[请参阅此处了解详细信息](https://gist.github.com/JonCole/36ba6f60c274e89014dd#file-se-redis-setabortconnecttofalse-md)。
 -	重复使用 ConnectionMultiplexer - 不要为每个请求创建一个新的 ConnectionMultiplexe。强烈建议使用[此处所示](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#connect-to-the-cache)的 `Lazy<ConnectionMultiplexer>` 模式。
@@ -243,13 +243,13 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 -	将默认 connectTimeout 至少设置为 5 秒。出现网络故障时，这会给 StackExchange.Redis 足够的时间来重新建立连接。
 -	请注意与正在运行的不同操作相关的性能成本。例如，`KEYS` 命令是 O(n) 操作，应当避免。[redis.io 站点](http://redis.io/commands/)具有关于其支持的每个操作的时间复杂性的详细信息。单击每个命令以查看每个操作的复杂程度。
 
-#### 配置和概念
+#### <a name="configuration-and-concepts"></a>配置和概念
 
 -	为生产系统使用标准层或高级层。基本层是没有数据复制和没有 SLA 的单个节点系统。此外，使用至少一个 C1 缓存。C0 缓存专门面向简单的开发/测试方案。
 -	请记住，Redis 是**内存中**数据存储区。阅读 [](https://gist.github.com/JonCole/b6354d92a2d51c141490f10142884ea4#file-whathappenedtomydatainredis-md)，了解可能出现数据丢失的情况。
 -	开发您的系统，以便它可以处理[由于修补和故障转移](https://gist.github.com/JonCole/317fe03805d5802e31cfa37e646e419d#file-azureredis-patchingexplained-md)出现的连接故障。
 
-#### 性能测试
+#### <a name="performance-testing"></a>性能测试
 
 -	使用 `redis-benchmark.exe` 启动以在编写您自己的性能测试前感受可能的吞吐量。请注意，该 redis 基准不支持 SSL，因此在运行测试之前必须通过 Azure 门户预览启用非 SSL 端口。例如，请参阅[如何制定基准和测试缓存的性能？](#how-can-i-benchmark-and-test-the-performance-of-my-cache)
 -	用于测试的客户端 VM 应与 Redis 缓存实例位于同一区域。
