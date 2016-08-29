@@ -187,7 +187,7 @@
 
 ![向外缩放和高可用性](./media/virtual-machines-windows-sql-server-app-patterns-dev-strategies/IC728012.png)
 
-###<a name="best-practices-for-application-patterns-requiring-sql-hadr"></a> 需要 SQL HADR 的应用程序模式的最佳实践
+### <a name="best-practices-for-application-patterns-requiring-sql-hadr"></a> 需要 SQL HADR 的应用程序模式的最佳实践
 
 当你在 Azure 虚拟机中设置 SQL Server 高可用性和灾难恢复解决方案时，必须使用 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)为你的虚拟机设置一个虚拟网络。即便在服务停机之后，虚拟网络内的虚拟机也将具有静态专用 IP 地址，因此你可以避免 DNS 名称解析所需的更新时间。此外，虚拟网络允许你将本地网络扩展到 Azure，并创建受信任安全边界。例如，如果你的应用程序具有企业域限制（例如 Windows 身份验证、Active Directory），则必须设置 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)。
 
@@ -301,7 +301,7 @@
 	
 	1. 你可将数据库服务器、Web 服务器和应用程序服务器保留在本地，而将数据库副本保留在 Azure 的虚拟机中。这种设置允许本地 Web 服务器或报告应用程序访问 Azure 中的数据库副本。因此，你可以成功地降低本地数据库中的工作负荷。我们建议你在具有很高读取工作负荷的情况下实施此方案，也可将其用于开发目的。有关在 Azure 中创建数据库副本的信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)中的“AlwaysOn 可用性组”。
 
-##<a name="comparing-development-strategies-in-azure" id="comparing-web-development-strategies-in-azure"></a> 比较 Azure 中的 Web 开发策略
+## <a name="comparing-development-strategies-in-azure" id="comparing-web-development-strategies-in-azure"></a> 比较 Azure 中的 Web 开发策略
 
 若要在 Azure 中实现和部署基于 SQL Server 的多层应用程序，你可以使用以下两种编程方法之一：
 

@@ -459,7 +459,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 请注意，在步骤 4 中创建的密钥空间使用 SimpleStrategy 并已将 a replication\_factor 设置为 3。建议使用 SimpleStrategy 进行单数据中心部署，使用 NetworkTopologyStrategy 进行多数据中心部署。将 replication\_factor 设置为 3 即可承受节点故障。
 
-##<a id="tworegion"> </a>多区域部署过程
+## <a id="tworegion"> </a>多区域部署过程
 将利用已完成的单区域部署，并在安装第二个区域时重复相同的过程。单区域部署和多区域部署的主要区别是 VPN 隧道，设置该隧道是为了进行区域间通信；我们一开始将进行网络安装，并完成 VM 预配和 Cassandra 配置。
 
 ###步骤 1：在第二个区域创建虚拟网络

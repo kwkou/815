@@ -101,7 +101,7 @@
 
 
 
-##<a name="powershell"></a> PowerShell
+## <a name="powershell"></a> PowerShell
 
 使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 

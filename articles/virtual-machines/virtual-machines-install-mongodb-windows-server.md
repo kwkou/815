@@ -35,7 +35,7 @@
 
 有关初始化磁盘的说明，请参阅[如何将数据磁盘附加到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk/)中的“如何在 Windows Server 中初始化新数据磁盘”。
 
-##<a name="install-and-run-mongo-on-win2k8-vm"></a> 在该虚拟机上安装和运行 MongoDB
+## <a name="install-and-run-mongo-on-win2k8-vm"></a> 在该虚拟机上安装和运行 MongoDB
 
 [AZURE.INCLUDE [install-and-run-mongo-on-win2k8-vm](../../includes/install-and-run-mongo-on-win2k8-vm.md)]
 

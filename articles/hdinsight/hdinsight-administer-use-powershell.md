@@ -27,7 +27,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-##<a id="install-azure-powershell-10-and-greater"></a>安装 Azure PowerShell 1.0 和更高版本
+## <a id="install-azure-powershell-10-and-greater"></a>安装 Azure PowerShell 1.0 和更高版本
 
 首先，必须卸载 0.9x 版本。
 
@@ -190,7 +190,7 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 	Set-AzureHDInsightClusterSize -Cluster <Cluster Name> -ClusterSizeInNodes <NewSize>
 	
 
-##<a name="grant/revoke-access"></a> 授予/撤消访问权限
+## <a name="grant/revoke-access"></a> 授予/撤消访问权限
 
 HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样式的终结点）：
 

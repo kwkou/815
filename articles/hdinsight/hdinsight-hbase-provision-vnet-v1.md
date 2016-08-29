@@ -328,7 +328,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 > [AZURE.NOTE]有关 Azure 虚拟网络中的名称解析的详细信息，包括如何使用自己的 DNS 服务器，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)。
 
-##<a name="powershell"></a>通过使用 Azure PowerShell 设置 HBase 群集
+## <a name="powershell"></a>通过使用 Azure PowerShell 设置 HBase 群集
 
 **通过使用 Azure PowerShell 设置 HBase 群集**
 

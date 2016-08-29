@@ -17,7 +17,7 @@
 
 Azure 虚拟机上运行的 SQL Server IaaS 代理扩展 (SQLIaaSAgent) 可以自动执行管理任务。本主题概述了该扩展支持的服务以及有关安装、状态及删除的说明。
 
-##<a name="supported-services"></a> 支持的服务
+## <a name="supported-services"></a> 支持的服务
 
 SQL Server IaaS 代理扩展支持以下管理任务：
 

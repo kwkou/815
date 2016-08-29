@@ -129,7 +129,7 @@
   	![表查询结果](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonServerExplorerTable.png)  
 
 
-##<a name="publish-to-an-azure-website"></a>将 Web 应用发布到 Azure
+## <a name="publish-to-an-azure-website"></a>将 Web 应用发布到 Azure
 
 借助 Azure.NET SDK，你可以轻松地将 Web 应用部署到 Azure 中。
 

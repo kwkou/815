@@ -37,7 +37,7 @@
 
 ![HDInsight HBase 复制虚拟网络示意图][img-vnet-diagram]
 
-##<a id="prerequisites"></a>先决条件
+## <a id="prerequisites"></a>先决条件
 在开始阅读本教程前，你必须具有：
 
 - **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [购买选项][azure-purchase-options]、[会员优惠][azure-member-offers] 或 [免费试用][azure-trial]。

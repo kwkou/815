@@ -14,7 +14,7 @@
 
 #在 Azure Web 应用中配置 PHP
 
-##<a name="WhatIs"></a> 介绍
+## <a name="WhatIs"></a> 介绍
 
 本指南将向你演示如何执行以下操作：在 [Azure Web 应用](/documentation/services/web-sites/)中配置 Web 应用的内置 PHP 运行时，提供自定义 PHP 运行时，以及启用扩展。若要使用 Azure Web 应用，请注册[试用版]。若要充分利用本指南，你应先在 Azure 中创建一个 PHP Web 应用。
 
@@ -133,7 +133,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 通过使用 `PHP_ZENDEXTENSIONS` 键也支持 Zend 扩展。若要启用多个扩展，请包括应用设置值的 `.dll` 文件的逗号分隔列表。
 
 
-##<a name="UseCustomPHP"></a> 如何：使用自定义 PHP 运行时
+## <a name="UseCustomPHP"></a> 如何：使用自定义 PHP 运行时
 Azure Web 应用可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。提供的运行时可由同时提供的 `php.ini` 文件配置。若要在 Web 应用中使用自定义 PHP 运行时，请执行下列步骤。
 
 1. 获取非线程安全、VC9 或 VC11 兼容版本的 PHP for Windows。可在此处找到 PHP for Windows 最新版本：[http://windows.php.net/download/]。可在此处的存档中找到旧版本：[http://windows.php.net/downloads/releases/archives/]。

@@ -32,7 +32,7 @@
 | Stop-AzureVMs | [停止 Azure 经典 VM](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell 工作流 | 停止自动化帐户中的所有虚拟机，或者停止所有具有特定服务名称的虚拟机。 |
 
 
-##<a id="installing-and-configuring-the-scenario" name="installing-the-solution"></a> 安装和配置方案
+## <a id="installing-and-configuring-the-scenario" name="installing-the-solution"></a> 安装和配置方案
 
 ### 1\.安装 Runbook
 
@@ -49,7 +49,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 | 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount -Environment AzureChinaCloud** 活动的 **Credential** 参数中指定其他凭据资产。 |
 | 变量 | AzureSubscriptionId | 包含你的 Azure 订阅的订阅 ID。 |
 
-##<a id="using-the-scenario" name="using-the-solution"></a> 使用方案
+## <a id="using-the-scenario" name="using-the-solution"></a> 使用方案
 
 ### 参数
 

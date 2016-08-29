@@ -5,7 +5,7 @@
 
 本文档的其余部分提供了有关为自定义域启用 HTTPS 的详细信息，例如 **contoso.com**、**www.contoso.com** 或 **\*.contoso.com**
 
-##<a name="bkmk_domainname"></a> 为自定义域启用 SSL
+## <a name="bkmk_domainname"></a> 为自定义域启用 SSL
 
 若要为自定义域启用 HTTPS（例如 **contoso.com**），必须先[在 Azure Web 应用中配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。然后，执行下列操作：
 
@@ -16,7 +16,7 @@
 
 如果在本文中有任何需要协助的地方，你可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/) 上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
 
-##<a name="bkmk_getcert"></a> 1\.获取 SSL 证书
+## <a name="bkmk_getcert"></a> 1\.获取 SSL 证书
 
 请求 SSL 证书之前，必须先确定将受证书保护的域名。这将确定必须获取的证书类型。如果你只需保护单个域名（例如 **contoso.com** 或 **www.contoso.com**）的安全，基本证书就足够了。如果你需要保护多个域名（例如 **contoso.com**、**www.contoso.com** 和 **mail.contoso.com**）的安全，则可以获取[通配符证书](http://en.wikipedia.org/wiki/Wildcard_certificate)或带有[使用者备用名称](http://en.wikipedia.org/wiki/SubjectAltName) (subjectAltName) 的证书。
 
@@ -46,7 +46,7 @@
 > [AZURE.NOTE]
 > 如果你的 CA 使用中间证书，每个中间证书则必须和为你的域颁发的证书一起安装。无法安装任何中间证书可能会导致很难为某些客户端重现互操作性问题。
 
-###<a name="bkmk_certreq"></a> 使用 Certreq.exe 获取证书（仅限 Windows）
+### <a name="bkmk_certreq"></a> 使用 Certreq.exe 获取证书（仅限 Windows）
 
 Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为自 Windows XP/Windows Server 2000 之后基本 Windows 安装的一部分，因此应该在最新的 Windows 系统上提供它。使用以下步骤获取使用 certreq.exe 的 SSL 证书。
 
@@ -111,7 +111,7 @@ Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为�
 
 你现在可以将导出的 PFX 文件上载到 Azure 中的应用。
 
-###<a name="bkmk_openssl"></a> 使用 OpenSSL 获取证书
+### <a name="bkmk_openssl"></a> 使用 OpenSSL 获取证书
 
 1. 通过从命令行、bash 或终端会话使用以下语句，生成私钥和证书签名请求：
 
@@ -171,7 +171,7 @@ Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为�
 
 	运行此命令后，你应该具有适合与 Azure Web 应用配合使用的 **myserver.pfx** 文件。
 
-###<a name="bkmk_iismgr"></a> 使用 IIS 管理器获取证书
+### <a name="bkmk_iismgr"></a> 使用 IIS 管理器获取证书
 
 如果你熟悉 IIS 管理器，则可以用它来生成可与 Azure Web 应用配合使用的证书。
 
@@ -190,7 +190,7 @@ Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为�
 	> [AZURE.NOTE] 在导出过程中，请务必选择选项“是，导出私钥”。<strong></strong>这将在导出的证书中包括私钥。
 	><p> 在导出过程中，请务必选择选项“在证书路径中包括所有证书”和“导出所有扩展属性”。这将在导出的证书中包括任何中间证书。
 
-###<a name="bkmk_subjectaltname"></a> 使用 OpenSSL 获取 SubjectAltName 证书
+### <a name="bkmk_subjectaltname"></a> 使用 OpenSSL 获取 SubjectAltName 证书
 
 OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多个域名的证书请求，但它需要一个配置文件。以下步骤将演示如何创建配置文件，然后使用它来请求证书。
 
@@ -283,14 +283,14 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 	运行此命令后，你应该具有适合与 Azure Web 应用配合使用的 **myserver.pfx** 文件。
 
-###<a name="bkmk_selfsigned"></a> 生成自签名证书（仅用于测试）
+### <a name="bkmk_selfsigned"></a> 生成自签名证书（仅用于测试）
 
 在某些情况下，您可能想要获取证书以便进行测试，并且将从受信任的 CA 购买证书延迟到生产开始之时。自签名证书可满足此需求。自签名证书是您创建的证书，就像您是证书颁发机构一样进行签名。尽管可以使用此证书来保护某一应用，但在访问该应用时大多数浏览器都将返回错误，因为该证书不是由受信任的 CA 签名的。某些浏览器甚至可能会拒绝允许你查看该应用。
 
 - [使用 makecert 生成自签名证书](#bkmk_ssmakecert)
 - [使用 OpenSSL 生成自签名证书](#bkmk_ssopenssl)
 
-####<a name="bkmk_ssmakecert"></a> 使用 makecert 生成自签名证书 ####
+#### <a name="bkmk_ssmakecert"></a> 使用 makecert 生成自签名证书 ####
 
 您可以通过执行以下步骤从 Windows 系统中删除 Visual Studio 已安装的测试证书：
 
@@ -313,7 +313,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 	这会将指定的密码作为安全字符串存储于 $mypwd 中，然后通过使用 **dnsname** 参数指定的 DNS 名称查找证书，并且导出到 **filepath** 参数指定的文件。包含密码的安全字符串用于保护导出的文件。
 
-####<a name="bkmk_ssopenssl"></a>使用 OpenSSL 生成自签名证书 ####
+#### <a name="bkmk_ssopenssl"></a>使用 OpenSSL 生成自签名证书 ####
 
 1. 创建一个名为 **serverauth.cnf** 的新文档，并且使用以下代码作为该文件的内容：
 
@@ -365,7 +365,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 	可使用此命令生成的 **myserver.pfx** 来出于测试目的保护你的应用。
 
-##<a name="bkmk_standardmode"></a> 2\.配置标准定价层
+## <a name="bkmk_standardmode"></a> 2\.配置标准定价层
 
 为自定义域启用 HTTPS 只适用于 Azure Web 应用中的**标准**层。请按照以下步骤将你的 App Service 计划切换到**标准**层。
 
@@ -388,7 +388,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 5. 单击“保存”。在系统提示后，单击“是”。
 	> [AZURE.NOTE]如果出现“为 Web 应用‘&lt;应用名称&gt;’配置缩放失败”错误，你可以使用详细信息按钮来了解详细信息。可能会出现“可用的标准实例服务器不足，无法满足此请求。”错误。如果收到此错误，请联系 [Azure 支持人员](/support/contact/)。
 
-##<a name="bkmk_configuressl"></a> 3\.在应用中配置 SSL
+## <a name="bkmk_configuressl"></a> 3\.在应用中配置 SSL
 
 在执行本部分中的这些步骤之前，必须将某个自定义域名与你的应用相关联。有关详细信息，请参阅[为 Web 应用配置自定义域名][customdomain]。
 
@@ -424,7 +424,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 此时，你应该能够使用 `HTTPS://` 而不是 `HTTP://` 访问你的应用，以便验证证书是否已正确配置。
 
-##<a name="bkmk_enforce"></a> 4\.对应用强制实施 HTTPS
+## <a name="bkmk_enforce"></a> 4\.对应用强制实施 HTTPS
 
 Azure Web 应用*不* 强制实施 HTTPS。访问者可能仍使用 HTTP 访问应用，这可能危及应用的安全。如果想为应用强制实施 HTTPS，可以使用 **URL 重写**模块。URL 重写模块包含在 Azure Web 应用中，你能够用它定义将请求传递给应用程序之前应用于传入请求的规则。**该模块可用于以 Azure 支持的任何编程语言编写的应用程序。**
 

@@ -28,7 +28,7 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-##<a name="create-a-storm-cluster"></a> 创建 Storm 群集
+## <a name="create-a-storm-cluster"></a> 创建 Storm 群集
 
 Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文件和拓扑。使用以下步骤来创建用于群集的 Azure 存储帐户：
 

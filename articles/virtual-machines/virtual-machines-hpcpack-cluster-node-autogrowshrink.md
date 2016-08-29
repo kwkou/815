@@ -61,7 +61,7 @@
 
     Get-HpcClusterProperty -AutoGrowShrink
 
-###<a name="AutoGrowShrink-parameters"></a> AutoGrowShrink 参数
+### <a name="AutoGrowShrink-parameters"></a> AutoGrowShrink 参数
 
 下面是可以使用 **Set-HpcClusterProperty** 命令修改的 AutoGrowShrink 参数。
 

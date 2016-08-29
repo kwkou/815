@@ -26,7 +26,7 @@ NSG 包含以下属性。
 
 >[AZURE.NOTE] 不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell/)。
 
-###<a name="Nsg-rules"></a> NSG 规则
+### <a name="Nsg-rules"></a> NSG 规则
 
 NSG 规则包含以下属性。
 
@@ -48,7 +48,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 上图显示如何处理 NSG 规则。
 
-###<a name="Default-Tags"></a> 默认标记
+### <a name="Default-Tags"></a> 默认标记
 
 默认标记是系统提供的针对某类 IP 地址的标识符。你可以使用任何规则的 **source address prefix** 和 **destination address prefix** 属性中的默认标记。有三个可使用的默认标记。
 
@@ -58,7 +58,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 - **INTERNET:** 此默认标记表示虚拟网络外部的 IP 地址空间，可以通过公共 Internet 进行访问。此范围还包括 [Azure 拥有的公共 IP 空间](https://www.microsoft.com/download/details.aspx?id=41653)。
 
-###<a name="Default-Rules" id="default-rules"></a> 默认规则
+### <a name="Default-Rules" id="default-rules"></a> 默认规则
 
 所有 NSG 都包含一组默认规则。默认规则无法删除，但由于给它们分配的优先级最低，可以用创建的规则来重写它们。
 
@@ -80,7 +80,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 | ALLOW INTERNET OUTBOUND | 65001 | * | * | INTERNET | * | * | ALLOW |
 | DENY ALL OUTBOUND | 65500 | * | * | * | * | * | DENY |
 
-##<a name="associating-nsgs"></a> 将 NSG 相关联
+## <a name="associating-nsgs"></a> 将 NSG 相关联
 
 可以将 NSG 关联到 VM 和子网，具体取决于你使用的部署模型。
 
@@ -115,7 +115,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 |**键**|支持 ![是][green]。单击项目。|不支持 ![否][red]。|
 |---|---|---|
 
-##<a name="Planning"></a> 规划
+## <a name="Planning"></a> 规划
 
 在实施 NSG 之前，你需要回答以下问题：
 
@@ -155,7 +155,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 当前的 NSG 规则只允许使用 *TCP* 或 *UDP* 协议。没有 *ICMP* 的特定标记。但默认情况下，根据入站 VNet 规则，虚拟网络中允许 ICMP 流量，因为该规则支持 VNet 中任何端口和协议的传入和传出流量。
 
-###<a name="subnets"></a> 子网
+### <a name="subnets"></a> 子网
 
 - 考虑工作负荷所需的层数。可以通过使用子网来隔离每个层，并可将 NSG 应用到该子网。 
 - 如果你需要针对 VPN 网关或 ExpressRoute 线路实现一个子网，请确保**不**将 NSG 应用到该子网。否则，跨 VNet 或跨界连接将不起作用。

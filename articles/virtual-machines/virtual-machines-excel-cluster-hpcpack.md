@@ -159,7 +159,7 @@ HPC Pack 部署脚本将运行一段时间。此脚本将做的一件事情是�
 
 ## 步骤 2.卸载 Excel 工作簿并从本地客户端运行 UDF
 
-###<a name="excel-activation"></a> Excel 激活
+### <a name="excel-activation"></a> Excel 激活
 
 当对生产工作负荷使用 ComputeNodeWithExcel VM 映像时，需要提供有效的 Microsoft Office 许可密钥才能在计算节点上激活 Excel。否则，Excel 评估版将在 30 天内过期，并且运行 Excel 工作簿将不断失败并显示 COMException (0x800AC472)。如果发生这种情况，请登录到头节点并通过 HPC 群集管理器 clusrun 所有 Excel 计算节点上的 `%ProgramFiles(x86)%\Microsoft Office\Office15\OSPPREARM.exe`。
     

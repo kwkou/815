@@ -89,7 +89,7 @@ Azure 中国区目前仅支持文本 PowerShell 工作流 Runbook。
 	}
 
 
-##<a name="InlineScript" id="inlinescript"></a> InlineScript
+## <a name="InlineScript" id="inlinescript"></a> InlineScript
 
 当您需要将一个或多个命令作为传统的 PowerShell 脚本而不是 PowerShell 工作流运行时，**InlineScript** 活动非常有用。尽管工作流中的命令将发送到 Windows Workflow Foundation 进行处理，但 InlineScript 块中的命令将由 Windows PowerShell 处理。
 
@@ -139,7 +139,7 @@ InlineScript 使用如下所示的语法。
 有关使用 InlineScript 的进一步信息，请参阅[在工作流中运行 Windows PowerShell 命令](http://technet.microsoft.com/zh-cn/library/jj574197.aspx)和 [about\_InlineScript](http://technet.microsoft.com/zh-cn/library/jj649082.aspx)。
 
 
-##<a name="parallel-processing" id="parallel-execution"></a> 并行处理
+## <a name="parallel-processing" id="parallel-execution"></a> 并行处理
 
 Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行而不是按顺序执行一组命令。
 
@@ -201,7 +201,7 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 > [AZURE.NOTE]  我们不建议并行运行子 Runbook，这是由于这已被证实将导致不可靠的结果。来自子 Runbook 的输出有时将不会显示，一个子 Runbook 中的设置可能会影响其他并行子 Runbook
 
 
-##<a name="Checkpoints"></a> 检查点
+## <a name="Checkpoints"></a> 检查点
 
 “检查点”是工作流变量的当前状态的快照，包括变量的当前值以及到该点为止生成的任何输出。如果工作流以错误结束或暂停，则其下次运行时将从其上一个检查点开始，而不是从工作流的起点开始。您可以使用 **Checkpoint-Workflow** 活动在工作流中设置一个检查点。
 

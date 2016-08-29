@@ -78,7 +78,7 @@
 
 其他软件 VPN 解决方案只要遵循行业标准 IPsec 实现，就会与我们的网关兼容。有关配置和支持说明，请与该软件的供应商联系。
 
-##<a name="point-to-site-connections"></a> 点到站点连接
+## <a name="point-to-site-connections"></a> 点到站点连接
 
 ### 点到站点连接允许使用哪些操作系统？
 
@@ -189,7 +189,7 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 
 有关更多信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 
-##<a name="multi-site-and-vnet-to-vnet-connectivity"></a> 多站点连接和 VNet 到 VNet 连接
+## <a name="multi-site-and-vnet-to-vnet-connectivity"></a> 多站点连接和 VNet 到 VNet 连接
 
 ### 哪种类型的网关可以支持多站点连接和 VNet 到 VNet 连接？
 

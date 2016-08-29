@@ -91,7 +91,7 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 如果禁用配置文件中的所有终结点，或者禁用配置文件本身，则 DNS 查询会收到“NXDOMAIN”响应。这等同于删除了配置文件的情况。
 
-##<a name="faq"></a> 常见问题
+## <a name="faq"></a> 常见问题
 
 ### 能否将流量管理器用于多个订阅的终结点？
 是的。具体操作取决于你是使用流量管理器的服务管理 API 还是 Resource Manager API。[Azure 门户预览](https://portal.azure.cn)使用 Resource Manager，[经典管理门户](https://manage.windowsazure.cn)使用服务管理。

@@ -48,7 +48,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 
 > [AZURE.NOTE]有关在 HDInsight 群集上支持的 Oozie 版本，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新增功能？][hdinsight-versions]。
 
-###<a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>先决条件
 
 在开始阅读本教程前，你必须具有：
 

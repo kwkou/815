@@ -17,7 +17,7 @@
 
 本主题介绍如何连接到运行于 Azure 虚拟机的 SQL Server 实例。介绍一些[常规连接方案](#connection-scenarios)，并提供[在 Azure VM 中配置 SQL Server 连接的详细步骤](#steps-for-configuring-sql-server-connectivity-in-an-azure-vm)。
 
-##<a name="connection-scenarios"></a> 连接方案
+## <a name="connection-scenarios"></a> 连接方案
 
 客户端连接虚拟机上运行的 SQL Server 的方式取决于客户端的位置与计算机/网络配置。这些方案包括：
 
@@ -27,7 +27,7 @@
 
 >[AZURE.NOTE] 使用下列任一方法进行连接之前，必须遵循[本文中的配置连接步骤](#steps-for-configuring-sql-server-connectivity-in-an-azure-vm)。
 
-###<a name="connect-to-sql-server-in-the-same-cloud-service"></a> 连接到同一云服务中的 SQL Server
+### <a name="connect-to-sql-server-in-the-same-cloud-service"></a> 连接到同一云服务中的 SQL Server
 
 可以在同一云服务中创建多个虚拟机。若要了解此虚拟机方案，请参阅[如何将虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-windows-classic-connect-vms/#connect-vms-in-a-standalone-cloud-service)。本方案介绍一台虚拟机上的客户端尝试连接到运行于同一云服务中另一虚拟机的 SQL Server 时的情况。
 
@@ -35,7 +35,7 @@
 
 	"Server=mysqlvm;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
 
-###<a name="connect-to-sql-server-over-the-internet"></a> 通过 Internet 连接到 SQL Server
+### <a name="connect-to-sql-server-over-the-internet"></a> 通过 Internet 连接到 SQL Server
 
 如果你想要通过 Internet 连接到 SQL Server 数据库引擎，则必须创建虚拟机终结点以进行传入 TCP 通信。此 Azure 配置步骤将传入 TCP 端口通信定向到虚拟机可以访问的 TCP 端口。
 
@@ -49,7 +49,7 @@
 
 >[AZURE.NOTE] 务必注意，使用此方法与 SQL Server 通信时，Azure 数据中心的所有传出数据都将服从[出站数据传输的定价](/pricing/details/data-transfer/)。
 
-###<a name="connect-to-sql-server-in-the-same-virtual-network"></a> 连接到同一虚拟网络中的 SQL Server
+### <a name="connect-to-sql-server-in-the-same-virtual-network"></a> 连接到同一虚拟网络中的 SQL Server
 
 [虚拟网络](/documentation/articles/virtual-networks-overview/)支持其他方案。你可以连接同一虚拟网络中的 VM，即使这些 VM 位于不同的云服务中。使用[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)，可以创建连接 VM 与本地网络和计算机的混合体系结构。
 
@@ -59,7 +59,7 @@
 
 	"Server=mysqlvm;Integrated Security=true"
 
-##<a name="steps-for-configuring-sql-server-connectivity-in-an-azure-vm"></a> 在 Azure VM 中配置 SQL Server 连接的步骤
+## <a name="steps-for-configuring-sql-server-connectivity-in-an-azure-vm"></a> 在 Azure VM 中配置 SQL Server 连接的步骤
 
 以下步骤演示如何使用 SQL Server Management Studio (SSMS) 通过 Internet 连接到 SQL Server 实例。但是，这些步骤同样适用于使你的 SQL Server 虚拟机可以通过本地和 Azure 中运行的应用程序访问。
 

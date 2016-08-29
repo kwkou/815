@@ -33,7 +33,7 @@ Azure 流量管理器包括内置的终结点监视和终结点自动故障转�
 
 终结点监视设置在流量管理器配置文件级别配置，而不是按终结点进行配置。因此，可以使用相同的设置来检查所有终结点的运行状况。若需对不同终结点使用不同的监视设置，则可使用[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles/#example-5-per-endpoint-monitoring-settings)。
 
-##<a name="endpoint-and-profile-status"></a> 终结点和配置文件状态
+## <a name="endpoint-and-profile-status"></a> 终结点和配置文件状态
 
 你可以启用和禁用流量管理器配置文件和终结点。不过，也可以通过流量管理器的自动设置和过程来更改终结点状态。以下参数对此方法的原理进行了说明。
 

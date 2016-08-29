@@ -88,7 +88,7 @@
 	ad user list [options]
 	ad user show [options]
 
-##<a name="azure-availset-commands-to-manage-your-availability-sets"></a> azure availset：用于管理可用性集的命令
+## <a name="azure-availset-commands-to-manage-your-availability-sets"></a> azure availset：用于管理可用性集的命令
 
 **在资源组中创建可用性集**
 

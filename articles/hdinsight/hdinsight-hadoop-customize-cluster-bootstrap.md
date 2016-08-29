@@ -47,7 +47,7 @@ Bootstrap 的使用方式有 2 种：
 
 - [使用脚本操作自定义 HDInsight 群集 (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/)
 
-##<a name="use-azure-powershell"></a> 使用 Azure PowerShell
+## <a name="use-azure-powershell"></a> 使用 Azure PowerShell
 
 以下 PowerShell 代码将自定义 Hive 配置：
 
@@ -104,7 +104,7 @@ Bootstrap 的使用方式有 2 种：
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集创建过程中的阶段"
 
-##<a name="appx-a:-powershell-sample"></a> 附录 A：PowerShell 示例
+## <a name="appx-a:-powershell-sample"></a> 附录 A：PowerShell 示例
 
 此 PowerShell 脚本将创建一个 HDInsight 群集并自定义 Hive 设置：
 

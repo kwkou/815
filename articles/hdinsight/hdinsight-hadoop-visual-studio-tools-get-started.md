@@ -38,7 +38,7 @@
 	>[AZURE.NOTE] 目前，适用于 Visual Studio 的 HDInsight 工具仅有英文版本。
 
 
-##<a name="installation" id="install-hdinsight-tools-for-visual-studio"></a>安装 HDInsight Tools for Visual Studio
+## <a name="installation" id="install-hdinsight-tools-for-visual-studio"></a>安装 HDInsight Tools for Visual Studio
 
 Azure SDK for .NET 2.5.1 或者 2.6 中已随附 HDInsight Tools for Visual Studio 和 Microsoft Hive ODBC 驱动程序。目前，全球 Azure 已经把 HDInsight 升级到 ARM 模型，而 Azure 中国依旧是经典部署模型。所以，想要用 HDInsight Tools 管理 Azure 中国的 HDInsight 集群，必须使用 Azure SDK for .NET 2.5.1 或者 2.6。以下是相关下载链接。
 

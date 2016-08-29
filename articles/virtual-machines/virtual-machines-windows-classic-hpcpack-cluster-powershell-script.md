@@ -22,7 +22,7 @@
 
 [AZURE.INCLUDE [virtual-machines-common-classic-hpcpack-cluster-powershell-script](../../includes/virtual-machines-common-classic-hpcpack-cluster-powershell-script.md)]
 
-##<a name="Example-configuration-files"></a> 示例配置文件
+## <a name="Example-configuration-files"></a> 示例配置文件
 
 在下面的示例中，将订阅 ID 或名称以及帐户和服务名称替换为你自己的值。
 

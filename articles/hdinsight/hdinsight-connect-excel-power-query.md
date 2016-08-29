@@ -27,7 +27,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 - **Office 2013 Professional Plus、Office 365 ProPlus、Excel 2013 Standalone 或 Office 2010 Professional Plus**。
 
 
-##<a id="InstallPowerQuery"></a> 安装 Power Query
+## <a id="InstallPowerQuery"></a> 安装 Power Query
 
 可以使用 Power Query 将来自多种数据源的数据导入到 Microsoft Excel 中，在 Excel 中，它可以增强 PowerPivot 和 Power View 之类的 BI 工具。具体来说，Power Query 可以导入已输出的数据，或者导入由在 HDInsight 群集上运行的 Hadoop 作业生成的数据。
 

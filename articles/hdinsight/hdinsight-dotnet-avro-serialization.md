@@ -20,15 +20,15 @@
 
 [AZURE.INCLUDE [仅适用于 Windows](../../includes/hdinsight-windows-only.md)]
 
-##<a name="apacheAvro"></a>Apache Avro
+## <a name="apacheAvro"></a>Apache Avro
 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library</a> 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 <a href="http://www.json.org" target="_blank">JSON</a> 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 <a href="http://avro.apache.org/docs/current/spec.html" target="_blank">Apache Avro 规范</a>中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
 
 Avro 系统中的对象的序列化表示形式由两部分组成：架构和实际值。Avro 架构使用 JSON 描述已序列化数据的与语言无关的数据模型。它与数据的二进制表示形式并排显示。将架构与二进制表示形式分离，使写入每个对象时没有针对值的开销，从而实现快速序列化和较小的表示形式。
 
-##<a name="hadoopScenario"></a>Hadoop 应用场景
+## <a name="hadoopScenario"></a>Hadoop 应用场景
 Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hadoop 环境中。Avro 提供了简便的方法来表示 Hadoop MapReduce 作业内的复杂数据结构。Avro 文件（Avro 对象容器文件）格式已设计为支持分布式 MapReduce 编程模型。实现分布的关键功能是文件是“可拆分的”，也就是说，用户可以在文件中搜寻任一点，然后即可从某一特定块开始读取。
 
-##<a name="serializationMAL"></a>Microsoft Avro Library 中的序列化
+## <a name="serializationMAL"></a>Microsoft Avro Library 中的序列化
 .NET Library for Avro 支持通过两种方式序列化对象：
 
 - **反射** - 自动从要序列化的 .NET 类型的数据协定特性生成这些类型的 JSON 架构。
@@ -37,7 +37,7 @@ Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hado
 当流的写入器和读取器都知道数据架构时，可以发送没有架构的数据。在未使用 Avro 对象容器文件的情况下，架构将存储在文件中。可以指定其他参数，例如用于数据压缩的编解码器。这些情况将在下面的代码示例中进一步详述和说明。
 
 
-##<a name="prerequisites"></a> 安装 Avro Library
+## <a name="prerequisites"></a> 安装 Avro Library
 
 以下是安装此库之前所需具备的先决条件：
 
@@ -60,7 +60,7 @@ Microsoft Avro Library 以 NuGet 包发行，你可以使用以下过程在 Visu
 
 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library 主页</a>中提供了 Microsoft Avro Library 源代码。
 
-##<a name="compiling"></a>使用 Avro Library 编译架构
+## <a name="compiling"></a>使用 Avro Library 编译架构
 
 Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先前定义的 JSON 架构来创建 C# 类型。代码生成实用工具不是以二进制可执行文件的形式分发的，但你可使用以下过程轻松生成：
 
@@ -87,7 +87,7 @@ Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先
 
     Microsoft.Hadoop.Avro.Tools codegen /i:C:\SDK\src\Microsoft.Hadoop.Avro.Tools\SampleJSON\SampleJSONSchema.avsc /o:. /nf:my.own.nspace
 
-##<a name="samples"></a> 示例
+## <a name="samples"></a> 示例
 本主题中提供的六个示例演示了 Microsoft Avro Library 所支持的不同方案。Microsoft Avro Library 设计为可处理任何流。在这些示例中，为保持简单性和一致性，是使用内存流（而不是文件流或数据库）来操作数据的。在生产环境中所采取的方法将取决于实际的方案要求、数据源和卷、性能限制及其他因素。
 
 前两个示例显示如何使用反射和通用记录将数据序列化到内存流缓冲区，以及如何进行反序列化。这两个方案假设在读取器和写入器之间共享架构。
@@ -109,7 +109,7 @@ Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先
  * <a href="#Scenario5">**使用对象容器文件和自定义压缩编解码器进行序列化**</a> - 该示例演示如何使用 Deflate 数据压缩编解码器的自定义 .NET 实现，来创建 Avro 对象容器文件。
  * <a href="#Scenario6">**使用 Avro 来上载 Azure HDInsight 服务的数据**</a> - 该示例演示 Avro 序列化如何与 HDInsight 服务交互。要运行此示例，你必须具备有效的 Azure 订阅并且可以访问 Azure HDInsight 群集。
 
-###<a name="Scenario1"></a>示例 1：通过反射进行序列化
+### <a name="Scenario1"></a>示例 1：通过反射进行序列化
 
 Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据协定特性自动生成类型的 JSON 架构。Microsoft Avro Library 将创建一个 [**IAvroSeralizer<T>**](http://msdn.microsoft.com/zh-cn/library/dn627341.aspx) 以标识要序列化的字段。
 
@@ -235,7 +235,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
     // Press any key to exit.
 
 
-###<a name="Scenario2"></a>示例 2：通过通用记录进行序列化
+### <a name="Scenario2"></a>示例 2：通过通用记录进行序列化
 
 当数据无法使用具有数据协定的 .NET 类表示而导致不能使用反射时，可以在通用记录中显式指定 JSON 架构。此方法通常比使用反射要慢。在这种情况下，数据架构也可能是动态的，因为在编译之前它是未知的。以逗号分隔值 (CSV) 文件表示的数据（在运行时转换为 Avro 格式之前，其架构一直是未知的）是这种动态方案的一个示例。
 
@@ -360,7 +360,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
     // Press any key to exit.
 
 
-###<a name="Scenario3"></a>示例 3：使用对象容器文件进行序列化与使用反射进行序列化
+### <a name="Scenario3"></a>示例 3：使用对象容器文件进行序列化与使用反射进行序列化
 
 此示例与<a href="#Scenario1">第一个示例</a>中使用反射隐式指定架构的方案类似。除了本示例假设要将架构反序列化的读取器不知道架构以外。要序列化的 **SensorData** 对象及其隐式指定的架构存储在由 [**AvroContainer**](http://msdn.microsoft.com/zh-cn/library/microsoft.hadoop.avro.container.avrocontainer.aspx) 类表示的 Avro 对象容器文件中。
 
@@ -601,7 +601,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
     // Press any key to exit.
 
 
-###<a name="Scenario4"></a>示例 4：使用对象容器文件进行序列化与使用通用记录进行序列化
+### <a name="Scenario4"></a>示例 4：使用对象容器文件进行序列化与使用通用记录进行序列化
 
 此示例与<a href="#Scenario2">第二个示例</a>中使用 JSON 显式指定架构的方案类似。除了本示例假设要将架构反序列化的读取器不知道架构以外。
 
@@ -865,7 +865,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
 
 
-###<a name="Scenario5"></a>示例 5：使用对象容器文件通过自定义压缩编解码器进行序列化
+### <a name="Scenario5"></a>示例 5：使用对象容器文件通过自定义压缩编解码器进行序列化
 
 第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 [Azure 代码示例](https://github.com/Azure-Samples)站点下载。
 
@@ -1363,7 +1363,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
     // ----------------------------------------
     // Press any key to exit.
 
-###<a name="Scenario6"></a>示例 6：使用 Avro 上载 Azure HDInsight 服务的数据
+### <a name="Scenario6"></a>示例 6：使用 Avro 上载 Azure HDInsight 服务的数据
 
 第六个示例演示与 Azure HDInsight 服务交互相关的一些编程技巧。包含此示例代码的样例可以从 [Azure 代码示例](https://github.com/Azure-Samples)站点下载。
 

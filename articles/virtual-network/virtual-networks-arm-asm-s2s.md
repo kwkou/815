@@ -33,7 +33,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 >[AZURE.IMPORTANT] 互相连接的 VNet 之间不能有 CIDR 块冲突。确保每个 VNet 都有独特的 CIDR 块！
 
-##<a name="Create-a-classic-VNet-environment"></a> 创建经典 VNet 环境
+## <a name="Create-a-classic-VNet-environment"></a> 创建经典 VNet 环境
 
 可使用现有的块 VNet 连接到新 ARM VNet。在本示例中，你将看到如何创建新的包含两个子网、一个网关和一个 VM 的经典 VNet，以用于测试目的。
 
@@ -151,7 +151,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure05.png)
 
-##<a name="Create-a-new-VNet-environment"></a> 创建新 VNet 环境
+## <a name="Create-a-new-VNet-environment"></a> 创建新 VNet 环境
 
 现在，包含一个 VM 和一个网关的经典 VNet 已开始正常运行，是时候创建 ARM VNet 了。
 
@@ -199,7 +199,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 请参考[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-create/)或者[使用 Azure CLI 从头开始创建 Linux VM](/documentation/articles/virtual-machines-linux-create-cli-complete/)。
 
-##<a name="Connect-the-two-VNets"></a> 连接两个 VNet
+## <a name="Connect-the-two-VNets"></a> 连接两个 VNet
 
 现在，你的两个 VNet 都连接了 VM，是时候通过之前创建的网关连接 VNet 并测试连接了。
 

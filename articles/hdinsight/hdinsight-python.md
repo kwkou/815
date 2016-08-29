@@ -23,13 +23,13 @@ Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时你需要�
 
 * 文本编辑器
  
-##<a name="python"></a>HDInsight 上的 Python
+## <a name="python"></a>HDInsight 上的 Python
 
 默认情况下，Python2.7 安装在 HDInsight 3.0 和更高版本的群集上。可以将 Hive 与此版本的 Python 配合使用，以进行流式处理（使用 STDOUT/STDIN 在 Hive 和 Python 之间传递数据）。
 
 HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无需采用流式处理即可知道如何与 Jython 通信，因此，在使用 Pig 时，Jython 是首选。
 
-###<a name="hivepython"></a>Hive 和 Python
+### <a name="hivepython"></a>Hive 和 Python
 
 可以通过 HiveQL **TRANSFORM** 语句将 Python 用作 Hive 中的 UDF。例如，以下 HiveQL 将调用 **streaming.py** 文件中存储的 Python 脚本。
 
@@ -88,7 +88,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 有关如何在 HDInsight 群集上运行此示例的信息，请参阅[运行示例](#running)。
 
-###<a name="pigpython"></a>Pig 和 Python
+### <a name="pigpython"></a>Pig 和 Python
 
 在整个 **GENERATE** 语句中，Python 脚本可用作 Pig 中的 UDF。例如，以下示例使用 **jython.py** 文件中存储的 Python 脚本。
 
@@ -140,7 +140,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 当数据返回到 Pig 时，其架构将与 **@outputSchema** 语句中的定义一致。
 
-##<a name="running"></a>运行示例
+## <a name="running"></a>运行示例
 
 如果使用的是基于 Windows 的 HDInsight 群集和 Windows 客户端，请使用 **PowerShell** 步骤。
 
@@ -271,7 +271,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	((2012-02-03,20:11:56,SampleClass3,[TRACE],verbose detail for id 1718828806))
 	((2012-02-03,20:11:56,SampleClass3,[INFO],everything normal for id 530537821))
 
-##<a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>故障排除
 
 ###运行作业时出现错误
 
@@ -300,7 +300,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 Hive|/HivePython/stderr<p>/HivePython/stdout
 Pig|/PigPython/stderr<p>/PigPython/stdout
 
-##<a name="next"></a>后续步骤
+## <a name="next"></a>后续步骤
 
 如果需要加载默认情况下未提供的 Python 模块，请参阅[如何将模块部署到 Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx)，以获取有关如何执行此操作的示例。
 

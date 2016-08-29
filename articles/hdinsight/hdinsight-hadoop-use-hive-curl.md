@@ -21,7 +21,7 @@
 
 本文档使用 Curl 演示如何通过使用原始 HTTP 请求来与 HDInsight 交互，以便运行、监视和检索 Hive 查询的结果。若要执行这些操作，需要使用 HDInsight 群集提供的 WebHCat REST API（前称 Templeton）。
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
@@ -31,7 +31,7 @@
 
 * [jq](http://stedolan.github.io/jq/)
 
-##<a id="curl"></a>通过使用 Curl 运行 Hive 查询
+## <a id="curl"></a>通过使用 Curl 运行 Hive 查询
 
 > [AZURE.NOTE] 使用 Curl 或者与 WebHCat 进行任何其他形式的 REST 通信时，必须提供 HDInsight 群集管理员用户名和密码对请求进行身份验证。此外，还必须使用群集名称作为用来向服务器发送请求的统一资源标识符 (URI) 的一部分。
 > <p>对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证群集的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
@@ -134,13 +134,13 @@
 7. 使用返回的作业 ID 检查作业的状态。成功后，如前面所述使用适用于 Mac、Linux 和 Windows 的 Azure CLI 下载并查看结果。输出应包含三行，其中所有行都包含 **[ERROR]**。
 
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如本文档中所示，你可以使用原始 HTTP 请求来运行、监视和查看 HDInsight 群集上的 Hive 作业的结果。
 
 有关本文中使用的 REST 接口的详细信息，请参阅 <a href="https://cwiki.apache.org/confluence/display/Hive/WebHCat+Reference" target="_blank">WebHCat 参考</a>。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关将 Hive 与 HDInsight 配合使用的一般信息：
 

@@ -19,7 +19,7 @@
 
 在本文中，你将学习如何在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业。我们将运行一个实现为 Java MapReduce 作业的基本单词计数操作。
 
-##<a id="whatis"></a>什么是 MapReduce？
+## <a id="whatis"></a>什么是 MapReduce？
 
 Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的作业。输入数据已拆分成独立的区块，这些区块将在群集中的节点之间并行处理。MapReduce 作业包括两个函数：
 
@@ -52,7 +52,7 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 
 * [开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
 
-##<a id="data"></a>关于示例数据
+## <a id="data"></a>关于示例数据
 
 对于本示例中的示例数据，你将使用 HDInsight 群集中作为文本文档提供的 Leonardo Da Vinci 笔记本。
 
@@ -64,7 +64,7 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 
 > [AZURE.NOTE]在上述语法中，****wasbs:///** 用于访问 HDInsight 群集的默认存储容器中存储的文件。如果你在设置群集时指定了其他存储帐户，并想要访问这些帐户中存储的文件，你可以指定容器名称和存储帐户地址来访问数据。例如 ****wasbs://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/gutenberg/davinci.txt**。
 
-##<a id="job"></a>关于示例 MapReduce
+## <a id="job"></a>关于示例 MapReduce
 
 本示例中使用的 MapReduce 作业位于 HDInsight 群集随附的 ****wasbs://example/jars/hadoop-mapreduce-examples.jar** 中。其中包含一个你要针对 **davinci.txt** 运行的单词计数示例。
 
@@ -144,7 +144,7 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 
 有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)。
 
-##<a id="run"></a>运行 MapReduce
+## <a id="run"></a>运行 MapReduce
 
 HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定哪种方法最适合你，然后按链接进行演练。
 
@@ -154,7 +154,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 | [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell/) | 使用 **Windows PowerShell** 远程提交作业 | Windows | Windows |
 | [远程桌面](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop/) | 通过**远程桌面**使用 Hadoop 命令 | Windows | Windows |
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 虽然 MapReduce 提供了强大的诊断功能，但掌握起来可能会比较困难。有多个基于 Java 的框架可让你更轻松地定义 MapReduce 应用程序，还有一些技术（例如 Pig 和 Hive）可让你更方便地在 HDInsight 中处理数据。若要了解更多信息，请参阅下列文章：
 

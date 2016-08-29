@@ -22,7 +22,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 > [AZURE.IMPORTANT] 目前，Azure 中国区的 HDInsight 只能通过 Azure 服务管理器 (ASM) 进行管理。适用于 HDInsight 的 Azure Resource Manager (ARM) 模型尚不可用。
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
@@ -30,7 +30,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 * Visual Studio 2012 或 2013
 
-##<a id="certificate"></a>创建管理证书
+## <a id="certificate"></a>创建管理证书
 
 若要在 Azure HDInsight 上对应用程序进行身份验证，必须创建自签名证书，将它安装在开发工作站上，同时将它上载到你的 Azure 订阅。
 
@@ -38,7 +38,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 > [AZURE.NOTE] 创建证书时，请务必记下使用的友好名称供以后使用。
 
-##<a id="subscriptionid"></a>查找你的订阅 ID
+## <a id="subscriptionid"></a>查找你的订阅 ID
 
 每个 Azure 订阅都是以 GUID 值（称为订阅 ID）标识的。请使用以下步骤来查找此值。
 
@@ -50,7 +50,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 保存该订阅 ID，因为稍后你要用到它。
 
-##<a id="create"></a>创建应用程序
+## <a id="create"></a>创建应用程序
 
 1. 打开 Visual Studio 2012、2013 或 2015。
 
@@ -138,11 +138,11 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 7. 按 **F5** 启动应用程序。
 8. 按 **ENTER** 退出应用程序。
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，.NET SDK for Hadoop 可让你创建 .NET 应用程序，以将 Pig 作业提交到 HDInsight 群集、监视作业状态，以及检索输出。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 Pig 的一般信息。
 

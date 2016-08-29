@@ -27,7 +27,7 @@
 
 下面的示例 PowerShell 命令需要一个已经基于上述方案创建的简单环境。如果你想要运行本文档中所显示的命令，首先通过部署[此模板](http://github.com/telmosampaio/azure-templates/tree/master/201-IaaS-WebFrontEnd-SQLBackEnd)构建测试环境，单击“部署至 Azure”，如有必要替换默认参数值，然后按照门户预览中的说明进行操作。下面的步骤使用 **RG-NSG** 作为模板部署到的资源组的名称。
 
-##<a name="Create-the-NSG-FrontEnd-NSG"></a> 创建 NSG-FrontEnd NSG
+## <a name="Create-the-NSG-FrontEnd-NSG"></a> 创建 NSG-FrontEnd NSG
 
 若要如上述方案所示创建 **NSG-FrontEnd** NSG，请按照以下步骤进行操作。
 
@@ -44,7 +44,7 @@
 
 	![Azure 门户预览 - NSG](./media/virtual-networks-create-nsg-arm-pportal/figure13.png)
 
-##<a name="Create-rules-in-an-existing-NSG"></a> 在现有 NSG 中创建规则
+## <a name="Create-rules-in-an-existing-NSG"></a> 在现有 NSG 中创建规则
 
 若要从 Azure 门户预览在现有 NSG 中创建规则，请按照以下步骤进行操作。
 
@@ -68,7 +68,7 @@
 
 7. 重复到第 6 步以创建名为 “rdp-rule” 的入站规则，其优先级为 “250”，允许通过 “TCP” 经端口 “3389” 访问来自任何来源的任何 VM。
 
-##<a name="Associate-the-NSG-to-the-FrontEnd-subnet"></a> 将 NSG 关联到 FrontEnd 子网
+## <a name="Associate-the-NSG-to-the-FrontEnd-subnet"></a> 将 NSG 关联到 FrontEnd 子网
 
 1. 单击“浏览 >”>“资源组”>“RG-NSG”。
 2. 在“RG-NSG”边栏选项卡中，单击“...”>“TestVNet”。

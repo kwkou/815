@@ -149,7 +149,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 >[AZURE.NOTE]有关使用 Windows PowerShell 脚本配置报表服务器的类似内容，请参阅[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-windows-classic-ps-sql-report/)。
 
-###<a name="connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager"></a> 连接到虚拟机并启动 Reporting Services 配置管理器
+### <a name="connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager"></a> 连接到虚拟机并启动 Reporting Services 配置管理器
 
 连接到 Azure 虚拟机有两个常见工作流：
 
@@ -195,7 +195,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 	![搜索 ssrs 配置管理器](./media/virtual-machines-windows-classic-ps-sql-bi/IC650113.gif)
 
-###<a name="configure-reporting-services"></a> 配置 Reporting Services
+### <a name="configure-reporting-services"></a> 配置 Reporting Services
 
 **服务帐户和 Web 服务 URL：**
 
@@ -365,7 +365,7 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 有关详细信息，请参阅本文档中的**虚拟机终结点以及防火墙端口**部分。
 
-##<a name="virtual-machine-endpoints-and-firewall-ports"></a> 虚拟机终结点以及防火墙端口
+## <a name="virtual-machine-endpoints-and-firewall-ports"></a> 虚拟机终结点以及防火墙端口
 
 本部分总结了要创建的 Azure 虚拟机终结点以及要在虚拟机防火墙中打开的端口。下表总结了要为其创建终结点的 **TCP** 端口和要在虚拟机防火墙中打开的端口。
 

@@ -20,7 +20,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell-and-cli.md)]
 
 
-##<a id="whatis"></a>Azure 虚拟网络是什么？
+## <a id="whatis"></a>Azure 虚拟网络是什么？
 
 [Azure 虚拟网络](/documentation/services/networking/)允许你创建包含需要用于解决方案的资源的安全永久性网络。通过虚拟网络，你可以：
 
@@ -179,7 +179,7 @@ __使用 Azure CLI__
 
 有关网络安全组的详细信息，请参阅[网络安全组概述](/documentation/articles/virtual-networks-nsg/)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview/)。
 
-##<a id="tasks"></a>任务和信息
+## <a id="tasks"></a>任务和信息
 
 本部分包含常见任务信息和搭配使用 HDInsight 与虚拟网络时可能需要的信息。
 
@@ -189,7 +189,7 @@ __使用 Azure CLI__
 
 如果你在从 HDInsight 访问服务时遇到问题，请参阅相关服务文档，以确保启用网络访问功能。你也可以通过在相同虚拟网络上创建 Azure 虚拟机来验证网络访问功能，并使用客户端实用工具来验证虚拟机是否可以通过虚拟网络连接服务。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 以下示例演示了如何对 Azure 虚拟网络使用 HDInsight：
 

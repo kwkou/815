@@ -21,7 +21,7 @@
 
 在本文档中，学习如何
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
@@ -29,11 +29,11 @@
 
 * 运行 Windows 10、Windows 8 或 Windows 7 的客户端计算机
 
-##<a id="connect"></a>使用远程桌面进行连接
+## <a id="connect"></a>使用远程桌面进行连接
 
 为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
 
-##<a id="pig"></a>使用 Pig 命令
+## <a id="pig"></a>使用 Pig 命令
 
 2. 在建立远程桌面连接后，通过使用桌面上的图标来启动 **Hadoop 命令行**。
 
@@ -116,11 +116,11 @@
 		(ERROR,6)
 		(FATAL,2)
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，Pig 命令允许你以交互方式运行 MapReduce 操作，或运行存储在批处理文件中的 Pig Latin 作业。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 Pig 的一般信息：
 

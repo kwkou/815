@@ -31,7 +31,7 @@ Azure 默认提供单个虚拟网络内包含的所有 VM 的 DNS 名称解析�
 | 解析本地计算机中的 Azure 主机名 | 将查询转发到客户托管的相应 VNet 中的 DNS 代理服务器，代理服务器再将查询转发到 Azure 进行解析。请参阅 [Name resolution using your own DNS server（使用你自己的 DNS 服务器的名称解析）](#name-resolution-using-your-own-dns-server)| 仅 FQDN |
 | 针对内部 IP 的反向 DNS | [使用你自己的 DNS 服务器的名称解析](#name-resolution-using-your-own-dns-server) | 不适用 |
 
-##<a name="azure-provided-name-resolution"></a> Azure 提供的名称解析
+## <a name="azure-provided-name-resolution"></a> Azure 提供的名称解析
 
 除公共 DNS 名称解析之外，Azure 还为驻留在相同虚拟网络中的 VM 和角色实例提供内部名称解析。在基于 ARM 的虚拟网络中，整个虚拟网络的 DNS 后缀是一致的（因此不需要 FQDN），并且可以将 DNS 名称分配到 NIC 和 VM。虽然 Azure 提供的名称解析不需要任何配置，但并不适合所有部署方案，如上表所示。
 
@@ -62,7 +62,7 @@ Azure 默认提供单个虚拟网络内包含的所有 VM 的 DNS 名称解析�
 - DNS 查询流量按照 VM 进行限制。这不应影响大部分应用程序。如果遵循请求限制，请确保启用客户端缓存。有关详细信息，请参阅[充分利用 Azure 提供的名称解析](#Getting-the-most-from-Azure-provided-name-resolution)。
 
 
-###<a name="Getting-the-most-from-Azure-provided-name-resolution"></a> 充分利用 Azure 提供的名称解析
+### <a name="Getting-the-most-from-Azure-provided-name-resolution"></a> 充分利用 Azure 提供的名称解析
 **客户端缓存：**
 
 不是每个 DNS 查询都需要跨网络发送。通过解析本地缓存中的重复性 DNS 查询，客户端缓存有助于减少延迟和提高网络信号的恢复能力。DNS 记录包含生存时间 (TTL)，这允许缓存尽可能长时间存储记录，而不影响记录刷新，因此客户端缓存适用于大多数情况。
@@ -111,7 +111,7 @@ resolv.conf 文件通常是自动生成的，不应进行编辑。添加“optio
 	- 将“echo "options timeout:1 attempts:5"”添加到“/etc/NetworkManager/dispatcher.d/11-dhclient” 
 	- 运行“service network restart”以更新
 
-##<a name="name-resolution-using-your-own-dns-server"></a> 使用你自己的 DNS 服务器的名称解析
+## <a name="name-resolution-using-your-own-dns-server"></a> 使用你自己的 DNS 服务器的名称解析
 在很多情况下（例如，你需要在虚拟网络 (VNet) 之间进行 DNS 解析），Azure 所提供的功能可能无法满足你的名称解析需求。考虑到这种情况，Azure 为你提供了使用你自己的 DNS 服务器的功能。
 
 虚拟网络中的 DNS 服务器可以将 DNS 查询转发到 Azure 的递归解析程序，以便解析该虚拟网络中的主机名。例如，在 Azure 中运行的 DNS 服务器可以响应对其自身的 DNS 区域文件的 DNS 查询，而将所有其他查询转发到 Azure。这样，VM 便可以查看区域文件中的条目以及 Azure 提供的主机名（通过转发器）。可以通过虚拟 IP 168.63.129.16 访问 Azure 的递归解析程序。

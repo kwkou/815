@@ -1,4 +1,4 @@
-###<a name="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine"></a> 在 Windows 防火墙中为数据库引擎的默认实例打开 TCP 端口
+### <a name="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine"></a> 在 Windows 防火墙中为数据库引擎的默认实例打开 TCP 端口
 
 1. 通过 Windows 远程桌面连接到虚拟机。登录后，在开始屏幕中，键入“WF.msc”，然后按 ENTER。 
 
@@ -35,7 +35,7 @@
 根据需要为其他组件打开附加端口。有关详细信息，请参阅[配置 Windows 防火墙以允许 SQL Server 访问](http://msdn.microsoft.com/zh-cn/library/cc646023.aspx)。
 
 
-###<a name="configure-sql-server-to-listen-on-the-tcp-protocol"></a> 将 SQL Server 配置为侦听 TCP 协议
+### <a name="configure-sql-server-to-listen-on-the-tcp-protocol"></a> 将 SQL Server 配置为侦听 TCP 协议
 
 1. 在连接到虚拟机时，在开始页面中，键入“SQL Server 配置管理器”，然后按 ENTER。
 
@@ -55,7 +55,7 @@
 
 有关启用 SQL Server 数据库引擎的协议的详细信息，请参阅[启用或禁用服务器网络协议](http://msdn.microsoft.com/zh-cn/library/ms191294.aspx)。
 
-###<a name="configure-sql-server-for-mixed-mode-authentication"></a> 配置混合模式的 SQL Server 身份验证
+### <a name="configure-sql-server-for-mixed-mode-authentication"></a> 配置混合模式的 SQL Server 身份验证
 
 在没有域环境的情况下，SQL Server 数据库引擎无法使用 Windows 身份验证。若要从其他计算机连接到数据库引擎，请将 SQL Server 的身份验证模式配置为混合。混合模式身份验证同时允许 SQL Server 身份验证和 Windows 身份验证。
 
@@ -85,7 +85,7 @@
 
 7. 在 SQL Server Management Studio 对话框中，单击“是”以同意重新启动 SQL Server。
 
-###<a name="create-sql-server-authentication-logins"></a> 创建 SQL Server 身份验证登录名
+### <a name="create-sql-server-authentication-logins"></a> 创建 SQL Server 身份验证登录名
 
 若要从其他计算机连接到数据库引擎，你必须创建至少一个 SQL Server 身份验证登录名。
 

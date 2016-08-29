@@ -78,7 +78,7 @@
 
 >[AZURE.NOTE] 还可以使用 `azure network nsg rule list --resource-group RG-NSG --nsg-name NSG-FrontEnd` 列出 **NSG-FrontEnd** NSG 中的规则。
 
-###<a name="View-NSGs-associations"></a> 查看 NSG 关联项
+### <a name="View-NSGs-associations"></a> 查看 NSG 关联项
 
 若要查看与 **NSG-FrontEnd** NSG 相关联的资源，请运行 `azure network nsg show` 命令，如下所示。请注意，唯一区别是 **--json** 参数的使用。
 
@@ -226,7 +226,7 @@
 	data:
 	info:    network nic set command OK
 
-###<a name="Dissociate-an-NSG-from-a-NIC"></a> 取消 NSG 与 NIC 之间的关联
+### <a name="Dissociate-an-NSG-from-a-NIC"></a> 取消 NSG 与 NIC 之间的关联
 
 要取消 **NSG-FrontEnd** NSG 与 **TestNICWeb1** NIC 之间的关联，请运行 `azure network nic set` 命令，如下所示。
 
@@ -259,7 +259,7 @@
 	data:
 	info:    network nic set command OK
 
-###<a name="Dissociate-an-NSG-from-a-subnet"></a> 取消 NSG 与子网之间的关联
+### <a name="Dissociate-an-NSG-from-a-subnet"></a> 取消 NSG 与子网之间的关联
 
 要取消 **NSG-FrontEnd** NSG 与 **FrontEnd** 子网之间的关联，请运行 `azure network vnet subnet set` 命令，如下所示。
 

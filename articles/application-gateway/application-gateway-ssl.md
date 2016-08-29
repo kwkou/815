@@ -36,7 +36,7 @@
 6. [验证网关状态](#verify-the-gateway-status)
 
 
-##<a name="create-a-new-application-gateway"></a> 创建新的应用程序网关
+## <a name="create-a-new-application-gateway"></a> 创建新的应用程序网关
 
 若要创建网关，请使用 **New-AzureApplicationGateway** cmdlet，并将值替换为你自己的值。请注意，此时不会开始计收网关的费用。计费将在后面已成功启动网关时开始。
 
@@ -72,7 +72,7 @@
 	DnsName:
 
 
-##<a name="upload-ssl-certificates"></a> 上载 SSL 证书
+## <a name="upload-ssl-certificates"></a> 上载 SSL 证书
 
 使用 **Add-AzureApplicationGatewaySslCertificate** 将 pfx 格式的服务器证书上载到应用程序网关。证书名称是用户选择的名称，在应用程序网关中必须唯一。在应用程序网关上执行所有证书管理操作时，将按此名称引用此证书。
 
@@ -102,7 +102,7 @@
 
 >[AZURE.NOTE] 证书密码的长度必须是 4 到 12 个字符，可包含字母或数字。不接受特殊字符。
 
-##<a name="configure-the-gateway"></a> 配置网关
+## <a name="configure-the-gateway"></a> 配置网关
 
 应用程序网关配置由多个值组成。这些值可将绑定在一起以构造配置。
 
@@ -174,7 +174,7 @@
 	</ApplicationGatewayConfiguration>
 
 
-##<a name="set-the-gateway-configuration"></a> 设置网关配置
+## <a name="set-the-gateway-configuration"></a> 设置网关配置
 
 接下来，你将设置应用程序网关。可以对配置对象或配置 XML 文件使用 **Set-AzureApplicationGatewayConfig** cmdlet。
 
@@ -187,7 +187,7 @@
 	----       ----------------     ------------                             ----
 	Successful OK                   9b995a09-66fe-2944-8b67-9bb04fcccb9d
 
-##<a name="start-the-gateway"></a> 启动网关
+## <a name="start-the-gateway"></a> 启动网关
 
 配置网关后，使用 **Start-AzureApplicationGateway** cmdlet 来启动网关。成功启动网关后，将开始计收应用程序网关的费用。
 
@@ -204,7 +204,7 @@
 	Successful OK                   fc592db8-4c58-2c8e-9a1d-1c97880f0b9b
 
 
-##<a name="verify-the-gateway-status"></a> 验证网关状态
+## <a name="verify-the-gateway-status"></a> 验证网关状态
 
 使用 **Get-AzureApplicationGateway** cmdlet 检查网关的状态。如果前一步骤中的 **Start-AzureApplicationGateway** 成功，则 State 应为 Running，VirtualIPs 和 DnsName 应包含有效的条目。
 

@@ -21,7 +21,7 @@
 
 > [AZURE.NOTE] 本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的详细信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)。
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
@@ -35,7 +35,7 @@
 
 - HDInsight tools for Visual Studio。有关安装和配置这些工具的信息，请参阅 [Get started using Visual Studio Hadoop tools for HDInsight（开始使用 Visual Studio Hadoop tools for HDInsight）](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
-##<a id="run"></a> 使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
+## <a id="run"></a> 使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
 1. 打开 Visual Studio，然后选择“新建”>“项目”>“HDInsight”>“Hive 应用程序”。提供此项目的名称。
 
@@ -85,11 +85,11 @@
 
 8. 若要确认作业是否已完成并已创建新表，请使用“服务器资源管理器”，然后展开“Azure”>“HDInsight”> 你的 HDInsight 群集 >“Hive 数据库”>“默认值”。你应该会看到 **errorLogs** 表和 **log4jLogs** 表。
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，适用于 Visual Studio 的 HDInsight 工具提供了简单的方法让你在 HDInsight 群集上运行 Hive 查询，监视作业状态，以及检索输出。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 Hive 的一般信息：
 

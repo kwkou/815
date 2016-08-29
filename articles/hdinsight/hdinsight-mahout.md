@@ -18,7 +18,7 @@
 了解如何使用 [Apache Mahout](http://mahout.apache.org) 机器学习库通过 Azure HDInsight 生成电影推荐。
 
 
-##<a name="learn"></a>学习内容
+## <a name="learn"></a>学习内容
 
 Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用于处理数据的算法，例如筛选、分类和群集。在本文中，你将使用推荐引擎生成基于你的朋友看过的电影的电影推荐。你还将学习如何使用决策林执行分类。本文将为你传授以下知识：
 
@@ -37,7 +37,7 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
     [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
-##<a name="recommendations"></a>使用 Windows PowerShell 生成推荐
+## <a name="recommendations"></a>使用 Windows PowerShell 生成推荐
 
 > [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。<p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
 
@@ -306,7 +306,7 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 	Donnie Brasco (1997)                     4.6792455
 	Lone Star (1996)                         4.7099237  
 
-##<a name="classify"></a>通过使用 Hadoop 命令行对数据进行分类
+## <a name="classify"></a>通过使用 Hadoop 命令行对数据进行分类
 
 Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多步骤过程，涉及到使用训练数据来生成决策树，然后使用决策树对数据进行分类。此过程使用 Mahout 提供的 __org.apache.mahout.classifier.df.tools.Describe__ 类。它当前必须通过使用 Hadoop 命令行来运行。
 
@@ -398,9 +398,9 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 > [AZURE.NOTE] Mahout 作业不会覆盖文件。如果要再次运行这些作业，则必须删除由以前的作业创建的文件。
 
-##<a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>故障排除
 
-###<a name="install"></a>安装 Mahout
+### <a name="install"></a>安装 Mahout
 
 Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手动安装在 HDInsight 3.0 或 HDInsight 2.1 群集上：
 
@@ -454,7 +454,7 @@ HDInsight 3.1 群集提供 Mahout。路径和文件名包括在群集上安装�
             -StatusFolder "wasbs:///example/statusout" `
             -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar'
 
-###<a name="nopowershell"></a>不适用于 Windows PowerShell 的类
+### <a name="nopowershell"></a>不适用于 Windows PowerShell 的类
 
 Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些类时，将返回各种错误消息：
 

@@ -25,7 +25,7 @@
 
 由于目前你不能使用具有单个 NIC 的 VM 以及具有同一个云服务中的多个 NIC 的 VM，因此你将在一个云服务中实现后端服务器，而在其他云服务中实现方案中的所有其他组件。以下步骤使用名为 *IaaSStory* 的云服务作为主资源，并在名为 *IaaSStory-BackEnd* 的云服务中实现后端服务器。
 
-##<a name="Prerequisites"></a> 先决条件
+## <a name="Prerequisites"></a> 先决条件
 
 在部署后端服务器之前，你需要先使用此方案的所有必需资源部署主云服务。至少，你需要创建包含后端子网的虚拟网络。若要了解如何部署虚拟网络，请访问[使用 PowerShell 创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps/)。
 

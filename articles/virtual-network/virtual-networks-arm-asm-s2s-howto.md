@@ -31,7 +31,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 3 - [在网关之间创建连接](#Step-3:-Create-a-connection-between-the-gateways)
 
-##<a name="Step-1:-Create-a-VPN-gateway-for-the-classic-VNet"></a> 步骤 1：为经典 VNet 创建 VPN 网关
+## <a name="Step-1:-Create-a-VPN-gateway-for-the-classic-VNet"></a> 步骤 1：为经典 VNet 创建 VPN 网关
 
 若要为经典 VNet 创建 VPN 网关，请遵循以下说明。
 
@@ -50,7 +50,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 8. 设置保存后，单击“仪表板”，然后在页面底部单击“创建网关”，再单击“动态路由”，最后单击“是”。
 9. 等待网关创建完成后，复制其公有 IP 地址。在 ARM VNet 中设置网关时，将需要该地址。
 
-##<a name="Step-2:-Create-a-VPN-gateway-for-the-ARM-VNet"></a> 步骤 2：为 ARM VNet 创建 VPN 网关
+## <a name="Step-2:-Create-a-VPN-gateway-for-the-ARM-VNet"></a> 步骤 2：为 ARM VNet 创建 VPN 网关
 
 若要为 ARM VNet 创建 VPN 网关，请遵循以下说明。
 
@@ -91,7 +91,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 		Get-AzureRmPublicIpAddress -Name gatewaypubIP -ResourceGroupName RG1
 
-##<a name="Step-3:-Create-a-connection-between-the-gateways"></a> 步骤 3：在网关之间创建连接
+## <a name="Step-3:-Create-a-connection-between-the-gateways"></a> 步骤 3：在网关之间创建连接
 
 1. 从 https://manage.windowsazure.cn 打开经典管理门户，必要时输入你的凭据。
 2. 在经典管理门户中，向下滚动并单击“网络”，然后单击“本地网络”，单击要连接到的 ARM VNet，然后单击“编辑”按钮。

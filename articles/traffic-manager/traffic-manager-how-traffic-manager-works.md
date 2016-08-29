@@ -25,7 +25,7 @@
 
 **需要了解的最重要一点是，流量管理器在 DNS 级别工作。** 流量管理器会根据所选的流量路由方法和当前的终结点运行状况，使用 DNS 将最终用户引导到特定的服务终结点。然后，客户端即可**直接**连接到所选终结点。流量管理器不是代理，看不到流量在客户端和服务之间传递。
 
-##<a name="traffic-manager-example"></a> 流量管理器示例
+## <a name="traffic-manager-example"></a> 流量管理器示例
 
 Contoso Corp 开发了一个新的合作伙伴门户。此门户的 URL 将是 https://partners.contoso.com/login.aspx 。该应用程序托管在 Azure 中。为了改进可用性并最大程度地提高全局性能，他们希望将应用程序部署到全世界的 3 个区域，并使用流量管理器将最终用户分配到最近的可用终结点。
 
@@ -43,7 +43,7 @@ Contoso Corp 开发了一个新的合作伙伴门户。此门户的 URL 将是 h
 
 > 因此，你不能直接将流量管理器用于裸域。我们建议你通过简单的 HTTP 重定向将针对“contoso.com”的请求定向到某个备用名称（例如“www.contoso.com”），以便解决此问题。
 
-##<a name="how-clients-connect-using-traffic-manager"></a> 客户端如何使用流量管理器进行连接
+## <a name="how-clients-connect-using-traffic-manager"></a> 客户端如何使用流量管理器进行连接
 
 当最终用户请求页面 https://partners.contoso.com/login.aspx （如以上示例所述）时，其客户端将执行以下步骤，以便解析 DNS 名称并建立连接。
 

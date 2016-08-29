@@ -99,7 +99,7 @@ Azure 诊断扩展可在基于 Windows 的 Azure 虚拟机上提供监视和诊�
 
 >[AZURE.NOTE] 如果从 Visual Studio 创建 Windows 虚拟机模板，默认存储帐户可能会设置为使用将虚拟机 VHD 上载到的存储帐户。这是为了简化 VM 的初始设置。你应该重构模板以使用可以当作参数传入的不同存储帐户。
 
-##<a name="diagnostics-configuration-variables"></a> 诊断配置变量
+## <a name="diagnostics-configuration-variables"></a> 诊断配置变量
  
 上述诊断扩展 json 代码段会定义 *accountid* 变量，以简化获取诊断存储的存储帐户密钥的过程：
 	
@@ -136,7 +136,7 @@ Azure 诊断扩展可在基于 Windows 的 Azure 虚拟机上提供监视和诊�
 
 MetricAggregation 值 *PT1H* 和 *PT1M* 表示一分钟的聚合和一小时的聚合。
 
-##<a id="wadmetrics-tables-in-storage"></a> 存储中的 WADMetrics 表
+## <a id="wadmetrics-tables-in-storage"></a> 存储中的 WADMetrics 表
 
 上述指标配置将在你的诊断存储帐户中生成具有以下命名约定的表：
 

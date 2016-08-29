@@ -31,7 +31,7 @@
 - **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](/pricing/1rmb-trial/)。
 - 装有 Visual Studio 2013 的**工作站**：有关说明，请参阅[安装 Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx)。
 
-##<a name="create-hbase-cluster"></a> 设置 HBase 群集
+## <a name="create-hbase-cluster"></a> 设置 HBase 群集
 
 [AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 

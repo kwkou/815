@@ -32,7 +32,7 @@
 本教程假定你已在计算机上安装 [PHP][install-php]、MySQL 命令行工具（[MySQL][install-mysql] 的一部分）和 [Git][install-git]。
 
 
-##<a id="create-web-site-and-set-up-git"></a>创建 Web 应用并设置 Git 发布
+## <a id="create-web-site-and-set-up-git"></a>创建 Web 应用并设置 Git 发布
 
 按照以下步骤创建 Web 应用和 MySQL 数据库：
 
