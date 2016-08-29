@@ -155,7 +155,7 @@ Azure Redis 缓存提供如下功能：将诊断数据存储在存储帐户中�
 有关可用性能计数器的详细信息，请参阅[可用度量值和报告间隔](#available-metrics-and-reporting-intervals)。
 
 
-## 操作和警报
+## <a name="operations-and-alerts"></a>操作和警报
 
 “Redis 缓存”边栏选项卡上的“操作”部分有“事件”和“警报规则”部分。
 
