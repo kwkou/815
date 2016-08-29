@@ -1,85 +1,67 @@
 <properties
    pageTitle="应用程序对象和服务主体对象 | Azure"
-   description="介绍 Azure Active Directory 中应用程序对象和 ServicePrincipal 对象之间的关系"
+   description="介绍 Azure Active Directory 中应用程序对象与服务主体对象之间的关系"
    documentationCenter="dev-center-name"
-   authors="msmbaldwin"
+   authors="bryanla"
    manager="mbaldwin"
    services="active-directory"
    editor=""/>
 
 <tags
    ms.service="active-directory"
-   ms.date="05/16/2016"
-   wacn.date="07/19/2016"/>
+   ms.date="08/10/2016"
+   wacn.date="08/29/2016"/>
 
 
-# 应用程序对象和服务主体对象
+# Azure Active Directory 中的应用程序对象和服务主体对象
+当你阅读有关 Azure Active Directory (AD)“应用程序”的文章时，不一定确切地知道作者所指为何。本文旨在更加明确地阐明其含义，其中将会定义 Azure AD 应用程序集成的概念和具体层面，然后举例说明如何注册和同意[多租户应用程序](active-directory-dev-glossary.md#multi-tenant-application)。
 
-此图描述了名为 **HR 应用**的示例应用程序上下文中，应用程序对象与服务主体对象对象之间的关系。有三个租户：开发应用程序的租户 **Adatum**，以及使用 **HR 应用**的租户 **Contoso** 和 **Fabrikam**。
+## 概述
+Azure AD 应用程序远远不只是一套软件。它是一个概念性的术语，指的不只是应用程序软件，还包括它在 Azure AD 上的注册（也称为标识配置），这可以让它在运行时参与身份验证和授权“对话”。根据定义，应用程序能够以[客户端](active-directory-dev-glossary.md#client-application)角色（使用资源）和/或[资源服务器](active-directory-dev-glossary.md#resource-server)角色（向客户端公开 API）运行。对话协议由 [OAuth 2.0 授权流](active-directory-dev-glossary.md#authorization-grant)定义，目标是要让客户端/资源能够各自访问/保护资源的数据。现在让我们再深入一点，看看 Azure AD 应用程序模型在内部如何代表应用程序。
 
-![应用程序对象和 ServicePrincipal 对象之间的关系](./media/active-directory-application-objects/application-objects-relationship.png)
+## 应用程序注册
+当你在 [Azure 经典门户][AZURE-Classic-Portal]中注册应用程序时，将在 Azure AD 租户中创建两个对象：应用程序对象和服务主体对象。
 
+#### 应用程序对象
+Azure AD 应用程序由其唯一一个应用程序对象来*定义*，该对象位于应用程序注册到的 Azure AD 租户中，即所谓的应用程序“宿主”租户。应用程序对象为应用程序提供标识相关信息，并且是*派生*其对应服务主体对象（在运行时使用）的模板。
 
-当你在 Azure 管理门户中注册某个应用程序时，将在你的目录租户中创建两个对象：
+你可以将应用程序视为应用程序的*全局*表示形式（供所有租户使用），将服务主体视为*本地*表示形式（在特定租户中使用）。Azure AD Graph [Application 实体][AAD-Graph-App-Entity]定义应用程序对象的架构。因此，应用程序对象与软件应用程序之间存在 1:1 的关系，而与其对应的 *n* 个服务主体对象存在 1:*n* 的关系。
 
-- **应用程序对象**：此对象表示应用程序的定义。可以在下面的**应用程序对象**部分中找到其属性的详细描述。
+#### 服务主体对象
+服务主体对象定义应用程序的策略和权限，为安全主体提供了基础，使其能够在运行时访问资源时代表应用程序。Azure AD Graph [ServicePrincipal 实体][AAD-Graph-Sp-Entity]定义服务主体对象的架构。
 
-- **ServicePrincipal 对象**：此对象表示目录租户中的应用实例。你可以向 ServicePrincipal 对象应用策略，包括将权限分配给允许应用读取租户目录数据的服务主体。每当你更改应用程序对象时，所做的更改还会应用到租户中关联的 ServicePrincipal 对象。
+在应用程序的用法实例必须代表的每个租户中，必须存在一个服务主体对象，这样才能安全访问该租户的用户帐户所拥有的资源。单租户应用程序只有一个服务主体（在其宿主租户中）。多租户 [Web 应用程序](active-directory-dev-glossary.md#web-client)的每个租户中也有一个服务主体，但另外在租户的管理员或用户已同意该应用程序的每个租户上，拥有一个用于访问其资源的服务主体。在同意之后，将来的授权请求将参考服务主体对象。
 
+> [AZURE.NOTE] 对应用程序对象所做的任何更改也只反映在该对象在应用程序宿主租户（其注册所在的租户）的服务主体对象中。对于多租户应用程序，在使用者租户删除该访问权限并重新授予访问权限之前，对应用程序对象所做的更改不会反映在任何使用者租户的服务主体对象中。
 
-> [AZURE.NOTE] 如果将应用程序配置为进行外部访问，则在使用者租户删除该访问权限并重新授予访问权限之前，使用者租户的 ServicePrincipal 中不会反映对应用程序所做的更改。
+## 示例
+下图演示了应用程序的应用程序对象和对应的服务主体对象之间的关系，其上下文是在名为 **HR 应用**的示例多租户应用程序中。此方案中有三个 Azure AD 租户：
 
+- **Adatum** - 开发 **HR 应用**的公司使用的租户
+- **Contoso** - Contoso 组织使用的租户，即 **HR 应用**的使用者
+- **Fabrikam** - Fabrikam 组织使用的租户，它也使用 **HR 应用**
 
+![应用程序对象与服务主体对象之间的关系](./media/active-directory-application-objects/application-objects-relationship.png)
 
-在上图中，步骤“1”是创建应用程序对象和 ServicePrincipal 对象的过程。
+在上图中，步骤 1 是在应用程序的宿主租户中创建应用程序对象和服务主体对象的过程。
 
-在步骤 2 中，当公司管理员授予访问权限时，将在公司的 Azure AD 租户中创建一个 ServicePrincipal 对象，并为其分配公司管理员授予的目录访问级别。
+在步骤 2 中，当 Contoso 和 Fabrikam 的管理员完成同意并向应用程序授予访问权限时，将在其公司的 Azure AD 租户中创建服务主体对象，并向其分配管理员所授予的权限。另请注意，HR 应用可能配置/设计为允许由用户同意以供个人使用。
 
-在步骤 3 中，应用的每个使用者租户（例如 Contoso 和 Fabrikam）都有自身的、表示应用实例的 ServicePrincipal 对象。在此示例中，每个租户都有表示 HR 应用的 ServicePrincipal。
+在步骤 3 中，HR 应用程序的使用者租户（例如 Contoso 和 Fabrikam）各有自己的服务主体对象。每个对象代表其在运行时使用的应用程序实例，该实例受相关管理员同意的权限控制。
 
+## 后续步骤
+可以通过 Azure AD 图形 API 访问应用程序的应用程序对象（由其 OData [Application 实体][AAD-Graph-App-Entity]表示）
 
-
-
-
-## 应用程序对象属性
-
-下表列出了应用程序对象的所有属性，并包含面向开发人员的重要详细信息。这些属性适用于已注册到 Azure AD 的 Web 应用程序、Web API 和本机客户端应用程序。
-
-
-### 常规
-
-属性 | 说明
-| ------------- | -----------
-| Name | 应用的显示名称。**添加应用程序**向导中的必需属性。
-| 徽标 | 表示应用或公司的应用徽标。外部用户可借助此徽标更轻松地将授权请求与应用相关联。上载徽标时，请遵守**上载徽标**向导中的规范。如果你不提供徽标，系统将显示默认徽标。
-| 外部访问权限 | 确定是否允许外部组织内的用户授予应用单一登录权限并允许访问其组织目录中的数据。这种控制只会影响授权能力。它不会更改已授予的访问权限。 只有公司管理员可以授予访问权限。
-
-
-### 单一登录
-
-属性 | 说明
-| ------------- | -----------
-| 应用 ID URI | 应用程序的唯一逻辑标识符。**添加应用程序**向导中的必需属性。<br><br>由于“应用 ID URI”是一个逻辑标识符，因此它不需要解析为 Internet 地址。它是应用在向 Azure AD 发送单一登录请求时提供的。Azure AD 将识别你的应用，并向应用注册期间提供的 Reply URL 发送登录响应（一个 SAML 令牌）。在发出登录请求时，可以使用“应用 ID URI”值来设置 wtrealm 属性（对于 WS-Federation）或 Issuer 属性（对于 SAML-P）。“应用 ID URI”必须是组织 Azure AD 中的唯一值。<br><br>**注意**：在为外部用户启用某个应用时，该应用的“应用 ID URI”值必须是目录的某个已验证域中的地址。因此，它不能是 URN。这种保护措施可以防止其他组织指定（和使用）属于你的组织的唯一属性。在开发期间，可以将“应用 ID URI”更改为组织初始域中的某个位置（如果尚未验证自定义/无用域），并将应用更新为使用此新值。初始域是注册期间创建的 3 级域，例如 contoso.partner.onmschina.cn。
-| 应用 URL | 用户可在其中登录和使用你的应用程序的网页地址。“添加应用程序”向导中的必需属性。<br><BR>**注意**：在“添加应用程序”向导中为此属性设置的值也将设置为“回复 URL”的值。
-| 回复 URL | 应用的物理地址。Azure AD 将向此地址发送包含单一登录响应的令牌。在**添加应用程序**向导中首次注册期间，为“应用 URL”设置的值也将设置为“回复 URL”的值。在发出登录请求时，可以使用“回复 URL”值来设置 wreply 属性（对于 WS 联合身份验证）或 **AssertionConsumerServiceURL** 属性（对于 SAML-P）。<br><BR>**注意**：为外部用户启用应用时，“回复 URL”必须是 **https://** 地址。
-| 联盟元数据 URL | （可选）。表示应用程序的联合元数据文档的实际 URL。必须使用该属性来支持 SAML-P 注销。Azure AD 将下载的元数据文档的此终结点上托管，并使用它来发现用于验证你注销请求和你的应用注销 URL 上的签名的证书的公共部分。当你首次添加你的应用时，不能配置此属性。只能在以后进行配置。<br><BR>**注意**：如果需要支持 SAML-P 注销，但应用没有联盟元数据终结点，请联系客户支持人员以了解其他选项。
+可以通过 Azure AD 图形 API 访问应用程序的服务主体对象（由其 OData [ServicePrincipal 实体][AAD-Graph-Sp-Entity]表示）
 
 
-### 调用 Graph API 或 Web API
 
-属性 | 说明
-| ------------- | -----------
-| 客户端 ID | 应用的唯一标识符。需要在对 Graph API 或其他 Web API 向 Azure AD 中注册的调用中使用此标识符。Azure AD 在应用注册过程将自动生成此值并不能更改。<BR><BR>若要启用你的应用能够通过 Graph API 访问（用于读取或写入访问）的目录，你需要客户端 ID 和密钥（在 OAuth 2.0 中称为客户端机密）。应用使用的客户端 ID 和密钥从 Azure AD OAuth 2.0 令牌终结点请求访问令牌。（若要查看所有 Azure AD 终结点，请在命令栏中单击“查看终结点”。） 使用 Graph API 获取或设置（更改）目录数据时，应用将在对 Graph API 发出的请求的授权标头中使用此访问令牌。
-| 密钥 | 如果应用在 Azure AD 中读取或写入数据（例如，通过 Graph API 提供的数据），则应用需要一个密钥。当请求访问令牌来调用 Graph API 时，应用将提供其**客户端 ID** 和**密钥**。在颁发访问令牌之前，令牌终结点将使用该 ID 和密钥对你的应用进行身份验证。你可以创建多个密钥来实现密钥滚动更新方案。此外，你可以删除已过期、已泄露或不再使用的密钥。
-| 管理访问权限 | 从三个不同的访问级别中选择一个：单一登录 (SSO)、SSO 并读取目录数据，或者 SSO 并读取/写入目录数据。你还可以删除访问权限。<br><BR>**注意**：对应用的目录访问级别的更改仅应用于目录。这些更改不会应用到已授权访问你应用的客户。
+<!--Image references-->
 
+<!--Reference style links -->
 
-### 本机客户端
+[AAD-Graph-App-Entity]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#application-entity
+[AAD-Graph-Sp-Entity]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity
+[AZURE-Classic-Portal]: https://manage.windowsazure.cn
 
-属性 | 说明
-| ------------- | -----------
-| 重定向 URI | Azure AD 在响应 OAuth 2.0 授权请求时将用户代理重定向到的 URI。该值不需要是物理终结点，但必须是有效的 URI。
-
-##
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0822_2016-->

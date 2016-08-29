@@ -9,8 +9,9 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="05/12/2016"
-	wacn.date="06/14/2016"/>
+	ms.date="08/08/2016"
+	wacn.date="08/29/2016"/>  
+
 
 
 
@@ -133,9 +134,10 @@ UserPrincipalName - 属性 userPrincipalName 是用户登录 Azure AD 和 Office
 
 ![连接到 Azure AD](./media/active-directory-aadconnect-user-signin/changeusersignin3.png)
 
->[AZURE.NOTE] 如果你只是要暂时切换到密码同步，请选中“不要转换用户帐户”。不选中该选项会导致将每个用户转换为联合登录
+>[AZURE.NOTE] 如果你只是要暂时切换到密码同步，请选中“不要转换用户帐户”。不选中该选项会导致将每个用户转换为联合用户，并可能需要花费几小时。
   
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/)的详细信息
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
+了解有关 [Azure AD Connect：设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/)的详细信息
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0822_2016-->

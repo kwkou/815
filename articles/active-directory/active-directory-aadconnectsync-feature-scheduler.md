@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="06/27/2016"
-   wacn.date="08/08/2016"/>
+   ms.date="08/04/2016"
+   wacn.date="08/29/2016"/>
 
 # Azure AD Connect 同步：计划程序
 本主题介绍 Azure AD Connect 同步（也称为同步引擎）中的内置计划程序。
@@ -56,11 +56,17 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 
 计划程序配置存储在 Azure AD 中。如果你设有暂存服务器，主服务器上的任何更改还将影响暂存服务器（IsStagingModeEnabled 除外）。
 
+### CustomizedSyncCycleInterval
+语法：`Set-ADSyncScheduler -CustomizedSyncCycleInterval d.HH:mm:ss` d - 天，HH - 小时，mm - 分钟，ss - 秒
+
+示例：`Set-ADSyncScheduler -CustomizedSyncCycleInterval 03:00:00` 将计划程序更改为每隔 3 小时运行一次。
+
+示例：`Set-ADSyncScheduler -CustomizedSyncCycleInterval 1.0:0:0` 将计划程序更改为每天运行一次。
+
 ## 启动计划程序
 默认情况下，计划程序将每 30 分钟运行一次。在某些情况下，你可能想要在已计划的周期之间运行同步周期，或者需要运行不同的类型。
 
-**增量同步周期** 
-增量同步周期包括以下步骤：
+**增量同步周期** 增量同步周期包括以下步骤：
 
 - 在所有连接器上增量导入
 - 在所有连接器上增量同步
@@ -144,4 +150,4 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0822_2016-->

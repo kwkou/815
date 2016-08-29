@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="05/12/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="08/08/2016"
+	wacn.date="08/29/2016"/>
 
 # 后续步骤以及如何管理 Azure AD Connect
 以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
@@ -72,4 +72,4 @@
 
  
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0822_2016-->

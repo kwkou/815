@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/14/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/08/2016"
+	wacn.date="08/29/2016"/>
 
 # Azure AD 联合身份验证兼容性列表
 Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单一登录与增强的应用程序访问安全性，以便在不使用任何非 Microsoft 解决方案的情况下实施混合部署和仅限云的部署。与大多数 Microsoft Online 服务一样，Office 365 可与 Azure Active Directory 集成，以利用目录服务、身份验证和授权。Azure Active Directory 还为数千种 SaaS 应用程序与本地 Web 应用程序提供单一登录。有关支持的 SaaS 应用程序，请参阅 Azure Active Directory 应用程序库。
@@ -33,7 +33,7 @@ Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单
 - [Optimal IDM Virtual Identity Server Federation Services](#optimal-idm-virtual-identity-server-federation-services)
 - [PingFederate 6.11](#pingfederate-611)
 - [PingFederate 7.2](#pingfederate-72)
-- [PingFederate 8.x](#pingfederate-8.x)
+- [PingFederate 8.x](#pingfederate-8x)
 - [Centrify](#centrify)
 - [IBM Tivoli Federated Identity Manager 6.2.2](#ibm-tivoli-federated-identity-manager-622)
 - [SecureAuth IdP 7.2.0](#secureauth-idp-720)
@@ -258,8 +258,8 @@ VMware Workspace Portal version 2.1 实施广泛使用的 WS 联合标识标准�
 
 | 客户端 |支持 |异常|
 | --------- | --------- |--------- |
-| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持 Windows 集成身份验证|
-| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持 Windows 集成身份验证|
+| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持集成 Windows 身份验证|
+| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持集成 Windows 身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
 有关 VMware Workspace Portal 2.1 版的详细信息，请从[此处](http://pubs.vmware.com/workspace-portal-21/topic/com.vmware.ICbase/PDF/workspace-portal-21-resource.pdf)下载 PDF 文件。
@@ -335,4 +335,4 @@ AuthAnvil Single Sign On 4.5 实施广泛使用的 WS 联合标识标准以提�
 
 有关详细信息，请参阅 [AuthAnvil 单一登录。](https://help.scorpionsoft.com/entries/26538603-How-can-I-Configure-Single-Sign-On-for-Office-365-)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0822_2016-->
