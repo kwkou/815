@@ -18,7 +18,7 @@
 
 使用 v2.0 终结点的应用还可以通过其中一种帐户从 [Microsoft Graph](https://graph.microsoft.io) 和 [Office 365](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) 使用 REST API。
 
-## 入门
+## <a name="getting-started></a>入门
 从下面选择你偏爱的平台，以使用我们的开源库与框架来生成应用。或者，你可以使用我们的 OAuth 2.0 和 OpenID Connect 协议文档来直接发送和接收协议消息，而不必使用身份验证库。
 <!-- TODO: Finalize this table  -->
 

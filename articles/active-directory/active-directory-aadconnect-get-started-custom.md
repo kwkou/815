@@ -78,7 +78,7 @@
 >[AZURE.WARNING]
 所有 Office 365 工作负荷都不允许使用替代 ID。有关详细信息，请参阅[配置替代登录 ID](https://technet.microsoft.com/library/dn659436.aspx)。
 
-### 域和 OU 筛选
+### <a name="domain-and-ou-filtering"></a>域和 OU 筛选
 默认情况下将同步所有域和 OU。如果你不想将某些域或 OU 同步到 Azure AD，可以取消选择这些域和 OU。  
 ![DomainOU 筛选](./media/active-directory-aadconnect-get-started-custom/domainoufiltering.png)
 向导中的此页面用于配置基于域的筛选。有关详细信息，请参阅[基于域的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#domain-based-filtering)。

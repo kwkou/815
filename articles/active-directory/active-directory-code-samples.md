@@ -81,7 +81,7 @@
 | JavaScript | [WebAPI-Nodejs](https://github.com/Azure-Samples/active-directory-node-webapi) | 设置一个与 Azure AD 集成的 REST API 服务以提供 API 保护。使用 Web API 包括一个 Node.js 服务器。
 | C#/.NET | [WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-multitenant-openidconnect) | 一个多租户 MVC Web 应用程序，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从 Azure AD 租户对用户进行身份验证。使用授权代码来调用 Graph API。
 
-## 服务器或守护程序应用程序到 Web API
+## <a name="server-or-daemon-application-to-web-api"></a>服务器或守护程序应用程序到 Web API
 
 这些代码示例展示了如何构建守护程序或服务器应用程序来使用 [Azure AD 身份验证库 (ADAL)](active-directory-authentication-librariesactive-directory-authentication-libraries) 和 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx) 通过一个 Web API 获取资源。
 

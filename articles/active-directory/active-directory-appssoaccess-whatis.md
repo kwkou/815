@@ -93,7 +93,7 @@ Azure AD 允许对支持 SAML 2.0、WS 联合身份验证或 OpenID Connect 协�
 在 Azure AD 中删除用户或更改其信息时，这些更改也会反映在 SaaS 应用程序中。这意味着，配置自动身份生命周期管理可使管理员能够从 SaaS 应用程序控制并提供自动预配和取消预配。在 Azure AD 中，这种身份生命周期管理的自动化通过用户预配启用。
 
 
-##Azure 应用程序库入门
+##<a name="get-started-with-the-azure-ad-application-gallery"></a>Azure 应用程序库入门
 
 已准备就绪？ 若要在 Azure AD 和组织所用的 SaaS 应用程序之间部署单一登录，请遵循这些指导原则。
 
@@ -143,7 +143,7 @@ Azure AD 允许对支持 SAML 2.0、WS 联合身份验证或 OpenID Connect 协�
 
 对于支持自动用户预配的库应用，需要为 Azure AD 提供管理 SaaS 应用程序中帐户的权限。至少需要提供向目标应用程序进行身份验证时 Azure AD 应使用的凭据。是否需要提供附加配置设置取决于应用程序的要求。
 
-##为用户部署 Azure AD 集成的应用程序
+##<a name="deploying-azure-ad-integrated-applications-to-users"></a>为用户部署 Azure AD 集成的应用程序
 
 Azure AD 提供多种可自定义的方式来向组织中的用户部署应用程序：
 

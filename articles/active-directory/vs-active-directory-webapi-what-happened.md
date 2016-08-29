@@ -68,7 +68,7 @@
 
 已在您在向导中选定的目录内创建一个 Azure AD 应用程序。
 
-[详细了解 Azure Active Directory](/services/active-directory/)
+[详细了解 Azure Active Directory](/documentation/services/identity/)
 
 ##如果我选中“禁用单个用户帐户身份验证”，则会对我的项目进行哪些额外的更改？
 NuGet 包引用已删除，文件已删除和备份。根据你的项目的状态，你可能需要手动删除额外的引用或文件，或者根据需要修改代码。
@@ -111,6 +111,6 @@ NuGet 包引用已删除，文件已删除和备份。根据你的项目的状�
 ###你的 Azure Active Directory 应用已更新
 你的 Azure Active Directory 应用已更新为包括“读取目录数据”权限，并已创建一个附加密钥，该密钥随后已用作 `web.config` 文件中的 *ida:Password*。
 
-[详细了解 Azure Active Directory](/services/active-directory/)
+[详细了解 Azure Active Directory](/documentation/services/identity/)
 
 <!---HONumber=Mooncake_0620_2016-->

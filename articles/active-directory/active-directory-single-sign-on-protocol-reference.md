@@ -65,7 +65,7 @@ Azure AD 还会忽略 `AuthnRequest` 中的 `Conditions` 元素。
 下面是一个示例 `NameIdPolicy` 元素：
 
 
-		<NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
+	<NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
 
 
 如果提供 `NameIDPolicy`，可以包含其可选的 `Format` 属性。`Format` 属性只能使用以下值之一；其他任何值将导致错误。
@@ -204,7 +204,7 @@ Azure AD 还为 `Assertion` 元素签名，但这两个 Signature 元素各自�
 此元素设置为 `https://sts.chinacloudapi.cn/<TenantIDGUID>/`，其中，<TenantIDGUID> 是 Azure AD 租户的租户 ID。
 
 
-		<Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
+	<Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
 
 
 #### 签名
@@ -214,9 +214,9 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 为了生成此数字签名，Azure AD 将在其元数据文档的 `IDPSSODescriptor` 元素中使用签名密钥。
 
 		
-		<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-		      digital_signature_here
-		    </ds:Signature>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+	  digital_signature_here
+	</ds:Signature>
 
 
 #### 使用者
@@ -226,12 +226,12 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 `SubjectConfirmation` 元素的 `Method` 属性始终设置为 `urn:oasis:names:tc:SAML:2.0:cm:bearer`。
 
 		
-		<Subject>
-		      <NameID>Uz2Pqz1X7pxe4XLWxV9KJQ+n59d573SepSAkuYKSde8=</NameID>
-		      <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
-		        <SubjectConfirmationData InResponseTo="id758d0ef385634593a77bdf7e632984b6" NotOnOrAfter="2013-03-18T07:43:15.144Z" Recipient="https://contoso.com/identity/inboundsso.aspx" />
-		      </SubjectConfirmation>
-		</Subject>
+	<Subject>
+		<NameID>Uz2Pqz1X7pxe4XLWxV9KJQ+n59d573SepSAkuYKSde8=</NameID>
+		<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+		<SubjectConfirmationData InResponseTo="id758d0ef385634593a77bdf7e632984b6" NotOnOrAfter="2013-03-18T07:43:15.144Z" Recipient="https://contoso.com/identity/inboundsso.aspx" />
+		 </SubjectConfirmation>
+	</Subject>
 
 
 #### 条件
@@ -239,11 +239,11 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 此元素指定用于定义 SAML 断言可接受用法的条件。
 
 		
-		<Conditions NotBefore="2013-03-18T07:38:15.128Z" NotOnOrAfter="2013-03-18T08:48:15.128Z">
-		      <AudienceRestriction>
-		        <Audience>https://www.contoso.com</Audience>
-		      </AudienceRestriction>
-		</Conditions>
+	<Conditions NotBefore="2013-03-18T07:38:15.128Z" NotOnOrAfter="2013-03-18T08:48:15.128Z">
+		 <AudienceRestriction>
+		 <Audience>https://www.contoso.com</Audience>
+		 </AudienceRestriction>
+	</Conditions>
 
 
 `NotBefore` 和 `NotOnOrAfter` 属性指定断言生效的间隔期限。
@@ -256,9 +256,9 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 包含用于标识目标受众的 URI。Azure AD 将此元素的值设置为发起登录的 `AuthnRequest` 的 `Issuer` 元素值。若要评估 `Audience` 值，请使用应用程序注册期间指定的 `App ID URI` 值。
 
 		
-		<AudienceRestriction>
-		        <Audience>https://www.contoso.com</Audience>
-		</AudienceRestriction>
+	<AudienceRestriction>
+		  <Audience>https://www.contoso.com</Audience>
+	</AudienceRestriction>
 
 
 与 `Issuer` 值一样，`Audience` 值必须与表示 Azure AD 中云服务的服务主体名称之一完全匹配。但是，如果 `Issuer` 元素值不是 URI 值，响应中的 `Audience` 值是带有 `spn:` 前缀的 `Issuer` 值。
@@ -268,15 +268,15 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 包含有关使用者或用户的声明。以下摘录包含一个示例 `AttributeStatement` 元素。省略号表示该元素可以包含多个属性和属性值。
 
 
-		<AttributeStatement>
-		      <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
-		        <AttributeValue>testuser@contoso.com</AttributeValue>
+	<AttributeStatement>
+		   <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
+		   <AttributeValue>testuser@contoso.com</AttributeValue>
 		      </Attribute>
 		      <Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">
 		        <AttributeValue>3F2504E0-4F89-11D3-9A0C-0305E82C3301</AttributeValue>
 		      </Attribute>
 		      ...
-		</AttributeStatement>
+	</AttributeStatement>
 	
 
 - **Name 声明**：`Name` 属性值 (`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`) 是经过身份验证的用户的用户主体名称，例如 `testuser@managedtenant.com`。
@@ -290,11 +290,11 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 - `AuthnContext` 元素指定用于对用户进行身份验证的身份验证上下文。
 
 
-		<AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
-		      <AuthnContext>
-		        <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
-		      </AuthnContext>
-		</AuthnStatement>
+	<AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
+		<AuthnContext>
+		 <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
+		</AuthnContext>
+	</AuthnStatement>
 
 
 <!---HONumber=Mooncake_0725_2016-->

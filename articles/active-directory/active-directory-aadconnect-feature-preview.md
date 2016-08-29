@@ -31,7 +31,7 @@
 
 >[AZURE.NOTE] 组写回需要 Azure AD Premium 订阅。
 
-## 用户写回
+## <a name="user-writeback"></a>用户写回
 > [AZURE.IMPORTANT] Azure AD Connect 的 2015 年 8 月更新版中删除了用户写回预览版功能。如果你已启用此功能，现在应将它禁用。
 
 ## 后续步骤

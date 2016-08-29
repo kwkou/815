@@ -131,20 +131,20 @@ Azure AD 发布的联合元数据文档可以包含多个签名密钥，例如�
 
 以下元数据显示了特定于租户的终结点的示例 `PassiveResistorEndpoint`。
 	
-	    <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-	    …
-	    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/saml2" />
-	    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https:// login.chinacloudapi.cn/contoso.partner.onmschina.cn /saml2" />
-	    </IDPSSODescriptor>
+	 <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+	 …
+	 <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.chinacloudapi.cn/contoso.partner.onmschina.cn/saml2" />
+	 <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https:// login.chinacloudapi.cn/contoso.partner.onmschina.cn /saml2" />
+	 </IDPSSODescriptor>
 
 同样，通用 SAML 2.0 协议终结点的终结点发布在独立于租户的联合元数据中，如以下示例中所示。
 
 		
-		<IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-		…
-		    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/common/saml2" />
-		    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/common/saml2" />
-		  </IDPSSODescriptor>
+	<IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+	…
+	<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/common/saml2" />
+	<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/common/saml2" />
+	</IDPSSODescriptor>
 
 
 <!---HONumber=AcomDC_0718_2016-->

@@ -27,7 +27,7 @@
 
 有关所需的权限，请参阅[升级所需的权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#upgrade)。
 
-## 就地升级
+## <a name="in-place-upgrade"></a>就地升级
 就地升级适用于从 Azure AD Sync 或 Azure AD Connect 迁移。它不适用于 DirSync 或使用 FIM + Azure AD 连接器的解决方案。
 
 如果你只有一台服务器且对象数少于 100,000 个，则这是首选方法。升级后，如果对现成的同步规则进行任何更改，则会发生完全导入和完全同步。这可以确保将新配置应用到系统中的所有现有对象。这可能需要花费几小时的时间，具体取决于同步引擎范围内的对象数。计划的正常增量同步（默认为每隔 30 分钟）将会暂停，但密码同步将会继续。你可以考虑在周末进行就地升级。如果未对新版 Azure AD Connect 中的现成配置进行更改，则启动一般的增量导入/同步。
@@ -36,7 +36,7 @@
 
 如果你已更改默认的同步规则，这些规则将在系统升级完成之后重置为默认配置。为了确保配置在每次升级之后得到保留，请务必按照 [Best practices for changing the default configuration（更改默认配置的最佳实践）](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration/)中所述的步骤来更改配置。
 
-## 交叉迁移
+## <a name="swing-migration"></a>交叉迁移
 如果服务器部署很复杂或者对象很多，在活动的系统上进行就地升级可能不切合实际。某些客户可能要花费好几天时间来升级系统，并且系统在升级期间无法处理任何增量更改。
 
 因此，我们建议改用交叉迁移方法。若要使用此方法，至少需要两台服务器，一台是活动的服务器，另一台是过渡服务器。活动服务器（在下图中以蓝色实线表示）负责处理活动负载。过渡服务器（在下图中以紫色虚线表示）中准备好了新版本，完全做好准备时，此服务器将成为活动服务器。现在，将装有旧版本的前一台活动服务器设为过渡服务器，然后进行升级。
@@ -59,7 +59,7 @@
 6. 将过渡服务器切换为活动服务器。这是 [Verify the configuration of a server（验证服务器的配置）](/documentation/articles/active-directory-aadconnectsync-operations/#verify-the-configuration-of-a-server)中的最后一个步骤，即**切换活动服务器**。
 7. 如果你要升级 Azure AD Connect，现在请在过渡模式下将服务器升级到最新版本。按照与前面相同的步骤来升级数据和配置。如果要从 Azure AD Sync 迁移，现在可以关闭并解除旧服务器。
 
-### 将自定义配置从活动服务器移到过渡服务器
+### <a name="move-custom-configuration-from-active-to-staging-server"></a>将自定义配置从活动服务器移到过渡服务器
 如果你对活动服务器做了配置更改，需确保将相同的更改应用到过渡服务器。
 
 可以使用 PowerShell 来移动你创建的自定义同步规则。其他更改必须以相同的方式应用到这两个系统且不能迁移。

@@ -20,7 +20,7 @@ v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-## 基础知识
+## <a name="openid-connect-sign-in-flow"></a>基础知识
 几乎在所有的 OAuth 和 OpenID Connect 流中，都有四个参与交换的对象：
 
 ![OAuth 2.0 角色](./media/active-directory-v2-flows/protocols_roles.png)
@@ -40,7 +40,7 @@ v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 
 
 有关更多详细信息，请了解如何[注册应用](/documentation/articles/active-directory-v2-app-registration/)。
 
-## 终结点
+## <a name="endpoints"></a>终结点
 注册后，应用将通过向 v2.0 终结点发送请求来与 Azure AD 通信：
 
 
@@ -59,7 +59,7 @@ v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 
 
 有关如何与这些终结点交互的详细信息，请选择以下特定的应用类型。
 
-## 令牌
+## <a name="oauth2-authorization-code-flow"></a>令牌
 OAuth 2.0 和 OpenID Connect 的 v2.0 实现广泛使用了持有者令牌，包括表示为 JWT 的持有者令牌。持有者令牌是一种轻型安全令牌，它授予对受保护资源的“持有者”访问权限。从这个意义上来说，“持有者”是可以提供令牌的任何一方。虽然某一方必须首先通过 Azure AD 的身份验证才能收到持有者令牌，但如果不采取必要的步骤在传输过程和存储中对令牌进行保护，令牌可能会被意外的某一方拦截并使用。虽然某些安全令牌具有内置机制来防止未经授权方使用它们，但是持有者令牌没有这一机制，因此必须在安全的通道（例如传输层安全 (HTTPS)）中进行传输。如果持有者令牌以明文传输，则恶意方可以利用中间人攻击来获得令牌并使用它来对受保护资源进行未经授权的访问。当存储或缓存持有者令牌供以后使用时，也应遵循同样的安全原则。请始终确保你的应用以安全的方式传输和存储持有者令牌。有关持有者令牌的更多安全注意事项，请参阅 [RFC 6750 第 5 部分](http://tools.ietf.org/html/rfc6750)。
 
 有关 v2.0 终结点中使用的不同类型令牌的更多详细信息，请参阅 [v2.0 终结点令牌参考](/documentation/articles/active-directory-v2-tokens/)。

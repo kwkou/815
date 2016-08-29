@@ -19,7 +19,7 @@ v2.0 终结点在每个[身份验证流](/documentation/articles/active-director
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-## 类型的令牌
+## <a name="types-of-tokens"></a>令牌的类型
 
 v2.0 终结点支持 [OAuth 2.0 授权协议](/documentation/articles/active-directory-v2-protocols/)，该协议使用 access\_token 与 refresh\_token。它还支持通过 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow) 进行身份验证和登录，其中引入了第三种类型的令牌 (id\_token)。每个令牌表示为“持有者令牌”。
 
@@ -42,7 +42,7 @@ Id\_token 已签名，但目前不会加密。当应用收到 id\_token 时，�
 
 > [AZURE.TIP] 练习时，请试着将示例 id\_token 中的声明粘贴到 [calebb.net](https://calebb.net) 中进行检查。
 
-#### Id\_tokens 中的声明
+#### <a name="id_tokens></a>Id\_tokens 中的声明
 | 名称 | 声明 | 示例值 | 说明 |
 | ----------------------- | ------------------------------- | ------------ | --------------------------------- |
 | 目标受众 | `aud` | `6731de76-14a6-49ae-97bc-6eba6914391e` | 标识令牌的目标接收方。在 id\_tokens 中，受众是在应用注册门户中分配给应用的应用程序 ID。应用应该验证此值并拒绝不匹配的令牌。 |
@@ -82,7 +82,7 @@ v2.0 终结点颁发的访问令牌目前仅适用于 Microsoft 服务。在任�
 
 当你使用刷新令牌兑换新的访问令牌（而且如果应用已获得 `offline_access` 范围）时，在令牌响应中将收到新的刷新令牌。你应该保存新颁发的刷新令牌，并替换请求中使用的刷新令牌。这将保证刷新令牌尽可能长期保持有效。
 
-## 验证令牌
+## <a name="validating-tokens></a>验证令牌
 
 目前，应用程序必须执行的唯一令牌验证就是验证 id\_token。若要验证 id\_token，应用应该验证 id\_token 签名和 id\_token 中的声明。
 

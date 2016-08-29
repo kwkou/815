@@ -22,6 +22,6 @@
  
 您项目中的所有控制器均带有 **Authorize** 属性。此属性要求用户先进行身份验证，然后才能访问由这些控制器定义的 API。若要允许匿名访问控制器，请从控制器删除此属性。如果您想要更详细地设置这些权限，请将该属性应用到需要身份验证的每个方法，而不是将它应用到控制器类。
 
-[详细了解 Azure Active Directory](/documentation/services/active-directory/)
+[详细了解 Azure Active Directory](/documentation/services/identity/)
  
 <!---HONumber=Mooncake_0620_2016-->

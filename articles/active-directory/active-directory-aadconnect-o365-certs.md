@@ -88,7 +88,7 @@ Azure AD 会尝试监视联盟元数据，并按照联盟元数据的指示更�
 
 [-] 无关紧要
 
-## 自动续订令牌签名证书（建议）<a name="autorenew"></a>
+## <a name="autorenew"></a>自动续订令牌签名证书（建议）
 
 如果你已部署 Web 应用程序代理，能够从 Extranet 访问联盟元数据，而且你使用的是 AD FS 默认配置，也就是已启用 AutoCertificateRollover，则**不需要执行任何手动步骤**。 检查下列事项以确认能够自动更新证书：
 
@@ -107,7 +107,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 示例：https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
 
-## 手动续订令牌签名证书 <a name="manualrenew"></a>
+## <a name="manualrenew"></a>手动续订令牌签名证书 
 
 你可以选择手动续订令牌签名证书。你会想要手动更新令牌签名证书的部分常见案例包括：
 * 令牌签名证书不是自签名证书。这种情况最常见的原因是，你的组织通过组织证书颁发机构来管理注册的 AD FS 证书。
@@ -155,7 +155,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 >[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅[支持多个顶级域](/documentation/articles/active-directory-aadconnect-multiple-domains/)。
 
-## 使用 AAD Connect 修复 Azure AD 信任 <a name="connectrenew"></a>
+## <a name="connectrenew"></a>使用 AAD Connect 修复 Azure AD 信任 
 
 如果你已使用 Azure AD Connect 安装所配置的 AD FS 场/Azure AD 信任，则可以使用 Azure AD Connect 来检测是否需要对令牌签名证书采取任何操作。如果需要续订证书，使用 Azure AD Connect 可让你简单按几下就完成所需操作。
 

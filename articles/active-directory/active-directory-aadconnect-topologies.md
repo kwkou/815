@@ -9,7 +9,7 @@
 
 <tags
    ms.service="active-directory"
-    ms.date="06/27/2016"
+   ms.date="06/27/2016"
    wacn.date="08/08/2016"/>
 
 # Azure AD Connect 的拓扑

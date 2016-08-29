@@ -198,10 +198,6 @@ Name | 说明 | 约束 | 建议
 登录页背景色 | 登录页背景色在登录页表单左侧的区域中使用。 | 必须是十六进制格式的 RGB 颜色（示例：#FFFFFF） | <p>连接的带宽较低时，可能会显示背景色来代替大图</p><p>我们建议选取横幅徽标的主要颜色</p>
 
 
-## 后续步骤
-
-- [Azure Active Directory 高级版入门](/documentation/articles/active-directory-get-started-premium/)
-
 <!--Image references-->
 [1]: ./media/active-directory-add-company-branding/SignInPage_beforecustomization.png
 [2]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization.png

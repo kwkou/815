@@ -27,13 +27,13 @@
 若要开始，你需要下载并安装 Visual Studio。然后可以克隆或[下载](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet/archive/skeleton.zip)骨架应用：
 
 
-		git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet.git
+	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet.git
 
 
 该骨架应用包含简单 AngularJS 应用的重复使用代码，但是缺少与标识相关的所有部分。如果你不想要延用该应用，可以克隆或[下载](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet/archive/complete.zip)完整的示例。
 
 
-		git clone https://github.com/AzureADSamples/SinglePageApp-AngularJS-DotNet.git
+	git clone https://github.com/AzureADSamples/SinglePageApp-AngularJS-DotNet.git
 
 
 ## 注册应用程序
@@ -49,7 +49,7 @@
 ## 安装 adal.js
 若要开始，请导航到下载的项目并安装 adal.js。如果已安装 [bower](http://bower.io/)，只要运行以下命令即可。如有任何依赖版本不匹配的情况，只需选择较高的版本。
 
-		bower install adal-angular#experimental
+	bower install adal-angular#experimental
 
 
 或者，你可以手动下载 [adal.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal.min.js) 和 [adal-angular.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal-angular.min.js)。将这两个文件添加到 `TodoSPA` 项目的 `app/lib/adal-angular-experimental/dist` 目录。

@@ -71,6 +71,7 @@
 	> [AZURE.IMPORTANT]完成这两个步骤中的任何一个时，会禁用单一登录到应用，但完成第二个步骤后会再次启用。因此，为了最大程度地减少停机时间，请准备好在较短的间隔时间内完成这两个步骤。
 
 	![下载然后上载证书](./media/active-directory-sso-certs/renew-config-app.PNG)
+
 <!--
 ## 相关文章
 

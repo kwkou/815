@@ -24,7 +24,7 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 ## 下载
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs/archive/skeleton.zip)，或克隆该骨架：
 
-		git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs.git
+	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs.git
 
 本教程末尾也提供完成的应用程序。
 
@@ -181,7 +181,7 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-		cd azuread
+	cd azuread
 
 
 输入以下命令，以在 node\_modules 目录中安装以下模块：
@@ -859,7 +859,7 @@ Shell
 
 [此处以 .zip 格式提供了](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
 
-		git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs.git
+	git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs.git
 
 现在，可以转到更高级的主题。你可能想要尝试：
 

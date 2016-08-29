@@ -28,12 +28,12 @@ v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些
 注册后，应用将向 Azure Active Directory v2.0 终结点发送请求，以便与 Azure AD 通信。我们提供了用于处理这些请求详细信息的开源框架和库，你也可以自行编写对这些终结点的请求，来实现身份验证逻辑：
 
 
-		https://login.microsoftonline.com/common/oauth2/v2.0/authorize
-		https://login.microsoftonline.com/common/oauth2/v2.0/token
+	https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+	https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 <!-- TODO: Need a page for libraries to link to -->
 
-## Web 应用
+## <a name="web-apps"></a>Web 应用
 对于通过浏览器访问的 Web 应用（.NET、PHP、Java、Ruby、Python、Node 等），可以使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow) 来执行用户登录。在 OpenID Connect 中，Web 应用将接收 `id_token`，这是一个安全令牌，用于验证用户的标识并以声明形式提供有关用户的信息：
 
 
@@ -61,7 +61,7 @@ v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些
 
 除了简单登录，Web 服务器应用可能还需要访问其他一些 Web 服务，例如 REST API。在这种情况下，Web 服务器应用可以使用 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow)参与合并的 OpenID Connect 和 OAuth 2.0 流。[WebApp-WebAPI 入门主题](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet/)中介绍了此方案。
 
-## Web API
+## <a name="web-apis"></a>Web API
 你可以使用 v2.0 终结点来保护 Web 服务，例如应用的 RESTful Web API。Web API 使用 OAuth 2.0 access\_token 而不是 id\_token 和会话 Cookie 来保护数据以及对传入的请求进行身份验证。Web API 调用方会在 HTTP 请求的授权标头中附加一个 access\_token：
 
 
@@ -85,7 +85,7 @@ Web API 可以从各种应用接收 access\_token，其中包括 Web 服务器�
 若要了解如何使用 OAuth2 access\_tokens 保护 Web API，请查看[入门部分](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started)中的 Web API 代码示例。
 
 
-## 移动和本机应用
+## <a name="mobile-and-native-apps></a>移动和本机应用
 安装在设备中的应用（如移动和桌面应用）通常需要访问用于存储数据和代表用户执行各种功能的后端服务或 Web API。这些应用可以使用 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols-oauth-code/)将登录凭据和授权添加到后端服务。
 
 在此流中，应用将在用户登录时从 v2.0 终结点接收 authorization\_code，这表示应用代表当前登录用户调用后端服务的权限。然后，应用可以在后台交换 OAuth 2.0 access\_token 和 refresh\_token 的 authoriztion\_code。应用可以使用 access\_token 在 HTTP 请求中向 Web API 进行身份验证，并可以在旧的 access\_token 过期时，用 refresh\_token 获取新的 access\_token。
