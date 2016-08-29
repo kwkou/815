@@ -5,12 +5,12 @@
 	documentationCenter="" 
 	authors="rayne-wiselman" 
 	manager="jwhit" 
-	editor="tysonn"/>
+	editor=""/>
 
 <tags 
 	ms.service="site-recovery"  
-	ms.date="07/06/2016" 
-	wacn.date="08/01/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="08/29/2016"/>
 
 
 # 使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server 
@@ -101,24 +101,23 @@ SQL Server（任何版本） | Enterprise 或 Standard | 故障转移群集实�
 
 ## 使用 SQL Server Always-On（本地至 Azure）集成保护
 
-### 在 VMM 云中保护 Hyper-V VM
 
 Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并且 Azure 虚拟机设置为“辅助”，则可以使用 Site Recovery 来管理可用性组的故障转移。
 
->[AZURE.NOTE] 此功能目前处于预览状态，当主要数据中心的 Hyper-V 主机服务器由 VMM 云管理时可供使用。
+>[AZURE.NOTE] 此功能目前处于预览状态，当主要数据中心的 Hyper-V 主机服务器由 VMM 云管理以及 VMware 设置由[配置服务器](/documentation/articles/site-recovery-vmware-to-azure/#configuration-server-prerequisites)管理时可供使用。此功能目前尚无法在新的 Azure 门户中使用。
 
 #### 先决条件
 
-以下是当你从 VMM 复制时，将 SQL AlwaysOn 与 Site Recovery 集成所需的内容：
+以下是将 SQL AlwaysOn 与 Site Recovery 集成所需的内容：
 
 - 本地 SQL Server（独立服务器或故障转移群集）。
 - 一个或多个装有 SQL Server 的 Azure 虚拟机
 - 已在本地 SQL Server 与 Azure 中运行的 SQL Server 之间设置 SQL 可用性组
-- 应在本地 SQL Server 计算机上启用 PowerShell 远程处理。VMM 服务器应该能够对 SQL Server 进行远程 PowerShell 调用。
+- 应在本地 SQL Server 计算机上启用 PowerShell 远程处理。VMM 服务器或配置服务器应该能够对 SQL Server 进行远程 PowerShell 调用。
 - 在本地 SQL Server 上，应该将一个至少具有以下权限的用户帐户添加到以下 SQL 用户组：
 	- ALTER AVAILABILITY GROUP：[此处](https://msdn.microsoft.com/zh-cn/library/hh231018.aspx)和[此处](https://msdn.microsoft.com/zh-cn/library/ff878601.aspx#Anchor_3)的权限
 	- ALTER DATABASE - [此处](https://msdn.microsoft.com/zh-cn/library/ff877956.aspx#Security)的权限
-- 在 VMM 服务器上，应针对上一步中的帐户创建一个运行方式帐户
+- 对于在上一步提到的用户，应使用 CSPSConfigtool.exe 在 VMM 服务器上创建运行身份帐户，或在配置服务器上创建帐户
 - 本地运行的 SQL Server 上和 Azure 虚拟机上应安装 SQL PS 模块
 - 在 Azure 上运行的虚拟机中应安装 VM 代理
 - NTAUTHORITY\\System 应该对 Azure 中的虚拟机上运行的 SQL Server 具有以下权限：
@@ -135,10 +134,11 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 2. 在“配置 SQL 设置”>“名称”中，提供一个友好名称来表示 SQL Server。
 3. 在“SQL Server (FQDN)”中，指定要添加的源 SQL Server 的 FQDN。如果 SQL Server 安装在故障转移群集上，请提供群集的 FQDN，而不是任何群集节点的 FQDN。
 4. 在“SQL Server 实例”中，选择默认实例或提供自定义实例的名称。
-5. 在“VMM 服务器”中，选择在 Site Recovery 保管库中注册的 VMM 服务器。Site Recovery 会使用此 VMM 服务器来与 SQL Server 通信。
-6. 在“运行方式帐户”中，提供在指定 VMM 服务器上创建的运行方式帐户的名称。此帐户用于访问 SQL Server，并且应该对 SQL Server 计算机上的可用性组具有读取和故障转移权限。
+5. 在“管理服务器”中，选择在 Site Recovery 保管库中注册的 VMM 服务器或配置服务器。Site Recovery 会使用此管理服务器来与 SQL Server 通信。
+6. 在“运行身份帐户”中，提供在指定 VMM 服务器上创建的运行身份帐户或在配置服务器上创建的帐户的名称。此帐户用于访问 SQL Server，并且应该对 SQL Server 计算机上的可用性组具有读取和故障转移权限。
 
-	![添加 SQL 对话框](./media/site-recovery-sql/add-sql-dialog.png)
+	![添加 SQL 对话框](./media/site-recovery-sql/add-sql-dialog.png)  
+
 
 添加 SQL Server 之后，它就会显示在“SQL Server”选项卡中。
 
@@ -149,11 +149,13 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 
 1. 添加 SQL Server 计算机后，下一步是将可用性组添加到 Site Recovery。为此，请向下钻取到在上一步骤中添加的 SQL Server，然后单击“添加 SQL 可用性组”。
 
-	![添加 SQL AG](./media/site-recovery-sql/add-sqlag.png)
+	![添加 SQL AG](./media/site-recovery-sql/add-sqlag.png)  
+
 
 2. SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQL 可用性组时，系统将要求你提供 Azure 虚拟机的名称和订阅，Site Recovery 会将可用性组故障转移到该虚拟机中。
 
-	![添加 SQL AG 对话框](./media/site-recovery-sql/add-sqlag-dialog.png)
+	![添加 SQL AG 对话框](./media/site-recovery-sql/add-sqlag-dialog.png)  
+
 
 3. 在上述示例中，可用性组 DB1-AG 在故障转移之后，将变成订阅 DevTesting2 中运行的虚拟机 SQLAGVM2 上的主节点。
 
@@ -162,7 +164,7 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 #### 步骤 3：创建恢复计划
 
 下一步是使用虚拟机和可用性组创建恢复计划。
-选择在步骤 1 中所用的同一 VMM 服务器作为源，并选择 Microsoft Azure 作为目标。
+选择在步骤 1 中所用的同一 VMM 服务器或配置服务器作为源，并选择 Azure 作为目标。
 
 ![创建恢复计划](./media/site-recovery-sql/create-rp1.png)
 
@@ -200,9 +202,9 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 
 
 
-### 不使用 VMM 保护计算机
+### 在没有 VMM 服务器或配置服务器的情况下对计算机进行保护
 
-对于不由 VMM 服务器管理的环境，可以使用 Azure 自动化 Runbook 来配置 SQL 可用性组的脚本化故障转移。以下是配置步骤：
+对于不由 VMM 服务器或配置服务器管理的环境，可以使用 Azure 自动化 Runbook 来配置 SQL 可用性组的脚本化故障转移。以下是配置步骤：
 
 1.	为脚本创建本地文件，以故障转移可用性组。此示例脚本将在 Azure 副本上指定可用性组的路径，并将其故障转移到该副本实例。此脚本将通过使用自定义脚本扩展传递，以便在 SQL Server 副本虚拟机上运行。
 
@@ -350,4 +352,4 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0822_2016-->
