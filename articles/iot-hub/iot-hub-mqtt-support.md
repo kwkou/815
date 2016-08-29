@@ -9,8 +9,8 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="04/29/2016"
- wacn.date="08/01/2016"/>
+ ms.date="07/19/2016"
+ wacn.date="08/29/2016"/>
 
 # IoT 中心 MQTT 支持
 
@@ -34,6 +34,7 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 | [Java][lnk-sample-java] | IotHubClientProtocol.MQTT |
 | [C][lnk-sample-c] | MQTT\_Protocol |
 | [C#][lnk-sample-csharp] | TransportType.Mqtt |
+| [Python][lnk-sample-python] | IoTHubTransportProvider.MQTT |
 
 ## 直接使用 MQTT 协议
 
@@ -55,9 +56,11 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
     3. 在 **SASTokenForm** 上，从“DeviceID”下拉列表中选择你的设备。设置 **TTL**。
     4. 单击“生成”以创建令牌。
     
-    所生成的 SAS 令牌如下所示：`HostName={your hub name}.azure-devices.cn;DeviceId=javadevice;SharedAccessSignature=SharedAccessSignature sr={your hub name}.azure-devices.cn%2fdevices%2fMyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802`。
+    所生成的 SAS 令牌如下所示：
+    `HostName={your hub name}.azure-devices.cn;DeviceId=javadevice;SharedAccessSignature=SharedAccessSignature sr={your hub name}.azure-devices.net%2fdevices%2fMyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802`。
 
-    与“密码”字段一样使用 MQTT 连接的部分为：`SharedAccessSignature sr={your hub name}.azure-devices.cn%2fdevices%2fyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802g%3d&se=1456481802`。
+    与“密码”字段一样使用 MQTT 连接的部分为：
+    `SharedAccessSignature sr={your hub name}.azure-devices.cn%2fdevices%2fyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802g%3d&se=1456481802`。
 
 对于 MQTT 连接和断开连接数据包，IoT 中心将在**操作监视**通道上发出事件。
 
@@ -71,11 +74,11 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 > [AZURE.NOTE] 此编程与 HTTP 协议中用于查询字符串的编码相同。
 
-设备客户端应用程序还可以使用 `devices/{device_id}/messages/events/{property_bag}` 作为 **Will 主题名称**，来定义要以遥测消息形式转发的 Will 消息。
+设备客户端应用程序还可以使用 `devices/{device_id}/messages/events/{property_bag}` 作为 **Will 主题名称**，来定义要以遥测消息形式转发的 *Will 消息*。
 
 ### 接收消息
 
-若要从 IoT 中心接收消息，应使用 `devices/{device_id}/messages/devicebound/#”` 作为**主题筛选器**来订阅设备。如有任何消息属性，IoT 中心将传送包含**主题名称**、`devices/{device_id}/messages/devicebound/` 或 `devices/{device_id}/messages/devicebound/{property_bag}` 的消息。`{property_bag}` 包含 URL 编码的消息属性键/值对。属性包中只包含应用程序属性和用户可设置的系统属性（例如 **messageId** 或 **correlationId**）。系统属性名称具有前缀 **$**，但应用程序属性使用没有前缀的原始属性名称。
+若要从 IoT 中心接收消息，设备应使用 `devices/{device_id}/messages/devicebound/#”` 作为**主题筛选器**来进行订阅。如有任何消息属性，IoT 中心将传送包含**主题名称**、`devices/{device_id}/messages/devicebound/` 或 `devices/{device_id}/messages/devicebound/{property_bag}` 的消息。`{property_bag}` 包含 URL 编码的消息属性键/值对。属性包中只包含应用程序属性和用户可设置的系统属性（例如 **messageId** 或 **correlationId**）。系统属性名称具有前缀 **$**，但应用程序属性使用没有前缀的原始属性名称。
 
 ## 后续步骤
 
@@ -104,6 +107,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 [lnk-sample-java]: https://github.com/Azure/azure-iot-sdks/blob/develop/java/device/samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/iothub/SendReceive.java
 [lnk-sample-c]: https://github.com/Azure/azure-iot-sdks/tree/master/c/iothub_client/samples/iothub_client_sample_mqtt
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
+[lnk-sample-python]: https://github.com/Azure/azure-iot-sdks/tree/master/python/device/samples
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/readme.md
 [lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens/#using-sas-tokens-as-a-device
 [lnk-mqtt-devguide]: /documentation/articles/iot-hub-devguide/#mqtt-support

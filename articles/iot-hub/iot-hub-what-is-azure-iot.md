@@ -9,15 +9,16 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="04/29/2016"
- wacn.date="08/01/2016"/>
+ ms.date="07/19/2016"
+ wacn.date="08/29/2016"/>
 
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## 后续步骤
 
-Azure IoT 中心是一项 Azure 服务，可在一个应用程序后端和数百万个设备之间实现安全可靠的双向通信。它可让应用程序后端接收设备的大规模遥测数据，将该数据路由到流事件处理器，而且还能对特定设备发送云到设备的命令。你可以使用 IoT 中心来实现自己的解决方案后端。此外，IoT 中心还包含设备标识注册表，可供用来设置设备、其安全凭据和其连接到中心的权限。若要了解更多信息，请参阅以下文章：
+Azure IoT 中心是一项 Azure 服务，可在一个应用程序后端和数百万个设备之间实现安全可靠的双向通信。它可让应用程序后端接收设备的大规模遥测数据，将该数据路由到流事件处理器，从设备接收文件上载，而且还能对特定设备发送云到设备的命令。你可以使用 IoT 中心来实现自己的解决方案后端。此外，IoT 中心还包含设备标识注册表，可供用来设置设备、其安全凭据和其连接到中心的权限。若要了解有关 IoT 中心的详细信息，请参阅 [IoT 中心是什么？][lnk-iot-hub]。
 
+若要了解 Azure IoT 中心如何实现标准的 IoT 设备管理，以便远程管理、配置和更新设备，请参阅 [Azure IoT 中心设备管理概述][lnk-device-management]。
 
 你可以使用 IoT 设备 SDK 在各种设备硬件平台和操作系统上实现客户端应用程序。IoT 设备 SDK 包含库，可协助将遥测数据发送到 IoT 中心，并接收云到设备的命令。使用 SDK 时，可从数个网络协议中进行选择，以便与 IoT 中心通信。若要了解详细信息，请参阅[设备 SDK 的相关信息][lnk-device-sdks]。
 
@@ -29,5 +30,6 @@ Azure IoT 中心是一项 Azure 服务，可在一个应用程序后端和数百
 [lnk-iot-hub]: /documentation/articles/iot-hub-what-is-iot-hub/
 [lnk-iot-suite]: /documentation/suites/iot-suite/
 [lnk-iotdev]: /develop/iot/
+[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/
 
 <!---HONumber=Mooncake_0321_2016-->

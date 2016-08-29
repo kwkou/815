@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="06/23/2016"
-     wacn.date="08/01/2016"/>
+     ms.date="08/11/2016"
+     wacn.date="08/29/2016"/>
 
 # 适用于 Java 的 Azure IoT 中心入门
 
@@ -24,7 +24,7 @@
 
 > [AZURE.NOTE] [IoT 中心 SDK][lnk-hub-sdks] 一文提供了各种 SDK 的相关信息，你可以使用这些 SDK 构建可在设备和解决方案后端上运行的应用程序。
 
-若要完成本教程，你需要以下各项：
+若要完成本教程，您需要以下各项：
 
 + Java SE 8。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Java。
 
@@ -34,17 +34,17 @@
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
-最后一步，记下“主密钥”值，然后在 IoT 中心边栏选项卡上单击“设置”，接着在“设置”边栏选项卡上单击“消息传送”。在“消息传送”边栏选项卡上，记下“与事件中心兼容的名称”和“与事件中心兼容的终结点”。创建 **read-d2c-messages** 应用程序时，将要用到这 3 个值。
+最后，请记下“主密钥”值，然后单击“消息传送”。在“消息传送”边栏选项卡上，记下“与事件中心兼容的名称”和“与事件中心兼容的终结点”。创建 **read-d2c-messages** 应用程序时，将要用到这三个值。
 
-   ![][6]
+    ![][6]
 
-现在，你已创建 IoT 中心并获取了 IoT 中心主机名、IoT 中心连接字符串、IoT 中心主密钥、与事件中心兼容的名称及与事件中心兼容的终结点，接下来需要完成本教程的余下部分。
+现在，你已创建 IoT 中心并获取了 IoT 中心主机名、IoT 中心连接字符串、IoT 中心主密钥、与事件中心兼容的名称及与事件中心兼容的终结点，接下来需要完成本教程。
 
 ## 创建设备标识
 
 在本部分中，你将创建一个 Java 控制台应用程序，用于在 IoT 中心的标识注册表中创建新的设备标识。设备无法连接到 IoT 中心，除非它在设备标识注册表中具有条目。有关详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-identity]的“设备标识注册表”部分。当你运行此控制台应用程序时，它将生成唯一的设备 ID 和密钥，当设备向 IoT 中心发送设备到云的消息时，可以使用这些信息标识设备本身。
 
-1. 新建名为 iot-java-get-started 的空文件夹。使用命令提示符中的以下命令，在 iot-java-get-started 文件夹中创建名为“create-device-identity”的新 Maven 项目。请注意，这是一条很长的命令：
+1. 新建名为 iot-java-get-started 的空文件夹。使用命令提示符中的以下命令，在 iot-java-get-started 文件夹中创建名为 **create-device-identity** 的新 Maven 项目。请注意，这是一条很长的命令：
 
     ```
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=create-device-identity -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -85,7 +85,7 @@
     
     ```
     
-8. 修改 **main** 方法的签名以添加如下所示的异常：
+8. 修改 **main** 方法的签名，包含如下所示的异常：
 
     ```
     public static void main( String[] args ) throws IOException, URISyntaxException, Exception
@@ -236,9 +236,9 @@
     }
     ```
 
-    > [AZURE.NOTE] 在创建开始运行后只读取发送到 IoT 中心的消息的接收方时，此方法将使用筛选器。这很适合测试环境，因为这样可以看到当前的消息集；但在生产环境中，代码应确保它能处理所有消息。有关详细信息，请参阅[如何处理 IoT 中心设备到云的消息][lnk-process-d2c-tutorial]教程。
+    > [AZURE.NOTE] 在创建开始运行后只读取发送到 IoT 中心的消息的接收方时，此方法将使用筛选器。这很适合测试环境，因为这样可以看到当前的消息集。在生产环境中，代码应确保它能处理所有消息。有关详细信息，请参阅[如何处理 IoT 中心设备到云的消息][lnk-process-d2c-tutorial]教程。
 
-11. 修改 **main** 方法的签名以添加如下所示的异常：
+9. 修改 **main** 方法的签名，包含如下所示的异常：
 
     ```
     public static void main( String[] args ) throws IOException
@@ -277,7 +277,7 @@
 
 在本部分中，你将创建一个 Java 控制台应用程序，用于模拟向 IoT 中心发送设备到云消息的设备。
 
-1. 在命令提示符下，在创建设备标识部分中创建的 iot-java-get-started 文件夹中，使用以下命令创建名为 **simulated-device** 的新 Maven 项目。请注意，这是一条很长的命令：
+1. 在命令提示符下，在*创建设备标识*部分中创建的 iot-java-get-started 文件夹中，使用以下命令创建名为 **simulated-device** 的新 Maven 项目。请注意，这是一条很长的命令：
 
     ```
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -429,7 +429,7 @@
     mvn clean package -DskipTests
     ```
 
-> [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如指数退让）。
+> [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，你应该按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
 
 ## 运行应用程序
 
@@ -451,7 +451,7 @@
 
     ![][8]
 
-3. [Azure 门户][lnk-portal]中的“使用情况”磁贴显示了发送到中心的消息数：
+3. [Azure 门户][lnk-portal]中的“使用情况”磁贴显示发送到中心的消息数：
 
     ![][43]
 
@@ -485,7 +485,7 @@
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-free-trial]: /pricing/1rmb-trial/
-[lnk-portal]: https://manage.windowsazure.cn
+[lnk-portal]: https://portal.azure.cn/
 
 [lnk-device-management]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
