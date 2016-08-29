@@ -9,12 +9,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/01/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="07/23/2016"
+   wacn.date="08/29/2016"/>
+
 
 # 安装适用于 SQL 数据仓库的 Visual Studio 2015 和 SSDT
 
-若要开发 SQL 数据仓库的应用程序，建议使用 Visual Studio 2015，并结合最新版本的 SQL Server Data Tools (SSDT)。向后兼容也支持装有 SSDT 的 Visual Studio 2013。
+若要开发 SQL 数据仓库的应用程序，建议使用 Visual Studio 2015，并结合最新版本的 SQL Server Data Tools (SSDT)。向后兼容也支持装有 SSDT 的 Visual Studio 2013 Update 5。
 
 使用装有 SSDT 的 Visual Studio 让你可以使用 SQL Server 对象资源管理器以可视化方式浏览 SQL 数据仓库中的表格、视图、存储过程和其他更多对象，并运行查询。
 
@@ -42,14 +43,16 @@
 
 <!--Anchors-->
 
+
 <!--Image references-->
 
-<!--Arcticles-->
+<!--Articles-->
 [连接]: /documentation/articles/sql-data-warehouse-get-started-connect/
 
 <!--Other-->
+
 [下载 Visual Studio 2015]: https://www.visualstudio.com/downloads/
 [安装 Visual Studio]: https://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx
 [SSDT 下载]: https://msdn.microsoft.com/zh-cn/library/mt204009.aspx
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0822_2016-->

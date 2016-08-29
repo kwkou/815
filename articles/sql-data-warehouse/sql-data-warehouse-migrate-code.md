@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/30/2016"
-   wacn.date="08/15/2016"/>
+   ms.date="08/02/2016"
+   wacn.date="08/29/2016"/>
 
 # 将 SQL 代码迁移到 SQL 数据仓库
 
@@ -76,7 +76,7 @@ SQL 数据仓库支持部分通用表表达式 (CTE)。目前支持以下 CTE �
 
 SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复杂，最好是将其分为多个步骤来进行。通常你可以使用循环，并在循环访问递归的临时查询时填充临时表。填充临时表之后，你可以使用单个结果集返回数据。类似的方法已用于解决[结合 rollup / cube / grouping sets 选项的 Group By 子句][]一文中所述的 `GROUP BY WITH CUBE`。
 
-## 系统函数
+## 不支持的系统函数
 
 还有一些不支持的系统函数。在数据仓库中，你可能经常发现使用了下面这些主要函数：
 
@@ -87,21 +87,29 @@ SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复�
 - ROWCOUNT\_BIG
 - ERROR\_LINE()
 
-同样，其中的许多问题都可以得到解决。
+其中的许多问题都可以得到解决。
 
-例如，以下代码是检索 @@ROWCOUNT 信息的替代解决方法：
+## @@ROWCOUNT 解决方法
+
+若要解决缺少对 @@ROWCOUNT 支持的问题，创建将检索 sys.dm\_pdw\_request\_steps 中的最后一个行计数的存储过程，然后在 DML 语句后执行 `EXEC LastRowCount`。
 
 
-	SELECT  SUM(row_count) AS row_count
-	FROM    sys.dm_pdw_sql_requests
-	WHERE   row_count <> -1
-	AND     request_id IN
-	                    (   SELECT TOP 1    request_id
-	                        FROM            sys.dm_pdw_exec_requests
-	                        WHERE           session_id = SESSION_ID()
-	                        AND             resource_class IS NOT NULL
-	                        ORDER BY end_time DESC
-	                    )
+	CREATE PROCEDURE LastRowCount AS
+	WITH LastRequest as 
+	(   SELECT TOP 1    request_id
+	    FROM            sys.dm_pdw_exec_requests
+	    WHERE           session_id = SESSION_ID()
+	    AND             resource_class IS NOT NULL
+	    ORDER BY end_time DESC
+	),
+	LastRequestRowCounts as
+	(
+	    SELECT  step_index, row_count
+	    FROM    sys.dm_pdw_request_steps
+	    WHERE   row_count >= 0
+	    AND     request_id IN (SELECT request_id from LastRequest)
+	)
+	SELECT TOP 1 row_count FROM LastRequestRowCounts ORDER BY step_index DESC
 	;
 
 
@@ -129,4 +137,4 @@ SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0822_2016-->

@@ -10,14 +10,14 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/16/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/22/2016"
+   wacn.date="08/29/2016"/>
 
 # 查询 Azure SQL 数据仓库 (sqlcmd)
 
 > [AZURE.SELECTOR]
+- [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio/)
 - [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
-<!-- - [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio/) -->
 
 本演练使用 sqlcmd 命令行实用工具来查询 Azure SQL 数据仓库。
 
@@ -25,15 +25,7 @@
 
 若要逐步完成本教程，你需要：
 
-## 获取完全限定的 Azure SQL 服务器名称
-
-若要连接到数据库，你需要服务器的完整名称 (***servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
-
-1. 转到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
-2. 浏览到要连接到的数据库。
-3. 点击“仪表板”，找出完整的服务器名称（我们将在下面的步骤中使用此名称）：
-
-## 使用 sqlcmd 连接到 SQL 数据仓库
+-  [sqlcmd.exe][]。若要下载，请参阅 [Microsoft Command Line Utilities 11 for SQL Server][]，同样需要 [Microsoft ODBC Driver 11 for SQL Server Windows][]。
 
 ## 1\.连接
 
@@ -78,15 +70,16 @@
 若要了解有关所有 sqlcmd 选项的信息，请参阅 [sqlcmd 文档][sqlcmd.exe]。
 
 <!--Articles-->
+
 [connecting with PowerBI]: /documentation/articles/sql-data-warehouse-integrate-power-bi/
 
 
 <!--Other-->
 [sqlcmd.exe]: https://msdn.microsoft.com/zh-cn/library/ms162773.aspx
+[Microsoft ODBC Driver 11 for SQL Server Windows]: https://www.microsoft.com/download/details.aspx?id=36434
 [Microsoft Command Line Utilities 11 for SQL Server]: http://go.microsoft.com/fwlink/?LinkId=321501
 [Azure portal]: https://manage.windowsazure.cn
 
-<!--Image references-->
+<!--Other Web references-->
 
-
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0822_2016-->

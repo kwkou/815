@@ -9,18 +9,18 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="04/20/2016"
-   wacn.date="06/20/2016"/>
+   ms.date="08/08/2016"
+   wacn.date="08/29/2016"/>
 
 
-# 数据仓库迁移实用程序
+# 数据仓库迁移实用程序（预览版）
 
 > [AZURE.SELECTOR]
 - [下载迁移实用程序][]
 
-数据仓库迁移实用程序是专门用于将架构和数据从 SQL Server 与 Azure SQL 数据库迁移到 Azure SQL 数据仓库的工具。在迁移架构期间，该工具会自动将相应架构从源映射到目标。完成迁移架构后，用户还能选择以自动生成的脚本来移动数据。
+数据仓库迁移实用程序是专门用于将架构和数据从 SQL Server 与 Azure SQL 数据库迁移到 Azure SQL 数据仓库的工具。在迁移架构期间，该工具会自动将相应架构从源映射到目标。迁移架构后，该工具提供了使用自动生成的脚本移动数据的选项。
 
-除了迁移架构和数据以外，此工具还能让用户选择生成兼容性报告，汇总目标与源实例之间可能会妨碍迁移操作的不兼容问题。
+除了迁移架构和数据以外，此工具还能让您选择生成兼容性报告，汇总目标与源实例之间可能会妨碍迁移操作的不兼容问题。
 
 ## 入门
 安装的先决条件之一是，你需要使用 BCP 命令行实用程序来运行迁移脚本和 Office，这样才能查看兼容性报告。启动下载的可执行文件后，系统将提示你在安装该工具之前接受标准 EULA。
@@ -54,10 +54,12 @@
 
 <!--Image references-->
 
+
 <!--Article references-->
 [迁移文档]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
+
 <!--Other Web references--> 
 [下载迁移实用程序]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0822_2016-->
