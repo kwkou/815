@@ -42,7 +42,7 @@
     GET on https://<cluster-dns-name>.azurehdinsight.cn/ws/v1/applicationhistory/apps
 
 
-##<a name="YARNAppsAndLogs"></a> YARN 应用程序和日志
+## <a name="YARNAppsAndLogs"></a> YARN 应用程序和日志
 
 YARN 通过将资源管理与应用程序计划/监视相分离，来支持多种编程模型（MapReduce 就是其中之一）。这是通过全局 *ResourceManager* (RM)、按辅助节点 *NodeManagers* (NM) 和按应用程序 *ApplicationMasters* (AM) 来实现的。按应用程序 AM 与 RM 协商用于运行应用程序的资源（CPU、内存、磁盘、网络）。RM 与 NM 合作来授予这些资源（以 *容器* 的形式授予）。AM 负责跟踪 RM 分配给它的容器的进度。根据应用程序的性质，一个应用程序可能需要多个容器。
 

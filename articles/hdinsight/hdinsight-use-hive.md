@@ -21,7 +21,7 @@
 
 在本教程中，你将学习如何在 HDInsight 上使用 Hadoop 中的 Apache Hive，以及选择如何运行 Hive 作业。此外，你还将了解 HiveQL 以及如何分析一个示例 Apache log4j 文件。
 
-##<a id="why"></a>什么是 Hive，为何要使用它？
+## <a id="why"></a>什么是 Hive，为何要使用它？
 [Apache Hive](http://hive.apache.org/) 是适用于 Hadoop 的数据仓库系统，可让你使用 HiveQL（类似于 SQL 的查询语言）来进行数据汇总、查询和数据分析。使用 Hive 能够以交互方式浏览数据，或者创建可重用的批处理作业。
 
 Hive 允许你在很大程度上未结构化的数据上投影结构。在定义结构后，你可以使用 Hive 来查询这些数据，而不需要具备 Java 或 MapReduce 的知识。**HiveQL**（Hive 查询语言）可让你使用类似于 T-SQL 的语句编写查询。
@@ -50,7 +50,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 有关详细信息，请参阅 [HDInsight：Hive 内部和外部表简介][cindygross-hive-tables]。
 
 
-##<a id="data"></a>关于示例数据（一个 Apache log4j 文件）
+## <a id="data"></a>关于示例数据（一个 Apache log4j 文件）
 
 本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，用于显示类型和严重性，例如：
 
@@ -68,7 +68,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 > [AZURE.NOTE] 语法 **wasbs:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如 **wasbs://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
 
-##<a id="job"></a>示例作业：将列投影到分隔的数据
+## <a id="job"></a>示例作业：将列投影到分隔的数据
 
 以下 HiveQL 语句将列投影到 **wasbs:///example/data** 目录中存储的分隔数据：
 
@@ -108,7 +108,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 > [AZURE.NOTE] 与外部表不同，删除内部表会同时删除基础数据。
 
-##<a id="usetez"></a>使用 Apache Tez 提高性能
+## <a id="usetez"></a>使用 Apache Tez 提高性能
 
 [Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。
 
@@ -120,7 +120,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
 
-##<a id="run"></a>选择如何运行 HiveQL 作业
+## <a id="run"></a>选择如何运行 HiveQL 作业
 
 HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定哪种方法最适合你，然后按链接进行演练。
 
@@ -144,7 +144,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 在[此处][ssispack]了解有关 Azure Feature Pack for SSIS 的详细信息。
 
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 现在，你已了解什么是 Hive，以及如何将它与 HDInsight 中的 Hadoop 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
 

@@ -27,7 +27,7 @@ Hadoop 为 MapReduce 提供了一个流式处理 API，使你能够以 Java 之�
 - 在 Azure HDInsight 中运行 MapReduce 作业
 - 检索 MapReduce 作业的结果
 
-##<a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>先决条件
 
 在开始本教程之前，必须先完成以下操作：
 
@@ -35,7 +35,7 @@ Hadoop 为 MapReduce 提供了一个流式处理 API，使你能够以 Java 之�
 - 获取 Azure 订阅。有关说明，请参阅[购买选项][azure-purchase-options]、[试用][azure-trial]。
 
 
-##<a name="develop"></a> 使用 C&#35; 开发单词计数 Hadoop 流式处理程序
+## <a name="develop"></a> 使用 C&#35; 开发单词计数 Hadoop 流式处理程序
 
 单词计数解决方案包含两个控制台应用程序项目：映射器和化简器。映射器应用程序将每个单词流式传输到控制台，化简器应用程序对从文档流式传输的单词进行计数。映射器和化简器都从标准输入流 (stdin) 逐行读取字符，并写入到标准输出流 (stdout)。
 
@@ -129,7 +129,7 @@ Hadoop 为 MapReduce 提供了一个流式处理 API，使你能够以 Java 之�
 - ..\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
 
 
-##<a id="upload"></a>将数据上载到 Azure Blob 存储
+## <a id="upload"></a>将数据上载到 Azure Blob 存储
 Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDInsight 群集配置为将其他 Blob 存储用于数据文件。在本部分中，你将创建 Azure 存储帐户并将数据文件上载到 Blob 存储。数据文件是 %hadoop\_home%\\share\\doc\\hadoop\\common 目录中的 .txt 文件。
 
 
@@ -218,7 +218,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 	你应看到这两个应用程序文件在该处列出。
 
 
-##<a name="run"></a>在 Azure HDInsight 中运行 MapReduce 作业
+## <a name="run"></a>在 Azure HDInsight 中运行 MapReduce 作业
 
 本部分提供的 Azure PowerShell 脚本将执行与 MapReduce 作业运行有关的所有任务。任务列表包括：
 
@@ -334,7 +334,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 有关提交 Hadoop 流式处理作业的 HDInsight .NET SDK 示例，请参阅[以编程方式提交 Hadoop 作业][hdinsight-submit-jobs]。
 
 
-##<a name="retrieve"></a> 检索 MapReduce 作业输出
+## <a name="retrieve"></a> 检索 MapReduce 作业输出
 本节演示如何下载和显示输出。有关在 Excel 中显示结果的信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][hdinsight-ODBC] 和[利用 Power Query 将 Excel 连接到 HDInsight][hdinsight-power-query]。
 
 
@@ -361,7 +361,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 
 
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Hadoop 流式处理 MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
 
 - [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)

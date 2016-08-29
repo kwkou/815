@@ -108,7 +108,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 你的应用现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
 
-##<a name="scale-out"></a>向外扩展
+## <a name="scale-out"></a>向外扩展
 
 Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应用程序实例之间发布消息和事件。尽管有几个适配器可用，[socket.io redis](https://github.com/automattic/socket.io-redis) 适配器可轻松与 Azure Redis 缓存功能一同使用。
 

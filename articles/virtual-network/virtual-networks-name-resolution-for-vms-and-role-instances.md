@@ -36,7 +36,7 @@
 
 
 
-##<a name="azure-provided-name-resolution" id="Azure-provided-name-resolution"></a> Azure 提供的名称解析
+## <a name="azure-provided-name-resolution" id="Azure-provided-name-resolution"></a> Azure 提供的名称解析
 
 除公共 DNS 名称解析之外，Azure 还为驻留在相同虚拟网络或云服务中的 VM 和角色实例提供内部名称解析。云服务中的 VM/实例共享同一 DNS 后缀，因此只需单独的主机名，但在经典虚拟网络中，不同的云服务具有不同的 DNS 后缀，因此需要使用 FQDN 在不同云服务之间解析名称。虽然 Azure 提供的名称解析不需要任何配置，但并不适合所有部署方案，如上表所示。
 
@@ -122,7 +122,7 @@ resolv.conf 文件通常是自动生成的，不应进行编辑。添加“optio
 	- 将“echo "options timeout:1 attempts:5"”添加到“/etc/NetworkManager/dispatcher.d/11-dhclient” 
 	- 运行“service network restart”以更新
 
-##<a name="name-resolution-using-your-own-dns-server" id="Name-resolution-using-your-own-DNS-server"></a> 使用你自己的 DNS 服务器的名称解析
+## <a name="name-resolution-using-your-own-dns-server" id="Name-resolution-using-your-own-DNS-server"></a> 使用你自己的 DNS 服务器的名称解析
 在很多情况下，Azure 所提供的功能可能无法满足你的名称解析需求，例如，你可能需要使用 Active Directory 域，或者需要在虚拟网络 (VNet) 之间进行 DNS 解析。考虑到这些情况，Azure 为你提供了使用你自己的 DNS 服务器的功能。
 
 虚拟网络中的 DNS 服务器可以将 DNS 查询转发到 Azure 的递归解析程序，以便解析该虚拟网络中的主机名。例如，在 Azure 中运行的域控制器 (DC) 可以响应自身域的 DNS 查询，而将所有其他查询转发到 Azure。这样一来，VM 就可以查看你的本地资源（通过 DC）以及 Azure 提供的主机名（通过转发器）。可以通过虚拟 IP 168.63.129.16 访问 Azure 的递归解析程序。

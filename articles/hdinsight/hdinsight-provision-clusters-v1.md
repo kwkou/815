@@ -218,14 +218,14 @@
 有关将 HDInsight 与虚拟网络配合使用的信息（包括虚拟网络的特定配置要求），请参阅 [Extend HDInsight capbilities by using an Azure Virtual Network（使用 Azure 虚拟网络扩展 HDInsight 功能）](/documentation/articles/hdinsight-extend-hadoop-virtual-network/)。
 
 
-##<a name="cluster-creation-methods"></a> 预配工具
+## <a name="cluster-creation-methods"></a> 预配工具
 
 - Azure 经典管理门户
 - Azure PowerShell
 - .NET SDK
 - CLI
 
-###<a name="portal"></a> 使用 Azure 经典管理门户
+### <a name="portal"></a> 使用 Azure 经典管理门户
 
 你可以参考 [基本配置选项] 和 [高级配置选项] 以获取有关字段的说明。
 
@@ -641,7 +641,7 @@ HDInsight 群集还需要在存储帐户中提供一个容器。如果你提供�
 
 
 
-###<a name="sdk"></a> 使用 HDInsight .NET SDK
+### <a name="sdk"></a> 使用 HDInsight .NET SDK
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使用 HDInsight 的操作。
 
 通过使用 SDK 设置 HDInsight 群集时必须执行以下过程：
@@ -749,7 +749,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 该应用程序在 Visual Studio 中打开时，按 **F5** 运行该应用程序。控制台窗口应打开并显示应用程序的状态。设置一个 HDInsight 群集可能需要几分钟时间。
 
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 在本文中，你已经学习了几种设置 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
 * [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/) - 了解如何开始使用你的 HDInsight 群集

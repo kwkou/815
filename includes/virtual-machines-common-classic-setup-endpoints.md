@@ -35,7 +35,7 @@
 ![成功创建终结点](./media/virtual-machines-common-classic-setup-endpoints/endpointwindowsnew.png)
 
  
-##<a name="manage-the-acl-on-an-endpoint"></a>管理终结点上的 ACL
+## <a name="manage-the-acl-on-an-endpoint"></a>管理终结点上的 ACL
 
 若要定义一组可以发送流量的计算机，终结点上的 ACL 可以基于源 IP 地址限制流量。按照下列步骤在终结点上添加、修改或删除 ACL。
 

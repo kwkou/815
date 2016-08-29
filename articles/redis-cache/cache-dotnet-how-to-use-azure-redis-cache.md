@@ -33,14 +33,14 @@ Azure Redis 缓存提供以下层：
 
 本指南说明如何使用以 C# 代码编写的 [StackExchange.Redis][] 客户端。涉及的任务包括**创建和配置缓存**、**配置缓存客户端**，以及**在缓存中添加和删除对象**。有关使用 Azure Redis 缓存的详细信息，请参阅[后续步骤][]部分。有关构建使用 Redis 缓存的 ASP.NET MVC Web 应用的分步教程，请参阅 [How to create a Web App with Redis Cache（如何创建使用 Redis 缓存的 Web 应用）](/documentation/articles/cache-web-app-howto/)。
 
-##<a name="getting-started-cache-service"></a>Azure Redis 缓存入门
+## <a name="getting-started-cache-service"></a>Azure Redis 缓存入门
 
 Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置和配置缓存。接下来，配置缓存客户端，以便它们可以访问缓存。在配置了缓存客户端后，就可以开始使用它们。
 
 -	[创建缓存][]
 -	[配置缓存客户端][]
 
-##<a name="create-cache" id="create-a-cache"></a>创建缓存
+## <a name="create-cache" id="create-a-cache"></a>创建缓存
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
@@ -53,7 +53,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 在配置了你的客户端项目的缓存后，你可以使用以下各节中介绍的方法来使用你的缓存。
 
-##<a name="working-with-caches"></a>使用缓存
+## <a name="working-with-caches"></a>使用缓存
 
 本节中的步骤介绍如何使用缓存执行常见任务。
 
@@ -61,7 +61,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 -   [添加和从缓存检索对象][]
 -   [处理缓存中的 .NET 对象](#work-with-net-objects-in-the-cache)
 
-##<a name="connect-to-cache" id="connect-to-the-cache"></a>连接到缓存
+## <a name="connect-to-cache" id="connect-to-the-cache"></a>连接到缓存
 
 若要以编程方式使用缓存，你需要引用该缓存。以下代码添加到你想使用 StackExchange.Redis 客户端的任何文件的顶部，以访问 Azure Redis 缓存。
 
@@ -117,7 +117,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 现在您知道如何连接到 Azure Redis Cache 实例并将引用返回缓存数据库，让我们看看如何使用缓存。
 
-##<a name="add-object" id="add-and-retrieve-objects-from-the-cache"></a>添加和从缓存检索对象
+## <a name="add-object" id="add-and-retrieve-objects-from-the-cache"></a>添加和从缓存检索对象
 
 可以使用 `StringSet` 和 `StringGet` 方法在缓存中存储和检索项。
 
@@ -144,7 +144,7 @@ Redis 将大多数数据存储为 Redis 字符串，但这些字符串可能包�
 
 	cache.StringSet("key1", "value1", TimeSpan.FromMinutes(90));
 
-##<a name="store-session" id="work-with-net-objects-in-the-cache"></a> 处理缓存中的 .NET 对象
+## <a name="store-session" id="work-with-net-objects-in-the-cache"></a> 处理缓存中的 .NET 对象
 
 Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓存 .NET 对象之前，必须对其进行序列化。这是应用程序开发人员的责任，同时赋与开发人员选择序列化程序的弹性。
 
@@ -169,7 +169,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
     // Retrieve from cache
     Employee e25 = JsonConvert.DeserializeObject<Employee>(cache.StringGet("e25"));
 
-##<a name="next-steps"></a>后续步骤
+## <a name="next-steps"></a>后续步骤
 
 现在，你已学习了基础知识，接下来请打开以下链接了解有关 Azure Redis 缓存的详细信息。
 

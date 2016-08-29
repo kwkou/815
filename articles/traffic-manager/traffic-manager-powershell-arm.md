@@ -111,7 +111,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 此 cmdlet 将返回流量管理器配置文件对象。
 
-##<a name="update-traffic-manager-profile"></a> 更新流量管理器配置文件
+## <a name="update-traffic-manager-profile"></a> 更新流量管理器配置文件
 
 例如，修改流量管理器配置文件以添加或删除终结点或修改配置文件设置需要遵循三个步骤：
 
@@ -129,7 +129,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 	PS C:\> $profile.Ttl = 300
 	PS C:\> Set-AzureRmTrafficManagerProfile -TrafficManagerProfile $profile
 
-##<a name="adding-traffic-manager-endpoints"></a> 添加流量管理器终结点
+## <a name="adding-traffic-manager-endpoints"></a> 添加流量管理器终结点
 有三种类型的流量管理器终结点：
 
 1. Azure 终结点：表示在 Azure 中托管的服务。<BR>

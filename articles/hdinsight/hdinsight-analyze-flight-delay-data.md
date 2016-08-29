@@ -37,7 +37,7 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 
 在附录中，你可以找到有关上载航班延误数据、创建/上载 Hive 查询字符串和针对 Sqoop 作业准备 Azure SQL 数据库的说明。
 
-###<a id="prerequisite"></a> 先决条件
+### <a id="prerequisite"></a> 先决条件
 
 在开始阅读本教程前，你必须具有：
 
@@ -62,7 +62,7 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 </table>
 
 
-##<a name="runjob"></a> 创建群集并运行 Hive/Sqoop 作业
+## <a name="runjob"></a> 创建群集并运行 Hive/Sqoop 作业
 
 Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的方法是为作业创建群集，并在作业完成之后删除作业。以下脚本覆盖了整个过程。有关创建 HDInsight 群集和运行 Hive 作业的详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision]和[将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]。
 
@@ -337,7 +337,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 
 
 ---
-##<a id="appendix-a"></a>附录 A - 将航班延误数据上载到 Azure Blob 存储
+## <a id="appendix-a"></a>附录 A - 将航班延误数据上载到 Azure Blob 存储
 上载数据文件和 HiveQL 脚本文件（请参阅[附录 B](#appendix-b)）需要进行规划。思路是在创建 HDInsight 群集和运行 Hive 作业之前存储数据文件和 HiveQL 文件。可以使用两个选项：
 
 - **使用将由 HDInsight 群集用作默认文件系统的同一 Azure 存储帐户。** 由于 HDInsight 群集将具有存储帐户访问密钥，因此你无需进行任何其他更改。
@@ -455,7 +455,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 > 你必须配置容器访问权限，使其成为公用，或者将存储帐户绑定到 HDInsight 群集。否则，Hive 查询字符串将无法访问数据文件。
 
 ---
-##<a id="appendix-b"></a>附录 B - 创建并上载 HiveQL 脚本
+## <a id="appendix-b"></a>附录 B - 创建并上载 HiveQL 脚本
 
 使用 Azure PowerShell，你可以一次运行多个 HiveQL 语句，或者将 HiveQL 语句打包到一个脚本文件中。本部分说明如何创建 HiveQL 脚本，以及使用 Azure PowerShell 将脚本上载到 Azure Blob 存储。Hive 要求 HiveQL 脚本必须存储在 Azure Blob 存储中。
 
@@ -638,7 +638,7 @@ HiveQL 脚本将执行以下操作：
 
 
 ---
-##<a id="appendix-c"></a>附录 C - 针对 Sqoop 作业输出准备 Azure SQL 数据库
+## <a id="appendix-c"></a>附录 C - 针对 Sqoop 作业输出准备 Azure SQL 数据库
 **准备 SQL 数据库（将此部分与 Sqoop 脚本合并）**
 
 1. 准备参数：
@@ -796,7 +796,7 @@ HiveQL 脚本将执行以下操作：
 4. 按 **F5** 运行脚本。
 5. 验证脚本输出。确保已成功运行脚本。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 现在你已了解如何执行以下操作：将文件上载到 Azure Blob 存储、使用 Azure Blob 存储中的数据填充 Hive 表、运行 Hive 查询以及使用 Sqoop 将数据从 HDFS 导出到 Azure SQL 数据库。若要了解更多信息，请参阅下列文章：
 
 * [HDInsight 入门][hdinsight-get-started]

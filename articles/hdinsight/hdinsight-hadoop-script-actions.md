@@ -96,7 +96,7 @@ Name | 脚本
 
 
 
-##<a name="helper-methods-for-custom-scripts"></a> 自定义脚本的帮助器方法
+## <a name="helper-methods-for-custom-scripts"></a> 自定义脚本的帮助器方法
 
 脚本操作帮助器方法是可以在编写自定义脚本时使用的实用工具。这些方法在 [https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1](https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1) 中定义，可以使用以下语法包括在你的脚本中：
 
@@ -273,7 +273,7 @@ Name | 脚本
 请注意，在某些情况下，自定义脚本实际上可能依赖于 HDInsight 组件，例如检测某些 Hadoop 服务是否启动。在这种情况下，你将需要在实际的 HDInsight 群集上部署自定义脚本以对其进行测试。
 
 
-##<a name="runScriptAction"></a> 调试自定义脚本
+## <a name="runScriptAction"></a> 调试自定义脚本
 
 脚本错误日志随同其他输出一起存储在创建群集时为该群集指定的默认存储帐户中。这些日志存储在名为 *u<\\cluster-name-fragment><\\time-stamp>setuplog* 的表中。这些是包含所有节点（头节点和从节点）中的记录的聚合日志，脚本在群集中的这些节点上运行。若要查看日志，一个简单方法是使用 HDInsight Tools for Visual Studio。若要安装这些工具，请参阅[开始使用适用于 HDInsight 的 Visual Studio Hadoop 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#install-hdinsight-tools-for-visual-studio)
 

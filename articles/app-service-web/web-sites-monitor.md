@@ -12,7 +12,7 @@
 	ms.date="06/22/2016"
 	wacn.date="08/23/2016"/>
 
-#<a name="howtomonitor"></a>在 Azure 中监视 Web Apps
+# <a name="howtomonitor"></a>在 Azure 中监视 Web Apps
 
 [Azure Web Apps](/documentation/services/web-sites/) 通过“监视”管理页对标准 App Service 提供监视功能。“监视”管理页按如下所述提供 Web 应用的性能统计信息。
 
@@ -24,7 +24,7 @@
 - **小时** 粒度级的度量值将保留 **7 天**
 - **天** 粒度级的度量值将保留 **30 天**
 
-##<a name="websitemetrics"></a>如何：添加 Web 应用度量值
+## <a name="websitemetrics"></a>如何：添加 Web 应用度量值
 
 1. 在 [经典管理门户](https://manage.windowsazure.cn)中，从 Web 应用页面上单击“监视”选项卡，以显示“监视”管理页。默认情况下，“监视”页上的图表显示的度量值与“仪表板”页上图表所显示的度量值相同。
 
@@ -40,11 +40,11 @@
 
 
 
-##<a name="howtoreceivealerts"></a>如何：接收来自 Web 应用度量值的警报
+## <a name="howtoreceivealerts"></a>如何：接收来自 Web 应用度量值的警报
 
 在“标准”Web 应用模式中，可以收到基于 Web 应用监视度量值的警报。该警报功能要求你首先配置用于监视的 Web 终结点，你可以在“配置”页的“监视”部分中进行此配置。你还可以选择当所选度量值达到指定的值时发送电子邮件。
 
-##<a name="howtoviewusage"></a>如何：查看 Web 应用的使用率配额
+## <a name="howtoviewusage"></a>如何：查看 Web 应用的使用率配额
 
 从[经典管理门户](https://manage.windowsazure.cn)中 Web 应用的“缩放”管理页可将 Web 应用配置为以“共享”或“标准” Web 应用模式运行。每个 Azure 订阅均有权访问为在“共享”模式中每个区域运行最多 100 个 Web 应用所提供的资源池。对于为此目的而向每个 Web 应用订阅提供的资源池可由同一地理区域中配置为在“共享”模式中运行的其他 Web 应用共享。由于共享这些资源是为了供其他 Web 应用使用，因此所有订阅对这些资源的使用是受限的。订阅使用这些资源存在限制，该限制以各 Web 应用“仪表板”管理页的使用率概述部分下列出的使用率配额形式表示。
 
@@ -61,14 +61,14 @@
 
 	一些配额可以按照 web 托管计划应用，另外一些则按照站点应用。
 
-##<a name="resourceusage"></a>如何：避免超过配额
+## <a name="resourceusage"></a>如何：避免超过配额
 
 配额不是性能或成本问题，它是 Azure 通过防止租户过度使用共享资源，以在多租户环境下管理资源使用情况的方法。由于 Web 应用超出配额意味着停机或功能减少，因此如果你希望在即将达到配额时保持站点应用正常运行，请考虑以下几点：
 
 - 将 Web 应用移到级别更高的 App Service 计划以充分利用更高的配额。例如，**基本** 和 **标准** 计划的唯一配额是文件系统存储。
 - 随着 Web 应用实例的数量增加，超过共享资源配额的可能性将随之增加。在适当情况下，请考虑在即将达到共享资源配额时回缩 Web 应用的其他实例。
 
-##<a name="howtoconfigdiagnostics"></a>如何：为 Web 应用配置诊断和下载日志
+## <a name="howtoconfigdiagnostics"></a>如何：为 Web 应用配置诊断和下载日志
 
 [经典管理门户](https://manage.windowsazure.cn)中 Web 应用的“配置”管理页面上启用了诊断。有两种类型的诊断：“应用程序诊断”和“站点诊断”。
 
@@ -233,7 +233,7 @@
 - 用于读取文件的工具：日志分析程序。用于分析和查询 IIS 日志文件。可从 Microsoft 下载中心获得 Log Parser 2.2，网址为 <a href="http://go.microsoft.com/fwlink/?LinkId=246619">http://go.microsoft.com/fwlink/?LinkId=246619</a>。
 
 
-##<a name="webendpointstatus"></a>如何：监视 Web 终结点状态
+## <a name="webendpointstatus"></a>如何：监视 Web 终结点状态
 
 此功能仅在 **标准** 模式下提供，允许你从最多 3 个地理位置监视最多 2 个终结点。
 

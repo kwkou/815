@@ -27,7 +27,7 @@
 
 另外，将提供 [Azure 经典管理门户](https://manage.windowsazure.cn)的速览并探讨可用的功能。
 
-##<a name="Prerequisites"></a> 先决条件
+## <a name="Prerequisites"></a> 先决条件
 
 - [安装 Git](http://www.git-scm.com/downloads)。 
 - [安装 Azure CLI](/documentation/articles/xplat-cli-install/)。 

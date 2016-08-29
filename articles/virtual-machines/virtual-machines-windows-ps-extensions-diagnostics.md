@@ -73,7 +73,7 @@
 	$VM_Update = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $Config_Path -VM $VM -StorageContext $Storage_Context
 	Update-AzureVM -ServiceName $Service_Name -Name $VM_Name -VM $VM_Update.VM
 
-##<a name="sample-diagnostics-configuration"></a> 诊断配置示例
+## <a name="sample-diagnostics-configuration"></a> 诊断配置示例
 
 以下 XML 可用于上述脚本的诊断公共配置。此示例配置会将各种性能计数器传输给诊断存储帐户，同时还会传输 Windows 事件日志的应用程序、安全和系统通道中的错误，以及诊断基础结构日志中的任何错误。
 

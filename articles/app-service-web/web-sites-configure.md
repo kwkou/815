@@ -17,7 +17,7 @@
 
 本主题介绍如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)配置 Web 应用。
 
-##<a name="howtochangeconfig"></a>如何更改网站的配置选项
+## <a name="howtochangeconfig"></a>如何更改网站的配置选项
 
 <!-- HOW TO: CHANGE CONFIGURATION OPTIONS FOR A WEBSITE -->
 

@@ -22,7 +22,7 @@
 本主题介绍了如何在 Windows 上创建和使用 **ssh-rsa** 与 **.pem** 格式的公钥和私钥文件，并且你可以使用这些文件通过 **ssh** 命令连接到 Azure 上的 Linux VM。如果你已经创建了 **.pem** 文件，则可以使用那些文件创建 Linux VM，并且可以使用 **ssh** 连接到这些 VM。其他几个命令使用 **SSH** 协议和密钥文件来安全地执行工作。其中值得注意的是 **scp** 或 [安全复制](https://en.wikipedia.org/wiki/Secure_copy)，通过这两个命令可以安全地将文件复制到支持 **SSH** 连接的计算机或从该计算机中复制文件。
 
 
-##<a name="What-SSH-and-key-creation-programs-do-you-need"></a> 你需要哪些 SSH 和密钥创建计划？
+## <a name="What-SSH-and-key-creation-programs-do-you-need"></a> 你需要哪些 SSH 和密钥创建计划？
 
 **SSH** &#8212; 或 [secure shell](https://en.wikipedia.org/wiki/Secure_Shell) &#8212; 是一种加密的连接协议，利用该协议可以通过未受保护的连接进行安全登录。它是适用于 Azure 中托管的 Linux VM 的默认连接协议，除非你配置自己的 Linux VM 来启用其他一些连接机制。Windows 用户还可以使用 **ssh** 客户端实现连接到 Azure 中的 Linux VM 并对其进行管理，但 Windows 计算机通常不会附带 **ssh** 客户端，因此你需要选择一个。
 

@@ -21,7 +21,7 @@
 
 > [AZURE.NOTE] 本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的详细信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)。
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
@@ -29,11 +29,11 @@
 
 * 运行 Windows 10、Window 8 或 Windows 7 的客户端计算机
 
-##<a id="connect"></a>使用远程桌面进行连接
+## <a id="connect"></a>使用远程桌面进行连接
 
 为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
 
-##<a id="hive"></a>使用 Hive 命令
+## <a id="hive"></a>使用 Hive 命令
 
 连接到 HDInsight 群集的桌面之后，请执行以下步骤来使用 Hive：
 
@@ -94,11 +94,11 @@
 
     应返回三行数据，所有行都包含列 t4 中的 **[ERROR]**。
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，Hive 命令提供了简单的方法让你以交互方式在 HDInsight 群集上运行 Hive 查询、监视作业状态，以及检索输出。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 Hive 的一般信息：
 

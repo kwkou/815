@@ -24,7 +24,7 @@ Azure Web 应用是大多数 Web 应用的最佳选择。部署和管理都已�
 
 如果现有应用程序需要进行大幅修改才能在 Azure Web 应用或 Service Fabric 中运行，你可以选择虚拟机来简化迁移到云的操作。不过，相比于 Azure Web 应用和 Service Fabric，正确配置、保护和维护 VM 需要更多的时间和 IT 专业知识。如果你考虑采用 Azure 虚拟机，请确保将修补、更新和管理 VM 环境所需的持续性维护工作纳入考虑。
 
-##<a name="scenarios"></a>方案和建议
+## <a name="scenarios"></a>方案和建议
 
 以下是一些常见的应用程序方案，其中每个方案都包含有关最适合的 Azure Web 托管选项的建议。
 
@@ -116,7 +116,7 @@ Azure Web 应用是用于托管公司网站的理想解决方案。通过 Web �
 
 如果你想要创建业务线应用程序，你的网站可能需要直接访问公司网络上的服务或数据。可以在 Azure Web 应用、Service Fabric 和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)实现这个目的。在 Azure 上，可以使用 [VNET 集成功能](/documentation/articles/app-service-vnet-integration-powershell/)，通过此功能，你的 Azure 应用程序能够像在公司网络上一样运行。
 
-##<a name="features"></a>功能比较
+## <a name="features"></a>功能比较
 
 下表比较了 Azure Web 应用、云服务、虚拟机和 Service Fabric 的功能，以便帮助你做出最佳选择。若要了解每个选项的 SLA 的当前信息，请参阅 [Azure 服务级别协议](/support/legal/sla/)。
 

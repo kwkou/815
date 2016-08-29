@@ -102,7 +102,7 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 	New-AzureRmVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1 -Location $Location1 -AddressPrefix $VNetPrefix11,$VNetPrefix12 -Subnet $fesub1,$besub1,$gwsub1
 
-###<a name="crossprembgp"></a> 步骤 2 - 使用 BGP 参数为 TestVNet1 创建 VPN 网关
+### <a name="crossprembgp"></a> 步骤 2 - 使用 BGP 参数为 TestVNet1 创建 VPN 网关
 
 #### 1\.创建 IP 和子网配置
 

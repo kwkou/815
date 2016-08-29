@@ -19,7 +19,7 @@
 
 在本文中，你将学习如何通过使用远程桌面连接到 HDInsight 群集上的 Hadoop，然后通过使用 Hadoop 命令运行 MapReduce 作业。
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
@@ -27,11 +27,11 @@
 
 * 运行 Windows 10、Windows 8 或 Windows 7 的客户端计算机
 
-##<a id="connect"></a>使用远程桌面进行连接
+## <a id="connect"></a>使用远程桌面进行连接
 
 为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
 
-##<a id="hadoop"></a>使用 Hadoop 命令
+## <a id="hadoop"></a>使用 Hadoop 命令
 
 连接到 HDInsight 群集的桌面之后，请使用以下步骤，以通过 Hadoop 命令来运行 MapReduce 作业：
 
@@ -76,11 +76,11 @@
 		wretched        6
 		wriggling       1
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，Hadoop 命令提供简单的方法让你在 HDInsight 群集上运行 MapReduce 作业，然后查看作业输出。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 MapReduce 作业的一般信息：
 

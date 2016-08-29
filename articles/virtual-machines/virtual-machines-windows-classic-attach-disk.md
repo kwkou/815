@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
 
-##<a id="initializeinWS"></a> 初始化磁盘
+## <a id="initializeinWS"></a> 初始化磁盘
 
 1. 连接到虚拟机。有关说明，请参阅[如何登录到运行 Windows Server 的虚拟机][logon]。
 

@@ -118,11 +118,11 @@ VPN 网关用于在虚拟网络和本地位置之间发送网络流量。VPN 网
 如果需要在使用经典部署模型时修改本地站点，则可以使用经典管理门户中的“局域网”配置页，或直接修改网络配置文件 NETCFG.XML。
 
 
-##<a name="devices"></a> VPN 设备
+## <a name="devices"></a> VPN 设备
 
 必须确保你要使用的 VPN 设备支持配置所需的 VPN 类型。有关兼容的 VPN 设备的详细信息，请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
-##<a name="requirements" id="gateway-requirements"></a> 网关要求
+## <a name="requirements" id="gateway-requirements"></a> 网关要求
 
 
 [AZURE.INCLUDE [vpn-gateway-table-requirements](../../includes/vpn-gateway-table-requirements-include.md)]

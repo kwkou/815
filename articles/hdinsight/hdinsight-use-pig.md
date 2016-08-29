@@ -21,7 +21,7 @@
 
 在本文中，你将了解如何将 Pig 与 hdinsight 配合使用。
 
-##<a id="why"></a>为何使用 Pig？
+## <a id="why"></a>为何使用 Pig？
 
 在 Hadoop 中使用 MapReduce 来处理数据时，其中一项难题是仅使用映射和化简函数来实现处理逻辑。进行复杂的处理时，你通常必须将处理分解成多个 MapReduce 操作，这些操作合在一起即可获得所需的结果。
 
@@ -45,7 +45,7 @@ Pig Latin 还支持使用用户定义函数 (UDF) 来调用外部组件，以便
 
 * [在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/)
 
-##<a id="data"></a>关于示例数据
+## <a id="data"></a>关于示例数据
 
 本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，用于显示类型和严重性，例如：
 
@@ -64,7 +64,7 @@ Pig Latin 还支持使用用户定义函数 (UDF) 来调用外部组件，以便
 > [AZURE.NOTE]语法 ****wasbs:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：****wasbs://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
 
 
-##<a id="job"></a>关于示例作业
+## <a id="job"></a>关于示例作业
 
 下面的 Pig Latin 作业从 HDInsight 群集的默认存储加载 **sample.log** 文件。然后，它会执行一系列转换，以便对输入数据中出现的每个日志级别进行计数。结果转储到 STDOUT。
 
@@ -80,7 +80,7 @@ Pig Latin 还支持使用用户定义函数 (UDF) 来调用外部组件，以便
 
 ![转换的图形表示形式][image-hdi-pig-data-transformation]
 
-##<a id="run"></a>运行 Pig Latin 作业
+## <a id="run"></a>运行 Pig Latin 作业
 
 HDInsight 可以使用各种方法来运行 Pig Latin 作业。使用下表来确定哪种方法最适合你，然后按链接进行演练。
 
@@ -104,7 +104,7 @@ HDInsight 可以使用各种方法来运行 Pig Latin 作业。使用下表来�
 在[此处][ssispack]了解有关 Azure Feature Pack for SSIS 的详细信息。
 
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 现在，你已了解如何将 Pig 与 HDInsight 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
 

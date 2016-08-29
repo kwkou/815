@@ -18,7 +18,7 @@
 
 在本文中，你将学习如何定义工作流和协调器，以及如何基于时间触发协调器作业。在阅读本文之前，先浏览[将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]一文会很有用。若要了解 Azure 数据工厂，请参阅 [将 Pig 和 Hive 用于数据工厂][azure-data-factory-pig-hive]。
 
-##<a id="whatisoozie"></a>什么是 Oozie
+## <a id="whatisoozie"></a>什么是 Oozie
 
 Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Hadoop 堆栈集成，支持 Apache MapReduce、Apache Pig、Apache Hive 和 Apache Sqoop 的 Hadoop 作业。它也能用于安排特定于某系统的作业，例如 Java 程序或 shell 脚本。
 
@@ -53,7 +53,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 > [AZURE.NOTE]本教程适用于 HDInsight 群集版本 2.1 和 3.0。本文尚未在 HDInsight Emulator 上测试过。
 
 
-##<a id="prerequisites"></a>先决条件
+## <a id="prerequisites"></a>先决条件
 
 在开始阅读本教程前，你必须具有：
 
@@ -88,7 +88,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 > [AZURE.NOTE]将值填充到表中。这将有助于学习本教程。
 
 
-##<a id="defineworkflow"></a>定义 Oozie 工作流及相关 HiveQL 脚本
+## <a id="defineworkflow"></a>定义 Oozie 工作流及相关 HiveQL 脚本
 
 Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。默认的工作流文件名为 *workflow.xml*。你将在本地保存该工作流文件，并将在本教程后面使用 Azure PowerShell 将它部署到 HDInsight 群集。
 
@@ -229,7 +229,7 @@ Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。�
 	
 2. 使用 ANSI (ASCII) 编码将文件另存为 **C:\\Tutorials\\UseOozie\\coordinator.xml**。（如果你的文本编辑器不提供此选项，则使用记事本。）
 	
-##<a id="deploy"></a>部署 Oozie 项目并准备教程
+## <a id="deploy"></a>部署 Oozie 项目并准备教程
 
 你将运行 Azure PowerShell 脚本来执行以下操作：
 
@@ -367,7 +367,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。wasbs:// 是 Microsoft 在 A
 
 	![教程准备的输出结果][img-preparation-output]
 
-##<a id="run"></a>运行 Oozie 项目
+## <a id="run"></a>运行 Oozie 项目
 
 Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你可以使用 **Invoke-RestMethod** cmdlet 来调用 Oozie Web 服务。Oozie Web 服务 API 是 HTTP REST JSON API。有关 Oozie Web 服务 API 的详细信息，请参阅 [Apache Oozie 4.0 文档][apache-oozie-400]（用于 HDInsight 群集版本 3.0）或 [Apache Oozie 3.3.2 文档][apache-oozie-332]（用于 HDInsight 群集版本 2.1）。
 
@@ -675,7 +675,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 	$conn.close()
 
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 在本教程中，你已经学习了如何定义 Oozie 工作流、Oozie 协调器，以及如何使用 Azure PowerShell 运行 Oozie 协调器作业。若要了解更多信息，请参阅下列文章：
 
 - [开始使用 HDInsight][hdinsight-get-started]

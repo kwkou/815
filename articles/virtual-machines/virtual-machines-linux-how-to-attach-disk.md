@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-linux.md)]
 
-##<a name="how-to-initialize-a-new-data-disk-in-linux"></a> 在 Linux 中初始化新的数据磁盘
+## <a name="how-to-initialize-a-new-data-disk-in-linux"></a> 在 Linux 中初始化新的数据磁盘
 
 1. 通过 SSH 连接到你的 VM。有关更多详细信息，请参阅[如何登录到运行 Linux 的虚拟机][Logon]。
 

@@ -44,7 +44,7 @@ Azure 负责保护运行应用程序的基础结构和平台，而你负责保�
 
 关于基于 web 的应用程序安全注意事项的全面讨论超出了本文的范围。作为保护应用程序安全的更多指导的起点，请参阅[打开 Web 应用程序安全项目 (OWASP)](https://www.owasp.org/index.php/Main_Page)（尤其是[前 10 大项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)），其中列出了当前前 10 大 Web 应用程序安全缺陷（由 OWASP 成员确定）。
 
-##<a name="https"></a> 保护与客户的通信
+## <a name="https"></a> 保护与客户的通信
 
 如果你使用为 Azure Web 应用创建的 **\*.chinacloudsites.cn** 域名，则可以立即使用 HTTPS，因为 SSL 证书是针对所有 **\*.chinacloudsites.cn** 域名提供的。如果您的网站使用[自定义域名](/documentation/articles/web-sites-custom-domain-name/)，则可以上载 SSL 证书，为自定义域[启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)。
 
@@ -56,7 +56,7 @@ Azure 与 SQL 数据库高度集成，以便所有连接字符串都全面加密
 
 如果你使用第三方数据库提供程序（如 ClearDB），则应直接查阅提供程序文档以了解安全性最佳实践。
 
-##<a name="develop"></a> 安全开发和部署
+## <a name="develop"></a> 安全开发和部署
 
 ### 发布配置文件和发布设置
 
@@ -98,7 +98,7 @@ Azure 通过 **FTPS** 提供对你的应用文件系统的安全 FTP 访问。�
 
 有关 FTPS 的更多信息，请参阅[文件传输协议](http://en.wikipedia.org/wiki/File_Transfer_Protocol)。
 
-##<a name="next"></a>后续步骤
+## <a name="next"></a>后续步骤
 
 若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对站点执行**渗透测试**，请参阅 [Azure 信任中心](https://www.trustcenter.cn/zh-cn/security/default.html)的安全部分。
 

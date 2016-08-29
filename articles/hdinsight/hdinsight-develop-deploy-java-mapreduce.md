@@ -18,7 +18,7 @@
 
 本教程将引导完成一项端对端方案，在 Apache Maven 中使用 Java 来开发单词计数 Hadoop MapReduce 作业。本教程还将说明如何在 HDInsight Emulator for Azure 上测试该应用程序，然后在基于 Windows 的 HDInsight 群集上部署并运行它。
 
-##<a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>先决条件
 
 在开始本教程之前，必须先完成以下操作：
 
@@ -29,7 +29,7 @@
 - 获取 Azure 订阅。有关说明，请参阅[购买选项][azure-purchase-options]、[试用][azure-trial]。
 
 
-##<a name="develop"></a>使用 Apache Maven 以 Java 创建 MapReduce 程序
+## <a name="develop"></a>使用 Apache Maven 以 Java 创建 MapReduce 程序
 
 创建单词计数 MapReduce 应用程序。它是一个简单的应用程序，它计算每个单词在给定输入集中出现的次数。在本部分中，我们将执行以下任务：
 
@@ -201,7 +201,7 @@
 	> [AZURE.NOTE]__wordcountjava-1.0-SNAPSHOT.jar__ 文件是一个 uberjar。
 
 
-##<a name="test"></a>在模拟器中测试该程序
+## <a name="test"></a>在模拟器中测试该程序
 
 在 HDInsight Emulator 中测试 MapReduce 作业包括以下过程：
 
@@ -299,7 +299,7 @@
 
 
 
-##<a id="upload"></a>将数据和应用程序上载到 Azure Blob 存储
+## <a id="upload"></a>将数据和应用程序上载到 Azure Blob 存储
 Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群集时，将使用 Azure Blob 存储容器来存储系统文件。可以使用此默认容器或其他容器（可以在同一 Azure 存储帐户上，也可以在群集所在的数据中心内的其他存储帐户上）来存储数据文件。
 
 在本教程中，你将在单独的存储帐户上为数据文件和 MapReduce 应用程序创建容器。数据文件是模拟器工作站上 **C:\\hdp\\hadoop-2.4.0.2.1.3.0-1981\\share\\doc\\hadoop\\common** 目录中的文本文件。
@@ -419,7 +419,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 
 	你会看到列出的 JAR 文件。
 
-##<a name="run"></a>在 Azure HDInsight 中运行 MapReduce 作业
+## <a name="run"></a>在 Azure HDInsight 中运行 MapReduce 作业
 
 在此部分中，你将创建一个用于执行以下任务的 Azure PowerShell 脚本：
 
@@ -536,7 +536,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 8. 出现提示时，输入 HDInsight 群集的用户名和密码。由于你将在脚本末尾删除群集，并且将不再需要用户名和密码，因此用户名和密码可以是任何字符串。如果你不想让系统提示你输入凭据，请参阅[在 Windows PowerShell 中使用密码、安全字符串和凭据][powershell-PSCredential]。
 
 
-##<a name="retrieve"></a>检索 MapReduce 作业输出
+## <a name="retrieve"></a>检索 MapReduce 作业输出
 本节演示如何下载和显示输出。有关在 Excel 中显示结果的信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][hdinsight-ODBC] 和[利用 Power Query 将 Excel 连接到 HDInsight][hdinsight-power-query]。
 
 
@@ -564,7 +564,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 
 作业完成后，你可以选择使用 [Sqoop][hdinsight-use-sqoop] 将数据导出到 SQL Server 或 Azure SQL Database，或者将数据导出到 Excel。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Java MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
 
 - [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序][hdinsight-develop-streaming]

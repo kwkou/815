@@ -1,7 +1,7 @@
 
 有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。
 
-##<a id="attachempty"></a>如何：附加空磁盘
+## <a id="attachempty"></a>如何：附加空磁盘
 
 附加空磁盘是添加数据磁盘的更简单方法，因为 Azure 将为你创建 .vhd 文件并将其存储在存储帐户中。
 
@@ -32,7 +32,7 @@
 	
 > [AZURE.NOTE]在添加新数据磁盘后，你需要登录到虚拟机并初始化磁盘，然后虚拟机才能使用磁盘来存储数据。
 
-##<a id="attachexisting"></a>如何：附加现有磁盘
+## <a id="attachexisting"></a>如何：附加现有磁盘
 
 附加现有磁盘需要存储帐户中具有可用的 .vhd。使用 [Add-AzureVhd](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet 将 .vhd 文件上载到存储帐户。在创建并上载 .vhd 文件后，你可以将其附加到虚拟机。
 

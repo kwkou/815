@@ -73,7 +73,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 8. 单击“保存”。
 
 
-##<a name="rdp" id="connect-to-hdinsight-clusters-by-using-rdp"></a><a name="connect-to-clusters-using-rdp"></a> 使用 RDP 连接到 HDInsight 群集
+## <a name="rdp" id="connect-to-hdinsight-clusters-by-using-rdp"></a><a name="connect-to-clusters-using-rdp"></a> 使用 RDP 连接到 HDInsight 群集
 
 通过你在创建群集时提供的凭据，可以访问群集上的服务，但无法通过远程桌面访问群集本身。远程桌面访问默认情况下处于关闭状态，因此，使用它来直接访问群集时，要求一些其他的创建后配置。
 
@@ -103,7 +103,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 4. 在页面顶部，单击“配置”。
 5. 单击“连接”，然后按照说明进行操作。
 
-##<a name="cert"></a> 创建自签名证书
+## <a name="cert"></a> 创建自签名证书
 
 如果你要使用 .NET SDK 在群集上执行任何操作，必须在工作站上创建自签名证书，并将该证书上载到你的 Azure 订阅。这是一次性的任务。只要证书有效，你就可以将它安装在其他计算机上。
 

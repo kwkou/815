@@ -75,7 +75,7 @@
 
 你可以对所有区域重复此模式，将父配置文件中的所有 3 个终结点替换为 3 个子配置文件，每个子配置文件都提供一个具有优先级的故障转移顺序。
 
-##<a name="example-4-controlling-performance-traffic-routing-between-multiple-endpoints-in-the-same-region"></a> 示例 4：控制同一区域中多个终结点之间的“性能”流量路由
+## <a name="example-4-controlling-performance-traffic-routing-between-multiple-endpoints-in-the-same-region"></a> 示例 4：控制同一区域中多个终结点之间的“性能”流量路由
 
 假设在配置文件中使用“性能”流量路由方法时，该配置文件在特定区域（例如中国北部）有多个终结点。默认情况下，定向到该区域的流量会平均分布到该区域的所有可用终结点。
 
@@ -85,7 +85,7 @@
 
 ![“性能”流量路由，自定义区域内流量分布][8]
 
-##<a name="example-5-per-endpoint-monitoring-settings"></a> 示例 5：基于终结点的监视设置
+## <a name="example-5-per-endpoint-monitoring-settings"></a> 示例 5：基于终结点的监视设置
 
 假设你希望使用流量管理器来顺利地在传统本地网站和基于云的新版网站（托管在 Azure 中）之间迁移流量。对于传统网站，你希望使用主页（路径为“/”）来监视网站运行状况，但对于基于云的新版网站，你需要实现一个自定义监视页面，其中包括额外的检查（路径为“/monitor.aspx”）。
 
@@ -95,7 +95,7 @@
 
 ![按终结点进行设置的流量管理器终结点监视][10]
 
-##<a name="faq"></a> 常见问题
+## <a name="faq"></a> 常见问题
 
 ### 如何配置嵌套式配置文件？
 

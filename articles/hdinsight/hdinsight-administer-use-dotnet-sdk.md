@@ -81,7 +81,7 @@
     _hdinsightClient.DeleteCluster("<Cluster Name>");
     _hdinsightClient.DeleteClusterAsync("<Cluster Name>");
 
-##<a name="grant/revoke-access"></a>授予/撤消访问权限
+## <a name="grant/revoke-access"></a>授予/撤消访问权限
 
 HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样式的终结点）：
 

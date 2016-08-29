@@ -18,7 +18,7 @@
 
 可以从 [Runbook 库](#runbooks-in-runbook-gallery)获取 Runbook。你还可以通过共享开发的方案来为社区做出贡献。
 
-##<a name="runbooks-in-runbook-gallery"></a> Runbook 库中的 Runbook
+## <a name="runbooks-in-runbook-gallery"></a> Runbook 库中的 Runbook
 
 [Runbook 库](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation)提供各种来自 Microsoft 的 Runbook，以及可导入 Azure 自动化中的社区。你可以从 [TechNet 脚本中心](http://gallery.technet.microsoft.com)托管的库下载 Runbook，或者在 Azure 经典管理门户中直接从该库导入 Runbook。
 
@@ -38,7 +38,7 @@
 5. 该 Runbook 将出现在自动化帐户的“Runbook”选项卡中。
 
 
-###<a name="AddRunbook"></a> 将 Runbook 添加到 Runbook 库
+### <a name="AddRunbook"></a> 将 Runbook 添加到 Runbook 库
 
 Azure 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook 库中。你可以通过连同以下详细信息[将 Runbook 上载到脚本中心](http://gallery.technet.microsoft.com/site/upload)，来添加 Runbook。
 

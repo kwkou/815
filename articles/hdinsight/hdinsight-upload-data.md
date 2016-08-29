@@ -54,7 +54,7 @@ Microsoft 提供了以下实用程序让你使用 Azure Blob 存储：
 
 > [AZURE.NOTE] 尽管 Azure CLI、Azure PowerShell 和 AzCopy 都可从 Azure 外部使用，但是 Hadoop 命令只能在 HDInsight 群集上使用，而且只能将数据从本地文件系统加载到 Azure Blob 存储。
 
-###<a id="xplatcli"></a>Azure CLI
+### <a id="xplatcli"></a>Azure CLI
 
 Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下步骤将数据上载到 Azure Blob 存储：
 
@@ -100,7 +100,7 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 >
 > * **AZURE\_STORAGE\_ACCESS\_KEY**：存储帐户密钥
 
-###<a id="powershell"></a>Azure PowerShell
+### <a id="powershell"></a>Azure PowerShell
 
 Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关配置工作站以运行 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
@@ -138,7 +138,7 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 
 有关创建用来使用 HDInsight 的 PowerShell 脚本示例，请参阅 [HDInsight 工具](https://github.com/blackmist/hdinsight-tools)。
 
-###<a id="azcopy"></a>AzCopy
+### <a id="azcopy"></a>AzCopy
 
 AzCopy 是一个命令行工具，用于简化将数据传入和传出 Azure 存储帐户的任务。你可以将它用作独立的工具，也可以将此工具融入到现有应用程序中。[下载 AzCopy][azure-azcopy-download]。
 
@@ -149,7 +149,7 @@ AzCopy 语法为：
 有关详细信息，请参阅 [AzCopy - 上载/下载 Azure Blob 的文件][azure-azcopy]。
 
 
-###<a id="commandline"></a>Hadoop 命令行
+### <a id="commandline"></a>Hadoop 命令行
 
 仅当数据已存在于群集头节点中时，才可以使用 Hadoop 命令行将数据存储到 Blob 存储。
 
@@ -186,7 +186,7 @@ AzCopy 语法为：
 | [Zudio](https://zudio.co/) | ✔ | ✔ | ✔ |
 | [Cyberduck](https://cyberduck.io/) | | ✔ | ✔ |
 
-###<a id="storageexplorer"></a>Azure 存储空间资源管理器
+### <a id="storageexplorer"></a>Azure 存储空间资源管理器
 
 *Azure 存储资源管理器*是用于在 Blob 中检查和更改数据的有用工具。它是一个免费的开源工具，可从 [http://storageexplorer.com/](http://storageexplorer.com/) 下载。也可以从此链接获取源代码。
 
@@ -216,7 +216,7 @@ AzCopy 语法为：
 
 ##服务
 
-###<a id="sqoop"></a>Apache Sqoop
+### <a id="sqoop"></a>Apache Sqoop
 
 Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工具。可以使用此工具将数据从关系数据库管理系统 (RDBMS)（如 SQL Server、MySQL 或 Oracle）中导入到 Hadoop 分布式文件系统 (HDFS)，在 Hadoop 中使用 MapReduce 或 Hive 转换数据，然后回过来将数据导出到 RDBMS。
 

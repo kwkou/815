@@ -22,7 +22,7 @@
 
 其中描述了 Git 部署的其他功能，如使用 requirements.txt 安装虚拟环境和包。
 
-##<a name="bottle-django-flask"></a> Bottle、Django 还是 Flask？
+## <a name="bottle-django-flask"></a> Bottle、Django 还是 Flask？
 
 Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如果你正在 Azure 中开发第一个 Web 应用，或者你不熟悉 Git，我们建议你遵循以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署从库构建工作应用程序的分步说明：
 
@@ -31,7 +31,7 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
 - [使用 Flask 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-flask-app/)
 
 
-##<a name="website-creation-on-portal"></a> 在 Azure 经典管理门户中创建 Web 应用
+## <a name="website-creation-on-portal"></a> 在 Azure 经典管理门户中创建 Web 应用
 
 本教程使用现有 Azure 订阅以及对 Azure 经典管理门户的访问权限。
 
@@ -39,14 +39,14 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
 
 ![](./media/web-sites-python-configure/configure-python-create-website.png)
 
-##<a name="git-publishing"></a> Git 发布
+## <a name="git-publishing"></a> Git 发布
 
 按照[在 Azure Web 应用中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)中的说明为新创建的 Web 应用配置 Git 发布。本教程使用 Git 来创建、管理 Python Web 应用以及将其发布到 Azure Web 应用。
 
 在设置 Git 发布之后，将创建 Git 存储库并使其与你的 Web 应用相关联。将显示该存储库的 URL，并且之后可将其用于将数据从本地开发环境推送到云。若要通过 Git 发布应用程序，请确保还安装了 Git 客户端，并使用提供的说明将你的 Web 应用内容推送到 Azure Web 应用。
 
 
-##<a name="application-overview"></a> 应用程序概述
+## <a name="application-overview"></a> 应用程序概述
 
 在接下来的各节中，将创建以下文件。这些文件应放在 Git 存储库的根目录中。
 
@@ -57,7 +57,7 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
     ptvs_virtualenv_proxy.py
 
 
-##<a name="wsgi-handler"></a> WSGI 处理程序
+## <a name="wsgi-handler"></a> WSGI 处理程序
 
 WSGI 是 [PEP 3333](http://www.python.org/dev/peps/pep-3333/) 描述的 Python 标准，用于定义 Web 服务器和 Python 之间的接口。它提供了用于使用 Python 编写各种 Web 应用程序和框架的标准化接口。当今常用的 Python Web 框架都使用 WSGI。Azure Web Apps 支持任何此类框架；此外，高级用户甚至可以创作自己的框架，只要自定义处理程序遵循 WSGI 规范准则即可。
 

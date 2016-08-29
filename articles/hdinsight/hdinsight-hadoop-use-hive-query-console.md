@@ -22,7 +22,7 @@
 > [AZURE.NOTE] 查询控制台只能在基于 Windows 的 HDInsight 群集上使用。
 
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
@@ -30,7 +30,7 @@
 
 * 现代 Web 浏览器
 
-##<a id="run"></a>使用查询控制台运行 Hive 查询
+## <a id="run"></a>使用查询控制台运行 Hive 查询
 
 1. 打开 <a href="https://manage.windowsazure.cn" target="_blank">Azure 经典管理门户</a>，并选择你的 HDInsight 群集。在页面底部选择“查询控制台”。出现提示时，输入你在创建群集时使用的用户名和密码。
 
@@ -65,13 +65,13 @@
 3. 当“状态”字段更改为“已完成”时，请选择与作业对应的“查看详细信息”。在详细信息页上，“作业输出”包含 `[ERROR]	3`。你可以使用此字段下面的“下载”按钮下载包含作业的输出的文件。
 
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，查询控制台提供了简单的方法让你在 HDInsight 群集上运行 Hive 查询，监视作业状态，以及检索输出。
 
 若要了解有关使用 Hive 查询控制台运行 Hive 作业的详细信息，请选择查询控制台顶部的“入门”，然后使用提供的示例。每个示例演练使用 Hive 分析数据的过程，包括有关本示例中使用的 HiveQL 语句的说明。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 Hive 的一般信息：
 

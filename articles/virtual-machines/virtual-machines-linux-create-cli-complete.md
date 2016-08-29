@@ -179,7 +179,7 @@
 
 	azure resource export TestRG
 
-##<a name="detailed-walkthrough"></a> 详细演练
+## <a name="detailed-walkthrough"></a> 详细演练
 这些更详细的步骤说明了在构建环境时每个命令的具体作用，帮助你掌握这些概念，以便你随后针对开发或生产工作负荷构建你自己的自定义环境。
 
 ## 创建资源组并选择部署位置

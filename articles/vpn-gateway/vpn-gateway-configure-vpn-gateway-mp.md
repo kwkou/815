@@ -50,7 +50,7 @@
 
 如果你已有一个 VPN 网关并想要更改路由类型，请参阅 [How to change your VPN gateway routing type（如何更改 VPN 网关路由类型）](#how-to-change-your-vpn-gateway-type)。
 
-##<a name="create-a-vpn-gateway"></a> 创建 VPN 网关
+## <a name="create-a-vpn-gateway"></a> 创建 VPN 网关
 
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)的“网络”页上，验证虚拟网络的状态列是否为“已创建”。
 
@@ -73,7 +73,7 @@
 
 ![网关连接](./media/vpn-gateway-configure-vpn-gateway-mp/IC717028.png)
 
-##<a name="gather-information-for-your-vpn-device-configuration"></a> 收集 VPN 设备配置信息
+## <a name="gather-information-for-your-vpn-device-configuration"></a> 收集 VPN 设备配置信息
 
 创建网关后，收集 VPN 设备配置的信息。此信息位于虚拟网络的“仪表板”页：
 
@@ -84,7 +84,7 @@
 ![管理密钥](./media/vpn-gateway-configure-vpn-gateway-mp/IC717029.png)
 
 
-##<a name="configure-your-vpn-device"></a> 配置 VPN 设备
+## <a name="configure-your-vpn-device"></a> 配置 VPN 设备
 
 完成前面的步骤之后，你或网络管理员需要配置 VPN 设备以创建连接。有关 VPN 设备的详细信息，请参阅 [About VPN Devices for Virtual Network Connectivity（关于用于虚拟网络连接的 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
@@ -98,7 +98,7 @@
 | **Check quick mode SAs** | show crypto ipsec sa | show crypto ipsec sa | get sa | show security ipsec security-association |
 
 
-##<a name="verify-your-local-network-ranges-and-vpn-gateway-ip-address"></a> 验证局域网范围和 VPN 网关 IP 地址
+## <a name="verify-your-local-network-ranges-and-vpn-gateway-ip-address"></a> 验证局域网范围和 VPN 网关 IP 地址
 
 ### 验证 VPN 网关 IP 地址
 
@@ -137,7 +137,7 @@
 - 用于配置网关与 VPN 设备之间的连接的共享密钥。
 
 
-##<a name="how-to-change-your-vpn-gateway-type"></a> 如何更改网关的 VPN 路由类型
+## <a name="how-to-change-your-vpn-gateway-type"></a> 如何更改网关的 VPN 路由类型
 
 由于某些连接配置仅适用于特定网关路由类型，你可能需要更改现有 VPN 网关的 VPN 路由网关类型。例如，你可能要将点到站点连接添加到具有静态网关的现有站点到站点连接。点到站点需要动态网关，这意味着若要进行配置，必须将网关 VPN 路由类型从静态更改为动态。
 

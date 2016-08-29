@@ -59,7 +59,7 @@
 
 现在你已经使用应用容器创建了 Web 应用，请参阅[后续步骤](#next-steps)部分，了解有关如何将应用程序上传到该 Web 应用的信息。
 
-##<a name="next-steps"></a>后续步骤
+## <a name="next-steps"></a>后续步骤
 
 现在，你有了一台在 Azure 的 Web 应用中运行的 Java 应用程序服务器。若要将你自己的代码部署到 Web 应用，请参阅[将应用程序或网页添加到 Java Web 应用](/documentation/articles/web-sites-java-add-app/)。
 

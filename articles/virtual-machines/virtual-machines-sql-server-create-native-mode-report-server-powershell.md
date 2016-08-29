@@ -129,7 +129,7 @@
 
 1. 将服务器证书分配给报表服务器。将在下一部分中配置报表服务器时完成分配。
 
-###<a name="to-use-the-virtual-machines-self-signed-certificate"></a> 使用虚拟机自签名证书
+### <a name="to-use-the-virtual-machines-self-signed-certificate"></a> 使用虚拟机自签名证书
 
 当设置 VM 时已在 VM 上创建了自签名证书。证书具有与 VM DNS 名称相同的名称。为避免出现证书错误，它必须在 VM 本身上受信任，并且受该站点的所有用户信任。
 
@@ -322,7 +322,7 @@
 
 **验证**：若要验证基本报表服务器功能是否正常工作，请参阅本主题中稍后的[验证配置](#verify-the-configuration)部分。
 
-###<a name="use-script-to-configure-the-report-server-and-HTTPS"></a> 使用脚本来配置报表服务器和 HTTPS
+### <a name="use-script-to-configure-the-report-server-and-HTTPS"></a> 使用脚本来配置报表服务器和 HTTPS
 
 若要使用 Windows PowerShell 来配置报表服务器，请完成以下步骤。该配置包括 HTTPS 而不是 HTTP。
 
@@ -613,7 +613,7 @@
 
 	get-netfirewallrule | where {$_.displayname -like "*report*"} | select displayname,enabled,action
 
-##<a name="verify-the-configuration" id="verify-the-connection"></a> 验证配置
+## <a name="verify-the-configuration" id="verify-the-connection"></a> 验证配置
 
 若要验证基本报表服务器功能现在是否正常工作，请使用管理权限打开你的浏览器，然后浏览到以下报表服务器和报表管理器 URL：
 

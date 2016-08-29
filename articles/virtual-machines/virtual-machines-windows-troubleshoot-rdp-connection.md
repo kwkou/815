@@ -20,7 +20,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure ](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并选择“获取支持”。
 
-##<a id="quickfixrdp"></a> 故障排除通过使用 Resource Manager 部署模型创建的 VM
+## <a id="quickfixrdp"></a> 故障排除通过使用 Resource Manager 部署模型创建的 VM
 
 在执行每个故障排除步骤之后，请尝试连接到 VM。
 
@@ -98,7 +98,7 @@
 
 - [此计算机无法连接到远程计算机](#rdpconnect)。
 
-###<a id="rdplicense"></a> 由于没有可用于提供许可证的远程桌面许可证服务器，远程会话已断开连接。
+### <a id="rdplicense"></a> 由于没有可用于提供许可证的远程桌面许可证服务器，远程会话已断开连接。
 
 原因：用于远程桌面服务器角色的 120 天许可宽限期已过期，你需要安装许可证。
 
@@ -110,7 +110,7 @@
 
 有关详细信息，请参阅博客文章 [Azure VM fails with "No Remote Desktop License Servers available"（Azure VM 失败并出现“没有可用的远程桌面许可证服务器”）](http://blogs.msdn.com/b/wats/archive/2014/01/21/rdp-to-azure-vm-fails-with-quot-no-remote-desktop-license-servers-available-quot.aspx)。
 
-###<a id="rdpname"></a> 远程桌面找不到计算机“名称”。
+### <a id="rdpname"></a> 远程桌面找不到计算机“名称”。
 
 原因：你的计算机上的远程桌面客户端无法解析 RDP 文件设置中的计算机名称。
 
@@ -128,7 +128,7 @@
 
 - 远程桌面流量终结点的外部 TCP 端口 (55919)。
 
-###<a id="rdpauth"></a> 身份验证出错。无法联系本地安全机构。
+### <a id="rdpauth"></a> 身份验证出错。无法联系本地安全机构。
 
 原因：目标 VM 在凭据的用户名部分找不到安全机构。
 
@@ -142,7 +142,7 @@
 
 - 如果它是 Active Directory 域帐户且域名的拼写正确，请验证该域中是否提供域控制器。此问题在包含域控制器的 Azure 虚拟网络中很常见，域控制器不可用的原因是尚未根据解决方法启动它，你可以使用本地管理员帐户，而不要使用域帐户。
 
-###<a id="wincred"></a> Windows 安全性错误：你的凭据无效。
+### <a id="wincred"></a> Windows 安全性错误：你的凭据无效。
 
 原因：目标 VM 无法验证你的帐户名和密码。
 
@@ -159,7 +159,7 @@
 
 如果需要更改本地管理员帐户的密码，请参阅[如何为 Windows 虚拟机重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp/)。
 
-###<a id="rdpconnect"></a> 此计算机无法连接到远程计算机。
+### <a id="rdpconnect"></a> 此计算机无法连接到远程计算机。
 
 原因：用于连接的帐户没有远程桌面登录权限。
 

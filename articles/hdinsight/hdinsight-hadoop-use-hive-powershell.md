@@ -29,7 +29,7 @@
 
     [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
-##<a id="powershell"></a>使用 Azure PowerShell 运行 Hive 查询
+## <a id="powershell"></a>使用 Azure PowerShell 运行 Hive 查询
 
 Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive 查询。从内部来讲，这是通过使用 REST 调用 HDInsight 群集上运行的 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)（以前称为 Templeton）实现的。
 
@@ -125,7 +125,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 	> <p>`Invoke-AzureHDInsightHiveJob -File "wasbs://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
 	> <p>有关 **Here-Strings** 的详细信息，请参阅<a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">使用 Windows PowerShell Here-Strings</a>。
 
-##<a id="troubleshooting"></a>故障排除
+## <a id="troubleshooting"></a>故障排除
 
 如果在作业完成时未返回任何信息，则可能表示处理期间发生错误。若要查看此作业的错误信息，请将以下内容添加到 **hivejob.ps1** 文件的末尾，保存，然后重新运行该文件。
 
@@ -135,11 +135,11 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 
 在运行作业时，这将返回写入到服务器上的 STDERR 中的信息，该信息可帮助确定该作业失败的原因。
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，Azure PowerShell 提供了简单的方法让你在 HDInsight 群集上运行 Hive 查询，监视作业状态，以及检索输出。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 Hive 的一般信息：
 

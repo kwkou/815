@@ -35,7 +35,7 @@
 
 	azure network vnet subnet set --resource-group TestRG --name TestSubnet --network-security-group-name TestNSG
 
-##<a name="more-information-on-network-security-groups"></a> 有关网络安全组的详细信息
+## <a name="more-information-on-network-security-groups"></a> 有关网络安全组的详细信息
 利用此处的快速命令，可以让流向 VM 的流量开始正常运行。网络安全组提供许多出色的功能和粒度来控制资源访问。你可以深入了解此处的[创建网络安全组和 ACL 规则](/documentation/articles/virtual-networks-create-nsg-arm-cli/)。
 
 你也可以将网络安全组和 ACL 规则定义为 Azure Resource Manager 模板的一部分。深入了解[使用模板创建网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-template/)。

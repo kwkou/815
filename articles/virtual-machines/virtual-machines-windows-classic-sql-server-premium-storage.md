@@ -35,7 +35,7 @@
 **作者：**Daniel Sol
 **技术审阅人员：**Luis Carlos Vargas Herring、Sanjay Mishra、Pravin Mital、Juergen Thomas、Gonzalo Ruiz。
 
-##<a name="prerequisites-for-premium-storage"></a> 高级存储的先决条件
+## <a name="prerequisites-for-premium-storage"></a> 高级存储的先决条件
 
 使用高级存储有多个先决条件。
 
@@ -543,7 +543,7 @@
 - 测试故障转移。
 - 将 AFP 切换回 SQL1 和 SQL2
 
-##<a name="appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage"></a> 附录：将多站点 AlwaysOn 群集迁移到高级存储
+## <a name="appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage"></a> 附录：将多站点 AlwaysOn 群集迁移到高级存储
 
 本主题的剩余部分提供将多站点 AlwaysOn 群集转换为高级存储的详细示例。它还将侦听器从使用外部负载平衡器 (ELB) 转换为使用内部负载平衡器 (ILB)。
 

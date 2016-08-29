@@ -45,7 +45,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 
     [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
-##<a name="hdinsight-sample-wordcount"></a> 字数统计 - Java 
+## <a name="hdinsight-sample-wordcount"></a> 字数统计 - Java 
 
 若要提交 MapReduce 项目，请先创建 MapReduce 作业定义。在作业定义中，指定 MapReduce 程序 jar 文件和 jar 文件的位置（即，* ***wasbs:///example/jars/hadoop-mapreduce-examples.jar**）、类名和参数。Wordcount MapReduce 程序采用两个参数：用于计算单词数的源文件和输出位置。
 
@@ -201,7 +201,7 @@ pi 估计器使用统计学方法（拟蒙特卡罗法）来估算 pi 值。单�
 * [在 HDInsight 中调试 Hadoop：错误消息][hdinsight-errors]
 
 
-##<a name="word-count-java" id="apendix-a---the-word-count-MapReduce-program-in-java"></a> 附录 A - 字数统计源代码
+## <a name="word-count-java" id="apendix-a---the-word-count-MapReduce-program-in-java"></a> 附录 A - 字数统计源代码
 
 	package org.apache.hadoop.examples;
 	import java.io.IOException;

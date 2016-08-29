@@ -153,7 +153,7 @@
 
 >[AZURE.NOTE] 还可以使用 `Get-AzureRmNetworkSecurityGroup -ResourceGroupName RG-NSG -Name "NSG-FrontEnd" | Select DefaultSecurityRules -ExpandProperty DefaultSecurityRules` 从 **NSG-FrontEnd** NSG 列出默认规则。
 
-###<a name="View-NSGs-associations"></a> 查看 NSG 关联项
+### <a name="View-NSGs-associations"></a> 查看 NSG 关联项
 
 若要查看与 **NSG-FrontEnd** NSG 相关联的资源，请运行 `Get-AzureRmNetworkSecurityGroup` cmdlet，如下所示。
 
@@ -356,7 +356,7 @@
 		                         "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd"
 		                       }
 
-###<a name="Dissociate-an-NSG-from-a-NIC"></a> 取消 NSG 与 NIC 之间的关联
+### <a name="Dissociate-an-NSG-from-a-NIC"></a> 取消 NSG 与 NIC 之间的关联
 
 若要取消 **NSG-FrontEnd** NSG 与 **TestNICWeb1** NIC 之间的关联，请按照以下步骤进行操作。
 
@@ -382,7 +382,7 @@
 
 		NetworkSecurityGroup : null
 
-###<a name="Dissociate-an-NSG-from-a-subnet"></a> 取消 NSG 与子网之间的关联
+### <a name="Dissociate-an-NSG-from-a-subnet"></a> 取消 NSG 与子网之间的关联
 
 若要取消 **NSG-FrontEnd** NSG 与 **FrontEnd** 子网之间的关联，请按照以下步骤进行操作。
 
