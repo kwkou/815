@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="07/16/2016"
-     wacn.date="08/01/2016"/>
+     ms.date="08/08/2016"
+     wacn.date="08/29/2016"/>
 
 # OS 平台和硬件与设备 SDK 的兼容性
 
@@ -30,6 +30,10 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 |Raspbian Linux| 3\.18 |
 |Ubuntu Linux| 14\.04 |
 |Yocto Linux|2\.1 |
+
+|Android OS 平台 | 版本|
+|:---------------|:------------:|
+|Android| > 4.2|
 
 |Windows OS 平台 | 版本|
 |:---------------|:------------:|
