@@ -16,14 +16,14 @@
 
 # 使用运行 Windows Server 的 Azure 虚拟机创建三节点独立 Service Fabric 群集
 
-本文介绍如何使用用于 Windows Server 的独立 Service Fabric 安装程序在基于 Windows 的 Azure 虚拟机 (VM) 上创建群集。这是一种[创建和管理在 Windows Server 上运行的群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)的特殊情况，其中 VM 是[运行 Windows Server 的 Azure VM](/documentation/articles/virtual-machines-windows-hero-tutorial/)，但您不会创建[基于云的 Azure Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)。区别在于根据以下步骤创建的独立 Service Fabric 群集由您完全管理，而基于云的 Azure Service Fabric 群集则由 Service Fabric 资源提供程序管理和升级。
+本文介绍如何使用用于 Windows Server 的独立 Service Fabric 安装程序在基于 Windows 的 Azure 虚拟机 (VM) 上创建群集。这是一种[创建和管理在 Windows Server 上运行的群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)的特殊情况，其中 VM 是[运行 Windows Server 的 Azure VM](/documentation/articles/virtual-machines-windows-hero-tutorial/)，但您不会创建基于云的 Azure Service Fabric 群集。区别在于根据以下步骤创建的独立 Service Fabric 群集由您完全管理，而基于云的 Azure Service Fabric 群集则由 Service Fabric 资源提供程序管理和升级。
 
 
 ## 创建独立群集的步骤
 
-1. 登录到 Azure 门户，在资源组中创建新的 Windows Server 2012 R2 Datacenter VM。有关更多详细信息，请阅读[在 Azure 门户中创建 Windows VM](/documentation/articles/virtual-machines-windows-hero-tutorial/) 一文。
+1. 登录到 Azure 门户预览，在资源组中创建新的 Windows Server 2012 R2 Datacenter VM。有关更多详细信息，请阅读[在 Azure 门户预览中创建 Windows VM](/documentation/articles/virtual-machines-windows-hero-tutorial/) 一文。
 2. 向同一资源组再添加两个 Windows Server 2012 R2 Datacenter VM。确保每个 VM 在创建后都有相同的管理员用户名和密码。创建以后，你会在同一虚拟网络中看到所有三个 VM。
-3. 使用[服务器管理器的“本地服务器”仪表板](https://technet.microsoft.com/zh-cn/library/jj134147.aspx)连接到每个 VM 并关闭 Windows 防火墙。这确保网络流量可以在计算机之间通信。同时连接到每台计算机，通过打开命令提示符并键入 `ipconfig` 来获取 IP 地址。另外，也可以在 Azure 门户中选择资源组的虚拟网络资源，这样即可查看每台计算机的 IP 地址。
+3. 使用[服务器管理器的“本地服务器”仪表板](https://technet.microsoft.com/zh-cn/library/jj134147.aspx)连接到每个 VM 并关闭 Windows 防火墙。这确保网络流量可以在计算机之间通信。同时连接到每台计算机，通过打开命令提示符并键入 `ipconfig` 来获取 IP 地址。另外，也可以在 Azure 门户预览中选择资源组的虚拟网络资源，这样即可查看每台计算机的 IP 地址。
 4. 连接到其中一台 VM，测试是否可以成功地 ping 其他两台 VM。
 5. 连接到其中一台 VM，并将 [Windows Server 独立 Service Fabric 包下载](http://go.microsoft.com/fwlink/?LinkId=730690)到此虚拟机的新文件夹中，然后提取该包。
 6. 在记事本中打开 *ClusterConfig.Unsecure.MultiMachine.json* 文件，使用计算机的三个 IP 地址编辑每个节点。更改顶部的群集名称，然后保存文件。下方显示了群集清单的部分示例。
