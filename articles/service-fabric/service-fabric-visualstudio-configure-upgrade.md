@@ -8,8 +8,8 @@
    editor="tglee" />
 <tags
    ms.service="service-fabric"
-   ms.date="04/14/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/29/2016"
+   wacn.date="08/29/2016"/>
 
 # 在 Visual Studio 中配置 Service Fabric 应用程序的升级
 
@@ -22,7 +22,7 @@ Azure Service Fabric 的 Visual Studio 工具提供发布到本地或远程群�
 
 ## 升级所需的参数
 
-可以选择的部署类型有两种：常规或升级。常规部署会将群集上所有先前的部署信息和数据都清除，而升级部署则将其保留。当你在 Visual Studio 中升级 Service Fabric应用程序时，需要提供应用程序升级参数和运行状况检查策略。应用程序升级参数可帮助控制升级，而运行状况检查策略可确定升级是否成功。有关详细信息，请参阅 [Service Fabric应用程序升级：升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)。
+可以选择的部署类型有两种：常规或升级。常规部署会将群集上所有先前的部署信息和数据都清除，而升级部署则将其保留。当你在 Visual Studio 中升级 Service Fabric应用程序时，需要提供应用程序升级参数和运行状况检查策略。应用程序升级参数可帮助控制升级，而运行状况检查策略可确定升级是否成功。有关详细信息，请参阅 [Service Fabric 应用程序升级：升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)。
 
 有三种升级模式：Monitored、UnmonitoredAuto 和 UnmonitoredManual。
 
@@ -90,4 +90,4 @@ Service Fabric 应用程序中的每个服务可能有自身的运行状况策�
 ## 后续步骤
 有关部署应用程序的详细信息，请参阅[在 Azure Service Fabric 中部署现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0822_2016-->

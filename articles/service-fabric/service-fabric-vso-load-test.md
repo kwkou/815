@@ -9,8 +9,8 @@
 
 <tags
     ms.service="multiple"
-    ms.date="04/06/2016"
-    wacn.date="07/04/2016" />
+    ms.date="07/29/2016"
+    wacn.date="08/29/2016" />
 
 # 使用 Visual Studio Team Services 对应用程序进行负载测试
 
@@ -137,4 +137,4 @@ Visual Studio Team Services 负载测试提供了 API 来帮助你管理负载�
 [8]: ./media/service-fabric-vso-load-test/RunTest2.png
 [9]: ./media/service-fabric-vso-load-test/Graph.png
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0822_2016-->

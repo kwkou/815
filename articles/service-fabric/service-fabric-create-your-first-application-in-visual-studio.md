@@ -3,18 +3,18 @@
    description="使用 Visual Studio 创建、部署和调试 Service Fabric 应用程序"
    services="service-fabric"
    documentationCenter=".net"
-   authors="seanmck"
+   authors="rwike77"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/09/2016"
-   wacn.date="07/07/2016"/>
+   ms.date="06/10/2016"
+   wacn.date="08/29/2016"/>
 
 # 在 Visual Studio 中创建你的第一个 Azure Service Fabric 应用程序
 
-Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提供用于创建、部署和调试 Service Fabric 应用程序的模板和工具。本主题会指导你完成在 Visual Studio 中创建第一个应用程序的过程。
+Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提供用于创建、部署和调试 Service Fabric 应用程序的模板和工具。本主题会指导您完成在 Visual Studio 中创建您的第一个应用程序的过程。
 
 ## 先决条件
 
@@ -34,11 +34,11 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 	![Visual Studio 中的新建项目对话框][1]
 
-4. 在下一页上，需要选择要包括在应用程序中的第一种服务类型。对于本教程，我们会选择“有状态”。命名它，然后单击“确定”。
+4. 在下一页上，选择“有状态”作为要包括在应用程序中的第一种服务类型。命名它，然后单击“确定”。
 
 	![Visual Studio 中的新建服务对话框][2]
 
-	>[AZURE.NOTE] 有关选项的详细信息，请参阅 [Service Fabric programming model overview](/documentation/articles/service-fabric-choose-framework/)（Service Fabric 编程模型概述）。
+	>[AZURE.NOTE] 有关选项的详细信息，请参阅 [Service Fabric 编程模型概述](/documentation/articles/service-fabric-choose-framework/)。
 
 	Visual Studio 会创建应用程序项目和有状态服务项目，并在解决方案资源管理器中显示它们。
 
@@ -48,35 +48,37 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 	- **发布配置文件**：用于为不同环境管理工具首选项。
 
-	- **脚本**：包括用于部署/升级应用程序的 PowerShell 脚本。此脚本由 Visual Studio 在幕后使用，可以在命令行直接调用。
+	- **脚本**：包括用于部署/升级应用程序的 PowerShell 脚本。Visual Studio 使用由 Visual Studio 在幕后使用的脚本。还可以在命令行处直接调用该脚本。
 
-	- **应用程序定义**：包括 *ApplicationPackageRoot* 下的应用程序清单以及 *ApplicationParameters* 下的用于定义应用程序并使你可以专门为给定环境配置它的关联应用程序参数文件。
+	- **应用程序定义**：包括 *ApplicationPackageRoot* 下的应用程序清单。关联应用程序参数文件位于 *ApplicationParameters* 下，它们定义应用程序并使您可以专门为给定环境对其进行配置。
 
     有关服务项目的内容概述，请参阅 [Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start/)。
 
 ## 部署和调试应用程序
 
-现在已具有应用程序，可以尝试运行它。
+现在已具有应用程序，尝试运行它。
 
 1. 按 F5 以部署应用程序以便进行调试。
 
-	>[AZURE.NOTE] 这在首次进行时需要一段时间，因为 Visual Studio 要创建本地群集以用于开发。本地群集只在单台计算机上运行你将在多计算机群集中生成的相同平台代码。你会在 Visual Studio 输出窗口中看到群集创建状态。
+	>[AZURE.NOTE] 首次部署需要一段时间，因为 Visual Studio 要创建本地群集以用于开发。本地群集只在单台计算机上运行你将在多计算机群集中生成的相同平台代码。群集创建状态显示在 Visual Studio 输出窗口中。
 
-	群集准备就绪时，你会从 SDK 随附的本地群集系统托盘管理器应用程序收到通知。
+	群集准备就绪时，将从 SDK 随附的本地群集系统托盘管理器应用程序收到通知。
 
-	![本地群集系统托盘通知][4]
+	![本地群集系统托盘通知][4]  
 
-2. 应用程序启动之后，Visual Studio 会自动显示诊断事件查看器，在其中可以查看来自服务的跟踪输出。
+
+2. 应用程序启动后，Visual Studio 会自动显示诊断事件查看器，在其中可以查看来自服务的跟踪输出。
 
 	![诊断事件查看器][5]
 
 	对于有状态服务模板，消息只显示在 MyStatefulService.cs 的 `RunAsync` 方法中递增的计数器值。
 
-3. 展开事件之一可查看更多详细信息，包括运行代码的节点。在此例中，它是 \_Node\_2，不过在你的计算机上可能会有所不同。
+3. 展开事件之一可查看更多详细信息，包括运行代码的节点。在此例中，它是_节点_ 2，不过在您的计算机上可能会有所不同。
 
-	![诊断事件查看器详细信息][6]
+	![诊断事件查看器详细信息][6]  
 
-	本地群集包含在单台计算机承载的五个节点。它会模拟一个五节点群集，其中节点处于不同计算机上。让我们在本地群集上取下一个节点，以模拟丢失一台计算机的情况并同时练习 Visual Studio 调试器。
+
+	本地群集包含在单台计算机上托管的五个节点。它会模拟一个五节点群集，其中节点处于不同计算机上。让我们在本地群集上取下一个节点，以模拟丢失一台计算机的情况，同时练习 Visual Studio 调试器。
 
     >[AZURE.NOTE] 项目模板发出的应用程序诊断事件会使用包含的 `ServiceEventSource` 类。有关详细信息，请参阅[如何在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)。
 
@@ -84,15 +86,15 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 	![有状态服务 RunAsync 方法中的断点][7]
 
-5. 右键单击本地群集管理器系统托盘应用并选择“管理本地群集”以启动 Service Fabric 资源管理器。
+5. 右键单击本地群集管理器系统托盘应用并选择“管理本地群集”以启动 Service Fabric Explorer。
 
     ![从本地群集管理器启动 Service Fabric 资源管理器][systray-launch-sfx]
 
-    Service Fabric 资源管理器提供群集的可视表示形式 — 包括部署到群集的已部署应用程序的集合和组成群集的物理节点的集合。要了解有关 Service Fabric 资源管理器的详细信息，请参阅[可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
+    Service Fabric Explorer 提供群集的可视表示形式--包括部署到其中的应用程序集和构成它的物理节点集。要了解有关 Service Fabric Explorer 的详细信息，请参阅[可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
 
 6. 在左窗格中，展开“群集”>“节点”，然后查找运行代码的节点。
 
-7. 单击“操作”>“停用(重新启动)”以模拟计算机重新启动。（请注意，你也可以在左窗格中的节点列表视图内的上下文菜单中通过选择三个点来执行此操作。）
+7. 单击“操作”>“停用(重启)”以模拟计算机重启。（注意，也可以从左窗格中节点列表视图中的上下文菜单停用计算机。）
 
 	![在 Service Fabric 资源管理器中停止节点][sfx-stop-node]
 
@@ -100,15 +102,16 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 8. 返回到诊断事件查看器并观察消息。请注意，计数器在继续递增，即使事件实际上来自不同的节点。
 
-    ![故障转移之后的诊断事件查看器][diagnostic-events-viewer-detail-post-failover]
+    ![故障转移之后的诊断事件查看器][diagnostic-events-viewer-detail-post-failover]  
+
 
 ## 清理
 
-  结束之前，请务必记住该本地群集非常真实。停止调试器会删除你的应用程序实例，并取消注册应用程序类型。不过，群集将继续在后台运行。可通过几个选项对此进行管理：
+  结束之前，请务必记住该本地群集非常真实。停止调试器会删除您的应用程序实例，并注销应用程序类型。不过，群集将继续在后台运行。可通过几个选项对群集进行管理：
 
   1. 若要关闭群集，但保留应用程序数据和跟踪，请在系统托盘应用中单击“停止本地群集”。
 
-  2. 要完全删除群集，请在系统托盘应用中单击“删除本地群集”。请注意，此选项会导致下次在 Visual Studio 中按 F5 时部署较慢。仅当在一段时间内不想使用本地群集时，或者当需要回收资源时，才使用此选项。
+  2. 要完全删除群集，请在系统托盘应用中单击“删除本地群集”。请注意，此选项会导致下次在 Visual Studio 中按 F5 时部署较慢。仅当在一段时间内不想使用本地群集时，或者当需要回收资源时，才删除群集。
 
 ## 后续步骤
 
@@ -130,4 +133,4 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 [diagnostic-events-viewer-detail-post-failover]: ./media/service-fabric-create-your-first-application-in-visual-studio/diagnostic-events-viewer-detail-post-failover.png
 [sfe-delete-application]: ./media/service-fabric-create-your-first-application-in-visual-studio/sfe-delete-application.png
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0822_2016-->

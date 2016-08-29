@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Service Fabric 服务的可伸缩性 | Microsoft Azure"
+   pageTitle="Service Fabric 服务的可伸缩性 | Azure"
    description="介绍如何缩放 Service Fabric 服务"
    services="service-fabric"
    documentationCenter=".net"
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="01/20/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="08/10/2016"
+   wacn.date="08/29/2016"/>
 
 # 缩放 Service Fabric 应用程序
 Azure Service Fabric 通过负载平衡服务、分区以及群集中所有节点上的副本，让可伸缩应用程序的生成更简单。这实现了资源利用率的最大化。
@@ -57,4 +57,4 @@ Service Fabric 支持将单个服务分区为多个较小的分区。[分区概�
 - [定义和管理状态](/documentation/articles/service-fabric-concepts-state/)
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0822_2016-->

@@ -3,17 +3,17 @@
    description="安装运行时、SDK 和工具并创建本地开发群集。完成此设置后，你就可以开始生成应用程序。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="seanmck"
-   manager="samgeo"
+   authors="rwike77"
+   manager="timlt"
    editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/15/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="06/16/2016"
+   wacn.date="08/29/2016"/>
 
 # 准备开发环境
- 若要在开发计算机上生成并运行 [Azure Service Fabric 应用程序][1]，你需要安装运行时、SDK 和工具。此外，还需执行 SDK 中包含的 Windows PowerShell 脚本。
+ 若要在开发计算机上生成并运行 [Azure Service Fabric 应用程序][1]，请安装运行时、SDK 和工具。此外，还需执行 SDK 中包含的 Windows PowerShell 脚本。
 
 ## 先决条件
 ### 支持的操作系统版本
@@ -24,7 +24,7 @@
 - Windows Server 2012 R2
 - Windows 10
 
->[AZURE.NOTE] 默认情况下，Windows 7 仅包含 Windows PowerShell 2.0。需要安装 PowerShell 3.0 或更高版本才能使用 Service Fabric PowerShell cmdlet。可以从 Microsoft 下载中心[下载 Windows PowerShell 5.0][powershell5-download]。
+>[AZURE.NOTE] 默认情况下，Windows 7 仅包含 Windows PowerShell 2.0。Service Fabric PowerShell cmdlet 需要 PowerShell 3.0 或更高版本。可以从 Microsoft 下载中心[下载 Windows PowerShell 5.0][powershell5-download]。
 
 ## 安装运行时、SDK 和工具
 
@@ -44,7 +44,7 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 
 
 ## 后续步骤
-设置开发环境之后，你可以开始构建和运行应用。
+完成设置开发环境之后，便可开始生成和运行应用。
 
 - [在 Visual Studio 中创建你的第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)
 - [了解如何在本地群集上部署和管理应用程序](/documentation/articles/service-fabric-get-started-with-a-local-cluster/)
@@ -59,4 +59,4 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 [core-sdk]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=ServiceFabricSDK_2_1 "Core SDK WebPI 链接"
 [powershell5-download]: https://www.microsoft.com/zh-cn/download/details.aspx?id=50395
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0822_2016-->

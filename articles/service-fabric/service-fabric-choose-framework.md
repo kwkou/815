@@ -5,12 +5,12 @@
    documentationCenter=".net"
    authors="seanmck"
    manager="timlt"
-   editor=""/>
+   editor="vturecek"/>
 
 <tags
    ms.service="service-fabric"
-   ms.date="04/18/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="07/18/2016"
+   wacn.date="08/29/2016"/>
 
 # Service Fabric 编程模型概述
 
@@ -41,4 +41,4 @@ Reliable Actor 框架在 Reliable Services 的基础上构建，是根据执行�
 ## 后续步骤
 [了解有关 Reliable Actors 的详细信息](/documentation/articles/service-fabric-reliable-actors-introduction/)或通过[编写第一个 Reliable Actor 服务](/documentation/articles/service-fabric-reliable-actors-get-started/)帮助你入门
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0822_2016-->

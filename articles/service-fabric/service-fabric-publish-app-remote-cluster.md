@@ -9,8 +9,9 @@
 
 <tags
     ms.service="multiple"
-    ms.date="04/07/2016"
-    wacn.date="07/04/2016" />
+    ms.date="07/29/2016"
+    wacn.date="08/29/2016" />
+
 
 # 使用 Visual Studio 将应用程序发布到远程群集
 
@@ -24,7 +25,7 @@
 
 ### 发布配置文件
 
-Service Fabric 应用程序项目中名为 **PublishProfiles** 的文件夹包含 XML 文件，其中存储了用于发布应用程序的基本信息，例如：
+Service Fabric 应用程序项目中名为 PublishProfiles 的文件夹包含 XML 文件，其中存储了用于发布应用程序的基本信息，例如：
 
 - Service Fabric 群集连接参数
 - 应用程序参数文件的路径
@@ -34,7 +35,7 @@ Service Fabric 应用程序项目中名为 **PublishProfiles** 的文件夹包�
 
 ### 应用程序参数文件
 
-的 Service Fabric 应用程序项目中名为 **ApplicationParameters** 的文件夹包含用户指定的应用程序清单参数值 XML 文件。应用程序清单文件可以参数化，以便可以针对部署设置使用不同的值。若要详细了解如何参数化应用程序，请参阅[在 Service Fabric 中管理多个环境](/documentation/articles/service-fabric-manage-multiple-environment-app-configuration/)。
+的 Service Fabric 应用程序项目中名为 ApplicationParameters 的文件夹包含用户指定的应用程序清单参数值 XML 文件。应用程序清单文件可以参数化，以便可以针对部署设置使用不同的值。若要了解有关参数化应用程序的详细信息，请参阅[在 Service Fabric 中管理多个环境](/documentation/articles/service-fabric-manage-multiple-environment-app-configuration/)。
 
 >[AZURE.NOTE] 对于执行组件服务，应该先构建项目，然后尝试使用编辑器或通过“发布”对话框编辑文件。这是因为在构建期间将生成一部分清单文件。
 
@@ -48,21 +49,21 @@ Service Fabric 应用程序项目中名为 **PublishProfiles** 的文件夹包�
 
     “目标设置文件”下拉列表中选择的文件是保存除“清单版本”以外的所有设置的位置。你可以重复使用现有配置文件，或通过选择“目标配置文件”下拉列表框中的“<管理配置文件...>”来创建一个新的配置文件。当你选择发布配置文件时，其内容将出现在对话框的相应字段中。若要随时保存更改，请选择“保存配置文件”链接。
 
-2. 在“连接终结点”部分中，指定本地或远程 Service Fabric 群集的发布终结点。若要添加或更改连接终结点，请单击“连接终结点”下拉列表。该列表显示你可以根据 Azure 订阅对其发布的可用 Service Fabric 群集连接终结点。请注意，如果你尚未登录到 Visual Studio，系统将提示你登录。
+2. 在“连接终结点”部分中，指定本地或远程 Service Fabric 群集的发布终结点。若要添加或更改连接终结点，请单击“连接终结点”下拉列表。该列表根据 Azure 订阅显示可对其发布的可用 Service Fabric 群集连接终结点。请注意，如果你尚未登录到 Visual Studio，系统将提示你登录。
 
-    使用群集选择对话框从一组可用的订阅和群集中进行选择。
+    使用群集选择对话框从一组可用订阅和群集中进行选择。
 
     ![“选择 Service Fabric 群集”对话框][1]
 
     >[AZURE.NOTE] 如果你要发布到任意终结点（例如合作群集），请参阅下面的“发布到任意群集终结点”部分。
 
-    在你选择终结点后，Visual Studio 将验证与所选 Service Fabric 群集的连接。如果群集未受到保护，Visual Studio 可以立即与其连接。但是，如果群集受保护，则你需要在本地计算机上安装证书才能继续。有关详细信息，请参阅 [How to configure secure connections（如何配置安全连接）](/documentation/articles/service-fabric-visualstudio-configure-secure-connections/)。完成后，选择“确定”按钮。选定的群集将出现在“发布 Service Fabric 应用程序”对话框中。
+    在你选择终结点后，Visual Studio 将验证与所选 Service Fabric 群集的连接。如果群集未受到保护，Visual Studio 可以立即与其连接。但是，如果群集受保护，则你需要在本地计算机上安装证书才能继续。有关详细信息，请参阅[如何配置安全连接](/documentation/articles/service-fabric-visualstudio-configure-secure-connections/)。完成后，选择“确定”按钮。选定的群集将出现在“发布 Service Fabric 应用程序”对话框中。
 
 3. 在“应用程序参数文件”下拉列表框中，导航到应用程序参数文件。应用程序参数文件保留应用程序清单文件中参数的用户指定值。若要添加或更改参数，请选择“编辑”按钮。在“参数”网格中输入或更改参数值。完成后，请选择“保存”按钮。
 
     ![“编辑参数”对话框][2]
 
-4. 使用“升级应用程序”复选框指定此发布操作是否为升级。升级发布操作不同于一般发布操作。有关差异列表，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)。若要配置升级设置，请选择“配置升级设置”链接。升级参数编辑器随即会出现。若要详细了解升级参数，请参阅[配置 Service Fabric 应用程序的升级](/documentation/articles/service-fabric-visualstudio-configure-upgrade/)。
+4. 使用“升级应用程序”复选框指定此发布操作是否为升级。升级发布操作不同于一般发布操作。有关差异列表的信息，请参阅 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)。若要配置升级设置，请选择“配置升级设置”链接。升级参数编辑器随即会出现。若要了解有关升级参数的详细信息，请参阅[配置 Service Fabric 应用程序的升级](/documentation/articles/service-fabric-visualstudio-configure-upgrade/)。
 
 5. 选择“清单版本...”按钮以查看“编辑版本”对话框。需要更新应用程序和服务版本才能进行升级。请参阅 [Service Fabric 应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial/)，以了解应用程序和服务清单版本如何影响升级过程。
 
@@ -103,4 +104,4 @@ Visual Studio 发布体验已针对发布到远程群集（与某个 Azure 订�
 [3]: ./media/service-fabric-publish-app-remote-cluster/EditVersions.png
 [4]: ./media/service-fabric-publish-app-remote-cluster/publish-to-party-cluster.png
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0822_2016-->

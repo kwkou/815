@@ -3,14 +3,14 @@
    description="如何在 Service Fabric 中建模和描述应用程序。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="seanmck"
+   authors="rwike77"
    manager="timlt"
    editor="mani-ramaswamy"/>
 
 <tags
     ms.service="service-fabric"
-    ms.date="05/18/2016"   
-    wacn.date="07/04/2016"/>
+   ms.date="08/10/2016"   
+    wacn.date="08/29/2016"/>
 
 # 在 Service Fabric 中对应用程序建模
 
@@ -250,4 +250,4 @@ PS D:\temp>
 [11]: /documentation/articles/service-fabric-manage-multiple-environment-app-configuration/
 [12]: /documentation/articles/service-fabric-application-runas-security/
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0822_2016-->
