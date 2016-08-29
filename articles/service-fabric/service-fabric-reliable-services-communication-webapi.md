@@ -9,8 +9,9 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/06/2016"
-   wacn.date="08/08/2016"/>
+   ms.date="07/29/2016"
+   wacn.date="08/29/2016"/>
+
 
 # 入门：Service Fabric Web API 服务与 OWIN 自托管 | Microsoft Azure
 
@@ -21,7 +22,7 @@ Azure Service Fabric 让你有权决定你希望你的服务如何与用户以�
 
 ASP.NET Web API 是一个常用的强大框架，用于在 .NET Framework 之上构建 HTTP API。如果你不熟悉此框架，请参阅 [ASP.NET Web API 2 入门](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)以深入了解。
 
-Service Fabric 中的 Web API 是你熟知并喜爱的相同 ASP.NET Web API。不同之处在于如何托管 Web API 应用程序。你将不会使用 Microsoft Internet Information Services (IIS)。为了更好地了解区别，我们将它划分为两个部分：
+Service Fabric 中的 Web API 是你熟知并喜爱的相同 ASP.NET Web API。不同之处在于如何*托管* Web API 应用程序。你将不会使用 Microsoft Internet Information Services (IIS)。为了更好地了解区别，我们将它划分为两个部分：
 
  1. Web API 应用程序（包括控制器和模型）
  2. 主机（Web 服务器，通常是 IIS）
@@ -88,7 +89,7 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 
 
-接着，在项目根目录中添加一个 Startup 类，用于注册路由、格式化程序和任何其他配置设置。这也是 Web API 插入到主机中的位置（会在以后再次重新访问）。
+接着，在项目根目录中添加一个 Startup 类，用于注册路由、格式化程序和任何其他配置设置。这也是 Web API 插入到*主机*中的位置（会在以后再次重新访问）。
 
 **Startup.cs**
 
@@ -123,7 +124,7 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 ## 服务托管
 
-在 Service Fabric 中，服务在服务主机进程（运行服务代码的可执行文件）中运行。当你使用 Reliable Services API 编写服务时，服务项目只编译成注册服务类型并运行代码的可执行文件。当你在 .NET 中的 Service Fabric 上编写服务时，在大多数情况下都是如此。如果你打开无状态服务项目中的 Program.cs，则应该看到：
+在 Service Fabric 中，服务在*服务主机进程*（运行服务代码的可执行文件）中运行。当你使用 Reliable Services API 编写服务时，服务项目只编译成注册服务类型并运行代码的可执行文件。当你在 .NET 中的 Service Fabric 上编写服务时，在大多数情况下都是如此。如果你打开无状态服务项目中的 Program.cs，则应该看到：
 
 
 	using System;
@@ -157,11 +158,11 @@ Web API 应用程序本身不会更改。它与你可能已在过去编写的 We
 
 如果这看上去疑似控制台应用程序的入口点，这是因为它是。
 
-有关服务主机进程和服务注册的更多详细信息已超出本文的范围。但是现在请务必了解服务代码已在它自身的进程中运行。
+有关服务主机进程和服务注册的更多详细信息已超出本文的范围。但是现在请务必了解*服务代码已在它自身的进程中运行*。
 
 ## 使用 OWIN 主机自行托管 Web API
 
-考虑到 Web API 应用程序代码在其自己的进程中托管，你该如何将它挂接到 Web 服务器？ 进入 [OWIN](http://owin.org/)。OWIN 只是 .NET Web 应用程序与 Web 服务器之间的协定。传统上使用 ASP.NET（最高为 MVC 5）时，Web 应用程序通过 System.Web 与 IIS 紧密耦合。但是，Web API 实现 OWIN，这使你可以编写一个与托管其自身的 Web 服务器分离的 Web 应用程序。因此，你可以使用可在自己的进程中启动的自托管 OWIN Web 服务器。这样完全符合我们前面提到的 Service Fabric 托管模型。
+考虑到 Web API 应用程序代码在其自己的进程中托管，你该如何将它挂接到 Web 服务器？ 进入 [OWIN](http://owin.org/)。OWIN 只是 .NET Web 应用程序与 Web 服务器之间的协定。传统上使用 ASP.NET（最高为 MVC 5）时，Web 应用程序通过 System.Web 与 IIS 紧密耦合。但是，Web API 实现 OWIN，这使您可以编写一个与托管其自身的 Web 服务器分离的 Web 应用程序。因此，你可以使用可在自己的进程中启动的*自托管* OWIN Web 服务器。这样完全符合我们前面提到的 Service Fabric 托管模型。
 
 在本文中，我们将使用 Katana 作为 Web API 应用程序的 OWIN 主机。Katana 是基于 [System.Net.HttpListener](https://msdn.microsoft.com/zh-cn/library/system.net.httplistener.aspx) 和 Windows [HTTP Server API](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa364510.aspx) 的开源 OWIN 主机实现。
 
@@ -280,10 +281,10 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 
 若要设置 Web 服务器，需要两项信息：
 
- - URL 路径前缀。尽管是可选的，不过最好现在对此进行设置，以便你可以在应用程序中安全地托管多个 Web 服务。
- - 端口。
+ - *URL 路径前缀*。尽管是可选的，不过最好现在对此进行设置，以便你可以在应用程序中安全地托管多个 Web 服务。
+ - *端口*。
 
-在我们获取 Web 服务器的端口之前，请务必了解 Service Fabric 提供了一个应用程序层，该层充当应用程序与用于运行它的底层操作系统之间的缓冲区。因此，Service Fabric 提供了一种方法来为服务配置终结点。Service Fabric 可确保终结点可供服务使用。这样，你就无需在基础 OS 环境中自行配置终结点。可以轻松地在不同环境中托管 Service Fabric 应用程序，而不用对应用程序进行任何更改。（例如，可以在 Azure 或自己的数据中心内托管同一个应用程序。）
+在我们获取 Web 服务器的端口之前，请务必了解 Service Fabric 提供了一个应用程序层，该层充当应用程序与用于运行它的底层操作系统之间的缓冲区。因此，Service Fabric 提供了一种方法来为服务配置*终结点*。Service Fabric 可确保终结点可供服务使用。这样，你就无需在基础 OS 环境中自行配置终结点。可以轻松地在不同环境中托管 Service Fabric 应用程序，而不用对应用程序进行任何更改。（例如，可以在 Azure 或自己的数据中心内托管同一个应用程序。）
 
 在 PackageRoot\\ServiceManifest.xml 中配置 HTTP 终结点：
 
@@ -358,17 +359,17 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	    try
 	    {
-	        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
+	        this.eventSource.Message("Starting web server on " + this.listeningAddress);
 
 	        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
 
-	        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
+	        this.eventSource.Message("Listening on " + this.publishAddress);
 
 	        return Task.FromResult(this.publishAddress);
 	    }
 	    catch (Exception ex)
 	    {
-	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open endpoint {0}. {1}", this.endpointName, ex.ToString());
+	        this.eventSource.Message("Web server failed to open endpoint {0}. {1}", this.endpointName, ex.ToString());
 
 	        this.StopWebServer();
 
@@ -380,7 +381,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 请注意，这会引用在构造函数中传入到 OwinCommunicationListener 的 Startup 类。此启动实例由 Web 服务器用于启动 Web API 应用程序。
 
-将来在你运行应用程序时，`ServiceEventSource.Current.ServiceMessage()` 行会出现在“诊断事件”窗口中，以确认 Web 服务器已成功启动。
+将来在运行应用程序时，`ServiceEventSource.Current.Message()` 行会出现在“诊断事件”窗口中，以确认 Web 服务器已成功启动。
 
 ## 实现 CloseAsync 和 Abort
 
@@ -389,7 +390,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	public Task CloseAsync(CancellationToken cancellationToken)
 	{
-	    this.eventSource.ServiceMessage(this.serviceContext, "Closing web server on endpoint {0}", this.endpointName);
+	    this.eventSource.Message("Closing web server on endpoint {0}", this.endpointName);
             
 	    this.StopWebServer();
 
@@ -398,7 +399,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	public void Abort()
 	{
-	    this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server on endpoint {0}", this.endpointName);
+	    this.eventSource.Message("Aborting web server on endpoint {0}", this.endpointName);
     
 	    this.StopWebServer();
 	}
@@ -437,7 +438,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	}
 
 
-这是 Web API 应用程序和 OWIN 主机最后相会之处。为主机 (OwinCommunicationListener) 指定应用程序实例（通过 startup 的 Web API）。然后，Service Fabric 将管理其生命周期。通常任何通信堆栈都可以遵循这一相同模式。
+这是 Web API *应用程序*和 OWIN *主机*最后相会之处。为主机 (OwinCommunicationListener) 指定*应用程序*实例（通过 startup 的 Web API）。然后，Service Fabric 将管理其生命周期。通常任何通信堆栈都可以遵循这一相同模式。
 
 ## 将其放在一起
 
@@ -536,8 +537,6 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	        this.appRoot = appRoot;
 	    }
 
-	        public bool ListenOnSecondary { get; set; }
-
 	        public Task<string> OpenAsync(CancellationToken cancellationToken)
 	        {
 	            var serviceEndpoint = this.serviceContext.CodePackageActivationContext.GetEndpoint(this.endpointName);
@@ -580,17 +579,17 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	    try
 	    {
-	        this.eventSource.ServiceMessage(this.serviceContext, "Starting web server on " + this.listeningAddress);
+	        this.eventSource.Message("Starting web server on " + this.listeningAddress);
 
 	        this.webApp = WebApp.Start(this.listeningAddress, appBuilder => this.startup.Invoke(appBuilder));
 
-	        this.eventSource.ServiceMessage(this.serviceContext, "Listening on " + this.publishAddress);
+	        this.eventSource.Message("Listening on " + this.publishAddress);
 
 	        return Task.FromResult(this.publishAddress);
 	    }
 	    catch (Exception ex)
 	    {
-	        this.eventSource.ServiceMessage(this.serviceContext, "Web server failed to open endpoint {0}. {1}", this.endpointName, ex.ToString());
+	        this.eventSource.Message("Web server failed to open endpoint {0}. {1}", this.endpointName, ex.ToString());
 
 	        this.StopWebServer();
 
@@ -600,7 +599,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	        public Task CloseAsync(CancellationToken cancellationToken)
 	        {
-	            this.eventSource.ServiceMessage(this.serviceContext, "Closing web server on endpoint {0}", this.endpointName);
+	            this.eventSource.Message("Closing web server on endpoint {0}", this.endpointName);
 
 	            this.StopWebServer();
 
@@ -609,7 +608,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	        public void Abort()
 	        {
-	            this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server on endpoint {0}", this.endpointName);
+	            this.eventSource.Message("Aborting web server on endpoint {0}", this.endpointName);
 
 	            this.StopWebServer();
 	        }
@@ -630,7 +629,6 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	        }
 	    }
 	}
-
 
 
 所有部分都准备就绪后，项目现在应类似于具有 Reliable Services API 入口点和 OWIN 主机的典型 Web API 应用程序：
@@ -683,4 +681,4 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 [使用 Visual Studio 调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0822_2016-->

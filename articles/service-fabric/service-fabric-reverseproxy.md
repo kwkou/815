@@ -9,8 +9,9 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/15/2016"
-   wacn.date="08/08/2016"/>
+   ms.date="07/26/2016"
+   wacn.date="08/29/2016"/>
+
 
 # Service Fabric 反向代理
 
@@ -54,9 +55,9 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
  - **http(s):** 可以将反向代理配置为接受 HTTP 或 HTTPS 流量。如果为 HTTPS 流量，则会在反向代理中出现 SSL 终止的情况。由反向代理转发到群集中服务的请求是通过 HTTP 进行的。
  - **网关 FQDN| internal IP:** For external clients, the reverse proxy can be configured so that it is reachable through the cluster domain (e.g., mycluster.chinaeast.chinacloudapp.cn). By default the reverse proxy runs on every node, so for internal traffic it can be reached on localhost or on any internal node IP (e.g., 10.0.0.1).
  - **Port:** 为反向代理指定的端口。例如：19008。
- - **ServiceInstanceName:** 这是要在不使用“fabric:/”方案的情况下访问的服务的完全限定式已部署服务实例名称。例如，若要访问服务 fabric:/myapp/myservice/，可使用 myapp/myservice。
- - **Suffix path:** 这是要连接到的服务的实际 URL 路径。例如，myapi/values/add/3
- - **PartitionKey:** 对于已分区服务，这是针对你要访问的分区进行计算所得的分区键。请注意，这不是分区 ID GUID。对于使用单独分区方案的服务，此参数不是必需的。
+ - **ServiceInstanceName:** 这是要在不使用“fabric:/”方案的情况下访问的服务的完全限定式已部署服务实例名称。例如，若要访问服务 *fabric:/myapp/myservice/*，可使用 *myapp/myservice*。
+ - **Suffix path:** 这是要连接到的服务的实际 URL 路径。例如，*myapi/values/add/3*
+ - **PartitionKey:** 对于已分区服务，这是针对你要访问的分区进行计算所得的分区键。请注意，这*不* 是分区 ID GUID。对于使用单独分区方案的服务，此参数不是必需的。
  - **PartitionKind:** 服务分区方案。该方案可以是“Int64Range”或“Named”。对于使用单独分区方案的服务，此参数不是必需的。
  - **Timeout:** 此参数指定反向代理针对服务创建的 HTTP 请求（代表客户端请求）的超时。此参数的默认值为 60 秒。这是一个可选参数。
 
@@ -73,12 +74,12 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
  - `/index.html`
  - `/api/users/<userId>`
 
-如果服务使用单独分区方案，则 PartitionKey 和 PartitionKind 查询字符串参数不是必需的，可以通过网关访问服务，如下所示：
+如果服务使用单独分区方案，则 *PartitionKey* 和 *PartitionKind* 查询字符串参数不是必需的，可以通过网关访问服务，如下所示：
 
  - 外部访问方式：`http://mycluster.chinaeast.chinacloudapp.cn:19008/MyApp/MyService`
  - 内部访问方式：`http://localhost:19008/MyApp/MyService`
 
-如果服务使用“统一 Int64”分区方案，则必须使用 PartitionKey 和 PartitionKind 查询字符串来访问服务的分区：
+如果服务使用“统一 Int64”分区方案，则必须使用 *PartitionKey* 和 *PartitionKind* 查询字符串来访问服务的分区：
 
  - 外部访问方式：`http://mycluster.chinaeast.chinacloudapp.cn:19008/MyApp/MyService?PartitionKey=3&PartitionKind=Int64Range`
  - 内部访问方式：`http://localhost:19008/MyApp/MyService?PartitionKey=3&PartitionKind=Int64Range`
@@ -102,6 +103,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 不过，副本或服务实例可能会共享主机进程，在通过基于 http.sys 的 Web 服务器进行托管的情况下还可能会共享端口，这些 Web 服务器包括：
 
  - [System.Net.HttpListener](https://msdn.microsoft.com/zh-cn/library/system.net.httplistener%28v=vs.110%29.aspx)
+ - [ASP.NET Core WebListener](https://docs.asp.net/latest/fundamentals/servers.html#weblistener)
  - [Katana](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OwinSelfHost/)
 
 在这样的情形下，可能会出现 Web 服务器出现在主机进程中并且能够响应请求，而被解析的服务实例或副本却再也不能在主机上使用的情况。这种情况下，网关会从 Web 服务器收到 HTTP 404 响应。因此，HTTP 404 具有两种不同的含义：
@@ -136,7 +138,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
         	}
     	},
 
-2. 在**群集**的[“资源类型”部分](/documentation/articles/resource-group-authoring-templates/)指定该端口
+2. 为**群集**的[“资源类型”部分](/documentation/articles/resource-group-authoring-templates/)中的每个 nodetype 对象指定端口
 
 
     	{
@@ -145,9 +147,14 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
         	"name": "[parameters('clusterName')]",
         	"location": "[parameters('clusterLocation')]",
         	...
+       		"nodeTypes": [
+          	   {
+	        	...
+	        	"httpApplicationGatewayEndpointPort": "[parameters('SFReverseProxyPort')]",
+	        	...
+          	   },
         	...
-        	"httpApplicationGatewayEndpointPort": "[parameters('SFReverseProxyPort')]",
-        	...
+        	],
         	...
     	}
 
@@ -231,4 +238,4 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 [0]: ./media/service-fabric-reverseproxy/external-communication.png
 [1]: ./media/service-fabric-reverseproxy/internal-communication.png
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0822_2016-->

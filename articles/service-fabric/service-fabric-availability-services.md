@@ -9,8 +9,9 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="01/20/2016"
-   wacn.date="07/04/2016"/>
+   ms.date="08/10/2016"
+   wacn.date="08/29/2016"/>
+
 
 # Service Fabric 服务的可用性
 Azure Service Fabric 服务可以是有状态服务，也可以是无状态服务。本文概述发生故障时 Service Fabric 服务如何保持服务的可用性。
@@ -47,4 +48,4 @@ Azure Service Fabric 服务可以是有状态服务，也可以是无状态服�
 - [定义和管理状态](/documentation/articles/service-fabric-concepts-state/)
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0822_2016-->
