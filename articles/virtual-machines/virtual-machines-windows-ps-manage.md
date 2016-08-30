@@ -218,6 +218,6 @@
 
 ## 后续步骤
 
-如果部署出现问题，请参阅[使用 Azure 门户对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
+如果部署出现问题，请参阅[使用 Azure 门户预览对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 
 <!---HONumber=Mooncake_0718_2016-->
