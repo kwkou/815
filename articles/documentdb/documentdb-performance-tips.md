@@ -95,7 +95,7 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
 5. **按 RetryAfter 间隔实现退让**
  
-    在性能测试期间，应该增加负载，直到系统对小部分请求进行限制为止。如果受到限制，客户端应用程序应按照服务器指定的重试间隔在限制时退让。这可确保最大程度地减少等待重试的时间。重试策略支持包含在 DocumentDB [.NET](/documentation/articles/documentdb-sdk-dotnet/) 和 [Java](/documentation/articles/documentdb-sdk-java/) 1.8.0 和更高版本中，以及 [Node.js](/documentation/articles/documentdb-sdk-nodejs/) 和 [Python](/documentation/articles/documentdb-sdk-python/) 1.9.0 或更高版本中。有关详细信息，请参阅 [Exceeding reserved throughput limits](/documentation/articles/documentdb-request-units/#exceeding-reserved-throughput-limits)（超过保留的吞吐量限制）和 [RetryAfter](https://msdn.microsoft.com/library/microsoft.azure.documents.documentclientexception.retryafter.aspx)。
+    在性能测试期间，应该增加负载，直到系统对小部分请求进行限制为止。如果受到限制，客户端应用程序应按照服务器指定的重试间隔在限制时退让。这可确保最大程度地减少等待重试的时间。重试策略支持包含在 DocumentDB [.NET](/documentation/articles/documentdb-sdk-dotnet/) 和 [Java](/documentation/articles/documentdb-sdk-java/) 1.8.0 和更高版本中和 [Python](/documentation/articles/documentdb-sdk-python/) 1.9.0 或更高版本中。有关详细信息，请参阅 [Exceeding reserved throughput limits](/documentation/articles/documentdb-request-units/#exceeding-reserved-throughput-limits)（超过保留的吞吐量限制）和 [RetryAfter](https://msdn.microsoft.com/library/microsoft.azure.documents.documentclientexception.retryafter.aspx)。
 
 6. **增大客户端工作负荷**
 
@@ -115,9 +115,6 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
     
         IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
 
-9. **增加线程/任务数目**
-
-	请参阅“网络”部分中的[增加线程/任务数目](/documentation/articles/increase-threads/)。
 
 ## 索引策略
 
