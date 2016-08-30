@@ -78,17 +78,13 @@
 客户端应用程序向资源所有者请求[授权](#authorization)，以参与 [OAuth2 授权](#authorization-grant)流程，并可代表资源所有者访问 API/数据。OAuth2 授权框架根据客户端是否能够维护其凭据的机密性[定义两种类型的客户端][OAuth2-Client-Types]：“机密”和“公共”。应用程序可实现在 Web 服务器上运行的 [Web 客户端（机密）](#web-client)、安装在设备上的[本机客户端（公共）](#native-client)应用程序，以及在设备浏览器中运行的[基于用户代理的客户端（公共）](#user-agent-based-client)。
 
 ## <a name="consent"></a>同意
-[资源所有者](#resource-owner)授权给[客户端应用程序](#client-application)，让它获得特定[权限](#permissions)来代表资源所有者访问受保护资源的过程。根据客户端请求的权限，要求管理员或用户同意分别允许其组织/个人数据的访问权限。请注意，在[多租户](#multi-tenant-application)方案中，应用程序的[服务主体](#service-principal-object)也会记录在同意方用户的租户中。
+[资源所有者](#resource-owner)授权给[客户端应用程序](#client-application)，让它获得特定[权限](#permissions)来代表资源所有者访问受保护资源的过程。根据客户端请求的权限，要求管理员或用户同意分别允许其组织/个人数据的访问权限。
 
 ## <a name="ID-token"></a>ID 令牌
 [授权服务器](#authorization-server)的[授权终结点](#authorization-endpoint)提供的 [OpenID Connect][OpenIDConnect-ID-Token] [安全令牌](#security-token)，其中包含与最终用户[资源所有者](#resource-owner)的身份验证相关的[声明](#claim)。与访问令牌一样，ID 令牌也以数字签名的 [JSON Web 令牌 (JWT)][JWT] 来表示。不过，与访问令牌不同的是，ID 令牌的声明并不用于与资源访问相关的用途（具体地说，是访问控制）。
 
 有关详细信息，请参阅 [Azure AD token reference][AAD-Tokens-Claims]（Azure AD 令牌参考）。
 
-## <a name="multi-tenant-application"></a>多租户应用程序
-在 Azure AD 中注册的[客户端应用程序](#client-application)类别，旨在允许来自任何 Azure AD [租户](#tenant)中所预配的用户帐户的登录和[同意](#consent)，包括客户端最初注册所在的租户以外的租户。相反，注册为单租户的应用程序只允许来自应用程序注册所在相同租户中预配的用户帐户的登录。[本机客户端](#native-client)应用程序默认为多租户，而 [Web 客户端](#web-client)应用程序则可以在单租户和多租户之间做出选择。
-
-有关详细信息，请参阅 [How to sign in any Azure AD user using the multi-tenant application pattern][AAD-Multi-Tenant-Overview]（如何使用多租户应用程序模式将任何 Azure AD 用户登录）。
 
 ## <a name="native-client"></a>本机客户端
 设备上本机安装的[客户端应用程序](#client-application)类型。由于所有代码都在设备上执行，因此设备因为无法隐私/秘密地存储凭据而被视为“公共”客户端。有关详细信息，请参阅 [OAuth2 client types and profiles][OAuth2-Client-Types]（OAuth2 客户端类型和配置文件）。
@@ -144,7 +140,7 @@
 使最终用户变成未身份验证状态的过程，解除用户在[登录](#sign-in)期间与[客户端应用程序](#client-application)会话关联的状态
 
 ## <a name="tenant"></a>租户
-Azure AD 目录的实例称为 Azure AD 租户。它提供各种功能，包括集成式应用程序的注册表服务、用户帐户和已注册应用程序的身份验证，以及支持各种协议（包括 OAuth2 和 SAML）所需的 REST 终结点。终结点包括[授权终结点](#authorization-endpoint)、[令牌终结点](#token-endpoint)以及[多租户应用程序](#multi-tenant-application)使用的“通用”终结点。
+Azure AD 目录的实例称为 Azure AD 租户。它提供各种功能，包括集成式应用程序的注册表服务、用户帐户和已注册应用程序的身份验证，以及支持各种协议（包括 OAuth2 和 SAML）所需的 REST 终结点。终结点包括[授权终结点](#authorization-endpoint)、[令牌终结点](#token-endpoint)。
 
 有关访问租户的各种方式的详细信息，请参阅 [How to get an Azure Active Directory tenant][AAD-How-To-Tenant]（如何获取 Azure Active Directory 租户）。
 
