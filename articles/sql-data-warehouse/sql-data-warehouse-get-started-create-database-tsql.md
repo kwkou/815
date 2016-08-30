@@ -29,7 +29,7 @@
 
 - **Azure 帐户**：访问 [Azure 试用版][]以创建帐户。
 - **Azure SQL Server**：有关详细信息，请参阅[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器][]或[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器][]。
-- **资源组**：可使用同一资源组作为 Azure SQL Server，或参阅[如何创建资源组][]。
+- **资源组**：可使用同一资源组作为 Azure SQL Server。
 - **执行 T-SQL 的环境**：可以使用 [Visual Studio][Installing Visual Studio and SSDT]、[sqlcmd][] 或 [SSMS][] 执行 T-SQL。
 
 > [AZURE.NOTE] 创建新的 SQL 数据仓库可能会导致新的计费服务。有关定价的详细信息，请参阅 [SQL 数据仓库定价][]。
@@ -63,7 +63,7 @@
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-overview-load/
-[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-load-sample-databases/
+[加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
 [使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server
 [使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
 [如何创建资源组]: /documentation/articles/resource-group-template-deploy-portal#create-resource-group
@@ -73,10 +73,10 @@
 <!--MSDN references--> 
 [CREATE DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204021.aspx
 [ALTER DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204042.aspx
-[SSMS]: https://msdn.microsoft.com/library/mt238290.aspx
+[SSMS]: https://msdn.microsoft.com/zh-cn/library/mt238290.aspx
 
 <!--Other Web references-->
-[SQL 数据仓库定价]: /home/features/sql-data-warehouse/pricing/
+[SQL 数据仓库定价]: /pricing/details/sql-data-warehouse/
 [Azure 试用版]: /pricing/1rmb-trial/
 [MSDN Azure 信用额度]: /pricing/member-offers/
 
