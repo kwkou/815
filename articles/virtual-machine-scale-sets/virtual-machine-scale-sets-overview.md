@@ -32,7 +32,9 @@
 
 可在[此处](https://github.com/Azure/azure-quickstart-templates)的 Azure 快速入门模板 GitHub 存储库中找到一组 VM 规模集的示例模板。（查找标题中含有 _vmss_ 的模板）
 
-在这些模板的详细页中包含一个按钮，使用该按钮可链接到门户部署功能。若要部署 VM 缩放集，请单击该按钮，然后填写门户中所需的任何参数。如果你不确定某个资源是否支持大写或大小写混合，则更为安全的做法是始终使用小写参数值。此外，此处还对 VM 缩放集模板进行了方便的视频解剖：
+>[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+
+若要部署 VM 缩放集，请下载模板，然后做必要的修改，并使用 Azure PowerShell 或者 Azure CLI 进行部署。如果你不确定某个资源是否支持大写或大小写混合，则更为安全的做法是始终使用小写参数值。此外，此处还对 VM 缩放集模板进行了方便的视频解剖：
 
 [VM 缩放集模板详细分析](https://channel9.msdn.com/Blogs/Windows-Azure/VM-Scale-Set-Template-Dissection/player)
 
