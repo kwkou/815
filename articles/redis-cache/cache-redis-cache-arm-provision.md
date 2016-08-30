@@ -21,9 +21,7 @@
 有关完整的模板，请参阅 [Redis 缓存模板](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json)。
 
 >[AZURE.NOTE]适用于新[高级层](/documentation/articles/cache-premium-tier-intro/)的 ARM 模板现已推出。
->
->
->若要检查最新模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)并搜索 `redis-cache`。
+><p>若要检查最新模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)并搜索 `redis-cache`。
 
 ## 将部署的内容
 

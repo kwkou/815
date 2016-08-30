@@ -95,10 +95,8 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 			azure storage blob download -a <storage-account-name> -k <primary-key> <container-name> <blob-name> <destination-file>
 
 > [AZURE.NOTE] 如果你始终使用同一个存储帐户，可以设置以下环境变量，而无需为每条命令指定帐户和密钥：
->
-> * **AZURE\_STORAGE\_ACCOUNT**：存储帐户名称
->
-> * **AZURE\_STORAGE\_ACCESS\_KEY**：存储帐户密钥
+><p> * **AZURE\_STORAGE\_ACCOUNT**：存储帐户名称
+><p> * **AZURE\_STORAGE\_ACCESS\_KEY**：存储帐户密钥
 
 ### <a id="powershell"></a>Azure PowerShell
 
