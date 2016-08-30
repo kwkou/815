@@ -420,7 +420,7 @@ SQL 数据仓库具有以下等待类型：
 [重新生成索引以提高段质量]: /documentation/articles/sql-data-warehouse-tables-index#rebuilding-indexes-to-improve-segment-quality/
 
 <!--MSDN references-->
-[Managing Databases and Logins in Azure SQL Database]: https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
+[Managing Databases and Logins in Azure SQL Database]: /documentation/articles/sql-database-manage-logins/
 
 <!--Other Web references-->
 
