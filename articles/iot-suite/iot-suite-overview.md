@@ -56,7 +56,7 @@ IoT 套件包含预配置解决方案，可让你快速地开始使用，并浏�
 - 了解有关 Azure IoT 中心服务的详细信息，请参阅 [IoT 中心文档][lnk-iot-hub]。
 
 
-[lnk-sdks]: /documentation/articles/iot-hub/iot-hub-sdks-summary/
+[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-iot-hub]: /documentation/services/iot-hub/
 [lnk-asa]: /documentation/services/stream-analytics/
 [lnk-azure-storage]: /documentation/services/storage/
