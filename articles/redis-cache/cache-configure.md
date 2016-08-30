@@ -293,11 +293,8 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 新的 Azure Redis 缓存实例均已配置以下默认 Redis 配置值。
 
 >[AZURE.NOTE] 无法使用 `StackExchange.Redis.IServer.ConfigSet` 方法更改本部分中的设置。如果使用此部分中的任一命令调用此方法，将引发如下异常：
->
->`StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`  
-
->  
->任何可配置的值（例如 **max-memory-policy**）都可以通过 Azure 门户预览或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。
+><p>`StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`  
+><p>任何可配置的值（例如 **max-memory-policy**）都可以通过 Azure 门户预览或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。
 
 |设置|默认值|说明|
 |---|---|---|
@@ -349,16 +346,15 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 ## <a name="redis-commands-not-supported-in-azure-redis-cache"></a>Azure Redis 缓存中不支持 Redis 命令
 
 >[AZURE.IMPORTANT] 因为 Azure Redis 缓存实例的配置和管理由 Microsoft 进行管理，所以禁用了以下命令。如果尝试调用它们，将收到一条类似于 `"(error) ERR unknown command"` 的错误消息。
->
->-	BGREWRITEAOF
->-	BGSAVE
->-	配置
->-	调试
->-	迁移
->-	保存
->-	关机
->-	SLAVEOF
->-	CLUSTER - 群集写命令已禁用，但允许使用只读群集命令。
+><p>-	BGREWRITEAOF
+><p>-	BGSAVE
+><p>-	配置
+><p>-	调试
+><p>-	迁移
+><p>-	保存
+><p>-	关机
+><p>-	SLAVEOF
+><p>-	CLUSTER - 群集写命令已禁用，但允许使用只读群集命令。
 
 有关 Redis 命令的详细信息，请参阅 [http://redis.io/commands](http://redis.io/commands)。
 

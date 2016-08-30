@@ -25,8 +25,7 @@ Azure Redis 缓存提供了用于监视缓存实例的几个选项。你可以�
 ![Redis 指标][redis-cache-redis-metrics-blade]
 
 >[AZURE.IMPORTANT] 如果“Redis 指标”边栏选项卡中显示以下消息，请按照[启用缓存诊断](#enable-cache-diagnostics)部分中的步骤启用缓存诊断。
->
->`Monitoring may not be enabled. Click here to turn on Diagnostics.`
+><p>`Monitoring may not be enabled. Click here to turn on Diagnostics.`
 
 “Redis 指标”边栏选项卡上有显示缓存度量值的“监视”图表。通过添加或删除度量值以及更改报告间隔可以自定义每个图表。若要查看和配置操作和警报，“Redis 缓存”边栏选项卡上有“操作”部分，该部分显示缓存“事件”和“警报规则”。
 

@@ -46,8 +46,7 @@ __要求__
 * 必须指定容器的 WASB 路径作为脚本操作的参数。例如，如果 jar 存储在名为 __mystorage__ 的存储帐户上名为 __libs__ 的容器中，则该参数应为 __wasbs://libs@mystorage.blob.core.chinacloudapi.cn/__。
 
     > [AZURE.NOTE] 本文档假定你已创建存储帐户、blob 容器，并已将文件上载到该容器。
-    >
-    > 如果尚未创建存储帐户，可以通过 [Azure 经典管理门户](https://manage.windowsazure.cn)创建该帐户。然后可以使用实用程序（如 [Azure 存储资源管理器](http://storageexplorer.com/)）在帐户中创建一个新容器并将文件上载到该容器。
+    ><p> 如果尚未创建存储帐户，可以通过 [Azure 经典管理门户](https://manage.windowsazure.cn)创建该帐户。然后可以使用实用程序（如 [Azure 存储资源管理器](http://storageexplorer.com/)）在帐户中创建一个新容器并将文件上载到该容器。
 
 ##使用脚本创建群集。
 
