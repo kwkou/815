@@ -149,6 +149,9 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 -	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
 -	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
+-	[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
+
+
 
 
 
