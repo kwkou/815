@@ -194,7 +194,7 @@
           }
         },
 
-7. 添加缩放集使用的负载平衡器资源。
+7. 添加缩放集使用的负载平衡器资源。有关详细信息，请参阅 [Azure Resource Manager 对负载平衡器的支持](/documentation/articles/load-balancer-arm/)。
 
         {
           "apiVersion": "2015-06-15",
