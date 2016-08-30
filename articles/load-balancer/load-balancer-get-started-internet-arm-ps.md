@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。你还可以[了解如何使用经典部署模型创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli.md)。
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍资源管理器部署模型。你还可以[了解如何使用经典部署模型创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -85,12 +85,12 @@
 
 ### 步骤 2
 
-使用 DNS 名称 *loadbalancernrp.chinaeast.cloudapp.chinacloudapi.cn* 创建要由前端 IP 池使用的名为 *PublicIP* 的 Azure 公共 IP 地址 (PIP) 资源。下面的命令使用静态分配类型。
+使用 DNS 名称 *loadbalancernrp.chinaeast.chinacloudapp.cn* 创建要由前端 IP 池使用的名为 *PublicIP* 的 Azure 公共 IP 地址 (PIP) 资源。下面的命令使用静态分配类型。
 
 	$publicIP = New-AzureRmPublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location 'China East' –AllocationMethod Static -DomainNameLabel loadbalancernrp 
 
 >[AZURE.IMPORTANT] 负载平衡器将使用公共 IP 的域标签作为其 FQDN 的前缀。这与使用云服务作为负载平衡器 FQDN 的经典部署模型不同。
-在此示例中，FQDN 将为 *loadbalancernrp.chinaeast.cloudapp.chinacloudapi.cn*。
+在此示例中，FQDN 将为 *loadbalancernrp.chinaeast.chinacloudapp.cn*。
 
 ## 创建前端 IP 池和后端地址池
 
@@ -230,7 +230,7 @@ TCP 探测器
 
 使用 `Add-AzureRmVMNetworkInterface` cmdlet 将 NIC 分配给不同 VM。
 
-你可以在 [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-windows-create-powershell#Example)（使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机）中使用示例中的选项 5，找到有关如何创建虚拟机和分配 NIC 的指南。
+你可以在 [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-windows-ps-create#Example)（使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机）中使用示例中的选项 5，找到有关如何创建虚拟机和分配 NIC 的指南。
 
 
 或者，如果你已创建虚拟机，则可以使用以下步骤添加网络接口：

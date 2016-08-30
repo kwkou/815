@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -73,7 +73,7 @@
 
 输出将为：
 
-	data:    DNSName "contoso.cloudapp.net"
+	data:    DNSName "contoso.chinacloudapp.cn"
 	data:    Location "China East"
 	data:    VMName "web1"
 	data:    IPAddress "10.0.0.5"

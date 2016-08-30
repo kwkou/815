@@ -32,7 +32,7 @@ Azure Load Balancer 可让你的应用程序提高可用性和网络性能。它
 
 端口转换是通过终结点进行的。这些终结点在公共 IP 地址的公共分配端口与所分配的本地端口之间存在一对一的关系，方便将流量发送到特定虚拟机。负载平衡是通过负载平衡器终结点实现的。这些终结点在公共 IP 地址与所分配的本地端口之间存在一对多的关系，而这些本地端口已分配到云服务中对经过负载平衡的网络流量进行响应的所有虚拟机。
 
-负载平衡器在此部署模型中使用的公共 IP 地址的域标签为 <云服务名称>.cloudapp.net。下图显示此模型中的 Azure Load Balancer。
+负载平衡器在此部署模型中使用的公共 IP 地址的域标签为 <云服务名称>.chinacloudapp.cn。下图显示此模型中的 Azure Load Balancer。
 
 ![经典部署模型中的 Azure Load Balancer](./media/load-balancer-overview/asm-lb.png)
 

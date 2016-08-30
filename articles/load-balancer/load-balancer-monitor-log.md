@@ -1,3 +1,4 @@
+<!-- diagnostics unavailable in azure portal-->
 <properties 
    pageTitle="监视 Load Balancer 的操作、事件和计数器 | Azure"
    description="了解如何为 Azure Load Balancer 启用警报事件以及探测运行状况日志记录"
@@ -17,7 +18,7 @@
 可以在 Azure 中使用不同类型的日志对负载平衡器进行管理和故障排除。这些日志中有些可以通过门户访问，并且所有日志都可以从 Azure blob 存储中提取并在不同工具（如 Excel 和 PowerBI）中查看。你可以了解有关下面的列表中不同类型日志的详细信息。
 
 
-- **审核日志：**可以使用 [Azure 审核日志](/documentation/articles/insights-debugging-with-events)（以前称为操作日志）查看提交到你的 Azure 订阅的所有操作及其状态。审核日志默认情况下启用，并且可以在 Azure 门户中查看。
+- **审核日志：**可以使用 [Azure 审核日志](/documentation/articles/insights-debugging-with-events)（以前称为操作日志）查看提交到你的 Azure 订阅的所有操作及其状态。审核日志默认情况下启用，并且可以在 Azure 门户预览中查看。
 - **警报事件日志：**可以使用此日志来查看针对负载平衡器发出的警报。每隔五分钟收集一次负载平衡器的状态。仅在引发了负载平衡器警报事件的情况下，才会向此日志写入相关内容。
 - **运行状况探测日志：**可以使用此日志来查看探测运行状况时的检查状态、负载平衡器后端处于联机状态的实例的数目，以及从负载平衡器接收网络流量的虚拟机的百分比。探测状态事件变化时，将会向此日志写入相应内容。
 
@@ -27,7 +28,7 @@ Log Analytics 当前仅适用于面向 Internet 的负载平衡器。该限制�
 ## 启用日志记录
 所有 Resource Manager 资源都会始终自动启用审核日志记录。需启用事件和运行状况探测日志记录才能开始收集通过这些日志提供的数据。若要启用日志记录，请按以下步骤操作。
 
-登录到 [Azure 门户](http://portal.azure.cn)。如果你还没有负载平衡器，请先[创建负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)，然后继续。
+登录到 [Azure 门户预览](http://portal.azure.cn)。如果你还没有负载平衡器，请先[创建负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)，然后继续。
 
 在门户中，单击“浏览”>>“负载平衡器”。
 

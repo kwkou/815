@@ -19,7 +19,7 @@
 <BR>
 [AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代 [classic deployment model](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
@@ -239,7 +239,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用命令 Add-AzureRmVMNetworkInterface 将 NIC 分配给虚拟机。
 
-你可以按照文档 [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-windows-create-powershell#Example)（使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机）选项 4 或 5，找到相关分步说明，以创建虚拟机并将其分配给 NIC。
+你可以按照文档 [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-windows-ps-create/#Example)（使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机）选项 4 或 5，找到相关分步说明，以创建虚拟机并将其分配给 NIC。
 
 或者，如果你已创建虚拟机，则可以使用以下步骤添加网络接口：
 

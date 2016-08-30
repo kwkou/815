@@ -1,6 +1,6 @@
 >[AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/load-balancer-get-started-internet-classic-pportal/)
-- [Azure 经典门户](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
+- [Azure 门户预览](/documentation/articles/load-balancer-get-started-internet-classic-pportal/)
+- [Azure 经典管理门户](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
 - [PowerShell](/documentation/articles/load-balancer-get-started-internet-classic-ps/)
 - [Azure CLI](/documentation/articles/load-balancer-get-started-internet-classic-cli/)
 - [Azure 云服务](/documentation/articles/load-balancer-get-started-internet-classic-cloud/)
