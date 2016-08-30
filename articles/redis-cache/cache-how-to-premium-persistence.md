@@ -97,7 +97,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 ### <a name="what-happens-if-i-have-scaled-to-a-different-size-and-a-backup-is-restored-that-was-made-before-the-scaling-operation"></a> 如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？
 
 -	如果缩放到更大的大小，则没有任何影响。
--	如果缩放到更小的大小，并且你的自定义数据库设置大于新大小的数据库限制，则不会还原这些数据库中的数据。
+-	如果缩放到更小的大小，并且你的自定义[数据库](/documentation/articles/cache-configure/#databases)设置大于新大小的[数据库限制](/documentation/articles/cache-configure/#databases)，则不会还原这些数据库中的数据。
 -	如果缩放到更小的大小，并且更小的大小空间不足，无法容纳上次备份的所有数据，则在还原过程中，通常会使用 [allkeys-lru](http://redis.io/topics/lru-cache) 逐出策略逐出密钥。
 
 ## 后续步骤
