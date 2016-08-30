@@ -302,7 +302,7 @@ Azure 提供了大量可用于生成云应用程序的不同服务。尽管许�
 
 -   打开并生成 Visual Studio 解决方案 DeploymentScripts/VS/DeployARM.sln。
 
-请注意，每当运行该模板时，都会创建一组具有新名称的新资源。若要删除这些资源，请转到门户并删除该资源组。
+请注意，每当运行该模板时，都会创建一组具有新名称的新资源。若要删除这些资源，请转到门户预览并删除该资源组。
 
 如果脚本因任何原因失败，你可以重新运行。
 
@@ -415,20 +415,20 @@ Azure 提供了大量可用于生成云应用程序的不同服务。尽管许�
 | **服务/组件** | **说明** | **成本/月** |
 |--------|--------|----------------|
 | [Visual Studio 2015 Community](https://www.visualstudio.com/products/visual-studio-community-vs) with [Xamarin](https://visualstudiogallery.msdn.microsoft.com/dcd5b7bd-48f0-4245-80b6-002d22ea6eee) <br/>跨平台开发环境| Visual Studio Community。（需要 [Visual Studio Professional](https://www.visualstudio.com/vs-2015-product-editions) for [Xamarin.Forms](https://xamarin.com/forms) 从单个代码库设计跨平台。） | $0 |
-| [Azure IoT 中心](https://azure.microsoft.com/pricing/details/iot-hub)<br/>与设备的双向数据连接 | 8,000 条消息 + 0.5 KB/消息免费。 | $0 |
-| [流分析](https://azure.microsoft.com/pricing/details/stream-analytics)<br/>高容量流数据处理 | 启用时，每小时对每个流式处理单位收费 $0.031。选择所需的流式处理单位数；更多情况下会增加。 | $23 |
-| [App Service](https://azure.microsoft.com/pricing/details/app-service) <br/>托管移动后端 | B1 层--生产 Web 应用。 | $56 |
-| [Visual Studio Team Services ](https://azure.microsoft.com/pricing/details/visual-studio-team-services)<br/>生成、单元测试和发布管理；任务管理 | 私有 Agent，五个用户。| $0 |
-| [Application Insights](https://azure.microsoft.com/pricing/details/application-insights) <br/>监视 Web 服务和网站的性能及使用情况| 免费层。 | $0 |
+| [Azure IoT 中心](/pricing/details/iot-hub)<br/>与设备的双向数据连接 | 8,000 条消息 + 0.5 KB/消息免费。 | $0 |
+| [流分析](/pricing/details/stream-analytics)<br/>高容量流数据处理 | 启用时，每小时对每个流式处理单位收费 $0.031。选择所需的流式处理单位数；更多情况下会增加。 | $23 |
+| [App Service](/pricing/details/app-service) <br/>托管移动后端 | B1 层--生产 Web 应用。 | $56 |
+| Visual Studio Team Services <br/>生成、单元测试和发布管理；任务管理 | 私有 Agent，五个用户。| $0 |
+| [Application Insights](/pricing/details/application-insights) <br/>监视 Web 服务和网站的性能及使用情况| 免费层。 | $0 |
 | [HockeyApp](http://hockeyapp.net/pricing) <br/> 分发 beta 应用以及反馈、使用情况和故障数据的集合 | 为新用户提供两个免费应用。<br/> 之后每月 $30。 | $0 |
 | [Xamarin](https://store.xamarin.com)<br/> 针对多个设备的统一平台上的代码 | 试用版。<br/>之后每月 $25。| $0 |
 | 面向 Azure App Service 的 [SQL 数据库](/pricing/details/sql-database/)| 基本层；单一数据库模型。 | $5 |
-| [Service Fabric](/documentation/articles/service-fabric/)（可选） | 运行本地群集。 | $0 |
+| [Service Fabric](/documentation/services/service-fabric/)（可选） | 运行本地群集。 | $0 |
 | [Power BI](https://powerbi.microsoft.com/pricing)<br/> 流式传输数据和静态数据的通用显示和调查| 免费层：1 GB、10,000 行/小时，每天刷新。<br/>对于[更高的限制](https://powerbi.microsoft.com/documentation/powerbi-power-bi-pro-content-what-is-it)、更多连接选项和协作，$10/用户/月。 | $0 |
 | [存储](/pricing/details/storage/) | L（本地冗余）&lt; 100 G，$0.024/GB。 | $3 |
-| [Data Factory](https://azure.microsoft.com/pricing/details/data-factory) | 每个活动 $0.60 * (8 - 5 FOC)。| $2 |
-| [HDInsight](https://azure.microsoft.com/pricing/details/hdinsight)<br/> 用于每日重新导流的按需群集 | 三个 A3 节点，$0.32/小时，每天 1 小时 * 31 天。 | $30 |
-| [事件中心](https://azure.microsoft.com/pricing/details/event-hubs) | 每月吞吐量单位 $11 的基本费用 + $0.028 入口费用。 | $11 |
+| [Data Factory](/pricing/details/data-factory) | 每个活动 $0.60 * (8 - 5 FOC)。| $2 |
+| [HDInsight](/pricing/details/hdinsight)<br/> 用于每日重新导流的按需群集 | 三个 A3 节点，$0.32/小时，每天 1 小时 * 31 天。 | $30 |
+| [事件中心](/pricing/details/event-hubs) | 每月吞吐量单位 $11 的基本费用 + $0.028 入口费用。 | $11 |
 | OBD 硬件保护装置 || $12 |
 | **总计**| | **$157** |
 
