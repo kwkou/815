@@ -24,7 +24,6 @@
 
 默认情况下，VIP 是动态的，这意味着，分配给云服务的实际 IP 地址会随着时间改变。为了防止发生这种情况，你可以为服务保留 VIP。若要了解有关保留 VIP 的详细信息，请参阅[保留的公共 IP](/documentation/articles/virtual-networks-reserved-public-ip/)。
 
->[AZURE.NOTE] 有关 VIP 和保留 IP 的定价信息，请参阅 [IP 地址定价](https://azure.microsoft.com/pricing/details/ip-addresses/)。
 
 可以使用 PowerShell 来验证云服务使用的 VIP、添加和删除 VIP、将 VIP 关联到终结点，以及在特定 VIP 上配置负载平衡。
 

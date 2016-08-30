@@ -15,7 +15,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 经典步骤](/documentation/articles/load-balancer-internet-getstarted/)
+- [Azure 经典步骤](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
 - [Resource Manager PowerShell 步骤](/documentation/articles/load-balancer-arm-powershell/)
 
 
@@ -238,7 +238,7 @@ PS C:\> $backendnic1
 
 使用命令 Add-AzureVMNetworkInterface 将 NIC 分配给虚拟机。
 
-你可以按照文档 [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-windows-create-powershell#Example)（使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机）选项 4 或 5，找到相关分步说明，以创建虚拟机并将其分配给 NIC。
+你可以按照文档 [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-windows-ps-create/#Example)（使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机）选项 4 或 5，找到相关分步说明，以创建虚拟机并将其分配给 NIC。
 
 ## 更新现有的负载平衡器
 

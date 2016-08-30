@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="开始使用 Azure 门户在经典部署模型中创建面向 Internet 的负载平衡器 | Azure"
-   description="了解如何使用 Azure 门户在经典部署模型中创建面向 Internet 的负载平衡器"
+   pageTitle="开始使用 Azure 门户预览在经典部署模型中创建面向 Internet 的负载平衡器 | Azure"
+   description="了解如何使用 Azure 门户预览在经典部署模型中创建面向 Internet 的负载平衡器"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -13,22 +13,22 @@
    ms.date="03/17/2016"
    wacn.date="08/29/2016" />
 
-# 开始在 Azure 门户中创建面向 Internet 的负载平衡器（经典）
+# 开始在 Azure 门户预览中创建面向 Internet 的负载平衡器（经典）
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
 
  
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
 
 
-## 开始使用 Azure 门户创建负载平衡器终结点	
+## 开始使用 Azure 门户预览创建负载平衡器终结点	
 
-若要从 Azure 门户创建面向 Internet 的负载平衡器（经典）部署模型，请执行以下步骤。
+若要从 Azure 门户预览创建面向 Internet 的负载平衡器（经典）部署模型，请执行以下步骤。
 
 1. 从浏览器导航到 http://portal.azure.cn，如有必要，请使用 Azure 帐户登录。
 
