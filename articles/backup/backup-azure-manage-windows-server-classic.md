@@ -157,7 +157,7 @@ Azure 备份代理提供的“限制”选项卡可让你控制在数据传输�
 
 4. 单击**“确定”**。
 
-## 排除设置
+## <a name="exclusion-settings"></a>排除设置
 
 1. 打开 **Microsoft Azure 备份代理**（可以通过在计算机中搜索 *Microsoft Azure 备份*来找到它）。
 
