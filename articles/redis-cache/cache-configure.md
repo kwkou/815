@@ -54,15 +54,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 ![支持 + 疑难解答](./media/cache-configure/redis-cache-support-troubleshooting.png)
 
-单击“疑难解答”可提供常见问题和用于解决这些问题的策略。
-
 单击“审核日志”可查看已对你的缓存执行的操作。你也可以使用筛选来展开此视图，以包含其他资源。有关使用审核日志的详细信息，请参阅[查看事件和审核日志](/documentation/articles/insights-debugging-with-events/)以及[使用 Resource Manager 执行审核操作](/documentation/articles/resource-group-audit/)。有关监视 Azure Redis 缓存事件的详细信息，请参阅[操作和警报](/documentation/articles/cache-how-to-monitor/#operations-and-alerts)。
-
-“资源运行状况”会监视你的资源，并告知资源是否按预期运行。
-
->[AZURE.NOTE] 资源运行状况当前无法报告在虚拟网络中托管的 Azure Redis 缓存实例的运行状况。有关详细信息，请参阅[在 VNET 中托管缓存时，是否可以使用所有缓存功能？](/documentation/articles/cache-how-to-premium-vnet/#do-all-cache-features-work-when-hosting-a-cache-in-a-vnet)
-
-单击“新建支持请求”可建立缓存的支持请求。
 
 ## <a name="general-settings"></a>常规设置
 
@@ -177,16 +169,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 ### <a name="cluster-size"></a>Redis 群集大小
 
-单击“(预览) Redis 群集大小”可更改正在运行并且已启用群集的高级缓存的群集大小。
-
->[AZURE.NOTE] 请注意，虽然 Azure Redis 缓存高级层已发行公开上市版，但 Redis 群集大小功能目前以预览版提供。
-
-![Redis 群集大小](./media/cache-configure/redis-cache-redis-cluster-size.png)  
-
-
-若要更改群集大小，请使用滑块，或在“分片计数”文本框中键入 1 到 10 之间的数字，然后单击“确定”进行保存。
-
->[AZURE.IMPORTANT] Redis 群集仅适用于高级缓存。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集](/documentation/articles/cache-how-to-premium-clustering/)。
+此功能目前在Azure 中国暂时还无法使用。而且你在门户中创建高级 Redis 缓存时也暂时无法设置群集大小。因此，如果你想要群集大小大于 1 的 Redis 缓存，请通过 Azure PowerShell 创建。创建完毕后，群集大小暂时还不能修改。
 
 
 ## <a name="data-management-settings"></a>数据管理设置
@@ -381,25 +364,7 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 
 ## Redis 控制台
 
-可以使用 **Redis 控制台**向 Azure Redis 缓存实例安全地发布命令，此操作适用于标准缓存和高级缓存。
-
->[AZURE.IMPORTANT] Redis 控制台无法使用 VNET、群集和数据库（数据库 0 除外）。
->
->-	[VNET](/documentation/articles/cache-how-to-premium-vnet/) - 如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。Redis 控制台使用的 redis cli.exe 客户端承载于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
->-	[群集](/documentation/articles/cache-how-to-premium-clustering/) - Redis 控制台使用目前不支持群集的 redis-cli.exe 客户端。GitHub 上 Redis 存储库的[不稳定](http://redis.io/download)分支中的 redis-cli 实用程序在使用 `-c` 开关启动时，会实现基本支持。有关详细信息，请参阅 [http://redis.io](http://redis.io) 上的 [Redis 群集教程](http://redis.io/topics/cluster-tutorial)中的[操作群集](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)。
->-	每次提交命令时，Redis 控制台都会新建一个与数据库 0 的连接。不能使用 `SELECT` 命令选择其他数据库，因为每当有命令时数据库都将重置为 0。有关运行 Redis 命令（包括更改为不同的数据库）的信息，请参阅 [如何运行 Redis 命令？](/documentation/articles/cache-faq/#how-can-i-run-redis-commands)
-
-要访问 Redis 控制台，则从“Redis 缓存”边栏选项卡单击“控制台”。
-
-![Redis 控制台](./media/cache-configure/redis-console-menu.png)  
-
-
-要发布针对缓存实例的命令，只需将所需命令键入到控制台即可。
-
-![Redis 控制台](./media/cache-configure/redis-console.png)  
-
-
-有关为 Azure Redis 缓存禁用的 Redis 命令列表，请参阅之前的 [Azure Redis 缓存中不支持 Redis 命令](#redis-commands-not-supported-in-azure-redis-cache)部分。有关 Redis 命令的详细信息，请参阅 [http://redis.io/commands](http://redis.io/commands)。
+此功能在 Azure 中国还不支持。你可以使用 [redis-cli](http://redis.io/topics/rediscli)
 
 ## 将缓存移动到新的订阅
 
