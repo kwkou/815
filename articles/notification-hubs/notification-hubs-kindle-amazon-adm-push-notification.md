@@ -219,24 +219,23 @@
 
 8. 在 `OnCreate` 方法的末尾添加以下代码：
 
-		final ADM adm = new ADM(this);
-		if (adm.getRegistrationId() == null)
-		{
-		   adm.startRegister();
-		} else {
-			new AsyncTask() {
-			      @Override
-			      protected Object doInBackground(Object... params) {
-			         try {			        	 MyADMMessageHandler.getNotificationHub(getApplicationContext()).register(adm.getRegistrationId());
-			         } catch (Exception e) {
-			        	 Log.e("com.wa.hellokindlefire", "Failed registration with hub", e);
-			        	 return e;
-			         }
-			         return null;
-			     }
-			   }.execute(null, null, null);
-		}
-
+	final ADM adm = new ADM(this);
+	if (adm.getRegistrationId() == null)
+	{
+	   adm.startRegister();
+	} else {
+		new AsyncTask() {
+		      @Override
+		      protected Object doInBackground(Object... params) {
+		 try { MyADMMessageHandler.getNotificationHub(getApplicationContext()).register(adm.getRegistrationId());
+		 } catch (Exception e) {
+	 Log.e("com.wa.hellokindlefire", "Failed registration with hub", e);
+	 return e;
+		 }
+		 return null;
+		     }
+		   }.execute(null, null, null);
+	}
 ## 将 API 密钥添加到应用
 
 1. 在 Eclipse 中，在项目的目录资产中创建名为 **api\_key.txt** 的新文件。
@@ -250,18 +249,18 @@
 
 > [AZURE.NOTE] 如果出现了问题，请检查模拟器（或设备）的时间。时间值必须准确。若要更改 Kindle 模拟器的时间，可以从 Android SDK platform-tools 目录运行以下命令：
 
-		adb shell  date -s "yyyymmdd.hhmmss"
+	adb shell  date -s "yyyymmdd.hhmmss"
 
 ## 发送消息
 
 若要使用 .NET 发送消息：
 
-		static void Main(string[] args)
-        {
-            NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("[conn string]", "[hub name]");
-
-            hub.SendAdmNativeNotificationAsync("{"data":{"msg" : "Hello from .NET!"}}").Wait();
-        }
+	static void Main(string[] args)
+	{
+	    NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("[conn string]", "[hub name]");
+	
+	    hub.SendAdmNativeNotificationAsync("{"data":{"msg" : "Hello from .NET!"}}").Wait();
+	}
 
 ![][7]
 
