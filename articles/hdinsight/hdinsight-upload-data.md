@@ -109,7 +109,6 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 1. 根据[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明打开 Azure PowerShell 控制台。
 2. 设置以下脚本中前五个变量的值：
 
-		$subscriptionName = "<AzureSubscriptionName>"
 		$resourceGroupName = "<AzureResourceGroupName>"
 		$storageAccountName = "<StorageAccountName>"
 		$containerName = "<ContainerName>"
@@ -117,15 +116,8 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 		$fileName ="<LocalFileName>"
 		$blobName = "<BlobName>"
 
-		Switch-AzureMode -Name AzureResourceManager
-
-		Clear-AzureProfile
-		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
-		Select-AzureSubscription $subscriptionName
-
 		# Get the storage account key
 		$storageaccountkey = get-azurestoragekey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{$_.Primary}
-
 		# Create the storage context object
 		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
 
