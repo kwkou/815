@@ -348,11 +348,11 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 >[AZURE.IMPORTANT] 因为 Azure Redis 缓存实例的配置和管理由 Microsoft 进行管理，所以禁用了以下命令。如果尝试调用它们，将收到一条类似于 `"(error) ERR unknown command"` 的错误消息。
 ><p>-	BGREWRITEAOF
 ><p>-	BGSAVE
-><p>-	配置
-><p>-	调试
-><p>-	迁移
-><p>-	保存
-><p>-	关机
+><p>-	CONFIG
+><p>-	DEBUG
+><p>-	MIGRATE
+><p>-	SAVE
+><p>-	SHUTDOWN
 ><p>-	SLAVEOF
 ><p>-	CLUSTER - 群集写命令已禁用，但允许使用只读群集命令。
 
