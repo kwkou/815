@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal" ms.date="03/2016" wacn.date="03/2016" wacn.lang="cn"/>
+<tags ms.service="legal" ms.date="05/2016" wacn.date="05/2016" wacn.lang="cn"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/sla/sql-data/)
@@ -156,3 +156,8 @@
 	--------------------|---------
 	<99.95%				|10% 
 	<99%				|25% 
+
+
+	
+#	版本历史记录
+[1.0](/support/sla/sql-data-v1/)  最后更新日期：2016 年 5 月
