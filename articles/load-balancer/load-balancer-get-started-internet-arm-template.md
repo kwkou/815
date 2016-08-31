@@ -34,11 +34,18 @@
 
 1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell），并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 
-2. 运行 **New-AzureRmResourceGroupDeployment** cmdlet 以使用模板创建资源组。
+2. 运行 **New-AzureRmResourceGroup** cmdlet 来创建一个新的资源组 testgroup。
 
-		New-AzureRmResourceGroupDeployment -Name TestRG -Location chinaeast `
-		    -TemplateFile 'https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json' `
-		    -TemplateParameterFile 'https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.parameters.json'	
+3. 从浏览器导航到[模板文件](https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json)，复制 json 文件内容并粘贴到计算机中的一个新文件。对于此方案，将下面的值复制到名为 **c:\\lb\\azuredeploy.json** 的文件，并将其中的 windows.net 路径全部修改为 chinacloudapi.cn。
+
+4. 从浏览器导航到
+ [TemplateParameterFile](https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.parameters.json)复制 json 文件内容并粘贴到计算机中的一个新文件。对于此方案，将下面的值复制到名为 **c:\\lb\\azuredeploy.parameters.json** 的文件，并将其中的 **GEN-UNIQUE** 修改为需要设定的值。
+
+5. 运行 **New-AzureRmResourceGroupDeployment** cmdlet 以使用模板创建资源组。
+
+		New-AzureRmResourceGroupDeployment -Name TestRG `
+		    -TemplateFile 'c:\lb\azuredeploy.json' `
+		    -TemplateParameterFile 'c:\lb\azuredeploy.parameters.json'
 
 ## 使用 Azure CLI 部署 ARM 模板
 
@@ -53,10 +60,14 @@
 
 		info:    New mode is arm
 
-3. 从浏览器中，导航到 **https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.parameters.json**，复制 json 文件的内容并粘贴到计算机中的一个新文件。对于此方案，将下面的值复制到名为 **c:\\lb\\azuredeploy.parameters.json** 的文件。
+3. 从浏览器导航到[模板文件](https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json)，复制 json 文件内容并粘贴到计算机中的一个新文件。对于此方案，将下面的值复制到名为 **c:\\lb\\azuredeploy.json** 的文件，并将其中的 *windows.net* 路径全部修改为 *chinacloudapi.cn*。
+
+4. 从浏览器导航到
+ [TemplateParameterFile](https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.parameters.json)复制 json 文件内容并粘贴到计算机中的一个新文件。对于此方案，将下面的值复制到名为 **c:\\lb\\azuredeploy.parameters.json** 的文件，并将其中的 **GEN-UNIQUE** 修改为需要设定的值。
+
 4. 运行 **azure group deployment create** cmdlet 以使用你在前面下载并修改的模板和参数文件部署新的负载平衡器。在输出后显示的列表说明了所用的参数。
 
-		azure group create -n TestRG -l chinaeast -f 'https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json' -e 'c:\lb\azuredeploy.parameters.json'
+		azure group create -n TestRG -l chinaeast -f 'c:\lb\azuredeploy.json' -e 'c:\lb\azuredeploy.parameters.json'
 
 ## 后续步骤
 
