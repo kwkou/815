@@ -21,7 +21,7 @@
 
 ## 混合云基本配置
 
-[混合云基本配置](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing/)包括：
+[混合云基本配置](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)包括：
 
 - 具有四个虚拟机（域控制器、应用程序服务器、客户端计算机以及运行 Windows server 及路由和远程访问的 VPN 设备）的简化本地网络
 - 具有副本域控制器的 Azure 虚拟网络
@@ -29,19 +29,19 @@
 
 ## 混合云中的 SharePoint Intranet 场
 
-[混合云测试环境中的 SharePoint Intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/)将 SQL Server 2014 服务器和 SharePoint Server 2013 服务器添加到混合云基本配置。这将创建两层 SharePoint 场，你可以从简化的本地网络中的客户端计算机进行访问。
+[混合云测试环境中的 SharePoint Intranet 场](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)将 SQL Server 2014 服务器和 SharePoint Server 2013 服务器添加到混合云基本配置。这将创建两层 SharePoint 场，你可以从简化的本地网络中的客户端计算机进行访问。
 
 ## 混合云中基于 Web 的业务线 (LOB) 应用程序
 
-[混合云测试环境中基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing/)将 SQL Server 2014 服务器和 Internet 信息服务 (IIS) 服务器添加到混合云基本配置。这将创建可在其中部署和测试基于 Web 的分层 LOB 应用程序的基础结构。
+[混合云测试环境中基于 Web 的 LOB 应用程序](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)将 SQL Server 2014 服务器和 Internet 信息服务 (IIS) 服务器添加到混合云基本配置。这将创建可在其中部署和测试基于 Web 的分层 LOB 应用程序的基础结构。
 
 ## 混合云中的 Office 365 目录同步 (DirSync) 服务器
 
-[混合云测试环境中的 Office 365 DirSync 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing/)将 DirSync 服务器添加到混合云基本配置并通过密码同步到试用 Office 365 订阅演示 Office 365 DirSync。
+[混合云测试环境中的 Office 365 DirSync 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)将 DirSync 服务器添加到混合云基本配置并通过密码同步到试用 Office 365 订阅演示 Office 365 DirSync。
 
 ## 模拟的混合云测试环境
 
-对于直接 Internet 连接和公共 IP 地址不容易获得的组织和个人，[模拟的混合云测试环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)在单独的 Azure 虚拟网络中构建出简化的本地网络，然后使用 VNet 到 VNet VPN 连接将两个虚拟网络连接在一起。
+对于直接 Internet 连接和公共 IP 地址不容易获得的组织和个人，[模拟的混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)在单独的 Azure 虚拟网络中构建出简化的本地网络，然后使用 VNet 到 VNet VPN 连接将两个虚拟网络连接在一起。
 
 
 ## 后续步骤

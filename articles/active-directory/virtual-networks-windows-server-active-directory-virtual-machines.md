@@ -26,8 +26,8 @@
 ## 操作指南文章
 
 - [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
-- [在 Azure 虚拟网络中安装 Active Directory 域控制器副本](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/) 
-- [设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing/)
+- [在 Azure 虚拟网络中安装 Active Directory 域控制器副本](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/) 
+- [设置用于测试的混合云环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)
 
 
 ## 其他资源

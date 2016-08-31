@@ -49,7 +49,7 @@
 - [在 Azure 门户预览中配置仅限云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)
 - [在 Azure 经典管理门户中配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)
 - [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
-- [在 Azure 上安装副本 Active Directory 域控制器 ](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)
+- [在 Azure 上安装副本 Active Directory 域控制器 ](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)
 - [Microsoft Azure IT Pro IaaS：(01) 虚拟机基础知识](https://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
 - [Microsoft Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](https://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 
@@ -337,7 +337,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
 - [网络拓扑](#BKMK_NetworkTopology)：使用[跨界连接](/documentation/articles/vpn-gateway-site-to-site-create/)创建 Azure 虚拟网络。
 
-- [安装方法](#BKMK_InstallMethod)：从企业 Windows Server Active Directory 域中部署副本 DC。对于副本 DC，可在 VM 上安装 Windows Server AD DS，并可使用“从介质安装”(IFM) 功能减少在安装期间需要复制到新 DC 的数据量。有关教程，请参阅 [Install a replica Active Directory domain controller on Azure（在 Azure 上安装副本 Active Directory 域控制器）](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)。即使使用 IFM，在本地生成虚拟 DC 再将整个虚拟硬盘 (VHD) 移至云也比在安装期间复制 Windows Server AD DS 更加高效。为安全起见，建议将 VHD 复制到 Azure 后立即从本地网络中删除它。
+- [安装方法](#BKMK_InstallMethod)：从企业 Windows Server Active Directory 域中部署副本 DC。对于副本 DC，可在 VM 上安装 Windows Server AD DS，并可使用“从介质安装”(IFM) 功能减少在安装期间需要复制到新 DC 的数据量。有关教程，请参阅 [Install a replica Active Directory domain controller on Azure（在 Azure 上安装副本 Active Directory 域控制器）](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)。即使使用 IFM，在本地生成虚拟 DC 再将整个虚拟硬盘 (VHD) 移至云也比在安装期间复制 Windows Server AD DS 更加高效。为安全起见，建议将 VHD 复制到 Azure 后立即从本地网络中删除它。
 
 - [Windows Server Active Directory 站点拓扑](#BKMK_ADSiteTopology)：在 Active Directory 站点和服务中新建一个 Azure 站点。创建一个 Windows Server Active Directory 子网对象以表示 Azure 虚拟网络，然后将该子网添加到站点中。新建包括新 Azure 站点和 Azure 虚拟网络 VPN 终结点所在站点的站点链接以控制和优化 Azure 往返 Windows Server Active Directory 的流量。
 

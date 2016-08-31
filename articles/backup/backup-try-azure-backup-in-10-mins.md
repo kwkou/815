@@ -242,7 +242,7 @@
 
 ## 后续步骤
 + 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)。
-- [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server/)
+- [备份 Windows Server](/documentation/articles/backup-configure-vault/)
 + 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
 <!---HONumber=Mooncake_0503_2016-->
