@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Overview of Azure CDN in China - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN, CDN加速, CDN服务, 主流CDN, 多场景加速, 免费CDN, CDN网站加速, 网站加速, 网页加速, 静态加速, 下载加速, VOD加速, 流媒体直播加速, 云服务,  存储账户,缓存刷新, 回源, 云加速, 加速效果, 节点, 流量, CNAME, 带宽, 网速, 防盗链,https加速, 低成本带宽, 访问加速, 小文件加速, 下载加速, 大文件加速, 流媒体加速, HTTPS安全加速, 缓存刷新, 内容预加载, 防盗链, 日志下载, CDN技术文档, CDN帮助文档, CDN FAQ" description="Learn the overview of Azure CDN, advantages, typical scenarios and key features." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date="7/7/2016"
-    wacn.date="7/7/2016"
+    ms.date="4/7/2016"
+    wacn.date="4/7/2016"
     wacn.lang="cn"
     />
 > [AZURE.LANGUAGE]
@@ -43,7 +43,7 @@ Azure CDN合作厂商代为客户申请并将SSL证书部署到CDN节点->终端
 小运营商在做内容劫持时通常根据一定概率拦截，且通常对特定链路的访问进行劫持。当客户有多个源时，相当于有多条回源路径，而多条链路同时发生运营商劫持的概率远远低于单条链路发生劫持。基于这个特点，当CDN回源被劫持，通过判断302跳转的location地址合法，选择相应或者尝试下一个回源路径。智能判断回源路径，可大大降低内容劫持的概率。
 
 ####防劫持智能路由选择访问模式
-客户端发起请求到CDN节点-> CDN节点没有缓存->CDN节点请求回源A->回源时发生302跳转->判断302跳转合法性，判断为劫持->请求回源自动尝试下一个源B->源B正常相应。
+客户端发起请求到CDN节点-> CDN节点没有缓存->CDN节点请求回源A->回源时发生302跳转->判断302跳转合法性，判断为劫持->请求回源自动尝试下一个源B->源B正常响应。
 
 
 
