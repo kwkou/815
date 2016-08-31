@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal-en" ms.date="03/2016" wacn.date="03/2016" wacn.lang="en"/>
+<tags ms.service="legal-en" ms.date="05/2016" wacn.date="05/2016" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/sla/sql-data/)
@@ -161,3 +161,7 @@ This SLA and any applicable Service Levels do not apply to any performance or av
 	----------------------------|---------
 	<99.95%				        |10% 
 	<99%				        |25% 
+
+
+# Version History
+[1.0](/support/sla/sql-data-en-v1/)  Last updated: May 2016    
