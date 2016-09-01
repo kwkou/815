@@ -112,10 +112,10 @@
 
 ## 后续步骤
 - [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)
-- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)。
+- 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
 ## 了解详细信息
-- [Azure 备份概述](http://go.microsoft.com/fwlink/p/?LinkId=222425)
+- [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)
 - [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-introduction/)
 - [备份 Microsoft 工作负荷](/documentation/articles/backup-azure-dpm-introduction/)
 

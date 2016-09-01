@@ -1,3 +1,5 @@
+<!-- need to be customized -->
+
 <properties
 	pageTitle="通过 Resource Manager 部署模型使用 Azure 备份将 Windows Server 或客户端备份到 Azure | Azure"
 	description="通过创建备份保管库、下载凭据、安装备份代理并完成文件和文件夹的初始备份，将 Windows 服务器或客户端备份到 Azure。"
@@ -14,9 +16,6 @@
 	wacn.date="07/26/2016"/>
 	
 # 通过 Resource Manager 部署模型使用 Azure 备份将 Windows Server 或客户端备份到 Azure
-
-> [AZURE.SELECTOR]
-- [经典门户](/documentation/articles/backup-configure-vault-classic/)
 
 本文介绍如何通过 Resource Manager 部署模型使用 Azure 备份将 Windows Server（或 Windows 客户端）文件和文件夹备份到 Azure。
 
@@ -175,7 +174,7 @@
 
 11. 在向导完成创建备份计划后，请单击“关闭”。
 
-### 启用网络限制（可选）
+### <a name="enable-network-throttling"></a>启用网络限制（可选）
 
 备份代理提供网络限制。限制功能将控制数据传输期间的网络带宽使用方式。如果需要在上班时间内备份数据，但不希望备份程序干扰其他 Internet 流量，此控制机制很有帮助。限制适用于备份和还原活动。
 

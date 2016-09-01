@@ -15,9 +15,6 @@
 
 # 使用 DPM 准备将工作负荷备份到 Azure
 
-> [AZURE.SELECTOR]
-- [SCDPM](/documentation/articles/backup-azure-dpm-introduction/)
-
 本文介绍如何使用 Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
 
 - Azure DPM 服务器备份的工作原理
@@ -43,7 +40,7 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 为了提供基于磁盘的数据保护，DPM 服务器将创建并维护受保护服务器上的数据的副本。副本存储在存储池中，存储池由 DPM 服务器或自定义卷上的一系列磁盘组成。不管你要保护文件数据还是应用程序数据，都需要首先创建数据源的副本。副本将会根据配置的设置定期同步或更新。
 如果你使用基于磁盘的短期保护或者在云中长期保护，DPM 可以将数据从副本卷备份到恢复服务保管库，以免对受保护的计算机造成影响。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 按如下所述让 Azure 备份做好备份 DPM 数据的准备：
 
 1. **创建备份保管库** — 在 Azure 备份控制台中创建一个保管库。

@@ -32,8 +32,8 @@
 
 ![恢复服务对象层次结构](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-若要查看 AzureRmRecoveryServicesBackup PowerShell cmdlet 参考，请参阅 Azure 库中的 [Azure Backup - Recovery Services Cmdlets（Azure 备份 - 恢复服务 Cmdlet）](https://msdn.microsoft.com/library/mt723320.aspx)。
-若要查看 AzureRmRecoveryServicesVault PowerShell cmdlet 参考，请参阅 [Azure Recovery Service Cmdlets（Azure 恢复服务 Cmdlet）](https://msdn.microsoft.com/library/mt643905.aspx)。
+若要查看 AzureRmRecoveryServicesBackup PowerShell cmdlet 参考，请参阅 Azure 库中的 [Azure Backup - Recovery Services Cmdlets（Azure 备份 - 恢复服务 Cmdlet）](https://msdn.microsoft.com/zh-cn/library/mt723320.aspx)。
+若要查看 AzureRmRecoveryServicesVault PowerShell cmdlet 参考，请参阅 [Azure Recovery Service Cmdlets（Azure 恢复服务 Cmdlet）](https://msdn.microsoft.com/zh-cn/library/mt643905.aspx)。
 
 
 ## 设置和注册
@@ -91,19 +91,19 @@
 
 以下步骤引导你创建恢复服务保管库。恢复服务保管库不同于备份保管库。
 
-1. 如果你是首次使用 Azure 备份，则必须使用 **[Register-AzureRMResourceProvider](https://msdn.microsoft.com/library/mt679020.aspx)** cmdlet 注册用于订阅的 Azure 恢复服务提供程序。
+1. 如果你是首次使用 Azure 备份，则必须使用 **[Register-AzureRMResourceProvider](https://msdn.microsoft.com/zh-cn/library/mt603685.aspx)** cmdlet 注册用于订阅的 Azure 恢复服务提供程序。
 
     
     	PS C:\> Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     
 
-2. 恢复服务保管库是一种 Resource Manager 资源，因此需要将它放在资源组中。你可以使用现有的资源组，也可以使用 **[New-AzureRmResourceGroup](https://msdn.microsoft.com/library/mt678985.aspx)** cmdlet 创建新的资源组。创建新的资源组时，请指定资源组的名称和位置。
+2. 恢复服务保管库是一种 Resource Manager 资源，因此需要将它放在资源组中。你可以使用现有的资源组，也可以使用 **[New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/mt603739.aspx)** cmdlet 创建新的资源组。创建新的资源组时，请指定资源组的名称和位置。
 
     
     	PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "West US"
     
 
-3. 使用 **[New-AzureRmRecoveryServicesVault](https://msdn.microsoft.com/library/mt643910.aspx)** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。
+3. 使用 **[New-AzureRmRecoveryServicesVault](https://msdn.microsoft.com/zh-cn/library/mt643910.aspx)** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。
 
     
     	PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
@@ -120,7 +120,7 @@
 > [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。出于此原因，在变量中存储备份恢复服务保管库对象可提供方便。
 
 ## 在订阅中查看保管库
-使用 **[Get-AzureRmRecoveryServicesVault](https://msdn.microsoft.com/library/mt643907.aspx)** 查看当前订阅中所有保管库的列表。可以使用此命令来查看是否创建了新的保管库，或者查看订阅中的可用保管库。
+使用 **[Get-AzureRmRecoveryServicesVault](https://msdn.microsoft.com/zh-cn/library/mt643907.aspx)** 查看当前订阅中所有保管库的列表。可以使用此命令来查看是否创建了新的保管库，或者查看订阅中的可用保管库。
 
 运行 Get-AzureRmRecoveryServicesVault 命令即可列出订阅中的所有保管库。
 
@@ -149,7 +149,7 @@
 
 当你创建新保管库时，它附带了一个默认策略。此策略会在每天的指定时间触发备份作业。根据默认策略，备份快照将保留 30 天。可以使用默认策略快速保护你的 VM，以后再使用不同的详细信息编辑该策略。
 
-若要查看保管库中的可用策略列表，请使用 **[Get-AzureRmRecoveryServicesBackupProtectionPolicy](https://msdn.microsoft.com/library/mt723300.aspx)**：
+若要查看保管库中的可用策略列表，请使用 **[Get-AzureRmRecoveryServicesBackupProtectionPolicy](https://msdn.microsoft.com/zh-cn/library/mt723300.aspx)**：
 
 
 		PS C:\> Get-AzureRmRecoveryServicesBackupProtectionPolicy -WorkloadType AzureVM
@@ -232,12 +232,12 @@
 		V2VM        Backup               InProgress            4/23/2016 5:00:30 PM           cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
 		
 
-与其使用额外的不必要的代码来轮询这些作业的完成情况，不如使用 **[Wait-AzureRmRecoveryServicesBackupJob](https://msdn.microsoft.com/library/mt723321.aspx)** cmdlet。该 cmdlet 暂停操作的执行，直到作业完成或达到了指定的超时值。
+与其使用额外的不必要的代码来轮询这些作业的完成情况，不如使用 **[Wait-AzureRmRecoveryServicesBackupJob](https://msdn.microsoft.com/zh-cn/library/mt723321.aspx)** cmdlet。该 cmdlet 暂停操作的执行，直到作业完成或达到了指定的超时值。
 
 
 		PS C:\> Wait-AzureRmRecoveryServicesBackupJob -Job $joblist[0] -Timeout 43200
 
-## 还原 Azure VM
+## <a name="restore-an-azure-vm"></a>还原 Azure VM
 
 使用 Azure 门户还原 VM 与使用 PowerShell 还原 VM 存在很大区别。如果使用 PowerShell，则当你从恢复点创建磁盘和配置信息时，还原操作即完成。还原操作不会创建虚拟机。我们提供了从磁盘创建虚拟机的说明。但是，若要完全还原 VM，需要完成以下步骤：
 
@@ -250,7 +250,7 @@
 
 ![显示 BackupContainer 的恢复服务对象层次结构](./media/backup-azure-vms-arm-automation/backuprecoverypoint-only.png)
 
-若要还原备份数据，请确定已备份项目以及保留了时间点数据的恢复点。然后，请使用 **[Restore-AzureRmRecoveryServicesBackupItem](https://msdn.microsoft.com/library/mt723316.aspx)** cmdlet 将数据从保管库还原到客户的帐户。
+若要还原备份数据，请确定已备份项目以及保留了时间点数据的恢复点。然后，请使用 **[Restore-AzureRmRecoveryServicesBackupItem](https://msdn.microsoft.com/zh-cn/library/mt723316.aspx)** cmdlet 将数据从保管库还原到客户的帐户。
 
 ### 选择 VM
 
@@ -263,7 +263,7 @@
 
 ### 选择恢复点
 
-使用 **[Get-AzureRmRecoveryServicesBackupRecoveryPoint](https://msdn.microsoft.com/library/mt723308.aspx)** cmdlet 列出备份项的所有恢复点。然后选择要还原的恢复点。如果你不确定要使用哪个恢复点，则最好是选择列表中 RecoveryPointType = AppConsistent 的最新恢复点。
+使用 **[Get-AzureRmRecoveryServicesBackupRecoveryPoint](https://msdn.microsoft.com/zh-cn/library/mt723308.aspx)** cmdlet 列出备份项的所有恢复点。然后选择要还原的恢复点。如果你不确定要使用哪个恢复点，则最好是选择列表中 RecoveryPointType = AppConsistent 的最新恢复点。
 
 在以下脚本中，变量 **$rp** 是一个数组，其中包含所选备份项的恢复点。该数组按时间进行反向排序，以最新的恢复点作为索引 0。使用标准 PowerShell 数组索引选取恢复点。例如：$rp[0] 将选择最新的恢复点。
 
@@ -289,7 +289,7 @@
 
 ### 还原磁盘
 
-使用 **[Restore-AzureRmRecoveryServicesBackupItem](https://msdn.microsoft.com/library/mt723316.aspx)** cmdlet 将备份项的数据和配置还原到某个恢复点。确定某个恢复点后，即可使用它作为 **-RecoveryPoint** 参数的值。在以前的示例代码中，选择了 **$rp[0]** 作为要使用的恢复点。在下面的示例代码中，指定了 **$rp[0]** 作为还原到磁盘时要使用的恢复点。
+使用 **[Restore-AzureRmRecoveryServicesBackupItem](https://msdn.microsoft.com/zh-cn/library/mt723316.aspx)** cmdlet 将备份项的数据和配置还原到某个恢复点。确定某个恢复点后，即可使用它作为 **-RecoveryPoint** 参数的值。在以前的示例代码中，选择了 **$rp[0]** 作为要使用的恢复点。在下面的示例代码中，指定了 **$rp[0]** 作为还原到磁盘时要使用的恢复点。
 
 还原磁盘和配置信息
 
@@ -301,7 +301,7 @@
 		V2VM              Restore           InProgress           4/23/2016 5:00:30 PM                        cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
 
 
-还原作业完成后，可以使用 **[Get-AzureRmRecoveryServicesBackupJobDetails](https://msdn.microsoft.com/library/mt723310.aspx)** cmdlet 获取还原操作的详细信息。JobDetails 属性提供重建 VM 所需的信息。
+还原作业完成后，可以使用 **[Get-AzureRmRecoveryServicesBackupJobDetails](https://msdn.microsoft.com/zh-cn/library/mt723310.aspx)** cmdlet 获取还原操作的详细信息。JobDetails 属性提供重建 VM 所需的信息。
 
 
 		PS C:\> $restorejob = Get-AzureRmRecoveryServicesBackupJob -Job $restorejob

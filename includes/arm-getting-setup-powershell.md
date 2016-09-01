@@ -38,7 +38,7 @@
 
 	SubscriptionId            : fd22919d-eaca-4f2b-841a-e4ac6770g92e
 	SubscriptionName          : Visual Studio Ultimate with MSDN
-	Environment               : AzureCloud
+	Environment               : AzureChinaCloud
 	SupportedModes            : AzureServiceManagement,AzureResourceManager
 	DefaultAccount            : johndoe@contoso.com
 	Accounts                  : {johndoe@contoso.com}

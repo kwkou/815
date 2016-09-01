@@ -30,7 +30,7 @@ DPM 的 Azure 备份支持以下方案。
 在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction/#prerequisites)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及在保管库中注册 DPM/Azure 备份服务器。
 
 ### DPM 代理
-必须在运行 SharePoint Server 或 SQL Server 的服务器以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关如何设置保护代理的详细信息，请参阅 [设置保护代理](https://technet.microsoft.com/library/hh758034(v=sc.12).aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将一台 WFE 服务器上的代理作为保护的入口点。
+必须在运行 SharePoint Server 或 SQL Server 的服务器以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关如何设置保护代理的详细信息，请参阅 [设置保护代理](https://technet.microsoft.com/zh-cn/library/hh758034(v=sc.12).aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将一台 WFE 服务器上的代理作为保护的入口点。
 
 ### SharePoint 场
 针对场中的每 1000 万个项，必须有至少 2 GB 的卷空间用于放置 DPM 文件夹。此空间对目录生成是必要的。为了使 DPM 恢复特定项（网站集合、站点、列表、文档库、文件夹、单个文档与列表项），目录生成将创建一个包含在每个内容数据库中的 URL 列表。你可以在 DPM 管理员控制台的“恢复”任务区域中，查看“可恢复项”窗格中的 URL 列表。
@@ -232,7 +232,7 @@ DPM 以 LocalSystem 帐户的形式运行。若要备份 SQL Server 数据库，
 
 ## 后续步骤
 - 了解有关使用 DPM 保护 SharePoint 的详细信息 — 参阅[视频系列 — 使用 DPM 保护 SharePoint](http://channel9.msdn.com/Series/Azure-Backup/Microsoft-SCDPM-Protection-of-SharePoint-1-of-2-How-to-create-a-SharePoint-Protection-Group)
-- 查看 [System Center 2012 - Data Protection Manager 发行说明](https://technet.microsoft.com/library/jj860415.aspx)
-- 查看 [System Center 2012 SP1 中的 Data Protection Manager 发行说明](https://technet.microsoft.com/library/jj860394.aspx)
+- 查看 [System Center 2012 - Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860415.aspx)
+- 查看 [System Center 2012 SP1 中的 Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860394.aspx)
 
 <!---HONumber=Mooncake_0801_2016-->

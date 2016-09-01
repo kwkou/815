@@ -210,6 +210,6 @@ Azure 备份代理提供的“限制”选项卡可让你控制在数据传输�
 ## 后续步骤
 - [从 Azure 还原 Windows Server 或 Windows 客户端](/documentation/articles/backup-azure-restore-windows-server/)
 - 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)
-- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
+- 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)
 
 <!---HONumber=Mooncake_0822_2016-->

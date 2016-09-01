@@ -64,7 +64,7 @@ VM 无法根据部署要求访问 Internet，或者现有的限制阻止访问 A
 ### 解决方案
 对于 Linux VM，与代理或扩展相关的大多数失败是由于影响旧 VM 代理的问题所造成的。作为一般指导，排查此问题的首要步骤如下：
 
-1. [安装最新的 Azure VM 代理](https://acom-swtest-2.azurewebsites.net/documentation/articles/virtual-machines-linux-update-agent/)。
+1. [安装最新的 Azure VM 代理](/documentation/articles/virtual-machines-linux-update-agent/)。
 2. 确保 Azure 代理在 VM 上运行。为此，请运行以下命令：`ps -e`
 
     如果此进程未运行，请使用以下命令来重新启动它。

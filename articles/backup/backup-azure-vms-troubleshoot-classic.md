@@ -109,7 +109,7 @@
 - 按照[更新 Linux VM 代理](/documentation/articles/virtual-machines-linux-update-agent)上的说明进行操作。
 
 
-### 验证 VM 代理安装
+### <a name="validating-vm-agent-installation"></a>验证 VM 代理安装
 如何检查 Windows VM 上的 VM 代理版本：
 
 1. 登录 Azure 虚拟机并导航到 *C:\\WindowsAzure\\Packages* 文件夹。你应会发现 WaAppAgent.exe 文件已存在。

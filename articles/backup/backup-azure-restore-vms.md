@@ -97,7 +97,7 @@
 ## 在发生 Azure 数据中心灾难期间还原 VM
 如果运行已备份 VM 的主数据中心遇到灾难性故障，并且你已将备份保管库配置为异地冗余，则 Azure 备份允许将该 VM 还原到配对的数据中心。在这种情况下，需要选择一个在配对数据中心内存在的存储帐户，而余下的还原过程将保持不变。Azure 备份使用配对地区中的计算服务来创建还原的虚拟机。
 
-## 还原域控制器 VM
+## <a name="restoring-domain-controller-vms"></a>还原域控制器 VM
 Azure 备份支持对域控制器 (DC) 虚拟机进行备份的方案。但在还原过程中，你必须谨慎操作。在单 DC 配置中，域控制器 VM 的还原体验大大不同于多 DC 配置中的 VM。
 
 ### 单 DC
@@ -110,7 +110,7 @@ Azure 备份支持对域控制器 (DC) 虚拟机进行备份的方案。但在�
 
 >[AZURE.WARNING]对于多 DC 环境中的域控制器 VM，请勿使用 Azure 经典管理门户来还原！ 仅支持基于 PowerShell 的还原
 
-阅读更多内容，了解 [USN 回退问题](https://technet.microsoft.com/library/dd363553)以及建议的问题解决策略。
+阅读更多内容，了解 [USN 回退问题](https://technet.microsoft.com/zh-cn/library/dd363553)以及建议的问题解决策略。
 
 ## <a name="restoring-vms-with-special-netwrok-configurations"></a>还原采用特殊网络配置的 VM
 Azure 备份支持备份虚拟机的以下特殊网络配置。

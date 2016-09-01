@@ -15,9 +15,6 @@
 
 # 先睹为快：备份 Azure 虚拟机
 
-> [AZURE.SELECTOR]
-- [备份经典模式 VM](/documentation/articles/backup-azure-vms-first-look/)
-
 本教程将引导你完成将 Azure 虚拟机 (VM) 备份到 Azure 的步骤。若要顺利完成本教程，必须满足以下先决条件：
 
 - 已在 Azure 订阅中创建 VM。
@@ -145,7 +142,7 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。�
 如果你的 VM 是从本地数据中心迁移的，则该 VM 上可能尚未安装 VM 代理。必须先在虚拟机上安装 VM 代理，然后才能继续保护 VM。有关安装 VM 代理的详细步骤，请参阅[“Backup VMs”（备份 VM）一文中的“VM Agent”（VM 代理）部分](/documentation/articles/backup-azure-vms-prepare/#vm-agent)。
 
 
-## 步骤 4 - 创建备份策略
+## <a name="step-4---protect-azure-virtual-machines"></a>步骤 4 - 创建备份策略
 在触发初始备份作业之前，请设置计划来规定何时创建备份快照。规定备份快照创建时间以及快照保留时长的计划就是备份策略。保留期信息基于祖父-父-子备份轮转方案。
 
 1. 导航到备份保管库（位于 Azure 经典管理门户的“恢复服务”下），然后单击“注册的项”。

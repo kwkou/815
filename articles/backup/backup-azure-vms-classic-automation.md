@@ -271,9 +271,9 @@ Azure 备份文档中的 [Azure IaaS VM 备份简介](/documentation/articles/ba
 
 有关如何从还原的磁盘构建 VM 的详细信息，请阅读与下述 cmdlet 相关的内容：
 
-- [Add-AzureDisk](https://msdn.microsoft.com/library/azure/dn495252.aspx)
-- [New-AzureVMConfig](https://msdn.microsoft.com/library/azure/dn495159.aspx)
-- [New-AzureVM](https://msdn.microsoft.com/library/azure/dn495254.aspx)
+- [Add-AzureDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495252.aspx)
+- [New-AzureVMConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495159.aspx)
+- [New-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495254.aspx)
 
 ## 代码示例
 

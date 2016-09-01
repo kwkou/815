@@ -41,7 +41,7 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 | 组件 | 可以在 Azure 中部署吗？ | 可以在本地部署吗？ | 支持的目标存储|
 | --- | --- | --- | --- |
 | Azure 备份代理 | <p>**是**</p> <p>Azure 备份代理可以部署在 Azure 中运行的任何 Windows Server VM 上。</p> | <p>**是**</p> <p>该备份代理可以部署在任何 Windows Server VM 或物理计算机上。</p> | <p>Azure 备份保管库</p> |
-| System Center Data Protection Manager (DPM) | <p>**是**</p><p>详细了解[如何使用 System Center DPM 保护 Azure 中的工作负荷](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx)。</p> | <p>**是**</p> <p>详细了解[如何保护数据中心的工作负荷和 VM](https://technet.microsoft.com/library/hh758173.aspx)。</p> | <p>本地附加的磁盘、</p><p>Azure 备份保管库、</p><p>磁带（仅限本地）</p> |
+| System Center Data Protection Manager (DPM) | <p>**是**</p><p>详细了解[如何使用 System Center DPM 保护 Azure 中的工作负荷](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx)。</p> | <p>**是**</p> <p>详细了解[如何保护数据中心的工作负荷和 VM](https://technet.microsoft.com/zh-cn/library/hh758173.aspx)。</p> | <p>本地附加的磁盘、</p><p>Azure 备份保管库、</p><p>磁带（仅限本地）</p> |
 | Azure 备份服务器 | <p>**是**</p> | <p>**是**</p>| <p>本地附加的磁盘、</p><p>Azure 备份保管库</p> |
 | Azure 备份（VM 扩展） | <p>**是**</p><p>Azure 结构的一部分</p><p>专门用于[备份 Azure 基础结构即服务 (IaaS) 虚拟机](/documentation/articles/backup-azure-vms-introduction/)。</p> | <p>**否**</p> <p>使用 System Center DPM 备份数据中心的虚拟机。</p> | <p>Azure 备份保管库</p> |
 
@@ -79,7 +79,7 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
 
 
-## 备份和还原高级存储 VM
+## <a name="back-up-and-restore-premium-storage-vms"></a>备份和还原高级存储 VM
 
 Azure 备份服务现在可以保护高级存储 VM。
 
@@ -185,7 +185,7 @@ Azure 备份代理提供的限制功能可让你控制在数据传输期间使�
 | 本地磁盘上的恢复点 | 不适用 | 对于文件服务器为 64，<br><br>对于应用程序服务器为 448 | 对于文件服务器为 64，<br><br>对于应用程序服务器为 448 |不适用 |
 | 磁带上的恢复点 | 不适用 | 不受限制 | 不适用 | 不适用 |
 
-## 什么是保管库凭据文件？
+## <a name="what-is-the-vault-credential-file"></a>什么是保管库凭据文件？
 
 保管库凭据文件是门户为每个备份保管库生成的证书。然后，门户会将公钥上载到访问控制服务 (ACS)。当用户下载凭据，然后在计算机注册期间输入凭据时，系统将向用户提供私钥。当计算机向 Azure 备份服务中标识的保管库发送备份数据时，该私钥将对计算机进行身份验证。
 
