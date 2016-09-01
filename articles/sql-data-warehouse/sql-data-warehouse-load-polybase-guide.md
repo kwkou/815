@@ -177,7 +177,7 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 [使用 PolyBase 加载数据]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
 [solution partners]: /documentation/articles/sql-data-warehouse-solution-partners/
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [数据迁移概述]: /documentation/articles/sql-data-warehouse-overview-migrate/
 
 <!--MSDN references-->

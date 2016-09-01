@@ -48,18 +48,18 @@
 
 <!--Article references-->
 [并发]: /documentation/articles/sql-data-warehouse-develop-concurrency/
-[连接]: /documentation/articles/sql-data-warehouse-develop-connections/
+[连接]: /documentation/articles/sql-data-warehouse-connect-overview/
 [CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [动态 SQL]: /documentation/articles/sql-data-warehouse-develop-dynamic-sql/
 [Group By 选项]: /documentation/articles/sql-data-warehouse-develop-group-by-options/
 [标签]: /documentation/articles/sql-data-warehouse-develop-label/
 [循环]: /documentation/articles/sql-data-warehouse-develop-loops/
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-pivot-unpivot/
-[存储过程]: /documentation/articles/sql-data-warehouse-develop-rename/
-[表分布]: /documentation/articles/sql-data-warehouse-develop-statistics/
-[表索引]: /documentation/articles/sql-data-warehouse-develop-table-design/
-[表分区]: /documentation/articles/sql-data-warehouse-develop-table-partitions/
-[临时表]: /documentation/articles/sql-data-warehouse-develop-temporary-tables/
+[统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
+[存储过程]: /documentation/articles/sql-data-warehouse-reference-tsql-statements/
+[表分布]: /documentation/articles/sql-data-warehouse-tables-statistics/
+[表索引]: /documentation/articles/sql-data-warehouse-tables-overview/
+[表分区]: /documentation/articles/sql-data-warehouse-tables-partition/
+[临时表]: /documentation/articles/sql-data-warehouse-tables-temporary/
 [事务]: /documentation/articles/sql-data-warehouse-develop-transactions/
 [用户定义的架构]: /documentation/articles/sql-data-warehouse-develop-user-defined-schemas/
 [变量赋值]: /documentation/articles/sql-data-warehouse-develop-variable-assignment/

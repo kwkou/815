@@ -176,8 +176,8 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 
 [将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load/
 [SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
-[Table Design]: /documentation/articles/sql-data-warehouse-develop-table-design/
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[Table Design]: /documentation/articles/sql-data-warehouse-tables-overview/
+[统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/zh-cn/library/ms162802.aspx

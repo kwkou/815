@@ -88,7 +88,7 @@
 [Learning how to monitor your queries]: /documentation/articles/sql-data-warehouse-manage-monitor/
 [预配说明]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 [为客户端 IP 配置服务器防火墙访问权限]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/#create-a-new-azure-sql-server-level-firewall
-[Visual Studio 2013 或 2015]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[Visual Studio 2013 或 2015]: /documentation/articles/sql-data-warehouse-query-visual-studio/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [表大小]: /documentation/articles/sql-data-warehouse-tables-overview/#table-size-queries
 [不支持的表功能]: /documentation/articles/sql-data-warehouse-tables-overview/#unsupported-table-features

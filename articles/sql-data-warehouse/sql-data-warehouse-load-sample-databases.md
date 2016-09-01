@@ -75,7 +75,7 @@ SQL 数据仓库几乎支持 SQL Server 所能支持的所有 T-SQL 构造。[�
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop
 [加载]: /documentation/articles/sql-data-warehouse-overview-load
-[连接]: /documentation/articles/sql-data-warehouse-get-started-connect
+[连接]: /documentation/articles/sql-data-warehouse-query-visual-studio
 [迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code
 [安装 bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp
 [安装 sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd
