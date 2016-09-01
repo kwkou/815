@@ -64,6 +64,8 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 
 - **内部负载平衡器**。可以使用内部负载平衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
+想学习更多关于 Azure 中的平衡负载器，请访问[平衡负载器概述](/documentation/articles/load-balancer-overview/)。
+
 ## 网络安全组 (NSG)
 
 可以创建 NSG 来控制对网络接口 (NIC)、VM 和子网的入站和出站访问。每个 NSG 包含一条或多条规则，这些规则指定基于源 IP 地址、源端口、目标 IP 地址和目标端口是批准还是拒绝流量。若要了解有关 NSG 的详细信息，请访问[什么是网络安全组](/documentation/articles/virtual-networks-nsg/)。

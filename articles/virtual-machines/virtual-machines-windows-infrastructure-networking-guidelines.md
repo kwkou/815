@@ -94,7 +94,7 @@
 与本地物理网络基础结构一样，Azure 虚拟网络除了子网和 IP 地址之外，还可以包含更多组件。在设计应用程序基础结构时，你可能会想引入以下某些附加组件：
 
 - [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/) — 将 Azure 虚拟网络连接到其他 Azure 虚拟网络，通过站点到站点 VPN 连接使用本地网络，通过点到站点 VPN 连接为用户提供直接访问，或针对专用的安全连接实现 Express Route 连接。
-- 负载平衡器 — 根据需要为外部和内部流量提供流量负载平衡。
+- [负载平衡器](/documentation/articles/load-balancer-overview/) — 根据需要为外部和内部流量提供流量负载平衡。
 - [应用程序网关](/documentation/articles/application-gateway-introduction/) — 应用程序层的 HTTP 负载平衡，除了部署 Azure Load Balancer 之外，还能为 Web 应用程序提供一些其他的好处。
 - [流量管理器](/documentation/articles/traffic-manager-overview/) — 基于 DNS 的流量分配，以将最终用户定向到最接近的可用应用程序终结点，让你可以在不同地区的 Azure 数据中心之外托管应用程序。
 

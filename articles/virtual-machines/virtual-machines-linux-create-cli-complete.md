@@ -655,7 +655,7 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 
 ## 创建负载平衡器运行状况探测
 
-运行状况探测定期检查受负载平衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，这些 VM 将从操作中删除，以确保不会将用户定向到这些 VM。你可以针对运行状况探测定义自定义检查，以及间隔和超时值。
+运行状况探测定期检查受负载平衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，这些 VM 将从操作中删除，以确保不会将用户定向到这些 VM。你可以针对运行状况探测定义自定义检查，以及间隔和超时值。有关运行状况探测的详细信息，请阅读[负载平衡器探测](/documentation/articles/load-balancer-custom-probe-overview/)。
 
 	azure network lb probe create -g TestRG -l TestLB -n HealthProbe -p "http" -f healthprobe.aspx -i 15 -c 4
 
