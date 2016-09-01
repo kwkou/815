@@ -40,12 +40,13 @@
 
 你也可以将网络安全组和 ACL 规则定义为 Azure Resource Manager 模板的一部分。深入了解[使用模板创建网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-template/)。
 
-如果需要使用端口转发将唯一的外部端口映射至 VM 上的内部端口，则需要使用负载平衡器和网络地址转换 (NAT) 规则。例如，你可能想对外公开 TCP 端口 8080，然后让流量定向到 VM 上的 TCP 端口 80。
+如果需要使用端口转发将唯一的外部端口映射至 VM 上的内部端口，则需要使用负载平衡器和网络地址转换 (NAT) 规则。例如，你可能想对外公开 TCP 端口 8080，然后让流量定向到 VM 上的 TCP 端口 80。 你可以学习关于[创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-cli/).
 
 ## 后续步骤
 在本示例中，你创建了简单的规则来允许 HTTP 流量。你可以从下列文章中，找到有关创建更详细环境的信息：
 
 - [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)
 - [什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)
+- [负载平衡器的 Azure 资源管理器概述](/documentation/articles/load-balancer-arm/) 
 
 <!---HONumber=Mooncake_0704_2016-->

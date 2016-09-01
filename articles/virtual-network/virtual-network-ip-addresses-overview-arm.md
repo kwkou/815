@@ -58,7 +58,7 @@
 可以将公共 IP 地址与 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 相关联，只需将它分配到其**网络接口**即可。对于多网络接口 VM，只能将它分配到主要网络接口。你可以向 VM 分配动态或静态公共 IP 地址。
 
 ### 面向 Internet 的负载平衡器
-你可以将公共 IP 地址与 Azure Load Balancer 相关联，只需将其分配给负载平衡器**前端**配置即可。此公共 IP 地址充当负载平衡型虚拟 IP 地址 (VIP)。你可以向负载平衡器前端分配动态或静态公共 IP 地址。你还可以为负载平衡器前端分配多个公共 IP 地址，从而启用多 VIP 方案，如包含基于 SSL 的网站的多租户环境。
+你可以将公共 IP 地址与 [Azure Load Balancer](/documentation/articles/load-balancer-overview/) 相关联，只需将其分配给负载平衡器**前端**配置即可。此公共 IP 地址充当负载平衡型虚拟 IP 地址 (VIP)。你可以向负载平衡器前端分配动态或静态公共 IP 地址。你还可以为负载平衡器前端分配多个公共 IP 地址，从而启用[多 VIP](/documentation/articles/load-balancer-multivip/) 方案，如包含基于 SSL 的网站的多租户环境。
 
 ### VPN 网关
 [Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)用于将 Azure 虚拟网络 (VNet) 连接到其他 Azure VNet 或本地网络。必须将公共 IP 地址分配给其 **IP 配置**，才能与远程网络通信。目前只能向 VPN 网关分配动态公共 IP 地址。
