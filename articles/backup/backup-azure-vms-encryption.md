@@ -65,6 +65,5 @@
 ### 文档和资源
 
 - [部署指南 - PDF](http://www.cloudlinktech.com/Azure/CL_SecureVM_4_0_DG_EMC_Azure_R2.pdf)
-- [部署和使用 SecureVM - 视频](https://www.youtube.com/watch?v=8AIRe92UDNg)
 
 <!---HONumber=Mooncake_0704_2016-->
