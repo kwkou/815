@@ -38,7 +38,7 @@
 
 在以下部分中，你将了解上述工作流中提到的每个资源，以及其他可实现分布式计算方案的许多 Batch 功能。
 
-> [AZURE.NOTE] 需要有 [Batch 帐户](batch-account-create-portal.md)才能使用 Batch 服务。此外，几乎所有解决方案都使用 [Azure 存储][azure_storage]帐户来存储和检索文件。Batch 目前仅支持**常规用途**存储帐户类型，如  [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。
+> [AZURE.NOTE] 需要有 [Batch 帐户](/documentation/articles/batch-account-create-portal/)才能使用 Batch 服务。此外，几乎所有解决方案都使用 [Azure 存储][azure_storage]帐户来存储和检索文件。Batch 目前仅支持**常规用途**存储帐户类型，如  [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。
 
 ## Batch 服务组件
 
@@ -64,10 +64,10 @@
 
 - [应用程序包](#application-packages)
 
-## 帐户
+## <a name="account"></a>帐户
 
-批处理帐户是批处理服务中唯一标识的实体。所有处理都与一个 Batch 帐户相关联。当你使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。可以[在 Azure 门户中创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
-## <a name="compute-node"></a>计算节点
+批处理帐户是批处理服务中唯一标识的实体。所有处理都与一个 Batch 帐户相关联。当你使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。可以[在 Azure 门户预览中创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
+## <a name="compute-node" id="computenode"></a>计算节点
 
 计算节点是专门用于处理一部分应用程序工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。可以使用云服务或虚拟机应用商店映像创建的 Windows 或 Linux 节点池 — 有关这些选项的详细信息，请参阅下面的[池](#pool)。
 
@@ -96,9 +96,9 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层；Batch 池提供大�
 	为池中的节点选择操作系统时，可以使用两个选项：“虚拟机配置”和“云服务配置”。
 
 	“虚拟机配置”可从 [Azure 虚拟机应用商店][vm_marketplace]提供适用于计算节点的 Linux 和 Windows 映像。
-	创建包含虚拟机配置节点的池时，不仅需要指定节点的大小，还需要在节点上安装**虚拟机映像引用**和 Batch **节点代理 SKU**。有关指定这些池属性的详细信息，请参阅 [Provision Linux compute nodes in Azure Batch pools（在 Azure Batch 池中预配 Linux 计算节点）](batch-linux-nodes.md)。
+	创建包含虚拟机配置节点的池时，不仅需要指定节点的大小，还需要在节点上安装**虚拟机映像引用**和 Batch **节点代理 SKU**。有关指定这些池属性的详细信息，请参阅 [Provision Linux compute nodes in Azure Batch pools（在 Azure Batch 池中预配 Linux 计算节点）](/documentation/articles/batch-linux-nodes/)。
 
-	“云服务配置”只提供 Windows 计算节点。[Azure Guest OS releases and SDK compatibility matrix（Azure 来宾 OS 版本和 SDK 兼容性对照表）](../cloud-services/cloud-services-guestos-update-matrix.md)中列出了适用于云服务配置池的操作系统。创建包含云服务节点的池时，只需指定节点大小及其 OS 系列。创建 Windows 计算节点池时，最常使用的是云服务。
+	“云服务配置”只提供 Windows 计算节点。[Azure Guest OS releases and SDK compatibility matrix（Azure 来宾 OS 版本和 SDK 兼容性对照表）](/documentation/articles/cloud-services-guestos-update-matrix/)中列出了适用于云服务配置池的操作系统。创建包含云服务节点的池时，只需指定节点大小及其 OS 系列。创建 Windows 计算节点池时，最常使用的是云服务。
 
     - OS 系列还确定了要与操作系统一起安装哪些版本的 .NET。
 	- 与云服务中的辅助角色一样，可以指定 OS 版本（有关辅助角色的详细信息，请参阅 [Cloud Services overview（云服务概述）](/documentation/articles/cloud-services-choose-me/)中的 [Tell me about cloud services（介绍云服务）](/documentation/articles/cloud-services-choose-me/#tell-me-about-cloud-services)部分。
@@ -384,7 +384,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 - `stderr` 和 `stdout`
 
-	在执行过程中，应用程序可以生成诊断输出，这些信息可用于排查问题。如前一部分[文件和目录](#files-and-directories)中所述，Batch 服务会将标准输出和标准错误输出发送到计算节点上的任务目录中的 `stdout.txt` 和 `stderr.txt` 文件。可以使用 Azure 门户或 Batch SDK 之一下载这些文件。例如，可以使用 Batch .NET 库中的 [ComputeNode.GetNodeFile][net_getfile_node] 和 [CloudTask.GetNodeFile][net_getfile_task] 检索这些文件和其他文件来进行故障排除。
+	在执行过程中，应用程序可以生成诊断输出，这些信息可用于排查问题。如前一部分[文件和目录](#files-and-directories)中所述，Batch 服务会将标准输出和标准错误输出发送到计算节点上的任务目录中的 `stdout.txt` 和 `stderr.txt` 文件。可以使用 Azure 门户预览或 Batch SDK 之一下载这些文件。例如，可以使用 Batch .NET 库中的 [ComputeNode.GetNodeFile][net_getfile_node] 和 [CloudTask.GetNodeFile][net_getfile_task] 检索这些文件和其他文件来进行故障排除。
 
 - **任务退出代码**
 
@@ -396,11 +396,11 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 间歇性的问题也有可能会导致任务挂起，或者花费很长时间才能完成执行。可为任务设置最长执行时间。如果超过此时间，Batch 会中断任务应用程序。
 
-### 连接到计算节点
+### <a name="connecting-to-compute-nodes"></a>连接到计算节点
 
-可通过远程登录到计算节点来进一步执行调试和故障排除。可以使用 Azure 门户下载 Windows 节点的远程桌面协议 (RDP) 文件，并获取 Linux 节点的安全外壳 (SSH) 连接信息。也可以使用 Batch API（例如，使用 [Batch .NET][net_rdpfile] 或 [Batch Python](/documentation/articles/batch-linux-nodes/#connect-to-linux-nodes)）执行此操作。
+可通过远程登录到计算节点来进一步执行调试和故障排除。可以使用 Azure 门户预览下载 Windows 节点的远程桌面协议 (RDP) 文件，并获取 Linux 节点的安全外壳 (SSH) 连接信息。也可以使用 Batch API（例如，使用 [Batch .NET][net_rdpfile] 或 [Batch Python](/documentation/articles/batch-linux-nodes/#connect-to-linux-nodes)）执行此操作。
 
->[AZURE.IMPORTANT] 若要通过 RDP 或 SSH 连接到某个节点，必须先在该节点上创建一个用户。为此，可以使用 Azure 门户通过 Batch REST API [将用户帐户添加到节点][rest_create_user]、在 Batch .NET 中调用 [ComputeNode.CreateComputeNodeUser][net_create_user] 方法，或在 Batch Python 模块中调用 [add_user][py_add_user] 方法。
+>[AZURE.IMPORTANT] 若要通过 RDP 或 SSH 连接到某个节点，必须先在该节点上创建一个用户。为此，可以使用 Azure 门户预览通过 Batch REST API [将用户帐户添加到节点][rest_create_user]、在 Batch .NET 中调用 [ComputeNode.CreateComputeNodeUser][net_create_user] 方法，或在 Batch Python 模块中调用 [add_user][py_add_user] 方法。
 
 ### 对“不良的”计算节点进行故障排除
 
@@ -434,50 +434,50 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 [1]: ./media/batch-api-basics/node-folder-structure.png
 
-[azure_storage]: https://www.azure.cn/services/storage/
+[azure_storage]: /home/features/storage/
 [batch_forum]: https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=azurebatch
 [cloud_service_sizes]: /documentation/articles/cloud-services-sizes-specs/
-[msmpi]: https://msdn.microsoft.com/library/bb524831.aspx
+[msmpi]: https://msdn.microsoft.com/zh-cn/library/bb524831.aspx
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_sample_taskdeps]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/TaskDependencies
 
-[batch_net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[net_cloudjob_jobmanagertask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobmanagertask.aspx
-[net_cloudjob_priority]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.priority.aspx
-[net_cloudpool_starttask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
-[net_cloudtask_env]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.environmentsettings.aspx
-[net_create_cert]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.certificateoperations.createcertificate.aspx
-[net_create_user]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.createcomputenodeuser.aspx
-[net_getfile_node]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.getnodefile.aspx
-[net_getfile_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.getnodefile.aspx
-[net_job_env]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.commonenvironmentsettings.aspx
-[net_multiinstancesettings]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.multiinstancesettings.aspx
-[net_rdp]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.getrdpfile.aspx
-[net_reboot]: https://msdn.microsoft.com/library/azure/mt631495.aspx
-[net_reimage]: https://msdn.microsoft.com/library/azure/mt631496.aspx
-[net_remove]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.removefrompoolasync.aspx
-[net_offline]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.disableschedulingasync.aspx
-[net_online]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.enableschedulingasync.aspx
-[net_offline_option]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.common.disablecomputenodeschedulingoption.aspx
-[net_rdpfile]: https://msdn.microsoft.com/library/azure/Mt272127.aspx
+[batch_net_api]: https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[net_cloudjob_jobmanagertask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.jobmanagertask.aspx
+[net_cloudjob_priority]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.priority.aspx
+[net_cloudpool_starttask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
+[net_cloudtask_env]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.environmentsettings.aspx
+[net_create_cert]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.certificateoperations.createcertificate.aspx
+[net_create_user]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenode.createcomputenodeuser.aspx
+[net_getfile_node]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenode.getnodefile.aspx
+[net_getfile_task]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.getnodefile.aspx
+[net_job_env]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.commonenvironmentsettings.aspx
+[net_multiinstancesettings]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.multiinstancesettings.aspx
+[net_rdp]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenode.getrdpfile.aspx
+[net_reboot]: https://msdn.microsoft.com/zh-cn/library/azure/mt631495.aspx
+[net_reimage]: https://msdn.microsoft.com/zh-cn/library/azure/mt631496.aspx
+[net_remove]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.removefrompoolasync.aspx
+[net_offline]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenode.disableschedulingasync.aspx
+[net_online]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenode.enableschedulingasync.aspx
+[net_offline_option]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.common.disablecomputenodeschedulingoption.aspx
+[net_rdpfile]: https://msdn.microsoft.com/zh-cn/library/azure/Mt272127.aspx
 
 [py_add_user]: http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch.operations.html#azure.batch.operations.ComputeNodeOperations.add_user
 
-[batch_rest_api]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
-[rest_add_job]: https://msdn.microsoft.com/library/azure/mt282178.aspx
-[rest_add_pool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
-[rest_add_cert]: https://msdn.microsoft.com/library/azure/dn820169.aspx
-[rest_add_task]: https://msdn.microsoft.com/library/azure/dn820105.aspx
-[rest_create_user]: https://msdn.microsoft.com/library/azure/dn820137.aspx
-[rest_get_task_info]: https://msdn.microsoft.com/library/azure/dn820133.aspx
-[rest_multiinstance]: https://msdn.microsoft.com/library/azure/mt637905.aspx
-[rest_multiinstancesettings]: https://msdn.microsoft.com/library/azure/dn820105.aspx#multiInstanceSettings
-[rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
-[rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
-[rest_reboot]: https://msdn.microsoft.com/library/azure/dn820171.aspx
-[rest_reimage]: https://msdn.microsoft.com/library/azure/dn820157.aspx
-[rest_remove]: https://msdn.microsoft.com/library/azure/dn820194.aspx
-[rest_offline]: https://msdn.microsoft.com/library/azure/mt637904.aspx
-[rest_online]: https://msdn.microsoft.com/library/azure/mt637907.aspx
+[batch_rest_api]: https://msdn.microsoft.com/zh-cn/library/azure/Dn820158.aspx
+[rest_add_job]: https://msdn.microsoft.com/zh-cn/library/azure/mt282178.aspx
+[rest_add_pool]: https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx
+[rest_add_cert]: https://msdn.microsoft.com/zh-cn/library/azure/dn820169.aspx
+[rest_add_task]: https://msdn.microsoft.com/zh-cn/library/azure/dn820105.aspx
+[rest_create_user]: https://msdn.microsoft.com/zh-cn/library/azure/dn820137.aspx
+[rest_get_task_info]: https://msdn.microsoft.com/zh-cn/library/azure/dn820133.aspx
+[rest_multiinstance]: https://msdn.microsoft.com/zh-cn/library/azure/mt637905.aspx
+[rest_multiinstancesettings]: https://msdn.microsoft.com/zh-cn/library/azure/dn820105.aspx#multiInstanceSettings
+[rest_update_job]: https://msdn.microsoft.com/zh-cn/library/azure/dn820162.aspx
+[rest_rdp]: https://msdn.microsoft.com/zh-cn/library/azure/dn820120.aspx
+[rest_reboot]: https://msdn.microsoft.com/zh-cn/library/azure/dn820171.aspx
+[rest_reimage]: https://msdn.microsoft.com/zh-cn/library/azure/dn820157.aspx
+[rest_remove]: https://msdn.microsoft.com/zh-cn/library/azure/dn820194.aspx
+[rest_offline]: https://msdn.microsoft.com/zh-cn/library/azure/mt637904.aspx
+[rest_online]: https://msdn.microsoft.com/zh-cn/library/azure/mt637907.aspx
 
 <!---HONumber=Mooncake_0801_2016-->

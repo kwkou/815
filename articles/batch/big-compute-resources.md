@@ -28,9 +28,9 @@
 
 * [文档](/documentation/services/batch/)
 
-* [.NET](https://msdn.microsoft.com/library/azure/mt348682.aspx)、[Python](http://azure-sdk-for-python.readthedocs.io/latest/)、[Node.js](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/) 和 [REST](https://msdn.microsoft.com/library/azure/dn820158.aspx) API 参考
+* [.NET](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx)、[Python](http://azure-sdk-for-python.readthedocs.io/latest/)、[Node.js](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/) 和 [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx) API 参考
 
-* [Batch management .NET library（Batch 管理 .NET 库）](https://msdn.microsoft.com/library/mt463120.aspx)参考
+* [Batch management .NET library（Batch 管理 .NET 库）](https://msdn.microsoft.com/zh-cn/library/mt463120.aspx)参考
 
 * [教程：适用于 .NET 的 Azure Batch 库入门](/documentation/articles/batch-dotnet-get-started/)
 
@@ -48,9 +48,9 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 * [文档](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
 
-* [使用 HPC Pack 迸发到 Azure 辅助角色实例](https://technet.microsoft.com/library/gg481749.aspx)
+* [使用 HPC Pack 迸发到 Azure 辅助角色实例](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)
 
-* [使用 HPC Pack 迸发到 Azure Batch](https://technet.microsoft.com/library/mt612877.aspx)
+* [使用 HPC Pack 迸发到 Azure Batch](https://technet.microsoft.com/zh-cn/library/mt612877.aspx)
 
 * [Windows HPC 论坛](https://social.microsoft.com/Forums/home?category=windowshpc)
 
@@ -58,9 +58,9 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 使用这些 Azure 模板来部署 Linux HPC 群集。
 
-* [运转 SLURM 群集](http://azure.microsoft.com/documentation/templates/slurm/)和[博客文章](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
+* [运转 SLURM 群集](http://github.com/Azure/azure-quickstart-templates/tree/master/slurm/)和[博客文章](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
 
-* [运转 Torque 群集](http://azure.microsoft.com/documentation/templates/torque-cluster/)
+* [运转 Torque 群集](http://github.com/Azure/azure-quickstart-templates/tree/master/torque-cluster/)
 
 ## Microsoft MPI
 
@@ -71,14 +71,7 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 * [MS-MPI 参考](https://msdn.microsoft.com/zh-cn/library/dn473458.aspx)
 
-* [MPI 论坛](https://social.microsoft.com/Forums/home?forum=windowshpcmpi)
-
-
-## 计算密集型实例
-
-* [通过 Microsoft HPC Pack 设置 Windows RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-windows-hpcpack-cluster-rdma/)
-
-
+* [MPI 论坛](https://social.microsoft.com/Forums/zh-cn/home?forum=windowshpcmpi)
 
 ## 示例和演示
 
@@ -97,15 +90,6 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 ## 体系结构蓝图
 
 * [HPC and data orchestration using Azure Batch and Azure Data Factory（HPC 和数据的业务流程使用 Azure Batch 和 Azure 数据工厂）](http://go.microsoft.com/fwlink/?linkid=717686)(PDF)。
-
-## 行业解决方案
-
-* [Banking and capital markets（银行和资本市场）](https://finance.azure.com/)
-
-* [Engineering simulations（工程模拟）](https://simulation.azure.com/)
-
-
-
 
 ## 后续步骤
 

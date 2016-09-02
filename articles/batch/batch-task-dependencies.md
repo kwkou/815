@@ -24,7 +24,7 @@
 
 在本文中，我们将讨论如何使用 [Batch .NET][net_msdn] 库配置任务依赖关系。我们首先说明如何为作业[启用任务依赖关系](#enable-task-dependencies)，然后简要演示如何[为任务配置依赖关系](#create-dependent-tasks)。最后，我们将介绍 Batch 支持的[依赖关系方案](#dependency-scenarios)。
 
-## 启用任务依赖关系
+## <a name="enable-task-dependencies"></a>启用任务依赖关系
 
 若要在 Batch 应用程序中使用任务依赖关系，必须先告知 Batch 服务：作业要使用任务依赖关系。在 Batch .NET 中，为 [CloudJob][net_cloudjob] 启用任务依赖关系的方法是将其 [UsesTaskDependencies][net_usestaskdependencies] 属性设置为 `true`：
 
@@ -39,7 +39,7 @@ csharp
 
 在上面的代码片段中，“batchClient”是 [BatchClient][net_batchclient] 类的一个实例。
 
-## 创建依赖任务
+## <a name="create-dependent-tasks"></a>创建依赖任务
 
 若要创建一个依赖于一个或多个其他任务的成功完成的任务，需告知 Batch：该任务“依赖于”其他任务。在 Batch .NET 中，为 [CloudTask][net_cloudtask].[DependsOn][net_dependson] 属性配置 [TaskDependencies][net_taskdependencies] 类的一个实例：
 
@@ -57,7 +57,7 @@ csharp
 
  > [AZURE.NOTE] 当任务处于“已完成”状态并且其**退出代码**为 `0` 时，该任务视为已成功完成。在 Batch .NET 中，这意味着 [CloudTask][net_cloudtask].[State][net_taskstate] 属性值为 `Completed`，CloudTask 的 [TaskExecutionInformation][net_taskexecutioninformation].[ExitCode][net_exitcode] 属性值为 `0`。
 
-## 依赖关系方案
+## <a name="dependency-scenarios"></a>依赖关系方案
 
 可以在 Azure Batch 中使用三种基本任务依赖关系方案：一对一、一对多和任务 ID 范围依赖关系。可以组合这些方案以提供第四种方案：多对多。
 
@@ -69,7 +69,7 @@ csharp
 
 >[AZURE.TIP] 你可以创建**多对多**关系，例如，在此关系中任务 C、D、E 和 F 都依赖于任务 A 和 B。这很有用，例如，在下游任务依赖于多个上游任务的输出的并行化预处理方案中。
 
-## 一对一
+## <a name="one-to-one"></a>一对一
 
 若要创建依赖于一个其他任务的成功完成的任务，在填充 [CloudTask][net_cloudtask] 的 [DependsOn][net_dependson] 属性时，必须向 [TaskDependencies][net_taskdependencies].[OnId][net_onid] 静态方法提供单个任务 ID。
 
@@ -85,7 +85,7 @@ csharp
 		},
 
 
-## 一对多
+## <a name="one-to-many"></a>一对多
 
 若要创建依赖于多个任务的成功完成的任务，在填充 [CloudTask][net_cloudtask] 的 [DependsOn][net_dependson] 属性时，必须向 [TaskDependencies][net_taskdependencies].[OnIds][net_onids] 静态方法提供任务 ID 的集合。
 
@@ -103,7 +103,7 @@ csharp
 		},
 
 
-## 任务 ID 范围
+## <a name="task-id-range"></a>任务 ID 范围
 
 若要创建依赖于一组任务（其 ID 在某个范围内）的成功完成的任务，在填充 [CloudTask][net_cloudtask] 的 [DependsOn][net_dependson] 属性时，必须向 [TaskDependencies][net_taskdependencies].[OnIdRange][net_onidrange] 静态方法提供该范围内的第一个和最后一个任务 ID。
 
@@ -145,19 +145,19 @@ csharp
 [forum_post]: https://social.msdn.microsoft.com/Forums/zh-cn/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
 [github_taskdependencies]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/TaskDependencies
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[net_batchclient]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
-[net_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
-[net_cloudtask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
-[net_dependson]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.dependson.aspx
-[net_exitcode]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskexecutioninformation.exitcode.aspx
-[net_msdn]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[net_onid]: https://msdn.microsoft.com/library/microsoft.azure.batch.taskdependencies.onid.aspx
-[net_onids]: https://msdn.microsoft.com/library/microsoft.azure.batch.taskdependencies.onids.aspx
-[net_onidrange]: https://msdn.microsoft.com/library/microsoft.azure.batch.taskdependencies.onidrange.aspx
-[net_taskexecutioninformation]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskexecutioninformation.aspx
-[net_taskstate]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.common.taskstate.aspx
-[net_usestaskdependencies]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.usestaskdependencies.aspx
-[net_taskdependencies]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskdependencies.aspx
+[net_batchclient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx
+[net_cloudjob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.aspx
+[net_cloudtask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.aspx
+[net_dependson]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.dependson.aspx
+[net_exitcode]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.taskexecutioninformation.exitcode.aspx
+[net_msdn]: https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[net_onid]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.batch.taskdependencies.onid.aspx
+[net_onids]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.batch.taskdependencies.onids.aspx
+[net_onidrange]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.batch.taskdependencies.onidrange.aspx
+[net_taskexecutioninformation]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.taskexecutioninformation.aspx
+[net_taskstate]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.common.taskstate.aspx
+[net_usestaskdependencies]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.usestaskdependencies.aspx
+[net_taskdependencies]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.taskdependencies.aspx
 
 [1]: ./media/batch-task-dependency/01_one_to_one.png
 [2]: ./media/batch-task-dependency/02_one_to_many.png

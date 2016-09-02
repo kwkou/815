@@ -1,6 +1,6 @@
 <properties
 	pageTitle="创建 Azure Batch 帐户 | Azure"
-	description="了解如何在 Azure 门户中创建 Azure Batch 帐户，以便在云中运行大规模并行工作负荷"
+	description="了解如何在 Azure 门户预览中创建 Azure Batch 帐户，以便在云中运行大规模并行工作负荷"
 	services="batch"
 	documentationCenter=""
 	authors="mmacy"
@@ -14,19 +14,19 @@
 
 
 
-# 在 Azure 门户中创建和管理 Azure Batch 帐户
+# 在 Azure 门户预览中创建和管理 Azure Batch 帐户
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/batch-account-create-portal/)
+- [Azure 门户预览](/documentation/articles/batch-account-create-portal/)
 - [Batch Management .NET](/documentation/articles/batch-management-dotnet/)
 
-[Azure 门户][azure_portal]提供了创建和管理 Azure Batch 帐户所需的工具，你可将这些工具用于大规模的并行工作负荷处理。在本文中，我们将使用门户逐步说明如何创建 Batch 帐户，以及讨论 Batch 帐户最重要的几项设置与属性。例如，使用 Batch 开发的应用程序和服务需要帐户的 URL 和访问密钥（在 Azure 门户中可找到这两项）才能与 Batch 服务 API 进行通信。
+[Azure 门户预览][azure_portal]提供了创建和管理 Azure Batch 帐户所需的工具，你可将这些工具用于大规模的并行工作负荷处理。在本文中，我们将使用门户预览逐步说明如何创建 Batch 帐户，以及讨论 Batch 帐户最重要的几项设置与属性。例如，使用 Batch 开发的应用程序和服务需要帐户的 URL 和访问密钥（在 Azure 门户预览中可找到这两项）才能与 Batch 服务 API 进行通信。
 
->[AZURE.NOTE] Azure 门户当前支持 Batch 服务所提供的部分功能，包括创建帐户及管理帐户设置和属性。开发人员可通过 Batch API 获取 Batch 的完整功能（包括创建和运行作业与任务）。
+>[AZURE.NOTE] Azure 门户预览当前支持 Batch 服务所提供的部分功能，包括创建帐户及管理帐户设置和属性。开发人员可通过 Batch API 获取 Batch 的完整功能（包括创建和运行作业与任务）。
 
 ## 创建批处理帐户
 
-1. 登录到 [Azure 门户][azure_portal]。
+1. 登录到 [Azure 门户预览][azure_portal]。
 
 2. 单击“新建”>“虚拟机”>“Batch 服务”。
 
@@ -68,7 +68,7 @@ Batch 帐户边栏选项卡显示帐户的多个属性，并且可让你访问�
 
     ![Batch 帐户设置和属性边栏选项卡][5]
 
-## Batch 帐户注意事项
+## <a name="considerations-for-batch-accounts"></a>Batch 帐户注意事项
 
 * 你也可以使用 [Batch PowerShell cmdlet](/documentation/articles/batch-powershell-cmdlets-get-started/) 和 [Batch Management .NET](/documentation/articles/batch-management-dotnet/) 库来创建和管理 Batch 帐户。
 
@@ -90,8 +90,8 @@ Batch 帐户边栏选项卡显示帐户的多个属性，并且可让你访问�
 
 * 了解使用 [Batch .NET 客户端库](/documentation/articles/batch-dotnet-get-started/)开发支持 Batch 的应用程序的基本概念。[简介文章](/documentation/articles/batch-dotnet-get-started/)介绍了使用 Batch 服务在多个计算节点上执行工作负荷的可行应用程序，并说明如何使用 Azure 存储空间进行工作负荷文件暂存和检索。
 
-[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
+[api_net]: https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[api_rest]: https://msdn.microsoft.com/zh-cn/library/azure/Dn820158.aspx
 
 [azure_portal]: https://portal.azure.cn
 [batch_pricing]: /pricing/details/batch/

@@ -16,7 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/batch-dotnet-get-started/)
-
+- [Python](/documentation/articles/batch-python-tutorial/)
 
 在我们分步讨论 C# 示例应用程序时，了解本文中的 [Azure Batch][azure_batch] 和 [Batch .NET][net_api] 库的基础知识。我们将探讨该示例应用程序如何利用 Batch 服务来处理云中的并行工作负荷，以及如何与 [Azure 存储空间](/documentation/articles/storage-introduction/)交互来暂存和检索文件。你会了解常见的 Batch 应用程序工作流技术。你还会大致了解 Batch 的主要组件，例如作业、任务、池和计算节点。
 
@@ -91,7 +91,7 @@
 
 > [AZURE.IMPORTANT] 如上所述，目前必须为 Azure 存储空间中的**常规用途**存储帐户指定凭据。Batch 应用程序将使用**常规用途**存储帐户中的 Blob 存储。请不要为通过选择 “Blob 存储” 帐户类型创建的存储帐户指定凭据。
 
-可以在 [Azure 门户][azure_portal]中每个服务的帐户边栏选项卡中找到 Batch 和存储帐户凭据：
+可以在 [Azure 门户预览][azure_portal]中每个服务的帐户边栏选项卡中找到 Batch 和存储帐户凭据：
 
 ![门户中的 Batch 凭据][9]
 ![门户中的存储空间凭据][10]<br/>
@@ -603,7 +603,7 @@ BatchClient 的 [JobOperations][net_joboperations] 和 [PoolOperations][net_pool
 
 ## 运行 *DotNetTutorial* 示例
 
-当你运行示例应用程序时，控制台输出如下所示。在执行期间启动池的计算节点时，你将会遇到暂停并看到`Awaiting task completion, timeout in 00:30:00...`。在执行期间和之后，可以使用 [Batch 资源管理器][github\_batchexplorer] 来监视池、计算节点、作业和任务。使用 [Azure 门户][azure_portal]或某个[可用的 Azure 存储空间资源管理器][storage_explorers]来查看应用程序创建的存储资源（容器和 blob）。
+当你运行示例应用程序时，控制台输出如下所示。在执行期间启动池的计算节点时，你将会遇到暂停并看到`Awaiting task completion, timeout in 00:30:00...`。在执行期间和之后，可以使用 [Batch 资源管理器][github\_batchexplorer] 来监视池、计算节点、作业和任务。使用 [Azure 门户预览][azure_portal]或某个[可用的 Azure 存储空间资源管理器][storage_explorers]来查看应用程序创建的存储资源（容器和 blob）。
 
 以默认配置运行应用程序时，典型的执行时间**大约为 5 分钟**。
 
@@ -643,8 +643,8 @@ BatchClient 的 [JobOperations][net_joboperations] 和 [PoolOperations][net_pool
 - 建议所有 Batch 新用户阅读 [Batch feature overview for developers](/documentation/articles/batch-api-basics/)（面向开发人员的 Batch 功能概述）。
 - 通过 [TopNWords][github_topnwords] 示例了解有关使用 Batch 处理“前 N 个单词”工作负荷的不同实现方式。
 
-[azure_batch]: /services/batch/
-[azure_free_account]: /free/
+[azure_batch]: /home/features/batch/
+[azure_free_account]: /pricing/1rmb-trial/
 [azure_portal]: https://portal.azure.cn
 
 [github_dotnettutorial]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/DotNetTutorial
@@ -652,38 +652,38 @@ BatchClient 的 [JobOperations][net_joboperations] 和 [PoolOperations][net_pool
 [github_samples_common]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/Common
 [github_samples_zip]: https://github.com/Azure/azure-batch-samples/archive/master.zip
 [github_topnwords]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/TopNWords
-[net_api]: http://msdn.microsoft.com/library/azure/mt348682.aspx
-[net_api_storage]: https://msdn.microsoft.com/library/azure/mt347887.aspx
-[net_batchclient]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
-[net_cloudblobclient]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobclient.aspx
-[net_cloudblobcontainer]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.aspx
-[net_cloudstorageaccount]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.cloudstorageaccount.aspx
-[net_cloudserviceconfiguration]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudserviceconfiguration.aspx
-[net_container_delete]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.deleteifexistsasync.aspx
-[net_job]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
-[net_job_poolinfo]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.protocol.models.cloudjob.poolinformation.aspx
-[net_joboperations]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.joboperations
-[net_joboperations_terminatejob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.terminatejobasync.aspx
-[net_jobpreptask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
-[net_jobreltask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobreleasetask.aspx
-[net_node]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.aspx
-[net_odatadetaillevel]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.aspx
-[net_pool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[net_pool_create]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx
-[net_pool_starttask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
-[net_pooloperations]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.pooloperations
-[net_resourcefile]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.resourcefile.aspx
-[net_resourcefile_blobsource]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.resourcefile.blobsource.aspx
-[net_sas_blob]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblob.getsharedaccesssignature.aspx
-[net_sas_container]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblobcontainer.getsharedaccesssignature.aspx
-[net_starttask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.starttask.aspx
-[net_starttask_resourcefiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.starttask.resourcefiles.aspx
-[net_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
-[net_task_resourcefiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.resourcefiles.aspx
-[net_taskstate]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.common.taskstate.aspx
-[net_taskstatemonitor]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskstatemonitor.aspx
-[net_thread_sleep]: https://msdn.microsoft.com/library/274eh01d(v=vs.110).aspx
-[net_virtualmachineconfiguration]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.virtualmachineconfiguration.aspx
+[net_api]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[net_api_storage]: https://msdn.microsoft.com/zh-cn/library/azure/mt347887.aspx
+[net_batchclient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx
+[net_cloudblobclient]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobclient.aspx
+[net_cloudblobcontainer]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.aspx
+[net_cloudstorageaccount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.cloudstorageaccount.aspx
+[net_cloudserviceconfiguration]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudserviceconfiguration.aspx
+[net_container_delete]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.deleteifexistsasync.aspx
+[net_job]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.aspx
+[net_job_poolinfo]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.protocol.models.cloudjob.poolinformation.aspx
+[net_joboperations]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.joboperations
+[net_joboperations_terminatejob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.terminatejobasync.aspx
+[net_jobpreptask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
+[net_jobreltask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.jobreleasetask.aspx
+[net_node]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenode.aspx
+[net_odatadetaillevel]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.odatadetaillevel.aspx
+[net_pool]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx
+[net_pool_create]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx
+[net_pool_starttask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
+[net_pooloperations]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.pooloperations
+[net_resourcefile]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.resourcefile.aspx
+[net_resourcefile_blobsource]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.resourcefile.blobsource.aspx
+[net_sas_blob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.blob.cloudblob.getsharedaccesssignature.aspx
+[net_sas_container]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.blob.cloudblobcontainer.getsharedaccesssignature.aspx
+[net_starttask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.starttask.aspx
+[net_starttask_resourcefiles]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.starttask.resourcefiles.aspx
+[net_task]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.aspx
+[net_task_resourcefiles]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.resourcefiles.aspx
+[net_taskstate]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.common.taskstate.aspx
+[net_taskstatemonitor]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.taskstatemonitor.aspx
+[net_thread_sleep]: https://msdn.microsoft.com/zh-cn/library/274eh01d(v=vs.110).aspx
+[net_virtualmachineconfiguration]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.virtualmachineconfiguration.aspx
 [nuget_packagemgr]: https://docs.nuget.org/consume/installing-nuget
 [nuget_restore]: https://docs.nuget.org/consume/package-restore/msbuild-integrated#enabling-package-restore-during-build
 [storage_explorers]: http://storageexplorer.com/

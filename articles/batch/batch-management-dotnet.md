@@ -16,7 +16,7 @@
 # 使用 Batch Management .NET 管理 Azure Batch 帐户和配额
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/batch-account-create-portal)
+- [Azure 门户预览](/documentation/articles/batch-account-create-portal)
 - [Batch Management .NET](/documentation/articles/batch-management-dotnet)
 
 你可以使用 [Batch Management .NET][api_mgmt_net] 库来自动化 Batch 帐户的创建、删除、密钥管理和配额发现可以降低 Azure Batch 应用程序的维护开销。
@@ -26,7 +26,7 @@
 - **检查帐户配额**并采取试错猜测，确定哪些 Batch 帐户存在哪些限制。在启动作业、创建池或添加计算节点之前检查帐户配额可以主动调整创建计算资源的位置或时机。你可以在帐户中分配其他资源之前，确定哪些帐户需要增加配额。
 - 通过在同一个应用程序中利用 Batch Management .NET、[Azure Active Directory][aad_about] 和 [Azure Resource Manager][resman_overview]，结合其他 Azure 服务的功能以获得全功能管理体验。使用这些功能及其 API 可以提供顺畅的身份验证体验、创建和删除资源组以及上述功能，以获取端到端管理解决方案。
 
-> [AZURE.NOTE] 尽管本文着重介绍以编程方式管理 Batch 帐户、密钥和配额，但你也可以使用 [Azure 门户][azure_portal]执行其中的许多活动。有关详细信息，请参阅[在 Azure 门户中创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal)以及 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)。
+> [AZURE.NOTE] 尽管本文着重介绍以编程方式管理 Batch 帐户、密钥和配额，但你也可以使用 [Azure 门户预览][azure_portal]执行其中的许多活动。有关详细信息，请参阅[在 Azure 门户预览中创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal)以及 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)。
 
 ## 创建和删除 Batch 帐户
 
@@ -119,7 +119,7 @@ csharp
 		Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.ActiveJobAndJobScheduleQuota);
 
 
-> [AZURE.IMPORTANT] 尽管 Azure 订阅和服务有默认配额，但许多限制都可以通过在 [Azure 门户][azure_portal]中提出请求来提高。例如，可以参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)以获取有关提高 Batch 帐户配额的说明。
+> [AZURE.IMPORTANT] 尽管 Azure 订阅和服务有默认配额，但许多限制都可以通过在 [Azure 门户预览][azure_portal]中提出请求来提高。例如，可以参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)以获取有关提高 Batch 帐户配额的说明。
 
 ## <a name="azure-active-directory"></a>Batch Management .NET、Azure AD 和资源管理器
 
@@ -133,23 +133,23 @@ Azure 本身使用 Azure AD 来对其客户、服务管理员和组织用户进�
 
 ### 资源管理器
 
-使用 Batch Management .NET 库创建 Batch 帐户时，通常会在[资源组][resman_overview]中创建帐户。你可使用[资源管理器 .NET][resman_api] 库中提供的 [ResourceManagementClient][resman_client] 以编程方式创建资源组。或者可以将帐户添加到以前使用 [Azure 门户][azure_portal]创建的现有资源组。
+使用 Batch Management .NET 库创建 Batch 帐户时，通常会在[资源组][resman_overview]中创建帐户。你可使用[资源管理器 .NET][resman_api] 库中提供的 [ResourceManagementClient][resman_client] 以编程方式创建资源组。或者可以将帐户添加到以前使用 [Azure 门户预览][azure_portal]创建的现有资源组。
 
 ## <a name="sample"></a>GitHub 上的示例项目
 
 查看 GitHub 上的 [AccountManagment][acct_mgmt_sample] 示例项目，以了解 Batch Management .NET 库的操作实践。此控制台应用程序将显示 [BatchManagementClient][net_mgmt_client] 和 [ResourceManagementClient][resman_client] 的创建与使用方式。此外，还演示了两个客户端所需的 Azure [Active Directory 身份验证库][aad_adal] (ADAL) 使用方式。
 
-若要成功运行该示例应用程序，你必须先使用 Azure 门户将它注册到 Azure AD。请查看[将应用程序与 Azure Active Directory 集成][aad_integrate]中的“添加应用程序”。然后，遵循本文中步骤在自己帐户的“默认目录”中注册示例应用程序。确保选择“本机客户端应用程序”作为应用程序类型，但可以指定任何有效的 URI（例如 `http://myaccountmanagementsample`）作为“重定向 URI”--不需要是真实的终结点。
+若要成功运行该示例应用程序，你必须先使用 Azure 门户预览将它注册到 Azure AD。请查看[将应用程序与 Azure Active Directory 集成][aad_integrate]中的“添加应用程序”。然后，遵循本文中步骤在自己帐户的“默认目录”中注册示例应用程序。确保选择“本机客户端应用程序”作为应用程序类型，但可以指定任何有效的 URI（例如 `http://myaccountmanagementsample`）作为“重定向 URI”--不需要是真实的终结点。
 
 添加应用程序以后，请在门户的应用程序设置中将“以组织形式访问 Azure 服务管理”权限委派给 Microsoft Azure 服务管理 API 应用程序：
 
-![Azure 门户中的应用程序权限][2]
+![Azure 门户预览中的应用程序权限][2]
 
 > [AZURE.TIP] 如果“Microsoft Azure 服务管理 API”未出现在“对其他应用程序的权限”下，请单击“添加应用程序”，选择“Microsoft Azure 服务管理 API”，然后单击复选标记按钮。然后，根据上面的指定委托权限。
 
 根据上述说明添加应用程序以后，请使用应用程序的重定向 URI 和客户端 ID 更新 [AccountManagment][acct_mgmt_sample] 示例项目中的 `Program.cs`。可在应用程序的“配置”选项卡中查找这些值：
 
-![Azure 门户中的应用程序配置][3]
+![Azure 门户预览中的应用程序配置][3]
 
 [AccountManagment][acct_mgmt_sample] 示例应用程序演示了以下操作：
 
@@ -169,35 +169,35 @@ Azure 本身使用 Azure AD 来对其客户、服务管理员和组织用户进�
   - 删除新建的帐户。
 7. 删除该资源组。
 
-删除新建的 Batch 帐户和资源组之前，可以在 [Azure 门户][azure_portal]中检查这两项：
+删除新建的 Batch 帐户和资源组之前，可以在 [Azure 门户预览][azure_portal]中检查这两项：
 
-![显示资源组和 Batch 帐户的 Azure 门户][1]
+![显示资源组和 Batch 帐户的 Azure 门户预览][1]
 <br />
-“显示新资源组和 Batch 帐户的 Azure 门户”
+“显示新资源组和 Batch 帐户的 Azure 门户预览”
 
 [aad_about]: /documentation/articles/active-directory-whatis/
 [aad_adal]: /documentation/articles/active-directory-authentication-libraries/
 [aad_auth_scenarios]: /documentation/articles/active-directory-authentication-scenarios/
 [aad_integrate]: /documentation/articles/active-directory-integrating-applications/
 [acct_mgmt_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_mgmt_net]: https://msdn.microsoft.com/library/azure/mt463120.aspx
+[api_net]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[api_mgmt_net]: https://msdn.microsoft.com/zh-cn/library/azure/mt463120.aspx
 [azure_portal]: http://portal.azure.cn
 [azure_storage]: /documentation/services/storage/
-[azure_tokencreds]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.tokencloudcredentials.aspx
+[azure_tokencreds]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.tokencloudcredentials.aspx
 [batch_explorer_project]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
-[net_batch_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
-[net_list_keys]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.batch.accountoperationsextensions.listkeysasync.aspx
-[net_create]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.batch.accountoperationsextensions.createasync.aspx
-[net_delete]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.batch.accountoperationsextensions.deleteasync.aspx
-[net_regenerate_keys]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.batch.accountoperationsextensions.regeneratekeyasync.aspx
-[net_sharedkeycred]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.auth.batchsharedkeycredentials.aspx
-[net_mgmt_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.batch.batchmanagementclient.aspx
-[net_mgmt_subscriptions]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.batch.batchmanagementclient.subscriptions.aspx
-[net_mgmt_listaccounts]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.batch.iaccountoperations.listasync.aspx
-[resman_api]: https://msdn.microsoft.com/library/azure/mt418626.aspx
-[resman_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.resourcemanagementclient.aspx
-[resman_subclient]: https://msdn.microsoft.com/library/azure/microsoft.azure.subscriptions.subscriptionclient.aspx
+[net_batch_client]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx
+[net_list_keys]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.batch.accountoperationsextensions.listkeysasync.aspx
+[net_create]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.batch.accountoperationsextensions.createasync.aspx
+[net_delete]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.batch.accountoperationsextensions.deleteasync.aspx
+[net_regenerate_keys]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.batch.accountoperationsextensions.regeneratekeyasync.aspx
+[net_sharedkeycred]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.auth.batchsharedkeycredentials.aspx
+[net_mgmt_client]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.batch.batchmanagementclient.aspx
+[net_mgmt_subscriptions]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.batch.batchmanagementclient.subscriptions.aspx
+[net_mgmt_listaccounts]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.batch.iaccountoperations.listasync.aspx
+[resman_api]: https://msdn.microsoft.com/zh-cn/library/azure/mt418626.aspx
+[resman_client]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.resources.resourcemanagementclient.aspx
+[resman_subclient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.subscriptions.subscriptionclient.aspx
 [resman_overview]: /documentation/articles/resource-group-overview/
 
 [1]: ./media/batch-management-dotnet/portal-01.png

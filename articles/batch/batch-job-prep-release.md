@@ -136,13 +136,13 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 
 >[AZURE.NOTE] 由于新池中各个节点的创建和启动时间并不一样（某些节点比其他节点更早做好任务准备），你可能看到不同的输出。具体而言，因为任务快速完成，池的某个节点可能执行作业的所有任务。如果发生这种情况，你会发现未执行任何任务的节点没有作业准备和作业释放任务存在。
 
-### 在 Azure 门户中检查作业准备和释放任务
+### 在 Azure 门户预览中检查作业准备和释放任务
 
-在运行上述示例应用程序时，你可以使用 [Azure 门户][portal]查看作业及其任务的属性，甚至可以下载作业任务修改的共享文本文件。
+在运行上述示例应用程序时，你可以使用 [Azure 门户预览][portal]查看作业及其任务的属性，甚至可以下载作业任务修改的共享文本文件。
 
-下面的屏幕截图显示了在运行示例应用程序之后，Azure 门户中出现的**准备任务边栏选项卡**。在任务完成之后（但在删除作业与池之前），导航到 JobPrepReleaseSampleJob 属性，然后单击“准备任务”或“释放任务”以查看其属性。
+下面的屏幕截图显示了在运行示例应用程序之后，Azure 门户预览中出现的**准备任务边栏选项卡**。在任务完成之后（但在删除作业与池之前），导航到 JobPrepReleaseSampleJob 属性，然后单击“准备任务”或“释放任务”以查看其属性。
 
-![Azure 门户中的作业准备属性][1]
+![Azure 门户预览中的作业准备属性][1]
 
 ## 后续步骤
 
@@ -154,33 +154,33 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 
 有关准备节点以运行任务的各种方法的概述，请查看 Azure Batch 论坛中的帖子[在 Batch 计算节点上安装应用程序和暂存数据](https://social.msdn.microsoft.com/Forums/zh-cn/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch)。此帖子由 Azure Batch 团队的一名成员编写，是一个很好的入门教程，它介绍了如何在计算节点上以不同方式获取文件（包括应用程序和任务输入数据），以及每种方法要考虑到的一些特殊注意事项。
 
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
-[azure_storage]: /services/storage/
+[api_net]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[api_net_listjobs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
+[api_rest]: http://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
+[azure_storage]: /home/features/storage/
 [portal]: https://portal.azure.cn
 [job_prep_release_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/JobPrepRelease
-[net_batch_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
-[net_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
-[net_job_prep]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobpreparationtask.aspx
-[net_job_prep_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
-[net\_job\_prep\_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
-[net_job_delete]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.deletejobasync.aspx
-[net_job_terminate]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.terminatejobasync.aspx
-[net_job_release]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobreleasetask.aspx
-[net_job_release_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobreleasetask.aspx
-[pool_starttask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
+[net_batch_client]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx
+[net_cloudjob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.aspx
+[net_job_prep]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.jobpreparationtask.aspx
+[net_job_prep_cloudjob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
+[net\_job\_prep\_cloudjob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
+[net_job_delete]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.deletejobasync.aspx
+[net_job_terminate]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.terminatejobasync.aspx
+[net_job_release]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.jobreleasetask.aspx
+[net_job_release_cloudjob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.jobreleasetask.aspx
+[pool_starttask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
 
-[net_list_certs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.certificateoperations.listcertificates.aspx
-[net_list_compute_nodes]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listcomputenodes.aspx
-[net_list_job_schedules]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobschedules.aspx
-[net_list_jobprep_status]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobpreparationandreleasetaskstatus.aspx
-[net_list_jobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[net_list_nodefiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listnodefiles.aspx
-[net_list_pools]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listpools.aspx
-[net_list_schedule_jobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobs.aspx
-[net_list_task_files]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.listnodefiles.aspx
-[net_list_tasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
+[net_list_certs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.certificateoperations.listcertificates.aspx
+[net_list_compute_nodes]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.listcomputenodes.aspx
+[net_list_job_schedules]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobschedules.aspx
+[net_list_jobprep_status]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listjobpreparationandreleasetaskstatus.aspx
+[net_list_jobs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
+[net_list_nodefiles]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listnodefiles.aspx
+[net_list_pools]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.listpools.aspx
+[net_list_schedule_jobs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobs.aspx
+[net_list_task_files]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.listnodefiles.aspx
+[net_list_tasks]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
 
 [1]: ./media/batch-job-prep-release/portal-jobprep-01.png
 

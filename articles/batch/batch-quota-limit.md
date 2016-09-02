@@ -27,7 +27,7 @@
 ---|---|---
 每个区域每个订阅的 Batch 帐户数 | 1 | 50
 
-## Batch 帐户配额
+## <a name="batch-account-quotas"></a>Batch 帐户配额
 [AZURE.INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
 ## 其他限制
@@ -42,7 +42,7 @@
 
 ## 查看 Batch 配额
 
-可在 [Azure 门户][portal]中查看 Batch 帐户配额。
+可在 [Azure 门户预览][portal]中查看 Batch 帐户配额。
 
 1. 在门户中，单击“Batch 帐户”，然后单击你的 Batch 帐户的名称。
 
@@ -52,9 +52,9 @@
 
 3. “属性”边栏选项卡显示了当前应用于 Batch 帐户的配额。
 
-## 提高配额
+## <a name="increase-a-quota"></a>提高配额
 
-执行以下步骤，使用 [Azure 门户][portal]来请求提高配额。
+执行以下步骤，使用 [Azure 门户预览][portal]来请求提高配额。
 
 1. 在门户仪表板上选择“帮助 + 支持”磁贴，或单击门户右上角的问号 (**?**)。
 
@@ -74,7 +74,7 @@
 
 4. 在“问题”边栏选项卡上：
 
-	a.根据[业务影响情况][support_sev]选择“严重性”。
+	a.根据业务影响情况选择“严重性”。
 
 	b.在“详细信息”中，指定想要更改的每个配额、Batch 帐户名和新限制。
 
