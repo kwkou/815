@@ -19,8 +19,8 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
-## 管理门户任务
-1. 登录到[管理门户](https://manage.windowsazure.cn)。
+## 经典管理门户任务
+1. 登录到[经典管理门户](https://manage.windowsazure.cn)。
 
 2. 单击“恢复服务”，然后单击备份保管库的名称以查看“快速启动”页。
 
