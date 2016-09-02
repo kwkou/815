@@ -8,22 +8,20 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal-en" ms.date="08/2016" wacn.date="08/2016" wacn.lang="en"/>
+<tags ms.service="legal-en" ms.date="03/2016" wacn.date="03/2016" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/sla/sql-data/)
 - [English](/support/sla/sql-data-en/)
 # SLA for SQL Database
 
-**Basic, Standard and Premium Tiers**
+**Web and Business**
 
-We guarantee at least 99.99% of the time customers will have connectivity between their single or elastic Basic, Standard, or Premium Azure SQL Database and our Internet gateway. 
+We guarantee at least 99.9% of the time customers will have connectivity between their Web or Business Microsoft Azure SQL Database and our Internet gateway. Availability is calculated by monthly billing cycle.
 
-**Web and Business Tiers (retired)**
+**Basic, Standard and Premium**
 
-We guarantee at least 99.9% of the time customers will have connectivity between their Web or Business Azure SQL Database and our Internet gateway.
-
-
+We guarantee at least 99.99% of the time customers will have connectivity between their Basic, Standard, or Premium Microsoft Azure SQL Database and our Internet gateway. Availability is calculated by monthly billing cycle. 
 
 
 ## Introduction
@@ -123,46 +121,43 @@ This SLA and any applicable Service Levels do not apply to any performance or av
  
 ### Additional Definitions
 
- "**Database**" means any Web, Business, single or elastic Basic, Standard, or Premium Azure SQL Database.
+ "**Database**" means any Web, Business, Basic, Standard, or Premium Azure SQL Database.
 
 
-### Monthly Uptime Calculation and Service Levels for Azure SQL Database Service (single or elastic Basic, Standard, and Premium Tiers) 
-
-1. "**Maximum Available Minutes**"  is the total number of minutes that a given single or elastic Basic, Standard, or Premium Database has been deployed in Azure during a billing month in a given Azure subscription. 
-
-2. "**Downtime**"  is the total accumulated minutes during a billing month for a given Azure subscription during which a given single or elastic Basic, Standard, or Premium Database is unavailable. A minute is considered unavailable for a given Database if all continuous attempts by Customer to establish a connection to the Database within the minute fail.
-
-3. "**Monthly Uptime Percentage**" for a given single or elastic Basic, Standard, or Premium Tier of the SQL Database Service is calculated as Maximum Available Minutes less Downtime divided by Maximum Available Minutes in a billing month for a given Azure subscription. Monthly Uptime Percentage is represented by the following formula:
-
-	Monthly Uptime % = (Maximum Available Minutes − Downtime) ÷ Maximum Available Minutes 
-
-4. The following Service Levels and Service Credits are applicable to Customer’s use of the Basic, Standard, and Premium Tiers of the Azure SQL Database Service:
-
-	Monthly Uptime Percentage	|Service Credit
-	----------------------------|---------
-	<99.99%				        |10% 
-	<99%				        |25% 
-
-### Monthly Uptime Calculation and Service Levels for Azure SQL Database Service (Web and Business Tiers)
+### Monthly Uptime Calculation and Service Levels for Azure SQL Database Service (Web, and Business Tiers) 
 
 1. "**Deployment Minutes**" is the total number of minutes that a given Web or Business Database has been deployed in Azure during a billing month. 
- 
-2. "**Maximum Available Minutes**" " is the sum of all Deployment Minutes across all Web and Business Databases for a given Azure subscription during a billing month.
- 
-3. "**Downtime**"  is the total accumulated Deployment Minutes across all Web and Business Databases deployed by Customer in a given Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if all continuous attempts by Customer to establish a connection to the Database within the minute fail. 
+
+2. "**Maximum Available Minutes**" is the sum of all Deployment Minutes across all Web and Business Databases for a given Azure subscription during a billing month.
+
+3. "**Downtime**" is the total accumulated Deployment Minutes across all Web and Business Databases deployed by Customer in a given Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if all continuous attempts by Customer to establish a connection to the Database within the minute fail. 
 
 4. "**Monthly Uptime Percentage**" for the Web and Business Tiers of the SQL Database Service is calculated as Maximum Available Minutes less Downtime divided by Maximum Available Minutes in a billing month for a given Azure subscription. Monthly Uptime Percentage is represented by the following formula:
 
-	Monthly Uptime % = (Maximum Available Minutes-Downtime) / Maximum Available Minutes
+	Monthly Uptime % = (Maximum Available Minutes − Downtime) ÷ Maximum Available Minutes 
 
-5.The following Service Levels and Service Credits are applicable to Customer’s use of the Web and Business Tiers of the Azure SQL Database Service:
+5. The following Service Levels and Service Credits are applicable to Customer's use of the Web and Business Tiers of the Azure SQL Database Service:
+
+	Monthly Uptime Percentage	|Service Credit
+	----------------------------|---------
+	<99.95%				        |10% 
+	<99%				        |25% 
+
+### Monthly Uptime Calculation and Service Levels for Azure SQL Database Service (Basic, Standard, and Premium Tiers) 
+
+1. "**Deployment Minutes**" is the total number of minutes that a given Basic, Standard, or Premium Database has been deployed in Azure during a billing month. 
+ 
+2. "**Maximum Available Minutes**" is the sum of all Deployment Minutes across all Basic, Standard, and Premium Databases for a given Azure subscription during a billing month.
+ 
+3. "**Downtime**" is the total accumulated Deployment Minutes across all Basic, Standard, and Premium Databases deployed by Customer in a given Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if all continuous attempts by Customer to establish a connection to the Database within the minute fail. 
+
+4. "**Monthly Uptime Percentage**" for the Basic, Standard, and Premium Tiers of the SQL Database Service is calculated as Maximum Available Minutes less Downtime divided by Maximum Available Minutes in a billing month for a given Azure subscription. Monthly Uptime Percentage is represented by the following formula:
+
+	Monthly Uptime  % = (Maximum Available Minutes − Downtime) ÷ Maximum Available Minutes 
+
+5. The following Service Levels and Service Credits are applicable to Customer's use of the Basic, Standard, and Premium Tiers of the Azure SQL Database Service:
 	
 	Monthly Uptime Percentage	|Service Credit
 	----------------------------|---------
-	<99.9%				        |10% 
+	<99.95%				        |10% 
 	<99%				        |25% 
-
-# Version History
-[1.1](/support/sla/sql-data-en/)  Last updated: May 2016  
-Release notes: Revised to reflect the general availability of Elastic Database on 5/1/2016  
-[1.0](/support/sla/sql-data-en-v1/)  Last updated: May 2015
