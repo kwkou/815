@@ -325,7 +325,7 @@ python
 
 当创建池时，应定义 [PoolAddParameter][py_pooladdparam] 用于指定池的几个属性：
 
-- 池的 **ID**（*id* - 必需）<p/>与 Batch 中的大多数实体一样，新池在你的 Batch 帐户中必须具有唯一 ID。代码将使用池 ID 引用此池，这也是你在 Azure [门户][azure_portal]中识别池的方式。
+- 池的 **ID**（*id* - 必需）<p/>与 Batch 中的大多数实体一样，新池在你的 Batch 帐户中必须具有唯一 ID。代码将使用池 ID 引用此池，这也是你在 Azure [门户预览][azure_portal]中识别池的方式。
 
 - **计算节点数**（*target\_dedicated* - 必需）<p/>指定应在池中部署多少个 VM。必须注意，所有 Batch 帐户都有默认**配额**，用于限制 Batch 帐户中的**核心**（因此也包括计算节点）数目。可以在 [Quotas and limits for the Azure Batch service（Azure Batch 服务的配额和限制）](/documentation/articles/batch-quota-limit/)中找到默认配额以及如何[提高配额](/documentation/articles/batch-quota-limit/#increase-a-quota)（例如 Batch 帐户中的核心数目上限）的说明。如果你有类似于“为什么我的池不能包含 X 个以上的节点？”的疑惑，则原因可能在于此核心配额。
 

@@ -396,7 +396,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 间歇性的问题也有可能会导致任务挂起，或者花费很长时间才能完成执行。可为任务设置最长执行时间。如果超过此时间，Batch 会中断任务应用程序。
 
-### <a name="connecting-to-compute-nodes"></>连接到计算节点
+### <a name="connecting-to-compute-nodes"></a>连接到计算节点
 
 可通过远程登录到计算节点来进一步执行调试和故障排除。可以使用 Azure 门户预览下载 Windows 节点的远程桌面协议 (RDP) 文件，并获取 Linux 节点的安全外壳 (SSH) 连接信息。也可以使用 Batch API（例如，使用 [Batch .NET][net_rdpfile] 或 [Batch Python](/documentation/articles/batch-linux-nodes/#connect-to-linux-nodes)）执行此操作。
 

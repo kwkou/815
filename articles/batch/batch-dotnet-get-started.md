@@ -16,7 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/batch-dotnet-get-started/)
-
+- [Python](/documentation/articles/batch-python-tutorial/)
 
 在我们分步讨论 C# 示例应用程序时，了解本文中的 [Azure Batch][azure_batch] 和 [Batch .NET][net_api] 库的基础知识。我们将探讨该示例应用程序如何利用 Batch 服务来处理云中的并行工作负荷，以及如何与 [Azure 存储空间](/documentation/articles/storage-introduction/)交互来暂存和检索文件。你会了解常见的 Batch 应用程序工作流技术。你还会大致了解 Batch 的主要组件，例如作业、任务、池和计算节点。
 
