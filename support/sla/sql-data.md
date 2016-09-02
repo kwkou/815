@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal" ms.date="09/2016" wacn.date="09/2016" wacn.lang="cn"/>
+<tags ms.service="legal" ms.date="08/2016" wacn.date="08/2016" wacn.lang="cn"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/sla/sql-data/)
@@ -156,6 +156,6 @@
 
 	
 #	版本历史记录
-[1.1](/support/sla/sql-data/)  最后更新日期：2016 年 9 月    
-发布说明：于 2016 年 9 月 1 日修订，以反映弹性数据库的一般可用性    
-[1.0](/support/sla/sql-data-v1/)  最后更新日期：2016 年 5 月
+[1.1](/support/sla/sql-data/)  最后更新日期：2016 年 5 月  
+发布说明：于 2016 年 5 月 1 日修订，以反映弹性数据库的一般可用性  
+[1.0](/support/sla/sql-data-v1/)  最后更新日期：2015 年 5 月
