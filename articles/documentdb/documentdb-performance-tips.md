@@ -67,13 +67,14 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 <a id="same-region"></a>
 4. **将客户端并置在同一个 Azure 区域以提高性能**
 
-    如果可能，请将任何调用 DocumentDB 的应用程序放在与 DocumentDB 数据库相同的区域中。通过大致的比较发现，在同一区域中对 DocumentDB 的调用可在 1-2 毫秒内完成，而美国西岸和美国东岸之间的延迟则大于 50 毫秒。根据请求采用的路由，各项请求从客户端传递到 Azure 数据中心边界时的此类延迟可能有所不同。确保调用方应用程序位于与预配的 DocumentDB 终结点相同的 Azure 区域中，有可能会实现最低的延迟。有关可用区域的列表，请参阅 [Azure Regions](https://azure.microsoft.com/regions/#services)（Azure 区域）。
+    如果可能，请将任何调用 DocumentDB 的应用程序放在与 DocumentDB 数据库相同的区域中。通过大致的比较发现，在同一区域中对 DocumentDB 的调用可在 1-2 毫秒内完成，而中国东部和中国北部之间的延迟则大于 50 毫秒。根据请求采用的路由，各项请求从客户端传递到 Azure 数据中心边界时的此类延迟可能有所不同。确保调用方应用程序位于与预配的 DocumentDB 终结点相同的 Azure 区域中，有可能会实现最低的延迟。
 
     ![DocumentDB 连接策略演示](./media/documentdb-performance-tips/azure-documentdb-same-region.png) 
+    
 <a id="increase-threads"></a>
 5. **增加线程/任务数目**
 
-    由于对 DocumentDB 的调用是通过网络执行的，因此你可能需要改变请求的并行度，以便最大程度地减少客户端应用程序等待请求的时间。例如，如果使用 .NET 的[任务并行库](https://msdn.microsoft.com//library/dd460717.aspx)，请创建大约几百个读取或写入 DocumentDB 的任务。
+    由于对 DocumentDB 的调用是通过网络执行的，因此你可能需要改变请求的并行度，以便最大程度地减少客户端应用程序等待请求的时间。例如，如果使用 .NET 的[任务并行库](https://msdn.microsoft.com/zh-cn/library/dd460717.aspx)，请创建大约几百个读取或写入 DocumentDB 的任务。
 
 ## SDK 用法
 
@@ -87,15 +88,15 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
     <a id="max-connection"></a>
 3. **增加每台主机的 System.Net MaxConnections**
 
-    默认情况下，DocumentDB 请求是通过 HTTPS/REST 发出的，并受制于每个主机名或 IP 地址的默认连接限制。可能需要将此值设置为较大的值 (100-1000)，以便客户端库能够同时利用多个连接来访问 DocumentDB。在 .NET SDK 1.8.0 和更高版本中，[ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit.aspx) 的默认值为 50，若要更改此值，可将 [Documents.Client.ConnectionPolicy.MaxConnectionLimit](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.connectionpolicy.maxconnectionlimit.aspx) 设置为更大的值。
+    默认情况下，DocumentDB 请求是通过 HTTPS/REST 发出的，并受制于每个主机名或 IP 地址的默认连接限制。可能需要将此值设置为较大的值 (100-1000)，以便客户端库能够同时利用多个连接来访问 DocumentDB。在 .NET SDK 1.8.0 和更高版本中，[ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/zh-cn/library/system.net.servicepointmanager.defaultconnectionlimit.aspx) 的默认值为 50，若要更改此值，可将 [Documents.Client.ConnectionPolicy.MaxConnectionLimit](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.connectionpolicy.maxconnectionlimit.aspx) 设置为更大的值。
 
 4. **打开服务器端 GC**
     
-    在某些情况下，降低垃圾收集的频率可能会有帮助。在 .NET 中，应将 [gcServer](https://msdn.microsoft.com/library/ms229357.aspx) 设置为 true。
+    在某些情况下，降低垃圾收集的频率可能会有帮助。在 .NET 中，应将 [gcServer](https://msdn.microsoft.com/zh-cn/library/ms229357.aspx) 设置为 true。
 
 5. **按 RetryAfter 间隔实现退让**
  
-    在性能测试期间，应该增加负载，直到系统对小部分请求进行限制为止。如果受到限制，客户端应用程序应按照服务器指定的重试间隔在限制时退让。这可确保最大程度地减少等待重试的时间。重试策略支持包含在 DocumentDB [.NET](/documentation/articles/documentdb-sdk-dotnet/) 和 [Java](/documentation/articles/documentdb-sdk-java/) 1.8.0 和更高版本中和 [Python](/documentation/articles/documentdb-sdk-python/) 1.9.0 或更高版本中。有关详细信息，请参阅 [Exceeding reserved throughput limits](/documentation/articles/documentdb-request-units/#exceeding-reserved-throughput-limits)（超过保留的吞吐量限制）和 [RetryAfter](https://msdn.microsoft.com/library/microsoft.azure.documents.documentclientexception.retryafter.aspx)。
+    在性能测试期间，应该增加负载，直到系统对小部分请求进行限制为止。如果受到限制，客户端应用程序应按照服务器指定的重试间隔在限制时退让。这可确保最大程度地减少等待重试的时间。重试策略支持包含在 DocumentDB [.NET](/documentation/articles/documentdb-sdk-dotnet/) 和 [Java](/documentation/articles/documentdb-sdk-java/) 1.8.0 和更高版本中和 [Python](/documentation/articles/documentdb-sdk-python/) 1.9.0 或更高版本中。有关详细信息，请参阅 [Exceeding reserved throughput limits](/documentation/articles/documentdb-request-units/#exceeding-reserved-throughput-limits)（超过保留的吞吐量限制）和 [RetryAfter](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.documentclientexception.retryafter.aspx)。
 
 6. **增大客户端工作负荷**
 
