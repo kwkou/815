@@ -33,9 +33,9 @@
 ## DPM 保护代理  
 若要在 Exchange Server 上安装 DPM 保护代理，请遵循以下步骤：
 
-1. 确保已正确配置防火墙。请参阅[配置代理的防火墙异常](https://technet.microsoft.com/library/Hh758204.aspx)。
+1. 确保已正确配置防火墙。请参阅[配置代理的防火墙异常](https://technet.microsoft.com/zh-cn/library/Hh758204.aspx)。
 
-2. 在 DPM 管理员控制台中单击“管理”>“代理”>“安装”，在 Exchange Server 上安装代理。有关详细步骤，请参阅[安装 DPM 保护代理](https://technet.microsoft.com/library/hh758186.aspx?f=255&MSPPError=-2147217396)。
+2. 在 DPM 管理员控制台中单击“管理”>“代理”>“安装”，在 Exchange Server 上安装代理。有关详细步骤，请参阅[安装 DPM 保护代理](https://technet.microsoft.com/zh-cn/library/hh758186.aspx?f=255&MSPPError=-2147217396)。
 
 ## 为 Exchange Server 创建保护组
 
@@ -47,7 +47,7 @@
 
 4. 选择想要保护的 Exchange Server 数据库，然后单击“下一步”。
 
-    >[AZURE.NOTE]如果要保护 Exchange 2013，请检查 [Exchange 2013 先决条件](https://technet.microsoft.com/library/dn751029.aspx)。
+    >[AZURE.NOTE]如果要保护 Exchange 2013，请检查 [Exchange 2013 先决条件](https://technet.microsoft.com/zh-cn/library/dn751029.aspx)。
 
     下例中选择了Exchange 2010 数据库。
 

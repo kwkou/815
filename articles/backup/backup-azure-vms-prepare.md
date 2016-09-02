@@ -15,9 +15,6 @@
 
 # 进行备份 Azure 虚拟机所需的环境准备
 
-> [AZURE.SELECTOR]
-- [经典模型](/documentation/articles/backup-azure-vms-prepare)
-
 在备份 Azure 虚拟机 (VM) 之前，必须满足三个条件。
 
 - 你需要在与 VM 相同的区域中创建备份保管库，或标识现有的备份保管库。
@@ -27,7 +24,7 @@
 如果你确定你的环境满足这些条件，请转到[有关备份 VM 的文章](/documentation/articles/backup-azure-vms/)。否则，请继续阅读本文，其中将会引导你逐步完成准备环境来备份 Azure VM 的过程。
 
 
-## 备份和还原 VM 时的限制
+## <a name="limitations"></a>备份和还原 VM 时的限制
 
 >[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。以下列表提供了在经典模型中部署时的限制。
 
@@ -35,7 +32,7 @@
 - 不支持备份使用保留 IP 地址且未定义终结点的虚拟机。
 - 不支持在恢复过程中替换现有虚拟机。首先删除现有虚拟机以及任何关联的磁盘，然后从备份恢复数据。
 - 不支持跨区域备份和恢复。
-- Azure 的所有公共区域都支持使用 Azure 备份服务来备份虚拟机（请参阅受支持区域的[清单](https://azure.microsoft.com/regions/#services)）。在创建保管库期间，如果你要寻找的区域目前不受支持，则不会在下拉列表中显示它。
+- Azure 的所有公共区域都支持使用 Azure 备份服务来备份虚拟机。在创建保管库期间，如果你要寻找的区域目前不受支持，则不会在下拉列表中显示它。
 - 只有特定的操作系统版本才支持使用 Azure 备份服务备份虚拟机。
   - **Linux**：请参阅 [Azure 认可的分发版列表](/documentation/articles/virtual-machines-linux-endorsed-distros/)。只要虚拟机上装有 VM 代理，其他自带的 Linux 分发版应该也能正常运行。
   - **Windows Server**：不支持低于 Windows Server 2008 R2 的版本。
@@ -54,13 +51,13 @@
 
 创建备份保管库的步骤：
 
-1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](http://manage.windowsazure.cn/)。
 
-2. 在 Azure 门户中，单击“新建”>“混合集成”>“备份”。单击“备份”时，会自动切换到经典门户（在“注释”之后显示）。
+2. 在 Azure 门户预览中，单击“新建”>“混合集成”>“备份”。单击“备份”时，会自动切换到经典管理门户（在“注释”之后显示）。
 
     ![Ibiza 门户](./media/backup-azure-vms-prepare/Ibiza-portal-backup01.png)
 
-    >[AZURE.NOTE] 如果你的订阅上次是在经典门户中使用的，则你的订阅可能会在经典门户中打开。在此情况下，若要创建备份保管库，请单击“新建”>“数据服务”>“恢复服务”>“备份保管库”>“快速创建”（请参见下图）。
+    >[AZURE.NOTE] 如果你的订阅上次是在经典管理门户中使用的，则你的订阅可能会在经典管理门户中打开。在此情况下，若要创建备份保管库，请单击“新建”>“数据服务”>“恢复服务”>“备份保管库”>“快速创建”（请参见下图）。
 
     ![创建备份保管库](./media/backup-azure-vms-prepare/backup_vaultcreate.png)
 
@@ -70,7 +67,7 @@
 
 5. 在“订阅”中，选择要与备份保管库关联的订阅。仅当组织帐户与多个 Azure 订阅关联时，才会有多个选项。
 
-6. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在经典门户底部监视状态通知。
+6. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在经典管理门户底部监视状态通知。
 
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)
 
@@ -83,11 +80,11 @@
     ![“仪表板”页中的虚拟机备份说明](./media/backup-azure-vms-prepare/vmbackup-instructions.png)
 
 
-## 网络连接
+## <a name="network-connectivity"></a>网络连接
 
 为了管理 VM 快照，备份扩展需要连接 Azure 公共 IP 地址。如果未建立适当的 Internet 连接，虚拟机的 HTTP 请求将会超时，并且备份操作将会失败。如果你的部署中配置了访问限制（如通过网络安全组 (NSG)），请选择其中一个选项来提供备份流量的明确路径：
 
-- [Whitelist the Azure datacenter IP ranges（将 Azure 数据中心 IP 范围加入白名单）](http://www.microsoft.com/zh-cn/download/details.aspx?id=41653)- 请参阅相关文章以获取有关如何将 IP 地址加入白名单的说明。
+- [Whitelist the Azure datacenter IP ranges（将 Azure 数据中心 IP 范围加入白名单）](http://www.microsoft.com/download/details.aspx?id=41653)- 请参阅相关文章以获取有关如何将 IP 地址加入白名单的说明。
 - 部署 HTTP 代理服务器来路由流量。
 
 在确定使用哪个选项时，要取舍的不外乎是易管理性、控制粒度和成本等要素。
@@ -99,9 +96,9 @@
 
 ### 将 Azure 数据中心 IP 范围加入白名单
 
-若要将 Azure 数据中心 IP 范围加入白名单，请参阅 [Azure website（Azure 网站）](http://www.microsoft.com/zh-cn/download/details.aspx?id=41653)以获取有关 IP 范围的详细信息和说明。
+若要将 Azure 数据中心 IP 范围加入白名单，请参阅 [Azure website（Azure 网站）](http://www.microsoft.com/download/details.aspx?id=41653)以获取有关 IP 范围的详细信息和说明。
 
-### 使用 HTTP 代理进行 VM 备份
+### <a name="using-an-http-proxy-for-vm-backups"></a>使用 HTTP 代理进行 VM 备份
 备份 VM 时，VM 上的备份扩展会使用 HTTPS API 将快照管理命令发送到 Azure 存储空间。将通过 HTTP 代理路由备份扩展流量，因为它是为了访问公共 Internet 而配置的唯一组件。
 
 >[AZURE.NOTE] 至于应该使用何种代理软件，我们不提供任何建议。请确保你选取的代理可以进行下述配置步骤。
@@ -120,7 +117,7 @@
 ###### 对于 Windows 计算机
 将设置本地系统帐户的代理服务器配置。
 
-1. 下载 [PsExec](https://technet.microsoft.com/sysinternals/bb897553)
+1. 下载 [PsExec](https://technet.microsoft.com/zh-cn/sysinternals/bb897553)
 2. 在权限提升的提示符下运行以下命令：
      
      	psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"
@@ -160,7 +157,7 @@
 	    HttpProxy.Port=<proxy port>
 	    
 
-#### 步骤 2.在代理服务器上允许传入连接：
+#### <a name="2-network-connectivity" id="using-an-http-proxy-for-vm-backups"></a>步骤 2.在代理服务器上允许传入连接：
 
 1. 在代理服务器上打开 Windows 防火墙。访问防火墙的最简单方法搜索“具有高级安全性的 Windows 防火墙”。
 
@@ -196,7 +193,7 @@
 确保使用与你的部署相对应的详细信息替换示例中的名称。
 
 
-## VM 代理
+## <a name="vm-agent"></a>VM 代理
 
 在备份 Azure 虚拟机之前，应确保 Azure VM 代理已正确安装到虚拟机上。由于创建虚拟机时 VM 代理是可选组件，因此请确保选中 VM 代理的复选框，然后才能对虚拟机进行预配。
 

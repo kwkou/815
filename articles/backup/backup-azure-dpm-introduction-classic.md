@@ -16,7 +16,6 @@
 # 使用 DPM 准备将工作负荷备份到 Azure
 
 > [AZURE.SELECTOR]
-- [Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup)
 - [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
 - [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic/)
 - [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic)
@@ -44,7 +43,7 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 ## DPM 服务器备份的工作原理
 若要备份虚拟机，首先需要获得数据的时间点快照。Azure 备份服务在计划的时间启动备份作业，并触发要拍摄快照的备份扩展。备份扩展会与来宾内部的 VSS 服务进行协调以确保一致性，并会在达成一致后调用 Azure 存储服务的 Blob 快照 API。这样做可以获得虚拟机磁盘的一致性快照，不必关闭虚拟机。
 
-拍摄快照后，数据将由 Azure 备份服务传输到备份保管库中。该服务负责确定并传输自上次备份以来进行了更改的块，使备份存储和网络更高效。数据传输完成后，将会删除快照并创建恢复点。在 Azure 管理门户中，可以查看此恢复点。
+拍摄快照后，数据将由 Azure 备份服务传输到备份保管库中。该服务负责确定并传输自上次备份以来进行了更改的块，使备份存储和网络更高效。数据传输完成后，将会删除快照并创建恢复点。在 Azure 经典管理门户中，可以查看此恢复点。
 
 >[AZURE.NOTE] Linux 虚拟机只能使用文件一致性备份。
 
@@ -69,7 +68,7 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 - DPM 服务器上应已安装 Windows PowerShell 和 .NET Framework 4.5。
 - DPM 可将大多数工作负载备份到 Azure 备份。有关所支持内容的完整列表，请参阅下面的 Azure 备份支持项。
 - 使用“复制到磁带”选项无法恢复存储在 Azure 备份中的数据。
-- 你需要一个启用了 Azure 备份功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。阅读 [Azure 备份定价](/pricing/details/backup/)的相关信息。
+- 你需要一个启用了 Azure 备份功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。阅读 [Azure 备份定价](/pricing/details/back-up/)的相关信息。
 - 若要使用 Azure 备份，应在要备份的服务器上安装 Azure 备份代理。每台服务器上的可用本地存储空间必须至少为要备份的数据大小的 10%。例如，如果要备份 100 GB 的数据，则暂存位置至少需要 10 GB 的可用空间。尽管最低要求为 10%，但我们建议为缓存位置腾出 15% 的本地可用存储空间。
 - 数据将存储在 Azure 保管库存储中。你可以备份到 Azure 备份保管库的数据量没有限制，但数据源（例如虚拟机或数据库）的大小不应超过 54400 GB。
 

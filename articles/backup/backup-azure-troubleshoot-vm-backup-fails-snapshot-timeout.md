@@ -23,7 +23,7 @@
 
 ## 症状
 
-针对基础结构即服务 (IaaS) VM 的 Microsoft Azure 备份失败，Azure 门户中的作业错误详细信息中返回以下错误消息。
+针对基础结构即服务 (IaaS) VM 的 Azure 备份失败，Azure 门户中的作业错误详细信息中返回以下错误消息。
 
 **无法与 VM 代理通信以获取快照状态 - 快照 VM 子任务超时。**
 
@@ -31,7 +31,7 @@
 此错误有四种常见原因：
 
 - VM 无法访问 Internet。
-- VM 中安装的 Microsoft Azure VM 代理已过时（适用于 Linux VM）。
+- VM 中安装的 Azure VM 代理已过时（适用于 Linux VM）。
 - 无法更新或加载备份扩展。
 - 无法检索快照状态或无法创建快照。
 
@@ -59,12 +59,12 @@ VM 无法根据部署要求访问 Internet，或者现有的限制阻止访问 A
 
 了解如何[为 VM 备份设置 HTTP 代理](/documentation/articles/backup-azure-vms-prepare#using-an-http-proxy-for-vm-backups/)。
 
-## 原因 2：VM 中安装的 Microsoft Azure VM 代理已过时（适用于 Linux VM）
+## 原因 2：VM 中安装的 Azure VM 代理已过时（适用于 Linux VM）
 
 ### 解决方案
 对于 Linux VM，与代理或扩展相关的大多数失败是由于影响旧 VM 代理的问题所造成的。作为一般指导，排查此问题的首要步骤如下：
 
-1. [安装最新的 Azure VM 代理](https://acom-swtest-2.azurewebsites.net/documentation/articles/virtual-machines-linux-update-agent/)。
+1. [安装最新的 Azure VM 代理](/documentation/articles/virtual-machines-linux-update-agent/)。
 2. 确保 Azure 代理在 VM 上运行。为此，请运行以下命令：`ps -e`
 
     如果此进程未运行，请使用以下命令来重新启动它。
@@ -110,7 +110,7 @@ VMSnapshot Linux（备份使用的扩展）的最新版本是 1.0.91.0
 
 ### 卸载扩展
 
-1. 转到 [Azure 门户](https://ms.portal.azure.cn/)。
+1. 转到 [Azure 门户预览](https://portal.azure.cn/)。
 2. 找到存在备份问题的特定 VM。
 3. 单击“设置”。
 4. 单击“扩展”。

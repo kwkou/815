@@ -57,7 +57,7 @@
 | 还原 | 备份保管库和目标存储帐户位于两个不同的区域 - 请确保在还原操作中指定的存储帐户与备份保管库位于相同的 Azure 区域。 | 无 |
 | 还原 | 不支持为还原操作指定的存储帐户 - 仅支持具有本地冗余或地域冗余复制设置的“基本/标准”存储帐户。请选择支持的存储帐户 | 无 |
 | 还原 | 针对还原操作指定的存储帐户类型不处于在线状态 - 请确保在还原操作中指定的存储帐户处于在线状态 | 在 Azure 存储空间中出现暂时性错误或断电时，可能会发生这种情况。请选择另一个存储帐户。 |
-| 还原 | 已达到资源组配额限制 - 请从 Azure 门户中删除某些资源组，或者与 Azure 支持部门联系，请求他们提高限制。 | 无 |
+| 还原 | 已达到资源组配额限制 - 请从 Azure 门户预览中删除某些资源组，或者与 Azure 支持部门联系，请求他们提高限制。 | 无 |
 | 还原 | 所选子网不存在 - 请选择已存在的子网 | 无 |
 
 
@@ -127,8 +127,8 @@ VM 备份依赖于向底层存储发出快照命令。如果无法访问存储�
 正确完成名称解析后，还需要提供对 Azure IP 的访问权限。若要取消阻止对 Azure 基础结构的访问，请执行以下步骤之一：
 
 1. 将 Azure 数据中心 IP 范围加入允许列表。
-    - 获取要列入允许列表的 [Azure 数据中心 IP](https://www.microsoft.com/zh-cn/download/details.aspx?id=41653)。
-    - 使用 [New-NetRoute](https://technet.microsoft.com/library/zh-cn/hh826148.aspx) cmdlet 取消阻止 IP。在 Azure VM 上提升权限的 PowerShell 窗口中运行此 cmdlet（以管理员身份运行）。
+    - 获取要列入允许列表的 [Azure 数据中心 IP](https://www.microsoft.com/download/details.aspx?id=41653)。
+    - 使用 [New-NetRoute](https://technet.microsoft.com/zh-cn/library/zh-cn/hh826148.aspx) cmdlet 取消阻止 IP。在 Azure VM 上提升权限的 PowerShell 窗口中运行此 cmdlet（以管理员身份运行）。
     - 向 NSG 添加规则（如果已创建规则），以允许访问这些 IP。
 2. 为 HTTP 流量创建路径
     - 如果你指定了某种网络限制（例如网络安全组），请部署 HTTP 代理服务器来路由流量。可在[此处](/documentation/articles/backup-azure-vms-prepare/#2-network-connectivity)找到部署 HTTP 代理服务器的步骤。

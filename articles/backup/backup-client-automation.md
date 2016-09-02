@@ -49,12 +49,12 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 2. 恢复服务保管库是一种 ARM 资源，因此需要将它放在资源组中。可以使用现有资源组，也可以创建新组。创建新的资源组时，请指定资源组的名称和位置。
 
     
-    	PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "West US"
+    	PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "China North"
     
 
 3. 使用 **New-AzureRmRecoveryServicesVault** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。
     
-	PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
+	PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "China North"
     
 
 4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
@@ -131,7 +131,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 	PS C:\> $credsfilename C:\downloads\testvault\_Sun Apr 10 2016.VaultCredentials
 
 
-在 Windows Server 或 Windows 客户端计算机上，运行 [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx) cmdlet 以将计算机注册到保管库。
+在 Windows Server 或 Windows 客户端计算机上，运行 [Start-OBRegistration](https://technet.microsoft.com/zh-cn/library/hh770398%28v=wps.630%29.aspx) cmdlet 以将计算机注册到保管库。
 
 
 	PS C:\> $cred = $credspath + $credsfilename
@@ -209,7 +209,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 	PS C:\> $retentionpolicy = New-OBRetentionPolicy -RetentionDays 7
 
 
-必须使用 cmdlet [Set-OBRetentionPolicy](https://technet.microsoft.com/library/hh770405) 将保留策略与主要策略相关联：
+必须使用 cmdlet [Set-OBRetentionPolicy](https://technet.microsoft.com/zh-cn/library/hh770405) 将保留策略与主要策略相关联：
 
 				
 	PS C:\> Set-OBRetentionPolicy -Policy $newpolicy -RetentionPolicy $retentionpolicy
@@ -242,7 +242,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 可以在 New-OBFileSpec 命令中使用 -NonRecursive 标志来完成后一种指定。
 
-在以下示例中，我们要备份卷 C: 和 D:，并排除 Windows 文件夹和任何临时文件夹中的操作系统二进制文件。为此，我们将使用 [New-OBFileSpec](https://technet.microsoft.com/library/hh770408) cmdlet 创建两个文件规范 - 一个用于包含，一个用于排除。创建文件规范后，使用 [Add-OBFileSpec](https://technet.microsoft.com/library/hh770424) cmdlet 将它们与策略相关联。
+在以下示例中，我们要备份卷 C: 和 D:，并排除 Windows 文件夹和任何临时文件夹中的操作系统二进制文件。为此，我们将使用 [New-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770408) cmdlet 创建两个文件规范 - 一个用于包含，一个用于排除。创建文件规范后，使用 [Add-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770424) cmdlet 将它们与策略相关联。
 
 
 	PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:", "D:")

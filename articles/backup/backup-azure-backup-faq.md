@@ -14,9 +14,8 @@
    wacn.date="08/08/2016"/>
 
 # Azure 备份服务 - 常见问题
-> [AZURE.SELECTOR]
-- [经典模式备份常见问题](/documentation/articles/backup-azure-backup-faq/)
-本文提供有关 Azure 备份服务常见问题（及相应解答）的列表。我们的社区可在短时间内提供解答，如果某个问题被经常提出，我们会将它添加到本文中。问题的解答通常提供参考或支持信息。你可以在本文或相关章的 Disqus 部分中提出有关 Azure 备份的问题。你还可以在[论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup)中发布有关 Azure 备份服务的问题。
+
+本文提供有关 Azure 备份服务常见问题（及相应解答）的列表。我们的社区可在短时间内提供解答，如果某个问题被经常提出，我们会将它添加到本文中。问题的解答通常提供参考或支持信息。你可以在本文或相关章的 Disqus 部分中提出有关 Azure 备份的问题。你还可以在[论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazureonlinebackup)中发布有关 Azure 备份服务的问题。
 
 ## 安装和配置
 **问 1.我可以在哪些受支持的操作系统上使用 Azure 备份向 Azure 备份数据？** <br/>
@@ -44,7 +43,7 @@
 答 3.建议在最新的 SCDPM 更新汇总版本（截至 2015 年 7 月为 UR6）上安装[最新](http://aka.ms/azurebackup_agent)的 Azure 备份代理
 
 **问 4.在配置 Azure 备份代理时，系统提示我输入**保管库凭据**。保管库凭据会过期吗？
-A4.是的，保管库凭据在 48 小时后过期。如果该文件已过期，请登录到 Azure 经典门户并从你的备份保管库下载保管库凭据文件。
+A4.是的，保管库凭据在 48 小时后过期。如果该文件已过期，请登录到 Azure 经典管理门户并从你的备份保管库下载保管库凭据文件。
 
 **问 5.在每个 Azure 订阅中可以创建的备份保管库数量是否有任何限制？** <br/>
 答 5.是的。截至 2015 年 7 月，你可以在每个订阅中创建 25 个保管库。如果你需要更多的保管库，请创建新的订阅。
@@ -63,7 +62,7 @@ A9.备份数据发送到它所注册到的备份服务的数据中心。更改�
 
 **问 10.如果我重命名了用于将数据备份到 Azure 的 Windows 服务器，会发生什么情况？**<br/>
 A10.当你重命名服务器时，所有当前配置的备份都将停止。
-你需要向备份保管库注册服务器的新名称。当你创建新注册时，首次备份操作是完整备份而非增量备份。如果需要恢复以前备份到采用旧服务器名称的保管库的数据，可以使用“恢复数据”向导中“[**其他服务器**](backup-azure-restore-windows-server.md#recover-to-an-alternate-machine)”选项来恢复该数据。
+你需要向备份保管库注册服务器的新名称。当你创建新注册时，首次备份操作是完整备份而非增量备份。如果需要恢复以前备份到采用旧服务器名称的保管库的数据，可以使用“恢复数据”向导中“[**其他服务器**](/documentation/articles/backup-azure-restore-windows-server/#recover-to-an-alternate-machine)”选项来恢复该数据。
 
 
 **问 11.可以从哪些类型的驱动器备份文件和文件夹？** <br/>
@@ -130,10 +129,10 @@ A14.使用同一个保管库注册的任何服务器将能够恢复由使用同�
 答 23.若要将 Azure 备份与 SCDPM 配合使用，我们建议只有在安装 SCDPM 之后，才安装 Azure 备份代理。这可确保 Azure 备份代理能与 SCDPM 紧密集成，并直接通过 SCDPM 管理控制台在 Azure 中保护文件/文件夹、应用程序工作负荷和 VM。既不建议，也不支持在安装 Azure 备份代理之后，针对上述目的安装 SCDPM。
 
 **问 24.可以使用 Azure 备份代理指定为 Azure 备份策略一部分的文件路径的长度是多少？** <br/>  
-答 24.Azure 备份代理依赖于 NTFS。[文件路径长度规范受限于 Windows API](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths)。在备份文件路径长度大于 Windows API 所指定长度的文件时，客户可以选择备份备份文件的父文件夹或磁盘驱动器。
+答 24.Azure 备份代理依赖于 NTFS。[文件路径长度规范受限于 Windows API](https://msdn.microsoft.com/zh-cn/library/aa365247.aspx#fully_qualified_vs._relative_paths)。在备份文件路径长度大于 Windows API 所指定长度的文件时，客户可以选择备份备份文件的父文件夹或磁盘驱动器。
 
 **问 25.使用 Azure 备份代理的 Azure 备份策略的文件路径中允许哪些字符？** <br>  
-答 25.Azure 备份代理依赖于 NTFS。允许使用 [NTFS 支持的字符](https://msdn.microsoft.com/library/aa365247.aspx#naming_conventions)作为文件规范的一部分。
+答 25.Azure 备份代理依赖于 NTFS。允许使用 [NTFS 支持的字符](https://msdn.microsoft.com/zh-cn/library/aa365247.aspx#naming_conventions)作为文件规范的一部分。
 
 **问 26.是否可以使用 Azure 备份服务器为物体服务器创建裸机恢复 (BMR) 备份？** <br/>
 答 26.是的。
