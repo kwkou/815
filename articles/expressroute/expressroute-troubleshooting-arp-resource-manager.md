@@ -19,7 +19,7 @@
 
 本文将指导你完成相关步骤，以便了解 ExpressRoute 线路的 ARP 表。
 
->[AZURE.IMPORTANT] 本文档旨在帮助你诊断和修复简单问题。它不是为了替代 Azure 支持部门。如果你无法通过下述指南解决问题，则必须通过 [ Azure 支持部门](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)开具支持票证。
+>[AZURE.IMPORTANT] 本文档旨在帮助你诊断和修复简单问题。它不是为了替代 Azure 支持部门。如果你无法通过下述指南解决问题，则必须[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单。
 
 ## 地址解析协议 (ARP) 和 ARP 表
 地址解析协议 (ARP) 是在 [RFC 826](https://tools.ietf.org/html/rfc826) 中定义的第二层协议。ARP 用于映射以太网地址（MAC 地址）和 IP 地址。
@@ -128,7 +128,7 @@ ARP 表示例：
 ### 当 Azure 端出现问题时的 ARP 表
 
  - 如果 Azure 端存在问题，则不会为对等互连显示 ARP 表。 
- -  通过 [Azure 支持部门](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)开具一个支持票证。指出你的第 2 层连接有问题。 
+ -  [在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单。指出你的第 2 层连接有问题。 
 
 ## 后续步骤
 
@@ -136,6 +136,6 @@ ARP 表示例：
 	 - 获取路由摘要以确定 BGP 会话的状态 
 	 - 获取路由表以确定哪些前缀跨 ExpressRoute 播发
  - 通过查看输入/输出中的字节数来验证数据传输
- - 如果仍然存在问题，请通过 [Azure 支持部门](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)开具一个支持票证。
+ - 如果仍然存在问题，请[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单。
 
 <!---HONumber=Mooncake_0704_2016-->

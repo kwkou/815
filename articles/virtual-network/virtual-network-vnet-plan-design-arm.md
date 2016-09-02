@@ -79,7 +79,7 @@ VNet 包含以下属性。
 
 ### <a name="Limits"></a> 限制
 
-在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits/#networking-limits)。可以通过开具支持票证增加某些限制。
+在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits/#networking-limits)。可以通过[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单增加某些限制。
 
 ### 基于角色的访问控制 (RBAC)
 

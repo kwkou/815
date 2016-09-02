@@ -137,9 +137,9 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 
 ![从 Hyper-V 站点保护显示的示例步骤。](./media/site-recovery-monitoring-and-troubleshooting/animate01.gif)
 
-### 创建支持票证
+### 在线申请支持
 
-若要针对 ASR 开具支持票证，请使用 URL <http://aka.ms/getazuresupport> 联系 Azure 支持
+若需要对应 ASR 的帮助，请[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单
 
 ## 知识库文章
 

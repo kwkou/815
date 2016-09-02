@@ -76,7 +76,7 @@
 
 ##配额和限制
 
-有关配额和限制以及如何开具支持票证的信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
+有关配额和限制以及如何在线申请支持创建工单的信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
 
 
 

@@ -16,7 +16,7 @@
 存储帐户 | |1,000<sup>5</sup>
 策略 || 1,000,000<sup>6</sup>
 
-<sup>1</sup> 你可以通过开具支持票证，来请求更新此配额的限制。不要通过创建更多 AMS 帐户来提高限制，而是应提交支持票证。
+<sup>1</sup> 你可以通过[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，来请求更新此配额的限制。不要通过创建更多 AMS 帐户来提高限制，而是应[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单。
 
 <sup>2</sup> 这个数字包括已排队的、已完成的、活动的和已取消的作业。不包括已删除的作业。可以使用 **IJob.Delete** 或 **DELETE** HTTP 请求删除旧作业。
 

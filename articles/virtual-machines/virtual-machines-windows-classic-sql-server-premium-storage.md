@@ -55,7 +55,7 @@
 
 ![RegionalVNET][1]
 
-你可以提供 Azure.cn 支持票证以迁移到区域 VNET，Azure.cn 将进行更改，然后为完成迁移到区域 VNET，更改网络配置中的 AffinityGroup 属性。首先导出 PowerShell 中的网络配置，然后将 **VirtualNetworkSite** 元素中的 **AffinityGroup** 属性替换为 **Location** 属性。指定 `Location = XXXX`，其中 `XXXX` 是 Azure 区域。然后导入新配置。
+你可以[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单以迁移到区域 VNET，Azure.cn 将进行更改，然后为完成迁移到区域 VNET，更改网络配置中的 AffinityGroup 属性。首先导出 PowerShell 中的网络配置，然后将 **VirtualNetworkSite** 元素中的 **AffinityGroup** 属性替换为 **Location** 属性。指定 `Location = XXXX`，其中 `XXXX` 是 Azure 区域。然后导入新配置。
 
 例如，考虑以下 VNET 配置：
 

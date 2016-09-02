@@ -24,11 +24,11 @@
 
 ### 在一个订阅中可以设置多少个 IoT 中心实例？ 
 
-10 个。你可以创建 [Azure 支持票证][link-azuresupportticket]以提高此限制，但默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅限制）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案将预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个预配置的解决方案。
+10 个。你可以[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单以提高此限制，但默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅限制）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案将预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个预配置的解决方案。
 
 ### 在订阅中可以设置多少个 DocumentDB 实例？
 
-50 个。可以创建 [Azure 支持票证][link-azuresupportticket]以提高此限制，但是在默认情况下，对每个订阅只能设置 50 个 DocumentDB 实例。
+50 个。可以[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单以提高此限制，但是在默认情况下，对每个订阅只能设置 50 个 DocumentDB 实例。
 
 ### 在订阅中可以设置多少个免费必应地图 API？
 

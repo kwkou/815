@@ -46,7 +46,7 @@ Azure 支持运行由多家合作伙伴提供和维护的众多热门 Linux 分�
 
 注意：DS 系列 VM 可以访问高级存储 - 适用于 I/O 密集型工作负荷的以 SSD 为后盾的高性能低延迟存储。高级存储只在某些区域可用。有关详细信息，请参阅 **[Premium Storage: High-performance storage for Azure virtual machine workloads（高级存储：适用于 Azure 虚拟机工作负荷的高性能存储）](/documentation/articles/storage-premium-storage/)**。
 
-每个 Azure 订阅都有默认的配额限制，此限制会在要部署大量 VM 供项目使用时造成影响。每个订阅的当前限制是每区域 20 个 VM。若要提高此配额限制，可以开具支持票证来请求提高限制。有关配额限制的详细信息，请参阅 **[Azure Subscription Service Limits（Azure 订阅服务限制）](/documentation/articles/azure-subscription-service-limits/)**
+每个 Azure 订阅都有默认的配额限制，此限制会在要部署大量 VM 供项目使用时造成影响。每个订阅的当前限制是每区域 20 个 VM。若要提高此配额限制，可以[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单来请求提高限制。有关配额限制的详细信息，请参阅 **[Azure Subscription Service Limits（Azure 订阅服务限制）](/documentation/articles/azure-subscription-service-limits/)**
 
 ## 后续步骤
 
