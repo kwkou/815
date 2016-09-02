@@ -127,5 +127,5 @@
 
 ##后续步骤
 
-如果上述步骤无法解决问题，请开具[支持票证](/support/contact/)。
+如果上述步骤无法解决问题，请[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单。
 <!---HONumber=Mooncake_0711_2016-->

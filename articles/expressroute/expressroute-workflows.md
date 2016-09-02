@@ -102,7 +102,7 @@ BGP 预配状态可让你知道  Azure 边缘是否已启用 BGP 会话。必须
 
 如果播发的公共前缀状态设置为需要验证状态，则不会启用 BGP 会话，因为播发的前缀不符合任何路由注册表中的 AS 编号。
 
->[AZURE.IMPORTANT] 如果播发的公共前缀状态是*手动验证*状态，则你必须向 [Microsoft 支持](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)开具支持票证，并提供拥有播发 IP 地址的证明以及相关的自治系统编号。
+>[AZURE.IMPORTANT] 如果播发的公共前缀状态是*手动验证*状态，则你必须[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，并提供拥有播发 IP 地址的证明以及相关的自治系统编号。
 
 ## 后续步骤
 
