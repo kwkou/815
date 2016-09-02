@@ -26,7 +26,7 @@
 
  - **复制本地计算群集**：适用于首次将计算环境移至 Azure 等情况。可以通过增大节点任务的最大数目来更紧密地完成现有物理配置的镜像操作，前提是该配置目前允许在单个计算节点上执行多个任务。
 
-## 示例方案
+## <a name="example-scenario"></>示例方案
 
 以下示例说明了并行执行任务的好处。假设你的任务应用程序具有特定的 CPU 和内存要求，根据该要求，节点大小为 Standard\_D1 很合适。但若要在所需时间内执行作业，则需使用 1,000 个这样的节点。
 
@@ -123,18 +123,18 @@ json
 
 *批处理 ( Batch ) 资源管理器热度地图，其中显示了包含四个节点的池，每个节点当前正在执行四个任务*
 
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
+[api_net]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[api_rest]: http://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
 [batch_explorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
-[cloudpool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[enable_autoscaling]: https://msdn.microsoft.com/library/azure/dn820173.aspx
-[fill_type]: https://msdn.microsoft.com/zh-CN/library/microsoft.azure.batch.common.computenodefilltype.aspx
+[cloudpool]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx
+[enable_autoscaling]: https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx
+[fill_type]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.batch.common.computenodefilltype.aspx
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[maxtasks_net]: http://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx
-[rest_addpool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
+[maxtasks_net]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx
+[rest_addpool]: https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx
 [parallel_tasks_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/ParallelTasks
-[poolcreate_net]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx
-[task_schedule]: https://msdn.microsoft.com/library/microsoft.azure.batch.cloudpool.taskschedulingpolicy.aspx
+[poolcreate_net]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx
+[task_schedule]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.batch.cloudpool.taskschedulingpolicy.aspx
 
 [1]: ./media/batch-parallel-node-tasks/heat_map.png
 

@@ -13,9 +13,9 @@
    wacn.date="06/06/2016"/>
 
 # Azure 批处理 PowerShell cmdlet 入门
-本文将简要介绍可用于管理 Batch 帐户和处理 Batch 资源（例如池、作业和任务）的 Azure PowerShell cmdlet。你可以通过 Batch cmdlet 执行许多相同的任务，而 Batch cmdlet 可通过 Batch API 和 Azure 门户来执行。本文基于 Azure PowerShell 1.0 或更高版本中的 cmdlet。
+本文将简要介绍可用于管理 Batch 帐户和处理 Batch 资源（例如池、作业和任务）的 Azure PowerShell cmdlet。你可以通过 Batch cmdlet 执行许多相同的任务，而 Batch cmdlet 可通过 Batch API 和 Azure 门户预览来执行。本文基于 Azure PowerShell 1.0 或更高版本中的 cmdlet。
 
-如需 Batch cmdlet 的完整列表和详细的 cmdlet 语法，请参阅 [Azure Batch cmdlet 参考](https://msdn.microsoft.com/library/azure/mt125957.aspx)。
+如需 Batch cmdlet 的完整列表和详细的 cmdlet 语法，请参阅 [Azure Batch cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx)。
 
 
 ## 先决条件
@@ -37,7 +37,7 @@
 
 ### 创建 批处理( Batch )帐户
 
-**New-AzureRmBatchAccount** 可在指定的资源组中创建新的批处理( Batch ) 帐户。如果你没有资源组，可以通过运行 [New-AzureRmResourceGroup](https://msdn.microsoft.com/library/azure/mt603739.aspx) cmdlet 并在 **Location** 参数中指定一个 Azure 区域（例如“美国中部”）来创建资源组。例如：
+**New-AzureRmBatchAccount** 可在指定的资源组中创建新的批处理( Batch ) 帐户。如果你没有资源组，可以通过运行 [New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/azure/mt603739.aspx) cmdlet 并在 **Location** 参数中指定一个 Azure 区域（例如“美国中部”）来创建资源组。例如：
 
 
 		New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "China North"
@@ -158,7 +158,7 @@ OData 筛选器的替代方法是使用 **Id** 参数。若要查询 ID 为“my
 
 
 ## 后续步骤
-* 有关详细的 cmdlet 语法和示例，请参阅 [Azure Batch cmdlet reference（Azure Batch cmdlet 参考）](https://msdn.microsoft.com/library/azure/mt125957.aspx)。
+* 有关详细的 cmdlet 语法和示例，请参阅 [Azure Batch cmdlet reference（Azure Batch cmdlet 参考）](https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx)。
 
 * 有关如何减少项数和有关针对 Batch 查询返回的信息类型的详细信息，请参阅 [Query the Batch service efficiently（有效地查询 Batch 服务）](/documentation/articles/batch-efficient-list-queries/)。
 

@@ -71,7 +71,7 @@ expand 字符串用于减少获取特定信息所需的 API 调用数。使用 e
 - 当所有属性都是必需属性且没有指定 select 字符串时，“必须” 使用 expand 字符串来获取统计信息。如果使用了 select 字符串来获取属性的子集，则可在 select 字符串中指定 `stats`，不需指定 expand 字符串。
 - 此示例性 expand 字符串指定列表中的每个项都应返回统计信息：`stats`。
 
-> [AZURE.NOTE] 构造这三种查询字符串类型（filter、select 和 expand）中的任意一种类型时，必须确保属性名称和大小写与其 REST API 元素的对应项相匹配。例如，在使用 .NET [CloudTask](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask) 类时，必须指定 **state** 而非 **State**，即使 .NET 属性为 [CloudTask.State](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.state)。请参阅下表中 .NET 和 REST API 之间的属性映射。
+> [AZURE.NOTE] 构造这三种查询字符串类型（filter、select 和 expand）中的任意一种类型时，必须确保属性名称和大小写与其 REST API 元素的对应项相匹配。例如，在使用 .NET [CloudTask](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask) 类时，必须指定 **state** 而非 **State**，即使 .NET 属性为 [CloudTask.State](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.state)。请参阅下表中 .NET 和 REST API 之间的属性映射。
 
 ### Filter、select 和 expand 字符串规范
 
@@ -91,7 +91,7 @@ expand 字符串用于减少获取特定信息所需的 API 调用数。使用 e
 - [ODATADetailLevel][odata].[SelectClause][odata_select]：指定随每个项返回的属性值。
 - [ODATADetailLevel][odata].[ExpandClause][odata_expand]：通过单个 API 调用检索所有项的数据，不必针对每个项分别进行调用。
 
-以下代码段使用 Batch .NET API 对 Batch 服务进行有效的查询，查询其中是否存在特定池集的统计信息。在此方案中，Batch 用户既有测试池又有生产池。测试池 ID 具有“test”前缀，生产池 ID 具有“prod”前缀。在代码段中，*myBatchClient* 是正确初始化的 [BatchClient](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient) 类实例。
+以下代码段使用 Batch .NET API 对 Batch 服务进行有效的查询，查询其中是否存在特定池集的统计信息。在此方案中，Batch 用户既有测试池又有生产池。测试池 ID 具有“test”前缀，生产池 ID 具有“prod”前缀。在代码段中，*myBatchClient* 是正确初始化的 [BatchClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient) 类实例。
 
 csharp
 
@@ -113,7 +113,7 @@ csharp
 		List<CloudPool> testPools = await myBatchClient.PoolOperations.ListPools(detailLevel).ToListAsync();
 
 
-> [AZURE.TIP] 使用 Select 和 Expand 子句配置的 [ODATADetailLevel][odata] 实例也可以传递给相应的 Get 方法（例如 [PoolOperations.GetPool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.getpool.aspx)），以便限制返回的数据量。
+> [AZURE.TIP] 使用 Select 和 Expand 子句配置的 [ODATADetailLevel][odata] 实例也可以传递给相应的 Get 方法（例如 [PoolOperations.GetPool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.getpool.aspx)），以便限制返回的数据量。
 
 ## Batch REST 到 .NET API 映射
 
@@ -144,7 +144,7 @@ filter、select 和 expand 字符串中的属性名称*必须*反映其 REST API
 
 | Batch .NET 类型 | REST API 实体 |
 |---|---|
-| [证书][net_cert] | [获取有关证书的信息][rest_get_cert] |
+| [Certificate][net_cert] | [获取有关证书的信息][rest_get_cert] |
 | [CloudJob][net_job] | [获取有关作业的信息][rest_get_job] |
 | [CloudJobSchedule][net_schedule] | [获取有关作业计划的信息][rest_get_schedule] |
 | [ComputeNode][net_node] | [获取有关节点的信息][rest_get_node] |
@@ -199,52 +199,52 @@ filter、select 和 expand 字符串中的属性名称*必须*反映其 REST API
 MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相关问题的不错场所。欢迎前往浏览这些帮忙解决“棘手问题”的贴子，并发布你在构建 Batch 解决方案时遇到的问题。
 
 
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
+[api_net]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[api_net_listjobs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
+[api_rest]: http://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
 [efficient_query_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/EfficientListQueries
 [forum]: https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=azurebatch
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[odata]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.aspx
-[odata_ctor]: https://msdn.microsoft.com/library/azure/dn866178.aspx
-[odata_expand]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.expandclause.aspx
-[odata_filter]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.filterclause.aspx
-[odata_select]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.selectclause.aspx
+[odata]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.odatadetaillevel.aspx
+[odata_ctor]: https://msdn.microsoft.com/zh-cn/library/azure/dn866178.aspx
+[odata_expand]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.odatadetaillevel.expandclause.aspx
+[odata_filter]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.odatadetaillevel.filterclause.aspx
+[odata_select]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.odatadetaillevel.selectclause.aspx
 
-[net_list_certs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.certificateoperations.listcertificates.aspx
-[net_list_compute_nodes]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listcomputenodes.aspx
-[net_list_job_schedules]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobschedules.aspx
-[net_list_jobprep_status]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobpreparationandreleasetaskstatus.aspx
-[net_list_jobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[net_list_nodefiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listnodefiles.aspx
-[net_list_pools]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listpools.aspx
-[net_list_schedule_jobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobs.aspx
-[net_list_task_files]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.listnodefiles.aspx
-[net_list_tasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
+[net_list_certs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.certificateoperations.listcertificates.aspx
+[net_list_compute_nodes]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.listcomputenodes.aspx
+[net_list_job_schedules]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobschedules.aspx
+[net_list_jobprep_status]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listjobpreparationandreleasetaskstatus.aspx
+[net_list_jobs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
+[net_list_nodefiles]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listnodefiles.aspx
+[net_list_pools]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.listpools.aspx
+[net_list_schedule_jobs]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobs.aspx
+[net_list_task_files]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.listnodefiles.aspx
+[net_list_tasks]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
 
-[rest_list_certs]: https://msdn.microsoft.com/library/azure/dn820154.aspx
-[rest_list_compute_nodes]: https://msdn.microsoft.com/library/azure/dn820159.aspx
-[rest_list_job_schedules]: https://msdn.microsoft.com/library/azure/mt282174.aspx
-[rest_list_jobprep_status]: https://msdn.microsoft.com/library/azure/mt282170.aspx
-[rest_list_jobs]: https://msdn.microsoft.com/library/azure/dn820117.aspx
-[rest_list_nodefiles]: https://msdn.microsoft.com/library/azure/dn820151.aspx
-[rest_list_pools]: https://msdn.microsoft.com/library/azure/dn820101.aspx
-[rest_list_schedule_jobs]: https://msdn.microsoft.com/library/azure/mt282169.aspx
-[rest_list_task_files]: https://msdn.microsoft.com/library/azure/dn820142.aspx
-[rest_list_tasks]: https://msdn.microsoft.com/library/azure/dn820187.aspx
+[rest_list_certs]: https://msdn.microsoft.com/zh-cn/library/azure/dn820154.aspx
+[rest_list_compute_nodes]: https://msdn.microsoft.com/zh-cn/library/azure/dn820159.aspx
+[rest_list_job_schedules]: https://msdn.microsoft.com/zh-cn/library/azure/mt282174.aspx
+[rest_list_jobprep_status]: https://msdn.microsoft.com/zh-cn/library/azure/mt282170.aspx
+[rest_list_jobs]: https://msdn.microsoft.com/zh-cn/library/azure/dn820117.aspx
+[rest_list_nodefiles]: https://msdn.microsoft.com/zh-cn/library/azure/dn820151.aspx
+[rest_list_pools]: https://msdn.microsoft.com/zh-cn/library/azure/dn820101.aspx
+[rest_list_schedule_jobs]: https://msdn.microsoft.com/zh-cn/library/azure/mt282169.aspx
+[rest_list_task_files]: https://msdn.microsoft.com/zh-cn/library/azure/dn820142.aspx
+[rest_list_tasks]: https://msdn.microsoft.com/zh-cn/library/azure/dn820187.aspx
 
-[rest_get_cert]: https://msdn.microsoft.com/library/azure/dn820176.aspx
-[rest_get_job]: https://msdn.microsoft.com/library/azure/dn820106.aspx
-[rest_get_node]: https://msdn.microsoft.com/library/azure/dn820168.aspx
-[rest_get_pool]: https://msdn.microsoft.com/library/azure/dn820165.aspx
-[rest_get_schedule]: https://msdn.microsoft.com/library/azure/mt282171.aspx
-[rest_get_task]: https://msdn.microsoft.com/library/azure/dn820133.aspx
+[rest_get_cert]: https://msdn.microsoft.com/zh-cn/library/azure/dn820176.aspx
+[rest_get_job]: https://msdn.microsoft.com/zh-cn/library/azure/dn820106.aspx
+[rest_get_node]: https://msdn.microsoft.com/zh-cn/library/azure/dn820168.aspx
+[rest_get_pool]: https://msdn.microsoft.com/zh-cn/library/azure/dn820165.aspx
+[rest_get_schedule]: https://msdn.microsoft.com/zh-cn/library/azure/mt282171.aspx
+[rest_get_task]: https://msdn.microsoft.com/zh-cn/library/azure/dn820133.aspx
 
-[net_cert]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.certificate.aspx
-[net_job]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
-[net_node]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.aspx
-[net_pool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[net_schedule]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjobschedule.aspx
-[net_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
+[net_cert]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.certificate.aspx
+[net_job]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.aspx
+[net_node]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenode.aspx
+[net_pool]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx
+[net_schedule]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjobschedule.aspx
+[net_task]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.aspx
 
 <!---HONumber=Mooncake_0704_2016-->

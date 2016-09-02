@@ -101,7 +101,7 @@ python
 		storage_account_key  = "";
 
 
-可以在 [Azure 门户][azure_portal]中每个服务的帐户边栏选项卡中找到 Batch 和存储帐户凭据：
+可以在 [Azure 门户预览][azure_portal]中每个服务的帐户边栏选项卡中找到 Batch 和存储帐户凭据：
 
 ![门户中的 Batch 凭据][9]
 ![门户中的存储空间凭据][10]<br/>
@@ -115,7 +115,7 @@ python
 		if __name__ == '__main__':
 
 
-## 步骤 1：创建存储容器
+## <a name="step-1-create-storage-containers"></a>步骤 1：创建存储容器
 
 ![在 Azure 存储空间中创建容器][1] <br/>
 
@@ -149,7 +149,7 @@ python
 
 > [AZURE.TIP] [How to use Azure Blob storage from Python](/documentation/articles/storage-python-how-to-use-blob-storage/) 对如何使用 Azure 存储容器和 Blob 做了全面的概述。当你开始使用 Batch 时，它应该位于阅读列表顶部附近。
 
-## 步骤 2：上载任务脚本和数据文件
+## <a name="step-2-upload-task-script-and-data-files"></a>步骤 2：上载任务脚本和数据文件
 
 ![将任务应用程序和输入（数据）文件上载到容器][2] <br/>
 
@@ -239,7 +239,7 @@ python
 
 > [AZURE.TIP] 请查看有关共享访问签名的两篇系列教程的[第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[第 2 部分：创建 SAS 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)，以详细了解如何提供对存储帐户中数据的安全访问。
 
-## 步骤 3：创建 Batch 池
+## <a name="step-3-create-batch-pool"></a>步骤 3：创建 Batch 池
 
 ![创建 Batch 池][3] <br/>
 
@@ -329,7 +329,7 @@ python
 
 - **计算节点数**（*target\_dedicated* - 必需）<p/>指定应在池中部署多少个 VM。必须注意，所有 Batch 帐户都有默认**配额**，用于限制 Batch 帐户中的**核心**（因此也包括计算节点）数目。可以在 [Quotas and limits for the Azure Batch service（Azure Batch 服务的配额和限制）](/documentation/articles/batch-quota-limit/)中找到默认配额以及如何[提高配额](/documentation/articles/batch-quota-limit/#increase-a-quota)（例如 Batch 帐户中的核心数目上限）的说明。如果你有类似于“为什么我的池不能包含 X 个以上的节点？”的疑惑，则原因可能在于此核心配额。
 
-- 节点的**操作系统**（*virtual\_machine\_configuration* **或** *cloud\_service\_configuration* - 必需）<p/>在 *python\_tutorial\_client.py* 中，我们使用通过 `get_vm_config_for_distro` 帮助器函数获取的 [VirtualMachineConfiguration][py_vm_config] 来创建 Linux 节点池。此帮助器函数使用 [list\_node\_agent\_skus][py_list_skus] 来获取兼容的 [Azure 虚拟机应用商店][vm_marketplace]映像列表并从中选择映像。你可以选择改为指定 [CloudServiceConfiguration][py_cs_config] 并从云服务创建 Windows 节点池。有关这两种配置的详细信息，请参阅 [Provision Linux compute nodes in Azure Batch pools（在 Azure Batch 池中预配 Linux 计算节点）](/documentation/articles/batch-linux-nodes/)。
+- 节点的**操作系统**（*virtual\_machine\_configuration* **或** *cloud\_service\_configuration* - 必需）<p/>在 *python\_tutorial\_client.py* 中，我们使用通过 `get_vm_config_for_distro` 帮助器函数获取的 [VirtualMachineConfiguration][py_vm_config] 来创建 Linux 节点池。此帮助器函数使用 [list\_node\_agent\_skus][py_list_skus] 来获取兼容的 Azure 虚拟机应用商店映像列表并从中选择映像。你可以选择改为指定 [CloudServiceConfiguration][py_cs_config] 并从云服务创建 Windows 节点池。有关这两种配置的详细信息，请参阅 [Provision Linux compute nodes in Azure Batch pools（在 Azure Batch 池中预配 Linux 计算节点）](/documentation/articles/batch-linux-nodes/)。
 
 - **计算节点的大小**（*vm\_size* - 必需）<p/>由于我们要为 [VirtualMachineConfiguration][py_vm_config] 指定 Linux 节点，因此应根据 [Sizes for virtual machines in Azure（Azure 中虚拟机的大小）](/documentation/articles/virtual-machines-linux-sizes/)指定 VM 大小（在本示例中为 `STANDARD_A1`）。同样，请参阅 [Provision Linux compute nodes in Azure Batch pools（在 Azure Batch 池中预配 Linux 计算节点）](/documentation/articles/batch-linux-nodes/)以获取详细信息。
 
@@ -341,7 +341,7 @@ python
 
 > [AZURE.TIP] 若要深入了解 Batch 池中计算节点上可用的环境变量，以及有关任务工作目录的信息，请参阅 [overview of Azure Batch features（Azure Batch 功能概述）](/documentation/articles/batch-api-basics/)中的 **Environment settings for tasks**（任务的环境设置）及 **Files and directories**（文件和目录）。
 
-## 步骤 4：创建 Batch 作业
+## <a name="step-4-create-batch-job"></a>步骤 4：创建 Batch 作业
 
 ![创建 Batch 作业][4]
 
@@ -377,7 +377,7 @@ python
 
 创建作业后，可以添加任务来执行工作。
 
-## 步骤 5：将任务添加到作业
+## <a name="step-5-add-tasks-to-job"></a>步骤 5：将任务添加到作业
 
 ![将任务添加到作业][5]<br/>“(1) 将任务添加到作业；(2) 将任务计划为在节点上运行；(3) 任务下载要处理的数据文件”
 
@@ -453,7 +453,7 @@ python
 		                                         sas_token=args.sastoken)
 
 
-## 步骤 6：监视任务
+## <a name="step-6-monitor-tasks"></a>步骤 6：监视任务
 
 ![监视任务][6]<br/>“脚本将会：(1) 监视任务的完成状态，(2) 监视将结果数据上载到 Azure 存储空间的任务”
 
@@ -497,7 +497,7 @@ python
 		                       "timeout period of " + str(timeout))
 
 
-## 步骤 7：下载任务输出
+## <a name="step-7-download-task-output"></a>步骤 7：下载任务输出
 
 ![从存储空间下载任务输出][7]
 
@@ -570,7 +570,7 @@ python
 
 ## 运行示例脚本
 
-当你运行 *python\_tutorial\_client.py* 脚本时，控制台输出如下所示。出现 `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` 后将会暂停，此时会创建、启动池的计算节点，然后执行池启动任务中的命令。在执行期间和之后，可以使用 [Azure 门户][azure_portal]来监视池、计算节点、作业和任务。使用 [Azure 门户][azure_portal]或 [Microsoft Azure 存储空间资源管理器][storage_explorer]可以查看应用程序创建的存储资源（容器和 Blob）。
+当你运行 *python\_tutorial\_client.py* 脚本时，控制台输出如下所示。出现 `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` 后将会暂停，此时会创建、启动池的计算节点，然后执行池启动任务中的命令。在执行期间和之后，可以使用 [Azure 门户预览][azure_portal]来监视池、计算节点、作业和任务。使用 [Azure 门户预览][azure_portal]或 [Microsoft Azure 存储空间资源管理器][storage_explorer]可以查看应用程序创建的存储资源（容器和 Blob）。
 
 以默认配置运行应用程序时，典型的执行时间**大约为 5-7 分钟**。
 

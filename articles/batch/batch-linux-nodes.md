@@ -18,7 +18,7 @@ Azure Batch 可让你同时在 Linux 和 Windows 虚拟机上运行并行计算�
 
 > [AZURE.NOTE] Batch 中的 Linux 支持目前为预览版。在正式版推出之前，本文所述功能的某些方面可能会更改。Linux 计算节点**目前不支持**[应用程序包](/documentation/articles/batch-application-packages)和[多实例任务](/documentation/articles/batch-mpi)。
 
-## 虚拟机配置
+## <a name="virtual-machine-configuration"></a>虚拟机配置
 
 在 Batch 中创建计算节点池时，可以使用两个选项来选择节点大小和操作系统：“云服务配置”和“虚拟机配置”。
 
@@ -39,7 +39,7 @@ Batch 服务在幕后使用虚拟机缩放集来提供 Linux 计算节点。配�
 
 > [AZURE.TIP] 可以在 [Navigate and select Linux virtual machine images in Azure with CLI or Powershell（使用 CLI 或 PowerShell 在 Azure 中导航和选择 Linux 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)中详细了解这些属性，以及如何列出应用商店映像。请注意，目前并非所有应用商店映像都与 Batch 兼容，请参阅下面的[节点代理 SKU](#node-agent-sku)。
 
-### 节点代理 SKU
+### <a name="node-agent-sku"></a>节点代理 SKU
 
 Batch 节点代理是一个程序，它在池中的每个节点上运行，并在节点与 Batch 服务之间提供命令和控制接口。节点代理对于不同操作系统有不同的实现（称为 SKU）。从根本上讲，当你创建虚拟机配置时，需要先指定虚拟机映像引用，然后指定要在其上安装映像的代理节点。通常，每个节点代理 SKU 与多个虚拟机映像兼容。下面是节点代理 SKU 的几个示例：
 
@@ -196,7 +196,7 @@ csharp
 		    version: "latest");
 
 
-## 虚拟机映像列表
+## <a name="list-of-virtual-machine-images"></a>虚拟机映像列表
 
 下表列出了**在编写本文时**与可用 Batch 节点代理兼容的应用商店虚拟机映像。请务必注意，此列表并非永久不变，因为可能随时会添加或删除映像和节点代理。我们建议你的 Batch 应用程序和服务始终使用 [list\_node\_agent\_skus][py_list_skus] (Python) 和 [ListNodeAgentSkus][net_list_skus] (Batch .NET)，从当前可用的 SKU 中做出决定和选择。
 
@@ -227,7 +227,7 @@ csharp
 | MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter | 最新 | batch.node.windows amd64 |
 | MicrosoftWindowsServer | WindowsServer | Windows-Server-Technical-Preview | 最新 | batch.node.windows amd64 |
 
-## 连接到 Linux 节点
+## <a name="connect-to-linux-nodes"></a>连接到 Linux 节点
 
 在开发期间或进行故障排除时，你可能会发现需要登录到池中的节点。不同于 Windows 计算节点，你无法使用远程桌面协议 (RDP) 连接到 Linux 节点。相反，Batch 服务在每个节点上启用 SSH 访问以建立远程连接。
 
@@ -298,24 +298,24 @@ Azure Batch 构建在 Azure 云服务和 Azure 虚拟机技术基础之上。Bat
 
 MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相关问题的不错场所。欢迎前往阅读这些帮忙解决“棘手问题”的贴子，并发布你在构建 Batch 解决方案时遇到的问题。
 
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_net_mgmt]: https://msdn.microsoft.com/library/azure/mt463120.aspx
-[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
-[cloud_services_pricing]: https://azure.microsoft.com/pricing/details/cloud-services/
+[api_net]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[api_net_mgmt]: https://msdn.microsoft.com/zh-cn/library/azure/mt463120.aspx
+[api_rest]: http://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
+[cloud_services_pricing]: /pricing/details/cloud-services/
 [forum]: https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=azurebatch
 [github_py_readme]: https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/README.md
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_samples_py]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch
 [github_samples_pyclient]: https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/article_samples/python_tutorial_client.py
 [portal]: https://portal.azure.cn
-[net_cloudpool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[net_computenodeuser]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenodeuser.aspx
-[net_imagereference]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.imagereference.aspx
-[net_list_skus]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listnodeagentskus.aspx
-[net_pool_ops]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.aspx
-[net_ssh_key]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenodeuser.sshpublickey.aspx
+[net_cloudpool]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx
+[net_computenodeuser]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenodeuser.aspx
+[net_imagereference]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.imagereference.aspx
+[net_list_skus]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.listnodeagentskus.aspx
+[net_pool_ops]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.aspx
+[net_ssh_key]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.computenodeuser.sshpublickey.aspx
 [nuget_batch_net]: https://www.nuget.org/packages/Azure.Batch/
-[rest_add_pool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
+[rest_add_pool]: https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx
 [py_account_ops]: http://azure-sdk-for-python.readthedocs.org/en/dev/ref/azure.batch.operations.html#azure.batch.operations.AccountOperations
 [py_azure_sdk]: https://pypi.python.org/pypi/azure
 [py_batch_docs]: http://azure-sdk-for-python.readthedocs.org/en/dev/ref/azure.batch.html

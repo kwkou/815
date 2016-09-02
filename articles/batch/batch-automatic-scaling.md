@@ -20,7 +20,7 @@
 
 可以在创建池时启用自动缩放，也可以对现有池启用该功能。你还可以更改已启用“自动缩放”功能的池的现有公式。Batch 可让你在将公式分配给池之前先评估公式，以及监视自动缩放运行的状态。
 
-## 自动缩放公式
+## <a name="automatic-scaling-formulas"></a>自动缩放公式
 
 自动缩放公式是你定义的字符串值，其中包含分配给池的 [autoScaleFormula][rest_autoscaleformula] 元素 (Batch REST) 或 [CloudPool.AutoScaleFormula][net_cloudpool_autoscaleformula] 属性 (Batch .NET) 的一个或多个语句。将公式分配到池后，Batch 服务将使用公式来确定池中可供下一个处理间隔使用的目标计算节点数（稍后将详细说明间隔）。公式是一个字符串，其大小不能超过 8 KB，最多可以包含 100 个以分号分隔的语句，可以包括换行符和注释。
 
@@ -393,9 +393,9 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 
 若要在创建池时启用自动缩放功能，请使用以下方法之一：
 
-- [New-AzureBatchPool](https://msdn.microsoft.com/library/azure/mt125936.aspx)--此 Azure PowerShell cmdlet 使用 AutoScaleFormula 参数来指定自动缩放公式。
-- [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx)--在调用此 .NET 方法创建池后，将设置池的 [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx) 属性和 [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) 属性，以启用自动缩放。
-- [将池添加到帐户](https://msdn.microsoft.com/library/azure/dn820174.aspx)--创建池后，此 REST API 请求中使用的 enableAutoScale 和 autoScaleFormula 元素将为池设置自动缩放。
+- [New-AzureBatchPool](https://msdn.microsoft.com/zh-cn/library/azure/mt125936.aspx)--此 Azure PowerShell cmdlet 使用 AutoScaleFormula 参数来指定自动缩放公式。
+- [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx)--在调用此 .NET 方法创建池后，将设置池的 [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx) 属性和 [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) 属性，以启用自动缩放。
+- [将池添加到帐户](https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx)--创建池后，此 REST API 请求中使用的 enableAutoScale 和 autoScaleFormula 元素将为池设置自动缩放。
 
 > [AZURE.IMPORTANT] 如果你使用上述方法之一创建了支持自动缩放的池，则**不得**指定该池的 *targetDedicated* 参数。另请注意，如果你希望手动调整启用自动缩放功能的池的大小（例如，使用 [BatchClient.PoolOperations.ResizePool][net_poolops_resizepool] 来调整），则必须先**禁用**该池的自动缩放功能，然后再调整池的大小。
 
@@ -409,7 +409,7 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 		pool.Commit();
 		
 
-### <a name="interval"></a>自动缩放间隔
+### <a name="interval" id="automatic-scaling-interval"></a>自动缩放间隔
 
 默认情况下，Batch 服务根据其自动缩放公式每隔 **15 分钟**调整池大小。但是，可使用以下池属性配置此间隔：
 
@@ -443,8 +443,8 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 
 在应用程序中使用公式之前，最好先对它进行评估。评估公式时，可以针对现有池对公式进行“测试性运行”。执行此操作时，可通过以下方式：
 
-- [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) 或 [BatchClient.PoolOperations.EvaluateAutoScaleAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx)--这些 .NET 方法需要现有池的 ID，并需要包含自动缩放公式的字符串。调用的结果将包含在 [AutoScaleEvaluation](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx) 类的实例中。
-- [对自动缩放公式求值](https://msdn.microsoft.com/library/azure/dn820183.aspx)--在此 REST API 请求中，池 ID 在 URI 中指定。自动缩放公式在请求正文的 *autoScaleFormula* 元素中指定。操作的响应包含任何可能与该公式相关的错误信息。
+- [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) 或 [BatchClient.PoolOperations.EvaluateAutoScaleAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx)--这些 .NET 方法需要现有池的 ID，并需要包含自动缩放公式的字符串。调用的结果将包含在 [AutoScaleEvaluation](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx) 类的实例中。
+- [对自动缩放公式求值](https://msdn.microsoft.com/zh-cn/library/azure/dn820183.aspx)--在此 REST API 请求中，池 ID 在 URI 中指定。自动缩放公式在请求正文的 *autoScaleFormula* 元素中指定。操作的响应包含任何可能与该公式相关的错误信息。
 
 > [AZURE.NOTE] 若要评估某个自动缩放公式，必须先通过有效的公式对池启用了自动缩放功能。
 
@@ -491,11 +491,11 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 
 定期检查自动缩放的运行结果，以确保公式按预期执行。
 
-- [CloudPool.AutoScaleRun](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscalerun.aspx)--使用 .NET 库时，池的此属性提供 [AutoScaleRun](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.aspx) 类的实例。此类提供最新自动缩放运行的以下属性：
-  - [AutoScaleRun.Error](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.error.aspx)
-  - [AutoScaleRun.Results](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.results.aspx)
-  - [AutoScaleRun.Timestamp](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx)
-- [获取有关池的信息](https://msdn.microsoft.com/library/dn820165.aspx)--此 REST API 请求返回有关池的信息，包括最近的自动缩放运行结果。
+- [CloudPool.AutoScaleRun](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscalerun.aspx)--使用 .NET 库时，池的此属性提供 [AutoScaleRun](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.aspx) 类的实例。此类提供最新自动缩放运行的以下属性：
+  - [AutoScaleRun.Error](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.error.aspx)
+  - [AutoScaleRun.Results](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.results.aspx)
+  - [AutoScaleRun.Timestamp](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx)
+- [获取有关池的信息](https://msdn.microsoft.com/zh-cn/library/dn820165.aspx)--此 REST API 请求返回有关池的信息，包括最近的自动缩放运行结果。
 
 ## <a name="examples"></a>示例公式
 
@@ -582,18 +582,18 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 
 * 为了进一步提升效率，请确保 Batch 应用程序以最佳的方式查询 Batch 服务。在 [Query the Azure Batch service efficiently（有效地查询 Azure Batch 服务）](/documentation/articles/batch-efficient-list-queries/)中，可以了解在查询数千个计算节点或任务的状态时，如何限制跨线数据量。
 
-[net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[net_batchclient]: http://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
-[net_cloudpool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[net_cloudpool_autoscaleformula]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx
-[net_cloudpool_autoscaleevalinterval]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval.aspx
-[net_enableautoscale]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.enableautoscale.aspx
-[net_maxtasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx
-[net_poolops_resizepool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.resizepool.aspx
+[net_api]: https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[net_batchclient]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx
+[net_cloudpool]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx
+[net_cloudpool_autoscaleformula]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx
+[net_cloudpool_autoscaleevalinterval]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval.aspx
+[net_enableautoscale]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.enableautoscale.aspx
+[net_maxtasks]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx
+[net_poolops_resizepool]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.resizepool.aspx
 
-[rest_api]: https://msdn.microsoft.com/library/azure/dn820158.aspx
-[rest_autoscaleformula]: https://msdn.microsoft.com/library/azure/dn820173.aspx
-[rest_autoscaleinterval]: https://msdn.microsoft.com/en-us/library/azure/dn820173.aspx
-[rest_enableautoscale]: https://msdn.microsoft.com/library/azure/dn820173.aspx
+[rest_api]: https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
+[rest_autoscaleformula]: https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx
+[rest_autoscaleinterval]: https://msdn.microsoft.com/zh-cn/en-us/library/azure/dn820173.aspx
+[rest_enableautoscale]: https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx
 
 <!---HONumber=Mooncake_0530_2016-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Job and task output persistence in Azure Batch | Microsoft Azure"
-	description="Learn how to use Azure Storage as a durable store for your Batch task and job output, and enable viewing this persisted output in the Azure portal."
+	pageTitle="保存 Azure Batch 中的作业和任务输出 | Azure"
+	description="了解如何使用 Azure 存储空间作为 Batch 任务和作业输出的持久性存储，并在 Azure 门户预览版中查看这些保存的输出。"
 	services="batch"
 	documentationCenter=".net"
 	authors="mmacy"
@@ -10,69 +10,68 @@
 <tags
 	ms.service="batch"
 	ms.date="08/06/2016"
-	wacn.date="" />
+	wacn.date="08/29/2016"/>  
 
-# Persist Azure Batch job and task output
 
-The tasks you run in Batch typically produce output that must be stored and then later retrieved by other tasks in the job, the client application that executed the job, or both. This output might be files created by processing input data or log files associated with task execution. This article introduces a .NET class library that uses a conventions-based technique to persist such task output to Azure Blob storage, making it available even after you delete your pools, jobs, and compute nodes.
+# 保存 Azure Batch 作业和任务输出
 
-By using the technique in this article, you will also be able to view your task output in **Saved output files** and **Saved logs** in the [Azure portal][portal].
+在 Batch 中运行的任务通常会生成输出，这些输出必须得到存储，以便今后由作业中的其他任务和/或执行作业的客户端应用程序检索。此输出可能是处理输入数据后创建的文件，也可能是与任务执行关联的日志文件。本文将介绍一个 .NET 类库，它使用基于约定的技术在 Azure Blob 存储中保存此类任务输出，这样，即使在删除池、作业和计算节点后，你也可以使用这些输出。
 
-![Saved output files and Saved logs selectors in portal][1]
+使用本文所述的技术，你还可以在 [Azure 门户预览版][portal]上的“保存的输出文件”和“保存的日志”中查看你的任务输出。
 
->[AZURE.NOTE] The file storage and retrieval method discussed here provides similar functionality to the way **Batch Apps** (now deprecated) managed its task outputs.
+![门户中“保存的输出文件”和“保存的日志”选择器][1]
 
-## Task output considerations
+>[AZURE.NOTE] 本文所述文件存储和检索方法提供的功能类似于 **Batch Apps**（现已弃用）管理其任务输出的方式。
 
-When you design your Batch solution, you must consider several factors related job and task outputs.
+## 任务输出注意事项
 
-* **Compute node lifetime**: Compute nodes are often transient, especially in autoscale-enabled pools. The outputs of the tasks that run on a node are available only while the node exists, and only within the file retention time you've set for the task. To ensure that the task output is preserved, your tasks must therefore upload their output files to a durable store, for example, Azure Storage.
+当你设计 Batch 解决方案时，必须考虑几个与作业和任务输出相关的因素。
 
-* **Output storage**: To persist task output data to durable storage, you can use the [Azure Storage SDK](/documentation/articles/storage-dotnet-how-to-use-blobs/) in your task code to upload the task output to a Blob storage container. If you implement a container and file naming convention, your client application or other tasks in the job can then locate and download this output based on the convention.
+* **计算节点生存期**：计算节点通常是瞬态的，尤其是在启用了自动缩放的池中。在某个节点上运行的任务的输出仅在该节点存在时才可用，并且仅在你为任务设置的文件保留时间范围内才可用。为了确保保留任务输出，你的任务必须将其输出文件上载到持久性存储，例如 Azure 存储空间。
 
-* **Output retrieval**: You can retrieve task output directly from the compute nodes in your pool, or from Azure Storage if your tasks persist their output. To retrieve a task's output directly from a compute node, you need the file name and its output location on the node. If you persist output to Azure Storage, downstream tasks or your client application must have the full path to the file in Azure Storage in order to download it by using the Azure Storage SDK.
+* **输出存储**：若要将任务输出数据保存到持久性存储，可以在任务代码中使用 [Azure 存储空间 SDK](/documentation/articles/storage-dotnet-how-to-use-blobs/)，将任务输出上载到 Blob 存储容器中。如果你实现了容器和文件命名约定，则客户端应用程序或作业中的其他任务可以根据该约定查找并下载此输出。
 
-* **Viewing output**: When you navigate to a Batch task in the Azure portal and select **Files on node**, you are presented with all of the files associated with the task, not just the output file(s) you're interested in. Again, files on compute nodes are available only while the node exists and only within the file retention time you've set for the task. To view task output that you've persisted to Azure Storage in the portal or an application like the [Azure Storage Explorer][storage_explorer], you must know its location and navigate to the file directly.
+* **输出检索**：你可以直接从池中的计算节点检索任务输出，如果任务保存了其输出，则你可以从 Azure 存储空间检索任务输出。若要直接从计算节点检索任务输出，需要获取文件名及其在节点上的输出位置。如果将输出保存到 Azure 存储空间，则下游任务或客户端应用程序必须获得 Azure 存储空间中文件的完整路径才能使用 Azure 存储空间 SDK 来下载输出。
 
-## Help for persisted output
+* **查看输出**：当你导航到 Azure 门户预览版中的某个 Batch 任务并选择“节点上的文件”时，将看到与该任务关联的所有文件，而不仅仅是你感兴趣的输出文件。同样，计算节点上的文件仅在该节点存在时才可用，并且仅在你为任务设置的文件保留时间范围内才可用。若要在门户或某个应用程序（例如 [Azure 存储资源管理器][storage_explorer]）中查看你已保存到 Azure 存储空间的任务输出，必须知道该文件的位置并直接导航到该文件。
 
-To help you more easily persist job and task output, the Batch team has defined and implemented a set of naming conventions as well as a .NET class library, the [Azure Batch File Conventions][nuget_package] library, that you can use in your Batch applications. In addition, the Azure portal is aware of these naming conventions so that you can easily find the files you've stored by using the library.
+## 有关保存的输出的帮助
 
-## Using the file conventions library
+为了帮助你更轻松地保存作业和任务输出，Batch 团队定义并实现了一组命名约定以及一个 .NET 类库（[Azure Batch 文件约定][nuget_package]库），供你在 Batch 应用程序中使用。此外，Azure 门户预览版可识别这些命名约定，因此你可以轻松找到使用该库存储的文件。
 
-[Azure Batch File Conventions][nuget_package] is a .NET class library that your Batch .NET applications can use to easily store and retrieve task outputs to and from Azure Storage. It is intended for use in both task and client code--in task code for persisting files, and in client code to list and retrieve them. Your tasks can also use the library for retrieving the outputs of upstream tasks, such as in a [task dependencies](/documentation/articles/batch-task-dependencies/) scenario.
+## 使用文件约定库
 
-The conventions library takes care of ensuring that storage containers and task output files are named according to the convention, and are uploaded to the right place when persisted to Azure Storage. When you retrieve outputs, you can easily locate the outputs for a given job or task by listing or retrieving the outputs by ID and purpose, instead of having to know filenames or where it exists in Storage.
+[Azure Batch 文件约定][nuget_package]是一个 .NET 类库，Batch .NET 应用程序可以使用它来轻松向 Azure 存储空间存储任务输出，以及从中检索任务输出。该库可在任务代码和客户端代码中使用 -- 在任务代码中用于保存文件，在客户端代码用于列出和检索文件。任务还可以使用该库来检索上游任务的输出（例如，在[任务依赖性](/documentation/articles/batch-task-dependencies/)方案中）。
 
-For example, you can use the library to "list all intermediate files for task 7," or "get me the thumbnail preview for job *mymovie*," without needing to know the file names or location within your Storage account.
+该约定库负责确保存储容器和任务输出文件根据约定命名，并在保存到 Azure 存储空间时上载到正确的位置。当你检索输出时，可以按 ID 和用途列出或者检索给定作业或任务的输出，从而轻松找到所需的输出，而无需知道文件名或者文件在存储空间中的位置。
 
-### Get the library
+例如，你可以使用该库“列出任务 7 的所有中间文件”或“获取作业 *mymovie* 的缩略图预览”，而无需知道文件名或者文件在存储帐户中的位置。
 
-You can obtain the library, which contains new classes and extends the [CloudJob][net_cloudjob] and [CloudTask][net_cloudtask] classes with new methods, from [NuGet][nuget_package]. You can add it to your Visual Studio project using the [NuGet Library Package Manager][nuget_manager].
+### 获取该库
 
->[AZURE.TIP] You can find the [source code][github_file_conventions] for the Azure Batch File Conventions library on GitHub in the Microsoft Azure SDK for .NET repository.
+可以从 [NuGet][nuget_package] 获取该库，其中包含新类并使用新方法扩展了 [CloudJob][net_cloudjob] 和 [CloudTask][net_cloudtask] 类。你可以使用 [NuGet 库包管理器][nuget_manager]将它添加到 Visual Studio 项目。
 
-## <a Requirement: linked storage account
+>[AZURE.TIP] 可以在 GitHub 上的用于 .NET 的 Azure SDK 存储库中找到 Azure Batch 文件约定库的[源代码][github_file_conventions]。
 
-To store outputs to durable storage using the file conventions library and view them in the Azure portal, you must [link an Azure Storage account](/documentation/articles/batch-application-packages/#link-a-storage-account) to your Batch account. If you haven't already, link a Storage account to your Batch account by using the Azure portal:
+## <a name="requirement-linked-storage-account"></a>要求：链接的存储帐户
 
-**Batch account** blade > **Settings** > **Storage Account** > **Storage Account** (None) > Select a Storage account in your subscription
+若要使用文件约定库将输出存储到持久性存储并在 Azure 门户预览版中查看这些输出，必须[将 Azure 存储帐户链接](/documentation/articles/batch-application-packages/#link-a-storage-account)到你的 Batch 帐户。如果你尚未这样做，请使用 Azure 门户预览版将存储帐户链接到你的 Batch 帐户：
 
-For a more detailed walk-through on linking a Storage account, see [Application deployment with Azure Batch application packages](/documentation/articles/batch-application-packages/).
+“Batch 帐户”边栏选项卡 >“设置”>“存储帐户”>“存储帐户”（无）> 在你的订阅中选择一个存储帐户
 
-## Persist output
+有关链接存储帐户的更详细演练，请参阅 [Application deployment with Azure Batch application packages](/documentation/articles/batch-application-packages/)（使用 Azure Batch 应用程序包部署应用程序）。
 
-There are two primary actions to perform when saving job and task output with the file conventions library: create the storage container and save output to the container.
+## 保存输出
 
->[AZURE.WARNING] Because all job and task outputs are stored in the same container, [storage throttling limits](/documentation/articles/storage-performance-checklist/#blobs) may be enforced if a large number of tasks try to persist files at the same time.
+使用文件约定库保存作业和任务输出时需要执行两个主要操作：创建存储容器，将输出保存到容器。
 
-### Create storage container
+>[AZURE.WARNING] 由于所有作业和任务输出将存储在同一个容器中，因此，如果有大量的任务同时尝试保存文件，则可能会强制实施[存储节流限制](/documentation/articles/storage-performance-checklist/#blobs)。
 
-Before your tasks begin persisting output to storage, you must create a blob storage container to which the they'll upload their output. Do this by calling [CloudJob][net_cloudjob].[PrepareOutputStorageAsync][net_prepareoutputasync]. This extension method takes a [CloudStorageAccount][net_cloudstorageaccount] object as a parameter, and will create a container named in such a way that its contents are discoverable by the Azure portal and the retrieval methods discussed later in the article.
+### 创建存储容器
 
-You typically will place this code in your client application--the application that creates your pools, jobs, and tasks.
+在任务开始将输出保存到存储空间之前，必须创建一个 Blob 存储容器，以便任务将其输出上载到其中。可通过调用 [CloudJob][net_cloudjob].[PrepareOutputStorageAsync][net_prepareoutputasync] 来执行此操作。此扩展方法使用 [CloudStorageAccount][net_cloudstorageaccount] 对象作为参数，并且会创建一个容器，该容器的命名能使 Azure 门户预览版以及本文稍后介绍的检索方法发现其内容。
 
-csharp
+你通常会将此代码放入客户端应用程序 -- 即创建池、作业和任务的应用程序。
 
 	CloudJob job = batchClient.JobOperations.CreateJob(
 		"myJob",
@@ -85,14 +84,11 @@ csharp
 	// Create the blob storage container for the outputs
 	await job.PrepareOutputStorageAsync(linkedStorageAccount);
 
+### 存储任务输出
 
-### Store task outputs
+在 Blob 存储中准备一个容器后，任务可以使用文件约定库中的 [TaskOutputStorage][net_taskoutputstorage] 类将输出保存到该容器。
 
-Now that you've prepared a container in blob storage, tasks can save output to the container by using the [TaskOutputStorage][net_taskoutputstorage] class found in the file conventions libary.
-
-In your task code, first create a [TaskOutputStorage][net_taskoutputstorage] object, then when the task has completed its work, call the  [TaskOutputStorage][net_taskoutputstorage].[SaveAsync][net_saveasync] method to save its output to Azure Storage.
-
-csharp
+在任务代码中，请先创建一个 [TaskOutputStorage][net_taskoutputstorage] 对象，然后，当任务完成其工作时，会调用 [TaskOutputStorage][net_taskoutputstorage].[SaveAsync][net_saveasync] 方法将其输出保存到 Azure 存储空间。
 
 	CloudStorageAccount linkedStorageAccount = new CloudStorageAccount(myCredentials);
 	string jobId = Environment.GetEnvironmentVariable("AZ_BATCH_JOB_ID");
@@ -106,36 +102,31 @@ csharp
 	await taskOutputStorage.SaveAsync(TaskOutputKind.TaskOutput, "frame_full_res.jpg");
 	await taskOutputStorage.SaveAsync(TaskOutputKind.TaskPreview, "frame_low_res.jpg");
 
+“output kind”参数可保存的文件分类。有四个预定义的 [TaskOutputKind][net_taskoutputkind] 类型：“TaskOutput”、“TaskPreview”、“TaskLog”和“TaskIntermediate”。你还可以指定自定义类型（如果在工作流中有用的话）。
 
-The "output kind" parameter categorizes the persisted files. There are four predefined [TaskOutputKind][net_taskoutputkind] types: "TaskOutput", "TaskPreview", "TaskLog", and "TaskIntermediate". You can also define custom kinds if they would be useful in your workflow.
+以后在 Batch 中查询给定任务的已保存输出时，可以使用这些输出类型来指定要列出哪种类型的输出。换而言之，当你列出某个任务的输出时，可以根据某种输出类型来筛选列表。例如，“列出任务 *109* 的*预览*输出。” 本文稍后的[检索输出](#retrieve-output)部分中详细介绍了如何列出和检索输出。
 
-These output types allow you to specify which type of outputs to list when you later query Batch for the persisted outputs of a given task. In other words, when you list the outputs for a task, you can filter the list on one of the output types. For example, "Give me the *preview* output for task *109*." More on listing and retrieving outputs appears in [Retrieve output](#retrieve-output) later in the article.
+>[AZURE.TIP] 输出类型还会指定特定的文件将显示在 Azure 门户预览版中的哪个位置：*TaskOutput* 分类的文件将显示在“任务输出文件”中，*TaskLog* 文件将显示在“任务日志”中。
 
->[AZURE.TIP] The output kind also designates where in the Azure portal a particular file will appear: *TaskOutput*-categorized files will appear in "Task output files", and *TaskLog* files will appear in "Task logs".
+### 存储作业输出
 
-### Store job outputs
+除了存储任务输出以外，你还可以存储与整个作业关联的输出。例如，在电影渲染作业的合并任务中，可以将完全渲染的电影保存为作业输出。作业完成后，客户端应用程序只需列出并检索该作业的输出，而不需要查询各个任务。
 
-In addition to storing task outputs, you can store the outputs associated with an entire job. For example, in the merge task of a movie rendering job, you could persist the fully rendered movie as a job output. When your job is completed, your client application can simply list and retrieve the outputs for the job, and does not need to query the individual tasks.
+通过调用 [JobOutputStorage][net_joboutputstorage].[SaveAsync][net_joboutputstorage_saveasync] 方法存储作业输出，并指定 [JobOutputKind][net_joboutputkind] 和文件名：
 
-Store job output by calling the [JobOutputStorage][net_joboutputstorage].[SaveAsync][net_joboutputstorage_saveasync] method, and specify the [JobOutputKind][net_joboutputkind] and filename:
-
-	
 	CloudJob job = await batchClient.JobOperations.GetJobAsync(jobId);
 	JobOutputStorage jobOutputStorage = job.OutputStorage(linkedStorageAccount);
 	
 	await jobOutputStorage.SaveAsync(JobOutputKind.JobOutput, "mymovie.mp4");
 	await jobOutputStorage.SaveAsync(JobOutputKind.JobPreview, "mymovie_preview.mp4");
 
+与用于任务输出的 TaskOutputKind 一样，你可以使用 [JobOutputKind][net_joboutputkind] 参数来分类作业的保存文件。这样，以后你便可以查询（列出）特定的输出类型。JobOutputKind 包括输出和预览类型，并支持创建自定义类型。
 
-As with TaskOutputKind for task outputs, you use the [JobOutputKind][net_joboutputkind] parameter to categorize a job's persisted files. This allows you to later query for (list) a specific type of output. The JobOutputKind includes both output and preview types, and supports creating custom types.
+### 存储任务日志
 
-### Store task logs
+除了在任务或作业完成时将文件保持到持久性存储以外，你还可能觉得有必要保存执行某个任务期间更新的文件 -- 例如，日志文件或 `stdout.txt` 和 `stderr.txt`。为此，Azure Batch 文件约定库提供了 [TaskOutputStorage][net_taskoutputstorage].[SaveTrackedAsync][net_savetrackedasync] 方法。使用 [SaveTrackedAsync][net_savetrackedasync]，可以跟踪对节点上的文件所做的更新（按照指定的间隔），并将这些更新保持到 Azure 存储空间。
 
-In addition to persisting a file to durable storage when a task or job completes, you might find it necessary to persist files that are updated during the execution of a task--log files or `stdout.txt` and `stderr.txt`, for example. For this purpose, the Azure Batch File Conventions library provides the [TaskOutputStorage][net_taskoutputstorage].[SaveTrackedAsync][net_savetrackedasync] method. With [SaveTrackedAsync][net_savetrackedasync], you can track updates to a file on the node (at an interval that you specify) and persist those updates to Azure Storage.
-
-In the following code snippet, we use [SaveTrackedAsync][net_savetrackedasync] to update `stdout.txt` in Azure Storage every 15 seconds during the execution of the task:
-
-csharp
+在以下代码片段中，我们将在执行任务期间，每隔 15 秒使用 [SaveTrackedAsync][net_savetrackedasync] 更新 Azure 存储空间中的 `stdout.txt`：
 
 	string logFilePath = Path.Combine(
 		Environment.GetEnvironmentVariable("AZ_BATCH_TASK_DIR"), "stdout.txt");
@@ -150,19 +141,16 @@ csharp
 		/* Code to process data and produce output file(s) */
 	}
 
+`Code to process data and produce output file(s)` 只是任务通常会执行的代码的占位符。例如，你的代码可能会从 Azure 存储空间下载数据，并对其执行某种形式的转换或计算。此代码片段的重要部分演示了如何在 `using` 中包装此类代码，以定期使用 [SaveTrackedAsync][net_savetrackedasync] 更新文件。
 
-`Code to process data and produce output file(s)` is simply a placeholder for the code that your task would normally perform. For example, you might have code that downloads data from Azure Storage and performs some sort of transformation or calculation on it. The important part of this snippet is demonstrating how you can wrap such code in a `using` block to periodically update a file with  [SaveTrackedAsync][net_savetrackedasync].
+>[AZURE.NOTE] 启用 SaveTrackedAsync 文件跟踪时，只会在 Azure 存储空间中保存被跟踪文件的*追加*内容。此方法只应该用于跟踪非轮转的日志文件或追加到的其他文件，也就是说，数据在更新时只会添加到文件末尾。
 
->[AZURE.NOTE] When you enable file tracking with SaveTrackedAsync, only *appends* to the tracked file are persisted to Azure Storage. You should use this method only for tracking non-rotating log files or other files that are appended to, that is, data is only added to the end of the file when it's updated.
+## <a name="retrieve-output"></a>检索输出
 
-## Retrieve output
+使用 Azure Batch 文件约定库检索保存的输出时，将以任务和作业为中心的方式执行此操作。你可以请求给定任务或作业的输出，而无需知道输出在 Blob 存储中的路径，甚至不需要知道其文件名。你只需提出，“给我返回任务 *109* 的输出文件。”
 
-When you retrieve your persisted output using the Azure Batch File Conventions library, you do so in a task- and job-centric manner. You can request the output for given task or job without needing to know its path in blob Storage, or even its file name. You can simply say, "Give me the output files for task *109*."
+以下代码片段将循环访问某个作业的所有任务，列显有关该任务的输出文件的一些信息，然后从存储空间下载该任务的文件。
 
-The code snippet below iterates through all of a job's tasks, prints some information about the output files for the task, and then downloads its files from Storage.
-
-csharp
-	
 	foreach (CloudTask task in myJob.ListTasks())
 	{
 	    foreach (TaskOutputStorage output in
@@ -177,67 +165,68 @@ csharp
 	    }
 	}
 
+## 任务输出和 Azure 门户预览版
 
-## Task outputs and the Azure portal
+Azure 门户预览版将显示使用 [Azure Batch 文件约定自述文件][github_file_conventions_readme]中提到的命名约定保存到链接的 Azure 存储帐户的任务输出和日志。你可以使用所选语言自行实现这些约定，也可以在 .NET 应用程序中使用该文件约定库。
 
-The Azure portal will display task outputs and logs that are persisted to a linked Azure Storage account using the naming conventions found in the [Azure Batch File Conventions README][github_file_conventions_readme]. You can implement these conventions yourself in a language of your choosing, or you can use the file conventions library in your .NET applications.
+### 启用门户显示
 
-### Enable portal display
+若要在门户中显示输出，必须满足以下要求：
 
-To enable the display of your outputs in the portal, you must satisfy the following requirements:
+ 1. [将 Azure 存储帐户链接](#requirement-linked-storage-account)到你的 Batch 帐户。
+ 2. 保存输出时遵循存储容器和文件的预定义命名约定。可以在文件约定库的[自述文件][github_file_conventions_readme]中找到这些约定的定义。如果你使用 [Azure Batch 文件约定][nuget_package]库来保存输出，则可以满足此要求。
 
- 1. [Link an Azure Storage account](#requirement-linked-storage-account) to your Batch account.
- 2. Adhere to the predefined naming conventions for Storage containers and files when persisting outputs. You can find the definition of these conventions in the file conventions library [README][github_file_conventions_readme]. If you use the [Azure Batch File Conventions][nuget_package] library to persist your output, this requirement is satisfied.
+### 在门户中查看输出
 
-### View outputs in the portal
+若要在 Azure 门户预览版中查看任务输出和日志，请导航到你要查看其输出的任务，然后单击“保存的输出文件”或“保存的日志”。下图显示了 ID 为“007”的任务的“保存的输出文件”：
 
-To view task outputs and logs in the Azure portal, navigate to the task whose output you are interested in, then click either **Saved output files** or **Saved logs**. This image shows the **Saved output files** for the task with ID "007":
+![Azure 门户预览版中的“任务输出”边栏选项卡][2]
 
-![Task outputs blade in the Azure portal][2]
+## 代码示例
 
-## Code sample
+[PersistOutputs][github_persistoutputs] 示例项目是 GitHub 上的 [Azure Batch 代码示例][github_samples]之一。此 Visual Studio 2015 解决方案演示如何使用 Azure Batch 文件约定库将任务输出保存到持久性存储。若要运行该示例，请遵循以下步骤：
 
-The [PersistOutputs][github_persistoutputs] sample project is one of the [Azure Batch code samples][github_samples] on GitHub. This Visual Studio 2015 solution demonstrates how to use the Azure Batch File Conventions library to persist task output to durable storage. To run the sample, follow these steps:
+1. 在 **Visual Studio 2015** 中打开该项目。
+2. 将你的 Batch 和存储**帐户凭据**添加到 Microsoft.Azure.Batch.Samples.Common 项目中的 **AccountSettings.settings**。
+3. **生成**（但不要运行）该解决方案。根据提示还原所有 NuGet 包。
+4. 使用 Azure 门户预览版上载 **PersistOutputsTask** 的[应用程序包](/documentation/articles/batch-application-packages/)。在 .zip 包中包含 `PersistOutputsTask.exe` 及其依赖程序集，将应用程序 ID 设置为“PersistOutputsTask”，将应用程序包版本设置为“1.0”。
+5. **启动**（运行）**PersistOutputs** 项目。
 
-1. Open the project in **Visual Studio 2015**.
-2. Add your Batch and Storage **account credentials** to **AccountSettings.settings** in the Microsoft.Azure.Batch.Samples.Common project.
-3. **Build** (but do not run) the solution. Restore any NuGet packages if prompted.
-4. Use the Azure portal to upload an [application package](/documentation/articles/batch-application-packages/) for **PersistOutputsTask**. Include the `PersistOutputsTask.exe` and its dependent assemblies in the .zip package, set the application ID to "PersistOutputsTask", and the application package version to "1.0".
-5. **Start** (run) the **PersistOutputs** project.
+## 后续步骤
 
-## Next steps
+### 应用程序部署
 
-### Application deployment
+使用 Batch 的[应用程序包](/documentation/articles/batch-application-packages/)功能，可以轻松地部署任务在计算节点上执行的应用程序并对其进行版本控制。
 
-The [application packages](/documentation/articles/batch-application-packages/) feature of Batch provides an easy way to both deploy and version the applications that your tasks execute on compute nodes.
+### 安装应用程序和暂存数据
 
-### Installing applications and staging data
+有关准备节点以运行任务的各种方法的概述，请查看 Azure Batch 论坛中的帖子 [Installing applications and staging data on Batch compute nodes][forum_post]（在 Batch 计算节点上安装应用程序和暂存数据）。此帖子由 Azure Batch 团队的一名成员编写，是一个很好的入门教程，它介绍了如何在计算节点上以不同方式获取文件（包括应用程序和任务输入数据），以及每种方法要考虑到的一些特殊注意事项。
 
-Check out the [Installing applications and staging data on Batch compute nodes][forum_post] post in the Azure Batch forum for an overview of the various methods of preparing your nodes for running tasks. Written by one of the Azure Batch team members, this post is a good primer on the different ways to get files (including both applications and task input data) onto your compute nodes, and some special considerations to take into account for each method.
-
-[forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
+[forum_post]: https://social.msdn.microsoft.com/Forums/zh-cn/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
 [github_file_conventions]: https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/Batch/FileConventions
 [github_file_conventions_readme]: https://github.com/Azure/azure-sdk-for-net/blob/AutoRest/src/Batch/FileConventions/README.md
 [github_persistoutputs]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/PersistOutputs
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[net_batchclient]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
-[net_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
-[net_cloudstorageaccount]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.cloudstorageaccount.aspx
-[net_cloudtask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
+[net_batchclient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx
+[net_cloudjob]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudjob.aspx
+[net_cloudstorageaccount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.cloudstorageaccount.aspx
+[net_cloudtask]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudtask.aspx
 [net_fileconventions_readme]: https://github.com/Azure/azure-sdk-for-net/blob/AutoRest/src/Batch/FileConventions/README.md
-[net_joboutputkind]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.joboutputkind.aspx
-[net_joboutputstorage]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.joboutputstorage.aspx
-[net_joboutputstorage_saveasync]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.joboutputstorage.saveasync.aspx
-[net_msdn]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[net_prepareoutputasync]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.cloudjobextensions.prepareoutputstorageasync.aspx
-[net_saveasync]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.taskoutputstorage.saveasync.aspx
-[net_savetrackedasync]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.taskoutputstorage.savetrackedasync.aspx
-[net_taskoutputkind]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.taskoutputkind.aspx
-[net_taskoutputstorage]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.taskoutputstorage.aspx
+[net_joboutputkind]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.joboutputkind.aspx
+[net_joboutputstorage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.joboutputstorage.aspx
+[net_joboutputstorage_saveasync]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.joboutputstorage.saveasync.aspx
+[net_msdn]: https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[net_prepareoutputasync]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.cloudjobextensions.prepareoutputstorageasync.aspx
+[net_saveasync]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.taskoutputstorage.saveasync.aspx
+[net_savetrackedasync]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.taskoutputstorage.savetrackedasync.aspx
+[net_taskoutputkind]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.taskoutputkind.aspx
+[net_taskoutputstorage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.conventions.files.taskoutputstorage.aspx
 [nuget_manager]: https://docs.nuget.org/consume/installing-nuget
 [nuget_package]: https://www.nuget.org/packages/Microsoft.Azure.Batch.Conventions.Files
-[portal]: https://portal.azure.com
+[portal]: https://portal.azure.cn
 [storage_explorer]: http://storageexplorer.com/
 
-[1]: ./media/batch-task-output/task-output-01.png "Saved output files and Saved logs selectors in portal"
-[2]: ./media/batch-task-output/task-output-02.png "Task outputs blade in the Azure portal"
+[1]: ./media/batch-task-output/task-output-01.png "门户中“保存的输出文件”和“保存的日志”选择器"
+[2]: ./media/batch-task-output/task-output-02.png "Azure 门户预览版中的“任务输出”边栏选项卡"
+
+<!---HONumber=Mooncake_0822_2016-->

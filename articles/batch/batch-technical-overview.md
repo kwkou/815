@@ -56,7 +56,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 - **存储帐户** - Batch 内置支持处理 [Azure 存储空间][azure_storage]中的文件。几乎每个 Batch 方案都使用 Azure 存储空间来暂存文件（用于任务执行的程序及它们处理的数据），以及存储任务生成的输出数据。若要创建存储帐户，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。
 
-### Batch 开发 API
+### <a name="batch-development-apis"></a>Batch 开发 API
 
 应用程序和服务可以发出直接的 REST API 调用，使用以下一个或多个客户端库或将其结合使用，以使用 Batch 服务管理计算资源和大规模运行并行工作负荷。
 
@@ -116,12 +116,12 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 - 下载 [GitHub 上的代码示例][github_samples]，了解 C# 和 Python 如何与 Batch 相互作用，以计划和处理示例工作负荷。
 
 
-[azure_storage]: https://azure.microsoft.com/services/storage/
+[azure_storage]: /home/features/storage/
 [api_java]: http://azure.github.io/azure-sdk-for-java/
 [api_java_jar]: http://adxsnapshots.azurewebsites.net/?dir=com%5cmicrosoft%5cazure%5cazure-batch
-[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
+[api_net]: https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
 [api_net_nuget]: https://www.nuget.org/packages/Azure.Batch/
-[api_net_mgmt]: https://msdn.microsoft.com/library/azure/mt463120.aspx
+[api_net_mgmt]: https://msdn.microsoft.com/zh-cn/library/azure/mt463120.aspx
 [api_net_mgmt_nuget]: https://www.nuget.org/packages/Microsoft.Azure.Management.Batch/
 [api_nodejs]: http://azure.github.io/azure-sdk-for-node/azure-batch/latest/
 [api_nodejs_npm]: https://www.npmjs.com/package/azure-batch
@@ -129,8 +129,8 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 [api_python_pypi]: https://pypi.python.org/pypi/azure-batch
 [api_sample_net]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp
 [api_sample_python]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch
-[batch_ps]: https://msdn.microsoft.com/library/azure/mt125957.aspx
-[batch_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
+[batch_ps]: https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx
+[batch_rest]: https://msdn.microsoft.com/zh-cn/library/azure/Dn820158.aspx
 [free_account]: /pricing/1rmb-trial/
 [github_samples]: https://github.com/Azure/azure-batch-samples
 

@@ -16,7 +16,7 @@
 
 Azure Batch 的应用程序包功能可为池中的计算节点提供简单的应用程序管理和部署能力。通过应用程序包，可以上载及管理多个版本的工作执行应用程序（包括二进制文件和支持文件），然后将一或多个这种类型的应用程序自动部署到池中的计算节点。
 
-在本文中，将了解如何使用 Azure 门户来上载及管理应用程序包，然后使用 [Batch .NET][api_net] 库将它们安装在池的计算节点上。
+在本文中，将了解如何使用 Azure 门户预览来上载及管理应用程序包，然后使用 [Batch .NET][api_net] 库将它们安装在池的计算节点上。
 
 > [AZURE.NOTE] 此处所述的应用程序包功能替换了旧版服务中的“Batch Apps”功能。
 
@@ -54,21 +54,21 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包存储及部�
 
 ## 上载和管理应用程序
 
-可以使用 Azure 门户来添加、更新和删除应用程序包，以及配置每个应用程序的默认版本。
+可以使用 Azure 门户预览来添加、更新和删除应用程序包，以及配置每个应用程序的默认版本。
 
-在接下来的几个部分中，我们先讨论让存储帐户与 Batch 帐户关联，然后再了解 Azure 门户提供的包管理功能。之后，你将了解如何使用 [Batch .NET][api_net] 库将这些包部署到计算节点。
+在接下来的几个部分中，我们先讨论让存储帐户与 Batch 帐户关联，然后再了解 Azure 门户预览提供的包管理功能。之后，你将了解如何使用 [Batch .NET][api_net] 库将这些包部署到计算节点。
 
 ### <a name="link-a-storage-account"></a>链接存储帐户
 
-若要使用应用程序包，必须先链接 Azure 存储帐户与 Batch 帐户。如果还没有为 Batch 帐户配置存储帐户，Azure 门户在第一次单击 Batch 帐户边栏选项卡中的“应用程序”磁贴时显示警告。
+若要使用应用程序包，必须先链接 Azure 存储帐户与 Batch 帐户。如果还没有为 Batch 帐户配置存储帐户，Azure 门户预览在第一次单击 Batch 帐户边栏选项卡中的“应用程序”磁贴时显示警告。
 
 > [AZURE.IMPORTANT] Batch 目前仅支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account/#create-a-storage-account)中步骤 5 所述。将某个 Azure 存储帐户链接到你的 Batch 帐户时，只会链接**常规用途**的存储帐户。
 
-![Azure 门户中显示的未配置存储帐户警告][9]
+![Azure 门户预览中显示的未配置存储帐户警告][9]
 
 Batch 服务在应用程序包的存储和检索操作中使用关联的存储帐户。一旦链接两个帐户后，Batch 便能将存储在链接之存储帐户中的包自动部署到计算节点。单击“警告”边栏选项卡中的“存储帐户设置”，然后单击“存储帐户”边栏选项卡上的“存储帐户”，以将现有存储帐户链接到 Batch 帐户。
 
-![在 Azure 门户中选择存储帐户边栏选项卡][10]
+![在 Azure 门户预览中选择存储帐户边栏选项卡][10]
 
 我们建议你“专门”创建一个存储帐户用作 Batch 帐户，并在此处选择该帐户。有关创建存储帐户的详细信息，请参阅 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)中的“Create a storage account”（创建存储帐户）。创建存储帐户之后，可以使用“存储帐户”边栏选项卡将它链接到 Batch 帐户。
 
@@ -108,7 +108,7 @@ Batch 服务在应用程序包的存储和检索操作中使用关联的存储�
 
 单击“应用程序”边栏选项卡中的“添加”以打开“新建应用程序”边栏选项卡。
 
-![Azure 门户中的新建应用程序边栏选项卡][5]
+![Azure 门户预览中的新建应用程序边栏选项卡][5]
 
 “新建应用程序”边栏选项卡提供以下字段，供你指定新应用程序和应用程序包的设置。
 
@@ -142,7 +142,7 @@ Batch 服务在应用程序包的存储和检索操作中使用关联的存储�
 
 若要添加现有应用程序的新应用程序包版本，请在“应用程序”边栏选项卡中选择应用程序，再依序单击“包”和“添加”以显示“添加包”边栏选项卡。
 
-![Azure 门户中的添加应用程序包边栏选项卡][8]
+![Azure 门户预览中的添加应用程序包边栏选项卡][8]
 
 如你所见，除了“应用程序 ID”文本框已禁用之外，字段与“新建应用程序”边栏选项卡中的字段匹配。如上所述，指定新包的“版本”，浏览到“应用程序包”ZIP 文件，然后单击“确定”以上载包。
 
@@ -150,13 +150,13 @@ Batch 服务在应用程序包的存储和检索操作中使用关联的存储�
 
 若要更新或删除现有的应用程序包，请打开应用程序的详细信息边栏选项卡，单击“包”以显示“包”边栏选项卡，单击要修改之应用程序包数据列中的**省略号**，然后选择要执行的操作。
 
-![在 Azure 门户中更新或删除包][7]
+![在 Azure 门户预览中更新或删除包][7]
 
 **更新**
 
 当你单击“更新”时，“更新包”边栏选项卡随即出现。此边栏选项卡与“新建应用程序包”边栏选项卡相似，只不过包选择字段已启用，因此可以指定要上载的新 ZIP 文件。
 
-![Azure 门户中的更新包边栏选项卡][11]
+![Azure 门户预览中的更新包边栏选项卡][11]
 
 **删除**
 
@@ -166,7 +166,7 @@ Batch 服务在应用程序包的存储和检索操作中使用关联的存储�
 
 ## 将应用程序安装在计算节点上
 
-既然我们已探讨如何使用 Azure 门户来上载及管理应用程序包，接下来我们可以讨论如何将它们实际部署到计算节点，以及如何使用 Batch 任务运行它们。
+既然我们已探讨如何使用 Azure 门户预览来上载及管理应用程序包，接下来我们可以讨论如何将它们实际部署到计算节点，以及如何使用 Batch 任务运行它们。
 
 若要将应用程序包安装在池中的计算节点上，需要为池指定一个或多个应用程序包“引用”。在 Batch .NET 中，可以在创建池时指定一个或多个 [CloudPool][net_cloudpool].[ApplicationPackageReferences][net_cloudpool_pkgref]，或将它们添加现有池。
 
@@ -206,7 +206,7 @@ csharp
 
 `AZ_BATCH_APP_PACKAGE_BLENDER#2.7`
 
-如果应用程序指定默认版本，你可以引用不含版本字符串后缀的环境变量。例如，如果已在 Azure 门户中指定应用程序 blender 的默认版本 2.7，任务可以引用以下环境变量：
+如果应用程序指定默认版本，你可以引用不含版本字符串后缀的环境变量。例如，如果已在 Azure 门户预览中指定应用程序 blender 的默认版本 2.7，任务可以引用以下环境变量：
 
 `AZ_BATCH_APP_PACKAGE_BLENDER`
 
@@ -275,20 +275,20 @@ csharp
 
 * 了解如何以编程方式[使用 Batch Management .NET 管理 Azure Batch 帐户和配额](/documentation/articles/batch-management-dotnet/)。[Batch Management .NET][api_net_mgmt] 库可以启用 Batch 应用程序或服务的帐户创建和删除功能。
 
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_net_mgmt]: https://msdn.microsoft.com/library/azure/mt463120.aspx
-[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
+[api_net]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
+[api_net_mgmt]: https://msdn.microsoft.com/zh-cn/library/azure/mt463120.aspx
+[api_rest]: http://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
 [batch_mgmt_nuget]: https://www.nuget.org/packages/Microsoft.Azure.Management.Batch/
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[storage_pricing]: https://azure.microsoft.com/pricing/details/storage/
-[net_appops]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.applicationoperations.aspx
-[net_appops_listappsummaries]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.applicationoperations.listapplicationsummaries.aspx
-[net_cloudpool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[net_cloudpool_pkgref]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.applicationpackagereferences.aspx
-[net_pkgref]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.applicationpackagereference.aspx
-[rest_applications]: https://msdn.microsoft.com/library/azure/mt643945.aspx
-[rest_add_pool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
-[rest_add_pool_with_packages]: https://msdn.microsoft.com/library/azure/dn820174.aspx#bk_apkgreference
+[storage_pricing]: /pricing/details/storage/
+[net_appops]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.applicationoperations.aspx
+[net_appops_listappsummaries]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.applicationoperations.listapplicationsummaries.aspx
+[net_cloudpool]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.aspx
+[net_cloudpool_pkgref]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.applicationpackagereferences.aspx
+[net_pkgref]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.applicationpackagereference.aspx
+[rest_applications]: https://msdn.microsoft.com/zh-cn/library/azure/mt643945.aspx
+[rest_add_pool]: https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx
+[rest_add_pool_with_packages]: https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx#bk_apkgreference
 
 [1]: ./media/batch-application-packages/app_pkg_01.png 
 [2]: ./media/batch-application-packages/app_pkg_02.png 
