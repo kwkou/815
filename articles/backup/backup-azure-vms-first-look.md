@@ -23,7 +23,7 @@
 若要备份 VM，需要执行五个主要步骤：
 
 ![第一步](./media/backup-azure-vms-first-look/step-one.png) 创建一个备份保管库，或指定现有的备份保管库。<br/>
-![第二步](./media/backup-azure-vms-first-look/step-two.png) 使用 Azure 经典门户来发现并注册虚拟机。<br/> 
+![第二步](./media/backup-azure-vms-first-look/step-two.png) 使用 Azure 经典管理门户来发现并注册虚拟机。<br/> 
 ![第三步](./media/backup-azure-vms-first-look/step-three.png) 安装 VM 代理。<br/> 
 ![第四步](./media/backup-azure-vms-first-look/step-four.png) 创建用于保护虚拟机的策略。<br/> 
 ![第五步](./media/backup-azure-vms-first-look/step-five.png) 运行备份。

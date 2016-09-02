@@ -1,3 +1,5 @@
+<!-- need to be customized -->
+
 <properties
 	pageTitle="管理 Azure 备份保管库和服务器 | Azure"
 	description="使用本教程来了解如何管理 Azure 备份保管库和服务器。"

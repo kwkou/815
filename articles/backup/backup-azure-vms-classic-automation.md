@@ -86,7 +86,7 @@ Azure 备份文档中的 [Azure IaaS VM 备份简介](/documentation/articles/ba
 可以使用 **New-AzureRmBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
 
 
-		PS C:\> New-AzureRmResourceGroup –Name “test-rg” –Location “West US”
+		PS C:\> New-AzureRmResourceGroup –Name “test-rg” –Location “China North”
 		PS C:\> $backupvault = New-AzureRmBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GeoRedundant
 
 
@@ -117,7 +117,7 @@ Azure 备份文档中的 [Azure IaaS VM 备份简介](/documentation/articles/ba
 		DefaultPolicy             AzureVM            Daily              26-Aug-15 12:30:00 AM
 		
 
-> [AZURE.NOTE] PowerShell 中 BackupTime 字段的时区是 UTC。但是，在 Azure 门户中显示备份时间时，时区将会调整为你的本地系统并附带 UTC 时差。
+> [AZURE.NOTE] PowerShell 中 BackupTime 字段的时区是 UTC。
 
 一个备份策略至少与一个保留策略相关联。保留策略定义在 Azure 备份中保留恢复点的时限。**New-AzureRmBackupRetentionPolicy** cmdlet 创建的 PowerShell 对象用于存储保留策略信息。这些保留策略对象可以用作 New-AzureRmBackupProtectionPolicy cmdlet 的输入，也可以直接用于 Enable-AzureRmBackupProtection cmdlet。
 
@@ -152,10 +152,10 @@ Azure 备份文档中的 [Azure IaaS VM 备份简介](/documentation/articles/ba
 		testvm          Backup          InProgress      01-Sep-15 12:24:01 PM  01-Jan-01 12:00:00 AM
 
 
-> [AZURE.NOTE] PowerShell 中显示的 StartTime 和 EndTime 字段的时区是 UTC。但是，在 Azure 门户中显示类似信息时，时区将会调整为你的本地系统时钟。
+> [AZURE.NOTE] PowerShell 中显示的 StartTime 和 EndTime 字段的时区是 UTC。
 
 ### 监视备份作业
-在 Azure 备份中，大多数长时间运行的操作都是作为作业来建模的。这样可以轻松地跟踪相关进度，不必让 Azure 门户始终打开。
+在 Azure 备份中，大多数长时间运行的操作都是作为作业来建模的。这样可以轻松地跟踪相关进度。
 
 若要获取正在进行的作业的最新状态，请使用 **Get-AzureRmBackupJob** cmdlet。
 
@@ -204,9 +204,9 @@ Azure 备份文档中的 [Azure IaaS VM 备份简介](/documentation/articles/ba
 
 ### 还原磁盘
 
-通过 Azure 门户执行还原操作与通过 Azure PowerShell 执行还原操作存在很大的不同。如果使用 PowerShell，还原操作将在从恢复点还原磁盘和配置信息时停止。它不会创建虚拟机。
+如果使用 PowerShell，还原操作将在从恢复点还原磁盘和配置信息时停止。它不会创建虚拟机。
 
-> [AZURE.WARNING] Restore-AzureRmBackupItem 不创建 VM。它仅将磁盘还原到指定的存储帐户。这种行为不同于你在 Azure 门户中将会体验到的行为。
+> [AZURE.WARNING] Restore-AzureRmBackupItem 不创建 VM。它仅将磁盘还原到指定的存储帐户。
 
 		
 		PS C:\> $restorejob = Restore-AzureRmBackupItem -StorageAccountName "DestAccount" -RecoveryPoint $rp[0]
@@ -226,7 +226,7 @@ Azure 备份文档中的 [Azure IaaS VM 备份简介](/documentation/articles/ba
 
 ### 构建 VM
 
-从还原的磁盘构建 VM 时，可以使用旧版 Azure 服务管理 PowerShell cmdlet、新的 Azure Resource Manager 模板甚至 Azure 门户。在快速示例中，我们将演示如何使用 Azure 服务管理 cmdlet 来实现此目的。
+从还原的磁盘构建 VM 时，可以使用旧版 Azure 服务管理 PowerShell cmdlet、新的 Azure Resource Manager 模板。在快速示例中，我们将演示如何使用 Azure 服务管理 cmdlet 来实现此目的。
 
 
 		 $properties  = $details.Properties

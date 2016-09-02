@@ -15,8 +15,8 @@
 # 使用 Resource Manager 部署模型将文件还原到 Windows Server 或 Windows 客户端计算机
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/backup-azure-restore-windows-server/)
-- [经典门户](/documentation/articles/backup-azure-restore-windows-server-classic/)
+- [资源管理器模型](/documentation/articles/backup-azure-restore-windows-server/)
+- [经典部署模型](/documentation/articles/backup-azure-restore-windows-server-classic/)
 
 本文介绍执行两种还原操作所需的步骤：
 
@@ -25,7 +25,7 @@
 
 在这两种情况下，都将从 Azure 恢复服务保管库检索数据。
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 ## 将数据恢复到同一台计算机
 如果你意外删除了某个文件并想要在同一台计算机（备份位置）中还原文件，以下步骤可帮助你恢复数据。
@@ -65,7 +65,7 @@
 
 8. 提供这些输入后，单击“下一步”。将文件还原到此计算机的恢复工作流将会开始。
 
-## 恢复到备用计算机
+## <a name="recover-to-an-alternate-machine"></a>恢复到备用计算机
 如果整个服务器断开连接，你仍可以将 Azure 备份中的数据恢复到另一台计算机。下面的步骤演示了工作流。
 
 这些步骤中使用的术语包括：

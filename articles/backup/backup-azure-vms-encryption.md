@@ -34,7 +34,7 @@
 | -------- | ------------- | ------- |
 | 加密 | Bitlocker 或 dmcrypt | 由于相比于 Azure 备份，这种加密在不同的层中进行，因此可以使用任何加密软件。尽管如此，我们只使用 Bitlocker 和 dmcrypt 通过 CloudLink 验证了这种体验。<br><br> 加密数据需要使用密钥。必须将密钥存放在安全的位置，以确保对数据的访问经过授权。 |
 | 密钥管理 | CloudLink SecureVM | 密钥是加密或解密数据的关键所在。如果没有正确的密钥，就无法检索数据。这对以下操作极其重要：<br><li>密钥滚动更新<li>长期保留<br><br>例如，用于备份 7 年前数据的密钥可能与当天使用的密钥不同。如果没有 7 年前的密钥，就无法使用从该时间还原的数据。|
-| 数据备份 | Azure 备份 | 使用 Azure 备份并配合 [Azure 管理门户](http://manage.windowsazure.cn)或 PowerShell 来备份 Azure IaaS VM |
+| 数据备份 | Azure 备份 | 使用 Azure 备份并配合 [Azure 经典管理门户](http://manage.windowsazure.cn)或 PowerShell 来备份 Azure IaaS VM |
 | 数据还原 | Azure 备份 | 使用 Azure 备份从恢复点还原磁盘或整个 VM。在执行还原操作过程中，Azure 备份不会解密数据。|
 | 解密 | Bitlocker 或 dmcrypt | 为了从还原的数据磁盘或还原的 VM 读取数据，软件需有密钥管理软件提供的密钥。如果没有正确的密钥，就无法解密数据。 |
 

@@ -100,7 +100,7 @@
 2. 恢复服务保管库是一种 Resource Manager 资源，因此需要将它放在资源组中。你可以使用现有的资源组，也可以使用 **[New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/mt603739.aspx)** cmdlet 创建新的资源组。创建新的资源组时，请指定资源组的名称和位置。
 
     
-    	PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "West US"
+    	PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "China North"
     
 
 3. 使用 **[New-AzureRmRecoveryServicesVault](https://msdn.microsoft.com/zh-cn/library/mt643910.aspx)** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。
@@ -158,7 +158,7 @@
 		DefaultPolicy        AzureVM            AzureVM              4/14/2016 5:00:00 PM
 
 
-> [AZURE.NOTE] PowerShell 中 BackupTime 字段的时区是 UTC。但是，在 Azure 门户中显示备份时间时，该时间将会根据你的本地时区调整。
+> [AZURE.NOTE] PowerShell 中 BackupTime 字段的时区是 UTC。
 
 一个备份保护策略至少与一个保留策略相关联。保留策略定义在 Azure 备份中保留恢复点的时限。使用 **Get-AzureRmRecoveryServicesBackupRetentionPolicyObject** 可以查看默认保留策略。同理，可以使用 **Get-AzureRmRecoveryServicesBackupSchedulePolicyObject** 获取默认计划策略。计划和保留策略对象将用作 **New-AzureRmRecoveryServicesBackupProtectionPolicy** cmdlet 的输入。
 

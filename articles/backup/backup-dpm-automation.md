@@ -69,7 +69,7 @@
 2. 恢复服务保管库是一种 ARM 资源，因此需要将它放在资源组中。可以使用现有资源组，也可以创建新组。创建新的资源组时，请指定资源组的名称和位置。
 
     
-		PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "West US"
+		PS C:\> New-AzureRmResourceGroup –Name "test-rg" –Location "China North"
     
 
 3. 使用 **New-AzureRmRecoveryServicesVault** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。

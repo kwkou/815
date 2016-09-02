@@ -17,8 +17,8 @@
 # 使用经典部署模型将 Windows Server 或客户端备份到 Azure
 
 > [AZURE.SELECTOR]
-- [经典门户](/documentation/articles/backup-configure-vault-classic/)
-- [Azure 门户](/documentation/articles/backup-configure-vault/)
+- [经典部署模型](/documentation/articles/backup-configure-vault-classic/)
+- [资源管理器模型](/documentation/articles/backup-configure-vault/)
 
 本文介绍你需要遵循哪些过程来准备你的环境，以及将 Windows Server（或客户端）备份到 Azure。此外，还说明了部署备份解决方案的注意事项。如果你对 Azure 备份感兴趣，本文可引导你快速完成相关过程。
 
@@ -34,7 +34,7 @@
 
 ### 创建备份保管库的步骤
 
-1. 登录到[经典门户](https://manage.windowsazure.cn/)。
+1. 登录到[经典管理门户](https://manage.windowsazure.cn/)。
 
 2. 单击“新建”>“数据服务”>“恢复服务”->“备份保管库”，然后选择“快速创建”。
 
@@ -46,7 +46,7 @@
 
     ![创建备份保管库](./media/backup-configure-vault-classic/demo-vault-name.png)
 
-    创建备份保管库可能需要一段时间。若要检查状态，可以监视经典门户底部的通知。
+    创建备份保管库可能需要一段时间。若要检查状态，可以监视经典管理门户底部的通知。
 
     在创建备份保管库后，将显示一条消息通知你已成功创建保管库。它还会在“恢复服务”资源列表中显示为“活动”。
 
@@ -75,7 +75,7 @@
     d.在左侧导航窗格中单击“恢复服务”，以返回到恢复服务的资源列表。
 
 ## 步骤 2：下载保管库凭据文件
-本地计算机需要先在备份保存库中通过身份验证才能将数据备份到 Azure。身份验证是通过*保管库凭据*实现的。从经典门户通过安全通道下载保管库凭据文件。证书私钥不会在门户或服务中持久保存。
+本地计算机需要先在备份保存库中通过身份验证才能将数据备份到 Azure。身份验证是通过*保管库凭据*实现的。从经典管理门户通过安全通道下载保管库凭据文件。证书私钥不会在门户或服务中持久保存。
 
 详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup#what-is-the-vault-credential-file)。
 
@@ -87,7 +87,7 @@
 
 2.  在“快速启动”页上，单击“下载保管库凭据”。
 
-    经典门户将使用保管库名称和当前日期的组合生成保管库凭据。保管库凭据文件仅在注册工作流中使用，48 小时后过期。
+    经典管理门户将使用保管库名称和当前日期的组合生成保管库凭据。保管库凭据文件仅在注册工作流中使用，48 小时后过期。
 
     保管库凭据文件可从门户下载。
 
