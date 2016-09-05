@@ -258,12 +258,6 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Azure �
 * [为云服务实例设置远程桌面][remotedesktop]
 * [部署云服务项目][deploy]
 
-我正在使用 Visual Studio，我想要...
-
-* [创建新的云服务][vs_create]
-* [重新配置现有云服务][vs_reconfigure]
-* [部署云服务项目][vs_deploy]
-* [为云服务实例设置远程桌面][vs_remote]
 
 [deploy]: /documentation/articles/cloud-services-how-to-create-deploy-portal/
 [remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop/

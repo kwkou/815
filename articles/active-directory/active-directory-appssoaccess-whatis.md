@@ -200,7 +200,6 @@ https://myapps.microsoft.com/contosobuild.com/signin/Twitter/230848d52c8745d4b05
 ##相关文章
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
-- [有关如何将 SaaS 应用与 Azure Active Directory 集成的教程列表](/documentation/articles/active-directory-saas-tutorial-list/)
 - [Introduction to Managing Access to Apps（管理对应用的访问简介）](/documentation/articles/active-directory-managing-access-to-apps/)
 
 

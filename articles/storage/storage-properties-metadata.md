@@ -1,17 +1,16 @@
-
 <properties 
-  pageTitle="在 Azure 存储空间中设置和检索对象的属性和元数据 | Azure" 
-  description="在 Azure 存储空间中存储对象的自定义元数据，并设置和检索系统属性。" 
-  services="storage" 
-  documentationCenter="" 
-  authors="tamram" 
-  manager="adinah" 
-  editor=""/>
+	pageTitle="在 Azure 存储空间中设置和检索对象的属性和元数据 | Azure" 
+	description="在 Azure 存储空间中存储对象的自定义元数据，并设置和检索系统属性。" 
+	services="storage" 
+	documentationCenter="" 
+	authors="tamram" 
+	manager="adinah" 
+	editor=""/>
 
 <tags 
-  ms.service="storage" 
-  ms.date="05/23/2016" 
-  wacn.date="07/25/2016"/>
+	ms.service="storage" 
+	ms.date="05/23/2016" 
+	wacn.date="07/25/2016"/>
 
 
 # 设置和检索属性与元数据 #
