@@ -16,6 +16,16 @@
    
 # 有关 IoT 套件的常见问题
 
+### 在 Azure 门户预览中删除资源组与在 azureiotsuite.cn 中删除预配置解决方案有什么区别？
+
+- 如果在 [azureiotsuite.cn][lnk-azureiotsuite] 中删除预配置解决方案，则会删除在创建该解决方案时设置的所有资源；如果向资源组添加了其他资源，则也会删除这些资源。
+
+- 如果在 [Azure 门户预览][lnk-azure-portal]中删除某个资源组，则只删除该资源组中的资源；还需要在 [Azure 经典管理门户][lnk-classic-portal]中删除与预配置解决方案关联的 Azure Active Directory 应用程序。
+
+### 一个订阅中可以设置多少个 IoT 中心实例？ 
+
+10 个。如需要设置更多，请通过[ Azure 在线申请支持][link-azuresupportticket]创建工单，提出申请。默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅上限）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案只能预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个该解决方案。
+
 ### 在订阅中可以设置多少个 DocumentDB 实例？
 
 50 个。可以[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单以提高此限制，但是在默认情况下，对每个订阅只能设置 50 个 DocumentDB 实例。
@@ -43,6 +53,8 @@
   `<setting name="MapApiQueryKey" value="" />`
 
 
+### 如果我具有 Azure for DreamSpark，是否可以创建预配置解决方案？
+当前无法使用 [Azure for DreamSpark][lnk-dreamspark] 帐户创建预配置解决方案。但是，你可以在几分钟内创建一个[试用帐户][1rmb-trial]，以便创建预配置的解决方案。
 
 
 
