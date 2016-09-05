@@ -174,7 +174,7 @@
 
 9. 在“选择初始备份类型”页上，选择初始备份类型。将“自动通过网络”选项保持选中状态，然后单击“下一步”。
 
-    你可以通过网络自动备份，或者脱机备份。本文的余下部分将介绍自动备份过程。如果你想要执行脱机备份，请查看 [Azure 备份中的脱机备份工作流](/documentation/articles/backup-azure-backup-import-export/)以了解更多信息。
+    你可以通过网络自动备份，或者脱机备份。本文的余下部分将介绍自动备份过程。
 
 10. 在“确认”页上复查信息，然后单击“完成”。
 
@@ -220,7 +220,6 @@
 有关备份 VM 或其他工作负荷的详细信息，请参阅：
 
 - [Back up IaaS VMs（备份 IaaS VM）](/documentation/articles/backup-azure-vms-prepare/)
-- [使用 Azure 备份服务器将工作负荷备份到 Azure](/documentation/articles/backup-azure-microsoft-azure-backup/)
 - [Back up workloads to Azure with DPM（使用 DPM 将工作负荷备份到 Azure）](/documentation/articles/backup-azure-dpm-introduction-classic/)
 
 <!---HONumber=Mooncake_0829_2016-->

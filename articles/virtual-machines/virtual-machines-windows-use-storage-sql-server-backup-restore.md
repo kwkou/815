@@ -61,7 +61,7 @@ SQL Server 2016 引入了新功能；你可以使用[文件快照备份](http://
 
 ## 后续步骤
 
-1. 创建 Azure 帐户（如果还没有帐户）。如果你正在评估 Azure，请考虑使用[试用版](https://azure.microsoft.com/free/)。
+1. 创建 Azure 帐户（如果还没有帐户）。如果你正在评估 Azure，请考虑使用[试用版](/pricing/1rmb-trial/)。
 
 1. 接着，完成以下教程之一，这些教程会引导你创建存储帐户以及执行还原。
 

@@ -95,7 +95,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 - SQL Server 会话状态提供程序 - 此提供程序将会话状态存储在 SQL Server 中。如果要将会话状态保存在持久性存储中，则应使用此提供程序。可以缩放 Web 应用，但将 SQL Server 用于会话将对 Web 应用造成性能影响。
 
-- 分布式内存中会话状态提供程序，如 Redis 缓存会话状态提供程序 - 此提供程序提供两全其美的功能。Web 应用可以使用简单、快速且可伸缩的会话状态提供程序。但是，你必须一直考虑此提供程序将会话状态存储在缓存中，而你的应用必须考虑到在与分布式内存中缓存通信时关联的所有特征，如暂时性网络故障。有关使用缓存的最佳实践，请参阅 Microsoft 模式和实践 [Azure 云应用程序设计和实现指南](https://github.com/mspnp/azure-guidance)中的[缓存指南](https://github.com/mspnp/azure-guidance/blob/master/Caching.md)。
+- 分布式内存中会话状态提供程序，如 Redis 缓存会话状态提供程序 - 此提供程序提供两全其美的功能。Web 应用可以使用简单、快速且可伸缩的会话状态提供程序。但是，你必须一直考虑此提供程序将会话状态存储在缓存中，而你的应用必须考虑到在与分布式内存中缓存通信时关联的所有特征，如暂时性网络故障。
 
 有关会话状态和其他最佳实践的详细信息，请参阅 [Web 开发最佳做法（使用 Azure 构建实际的云应用）](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices)。
 

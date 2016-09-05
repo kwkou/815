@@ -62,7 +62,7 @@
 
     - 如果需要不会更改的固定 IP 地址（例如，如果需要在 DNS 中创建 A 记录，或者需要将 IP 地址列入允许列表，请保留[静态 IP 地址][static-ip]。
 
-    - 你还可以为 IP 地址创建完全限定域名 (FQDN)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅 [Create a Fully Qualified Domain Name in the Azure portal][fqdn]（在 Azure 门户中创建完全限定的域名）。
+    - 你还可以为 IP 地址创建完全限定域名 (FQDN)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅 [Create a Fully Qualified Domain Name in the Azure portal][fqdn]（在 Azure 门户预览中创建完全限定的域名）。
 
 - 所有 NSG 都包含一组[默认规则][nsg-default-rules]，其中包括阻止所有入站 Internet 流量的规则。无法删除默认规则，但其他规则可以覆盖它们。若要启用 Internet 流量，请创建允许特定端口（例如，将端口 80 用于 HTTP）的入站流量的规则。
 
@@ -86,7 +86,7 @@
 
 ## 可管理性注意事项
 
-- **资源组。** 将共享相同生命周期的紧密耦合资源放入同一[资源组][resource-manager-overview]中。资源组可让你以组的形式部署和监视资源，并按资源组汇总计费成本。你还可以删除作为集的资源，这对于测试部署非常有用。为资源指定有意义的名称。这样，可更轻松地找到特定资源并了解其角色。请参阅 [Recommended Naming Conventions for Azure Resources][naming conventions]（Azure 资源的建议命名约定）。
+- **资源组。** 将共享相同生命周期的紧密耦合资源放入同一[资源组][resource-manager-overview]中。资源组可让你以组的形式部署和监视资源，并按资源组汇总计费成本。你还可以删除作为集的资源，这对于测试部署非常有用。为资源指定有意义的名称。这样，可更轻松地找到特定资源并了解其角色。
 
 - **VM 诊断。** 启用监视和诊断，包括基本运行状况指标、诊断基础结构日志和[启动诊断][boot-diagnostics]。如果你的 VM 陷入不可启动状态，启动诊断可帮助你诊断启动失败。有关详细信息，请参阅 [Enable monitoring and diagnostics][enable-monitoring]（启用监视和诊断）。使用 [Azure 日志收集][log-collector]扩展收集 Azure 平台日志并将其上载到 Azure 存储空间。
 
@@ -100,7 +100,7 @@
 
         azure vm deallocate <resource-group> <vm-name>
 
-    Azure 门户中的“停止”按钮也会解除分配 VM。但是，如果在已登录时通过 OS 关闭，VM 将停止，但_不_会解除分配，因此仍将向你收费。
+    Azure 门户预览中的“停止”按钮也会解除分配 VM。但是，如果在已登录时通过 OS 关闭，VM 将停止，但_不_会解除分配，因此仍将向你收费。
 
 - **删除 VM。** 如果你删除 VM，则不会删除 VHD。这意味着你可以安全地删除 VM，而不会丢失数据。但是，仍将向你收取存储费用。若要删除 VHD，请从 [Blob 存储][blob-storage]中删除相应文件。
 
@@ -108,15 +108,15 @@
 
 ## 安全注意事项
 
-- 使用 [Azure 安全中心][security-center]，可获得 Azure 资源的安全状态的核心概况。安全中心监视潜在的安全问题，如系统更新、反恶意软件，并全面描述了你的部署的安全运行状况。
+- 使用 Azure 安全中心，可获得 Azure 资源的安全状态的核心概况。安全中心监视潜在的安全问题，如系统更新、反恶意软件，并全面描述了你的部署的安全运行状况。
 
-    - 安全中心针对每个 Azure 订阅进行配置。按[使用安全中心]中所述，启用安全数据收集。
+    - 安全中心针对每个 Azure 订阅进行配置。
 
     - 启用数据收集后，安全中心将自动扫描该订阅下创建的所有 VM。
 
 - **修补程序管理。** 如果启用，安全中心将检查是否缺少安全更新和关键更新。使用 VM 上的[组策略设置][group-policy]可启用自动系统更新。
 
-- **反恶意软件。** 如果启用，安全中心将检查是否已安装反恶意软件。还可以使用安全中心从 Azure 门户中安装反恶意软件。
+- **反恶意软件。** 如果启用，安全中心将检查是否已安装反恶意软件。还可以使用安全中心从 Azure 门户预览中安装反恶意软件。
 
 - 使用[基于角色的访问控制][rbac] (RBAC) 来控制对你部署的 Azure 资源的访问权限。RBAC 允许你将授权角色分配给开发运营团队的成员。例如，“读者”角色可以查看 Azure 资源，但不能创建、管理或删除这些资源。某些角色特定于特定的 Azure 资源类型。例如，“虚拟机参与者”角色可以执行重启或解除分配 VM、重置管理员密码、创建新的 VM 等操作。可能会对此参考体系结构有用的其他[内置 RBAC 角色][rbac-roles]包括 [DevTest Lab 用户][rbac-devtest]和[网络参与者][rbac-network]。可将用户分配给多个角色，并且可以创建自定义角色以实现更细化的权限。
 
@@ -136,7 +136,7 @@
 
 模板已使用单独 JSON 文件中的参数进行参数化。可以修改这些文件的参数，以根据自己的要求配置部署。不需要修改模板本身。请注意，不得更改参数文件中对象的架构。
 
-编辑模板时，请根据 [Recommended Naming Conventions for Azure Resources][naming conventions]（Azure 资源的建议命名约定）中所述的命名约定创建对象。
+编辑模板时，请根据Azure 资源的建议命名约定中所述的命名约定创建对象。
 
 脚本将引用以下参数文件来构建 VM 和周边基础结构。
 
@@ -317,7 +317,7 @@
 
 	对于 `<location>`，请指定 Azure 区域，例如 `chinaeast` 或 `chinanorth`。
 
-8. 完成脚本后，使用 Azure 门户验证是否已成功创建网络、NSG 和 VM。
+8. 完成脚本后，使用 Azure 门户预览验证是否已成功创建网络、NSG 和 VM。
 
 ## 后续步骤
 
@@ -340,7 +340,7 @@
 [group-policy]: https://technet.microsoft.com/zh-cn/library/dn595129.aspx
 [log-collector]: https://azure.microsoft.com/blog/simplifying-virtual-machine-troubleshooting-using-azure-log-collector/
 [manage-vm-availability]: /documentation/articles/virtual-machines-windows-manage-availability/
-[multi-vm]: /documentation/articles/guidance-compute-multi-vm/
+[multi-vm]: /documentation/articles/virtual-machines-windows-multiple-vms/
 [naming conventions]: /documentation/articles/guidance-naming-conventions/
 [nsg]: /documentation/articles/virtual-networks-nsg/
 [nsg-default-rules]: /documentation/articles/virtual-networks-nsg/#default-rules
@@ -358,19 +358,19 @@
 [resource-manager-overview]: /documentation/articles/resource-group-overview
 [security-center]: https://azure.microsoft.com/services/security-center/
 [select-vm-image]: /documentation/articles/virtual-machines-windows-cli-ps-findimage/
-[services-by-region]: https://azure.microsoft.com/regions/#services
+[services-by-region]: /support/service-dashboard/
 [static-ip]: /documentation/articles/virtual-networks-reserved-public-ip/
 [storage-price]: /pricing/details/storage/
 [使用安全中心]: /documentation/articles/security-center-get-started/#use-security-center
 [virtual-machine-sizes]: /documentation/articles/virtual-machines-windows-sizes/
 [vm-disk-limits]: /documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits
 [vm-resize]: /documentation/articles/virtual-machines-linux-change-vm-size/
-[vm-sla]: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/
+[vm-sla]: /support/legal/sla/virtual-machines/
 [ARM-Templates]: /documentation/articles/resource-group-authoring-templates/
-[solution-script]: https://raw.githubusercontent.com/mspnp/arm-building-blocks/master/guidance-compute-single-vm/Scripts/Deploy-ReferenceArchitecture.ps1
-[vnet-parameters]: https://raw.githubusercontent.com/mspnp/arm-building-blocks/master/guidance-compute-single-vm/Parameters/windows/virtualNetwork.parameters.json
-[nsg-parameters]: https://raw.githubusercontent.com/mspnp/arm-building-blocks/master/guidance-compute-single-vm/Parameters/windows/networkSecurityGroups.parameters.json
-[vm-parameters]: https://raw.githubusercontent.com/mspnp/arm-building-blocks/master/guidance-compute-single-vm/Parameters/windows/virtualMachine.parameters.json
+[solution-script]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/Deploy-ReferenceArchitecture.ps1
+[vnet-parameters]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/parameters/windows/virtualNetwork.parameters.json
+[nsg-parameters]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/parameters/windows/networkSecurityGroups.parameters.json
+[vm-parameters]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/parameters/windows/virtualMachine.parameters.json
 [azure-powershell-download]: /documentation/articles/powershell-install-configure/
 [0]: ./media/guidance-blueprints/compute-single-vm.png "Azure 中的单一 Windows VM 体系结构"
 

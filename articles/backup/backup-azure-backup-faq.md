@@ -17,7 +17,7 @@
 
 本文提供有关 Azure 备份服务常见问题（及相应解答）的列表。我们的社区可在短时间内提供解答，如果某个问题被经常提出，我们会将它添加到本文中。问题的解答通常提供参考或支持信息。你可以在本文或相关章的 Disqus 部分中提出有关 Azure 备份的问题。你还可以在[论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazureonlinebackup)中发布有关 Azure 备份服务的问题。
 
-## 安装和配置
+## <a name="installation-amp-configuration"></a>安装和配置
 **问 1.我可以在哪些受支持的操作系统上使用 Azure 备份向 Azure 备份数据？** <br/>
 答 1.Azure 备份支持下面列出的操作系统
 

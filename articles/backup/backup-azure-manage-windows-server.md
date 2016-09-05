@@ -23,7 +23,7 @@
 
 本文概述了可通过 Azure 管理门户和 Azure 备份代理完成的备份管理任务。
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 ## 管理门户任务
 
@@ -103,7 +103,7 @@ Azure 备份代理提供的“限制”选项卡可让你控制在数据传输�
 
 4. 单击**“确定”**。
 
-## 管理排除设置
+## <a name="exclusion-settings"></a>管理排除设置
 
 1. 打开 **Azure 备份代理**（可以通过在计算机中搜索 *Azure 备份* 来找到它）。
 
@@ -165,6 +165,6 @@ A2.如果将通知配置为每小时发送一次，而引发的警报在一小�
 ## 后续步骤
 - [从 Azure 还原 Windows Server 或 Windows 客户端](/documentation/articles/backup-azure-restore-windows-server/)
 - 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)
-- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
+- 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)
 
 <!---HONumber=Mooncake_0829_2016-->

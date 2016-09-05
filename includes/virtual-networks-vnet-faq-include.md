@@ -54,7 +54,7 @@ VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)�
 
 VNet 中使用的子网数量没有限制。所有子网都必须完全包含在虚拟网络地址空间中，并不应相互重叠。
 
-### 使用这些子网中的 IP 地址是否有任何限制？
+### <a name="are-there-any-restrictions-on-using-ip-addresses-within-these-subnets"></a>使用这些子网中的 IP 地址是否有任何限制？
 
 Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后一个 IP 地址仅为协议一致性而保留，其他 3 个地址用于 Azure 服务。
 

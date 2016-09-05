@@ -45,7 +45,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 以下部分中的步骤说明如何在新的高级缓存上配置 Redis 持久性。配置 Redis 持久性后，单击“创建”以创建具有 Redis 持久性的新高级版缓存。
 
-## 配置 Redis 持久性
+## <a name="configure-redis-persistence"></a>配置 Redis 持久性
 
 在“Redis 数据持久性”边栏选项卡上配置 Redis 持久性。对于新缓存，可以按前一部分中所述，在创建缓存过程中访问此边栏选项卡。对于现有缓存，可以从缓存的“设置”边栏选项卡访问“Redis 数据持久性”边栏选项卡。
 
@@ -97,7 +97,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 ### <a name="what-happens-if-i-have-scaled-to-a-different-size-and-a-backup-is-restored-that-was-made-before-the-scaling-operation"></a> 如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？
 
 -	如果缩放到更大的大小，则没有任何影响。
--	如果缩放到更小的大小，并且你的自定义[数据库](/documentation/articles/cache-configure/#databases)设置大于新大小的[数据库限制](/documentation/articles/cache-configure/#databases)，则不会还原这些数据库中的数据。有关详细信息，请参阅[在缩放过程中，自定义数据库设置是否会受影响？](#is-my-custom-databases-setting-affected-during-scaling)
+-	如果缩放到更小的大小，并且你的自定义[数据库](/documentation/articles/cache-configure/#databases)设置大于新大小的[数据库限制](/documentation/articles/cache-configure/#databases)，则不会还原这些数据库中的数据。
 -	如果缩放到更小的大小，并且更小的大小空间不足，无法容纳上次备份的所有数据，则在还原过程中，通常会使用 [allkeys-lru](http://redis.io/topics/lru-cache) 逐出策略逐出密钥。
 
 ## 后续步骤
