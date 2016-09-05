@@ -9,7 +9,7 @@
 <tags
 	ms.service="backup"
 	ms.date="07/01/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 # VM 备份期间处理加密的磁盘
 

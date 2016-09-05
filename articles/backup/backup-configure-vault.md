@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="08/10/2016"
-	wacn.date=""/>  
+	wacn.date="09/05/2016"/>  
 
 
 # 通过 Resource Manager 部署模型将 Windows Server 或客户端备份到 Azure

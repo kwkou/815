@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/22/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 # 将 Azure 存储空间用于 SQL Server 备份和还原
 

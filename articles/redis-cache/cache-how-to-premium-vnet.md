@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="07/12/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 # 如何为高级 Azure Redis 缓存配置虚拟网络支持
 Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。

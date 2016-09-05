@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="08/11/2016"
-	wacn.date=""/>  
+	wacn.date="09/05/2016"/>  
 
 
 # 准备好要上载到 Azure 的 Windows VHD

@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="08/03/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 # 使用 PowerShell 部署和管理 Resource Manager 部署型 VM 的备份
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="06/22/2016"
-	wacn.date=""/>  
+	wacn.date="09/05/2016"/>  
 
 
 # 如何为高级 Azure Redis 缓存配置 Redis 群集功能

@@ -12,7 +12,7 @@
 <tags
 	ms.service="backup"
 	ms.date="07/19/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 
 # 监视和管理适用于 Windows 计算机的 Azure 恢复服务保管库和服务器

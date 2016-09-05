@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/18/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 # Windows VM 的计算基准测试分数
 
