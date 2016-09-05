@@ -181,7 +181,7 @@
 
 ### 还原磁盘
 
-通过 Azure 门户执行还原操作与通过 Azure PowerShell 执行还原操作存在很大的不同。如果使用 PowerShell，还原操作将在从恢复点还原磁盘和配置信息时停止。它不会创建虚拟机。
+如果使用 PowerShell，还原操作将在从恢复点还原磁盘和配置信息时停止。它不会创建虚拟机。
 
 > [AZURE.WARNING] Restore-AzureRmBackupItem 不创建 VM。它仅将磁盘还原到指定的存储帐户。
 
