@@ -16,7 +16,7 @@
 
 >[AZURE.NOTE] Azure Redis 缓存缩放功能目前处于预览状态。
 
-Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能的选择更加灵活。如果创建缓存后，你的应用程序的要求发生更改，可以使用 [Azure 门户](https://portal.azure.cn)中的“更改定价层”边栏选项卡缩放缓存的大小。
+Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能的选择更加灵活。如果创建缓存后，你的应用程序的要求发生更改，可以使用 [Azure 门户预览](https://portal.azure.cn)中的“更改定价层”边栏选项卡缩放缓存的大小。
 
 ## 何时缩放
 
@@ -32,7 +32,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 如果确定缓存不再满足应用程序的要求，可以更改到适合应用程序的更大或更小缓存定价层。有关确定应使用哪个缓存定价层的详细信息，请参阅[我应当使用哪些 Redis 缓存产品/服务和大小](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
 
 ## 缩放缓存
-若要缩放缓存，请在 [Azure 门户](https://portal.azure.cn)中[浏览到缓存](/documentation/articles/cache-configure/#configure-redis-cache-settings)，然后单击“设置”、“定价层”。
+若要缩放缓存，请在 [Azure 门户预览](https://portal.azure.cn)中[浏览到缓存](/documentation/articles/cache-configure/#configure-redis-cache-settings)，然后单击“设置”、“定价层”。
 
 也可以单击“Redis 缓存”边栏选项卡中的“定价层”部分。
 
@@ -59,7 +59,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ## <a name="how-to-automate-a-scaling-operation"></a>如何自动执行缩放操作
 
-除了在 Azure 门户中缩放 Azure Redis 缓存实例以外，还可以使用 Azure Redis 缓存 PowerShell cmdlet、Azure CLI 和 Azure 管理库 (MAML) 进行缩放。
+除了在 Azure 门户预览中缩放 Azure Redis 缓存实例以外，还可以使用 Azure Redis 缓存 PowerShell cmdlet、Azure CLI 和 Azure 管理库 (MAML) 进行缩放。
 
 -	[使用 PowerShell 进行缩放](#scale-using-powershell)
 -	[使用 Azure CLI 进行缩放](#scale-using-azure-cli)
@@ -177,7 +177,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ### <a name="how-can-i-tell-when-scaling-is-complete"></a> 如何判断缩放何时完成？
 
-在 Azure 门户中可以看到进行中的缩放操作。缩放完成后，缓存状态将更改为**正在运行**。
+在 Azure 门户预览中可以看到进行中的缩放操作。缩放完成后，缓存状态将更改为**正在运行**。
 
 ### <a name="why-is-this-feature-in-preview"></a> 为何此功能处于预览状态？
 
