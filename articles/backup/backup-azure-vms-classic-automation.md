@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="08/08/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 
 # 通过 PowerShell 为 Azure VM 部署和管理备份

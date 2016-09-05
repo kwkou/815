@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="07/28/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 # 创建在 Azure 上运行的 Linux 虚拟机副本
 

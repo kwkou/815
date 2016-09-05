@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="07/18/2016"
-	wacn.date=""/>
+	wacn.date="09/05/2016"/>
 
 # Linux VM 的计算基准测试分数
 

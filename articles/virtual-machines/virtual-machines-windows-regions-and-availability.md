@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="07/19/2016"
-	wacn.date=""/>  
+	wacn.date="09/05/2016"/>  
 
 
 [AZURE.INCLUDE [virtual-machines-common-regions-and-availability](../../includes/virtual-machines-common-regions-and-availability.md)]

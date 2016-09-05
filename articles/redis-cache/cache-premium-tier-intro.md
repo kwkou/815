@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="06/29/2016"
-	wacn.date=""/>  
+	wacn.date="09/05/2016"/>  
 
 
 # Azure Redis 缓存高级层简介

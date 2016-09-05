@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="08/08/2016"
-	wacn.date=""/>  
+	wacn.date="09/05/2016"/>  
 
 
 # 在备份保管库中恢复另一 DPM 服务器中的数据
