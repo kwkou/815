@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 虚拟机备份疑难解答 | Microsoft Azure"
+	pageTitle="Azure 虚拟机备份疑难解答 | Azure"
 	description="Azure 虚拟机备份和还原疑难解答"
 	services="backup"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="05/10/2016"
-	wacn.date="07/13/2016"/>
+	wacn.date=""/>
 
 
 # Azure 虚拟机备份疑难解答
@@ -25,14 +25,14 @@
 
 | 备份操作 | 错误详细信息 | 解决方法 |
 | -------- | -------- | -------|
-| 发现 | 无法发现新项 - Microsoft Azure 备份发生内部错误。等候几分钟时间，然后重试操作。 | 在 15 分钟后重试发现过程。
+| 发现 | 无法发现新项 - Azure 备份发生内部错误。等候几分钟时间，然后重试操作。 | 在 15 分钟后重试发现过程。
 | 发现 | 无法发现新项 - 另一个发现操作正在进行。请等到当前发现操作完成。 | 无 |
 
 ## 注册
 | 备份操作 | 错误详细信息 | 解决方法 |
 | -------- | -------- | -------|
 | 注册 | 附加到虚拟机的数据磁盘数超过了支持的限制 - 请分离此虚拟机上的某些数据磁盘，然后重试操作。Azure 备份最多支持将 16 个数据磁盘附加到 Azure 虚拟机进行备份 | 无 |
-| 注册 | Microsoft Azure 备份遇到内部错误 - 等候几分钟，然后重试操作。如果问题持续出现，请联系 Microsoft 支持。 | 可能因为不支持以下其中一项配置而发生此错误：<ul><li>Premium LRS </ul> 可以使用恢复服务保管库备份高级存储 VM。[了解详细信息](/documentation/articles/backup-introduction-to-azure-backup/#back-up-and-restore-premium-storage-vms) |
+| 注册 | Azure 备份遇到内部错误 - 等候几分钟，然后重试操作。如果问题持续出现，请联系 Microsoft 支持。 | 可能因为不支持以下其中一项配置而发生此错误：<ul><li>Premium LRS </ul> 可以使用恢复服务保管库备份高级存储 VM。[了解详细信息](/documentation/articles/backup-introduction-to-azure-backup/#back-up-and-restore-premium-storage-vms) |
 | 注册 | 安装代理操作超时，注册失败 | 检查是否支持虚拟机的操作系统版本。 |
 | 注册 | 命令执行失败 - 此项上正在进行另一项操作。等到前一项操作完成 | 无 |
 | 注册 | 不支持使用虚拟硬盘存储在高级存储上的虚拟机进行备份 | 无 |
@@ -42,9 +42,9 @@
 
 | 备份操作 | 错误详细信息 | 解决方法 |
 | -------- | -------- | -------|
-| 备份 | 从备份保管库复制 VHD 超时 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持。 | 要复制的数据太多时会发生此问题。请检查你的数据磁盘是否少于 16 个。 |
-| 备份 | 无法与 VM 代理通信，因此无法获取快照状态。快照 VM 子任务超时。请参阅故障排除指南以了解如何解决此问题。 | 如果 VM 代理出现问题，或以某种方式阻止了对 Azure 基础结构的网络访问，则会引发此错误。详细了解如何[调试 VM 快照问题](/documentation/articles/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout)。<br>如果 VM 代理未导致任何问题，则重新启动 VM。有时 VM 状态不正确可能会导致问题，而重新启动 VM 则会重置此“错误状态” |
-| 备份 | 发生内部错误，备份失败 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持 | 可能会出于 2 个原因发生此错误：<ol><li>访问 VM 存储时发生暂时性问题。/存储/网络是否存在任何相关问题。解决问题后，请重试备份。<li>已删除原始 VM，因此无法进行备份。若要保留已删除 VM 的备份数据但要防止备份错误，请取消保护 VM 并选择保留数据。这样即可停止备份计划以及重复出现的错误消息。 |
+| 备份 | 无法与 VM 代理通信，因此无法获取快照状态。快照 VM 子任务超时。请参阅故障排除指南以了解如何解决此问题。 | 如果 VM 代理出现问题，或以某种方式阻止了对 Azure 基础结构的网络访问，则会引发此错误。详细了解如何[调试 VM 快照问题](/documentation/articles/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout/)。<br> 如果 VM 代理未导致任何问题，则重新启动 VM。有时 VM 状态不正确可能会导致问题，而重新启动 VM 则会重置此“错误状态” |
+| 备份 | 发生内部错误，备份失败 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持 | 请查看在访问 VM 存储时是否存在一过性问题。请检查“Azure 状态”，以确定区域中的计算/存储/网络是否存在任何相关问题。解决问题后，请重试备份。 |
+| 备份 | 无法执行该操作，因为 VM 不再存在。 | 无法执行备份，因为已删除针对备份配置的 VM。请停止进一步备份，方法是转到“备份项”视图（“设置”>“备份项”>单击“项名称”），然后单击“停止备份”。选择“保留备份数据”选项即可保留数据。你可以随后单击“恢复备份”恢复对此虚拟机的保护。|
 | 备份 | 无法在选择的项上安装 Azure 恢复服务扩展 - VM 代理是 Azure 恢复服务扩展的必备组件。请安装 Azure VM 代理并重新启动注册操作 | <ol> <li>检查是否已正确安装 VM 代理。<li>确定已正确设置 VM 配置中的标志。</ol> [详细了解](#validating-vm-agent-installation)如何安装 VM 代理以及如何验证 VM 代理安装。 |
 | 备份 | 命令执行失败 - 此项上当前正在进行另一项操作。请等到前一项操作完成，然后重试 | VM 的现有备份或还原作业正在运行，而当现有作业正在运行时，无法启动新的作业。 |
 | 备份 | 扩展安装失败，出现错误“COM+ 无法与 Microsoft 分布式事务处理协调器通信”。 | 这通常意味着到 COM+ 服务未运行。请与 Microsoft 支持部门联系，以获取解决此问题所需的帮助。 |
@@ -90,7 +90,7 @@
 
 对于 Windows VM：
 
-- 下载并安装[代理 MSI](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)。你需要有管理员权限才能完成安装。
+- 下载并安装[代理 MSI](http://download.microsoft.com/download/3/4/3/3437907D-745F-46EF-8116-7FC025BBEBDB/WindowsAzureVmAgent.2.6.1198.718.rd_art_stable.150415-1739.fre.msi)。你需要有管理员权限才能完成安装。
 - [更新 VM 属性](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx)，指明已安装代理。
 
 对于 Linux VM：
@@ -102,11 +102,11 @@
 ### 更新 VM 代理
 对于 Windows VM：
 
-- 更新 VM 代理与重新安装 [VM 代理二进制文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)一样简单。但是，需要确保在更新 VM 代理时，没有任何正在运行的备份作业。
+- 更新 VM 代理与重新安装 [VM 代理二进制文件](http://download.microsoft.com/download/3/4/3/3437907D-745F-46EF-8116-7FC025BBEBDB/WindowsAzureVmAgent.2.6.1198.718.rd_art_stable.150415-1739.fre.msi)一样简单。但是，需要确保在更新 VM 代理时，没有任何正在运行的备份作业。
 
 对于 Linux VM：
 
-- 按照[更新 Linux VM 代理](/documentation/articles/virtual-machines-linux-update-agent)上的说明进行操作。
+- 按照[更新 Linux VM 代理](/documentation/articles/virtual-machines-linux-update-agent/)上的说明进行操作。
 
 
 ### <a name="validating-vm-agent-installation"></a>验证 VM 代理安装
@@ -115,4 +115,4 @@
 1. 登录 Azure 虚拟机并导航到 *C:\\WindowsAzure\\Packages* 文件夹。你应会发现 WaAppAgent.exe 文件已存在。
 2. 右键单击该文件，转到“属性”，然后选择“详细信息”选项卡。“产品版本”字段应为 2.6.1198.718 或更高
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0829_2016-->

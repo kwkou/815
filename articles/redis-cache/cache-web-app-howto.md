@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="07/22/2016"
-	wacn.date="08/29/2016"/>
+	wacn.date=""/>
 
 # 如何使用 Redis 缓存创建 Web 应用
 
@@ -239,7 +239,7 @@
 
 1. 在“解决方案资源管理器”中，先展开 **Views** 文件夹，再展开 **Shared** 文件夹，然后双击 **\_Layout.cshtml**。
 
-    ![\_Layout.cshtml][cache-layout-cshtml]
+    ![_Layout.cshtml][cache-layout-cshtml]
 
 2. 更改 `title` 元素的内容，将 `My ASP.NET Application` 替换为 `Contoso Team Stats`，如以下示例所示。
 
@@ -763,15 +763,11 @@
 -	如果你有另一个现成的 Azure Redis 缓存实例，则可使用该实例在本地运行此示例。
 -	如果需要创建 Azure Redis 缓存实例，则可按[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)中的步骤来执行操作。
 
-选定或创建要使用的缓存以后，即可使用以下 PowerShell 命令来获取缓存的属性和访问密钥。
-
-    Get-AzureRmRedisCache -Name <cache name> -ResourceGroupName <resource group name>
-
-    Get-AzureRmRedisCacheKey -Name <cache name> -ResourceGroupName <resource group name>
+选择或创建要使用的缓存后，在 Azure 门户中浏览到该缓存，然后检索缓存的[主机名](/documentation/articles/cache-configure/#properties)和[访问密钥](/documentation/articles/cache-configure/#access-keys)。有关说明，请参阅[配置 Redis 缓存设置](/documentation/articles/cache-configure/#configure-redis-cache-settings)。
 
 1. 使用所选编辑器打开在本教程的[配置应用程序以使用 Redis 缓存](#configure-the-application-to-use-redis-cache)步骤中创建的 `WebAppPlusCacheAppSecrets.config` 文件。
 
-2. 编辑 `value` 属性，将 `MyCache.redis.cache.chinacloudapi.cn` 替换为缓存的主机名，并指定缓存的主密钥或辅助密钥作为密码。
+2. 编辑 `value` 属性，将 `MyCache.redis.cache.chinacloudapi.cn` 替换为缓存的[主机名](/documentation/articles/cache-configure/#properties)，并指定缓存的[主密钥或辅助密钥](/documentation/articles/cache-configure/#access-keys)作为密码。
 
 
 		<appSettings>
@@ -790,6 +786,7 @@
 	-	有关 HealthClinic.biz 演示的多个快速入门，请参阅 [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts)（Azure 开发人员工具快速入门）。
 -	详细了解[对新数据库使用 Code First](https://msdn.microsoft.com/data/jj193542) 中介绍的本教程所用实体框架需要的方法。
 -	详细了解 [Azure 中的 Web 应用](/home/features/web-site/)。
+-	了解如何在 Azure 门户中[监视](/documentation/articles/cache-how-to-monitor/)缓存。
 
 -	了解 Azure Redis 缓存高级功能
 	-	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
@@ -833,4 +830,4 @@
 [cache-delete-resource-group]: ./media/cache-web-app-howto/cache-delete-resource-group.png
 [cache-delete-confirm]: ./media/cache-web-app-howto/cache-delete-confirm.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_0829_2016-->

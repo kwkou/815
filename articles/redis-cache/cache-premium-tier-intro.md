@@ -5,13 +5,12 @@
 	documentationCenter="" 
 	authors="steved0x" 
 	manager="douge" 
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="cache"
 	ms.date="06/29/2016"
-	wacn.date="08/22/2016"/>  
+	wacn.date=""/>  
 
 
 # Azure Redis 缓存高级层简介
@@ -80,6 +79,7 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 -	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
 -	[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)
 -	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
+-	[如何在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
+  
 
-
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0829_2016-->

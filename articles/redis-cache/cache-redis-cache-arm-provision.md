@@ -1,35 +1,43 @@
 <properties 
-	pageTitle="预配 Redis 缓存" 
+	pageTitle="预配 Redis 缓存 | Azure" 
 	description="使用 Azure 资源管理器模板部署 Azure Redis 缓存。" 
 	services="app-service" 
 	documentationCenter="" 
-	authors="tfitzmac" 
-	manager="wpickett" 
+	authors="steved0x" 
+	manager="Erikre" 
 	editor=""/>
 
 <tags
 	ms.service="cache"
-	ms.date="12/16/2015"
-	wacn.date="08/29/2016"/>
+	ms.date="07/12/2016"
+	wacn.date=""/>
 
 # 使用模板创建 Redis 缓存
 
-在本主题中，你将学习如何创建用于部署 Azure Redis 缓存的 Azure 资源管理器模板。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
+在本主题中，你将学习如何创建用于部署 Azure Redis 缓存的 Azure Resource Manager 模板。该缓存可以用于现有存储帐户以保存诊断数据。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
+
+目前，对订阅的同一区域中的所有缓存共享诊断设置。更新区域中的一个缓存将会影响该区域中的所有其他缓存。
 
 有关创建模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 有关完整的模板，请参阅 [Redis 缓存模板](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json)。
 
->[AZURE.NOTE]适用于新[高级层](/documentation/articles/cache-premium-tier-intro/)的 ARM 模板现已推出。
-><p>若要检查最新模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)并搜索 `redis-cache`。
+>[AZURE.NOTE] 适用于新[高级层](/documentation/articles/cache-premium-tier-intro/)的 ARM 模板现已推出。
+>
+>-    [创建具有群集功能的高级 Redis 缓存](https://github.com/Azure/azure-quickstart-templates/tree/master/201-redis-premium-cluster-diagnostics/)
+>-    [创建具有数据持久性的高级 Redis 缓存](https://github.com/Azure/azure-quickstart-templates/tree/master/201-redis-premium-persistence/)
+>-    [创建具有 VNet 和可选群集功能的高级 Redis 缓存](https://github.com/Azure/azure-quickstart-templates/tree/master/201-redis-premium-vnet-cluster-diagnostics/)
+>
+>若要检查最新模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)并搜索 `Redis Cache`。
 
 ## 将部署的内容
 
 在此模板中，你将部署 Azure Redis 缓存。
 
-## Parameters
+## 参数
 
-使用 Azure 资源管理器，可以定义在部署模板时想要指定的值的参数。该模板具有一个名为 Parameters 的部分，其中包含所有参数值。你应该为随着要部署的项目或要部署到的环境而变化的值定义参数。不要为永远保持不变的值定义参数。每个参数值可在模板中用来定义所部署的资源。
+使用 Azure 资源管理器，可以定义在部署模板时想要指定的值的参数。该模板具有一个名为 Parameters 的部分，其中包含所有参数值。
+你应该为随着要部署的项目或要部署到的环境而变化的值定义参数。不要为永远保持不变的值定义参数。每个参数值可在模板中用来定义所部署的资源。
 
 下面介绍模板中的每个参数。
 
@@ -43,6 +51,14 @@ Redics 缓存的位置。为获得最佳性能，请使用要与缓存配合使�
       "type": "string"
     }
 
+### existingDiagnosticsStorageAccountName
+
+要用于诊断的现有存储帐户的名称。
+
+    "existingDiagnosticsStorageAccountName": {
+      "type": "string"
+    }
+
 ### enableNonSslPort
 
 一个布尔值，该值指示是否允许通过非 SSL 端口访问。
@@ -50,10 +66,23 @@ Redics 缓存的位置。为获得最佳性能，请使用要与缓存配合使�
     "enableNonSslPort": {
       "type": "bool"
     }
+
+### diagnosticsStatus
+
+一个值，该值指示是否启用诊断。使用 ON 或 OFF。
+
+    "diagnosticsStatus": {
+      "type": "string",
+      "defaultValue": "ON",
+      "allowedValues": [
+            "ON",
+            "OFF"
+        ]
+    }
     
 ## 要部署的资源
 
-### Redis Cache
+### Redis 缓存
 
 创建 Azure Redis 缓存
 
@@ -70,9 +99,23 @@ Redics 缓存的位置。为获得最佳性能，请使用要与缓存配合使�
           "name": "[parameters('redisCacheSKU')]"
         }
       },
-        "resources": [
+      "resources": [
+        {
+          "apiVersion": "2015-07-01",
+          "type": "Microsoft.Cache/redis/providers/diagnosticsettings",
+          "name": "[concat(parameters('redisCacheName'), '/Microsoft.Insights/service')]",
+          "location": "[parameters('redisCacheLocation')]",
+          "dependsOn": [
+            "[concat('Microsoft.Cache/Redis/', parameters('redisCacheName'))]"
+          ],
+          "properties": {
+            "status": "[parameters('diagnosticsStatus')]",
+            "storageAccountName": "[parameters('existingDiagnosticsStorageAccountName')]"
+          }
+        }
       ]
     }
+
 
 ## 运行部署的命令
 
@@ -86,4 +129,4 @@ Redics 缓存的位置。为获得最佳性能，请使用要与缓存配合使�
 
     azure group deployment create --template-file path/to/azuredeploy.json -g ExampleDeployGroup
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0829_2016-->
