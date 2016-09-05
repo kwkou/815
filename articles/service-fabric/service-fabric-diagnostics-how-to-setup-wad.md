@@ -189,6 +189,5 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 
 ## 相关文章
 * [了解如何使用诊断扩展收集性能计数器或日志](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
-* [Log Analytics 中的 Service Fabric 解决方案](/documentation/articles/log-analytics-service-fabric/)
 
 <!---HONumber=Mooncake_0801_2016-->
