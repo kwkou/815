@@ -49,10 +49,6 @@ IoT 套件包含预配置解决方案，可让你快速地开始使用，并浏�
 
 你已经大致了解 IoT 套件的功能及其主要组件，现在可以：
 
-- 了解有关 IoT 套件中预配置解决方案的详细信息，请参阅[什么是 Azure IoT 预配置解决方案？][lnk-what-are-preconfig]
-
-- 开始使用其中一个预配置解决方案，请参阅 [IoT 预配置解决方案入门][lnk-preconfig-start]。
-
 - 了解有关 Azure IoT 中心服务的详细信息，请参阅 [IoT 中心文档][lnk-iot-hub]。
 
 
