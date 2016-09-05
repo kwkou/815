@@ -225,7 +225,6 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 你已经生成一个可运行的预配置解决方案，现在可以继续进行以下演练：
 
 -   [预配置解决方案自定义指南][lnk-customize]
--   [预见性维护预配置解决方案概述][lnk-predictive]
 
 [img-launch-solution]: ./media/iot-suite-getstarted-preconfigured-solutions/launch.png
 [img-dashboard]: ./media/iot-suite-getstarted-preconfigured-solutions/dashboard.png
