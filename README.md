@@ -1,4 +1,4 @@
-815 test
+815
 Only updated by Haifeng now.
 
 this branch is used to store content ready to go live at www.azure.cn
