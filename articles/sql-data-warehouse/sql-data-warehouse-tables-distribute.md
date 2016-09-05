@@ -6,25 +6,25 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/11/2016"
-   wacn.date="08/08/2016"/>
+   ms.date="08/01/2016"
+   wacn.date="09/05/2016"/>
 
 # 在 SQL 数据仓库中分布表
 
 > [AZURE.SELECTOR]
+- [概述][]
 - [数据类型][]
 - [分布][]
 - [索引][]
-<!--
-- [概述][]
 - [Partition][]
 - [统计信息][]
 - [临时][]
--->
+
 SQL 数据仓库是一种大规模并行处理 (MPP) 分布式数据库系统。通过将数据和处理能力分布于多个节点，SQL 数据仓库能够提供极大的缩放性 - 远超任何单一系统。确定如何在 SQL 数据仓库内分布数据是达到最佳性能的最重要因素之一。要达到最佳性能的关键是将数据移动降到最低，而将数据移动降到最低的关键是选择正确的分布策略。
 
 ## 了解数据移动
@@ -185,7 +185,7 @@ SQL 数据仓库在幕后将数据划分成 60 个数据库。每个数据库称
     where two_part_name in 
         (
         select two_part_name
-        from dbo.vDistributionSkew 
+    	from dbo.vTableSizes
         where row_count > 0
         group by two_part_name
         having min(row_count * 1.000)/max(row_count * 1.000) > .10
@@ -284,7 +284,9 @@ SQL 数据仓库在幕后将数据划分成 60 个数据库。每个数据库称
 
 ## 后续步骤
 
-有关表设计的详细信息，请参阅 [Distribute][]（分布）、[Index][]（索引）、[Partition][]（分区）<!-- 、 [Data Types][]（数据类型）、[Statistics][]（统计信息）和 [Temporary Tables][Temporary]（临时表）--> 文章。有关最佳实践的概述，请参阅 [SQL Data Warehouse Best Practices][]（SQL 数据仓库最佳实践）。
+有关表设计的详细信息，请参阅 [Distribute][]（分布）、[Index][]（索引）、[Partition][]（分区）、[Data Types][]（数据类型）、[Statistics][]（统计信息）和 [Temporary Tables][Temporary]（临时表）文章。
+
+有关最佳实践的概述，请参阅 [SQL 数据仓库最佳实践][]。
 
 
 <!--Image references-->
@@ -312,4 +314,4 @@ SQL 数据仓库在幕后将数据划分成 60 个数据库。每个数据库称
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0829_2016-->

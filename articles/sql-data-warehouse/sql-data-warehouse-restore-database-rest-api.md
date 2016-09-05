@@ -5,13 +5,12 @@
    documentationCenter="NA"
    authors="sonyama"
    manager="barbkess"
-   editor=""/>  
-
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/28/2016"
-   wacn.date="08/22/2016"/>
+   ms.date="07/18/2016"
+   wacn.date="09/05/2016"/>  
 
 
 # 还原 Azure SQL 数据仓库 (REST API)
@@ -26,7 +25,7 @@
 
 ## 开始之前
 
-**验证 DTU 容量。** 每个 SQL 数据仓库都由 SQL Server 逻辑服务器来承载。此逻辑服务器具有以 DTU 单位进行度量的容量限制。请务必确保承载数据库的 SQL Server 逻辑服务器对于所还原的数据库具有足够 DTU 容量，然后才能还原 SQL 数据仓库。有关[如何查看和提高 DTU 配额][]的详细信息，请参阅此博客文章。
+**验证 DTU 容量。** 每个 SQL 数据仓库都由一个具有默认 DTU 配额的 SQL 服务器（例如 myserver.database.chinacloudapi.cn）托管。在还原 SQL 数据仓库之前，请确保 SQL Server 的剩余 DTU 配额足够进行数据库还原。
 
 ## 还原活动或暂停的数据库
 
@@ -72,13 +71,8 @@
 [列出可还原的已删除数据库]: https://msdn.microsoft.com/zh-cn/library/azure/dn509562.aspx
 [Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt693390.aspx
 
-
-<!--Blog references-->
-[如何查看和提高 DTU 配额]: https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/
-
 <!--Other Web references-->
-
 [Azure Portal]: https://portal.azure.cn/
 [Microsoft Web Platform Installer]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0829_2016-->
