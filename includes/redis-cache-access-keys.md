@@ -1,4 +1,4 @@
-若要连接到某个 Azure Redis 缓存实例，缓存客户端需要该缓存的主机名、端口和密钥。在某些客户端中，这些项的名称可能略有不同。若要检索这些项，请在 [Azure 门户](https://portal.azure.cn)中[浏览](/documentation/articles/cache-configure/#configure-redis-cache-settings)到你的缓存，然后单击“设置”或“所有设置”。
+若要连接到某个 Azure Redis 缓存实例，缓存客户端需要该缓存的主机名、端口和密钥。在某些客户端中，这些项的名称可能略有不同。若要检索这些项，请在 [Azure 门户预览](https://portal.azure.cn)中[浏览](/documentation/articles/cache-configure/#configure-redis-cache-settings)到你的缓存，然后单击“设置”或“所有设置”。
 
 ![Redis 缓存设置](./media/redis-cache-access-keys/redis-cache-settings.png)  
 

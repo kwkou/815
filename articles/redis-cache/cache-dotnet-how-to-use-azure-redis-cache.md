@@ -46,7 +46,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-## <a name="NuGet"></a>配置缓存客户端
+## <a name="NuGet" id="configure-the-cache-clients"></a>配置缓存客户端
 
 [AZURE.INCLUDE [redis-cache-configure](../../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
 

@@ -13,7 +13,7 @@
 
 # VM 备份期间处理加密的磁盘
 
-如果企业想要在 Azure 中加密其 VM 数据，解决方案是在 Windows 计算机上使用 [Azure 磁盘加密](/documentation/articles/azure-security-disk-encryption/) 或 Bitlocker，在 Linux 计算机上使用 dmcrypt。
+如果企业想要在 Azure 中加密其 VM 数据，解决方案是在 Windows 计算机上使用 Bitlocker，在 Linux 计算机上使用 dmcrypt。
 
 > [AZURE.NOTE]  Azure 备份支持对使用 Azure 磁盘加密 (ADE) 加密的 VM 进行备份和还原。<br>
 >1. 如果 VM 是使用 BEK 和 KEK 加密的，则可使用 PowerShell 来进行此操作。<br>

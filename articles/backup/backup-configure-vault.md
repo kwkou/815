@@ -26,8 +26,6 @@
 
 ![备份过程的步骤](./media/backup-configure-vault/initial-backup-process.png)  
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
-
 ## 开始之前
 若要将服务器或客户端备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需几分钟的时间就能创建一个[试用帐户](/pricing/1rmb-trial/)。
 
@@ -131,7 +129,7 @@
 
 9. 在“选择初始备份类型”页上，选择初始备份类型。让“自动通过网络”选项保持选中状态，然后单击“下一步”。
 
-    你可以通过网络自动备份，或者脱机备份。本文的余下部分将介绍自动备份过程。如果你想要执行脱机备份，请查看 [Azure 备份中的脱机备份工作流](/documentation/articles/backup-azure-backup-import-export/)以了解更多信息。
+    你可以通过网络自动备份，或者脱机备份。本文的余下部分将介绍自动备份过程。
 
 10. 在“确认”页上复查信息，然后单击“完成”。
 

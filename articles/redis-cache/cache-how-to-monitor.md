@@ -29,7 +29,7 @@ Azure Redis 缓存提供了用于监视缓存实例的几个选项。你可以�
 
 “Redis 指标”边栏选项卡上有显示缓存度量值的“监视”图表。通过添加或删除度量值以及更改报告间隔可以自定义每个图表。若要查看和配置操作和警报，“Redis 缓存”边栏选项卡上有“操作”部分，该部分显示缓存“事件”和“警报规则”。
 
-## <a name="enable-cache-diagnostics"></a>启用缓存诊断
+## <a name="enable-cache-diagnostics" id="EnableDiagnostics"></a>启用缓存诊断
 
 >[AZURE.NOTE] 想要在 Azure 中国启用缓存诊断，必须得使用命令行设置 `rdb-storage-connection-string`。
 

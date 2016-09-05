@@ -133,7 +133,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 -	**Redis 输出缓存提供程序** - 无需进行更改。
 -	**Redis 会话状态提供程序** - 若要使用群集功能，必须使用 [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.1 或更高版本，否则会引发异常。这是一项重大更改；有关详细信息，请参阅 [2\.0.0 版重大更改详细信息](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details)。
 
-### <a name="move-exceptions"></a> 我在使用 StackExchange.Redis 和群集功能时出现 MOVE 异常，应该怎么办？
+### <a name="move-exceptions" id="i-am-getting-move-exceptions-when-using-stackexchangeredis-and-clustering-what-should-i-do"></a> 我在使用 StackExchange.Redis 和群集功能时出现 MOVE 异常，应该怎么办？
 
 如果你使用的是 StackExchange.Redis 并在使用群集功能时收到 `MOVE` 异常，请确保你使用的是 [StackExchange.Redis 1.1.603](https://www.nuget.org/packages/StackExchange.Redis/) 或更高版本。有关如何配置 .NET 应用程序以使用 StackExchange.Redis 的说明，请参阅[配置缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#configure-the-cache-clients)。
 

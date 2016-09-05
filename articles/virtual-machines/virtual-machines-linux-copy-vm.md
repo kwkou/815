@@ -25,7 +25,7 @@
 
 在开始执行相关步骤前，请先确保符合以下先决条件：
 
-- 已在计算机上下载并安装 [Azure CLI](../xplat-cli-install.md)。
+- 已在计算机上下载并安装 [Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 - 还需要准备好有关现有 Azure Linux VM 的一些信息：
 

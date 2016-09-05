@@ -50,7 +50,7 @@
 1. 删除路由表中的所有静态持久性路由：
 
 	- 若要查看路由表，请运行 `route print`。
-	- 请查看**持久性路由**部分。如果有持久性路由，请使用 [route delete](https://technet.microsoft.com/zh-cn/library/cc739598.apx) 将它删除。
+	- 请查看**持久性路由**部分。如果有持久性路由，请使用 route delete 将它删除。
 
 2. 删除 WinHTTP 代理：
 

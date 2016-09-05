@@ -358,7 +358,7 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 
 有关 Redis 命令的详细信息，请参阅 [http://redis.io/commands](http://redis.io/commands)。
 
-## Redis 控制台
+## <a name="redis-console"></a>Redis 控制台
 
 此功能在 Azure 中国还不支持。你可以使用 [redis-cli](http://redis.io/topics/rediscli)
 
