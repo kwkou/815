@@ -188,7 +188,6 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
     ![列出设备操作][img-actions]  
 
 
-> [AZURE.NOTE] 可以定义一些这样的操作：发送电子邮件或短信以响应规则，或通过[逻辑应用][lnk-logic-apps]与业务线系统集成。有关详细信息，请参阅 [Connect Logic App to your Azure IoT Suite Remote Monitoring preconfigured solution][lnk-logicapptutorial]（将逻辑应用连接到 Azure IoT 套件远程监视预配置解决方案）。
 
 ## 其他功能
 

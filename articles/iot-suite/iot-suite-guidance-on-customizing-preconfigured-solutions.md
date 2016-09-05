@@ -24,7 +24,6 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 预配置解决方案的源代码可在以下 GitHub 存储库获得：
 
 - 远程监视：[https://www.github.com/Azure/azure-iot-remote-monitoring](https://github.com/Azure/azure-iot-remote-monitoring)
-- 预见性维护：[https://github.com/Azure/azure-iot-predictive-maintenance](https://github.com/Azure/azure-iot-predictive-maintenance)
 
 提供预配置解决方案源代码的目的，在于演示实现使用 Azure IoT 套件的 IoT 解决方案的端到端功能时所采用的模式和做法。你可以找到有关如何在 GitHub 存储库中生成和部署解决方案的详细信息。
 
@@ -143,7 +142,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 11. 现在已将 **Admin** 和 **ReadOnly** 角色添加到应用程序中。
 
-12. 若要将其中一个角色分配给你目录中的用户，请参阅 [azureiotsuite.com 站点上的权限][lnk-permissions]。
+12. 若要将其中一个角色分配给你目录中的用户，请参阅 [azureiotsuite.cn 站点上的权限][lnk-permissions]。
 
 ## 反馈
 

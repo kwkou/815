@@ -117,7 +117,7 @@ IoT 中心通过服务端遥测数据读取终结点使收到的遥测数据可�
 要了解有关 IoT 预配置解决方案的详细信息，请查看以下资源：
 
 - [IoT 预配置解决方案入门][lnk-preconf-get-started]
-- [预见性维护预配置解决方案概述][lnk-predictive-maintenance]
+
 
 [img-remote-monitoring-arch]: ./media/iot-suite-what-are-preconfigured-solutions/remote-monitoring-arch1.png
 [img-dashboard]: ./media/iot-suite-what-are-preconfigured-solutions/dashboard.png

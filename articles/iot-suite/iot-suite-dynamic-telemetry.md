@@ -240,7 +240,7 @@
 你已经生成一个可运行的预配置解决方案，现在可以继续进行以下演练：
 
 -   [预配置解决方案自定义指南][lnk-customize]
--   [预见性维护预配置解决方案概述][lnk-predictive]
+
 
 [image1]: ./media/iot-suite-dynamic-telemetry/image1.png
 [image2]: ./media/iot-suite-dynamic-telemetry/image2.png
