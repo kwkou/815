@@ -9,27 +9,29 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="06/27/2016"
-	wacn.date="08/08/2016"/>
+	ms.date="08/05/2016"
+	wacn.date="09/05/2016"/>
 
-# 为表启用SQL Server Stretch Database
+# 为表启用延伸数据库
 
-若要为SQL Server Stretch Database配置某个表，请在 SQL Server Management Studio 中选择该表对应的“任务 | 延伸 | 启用”，打开“为表启用延伸”向导。你也可以使用 Transact-SQL 对现有表启用 Stretch Database，或使用启用的 Stretch Database 创建一个新表。
+若要为延伸数据库配置某个表，请在 SQL Server Management Studio 中选择该表对应的“任务 | 延伸 | 启用”，打开“为表启用延伸”向导。你也可以使用 Transact-SQL 对现有表启用 Stretch Database，或使用启用的 Stretch Database 创建一个新表。
 
 -   如果在单独的某个表中存储了冷数据，你可以迁移整个表。
 
 -   如果表同时包含热数据和冷数据，你可以指定筛选器函数来选择要迁移的行。
 
-**先决条件**。如果你针对某个表选择了“延伸 | 启用”但尚未为数据库启用SQL Server Stretch Database，该向导将先为SQL Server Stretch Database配置数据库。请遵循[Get started by running the Enable Database for Stretch Wizard](/documentation/articles/sql-server-stretch-database-wizard/)（通过运行“启用数据库延伸”向导开始操作）中的步骤，而不要遵循本主题中的步骤。
+**先决条件**。如果你针对某个表选择了“延伸 | 启用”但尚未为数据库启用延伸数据库，该向导将先为延伸数据库配置数据库。请遵循[通过运行“为数据库启用 Stretch 向导”开始操作](/documentation/articles/sql-server-stretch-database-wizard/)中的步骤，而不要遵循本主题中的步骤。
 
-**权限**。对数据库或表启用SQL Server Stretch Database需要有 db\_owner 权限。对某个表启用SQL Server Stretch Database还要求对该表拥有 ALTER 权限。
+**权限**。对数据库或表启用延伸数据库需要有 db\_owner 权限。对某个表启用延伸数据库还要求对该表拥有 ALTER 权限。
 
-## <a name="EnableWizardTable"></a>使用向导来对表启用SQL Server Stretch Database
+ >   [AZURE.NOTE] 若要在以后禁用 Stretch Database，请记住，针对表或数据库禁用 Stretch Database 不会删除远程对象。若要删除远程表或远程数据库，必须使用 Azure 管理门户。远程对象在手动删除之前，会持续产生 Azure 费用。
+ 
+## <a name="EnableWizardTable"></a>使用向导来对表启用 Stretch Database
 **启动向导**
 
 1.  在 SQL Server Management Studio 的对象资源管理器中，选择你要为其启用延伸的表。
 
-2.  单击右键并选择“延伸”，然后选择“启用”以启动向导。
+2.  单击右键并选择“Stretch”，然后选择“启用”以启动向导。
 
 **介绍**
 
@@ -122,4 +124,4 @@
 
 [CREATE TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms174979.aspx)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0829_2016-->

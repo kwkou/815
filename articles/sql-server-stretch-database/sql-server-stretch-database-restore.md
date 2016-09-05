@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="07/06/2016"
-	wacn.date="08/08/2016"/>
+	ms.date="08/01/2016"
+	wacn.date=""/>
 
 # 还原已启用延伸的数据库
 
@@ -23,7 +23,7 @@
 ## 还原 SQL Server 数据
 若要从硬件故障或损坏中恢复，请从备份还原已启用延伸的 SQL Server 数据库。你可以继续使用当前使用的 SQL Server 还原方法。有关详细信息，请参阅[还原和恢复概述](https://msdn.microsoft.com/zh-cn/library/ms191253.aspx)。
 
-还原 SQL Server 数据库之后，必须运行存储过程 **sys.sp\_rda\_reauthorize\_db** 才能在已启用延伸的 SQL Server 数据库和远程 Azure 数据库之间重新建立连接。有关详细信息，请参阅[还原 SQL Server 数据库和远程 Azure 数据库之间的连接](#Restore-the-connection-between-the-SQL-Server-database-and-the-remote-Azure-database)。
+还原 SQL Server 数据库之后，必须运行存储过程 **sys.sp\_rda\_reauthorize\_db** 才能在已启用延伸的 SQL Server 数据库和远程 Azure 数据库之间重新建立连接。有关详细信息，请参阅[还原 SQL Server 数据库和远程 Azure 数据库之间的连接](#restore-the-connection-between-the-sql-server-database-and-the-remote-azure-database)。
 
 ## 还原远程 Azure 数据
 
@@ -58,7 +58,7 @@ Azure 上的 SQL Server Stretch Database 服务在删除数据库之前会创建
 
 2.  运行存储过程 [sys.sp\_rda\_reauthorize\_db](https://msdn.microsoft.com/zh-cn/library/mt131016.aspx)，以将已启用延伸的本地数据库重新连接到 Azure 数据库。
 
-	-   提供现有的数据库范围凭据作为 sysname 或 varchar(128) 值。（不要使用 varchar(max)。） 你可以在视图 **sys.database\_scoped\_credentials** 中查找凭据名称。  
+	-   提供现有的数据库范围凭据作为 sysname 或 varchar(128) 值。（不要使用 varchar(max)。） 你可以在视图 **sys.database\_scoped\_credentials** 中查找凭据名称。
 
 	-   指定是否要制作远程数据的副本并连接到该副本（推荐）。
 
@@ -79,4 +79,4 @@ Azure 上的 SQL Server Stretch Database 服务在删除数据库之前会创建
 
 [备份和还原 SQL Server 数据库](https://msdn.microsoft.com/zh-cn/library/ms187048.aspx)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0829_2016-->
