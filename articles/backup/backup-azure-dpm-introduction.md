@@ -94,17 +94,17 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 
 6.	安装代理之后，**关闭**窗口。
 
-    ![关闭](../../includes/media/backup-install-agent/dpm_FinishInstallation.png)
+    ![关闭](./media/backup-install-agent/dpm_FinishInstallation.png)
 
 7. 若要**注册 DPM 服务器**到保管库，请在“管理”选项卡中，单击“联机”。然后，选择“注册”。此时会打开注册安装程序向导。
 
 8. 如果使用代理服务器连接到 Internet，请在“代理配置”屏幕中，输入代理服务器详细信息。如果使用已经过身份验证的代理，请在此屏幕中输入用户名和密码详细信息。
 
-	![代理配置](../../includes/media/backup-install-agent/DPM_SetupOnlineBackup_Proxy.png)
+	![代理配置](./media/backup-install-agent/DPM_SetupOnlineBackup_Proxy.png)
 
 9. 在保管库凭据屏幕中，浏览到并选择前面下载的保管库凭据文件。
 
-    ![保管库凭据](../../includes/media/backup-install-agent/DPM_SetupOnlineBackup_Credentials.jpg)
+    ![保管库凭据](./media/backup-install-agent/DPM_SetupOnlineBackup_Credentials.jpg)
 
     保管库凭据文件只能生效 48 小时。如果此屏幕中显示任何错误（例如“提供的保管库凭据文件已过期”），请再次下载保管库凭据文件。
 
@@ -114,17 +114,17 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 
 10. 若要控制工作时间和非工作时间网络带宽的使用情况，可在“限制设置”屏幕中设置带宽使用限制并定义工作时间和非工作时间。
 
-    ![限制设置](../../includes/media/backup-install-agent/DPM_SetupOnlineBackup_Throttling.png)  
+    ![限制设置](./media/backup-install-agent/DPM_SetupOnlineBackup_Throttling.png)  
 
 
 11. 在“恢复文件夹设置”屏幕中，浏览到将在其中暂存从 Azure 下载的文件的文件夹。
 
-    ![恢复文件夹设置](../../includes/media/backup-install-agent/DPM_SetupOnlineBackup_RecoveryFolder.png)  
+    ![恢复文件夹设置](./media/backup-install-agent/DPM_SetupOnlineBackup_RecoveryFolder.png)  
 
 
 12. 在“加密设置”屏幕中，你可以生成一个通行短语，或者提供一个通行短语（最少包含 16 个字符）。请记住将通行短语保存在安全位置。
 
-    ![加密](../../includes/media/backup-install-agent/DPM_SetupOnlineBackup_Encryption.png)  
+    ![加密](./media/backup-install-agent/DPM_SetupOnlineBackup_Encryption.png)  
 
 
     > [AZURE.WARNING] 如果您丢失或忘记了通行短语，Microsoft 无法帮助您恢复备份的数据。加密通行短语由最终用户拥有，Microsoft 看不到最终用户所用的通行短语。请将该文件保存在安全位置，因为在恢复操作期间需要用到它。
