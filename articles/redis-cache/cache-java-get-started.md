@@ -1,16 +1,16 @@
 <properties
-	pageTitle="如何将 Azure Redis 缓存与 Java 配合使用"
+	pageTitle="如何将 Azure Redis 缓存与 Java 配合使用 | Azure"
 	description="开始将 Azure Redis 缓存与 Java 配合使用"
 	services="redis-cache"
 	documentationCenter=""
 	authors="steved0x"
-	manager="dwrede"
+	manager="douge"
 	editor=""/>
 
 <tags
 	ms.service="cache"
 	ms.date="05/31/2016"
-	wacn.date="07/28/2016"/>
+	wacn.date=""/>
 
 # 如何将 Azure Redis 缓存与 Java 配合使用
 
@@ -23,7 +23,7 @@
 
 Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问你的缓存。
 
-本主题说明如何开始将 Azure Redis 缓存与 Java 配合使用。
+本主题说明如何将Azure Redis 缓存与 Java 配合使用。
 
 ## 先决条件
 
@@ -31,18 +31,23 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 
 本教程使用 Jedis，但你可以使用 [http://redis.io/clients](http://redis.io/clients) 中列出的任何 Java 客户端。
 
-
 ## 在 Azure 上创建 Redis 缓存
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-## 获取 host name 和 access keys
+## 检索主机名和访问密钥
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
+
 ## 启用非 SSL 终结点
 
+某些 Redis 客户端不支持 SSL，默认情况下，[为新的 Azure Redis 缓存实例禁用了非 SSL 端口](/documentation/articles/cache-configure/#access-ports)。在编写本文时，[Jedis](https://github.com/xetorthio/jedis) 客户端不支持 SSL。
+
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-non-ssl-port.md)]
+
+
+
 
 ## 在缓存中添加一些内容并检索此内容
 
@@ -50,7 +55,7 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 	import redis.clients.jedis.Jedis;
 	import redis.clients.jedis.JedisShardInfo;
 
-	/* Make sure your turn on non SSL port in Azure Redis using the Configuration section in the Azure portal */
+	/* Make sure you turn on non-SSL port in Azure Redis using the Configuration section in the Azure Portal */
 	public class App
 	{
 	  public static void main( String[] args )
@@ -67,13 +72,7 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 
 ## 后续步骤
 
+- [启用缓存诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics)，以便可以[监视](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx)缓存的运行状况。
 - 阅读官方 [Redis 文档](http://redis.io/documentation)。
 
-
-<!--Image references-->
-[1]: ./media/cache-java-get-started/cache01.png
-[2]: ./media/cache-java-get-started/cache02.png
-[3]: ./media/cache-java-get-started/cache03.png
-[4]: ./media/cache-java-get-started/cache04.png
-
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0829_2016-->

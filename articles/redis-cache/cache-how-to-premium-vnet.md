@@ -5,13 +5,12 @@
 	documentationCenter="" 
 	authors="steved0x" 
 	manager="douge" 
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="cache"
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016"/>
+	wacn.date=""/>
 
 # 如何为高级 Azure Redis 缓存配置虚拟网络支持
 Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。
@@ -26,30 +25,31 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 [Azure 虚拟网络 (VNet)](/home/features/networking/) 部署为 Azure Redis 缓存提供增强的安全性和隔离性，并提供子网、访问控制策略和进一步限制访问 Azure Redis 缓存的其他功能。
 
 ## 虚拟网络支持
-
-在 Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
-
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
+虚拟网络 (VNet) 支持可在创建缓存期间在“新建 Redis 缓存”边栏选项卡中配置。
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-premium-create.md)]
 
+选择高级定价层之后，可以通过选择与缓存相同的订阅和位置中的 VNet，来配置 Azure Redis 缓存 VNet 集成。若要使用新 VNet，请先创建 VNet，方法是遵循 [Create a virtual network using the Azure portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)（使用 Azure 门户创建虚拟网络）或 [Create a virtual network (classic) by using the Azure Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal/)（使用 Azure 门户创建虚拟网络（经典））中的步骤，然后返回“建的 Redis 缓存”边栏选项卡来创建和配置高级缓存。
 
-使用以下 PowerShell 脚本创建缓存：
+若要为新缓存配置 VNet，请单击“新建 Redis 缓存”边栏选项卡上的“虚拟网络”，然后从下拉列表中选择所需的 VNet。
 
-	$VerbosePreference = "Continue"
+![虚拟网络][redis-cache-vnet]
 
-	# Create a new cache with date string to make name unique. 
-	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
-	$location = "China North"
-	$resourceGroupName = "Default-Web-ChinaNorth"
-	
-	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -VirtualNetwork /subscriptions/{subid}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 -Subnet Front -StaticIP 10.10.1.5
+从“子网”下拉列表中选择所需的子网，然后指定所需的“静态 IP 地址”。如果使用经典的 VNet，则“静态 IP 地址”字段是可选的；如果未指定任何地址，将从选定的子网中选择一个。
 
-**-StaticIP** 参数是可选的。如果选择的静态 IP 已被使用，将会显示错误消息。如果未在此处指定任何 IP，系统会从所选子网中选择一个。
+>[AZURE.IMPORTANT] 将 Azure Redis 缓存部署到 ARM VNet 时，缓存必须位于专用子网中，其中只能包含 Azure Redis 缓存实例，而不能包含其他任何资源。如果尝试将 Azure Redis 缓存部署到包含其他资源的 ARM VNet 子网，部署将会失败。
 
-创建缓存后，该缓存只能由同一 VNET 中的客户端访问。
+![虚拟网络][redis-cache-vnet-ip]
 
->[AZURE.IMPORTANT] 若要在使用 VNET 时访问 Azure Redis 缓存实例，请传递 VNET 中缓存的静态 IP 地址作为第一个参数，并传入包含缓存终结点的 `sslhost` 参数。在以下示例中，静态 IP 地址为 `172.160.0.99`，缓存终结点为 `contoso5.redis.cache.chinacloudapi.cn`。
+>[AZURE.IMPORTANT] 子网中的前 4 个地址是保留的，无法使用。有关详细信息，请参阅 [Are there any restrictions on using IP addresses within these subnets?](/documentation/articles/virtual-networks-faq/#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets)（使用这些子网中的 IP 地址是否有任何限制？）
+
+创建缓存之后，可以在“设置”边栏选项卡中单击“虚拟网络”，查看 VNet 的配置。
+
+![虚拟网络][redis-cache-vnet-info]  
+
+
+
+若要在使用 VNet 时连接到 Azure Redis 缓存实例，请在连接字符串中指定缓存主机名，如以下示例中所示。
 
 	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
 	{
@@ -164,4 +164,4 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 [redis-cache-vnet-info]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-info.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0829_2016-->

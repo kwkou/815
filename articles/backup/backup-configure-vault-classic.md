@@ -3,15 +3,16 @@
 	description="通过创建备份保管库、下载凭据、安装备份代理并完成文件和文件夹的初始备份，将 Windows 服务器或客户端备份到 Azure。"
 	services="backup"
 	documentationCenter=""
-	authors="Jim-Parker"
-	manager="jwhit"
+	authors="markgalioto"
+	manager="cfreeman"
 	editor=""
 	keywords="备份保管库; 备份 Windows 服务器; 备份 windows;"/>
 
 <tags
 	ms.service="backup"
-	ms.date="05/09/2016"
-	wacn.date="07/26/2016"/>
+	ms.date="08/08/2016"
+	wacn.date=""/>  
+
 
 
 # 使用经典部署模型将 Windows Server 或客户端备份到 Azure
@@ -56,9 +57,9 @@
 
     >[AZURE.IMPORTANT] 确定存储冗余选项的最佳时机是在创建保管库之后，并且是在将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
 
-    如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），请考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy#geo-redundant-storage)选项。
+    若要使用 Azure 作为主要备份存储终结点（例如，从 Windows Server 备份到 Azure），请考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy/#geo-redundant-storage)选项。
 
-    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 System Center Data Protection Manager 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
+    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 System Center Data Protection Manager 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy/#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
 
     **选择存储冗余选项：**
 
@@ -77,7 +78,7 @@
 ## 步骤 2：下载保管库凭据文件
 本地计算机需要先在备份保存库中通过身份验证才能将数据备份到 Azure。身份验证是通过*保管库凭据*实现的。从经典管理门户通过安全通道下载保管库凭据文件。证书私钥不会在门户或服务中持久保存。
 
-详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup#what-is-the-vault-credential-file)。
+详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup/#what-is-the-vault-credential-file)。
 
 ### 将保管库凭据文件下载到本地计算机
 
@@ -130,7 +131,7 @@
 
     >[AZURE.WARNING] 如果你丢失或忘记了通行短语，Microsoft 无法帮助你恢复备份数据。加密通行短语由你拥有，Microsoft 看不到你使用的通行短语。请将该文件保存在安全位置，因为在恢复操作期间需要用到它。
 
-11. 设置加密密钥后，请将“启动 Microsoft Azure 恢复服务代理”复选框保持选中状态，然后单击“关闭”。
+11. 设置加密密钥后，让“启动 Azure 恢复服务代理”复选框保持选中状态，然后单击“关闭”。
 
 ## 步骤 4：完成初始备份
 
@@ -143,7 +144,7 @@
 
 ### 计划备份
 
-1. 打开 Microsoft Azure 备份代理。（如果你在关闭注册服务器向导时已将“启动 Microsoft Azure 恢复服务代理”复选框保持选中状态，备份代理将自动打开。） 可以通过在计算机中搜索 **Microsoft Azure 备份**找到该代理。
+1. 打开 Azure 备份代理。（如果你在关闭注册服务器向导时让“启动 Azure 恢复服务代理”复选框保持选中状态，备份代理将自动打开。） 可以通过在计算机中搜索“Azure 备份”找到该代理。
 
     ![启动 Azure 备份代理](./media/backup-configure-vault-classic/snap-in-search.png)
 
@@ -165,7 +166,7 @@
 
     ![Windows Server 备份项](./media/backup-configure-vault-classic/specify-backup-schedule-close.png)
 
-    >[AZURE.NOTE] 有关如何指定备份计划的详细信息，请参阅 [Use Azure Backup to replace your tape infrastructure（使用 Azure 备份来取代磁带基础结构）](/documentation/articles/backup-azure-backup-cloud-as-tape)一文。
+    >[AZURE.NOTE] 有关如何指定备份计划的详细信息，请参阅[使用 Azure 备份来取代磁带基础结构](/documentation/articles/backup-azure-backup-cloud-as-tape/)一文。
 
 8. 在“选择保留策略”页上，为备份复制选择“保留策略”。
 
@@ -173,7 +174,7 @@
 
 9. 在“选择初始备份类型”页上，选择初始备份类型。将“自动通过网络”选项保持选中状态，然后单击“下一步”。
 
-    你可以通过网络自动备份。本文的余下部分将介绍自动备份过程。
+    你可以通过网络自动备份，或者脱机备份。本文的余下部分将介绍自动备份过程。如果你想要执行脱机备份，请查看 [Azure 备份中的脱机备份工作流](/documentation/articles/backup-azure-backup-import-export/)以了解更多信息。
 
 10. 在“确认”页上复查信息，然后单击“完成”。
 
@@ -218,7 +219,8 @@
 
 有关备份 VM 或其他工作负荷的详细信息，请参阅：
 
-- [Back up IaaS VMs（备份 IaaS VM）](/documentation/articles/backup-azure-vms-prepare)
-- [Back up workloads to Azure with DPM（使用 DPM 将工作负荷备份到 Azure）](/documentation/articles/backup-azure-dpm-introduction)
+- [Back up IaaS VMs（备份 IaaS VM）](/documentation/articles/backup-azure-vms-prepare/)
+- [使用 Azure 备份服务器将工作负荷备份到 Azure](/documentation/articles/backup-azure-microsoft-azure-backup/)
+- [Back up workloads to Azure with DPM（使用 DPM 将工作负荷备份到 Azure）](/documentation/articles/backup-azure-dpm-introduction-classic/)
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0829_2016-->

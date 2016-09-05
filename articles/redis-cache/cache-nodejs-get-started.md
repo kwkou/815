@@ -4,13 +4,14 @@
 	services="redis-cache"
 	documentationCenter=""
 	authors="steved0x"
-	manager="dwrede"
-	editor="v-lincan"/>
+	manager="douge"
+	editor="v-lincan"/>  
+
 
 <tags
 	ms.service="cache"
 	ms.date="05/31/2016"
-	wacn.date="07/28/2016"/>
+	wacn.date=""/>
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
 
@@ -23,7 +24,7 @@
 
 Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问你的缓存。
 
-本主题说明如何开始将 Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio/)。
+本主题说明如何将Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio/)。
 
 
 ## 先决条件
@@ -38,29 +39,32 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-## 获取 host name 和 access keys
+## 检索主机名和访问密钥
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
+
 ## 启用非 SSL 终结点
+
+某些 Redis 客户端不支持 SSL，默认情况下，[为新的 Azure Redis 缓存实例禁用了非 SSL 端口](/documentation/articles/cache-configure/#access-ports)。在编写本文时，[node\_redis](https://github.com/mranney/node_redis) 客户端不支持 SSL。
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-non-ssl-port.md)]
 
+
 ## 在缓存中添加一些内容并检索此内容
 
-	var redis = require("redis");
-
-    // Add your cache name and access key.
+	  var redis = require("redis");
+	
+	  // Add your cache name and access key.
 	var client = redis.createClient(6380,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.chinacloudapi.cn'}});
-
+	
 	client.set("key1", "value", function(err, reply) {
-	    console.log(reply);
-	});
-
+		    console.log(reply);
+		});
+	
 	client.get("key1",  function(err, reply) {
-	    console.log(reply);
-	});
-
+		    console.log(reply);
+		});
 
 输出：
 
@@ -70,15 +74,7 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 
 ## 后续步骤
 
+- [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。
 - 阅读官方 [Redis 文档](http://redis.io/documentation)。
 
-
-<!--Image references-->
-[1]: ./media/cache-nodejs-get-started/cache01.png
-[2]: ./media/cache-nodejs-get-started/cache02.png
-[3]: ./media/cache-nodejs-get-started/cache03.png
-[4]: ./media/cache-nodejs-get-started/cache04.png
-
-[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
-
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0829_2016-->

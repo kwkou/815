@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="05/23/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="08/09/2016"
+	wacn.date=""/>
 
 # 如何为高级 Azure Redis 缓存配置数据暂留
 
@@ -29,38 +29,40 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 ## 创建高级缓存
 
-在 Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
+若要创建缓存并配置持久性，请登录到 [Azure 门户预览](https://portal.azure.cn)，然后单击“新建”>“数据 + 存储”>“Redis 缓存”。
+
+![创建 Redis 缓存][redis-cache-new-cache-menu]  
 
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../../includes/azurerm-azurechinacloud-environment-parameter.md)]
+若要配置暂留，请首先在“选择定价层”边栏选项卡中选择一个“高级”缓存。
+
+![选择你的定价层][redis-cache-premium-pricing-tier]
+
+一旦选中某个高级定价层，则请单击“Redis 暂留”。
+
+![Redis 暂留][redis-cache-persistence]  
 
 
-使用以下 PowerShell 脚本创建具有 Redis 持久性的高级缓存：
-
-	$VerbosePreference = "Continue"
-
-	# Create a new cache with date string to make name unique. 
-	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
-	$location = "China North"
-	$resourceGroupName = "Default-Web-WestUS"
-	
-	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
-
-以下部分中的步骤说明如何在新的高级缓存上配置 Redis 持久性。
+以下部分中的步骤说明如何在新的高级缓存上配置 Redis 持久性。配置 Redis 持久性后，单击“创建”以创建具有 Redis 持久性的新高级版缓存。
 
 ## 配置 Redis 持久性
 
-可以使用 **Set-AzureRmRedisCache** PowerShell 命令来配置 Redis 数据持久性：
+在“Redis 数据持久性”边栏选项卡上配置 Redis 持久性。对于新缓存，可以按前一部分中所述，在创建缓存过程中访问此边栏选项卡。对于现有缓存，可以从缓存的“设置”边栏选项卡访问“Redis 数据持久性”边栏选项卡。
 
-	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
+![Redis 设置][redis-cache-settings]
 
-在此 PowerShell 命令中可以看到，对于 **-RedisConfiguration** 参数，将“rdb-backup-enabled”设置为 true 可以启用 RDB，设置为 false 可以禁用 RDB。
+若要启用 Redis 持久性，请单击“已启用”来启用 RDB（Redis 数据库）备份。若要在以前启用的高级缓存上禁用 Redis 持久性，请单击“禁用”。
 
-若要配置备份间隔，可以将“rdb-backup-frequency”设置为 15（表示 **15 分钟**）、30（表示 **30 分钟**）、60（表示 **60 分钟**）、360（表示 **6 小时**）、720（表示 **12 小时**）或 1440（表示 **24 小时**）。在上一个备份操作成功完成以后，此时间间隔就会开始倒计时，同时会启动新的备份。
+若要配置备份间隔，请选择下拉列表中的“备份频率”。选项包括“15 分钟”、“30 分钟”、“60 分钟”、“6 小时”、“12 小时”和“24 小时”。在上一个备份操作成功完成以后，此时间间隔就会开始倒计时，同时会启动新的备份。
 
-若要配置存储帐户，可以将“rdb-storage-connection-string”设置为 Azure 中国区的某个连接字符串。在上述命令中可以看到，你需要在连接字符串中指定 BlobEndpoint、QueueEndpoint 和 TableEndpoint。
+单击“存储帐户”以选择要使用的存储帐户，然后从“存储密钥”下拉列表中选择要使用的“主密钥”或“辅助密钥”。你必须选择与缓存处于相同区域的存储帐户，建议选择“高级存储”帐户，因为高级存储的吞吐量较高。
 
->[AZURE.IMPORTANT] 如果重新生成了持久性帐户的存储密钥，则必须更新“rdb-backup-frequency”。
+>[AZURE.IMPORTANT] 如果重新生成持久性帐户的存储密钥，就必须从“存储密钥”下拉列表中重新选择所需的密钥。
+
+![Redis 暂留][redis-cache-persistence-selected]  
+
+
+单击“确定”可保存暂留配置。
 
 一旦备份频率间隔时间已过，则会启动下一次备份（或新缓存的首次备份）。
 
@@ -82,9 +84,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 ### <a name="can-i-change-the-backup-frequency-after-i-create-the-cache"></a> 能否在创建缓存后更改备份频率？
 
-能，可以使用 Azure PowerShell 更改备份频率。以下是示例命令，该命令通过修改 `rdb-backup-frequency` 来更改备份频率
-
-	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
+是的，可以在“Redis 数据持久性”边栏选项卡上更改备份频率。有关说明，请参阅[配置 Redis 持久性](#configure-redis-persistence)。
 
 ### <a name="why-if-i-have-a-backup-frequency-of-60-minutes-there-is-more-than-60-minutes-between-backups"></a> 为何我的备份频率为 60 分钟，而两次备份的间隔却超过 60 分钟？
 
@@ -97,7 +97,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 ### <a name="what-happens-if-i-have-scaled-to-a-different-size-and-a-backup-is-restored-that-was-made-before-the-scaling-operation"></a> 如果我缩放到不同大小并还原了缩放操作之前生成的备份，会发生什么情况？
 
 -	如果缩放到更大的大小，则没有任何影响。
--	如果缩放到更小的大小，并且你的自定义[数据库](/documentation/articles/cache-configure/#databases)设置大于新大小的[数据库限制](/documentation/articles/cache-configure/#databases)，则不会还原这些数据库中的数据。
+-	如果缩放到更小的大小，并且你的自定义[数据库](/documentation/articles/cache-configure/#databases)设置大于新大小的[数据库限制](/documentation/articles/cache-configure/#databases)，则不会还原这些数据库中的数据。有关详细信息，请参阅[在缩放过程中，自定义数据库设置是否会受影响？](#is-my-custom-databases-setting-affected-during-scaling)
 -	如果缩放到更小的大小，并且更小的大小空间不足，无法容纳上次备份的所有数据，则在还原过程中，通常会使用 [allkeys-lru](http://redis.io/topics/lru-cache) 逐出策略逐出密钥。
 
 ## 后续步骤
@@ -118,4 +118,4 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 [redis-cache-settings]: ./media/cache-how-to-premium-persistence/redis-cache-settings.png
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0829_2016-->
