@@ -163,5 +163,5 @@ This SLA and any applicable Service Levels do not apply to any performance or av
 	<99%				        |25% 
 
 
-# Version History
+## Version History
 [1.0](/support/sla/sql-data-en-v1/)  Last updated: May 2016    
