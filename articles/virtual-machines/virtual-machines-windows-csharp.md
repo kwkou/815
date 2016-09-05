@@ -79,7 +79,7 @@
           return token;
         }
 
-	将 {client-id} 替换为 Azure Active Directory 应用程序的标识符，将 {client-secret} 替换为 AD 应用程序的访问密钥，并将 {tenant-id} 替换为你的订阅的租户标识符。可以通过运行 Get-AzureRmSubscription 找到租户 ID。可以使用 Azure 门户找到访问密钥。
+	将 {client-id} 替换为 Azure Active Directory 应用程序的标识符，将 {client-secret} 替换为 AD 应用程序的访问密钥，并将 {tenant-id} 替换为你的订阅的租户标识符。可以通过运行 Get-AzureRmSubscription 找到租户 ID。可以使用 Azure 门户预览找到访问密钥。
 
 3. 将以下代码添加到 Program.cs 文件中的 Main 方法，以创建凭据：
 

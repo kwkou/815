@@ -786,7 +786,7 @@
 	-	有关 HealthClinic.biz 演示的多个快速入门，请参阅 [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts)（Azure 开发人员工具快速入门）。
 -	详细了解[对新数据库使用 Code First](https://msdn.microsoft.com/data/jj193542) 中介绍的本教程所用实体框架需要的方法。
 -	详细了解 [Azure 中的 Web 应用](/home/features/web-site/)。
--	了解如何在 Azure 门户中[监视](/documentation/articles/cache-how-to-monitor/)缓存。
+-	了解如何在 Azure 门户预览中[监视](/documentation/articles/cache-how-to-monitor/)缓存。
 
 -	了解 Azure Redis 缓存高级功能
 	-	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
