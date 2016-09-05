@@ -5,13 +5,12 @@
    documentationCenter="NA"
    authors="sonyam"
    manager="barbkess"
-   editor=""/>  
-
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/18/2016"
-   wacn.date="07/25/2016"/>
+   ms.date="08/08/2016"
+   wacn.date="09/05/2016"/>  
 
 
 # 适用于 SQL 数据仓库的 PowerShell cmdlet 和 REST API
@@ -46,7 +45,7 @@
 
 恢复“Server01”的服务器上托管的“Database02”数据库的运行。 该服务器包含在名为“ResourceGroup1”的资源组中。
 
-    Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" -DatabaseName "Database02"
+	Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" -DatabaseName "Database02"
 
 作为一种变体，此示例可从“ResourceGroup1”资源组包含的“Server01”服务器中检索“Database02”数据库。 它通过管道将检索到的对象传递给 [Resume-AzureRmSqlDatabase][]。
 
@@ -107,4 +106,4 @@
 
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0829_2016-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/02/2016"
-   wacn.date="06/27/2016"/>
+   ms.date="08/08/2016"
+   wacn.date="09/05/2016"/>
 
 # 在 Azure SQL 数据仓库中监视用户查询
 
@@ -43,4 +43,5 @@
 
 
 <!--Other Web references-->
-<!---HONumber=Mooncake_0620_2016-->
+
+<!---HONumber=Mooncake_0829_2016-->

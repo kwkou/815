@@ -5,13 +5,12 @@
    documentationCenter="NA"
    authors="sonyam"
    manager="barbkess"
-   editor=""/>  
-
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/11/2016"
-   wacn.date="08/22/2016"/>
+   ms.date="07/31/2016"
+   wacn.date="09/05/2016"/>
 
 # SQL 数据仓库容量限制
 
@@ -26,6 +25,7 @@
 | 数据库连接 | 并发打开的会话 | 1024<br/><br/>我们支持最多 1024 个活动连接，每个活动连接可同时将请求提交到 SQL 数据仓库数据库。请注意，实际可并发执行的查询数量是有限制的。当超出并发限制时，请求将进入内部队列等待处理。|
 | 数据库连接 | 预处理语句的最大内存 | 20 MB |
 | [工作负荷管理][] | 并发查询数上限 | 32<br/><br/>默认情况下，SQL 数据仓库可执行最多 32 个并发查询，剩余的查询将排队。<br/><br/>当为用户分配了更高的资源类时，并发级别可能会降低。某些查询（如 DMV 查询）始终可以运行。|
+| [Tempdb][] | Tempdb 的最大大小 | 每 DW100 399GB。因此，在 DWU1000 的情况下，Tempdb 的大小为 3.99TB |
 
 
 ## 数据库对象
@@ -101,6 +101,7 @@
 [数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units/
 [SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
 [工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[Tempdb]: /documentation/articles/sql-data-warehouse-tables-temporary
 
 <!--MSDN references-->
 
@@ -108,4 +109,4 @@
 [CREATE TABLE (Azure SQL Data Warehouse)]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
 [Internal error: An expression services limit has been reached]: https://support.microsoft.com/kb/913050
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0829_2016-->
