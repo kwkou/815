@@ -11,7 +11,7 @@
 <tags
  ms.service="iot-suite"
  ms.date="03/02/2016"
- ms.date="08/22/2016"/>
+ wacn.date="08/22/2016"/>
 
 # 远程监视预配置解决方案演练
 

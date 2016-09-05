@@ -34,7 +34,7 @@ AAD 角色可控制设置预配置解决方案以及在预配置解决方案中�
 
 可以在[在 Azure AD 中分配管理员角色][lnk-aad-admin]中找到有关 AAD 中的管理员角色的详细信息，但本文主要侧重于预配置解决方案使用的**全局管理员**和**域用户/成员**角色。
 
-**全局管理员：**对于每个 AAD 租户，可以存在许多个全局管理员。你在创建某个 AAD 租户时，默认情况下会成为该租户的全局管理员。全局管理员可以设置预配置解决方案，以及为 AAD 租户内的应用程序分配 **ADMINISTRATOR** 角色。但是，如果相同 AAD 租户中的其他用户创建应用程序，则向全局管理员授予的默认角色是 **IMPLICIT READ ONLY**。全局管理员可以使用 [Azure 经典门户][lnk-classic-portal]为应用程序分配角色。
+**全局管理员：**对于每个 AAD 租户，可以存在许多个全局管理员。你在创建某个 AAD 租户时，默认情况下会成为该租户的全局管理员。全局管理员可以设置预配置解决方案，以及为 AAD 租户内的应用程序分配 **ADMINISTRATOR** 角色。但是，如果相同 AAD 租户中的其他用户创建应用程序，则向全局管理员授予的默认角色是 **IMPLICIT READ ONLY**。全局管理员可以使用 [Azure 经典管理门户][lnk-classic-portal]为应用程序分配角色。
 
 **域用户/组成员：**对于每个 AAD 租户，可以存在许多个域用户/成员。域用户可以通过 [azureiotsuite.cn][lnk-azureiotsuite] 站点设置预配置解决方案。对于他们设置的应用程序，向他们授予的默认角色是 **ADMINISTRATOR**。他们可以使用 [azure-iot-solution][lnk-github-repo] 存储库中的 build.cmd 脚本创建应用程序，但是向他们授予的默认角色是 **IMPLICIT READONLY**，因为他们没有分配角色的权限。如果 AAD 租户中的其他用户创建应用程序，则默认情况下对于该应用程序，会向他们分配 **IMPLICIT READONLY** 角色。他们无法为应用程序分配角色；因此无法为应用程序添加用户或用户的角色（即使是他们设置的应用程序）。
 
@@ -107,7 +107,7 @@ Azure 管理员角色可控制将 Azure 订阅映射到 AD 租户的能力。
 
 可以从 <https://github.com/Azure/azure-iot-remote-monitoring> 运行云部署并使用新创建的 AAD 租户重新部署。由于你在创建新 AAD 租户时默认情况下会成为全局管理员，因此拥有添加用户以及向这些用户分配角色的访问权限。
 
-1. 在 [Azure 管理门户][lnk-classic-portal]中创建新 AAD 目录。
+1. 在 [Azure 经典管理门户][lnk-classic-portal]中创建新 AAD 目录。
 
 2. 转到 <https://github.com/Azure/azure-iot-remote-monitoring>。
 

@@ -24,7 +24,7 @@
 
 ### 一个订阅中可以设置多少个 IoT 中心实例？ 
 
-10 个。如需要设置更多，请通过[ Azure 在线申请支持][link-azuresupportticket]创建工单，提出申请。默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅上限）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案只能预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个该解决方案。
+10 个。如需要设置更多，请通过 Azure [在线申请支持][link-azuresupportticket]创建工单，提出申请。默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅上限）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案只能预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个该解决方案。
 
 ### 在订阅中可以设置多少个 DocumentDB 实例？
 
@@ -36,9 +36,9 @@
 
 ### 我的远程监视解决方案部署具有静态地图，我如何添加交互式必应地图？ 
 1. 从 [Azure 门户预览][lnk-azure-portal]获取用于企业的必应地图 API 查询密钥。
- 1. 在 [Azure 门户预览][lnk-azure-portal]中导航到用于企业的必应地图 API 所处的资源组。
- 2. 单击“所有设置”，然后单击“密钥管理”。
- 3. 你会注意到两个密钥：主密钥和查询密钥。复制查询密钥的值。
+1. 在 [Azure 门户预览][lnk-azure-portal]中导航到用于企业的必应地图 API 所处的资源组。
+2. 单击“所有设置”，然后单击“密钥管理”。
+3. 你会注意到两个密钥：主密钥和查询密钥。复制查询密钥的值。
 
      > [AZURE.NOTE] 没有用于企业的必应地图 API 帐户？ 通过单击“+ 新建”、搜索用于企业的必应地图 API 并按照提示进行创建，在 [Azure 门户预览][lnk-azure-portal]中创建一个帐户。
 
