@@ -130,7 +130,7 @@
 
 此信息是根据需要提供的。Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。但是，如果 VM 创建自 Azure 资源库，则 VM 代理已存在于虚拟机上。从本地数据中心迁移的 VM 上未安装 VM 代理。在这种情况下，需要安装 VM 代理。如果在备份 Azure VM 时遇到问题，请先检查是否已在虚拟机上正确安装 Azure VM 代理（请参阅下表）。如果你要创建自定义 VM，请先[确保已选中“安装 VM 代理”复选框](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)，然后再预配虚拟机。
 
-了解 [VM 代理](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx)以及[如何安装它](/documentation/articles/virtual-machines-windows-classic-manage-extensions/)。
+了解 [VM 代理](/documentation/articles/virtual-machines-windows-extensions-features/)以及[如何安装它](/documentation/articles/virtual-machines-windows-classic-manage-extensions/)。
 
 下表提供了适用于 Windows 和 Linux VM 的 VM 代理的其他信息。
 

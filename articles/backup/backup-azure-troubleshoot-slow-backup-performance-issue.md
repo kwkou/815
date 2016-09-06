@@ -33,7 +33,7 @@
 
 正在备份的计算机上可能有一些瓶颈导致延迟。例如，计算机读取或写入到磁盘的能力、用于通过网络发送数据的带宽，都可能会造成瓶颈。
 
-Windows 提供了名为[性能监视器](https://technet.microsoft.com/magazine/2008.08.pulse.aspx) (Perfmon) 的内置工具用于检测这些瓶颈。
+Windows 提供了名为[性能监视器](https://technet.microsoft.com/zh-cn/magazine/2008.08.pulse.aspx) (Perfmon) 的内置工具用于检测这些瓶颈。
 
 下面列出的一些性能计数器和范围可帮助你诊断瓶颈，并获得最佳备份性能。
 

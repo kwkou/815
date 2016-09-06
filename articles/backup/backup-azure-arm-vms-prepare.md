@@ -44,7 +44,7 @@ Azure 备份服务提供两种类型的保管库（备份保管库和恢复服�
 - 不支持备份使用保留 IP 地址且未定义终结点的虚拟机。
 - 不支持在恢复过程中替换现有虚拟机。如果在 VM 存在时尝试还原 VM，还原操作将会失败。
 - 不支持跨区域备份和恢复。
-- 可以在 Azure 的所有公共区域中备份虚拟机（请参阅支持区域的[清单](https://azure.microsoft.com/regions/#services)）。在创建保管库期间，如果你要寻找的区域目前不受支持，则不会在下拉列表中显示它。
+- 可以在 Azure 的所有公共区域中备份虚拟机。在创建保管库期间，如果你要寻找的区域目前不受支持，则不会在下拉列表中显示它。
 - 只可以备份选定操作系统版本的虚拟机：
   - **Linux**：请参阅 [Azure 认可的分发版列表](/documentation/articles/virtual-machines-linux-endorsed-distros/)。只要虚拟机上装有 VM 代理，其他自带的 Linux 分发版应该也能正常运行。
   - **Windows Server**：不支持低于 Windows Server 2008 R2 的版本。
@@ -143,7 +143,7 @@ Azure 备份服务提供两种类型的保管库（备份保管库和恢复服�
 
 Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。如果 VM 创建自 Azure 资源库，则 VM 代理已存在于虚拟机上。此处提供的信息适用于不是使用从 Azure 映像库创建的 VM 的情况（例如，从本地数据中心迁移的 VM）。在这种情况下，需要安装 VM 代理才能保护虚拟机。
 
-了解 [VM 代理](https://go.microsoft.com/fwLink/?LinkID=390493&clcid=0x409)以及[如何安装 VM 代理](/documentation/articles/virtual-machines-windows-classic-manage-extensions/)。
+了解 [VM 代理](/documentation/articles/virtual-machines-windows-extensions-features/)以及[如何安装 VM 代理](/documentation/articles/virtual-machines-windows-classic-manage-extensions/)。
 
 如果在备份 Azure VM 时遇到问题，请先检查是否已在虚拟机上正确安装 Azure VM 代理（请参阅下表）。如果你创建了自定义 VM，[请先确保已选中“安装 VM 代理”复选框](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)，然后再预配虚拟机。
 
@@ -167,7 +167,7 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。�
 
 为了管理 VM 快照，备份扩展需要连接 Azure 公共 IP 地址。如果未建立适当的 Internet 连接，虚拟机的 HTTP 请求将会超时，并且备份操作将会失败。如果你的部署中配置了访问限制（如通过网络安全组 (NSG)），请选择其中一个选项来提供备份流量的明确路径：
 
-- [Whitelist the Azure datacenter IP ranges（将 Azure 数据中心 IP 范围加入白名单）](http://www.microsoft.com/zh-cn/download/details.aspx?id=41653)- 请参阅相关文章以获取有关如何将 IP 地址加入白名单的说明。
+- [Whitelist the Azure datacenter IP ranges（将 Azure 数据中心 IP 范围加入白名单）](http://www.microsoft.com/download/details.aspx?id=41653)- 请参阅相关文章以获取有关如何将 IP 地址加入白名单的说明。
 - 部署 HTTP 代理服务器来路由流量。
 
 在确定使用哪个选项时，要取舍的不外乎是易管理性、控制粒度和成本等要素。
@@ -179,7 +179,7 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。�
 
 ### 将 Azure 数据中心 IP 范围加入白名单
 
-若要将 Azure 数据中心 IP 范围加入白名单，请参阅 [Azure website（Azure 网站）](http://www.microsoft.com/zh-cn/download/details.aspx?id=41653)以获取有关 IP 范围的详细信息和说明。
+若要将 Azure 数据中心 IP 范围加入白名单，请参阅 [Azure website（Azure 网站）](http://www.microsoft.com/download/details.aspx?id=41653)以获取有关 IP 范围的详细信息和说明。
 
 ### 使用 HTTP 代理进行 VM 备份
 备份 VM 时，VM 上的备份扩展会使用 HTTPS API 将快照管理命令发送到 Azure 存储空间。将通过 HTTP 代理路由备份扩展流量，因为它是为了访问公共 Internet 而配置的唯一组件。
@@ -271,7 +271,7 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。�
 这些步骤使用本示例中的特定名称和值。在输入或者将详细信息剪切并粘贴到代码中时，请使用部署的名称和值。
 
 
-确定已建立网络连接后，可以开始备份 VM 了。请参阅[备份 Resource Manager 部署的 VM](/documentation/articles/backup-azure-arm-vms/)。
+确定已建立网络连接后，可以开始备份 VM 了。请参阅[备份 Resource Manager 部署的 VM](/documentation/articles/backup-azure-vms-automation/)。
 
 ## 有疑问？
 如果你有疑问，或者希望包含某种功能，请[给我们反馈](http://aka.ms/azurebackup_feedback)。
@@ -281,6 +281,5 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。�
 
 - [备份虚拟机](/documentation/articles/backup-azure-vms/)
 - [计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)
-- [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms/)
 
 <!---HONumber=Mooncake_0711_2016-->

@@ -16,9 +16,10 @@
 # 使用 DPM 准备将工作负荷备份到 Azure
 
 > [AZURE.SELECTOR]
-- [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
+- [Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)
+- [SCDPM](/documentation/articles/backup-azure-dpm-introduction/)
 - [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic/)
-- [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic)
+- [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic/)
 
 
 本文介绍如何使用 Microsoft Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
