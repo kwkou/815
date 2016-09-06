@@ -12,13 +12,13 @@
 <tags
      ms.service="iot-suite"
      ms.date="05/25/2016"
-     wacn.date="08/22/2016"/>
+     wacn.date="09/05/2016"/>
 
 # 教程：预配置解决方案入门
 
 ## 介绍
 
-Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多项 Azure IoT 服务，以提供可实现常见 IoT 商业应用场景的端到端解决方案。远程监视预配置解决方案将连接并监视设备。这样，你便可以分析设备发出的数据流，并通过让流程自动响应该数据流来提升业务绩效。
+Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多项 Azure IoT 服务，以提供可实现常见 IoT 商业应用场景的端到端解决方案。 *远程监视* 预配置解决方案将连接并监视设备。这样，你便可以分析设备发出的数据流，并通过让流程自动响应该数据流来提升业务绩效。
 
 本教程演示如何预配远程监视预配置解决方案。此外还将逐步解说远程监视预配置解决方案的基本功能。可以通过随预配置解决方案一起部署的解决方案仪表板来访问其中的多项功能：
 
@@ -40,7 +40,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
     ![启动预配置解决方案][img-launch-solution]  
 
 
-2.  默认情况下，此解决方案门户会显示解决方案仪表板。你可以使用左侧菜单选择其他视图。
+2.  默认情况下，此解决方案门户会显示 *解决方案仪表板* 。你可以使用左侧菜单选择其他视图。
 
     ![远程监控预配置解决方案仪表板][img-dashboard]  
 
@@ -55,7 +55,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 设备列表会显示解决方案中所有已注册的设备。你可以查看和编辑设备元数据、添加或删除设备，以及向设备发送命令。
 
-1.  单击左侧菜单中的“设备”，以显示此解决方案的设备列表。
+1.  单击左侧菜单中的“设备”，以显示此解决方案的 *设备列表* 。
 
     ![仪表板中的设备列表][img-devicelist]  
 
@@ -95,7 +95,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 ## 添加新的模拟设备
 
-当你部署预配置解决方案时，会自动预配在设备列表中可见的四个示例设备。这些设备是在 Azure Web 作业中运行的模拟设备。模拟设备可让你试验预配置解决方案，而不需要部署实际的物理设备。若要将实际设备连接到解决方案，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connecting-devices]（将设备连接到远程监视预配置解决方案）教程。
+当你部署预配置解决方案时，会自动预配在设备列表中可见的四个示例设备。这些设备是在 Azure Web 作业中运行的 *模拟设备* 。模拟设备可让你试验预配置解决方案，而不需要部署实际的物理设备。若要将实际设备连接到解决方案，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connecting-devices]（将设备连接到远程监视预配置解决方案）教程。
 
 以下步骤说明如何将新的模拟设备添加到解决方案：
 
@@ -222,9 +222,11 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 ## 后续步骤
 
-你已经生成一个可运行的预配置解决方案，现在可以继续进行以下演练：
+部署正常工作的预配置解决方案后，可以继续通过阅读以下文章开始使用 IoT 套件：
 
--   [预配置解决方案自定义指南][lnk-customize]
+- [远程监视预配置解决方案演练][lnk-rm-walkthrough]
+- [将设备连接到远程监视预配置解决方案][lnk-connect-rm]
+- [azureiotsuite.cn 站点权限][lnk-permissions]
 
 [img-launch-solution]: ./media/iot-suite-getstarted-preconfigured-solutions/launch.png
 [img-dashboard]: ./media/iot-suite-getstarted-preconfigured-solutions/dashboard.png
@@ -252,14 +254,13 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 [1rmb-trial]: /pricing/1rmb-trial/
 [lnk-preconfigured-solutions]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn
-[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[lnk-predictive]: /documentation/articles/iot-suite-predictive-overview/
-[lnk-connecting-devices]: /documentation/articles/iot-suite-connecting-devices/
-[lnk-permissions]: /documentation/articles/iot-suite-permissions/
 [lnk-logic-apps]: /documentation/services/app-service/logic/
 [lnk-portal]: http://portal.azure.cn/
 [lnk-rmgithub]: https://github.com/Azure/azure-iot-remote-monitoring
 [lnk-devicemetadata]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/#device-identity-registry-and-documentdb
 [lnk-logicapptutorial]: /documentation/articles/iot-suite-logic-apps-tutorial/
+[lnk-rm-walkthrough]: /documentation/articles/iot-suite-remote-monitoring-sample-walkthrough/
+[lnk-connect-rm]: /documentation/articles/iot-suite-connecting-devices/
+[lnk-permissions]: /documentation/articles/iot-suite-permissions/
 
 <!---HONumber=Mooncake_0815_2016-->

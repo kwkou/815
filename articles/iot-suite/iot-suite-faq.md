@@ -12,7 +12,7 @@
 <tags
   ms.service="iot-suite"
   ms.date="06/27/2016"
-  wacn.date="08/22/2016"/>
+  wacn.date="09/05/2016"/>
    
 # 有关 IoT 套件的常见问题
 
@@ -58,6 +58,14 @@
 
 
 
+## 后续步骤
+
+你还可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
+
+- [从头开始保障 IoT 安全][lnk-security-groundup]
+
+[lnk-predictive-overview]: /documentation/articles/iot-suite/iot-suite-predictive-overview/
+[lnk-security-groundup]: /documentation/articles/iot-suite/securing-iot-ground-up/
 [link-azuresupportticket]: https://portal.azure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade
 [link-azuresublimits]: /documentation/articles/azure-subscription-service-limits/#iot-hub-limits
 [lnk-azure-portal]: https://portal.azure.cn

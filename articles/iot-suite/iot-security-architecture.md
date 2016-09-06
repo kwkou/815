@@ -6,14 +6,25 @@
  documentationCenter=""
  authors="YuriDio"
  manager="timlt"
- editor=""/>  
-
+ editor=""/>
 
 <tags
  ms.service="iot-suite"
- ms.date="06/22/2016"
- wacn.date="08/22/2016"/>
+ ms.date="08/02/2016"
+ wacn.date="09/05/2016"/>
 
 [AZURE.INCLUDE [iot-security-architecture](../../includes/iot-security-architecture.md)]
 
-<!---HONumber=Mooncake_0815_2016-->
+## 后续步骤
+
+若要详细了解如何保护 IoT 解决方案，请参阅[保护你的 IoT 部署][lnk-security-deployment]。
+
+你还可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
+
+- [有关 IoT 套件的常见问题][lnk-faq]
+
+[lnk-faq]: /documentation/articles/iot-suite-faq/
+
+[lnk-security-deployment]: /documentation/articles/iot-suite-security-deployment/
+
+<!---HONumber=Mooncake_0829_2016-->

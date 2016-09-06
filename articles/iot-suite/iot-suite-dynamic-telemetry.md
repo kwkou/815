@@ -12,7 +12,7 @@
 <tags
      ms.service="iot-suite"
      ms.date="06/07/2016"
-     wacn.date="08/22/2016"/>  
+     wacn.date="09/05/2016"/>  
 
 
 # 配合使用动态遥测和远程监视预配置解决方案
@@ -237,11 +237,9 @@
 
 ## 后续步骤
 
-你已经生成一个可运行的预配置解决方案，现在可以继续进行以下演练：
+了解如何利用动态遥测后，你可以在以下文章中详细了解预配置解决方案如何利用设备信息：[Device information metadata in the remote monitoring preconfigured solution][lnk-devinfo]（远程监视预配置解决方案中的设备信息元数据）。
 
--   [预配置解决方案自定义指南][lnk-customize]
-
-
+[lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/
 [image1]: ./media/iot-suite-dynamic-telemetry/image1.png
 [image2]: ./media/iot-suite-dynamic-telemetry/image2.png
 [image3]: ./media/iot-suite-dynamic-telemetry/image3.png
@@ -249,8 +247,6 @@
 [image5]: ./media/iot-suite-dynamic-telemetry/image5.png
 
 [lnk_free_trial]: /pricing/1rmb-trial/
-[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[lnk-predictive]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-node]: http://nodejs.org
 [node-linux]: https://github.com/nodejs/node-v0.x-archive/wiki/Installing-Node.js-via-package-manager
 [lnk-github-repo]: https://github.com/Azure/azure-iot-sdks
