@@ -3,13 +3,13 @@
 	description="本教程演示如何使用 Azure 存储分析、AzCopy 和 Microsoft Message Analyzer 进行点对点故障排除" 
 	services="storage" 
 	documentationCenter="dotnet" 
-	authors="tamram" 
-	manager="adinah"/>
+	authors="robinsh" 
+	manager="carmonm"/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/09/2016" 
-	wacn.date="06/06/2016"/>
+	ms.date="08/03/2016" 
+	wacn.date="09/05/2016"/>
 
 # 使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除 
 
@@ -60,12 +60,12 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 当针对容器或 Blob 的读取操作失败，或者由于找不到 Blob 或容器而失败时发生。
 
-- 当容器或 Blob 被此请求之前的另一个客户端删除时发生。 
+- 当容器或 Blob 被此请求之前的另一个客户端删除时发生。
 - 当使用的 API 调用在检查容器或 Blob 是否存在后创建容器或 Blob 时发生。CreateIfNotExists API 先执行 HEAD 调用以检查容器或 Blob 是否存在；如果不存在，则将返回 404 错误，然后再次执行 PUT 调用以写入容器或 Blob。
 
 **状态代码 409（冲突）示例**
 
-- 当你使用 Create API 创建新容器或 Blob，但未事先检查存在性，而已经存在同名的容器或 Blob 时发生。 
+- 当你使用 Create API 创建新容器或 Blob，但未事先检查存在性，而已经存在同名的容器或 Blob 时发生。
 - 如果在删除某个容器时，你尝试在删除操作完成之前创建同名的新容器，则会发生此错误。
 - 如果在容器或 Blob 中指定了租约，但已存在租约，则会发生此错误。
  
@@ -79,7 +79,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 在本教程中，我们将使用 Message Analyzer 来处理三种不同类型的日志文件，不过，你可以选择要处理的类型之一：
 
 - **服务器日志**，这是在启用 Azure 存储日志记录时创建的。服务器日志包含有关针对 Azure 存储服务（Blob、队列、表和文件）之一调用的每个操作的数据。服务器日志将指示调用的操作、返回的状态代码，以及有关请求和响应的其他详细信息。
-- **.NET 客户端日志**，这是在从 .NET 应用程序内部启用客户端日志记录时创建的。客户端日志包括有关客户端准备请求以及接收和处理响应的详细信息。 
+- **.NET 客户端日志**，这是在从 .NET 应用程序内部启用客户端日志记录时创建的。客户端日志包括有关客户端准备请求以及接收和处理响应的详细信息。
 - **HTTP 网络跟踪日志**，它收集有关 HTTP/HTTPS 请求的数据和响应数据，包括针对 Azure 存储空间的操作的数据。在本教程中，我们将通过 Message Analyzer 生成网络跟踪。
 
 ### 配置服务器端日志记录和度量值
@@ -138,14 +138,15 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 1. 安装 [Fiddler](http://www.telerik.com/download/fiddler)。
 2. 启动 Fiddler。
-2. 选择“工具”|“Fiddler 选项”。
+2. 选择**“工具”| Fiddler Options**.
 3. 在“选项”对话框中，确保“捕获 HTTPS 连接”和“解密 HTTPS 通信”都已选中，如下所示。
 
-![配置 Fiddler 选项](./media/storage-e2e-troubleshooting-classic-portal/fiddler-options-1.png)
+![配置 Fiddler 选项](./media/storage-e2e-troubleshooting-classic-portal/fiddler-options-1.png)  
+
 
 对于本教程，我们将先在 Message Analyzer 中收集并保存网络跟踪，然后创建分析会话以分析跟踪和日志。在 Message Analyzer 中收集网络跟踪：
 
-1. 在 Message Analyzer 中，选择“文件”|“快速跟踪”|“未加密的 HTTPS”。
+1. 在 Message Analyzer 中，选择**“文件”| Quick Trace | Unencrypted HTTPS**.
 2. 随后将立即开始跟踪。选择“停止”可以停止跟踪，以便将它配置为仅跟踪存储通信。
 3. 选择“编辑”可以编辑跟踪会话。
 4. 选择 **Microsoft-Pef-WebProxy** ETW 提供程序右侧的“配置”链接。
@@ -203,8 +204,8 @@ Message Analyzer 包括 Azure 存储空间的资产，可帮助你分析服务�
 1. 从 Microsoft 下载中心下载 [Message Analyzer](http://www.microsoft.com/download/details.aspx?id=44226)，并运行安装程序。
 2. 启动 Message Analyzer。
 3. 从“工具”菜单中选择“资产管理器”。在“资产管理器”对话框中，选择“下载”，然后筛选“Azure 存储空间”。你将会看到 Azure 存储空间资产，如下图中所示。
-4. 单击“同步所有显示的项”以安装 Azure 存储空间资产。可用的资产包括： 
-	- **Azure 存储空间颜色规则**：Azure 存储空间颜色规则可让你定义特殊筛选器，以使用颜色、文本和字形来突出显示跟踪中包含特定信息的消息。
+4. 单击“同步所有显示的项”以安装 Azure 存储空间资产。可用的资产包括：
+	- **Azure 存储空间颜色规则**：Azure 存储空间颜色规则可让你可以定义特殊筛选器，以使用颜色、文本和字体样式来突出显示跟踪中包含特定信息的消息。
 	- **Azure 存储空间图表**：Azure 存储空间图表是根据服务器日志数据绘制的预定义图表。请注意，若在此时使用 Azure 存储空间图表，可以只将服务器日志加载到分析网格中。
 	- **Azure 存储空间分析程序**：Azure 存储空间分析程序可以分析 Azure 存储空间客户端、服务器和 HTTP 日志，以便在分析网格中显示。
 	- **Azure 存储空间筛选器**：Azure 存储空间筛选器是可用于查询分析网格中的数据的预定义条件。
@@ -219,10 +220,10 @@ Message Analyzer 包括 Azure 存储空间的资产，可帮助你分析服务�
 
 可以将所有已保存的日志文件（服务器端、客户端和网络）导入到 Microsoft Message Analyzer 的单个会话中以进行分析。
 
-1. 在 Microsoft Message Analyzer 中的“文件”菜单上单击“新建会话”，然后单击“空白会话”。在“新建会话”对话框中，输入分析会话的名称。在“会话详细信息”面板中，单击“文件”按钮。 
-1. 若要加载 Message Analyzer 生成的网络跟踪数据，请单击“添加文件”，浏览到你通过 Web 跟踪会话将 .matp 文件保存到的位置，选择该 .matp 文件，然后单击“打开”。 
-1. 若要加载服务器端日志数据，请单击“添加文件”，浏览到你将服务器端日志下载到的位置，选择要分析的时间范围内的日志文件，并单击“打开”。然后，在“会话详细信息”面板中，将每个服务器端日志文件的“文本日志配置”下拉列表设置为 **AzureStorageLog**，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
-1. 若要加载客户端日志数据，请单击“添加文件”，浏览到客户端日志保存到的位置，选择想要分析的日志文件，并单击“打开”。然后，在“会话详细信息”面板中，将每个客户端日志文件的“文本日志配置”下拉列表设置为 **AzureStorageClientDotNetV4**，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
+1. 在 Microsoft Message Analyzer 中的“文件”菜单上单击“新建会话”，然后单击“空白会话”。在“新建会话”对话框中，输入分析会话的名称。在“会话详细信息”面板中，单击“文件”按钮。
+1. 若要加载 Message Analyzer 生成的网络跟踪数据，请单击“添加文件”，浏览到你通过 Web 跟踪会话将 .matp 文件保存到的位置，选择该 .matp 文件，然后单击“打开”。
+1. 若要加载服务器端日志数据，请单击“添加文件”，浏览到你将服务器端日志下载到的位置，选择要分析的时间范围内的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个服务器端日志文件的“文本日志配置”下拉列表设置为 AzureStorageLog，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
+1. 若要加载客户端日志数据，请单击“添加文件”，浏览到客户端日志保存到的位置，选择想要分析的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个客户端日志文件的“文本日志配置”下拉列表设置为 AzureStorageClientDotNetV4，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
 1. 在“新建会话”对话框中单击“开始”以加载并分析日志数据。日志数据将显示在 Message Analyzer 分析网格中。
 
 下图显示了使用服务器、客户端和网络跟踪日志文件配置的示例会话。
@@ -247,7 +248,7 @@ Azure 存储客户端库会自动为每个请求生成唯一的客户端请求 I
 
 Message Analyzer 的存储空间资产包括 Azure 存储视图布局，这是一些预配置的视图，可用于显示不同情况下的数据，以及有用的分组和列。你还可以创建自定义视图布局，并保存它们以供重复使用。
 
-下图显示了可通过从工具栏功能区选择“视图布局”来访问的“视图布局”菜单。Azure 存储空间的视图布局分组在菜单中的“Azure 存储空间”节点下。可以在搜索框中搜索 `Azure Storage`，以仅筛选 Azure 存储空间视图布局。还可以选择某个视图布局旁边的星形，使之成为收藏的布局并显示在菜单顶部。
+下图显示了可以通过工具栏功能区选择“视图布局”访问的“视图布局”菜单。Azure 存储空间的视图布局分组在菜单中的“Azure 存储空间”节点下。可以在搜索框中搜索 `Azure Storage`，以仅筛选 Azure 存储空间视图布局。还可以选择某个视图布局旁边的星形，使之成为收藏的布局并显示在菜单顶部。
 
 ![“视图布局”菜单](./media/storage-e2e-troubleshooting-classic-portal/view-layout-menu.png)
 
@@ -257,7 +258,7 @@ Message Analyzer 的存储空间资产包括 Azure 存储视图布局，这是�
 
 ![Azure 存储空间视图布局](./media/storage-e2e-troubleshooting-classic-portal/view-layout-client-request-id-module.png)
 
->[AZURE.NOTE] 不同的日志文件具有不同的列，因此，当分析网格中显示了多个日志文件中的数据时，某些列可能不包含某一给定行的任何数据。例如，在上图中，客户端日志行未显示“时间戳”、“已用时间”、“源”和“目标”列的任何数据，因为这些列不在客户端日志中，而在网络跟踪中。同样，“时间戳”列显示了服务器日志中的时间戳数据，但未显示“已用时间”、“源”和“目标”列的任何数据，因为这些数据不在服务器日志中。
+>[AZURE.NOTE] 不同的日志文件具有不同的列，因此，当分析网格中显示了多个日志文件中的数据时，某些列可能不包含某一给定行的任何数据。例如，在上图中，客户端日志行未显示“时间戳”，“已用时间”、“源”和“目标”列的任何数据，因为这些列不在客户端日志中，而在网络跟踪中。同样，“时间戳”列显示了服务器日志中的时间戳数据，但未显示“已用时间”、“源”和“目标”列的任何数据，因为这些数据不在服务器日志中。
 
 除了使用 Azure 存储空间视图布局以外，还可以定义并保存自己的视图布局。可以选择其他所需字段来分组数据，并将分组保存为自定义布局的一部分。
 
@@ -288,7 +289,7 @@ Message Analyzer 的存储空间资产包括 Azure 存储视图布局，这是�
 
 应用此筛选器后，你将看到已从客户端日志中排除的行，因为客户端日志不包含 **StatusCode** 列。首先，我们将检查服务器和网络跟踪日志，以找到 404 错误，然后我们会返回到客户端日志以检查导致它们的客户端操作。
 
->[AZURE.NOTE] 如果向筛选器添加表达式以包含状态代码为 null 的日志条目，则可以根据 **StatusCode** 列筛选，并仍显示所有三个日志（包括客户端日志）中的数据。若要构造此筛选器表达式，请使用：
+>[AZURE.NOTE] 你可以根据 **StatusCode** 列筛选，并仍显示所有三个日志（包括客户端日志）中的数据，如果将表达式添加到包括日志项的状态代码为 null 的情况的筛选器。若要构造此筛选器表达式，请使用：
 >
 > <code>&#42;StatusCode >= 400 或 !&#42;StatusCode</code>
 >
@@ -299,7 +300,7 @@ Message Analyzer 的存储空间资产包括 Azure 存储视图布局，这是�
 存储空间资产包括可用于缩小日志数据，以找出错误或你正在寻找的趋势的预定义筛选器。接下来，我们将要应用两个预定义的筛选器：一个用于筛选服务器和网络跟踪日志中的 404 错误，另一个用于筛选指定时间范围内的数据。
 
 1. 显示“视图筛选器”工具窗口（如果尚未显示）。在工具栏功能区中，选择“工具窗口”，然后选择“视图筛选器”。
-2. 在“视图筛选器”窗口中，选择“库”，然后搜索 `Azure Storage` 以查找 Azure 存储空间筛选器。选择用于筛选**所有日志中的 404（找不到）消息**的筛选器。
+2. 在“视图筛选器”窗口中，选择“库”，然后搜索 `Azure Storage` 以查找 Azure 存储空间筛选器。选择用于筛选“所有日志中的 404（找不到）消息”的筛选器。
 3. 再次显示“库”菜单，找到并选择“全局时间筛选器”。
 4. 将筛选器中显示的时间戳编辑为你想要查看的范围。这有助于缩小分析数据的范围。
 5. 你的筛选器应类似于以下示例。单击“应用”将筛选器应用到分析网格。
@@ -319,14 +320,14 @@ Message Analyzer 的存储空间资产包括 Azure 存储视图布局，这是�
 
 接下来，我们将与此客户端请求 ID 与客户端日志数据相关联，以查看发生错误时客户端正在执行哪些操作。可以为此会话显示一个新的分析网格视图，以在另一个选项卡中查看客户端日志数据：
 
-1. 首先，将 **ClientRequestId** 字段的值复制到剪贴板。为此，你可以选择任一行，找到 **ClientRequestId** 字段，右键单击数据值，然后选择“复制 "ClientRequestId"”。 
-1. 在工具栏功能区中，选择“新建查看器”，然后选择“分析网格”打开一个新选项卡。新选项卡将显示日志文件中的所有数据，且未应用分组、筛选或颜色规则。 
+1. 首先，将 **ClientRequestId** 字段的值复制到剪贴板。为此，你可以选择任一行，找到 **ClientRequestId** 字段，右键单击数据值，然后选择“复制 'ClientRequestId'”。
+1. 在工具栏功能区中，选择“新建查看器”，然后选择“分析网格”打开一个新选项卡。新选项卡将显示日志文件中的所有数据，且未应用分组、筛选或颜色规则。
 2. 在工具栏功能区中，选择“视图布局”，然后选择“Azure 存储空间”部分下的“所有 .NET 客户端列”。此视图布局显示客户端日志以及服务器和网络跟踪日志中的数据。默认情况下，这些数据已按 **MessageNumber** 列排序。
-3. 接下来，搜索客户端请求 ID 的客户端日志。在工具栏功能区中，选择“查找消息”，然后在“查找”字段中对客户端请求 ID 指定一个自定义筛选器。对于筛选器，请使用以下语法指定自己的客户端请求 ID：
+3. 接下来，搜索客户端请求 ID 的客户端日志。在工具栏功能区中，选择“查找消息”，然后在“查找”字段中指定客户端请求 ID 上的自定义筛选器。对于筛选器，请使用以下语法指定自己的客户端请求 ID：
 
 		*ClientRequestId == "398bac41-7725-484b-8a69-2a9e48fc669a"
 
-Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第一个日志条目在客户端日志中，每个客户端请求 ID 有多个条目，因此，你可能需要根据 **ClientRequestId** 字段对其分组，以便更轻松地查看其聚合视图。下图显示了指定的客户端请求 ID 的客户端日志中的所有消息。
+Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第一个日志条目在客户端日志中，每个客户端请求 ID 有多个条目，因此，你可能需要根据 **ClientRequestId** 字段对其分组，以更轻松地查看其聚合视图。下图显示了指定的客户端请求 ID 的客户端日志中的所有消息。
 
 ![显示 404 错误的客户端日志](./media/storage-e2e-troubleshooting-classic-portal/client-log-analysis-grid1.png)
 
@@ -341,20 +342,20 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 | 若要调查... | 使用筛选器表达式… | 将表达式应用到日志（客户端、服务器、网络、所有） |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | 队列上的消息传递出现意外的延迟 | AzureStorageClientDotNetV4.Description 包含“Retrying failed operation.” | 客户端 |
-| PercentThrottlingError 的 HTTP 提升 | HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 | 网络 |
+| PercentThrottlingError 的 HTTP 提升 | HTTP.Response.StatusCode == 500 || HTTP.Response.StatusCode == 503 | 网络 |
 | PercentTimeoutError 提升 | HTTP.Response.StatusCode == 500 | 网络 |
-| PercentTimeoutError 提升（全部） |    *StatusCode == 500 | 全部 |
-| PercentNetworkError 增加 | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | 客户端 |
-| HTTP 403 (禁止) 消息 | HTTP.Response.StatusCode == 403 | 网络 |
-| HTTP 404 (找不到) 消息 | HTTP.Response.StatusCode == 404 | 网络 |
-| 404 (全部) | *StatusCode == 404 | 全部 |
+| PercentTimeoutError 提升（全部） | *StatusCode == 500 | 全部 |
+| PercentNetworkError 提升 | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | 客户端 |
+| HTTP 403（禁止）消息 | HTTP.Response.StatusCode == 403 | 网络 |
+| HTTP 404（未找到）消息 | HTTP.Response.StatusCode == 404 | 网络 |
+| 404（全部） | *StatusCode == 404 | 全部 |
 | 共享访问签名 (SAS) 授权问题 | AzureStorageLog.RequestStatus == "SASAuthorizationError" | 网络 |
-| HTTP 409 (冲突) 消息 | HTTP.Response.StatusCode == 409 | 网络 |
-| 409 (全部) | *StatusCode == 409 | 全部 |
-| PercentSuccess 过低或者分析日志条目包含事务状态为 ClientOtherErrors 的操作 | AzureStorageLog.RequestStatus == "ClientOtherError" | 服务器 |
-| Nagle 警告 | ((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) 且 (AzureStorageLog.RequestPacketSize <1460) 且 (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) | 服务器 |
-| 服务器和网络日志中的时间范围 | #Timestamp >= 2014-10-20T16:36:38 且 #Timestamp <= 2014-10-20T16:36:39 | 服务器、网络 |
-| 服务器日志中的时间范围 | AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 且 AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 | 服务器 |
+| HTTP 409（冲突）消息 | HTTP.Response.StatusCode == 409 | 网络 |
+| 409（全部） | *StatusCode == 409 | 全部 |
+| 低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作 | AzureStorageLog.RequestStatus == "ClientOtherError" | 服务器 |
+| Nagle 警告 | ((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) | 服务器 |
+| 服务器和网络日志中的时间范围 | #Timestamp >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 | 服务器、网络 |
+| 服务器日志中的时间范围 | AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 | 服务器 |
 
 
 ## 后续步骤
@@ -369,4 +370,4 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
  
  
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0829_2016-->

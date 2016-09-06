@@ -4,13 +4,14 @@
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
-	ms.date="06/09/2016"
-	wacn.date="07/21/2016"/>
+	ms.date="07/23/2016"
+	wacn.date="09/05/2016"/>
+
 
 
 # 通过 .NET 开始使用 Azure 表存储
@@ -27,7 +28,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 
 本教程演示如何对使用 Azure 表存储的某些常见情形（包括创建和删除表和插入、更新、删除和查询表数据）编写 .NET 代码。
 
-**估计完成时间：**45 分钟。
+**估计完成时间：**45 分钟
 
 **先决条件：**
 
@@ -84,7 +85,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 
 ## 将实体添加到表
 
-实体使用派生自 **TableEntity** 的自定义类映射到 C# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开 `get` 和 `set` 的受支持类型的公共属性。此外，你的实体类型必须公开不带参数的构造函数。
+实体使用派生自 **TableEntity** 的自定义类映射到 C# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开 `get` 和 `set` 的受支持类型的公共属性。此外，你的实体类型 *必须* 公开不带参数的构造函数。
 
     public class CustomerEntity : TableEntity
     {
@@ -134,6 +135,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 -  虽然可以将某个查询作为批处理操作执行，但该操作必须是批处理中仅有的操作。
 
 <!-- -->
+
 以下代码示例创建两个实体对象，并使用 **Insert** 方法将其中每个对象都添加到 **TableBatchOperation** 中。然后调用 **CloudTable.Execute** 以执行此操作。
 
     // Retrieve the storage account from the connection string.
@@ -458,4 +460,4 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0829_2016-->

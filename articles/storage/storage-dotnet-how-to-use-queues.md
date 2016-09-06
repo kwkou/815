@@ -1,16 +1,16 @@
 <properties
 	pageTitle="通过 .NET 开始使用 Azure 队列存储 | Azure"
-	description="使用 Azure 队列存储在应用程序组件之间异步发送和接收消息。立即开始使用简单的队列存储操作，包括创建和删除队列以及添加、读取和删除队列消息。"
+	description="Azure 队列用于在应用程序组件之间进行可靠的异步消息传送。应用程序组件可以利用云消息传送进行独立缩放。"
 	services="storage"
 	documentationCenter=".net"
-	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"/>  
 
 <tags
 	ms.service="storage"
-	ms.date="04/07/2016"
-	wacn.date="07/21/2016"/>
+	ms.date="07/26/2016"
+	wacn.date="09/05/2016"/>
 
 # 通过 .NET 开始使用 Azure 队列存储
 
@@ -18,7 +18,7 @@
 
 ## 概述
 
-Azure 队列存储是一种在云中提供消息传递队列的服务。在设计应用程序以实现可伸缩性时，通常要将各个应用程序组件分离，使其可以独立地进行伸缩。队列存储为在应用程序组件之间进行异步通信提供了一种可靠的消息传送解决方案，无论这些应用程序组件是在云中、在桌面上、在本地服务器上运行还是在移动设备上运行。队列存储还支持管理异步任务以及构建过程工作流。
+Azure 队列存储用于在应用程序组件之间进行云消息传送。在设计应用程序以实现可伸缩性时，通常要将各个应用程序组件分离，使其可以独立地进行伸缩。队列存储提供的异步消息传送适用于在应用程序组件之间进行通信，无论这些应用程序组件是运行在云中、桌面上、本地服务器上还是移动设备上。队列存储还支持管理异步任务以及构建过程工作流。
 
 ### 关于本教程
 
@@ -274,4 +274,4 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0829_2016-->

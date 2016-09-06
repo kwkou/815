@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="在 Azure 经典管理门户中启用存储度量值 | Azure" 
-	description="如何为 Blob、队列、表和文件服务启用存储度量值" 
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+	pageTitle="在 Azure 门户预览中启用存储度量值 | Azure" 
+	description="如何为 Blob、队列、表和文件服务启用存储度量值"
+	services="storage"
+	documentationCenter=""
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="07/05/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/05/2016"/>
 
 # 启用 Azure 存储空间度量值并查看度量值数据
 
@@ -42,7 +42,7 @@
 
 - MetricsType：可能值是 Hour 和 Minute。
 
-- ServiceType：可能值是 Blob、Queue 和 Table。
+- ServiceType：可能值为 Blob、Queue 和 Table。
 
 - MetricsLevel：可能的值为 None、Service 和 ServiceAndApi。
 
@@ -125,12 +125,12 @@
 
 有关这些表的完整架构详细信息，请参阅[存储分析度量值表架构](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)。以下示例行仅显示一部分可用列，但也说明了存储度量值在采用相应方式保存这些度量值时展现的一些重要功能：
 
-| PartitionKey | RowKey | Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | 可用性 | AverageE2ELatency | AverageServerLatency | PercentSuccess |
+| PartitionKey  |       RowKey       |                    Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | 可用性 | AverageE2ELatency | AverageServerLatency | PercentSuccess |
 |---------------|:------------------:|-----------------------------:|---------------|-----------------------|--------------|-------------|--------------|-------------------|----------------------|----------------|
-| 20140522T1100 | user;All | 2014-05-22T11:01:16.7650250Z | 7 | 7 | 4003 | 46801 | 100 | 104\.4286 | 6\.857143 | 100 |
-| 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5 | 5 | 2694 | 45951 | 100 | 143\.8 | 7\.8 | 100 |
-| 20140522T1100 | user;QueryEntity | 2014-05-22T11:01:16.7650250Z | 1 | 1 | 538 | 633 | 100 | 3 | 3 | 100 |
-| 20140522T1100 | user;UpdateEntity | 2014-05-22T11:01:16.7650250Z | 1 | 1 | 771 | 217 | 100 | 9 | 6 | 100 |
+| 20140522T1100 |      user;All      | 2014-05-22T11:01:16.7650250Z | 7             | 7                     | 4003         | 46801       | 100          | 104.4286          | 6.857143             | 100            |
+| 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5             | 5                     | 2694         | 45951       | 100          | 143.8             | 7.8                  | 100            |
+| 20140522T1100 |  user;QueryEntity  | 2014-05-22T11:01:16.7650250Z | 1             | 1                     | 538          | 633         | 100          | 3                 | 3                    | 100            |
+| 20140522T1100 | user;UpdateEntity  | 2014-05-22T11:01:16.7650250Z | 1             | 1                     | 771          | 217         | 100          | 9                 | 6                    | 100               |
 
 在这个分钟度量值数据示例中，分区键按分钟使用时间。行键可识别行中存储的信息的类型，其中包含两条信息，即访问类型和请求类型：
 
@@ -210,4 +210,4 @@
 ## 后续步骤：
 [启用存储日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0829_2016-->

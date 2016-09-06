@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/24/2016" 
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016" 
+	wacn.date="09/05/2016"/>
 
 # 将 Azure 存储空间用于 Hudson 持续集成解决方案
 
@@ -178,4 +178,4 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0829_2016-->

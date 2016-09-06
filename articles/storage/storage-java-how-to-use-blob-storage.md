@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/05/2016"/>
 
 # 如何通过 Java 使用 Blob 存储
 
@@ -267,4 +267,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0829_2016-->

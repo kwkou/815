@@ -3,14 +3,14 @@
     description="了解如何在用于 C++ 的 Azure 存储客户端库中使用列表 API 来枚举容器、blob、队列、表和实体。" 
     documentationCenter=".net" 
     services="storage"
-    authors="tamram" 
-    manager="carolz" 
-    editor=""/>
+    authors="tamram"
+    manager="carmonm"
+    editor="tysonn"/>
 <tags 
     ms.service="storage"
    
-    ms.date="05/24/2016"
-    wacn.date="07/18/2016"/>
+    ms.date="07/24/2016"
+    wacn.date="09/05/2016"/>
 
 # 使用 C++ 列出 Azure 存储资源
 
@@ -47,7 +47,7 @@
 
 云存储的规模决定了要使用分段列表。例如，你可能在 Azure blob 容器中有超过一百万个 blob，或者在 Azure 表中有十亿个以上的实体。这些不是理论上的数字，而是实际的客户使用情况。
 
-因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有分段重载。
+因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有 *分段* 重载。
 
 分段列表操作的响应包括：
 
@@ -181,4 +181,4 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	[Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure 存档文档](/documentation/services/storage/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0829_2016-->

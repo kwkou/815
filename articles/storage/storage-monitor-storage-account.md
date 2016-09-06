@@ -3,14 +3,14 @@
 	description="了解如何使用 Azure 经典管理门户在 Azure 中监视存储帐户。"
 	services="storage"
 	documentationCenter=""
-	authors="tamram"
-	manager="adinah"
-	editor="cgronlun"/>
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"/>  
 
 <tags
 	ms.service="storage"
-	ms.date="05/09/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/05/2016"/>
 
 # 监视 Azure 经典管理门户中的存储帐户
 
@@ -153,4 +153,4 @@
 
 诊断日志保存在你的存储帐户下名为 $logs 的 Blob 容器中。有关访问 $logs 容器的信息，请参阅[关于存储分析日志记录](http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx)。
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0829_2016-->

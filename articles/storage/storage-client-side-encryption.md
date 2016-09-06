@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="Azure 存储空间的使用 .NET 客户端加密 | Azure" 
 	description="用于 .NET 的 Azure 存储客户端库支持客户端加密以及与 Azure 密钥保管库集成以实现 Azure 存储空间应用程序的最佳安全性。"
-	services="storage" 
-	documentationCenter=".net" 
-	authors="tamram" 
-	manager="carolz" 
-	editor=""/>
+	services="storage"
+	documentationCenter=".net"
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"/>  
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/09/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/05/2016"/>
 
 
 # Azure 存储空间的客户端加密和 Azure 密钥保管库
@@ -247,4 +247,4 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 - 下载 Azure 密钥保管库 NuGet [核心](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[客户端](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/)和[扩展](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/)包  
 - 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/) 
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0829_2016-->

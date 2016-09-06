@@ -5,12 +5,12 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/05/2016"/>
 
 # 使用 Blob 存储的本地应用程序
 
@@ -197,8 +197,7 @@
 
 结束 **StorageSample** 的方法是插入右大括号：**}**
 
-以下是此示例的完整代码。请记得修改占位符值 **your_account_name** 和
-**your_account_key**，这样才能分别使用你的帐户名和帐户密钥。
+以下是此示例的完整代码。请记住将占位符值 **your\_account\_name** 和 **your\_account\_key** 分别修改为使用你自己的帐户名称和帐户密钥。
 
     import com.microsoft.azure.storage.*;
     import com.microsoft.azure.storage.blob.*;
@@ -361,4 +360,4 @@
 - [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0829_2016-->

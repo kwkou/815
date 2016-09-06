@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure 存储空间资源管理器 | Azure"
-	description="存储空间资源管理器的列表，允许你查看/与 Azure 存储空间数据进行交互。"
+	pageTitle="Azure 存储客户端工具 | Azure"
+	description="可用于查看 Azure 存储空间数据或与之交互的工具列表。"
 	services="storage"
 	documentationCenter=""
 	authors="micurd"
@@ -9,22 +9,20 @@
 
 <tags
 	ms.service="storage"
-	ms.date="03/30/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="07/20/2016"
+	wacn.date="09/05/2016"/>
 
-# Azure 存储资源管理器
+# Azure 存储客户端工具
 
-Azure 存储空间的用户常常希望能够在“资源管理器”（一个在存储帐户中显示数据的工具）中查看他们的数据。
+Azure 存储空间用户经常要使用 Azure 存储客户端工具来查看其数据或者与数据交互。下表列出了可用于实现此目的的多种工具。我们在每个能够枚举和/或访问数据抽象的块中打上“X”。该表还指明了工具是否免费。“试用”表示存在免费试用版，但完整版产品不是免费的。“是/否”表示有一个免费版本，而提供的其他版本需要购买。
 
-在下方的表中，我们列出了每个 Azure 存储空间资源管理器，然后在每个能够枚举和/或访问数据抽象的块中打上“X”。该表还显示该资源管理器是否是免费的。“试用”表示存在免费试用版，但完整版产品不是免费的。“是/否”表示有一个免费版本，而提供的其他版本需要购买。
+我们只提供了可用的 Azure 存储客户端工具的快照。这些工具的功能可能会不断改进和扩展。如果有任何更正或更新，请发表评论告知我们。同样，如果你认为还应在此处列出其他工具，也请发表评论告知我们 - 我们会很乐意添加它们。
 
-我们只提供了可用的 Azure 存储空间资源管理器的快照。这些工具的功能可能会不断改进和扩展。如果有任何更正或更新，请发表评论告知我们。同样，如果你认为还应在此处列出其他工具，也请发表评论告知我们 - 我们会很乐意添加它们。
-
-**Microsoft Azure 存储空间资源管理器**
+**Microsoft Azure 存储客户端工具**
 
 <table>
   <tr>
-    <th rowspan="2">Azure 存储空间资源管理器</th>
+    <th rowspan="2">Azure 存储客户端工具</th>
     <th rowspan="2">块 blob</th>
     <th rowspan="2">页 blob</th>
     <th rowspan="2">追加 Blob</th>
@@ -48,7 +46,7 @@ Azure 存储空间的用户常常希望能够在“资源管理器”（一个�
     <td>X</td>
     <td>X</td>
     <td>X</td>
-    <td></td>
+    <td>X</td>
     <td>Y</td>
     <td></td>
     <td>X</td>
@@ -71,13 +69,13 @@ Azure 存储空间的用户常常希望能够在“资源管理器”（一个�
   </tr>
 </table>
 
-**第三方 Azure 存储空间资源管理器**
+**第三方 Azure 存储客户端工具**
 
-我们尚未验证由以下第三方资源管理器声称的功能或质量，并且其列出的内容并不暗示获得 Microsoft 的认可。
+我们尚未验证由以下第三方工具声称的功能或质量，并且其列出的内容并不暗示获得 Microsoft 的认可。
 
 <table>
   <tr>
-    <th rowspan="2">Azure 存储空间资源管理器</th>
+    <th rowspan="2">Azure 存储客户端工具</th>
     <th rowspan="2">块 blob</th>
     <th rowspan="2">页 blob</th>
     <th rowspan="2">追加 Blob</th>
@@ -235,4 +233,4 @@ Azure 存储空间的用户常常希望能够在“资源管理器”（一个�
   </tr>
 </table>
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0829_2016-->

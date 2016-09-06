@@ -1,17 +1,16 @@
-
-<properties 
-    pageTitle="迁移到 Azure 高级存储 | Azure" 
+<properties
+    pageTitle="迁移到 Azure 高级存储 | Azure"
     description="将现有的虚拟机迁移到 Azure 高级存储。高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。"
-    services="storage" 
-    documentationCenter="na" 
-    authors="tamram" 
-    manager="adinah" 
-    editor=""/>
+    services="storage"
+    documentationCenter="na"
+    authors="aungoo-msft"
+    manager=""
+    editor="tysonn"/>
 
 <tags 
     ms.service="storage" 
-    ms.date="03/28/2016"
-    wacn.date="08/25/2016"/>
+    ms.date="07/25/2016"
+    wacn.date="09/05/2016"/>
 
 
 # 迁移到 Azure 高级存储
@@ -42,12 +41,12 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 ### 先决条件
 - 你将需要 Azure 订阅。如果你没有，则可以创建一个月的[试用](/pricing/1rmb-trial/)订阅或访问 [Azure 定价](/pricing/)以获得更多选项。
 - 若要执行 PowerShell cmdlet，你将需要 Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads/)。
-- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列VM。你可以将标准和高级存储磁盘同时用于 DS 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)和[云服务大小](/documentation/articles/cloud-services-sizes-specs/)。
+- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列VM。你可以将标准和高级存储磁盘同时用于 DS 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)和[云服务大小](/documentation/articles/cloud-services-sizes-specs/)。
 
 ### 注意事项
 
 #### VM 大小
-[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)中列出了 Azure VM 大小规范。查看适用于高级存储的虚拟机的性能特征并选择最适合你的工作负荷的最合适 VM 大小。确保 VM 上有足够的带宽来驱动磁盘通信。
+[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)中列出了 Azure VM 大小规范。查看适用于高级存储的虚拟机的性能特征并选择最适合你的工作负荷的最合适 VM 大小。确保 VM 上有足够的带宽来驱动磁盘通信。
 
 
 #### 磁盘大小
@@ -74,7 +73,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 根据你的工作负荷，确定你的 VM 是否需要附加数据磁盘。你可以将多个持久性数据磁盘附加到你的 VM。如有需要，可以跨磁盘条带化，以增加卷的容量与性能。如果你使用[存储空间](https://technet.microsoft.com/zh-CN/library/hh831739.aspx)来条带化高级存储数据磁盘，应该以使用的每个磁盘一个列的方式来配置它。否则，条带化卷的整体性能可能会低于预期，因为磁盘之间的通信分配不平均。对于 Linux VM，你可以使用 mdadm 实用工具来实现同一目的。有关详细信息，请参阅文章[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)。
 
 #### 磁盘缓存策略
-默认情况下，所有高级数据磁盘的磁盘缓存策略都是“只读的”，所有附加到 VM 的高级操作系统都是“读写的”。为使应用程序的 IO 达到最佳性能，建议使用此配置设置。对于频繁写入或只写的磁盘（例如 SQL Server 日志文件），禁用磁盘缓存可获得更佳的应用程序性能。可以*Set-AzureDataDisk* PowerShell命令 的 *-HostCaching* 参数更新现有数据磁盘的缓存设置。
+默认情况下，所有高级数据磁盘的磁盘缓存策略都是“只读的”，所有附加到 VM 的高级操作系统都是“读写的”。为使应用程序的 IO 达到最佳性能，建议使用此配置设置。对于频繁写入或只写的磁盘（例如 SQL Server 日志文件），禁用磁盘缓存可获得更佳的应用程序性能。可以使用 [Azure 门户预览](https://portal.azure.cn)或 *Set-AzureDataDisk* cmdlet 的 *-HostCaching* 参数更新现有数据磁盘的缓存设置。
 
 #### 位置
 选择 Azure 高级存储可用的位置。与存储 VM 的磁盘的存储帐户位于同一区域中的 VM 与它们在单独的区域中时相比，将提供更优异的性能。
@@ -97,7 +96,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 - Azure 订阅、存储帐户以及你将在其中复制 VHD 的存储帐户中的容器。请注意，目标存储帐户可以是标准或高级存储帐户，具体取决于你的需求。
 - 用于通用化 VHD 的工具（如果你计划从中创建多个 VM 实例）。例如，sysprep for Windows 或 virt-sysprep for Ubuntu。
-- 用于将 VHD 文件上载到存储帐户的工具。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)或者使用 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。本指南介绍使用 AzCopy 工具复制 VHD 的步骤。 
+- 用于将 VHD 文件上载到存储帐户的工具。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)或者使用 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。本指南介绍使用 AzCopy 工具复制 VHD 的步骤。
 
 > [AZURE.NOTE] 为了获得最佳性能，请从与目标存储帐户位于同一区域的 Azure VM 运行上述工具之一。如果从其他区域中的 Azure VM 复制 VHD，性能可能会下降。
 >
@@ -155,7 +154,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 如果你要从标准 Azure 存储帐户到高级 Azure 存储帐户迁移 VHD，必须复制 VHD 容器的源路径、VHD 文件名和源存储帐户的存储帐户密钥。
 
-1. 转到“Azure 经典管理门户”>“虚拟机”>“磁盘”。
+1. 转到“Azure 门户预览”>“虚拟机”>“磁盘”。
 2. 从“位置”列复制并保存 VHD 的容器 URL。容器 URL 类似于 `https://myaccount.blob.core.chinacloudapi.cn/mycontainer/`。
 
 #### 从非 Azure 云复制 VHD
@@ -228,7 +227,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 	Add-AzureVMImage -ImageName "OSImageName" -MediaLocation "https://storageaccount.blob.core.chinacloudapi.cn/vhdcontainer/osimage.vhd" -OS Windows
 
-复制并保存这个新的 Azure VM 映像的名称。在上面的示例中，它是 OSImageName。
+复制并保存这个新的 Azure VM 映像的名称。在上面的示例中，它是 *OSImageName*。
 
 #### 用于创建单个 Azure VM 实例的唯一操作系统 VHD
 
@@ -236,7 +235,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 	Add-AzureDisk -DiskName "OSDisk" -MediaLocation "https://storageaccount.blob.core.chinacloudapi.cn/vhdcontainer/osdisk.vhd" -Label "My OS Disk" -OS "Windows"
 
-复制并保存这个新的 Azure OS 磁盘的名称。在上面的示例中，它是 OSDisk。
+复制并保存这个新的 Azure OS 磁盘的名称。在上面的示例中，它是 *OSDisk*。
 
 #### 要附加到新的 Azure VM 实例的数据磁盘 VHD
 
@@ -246,7 +245,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 	Add-AzureDisk -DiskName "DataDisk" -MediaLocation "https://storageaccount.blob.core.chinacloudapi.cn/vhdcontainer/datadisk.vhd" -Label "My Data Disk"
 
-复制并保存这个新的 Azure 数据磁盘的名称。在上面的示例中，它是 DataDisk。
+复制并保存这个新的 Azure 数据磁盘的名称。在上面的示例中，它是 *DataDisk*。
 
 ### 创建 Azure DS 系列 VM
 
@@ -298,7 +297,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 最后，如果你已注册数据磁盘 VHD，请将它们附加到新的 DS 系列 Azure VM。
 
-使用以下 PowerShell cmdlet 将数据磁盘附加到新的 VM，并指定缓存策略。在以下示例中，缓存策略设为 ReadOnly。
+使用以下 PowerShell cmdlet 将数据磁盘附加到新的 VM，并指定缓存策略。在以下示例中，缓存策略设为 *ReadOnly*。
 
 	$vm = Get-AzureVM -ServiceName $serviceName -Name $vmName
 
@@ -343,7 +342,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 5. 接下来，使用上面的 OS 磁盘和数据磁盘创建 DS 系列 VM。
 
     用于创建新的云服务并在该服务中创建新 VM 的脚本示例：
-        New-AzureService -ServiceName “NewServiceName” -Location “中国东部"
+          New-AzureService -ServiceName “NewServiceName” -Location “China East"
 
         New-AzureVMConfig -Name "NewDSVMName" -InstanceSize "Standard_DS2" -DiskName "NewOSDisk1" | Add-AzureProvisioningConfig -Windows | Add-AzureDataDisk -LUN 0 -DiskLabel "DataDisk1" -ImportFrom -MediaLocation "https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk1.vhd" | Add-AzureDataDisk -LUN 1 -DiskLabel "DataDisk2" -ImportFrom -MediaLocation https://newpremiumstorageaccount.blob.core.chinacloudapi.cn/vhds/Disk2.vhd | New-AzureVM -ServiceName "NewServiceName" –Location “China East”
 
@@ -415,7 +414,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
     # whether or not to copy the os disk, the default is only copy data disks
     [Parameter(Mandatory = $false)]
-    [String] $DataDiskOnly = $true,
+    [Bool] $DataDiskOnly = $true,
 
     # how frequently to report the copy status in sceconds
     [Parameter(Mandatory = $false)]
@@ -680,5 +679,4 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-2.png
 [3]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0829_2016-->
