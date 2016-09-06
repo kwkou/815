@@ -128,8 +128,6 @@
 
 - 使用[审核日志][audit-logs]可查看预配操作和其他 VM 事件。
 
-- 如果需要加密 OS 磁盘和数据磁盘，请考虑使用 [Azure 磁盘加密][disk-encryption]。
-
 ## 解决方案组件
 
 可以使用示例解决方案脚本 [Deploy-ReferenceArchitecture.ps1][solution-script] 来实现遵循本文中所述建议的体系结构。此脚本利用 [Resource Manager][ARM-Templates] 模板。这些模板以一组基本构造块的形式提供，其中每个块执行特定的操作，例如创建 VNet 或配置 NSG。该脚本的目的是协调模板部署。

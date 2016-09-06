@@ -1,15 +1,14 @@
 若要创建缓存，首先请登录到 [Azure 门户预览](https://portal.azure.cn)，然后单击“新建”、“数据 + 存储”、“Redis 缓存”。
 
->[AZURE.NOTE] 如果你没有 Azure 帐户，只需花费几分钟就能[免费建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。
+>[AZURE.NOTE] 如果你没有 Azure 帐户，只需花费几分钟就能[建立一个 Azure 试用帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。
 
 ![新建缓存](./media/redis-cache-create/redis-cache-new-cache-menu.png)  
 
 
 >[AZURE.NOTE] 除了在 Azure 门户预览中创建缓存以外，也可以使用 ARM 模板、PowerShell 或 Azure CLI 来创建。
->
->-	若要使用 ARM 模板创建缓存，请参阅 [Create a Redis cache using a template](/documentation/articles/cache-redis-cache-arm-provision/)（使用模板创建 Redis 缓存）。
->-	若要使用 Azure PowerShell 创建缓存，请参阅 [Manage Azure Redis Cache with Azure PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell/)（使用 Azure PowerShell 管理 Azure Redis 缓存）。
->-	若要使用 Azure CLI 创建缓存，请参阅 [How to create and manage Azure Redis Cache using the Azure Command-Line Interface (Azure CLI)](/documentation/articles/cache-manage-cli/)（如何使用 Azure 命令行接口 (Azure CLI) 创建和管理 Azure Redis 缓存）。
+><p>-	若要使用 ARM 模板创建缓存，请参阅 [Create a Redis cache using a template](/documentation/articles/cache-redis-cache-arm-provision/)（使用模板创建 Redis 缓存）。
+><p>-	若要使用 Azure PowerShell 创建缓存，请参阅 [Manage Azure Redis Cache with Azure PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell/)（使用 Azure PowerShell 管理 Azure Redis 缓存）。
+><p>-	若要使用 Azure CLI 创建缓存，请参阅 [How to create and manage Azure Redis Cache using the Azure Command-Line Interface (Azure CLI)](/documentation/articles/cache-manage-cli/)（如何使用 Azure 命令行接口 (Azure CLI) 创建和管理 Azure Redis 缓存）。
 
 在“新建 Redis 缓存”边栏选项卡中，指定所需的缓存配置。
 
