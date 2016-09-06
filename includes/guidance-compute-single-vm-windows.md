@@ -363,7 +363,7 @@
 [virtual-machine-sizes]: /documentation/articles/virtual-machines-windows-sizes/
 [vm-disk-limits]: /documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits
 [vm-resize]: /documentation/articles/virtual-machines-linux-change-vm-size/
-[vm-sla]: /support/legal/sla/virtual-machines/
+[vm-sla]: /support/sla/virtual-machines/
 [ARM-Templates]: /documentation/articles/resource-group-authoring-templates/
 [solution-script]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/Deploy-ReferenceArchitecture.ps1
 [vnet-parameters]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/parameters/windows/virtualNetwork.parameters.json
