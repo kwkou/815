@@ -12,22 +12,25 @@
 
 	- 对于“订阅”，请选择要用于 DocumentDB 帐户的 Azure 订阅。如果帐户只有一个订阅，则默认情况下会选择该帐户。
 
-	- 在“资源组”中，为 DocumentDB 帐户选择或创建资源组。默认情况下，会选择 Azure 订阅下的现有资源组。但是，可以选择创建要将 DocumentDB 帐户添加到其中的新资源组。有关详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
+	- 在“资源组”中，为 DocumentDB 帐户选择或创建资源组。默认创建新的资源组。有关详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
 
 	- 使用“位置”指定在其中托管 DocumentDB 帐户的地理位置。
+	
+    - 若要方便访问帐户和以后将创建的资源，请选中“固定到仪表板”。
 
-4.	在配置了新 DocumentDB 帐户后，单击“创建”。可能需要几分钟来创建 DocumentDB 帐户。要检查状态，可以在启动板上监视进度。  
-	![启动板上的“创建”磁贴的屏幕截图 — 在线数据库创建者](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-3.png)
+4.	配置了新的 DocumentDB 帐户后，单击“创建”。要检查部署的状态，可在“启动板”监视进度。![启动板上的“创建”磁贴的屏幕截图 — 在线数据库创建者](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-3.png)
 
 	或者，可以从通知中心监视进度。
 
-	![快速创建数据库 — 通知中心的屏幕截图，其中显示正在创建 DocumentDB 帐户](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-4.png)
+	![快速创建数据库 — 通知中心的屏幕截图，其中显示正在创建 DocumentDB 帐户](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-4.png)  
+
 
 	![通知中心的屏幕截图，其中显示 DocumentDB 帐户已成功创建并且部署到资源组 — 在线数据库创建者通知](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-5.png)
 
-5.	创建 DocumentDB 帐户之后，它便已准备就绪，可与在线门户预览中的默认设置结合使用。请注意，DocumentDB 帐户的默认一致性设置为“会话”。可以通过在顶部命令栏上单击“设置”图标，然后在“所有设置”边栏选项卡上的“功能”下单击“默认一致性”条目，来调整默认一致性设置。
+5.	创建 DocumentDB 帐户之后，它便已准备就绪，可与在线门户中的默认设置结合使用。请注意，DocumentDB 帐户的默认一致性设置为“会话”。可单击菜单中的“默认一致性”调整默认一致性设置。若要了解有关 DocumentDB 提供的一致性级别的详细信息，请参阅 [DocumentDB 中的一致性级别](/documentation/articles/resource-group-portal/)
 
-    ![“资源组”边栏选项卡的屏幕截图 — 开始应用程序开发](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-6.png)
+    ![“资源组”边栏选项卡的屏幕截图 — 开始应用程序开发](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-6.png)  
+
 
     ![“一致性级别”边栏选项卡的屏幕截图 — 会话一致性](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-7.png)
 
@@ -35,4 +38,4 @@
 [Next steps]: #NextSteps
 [documentdb-manage]: /documentation/articles/documentdb/documentdb-manage
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0829_2016-->
