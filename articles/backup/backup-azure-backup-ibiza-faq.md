@@ -19,7 +19,7 @@
 - [经典模式备份常见问题](/documentation/articles/backup-azure-backup-faq/)
 - [ARM 模式备份常见问题](/documentation/articles/backup-azure-backup-ibiza-faq/)
 
-本文提供特定于 Azure 备份服务公共预览版的信息。本文在有新的常见问题时会更新，并补充 [Azure 备份常见问题](backup-azure-backup-faq)。Azure 备份常见问题提供整套有关 Azure 备份服务的问答。
+本文提供特定于 Azure 备份服务公共预览版的信息。本文在有新的常见问题时会更新，并补充 [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq/)。Azure 备份常见问题提供整套有关 Azure 备份服务的问答。
 
 你可以在本文或相关章的 Disqus 部分中提出有关 Azure 备份的问题。你也可以在[论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazureonlinebackup)中发布有关 Azure 备份服务的问题。
 
