@@ -12,7 +12,7 @@
 <tags
  ms.service="iot-suite"
  ms.date="06/20/2016"
- wacn.date="08/22/2016"/>  
+ wacn.date="09/05/2016"/>  
 
 
 # 远程监视预配置解决方案中的设备信息元数据
@@ -24,7 +24,7 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 
 ## 上下文
 
-远程监视预配置解决方案使用 [Azure IoT 中心][lnk-iot-hub]，使设备能够将数据发送到云。IoT 中心包含一个[设备标识注册表][lnk-identity-registry]用于控制对 IoT 中心的访问。IoT 中心设备标识注册表与用于存储设备信息元数据的远程监视方案特定设备注册表不同。远程监视解决方案使用 [DocumentDB][lnk-docdb] 数据库来实现其用于存储设备信息元数据的设备注册表。[Microsoft Azure IoT 参考体系结构][lnk-ref-arch]描述了典型 IoT 解决方案中设备注册表的角色。
+远程监视预配置解决方案使用 [Azure IoT 中心][lnk-iot-hub]，使设备能够将数据发送到云。IoT 中心包含一个[设备标识注册表][lnk-identity-registry]用于控制对 IoT 中心的访问。IoT 中心设备标识注册表与用于存储设备信息元数据的远程监视方案特定 *设备注册表* 不同。远程监视解决方案使用 [DocumentDB][lnk-docdb] 数据库来实现其用于存储设备信息元数据的设备注册表。[Microsoft Azure IoT 参考体系结构][lnk-ref-arch]描述了典型 IoT 解决方案中设备注册表的角色。
 
 > [AZURE.NOTE] 远程监视预配置解决方案可使设备标识注册表与设备注册表保持同步。这两个注册表使用相同的设备 ID 来唯一标识连接到 IoT 中心的每个设备。
 
@@ -261,12 +261,12 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 
 ## 后续步骤
 
-可以在 [Connect your device to the remote monitoring preconfigured solution][lnk-connect-custom]（将设备连接到远程监视预配置解决方案）中详细了解如何从自定义设备发送设备信息消息。
+现在你已学习如何自定义预配置解决方案，接下来你可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
 
-可以在 [Customize a preconfigured solution][lnk-customize]（自定义预配置解决方案）详细了解如何自定义预配置解决方案。
+- [有关 IoT 套件的常见问题][lnk-faq]
+- [从头开始保障 IoT 安全][lnk-security-groundup]
 
 <!-- Images and links -->
-
 [img-device-list]: ./media/iot-suite-remote-monitoring-device-info/image1.png
 [img-device-edit]: ./media/iot-suite-remote-monitoring-device-info/image2.png
 [img-device-remove]: ./media/iot-suite-remote-monitoring-device-info/image3.png
@@ -275,10 +275,11 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 [lnk-identity-registry]: /documentation/articles/iot-hub-devguide/#device-identity-registry
 [lnk-docdb]: /documentation/services/documentdb/
 [lnk-ref-arch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
-[lnk-connect-custom]: /documentation/articles/iot-suite-connecting-devices/
-[lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
 [lnk-dm-preview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-dynamic-telemetry]: /documentation/articles/iot-suite-dynamic-telemetry/
+[lnk-predictive-overview]: /documentation/articles/iot-suite-predictive-overview/
+[lnk-faq]: /documentation/articles/iot-suite-faq/
+[lnk-security-groundup]: /documentation/articles/securing-iot-ground-up/
 
 <!---HONumber=Mooncake_0815_2016-->

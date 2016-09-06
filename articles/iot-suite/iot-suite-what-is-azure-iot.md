@@ -11,15 +11,15 @@
 
 <tags
  ms.service="iot-suite"
- ms.date="05/25/2016"
- wacn.date="08/22/2016"/>  
+ ms.date="08/09/2016"
+ wacn.date="09/05/2016"/>  
 
 
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## Azure IoT 套件
 
-Azure IoT 套件是企业级解决方案，通过一组用于处理常见的 IoT 场景（例如[远程监控][lnk-preconfigured-solutions]）的可扩展的预配置的解决方案让你能够快速入门。这些解决方案是前面所述的 IoT 解决方案体系结构的实现。
+Azure IoT 套件是企业级解决方案，通过一组用于处理常见的 IoT 场景（例如[远程监控][lnk-preconfigured-solutions]）的可扩展的预配置的解决方案让你能够快速入门。这些解决方案是本文所述的 IoT 解决方案体系结构的实现。
 
 预配置的解决方案是完整、有效的端到端解决方案，包括帮助你入门的模拟设备、预配置的 Azure 服务（例如 [Azure IoT 中心][]、[Azure 事件中心][]、[Azure 流分析][]、和 [Azure 存储空间][]）和特定于解决方案的管理控制台。预配置的解决方案包含经过验证的可用于生产的代码，你可以自定义和扩展该代码以实现你自己的特定 IoT 场景。
 
@@ -27,15 +27,14 @@ Azure IoT 套件是企业级解决方案，通过一组用于处理常见的 IoT
 
 ## 后续步骤
 
-有关 Azure 的 IoT 的更多信息，请查看以下资源：
+浏览以下资源以继续了解 IoT 套件和预配置解决方案：
 
-- [Azure IoT 套件概述][lnk-suite-overview]。
-- [IoT 预配置解决方案入门][lnk-preconfigured-solutions]
-- [将设备与 IoT 套件远程监控解决方案相连接][lnk-connecting]。
-- [Azure IoT 中心]
+- [Azure IoT 套件是什么？][lnk-whatissuite]
+- [Azure IoT 套件预配置解决方案是什么？][lnk-whatarepreconfigured]
 
-[lnk-suite-overview]: /documentation/articles/iot-suite-overview/
-[lnk-connecting]: /documentation/articles/iot-suite-connecting-devices/
+[lnk-whatissuite]: /documentation/articles/iot-suite-overview/
+[lnk-whatarepreconfigured]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/
+
 [lnk-preconfigured-solutions]: /documentation/articles/iot-suite-getstarted-preconfigured-solutions/
 [Azure IoT 中心]: /home/features/iot-hub/
 [Azure 事件中心]: /home/features/event-hubs/

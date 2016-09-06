@@ -10,8 +10,8 @@
 
 <tags
  ms.service="iot-suite"
- ms.date="03/02/2016"
- wacn.date="08/22/2016"/>
+ ms.date="07/18/2016"
+ wacn.date="09/05/2016"/>
 
 # 远程监视预配置解决方案演练
 
@@ -31,7 +31,7 @@ IoT 套件远程监视[预配置解决方案][lnk-preconfigured-solutions]是适
 
 ## 模拟设备
 
-在该预配置解决方案中，模拟设备表示冷却设备（例如建筑物空调或设施空气处理单位）。当你部署预配置解决方案时，也会自动预配四个在 [Azure Web 作业][lnk-webjobs]中运行的模拟设备。模拟设备可让你轻松观测解决方案的行为，而不需要部署任何物理设备。若要部署实际的物理设备，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connectyourdevice]（将设备连接到远程监视预配置解决方案）教程。
+在该预配置解决方案中，模拟设备表示冷却设备（例如建筑物空调或设施空气处理单位）。当你部署预配置解决方案时，也会自动预配四个在 [Azure Web 作业][lnk-webjobs]中运行的模拟设备。模拟设备可让你轻松观测解决方案的行为，而不需要部署任何物理设备。若要部署实际的物理设备，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connect-rm]（将设备连接到远程监视预配置解决方案）教程。
 
 每个模拟设备可将以下消息类型发送到 IoT 中心：
 
@@ -212,12 +212,17 @@ Web 应用程序中的此页面使用 PowerBI javascript 控件（请参阅 [Pow
 - [IoT Suite - Under The Hood - Remote Monitoring（IoT 套件 - 幕后 - 远程监视）](http://social.technet.microsoft.com/wiki/contents/articles/32941.iot-suite-under-the-hood-remote-monitoring.aspx)
 - [IoT Suite - Remote Monitoring - Adding Live and Simulated Devices（IoT 套件 - 远程监视 - 添加实时与模拟设备）](http://social.technet.microsoft.com/wiki/contents/articles/32975.iot-suite-remote-monitoring-adding-live-and-simulated-devices.aspx)
 
+你可以通过阅读以下文章继续开始使用 IoT 套件：
+
+- [将设备连接到远程监视预配置解决方案][lnk-connect-rm]
+- [azureiotsuite.cn 站点权限][lnk-permissions]
 
 [lnk-preconfigured-solutions]: /documentation/articles/iot-suite-what-are-preconfigured-solutions/
 [lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[lnk-connectyourdevice]: /documentation/articles/iot-suite-connecting-devices/
 [lnk-iothub]: /documentation/services/iot-hub/
 [lnk-asa]: /documentation/services/stream-analytics/
 [lnk-webjobs]: /documentation/articles/websites-webjobs-resources/
+[lnk-connect-rm]: /documentation/articles/iot-suite-connecting-devices/
+[lnk-permissions]: /documentation/articles/iot-suite-permissions/
 
 <!---HONumber=Mooncake_0815_2016-->

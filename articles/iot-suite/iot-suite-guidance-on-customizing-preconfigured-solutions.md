@@ -6,13 +6,13 @@
 	documentationCenter=".net"
 	authors="stevehob"
 	manager="timlt"
-	editor=""/>  
+	editor=""/>
 
 
 <tags
      ms.service="iot-suite"
      ms.date="06/27/2016"
-     wacn.date="08/22/2016"/>  
+     wacn.date="09/05/2016"/>  
 
 
 # 自定义预配置解决方案
@@ -150,10 +150,16 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 ## 后续步骤
 
-有关 IoT 设备的详细信息，请参阅 [Azure IoT 开发人员站点](/develop/iot)以查找链接和文档。
+若要详细了解自定义预配置解决方案的选项，请参阅：
+
+- [配合使用动态遥测和远程监视预配置解决方案][lnk-dynamic]
+- [远程监视预配置解决方案中的设备信息元数据][lnk-devinfo]
+
+[lnk-dynamic]: /documentation/articles/iot-suite-dynamic-telemetry/
+[lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/
 
 [IoT 设备 SDK]: /documentation/articles/iot-hub-sdks-summary/
-[lnk-permissions]: /documentation/articles/iot-suite-permissions/
+[lnk-permissions]: /documentation/articles/iot-suite/iot-suite-permissions/
 [lnk-dashboard-controller]: https://github.com/Azure/azure-iot-remote-monitoring/blob/3fd43b8a9f7e0f2774d73f3569439063705cebe4/DeviceAdministration/Web/Controllers/DashboardController.cs#L27
 [lnk-telemetry-api-controller-01]: https://github.com/Azure/azure-iot-remote-monitoring/blob/3fd43b8a9f7e0f2774d73f3569439063705cebe4/DeviceAdministration/Web/WebApiControllers/TelemetryApiController.cs#L27
 [lnk-telemetry-api-controller-02]: https://github.com/Azure/azure-iot-remote-monitoring/blob/e7003339f73e21d3930f71ceba1e74fb5c0d9ea0/DeviceAdministration/Web/WebApiControllers/TelemetryApiController.cs#L25
