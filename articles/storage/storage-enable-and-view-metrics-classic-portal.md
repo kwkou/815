@@ -3,14 +3,14 @@
 	description="如何为 Blob、队列、表和文件服务启用存储度量值" 
 	services="storage" 
 	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+	authors="robinsh" 
+	manager="carmonm" 
+	editor="tysonn"/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/09/2016" 
-	wacn.date="06/06/2016"/>
+	ms.date="08/03/2016" 
+	wacn.date="09/05/2016"/>
 
 # 启用存储度量值并查看度量值数据
 
@@ -43,7 +43,7 @@
 
 - MetricsType，可能值是 Hour 和 Minute。
 
-- ServiceType，可能值是 Blob、Queue 和 Table。
+- ServiceType 的可能值为 Blob、Queue 和 Table。
 
 - MetricsLevel，可能值是 None（相当于 Azure 经典管理门户中的“关”）、Service（相当于 Azure 经典管理门户中的“最小”）和 ServiceAndApi（相当于 Azure 经典管理门户中的“详细”）。
 
@@ -55,14 +55,15 @@
 
 `Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob`
 
-有关如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户的信息，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+若要了解如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 如何以编程方式启用存储度量值
 
 下面的 C# 代码段演示了如何使用 .NET 的存储客户端库为 Blob 服务启用度量值和日志记录：
 
-	// Parse connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+    //Parse the connection string for the storage account.
+    const string ConnectionString = "DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key;EndpointSuffix=core.chinacloudapi.cn";
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConnectionString);
 
     // Create service client for credentialed access to the Blob service.
     CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
@@ -206,4 +207,5 @@
 ## 后续步骤：
 [启用存储分析日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
  
-<!---HONumber=Mooncake_0530_2016-->
+
+<!---HONumber=Mooncake_0829_2016-->

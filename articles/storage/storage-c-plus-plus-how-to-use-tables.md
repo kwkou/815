@@ -1,16 +1,16 @@
 <properties 
     pageTitle="如何使用表存储 (C++) | Azure" 
-	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
-    services="storage" 
-    documentationCenter=".net" 
-    authors="tamram" 
-    manager="adinah" 
-    editor=""/>
+    description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
+    services="storage"
+    documentationCenter=".net"
+    authors="tamram"
+    manager="carmonm"
+    editor="tysonn"/>
 
 <tags 
     ms.service="storage" 
-	ms.date="04/29/2016"
-    wacn.date="06/06/2016"/>
+    ms.date="07/26/2016"
+    wacn.date="09/05/2016"/>
 
 # 如何通过 C++ 使用表存储
 
@@ -26,12 +26,12 @@
 
 
 ## 创建 C++ 应用程序  
-在本指南中，你将使用存储功能，这些功能可以在 C++ 应用程序中运行。为此，你将需要安装适用于 C++ 的 Azure 存储客户端库，并在你的 Azure 订阅中创建 Azure 存储帐户。  
+在本指南中，你将使用存储功能，这些功能可以在 C++ 应用程序中运行。为此，你将需要安装适用于 C++ 的 Azure 存储客户端库，并在你的 Azure 订阅中创建 Azure 存储帐户。
 
 若要安装适用于 C++ 的 Azure 存储客户端库，你可以使用以下方法：
 
--	**Linux：**按照[适用于 C++ 的 Azure 存储空间客户端库自述文件](https://github.com/Azure/azure-storage-cpp/blob/master/README.md)页中提供的说明进行操作。  
--	**Windows：**在 Visual Studio 主菜单中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器控制台”。在 [NuGet 包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)窗口中键入以下命令，然后按 Enter。  
+-	**Linux：**按照[适用于 C++ 的 Azure 存储空间客户端库自述文件](https://github.com/Azure/azure-storage-cpp/blob/master/README.md)页中提供的说明进行操作。
+-	**Windows：**在 Visual Studio 主菜单中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器控制台”。在 [NuGet 程序包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)窗口中输入以下命令，然后按 Enter。
 
 		Install-Package wastorage
 
@@ -42,7 +42,7 @@
 	#include "was/table.h"
 
 ## 设置 Azure 存储连接字符串  
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。运行客户端应用程序时，必须提供以下格式的存储连接字符串。使用[经典管理门户](https://manage.windowsazure.cn)中列出的存储帐户的存储帐户名称和存储访问密钥作为 *AccountName* 和 *AccountKey* 值。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。此示例演示如何声明一个静态字段以保存连接字符串：
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。运行客户端应用程序时，必须提供以下格式的存储连接字符串。使用 [Azure 门户预览](https://portal.azure.cn)中列出的存储帐户的存储帐户名称和存储访问密钥作为 *AccountName* 和 *AccountKey* 值。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。此示例演示如何声明一个静态字段以保存连接字符串：
 
 	// Define the connection string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key;EndpointSuffix=core.chinacloudapi.cn"));
@@ -163,10 +163,10 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 批处理操作的注意事项如下：
 
--	您在单次批处理操作中最多可以执行 100 个插入、删除、合并、替换、插入或合并以及插入或替换操作（可以是这些操作的任意组合）。  
--	批处理操作也可以包含检索操作，但前提是检索操作是批处理中仅有的操作。  
--	单次批处理操作中的所有实体都必须具有相同的分区键。  
--	批处理操作的数据负载限制为 4MB。  
+-	你在单次批处理操作中最多可以执行 100 个插入、删除、合并、替换、插入或合并以及插入或替换操作（可以是这些操作的任意组合）。
+-	批处理操作也可以包含检索操作，但前提是检索操作是批处理中仅有的操作。
+-	单次批处理操作中的所有实体都必须具有相同的分区键。
+-	批处理操作的数据负载限制为 4MB。
 
 ## 检索分区中的所有实体
 若要查询表以获取分区中的所有实体，请使用 **table_query** 对象。以下代码示例指定了一个筛选器，以筛选分区键为  'Smith' 的实体。此示例会将查询结果中每个实体的字段输出到控制台。  
@@ -411,4 +411,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 -	[Azure 存储文档](/documentation/services/storage)
  
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0829_2016-->

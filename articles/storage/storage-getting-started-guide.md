@@ -4,19 +4,19 @@
 	services="storage" 
 	documentationCenter=".net" 
 	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+	manager="carmonm" 
+	editor="tysonn"/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/23/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/05/2016"/>
 
 # 五分钟内开始使用 Azure 存储空间 
 
 ## 概述
 
-通过 Azure 存储空间进行开发很容易入门。本教程向你说明如何构建一个 Azure 存储空间应用程序并快速运行。你将使用 Azure SDK for .NET 随附的快速启动模板。这些快速启动模板包含可以立刻运行的代码，用于演示部分通过 Azure 存储空间进行的基本编程方案。
+通过 Azure 存储空间进行开发很容易入门。本教程向你说明如何构建一个 Azure 存储空间应用程序并快速运行。你将使用用于 .NET 的 Azure SDK 随附的快速启动模板。这些快速启动模板包含可以立刻运行的代码，用于演示部分通过 Azure 存储空间进行的基本编程方案。
 
 在深入分析代码之前，若要详细了解 Azure 存储空间，请参阅[后续步骤](#next-steps)。
 
@@ -26,7 +26,7 @@
 
 1. 若要编译和生成应用程序，你需要在你的计算机上安装 [Visual Studio](https://www.visualstudio.com/)。
 
-2. 安装最新版的 [Azure SDK for .NET](/downloads/)。SDK 包括 Azure 快速入门示例项目、Azure 存储模拟器和[用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
+2. 安装最新版的[用于 .NET 的 Azure SDK](/downloads/)。SDK 包括 Azure 快速入门示例项目、Azure 存储模拟器和[用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
 3. 确保在你的计算机上安装了 [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653)，因为我们将在本教程中使用的 Azure 快速入门示例项目需要它。
 
@@ -101,6 +101,7 @@
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 
 * [Azure 存储空间简介](/documentation/articles/storage-introduction/)
+* [Azure 存储资源管理器入门](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)
 * [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 * [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
 * [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)
@@ -113,4 +114,4 @@
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0829_2016-->

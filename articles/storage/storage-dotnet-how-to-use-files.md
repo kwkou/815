@@ -1,15 +1,15 @@
 <properties
-			pageTitle="在 Windows 上开始使用 Azure 文件存储 | Azure"
-    		description="使用 Azure 文件存储在云中存储文件数据和从 Azure 虚拟机 (VM) 或从运行 Windows 的本地应用程序装载你的云文件共享。"
-            services="storage"
-            documentationCenter=".net"
-            authors="tamram"
-            manager="adinah"
-            editor="" />
+	pageTitle="在 Windows 上开始使用 Azure 文件存储 | Azure"
+	description="使用 Azure 文件存储在云中存储文件数据和从 Azure 虚拟机 (VM) 或从运行 Windows 的本地应用程序装载你的云文件共享。"
+	services="storage"
+	documentationCenter=".net"
+	authors="mine-msft"
+	manager="aungoo"
+	editor="tysonn" />
 
 <tags ms.service="storage"
-	ms.date="06/09/2016"
-      wacn.date="07/18/2016" />
+	ms.date="07/26/2016"
+      wacn.date="09/05/2016" />
 
 # 在 Windows 上开始使用 Azure 文件存储
 
@@ -63,7 +63,8 @@ Azure 文件存储是一种使用标准[服务器消息块 (SMB) 协议](https:/
 
 2. 在导航菜单中，单击“存储帐户”或“存储帐户(经典)”。
 
-	![演示如何在门户中创建文件共享的屏幕快照](./media/storage-dotnet-how-to-use-files/files-create-share-0.png)
+	![演示如何在门户中创建文件共享的屏幕快照](./media/storage-dotnet-how-to-use-files/files-create-share-0.png)  
+
 
 3. 选择存储帐户。
 
@@ -79,7 +80,8 @@ Azure 文件存储是一种使用标准[服务器消息块 (SMB) 协议](https:/
 
 6. 填写文件共享名称以及文件共享的大小（最高 5120 GB），以便创建你的第一个文件共享。创建文件共享之后，即可从任何支持 SMB 2.1 或 SMB 3.0 的文件系统装载它。
 
-	![演示如何在门户中创建文件共享的屏幕快照](./media/storage-dotnet-how-to-use-files/files-create-share-4.png)
+	![演示如何在门户中创建文件共享的屏幕快照](./media/storage-dotnet-how-to-use-files/files-create-share-4.png)  
+
 
 ### 上载和下载文件
 
@@ -99,13 +101,15 @@ Azure 文件存储是一种使用标准[服务器消息块 (SMB) 协议](https:/
 
 1. 单击“配额”更改文件共享大小（高达 5120 GB）。
 
-	![演示如何配置文件共享配额的屏幕快照](./media/storage-dotnet-how-to-use-files/files-manage-1.png)
+	![演示如何配置文件共享配额的屏幕快照](./media/storage-dotnet-how-to-use-files/files-manage-1.png)  
+
 
 2. 单击“连接”获取从 Windows 装载文件共享的命令行。
 
-	![演示如何装载文件共享的屏幕快照](./media/storage-dotnet-how-to-use-files/files-manage-2.png)
+	![演示如何装载文件共享的屏幕快照](./media/storage-dotnet-how-to-use-files/files-manage-2.png)  
 
-	
+
+	![演示如何装载文件共享的屏幕快照](./media/storage-dotnet-how-to-use-files/files-manage-3.png)
 
 	>[AZURE.TIP] 若要查找用于装载的存储帐户访问密钥，请先单击存储帐户的“设置”，然后单击“访问密钥”。
 
@@ -191,12 +195,12 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 
 | Windows 客户端 | 支持的 SMB 版本 |
 |------------------------|-----------------------|
-| Windows 7 | SMB 2.1 |
-| Windows Server 2008 R2 | SMB 2.1 |
-| Windows 8 | SMB 3.0 |
-| Windows Server 2012 | SMB 3.0 |
-| Windows Server 2012 R2 | SMB 3.0 |
-| Windows 10 | SMB 3.0 |
+| Windows 7              | SMB 2.1               |
+| Windows Server 2008 R2 | SMB 2.1               |
+| Windows 8              | SMB 3.0               |
+| Windows Server 2012    | SMB 3.0               |
+| Windows Server 2012 R2 | SMB 3.0               |
+| Windows 10             | SMB 3.0               |
 
 ### 从运行 Windows 的 Azure 虚拟机装载文件共享
 
@@ -262,7 +266,7 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 
 若要安装 Azure Configuration Manager 包，请在“解决方案资源管理器”中右键单击项目，然后选择“管理 NuGet 包”。在线搜索“ConfigurationManager”，然后单击“安装”以安装包。
 
-不一定要使用 Azure Configuration Manager。还可以使用 API，如 .NET Framework 的 [ConfigurationManager 类](https://msdn.microsoft.com/zh-cn/library/system.configuration.configurationmanager.aspx)。
+不一定要使用 Azure Configuration Manager。还可以使用 API，例如 .NET Framework 的 [ConfigurationManager 类](https://msdn.microsoft.com/zh-cn/library/system.configuration.configurationmanager.aspx)。
 
 ### 将存储帐户凭据保存到 app.config 文件
 
@@ -418,7 +422,7 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 
 从 Azure 存储空间客户端库的 5.x 版开始，可以将一个文件复制到另一个文件，将一个文件复制到一个 Blob，或将一个 Blob 复制到一个文件。在后续部分中，我们将演示如何以编程方式执行这些复制操作。
 
-还可以使用 AzCopy 将一个文件复制到另一个文件或将一个 Blob 复制到一个文件，反之亦然。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
+还可以使用 AzCopy 将一个文件复制到另一个文件或将一个 Blob 复制到一个文件，反之亦然。请参阅[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)。
 
 > [AZURE.NOTE] 如果将一个 Blob 复制到一个文件，或将一个文件复制到一个 Blob，必须使用共享访问签名 (SAS) 对源对象进行身份验证，即使你在同一存储帐户内进行复制。
 
@@ -657,4 +661,4 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 - [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0829_2016-->

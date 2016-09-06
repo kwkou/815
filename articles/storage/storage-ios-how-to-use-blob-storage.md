@@ -1,6 +1,6 @@
 <properties
     pageTitle="如何通过 iOS 使用 Azure Blob 存储 | Azure"
-    description="了解如何使用 Azure Blob 存储上载、下载、列出和删除 Blob 内容。示例是用 Objective-C 编写的。"
+    description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationCenter="ios"
     authors="micurd"
@@ -8,8 +8,9 @@
 
 <tags
     ms.service="storage"
-    ms.date="04/11/2016"
-    wacn.date="05/23/2016"/>
+    ms.date="07/27/2016"
+    wacn.date="09/05/2016"/>
+
 
 # 如何通过 iOS 使用 Blob 存储
 
@@ -17,26 +18,44 @@
 
 ## 概述
 
-本文将演示如何使用 Azure Blob 存储执行常见任务。示例是用 Objective-C 编写的，并使用了 [Azure Storage Client Library for iOS（适用于 iOS 的 Azure 存储客户端库）](https://github.com/Azure/azure-storage-ios)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#next-steps)部分。你也可以下载[示例应用](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample)以快速了解如何在 iOS 应用程序中使用 Azure 存储空间。
+本文将演示如何使用 Azure Blob 存储执行常见任务。示例是用 Objective-C 编写的，并使用了[用于 iOS 的 Azure 存储客户端库](https://github.com/Azure/azure-storage-ios)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#next-steps)部分。你也可以下载[示例应用](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample)以快速了解如何在 iOS 应用程序中使用 Azure 存储空间。
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
-## 生成框架文件
+## 将 Azure 存储空间 iOS 库导入到应用程序中
+
+可以通过使用 [Azure 存储空间 CocoaPod](https://cocoapods.org/pods/AZSClient) 或导入 **Framework** 文件，将 Azure 存储空间 iOS 库导入到应用程序。
+
+## CocoaPod
+
+1. 如果尚未这样做，请打开终端窗口并运行以下命令，在计算机上[安装 CocoaPods](https://guides.cocoapods.org/using/getting-started.html#toc_3)
+
+        sudo gem install cocoapods
+
+2. 接下来，在项目目录（包含 `.xcodeproj` 文件的目录）中创建名为 `Podfile` 的文件（无扩展名）。将以下内容添加到 `Podfile` 并保存
+
+        pod 'AZSClient'
+
+3. 在终端窗口中，导航到项目目录并运行以下命令
+
+        pod install
+
+4. 如果 .`.xcodeproj` 已在 Xcode 中打开，请将它关闭。在项目目录中打开新建的项目文件（扩展名为 `.xcworkspace`）。这是从现在开始要使用的文件。
+
+## 框架
 若要使用 Azure 存储空间 iOS 库，首先需要生成框架文件。
 
 1. 首先，下载或克隆 [azure-storage-ios repo](https://github.com/azure/azure-storage-ios)。
 
-2. 转到 azure-storage-ios -> Lib -> Azure Storage Client Library，并在 Xcode 中打开 `Azure Storage Client Library.xcodeproj`。
+2. 转到 *azure-storage-ios* -> *Lib* -> *Azure Storage Client Library*，并在 Xcode 中打开 `AZSClient.xcodeproj`。
 
 3. 在 Xcode 的左上方，将活动方案从“Azure Storage Client Library”更改为“Framework”。
 
-4. 生成项目 (⌘+B)。这将在桌面上创建 `Azure Storage Client Library.framework` 文件。
+4. 生成项目 (⌘+B)。这将在桌面上创建 `AZSClient.framework` 文件。
 
-## 将 Azure 存储空间 iOS 库导入到应用程序中
-
-可以通过执行以下操作将 Azure 存储空间 iOS 库导入到应用程序中：
+可以通过执行以操作将框架文件导入到应用程序：
 
 1. 在 Xcode 中创建一个新项目或打开现有项目。
 
@@ -44,17 +63,21 @@
 
 3. 在“链接的框架和库”部分下，单击“添加”按钮 (+)。
 
-4. 单击“添加其他...”。导航到刚创建的 `Azure Storage Client Library.framework` 文件并添加它。
+4. 单击“添加其他...”。导航到刚创建的 `AZSClient.framework` 文件并添加它。
 
 5. 在“链接的框架和库”部分下，再次单击“添加”按钮 (+)。
 
 6. 在已提供的库的列表中，搜索 `libxml2.2.dylib` 并将其添加到你的项目。
 
-##Import 语句
+7. 单击位于项目编辑器顶部的“生成设置”选项卡。
+
+8. 在“搜索路径”部分中，双击“框架搜索路径”，并将该路径添加到 `AZSClient.framework` 文件。
+
+## Import 语句
 你需要在要调用 Azure 存储空间 API 的文件中添加以下 import 语句。
 
     // Include the following import statement to use blob APIs.
-    #import <Azure Storage Client Library/Azure_Storage_Client_Library.h>
+    #import <AZSClient/AZSClient.h>
 
 ## 配置你的应用程序以访问 Blob 存储
 
@@ -63,79 +86,76 @@
 - 共享密钥：使用共享密钥仅用于测试目的
 - 共享访问签名 (SAS)：对于生产应用程序使用 SAS
 
-###共享密钥
+### 共享密钥
 共享密钥身份验证意味着你的应用程序将使用帐户名和帐户密钥访问存储服务。为了快速说明如何通过 iOS 使用 Blob 存储，我们将在此入门指南中使用共享密钥身份验证。
 
 > [AZURE.WARNING (仅将“共享密钥”身份验证用于测试目的！) ] 为关联的存储帐户提供完全读/写访问权限的帐户名和帐户密钥将分发给下载你的应用的每个人。这**不**是好的做法，因为你会冒着不受信任的客户端泄露你的密钥的风险。
 
 使用共享密钥身份验证时，你将创建一个连接字符串。连接字符串由以下部分组成：
 
-- **DefaultEndpointsProtocol** - 你可以选择 HTTP 或 HTTPS。但是，强烈建议使用 HTTPS。
+- **DefaultEndpointsProtocol** - 可以选择 HTTP 或 HTTPS。但是，强烈建议使用 HTTPS。
 - **帐户名** - 存储帐户的名称
-- **帐户密钥** - 如果你使用 [Azure 经典管理门户](https://manage.windowsazure.cn)，请在该门户中导航到你的存储帐户，然后单击“管理访问密钥”。 
+- **帐户密钥** - 如果你在使用 [Azure 门户预览](https://portal.azure.cn)，请导航到你的存储帐户，然后单击“密钥”图标以查看此信息。如果使用 [Azure 经典管理门户](https://manage.windowsazure.cn)，请在该门户中导航到你的存储帐户，然后单击“管理访问密钥”。
 
 下面是该密钥在你的应用程序中的显示方式：
 
     // Create a storage account object from a connection string.
-    AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=account_name;AccountKey=account_key;EndpointSuffix=core.chinacloudapi.cn"];
+    AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
 
-###共享访问签名 (SAS)
+### 共享访问签名 (SAS)
 对于 iOS 应用程序，客户端针对 Blob 存储对请求进行身份验证的建议方法是使用共享访问签名 (SAS)。SAS 允许你使用指定的权限集向客户端授予在指定的时间内对资源的访问权限。
-作为存储帐户所有者，你需要为 iOS 客户端生成要使用的 SAS。若要生成 SAS，你可能需要编写单独的服务，该服务生成要分发给客户端的 SAS。出于测试目的，你还可以使用 Azure CLI 来生成 SAS。请注意，共享密钥凭据用于生成 SAS，但客户端随后可以通过封装在 SAS URL 中的身份验证信息来使用 SAS。
-创建 SAS 时，可以指定 SAS 有效的时间间隔，以及 SAS 授予客户端的权限。例如，对于 blob 容器，SAS 可以授予对容器中的 blob 的读取、写入或删除权限，以及列出容器中的 blob 的列出权限。
+作为存储帐户所有者，你需要为 iOS 客户端生成要使用的 SAS。若要生成 SAS，你可能需要编写单独的服务，该服务生成要分发给客户端的 SAS。出于测试目的，可以使用 Azure 存储资源管理器来生成 SAS。创建 SAS 时，可以指定 SAS 有效的时间间隔，以及 SAS 授予客户端的权限。
 
-以下示例演示如何使用 Azure CLI 来生成 SAS 令牌，该令牌授予对容器 sascontainer 的读取和写入权限，这些权限截止于 2015 年 9 月 5 日上午 12:00 (UTC)。
+以下示例演示如何使用 Azure 存储资源管理器来生成 SAS。
 
-1. 首先，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 以了解如何安装 Azure CLI 并连接到 Azure 订阅。
+1. [安装 Azure 存储资源管理器](http://storageexplorer.com)（如果尚未安装）
 
-2. 接下来，在 Azure CLI 中键入以下命令以获得帐户的连接字符串：
+2. 连接到订阅
 
-		azure storage account connectionstring show youraccountname
+3. 单击你的存储帐户，然后单击左下方的“操作”选项卡。单击“获取共享访问签名”，生成 SAS 的连接字符串。
 
-3. 使用刚生成的连接字符串创建一个环境变量：
+4. 下面是 SAS 连接字符串的示例，该字符串为存储帐户的 Blob 服务授予对服务、容器和对象级别的读取与写入权限。
 
-		export AZURE_STORAGE_CONNECTION_STRING=”your connection string”
+        SharedAccessSignature=sv=2015-04-05&ss=b&srt=sco&sp=rw&se=2016-07-21T18%3A00%3A00Z&sig=3ABdLOJZosCp0o491T%2BqZGKIhafF1nlM3MzESDDD3Gg%3D;BlobEndpoint=https://youraccount.blob.core.chinacloudapi.cn
 
-4. 生成 SAS URL：
+6. 在 iOS 应用程序中，现在可以通过以下方式使用连接字符串获取对你的帐户的引用：
 
-		azure storage container sas create --container sascontainer --permissions rw --expiry 2015-09-05T00:00:00
-
-5. SAS URL 应类似于如下内容：
-
-		https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=2012-02-12&st=2013-04-29T22%3A18%3A26Z&se=2013-04-30T02%3A23%3A26Z&sr=b&sp=rw&sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
-
-6. 在 iOS 应用程序中，现在可以通过以下方式使用 SAS URL 获取对你的容器的引用：
-
-		// Get a reference to a container in your Storage account
-    	AZSCloudBlobContainer *blobContainer = [[AZSCloudBlobContainer alloc] initWithUrl:[NSURL URLWithString:@" your SAS URL"]];
+		// Get a reference to your Storage account
+    	AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"SharedAccessSignature=sv=2015-04-05&ss=b&srt=sco&sp=rw&se=2016-07-21T18%3A00%3A00Z&sig=3ABdLOJZosCp0o491T%2BqZGKIhafF1nlM3MzESDDD3Gg%3D;BlobEndpoint=https://youraccount.blob.core.chinacloudapi.cn" error:&accountCreationError];
 
 如你所见，使用 SAS 令牌时，不会在 iOS 应用程序中公开你的帐户名和帐户密钥。你可以通过查阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)了解有关 SAS 的详细信息。
 
-##异步操作
+## 异步操作
 > [AZURE.NOTE] 执行对服务的请求的所有方法都是异步操作。在代码示例中，你会发现这些方法都有完成处理程序。请求完成**后**，将运行完成处理程序内的代码。正在发出请求**时**，将运行完成处理程序后的代码。
 
 ## 创建容器
-Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下示例演示如何在存储帐户中创建一个名为 newcontainer 的容器（如果它尚不存在）。在选择容器的名称时，请注意上面提到的命名规则。
+Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下示例演示如何在存储帐户中创建一个名为 *newcontainer* 的容器（如果它尚不存在）。在选择容器的名称时，请注意上面提到的命名规则。
 
-     -(void)createContainer{
-        // Create a storage account object from a connection string.
-        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"];
+    -(void)createContainer{
+      NSError *accountCreationError;
 
-        // Create a blob service client object.
-        AZSCloudBlobClient *blobClient = [account getBlobClient];
+      // Create a storage account object from a connection string.
+        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
 
-        // Create a local container object.
-        AZSCloudBlobContainer *blobContainer = [blobClient containerReferenceFromName:@"newcontainer"];
+      if(accountCreationError){
+         NSLog(@"Error in creating account.");
+      }
 
-        // Create container in your Storage account if the container doesn't already exist
-        [blobContainer createContainerIfNotExistsWithCompletionHandler:^(NSError *error, BOOL exists) {
-            if (error){
-                NSLog(@"Error in creating container.");
-            }
-        }];
+      // Create a blob service client object.
+      AZSCloudBlobClient *blobClient = [account getBlobClient];
+
+      // Create a local container object.
+      AZSCloudBlobContainer *blobContainer = [blobClient containerReferenceFromName:@"newcontainer"];
+
+      // Create container in your Storage account if the container doesn't already exist
+      [blobContainer createContainerIfNotExistsWithCompletionHandler:^(NSError *error, BOOL exists) {
+         if (error){
+             NSLog(@"Error in creating container.");
+         }
+      }];
     }
 
-可通过查看 [Azure 经典管理门户](http://manage.windowsazure.cn)或任意[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证 newcontainer 存在于存储帐户的容器列表中来确认此操作有效。
+可通过查看 [Azure 存储资源管理器](http://storageexplorer.com)并验证 *newcontainer* 存在于存储帐户的容器列表中来确认此操作有效。
 
 ## 设置容器权限
 默认情况下，容器的权限配置为**私有**访问权限。但是，容器提供了几个不同的容器访问权限选项：
@@ -148,9 +168,15 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 
 以下示例演示如何创建一个具有**容器**访问权限的容器，这将允许 Internet 上的所有用户对其进行公共只读访问：
 
-     -(void)createContainerWithPublicAccess{
+    -(void)createContainerWithPublicAccess{
+        NSError *accountCreationError;
+
         // Create a storage account object from a connection string.
-        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"];
+        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
+
+        if(accountCreationError){
+            NSLog(@"Error in creating account.");
+        }
 
         // Create a blob service client object.
         AZSCloudBlobClient *blobClient = [account getBlobClient];
@@ -171,9 +197,15 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 
 以下示例演示如何从 NSString 上载块 blob。如果此容器中已存在同名的 blob，则将覆盖该 blob 的内容。
 
-     -(void)uploadBlobToContainer{
+    -(void)uploadBlobToContainer{
+        NSError *accountCreationError;
+
         // Create a storage account object from a connection string.
-        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"];
+        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
+
+        if(accountCreationError){
+            NSLog(@"Error in creating account.");
+        }
 
         // Create a blob service client object.
         AZSCloudBlobClient *blobClient = [account getBlobClient];
@@ -186,21 +218,21 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
              if (error){
                  NSLog(@"Error in creating container.");
              }
-         	 else{
-				 // Create a local blob object
-             	 AZSCloudBlockBlob *blockBlob = [blobContainer blockBlobReferenceFromName:@"sampleblob"];
+             else{
+                 // Create a local blob object
+                 AZSCloudBlockBlob *blockBlob = [blobContainer blockBlobReferenceFromName:@"sampleblob"];
 
-             	 // Upload blob to Storage
-             	 [blockBlob uploadFromText:@"This text will be uploaded to Blob Storage." completionHandler:^(NSError *error) {
-                 	if (error){
-						NSLog(@"Error in creating blob.");
-                 	}             
-             	 }];
-			 }
+                 // Upload blob to Storage
+                 [blockBlob uploadFromText:@"This text will be uploaded to Blob Storage." completionHandler:^(NSError *error) {
+                     if (error){
+                         NSLog(@"Error in creating blob.");
+                     }
+                 }];
+             }
          }];
-     }
+    }
 
-你可以通过查看[Azure 经典管理门户](http://manage.windowsazure.cn)或任何[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证容器 *containerpublic* 是否包含该 blob *sampleblob* 来确认此操作是否正常工作。在此示例中，我们使用了公共容器，因此你还可以通过转到 blob URI 来验证此操作是否正常工作：
+你可以通过查看 [Azure 存储资源管理器](http://storageexplorer.com)并验证容器 *containerpublic* 是否包含该 Blob *sampleblob* 来确认此操作是否正常工作。在此示例中，我们使用了公共容器，因此你还可以通过转到 blob URI 来验证此操作是否正常工作：
 
     https://nameofyourstorageaccount.blob.core.chinacloudapi.cn/containerpublic/sampleblob
 
@@ -225,55 +257,68 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 在此示例中，帮助器方法用于在每次返回继续标记时递归调用列出 blob 方法。
 
     -(void)listBlobsInContainer{
-      // Create a storage account object from a connection string.
-      AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"];
+        NSError *accountCreationError;
 
-      // Create a blob service client object.
-      AZSCloudBlobClient *blobClient = [account getBlobClient];
+        // Create a storage account object from a connection string.
+      AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
 
-      // Create a local container object.
-      AZSCloudBlobContainer *blobContainer = [blobClient containerReferenceFromName:@"containerpublic"];
+        if(accountCreationError){
+            NSLog(@"Error in creating account.");
+        }
 
-      //List all blobs in container
-      [self listBlobsInContainerHelper:blobContainer continuationToken:nil prefix:nil blobListingDetails:AZSBlobListingDetailsAll maxResults:-1 completionHandler:^(NSError *error) {
-         if (error != nil){
-             NSLog(@"Error in creating container.");
-         }
-      }];
+        // Create a blob service client object.
+        AZSCloudBlobClient *blobClient = [account getBlobClient];
+
+        // Create a local container object.
+        AZSCloudBlobContainer *blobContainer = [blobClient containerReferenceFromName:@"containerpublic"];
+
+        //List all blobs in container
+        [self listBlobsInContainerHelper:blobContainer continuationToken:nil prefix:nil blobListingDetails:AZSBlobListingDetailsAll maxResults:-1 completionHandler:^(NSError *error) {
+            if (error != nil){
+                NSLog(@"Error in creating container.");
+            }
+        }];
     }
 
     //List blobs helper method
     -(void)listBlobsInContainerHelper:(AZSCloudBlobContainer *)container continuationToken:(AZSContinuationToken *)continuationToken prefix:(NSString *)prefix blobListingDetails:(AZSBlobListingDetails)blobListingDetails maxResults:(NSUInteger)maxResults completionHandler:(void (^)(NSError *))completionHandler
     {
-      [container listBlobsSegmentedWithContinuationToken:continuationToken prefix:prefix useFlatBlobListing:YES blobListingDetails:blobListingDetails maxResults:maxResults completionHandler:^(NSError *error, AZSBlobResultSegment *results) {
-         if (error)
-         {
-             completionHandler(error);
-         }
-         else
-         {
-             for (int i = 0; i < results.blobs.count; i++) {
-                 NSLog(@"%@",[(AZSCloudBlockBlob *)results.blobs[i] blobName]);
-             }
-             if (results.continuationToken)
-             {
-                 [self listBlobsInContainerHelper:container continuationToken:results.continuationToken prefix:prefix blobListingDetails:blobListingDetails maxResults:maxResults completionHandler:completionHandler];
-             }
-             else
-             {
-                 completionHandler(nil);
-             }
-         }
-      }];
+        [container listBlobsSegmentedWithContinuationToken:continuationToken prefix:prefix useFlatBlobListing:YES blobListingDetails:blobListingDetails maxResults:maxResults completionHandler:^(NSError *error, AZSBlobResultSegment *results) {
+            if (error)
+            {
+                completionHandler(error);
+            }
+            else
+            {
+                for (int i = 0; i < results.blobs.count; i++) {
+                    NSLog(@"%@",[(AZSCloudBlockBlob *)results.blobs[i] blobName]);
+                }
+                if (results.continuationToken)
+                {
+                    [self listBlobsInContainerHelper:container continuationToken:results.continuationToken prefix:prefix blobListingDetails:blobListingDetails maxResults:maxResults completionHandler:completionHandler];
+                }
+                else
+                {
+                    completionHandler(nil);
+                }
+            }
+        }];
     }
+
 
 ## 下载 Blob
 
 以下示例演示如何将 blob 下载到 NSString 对象中。
 
-     -(void)downloadBlobToString{
+    -(void)downloadBlobToString{
+        NSError *accountCreationError;
+
         // Create a storage account object from a connection string.
-        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"];
+        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
+
+        if(accountCreationError){
+            NSLog(@"Error in creating account.");
+        }
 
         // Create a blob service client object.
         AZSCloudBlobClient *blobClient = [account getBlobClient];
@@ -284,14 +329,14 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
         // Create a local blob object
         AZSCloudBlockBlob *blockBlob = [blobContainer blockBlobReferenceFromName:@"sampleblob"];
 
-        // Download blob    
+        // Download blob
         [blockBlob downloadToTextWithCompletionHandler:^(NSError *error, NSString *text) {
             if (error) {
                 NSLog(@"Error in downloading blob");
             }
-			else{
-            	NSLog(@"%@",text);
-			}
+            else{
+                NSLog(@"%@",text);
+            }
         }];
     }
 
@@ -299,9 +344,15 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 
 以下示例说明如何删除 blob。
 
-     -(void)deleteBlob{
+    -(void)deleteBlob{
+        NSError *accountCreationError;
+
         // Create a storage account object from a connection string.
-        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"];
+        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
+
+        if(accountCreationError){
+            NSLog(@"Error in creating account.");
+        }
 
         // Create a blob service client object.
         AZSCloudBlobClient *blobClient = [account getBlobClient];
@@ -314,44 +365,49 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 
         // Delete blob
         [blockBlob deleteWithCompletionHandler:^(NSError *error) {
-          if (error) {
-            NSLog(@"Error in deleting blob.");
-          }
+            if (error) {
+                NSLog(@"Error in deleting blob.");
+            }
         }];
-     }
+    }
 
 ## 删除 Blob 容器
 
 以下示例说明如何删除容器。
 
-     -(void)deleteContainer{
-        // Create a storage account object from a connection string.
-        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"];
+    -(void)deleteContainer{
+      NSError *accountCreationError;
 
-        // Create a blob service client object.
-        AZSCloudBlobClient *blobClient = [account getBlobClient];
+      // Create a storage account object from a connection string.
+        AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
 
-        // Create a local container object.
-        AZSCloudBlobContainer *blobContainer = [blobClient containerReferenceFromName:@"containerpublic"];
+      if(accountCreationError){
+         NSLog(@"Error in creating account.");
+      }
 
-        // Delete container
-        [blobContainer deleteContainerIfExistsWithCompletionHandler:^(NSError *error, BOOL success) {
-            if(error){
-                NSLog(@"Error in deleting container");
-            }
-        }];
+      // Create a blob service client object.
+      AZSCloudBlobClient *blobClient = [account getBlobClient];
+
+      // Create a local container object.
+      AZSCloudBlobContainer *blobContainer = [blobClient containerReferenceFromName:@"containerpublic"];
+
+      // Delete container
+      [blobContainer deleteContainerIfExistsWithCompletionHandler:^(NSError *error, BOOL success) {
+         if(error){
+             NSLog(@"Error in deleting container");
+         }
+      }];
     }
 
 ## 后续步骤
 
-现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
+了解如何从 iOS 使用 Blob 存储后，请单击以下链接详细了解 iOS 库和存储服务。
 
 - [Azure Storage Client Library for iOS（适用于 iOS 的 Azure 存储客户端库）](https://github.com/azure/azure-storage-ios)
+- [Azure 存储空间 iOS 参考文档](http://azure.github.io/azure-storage-ios/)
 - [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage)
 
 如果你对此库有任何疑问，请随意将问题发布到我们的 [MSDN Azure 论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazuredata)或[堆栈溢出](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files)。如果你有 Azure 存储空间的功能建议，请将建议发布到 [Azure 存储空间反馈](/product-feedback)。
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0829_2016-->

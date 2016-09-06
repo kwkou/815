@@ -1,23 +1,25 @@
-<properties 
+<properties
 	pageTitle="为 Blob 存储终结点配置域名 | Azure"
-	description="了解如何将自定义用户域映射到 Azure 存储帐户的 Blob 存储终结点。"
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+	description="了解如何在 Azure 经典门户中将自定义用户域映射到 Azure 存储帐户的 Blob 存储终结点。"
+	services="storage"
+	documentationCenter=""
+	authors="tamram"
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/23/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/05/2016"/>
 
 
 # 为 Blob 存储终结点配置自定义域名
 
 ## 概述
 
-你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 存储的默认终结点为 https://<mystorageaccount>.blob.core.chinacloudapi.cn。如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
+你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 存储的默认终结点是 `<storage-account-name>.blob.core.chinacloudapi.cn`。如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
+
+>[AZURE.IMPORTANT] Azure 存储空间尚不支持对自定义域使用 HTTPS。我们已注意到客户对这项功能感兴趣，会在将来的版本中添加。
 
 有两种方法可用于将你的自定义域指向你的存储帐户的 Blob 终结点。最简单方法是创建一个 CNAME 记录，将你的自定义域和子域映射到 Blob 终结点。CNAME 记录是一种 DNS 功能，用于将源域映射到目标域。在此情况下，源域是你的自定义域和子域 -- 请注意，始终需要子域。目标域是你的 Blob 服务终结点。
 
@@ -99,7 +101,7 @@ Blob|**默认 URL：**http://mystorageaccount.blob.core.chinacloudapi.cn/myconta
 
 若要验证你的自定义域是否确实已映射到你的 Blob 服务终结点，请在你的存储帐户内的公共容器中创建一个 Blob。然后在 Web 浏览器中，使用以下格式的 URI 来访问该 Blob：
 
--   http://\<subdomain.customdomain>/\<mycontainer>/\<myblob>
+-   http://<*subdomain.customdomain*>/<*mycontainer*>/<*myblob*>
 
 例如，你可以使用以下 URI 来通过映射到 **myforms** 容器中的 Blob 的自定义子域 **photos.contoso.com** 访问 Web 窗体：
 
@@ -119,7 +121,4 @@ Blob|**默认 URL：**http://mystorageaccount.blob.core.chinacloudapi.cn/myconta
 
 6. 在“管理自定义域”对话框中，单击“取消注册”。
 
-
-
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0829_2016-->

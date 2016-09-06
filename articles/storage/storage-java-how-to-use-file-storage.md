@@ -1,16 +1,16 @@
-<properties 
+<properties
 	pageTitle="如何通过 Java 使用文件存储 | Azure" 
-	description="了解如何使用 Azure 文件服务上载、下载、列出和删除文件。用 Java 编写的示例。" 
-	services="storage" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
-	editor="jimbe" />
+	description="了解如何使用 Azure 文件服务上载、下载、列出和删除文件。用 Java 编写的示例。"
+	services="storage"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
+	editor="" />  
 
 <tags
 	ms.service="storage"
-	ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/05/2016"/>
 
 # 如何通过 Java 使用文件存储
 
@@ -213,6 +213,4 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-[Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0829_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/17/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/05/2016"/>
 
 
 # 在 Azure 存储空间中断时该怎么办
@@ -25,7 +25,7 @@ Azure 一直努力确保所提供的服务始终可用。但有时候，各种�
 
 -   [Azure 存储空间复制](/documentation/articles/storage-redundancy/)
 
--   [Azure 备份服务](/home/features/back-up/)
+-   [Azure 备份服务](/home/features/backup/)
 
 ## 如何检测 
 
@@ -74,4 +74,4 @@ Azure 一直努力确保所提供的服务始终可用。但有时候，各种�
 
 -   文件 – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 或 [Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) 将文件复制到其他区域的其他存储帐户。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0829_2016-->
