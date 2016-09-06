@@ -116,10 +116,10 @@ Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析、Blo
 [lnk-security-tokens]: /documentation/articles/iot-hub-sas-tokens/#security-token-structure
 [lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens#use-sas-tokens-as-a-device
 [lnk-identity-registry]: /documentation/articles/iot-hub-devguide#device-identity-registry
-[lnk-protocols]: ./documentation/articles/iot-hub-devguide#security
+[lnk-protocols]: /documentation/articles/iot-hub-devguide#security
 [lnk-custom-auth]: /documentation/articles/iot-hub-guidance#custom-device-authentication
 [lnk-x509]: http://www.itu.int/rec/T-REC-X.509-201210-I/en
-[lnk-use-x509]: /documentation/articles/iot-hub/iot-hub-sas-tokens
+[lnk-use-x509]: /documentation/articles/iot-hub-sas-tokens
 [lnk-tls12]: https://tools.ietf.org/html/rfc5246
 [lnk-service-tokens]: /documentation/articles/iot-hub-sas-tokens#using-security-tokens-from-service-components
 [lnk-docdb]: /services/documentdb/

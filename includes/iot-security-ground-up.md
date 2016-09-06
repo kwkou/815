@@ -28,7 +28,7 @@ Azure 提供完整的云解决方案，其中结合了持续成长的集成式�
 
 Azure IoT 套件使用内置于 Azure 平台的安全和隐私功能，以及我们针对所有 Microsoft 软件进行的安全开发和操作所提供的 SDL 和 OSA 过程。这些过程提供基础结构保护、网络保护，以及标识与管理功能，作为任何解决方案安全的基础。
 
-[IoT 套件](/documentation/articles/iot-suite-what-is-azure-iot/)内的 [Azure IoT 中心](/documentation/articles/iot-hub/iot-hub-what-is-iot-hub/)提供完全托管的服务，使用每一设备的安全凭据和访问控制，在 IoT 设备与 Azure 服务之间启用可靠且安全的双向通信，例如 [Azure 流分析](/documentation/articles/stream-analytics/stream-analytics-introduction/)。
+[IoT 套件](/documentation/articles/iot-suite-what-is-azure-iot/)内的 [Azure IoT 中心](/documentation/articles/iot-hub-what-is-iot-hub/)提供完全托管的服务，使用每一设备的安全凭据和访问控制，在 IoT 设备与 Azure 服务之间启用可靠且安全的双向通信，例如 [Azure 流分析](/documentation/articles/stream-analytics-introduction/)。
 
 为了以最佳方式传达内置于 Azure IoT 套件的安全和隐私功能，我们已将套件细分为三个主要安全领域。
 
@@ -38,7 +38,7 @@ Azure IoT 套件使用内置于 Azure 平台的安全和隐私功能，以及我
 
 当设备不在现场时，Azure IoT 套件将保护它们，方法是为每个设备提供唯一的标识密钥，在设备运行时，IoT 基础结构可用于与其进行通信。该过程非常快速且可轻松设置。使用用户选择的设备 ID 生成的密钥将形成令牌的基础，可以在设备和 Azure IoT 中心之间的所有通信中使用。
 
-设备 ID 可以在制造期间（例如硬件信任模块中的闪存）与设备关联，或者可以使用现有的固定标识作为代理（例如 CPU 序列号）。由于更改设备中的此识别信息并不简单，因此请务必引入逻辑设备 ID，以防万一基础设备硬件更改，逻辑设备可保持不变。在某些情况下，设备标识的关联将发生在设备部署期间（也就是已经过验证的现场工程师实际上将在与 IoT 解决方案后端通信的同时配置新设备）。[Azure IoT 中心标识注册表](/documentation/articles/iot-hub/iot-hub-devguide/)针对解决方案为设备标识和安全密钥提供安全存储。可将单个或一组设备标识添加到允许列表或方块列表，以便完全控制设备访问。
+设备 ID 可以在制造期间（例如硬件信任模块中的闪存）与设备关联，或者可以使用现有的固定标识作为代理（例如 CPU 序列号）。由于更改设备中的此识别信息并不简单，因此请务必引入逻辑设备 ID，以防万一基础设备硬件更改，逻辑设备可保持不变。在某些情况下，设备标识的关联将发生在设备部署期间（也就是已经过验证的现场工程师实际上将在与 IoT 解决方案后端通信的同时配置新设备）。[Azure IoT 中心标识注册表](/documentation/articles/iot-hub-devguide/)针对解决方案为设备标识和安全密钥提供安全存储。可将单个或一组设备标识添加到允许列表或方块列表，以便完全控制设备访问。
  
 云中的 Azure IoT 中心访问控制策略，能够启用和禁用任何设备标识，必要时可提供方法来取消关联 IoT 部署中的设备。设备的这种关联和取消关联基于每个设备标识。
 
