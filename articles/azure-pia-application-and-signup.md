@@ -10,7 +10,7 @@
 
 <tags ms.service="" ms.date="" wacn.date="" wacn.lang="cn"/>
 
-![流程导航](./media/azure-pia-application-and-signup/PIA0906.png)
+![流程导航](./media/azure-pia-application-and-signup/PIA0906.jpg)
 
 
  
