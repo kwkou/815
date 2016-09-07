@@ -38,10 +38,6 @@
 
     -   **禁用| Bring data back from Azure**. 将表的远程数据从 Azure 复制回到 SQL Server，然后为该表禁用延伸数据库。 此命令不可取消。
 
-        >   [AZURE.NOTE] 将表的远程数据从 Azure 复制回 SQL Server 会产生数据传输费用。 有关详细信息，请参阅[数据传输定价详细信息](/pricing/details/data-transfers/)。
-
-        将所有远程数据从 Azure 复制回到 SQL Server 之后，将为表禁用延伸。
-
     -   **禁用| Leave data in Azure**. 为表禁用延伸数据库。  放弃表的远程数据，使其保留在 Azure 中。
 
     >   [AZURE.NOTE] 针对表禁用 Stretch Database 不会删除远程数据或远程表。若要删除远程表，必须使用 Azure 管理门户。远程表在删除之前，会持续产生 Azure 存储费用。有关详细信息，请参阅 [SQL Server Stretch Database 定价](/pricing/details/sql-server-stretch-database/)。
@@ -59,7 +55,6 @@
        SET ( REMOTE\_DATA\_ARCHIVE ( MIGRATION\_STATE = INBOUND ) ) ;
     GO
 
-    >   [AZURE.NOTE] 将表的远程数据从 Azure 复制回 SQL Server 会产生数据传输费用。有关详细信息，请参阅[数据传输定价详细信息](https://azure.microsoft.com/pricing/details/data-transfers/)。
 
 -   若要为某个表禁用延伸并放弃远程数据，请运行以下命令。
 
