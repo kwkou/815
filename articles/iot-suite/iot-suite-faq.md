@@ -24,7 +24,7 @@
 
 ### 一个订阅中可以设置多少个 IoT 中心实例？ 
 
-10 个。如需要设置更多，请通过 Azure [在线申请支持][link-azuresupportticket]创建工单，提出申请。默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅上限）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案只能预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个该解决方案。
+10 个。如需要设置更多，请通过 Azure [在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，提出申请。默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅上限）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案只能预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个该解决方案。
 
 ### 在订阅中可以设置多少个 DocumentDB 实例？
 
@@ -66,7 +66,6 @@
 
 [lnk-predictive-overview]: /documentation/articles/iot-suite/iot-suite-predictive-overview/
 [lnk-security-groundup]: /documentation/articles/iot-suite/securing-iot-ground-up/
-[link-azuresupportticket]: https://portal.azure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade
 [link-azuresublimits]: /documentation/articles/azure-subscription-service-limits/#iot-hub-limits
 [lnk-azure-portal]: https://portal.azure.cn
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
