@@ -64,8 +64,7 @@
 
 - [从头开始保障 IoT 安全][lnk-security-groundup]
 
-[lnk-predictive-overview]: /documentation/articles/iot-suite/iot-suite-predictive-overview/
-[lnk-security-groundup]: /documentation/articles/iot-suite/securing-iot-ground-up/
+[lnk-security-groundup]: /documentation/articles/securing-iot-ground-up/
 [link-azuresublimits]: /documentation/articles/azure-subscription-service-limits/#iot-hub-limits
 [lnk-azure-portal]: https://portal.azure.cn
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
