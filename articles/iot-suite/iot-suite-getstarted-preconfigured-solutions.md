@@ -95,7 +95,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 ## 添加新的模拟设备
 
-当你部署预配置解决方案时，会自动预配在设备列表中可见的四个示例设备。这些设备是在 Azure Web 作业中运行的 *模拟设备* 。模拟设备可让你试验预配置解决方案，而不需要部署实际的物理设备。若要将实际设备连接到解决方案，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connecting-devices]（将设备连接到远程监视预配置解决方案）教程。
+当你部署预配置解决方案时，会自动预配在设备列表中可见的四个示例设备。这些设备是在 Azure Web 作业中运行的 *模拟设备* 。模拟设备可让你试验预配置解决方案，而不需要部署实际的物理设备。若要将实际设备连接到解决方案，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connect-rm]（将设备连接到远程监视预配置解决方案）教程。
 
 以下步骤说明如何将新的模拟设备添加到解决方案：
 
@@ -110,7 +110,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
     ![在仪表板中设置新设备详细信息][img-addnew]
     
-    如果选择创建“自定义设备”，则除了创建新的模拟设备，也可以添加物理设备。若要了解详细信息，请参阅 [Connect your device to the IoT Suite remote monitoring preconfigured solution][lnk-connecting-devices]（将设备连接到 IoT 套件远程监视预配置方解决案）。
+    如果选择创建“自定义设备”，则除了创建新的模拟设备，也可以添加物理设备。若要了解详细信息，请参阅 [Connect your device to the IoT Suite remote monitoring preconfigured solution][lnk-connect-rm]（将设备连接到 IoT 套件远程监视预配置方解决案）。
 
 4.  选择“自行定义设备 ID”，然后输入唯一的设备 ID 名称，例如 **mydevice\_01**。
 
