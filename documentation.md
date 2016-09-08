@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="07/06/2016"
+    wacn.date="09/01/2016"
     />
 
 #文档中心
@@ -46,7 +46,7 @@
   <tr col>
     <td><a href="/documentation/services/web-sites/">Web 应用</a></td>
     <td><a href="/documentation/services/mobile-services/">移动服务</a></td>
-	<td><a href="/documentation/services/notification-hubs/">通知中心</a></td>
+	<td><a href=""></a></td>
 	<td><a href=""></a></td>
   </tr>
 </table>
@@ -83,10 +83,17 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
+	<td><a href="/documentation/services/iot-suite">Azure IoT 套件</a></td>
 	<td><a href="/documentation/services/iot-hub">Azure IoT 中心</a></td>
 	<td><a href="/documentation/services/event-hubs/">事件中心</a></td>
 	<td><a href="/documentation/services/stream-analytics/">流分析</a></td>
+  </tr>
+  <tr>
+
 	<td><a href="/documentation/services/notification-hubs/">通知中心</a></td>
+	<td><a href=""></a></td>
+	<td><a href=""></a></td>
+	<td><a href=""></a></td>
   </tr>
 </table>
 
