@@ -13,7 +13,7 @@
    wacn.date="08/29/2016"/>
 
 
-# 入门：Service Fabric Web API 服务与 OWIN 自托管 | Microsoft Azure
+# 入门：Service Fabric Web API 服务与 OWIN 自托管
 
 Azure Service Fabric 让你有权决定你希望你的服务如何与用户以及相互之间进行通信。本教程重点介绍如何在 Service Fabric 的 Reliable Services API 中将 ASP.NET Web API 与适用于 .NET 的开放式 Web 接口 (OWIN) 自托管配置使用来实现服务通信。我们将深入探讨 Reliable Services 可插式通信 API。此外，还将在循序渐进的示例中使用 Web API 演示如何设置自定义通信侦听器。
 
