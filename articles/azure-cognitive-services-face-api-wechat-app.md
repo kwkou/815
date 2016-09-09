@@ -10,8 +10,7 @@
 
 <tags ms.service="multiple" ms.date="" wacn.date="09/09/2016" wacn.lang="cn"/>
 #人脸识别 API + 微信应用开发操作手册
- 
-  
+
 ##软件版本说明：
 1. Mongo DB 2.6.12
 2. Visual Studio 2015
