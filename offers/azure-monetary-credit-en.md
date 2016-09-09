@@ -19,7 +19,7 @@
 
 ## Azure Monetary Credit
 
-Only [Standard Pay-In-Advance Offer](https://www.azure.cn/offers/ms-mc-arz-33p/) is eligible for Azure Monetary Credit by adding usage credit to customer existing subscriptions for free. Azure Monetary credit is a kind of price discount which do not need customer make additional charge.
+Only [Standard Pay-In-Advance Offer](/offers/ms-mc-arz-33p/) is eligible for Azure Monetary Credit by adding usage credit to customer existing subscriptions for free. Azure Monetary credit is a kind of price discount which do not need customer make additional charge.
 
 The pricing rate, cancelation policy, usage quotas for Monetary credit is the same as Standard Pay-In-Advance Offer.
 
@@ -35,4 +35,4 @@ Azure monetary credits are valid for 12 months. Upon using all Azure Credits in 
 
 ## Activity Details
 
-[【Closed】 Details about real-name identifiable information collection event （Rewards are targeted at users who submitted their real-name identifiable information before 1/21/2016）](https://www.azure.cn/support/real-name-annoucement/)
+[【Closed】 Details about real-name identifiable information collection event （Rewards are targeted at users who submitted their real-name identifiable information before 1/21/2016）](/support/real-name-announcement/)

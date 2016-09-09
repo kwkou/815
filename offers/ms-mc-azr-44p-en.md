@@ -22,6 +22,8 @@ With this offering, you can use various of Azure services upon your needs, inclu
 
 [Click here to apply 1 RMB Trial](/pricing/1rmb-trial-form/)
 
+[Click here to view 1 RMB Trial Sign-up Guidance](/documentation/articles/azure-1rmb-trial-application-and-signup/)
+
 ##Rules of the Offer
 
 - Any customer can only apply for this offer once. For example, the same payment account (including UnionPay and Alipay) can only be used once for this offer. Violation of this policy may result in termination of your subscription, deletion of all Customer Data, and forfeiture of the 1 RMB payment.

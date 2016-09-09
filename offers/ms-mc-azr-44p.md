@@ -22,6 +22,8 @@
 
 [点击此处申请1元试用](/pricing/1rmb-trial-full/?form-type=identityauth)
 
+[点击此处了解1元注册流程](/documentation/articles/azure-1rmb-trial-application-and-signup/)
+
 ##1元试用订阅使用限制
 
  - 每位新客户仅有一次享受本优惠的机会。比如同一个付费账户（包括银联及支付宝账户）只能购买一次。违反限制可能导致服务停用，删除所有用户数据，而且 1 元费用不再退还。

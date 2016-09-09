@@ -29,6 +29,8 @@ You will be notified at least 30 days in advance of any increases to the Pay-In-
 
 [Pay In Advance Now >](/pricing/pia/)
 
+[View Pay in Advance Sign-up Guidance >](/documentation/articles/azure-pia-application-and-signup/)
+
 ## Payment Options
 
 Alipay and China UnionPay (CUP) only. Initial and subsequent payment must each be at least 1,000 RMB.
