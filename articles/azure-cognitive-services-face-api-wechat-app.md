@@ -9,8 +9,6 @@
     tags=""/>
 
 <tags ms.service="multiple" ms.date="" wacn.date="09/09/2016" wacn.lang="cn"/>
-
-
 #人脸识别 API + 微信应用开发操作手册
  
   
