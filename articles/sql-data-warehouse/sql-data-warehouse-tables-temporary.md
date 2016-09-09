@@ -10,12 +10,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
    ms.date="06/29/2016"
-   ms.author="jrj;barbkess;sonyama"/>  
+   wacn.date="08/22/2016"/>  
 
 
 # SQL 数据仓库中的临时表
