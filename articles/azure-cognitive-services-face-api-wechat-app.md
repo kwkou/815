@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="multiple" ms.date="" wacn.date="" wacn.lang="cn"/>
+<tags ms.service="multiple" ms.date="" wacn.date="09/09/2016" wacn.lang="cn"/>
 
 
 #人脸识别 API + 微信应用开发操作手册
@@ -165,7 +165,7 @@ Document DB 是由 Azure 提供的 PaaS NoSQL 数据库服务，您可以使用�
 
 ##常见问题与相关文档：
 
-- [Microsoft 认知服务](/cognitive-services/zh-cn/face-api/)
+- [Microsoft 认知服务](https://www.azure.cn/cognitive-services/zh-cn/face-api)
 - [Microsoft 认知服务 API 参考](https://dev.cognitive.azure.cn/docs/services/563879b61984550e40cbbe8d/)
 - 了解微信公众平台开发相关信息，请点击[这里](https://mp.weixin.qq.com/wiki/home/index.html)
 
