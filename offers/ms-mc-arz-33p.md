@@ -26,6 +26,8 @@
 
 [立即购买 >](/pricing/pia/)
 
+[了解标准预付费订阅注册流程 >](/documentation/articles/azure-pia-application-and-signup/)
+
 ## 付款选项
 
 仅限支付宝和中国银联。首次及随后的每次付款金额应至少为人民币1000元。
