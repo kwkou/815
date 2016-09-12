@@ -9,14 +9,15 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="07/08/2016"
-	wacn.date="08/22/2016" />
+	ms.date="08/10/2016"
+	wacn.date="09/05/2016" />
 
 # Azure Active Directory 版本
 
 所有 Microsoft Online 业务服务都依赖于 Azure Active Directory 进行登录和满足其他身份识别需求。如果你订阅了任何 Microsoft Online 业务服务（例如 Office 365、Azure 等），则表示已获得了 Azure Active Directory (Azure AD)，你可以用它来访问下述所有免费功能。
 
 Azure Active Directory 是在云中为员工、合作伙伴和客户提供全面标识和访问管理功能的服务。它为开发人员整合了目录服务、高级标识管理和一个基于标准的多功能平台，并可让你针对自己的应用程序或数千个预先集成应用程序中的任何一个进行访问管理。使用 Azure Active Directory 免费版，你可以管理用户和组、与本地目录同步，以及在 Azure、Office 365 和数千种主流 SaaS 应用程序（如 Salesforce、Workday、Concur、DocuSign、Google Apps、Box、ServiceNow、Dropbox 等）上单一登录。若要了解有关 Azure Active Directory 的详细信息，请阅读[什么是 Azure AD](/documentation/articles/active-directory-whatis/)。
+
 
 
 若要增强你的 Azure Active Directory，可以使用 Azure Active Directory 基本和高级版添加付费功能。Azure Active Directory 付费版建立在现有免费目录基础之上，提供企业级功能，包括自助服务、增强型监视、安全报告、Multi-Factor Authentication (MFA) 和移动工作者安全访问。
@@ -27,7 +28,9 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 > [AZURE.NOTE]有关这些版本的定价选项，请参阅 [Azure Active Directory 定价](/pricing/details/identity/)。<br>中国地区目前不支持 Azure Active Directory Premium 和 Azure Active Directory 基本版。有关详细信息，请通过 Azure Active Directory 论坛与我们联系。
 
 > [AZURE.NOTE]
-> 许多 Azure Active Directory 功能以“即付即用”版本的形式提供：
+许多 Azure Active Directory 功能以“即付即用”版本的形式提供：
+>
+>- Active Directory B2C 是适用于面向消费者应用程序的标识和访问管理解决方案。有关详细信息，请参阅 [Azure Active Directory B2C](/documentation/services/active-directory-b2c/)
 > 可以通过基于用户或基于身份验证的提供程序使用 Azure Multi-Factor Authentication。有关详细信息，请参阅[什么是 Azure Multi-Factor Authentication？](/documentation/articles/multi-factor-authentication/)
 
 
@@ -106,7 +109,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 [1] 借助 Azure AD Free 和 Azure AD Basic，已获权访问 SaaS 应用的最终用户可以在其访问面板中看到最多 10 个应用并获得对这些应用的 SSO 访问权限。管理员可配置 SSO，并为使用 Free 和 Basic 的用户分配访问所需数量的 SaaS 应用的权限，但最终用户在其访问面板中一次只能看到 10 个应用。
 
-
+[2] 通过使用应用程序库菜单中提供的模板，自助集成支持 SAML、SCIM 或基于窗体的身份验证的任何应用程序。有关更多详细信息，请参阅[针对不在 Azure Active Directory 应用程序库中的应用程序配置单一登录](/documentation/articles/active-directory-saas-custom-apps/)。
 
 **更多详细信息：**
 
@@ -114,7 +117,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 
-####  <a name="self-service-password-change-for-cloud-users"></a>云用户的自助密码更改
+#### <a name="self-service-password-change-for-cloud-users"></a>云用户的自助服务密码更改
 
 **类型：**常用功能
 

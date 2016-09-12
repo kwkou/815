@@ -4,13 +4,13 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="asmalser-msft"
-	manager="terrylan"
-	editor=""/>
+	manager="femila"
+	editor=""/>  
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/09/2016"
-	wacn.date="06/24/2016"/>
+	ms.date="08/15/2016"
+	wacn.date="09/05/2016"/>
 
 #Azure Active Directory 的应用程序访问与单一登录是什么？
 
@@ -187,11 +187,11 @@ Azure AD 还为支持基于密码单一登录、现有单一登录以及任何�
 
 可以复制这些链接，然后粘贴到任何想要提供选定应用程序登录链接的位置。该位置可以是在电子邮件，或者任何已设置用户应用程序访问权限的自定义 Web 门户。以下是 Twitter 的 Azure AD 直接单一登录 URL 示例：
 
-https://myapps.microsoft.com/signin/Twitter/230848d52c8745d4b05a60d29a40fced
+`https://myapps.microsoft.com/signin/Twitter/230848d52c8745d4b05a60d29a40fced`
 
 类似于访问面板的组织特定 URL，你可以在 myapps.microsoft.com 域之后添加一个活动的或经过验证的域作为目录，以进一步自定义此 URL。这样可以确保用户无需事先输入其用户 ID，登录页就可以立即加载任何组织品牌：
 
-https://myapps.microsoft.com/contosobuild.com/signin/Twitter/230848d52c8745d4b05a60d29a40fced
+`https://myapps.microsoft.com/contosobuild.com/signin/Twitter/230848d52c8745d4b05a60d29a40fced`
 
 当已授权的用户单击其中一个应用程序特定的链接时，他们会先看到其组织登录页（假设他们尚未登录），登录之后重定向到该应用程序，而不会先停留在访问面板。如果用户未安装访问应用程序所需的必备组件（例如基于密码的单一登录浏览器扩展），链接将会提示用户安装缺少的扩展。如果应用程序的单一登录配置发生更改，链接 URL 也会保持不变。
 
