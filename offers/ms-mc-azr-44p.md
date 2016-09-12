@@ -20,11 +20,11 @@
 
 您可以将这些 Azure 服务使用额度用在满足您需要的 Azure 服务上，包括虚拟机、云服务、存储、SQL 数据库等很多方面。
 
-[点击此处申请1元试用](/pricing/1rmb-trial-full/?form-type=identityauth)
+[申请 1 元试用 >](/pricing/1rmb-trial-full/?form-type=identityauth)
 
-[点击此处了解1元注册流程](/documentation/articles/azure-1rmb-trial-application-and-signup/)
+[了解 1 元注册流程 >](/documentation/articles/azure-1rmb-trial-application-and-signup/)
 
-##1元试用订阅使用限制
+##1 元试用订阅使用限制
 
  - 每位新客户仅有一次享受本优惠的机会。比如同一个付费账户（包括银联及支付宝账户）只能购买一次。违反限制可能导致服务停用，删除所有用户数据，而且 1 元费用不再退还。
  - 如果 1,500 元 Azure 服务使用额度用完或一个月结束（以先到者为准），您的订阅将被停用，您的客户资料将被永久删除，除非您在停用 15 天内充值重新激活订阅，订阅激活后需要重新配置相关服务。为避免影响您的使用，请及时充值成为标准预付费订阅。
