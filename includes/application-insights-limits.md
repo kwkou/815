@@ -12,11 +12,11 @@
 [原始数据](/documentation/articles/app-insights-diagnostic-search)保留期 | 7 天
 [聚合数据](/documentation/articles/app-insights-metrics-explorer)保留期 | 90 天
 [属性](/documentation/articles/app-insights-api-custom-events-metrics#properties)名称计数 | 100 |
-属性名称长度 | 100 | 
-属性值长度 | 1000 | 
+属性名称长度 | 150 | 
+属性值长度 | 8192 | 
 跟踪和异常消息长度 | 10000 |
 [度量值](/documentation/articles/app-insights-api-custom-events-metrics#properties/)名称计数 | 100 |
-度量值名称长度 | 100 | 
+度量值名称长度 | 150 | 
 [可用性测试](/documentation/articles/app-insights-monitor-web-app-availability/) | 10 | 
 
 <sup>1</sup> 数据点是单个度量值或事件，具有附加的属性和度量。
@@ -27,4 +27,4 @@
  
 [关于 Application Insights 中的定价和配额](/documentation/articles/app-insights-pricing)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0905_2016-->

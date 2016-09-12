@@ -8,13 +8,13 @@
 资源管理器 API 读取次数|每小时 15000 次|每小时 15000 次
 资源管理器 API 写入次数|每小时 1200 次|每小时 1200 次
 资源管理器 API 请求大小|4194304 字节|4194304 字节
-每个订阅的[云服务数](/documentation/articles/fundamentals-application-models/)|已过时<sup>3</sup>|已过时<sup>3</sup>
-每个订阅的[地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet/)数|已过时<sup>3</sup>|已过时<sup>3</sup>
+每个订阅的[云服务数](/documentation/articles/cloud-services-choose-me/)|不适用<sup>3</sup>|不适用<sup>3</sup>
+每个订阅的[地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet/)数|不适用<sup>3</sup>|不适用<sup>3</sup>
 
 <sup>1</sup>默认限制根据产品类别类型（例如试用、即用即付，等等）而有所不同。
 
-<sup>2</sup>可以联系支持人员来提高限制。
+<sup>2</sup>这包括标准和高级存储帐户。如果需要的存储帐户超过 200 个，请通过 [Azure 支持](/support/faq/)提出请求。Azure 存储空间团队将评审你的业务案例，最多可以批准 250 个存储帐户。
 
 <sup>3</sup>使用 Azure 资源组和 Azure 资源管理器时不再需要这些功能。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0905_2016-->
