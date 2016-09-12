@@ -1,7 +1,7 @@
 
 <properties 
-   pageTitle="开始使用 Azure 经典门户在经典部署模型中创建面向 Internet 的负载平衡器 | Azure"
-   description="了解如何使用 Azure 经典门户在经典部署模型中创建面向 Internet 的负载平衡器"
+   pageTitle="开始使用 Azure 经典门户在经典部署模型中创建面向 Internet 的负载均衡器 | Azure"
+   description="了解如何使用 Azure 经典门户在经典部署模型中创建面向 Internet 的负载均衡器"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,18 +14,18 @@
    ms.date="03/17/2016"
    wacn.date="08/29/2016" />
 
-# 开始在 Azure 经典门户中创建面向 Internet 的负载平衡器（经典）
+# 开始在 Azure 经典门户中创建面向 Internet 的负载均衡器（经典）
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
->[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
 
-## 为虚拟机设置面向 Internet 的负载平衡器
+## 为虚拟机设置面向 Internet 的负载均衡器
 
 若要在云服务的虚拟机之间负载平衡来自 Internet 的网络流量，必须创建负载平衡集。此过程假定你已创建虚拟机，并且这些虚拟机全部位于同一云服务中。
 
@@ -43,8 +43,8 @@
 
 5.	选择“创建负载平衡集”，然后单击右箭头。
 
-6.	在“配置负载平衡集”页上，键入负载平衡集的名称，然后分配用于 Azure 负载平衡器的探测行为的值。
-负载平衡器使用探测来确定负载平衡集中的虚拟机是否可用于接收传入流量。
+6.	在“配置负载平衡集”页上，键入负载平衡集的名称，然后分配用于 Azure 负载均衡器的探测行为的值。
+负载均衡器使用探测来确定负载平衡集中的虚拟机是否可用于接收传入流量。
 
 7.	单击复选标记以创建负载平衡的终结点。你将在虚拟机的“终结点”页的“负载平衡集名称”列中看到“是”。
 
@@ -59,10 +59,10 @@
 
 ## 后续步骤
 
-[开始配置内部负载平衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
+[开始配置内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
 
-[配置负载平衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
+[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载平衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
 <!---HONumber=Mooncake_0822_2016-->

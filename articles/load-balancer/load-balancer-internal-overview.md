@@ -1,7 +1,7 @@
 
 <properties 
-   pageTitle="内部负载平衡器概述 | Azure"
-   description="内部负载平衡器及其功能的概述。Azure 的负载平衡器的工作原理，以及配置内部终结点的可能方案"
+   pageTitle="内部负载均衡器概述 | Azure"
+   description="内部负载均衡器及其功能的概述。Azure 的负载均衡器的工作原理，以及配置内部终结点的可能方案"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,13 +14,13 @@
 
 
 
-# 内部负载平衡器概述
+# 内部负载均衡器概述
 
-内部负载平衡器 (ILB) 是针对当前的面向 Internet 的负载平衡器（在 Azure 中提供）而实施的安全增强措施。只能通过云服务中的资源来访问 ILB，或者先通过 VPN 来访问 Azure 基础结构，然后再访问 ILB。
+内部负载均衡器 (ILB) 是针对当前的面向 Internet 的负载均衡器（在 Azure 中提供）而实施的安全增强措施。只能通过云服务中的资源来访问 ILB，或者先通过 VPN 来访问 Azure 基础结构，然后再访问 ILB。
 			
 该基础结构限制了可访问性，在云服务或虚拟网络的经过负载平衡的虚拟 IP 地址之间创建信任边界，不会直接公开给 Internet 终结点。这样就可以让内部业务线应用程序在 Azure 中运行，只能在云中或本地进行访问。
 
-## 内部负载平衡器方案
+## 内部负载均衡器方案
 
 可以在许多新的配置中使用 ILB，具体包括：
 
@@ -37,13 +37,13 @@ ILB 允许进行下述全新类型的负载平衡：
 现有的 Azure 负载平衡仅在基于 Internet 的计算机与云服务中的虚拟机之间进行负载平衡。可通过 ILB 启用在 Azure 中托管虚拟机的新功能。
 
 - 面向 Internet 的多层应用程序，其中的后端层不面向 Internet，但需要针对面向 Internet 的层发出的流量进行负载平衡。
-- 使托管在 Azure 中的业务线 (LOB) 应用程序实现负载平衡，而无需额外的负载平衡器硬件或软件。将本地服务器包含在一组流量已实现负载平衡的计算机中。
+- 使托管在 Azure 中的业务线 (LOB) 应用程序实现负载平衡，而无需额外的负载均衡器硬件或软件。将本地服务器包含在一组流量已实现负载平衡的计算机中。
 - 以下部分更详细说明了这些配置。
 
 ## 面向 Internet 的多层应用程序
 
 
-Web 层包含 Internet 客户端的面向 Internet 的终结点，是负载平衡集的一部分。负载平衡器将来自 TCP 端口 443 (HTTPS) 的 Web 客户端的传入流量分发到 Web 服务器。
+Web 层包含 Internet 客户端的面向 Internet 的终结点，是负载平衡集的一部分。负载均衡器将来自 TCP 端口 443 (HTTPS) 的 Web 客户端的传入流量分发到 Web 服务器。
 
 数据库服务器位于 ILB 终结点之后，Web 服务器使用该终结点进行存储。此数据库服务对终结点进行了负载平衡，该终结点的流量跨 ILB 集中的数据库服务器进行负载平衡。
 
@@ -80,13 +80,13 @@ LOB 的另一方案是通过站点到站点 VPN 连接到在其中配置了 ILB 
 
 ## 后续步骤
 
-[开始配置面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
+[开始配置面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
 
-[开始配置内部负载平衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
+[开始配置内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
 
-[配置负载平衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
+[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载平衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
  
 

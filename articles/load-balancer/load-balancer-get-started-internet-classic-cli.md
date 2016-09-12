@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="开始使用 Azure CLI 在经典部署模型中创建面向 Internet 的负载平衡器 | Azure"
-   description="了解如何使用 Azure CLI 在经典部署模型中创建面向 Internet 的负载平衡器"
+   pageTitle="开始使用 Azure CLI 在经典部署模型中创建面向 Internet 的负载均衡器 | Azure"
+   description="了解如何使用 Azure CLI 在经典部署模型中创建面向 Internet 的负载均衡器"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,20 +14,20 @@
    wacn.date="08/29/2016" />  
 
 
-# 开始在 Azure CLI 中创建面向 Internet 的负载平衡器（经典）
+# 开始在 Azure CLI 中创建面向 Internet 的负载均衡器（经典）
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
->[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
 
-## 使用 CLI 逐步创建面向 Internet 的负载平衡器
+## 使用 CLI 逐步创建面向 Internet 的负载均衡器
 
-本指南演示如何基于上述方案创建 Internet 负载平衡器。
+本指南演示如何基于上述方案创建 Internet 负载均衡器。
 
 1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 
@@ -40,15 +40,15 @@
 		info:    New mode is asm
 
 
-## 创建终结点和负载平衡器集 
+## 创建终结点和负载均衡器集 
 
-此方案假定已创建虚拟机“web1”和“web2”。本指南将使用端口 80 作为公用端口和本地端口创建负载平衡器集。
-还将在端口 80 上配置探测端口，并将负载平衡器集命名为“lbset”。
+此方案假定已创建虚拟机“web1”和“web2”。本指南将使用端口 80 作为公用端口和本地端口创建负载均衡器集。
+还将在端口 80 上配置探测端口，并将负载均衡器集命名为“lbset”。
 
 
 ### 步骤 1 
 
-使用 `azure network vm endpoint create` 为虚拟机“web1”创建第一个终结点和负载平衡器集。
+使用 `azure network vm endpoint create` 为虚拟机“web1”创建第一个终结点和负载均衡器集。
 
 	azure vm endpoint create web1 80 -k 80 -o tcp -t 80 -b lbset 
 
@@ -57,17 +57,17 @@
 **-k** - 本地虚拟机端口<br> 
 **-o** - 协议<BR> 
 **-t** - 探测端口<BR> 
-**-b** - 负载平衡器名称<BR>
+**-b** - 负载均衡器名称<BR>
  
 ## 步骤 2 
 
-将第二个虚拟机“web2”添加到负载平衡器集。
+将第二个虚拟机“web2”添加到负载均衡器集。
 
 	azure vm endpoint create web2 80 -k 80 -o tcp -t 80 -b lbset
 
 ## 步骤 3 
 
-使用 `azure vm show` 验证负载平衡器配置。
+使用 `azure vm show` 验证负载均衡器配置。
 
 	azure vm show web1
 
@@ -122,11 +122,11 @@
 	azure vm endpoint create web1 54580 -k 3389 
 
 
-## 从负载平衡器中删除虚拟机
+## 从负载均衡器中删除虚拟机
 
-你必须从虚拟机中删除关联到负载平衡器集的终结点。删除终结点后，虚拟机将不再属于该负载平衡器集。
+你必须从虚拟机中删除关联到负载均衡器集的终结点。删除终结点后，虚拟机将不再属于该负载均衡器集。
 
- 使用上面的示例，你可以使用命令 `azure vm endpoint delete` 从负载平衡器“lbset”中删除为虚拟机“web1”创建的终结点。
+ 使用上面的示例，你可以使用命令 `azure vm endpoint delete` 从负载均衡器“lbset”中删除为虚拟机“web1”创建的终结点。
 
 	azure vm endpoint delete web1 tcp-80-80
 
@@ -136,11 +136,11 @@
 
 ## 后续步骤
 
-[开始配置内部负载平衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
+[开始配置内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
 
-[配置负载平衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
+[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载平衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
  
 

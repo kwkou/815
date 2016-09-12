@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="在经典部署模型中为云服务创建内部负载平衡器 | Azure"
-   description="了解如何在经典部署模型中使用 PowerShell 创建内部负载平衡器"
+   pageTitle="在经典部署模型中为云服务创建内部负载均衡器 | Azure"
+   description="了解如何在经典部署模型中使用 PowerShell 创建内部负载均衡器"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -13,7 +13,7 @@
    ms.date="02/09/2016"
    wacn.date="08/29/2016" />
 
-# 开始为云服务创建内部负载平衡器（经典）
+# 开始为云服务创建内部负载均衡器（经典）
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-classic-selectors-include.md](../../includes/load-balancer-get-started-ilb-classic-selectors-include.md)]
 
@@ -22,11 +22,11 @@
 >[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。了解如何[使用 Resource Manager 模型执行这些步骤](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)。
 
 
-## 为云服务配置内部负载平衡器
+## 为云服务配置内部负载均衡器
 
-虚拟机和云服务都支持内部负载平衡器。在区域虚拟网络外部的云服务中创建的内部负载平衡器终结点将只能在该云服务中进行访问。
+虚拟机和云服务都支持内部负载均衡器。在区域虚拟网络外部的云服务中创建的内部负载均衡器终结点将只能在该云服务中进行访问。
 
-在云服务中创建第一个部署期间必须设置内部负载平衡器配置，如下面的示例中所示。
+在云服务中创建第一个部署期间必须设置内部负载均衡器配置，如下面的示例中所示。
 
 >[AZURE.IMPORTANT] 运行以下步骤的先决条件是已为云部署创建虚拟网络。你需要虚拟网络名称和子网名称，以便创建内部负载平衡。
 
@@ -46,7 +46,7 @@
 	</NetworkConfiguration>
 
 
-让我们为网络配置文件添加值，以便显示其外观。在此示例中，假定你创建了一个名为“test\_vnet”的子网，其中包含一个名为 test\_subnet 的子网 10.0.0.0/24 并具有静态 IP 10.0.0.4。负载平衡器将名为 testLB。
+让我们为网络配置文件添加值，以便显示其外观。在此示例中，假定你创建了一个名为“test\_vnet”的子网，其中包含一个名为 test\_subnet 的子网 10.0.0.0/24 并具有静态 IP 10.0.0.4。负载均衡器将名为 testLB。
 
 	<NetworkConfiguration>
 	  <LoadBalancers>
@@ -56,7 +56,7 @@
 	  </LoadBalancers>
 	</NetworkConfiguration>
 
-有关负载平衡器架构的详细信息，请参阅[添加负载平衡器](https://msdn.microsoft.com/zh-cn/library/azure/dn722411.aspx)。
+有关负载均衡器架构的详细信息，请参阅[添加负载均衡器](https://msdn.microsoft.com/zh-cn/library/azure/dn722411.aspx)。
 
 ### 步骤 2
 
@@ -78,13 +78,13 @@
 	  </Endpoints>
 	</WorkerRole>
 
-将使用 testLB 负载平衡器对网络流量进行负载平衡，将端口 80 用于传入请求，也在端口 80 上发送到辅助角色实例。
+将使用 testLB 负载均衡器对网络流量进行负载平衡，将端口 80 用于传入请求，也在端口 80 上发送到辅助角色实例。
 
 
 ## 后续步骤
 
-[使用源 IP 关联配置负载平衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
+[使用源 IP 关联配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载平衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
 <!---HONumber=Mooncake_0822_2016-->

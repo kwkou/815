@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="为 SQL AlwaysOn 配置负载平衡器 | Azure"
-   description="介绍如何将负载平衡器配置为与 SQL AlwaysOn 配合工作，以及如何利用 powershell 为 SQL 实现创建负载平衡器"
+   pageTitle="为 SQL AlwaysOn 配置负载均衡器 | Azure"
+   description="介绍如何将负载均衡器配置为与 SQL AlwaysOn 配合工作，以及如何利用 powershell 为 SQL 实现创建负载均衡器"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -11,11 +11,11 @@
    ms.date="03/17/2016"
    wacn.date="08/29/2016" />
 
-# 为 SQL AlwaysOn 配置负载平衡器
+# 为 SQL AlwaysOn 配置负载均衡器
 
 SQL Server AlwaysOn 可用性组现在可与 ILB 配合运行。可用性组是 SQL Server 用于实现高可用性和灾难恢复的旗舰解决方案。无论配置中的副本数目是多少，可用性组侦听器都可让客户端应用程序无缝连接到主副本。
 
-侦听器 (DNS) 名称将映射到负载平衡的 IP 地址，Azure 的负载平衡器只会将传入流量定向到副本集中的主服务器。
+侦听器 (DNS) 名称将映射到负载平衡的 IP 地址，Azure 的负载均衡器只会将传入流量定向到副本集中的主服务器。
 
 
 你可以使用 SQL Server AlwaysOn（侦听器）终结点的 ILB 支持。现在，你可以控制侦听器的可访问性，并可以从虚拟网络 (VNet) 中的特定子网内选择负载平衡的 IP 地址。
@@ -28,10 +28,10 @@ SQL Server AlwaysOn 可用性组现在可与 ILB 配合运行。可用性组是 
 
 
 
-只能通过 PowerShell 配置内部负载平衡器。
+只能通过 PowerShell 配置内部负载均衡器。
 
 
-## 将内部负载平衡器添加到服务 
+## 将内部负载均衡器添加到服务 
 
 ### 步骤 1
 
@@ -56,13 +56,13 @@ SQL Server AlwaysOn 可用性组现在可与 ILB 配合运行。可用性组是 
 
 ## 另请参阅
 
-[Get started configuring an Internet facing load balancer](/documentation/articles/load-balancer-get-started-internet-arm-ps/)（开始配置面向 Internet 的负载平衡器）
+[Get started configuring an Internet facing load balancer](/documentation/articles/load-balancer-get-started-internet-arm-ps/)（开始配置面向 Internet 的负载均衡器）
 
-[Get started configuring an Internal load balancer](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)（开始配置内部负载平衡器）
+[Get started configuring an Internal load balancer](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)（开始配置内部负载均衡器）
 
-[Configure a Load balancer distribution mode](/documentation/articles/load-balancer-distribution-mode/)（配置负载平衡器分发模式）
+[Configure a Load balancer distribution mode](/documentation/articles/load-balancer-distribution-mode/)（配置负载均衡器分发模式）
 
-[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout/)（为负载平衡器配置空闲 TCP 超时设置）
+[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout/)（为负载均衡器配置空闲 TCP 超时设置）
  
 
 <!---HONumber=Mooncake_0822_2016-->
