@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="配置负载平衡器分发模式 | Azure"
+   pageTitle="配置负载均衡器分发模式 | Azure"
    description="如何配置 Azure Load Balancer 分发模式以支持源 IP 关联"
    services="load-balancer"
    documentationCenter="na"
@@ -12,11 +12,11 @@
    wacn.date="08/29/2016" />
 
 
-# 负载平衡器的分发模式（源 IP 关联）
+# 负载均衡器的分发模式（源 IP 关联）
 
 我们推出了名为“源 IP 关联”（也称为会话关联或客户端 IP 关联）的新分发模式。可将 Azure Load Balancer 配置为使用 2 个元组（源 IP、目标 IP）或 3 个元组（源 IP、目标 IP、协议），以将流量映射到可用的服务器。通过使用源 IP 关联，从同一客户端计算机发起的连接将进入同一个 DIP 终结点。
 
-![基于哈希的负载平衡器](./media/load-balancer-distribution-mode/load-balancer-session-affinity.png)
+![基于哈希的负载均衡器](./media/load-balancer-distribution-mode/load-balancer-session-affinity.png)
 
 源 IP 关联解决了 Azure Load Balancer 与 RD 网关之间的不兼容性。现在，你可以在单个云服务中构建 RD 网关场。
 另一种使用方案是媒体上载。媒体上载通过 UDP 进行实际数据上载，但可通过 TCP 实现控制面：
@@ -28,21 +28,21 @@
 
 使用的分发算法是将流量映射到可用服务器的 5 元组（源 IP、源端口、目标 IP、目标端口和协议类型）哈希。它仅在传输会话内部提供粘性。同一 TCP 或 UDP 会话中的数据包将会定向到经过负载平衡的终结点后面的同一数据中心 IP (DIP) 实例。当客户端关闭连接后再重新将其打开，或者从同一源 IP 发起新会话时，源端口将会变化，并且会导致流量定向到不同的 DIP 终结点。
 
-![基于哈希的负载平衡器](./media/load-balancer-distribution-mode/load-balancer-distribution.png)
+![基于哈希的负载均衡器](./media/load-balancer-distribution-mode/load-balancer-distribution.png)
 
 
-## 配置负载平衡器的源 IP 关联设置
+## 配置负载均衡器的源 IP 关联设置
  
 对于虚拟机，可以使用 powershell 来更改超时设置：
  
-将 Azure 终结点添加到虚拟机并设置负载平衡器分发模式
+将 Azure 终结点添加到虚拟机并设置负载均衡器分发模式
 
 	Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM
 
 >[AZURE.NOTE] LoadBalancerDistribution 可以设置为 sourceIP（用于 2 元组（源 IP、目标 IP）负载平衡）、sourceIPProtocol（用于 3 元组（源 IP、目标 IP、协议）负载平衡）或 none（如果想要使用 5 元组负载平衡的默认行为）。
 
 
-检索终结点负载平衡器分发模式配置
+检索终结点负载均衡器分发模式配置
 
 	PS C:\> Get-AzureVM –ServiceName MyService –Name MyVM | Get-AzureEndpoint
 
@@ -76,7 +76,7 @@
 ### 用于更改分发模式的云服务配置
 
 可以利用用于 .NET 的 Azure SDK 2.5（将在 11 月发布）来更新你在 .csdef 中为云服务指定的云服务终结点设置。
-若要更新云服务部署的负载平衡器分发模式，需要进行部署升级。
+若要更新云服务部署的负载均衡器分发模式，需要进行部署升级。
 下面是终结点设置的 .csdef 更改的示例：
 
 	<WorkerRole name="worker-role-name" vmsize="worker-role-size" enableNativeCodeExecution="[true|false]">
@@ -98,7 +98,7 @@
 
 ## API 示例
 
-可以使用服务管理 API 来配置负载平衡器分发。
+可以使用服务管理 API 来配置负载均衡器分发。
 请确保 `x-ms-version` 标头已设置为 `2014-09-01` 或更高版本。
  
 更新部署中指定的负载平衡集配置
@@ -143,10 +143,10 @@ LoadBalancerDistribution 的值可以是 sourceIP（用于 2 元组关联）、s
 
 ## 后续步骤
 
-[Internal load balancer overview](/documentation/articles/load-balancer-internal-overview/)（内部负载平衡器概述）
+[Internal load balancer overview](/documentation/articles/load-balancer-internal-overview/)（内部负载均衡器概述）
 
-[Get started Configuring an Internet facing load balancer](/documentation/articles/load-balancer-get-started-internet-arm-ps/)（开始配置面向 Internet 的负载平衡器）
+[Get started Configuring an Internet facing load balancer](/documentation/articles/load-balancer-get-started-internet-arm-ps/)（开始配置面向 Internet 的负载均衡器）
 
-[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout/)（为负载平衡器配置空闲 TCP 超时设置）
+[Configure idle TCP timeout settings for your load balancer](/documentation/articles/load-balancer-tcp-idle-timeout/)（为负载均衡器配置空闲 TCP 超时设置）
 
 <!---HONumber=Mooncake_0822_2016-->

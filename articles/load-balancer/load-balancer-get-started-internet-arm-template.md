@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="使用模板在 Resource Manager 中创建面向 Internet 的负载平衡器 | Azure"
-   description="了解如何使用 ARM 模板在 Resource Manager 中创建面向 Internet 的负载平衡器"
+   pageTitle="使用模板在 Resource Manager 中创建面向 Internet 的负载均衡器 | Azure"
+   description="了解如何使用 ARM 模板在 Resource Manager 中创建面向 Internet 的负载均衡器"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -13,13 +13,13 @@
    ms.date="02/09/2016"
    wacn.date="08/29/2016" />
 
-# 开始使用 ARM 模板创建面向 Internet 的负载平衡器
+# 开始使用 ARM 模板创建面向 Internet 的负载均衡器
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
->[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍资源管理器部署模型。你还可以[了解如何使用经典部署模型创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍资源管理器部署模型。你还可以[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
 
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
@@ -63,16 +63,16 @@
 4. 从浏览器导航到
  [TemplateParameterFile](https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.parameters.json)复制 json 文件内容并粘贴到计算机中的一个新文件。对于此方案，将下面的值复制到名为 **c:\\lb\\azuredeploy.parameters.json** 的文件，并将其中的 **GEN-UNIQUE** 修改为需要设定的值。
 
-4. 运行 **azure group deployment create** cmdlet 以使用你在前面下载并修改的模板和参数文件部署新的负载平衡器。在输出后显示的列表说明了所用的参数。
+4. 运行 **azure group deployment create** cmdlet 以使用你在前面下载并修改的模板和参数文件部署新的负载均衡器。在输出后显示的列表说明了所用的参数。
 
 		azure group create -n TestRG -l chinaeast -f 'c:\lb\azuredeploy.json' -e 'c:\lb\azuredeploy.parameters.json'
 
 ## 后续步骤
 
-[开始配置内部负载平衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
+[开始配置内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
 
-[配置负载平衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
+[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载平衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
 <!---HONumber=Mooncake_0822_2016-->

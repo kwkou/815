@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="在经典部署模型中使用 PowerShell 创建内部负载平衡器 | Azure"
-   description="了解如何在经典部署模型中使用 PowerShell 创建内部负载平衡器"
+   pageTitle="在经典部署模型中使用 PowerShell 创建内部负载均衡器 | Azure"
+   description="了解如何在经典部署模型中使用 PowerShell 创建内部负载均衡器"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -13,7 +13,7 @@
    ms.date="02/09/2016"
    wacn.date="08/29/2016" />
 
-# 开始使用 PowerShell 创建内部负载平衡器（经典）
+# 开始使用 PowerShell 创建内部负载均衡器（经典）
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-classic-selectors-include.md](../../includes/load-balancer-get-started-ilb-classic-selectors-include.md)]
 
@@ -27,9 +27,9 @@
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 
-## 为虚拟机创建内部负载平衡器集
+## 为虚拟机创建内部负载均衡器集
 
-若要创建内部负载平衡器集和要将其流量发送到的服务器，必须执行以下操作：
+若要创建内部负载均衡器集和要将其流量发送到的服务器，必须执行以下操作：
 
 1. 创建内部负载平衡实例，该实例将是要在负载平衡集的服务器上进行负载平衡的传入流量的终结点。
 
@@ -86,7 +86,7 @@
 
 通过显示 Get-AzureInternalLoadBalancer 命令，请记下 IP 地址，并对服务器或 DNS 记录进行必要的更改，以确保将流量发送到 VIP。
 
->[AZURE.NOTE] Azure Platform 对各种管理方案使用一个公开可路由的静态 IPv4 地址。该 IP 地址为 168.63.129.16。此 IP 地址不应被任何防火墙阻止，因为这会导致意外行为。对于 Azure 内部负载平衡，此 IP 地址用于监视负载平衡器中的探测器，以确定负载平衡集中虚拟机的运行状况状态。如果网络安全组用于将流量限制到内部负载平衡集中的 Azure 虚拟机或应用于虚拟网络子网，请确保添加网络安全规则以允许来自 168.63.129.16 的流量。
+>[AZURE.NOTE] Azure Platform 对各种管理方案使用一个公开可路由的静态 IPv4 地址。该 IP 地址为 168.63.129.16。此 IP 地址不应被任何防火墙阻止，因为这会导致意外行为。对于 Azure 内部负载平衡，此 IP 地址用于监视负载均衡器中的探测器，以确定负载平衡集中虚拟机的运行状况状态。如果网络安全组用于将流量限制到内部负载平衡集中的 Azure 虚拟机或应用于虚拟网络子网，请确保添加网络安全规则以允许来自 168.63.129.16 的流量。
 
 
 ## 内部负载平衡的示例
@@ -106,7 +106,7 @@
 
 - 两个现有的数据库服务器分别名为 DB1、DB2。
 
-- Web 层中的 Web 服务器使用专用 IP 地址连接到数据库层中的数据库服务器。另一个选择是对虚拟网络使用你自己的 DNS，并手动为内部负载平衡器集注册 A 记录。
+- Web 层中的 Web 服务器使用专用 IP 地址连接到数据库层中的数据库服务器。另一个选择是对虚拟网络使用你自己的 DNS，并手动为内部负载均衡器集注册 A 记录。
 
 以下命令将配置名为 **ILBset** 的新内部负载平衡实例，并向对应于两个数据库服务器的虚拟机添加终结点：
 
@@ -128,7 +128,7 @@
 
 ## 删除内部负载平衡配置
 
-若要从内部负载平衡器实例删除作为终结点的虚拟机，请使用以下命令：
+若要从内部负载均衡器实例删除作为终结点的虚拟机，请使用以下命令：
 
 	$svc="<Cloud service name>"
 	$vmname="<Name of the VM>"
@@ -144,7 +144,7 @@
 	$epname="TCP-1433-1433"
 	Get-AzureVM -ServiceName $svc -Name $vmname | Remove-AzureEndpoint -Name $epname | Update-AzureVM
 
-若要从云服务中删除内部负载平衡器实例，请使用以下命令：
+若要从云服务中删除内部负载均衡器实例，请使用以下命令：
 
 	$svc="<Cloud service name>"
 	Remove-AzureInternalLoadBalancer -ServiceName $svc
@@ -158,7 +158,7 @@
 
 
 
-## 有关内部负载平衡器 cmdlet 的其他信息
+## 有关内部负载均衡器 cmdlet 的其他信息
 
 
 若要获取有关内部负载平衡 cmdlet 的其他信息，请在 Windows PowerShell 提示符处运行以下命令：
@@ -173,8 +173,8 @@
 
 ## 后续步骤
 
-[使用源 IP 关联配置负载平衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
+[使用源 IP 关联配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载平衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
 <!---HONumber=Mooncake_0822_2016-->

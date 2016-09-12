@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="配置负载平衡器的 TCP 空闲超时 | Azure"
-   description="配置负载平衡器的 TCP 空闲超时"
+   pageTitle="配置负载均衡器的 TCP 空闲超时 | Azure"
+   description="配置负载均衡器的 TCP 空闲超时"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -12,7 +12,7 @@
    wacn.date="08/29/2016" />
 
 
-# 如何更改负载平衡器的 TCP 空闲超时设置
+# 如何更改负载均衡器的 TCP 空闲超时设置
 
 在默认配置中，Azure Load Balancer 的“空闲超时”设置为 4 分钟。
 
@@ -156,11 +156,11 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
 ## 后续步骤
 
-[内部负载平衡器概述](/documentation/articles/load-balancer-internal-overview/)
+[内部负载均衡器概述](/documentation/articles/load-balancer-internal-overview/)
 
-[开始配置面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
+[开始配置面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
 
-[配置负载平衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
+[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
  
 
