@@ -29,9 +29,6 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 > [AZURE.NOTE]
 许多 Azure Active Directory 功能以“即付即用”版本的形式提供：
->
->- Active Directory B2C 是适用于面向消费者应用程序的标识和访问管理解决方案。有关详细信息，请参阅 [Azure Active Directory B2C](/documentation/services/active-directory-b2c/)
-> 可以通过基于用户或基于身份验证的提供程序使用 Azure Multi-Factor Authentication。有关详细信息，请参阅[什么是 Azure Multi-Factor Authentication？](/documentation/articles/multi-factor-authentication/)
 
 
 ##比较正式推出的功能

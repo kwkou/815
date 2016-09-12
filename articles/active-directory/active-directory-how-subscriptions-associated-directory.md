@@ -117,7 +117,6 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 ## 后续步骤
 
-- 若要了解有关如何更改 Azure 订阅管理员的详细信息，请参阅[如何添加或更改 Azure 管理员角色](/documentation/articles/billing-add-change-azure-subscription-administrator/)
 
 - 若要了解有关如何在 Azure 中控制资源访问的详细信息，请参阅[了解 Azure 中的资源访问权限](/documentation/articles/active-directory-understanding-resource-access/)
 

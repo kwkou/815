@@ -16,7 +16,7 @@
 
 # 使用 Azure Active Directory 组管理对资源的访问
 
-Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。本文提供了概述，但如果你要立即开始使用 Azure AD 组，请遵循 [Managing security groups in Azure AD](/documentation/articles/active-directory-accessmanagement-manage-groups/)（在 Azure AD 中管理安全组）中的说明。如果你想要了解如何使用 PowerShell 来管理 Azure Active directory 中的组，则可以在 [Azure Active Directory preview cmdlets for group management](/documentation/articles/active-directory-accessmanagement-groups-settings-v2-cmdlets/)（用于管理组的 Azure Active Directory 预览版 cmdlet）中阅读更多信息。
+Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。
 
 
 > [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册试用的 Azure 帐户](/pricing/1rmb-trial/)。
@@ -27,15 +27,15 @@ Azure AD 的主要功能之一是管理对资源的访问。这些资源可以�
 
 1.直接分配
 
-	资源的所有者可以直接向用户分配对该资源的访问权限。
+资源的所有者可以直接向用户分配对该资源的访问权限。
 
 2.组成员身份
 
-	资源所有者可以向组分配资源访问权限，这会向该组的成员授予资源访问权限。然后，组的所有者可以管理该组的成员身份。实际上，资源所有者是将其资源的用户访问权限委派给了组的所有者。
+资源所有者可以向组分配资源访问权限，这会向该组的成员授予资源访问权限。然后，组的所有者可以管理该组的成员身份。实际上，资源所有者是将其资源的用户访问权限委派给了组的所有者。
 
 3.基于规则
 
-	资源所有者可以使用规则来表明应向哪些用户分配资源访问权限。规则的结果取决于规则中使用的属性，以及针对特定用户的值。通过这种方式，资源所有者实际上是根据规则中所用的属性，将其资源的管理访问权限委派给了权威来源。资源所有者仍可管理规则本身，并确定哪些属性与值提供其资源的访问权限。
+资源所有者可以使用规则来表明应向哪些用户分配资源访问权限。规则的结果取决于规则中使用的属性，以及针对特定用户的值。通过这种方式，资源所有者实际上是根据规则中所用的属性，将其资源的管理访问权限委派给了权威来源。资源所有者仍可管理规则本身，并确定哪些属性与值提供其资源的访问权限。
 
 4.外部机构
 
@@ -44,9 +44,6 @@ Azure AD 的主要功能之一是管理对资源的访问。这些资源可以�
   ![访问管理示意图概览](./media/active-directory-access-management-groups/access-management-overview.png)
 
 
-## 观看演示访问管理的视频
-
-观看一段详细演示访问管理的简短视频：
 
 
 ## 访问管理在 Azure Active Directory 中如何工作？
