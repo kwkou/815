@@ -8,8 +8,7 @@
     editor="tysonn"/>
 <tags 
     ms.service="storage"
-   
-    ms.date="07/24/2016"
+	ms.date="07/24/2016"
     wacn.date="09/05/2016"/>
 
 # 使用 C++ 列出 Azure 存储资源
