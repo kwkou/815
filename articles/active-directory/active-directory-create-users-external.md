@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/21/2016"
-	wacn.date="08/22/2016"/>
+	ms.date="08/02/2016"
+	wacn.date="09/05/2016"/>
 
 # 在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户
 
-请添加用户以填充你的目录。本文介绍了如何从 Azure Active Directory 中的其他目录添加用户或添加合作伙伴公司中的用户。有关添加你组织中的新用户和添加具有 Microsoft 帐户的用户的信息，请参阅[将新用户添加到 Azure Active Directory](/documentation/articles/active-directory-create-users/)。默认情况下，添加的用户没有管理员权限，但你随时可以向他们分配角色。
+本文介绍了如何从 Azure Active Directory 中的其他目录添加用户或添加合作伙伴公司中的用户。有关添加你组织中的新用户和添加具有 Microsoft 帐户的用户的信息，请参阅[将新用户添加到 Azure Active Directory](/documentation/articles/active-directory-create-users/)。默认情况下，添加的用户没有管理员权限，但你随时可以向他们分配角色。
 
 ## 添加用户
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 订阅与 Azure AD 的关联方式 | Azure"
+	pageTitle="Azure 订阅与 Azure Active Directory 的关联方式 | Azure"
 	description="登录 Microsoft Azure 及相关问题（例如，Azure 订阅与 Azure Active Directory 之间的关系）。"
 	services="active-directory"
 	documentationCenter=""
@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="04/26/2016"
-	wacn.date="06/21/2016"/>
+	ms.date="08/15/2016"
+	wacn.date="09/05/2016"/>
 
 # Azure 订阅与 Azure Active Directory 的关联方式
 
-本主题介绍有关登录 Microsoft Azure 及相关问题（例如，Azure 订阅与 Azure Active Directory (Azure AD) 之间的关系）的信息。
+本主题介绍有关登录 Azure 及相关问题（例如，Azure 订阅与 Azure Active Directory (Azure AD) 之间的关系）的信息。
 
 ## 可用于登录的帐户
 首先，让我们了解可用于登录的帐户。有两种类型的帐户：Microsoft 帐户（以前称为 Microsoft Live ID）和工作或学校帐户，后一种类型的帐户存储在 Azure AD 中。
@@ -43,7 +43,7 @@ Microsoft 运行的使用者标识系统 | Microsoft 运行的企业标识系统
 
 订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（网站、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将被终止。但是，目录将保留在 Azure 中，并且你可以将另一个订阅与该目录相关联，然后继续管理目录用户。
 
-同样，订阅中显示的 Azure AD 扩展将不会像 Azure 经典管理门户中的其他扩展那样工作。Azure 经典管理门户中的其他扩展将划归到 Azure 订阅范围内。Azure AD 扩展中显示的内容不会根据订阅的不同而异 — 它只会根据登录用户显示目录。
+同样，订阅中显示的 Azure AD 扩展将不会像 Azure 经典管理门户中的其他扩展那样工作。Azure 经典管理门户中的其他扩展将划归到 Azure 订阅范围内。Azure AD 扩展中显示的内容不会因订阅而异 — 它只会根据登录用户显示目录。
 
 所有用户都只有一个用于验证其身份的主目录，但他们也可以是其他目录中的来宾。在 Azure AD 扩展中，你将会看到你的用户帐户所属的每个目录。你的帐户不是其成员的任何目录都不会显示。目录可以为 Azure AD 中的工作或学校帐户或者为 Microsoft 帐户用户颁发令牌（因为 Azure AD 已与 Microsoft 帐户系统联合）。
 
@@ -60,7 +60,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 与订阅管理员一样，Azure AD 管理角色可以是 Microsoft 帐户，也可以是工作或学校帐户。Office 365 和 Microsoft Intune 等其他服务也会使用 Azure AD 管理角色。有关详细信息，请参阅[分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。
 
-必须注意，Azure 订阅管理员和 Azure AD 目录管理员是两个不同的概念。Azure 订阅管理员可以管理 Azure 中的资源，还可以在 Azure 经典管理门户中查看 Active Directory 扩展（因为 Azure 经典管理门户是一种 Azure 资源）。Directory 管理员可以管理目录中的属性。
+但必须注意，Azure 订阅管理员和 Azure AD 目录管理员是两个不同的概念。Azure 订阅管理员可以管理 Azure 中的资源，还可以在 Azure 经典管理门户中查看 Active Directory 扩展（因为 Azure 经典管理门户是一种 Azure 资源）。Directory 管理员可以管理目录中的属性。
 
 一个人可以充当两种角色，但是没有这个必要。可将某个用户分配到目录全局管理员角色，但不能将其分配为 Azure 订阅的服务管理员或协同管理员。如果不是订阅的管理员，此用户将无法登录到 Azure 经典管理门户。但是，该用户可以使用其他工具（例如 Azure AD PowerShell 或 Office 365 管理中心）执行目录管理任务。
 
@@ -116,10 +116,18 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 
 ## 后续步骤
-[以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
+
+- 若要了解有关如何更改 Azure 订阅管理员的详细信息，请参阅[如何添加或更改 Azure 管理员角色](/documentation/articles/billing-add-change-azure-subscription-administrator/)
+
+- 若要了解有关如何在 Azure 中控制资源访问的详细信息，请参阅[了解 Azure 中的资源访问权限](/documentation/articles/active-directory-understanding-resource-access/)
+
+- 有关如何在 Azure AD 中分配角色的详细信息，请参阅[在 Azure Active Directory 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)
+
+- [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
 
 
 <!--Image references-->
+
 [1]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_PassThruAuth.png
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG

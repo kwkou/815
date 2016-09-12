@@ -4,18 +4,19 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="curtand"
-	manager="stevenpo"
-	editor=""/>
+	manager="femila"
+	editor=""
+/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="06/14/2016"
-	wacn.date="07/26/2016" />
+	ms.date="08/10/2016"
+	wacn.date="09/05/2016" />
 
 
 # 使用 Azure Active Directory 组管理对资源的访问
 
-Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。
+Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。本文提供了概述，但如果你要立即开始使用 Azure AD 组，请遵循 [Managing security groups in Azure AD](/documentation/articles/active-directory-accessmanagement-manage-groups/)（在 Azure AD 中管理安全组）中的说明。如果你想要了解如何使用 PowerShell 来管理 Azure Active directory 中的组，则可以在 [Azure Active Directory preview cmdlets for group management](/documentation/articles/active-directory-accessmanagement-groups-settings-v2-cmdlets/)（用于管理组的 Azure Active Directory 预览版 cmdlet）中阅读更多信息。
 
 
 > [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册试用的 Azure 帐户](/pricing/1rmb-trial/)。
