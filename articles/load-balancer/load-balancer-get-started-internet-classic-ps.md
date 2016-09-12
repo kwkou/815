@@ -35,11 +35,11 @@
 
 2. 创建虚拟机后，可以使用 PowerShell cmdlet 将负载均衡器添加到同一云服务中的虚拟机。
 
-在下面的示例中，你会将名为“webfarm”的负载均衡器集添加到云服务“mytestcloud”（或 myctestcloud.chinacloudapp.cn），将负载均衡器的终结点添加到名为“web1”和“web2”的虚拟机。负载均衡器在端口 80 上接收网络流量，并在由本地终结点（在此示例中为端口 80）定义的虚拟机之间使用 TCP 进行负载平衡。
+在下面的示例中，你会将名为“webfarm”的负载均衡器集添加到云服务“mytestcloud”（或 myctestcloud.chinacloudapp.cn），将负载均衡器的终结点添加到名为“web1”和“web2”的虚拟机。负载均衡器在端口 80 上接收网络流量，并在由本地终结点（在此示例中为端口 80）定义的虚拟机之间使用 TCP 进行负载均衡。
 
 
 ### 步骤 1
-为第一个 VM“web1”创建负载平衡终结点
+为第一个 VM“web1”创建负载均衡终结点
 
 	Get-AzureVM -ServiceName "mytestcloud" -Name "web1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 80 -LBSetName "WebFarm" -ProbePort 80 -ProbeProtocol "http" -ProbePath '/' | Update-AzureVM
 

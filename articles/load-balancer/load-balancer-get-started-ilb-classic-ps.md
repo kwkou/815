@@ -31,16 +31,16 @@
 
 若要创建内部负载均衡器集和要将其流量发送到的服务器，必须执行以下操作：
 
-1. 创建内部负载平衡实例，该实例将是要在负载平衡集的服务器上进行负载平衡的传入流量的终结点。
+1. 创建内部负载均衡实例，该实例将是要在负载均衡集的服务器上进行负载均衡的传入流量的终结点。
 
 1. 添加与虚拟机对应的终结点以接收传入流量。
 
-1. 配置将发送要进行负载平衡的流量的服务器，以将其流量发送到内部负载平衡实例的虚拟 IP (VIP) 地址。
+1. 配置将发送要进行负载均衡的流量的服务器，以将其流量发送到内部负载均衡实例的虚拟 IP (VIP) 地址。
 
 
-### 步骤 1：创建内部负载平衡实例
+### 步骤 1：创建内部负载均衡实例
 
-对于现有的云服务或在区域虚拟网络下部署的云服务，可以使用以下 Windows PowerShell 命令创建内部负载平衡实例：
+对于现有的云服务或在区域虚拟网络下部署的云服务，可以使用以下 Windows PowerShell 命令创建内部负载均衡实例：
 
 	$svc="<Cloud Service Name>"
 	$ilb="<Name of your ILB instance>"
@@ -52,7 +52,7 @@
 
 请注意，这次使用的 [Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/dn495300.aspx) Windows PowerShell cmdlet 使用的是 DefaultProbe 参数集。有关其他参数集的详细信息，请参阅 [Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/dn495300.aspx)。
 
-### 步骤 2：向内部负载平衡实例添加终结点
+### 步骤 2：向内部负载均衡实例添加终结点
 
 下面是一个示例：
 
@@ -67,11 +67,11 @@
 	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -Lbset $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 
-### 步骤 3：配置服务器，将其流量发送到新的内部负载平衡终结点
+### 步骤 3：配置服务器，将其流量发送到新的内部负载均衡终结点
 
-你必须将其流量要进行负载平衡的服务器配置为使用内部负载平衡实例的新 IP 地址 (VIP)。此地址是内部负载平衡实例正在侦听的地址。在大多数情况下，你只需添加或修改内部负载平衡实例的 VIP 的 DNS 记录。
+你必须将其流量要进行负载均衡的服务器配置为使用内部负载均衡实例的新 IP 地址 (VIP)。此地址是内部负载均衡实例正在侦听的地址。在大多数情况下，你只需添加或修改内部负载均衡实例的 VIP 的 DNS 记录。
 
-如果在创建内部负载平衡实例期间指定了 IP 地址，则你已有 VIP。否则，你可以通过以下命令查看 VIP：
+如果在创建内部负载均衡实例期间指定了 IP 地址，则你已有 VIP。否则，你可以通过以下命令查看 VIP：
 
 	$svc="<Cloud Service Name>"
 	Get-AzureService -ServiceName $svc | Get-AzureInternalLoadBalancer
@@ -86,18 +86,18 @@
 
 通过显示 Get-AzureInternalLoadBalancer 命令，请记下 IP 地址，并对服务器或 DNS 记录进行必要的更改，以确保将流量发送到 VIP。
 
->[AZURE.NOTE] Azure Platform 对各种管理方案使用一个公开可路由的静态 IPv4 地址。该 IP 地址为 168.63.129.16。此 IP 地址不应被任何防火墙阻止，因为这会导致意外行为。对于 Azure 内部负载平衡，此 IP 地址用于监视负载均衡器中的探测器，以确定负载平衡集中虚拟机的运行状况状态。如果网络安全组用于将流量限制到内部负载平衡集中的 Azure 虚拟机或应用于虚拟网络子网，请确保添加网络安全规则以允许来自 168.63.129.16 的流量。
+>[AZURE.NOTE] Azure Platform 对各种管理方案使用一个公开可路由的静态 IPv4 地址。该 IP 地址为 168.63.129.16。此 IP 地址不应被任何防火墙阻止，因为这会导致意外行为。对于 Azure 内部负载均衡，此 IP 地址用于监视负载均衡器中的探测器，以确定负载均衡集中虚拟机的运行状况状态。如果网络安全组用于将流量限制到内部负载均衡集中的 Azure 虚拟机或应用于虚拟网络子网，请确保添加网络安全规则以允许来自 168.63.129.16 的流量。
 
 
-## 内部负载平衡的示例
+## 内部负载均衡的示例
 
-若要指导你逐步了解为两个示例配置创建中负载平衡集的端到端过程，请参阅以下各节。
+若要指导你逐步了解为两个示例配置创建中负载均衡集的端到端过程，请参阅以下各节。
 
 ### 面向 Internet 的多层应用程序
 
-你想要为一组面向 Internet 的 Web 服务器提供负载平衡数据库服务。这两组服务器托管在单个 Azure 云服务中。TCP 端口 1433 的 Web 服务器流量必须分布到数据库层的两个虚拟机上。图 1 显示了该配置。
+你想要为一组面向 Internet 的 Web 服务器提供负载均衡数据库服务。这两组服务器托管在单个 Azure 云服务中。TCP 端口 1433 的 Web 服务器流量必须分布到数据库层的两个虚拟机上。图 1 显示了该配置。
 
-![适用于数据库层的内部负载平衡集](./media/load-balancer-internal-getstarted/IC736321.png)
+![适用于数据库层的内部负载均衡集](./media/load-balancer-internal-getstarted/IC736321.png)
 
 
 该配置由以下项组成：
@@ -108,7 +108,7 @@
 
 - Web 层中的 Web 服务器使用专用 IP 地址连接到数据库层中的数据库服务器。另一个选择是对虚拟网络使用你自己的 DNS，并手动为内部负载均衡器集注册 A 记录。
 
-以下命令将配置名为 **ILBset** 的新内部负载平衡实例，并向对应于两个数据库服务器的虚拟机添加终结点：
+以下命令将配置名为 **ILBset** 的新内部负载均衡实例，并向对应于两个数据库服务器的虚拟机添加终结点：
 
 	$svc="mytestcloud"
 	$ilb="ilbset"
@@ -126,7 +126,7 @@
 	Get-AzureVM –ServiceName $svc –Name $vmname | Add-AzureEndpoint -Name $epname -LbSetName $lbsetname -Protocol $prot -LocalPort $locport -PublicPort $pubport –DefaultProbe -InternalLoadBalancerName $ilb | Update-AzureVM
 
 
-## 删除内部负载平衡配置
+## 删除内部负载均衡配置
 
 若要从内部负载均衡器实例删除作为终结点的虚拟机，请使用以下命令：
 
@@ -161,7 +161,7 @@
 ## 有关内部负载均衡器 cmdlet 的其他信息
 
 
-若要获取有关内部负载平衡 cmdlet 的其他信息，请在 Windows PowerShell 提示符处运行以下命令：
+若要获取有关内部负载均衡 cmdlet 的其他信息，请在 Windows PowerShell 提示符处运行以下命令：
 
 - Get-help New-AzureInternalLoadBalancerConfig -full
 

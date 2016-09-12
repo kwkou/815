@@ -25,12 +25,12 @@ Azure Load Balancer 将传入流量的公用 IP 地址和端口号映射到虚�
  
 servicedefinition.csdef 文件将包含终结点配置，而当你有多个进行 Web 角色或辅助角色部署的角色实例时，将会针对该部署来设置负载均衡器。若要将实例添加到云部署，可更改服务配置文件 (.csfg) 中的实例计数。
 
-下图显示了公用和专用 TCP 端口 443 的加密 Web 流量的负载平衡终结点，由三个虚拟机共享。这三个虚拟机位于一个负载平衡集中。
+下图显示了公用和专用 TCP 端口 443 的加密 Web 流量的负载均衡终结点，由三个虚拟机共享。这三个虚拟机位于一个负载均衡集中。
 
 
 ![公共负载均衡器示例](./media/load-balancer-internet-overview/IC727496.png))
 
-当 Internet 客户端将网页请求发送到云服务的公用 IP 地址和 TCP 端口 443 时，Azure Load Balancer 会在负载平衡集中的三个虚拟机之间对这些请求进行基于哈希的负载平衡。若要获取有关负载均衡器算法的详细信息，可参阅[负载均衡器概述页](/documentation/articles/load-balancer-overview/#load-balancer-features)。
+当 Internet 客户端将网页请求发送到云服务的公用 IP 地址和 TCP 端口 443 时，Azure Load Balancer 会在负载均衡集中的三个虚拟机之间对这些请求进行基于哈希的负载均衡。若要获取有关负载均衡器算法的详细信息，可参阅[负载均衡器概述页](/documentation/articles/load-balancer-overview/#load-balancer-features)。
 
 
 ## 后续步骤
