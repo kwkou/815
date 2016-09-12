@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="08/27/2016"
-	wacn.date="09/09/2016"/>
+	wacn.date="09/12/2016"/>
 
 # Azure 上的 FreeBSD 简介
 
@@ -23,15 +23,9 @@ FreeBSD 是一个卓越的操作系统，可用于服务器，桌面和嵌入式
 
 ## 创建一个 FreeBSD 虚拟机
 
-使用 Azure 经典管理门户选择由微软发布的 FreeBSD 虚拟机镜像并创建一个 FreeBSD 虚拟机是很简单的。
+在 [Azure 门户预览](https://portal.azure.cn/)上选择由微软发布的 FreeBSD 10.3 虚拟机镜像并创建一个 FreeBSD 虚拟机是很简单的，如下图所示。
 
-1. 选择新建虚拟机，并从库中选择镜像。
-
-	![](./media/virtual-machines-freebsd-intro-on-azure/classic_create_freebsd.png)
-
-2. 在窗口右上方输入”FreeBSD”，您将会看到 FreeBSD 10.3 的镜像，选择后根据提示继续下一步创建镜像。
-
-	![](./media/virtual-machines-freebsd-intro-on-azure/classic_choose_freebsd.png)
+![](./media/virtual-machines-freebsd-intro-on-azure/create-via-portal.png)
 
 ## FreeBSD 虚拟机扩展
 
