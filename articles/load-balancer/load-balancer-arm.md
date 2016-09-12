@@ -24,7 +24,7 @@ Azure 资源管理器 (ARM) 是针对 Azure 中的服务的新管理框架。现
 
 - 后端地址池 – 这是与负载要分配到的、与虚拟机网络接口卡 (NIC) 关联的 IP 地址。
 
-- 负载平衡规则 – 规则属性将给定的前端 IP 和端口组合映射到一组后端 IP 地址和端口组合。只需定义一个负载均衡器资源，就能定义多个负载平衡规则，每个规则反映与 VM 关联的前端 IP 与端口以及后端 IP 与端口的组合。
+- 负载均衡规则 – 规则属性将给定的前端 IP 和端口组合映射到一组后端 IP 地址和端口组合。只需定义一个负载均衡器资源，就能定义多个负载均衡规则，每个规则反映与 VM 关联的前端 IP 与端口以及后端 IP 与端口的组合。
 
 - 探测 – 使用探测可以跟踪 VM 实例的运行状况。如果运行状况探测失败，VM 实例将自动从轮转列表中删除。
 
@@ -48,9 +48,9 @@ Azure Resource Manager 可让你使用声明性模板预配应用程序。在单
 
 模板示例：
 
-- [负载均衡器中的 2 个 VM 和负载平衡规则](http://go.microsoft.com/fwlink/?LinkId=544799)
+- [负载均衡器中的 2 个 VM 和负载均衡规则](http://go.microsoft.com/fwlink/?LinkId=544799)
 
-- [VNET 中包含负载均衡器和负载平衡规则的 2 个 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer)
+- [VNET 中包含负载均衡器和负载均衡规则的 2 个 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer)
 
 - [负载均衡器中的 2 个 VM，在 LB 上配置 NAT 规则](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-natrules)
 

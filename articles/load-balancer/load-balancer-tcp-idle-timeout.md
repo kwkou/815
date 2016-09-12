@@ -36,7 +36,7 @@
 ## 如何更改虚拟机和云服务中的空闲超时设置
 
 - 通过 PowerShell 或服务管理 API 配置虚拟机上某个终结点的 TCP 超时
-- 通过 PowerShell 或服务管理 API 配置负载平衡终结点集的 TCP 超时。
+- 通过 PowerShell 或服务管理 API 配置负载均衡终结点集的 TCP 超时。
 - 配置实例层级公共 IP 的 TCP 超时
 - 通过服务模型配置 Web 角色/辅助角色的 TCP 超时。
  
@@ -78,9 +78,9 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 	InternalLoadBalancerName :
 	IdleTimeoutInMinutes : 15
  
-### 在负载平衡终结点集上设置 TCP 超时
+### 在负载均衡终结点集上设置 TCP 超时
 
-如果终结点是负载平衡终结点集的一部分，则必须在负载平衡终结点集上设置 TCP 超时：
+如果终结点是负载均衡终结点集的一部分，则必须在负载均衡终结点集上设置 TCP 超时：
 
 	Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -IdleTimeoutInMinutes 15
  
@@ -116,7 +116,7 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 你可以使用服务管理 API 来配置 TCP 空闲超时。
 请确保添加 x-ms-version 标头并将其设置为 2014-06-01 或更高版本。
  
-通过一次部署，在所有虚拟机上更新指定的负载平衡输入终结点的配置
+通过一次部署，在所有虚拟机上更新指定的负载均衡输入终结点的配置
 	
 	Request
 

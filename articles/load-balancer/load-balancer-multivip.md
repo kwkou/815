@@ -18,14 +18,14 @@
 
 ![多 VIP SSL 方案](./media/load-balancer-multivip/Figure1.png)
 
-在上述方案中，所有 VIP 使用相同的公共端口 (443)，流量将重定向到托管所有网站的云服务的内部 IP 地址中唯一专用端口上的一个或多个负载平衡 VM。
+在上述方案中，所有 VIP 使用相同的公共端口 (443)，流量将重定向到托管所有网站的云服务的内部 IP 地址中唯一专用端口上的一个或多个负载均衡 VM。
 
 >[AZURE.NOTE] 使用多个 VIP 的另一种方案是在同一组虚拟机器上托管多个 SQL AlwaysOn 可用性组侦听器。
 
 默认情况下，VIP 是动态的，这意味着，分配给云服务的实际 IP 地址会随着时间改变。为了防止发生这种情况，你可以为服务保留 VIP。若要了解有关保留 VIP 的详细信息，请参阅[保留的公共 IP](/documentation/articles/virtual-networks-reserved-public-ip/)。
 
 
-可以使用 PowerShell 来验证云服务使用的 VIP、添加和删除 VIP、将 VIP 关联到终结点，以及在特定 VIP 上配置负载平衡。
+可以使用 PowerShell 来验证云服务使用的 VIP、添加和删除 VIP、将 VIP 关联到终结点，以及在特定 VIP 上配置负载均衡。
 
 ## 限制
 
@@ -122,8 +122,8 @@
     ReservedIPName  :
     ExtensionData   :
 
-## 如何在特定 VIP 上启用负载平衡
-可以将单个 VIP 与多个虚拟机相关联，以实现负载平衡。例如，假设你有名为 *myService* 的云服务，以及名为 *myVM1* 和 *myVM2* 的两个虚拟机。而你的云服务有多个 VIP，其中一个名为 *Vip2*。如果你想要确保发往 *Vip2* 上端口 *81* 的所有流量都在端口 *8181* 上的 *myVM1* 与 *myVM2* 之间平衡，请运行以下 PowerShell 脚本：
+## 如何在特定 VIP 上启用负载均衡
+可以将单个 VIP 与多个虚拟机相关联，以实现负载均衡。例如，假设你有名为 *myService* 的云服务，以及名为 *myVM1* 和 *myVM2* 的两个虚拟机。而你的云服务有多个 VIP，其中一个名为 *Vip2*。如果你想要确保发往 *Vip2* 上端口 *81* 的所有流量都在端口 *8181* 上的 *myVM1* 与 *myVM2* 之间平衡，请运行以下 PowerShell 脚本：
 
     Get-AzureVM -ServiceName myService -Name myVM1 `
     | Add-AzureEndpoint -Name myEndpoint -LoadBalancedEndpointSetName myLBSet `
@@ -135,7 +135,7 @@
         -Protocol tcp -LocalPort 8181 -PublicPort 81 -VirtualIPName Vip2  -DefaultProbe `
     | Update-AzureVM
 
-你也可以更新你的负载均衡器，以使用不同的 VIP。例如，如果运行以下 PowerShell 命令，则会将负载平衡集更改为使用名为 Vip1 的 VIP：
+你也可以更新你的负载均衡器，以使用不同的 VIP。例如，如果运行以下 PowerShell 命令，则会将负载均衡集更改为使用名为 Vip1 的 VIP：
 
     Set-AzureLoadBalancedEndpoint -ServiceName myService -LBSetName myLBSet -VirtualIPName Vip1
 
