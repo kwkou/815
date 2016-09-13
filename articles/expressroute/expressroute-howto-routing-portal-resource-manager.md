@@ -1,6 +1,6 @@
 <properties
    pageTitle="如何使用 Azure 门户配置 ExpressRoute 线路的路由 | Azure"
-   description="本文将指导你完成创建和预配 ExpressRoute 线路的专用、公共互连的步骤。本文还介绍了如何检查状态，以及如何更新或删除线路的对等互连。"
+   description="本文介绍创建和预配 ExpressRoute 线路的专用、公共对等互连的步骤。本文还介绍了如何检查状态，以及如何更新或删除线路的对等互连。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
@@ -9,8 +9,8 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="04/08/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="07/19/2016"
+   wacn.date="09/12/2016"/>
 
 # 创建和修改 ExpressRoute 线路的路由
 
@@ -31,7 +31,7 @@
 
 ## 配置先决条件
 
-- 请确保你在开始配置之前已查看了[先决条件](/documentation/articles/expressroute-prerequisites/)页、[路由要求](/documentation/articles/expressroute-routing/)页和[工作流](/documentation/articles/expressroute-workflows/)页。
+- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites/)页、[路由要求](/documentation/articles/expressroute-routing/)页和[工作流](/documentation/articles/expressroute-workflows/)页。
 - 你必须有一个活动的 ExpressRoute 线路。在继续下一步之前，请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)，并通过连接提供商启用该线路。ExpressRoute 线路必须处于已预配和已启用状态，你才能运行下述 cmdlet。
 
 这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。
