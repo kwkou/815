@@ -4,12 +4,13 @@
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+	manager="carmonm" 
+	editor="tysonn"/>  
+
 <tags 
 	ms.service="storage" 
-	ms.date="03/28/2016" 
-	wacn.date="05/23/2016"/>
+	ms.date="08/03/2016" 
+	wacn.date="09/12/2016"/>
 
 # 使用 Azure 存储模拟器进行开发和测试
 
@@ -37,7 +38,7 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 [AZURE.INCLUDE [storage-emulator-connection-string-include](../../includes/storage-emulator-connection-string-include.md)]
 
-有关连接字符串的详细信息，请参阅[配置到 Azure 存储的连接字符串](/documentation/articles/storage-configure-connection-string/)。
+有关连接字符串的更多详细信息，请参阅[配置 Azure 存储连接字符串](/documentation/articles/storage-configure-connection-string/)。
 
 ### 使用共享访问签名进行身份验证 
 
@@ -147,11 +148,12 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 | 选项 | 说明 | 命令 | 参数 |
 |--------|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| **启动** | 启动存储模拟器。 | `AzureStorageEmulator start [-inprocess]` | -inprocess：在当前进程中启动模拟器而不是创建一个新的进程。 |
+| **启动** | 启动存储模拟器。 | `AzureStorageEmulator start [-inprocess]` | *-inprocess*：在当前进程中启动模拟器而不是创建一个新的进程。 |
 | **停止** | 停止存储模拟器。 | `AzureStorageEmulator stop` | |
 | **状态** | 打印存储模拟器的状态。 | `AzureStorageEmulator status` | |
-| **清除** | 清除命令行上指定的所有服务中的数据。 | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `| blob：清除 Blob 数据。<br/>queue：清除队列数据。<br/>table：清除表数据。<br/>all：清除所有服务中的所有数据。 |
-| **Init** | 执行一次性初始化以设置模拟器。 | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | -server serverName\\instanceName：指定托管 SQL 实例的服务器。<br/>-sqlinstance instanceName：指定要用于默认服务器实例中的 SQL 实例的名称。<br/>-forcecreate：强制创建 SQL 数据库，即使该数据库已经存在。<br/>-inprocess：在当前进程而不是生成新的进程中执行初始化。您必须使用提升的权限启动当前进程以执行初始化。 |
+| **清除** | 清除命令行上指定的所有服务中的数据。 | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `  
+| *blob*：清除 Blob 数据。<br/>*queue*：清除队列数据。<br/>*table*：清除表数据。<br/>*all*：清除所有服务中的所有数据。 |
+| **Init** | 执行一次性初始化以设置模拟器。 | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | *-server serverName\\instanceName*：指定托管 SQL 实例的服务器。<br/>*-sqlinstance instanceName*：指定要在默认服务器实例中使用的 SQL 实例的名称。<br/>*-forcecreate*：强制创建 SQL 数据库，即使该数据库已经存在。<br/>*-inprocess*：在当前进程而不是生成新的进程中执行初始化。您必须使用提升的权限启动当前进程以执行初始化。 |
                                                                                                                   
 ##<a id="differences-between-the-storage-emulator-and-azure-storage"></a> 存储模拟器与 Azure 存储之间的差异
 
@@ -199,6 +201,14 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 ## 存储模拟器发行说明
 
+### 版本 4.4
+
+- 现在，在处理大量 blob 时，存储模拟器的 blob 数据垃圾回收效率更高了。
+
+- 修复了导致容器 ACL XML 的验证方式与存储服务的验证方式稍有不同的 bug。
+
+- 修复了有时会导致在不正确的时区报告最大和最小日期时间值的 bug。
+
 ### 版本 4.3
 
 - 存储模拟器现在支持 Blob、队列和表服务终结点上的 2015-07-08 版本的存储服务。
@@ -232,5 +242,4 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 - 现在完全支持版本 2013年-08-15 的 Azure 存储服务。（以前仅存储模拟器 2.2.1 预览版本支持此版本。）
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0905_2016-->

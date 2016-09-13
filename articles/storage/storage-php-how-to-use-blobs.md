@@ -3,14 +3,14 @@
 	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
 	documentationCenter="php"
 	services="storage"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-    	ms.date="06/01/2016"
-	wacn.date="07/25/2016"/>
+    	ms.date="08/11/2016"
+	wacn.date="09/12/2016"/>
 
 # 如何通过 PHP 使用 Blob 存储
 
@@ -303,4 +303,4 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0905_2016-->

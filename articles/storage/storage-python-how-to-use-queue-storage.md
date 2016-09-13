@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/31/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="07/26/2016"
+	wacn.date="09/12/2016"/>
 
 # 如何通过 Python 使用队列存储
 
@@ -18,7 +18,7 @@
 
 ## 概述
 
-本指南演示如何使用 Azure 队列存储服务执行常见方案。这些示例通过 Python 编写并使用 [Azure Storage SDK for Python]。介绍的方案包括“插入”、“查看”、“获取”和“删除”队列消息以及“创建和删除队列”。有关队列的详细信息，请参阅 [后续步骤] 部分。
+本指南演示如何使用 Azure 队列存储服务执行常见方案。这些示例用 Python 编写并使用 [Azure Storage SDK for Python]。介绍的方案包括“插入”、“查看”、“获取”和“删除”队列消息以及“创建和删除队列”。有关队列的详细信息，请参阅 [后续步骤] 部分。
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../../includes/storage-queue-concepts-include.md)]
 
@@ -103,4 +103,4 @@
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0905_2016-->

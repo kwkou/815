@@ -8,8 +8,8 @@
    editor="na" />
 <tags 
    ms.service="storage"
-   ms.date="06/01/2016"
-   wacn.date="07/25/2016" />
+   ms.date="08/03/2016"
+   wacn.date="09/12/2016" />
 
 # Azure 存储空间示例
 
@@ -83,4 +83,4 @@
 - [C++ 存储客户端库的源代码](https://github.com/Azure/azure-storage-cpp)
 - [C++ 客户端库参考](http://azure.github.io/azure-storage-cpp/)
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0905_2016-->

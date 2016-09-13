@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/08/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="09/12/2016"/>
 
 # 开始使用队列存储和 Visual Studio 连接服务 (ASP.NET 5)
 
@@ -162,4 +162,4 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0905_2016-->

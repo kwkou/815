@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="如何通过 Ruby 使用 Blob 存储 | Azure" 
 	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
-	services="storage" 
-	documentationCenter="ruby" 
-	authors="tfitzmac" 
-	manager="wpickett" 
+	services="storage"
+	documentationCenter="ruby"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-    ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/12/2016"/>
 
 
 # 如何通过 Ruby 使用 Blob 存储
@@ -153,4 +153,4 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 - GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0905_2016-->

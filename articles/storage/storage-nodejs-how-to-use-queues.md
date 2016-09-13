@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/12/2016"/>
 
 
 # 如何通过 Node.js 使用队列存储
@@ -325,4 +325,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: /documentation/articles/web-sites-nodejs-use-webmatrix/
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0905_2016-->

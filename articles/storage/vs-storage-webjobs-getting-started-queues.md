@@ -10,8 +10,8 @@
 <tags
 	ms.service="storage"
 	
-	ms.date="06/01/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="09/12/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）
 
@@ -305,7 +305,7 @@ SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.
 		var queueMessage = new CloudQueueMessage(JsonConvert.SerializeObject(blobInfo));
 		logQueue.AddMessage(queueMessage);
 
-如果在将 Blob 绑定到某对象之前，你需要在函数中执行某些操作，则可以使用函数正文中的属性，如[使用函数正文中的 WebJobs SDK 属性](#use-webjobs-sdk-attributes-in-the-body-of-a-function)所示。
+如果在将 Blob 绑定到某对象之前需要在函数中执行某些操作，则可以使用函数正文中的属性，如[使用函数正文中的 WebJobs SDK 属性](#use-webjobs-sdk-attributes-in-the-body-of-a-function)所示。
 
 ###可以使用 Blob 属性的类型
 
@@ -325,7 +325,7 @@ SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.
 
 ##如何处理有害消息
 
-内容导致函数失败的消息称为有害消息。当函数失败时，将不删除并最终再次选择队列消息，从而导致周期重复。在达到限制的迭代次数后，SDK 可自动中断周期，你也可以手动中断。
+内容导致函数失败的消息称为*有害消息*。当函数失败时，将不删除并最终再次选择队列消息，从而导致周期重复。在达到限制的迭代次数后，SDK 可自动中断周期，你也可以手动中断。
 
 ### 自动处理有害消息
 
@@ -512,13 +512,14 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 		    logger.WriteLine("TextWriter - " + logMessage);
 		}
 
-在 WebJobs SDK 仪表板中，当你转到特定函数调用页面并选择“切换输出”时，你会看到 **TextWriter** 对象的输出：
+在 WebJobs SDK 仪表板中，转到特定函数调用页面并选择“切换输出”时，会看到 **TextWriter** 对象的输出：
 
 ![调用链接](./media/vs-storage-webjobs-getting-started-queues/dashboardinvocations.png)
 
 ![函数调用页中的日志](./media/vs-storage-webjobs-getting-started-queues/dashboardlogs.png)
 
-在 WebJobs SDK 仪表板中，当转到 Web 作业（而不是函数调用）页面并选择“切换输出”时，你会看到最近的 100 行控制台输出。
+
+在 WebJobs SDK 仪表板中，转到 Web 作业（而不是函数调用）页面并选择“切换输出”时，会看到最近的 100 行控制台输出。
 
 ![切换输出](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
 
@@ -528,7 +529,10 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Out - Hello world!
 
-在 Azure blob 中，应用程序日志如下所示：2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!, 2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!, 2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
+在 Azure blob 中，应用程序日志如下所示：
+		2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!, 
+		2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!, 
+		2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
 
 在 Azure 表中，**Console.Out** 和 **Console.Error** 日志如下所示：
 
@@ -540,4 +544,5 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 本文章提供了代码示例，演示如何处理用于操作 Azure 队列的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources/)。
  
-<!---HONumber=Mooncake_0718_2016-->
+
+<!---HONumber=Mooncake_0905_2016-->

@@ -3,14 +3,14 @@
 	description="高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。Azure DS 系列 VM 支持高级存储。"
 	services="storage"
 	documentationCenter=""
-	authors="ms-prkhad"
+	authors="aungoo-msft"
 	manager=""
-	editor="tysonn"/>
+	editor="tysonn"/>  
 
 <tags
 	ms.service="storage"
-	ms.date="06/23/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="07/24/2016"
+	wacn.date="09/12/2016"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
@@ -359,6 +359,8 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 - [Azure 存储定价](/pricing/details/storage/)
 - [虚拟机定价](/pricing/details/virtual-machines/)
 
+## 备份
+使用高级存储的虚拟机可以使用 Azure 备份进行备份。[更多详细信息](/documentation/articles/backup-azure-vms-first-look-arm/)。
 ##<a id="quick-start"></a> 快速启动
 
 ##<a id="create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk"></a> 为虚拟机器数据磁盘创建和使用高级存储帐户
@@ -375,7 +377,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 本部分说明如何使用 Azure 门户预览创建高级存储帐户。
 
-1.	登录到 [Azure 门户预览](https://portal.azure.cn)。如果你没有订阅，请查看[试用](/pricing/1rmb-trial/)优惠产品。
+1.	登录到 [Azure 门户预览](https://portal.azure.cn)。如果尚未有订阅，请查看[试用](/pricing/1rmb-trial/)优惠产品。
 
 2. 在“中心”菜单上，选择“新建”->“数据 + 存储”->“存储帐户”。
 
@@ -385,7 +387,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 	>  
 	> 你的存储帐户名称在 Azure 中必须是唯一的。Azure 门户预览将指出你选择的存储帐户名称是否已被使用。
 
-4. 指定要使用的部署模型：**Resource Manager** 或**经典**。建议使用 **Resource Manager** 部署模型。有关详细信息，请参阅[了解 Resource Manager 部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
+4. 指定要使用的部署模型：“Resource Manager”或“经典”。建议使用“Resource Manager”部署模型。有关详细信息，请参阅[了解 Resource Manager 部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
 5. 将存储帐户的性能层指定为“高级”。
 
@@ -401,7 +403,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 #### II.通过 Azure 门户预览创建 Azure 虚拟机
 
-只有创建了 DS 系列 VM 才能使用高级存储。请遵照[在 Azure 门户预览中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)中的步骤创建新的 DS 虚拟机。
+只有创建了 DS 系列 VM 才能使用高级存储。请按照[在 Azure 门户预览中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)中的步骤创建新的 DS 虚拟机。
 
 #### III.通过 Azure 门户预览附加高级存储数据磁盘
 
@@ -411,7 +413,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 	![高级磁盘][Image1]
 
-有关更详细的步骤，请参阅[如何在 Azure 门户预览中附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal/)。
+请参阅[如何在 Azure 门户预览中附加数据磁盘](/documentation/articles/virtual-machineswindows--attach-disk-portal/)中的更详细步骤。
 
 #### IV.通过 Azure 门户预览更改磁盘缓存策略
 
@@ -426,7 +428,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 本 PowerShell 示例演示如何创建新的高级存储帐户并将使用该帐户的数据磁盘附加到新的 Azure 虚拟机。
 
 1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中提供的步骤设置 PowerShell 环境。
-2. 启动 PowerShell 控制台，连接到订阅，并在控制台窗口中运行以下 PowerShell cmdlet。如此 PowerShell 语句中所示，当你创建高级存储帐户时，必须将 **Type** 参数指定为 **Premium_LRS**。
+2. 启动 PowerShell 控制台，连接到订阅，并在控制台窗口中运行以下 PowerShell cmdlet。如此 PowerShell 语句中所示，创建高级存储帐户时，必须将 **Type** 参数指定为 **Premium\_LRS**。
 
 		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China East" -Type "Premium_LRS"
 
@@ -466,7 +468,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 ### 通过 Azure 命令行界面使用高级存储创建 Azure 虚拟机
 
-[Azure 命令行接口](/documentation/articles/xplat-cli-install/) (Azure CLI) 提供一组可在 Azure 平台上运行的开放源代码跨平台命令。以下示例演示如何使用 Azure CLI（0.8.14 和更高版本）创建高级存储帐户、新的虚拟机，以及从高级存储帐户附加新的数据磁盘。
+[Azure 命令行接口](/documentation/articles/xplat-cli-install/) (Azure CLI) 提供一组可在 Azure 平台上使用的开放源代码跨平台命令。以下示例演示如何使用 Azure CLI（0.8.14 和更高版本）创建高级存储帐户、新的虚拟机，以及从高级存储帐户附加新的数据磁盘。
 
 #### I.通过 Azure CLI 创建高级存储帐户
 
@@ -559,4 +561,4 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 [Image1]: ./media/storage-premium-storage/Azure_attach_premium_disk.png
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0905_2016-->

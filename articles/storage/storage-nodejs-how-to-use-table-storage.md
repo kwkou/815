@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/12/2016"/>
 
 
 # 如何通过 Node.js 使用 Azure 表存储
@@ -22,7 +22,7 @@
 
 本主题将演示如何使用 Node.js 应用程序中的 Azure 表服务执行常见方案。
 
-本主题中的代码示例假定您已有 Node.js 应用程序。有关在 Azure 中创建 Node.js 应用程序的信息，请参阅以下任何主题：
+本主题中的代码示例假定您已有 Node.js 应用程序。有关如何在 Azure 中创建 Node.js 应用程序的信息，请参阅以下任何主题：
 
 - [在 Azure App Service 中创建 Node.js Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac/)
 - [使用 WebMatrix 构建 Node.js Web 应用并将其部署到 Azure](/documentation/articles/web-sites-nodejs-use-webmatrix/)
@@ -181,7 +181,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 >
 > 3. 执行更新操作。如果实体在您检索 ETag 值后已被修改，例如被应用程序的其他实例修改，则会返回一条 `error`，指出未满足请求中指定的更新条件。
 
-对于 **replaceEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果你希望存储某个实体而不考虑它是否已存在，请使用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
+对于 **replaceEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果希望存储某个实体而不考虑它是否已存在，请使用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
 
 如果更新操作成功，则 `result` 会包含所更新实体的 **Etag**。
 
@@ -247,7 +247,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 若要查询表，请使用 **TableQuery** 对象生成一个使用以下子句的查询：
 
-* **select** - 将要从查询返回的字段
+* **select** - 要从查询返回的字段
 
 * **where** - where 子句
 
@@ -316,7 +316,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 在所查询的表有大量的结果时，请查找继续标记。如果您在生成时不能识别何时存在继续标记，可能存在大量您未意识到的数据可用于查询。
 
-查询实体在存在此类标记期间设置 `continuationToken` 属性，返回结果对象。然后可以在执行查询时使用它，以继续在分区和表实体间移动。
+查询实体在设置 `continuationToken` 属性（如果此类标记存在）期间，返回结果对象。然后可以在执行查询时使用它，以继续在分区和表实体间移动。
 
 在查询时，在查询对象实例和回调函数之间可能会提供继续标记参数：
 
@@ -337,7 +337,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	    });
 
 
-如果你检查 `continuationToken` 对象，你会发现 `nextPartitionKey`、`nextRowKey` 和 `targetLocation` 等属性可用于循环访问所有结果。
+如果检查 `continuationToken` 对象，就会发现 `nextPartitionKey`、`nextRowKey` 和 `targetLocation` 等属性可用于循环访问所有结果。
 
 在 GitHub 上的 Azure 存储 Node.js 存储库中还有一个继续样本。查找 `examples/samples/continuationsample.js`。
 
@@ -438,4 +438,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site/
   [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0905_2016-->

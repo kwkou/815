@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/08/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="09/12/2016"/>
 
 # 开始使用表存储和 Visual Studio 连接服务 (ASP.NET)
 
@@ -178,4 +178,4 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 
 [AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0905_2016-->

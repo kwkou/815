@@ -10,8 +10,8 @@
 
 <tags 
   ms.service="storage" 
-  ms.date="06/23/2016" 
-  wacn.date="08/01/2016"/>
+  ms.date="08/03/2016"
+  wacn.date="09/12/2016"/>
 
 # Azure 存储复制
 
@@ -77,4 +77,4 @@
 - [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0905_2016-->

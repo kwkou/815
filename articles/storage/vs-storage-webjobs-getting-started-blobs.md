@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/08/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="09/12/2016"/>
 
 # 开始使用 Azure Blob 存储和 Visual Studio 连接服务（WebJob 项目）
 
@@ -28,7 +28,7 @@
 
 ### Blob 名称和扩展名的单个占位符  
 
-以下代码示例将输入容器中显示的文本 blob 复制到输出容器中：
+以下代码示例将*输入*容器中显示的文本 blob 复制到*输出*容器中：
 
 		public static void CopyBlob([BlobTrigger("input/{name}")] TextReader input,
 		    [Blob("output/{name}")] out string output)
@@ -36,7 +36,7 @@
 		    output = input.ReadToEnd();
 		}
 
-属性构造函数采用指定容器名称的字符串参数和 Blob 名称的占位符。在此示例中，如果在输入容器中创建了名为 *Blob1.txt* 的 blob，则该函数将在输出容器中创建名为 *Blob1.txt* 的 blob。
+属性构造函数采用指定容器名称的字符串参数和 Blob 名称的占位符。在此示例中，如果在*输入*容器中创建了名为 *Blob1.txt* 的 blob，则该函数将在*输出*容器中创建名为 *Blob1.txt* 的 blob。
 
 你可以指定包含 Blob 名称占位符的名称模式，如以下代码示例中所示：
 
@@ -46,9 +46,9 @@
 		    output = input.ReadToEnd();
 		}
 
-此代码只会复制名称以“original-”开头的 Blob。例如，将输入容器中的 *original-Blob1.txt* 复制到输出容器中的 *copy-Blob1.txt*。
+此代码只会复制名称以“original-”开头的 Blob。例如，将*输入*容器中的 *original-Blob1.txt* 复制到*输出*容器中的 *copy-Blob1.txt*。
 
-如果你需要指定的名称中包含大括号的 Blob 名称的名称模式，增加大括号。例如，如果你想要在映像容器中查找具有以下类似名称的 blob：
+如果你需要指定的名称中包含大括号的 Blob 名称的名称模式，增加大括号。例如，如果你想要在*映像*容器中查找具有以下类似名称的 blob：
 
 		{20140101}-soundfile.mp3
 
@@ -56,11 +56,11 @@
 
 		images/{{20140101}}-{name}
 
-在示例中，名称占位符值将为 *soundfile.mp3*。
+在示例中，*名称*占位符值将为 *soundfile.mp3*。
 
 ### 单独的 Blob 名称和扩展名占位符
 
-以下代码示例在将输入容器中显示的 blob 复制到输出容器中时更改文件扩展名。该代码将记录输入 blob 的扩展名，并将输出 blob 的扩展名设置为 *.txt*。
+以下代码示例在将*输入*容器中显示的 blob 复制到*输出*容器中时更改文件扩展名。该代码将记录*输入* blob 的扩展名，并将*输出* blob 的扩展名设置为 *.txt*。
 
 		public static void CopyBlobToTxtFile([BlobTrigger("input/{name}.{ext}")] TextReader input,
 		    [Blob("output/{name}.txt")] out string output,
@@ -193,7 +193,7 @@ SDK 自动反序列化 JSON 消息。下面是 **PoisonBlobMessage** 类：
 
 ### <a id="receipts"></a> Blob 回执
 
-WebJobs SDK 确保没有为相同的新 blob 或更新 blob 多次调用 **BlobTrigger** 函数。为此，它会维护blob 回执，以确定是否已处理给定的 blob 版本。
+WebJobs SDK 确保没有为相同的新 blob 或更新 blob 多次调用 **BlobTrigger** 函数。为此，它会维护 *blob 回执*，以确定是否已处理给定的 blob 版本。
 
 Blob 回执在 AzureWebJobsStorage 连接字符串指定的 Azure 存储帐户中名为 *azure-webjobs-hosts* 的容器内存储。Blob 回执包含以下信息：
 
@@ -225,4 +225,5 @@ Blob 回执在 AzureWebJobsStorage 连接字符串指定的 Azure 存储帐户�
 
 本文提供了代码示例，演示如何处理用于操作 Azure blob 的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources/)。
  
-<!---HONumber=Mooncake_0606_2016-->
+
+<!---HONumber=Mooncake_0905_2016-->
