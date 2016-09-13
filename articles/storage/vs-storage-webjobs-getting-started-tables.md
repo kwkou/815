@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage"
-	ms.date="05/08/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="09/12/2016"/>
 
 # Azure 存储入门（Azure WebJob 项目）
 
@@ -24,7 +24,7 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 ## 如何向表中添加实体
 
-若要将实体添加到表中，请使用具有 **ICollector<T>** 或 **IAsyncCollector<T>** 参数的 **Table** 属性，其中 **T** 指定你想要添加的实体的架构。属性构造函数使用指定表名称的字符串参数。
+若要将实体添加到表中，请使用具有 **ICollector<T>** 或 **IAsyncCollector<T>** 参数的 **Table** 属性，其中 **T** 指定要添加的实体的架构。属性构造函数使用指定表名称的字符串参数。
 
 下面的代码示例将 **Person** 实体添加到名为 *Ingress* 的表。
 
@@ -149,4 +149,5 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 本文章提供了代码示例，演示如何处理用于操作 Azure 表的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources/)。
  
-<!---HONumber=Mooncake_0606_2016-->
+
+<!---HONumber=Mooncake_0905_2016-->

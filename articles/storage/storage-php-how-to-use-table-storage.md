@@ -3,14 +3,14 @@
 	description="了解如何通过 PHP 使用表服务来创建和删除表以及插入、删除和查询表。"
 	services="storage"
 	documentationCenter="php"
-	authors="tfitzmac"
-	manager="adinah"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="06/01/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/12/2016"/>
 
 
 # 如何通过 PHP 使用表存储
@@ -44,7 +44,7 @@
 
 下面的示例演示了如何包括 autoloader 文件并引用 **ServicesBuilder** 类。
 
-> [AZURE.NOTE] 本示例（以及本文中的其他示例）假定您已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库，则需要引用 <code>WindowsAzure.php</code> autoloader 文件。
+> [AZURE.NOTE] 本示例（以及本文中的其他示例）假定您已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果已手动安装这些库，则需要引用 <code>WindowsAzure.php</code> autoloader 文件。
 
 	require_once 'vendor/autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
@@ -214,7 +214,7 @@
 
 ## 检索分区中的所有实体
 
-使用筛选器来构造实体查询（有关详细信息，请参阅[查询表和实体][filters]）。若要检索分区中的所有实体，请使用筛选器“PartitionKey eq partition_name”。下面的示例演示如何通过将筛选器传递到 **queryEntities** 方法来检索 `tasksSeattle` 分区中的所有实体。
+使用筛选器来构造实体查询（有关详细信息，请参阅[查询表和实体][filters]）。若要检索分区中的所有实体，请使用筛选器“PartitionKey eq *partition\_name*”。下面的示例演示如何通过将筛选器传递到 **queryEntities** 方法来检索 `tasksSeattle` 分区中的所有实体。
 
 	require_once 'vendor/autoload.php';
 
@@ -246,7 +246,7 @@
 
 ## 检索分区中的一部分实体
 
-可以使用上一示例中使用的同一模式来检索分区中的部分实体。您检索的部分实体将由您使用的筛选器确定（有关详细信息，请参阅[查询表和实体][filters]）。下面的示例演示如何使用筛选器检索具有特定的 `Location` 和早于指定日期 `DueDate` 的所有实体。
+可以使用上一示例中使用的同一模式来检索分区中的部分实体。检索的实体子集将由所使用的筛选器确定（有关详细信息，请参阅[查询表和实体][filters]）。下面的示例演示如何使用筛选器检索具有特定的 `Location` 和早于指定日期的 `DueDate` 的所有实体。
 
 	require_once 'vendor/autoload.php';
 
@@ -474,4 +474,4 @@
 [filters]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
 [entity-group-transactions]: http://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0905_2016-->

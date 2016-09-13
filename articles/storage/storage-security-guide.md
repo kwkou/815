@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="06/16/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/12/2016"/>
 
 #Azure 存储空间安全指南
 
@@ -630,4 +630,4 @@ Azure 存储空间允许你启用 CORS – 跨域资源共享。对于每个存�
 
 	此文介绍如何在较旧的 Windows 计算机中使用 FIPS 模式。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0905_2016-->

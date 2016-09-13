@@ -3,14 +3,15 @@
 	description="了解如何使用 Azure 队列存储服务创建和删除队列，以及插入、获取和删除消息。示例用 PHP 编写。"
 	documentationCenter="php"
 	services="storage"
-	authors="tfitzmac"
-	manager="adinah"
-	editor=""/>
+	authors="rmcmurray"
+	manager="wpickett"
+	editor=""/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="06/01/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/12/2016"/>
 
 # 如何通过 PHP 使用队列存储
 
@@ -380,4 +381,4 @@
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure 经典管理门户]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0905_2016-->

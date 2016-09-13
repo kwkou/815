@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/08/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="08/15/2016"
+	wacn.date="09/12/2016"/>
 # 我的云服务项目（Visual Studio Azure 存储连接服务）发生了什么情况？
 
 ## 已添加引用
@@ -33,4 +33,4 @@ Azure 存储 NuGet 包已添加到你的 Visual Studio 项目。此包添加了�
 - **ServiceConfiguration.Cloud.cscfg**
 - **ServiceConfiguration.Local.cscfg**
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0905_2016-->

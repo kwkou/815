@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/23/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="07/26/2016"
+	wacn.date="09/12/2016"/>
 
 # 如何通过 Python 使用 Azure 文件存储
 
@@ -18,7 +18,7 @@
 
 ## 概述
 
-本文将演示如何使用文件存储执行常见方案。这些示例通过 Python 编写并使用 [Azure Storage SDK for Python]。涉及的方案包括上传、列出、下载以及删除文件。
+本文将演示如何使用文件存储执行常见方案。这些示例用 Python 编写并使用 [Azure Storage SDK for Python]。涉及的方案包括上传、列出、下载以及删除文件。
 
 [AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
 
@@ -34,7 +34,7 @@
 
 	file_service = **FileService** (account_name='myaccount', account_key='mykey',endpoint_suffix='core.chinacloudapi.cn')
 
-在以下代码示例中，如果共享不存在，你可以使用 **FileService** 对象来创建它。
+在以下代码示例中，如果共享不存在，可以使用 **FileService** 对象来创建它。
 
 	file_service.create_share('myshare')
 
@@ -96,4 +96,4 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0905_2016-->

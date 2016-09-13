@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-    ms.date="06/24/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/12/2016"/>
 
 
 
@@ -28,7 +28,7 @@
 
 ## 创建 Node.js 应用程序
 
-有关创建 Node.js 应用程序的说明，请参阅[在 Azure App Service 中创建 Node.js Web 应用]、、[使用 Windows PowerShell 生成 Node.js 应用程序并将其部署到 Azure 云服务]或[使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]。
+有关如何创建 Node.js 应用程序的说明，请参阅[在 Azure App Service 中创建 Node.js Web 应用]、[使用 Windows PowerShell 生成 Node.js 应用程序并将其部署到 Azure 云服务]或[使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]。
 
 ## 配置应用程序以访问存储
 
@@ -59,7 +59,7 @@
 
     var azure = require('azure-storage');
 
-## 设置 Azure 存储连接
+## 设置 Azure 存储空间连接
 
 Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCESS_KEY` 或 `AZURE_STORAGE_CONNECTION_STRING`，以便获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 **createBlobService** 时必须指定帐户信息。
 
@@ -115,7 +115,7 @@ Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCES
 
 ### 筛选器
 
-你可以向使用 **BlobService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
+可以向使用 **BlobService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
 	function handle (requestOptions, next)
 
@@ -234,7 +234,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-`result` 包含一个 `entries` 集合，该集合是一组用于描述每个 Blob 的对象。如果不能返回所有的 Blob，`result` 还将提供 `continuationToken`，这可用作第二个参数来检索其他条目。
+`result` 包含一个 `entries` 集合，该集合是一组用于描述每个 Blob 的对象。如果不能返回所有 Blob，`result` 还将提供 `continuationToken`，这可用作第二个参数来检索其他条目。
 
 ## 下载 Blob
 
@@ -412,4 +412,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 [Azure Storage SDK for Node API 参考]: http://azure.github.io/azure-storage-node/
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0905_2016-->
