@@ -494,7 +494,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 无法将控制台输出链接到特定的方法调用，因为控制台是单线程的，而许多作业函数可能同时运行。正因如此，SDK 为每个函数调用提供了自身唯一的日志写入器对象。
 
-若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#logsoverview)，请使用 **Console.Out**（创建标记为 INFO 的日志）和 **Console.Error**（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 Web 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure Web 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
+若要写入应用程序跟踪日志，请使用 **Console.Out**（创建标记为 INFO 的日志）和 **Console.Error**（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 Web 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure Web 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
 
 仅当程序在 Azure Web 作业中运行（而不是在本地运行或者在其他某个环境中运行）时，控制台输出才显示在仪表板中。
 

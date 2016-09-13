@@ -367,9 +367,9 @@ Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
 ## 后续步骤
 
 现在，你已了解 Blob 存储的基础知识，可单击下面的链接了解详细信息。
-
+<!--
 ### Azure 存储空间资源管理器
-- [Azure 存储资源管理器 (MASE)](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/) 是 Microsoft 免费提供的独立应用，可用于在 Windows、OS X 和 Linux 上以可视方式处理 Azure 存储空间数据。
+- [Azure 存储资源管理器 (MASE)](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/) 是 Microsoft 免费提供的独立应用，可用于在 Windows、OS X 和 Linux 上以可视方式处理 Azure 存储空间数据。-->
 
 ### Blob 存储参考
 
@@ -380,7 +380,7 @@ Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
 
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - [开始使用适用于 .NET 的文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
-- [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
+- [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/)
 
   [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png
   [Blob6]: ./media/storage-dotnet-how-to-use-blobs/blob6.png

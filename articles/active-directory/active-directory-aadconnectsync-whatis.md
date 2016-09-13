@@ -25,7 +25,6 @@ Azure Active Directory Connect 同步服务（Azure AD Connect 同步）是 Azur
 主题 | 涵盖的内容和阅读时机
 ----- | -----
 **Azure AD Connect 同步基础知识** |
-[了解体系结构](/documentation/articles/active-directory-aadconnectsync-understanding-architecture/) | 适合不熟悉同步引擎并想要深入了解所用体系结构和术语的人员。
 [技术概念](/documentation/articles/active-directory-aadconnectsync-technical-concepts/) | 精简版的体系结构主题，简要解释所用的术语。
 [Azure AD Connect 的拓扑](/documentation/articles/active-directory-aadconnect-topologies/) | 介绍同步引擎支持的各种拓扑和方案。
 **自定义配置** |
@@ -39,7 +38,6 @@ Azure Active Directory Connect 同步服务（Azure AD Connect 同步）是 Azur
 [防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/) | 介绍“防止意外删除”功能以及如何配置该功能。
 [计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/) | 介绍导入、同步和导出数据的内置计划程序。
 [实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/) | 介绍密码同步的工作原理、实现方式，及其操作与故障排除方法。
-[设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback/) | 介绍设备写回在 Azure AD Connect 中的工作原理。
 [目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/) | 介绍如何使用你自己的自定义属性扩展 Azure AD 架构。
 **同步服务** |
 [Azure AD Connect 同步服务功能](/documentation/articles/active-directory-aadconnectsyncservice-features/) | 介绍同步服务端，以及如何在 Azure AD 中更改同步设置。

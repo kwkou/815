@@ -80,7 +80,6 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 
 * [Java 事件中心客户端](https://github.com/hdinsight/eventhubs-client)
 * [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
-* [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
 
 ## 设备标识注册表
 
@@ -580,7 +579,6 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 - [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 - [使用 Azure 门户管理 IoT 中心][lnk-portal]
-- [从根本上保护 IoT 解决方案][lnk-securing]
 
 
 

@@ -47,7 +47,6 @@
 - [最新版本的 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
 - [使用 SSMS 将 BACPAC 导入 Azure SQL 数据库](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms/)
 - [将 BACPAC 导入 Azure SQL 数据库 SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage/)
-- [将 BACPAC 导入 Azure SQL 数据库 Azure 门户](/documentation/articles/sql-database-import/)
 - [将 BACPAC 导入 Azure SQL 数据库 PowerShell](/documentation/articles/sql-database-import-powershell/)
 
 ## 其他资源

@@ -424,7 +424,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 	![vm_create16](./media/azure-Iaas-user-manual-part2/vm_create16.png)
 
-	关于终结点的内容，将在[第 4 章](section_6)做详细的介绍。
+	关于终结点的内容，将在[第 4 章](/documentation/articles/azure-Iaas-user-manual-part3/#section_6)做详细的介绍。
 
 5.	最后点击确认，这样就完成创建第一个 AD Server。在虚拟机创建列表中就会显示 ”正在启动 (正在配置)”
 

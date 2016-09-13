@@ -522,8 +522,5 @@ public class BlogsController : Controller
     }
 ```
 
-## 后续步骤
-
-若要详细了解如何对 Azure 应用程序进行优化和故障排除，请参阅 [使用 Visual Studio 对 Azure App Service 中的 Web 应用进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
 
 <!---HONumber=Mooncake_0509_2016-->

@@ -72,7 +72,7 @@
 | --: | :-- | :-- |
 | 1 | [排查 Azure SQL 数据库的连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/) | 这是对 Azure SQL 数据库中的连接问题进行故障排除的登陆页面。该页面介绍如何识别并解决 Azure SQL 数据库中的暂时性错误和永久性或非暂时性错误。 |
 | 2 | [排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误](/documentation/articles/sql-database-connectivity-issues/) | 了解如何排查、诊断和防止 Azure SQL 数据库中的 SQL 连接错误或暂时性错误。 |
-| 3 | [暂时性错误处理的一般指南](/documentation/articles/best-practices-retry-general/) | 介绍连接到 Azure SQL 数据库时的暂时性错误处理的一般指南。 |
+| 3 | 暂时性错误处理的一般指南 | 介绍连接到 Azure SQL 数据库时的暂时性错误处理的一般指南。 |
 | 4 | [对 Azure SQL 数据库的连接问题进行故障排除](https://support.microsoft.com/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database) | 该工具可帮助你识别并解决连接错误。 |
 | 5 | [对错误“&lt;y&gt; 服务器上的 &lt;x&gt; 数据库当前不可用。请稍后重试连接”进行故障排除](/documentation/articles/sql-database-troubleshoot-connection/) | 介绍如何识别并解决 40613 错误：“&lt;y&gt; 服务器上的 &lt;x&gt; 数据库当前不可用。请稍后重试连接。” |
 | 6 | [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/) | 介绍有关 SQL 数据库客户端应用程序的 SQL 错误代码的信息，例如常见的数据库连接错误、数据库复制问题和常规错误。 |
@@ -83,7 +83,7 @@
 
 ## 后续步骤
 
-- [对 Azure SQL 数据库性能问题进行故障排除](/documentation/articles/sql-database-troubleshoot-performance/)
+
 - [对 Azure SQL 数据库权限问题进行故障排除](/documentation/articles/sql-database-troubleshoot-permissions/)
 - [参阅有关 Azure SQL 数据库服务的所有主题](/documentation/articles/sql-database-index-all-articles/)
 

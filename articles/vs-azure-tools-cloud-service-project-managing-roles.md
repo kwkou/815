@@ -50,8 +50,6 @@
 	   </LocalResources>
 	</WebRole>
 
-## 后续步骤
 
-有关如何在 Visual Studio 中配置角色的详细信息，请参阅[使用 Visual Studio 配置 Azure 云服务的角色](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)。
 
 <!---HONumber=Mooncake_0516_2016-->

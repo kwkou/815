@@ -166,7 +166,6 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 - [开发人员指南][lnk-devguide]
 - [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [从根本上保护 IoT 解决方案][lnk-securing]
 
 
 [4]: ./media/iot-hub-manage-through-portal/create-iothub.png

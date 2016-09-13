@@ -45,7 +45,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
  - **Resources** 节：此节定义此模板创建的 Azure 资源类型。在其他资源类型中，此模板将创建 Azure Web 应用和 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)资源。如果你偏好在虚拟机中运行和管理 Web 与 SQL 服务器，可以使用“[iis-2vm-sql-1vm](https://github.com/Azure/azure-quickstart-templates/tree/master/iis-2vm-sql-1vm)”或“[lamp-app](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)”模板；但本文中的说明基于 [201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database) 模板。
  - **Parameters** 节：此节定义可用于配置每个资源的参数。在模板中指定的一些参数带有“defaultValue”属性，而其他一些参数则没有该属性。使用模板部署 Azure 资源时，必须将值提供给模板中所有未指定 defaultValue 属性的参数。如果未向带有 defaultValue 属性的参数提供值，则会使用模板中为 defaultValue 参数指定的值。
 
-模板定义所创建的 Azure 资源，以及可用来配置每个资源的参数。你可以阅读[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)一文，以进一步了解模板及如何设计自己的模板。
+
 
 ## 下载和自定义现有参数文件
 
@@ -278,7 +278,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 	                    
 	Outputs           :
 
-  如果命令未成功，请解决任何错误消息并重试。常见的问题是使用了未遵循 Azure 资源命名约束的参数值。其他故障排除提示可在 [Azure 中的资源组部署故障排除](/documentation/articles/resource-group-deploy-debug)一文中找到。
+  如果命令未成功，请解决任何错误消息并重试。常见的问题是使用了未遵循 Azure 资源命名约束的参数值。其他故障排除提示可在 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-common-deployment-errors/)一文中找到。
 
   在 PowerShell 命令提示符下键入以下命令（将 [path] 替换为前面步骤中的文件保存路径），将资源部署到为测试环境创建的资源组。
 

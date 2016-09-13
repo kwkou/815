@@ -99,7 +99,7 @@ Bootstrap 的使用方式有 2 种：
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions/
 [hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1/
-[powershell-install-configure]: /documentation/articles/install-configure-powershell/
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集创建过程中的阶段"

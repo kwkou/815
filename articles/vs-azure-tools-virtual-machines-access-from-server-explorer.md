@@ -45,8 +45,6 @@
   	|协议|此终结点的传输层使用的协议：TCP 或 UDP。|
   	|公用端口|用于公开访问应用程序的端口。|
 
-## 后续步骤
 
-若要了解有关在 Visual Studio 中使用 Azure 角色的详细信息，请参阅[将远程桌面与 Azure 角色一起使用](/documentation/articles/vs-azure-tools-remote-desktop-roles/)。
 
 <!---HONumber=Mooncake_0620_2016-->

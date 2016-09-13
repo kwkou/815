@@ -174,7 +174,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 |比较条件|Azure 队列|Service Bus 队列|
 |---|---|---|
 |最大队列大小|**200 TB**<br/><br/>（限制为单个存储帐户容量）|**1 GB 到 80 GB**<br/><br/>（在创建队列和[启用分区](/documentation/articles/service-bus-partitioning/)时定义 – 请参阅“其他信息”部分）|
-|最大消息大小|**64 KB**<br/><br/>（使用 **Base64** 编码时为 48 KB）<br/><br/>Azure 可以通过合并队列和 Blob 支持大消息 – 单个项目排队的消息最多达到 200GB。|**256 KB** 或 **1 MB**<br/><br/>（包括标头和正文，最大标头大小：64 KB）。<br/><br/>取决于[服务层](/docuementation/articles/service-bus-premium-messaging)。|
+|最大消息大小|**64 KB**<br/><br/>（使用 **Base64** 编码时为 48 KB）<br/><br/>Azure 可以通过合并队列和 Blob 支持大消息 – 单个项目排队的消息最多达到 200GB。|**256 KB** 或 **1 MB**<br/><br/>（包括标头和正文，最大标头大小：64 KB）。<br/><br/>取决于[服务层](/documentation/articles/service-bus-premium-messaging/)。|
 |最大消息 TTL|**7 天**|**不受限制**|
 |最大队列数|**不受限制**|**10,000**<br/><br/>（每个服务命名空间，可以增加）|
 |并发客户端的最大数目|**不受限制**|**Unlimited**<br/><br/>（100 个并发连接限制仅适用于基于 TCP 协议的通信）|

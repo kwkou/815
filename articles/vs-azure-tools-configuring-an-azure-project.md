@@ -43,7 +43,7 @@
 
 1. 若要选择在本地运行或调试云服务时要使用的服务配置，请在“服务配置”列表中选择服务配置。
 
-  >[AZURE.NOTE] 如过你想创建要使用的服务配置，请参阅“如何：管理服务配置和配置文件”。如过你想修改角色的服务配置，请参阅[如何使用 Visual Studio 配置 Azure 云服务的角色](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)。
+  >[AZURE.NOTE] 如过你想创建要使用的服务配置，请参阅“如何：管理服务配置和配置文件”。
 
 1. 若要在本地运行或调试云服务时启动 Azure 存储模拟器，请在“启动 Azure 存储模拟器”中选择“True”。
 

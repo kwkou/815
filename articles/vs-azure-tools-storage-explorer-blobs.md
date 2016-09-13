@@ -25,7 +25,7 @@
 若要完成本文中的步骤，你需要满足以下先决条件：
 
 - [下载并安装存储资源管理器（预览版）](http://www.storageexplorer.com)
-- [连接到 Azure 存储帐户或服务](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/#connect-to-a-storage-account-or-service)
+- 连接到 Azure 存储帐户或服务
 
 ## 创建 Blob 容器
 

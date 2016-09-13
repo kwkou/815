@@ -1,7 +1,6 @@
 > [AZURE.SELECTOR]
 - [(iOS | JavaScript)](/documentation/articles/mobile-services-ios-validate-modify-data-server-scripts/)
 - [(Windows Store C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/)
-- [(Windows Store C# | Javascript)](/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/)
 - [(Windows Store JavaScript | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-validate-modify-data/)
 - [(Windows Store JavaScript | Javascript)](/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/)
 - [(Windows Phone | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/)

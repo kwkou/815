@@ -20,7 +20,6 @@
 
 ##新功能
 
-- [使用移动服务同步脱机数据](/documentation/articles/mobile-services-windows-phone-get-started-offline-data/)
 - [通知中心入门](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)
 - [使用 Active Directory 身份验证库登录](https://github.com/AzureADSamples/NativeClient-WindowsPhone8.1)
 - [通过媒体服务使用视频和音频流](http://playerframework.codeplex.com/releases/view/97333)
@@ -38,14 +37,12 @@
 ###数据
 
 - [在 SQL 数据库 中使用移动服务存储结构化数据](/documentation/articles/mobile-services-windows-phone-get-started-data/)
-- [在 Blob 存储中存储二进制数据](/documentation/articles/mobile-services-windows-phone-upload-data-blob-storage/)
--  [使用移动服务和表存储来存储简单结构化数据](/documentation/articles/mobile-services-store-data-table-storage/)
 
 查看服务：[移动服务](/documentation/services/mobile-services) | [存储](/documentation/services/storage)
 
 ###同步
 
-- [使用移动服务同步脱机数据](/documentation/articles/mobile-services-windows-phone-get-started-offline-data/)
+
 
 查看服务：[移动服务](/documentation/services/mobile-services)
 

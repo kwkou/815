@@ -25,7 +25,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-想要为使用 Windows 计算机安全地链接 Azure 中的 Linux VM 创建这类型的文件，请参阅[在 Windows 使用 SSH](virtual-machines-linux-ssh-from-windows)。
+想要为使用 Windows 计算机安全地链接 Azure 中的 Linux VM 创建这类型的文件，请参阅[在 Windows 使用 SSH](/documentation/articles/virtual-machines-linux-ssh-from-windows)。
 
 ## 你需要哪些文件？
 

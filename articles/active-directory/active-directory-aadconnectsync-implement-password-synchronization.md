@@ -71,7 +71,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
 ### 密码同步在 Azure AD 域服务中的工作原理
 
-你也可以使用密码同步功能将本地密码同步到 [Azure AD 域服务](/documentation/articles/active-directory-ds-overview/)。此方案可让 Azure AD 域服务以本地 AD 中所有可用的方法验证云中的用户。此方案的体验类似于在本地环境中使用 Active Directory 迁移工具 (ADMT)。
+你也可以使用密码同步功能将本地密码同步到 Azure AD 域服务。此方案可让 Azure AD 域服务以本地 AD 中所有可用的方法验证云中的用户。此方案的体验类似于在本地环境中使用 Active Directory 迁移工具 (ADMT)。
 
 
 ### 安全注意事项

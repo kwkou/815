@@ -37,7 +37,7 @@
 
 在 .NET 后端移动服务中，通过调用从 [ApiServices.Push](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) 属性获取的 [PushClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) 对象的 [SendAsync] 方法发送通知。发送的推送通知（本机或模板）取决于传递给 [SendAsync] 方法的特定 [IPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx) 派生的对象，如下表所示：
 
-|平台 |[APNS](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/)|[WNS](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/) | MPNS
+|平台 |[APNS](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push/)|WNS | MPNS
 |-----|-----|----|----|-----|
 |本机|[ApplePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx) |[GooglePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx) |[WindowsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
 
@@ -72,7 +72,7 @@
 
 在 JavaScript 后端移动服务中，通过调用从全局 [push 对象]获取的特定于平台的对象的 **send** 方法发送通知，如下表所示：
 
-|平台 |[APNS](/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/)|[WNS](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/) |[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/)|
+|平台 |[APNS](/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/)|WNS|[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push/)|
 |-----|-----|----|----|-----|
 |本机|[apns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj839711.aspx) |[gcm 对象](http://msdn.microsoft.com/zh-cn/library/azure/dn126137.aspx) |[wns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx) | [mpns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj871025.aspx) |
 

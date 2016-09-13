@@ -12,11 +12,11 @@ pageTitle="数据服务 - Azure 微软云" metakeywords=""
     />
        
 <h1 id="menu-java-data">数据服务</h1>
-<h2 id="header-0">基础</h2>
-<!--<h3>指南：<a href="/documentation/articles/fundamentals-data-management-business-analytics/">数据管理和业务分析</a></h3>
-<p>了解 Azure 中可帮助您使用关系和非关系数据的技术。</p>-->
+<!--<h2 id="header-0">基础</h2>
+<h3>指南：<a href="/documentation/articles/fundamentals-data-management-business-analytics/">数据管理和业务分析</a></h3>
+<p>了解 Azure 中可帮助您使用关系和非关系数据的技术。</p>
 <h3>指南：<a href="/documentation/articles/fundamentals-data-management-choose-technology/">数据管理：选择合适的技术</a></h3>
-<p>了解 Azure 中的不同数据管理技术方案。</p>
+<p>了解 Azure 中的不同数据管理技术方案。</p>-->
 <h2 id="header-1">Azure 存储空间</h2>
 <h3>功能指南：<a href="/documentation/articles/storage-java-how-to-use-blob-storage/">Blob 服务</a></h3>
 <p>Blob 是存储大量非结构化文本或二进制数据（如视频、音频和图像）的最简单方式。Blob 是经 ISO 27001 认证的托管服务，可自动扩展以存储多达 100 TB 的数据。几乎可从任何位置通过 REST 和客户端 API 访问这些 Blob。</p>

@@ -21,7 +21,7 @@
 | [Azure 经典管理门户](#starting-a-runbook-with-the-azure-portal) | <li>使用交互式用户界面的最简单方法。<br> <li>用于提供简单参数值的窗体。<br> <li>轻松跟踪作业状态。<br> <li>使用 Azure 登录对访问进行身份验证。 |
 | [Windows PowerShell](https://msdn.microsoft.com/zh-cn/library/dn690259.aspx) | <li>使用 Windows PowerShell cmdlet 从命令行调用。<br> <li>可以使用多个步骤包含在自动化解决方案中。<br> <li>使用证书或 OAuth 用户主体/服务主体对请求进行身份验证。<br> <li>提供简单和复杂的参数值。<br> <li>跟踪作业状态。<br> <li>支持 PowerShell cmdlet 所需的客户端。 |
 | [Azure 自动化 API](http://msdn.microsoft.com/zh-cn/library/azure/mt163849.aspx) | <li>最有弹性的方法，但也最复杂。<br> <li>从任何可发出 HTTP 请求的自定义代码调用。<br> <li>使用证书或 OAuth 用户主体/服务主体对请求进行身份验证。<br> <li>提供简单和复杂的参数值。<br> <li>跟踪作业状态。 |
-| [Webhook](/documentation/articles/automation-webhooks/) | <li>从单个 HTTP 请求启动 Runbook。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>客户端无法覆盖创建 Webhook 时指定的参数值。Runbook 可以定义填入了 HTTP 请求详细信息的单个参数。<br> <li>无法通过 Webhook URL 跟踪作业状态。 |
+| Webhook | <li>从单个 HTTP 请求启动 Runbook。<br> <li>使用 URL 中的安全令牌进行身份验证。<br> <li>客户端无法覆盖创建 Webhook 时指定的参数值。Runbook 可以定义填入了 HTTP 请求详细信息的单个参数。<br> <li>无法通过 Webhook URL 跟踪作业状态。 |
 | [计划](/documentation/articles/automation-scheduling-a-runbook/) | <li>按每小时、每天或每周计划自动启动 Runbook。<br> <li>通过 Azure 经典管理门户、PowerShell cmdlet 或 Azure API 来操作计划。<br> <li>提供要用于计划的参数值。 |
 | [从另一个 Runbook](/documentation/articles/automation-child-runbooks/) | <li>使用一个 Runbook 作为另一个 Runbook 中的活动。<br> <li>对多个 Runbook 使用的功能很有用。<br> <li>为子 Runbook 提供参数值，并使用父 Runbook 中的输出。 |
 

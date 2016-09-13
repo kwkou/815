@@ -19,12 +19,10 @@
 
 ##新功能
 
-- [通过移动分析深入了解应用程序](/documentation/articles/mobile-services-ios-get-started-mobile-analytics/)
 - [使用移动服务同步脱机数据](/documentation/articles/mobile-services-ios-get-started-offline-data/)
 - [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication/)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
 - [使用影像发送推送通知至 iOS8](/documentation/articles/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich/)
-- [通过媒体服务使用视频和音频流](/documentation/articles/media-services-use-ios-media-player-framework/)
 
 ##教程
 
@@ -38,9 +36,7 @@
 
 ###数据
 
-- [在 SQL 数据库 中使用移动服务存储结构化数据](/documentation/articles/mobile-services-ios-get-started-data/)
-- [在 Blob 存储中存储二进制数据](/documentation/articles/mobile-services-ios-upload-data-blob-storage/)
-- [使用移动服务和表存储来存储简单结构化数据](/documentation/articles/mobile-services-store-data-table-storage/)
+
 
 查看服务：[移动服务](/documentation/services/mobile-services) | [存储](/documentation/services/storage)
 
@@ -58,18 +54,9 @@
 
 查看服务： [通知中心](/documentation/services/notification-hubs)
 
-###分析
 
-- [通过移动分析深入了解应用程序](/documentation/articles/mobile-services-ios-get-started-mobile-analytics/)
-<!--- [使用 New Relic 监视移动服务](/documentation/articles/store-new-relic-mobile-services-monitor/)-->
 
-查看服务：[Capptain](http://www.capptain.com)
 
-###媒体
-
-- [通过媒体服务使用视频和音频流](/documentation/articles/media-services-use-ios-media-player-framework/)
-
-查看服务：[媒体服务](/develop/media-services)
 
 ##资源
 

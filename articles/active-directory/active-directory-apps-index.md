@@ -51,7 +51,7 @@
 | :---: | --- |
 | 联合身份验证和其他登录类型简介 | [使用 Azure AD 进行单一登录](/documentation/articles/active-directory-appssoaccess-whatis/) |
 | 通过已简化的单一登录配置步骤与 Azure AD 预先集成的数千个 SaaS 应用程序 | [Azure AD 应用程序库入门](/documentation/articles/active-directory-appssoaccess-whatis/#get-started-with-the-azure-ad-application-gallery)<br /><br />[支持联合身份验证的预先集成应用完整列表](http://aka.ms/aadfederatedapps)<br /><br />[如何将应用添加到 Azure AD 应用库](/documentation/articles/active-directory-app-gallery-listing/) |
-| 如何手动设置和自定义单一登录配置 | [如何针对不在 Azure Active Directory 应用程序库中的应用配置联合单一登录](/documentation/articles/active-directory-saas-custom-apps/)<br /><br />[如何针对预先集成的应用自定义在 SAML 令牌中颁发的声明](/documentation/articles/active-directory-saml-claims-customization/) |
+| 如何手动设置和自定义单一登录配置 | [如何针对预先集成的应用自定义在 SAML 令牌中颁发的声明](/documentation/articles/active-directory-saml-claims-customization/) |
 | 使用 SAML 协议的联合应用的故障排除指南 | [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
 | 如何设置应用的证书过期日期，以及如何续订证书 | [在 Azure Active Directory 中管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/) |
 
@@ -79,7 +79,7 @@
 | 有关使用密码同步启用 SSO 的指导 | [使用 Azure AD Connect 实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)<br /><br />[密码同步疑难解答](https://support.microsoft.com/zh-cn/kb/2855271) |
 | 有关使用密码写回启用 SSO 的指导 | [Azure AD 中的密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback) |
 | 有关使用第三方标识提供者启用 SSO 的指导 | [可用于启用单一登录的兼容第三方标识提供者列表](https://aka.ms/ssoproviders) | 
-| Windows 10 用户如何通过 Azure AD Join 享受单一登录的优点 | [通过 Azure Active Directory Join 将云功能扩展到 Windows 10 设备](/documentation/articles/active-directory-azureadjoin-overview/) |
+| Windows 10 用户如何通过 Azure AD Join 享受单一登录的优点 | 通过 Azure Active Directory Join 将云功能扩展到 Windows 10 设备|
 
 ##应用和 Azure AD
 

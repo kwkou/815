@@ -588,11 +588,11 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
-[hdinsight-emulator]: /documentation/articles/hdinsight-get-started-emulator/
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator/#blobstorage
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-get-started-emulator/
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-get-started-emulator/#blobstorage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/

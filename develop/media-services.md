@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 pageTitle="Azure 开发人员中心：Media Services" 
 description="" 
 services="Media Services" 
@@ -25,14 +25,12 @@ editor="Eric Chen" />
 ###上载
 
 - [设置您的计算机](/zh-cn/documentation/articles/media-services-set-up-computer/)
-- [加密和上载资产](/zh-cn/documentation/articles/media-services-create-encrypted-asset-upload-storage/)
 - [批量上载内容](http://msdn.microsoft.com/zh-cn/library/azure/jj853022.aspx)
 - [全部显示](/zh-cn/develop/media-services/resources)
 
 ###编码
 
 - [对资产进行编码](/zh-cn/documentation/articles/media-services-encode-asset/)
-- [用 PlayReady 加密](/zh-cn/documentation/articles/media-services-protect-asset/)
 - [检查作业进度](/zh-cn/documentation/articles/media-services-check-job-progress/)
 - [在经典管理门户中进行监视](/zh-cn/documentation/articles/media-services-monitor-services-account/)
 - [经典管理门户中的内容](/zh-cn/documentation/articles/media-services-manage-content/)
@@ -51,7 +49,6 @@ editor="Eric Chen" />
 - [开发媒体服务应用程序](http://msdn.microsoft.com/zh-cn/library/dn223283.aspx)
 - [开发 Windows 8 播放器](/zh-cn/documentation/articles/media-services-build-smooth-streaming-apps/)
 - [开发 Flash 播放器](/zh-cn/documentation/articles/media-services-use-osmf-smooth-streaming-client-plugin/)
-- [开发 iOS 播放器](/zh-cn/documentation/articles/media-services-use-ios-media-player-framework/)
 - [全部显示](/zh-cn/develop/media-services/resources)
 
 ##更多资源

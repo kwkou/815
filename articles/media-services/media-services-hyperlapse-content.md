@@ -207,7 +207,6 @@ Speed|用于加速输入视频的倍数。
 
 ##相关链接
 
-[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)
 
 [Azure 媒体分析演示](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 

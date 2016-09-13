@@ -63,7 +63,7 @@ Azure 有两个选项可用于在 Azure 中托管 SQL Server 工作负荷：
 |||||
 |**资源：**|你不想使用 IT 资源来支持和维护底层基础结构，而想要关注应用程序层。|你拥有用于支持和维护的 IT 资源。|
 |**总拥有成本：**|消除硬件成本并减少管理成本。|消除硬件成本。|
-|**业务连续性：**|除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如[自动备份](/documentation/articles/sql-database-automated-backups/)、[时间点还原](/documentation/articles/sql-database-recovery-using-backups/)、[异地还原](/documentation/articles/sql-database-recovery-using-backups/)和[活动异地复制](/documentation/articles/sql-database-active-geo-replication/)。有关详细信息，请参阅 [SQL 数据库业务连续性概述](/documentation/articles/sql-database-business-continuity/)。|Azure VM 上的 SQL Server 可让你设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。你可以视需要自我测试并运行故障转移。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。|
+|**业务连续性：**|除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如[自动备份](/documentation/articles/sql-database-automated-backups/)、[时间点还原](/documentation/articles/sql-database-recovery-using-backups/)、[异地还原](/documentation/articles/sql-database-recovery-using-backups/)和活动异地复制。有关详细信息，请参阅 [SQL 数据库业务连续性概述](/documentation/articles/sql-database-business-continuity/)。|Azure VM 上的 SQL Server 可让你设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。你可以视需要自我测试并运行故障转移。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。|
 |**混合云：**|本地应用程序可以访问 Azure SQL 数据库中的数据。|使用 Azure VN 上的 SQL Server，应用程序可以一部分在云中运行，一部分在本地运行。例如，可以通过 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)，将本地网络和 Active Directory 域扩展到云中。此外，可以使用 [Azure 中的 SQL Server 数据文件](http://msdn.microsoft.com/zh-cn/library/dn385720.aspx)，将本地数据文件存储在 Azure 存储空间中。有关详细信息，请参阅 [SQL Server 2014 混合云简介](http://msdn.microsoft.com/zh-cn/library/dn606154.aspx)。|
 ||作为订阅服务器支持 [SQL Server 事务复制](https://msdn.microsoft.com/zh-cn/library/mt589530.aspx)。|支持 [SQL Server 事务复制](https://msdn.microsoft.com/zh-cn/library/mt589530.aspx)、灾难恢复和 [Azure VM 中的 AlwaysOn 副本](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。|
 |||||
@@ -149,6 +149,6 @@ Azure 有两个选项可用于在 Azure 中托管 SQL Server 工作负荷：
 ## 后续步骤
 - 若要开始使用 SQL 数据库，请参阅 [SQL 数据库教程：使用 Azure 门户在几分钟内创建一个 SQL 数据库](/documentation/articles/sql-database-get-started/)。
 - 请参阅 [SQL 数据库定价](/pricing/details/sql-database/)
-- 若要开始在 Azure VM 上使用 SQL Server，请参阅[在 Azure 中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
+
 
 <!---HONumber=Mooncake_0808_2016-->

@@ -120,7 +120,7 @@
 
     此时将显示“启动 Azure 调试环境”对话框，并在浏览器中启动应用程序。有关如何在计算模拟器中启动每种类型的 Web 应用程序的具体信息，请参阅本部分中的表格。
 
-1. 若要设置应用程序的服务以将其发布到 Azure，你必须准备好一个 Microsoft 帐户和 Azure 订阅。使用以下主题中所述的步骤来设置服务：[Prepare to publish or deploy an Azure application from Visual Studio（准备从 Visual Studio 发布或部署 Azure 应用程序）](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
+1. 若要设置应用程序的服务以将其发布到 Azure，你必须准备好一个 Microsoft 帐户和 Azure 订阅。
 
 1. 若要将 Web 应用程序发布到 Azure，请打开 Web 项目的快捷菜单，然后选择“发布到 Azure”。
 
