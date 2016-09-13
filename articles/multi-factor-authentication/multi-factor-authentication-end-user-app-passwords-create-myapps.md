@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="05/12/2016" 
-	wacn.date="06/06/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="09/12/2016"/>
 
 # 在 myapps 365 门户中为 Azure  (MFA)多重身份验证创建应用密码
 
 
 
-如果你不在包含 Azure 订阅的 Office 365 上使用多重身份验证，则需要通过 myapps 门户创建应用密码。
+如果未将多重身份验证用于 Office 365 并有一个 Azure 订阅，则需要通过 myapps 门户创建应用密码。
 
 ## 在没有 Office 365 或 Azure 订阅的情况下创建应用密码
 --------------------------------------------------------------------------------
@@ -37,4 +37,5 @@
 
 
  
-<!---HONumber=Mooncake_0530_2016-->
+
+<!---HONumber=Mooncake_0905_2016-->

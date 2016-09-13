@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication"  
-	ms.date="05/12/2016" 
-	wacn.date="04/13/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="09/12/2016"/>
 
 
 
@@ -45,4 +45,4 @@
 
  
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0905_2016-->
