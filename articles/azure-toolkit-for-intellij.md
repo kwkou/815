@@ -24,7 +24,7 @@
 
 以下文章可帮助你着手使用 Azure Toolkit for IntelliJ：
 
-* [Azure Toolkit for IntelliJ 中的新增功能]
+
 * [安装 Azure Toolkit for IntelliJ]
 * [在 IntelliJ 中创建 Azure 的 Hello World Web 应用]
 

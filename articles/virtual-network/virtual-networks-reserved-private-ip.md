@@ -27,7 +27,7 @@
 	OperationId          : fd3097e1-5f4b-9cac-8afa-bba1e3492609
 	OperationStatus      : Succeeded
 
->[AZURE.NOTE]如果你想要在安全的环境中测试上述命令，请遵循[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet/)中的准则创建名为 *TestVnet* 的 VNet，并确保其使用 *10.0.0.0/8* 地址空间。
+>[AZURE.NOTE]如果你想要在安全的环境中测试上述命令，请遵循[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)中的准则创建名为 *TestVnet* 的 VNet，并确保其使用 *10.0.0.0/8* 地址空间。
 
 ## 如何在创建 VM 时指定静态内部 IP
 下面的 PowerShell 脚本将创建名为 *TestService* 的全新云服务，然后从 Azure 中检索映像，接着在新的云服务中使用检索的映像创建名为 *TestVM* 的 VM，对该 VM 进行设置，使之位于名为 *Subnet-1* 的子网中，最后再将 *10.0.0.7* 设置为 VM 的静态内部 IP：

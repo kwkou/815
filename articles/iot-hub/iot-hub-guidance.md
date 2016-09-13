@@ -107,7 +107,6 @@ IoT 解决方案存储有关单个设备的数据，例如：
 - [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 - [使用 Azure 门户管理 IoT 中心][lnk-portal-manage]
-- [从根本上保护 IoT 解决方案][lnk-securing]
 
 [img-tokenservice]: ./media/iot-hub-guidance/tokenservice.png
 

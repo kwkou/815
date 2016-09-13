@@ -80,7 +80,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 ###如何使用
 
-媒体编码器高级工作流使用复杂的工作流进行配置。可以使用[工作流设计器](/documentation/articles/media-services-workflow-designer/)工具创建和更新工作流文件。
+
 
 [如何在 Azure 媒体服务中使用高级编码](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services/)
 

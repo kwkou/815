@@ -57,6 +57,4 @@
 
 [如何在虚拟网络中使用公共 IP 地址](/documentation/articles/virtual-networks-public-ip-within-vnet/)
 
-[如何删除虚拟网络 (VNet)](/documentation/articles/virtual-networks-delete-vnet/)
-
 <!---HONumber=74-->

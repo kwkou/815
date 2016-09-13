@@ -106,7 +106,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 [1] 借助 Azure AD Free 和 Azure AD Basic，已获权访问 SaaS 应用的最终用户可以在其访问面板中看到最多 10 个应用并获得对这些应用的 SSO 访问权限。管理员可配置 SSO，并为使用 Free 和 Basic 的用户分配访问所需数量的 SaaS 应用的权限，但最终用户在其访问面板中一次只能看到 10 个应用。
 
-[2] 通过使用应用程序库菜单中提供的模板，自助集成支持 SAML、SCIM 或基于窗体的身份验证的任何应用程序。有关更多详细信息，请参阅[针对不在 Azure Active Directory 应用程序库中的应用程序配置单一登录](/documentation/articles/active-directory-saas-custom-apps/)。
+[2] 通过使用应用程序库菜单中提供的模板，自助集成支持 SAML、SCIM 或基于窗体的身份验证的任何应用程序。
 
 **更多详细信息：**
 

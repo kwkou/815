@@ -42,8 +42,7 @@ editor="Eric Chen" />
 
 -  [使用 Service Bus 的发布/订阅应用程序](/documentation/articles/service-bus-nodejs-how-to-use-topics-subscriptions/)
 <!--- [使用 SendGrid 发送电子邮件](/documentation/articles/store-sendgrid-nodejs-how-to-send-email/)-->
-- [应用程序之间的消息](/documentation/articles/storage-nodejs-how-to-use-queues/)
-- [排除服务故障](/documentation/articles/best-practices-troubleshooting/#PlatformServices)
+- [应用程序之间的消息](/documentation/articles/storage-nodejs-how-to-use-queues/)、
 - [全部显示](/develop/nodejs/app-services)
 
 ###参考文档

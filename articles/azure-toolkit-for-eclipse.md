@@ -29,7 +29,6 @@
 * [Azure Toolkit for Eclipse 的新增功能]
 * [安装 Azure Toolkit for Eclipse]
 * [在 Eclipse 中创建 Azure 的 Hello World 云服务]
-* [在 Eclipse 中创建 Azure 的 Hello World Web 应用]
 
 ## 配置 Azure 项目设置
 

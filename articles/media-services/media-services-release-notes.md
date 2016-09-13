@@ -104,7 +104,7 @@ SDK 中的媒体服务对象无法进行序列化，因此无法与 Azure Cachin
 
 ### Azure 媒体分析
 
-Azure 媒体服务引入了视频智能很强大的 Azure 媒体分析。有关详细信息，请参阅 [Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)。
+Azure 媒体服务引入了视频智能很强大的 Azure 媒体分析。
 
 ### Apple FairPlay（预览版）
 

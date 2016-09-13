@@ -484,7 +484,7 @@ SLA 中经常会规定以下条款：
 
 实现提取模型的方法是将本地运行的监视代理与应用程序的每个实例配合使用。监视代理是独立的进程，可定期检索（提取）已在本地节点收集的遥测数据，并将此信息直接写入到应用程序所有实例共享的中心存储。这是 Azure 诊断实施的机制。Azure Web 或辅助角色的每个实例可以配置为捕获本地存储的诊断和其他跟踪信息。与每个实例一起运行的监视代理将指定的数据复制到 Azure 存储空间。[Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics/)（在 Azure 云服务和虚拟机中启用诊断）一文提供了有关此过程的详细信息。某些元素（例如 IIS 日志、故障转储和自定义错误日志）将写入 Blob 存储。而来自 Windows 事件日志、ETW 事件和性能计数器的数据将记录在表存储中。图 3 演示了此机制。
 
-![使用监视代理提取信息并写入共享存储的插图](.media/best-practices-monitoring/PullModel.png)
+![使用监视代理提取信息并写入共享存储的插图](./media/best-practices-monitoring/PullModel.png)
 
 图 3.使用监视代理提取信息并写入共享存储
 
@@ -495,7 +495,7 @@ SLA 中经常会规定以下条款：
 
 若要解决这些问题，可按图 4 中所示实施队列。在此体系结构中，本地监视代理（如果可以进行相应的配置）或自定义数据收集服务（如果不可以进行相应的配置）会将数据发布到队列。异步运行的独立进程（图 4 中的“存储写入服务”）将采用此队列中的数据，并将其写入共享存储。消息队列适用于这种方案，因为它“至少提供一次”语义，确保一旦发布就不丢失队列的数据。可以使用独立的辅助角色来实施存储写入服务。
 
-![使用队列来缓冲检测数据的插图](.media/best-practices-monitoring/BufferedQueue.png)
+![使用队列来缓冲检测数据的插图](./media/best-practices-monitoring/BufferedQueue.png)
 
 图 4.使用队列来缓冲检测数据
 
@@ -523,7 +523,7 @@ SLA 中经常会规定以下条款：
 
 可以实施一个附加的服务用于定期从共享存储检索数据，根据数据用途来分区和筛选数据，然后将其写入一组适合的数据存储，如图 6 所示。另一种方法是在合并和清理过程中包含此功能，并在检索到数据时直接将它写入这些存储，而不是将它存储在中间共享存储区域。每一种方法有其优点和缺点。实施独立分区服务可以减少合并与清理服务的负载，至少可在需要时重新生成某些分区的数据（取决于共享存储中保留的数据量）。但是，这会消耗更多的资源。此外，在从每个应用程序实例接收检测数据与将此数据转换成有用信息之间可能出现延迟。
 
-![数据分区和存储](.media/best-practices-monitoring/DataStorage.png)
+![数据分区和存储](./media/best-practices-monitoring/DataStorage.png)
 
 图 6.根据分析和存储要求将数据分区
 
@@ -644,7 +644,6 @@ SLA 中经常会规定以下条款：
 在许多情况下，批处理进程可以根据定义的计划生成报告。（正常情况下，延迟不是问题。） 但在需要时，它们还应该可以根据特定情况生成报告。举例来说，如果你要将数据存储在关系数据库（例如 Azure SQL 数据库）中，则可以使用 SQL Server Reporting Services 等工具来提取并格式化数据，然后将其呈现为一组报告。
 
 ## 相关模式和指南
-- [Autoscaling guidance](/documentation/articles/best-practices-auto-scaling/)（自动缩放指南）介绍如何通过减少操作员持续监视系统性能的需要来降低管理开销，并做出有关添加或删除资源的决策。
 - [Health Endpoint Monitoring Pattern](https://msdn.microsoft.com/zh-cn/library/dn589789.aspx)（运行状况终结点监视模式）介绍如何在应用程序中实施可让外部工具通过公开终结点定期访问的功能检查。
 - [Priority Queue Pattern](https://msdn.microsoft.com/zh-cn/library/dn589794.aspx)（优先级队列模式）说明如何排定队列消息的优先级，以便在较不紧急的消息之前接收和处理紧急请求。
 
@@ -656,7 +655,7 @@ SLA 中经常会规定以下条款：
 - [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)
 - [SQL Server business intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/)（Azure 虚拟机中的 SQL Server Business Intelligence）
 - [Receive alert notifications](./azure-portal/insights-receive-alert-notifications)（接收警报通知）和 [Track service health](/documentation/articles/insights-service-health/)（跟踪服务运行状况）
-- [Application Insights](/documentation/articles/app-insights-get-started/)
+
 
 ##其他最佳实践
 - [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)

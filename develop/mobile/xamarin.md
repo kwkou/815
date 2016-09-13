@@ -21,24 +21,22 @@
 
 ##新功能
 
-- [使用 Active Directory 身份验证库登录至 iOS](/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-adal-sso-authentication/)
-- [在 SQL 数据库 中使用移动服务将结构化数据存储在 Android 中](/documentation/articles/partner-xamarin-mobile-services-android-get-started-data/)
+
 - [在 iOS 中使用移动服务同步脱机数据](/documentation/articles/mobile-services-xamarin-ios-get-started-offline-data/)
-- [开始使用 Android 中的通知中心](/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
 
 ##教程
 
 ###用户
 
 - 登录 Microsoft 帐户 [iOS](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-users/) | [Android](/documentation/articles/partner-xamarin-mobile-services-android-get-started-users/)
-- 使用 Active Directory 身份验证库登录 [iOS](/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-adal-sso-authentication/) | [Android](https://github.com/AzureADSamples/NativeClient-Xamarin-Android)
+- 使用 Active Directory 身份验证库登录 iOS| [Android](https://github.com/AzureADSamples/NativeClient-Xamarin-Android)
 <!--- 代表用户访问 SharePoint [iOS](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/) | [Android](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/)-->
 
 查看服务：[Active Directory](https://github.com/AzureAD)
 
 ###数据
 
--在 SQL 数据库 中使用移动服务存储结构化数据 [iOS](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-data/) | [Android](/documentation/articles/partner-xamarin-mobile-services-android-get-started-data/)
+
 
 查看服务：[移动服务](/documentation/services/mobile-services) | [存储](/documentation/services/storage)
 <!--
@@ -50,7 +48,7 @@
 -->
 ###推送
 
-- 通知中心入门 [iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/) | [Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
+- 通知中心入门 [iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/)
 
 查看服务： [通知中心](/documentation/services/notification-hubs)
 

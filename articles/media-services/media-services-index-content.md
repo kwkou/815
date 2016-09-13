@@ -270,7 +270,7 @@ __features__ <br /><br />在版本 1.2 中添加。目前，唯一支持的功�
 2005 | 文件类型不受支持 | 不支持输入媒体文件类型。
 2006 | 输入文件太多 | 输入清单中的文件超过 10 个。
 3000 | 无法解码媒体文件 | 媒体编解码器不受支持，<br/>或者<br/>媒体文件已损坏，<br/>或者<br/>输入媒体中没有音频流。
-4000 | 分批编制索引部分成功 | 一些输入媒体文件无法编制索引。有关详细信息，请参阅<a href="output_files">输出文件</a>。
+4000 | 分批编制索引部分成功 | 一些输入媒体文件无法编制索引。有关详细信息，请参阅<a href="#output_files">输出文件</a>。
 
 
 
@@ -282,10 +282,9 @@ __features__ <br /><br />在版本 1.2 中添加。目前，唯一支持的功�
 
 ## 相关链接
 
-[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)
 
 [在 Azure Media Indexer 和 SQL Server 中使用 AIB 文件](https://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/)
 
-[使用 Azure Media Indexer 2 预览版为媒体文件编制索引](/documentation/articles/media-services-process-content-with-indexer2/)
+
 
 <!---HONumber=Mooncake_0815_2016-->

@@ -67,7 +67,7 @@
 
 ## 重新启动、重置映像或远程桌面
 
-此时无法使用 **Azure 门户预览**配置远程桌面。不过，你可以通过 [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)、[PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/) 或 [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles/) 对其进行设置。
+此时无法使用 **Azure 门户预览**配置远程桌面。不过，你可以通过 [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)、[PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/) 或 Visual Studio 对其进行设置。
 
 首先，单击云服务实例
 

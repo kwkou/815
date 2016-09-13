@@ -116,7 +116,7 @@ Azure SQL 数据库提供“弹性数据库池”来加强支持“租户各有�
 | 跨数据库简化 DevOps | [弹性数据库池：](/documentation/articles/sql-database-elastic-pool)如上所列。|
 ||[弹性查询：](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)能够跨数据库查询以进行报告或跨租户分析。|
 ||[弹性作业：](/documentation/articles/sql-database-elastic-jobs-overview)能够打包数据库维护操作或数据库架构更改，然后可靠地部署到多个数据库。|
-||[弹性事务：](/documentation/articles/sql-database-elastic-scale)能够以不可部分完成和隔离的方式处理多个数据库的更改。当应用程序在数个数据库操作之间需要保证“全有或全无”时，就需要此功能。 |
+||[弹性事务：](/documentation/articles/sql-database-elastic-scale-introduction/)能够以不可部分完成和隔离的方式处理多个数据库的更改。当应用程序在数个数据库操作之间需要保证“全有或全无”时，就需要此功能。 |
 ||[弹性数据库客户端库：](/documentation/articles/sql-database-elastic-database-client-library)此功能支持管理数据分布并将租户映射到数据库。 |
 ||||
 
@@ -149,17 +149,16 @@ Azure SQL 数据库提供“弹性数据库池”来加强支持“租户各有�
 
 若要将现有的数据库转换为使用该工具，请参阅 [Migrate existing databases to scale-out（迁移要扩展的现有数据库）](/documentation/articles/sql-database-elastic-convert-to-use-elastic-tools)。
 
-若要创建新的池，请参阅 [Create an elastic pool（创建弹性池）](/documentation/articles/sql-database-elastic-pool-create-portal)教程。
+若要创建新的池，请参阅 [Create an elastic pool（创建弹性池）](/documentation/articles/sql-database-elastic-pool-create-powershell/)教程。
 
-若要监视和管理弹性数据库池，请参阅 [Monitor and manage an elastic database pool（监视和管理弹性数据库池）](/documentation/articles/sql-database-elastic-pool-manage-portal)。
+若要监视和管理弹性数据库池，请参阅 [Monitor and manage an elastic database pool（监视和管理弹性数据库池）](/documentation/articles/sql-database-elastic-pool-manage-powershell/)。
 
 ## 其他资源
 
 - [什么是 Azure 弹性数据库池？](/documentation/articles/sql-database-elastic-pool)
 - [Scaling out with Azure SQL Database（使用 Azure SQL 数据库进行扩展）](/documentation/articles/sql-database-elastic-scale-introduction)
 - [具有弹性数据库工具和行级安全性的多租户应用程序](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security)
-- [Authentication in multitenant apps, using Azure AD and OpenID Connect（使用 Azure AD 和 OpenID Connect 的多租户应用身份验证）](/documentation/articles/guidance-multitenant-identity-authenticate)
-- [Tailspin Surveys application（Tailspin Surveys 应用程序）](/documentation/articles/guidance-multitenant-identity-tailspin)
+
 
 ## 问题和功能请求
 

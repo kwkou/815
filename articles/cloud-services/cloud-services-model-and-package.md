@@ -22,9 +22,6 @@
 * 我已经知道，请为我提供有关可以配置具体内容的[一些示例](#next-steps)。
 * 我想要创建 [ServicePackage.cspkg](#cspkg)。
 * 我正在使用 Visual Studio，我想要...
-    * [创建新的云服务][vs_create]
-    * [重新配置现有云服务][vs_reconfigure]
-    * [部署云服务项目][vs_deploy]
     * [通过远程桌面连接到云服务实例][remotedesktop]
 
 <a name="csdef"></a>

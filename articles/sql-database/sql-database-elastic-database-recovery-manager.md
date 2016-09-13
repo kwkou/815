@@ -39,7 +39,7 @@ GSM 和 LSM 可能因以下原因变得不同步：
 有关 Azure SQL 数据库弹性数据库工具、异地复制和还原的详细信息，请参阅以下主题：
 
 * [概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity/) 
-* [业务连续性设计](/documentation/articles/sql-database-business-continuity-design/)
+* [业务连续性设计](/documentation/articles/sql-database-business-continuity/)
 * [弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)  
 * [ShardMap 管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)
 

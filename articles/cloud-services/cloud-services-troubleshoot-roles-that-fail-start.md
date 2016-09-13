@@ -62,7 +62,7 @@ DLL 或程序集缺失的症状可能为：
 
 1. 确保安装了 Azure SDK 1.3 或更高版本。
 
-2. 在使用 Visual Studio 部署解决方案的过程中，选择“配置远程桌面连接...”。有关配置远程桌面连接的详细信息，请参阅[将远程桌面与 Azure 角色一起使用](/documentation/articles/vs-azure-tools-remote-desktop-roles/)。
+2. 在使用 Visual Studio 部署解决方案的过程中，选择“配置远程桌面连接...”。
 
 3. 在 Azure 管理门户中，在实例显示“就绪”状态后，请单击其中一个角色实例。
 

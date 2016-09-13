@@ -138,7 +138,6 @@ Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保�
 ## 后续步骤
 
 * [如何管理云服务](/documentation/articles/cloud-services-how-to-manage/)
-* [如何将 CDN 内容映射到自定义域](/documentation/articles/cdn-map-content-to-custom-domain/)
 * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure/)。
 * 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/)。
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate/)。

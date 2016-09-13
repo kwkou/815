@@ -14,7 +14,7 @@
 
 # 密码管理常见问题
 
-> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](active-directory-passwords-update-your-own-password/)。
+> [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
 
 下面是与密码管理相关的所有方面的一些常见问题。
 

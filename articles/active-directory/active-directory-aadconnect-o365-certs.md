@@ -153,7 +153,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 5.	运行 Update-MSOLFederatedDomain –DomainName <domain>。此 cmdlet 会将 AD FS 中的设置更新到云服务中，并配置两者之间的信任关系。
 
 
->[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅[支持多个顶级域](/documentation/articles/active-directory-aadconnect-multiple-domains/)。
+>[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。
 
 ## <a name="connectrenew"></a>使用 AAD Connect 修复 Azure AD 信任 
 

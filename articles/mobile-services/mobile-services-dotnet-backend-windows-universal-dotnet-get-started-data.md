@@ -91,8 +91,7 @@
 * [身份验证入门]
   <br/>了解如何对应用程序用户进行身份验证。
 
-* [推送通知入门]
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+
 
 * [移动服务 C# 操作方法概念性参考 ](/documentation/articles/mobile-services-dotnet-how-to-use-client-library/)
   <br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。

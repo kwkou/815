@@ -83,7 +83,7 @@ Azure SQL 数据库使用收集的数据来实现以下目的：
 
 ## 后续步骤
 
-[SQL 数据库性能见解](/documentation/articles/sql-database-performance)
+[SQL 数据库性能见解](/documentation/articles/sql-database-performance-guidance)
 
 ## 其他资源
 

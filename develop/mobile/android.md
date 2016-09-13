@@ -21,7 +21,6 @@
 ##新功能
 
 <!--- [使用 Active Directory 登录和访问资源](/documentation/articles/mobile-services-dotnet-backend-android-ad-authentication/)-->
-- [使用通知中心发送推送通知](/documentation/articles/notification-hubs-android-get-started/)
 - [移动服务用户入门](/documentation/articles/mobile-services-android-get-started-users/)
 
 <!--
@@ -48,8 +47,6 @@
 
 ###推送
 
-- [使用通知中心发送推送通知](/documentation/articles/notification-hubs-android-get-started/)
-- [使用通知中心广播通知](/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)
 
 查看服务： [通知中心](/documentation/services/notification-hubs)

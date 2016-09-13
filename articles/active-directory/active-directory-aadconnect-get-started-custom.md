@@ -56,7 +56,7 @@
 如果全局管理员帐户已启用 MFA，则你需要在登录弹出窗口中再次提供密码，并完成 MFA 质询。此质询可能是提供验证码或电话呼叫。  
 ![用户登录 MFA](./media/active-directory-aadconnect-get-started-custom/connectaadmfa.png)
 
-全局管理员帐户也可以启用 [Privileged Identity Management](/documentation/articles/active-directory-privileged-identity-management-getting-started/)。
+
 
 如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity/)。
 

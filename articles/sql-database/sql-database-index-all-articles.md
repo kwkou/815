@@ -235,7 +235,7 @@
 | 125 | [将 SQL Server 数据库迁移到云中的 SQL 数据库](/documentation/articles/sql-database-cloud-migrate/) | 了解如何将本地 SQL Server 数据库迁移到云中的 Azure SQL 数据库。在执行数据库迁移之前使用数据库迁移工具测试兼容性。 |
 | 126 | [复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/) | 创建 Azure SQL 数据库的副本 |
 | 117 | 创建和导出 Azure SQL 数据库的 BACPAC| 创建和导出 Azure SQL 数据库的 BACPAC |
-| 127 | [使用 Azure 门户预览将 Azure SQL 数据库存档到 BACPAC 文件](/documentation/articles/sql-database-export/) | 使用 Azure 门户将 Azure SQL 数据库存档到 BACPAC 文件 |
+| 127 | 使用 Azure 门户预览将 Azure SQL 数据库存档到 BACPAC 文件 | 使用 Azure 门户将 Azure SQL 数据库存档到 BACPAC 文件 |
 
 
 
@@ -294,7 +294,7 @@
 | 155 | [使用 PowerShell 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-powershell/) | 使用 PowerShell 为 Azure SQL 数据库启动计划内或计划外故障转移 |
 | 156 | [使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/) | 使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移 |
 | 157 | [概述：SQL 数据库的活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) | 你可以使用活动异地复制在任何 Azure 数据中心设置 4 个数据库副本。 |
-| 158 | [使用 Azure 门户预览为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-portal/) | 使用 Azure 门户为 Azure SQL 数据库配置异地复制 |
+| 158 | 使用 Azure 门户预览为 Azure SQL 数据库配置异地复制 | 使用 Azure 门户为 Azure SQL 数据库配置异地复制 |
 | 159 | [使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/) | 使用 PowerShell 为 Azure SQL 数据库配置活动异地复制 |
 | 160 | [灾难恢复后如何管理 Azure SQL 数据库安全性](/documentation/articles/sql-database-geo-replication-security-config/) | 本主题介绍在数据库还原或故障转移后进行安全管理时的安全注意事项。 |
 | 161 | [使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql/) | 使用 Transact-SQL 为 Azure SQL 数据库配置异地复制 |
@@ -328,7 +328,7 @@
 | 175 | [使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/) | 了解如何使用 SQL Server Management Studio 管理 SQL 数据库服务器和数据库。 |
 | 176 | 使用 Azure 门户预览管理 Azure SQL 数据库 | 了解如何使用 Azure 门户管理云中的关系数据库。 |
 | 177 | [使用 PowerShell 更改 SQL 数据库的服务层和性能级别（定价层）](/documentation/articles/sql-database-scale-up-powershell/) | “更改 Azure SQL 数据库的服务层和性能级别”介绍如何使用 PowerShell 扩展和缩减 SQL 数据库。使用 PowerShell 更改 Azure SQL 数据库定价层。 |
-| 178 | [在 Azure RemoteApp 中使用 SQL Server Management Studio 连接到 SQL 数据库](/documentation/articles/sql-database-ssms-remoteapp/) | 通过本教程了解如何在连接到 SQL 数据库时使用 Azure RemoteApp 中的 SQL Server Management Studio 进行安全和性能操作 |
+| 178 | 在 Azure RemoteApp 中使用 SQL Server Management Studio 连接到 SQL 数据库 | 通过本教程了解如何在连接到 SQL 数据库时使用 Azure RemoteApp 中的 SQL Server Management Studio 进行安全和性能操作 |
 
 
 

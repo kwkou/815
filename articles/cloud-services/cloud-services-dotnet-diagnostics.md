@@ -16,7 +16,7 @@
 
 # 在 Azure 云服务中启用 Azure 诊断
 
-有关 Azure 诊断的背景信息，请参阅 [Azure 诊断概述](/documentation/articles/azure-diagnostics/)。
+
 
 
 ## 如何在辅助角色中启用诊断
@@ -181,10 +181,10 @@
 ## 配置文件架构
 
 诊断配置文件定义启动诊断代理时用于初始化诊断配置设置的值。有关有效值和示例，请参阅[最新架构参考](https://msdn.microsoft.com/zh-cn/library/azure/mt634524.aspx)。
-
+<!--
 ## 故障排除
 
-如果你遇到问题，请参阅 [Azure 诊断故障排除](/documentation/articles/azure-diagnostics-troubleshooting/)，以获得常见问题的帮助。
+如果你遇到问题，请参阅 [Azure 诊断故障排除](/documentation/articles/azure-diagnostics-troubleshooting/)，以获得常见问题的帮助。-->
 
 ## 后续步骤
 若要更改你收集的数据、排查问题或者了解有关诊断的一般信息，请参阅[与虚拟机相关的 Azure 诊断文章列表](/documentation/articles/azure-diagnostics/#cloud-services)。

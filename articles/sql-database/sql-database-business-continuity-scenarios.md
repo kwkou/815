@@ -20,7 +20,7 @@
 - [业务连续性](/documentation/articles/sql-database-business-continuity)
 - [方案](/documentation/articles/sql-database-business-continuity-scenarios)
 - [时间点还原](/documentation/articles/sql-database-point-in-time-retore)
-- [还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database)
+- [还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/)
 - [异地还原](/documentation/articles/sql-database-geo-restore)
 - [活动异地复制](/documentation/articles/sql-database-geo-replication)
 

@@ -29,7 +29,7 @@ Azure SQL 数据库提供了高达你的备份存储的最大已设置数据库�
 ## 后续步骤
 
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity)
-- [还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database)
+- [还原已删除的数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/)
 - [时间点还原](/documentation/articles/sql-database-point-in-time-restore)
 - [异地还原](/documentation/articles/sql-database-geo-restore)
 - [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)

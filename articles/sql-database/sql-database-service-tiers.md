@@ -15,7 +15,7 @@
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
 
-[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)具有多个服务层，用于处理不同的工作负荷。你可以随时[更改服务层](/documentation/articles/sql-database-scale-up/)，并将给应用程序造成的停机时间降至最低（通常平均为 4 秒以下）。你还可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started/)。也可以通过[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。这些层中的数据库选项类似于单个数据库和弹性池，只是针对弹性池提供了其他注意事项。本文提供了单一数据库和弹性数据库的服务层的详细信息。
+[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)具有多个服务层，用于处理不同的工作负荷。你可以随时[更改服务层](/documentation/articles/sql-database-scale-up-powershell/)，并将给应用程序造成的停机时间降至最低（通常平均为 4 秒以下）。你还可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started/)。也可以通过[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。这些层中的数据库选项类似于单个数据库和弹性池，只是针对弹性池提供了其他注意事项。本文提供了单一数据库和弹性数据库的服务层的详细信息。
 
 ## 服务层和数据库选项
 基本、标准和高级服务层都提供 99.99% 的运行时间 SLA 和可预测的性能、灵活的业务连续性选项、安全功能和按小时计费。下表提供了最适用于不同应用程序工作负荷的层的示例。
@@ -29,7 +29,7 @@
 >[AZURE.NOTE] Web Edition 和 Business Edition 已停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/pricing/details/sql-database/)。
 
 ## 单一数据库服务层和性能级别
-对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层。有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up/)。
+对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层。有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up-powershell/)。
 
 此处列出的性能特征适用于使用 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/) 创建的数据库。在 Azure 中的基础硬件托管多个数据库的情况下，你的数据库仍可确保获得一系列资源，数据库的预期性能特征将不受影响。
 

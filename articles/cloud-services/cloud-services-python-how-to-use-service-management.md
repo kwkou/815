@@ -100,7 +100,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
 ## <a name="CreateCloudService"> </a>如何：创建云服务
 
-当你创建应用程序以及在 Azure 中运行该应用程序时，相关代码和配置统称为 Azure [云服务]（在早期版本的 Azure 中称为*托管服务*）。**create\_hosted\_service** 方法允许你通过提供托管服务名称（它在 Azure 中必须是唯一的）、标签（自动编码为 base64）、说明和位置来创建新的托管服务。
+当你创建应用程序以及在 Azure 中运行该应用程序时，相关代码和配置统称为 Azure 云服务（在早期版本的 Azure 中称为*托管服务*）。**create\_hosted\_service** 方法允许你通过提供托管服务名称（它在 Azure 中必须是唯一的）、标签（自动编码为 base64）、说明和位置来创建新的托管服务。
 
 	from azure import *
 	from azure.servicemanagement import *

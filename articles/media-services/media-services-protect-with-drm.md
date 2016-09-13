@@ -622,7 +622,7 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 
 ##另请参阅
 
-[使用多重 DRM 的 CENC 和访问控制](/documentation/articles/media-services-cenc-with-multidrm-access-control/)
+
 
 [使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 

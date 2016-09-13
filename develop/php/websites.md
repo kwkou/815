@@ -28,9 +28,9 @@
 <h3>教程：<a href="/documentation/articles/web-sites-php-mysql-use-webmatrix/">带 MySQL 的 PHP 网站（使用 WebMatrix）</a></h3>
 <p>实现允许检索和创建存储在 MySQL 数据库中的待办事项的简单网站。使用 WebMatrix IDE 构建和部署应用程序。</p>-->
 
-<h3>教程：<a href="/documentation/articles/web-sites-php-mysql-deploy-use-ftp/">带 MySQL 的 PHP 网站（使用 FTP）</a></h3>
+<!--<h3>教程：<a href="/documentation/articles/web-sites-php-mysql-deploy-use-ftp/">带 MySQL 的 PHP 网站（使用 FTP）</a></h3>
 <p>实现允许检索和创建存储在 MySQL 数据库中的待办事项的简单网站。使用所选的文本编辑器，然后使用 FTP 上载应用程序。</p>
-<!--<h3>教程：<a href="/documentation/articles/web-sites-php-storage/">使用 Azure 存储的 PHP 网站</a></h3>
+<h3>教程：<a href="/documentation/articles/web-sites-php-storage/">使用 Azure 存储的 PHP 网站</a></h3>
 <p>创建可存储和访问 Azure 表存储中的数据的网站。你将了解如何创建和使用 Azure 存储帐户，以及如何使用 PHP 客户端库创建、查询和删除表实体。</p>-->
 <h3>如何：<a href="/documentation/articles/web-sites-create-web-jobs/">使用 Web 作业在 Azure 网站中运行后台任务。</a></h3>
 <p>了解如何使用 Azure 管理门户部署 Web 作业。</p>
