@@ -3,13 +3,13 @@
    description="本页提供有关为 ExpressRoute 线路配置和管理路由的详细要求。"
    documentationCenter="na"
    services="expressroute"
-   authors="cherylmc"
-   manager="carmonm"
+   authors="ganesr"
+   manager="rossort"
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="06/01/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="08/10/2016"
+   wacn.date="09/12/2016"/>
 
 # ExpressRoute 路由要求  
 
@@ -77,7 +77,7 @@ ExpressRoute 不能配置为传输路由器。你必须依赖连接服务提供�
 
 **注意：**播发默认路由会中断 Windows 和其他 VM 许可证激活。请按照[此处](http://blogs.msdn.com/b/mast/archive/2015/05/20/use-azure-custom-routes-to-enable-kms-activation-with-forced-tunneling.aspx)的说明来解决此问题。
 
-## BGP 社区支持（即将推出）
+## BGP 社区支持（预览版）
 
 本部分概述如何配合 ExpressRoute 使用 BGP 社区。Azure 将播发公共互连路径中的路由并为路由标记适当的社区值。下面将会介绍这种方案的理由以及有关社区值的详细信息。但是，Azure 不遵循向 Azure 播发的路由的任何标记社区值。
 

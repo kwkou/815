@@ -8,8 +8,8 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="06/13/2016"
-   wacn.date="08/08/2016"/>
+   ms.date="08/04/2016"
+   wacn.date="09/12/2016"/>
 
 # ExpressRoute 常见问题
 
@@ -57,6 +57,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 - CDN
 - Visual Studio Team Services 负载测试
 - 多重身份验证
+- 流量管理器
 
 ## 数据和连接
 
@@ -135,17 +136,17 @@ ExpressRoute 目前支持大多数 Azure 服务。
 ### 连接到同一 ExpressRoute 线路的虚拟网络能否互相对话？
 是的。连接到同一 ExpressRoute 线路的虚拟网络中部署的虚拟机可以彼此通信。
 
-### 能否将站点到站点的VPN连接与 ExpressRoute 一起用于虚拟网络？
+### 能否将站点到站点连接与 ExpressRoute 一起用于虚拟网络？
 是的。ExpressRoute 可与站点到站点 VPN 共存。
 
-### 能否将虚拟网络从站点到站点/点到站点VPN配置转为使用 ExpressRoute？
+### 能否将虚拟网络从站点到站点/点到站点配置转为使用 ExpressRoute？
 是的。必须在虚拟网络中创建 ExpressRoute 网关。该过程将会造成较短的停机时间。
 
 ### 通过 ExpressRoute 连接到 Azure 存储需要执行哪些操作？
 你必须建立一条 ExpressRoute 线路并为公共对等互连配置路由。
 
 ### 对于我可以公布的路由数有限制吗？
-是的。对于专用对等互连和公共对等互连，我们最多接受 4000 个路由前缀。如果启用 ExpressRoute 高级功能，可以将此限制提高为 10,000 个路由。
+是的。对于专用对等互连，我们最多接受 4000 个路由前缀；对于公共对等互连，接受 200 个。如果启用 ExpressRoute 高级功能，可以将专用对等互连的此限制提高为 10,000 个路由。
 
 ### 对于我可以通过 BGP 会话公布的 IP 范围有限制吗？
 
@@ -155,7 +156,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话。
 
 ### ExpressRoute BGP 保持时间是多少？ 是否可以调整它？
-保持时间为 180 秒。Keep-Alive（保持活动）消息每隔 60 秒发送一次。这是 Microsoft 端的固定设置，不能更改。
+保持时间为 180 秒。Keep-Alive（保持活动）消息每隔 60 秒发送一次。这些是 Microsoft 端的固定设置，不能更改。
 
 ### 将默认路由 (0.0.0.0/0) 播发到虚拟网络后，我无法激活 Azure VM 上运行的 Windows。我如何解决此问题？
 以下步骤可帮助 Azure 识别激活请求：
@@ -182,21 +183,10 @@ ExpressRoute 高级版包括下面列出的功能集合。
  - 通过 Azure 核心网络建立全局连接。现在，你可以将一个服务区域中 VNet 链接到另一个区域中的 ExpressRoute 线路。**示例：**可以将中国北部创建的 VNet 链接到中国东部创建的 ExpressRoute 线路。
 
 ### 如果启用 ExpressRoute 高级版，可将多少个 VNet 链接到一条 ExpressRoute 线路？
-下表列出了链接到 ExpressRoute 线路的 VNet 数的更高限制。默认限制为 10。
+下表显示了 ExpressRoute 限制和每条 ExpressRoute 线路的 VNet 数。
 
-**针对创建的线路的限制**
 
-| **线路大小** | **针对默认安装的 VNet 链接数** | **使用 ExpressRoute 高级版时的 VNet 链接数** |
-|--------------|----------------------------------------|-----------------------------------------------|
-| 50 Mbps | 10 | 10 |
-| 100 Mbps | 10 | 20 |
-| 200 Mbps | 10 | 25 |
-| 500 Mbps | 10 | 40 |
-| 1 Gbps | 10 | 50 |
-| 2 Gbps | 10 | 60 |
-| 5 Gbps | 10 | 75 |
-| 10 Gbps | 10 | 100 |
-
+[AZURE.INCLUDE [expressroute-limits](../../includes/expressroute-limits.md)]
 
 
 ### 如何启用 ExpressRoute 高级版？
