@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="05/12/2016" 
-	wacn.date="06/06/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="09/12/2016"/>
 
 # 在 Azure 多重身份验证中使用移动应用作为联系方法
 
@@ -69,4 +69,4 @@ Azure 验证器应用可用于 [Windows Phone](http://www.windowsphone.com/zh-cn
 >[AZURE.NOTE]如果你看到“添加工作帐户”，请注意该选项适用于“工作区加入”，而不适用于多重身份验证。你可以忽略此选项。
  
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0905_2016-->

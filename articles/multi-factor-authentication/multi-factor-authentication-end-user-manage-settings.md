@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="05/12/2016" 
-	wacn.date="06/06/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="09/12/2016"/>
 	
 	
 # 使用 Azure Multi-Factor Authentication 时遇到问题
@@ -22,13 +22,13 @@
 
 
 - [相关性 ID 错误](#correlation-id-errors)
-- [我的手机已丢失或被盗](#i-have-lost-my-phone-or-it-was-stolen?)
+- [我的手机已丢失或被盗](#i-have-lost-my-phone-or-it-was-stolen)
 - [我想要更改我的电话号码](#i-want-to-change-my-phone-number)
 - [我换了手机，想要更改我的电话号码](#i-have-a-new-phone-and-need-to-change-my-phone-number)
 - [我的手机上未收到代码](#i-am-not-receiving-a-code-or-a-call-on-my-phone)
 - [应用密码不起作用](#app-passwords-are-not-working)
 - [如何从旧设备清理 Azure 验证器并将其迁移到新设备？](#how-do-i-clean-up-azure-authenticator-from-my-old-device-and-move-to-a-new-one)
-- [我找不到问题的解答](#i-didn't-find-an-answer-to-my-problem)
+- [我找不到问题的解答](#i-didnt-find-an-answer-to-my-problem)
 ##<a name="correlation-id-errors"></a>相关性 ID 错误
 如果你已尝试过以下故障排除步骤，但仍遇到问题，请将问题发布到 [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=WindowsAzureAD)、[搜索 Microsoft 知识库 (KB)](https://www.microsoft.com/zh-CN/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) 或者[与支持人员联系](https://support.microsoft.com/zh-CN)，我们将尽快解答你的问题。
 
@@ -43,7 +43,7 @@
  
 ![相关性 ID](./media/multi-factor-authentication-end-user-manage/correlation.png)
 
- - **用户 ID** – 看到错误的用户的 ID（例如 user@contoso.com)?）
+ - **用户 ID** – 看到错误的用户的 ID 是什么（例如 user@contoso.com）？
  - **有关用户的信息** – 用户是否已联合、密码哈希是否已同步、是否只在云中？ 用户是否已获得 Azure AD Premium、Enterprise Mobility 或 Azure AD Basic 许可证？ 用户是否在使用 Office 365 等产品？
 
 包含这些信息将有助于我们尽快为你解决问题。
@@ -153,7 +153,6 @@
 
 ![其他验证方法](./media/multi-factor-authentication-end-user-manage/differentverification.png)
 
-
 有时，其中一种服务传递方式比另一种方式更可靠。
 
 请注意，如果你收到了多个验证码，只有最新的一个验证码才起作用。
@@ -172,4 +171,5 @@
 此外，你可以联系管理员或为你设置多重身份验证的人员，看看他们是否可以提供帮助。
 
 最后，请务必在此页面上留下一些详细的意见反馈，好让我们更新此页面，并通过提供更多的信息来持续改进此页面。
-<!---HONumber=Mooncake_0530_2016-->
+
+<!---HONumber=Mooncake_0905_2016-->

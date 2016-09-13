@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="05/12/2016" 
-	wacn.date="06/06/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="09/12/2016"/>
 
 # Azure 多重身份验证的登录体验
 > [AZURE.NOTE]本页提供的文档演示了一个典型的登录体验。有关登录的帮助，请参阅[使用 Azure (MFA)多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
@@ -99,4 +99,5 @@
 - 选择一种替代方法并登录。
 
  
-<!---HONumber=Mooncake_0530_2016-->
+
+<!---HONumber=Mooncake_0905_2016-->
