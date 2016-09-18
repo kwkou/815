@@ -25,7 +25,7 @@
 
 本文假定你具备以下条件：
 
-- **Azure 订阅** - 如果没有，可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+- **Azure 订阅** - 如果没有，可以[建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 - **[Azure PowerShell](/documentation/articles/powershell-install-configure/)** - 已安装 Azure PowerShell 模块并将其配置为使用用户的订阅。
 

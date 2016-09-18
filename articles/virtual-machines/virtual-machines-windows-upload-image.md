@@ -23,7 +23,7 @@
 
 本文假设你具备以下条件：
 
-- **Azure 订阅** - 如果没有 Azure 订阅，请[免费注册 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)，或者[激活 MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+- **Azure 订阅** - 如果没有 Azure 订阅，请[注册 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 - **Azure PowerShell 1.4 或更高版本** - 如果还没有安装它，请阅读 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）。
 
@@ -118,7 +118,7 @@
 
 
 
-## 将 VM 映像上载到你的存储帐户
+## <a name="upload-the-vm-image-to-your-storage-account"></a>将 VM 映像上载到你的存储帐户
 
 使用 [Add-AzureRmVhd](https://msdn.microsoft.com/zh-cn/library/mt603554.aspx) cmdlet 将映像上载到存储帐户中的容器：
 

@@ -60,27 +60,27 @@
 -	[哪些定价层可以使用重新启动功能？](#what-pricing-tiers-can-use-the-reboot-functionality)
 
 
-### 测试我的应用程序时，应重新启动哪个节点？
+### <a name="which-node-should-i-reboot-to-test-my-application"></a>测试我的应用程序时，应重新启动哪个节点？
 
 若要针对缓存的主节点故障测试应用程序的复原能力，请重新启动**主**节点。若要针对辅助节点的故障测试应用程序的复原能力，请重新启动**从属**节点。若要针对缓存的总故障测试应用程序的复原能力，请同时重新启动这**两个**节点。
 
-### 能否通过重新启动缓存来清除客户端连接？
+### <a name="can-i-reboot-the-cache-to-clear-client-connections"></a>能否通过重新启动缓存来清除客户端连接？
 
 能，如果重新启动缓存，将清除所有客户端连接。当所有客户端连接均已用完（例如，由于客户端应用程序中的逻辑错误或 bug）时，这很有用。每个定价层对于不同大小都有不同的[客户端连接数限制](/documentation/articles/cache-configure/#default-redis-server-configuration)，达到这些限制后，将不再接受客户端连接。通过重新启动缓存可以清除所有客户端连接。
 
 >[AZURE.IMPORTANT] 如果由于客户端代码中的逻辑错误或 bug 客户端连接已用完，请注意在 Redis 节点重新联机后，StackExchange.Redis 自动将重新连接。如果未解决这一基本问题，客户端连接将继续用完。
 
-### 如果我执行重新启动，是否会丢失缓存中的数据？
+### <a name="will-i-lose-data-from-my-cache-if-i-do-a-reboot"></a>如果我执行重新启动，是否会丢失缓存中的数据？
 
 如果同时重新启动**主**节点和**从属**节点，则缓存中或该分片中（如果用户使用的是已启用群集的高级缓存）的所有数据都会丢失。如果已配置[数据持久性](/documentation/articles/cache-how-to-premium-persistence/)，则在缓存重新联机时，将还原最新备份。请注意，在进行该备份后进行的所有缓存写入将丢失。
 
 如果只重新启动其中一个节点，数据通常不会丢失，但仍可能会丢失。例如，如果重新启动主节点时正在进行缓存写入，则缓存写入的数据将丢失。发生数据丢失的另一种情况是，当你重新启动一个节点时，另一个节点恰巧因故障而关闭。有关数据丢失的可能原因的详细信息，请参阅[我在 Redis 中的数据发生了什么情况？](https://gist.github.com/JonCole/b6354d92a2d51c141490f10142884ea4#file-whathappenedtomydatainredis-md)。
 
-### 能否使用 PowerShell、CLI 或其他管理工具重新启动缓存？
+### <a name="can-i-reboot-my-cache-using-powershell-cli-or-other-management-tools"></a>能否使用 PowerShell、CLI 或其他管理工具重新启动缓存？
 
 能，有关 PowerShell 说明，请参阅[重新启动 Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell/#to-reboot-a-redis-cache)。
 
-### 哪些定价层可以使用重新启动功能？
+### <a name="what-pricing-tiers-can-use-the-reboot-functionality"></a>哪些定价层可以使用重新启动功能？
 
 重新启动仅在高级定价层中可用。
 
@@ -99,15 +99,15 @@
 -	[在计划的维护时段进行哪种类型的更新？](#what-type-of-updates-are-made-during-the-scheduled-maintenance-window)
 -	[哪些定价层可以使用计划更新功能？](#what-pricing-tiers-can-use-the-schedule-updates-functionality)
 
-### 如果我不使用计划更新功能，何时进行更新？
+### <a name="when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature"></a>如果我不使用计划更新功能，何时进行更新？
 
 如果未指定维护时段，可以随时进行更新。
 
-### 在计划的维护时段进行哪种类型的更新？
+### <a name="what-type-of-updates-are-made-during-the-scheduled-maintenance-window"></a>在计划的维护时段进行哪种类型的更新？
 
 仅在计划的维护时段进行 Redis 服务器更新。维护时段不适用于 Azure 更新或 VM 操作系统更新。
 
-### 哪些定价层可以使用计划更新功能？
+### <a name="what-pricing-tiers-can-use-the-schedule-updates-functionality"></a>哪些定价层可以使用计划更新功能？
 
 计划更新仅在高级定价层中可用。
 
