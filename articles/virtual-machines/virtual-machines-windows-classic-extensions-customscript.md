@@ -9,17 +9,17 @@
    tags="azure-service-management"/>
 
 <tags
-   ms.service="virtual-machines-windows"
-   ms.date="08/06/2015"
-   wacn.date="11/12/2015"/>
+	ms.service="virtual-machines-windows"
+	ms.date="08/06/2015"
+	wacn.date="09/12/2016"/>
 
 # 适用于 Windows 虚拟机的自定义脚本扩展
 
-本文概述了如何在 Windows VM 上通过 Azure Powershell cmdlet 来使用自定义脚本扩展。
+本文概述了如何在 Windows VM 上通过 Azure Powershell cmdlet 和 Azure 服务管理 API 来使用自定义脚本扩展。
 
 虚拟机 (VM) 扩展由 Microsoft 和受信任的第三方发布者构建，用于扩展 VM 的功能。有关 VM 扩展的概述，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features/)。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](/documentation/articles/virtual-machines-windows-classic-extensions-customscript/)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。了解如何[使用 Resource Manager 模型执行这些步骤](/documentation/articles/virtual-machines-windows-classic-extensions-customscript/)。
 
 ## 自定义脚本扩展概述
 
@@ -28,7 +28,7 @@
 ### 运行自定义脚本扩展的先决条件
 
 1. 从<a href="/downloads" target="_blank">此处</a>安装 Azure PowerShell Cmdlet 版本 0.8.0 或更高版本。
-2. 如果脚本将在现有 VM 上运行，请确保已在该 VM 上启用了 VM 代理。
+2. 如果脚本在现有 VM 上运行，请确保已在该 VM 上启用 VM 代理。如果尚未安装 VM 代理，请遵循[此处](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)的步骤安装。如果 VM 是从门户创建的，则默认情况下已安装 VM 代理。
 3. 将你要在 VM 上运行的脚本上载到 Azure 存储。脚本可以来自单个容器或多个存储容器。
 4. 脚本应当以下述方式编写：使用扩展启动入口脚本，然后入口脚本再启动其他脚本。
 
@@ -36,7 +36,7 @@
 
 ### 将文件上载到默认容器
 
-如果你的脚本位于你的订阅的默认帐户的存储容器中，则下面的示例演示如何在 VM 上运行它们。ContainerName 是你将脚本上载到的位置。可以使用 **Get-AzureSubscription –Default** 命令验证默认存储帐户。
+如果脚本位于订阅的默认帐户的存储容器中，则下面的示例演示如何在 VM 上运行它们。ContainerName 是你将脚本上载到的位置。可以使用 **Get-AzureSubscription –Default** 命令验证默认存储帐户。
 
 下面的示例将创建一个新 VM，但同一方案也可以在现有 VM 上运行。
 
@@ -65,14 +65,25 @@
 
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
+
+### 从 Azure 门户添加自定义脚本扩展
+
+在 <a href="https://portal.azure.cn/ " target="_blank">Azure 门户</a>中浏览到 VM，并通过指定要运行的脚本文件添加扩展。
+
+  ![][5]
+
+
 ### 卸载自定义脚本扩展
 
 可以使用以下命令从 VM 中卸载自定义脚本扩展。
 
       get-azureVM -ServiceName KPTRDemo -Name KPTRDemo | Set-AzureVMCustomScriptExtension -Uninstall | Update-AzureVM
 
+### 将自定义脚本扩展与模板配合使用
+
+若要了解如何将自定义脚本扩展与 Azure Resource Manager 模板配合使用，请参阅[此文档](/documentation/articles/virtual-machines-windows-extensions-customscript/)。
 
 <!--Image references-->
 [5]: ./media/virtual-machines-windows-classic-extensions-customscript/addcse.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0905_2016-->

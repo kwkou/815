@@ -9,8 +9,9 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/20/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="07/22/2016"
+	wacn.date="09/12/2016"/>  
+
 
 # 通过 Azure 驱动程序使用 Docker 计算机
 
@@ -36,7 +37,7 @@
 	Creating CA: /Users/user/.docker/machine/certs/ca.pem
 	Creating client certificate: /Users/user/.docker/machine/certs/cert.pem
 	Running pre-create checks...
-	(machine) Azure: To sign in, use a web browser to open the page https://aka.ms/devicelogin. Enter the code <code> to authenticate.
+	(machine) Microsoft Azure: To sign in, use a web browser to open the page https://aka.ms/devicelogin. Enter the code <code> to authenticate.
 	(machine) Completed machine pre-create checks.
 	Creating machine...
 	(machine) Querying existing resource group.  name="machine"
@@ -110,7 +111,8 @@
 
 ## 后续步骤
 
-如有兴趣，你可以试用 [Azure Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension/)，通过 Azure CLI 或 Azure Resource Manager 模板执行相同的操作。
+如有兴趣，可以试用 [Azure Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension/)，通过 Azure CLI 或 Azure Resource Manager 模板执行相同的操作。
 
+有关使用 Docker 的更多示例，请参阅 [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect [演示](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/)中的 [Working with Docker](https://github.com/Microsoft/HealthClinic.biz/wiki/Working-with-Docker)（使用 Docker）。有关 HealthClinic.biz 演示的多个快速入门，请参阅 [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts)（Azure 开发人员工具快速入门）。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0905_2016-->
