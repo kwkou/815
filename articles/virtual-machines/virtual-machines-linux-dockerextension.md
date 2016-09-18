@@ -19,7 +19,6 @@ Docker 是流行的容器管理和映像处理平台，可让你在 Linux（和 
 - 若要快速制作应用原型，可以[使用 Docker Machine Azure 驱动程序](/documentation/articles/virtual-machines-linux-docker-machine/)在 Azure 中部署 Docker 主机。
 - 可对基于模板的部署使用用于 Azure 虚拟机的 Docker VM 扩展。这种做法可以与 Azure Resource Manager 模板部署集成，包含所有相关的优点，例如基于角色的访问、诊断与部署后配置。
 - Docker VM 扩展还支持 Docker Compose。Docker Compose 使用声明性 YAML 文件在任何环境中获取由开发人员建模的应用程序，并生成一致的部署。
-- 对于使用 Swarm 提供的其他计划与管理工具的生产就绪、可缩放的部署，还可以[在 Azure 容器服务上部署完整 Docker Swarm 群集](/documentation/articles/container-service-deployment/)。
 
 本文重点介绍如何使用 Resource Manager 模板在定义的自定义生产就绪环境中部署 Docker VM 扩展。
 

@@ -40,8 +40,6 @@
 3.	创建 VNet 到 VNet 的 VPN 连接。
 4.	配置 DC2。
 
-此配置需要 Azure 订阅。如果有 MSDN 或 Visual Studio 订阅，请参阅 [Monthly Azure credit for Visual Studio subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)（Visual Studio 订户的每月 Azure 信用额度）。
-
 >[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对 MSDN 或付费订阅进行计费的。在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成。为了将费用降到最低，请创建测试环境，并尽可能快地执行所需的测试和演示。
 
 ## 阶段 1：配置 TestLab 虚拟网络

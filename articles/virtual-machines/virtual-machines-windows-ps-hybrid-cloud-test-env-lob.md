@@ -38,8 +38,6 @@
 2.	配置 SQL Server 计算机 (SQL1)。
 3.	配置 LOB 服务器 (LOB1)。
 
-此工作负荷需要 Azure 订阅。如果有 MSDN 或 Visual Studio 订阅，请参阅 [Monthly Azure credit for Visual Studio subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)（Visual Studio 订户的每月 Azure 信用额度）。
-
 有关在 Azure 中托管的生产型 LOB 应用程序的示例，请参阅 [Microsoft 软件体系结构关系图和蓝图](http://msdn.microsoft.com/dn630664)上的**业务线应用程序**体系结构蓝图。
 
 ## 阶段 1：设置模拟混合云环境

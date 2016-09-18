@@ -28,7 +28,7 @@
 
 ### 帐户
 
-- **Azure 帐户**：如果你没有 Azure 订阅，可以[创建一个免费 Azure 帐户][azure_free_account]。
+- **Azure 帐户**：如果你没有 Azure 订阅，可以[创建一个 Azure 帐户][azure_free_account]。
 - **Batch 帐户**：获取 Azure 订阅后，请[创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
 - **存储帐户**：请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)中的[创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 
@@ -684,13 +684,11 @@ BatchClient 的 [JobOperations][net_joboperations] 和 [PoolOperations][net_pool
 熟悉 Batch 解决方案的基本工作流后，接下来可以深入了解 Batch 服务的其他功能。
 
 - 建议所有 Batch 新用户阅读[面向开发人员的 Batch 功能概述](/documentation/articles/batch-api-basics/)。
-- 从 [Batch 学习路径][batch_learning_path]中**有关开发的深度知识**下面列出的其他 Batch 开发文章着手。
 - 通过 [TopNWords][github_topnwords] 示例了解有关使用 Batch 处理“前 N 个单词”工作负荷的不同实现方式。
 
-[azure_batch]: https://azure.microsoft.com/services/batch/
+[azure_batch]: /home/features/batch/
 [azure_free_account]: /pricing/1rmb-trial/
 [azure_portal]: https://portal.azure.cn
-[batch_learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
 [github_batchexplorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [github_dotnettutorial]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/DotNetTutorial
 [github_samples]: https://github.com/Azure/azure-batch-samples

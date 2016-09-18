@@ -670,7 +670,7 @@
 	    -Container "https://mystorageaccount.blob.core.chinacloudapi.cn/mycontainer?sv=2015-04-05&sr=c&sig=HezZtBZ3DURmEGDduauE7
 	    pvETY4kqlPI8JCNa8ATmaw%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwdl"
 
-## 重新启动 Redis 缓存
+## <a name="to-reboot-a-redis-cache"></a>重新启动 Redis 缓存
 
 你可以使用 `Reset-AzureRmRedisCache` cmdlet 重新启动 Azure Redis 缓存实例。
 
