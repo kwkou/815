@@ -25,11 +25,11 @@
 <li>Microsoft 将会向你拨打电话。</li>
 
 
-<center>![Setup](./media/multi-factor-authentication-end-user-signin-phone/call.png)</center>
+![Setup](./media/multi-factor-authentication-end-user-signin-phone/call.png)
 
 <li>请接听电话并按 # 键。</li>
 
-<center>![Setup](./media/multi-factor-authentication-end-user-signin-phone/phone.png)</center>
+![Setup](./media/multi-factor-authentication-end-user-signin-phone/phone.png)
 
 
 <li>现在你应已登录。</li>

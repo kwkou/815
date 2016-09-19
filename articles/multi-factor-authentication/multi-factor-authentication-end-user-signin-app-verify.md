@@ -26,11 +26,11 @@
 <li>Microsoft 将提示你输入验证码。</li>
 
 
-<center>![Setup](./media/multi-factor-authentication-end-user-signin-app-verify/verify.png)</center>
+![Setup](./media/multi-factor-authentication-end-user-signin-app-verify/verify.png)
 
 <li>打开手机上的 Azure 验证器应用，然后在登录框中输入该代码。</li>
 
-<center>![Setup](./media/multi-factor-authentication-end-user-signin-app-verify/phone.png)</center>
+![Setup](./media/multi-factor-authentication-end-user-signin-app-verify/phone.png)
 
 
 <li>现在你应已登录。</li>

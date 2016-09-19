@@ -26,7 +26,7 @@
 
 
 - [注册 Azure 订阅](/pricing/1rmb-trial-full/?form-type=identityauth) - 如果没有 Azure 订阅，则需要注册一个订阅。对于只是在摸索如何使用 Azure MFA 的新手，可以使用试用版订阅
-2. [创建 Azure 多重身份验证提供程序](/documentation/articles/multi-factor-authentication-get-started-auth-provider/)并将其分配到目录，或者[将许可证分配给用户](/documentation/articles/multi-factor-authentication-get-started-assign-licenses/)。
+2. 创建 Azure 多重身份验证提供程序并将其分配到目录，或者将许可证分配给用户。
 
 > [AZURE.NOTE]  许可证将提供给拥有 Azure MFA、Azure AD Premium 或企业移动性套件 (EMS) 的用户。Azure AD Premium 和 EMS 中包含 MFA。如果你有足够的许可证，则不需要创建 Auth 提供程序。
 		
@@ -59,7 +59,7 @@
 
 ## 使用 PowerShell 自动启用多重身份验证
 
-若要使用 [Azure AD PowerShell](/documentation/articles/powershell-install-configuremd) 更改[状态](/documentation/articles/multi-factor-authentication-whats-next/)，可以使用以下代码。可以将 `$st.State` 更改为以下状态之一：
+若要使用 [Azure AD PowerShell](/documentation/articles/powershell-install-configure/) 更改[状态](/documentation/articles/multi-factor-authentication-whats-next/)，可以使用以下代码。可以将 `$st.State` 更改为以下状态之一：
 
 
 - Enabled
