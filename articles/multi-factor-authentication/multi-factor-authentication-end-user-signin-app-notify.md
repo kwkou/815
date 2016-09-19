@@ -25,11 +25,11 @@
 <li>Microsoft 将发送一条通知。</li>
 
 
-<center>![Setup](./media/multi-factor-authentication-end-user-signin-app-notify/notify.png)</center>
+![Setup](./media/multi-factor-authentication-end-user-signin-app-notify/notify.png)
 
 <li>请接听电话并按验证键。</li>
 
-<center>![Setup](./media/multi-factor-authentication-end-user-signin-app-notify/phone.png)</center>
+![Setup](./media/multi-factor-authentication-end-user-signin-app-notify/phone.png)
 
 
 <li>现在你应已登录。</li>
