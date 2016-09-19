@@ -10,20 +10,20 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="07/27/2016"
+	wacn.date="09/19/2016"/>
 
 #Apache Storm on HDInsight 简介：面向 Hadoop 的实时分析
 
-Apache Storm on HDInsight 可使用 [Apache Hadoop](http://hadoop.apache.org) 在 Azure 环境中创建分布式实时分析解决方案。
+Apache Storm on HDInsight 可让你使用 [Apache Hadoop](http://hadoop.apache.org) 在 Azure 环境中创建分布式实时分析解决方案。
 
 ##什么是 Apache Storm？
 
-Apache Storm 是分布式可容错的开源计算系统，用于配合 Hadoop 实时处理数据。Storm 解决方案还提供有保障的数据处理功能，能够重播第一次未成功处理的数据。
+Apache Storm 是分布式可容错的开源计算系统，可用于配合 Hadoop 实时处理数据。Storm 解决方案还提供有保障的数据处理功能，能够重播第一次未成功处理的数据。
 
-##为何使用 Storm on HDInsight？
+##为何要使用 Storm on HDInsight？
 
-Apache Storm on HDInsight 是集成到 Azure 中的托管群集。主要优势如下：
+Apache Storm on HDInsight 是已集成到 Azure 环境中的托管群集。它提供以下主要优势：
 
 * 以托管服务的形式执行，提供 99.9% 运行时间 SLA
 
@@ -31,41 +31,41 @@ Apache Storm on HDInsight 是集成到 Azure 中的托管群集。主要优势�
 
 	* 支持混用编程语言：使用 Java 读取数据，然后使用 C# 处理数据
 
-	* 使用 **Trident** Java 接口创建支持“一次性”消息处理、“事务性”数据存储持久性和常见流分析操作的 Storm 拓扑
+	* 使用 **Trident** Java 接口创建支持“一次性”消息处理、“事务性”数据存储持久性和一组常见流分析操作的 Storm 拓扑
 
 * 包括内置的向上缩放和向下缩放功能：在不影响运行 Storm 拓扑的情况下缩放 HDInsight 群集
 
 * 与其他 Azure 服务（包括事件中心、Azure 虚拟网络、SQL 数据库、Blob 存储和 DocumentDB）集成
 
-	* 通过使用 Azure 虚拟网络组合多个 HDInsight 群集的功能：创建使用 HDInsight、HBase 或 Hadoop 群集的分析管道
+	* 通过使用 Azure 虚拟网络中组合多个 HDInsight 群集的功能：创建使用 HDInsight、HBase 或 Hadoop 群集的分析管道
 
 有关在实时分析解决方案中使用 Apache Storm 的公司列表，请参阅[使用 Apache Storm 的公司](https://storm.apache.org/documentation/Powered-By.html)。
 
-若要使用 Storm，请参阅 [Storm on HDInsight 入门][gettingstarted]。
+若要开始使用 Storm，请参阅 [Storm on HDInsight 入门][gettingstarted]。
 
 ###易于设置
 
-新的 Storm on HDInsight 群集可快速设置好。指定群集名称、大小、管理员帐户和存储帐户。Azure 创建该群集，包括示例拓扑和 Web 管理仪表板。
+你可以在分钟数设置好新的 Storm on HDInsight 群集。指定群集名称、大小、管理员帐户和存储帐户。Azure 将创建该群集，包括示例拓扑和 Web 管理仪表板。
 
 > [AZURE.NOTE] 你也可以使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 或 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 预配 Storm 群集。
 
-在提交请求后的 15 分钟内，可运行新的 Storm 群集，建立第一个实时分析管道。
+在提交请求后的 15 分钟内，你就可以运行新的 Storm 群集，并准备好建立第一个实时分析管道。
 
 ###易于使用
 
-__对于基于 Windows 的 Storm on HDInsight 群集__，HDInsight Tools for Visual Studio 允许创建 C# 和混合 C#/Java 拓扑，提交到 Storm on HDInsight 群集。
+__对于基于 Windows 的 Storm on HDInsight 群集__，用于 Visual Studio 的 HDInsight 工具允许你创建 C# 和混合 C#/Java 拓扑，然后将它们提交到 Storm on HDInsight 群集。
 
 ![Storm 项目创建](./media/hdinsight-storm-overview/createproject.png)
 
-HDInsight Tools for Visual Studio 还提供了一个接口用来监视和管理群集上的 Storm 拓扑。
+用于 Visual Studio 的 HDInsight 工具还提供了一个接口让你监视和管理群集上的 Storm 拓扑。
 
 ![Storm 管理](./media/hdinsight-storm-overview/stormview.png)
 
-有关使用 HDInsight 工具创建 Storm 应用程序的示例，请参阅[使用 HDInsight Tools for Visual Studio 开发 C# Storm 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)。
+有关使用 HDInsight 工具创建 Storm 应用程序的示例，请参阅[使用用于 Visual Studio 的 HDInsight 工具开发 C# Storm 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)。
 
-有关 HDInsight Tools for Visual Studio 的详细信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+有关用于 Visual Studio 的 HDInsight 工具的详细信息，请参阅 [用于 Visual Studio 的 HDInsight 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
-Storm on HDInsight 群集还提供一个基于 Web 的 Storm 仪表板用来提交、监视和管理群集上运行的 Storm 拓扑。
+每个 Storm on HDInsight 群集还提供一个基于 Web 的 Storm 仪表板让提交、监视和管理群集上运行的 Storm 拓扑。
 
 ![Storm 仪表板](./media/hdinsight-storm-overview/dashboard.png)
 
@@ -79,17 +79,17 @@ Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心�
 
 ###可靠性
 
-Apache Storm 可保证将传入的消息完全处理，即使数据分析分散在数百个节点。
+Apache Storm 始终保证每个传入消息将完全处理，即使数据分析分散在数百个节点。
 
-**Nimbus 节点**提供的功能与 Hadoop JobTracker 类似，它通过 **Zookeeper** 将任务分配给群集中的其他节点。Zookeeper 节点为群集提供协调功能，并促进 Nimbus 与辅助节点上的 **Supervisor** 进程进行通信。如果处理的节点出现故障，Nimbus 节点会得到通知，并分配到另一个节点的任务和关联的数据。
+**Nimbus 节点**提供的功能与 Hadoop JobTracker 类似，它通过 **Zookeeper** 将任务分配给群集中的其他节点。Zookeeper 节点为群集提供协调功能，并促进 Nimbus 与辅助节点上的 **Supervisor** 进程进行通信。如果处理的一个节点出现故障，Nimbus 节点将得到通知，并分配到另一个节点的任务和关联的数据。
 
-Apache Storm 的默认只能有一个 Nimbus 节点。Storm on HDInsight 运行两个 Nimbus 节点。如果主节点出现故障，HDInsight 群集将切换到辅助节点，同时主节点将会恢复。
+Apache Storm 的默认配置是只能有一个 Nimbus 节点。Storm on HDInsight 运行两个 Nimbus 节点。如果主节点出现故障，HDInsight 群集将切换到辅助节点，同时主节点将会恢复。
 
 ![nimbus、zookeeper 和 supervisor 示意图](./media/hdinsight-storm-overview/nimbus.png)
 
 ###缩放
 
-虽然创建过程中可指定群集中的节点数，但可能需要扩大或收缩群集来匹配工作负载。 所有 HDInsight 群集允许你更改群集中的节点数（即使在处理数据时）。
+虽然可以在创建过程中指定群集中的节点数，但你可能需要扩大或收缩群集以匹配工作负载。所有 HDInsight 群集允许你更改群集中的节点数，即使在处理数据时。
 
 > [AZURE.NOTE] 若要利用通过缩放添加的新节点，你需要重新平衡在增加大小之前启动的拓扑。
 
@@ -99,7 +99,7 @@ Storm on HDInsight 附带全天候企业级支持。Storm on HDInsight 也提供
 
 ##实时分析常见用例
 
-以下使用 Apache storm on HDInsight 的一些常见方案。有关实际方案的信息，请阅读[公司如何使用 Storm](https://storm.apache.org/documentation/Powered-By.html)。
+以下是你可能使用 Apache storm on HDInsight 的一些常见方案。有关实际方案的信息，请阅读[公司如何使用 Storm](https://storm.apache.org/documentation/Powered-By.html)。
 
 * 物联网 (IoT)
 * 欺诈检测
@@ -117,9 +117,9 @@ Apache Storm 运行的是**拓扑**，而不是你在 HDInsight 或 Hadoop 中�
 
 * **Supervisor**：每个辅助节点的 supervisor 负责启动和停止该节点上的**工作进程**。
 
-* **工作进程**：运行**拓扑**的一个子集。运行的拓扑分布在整个群集的许多工作进程中。
+* **工作进程**：运行**拓扑**的一个子集。正在运行的拓扑分布在整个群集的许多工作进程上。
 
-* **拓扑**：定义处理数据**流**的计算图形。与 MapReduce 作业不同，拓扑在未收到停止信息前会持续运行。
+* **拓扑**：定义处理数据**流**的计算图形。与 MapReduce 作业不同，拓扑运行到你停止它们为止。
 
 * **流**：一个未绑定的**元组**集合。流由 **spout** 和 **bolt** 生成，并由 **bolt** 使用。
 
@@ -127,7 +127,7 @@ Apache Storm 运行的是**拓扑**，而不是你在 HDInsight 或 Hadoop 中�
 
 * **Spout**：使用数据源中的数据并发出一个或多个**流**。
 
-	> [AZURE.NOTE]在许多情况下，从 Kafka、Azure 服务总线队列或事件中心等队列中读取数据。队列确保发生中断时数据持续不断。
+	> [AZURE.NOTE] 在许多情况下，从 Kafka、Azure Service Bus 队列或事件中心等队列中读取数据。队列确保发生中断时数据持续不断。
 
 * **Bolt**：使用**流**，处理**元组**，并可以发出**流**。Bolt 还负责将数据编写到外部存储，比如队列、HDInsight HBase、blob 或其他数据存储。
 
@@ -138,19 +138,19 @@ Apache Storm 运行的是**拓扑**，而不是你在 HDInsight 或 Hadoop 中�
 有关 Storm 组件的详细信息，请参阅 apache.org 上的 [Storm 教程][apachetutorial]。
 
 
-##可以使用哪些编程语言？
+##我可以使用哪些编程语言？
 
 Storm on HDInsight 群集支持 C#、Java 和 Python。
 
 ### C&#35;
 
-HDInsight Tools for Visual Studio 允许 .NET 开发人员以 C# 语言设计和实施拓扑。也可以创建使用 Java 和 C# 组件的混合拓扑。
+用于 Visual Studio 的 HDInsight 工具允许 .NET 开发人员以 C# 语言设计和实施拓扑。你也可以创建使用 Java 和 C# 组件的混合拓扑。
 
 有关详细信息，请参阅[使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)。
 
 ###Java
 
-大多数 Java 示例都是无格式 Java 或 Trident。Trident 是一个高级别抽象，可更轻松地执行联接、汇总、分组和筛选等操作。但是，Trident 作用于批量元组，其中原始 Java 解决方案一次处理一个元组流。
+你遇到的大多数 Java 示例都是无格式 Java 或 Trident。Trident 是一个高级别抽象，可更轻松地执行联接、汇总、分组和筛选等操作。但是，Trident 作用于批量元组，其中原始 Java 解决方案一次将处理一个元组流。
 
 有关 Trident 的详细信息，请参阅 apache.org 上的 [Trident 教程](https://storm.apache.org/documentation/Trident-tutorial.html)。
 
@@ -164,15 +164,15 @@ storm-starter 示例位于基于 Windows 的群集上的 **%storm\_home%\\contri
 
 Storm 可以提供不同级别的有保证的消息处理。例如，基本的 Storm 应用程序至少可以保证一次处理，而 Trident 仅可以保证一次处理。
 
-详细信息，请参阅 apache.org 上的[数据处理保证](https://storm.apache.org/about/guarantees-data-processing.html)。
+有关详细信息，请参阅 apache.org 上的[数据处理保证](https://storm.apache.org/about/guarantees-data-processing.html)。
 
 ###IBasicBolt
 
-读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通， Storm 提供 IBasicBolt 接口来自动执行这种模式。
+读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通，以至 Storm 提供 [IBasicBolt](https://storm.apache.org/apidocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
 
 ###联接
 
-在应用程序之间联接两个数据流的方式有所不同。例如，可以从多个流将每个元组联接到一个新流，也可以仅联接特定窗口的批量元组。两种方式的联接都可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来实现，它是定义元组如何路由到 bolt 的方式。
+在应用程序之间联接两个数据流的方式将有所不同。例如，你可以从多个流将每个元组联接到一个新流，也可以仅联接特定窗口的批量元组。两种方式的联接都可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来实现，它是定义元组如何路由到 bolt 的方式。
 
 在以下 Java 实例中，fieldsGrouping 用于将来自组件“1”、“2”和“3”的元组路由至 **MyJoiner** bolt。
 
@@ -180,21 +180,27 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 
 ###批处理
 
-批处理可以通过若干方式来实现。利用基本 Storm Java 拓扑，可以在发出元组前使用简单计数器对 X 个元组进行批处理，或使用称为计时周期元组的内部计时机制每 X 秒发出一批元组。
+批处理可以通过若干方式来实现。利用基本 Storm Java 拓扑，你可以在发出元组前使用简单计数器对 X 个元组进行批处理，或使用称为计时周期元组的内部计时机制每 X 秒发出一批元组。
 
 有关使用计时周期元组的示例，请参阅[使用 HDInsight 上的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/)。
 
-如果使用的是 Trident，则其基于批量处理元组。
+如果你使用的是 Trident，则其基于批量处理元组。
 
 ###缓存
 
-内存缓存通常用作加速处理的机制，因为它在内存中存储常用资产。由于拓扑分布于多个节点，并且每个节点中有多个进程，应考虑使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来确保包含用于缓存查询的字段的元组始终路由至同一进程。这可以避免在进程间重复缓存条目。
+内存缓存通常用作加速处理的机制，因为它在内存中存储常用资产。由于拓扑分布于多个节点，并且每个节点中有多个进程，你应考虑使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来确保包含用于缓存查询的字段的元组始终路由至同一进程。这可以避免在进程间重复缓存条目。
 
 ###流式处理 top N
 
-当拓扑依赖于计算“top”N 值（比如 Twitter 上的前 5 大趋势）时，应并行计算 top N 值，然后将这些计算的输出合并到全局值中。为此，可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 按字段路由至并行 bolt（该项按字段值对数据进行划分），然后路由至全局确定前 N 个值的 bolt。
+当拓扑依赖于计算“top”N 值（比如 Twitter 上的前 5 大趋势）时，你应并行计算 top N 值，然后将这些计算的输出合并到全局值中。为此，可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 按字段路由至并行 bolt（该项按字段值对数据进行划分），然后路由至全局确定前 N 个值的 bolt。
 
 有关此内容的示例，请参阅 [RollingTopWords](https://github.com/nathanmarz/storm-starter/blob/master/src/jvm/storm/starter/RollingTopWords.java) 示例。
+
+##Storm 使用哪种类型的日志记录？
+
+Storm 使用 Apache Log4j 来记录信息。默认情况下，将记录大量的数据，因此很难通过信息排序。可以让日志记录配置文件包括在 Storm 拓扑中，控制日志记录行为。
+
+有关演示如何配置日志记录的示例拓扑，请参阅适用于 HDInsight 上的 Storm 的 [Java-based WordCount（基于 Java 的 WordCount）](/documentation/articles/hdinsight-storm-develop-java-topology/)示例。
 
 ##后续步骤
 
@@ -209,4 +215,4 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 [apachetutorial]: https://storm.apache.org/documentation/Tutorial.html
 [gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started/
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0912_2016-->

@@ -9,13 +9,13 @@
 <tags
 	ms.service="traffic-manager"
 	ms.date="06/08/2016"
-	wacn.date="07/04/2016"/>
+	wacn.date="09/19/2016"/>
 
 # 流量管理器终结点
 
 使用 Azure 流量管理器，你可以控制用户流量在应用程序部署中的分布方式，这些应用程序部署运行在世界各地的不同数据中心或位置。
 
-需要在流量管理器中将每个应用程序部署配置为一个“终结点”。收到 DNS 请求时，流量管理器会根据当前的终结点可用性以及所选流量路由方法，从这些终结点中选择一个要在 DNS 响应中返回的终结点。有关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)。
+需要在流量管理器中将每个应用程序部署配置为一个“终结点”。收到 DNS 请求时，流量管理器会根据当前的终结点可用性以及所选流量路由方法，从这些终结点中选择一个要在 DNS 响应中返回的终结点。相关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)。
 
 此页介绍流量管理器如何支持不同类型的终结点。
 
@@ -23,7 +23,7 @@
 
 流量管理器支持三种类型的终结点：
 
-- **Azure 终结点**用于在 Azure 中托管的服务。  
+- **Azure 终结点**用于在 Azure 中托管的服务。
 - **外部终结点**用于在 Azure 外部托管的服务，不管是在本地托管还是通过其他托管提供商进行托管。
 - **嵌套终结点**用于组合流量管理器配置文件，以便创建更灵活的流量路由方案，从而满足更大、更复杂部署的需求。
 
@@ -41,7 +41,7 @@ Azure 终结点用于在流量管理器中配置基于 Azure 的服务。Azure �
 
 PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理 API 中不存在。因此，这些资源仅在流量管理器的 Azure Resource Manager 体验中受支持。其他终结点类型可以在流量管理器中通过 Resource Manager 和服务管理体验获得支持。
 
-使用 Azure 终结点时，流量管理器将检测“经典”IaaS VM 或 PaaS 云服务或 Web 应用的停止和启动时间。检测结果反映在终结点状态中（有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/#endpoint-and-profile-status)）。 基础服务停止后，流量管理器将不再对终结点运行状况检查收费，不会将流量引导到终结点；当服务重新启动后，将恢复计费，然后终结点即可接收流量。这不适用于 PublicIpAddress 终结点。
+使用 Azure 终结点时，流量管理器将检测“经典”IaaS VM 或 PaaS 云服务或 Web 应用的停止和启动时间。检测结果反映在终结点状态中（相关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/#endpoint-and-profile-status)）。 基础服务停止后，流量管理器将不再对终结点运行状况检查收费，不会将流量引导到终结点；当服务重新启动后，将恢复计费，然后终结点即可接收流量。这不适用于 PublicIpAddress 终结点。
 
 ### 外部终结点
 
@@ -50,7 +50,7 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 外部终结点可以单独使用，也可以在同一流量管理器配置文件中与 Azure 终结点组合使用。可以将 Azure 终结点与外部终结点组合用于多种方案：
 
 - 在主动-主动或主动-被动故障转移模型中使用 Azure 为现有的本地应用程序提供增强的冗余性。
-- 使用 Azure 与[流量管理器“性能”流量路由](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)将现有的本地应用程序扩展到其他地理位置，以便降低应用程序延迟并改进最终用户所能体验到的性能。
+- 使用 Azure 和[流量管理器“性能”流量路由](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)将现有的本地应用程序扩展到其他地理位置，以便降低应用程序延迟并改进最终用户所享用的性能。
 - 使用 Azure 为现有的本地应用程序提供额外的容量，既可以持续提供，也可以通过“云爆发”的方式提供以应对尖峰需求。
 
 在某些情况下，可以使用外部终结点来引用 Azure 服务（如需示例，请参阅[常见问题](#faq)）。在本示例中，针对运行状况检查的计费是按照 Azure 终结点费率而非外部终结点费率进行的。但与 Azure 终结点不同，如果你停止或删除基础服务，我们会继续向你收取相应运行状况检查的费用，直到你在流量管理器中显式禁用或删除该终结点。
@@ -79,26 +79,28 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 在流量管理器中禁用终结点对于临时删除处于维护模式或正在重新部署的终结点的流量非常有用。在终结点再次启动并运行后，便可以重新启用该终结点。
 
-可以通过流量管理器门户预览、PowerShell、CLI 或 REST API 来启用和禁用终结点，Resource Manager 和服务管理体验中均支持所有这些操作。
+可以通过流量管理器门户、PowerShell、CLI 或 REST API 来启用和禁用终结点，Resource Manager 和服务管理体验中均支持所有这些操作。
 
->[AZURE.NOTE] 禁用某个 Azure 终结点对其在 Azure 中的部署状态没有任何影响。即使在流量管理器中禁用 Azure 服务（例如 VM 或 Web 应用）后，将服务仍会处于运行状态，并且能够接收流量，前提是流量是直接引导到该服务的，而不是通过流量管理器配置文件 DNS 名称来引导的。有关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)。
+>[AZURE.NOTE] 禁用某个 Azure 终结点对其在 Azure 中的部署状态没有任何影响。即使在流量管理器中禁用 Azure 服务（例如 VM 或 Web 应用）后，将服务仍会处于运行状态，并且能够接收流量，前提是流量是直接引导到该服务的，而不是通过流量管理器配置文件 DNS 名称来引导的。相关详细信息，请参阅[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)。
 
 禁用某个终结点以后，该终结点将不再在 DNS 响应中返回，因此不会将流量引导到该终结点。此外还会停止对该终结点进行的运行状况检查，因此也不再进行相应的运行状况计费。禁用终结点相当于删除终结点，区别是前者更容易再次重新启用终结点。
 
-每个终结点当前能否接收流量取决于配置文件状态（已启用/已禁用）、终结点状态（已启用/已禁用），以及针对该终结点进行的运行状况检查的结果。有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/#endpoint-and-profile-status)。
+每个终结点当前能否接收流量取决于配置文件状态（已启用/已禁用）、终结点状态（已启用/已禁用），以及针对该终结点进行的运行状况检查的结果。相关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/#endpoint-and-profile-status)。
 
 >[AZURE.NOTE] 由于流量管理器是在 DNS 级别工作的，因此不可能影响任何终结点的现有连接。在终结点之间引导流量时（不管是通过更改配置文件设置来进行，还是在故障转移或故障回复期间进行），流量管理器都会将新连接引导到可用的终结点。不过，其他终结点可能仍会通过现有连接继续接收流量，直至相关会话被终止。若要耗尽现有连接的流量，应通过应用程序来限制适用于每个终结点的会话持续时间。
 
 如果禁用配置文件中的所有终结点，或者禁用配置文件本身，则 DNS 查询会收到“NXDOMAIN”响应。这等同于删除了配置文件的情况。
 
-## <a name="faq"></a> 常见问题
+## <a name="faq"></a>常见问题解答
 
 ### 能否将流量管理器用于多个订阅的终结点？
-是的。具体操作取决于你是使用流量管理器的服务管理 API 还是 Resource Manager API。[Azure 门户预览](https://portal.azure.cn)使用 Resource Manager，[经典管理门户](https://manage.windowsazure.cn)使用服务管理。
+Azure Web 应用无法实现这一点。原因是 Web 应用要求其所用的自定义域名都只能在单个订阅中使用。无法在多个订阅中对 Web 应用使用同一域名，因此无法用于流量管理器。
 
-在 Resource Manager 中，可以将任何订阅中的终结点添加到流量管理器，只要配置流量管理器配置文件的人员具有对该终结点的读取访问权限。可以使用 Azure Resource Manager 基于角色的访问控制 (RBAC) 授予这些权限。
+对于其他终结点类型，可在多个订阅中结合使用流量管理器和终结点。具体操作取决于你是使用流量管理器的服务管理 API 还是 Resource Manager API。[Azure 门户预览](https://portal.azure.cn)使用 Resource Manager，而[经典管理门户](https://manage.windowsazure.cn)使用服务管理。
 
-在服务管理中，流量管理器要求任何配置为 Azure 终结点的云服务或 Web 应用都必须与流量管理器配置文件位于相同的订阅中。可以将其他订阅中的云服务终结点作为“外部”终结点添加到流量管理器（这些终结点仍按“内部”终结点费率计费）。不能使用其他订阅中的 Web Apps。
+在 Resource Manager 中，只要配置流量管理器配置文件的人员具有终结点的读取访问权限，任何订阅的终结点就都可添加到流量管理器中。可使用 [Azure Resource Manager 基于角色的访问控制 (RBAC)](/documentation/articles/role-based-access-control-configure/) 授予这些权限。
+
+在服务管理中，流量管理器要求任何配置为 Azure 终结点的云服务或 Web 应用都必须与流量管理器配置文件位于相同的订阅中。可以将其他订阅中的云服务终结点作为“外部”终结点添加到流量管理器（这些终结点仍按“内部”终结点费率计费）。
 
 ### 能否将流量管理器用于云服务的“过渡”槽？
 是的。可以在流量管理器中将云服务的“过渡”槽配置为“外部”终结点。
@@ -117,14 +119,14 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 请注意，若要正常使用流量管理器运行状况检查，该服务还需公开 IPv4 终结点。这需要使用 DNS A 记录从同一终结点 DNS 名称进行映射。
 
-### 在使用流量管理器时，同一区域是否可以有多个 Web 应用？
+### 流量管理器是否可用于同一区域中的多个 Web 应用？
 
 通常情况下，流量管理器用于将流量引导到部署在不同区域中的应用程序。不过，流量管理器也可用于一个应用程序在同一区域中存在多个部署的情形。
 
 在使用 Web Apps 时，流量管理器 Azure 终结点不允许将同一 Azure 区域中的多个 Web 应用终结点添加到同一流量管理器配置文件。执行以下步骤即可解除该约束：
 
-1.	检查你在同一区域中的 Web Apps 是否使用了不同的 Web 应用“缩放单位”（即 Web 应用服务的不同实例）。为此，请检查 DNS 路径中是否存在 <...>.chinacloudsites.cn DNS 条目，缩放单位看起来类似于“waws-prod-xyz-123.vip.chinacloudsites.cn”。必须将给定的域名映射到给定缩放单位中的单个站点。由于这个原因，同一缩放单位中的两个 Web Apps 不能共享一个流量管理器配置文件。 
-2.	假定每个 Web 应用都使用了不同的缩放单位，则可将你的虚构域名作为自定义主机名添加到每个 Web 应用。这就要求所有 Web Apps 都属于同一订阅。
+1.	检查你在同一区域中的 Web Apps 是否使用了不同的 Web 应用“缩放单位”（即 Web 应用服务的不同实例）。为此，请检查 DNS 路径中是否存在 <...>.chinacloudsites.cn DNS 条目，缩放单位看起来类似于“waws-prod-xyz-123.vip.chinacloudsites.cn”。必须将给定的域名映射到给定缩放单位中的单个站点。由于这个原因，同一缩放单位中的两个 Web Apps 不能共享一个流量管理器配置文件。
+2.	假定每个 Web 应用都使用了不同的缩放单位，则可将你的虚构域名作为自定义主机名添加到每个 Web 应用。这要求所有 Web 应用均属于同一订阅。
 3.	按正常一样将一个（仅一个）Web 应用终结点作为 Azure 终结点添加到流量管理器配置文件。
 4.	将每个附加的 Web 应用终结点作为“外部”终结点添加到流量管理器配置文件。这要求你使用流量管理器的 Resource Manager 体验，而不是服务管理体验。
 5.	创建一个从虚构域（在上面的步骤 2 中使用过）指向流量管理器配置文件 DNS 名称 (<…>.trafficmanager.cn) 的 DNS CNAME 记录。
@@ -138,6 +140,4 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 - 了解流量管理器[流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
 
-
-
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0912_2016-->
