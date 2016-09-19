@@ -93,7 +93,7 @@ Microsoft .NET Library for Avro 针对 Microsoft.NET 环境序列化实现了 Ap
 Avro 文件格式支持分布式 MapReduce 编程模型。文件是“可拆分的”，意味着你可以在文件中搜寻任一点，然后即可从某一特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 序列化数据](/documentation/articles/hdinsight-dotnet-avro-serialization/)。
 
 
-### <a name="HDFS"></a>HDFS
+### <a name="HDFS" id="hdfs"></a>HDFS
 
 Hadoop 分布式文件系统 (HDFS) 是一种分布式文件系统，采用 MapReduce 和 YARN，是 Hadoop 生态系统的核心。HDFS 是 HDInsight 上 Hadoop 群集的标准文件系统。
 
