@@ -10,18 +10,18 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/12/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="08/05/2016" 
+	wacn.date="09/19/2016"/>
 
 #对 DocumentDB 中的数据进行建模#
-尽管无架构的数据库如 DocumentDB 能够非常容易地接受对数据模型的更改，你仍需花一些时间来研究你的数据。
+尽管无架构的数据库（如 Azure DocumentDB）能够非常容易地接受对数据模型的更改，但用户仍需花一些时间来研究数据。
 
 将如何存储数据？ 你的应用程序将如何检索和查询数据？ 你的应用程序是读取频繁，还是写入频繁？
 
 阅读本文后，你将能够回答以下问题：
 
 - 我该如何考虑文档数据库中的文档？
-- 什么是数据建模，我为什么应该关注？ 
+- 什么是数据建模，我为什么应该关注？
 - 文档数据库中的数据建模与关系型数据库中的有何不同？
 - 如何在非关系型数据库中表示数据关系？
 - 我应何时嵌入数据和何时链接数据？
@@ -35,7 +35,7 @@
 
 多年来我们在使用关系型数据库时一直被教导要规范化、规范化、规范化。
 
-规范化数据通常涉及到将一个实体例如一个人的信息分解为多个离散的数据片段。在上面的示例中，一个人除了多个地址记录之外，还可以有多个联系人详细记录。我们甚至通过进一步提取常用字段如“类型”，又深入走近一步，将联系人详细信息进一步细分。与地址相同，此处每条记录都有一个类型，例如家庭或办公
+规范化数据通常涉及到将一个实体例如一个人的信息分解为多个离散的数据片段。在上面的示例中，一个人除了多个地址记录之外，还可以有多个联系人详细记录。我们甚至通过进一步提取常用字段如“类型”，又深入走近一步，将联系人详细信息进一步细分。与地址相同，此处每条记录都有一个类型，例如*家庭*或*办公*
 
 规范化数据时的指导前提是**避免存储每个记录的冗余数据**，并且引用数据。在本例中，要读取一个人的所有联系人详细信息和地址信息，你需要使用 JOINS 才能在运行时高效汇总数据。
 
@@ -68,7 +68,8 @@
 	    ] 
 	}
 
-通过使用上述方法，我们对这个人的记录实施了**非规范化**处理，即我们将与此人有关的信息，例如联系人详细信息和地址，**嵌入**到一个 JSON 文档中。此外，因为我们不受固定架构的限制，所以我们可以灵活地执行一些操作，例如可以具有完全不同类型的联系人详细信息。
+通过使用上述方法，我们对这个人的记录实施了**非规范化**处理，即我们将与此人有关的信息，例如联系人详细信息和地址，**嵌入**到一个 JSON 文档中。
+此外，因为我们不受固定架构的限制，所以我们可以灵活地执行一些操作，例如可以具有完全不同类型的联系人详细信息。
 
 从数据库检索一个完整的人员记录现在成为针对单个集合和单个文档的单个读取操作。更新人员的联系人详细信息和地址也是针对单个文档的单个写入操作。
 
@@ -118,7 +119,7 @@
 		
 	Post document:
 	{
-		"id": 1,
+		"id": "1",
 		"name": "What's new in the coolest Cloud",
 		"summary": "A blog post by someone real famous",
 		"recentComments": [
@@ -130,7 +131,7 @@
 
 	Comment documents:
 	{
-		"postId": 1
+		"postId": "1"
 		"comments": [
 			{"id": 4, "author": "anon", "comment": "more goodness"},
 			{"id": 5, "author": "bob", "comment": "tails from the field"},
@@ -139,7 +140,7 @@
 		]
 	},
 	{
-		"postId": 1
+		"postId": "1"
 		"comments": [
 			{"id": 100, "author": "anon", "comment": "yet more"},
 			...
@@ -171,7 +172,7 @@
 
 这可以表示某人的股票投资组合。我们已选择在每个投资组合文档中嵌入股票信息。在一个相关数据频繁更改的环境中，例如股票交易应用程序，嵌入经常更改的数据将意味着每当进行一次股票交易，你就需要更新每个投资组合文档，你需要不停地更新。
 
-在一天时间里股票 *zaza* 可能交易成百上千次，并且数以千计的用户可能在其投资组合中具有股票 *zaza*。使用类似上面的数据模型，我们需要每天更新成千上万的投资组合文档许多次，导致系统无法很好地扩展。
+在一天时间里股票 *zaza* 可能交易成百上千次，并且数以千计的用户可能在其投资组合中具有股票 *zaza*。 使用类似上面的数据模型，我们需要每天更新成千上万的投资组合文档许多次，导致系统无法很好地扩展。
 
 ##<a id="Refer"></a>引用数据##
 
@@ -194,7 +195,7 @@
 	
     Stock documents:
     {
-        "id": 1,
+        "id": "1",
         "symbol": "zaza",
         "open": 1,
         "high": 2,
@@ -204,7 +205,7 @@
         "pe": 5.89
     },
     {
-        "id": 2,
+        "id": "2",
         "symbol": "xcxc",
         "open": 89,
         "high": 93.24,
@@ -245,13 +246,13 @@
 	}
 
 	Book documents:
-	{"id": 1, "name": "DocumentDB 101" }
-	{"id": 2, "name": "DocumentDB for RDBMS Users" }
-	{"id": 3, "name": "Taking over the world one JSON doc at a time" }
+	{"id": "1", "name": "DocumentDB 101" }
+	{"id": "2", "name": "DocumentDB for RDBMS Users" }
+	{"id": "3", "name": "Taking over the world one JSON doc at a time" }
 	...
-	{"id": 100, "name": "Learn about Azure DocumentDB" }
+	{"id": "100", "name": "Learn about Azure DocumentDB" }
 	...
-	{"id": 1000, "name": "Deep Dive in to DocumentDB" }
+	{"id": "1000", "name": "Deep Dive in to DocumentDB" }
 
 如果每个出版商的书籍数量较少且增长有限，那么在出版商文档中存储书籍引用可能很有用。但是，如果每个出版商的书籍数量没有限制，那么此数据模型将产生可变、不断增长的数组，类似于上面示例中的出版商文档。
 
@@ -264,53 +265,53 @@
 	}
 	
 	Book documents: 
-	{"id": 1,"name": "DocumentDB 101", "pub-id": "mspress"}
-	{"id": 2,"name": "DocumentDB for RDBMS Users", "pub-id": "mspress"}
-	{"id": 3,"name": "Taking over the world one JSON doc at a time"}
+	{"id": "1","name": "DocumentDB 101", "pub-id": "mspress"}
+	{"id": "2","name": "DocumentDB for RDBMS Users", "pub-id": "mspress"}
+	{"id": "3","name": "Taking over the world one JSON doc at a time"}
 	...
-	{"id": 100,"name": "Learn about Azure DocumentDB", "pub-id": "mspress"}
+	{"id": "100","name": "Learn about Azure DocumentDB", "pub-id": "mspress"}
 	...
-	{"id": 1000,"name": "Deep Dive in to DocumentDB", "pub-id": "mspress"}
+	{"id": "1000","name": "Deep Dive in to DocumentDB", "pub-id": "mspress"}
 
 在上面的示例中，我们删除了出版商文档中的无限制集合，只在每个书籍文档中引用出版商。
 
 ###如何对多对多关系建模？
-在关系型数据库中，多对多关系通常使用联接表来建模，这种方法只是将其他表中的记录联接在一起。
+在关系型数据库中， *多对多* 关系通常使用联接表来建模，这种方法只是将其他表中的记录联接在一起。
 
 ![联接表](./media/documentdb-modeling-data/join-table.png)
 
 你可能想要使用文档复制相同内容，并生成类似以下示例的数据模型。
 
 	Author documents: 
-	{"id": 1, "name": "Thomas Andersen" }
-	{"id": 2, "name": "William Wakefield" }
+	{"id": "a1", "name": "Thomas Andersen" }
+	{"id": "a2", "name": "William Wakefield" }
 	
 	Book documents:
-	{"id": 1, "name": "DocumentDB 101" }
-	{"id": 2, "name": "DocumentDB for RDBMS Users" }
-	{"id": 3, "name": "Taking over the world one JSON doc at a time" }
-	{"id": 4, "name": "Learn about Azure DocumentDB" }
-	{"id": 5, "name": "Deep Dive in to DocumentDB" }
+	{"id": "b1", "name": "DocumentDB 101" }
+	{"id": "b2", "name": "DocumentDB for RDBMS Users" }
+	{"id": "b3", "name": "Taking over the world one JSON doc at a time" }
+	{"id": "b4", "name": "Learn about Azure DocumentDB" }
+	{"id": "b5", "name": "Deep Dive in to DocumentDB" }
 	
 	Joining documents: 
-	{"authorId": 1, "bookId": 1 }
-	{"authorId": 2, "bookId": 1 }
-	{"authorId": 1, "bookId": 2 }
-	{"authorId": 1, "bookId": 3 }
+	{"authorId": "a1", "bookId": "b1" }
+	{"authorId": "a2", "bookId": "b1" }
+	{"authorId": "a1", "bookId": "b2" }
+	{"authorId": "a1", "bookId": "b3" }
 
 此模型可行。但是，加载一个作者及其书籍或加载一个书籍及其作者，将始终要求对数据库执行至少两次查询。一次是对联接文档的查询，另一个查询用来获取联接的实际文档。
 
 如果联接表只是将两个数据片段联接在一起，那么为什么不将该表完全删除？ 请考虑以下代码。
 
 	Author documents:
-	{"id": 1, "name": "Thomas Andersen", "books": [1, 2, 3]}
-	{"id": 2, "name": "William Wakefield", "books": [1, 4]}
+	{"id": "a1", "name": "Thomas Andersen", "books": ["b1, "b2", "b3"]}
+	{"id": "a2", "name": "William Wakefield", "books": ["b1", "b4"]}
 	
 	Book documents: 
-	{"id": 1, "name": "DocumentDB 101", "authors": [1, 2]}
-	{"id": 2, "name": "DocumentDB for RDBMS Users", "authors": [1]}
-	{"id": 3, "name": "Learn about Azure DocumentDB", "authors": [1]}
-	{"id": 4, "name": "Deep Dive in to DocumentDB", "authors": [2]}
+	{"id": "b1", "name": "DocumentDB 101", "authors": ["a1", "a2"]}
+	{"id": "b2", "name": "DocumentDB for RDBMS Users", "authors": ["a1"]}
+	{"id": "b3", "name": "Learn about Azure DocumentDB", "authors": ["a1"]}
+	{"id": "b4", "name": "Deep Dive in to DocumentDB", "authors": ["a2"]}
 
 现在，如果我有作者的姓名，我可以立即知道他们写了哪些书，相反如果我加载了书籍文档，我可以知道作者的 ID。这可以省去对联接表的中间查询，从而减少了应用程序需要往返访问服务器的次数。
 
@@ -325,11 +326,11 @@
 
 	Author documents: 
 	{
-	    "id": 1,
+	    "id": "a1",
 	    "firstName": "Thomas",
 	    "lastName": "Andersen",		
 	    "countOfBooks": 3,
-	 	"books": [1, 2, 3],
+	 	"books": ["b1", "b2", "b3"],
 		"images": [
 			{"thumbnail": "http://....png"}
 			{"profile": "http://....png"}
@@ -337,11 +338,11 @@
 		]
 	},
 	{
-	    "id": 2,
+	    "id": "a2",
 	    "firstName": "William",
 	    "lastName": "Wakefield",
 	    "countOfBooks": 1,
-		"books": [1, 4, 5],
+		"books": ["b1", "b4", "b5"],
 		"images": [
 			{"thumbnail": "http://....png"}
 		]
@@ -349,24 +350,24 @@
 	
 	Book documents:
 	{
-		"id": 1,
+		"id": "b1",
 		"name": "DocumentDB 101",
 		"authors": [
-			{"id": 1, "name": "Thomas Andersen", "thumbnailUrl": "http://....png"},
-			{"id": 2, "name": "William Wakefield", "thumbnailUrl": "http://....png"}
+			{"id": "a1", "name": "Thomas Andersen", "thumbnailUrl": "http://....png"},
+			{"id": "a2", "name": "William Wakefield", "thumbnailUrl": "http://....png"}
 		]
 	},
 	{
-		"id": 2,
+		"id": "b2",
 		"name": "DocumentDB for RDBMS Users",
 		"authors": [
-			{"id": 1, "name": "Thomas Andersen", "thumbnailUrl": "http://....png"},
+			{"id": "a1", "name": "Thomas Andersen", "thumbnailUrl": "http://....png"},
 		]
 	}
 
 此处我们（主要）遵循了嵌入式模型，在顶层文档中嵌入其他实体的数据，但同时引用了其他数据。
 
-如果你查看书籍文档中的作者数组，会看到一些有趣的字段。其中 id 字段用来引用作者文档，这是规范化模型中的标准做法，但是然后我们还使用了 name 和 thumbnailUrl。我们可以只使用 id 字段，然后让应用程序使用“链接”从各自的作者文档中获取所需的任何其他信息，但是由于我们的应用程序在显示的每本书中显示了作者的姓名和缩略图，因此通过非规范化作者中的**一些**数据，我们节省了针对列表中每本书往返访问服务器的次数。
+如果你查看书籍文档中的作者数组，会看到一些有趣的字段。其中 *id* 字段用来引用作者文档，这是规范化模型中的标准做法，但是然后我们还使用了 *name* 和 *thumbnailUrl*。我们可以只使用 *id* 字段，然后让应用程序使用“链接”从各自的作者文档中获取所需的任何其他信息，但是由于我们的应用程序在显示的每本书中显示了作者的姓名和缩略图，因此通过非规范化作者中的**一些**数据，我们节省了针对列表中每本书往返访问服务器的次数。
 
 当然，如果作者的姓名发生更改，或者他们想要更新自己的照片，那么我们必须更新他们曾经出版的每本书，但对于我们的应用程序来说，基于作者不会经常更改他们的姓名的假设，这是一个可接受的设计决策。
 
@@ -389,4 +390,4 @@
 最后，有关多租户应用程序的数据建模和分片指导，请查阅[使用 Azure DocumentDB 扩展多租户应用程序](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx)。
  
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0912_2016-->

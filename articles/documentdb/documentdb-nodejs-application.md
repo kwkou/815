@@ -1,17 +1,17 @@
 <properties 
 	pageTitle="了解 Node.js - DocumentDB Node.js 教程 | Azure" 
-	description="了解 Node.js! 教程探讨了如何使用 Microsoft Azure DocumentDB 存储和访问托管在 Azure 网站上的 Node.js Express Web 应用程序中的数据。" 
-	keywords="应用程序开发, 数据库教程, 了解 node.js, node.js 教程, documentdb, azure, Microsoft azure"
+	description="了解 Node.js! 教程探讨了如何使用 Azure DocumentDB 存储和访问托管在 Azure 网站上的 Node.js Express Web 应用程序中的数据。" 
+	keywords="应用程序开发, 数据库教程, 了解 node.js, node.js 教程, documentdb, azure, Azure"
 	services="documentdb" 
 	documentationCenter="nodejs" 
-	authors="aliuy" 
+	authors="AndrewHoh" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="04/18/2016" 
-	wacn.date="07/04/2016"/>
+	ms.date="08/11/2016" 
+	wacn.date="09/19/2016"/>
 
 # <a name="_Toc395783175"></a>使用 DocumentDB 生成 Node.js Web 应用程序
 
@@ -44,7 +44,7 @@
 
 在按照本文中的说明操作之前，你应确保已拥有下列项：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial/)。
+- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - [Node.js][] 版本 v0.10.29 或更高版本。
 - [Express 生成器](http://www.expressjs.com/starter/generator.html)（你可以通过 `npm install express-generator -g` 安装它）
 - [Git][]。
@@ -106,7 +106,7 @@
 
 1. 在项目目录中，创建名为 **models** 的新目录。
 2. 在 **models** 目录中，创建一个名为 **taskDao.js** 的新文件。此文件将包含我们应用程序所创建任务的模型。
-3. 在同一个 **models** 目录中，创建另一个名为 **docdbUtils.js** 的新文件。此文件将包含一些可重用的有用代码，我们将在整个应用程序期间用到这些代码。 
+3. 在同一个 **models** 目录中，创建另一个名为 **docdbUtils.js** 的新文件。此文件将包含一些可重用的有用代码，我们将在整个应用程序期间用到这些代码。
 4. 将以下代码复制到 **docdbUtils.js** 中
 
 		var DocumentDBClient = require('documentdb').DocumentClient;
@@ -179,7 +179,9 @@
 				
 		module.exports = DocDBUtils;
 
-> [AZURE.TIP] createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。有关 DocumentDB Offer 类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)
+    > [AZURE.TIP] createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。
+    >
+> 有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)
 		
 3. 保存并关闭 **docdbUtils.js** 文件。
 
@@ -301,7 +303,7 @@
 
 ### 创建控制器
 
-1. 在项目的 **routes** 目录中，创建一个名为 **tasklist.js** 的新文件。 
+1. 在项目的 **routes** 目录中，创建一个名为 **tasklist.js** 的新文件。
 2. 将以下代码添加到 **tasklist.js**。这将加载 **tasklist.js** 使用的 DocumentDBClient 和 async 模块。这还定义了 **TaskList** 函数，将向该函数传递我们之前定义的 **Task** 对象的一个实例：
 
 		var DocumentDBClient = require('documentdb').DocumentClient;
@@ -391,7 +393,7 @@
 		
 		module.exports = config;
 
-3. 在 **config.js** 文件中，使用在 [Azure 门户](https://portal.azure.cn)上 DocumentDB 帐户的“密钥”边栏选项卡中找到的值更新 HOST 和 AUTH\_KEY 的值：
+3. 在 **config.js** 文件中，使用在 [Azure 门户预览](https://portal.azure.cn)上 DocumentDB 帐户的“密钥”边栏选项卡中找到的值更新 HOST 和 AUTH\_KEY 的值：
 
 4. 保存并关闭 **config.js** 文件。
  
@@ -435,7 +437,7 @@
 
 现在让我们把注意力转向构建用户界面，因此用户可以与我们的应用程序进行切实的交互。我们创建的 Express 应用程序使用 **Jade** 作为视图引擎。有关 Jade 的详细信息，请参阅 [http://jade-lang.com/](http://jade-lang.com/)。
 
-1. **views** 目录中的 **layout.jade** 文件用作其他 .**jade** 文件的全局模板。在此步骤中，你将对其进行修改以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观网站的工具包）。 
+1. **views** 目录中的 **layout.jade** 文件用作其他 .**jade** 文件的全局模板。在此步骤中，你将对其进行修改以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观网站的工具包）。
 2. 打开在 **views** 文件夹中找到的 **layout.jade** 文件并将内容替换为以下代码：
 	
 		doctype html
@@ -454,8 +456,7 @@
 
 
 
-	这将有效告知 **Jade** 引擎来为应用程序呈现某些 HTML，并创建名为 **content** 的**块**，我们可在其中提供内容页面的布局。
-	保存并关闭此 **layout.jade** 文件。
+	这将有效告知 **Jade** 引擎来为应用程序呈现某些 HTML，并创建名为 **content** 的**块**，我们可在其中提供内容页面的布局。保存并关闭此 **layout.jade** 文件。
 
 4. 现在打开 **index.jade** 文件（应用程序将要使用的视图），并将文件内容替换为以下代码：
 
@@ -499,9 +500,7 @@
 
 	这将扩展布局，并为我们先前在 **layout.jade** 文件中看到的 **content** 占位符提供内容。
 	
-	在此布局中，我们创建了两个 HTML 窗体。 
-	第一个窗体中的表包含我们的数据和按钮，该按钮允许我们通过发布控制器的 **/completetask** 方法更新项。
-	第二个窗体包含两个输入字段和一个按钮，该按钮允许我们通过发布控制器的 **/addtask** 方法来新建项。
+	在此布局中，我们创建了两个 HTML 窗体。第一个窗体中的表包含我们的数据和按钮，该按钮允许我们通过发布控制器的 **/completetask** 方法更新项。第二个窗体包含两个输入字段和一个按钮，该按钮允许我们通过发布控制器的 **/addtask** 方法来新建项。
 	
 	这应该是应用程序工作所需的所有内容了。
 
@@ -544,7 +543,7 @@
 
 ## <a name="_Toc395783182"></a>步骤 7：将应用程序开发项目部署到 Azure 网站
 
-1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Continuous deployment using GIT in Azure App Service（使用 GIT 在 Azure App Service 中进行连续部署）](/documentation/articles/web-sites-publish-source-control/)主题中找到如何执行此操作的说明。
+1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Local Git Deployment to Azure App Service（从本地 GIT 部署到 Azure App Service）](/documentation/articles/web-sites-publish-source-control/)主题中找到如何执行此操作的说明。
 
 2. 将 Azure 网站添加为 git 远程。
 
@@ -562,11 +561,11 @@
 
 可以从 [GitHub][] 下载完整的参考应用程序的源代码。
 
-有关详细信息，请参阅 [Node.js 开发人员中心](https://azure.microsoft.com/develop/nodejs/)。
+有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
 [Node.js]: http://nodejs.org/
 [Git]: http://git-scm.com/
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0912_2016-->
