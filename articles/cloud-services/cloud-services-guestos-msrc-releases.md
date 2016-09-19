@@ -9,12 +9,29 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="06/21/2016"
-   wacn.date="08/22/2016"/>
+   ms.date="07/19/2016"
+   wacn.date="09/19/2016"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 7 月来宾 OS 
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-084 | [3169991] | Internet Explorer 的累积安全更新 | 4\.34、3.41、2.53 | 2016 年 7 月 12日 |
+| MS16-087 | [3170005] | Microsoft 打印后台处理程序的安全更新 | 4\.34、3.41、2.53 | 2016 年 7 月 12日 |
+| MS16-090 | [3171481] | 内核模式驱动程序的安全更新 | 4\.34、3.41、2.53 | 2016 年 7 月 12日 |
+| MS16-091 | [3170048] | .Net Framework 的安全更新 | 4\.34、3.41、2.53 | 2016 年 7 月 12日 |
+| MS16-092 | [3171910] | Windows 内核的安全更新 | 4\.34、3.41 | 2016 年 7 月 12日 |
+| MS16-094 | [3177404] | 安全启动的安全更新 | 4\.34、3.41 | 2016 年 7 月 12日 |
+| | [3162835] | 适用于 Windows 的 2016 年 6 月 DST 和时区更新 | 4\.34、3.41、2.53 | 2016 年 7 月 12日 |
+| | [3156417] | 适用于 Windows 7 SP1 和 Windows Server 2008 R2 SP1 的 2016 年 5 月更新汇总 | 2\.53 | 2016 年 7 月 12日 |
+| | [3161608] | 适用于 Windows 7 SP1 和 Windows Server 2008 R2 SP1 的 2016 年 6 月更新汇总 | 2\.53 | 2016 年 7 月 12日 |
+| | [3161609] | 适用于 Windows Server 2012 的 2016 年 6 月更新汇总 | 3\.41 | 2016 年 7 月 12日 |
+| | [3161606] | 适用于 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的 2016 年 6 月更新汇总 | 4\.34 | 2016 年 7 月 12日 |
+| | [3139923] | 在 Windows 中的 HTTP 共享上安装 MSI 包时，Windows Installer (MSI) 修复不起作用 | 4\.34 | 2016 年 7 月 12日 |
 
 ## 6 月来宾 OS 
 
@@ -314,6 +331,19 @@
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 
 
+[3169991]: http://support.microsoft.com/zh-cn/kb/3169991
+[3170005]: http://support.microsoft.com/zh-cn/kb/3170005
+[3170050]: http://support.microsoft.com/zh-cn/kb/3170050
+[3171481]: http://support.microsoft.com/zh-cn/kb/3171481
+[3170048]: http://support.microsoft.com/zh-cn/kb/3170048
+[3171910]: http://support.microsoft.com/zh-cn/kb/3171910
+[3177404]: http://support.microsoft.com/zh-cn/kb/3177404
+[3162835]: http://support.microsoft.com/zh-cn/kb/3162835
+[3156417]: http://support.microsoft.com/zh-cn/kb/3156417
+[3161608]: http://support.microsoft.com/zh-cn/kb/3161608
+[3161609]: http://support.microsoft.com/zh-cn/kb/3161609
+[3161606]: http://support.microsoft.com/zh-cn/kb/3161606
+[3139923]: http://support.microsoft.com/zh-cn/kb/3139923
 [3141780]: http://support.microsoft.com/zh-cn/kb/3141780
 [3155527]: http://support.microsoft.com/zh-cn/kb/3155527
 [3163649]: http://support.microsoft.com/zh-cn/kb/3163649

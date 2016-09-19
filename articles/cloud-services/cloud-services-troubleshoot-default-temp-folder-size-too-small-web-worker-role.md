@@ -9,14 +9,12 @@
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
-   ms.date="06/03/2016"
-   wacn.date="07/18/2016" />
+   ms.date="07/19/2016"
+   wacn.date="09/19/2016" />
 
 # 云服务 Web 角色/辅助角色的默认 TEMP 文件夹大小太小
 
 云服务辅助角色或 Web 角色的默认临时目录的最大大小为 100 MB，可能会导致该目录在某个时候被填满。本文介绍如何避免临时目录空间不足。
-
->[AZURE.NOTE] 这仅适用于在 Azure SDK 1.0 到 1.4 中使用 Web 角色和辅助角色。
 
 [AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
@@ -28,7 +26,7 @@
 
 实现以下备选方案之一：
 
-- 配置本地存储资源，直接对其进行访问而不使用 TEMP 或 TMP。若要通过应用程序内运行的代码访问本地存储资源，请调用 [RoleEnvironment.GetLocalResource](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) 方法。有关如何设置本地存储资源的详细信息，请参阅[配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources/)。
+- 配置本地存储资源，直接对其进行访问而不使用 TEMP 或 TMP。若要通过应用程序内运行的代码访问本地存储资源，请调用 [RoleEnvironment.GetLocalResource](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) 方法。
 
 - 配置本地存储资源，将 TEMP 和 TMP 目录指向本地存储资源的路径。应在 [RoleEntryPoint.OnStart](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) 方法中进行这种修改。
 
@@ -66,6 +64,7 @@
 
 
 
+阅读说明[如何增加 Azure Web 角色 ASP.NET 临时文件夹大小](http://blogs.msdn.com/b/kwill/archive/2011/07/18/how-to-increase-the-size-of-the-windows-azure-web-role-asp-net-temporary-folder.aspx)的博客。
 
 
 
