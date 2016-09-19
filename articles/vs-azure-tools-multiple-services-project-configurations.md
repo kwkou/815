@@ -5,12 +5,11 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />  
-
+   editor="" />
 <tags
    ms.service="multiple"
-   ms.date="06/01/2016"
-   wacn.date="08/22/2016" />
+   ms.date="08/15/2016"
+   wacn.date="09/19/2016" />
 
 # 使用多种服务配置来配置 Azure 项目
 
@@ -24,7 +23,7 @@ Azure Tools for Microsoft Visual Studio 提供可用于设置存储在这些文�
 
 ![VS\_Solution\_Explorer\_Roles\_Properties](./media/vs-azure-tools-multiple-services-project-configurations/IC784076.png)
 
-有关服务定义文件和服务配置文件的基础架构信息，请参阅 [Schema Reference（架构参考](https://msdn.microsoft.com/zh-cn/library/azure/dd179398.aspx)）。有关服务配置的详细信息，请参阅[如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)。
+有关服务定义文件和服务配置文件的基础架构信息，请参阅 [Schema Reference](https://msdn.microsoft.com/zh-cn/library/azure/dd179398.aspx)（架构参考）。有关服务配置的详细信息，请参阅[如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)。
 
 ## 配置角色属性
 
@@ -50,13 +49,13 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 如果已添加 HTTPS 终结点，则按默认启用“HTTPS 终结点”选项，Visual Studio 除了为 HTTP 终结点启动浏览器之外，还将在开始调试时为此终结点启动浏览器。此处假设两个启动选项都已启用。
 
-诊断
+**诊断**
 
-默认情况下，将对 Web 角色启用诊断。Azure 云服务项目和存储帐户都设置为使用本地存储模拟器。准备好部署到 Azure 后，可以选择生成器按钮 (**…**) 来更新存储帐户，以便在云中使用 Azure 存储空间。可以根据需要或自动计划的间隔，将诊断数据传输到存储帐户。有关 Azure 诊断的详细信息，请参阅 [在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
+默认情况下，将对 Web 角色启用诊断。Azure 云服务项目和存储帐户都设置为使用本地存储模拟器。准备好部署到 Azure 后，可以选择生成器按钮 (**…**) 来更新存储帐户，以便在云中使用 Azure 存储空间。可以根据需要或自动计划的间隔，将诊断数据传输到存储帐户。有关 Azure 诊断的详细信息，请参阅[在 Azure 云服务和虚拟机中启用诊断](./cloud-services/cloud-services-dotnet-diagnostics.md)。
 
 ## “设置”页
 
-可以在“设置”页上为服务添加配置设置。配置设置是名称-值对。角色中运行的代码可以使用 [Azure 托管库](https://msdn.microsoft.com/zh-cn/library/azure/dn602775(v=azure.11).aspx)提供的类，在运行时读取配置设置的值。具体而言，[GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 方法将在运行时返回命名配置设置的值。
+可以在“设置”页上为服务添加配置设置。配置设置是名称-值对。角色中运行的代码可以使用 [Azure 托管库](http://go.microsoft.com/fwlink?LinkID=171026)提供的类，在运行时读取配置设置的值。具体而言，[GetConfigurationSettingValue](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 方法将在运行时返回命名配置设置的值。
 
 ### 将连接字符串配置为存储帐户
 
@@ -64,7 +63,7 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 指向 Azure 存储帐户的连接字符串必须使用定义的格式。有关如何创建连接字符串的信息，请参阅[配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)。
 
-在准备好对 Azure 存储服务测试你的服务时，或在准备好将你的云服务部署到 Azure 时，可以更改任何连接字符串的值以指向 Azure 存储帐户。选择 (**…**)，选择“输入存储帐户凭据”。输入包含你的帐户名和帐户密钥的帐户信息。此外，还可以在“存储帐户连接字符串”对话框中，指示是希望使用默认 HTTPS 终结点（默认选项）、默认 HTTP 终结点还是自定义终结点。如果已为服务注册了自定义域名，则可以决定使用自定义终结点，如 [为 Azure 存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name/)中所述。
+在准备好对 Azure 存储服务测试你的服务时，或在准备好将你的云服务部署到 Azure 时，可以更改任何连接字符串的值以指向 Azure 存储帐户。选择 (**…**)，选择“输入存储帐户凭据”。输入包含你的帐户名和帐户密钥的帐户信息。此外，还可以在“存储帐户连接字符串”对话框中，指示是希望使用默认 HTTPS 终结点（默认选项）、默认 HTTP 终结点还是自定义终结点。如果已为服务注册了自定义域名，则可以决定使用自定义终结点，如[为 Azure 存储帐户中的 Blob 数据配置自定义域名](./storage/storage-custom-domain-name.md)中所述。
 
 >[AZURE.IMPORTANT] 在部署服务之前，必须修改连接字符串以指向 Azure 存储帐户。否则，可能导致角色无法启动，或是在初始化、忙碌、停止状态之间循环。
 
@@ -82,13 +81,13 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 ## “本地存储”页
 
-可以使用“本地存储”属性页来保留某个角色的一个或多个本地存储资源。本地存储资源是运行角色实例的 Azure 虚拟机的文件系统中的保留目录。有关如何使用本地存储资源的详细信息，请参阅[配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources/)。
+可以使用“本地存储”属性页来保留某个角色的一个或多个本地存储资源。本地存储资源是运行角色实例的 Azure 虚拟机的文件系统中的保留目录。
 
 ## “证书”页
 
 可以在“证书”页上将证书与角色关联。所添加的证书可用于配置“终结点”属性页上的 HTTPS 终结点。
 
-“证书”属性页会将有关证书的信息添加到服务配置。请注意，证书不会与服务一起打包；你必须通过 [Azure 经典管理门户](http://manage.windowsazure.cn)将证书单独上载到 Azure。
+“证书”属性页会将有关证书的信息添加到服务配置。请注意，证书不会与服务一起打包；你必须通过 [Azure 经典门户](http://go.microsoft.com/fwlink/?LinkID=213885)将证书单独上载到 Azure。
 
 若要将证书与角色关联，请提供证书的名称。在“终结点”属性页上配置 HTTPS 终结点时，你将使用此名称来引用证书。接下来，指定证书存储是“本地计算机”还是“当前用户”，并指定存储的名称。最后，输入证书的指纹。如果证书位于“当前用户\\个人(我的)”存储区中，可以通过从填充列表中选择证书来输入证书的指纹。如果证书驻留在任何其他位置，则手动输入指纹值。
 
@@ -107,4 +106,4 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 |开发|在此页中，可以指定生成配置说明，以及运行任何生成后事件的条件。|
 |Web|在此页中，可以配置与 Web 服务器相关的设置。|
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0912_2016-->

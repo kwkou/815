@@ -8,8 +8,8 @@
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="06/08/2016"
-   wacn.date="06/27/2016" />
+   ms.date="07/22/2016"
+   wacn.date="09/19/2016" />
 
 # 在本地 Docker 容器中调试应用
 
@@ -44,7 +44,8 @@ Visual Studio Tools for Docker 提供了一致的方法在本地 Linux Docker �
 
 1. 将解决方案配置设置为 `Debug`，并按 **&lt;CTRL + F5>** 以生成 docker 映像并在本地运行它。
 
-    如果你使用的是 Microsoft Edge 浏览器或以其他方式出现错误，请参阅[故障排除](/documentation/articles/vs-azure-tools-docker-troubleshooting-docker-errors/)部分。
+    容器映像已生成并在 Docker 容器中运行后，Visual Studio 将在默认浏览器中启动 Web 应用。
+    如果使用的是 Microsoft Edge 浏览器或以其他方式出现错误，请参阅[故障排除](vs-azure-tools-docker-troubleshooting-docker-errors.md)部分。
 
 1. 请转到“关于”页，我们将在此页中进行更改。
 
@@ -115,4 +116,4 @@ Visual Studio Tools for Docker 提供了一致的方法在本地 Linux Docker �
 
 [2]: ./media/vs-azure-tools-docker-edit-and-refresh/breakpoint.png
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_0912_2016-->

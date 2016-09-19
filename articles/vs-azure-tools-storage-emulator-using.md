@@ -5,16 +5,17 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />  
-
+   editor="" />
 <tags 
    ms.service="storage"
-   ms.date="06/01/2016"
-   wacn.date="08/22/2016" />  
+   ms.date="07/18/2016"
+   wacn.date="09/19/2016" />  
 
 
 # 在 Visual Studio 中配置和使用存储模拟器
 
+
+## 概述
 Azure SDK 开发环境包含存储模拟器，这是一个用于模拟本地开发计算机上的 Azure 中可用的 Blob、队列和表存储服务的实用工具。如果要生成采用 Azure 存储空间服务的云服务，或者编写调用存储服务的任何外部应用程序，你可以利用存储模拟器，在本地测试代码。Azure Tools for Microsoft Visual Studio 已将存储模拟器管理集成到 Visual Studio 中。Azure Tools 会在首次使用时初始化存储模拟器数据库，在你从 Visual Studio 中运行或调试代码时启动存储模拟器服务，并通过 Azure 存储资源管理器提供对存储模拟器数据的只读访问。
 
 有关存储模拟器的详细信息，包括系统要求和自定义配置说明，请参阅 [Use the Azure Storage Emulator for Development and Testing（使用 Azure 存储模拟器进行开发和测试）](/documentation/articles/storage-use-emulator/)。
@@ -41,4 +42,4 @@ Azure SDK 开发环境包含存储模拟器，这是一个用于模拟本地开�
 
 服务器资源管理器中的“Azure 存储空间”节点可让你查看存储帐户（包括存储模拟器）中的数据，以及更改 Blob 和表数据的设置。有关详细信息，请参阅 [Browsing and Managing Storage Resources with Server Explorer（使用服务器资源管理器浏览和管理存储资源）](https://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx)。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0912_2016-->

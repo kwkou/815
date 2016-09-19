@@ -5,12 +5,11 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />  
-
+   editor="" />
 <tags
    ms.service="multiple"
-   ms.date="05/08/2016"
-   wacn.date="08/22/2016" />  
+   ms.date="08/15/2016"
+   wacn.date="09/19/2016" />  
 
 
 # 为 Azure 云服务和虚拟机配置诊断
@@ -83,13 +82,11 @@ Azure 诊断的配置方法有如下数种：
 
 1. 在“诊断”部分中，确保“启用诊断”复选框已选中。
 
-    ![访问“启用诊断”选项](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC796660.png)  
+    ![访问“启用诊断”选项](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC796660.png)
 
+1. 选择省略号 (…) 按钮指定诊断数据要存储到的存储帐户。选择的存储帐户将是诊断数据的存储位置。
 
-1. 选择省略号 (...) 按钮以指定要将诊断数据存储到的存储帐户。所选的存储帐户将是存储诊断数据的位置。
-
-    ![指定要使用的存储帐户](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC796661.png)  
-
+    ![指定要使用的存储帐户](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC796661.png)
 
 1. 在“创建存储连接字符串”对话框中，指定要使用 Azure 存储模拟器、Azure 订阅还是手动输入凭据进行连接。
 
@@ -102,7 +99,7 @@ Azure 诊断的配置方法有如下数种：
 
   - 如果你选择“手动输入凭据”选项，则系统会提示你输入要使用的 Azure 帐户的名称和密钥。
 
-1. 选择“配置”按钮，以查看“诊断配置”对话框。每个选项卡（“常规”和“日志目录”除外）表示你可以收集的诊断数据源。默认选项卡“常规”为你提供以下诊断数据收集选项：“仅限错误”、“所有信息”和“自定义计划”。默认选项“仅限错误”占用最少量的存储空间，因为该选项不传输警告或跟踪消息。“所有信息”选项传输的信息最多，因此就存储来说是成本最高的选项。
+1. 选择“配置”按钮查看“诊断配置”对话框。每个选项卡（“常规”和“日志目录”除外）表示你可以收集的诊断数据源。默认选项卡“常规”为你提供以下诊断数据收集选项：“仅限错误”、“所有信息”和“自定义计划”。默认选项“仅限错误”占用最少量的存储空间，因为该选项不传输警告或跟踪消息。“所有信息”选项传输的信息最多，因此就存储来说是成本最高的选项。
 
     ![启用 Azure 诊断和配置](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758144.png)  
 
@@ -374,4 +371,4 @@ RoleEntryPoint 的方法在 WAIISHost.exe 上下文中调用，而非 IIS。因�
 
 若要详细了解 Azure 中的诊断日志记录，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)和[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0912_2016-->
