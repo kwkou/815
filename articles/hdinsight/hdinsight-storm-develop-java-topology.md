@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/17/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="08/01/2016"
+	wacn.date="09/19/2016"/>
 
 #使用 Apache Storm 和 HDInsight 上的 Maven 为基本的单词计数应用程序开发基于 Java 的拓扑
 
@@ -19,7 +19,7 @@
 
 完成本文档中的步骤之后，你将会获得一个用于部署到 Apache Storm on HDInsight 的基本拓扑。
 
-> [AZURE.NOTE]：此拓扑的完整版本在 [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount) 中提供。
+> [AZURE.NOTE] [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount) 上提供了此拓扑的完整版本。
 
 ##先决条件
 
@@ -76,7 +76,10 @@
 	<dependency>
 	  <groupId>org.apache.storm</groupId>
 	  <artifactId>storm-core</artifactId>
-	  <version>0.9.2-incubating</version>
+      <!-- Storm 0.10.0 is for HDInsight 3.3.
+           To find the version information for earlier HDInsight cluster
+           versions, see https://www.azure.cn/documentation/articles/hdinsight-component-versioning-v1/ -->
+	  <version>0.10.0</version>
 	  <!-- keep storm out of the jar-with-dependencies -->
 	  <scope>provided</scope>
 	</dependency>
@@ -92,9 +95,11 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 	<build>
 	  <plugins>
 	  </plugins>
+      <resources>
+      </resources>
 	</build>
 
-此节将用来添加插件和其他生成配置选项。
+此节用于添加插件、资源和其他生成配置选项。有关 __pom.xml__ 文件的完整参考信息，请参阅 [http://maven.apache.org/pom.html](http://maven.apache.org/pom.html)。
 
 ###添加插件
 
@@ -103,6 +108,7 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 	<plugin>
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>exec-maven-plugin</artifactId>
+      <version>1.4.0</version>
       <executions>
         <execution>
         <goals>
@@ -126,11 +132,26 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 	<plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.3</version>
       <configuration>
         <source>1.7</source>
         <target>1.7</target>
       </configuration>
     </plugin>
+
+###配置资源
+
+使用 resources 节可以包含非代码资源，例如拓扑中组件所需的配置文件。本示例将在 **pom.xml** 文件的 `<resources>` 节中添加以下内容。
+
+    <resource>
+        <directory>${basedir}/resources</directory>
+        <filtering>false</filtering>
+        <includes>
+          <include>log4j2.xml</include>
+        </includes>
+    </resource>
+
+这会将项目根目录 (`${basedir}`) 中的 resources 目录添加为包含资源的位置，并包含名为 __log4j2.xml__ 的文件。此文件用于配置拓扑所要记录的信息。
 
 ##创建拓扑
 
@@ -144,9 +165,9 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 ###创建 Spout
 
-为了降低设置外部数据源的要求，以下 Spout 只会发出随机句子。它是 <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">Storm-Starter 示例</a>随附的 Spout 的修改版本。
+为了降低设置外部数据源的要求，以下 Spout 只会发出随机句子。它是 [Storm-Starter 示例](https://github.com/apache/storm/blob/0.10.x-branch/examples/storm-starter/src/jvm/storm/starter)随附的 Spout 的修改版本。
 
-> [AZURE.NOTE] 有关从外部数据源读取的 Spout 的示例，请参阅以下示例：<a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout
+> [AZURE.NOTE] 有关从外部数据源读取的 Spout 的示例，请参阅以下示例之一：<a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout
 
 对于 Spout，在 **src\\main\\java\\com\\microsoft\\example** 目录中创建名为 **RandomSentenceSpout.java** 的新文件，并使用以下内容做为内容：
 
@@ -309,8 +330,15 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
     import backtype.storm.tuple.Tuple;
     import backtype.storm.tuple.Values;
 
+    // For logging
+    import org.apache.logging.log4j.Logger;
+    import org.apache.logging.log4j.LogManager;
+
     //There are a variety of bolt types. In this case, we use BaseBasicBolt
     public class WordCount extends BaseBasicBolt {
+      //Create logger for this class
+      private static final Logger logger = LogManager.getLogger(WordCount.class);
+      
       //For holding words and counts
         Map<String, Integer> counts = new HashMap<String, Integer>();
 
@@ -328,6 +356,8 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
           counts.put(word, count);
           //Emit the word and the current count
           collector.emit(new Values(word, count));
+          //Log information
+          logger.info("Emitting a count of " + count + " for word " + word);
         }
 
         //Declare that we will emit a tuple containing two fields; word and count
@@ -339,7 +369,7 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 请花费片刻时间通读代码注释，以了解每个 Bolt 的工作原理。
 
-###创建拓扑
+###定义拓扑
 
 拓扑将 Spout 和 Bolt 一起绑定到图形，该图形定义了组件之间的数据流动方式。它还提供 Storm 在群集内创建组件的实例时使用的并行度提示。
 
@@ -381,7 +411,9 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
         //new configuration
         Config conf = new Config();
-        conf.setDebug(true);
+        //Set to false to disable debug information
+        // when running in production mode.
+        conf.setDebug(false);
 
         //If there are arguments, we are running on a cluster
         if (args != null && args.length > 0) {
@@ -409,6 +441,37 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 请花片刻时间通读代码注释以了解拓扑的定义方式，然后将拓扑提交到群集。
 
+###配置日志记录
+
+Storm 使用 Apache Log4j 来记录信息。如果未配置日志记录，拓扑将发出许多难以阅读的诊断信息。若要控制所记录的信息，请在 __resources__ 目录中创建名为 __log4j2.xml__ 的文件。将以下内容用作该文件的内容。
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Configuration>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.microsoft.example" level="trace" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Root level="error">
+            <Appender-Ref ref="STDOUT"/>
+        </Root>
+    </Loggers>
+    </Configuration>
+
+这将为 __com.microsoft.example__ 类（包含本示例拓扑的组件）配置一个新记录器。此记录器的级别设置为“跟踪”，可以捕获此拓扑中的组件发出的任何日志记录信息。回顾此项目的代码，会发现只有 WordCount.java 文件实施日志记录 - 它会记录每个单词的计数。
+
+`<Root level="error">` 节将日志记录的根级别（不在 __com.microsoft.example__ 中的所有内容）配置为只记录错误信息。
+
+> [AZURE.IMPORTANT] 尽管这可以大幅减少在开发环境中测试拓扑时所记录的信息，但不会删除在生产群集上运行时生成的所有调试信息。若要减少此类信息，还必须在提交到群集的配置中将调试设置为 false。有关示例，请参阅本文档中的 WordCountTopology.java 代码。
+
+有关为 Log4j 配置日志记录的详细信息，请参阅 [http://logging.apache.org/log4j/2.x/manual/configuration.html](http://logging.apache.org/log4j/2.x/manual/configuration.html)。
+
+> [AZURE.NOTE] Storm 0.10.0 版使用 Log4j 2.x。早期版本的 Storm 使用 Log4j 1.x（为日志配置使用的格式不同）。有关旧配置的信息，请参阅 [http://wiki.apache.org/logging-log4j/Log4jXmlFormat](http://wiki.apache.org/logging-log4j/Log4jXmlFormat)。
+
 ##在本地测试拓扑
 
 保存文件之后，请使用以下命令在本地测试拓扑。
@@ -417,29 +480,23 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 运行该命令时，拓扑会显示启动信息。然后开始显示与下面类似的行，因为句子是从 Spout 发出，然后由 Bolt 处理的。
 
-    15398 [Thread-16-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:10, stream: default, id: {}, [an apple a day keeps thedoctor away]]
-    15398 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [an]
-    15399 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, [an]
-    15399 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [apple]
-    15400 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, [apple]
-    15400 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [a]
-    15399 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [an, 53]
-    15400 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, [a]
-    15400 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [day]
-    15400 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [apple, 53]
-    15401 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, [day]
-    15401 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [keeps]
-    15401 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [a, 53]
+    17:33:27 [Thread-12-count] INFO  com.microsoft.example.WordCount - Emitting a count of 56 for word snow
+    17:33:27 [Thread-12-count] INFO  com.microsoft.example.WordCount - Emitting a count of 56 for word white
+    17:33:27 [Thread-12-count] INFO  com.microsoft.example.WordCount - Emitting a count of 112 for word seven
+    17:33:27 [Thread-16-count] INFO  com.microsoft.example.WordCount - Emitting a count of 195 for word the
+    17:33:27 [Thread-30-count] INFO  com.microsoft.example.WordCount - Emitting a count of 113 for word and
+    17:33:27 [Thread-30-count] INFO  com.microsoft.example.WordCount - Emitting a count of 57 for word dwarfs
+    17:33:27 [Thread-12-count] INFO  com.microsoft.example.WordCount - Emitting a count of 57 for word snow
+    17:33:27 [Thread-12-count] INFO  com.microsoft.example.WordCount - Emitting a count of 57 for word white
+    17:33:27 [Thread-12-count] INFO  com.microsoft.example.WordCount - Emitting a count of 113 for word seven
+    17:33:27 [Thread-16-count] INFO  com.microsoft.example.WordCount - Emitting a count of 51 for word i
+    17:33:27 [Thread-16-count] INFO  com.microsoft.example.WordCount - Emitting a count of 51 for word at
+    17:33:27 [Thread-16-count] INFO  com.microsoft.example.WordCount - Emitting a count of 51 for word with
+    17:33:27 [Thread-16-count] INFO  com.microsoft.example.WordCount - Emitting a count of 51 for word nature
+    17:33:27 [Thread-30-count] INFO  com.microsoft.example.WordCount - Emitting a count of 51 for word two
+    17:33:27 [Thread-12-count] INFO  com.microsoft.example.WordCount - Emitting a count of 51 for word am
 
-从此输出中可以看到发生了以下情况：
-
-1. Spout 发出“an apple a day keeps the doctor away”。
-
-2. Split Bolt 开始发出句子中的各个单词。
-
-3. Count Bolt 开始发出每个单词及其发出次数。
-
-查看 Count Bolt 所发出的数据，“apple”已发出 53 次。只要拓扑运行，计数就会持续增加，因为系统会随机反复发出相同的句子，并且永不会重置计数。
+查看 WordCount Bolt 发出的日志，“apple”已发出 53 次。只要拓扑运行，计数就会持续增加，因为系统会随机反复发出相同的句子，并且永不会重置计数。
 
 ##Trident
 
@@ -459,4 +516,4 @@ Trident 是 Storm 提供的高级抽象。它支持有状态处理。Trident 的
 
 如需更多 Storm 拓扑示例，请访问 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0912_2016-->

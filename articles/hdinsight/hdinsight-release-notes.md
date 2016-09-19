@@ -10,11 +10,29 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/07/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/19/2016"/>
 
 
 # Azure HDInsight 上的 Hadoop 组件发行说明
+
+## HDInsight 03/22/2016 版发行说明
+
+随此版本一起部署的 HDInsight 群集的所有版本号包括：
+
+* HDInsight (Windows) 2.1.10.875.2159884（HDP 1.3.12.0-01795 - 保持不变）
+* HDInsight (Windows) 3.0.6.875.2159884（HDP 2.0.13.0-2117 - 保持不变）
+* HDInsight (Windows) 3.1.4.875.2159884（HDP 2.1.15.0-2374 - 保持不变）
+* HDInsight (Windows) 3.2.7.875.2159884（HDP 2.2.9.1-7 - 保持不变）
+* HDInsight (Windows) 3.3.0.875.2159884 (HDP 2.3.3.1-16)
+* SDK 1.5.8
+
+此版本包含以下更新。
+
+| 标题 | 说明 | 受影响区域（例如服务、组件或 SDK） | 群集类型（例如 Hadoop、HBase 或 STORM） | JIRA（如果适用） |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| 更新所有 HDInsight 群集的 HDInsight 版本 | 此发行版已更新所有 HDInsight 群集的 HDInsight 版本| 服务 | 全部| 不适用
+
 
 ## HDInsight 03/10/2016 发行说明
 
@@ -24,6 +42,7 @@
 * HDInsight (Windows) 3.0.6.859.2123216（HDP 2.0.13.0-2117 - 保持不变）
 * HDInsight (Windows) 3.1.4.859.2123216（HDP 2.1.15.0-2374 - 保持不变）
 * HDInsight (Windows) 3.2.7.859.2123216 (HDP 2.2.9.1-7)
+* HDInsight (Windows) 3.3.0.859.2123216（HDP 2.3.3.1-5 - 保持不变）
 * SDK 1.5.8
 
 此版本包含以下更新。
@@ -40,6 +59,7 @@
 * HDInsight (Windows) 3.0.6.817.2028315（HDP 2.0.13.0-2117 - 保持不变）
 * HDInsight (Windows) 3.1.4.817.2028315（HDP 2.1.15.0-2374 - 保持不变）
 * HDInsight (Windows) 3.2.7.817.2028315 (HDP 2.2.9.1-1)
+* HDInsight (Windows) 3.3.0.817.2028315（HDP 2.3.3.1-5 - 保持不变）
 * SDK 1.5.8
 
 此版本包含以下更新。
@@ -47,6 +67,23 @@
 | 标题 | 说明 | 受影响区域（例如服务、组件或 SDK） | 群集类型（例如 Hadoop、HBase 或 STORM） | JIRA（如果适用） |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
 | 更新所有 HDInsight 群集的 HDInsight 版本 | 此发行版已更新所有 HDInsight 群集的 HDInsight 版本| 服务 | 全部| 不适用
+
+## HDInsight 12/02/2015 版发行说明
+
+随此版本一起部署的 HDInsight 群集的所有版本号包括：
+
+* HDInsight (Windows) 2.1.10.763.1931434（HDP 1.3.12.0-01795 - 保持不变）
+* HDInsight (Windows) 3.0.6.763.1931434（HDP 2.0.13.0-2117 - 保持不变）
+* HDInsight (Windows) 3.1.4.763.1931434（HDP 2.1.15.0-2374 - 保持不变）
+* HDInsight (Windows) 3.2.7.763.1931434（HDP 2.2.7.1-34 - 保持不变）
+* HDInsight (Windows) 3.3.1000.0 (HDP 2.3.3.1-5)
+* SDK 1.5.8
+
+此版本包含以下更新。
+
+| 标题 | 说明 | 受影响区域（例如服务、组件或 SDK） | 群集类型（例如 Hadoop、HBase 或 STORM） | JIRA（如果适用） |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| 添加了 HDInsight 3.3 版本并更新了所有 HDInsight 群集的 HDP 版本 | 在此版本中，我们添加了 HDInsight v3.3（基于 HDP 2.3）并更新了其他 HDP 版本。[此处](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_RelNotes/content/ch_relnotes_v230.html)提供了 HDP 2.3 发行说明；[此处](/documentation/articles/hdinsight-component-versioning-v1/)提供了有关 HDInsight 版本的详细信息。| 服务 | 全部| 不适用
 
 ## HDInsight 11/30/2015 版发行说明
 
@@ -709,7 +746,7 @@
 
 <tr>
 <td>Visual Studio 工具</td>
-<td>除了 Apache Storm 的完整工具，用于在 Visual Studio 中的 Apache Hive 工具已更新，包括语句提示、本地验证和改进的调试支持。有关详细信息，请参阅 HDInsight Hadoop Tools for Visual Studio 入门。</td>
+<td>除了 Apache Storm 的完整工具，用于在 Visual Studio 中的 Apache Hive 工具已更新，包括语句提示、本地验证和改进的调试支持。有关详细信息，请参阅用于 Visual Studio 的 HDInsight Hadoop 工具入门。</td>
 <td>工具</td>
 <td>Hadoop</td>
 <td>不适用</td>
@@ -1137,7 +1174,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 ## 10/7/2014 版发行说明
 
-* 使用 Ambari 终结点“https://{clusterDns}.azurehdinsight.cn/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.cn/services/{servicename}/components/{componentname}”时，host\_name 字段会返回节点的完全限定域名 (FQDN)，而不只是主机名。例如，你会看到 FQDN“**headnode0.{ClusterDNS}.azurehdinsight.cn**”，而不是返回“**headnode0**”。需要这种改变促进实现可以在一个虚拟网络中部署多个群集类型（如 HBase 和 Hadoop）的方案。例如，使用 HBase 作为 Hadoop 的后端平台时，会发生这种情况。
+* 使用 Ambari 终结点“https://{clusterDns}.azurehdinsight.cn/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.cn/services/{servicename}/components/{componentname}”时，*host\_name* 字段会返回节点的完全限定域名 (FQDN)，而不只是主机名。例如，会看到 FQDN“**headnode0.{ClusterDNS}.azurehdinsight.cn**”，而不是返回“**headnode0**”。需要这种改变促进实现可以在一个虚拟网络中部署多个群集类型（如 HBase 和 Hadoop）的方案。例如，使用 HBase 作为 Hadoop 的后端平台时，会发生这种情况。
 
 * 我们已为 HDInsight 群集的默认部署提供新内存设置。以前的默认内存设置没有充分考虑部署 CPU 内核数指南。根据 Hortonworks 建议，这些新的内存设置应该会提供更好的默认值。若要更改，请参阅 SDK 参考文档来更改群集配置。下表中逐项列出了默认 4 CPU 内核（8 容器）HDInsight 群集使用的新内存设置。（附带还提供了在本次发布之前使用的值）。
 
@@ -1161,7 +1198,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 关于 Azure PowerShell 和 HDInsight SDK 错误消息：“群集未配置 HTTP 服务访问”：
 
-* 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，起因于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。但旧版的 HDInsight SDK 或 Azure PowerShell 无法正确解释此功能。结果造成某些作业提交操作失败。如果你使用 HDInsight SDK API 或 Azure PowerShell cmdlet 来提交作业（**Use-AzureRmHDInsightCluster** 或 **Invoke-AzureRmHDInsightHiveJob**），这些作业可能失败并返回错误消息“未在群集 <群集名称> 上配置 HTTP 服务访问权限”。 或者（根据具体的操作），你可能会收到其他错误消息，例如“无法连接到群集”。
+* 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，起因于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。但旧版的 HDInsight SDK 或 Azure PowerShell 无法正确解释此功能。结果造成某些作业提交操作失败。如果使用 HDInsight SDK API 或 Azure PowerShell cmdlet 提交作业（**Use-AzureRmHDInsightCluster** 或 **Invoke-AzureRmHDInsightHiveJob**），这些作业可能失败并返回错误消息“未在群集 <群集名称> 上配置 HTTP 服务访问权限”。 或者（根据具体的操作），你可能会收到其他错误消息，例如“无法连接到群集”。
 
 * 在最新版 HDInsight SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 获取最新的 HDInsight SDK，从[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 获取 Azure PowerShell 工具。
 
@@ -1185,7 +1222,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 		Add-AzureRmHDInsightConfigValues -Core @{"templeton.mapper.memory.mb"="512";}
 
 
-* zookeeper 角色的主机名已更改为 zookeeper。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 zookeepernode 主机名，则需更新这些组件，让其使用新名称。三个 zookeeper 节点的新名称为：
+* zookeeper 角色的主机名已更改为 *zookeeper*。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 *zookeepernode* 主机名，则需更新这些组件，让其使用新名称。三个 zookeeper 节点的新名称为：
 	* zookeeper0
 	* zookeeper1
 	* zookeeper2
@@ -1213,14 +1250,14 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 <tr><td>HDP 2.1/HDI 3.1</td><td>zookeeper: ['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
 
 
-</table>
+</table><br>
 
 ## 6/24/2014 版本发行说明
 
 此版本包含 HDInsight 服务的几项新的增强功能：
 
 * **HDP 2.1 可用性**：HDInsight 3.1（包含 HDP 2.1）已正式发布，并成为新群集的默认版本。
-* **HBase - Azure 经典管理门户改进**：我们将在预览版中提供 HBase 群集。你只需单击几下鼠标，就能从门户创建 HBase 群集：
+* **HBase - Azure 经典管理门户改进**：将在预览版中提供 HBase 群集。你只需单击几下鼠标，就能从门户创建 HBase 群集：
 
 借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式网站，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，也可以通过 Azure PowerShell 和 Hive 群集仪表板完成这种分析。
 
@@ -1264,7 +1301,7 @@ Oozie 元存储连接到特定群集，无法在群集之间共享。
 ###重大变化
 
 **前缀语法**：
-HDInsight 3.1 和 3.0 群集仅支持“wasbs://”语法。较早的“asv://”语法在 HDInsight 2.1 和 1.6 群集中受支持，但在 HDInsight 3.1 或 3.0 群集中不受支持。这意味着提交到 HDInsight 3.1 或 3.0 群集的任何显式使用“asv://”语法的作业都将会失败。应改用“wasbs://”语法。而且，提交到任何 HDInsight 3.1 或 3.0 群集的作业，如果是使用现有元存储创建的，而该元存储包含对使用“asv://”语法的资源的显式引用，则这些作业也会失败。这些元存储将需要使用“wasbs://”语法重新创建以确定资源地址。
+HDInsight 3.1 和 3.0 群集仅支持“wasbs://”语法。较早的“asv://”语法在 HDInsight 2.1 和 1.6 群集中受支持，但在 HDInsight 3.1 或 3.0 群集中不受支持。这意味着提交到 HDInsight 3.1 或 3.0 群集的任何显式使用“asv://”语法的作业都将会失败。应改用“wasbs://”语法。而且，提交到任何 HDInsight 3.1 或 3.0 群集的作业，如果是使用现有元存储创建的，而该元存储包含对使用“asv://”语法的资源的显式引用，则这些作业也会失败。需要使用“wasbs://”语法重新创建这些元存储，确定资源地址。
 
 
 **端口**：HDInsight 服务使用的端口已更改。以前使用的端口号在 Windows 操作系统瞬息端口范围内。端口是从预定义的临时范围自动分配的，该范围适用于基于 Internet 协议的短期通信。新的一组允许的 Hortonworks 数据平台 (HDP) 服务端口号在此范围外，目的是避免遇到头节点上运行的服务所使用的端口时出现冲突。新端口号将不会导致任何重大变化。使用的端口号如下所示：
@@ -1437,4 +1474,4 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0912_2016-->

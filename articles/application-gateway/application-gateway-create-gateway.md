@@ -3,14 +3,13 @@
    description="此页提供有关创建、配置、启动和删除 Azure 应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"
-   authors="joaoma"
+   authors="georgewallace"
    manager="jdial"
-   editor="tysonn"/>  
-
+   editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="04/05/2016"
-	wacn.date="08/22/2016"/>  
+	ms.date="08/09/2016"
+	wacn.date="09/19/2016"/>  
 
 
 # 创建、启动或删除应用程序网关
@@ -18,9 +17,10 @@
 Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载平衡、基于 Cookie 的会话相关性和安全套接字层 (SSL) 卸载。
 
 > [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/application-gateway-create-gateway-portal/)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
 - [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway/)
-- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
-- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
+- [Azure Resource Manager 模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
 
 
 <BR>  
@@ -31,7 +31,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 ## 开始之前
 
-1. 使用 Web 平台安装程序安装最新版本的 Azure PowerShell cmdlet。可以从[下载页面](/downloads)的“Windows PowerShell”部分下载并安装最新版本。
+1. 使用 Web 平台安装程序安装最新版本的 Azure PowerShell cmdlet。可以从[“下载”](/downloads/)页的“Windows PowerShell”部分下载并安装最新版本。
 2. 如果你有现有的虚拟网络，请选择现有一个空子网，或者在现有虚拟网络中创建一个新子网，专门供应用程序网关使用。应用程序网关部署到的虚拟网络必须与要部署在应用程序网关后面的资源相同。
 3. 请确认你已创建包含有效子网、可正常运行的虚拟网络。请确保没有虚拟机或云部署正在使用子网。应用程序网关必须单独位于虚拟网络子网中。
 3. 要配置为使用应用程序网关的服务器必须存在，或者在虚拟网络中为其创建终结点，或者为其分配公共 IP/VIP。
@@ -59,7 +59,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 2. 创建配置 XML 文件或配置对象。
 3. 将配置提交到新建的应用程序网关资源。
 
->[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/)（使用 PowerShell 创建带自定义探测的应用程序网关）。有关详细信息，请查看 [custom probes and health monitoring](/documentation/articles/application-gateway-probe-overview/)（自定义探测和运行状况监视）。
+>[AZURE.NOTE] 如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell（使用 PowerShell 创建带自定义探测的应用程序网关）](/documentation/articles/application-gateway-create-probe-classic-ps/)。有关详细信息，请查看 [custom probes and health monitoring（自定义探测和运行状况监视）](/documentation/articles/application-gateway-probe-overview/)。
 
 
 ### 创建应用程序网关资源
@@ -78,7 +78,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 	Successful OK                   55ef0460-825d-2981-ad20-b9a8af41b399
 
 
- *Description*、*InstanceCount* 和 *GatewaySize* 是可选参数。
+ *Description* 、 *InstanceCount* 和 *GatewaySize* 是可选参数。
 
 
 若要验证是否已创建网关，可以使用 **Get-AzureApplicationGateway** cmdlet。
@@ -404,12 +404,12 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/)（配置应用程序网关以进行 SSL 卸载）。
+如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload（配置应用程序网关以进行 SSL 卸载）](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/)（创建具有内部负载平衡器 (ILB) 的应用程序网关）。
+如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载平衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 
 - [Azure 流量管理器](/documentation/services/traffic-manager/)
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0912_2016-->

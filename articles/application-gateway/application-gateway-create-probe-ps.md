@@ -1,24 +1,31 @@
 <properties
-   pageTitle="使用资源管理器中的 PowerShell 创建应用程序网关的自定义探测 | Azure"
+   pageTitle="使用 Resource Manager 中的 PowerShell 创建应用程序网关的自定义探测 | Azure"
    description="了解如何使用资源管理器中的 PowerShell 创建应用程序网关的自定义探测"
    services="application-gateway"
    documentationCenter="na"
-   authors="joaoma"
+   authors="georgewallace"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags  
-   ms.service="application-gateway"
-   ms.date="06/07/2016"
-   wacn.date="07/28/2016" />
+<tags
+	ms.service="application-gateway"
+	ms.date="08/09/2016"
+	wacn.date="09/19/2016"/>
 
 # 使用适用于 Azure 资源管理器的 PowerShell 创建 Azure 应用程序网关的自定义探测
+
+> [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/application-gateway-create-probe-portal/)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-probe-ps/)
+- [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/)
+
+<BR>
 
 [AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)]
 
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/application-gateway-create-probe-classic-ps/)。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/application-gateway-create-probe-classic-ps/)。
 
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
@@ -36,7 +43,7 @@
 
 		get-AzureRmSubscription
 
-系统将提示你使用凭据进行身份验证。<BR>
+系统将提示用户使用凭据进行身份验证。<BR>
 
 ### 步骤 3
 
@@ -103,7 +110,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 ### 步骤 2
 
 
-配置名为“pool01”的后端 IP 地址池，其 IP 地址为“134.170.185.46, 134.170.188.221,134.170.185.50”。这些 IP 地址将接收来自前端 IP 终结点的网络流量。你要替换上述 IP 地址，添加你自己的应用程序 IP 地址终结点。
+配置名为“pool01”的后端 IP 地址池，其 IP 地址为“134.170.185.46, 134.170.188.221,134.170.185.50”。这些 IP 地址将接收来自前端 IP 终结点的网络流量。可通过替换上述 IP 地址的方式添加用户自己的应用程序 IP 地址终结点。
 
 	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
@@ -117,17 +124,17 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 - **-Interval** - 配置探测检查间隔，以秒为单位。
 - **-Timeout** - 定义 HTTP 响应检查的探测超时。
-- **-Hostname 和 -path** - 应用程序网关为了确定实例运行状况而调用的完整 URL 路径。例如，如果你的网站为 http://contoso.com/ ，则可以为“http://contoso.com/path/custompath.htm” 配置自定义探测，使探测检查能够获得成功的 HTTP 响应。
+- **-Hostname 和 -path** - 应用程序网关为了确定实例运行状况而调用的完整 URL 路径。例如，如果网站为 http://contoso.com/，则可以为“http://contoso.com/path/custompath.htm”配置自定义探测，使探测检查能够获得成功的 HTTP 响应。
 - **-UnhealthyThreshold** - 将后端实例标记为 *不正常* 所需的失败 HTTP 响应数目。
 
-
+<BR>
 
 	$probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/path.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
 
 ### 步骤 4
 
-为后端池中的流量配置应用程序网关设置“poolsetting01”。此步骤还包括针对应用程序网关请求配置后端池响应超时。当后端响应达到超时限制时，应用程序网关将取消请求。这与仅适用于探测检查的后端响应的探测超时不同。
+为后端池中的流量配置应用程序网关设置“poolsetting01”。此步骤还包括针对应用程序网关请求配置后端池响应超时。后端响应达到超时限制时，应用程序网关取消请求。这与仅适用于探测检查的后端响应的探测超时不同。
 
 	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled -Probe $probe -RequestTimeout 80
 
@@ -178,7 +185,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ### 步骤 1
 
-使用 **Get-AzureRmApplicationGateway** 将应用程序网关资源载入 PowerShell 变量。
+使用 **Get-AzureRmApplicationGateway** 将应用程序网关资源加载到 PowerShell 变量。
 
 	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
@@ -186,7 +193,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 将探测添加到现有网关配置。
 
-	$probe = Add-AzureRmApplicationGatewayProbeConfig -ApplicationGateway $getgw -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/custompath.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
+	$getgw = Add-AzureRmApplicationGatewayProbeConfig -ApplicationGateway $getgw -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/custompath.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
 
 在本示例中，自定义探测已配置为每隔 30 秒检查 URL 路径 contoso.com/path/custompath.htm。配置的超时阈值为 120 秒，最多只能有 8 个失败的探测请求。
@@ -210,7 +217,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ### 步骤 1
 
-使用 **Get-AzureRmApplicationGateway** 将应用程序网关资源载入 PowerShell 变量。
+使用 **Get-AzureRmApplicationGateway** 将应用程序网关资源加载到 PowerShell 变量。
 
 	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
@@ -223,7 +230,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ### 步骤 3
 
-使用 **-Set-AzureRmApplicationGatewayBackendHttpSettings** 更新后端池设置，以删除探测与超时设置。
+使用 **-Set-AzureRmApplicationGatewayBackendHttpSettings** 更新后端池设置，删除探测与超时设置。
 
 
 	 $getgw=Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol http -CookieBasedAffinity Disabled
@@ -234,4 +241,4 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0912_2016-->

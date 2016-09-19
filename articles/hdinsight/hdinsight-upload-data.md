@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="08/10/2016"
+	wacn.date="09/19/2016"/>
 
 
 
@@ -169,20 +169,24 @@ AzCopy 语法为：
 
 | 客户端 | Linux | OS X | Windows |
 | ------ |:-----:|:----:|:-------:|
+| [用于 HDInsight 的 Microsoft Visual Studio 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#navigate-the-linked-resources) | ✔ | ✔ | ✔ |
 | [Azure 存储空间资源管理器](http://storageexplorer.com/) | ✔ | ✔ | ✔ |
 | [Cloud Storage Studio 2](http://www.cerebrata.com/Products/CloudStorageStudio/) | | | ✔ |
 | [CloudXplorer](http://clumsyleaf.com/products/cloudxplorer) | | | ✔ |
 | [Azure 资源管理器](http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx) | | | ✔ |
-| [Zudio](https://zudio.co/) | ✔ | ✔ | ✔ |
 | [Cyberduck](https://cyberduck.io/) | | ✔ | ✔ |
+
+###用于 HDInsight 的 Visual Studio 工具
+
+有关详细信息，请参阅 [Navigate the linked resources（导航链接的资源）](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#navigate-the-linked-resources)。
 
 ### <a id="storageexplorer"></a>Azure 存储空间资源管理器
 
-*Azure 存储资源管理器*是用于在 Blob 中检查和更改数据的有用工具。它是一个免费的开源工具，可从 [http://storageexplorer.com/](http://storageexplorer.com/) 下载。也可以从此链接获取源代码。
+*Azure 存储资源管理器* 是用于在 Blob 中检查和更改数据的工具。它是一个免费的开源工具，可从 [http://storageexplorer.com/](http://storageexplorer.com/) 下载。也可以从此链接获取源代码。
 
-使用该工具之前，你必须知道你的 Azure 存储帐户名和帐户密钥。有关如何获取此信息的说明，请参阅[创建、管理或删除存储帐户][azure-create-storage-account]中的“如何：查看、复制和重新生成存储访问密钥”部分。
+使用该工具之前，你必须知道你的 Azure 存储帐户名和帐户密钥。有关如何获取此信息的说明，请参阅 [Create, manage, or delete a storage account][azure-create-storage-account]（创建、管理或删除存储帐户）中的“How to: View, copy and regenerate storage access keys”（如何：查看、复制和重新生成存储访问密钥）部分。
 
-1. 运行 Azure 存储空间资源管理器。如果这是你第一次运行存储资源管理器，系统将提示你输入“存储帐户名”和“存储帐户密钥”。如果你以前运行过存储资源管理器，请使用“添加”按钮添加一个新的存储帐户名和密钥。
+1. 运行 Azure 存储空间资源管理器。如果这是第一次运行存储资源管理器，系统将提示输入___存储帐户名_和__存储帐户密钥__。如果以前运行过存储资源管理器，请使用__“添加”按钮添加一个新的存储帐户名和密钥。
 
     输入 HDinsight 群集使用的存储帐户的名称和密钥，然后选择“保存并打开”。
 
@@ -268,4 +272,4 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0912_2016-->
