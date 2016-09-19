@@ -1,5 +1,5 @@
 <properties
-   pageTitle="资源管理器模板函数 | Azure"
+   pageTitle="Resource Manager 模板函数 | Azure"
    description="介绍在 Azure 资源管理器模板中检索值、处理字符串和数字以及检索部署信息时所用的函数。"
    services="azure-resource-manager"
    documentationCenter="na"
@@ -9,14 +9,14 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="06/16/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="08/11/2016"
+   wacn.date="09/19/2016"/>
 
 # Azure 资源管理器模板函数
 
-本主题介绍你可以在 Azure 资源管理器模板中使用的所有函数。
+本主题介绍可以在 Azure Resource Manager 模板中使用的所有函数。
 
-模板函数及其参数不区分大小写。例如，资源管理器将 **variables('var1')** 和 **VARIABLES('VAR1')** 视为相同。在求值时，除非函数明确修改大小与（例如，使用 toUpper 或 toLower），否则函数将保留大小写。某些资源类型可能会提出大小写要求，而不考虑函数求值方式。
+模板函数及其参数不区分大小写。例如，资源管理器将 **variables('var1')** 和 **VARIABLES('VAR1')** 视为相同。在求值时，除非函数明确修改大小写（例如，使用 toUpper 或 toLower 进行修改），否则函数将保留大小写。某些资源类型可能会提出大小写要求，而不考虑函数求值方式。
 
 ## 数值函数
 
@@ -26,14 +26,13 @@
 - [copyIndex](#copyindex)
 - [div](#div)
 - [int](#int)
-- [length](#length)
 - [mod](#mod)
 - [mul](#mul)
 - [sub](#sub)
 
 
-<a id="add" /></a>
-### add
+<a id="add" />
+### 添加
 
 **add(operand1, operand2)**
 
@@ -41,21 +40,62 @@
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| operand1 | 是 | 要使用的第一个操作数。
-| operand2 | 是 | 要使用的第二个操作数。
+| operand1 | 是 | 要添加的第一个整数。
+| operand2 | 是 | 要添加的第二个整数。
 
+以下示例将添加两个参数。
 
-<a id="copyindex" /></a>
+    "parameters": {
+      "first": {
+        "type": "int",
+        "metadata": {
+          "description": "First integer to add"
+        }
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Second integer to add"
+        }
+      }
+    },
+    ...
+    "outputs": {
+      "addResult": {
+        "type": "int",
+        "value": "[add(parameters('first'), parameters('second'))]"
+      }
+    }
+
+<a id="copyindex" />
 ### copyIndex
 
 **copyIndex(offset)**
 
 返回一个迭代循环的当前索引。
 
-此函数始终用于 **copy** 对象。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| offset | 否 | 要添加到当前迭代值的数量。
+
+此函数始终用于 **copy** 对象。有关如何使用 **copyIndex** 的完整说明，请参阅 [Create multiple instances of resources in Azure Resource Manager](resource-group-create-multiple.md)（在 Azure Resource Manager 中创建多个资源实例）。
+
+以下示例显示名称中包含 copy 循环和索引值。
+
+    "resources": [ 
+      { 
+        "name": "[concat('examplecopy-', copyIndex())]", 
+        "type": "Microsoft.Web/sites", 
+        "copy": { 
+          "name": "websitescopy", 
+          "count": "[parameters('count')]" 
+        }, 
+        ...
+      }
+    ]
 
 
-<a id="div" /></a>
+<a id="div" />
 ### div
 
 **div(operand1, operand2)**
@@ -64,11 +104,34 @@
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| operand1 | 是 | 被除数。
-| operand2 | 是 | 除数，不得为 0。
+| operand1 | 是 | 被除的整数。
+| operand2 | 是 | 用作被除数的整数。不能为 0。
 
+以下示例将一个参数除以另一个参数。
 
-<a id="int" /></a>
+    "parameters": {
+      "first": {
+        "type": "int",
+        "metadata": {
+          "description": "Integer being divided"
+        }
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Integer used to divide"
+        }
+      }
+    },
+    ...
+    "outputs": {
+      "divResult": {
+        "type": "int",
+        "value": "[div(parameters('first'), parameters('second'))]"
+      }
+    }
+
+<a id="int" />
 ### int
 
 **int(valueToConvert)**
@@ -89,7 +152,7 @@
     }
 
 
-<a id="mod" /></a>
+<a id="mod" />
 ### mod
 
 **mod(operand1, operand2)**
@@ -98,12 +161,34 @@
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| operand1 | 是 | 被除数。
-| operand2 | 是 | 除数，不得为 0。
+| operand1 | 是 | 被除的整数。
+| operand2 | 是 | 用作除数的整数，不得为 0。
 
+以下示例将返回一个参数除以另一个参数后所得的余数。
 
+    "parameters": {
+      "first": {
+        "type": "int",
+        "metadata": {
+          "description": "Integer being divided"
+        }
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Integer used to divide"
+        }
+      }
+    },
+    ...
+    "outputs": {
+      "modResult": {
+        "type": "int",
+        "value": "[mod(parameters('first'), parameters('second'))]"
+      }
+    }
 
-<a id="mul" /></a>
+<a id="mul" />
 ### mul
 
 **mul(operand1, operand2)**
@@ -112,11 +197,34 @@
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| operand1 | 是 | 要使用的第一个操作数。
-| operand2 | 是 | 要使用的第二个操作数。
+| operand1 | 是 | 要相乘的第一个整数。
+| operand2 | 是 | 要相乘的第二个整数。
 
+以下示例将一个参数乘以另一个参数。
 
-<a id="sub" /></a>
+    "parameters": {
+      "first": {
+        "type": "int",
+        "metadata": {
+          "description": "First integer to multiply"
+        }
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Second integer to multiply"
+        }
+      }
+    },
+    ...
+    "outputs": {
+      "mulResult": {
+        "type": "int",
+        "value": "[mul(parameters('first'), parameters('second'))]"
+      }
+    }
+
+<a id="sub" />
 ### sub
 
 **sub(operand1, operand2)**
@@ -125,9 +233,32 @@
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| operand1 | 是 | 减数。
-| operand2 | 是 | 被减数。
+| operand1 | 是 | 作为被减数的整数。
+| operand2 | 是 | 作为减数的整数。
 
+以下示例将一个参数减另一个参数。
+
+    "parameters": {
+      "first": {
+        "type": "int",
+        "metadata": {
+          "description": "Integer subtracted from"
+        }
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Integer to subtract"
+        }
+      }
+    },
+    ...
+    "outputs": {
+      "subResult": {
+        "type": "int",
+        "value": "[sub(parameters('first'), parameters('second'))]"
+      }
+    }
 
 ## 字符串函数
 
@@ -135,21 +266,22 @@
 
 - [base64](#base64)
 - [concat](#concat)
-- [length](#length)
+- [length](#lengthstring)
 - [padLeft](#padleft)
 - [replace](#replace)
+- [skip](#skipstring)
 - [split](#split)
 - [string](#string)
 - [substring](#substring)
+- [take](#takestring)
 - [toLower](#tolower)
 - [toUpper](#toupper)
 - [trim](#trim)
 - [uniqueString](#uniquestring)
 - [uri](#uri)
 
-若要获取字符串或数组中的字符数，请参阅 [length](#length)。
 
-<a id="base64" /></a>
+<a id="base64" />
 ### base64
 
 **base64 (inputString)**
@@ -160,19 +292,26 @@
 | :--------------------------------: | :------: | :----------
 | inputString | 是 | 要以 base64 表示形式返回的字符串值。
 
-以下示例演示了如何使用 base64 函数。
+以下示例演示如何使用 base64 函数。
 
     "variables": {
       "usernameAndPassword": "[concat('parameters('username'), ':', parameters('password'))]",
       "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
     }
 
-<a id="concat" /></a>
-### concat
+<a id="concat" />
+### concat - 字符串
 
-**concat (arg1, arg2, arg3, ...)**
+**concat (string1, string2, string3, ...)**
 
-组合多个值并返回串联的结果。此函数可以使用任意数量的参数，并可接受字符串或数组作为参数。
+组合多个字符串值并返回串联的字符串。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| string1 | 是 | 要串联的字符串值。
+| 其他字符串 | 否 | 要串联的字符串值。
+
+此函数可以使用任意数量的参数，并可接受字符串或数组作为参数。有关串联数组的示例，请参阅 [concat - 数组](#concatarray)。
 
 以下示例演示了如何组合多个字符串值以返回串联的字符串。
 
@@ -183,22 +322,31 @@
         }
     }
 
-接下来的示例演示了如何组合两个数组。
+
+<a id="lengthstring" />
+### length - 字符串
+
+**length(string)**
+
+返回字符串中的字符数。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| 字符串 | 是 | 用于获取字符数的字符串值。
+
+有关对数组使用 length 的示例，请参阅 [length - 数组](#length)。
+
+以下示例返回字符串中的字符数。
 
     "parameters": {
-        "firstarray": {
-            type: "array"
-        }
-        "secondarray": {
-            type: "array"
-        }
-     },
-     "variables": {
-         "combinedarray": "[concat(parameters('firstarray'), parameters('secondarray'))]
-     }
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "nameLength": "[length(parameters('appName'))]"
+    }
         
 
-<a id="padleft" /></a>
+<a id="padleft" />
 ### padLeft
 
 **padLeft(valueToPad, totalLength, paddingCharacter)**
@@ -220,7 +368,7 @@
         "paddedAppName": "[padLeft(parameters('appName'),10,'0')]"
     }
 
-<a id="replace" /></a>
+<a id="replace" />
 ### replace
 
 **replace(originalString, oldCharacter, newCharacter)**
@@ -242,13 +390,53 @@
         "newidentifier": "[replace(parameters('identifier'),'-','')]"
     }
 
-<a id="split" /></a>
+<a id="skipstring" />
+### skip - 字符串
+**skip(originalValue, numberToSkip)**
+
+返回一个字符串，其中包含字符串中指定数字后面的所有字符。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| originalValue | 是 | 用于跳过的字符串。
+| numberToSkip | 是 | 要跳过的字符数。如果此值为 0 或更小，则返回字符串中的所有字符。如果此值大于字符串的长度，则返回空字符串。 
+
+有关对数组使用 skip 的示例，请参阅 [skip - 数组](#skip)。
+
+以下示例将跳过字符串中指定数目的字符。
+
+    "parameters": {
+      "first": {
+        "type": "string",
+        "metadata": {
+          "description": "Value to use for skipping"
+        }
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Number of characters to skip"
+        }
+      }
+    },
+    "resources": [
+    ],
+    "outputs": {
+      "return": {
+        "type": "string",
+        "value": "[skip(parameters('first'),parameters('second'))]"
+      }
+    }
+
+
+<a id="split" />
 ### split
 
-**split(inputString, delimiter)**
-**split(inputString, [delimiters])**
+**split(inputString, delimiterString)**
 
-返回包含输入字符串的子字符串的字符串数组，其中的子字符串使用发送的分隔符进行分隔。
+**split(inputString, delimiterArray)**
+
+返回包含输入字符串的子字符串的字符串数组，其中的子字符串使用指定的分隔符进行分隔。
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
@@ -264,8 +452,22 @@
         "stringPieces": "[split(parameters('inputString'), ',')]"
     }
 
-<a id="string" /></a>
-### string
+以下示例使用逗号或分号拆分输入字符串。
+
+    "variables": {
+      "stringToSplit": "test1,test2;test3",
+      "delimiters": [ ",", ";" ]
+    },
+    "resources": [ ],
+    "outputs": {
+      "exampleOutput": {
+        "value": "[split(variables('stringToSplit'), variables('delimiters'))]",
+        "type": "array"
+      }
+    }
+
+<a id="string" />
+### 字符串
 
 **string(valueToConvert)**
 
@@ -300,7 +502,7 @@
       "intString": "[string(parameters('jsonInt'))]"
     }
 
-<a id="substring" /></a>
+<a id="substring" />
 ### substring
 
 **substring(stringToParse, startIndex, length)**
@@ -322,7 +524,45 @@
         "prefix": "[substring(parameters('inputString'), 0, 3)]"
     }
 
-<a id="tolower" /></a>
+<a id="takestring" />
+### take - 字符串
+**take(originalValue, numberToTake)**
+
+返回一个字符串，其中包含从字符串开头算起的指定数目的字符。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| originalValue | 是 | 要从中提取字符的字符串。
+| numberToTake | 是 | 要提取的字符数。如果此值为 0 或更小，则返回空字符串。如果此值大于给定字符串的长度，则返回字符串中的所有字符。
+
+有关对数组使用 take 的示例，请参阅 [take - 数组](#take)。
+
+以下示例将从字符串中提取指定数目的字符。
+
+    "parameters": {
+      "first": {
+        "type": "string",
+        "metadata": {
+          "description": "Value to use for taking"
+        }
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Number of characters to take"
+        }
+      }
+    },
+    "resources": [
+    ],
+    "outputs": {
+      "return": {
+        "type": "string",
+        "value": "[take(parameters('first'), parameters('second'))]"
+      }
+    }
+
+<a id="tolower" />
 ### toLower
 
 **toLower(stringToChange)**
@@ -342,7 +582,7 @@
         "lowerCaseAppName": "[toLower(parameters('appName'))]"
     }
 
-<a id="toupper" /></a>
+<a id="toupper" />
 ### toUpper
 
 **toUpper(stringToChange)**
@@ -362,7 +602,7 @@
         "upperCaseAppName": "[toUpper(parameters('appName'))]"
     }
 
-<a id="trim" /></a>
+<a id="trim" />
 ### trim
 
 **trim (stringToTrim)**
@@ -382,21 +622,25 @@
         "trimAppName": "[trim(parameters('appName'))]"
     }
 
-<a id="uniquestring" /></a>
+<a id="uniquestring" />
 ### uniqueString
 
-**uniqueString (stringForCreatingUniqueString, ...)**
+**uniqueString (baseString, ...)**
 
-根据作为参数提供的值创建唯一字符串。当你需要创建资源的唯一名称时，此函数很有帮助。提供表示结果唯一性级别的参数值。可以指定该名称对于你的订阅、资源组或部署是否唯一。
+根据作为参数提供的值创建唯一字符串。
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| stringForCreatingUniqueString | 是 | 哈希函数中用于创建唯一字符串的基本字符串。
+| baseString | 是 | 哈希函数中用于创建唯一字符串的字符串。
 | 根据需要使用其他参数 | 否 | 你可以添加任意数目的字符串，以创建指定唯一性级别的值。
 
-返回的值不是随机字符串，而是哈希函数的结果。返回的值长度为 13 个字符。不保证是全局唯一。你可能需要根据命名约定使用前缀来组合值，以创建更容易识别的名称。
+当你需要创建资源的唯一名称时，此函数很有帮助。提供表示结果唯一性级别的参数值。可以指定该名称对于订阅、资源组或部署是否唯一。
 
-以下示例演示显示如何使用 uniqueString 来创建不同的通用级唯一值。
+返回的值不是随机字符串，而是哈希函数的结果。返回的值长度为 13 个字符。不保证是全局唯一。你可能需要根据命名约定使用前缀来组合值，以创建更容易识别的名称。以下示例显示了返回值的格式。当然，实际值取决于提供的参数。
+
+    tcvhiyu5h2o5o
+
+以下示例演示如何使用 uniqueString 创建通用级别唯一值。
 
 根据订阅保持唯一
 
@@ -417,7 +661,9 @@
         "type": "Microsoft.Storage/storageAccounts", 
         ...
 
-<a id="uri" /></a>
+
+
+<a id="uri" />
 ### uri
 
 **uri (baseUri, relativeUri)**
@@ -439,55 +685,131 @@
 
 资源管理器提供以下用于处理数组值的函数。
 
-- [concat](#concat)
+- [concat](#concatarray)
 - [length](#length)
-- [take](#take)
 - [skip](#skip)
-- [split](#split)
+- [take](#take)
 
-<a id="length" /></a>
-### length
+若要获取由某个值分隔的字符串值数组，请参阅 [split](#split)。
 
-**length(array 或 string)**
+<a id="concatarray" />
+### concat - 数组
 
-返回数组中的元素数或字符串中的字符数。创建资源时，可在数组中使用此函数指定迭代数。在以下示例中，参数 **siteNames** 引用创建网站时要使用的名称数组。
+**concat (array1, array2, array3, ...)**
+
+组合多个数组并返回串联的数组。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| array1 | 是 | 要串联的数组。
+| 其他数组 | 否 | 要串联的数组。
+
+此函数可以使用任意数量的参数，并可接受字符串或数组作为参数。有关串联字符串值的示例，请参阅 [concat - 字符串](#concat)。
+
+以下示例演示如何组合两个数组。
+
+    "parameters": {
+        "firstarray": {
+            type: "array"
+        }
+        "secondarray": {
+            type: "array"
+        }
+     },
+     "variables": {
+         "combinedarray": "[concat(parameters('firstarray'), parameters('secondarray'))]
+     }
+        
+
+<a id="length" />
+### length - 数组
+
+**length(array)**
+
+返回数组中的元素数。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| 数组 | 是 | 用于获取元素数目的数组。
+
+创建资源时，可在数组中使用此函数指定迭代数。在以下示例中，参数 **siteNames** 引用创建网站时要使用的名称数组。
 
     "copy": {
         "name": "websitescopy",
         "count": "[length(parameters('siteNames'))]"
     }
 
-有关在数组中使用此函数的详细信息，请参阅[在 Azure Resource Manager 中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+有关在数组中使用此函数的详细信息，请参阅[在 Azure 资源管理器中创建多个资源实例](resource-group-create-multiple.md)。
 
-或者，你可以在字符串中使用：
+有关对字符串值使用 length 的示例，请参阅 [length - 字符串](#lengthstring)。
 
-    "parameters": {
-        "appName": { "type": "string" }
-    },
-    "variables": { 
-        "nameLength": "[length(parameters('appName'))]"
-    }
+<a id="skip" />
+### skip - 数组
+**skip(originalValue, numberToSkip)**
 
-<a id="take" /></a>
-### take
-**take(originalValue, numberToTake)**
-
-返回从数组或字符串的开头算起包含指定个数的元素或字符的数组或字符串。
+返回一个数组，其中包含数组中指定数字后面的所有元素。
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| originalValue | 是 | 要从中获取元素或字符的数组或字符串。
-| numberToTake | 是 | 要获取的元素或字符的个数。如果此值为 0 或更小，则返回一个空数组或字符串。如果它大于给定数组或字符串的长度，则返回该数组或字符串中的所有元素。
+| originalValue | 是 | 用于跳过的数组。
+| numberToSkip | 是 | 要跳过的元素数目。如果此值为 0 或更小，则返回数组中的所有元素。如果此值大于数组的长度，则返回空数组。 
+
+有关对字符串使用 skip 的示例，请参阅 [skip - 字符串](#skipstring)。
+
+下面的示例将跳过数组中指定数目的元素。
+
+    "parameters": {
+      "first": {
+        "type": "array",
+        "metadata": {
+          "description": "Values to use for skipping"
+        },
+        "defaultValue": [ "one", "two", "three" ]
+      },
+      "second": {
+        "type": "int",
+        "metadata": {
+          "description": "Number of elements to skip"
+        }
+      }
+    },
+    "resources": [
+    ],
+    "outputs": {
+      "return": {
+        "type": "array",
+        "value": "[skip(parameters('first'), parameters('second'))]"
+      }
+    }
+
+<a id="take" />
+### take - 数组
+**take(originalValue, numberToTake)**
+
+返回一个数组，其中包含从数组开头算起的指定数目的元素。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| originalValue | 是 | 要从中提取元素的数组。
+| numberToTake | 是 | 要提取的元素数目。如果此值为 0 或更小，则返回空数组。如果此值大于给定数组的长度，则返回数组中的所有元素。
+
+有关对字符串使用 take 的示例，请参阅 [take - 字符串](#takestring)。
 
 下面的示例将从数组中获取指定个数的元素。
 
     "parameters": {
       "first": {
         "type": "array",
+        "metadata": {
+          "description": "Values to use for taking"
+        },
         "defaultValue": [ "one", "two", "three" ]
       },
       "second": {
-        "type": "int"
+        "type": "int",
+        "metadata": {
+          "description": "Number of elements to take"
+        }
       }
     },
     "resources": [
@@ -499,37 +821,6 @@
       }
     }
 
-<a id="skip" /></a>
-### skip
-**skip(originalValue, numberToSkip)**
-
-返回包含数组或字符串中指定个数后所有元素或字符的数组或字符串。
-
-| 参数 | 必选 | 说明
-| :--------------------------------: | :------: | :----------
-| originalValue | 是 | 要用于跳过元素或字符的数组或字符串。
-| numberToSkip | 是 | 要跳过的元素或字符的个数。如果此值为 0 或更小，则返回数组或字符串中的所有元素。如果它大于数组或字符串的长度，则返回一个空数组或字符串。 
-
-下面的示例将跳过数组中指定数目的元素。
-
-    "parameters": {
-      "first": {
-        "type": "array",
-        "defaultValue": [ "one", "two", "three" ]
-      },
-      "second": {
-        "type": "int"
-      }
-    },
-    "resources": [
-    ],
-    "outputs": {
-      "return": {
-        "type": "array",
-        "value": "[skip(parameters('first'),parameters('second'))]"
-      }
-    }
-
 ## 部署值函数
 
 资源管理器提供以下函数，用于从与部署相关的模板和值部分获取值：
@@ -538,16 +829,18 @@
 - [参数](#parameters)
 - [variables](#variables)
 
-若要从资源、资源组或订阅获取值，请参阅[资源函数](#resource-functions)。
+若要从资源、资源组或订阅获取值，请参阅 [Resource functions](#resource-functions)（资源函数）。
 
-<a id="deployment" /></a>
+<a id="deployment" />
 ### 部署
 
 **deployment()**
 
 返回有关当前部署操作的信息。
 
-此函数返回部署期间传递的对象。根据部署对象是作为链接还是内联对象传递的，所返回对象中的属性将有所不同。如果部署对象是以内联形式传递的（例如使用 Azure PowerShell 中的 **-TemplateFile** 参数指向本地文件时），所返回的对象采用以下格式：
+此函数返回部署期间传递的对象。根据部署对象是作为链接还是内联对象传递，所返回对象中的属性将有所不同。
+
+如果部署对象是以内联形式传递的（例如使用 Azure PowerShell 中的 **-TemplateFile** 参数指向本地文件时），所返回的对象采用以下格式：
 
     {
         "name": "",
@@ -555,6 +848,8 @@
             "template": {
                 "$schema": "",
                 "contentVersion": "",
+                "parameters": {},
+                "variables": {},
                 "resources": [
                 ],
                 "outputs": {}
@@ -571,9 +866,17 @@
         "name": "",
         "properties": {
             "templateLink": {
-                "uri": "",
-                "contentVersion": ""
+                "uri": ""
             },
+            "template": {
+                "$schema": "",
+                "contentVersion": "",
+                "parameters": {},
+                "variables": {},
+                "resources": [],
+                "outputs": {}
+            },
+            "parameters": {},
             "mode": "",
             "provisioningState": ""
         }
@@ -585,8 +888,7 @@
         "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"  
     }  
 
-
-<a id="parameters" /></a>
+<a id="parameters" />
 ### 参数
 
 **parameters (parameterName)**
@@ -613,7 +915,7 @@
        }
     ]
 
-<a id="variables" /></a>
+<a id="variables" />
 ### variables
 
 **variables (variableName)**
@@ -624,69 +926,96 @@
 | :--------------------------------: | :------: | :----------
 | variableName | 是 | 要返回的变量名称。
 
+以下示例使用变量值。
 
+    "variables": {
+      "storageName": "[concat('storage', uniqueString(resourceGroup().id))]"
+    },
+    "resources": [
+      {
+        "type": "Microsoft.Storage/storageAccounts",
+        "name": "[variables('storageName')]",
+        ...
+      }
+    ],
 
 ## 资源函数
 
 资源管理器提供以下用于获取资源值的函数：
 
-- [listkeys](#listkeys)
-- [list*](#list)
+- [listKeys 和 list{Value}](#listkeys)
 - [providers](#providers)
 - [reference](#reference)
 - [resourceGroup](#resourcegroup)
 - [resourceId](#resourceid)
-- [subscription](#subscription)
+- [订阅](#subscription)
 
-若要从参数、变量或当前部署获取值，请参阅 [Deployment value functions（部署值函数）](#deployment-value-functions)。
+若要从参数、变量或当前部署获取值，请参阅 [Deployment value functions](#deployment-value-functions)（部署值函数）。
 
-<a id="listkeys" /></a>
-### listKeys
+<a id="listkeys" />
+<a id="list" />
+### listKeys 和 list{Value}
 
 **listKeys (resourceName or resourceIdentifier, apiVersion)**
 
-返回支持 listKeys 操作的任何资源类型的键。可以使用 [resourceId 函数](#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
+**list{Value} (resourceName 或 resourceIdentifier, apiVersion)**
+
+返回支持 list 操作的任何资源类型的值。最常见的用法是 **listKeys**。
   
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
 | resourceName 或 resourceIdentifier | 是 | 资源的唯一标识符。
 | apiVersion | 是 | 资源运行时状态的 API 版本。
 
-以下示例演示了如何从 outputs 节中的存储帐户返回密钥。
+以 **list** 开头的任何操作都可用作模板中的函数。可用操作不仅包括 **listKeys**，也包括 **list**、**listAdminKeys** 和 **listStatus** 等操作。若要确定哪些资源类型具有列表操作，请使用以下 PowerShell 命令。
+
+    Get-AzureRmProviderOperation -OperationSearchString *  | where {$_.Operation -like "*list*"} | FT Operation
+
+或者，使用 Azure CLI 来检索列表。以下示例将检索 **apiapps** 的所有操作，并使用 JSON 实用工具 [jq](http://stedolan.github.io/jq/download/) 来只筛选出 list 操作。
+
+    azure provider operations show --operationSearchString */apiapps/* --json | jq ".[] | select (.operation | contains("list"))"
+
+可以使用 [resourceId 函数](./#resourceid)或使用格式 **{providerNamespace}/{resourceType}/{resourceName}** 指定 resourceId。
+
+以下示例演示如何从 outputs 节中的存储帐户返回主密钥和辅助密钥。
 
     "outputs": { 
-      "exampleOutput": { 
-        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2015-05-01-preview')]", 
+      "listKeysOutput": { 
+        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2016-01-01')]", 
         "type" : "object" 
       } 
     } 
 
-<a id="list" /></a>
-### list*
+ListKeys 返回的对象采用以下格式：
 
-**list* (resourceName or resourceIdentifier, apiVersion)**
+    {
+      "keys": [
+        {
+          "keyName": "key1",
+          "permissions": "Full",
+          "value": "{value}"
+        },
+        {
+          "keyName": "key2",
+          "permissions": "Full",
+          "value": "{value}"
+        }
+      ]
+    }
 
-以 **list** 开头的任何操作都可用作模板中的函数。这包括如上所示的 **listKeys**，但也包括 **list**、**listAdminKeys** 和 **listStatus** 等操作。调用函数时，请使用该函数的实际名称而不要使用 list*。若要确定哪些资源类型具有列表操作，请使用以下 PowerShell 命令。
-
-    PS C:\> Get-AzureRmProviderOperation -OperationSearchString *  | where {$_.Operation -like "*list*"} | FT Operation
-
-或者，使用 Azure CLI 来检索列表。以下示例将检索 **apiapps** 的所有操作，并使用 JSON 实用工具 [jq](http://stedolan.github.io/jq/download/) 来只筛选出列表操作。
-
-    azure provider operations show --operationSearchString */apiapps/* --json | jq ".[] | select (.operation | contains("list"))"
-
-<a id="providers" /></a>
+<a id="providers" />
 ### providers
 
 **providers (providerNamespace, [resourceType])**
 
-返回有关资源提供程序及其支持的资源类型的信息。如果未提供类型，则会返回所有支持的类型。
+返回有关资源提供程序及其支持的资源类型的信息。如果未提供资源类型，该函数将返回资源提供程序支持的所有类型。
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
 | providerNamespace | 是 | 提供程序的命名空间
 | resourceType | 否 | 指定的命名空间中的资源类型。
 
-将使用以下格式返回支持的每个类型；不保证进行数组排序：
+将使用以下格式返回支持的每个类型。不保证数组按顺序排列。
 
     {
         "resourceType": "",
@@ -703,17 +1032,17 @@
 	    }
     }
 
-<a id="reference" /></a>
+<a id="reference" />
 ### reference
 
 **reference (resourceName or resourceIdentifier, [apiVersion])**
 
-使表达式能够从另一个资源的运行时状态派生其值。
+返回表示另一个资源的运行时状态的对象。
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
 | resourceName 或 resourceIdentifier | 是 | 资源的名称或唯一标识符。
-| apiVersion | 否 | 指定的资源的 API 版本。如果未在同一模板内预配资源，则必须包含此参数。
+| apiVersion | 否 | 指定的资源的 API 版本。如果资源不是在同一模板中预配的，请包含此参数。
 
 **reference** 函数从运行时状态派生其值，因此不能在 variables 节中使用。可以在模板的 outputs 节中使用它。
 
@@ -733,16 +1062,16 @@
 
     "outputs": {
 		"ExistingStorage": {
-			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2015-06-15')]",
+			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2016-01-01')]",
 			"type" : "object"
 		}
 	}
 
-可以从返回的对象（例如 Blob 终结点 URI）检索特定的值，如下所示。
+可以从返回的对象（例如 Blob 终结点 URI）检索特定的值，如以下示例所示。
 
     "outputs": {
 		"BlobUri": {
-			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2015-06-15').primaryEndpoints.blob]",
+			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2016-01-01').primaryEndpoints.blob]",
 			"type" : "string"
 		}
 	}
@@ -751,22 +1080,31 @@
 
     "outputs": {
 		"BlobUri": {
-			"value": "[reference(resourceId(parameters('relatedGroup'), 'Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2015-06-15').primaryEndpoints.blob]",
+			"value": "[reference(resourceId(parameters('relatedGroup'), 'Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2016-01-01').primaryEndpoints.blob]",
 			"type" : "string"
 		}
 	}
 
-<a id="resourcegroup" /></a>
+返回对象中的属性取决于资源类型。
+
+<a id="resourcegroup" />
 ### resourceGroup
 
 **resourceGroup()**
 
-返回表示当前资源组的结构化对象。该对象的格式如下：
+返回表示当前资源组的对象。
+
+返回的对象采用以下格式：
 
     {
       "id": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}",
       "name": "{resourceGroupName}",
       "location": "{resourceGroupLocation}",
+      "tags": {
+      },
+      "properties": {
+        "provisioningState": "{status}"
+      }
     }
 
 以下示例使用资源组位置来分配网站的位置。
@@ -781,22 +1119,24 @@
        }
     ]
 
-<a id="resourceid" /></a>
+<a id="resourceid" />
 ### resourceId
 
 **resourceId ([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
 
-返回资源的唯一标识符。如果资源名称不确定或未设置在相同的模板内，请使用此函数。将使用以下格式返回标识符：
-
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/{resourceProviderNamespace}/{resourceType}/{resourceName}
+返回资源的唯一标识符。
       
 | 参数 | 必选 | 说明
 | :---------------: | :------: | :----------
-| subscriptionId | 否 | 可选订阅 ID。默认值为当前订阅。如果要检索另一个订阅中的资源，请指定此值。
-| resourceGroupName | 否 | 可选的资源组名称。默认值为当前资源组。如果要检索另一个资源组中的资源，请指定此值。
+| subscriptionId | 否 | 默认值为当前订阅。如果需要检索另一个订阅中的资源，请指定此值。
+| resourceGroupName | 否 | 默认值为当前资源组。如果需要检索另一个资源组中的资源，请指定此值。
 | resourceType | 是 | 资源类型，包括资源提供程序命名空间。
 | resourceName1 | 是 | 资源的名称。
 | resourceName2 | 否 | 下一个资源名称段（如果资源是嵌套的）。
+
+如果资源名称不确定或未设置在相同的模板内，请使用此函数。将使用以下格式返回标识符：
+
+    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/{resourceProviderNamespace}/{resourceType}/{resourceName}
 
 以下示例演示了如何检索网站和数据库的资源 ID。网站存在于名为 **myWebsitesGroup** 的资源组中，而数据库存在于此模板的当前资源组中。
 
@@ -846,8 +1186,8 @@
       }]
     }
 
-<a id="subscription" /></a>
-### subscription
+<a id="subscription" />
+### 订阅
 
 **subscription()**
 
@@ -859,7 +1199,7 @@
         "tenantId": "#####"
     }
 
-以下示例演示了在 outputs 节中调用的 subscription 函数。
+以下示例显示了在 outputs 节中调用的 subscription 函数。
 
     "outputs": { 
       "exampleOutput": { 
@@ -875,5 +1215,4 @@
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0912_2016-->

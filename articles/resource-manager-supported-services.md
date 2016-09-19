@@ -10,14 +10,14 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="05/26/2016"
-   wacn.date="07/18/2016"/>
+   ms.date="07/18/2016"
+   wacn.date="09/19/2016"/>
 
 # 资源管理器提供程序、区域、 API 版本和架构
 
 Azure 资源管理器为你提供了一种新的方式来部署和管理构成应用程序的服务。大多数（但并非所有）服务都支持资源管理器，有些服务仅部分支持资源管理器。Microsoft 将为每个服务启用资源管理器，这对于未来的解决方案而言很重要，但在全面提供支持之前，你需要了解每个服务的当前支持状态。本主题提供支持 Azure 资源管理器的资源提供程序列表。
 
-部署资源时，你还需要知道哪些区域支持这些资源，以及哪些 API 版本可用于资源。[支持的区域](#supported-regions)部分说明了如何找出哪些区域支持你的订阅和资源。[支持的 API 版本](#supported-api-versions)部分说明了如何判断可以使用哪些 API 版本。
+部署资源时，你还需要知道哪些区域支持这些资源，以及哪些 API 版本可用于资源。[支持的区域](#supported-regions)部分说明了如何找出哪些区域支持相应的订阅和资源。[支持的 API 版本](#supported-api-versions)部分说明了如何判断可以使用哪些 API 版本。
 
 <!-- 若要查看 Azure 门户和经典门户支持哪些服务，请参阅 [Azure 门户可用性图表](/features/azure-portal/availability/)。-->若要查看哪些服务支持移动资源，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 
@@ -29,7 +29,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------------------------ |-------- | ------ | ------ |
 | 批处理 | 是 | [Batch REST](https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx) | | [Microsoft.Batch](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Batch%22&type=Code) |
-| Service Fabric（预览版） | 是 | [Service Fabric Rest](https://msdn.microsoft.com/zh-cn/library/azure/dn707692.aspx) | | [Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceFabric%22&type=Code) |
+| Service Fabric | 是 | [Service Fabric Rest](https://msdn.microsoft.com/zh-cn/library/azure/dn707692.aspx) | | [Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceFabric%22&type=Code) |
 | 虚拟机 | 是 | [VM REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163647.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) | [Microsoft.Compute](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Compute%22&type=Code) |
 | 虚拟机（经典）| 有限制 | - | - |
 | 远程应用 | 否 | - | - |
@@ -47,6 +47,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 应用程序网关 | 是 | | | [applicationGateways](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2FapplicationGateways%22&type=Code) |
 | DNS | 是 | [DNS REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163862.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) | [dnsZones](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2FdnsZones%22&type=Code) |
 | ExpressRoute | 是 | [ExpressRoute REST](https://msdn.microsoft.com/zh-cn/library/azure/mt586720.aspx) | | [expressRouteCircuits](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2FexpressRouteCircuits%22&type=Code) |
+| 负载平衡器 | 是 | [负载平衡器 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163651.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) | [loadBalancers](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2Floadbalancers%22&type=Code) |
 | 流量管理器 | 是 | [流量管理器 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx) | [2015-11-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-11-01/Microsoft.Network.json) | [trafficmanagerprofiles](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2Ftrafficmanagerprofiles%22&type=Code) |
 | 虚拟网络 | 是| [虚拟网络 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163650.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) | [virtualNetworks](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2FvirtualNetworks%22&type=Code) |
 | VPN 网关 | 是 | [网络网关 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163859.aspx) | | [virtualNetworkGateways](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2FvirtualNetworkGateways%22&type=Code) <br /> [localNetworkGateways](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2FlocalNetworkGateways%22&type=Code) <br />[connections](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Network%2Fconnections%22&type=Code) |
@@ -83,15 +84,15 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------- | -------- | ------ | ------ |
 | 事件中心 | 是 | [事件中心 REST](https://msdn.microsoft.com/zh-cn/library/azure/dn790674.aspx) | | [Microsoft.EventHub](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.EventHub%22&type=Code) |
-| IoTHubs | 是 | [IoT 中心 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt589014.aspx) | | [Microsoft.Devices](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Devices%22&type=Code) |
+| IoTHubs | 是 | [IoT 中心 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt589014.aspx) | [2016-02-03](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-02-03/Microsoft.Devices.json) | [Microsoft.Devices](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Devices%22&type=Code) |
 | 通知中心 | 是 | [Notification Hub REST](https://msdn.microsoft.com/zh-cn/library/azure/dn495827.aspx) | [2015-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-04-01/Microsoft.NotificationHubs.json) | [Microsoft.NotificationHubs](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.NotificationHubs%22&type=Code) |
 
 ## 媒体和 CDN
 
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------- | -------- | ------ | ------ |
-| CDN | 是 | [CDN REST](https://msdn.microsoft.com/zh-cn/library/azure/mt634456.aspx) | | [Microsoft.Cdn](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Cdn%22&type=Code) |
-| 媒体服务 | 否 | | |
+| CDN | 是 | [CDN REST](https://msdn.microsoft.com/zh-cn/library/azure/mt634456.aspx) | [2016-04-02](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-04-02/Microsoft.Cdn.json) | [Microsoft.Cdn](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Cdn%22&type=Code) |
+| 媒体服务 | 是 | [媒体服务 REST](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx) | [2015-10-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-01/Microsoft.Media.json) |
 
 
 ## 混合集成
@@ -102,7 +103,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 ## 标识和访问管理 
 
-Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角色的访问控制。若要了解有关使用基于角色的访问控制和 Active Directory 的信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色的访问控制。若要了解如何使用基于角色的访问控制和 Active Directory，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
 ## 开发人员服务 
 
@@ -114,9 +115,11 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------- | -------- | ------ | ------ |
-| 自动化 | 是 | | | [Microsoft.Automation](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Automation%22&type=Code) |
-| 密钥保管库 | 是 | [密钥保管库 REST](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx) | [密钥保管库](/documentation/articles/resource-manager-template-keyvault/)<br />[密钥保管库机密](/documentation/articles/resource-manager-template-keyvault-secret/) | [Microsoft.KeyVault](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.KeyVault%22&type=Code) |
-| 计划程序 | 是 | [计划程序 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt629143.aspx) | [2014-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-08-01/Microsoft.Scheduler.json) | [Microsoft.Scheduler](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Scheduler%22&type=Code) |
+| 自动化 | 是 | [自动化 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt662285.aspx) | [2015-10-31](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-31/Microsoft.Automation.json) | [Microsoft.Automation](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Automation%22&type=Code) |
+| 密钥保管库 | 是 | [密钥保管库 REST](https://msdn.microsoft.com/library/azure/dn903609.aspx) | [密钥保管库](resource-manager-template-keyvault.md)<br />[密钥保管库机密](resource-manager-template-keyvault-secret.md) | [Microsoft.KeyVault](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.KeyVault%22&type=Code) |
+| 操作见解 | 是 | | | |
+| 计划程序 | 是 | [计划程序 REST](https://msdn.microsoft.com/library/azure/mt629143.aspx) | [2014-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-08-01/Microsoft.Scheduler.json) | [Microsoft.Scheduler](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Scheduler%22&type=Code) |
+| 安全性（预览版） | 是 | [安全 REST](https://msdn.microsoft.com/library/azure/mt704034.aspx) | | [Microsoft.Security](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Security%22&type=Code) |
 
 ## 资源管理器
 
@@ -134,7 +137,7 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
 ### REST API
 
-若要获取所有可用的资源提供程序，包括其类型、位置、API 版本和注册状态，请使用[列出所有资源提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790524.aspx)操作。
+若要获取所有可用的资源提供程序，包括其类型、位置、API 版本和注册状态，请使用[列出所有资源提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790524.aspx)操作。如果需要注册资源提供程序，请参阅 [Register a subscription with a resource provider](https://msdn.microsoft.com/zh-cn/library/azure/dn790548.aspx)（将订阅注册到资源提供程序）。
 
 ### PowerShell
 
@@ -142,13 +145,6 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
     Get-AzureRmResourceProvider -ListAvailable
     
-输出结果将会类似于：
-
-    ProviderNamespace               RegistrationState ResourceTypes
-    -----------------               ----------------- -------------
-    Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
-    Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
-    ...
 
 以下示例演示如何获取特定资源提供程序的资源类型。
 
@@ -211,7 +207,7 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
     azure location list
 
-你也可以使用 [jq](https://stedolan.github.io/jq/) 之类的 JSON 实用工具来筛选位置结果。
+也可以使用 [jq](https://stedolan.github.io/jq/) 之类的 JSON 实用工具来筛选位置结果。
 
     azure location list --json | jq '.[] | select(.name == "Microsoft.Web/sites")'
 
@@ -262,4 +258,4 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
 - 若要了解如何部署资源，请参阅[使用 Azure Resource Manager 模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0912_2016-->
