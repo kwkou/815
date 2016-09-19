@@ -10,8 +10,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="07/14/2016"
-   wacn.date="08/15/2016"/>
+   ms.date="07/19/2016"
+   wacn.date="09/19/2016"/>
 
 # Azure 资源管理器概述
 
@@ -21,7 +21,7 @@
 
 如果你不熟悉 Azure Resource Manager，则可能不熟悉某些术语。
 
-- **资源** — 属于 Azure 解决方案一部分的项。部分常见资源包括虚拟机、存储帐户、Web 应用、数据库和虚拟网络，但这只是其中一小部分。
+- **资源** - 可通过 Azure 获取的可管理项。部分常见资源包括虚拟机、存储帐户、Web 应用、数据库和虚拟网络，但这只是其中一小部分。
 - **资源组** — 一个容器，用于保存应用程序的相关资源。资源组可以包含应用程序的所有资源，也可以只包含分组在一起的资源。你可以根据对组织有利的原则，决定如何将资源分配到资源组。请参阅[资源组](#resource-groups)。
 - **资源提供程序** — 一种服务，提供可以通过 Resource Manager 进行部署和管理的资源。每个资源提供程序提供用于处理所部署资源的操作。部分常见资源提供程序包括 Microsoft.Compute（提供虚拟机资源）、Microsoft.Storage（提供存储帐户资源）和 Microsoft.Web（提供与 Web 应用相关的资源）。请参阅[资源提供程序](#resource-providers)。
 - **Resource Manager 模板** — 一个 JavaScript 对象表示法 (JSON) 文件，用于定义一个或多个要部署到资源组的资源。它也会定义所部署资源之间的依赖关系。使用模板能够以一致方式反复部署资源。请参阅[模板部署](#template-deployment)。
@@ -36,7 +36,7 @@
 - 你可以通过声明性模板而非脚本来管理基础结构。
 - 您可以定义各资源之间的依赖关系，以便按正确的顺序进行部署。
 - 您可以将访问控制应用到资源组中的所有服务，因为基于角色的访问控制 (RBAC) 已在本机集成到管理平台。
-- 您可以将标记应用到资源，以按照逻辑组织订阅中的所有资源。
+- 可以将标记应用到资源，以逻辑方式组织订阅中的所有资源。
 - 你可以通过查看整个组或共享相同标记的资源组的累积费用，明确组织的帐单开支。
 
 资源管理器提供了一种新方法来部署和管理您的解决方案。如果你使用早期的部署模型并想要了解这些更改，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
@@ -50,6 +50,8 @@
 3. 运行强制性命令来管理资源，例如启动或停止应用或计算机。
 4. 排列资源组中具有相同生命周期的资源。使用标记来组织其他所有资源。
 
+有关详细建议，请参阅 [Best practices for creating Azure Resource Manager templates](/documentation/articles/resource-manager-template-best-practices/)（创建 Azure Resource Manager 模板的最佳实践）。
+
 ## 资源组
 
 定义资源组时，需要考虑以下几个重要因素：
@@ -57,7 +59,7 @@
 1. 组中的所有资源应该共享相同的生命周期。一起部署、更新和删除这些资源。如果某个资源（例如数据库服务器）需要采用不同的部署周期，则它应在另一个资源组中。
 2. 每个资源只能在一个资源组中。
 3. 你随时可以在资源组添加或删除资源。
-4. 可以将资源从一个资源组移到另一个组。有关详细信息，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
+4. 可以将资源从一个资源组移到另一个组。有关详细信息，请参阅 [Move resources to new resource group or subscription](/documentation/articles/resource-group-move-resources/)（将资源移到新的资源组或订阅）。
 4. 资源组可以包含位于不同区域的资源。
 5. 资源组可用于划分对管理操作的访问控制。
 6. 资源可以与另一个资源组中的资源交互，前提是两个资源有关联，但不共享相同的生命周期（例如，一个 Web Apps 连接到一个数据库）。
@@ -138,4 +140,4 @@ Azure Resource Manager 支持跨域资源共享 (CORS)。使用 CORS 时，你�
 <!--
 - 有关将 VS Code 与 Resource Manager 配合使用的信息，请参阅[在 Visual Studio Code 中使用 Azure Resource Manager 模板](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) -->
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0912_2016-->

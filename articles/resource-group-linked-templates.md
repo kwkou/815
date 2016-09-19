@@ -1,6 +1,6 @@
 <properties
    pageTitle="将链接模版与 Resource Manager 配合使用 | Azure"
-   description="介绍如何使用 Azure Resource Manager 模板中的链接模板创建一个模块化的模板的解决方案。演示如何传递参数值、指定参数文件和动态创建的 URL。"
+   description="介绍如何使用 Azure 资源管理器模板中的链接模板创建一个模块化的模板的解决方案。演示如何传递参数值、指定参数文件和动态创建的 URL。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -9,12 +9,12 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="06/08/2016"
-   wacn.date="07/11/2016"/>
+   ms.date="08/11/2016"
+   wacn.date="09/19/2016"/>
 
 # 将已链接的模版与 Azure 资源管理器配合使用
 
-从一个 Azure 资源管理器模板中，您可以链接到能使您将部署分解成一组有针对性并且有特定用途的模板的另一个模板。就像将一个应用程序分解为多个代码类那样，分解可提供测试、重用和可读性方面的好处。
+可在一个 Azure Resource Manager 模板中链接到另一个模板，将部署分解成一组有针对性并且有特定用途的模板。如同将一个应用程序分解为多个代码类那样，分解可在测试、重用和可读性方面带来好处。
 
 可以将参数从主模板传递到链接的模板，并可以直接将这些参数映射到由调用模板公开提供的参数或变量。链接模板还可以将输出变量传递回源模板中，启用模板之间的双向数据交换。
 
@@ -40,14 +40,14 @@
       } 
     ] 
 
-资源管理器服务必须能够访问链接模板，这意味着，你不能为链接模板指定本地文件或只能在本地网络上使用的文件。只能提供包含 **http** 或 **https** 的 URI 值。一种做法是将链接模板放在存储帐户中并对该项使用 URI，如下所示。
+Resource Manager 服务必须能够访问链接的模板。无法为链接的模板指定本地文件或者只能在本地网络中访问的文件。只能提供包含 **http** 或 **https** 的 URI 值。一种做法是将链接模板放在存储帐户中并对该项使用 URI，如以下示例中所示。
 
     "templateLink": {
         "uri": "http://mystorageaccount.blob.core.chinacloudapi.cn/templates/template.json",
         "contentVersion": "1.0.0.0",
     }
 
-尽管链接模板必须可从外部使用，但它无需向公众正式发布。你可以将模板添加到专用存储帐户，这样，只有存储帐户所有者可访问该模板，然后创建共享访问签名 (SAS) 令牌，以允许在部署期间访问。将该 SAS 令牌添加到链接模板的 URI。有关在存储帐户中设置模板和生成 SAS 令牌的步骤，请参阅[使用 Resource Manager 模板和 Azure PowerShell 部署资源](/documentation/articles/resource-group-template-deploy)或[使用 Resource Manager 模板和 Azure CLI 部署资源](/documentation/articles/resource-group-template-deploy-cli)。
+尽管链接模板必须可从外部使用，但它无需向公众正式发布。可以将模板添加到只有存储帐户所有者可以访问的专用存储帐户。然后，在部署期间创建共享访问签名 (SAS) 令牌来启用访问。将该 SAS 令牌添加到链接模板的 URI。有关在存储帐户中设置模板和生成 SAS 令牌的步骤，请参阅[使用 Resource Manager 模板和 Azure PowerShell 部署资源](/documentation/articles/resource-group-template-deploy)或[使用 Resource Manager 模板和 Azure CLI 部署资源](/documentation/articles/resource-group-template-deploy-cli)。
 
 下面的示例演示了链接到其他模板的父模板。使用作为参数传入的 SAS 令牌访问嵌套模板。
 
@@ -94,7 +94,7 @@
       } 
     ] 
 
-链接参数文件的 URI 值不能是本地文件，并且必须包含 **http** 或 **https**。当然，也可将参数文件限制为通过 SAS 令牌进行访问。
+链接参数文件的 URI 值不能是本地文件，并且必须包含 **http** 或 **https**。也可将参数文件限制为通过 SAS 令牌进行访问。
 
 ## 使用变量来链接模板
 
@@ -121,17 +121,118 @@
         }
     }
 
-你还可以使用 [deployment()](/documentation/articles/resource-group-template-functions/#deployment) 获取当前模板的基 URL，并使用该 URL 来获取同一位置其他模板的 URL。如果你的模板位置发生变化（原因可能是改版）或者你想要避免对模板文件中的 URL 进行硬编码，则此操作非常有用。
+你还可以使用 [deployment()](/documentation/articles/resource-group-template-functions/#deployment) 获取当前模板的基 URL，并使用该 URL 来获取同一位置其他模板的 URL。如果模板位置发生变化（原因可能是改版）或者想要避免对模板文件中的 URL 进行硬编码，则此方法非常有用。
 
     "variables": {
         "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"
+    }
+
+## 按条件链接到模板
+
+可以通过传入用于构造链接模板 URI 的参数值链接到不同的模板。如果在部署期间需指定要使用的链接模板，则此方法很有效。例如，可为现有存储帐户指定一个要使用的模板，为新的存储帐户指定另一个要使用的模板。
+
+以下示例显示了存储帐户名的参数，以及用于指定存储帐户是新帐户还是现有帐户的参数。
+
+    "parameters": {
+        "storageAccountName": {
+            "type": "String"
+        },
+        "newOrExisting": {
+            "type": "String",
+            "allowedValues": [
+                "new",
+                "existing"
+            ]
+        }
+    },
+
+为模板 URI 创建变量，其中包含新参数或现有参数的值。
+
+    "variables": {
+        "templatelink": "[concat('https://raw.githubusercontent.com/exampleuser/templates/master/',parameters('newOrExisting'),'StorageAccount.json')]"
+    },
+
+将该变量值提供给部署资源。
+
+    "resources": [
+        {
+            "apiVersion": "2015-01-01",
+            "name": "nestedTemplate",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[variables('templatelink')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "StorageAccountName": {
+                        "value": "[parameters('storageAccountName')]"
+                    }
+                }
+            }
+        }
+    ],
+
+URI 将解析成名为 **existingStorageAccount.json** 或 **newStorageAccount.json** 的模板。为这些 URI 创建模板。
+
+以下示例显示了 **existingStorageAccount.json** 模板。
+
+    {
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "storageAccountName": {
+          "type": "String"
+        }
+      },
+      "variables": {},
+      "resources": [],
+      "outputs": {
+        "storageAccountInfo": {
+          "value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')),providers('Microsoft.Storage', 'storageAccounts').apiVersions[0])]",
+          "type" : "object"
+        }
+      }
+    }
+
+下一个示例显示了 **newStorageAccount.json** 模板。可以看到，与现有存储帐户模板一样，存储帐户对象已在输出中返回。主控模板能够与任一嵌套模板配合运行。
+
+    {
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "storageAccountName": {
+          "type": "string"
+        }
+      },
+      "resources": [
+        {
+          "type": "Microsoft.Storage/storageAccounts",
+          "name": "[parameters('StorageAccountName')]",
+          "apiVersion": "2016-01-01",
+          "location": "[resourceGroup().location]",
+          "sku": {
+            "name": "Standard_LRS"
+          },
+          "kind": "Storage",
+          "properties": {
+          }
+        }
+      ],
+      "outputs": {
+        "storageAccountInfo": {
+          "value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('StorageAccountName')),providers('Microsoft.Storage', 'storageAccounts').apiVersions[0])]",
+          "type" : "object"
+        }
+      }
     }
 
 ## 完整示例
 
 下面的示例模板显示了简化布置的链接模板以说明本文中的几个概念。它假定模板已添加到公共访问权限已关闭的存储帐户中的同一个容器。链接模板将一个值传递回 **outputs** 节中的主模板。
 
-**Parent.json** 文件由以下部分组成：
+**parent.json** 文件由以下部分组成：
 
     {
       "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -189,10 +290,10 @@
     azure storage container sas create --container templates --permissions r --expiry $expiretime --json | jq ".sas" -r
     azure group deployment create -g ExampleGroup --template-uri "https://storagecontosotemplates.blob.core.chinacloudapi.cn/templates/parent.json?{token}" -n tokendeploy  
 
-系统将提示你提供 SAS 令牌作为参数。你需要在令牌的前面加 **?**。
+系统将提示用户提供 SAS 令牌作为参数。需要在令牌的前面加上 **?**。
 
 ## 后续步骤
-- 若要了解如何为资源定义部署顺序，请参阅 [Defining dependencies in Azure Resource Manager templates（在 Azure Resource Manager 模板中定义依赖关系）](/documentation/articles/resource-group-define-dependencies/)
-- 若要了解如何定义一个资源但要创建其多个实例，请参阅 [Create multiple instances of resources in Azure Resource Manager（在 Azure Resource Manager 中创建多个资源实例）](/documentation/articles/resource-group-create-multiple/)
+- 若要了解如何为资源定义部署顺序，请参阅 [Defining dependencies in Azure Resource Manager templates](/documentation/articles/resource-group-define-dependencies/)（在 Azure Resource Manager 模板中定义依赖关系）
+- 若要了解如何定义一个资源而创建多个实例，请参阅 [Create multiple instances of resources in Azure Resource Manager](/documentation/articles/resource-group-create-multiple/)（在 Azure Resource Manager 中创建多个资源实例）
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0912_2016-->
