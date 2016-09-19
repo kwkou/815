@@ -17,7 +17,7 @@
 
 活动异地复制可让你在相同或不同数据中心位置（区域）中最多配置 4 个可读的辅助数据库。在数据中心发生服务中断或无法连接到主数据库时，可以使用辅助数据库进行查询和故障转移。
 
->[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。2017 年 4 月将停用非可读辅助类型数据库，现有的非可读数据库将自动升级到可读辅助数据库。
+>[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在只供高级服务层中的数据库使用。
 
  可以使用 [PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)、[Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/) 或 [REST API - 创建或更新数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)配置活动异地复制。
 
@@ -28,7 +28,7 @@
 
 如果主数据库因某种原因而出现故障，或者只是需要脱机，则可以 *故障转移* 到任何辅助数据库。激活故障转移以后，即可将主数据库故障转移到某个辅助数据库，然后所有其他辅助数据库就会自动链接到新的主数据库。
 
-可以使用 [PowerShell](/documentation/articles/sql-database-geo-replication-failover-powershell/)、[Transact-SQL](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)、[REST API - 计划故障转移](https://msdn.microsoft.com/zh-cn/ibrary/azure/mt575007.aspx) 或 [REST API - 非计划故障转移](https://msdn.microsoft.com/zh-cn/library/azure/mt582027.aspx)故障转移到辅助数据库。
+可以使用 [PowerShell](/documentation/articles/sql-database-geo-replication-failover-powershell/)、[Transact-SQL](/documentation/articles/sql-database-geo-replication-failover-transact-sql/) 或 [REST API - 非计划故障转移](https://msdn.microsoft.com/zh-cn/library/azure/mt582027.aspx)故障转移到辅助数据库。
 
 
 > [AZURE.SELECTOR]
@@ -39,7 +39,7 @@
 
 活动异地复制的主要优势之一在于能够提供数据库级别的灾难恢复解决方案且恢复时间非常短。当将辅助数据库放在不同区域中的服务器上时，你可以为应用程序增添极大的恢复能力。跨区域冗余使应用程序能够在自然灾害、灾难性人为失误或恶意行为导致整个或部分数据中心永久性数据丢失后得以恢复。下图显示了在高级数据库上配置的活动异地复制示例，其中主数据库位于中国北部区域，而辅助数据库位于中国东部区域。
 
-![异地复制关系](./media/sql-database-active-geo-replication/geo-replication-relationship.png)
+
 
 另一个关键优势是辅助数据库是可读的，并且可用于卸载只读工作负荷，如报表作业。如果只想使用辅助数据库进行负载平衡，可以在主数据库所在的同一区域中创建它。然而，这将不会增加应用程序的灾难性故障的恢复能力。
 
@@ -113,7 +113,6 @@
 |---|-----------|
 |[创建或更新数据库 (createMode=Restore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)|创建、更新或还原主数据库或辅助数据库。|
 |[获取创建或更新数据库状态](https://msdn.microsoft.com/zh-cn/library/azure/mt643934.aspx)|返回创建操作过程中的状态。|
-|[将辅助数据库设为主数据库（计划故障转移）](https://msdn.microsoft.com/zh-cn/ibrary/azure/mt575007.aspx)|提升异地复制合作关系中的辅助数据库，使其成为新的主数据库。|
 |[将辅助数据库设为主数据库（非计划故障转移）](https://msdn.microsoft.com/zh-cn/library/azure/mt582027.aspx)|强制故障转移到辅助数据库，并将辅助数据库设为主数据库。|
 |[获取复制链接](https://msdn.microsoft.com/zh-cn/library/azure/mt600929.aspx)|获取异地复制合作关系中指定 SQL 数据库的所有复制链接。它检索 sys.geo\_replication\_links 目录视图中可见的信息。|
 |[获取复制链接](https://msdn.microsoft.com/zh-cn/library/azure/mt600778.aspx)|获取异地复制合作关系中指定 SQL 数据库的特定复制链接。它检索 sys.geo\_replication\_links 目录视图中可见的信息。|
