@@ -43,7 +43,7 @@
 - [Visual Studio Community 2015 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids)
 - [Visual Studio Community 2013 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids)
 - [用于 .NET 的 Azure SDK 2.5.1](https://www.microsoft.com/zh-cn/download/details.aspx?id=44938)
-- [用于 .NET 的 Azure SDK 2.6](https://www.microsoft.com/zh-cn/download/details.aspx?id=46892)
+- [用于 .NET 的 Azure SDK 2.6](https://www.microsoft.com/download/details.aspx?id=46892)
 
 ## 连接到 Azure 订阅
 适用于 Visual Studio 的 HDInsight 工具允许你连接到 HDInsight 群集，执行一些基本的管理操作，并运行 Hive 查询。

@@ -102,7 +102,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 1. 将**输入文件**和处理这些文件的**应用程序**上载到 Azure 存储帐户。输入文件可以是应用程序要处理的任何数据，例如金融建模数据或要转码的视频文件。应用程序文件可以是任何用于处理数据的应用程序，例如 3D 渲染应用程序或媒体转码器。
 
-2. 在 Batch 帐户中创建计算节点的 Batch **池** - 这些节点是将执行任务的虚拟机。需要指定属性，例如[节点大小](/documentation/articles/cloud-services/cloud-services-sizes-specs/)、其操作系统，以及节点加入池时要安装的应用程序在 Azure 存储中的位置（在步骤 1 中上载的应用程序）。用户还可以配置池来随着任务所生成的工作负荷而[自动缩放](/documentation/articles/batch-automatic-scaling/) - 动态调整池中的计算节点数。
+2. 在 Batch 帐户中创建计算节点的 Batch **池** - 这些节点是将执行任务的虚拟机。需要指定属性，例如[节点大小](/documentation/articles/cloud-services-sizes-specs/)、其操作系统，以及节点加入池时要安装的应用程序在 Azure 存储中的位置（在步骤 1 中上载的应用程序）。用户还可以配置池来随着任务所生成的工作负荷而[自动缩放](/documentation/articles/batch-automatic-scaling/) - 动态调整池中的计算节点数。
 
 3. 创建 Batch **作业**，在计算节点池上运行工作负荷。创建作业时，需要将它与 Batch 池关联。
 
