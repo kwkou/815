@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="06/16/2016"
-   wacn.date="07/21/2016"/>
+   ms.date="07/16/2016"
+   wacn.date="09/19/2016"/>
 
 # 使用 SQL 数据库弹性池的应用程序的灾难恢复策略 
 
@@ -155,29 +155,15 @@
 
 ## 摘要
 
-本文重点介绍了关于 SaaS ISV 多租户应用程序使用的数据库层的灾难恢复策略。应基于应用程序的需要选择策略，例如业务模式、想要为客户提供的 SLA、预算限制等...所述的每个策略都概述了其优点和权衡，以便你做出明智的决策。此外，特定应用程序可能包括其他 Azure 组件。因此，应查看其业务连续性指南并根据指南安排数据库层的恢复。若要了解有关管理 Azure 数据库应用程序恢复的详细信息，请参阅[设计灾难恢复云解决方案](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)。
+本文重点介绍了关于 SaaS ISV 多租户应用程序使用的数据库层的灾难恢复策略。应基于应用程序的需要选择策略，例如业务模式、想要为客户提供的 SLA、预算限制等...所述的每个策略都概述了其优点和权衡，以便你做出明智的决策。此外，特定应用程序可能包括其他 Azure 组件。因此，应查看其业务连续性指南并根据指南安排数据库层的恢复。若要深入了解如何管理 Azure 中的数据库应用程序恢复，请参阅[设计灾难恢复云解决方案](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)。
 
 
 ## 后续步骤
 
-每个方案所需的各个步骤涉及针对大量数据库所执行的操作。建议使用 SQL 数据库弹性作业来大规模管理这些操作。有关详细信息，请参阅[管理扩展的云数据库](/documentation/articles/sql-database-elastic-jobs-overview/)。以下页面有助于了解执行本文的各个方案所需的特定操作：
+- 若要了解 Azure SQL 数据库的自动备份，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)
+- 有关业务连续性概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- 若要了解如何使用自动备份进行恢复，请参阅[从服务启动的备份中还原数据库](/documentation/articles/sql-database-recovery-using-backups/)
+- 若要了解更快的恢复选项，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- 若要了解如何使用自动备份进行存档，请参阅[数据库复制](/documentation/articles/sql-database-copy/)
 
-- [添加辅助数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt603689.aspx) 
-- [将数据库故障转移到辅助数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt619393.aspx)
-- [异地还原数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt693390.aspx) 
-- [删除数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt619368.aspx)
-- [复制数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt603644.aspx)
-
-## 其他资源
-
-- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity/)
-- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
-- [异地还原](/documentation/articles/sql-database-geo-restore/)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
-
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0912_2016-->

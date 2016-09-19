@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="06/16/2016"
-   wacn.date="07/21/2016"/>
+   ms.date="07/16/2016"
+   wacn.date="09/19/2016"/>
 
 # 使用 SQL 数据库活动异地复制管理云应用程序的滚动升级
 
@@ -29,10 +29,10 @@
 
 ## 升级依赖于数据库备份进行灾难恢复的应用程序 
 
-如果你的应用程序依赖于自动的数据库备份，并且使用异地还原来实现灾难恢复，那么通常将它部署到单个 Azure 区域。在此事例中升级过程包括创建升级所涉及的所有应用程序组件的备份部署。要最小化对最终用户的干扰，你可以使用具有故障转移配置文件的 Azure 流量管理器 (WATM)。下图说明了在升级过程开始前的操作环境。终结点 contoso-1.chinacloudsites.cn 表示需要升级的应用程序的一个生产槽。若要启用回滚升级功能，需要使用应用程序的完全同步副本创建过渡槽。准备应用程序升级需要执行以下步骤：
+如果你的应用程序依赖于自动的数据库备份，并且使用异地还原来实现灾难恢复，那么通常将它部署到单个 Azure 区域。在此事例中升级过程包括创建升级所涉及的所有应用程序组件的备份部署。要最小化对最终用户的干扰，你可以使用具有故障转移配置文件的 Azure 流量管理器 (WATM)。下图说明了在升级过程开始前的操作环境。终结点 <i>contoso-1.chinacloudsites.cn</i> 表示需要升级的应用程序的一个生产槽。若要启用回滚升级功能，需要使用应用程序的完全同步副本创建过渡槽。准备应用程序升级需要执行以下步骤：
 
 1.  为升级创建过渡槽。要执行此操作需要在同一 Azure 区域中创建一个辅助数据库 (1)，并部署相同的网站。监视此辅助数据库以查看种子设定过程是否已完成。
-3.  使用作为联机终结点的 contoso-1.chinacloudsites.cn 和作为离线终结点的 contoso-2.chinacloudsites.cn 在 WATM 中创建故障转移配置文件。
+3.  使用作为联机终结点的 <i>contoso-1.chinacloudsites.cn</i> 和作为离线终结点的 <i>contoso-2.chinacloudsites.cn</i> 在 WATM 中创建故障转移配置文件。
 
 > [AZURE.NOTE] 请注意上述准备步骤不会影响生产槽中的应用程序，应用程序可以在完全访问模式下运行。
 
@@ -48,7 +48,7 @@
 
 如果升级成功完成，那么你现在可以将最终用户切换到应用程序的暂存副本。该副本将成为应用程序的生产槽。如下图所示，该操作又包含以下几个步骤。
 
-1. 将 WATM 配置文件中的联机终结点切换为 contoso-2.chinacloudsites.cn，该终结点指向网站的 V2 版本 (6)。现在该网站成为 V2 应用程序的生产槽，最终用户流量将定向到该网站。
+1. 将 WATM 配置文件中的联机终结点切换为 <i>contoso-2.chinacloudsites.cn</i>，该终结点指向网站的 V2 版本 (6)。现在该网站成为 V2 应用程序的生产槽，最终用户流量将定向到该网站。
 2. 如果你不再需要 V1 应用程序组件，你可以放心删除它们 (7)。
 
 ![SQL 数据库异地复制配置。云灾难恢复。](./media/sql-database-manage-application-rolling-upgrade/Option1-3.png)
@@ -60,7 +60,7 @@
 
 此时应用程序可完全正常运行，并且你可以重复上述升级步骤。
 
-> [AZURE.NOTE] 回滚操作不需要更改 WATM 配置文件，因为它已指向作为活动终结点的 contoso-1.chinacloudsites.cn。
+> [AZURE.NOTE] 回滚操作不需要更改 WATM 配置文件，因为它已指向作为活动终结点的 <i>contoso-1.chinacloudsites.cn</i>。
 
 ![SQL 数据库异地复制配置。云灾难恢复。](./media/sql-database-manage-application-rolling-upgrade/Option1-4.png)
 
@@ -73,12 +73,12 @@
 + 在升级过程的任何时候都保护应用程序免受灾难性故障
 + 应用程序的地理冗余组件与活动组件一同升级
 
-为了实现这些目标，你将通过包含一个活动终结点和三个备份终结点的故障转移配置文件来使用 Azure 流量管理器 (WATM)。下图说明了在升级过程开始前的操作环境。网站 contoso-1.chinacloudsites.cn 和 contoso-dr.chinacloudsites.cn 代表具有完全地理冗余的应用程序的生产槽。若要启用回滚升级功能，需要使用应用程序的完全同步副本创建过渡槽。因为你需要确保在升级过程中发生灾难性故障时应用程序可以快速恢复，另外过渡槽必须也是地理冗余。准备应用程序升级需要执行以下步骤：
+为了实现这些目标，你将通过包含一个活动终结点和三个备份终结点的故障转移配置文件来使用 Azure 流量管理器 (WATM)。下图说明了在升级过程开始前的操作环境。网站 <i>contoso-1.chinacloudsites.cn</i> 和 <i>contoso-dr.chinacloudsites.cn</i> 代表具有完全地理冗余的应用程序的生产槽。若要启用回滚升级功能，需要使用应用程序的完全同步副本创建过渡槽。因为你需要确保在升级过程中发生灾难性故障时应用程序可以快速恢复，另外过渡槽必须也是地理冗余。准备应用程序升级需要执行以下步骤：
 
 1.  为升级创建过渡槽。要执行此操作需要在同一 Azure 区域中创建一个辅助数据库 (1)，并部署相同的网站副本。监视此辅助数据库以查看种子设定过程是否已完成。
 2.  通过将辅助数据库异地复制到备份区域（称为“链接异地复制”）在过渡槽中创建地理冗余的辅助数据库。监视此备份的辅助数据库以查看种子设定过程是否已完成 (3)。
 3.  在备份区域中创建网站的备用副本，并将其链接到地理冗余的辅助数据库 (4)。
-4.  将额外的终结点 contoso-2.chinacloudsites.cn 和 contoso-3.chinacloudsites.cn 作为离线终结点添加到 WATM 中的故障转移配置文件 (5)。
+4.  将额外的终结点 <i>contoso-2.chinacloudsites.cn</i> 和 <i>contoso-3.chinacloudsites.cn</i> 作为离线终结点添加到 WATM 中的故障转移配置文件 (5)。
 
 > [AZURE.NOTE] 请注意上述准备步骤不会影响生产槽中的应用程序，应用程序可以在完全访问模式下运行。
 
@@ -94,7 +94,7 @@
 
 如果升级成功完成，那么你现在可以将最终用户切换到应用程序的 V2 版本。下图说明了所涉及的步骤。
 
-1. 将 WATM 配置文件中的活动终结点切换为 contoso-2.chinacloudsites.cn，该终结点指向网站的 V2 版本 (9)。现在该网站成为 V2 应用程序的生产槽，最终用户流量将定向到该网站。
+1. 将 WATM 配置文件中的活动终结点切换为 <i>contoso-2.chinacloudsites.cn</i>，该终结点指向网站的 V2 版本 (9)。现在该网站成为 V2 应用程序的生产槽，最终用户流量将定向到该网站。
 2. 如果你不再需要 V1 应用程序，你可以放心删除它（10 和 11）。
 
 ![SQL 数据库异地复制配置。云灾难恢复。](./media/sql-database-manage-application-rolling-upgrade/Option2-3.png)
@@ -106,7 +106,7 @@
 
 此时应用程序可完全正常运行，并且你可以重复上述升级步骤。
 
-> [AZURE.NOTE] 回滚操作不需要更改 WATM 配置文件，因为它已指向作为活动终结点的 contoso-1.chinacloudsites.cn。
+> [AZURE.NOTE] 回滚操作不需要更改 WATM 配置文件，因为它已指向作为活动终结点的 <i>contoso-1.chinacloudsites.cn</i>。
 
 ![SQL 数据库异地复制配置。云灾难恢复。](./media/sql-database-manage-application-rolling-upgrade/Option2-4.png)
 
@@ -118,6 +118,15 @@
 
 
 ## 后续步骤
+
+- 有关业务连续性概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- 若要了解 Azure SQL 数据库的自动备份，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)
+- 若要了解如何使用自动备份进行恢复，请参阅[从自动备份中还原数据库](/documentation/articles/sql-database-recovery-using-backups/)
+- 若要了解更快的恢复选项，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- 若要了解如何使用自动备份进行存档，请参阅[数据库复制](/documentation/articles/sql-database-copy/)
+
+## 其他资源
+
 以下页将有助于你了解执行升级工作流所需的具体操作：
 
 - [添加辅助数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt603689.aspx)
@@ -128,15 +137,4 @@
 - [复制数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt603644.aspx)
 - [将数据库设置为只读或读写模式](https://msdn.microsoft.com/zh-cn/library/bb522682.aspx)
 
-## 其他资源
-
-- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity/)
-- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
-- [异地还原](/documentation/articles/sql-database-geo-restore/)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0912_2016-->

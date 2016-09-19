@@ -3,23 +3,23 @@
 	description="本主题介绍在数据库还原或故障转移后进行安全管理时的安全注意事项。"
 	services="sql-database"
 	documentationCenter="na"
-	authors="carlrabeler"
+	authors="CarlRabeler"
 	manager="jhubbard"
 	editor="monicar" />
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/16/2016"
-	wacn.date="07/21/2016" />
+	ms.date="07/16/2016"
+	wacn.date="09/19/2016" />
 
 # 灾难恢复后如何管理 Azure SQL 数据库安全性
 
->[AZURE.NOTE] [Active Geo-Replication](/documentation/articles/sql-database-geo-replication-overview/) 现在可用于所有服务层中的所有数据库。
+>[AZURE.NOTE] [Active Geo-Replication](/documentation/articles/sql-database-geo-replication-overview/) 现可用于所有服务层中的所有数据库。
 
 ## 灾难恢复身份验证要求概述
 
-本主题介绍配置和控制[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)时所要满足的身份验证要求，以及设置用户对辅助数据库的访问权限所要执行的步骤。本主题还介绍了使用异地还原后如何启用对已恢复数据库的访问。有关恢复选项的详细信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery/)。
+本主题介绍了配置和控制[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)所需的身份验证要求，以及设置辅助数据库的用户访问权限所需的步骤。它还介绍了使用[异地还原](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)后如何启用对已恢复数据库的访问权限。相关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 ## 使用包含的用户进行灾难恢复
 
@@ -35,7 +35,7 @@
 
 为了确保能够将辅助数据库用作只读辅助数据库，以及确保使用异地还原对新的主数据库或已恢复数据库进行适当的访问，必须在恢复之前对目标服务器的 master 数据库进行适当的安全配置。
 
-本主题的后面将会说明执行每个步骤所需的特定权限。
+本主题稍后部分介绍了各步骤所需的特定权限。
 
 应该在配置异地复制的过程中进行用户访问权限方面的准备，以便用户能够访问异地复制辅助数据库。只要原始服务器处于联机状态（例如，在进行 DR 钻取时），就可以进行用户访问权限方面的准备，使用户能够访问异地还原数据库。
 
@@ -67,7 +67,7 @@
 	FROM [sys].[database_principals]
 	WHERE [type_desc] = 'SQL_USER'
 
->[AZURE.NOTE] **INFORMATION\_SCHEMA** 和 **sys** 用户具有 NULL SID，**guest** SID 为 **0x00**。如果数据库创建者是服务器管理员而不是 **DbManager** 的成员，则 **dbo** SID 可能以 0x01060000000001648000000000048454 开头。
+>[AZURE.NOTE] **INFORMATION\_SCHEMA** 和 **sys** 用户具有 *NULL* SID，**guest** SID 为 **0x00**。如果数据库创建者是服务器管理员而不是 **DbManager** 的成员，则 **dbo** SID 可能以 *0x01060000000001648000000000048454* 开头。
 
 #### 3\.在目标服务器上创建登录名：
 最后一个步骤是转到一个或多个目标服务器，并使用相应的 SID 生成登录名。基本语法如下。
@@ -84,20 +84,11 @@
 
 ## 后续步骤
 
-- 有关如何管理数据库访问权限和登录名的详细信息，请参阅 [SQL 数据库安全：管理数据库的访问和登录安全](/documentation/articles/sql-database-manage-logins/)。
-- 有关包含数据库用户的详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
-- 有关使用和配置活动异地复制的信息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- 有关使用异地还原的信息，请参阅[异地还原](/documentation/articles/sql-database-geo-restore/)
+- 若要深入了解如何管理数据库访问和登录，请参阅[SQL 数据库安全：管理数据库访问和登录安全](/documentation/articles/sql-database-manage-logins/)。
+- 若要深入了解随附的数据库用户，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
+- 若要了解如何使用和配置活动异地复制息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- 若要了解如何使用异地还原，请参阅[异地还原](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)
 
 ## 其他资源
 
-- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity/)
-- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
-- [异地还原](/documentation/articles/sql-database-geo-restore/)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0912_2016-->

@@ -9,8 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="06/14/2016"
-    wacn.date="07/21/2016"/>
+    ms.date="07/14/2016"
+    wacn.date="09/19/2016"/>
 
 # 使用 PowerShell 为 Azure SQL 数据库配置异地复制
 
@@ -21,7 +21,7 @@
 
 本文说明如何使用 PowerShell 为 SQL 数据库配置活动异地复制。
 
-若要启动故障转移，请参阅[为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-powershell/)。
+若要使用 PowerShell 启动故障转移，请参阅[使用 PowerShell 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-powershell/)。
 
 >[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。非可读辅助类型将在 2017 年 4 月停用，现有的非可读数据库将自动升级到可读辅助数据库。
 
@@ -41,12 +41,12 @@
 
 	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
+成功登录后，屏幕上将显示一些信息，包括登录时所用的 ID 和有权访问的 Azure 订阅。
 
 
 ### 选择 Azure 订阅
 
-若要选择订阅，你需要提供订阅 ID。你可以从前面的步骤中显示的信息中复制订阅 ID，或者，如果你有多个订阅且需要更多详细信息，可以运行 **Get-AzureRmSubscription** cmdlet，然后从结果集中复制所需的订阅信息。以下 cmdlet 使用订阅 ID 来设置当前的订阅：
+需要订阅 ID 才可选择订阅。可复制上一步所示信息中的订阅 ID；如果具有多个订阅且需要更多详细信息，可运行 **Get-AzureRmSubscription** cmdlet 并复制结果集中的所需订阅信息。以下 cmdlet 使用订阅 ID 来设置当前订阅：
 
 	Select-AzureRmSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
@@ -58,7 +58,7 @@
 
 以下步骤在异地复制合作关系中创建新的辅助数据库。
   
-若要启用辅助数据库，你必须是订阅所有者或共同所有者。
+只有订阅所有者或共同所有者才可启用辅助库。
 
 可以使用 **New-AzureRmSqlDatabaseSecondary** cmdlet，将伙伴服务器上的辅助数据库添加到所连接的服务器上的本地数据库（主数据库）。
 
@@ -139,24 +139,9 @@
     $secondaryLink = $database | Get-AzureRmSqlDatabaseReplicationLink –PartnerResourceGroup "rg2” –PartnerServerName "srv2”
 
 
-  
-
 ## 后续步骤
 
-- [为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-powershell/)
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
+- 若要深入了解活动异地复制，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- 有关业务连续性概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
-
-
-
-## 其他资源
-
-- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0912_2016-->

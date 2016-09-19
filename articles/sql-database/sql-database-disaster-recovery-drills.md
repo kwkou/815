@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="06/16/2016"
-   wacn.date="07/21/2016"/>
+   ms.date="07/31/2016"
+   wacn.date="09/19/2016"/>
 
 #执行灾难恢复演练
 
@@ -19,7 +19,7 @@
 执行灾难恢复演练的操作包括：
 
 - 模拟数据层中断
-- 恢复 
+- 恢复
 - 验证恢复后的应用程序完整性
 
 根据[针对业务连续性设计应用程序](/documentation/articles/sql-database-business-continuity/)的方式，用于执行演练的工作流会有所不同。下面将会讨论在 Azure SQL 数据库上下文中执行灾难恢复演练的最佳实践。
@@ -34,7 +34,7 @@
 
 ####恢复
 
-- 根据[此处](/documentation/articles/sql-database-disaster-recovery/)所述，在另一台服务器中执行数据库异地还原。 
+- 根据[此处](/documentation/articles/sql-database-disaster-recovery/)所述，在另一台服务器中执行数据库异地还原。
 - 更改应用程序配置以连接到已恢复的数据库，并根据[在恢复后配置数据库](/documentation/articles/sql-database-disaster-recovery/)指南完成恢复。
 
 ####验证
@@ -51,7 +51,7 @@
 
 ####恢复
 
-- 确保 DR 区域中的应用程序配置指向以前的辅助数据库，故障转移后，该数据库将成为完全可访问的新主数据库。 
+- 确保 DR 区域中的应用程序配置指向以前的辅助数据库，故障转移后，该数据库将成为完全可访问的新主数据库。
 - 执行[计划的故障转移](/documentation/articles/sql-database-geo-replication-powershell/#initiate-a-planned-failover)，使辅助数据库成为新的主数据库
 - 根据[在恢复后配置数据库](/documentation/articles/sql-database-disaster-recovery/)指南完成恢复。
 
@@ -62,18 +62,9 @@
 
 ## 后续步骤
 
-- 有关使用和配置灾难恢复的活动异地复制功能的信息，请参阅 [Active Geo-Replication（活动异地复制）](/documentation/articles/sql-database-geo-replication-overview/)
-- 有关使用异地还原进行灾难恢复的信息，请参阅 [Geo-Restore（异地还原）](/documentation/articles/sql-database-geo-restore/)
+- 若要了解业务连续性方案，请参阅[连续性方案](/documentation/articles/sql-database-business-continuity/)
+- 若要了解 Azure SQL 数据库的自动备份，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)
+- 若要了解如何使用自动备份进行恢复，请参阅[从服务启动的备份中还原数据库](/documentation/articles/sql-database-recovery-using-backups/)
+- 若要了解更快的恢复选项，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 
-## 其他资源
-
-- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity/)
-- [时间点还原](/documentation/articles/sql-database-point-in-time-restore/)
-- [异地还原](/documentation/articles/sql-database-geo-restore/)
-- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
-- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/)
-- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config/)
-- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-business-continuity/)
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0912_2016-->
