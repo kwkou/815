@@ -4,14 +4,14 @@
 	keywords="应用程序开发、数据库教程、Java 应用程序、Java Web 应用程序教程、documentdb、Azure、Microsoft Azure"
 	services="documentdb"
 	documentationCenter="java"
-	authors="aliuy"
+	authors="AndrewHoh"
 	manager="jhubbard"
 	editor="mimig"/>
 
 <tags
 	ms.service="documentdb"
-	ms.date="03/10/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/19/2016"/>
 
 # 使用 DocumentDB 生成一个 Java Web 应用程序
 
@@ -21,7 +21,7 @@
 - [Java](/documentation/articles/documentdb-java-application/)
 - [Python](/documentation/articles/documentdb-python-application/)
 
-此 Java Web 应用程序教程演示了如何使用 [Azure DocumentDB](https://portal.azure.cn/#gallery/Microsoft.DocumentDB) 服务存储和访问托管在 Azure 网站上的 Java 应用程序中的数据。在本教程中，你将学习：
+此 Java Web 应用程序教程演示了如何使用 [Azure DocumentDB](https://portal.azure.cn/#gallery/Microsoft.DocumentDB) 服务存储和访问托管在 Azure 网站上的 Java 应用程序中的数据。本主题介绍以下内容：
 
 - 如何在 Eclipse 中构建基本 JSP 应用程序。
 - 如何借助 [DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java) 来使用 Azure DocumentDB 服务。
@@ -35,7 +35,7 @@
 ##<a id="Prerequisites"></a>此 Java Web 应用程序教程的先决条件
 在开始本应用程序开发教程前，你必须具有：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial-full/?form-type=identityauth)。
+- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - [Java 开发工具包 (JDK) 7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)。
 - [Eclipse IDE for Java EE Developers](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)。
 - [已启用 Java 运行时环境（例如 Tomcat 或 Jetty）的 Azure 网站。](/documentation/articles/web-sites-java-get-started/)
@@ -120,7 +120,7 @@
 
 	在此项目中，我们将使用[项目 Lombok](http://projectlombok.org/) 生成构造函数、getter、setter 和一个生成器。或者，你可以手动编写此代码，或使用 IDE 生成此代码。
 
-2. 若要调用 DocumentDB 服务，则必须实例化一个新的 **DocumentClient**。一般情况下，最好是重用 **DocumentClient** -而不是为每个后续请求构造新的客户端。我们可以通过在 **DocumentClientFactory** 中包装客户端来重用此客户端。你还需要在此处粘贴[步骤 1](#CreateDB) 中保存到剪贴板中的 URI 和 主密钥值。将 [YOUR\_ENDPOINT\_HERE] 替换为你的 URI，以及将 [YOUR\_KEY\_HERE] 替换为你的主密钥。
+2. 若要调用 DocumentDB 服务，则必须实例化一个新的 **DocumentClient**。一般情况下，最好是重用 **DocumentClient** -而不是为每个后续请求构造新的客户端。我们可以通过在 **DocumentClientFactory** 中包装客户端来重用此客户端。你还需要在此处粘贴[步骤 1](#CreateDB) 中保存到剪贴板中的 URI 和 PRIMARY KEY 值。将 [YOUR\_ENDPOINT\_HERE] 替换为你的 URI，以及将 [YOUR\_KEY\_HERE] 替换为你的 PRIMARY KEY。
 
 	    private static final String HOST = "[YOUR_ENDPOINT_HERE]";
 	    private static final String MASTER_KEY = "[YOUR_KEY_HERE]";
@@ -760,7 +760,7 @@ GitHub 上的 [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) 
 3. 在 Eclipse 中，在“文件”菜单上单击“导入”。
 4. 在“导入”窗口中，依次单击“Git”、“来自 Git 的项目”和“下一步”。
 5. 在“选择存储库源”屏幕上，单击“克隆 URI”。
-6. 在“源 Git 存储库”屏幕上，在“URI”框中输入 https://github.com/Azure-Samples/documentdb-java-todo-app.git ，然后单击“下一步”。
+6. 在“源 Git 存储库”屏幕上，在“URI”框中输入 https://github.com/Azure-Samples/documentdb-java-todo-app.git，然后单击“下一步”。
 7. 在“分支选择”屏幕上，确保已选择“master”，然后单击“下一步”。
 8. 在“本地目标”屏幕上，单击“浏览”选择要将存储库复制到的文件夹，然后单击“下一步”。
 9. 在“选择要用于导入项目的向导”屏幕上，确保已选择“导入现有项目”，然后单击“下一步”。
@@ -780,4 +780,4 @@ GitHub 上的 [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) 
 
 [1]: media/documentdb-java-application/keys.png
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0912_2016-->
