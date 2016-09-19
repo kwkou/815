@@ -89,7 +89,7 @@
 	![14](./media/azure-cognitive-services-face-api-wechat-app/14.png)
 	
 
-##Step4： 从 [Github 下载项目](https://github.com/WaitSun/Cognitive)并修改 Web.config 配置文件
+##Step4： 从 [Github 下载项目](https://github.com/MSAICognitiveServices/FaceWechat)并修改 Web.config 配置文件
 
 1. 通过 Visual Studio 2015 编辑 **Web.config** 文件，找到 AppID 和 AppSecret 字段，将字段值修改为微信公众号测试页面（ [Step 2-> 2](#step2-2) ）中显示的AppID和Appsecret。
 
