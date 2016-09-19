@@ -3,14 +3,14 @@
     description="使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移" 
     services="sql-database" 
     documentationCenter="" 
-    authors="carlrabeler" 
+    authors="CarlRabeler" 
     manager="jhubbard" 
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="04/27/2016"
-    wacn.date="06/14/2016"/>
+    ms.date="07/19/2016"
+    wacn.date="09/19/2016"/>
 
 # 使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移
 
@@ -26,8 +26,12 @@
 
 若要启动故障转移，需要提供以下各项：
 
-- 主数据库上 DBManager 的登录信息，拥有你要异地复制的本地数据库的 db\_ownership，以及你要配置异地复制的伙伴服务器上的 DBManager。
-- 最新版本的 SQL Server Management Studio - 若要获取最新版本的 SQL Server Management Studio (SSMS)，请转到[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。有关使用 SQL Server Management Studio 管理 Azure SQL 数据库逻辑服务器和数据库的详细信息，请参阅[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)
+- 主数据库上 DBManager 的登录名，拥有你要异地复制的本地数据库的 db\_ownership 权限，并且是你要配置异地复制的伙伴服务器上的 DBManager。
+- SQL Server Management Studio (SSMS)
+
+
+> [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+
 
 
 
@@ -50,7 +54,7 @@
 
 2. 打开“数据库”文件夹、展开“系统数据库”、右键单击“master”，然后单击“新建查询”。
 
-3. 使用以下 **ALTER DATABASE** 语句将辅助数据库切换到主数据库角色。
+3. 使用以下 **ALTER DATABASE** 语句以将辅助数据库切换为主角色。
 
         ALTER DATABASE <MyDB> FAILOVER;
 
@@ -75,7 +79,7 @@
 
 2. 打开“数据库”文件夹、展开“系统数据库”、右键单击“master”，然后单击“新建查询”。
 
-3. 使用以下 **ALTER DATABASE** 语句将辅助数据库切换到主数据库角色。
+3. 使用以下 **ALTER DATABASE** 语句以将辅助数据库切换为主角色。
 
         ALTER DATABASE <MyDB>   FORCE_FAILOVER_ALLOW_DATA_LOSS;
 
@@ -85,12 +89,12 @@
 
 
 
-## 其他资源
+## 后续步骤   
 
-- [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
-- [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
-- [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [SQL 数据库文档](/home/features/sql-database)
-- [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills/)
+- 若要了解如何使用活动异地复制进行灾难恢复，包括恢复前后步骤和执行灾难恢复演练，请参阅[灾难恢复](/documentation/articles/sql-database-disaster-recovery/)
+- 有关活动异地复制的 Sasha Nosov 博客文章，请参阅 [Spotlight on new Geo-Replication capabilities](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication/)（聚焦异地复制新功能）
+- 若要了解如何设计云应用程序以使用活动异地复制，请参阅[设计云应用程序以使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
+- 若要了解如何通过弹性数据库池使用活动异地复制，请参阅[弹性池灾难恢复策略](/documentation/articles/sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool/)。
+- 有关业务连续性概述，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0912_2016-->
