@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="04/19/2016"
-	wacn.date="08/22/2016"/>
+	ms.date="08/15/2016"
+	wacn.date="09/19/2016"/>
 
 # 使用连续交付功能发布到 Azure 时如何启用远程调试
 
@@ -86,6 +86,6 @@
     $vm | Update-AzureVM
 	</pre>
 
-6. 将证书导入到装有 Visual Studio 和 Azure SDK for .NET 的计算机。
+6. 将证书导入到装有 Visual Studio 和用于 .NET 的 Azure SDK 的计算机。
 
 <!---HONumber=Mooncake_0523_2016-->
