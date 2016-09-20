@@ -18,7 +18,7 @@
    wacn.date="09/19/2016"
    ms.author="rick.byham@microsoft.com"/>
 
-# 使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库 test
+# 使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库
 
 Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 Azure SQL 数据库和 [SQL 数据仓库](/documentation/articles/sql-data-warehouse-overview-what-is/)的一种机制。通过 Azure Active Directory 身份验证，可以在一个中心位置中集中管理数据库用户和其他 Microsoft 服务的标识。集中 ID 管理提供一个单一位置来管理数据库用户，并简化权限管理。包括如下优点：
 
