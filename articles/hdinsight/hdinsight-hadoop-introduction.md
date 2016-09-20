@@ -238,7 +238,7 @@ HDInsight 群集为以下特定于 Hadoop 生态系统的语言提供支持：
 
 
 
-[marketing-page]: https://azure.microsoft.com/services/hdinsight/
+[marketing-page]: /home/features/hdinsight/
 [component-versioning]: /documentation/articles/hdinsight-component-versioning-v1/
 [zookeeper]: http://zookeeper.apache.org/
 
