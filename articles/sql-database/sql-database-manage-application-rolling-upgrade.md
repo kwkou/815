@@ -15,7 +15,7 @@
 # 使用 SQL 数据库活动异地复制管理云应用程序的滚动升级
 
 
-> [AZURE.NOTE] [Active Geo-Replication](/documentation/articles/sql-database-geo-replication-overview/)(可读辅助副本) 现在只能用于高级层（ premium ）中的数据库。
+> [AZURE.NOTE] [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) (Active Geo-Replication) 现在可用于标准层和高级层中的数据库，可读辅助副本（Readable Secondary）现在只能用于高级层（ premium ）中的数据库。
 
 
 了解如何使用 SQL 数据库中的[异地复制](/documentation/articles/sql-database-geo-replication-overview/)来启用云应用程序的滚动升级。由于升级是中断性操作，所以它应成为业务连续性规划和设计的一部分。本文我们介绍了编排升级过程的两种不同方法，并讨论了每种方法的优点和缺点。针对本文的目的，我们将使用一个简单的应用程序，该应用程序包含一个连接到作为其数据层的单一数据库的网站。我们的目标是在不对最终用户体验产生任何显著影响的情况下将版本 1 的应用程序升级到版本 2。

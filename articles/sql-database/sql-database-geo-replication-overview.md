@@ -17,7 +17,7 @@
 
 活动异地复制可让你在相同或不同数据中心位置（区域）中最多配置 4 个可读的辅助数据库。在数据中心发生服务中断或无法连接到主数据库时，可以使用辅助数据库进行查询和故障转移。
 
->[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在只供高级服务层中的数据库使用。
+>[AZURE.NOTE] 活动异地复制现在可用于标准层和高级层中的数据库，可读辅助数据库（Readable Secondary）现在只供高级服务层中的数据库使用。
 
  可以使用 [PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)、[Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/) 或 [REST API - 创建或更新数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)配置活动异地复制。
 

@@ -23,7 +23,7 @@
 
 若要使用 Transact-SQL 启动故障转移，请参阅[使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)。
 
->[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。非可读辅助类型将在 2017 年 4 月停用，现有的非可读数据库将自动升级到可读辅助数据库。
+>[AZURE.NOTE] 活动异地复制现在可供标准服务层和高级服务层中的所有数据库使用。可读辅助副本目前只能用于高级服务层中的数据库。
 
 若要使用 Transact-SQL 配置活动异地复制，需提供：
 
