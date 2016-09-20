@@ -10,8 +10,13 @@
 
 <tags
    ms.service="sql-database"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-management"
    ms.date="08/04/2016"
-   wacn.date="09/19/2016"/>
+   wacn.date="09/19/2016"
+   ms.author="rick.byham@microsoft.com"/>
 
 # 使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库
 
