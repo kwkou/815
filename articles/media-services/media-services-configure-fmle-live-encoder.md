@@ -29,7 +29,7 @@
 ##先决条件
 
 - [创建 Azure 媒体服务帐户](/documentation/articles/media-services-create-account/)
-- 确保在运行流式处理终结点时，至少为其分配了一个流式处理单元。有关详细信息，请参阅[在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins/)
+- 确保在运行流式处理终结点时，至少为其分配了一个高级流式处理单元。有关详细信息，请参阅[在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins/)
 - 安装最新版本的 [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) 工具。
 - 启动该工具并连接到你的 AMS 帐户。
 

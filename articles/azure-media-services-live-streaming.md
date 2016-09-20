@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="multiple" ms.date="" wacn.date="08/10/2016"/>
+<tags ms.service="multiple" ms.date="" wacn.date="09/20/2016"/>
 
 #Azure 媒体服务实现视频直播操作手册
 我们将为您具体呈现如何通过 Azure 媒体服务实现公开课直播场景。直播前期的准备工作需要大约 1 小时，您需要在开播前提前做好准备工作。具体操作步骤如下：
@@ -25,7 +25,7 @@
 
 	![3](./media/azure-media-services-live-streaming/3.png)
 
-3. 确保在运行流式处理终结点时，至少为其分配了一个流式处理单元。（也可以在添加频道时同时创建流式处理单元）
+3. 确保在运行流式处理终结点时，至少为其分配了一个高级流式处理单元。（也可以在添加频道时同时创建高级流式处理单元）
 
 	![4](./media/azure-media-services-live-streaming/4.png)
 
