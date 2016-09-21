@@ -16,7 +16,7 @@
 
 ## 社区聚焦
 
-让我们推销你的项目！ 让我们看看你使用 DocumentDB 进行的绝佳项目，我们很乐意与全世界分享你的才华。若要提交你的项目，请向我们发送电子邮件：[askdocdb@microsoft.com](mailto:askdocdb@microsoft.com)。
+让我们推销你的项目！ 让我们看看你使用 DocumentDB 进行的绝佳项目，我们很乐意与全世界分享你的才华。
 
 
 ### documentdb-lumenize
@@ -116,7 +116,6 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 <br/><br/>
 
-你有想要分享的博客文章、代码示例或案例研究吗？ [请告诉我们](mailto:askdocdb@microsoft.com)！
 
 <br/><br/>
 
@@ -188,6 +187,6 @@ DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们
  [Larry Maccherone](https://twitter.com/lmaccherone) | [![Larry Maccherone](./media/documentdb-community/wizard-larry-maccherone.jpg)](https://twitter.com/lmaccherone) 
  [Howard Edidin](https://twitter.com/hsedidin) | [![Howard Edidin](./media/documentdb-community/wizard-howard-edidin.jpg)](https://twitter.com/hsedidin) 
 
-想要成为 DocumentDB 奇才？ 由于是否能成为 DocumentDB 奇才并没有任何评判基准，因此我们会针对部分条件来评估，包括被提名人对在线论坛（例如 StackOverflow 和 MSDN；Wiki 和在线内容；会议和用户组；播客；网站；博客和社交媒体；以及文章与书籍）的贡献所产生的影响。如果你想提名自己或其他人，[请向我们发送电子邮件](mailto:askdocdb@microsoft.com)。
+
 
 <!---HONumber=Mooncake_0725_2016-->

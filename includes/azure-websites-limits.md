@@ -28,7 +28,7 @@ SLA||<p> |99\.9%|99\.95%<sup>10</sup>
 <sup>1</sup>除非特别说明，否则应用和存储配额依每个 App Service 计划为准。  
 <sup>2</sup>你可以在这些计算机上托管的应用的实际数目取决于应用的活动、计算机实例的大小和相应的资源利用率。  
 <sup>3</sup>专用实例可有不同的大小。有关更多详细信息，请参阅 [Azure 定价](/pricing/details/data-transfer/pricing/details/app-service/)。可通过提出支持请求获得其他实例。  
-<sup>5</sup>存储限制是跨相同 App Service 计划中所有应用的内容总大小。[Azure 环境](/documentation/articles/app-service-web-configure-an-app-service-environment/#storage)中提供了更多存储选项  
+<sup>5</sup>存储限制是跨相同 App Service 计划中所有应用的内容总大小。Azure 环境中提供了更多存储选项  
 <sup>6</sup>这些资源受到专用实例上的物理资源（实例大小和实例数）的约束。  
 <sup>7</sup>如果你将基本层的某个应用扩展为两个实例，则其中每个实例有 350 个并发连接。  
 <sup>9</sup>按需、按计划或作为 Azure 实例内的后台任务连续运行自定义可执行文件和/或脚本。连续执行 WebJob 需要使用“始终打开”。计划的 WebJob 需要使用 Azure 计划程序免费或标准版。可以在 Azure 实例中运行的 WebJob 的数量没有预定义的限制，但是存在取决于应用程序代码正在尝试执行的任务的实际限制。  

@@ -199,7 +199,7 @@ Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应�
 
 需要一个 Azure 订阅。
 
-[详细了解](site-recovery-vmm-san.md#before-you-start)部署要求。
+[详细了解](/documentation/articles/site-recovery-vmm-san/#before-you-start)部署要求。
 
 
 ## Hyper-V 保护生命周期

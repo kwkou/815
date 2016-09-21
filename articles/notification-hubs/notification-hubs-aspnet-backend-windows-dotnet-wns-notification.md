@@ -378,7 +378,7 @@
 
 
 <!-- URLs. -->
-[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification-wns-push-notification-wns-push-notification/
+[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [安全推送]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification/
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
