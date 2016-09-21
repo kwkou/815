@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date=""
-	wacn.date="07/07/2016"/>
+	wacn.date="09/21/2016"/>
 
 # Azure IaaS 用户手册 - 第三部分
 
@@ -130,8 +130,7 @@ Azure Load Balancer (负载均衡器)的规则，是由五要素组成 source IP
 
 ###<a name="section_6_5"></a> 4.5 超过 1TB 容量的磁盘
 Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区超过 1TB 的情况，请使用 Azure Storage Space。
-参考：http://www.cnblogs.com/threestone/p/3618113.html 
-
+ 
 ###<a name="section_6_6"></a> 4.6 高 IOPS 的 Azure VM
 当需要更高的 IOPS 的时候，比如某些场景需要更高性能的磁盘读写，这时候就需要用到高级存储 Premium Storage。
 
