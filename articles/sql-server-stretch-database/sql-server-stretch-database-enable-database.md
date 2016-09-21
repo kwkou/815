@@ -28,7 +28,7 @@
 
 -   请参阅 [Stretch Database 的限制](/documentation/articles/sql-server-stretch-database-limitations/)。
 
--   延伸数据库会将数据迁移到 Azure。因此，必须拥有一个 Azure 帐户和订阅以供计费。若要获取 Azure 帐户，请[单击此处](pricing/1rmb-trial/)。
+-   延伸数据库会将数据迁移到 Azure。因此，必须拥有一个 Azure 帐户和订阅以供计费。若要获取 Azure 帐户，请[单击此处](/pricing/1rmb-trial/)。
 
 -   使用所需的连接和登录信息创建新的 Azure 服务器，或者选择现有的 Azure 服务器。
 

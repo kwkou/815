@@ -1,4 +1,4 @@
 > [AZURE.SELECTOR]
-- [Windows cluster](/documentation/articles/hdinsight/hdinsight-use-oozie)
+- [Windows cluster](/documentation/articles/hdinsight-use-oozie/)
 
 <!---HONumber=71-->

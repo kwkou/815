@@ -308,7 +308,7 @@ Xamarin 应用需要一些额外的代码才能将 iOS 或 Android 应用上运�
 
 ##<a name="pull-notifications"></a>如何：在 Windows 应用中使用定期通知
 
-Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定期通知后，Windows 将定期访问自定义 API 终结点以更新开始菜单上的应用磁贴。若要使用定期通知，必须[定义一个自定义 API](mobile-services-javascript-backend-define-custom-api.md)，以便使用磁贴特定的格式返回 XML 数据。有关详细信息，请参阅[定期通知](https://msdn.microsoft.com/library/windows/apps/hh761461.aspx)。
+Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定期通知后，Windows 将定期访问自定义 API 终结点以更新开始菜单上的应用磁贴。若要使用定期通知，必须[定义一个自定义 API](/documentation/articles/mobile-services-javascript-backend-define-custom-api/)，以便使用磁贴特定的格式返回 XML 数据。有关详细信息，请参阅[定期通知](https://msdn.microsoft.com/library/windows/apps/hh761461.aspx)。
 
 以下示例将启用定期通知，以便从 *tiles* 自定义终结点请求磁贴模板数据：
 

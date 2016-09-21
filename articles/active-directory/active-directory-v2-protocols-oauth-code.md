@@ -230,10 +230,10 @@ Access\_token 生存期很短，必须在其过期后刷新，才能继续访问
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | -------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](active-directory-v2-protocols.md#endpoints)。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints)。 |
 | client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
 | grant\_type | 必填 | 必须是授权代码流的此阶段的 `refresh_token`。 |
-| 作用域 | 必填 | 范围的空格分隔列表。在此阶段请求的范围必须等效于或者为原始 authorization\_code 请求阶段中所请求的范围子集。如果这个请求中指定的范围遍及多个资源服务器，v2.0 终结点将返回第一个范围内所指定资源的令牌。有关范围的更加详细的说明，请参阅[权限、同意和范围](active-directory-v2-scopes.md)。 |
+| 作用域 | 必填 | 范围的空格分隔列表。在此阶段请求的范围必须等效于或者为原始 authorization\_code 请求阶段中所请求的范围子集。如果这个请求中指定的范围遍及多个资源服务器，v2.0 终结点将返回第一个范围内所指定资源的令牌。有关范围的更加详细的说明，请参阅[权限、同意和范围](/documentation/articles/active-directory-v2-scopes/)。 |
 | refresh\_token | 必填 | 在流的第二个阶段获取的 refresh\_token。 |
 | redirect\_uri | 必填 | 用于获取 authorization\_code 的相同 redirect\_uri 值。 |
 | client\_secret | Web Apps 所需 | 在应用程序注册门户中为应用程序创建的应用程序机密。其不应用于本机应用程序，因为设备无法可靠地存储 client\_secrets。Web Apps 和 Web API 都需要应用程序机密，能够将 client\_secret 安全地存储在服务器端。 |

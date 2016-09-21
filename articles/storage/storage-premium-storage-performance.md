@@ -200,7 +200,7 @@ IO 大小是较为重要的因素之一。IO 大小是由应用程序生成的�
 | **每月成本总计** | ￥37237.92 | ￥11206.52 |
 
 *Linux 发行版*
-使用 Azure 高级存储，你可以让运行 Windows 和 Linux 的 VM 获得相同的性能级别。我们支持多种 Linux 发行版，你可以在[此处](/documentation/articles/virtual-machines/virtual-machines-linux-endorsed-distros)查看完整列表。请务必注意，不同的发行版适用于不同类型的工作负荷。根据运行工作负荷的发行版的不同，你所看到的性能级别也会有所不同。使用应用程序测试各种 Linux 发行版，选择最适合的。
+使用 Azure 高级存储，你可以让运行 Windows 和 Linux 的 VM 获得相同的性能级别。我们支持多种 Linux 发行版，你可以在[此处](/documentation/articles/virtual-machines-linux-endorsed-distros/)查看完整列表。请务必注意，不同的发行版适用于不同类型的工作负荷。根据运行工作负荷的发行版的不同，你所看到的性能级别也会有所不同。使用应用程序测试各种 Linux 发行版，选择最适合的。
 
 使用高级存储运行 Linux 时，请查看与所需驱动程序相关的最新更新，确保实现高性能。
 

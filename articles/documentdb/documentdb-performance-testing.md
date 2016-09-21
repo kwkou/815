@@ -94,7 +94,7 @@ DocumentDB 是一个快速、弹性的分布式数据库，可以在提供延迟
 	DocumentDBBenchmark completed successfully.
 
 
-**步骤 4（如有必要）：**工具报告的吞吐量（RU/秒）应该等于或大于预配的集合吞吐量。如果情况并非如此，以较小的增量提高 DegreeOfParallelism 可帮助达到该限制。如果客户端应用的吞吐量达到持平状态，则在相同或不同计算机上启动多个应用程序实例可帮助在各个不同的实例中达到预配的限制。如需有关此步骤的帮助，请通过 [Ask DocumentDB](askdocdb@microsoft.com) 或[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单来与我们联系。
+**步骤 4（如有必要）：**工具报告的吞吐量（RU/秒）应该等于或大于预配的集合吞吐量。如果情况并非如此，以较小的增量提高 DegreeOfParallelism 可帮助达到该限制。如果客户端应用的吞吐量达到持平状态，则在相同或不同计算机上启动多个应用程序实例可帮助在各个不同的实例中达到预配的限制。如需有关此步骤的帮助，请通过 [在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单来与我们联系。
 
 应用处于运行状态后，你可以尝试不同的[索引编制策略](/documentation/articles/documentdb-indexing-policies/)和[一致性级别](/documentation/articles/documentdb-consistency-levels/)，以了解它们对吞吐量和延迟的影响。你也可以查看源代码，然后在自己的测试套件或生产应用程序中实施类似的配置。
 
