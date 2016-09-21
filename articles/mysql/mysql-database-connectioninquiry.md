@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="09/20/2016" wacn.date="09/20/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="09/21/2016" wacn.date="09/21/2016" wacn.lang="cn" />
 
 #连接问题
 > [AZURE.SELECTOR]
@@ -27,12 +27,11 @@
 
 ##**在设置连接池后，MySQL Database on Azure 访问时快时慢？**
 
-这是因为服务器端会设置超时机制，如果一个连接在一段时间内处于闲置状态，服务器就会关闭这个链接，以释放不必要的资源占用。因此，为了更好的维护连接池，保障MySQL数据库的访问速度，用户需要在客户端配置验证机制，用以进行连接有效性的验证，保证分配的连接都是有效的。
+这是因为服务器端会设置超时机制，如果一个连接在一段时间内处于闲置状态，服务器就会关闭这个链接，以释放不必要的资源占用。因此，为了更好的维护连接池，保障MySQL数据库的访问速度，用户需要在客户端配置验证机制，用以进行连接有效性的验证，保证分配的连接都是有效的。以Tomcat JDBC Connection Pool为例，用户可以参考[JDBC Connection Pool官方介绍文档](https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#Common_Attributes)。
 
 ##**如何在客户端配置验证机制确认长连接有效性?**
 
-以Tomcat JDBC 连接池为例，通过设定testOnBorrow参数，在有新的请求时，如果连接池中有闲置的可用连接，在返回这个闲置连接之前，连接池会自动验证这个连接的有效性，如果有效，直接返回，如果无效，连接池会回收这个无效连接，重新建立一个新的有效连接并返回。这样会有效地保障数据库的访问速度。具体设置用户可参考[JDBC Connection Pool官方介绍文档](https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#Common_Attributes)。主要需要配置以下三个参数： TestOnBorrow (设为ture), ValidationQuery (设为 SELECT 1), ValidationQueryTimeout (设为1)，具体示例代码请参考技术文档：[配置验证机制验证连接池有效](https://www.azure.cn/documentation/articles/mysql-database-validationquery)。
-
+以Tomcat JDBC连接池为例，通过设定testOnBorrow参数，在有新的请求时，如果连接池中有闲置的可用连接，在返回这个闲置连接之前，连接池会自动验证这个连接的有效性，如果有效，直接返回，如果无效，连接池会回收这个无效连接，重新建立一个新的有效连接并返回。这样会有效地保障数据库的访问速度。具体配置请参考我们的技术文档：[配置验证机制验证连接池有效](https://www.azure.cn/documentation/articles/mysql-database-validationquery)。
 
 ## **JDBC连接MySQL on Azure报IllegalArgumentException，错误信息显示“URLDecoder: Illegal hex characters in escape (%) pattern - For input string: ...”。**
 
