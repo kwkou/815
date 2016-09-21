@@ -57,8 +57,8 @@ Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBOX、Silv
 
 	>[AZURE.NOTE] 不建议使用此选项。
 	
-2. [验证预先编码的文件](media-services-static-packaging.md#validating-adaptive-bitrate-mp4s-encoded-with-external-encoders)。
-3. [流式传输内容](media-services-deliver-content-overview.md)。
+2. [验证预先编码的文件](/documentation/articles/media-services-static-packaging/#validating-adaptive-bitrate-mp4s-encoded-with-external-encoders)。
+3. [流式传输内容](/documentation/articles/media-services-deliver-content-overview/)。
 
 
 ##<a id="unsupported_formats"></a>动态打包不支持的格式
