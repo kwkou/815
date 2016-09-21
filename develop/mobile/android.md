@@ -47,7 +47,7 @@
 
 ###推送
 
-- [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)
+
 
 查看服务： [通知中心](/documentation/services/notification-hubs)
 

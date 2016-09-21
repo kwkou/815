@@ -61,7 +61,7 @@ editor="Eric Chen" />
 - [服务管理](/documentation/articles/java-create-azure-website-using-java-sdk/) / [API](http://dl.windowsazure.com/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/ee460799)
 <!--- [SQL 数据库](/documentation/articles/sql-data-java-how-to-use-sql-database/) /  [TSQL](http://msdn.microsoft.com/zh-cn/library/azure/ee336281) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/gg715283)-->
 - [表服务](/documentation/articles/storage-java-how-to-use-table-storage/) / [API](http://dl.windowsazure.com/storage/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
-- [Twilio](/documentation/articles/partner-twilio-java-how-to-use-voice-sms/) / [API](https://github.com/twilio/twilio-java) / [REST](http://www.twilio.com/docs/api/rest)
+- Twilio / [API](https://github.com/twilio/twilio-java) / [REST](http://www.twilio.com/docs/api/rest)
 
 ##更多资源
 
