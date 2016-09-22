@@ -22,7 +22,7 @@
 
 本主题说明如何将 [Azure 门户](https://portal.azure.cn)与 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 配合使用来管理 Azure 资源。若要了解如何通过门户部署资源，请参阅 [Deploy resources with Resource Manager templates and Azure portal](/documentation/article/resource-group-template-deploy-portal/)（使用 Resource Manager 模板和 Azure 门户部署资源）。
 
-目前，并非每种服务都支持门户或资源管理器。对于这些服务，需要使用[管理门户](https://manage.windowsazure.cn)。若要了解每种服务的状态，请参阅 [Azure portal availability chart](/features/azure-portal/availability/)（Azure 门户可用性图表）。
+目前，并非每种服务都支持门户或资源管理器。对于这些服务，需要使用[管理门户](https://manage.windowsazure.cn)。
 
 <a id="access-control-for-azure-dashboards"/></a>
 ## 自定义仪表板以监视资源
@@ -33,7 +33,7 @@
 
 
 ### 共享 Azure 仪表板和访问控制
-配置仪表板后，可将其发布，并与组织中的其他用户共享。Azure [基于角色的访问控制](/documentation/articles/active-directory/role-based-access-control-configure/)掌控了对门户中磁贴所显示信息的访问。所有发布的仪表板都将作为 Azure 资源实现。从访问控制角度来看，仪表板与虚拟机或存储帐户没有什么不同。
+配置仪表板后，可将其发布，并与组织中的其他用户共享。Azure [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)掌控了对门户中磁贴所显示信息的访问。所有发布的仪表板都将作为 Azure 资源实现。从访问控制角度来看，仪表板与虚拟机或存储帐户没有什么不同。
 
 下面是一个示例。假设你有 Azure 订阅，并且你团队中的各个成员都分配了订阅的**所有者**、**参与者**或**读取者**角色。作为所有者或参与者的用户能够列出、查看、创建、修改或删除订阅中的仪表板。作为读取者的用户能够列出并查看仪表板，但不能修改或删除它们。具有读取者访问权限的用户能够对已发布的仪表板进行本地编辑（例如排查问题时），但不能将这些更改发布回服务器。他们可以为自己制作仪表板的私有副本。
 
@@ -120,7 +120,6 @@
 
 - 若要查看审核日志，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/)（使用资源管理器执行审核操作）。
 - 若要排查部署错误，请参阅 [Troubleshooting resource group deployments with Azure Portal](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)（使用 Azure 门户对资源组部署进行故障排除）。
-- 若要通过门户部署资源，请参阅 [Deploy resources with Resource Manager templates and Azure portal](/documentation/articles/resource-group-template-deploy-portal/)（使用 Resource Manager 模板和 Azure 门户部署资源）。
 
 
 
