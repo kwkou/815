@@ -28,9 +28,9 @@
   <div>
     <h4>Java</h4>
     <ul>
-      <li><a href="/documentation/articles/java-download-windows/">Windows 安装</a></li>
-      <li><a href="/documentation/articles/java-download-mac/">Mac 安装</a></li>
-      <li><a href="/documentation/articles/java-download-linux/">Linux 安装</a></li>
+      <li><a href="/documentation/articles/java-download-azure-sdk/">Windows 安装</a></li>
+      <li><a href="/documentation/articles/java-download-azure-sdk/">Mac 安装</a></li>
+      <li><a href="/documentation/articles/java-download-azure-sdk/">Linux 安装</a></li>
       <li><a href="/develop/java/">文档</a></li>
     </ul>
   </div>

@@ -17,7 +17,7 @@
 <h2 id="header-0">服务开发库</h2>
 <h3><a href="http://nuget.org/packages/windowsazure.mediaservices">用于 .NET 的媒体服务库</a></h3>
 <p>下载 NuGet 程序包以获取 .NET 服务器端 Azure 媒体服务。</p>
-<h3>用于 Java 的媒体服务库：<a href="/documentation/articles/java-download-windows/">Windows</a> | <a href="/documentation/articles/java-download-mac/">Mac</a> | <a href="/documentation/articles/java-download-linux/">Linux</a></h3>
+<h3>用于 Java 的媒体服务库：<a href="/documentation/articles/java-download-azure-sdk/">Windows</a> | <a href="/documentation/articles/java-download-azure-sdk/">Mac</a> | <a href="/documentation/articles/java-download-azure-sdk/">Linux</a></h3>
 <p>下载并安装 Azure SDK for Java，其中包括媒体服务库。还可<a href="https://github.com/windowsazure/azure-sdk-for-java/">查看 GitHub 上的源或为其做出贡献</a>。</p>
 <h2 id="header-1">播放器开发库和插件</h2>
 <h3><a href="http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6">用于 Windows 8 的平滑流式处理客户端 SDK</a></h3>
