@@ -16,7 +16,7 @@ editor="Eric Chen" />
 ##快速链接
 
 - 安装 SDK：<br>
-    [Windows](/documentation/articles/java-download-windows/) | [Mac](/documentation/articles/java-download-mac/) | [Linux](/documentation/articles/java-download-linux/)
+    [Windows](/documentation/articles/java-download-azure-sdk/) | [Mac](/documentation/articles/java-download-azure-sdk/) | [Linux](/documentation/articles/java-download-azure-sdk/)
 - [GitHub 上的源代码](https://github.com/WindowsAzure/azure-sdk-for-java)
 - [在论坛上获取帮助](/zh-cn/support/forums)
 
