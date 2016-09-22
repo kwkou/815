@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="09/01/2016"
+    wacn.date="09/19/2016"
     />
 
 #文档中心
@@ -68,14 +68,14 @@
   </tr>
 </table>
 
-##分析
+##智能 + 分析
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
     <td><a href="/documentation/services/hdinsight/">HDInsight</a></td>
 	<td><a href="/documentation/services/stream-analytics/">流分析</a></td>
+	<td><a href="/documentation/services/cognitive-services/">认知服务</a></td>
 	<td><a href="/documentation/services/event-hubs/">事件中心</a></td>
-	<td><a href=""></a></td>
   </tr>
 </table>
 
@@ -108,7 +108,7 @@
   </tr>
   <tr>
     <td><a href="/documentation/services/application-gateway/">应用程序网关</a></td>
-	<td><a href="/documentation/services/load-balancer/">负载平衡器</a></td>
+	<td><a href="/documentation/services/load-balancer/">负载均衡器</a></td>
 	<td><a href=""></a></td>
 	<td><a href=""></a></td>
   </tr>
