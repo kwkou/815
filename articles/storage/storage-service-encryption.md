@@ -55,7 +55,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 -   现有数据 - SSE 只将加密启用加密之后新建的数据。例如，如果你创建新的 Resource Manager 存储帐户但未打开加密，然后将 blob 或存档 VHD 上传到该存储帐户，然后打开 SSE，则那些 Blob 不会被加密，除非重新写入或复制。
 
--   应用商店支持 - 针对使用（Azure 门户预览）[https://portal.azure.cn)、PowerShell 和 Azure CLI 从应用商店创建的 VM 启用加密。VHD 基本映像将保持未加密状态；但是，在 VM 启动之后完成的任何写入将会加密。
+-   应用商店支持 - 针对使用 [Azure 门户预览](https://portal.azure.cn)、PowerShell 和 Azure CLI 从应用商店创建的 VM 启用加密。VHD 基本映像将保持未加密状态；但是，在 VM 启动之后完成的任何写入将会加密。
 
 -   表、队列和文件数据将不会加密。
 
