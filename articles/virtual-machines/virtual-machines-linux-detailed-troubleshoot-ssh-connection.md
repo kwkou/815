@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="06/16/2016"
-	wacn.date="07/11/2016"/>
+	wacn.date="09/23/2016"/>
 
 # SSH 详细故障排除步骤
 

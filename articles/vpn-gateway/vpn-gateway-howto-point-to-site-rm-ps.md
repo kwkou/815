@@ -10,7 +10,7 @@
 <tags
 	ms.service="vpn-gateway"
 	ms.date="08/03/2016"
-	wacn.date="08/29/2016"/>  
+	wacn.date="09/23/2016"/>  
 
 
 # 使用 PowerShell 配置与虚拟网络的点到站点连接
