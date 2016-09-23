@@ -92,7 +92,6 @@
 [创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 [安装 Visual Studio 和 SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio/
 [SQL 数据仓库身份验证]: /documentation/articles/sql-data-warehouse-authentication/
-[使用 PowerBI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi/
 
 <!--Other-->
 [Azure portal]: https://manage.windowsazure.cn
