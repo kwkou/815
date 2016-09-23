@@ -1,5 +1,5 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="" wacn.date="07/06/2016"/>
+<tags ms.service="" ms.date="" wacn.date="09/23/2016"/>
 
 #中国 Azure 应用程序开发人员说明
 
@@ -176,7 +176,7 @@ SQL 数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1pro
 准备发布应用程序时，请打开 Azure 项目的快捷菜单，然后选择Publish。下图显示了 Publish Azure Application 向导
 ###<a name="confsub"></a>配置订阅
 1. 从“Publish Azure Application”向导的“Choose your subscription”下，选择 &lt;Manage…&gt;，然后再选择“New”。<br />
-![developerdifferences-001](./media/developerdifferences/developerdifferences-001.png)
+![developerdifferences-001](./media/developerdifferences/developerdifferences-001-001.png)
  
 2. 在“New subscription”窗口中
 
@@ -186,7 +186,7 @@ SQL 数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1pro
 	d. 输入以下服务管理 URL <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>
 	e. 指定订阅的名称<br />
 	
-	![developerdifferences-002](./media/developerdifferences/developerdifferences-002.png)
+	![developerdifferences-002](./media/developerdifferences/developerdifferences-002-002.png)
  
 
 ###<a name="confpref"></a>配置设置
