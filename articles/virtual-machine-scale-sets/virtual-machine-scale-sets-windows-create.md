@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machine-scale-sets"
 	ms.date="06/10/2016"
-	wacn.date="08/29/2016"/>
+	wacn.date="09/23/2016"/>
 
 # 使用 Azure PowerShell 创建 Windows 虚拟机规模集
 
