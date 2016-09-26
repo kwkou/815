@@ -226,7 +226,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 ### 步骤 2：创建或检索资源组
 
-若要创建 DocumentDB 帐户，首先需要一个资源组。如果已经知道想要使用的资源组的名称，请确保其位置是[已正式推出 DocumentDB 的区域](/regions/#services)，然后跳到[步骤 3](#create-account-from-template)。在模板中，帐户的位置会创建在与资源组相同的区域中，因此尝试在无法使用 DocumentDB 的区域中创建帐户会导致部署错误。
+若要创建 DocumentDB 帐户，首先需要一个资源组。如果已经知道想要使用的资源组的名称，请确保其位置是[已正式推出 DocumentDB 的区域](https://azure.microsoft.com/regions/#services)，然后跳到[步骤 3](#create-account-from-template)。在模板中，帐户的位置会创建在与资源组相同的区域中，因此尝试在无法使用 DocumentDB 的区域中创建帐户会导致部署错误。
 
 若要查看列有你当前所有的资源组的列表，请运行下列命令，并记下你想要使用的资源组名称：
 
@@ -313,7 +313,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 如果在创建资源组或数据库帐户时收到错误（例如 `Deployment provisioning state was not successful`），有几个故障排除选项可供使用。
 
-> [AZURE.NOTE] 在数据库帐户名称中提供不正确的字符，或提供无法使用 DocumentDB 的位置将导致部署错误。数据库帐户名称只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。[Azure 区域页面](/regions/#services)上列出了所有有效的数据库帐户位置。
+> [AZURE.NOTE] 在数据库帐户名称中提供不正确的字符，或提供无法使用 DocumentDB 的位置将导致部署错误。数据库帐户名称只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。[Azure 区域页面](https://azure.microsoft.com/regions/#services)上列出了所有有效的数据库帐户位置。
 
 - 如果你的输出包含下列 `Error information has been recorded to C:\Users\wendy\.azure\azure.err`，则查看 azure.err 文件中的错误信息。
 

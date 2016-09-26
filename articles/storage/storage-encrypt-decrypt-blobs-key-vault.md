@@ -163,7 +163,7 @@
 		blob.UploadFromStream(stream, stream.Length, null, options, null);
 
 
-下面是一个 blob 的 [Azure 经典管理门户](manage.windowsazure.cn)的屏幕截图，该 blob 已使用客户端加密通过密钥保管库中存储的密钥进行加密。**KeyId** 属性是密钥保管库中充当 KEK 的密钥的 URI。**EncryptedKey** 属性包含 CEK 的加密版本。
+下面是一个 blob 的 [Azure 经典管理门户](https://manage.windowsazure.cn)的屏幕截图，该 blob 已使用客户端加密通过密钥保管库中存储的密钥进行加密。**KeyId** 属性是密钥保管库中充当 KEK 的密钥的 URI。**EncryptedKey** 属性包含 CEK 的加密版本。
 
 ![显示包含加密元数据的 Blob 元数据的屏幕截图][1]
 

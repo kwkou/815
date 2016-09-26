@@ -29,7 +29,7 @@
 
 首先假设你要将关键事件推送到 Azure 事件中心。事实上可以推送到任何中心，只要你有权访问它并知道连接字符串即可。
 
-如果你没有事件中心，可以遵循 [Connect The Dots](https://github.com/Azure/connectthedots) 中的说明，使用 Arduino 盾板和 Raspberry Pi 轻松设置一个测试平台。Arduino 盾板上的灯光传感器通过 Pi 向 [Azure 事件中心][] (**ehdevices**) 发送光能级，如果收到的光能级低于特定的级别，则 [Azure 流分析](/services/stream-analytics/)作业将向另一个事件中心 (**ehalerts**) 推送警报。
+如果你没有事件中心，可以遵循 [Connect The Dots](https://github.com/Azure/connectthedots) 中的说明，使用 Arduino 盾板和 Raspberry Pi 轻松设置一个测试平台。Arduino 盾板上的灯光传感器通过 Pi 向 [Azure 事件中心][] (**ehdevices**) 发送光能级，如果收到的光能级低于特定的级别，则 [Azure 流分析](/documentation/services/stream-analytics/)作业将向另一个事件中心 (**ehalerts**) 推送警报。
 
 **AppToNotify** 启动时，会读取配置文件 (App.config) 来获取接收警报的事件中心的 URL 和凭据。然后，它会生成一个进程来持续监视是否有任何消息传入该事件中心 - 只要你有权访问事件中心的 URL 并拥有有效的凭据，则此事件中心读取器代码就会持续读取传入的数据。在启动期间，应用程序还会读取你要使用的消息传送服务（电子邮件、短信或电话）的 URL 和凭据，以及发件人的名称/地址和收件人的列表。
 

@@ -76,7 +76,7 @@ NoSQL 是一种与 SQL 数据库截然不同的数据库。NoSQL 常用来指代
 Azure 具有以下四种完全托管的 NoSQL 服务：
 
 - [Azure DocumentDB](/services/documentdb/)
-- [Azure 表存储](/services/storage/)
+- [Azure 表存储](/documentation/services/storage/)
 - [作为 HDInsight 一部分的 Azure HBase](/services/hdinsight/)
 - [Azure Redis Cache](/documentation/services/redis-cache/)
 
@@ -96,7 +96,7 @@ Azure 具有以下四种完全托管的 NoSQL 服务：
 
 Microsoft 提供了五种 SQL 产品/服务：
 
-- [Azure SQL 数据库](/services/sql-databases/)
+- [Azure SQL 数据库](/documentation/services/sql-databases/)
 - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
 - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
 

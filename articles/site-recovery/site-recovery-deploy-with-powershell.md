@@ -37,7 +37,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 ### Azure 先决条件
 
-- 需要一个 [Azure](http://www.azure.cn) 帐户。你可以从[试用版](/price/1rmb-trial)开始。
+- 需要一个 [Azure](http://www.azure.cn) 帐户。你可以从[试用版](/pricing/1rmb-trial)开始。
 - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction/)。
 - 需要确保你要保护的虚拟机符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
 
@@ -310,7 +310,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 在正确配置服务器、云和网络后，可以在云中为虚拟机启用保护。注意以下事项：
 
-虚拟机必须符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices.md/#virtual-machines)。
+虚拟机必须符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
 
 若要启用保护，必须为虚拟机设置操作系统和操作系统磁盘属性。当你使用虚拟机模板在 VMM 中创建虚拟机时，可以设置属性。也可以在虚拟机属性的“常规”和“硬件配置”选项卡中为现有虚拟机设置这些属性。如果未在 VMM 中设置这些属性，可以在 Azure Site Recovery 门户中配置它们。
 
