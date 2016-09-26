@@ -78,7 +78,7 @@
 | :--------------------------------: | :------: | :----------
 | offset | 否 | 要添加到当前迭代值的数量。
 
-此函数始终用于 **copy** 对象。有关如何使用 **copyIndex** 的完整说明，请参阅 [Create multiple instances of resources in Azure Resource Manager](resource-group-create-multiple.md)（在 Azure Resource Manager 中创建多个资源实例）。
+此函数始终用于 **copy** 对象。有关如何使用 **copyIndex** 的完整说明，请参阅 [Create multiple instances of resources in Azure Resource Manager](/documentation/articles/resource-group-create-multiple/)（在 Azure Resource Manager 中创建多个资源实例）。
 
 以下示例显示名称中包含 copy 循环和索引值。
 
@@ -975,7 +975,7 @@
 
     azure provider operations show --operationSearchString */apiapps/* --json | jq ".[] | select (.operation | contains("list"))"
 
-可以使用 [resourceId 函数](./#resourceid)或使用格式 **{providerNamespace}/{resourceType}/{resourceName}** 指定 resourceId。
+可以使用 [resourceId 函数](#resourceid)或使用格式 **{providerNamespace}/{resourceType}/{resourceName}** 指定 resourceId。
 
 以下示例演示如何从 outputs 节中的存储帐户返回主密钥和辅助密钥。
 

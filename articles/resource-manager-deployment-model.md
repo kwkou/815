@@ -17,7 +17,7 @@
 
 本主题介绍 Azure Resource Manager 部署模型和经典部署模型、资源的状态，以及使用不同模型来部署资源的原因。Resource Manager 部署模型包含与经典部署模型的重要差异，这两个模型彼此之间并不完全兼容。为了简化资源的部署和管理，Azure 建议对新资源使用 Resource Manager，并尽可能通过 Resource Manager 重新部署现有资源。
 
-如果完全不熟悉 Resource Manager，请先查看 [Azure Resource Manager overview](resource-group-overview.md)（Azure Resource Manager 概述）中定义的术语。
+如果完全不熟悉 Resource Manager，请先查看 [Azure Resource Manager overview](/documentation/articles/resource-group-overview/)（Azure Resource Manager 概述）中定义的术语。
 
 ## 部署模型的历史
 
@@ -42,7 +42,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 2. 服务支持 Resource Manager，但提供两个类型 - 一个用于 Resource Manager 部署，一个用于经典部署。这只适用于虚拟机、存储帐户和虚拟网络。
 3. 服务不支持 Resource Manager。
 
-若要查明服务是否支持 Resource Manager，请参阅 [Resource Manager supported providers](resource-manager-supported-services.md)（Resource Manager 支持的提供程序）。
+若要查明服务是否支持 Resource Manager，请参阅 [Resource Manager supported providers](/documentation/articles/resource-manager-supported-services/)（Resource Manager 支持的提供程序）。
 
 如果要使用的服务不支持 Resource Manager，则必须继续使用经典部署。
 
@@ -74,15 +74,15 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 - 使用资源管理器部署模型部署的虚拟机必须包含在虚拟网络中。
 - 使用经典部署模型部署的虚拟机不一定要包括在虚拟网络中。
 
-若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](./virtual-network/virtual-networks-arm-asm-s2s.md)。
+若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](/documentation/articles/virtual-networks-arm-asm-s2s/)。
 
-只有通过资源管理器创建的资源才支持标记。您不能将标记应用到经典资源。有关在资源管理器中使用标记的详细信息，请参阅[使用标记来组织 Azure 资源](resource-group-using-tags.md)。
+只有通过资源管理器创建的资源才支持标记。您不能将标记应用到经典资源。有关在资源管理器中使用标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
 ## 资源管理器的特征
 
 为了更好地理解这两个模型，让我们看看 Resource Manager 类型的特征：
 
-- 通过 [Azure 门户](https://portal.azure.com/)创建。
+- 通过 [Azure 门户](https://portal.azure.cn/)创建。
 
      ![Azure 门户](./media/resource-manager-deployment-model/portal.png)
 
@@ -161,10 +161,10 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
 如果已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅：
 
-1. [有关平台支持的从经典部署模型到 Azure Resource Manager 的迁移的技术深入探讨](./virtual-machines/virtual-machines-windows-migration-classic-resource-manager-deep-dive.md)
-2. [平台支持从经典部署模型迁移到 Azure Resource Manager 的 IaaS 资源](./virtual-machines/virtual-machines-windows-migration-classic-resource-manager.md)
-3. [使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager](./virtual-machines/virtual-machines-windows-ps-migration-classic-resource-manager.md)
-4. [使用 Azure CLI 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型](./virtual-machines/virtual-machines-linux-cli-migration-classic-resource-manager.md)
+1. [有关平台支持的从经典部署模型到 Azure Resource Manager 的迁移的技术深入探讨](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-deep-dive/)
+2. [平台支持从经典部署模型迁移到 Azure Resource Manager 的 IaaS 资源](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)
+3. [使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager](/documentation/articles/virtual-machines-windows-ps-migration-classic-resource-manager/)
+4. [使用 Azure CLI 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型](/documentation/articles/virtual-machines-linux-cli-migration-classic-resource-manager/)
 
 ## 后续步骤
 
