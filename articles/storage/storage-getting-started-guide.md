@@ -101,7 +101,6 @@
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 
 * [Azure 存储空间简介](/documentation/articles/storage-introduction/)
-* [Azure 存储资源管理器入门](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)
 * [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 * [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
 * [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)

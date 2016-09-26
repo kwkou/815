@@ -81,7 +81,7 @@
 
 - Visual Studio 中的服务器资源管理器 - 如果你安装了 Azure Tools for Microsoft Visual Studio，则可以在服务器资源管理器中使用“Azure 存储空间”节点从你的 Azure 存储帐户查看只读 Blob 和表数据。既可以从本地存储模拟器帐户显示数据，也可以从为 Azure 创建的存储帐户显示数据。有关详细信息，请参阅[使用服务器资源管理器浏览和管理存储资源](/documentation/articles/vs-azure-tools-storage-resources-server-explorer-browse-manage/)。
 
-- [Azure 存储资源管理器](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)是一款独立应用，可用于在 Windows、OSX 和 Linux 上轻松处理 Azure 存储数据。
+
 
 - [Azure Management Studio](http://www.cerebrata.com/products/azure-management-studio/introduction) 随附 Azure 诊断管理器，可让你查看、下载和管理 Azure 中运行的应用程序收集的诊断数据。
 

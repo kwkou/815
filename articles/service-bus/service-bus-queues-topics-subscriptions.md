@@ -154,7 +154,7 @@ namespaceManager.CreateSubscription("IssueTrackingTopic", "Dashboard", new SqlFi
 
 ## 事件中心
 
-[事件中心](/home/features/event-hubs/)是一种事件处理服务，用于向 Azure 提供大规模的事件与遥测数据入口，并且具有较低的延迟和较高的可靠性。在应用程序检测、用户体验或工作流处理以及[物联网 (IoT)](/services/iot-hub/) 方案中，将此服务与其他下游服务结合使用可以带来极好的效果。
+[事件中心](/home/features/event-hubs/)是一种事件处理服务，用于向 Azure 提供大规模的事件与遥测数据入口，并且具有较低的延迟和较高的可靠性。在应用程序检测、用户体验或工作流处理以及[物联网 (IoT)](/documentation/services/iot-hub/) 方案中，将此服务与其他下游服务结合使用可以带来极好的效果。
 
 事件中心是消息流式处理构造，尽管它们看上去类似于队列和主题，但其特征却迥然不同。例如，事件中心不提供消息 TTL、死信、事务或确认，因为这些是传统中转消息传送功能，而是流处理功能。事件中心可提供其他与流相关的功能（例如分区、保留顺序和流重播）。
 
