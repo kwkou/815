@@ -14,7 +14,7 @@
 
 # 将应用与 Azure 虚拟网络进行集成 #
 
-本文档将介绍 Azure App Service 虚拟网络集成功能，并说明如何在 [Azure App Service](/documentation/services/web-sites/) 中使用应用对其进行设置。如果你不熟悉 Azure 虚拟网络 (VNET)，则这里需要指出的是，该功能允许你将多个 Azure 资源置于你可以控制其访问权限但无法通过 Internet 路由的网络中。然后，你可以使用多种 VPN 技术将这些网络连接到本地网络。若要了解有关 Azure 虚拟网络的详细信息，请先了解以下信息：[Azure 虚拟网络概述][VNETOverview]。
+本文档将介绍 Azure App Service 虚拟网络集成功能，并说明如何在 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中使用应用对其进行设置。如果你不熟悉 Azure 虚拟网络 (VNET)，则这里需要指出的是，该功能允许你将多个 Azure 资源置于你可以控制其访问权限但无法通过 Internet 路由的网络中。然后，你可以使用多种 VPN 技术将这些网络连接到本地网络。若要了解有关 Azure 虚拟网络的详细信息，请先了解以下信息：[Azure 虚拟网络概述][VNETOverview]。
 
 在 Azure 中国，Azure App Service 只有一种形式。
 

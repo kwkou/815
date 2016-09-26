@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 WebJobs 运行后台任务" 
-	description="了解如何在 Azure Web 应用中运行后台任务。" 
+	pageTitle="使用 Web 作业运行后台任务" 
+	description="了解如何在 Azure Web Apps 中运行后台任务。" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="tdykstra" 
@@ -10,17 +10,19 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/27/2016"
-	wacn.date="06/29/2016"/>
+	wacn.date=""/>
 
 # 使用 Web 作业运行后台任务
 
 ## 概述
 
-你可以使用三种方式在 [Azure Web 应用](/documentation/services/web-sites/) Web 应用的 Web 作业中运行程序或脚本，即：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
+有 3 种方式可在[应用服务](/documentation/articles/app-service-changes-existing-services/) Web 应用的 WebJobs 中运行程序或脚本：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
 
-本文说明如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs/)。
+本文说明如何使用 [Azure 门户](https://portal.azure.cn)来部署 WebJobs。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
 Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/)。
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="acceptablefiles"></a>可接受的脚本或程序文件类型
 
@@ -34,44 +36,73 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 * .js（使用 Node）
 * .jar（使用 java）
 
-## <a name="CreateOnDemand"></a>在经典管理门户中创建按需 Web 作业
-1. 在“Web 作业”页的命令栏中，单击“添加”。此时将显示“新作业”对话框。
+## <a name="CreateOnDemand"></a>在门户中创建按需 Web 作业
+
+1. 在 [Azure 门户](https://portal.azure.cn)的“Web 应用”边栏选项卡上，单击“所有设置”>“WebJobs”以显示“WebJobs”边栏选项卡。
 	
-	![按需运行任务][OnDemandWebJob]
+	![WebJob 边栏选项卡](./media/web-sites-create-web-jobs/wjblade.png)
 	
-2. 在“名称”下，提供任务的名称。名称必须以字母或数字开头，并且不能包含除“-”和“\_”以外的任何特殊字符。
+5. 单击**“添加”**。将显示“添加 WebJob”对话框。
 	
-3. 在“内容(Zip 文件 – 最大 100MB)”框中，浏览到包含你的脚本的 zip 文件。Zip 文件应包含可执行文件 (.exe .cmd .bat .sh .php .py .js)，以及运行程序或脚本所需的任何支持文件。
+	![添加 WebJob 边栏选项卡](./media/web-sites-create-web-jobs/addwjblade.png)
+	
+2. 在“名称”下，提供 WebJob 的名称。名称必须以字母或数字开头，并且不能包含除“-”和“\_”以外的任何特殊字符。
 	
 4. 在“如何运行”框中，选择“按需运行”。
 	
-5. 选中对话框右下角的复选标记，以将该脚本上载到你的 Web 应用。为任务指定的名称将显示在列表中：
+3. 在“文件上传”框中，单击文件夹图标，然后浏览到包含脚本的 zip 文件。Zip 文件应包含可执行文件 (.exe .cmd .bat .sh .php .py .js)，以及运行程序或脚本所需的任何支持文件。
 	
-	![任务列表][WebJobsList]
+5. 勾选“创建”，将脚本上传到 Web 应用。
 	
-6. 若要运行脚本，请在列表中选择其名称，然后在经典管理门户页面底部的命令栏中单击“运行一次”。
+	“WebJobs”边栏选项卡上的列表中会显示 WebJob 的指定名称。
 	
-	![运行一次][RunOnce]
+6. 若要运行 WebJob，请在列表中右键单击其名称，然后单击“运行”。
+	
+	![运行 WebJob](./media/web-sites-create-web-jobs/runondemand.png)
+	
+## <a name="CreateContinuous"></a>创建连续运行 WebJob
 
-## <a name="CreateContinuous"></a>创建连续运行任务
+1. 若要创建连续执行的 WebJob，请按照与创建单次运行的 WebJob 相同的步骤操作，但在“如何运行”框中选择“连续运行”。
 
-1. 若要创建连续执行的任务，请按照与创建运行一次的任务相同的步骤进行操作，但在“如何运行”框中，请选择“连续运行”。
+2. 若要启动或停止连续 WebJob，右键单击列表中的 WebJob，然后单击“启动”或“停止”。
 	
-	![新的连续运行任务][NewContinuousJob]
+> [AZURE.NOTE] 如果 Web 应用在多个实例上运行，则连续运行的 WebJob 会在所有实例上运行。按需和按计划 WebJob 在 Azure 针对负载平衡所选择的单个实例上运行。
 	
-2. 若要启动或停止连续运行的任务，请在列表中选择任务，然后在命令栏中单击“启动”或“停止”。
+> 要使连续 WebJob 在所有实例上可靠运行，请启用 Web 应用的 AlwaysOn* 配置设置；否则，WebJob 将在 SCM 主机站点闲置时间太长时停止运行。
 
-> [AZURE.NOTE] 如果你的 Web 应用在多个实例上运行，则连续运行的任务将在所有实例上运行。按需运行任务和计划任务在 Azure 针对负载平衡所选择的单个实例上运行。
+## <a name="CreateScheduledCRON"></a>使用 CRON 表达式创建计划的 WebJob
 
-> [AZURE.NOTE]
-> 对于连续运行任务，建议你在“配置”页上为 Web 应用启用“始终打开”。Always On 功能（在基本和标准模式下可用）可防止 Web 应用被卸载，即使 Web 应用已空闲一段时间也是如此。如果你的 Web 应用始终处于加载状态，则连续运行的任务可能会更可靠地运行。
-## <a name="CreateScheduled"></a>使用 Azure 计划程序创建计划的 Web 作业
+此方法可用于在基本、标准或高级模式下运行的 Web 应用，但需要应用上启用 “AlwaysOn”设置。
+
+若要将按需 WebJob 变成按计划的 WebJob ，只需在 WebJob zip 文件的根目录中包含 `settings.job` 文件。此 JSON 文件应包括 `schedule` 属性和 [CRON 表达式](https://en.wikipedia.org/wiki/Cron)，如下例所示。
+
+CRON 表达式由 6 个字段组成：`{second} {minute} {hour} {day} {month} {day of the week}`。
+
+例如，若要每 15 分钟触发一次 WebJob，`settings.job` 需要：
+
+```json
+{
+    "schedule": "0 */15 * * * *"
+}
+``` 
+
+其他 CRON 计划示例：
+
+- 每隔 1 小时（即每当分钟数为 0 时）：`0 0 * * * *`
+- 从上午 9 点到下午 5 点每隔一小时：`0 0 9-17 * * *`
+- 每天上午 9:30：`0 30 9 * * *`
+- 各工作日的上午 9:30：`0 30 9 * * 1-5`
+
+**注意**：从 Visual Studio 部署 WebJob 时，请确保将 `settings.job` 文件属性标记为“如果较新则复制”。
+
+
+## <a name="CreateScheduled"></a>使用 Azure 计划程序创建计划的 WebJob
 
 以下备用技术利用 Azure 计划程序。在这种情况下，Web 作业没有计划的任何直接知识。而是将 Azure 计划程序配置为按计划触发 Web 作业。
 
-你可以使用[经典管理门户](http://manage.windowsazure.cn)执行此类操作。
+Azure 门户尚不能创建计划的 WebJob，但在增添该功能之前，可使用[经典管理门户](http://manage.windowsazure.cn)执行此类操作。
 
-1. 在[经典管理门户](http://manage.windowsazure.cn)中，转到“Web 作业”页并单击“添加”。
+1. 在[经典管理门户](http://manage.windowsazure.cn)中，转到 WebJob 页并单击“添加”。
 
 1. 在“如何运行”框中，选择“按计划运行”。
 	
@@ -117,9 +148,9 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 	
 ### <a name="Scheduler"></a>计划作业和 Azure 计划程序
 
-可以在[经典管理门户](http://manage.windowsazure.cn)的“Azure 计划程序”页中进一步配置计划的作业。
+可在[经典管理门户](http://manage.windowsazure.cn)的“Azure 计划程序”页中进一步配置计划的作业。
 
-1.	在“Web 作业”页上，单击作业的“计划”链接，以导航到 Azure 计划程序门户页。 
+1.	在“Web 作业”页上，单击作业的“计划”链接，以导航到 Azure 计划程序门户页。
 	
 	![链接到 Azure 计划程序][LinkToScheduler]
 	
@@ -133,7 +164,9 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 	
 ## <a name="ViewJobHistory"></a>查看作业历史记录
 
-1. 若要查看作业的执行历史记录（包括使用 WebJobs SDK 创建的作业），请单击“Web 作业”页的“日志”列下方的相应链接。（如果需要，你可以使用剪贴板图标将日志文件页的 URL 复制到剪贴板中）
+1. 若要查看作业的执行历史记录（包括使用 WebJobs SDK 创建的作业），请单击“Web 作业”边栏选项卡的“日志”列下方的相应链接。（如果需要，你可以使用剪贴板图标将日志文件页的 URL 复制到剪贴板中）
+	
+	![日志链接](./media/web-sites-create-web-jobs/wjbladelogslink.png)
 		
 2. 单击链接将打开 WebJob 的详细信息页。此页显示了命令运行的名称、它运行的最后时间及其成功或失败状态。在“最近的作业运行”下，单击某个时间以查看更多详细信息。
 	
@@ -157,12 +190,12 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 
 
 ## <a name="WHPNotes"></a>说明
-
+	
+- 如果没有对 scm（部署）站点发出任何请求，并且未在 Azure 中打开 Web 应用的门户，则免费模式下的 Web Apps 可能会在 20 分钟之后超时。对实际网站发出的请求不会对此进行重置。
 - 需要对连续作业的代码进行编写，才能使其在无穷循环中运行。
 - 仅当 Web 应用启动后连续作业才能连续运行。
-- 基本和标准模式提供了 Always On 功能，启用该功能可防止 Web 应用进入空闲状态。
+- 基本和标准模式提供了 AlwaysOn 功能，启用该功能可防止 Web 应用进入空闲状态。
 - 仅可以调试连续运行 WebJobs。不支持按计划或按需调试 WebJobs。
-
 
 ## <a name="NextSteps"></a>后续步骤
  
@@ -196,4 +229,4 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0919_2016-->

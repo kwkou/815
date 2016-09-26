@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="03/30/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date=""/>
 
 
 
@@ -30,6 +30,10 @@
 ##Azure SDK for .NET 2.6 发行说明
 
 [Azure SDK for .NET 2.6 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_6/)
+
+##Azure SDK for .NET 2.5.1 发行说明
+
+[Azure SDK for .NET 2.5.1 发行说明](/documentation/articles/app-service-release-notes/)
 
 ##Azure SDK for .NET 2.5 发行说明
 

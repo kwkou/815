@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/27/2016"
-	wacn.date="08/24/2016"/>
+	wacn.date=""/>
 
 # 设置使用 SQL 数据库的 Web 应用
 
@@ -18,7 +18,11 @@
 
 有关创建模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
+有关部署应用的详细信息，请参阅[按可预见的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably/).
+
 有关完整的模板，请参阅[使用 SQL 数据库的 Web 应用的模板](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json)。
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## 将部署的内容
 

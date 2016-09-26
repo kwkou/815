@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中使用 Socket.IO 创建 Node.js 聊天应用程序"
+	pageTitle="在 Azure App Service 中使用 Socket.IO 创建 Node.js 聊天应用程序"
 	description="此教程演示如何在托管于 Azure 上的 node.js Web 应用中使用 socket.io。"
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -10,16 +10,16 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="06/24/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date=""/>
 
 
 
 
-# 在 Azure 中使用 Socket.IO 创建 Node.js 聊天应用程序
+# 在 Azure App Service 中使用 Socket.IO 创建 Node.js 聊天应用程序
 
 Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时通信。还支持回退到使用低版本浏览器的其他传输（如长轮询）。本教程将演示如何以 Azure Web 应用的的形式托管基于 Socket.IO 的聊天应用程序，并说明如何通过 [Azure Redis 缓存](/documentation/services/redis-cache)来[向外扩展](#scale-out)应用程序。有关 Socket.IO 的详细信息，请参阅 [http://socket.io/][socketio]。
 
-> [AZURE.NOTE]此任务中的过程适用于 [Azure Web 应用](/documentation/services/web-sites/)；对于云服务，请参阅<a href="/documentation/articles/cloud-services-nodejs-chat-app-socketio/">在 Azure 云服务中使用 Socket.IO 构建 Node.js 聊天应用程序</a>。
+> [AZURE.NOTE]此任务中的过程适用于 [App Service Web 应用](/documentation/services/web-sites/)；对于云服务，请参阅<a href="/documentation/articles/cloud-services-nodejs-chat-app-socketio/">在 Azure 云服务中使用 Socket.IO 构建 Node.js 聊天应用程序</a>。
 
 
 ## 下载聊天示例
@@ -108,7 +108,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 你的应用现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
 
-## <a name="scale-out"></a>向外扩展
+##<a name="scale-out"></a>向外扩展
 
 Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应用程序实例之间发布消息和事件。尽管有几个适配器可用，[socket.io redis](https://github.com/automattic/socket.io-redis) 适配器可轻松与 Azure Redis 缓存功能一同使用。
 

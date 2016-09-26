@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 上部署 ASP.NET MVC 5 移动 Web 应用" 
-	description="本教程说明如何使用 ASP.NET MVC 5 Web 应用程序中的移动功能将 Web 应用部署到 Azure。" 
+	pageTitle="在 Azure App Service 上部署 ASP.NET MVC 5 移动 Web 应用" 
+	description="本教程说明如何使用 ASP.NET MVC 5 Web 应用程序中的移动功能将 Web 应用部署到 Azure App Service。" 
 	services="app-service" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -10,12 +10,12 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/12/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date=""/>
 
 
-# 在 Azure 上部署 ASP.NET MVC 5 移动 Web 应用
+# 在 Azure App Service 上部署 ASP.NET MVC 5 移动 Web 应用
 
-本教程介绍有关如何生成一个方便移动的 ASP.NET MVC 5 Web 应用并将其部署到 Azure Web 应用的基础知识。对于本教程中，你需要 [Visual Studio Express 2013 for Web][Visual Studio Express 2013] 或者 Visual Studio 专业版（如果你已具有）。你可以使用 [Visual Studio 2015]，但屏幕快照将会有所不同并且你必须使用 ASP.NET 4.x 模板。
+本教程介绍有关如何生成一个方便移动的 ASP.NET MVC 5 Web 应用并将其部署到 Azure App Service 的基础知识。对于本教程中，你需要 [Visual Studio Express 2013 for Web][Visual Studio Express 2013] 或者 Visual Studio 专业版（如果你已具有）。你可以使用 [Visual Studio 2015]，但屏幕快照将会有所不同并且你必须使用 ASP.NET 4.x 模板。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -31,7 +31,7 @@
 
 学习内容：
 
--	如何使用 Visual Studio 2013 将 Web 应用程序直接发布到 Azure 中的 Web 应用。
+-	如何使用 Visual Studio 2013 将 Web 应用程序直接发布到 Azure App Service 中的 Web 应用。
 -   ASP.NET MVC 5 模板如何使用 CSS Bootstrap 框架来改善在移动设备上的显示。
 -   如何创建面向特定移动浏览器（如 iPhone 和 Android）的移动视图
 -   如何创建响应式视图（跨设备响应不同浏览器的视图）
@@ -54,7 +54,7 @@
 -   [初学者项目下载][StarterProject]
 -   [已完成项目下载][CompletedProject]
 
-## <a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Azure Web 应用
+##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Azure Web 应用
 
 1.	下载会议列表应用程序[初学者项目][StarterProject]。
 
@@ -94,7 +94,7 @@
 
 ASP.NET 标记视图已根据屏幕大小缩放，这是 Bootstrap 自动为你调整的。但是，你可以改进此视图，以更好地适应移动浏览器。例如，以便能够轻松读取“日期”列。本教程的随后部分，你将更改 *AllTags* 视图，使其更适合移动应用。
 
-## <a name="bkmk_bootstrap"></a> Bootstrap CSS 框架
+##<a name="bkmk_bootstrap"></a> Bootstrap CSS 框架
 
 Bootstrap 支持是 MVC 5 模板中内置的新功能。你已经看到了它如何立即改进应用程序中的不同视图。例如，当浏览器宽度较小时，顶部导航栏可自动折叠。在桌面浏览器中，尝试调整浏览器窗口的大小，并了解导航栏如何改变其外观。这是 Bootstrap 内置的响应式 Web 设计。
 
@@ -122,7 +122,7 @@ Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用程序上
 
 在下一部分中，你将了解如何提供移动浏览器特定的视图。
 
-## <a name="bkmk_overrideviews"></a> 重写视图、布局和分部视图
+##<a name="bkmk_overrideviews"></a> 重写视图、布局和分部视图
 
 你可以重写一般性移动浏览器、单个移动浏览器或任何特定浏览器的任何视图（包括布局和分部视图）。若要提供移动特定的视图，你可以复制视图文件并在文件名中添加 *.Mobile*。例如，若要创建移动 *Index* 视图，可将 *Views\\Home\\Index.cshtml* 复制到 *Views\\Home\\Index.Mobile.cshtml*。
 
@@ -151,7 +151,7 @@ Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用程序上
 
 ![][AllTagsMobile_LayoutMobileDesktop]
 
-## <a name="bkmk_browserviews"></a> 创建浏览器特定的视图
+##<a name="bkmk_browserviews"></a> 创建浏览器特定的视图
 
 除了移动特定和桌面特定的视图以外，你还可以为单个浏览器创建视图。例如，你可以创建专门针对 iPhone 或 Android 浏览器的视图。在此部分中，你将为 iPhone 浏览器和 iPhone 版本的 *AllTags* 视图创建布局。
 
@@ -215,7 +215,7 @@ Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用程序上
 
 在本部分中，我们已了解如何创建移动布局和视图，以及如何为特定的设备（如 iPhone）创建布局和视图。但是，Bootstrap CSS 框架的主要优势是响应式布局，也就是说，可以跨桌面、电话和平板电脑浏览器应用单个样式表，以创建一致的外观。在下一部分中，你将了解如何利用 Bootstrap 来创建适合移动的视图。
 
-## <a name="bkmk_Improvespeakerslist"></a>改进发言人列表
+##<a name="bkmk_Improvespeakerslist"></a>改进发言人列表
 
 正如你刚才看到的，“发言人”视图虽然可读，但链接字迹小，不易在移动设备上点击。在本部分中，你将使 *AllSpeakers* 视图适合移动应用，显示较大的便于点按的链接，并包含一个搜索框，用于快速查找发言人。
 
@@ -313,7 +313,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 ![][AllSpeakersFixedSearchBySC]
 
-## <a name="bkmk_improvetags"></a> 改进标签列表
+##<a name="bkmk_improvetags"></a> 改进标签列表
 
 与默认“发言人”视图一样，“标签”视图虽然可读，但链接字迹小，不易在移动设备上点击。如果你使用前面所述的代码更改，你可以使用与修复“发言人”视图相同的方式来修复“标签”视图，但是需要在 *Views\\Home\\AllTags.cshtml* 中使用以下 `Html.ActionLink` 方法语法：
 
@@ -332,7 +332,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 >[AZURE.NOTE] 如果你发现移动浏览器仍然使用了原始列表格式，并奇怪正常的 Bootstrap 样式为何会发生这种情况，则需要知道，这是前面创建移动特定视图后产生的效果。但是，现在你要使用 Bootstrap CSS 框架来创建响应式 Web 设计，并继续删除这些移动特定的视图和移动特定的布局视图。完成此操作后，刷新的移动浏览器将显示 Bootstrap 样式。
 
-## <a name="bkmk_improvedates"></a> 改进日期列表
+##<a name="bkmk_improvedates"></a> 改进日期列表
 
 如果你使用前面所述的代码更改，你可以使用与改进“发言人”视图和“标签”视图相同的方式来修复“日期”视图，但是需要在 *Views\\Home\\AllDates.cshtml* 中使用以下 `Html.ActionLink` 方法语法：
 
@@ -381,7 +381,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 ![][AllDatesFixed2Desktop]
 
-## <a name="bkmk_improvesessionstable"></a> 改进 SessionsTable 视图
+##<a name="bkmk_improvesessionstable"></a> 改进 SessionsTable 视图
 
 在此部分中，你将使 *SessionsTable* 视图更适合移动应用。此项更改比前面的更改更宽泛。
 
@@ -442,7 +442,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 在桌面浏览器中，请注意标记现在已显示。此外，你可以看到，应用的 Bootstrap 网格系统会在两列中排列会话项。如果放大浏览器，就会看到，排列方式更改为三列。
 
-## <a name="bkmk_improvesessionbycode"></a> 改进 SessionByCode 视图
+##<a name="bkmk_improvesessionbycode"></a> 改进 SessionByCode 视图
 
 最后，需要修复 *SessionByCode* 视图，使其适合移动应用。
 
@@ -510,7 +510,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 本教程说明如何使用 ASP.NET MVC 5 开发适合移动应用的 Web 应用程序。其中包括：
 
--	将 ASP.NET MVC 5 应用程序部署到 Azure Web 应用
+-	将 ASP.NET MVC 5 应用程序部署到 App Service Web 应用
 -   使用 Bootstrap 在 MVC 5 应用程序中创建响应式 Web 布局
 -   在全局以及针对单个视图重写布局、视图和分部视图
 -   使用 `RequireConsistentDisplayMode` 属性控制布局和分步重写的实施
@@ -544,7 +544,6 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 [AzureSDKVs2013]: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids
 [Fiddler]: http://www.fiddler2.com/fiddler2/
 [EmulatorIE11]: http://msdn.microsoft.com/zh-cn/library/ie/dn255001.aspx
-[EmulatorChrome]: https://developers.google.com/chrome-developer-tools/docs/mobile-emulation
 [EmulatorOpera]: http://www.opera.com/developer/tools/mobile/
 [StarterProject]: http://go.microsoft.com/fwlink/?LinkID=398780&clcid=0x409
 [CompletedProject]: http://go.microsoft.com/fwlink/?LinkID=398781&clcid=0x409

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用" 
-	description="了解如何在 Azure 中创建使用本地 STS 进行身份验证的 ASP.NET MVC 业务线应用程序。本教程将 AD FS 定位为本地 STS。" 
+	pageTitle="在 Azure App Service 中创建使用 AD FS 身份验证的 .NET MVC Web 应用" 
+	description="了解如何在 Azure App Service 中创建使用本地 STS 进行身份验证的 ASP.NET MVC 业务线应用程序。本教程将 AD FS 定位为本地 STS。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -10,22 +10,22 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/26/2016" 
-	wacn.date="04/26/2016"/>
+	wacn.date=""/>
 
-# 在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
+# 在 Azure App Service 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 
-在本文中，你将了解如何在使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者的 [Azure Web 应用](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。当你想要在 Azure 中创建业务线应用程序，而你的组织要求在现场存储所有数据时，可以应用此方案。
+在本文中，你将了解如何在使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者的 [Azure App Service Web 应用](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。当你想要在 Azure App Service 中创建业务线应用程序，而你的组织要求在现场存储所有数据时，可以应用此方案。
 
->[AZURE.NOTE]有关 Azure Web 应用支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)。
+>[AZURE.NOTE]有关 Azure App Service Web 应用支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure App Service 中进行身份验证](/documentation/articles/web-sites-authentication-authorization/)。
 
 <a name="bkmk_build"></a>
 ## 要生成的项目 ##
 
-你将在 Azure 中生成具有以下功能的基本 ASP.NET 应用程序：
+你将在 Azure App Service 中生成具有以下功能的基本 ASP.NET 应用程序：
 
 - 根据 AD FS 对用户进行身份验证
 - 使用 `[Authorize]` 授权用户执行不同操作
-- 用于在 Visual Studio 中进行调试和发布到 Azure Web 应用的静态配置（配置一次，随时调试和发布）  
+- 用于在 Visual Studio 中进行调试和发布到 App Service Web 应用的静态配置（配置一次，随时调试和发布）  
 
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
@@ -106,9 +106,9 @@
 就这么简单。现在，便可以配合 AD FS 运行该示例应用程序。稍后，你仍需要在 AD FS 中配置 RP 与此应用程序间的信任关系。
 
 <a name="bkmk_deploy"></a>
-## 将示例应用程序部署到 Azure Web 应用
+## 将示例应用程序部署到 Azure App Service Web 应用
 
-现在，你需要将应用程序发布到 Azure Web 应用中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得 Web 应用URL，稍后您还可以使用此 URL 来配置 RP 信任。
+现在，你需要将应用程序发布到 App Service Web 应用中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得 Web 应用URL，稍后您还可以使用此 URL 来配置 RP 信任。
 
 1. 右键单击您的项目，然后选择“发布”。
 
@@ -173,7 +173,7 @@
 	-	名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - ASP.NET 用来解冻 `User.Identity.Name`。
 	-	用户主体名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn) - 用于唯一标识组织中的用户。
 	-	将成员资格分组为角色 (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - 可与 `[Authorize(Roles="role1, role2,...")]` 修饰符配合使用来授权控制器/操作。实际上，这可能不是大多数的高性能方法进行角色授权，尤其是在你的 AD 用户定期属于数百个安全组转换为数以百计的 SAML 令牌中的角色声明。另一种方法是在某个特定组发送单个角色声明有条件地根据用户的成员身份。但是，本教程将简化其结构。
-	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
+	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure App Service 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
 
 	> [AZURE.NOTE]需要为应用程序配置的声明类型取决于应用程序的需求。有关 Azure Active Directory 应用程序支持的声明列表（即 RP 信任），请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。
 
@@ -321,12 +321,12 @@
 
 	![](./media/web-sites-dotnet-lob-application-adfs/14-unauthorized-forbidden.png)
 
-7. 再次将应用程序发布到 Azure Web 应用，并测试实时应用程序的行为。
+7. 再次将应用程序发布到 Azure App Service Web 应用，并测试实时应用程序的行为。
 
 <a name="bkmk_data"></a>
 ## 连接到本地数据
 
-使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/home/features/sql-database/)作为 Web 应用的数据层。
+使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure App Service 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/home/features/sql-database/)作为 Web 应用的数据层。
 
 
 <a name="bkmk_resources"></a>
