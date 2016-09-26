@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure Web 应用中使用 Azure CDN" 
-	description="本教程演示如何将 Web 应用部署到 Azure，以便从集成的 Azure CDN 终结点提供内容" 
+	pageTitle="在 Azure App Service 中使用 Azure CDN" 
+	description="本教程演示如何将 Web 应用部署到 Azure App Service，以便从集成的 Azure CDN 终结点提供内容" 
 	services="app-service\web,cdn" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -13,14 +13,14 @@
 	wacn.date="08/23/2016"/>
 
 
-# 在 Azure Web 应用中使用 Azure CDN
+# 在 Azure App Service 中使用 Azure CDN
 
-[Azure Web 应用](/documentation/services/web-sites/)可以集成 [Azure CDN](/home/features/cdn/)，增强 [Azure Web Apps](/documentation/services/web-sites/) 固有的全局缩放功能。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure Web Apps 的性能，在全球显著改善 Web 应用的用户体验。
+[App Service](/documentation/articles/app-service-changes-existing-services/) 可以集成 [Azure CDN](/home/features/cdn/)，增强 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 固有的全局缩放功能。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure Web Apps 的性能，在全球显著改善 Web 应用的用户体验。
 
 将 Web Apps 与 Azure CDN 集成具有以下优点：
 
 - 在 Web 应用的[连续部署](/documentation/articles/app-service-continous-deployment/)过程中集成内容部署（映像、脚本和样式表）
-- 轻松升级 Azure 的 Web 应用中的 NuGet 包，例如 jQuery 或 Bootstrap 版本 
+- 轻松升级 Azure App Service 的 Web 应用中的 NuGet 包，例如 jQuery 或 Bootstrap 版本 
 - 在同一 Visual Studio 界面中管理 Web 应用程序和 CDN 提供的内容
 - 将 ASP.NET 绑定和缩减与 Azure CDN 集成
 
@@ -28,7 +28,7 @@
 
 ## 要生成的项目 ##
 
-你需要在 Visual Studio 中使用默认的 ASP.NET MVC 模板将一个 Web 应用部署到 Azure，需要添加代码来处理集成 Azure CDN 所提供的内容（例如映像、控制器操作结果、默认的 JavaScript 和 CSS 文件），还需要编写代码来配置回退机制以处理 CDN 脱机时提供的捆绑包。
+你需要在 Visual Studio 中使用默认的 ASP.NET MVC 模板将一个 Web 应用部署到 Azure App Service，需要添加代码来处理集成 Azure CDN 所提供的内容（例如映像、控制器操作结果、默认的 JavaScript 和 CSS 文件），还需要编写代码来配置回退机制以处理 CDN 脱机时提供的捆绑包。
 
 ## 所需的项目 ##
 
@@ -42,7 +42,7 @@
 
 ## <a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> 将 Web 应用部署到具有集成 CDN 终结点的 Azure ##
 
-在本部分，你需要将 Visual Studio 2015 中的默认 ASP.NET MVC 应用程序模板部署到 Azure Web 应用，然后将其与新的 CDN 终结点相集成。请根据以下说明进行操作：
+在本部分，你需要将 Visual Studio 2015 中的默认 ASP.NET MVC 应用程序模板部署到 App Service，然后将其与新的 CDN 终结点相集成。请根据以下说明进行操作：
 
 1. 在 Visual Studio 2015 中转到“文件”>“新建”>“项目”>“Web”>“ASP.NET Web 应用程序”，以便从菜单栏创建新的 ASP.NET Web 应用程序。为该应用程序提供一个名称，然后单击“确定”。
 

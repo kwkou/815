@@ -1,65 +1,55 @@
 <properties 
-	pageTitle="使用 FTP 在 Azure 中创建和部署 PHP-MySQL Web 应用" 
+	pageTitle="使用 FTP 在 Azure App Service 中创建和部署 PHP-MySQL Web 应用" 
 	description="本教程演示如何创建在 MySQL 中存储数据的 PHP Web 应用并使用 FTP 部署到 Azure。" 
 	services="app-service\web" 
 	documentationCenter="php" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="06/24/2016"
-	wacn.date="08/23/2016"/>
+	ms.date="08/11/2016"
+	wacn.date=""/>
 
 
-#使用 FTP 在 Azure 中创建和部署 PHP-MySQL Web 应用
+#使用 FTP 在 Azure App Service 中创建和部署 PHP-MySQL Web 应用
 
 本教程演示如何创建 PHP-MySQL Web 应用以及如何使用 FTP 部署该应用。本教程假定你已在计算机上安装 [PHP][install-php]、[MySQL][install-mysql]、Web 服务器和 FTP 客户端。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP/MySQL Web 应用。
  
 你将学习以下内容：
 
-* 如何使用 Azure 经典管理门户创建 Web 应用和 MySQL 数据库。由于 Web 应用默认已启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 Azure 门户创建 Web 应用和 MySQL 数据库。由于 Web 应用已默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 FTP 将应用程序发布到 Azure。
  
 通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 Web 应用。将在 Web 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
 
-![Azure PHP Web 应用][running-app]
-
+![Azure PHP 网站][running-app]
 
 ##创建 Web 应用并设置 FTP 发布
 
 按照以下步骤创建 Web 应用和 MySQL 数据库：
 
-1. 登录到 [Azure 经典管理门户][management-portal]。
-2. 单击该经典管理门户左下的“+ 新建”图标。
+1. 登录到 [Azure 门户][management-portal]。
+2. 单击 Azure 门户左上角的“+ 新建”图标。
 
-	![创建新的 Azure Web 应用][new-website]
+	![创建新的 Azure 网站][new-website]
 
-3. 单击“ Web 应用”，然后单击“自定义创建”。
-	
-	在“URL”中输入值，从“数据库”下拉列表中选择“无数据库”，然后在“区域”下拉列表中选择 Web 应用的数据中心。点击确定新建 Web 应用
+3. 在搜索中键入“Web 应用”，然后单击“Web 应用”。
 
-	![填写 Web 应用详细信息][Website-details]
+4. 单击“创建”。为资源组和新的服务计划输入唯一且有效的应用服务名称。
 
-4. 继续单击“新建” --> “数据服务” --> “MYSQL DATABASE ON AZURE” --> “快速创建”，为你的 Web 应用创建一个 MYSQL 数据库。
+7. 创建 Web 应用后，用户将看到新的应用服务边栏选项卡。
 
-	![数据库][new-mysql-db]
+6. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)，创建一个 MYSQL，然后再“仪表板”为你的 Web 应用找到 MYSQL 的连接字符串。
 
-	创建 Web 应用后，你将看到文本“创建 Web 应用 ‘[SITENAME]’ 成功完成”。现在，您可以启用 Git 发布。
+6. 单击“设置”>“部署凭据”。
 
-5. 单击 Web 应用列表中显示的 Web 应用的名称以打开该 Web 应用的“快速启动”仪表板。
+	![设置部署凭据][set-deployment-credentials]
 
-	![打开 Web 应用仪表板][go-to-dashboard]
+7. 若要启用 FTP 发布，必须提供用户名和密码。保存凭据并记下创建的用户名和密码。
 
-
-6. 在“快速启动”页的底部，单击“重置部署凭据”。
-
-	![重置部署凭据][reset-deployment-credentials]
-
-7. 若要启用 FTP 发布，必须提供用户名和密码。记下你创建的用户名和密码。
-
-	![创建发布凭据][portal-git-username-password]
+	![创建发布凭据][portal-ftp-username-password]
 
 ##在本地生成并测试应用
 
@@ -101,8 +91,8 @@
 		echo "<h3>Table created.</h3>";
 		?>
 
-	> [AZURE.NOTE]
-	> 需要使用本地 MySQL 用户名和密码更新 <code>$user</code> 和 <code>$pwd</code> 的值。
+	> [AZURE.NOTE] 
+	需要使用本地 MySQL 用户名和密码更新 <code>$user</code> 和 <code>$pwd</code> 的值。
 
 4. 打开 Web 浏览器并浏览到 [http://localhost/registration/createtable.php][localhost-createtable]。这将在数据库中创建 `registration_tbl` 表。
 
@@ -156,7 +146,7 @@
 		}
 
 	> [AZURE.NOTE]
-	> 同样，需要使用本地 MySQL 用户名和密码更新 <code>$user</code> 和 <code>$pwd</code> 的值。
+	同样，需要使用本地 MySQL 用户名和密码更新 <code>$user</code> 和 <code>$pwd</code> 的值。
 
 7. 在数据库连接代码后面添加用于将注册信息插入数据库的代码。
 
@@ -205,17 +195,37 @@
 
 ##获取 MySQL 和 FTP 连接信息
 
-若要连接到正在 Azure 中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
+若要连接到正在 Web Apps 中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
 
-1. 点击打开你的 MYSQL 服务器，进入“仪表板”页面，在“速览”下可以查看你的服务器地址以及端口。
+1. 在应用服务 Web 应用边栏选项卡中，单击资源组链接：
 
-	![获取数据库连接信息][connection-string-info]
+	![选择资源组][select-resourcegroup]
+
+1. 在资源组中单击数据库：
+
+	![选择数据库][select-database]
+
+2. 在数据库摘要中，选择“设置”>“属性”。
+
+    ![选择属性][select-properties]
 	
-2. 在“账户”页面可以查看各个账户名，也可以重置其密码。
+2. 记下 `Database`、`Host`、`User Id` 和 `Password` 的值。
 
-3. 在“数据库”页面可以查看这个服务器下的数据库。
+    ![记下属性][note-properties]
 
-	于是 Data Source 为 tcp:<your MYSQL server name\>.database.chinacloudapi.cn,<port\>
+3. 从 Web 应用的仪表板中，单击页面右下角的“下载发布配置文件”链接：
+
+	![下载发布配置文件][download-publish-profile]
+
+4. 在 XML 编辑器中打开 `.publishsettings` 文件。
+
+3. 查找带有 `publishMethod="FTP"` 的 `<publishProfile >` 元素，该元素与以下内容类似：
+
+		<publishProfile publishMethod="FTP" publishUrl="ftp://[mysite].chinacloudsites.cn/site/wwwroot" ftpPassiveMode="True" userName="[username]" userPWD="[password]" destinationAppUrl="http://[name].chinacloudsites.cn" 
+			...
+		</publishProfile>
+	
+记下 `publishUrl`、`userName` 和 `userPWD` 属性。
 
 ##发布应用
 
@@ -231,7 +241,7 @@
 
 1. 打开选择的 FTP 客户端。
 
-2. 将上文中记下的 `publishUrl` 属性中的*主机名部分*输入到 FTP 客户端。
+2. 将上文中记下的 `publishUrl` 属性中的 *主机名部分* 输入到 FTP 客户端。
 
 3. 将上面记下的 `userName` 和 `userPWD` 属性按原样输入到 FTP 客户端。
 
@@ -240,20 +250,21 @@
 连接后，您将能够根据需要上载和下载文件。确保将文件上载到根目录 `/site/wwwroot`。
 
 上载 `index.php` 和 `createtable.php` 之后，浏览到 **http://[site name].chinacloudsites.cn/createtable.php** 以创建用于应用程序的 MySQL 表，然后浏览到 **http://[site name].chinacloudsites.cn/index.php** 以开始使用应用程序。
+ 
+## 后续步骤
 
-[go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
-[reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
-[portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
+有关详细信息，请参阅 [PHP 开发中心](/develop/php/)。
+
 [install-php]: http://www.php.net/manual/en/install.php
 [install-mysql]: http://dev.mysql.com/doc/refman/5.6/en/installing.html
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [localhost-createtable]: http://localhost/tasklist/createtable.php
 [localhost-index]: http://localhost/tasklist/index.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-ftp/running_app_2.png
-[new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website2.jpg
+[new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website2.png
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/create_web_mysql.png
 [website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/website_details.jpg
-[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/new_mysql_db.jpg
+[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/create_db.png
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-ftp/select_webapp.png
 [set-deployment-credentials]: ./media/web-sites-php-mysql-deploy-use-ftp/set_credentials.png
 [portal-ftp-username-password]: ./media/web-sites-php-mysql-deploy-use-ftp/save_credentials.png
@@ -265,8 +276,8 @@
 [note-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/note-properties.png
 
 [connection-string-info]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/connection_string_info.png
-[management-portal]: https://manage.windowsazure.cn
+[management-portal]: https://portal.azure.cn
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0919_2016-->

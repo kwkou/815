@@ -35,7 +35,7 @@
 - 安装 [Composer](https://getcomposer.org/download/)
 - 安装 [Azure CLI](/documentation/articles/xplat-cli-install/)
 - 安装 [Git](http://www.git-scm.com/downloads)
-- 获取 Azure 帐户。如果没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)，或者[激活 Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+- 获取 Azure 帐户。如果没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 在你的开发计算机上创建一个 PHP (Laravel) 应用
 
@@ -76,10 +76,11 @@
 
 借助 Azure CLI，可以使用单行命令在 Azure App Service 中创建 Web 应用并针对 Git 部署对其进行设置。让我们执行此操作。
 
-3. 如下所示登录到 Azure：
+3. 如下，跳转到 ASM 模式，所示登录到 Azure：
 
-        azure login
-    
+        azure config mode asm
+        azure login -e AzureChinaCloud
+
     按照帮助消息的提示继续此登录过程。
     
     ![登录 Azure 以便将 PHP (Laravel) 应用部署到 Azure](./media/app-service-web-php-get-started/log-in-to-azure-cli.png)

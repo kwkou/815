@@ -1,6 +1,6 @@
 <properties
 	pageTitle="将 Web 应用资源移到另一个资源组"
-	description="介绍将 Web 应用从一个资源组移到另一个资源组的方案。"
+	description="介绍将 Web 应用和 App Service 从一个资源组移到另一个资源组的方案。"
 	services="app-service"
 	documentationCenter=""
 	authors="ZainRizvi"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/04/2016"
-	wacn.date="03/03/2016"/>
+	wacn.date=""/>
 	
 # 受支持的迁移配置
 

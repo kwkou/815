@@ -9,7 +9,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="05/31/2016"
-	wacn.date="07/28/2016"/>
+	wacn.date=""/>
 
 # 使用 MSDeploy、自定义主机名和 SSL 证书部署 Web 应用
 
@@ -118,7 +118,7 @@
 
 此 **packageUri** 使用的存储帐户 URI 指向包 zip 所要上载到的存储帐户。当你部署模板时，Azure 资源管理器会利用[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)从存储帐户将包提取到本地。此过程将会通过一个 PowerShell 脚本自动化，该脚本将上载包，调用 Azure 管理 API 以创建所需的密钥，然后将这些密钥作为参数传入模板（ *\_artifactsLocation* 和 *\_artifactsLocationSasToken* ）。你需要针对存储容器下包所上载到的文件夹和文件名定义参数。
 
-接下来，需要加入其他嵌套资源，以设置主机名绑定来利用自定义域。首先，需要确保拥有该主机名，然后对它进行设置，使 Azure 能够验证你是否拥有它 - 请参阅[在 Azure Web 应用中配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。完成此操作后，可以将以下内容添加到模板中的 Microsoft.Web/sites 资源部分下：
+接下来，需要加入其他嵌套资源，以设置主机名绑定来利用自定义域。首先，需要确保拥有该主机名，然后对它进行设置，使 Azure 能够验证你是否拥有它 - 请参阅[在 Azure App Service 中配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。完成此操作后，可以将以下内容添加到模板中的 Microsoft.Web/sites 资源部分下：
 
 	{
 		"apiVersion": "2015-08-01",

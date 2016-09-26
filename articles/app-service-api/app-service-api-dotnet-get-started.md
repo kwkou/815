@@ -207,65 +207,11 @@ Swashbuckle 可用于任何 ASP.NET Web API 项目。如果要将 Swagger 元数
 
 	![在 Visual Studio 中单击“发布”](./media/app-service-api-dotnet-get-started/pubinmenu.png)
 
-3.  在“发布 Web”向导的“配置文件”步骤中，单击“Azure 应用服务”。
+2. 选择“导入”.
 
-	![在“发布 Web”中单击 Azure 应用服务](./media/app-service-api-dotnet-get-started/selectappservice.png)
+3. 如果你还没下载“发布配置文件”，请到 [Azure 门户预览](https://portal.azure.cn) 下载。如果你还没新建 web 应用，新建一个。在你的 web 应用的选项卡，点击 “... 更多”>“得到发布配置文件”。
 
-4. 如果尚未登录，请登录到 Azure 帐户；如果凭据已过期，请刷新凭据。
-
-4. 在“应用服务”对话框中，选择要使用的 Azure **订阅**，然后单击“添加”。
-
-	![在“应用服务”对话框中单击“新建”](./media/app-service-api-dotnet-get-started/clicknew.png)
-
-	此时将显示“创建应用服务”对话框的“托管”选项卡。
-
-	由于部署的是已安装 Swashbuckle 的 Web API 项目，因此 Visual Studio 假设要创建 API 应用。“API 应用名称”标题指出了这一点，另外，从“更改类型”下拉列表已设置为“API 应用”也能看出这一点。
-
-	![“应用服务”对话框中的应用类型](./media/app-service-api-dotnet-get-started/apptype.png)
-
-4. 输入在 *chinacloudsites.cn* 域中唯一的 **API 应用名称**。可以接受 Visual Studio 建议的默认名称。
-
-	如果输入的名称已被使用，右侧会出现红色感叹号。
-
-	API 应用的 URL 为 `{API app name}.chinacloudsites.cn`。
-
-6. 在“资源组”下拉列表中单击“新建”，然后输入“ToDoListGroup”或其他喜好的名称。
-
-	资源组是 Azure 资源的集合，例如 API 应用、数据库、VM 等等。在本教程中，最好创建新的资源组，因为这样可以通过一个步骤轻松删除针对本教程创建的所有 Azure 资源。
-
-	使用此框可以选择现有[资源组](/documentation/articles/resource-group-overview/)，或通过键入与订阅中任何现有资源组不同的名称，来创建新资源组。
-
-4. 单击“应用服务计划”下拉列表旁边的“新建”按钮。
-
-	屏幕截图显示了“API 应用名称”、“订阅”和“资源组”的示例值 -- 用户的值会有所不同。
-
-	![“创建应用服务”对话框](./media/app-service-api-dotnet-get-started/createas.png)
-
-	以下步骤为新资源组创建应用服务计划。应用服务计划指定 API 应用运行所在的计算资源。例如，如果你选择免费层，则 API 应用程序将在共享 VM 上运行；如果你选择某些付费层，则它在专用 VM 上运行。有关应用服务计划的信息，请参阅 [App Service plans overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)（应用服务计划概述）。
-
-5. 在“配置应用服务计划”对话框中，输入“ToDoListPlan”或其他喜好的名称。
-
-5. 在“位置”下拉列表中，选择最靠近的位置。
-
-	此设置指定你的应用将在哪个 Azure 数据中心运行。选择最靠近的位置，尽量减少[延迟](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090)。
-
-5. 在“大小”下拉列表中，单击“免费”。
-
-	对于本教程，免费定价层即可提供足够的性能。
-
-6. 在“配置应用服务计划”对话框中，单击“确定”。
-
-	![在“配置应用服务计划”中单击“确定”](./media/app-service-api-dotnet-get-started/configasp.png)
-
-7. 在“创建应用服务”对话框中，单击“创建”。
-
-	![在“创建应用服务”对话框中单击“创建”](./media/app-service-api-dotnet-get-started/clickcreate.png)
-
-	Visual Studio 将创建 API 应用，以及包含 API 应用全部所需设置的发布配置文件。然后，将打开“发布 Web”向导来部署项目。
-
-	打开的“发布 Web”向导最初显示“连接”选项卡（如下所示）。
-
-	在“连接”选项卡上，“服务器”和“站点名称”设置指向 API 应用。“用户名”和“密码”是 Azure 创建的部署凭据。部署后，Visual Studio 将在浏览器中打开**目标 URL**（这是**目标 URL** 的唯一用途）。
+4. 选在之前一步下载的“发布配置文件”，然后点击“确认”。
 
 8. 单击“下一步”。
 
@@ -339,21 +285,11 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 
 	![在 Visual Studio 中添加 REST API 客户端](./media/app-service-api-dotnet-get-started/codegenmenu.png)
 
-3. 在“添加 REST API 客户端”对话框中，依次单击“Swagger URL”和“选择 Azure 资产”。
+3. 在“添加 REST API 客户端”对话框中，依次单击“选择现有的 Swagger 元数据文件”和“浏览...”。
 
-	![选择 Azure 资产](./media/app-service-api-dotnet-get-started/codegenbrowse.png)
+4. 打开一个浏览器，从 `https://{your data tier API app name}.chinacloudsites.cn/swagger/docs/v1` 下载你的 Swagger 元数据文件
 
-8. 在“应用服务”对话框中，展开本教程中使用的资源组，选择 API 应用，然后单击“确定”。
-
-	![选择用于生成代码的 API 应用](./media/app-service-api-dotnet-get-started/codegenselect.png)
-
-	可以看到，在返回“添加 REST API 客户端”对话框时，文本框中已填充前面在门户中看到的 API 定义 URL 值。
-
-	![API 定义 URL](./media/app-service-api-dotnet-get-started/codegenurlplugged.png)
-
-	>[AZURE.TIP] 获取用于生成代码的元数据的另一种方法是直接输入 URL，而无需通过浏览对话框。或者，如果要在部署到 Azure 之前生成客户端代码，可以在本地运行 Web API 项目，转到可提供 Swagger JSON 文件的 URL，保存文件，然后使用“选择现有的 Swagger 元数据文件”选项。
-
-9. 在“添加 REST API 客户端”对话框中，单击“确定”。
+9. 在“添加 REST API 客户端”对话框中，选择刚刚下载的 json 文件，然后单击“确定”。
 
 	Visual Studio 将创建以 API 应用命名的文件夹，并生成客户端类。
 
@@ -406,21 +342,11 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 
 	![在 Visual Studio 中单击“发布”](./media/app-service-api-dotnet-get-started/pubinmenu2.png)
 
-3.  在“发布 Web”向导的“配置文件”选项卡中，单击“Azure 应用服务”。
+2. 选择“导入”.
 
-5. 在“应用服务”对话框中，单击“新建”。
+3. 如果你还没下载“发布配置文件”，请到 [Azure 门户预览](https://portal.azure.cn) 下载。如果你还没新建 web 应用，新建一个。在你的 web 应用的选项卡，点击 “... 更多”>“得到发布配置文件”。
 
-3. 在“创建应用服务”对话框的“托管”选项卡中，接受默认的“API 应用名称”或者输入在 *chinacloudsites.cn* 域中唯一的名称。
-
-5. 选择一直使用的 Azure **订阅**。
-
-6. 在“资源组”下拉列表中，选择前面创建的资源组。
-
-4. 在“应用服务计划”下拉列表中，选择前面创建的同一个计划。默认已填充了该值。
-
-7. 单击“创建”。
-
-	Visual Studio 将创建 API 应用、创建其发布配置文件，并显示“发布 Web”向导的“连接”步骤。
+4. 选在之前一步下载的“发布配置文件”，然后点击“确认”。
 
 3.  在“发布 Web”向导的“连接”步骤中，单击“发布”。
 

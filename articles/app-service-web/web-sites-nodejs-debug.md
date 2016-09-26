@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何在 Azure 中调试 Node.js Web 应用"
-	description="了解如何在 Azure 中调试 Node.js Web 应用。"
+	pageTitle="如何在 Azure App Service 中调试 Node.js Web 应用"
+	description="了解如何在 Azure App Service 中调试 Node.js Web 应用。"
 	tags="azure-portal"
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -11,18 +11,18 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="06/24/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date=""/>
 
-# 如何在 Azure 中调试 Node.js Web 应用
+# 如何在 Azure App Service 中调试 Node.js Web 应用
 
-Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/documentation/services/web-sites/) Web Apps 中的 Node.js 应用程序。在本文中，您将学习如何启用 stdout 和 stderr 的日志记录、在浏览器中显示错误信息以及如何下载和查看日志文件。
+Azure 提供内置的诊断以帮助调试托管在 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) Web Apps 中的 Node.js 应用程序。在本文中，您将学习如何启用 stdout 和 stderr 的日志记录、在浏览器中显示错误信息以及如何下载和查看日志文件。
 
 [IISNode] 提供对在 Azure 上托管的 Node.js 应用程序的诊断。尽管本文讨论的是用于收集诊断信息的最常见设置，但并没有完整介绍如何使用 IISNode。有关使用 IISNode 的详细信息，请参阅 GitHub 上的 [IISNode 自述文件]。
 
 <a id="enablelogging"></a>
 ## 启用日志记录
 
-默认情况下，Azure Web 应用只捕获与部署有关的诊断信息，例如，当你使用 Git 部署 Web 应用时。如果你在部署期间具有问题，例如安装在 **package.json** 中引用的模块时失败，或者如果你在使用自定义部署脚本，则该信息将很有用。
+默认情况下，App Service Web 应用只捕获与部署有关的诊断信息，例如，当你使用 Git 部署 Web 应用时。如果你在部署期间具有问题，例如安装在 **package.json** 中引用的模块时失败，或者如果你在使用自定义部署脚本，则该信息将很有用。
 
 若要启用 stdout 和 stderr 流的日志记录，你必须在你的 Node.js 应用程序的根创建一个 **IISNode.yml** 文件并且添加以下内容：
 
@@ -42,7 +42,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 
 > [AZURE.NOTE] 如果你的 Web 应用是使用 Azure 命令行工具或 Azure PowerShell Cmdlet 创建的，将自动创建一个默认的 **IISNode.yml** 文件。
 
-若要重新启动 Web 应用，请在 [Azure 经典管理门户](https://manage.windowsazure.cn)中选择该 Web 应用，然后单击“重新启动”按钮：
+若要重新启动 Web 应用，请在 [Azure 门户](https://portal.azure.cn)中选择该 Web 应用，然后单击“重新启动”按钮：
 
 ![重新启动按钮][restart-button]
 
@@ -63,7 +63,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 
 ###FTP
 
-若要通过 FTP 访问诊断信息，请访问 [Azure 经典管理门户](https://manage.windowsazure.cn)，选择你的 Web 应用，然后选择“仪表板”。在“快速链接”部分中，“FTP 诊断日志”和“FTPS 诊断日志”链接提供使用 FTP 协议对日志的访问。
+若要通过 FTP 访问诊断信息，请访问 [Azure 门户](https://portal.azure.cn)，选择你的 Web 应用，然后选择“仪表板”。在“快速链接”部分中，“FTP 诊断日志”和“FTPS 诊断日志”链接提供使用 FTP 协议对日志的访问。
 
 > [AZURE.NOTE] 如果你以前没有为 FTP 或部署配置用户名和密码，则可以通过选择“设置部署凭据”从“快速启动”管理页来执行此配置。
 
@@ -100,7 +100,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure Web 应用](/document
 <a id="nextsteps"></a>
 ## 后续步骤
 
-在本文中，你学习了如何启用和访问 Azure 的诊断信息。尽管此信息对于理解你的应用程序发生的问题很有用，但它可能会指出与你正使用的模块有关的问题或者 Azure Web Apps 所用的 Node.js 版本不同于在你的部署环境中使用的版本。
+在本文中，你学习了如何启用和访问 Azure 的诊断信息。尽管此信息对于理解你的应用程序发生的问题很有用，但它可能会指出与你正使用的模块有关的问题或者 App Service Web Apps 所用的 Node.js 版本不同于在你的部署环境中使用的版本。
 
 有关使用 Azure 上的模块的信息，请参阅[将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)。
 
