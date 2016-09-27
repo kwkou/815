@@ -56,8 +56,7 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 12 | [为 Azure 上的 SQL Server Stretch Database 启用透明数据加密 (TDE)](/documentation/articles/sql-server-stretch-database-encryption-tde/) | 为 Azure 上的 SQL Server Stretch Database 启用透明数据加密 (TDE) |
-| 13 | [为 Azure 上的 SQL Server Stretch Database 启用透明数据加密 (TDE)](/documentation/articles/sql-server-stretch-database-tde-tsql/) | 为 Azure TSQL 上的 SQL Server Stretch Database 启用透明数据加密 (TDE) |
+| 12 | [为 Azure 上的 SQL Server Stretch Database 启用透明数据加密 (TDE)](/documentation/articles/sql-server-stretch-database-tde-tsql/) | 为 Azure TSQL 上的 SQL Server Stretch Database 启用透明数据加密 (TDE) |
 
 
 
@@ -65,7 +64,7 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 14 | [备份启用了延伸的数据库](/documentation/articles/sql-server-stretch-database-backup/) | 了解如何备份启用了 Stretch 的数据库。 |
-| 15 | [还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-restore/) | 了解如何还原启用了 Stretch 的数据库。 |
+| 13 | [备份启用了延伸的数据库](/documentation/articles/sql-server-stretch-database-backup/) | 了解如何备份启用了 Stretch 的数据库。 |
+| 14 | [还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-restore/) | 了解如何还原启用了 Stretch 的数据库。 |
 
 <!---HONumber=Mooncake_0829_2016-->
