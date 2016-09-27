@@ -248,7 +248,7 @@ PublishSettings 文件将下载到计算机。此文件通常名为 _站点名�
 
 有关详细信息，请查看 [Notification Hubs]（通知中心）文档。
 
-> [AZURE.TIP] [Azure 门户预览]中的通知中心管理功能仍以预览版提供。仍可使用 [Azure 经典管理门户]管理所有通知中心。
+> [AZURE.TIP] 在[Azure 门户预览]中的通知中心管理功能仍以预览版提供。仍可使用 [Azure 经典管理门户]管理所有通知中心。
 
 ### <a name="legacy-push"></a>传统推送设置
 

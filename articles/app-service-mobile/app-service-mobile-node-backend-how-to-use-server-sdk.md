@@ -631,7 +631,7 @@ Swagger 终结点将位于 http://_yoursite_.chinacloudsites.cn/swagger。可以
 
 如果希望只在本地进行开发时才使用 Swagger 支持，则也可以将 Swagger 选项添加到 `azureMobile.js` 文件中。
 
-## <a name="push">推送通知
+## <a name="push"></a>推送通知
 
 移动应用与 Azure 通知中心集成，允许跨所有主要平台向数百万台设备发送有针对性的推送通知。使用通知中心可将推送通知发送到 iOS、Android 和 Windows 设备。若要详细了解通知中心的所有功能，请参阅 [Notification Hubs Overview](/documentation/articles/notification-hubs-push-notification-overview/)（通知中心概述）。
 

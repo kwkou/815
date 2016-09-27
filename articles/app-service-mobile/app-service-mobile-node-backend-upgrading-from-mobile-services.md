@@ -155,7 +155,6 @@ Azure 移动应用允许在服务中配置 Azure Active Directory 和 Microsoft 
 
 <!-- URLs. -->
 
-[Azure portal]: https://portal.azure.cn/
 [Azure Classic Management Portal]: https://manage.windowsazure.cn/
 [What are Mobile Apps?]: /documentation/articles/app-service-mobile-value-prop/
 [I already use web sites and mobile services - how does App Service help me?]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services
@@ -173,7 +172,7 @@ Azure 移动应用允许在服务中配置 Azure Active Directory 和 Microsoft 
 [Authentication Concepts]: /documentation/articles/app-service-authentication-overview/
 [Authentication Quickstart]: /documentation/articles/app-service-mobile-auth/
 
-[Azure 门户]: https://portal.azure.cn/
+[Azure 门户预览]: https://portal.azure.cn/
 [OData]: http://www.odata.org
 [Promise]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [basicapp sample on GitHub]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples/basic-app
