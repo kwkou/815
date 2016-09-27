@@ -14,11 +14,11 @@
 
 # 在生产环境中 Web Apps 的测试入门
 
-在生产环境中测试，或者使用实时客户流量实测 Web 应用，是应用开发人员逐渐集成到其[灵活开发](https://en.wikipedia.org/wiki/Agile_software_development)方法的测试策略。它可让你在生产环境中使用实际用户流量测试应用的质量，而不是在测试环境中以综合数据进行测试。通过将新的应用公开给实际用户，得知应用在部署之后可能发生的实际问题。你可以根据实际用户流量的数量、速度和变化来确认应用更新的功能、性能和价值，这些都是在测试环境中无法测得的。
+在生产环境中测试，或者使用实时客户流量实测 Web 应用，是应用开发人员逐渐集成到其[敏捷开发](https://en.wikipedia.org/wiki/Agile_software_development)方法的测试策略。它可让你在生产环境中使用实际用户流量测试应用的质量，而不是在测试环境中以综合数据进行测试。通过将新的应用公开给实际用户，得知应用在部署之后可能发生的实际问题。你可以根据实际用户流量的数量、速度和变化来确认应用更新的功能、性能和价值，这些都是在测试环境中无法测得的。
 
 ## App Service Web Apps 中的流量路由
 
-通过 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的流量路由功能，可以将部分实时用户流量定向到一个或多个[部署槽](/documentation/articles/web-sites-staged-publishing/)，然后使用 [Azure Application Insights](/home/features/application-insights/) 或 [Azure HDInsight](/home/features/hdinsight/) 来分析应用，或使用第三方工具（例如 [New Relic](/marketplace/partners/newrelic/newrelic/)）来验证更改。例如，可以使用 App Service 实现以下方案：
+通过 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的流量路由功能，可以将部分实时用户流量定向到一个或多个[部署槽](/documentation/articles/web-sites-staged-publishing/)，然后使用 Azure Application Insights 或 [Azure HDInsight](/home/features/hdinsight/) 来分析应用，或使用第三方工具来验证更改。例如，可以使用 App Service 实现以下方案：
 
 - 在部署到整个站点之前找出更新中的功能错误或性能瓶颈
 - 对 beta 应用测量可用性度量值，以执行更改的“受控试验”。

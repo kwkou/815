@@ -29,13 +29,13 @@
 
 你可以将在此处了解的知识应用到部署到 Azure 的其他 PHP Web Apps。
 
-## 先决条件
+## <a name="Prerequisites"></a>先决条件
 
 - 安装 [PHP 5.6.x](http://php.net/downloads.php)（支持 PHP 7 的为 beta 版）
 - 安装 [Composer](https://getcomposer.org/download/)
 - 安装 [Azure CLI](/documentation/articles/xplat-cli-install/)
 - 安装 [Git](http://www.git-scm.com/downloads)
-- 获取 Azure 帐户。如果没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+- 获取 Azure 帐户。如果没有帐户，可以[注册试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 在你的开发计算机上创建一个 PHP (Laravel) 应用
 
@@ -234,10 +234,9 @@
     
 ## 后续步骤
 
-通过[在 Azure 中创建 MySQL 数据库](/documentation/articles/store-php-create-mysql-database/)了解如何将数据添加到应用程序。另外，你可以查看 Azure 中以下更加有用的 PHP 链接：
+你可以查看 Azure 中以下更加有用的 PHP 链接：
 
 - [PHP 开发人员中心](/develop/php/)。
-- [通过 Azure 应用商店创建 Web 应用](/documentation/articles/app-service-web-create-web-app-from-marketplace/)
 - [在 Azure App Service Web Apps 中配置 PHP](/documentation/articles/web-sites-php-configure/)
 - [在 Azure App Service 中将 WordPress 转换为 Multisite](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
 - [Azure App Service 上的企业级 WordPress](/documentation/articles/web-sites-php-enterprise-wordpress/)

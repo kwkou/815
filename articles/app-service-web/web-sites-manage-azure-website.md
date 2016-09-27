@@ -60,13 +60,12 @@
  
 ### 备份
 
-- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup/)。观看[本视频](https://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/)了解更多关于备份的信息。
+- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup/)。
 - 了解 Azure SQL 数据库的[数据库恢复](/documentation/articles/sql-database-business-continuity/)选项。
 
 ### 故障排除
 
-- 如果出现问题，您可以使用云中的诊断日志和实时调试[在 Visual Studio 中排除故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug)。
-- 在 Visual Studio 之外还提供了不同的诊断日志收集方法。请参阅[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)。
+- 不同的诊断日志收集方法。请参阅[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)。
 - 关于 Node.js 应用程序，请参阅[如何在 Azure App Service 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)。
 
 ### 还原数据
@@ -80,11 +79,6 @@
 
 请考虑使用[分阶段部署](/documentation/articles/web-sites-staged-publishing/)。该选项可支持您向与生产部署并排运行的分阶段部署发布更新。
 
-如果使用 Visual Studio Team Services，则可以通过源控件设置持续部署：
-
-- [使用 Team Foundation 版本控制 (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso/)
-- [使用 Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git/)
- 
 <!-- Anchors. -->
 
 [Before you deploy your site to production]: #before-you-deploy-your-site-to-production

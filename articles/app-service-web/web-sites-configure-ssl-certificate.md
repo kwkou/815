@@ -491,7 +491,7 @@
 - [Azure 网站中解锁的设置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)
 - [在 Azure App Service 中配置 Web Apps](/documentation/articles/web-sites-configure/)
-- [Azure 管理门户](https://manage.windowsazure.cn)
+- [Azure 经典管理门户](https://manage.windowsazure.cn)
 
 [customdomain]: /documentation/articles/web-sites-custom-domain-name/
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx

@@ -48,6 +48,4 @@
 
 有关指导如何创建、部署和使用 API 应用的分步教程，请参阅 [Get started with API Apps in Azure App Service](/documentation/articles/app-service-api-dotnet-get-started/)（Azure 应用服务中的 API 应用入门）。
 
-如果将 Azure API 管理与 API 应用配合使用，可以利用 Swagger 元数据将 API 导入 API 管理。有关详细信息，请参阅 [How to import the definition of an API with operations in Azure API Management](/documentation/articles/api-management-howto-import-api/)（如何通过 Azure API 管理中的操作导入 API 的定义）。
-
 <!---HONumber=Mooncake_0919_2016-->

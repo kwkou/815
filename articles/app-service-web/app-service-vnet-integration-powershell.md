@@ -18,7 +18,7 @@
 
 在 Azure App Service 中，可以将应用（Web、移动或 API）连接到订阅中的 Azure 虚拟网络 (VNet)。此功能称为 VNet 集成。
 
-VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典部署模型或 Azure Resource Manager 部署模型部署的虚拟网络集成。如果想要详细了解该功能，请参阅[将应用与 Azure 虚拟网络集成](/documentation/articles/web-sites-integrate-with-vnet/)。
+VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典部署模型或 Azure Resource Manager 部署模型部署的虚拟网络集成。
 
 本文不会介绍如何使用 UI，而是介绍如何使用 PowerShell 来启用集成。由于每种部署模型使用的命令不同，本文中针对每种部署模型各添加了一个部分。
 

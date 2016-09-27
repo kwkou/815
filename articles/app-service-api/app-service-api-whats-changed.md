@@ -70,7 +70,7 @@ Web 应用、移动应用和 API 应用中各自提供了 API 定义边栏选项
 
 或者，可以从管理门户手动导入发布配置文件来启用发布。但是，云资源管理器、代码生成和 API 应用选择/创建功能需要 SDK 2.8.1 或更高版本。
 
-## 迁移现有 API 应用
+## <a name="migrating-existing-api-apps"></a>迁移现有 API 应用
 如果将自定义 API 部署到了以前的 API 应用预览版，请在 2015 年 12 月 31 日之前迁移到新的 API 应用模型。由于旧模型和新模型都基于应用服务中托管的 Web API，因此大多数现有代码可重复使用。
 
 ### 托管和重新部署
@@ -108,6 +108,6 @@ Web 应用、移动应用和 API 应用中各自提供了 API 定义边栏选项
 有关详细信息，请参阅 [API 应用文档部分](/documentation/services/app-service/api/)中的文章。这些文章已经过更新，反映 API 应用的新模型。此外，请务必访问论坛，获取其他详细信息或迁移指导：
 
 - [MSDN 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureAPIApps)
-- [堆栈溢出](http://stackoverflow.com/questions/tagged/azure-api-apps)
+- [CSDN 论坛](http://azure.csdn.net/)
 
 <!---HONumber=Mooncake_0919_2016-->
