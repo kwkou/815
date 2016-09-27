@@ -33,9 +33,9 @@
 
 本部分提供适用于任何 API 应用的一般说明。有关待办事项列表 .NET 示例应用程序的特定步骤，请转到[继续学习 .NET 入门教程](#tutorialstart)。
 
-1. 在 [Azure 门户](https://portal.azure.cn/)中，导航到要保护的 API 应用的“设置”边栏选项卡，找到“功能”部分，然后单击“身份验证/授权”。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)中，导航到要保护的 API 应用的“设置”边栏选项卡，找到“功能”部分，然后单击“身份验证/授权”。
 
-	![Azure 门户中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
+	![Azure 门户预览中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
 
 3. 在“身份验证/授权”边栏选项卡中，单击“打开”。
 
@@ -51,7 +51,7 @@
 
 	下图显示要求所有调用方必须经过 Azure AD 身份验证的选项。
  
-	![Azure 门户中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
+	![Azure 门户预览中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
 
 	选择身份验证提供程序后，门户将显示该提供程序的配置边栏选项卡。
 
@@ -75,7 +75,7 @@
 
 >[AZURE.NOTE] 执行以下步骤可以建立学习起点，就好像已完成前两篇教程一样，但只有一点例外：Visual Studio 不知道每个项目已部署到哪些 Web 应用或 API 应用。这意味着，无法在本教程中获得有关如何部署到正确目标的确切说明。如果不太了解自行部署的步骤，最好遵循系列教程中的[第一篇教程](/documentation/articles/app-service-api-dotnet-get-started/)，而不要从此自动化部署过程开始。
 
-1. 确保满足[第一篇教程](/documentation/articles/app-service-api-dotnet-get-started/)中所列的所有先决条件。除了所列的先决条件以外，这些身份验证教程还假设读者在 Visual Studio 和 Azure 门户中用过应用服务 Web 应用和 API 应用。
+1. 确保满足[第一篇教程](/documentation/articles/app-service-api-dotnet-get-started/)中所列的所有先决条件。除了所列的先决条件以外，这些身份验证教程还假设读者在 Visual Studio 和 Azure 门户预览中用过应用服务 Web 应用和 API 应用。
 
 2. 在[待办事项列表示例存储库自述文件](https://github.com/azure-samples/app-service-api-dotnet-todo-list/blob/master/readme.md)中单击“部署到 Azure”按钮，部署 API 应用和 Web 应用。记下创建的 Azure 资源组，因为稍后可以用它来查找 Web 应用和 API 应用名称。
  
@@ -93,9 +93,9 @@
  
 ### 为中间层 API 应用配置身份验证
 
-1. 在 [Azure 门户](https://portal.azure.cn/)中，导航到要为 ToDoListAPI 项目创建的 API 应用的“设置”边栏选项卡，找到“功能”部分，然后单击“身份验证/授权”。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)中，导航到要为 ToDoListAPI 项目创建的 API 应用的“设置”边栏选项卡，找到“功能”部分，然后单击“身份验证/授权”。
 
-	![Azure 门户中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
+	![Azure 门户预览中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
 
 3. 在“身份验证/授权”边栏选项卡中，单击“打开”。
 
@@ -105,11 +105,11 @@
 
 5. 在“身份验证提供程序”下面，单击“Azure Active Directory”。
 
-	![Azure 门户中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
+	![Azure 门户预览中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
 
 6. 在“Azure Active Directory 设置”边栏选项卡中单击“快速”。
 
-	![Azure 门户中的“身份验证/授权快速”选项](./media/app-service-api-dotnet-user-principal-auth/aadsettings.png)
+	![Azure 门户预览中的“身份验证/授权快速”选项](./media/app-service-api-dotnet-user-principal-auth/aadsettings.png)
 
 	使用“快速”选项时，应用服务可以自动在 Azure AD [租户](https://msdn.microsoft.com/zh-cn/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant)中创建 Azure AD 应用程序。
 
@@ -117,7 +117,7 @@
 
 7. 在“管理模式”下，单击“创建新的 AD 应用”（如果尚未选择），并记下“创建应用”文本框中的值；稍后将在 Azure 经典管理门户中查找此 AAD 应用程序。
 
-	![Azure 门户中的 Azure AD 设置](./media/app-service-api-dotnet-user-principal-auth/aadsettings2.png)
+	![Azure 门户预览中的 Azure AD 设置](./media/app-service-api-dotnet-user-principal-auth/aadsettings2.png)
 
 	Azure 将自动在 Azure AD 租户中创建使用指定名称的 Azure AD 应用程序。默认情况下，Azure AD 应用程序的名称与 API 应用相同。如果需要，也可以输入不同的名称。
  
@@ -131,7 +131,7 @@
 
 ### 可选：测试 API 应用
 
-1. 在浏览器中，转到 API 应用的 URL：在 Azure 门户的“API 应用”边栏选项卡中，单击“URL”下面的链接。
+1. 在浏览器中，转到 API 应用的 URL：在 Azure 门户预览的“API 应用”边栏选项卡中，单击“URL”下面的链接。
 
 	由于不允许未经身份验证的请求进入 API 应用，因此将重定向到登录屏幕。
 
@@ -151,7 +151,7 @@
 
 11. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，转到“Azure Active Directory”。
 
-	必须使用经典管理门户，因为当前 Azure 门户尚未提供需要访问的特定 Azure Active Directory 设置。
+	必须使用经典管理门户，因为当前 Azure 门户预览尚未提供需要访问的特定 Azure Active Directory 设置。
 
 12. 在“目录”选项卡中，单击 AAD 租户。
 

@@ -147,7 +147,7 @@
 
 在此部分中，我们将配置 Web 应用实例的环境变量。
 
-1.  在 [Azure 门户]中，单击“浏览”>“应用程序服务”和 Web 应用名称，打开 Web 应用的边栏选项卡。
+1.  在 [Azure 门户预览]中，单击“浏览”>“应用程序服务”和 Web 应用名称，打开 Web 应用的边栏选项卡。
 
 1.  在 Web 应用的边栏选项卡中，依次单击“所有设置”和“应用程序设置”。
 
@@ -189,7 +189,7 @@
 
 <!--External Link references-->
 
-[Azure 门户]: https://portal.azure.cn
+[Azure 门户预览]: https://portal.azure.cn
 [用于 .NET 的 Azure SDK]: /downloads/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=624025

@@ -24,11 +24,11 @@
 
 ## <a id="corsconfig"></a>如何在 Azure 应用服务中配置 CORS
 
-可以在 Azure 门户中或使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 工具配置 CORS。
+可以在 Azure 门户预览中或使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 工具配置 CORS。
 
-#### 在 Azure 门户中配置 CORS
+#### 在 Azure 门户预览中配置 CORS
 
-8. 在浏览器中转到 [Azure 门户](https://portal.azure.cn/)。
+8. 在浏览器中转到 [Azure 门户预览](https://portal.azure.cn/)。
 
 2. 单击“应用程序服务”，然后单击 API 应用的名称。
 
@@ -119,7 +119,7 @@
 
 ### 在 Web 应用设置中设置中间层 URL
 
-1. 转到 [Azure 门户](https://portal.azure.cn/)，然后导航到为托管 TodoListAngular（前端）项目而创建的 Web 应用的“Web 应用”边栏选项卡。
+1. 转到 [Azure 门户预览](https://portal.azure.cn/)，然后导航到为托管 TodoListAngular（前端）项目而创建的 Web 应用的“Web 应用”边栏选项卡。
 
 2. 单击“设置”>“应用程序设置”。
 
@@ -183,7 +183,7 @@
 
 本部分的步骤将在 Azure 中为中间层 ToDoListAPI API 应用配置 CORS 设置。此设置允许中间层 API 应用从针对 ToDoListAngular 项目创建的 Web 应用接收 JavaScript 调用。
 
-8. 在浏览器中转到 [Azure 门户](https://portal.azure.cn/)。
+8. 在浏览器中转到 [Azure 门户预览](https://portal.azure.cn/)。
 
 2. 单击“应用程序服务”，然后单击 ToDoListAPI（中间层）API 应用。
 

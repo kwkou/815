@@ -87,7 +87,7 @@
 
 	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-get-started/GS13newaspnetprojdb.png)
 
-	Azure 中国区目前不支持在 Visual Studio 中创建或管理网站。因此，需要转到[Azure 门户](https://Portal.azure.cn/)创建新的 Azure Web 应用
+	Azure 中国区目前不支持在 Visual Studio 中创建或管理网站。因此，需要转到[Azure 门户预览](https://Portal.azure.cn/)创建新的 Azure Web 应用
 
 6. 单击**“确定”**
 
@@ -148,7 +148,7 @@
 
 在本教程中，你已了解如何创建简单的 Web 应用程序并将其部署到 Azure Web 应用。可通过以下相关主题和资源来详细了解 Azure App Service：
 
-* 在 [Azure 门户](https://portal.azure.cn/)中监视和管理 Web 应用。
+* 在 [Azure 门户预览](https://portal.azure.cn/)中监视和管理 Web 应用。
 
 	有关详细信息，请参阅 [Configure web app in Azure App Service](/documentation/articles/web-sites-configure/)（在 Azure App Service 中配置 Web 应用）。
 

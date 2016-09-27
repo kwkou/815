@@ -22,7 +22,7 @@
 
 使用 Visual Studio 中集成的工具，可以顺利地创建、部署和管理 Web 作业。你可以从模板创建 Web 作业，还可以发布和管理（运行/停止/监视/调试）这些作业。
 
-Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你全面控制 Web 作业的执行，包括调用 Web 作业中的各个函数。该仪表板还会显示函数运行时和日志记录输出。
+Azure 门户预览中的 Web 作业仪表板提供了强大的管理功能，可让你全面控制 Web 作业的执行，包括调用 Web 作业中的各个函数。该仪表板还会显示函数运行时和日志记录输出。
 
 ##<a name="getstarted"></a>Web 作业和 WebJobs SDK 入门
 
@@ -46,7 +46,7 @@ Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你
 ##<a name="deploy" id="deploying"></a>部署 Web 作业
 
 * [如何使用 Visual Studio 部署 Azure Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)
-* [如何使用 Azure 门户部署 Web 作业](/documentation/articles/web-sites-create-web-jobs/)
+* [如何使用 Azure 门户预览部署 Web 作业](/documentation/articles/web-sites-create-web-jobs/)
 * [启用 Azure Web 作业的命令行或连续传送](http://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)
 * [使用 Web 作业通过 Git 将 .NET 控制台应用程序部署到 Azure](http://blog.amitapple.com/post/73574681678/git-deploy-console-app/)
 * [将 F# Web 作业部署到 Azure](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx)
@@ -55,7 +55,7 @@ Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你
 ##<a name="schedule"></a>计划 Web 作业
 
 * [添加 Azure Web 作业对话框](/documentation/articles/websites-dotnet-deploy-webjobs/#configure)
-* [在 Azure 门户中创建计划的 Web 作业](/documentation/articles/web-sites-create-web-jobs/#CreateScheduled)
+* [在 Azure 门户预览中创建计划的 Web 作业](/documentation/articles/web-sites-create-web-jobs/#CreateScheduled)
 * [将计划程序作业挂接到 Web 作业](http://blog.davidebbo.com/2015/05/scheduled-webjob.html)
 * [通过 cron 表达式计划 Azure Web 作业](http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/)
 * [使用 WebJobs SDK TimerTrigger 计划单个 Web 作业函数](/documentation/articles/websites-dotnet-webjobs-sdk/#schedule)

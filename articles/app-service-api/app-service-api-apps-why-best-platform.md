@@ -32,7 +32,7 @@ Azure 应用服务中的 API 应用提供各种功能，用于轻松在云中和
 
 - **Visual Studio 集成** - Visual Studio 中的专用工具可以简化创建、部署、使用、调试和管理 API 应用的工作。有关详细信息，请参阅 [Announcing the Azure SDK 2.8.1 for .NET](https://azure.microsoft.com/blog/announcing-azure-sdk-2-8-1-for-net/)（宣告推出用于 .NET 的 Azure SDK 2.8.1）。
 
-此外，API 应用可以利用 [Web 应用](/documentation/articles/app-service-web-overview/)和[移动应用](/documentation/articles/app-service-mobile-value-prop/)提供的功能。反之亦然：如果使用某个 Web 应用或移动应用来托管 API，该应用可以利用 Swagger 元数据等 API 应用功能来生成客户端代码，以及使用 CORS 进行跨域浏览器访问。这三个应用程序类型（API、Web、移动）之间的唯一差别在于 Azure 门户中使用的名称和图标。
+此外，API 应用可以利用 [Web 应用](/documentation/articles/app-service-web-overview/)和[移动应用](/documentation/articles/app-service-mobile-value-prop/)提供的功能。反之亦然：如果使用某个 Web 应用或移动应用来托管 API，该应用可以利用 Swagger 元数据等 API 应用功能来生成客户端代码，以及使用 CORS 进行跨域浏览器访问。这三个应用程序类型（API、Web、移动）之间的唯一差别在于 Azure 门户预览中使用的名称和图标。
 
 ## API 应用与 Azure API 管理之间的差别是什么？
 

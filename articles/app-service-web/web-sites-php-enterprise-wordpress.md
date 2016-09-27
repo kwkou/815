@@ -130,7 +130,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 6. 单击“提交”。系统将提示你导入成功。
 
-8. 完成所有这些步骤后，从 [Azure 门户][mgmtportal]中的 Web 应用边栏选项卡重新启动站点。
+8. 完成所有这些步骤后，从 [Azure 门户预览][mgmtportal]中的 Web 应用边栏选项卡重新启动站点。
 
 导入网站后，您可能需要执行以下步骤，以启用导入文件中不包含的设置。
 
@@ -155,9 +155,9 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 	3. 更新数据库，将域条目更改为新的 Azure App Service 域。例如，mywordpress.chinacloudsites.cn。使用[搜索和替换为 WordPress 数据库脚本][searchandreplace]，安全地更改所有实例。
 
-4. 在 Azure 门户中创建新的 Web 应用并发布 WordPress 备份。
+4. 在 Azure 门户预览中创建新的 Web 应用并发布 WordPress 备份。
 
-	1. 使用“新建”->“Web + 移动”->“Web 应用”->“创建”通过数据库在 [Azure 门户][mgmtportal]中创建新的 Web 应用。配置所有所需的设置来创建空 Web 应用。
+	1. 使用“新建”->“Web + 移动”->“Web 应用”->“创建”通过数据库在 [Azure 门户预览][mgmtportal]中创建新的 Web 应用。配置所有所需的设置来创建空 Web 应用。
 
 	2. 在 WordPress 备份中，找到 **wp-config.php** 文件，并在编辑器中打开它。将以下项替换为新的 MySQL 数据库的信息。
 
