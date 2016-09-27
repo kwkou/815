@@ -17,9 +17,6 @@
 - [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2/)
 - [Azure IaaS 用户手册 - 第三部分](/documentation/articles/azure-Iaas-user-manual-part3/)
 
-##<a name="section_1"></a> 
-
-##<a name="section_2"></a> 
 
 ##<a name="section_3"></a> 1.	Azure IaaS 相关技术
 1.	**Azure 底层是否由 System Center 和Hyper-V 构成?**
