@@ -253,9 +253,9 @@
 
 ## 将输出发布到 Azure 应用服务
 
-本部分介绍如何使用 Azure 门户创建新的 API 应用、准备该 API 应用以托管 Java 应用程序，然后将新建的 WAR 文件部署到 Azure 应用服务以运行新 API 应用。
+本部分介绍如何使用 Azure 门户预览创建新的 API 应用、准备该 API 应用以托管 Java 应用程序，然后将新建的 WAR 文件部署到 Azure 应用服务以运行新 API 应用。
 
-1. 在 [Azure 门户]中创建新的 API 应用：单击“新建”->“Web + 移动”->“API 应用”菜单项，输入应用详细信息，然后单击“创建”。
+1. 在 [Azure 门户预览]中创建新的 API 应用：单击“新建”->“Web + 移动”->“API 应用”菜单项，输入应用详细信息，然后单击“创建”。
 
     ![创建新的 API 应用][create-api-app]
 
@@ -300,7 +300,7 @@
 <!-- URL List -->
 
 [App Service API CORS]: /documentation/articles/app-service-api-cors-consume-javascript/
-[Azure 门户]: https://portal.azure.cn/
+[Azure 门户预览]: https://portal.azure.cn/
 [Document DB Java SDK]: /documentation/articles/documentdb-java-application/
 [试用]: /pricing/1rmb-trial/
 [Git]: http://www.git-scm.com/

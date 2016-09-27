@@ -39,7 +39,7 @@
 
 必须让Web 应用在“标准”或“高级”模式下运行才能启用多个部署槽。
 
-1. 在 [Azure 门户](https://portal.azure.cn/)中，打开 Web 应用的边栏选项卡。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)中，打开 Web 应用的边栏选项卡。
 2. 单击“设置”，然后单击“部署槽”。然后，在“部署槽”边栏选项卡中单击“添加槽”。
 
 	![添加新部署槽][QGAddNewDeploymentSlot]

@@ -230,7 +230,7 @@
 	require_once(ABSPATH . 'wp-settings.php');
 
 #### 设置过渡环境
-假设已在 Azure Web 上运行 WordPress Web 应用，请登录 [Azure 门户](https://portal.azure.cn/)并转到该 WordPress Web 应用。否则，你可以通过应用商店创建一个环境。单击“设置”->“部署槽位”->“添加”，以创建具有名称过渡的部署槽位。部署槽位是与上面创建的主 Web 应用共享相同资源的另一个 Web 应用。
+假设已在 Azure Web 上运行 WordPress Web 应用，请登录 [Azure 门户预览](https://portal.azure.cn/)并转到该 WordPress Web 应用。否则，你可以通过应用商店创建一个环境。单击“设置”->“部署槽位”->“添加”，以创建具有名称过渡的部署槽位。部署槽位是与上面创建的主 Web 应用共享相同资源的另一个 Web 应用。
 
 ![创建过渡部署槽位](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
 
@@ -273,7 +273,7 @@
 ![交换 wordpress 的预览更改](./media/app-service-web-staged-publishing-realworld-scenarios/6swaps1.png)
 
  > [AZURE.NOTE]
- 如果在一个应用场景中只需要推送文件（而不是数据库更新），那么在执行交换操作之前，在 Azure 门户的“Web 应用设置”边栏选项卡中，**选中**所有数据库相关的 *应用设置* 和 *连接字符串设置* 的“槽设置”。在此用例中，执行**交换**操作时，不在预览更改中显示 DB\_NAME、DB\_HOST、DB\_PASSWORD、DB\_USER 和默认的连接字符串设置。在此情况下，完成**交换**操作后 WordPress Web 应用**只有**已更新的文件。
+ 如果在一个应用场景中只需要推送文件（而不是数据库更新），那么在执行交换操作之前，在 Azure 门户预览的“Web 应用设置”边栏选项卡中，**选中**所有数据库相关的 *应用设置* 和 *连接字符串设置* 的“槽设置”。在此用例中，执行**交换**操作时，不在预览更改中显示 DB\_NAME、DB\_HOST、DB\_PASSWORD、DB\_USER 和默认的连接字符串设置。在此情况下，完成**交换**操作后 WordPress Web 应用**只有**已更新的文件。
 
 这是在执行交换之前的 WordPress 生产 Web 应用 ![交换槽之前的生产 Web 应用](./media/app-service-web-staged-publishing-realworld-scenarios/7bfswap.png)
 

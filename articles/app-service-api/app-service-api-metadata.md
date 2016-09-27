@@ -24,7 +24,7 @@
 
 ### 门户边栏选项卡
 
-可以在[Azure 门户的](https://portal.azure.cn/)“API 定义”边栏选项卡中查看和更改终结点 URL。
+可以在[Azure 门户预览的](https://portal.azure.cn/)“API 定义”边栏选项卡中查看和更改终结点 URL。
 
 ![](./media/app-service-api-metadata/apidefblade.png)
 

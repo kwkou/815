@@ -26,7 +26,7 @@
 
 学习内容：
 
-* 如何使用 Azure 门户在 Azure App Service 中创建 Web 应用。
+* 如何使用 Azure 门户预览在 Azure App Service 中创建 Web 应用。
 * 如何通过推送到 Web 应用的 Git 存储库，将 Node.js 应用程序部署到 Web 应用。
 
 已完成的应用程序将简短的“hello world”字符串写入浏览器。
@@ -44,9 +44,9 @@
 
 [Git](http://git-scm.com/) 是一个分布式版本控制系统，可用来部署 Azure 网站。你将在本地 Git 存储库中存储你为 Web 应用编写的代码，并通过推送到远程存储库将代码部署到 Azure。这种部署方法是应用服务 Web 应用的一项功能。
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
-2. 单击 Azure 门户左上角的“+ 新建”图标。
+2. 单击 Azure 门户预览左上角的“+ 新建”图标。
 
 3. 单击“Web + 移动”，然后单击“Web 应用”。
 
@@ -169,7 +169,7 @@
 		To https://user@testsite.scm.chinacloudsites.cn/testsite.git
 		 * [new branch]      master -> master
 
-5. 若要查看你的应用，请在 Azure 门户的“Web 应用”部分中单击“浏览”按钮。
+5. 若要查看你的应用，请在 Azure 门户预览的“Web 应用”部分中单击“浏览”按钮。
 
 	![“浏览”按钮](./media/web-sites-nodejs-develop-deploy-mac/browsebutton.png)
 
@@ -205,7 +205,7 @@ Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若
 
 如果将应用程序部署到 Azure 后遇到问题，请参阅[如何在 Azure App Service 中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug/)，以了解有关诊断问题的信息。
 
-本文将使用 Azure 门户来创建 Web 应用。你也可以使用 [Azure 命令行接口](/documentation/articles/xplat-cli-install/)或 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 执行相同的操作。
+本文将使用 Azure 门户预览来创建 Web 应用。你也可以使用 [Azure 命令行接口](/documentation/articles/xplat-cli-install/)或 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 执行相同的操作。
 
 有关如何在 Azure 上开发 Node.js 应用程序的详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 

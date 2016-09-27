@@ -51,7 +51,7 @@
 
 >[AZURE.NOTE] 本教程中使用的脚本自动从 GitHub 存储库配置连续发布。这需要你的 GitHub 凭据已存储在 Azure 中，否则，尝试配置 Web Apps 的源代码管理设置时，脚本化部署将会失败。
 >
->若要在 Azure 中存储你的 GitHub 凭据，请在 [Azure 门户](https://portal.azure.cn/)中创建 Web 应用，并[配置 GitHub 部署](/documentation/articles/app-service-continuous-deployment/#Step7)。您只需执行此操作一次。
+>若要在 Azure 中存储你的 GitHub 凭据，请在 [Azure 门户预览](https://portal.azure.cn/)中创建 Web 应用，并[配置 GitHub 部署](/documentation/articles/app-service-continuous-deployment/#Step7)。您只需执行此操作一次。
 
 在典型的 DevOps 方案中，应用程序在 Azure 中实时运行，并且你可以通过连续发布对它进行更改。在此方案中，你要将开发并测试的模板部署到生产环境。
 
@@ -80,7 +80,7 @@
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.2-swap-to-production.png)
 
 7.	脚本完成后，请返回浏览到前端的地址 (http://ToDoApp*&lt;your_suffix>*.chinacloudsites.cn/)，以查看在生产环境中运行的应用程序。
-5.	登录到 [Azure 门户](https://portal.azure.cn/)并查看创建的内容。
+5.	登录到 [Azure 门户预览](https://portal.azure.cn/)并查看创建的内容。
 
 	应该可以在相同的资源组中看到两个 Web 应用，其中一个的名称具有 `Api` 后缀。当你查看资源组视图时，还会看到 SQL 数据库和服务器、App Service 计划以及 Web 应用的过渡槽。浏览不同的资源，并将它们与 *&lt;repository\_root>*\\ARMTemplates\\ProdAndStage.json 进行比较，以查看它们在模板中的配置方式。
 
@@ -93,7 +93,7 @@
 5. 在 Visual Studio 中打开 &lt;repository\_root>\\src\\MultiChannelToDo.sln。
 6. 右键单击解决方案 >“管理解决方案的 NuGet 包”>“还原”，以还原所有 Nuget 包。
 6. 右键单击“MultiChannelToDo.Web”>“添加 Application Insights 遥测”>“配置设置”>“将资源组更改为 ToDoApp*&lt;你的后缀”>*”>“将 Application Insights 添加到项目”。
-7. 在 Azure 门户中，打开 MultiChannelToDo.Web Application Insight 资源的边栏选项卡。然后，在“应用程序运行状况”部分中，单击“了解如何收集浏览器页面加载数据”> 复制代码。
+7. 在 Azure 门户预览中，打开 MultiChannelToDo.Web Application Insight 资源的边栏选项卡。然后，在“应用程序运行状况”部分中，单击“了解如何收集浏览器页面加载数据”> 复制代码。
 7. 将复制的 JS 检测代码添加到 &lt;repository\_root>\\src\\MultiChannelToDo.Web\\app\\Index.cshtml，放在右 `<heading>` 标记前面。它应包含 Application Insight 资源的唯一检测键。
 
         <script type="text/javascript">

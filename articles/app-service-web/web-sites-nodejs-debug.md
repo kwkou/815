@@ -42,7 +42,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure App Service](/documen
 
 > [AZURE.NOTE] 如果你的 Web 应用是使用 Azure 命令行工具或 Azure PowerShell Cmdlet 创建的，将自动创建一个默认的 **IISNode.yml** 文件。
 
-若要重新启动 Web 应用，请在 [Azure 门户](https://portal.azure.cn)中选择该 Web 应用，然后单击“重新启动”按钮：
+若要重新启动 Web 应用，请在 [Azure 门户预览](https://portal.azure.cn)中选择该 Web 应用，然后单击“重新启动”按钮：
 
 ![重新启动按钮][restart-button]
 
@@ -63,7 +63,7 @@ Azure 提供内置的诊断以帮助调试托管在 [Azure App Service](/documen
 
 ###FTP
 
-若要通过 FTP 访问诊断信息，请访问 [Azure 门户](https://portal.azure.cn)，选择你的 Web 应用，然后选择“仪表板”。在“快速链接”部分中，“FTP 诊断日志”和“FTPS 诊断日志”链接提供使用 FTP 协议对日志的访问。
+若要通过 FTP 访问诊断信息，请访问 [Azure 门户预览](https://portal.azure.cn)，选择你的 Web 应用，然后选择“仪表板”。在“快速链接”部分中，“FTP 诊断日志”和“FTPS 诊断日志”链接提供使用 FTP 协议对日志的访问。
 
 > [AZURE.NOTE] 如果你以前没有为 FTP 或部署配置用户名和密码，则可以通过选择“设置部署凭据”从“快速启动”管理页来执行此配置。
 

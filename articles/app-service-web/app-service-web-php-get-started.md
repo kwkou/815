@@ -129,7 +129,7 @@
     >
     >好消息是 Azure App Service 中的应用程序设置支持 PHP 中的 [getenv()](http://php.net/manual/en/function.getenv.php)。因此，当使用 FTP 或其他方法将 `.env` 文件手动上载到 Azure 时，只需将所需变量指定为 Azure 应用程序设置，而无需在 Azure 中使用 `.env` 文件，正如你在前面所做的。而且，如果变量同时存在于 `.env` 文件和 Azure 应用程序设置中，则 Azure 应用程序设置具有更高优先级。
 
-4. 最后两个任务（设置虚拟目录和启用 Composer）需要使用 [Azure 门户](https://portal.azure.cn)，因此请使用 Azure 帐户登录该[门户](https://portal.azure.cn)。
+4. 最后两个任务（设置虚拟目录和启用 Composer）需要使用 [Azure 门户预览](https://portal.azure.cn)，因此请使用 Azure 帐户登录该[门户](https://portal.azure.cn)。
 
 4. 在左侧菜单中，单击“应用程序服务”>“&lt;应用程序名称>”>“工具”。
 

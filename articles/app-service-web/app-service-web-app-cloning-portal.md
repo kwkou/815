@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Azure 门户克隆 Web 应用"
-	description="了解如何使用 Azure 门户将 Web 应用克隆到新的 Web 应用。"
+	pageTitle="使用 Azure 门户预览克隆 Web 应用"
+	description="了解如何使用 Azure 门户预览将 Web 应用克隆到新的 Web 应用。"
 	services="app-service\web"
 	documentationCenter=""
 	authors="ahmedelnably"
@@ -12,7 +12,7 @@
 	ms.date="03/08/2016"
 	wacn.date="09/26/2016"/>
 
-# 使用 Azure 门户克隆 Azure App Service 应用#
+# 使用 Azure 门户预览克隆 Azure App Service 应用#
 
 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 中的克隆功能可让你轻松将现有 Web 应用克隆到位于不同或相同区域中的新建应用。这样，客户就可以跨不同区域部署许多应用。
 
@@ -25,7 +25,7 @@
 
 Web 应用必须在“高级”模式下运行，才能为 Web 应用创建副本。
 
-1. 在 [Azure 门户](https://portal.azure.cn/)中，打开 Web 应用的边栏选项卡。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)中，打开 Web 应用的边栏选项卡。
 2. 单击“工具”。然后，在“工具”边栏选项卡中，单击“克隆应用”。
 
 	![][1]
@@ -41,7 +41,7 @@ Web 应用必须在“高级”模式下运行，才能为 Web 应用创建副�
 
 ## 当前限制 ##
 
-此功能目前以预览版提供，我们正在不断地添加新功能。以下是当前在 Azure 门户中支持应用克隆存在的已知限制：
+此功能目前以预览版提供，我们正在不断地添加新功能。以下是当前在 Azure 门户预览中支持应用克隆存在的已知限制：
 
 - 不会克隆 Azure 流量管理器设置
 - 不会克隆自动缩放设置

@@ -132,11 +132,11 @@ ASP.NET 5/DNX（.NET 执行环境）是精简的 .NET 堆栈，用于构建在 O
 
 3. 关闭你的浏览器。在**命令窗口**中，按 **Ctrl+C** 关闭应用程序并关闭**命令窗口**。
 
-## 在 Azure 门户中创建 Web 应用
+## 在 Azure 门户预览中创建 Web 应用
 
-以下步骤将指导用户在 Azure 门户中创建 Web 应用。
+以下步骤将指导用户在 Azure 门户预览中创建 Web 应用。
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 单击门户左上角的“新建”。
 
@@ -158,7 +158,7 @@ ASP.NET 5/DNX（.NET 执行环境）是精简的 .NET 堆栈，用于构建在 O
 
 Git 是分布式版本控制系统，可用于部署 Azure App Service Web 应用。你将在本地 Git 存储库中存储你为 Web 应用编写的代码，并通过推送到远程存储库将代码部署到 Azure。
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 单击“浏览”。
 
@@ -253,7 +253,7 @@ Git 是分布式版本控制系统，可用于部署 Azure App Service Web 应�
 
 		http://SampleWebAppDemo.chinacloudsites.cn
  
-* 在 Azure 门户中，找到 Web 应用的 Web 应用边栏选项卡，然后单击“浏览”以在默认游览器中
+* 在 Azure 门户预览中，找到 Web 应用的 Web 应用边栏选项卡，然后单击“浏览”以在默认游览器中
 * 查看应用。
 
 ![Azure Web 应用](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)

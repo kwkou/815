@@ -18,7 +18,7 @@
 
 Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。
 
-本文通过 [Azure 门户](https://portal.azure.cn)、Azure PowerShell 和 Azure 命令行接口 (Azure CLI) 来使用诊断日志。
+本文通过 [Azure 门户预览](https://portal.azure.cn)、Azure PowerShell 和 Azure 命令行接口 (Azure CLI) 来使用诊断日志。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -44,7 +44,7 @@ Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/docum
 
 ## <a name="enablediag"></a>如何启用诊断
 
-若要在 [Azure 门户](https://portal.azure.cn)中启用诊断，请转到Web 应用的边栏选项卡，然后单击“设置”>“诊断日志”。
+若要在 [Azure 门户预览](https://portal.azure.cn)中启用诊断，请转到Web 应用的边栏选项卡，然后单击“设置”>“诊断日志”。
 
 <!-- todo:cleanup dogfood addresses in screenshot -->
 ![日志部分](./media/web-sites-enable-diagnostic-log/logspart.png)
@@ -126,7 +126,7 @@ Visual Studio Application Insights 提供了用于筛选和搜索日志的工具
 2. 将跟踪侦听器包添加到项目。
  * 右键单击项目，然后选择“管理 NuGet 包”。选择 `Microsoft.ApplicationInsights.TraceListener`
 3. 上传项目并运行，以生成日志数据。
-4. 在 [Azure 门户](https://portal.azure.cn/)中，浏览到新的 Application Insights 资源，并打开“搜索”。你将看到日志数据，以及请求、使用情况和其他遥测。某些遥测可能需要几分钟才能到达：请单击“刷新”。
+4. 在 [Azure 门户预览](https://portal.azure.cn/)中，浏览到新的 Application Insights 资源，并打开“搜索”。你将看到日志数据，以及请求、使用情况和其他遥测。某些遥测可能需要几分钟才能到达：请单击“刷新”。
 
 [Learn more about performance tracking with Application Insights](/documentation/articles/insights-perf-analytics/)（了解有关使用 Application Insights 跟踪性能的详细信息）
 
@@ -258,7 +258,7 @@ Web 服务器日志使用 [W3C 扩展日志文件格式](http://msdn.microsoft.c
 
 ## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在 Azure 门户中导航的参考](/documentation/articles/app-service-web-app-azure-portal/)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在 Azure 门户预览中导航的参考](/documentation/articles/app-service-web-app-azure-portal/)
  
 
 <!---HONumber=Mooncake_0919_2016-->
