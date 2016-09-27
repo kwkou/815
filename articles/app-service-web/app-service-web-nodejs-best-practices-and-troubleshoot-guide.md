@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="06/06/2016"
-	wacn.date=""/>  
+	wacn.date="09/26/2016"/>  
 
     
 # Azure Web Apps 上节点应用程序的最佳做法和故障排除指南

@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="02/12/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 
 # Azure App Service 和现有的 Azure 服务

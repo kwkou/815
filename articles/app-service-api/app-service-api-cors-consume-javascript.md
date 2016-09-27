@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-api"
 	ms.date="05/27/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 借助 CORS 从 JavaScript 使用 API 应用
 

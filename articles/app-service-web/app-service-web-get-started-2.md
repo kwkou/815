@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="05/12/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 在第一个 Web 应用中添加功能
 

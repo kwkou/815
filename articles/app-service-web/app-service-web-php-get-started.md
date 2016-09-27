@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="06/03/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 创建、配置 PHP Web 应用，并将其部署到 Azure
 

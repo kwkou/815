@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="07/19/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 将 Sails.js Web 应用部署到 Azure App Service
 

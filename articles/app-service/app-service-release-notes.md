@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="07/18/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 
 # 用于 .NET 2.5.1 的 Azure SDK 发行说明

@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="03/08/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 使用 Azure 门户克隆 Azure App Service 应用#
 

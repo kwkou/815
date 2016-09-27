@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="07/01/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # Azure App Service 中的 Node.js Web 应用入门
 

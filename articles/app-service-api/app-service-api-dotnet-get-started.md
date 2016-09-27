@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-api"
 	ms.date="05/27/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # Azure 应用服务中的 API 应用、ASP.NET 和 Swagger 入门
 
