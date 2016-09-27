@@ -52,15 +52,15 @@
 | 12 | develop-best-practices-transactions | [优化 SQL 数据仓库的事务](/documentation/articles/sql-data-warehouse-develop-best-practices-transactions/) | 在 Azure SQL 数据仓库中编写有效事务更新的最佳做法指南 |
 | 13 | develop-concurrency | [SQL 数据仓库中的并发性和工作负荷管理](/documentation/articles/sql-data-warehouse-develop-concurrency/) | 在开发解决方案之前，了解 SQL 数据仓库中的并发性和工作负荷管理。 |
 | 14 | develop-ctas | [SQL 数据仓库中的 Create Table As Select (CTAS)](/documentation/articles/sql-data-warehouse-develop-ctas/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的 create table as select (CTAS) 语句编写代码的技巧。 |
-| 15 | develop-dynamic-sql | [SQL 数据仓库中的动态 SQL](sql-data-warehouse-develop-dynamic-sql/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的动态 SQL 的技巧。 |
+| 15 | develop-dynamic-sql | [SQL 数据仓库中的动态 SQL](/documentation/articles/sql-data-warehouse-develop-dynamic-sql/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的动态 SQL 的技巧。 |
 | 16 | develop-group-by-options | [SQL 数据仓库中的 Group By 选项](/documentation/articles/sql-data-warehouse-develop-group-by-options/) | 有关在开发解决方案时实现 Azure SQL 数据仓库中的 Group By 选项的技巧。 |
 | 17 | develop-label | [在 SQL 数据仓库中使用标签检测查询](/documentation/articles/sql-data-warehouse-develop-label/) | 有关在开发解决方案时于 Azure SQL 数据仓库中使用标签检测查询的技巧。 |
-| 18 | develop-loops | [SQL 数据仓库中的循环](sql-data-warehouse-develop-loops/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的 Transact-SQL 循环和替换游标的技巧。 |
+| 18 | develop-loops | [SQL 数据仓库中的循环](/documentation/articles/sql-data-warehouse-develop-loops/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的 Transact-SQL 循环和替换游标的技巧。 |
 | 19 | develop-stored-procedures | [SQL 数据仓库中的存储过程](/documentation/articles/sql-data-warehouse-develop-stored-procedures/) | 有关在开发解决方案时实现 Azure SQL 数据仓库中的存储过程的技巧。 |
-| 20 | develop-transactions | [SQL 数据仓库中的事务](sql-data-warehouse-develop-transactions/) | 有关在开发解决方案时实现 Azure SQL 数据仓库中的事务的技巧。 |
+| 20 | develop-transactions | [SQL 数据仓库中的事务](/documentation/articles/sql-data-warehouse-develop-transactions/) | 有关在开发解决方案时实现 Azure SQL 数据仓库中的事务的技巧。 |
 | 21 | develop-user-defined-schemas | [SQL 数据仓库中用户定义的架构](/documentation/articles/sql-data-warehouse-develop-user-defined-schemas/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的 Transact-SQL 架构的技巧。 |
 | 22 | develop-variable-assignment | [在 SQL 数据仓库中分配变量](/documentation/articles/sql-data-warehouse-develop-variable-assignment/) | 有关在开发解决方案时于 Azure SQL 数据仓库中分配 Transact-SQL 变量的技巧。 |
-| 23 | develop-views | [SQL 数据仓库中的视图](sql-data-warehouse-develop-views/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的 Transact-SQL 视图的技巧。 |
+| 23 | develop-views | [SQL 数据仓库中的视图](/documentation/articles/sql-data-warehouse-develop-views/) | 有关在开发解决方案时使用 Azure SQL 数据仓库中的 Transact-SQL 视图的技巧。 |
 | 24 | overview-develop | [SQL 数据仓库的设计决策和编程技术](/documentation/articles/sql-data-warehouse-overview-develop/) | SQL 数据仓库的开发概念、设计决策、建议和编程技术。 |
 
 
@@ -73,8 +73,8 @@
 | 26 | manage-compute-powershell | [管理 Azure SQL 数据仓库中的计算能力 (PowerShell)](/documentation/articles/sql-data-warehouse-manage-compute-powershell/) | 用于管理计算能力的 PowerShell 任务。通过调整 DWU 缩放计算资源。或者，暂停和恢复计算资源来节省成本。 |
 | 27 | manage-compute-rest-api | [管理 Azure SQL 数据仓库中的计算能力 (REST)](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/) | 用于管理计算能力的 PowerShell 任务。通过调整 DWU 缩放计算资源。或者，暂停和恢复计算资源来节省成本。 |
 | 28 | manage-compute-tsql | [管理 Azure SQL 数据仓库中的计算能力 (T-SQL)](/documentation/articles/sql-data-warehouse-manage-compute-tsql/) | 可通过调整 DWU 来提高性能的 Transact-SQL (T-SQL) 任务。通过在非高峰期缩减性能来节省成本。 |
-| 29 | manage-monitor | [使用 DMV 监视工作负荷](sql-data-warehouse-manage-monitor/) | 了解如何使用 DMV 监视工作负荷。 |
-| 30 | overview-manage | [在 Azure SQL 数据仓库中管理数据库](sql-data-warehouse-overview-manage/) | 管理 SQL 数据仓库数据库的概述。包括管理工具、DWU 和向外扩展性能，对查询性能进行故障排除，建立良好的安全策略，以及从数据损坏或区域中断还原数据库。 |
+| 29 | manage-monitor | [使用 DMV 监视工作负荷](/documentation/articles/sql-data-warehouse-manage-monitor/) | 了解如何使用 DMV 监视工作负荷。 |
+| 30 | overview-manage | [在 Azure SQL 数据仓库中管理数据库](/documentation/articles/sql-data-warehouse-overview-manage/) | 管理 SQL 数据仓库数据库的概述。包括管理工具、DWU 和向外扩展性能，对查询性能进行故障排除，建立良好的安全策略，以及从数据损坏或区域中断还原数据库。 |
 | 31 | overview-manage-user-queries | [在 Azure SQL 数据仓库中监视用户查询](/documentation/articles/sql-data-warehouse-overview-manage-user-queries/) | 在 Azure SQL 数据仓库中监视用户查询时的注意事项、最佳实践和任务的概述 |
 | 32 | restore-database-overview | [还原 Azure SQL 数据仓库（概述）](/documentation/articles/sql-data-warehouse-restore-database-overview/) | 在 Azure SQL 数据仓库中恢复数据库时的数据库还原选项概述。 |
 | 33 | restore-database-portal | [还原 Azure SQL 数据仓库（门户）](/documentation/articles/sql-data-warehouse-restore-database-portal/) | 用于还原 SQL 数据仓库的 Azure 门户任务。 |
@@ -102,7 +102,7 @@
 | &nbsp; | Url-Id | 标题 | 说明 |
 | --: | :-- | :-- | :-- |
 | 43 | integrate-azure-stream-analytics | [将 Azure 流分析与 SQL 数据仓库配合使用](/documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics/) | 有关在开发解决方案时将 Azure 流分析与 Azure SQL 数据仓库配合使用的技巧。 |
-| 44 | integrate-power-bi | [将 Power BI 与 SQL 数据仓库配合使用](sql-data-warehouse-integrate-power-bi/) | 有关在开发解决方案时将 Power BI 与 Azure SQL 数据仓库配合使用的技巧。 |
+| 44 | integrate-power-bi | [将 Power BI 与 SQL 数据仓库配合使用](/documentation/articles/sql-data-warehouse-integrate-power-bi/) | 有关在开发解决方案时将 Power BI 与 Azure SQL 数据仓库配合使用的技巧。 |
 | 45 | overview-integrate | [在 SQL 数据仓库中利用其他服务](/documentation/articles/sql-data-warehouse-overview-integrate/) | 用于集成 SQL 数据仓库的工具以及提供相应解决方案的合作伙伴。 |
 
 
