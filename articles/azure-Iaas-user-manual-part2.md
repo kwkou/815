@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date=""
-	wacn.date="07/07/2016"/>
+	wacn.date="09/27/2016"/>
 
 # Azure IaaS 用户手册 - 第二部分
 
@@ -222,6 +222,16 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 </table>
 
 接下来的几章将详细介绍如何创建 Azure 虚拟机。
+
+####<a name="section_5_3_3"></a> 3.3.3 注意事项
+
+在一个云服务里，放置多个相同角色的虚拟机，例如：
+
+- 多个 Web Server 虚拟机，放在同一个云服务里
+- 多个 SQL Server 虚拟机，放在另外一个云服务里
+- 多个 AD Server 虚拟机，放在第三个云服务里
+
+不要把不同角色的虚拟机，比如 Web Server 和 SQL Server，放在同一个云服务里。
 
 ###<a name="section_5_4"></a> 3.4 使用 Azure 管理界面创建虚拟机
 登陆 Azure [经典管理门户](https://manage.windowsazure.cn/)，输入相应的 Azure 账户名称和密码。
