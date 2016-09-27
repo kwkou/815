@@ -34,7 +34,7 @@ IT 环境正在快速变化，从在资本成本高、前置时间长的传统�
 
 开发团队正在寻求提供即时业务利益，频繁地推出新功能。它们正在寻找一种集成其现有工具和实践（开发、测试、发布）的经济高效、可靠的平台；而且正在与 IT 部门合作实现部署、管理和警报过程的自动化，以期实现零故障时间的目标。
 
-##<a href="highlevel"></a> 高级别的解决方案 ##
+##<a name="highlevel"></a> 高级别的解决方案 ##
 
 Web 平台和框架越来越多地被用于开发、测试和托管业务线应用程序。就典型的业务线应用程序而言（例如内部员工支出系统），通常仅包含一个带有用于存储与应用程序相关数据的支持数据库的 Web 应用。
 
@@ -42,7 +42,7 @@ App Service Web Apps 是用于托管此类应用程序的理想之选，其提�
 
 另一种方法是在本地使用现有投资。在示例场景中（员工支出系统），你可能想要在自己的内部基础架构中维护数据存储。这可能是为了与内部系统 （报表、工资单、计费等）集成，或者为了满足 IT 监管要求。在 Azure 中国，Web 应用之提供一种方法支持你连接到本地基础结构：
 
-- [虚拟网络集成](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) - Web 应用与 Azure 虚拟网络的集成支持你将 Web 应用连接到 Azure 虚拟网络，后者反过来又能够通过站点到站点 VPN 连接到你的本地基础结构。
+- [虚拟网络集成](/documentation/articles/app-service-vnet-integration-powershell/) - Web 应用与 Azure 虚拟网络的集成支持你将 Web 应用连接到 Azure 虚拟网络，后者反过来又能够通过站点到站点 VPN 连接到你的本地基础结构。
 
 下图展示了一个具有适用于本地资源的连接选项的高级解决方案示例。
 
@@ -75,44 +75,13 @@ App Service Web Apps 提供了一个稳定、可靠的平台，后者已被证�
 
 Azure 平台支持基于角色的身份验证控制，从而支持对 Web 应用内的资源进行企业级控制。RBAC 支持企业在 Azure 环境中为其所有资产实施自己的访问管理策略，将用户分配到组并反过来根据 Web 应用等资产将所需的权限分配给这些组。关于 Azure 中 RBAC 的详细信息，请参阅 [http://aka.ms/azurerbac](/documentation/articles/role-based-access-control-configure/)。通过利用 Web Apps，您可以确保将 Web 应用程序部署在安全可靠的环境中，并完全地控制要将资产部署到的区域。
 
-Azure 应用服务环境 [http://aka.ms/aseintro](http://aka.ms/aseintro) 是一个新的高级服务计划选项，适合希望利用 Azure App Service 的企业客户和想要提供完全隔离的专用环境的用户。这使企业客户能够部署可利用高缩放性并完全控制入站和出站流量的应用程序，而 ASE 可让应用程序通过虚拟网络高速安全地连接到本地资源。
-
 通过支持往回连接到你的内部资源（如数据仓库或 SharePoint 环境），应用服务 Web 应用还能够充分利用你的本地投资。如之前在[高级别的解决方案](#highlevel)中所讨论的，用户可以使用混合连接和虚拟网络连接建立到本地基础结构和服务的连接。
 
 ## 解决方案详细信息 ##
 
 让我们看一个应用程序迁移方案的示例。这概述了 App Service Web Apps 的各种功能如何协同提供出色解决方案和业务价值的详细信息。
  
-在整个示例中，我们要讨论的业务线应用程序是一个支出报表应用程序，它使员工能够提交费用进行报销。该应用程序托管于运行 IIS6 的 Windows Server 2003 R2 上，数据库是 SQL Server 2005 数据库。我们选择较旧服务器的原因在于 Windows Server 2003 R2 和 SQL Server 2005 的服务即将到期，并且我们拥有自动将工作负荷迁移到 Azure 的[工具](http://www.movemetothecloud.net/)和[指南](http://www.movemetothecloud.net/resources)。基于这一点，此示例中所使用的模式将适用于各种迁移场景。
-
-### 迁移现有应用程序 ###
-
-将业务线应用程序迁移到 Web Apps 的总体解决方案中的第一步是确定现有应用程序资产和体系结构。本白皮书中的示例是托管在单个 IIS 服务器上的 ASP.NET web 应用程序，以及托管在单独的 SQL Server 上的数据库（如图中所示）。员工使用用户名和密码组合登录到系统，输入支出的详细信息并将每项开支收据的扫描副本上传到数据库。
- 
-![](./media/web-sites-enterprise-offerings/on-premise-app-example.png)
-
-#### 需要注意的事项 ####
-
-当迁移应用程序来自本地环境时，您可能需要记住 Web Apps 的几个限制。以下是将 Web 应用程序迁移到 Web Apps 时需要注意的一些关键主题 ([http://www.movemetothecloud.net/resources](http://www.movemetothecloud.net/resources))：
-
--	端口绑定 - Web 应用仅支持用于 HTTP 的端口 80 和用于 HTTPS 通信的端口 443。如果您的应用程序使用任何其他端口，则一旦迁移，应用程序将对 HTTP 通信使用端口 80，对 HTTPS 通信使用端口 443。这通常是一个无害的问题，因为在本地部署中使用不同的端口以克服域名的使用是很常见的情况，尤其是在开发和测试环境中
--	身份验证 - 默认情况下 Web 应用支持匿名身份验证，而且还支持由应用程序鉴定的表单身份验证。当应用程序仅与 Azure Active Directory 和 ADFS 集成时，Web Apps 可以提供 Windows 身份验证。此功能在[此处](/documentation/articles/web-sites-business-application-solution-overview/)有更详细的讨论
--	基于 GAC 的程序集 - Web 应用不允许将程序集部署到全局程序集缓存 (GAC) 中。因此，如果迁移的应用程序在本地利用此功能，请考虑将这些程序集移到该应用程序的 bin 文件夹。
--	IIS5 兼容模式 - Web 应用不支持 IIS5 兼容模式，因此每个 Web 应用实例和父 Web 应用实例下的所有 Web 应用程序均在单个应用程序池内相同的工作进程中运行。
--	使用 COM 库 - Web 应用不允许 COM 组件在平台上注册。因此如果该应用程序正在使用 COM 组件，就需要将这些在托管代码中进行重写并使用该应用程序进行部署。
--	ISAPI 筛选器 - Web 应用可支持 ISAPI 筛选器。需要将它们部署为应用程序的一部分，并在 Web 应用程序的 web.config 文件中进行注册。有关详细信息，请参阅 [http://aka.ms/azurewebsitesxdt](/documentation/articles/web-sites-transform-extend/)。
-
-考虑完这些主题之后，Web 应用程序应已准备好支持云。如果一些主题没有完全被满足也不用担心，迁移工具将为迁移提供最佳支持。
-
-迁移流程中的后续步骤是创建 App Service Web 应用和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Web Apps 实例可供您根据 Web 应用程序需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/pricing/details/websites/)。同样，Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/pricing/details/sql-database/)。创建完成后，应用程序被上传到 App Service Web Apps（通过 FTP 或 WebDeploy），然后再迁移到数据库。
-
-在这种迁移中，该解决方案使用了 Azure SQL 数据库，但是这不是 Azure 支持的唯一的数据库。公司还可以通过外接程序（可在 [Azure 应用商店](/marketplace/partner-program/)购买）使用 MySQL、MongoDB、Azure DocumentDB 等数据库。
-
-在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](/documentation/articles/sql-database-cloud-migrate/)。
-
-创建一个新的 Azure SQL 数据库，使用 SQL Server Management Studio 连接到数据库，然后运行脚本构建数据库架构并用来自本地数据库的数据对其进行填充，此时开支应用程序数据库创建完成。
-
-迁移第一阶段中的最后一步需要将连接字符串更新到应用程序的数据库。这可以通过 Azure 门户来完成。对于每个 Web 应用，您可以修改应用程序的特定设置，包括被应用程序用来连接正在使用的任何数据库的任意连接字符串。
+在整个示例中，我们要讨论的业务线应用程序是一个支出报表应用程序，它使员工能够提交费用进行报销。该应用程序托管于运行 IIS6 的 Windows Server 2003 R2 上，数据库是 SQL Server 2005 数据库。我们选择较旧服务器的原因在于 Windows Server 2003 R2 和 SQL Server 2005 的服务即将到期。基于这一点，此示例中所使用的模式将适用于各种迁移场景。
 
 ### 使用 Azure SQL 数据库的替代方法 ###
 
@@ -135,7 +104,7 @@ Azure 平台提供了一些替代方法，可以将 Azure SQL 数据库用作 We
 App Service Web Apps 提供了一款灵活、经济高效、响应迅速的解决方案在快速发展的环境中满足企业不断变化的需求。Web Apps 帮助企业利用托管平台以及现代化的 DevOps 功能和减少的人工管理提高了生产力和效率，同时提供企业扩展功能、弹性、安全性以及与本地资产的集成。
 
 ## 行动号召 ##
-有关 Azure App Service Web Apps 服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/home/features/web-site/enterprise/)，在这里您可以查看更多信息；并登录 [http://aka.ms/azuretrial](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为您企业带来的优势。
+有关 Azure App Service Web Apps 服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/home/features/web-site/)，在这里您可以查看更多信息；并登录 [http://aka.ms/azuretrial](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为您企业带来的优势。
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 

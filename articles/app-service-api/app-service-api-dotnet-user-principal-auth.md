@@ -321,7 +321,7 @@
 * [Securing AngularJS Single Page Apps with Azure AD](/documentation/articles/active-directory-devquickstarts-angular/)（使用 Azure AD 保护 AngularJS 单页应用程序）。
 * [Introducing ADAL JS v1](http://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/)（ADAL JS v1 简介）
 
-## 故障排除
+## <a name="troubleshooting"></a>故障排除
 
 [AZURE.INCLUDE [故障排除](../../includes/app-service-api-auth-troubleshooting.md)]
 

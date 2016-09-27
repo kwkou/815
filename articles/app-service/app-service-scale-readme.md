@@ -15,7 +15,7 @@
 
 # Azure 应用服务：缩放应用服务应用程序
 
-在 Azure 应用服务中托管的应用程序可以[达到很大的规模](https://azure.microsoft.com/blog/canadian-broadcasting-corporation-radio-canada-leverage-azure-for-smooth-election-coverage/)。但是，缩放应用程序是一个很复杂的问题，没有“一刀切”解决方案。若要正确地缩放应用程序，需注意 3 大领域的问题，这对于应用程序的成功缩放至关重要：
+在 Azure 应用服务中托管的应用程序可以达到很大的规模。但是，缩放应用程序是一个很复杂的问题，没有“一刀切”解决方案。若要正确地缩放应用程序，需注意 3 大领域的问题，这对于应用程序的成功缩放至关重要：
 
 1. 了解应用程序体系结构及其弱点。
 	* 应用程序是否有状态？ 是否无状态？

@@ -38,7 +38,7 @@
 -	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)。如果你使用 Visual Studio，步骤可能有所不同。
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
-> + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
+> + 可以[建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
 
 ## <a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> 将 Web 应用部署到具有集成 CDN 终结点的 Azure ##
 
@@ -52,9 +52,9 @@
 
 	![](./media/cdn-websites-with-cdn/2-webapp-template.png)
 
-	Azure 中国区目前不支持在 Visual Studio 中创建或管理网站。因此，你需要转到[管理门户](https://manage.windowsazure.cn/)创建新的 Azure 网站
+	Azure 中国区目前不支持在 Visual Studio 中创建或管理网站。因此，你需要转到[经典管理门户](https://manage.windowsazure.cn/)创建新的 Azure web 应用
 	
-3. 在管理门户中创建网站后，单击网站的“仪表板”。在“速览”下，单击“下载发布配置文件”。
+3. 在经典管理门户中创建网站后，单击网站的“仪表板”。在“速览”下，单击“下载发布配置文件”。
 
 3. 在 Visual Studio 中，右键单击你的项目并选择“发布”
 
@@ -88,14 +88,14 @@
 
 	发布完成后，你会在浏览器中看到发布的 Web 应用。
 
-1. 若要创建 CDN 终结点，请登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 若要创建 CDN 终结点，请登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 单击“新建 > 应用服务 > CDN > 快速创建”。选择 **http://*&lt;sitename>*.chinacloudsites.cn/**，然后单击“创建”。
 
 	![](./media/cdn-websites-with-cdn/7-create-cdn.png)
 
-	> [AZURE.NOTE] 创建 CDN 终结点以后，管理门户就会向你显示其 URL 以及所集成的源域。不过，需要一定的时间才能将新 CDN 终结点的配置完全传播到所有 CDN 节点位置。
+	> [AZURE.NOTE] 创建 CDN 终结点以后，经典管理门户就会向你显示其 URL 以及所集成的源域。不过，需要一定的时间才能将新 CDN 终结点的配置完全传播到所有 CDN 节点位置。
 
-3. 回到管理门户，在“CDN”选项卡中，单击刚创建的 CDN 终结点的名称。
+3. 回到经典管理门户，在“CDN”选项卡中，单击刚创建的 CDN 终结点的名称。
 
 	![](./media/cdn-websites-with-cdn/8-select-cdn.png)
 

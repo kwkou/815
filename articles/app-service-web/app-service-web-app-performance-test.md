@@ -131,7 +131,7 @@
 
 #### 问：它是否支持任何其他 Web 测试文件格式？
   
-**答**：目前仅支持 Visual Studio Web 测试格式文件。如果需要对其他文件格式的支持，欢迎告知我们。请通过 [vsoloadtest@microsoft.com](mailto:vsoloadtest@microsoft.com) 向我们发送电子邮件。
+**答**：目前仅支持 Visual Studio Web 测试格式文件。如果需要对其他文件格式的支持，欢迎告知我们。
 
 #### 问：Visual Studio Team Service 帐户还有什么用途？
 

@@ -18,7 +18,7 @@
 
 Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。
 
-本文通过 [Azure 门户](https://portal.azure.cn)、Azure PowerShell 和 Azure 命令行接口 (Azure CLI) 来使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
+本文通过 [Azure 门户](https://portal.azure.cn)、Azure PowerShell 和 Azure 命令行接口 (Azure CLI) 来使用诊断日志。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -39,8 +39,6 @@ Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/docum
 应用程序诊断可以捕获由 Web 应用程序产生的信息。ASP.NET 应用程序可使用 [System.Diagnostics.Trace](http://msdn.microsoft.com/zh-cn/library/36hhw2t6.aspx) 类将信息记录到应用程序诊断日志。例如：
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
-
-在运行时，你可以检索这些日志来协助进行故障排除。有关详细信息，请参阅[在 Visual Studio 中对 Azure Web 应用进行故障故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
 
 将内容发布到某个 Web 应用时，应用服务 Web 应用还将记录部署信息。此操作将自动执行，不会对部署日志记录进行配置设置。部署日志记录允许你确定部署失败的原因。例如，如果你使用的是自定义部署脚本，你可能会使用部署日志记录来确定该脚本失败的原因。
 
@@ -124,11 +122,11 @@ Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/docum
 Visual Studio Application Insights 提供了用于筛选和搜索日志的工具，以及用于将日志与请求和其他事件关联的工具。
 
 1. 在 Visual Studio 中，将 Application Insights SDK 添加到项目。
- * 在解决方案资源管理器中，右键单击项目并选择“添加 Application Insights”。本教程将介绍所有步骤，包括创建 Application Insights 资源。[了解详细信息](/documentation/articles/app-insights-start-monitoring-app-health-usage/)
+ * 在解决方案资源管理器中，右键单击项目并选择“添加 Application Insights”。本教程将介绍所有步骤，包括创建 Application Insights 资源。
 2. 将跟踪侦听器包添加到项目。
- * 右键单击项目，然后选择“管理 NuGet 包”。选择 `Microsoft.ApplicationInsights.TraceListener` [了解详细信息](/documentation/articles/app-insights-asp-net-trace-logs/)
+ * 右键单击项目，然后选择“管理 NuGet 包”。选择 `Microsoft.ApplicationInsights.TraceListener`
 3. 上传项目并运行，以生成日志数据。
-4. 在 [Azure 门户](https://portal.azure.cn/)中，浏览到新的 Application Insights 资源，并打开“搜索”。你将看到日志数据，以及请求、使用情况和其他遥测。某些遥测可能需要几分钟才能到达：请单击“刷新”。[了解详细信息](/documentation/articles/app-insights-diagnostic-search/)
+4. 在 [Azure 门户](https://portal.azure.cn/)中，浏览到新的 Application Insights 资源，并打开“搜索”。你将看到日志数据，以及请求、使用情况和其他遥测。某些遥测可能需要几分钟才能到达：请单击“刷新”。
 
 [Learn more about performance tracking with Application Insights](/documentation/articles/insights-perf-analytics/)（了解有关使用 Application Insights 跟踪性能的详细信息）
 
@@ -256,12 +254,11 @@ Web 服务器日志使用 [W3C 扩展日志文件格式](http://msdn.microsoft.c
 ##<a name="nextsteps"></a>后续步骤
 
 - [如何监视 Web Apps](/documentation/articles/web-sites-monitor/)
-- [在 Visual Studio 中对 Azure Web Apps 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 - [在 HDInsight 中分析 Web 应用日志](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 
 ## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在 Azure 门户中导航的参考](https://manage.windowsazure.cn/)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在 Azure 门户中导航的参考](/documentation/articles/app-service-web-app-azure-portal/)
  
 
 <!---HONumber=Mooncake_0919_2016-->

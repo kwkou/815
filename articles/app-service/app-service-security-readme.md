@@ -18,6 +18,6 @@ Azure 应用服务符合安全性和可靠性方面的主要行业标准，为�
 
 [AZURE.INCLUDE [app-service-blueprint-security](../../includes/app-service-blueprint-security.md)]
 
-Azure 应用服务所使用的反恶意软件解决方案与 Azure 云服务和虚拟机使用的相同。若要了解此方面的详细信息，请参阅[反恶意软件文档](/documentation/articles/azure-security-antimalware/)
+Azure 应用服务所使用的反恶意软件解决方案与 Azure 云服务和虚拟机使用的相同。
 
 <!---HONumber=Mooncake_0919_2016-->

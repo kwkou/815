@@ -31,7 +31,7 @@
  
 - **具有高可用性的全局缩放** - 以手动或自动方式[增加](/documentation/articles/web-sites-scale/)或[扩大](/documentation/articles/insights-how-to-scale/)。在 Microsoft 全球数据中心基础结构中的任意位置托管应用，并且应用服务 [SLA](/support/sla/app-service/) 承诺高可用性。
 
-- **到 SaaS 平台和本地数据的连接** - 从适用于企业系统（例如 SAP、Siebel 和 Oracle）的 50 多个[连接器](/documentation/articles/apis-list/)、SaaS 服务（例如 Salesforce 和 Office 365）以及 Internet 服务中进行选择。使用[Azure 虚拟网络](/documentation/articles/web-sites-integrate-with-vnet/)访问本地数据。
+- **到 SaaS 平台和本地数据的连接** - 从适用于企业系统（例如 SAP、Siebel 和 Oracle）的 50 多个连接器、SaaS 服务（例如 Salesforce 和 Office 365）以及 Internet 服务中进行选择。使用[Azure 虚拟网络](/documentation/articles/app-service-vnet-integration-powershell/)访问本地数据。
 
 - **安全性和合规性** - 应用服务符合 [ISO、SOC 和 PCI](https://www.trustcenter.cn/) 的要求。
 
@@ -61,9 +61,7 @@
 
 ## 应用服务入门
 
-立刻免费[创建临时 Web 应用或移动应用](https://tryappservice.azure.com/)，既无需信用卡，也无需做出任何承诺，而且毫不费力。
-
-或者开具一个 [Azure 试用帐户](/pricing/1rmb-trial/)，试用下述某个入门教程：
+开具一个 [Azure 试用帐户](/pricing/1rmb-trial/)，试用下述某个入门教程：
 
 * [教程：创建 Web 应用](/documentation/articles/app-service-web-get-started/)
 * [教程：创建移动应用](/documentation/articles/app-service-mobile-android-get-started/)

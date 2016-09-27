@@ -30,7 +30,7 @@ Azure 应用服务中的 API 应用提供各种功能，用于轻松在云中和
 
 - **简单的访问控制** - 可以保护 API 应用避免其遭到未经身份验证的访问，且无需更改代码。其他服务或代表用户的客户端访问 API 时，内置的身份验证服务将提供保护。支持的标识提供者包括 Azure Active Directory 和 Microsoft 帐户。客户端可以使用 Active Directory 身份验证库 (ADAL) 或移动应用 SDK。有关详细信息，请参阅 [Authentication and authorization for API Apps in Azure App Service](/documentation/articles/app-service-api-authentication/)（Azure 应用服务中 API 应用的身份验证和授权）。
 
-- **Visual Studio 集成** - Visual Studio 中的专用工具可以简化创建、部署、使用、调试和管理 API 应用的工作。有关详细信息，请参阅 [Announcing the Azure SDK 2.8.1 for .NET](/blog/announcing-azure-sdk-2-8-1-for-net/)（宣告推出用于 .NET 的 Azure SDK 2.8.1）。
+- **Visual Studio 集成** - Visual Studio 中的专用工具可以简化创建、部署、使用、调试和管理 API 应用的工作。有关详细信息，请参阅 [Announcing the Azure SDK 2.8.1 for .NET](https://azure.microsoft.com/blog/announcing-azure-sdk-2-8-1-for-net/)（宣告推出用于 .NET 的 Azure SDK 2.8.1）。
 
 此外，API 应用可以利用 [Web 应用](/documentation/articles/app-service-web-overview/)和[移动应用](/documentation/articles/app-service-mobile-value-prop/)提供的功能。反之亦然：如果使用某个 Web 应用或移动应用来托管 API，该应用可以利用 Swagger 元数据等 API 应用功能来生成客户端代码，以及使用 CORS 进行跨域浏览器访问。这三个应用程序类型（API、Web、移动）之间的唯一差别在于 Azure 门户中使用的名称和图标。
 

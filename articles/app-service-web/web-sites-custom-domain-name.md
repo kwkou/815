@@ -27,7 +27,7 @@
 
 ## 映射从外部购买的自定义域
 
-如果已从 [Azure DNS](/home/features/dns/) 或第三方提供商处购买了自定义域，则可按照以下三个主要步骤将自定义域映射到应用：
+如果已从第三方提供商处购买了自定义域，则可按照以下三个主要步骤将自定义域映射到应用：
 
 1. [ *（仅 A 记录）* 获取应用的 IP 地址](#vip)。
 2. [创建将域映射到应用的 DNS 记录](#createdns)。
@@ -194,8 +194,6 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 
 ## 后续步骤
 请参阅[使用在其他地方购买的 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate/)，以了解如何使用 HTTPS 保护自定义域名。
-
-[Azure DNS 入门](/documentation/articles/dns-getstarted-create-dnszone/) [在自定义域中为 Web 应用创建 DNS 记录](/documentation/articles/dns-web-sites-custom-domain/) [将域委托给 Azure DNS](/documentation/articles/dns-domain-delegation/)
 
 
 <!-- Images -->
