@@ -36,11 +36,11 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 
 Azure 还针对更特殊的用途提供其他计算托管模型，例如：
 
-* [移动服务](/services/mobile-services/)  
+* [移动服务](/documentation/services/mobile-services/)  
   适用于移动设备上运行的应用的云后端优化模型。
-* [Batch](/services/batch/)  
+* [Batch](/documentation/services/batch/)  
   适用于处理大量类似任务的优化模型，特别适用于本身在多台计算机上以并行任务形式运行的工作负荷。
-* [HDInsight (Hadoop)](/services/hdinsight/)  
+* [HDInsight (Hadoop)](/documentation/services/hdinsight/)  
   适用于在 Hadoop 群集上运行 [MapReduce](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options/#hadoop) 作业的优化模型。 
 
 ## 我该使用哪一种？ 做出选择
@@ -73,7 +73,7 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 ## 后续步骤
 
 * [比较](/documentation/articles/choose-web-site-cloud-service-vm/) App Service、云服务和虚拟机
-* 了解有关[云服务](/services/cloud-services/)的详细信息
+* 了解有关[云服务](/documentation/services/cloud-services/)的详细信息
 * 了解有关[虚拟机](/documentation/articles/virtual-machines-linux-about/)的详细信息 
 
 <!---HONumber=74-->

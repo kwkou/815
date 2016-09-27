@@ -10,7 +10,7 @@
 每个订阅的保留的 IP|20|100
 每个订阅的托管服务证书数|400|400
 每个订阅的[地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet/)数|256|256
-每个区域每个订阅的 [Batch](/services/batch/) 帐户数|1|50
+每个区域每个订阅的 [Batch](/documentation/services/batch/) 帐户数|1|50
 每个订阅的警报规则数|250|250
 
 <sup>1</sup>特小实例作为一项核心至核心限制计数，即使使用了部分核心。
