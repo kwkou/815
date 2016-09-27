@@ -55,18 +55,18 @@
 - [AppToNotifyUsers][]
 
 [事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
-[Azure 事件中心]: /services/event-hubs/
-[Azure 事件中心]: /services/event-hubs/
+[Azure 事件中心]: /documentation/services/event-hubs/
+[Azure 事件中心]: /documentation/services/event-hubs/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
 [AppToNotifyUsers]: https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications
 [Dynamics AX]: http://www.microsoft.com/zh-cn/dynamics/erp-ax-overview.aspx
-[Azure 网站]: /services/web-sites/
-[SQL Azure]: /services/sql-databases/
-[HDInsight]: /services/hdinsight/
+[Azure 网站]: /documentation/services/web-sites/
+[SQL Azure]: /documentation/services/sql-databases/
+[HDInsight]: /documentation/services/hdinsight/
 [Cortana Analytics Suite]: http://www.microsoft.com/server-cloud/cortana-analytics-suite/Overview.aspx?WT.srch=1&WT.mc_ID=SEM_lLFwOJm3&bknode=BlueKai
-[Azure 通知中心]: /services/notification-hubs/
-[Azure Stream Analytics]: /services/stream-analytics/
+[Azure 通知中心]: /documentation/services/notification-hubs/
+[Azure Stream Analytics]: /documentation/services/stream-analytics/
  
 [1]: ./media/event-hubs-sensors-notify-users/event-hubs-sensor-alert.png
 [2]: ./media/event-hubs-sensors-notify-users/event-hubs-erp-alert.png
