@@ -423,9 +423,7 @@ Azure SQL 数据库服务层分为三种，基本服务层、 标准服务层和
 
 在 V12 版本里，支持以下安全特性： 
 
-1.	[行级安全性(RLS)](https://msdn.microsoft.com/zh-cn/library/dn765131.aspx)  
-
-2.	[动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started/)  
+1.	[行级安全性(RLS)](https://msdn.microsoft.com/zh-cn/library/dn765131.aspx)    
 
 3.	[包含的数据库用户](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)  
 
