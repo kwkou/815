@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-api"
 	ms.date="06/30/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # Azure 应用服务中 API 应用的用户身份验证
 

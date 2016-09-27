@@ -12,7 +12,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 排查 Azure App Service 中 Web 应用性能缓慢的问题
 

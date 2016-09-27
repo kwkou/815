@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="08/10/2015" 
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 #流式传输日志和控制台
 

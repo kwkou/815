@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-api"
 	ms.date="04/13/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 在 Visual Studio 中开始使用 Azure 应用服务和 ASP.NET Web API 2
 

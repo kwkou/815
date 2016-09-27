@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # Azure App Service 上的企业级 WordPress
 

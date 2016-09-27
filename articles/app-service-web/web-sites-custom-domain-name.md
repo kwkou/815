@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="07/27/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 将自定义域名映射到 Azure 应用
 

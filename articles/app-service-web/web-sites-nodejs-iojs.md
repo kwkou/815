@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web"
 	ms.date="06/24/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 #如何将 io.js 与 Azure App Service Web 应用配合使用
 

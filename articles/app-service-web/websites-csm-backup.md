@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="08/10/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 # 使用 REST 备份和还原 App Service 应用
 
 > [AZURE.SELECTOR]

@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="05/25/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 测试 Azure Web 应用在低负载下的性能
 

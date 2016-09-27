@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web"
 	ms.date="06/27/2016" 
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 
 # 将 Azure App Service 中的 Azure Redis 缓存用于会话状态

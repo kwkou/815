@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/27/2016"
-	wacn.date=""/>
+	wacn.date="09/26/2016"/>
 
 # 使用 Web 作业运行后台任务
 
