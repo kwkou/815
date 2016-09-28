@@ -150,7 +150,7 @@ Azure 中的托管服务由一个设计为在托管服务中运行的应用程�
 Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn  
 Azure - Service Fabric Cluster | *.cloudapp.azure.com | *.chinaeast.chinacloudapp.cn
-Azure - 存储 | *.blob.core.windows.net <br /> *.queue.core.windows.net <br /> *.table.core.windows.net | *.blob.core.chinacloudapi.cn <br /> *.queue.core.chinacloudapi.cn <br /> *.table.core.chinacloudapi.cn
+Azure - 存储 | <p>*.blob.core.windows.net </p> <p>*.queue.core.windows.net </p> <p>*.table.core.windows.net</p> | <p>*.blob.core.chinacloudapi.cn </p><p> *.queue.core.chinacloudapi.cn </p><p> *.table.core.chinacloudapi.cn</p>
 Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
 Azure - 资源管理器(ARM) | https://management.azure.com | https://management.chinacloudapi.cn
 SQL 数据库 | *.database.windows.net | *.database.chinacloudapi.cn
@@ -167,7 +167,7 @@ AAD PowerShell Login | Connect-msolservice| Connect-msolservice
 AAD Login | https://login.windows.net| https://login.chinacloudapi.cn
 AAD Graph API | https://graph.windows.net| https://graph.chinacloudapi.cn
 Azure 认知服务 | https://api.projectoxford.ai/face/v1.0 | https://api.cognitive.azure.cn/face/v1.0
-SQL 数据库导入/导出服务映射端点 | | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br /> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
+SQL 数据库导入/导出服务映射端点 | | <p>1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) </p><p> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)</p>
 
 
 #<a name="cncenter"></a>中国的数据中心
@@ -192,7 +192,7 @@ SQL 数据库导入/导出服务映射端点 | | 1. 中国东部：[https://sh1p
  
 2.在“Manage Microsoft Azure Subscriptions”窗口中选择Certificates，可以使用import功能将刚才下载好的publishsetting文件导入
 	
-	![developerdifferences-002-002](./media/developerdifferences/developerdifferences-002-002.png)
+![developerdifferences-002-002](./media/developerdifferences/developerdifferences-002-002.png)
 3.导入成功后，就可以看到你账户下的订阅，并可以浏览云服务和存储等信息，同时也可以使用publish功能，将应用发布到云服务中。
 
 ###<a name="confpref"></a>配置设置
