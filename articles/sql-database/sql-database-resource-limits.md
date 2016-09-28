@@ -3,22 +3,22 @@
 	description="本页介绍 Azure SQL 数据库的一些常见资源限制。"
 	services="sql-database"
 	documentationCenter="na"
-	authors="rothja"
-	manager="jeffreyg"
+	authors="carlrabeler"
+	manager="jhubbard"
 	editor="monicar" />
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/02/2016"
-	wacn.date="06/14/2016" />
+	ms.date="07/19/2016"
+	wacn.date="09/28/2016" />
 
 
 # Azure SQL 数据库资源限制
 
 ## 概述
 
-Azure SQL 数据库使用两种不同的机制管理可用于数据库的资源：**资源调控**和**强制限制**。本主题将介绍这两个主要方面的资源管理。
+Azure SQL 数据库使用两种不同的机制管理可用于数据库的资源：**资源调控**和**强制限制**。本主题介绍了资源管理的这两个主要方面。
 
 ## 资源控制
 基本、标准和高级服务层的设计目标之一是为了让 Azure SQL 数据库的行为好像数据库运行在其自己的计算机上，完全独立于其他数据库。资源调控模拟了此行为。如果聚合资源利用率达到分配给数据库的最大可用 CPU、内存、日志 I/O 和数据 I/O 资源数，资源调控会将执行中的查询排队，并在资源释放时将资源分配给排队的查询。
@@ -56,6 +56,10 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 | 区域 | 限制 | 说明 |
 |---|---|---|
 | 使用按订阅自动导出的数据库 | 10 | 自动导出允许你创建自定义计划来备份 SQL 数据库。有关详细信息，请参阅 [SQL 数据库：支持自动 SQL 数据库导出](http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines)。|
+| 每个服务器的数据库 | 最多 5000 个 | V12 服务器上每个服务器最多允许使用 5000 个数据库。 |  
+| 每个服务器的 DTU | 45000 | V12 服务器上每个服务器有 45000 个 DTU 可用，用于预配数据库、弹性池和数据仓库。 |
+
+
 
 ## 资源
 
@@ -65,4 +69,4 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 
 [SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages/)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0919_2016-->

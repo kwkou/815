@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/04/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="07/19/2016"
+	wacn.date="09/28/2016"/>
 
 # 概述：SQL 数据库的管理工具
 
@@ -23,6 +23,7 @@
 ## Visual Studio 中的 SQL Server Management Studio 和 SQL Server Data Tools
 
 Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Tools (SSDT) 是在计算机上运行的客户端工具，你可以用它们来连接到、管理和开发云中的数据库。如果你是熟悉 Visual Studio 或其他集成开发环境 (IDE) 的应用程序开发人员，请[尝试使用 Visual Studio 中的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)。许多数据库管理员都熟悉 SSMS（可用于 Azure SQL 数据库）。[下载最新版本的 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290)，在使用 Azure SQL 数据库时始终使用该最新版本。有关使用 SSMS 管理 Azure SQL 数据库的详细信息，请参阅[使用 SSMS 管理 SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)。
+> [AZURE.IMPORTANT] 必须使用最新版本的 SQL Server Management Studio 和 SQL Server Data Tools for Visual Studio 来保持与 Azure 和 SQL 数据库的更新同步。这些早期版本的工具无法正常用于 SQL 数据库。
 
 ## 命令行工具
 
@@ -38,4 +39,4 @@ Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Too
 * 使用[弹性扩展客户端库](/documentation/articles/sql-database-elastic-database-client-library/)管理单租户模型或多租户模型中的数据库。
  
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0919_2016-->
