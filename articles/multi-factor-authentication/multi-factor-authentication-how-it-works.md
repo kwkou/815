@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="05/16/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="08/04/2016"
+	wacn.date="09/28/2016"/>
 
 #Azure 多重身份验证的工作原理
 

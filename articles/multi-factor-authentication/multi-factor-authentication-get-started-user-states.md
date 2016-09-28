@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="05/12/2016" 
-	wacn.date="06/14/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="09/28/2016"/>
 
 # Azure Multi-Factor Authentication 中的用户状态
 
@@ -73,4 +73,4 @@ Enabled |用户已加入 Multi-Factor Authentication。|否。它们继续工作
 9.  然后，你应会看到该操作已成功。单击“关闭”。
 ![禁用用户](./media/multi-factor-authentication-get-started-user-states/userstate4.png)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0919_2016-->
