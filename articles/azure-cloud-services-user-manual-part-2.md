@@ -43,13 +43,13 @@
 
 上图中，模拟器分为两种：
 
-(1) Compute Emulator  
+1. Compute Emulator  
 
-    计算模拟器。通过该模拟器模拟云服务在云端执行的情况。
+	计算模拟器。通过该模拟器模拟云服务在云端执行的情况。
 
-(2) Storage Emulator  
+2. Storage Emulator  
 
-    存储模拟器。通过该模拟器模拟 Azure 存储执行情况。
+	存储模拟器。通过该模拟器模拟 Azure 存储执行情况。
 
 需要在本地调试时，可以直接使用 Azure Emulator，模拟云服务在云端执行的大部分功能。  
 
@@ -61,50 +61,52 @@
 
 ![选项][8]
 
-(1) Web Role 是响应客户端的 HTTP 请求；<br/>
-(2) Worker Role 则是在后台执行的应用程序，概念上类似于 Windows Service；<br/>
-(3) Web Role 可以通过 Azure 列队存储，向 Worker Role 发送队列消息 (Queue.AddMessage())，让 Worker Role 在后端执行自己需要的逻辑。
+1. Web Role 是响应客户端的 HTTP 请求；  
+2. Worker Role 则是在后台执行的应用程序，概念上类似于 Windows Service；  
+3. Web Role 可以通过 Azure 列队存储，向 Worker Role 发送队列消息 (Queue.AddMessage())，让 Worker Role 在后端执行自己需要的逻辑。
 
 一个云服务可以：
 
-(1) 只有 Web Role，没有 Worker Role；<br/>
-(2) 只有 Worker Role，没有 Web Role；<br/>
-(3) 既有 Web Role，又有 Worker Role。
+1. 只有 Web Role，没有 Worker Role；  
+2. 只有 Worker Role，没有 Web Role；  
+3. 既有 Web Role，又有 Worker Role。
 
-> [ 注意事项 ] 上图中的 Worker Role 分为三类 (Worker Role, Cache Worker Role 和 Worker Role with Service Bus Queue)。本文只介绍 Worker Role。
+> [AZURE.NOTE] 上图中的 Worker Role 分为三类 (Worker Role, Cache Worker Role 和 Worker Role with Service Bus Queue)。本文只介绍 Worker Role。
 
-为什么 Azure 有 Web Role / Worker Role？它的好处在哪里？接下来举例说明。<br/>
+为什么 Azure 有 Web Role / Worker Role？它的好处在哪里？接下来举例说明。
+
 比如有一个信息管理系统，需要上传 Excel 文档来进行解析和处理。从软件设计的角度来说，有 2 种解决方法：  
 
-(1) 在 ASP.NET 应用程序中新建一个 upload control，在 upload control 里写函数：一旦 Excel 文件上传完毕，则在 .cs 文件执行对 Excel 的处理工作。
+1. 在 ASP.NET 应用程序中新建一个 upload control，在 upload control 里写函数：一旦 Excel 文件上传完毕，则在 .cs 文件执行对 Excel 的处理工作。
 
-    但这样有一个缺点，如果 Excel 文件包含内容过多，需要花费很长时间处理，前台的 ASP.NET 页面会停滞或者无响应。虽然可以通过增加 progressbar 或者 loading 图片来增强用户体验，但是从软件设计上来说不是最好的解决方法。
+	但这样有一个缺点，如果 Excel 文件包含内容过多，需要花费很长时间处理，前台的 ASP.NET 页面会停滞或者无响应。虽然可以通过增加 progressbar 或者 loading 图片来增强用户体验，但是从软件设计上来说不是最好的解决方法。
 
-(2) 前端仍用原来的处理方式，即使用 upload control。服务器端增加一个 Windows Service，按时序查询某一个文件夹，一旦发现前端页面上传了 Excel 文件，则 Windows Service 开始处理 Excel 的工作。这样前端页面会及时响应，实现更好的用户体验。
+2. 前端仍用原来的处理方式，即使用 upload control。服务器端增加一个 Windows Service，按时序查询某一个文件夹，一旦发现前端页面上传了 Excel 文件，则 Windows Service 开始处理 Excel 的工作。这样前端页面会及时响应，实现更好的用户体验。
 
-    但是这样处理仍有一个缺陷，前端页面和 windows service 是一对一的关系，如果附件上传的数量很大，会出现 Windows Service 来不及处理的情况。
+	但是这样处理仍有一个缺陷，前端页面和 windows service 是一对一的关系，如果附件上传的数量很大，会出现 Windows Service 来不及处理的情况。
 
-(3) 如果有 Worker Role，一个 ASP.NET 页面后端可以有多个 Worker Role 来进行分布式计算，它们是一对多的关系，能够有效的利用云上的计算资源，Worker Role 可以处理高负载的数据访问。
+3. 如果有 Worker Role，一个 ASP.NET 页面后端可以有多个 Worker Role 来进行分布式计算，它们是一对多的关系，能够有效的利用云上的计算资源，Worker Role 可以处理高负载的数据访问。
 
 这样的架构亮点如下：  
 
-(1) 异步处理，Web Role 只对客户端的 HTTP 请求进行快速响应；而 Worker Role 在后端处理 Web Role 发送过来的消息 (Queue)时，两者是松耦合的。
+1. 异步处理，Web Role 只对客户端的 HTTP 请求进行快速响应；而 Worker Role 在后端处理 Web Role 发送过来的消息 (Queue)时，两者是松耦合的。
 
-    在传统的 Web 应用中，如果我们把复杂的处理逻辑写在 ASPX 页面，该页面可能会停滞，无法实现良好的用户体验。 Azure PaaS 使用 Web Role 和 Worker Role，Web Role 只响应客户端的 HTTP 请求；而 Worker Role 可以在后端对业务逻辑进行异步处理。
+	在传统的 Web 应用中，如果我们把复杂的处理逻辑写在 ASPX 页面，该页面可能会停滞，无法实现良好的用户体验。 Azure PaaS 使用 Web Role 和 Worker Role，Web Role 只响应客户端的 HTTP 请求；而 Worker Role 可以在后端对业务逻辑进行异步处理。
 
-(2) Web Role 和 Worker Role 的关系是多对多，比如可在 Web Role 的配置中设置 Instance count 为10。如下图：
+2. Web Role 和 Worker Role 的关系是多对多，比如可在 Web Role 的配置中设置 Instance count 为10。如下图：
 
-    ![设置 Instance count][9]
+	![设置 Instance count][9]
 
-    在 Worker Role 的配置中，设置Instance Count为3  
-    ![设置Instance Count][10]
+	在 Worker Role 的配置中，设置Instance Count为3  
+
+	![设置Instance Count][10]
 
 这种架构就好比一个餐厅，里面有 10 个服务员 (Web Role) 和 3 个厨师 (Worker Role)：  
 
-(1) 服务员 (Web Role) 只负责招待客人(响应客户端请求)，并将客人的点菜信息通过队列消息交给厨房(Queue.AddMessage())；<br/>
-(2) 厨师 (Worker Role)读取点菜信息(Queue.GetMessage)，随后负责烧菜做饭(进行后端逻辑)，饭菜准备完毕后，删除点菜信息；<br/>
-(3) 如果前端压力过大(客户端请求过多)，则 Web Role 可以横向扩展; 如果后端压力过大(后端逻辑处理过多)，则 Worker Role 也可以横向扩展； <br/>
-(4) 这种松耦合、多对多的关系非常适合企业级应用架构。
+1. 服务员 (Web Role) 只负责招待客人(响应客户端请求)，并将客人的点菜信息通过队列消息交给厨房(Queue.AddMessage())；  
+2. 厨师 (Worker Role)读取点菜信息(Queue.GetMessage)，随后负责烧菜做饭(进行后端逻辑)，饭菜准备完毕后，删除点菜信息；  
+3. 如果前端压力过大(客户端请求过多)，则 Web Role 可以横向扩展; 如果后端压力过大(后端逻辑处理过多)，则 Worker Role 也可以横向扩展；  
+4. 这种松耦合、多对多的关系非常适合企业级应用架构。
 
 由此可见，Web Role 和 Worker Role 相互通信的重要途径是 Azure 队列存储，因此了解队列对于 Azure PaaS 架构设计非常重要。  
 
@@ -112,47 +114,46 @@
 
 创建前用户需准备：  
 
--	Azure 账户<br/>
+- Azure 账户<br/>
 - Visual Studio 2013<br/>
 - 安装 [Azure SDK](/downloads/?sdk=net)
 
-(1) 首先以管理员身份，运行 Visual Studio 2013；  
-(2) 点击 File -> New -> Project；  
-(3) 在弹出的界面中，选择 Cloud -> Azure 云服务；  
+1. 首先以管理员身份，运行 Visual Studio 2013；  
+2. 点击 File -> New -> Project；   
+3. 在弹出的界面中，选择 Cloud -> Azure 云服务；  
 
-![界面][11]
-
-
-(4) 点击上图的 OK 按钮，依次添加 ASP.NET Web Role 和 Worker Role；  
-
-![添加][12]
-
-上图中，还可以对 Web Role 和 Worker Role 进行重命名。  
-
-一个云服务可以：
-  
-* 只有 Web Role，没有 Worker Role；  
-* 只有 Worker Role，没有 Web Role；  
-* 既有 Web Role，又有 Worker Role。
-
-上图中，请注意：<br/>
-
-Azure Cache Worker Role 功能会在 2016 年 11 月 30 日下线。 
-
-如果用户想使用 Cache 缓存服务，请使用 [Azure Redis 缓存](/documentation/services/redis-cache/)。
+	![界面][11]
 
 
-(5) 然后可以根据需求，选择相应的 ASP.NET 模板。这里选择 Web Forms，如下图：  
+4. 点击上图的 OK 按钮，依次添加 ASP.NET Web Role 和 Worker Role；  
 
-![Web Forms][13]
+	![添加][12]
+
+	上图中，还可以对 Web Role 和 Worker Role 进行重命名。  
+
+	一个云服务可以：
+	* 只有 Web Role，没有 Worker Role；  
+	* 只有 Worker Role，没有 Web Role；  
+	* 既有 Web Role，又有 Worker Role。
+
+	上图中，请注意：
+
+	Azure Cache Worker Role 功能会在 2016 年 11 月 30 日下线。 
+
+	如果用户想使用 Cache 缓存服务，请使用 [Azure Redis 缓存](/documentation/services/redis-cache/)。
+
+
+5. 然后可以根据需求，选择相应的 ASP.NET 模板。这里选择 Web Forms，如下图：  
+
+	![Web Forms][13]
 
 ###<a id="check-azure-cloud-service"></a>2.6 查看 Azure 云服务  
 
 一个 Azure 云服务解决方案，包含三个 Project，分别是:  
 
-(1) Azure 云服务<br/> 
-(2) Web Role<br/>
-(3) Worker Role  
+1. Azure 云服务  
+2. Web Role  
+3. Worker Role  
 
 ####<a id="azure-cloud-service-components"></a>2.6.1 云服务  
 
@@ -162,10 +163,10 @@ Azure 云服务的项目结构如下图所示：
 
 从目录结构上，可以观察到：  
 
-(1) 该项目不同于传统的 Visual Studio Project，是一个云服务。(带一个云的 Logo)；<br/>
-(2) 该云服务包含 2 个 Role，分别是 Web Role 和 Worker Role；<br/>
-(3) 该云服务包含了 2 个配置文件(CSCFG, 云服务 Configuration)，文件名分别是 Cloud 和 Local；<br/>
-(4) 该云服务包含了 1 个定义文件(CSDEF, 云服务 Definition)。
+1. 该项目不同于传统的 Visual Studio Project，是一个云服务。(带一个云的 Logo)；  
+2. 该云服务包含 2 个 Role，分别是 Web Role 和 Worker Role；  
+3. 该云服务包含了 2 个配置文件(CSCFG, 云服务 Configuration)，文件名分别是 Cloud 和 Local；  
+4. 该云服务包含了 1 个定义文件(CSDEF, 云服务 Definition)。
 
 
 ####<a id="azure-cloud-service-web-role"></a>2.6.2 Web Role
@@ -182,7 +183,8 @@ Web Role 项目结构如下图：
 
 WebRole.cs 的代码逻辑是：  
 
-(1) OnStart() 方法，在 Web Role 启动的时候执行；<br/>  (2) 我们还可以根据自己的需求，override OnStop() 方法和 Run() 方法。
+1. OnStart() 方法，在 Web Role 启动的时候执行；  
+2. 我们还可以根据自己的需求，override OnStop() 方法和 Run() 方法。
 
 ####<a id="azure-cloud-service-worker-role"></a>2.6.3 Worker Role  
 
@@ -196,10 +198,10 @@ WorkerRole.cs 的代码片段如下：
 
 从上图的 2 个代码片段可以看到，Worker Role 的代码逻辑是：  
 
-(1) OnStart() 方法，在 Worker Role 启动的时候执行；  
-(2) Run() 方法，在 Worker Role 运行的时候执行；  
-(3) Run() 方法，包含了一个异步执行的方法 RunAsync。具体的业务逻辑是，每 1000 毫秒，输出内容 ”Working”。我们可以根据自己的需求，修改 RunAsync() 方法的具体业务逻辑；  
-(4) OnStop() 方法，在 Worker Role 关闭的时候执行。
+1. OnStart() 方法，在 Worker Role 启动的时候执行；  
+2. Run() 方法，在 Worker Role 运行的时候执行；  
+3. Run() 方法，包含了一个异步执行的方法 RunAsync。具体的业务逻辑是，每 1000 毫秒，输出内容 ”Working”。我们可以根据自己的需求，修改 RunAsync() 方法的具体业务逻辑；  
+4. OnStop() 方法，在 Worker Role 关闭的时候执行。
 
 从上面的代码片段中，可以观察到 Worker Role .cs 的代码逻辑就像是一个 Windows Service，在背后默默运行。  
 
@@ -209,9 +211,9 @@ WorkerRole.cs 的代码片段如下：
 
 ![回顾][19]
 
-(1) 新创建的云服务有 2 个 Role，即Web Role 和 Worker Role；  
-(2) Web Role 是前端进行展示的用户界面，使用的 ASP.NET Web Form 代码；  
-(3) Worker Role 是在后端默默执行的函数，概念上类似于 Windows Service，只有一个类 WorkerRole.cs。  
+1. 新创建的云服务有 2 个 Role，即Web Role 和 Worker Role；  
+2. Web Role 是前端进行展示的用户界面，使用的 ASP.NET Web Form 代码；  
+3. Worker Role 是在后端默默执行的函数，概念上类似于 Windows Service，只有一个类 WorkerRole.cs。  
 
 ###<a id="cscfg-and-csdef"></a>2.7 cscfg 和 csdef  
 
@@ -219,13 +221,13 @@ WorkerRole.cs 的代码片段如下：
 
 在此之前，先介绍 2 个开发概念，接口 (Interface) 和类 (Class)。  
 
-(1) 接口定义了行为；  
-(2) 类继承了接口，实现了接口中具体的行为。
+1. 接口定义了行为；  
+2. 类继承了接口，实现了接口中具体的行为。
 
 cscfg 和 csdef 也是相同的概念：  
 
-(1) csdef — 全称是云服务 Definition，定义了云服务的参数，概念上类似于接口；  
-(2) cscfg — 全称是云服务 Configuration，配置了云服务的参数，概念上类似于类。  
+1. csdef — 全称是云服务 Definition，定义了云服务的参数，概念上类似于接口；  
+2. cscfg — 全称是云服务 Configuration，配置了云服务的参数，概念上类似于类。  
 
 在 Azure 云服务里，配置文件(云服务 Configuration)分为两种，Cloud 和 Local。 
 
@@ -263,15 +265,15 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图说明了 Azure 云服务的 Web Role 配置信息：  
 
-(1) Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；  
-(2) Instance Count — 表示 Web Role 横向扩展的节点数量；  
-(3) VM Size — 表示 Web Role 在横向扩展的时候，每一个计算节点的 CPU 内存信息；  
-(4) Enable Diagnostics — 表示在 Azure 云服务 Web Role 启用诊断功能，可以点击 Configure 按钮，设置需要诊断的具体参数；  
-(5) Specify the storage account credentials for the Diagnostics result — 表示需要把诊断的结果数据，保存到 Azure 表存储中。这里需要配置 Azure 存储的连接字符串。  
+1. Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；  
+2. Instance Count — 表示 Web Role 横向扩展的节点数量；  
+3. VM Size — 表示 Web Role 在横向扩展的时候，每一个计算节点的 CPU 内存信息；  
+4. Enable Diagnostics — 表示在 Azure 云服务 Web Role 启用诊断功能，可以点击 Configure 按钮，设置需要诊断的具体参数；  
+5. Specify the storage account credentials for the Diagnostics result — 表示需要把诊断的结果数据，保存到 Azure 表存储中。这里需要配置 Azure 存储的连接字符串。  
 
-    > [ 注意事项 ] Azure 云服务背后运行的是非持久化虚拟机，任何保存在非持久化虚拟机本地磁盘的文件都会有丢失风险，所以需要把诊断数据保存到 Azure 表存储中。  
+	> [AZURE.NOTE] Azure 云服务背后运行的是非持久化虚拟机，任何保存在非持久化虚拟机本地磁盘的文件都会有丢失风险，所以需要把诊断数据保存到 Azure 表存储中。  
 
-(6) 以上图为例，把 Web Role 横向扩展为 10 台，每台计算节点的 CPU 内存为 2 Core/3.5 GB (A 系列)。如果是 D 系列虚拟机，显示如下： 
+6. 以上图为例，把 Web Role 横向扩展为 10 台，每台计算节点的 CPU 内存为 2 Core/3.5 GB (A 系列)。如果是 D 系列虚拟机，显示如下： 
 
     ![D 系列虚拟机][22]
 
@@ -283,10 +285,10 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图中：  
 
-(1) Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；  
-(2) 一般情况下，把 ASP.NET Web Form 的配置信息保存到 Web.config 文件里。但是如果多台 Web Role 横向扩展时，需要手工一台一台更新每个 Web.config 文件，费时费力；  
-(3) 建议现在把以前保存在 Web.config 文件里的 Web Role 的配置信息，保存在 Web Role 的 Setting 页面中。这样修改了配置文件，可以在多台的 Web Role 实例同时生效，后面有 DEMO 演示；  
-(4) 上图中笔者点击 Add Setting，增加一个参数名 Setting1，参数值为 Hello World。  
+1. Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；  
+2. 一般情况下，把 ASP.NET Web Form 的配置信息保存到 Web.config 文件里。但是如果多台 Web Role 横向扩展时，需要手工一台一台更新每个 Web.config 文件，费时费力；  
+3. 建议现在把以前保存在 Web.config 文件里的 Web Role 的配置信息，保存在 Web Role 的 Setting 页面中。这样修改了配置文件，可以在多台的 Web Role 实例同时生效，后面有 DEMO 演示；  
+4. 上图中笔者点击 Add Setting，增加一个参数名 Setting1，参数值为 Hello World。  
 
 #####<a id="azure-cloud-service-config-web-role-endpoints"></a>2.8.1.3 Endpoints  
 
@@ -296,9 +298,9 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图中：  
 
-(1) 默认只有 Endpoint1，Public Port 为 80；  
-(2) 表示 Web Role 默认打开的端口为 80，协议为 http；  
-(3) 根据需要，设置打开 8080 等其他端口，并且可修改协议为 https。  
+1. 默认只有 Endpoint1，Public Port 为 80；  
+2. 表示 Web Role 默认打开的端口为 80，协议为 http；  
+3. 根据需要，设置打开 8080 等其他端口，并且可修改协议为 https。  
 
 #####<a id="azure-cloud-service-config-web-role-local-storage"></a>2.8.1.4 Local Storage
 
@@ -328,10 +330,10 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 在 Configuration 进行的配置如下：  
 
-(1) Web Role 需要横向扩展，共 10 个节点；  
-(2) 每个节点的硬件配置为 A2 ( 2 Core / 3.5 GB)；  
-(3) Enable Diagnostics — 表示在 Azure 云服务启用诊断功能；  
-(4) Specify the storage account credentials for the Diagnostics result — 表示我们需要把诊断的结果数据，保存到 Azure 表存储中。
+1. Web Role 需要横向扩展，共 10 个节点；  
+2. 每个节点的硬件配置为 A2 ( 2 Core / 3.5 GB)；  
+3. Enable Diagnostics — 表示在 Azure 云服务启用诊断功能；  
+4. Specify the storage account credentials for the Diagnostics result — 表示我们需要把诊断的结果数据，保存到 Azure 表存储中。
 
 在 Settings 进行了如下配置：  
 
@@ -353,18 +355,18 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图说明了 Azure 云服务的 Worker Role 配置信息：  
 
-(1) Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；  
-(2) Instance Count — 表示 Worker Role 横向扩展的节点数量；  
-(3) VM Size — 表示 Worker Role 在横向扩展时，每一个计算节点的 CPU 内存信息；  
-(4) Enable Diagnostics — 表示在 Azure 云服务 Worker Role 启用诊断功能，可以点击 Configure 按钮，设置需要诊断的具体参数；  
-(5) Specify the storage account credentials for the Diagnostics result — 表示需要把诊断的结果数据保存到 Azure 表存储中，这里需要配置 Azure 存储的连接字符串。  
+1. Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；  
+2. Instance Count — 表示 Worker Role 横向扩展的节点数量；  
+3. VM Size — 表示 Worker Role 在横向扩展时，每一个计算节点的 CPU 内存信息；  
+4. Enable Diagnostics — 表示在 Azure 云服务 Worker Role 启用诊断功能，可以点击 Configure 按钮，设置需要诊断的具体参数；  
+5. Specify the storage account credentials for the Diagnostics result — 表示需要把诊断的结果数据保存到 Azure 表存储中，这里需要配置 Azure 存储的连接字符串。  
 
     > [ 注意事项 ] Azure 云服务背后运行的是非持久化虚拟机，任何保存在非持久化虚拟机本地磁盘的文件都会有丢失风险，所以需要把诊断数据保存到 Azure 表存储中。  
 
 
-(6) 以上图为例，把 Worker Role 横向扩展为 10 台，每台计算节点的 CPU 内存为 2 Core/3.5 GB (A 系列)。如果是 D 系列虚拟机，显示如下：  
+6. 以上图为例，把 Worker Role 横向扩展为 10 台，每台计算节点的 CPU 内存为 2 Core/3.5 GB (A 系列)。如果是 D 系列虚拟机，显示如下：  
 
-   ![][29]
+	![][29]
 
 ######<a id="azure-cloud-service-config-worker-role-settings"></a>2.8.2.2 Settings  
 
@@ -374,8 +376,8 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图中：  
 
-(1) Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；<br/>
-(2) 这里不增加任何参数。  
+1. Service Configuration — 表示配置文件保存到 Cloud.cscfg 还是 Local.cscfg；<br/>
+2. 这里不增加任何参数。  
 
 ######<a id="azure-cloud-service-config-worker-role-endpoints"></a>2.8.2.3 Endpoints  
 
@@ -385,8 +387,8 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图中：  
 
-(1) 默认没有任何 Endpoint，也没有 Public Port；<br/>
-(2) Internet 用户无法直接访问 Azure Worker Role。  
+1. 默认没有任何 Endpoint，也没有 Public Port；<br/>
+2. Internet 用户无法直接访问 Azure Worker Role。  
 
 ######<a id="azure-cloud-service-config-worker-role-local-storage"></a>2.8.2.4 Local Storage  
 
@@ -412,10 +414,10 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 在 Configuration 进行的配置如下：  
 
-(1) Worker Role 需要横向扩展，一共 10 个节点；  
-(2) 每个节点的硬件配置为 A2 (2 Core / 3.5 GB)；  
-(3) Enable Diagnostics，表示在 Azure 云服务启用诊断功能；  
-(4) Specify the storage account credentials for the Diagnostics result，表示需要把诊断的结果数据，保存到 Azure 表存储中；
+1. Worker Role 需要横向扩展，一共 10 个节点；  
+2. 每个节点的硬件配置为 A2 (2 Core / 3.5 GB)；  
+3. Enable Diagnostics，表示在 Azure 云服务启用诊断功能；  
+4. Specify the storage account credentials for the Diagnostics result，表示需要把诊断的结果数据，保存到 Azure 表存储中；
 
 在 Worker Role 的 Endpoints 配置页面里，没有任何的 Endpoint，也没有 Public Port。Internet 用户无法直接访问到 Azure Worker Role。  
 
@@ -423,8 +425,8 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 前几节介绍了 Azure 云服务的 cscfg 和 csdef 有如下关系：  
 
-(1) csdef — 全称是云服务 Definition，是定义了云服务的参数，概念上类似于接口；<br/>
-(2) cscfg — 全称是云服务 Configuration，是配置了云服务的参数，概念上类似于类。  
+1. csdef — 全称是云服务 Definition，是定义了云服务的参数，概念上类似于接口；<br/>
+2. cscfg — 全称是云服务 Configuration，是配置了云服务的参数，概念上类似于类。  
 
 ####<a id="check-csdef-and-cscfg-servicedefinition"></a>2.9.1 查看 ServiceDefinition.csdef  
 
@@ -440,13 +442,13 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 项目包含了 Web Role，计算节点大小为 Medium (A2, 2 Core / 3.5 GB)  
 
-(1) Web Role 项目包含了访问节点 Endpoint1；  
-(2) Web Role 项目包含了配置信息，参数名为 ConnectionString 和 Setting1；  
-(3) Endpoint1 访问的协议是 http，访问的端口是 80。
+1. Web Role 项目包含了访问节点 Endpoint1；  
+2. Web Role 项目包含了配置信息，参数名为 ConnectionString 和 Setting1；  
+3. Endpoint1 访问的协议是 http，访问的端口是 80。
 
 项目包含了 Worker Role，计算节点大小为 Medium (A2, 2 Core / 3.5 GB)  
 
-(1) Worker Role 只包含了配置信息，参数名为 ConnectionString。  
+1. Worker Role 只包含了配置信息，参数名为 ConnectionString。  
 
 ####<a id="check-csdef-and-cscfg-serviceconfiguration"></a>2.9.2 查看 ServiceConfiguration.Cloud.cscfg
 通过 Visual Studio 2013 双击打开 ServiceConfiguration.Cloud.cscfg 文件，如下图：  
@@ -459,8 +461,8 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图中的参数含义是:  
 
-(1) osFamily = ”4” — 表示云服务后台的操作系统是 Windows Server 2012 R2。 所以 Azure 云服务背后运行的操作系统，一定是 Windows Server 2012 R2。 有关osFamily的含义请参考 [MSDN文档](https://msdn.com/zh-cn/library/azure/ee758710.aspx)  
-(2) osVersion = ”*” — 表示由 Azure 来帮助用户升级操作系统补丁，并且保证补丁最新。   
+1. osFamily = ”4” — 表示云服务后台的操作系统是 Windows Server 2012 R2。 所以 Azure 云服务背后运行的操作系统，一定是 Windows Server 2012 R2。 有关osFamily的含义请参考 [MSDN文档](https://msdn.com/zh-cn/library/azure/ee758710.aspx)  
+2. osVersion = ”*” — 表示由 Azure 来帮助用户升级操作系统补丁，并且保证补丁最新。   
 
 还可以查看 ServiceConfiguration.Cloud.cscfg，如下图：  
 
@@ -468,13 +470,13 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 上图中，定义了 Web Role 信息：  
 
-1.	项目文件包含了 WebRole1，实例数量为 10 个；  
+1. 项目文件包含了 WebRole1，实例数量为 10 个；  
 2. 定义了参数名 ConnectionString 和参数值；  
 3. 定义了参数名 Setting1 和参数值 Hello World。
 
 还定义了 Worker Role 信息：  
 
-1.	项目文件包含了 WorkerRole1，实例数量为 10 个；  
+1. 项目文件包含了 WorkerRole1，实例数量为 10 个；  
 2. 定义了参数名 ConnectionString 和参数值。  
 
 ###<a id="debug-with-azure-emulator"></a>2.10 使用模拟器调试  
@@ -483,8 +485,8 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 注意：
 使用本地模拟器调试时，请配置文件 ServiceConfiguration.Local.cscfg 修改：  
 
-(1) 把 WebRole1 和 Worker Role1 的 Instance Count 都修改为 2。上几节内容把 Instance Count 修改为 10，但是在本地调试的话会耗费过多的资源。  
-(2) 将 ConnectionString 配置信息修改为 UseDevelopmentStorage = true。
+1. 把 WebRole1 和 Worker Role1 的 Instance Count 都修改为 2。上几节内容把 Instance Count 修改为 10，但是在本地调试的话会耗费过多的资源。  
+2. 将 ConnectionString 配置信息修改为 UseDevelopmentStorage = true。
 
 如下图红色部分所示：  
 
@@ -494,30 +496,30 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 同时还要修改以下内容：  
 
-1.  在 WebRole1 的 Default.aspx 页面，增加 2 个 Label：LblInstance 和 LblSetting；
+1. 在 WebRole1 的 Default.aspx 页面，增加 2 个 Label：LblInstance 和 LblSetting；
 2. 在Default.aspx.cs的Page_Load方法，增加以下代码：  
 
     ![代码][39]
 
-    上面的代码有 2 点非常重要的地方：<br/>
+    上面的代码有 2 点非常重要的地方：
 
-    (1)	lblInstance 表示响应客户端请求的 Web Role Instance；  
+    1. lblInstance 表示响应客户端请求的 Web Role Instance；  
 
-    (2)	LblSetting 的值，是读取 Web Role Settings1 参数值。  
+    2. LblSetting 的值，是读取 Web Role Settings1 参数值。  
 
     关于读取 Web Role Setting1 参数值：  
 
-    (1)	一般情况下，把 ASP.NET Web Form 的配置信息保存到 Web.config 文件里。但是如果多台 Web Role 横向扩展时，需要手工一台一台更新每个 Web.config 文件，费时费力； 
+    1. 一般情况下，把 ASP.NET Web Form 的配置信息保存到 Web.config 文件里。但是如果多台 Web Role 横向扩展时，需要手工一台一台更新每个 Web.config 文件，费时费力； 
 
-    (2)	读取 Web.config 的.NET API 是：ConfigurationManager.AppSettings；  
+    2. 读取 Web.config 的.NET API 是：ConfigurationManager.AppSettings；  
 
-    (3)	笔者建议以前保存在 Web.config 文件里 Web Role 的配置信息，现在可以保存到 Web Role的Setting 页面里。这样修改了配置文件后，可以在多台 Web Role 实例同时生效。后面 DEMO 中会有演示；  
+   	3. 笔者建议以前保存在 Web.config 文件里 Web Role 的配置信息，现在可以保存到 Web Role的Setting 页面里。这样修改了配置文件后，可以在多台 Web Role 实例同时生效。后面 DEMO 中会有演示；  
 
-    (4)	读取 ServiceConfiguration.Cloud.cscfg 配置文件的.NET API 是 RoleEnvironment.GetConfigurationSettingValue。
+    4. 读取 ServiceConfiguration.Cloud.cscfg 配置文件的.NET API 是 RoleEnvironment.GetConfigurationSettingValue。
 
 3. 修改 WebRole1 的 WebRole.cs，增加以下代码：  
 
-![代码][40]
+	![代码][40]
 
 上面的代码表示 Configuration 的变更和通知机制，后面几章会做详细介绍。  
 
@@ -525,10 +527,10 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 现在可以通过本地的 Azure Storage Emulator 和 Azure Storage Emulator 来进行调试。  
 
-1.  点击 Visual Studio 2013，启动项目；  
+1. 点击 Visual Studio 2013，启动项目；  
 2. Azure Compute Emulator 和 Azure Storage Emulator 会启动，在 Windows 右下角会出现模拟器图标，如下图：
 
-    ![模拟器图标][41]
+	![模拟器图标][41]
 
 3. 点击上图的蓝色图标，点击右键；  
 
@@ -781,7 +783,7 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 
 以下是角色实例 (Role Instance) 发布和启动的简要过程： 
 
-1.	Azure 在服务器池中选择一个有足够 CPU 内核数的宿主服务器，或者启动一个新的满足需求的宿主服务器；  
+1. Azure 在服务器池中选择一个有足够 CPU 内核数的宿主服务器，或者启动一个新的满足需求的宿主服务器；  
 2. Azure 将云服务包 (CSPKG) 和配置文件 (CSCFG) 复制到宿主服务器上。宿主服务器上的一个宿主代理程序 (Host Agent) 会启动虚拟操作系统； 
 3. 虚拟操作系统上有一个名为 WaAppAgent 的代理程序。这个代理程序负责配置虚拟操作系统并启动一个名为 WaHostBootstrapper 的进程； 
 4. 如果角色上定义了启动任务，WaHostBootstrapper 会运行这些启动任务并等待所有标记为 Simple 类型的启动任务正确执行；  
@@ -859,12 +861,12 @@ Azure 关闭 Role Instance 时，会触发 Stopping 事件，并调用 Role 的 
 3. Web Role 响应前端用户请求；  
 4. Worker Role 在后端做任务处理；  
 5. Visual Studio 项目中配置了 Web Role 的相关参数：  
-    (1) Configuration — 配置了 Instance Count，VM Size 和 Diagnostic；  
-    (2) Settings — 配置连接字符串，功能类似于 Web.config；  
-    (3) Endpoint — 配置了打开的端口，和端口映射，类似 Azure Virtual Machine 的 Public Port 和 Private Port；  
-    (4) Local Storage — 使用默认的设置即可；  
-    (5) Certificates — 设置 HTTPS 访问需要的证书；  
-    (6) Caching — 使用默认的设置，如果客户想使用 Cache 缓存服务，请使用 [Azure Redis 缓存](/home/features/redis-cache/)。  
+    1. Configuration — 配置了 Instance Count，VM Size 和 Diagnostic；  
+    2. Settings — 配置连接字符串，功能类似于 Web.config；  
+    3. Endpoint — 配置了打开的端口，和端口映射，类似 Azure Virtual Machine 的 Public Port 和 Private Port；  
+    4. Local Storage — 使用默认的设置即可；  
+    5. Certificates — 设置 HTTPS 访问需要的证书；  
+    6. Caching — 使用默认的设置，如果客户想使用 Cache 缓存服务，请使用 [Azure Redis 缓存](/home/features/redis-cache/)。  
 6. 还配置了 Worker Role 的相关参数。
 
 ##<a id="developer-java"></a>3.Java 开发者必读
@@ -929,45 +931,45 @@ Azure 云服务是 Azure 的一个 PAAS 平台，同样支持多种不同的语�
 
 10. 回到项目，选择 myazuredeploy 并单击右键，选择 Azure，properties,第一项是选择是否配置远程访问，因为云服务底层实际上是 Windows Server，所以本处实际是配置 RDP 访问，可以在 Azure portal 直接配置，本例选择不配置；  
 
-   	![选择 Azure][87]
+	![选择 Azure][87]
 
-   	![RDP 访问][88]
+	![RDP 访问][88]
 
 11. 第二项是 role 的定义，本处可以选择 VM 虚拟机的大小，以及在云服务中需要启动的实例个数，点击修改，修改实例个数为 2，云服务中实例 2 个级以上才有 SLA 保障；  
 
-   	![role][89]
+	![role][89]
 
 12. 最后添加订阅。告知部署脚本，需部署该应用的订阅名称。单击按钮 “import from PUBLISH-SETTING file” 会自动跳转到中国版 Azure 的登录界面，输入 Azure 帐号密码，会自动下载和导入 setting 文件，如下图所示，完成后点击 OK 按钮退出；
 
-   	![登录界面][90]
+	![登录界面][90]
 
-   	![下载和导入][91]
+	![下载和导入][91]
 
 13. 回到项目，单击右键选择 Azure，选择第一项 “Deploy to Azure Cloud”，可看到在该界面中，已经列出了你的订阅、要部署到云端订阅的默认存储帐号、云服务等。由于本次是新部署，所以选择新建存储，将该部署所有的实例、应用存放到一个存储帐号下，选择 “New” 按钮，在弹出的界面中输入存储账号名称，选择 Location，需要注意如果希望应用部署在 East 或者 North，那么对应的后续配置都需要选择同样的地区：  
 
-  	 ![选择 Azure][92]
+	![选择 Azure][92]
 
-   	![新建存储][93]
+	![新建存储][93]
 
 14. 同样，选择新建云服务，例子中名称为 myhouse，同样选择 China East 作为地区：  
 
-   	![新建云服务][94]
+	![新建云服务][94]
 
 15. 配置完成后如下图所示，点击发布，那么部署程序自动创建存储账号，云服务，创建虚拟机，发布应用：  
 
-   	![发布][95]
+	![发布][95]
 
-   	![发布应用][96]
+	![发布应用][96]
 
 16. 显示部署完成后，可以登陆到 Azure 管理门户，查看部署的云服务和实例情况，在云服务的仪表板上，可以找打站点的 URL，选择实例页面，也可以看到按照定义，已经为改云服务创建了 2 个实例，并分布在不同的容错域：  
 
-  	 	![仪表板][97]  
+	![仪表板][97]  
 
-   		![容错域][98]
+	![容错域][98]
 
 17. 最后，可以测试一下发布成果，在浏览器中输入站点名称和应用名称，例如:http://XXXXX.chinacloudapp.cn/greenhouse/,就可以看到 Java web 服务正常工作如下：  
 
-   		![Java web 服务][99]
+	![Java web 服务][99]
 
 ##<a id="azure-cloud-service-enhanced-content"></a>4.高级内容  
 
