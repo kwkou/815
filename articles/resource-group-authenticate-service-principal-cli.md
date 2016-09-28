@@ -19,11 +19,11 @@
 - [Azure CLI](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 - [门户](/documentation/articles/resource-group-create-service-principal-portal/)
 
-如果应用程序或脚本需要访问资源，则多数情况下不需使用用户的凭据即可运行此过程。可以将该用户的不同权限分配给此过程，但用户的工作职责可能会变化。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。应用程序在每次运行时以此标识登录。本主题介绍如何通过[适用于 Mac、Linux 和 Windows 的 Azure CLI](xplat-cli-install.md) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
+如果应用程序或脚本需要访问资源，则多数情况下不需使用用户的凭据即可运行此过程。可以将该用户的不同权限分配给此过程，但用户的工作职责可能会变化。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。应用程序在每次运行时以此标识登录。本主题介绍如何通过[适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
 
-在本文中，用户将创建两个对象 - Active Directory (AD) 应用程序和服务主体。AD 应用程序包含凭据（应用程序 ID 和密码/证书）。服务主体包含角色分配情况。从 AD 应用程序可以创建多个服务主体。本主题重点介绍单租户应用程序，即应用程序只会在一个组织中运行。通常会将单租户应用程序作为在组织中运行的业务线应用程序使用。如果应用程序需在多个组织中运行，也可创建多租户应用程序。通常会将多租户应用程序用作软件即服务 (SaaS) 应用程序。若要设置多租户应用程序，请参阅[使用 Azure Resource Manager API 进行授权的开发人员指南](resource-manager-api-authentication.md)。
+在本文中，用户将创建两个对象 - Active Directory (AD) 应用程序和服务主体。AD 应用程序包含凭据（应用程序 ID 和密码/证书）。服务主体包含角色分配情况。从 AD 应用程序可以创建多个服务主体。本主题重点介绍单租户应用程序，即应用程序只会在一个组织中运行。通常会将单租户应用程序作为在组织中运行的业务线应用程序使用。如果应用程序需在多个组织中运行，也可创建多租户应用程序。通常会将多租户应用程序用作软件即服务 (SaaS) 应用程序。若要设置多租户应用程序，请参阅[使用 Azure Resource Manager API 进行授权的开发人员指南](/documentation/articles/resource-manager-api-authentication/)。
 
-使用 Active Directory 需要了解多个概念。有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](./active-directory/active-directory-application-objects.md)。有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](./active-directory/active-directory-authentication-scenarios.md)。
+使用 Active Directory 需要了解多个概念。有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
 使用 Azure CLI 时，可以通过 2 个选项进行 AD 应用程序身份验证：
 
@@ -67,7 +67,7 @@
         data:                             https://www.contoso.org/example
         info:    ad sp create command OK
 
-2. 向服务主体授予对订阅的权限。在此示例中，需要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](./active-directory/role-based-access-control-configure.md)。若要分配角色，必须拥有[所有者](./active-directory/role-based-access-built-in-roles.md#owner)角色或[用户访问管理员](./active-directory/role-based-access-built-in-roles.md#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。
+2. 向服务主体授予对订阅的权限。在此示例中，需要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。若要分配角色，必须拥有[所有者](/documentation/articles/role-based-access-built-in-roles#owner)角色或[用户访问管理员](/documentation/articles/role-based-access-built-in-roles#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。
 
         azure role assignment create --objectId ff863613-e5e2-4a6b-af07-fff6f2de3f4e -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -120,7 +120,7 @@
         data:                      https://www.contoso.org/example
         info:    ad sp create command OK
         
-2. 向服务主体授予对订阅的权限。在此示例中，需要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](./active-directory/role-based-access-control-configure.md)。若要分配角色，必须拥有[所有者](./active-directory/role-based-access-built-in-roles.md#owner)角色或[用户访问管理员](./active-directory/role-based-access-built-in-roles.md#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。
+2. 向服务主体授予对订阅的权限。在此示例中，需要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。若要分配角色，必须拥有[所有者](/documentation/articles/role-based-access-built-in-roles#owner)角色或[用户访问管理员](/documentation/articles/role-based-access-built-in-roles#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。
 
         azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 
