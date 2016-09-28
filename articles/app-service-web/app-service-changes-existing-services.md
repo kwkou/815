@@ -24,7 +24,7 @@
 
 [Azure App Service](/home/features/app-service/) 是一种全新独特的的云服务，使开发人员能够创建适用于任何平台和任何设备的 Web Apps 和 Mobile Apps。Azure App Service 是一个集成的解决方案，旨在简化重复编码函数、与企业和 SaaS 系统集成并自动执行业务流程，同时满足你对安全性、可靠性和可伸缩性的需要。
 
-App Service 将以下现有 Azure 服务 - [网站](/home/features/web-site/)和[移动服务](/home/features/mobile-services/)融合为单个综合服务，同时添加强大的新功能。App Service 允许托管以下应用类型：
+App Service 将以下现有 Azure 服务 - [网站](/home/features/app-service/web-apps/)和[移动服务](/home/features/mobile-services/)融合为单个综合服务，同时添加强大的新功能。App Service 允许托管以下应用类型：
 
 -   Web Apps
 -   Mobile Apps
@@ -49,7 +49,7 @@ App Service 将以下现有 Azure 服务 - [网站](/home/features/web-site/)和
 <p><li>你可以通过 <a href="https://manage.windowsazure.cn/">Azure 经典管理门户</a>访问现有网站，该门户的<em>“Web Apps”</em>下列出了所有现有站点。</p>
 <p><li><em>Web 托管计划</em>现成为 <em>App Service 计划</em>。<em>App Service 计划</em>可以托管任何应用类型的 App Service，例如 Web、Mobile 或 API Apps。</p>
 <p><li>Azure App Service Web Apps 现已公开上市。</p>
-<p><li><a href="/home/features/web-site/">了解有关 Web Apps 的详细信息</a>。</p></td>
+<p><li><a href="/home/features/app-service/web-apps/">了解有关 Web Apps 的详细信息</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">Azure 移动服务</td>
@@ -58,14 +58,14 @@ App Service 将以下现有 Azure 服务 - [网站](/home/features/web-site/)和
 <p><li>Mobile Apps 是 App Service 中的一种应用类型，它融合了移动服务和其他服务的所有功能。</p>
 <p><li>可以轻松<a href="/documentation/articles/app-service-mobile-migrating-from-mobile-services/">从移动服务迁移到 Mobile Apps</a>。</p>
 <p><li>作为 App Service 的一部分，Mobile Apps 的功能远胜于移动服务，例如，与本地和 SaaS 系统集成，暂存槽、WebJobs、更好的缩放选项，等等。</p>
-<p><li><a href="/home/features/app-service/mobile/">了解有关 Mobile Apps 的详细信息</a>。</p>
+<p><li><a href="/home/features/app-service/mobile-apps/">了解有关 Mobile Apps 的详细信息</a>。</p>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left">API Apps</td>
 <td align="left">
 <p><li>API Apps 是 App Service 中的全新应用类型，它让你能够轻松地构建并使用云中的 API。</p>
-<p><li><a href="/home/features/app-service/api/">了解有关 API Apps 的详细信息</a>。</p></td>
+<p><li><a href="/home/features/app-service/api-apps/">了解有关 API Apps 的详细信息</a>。</p></td>
 </tr>
 </tbody>
 </table>

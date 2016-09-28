@@ -17,7 +17,7 @@
 - [PowerShell](/documentation/articles/app-service-powershell-backup/)
 - [REST API](/documentation/articles/websites-csm-backup/)
 
-了解如何使用 Azure PowerShell 备份和还原[应用服务应用](/home/features/web-site/)。有关 Web 应用备份的详细信息（包括要求和限制），请参阅 [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/)（在 Azure 应用服务中备份 Web 应用）。
+了解如何使用 Azure PowerShell 备份和还原[应用服务应用](/home/features/app-service/web-apps/)。有关 Web 应用备份的详细信息（包括要求和限制），请参阅 [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/)（在 Azure 应用服务中备份 Web 应用）。
 
 ## 先决条件
 若要使用 PowerShell 管理应用备份，需满足以下条件：

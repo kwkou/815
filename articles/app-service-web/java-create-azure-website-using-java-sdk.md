@@ -432,7 +432,7 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
 
 选择第三方 FTP 客户端来发布应用程序。此过程将介绍两个选项：Azure 中内置的 Kudu 控制台；FileZilla，这是一个带有便捷式图形 UI 的常用工具。
 
-> **注意：**Azure Toolkit for Eclipse 支持部署到存储帐户和云服务，但当前不支持部署到 Web Apps。你可以按照[在 Eclipse 中为 Azure 创建 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)中所述，使用 Azure 部署项目部署到存储帐户和云服务，但不能部署到 Web Apps。使用其他方法（例如 FTP 或 GitHub）将文件传输到 Web 应用。
+> **注意：**Azure Toolkit for Eclipse 支持部署到存储帐户和云服务，但当前不支持部署到 Web Apps。你可以按照[在 Eclipse 中为 Azure 创建 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)中所述，使用 Azure 部署项目部署到存储帐户和云服务，但不能部署到 Web Apps。使用其他方法（例如 FTP 或 GitHub）将文件传输到 Web 应用。
 
 > **注意：**我们不建议通过 Windows 命令提示符（Windows 随附的命令行 FTP.EXE 实用工具）使用 FTP。使用活动 FTP 的 FTP 客户端（如 FTP.EXE）通常无法通过防火墙工作。活动 FTP 指定基于 LAN 的内部地址，FTP 服务器可能无法连接到该地址。
 

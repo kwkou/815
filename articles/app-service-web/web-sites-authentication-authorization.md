@@ -21,7 +21,7 @@
 在许多情况下，你想要自定义应用程序的身份验证和授权行为，例如，登录和注销页、自定义授权逻辑、多租户应用程序行为，等等。在这种情况下，最好是手动配置身份验证和授权以提高功能的灵活性。以下是两个主要选项
 
 -	[Azure AD](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/) - 可以使用 Azure AD 为 Web 应用实施身份验证和授权。使用 Azure AD 作为标识提供程序具有以下特征：
-	-	支持常用的身份验证协议，如 [OAuth 2.0](http://oauth.net/2/)、[OpenID Connect](http://openid.net/connect/) 和 [SAML 2.0](http://en.wikipedia.org/wiki/SAML_2.0)。有关支持的协议的完整列表，请参阅 [Azure Active Directory 身份验证协议](http://msdn.microsoft.com/zh-cn/library/azure/dn151124.aspx)。
+	-	支持常用的身份验证协议，如 [OAuth 2.0](http://oauth.net/2/)、[OpenID Connect](http://openid.net/connect/) 和 [SAML 2.0](http://en.wikipedia.org/wiki/SAML_2.0)。有关支持的协议的完整列表，请参阅 [Azure Active Directory 身份验证协议](/documentation/articles/active-directory-developers-guide/)。
 	-	可以使用没有任何本地基础结构的仅限 Azure 的标识提供者。
 	-	此外可以使用本地 AD（托管在本地）配置目录同步。
 	-	当 AD 用户从 Intranet 和 Internet 访问时，Azure AD 将从本地 AD 域进行目录同步，在 Web 应用中实现顺畅的 SSO 体验。AD 用户可从 Intranet 自动通过集成身份验证来访问 Web 应用。AD 用户可使用其 Windows 凭据从 Internet 登录 Web 应用。

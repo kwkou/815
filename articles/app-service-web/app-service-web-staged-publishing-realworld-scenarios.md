@@ -343,20 +343,18 @@
 
 若要进行配置，需要更新 Web 应用的 **Config** 文件夹下的 courier.config 文件。
 
-```xml
-<!-- Repository connection settings -->
-  <!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
-  <repositories>
-        <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
-        <repository name="production web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true">
-            <url>http://umbracositecms-1.chinacloudsites.cn</url>
-            <user>0</user>
-            <!--<login>user@email.com</login> -->
-            <!-- <password>user_password</password>-->
-           <!-- <passwordEncoding>Clear</passwordEncoding>-->
-           </repository>
-  </repositories>
- ```
+	<!-- Repository connection settings -->
+	<!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
+	<repositories>
+			<!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
+			<repository name="production web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true">
+				<url>http://umbracositecms-1.chinacloudsites.cn</url>
+				<user>0</user>
+				<!--<login>user@email.com</login> -->
+				<!-- <password>user_password</password>-->
+			<!-- <passwordEncoding>Clear</passwordEncoding>-->
+			</repository>
+	</repositories>
 
 在 `<repositories>` 下面输入生产站点 URL 和用户信息。如果使用默认的 Umbraco 成员资格提供程序，则在 <用户> 部分添加管理用户的 ID。如果使用自定义的 Umbraco 成员资格提供程序，则使用 Courier2 模块的 `<login>`、`<password>` 了解如何连接到生产站点。有关详细信息，请参阅 Courier 模块的[文档](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation)。
 
@@ -423,7 +421,5 @@ Courier 不会通过将 Umbraco CMS 从一个版本升级到另一个版本来�
 [使用 Azure App Service 进行敏捷软件开发](/documentation/articles/app-service-agile-software-development/)
 
 [为 Azure App Service 中的 Web 应用设置过渡环境](/documentation/articles/web-sites-staged-publishing/)
-
-[如何阻止对非生产部署槽的 Web 访问](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
 <!---HONumber=Mooncake_0919_2016-->
