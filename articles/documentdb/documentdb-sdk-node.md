@@ -1,35 +1,37 @@
 <properties 
 	pageTitle="DocumentDB Node.js SDK | Azure" 
-	description="了解有关 Node.js SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Node.js SDK 各版本之间所做的更改。" 
+	description="了解有关 Node.js API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Node.js SDK 各版本之间所做的更改。" 
 	services="documentdb" 
 	documentationCenter="nodejs" 
-	authors="aliuy" 
+	authors="rnagpal" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="07/07/2016" 
-	wacn.date="08/22/2016"/>
+	ms.date="08/09/2016" 
+	wacn.date="09/28/2016"/>
 
 # DocumentDB SDK
 
 > [AZURE.SELECTOR]
-- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet/)
-- [Node.js SDK](/documentation/articles/documentdb-sdk-node/)
-- [Java SDK](/documentation/articles/documentdb-sdk-java/)
-- [Python SDK](/documentation/articles/documentdb-sdk-python/)
+- [.NET](/documentation/articles/documentdb-sdk-dotnet/)
+- [Node.js](/documentation/articles/documentdb-sdk-node/)
+- [Java](/documentation/articles/documentdb-sdk-java/)
+- [Python](/documentation/articles/documentdb-sdk-python/)
 
-##DocumentDB Node.js SDK
+##DocumentDB Node.js API 和 SDK
 
-任务 | API 参考
---- | ---  
-**下载**| [NPM](https://www.npmjs.com/package/documentdb)
-**参与**| [GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)
-**文档**| [Node.js SDK 参考文档](http://azure.github.io/azure-documentdb-node/)
-**示例**| [Node.js 代码示例](https://github.com/Azure/azure-documentdb-node/tree/master/samples)
-**入门**| [Node.js SDK 入门](/documentation/articles/documentdb-nodejs-get-started/)
-**当前受支持的平台**| [Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)
+<table>
+<tr><td>**下载 SDK**</td><td>[NPM](https://www.npmjs.com/package/documentdb)</td></tr>
+<tr><td>**API 文档**</td><td>[Node.js API 参考文档](http://azure.github.io/azure-documentdb-node/DocumentClient.html)</td></tr>
+<tr><td>**SDK 安装说明**</td><td>[安装说明](http://azure.github.io/azure-documentdb-node/)</td></tr>
+<tr><td>**参与 SDK**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)</td></tr>
+<tr><td>**示例**</td><td>[Node.js 代码示例](/documentation/articles/documentdb-nodejs-samples/)</td></tr>
+<tr><td>**入门教程**</td><td>[Node.js SDK 入门](/documentation/articles/documentdb-nodejs-get-started/)</td></tr>
+<tr><td>**Web 应用教程**</td><td>[使用 DocumentDB 构建 Node.js Web 应用程序](/documentation/articles/documentdb-nodejs-application/)</td></tr>
+<tr><td>**当前受支持的平台**</td><td>[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr>
+</table></br>
 
 ##发行说明
 
@@ -43,7 +45,7 @@
 
 ###<a name="1.8.0"/>1.8.0</a>
 
-  - 添加了对多区域数据库帐户的支持。
+ - 添加了对多区域数据库帐户的支持。
 
 ###<a name="1.7.0"/>1.7.0</a>
 
@@ -54,7 +56,7 @@
 
 ###<a name="1.5.6"/>1.5.6</a>
 
-- 修复了 RangePartitionResolver.resolveForRead Bug，其会由于结果的错误 concat，它不返回链接
+- 修复了 RangePartitionResolver.resolveForRead Bug，其会由于结果的错误 concat，它不返回链接。
 
 ###<a name="1.5.5"/>1.5.5</a>
 
@@ -62,69 +64,69 @@
 
 ###<a name="1.5.4"/>1.5.4</a>
 
-- 已修复问题 [#100](https://github.com/Azure/azure-documentdb-node/issues/100) — 专用 HTTPS 代理：避免基于 DocumentDB 用途而修改全局代理。对所有 lib 的请求均使用专用代理。
+- 修复了问题 [#100](https://github.com/Azure/azure-documentdb-node/issues/100) - 专用 HTTPS 代理：避免因 DocumentDB 用途而修改全局代理。对所有 lib 的请求均使用专用代理。
 
 ###<a name="1.5.3"/>1.5.3</a>
 
-- 已修复问题 [#81](https://github.com/Azure/azure-documentdb-node/issues/81) — 正确处理媒体 ID 中的短划线。
+- 修复了问题 [#81](https://github.com/Azure/azure-documentdb-node/issues/81) - 正确处理媒体 ID 中的短划线。
 
 ###<a name="1.5.2"/>1.5.2</a>
 
-- 已修复问题 [#95](https://github.com/Azure/azure-documentdb-node/issues/95) — EventEmitter 侦听器泄漏警告
+- 修复了问题 [#95](https://github.com/Azure/azure-documentdb-node/issues/95) - EventEmitter 侦听器泄漏警告。
 
 ###<a name="1.5.1"/>1.5.1</a>
 
-- 已修复问题 [#92](https://github.com/Azure/azure-documentdb-node/issues/90) — 对区分大小写的系统，将文件夹 Hash 重命名为 hash
+- 修复了问题 [#92](https://github.com/Azure/azure-documentdb-node/issues/90) - 对区分大小写的系统，将文件夹 Hash 重命名为 hash。
 
 ### <a name="1.5.0"/>1.5.0</a>
 
-- 通过添加哈希和范围分区冲突解决程序来实现分片支持
+- 通过添加哈希和范围分区解析程序来实现分片支持。
 
 ### <a name="1.4.0"/>1.4.0</a>
 
-- 实现 Upsert。 DocumentClient 上的新 upsertXXX 方法。 
+- 实现 Upsert。DocumentClient 上的新 upsertXXX 方法。
 
 ### <a name="1.3.0"/>1.3.0</a>
 
-- 跳过以使版本号与其他 SDK 符合
+- 跳过以使版本号与其他 SDK 符合。
 
 ### <a name="1.2.2"/>1.2.2</a>
 
-- 将 Q 承诺包装拆分到新的存储库
-- 更新到 npm 注册表的程序包文件
+- 将 Q 承诺包装拆分到新的存储库。
+- 更新到 npm 注册表的程序包文件。
 
 ### <a name="1.2.1"/>1.2.1</a>
 
-- 实现基于 ID 的路由
-- 已修复问题 [#49](https://github.com/Azure/azure-documentdb-node/issues/49) — 当前属性与方法 current() 发生冲突
+- 实现基于 ID 的路由。
+- 修复了问题 [#49](https://github.com/Azure/azure-documentdb-node/issues/49) - 当前属性与方法 current() 发生冲突。
 
 ### <a name="1.2.0"/>1.2.0</a>
 
 - 添加对地理空间索引的支持。
-- 验证所有资源的 ID 属性。资源的 ID 不能包含 ？、/、#、&#47;&#47;、字符或以空格结尾。 
+- 验证所有资源的 ID 属性。资源的 ID 不能包含 ？、/、#、&#47;&#47;、字符或以空格结尾。
 - 将新标头“索引转换进度”添加到 ResourceResponse。
 
 ### <a name="1.1.0"/>1.1.0</a>
 
-- 实现 V2 索引策略
+- 实施 V2 索引策略。
 
 ### <a name="1.0.3"/>1.0.3</a>
 
-- 问题 [#40](https://github.com/Azure/azure-documentdb-node/issues/40) — 已在核心和 promise SDK 中实现 eslint 和 grunt 配置
+- 问题 [#40](https://github.com/Azure/azure-documentdb-node/issues/40) - 已在核心和承诺 SDK 中实现 eslint 和 grunt 配置。
 
 ### <a name="1.0.2"/>1.0.2</a>
 
-- 问题 [#45](https://github.com/Azure/azure-documentdb-node/issues/45) — Promises 包装器不包含标头并发生错误。
+- 问题 [#45](https://github.com/Azure/azure-documentdb-node/issues/45) - 承诺包装器不包括错误的标头。
 
 ### <a name="1.0.1"/>1.0.1</a>
 
-- 通过添加 readConflicts、readConflictAsync 和 queryConflicts 实现了查询冲突的功能
-- 更新的 API 文档
-- 问题 [#41](https://github.com/Azure/azure-documentdb-node/issues/41) - client.createDocumentAsync 错误  
+- 通过添加 readConflicts、readConflictAsync 和 queryConflicts 实现了查询冲突的功能。
+- 更新了 API 文档。
+- 问题 [#41](https://github.com/Azure/azure-documentdb-node/issues/41) - client.createDocumentAsync 错误。
 
 ### <a name="1.0.0"/>1.0.0</a>
 
-- GA SDK
+- GA SDK。
 
 ## 发布和停用日期
 Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺利转换到更新的/受支持的版本。
@@ -134,7 +136,7 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 使用已停用的 SDK 对 DocumentDB 发出的任何请求都将被服务拒绝。
 
 > [AZURE.WARNING]
-**1.0.0** 版之前的所有 Azure DocumentDB SDK for Node.js 版本都将在 **2016 年 2 月 29 日**停用。
+Azure DocumentDB SDK for Node.js 在 **1.0.0** 版之前的所有版本都将在 **2016 年 2 月 29 日**停用。
 
 <br/>
 
@@ -161,10 +163,10 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 | [1\.0.2](#1.0.2) | 2015 年 5 月 23 日 |---
 | [1\.0.1](#1.0.1) | 2015 年 5 月 15 日 |---
 | [1\.0.0](#1.0.0) | 2015 年 4 月 8 日 |---
-| 0.9.4-prerelease | 2015 年 4 月 6 日 | 2016 年 2 月 29 日 
-| 0.9.3-prerelease | 2015 年 1 月 14 日 | 2016 年 2 月 29 日 
-| 0.9.2-prerelease | 2014 年 12 月 18 日 | 2016 年 2 月 29 日 
-| 0.9.1-prerelease | 2014 年 8 月 22 日 | 2016 年 2 月 29 日 
+| 0.9.4-prerelease | 2015 年 4 月 6 日 | 2016 年 2 月 29 日
+| 0.9.3-prerelease | 2015 年 1 月 14 日 | 2016 年 2 月 29 日
+| 0.9.2-prerelease | 2014 年 12 月 18 日 | 2016 年 2 月 29 日
+| 0.9.1-prerelease | 2014 年 8 月 22 日 | 2016 年 2 月 29 日
 | 0.9.0-prerelease | 2014 年 8 月 21 日 | 2016 年 2 月 29日
 
 
@@ -175,4 +177,4 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0919_2016-->

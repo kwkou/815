@@ -1,34 +1,36 @@
 <properties 
-	pageTitle="DocumentDB Java SDK | Azure" 
-	description="了解有关 Java SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Java SDK 各版本之间所做的更改。" 
+	pageTitle="DocumentDB Java API 和 SDK | Azure" 
+	description="了解有关 Java API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Java SDK 各版本之间所做的更改。" 
 	services="documentdb" 
 	documentationCenter="java" 
-	authors="aliuy" 
+	authors="rnagpal" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="06/30/2016" 
-	wacn.date="08/22/2016"/>
+	ms.date="08/09/2016" 
+	wacn.date="09/28/2016"/>
 
 # DocumentDB SDK
 
 > [AZURE.SELECTOR]
-- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet/)
-- [Node.js SDK](/documentation/articles/documentdb-sdk-node/)
-- [Java SDK](/documentation/articles/documentdb-sdk-java/)
-- [Python SDK](/documentation/articles/documentdb-sdk-python/)
+- [.NET](/documentation/articles/documentdb-sdk-dotnet/)
+- [Node.js](/documentation/articles/documentdb-sdk-node/)
+- [Java](/documentation/articles/documentdb-sdk-java/)
+- [Python](/documentation/articles/documentdb-sdk-python/)
+- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx)
+- [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
 ##DocumentDB Java SDK
 
-任务 | API 参考
---- | ---  
-**下载**| [Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)
-**参与**| [GitHub](https://github.com/Azure/azure-documentdb-java/)
-**文档**| [Java SDK 参考文档](http://azure.github.io/azure-documentdb-java/)
-**入门**| [Java SDK 入门](/documentation/articles/documentdb-java-application/)
-**当前受支持的运行时**| [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+<table>
+<tr><td>**SDK 下载**</td><td>[Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)</td></tr>
+<tr><td>**API 文档**</td><td>[Java API 参考文档](http://azure.github.io/azure-documentdb-java/)</td></tr>
+<tr><td>**参与 SDK**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr>
+<tr><td>**入门**</td><td>[Java SDK 入门](/documentation/articles/documentdb-java-application/)</td></tr>
+<tr><td>**当前受支持的运行时**</td><td>[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)</td></tr>
+</table>
 
 ## 发行说明
 
@@ -38,17 +40,17 @@
 
 ### <a name="1.8.0"/>[1\.8.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.8.0)
   - 添加了对多区域数据库帐户的支持。
-  - 添加对自动重试限制请求的支持，并提供了选项用于自定义最大重试次数和最大重试等待时间。请参阅 RetryOptions 和 ConnectionPolicy.getRetryOptions()。 
-  - 已弃用基于 IPartitionResolver 的自定义分区代码。请使用分区集合来提高存储和吞吐量。 
+  - 添加对自动重试限制请求的支持，并提供了选项用于自定义最大重试次数和最大重试等待时间。请参阅 RetryOptions 和 ConnectionPolicy.getRetryOptions()。
+  - 已弃用基于 IPartitionResolver 的自定义分区代码。请使用分区集合来提高存储和吞吐量。
 
 ### <a name="1.7.1"/>[1\.7.1](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.7.1)
-- 对限制添加了重试策略支持。  
+- 对限制添加了重试策略支持。
 
 ### <a name="1.7.0"/>[1\.7.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.7.0)
-- 对文档添加了生存时间 (TTL) 支持。 
+- 对文档添加了生存时间 (TTL) 支持。
 
 ### <a name="1.6.0"/>[1\.6.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.6.0)
-- 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
+- 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ### <a name="1.5.1"/>[1\.5.1](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.5.1)
 - 修复了 HashPartitionResolver 中的 Bug 以生成 little-endian 格式的哈希值，以便与其他 SDK 保持一致。
@@ -82,7 +84,7 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 使用已停用的 SDK 对 DocumentDB 发出的任何请求都将被服务拒绝。
 
 > [AZURE.WARNING]
-**1.0.0** 版之前的 Azure DocumentDB SDK for Java 的所有版本都将在 **2016 年 2 月 29 日**停用。
+Azure DocumentDB SDK for Java 在 **1.0.0** 版之前的所有版本都将在 **2016 年 2 月 29 日**停用。
 
 <br/>
 
@@ -113,6 +115,6 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 ## 另请参阅
 
-要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 服务页。
+要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/documentation/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0919_2016-->

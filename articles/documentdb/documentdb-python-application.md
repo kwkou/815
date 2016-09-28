@@ -1,17 +1,17 @@
 <properties
     pageTitle="使用 DocumentDB 开发 Python Flask Web 应用程序 | Azure"
     description="查看使用 DocumentDB 来存储和访问托管于 Azure 的 Python Flask Web 应用程序的数据的数据库教程。查找应用程序开发解决方案。" 
-	keywords="应用程序开发, 数据库教程, Python Flask, Python web 应用程序, Python Web 开发, DocumentDB, Azure, Azure"
+    keywords="应用程序开发、数据库教程、Python Flask、Python web 应用程序、Python Web 开发、DocumentDB、azure、Azure"
     services="documentdb"
     documentationCenter="python"
-    authors="ryancrawcour"
+    authors="AndrewHoh"
     manager="jhubbard"
     editor="cgronlun"/>
 
 <tags
     ms.service="documentdb"
-    ms.date="04/08/2016"
-    wacn.date="06/29/2016"/>
+    ms.date="08/11/2016"
+    wacn.date="09/28/2016"/>
 
 # 使用 DocumentDB 开发 Python Flask Web 应用程序
 
@@ -39,15 +39,15 @@
 
 在按照本文中的说明操作之前，你应确保已安装下列项：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial/)。
-- [Visual Studio 2013](http://www.visualstudio.com/) 或更高版本，或者免费版 [Visual Studio Express]()。本教程中的说明专为 Visual Studio 2015 所编写。 
-- 来自 [GitHub](http://microsoft.github.io/PTVS/) 的 Python Tools for Visual Studio。本教程使用的是 Python Tools for VS 2015。 
-- 2\.4 版或更高版本 Azure Python SDK for Visual Studio 在 [azure.com](/downloads/) 上提供。我们使用的是 Azure SDK for Python 2.7。
-- 来自 [python.org][2] 的 Python 2.7。我们使用的是 Python 2.7.11。 
+- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+- [Visual Studio 2013](http://www.visualstudio.com/) 或更高版本，或者免费版 [Visual Studio Express]()。本教程中的说明专为 Visual Studio 2015 所编写。
+- 来自 [GitHub](http://microsoft.github.io/PTVS/) 的 Python Tools for Visual Studio。本教程使用的是 Python Tools for VS 2015。
+- [azure.cn](/downloads/) 上提供 Azure Python SDK for Visual Studio 2.4 版本或更高版本。我们使用的是 Azure SDK for Python 2.7。
+- 来自 [python.org][2] 的 Python 2.7。我们使用的是 Python 2.7.11。
 
 > [AZURE.IMPORTANT] 如果首次安装 Python 2.7，请确保在自定义 Python 2.7.11 屏幕中，选择“向路径添加 python.exe”。
-
-   ![自定义 Python 2.7.11 屏幕的屏幕截图，你需要在该屏幕中选择“向路径添加 python.exe”](./media/documentdb-python-application/image2.png)
+> 
+>    ![自定义 Python 2.7.11 屏幕的屏幕截图，你需要在该屏幕中选择“向路径添加 python.exe”](./media/documentdb-python-application/image2.png)
 
 - 来自 [Microsoft 下载中心][3]的Microsoft Visual C++ Compiler for Python 2.7。
 
@@ -129,10 +129,10 @@
 
 现在，通过添加新文件并更新其他文件来创建投票应用程序。
 
-1. 在解决方案资源管理器中，右键单击“教程”项目，单击“添加”，然后单击“新建项”。选择“空 Python 文件”并将该文件命名为 **forms.py**。  
+1. 在解决方案资源管理器中，右键单击“教程”项目，单击“添加”，然后单击“新建项”。选择“空 Python 文件”并将该文件命名为 **forms.py**。
 2. 将以下代码添加到 forms.py 文件，然后保存该文件。
 
-python
+
 
 	from flask.ext.wtf import Form
 	from wtforms import RadioField
@@ -147,21 +147,22 @@ python
 
 ### 将所需的导入添加到 views.py 中
 
-1. 在解决方案资源管理器中，展开 **tutorial** 文件夹并打开 **views.py** 文件。 
+1. 在“解决方案资源管理器”中，展开 **tutorial** 文件夹并打开 **views.py** 文件。
 2. 将以下导入语句添加到 **views.py** 文件的顶部，然后保存该文件。这些语句将导入 DocumentDB 的 PythonSDK 和 Flask 包。
 
-python
+
 
 	from forms import VoteForm
 	import config
 	import pydocumentdb.document_client as document_client
-		
+	
+
 
 ### 创建数据库、集合和文档
 
-- 仍在 **views.py** 中，将以下代码添加到文件末尾。这将创建窗体使用的数据库。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
+- 还是在 **views.py** 中，将以下代码添加到文件末尾。这将创建窗体使用的数据库。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
 
-python
+
 
 	@app.route('/create')
 	def create():
@@ -202,9 +203,9 @@ python
 
 ### 读取数据库、集合、文档，并提交窗体
 
-- 仍在 **views.py** 中，将以下代码添加到文件末尾。这将设置窗体、读取数据库、集合和文档。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
+- 还是在 **views.py** 中，将以下代码添加到文件末尾。这将设置窗体、读取数据库、集合和文档。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
 
-python
+
 
 	@app.route('/vote', methods=['GET', 'POST'])
 	def vote(): 
@@ -255,8 +256,8 @@ python
 
 ### 创建 HTML 文件
 
-1. 在解决方案资源管理器中的 **tutorial** 文件夹中，右键单击 **templates** 文件夹，单击“添加”，然后单击“新建项”。 
-2. 选择“HTML 页”，然后在名称框中键入 **create.html**。 
+1. 在“解决方案资源管理器”中的 **tutorial** 文件夹中，右键单击 **templates** 文件夹，单击“添加”，然后单击“新建项”。
+2. 选择“HTML 页”，然后在名称框中键入 **create.html**。
 3. 重复步骤 1 和步骤 2，以创建另外两个 HTML 文件：results.html 和 vote.html。
 4. 将以下代码添加到 `<body>` 元素中的 **create.html**。它将显示一条消息，说明我们创建了新的数据库、集合和文档。
 
@@ -295,11 +296,12 @@ html
 	<br />
 	<a class="btn btn-primary" href="{{ url_for('vote') }}">Vote again?</a>
 	{% endblock %}
-		
+	
 
 6. 将以下代码添加到 `<body`> 元素中的 **vote.html**。它将显示轮询并接受投票。注册投票时，控件权将传递到 views.py 中，我们将在该位置识别投票并相应地追加文档。
 
 html
+
 	{% extends "layout.html" %}
 	{% block content %}
 	<h2>What is your favorite way to host an application on Azure?</h2>
@@ -309,9 +311,9 @@ html
 	        <button class="btn btn-primary" type="submit">Vote</button>
 	</form>
 	{% endblock %}
-		
+	
 
-7. 在 **templates** 文件夹中，使用以下内容替换 **index.html** 的内容。这将作为你的应用程序的登录页。
+7. 在 **templates** 文件夹中，将 **index.html** 的内容替换为以下内容。这将作为你的应用程序的登录页。
 	
 html
 
@@ -322,20 +324,20 @@ html
 	<p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Create/Clear the Voting Database &raquo;</a></p>
 	<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
 	{% endblock %}
-		
+	
 
 ### 添加配置文件并更改 \_\_init\_\_.py
 
-1. 在解决方案资源管理器中，右键单击“教程”项目，单击“添加”，再单击“新建项”，选择“空 Python 文件”，然后将该文件命名为 **config.py**。Flask 中的窗体需要此配置文件。也可将其用于提供密钥。但此教程不需要此密钥。
+1. 在“解决方案资源管理器”中，右键单击 **tutorial** 项目，单击“添加”，再单击“新建项”，选择“空 Python 文件”，然后将该文件命名为 **config.py**。Flask 中的窗体需要此配置文件。也可将其用于提供密钥。但此教程不需要此密钥。
 
-2. 将以下代码添加到 config.py，你需要在下一步更改 **DOCUMENTDB\_HOST** 和 **DOCUMENTDB\_KEY** 的值。
+2. 将以下代码添加到 config.py，需要在下一步更改 **DOCUMENTDB\_HOST** 和 **DOCUMENTDB\_KEY** 的值。
 
 python
 
 	CSRF_ENABLED = True
 	SECRET_KEY = 'you-will-never-guess'
 	
-	DOCUMENTDB_HOST = 'https://YOUR_DOCUMENTDB_NAME.documents.azure.com:443/'
+	DOCUMENTDB_HOST = 'https://YOUR_DOCUMENTDB_NAME.documents.chinacloduapi.cn:443/'
 	DOCUMENTDB_KEY = 'YOUR_SECRET_KEY_ENDING_IN_=='
 	
 	DOCUMENTDB_DATABASE = 'voting database'
@@ -345,7 +347,7 @@ python
 
 3. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”导航到“密钥”边栏选项卡，双击要使用的帐户名，然后单击**Essentials** 区域的“密钥”按钮。在“密钥”边栏选项卡中，复制 **URI** 值并将其粘贴到 **config.py** 文件中，作为 **DOCUMENTDB\_HOST** 属性的值。
 4. 返回到 Azure 门户预览，在“密钥”边栏选项卡中，复制“主密钥”或“辅助密钥”的值，并将其粘贴到 **config.py** 文件，作为 **DOCUMENTDB\_KEY** 属性的值。
-5. 在 **\_\_init\_\_.py** 文件中，添加以下行。 
+5. 在 **\_\_init\_\_.py** 文件中，添加以下行。
 
         app.config.from_object('config')
 
@@ -375,7 +377,7 @@ python
 
 	![Web 应用程序 – 开发详细信息的创建页面的屏幕截图](./media/documentdb-python-application/image17.png)
 
-4. 然后，单击“投票”并选择你的选项。
+4. 然后，单击“投票”并选择选项。
 
 	![提出了一个投票问题的 Web 应用程序的屏幕截图](./media/documentdb-python-application/image18.png)
 
@@ -389,25 +391,25 @@ python
 
 现在，你拥有了针对 DocumentDB 正常工作的完整应用程序，我们打算将其部署到 Azure 网站。
 
-1. 右键单击解决方案资源管理器中的项目（确保不再在本地运行它），然后选择“发布”。  
+1. 右键单击解决方案资源管理器中的项目（确保不再在本地运行它），然后选择“发布”。
 
  	![解决方案资源管理器中选中的教程的屏幕截图，其中突出显示了“发布”选项](./media/documentdb-python-application/image20.png)
 
-2. 在“发布 Web”窗口中，选择“Azure Web Apps”，然后单击“下一步”。
+2. 在“发布 Web”窗口中，选择“Azure Web 应用”，然后单击“下一步”。
 
-	![“发布 Web 窗口”的屏幕截图，其中突出显示了 Azure Web Apps](./media/documentdb-python-application/image21.png)
+	![“发布 Web”窗口的屏幕截图，其中突出显示了 Azure Web 应用](./media/documentdb-python-application/image21.png)
 
-3. 在“Azure Web Apps 窗口”窗口中，单击“新建”。
+3. 在“Azure Web 应用窗口”窗口中，单击“新建”。
 
-	![“Azure Web Apps 窗口”窗口的屏幕截图](./media/documentdb-python-application/select-existing-website.png)
+	![“Azure Web 应用窗口”窗口的屏幕截图](./media/documentdb-python-application/select-existing-website.png)
 
-4. 在“在 Azure 上创建站点”窗口中，输入“Web 应用名”、“App Service 计划”、“资源组”和“区域”，然后单击“创建”。
+4. 在“在 Azure 中创建网站”窗口中，输入“Web 应用名称”、“应用服务计划”、“资源组”和“区域”，然后单击“创建”。
 
-	![Azure 窗口上“创建”站点的屏幕截图](./media/documentdb-python-application/create-site-on-microsoft-azure.png)
+	![“在 Azure 中创建网站”的屏幕截图](./media/documentdb-python-application/create-site-on-microsoft-azure.png)
 
 5. 在“发布 Web”窗口中，单击“发布”。
 
-	!Azure 窗口上“创建”站点的屏幕截图](./media/documentdb-python-application/publish-web.png)
+	![“在 Azure 中创建网站”的屏幕截图](./media/documentdb-python-application/publish-web.png)
 
 3. 在几秒钟内，Visual Studio 将完成 Web 应用程序发布并启动浏览器，你可从中查看在 Azure 中运行的简单作品！
 
@@ -415,21 +417,21 @@ python
 
 如果这是你在计算机上运行的第一个 Python 应用程序，请确保下列文件夹（或等效的安装位置）包括在 PATH 变量中：
 
-    	C:\Python27\site-packages;C:\Python27\;C:\Python27\Scripts;
+    C:\Python27\site-packages;C:\Python27\;C:\Python27\Scripts;
 
-如果在投票页上收到了错误，并且已将项目命名为“教程”以外的名称，请确保 **\_\_init\_\_.py** 引用行中正确的项目名称：`import tutorial.view`。
+如果在投票页上收到了错误，并且已将项目命名为 **tutorial** 以外的名称，请确保 **\_\_init\_\_.py** 引用以下行中正确的项目名称：`import tutorial.view`。
 
 ## 后续步骤
 
 祝贺你！ 你刚使用 Azure DocumentDB 完成了第一个 Python Web 应用程序并将其发布到了 Azure 网站。
 
-我们将根据你的反馈经常更新并改进此主题。完成该教程后，请使用此页面上顶部和底部的投票按钮，并确保包括有关你想要看到的改进的反馈意见。如果你希望我们直接与你联系，欢迎将你的电子邮件地址附在评论中。
+我们将根据反馈经常更新并改进此主题。完成该教程后，请使用此页面上顶部和底部的投票按钮，并确保包括有关你想要看到的改进的反馈意见。如果你希望我们直接与你联系，欢迎将你的电子邮件地址附在评论中。
 
 若要将其他功能添加到 Web 应用程序，请查看 [DocumentDB Python SDK](/documentation/articles/documentdb-sdk-python/) 中提供的 API。
 
 有关 Azure、Visual Studio 和 Python 的详细信息，请参阅 [Python 开发人员中心](https://azure.microsoft.com/develop/python/)。
 
-有关其他 Python Flask 教程，请参阅 [The Flask Mega-Tutorial, Part I: Hello, World!（Flask 大型教程，第 I 部分：Hello, World!）](http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)。
+有关其他 Python Flask 教程，请参阅 [The Flask Mega-Tutorial, Part I: Hello, World!](http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)（Flask 大型教程，第 I 部分：Hello, World!）。
 
   [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
   [2]: https://www.python.org/downloads/windows/
@@ -437,4 +439,4 @@ python
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure portal]: http://portal.azure.cn
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0919_2016-->

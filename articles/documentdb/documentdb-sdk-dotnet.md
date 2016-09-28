@@ -1,49 +1,53 @@
 <properties 
-	pageTitle="DocumentDB .NET SDK | Azure" 
-	description="了解有关 .NET SDK 的全部信息，包括发布日期、停用日期和 DocumentDB.NET SDK 各版本之间的更改。" 
+	pageTitle="DocumentDB .NET API 和 SDK | Azure" 
+	description="了解有关 .NET API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB.NET SDK 各版本之间的更改。" 
 	services="documentdb" 
 	documentationCenter=".net" 
-	authors="aliuy" 
+	authors="rnagpal" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="07/15/2016" 
-	wacn.date="08/22/2016"/>
+	ms.date="08/09/2016" 
+	wacn.date="09/28/2016"/>
 
 # DocumentDB SDK
 
 > [AZURE.SELECTOR]
-- [.NET SDK](/documentation/articles/documentdb-sdk-dotnet/)
-- [Node.js SDK](/documentation/articles/documentdb-sdk-node/)
-- [Java SDK](/documentation/articles/documentdb-sdk-java/)
-- [Python SDK](/documentation/articles/documentdb-sdk-python/)
+- [.NET](/documentation/articles/documentdb-sdk-dotnet/)
+- [Node.js](/documentation/articles/documentdb-sdk-node/)
+- [Java](/documentation/articles/documentdb-sdk-java/)
+- [Python](/documentation/articles/documentdb-sdk-python/)
+- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx)
+- [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
 ##DocumentDB .NET SDK
 
-
-任务 | API 参考
---- | ---  
-**下载**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/)
-**文档**|[.NET SDK 参考文档](https://msdn.microsoft.com/library/azure/dn948556.aspx)
-**示例**|[.NET 代码示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples)
-**入门**|[DocumentDB .NET SDK 入门](/documentation/articles/documentdb-get-started/)
-**当前受支持的框架**|[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)  
-
+<table>
+<tr><td>**SDK 下载**</td><td>[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/)</td></tr>
+<tr><td>**API 文档**</td><td>[.NET API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx)</td></tr>
+<tr><td>**示例**</td><td>[.NET 代码示例](/documentation/articles/documentdb-dotnet-samples/)</td></tr>
+<tr><td>**入门**</td><td>[DocumentDB .NET SDK 入门](/documentation/articles/documentdb-get-started/)</td></tr>
+<tr><td>**Web 应用教程**</td><td>[使用 DocumentDB 开发 Web 应用程序](/documentation/articles/documentdb-dotnet-application/)</td></tr>
+<tr><td>**当前受支持的框架**</td><td>[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)</td></tr>
+</table>
 
 ## 发行说明
 
-对于 .NET SDK 版本 1.9.0，当查询跨越 32 位进程中的多个分区时，如果试图提取分区路由信息，将出现已知问题。此问题会导致以下异常：System.BadImageFormatException: 未能加载文件或程序集 Microsoft.Azure.Documents.ServiceInterop.dll 或它的某一个依赖项。该模块应包含一个程序集清单，请将平台设置为 x64 并重新生成应用程序，以解决此问题。
+### <a name="1.9.2"/>[1\.9.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.9.2)
+> [AZURE.IMPORTANT] 在查询已分区的集合时，可能会收到 System.NotSupportedException。若要避免此错误，请在“生成”选项卡上的属性窗口中取消选中“首选 32 位”选项。
 
-### <a name="1.9.0"/>[1\.9.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.9.0)
-  - 已将 .NET 客户端的默认连接模式更改为 ConnectionMode.Direct，以通过结合使用直接连接和 TCP 来提高性能。已弃用 ConnectionPolicy.ConnectionProtocol 属性并向 ConnectionMode 枚举添加一个 DirectHttps 值。
-  - 已修复全局复制帐户中的 Bug，此 Bug 会使 Upsert 调用定向至读取位置而非写入位置。
-  - 已添加 IDocumentClient 接口丢失的方法，包括：将 mediaStream 与选项作为参数的 UpsertAttachmentAsync 方法、将选项作为参数的 CreateAttachmentAsync 方法，以及将 querySpec 作为参数的 CreateOfferQuery 方法。
-  - 已解封 IDocumentClient 接口中公开的公共类。
   - 已对分区集合添加并行查询支持。
-  - 已对分区集合添加跨分区排序依据支持。
-  
+  - 已对分区集合添加跨分区 ORDER BY 和 TOP 查询支持。
+  - 已修复当使用对 DocumentDB Nuget 包的引用来引用 DocumentDB 项目时缺少所需的 DocumentDB.Spatial.Sql.dll 和 Microsoft.Azure.Documents.ServiceInterop.dll 引用的错误。
+  - 已修复在 LINQ 中使用用户定义的函数时无法使用不同类型的参数的错误。
+  - 已修复全局复制帐户中的 Bug，此 Bug 会使 Upsert 调用定向至读取位置而非写入位置。
+  - 已将缺少的方法添加到了 IDocumentClient 接口：
+      - 采用 mediaStream 和选项作为参数的 UpsertAttachmentAsync 方法
+      - 采用选项作为参数的 CreateAttachmentAsync 方法
+      - 采用 querySpec 作为参数的 CreateOfferQuery 方法。
+  - 已解封 IDocumentClient 接口中公开的公共类。
 
 ### <a name="1.8.0"/>[1\.8.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.8.0)
   - 添加了对多区域数据库帐户的支持。
@@ -63,7 +67,7 @@
   - 修复了用于将其打包为 Azure 云服务解决方案的一部分的 .NET SDK 的 Nuget 包中的 Bug。
   
 ### <a name="1.6.2"/></a>[1\.6.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.6.2)
-  - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。 
+  - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ### <a name="1.5.3"/></a>[1\.5.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.3)
   - **[已修复]** 查询 DocumentDB 终结点引发：System.Net.Http.HttpRequestException：将内容复制到流时出错。
@@ -87,7 +91,7 @@
  - **[已过时]** UriFactory.CreateCollection --> 现在应使用 UriFactory.CreateDocumentCollection
  
 ### <a name="1.4.1"/></a>[1\.4.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.1)
- - **[已修复]** 使用非 en 区域性信息（如 NL-NL 等）时出现本地化问题。 
+ - **[已修复]** 使用非 en 区域性信息（如 nl-NL 等）时出现本地化问题。
  
 ### <a name="1.4.0"/></a>[1\.4.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.0)
   - 基于 ID 的路由
@@ -111,14 +115,14 @@
   - **[已修复]**：从 linq 表达式生成的不正确的 SQL 查询 [#38](https://github.com/Azure/azure-documentdb-net/issues/38)
 
 ### <a name="1.2.0"/></a>[1\.2.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.2.0)
-- 对 Newtonsoft.Json v5.0.7 的依赖关系 
+- 对 Newtonsoft.Json v5.0.7 的依赖关系
 - 更改为支持 Order By
   - LINQ 提供程序支持 OrderBy() 或 OrderByDescending()
-  - 支持 Order By 的 IndexingPolicy 
+  - 支持 Order By 的 IndexingPolicy
   
 		**NB: 可能的重大更改** 
   
-    	如果你当前具有用自定义索引策略预配集合的代码，则现有代码将需要进行更新以支持新的 IndexingPolicy 类。如果你没有自定义索引策略，则此更改不会影响你。
+    	如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。如果你没有任何自定义索引策略，此更改不会影响你。 
 
 ### <a name="1.1.0"/></a>[1\.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.1.0)
 - 通过使用新的 HashPartitionResolver 和 RangePartitionResolver 类以及 IPartitionResolver 支持对数据进行分区
@@ -150,7 +154,9 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
  
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
-| [1\.9.0](#1.9.0) | 2016 年 7 月 9 日 |---
+| [1\.9.2](#1.9.2) | 2016 年 7 月 23 日 |---
+| 1.9.1 | 已弃用 |---
+| 1.9.0 | 已弃用 |---
 | [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
 | [1\.7.1](#1.7.1) | 2016 年 5 月 6 日 |---
 | [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |---
@@ -178,4 +184,4 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0919_2016-->
