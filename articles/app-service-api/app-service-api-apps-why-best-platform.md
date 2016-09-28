@@ -34,19 +34,6 @@ Azure 应用服务中的 API 应用提供各种功能，用于轻松在云中和
 
 此外，API 应用可以利用 [Web 应用](/documentation/articles/app-service-web-overview/)和[移动应用](/documentation/articles/app-service-mobile-value-prop/)提供的功能。反之亦然：如果使用某个 Web 应用或移动应用来托管 API，该应用可以利用 Swagger 元数据等 API 应用功能来生成客户端代码，以及使用 CORS 进行跨域浏览器访问。这三个应用程序类型（API、Web、移动）之间的唯一差别在于 Azure 门户预览中使用的名称和图标。
 
-## API 应用与 Azure API 管理之间的差别是什么？
-
-API 应用与 [Azure API 管理](/documentation/articles/api-management-key-concepts/)是互补的服务：
-
-* API 管理与管理 API 相关。将 API 管理前端放在 API 上，监视和限制用量、操作输入和输出、将多个 API 合并为一个终结点等等。管理的 API 可以托管在于任何位置。
-* API 应用与托管 API 相关。该服务包含的功能可方便开发和使用 API，但它不执行 API 管理所执行的监视、限制、操作或合并。如果不需要 API 管理功能，可以将 API 托管在 API 应用中，而不需要使用 API 管理。
-
-下图演示了托管在 API 应用及其他位置的 API 使用的 API 管理。
-
-![Azure API 管理和 API 应用](./media/app-service-api-apps-why-best-platform/apia-apim.png)
-
-API 管理与 API 应用的某些功能类似。例如，两者都可以自动化 CORS 支持。同时使用这两项服务时，可以使用 API 管理进行 CORS，因为它用作 API 应用的前端。
-
 ## 入门
 
 若要通过将示例代码部署到其中一个应用以开始使用 API 应用，请参阅适用于所需框架的教程：

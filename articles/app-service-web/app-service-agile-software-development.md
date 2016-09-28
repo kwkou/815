@@ -33,7 +33,7 @@
 
 ## 执行的操作 ##
 
-你将逐步执行典型的“开发-测试-过渡-生产”工作流，以将新更改发布到 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例应用程序（包含两个 [Web 应用](/home/features/web-site/)：一个是前端 (FE)，另一个是 Web API 后端 (BE)）和 [SQL 数据库](/home/features/sql-database/)。将按如下所示使用部署体系结构：
+你将逐步执行典型的“开发-测试-过渡-生产”工作流，以将新更改发布到 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例应用程序（包含两个 [Web 应用](/home/features/app-service/web-apps/)：一个是前端 (FE)，另一个是 Web API 后端 (BE)）和 [SQL 数据库](/home/features/sql-database/)。将按如下所示使用部署体系结构：
 
 ![](./media/app-service-agile-software-development/what-1-architecture.png)
 
@@ -276,7 +276,7 @@
 -	[David Ebbo 的博客](http://blog.davidebbo.com/)
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure/)
 -	[Azure 跨平台命令行工具](/documentation/articles/xplat-cli-install/)
--	[在 Azure AD 中创建或编辑用户](/articles/active-directory-create-users/#BKMK_1)
+-	[在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users/#BKMK_1)
 -	[项目 Kudu Wiki](https://github.com/projectkudu/kudu/wiki)
 
 <!---HONumber=Mooncake_0919_2016-->

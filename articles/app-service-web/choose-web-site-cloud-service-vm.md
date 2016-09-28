@@ -179,8 +179,6 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 [ClearDB]: http://www.cleardb.com/
 [WebJobs]: /documentation/articles/websites-webjobs-resources/
 [Configuring an SSL certificate for an Azure Website]: /documentation/articles/web-sites-configure-ssl-certificate/
-[azurestore]: http://azure.microsoft.com/gallery/store/
-[scripting]: http://azure.microsoft.com/documentation/scripts/?services=web-sites
 [dotnet]: /develop/net/
 [nodejs]: /develop/nodejs/
 [PHP]: /develop/php/

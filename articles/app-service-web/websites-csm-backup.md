@@ -17,7 +17,7 @@
 - [PowerShell](/documentation/articles/app-service-powershell-backup/)
 - [REST API](/documentation/articles/websites-csm-backup/)
 
-[应用服务应用](/home/features/web-site/)可以备份为 Azure 存储中的 Blob。备份还可以包含该应用的数据库。如果曾经意外地删除了该应用，或者该应用需要还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
+[应用服务应用](/home/features/app-service/web-apps/)可以备份为 Azure 存储中的 Blob。备份还可以包含该应用的数据库。如果曾经意外地删除了该应用，或者该应用需要还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
 
 本文介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 门户预览以图形方式创建和管理应用备份，请参阅[在 Azure App Service 中备份 Web 应用](/documentation/articles/web-sites-backup/)
 
