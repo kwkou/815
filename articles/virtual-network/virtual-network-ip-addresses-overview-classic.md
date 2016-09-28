@@ -40,7 +40,7 @@
 ### DNS 主机名解析
 在创建云服务或 IaaS VM 时，你需要提供在 Azure 的所有资源中唯一的云服务 DNS 名称。这在 Azure 托管的 DNS 服务器中创建 *dnsname* .chinacloudapp.cn 到资源的公共 IP 地址的映射。例如，创建云服务 DNS 名称为 **contoso** 的云服务时，完全限定域名 (FQDN) **contoso.chinacloudapp.cn** 将解析为该云服务的公共 IP 地址 (VIP)。可以使用此 FQDN 创建指向 Azure 中的公共 IP 地址的自定义域 CNAME 记录。
 
-### 云服务
+### <a name="Cloud-services"></a>云服务
 云服务始终具有一个称为虚拟 IP 地址 (VIP) 的公共 IP 地址。你可以在云服务中创建终结点，以便将 VIP 中的不同端口关联到 VM 中的内部端口以及云服务中的角色实例。
 
 云服务可以包含多个 IaaS VM 或 PaaS 角色实例，通过同一云服务 VIP 公开。还可以[向云服务分配多个 VIP](/documentation/articles/load-balancer-multivip/)，这样可以启用多 VIP 方案，如包含基于 SSL 的网站的多租户环境。
@@ -130,7 +130,7 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 
 ## 限制
 
-下表显示 Azure 中每个订阅的 IP 寻址的限制。可以[与支持人员联系](https://portal.azure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)，最多可以将默认限制提高到最大限制，具体取决于业务需求。
+下表显示 Azure 中每个订阅的 IP 寻址的限制。可以[与支持人员联系](/support/contact/)，最多可以将默认限制提高到最大限制，具体取决于业务需求。
 
 ||默认限制|最大限制|
 |---|---|---|
@@ -145,7 +145,7 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 
 在大多数情况下，公共 IP 地址是免费的。使用其他和/或静态公共 IP 地址要收取少许费用。确保用户了解[公共 IP 的定价结构](/pricing/details/reserved-ip-addresses/)。
 
-## 资源管理器与经典部署之间的差异
+## <a name="Differences-between-Resource-Manager-and-classic-deployments"></a>资源管理器与经典部署之间的差异
 下面是 Resource Manager 和经典部署模型中的 IP 寻址功能的比较。
 
 ||资源|经典|资源管理器|
