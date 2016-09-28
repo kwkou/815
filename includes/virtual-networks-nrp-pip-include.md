@@ -1,4 +1,4 @@
-## <a name="Public-IP-address"></a> 公共 IP 地址
+## <a name="Public-IP-address" id="public-ip-address"></a> 公共 IP 地址
 
 公共 IP 地址提供保留的或面向 Internet 的动态 IP 地址资源。尽管可以创建作为独立对象的公共 IP 地址，但你需要将其关联到另一个对象才能实际使用该地址。你可以将公共 IP 地址关联到负载平衡器、应用程序网关或 NIC 以提供对这些资源的 Internet 访问。
 
