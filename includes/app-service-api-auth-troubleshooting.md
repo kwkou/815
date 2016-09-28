@@ -16,8 +16,7 @@
 * 请确保你将在浏览器中前往 HTTPS URL，而不是 HTTP URL。默认情况下，Visual Studio 使用 HTTP URL 创建发布配置文件，这是部署项目后在浏览器中打开的内容。
 * 对于 JavaScript 前端身份验证，确保已在 JavaScript 代码所调用的 API 应用上正确配置 CORS。如果不确定问题是否与 CORS 相关，请尝试将 "\*" 作为允许的源 URL。
 * 对于 JavaScript 前端，打开浏览器的“开发人员工具控制台”选项卡，以获取有关错误的详细信息，并检查网络上的 HTTP 请求。但是，控制台的错误消息可能会产生误导。如果收到一条指示 CORS 错误的消息，真正的问题可能会是身份验证。可通过运行暂时禁用了身份验证的应用来检查是否是身份验证的问题。
-* 对于 .NET API 应用，请通过将 [customErrors 模式设置为“关闭”](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remoteview)，确保从错误消息中获得尽可能多的信息。
-* 对于 .NET API 应用，启动[远程调试会话](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug)，并检查传递给后列代码的变量的值：使用 ADAL 来获取持有者令牌的代码，或对照预期服务主体 ID 进行声明检查的代码。请注意，你的代码可以获取来自许多不同源的配置值，因此通过这种方式很可能会发现意外内容。例如，配置 Azure 应用服务环境设置时，如果将 `ida:ClientId` 错误地键入为 `ida:ClientID`，代码可能会获取其在 Web.config 文件中寻找的 `ida:ClientId` 值，并忽略 Azure App Service 设置。
+* 对于 .NET API 应用，请通过将 customErrors 模式设置为“关闭”，确保从错误消息中获得尽可能多的信息。
 * 如果一切尝试在正常的 Internet Explorer 窗口中不起作用，可能是现有登录正在造成干扰；请尝试 InPrivate，然后尝试 Chrome 或 Firefox。
 
 <!---HONumber=Mooncake_0919_2016-->
