@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="06/24/2016" 
-	wacn.date="08/01/2016"/>
+	ms.date="07/07/2016" 
+	wacn.date="09/28/2016"/>
 
 # Azure Toolkit for IntelliJ
 
@@ -51,4 +51,5 @@
 
 [Azure Java 开发人员中心]: /develop/java/
 
-<!---HONumber=Mooncake_0725_2016-->
+
+<!---HONumber=Mooncake_0919_2016-->

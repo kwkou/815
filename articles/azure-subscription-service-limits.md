@@ -5,12 +5,14 @@
 	documentationCenter=""
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar"/>
+	editor=""
+	tags="billing"
+	/>
 
 <tags
 	ms.service="multiple"
-	ms.date="06/08/2016"
-	wacn.date="07/04/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/28/2016"/>
 
 # Azure 订阅和服务限制、配额和约束
 
@@ -49,6 +51,7 @@
 
 - [云服务](#cloud-services-limits)
 
+- [DocumentDB](#documentdb-limits)
 - [事件中心](#event-hubs-limits)
 
 - [IoT 中心](#iot-hub-limits)
@@ -179,6 +182,13 @@
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
 <a id="media-services-limits"></a>
+
+### DocumentDB 限制
+
+[AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
+
+列出的带星号 (*) 的配额[可联系 Azure 支持部门进行调整](./documentdb/documentdb-increase-limits.md)。
+
 ### 媒体服务限制
 
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
@@ -215,11 +225,7 @@
 
 <a id="stream-analytics-limits"></a>
 ### 流分析限制
-
-| 限制标识符 | 限制 | 注释 |
-|----------------- | ------------|--------- |
-| 每个区域每个订阅的最大流式处理单位数 | 50 | 增加订阅的流式处理单位数超过 50 的请求可通过联系 [Microsoft 支持](https://support.microsoft.com/zh-cn)发出。 |
-| 流式处理单位的最大吞吐量 | 1MB/秒* | 每个 SU 的最大吞吐量取决于方案。实际的吞吐量可能较低，具体取决于查询复杂性和分区。可在[扩展 Azure 流分析作业以增加吞吐量](/documentation/articles/stream-analytics-scale-jobs/)一文中找到更多详细信息。 |
+[AZURE.INCLUDE [stream-analytics-limits-table](../includes/stream-analytics-limits-table.md)]
 
 <a id="active-directory-limits"></a>
 ### Active Directory 限制
@@ -270,4 +276,4 @@
 
 [云服务的大小](/documentation/articles/cloud-services-sizes-specs/)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0919_2016-->
