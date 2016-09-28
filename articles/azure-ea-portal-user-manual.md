@@ -20,7 +20,9 @@
 如果在 Azure Global 拥有测试账号或者 MSDN 订阅账号，这个账号可以在国内 Azure China 使用吗？  
 
 不可以。 Azure 在国内和国外有 2 套系统。  
+
 (1)	Azure Global。域名是 azure.microsoft.com ，由微软运营，数据中心在中国大陆以外的地区。客户可以通过Windows Live ID 登陆，MSDN 订阅用户每月可以免费试用一定额度的 Azure 资源。  
+
 (2)	Azure China。域名是 www.azure.cn ，由世纪互联运维，与全球其他地区由微软运营的 Azure 服务在物理上和逻辑上都是独立的，数据中心在中国大陆有两个：北京和上海。用户无法通过 Windows Live ID 登陆。只能通过 Org ID 使用。  
 
 ###<a id="orgid"></a>1.2 Org ID
@@ -55,6 +57,7 @@ Org ID 是 Azure China 特殊的用户名系统。
 月底时，中国移动和中国联通会分别快递两张手机账单：
   
 (1)	中国移动的手机账单会告诉用户，本月的总体费用和分类费用，分类费用包括通话时间、短信条数和流量使用情况。 
+
 (2)	中国联通的手机账单也会告诉用户，本月话费的详细账单和总费用。
 
 在 Azure 中，一个 EA ( Enterprise Agreement ) 合同可以创建无限多个订阅。  
@@ -62,8 +65,11 @@ Org ID 是 Azure China 特殊的用户名系统。
 订阅好比一张SIM卡。比如用户可以创建 ABC，XYZ 两种不同的订阅，并且可以在这 2 个不同的订阅中，创建和使用 Azure 服务，比如：虚拟机、存储、SQL 数据库等等。订阅就类似资源池的概念。  
 
 月底时，Azure 系统会产生一张详细的使用清单：  
+
 (1)	告诉用户 ABC 订阅中，虚拟机、存储和 SQL 数据库的总费用。  
+
 (2)	同时也会显示 XYZ 订阅中，产生费用的详细信息。  
+
 (3)	最后会显示所有订阅的总体费用。  
 
 注意：测试用户只能创建并使用一个订阅，而正式商用用户可以创建无数个订阅。
@@ -161,17 +167,23 @@ Azure 企业门户拥有以下功能：
 
 ###<a id="enter-account"></a>2.2 录入账户
 
-(1)	确认拥有 Azure 测试账户；<br/>
-(2)	使用 Azure 企业门户前，确认签署 Azure 企业协议(Enterprise Agreement)合同；<br/> 
+(1)	确认拥有 Azure 测试账户；
+
+(2)	使用 Azure 企业门户前，确认签署 Azure 企业协议(Enterprise Agreement)合同；
+
 (3)	确认已把测试账户信息提交给世纪互联后台的运维团队，并在后台录入。
 
 
 ###<a id="simulations"></a>2.3 模拟场景
 
-本章模拟场景如下：  
-(1)	Contoso 企业管理员拥有 Azure China 测试账号 admin@contoso.partner.onmschina.cn, 该账号有一个默认的测试订阅；  
+本章模拟场景如下： 
+ 
+(1)	Contoso 企业管理员拥有 Azure China 测试账号 admin@contoso.partner.onmschina.cn, 该账号有一个默认的测试订阅； 
+ 
 (2)	企业管理员需要将该测试账号升级为企业管理员，并且将测试订阅切换为生产订阅；  
+
 (3)	企业管理员需要为 Market 部门创建一个新的 Azure 账户 market@contoso.partner.onmschina.cn, 为该账户创建新的订阅并且重命名；  
+
 (4)	Contoso 企业管理员将 admin 账号加到 Market 订阅下，作为协同管理员。
 
 ###<a id="switch-to-production-subscription"></a>2.4 将测试订阅切换为生产订阅
@@ -200,8 +212,11 @@ Azure 企业门户拥有以下功能：
 
 ###<a id="create-new-department"></a>2.5 创建新的部门
 部门这个概念在 Azure 企业门户里，是多个账户的集合。  
+
 (1)	可按照公司的职能，将部门区分为金融、市场营销；  
+
 (2)	可按照业务，将部门区分为汽车、航天；  
+
 (3)	或者按照地理位置，将部门区分为北美、欧洲。  
 
 如下图所示:  
@@ -260,7 +275,8 @@ Azure 企业门户拥有以下功能：
 在上节中，企业管理员 ( admin ) 已经为 market 部门创建了新的账户
 market@yumchina.partner.onmschina.cn，该账户系统分配了默认的登陆密码。
 
-接下来需要为 market  账户创建订阅：<br/> 
+接下来需要为 market  账户创建订阅：
+
 (1)	在 [Azure 企业门户](https://ea.windowsazure.cn/)，注销当前的登陆信息；
 
 (2)	重新以 market 账户登录企业门户，输入帐户名
@@ -285,9 +301,12 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码；
 ###<a id="rename-subscription"></a>2.8 重命名订阅名称
 默认情况下，新创建的 Azure 订阅名称都是 ”Azure 企业”。从可读性角度考虑，需要将订阅名称重命名，比如命名为 Marketing\_ Subscription，Sales\_Subscription，IT\_ Subscription 等。这样可读性、可管理性会更好。  
 
-本节修改 Market 账号 ( market@contoso.partner.onmschina.cn ) 的订阅名称：  
-(1)	打开浏览器，输入地址：https://account.windowsazure.cn/subscriptions；  
+本节修改 Market 账号 ( market@contoso.partner.onmschina.cn ) 的订阅名称： 
+ 
+(1)	打开浏览器，输入地址：https://account.windowsazure.cn/subscriptions；
+  
 (2)	输入Market账号 market@contoso.partner.onmschina.cn 和密码；  
+
 (3)	选中默认的订阅名称；  
 
 ![选择订阅][20]  
@@ -306,25 +325,37 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码；
 
 ###<a id="config-coadmin"></a>2.9 设置共同管理员
 在上面的几节内容中，实现了：  
+
 (1)	Azure 企业管理员( admin@contoso.partner.onmschina.cn)，将默认订阅切换为生产订阅；  
-(2)	以企业管理员 ( admin ) 账户身份，为Market部门创建新的账户
-(market@contoso.partner.onmschina.cn)，而且为该 market 账户创建新的订阅并且重命名；  
+
+(2)	以企业管理员 ( admin ) 账户身份，为Market部门创建新的账户(market@contoso.partner.onmschina.cn)，而且为该 market 账户创建新的订阅并且重命名；  
+
 (3)	企业管理员 ( Admin ) 拥有的权限：  
+
 &nbsp;&nbsp;&nbsp;&nbsp;a) 企业管理员，可以查看 Azure 账单使用情况  
+
 &nbsp;&nbsp;&nbsp;&nbsp;b) 账户管理员，拥有自己的订阅  
+
 (4)	Market账户拥有的权限：  
+
 &nbsp;&nbsp;&nbsp;&nbsp;a) 账户管理域，拥有自己的订阅  
 
 请注意：上面的步骤完成后，从查看账单的权限来看：  
-(1)	企业管理员  (  Admin  )  可以查看 Azure 账单使用情况；    
+
+(1)	企业管理员  (  Admin  )  可以查看 Azure 账单使用情况；
+    
 (2)	Market 账户是账户管理员，没有查看 Azure 账单的权限 。 
 
 从订阅角度来看，两个账户的关系如下：  
-(1)	企业管理员 ( Admin ) 是服务管理员无法查看到 Market 账户的订阅 ( Marketing\_Subscription )；<br/>
+
+(1)	企业管理员 ( Admin ) 是服务管理员无法查看到 Market 账户的订阅 ( Marketing\_Subscription )；
+
 (2)	Market 账户也无法查看到企业管理员 ( Admin ) 的订阅。  
 
 现在需要给予企业管理员 ( Admin ) 查看 Market 账户下订阅的权限，这就需要将企业管理域 ( Admin ) 设置为Market 账户下订阅的共同管理员。  
+
 (1)	首先以 Market 账户 ( market@contoso.partner.onmschina.cn )，登陆 [Azure 管理门户](https://manage.windowsazure.cn) ； 
+
 (2)	点击左侧列表中的”设置”，然后选择”管理员”，点击按钮”添加”。  
 
 ![添加协同管理员账号][24]  
@@ -340,11 +371,17 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码；
 
 ###<a id="enterprise-summary"></a>2.10 总结
 经过本章节的操作后，可以发现：  
+
 **(1)	企业管理员 ( Admin ) 拥有的权限：**  
+
 &nbsp;&nbsp;&nbsp;&nbsp;a)	企业管理员，可以查看 Azure 账单使用情况；  
+
 &nbsp;&nbsp;&nbsp;&nbsp;b)	账户管理员，拥有自己的订阅；  
+
 &nbsp;&nbsp;&nbsp;&nbsp;c)	共同管理员，是market账户订阅(Market_Subscription)的协同管理员。  
+
 **(2)	Market 账户拥有的权限：**  
+
 &nbsp;&nbsp;&nbsp;&nbsp;a)	账户管理域，拥有自己的订阅。  
 
 ##<a id="azure-billing"></a>3. 查询 Azure 账单
@@ -359,10 +396,12 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码；
 
 ![使用量摘要][27]  
 
-下图中的图例具体含义是：  
+下图中的图例具体含义是：
+  
 1.	蓝线代表客户购买及调整及剩余金额；  
 2.	红柱表示客户每月超额情况；  
 3.	绿柱表示客户每月实际消耗。  
+
 **注意：Azure 允许客户超额使用，即允许客户实际使用量大于客户账户的余额。
 比如一个客户1月份的账户余额为10万元，1月份当月实际使用11万元，则超额消耗1万元。**
 
