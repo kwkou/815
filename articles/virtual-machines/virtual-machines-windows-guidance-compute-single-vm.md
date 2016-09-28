@@ -17,8 +17,6 @@
 
 # 在 Azure 上运行 Windows VM 的最佳实践
 
-[AZURE.INCLUDE [pnp-header](../../includes/guidance-pnp-header-include.md)]
-
 [AZURE.INCLUDE [gudiance-comput-single-vm-windows](../../includes/guidance-compute-single-vm-windows.md)]
 
 <!---HONumber=Mooncake_0801_2016-->
