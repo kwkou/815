@@ -3,14 +3,13 @@
    description="了解如何在 Azure 中使用用户定义的路由 (UDR) 和 IP 转发将流量转发到虚拟设备。"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
-   editor="tysonn" />  
-
+   editor="tysonn" />
 <tags
 	ms.service="virtual-network"
 	ms.date="03/15/2016"
-	wacn.date="08/22/2016"/>
+	wacn.date="09/28/2016"/>
 
 # 什么是用户定义的路由和 IP 转发？
 当在 Azure 中将虚拟机 (VM) 添加到虚拟网络 (VNet) 时，将会注意到 VM 能够自动通过网络进行相互通信。你不需要指定网关，即使这些 VM 位于不同子网中。存在从 Azure 到你自己的数据中心的混合连接时，这同样适用于从 VM 到公共 Internet 甚至到本地网络的通信。
@@ -42,8 +41,8 @@
 |属性|说明|约束|注意事项|
 |---|---|---|---|
 | 地址前缀 | 将路由应用到的目标 CIDR，例如 10.1.0.0/16。|必须是表示公共 Internet、Azure 虚拟网络或本地数据中心中的地址的有效 CIDR 范围。|请确保**地址前缀**不包含**下一跃点地址**的地址，否则数据包将进入从源到下一跃点的循环，而从不会到达目标。 |
-| 下一跃点类型 | 数据包应发送到的 Azure 跃点的类型。 | 必须是以下值之一：<br/>**虚拟网络**。表示本地虚拟网络。例如，如果你在同一虚拟网络中有两个子网 10.1.0.0/16 和 10.2.0.0/16，则路由表中每个子网的路由的下一跃点值将为虚拟网络。<br/> **虚拟网络网关**。表示 Azure S2S VPN 网关。<br/> **Internet**。表示由 Azure 基础结构提供的默认 Internet 网关。<br/> **虚拟设备**。表示已添加到 Azure 虚拟网络的虚拟设备。<br/> **无**。表示黑洞。转发到黑洞的数据包根本就不会进行转发。| 请考虑使用“无”类型，以停止将数据包流动到给定目标。 | 
-| 下一跃点地址 | 下一跃点地址包含应将数据包转发到的 IP 地址。下一跃点值只允许在下一跃点类型为虚拟设备的路由中使用。| 必须是可到达的 IP 地址。 | 如果 IP 地址表示 VM，请确保在 Azure 中为 VM 启用“IP 转发”[](#IP-forwarding)。 |
+| 下一跃点类型 | 数据包应发送到的 Azure 跃点的类型。 | 必须是以下值之一：<br/>**虚拟网络**。表示本地虚拟网络。例如，如果你在同一虚拟网络中有两个子网 10.1.0.0/16 和 10.2.0.0/16，则路由表中每个子网的路由的下一跃点值将为 *虚拟网络* 。<br/> **虚拟网络网关**。表示 Azure S2S VPN 网关。<br/> **Internet**。表示由 Azure 基础结构提供的默认 Internet 网关。<br/> **虚拟设备**。表示已添加到 Azure 虚拟网络的虚拟设备。<br/> **无**。表示黑洞。转发到黑洞的数据包根本就不会进行转发。| 请考虑使用“无”类型，以停止将数据包流动到给定目标。 | 
+| 下一跃点地址 | 下一跃点地址包含应将数据包转发到的 IP 地址。下一跃点值只允许在下一跃点类型为 *虚拟设备* 的路由中使用。| 必须是可到达的 IP 地址。 | 如果 IP 地址表示 VM，请确保在 Azure 中为 VM 启用[IP 转发](#IP-forwarding)。 |
 
 在 Azure PowerShell 中，某些“NextHopType”值具有不同名称：
 - 虚拟网络是 VnetLocal
@@ -75,7 +74,7 @@
 
 若要了解如何创建用户定义路由，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-network-create-udr-arm-template/)。
 
->[AZURE.IMPORTANT] 用户定义路由仅适用于 Azure VM 和云服务。例如，如果你想要在本地网络和 Azure 之间添加防火墙虚拟设备，则需为 Azure 路由表创建用户定义路由，以便将目标为本地地址空间的所有流量转发到虚拟设备。但是，来自本地地址空间的传入流量将流经你的 VPN 网关或 ExpressRoute 线路，绕过虚拟设备直接进入 Azure 环境中。
+>[AZURE.IMPORTANT] 用户定义路由仅适用于 Azure VM 和云服务。例如，如果你想要在本地网络和 Azure 之间添加防火墙虚拟设备，则需为 Azure 路由表创建用户定义路由，以便将目标为本地地址空间的所有流量转发到虚拟设备。还可以将用户定义的路由 (UDR) 添加到网关子网，以便通过虚拟设备将所有流量从本地转发到 Azure。这是最近添加的功能。
 
 ### BGP 路由
 如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与系统路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction/)。
@@ -92,4 +91,4 @@
 - 了解如何[在 Resource Manager 部署模型中创建路由](/documentation/articles/virtual-network-create-udr-arm-template/)并将路由关联到子网。
 - 了解如何[在经典部署模型中创建路由](/documentation/articles/virtual-network-create-udr-classic-ps/)并将路由关联到子网。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0919_2016-->
