@@ -5,13 +5,12 @@
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
+	ms.date="08/07/2016"
+	wacn.date="09/28/2016"/>
 
 
 #Azure 媒体服务概述和常见方案
@@ -51,7 +50,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 有关 Azure 媒体服务的概念，请参阅[概念](/documentation/articles/media-services-concepts/)。
 
-有关介绍 Azure 媒体服务所有主要组件的操作说明系列文章，请参阅 [Azure 媒体服务分步教程](https://docs.com/fukushima-shigeyuki/3439/english-azure-media-services-step-by-step-series)。此系列文章全面概述了各个概念，并使用 AMSE 工具演示了 AME 任务。请注意 AMSE 工具是一种 Windows 工具。可以使用 [AMS SDK for.NET](https://github.com/Azure/azure-sdk-for-media-services)、[Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java) 或 [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php) 以编程方式完成的大多数任务也可以使用此工具来完成。
+有关介绍 Azure 媒体服务所有主要组件的操作说明系列文章，请参阅 [Azure 媒体服务分步教程](https://docs.com/fukushima-shigeyuki/3439/english-azure-media-services-step-by-step-series)。此系列文章全面概述了各个概念，并使用 AMSE 工具演示了 AMS 任务。请注意 AMSE 工具是一种 Windows 工具。可以使用 [AMS SDK for.NET](https://github.com/Azure/azure-sdk-for-media-services)、[Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java) 或 [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php) 以编程方式完成的大多数任务也可以使用此工具来完成。
 
 ##<a id="vod_scenarios"></a>使用 Azure 媒体服务交付按需媒体：常见方案和任务
 
@@ -97,7 +96,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 媒体分析是语音和视觉组件的集合，便于组织和企业从视频文件中汲取可以实施的见解。
 
 1. 将优质夹层文件上载到资产中。
-2. 使用下述媒体分析服务来处理你的视频：
+2. 使用下述媒体分析服务之一来处理你的视频：
 	
 
 	- **Hyperlapse** – [Hyperlapse 媒体文件与 Azure Media Hyperlapse](/documentation/articles/media-services-hyperlapse-content/)
@@ -209,4 +208,4 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0919_2016-->

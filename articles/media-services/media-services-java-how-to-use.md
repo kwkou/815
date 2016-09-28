@@ -5,13 +5,12 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>  
-
+	editor="jimbe"/>
 
 <tags
 	ms.service="media-services"
-	ms.date="06/22/2016"   
-	wacn.date="08/22/2016"/>
+	ms.date="08/11/2016"   
+	wacn.date="09/28/2016"/>
 
 #如何将媒体服务与 Java 结合使用
 
@@ -69,18 +68,18 @@
 	
 	public class HelloMediaServices
 	{
-	    // Media Services account credentials configuration
-	    private static String mediaServiceUri = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
-	    private static String oAuthUri = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn/v2/OAuth2-13";
-	    private static String clientId = "account name";
-	    private static String clientSecret = "account key";
-	    private static String scope = "urn:WindowsAzureMediaServices";
+		// Media Services account credentials configuration
+		private static String mediaServiceUri = "https://wamsshaclus001rest-hs.chinacloudapp.cn /API/";
+		private static String oAuthUri = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn/v2/OAuth2-13";
+		private static String clientId = "account name";
+		private static String clientSecret = "account key";
+		private static String scope = "urn:WindowsAzureMediaServices";
 		private static MediaContract mediaService;
-	    
-	    // Encoder configuration
-	    private static String preferedEncoder = "Media Encoder Standard";
-	    private static String encodingPreset = "H264 Multiple Bitrate 720p";
-		
+		    
+		// Encoder configuration
+		private static String preferedEncoder = "Media Encoder Standard";
+		private static String encodingPreset = "H264 Multiple Bitrate 720p";
+	
 		public static void main(String[] args)
 		{
 		
@@ -267,4 +266,4 @@
 
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0919_2016-->

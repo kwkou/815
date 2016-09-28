@@ -4,13 +4,13 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016" 
-	wacn.date="06/20/2016"/>
+ 	ms.date="07/18/2016" 
+	wacn.date="09/28/2016"/>
 
 
 
@@ -24,7 +24,7 @@
 
 在创建资产时，可以指定以下加密选项。
 
-- **无** - 不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。如果计划使用渐进式下载交付 MP4，则使用此选项。 
+- **无** - 不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。如果计划使用渐进式下载交付 MP4，则使用此选项。
 - **CommonEncryption** - 上载经过常用加密或 PlayReady DRM 加密并受其保护的内容（例如，受 PlayReady DRM 保护的平滑流）时使用此选项。
 - **EnvelopeEncrypted** – 如果要上载使用 AES 加密的 HLS，请使用此选项。请注意，Transform Manager 必须已对文件进行编码和加密。
 - **StorageEncrypted** - 使用 AES-256 位加密在本地加密明文内容，然后将其上载到 Azure Storage 中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上载为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
@@ -50,7 +50,7 @@
 - 创建要与资产关联的 AssetFile 实例。
 - 创建用于定义权限以及资产访问持续时间的 AccessPolicy 实例。
 - 创建用于提供资产访问权限的 Locator 实例。
-- 将单个媒体文件上载到媒体服务。 
+- 将单个媒体文件上载到媒体服务。
 
 		
 		static public IAsset CreateAssetAndUploadSingleFile(AssetCreationOptions assetCreationOptions, string singleFilePath)
@@ -224,7 +224,7 @@
 	    copytask.Start();
 	}
 
-以下代码示例中显示了用于上载本主题中使用的示例资源文件的代码。
+以下代码示例展示了用于上传本主题中使用的示例资产文件的代码。
 	
 	UploadBlobFile(manifest.BlobStorageUriForUpload, filename1);
 	UploadBlobFile(manifest.BlobStorageUriForUpload, filename2);
@@ -303,4 +303,4 @@
 [如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor/
  
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0919_2016-->

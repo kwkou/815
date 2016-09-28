@@ -3,14 +3,14 @@
 	description="了解如何使用 .NET 添加编码单元"  
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,milangada,gtrifonov" 
-	manager="dwrede" 
+	authors="juliako" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+ 	ms.date="07/26/2016"
+	wacn.date="09/28/2016"/>
 
 
 #如何使用 .NET SDK 缩放编码
@@ -47,4 +47,4 @@
 
 
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0919_2016-->
