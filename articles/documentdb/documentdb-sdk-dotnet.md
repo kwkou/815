@@ -182,6 +182,6 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 ## 另请参阅
 
-要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/services/documentdb/) 服务页。
+要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/documentation/services/documentdb/) 服务页。
 
 <!---HONumber=Mooncake_0919_2016-->

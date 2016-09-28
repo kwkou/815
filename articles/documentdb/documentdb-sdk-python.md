@@ -111,6 +111,6 @@ Azure DocumentDB SDK for Python 在 **1.0.0** 版之前的所有版本都将在 
 
 ## 另请参阅
 
-要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/services/documentdb/) 服务页。
+要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/documentation/services/documentdb/) 服务页。
 
 <!---HONumber=Mooncake_0919_2016-->
