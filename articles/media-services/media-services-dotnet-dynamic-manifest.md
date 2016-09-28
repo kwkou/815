@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="07/18/2016"
+	wacn.date="09/28/2016"/>
 
 
 #使用 Azure 媒体服务 .NET SDK 创建筛选器
@@ -23,7 +23,7 @@
 
 有关与筛选器和动态清单相关的更多详细信息，请参阅[动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview/)。
 
-本主题说明如何使用媒体服务 .NET SDK 创建、更新和删除筛选器。
+本主题介绍如何使用媒体服务 .NET SDK 创建、更新和删除筛选器。
 
 
 请注意，如果你更新筛选器，则流式处理终结点需要 2 分钟的时间来刷新规则。如果内容是通过使用此筛选器提供的（并在代理和 CDN 缓存中缓存），则更新此筛选器会导致播放器失败。建议在更新筛选器之后清除缓存。如果此选项不可用，请考虑使用其他筛选器。
@@ -136,5 +136,4 @@
 [动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview/)
  
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0919_2016-->

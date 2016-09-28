@@ -5,13 +5,12 @@
 	documentationCenter=""
 	authors="Juliako"
 	manager="erikre"
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
+	ms.date="07/27/2016"
+	wacn.date="09/28/2016"/>
 
 
 #使用 AES-128 动态加密和密钥传送服务
@@ -631,4 +630,4 @@
 		    }
 		}
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0919_2016-->

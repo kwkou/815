@@ -3,14 +3,14 @@
 	description="本主题介绍如何使用 .NET 通过媒体编码器标准版对资产进行编码。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
-	manager="dwrede" 
+	authors="juliako" 
+	manager="erikre" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/03/2016"
-	wacn.date="06/20/2016"/>
+ 	ms.date="07/18/2016"
+	wacn.date="09/28/2016"/>
 
 
 #如何使用媒体编码器标准版对资产进行编码
@@ -50,8 +50,8 @@
 
 - 创建编码作业。
 - 获取对媒体编码器标准版编码器的引用。
-- 指定使用“H264 多比特率 720p”预设。你可以在[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)看到所有预设。你还可以在[此处](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)查看相关主题，了解这些预设必须遵循的架构。
-- 将一个编码任务添加到该作业。 
+- 指定使用“H264 多比特率 720p”预设。你可以在[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)看到所有预设。还可以在[此处](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)查看相关主题，了解这些预设必须遵循的架构。
+- 将一个编码任务添加到该作业。
 - 指定要编码的输入资产。
 - 创建将包含所编码资产的输出资产。
 - 添加事件处理程序以检查作业进度。
@@ -137,4 +137,4 @@
 
 [如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/)
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0919_2016-->

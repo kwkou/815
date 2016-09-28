@@ -5,13 +5,12 @@
 	documentationCenter="" 
 	authors="xpouyat,vsood" 
 	manager="erikre" 
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="06/22/2016"  
-	wacn.date="08/22/2016"/>
+	ms.date="07/19/2016"  
+	wacn.date="09/28/2016"/>
 
 #授权 Microsoft® 平滑流式处理客户端移植工具包
 
@@ -147,10 +146,11 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Sony Corporation
 - TCL Overseas Marketing (Macao Commercial Offshore) Limited
 - Technicolor Delivery Technologies, SAS
+- Tongfang Global Ltd.
 - Toshiba Lifestyle Products & Services Corporation
 - Universal Media Corporation /Slovakia/ s.r.o.
 - VIZIO, Inc.
 - Wistron Corporation
 - ZTE Corporation
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0919_2016-->
