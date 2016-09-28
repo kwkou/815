@@ -4,14 +4,14 @@
 	services="sql-database, virtual-machines"
 	keywords="SQL Server 云, 云中 SQL Server, PaaS 数据库, 云 SQL Server, DBaaS"
 	documentationCenter=""
-	authors="carlrabeler"
+	authors="CarlRabeler"
 	manager="jhubbard"
 	editor="cjgronlund"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/21/2016"
-	wacn.date="08/15/2016"/>
+	ms.date="07/20/2016"
+	wacn.date="09/28/2016"/>
 
 # 选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)
 
@@ -27,7 +27,7 @@ Azure 有两个选项可用于在 Azure 中托管 SQL Server 工作负荷：
 
 在 Azure 与本地 SQL Server 数据库的任何介绍中，要了解的要点之一是你可以同时使用两者。Microsoft 数据平台利用 SQL Server 技术，使其可在跨本地物理机、私有云环境、第三方托管的私有云环境和公有云中使用。这样，你就可以通过本地和云托管部署的组合来满足独特的多样化业务需求，并同时在这些环境中使用相同的服务器产品、开发工具和专业知识组合。
 
-   ![云 SQL Server 选项：IaaS 上的 SQL Server，或云中的 SaaS SQL 数据库。](./media/data-management-azure-sql-database-and-sql-server-iaas/SQLIAAS_SQL_Server_Cloud_Continuum.png)
+   ![云 SQL Server 选项：IaaS 上的 SQL Server，或云中的 SaaS SQL 数据库。](./media/sql-database-paas-vs-sql-server-iaas/SQLIAAS_SQL_Server_Cloud_Continuum.png)
 
 如图所示，每个产品可根据你在基础结构（X 轴）中所拥有的管理级别，以及数据库级别合并与自动化（Y 轴）所达到的成本效益程度等特征进行分类。
 
@@ -42,9 +42,9 @@ Azure 有两个选项可用于在 Azure 中托管 SQL Server 工作负荷：
 
 ## Azure SQL 数据库和 Azure VM 中的 SQL Server 详述
 
-**Azure SQL 数据库**是托管在 Azure 云中的关系数据库即服务 (DBaaS)，属于软件即服务 (SaaS) 和平台即服务 (PaaS) 行业类别。[SQL 数据库](/documentation/articles/sql-database-technical-overview/)构建在 Microsoft 所拥有、托管及维护的标准化硬件和软件基础之上。使用 SQL 数据库，你可以使用内置的特性和功能在服务上直接进行开发。使用 SQL 数据库时，你可以即用即付，并使用向上或向外缩放选项获得更强大的功能且不会中断服务。
+**Azure SQL 数据库**是托管在 Azure 云中的关系数据库即服务 (DBaaS)，属于*软件即服务 (SaaS)* 和*平台即服务 (PaaS)* 行业类别。[SQL 数据库](/documentation/articles/sql-database-technical-overview/)构建在 Microsoft 所拥有、托管及维护的标准化硬件和软件基础之上。使用 SQL 数据库，你可以使用内置的特性和功能在服务上直接进行开发。使用 SQL 数据库时，你可以即用即付，并使用向上或向外缩放选项获得更强大的功能且不会中断服务。
 
-**Azure 虚拟机 (VM) 上的 SQL Server** 属于基础结构即服务 (IaaS) 行业类别，可让你在云中的虚拟机上运行 SQL Server。与 SQL 数据库一样，它构建在 Microsoft 所拥有、托管及维护的标准化硬件基础之上。使用 VM 中的 SQL Server 时，你可以使用自己的 SQL Server 许可证，或使用 Azure 门户中某个预先授权的 SQL Server 映像。
+**Azure 虚拟机 (VM) 上的 SQL Server** 属于*基础结构即服务 (IaaS)* 行业类别，可让你在云中的虚拟机上运行 SQL Server。与 SQL 数据库一样，它构建在 Microsoft 所拥有、托管及维护的标准化硬件基础之上。使用 VM 中的 SQL Server 时，你可以使用自己的 SQL Server 许可证，或使用 Azure 门户中某个预先授权的 SQL Server 映像。
 
 通常，这两个 SQL 选项已针对不同的用途进行优化：
 
@@ -77,7 +77,7 @@ Azure 有两个选项可用于在 Azure 中托管 SQL Server 工作负荷：
 
 #### 计费和许可基础概念
 
-**SQL 数据库**作为一种服务销售给客户，其中不含许可证，但是[对 Azure VM 上的 SQL Server 授予许可](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)则要求通过软件保障颁发按分钟 SQL Server 许可或自有许可证。
+**SQL 数据库**作为一种服务销售给客户，其中不含许可证，但是 [对 Azure VM 上的 SQL Server 授予许可](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)则要求通过软件保障颁发按分钟 SQL Server 许可或自有许可证。
 
 目前，我们在多个服务层中提供 **SQL 数据库**，并根据你选择的服务层和性能级别，以固定费率向你收取每小时费用。此外，你需要对固定的[数据传输速率](/pricing/details/data-transfer/)的 Internet 传出流量付费。基本、标准和高级服务层旨在以多个性能级别提供可预测的性能，以满足应用程序的高峰要求。你可以在服务层和性能级别之间进行更改，以满足应用程序的不同吞吐量需求。如果你的数据库具有高事务量且必须支持许多并发用户，我们建议使用高级服务层。有关目前支持的服务层的最新信息，请参阅 [Azure SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/)。你还可以创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)，在数据库实例之间共享性能资源。
 
@@ -93,11 +93,11 @@ Azure 有两个选项可用于在 Azure 中托管 SQL Server 工作负荷：
 
 **使用 Azure SQL 数据库时：**
 
-应用程序总成本 = 大幅降低的管理成本 + 软件开发成本 + SQL 数据库服务成本
+*应用程序总成本 = 大幅降低的管理成本 + 软件开发成本 + SQL 数据库服务成本*
 
 **使用 Azure VM 上的 SQL Server 时：**
 
-应用程序总成本 = 降到最低的软件开发/修改成本 + 管理成本 + SQL Server 与 Windows Server 许可成本 + Azure 存储空间成本
+*应用程序总成本 = 降到最低的软件开发/修改成本 + 管理成本 + SQL Server 与 Windows Server 许可成本 + Azure 存储空间成本*
 
 有关定价的详细信息，请参阅以下资源：
 
@@ -150,4 +150,4 @@ Azure 有两个选项可用于在 Azure 中托管 SQL Server 工作负荷：
 - 若要开始使用 SQL 数据库，请参阅[《SQL Database tutorial: Create a SQL database in minutes using the Azure portal》（SQL 数据库教程：使用 Azure 经典管理门户在几分钟内创建一个 SQL 数据库）](/documentation/articles/sql-database-get-started/)。
 - 请参阅[《SQL Database pricing》（SQL 数据库定价）](/pricing/details/sql-database/)。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0919_2016-->

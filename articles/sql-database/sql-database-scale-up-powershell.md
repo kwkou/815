@@ -9,15 +9,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/29/2016"
-	wacn.date="06/14/2016" />
+	ms.date="07/19/2016"
+	wacn.date="09/28/2016" />
 
 
 # 使用 PowerShell 更改 SQL 数据库的服务层和性能级别（定价层）
 
 
-> [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-scale-up-powershell/)
+
 
 
 服务层和性能级别描述了适用于你的 SQL 数据库的功能和资源，并且可以随着应用程序更改的需要进行更新。有关详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers/)。
@@ -29,7 +28,7 @@
 
 - 若要对数据库进行降级，数据库应小于目标服务层允许的最大大小。 
 - 在启用了异地复制的情况下升级数据库时，必须先将次要数据库升级到所需的性能层，然后再升级主数据库。
-- 从高级服务层降级时，必须先终止所有异地复制关系。你可以按照[从中断中恢复](/documentation/articles/sql-database-disaster-recovery/)主题中所述的步骤停止主数据库与活动次要数据库之间的复制过程。
+- 从高级服务层降级时，必须先终止所有异地复制关系。可以按照[在中断后恢复](/documentation/articles/sql-database-disaster-recovery/)主题中所述的步骤停止主数据库与活动次要数据库之间的复制过程。
 - 各服务层提供的还原服务是不同的。如果进行降级，你可能无法再还原到某个时间点，或者备份保留期变短。有关详细信息，请参阅 [Azure SQL 数据库备份和还原](/documentation/articles/sql-database-business-continuity/)。
 - 所做的更改完成之前不会应用数据库的新属性。
 
@@ -42,32 +41,13 @@
 - Azure PowerShell。
 
 
-若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
-
-
-
-## 配置你的凭据，然后选择你的订阅
-
-首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 门户时所用的相同电子邮件和密码。
-
-	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-
-成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
-
-
-### 选择 Azure 订阅
-
-若要选择订阅，你需要提供订阅 ID 或订阅名称 (**-SubscriptionName**)。你可以从前面的步骤中显示的信息中复制订阅 ID，或者，如果你有多个订阅且需要更多详细信息，可以运行 **Get-AzureSubscription** cmdlet，然后从结果集中复制所需的订阅信息。获得订阅以后，你可以运行以下 cmdlet：
-
-	$SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
-    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
-
+[AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 
 
 ## 更改 SQL 数据库的服务层和性能级别
 
-运行 **Set-AzureRmSqlDatabase** cmdlet 并将 **-RequestedServiceObjectiveName** 设置为所需定价层的性能级别；例如 *S0*、*S1*、*S2*、*S3*、*P1*、*P2*...
+运行 **Set-AzureRmSqlDatabase** cmdlet 并将 **-RequestedServiceObjectiveName** 设置为所需定价层的性能级别；例如 *S0* 、 *S1* 、 *S2* 、 *S3* 、 *P1* 、 *P2* ...
 
     $ResourceGroupName = "resourceGroupName"
     
@@ -123,4 +103,4 @@
 - [SQL 数据库文档](/documentation/services/sql-databases)
 - [Azure SQL 数据库 Cmdlet](http://msdn.microsoft.com/zh-cn/library/mt574084.aspx)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0919_2016-->
