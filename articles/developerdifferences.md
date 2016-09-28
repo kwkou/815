@@ -1,5 +1,5 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="" wacn.date="09/23/2016"/>
+<tags ms.service="" ms.date="" wacn.date="09/27/2016"/>
 
 #中国 Azure 应用程序开发人员说明
 
@@ -75,15 +75,18 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 * 分析 – HDInsight
 * 分析 – 流分析
 * 分析 – 事件中心
+* 智能 – 认知服务
 * 物联网 – Azure IoT 中心
 * 物联网 – 事件中心
 * 物联网 – 流分析
 * 物联网 – 通知中心
+* 物联网 – Azure IoT套件
 * 网络服务 – 虚拟网络
 * 网络服务 – ExpressRoute
 * 网络服务 – 流量管理器
 * 网络服务 – VPN 网关
 * 网络服务 – 应用程序网关
+* 网络服务 – 负载均衡器
 * 媒体和CDN – 媒体服务 
 * 媒体和CDN – CDN
 * 混合集成 – 服务总线 
@@ -156,6 +159,14 @@ SQL Azure数据库管理API | https://management.database.windows.net | https://
 服务总线 | *.servicebus.windows.net | *.servicebus.chinacloudapi.cn
 ACS | *.accesscontrol.windows.net | *.accesscontrol.chinacloudapi.cn
 HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
+MySQL Paas | - | *.mysqldb.chinacloudapi.cn
+Azure PowerShell Login (Classic, 旧的azure服务管理) | Add-AzureAccount | Add-AzureAccount -EnvironmentName AzureChinaCloud
+Azure PowerShell Login (azure资源管理) | Add-AzureRmAccount | Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+AAD | *.onmicrosoft.com | *.partner.onmschina.cn
+AAD PowerShell Login | Connect-msolservice| Connect-msolservice
+AAD Login | https://login.windows.net| https://login.chinacloudapi.cn
+AAD Graph API | https://graph.windows.net| https://graph.chinacloudapi.cn
+Azure 认知服务 | https://api.projectoxford.ai/face/v1.0 | https://api.cognitive.azure.cn/face/v1.0
 SQL 数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br /> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
 
 
@@ -175,19 +186,14 @@ SQL 数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1pro
 
 准备发布应用程序时，请打开 Azure 项目的快捷菜单，然后选择Publish。下图显示了 Publish Azure Application 向导
 ###<a name="confsub"></a>配置订阅
-1. 从“Publish Azure Application”向导的“Choose your subscription”下，选择 &lt;Manage…&gt;，然后再选择“New”。<br />
-![developerdifferences-001](./media/developerdifferences/developerdifferences-001-001.png)
+对于China我们是通过导入publishsetting文件的方式来连接相关订阅。
+1.首先下载订阅文件，下载地址：https://manage.windowsazure.cn/publishsettings/index 。在Visual Studio中选择Server Exploer，然后右键选择manage and filter subscriptions…<br />
+![developerdifferences-001-001](./media/developerdifferences/developerdifferences-001-001.png)
  
-2. 在“New subscription”窗口中
-
-	a. 选择要用于身份验证的证书。可以选择现有证书或创建新证书。
-	b. 使用设置部分下的管理门户 (<a href="http://manage.windowsazure.cn">http://manage.windowsazure.cn</a>) 将此证书上传至您的帐户
-	c. 复制门户中的订阅 ID
-	d. 输入以下服务管理 URL <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>
-	e. 指定订阅的名称<br />
+2.在“Manage Microsoft Azure Subscriptions”窗口中选择Certificates，可以使用import功能将刚才下载好的publishsetting文件导入
 	
-	![developerdifferences-002](./media/developerdifferences/developerdifferences-002-002.png)
- 
+	![developerdifferences-002-002](./media/developerdifferences/developerdifferences-002-002.png)
+3.导入成功后，就可以看到你账户下的订阅，并可以浏览云服务和存储等信息，同时也可以使用publish功能，将应用发布到云服务中。
 
 ###<a name="confpref"></a>配置设置
 1. 在 Cloud service 列表中，请执行以下两组步骤之一：
