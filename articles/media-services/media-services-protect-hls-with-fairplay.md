@@ -11,7 +11,7 @@
 <tags 
 	ms.service="media-services" 
 	ms.date="06/22/2016"
-	wacn.date=""/>  
+	wacn.date="09/29/2016"/>  
 
 
 #使用 Azure 媒体服务流式传输受 Apple FairPlay 保护的 HLS 内容 
