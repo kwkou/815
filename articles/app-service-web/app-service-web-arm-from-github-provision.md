@@ -89,7 +89,7 @@
       ]
     }
 
->[AZURE.NOTE] 由于 Ibiza 门户尚未在 Azure 中国区推出，因此我们无法设置 GitHub 凭据。`IsManualIntegration` 必须设置为 true。
+>[AZURE.NOTE] 在 Azure 中国区，我们暂时无法在新门户设置 GitHub 凭据，因此`IsManualIntegration` 必须设置为 true。
 
 ## 运行部署的命令
 
@@ -97,11 +97,11 @@
 
 ### PowerShell
 
-    New-AzureRmResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-github-deploy/azuredeploy.json -siteName ExampleSite -hostingPlanName ExamplePlan -siteLocation "China North" -ResourceGroupName ExampleDeployGroup
+    New-AzureRmResourceGroupDeployment -TemplateFile path/to/azuredeploy.json -siteName ExampleSite -hostingPlanName ExamplePlan -siteLocation "China North" -ResourceGroupName ExampleDeployGroup
 
 ### Azure CLI
 
-    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-github-deploy/azuredeploy.json
+    azure group deployment create --template-file path/to/azuredeploy.json
 
 
  
