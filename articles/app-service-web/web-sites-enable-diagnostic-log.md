@@ -117,19 +117,6 @@ Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/docum
 
 > [AZURE.NOTE] 如果尚未安装 Azure 命令行界面 (Azure CLI)，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
-## 如何：在 Application Insights 中查看日志
-
-Visual Studio Application Insights 提供了用于筛选和搜索日志的工具，以及用于将日志与请求和其他事件关联的工具。
-
-1. 在 Visual Studio 中，将 Application Insights SDK 添加到项目。
- * 在解决方案资源管理器中，右键单击项目并选择“添加 Application Insights”。本教程将介绍所有步骤，包括创建 Application Insights 资源。
-2. 将跟踪侦听器包添加到项目。
- * 右键单击项目，然后选择“管理 NuGet 包”。选择 `Microsoft.ApplicationInsights.TraceListener`
-3. 上传项目并运行，以生成日志数据。
-4. 在 [Azure 门户预览](https://portal.azure.cn/)中，浏览到新的 Application Insights 资源，并打开“搜索”。你将看到日志数据，以及请求、使用情况和其他遥测。某些遥测可能需要几分钟才能到达：请单击“刷新”。
-
-[Learn more about performance tracking with Application Insights](/documentation/articles/insights-perf-analytics/)（了解有关使用 Application Insights 跟踪性能的详细信息）
-
 ##<a name="streamlogs"></a> 如何：流式传输日志
 
 开发应用程序时，以近乎实时的方式查看日志记录信息通常很有用。通过使用 Azure PowerShell 或 Azure 命令行界面将日志记录信息流式传输到你的开发环境，可以实现这一点。

@@ -262,7 +262,7 @@
 
 ## 摘要 ##
 
-对于许多想要采用 Azure 作为其应用程序平台的公司而言，敏捷软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure App Service 和 Azure 资源管理器配合使用，以创建提供敏捷方法的 DevOps 解决方案。接下来，可以通过执行高级 DevOps 技术（例如[在生产环境中测试](/documentation/articles/app-service-web-test-in-production-get-start/)），基于此方案生成项目。有关常用的生产中测试方案，请参阅 [Azure App Service 中的外部测试部署（Beta 测试）](/documentation/articles/app-service-web-test-in-production-controlled-test-flight/)。
+对于许多想要采用 Azure 作为其应用程序平台的公司而言，敏捷软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure App Service 和 Azure 资源管理器配合使用，以创建提供敏捷方法的 DevOps 解决方案。接下来，可以通过执行高级 DevOps 技术（例如[在生产环境中测试](/documentation/articles/app-service-web-test-in-production-get-start/)），基于此方案生成项目。
 
 ## 更多资源 ##
 
