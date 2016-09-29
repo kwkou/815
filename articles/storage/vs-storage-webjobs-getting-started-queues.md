@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="storage"
-	
 	ms.date="07/18/2016"
 	wacn.date="09/12/2016"/>
 
