@@ -7,8 +7,8 @@
 	manager="douge"
 	editor=""/>
 
-<tags ms.service="storage"
-
+<tags 
+	ms.service="storage"
 	ms.date="08/15/2016"
 	wacn.date="09/12/2016"/>
 
