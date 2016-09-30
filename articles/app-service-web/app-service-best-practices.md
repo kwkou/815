@@ -30,7 +30,7 @@
 ## <a name="CPUresources"></a>当应用消耗的 CPU 超出预期时
 如果你通过监视或者参考服务建议，发现应用消耗的 CPU 超出预期，或者反复出现 CPU 高峰，请考虑向上缩放或向外缩放 App Service 计划。如果你的应用程序是有状态的，则向上缩放是唯一选项；如果你的应用程序是无状态的，则向外缩放可以提供更高的灵活性和更大的缩放潜力。
 
-有关“有状态”与“无状态”应用程序的详细信息，请观看此视频：[Planning a Scalable End-to-End Multi-Tier Application on Azure Web App](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B414#fbid=?hashlink=fbid)（在 Azure Web 应用中规划可缩放的端到端多层应用程序）。有关 App Service 缩放和自动缩放选项的详细信息，请阅读：[在 Azure App Service 中缩放 Web 应用](/documentation/articles/web-sites-scale/)。
+有关“有状态”与“无状态”应用程序的详细信息，请观看此视频：[Planning a Scalable End-to-End Multi-Tier Application on Azure Web 应用](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B414#fbid=?hashlink=fbid)（在 Azure Web 应用中规划可缩放的端到端多层应用程序）。有关 App Service 缩放和自动缩放选项的详细信息，请阅读：[在 Azure App Service 中缩放 Web 应用](/documentation/articles/web-sites-scale/)。
 
 ## <a name="socketresources"></a>当套接字资源耗尽时
 耗尽出站 TCP 连接的一个常见原因是使用的客户端库未实施为重复使用 TCP 连接，或者使用了较高级别的协议（如 HTTP），因而未利用 Keep-Alive。请查看 App Service 计划中的应用引用的每个库，以确保在代码中配置或访问这些库时，能够有效地重复使用出站连接。此外，请遵循有关正确执行创建和发布或清理操作的库指导文档，以避免连接泄漏。在展开此类客户端库调查的过程中，可以通过向外扩展到多个实例来消除影响。

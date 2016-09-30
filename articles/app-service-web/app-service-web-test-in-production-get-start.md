@@ -79,6 +79,6 @@
 
 -   [为 Azure App Service 中的 Web 应用设置过渡环境](/documentation/articles/web-sites-staged-publishing/)
 -	[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably/)
--   [使用 Azure App Service 进行敏捷软件开发](/documentation/articles/app-service-agile-software-development/)
+-   [使用 Azure App Service 进行灵便软件开发](/documentation/articles/app-service-agile-software-development/)
 -	[对 Web 应用有效使用 DevOps 环境](/documentation/articles/app-service-web-staged-publishing-realworld-scenarios/)
 <!---HONumber=Mooncake_0328_2016-->

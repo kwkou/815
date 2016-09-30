@@ -17,7 +17,7 @@
 
 在本教程中，你将学习如何使用支持[敏捷软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure App Service](/home/features/app-service/) 创建高缩放性的复杂应用程序。假设你已经知道如何[通过可预测方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably/)。
 
-技术流程限制通常会妨碍成功的实施敏捷方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview/)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/app-service-continuous-deployment/)、[过渡环境](/documentation/articles/web-sites-staged-publishing/)（槽）和[监视](/documentation/articles/web-sites-monitor/)等功能的 Azure App Service 是非常适合采用敏捷软件开发的开发人员的解决方案。
+技术流程限制通常会妨碍成功的实施灵便方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview/)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/app-service-continuous-deployment/)、[过渡环境](/documentation/articles/web-sites-staged-publishing/)（槽）和[监视](/documentation/articles/web-sites-monitor/)等功能的 Azure App Service 是非常适合采用敏捷软件开发的开发人员的解决方案。
 
 下表是敏捷开发的相关要求以及 Azure 服务如何启用它们的简短列表。
 
@@ -118,7 +118,7 @@
 
 ## 创建开发和测试分支 ##
 
-现在，你已在 Azure 的生产环境中创建了一个复杂应用程序，接下来，你要使用敏捷方法来更新应用程序。在本部分中，你将要创建需要进行必要更新的开发和测试分支。
+现在，你已在 Azure 的生产环境中创建了一个复杂应用程序，接下来，你要使用灵便方法来更新应用程序。在本部分中，你将要创建需要进行必要更新的开发和测试分支。
 
 1.	首先创建测试环境。在 Git Shell 会话中，运行以下命令来创建名为 **NewUpdate** 的新分支的环境。
 
@@ -262,7 +262,7 @@
 
 ## 摘要 ##
 
-对于许多想要采用 Azure 作为其应用程序平台的公司而言，敏捷软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure App Service 和 Azure 资源管理器配合使用，以创建提供敏捷方法的 DevOps 解决方案。接下来，可以通过执行高级 DevOps 技术（例如[在生产环境中测试](/documentation/articles/app-service-web-test-in-production-get-start/)），基于此方案生成项目。有关常用的生产中测试方案，请参阅 [Azure App Service 中的外部测试部署（Beta 测试）](/documentation/articles/app-service-web-test-in-production-controlled-test-flight/)。
+对于许多想要采用 Azure 作为其应用程序平台的公司而言，敏捷软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure App Service 和 Azure 资源管理器配合使用，以创建提供灵便方法的 DevOps 解决方案。接下来，可以通过执行高级 DevOps 技术（例如[在生产环境中测试](/documentation/articles/app-service-web-test-in-production-get-start/)），基于此方案生成项目。有关常用的生产中测试方案，请参阅 [Azure App Service 中的外部测试部署（Beta 测试）](/documentation/articles/app-service-web-test-in-production-controlled-test-flight/)。
 
 ## 更多资源 ##
 
