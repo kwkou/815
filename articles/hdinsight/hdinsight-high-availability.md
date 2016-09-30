@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/27/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="07/25/2016"
+	wacn.date="09/30/2016"/>
 
 
 #HDInsight 中 Hadoop 群集的可用性和可靠性

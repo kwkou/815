@@ -10,8 +10,8 @@ tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/29/2016"
-	wacn.date="08/01/2016"/>
+	ms.date="07/25/2016"
+	wacn.date="09/30/2016"/>
 
 # 借助 Maven 构建可将 HBase 与基于 Windows 的 HDInsight (Hadoop) 配合使用的 Java 应用程序
 
