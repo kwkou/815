@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-machines-aog" ms.date="" wacn.date="08/31/2016"/>
+<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="08/31/2016"/>
 #修改 Linux VM 中单个用户最大进程数的限制
 
 在部署有并发任务执行的虚机上, 会遇到 SSH 无法访问的问题. 本文将帮助你找出其中一种比较特殊的原因, 并提供解决方案。  
