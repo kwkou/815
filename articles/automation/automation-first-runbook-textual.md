@@ -9,8 +9,8 @@
 	keywords="powershell 工作流, powershell 工作流示例, 工作流 powershell"/>
 <tags
 	ms.service="automation"
-	ms.date="06/02/2016"
-	wacn.date="08/11/2016"/>
+	ms.date="07/19/2016"
+	wacn.date="09/30/2016"/>
 
 # 我的第一个 PowerShell 工作流 Runbook
 

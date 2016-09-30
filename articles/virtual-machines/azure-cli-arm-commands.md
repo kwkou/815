@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/05/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="08/05/2016"
+	wacn.date="09/30/2016"/>
 
 # Resource Manager 模式下的 Azure CLI 命令
 
