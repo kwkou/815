@@ -19,7 +19,7 @@
 
 若要使用 HTTPS 保护拥有自定义域名的应用，可为该域名添加证书。默认情况下，Azure 使用单个 SSL 证书保护 **\*.chinacloudsites.cn** 通配符域的安全，因此客户端可能已在 **https:// *&lt;appname>* .chinacloudsites.cn** 处访问了应用。但若想使用 **contoso.com**、**www.contoso.com** 和 **\*.contoso.com** 等自定义域，默认证书不能提供保护。此外，与所有[ 通配符证书](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/)类似，默认证书的安全性没有使用证书的自定义域高。
 
->[AZURE.NOTE] 可随时在 [Azure 论坛](/support/forums/)获取 Azure 专家的帮助。有关更加个性化的支持，请转到 [Azure 支持](/support/contact/)，然后单击“获取支持”。
+>[AZURE.NOTE] 可随时在 [Azure 论坛](https://azure.microsoft.com/support/forums/)获取 Azure 专家的帮助。有关更加个性化的支持，请转到 [Azure 支持](/support/contact/)，然后单击“获取支持”。
 
 ## <a name="bkmk_domainname"></a>所需条件
 若要使用 HTTPS 保护自定义域名，需将自定义 SSL 证书绑定到 Azure 中的该自定义域。绑定自定义证书之前，需执行以下操作：

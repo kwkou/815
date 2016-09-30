@@ -21,7 +21,7 @@
 
 应用已附带了唯一的子域，即 chinacloudsites.cn。例如，如果应用的名称为 **contoso**，则其域名为 **contoso.chinacloudsites.cn**。但是由于可将自定义域名映射到应用，因此其 URL（如 `www.contoso.com`）会反映出品牌。
 
->[AZURE.NOTE] 在 [Azure 论坛](/support/forums/)获取 Azure 专家的帮助。若要获取更高级别的帮助，请转到 [Azure 支持站点](/support/contact/)，然后单击“获取支持”。
+>[AZURE.NOTE] 在 [Azure 论坛](https://azure.microsoft.com/support/forums/)获取 Azure 专家的帮助。若要获取更高级别的帮助，请转到 [Azure 支持站点](/support/contact/)，然后单击“获取支持”。
 
 [AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
 

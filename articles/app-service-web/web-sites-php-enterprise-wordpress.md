@@ -254,7 +254,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 [mysqlwindows]: /documentation/articles/virtual-machines-windows-classic-mysql-2008r2/
 [mysqllinux]: /documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse/
 [cge]: http://www.mysql.com/products/cluster/
-[websitepricing]: /pricing/details/app-service/
+[websitepricing]: /pricing/overview/app-service/
 [export]: http://en.support.wordpress.com/export/
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/
@@ -268,6 +268,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 [deploy]: /documentation/articles/web-sites-deploy/
 [posh]: /documentation/articles/powershell-install-configure/
 [Azure CLI]: /documentation/articles/xplat-cli-install/
+[storesendgrid]: https://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/
 [cdn]: /documentation/articles/cdn-overview/
 
 <!---HONumber=Mooncake_0919_2016-->

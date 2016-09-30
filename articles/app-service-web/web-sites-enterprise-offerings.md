@@ -16,7 +16,7 @@
 
 降低成本以及在快速发展的环境中更快地交付 IT 解决方案的要求为开发人员、IT 专业人员和管理人员带来了新的挑战。用户日益期望其业务线 (LOB) Web 应用程序能够在任何设备上快速运行和响应。同时，企业正在尝试利用由于与云和移动服务集成所带来的生产力和效率提高，这简单可到使用 Active Directory 实现的跨设备的单一登录，复杂可到使用从内部 LOB 应用程序（反过来也可以从公司 Salesforce 实施中拉取数据）中提取的数据在 Office365 中进行协作。[Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 是一种用于开发、测试和运行 Web 及移动应用程序、Web API 和一般网站的企业级云服务。它可以用于在针对缩放和可用性优化的全球数据中心网络上运行企业网站、Intranet 网站、业务应用和数字营销活动，同时还支持持续集成和现代 DevOps 实践。
 
-本白皮书重点介绍专门侧重于运行 LOB Web 应用程序的 [Web Apps](/home/features/app-service/web-apps/) 功能，涵盖现有 Web 应用程序的迁移和平台上全新 LOB Web 应用程序的部署。
+本白皮书重点介绍专门侧重于运行 LOB Web 应用程序的 [Web Apps](/home/features/web-site/) 功能，涵盖现有 Web 应用程序的迁移和平台上全新 LOB Web 应用程序的部署。
 
 ## 目标受众 ##
 
@@ -104,7 +104,7 @@ Azure 平台提供了一些替代方法，可以将 Azure SQL 数据库用作 We
 App Service Web Apps 提供了一款灵活、经济高效、响应迅速的解决方案在快速发展的环境中满足企业不断变化的需求。Web Apps 帮助企业利用托管平台以及现代化的 DevOps 功能和减少的人工管理提高了生产力和效率，同时提供企业扩展功能、弹性、安全性以及与本地资产的集成。
 
 ## 行动号召 ##
-有关 Azure App Service Web Apps 服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/home/features/app-service/web-apps/)，在这里您可以查看更多信息；并登录 [http://aka.ms/azuretrial](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为您企业带来的优势。
+有关 Azure App Service Web Apps 服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/home/features/web-site/)，在这里您可以查看更多信息；并登录 [http://aka.ms/azuretrial](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为您企业带来的优势。
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 

@@ -57,6 +57,8 @@
 
 3.	在刚刚创建的 Azure Active Directory 应用程序的 [Azure 经典管理门户](https://manage.windowsazure.cn)视图中，单击“用户”选项卡。然后，将所需的用户分配到所需的角色。
 
+	>[AZURE.NOTE]如果除了分配到用户以外，还要将角色分配到组，则必须将你的 Azure Active Directory 租户升级到 [Active Directory Premium](/pricing/details/identity/)。在应用程序的经典管理门户 UI 中，如果你看到的是“用户”选项卡而不是“用户和组”选项卡，你可以转到 Azure Active Directory 租户的“许可证”选项卡来试用 Azure Active Directory Premium。
+
 3.	配置完应用程序后，在 Visual Studio 中键入 `F5` 以运行 ASP.NET 应用程序。
 
 4.	加载应用程序后，单击“登录”，并使用在 Azure 经典管理门户中具有管理员角色的用户身份登录。

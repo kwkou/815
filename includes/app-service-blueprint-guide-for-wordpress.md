@@ -16,6 +16,7 @@
 * 如何使用[Redis 缓存插件](https://wordpress.org/plugins/wp-redis/)[启用 Redis 缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
 * 如何使用[memcached 插件](https://wordpress.org/plugins/memcached/)[为 WordPress 启用 Memcached 对象缓存](/documentation/articles/web-sites-connect-to-redis-using-memcache-protocol/)
 * [使用 W3 总缓存插件启用 Wincache](https://wordpress.org/plugins/w3-total-cache/)
+* [如何使用 supercache 插件来加速 WordPress 应用](http://ruslany.net/2008/12/speed-up-wordpress-on-iis-70/)
 * [如何使用 IIS 输出缓存进行服务器缓存](http://blogs.msdn.com/b/brian_swan/archive/2011/06/08/performance-tuning-php-apps-on-windows-iis-with-output-caching.aspx)
 * [如何为静态内容启用浏览器缓存](http://www.iis.net/configreference/system.webserver/staticcontent)
 

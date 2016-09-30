@@ -22,7 +22,7 @@
 
 - Git。可在[此处](http://www.git-scm.com/downloads)下载二进制安装文件。
 - 对 Git 有一个基本的了解。
-- 一个 Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial)。
+- 一个 Azure 帐户。如果你没有帐户，可以[注册试用版](https://azure.microsoft.com/pricing/1rmb-trial)。
 
 ## <a id="Step1"></a>步骤 1：创建本地存储库
 

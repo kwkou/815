@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-在本教程中，你将使用 [Python Tools for Visual Studio](http://aka.ms/ptvs) 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。你将了解如何使用在 Azure 上托管的 MySQL 服务、如何将 Web 应用配置为使用 MySQL，以及如何将 Web 应用发布到 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 中。
+在本教程中，你将使用 [Python Tools for Visual Studio](PTVS) 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。你将了解如何使用在 Azure 上托管的 MySQL 服务、如何将 Web 应用配置为使用 MySQL，以及如何将 Web 应用发布到 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 中。
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure App Service Web Apps。虽然本文将着重介绍 App Service，但 [Azure 云服务]的开发步骤也是类似的。
 
@@ -38,7 +38,7 @@
 
 1. 在 Visual Studio 中，依次选择“文件”和“新建项目”。
 
-1. 可以从“Python”>“示例”下面获取“Python Tools 2.2 for Visual Studio 示例 VSIX”中的项目模板。选择“轮询 Django Web 项目”，然后单击“确定”创建项目。
+1. 可以从“Python”>“示例”下面获取“Python Tools 2.2 for Visual Studio 示例 VSIX”中的项目模板。[]选择“轮询 Django Web 项目”，然后单击“确定”创建项目。
 
     ![新建项目对话框](./media/web-sites-python-ptvs-django-mysql/PollsDjangoNewProject.png)
 

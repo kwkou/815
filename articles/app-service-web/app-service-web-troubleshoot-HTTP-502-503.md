@@ -42,7 +42,7 @@
 2.	[收集数据](#collect)
 3.	[缓解问题](#mitigate)
 
-[Azure Web Apps](/home/features/app-service/web-apps/) 为每个步骤提供了多种选项。
+[Azure Web Apps](/home/features/web-site/) 为每个步骤提供了多种选项。
 
 ### <a name="observe"></a> 1.观察和监视应用程序行为
 
