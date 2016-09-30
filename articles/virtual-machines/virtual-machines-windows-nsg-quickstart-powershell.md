@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/24/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="08/08/2016"
+	wacn.date="09/30/2016"/>
 
 # 使用 PowerShell 对 VM 实现外部访问
 [AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../../includes/virtual-machines-common-nsg-quickstart.md)]

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/24/2016"
-	wacn.date="08/23/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/30/2016"/>
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
 
