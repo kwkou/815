@@ -142,7 +142,7 @@ App Service 针对某些常见的身份验证要求提供周全的解决方案�
 - [设置过渡环境](/documentation/articles/web-sites-staged-publishing/) - 将应用投放到生产环境之前，先将它部署到过渡 URL。有把握地更新你的实时 Web 应用。使用多个部署槽设置一个精巧的 DevOps 解决方案。 
 - [设置连续部署](/documentation/articles/app-service-continuous-deployment/) - 将应用部署集成到源代码管理系统。通过每次提交部署到 Azure。
 - [备份应用](/documentation/articles/web-sites-backup/) - 为 Web 应用设置备份和还原。针对意外的故障做好准备，并能够从中恢复。
-- [启用诊断日志](/documentation/articles/web-sites-enable-diagnostic-log/) - 从 Azure 或应用程序跟踪中读取 IIS 日志。以串流的形式读取日志、下载日志。
+- [启用诊断日志](/documentation/articles/web-sites-enable-diagnostic-log/) - 从 Azure 或应用程序跟踪中读取 IIS 日志。以串流的形式读取日志、下载日志，或者将日志移植到 Application Insights 以进行全方位的分析。
 - [扫描应用中的漏洞](https://azure.microsoft.com/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/) - 使用 [Tinfoil Security](https://www.tinfoilsecurity.com/) 提供的服务扫描 Web 应用，以查出新型威胁。
 - [了解 App Service 的工作原理](/documentation/articles/app-service-how-works-readme/)
 

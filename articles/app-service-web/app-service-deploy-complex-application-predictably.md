@@ -224,8 +224,6 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
 
-11. 由于 Azure 中国暂时还不支持 Component Insight，所以你必须删掉 component insight 这个资源，才能部署这个模板。
-
 12.	你现在可以开始部署了。运行一下的 Powershell 命令来发布你的模板。发布过程中，你需要提供必要的参数。
 
 		New-AzureRmResourceGroupDeployment -ResourceGroupName ContosoEngineering -TemplateFile .\Templates\DeploymentTemplate.json
@@ -244,7 +242,7 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 
 ## 后续步骤 ##
 
-了解如何[轻松应用灵活方法和连续发布微服务应用程序](/documentation/articles/app-service-agile-software-development/)。
+了解如何[轻松应用灵活方法和连续发布微服务应用程序](/documentation/articles/app-service-agile-software-development/)，以及[试验部署](/documentation/articles/app-service-web-test-in-production-controlled-test-flight/)等高级部署技巧。
 
 ## <a name="resources"></a> 更多资源 ##
 

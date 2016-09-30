@@ -217,15 +217,29 @@
 
 通过将提交内容推送到 Azure 应用服务中的 Git 存储库，将代码部署到 API 应用。在本教程部分，将在 Azure 中创建用于部署的凭据与 Git 存储库。
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
+1. 创建 API 应用后，在门户主页中单击“应用程序服务”>“{API 应用}”。
 
-3. 在“速览”部分中，选择“从源控件设置部署”。在“设置部署”对话框中，选择“本地 Git 存储库”，然后单击“确定”。
+	门户将显示“API 应用”和“设置”边栏选项卡。
 
-1. 如果这是你第一次设置部署源，你将需要为你的部署源设置凭证。
+    ![门户中的 API 应用和“设置”边栏选项卡](./media/app-service-api-nodejs-api-app/portalapiappblade.png)
 
-1. 创建 Git 存储库后，部署页将改为显示活动部署。由于这是新存储库，因此列表中没有活动的部署。而且在这里可以查看到 Git 存储库 URL。
+1. 在“设置”边栏选项卡中，向下滚动到“发布”部分，然后单击“部署凭据”。
+ 
+3. 在“设置部署凭据”边栏选项卡中输入用户名和密码，然后单击“保存”。
 
-1. 而在 [Azure 门户预览](https://portal.azure.cn)，同样可以看到 Git 存储库 URL。 复制 Git 存储库 URL。为此，请导航到新 API 应用的边栏选项卡并查看边栏选项卡的“概要”部分。请注意“概要”部分中的“Git 克隆 URL”。将鼠标悬停在此 URL 上时，右侧会显示一个图标用于将此 URL 复制到剪贴板。单击此图标复制该 URL。
+	稍后要使用这些凭据将 Node.js 代码发布到 API 应用。
+
+    ![部署凭据](./media/app-service-api-nodejs-api-app/deployment-credentials.png)
+
+1. 在“设置”边栏选项卡中，单击“部署源”>“选择源”>“本地 Git 存储库”，然后单击“确定”。
+
+    ![创建 Git 存储库](./media/app-service-api-nodejs-api-app/create-git-repo.png)
+
+1. 创建 Git 存储库后，此边栏选项卡将改为显示活动部署。由于这是新存储库，因此列表中没有活动的部署。
+
+    ![没有活动的部署](./media/app-service-api-nodejs-api-app/no-active-deployments.png)
+
+1. 复制 Git 存储库 URL。为此，请导航到新 API 应用的边栏选项卡并查看边栏选项卡的“概要”部分。请注意“概要”部分中的“Git 克隆 URL”。将鼠标悬停在此 URL 上时，右侧会显示一个图标用于将此 URL 复制到剪贴板。单击此图标复制该 URL。
 
     ![从门户获取 Git URL](./media/app-service-api-nodejs-api-app/get-the-git-url-from-the-portal.png)
 
@@ -264,13 +278,15 @@
 
 	这会触发 API 应用的部署。
 
-1. 在浏览器中，导航回到 [Azure 经典管理门户](https://manage.windowsazure.cn)的 API 应用“部署”页面，然后会看到部署正在进行。
+1. 在浏览器中，导航回到 API 应用的“部署”边栏选项卡，然后会看到部署正在进行。
+
+    ![部署正在进行](./media/app-service-api-nodejs-api-app/deployment-happening.png)
 
     同时，命令行接口将显示当前的部署状态。
 
     ![Node Js 部署正在进行](./media/app-service-api-nodejs-api-app/node-js-deployment-happening.png)
 
-	完成部署后，“部署”页面将显示已在 API 应用中成功部署代码更改。
+	完成部署后，“部署”边栏选项卡将显示已在 API 应用中成功部署代码更改。
 
 ## 使用 Azure 中运行的 API 测试
  

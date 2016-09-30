@@ -18,7 +18,7 @@
 
 ## App Service Web Apps 中的流量路由
 
-通过 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的流量路由功能，可以将部分实时用户流量定向到一个或多个[部署槽](/documentation/articles/web-sites-staged-publishing/)，然后使用 [Azure HDInsight](/home/features/hdinsight/) 来分析应用，或使用第三方工具来验证更改。例如，可以使用 App Service 实现以下方案：
+通过 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的流量路由功能，可以将部分实时用户流量定向到一个或多个[部署槽](/documentation/articles/web-sites-staged-publishing/)，然后使用 Azure Application Insights 或 [Azure HDInsight](/home/features/hdinsight/) 来分析应用，或使用第三方工具来验证更改。例如，可以使用 App Service 实现以下方案：
 
 - 在部署到整个站点之前找出更新中的功能错误或性能瓶颈
 - 对 beta 应用测量可用性度量值，以执行更改的“受控试验”。
