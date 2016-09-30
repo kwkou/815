@@ -33,7 +33,7 @@ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是�
 
 ## 启用 Web Apps Memcache 填充码
 
-若要配置 Memcache 填充码，你必须创建三项应用设置。可使用多种方法来完成，包括 [Azure 门户][3]、[经典管理门户](https://manage.windowsazure.cn/)、[Azure PowerShell Cmdlet][4] 或 [Azure 命令行接口][5]。本文将使用 [Azure 门户][3]来设置应用设置。从 Redis 缓存实例的“设置”边栏选项卡中，可以检索以下值。
+若要配置 Memcache 填充码，你必须创建三项应用设置。可使用多种方法来完成，包括 [Azure 门户](https://manage.windowsazure.cn/)、[经典管理门户][3]、[Azure PowerShell Cmdlet][5] 或 [Azure 命令行接口][5]。本文将使用 [Azure 门户][4]来设置应用设置。从 Redis 缓存实例的“设置”边栏选项卡中，可以检索以下值。
 
 ![Azure Redis 缓存设置边栏选项卡](./media/web-sites-connect-to-redis-using-memcache-protocol/1-azure-redis-cache-settings.png)
 

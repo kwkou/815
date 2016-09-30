@@ -21,7 +21,7 @@
 当 Visual Studio 部署启用 Web 作业的控制台应用程序项目时，它会执行两个任务：
 
 * 将运行时文件复制到 Web 应用中的相应文件夹（对于连续 Web 作业，该文件夹为 *App\_Data/jobs/continuous*，对于计划的按需 Web 作业，则为 *App\_Data/jobs/triggered* ）。
-* 为已计划在特定时间运行的 Web 作业设置 Azure 计划程序作业。（无需为连续 Web 作业执行此操作。）
+* 为已计划在特定时间运行的 Web 作业设置 [Azure 计划程序作业](#scheduler)。（无需为连续 Web 作业执行此操作。）
 
 已启用 Web 作业的项目中添加了以下项：
 
@@ -126,7 +126,7 @@
 * 计划程序作业命名为 *{webappname}-{webjobname}* 。例如：MyWebApp-MyWebJob。
  
 >[AZURE.NOTE]
->* 有关命令行部署的信息，请参阅[启用 Azure Web 作业的命令行或连续传送](https://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)。
+>* 有关命令行部署的信息，请参阅[启用 Azure Web 作业的命令行或连续传送](/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)。
 ><p>* 如果配置了 *“定期作业”* 并将周期频率设置为某个分钟数，Azure 计划程序服务则不是免费的。其他频率（小时数、天数等）是免费的。
 ><p>* 如果部署了某个 Web 作业，后来决定要更改该 Web 作业的类型并重新部署，则需要删除 webjobs-publish-settings.json 文件。这将使 Visual Studio 再次显示发布选项，使你能够更改 Web 作业的类型。
 ><p>* 如果部署了某个 Web 作业，并随后将运行模式从连续更改为非连续（反之亦然），则在重新部署时，Visual Studio 将在 Azure 中创建新的 Web 作业。如果更改了其他计划设置但保持运行模式不变，或在计划模式与按需模式之间切换，则 Visual Studio 会更新现有的作业，而不是创建新的作业。

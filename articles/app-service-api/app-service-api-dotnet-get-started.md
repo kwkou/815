@@ -54,7 +54,7 @@ Visual Studio 解决方案包含三个项目：
 
 * ASP.NET Web API - 本教程中的说明假设读者基本了解如何在 Visual Studio 中使用 ASP.NET [Web API 2](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)。
 
-* Azure 帐户 - 可以[建立 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+* Azure 帐户 - 可以[建立免费 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 * Visual Studio 2015 和[用于 .NET 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003) - SDK 会自动安装 Visual Studio 2015（如果尚未安装）。
 
@@ -217,7 +217,7 @@ Swashbuckle 可用于任何 ASP.NET Web API 项目。如果要将 Swagger 元数
 
 	![在“发布 Web”的“连接”选项卡中单击“下一步”](./media/app-service-api-dotnet-get-started/connnext.png)
 
-	下一个选项卡是“设置”选项卡（如下所示）。该选项卡还提供了多个“文件发布选项”：
+	下一个选项卡是“设置”选项卡（如下所示）。可以在此处更改生成配置选项卡，部署用于[远程调试](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug)的调试生成。该选项卡还提供了多个“文件发布选项”：
 
 	* 删除目标处的其他文件
 	* 在发布期间预编译
@@ -396,6 +396,8 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 * 如果在企业网络中并尝试通过防火墙部署到 Azure 应用服务，请确保已针对 Web 部署打开端口 443 和 8172。如果无法打开这些端口，可以使用其他部署方法。请参阅 [Deploy your app to Azure App Service](/documentation/articles/web-sites-deploy/)（将应用部署到 Azure 应用服务）。
 
 * “路由名称必须唯一”错误 -- 如果不小心将错误的项目部署到 API 应用，稍后再将正确的项目部署到其中，可能会收到这些错误。若要更正此问题，请将正确的项目重新部署到 API 应用，然后在“发布 Web”向导的“设置”选项卡上选择“删除目标位置的其他文件”。
+
+在 Azure 应用服务中运行 ASP.NET API 应用后，可能想要深入了解可简化故障排解的 Visual Studio 功能。有关日志记录、远程调试等功能的信息，请参阅 [Troubleshooting Azure App Service apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)（在 Visual Studio 中对 Azure 应用服务应用进行故障排除）。
 
 ## 后续步骤
 

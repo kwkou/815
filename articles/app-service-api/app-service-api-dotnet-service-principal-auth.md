@@ -391,13 +391,13 @@
  
 有关如何使用 ToDoListAngular 之类的 Web API 后端创建 AngularJS 单页应用程序的信息，请参阅 [Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs)（动手实验：使用 ASP.NET Web API 和 Angular.js 构建单页应用程序 (SPA)）。有关如何添加 Azure AD 身份验证代码的信息，请参阅 [Securing AngularJS Single Page Apps with Azure AD](/documentation/articles/active-directory-devquickstarts-angular/)（使用 Azure AD 保护 AngularJS 单页应用程序）。
 
-## <a name="troubleshooting"></a>故障排除
+## 故障排除
 
 [AZURE.INCLUDE [故障排除](../../includes/app-service-api-auth-troubleshooting.md)]
 
 * 请务必不要混淆 ToDoListAPI（中间层）和 ToDoListDataAPI（数据层）。例如，在本教程中，将身份验证添加到了数据层 API 应用，**但应用密钥必须来自为中间层 API 应用创建的 Azure AD 应用程序**。
 
-## <a name="next-steps"></a>后续步骤
+## 后续步骤
 
 这是 API 应用系列中的最后一部教程。
 

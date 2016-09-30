@@ -65,7 +65,7 @@
 
 3. 确保选择 **.NET Framework 4.5.2** 作为目标框架。
 
-4.  Azure Application Insights 可监视 Web 应用的可用性、性能和使用情况。安装 Visual Studio 后首次创建 Web 项目时，默认情况下会选中“将 Application Insights 添加到项目”复选框。如果已选中该复选框，但你不想要尝试使用 Application Insights，请清除该复选框。
+4.  [Azure Application Insights](/documentation/articles/app-insights-overview/) 可监视 Web 应用的可用性、性能和使用情况。安装 Visual Studio 后首次创建 Web 项目时，默认情况下会选中“将 Application Insights 添加到项目”复选框。如果已选中该复选框，但你不想要尝试使用 Application Insights，请清除该复选框。
 
 4. 将应用程序命名为 **MyExample**，然后单击“确定”。
 
@@ -138,13 +138,15 @@
 	> [AZURE.TIP] 可以启用“Web 单键发布”工具栏以快速完成部署。单击“视图”>“工具栏”，然后选择“Web 单键发布”。可通过工具栏选择一个配置文件，然后单击相关按钮进行发布，或者单击相关按钮以打开“发布 Web”向导。
 	> ![Web 单键发布工具栏](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
-## <a name="troubleshooting"></a>故障排除
+## 故障排除
 
 如果在学习本教程的过程中遇到问题，请确保你使用的是最新版本的用于 .NET 的 Azure SDK。检查版本的最简单方法是[下载用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果你已安装最新版本，Web 平台安装程序会指出不需要进行安装。
 
 如果在企业网络中并尝试通过防火墙部署到 Azure App Service，请确保已针对 Web 部署打开端口 443 和 8172。如果无法打开这些端口，请参阅下面的“后续步骤”部分以了解其他部署选项。
 
-## <a name="next-steps"></a>后续步骤
+在 Azure App Service 中运行 ASP .NET Web 应用后，你可能想要深入了解可简化故障排除的 Visual Studio 功能。有关日志记录、远程调试等功能的信息，请参阅 [Troubleshooting Azure web apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)（在 Visual Studio 中对 Azure Web 应用进行故障排除）。
+
+##<a name="next-steps"></a>后续步骤
 
 在本教程中，你已了解如何创建简单的 Web 应用程序并将其部署到 Azure Web 应用。可通过以下相关主题和资源来详细了解 Azure App Service：
 
@@ -168,6 +170,8 @@
 	* [为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 * 当你不再使用 Web 应用和任何相关的 Azure 资源时，请删除包含这些资源的资源组。
+
+	有关如何在 Azure 门户中使用资源组的信息，请参阅 [Deploy resources with Resource Manager templates and Azure portal](/documentation/articles/resource-group-template-deploy-portal/)（使用 Resource Manager 模板和 Azure 门户部署资源）。
 
 *	有关在应用服务中创建 ASP.NET Web 应用的更多示例，请参阅 [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect [演示](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/)中的 [Create and deploy an ASP.NET web app in Azure App Service在](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service)（ Azure App Service 中创建和部署 ASP.NET Web 应用）和 [Create and deploy a mobile app in Azure App Service](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-a-mobile-app-in-Azure-App-Service)（在 Azure App Service 中创建和部署移动应用）。有关 HealthClinic.biz 演示的多个快速入门，请参阅 [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts)（Azure 开发人员工具快速入门）。
 

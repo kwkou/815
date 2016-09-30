@@ -35,7 +35,7 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
-<a id="virtualmachine"></a>
+<a id="virtualmachine">
 ## 创建虚拟机和安装 MongoDB ##
 
 本教程假定你已在 Azure 中创建了一个虚拟机。创建虚拟机后，你需要在该虚拟机上安装 MongoDB：
@@ -455,7 +455,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 <!-- HYPERLINKS -->
 
 [AzurePortal]: http://manage.windowsazure.cn
-[WindowsAzure]: http://www.azure.cn
+[WindowsAzure]: http://www.windowsazure.cn
 [MongoC#LangCenter]: http://docs.mongodb.org/ecosystem/drivers/csharp/
 [MVCWebSite]: http://www.asp.net/mvc
 [ASP.NET]: http://www.asp.net/

@@ -87,7 +87,7 @@ Azure App Service 支持门户具有三个不同的选项卡，用于支持常�
 
 如果你想要下载数据，数据默认情况下会存储在 D:\\home\\data\\DaaS 文件夹中。
 
-有关 Azure App Service 支持门户的详细信息，请参阅[用于支持 Azure 网站的站点扩展的最新更新](http://azure.microsoft.com/blog/new-updates-to-support-site-extension-for-azure-websites)。
+有关 Azure App Service 支持门户的详细信息，请参阅[用于支持 Azure 网站的站点扩展的最新更新](/blog/new-updates-to-support-site-extension-for-azure-websites)。
 
 ####	使用 Kudu 调试控制台
 

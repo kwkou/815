@@ -36,7 +36,7 @@
 
 ### Azure 资源管理器模板 (JSON) ###
  
-例如，每当你在 Azure App Service 中创建 Web 应用时，Azure Resource Manager 都将使用 JSON 模板来创建具有组件资源的整个资源组。有关如何下载和使用这些模板的信息，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。
+例如，每当你在 Azure App Service 中创建 Web 应用时，Azure Resource Manager 都将使用 JSON 模板来创建具有组件资源的整个资源组。[Azure 库](/marketplace)中的复杂模板（例如 [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) 应用）可能包含 MySQL 数据库、存储帐户、App Service 计划、Web 应用本身、警报规则、应用设置、自动缩放设置等等，你可以通过 PowerShell 使用所有这些模板。有关如何下载和使用这些模板的信息，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
 有关 Azure 资源管理器模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
@@ -44,7 +44,7 @@
 
 最新的 SDK 包含对 JSON 编辑器中资源管理器模板支持的改进。可以使用它快速从头开始创建资源组模板，或打开现有 JSON 模板（例如下载的库模板）以进行修改、填充参数文件，甚至直接从 Azure 资源组解决方案部署资源组。
 
-有关详细信息，请参阅 [Azure SDK 2.6 for Visual Studio](https://azure.microsoft.com/blog/2015/04/29/announcing-the-azure-sdk-2-6-for-net/)。
+有关详细信息，请参阅 [Azure SDK 2.6 for Visual Studio](/blog/2015/04/29/announcing-the-azure-sdk-2-6-for-net/)。
 
 ### Azure PowerShell 0.8.0 或更高版本 ###
 
@@ -54,7 +54,7 @@
 
 ### “部署到 Azure”按钮 ###
 
-如果你将 GitHub 用于源代码管理，则可将一个[“部署到 Azure”按钮](https://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)放入 README.MD，这将对 Azure 启用统包部署 UI。可为任何简单的 Web 应用执行此操作，同时可扩展这一操作，通过将 azuredeploy.json 文件放入存储库根来实现对整个资源组的部署。“部署到 Azure”按钮将使用此包含资源组模板的 JSON 文件来创建资源组。有关示例，请参阅将在本教程中使用的 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例。
+如果你将 GitHub 用于源代码管理，则可将一个[“部署到 Azure”按钮](/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)放入 README.MD，这将对 Azure 启用统包部署 UI。可为任何简单的 Web 应用执行此操作，同时可扩展这一操作，通过将 azuredeploy.json 文件放入存储库根来实现对整个资源组的部署。“部署到 Azure”按钮将使用此包含资源组模板的 JSON 文件来创建资源组。有关示例，请参阅将在本教程中使用的 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例。
 
 ## 获取示例资源组模板 ##
 
@@ -251,6 +251,7 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 -	[Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)
 -	[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 -	[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)
+-	[Azure 中的资源组部署疑难解答](/documentation/articles/resource-group-deploy-debug/)
 
 
 

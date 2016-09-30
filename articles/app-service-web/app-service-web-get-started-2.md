@@ -27,7 +27,7 @@
 
 >[AZURE.NOTE] 使用 Azure CLI 创建的 Web 应用在**免费**层中运行，该层只允许一个存在资源配额的共享 VM 实例。有关**免费**层提供的功能的详细信息，请参阅 [App Service limits（App Service 限制）](/documentation/articles/azure-subscription-service-limits/#app-service-limits)。
 
-## <a name="authenticate-your-users"></a>对用户进行身份验证
+## 对用户进行身份验证
 
 现在，让我们看看将身份验证添加到应用有多么容易（有关更多信息，请阅读 [App Service Authentication/Authorization（App Service 身份验证/授权）](https://azure.microsoft.com/blog/announcing-app-service-authentication-authorization/)）。
 
@@ -142,8 +142,9 @@ App Service 针对某些常见的身份验证要求提供周全的解决方案�
 - [设置过渡环境](/documentation/articles/web-sites-staged-publishing/) - 将应用投放到生产环境之前，先将它部署到过渡 URL。有把握地更新你的实时 Web 应用。使用多个部署槽设置一个精巧的 DevOps 解决方案。 
 - [设置连续部署](/documentation/articles/app-service-continuous-deployment/) - 将应用部署集成到源代码管理系统。通过每次提交部署到 Azure。
 - [备份应用](/documentation/articles/web-sites-backup/) - 为 Web 应用设置备份和还原。针对意外的故障做好准备，并能够从中恢复。
-- [启用诊断日志](/documentation/articles/web-sites-enable-diagnostic-log/) - 从 Azure 或应用程序跟踪中读取 IIS 日志。以串流的形式读取日志、下载日志，或者将日志移植到 Application Insights 以进行全方位的分析。
+- [启用诊断日志](/documentation/articles/web-sites-enable-diagnostic-log/) - 从 Azure 或应用程序跟踪中读取 IIS 日志。以串流的形式读取日志、下载日志，或者将日志移植到 [Application Insights](/documentation/articles/app-insights-overview/) 以进行全方位的分析。
 - [扫描应用中的漏洞](https://azure.microsoft.com/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/) - 使用 [Tinfoil Security](https://www.tinfoilsecurity.com/) 提供的服务扫描 Web 应用，以查出新型威胁。
+- [运行后台作业](/documentation/articles/functions-overview/) - 运行作业来进行数据处理、报告，等等。
 - [了解 App Service 的工作原理](/documentation/articles/app-service-how-works-readme/)
 
 <!---HONumber=Mooncake_0523_2016-->

@@ -46,9 +46,9 @@ Azure 负责保护运行应用程序的基础结构和平台，而你负责保�
 
 ## 对你的应用执行渗透测试
 
-开始对应用服务应用进行漏洞测试最简单方法之一是使用[与 Tinfoil Security 集成](https://azure.microsoft.com/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/)对应用执行一键式漏洞扫描。你可以查看易于理解的报告中的测试结果，并了解如何按照分步说明修复每个安全漏洞。
+开始对应用服务应用进行漏洞测试最简单方法之一是使用[与 Tinfoil Security 集成](/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/)对应用执行一键式漏洞扫描。你可以查看易于理解的报告中的测试结果，并了解如何按照分步说明修复每个安全漏洞。
 
-如果想要执行自己的渗透测试，或者想要使用其他扫描程序套件或提供程序，则必须按照 Azure 渗透测试审批流程来进行并获得事先批准才能执行所需的渗透测试。
+如果想要执行自己的渗透测试，或者想要使用其他扫描程序套件或提供程序，则必须按照 [Azure 渗透测试审批流程](https://security-forms.azure.com/penetration-testing/terms)来进行并获得事先批准才能执行所需的渗透测试。
 
 ##<a name="https"></a>保护与客户的通信
 
@@ -58,7 +58,7 @@ Azure 负责保护运行应用程序的基础结构和平台，而你负责保�
 
 ## 保护数据层
 
-应用服务与 SQL 数据库高度集成，使所有连接字符串都进行了全面加密，并且仅在运行应用的 VM 上解密 *且* 仅在应用运行时解密。此外，Azure SQL 数据库还提供许多安全功能来帮助保护应用程序数据免受网络威胁的危害，这些功能包括[静态加密](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx)和[始终加密](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx)。如果有敏感数据或合规性要求，请参阅[保护 SQL 数据库](/documentation/articles/sql-database-security/)，以了解有关如何保护数据的详细信息。
+应用服务与 SQL 数据库高度集成，使所有连接字符串都进行了全面加密，并且仅在运行应用的 VM 上解密 *且* 仅在应用运行时解密。此外，Azure SQL 数据库还提供许多安全功能来帮助保护应用程序数据免受网络威胁的危害，这些功能包括[静态加密](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx)、[始终加密](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx)、[动态数据掩码](/documentation/articles/sql-database-dynamic-data-masking-get-started/)和[威胁检测](/documentation/articles/sql-database-threat-detection-get-started/)。如果有敏感数据或合规性要求，请参阅[保护 SQL 数据库](/documentation/articles/sql-database-security/)，以了解有关如何保护数据的详细信息。
 
 如果你使用第三方数据库提供程序（如 ClearDB），则应直接查阅提供程序文档以了解安全性最佳实践。
 
@@ -107,7 +107,7 @@ Azure App Service 通过“FTPS”提供对应用文件系统的安全 FTP 访�
 
 ## 后续步骤
 
-有关 Azure 平台安全、如何报告“安全事件或滥用行为”，或者如何通知 Microsoft 将对网站执行“渗透测试”的详细信息，请参阅 [Azure 信任中心](/support/trust-center/security/)的安全部分。
+有关 Azure 平台安全、如何报告“安全事件或滥用行为”，或者如何通知 Microsoft 将对网站执行“渗透测试”的详细信息，请参阅 [Azure 信任中心](https://azure.microsoft.com/support/trust-center/security/)的安全部分。
 
 有关应用服务应用中 **web.config** 或 **applicationhost.config** 文件的详细信息，请参阅 [Azure App Service Web 应用中解锁的配置选项](https://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
 

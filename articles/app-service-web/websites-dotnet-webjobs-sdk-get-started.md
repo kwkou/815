@@ -259,7 +259,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 ### 将 Web 应用配置为使用你的 Azure SQL 数据库和存储帐户。
 
-最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。可以通过使用 Azure 门户、Windows PowerShell 或跨平台命令行接口在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
+最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。可以通过使用 Azure 门户、Windows PowerShell 或跨平台命令行接口在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
 
 在本部分中，你将使用**服务器资源管理器**在 Azure 中设置连接字符串值。
 

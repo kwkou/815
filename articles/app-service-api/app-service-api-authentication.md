@@ -41,7 +41,7 @@ Azure 应用服务提供内置的身份验证与授权服务，可实现 [OAuth 
  
 在 .NET API 中，可以使用 `Authorize` 属性，如果想要更精细的授权，可以基于声明轻松编写代码，因为 .NET 类中已经填充了声明信息。
 
-## <a name="multiple-protection-options"></a>多个保护选项
+## 多个保护选项
 
 应用服务可以防止匿名 HTTP 请求进入 API 应用、传递所有请求和验证请求中包含的令牌，或者不采取任何措施即放行所有请求：
 
@@ -85,10 +85,8 @@ Azure 应用服务提供内置的身份验证与授权服务，可实现 [OAuth 
 
 有关 Azure 应用服务中的身份验证和授权的详细信息，请参阅以下资源：
 
-* [Expanding App Service authentication / authorization](https://azure.microsoft.com/blog/announcing-app-service-authentication-authorization/)（扩展应用服务身份验证/授权）
+* [Expanding App Service authentication / authorization](/blog/announcing-app-service-authentication-authorization/)（扩展应用服务身份验证/授权）
 * [How to configure your App Service application to use Azure Active Directory login](/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/)（如何将应用服务应用程序配置为使用 Azure Active Directory 登录）（页面顶部提供了其他身份验证提供程序的链接）。
-
-<a name="oauth"></a>
 
 有关 OAuth 2.0、OpenID Connect 和 JSON Web 令牌 (JWT) 的详细信息，请参阅以下资源。
 

@@ -36,7 +36,7 @@ Azure 门户则可以利用多个服务中的组件端对端地轻松构建应�
 
 ![](./media/app-service-web-app-azure-portal/CreateWebApp.png)
 
-在新门户中，你可以从最常用的 Web 应用类型中选择，包括 WordPress 等受欢迎的库应用程序。
+在新门户中，你可以从最常用的 Web 应用类型中选择，包括 WordPress 等受欢迎的库应用程序。有关可用应用程序的完整列表，请访问 [Azure 库]。
 
 当创建 Web 应用时，你可以如在经典门户中所执行的操作一样在新门户中指定 URL、App Service 计划和位置。
 

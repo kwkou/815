@@ -97,6 +97,12 @@
 
 - 有关 Azure App Service 最佳实践（包括构建可缩放、有弹性的体系结构）的信息，请参阅 [Best Practices: Azure App Service Web Apps](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx)（最佳实践：Azure App Service Web 应用）。
 
+- 有关缩放应用服务应用的视频，请参阅以下资源：
+
+	- [何时扩展 Azure 网站 - 使用 Stefan Schackow](/documentation/videos/azure-web-sites-free-vs-standard-scaling/)
+	- [自动缩放 Azure 网站、CPU 或按计划 - 使用 Stefan Schackow](/documentation/videos/auto-scaling-azure-web-sites/)
+	- [Azure 网站如何伸缩 - 使用 Stefan Schackow](/documentation/videos/how-azure-web-sites-scale/)
+
 
 <!-- LINKS -->
 [vmsizes]: /pricing/details/app-service/

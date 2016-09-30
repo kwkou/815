@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Azure Web 应用中的试验部署（beta 测试）"
 	description="本端到端教程说明如何试验应用中的新功能或者对更新进行 beta 测试。其中汇集了持续发布、槽、流量路由和 Application Insights 集成等 Azure 功能。"
@@ -13,9 +15,9 @@
 	wacn.date="09/26/2016"/>
 # Azure 中的试验部署（beta 测试）
 
-本教程说明如何通过集成 [Azure Web 应用](/documentation/services/web-sites/)和 Azure Application Insights 的各种功能来进行试验部署。
+本教程说明如何通过集成 [Azure Web 应用](/documentation/services/web-sites/)和 [Azure Application Insights](/home/features/application-insights/) 的各种功能来进行试验部署。
 
-“试验”是以有限数量的实际客户验证新功能或更改的部署过程，同时也是生产方案中的主要测试。它类似于 beta 测试，有时也称为“受控试验”。许多具有网站空间的大型企业在运用[敏捷开发](https://en.wikipedia.org/wiki/Agile_software_development)时，都采用此方法提前验证其应用更新。Azure App Service 可让你通过持续性发布和 Application Insights 集成生产环境中的测试，以实现相同的 DevOps 方案。此方法的优点包括：
+“试验”是以有限数量的实际客户验证新功能或更改的部署过程，同时也是生产方案中的主要测试。它类似于 beta 测试，有时也称为“受控试验”。许多具有网站空间的大型企业在运用[灵活开发](https://en.wikipedia.org/wiki/Agile_software_development)时，都采用此方法提前验证其应用更新。Azure App Service 可让你通过持续性发布和 Application Insights 集成生产环境中的测试，以实现相同的 DevOps 方案。此方法的优点包括：
 
 - **在更新发行到生产环境_之前_获得真正的反馈** - 在发行之前获得反馈的效果，仅次于在发行期间实时获得的反馈。你可以在产品生命周期中，根据需要提前以实际的用户流量和行为来测试更新。
 - **增强[持续测试导向开发 (CTDD)](https://en.wikipedia.org/wiki/Continuous_test-driven_development)** - 通过 Application Insights 的持续集成和工具集成生产环境中的测试，用户验证将可在产品生命周期内提前进行。这有助于减少在手动测试执行上投入的时间。
@@ -28,7 +30,7 @@
 在本教程中，你将学习如何集成以下方案，以在生产环境中测试 Azure Web 应用：
 
 - [将生产流量路由](/documentation/articles/app-service-web-test-in-production-get-start/)到 beta 应用
-- 检测应用以获取有用的度量值
+- [检测应用](/documentation/articles/app-insights-web-track-usage/)以获取有用的度量值
 - 持续部署 beta 应用并跟踪实时应用度量值
 - 比较生产应用程序和 beta 应用程序之间的度量值，以观察代码更改的结果为何
 
@@ -45,7 +47,7 @@
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
-> + 可以[建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
+> + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
 
 ## 设置生产 Web 应用
 
@@ -170,7 +172,7 @@
 
 在本部分中，你将配置不同的部署槽，以将槽特定的遥测数据发送到同一个 Application Insights 资源。这样，即可比较来自不同槽（部署环境）的流量之间的遥测数据，以轻松查看应用更改的影响。同时，你可以区分生产流量与其他流量，以便在需要时继续监视生产应用。
 
-由于要收集客户端行为的相关数据，因此你要在 index.cshtml 中将遥测初始设置式添加到 JavaScript 代码。例如，如果想要测试服务器端性能，也可以在服务器代码中运行类似的动作。
+由于要收集客户端行为的相关数据，因此你要在 index.cshtml 中[将遥测初始设置式添加到 JavaScript 代码](/documentation/articles/app-insights-api-custom-events-metrics/#js-initializer)。例如，如果想要测试服务器端性能，也可以在服务器代码中运行类似的动作（请参阅[自定义事件和度量值的 Application Insights API](/documentation/articles/app-insights-api-custom-events-metrics/)）。
 
 1. 首先，在前面添加到 `<heading>` 标记的 JavaScript 块中，在以下两个 `//` 注释之间添加代码。
 
@@ -210,6 +212,8 @@
     ![](./media/app-service-web-test-in-production-controlled-test-flight/05-filter-on-production-environment.png)
 
 5. 单击“收藏夹”按钮，将当前的“指标资源管理器”设置保存到“自定义事件: 生产”之类的项。以后你可以在此视图与部署槽视图之间轻松切换。
+
+    > [AZURE.TIP] 若要获得更强大的分析功能，请考虑将 [Application Insights 资源与 Power BI 集成](/documentation/articles/app-insights-export-power-bi/)。
 
 ### 将槽特定的标记添加到服务器应用度量值
 同样，出于完整性，我们将设置服务器端应用。不同于以 JavaScript 进行检测的客户端应用，服务器应用的槽特定标记以 .NET 代码进行检测。

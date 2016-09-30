@@ -18,7 +18,7 @@
 
 Azure 提供几种托管网站的方式：[Azure App Service][]、[虚拟机][]、[Service Fabric][] 和[云服务][]。本文可帮助你了解这几种方式，并针对你的 Web 应用程序做出正确的选择。
 
-Azure App Service 是大多数 Web 应用的最佳选择。部署和管理都已集成到平台，站点可以快速缩放以应对高流量负载，而内置的负载平衡和流量管理器可以实现高可用性。[WebJobs][] 功能可将后台作业处理轻松添加到应用服务 Web 应用。
+Azure App Service 是大多数 Web 应用的最佳选择。部署和管理都已集成到平台，站点可以快速缩放以应对高流量负载，而内置的负载平衡和流量管理器可以实现高可用性。可使用[联机迁移工具](https://www.migratetoazure.net/)将现有站点轻松迁移到 Azure App Service、使用 Web 应用程序库中的开源应用，还可使用所选框架和工具新建站点。[WebJobs][] 功能可将后台作业处理轻松添加到应用服务 Web 应用。
 
 如果你要创建新应用或重新编写现有应用以使用微服务体系结构，Service Fabric 是不错的选择。在共享计算机池上运行的应用可以从小规模开始，根据需要扩展为包含成百上千个计算机的大规模。有状态服务可轻松地以一致且可靠的方式存储应用状态，而 Service Fabric 会自动为你管理服务分区、缩放和可用性。Service Fabric 也支持具有 Open Web Interface for .NET (OWIN) 和 ASP.NET Core 的 WebAPI。与应用服务相比，Service Fabric 也能更好地控制或直接访问基础结构。你可以远程登录服务器，或配置服务器启动任务。云服务的控制和易用程度类似于 Service Fabric，但它现在是旧版服务，因此建议将 Service Fabric 用于新的开发。
 
@@ -49,7 +49,7 @@ WebMatrix 支持|X||X||
 Visual Studio 集成|X|X|X|X|
 远程调试|X|X|X||
 使用 TFS 部署代码|X|X|X|X|
-使用 [Azure 虚拟网络](/home/features/networking/)进行网络隔离|X|X|X|X|另请参阅 [Azure 网站的虚拟网络集成](/documentation/articles/app-service-vnet-integration-powershell/)
+使用 [Azure 虚拟网络](/home/features/networking/)进行网络隔离|X|X|X|X|另请参阅 [Azure 网站的虚拟网络集成](/blog/2014/09/15/azure-websites-virtual-network-integration/)
 支持 [Azure 流量管理器](/home/features/traffic-manager/)|X|X|X|X|
 集成的端点监视|X|X|X||
 对服务器的远程桌面访问||X|X|X|
@@ -96,7 +96,7 @@ Azure App Service 是托管公司网站的理想解决方案。通过 Web 应用
 
 ### <a id="iis6"></a> 我具有在 Windows Server 2003 上运行的 IIS6 应用程序。
 
-Azure App Service 可轻松避免在迁移较旧的 IIS6 应用程序时带来的基础结构成本。因为与 Visual Studio、TFS 和常见的 CMS 工具集成，所以能够更轻松地将 IIS6 应用程序直接部署到云中。部署后，Azure 门户可以提供强大的管理工具，帮助你通过缩减规模管理成本，并根据需要扩展规模来满足业务要求。使用迁移工具可以：
+Azure App Service 可轻松避免在迁移较旧的 IIS6 应用程序时带来的基础结构成本。Microsoft 已经创建[易于使用的迁移工具和详细的迁移指南](https://www.movemetowebsites.net/)，你可以利用它检查兼容性，并确定需要进行的任何更改。因为与 Visual Studio、TFS 和常见的 CMS 工具集成，所以能够更轻松地将 IIS6 应用程序直接部署到云中。部署后，Azure 门户可以提供强大的管理工具，帮助你通过缩减规模管理成本，并根据需要扩展规模来满足业务要求。使用迁移工具可以：
 
 * 轻松快速地将旧版 Windows Server 2003 Web 应用程序迁移到云中。
 * 选择在本地保留附加的 SQL 数据库，以创建混合应用程序。
@@ -115,7 +115,7 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 
 对 Web 开发人员和设计师而言，Azure App Service 可与各种框架和工具轻松集成（包括 Git 和 FTP 的部署支持），并可与 Visual Studio 和 SQL 数据库等工具和服务紧密集成。通过应用服务，可以：
 
-- 将命令行工具用于自动化任务。
+- 将命令行工具用于[自动化任务][scripting]。
 - 使用流行的语言，如 [.Net][dotnet]、[PHP][]、[Node.js][nodejs] 和 [Python][]。
 - 选择三个不同的扩展级别，向上扩展到超高容量。
 - 与其他 Azure 服务（例如 [SQL 数据库][sqldatabase]、[服务总线][servicebus]和[存储空间][]）集成。
@@ -148,7 +148,7 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 
 ### <a id="lob"></a>我有一个需要连接到公司网络的业务线应用程序
 
-如果你想要创建业务线应用程序，你的网站可能需要直接访问公司网络上的服务或数据。可在应用服务、Service Fabric 和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)来实现此目的。可在应用服务上使用 [VNET 集成功能](/documentation/articles/app-service-vnet-integration-powershell/)，该功能使 Azure 应用程序能够像在公司网络上一样运行。
+如果你想要创建业务线应用程序，你的网站可能需要直接访问公司网络上的服务或数据。可在应用服务、Service Fabric 和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)来实现此目的。可在应用服务上使用 [VNET 集成功能](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)，该功能使 Azure 应用程序能够像在公司网络上一样运行。
 
 ### <a id="mobile"></a>我想为移动客户端托管 REST API 或 web 服务
 
@@ -175,7 +175,7 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 [Azure App Service]: /home/features/app-service/
 [云服务]: /documentation/services/cloud-services/
 [虚拟机]: /documentation/services/virtual-machines/
-[Service Fabric]: /home/features/service-fabric
+[Service Fabric]: /services/service-fabric
 [ClearDB]: http://www.cleardb.com/
 [WebJobs]: /documentation/articles/websites-webjobs-resources/
 [Configuring an SSL certificate for an Azure Website]: /documentation/articles/web-sites-configure-ssl-certificate/

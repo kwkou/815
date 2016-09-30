@@ -109,7 +109,7 @@
 * **Http 队列长度**
    * 必须在队列排满之前排入队列中的 HTTP 请求的平均数量。较高或不断增长的 HTTP 队列长度表示计划处于高负载状态。
 
-### <a name="cpu-time-vs-cpu-percentage"></a>CPU 时间和 CPU 百分比
+### CPU 时间和 CPU 百分比
 <!-- To do: Fix Anchor (#CPU-time-vs.-CPU-percentage) -->
 
 有 2 个反映 CPU 使用率的度量值。**CPU 时间**和**CPU 百分比**

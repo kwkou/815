@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-本教程帮助用户将第一个 Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。App Service 可用于创建 Web 应用、[移动应用后端](/documentation/services/app-service/mobile)和 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。
+本教程帮助用户将第一个 Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。App Service 可用于创建 Web 应用、[移动应用后端](/documentation/learning-paths/appservice-mobileapps/)和 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。
 
 只需执行少量的操作，就可以：
 

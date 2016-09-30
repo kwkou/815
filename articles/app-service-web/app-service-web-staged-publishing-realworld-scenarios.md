@@ -230,7 +230,7 @@
 	require_once(ABSPATH . 'wp-settings.php');
 
 #### 设置过渡环境
-假设已在 Azure Web 上运行 WordPress Web 应用，请登录 [Azure 门户](https://portal.azure.cn/)并转到该 WordPress Web 应用。否则，你可以通过应用商店创建一个环境。单击“设置”->“部署槽位”->“添加”，以创建具有名称过渡的部署槽位。部署槽位是与上面创建的主 Web 应用共享相同资源的另一个 Web 应用。
+假设已在 Azure Web 上运行 WordPress Web 应用，请登录 [Azure 门户](https://portal.azure.cn/)并转到该 WordPress Web 应用。否则，你可以通过应用商店创建一个环境。若要了解详细信息，请单击[此处](/documentation/articles/web-sites-php-web-site-gallery/)。单击“设置”->“部署槽位”->“添加”，以创建具有名称过渡的部署槽位。部署槽位是与上面创建的主 Web 应用共享相同资源的另一个 Web 应用。
 
 ![创建过渡部署槽位](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
 
@@ -362,15 +362,17 @@
 
 同样，在生产站点上安装 Courier 模块，并在其相应的 courier.config 文件中将其配置为指向过渡 Web 应用，如下所示
 
-	<!-- Repository connection settings -->
-	<!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
-	<repositories>
-			<!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
-			<repository name="Stage web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true">
-				<url>http://umbracositecms-1-stage.chinacloudsites.cn</url>
-				<user>0</user>
-			</repository>
-	</repositories>
+```xml
+  <!-- Repository connection settings -->
+  <!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
+  <repositories>
+        <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
+        <repository name="Stage web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true">
+            <url>http://umbracositecms-1-stage.chinacloudsites.cn</url>
+            <user>0</user>
+           </repository>
+  </repositories>
+```
 
 单击 Umbraco CMS Web 应用仪表板上的 Courier2 选项卡，并选择位置。可以看到 `courier.config` 中提到的存储库名称。在生产和过渡 Web 应用上均执行此操作。
 
@@ -415,7 +417,7 @@ Courier 不会通过将 Umbraco CMS 从一个版本升级到另一个版本来�
 交换 Web 应用和数据库的优点：
 1. 如果应用程序存在任何问题，可以使用另一个**交换**操作回滚到 Web 应用的前一个版本。
 2. 若要升级，需要将文件和数据库从过渡 Web 应用部署到生产 Web 应用和数据库。部署文件和数据库时许多地方可能会出现错误。通过使用槽的**交换**功能，可以减少升级过程中的停机时间，并降低部署更改时发生故障的风险。
-3. 可以使用在生产环境中测试的功能执行 **A/B 测试**
+3. 可以使用[在生产环境中测试](https://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/)的功能执行 **A/B 测试**
 
 本示例向你展示了平台的灵活性，你可以生成类似于 Umbraco Courier 模块的自定义模块，来跨环境管理部署。
 

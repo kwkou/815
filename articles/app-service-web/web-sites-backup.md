@@ -68,7 +68,7 @@
 
 配置存储帐户和备份容器后，可随时进行手动备份。
 
-## <a name="automatedbackups" id="configure-automated-backups"></a>配置自动备份
+## <a name="automatedbackups"></a>配置自动备份
 
 1. 在“备份”边栏选项卡中单击“计划: 未配置”。
 

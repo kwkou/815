@@ -97,7 +97,7 @@
 - [适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
 - [使用 Azure 门户克隆 Web 应用](/documentation/articles/app-service-web-app-cloning-portal/)
 - [在 Azure App Service 中备份 Web 应用](/documentation/articles/web-sites-backup/)
-- [Azure 流量管理器预览版对 Azure 资源管理器的支持](/documentation/articles/traffic-manager-powershell-arm/)
+- [Azure 流量管理器预览版对 Azure 资源管理器的支持](../../articles/traffic-manager/traffic-manager-powershell-arm.md)
 - [将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)
 
 <!---HONumber=Mooncake_0815_2016-->

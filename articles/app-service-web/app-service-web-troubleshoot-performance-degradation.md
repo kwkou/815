@@ -76,11 +76,21 @@
 
 将使用 HTTP 响应代码监视运行时间，并且以毫秒为单位计算响应时间。如果 HTTP 响应代码大于或等于 400 或响应时间超过 30 秒，则监视测试失败。如果从所有指定的位置监视测试均成功，则终结点被视为可用。
 
+若要设置此功能，请参阅[如何：监视 Web 终结点状态](/documentation/articles/web-sites-monitor/#webendpointstatus)。
+
+另外，有关终结点监视的视频，请参阅[保持 Azure 网站运行以及终结点监视 - Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
+
 #### 使用扩展的应用程序性能监视
 
 还可以利用_站点扩展_监视应用程序的性能。
 
 每个应用服务 Web 应用提供了一个可扩展的管理终结点，通过此终结点可利用一组作为站点扩展部署的功能强大的工具。这些工具涵盖从源代码编辑器（例如 [Visual Studio Team Services](https://www.visualstudio.com/products/what-is-visual-studio-online-vs.aspx)）到用于已连接资源（例如连接到 Web 应用的 MySQL 数据库）的管理工具。
+
+[Azure Application Insights](/home/features/application-insights/) 和 [New Relic](/marketplace/partners/newrelic/newrelic/) 是两个可用的性能监视站点扩展工具。若要使用 New Relic，请在运行时安装代理。若要使用 Azure Application Insights，请使用 SDK 重新生成代码，还可以安装可访问其他数据的扩展。SDK 使你可以编写代码，以便更详细地监视应用的使用情况和性能。
+
+若要使用 Application Insights，请参阅[在 Web 应用中监视性能](/documentation/articles/app-insights-web-monitor-performance/)。
+
+若要使用 New Relic，请参阅 [Azure 上的 New Relic 应用程序性能管理](/documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management/)。
 
 ### <a name="collect"></a> 2.收集数据
 
@@ -106,7 +116,7 @@ Web 应用环境为 Web 服务器和 Web 应用中的日志记录信息提供了
 
 在 Azure App Service 中，可以远程分析 Web 应用、API 应用和 WebJob。如果进程运行速度比预期缓慢，或者 HTTP 请求的延迟高于平时并且进程的 CPU 使用率偏高，则你可以远程分析进程并获取 CPU 采样调用堆栈，以分析进程活动和代码繁忙的路径。
 
-有关详细信息，请参阅 [Azure App Service 中的远程分析支持](http://azure.microsoft.com/blog/remote-profiling-support-in-azure-app-service)。
+有关详细信息，请参阅 [Azure App Service 中的远程分析支持](/blog/remote-profiling-support-in-azure-app-service)。
 
 
 #### 使用 Azure App Service 支持门户
@@ -125,7 +135,7 @@ Azure App Service 支持门户具有三个不同的选项卡，用于支持常�
 
 如果你想要下载数据，数据默认情况下会存储在 D:\\home\\data\\DaaS 文件夹中。
 
-有关 Azure App Service 支持门户的详细信息，请参阅[用于支持 Azure 网站的站点扩展的最新更新](http://azure.microsoft.com/blog/new-updates-to-support-site-extension-for-azure-websites)。
+有关 Azure App Service 支持门户的详细信息，请参阅[用于支持 Azure 网站的站点扩展的最新更新](/blog/new-updates-to-support-site-extension-for-azure-websites)。
 
 #### 使用 Kudu 调试控制台
 
