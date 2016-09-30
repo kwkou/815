@@ -9,6 +9,11 @@
 * [配置 TLS 相互身份验证来要求将客户端证书连接到你的 Web 应用](/documentation/articles/app-service-web-configure-tls-mutual-auth/)
 * [配置从你的应用中使用的客户端证书以安全连接到外部资源](https://azure.microsoft.com/blog/using-certificates-in-azure-websites-applications/)
 * [删除标准服务器标头以避免工具对你的应用进行指纹识别](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/)
-* [使用点到站点 VPN 安全连接应用与专用网络资源](/documentation/articles/app-service-vnet-integration-powershell/)
+* [使用点到站点 VPN 安全连接应用与专用网络资源](/documentation/articles/web-sites-integrate-with-vnet/)
+* [使用混合连接安全连接应用与专用网络资源](/documentation/articles/web-sites-hybrid-connection-get-started/)
+* [使用应用服务环境 (ASE) 实现应用的安全隔离](/documentation/articles/app-service-app-service-environment-intro/)
+  * [在 ASE 前面配置 Web 应用程序防火墙 (WAF)。](/documentation/articles/app-service-app-service-environment-web-application-firewall/)
+  * [为 ASE 配置入站网络流量的访问控制](/documentation/articles/app-service-app-service-environment-control-inbound-traffic/)
+  * [从 ASE 安全连接到后端资源](/documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/)
 
 <!---HONumber=Mooncake_0919_2016-->
