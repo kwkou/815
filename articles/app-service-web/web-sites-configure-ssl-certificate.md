@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="02/03/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="08/08/2016"
+	wacn.date="09/30/2016"/>
 
 #在 Azure 中启用 Web 应用的 HTTPS
 

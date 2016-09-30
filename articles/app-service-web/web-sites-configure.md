@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="06/02/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="08/11/2016"
+	wacn.date="09/30/2016"/>
 
 
 # 在 Azure 中配置 Web 应用 #
