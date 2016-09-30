@@ -1,27 +1,26 @@
 <properties 
 	pageTitle="在 Azure 中备份应用" 
-	description="了解如何在 Azure Web 应用中创建应用备份。" 
+	description="了解如何在 Azure App Service 中创建应用备份。" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
-	editor="jimbe"/>  
-
+	editor="jimbe"/>
 
 <tags
 	ms.service="app-service"
 	ms.date="07/06/2016"
-	wacn.date="08/22/2016"/>
+	wacn.date="09/26/2016"/>
 
 # 在 Azure 中备份应用
 
 
-利用 [Azure Web 应用](/documentation/services/web-sites/)中的备份和还原功能，可以轻松地手动或自动创建应用备份。你可以将应用还原到以前的状态，或者基于原始应用的备份之一创建新的应用。
+利用 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/) 中的备份和还原功能，可以轻松地手动或自动创建应用备份。你可以将应用还原到以前的状态，或者基于原始应用的备份之一创建新的应用。
 
 有关从备份中还原应用的信息，请参阅 [Restore an app in Azure](/documentation/articles/web-sites-restore/)（在 Azure 中还原应用）。
 
-## <a name="whatsbackedup"></a>备份的内容
-Azure Web 应用可以备份以下信息：
+## <a name="whatsbackedup"></a>备份的内容 
+应用服务可备份以下信息：
 
 * 应用配置
 * 文件内容
@@ -33,80 +32,65 @@ Azure Web 应用可以备份以下信息：
 
 ## <a name="requirements"></a>要求和限制
 
-* 备份和还原功能要求 App Service 计划位于“标准”层中。有关缩放 App Service 计划以使用更高层的详细信息，请参阅 [Scale up an app in Azure](/documentation/articles/web-sites-scale/)（向上缩放 Azure 中的应用）。
+* 备份和还原功能要求应用服务计划位于**标准**层或更高层。有关缩放 App Service 计划以使用更高层的详细信息，请参阅 [Scale up an app in Azure](/documentation/articles/web-sites-scale/)（向上缩放 Azure 中的应用）。请注意，相比于**标准**层，**高级**层每日允许更多备份量。
 * 在与要备份的应用相同的订阅中，需要有一个 Azure 存储帐户和容器。有关 Azure 存储帐户的详细信息，请参阅本文结尾处的[链接](#moreaboutstorage)。
-* 最多可以备份 10GB 的应用和数据库内容。如果备份大小超过此限制，将会出错。
-
-
+* 最多可备份 10GB 的应用和数据库内容。如果备份大小超过此限制，将会出错。
 
 ## <a name="manualbackup" id="create-a-manual-backup"></a>创建手动备份
-1. 在网站的 Azure 经典管理门户中，选择“备份”选项卡。
 
-	![“备份”页面][ChooseBackupsPage]  
+2. 在 [Azure 门户预览](https://portal.azure.cn)中，导航到应用的边栏选项卡，选择“设置”，然后选择“备份”。将显示“备份”边栏选项卡。
+	
+	![“备份”页面][ChooseBackupsPage]
 
+	>[AZURE.NOTE] 若显示以下消息，请单击该消息升级应用服务计划，然后才能继续备份。有关详细信息，请参阅[向上缩放 Azure 中的应用](/documentation/articles/web-sites-scale/)。![选择存储帐户](./media/web-sites-backup/01UpgradePlan.png)
 
-2. 选择网站要备份到其中的存储帐户。该存储帐户必须与要备份的网站同属一个订阅。
+3. 在“备份”边栏选项卡中，单击“存储: 未配置”来配置存储帐户。
 
-	![选择存储帐户][ChooseStorageAccount]  
+	![选择存储帐户][ChooseStorageAccount]
+	
+4. 选择“存储帐户”和“容器”来选择备份目标。该存储帐户必须与要备份的应用属于同一订阅。也可在各自的边栏选项卡中新建存储帐户或容器。完成后，单击“选择”。
+	
+	![选择存储帐户](./media/web-sites-backup/02ChooseStorageAccount1.png)
+	
+5. 在仍处于打开状态的“配置备份设置”边栏选项卡中，单击“数据库设置”，选择备份要包含的数据库（SQL 数据库或 MySQL），然后单击“确定”。
 
+	![选择存储帐户](./media/web-sites-backup/03ConfigureDatabase.png)
 
-3. 在“包含的数据库”选项中，选择要备份的连接到你的网站的数据库（SQL Server 或 MySQL）。
+	> [AZURE.NOTE] 	若要使数据库显示在此列表中，其连接字符串必须位于应用中“应用程序设置”边栏选项卡上的“连接字符串”部分中。
 
-	![选择要包含的数据库][IncludedDatabases]  
+6. 在“配置备份设置”边栏选项卡上单击“保存”。
 
-	> [AZURE.NOTE] 若要使数据库显示在此列表中，其连接字符串必须位于门户中“配置”选项卡的“连接字符串”部分。
+7. 在“备份”边栏选项卡的命令栏中单击“立即备份”。
+	
+	![BackUpNow 按钮][BackUpNow]
+	
+	备份过程中将显示进度消息。
 
-4. 在命令栏上，单击“立即备份”。
-
-	![BackUpNow 按钮][BackUpNow]  
-
-	在备份过程中你将看到进度消息：
-
-	![备份进度消息][BackupProgress]  
-
-
-你可以随时进行手动备份。在预览版期间，每 24 小时内的手动备份不能超过 2 个（此限制可能会变更）。
+配置存储帐户和备份容器后，可随时进行手动备份。
 
 ## <a name="automatedbackups" id="configure-automated-backups"></a>配置自动备份
-1. 在“备份”页上，将“自动化的备份”设置为“打开”。
 
-	![启用自动化的备份][SetAutomatedBackupOn]  
+1. 在“备份”边栏选项卡中单击“计划: 未配置”。
 
+	![选择存储帐户](./media/web-sites-backup/05ScheduleBackup.png)
+	
+1. 在“备份计划设置”边栏选项卡上，将“计划备份”设为“开”，再根据需要配置备份计划并单击“确定”。
+	
+	![启用自动化的备份][SetAutomatedBackupOn]
+	
+4. 在仍处于打开状态的“配置备份设置”边栏选项卡中单击“存储设置”，然后通过选择“存储帐户”和“容器”来选择备份目标。该存储帐户必须与要备份的应用属于同一订阅。也可在各自的边栏选项卡中新建存储帐户或容器。完成后，单击“选择”。
+	
+	![选择存储帐户](./media/web-sites-backup/02ChooseStorageAccount1.png)
+	
+5. 在“配置备份设置”边栏选项卡中，单击“数据库设置”，选择备份要包含的内容（SQL 数据库或 MySQL），然后单击“确定”。
 
-2. 选择网站要备份到其中的存储帐户。该存储帐户必须与要备份的网站同属一个订阅。
+	![选择存储帐户](./media/web-sites-backup/03ConfigureDatabase.png)
 
-	![选择存储帐户][ChooseStorageAccount]  
+	> [AZURE.NOTE] 	若要使数据库显示在此列表中，其连接字符串必须位于应用中“应用程序设置”边栏选项卡上的“连接字符串”部分中。
 
+6. 在“配置备份设置”边栏选项卡上单击“保存”。
 
-3. 在“频率”框中，指定你希望多久进行一次自动化的备份。（在预览版期间，天数是唯一可用的时间单位。）
-
-	![选择备份频率][Frequency]  
-
-	天数必须介于 1 到 90 之间（含 1 和 90，从每天 1 次到每 90 天一次）。
-
-4. 使用“开始日期”选项指定你希望自动化的备份开始的日期和时间。
-
-	![选择开始日期][StartDate]  
-
-	时间以半小时为增量。
-
-	![选择开始时间][StartTime]
-
-	> [AZURE.NOTE] Azure 存储备份时间时采用的是 UTC 格式，但显示时根据的是用于显示门户的计算机上的系统时间。
-
-5. 在“包含的数据库”部分，选择要备份的连接到你的网站的数据库（SQL Server 或 MySQL）。若要使数据库显示在此列表中，其连接字符串必须位于门户中“配置”选项卡的“连接字符串”部分。
-
-	![选择要包含的数据库][IncludedDatabases]  
-
-	> [AZURE.NOTE] 如果你选择在备份中包含一个或多个数据库，并且指定了小于 7 天的频率，就会收到频繁备份会增加数据库成本的警告。
-
-6. 在命令栏中，单击“保存”按钮以保存你的配置更改（或者，如果你决定不保存，请选择“放弃”）。
-
-	![“保存”按钮][SaveIcon]  
-
-
-
-## <a name="partialbackups"></a>备份只是 Web 应用的一部分
+## <a name="partialbackups"></a>备份只是应用的一部分
 
 有时你不想备份应用中的所有内容。以下是一些示例：
 
@@ -118,13 +102,15 @@ Azure Web 应用可以备份以下信息：
 
 ### 从备份中排除文件
 
-若要从备份中排除文件和文件夹，在应用的 D:\home\site\wwwroot 文件夹中创建 `_backup.filter` 文件，并指定想要在这里排除的文件和文件夹列表。通过 [Kudu 控制台](https://github.com/projectkudu/kudu/wiki/Kudu-console)，即可轻松访问它。
+若要从备份中排除文件和文件夹，在应用的 D:\\home\\site\\wwwroot 文件夹中创建 `_backup.filter` 文件，并指定想要在这里排除的文件和文件夹列表。通过 [Kudu 控制台](https://github.com/projectkudu/kudu/wiki/Kudu-console)，即可轻松访问它。
 
 假设你的应用中包含永远不会更改的历年的日志文件和静态映像。你已有包括旧映像的应用的完整备份。现在你想要每天都备份应用，但不想为永远不会更改的存储日志文件或静态映像文件支付费用。
 
+![日志文件夹][LogsFolder] ![映像文件夹][ImagesFolder]
+	
 以下步骤展示了如何从备份中排除这些文件。
 
-1. 确定想要从备份中排除的文件夹。在此示例中，你想要排除该用户界面中所示的以下文件和文件夹：
+1. 转到 `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` 并确定想要从备份中排除的文件夹。在此示例中，你想要排除该用户界面中所示的以下文件和文件夹：
 
 		D:\home\site\wwwroot\Logs
 		D:\home\LogFiles
@@ -142,14 +128,13 @@ Azure Web 应用可以备份以下信息：
 	    \site\wwwroot\Images\2014
 	    \site\wwwroot\Images\brand.png
 
-3. 使用 [ftp](/documentation/articles/web-sites-deploy/#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。
+3. 使用 [ftp](/documentation/articles/web-sites-deploy/#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。如果你愿意，则可以直接在 `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` 中创建文件并在那里插入内容。
 
 4. 采用通常使用的相同方式运行备份，即[手动](#create-a-manual-backup)或[自动](#configure-automated-backups)。
 
 现在，`_backup.filter` 中指定的所有文件和文件夹都会从备份中排除。在此示例中，日志文件和 2013 年以及 2014 年的映像文件以及 brand.png 将不再进行备份。
 
 >[AZURE.NOTE] 采用[还原定期备份](/documentation/articles/web-sites-restore/)的相同方式还原站点的部分备份。还原过程会执行正确的操作。<p>还原完整备份后，站点上的所有内容都被替换为备份中的任何内容。如果文件在站点上但不在备份中，则会将其删除。但是当部分备份还原时，位于其中一个方块列表目录或任何方块列表文件中的任何内容都保持不变。
-
 
 ## <a name="aboutbackups" id="moreaboutstorage"></a>如何存储备份
 
@@ -160,7 +145,7 @@ Azure Web 应用可以备份以下信息：
 > [AZURE.WARNING] 改动“websitebackups”容器中的任何文件都会导致备份无效，进而无法还原。
 
 ## <a name="nextsteps"></a>后续步骤
-有关从备份中还原应用的信息，请参阅 [Restore an app in Azure](/documentation/articles/web-sites-restore/)（在 Azure 中还原应用）。你还可以使用 REST API 备份和还原 Azure Web Apps（请参阅 [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup/)（使用 REST 备份和还原 Azure Web Apps））。
+有关从备份中还原应用的信息，请参阅 [Restore an app in Azure](/documentation/articles/web-sites-restore/)（在 Azure 中还原应用）。还可使用 REST API 备份和还原应用服务应用（请参阅 [使用 REST 备份和还原应用服务应用](/documentation/articles/websites-csm-backup/)）。
 
 >[AZURE.NOTE] 若要开始使用 Azure，请参阅 [Azure Trial](/pricing/1rmb-trial/)（Azure 试用）。
 
@@ -179,5 +164,6 @@ Azure Web 应用可以备份以下信息：
 [ImagesFolder]: ./media/web-sites-backup/11Images.png
 [LogsFolder]: ./media/web-sites-backup/12Logs.png
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
+ 
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0919_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure Web 应用中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务" 
+	pageTitle="在 Azure App Service 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务" 
 	description="本教程将向您介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用程序部署到 Azure Web 应用。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -11,11 +11,11 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/29/2016"
-	wacn.date="05/30/2016"/>
+	wacn.date="09/26/2016"/>
 
-# 在 Azure Web 应用中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
+# 在 Azure App Service 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 
-本教程介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 Community Edition 中的“发布 Web”向导将 ASP.NET Web 应用部署到 [Azure Web 应用](/documentation/services/web-sites/)。
+本教程介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 Community Edition 中的“发布 Web”向导将 ASP.NET Web 应用部署到 [Azure App Service](/documentation/articles/app-service-changes-existing-services/)。
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。这样你就能够完全免费地开始针对 Azure 进行开发了。
 
@@ -196,7 +196,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 ## 启用迁移、创建数据库、添加示例数据和数据初始值设定项 ##
 
-接下来的任务是启用 [Code First 迁移](http://curah.microsoft.com/55220)功能以便基于你创建的数据模型创建数据库。
+接下来的任务是启用 Code First 迁移功能以便基于你创建的数据模型创建数据库。
 
 1. 在“工具”菜单中，依次选择“库包管理器”和“包管理器控制台”。
 
@@ -510,9 +510,11 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	![包含待办事项列表项的索引页面][rxFFchrome]
 	
+
 	IE 将提示你打开或保存联系人。
 
 	![Web API 保存对话框][addwebapi006]
+	
 	
 	你可以在记事本或浏览器中打开返回的联系人。
 	
@@ -702,7 +704,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 
 该应用程序现在是运行在云中，使用 SQL 数据库存储其数据。在 Azure 中测试应用程序完成后，将其删除。该应用程序是公开的并且没有限制访问的机制。
 
-## <a name="nextsteps"></a>后续步骤
+##<a name="nextsteps"></a>后续步骤
 
 实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用。
 

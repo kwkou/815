@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure Web 应用中使用 Azure CDN" 
-	description="本教程演示如何将 Web 应用部署到 Azure，以便从集成的 Azure CDN 终结点提供内容" 
+	pageTitle="在 Azure App Service 中使用 Azure CDN" 
+	description="本教程演示如何将 Web 应用部署到 Azure App Service，以便从集成的 Azure CDN 终结点提供内容" 
 	services="app-service\web,cdn" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -13,14 +13,14 @@
 	wacn.date="08/23/2016"/>
 
 
-# 在 Azure Web 应用中使用 Azure CDN
+# 在 Azure App Service 中使用 Azure CDN
 
-[Azure Web 应用](/documentation/services/web-sites/)可以集成 [Azure CDN](/home/features/cdn/)，增强 [Azure Web Apps](/documentation/services/web-sites/) 固有的全局缩放功能。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure Web Apps 的性能，在全球显著改善 Web 应用的用户体验。
+[App Service](/documentation/articles/app-service-changes-existing-services/) 可以集成 [Azure CDN](/home/features/cdn/)，增强 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 固有的全局缩放功能。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure Web Apps 的性能，在全球显著改善 Web 应用的用户体验。
 
 将 Web Apps 与 Azure CDN 集成具有以下优点：
 
-- 在 Web 应用的[连续部署](/documentation/articles/app-service-continous-deployment/)过程中集成内容部署（映像、脚本和样式表）
-- 轻松升级 Azure 的 Web 应用中的 NuGet 包，例如 jQuery 或 Bootstrap 版本 
+- 在 Web 应用的[连续部署](/documentation/articles/app-service-continuous-deployment/)过程中集成内容部署（映像、脚本和样式表）
+- 轻松升级 Azure App Service 的 Web 应用中的 NuGet 包，例如 jQuery 或 Bootstrap 版本 
 - 在同一 Visual Studio 界面中管理 Web 应用程序和 CDN 提供的内容
 - 将 ASP.NET 绑定和缩减与 Azure CDN 集成
 
@@ -28,7 +28,7 @@
 
 ## 要生成的项目 ##
 
-你需要在 Visual Studio 中使用默认的 ASP.NET MVC 模板将一个 Web 应用部署到 Azure，需要添加代码来处理集成 Azure CDN 所提供的内容（例如映像、控制器操作结果、默认的 JavaScript 和 CSS 文件），还需要编写代码来配置回退机制以处理 CDN 脱机时提供的捆绑包。
+你需要在 Visual Studio 中使用默认的 ASP.NET MVC 模板将一个 Web 应用部署到 Azure App Service，需要添加代码来处理集成 Azure CDN 所提供的内容（例如映像、控制器操作结果、默认的 JavaScript 和 CSS 文件），还需要编写代码来配置回退机制以处理 CDN 脱机时提供的捆绑包。
 
 ## 所需的项目 ##
 
@@ -38,11 +38,11 @@
 -	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)。如果你使用 Visual Studio，步骤可能有所不同。
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
-> + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
+> + 可以[建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
 
 ## <a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> 将 Web 应用部署到具有集成 CDN 终结点的 Azure ##
 
-在本部分，你需要将 Visual Studio 2015 中的默认 ASP.NET MVC 应用程序模板部署到 Azure Web 应用，然后将其与新的 CDN 终结点相集成。请根据以下说明进行操作：
+在本部分，你需要将 Visual Studio 2015 中的默认 ASP.NET MVC 应用程序模板部署到 App Service，然后将其与新的 CDN 终结点相集成。请根据以下说明进行操作：
 
 1. 在 Visual Studio 2015 中转到“文件”>“新建”>“项目”>“Web”>“ASP.NET Web 应用程序”，以便从菜单栏创建新的 ASP.NET Web 应用程序。为该应用程序提供一个名称，然后单击“确定”。
 
@@ -52,9 +52,9 @@
 
 	![](./media/cdn-websites-with-cdn/2-webapp-template.png)
 
-	Azure 中国区目前不支持在 Visual Studio 中创建或管理网站。因此，你需要转到[管理门户](https://manage.windowsazure.cn/)创建新的 Azure 网站
+	Azure 中国区目前不支持在 Visual Studio 中创建或管理网站。因此，你需要转到[经典管理门户](https://manage.windowsazure.cn/)创建新的 Azure web 应用
 	
-3. 在管理门户中创建网站后，单击网站的“仪表板”。在“速览”下，单击“下载发布配置文件”。
+3. 在经典管理门户中创建网站后，单击网站的“仪表板”。在“速览”下，单击“下载发布配置文件”。
 
 3. 在 Visual Studio 中，右键单击你的项目并选择“发布”
 
@@ -88,14 +88,14 @@
 
 	发布完成后，你会在浏览器中看到发布的 Web 应用。
 
-1. 若要创建 CDN 终结点，请登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 若要创建 CDN 终结点，请登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 单击“新建 > 应用服务 > CDN > 快速创建”。选择 **http://*&lt;sitename>*.chinacloudsites.cn/**，然后单击“创建”。
 
 	![](./media/cdn-websites-with-cdn/7-create-cdn.png)
 
-	> [AZURE.NOTE] 创建 CDN 终结点以后，管理门户就会向你显示其 URL 以及所集成的源域。不过，需要一定的时间才能将新 CDN 终结点的配置完全传播到所有 CDN 节点位置。
+	> [AZURE.NOTE] 创建 CDN 终结点以后，经典管理门户就会向你显示其 URL 以及所集成的源域。不过，需要一定的时间才能将新 CDN 终结点的配置完全传播到所有 CDN 节点位置。
 
-3. 回到管理门户，在“CDN”选项卡中，单击刚创建的 CDN 终结点的名称。
+3. 回到经典管理门户，在“CDN”选项卡中，单击刚创建的 CDN 终结点的名称。
 
 	![](./media/cdn-websites-with-cdn/8-select-cdn.png)
 

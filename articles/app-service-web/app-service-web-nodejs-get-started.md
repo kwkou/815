@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure 中的 Node.js Web 应用入门"
-	description="学习如何将 Node.js 应用程序部署到 Azure 中的 Web 应用。"
+	pageTitle="Azure App Service 中的 Node.js Web 应用入门"
+	description="学习如何将 Node.js 应用程序部署到 Azure App Service 中的 Web 应用。"
 	services="app-service\web"
 	documentationCenter="nodejs"
 	authors="cephalin"
@@ -11,13 +11,13 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="07/01/2016"
-	wacn.date="08/22/2016"/>
+	wacn.date="09/26/2016"/>
 
-# Azure 中的 Node.js Web 应用入门
+# Azure App Service 中的 Node.js Web 应用入门
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-本教程说明如何创建一个简单的 [Node.js][NODEJS] 应用程序，然后通过 cmd.exe 或 bash 等命令行环境将它部署到 [Azure Web 应用]。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
+本教程说明如何创建一个简单的 [Node.js][NODEJS] 应用程序，然后通过 cmd.exe 或 bash 等命令行环境将它部署到 [Azure App Service] 中的 [web 应用]。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 
 ## <a name="prereq"></a>先决条件
 
@@ -54,13 +54,14 @@
 
     在浏览器中导航到 <http://localhost:3000> 以确保可以看到 Express 主页。确认应用正常运行后，请使用 `Ctrl-C` 将它停止。
 
-1. 如下所示登录到 Azure（为此需要 [Azure CLI](#prereq)）：
+1. 如下所示，跳转到 ASM 模式，并登录到 Azure（为此需要 [Azure CLI](#prereq)）：
 
+        azure config mode asm
         azure login -e AzureChinaCloud
 
     根据提示，在浏览器中继续使用具有 Azure 订阅的 Microsoft 帐户登录。
 
-2. 确保你仍在应用的根目录中，然后使用下一个命令，以唯一的应用名称在 Azure 中创建 Azure Web 应用资源；例如：http://{appname}.chinacloudsites.cn
+2. 确保你仍在应用的根目录中，然后使用下一个命令，以唯一的应用名称在 Azure 中创建 App Service 应用资源；例如：http://{appname}.chinacloudsites.cn
 
         azure site create --git {appname}
 
@@ -90,18 +91,18 @@
 
         azure site browse
 
-    现在，你应会看到 Node.js Web 应用在 Azure Web 应用中实时运行。
+    现在，你应会看到 Node.js Web 应用在 Azure App Service中实时运行。
 
     ![浏览到已部署应用程序的示例。][deployed-express-app]  
 
 
 ## 更新 Node.js Web 应用
 
-若要更新 Azure Web 应用中运行的 Node.js Web 应用，只需和首次部署 Web 应用时一样运行 `git add`、`git commit` 和 `git push`。
+若要更新 App Service 中运行的 Node.js Web 应用，只需和首次部署 Web 应用时一样运行 `git add`、`git commit` 和 `git push`。
 
-## Azure 如何部署 Node.js 应用
+## App Service 如何部署 Node.js 应用
 
-Azure 使用 [iisnode] 来运行 Node.js 应用。Azure CLI 和 Kudu 引擎（Git 部署）合作，让你在通过命令行开发和部署 Node.js 应用时获得顺畅的体验。
+Azure App Service 使用 [iisnode] 来运行 Node.js 应用。Azure CLI 和 Kudu 引擎（Git 部署）合作，让你在通过命令行开发和部署 Node.js 应用时获得顺畅的体验。
 
 - `azure site create --git` 可识别 server.js 或 app.js 的常见 Node.js 模式，并在根目录中创建 iisnode.yml。你可以使用此文件来自定义 iisnode。
 - 在 `git push azure master` 中，Kudu 可自动完成以下部署任务：
@@ -112,17 +113,17 @@ Azure 使用 [iisnode] 来运行 Node.js 应用。Azure CLI 和 Kudu 引擎（Gi
 
 ## 使用 Node.js 框架
 
-如果使用了流行的 Node.js 框架（例如 [Sails.js][SAILSJS] 或 [MEAN.js][MEANJS]）来开发应用，则可将这些应用部署到 Azure Web 应用。流行的 Node.js 框架有其特定的行为模式，并且其包依赖性不断更新。但是，Azure 为你提供 stdout 和 stderr 日志，让你确切地了解应用中发生了什么并做出相应的更改。有关详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](#iisnodelog)。
+如果使用了流行的 Node.js 框架（例如 [Sails.js][SAILSJS] 或 [MEAN.js][MEANJS]）来开发应用，则可将这些应用部署到 App Service。流行的 Node.js 框架有其特定的行为模式，并且其包依赖性不断更新。但是，App Service 为你提供 stdout 和 stderr 日志，让你确切地了解应用中发生了什么并做出相应的更改。有关详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](#iisnodelog)。
 
-以下教程说明如何在 Azure Web 应用中使用特定框架：
+以下教程说明如何在 App Service 中使用特定框架：
 
-- [Deploy a Sails.js web app to Azure（将 Sails.js Web 应用部署到 Azure）]
-- [Create a Node.js chat application with Socket.IO in Azure Web App（在 Azure Web 应用使用 Socket.IO 创建 Node.js 聊天应用程序）]
-- [How to use io.js with Azure Web Apps（如何将 io.js 与 Azure Web 应用配合使用）]
+- [Deploy a Sails.js web app to Azure App Service（将 Sails.js Web 应用部署到 Azure App Service）]
+- [Create a Node.js chat application with Socket.IO in Azure App Service（在 Azure App Service 使用 Socket.IO 创建 Node.js 聊天应用程序）]
+- [How to use io.js with Azure App Service Web Apps（如何将 io.js 与 Azure App Service Web 应用配合使用）]
 
 ## 使用特定的 Node.js 引擎
 
-与平常在 package.json 中所做的一样，你可以在典型工作流中告知 Azure 使用特定的 Node.js 引擎。
+与平常在 package.json 中所做的一样，你可以在典型工作流中告知 App Service 使用特定的 Node.js 引擎。
 例如：
 
     "engines": {
@@ -148,7 +149,7 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
         loggingEnabled: true
         logDirectory: iisnode
 
-    这两个参数相结合，告诉 Azure Web 应用中的 iisnode 要将其 stdout 和 stderror 输出放在 D:\home\site\wwwroot**iisnode** 目录中。
+    这两个参数相结合，告诉 Azure App Service 中的 iisnode 要将其 stdout 和 stderror 输出放在 D:\home\site\wwwroot**iisnode** 目录中。
 
 3. 保存更改，然后使用以下 Git 命令将更改推送到 Azure：
 
@@ -173,14 +174,14 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
     ![打开 iisnode 日志文件。][iislog-kudu-console-open]  
 
 
-    现在可以查看日志以帮助调试 Azure Web 应用部署。
+    现在可以查看日志以帮助调试 Azure App Service 部署。
     
     ![检查 iisnode 日志文件。][iislog-kudu-console-read]  
 
 
 ## 使用 Node-Inspector 调试应用
 
-如果你使用 Node-Inspector 来调试 Node.js 应用，可将它用于实时 Azure Web 应用。Node-Inspector 已预先安装在 Azure Web 应用的 iisnode 安装中。如果你通过 Git 部署，则从 Kudu 自动生成的 Web.config 已包含启用 Node-Inspector 所需的所有配置。
+如果你使用 Node-Inspector 来调试 Node.js 应用，可将它用于实时 App Service 应用。Node-Inspector 已预先安装在 App Service 的 iisnode 安装中。如果你通过 Git 部署，则从 Kudu 自动生成的 Web.config 已包含启用 Node-Inspector 所需的所有配置。
 
 若要启用 Node-Inspector，请遵循以下步骤：
 
@@ -207,30 +208,29 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 
 - [在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps/)
 - [Azure 上的 Node.js 应用程序的最佳实践和故障排除指南](/documentation/articles/app-service-web-nodejs-best-practices-and-troubleshoot-guide/)
-- [如何在 Azure 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)
+- [如何在 Azure App Service 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)
 - [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
-- [Azure Web Apps: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx)
+- [Azure App Service Web Apps: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx)
 - [Node.js 开发人员中心](/develop/nodejs/)
-- [Azure 中的 Web 应用入门](/documentation/articles/app-service-web-get-started/)
+- [Azure App Service 中的 Web 应用入门](/documentation/articles/app-service-web-get-started/)
 
 <!-- URL List -->
 
 [Azure CLI]: /documentation/articles/xplat-cli-install/
-[Azure Web 应用]: /documentation/services/web-sites/
-[activate your Visual Studio subscriber benefits]: /pricing/1rmb-trial/
+[Azure App Service]: /documentation/articles/app-service-value-prop-what-is/
 [BOWER]: http://bower.io/
-[Create a Node.js chat application with Socket.IO in Azure Web App（在 Azure Web 应用使用 Socket.IO 创建 Node.js 聊天应用程序）]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
-[Deploy a Sails.js web app to Azure（将 Sails.js Web 应用部署到 Azure）]: /documentation/articles/app-service-web-nodejs-sails/
+[Create a Node.js chat application with Socket.IO in Azure App Service（在 Azure App Service 使用 Socket.IO 创建 Node.js 聊天应用程序）]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
+[Deploy a Sails.js web app to Azure App Service（将 Sails.js Web 应用部署到 Azure App Service）]: /documentation/articles/app-service-web-nodejs-sails/
 [探索神秘无比的 Kudu 调试控制台]: /documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/
 [适用于 Yeoman 的 Express 生成器]: https://github.com/petecoop/generator-express
 [GIT]: http://www.git-scm.com/downloads
-[How to use io.js with Azure Web Apps（如何将 io.js 与 Azure Web 应用配合使用）]: /documentation/articles/web-sites-nodejs-iojs/
+[How to use io.js with Azure App Service Web Apps（如何将 io.js 与 Azure App Service Web 应用配合使用）]: /documentation/articles/web-sites-nodejs-iojs/
 [iisnode]: https://github.com/tjanczuk/iisnode/wiki
 [MEANJS]: http://meanjs.org/
 [NODEJS]: http://nodejs.org
 [SAILSJS]: http://sailsjs.org/
 [注册试用版]: /pricing/1rmb-trial/
-[web app]: /home/features/web-site/
+[web 应用]: /documentation/articles/app-service-web-overview/
 [YEOMAN]: http://yeoman.io/
 
 <!-- IMG List -->

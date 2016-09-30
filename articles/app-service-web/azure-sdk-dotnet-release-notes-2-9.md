@@ -30,7 +30,7 @@
 
 此更新包含下列新功能：
 
-- 在 Azure 预配对话框的“服务”选项卡中支持辅助 Azure。 
+- 在 App Services 预配对话框的“服务”选项卡中支持辅助 App Services。 
 
 ##Azure Data Lake Tools for Visual Studio 2015 Update 2
  

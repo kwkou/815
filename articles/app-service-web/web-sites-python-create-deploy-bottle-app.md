@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 中使用 Bottle 创建 Python Web 应用" 
-	description="本教程介绍如何在 Azure Web 应用中运行 Python Web 应用。" 
+	pageTitle="在 Azure 中使用 Bottle 的 Python Web 应用" 
+	description="本教程介绍如何在 Azure App Service Web Apps 上运行 Python Web 应用。" 
 	services="app-service\web" 
 	documentationCenter="python" 
 	tags="python"
@@ -11,14 +11,14 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/19/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="09/26/2016"/>
 
 
 # 在 Azure 中使用 Bottle 创建 Web 应用
 
-本教程介绍如何开始在 Azure Web 应用中运行 Python。 Web 应用提供有限的免费托管和快速部署功能，并且你可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
+在本教程中，我们将介绍如何开始在 Azure App Service Web Apps 中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
-你将使用 Bottle Web 框架创建 Web 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) 的备选版本）。你将从 Azure 创建 Web 应用，设置 Git 部署并在本地克隆存储库。然后在本地运行 Web 应用，对其进行更改并将其提交和推送到 [Azure Web 应用](/documentation/services/web-sites/)。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
+您将使用 Bottle web 框架创建 Web 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) 的备选版本)。将从 Azure 应用商店创建 Web 应用，设置 Git 部署和本地克隆存储库。然后将本地运行 Web 应用，将其更改、提交和推送到 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/)。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -45,16 +45,15 @@
 您应安装了 Python 和 Git ，但请确保您具有 Python 2.7 或 3.4。
 
 
-## 在 Azure 经典管理门户中创建 Web 应用
+## 在 Azure 门户预览中创建 Web 应用
 
-创建你的应用的第一步是通过 [Azure 经典管理门户](https://manage.windowsazure.cn)创建 Web 应用。
+创建您的应用的第一步是通过 [Azure 门户预览](https://portal.azure.cn)创建 Web 应用。
 
-1. 登录到 [Azure 经典管理门户]。
-1. 在页面底部，依次单击“新建”、“计算”、“ Web 应用”和“快速创建”。提供 Web 应用的“URL”，并选择 Web 应用的“区域”。最后，单击“创建 Web 应用”。
-
-    ![选择“快速创建” Web 应用](./media/web-sites-php-create-web-sites/select-quickcreate-website.png)
-
-6. 按照[在 Azure Web 应用中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)的说明为新创建的 Web 应用配置 Git 发布。
+1. 登录到 Azure 门户预览，然后单击左下角的“新建”按钮。
+3. 在搜索框中，键入“python”。
+4. 在搜索结果中，选择 **Bottle**，然后单击**创建**。
+5. 配置新的 Bottle 应用，如为其创建新的 App Service 计划和新的资源组。然后单击**创建**。
+6. 按照[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/) 的说明为新创建的 Web 应用配置 Git 发布。
  
 ## 应用程序概述
 
@@ -126,7 +125,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 克隆存储库
 
-首先，使用 Azure 经典管理门户上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure Web 应用中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用 Azure 门户预览网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -138,7 +137,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 - 请确保环境的名称是 `env`。
 
-- 选择基解释器。请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典管理门户的站点中）。
+- 选择基解释器。请确保使用的 Python 版本与 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的**应用程序设置**边栏选项卡）。
 
 - 请确保选中此选项以下载并安装软件包。
 
@@ -193,7 +192,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure Web 应用中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -203,7 +202,7 @@ Visual Studio 不会显示部署的进度。
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典管理门户的站点中）
+请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的“应用程序设置”边栏选项卡）。
 
 对于 Python 2.7：
 
@@ -272,7 +271,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure Web 应用中使用本地 GIT 部署](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -282,7 +281,7 @@ Visual Studio 不会显示部署的进度。
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典管理门户的站点中）。
+请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的“应用程序设置”边栏选项卡）。
 
 对于 Python 2.7：
 
@@ -291,7 +290,7 @@ Visual Studio 不会显示部署的进度。
 对于 Python 3.4：
 
     python -m venv env
-或
+或 
 	pyvenv env
 
 安装应用程序所需的任何外部软件包。可以使用该存储库的根处 requirements.txt 文件在虚拟环境中安装软件包：
@@ -371,6 +370,9 @@ Visual Studio 不会显示部署的进度。
 - [具有 Python Tools for Visual Studio 的 Azure 上的 Bottle 和 MongoDB]
 - [具有 Python Tools for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储]
 
+## 发生的更改
+* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
+
 
 <!--Link references-->
 [具有 Python Tools for Visual Studio 的 Azure 上的 Bottle 和 MongoDB]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage/
@@ -382,11 +384,11 @@ Visual Studio 不会显示部署的进度。
 [python.org]: http://www.python.org/
 [Git for Windows]: http://msysgit.github.io/
 [GitHub for Windows]: https://windows.github.com/
-[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
+[Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Visual Studio]: http://www.visualstudio.com/
 [Python Tools for Visual Studio 文档]: http://aka.ms/ptvsdocs
 [Bottle 文档]: http://bottlepy.org/docs/dev/index.html
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0919_2016-->

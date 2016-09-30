@@ -31,6 +31,10 @@
 
 [Azure SDK for .NET 2.6 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_6/)
 
+##Azure SDK for .NET 2.5.1 发行说明
+
+[Azure SDK for .NET 2.5.1 发行说明](/documentation/articles/app-service-release-notes/)
+
 ##Azure SDK for .NET 2.5 发行说明
 
 [Azure SDK for .NET 2.5 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn873976.aspx)
