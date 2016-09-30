@@ -11,7 +11,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="02/25/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 
 # 使用 Azure SDK for Java 在 Azure App Service 中创建 Web 应用

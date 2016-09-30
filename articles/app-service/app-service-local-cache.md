@@ -12,7 +12,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="03/04/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # Azure 应用服务本地缓存概述
 

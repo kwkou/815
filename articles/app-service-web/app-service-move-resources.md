@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/04/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 	
 # 受支持的迁移配置
 

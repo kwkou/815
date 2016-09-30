@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-api"
 	ms.date="05/03/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # API 应用概述
 

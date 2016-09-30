@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/27/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 使用 Visual Studio 部署 Web 作业
 

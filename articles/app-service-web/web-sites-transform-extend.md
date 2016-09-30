@@ -2,7 +2,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="09/16/2015"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # Azure 网站高级配置和扩展
 

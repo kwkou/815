@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/19/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 
 # 在 Azure 中使用 Django 创建 Web 应用

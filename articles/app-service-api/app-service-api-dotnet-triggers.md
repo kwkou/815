@@ -12,7 +12,7 @@
 <tags
 	ms.service="logic-apps"
 	ms.date="03/16/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # Azure 应用服务 API 应用触发器
 

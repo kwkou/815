@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="06/01/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 在 Azure App Service 中创建 .NET Web 作业
 

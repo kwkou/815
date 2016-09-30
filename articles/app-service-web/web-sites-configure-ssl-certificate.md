@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="08/08/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 使用 HTTPS 保护应用的自定义域
 

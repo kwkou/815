@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="02/26/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 有关在 Azure 门户中导航的参考
 

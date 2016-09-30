@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="02/26/2016" 
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 使用 Active Directory 在 Azure 中进行身份验证 #
 

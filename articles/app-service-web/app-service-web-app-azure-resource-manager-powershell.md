@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="06/14/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 使用基于 Azure Resource Manager 的 PowerShell 来管理 Azure Web Apps#
 

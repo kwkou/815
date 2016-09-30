@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/12/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 
 #在 Azure App Service 中保护应用安全

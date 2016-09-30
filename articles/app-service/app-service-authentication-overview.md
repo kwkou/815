@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/25/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # Azure 应用服务中的身份验证和授权
 

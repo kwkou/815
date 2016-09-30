@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/27/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 部署链接到 GitHub 存储库的网站
 

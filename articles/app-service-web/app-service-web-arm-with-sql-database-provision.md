@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/27/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 设置使用 SQL 数据库的 Web 应用
 

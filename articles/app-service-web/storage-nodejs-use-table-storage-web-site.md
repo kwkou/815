@@ -11,7 +11,7 @@
 <tags
 	ms.service="storage"
 	ms.date="06/24/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 
 

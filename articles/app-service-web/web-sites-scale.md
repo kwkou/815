@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="07/05/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 向上缩放 Azure 中的应用 #
 

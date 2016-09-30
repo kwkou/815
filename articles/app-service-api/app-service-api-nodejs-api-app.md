@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-api"
 	ms.date="05/26/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 构建 Node.js RESTful API 并将它部署到 Azure 中的 API 应用
 

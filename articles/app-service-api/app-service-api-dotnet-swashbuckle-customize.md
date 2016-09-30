@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-api"
 	ms.date="02/22/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 自定义 Swashbuckle 生成的 API 定义 
 

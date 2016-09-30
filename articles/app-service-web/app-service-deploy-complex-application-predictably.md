@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/06/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 
 # 按可预见的方式在 Azure 中设置和部署微服务 #

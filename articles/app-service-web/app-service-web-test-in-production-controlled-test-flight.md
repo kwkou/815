@@ -12,7 +12,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/02/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 # Azure 中的试验部署（beta 测试）
 
 本教程说明如何通过集成 [Azure Web 应用](/documentation/services/web-sites/)和 [Azure Application Insights](/home/features/application-insights/) 的各种功能来进行试验部署。

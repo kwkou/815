@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="07/06/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 在 Azure 中还原应用
 

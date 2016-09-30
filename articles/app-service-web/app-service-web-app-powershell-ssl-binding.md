@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="01/13/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""/>
 
 # 使用 PowerShell 创建 Azure App Service SSL 证书绑定 #
 
