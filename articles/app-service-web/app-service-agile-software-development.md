@@ -90,7 +90,7 @@
 	> <p>1. 打开文件“ProdAndStage.json”，然后搜索“sourcecontrols”。
 	> <p>2. 在“properties”内添加 `"IsManualIntegration": true` 
 	> <p>3. 在“ProdAndStage.json”和“deploy.ps1”中，将“West US”或“East US”替换为“China East”或“China North”
-	> <p>Azure 中国区，我们无法通过新门户设置 GitHub 凭据。因此，连续部署仅适用于公共存储库。
+	> <p>Azure 中国区的新门户尚不能管理 Azure Web 应用，因此我们无法设置 GitHub 凭据。因此，连续部署仅适用于公共存储库。
 
 4.	出现提示时，键入所需的用户名和密码来访问数据库。
 
