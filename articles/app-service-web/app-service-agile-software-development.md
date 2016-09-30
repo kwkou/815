@@ -90,6 +90,8 @@
 	> <p>1. 打开文件“ProdAndStage.json”，然后搜索“sourcecontrols”。
 	> <p>2. 在“properties”内添加 `"IsManualIntegration": true` 
 	> <p>3. 在“ProdAndStage.json”和“deploy.ps1”中，将“West US”或“East US”替换为“China East”或“China North”
+	> <p>
+	> <P>[这里](https://github.com/bbetstcw/ToDoApp)可以找到一个已经改好的版本。
 	> <p>Azure 中国区，我们无法通过新门户设置 GitHub 凭据。因此，连续部署仅适用于公共存储库。
 
 4.	出现提示时，键入所需的用户名和密码来访问数据库。
@@ -127,6 +129,8 @@
 		.\deploy.ps1 -TemplateFile .\Dev.json -RepoUrl https://github.com/<your_fork>/ToDoApp.git -Branch NewUpdate
 
 	>[AZURE.NOTE] 应该对“Dev.json”进行相同的修改，就像你对“ProdAndStage.json”所做的修改一样
+	> <p>
+	> <P>[这里](https://github.com/bbetstcw/ToDoApp)可以找到一个已经改好的版本。
 
 1.	出现提示时，键入所需的用户名和密码来访问数据库。
 
@@ -181,9 +185,9 @@
 	![](./media/app-service-agile-software-development/commit-1-changes.png)
 
 	>[AZURE.NOTE] 如果无法看到上述图像：
-	>
-	>- 在第 18 行，将 `check-list` 更改为 `list-group`。
-	>- 在第 19 行，将 `class="check-list-item"` 更改为 `class="list-group-item"`。
+	><p>
+	><p>- 在第 18 行，将 `check-list` 更改为 `list-group`。
+	><p>- 在第 19 行，将 `class="check-list-item"` 更改为 `class="list-group-item"`。
 
 3.	保存更改。返回到 Git Shell 并运行以下命令：
 
