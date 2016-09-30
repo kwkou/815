@@ -23,7 +23,7 @@
 
 本文介绍如何实现 API 应用触发器，并从逻辑应用使用这些触发器。
 
-本主题中的所有代码片段复制自 [FileWatcher API 应用代码示例](http://go.microsoft.com/fwlink/?LinkId=534802)。
+本主题中的所有代码片段复制自 [FileWatcher API 应用代码示例](https://code.msdn.microsoft.com/FileWatcher-Azure-API-App-313c5cb3)。
 
 请注意，需要下载以下 nuget 包才能生成和运行本文所述的代码：[http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/](http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/)。
 

@@ -14,7 +14,7 @@
 
 # 使用 Azure 门户克隆 Azure App Service 应用#
 
-[Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 中的克隆功能可让你轻松将现有 Web 应用克隆到位于不同或相同区域中的新建应用。这样，客户就可以跨不同区域部署许多应用。
+[Azure App Service Web Apps](/documentation/services/web-sites/) 中的克隆功能可让你轻松将现有 Web 应用克隆到位于不同或相同区域中的新建应用。这样，客户就可以跨不同区域部署许多应用。
 
 应用克隆目前仅支持高级层 App Service 计划。新功能使用与 Web Apps 备份功能相同的限制，具体请参阅[在 Azure App Service 中备份 Web 应用](/documentation/articles/web-sites-backup/)。
 

@@ -35,7 +35,7 @@ API 应用更新的关键设计原则是让用户以所选的语言直接使用 
 有关新身份验证功能的详细信息，请参阅 [Authentication and authorization for API Apps in Azure App Service](/documentation/articles/app-service-api-authentication/)（Azure 应用服务中 API 应用的身份验证和授权）。有关如何将现有 API 应用从以前的 API 应用模型迁移到新模型的详细信息，请参阅本文稍后的[迁移现有 API 应用](#migrating-existing-api-apps)。
  
 ### CORS
-现在，Azure 管理门户中提供了一个边栏选项卡用于配置 CORS，而不再提供以逗号分隔的 **MS\_CrossDomainOrigins** 应用设置。也可以使用 Azure PowerShell 或 CLI等 Resource Manager 工具进行配置。在 **&lt;site name&gt;/web** 资源的 **Microsoft.Web/sites/config** 资源类型中设置 **cors** 属性。例如：
+现在，Azure 管理门户中提供了一个边栏选项卡用于配置 CORS，而不再提供以逗号分隔的 **MS\_CrossDomainOrigins** 应用设置。也可以使用 Azure PowerShell、CLI 或[资源浏览器](https://resources.azure.com/)等 Resource Manager 工具进行配置。在 **&lt;site name&gt;/web** 资源的 **Microsoft.Web/sites/config** 资源类型中设置 **cors** 属性。例如：
 
     {
         "cors": {
@@ -64,7 +64,9 @@ Web 应用、移动应用和 API 应用中各自提供了 API 定义边栏选项
 
 大多数 Web 应用工具适用于新的 API 应用，因为它们共享相同的基础 **Microsoft.Web/sites** 资源类型。但是，应该将 Azure Visual Studio 工具升级到 2.8.1 或更高版本，因为它公开一些特定于 API 的功能。从 [Azure 下载页](/downloads/)下载 SDK。
 
-随着应用服务类型的合理化，发布功能也已在“发布”>“导入” （选择你从经典管理门户或者新门户下载的你的应用的发布配置文件）。
+随着应用服务类型的合理化，发布功能也已在“发布”>“Azure 应用服务”下面统一：
+
+![API 应用发布](./media/app-service-api-whats-changed/api-apps-publish.png)
 
 有关 SDK 2.8.1 的详细信息，请阅读通告[博客文章](https://azure.microsoft.com/blog/announcing-azure-sdk-2-8-1-for-net/)。
 

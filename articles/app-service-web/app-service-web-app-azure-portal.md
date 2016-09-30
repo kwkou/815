@@ -14,7 +14,7 @@
 
 # 有关在 Azure 门户中导航的参考
 
-Azure 网站现在称为 [App Service Web Apps](/documentation/articles/app-service-changes-existing-services/)。我们正在更新所有文档以反应此名称更改，并为 Azure 门户提供说明。完成该过程之前，你可以使用此文档作为在新 Azure 门户中使用 Web Apps 的指南。
+Azure 网站现在称为 [App Service Web Apps](/documentation/services/web-sites/)。我们正在更新所有文档以反应此名称更改，并为 Azure 门户提供说明。完成该过程之前，你可以使用此文档作为在新 Azure 门户中使用 Web Apps 的指南。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
  
@@ -75,8 +75,10 @@ Azure 门户则可以利用多个服务中的组件端对端地轻松构建应�
 [Azure Management Portal]: https://portal.azure.cn
 [Azure 库]: /marketplace/
 
+>[AZURE.NOTE] 如果想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 Azure App Service](https://tryappservice.azure.com/)，你可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+
 ## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
+* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](/documentation/services/web-sites/)
  
 
 <!---HONumber=Mooncake_0328_2016-->

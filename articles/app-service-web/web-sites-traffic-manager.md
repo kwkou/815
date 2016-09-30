@@ -11,14 +11,14 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/25/2016" 
-	wacn.date=""/>
+	wacn.date="04/26/2016"/>
 
 # 使用 Azure 流量管理器控制 Azure Web 应用流量
 
-> [AZURE.NOTE]因为 Azure 流量管理器与 Azure App Service Web 应用相关，本文提供了有关 Azure 流量管理器的摘要信息。有关 Azure Traffic Manager 本身的更多信息，请访问本文结尾处的链接。
+> [AZURE.NOTE]因为 Azure 流量管理器与 Azure Web 应用相关，本文提供了有关 Azure 流量管理器的摘要信息。有关 Azure Traffic Manager 本身的更多信息，请访问本文结尾处的链接。
 
 ## 介绍
-你可以使用 Azure 流量管理器控制如何将来自 Web 客户端的请求分发到 Azure App Service 中。将 Web 应用终结点添加到 Azure 流量管理器配置文件后，Azure 流量管理器会跟踪 Web 应用的状态（正在运行、已停止或已删除），这样它就能确定那些终结点中有哪些应该接收流量。
+你可以使用 Azure 流量管理器控制如何将来自 Web 客户端的请求分发到 Azure 中。将 Web 应用终结点添加到 Azure 流量管理器配置文件后，Azure 流量管理器会跟踪 Web 应用的状态（正在运行、已停止或已删除），这样它就能确定那些终结点中有哪些应该接收流量。
 
 ## 负载平衡方法
 Azure 流量管理器使用三种不同的负载平衡方法。以下列表描述了与 Azure Web 应用相关的这些方法。

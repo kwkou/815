@@ -10,22 +10,20 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/07/2016"
-	wacn.date=""/>
+	wacn.date="05/30/2016"/>
 
 # 使用 PowerShell 将应用程序连接到虚拟网络 #
 
 ## 概述 ##
 
-在 Azure App Service 中，可以将应用（Web、移动或 API）连接到订阅中的 Azure 虚拟网络 (VNet)。此功能称为 VNet 集成。
+在 Azure Web 应用中，可以将应用连接到订阅中的虚拟网络 (VNet)。此功能称为 VNet 集成。
 
-VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典部署模型或 Azure Resource Manager 部署模型部署的虚拟网络集成。如果想要详细了解该功能，请参阅[将应用与 Azure 虚拟网络集成](/documentation/articles/web-sites-integrate-with-vnet/)。
-
-本文不会介绍如何使用 UI，而是介绍如何使用 PowerShell 来启用集成。由于每种部署模型使用的命令不同，本文中针对每种部署模型各添加了一个部分。
+本文介绍如何使用 PowerShell 来启用集成。
 
 继续阅读本文之前，请确保满足以下条件：
 
 - 安装最新的 Azure PowerShell SDK。可以使用 Web 平台安装程序来安装。
-- 在标准或高级 SKU 中运行的 Azure App Service 中的应用。
+- 在标准或高级 SKU 中运行的 Azure 中的应用。
 
 ## 经典虚拟网络 ##
 
@@ -43,17 +41,17 @@ VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典�
 1. 将 Web 应用证书上载到虚拟网络，然后检索点到站点 VPN 包 URI。
 1. 使用点到站点包 URI 更新 Web 应用的虚拟网络连接。
 
-第一和第三个步骤完全可以通过编写脚本来完成，但第二个步骤需要通过门户执行一次性的手动操作，或访问以在虚拟网络 Azure Resource Manager 终结点上执行 **PUT** 或 **PATCH** 操作。请联系 Azure 支持人员以启用此功能。开始之前，请确保经典虚拟网络已启用点到站点连接并已部署网关。若要创建网关并启用点到站点连接，需要根据 [Creating a VPN gateway][createvpngateway]（创建 VPN 网关）中所述使用门户。
+第一和第三个步骤完全可以通过编写脚本来完成，但第二个步骤需要通过经典管理门户执行一次性的手动操作，或访问以在虚拟网络 Azure Resource Manager 终结点上执行 **PUT** 或 **PATCH** 操作。请联系 Azure 支持人员以启用此功能。开始之前，请确保经典虚拟网络已启用点到站点连接并已部署网关。若要创建网关并启用点到站点连接，需要根据 [Creating a VPN gateway（创建 VPN 网关）][createvpngateway]中所述使用经典管理门户。
 
-经典虚拟网络需要与保存了要集成的应用的应用服务计划位于相同的订阅中。
+经典虚拟网络需要与 App Service 计划位于相同的订阅中，其中保存了你要集成的应用。
 
 ##### 设置 Azure PowerShell SDK #####
 
-打开 PowerShell 窗口，使用以下命令设置 Azure 帐户和订阅：
+打开 PowerShell 窗口，然后使用以下命令设置 Azure 帐户和订阅：
 
 	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-该命令将打开提示符以获取你的 Azure 凭据。登录后，使用以下命令来选择要用的订阅。请确保使用包含虚拟网络和应用服务计划的订阅。
+该命令将打开提示符以获取你的 Azure 凭据。登录后，使用以下命令来选择要用的订阅。请确保使用包含你的虚拟网络和 App Service 计划的订阅。
 
 	Select-AzureRmSubscription -SubscriptionName [WebAppSubscriptionName]
 
@@ -94,7 +92,7 @@ VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典�
 	VnetResourceGroup              testase1-rg
 	VnetName                       TestNetwork
 	WebAppName                     vnetintdemoapp
-	WebAppLocation                 chinaeast
+	WebAppLocation                 centralus
 
 本部分的余下内容假设你已按前面所述创建了变量。
 
@@ -108,9 +106,9 @@ VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典�
 
 ##### 将 Web 应用证书上载到虚拟网络 #####
 
-需要针对订阅与虚拟网络的每个组合执行一次性的手动步骤。也就是说，如果将订阅 A 中的应用连接到虚拟网络 A，只需执行此步骤一次，而不管配置了多少个应用。如果将新的应用添加到另一个虚拟网络，则需要再次执行此步骤。这是因为证书集是在 Azure App Service 的订阅级别生成的，并且针对应用将要连接到的每个虚拟网络生成该集一次。
+需要针对订阅与虚拟网络的每个组合执行一次性的手动步骤。也就是说，如果将订阅 A 中的应用连接到虚拟网络 A，你只需执行此步骤一次，而不管配置了多少个应用。如果将新的应用添加到另一个虚拟网络，则需要再次执行此步骤。这是因为证书集是在 Azure Web 应用的订阅级别生成的，并且针对应用将要连接到的每个虚拟网络生成该集一次。
 
-如果你遵循了这些步骤，或者已使用门户来与相同的虚拟网络集成，则证书已设置。
+如果你遵循了这些步骤，或者已使用经典管理门户来与相同的虚拟网络集成，则证书已设置。
 
 第一个步骤是生成 .cer 文件。第二个步骤是将 .cer 文件上载到虚拟网络。若要从前一步骤中的 API 调用生成 .cer 文件，请运行以下命令。
 
@@ -119,7 +117,7 @@ VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典�
 
 可在 **$Configuration.GeneratedCertificatePath** 指定的位置找到证书。
 
-若要手动上载证书，请在 [Azure 门户][azureportal]中，选择“浏览虚拟网络(经典)”>“VPN 连接”>“点到站点”>“管理证书”。从此处上载证书。
+若要手动上载证书，请在 Azure 经典管理门户中，单击“网络”>“你的 Vnet”>“证书”>“上载”。
 
 ##### 获取点到站点包 #####
 
@@ -166,7 +164,7 @@ VNet 集成功能在新门户中有用户界面 (UI)，可让你与使用经典�
 	$output = New-AzureRmResourceGroupDeployment -Name unused -ResourceGroupName $Configuration.VnetResourceGroup -TemplateParameterObject $parameters -TemplateFile C:\PATH\TO\GetNetworkPackageUri.json
 
 
-变量 **$output.Outputs.packageUri** 现在包含要提供给 Web 应用的包 URI。
+变量 **$output.Outputs.packageUri** 现在会包含要提供给 Web 应用的包 URI。
 
 ##### 将点到站点包上载到应用 #####
 
@@ -206,7 +204,7 @@ Resource Manager 虚拟网络具有 Azure Resource Manager API，与经典虚拟
 - 将应用与已启用网关和点到站点连接的现有 Resource Manager 虚拟网络集成。
 - 从虚拟网络断开连接应用。
 
-### Resource Manager VNet 应用服务集成脚本 ###
+### Resource Manager VNet Azure Web 应用集成脚本 ###
 
 复制以下脚本并将它保存到文件。如果你不想要使用该脚本，可以自由学习该脚本，以了解如何对 Resource Manager 虚拟网络进行设置。
 
@@ -605,7 +603,7 @@ Resource Manager 虚拟网络具有 Azure Resource Manager API，与经典虚拟
 	    RemoveVnet $subscriptionId $resourceGroup $appName
     }
 
-保存该脚本的副本。在本文中，其名称为 V2VnetAllinOne.ps1，但你可以使用其他名称。此脚本没有参数。你可以直接运行它。脚本执行所做的第一件事是提示你登录。登录后，脚本将获取有关帐户的详细信息，并返回订阅列表。如果不考虑凭据请求部分，初始脚本执行的情况如下所示：
+保存该脚本的副本。在本文中，其名称为 V2VnetAllinOne.ps1，但你可以使用其他名称。此脚本没有参数。你可以直接运行它。脚本执行所做的第一件事是提示你登录。登录后，脚本将获取有关你帐户的详细信息，并返回订阅列表。如果不考虑凭据请求部分，初始脚本执行的情况如下所示：
 
 	PS C:\Users\ccompy\Documents\VNET> .\V2VnetAllInOne.ps1
 	Please Login
@@ -658,9 +656,9 @@ Resource Manager 虚拟网络具有 Azure Resource Manager API，与经典虚拟
 	Do you wish to change these settings?
 	[Y] Yes  [N] No  [?] Help (default is "N"):
 
-如果想更改任何值，请键入 **Y**，然后进行更改。如果对虚拟网络设置感到满意，请键入 **N**，或者在系统提示是否更改设置时按 Enter。从此处开始，脚本将告诉你它正在执行什么操作，直到开始创建虚拟网络网关为止。该步骤最多需要一个小时。在此阶段没有任何进度指示器，但创建好网关后，脚本会告诉你。
+如果你想要更改任何值，请键入 **Y**，然后进行更改。如果你对虚拟网络设置感到满意，请键入 **N**，或者在系统提示是否更改设置时按 Enter。从此处开始，脚本将告诉你它正在执行什么操作，直到开始创建虚拟网络网关为止。该步骤最多需要一个小时。在此阶段没有任何进度指示器，但创建好网关后，脚本会告诉你。
 
-脚本完成时，会显示“Finished”。此时，你已创建了一个具有所选名称和设置的 Resource Manager 虚拟网络。此新虚拟网络也将与你的应用集成。
+脚本完成时，会显示 **Finished**。此时，你已创建了一个具有所选名称和设置的 Resource Manager 虚拟网络。此新虚拟网络也将与你的应用集成。
 
 ### 将应用与现有的 Resource Manager VNet 集成 ###
 
@@ -701,7 +699,7 @@ Resource Manager 虚拟网络具有 Azure Resource Manager API，与经典虚拟
 	[Y] Yes  [N] No  [?] Help (default is "N"):
 	Creating App association to VNET
 
-如果你想要更改上述任何设置，可以这样做。否则请按 Enter 键，然后脚本将创建网关，并将应用附加到虚拟网络。网关创建时间仍为一小时，因此请确保有心理准备。一切完成后，脚本将显示“Finished”。
+如果你想要更改上述任何设置，可以这样做。否则请按 Enter 键，然后脚本将创建网关，并将应用附加到虚拟网络。网关创建时间仍为一小时，因此请确保有心理准备。一切完成后，脚本将显示 **Finished**。
 
 ### 从 Resource Manager VNet 断开连接应用 ###
 
@@ -715,10 +713,10 @@ Resource Manager 虚拟网络具有 Azure Resource Manager API，与经典虚拟
 	hell/virtualNetworkConnections/v2pshell
 	[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 
-尽管脚本中有 delete 字样，但实际上不会删除虚拟网络。它只是删除集成。在用户确认这是要执行的操作之后，命令将快速进行处理，并在完成时返回“True”。
+尽管脚本中有 delete 字样，但实际上不会删除虚拟网络。它只是删除集成。在确认这是你想要执行的操作之后，命令将快速进行处理，并在完成时返回 **True**。
 
 <!--Links-->
 [createvpngateway]: /documentation/articles/vpn-gateway-point-to-site-create/
 [azureportal]: http://portal.azure.cn
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0523_2016-->

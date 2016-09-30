@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用并将其部署到 Azure App Service" 
+	pageTitle="创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用并将其部署到 Azure Web 应用" 
 	description="了解如何开发具有 SQL 数据库后端的 ASP.NET MVC 5 应用程序，添加身份验证和授权，并将其部署到 Azure。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -11,11 +11,11 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="03/21/2016"
-	wacn.date=""/>
+	wacn.date="05/16/2016"/>
 
-# 创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用并将其部署到 Azure App Service
+# 创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用并将其部署到 Azure
 
-本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用，以便用户能够使用 Microsoft 凭据进行登录。该应用是一个简单的联系人列表，它使用 ADO.NET Entity Framework 进行数据库访问。你需要将该应用部署到 [Azure App Service](/documentation/services/web-sites/)。
+本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用，以便用户能够使用 Facebook 或 Google 凭据进行登录。该应用是一个简单的联系人列表，它使用 ADO.NET Entity Framework 进行数据库访问。你需要将该应用部署到 [Azure Web 应用](/documentation/services/web-sites/)。
 
 完成本教程之后，你将能够在云中启动并运行安全的数据驱动的 Web 应用程序，以及使用云数据库。下图演示了已完成的应用程序的登录页。
 
@@ -24,14 +24,14 @@
 学习内容：
 
 * 如何在 Visual Studio 中创建安全的 ASP.NET MVC 5 Web 项目。
-* 如何对使用 Microsoft 帐户凭据登录的用户进行身份验证和授权（使用 [OAuth 2.0](http://oauth.net/2 "http://oauth.net/2") 的社交网络提供商身份验证）。
+* 如何对使用 Google 或 Facebook 帐户凭据登录的用户进行身份验证和授权（使用 [OAuth 2.0](http://oauth.net/2 "http://oauth.net/2") 的社交网络提供商身份验证）。
 * 如何对在应用程序管理的数据库中注册的用户进行身份验证和授权（使用 [ASP.NET 标识](http://asp.net/identity/)的本地身份验证）。
 * 如何使用 ADO.NET Entity Framework 6 Code First 在 SQL 数据库中读取和写入数据。
 * 如何使用 Entity Framework Code First 迁移来部署数据库。
 * 如何使用 Azure SQL 数据库在云中存储关系数据。
-* 如何部署 Web 项目，以便将数据库用于 Azure App Service 中的 [Web 应用](/documentation/services/web-sites/)。
+* 如何部署 Web 项目，以便将数据库用于 Azure Web 应用中的 [Web 应用](/documentation/services/web-sites/)。
 
->[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure App Service 和 Visual Studio Web 项目，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started/)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
+>[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure Web 应用和 Visual Studio Web 项目，请参阅[在 Azure 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started/)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
 >
 
 ## 先决条件
@@ -87,7 +87,7 @@
 
 这就是你创建将要部署到 Azure 的应用程序目前所需的全部操作。
 
-##<a name="bkmk_deploytowindowsazure1"></a> 将应用程序部署到 Azure
+## <a name="bkmk_deploytowindowsazure1"></a> 将应用程序部署到 Azure
 
 1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
 
@@ -149,7 +149,7 @@
 
 	 ![FireFox 证书警告](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss30.PNG)
 
-##<a name="bkmk_addadatabase"></a> 向应用程序添加数据库
+## <a name="bkmk_addadatabase"></a> 向应用程序添加数据库
 
 接下来，你将更新应用程序以添加显示和更新联系人以及在数据库中存储数据的功能。应用程序将使用 Entity Framework (EF) 创建数据库并读取和更新数据。
 
@@ -227,7 +227,6 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 2. 在“包管理器控制台”窗口中，输入以下命令：
 
 		add-migration Initial
-
 
 	**add-migration Initial** 命令将在 Migrations 文件夹中生成一个名为 **&lt;date\_stamp&gt;Initial** 的文件。此文件中的代码将生成数据库表。第一个参数 (**Initial**) 用于创建文件的名称。你可以在“解决方案资源管理器”中查看新的类文件。
 
@@ -308,9 +307,9 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	![数据的 MVC 视图][rx2]
 
-##<a name="addOauth"></a> 添加 OAuth2 提供程序
+## <a name="addOauth"></a> 添加 OAuth2 提供程序
 
-[OAuth](http://oauth.net/ "http://oauth.net/") 是一种开放协议，允许以一种简单而标准的方法从 Web、移动和桌面应用程序进行安全授权。ASP.NET MVC Internet 模板使用 OAuth 公开将 Microsoft 作为身份验证提供程序。虽然本教程仅使用 Google 作为身份验证提供程序，但你可轻松修改代码以使用其中任一提供程序。实施其他提供程序的步骤与你将在本教程中看到的步骤非常类似。若要将 LinkedIn 用作身份验证提供程序，请参阅[使用 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录名创建 MVC 5 应用](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)。
+[OAuth](http://oauth.net/ "http://oauth.net/") 是一种开放协议，允许以一种简单而标准的方法从 Web、移动和桌面应用程序进行安全授权。ASP.NET MVC Internet 模板使用 OAuth 公开将 Facebook、Twitter、Google 和 Microsoft 作为身份验证提供程序。虽然本教程仅使用 Google 作为身份验证提供程序，但你可轻松修改代码以使用其中任一提供程序。实施其他提供程序的步骤与你将在本教程中看到的步骤非常类似。若要将 Facebook 用作身份验证提供程序，请参阅[使用 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录名创建 MVC 5 应用](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)。
 
 除了身份验证外，本教程还将使用角色实施授权。只有你添加到 canEdit 角色中的用户将能更改数据（即，创建、编辑或删除联系人）。
 
@@ -320,7 +319,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 2. 如果想要创建具有特定提供程序图标的社交登录按钮，请参阅 [ASP.NET MVC 5 的美观社交登录按钮](http://www.jerriepelser.com/blog/pretty-social-login-buttons-for-asp-net-mvc-5)
 
-##<a name="mbrDB"></a> 使用成员资格 API
+## <a name="mbrDB"></a> 使用成员资格 API
 
 在本节中，你会将本地用户和 canEdit 角色添加到成员资格数据库。只有具有 canEdit 角色的用户才能编辑数据。最佳做法是按照角色可以执行的操作命名这些角色，因此 canEdit 优于名为 admin 的角色。在你的应用程序升级后，你可以添加新角色，例如 canDeleteMembers，而不是描述性较差的 superAdmin。
 
@@ -421,7 +420,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 **Update-Database** 命令将运行 **Seed** 方法，而该方法将运行你前面添加的 **AddUserAndRole** 方法。**AddUserAndRole** 方法将创建用户 user1@contoso.com 并将其添加到 canEdit 角色。
 
-##<a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a> 通过 SSL 和 Authorize 属性保护应用程序 ##
+## <a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a> 通过 SSL 和 Authorize 属性保护应用程序 ##
 
 在本部分中，你将应用 [Authorize](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.authorizeattribute.aspx) 属性以限制对操作方法的访问。匿名用户将只能查看主控制器的 **Index** 操作方法。注册用户将能够查看联系人数据（Cm 控制器的“索引”和“详细信息”页）、“关于”页和“联系人”页。只有具有 canEdit 角色的用户才能访问可更改数据的操作方法。
 
@@ -512,7 +511,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 1. 验证你是否能执行数据更改。
 
-##<a name="bkmk_deploytowindowsazure11"></a> 将应用部署到 Azure
+## <a name="bkmk_deploytowindowsazure11"></a> 将应用部署到 Azure
 
 1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
 
@@ -537,13 +536,13 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 1. 转至 [Google 开发人员控制台](https://console.developers.google.com/)，并在“凭据”选项卡上更新重定向 URI 和 JavaScript 来源，以使用 Azure URL。
 
-1. 使用 Microsoft 登录。这会将 Microsoftk 帐户添加到 **canEdit** 角色。如果收到 HTTP 400 错误消息“https://contactmanager{my version}.chinacloudsites.cn/signin-google 请求中的重定向 URI 与注册的重定向 URI 不匹配。”，则必须等待所做更改传播完成。如果在几分钟后收到此错误，请验证 URI 是否正确。
+1. 使用 Google 或 Facebook 登录。这会将 Google 或 Facebook 帐户添加到 **canEdit** 角色。如果收到 HTTP 400 错误消息“https://contactmanager{my version}.chinacloudsites.cn/signin-google 请求中的重定向 URI 与注册的重定向 URI 不匹配。”，则必须等待所做更改传播完成。如果在几分钟后收到此错误，请验证 URI 是否正确。
 
 ### 停止 Web 应用以阻止其他人注册  
 
-你可以从 [Azure 门户](https://portal.azure.cn/)中选择 Web 应用，然后单击选项卡底部的“停止”图标。
+你可以从 [Azure 经典管理门户](https://manage.windowsazure.cn)中选择 Web 应用，然后单击页面底部的“停止”图标。
 
-	![停止 Web 应用门户](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
+![停止 Web 应用经典管理门户](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
 ### 删除 AddToRoleAsync、发布和测试
 
@@ -555,7 +554,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 5. 在“解决方案资源管理器”中，右键单击该项目并选择“发布”。
 
-	   ![项目上下文菜单中的“发布”](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
+	![项目上下文菜单中的“发布”](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
 	
 4. 单击“开始预览”按钮。只会部署需要更新的文件。
 
@@ -585,7 +584,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	你将重定向到登录页。
 
-2. 在“使用其他服务进行登录”下，单击“Microsoft”并使用你之前注册的帐户进行登录。（如果你的动作够快，同时会话 Cookie 未超时，将使用你先前所用的 Microsoft 帐户为你自动登录。）
+2. 在“使用其他服务进行登录”下，单击“Google”或“Facebook”并使用你之前注册的帐户进行登录。（如果你的动作够快，同时会话 Cookie 未超时，将使用你先前所用的 Google 或 Facebook 帐户为你自动登录。）
 
 2. 验证你是否能在登录到该帐户时编辑数据。
 
@@ -621,7 +620,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
  
 3. 验证 **UserId** 是否来自 user1@contoso.com 和你注册的 Google 帐户。
 
-##<a name="troubleshooting"></a> 疑难解答
+## <a name="troubleshooting"></a> 疑难解答
 
 如果你遇到了问题，请尝试遵循以下建议。
 
@@ -629,7 +628,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 * 创建 Azure 资源时出现错误消息“你的订阅产品类型不支持该操作” - 同上。
 * 部署时出错 - 建议查看[基本 ASP.NET 部署](/documentation/articles/web-sites-dotnet-get-started/)一文。该部署方案较为简单，如果你遇到相同的问题，也许可以轻松地识别原因。例如，在某些企业环境中，企业防火墙可能会阻止 Web Deploy 与 Azure 建立所需的连接类型。
 * 部署时无法在“发布 Web”向导中选择连接字符串 - 如果你使用另一种方法来创建 Azure 资源（例如，尝试部署到在经典管理门户中创建的 Web 应用和 SQL 数据库），SQL 数据库可能与 Web 应用不相关联。最简单的解决方案是根据本教程中所示，使用 VS 创建新的 Web 应用和数据库。不需要从头开始学习本教程 - 在“发布 Web”向导中，可以选择创建新的 web 应用，此时会出现你在创建项目时所看到的相同 Azure 资源创建对话框。
-* 有关 Microsoft 开发人员经典管理门户的指导已过时 - 在本教程末尾的 Disqus 专门注释。
+* 有关 Google 或 Facebook 开发人员经典管理门户的指导已过时 - 在本教程末尾的 Disqus 专门注释。
 
 ## 后续步骤
 
@@ -638,7 +637,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 - [创建具有登录、电子邮件确认及密码重置功能的安全 ASP.NET MVC 5 Web 应用程序](http://www.asp.net/mvc/overview/getting-started/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset)
 - [使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序](http://www.asp.net/mvc/overview/getting-started/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication)
 - [将密码和其他敏感数据部署到　ASP.NET 和 Azure 的最佳做法](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure) 
-- [使用 Facebook 和 Google OAuth2 创建 ASP.NET MVC 5 应用](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)包含有关如何将配置文件数据添加到用户注册数据库的说明以及有关将 LinkedIn 用作身份验证提供程序的说明。
+- [使用 Facebook 和 Google OAuth2 创建 ASP.NET MVC 5 应用](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)包含有关如何将配置文件数据添加到用户注册数据库的说明以及有关将 Facebook 用作身份验证提供程序的说明。
 - [ASP.NET MVC 5 入门](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 
 有关如何使用 Entity Framework 的高级教程，请参阅 [EF 和 MVC 入门](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)。

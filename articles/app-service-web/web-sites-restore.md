@@ -5,78 +5,122 @@
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor="jimbe"/>  
+
 
 <tags
 	ms.service="app-service"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date="08/22/2016"/>  
+
 
 # 在 Azure 中还原应用
 
-本文将演示如何在 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/) 中还原已事先备份的应用（请参阅[在 Azure 中备份应用](/documentation/articles/web-sites-backup/)）。你可以根据需要将应用及其链接的数据库（SQL 数据库或 MySQL）还原到以前的状态，或者基于原始应用的备份之一创建新的应用。创建与最新版本并行运行的新应用对于 A/B 测试会很有用。
+本文说明如何还原 [Azure Web App](/documentation/services/web-sites/) 中已事先备份的应用（参阅 [Back up your app in Azure](/documentation/articles/web-sites-backup/)（在 Azure 中备份应用））。你可以根据需要将应用及其链接的数据库（SQL 数据库或 MySQL）还原到以前的状态，或者基于原始应用的备份之一创建新的应用。创建与最新版本并行运行的新应用对于 A/B 测试会很有用。
 
-从备份还原适用于在**标准**和**高级**层中运行的应用。有关向上缩放应用的信息，请参阅 [Scale up an app in Azure](/documentation/articles/web-sites-scale/)（向上缩放 Azure 中的应用）。相比于**标准**层，**高级**层允许更多的每日备份量。
+从备份还原适用于**标准**层中运行的应用。有关向上缩放应用的信息，请参阅 [Scale up an app in Azure](/documentation/articles/web-sites-scale/)（向上缩放 Azure 中的应用）。
 
 ## <a name="PreviousBackup"></a>从现有备份还原应用
 
-1. 在 Azure 门户中应用的“设置”边栏选项卡上，单击“备份”以显示“备份”边栏选项卡。然后单击命令栏中的“立即还原”。
-	
-	![选择“立即还原”][ChooseRestoreNow]
+1. 在“备份”选项卡上，单击门户页底部的命令栏中的“立即还原”。此时将显示“立即还原”对话框。
 
-3. 在“还原”边栏选项卡中，首先选择备份源。
+	![选择备份源][ChooseBackupSource]
 
-	![](./media/web-sites-restore/021ChooseSource.png)
-	
-	“应用备份”选项显示当前应用的所有现有备份，使你能够轻松地选择一个。“存储”选项使你能够从任何现有 Azure 存储帐户和订阅中的容器中选择任何备份 ZIP 文件。如果正在尝试还原其他应用的备份，请使用“存储”选项。
-
-4. 然后，在“还原目标”中指定应用还原的目标。
-
-	![](./media/web-sites-restore/022ChooseDestination.png)
-	
-	>[AZURE.WARNING] 如果选择“覆盖”，将清除当前应用中所有的现有数据。在单击“确定”之前，请确保该操作正是想要执行的操作。
-	
-	可选择“现有应用”将应用备份还原到同一资源组中的其他应用。使用此选项之前，应已使用应用备份中定义的镜像数据库配置在资源组中创建了其他应用。
-	
-5. 单击**“确定”**。
+2. 在“选择备份源”下，选择“该网站的上一个备份”。
+3. 选择要还原的备份的日期，然后单击向右箭头以继续。
+4. 按本文后面[选择网站还原设置](#RestoreSettings)部分的步骤操作。
 
 ## <a name="StorageAccount"></a>从存储帐户中下载或删除备份
-	
-1. 在 Azure 门户的主“浏览”边栏选项卡中，选择“存储帐户”。
-	
-	将显示现有存储帐户的列表。
-	
-2. 选择包含要下载或删除的备份的存储帐户。
-	
-	将显示存储帐户的边栏选项卡。
 
-3. 在存储帐户边栏选项卡中，选择所需的容器
-	
-	![查看容器][ViewContainers]
+1. 在“备份”选项卡上，单击门户页底部的命令栏中的“立即还原”。此时将显示“立即还原”对话框。
 
-4. 选择要下载或删除的备份文件。
+	![选择备份源][ChooseBackupSource]
 
-	![ViewContainers](./media/web-sites-restore/03ViewFiles.png)
+2. 在“选择备份源”下，选择“存储帐户文件”。在此可以直接指定存储帐户文件的 URL，或单击文件夹图标以导航到 blob 存储并指定备份文件。此示例选择文件夹图标。
 
-5. 单击“下载”还是“删除”具体取决于要执行的操作。
+	![存储帐户文件][StorageAccountFile]  
+
+
+3. 单击文件夹图标，以打开“浏览云存储”对话框。
+
+	![浏览云存储][BrowseCloudStorage]  
+
+
+4. 展开要使用的存储帐户的名称，然后选择 ** Websitebackups**，其中包含你的备份。
+5. 选择包含要还原的备份的 zip 文件，然后单击“打开”。
+6. 存储帐户文件已选好，并显示在存储帐户框中。单击向右箭头以继续。
+
+	![已选择的存储帐户文件][StorageAccountFileSelected]  
+
+
+7. 继续学习[选择网站还原设置并开始还原操作](#RestoreSettings)部分。
+
+## <a name="RestoreSettings"></a>选择网站还原设置并开始还原操作
+
+1. 在“选择网站还原设置”下的“还原到”中，选择“当前网站”或“新网站实例”。
+
+	![选择网站还原设置][ChooseRestoreSettings]  
+
+
+	如果选择“当前网站”，现有网站将会被所选备份改写（破坏性还原）。所选备份创建时间之后对网站所做的所有更改都将被永久删除，而且还原操作是不可撤消的。还原操作期间，将暂时无法使用当前网站，你将会收到相关警告信息。
+
+	如果选择“新网站实例”，将会在同一区域中使用你指定的名称创建一个新网站。（默认情况下，新名称是 **restored-***旧网站名称*。）
+
+	你还原的网站所包含的内容和配置将与在门户中为原网站提供的内容和配置相同。它还将包括你在下一步中选择要包括的任何数据库。
+2. 如果要连同网站一起还原数据库，请在“包含的数据库”下通过使用“还原到”下的下拉列表选择要将数据库还原到其中的数据库服务器的名称。你还可以选择创建要还原到其中的新数据库服务器，或者选择“不还原”，这是默认设置，这样就不会还原数据库。
+
+	选择了服务器名称后，在“数据库名称”框中为还原指定目标数据库的名称。
+
+	如果你的还原包括一个或多个数据库，可选择“自动调整连接字符串”以将备份中存储的连接字符串更新为指向新数据库，或指向数据库服务器，视需要而定。还原完成后，应验证与数据库相关的所有功能都能正常使用。
+
+	![选择数据库服务器主机][ChooseDBServer]  
+
+
+	> [AZURE.NOTE] 不能还原与同一 SQL Server 同名的 SQL 数据库。必须选择其他数据库名称或其他要将该数据库还原到其中的 SQL Server 主机。
+
+	> [AZURE.NOTE] 您可以将同名的 MySQL 数据库还原到同一服务器，但请注意，这将清除出存储在 MySQL 数据库中的现有内容。
+
+3. 如果选择还原现有数据库，需要提供用户名和密码。如果选择还原到新数据库，需要提供新数据库名称：
+
+	![还原到新 SQL 数据库][RestoreToNewSQLDB]  
+
+
+	单击向右箭头以继续。
+
+4. 如果选择创建新数据库，需要在下一个对话框中提供该数据库的凭据和其他初始配置信息。这里的示例显示的是一个新的 SQL 数据库。（用于新 MySQL 数据库的选项会有所不同。）
+
+	![新 SQL 数据库设置][NewSQLDBConfig]  
+
+
+5. 单击复选标记以开始还原操作。操作完成时，在门户网站的列表中将能够看到新网站实例（如果那是你选择的还原选项）。
+
+	![还原的 Contoso 网站][RestoredContoso Website]  
+
 
 ## <a name="OperationLogs"></a>监视还原操作
-	
-1. 若要查看有关应用还原操作成功与否的详细信息，请导航到 Azure 门户中的“审核日志”边栏选项卡。
-	
-	“审核日志”边栏选项卡将显示所有的操作，以及级别、状态、资源和时间的详细信息。
-	
-2. 向下滚动以查找所需的还原操作，然后单击以选中。
 
-“详细信息”边栏选项卡将显示与还原操作相关的可用信息。
-	
-## 后续步骤
+1. 要查看有关网站还原操作成功或失败的详细信息，请转到网站的“仪表板”选项卡。在“速览”部分的“管理服务”下，单击“操作日志”。
 
-还可以使用 REST API 备份和还原应用服务应用（请参阅[使用 REST 备份和还原应用服务应用](/documentation/articles/websites-csm-backup/)）。
+	![仪表板 - 操作日志链接][DashboardOperationLogsLink]  
+
+
+2. 你会跳转到管理服务门户的“操作日志”页面，并可在里面的操作日志列表中看到还原操作日志：
+
+	![“管理服务操作日志”页面][ManagementServicesOperationLogsList]  
+
+
+3. 若要查看有关该操作的详细信息，请在列表中选择该操作，然后单击命令栏上的“详细信息”按钮。
+
+	![“详细信息”按钮][DetailsButton]
+
+	执行此操作时，“操作详细信息”窗口会打开，显示日志文件的可复制内容：
+
+	![操作详细信息][OperationDetails]  
 
 
 <!-- IMAGES -->
-[ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
+[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebSite.png
+[ChooseBackupSource]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png
 [BrowseCloudStorage]: ./media/web-sites-restore/03BrowseCloudStorage.png
@@ -90,6 +134,5 @@
 [ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
- 
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0815_2016-->

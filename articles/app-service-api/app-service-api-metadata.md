@@ -30,7 +30,13 @@
 
 ### Azure Resource Manager 属性
 
-也可以在 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 和 [Azure CLI](/documentation/articles/xplat-cli-install/) 等命令行工具中使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)配置 API 应用的 API 定义 URL。
+也可以在 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 和 [Azure CLI](/documentation/articles/xplat-cli-install/) 等命令行工具中使用[资源浏览器](https://resources.azure.com/)或 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)配置 API 应用的 API 定义 URL。
+
+在“资源浏览器”中，转到“订阅 > {订阅} > resourceGroups > {资源组} > 提供程序 > Microsoft.Web > 站点 > {站点} > 配置 > Web”，即可查看 `apiDefinition` 属性：
+
+		"apiDefinition": {
+		  "url": "https://contactslistapi.chinacloudsites.cn/swagger/docs/v1"
+		}
 
 有关可设置 `apiDefinition` 属性的 Azure Resource Manager 模板的示例，请打开[待办事项列表示例应用程序中的 azuredeploy.json 文件](https://github.com/azure-samples/app-service-api-dotnet-todo-list/blob/master/azuredeploy.json)。找到如以下 JSON 示例所示的模板部分。
 

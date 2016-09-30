@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Django 和 MySQL" 
-	description="了解如何使用 Python Tools for Visual Studio 来创建在 MySQL 数据库实例中存储数据的 Django Web 应用，以及将应用部署到 Azure App Service Web Apps 中。" 
+	description="了解如何使用 Python Tools for Visual Studio 来创建在 MySQL 数据库实例中存储数据的 Django Web 应用，以及将应用部署到 Azure Web Apps 中。" 
 	services="app-service\web" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -11,15 +11,15 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="07/07/2016"
-	wacn.date=""/>
+	wacn.date="08/23/2016"/>
 
 # 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Django 和 MySQL 
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-在本教程中，你将使用 [Python Tools for Visual Studio](PTVS) 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。你将了解如何使用在 Azure 上托管的 MySQL 服务、如何将 Web 应用配置为使用 MySQL，以及如何将 Web 应用发布到 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 中。
+在本教程中，你将使用 [Python Tools for Visual Studio] (PTVS) 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。你将了解如何使用在 Azure 上托管的 MySQL 服务、如何将 Web 应用配置为使用 MySQL，以及如何将 Web 应用发布到 [Azure Web Apps](/documentation/services/web-sites/) 中。
 
-请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure App Service Web Apps。虽然本文将着重介绍 App Service，但 [Azure 云服务]的开发步骤也是类似的。
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure Web Apps。虽然本文将着重介绍 Azure Web 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -127,9 +127,9 @@
 
 1. 使用 `F5` 运行应用程序。使用“创建样本轮询”创建的轮询以及通过投票提交的数据会在 MySQL 数据库中进行序列化。
 
-## 将 Web 应用发布到 Azure App Service
+## 将 Web 应用发布到 Azure
 
-借助 Azure.NET SDK，你可以轻松地将 Web 应用部署到 Azure App Service 中。
+借助 Azure.NET SDK，你可以轻松地将 Web 应用部署到 Azure 中。
 
 1. 在“解决方案资源管理器”中，右键单击项目节点，然后选择“发布”。
 

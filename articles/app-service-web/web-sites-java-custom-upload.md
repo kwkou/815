@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="将自定义 Java Web 应用上载到 Azure" 
-	description="本教程介绍了如何将自定义 Java Web 应用上载到 Azure App Service Web 应用。" 
+	description="本教程介绍了如何将自定义 Java Web 应用上载到 Azure Web 应用。" 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -10,13 +10,13 @@
 <tags 
 	ms.service="app-service-web"
 	ms.date="06/24/2016" 
-	wacn.date=""/>
+	wacn.date="08/23/2016"/>
 
 # 将自定义 Java Web 应用上载到 Azure
 
-本主题介绍了如何将自定义 Java Web 应用上载到 [Azure App Service]。包括适用于 Java Web 应用的信息以及特定应用程序的示例。
+本主题介绍了如何将自定义 Java Web 应用上载到 Azure。包括适用于 Java Web 应用的信息以及特定应用程序的示例。
 
-请注意，Azure 提供了一种使用 Azure 门户配置 UI 创建 Java Web 应用的方法，如 [Azure App Service 和 Java 入门](/documentation/articles/web-sites-java-get-started/)中所述。此教程适用于无需使用 Azure 配置 UI 的方案。
+请注意，Azure 提供了一种使用 Azure 经典管理门户配置 UI 创建 Java Web 应用的方法，如 [Azure Web 应用和 Java 入门](/documentation/articles/web-sites-java-get-started/)中所述。此教程适用于无需使用 Azure 配置 UI 的方案。
 
 ## 配置指南
 
@@ -76,10 +76,10 @@
 
 ## 应用程序配置示例
 
-对于以下应用程序，提供了 web.config 文件和应用程序配置作为示例，用以说明如何在 App Service Web 应用上启用 Java 应用程序。
+对于以下应用程序，提供了 web.config 文件和应用程序配置作为示例，用以说明如何在 Azure Web 应用上启用 Java 应用程序。
 
 ### Tomcat
-尽管 App Service Web 应用提供了两个 Tomcat 变体，但仍可以上载客户特定的实例。使用不同的 JVM 安装 Tomcat 的示例如下。
+尽管 Azure Web 应用提供了两个 Tomcat 变体，但仍可以上载客户特定的实例。使用不同的 JVM 安装 Tomcat 的示例如下。
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
@@ -107,7 +107,7 @@
 -	注释掉 HTTPS 和 AJP 连接器
 -	也可以在 catalina.properties 文件中设置 IPv4 设置，并在其中添加 `java.net.preferIPv4Stack=true`。
     
-App Service Web 应用上不支持 Direct3d 调用。若要禁用这些调用，添加以下 Java 选项使你的应用程序进行以下调用：`-Dsun.java2d.d3d=false`
+Azure Web 应用上不支持 Direct3d 调用。若要禁用这些调用，添加以下 Java 选项使你的应用程序进行以下调用：`-Dsun.java2d.d3d=false`
 
 ### Jetty
 
@@ -179,7 +179,7 @@ App Service Web 应用上不支持 Direct3d 调用。若要禁用这些调用，
 
 ### Liferay
 
-App Service Web 应用支持 Liferay。由于 Liferay 可能需要大量内存，因此站点需要在可以提供足够内存的中型或大型专用工作机上运行。Liferay 也需要花数分钟才能启动。鉴于上述原因，建议你将站点设置为“始终打开”。
+Azure Web 应用支持 Liferay。由于 Liferay 可能需要大量内存，因此站点需要在可以提供足够内存的中型或大型专用工作机上运行。Liferay 也需要花数分钟才能启动。鉴于上述原因，建议你将站点设置为“始终打开”。
 
 使用与 Tomcat 捆绑的 Liferay 6.1.2 Community Edition GA3 时，下载 Liferay 后将编辑以下文件：
 
@@ -224,11 +224,5 @@ App Service Web 应用支持 Liferay。由于 Liferay 可能需要大量内存�
 做完上述更改后，重新启动运行 Liferay 的 Web 应用，然后打开 http://yourwebapp。可从 Web 应用根目录访问 Liferay 门户。
 
 有关 Liferay 的详细信息，请参阅 [http://www.liferay.com](http://www.liferay.com)。
-
-[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
- 
- 
-<!-- External Links -->
-[Azure App Service]: /documentation/articles/app-service-changes-existing-services/
 
 <!---HONumber=74-->

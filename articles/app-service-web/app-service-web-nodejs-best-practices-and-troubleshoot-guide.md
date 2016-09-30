@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="06/06/2016"
-	wacn.date=""/>  
+	wacn.date="08/22/2016"/>  
 
     
 # Azure Web Apps 上节点应用程序的最佳做法和故障排除指南
@@ -133,7 +133,7 @@ var keepaliveAgent = new Agent({
 
 ### 节点应用程序耗用太多 CPU。
 
-你可能会在门户上获取 Azure Webapps 针对高 CPU 耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 [Azure 门户仪表板](/documentation/articles/app-insights-web-monitor-performance/)上检查 CPU 使用率时，请检查 CPU 的 MAX 值，你才不会错过峰值。
+你可能会在门户上获取 Azure Webapps 针对高 CPU 耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 Azure 经典管理门户仪表板上检查 CPU 使用率时，请检查 CPU 的 MAX 值，你才不会错过峰值。
 在你认为应用程序耗用太多 CPU，但你无法解释的情况下，必须分析节点应用程序。
 
 ###
@@ -209,7 +209,7 @@ http.createServer(function (req, res) {
 
 ### 节点应用程序耗用太多内存。
 
-你可能会在门户上获取 Azure Webapps 针对高内存耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 [Azure 门户仪表板](/documentation/articles/app-insights-web-monitor-performance/)上检查内存使用率时，请检查内存的 MAX 值，你才不会错过峰值。
+你可能会在门户上获取 Azure Webapps 针对高内存耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 Azure 经典管理门户仪表板上检查内存使用率时，请检查内存的 MAX 值，你才不会错过峰值。
 
 #### node.js 的泄漏检测和堆区分 
 
@@ -249,7 +249,7 @@ http.createServer(function (req, res) {
 
 2.  试着延迟加载 node\_modules，而不要在启动时加载所有模块。这表示对 require('module') 的调用应该在尝试使用模块的函数中有实际需要时进行。
 
-3.  Azure Webapps 会提供一项称为本地缓存的功能。此功能会将你的内容从网络共享复制到 VM 上的本地磁盘。由于文件位于本地，因此，node\_modules 的加载时间快很多。 - 这篇[文档](/documentation/articles/app-service-local-cache/)更加详细地解释了如何使用本地缓存。
+3.  Azure Webapps 会提供一项称为本地缓存的功能。此功能会将你的内容从网络共享复制到 VM 上的本地磁盘。由于文件位于本地，因此，node\_modules 的加载时间快很多。
 
 ## IISNODE http 状态和子状态
 
@@ -276,10 +276,10 @@ NODE.exe 内有名为 NODE\_PENDING\_PIPE\_INSTANCES 的设置。默认情况下
 
 请访问以下链接，了解有关 Azure Web Apps 上的 node.js 应用程序的详细信息。
 
-* [Azure App Service 中的 Node.js Web 应用入门](/documentation/articles/app-service-web-nodejs-get-started/)
-* [如何在 Azure App Service 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)
+* [Azure 中的 Node.js Web 应用入门](/documentation/articles/app-service-web-nodejs-get-started/)
+* [如何在 Azure 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)
 * [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
-* [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
+* [Azure Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
 * [Node.js 开发人员中心](/documentation/articles/nodejs-use-node-modules-azure-apps/)
 * [探索神秘无比的 Kudu 调试控制台](https://azure.microsoft.com/documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/)
 

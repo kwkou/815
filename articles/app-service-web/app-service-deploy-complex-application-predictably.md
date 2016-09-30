@@ -52,6 +52,10 @@
 
 有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)
 
+### Azure 资源浏览器 ###
+
+此[预览工具](https://resources.azure.com)使你能够浏览订阅中所有资源组的 JSON 定义和独立资源。在工具中，可编辑资源的 JSON 定义、删除资源的整个层次结构及创建新资源。此工具中随时可用的信息对模板创作非常有帮助，因为它将显示需要为特定类型的资源设置的属性、正确值等。你甚至可在 [Azure 门户](https://portal.azure.cn/)中创建资源组，然后在资源管理器工具中检查其 JSON 定义以帮助模板化资源组。
+
 ### “部署到 Azure”按钮 ###
 
 如果你将 GitHub 用于源代码管理，则可将一个[“部署到 Azure”按钮](/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)放入 README.MD，这将对 Azure 启用统包部署 UI。可为任何简单的 Web 应用执行此操作，同时可扩展这一操作，通过将 azuredeploy.json 文件放入存储库根来实现对整个资源组的部署。“部署到 Azure”按钮将使用此包含资源组模板的 JSON 文件来创建资源组。有关示例，请参阅将在本教程中使用的 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例。
@@ -182,6 +186,20 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 
 >[AZURE.NOTE] 另请注意，`IsManualIntegration` 设置为 `true`。此属性在本教程中是必需的，因为你实际上并不拥有 GitHub 存储库，因此不能实际授权 Azure 配置从 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 的连续发布（即将自动存储库更新推送到 Azure）。只有当之前已在 [Azure 门户](https://portal.azure.cn/)中配置了所有者的 GitHub 凭据时，才可将默认值 `false` 用于指定的存储库。换言之，如果之前已在 [Azure 门户](https://portal.azure.cn/)中使用用户凭据为任何应用将源代码管理设置到 GitHub 或 BitBucket，则 Azure 将记住凭据并在将来每当从 GitHub 或 BitBucket 部署任何应用时使用这些凭据。但是，如果还没有完成此操作，在 Azure Resource Manager 尝试配置 Web 应用的源代码管理设置时 JSON 模板的部署将失败，因为它不能使用存储库所有者的凭据登录到 GitHub 或 BitBucket。
 
+## 将 JSON 模板与已部署的资源组进行比较 ##
+
+在这里，你可在 [Azure 门户](https://portal.azure.cn/)中浏览所有的 Web 应用边栏选项卡，但存在另一个同样有用的工具。转到 [Azure 资源浏览器](https://resources.azure.com)预览工具，它将为你提供订阅中所有资源组的 JSON 表示形式，因为它们实际存在于 Azure 后端。还可看到 Azure 中资源组的 JSON 层次结构如何与用于创建它的模板文件中的层次结构相对应。
+
+例如，当我转到 [Azure 资源浏览器](https://resources.azure.com)工具并在浏览器中展开节点时，我可以看到资源组和收集在其各自资源类型下的根级别资源。
+
+![](./media/app-service-deploy-complex-application-predictably/ARM-1-treeview.png)
+
+如果你深入了解 Web 应用，应能够看到类似于以下屏幕快照的 Web 应用配置详细信息：
+
+![](./media/app-service-deploy-complex-application-predictably/ARM-2-jsonview.png)
+
+再次重申，嵌套资源具有的层次结构应非常类似于 JSON 模板文件中的层次结构，且你应看到应用设置、连接字符串等正确反映在 JSON 窗格中。如果此处的设置不存在，则可能指示 JSON 文件存在问题，你可借此排查 JSON 模板文件的问题。
+
 ## 自己部署资源组模板 ##
 
 “部署到 Azure”按钮太好用了，但是只有当你已将 azuredeploy.json 推送到 GitHub 时，它才允许你部署 azuredeploy.json 中的资源组模板。Azure.NET SDK 还提供了工具，使你能够直接从本地计算机部署任何 JSON 模板文件。为此，请执行以下步骤：
@@ -224,17 +242,41 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
 
-12.	你现在可以开始部署了。运行一下的 Powershell 命令来发布你的模板。发布过程中，你需要提供必要的参数。
+12.	你现在可以开始部署了。右键单击该项目，并选择“部署”>“新建部署”。
 
-		New-AzureRmResourceGroupDeployment -ResourceGroupName ContosoEngineering -TemplateFile .\Templates\DeploymentTemplate.json
+	![](./media/app-service-deploy-complex-application-predictably/deploy-8-newdeployment.png)
 
-就这么简单！ 现在只需转到 [Azure 门户](https://portal.azure.cn/)，便可看到添加到 JSON 部署的应用程序中的新警报和自动缩放设置。
+13.	如果你尚未执行该操作，则登录到 Azure 帐户。
+
+14.	在订阅中选择现有资源组或创建一个新资源组，选择“azuredeploy.json”，然后单击“编辑参数”。
+
+	![](./media/app-service-deploy-complex-application-predictably/deploy-9-deployconfig.png)
+
+	现在你将能够在一张不错的表中编辑在模板文件中定义的所有参数。定义默认值的参数将已具有其默认值，并且定义允许值的列表的参数将显示为下拉列表。
+
+	![](./media/app-service-deploy-complex-application-predictably/deploy-10-parametereditor.png)
+
+15.	填写所有空参数，并使用 **repoUrl** 中的 [ToDoApp 的 GitHub 存储库地址](https://github.com/azure-appservice-samples/ToDoApp.git)。然后单击“保存”。
+ 
+	![](./media/app-service-deploy-complex-application-predictably/deploy-11-parametereditorfilled.png)
+
+	>[AZURE.NOTE] 自动缩放是**标准**层或更高层中提供的一项功能，而计划级别警报是**基本**层或更高层中提供的功能，你需要将 **sku** 参数设置为**标准**或**高级**，使所有新 App Insights 资源亮起。
+	
+16.	单击“部署”。如果选择了“保存密码”，密码将**以纯文本格式**保存在参数文件中。否则，你将需要在部署过程中输入数据库密码。
+
+就这么简单！ 现在只需转到 [Azure 门户](https://portal.azure.cn/)和 [Azure 资源浏览器](https://resources.azure.com)工具，便可看到添加到 JSON 部署的应用程序中的新警报和自动缩放设置。
 
 这部分中的步骤主要完成了以下内容：
 
 1.	准备模板文件
 2.	创建参数文件以搭配模板文件
 3.	使用参数文件部署模板文件
+
+最后一步通过 PowerShell cmdlet 轻松完成。若要查看当 Visual Studio 部署应用程序时所执行的操作，请打开 Scripts\\Deploy-AzureResourceGroup.ps1。存在大量的代码，但我只突出显示使用参数文件部署模板文件所需的所有相关代码。
+
+![](./media/app-service-deploy-complex-application-predictably/deploy-12-powershellsnippet.png)
+
+最后一个 cmdlet，`New-AzureResourceGroup`，实际执行了该操作。所有这一切向你展示了，借助工具可相对简单地以可预见的方式部署云应用程序。每当你使用相同的参数文件在相同的模板上运行该 cmdlet 时，都将获得相同的结果。
 
 ## 摘要 ##
 

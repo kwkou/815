@@ -77,6 +77,8 @@
 * [Git 文档]
 * [项目 Kudu](https://github.com/projectkudu/kudu/wiki)
 
+>[AZURE.NOTE] 如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](https://tryappservice.azure.com/)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+
 [Azure App Service]: /documentation/articles/app-service-changes-existing-services/
 [Azure 门户]: https://portal.azure.cn
 [VSTS Portal]: https://www.visualstudio.com/products/visual-studio-team-services-vs.aspx

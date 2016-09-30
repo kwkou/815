@@ -15,7 +15,7 @@
 
 # Azure 应用服务计划深入概述#
 
-应用服务计划表示一组可供用户在 [Azure 应用服务](/documentation/articles/app-service-changes-existing-services/)中跨多个应用（包括 Web 应用、移动应用或 API 应用）共享的功能和容量。这些计划支持五个定价层： *免费* 、 *共享* 、 *基本* 、 *标准* 、 *高级* 。每个层都有自己的功能和容量。同一订阅和地理位置的应用可以共享一个计划。共享一个计划的所有应用均可使用该计划的层定义的所有功能和性能。与一个计划关联的所有应用均运行在该计划定义的资源上。
+应用服务计划表示一组可供用户在 [Azure 应用服务](/documentation/services/web-sites/)中跨多个应用（包括 Web 应用、移动应用或 API 应用）共享的功能和容量。这些计划支持五个定价层： *免费* 、 *共享* 、 *基本* 、 *标准* 、 *高级* 。每个层都有自己的功能和容量。同一订阅和地理位置的应用可以共享一个计划。共享一个计划的所有应用均可使用该计划的层定义的所有功能和性能。与一个计划关联的所有应用均运行在该计划定义的资源上。
 
 例如，如果计划已配置为使用标准服务层的两个“小型”实例，则与该计划关联的所有应用都会运行在这两个实例上，并且都可以访问标准服务层功能。运行应用的计划实例是完全托管的，且可用性高。
 
@@ -96,7 +96,7 @@
 
 ## 发生的更改
 
-* 有关从网站更改为应用服务的指南，请参阅 [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)（Azure 应用服务及其对现有 Azure 服务的影响）
+* 有关从网站更改为应用服务的指南，请参阅 [Azure App Service and Its Impact on Existing Azure Services](/documentation/services/web-sites/)（Azure 应用服务及其对现有 Azure 服务的影响）
 
 [pricingtier]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/appserviceplan-pricingtier.png
 [assign]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/assing-appserviceplan.png

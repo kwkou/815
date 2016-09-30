@@ -1,36 +1,38 @@
 <properties 
-	pageTitle="使用 Azure SDK for Java 在 Azure App Service 中创建 Web 应用" 
-	description="了解如何使用 Azure SDK for Java 以编程方式在Azure App Service 上创建 Web 应用。" 
+	pageTitle="使用 Azure SDK for Java 在 Azure 中创建 Web 应用" 
+	description="了解如何使用 Azure SDK for Java 以编程方式在 Azure 中创建 Web 应用。" 
 	tags="azure-classic-portal"
 	services="app-service\web" 
 	documentationCenter="Java" 
 	authors="donntrenton" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor="jimbe"/>  
+
 
 <tags
 	ms.service="multiple"
 	ms.date="02/25/2016"
-	wacn.date=""/>
+	wacn.date="08/22/2016"/>
 
 
-# 使用 Azure SDK for Java 在 Azure App Service 中创建 Web 应用
+# 使用 Azure SDK for Java 在 Azure 中创建 Web 应用
 
 <!-- Azure Active Directory workflow is not yet available on the Azure Portal -->
 
+
 ## 概述
 
-本演练演示如何创建 Azure SDK for Java 应用程序，以便在 [Azure App Service][] 中创建 Web 应用，然后将应用程序部署到该应用。它由两个部分组成：
+本演练演示如何创建一个 Azure SDK for Java 应用程序，以便在 [Azure Web 应用][]中创建一个 Web 应用，然后将一个应用程序部署到该应用。它由两个部分组成：
 
 - 第 1 部分演示如何生成创建 Web 应用的 Java 应用程序。
-- 第 2 部分演示如何创建简单的 JSP“Hello World”应用程序，然后使用 FTP 客户端将代码部署到应用服务。
+- 第 2 部分演示如何创建简单的 JSP "Hello World" 应用程序，然后使用 FTP 客户端将代码部署到 Azure Web 应用。
 
 
 ## 先决条件
 
 ### 软件安装
 
-本文中的 AzureWebDemo 应用程序代码是使用 Azure Java SDK 0.7.0 编写的，你可以使用 [Web 平台安装程序][] (WebPI) 进行安装。此外，请确保使用最新版本的 [Azure Toolkit for Eclipse][]。安装 SDK 之后，通过在“Maven 存储库”中运行“更新索引”更新 Eclipse 项目中的依赖项，然后在“依赖项”窗口中重新添加每个包的最新版本。可以通过单击“帮助 > 安装详细信息”验证 Eclipse 中已安装软件的版本；至少应具有以下版本：
+本文中的 AzureWebDemo 应用程序代码是使用 Azure Java SDK 0.7.0 编写的，你可以使用 Web 平台安装程序 (WebPI) 进行安装。此外，请确保使用最新版本的 [Azure Toolkit for Eclipse][]。安装 SDK 之后，通过在“Maven 存储库”中运行“更新索引”更新 Eclipse 项目中的依赖项，然后在“依赖项”窗口中重新添加每个包的最新版本。可以通过单击“帮助 > 安装详细信息”验证 Eclipse 中已安装软件的版本；至少应具有以下版本：
 
 - Package for Azure Libraries for Java 0.7.0.20150309
 - Eclipse IDE for Java EE Developers 4.4.2.20150219
@@ -153,7 +155,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
     
     此步骤可能需要几分钟时间，具体取决于你的连接速度。重新生成索引后，**中心** Maven 存储库中应会显示 Azure 包。
 
-6. 在“依赖项”中，单击“添加”。在“输入组 ID...”中输入 `azure-management`。选择基础管理和应用服务 Web 应用管理所用的包：
+6. 在“依赖项”中，单击“添加”。在“输入组 ID...”中输入 `azure-management`。选择基础管理和 Azure Web Apps 管理的包：
 
         com.microsoft.azure  azure-management
         com.microsoft.azure  azure-management-websites
@@ -165,7 +167,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 ### 编写 Java 代码，以通过调用 Azure SDK 来创建 Web 应用
 
-接下来，编写调用 Azure SDK for Java 中的 API 来创建应用服务 Web 应用的代码。
+接下来，请编写调用 Azure SDK for Java 中的 API 的代码，以创建 Azure Web 应用。
 
 1. 创建一个 Java 类以用于包含主入口点代码。在项目资源管理器中，右键单击项目节点，然后选择“新建 > 类”。
 
@@ -177,7 +179,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 3. 单击“完成”。WebCreator.java 文件将在项目资源管理器中出现。
 
 
-### 调用 Azure API 以创建应用服务 Web 应用
+### 调用 Azure API 以创建 Azure Web 应用
 
 
 #### 添加所需的导入
@@ -195,11 +197,11 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
     import com.microsoft.windowsazure.exception.ServiceException;
     import org.xml.sax.SAXException;
     
-    // Imports for Azure App Service management configuration
+    // Imports for Azure Web App management configuration
     import com.microsoft.windowsazure.Configuration;
     import com.microsoft.windowsazure.management.configuration.ManagementConfiguration;
     
-    // Service management imports for App Service Web Apps creation
+    // Service management imports for Azure Web Apps creation
     import com.microsoft.windowsazure.management.websites.*;
     import com.microsoft.windowsazure.management.websites.models.*;
     
@@ -209,7 +211,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 #### 定义主入口点类
 
-AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请将该程序的主类命名为 `WebAppCreator`。此类提供调用 Azure 服务管理 API 的主入口点代码，以创建 Web 应用。
+因为 AzureWebDemo 应用程序的目的是创建 Azure Web 应用，所以请将此应用程序的主类命名为 `WebAppCreator`。此类提供调用 Azure 服务管理 API 的主入口点代码，以创建 Web 应用。
 
 为 Web 应用和 Web 空间添加以下参数定义。你将需要提供你自己的 Azure 订阅 ID 和证书信息。
 
@@ -237,16 +239,16 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
 - `webSpaceName` 应是 [WebSpaceNames][] 类中定义的值之一。
 - `appServicePlanName` 应按照以上所示进行指定。
 
-> **注意：**每次运行此应用程序时，你需要更改 `webAppName` 和 `appServicePlanName` 的值（或在 Azure 门户上删除 Web 应用），然后再次运行应用程序。否则，由于 Azure 上已存在相同的资源，所以执行会失败。
+> **注意：**每次运行此应用程序时，你需要更改 `webAppName` 和 `appServicePlanName` 的值（或在 Azure 经典管理门户中删除 Web 应用），然后再次运行应用程序。否则，由于 Azure 上已存在相同的资源，所以执行会失败。
 
 
 #### 定义 Web 创建方法
 
-接下来，定义用于创建 Web 应用的方法。此方法 `createWebApp` 指定 Web 应用的参数和 Web 空间。它还会创建并配置 App Service Web Apps 管理客户端，该客户端由 [WebSiteManagementClient][] 对象进行定义。管理客户端对于创建 Web Apps 至关重要。它提供 RESTful web 服务，使应用程序能够通过调用服务管理 API 来管理 Web Apps（执行创建、更新和删除等操作）。
+接下来，定义用于创建 Web 应用的方法。此方法 (`createWebApp`) 指定 Web 应用的参数和 Web 空间。它还会创建并配置 Azure Web Apps 管理客户端，该客户端由 [WebSiteManagementClient][] 对象进行定义。管理客户端对于创建 Web Apps 至关重要。它提供 RESTful web 服务，使应用程序能够通过调用服务管理 API 来管理 Web Apps（执行创建、更新和删除等操作）。
 
     private static void createWebApp() throws Exception {
 
-        // Specify configuration settings for the App Service management client.
+        // Specify configuration settings for the Azure Web App management client.
         Configuration config = ManagementConfiguration.configure(
             new URI(uri),
             subscriptionId,
@@ -255,8 +257,8 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
             KeyStoreType.jks   // Flag that you are using a JKS keystore
         );
 
-        // Create the App Service Web Apps management client to call Azure APIs
-        // and pass it the App Service management configuration object.
+        // Create the Azure Web Apps management client to call Azure APIs
+        // and pass it the Azure Web App management configuration object.
         WebSiteManagementClient webAppManagementClient = WebSiteManagementService.create(config);
 
         // Create an App Service plan for the web app with the specified parameters.
@@ -351,7 +353,7 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
 
 #### 创建应用程序
 
-为了演示如何将应用程序部署到 Web，以下过程说明了如何创建简单的“Hello World”Java 应用程序，并将其上传到应用程序创建的应用服务 Web 应用。
+为了演示如何将应用程序部署到 Web，以下过程说明了如何创建简单的 "Hello World" Java 应用程序，并将其上载到应用程序创建的 Azure Web 应用。
 
 1. 单击“文件 > 新建 > 动态 Web 项目”。将它命名为 `JSPHello`。不需要在此对话框中更改其他任何设置。单击“完成”。
 
@@ -423,20 +425,21 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
 
 3. 在“WAR 导出”对话框中，选择当前项目中的 src 目录，并在末尾添加 WAR 文件名。例如：
 
-    `<project-path>/JSPHello/src/JSPHello.war`
+    `<project-path>/JSPHello/src/JSPHello.war`  
 
-有关部署 WAR 文件的详细信息，请参阅[将 Java 应用程序添加到 Azure App Service Web 应用](/documentation/articles/web-sites-java-add-app/)。
+
+有关部署 WAR 文件的详细信息，请参阅[将 Java 应用程序添加到 Azure Web Apps](/documentation/articles/web-sites-java-add-app/)。
 
 
 ### 使用 FTP 部署 Hello World 应用程序
 
-选择第三方 FTP 客户端来发布应用程序。此过程将介绍两个选项：Azure 中内置的 Kudu 控制台；FileZilla，这是一个带有便捷式图形 UI 的常用工具。
+选择第三方 FTP 客户端来发布应用程序。此过程将介绍 FileZilla，这是一个带有便捷式图形 UI 的常用工具。
 
-> **注意：**Azure Toolkit for Eclipse 支持部署到存储帐户和云服务，但当前不支持部署到 Web Apps。你可以按照[在 Eclipse 中为 Azure 创建 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)中所述，使用 Azure 部署项目部署到存储帐户和云服务，但不能部署到 Web Apps。使用其他方法（例如 FTP 或 GitHub）将文件传输到 Web 应用。
+> **注意：**Azure Toolkit for Eclipse 支持部署到存储帐户和云服务，但当前不支持部署到 Web Apps。你可以使用 Azure 部署项目部署到存储帐户和云服务，但不能部署到 Web 应用。使用其他方法（例如 FTP 或 GitHub）将文件传输到 Web 应用。
 
 > **注意：**我们不建议通过 Windows 命令提示符（Windows 随附的命令行 FTP.EXE 实用工具）使用 FTP。使用活动 FTP 的 FTP 客户端（如 FTP.EXE）通常无法通过防火墙工作。活动 FTP 指定基于 LAN 的内部地址，FTP 服务器可能无法连接到该地址。
 
-若要深入了解如何使用 FTP 部署到应用服务 Web 应用，请参阅以下主题：
+有关使用 FTP 部署到 Azure Web 应用的详细信息，请参阅以下主题：
 
 - [使用 FTP 实用工具部署](/documentation/articles/web-sites-deploy/)
 
@@ -454,17 +457,19 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
 
 #### 获取 FTP 连接信息
 
-若要使用 FTP 将应用程序文件部署到新建的 Web 应用，你需要获取连接信息。可通过两种方法获取连接信息。一种方法是访问 Web 应用的“仪表板”页；另一种方法是下载 Web 应用的发布配置文件。发布配置文件是一个 XML 文件，它提供 Azure App Service 中 Web Apps 的 FTP 主机名和登录凭据等信息。你可以使用此用户名和密码部署到与 Azure 帐户关联的所有订阅中的任何 Web 应用，而不仅仅是此 Web 应用。
+若要使用 FTP 将应用程序文件部署到新建的 Web 应用，你需要获取连接信息。可通过两种方法获取连接信息。一种方法是访问 Web 应用的“仪表板”页；另一种方法是下载 Web 应用的发布配置文件。发布配置文件是一个 XML 文件，它提供 Azure 中 Web 应用的 FTP 主机名和登录凭据等信息。你可以使用此用户名和密码部署到与 Azure 帐户关联的所有订阅中的任何 Web 应用，而不仅仅是此 Web 应用。
 
-若要从 [Azure 门户][]的 Web 应用边栏选项卡中获取 FTP 连接信息：
+从 [Azure 经典管理门户][]中的 Web 应用页获取 FTP 连接信息：
 
-1. 在 **Essentials** 下查找并复制**FTP 主机名**。这是类似于 `ftp://waws-prod-bay-NNN.ftp.azurewebsites.chinacloudapi.cn` 的 URI。
+从 Web 应用的“仪表板”页获取 FTP 连接信息：
 
-2. 在 **Essentials** 下查找并复制 **FTP/部署用户名**。此值的形式为 *webappname\\deployment-username* ；例如 `WebDemoWebApp\deployer77`。
+1. 在“速览”下，查找并复制“FTP 主机名”。这是类似于 `ftp://cnws-prod-sha-001.ftp.chinacloudsites.chinacloudapi.cn` 的 URI。
 
-若要获取发布配置文件的 FTP 连接信息：
+2. 在“速览”下，查找并复制“部署/FTP 用户”。此值的形式为 *WebsiteName\\DeploymentUsername*；例如 `WebDemoWebsite\deployer77`。
 
-1. 在 Web 应用边栏选项卡，单击“获取发布配置文件”。这会将一个 .publishsettings 文件下载到本地驱动器。
+从 Web 应用的发布配置文件获取 FTP 连接信息：
+
+1. 在 Web 应用的“仪表板”中的“速览”下，单击“下载发布配置文件”。这会将一个 .publishsettings 文件下载到本地驱动器。
 
 2. 在 XML 编辑器或文本编辑器中打开 .publishsettings 文件并找到包含 `publishMethod="FTP"` 的 `<publishProfile>` 元素。该元素应类似于：
 
@@ -501,7 +506,7 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
 
 #### 使用 Kudu 发布应用程序
 
-发布应用程序的一种方法是使用 Azure 中内置的 Kudu 调试控制台。众所周知，Kudu 很稳定并符合应用服务 Web 应用和 Tomcat 服务器。可以通过浏览到以下形式的 URL 来访问 Web 应用的控制台：
+发布应用程序的一种方法是使用 Azure 中内置的 Kudu 调试控制台。已知 Kudu 很稳定并与 Azure Web Apps 和 Tomcat 服务器一致。可以通过浏览到以下形式的 URL 来访问 Web 应用的控制台：
 
 `https://<webappname>.scm.chinacloudsites.cn/DebugConsole`  
 
@@ -552,7 +557,7 @@ JSPHello.war 自身首先会显示在目录区域中：
     - **协议：**FTP 文件传输协议
     - **加密：**使用普通 FTP
     - **登录类型：**正常
-    - **用户：**输入你从仪表板复制的部署/FTP 用户。这是完整的 FTP 用户名，其格式为 *Web 应用名\\用户名*。
+    - **用户：**输入你从仪表板复制的部署/FTP 用户。这是完整的 FTP 用户名，其格式为 Web 应用名\\用户名。
     - **密码：**输入你在设置部署凭据时指定的密码。
 
     在“传输设置”选项卡上，选择“被动”。
@@ -585,9 +590,7 @@ JSPHello.war 自身首先会显示在目录区域中：
 
 #### 清理 Azure 资源
 
-此过程将创建应用服务 Web 应用。只要 Web 应用存在，你就要支付资源的费用。除非你打算继续使用该 Web 应用进行测试或开发，否则应考虑停止或删除它。已停止的 Web 应用仍会产生较小的费用，但你随时可以重新启动它。删除某个 Web 应用会清除已上载到该 Web 应用的所有数据。
-
-[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
+此过程将创建 Azure Web 应用。只要 Web 应用存在，你就要支付资源的费用。除非你打算继续使用该 Web 应用进行测试或开发，否则应考虑停止或删除它。已停止的 Web 应用仍会产生较小的费用，但你随时可以重新启动它。删除某个 Web 应用会清除已上载到该 Web 应用的所有数据。
 
   [1]: ./media/java-create-azure-website-using-java-sdk/eclipse-maven-repositories-rebuild-index.png
   [2]: ./media/java-create-azure-website-using-java-sdk/eclipse-new-java-class.png
@@ -601,7 +604,7 @@ JSPHello.war 自身首先会显示在目录区域中：
   [10]: ./media/java-create-azure-website-using-java-sdk/kudu-console-jsphello-war-2.png
  
 
-[Azure App Service]: /documentation/articles/app-service-changes-existing-services/
+[Azure Web 应用]: /documentation/services/web-sites/
 [Web 平台安装程序]: http://go.microsoft.com/fwlink/?LinkID=252838
 [Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [Azure 经典管理门户]: https://manage.windowsazure.cn
@@ -610,6 +613,6 @@ JSPHello.war 自身首先会显示在目录区域中：
 [密钥和证书管理工具 (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
 [WebSiteManagementClient]: http://azure.github.io/azure-sdk-for-java/com/microsoft/azure/management/websites/WebSiteManagementClient.html
 [WebSpaceNames]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
-[Azure 门户]: https://portal.azure.cn
+[Azure Portal Preview]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0815_2016-->

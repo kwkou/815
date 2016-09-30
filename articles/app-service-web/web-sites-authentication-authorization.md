@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 Active Directory 在 Azure 中进行身份验证" 
-	description="了解部署到 Azure App Service 的业务线应用程序的不同身份验证和授权选项" 
+	description="了解部署到 Azure Web 应用的业务线应用程序的不同身份验证和授权选项" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -10,11 +10,11 @@
 <tags
 	ms.service="app-service"
 	ms.date="02/26/2016" 
-	wacn.date=""/>
+	wacn.date="04/26/2016"/>
 
 # 使用 Active Directory 在 Azure 中进行身份验证 #
 
-[Azure App Service Web 应用](/documentation/services/web-sites/)通过支持单一登录 (SSO) 的用户启用企业业务线应用程序方案，允许你在本地环境或公共 Internet 访问应用程序。可以将它与 [Azure Active Directory](/home/features/identity/) (AAD) 或本地安全令牌服务 (STS)（如 Active Directory 联合身份验证服务 (AD FS)）集成，以便对内部 Active Directory (AD) 用户进行身份验证并正确授权。
+[Azure Web 应用](/documentation/services/web-sites/)通过支持单一登录 (SSO) 的用户启用企业业务线应用程序方案，允许你在本地环境或公共 Internet 访问应用程序。可以将它与 [Azure Active Directory](/home/features/identity/) (AAD) 或本地安全令牌服务 (STS)（如 Active Directory 联合身份验证服务 (AD FS)）集成，以便对内部 Active Directory (AD) 用户进行身份验证并正确授权。
 
 ## 手动实现身份验证和授权 ##
 

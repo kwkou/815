@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="将 Java 应用程序添加到 Azure App Service Web 应用" 
-	description="本教程演示了如何将页面或应用程序添加到已配置为使用 Java 的 Azure App Service Web 应用实例。" 
+	pageTitle="将 Java 应用程序添加到 Azure Web 应用" 
+	description="本教程演示了如何将页面或应用程序添加到已配置为使用 Java 的 Azure Web 应用实例。" 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -10,11 +10,11 @@
 <tags 
 	ms.service="app-service-web"
 	ms.date="06/24/2016" 
-	wacn.date=""/>
+	wacn.date="08/23/2016"/>
 
-# 将 Java 应用程序添加到 Azure App Service Web 应用
+# 将 Java 应用程序添加到 Azure Web 应用
 
-按照[在 Azure App Service 中创建 Java Web 应用](/documentation/articles/web-sites-java-get-started/)中的说明初始化 Java Web 应用后，即可通过将 WAR 置于 **webapps** 文件夹中来上载应用程序。
+按照[在 Azure 中创建 Java Web 应用](/documentation/articles/web-sites-java-get-started/)中的说明初始化 Java Web 应用后，即可通过将 WAR 置于 **webapps** 文件夹中来上载应用程序。
 
 **webapps** 文件夹的导航路径因你设置 Web 应用的方式不同而异。
 
@@ -23,10 +23,5 @@
 请注意，您可以使用源代码管理来上载您的应用程序或网页，包括在[连续集成方案](/documentation/articles/app-service-continous-deployment/)中也这样做。对于上载应用程序或网页，FTP 也是一种可选择的方式。
 
 Tomcat Web 应用说明：在将 WAR 文件上载到 **webapps** 文件夹后，Tomcat 应用程序服务器将检测到你已经添加了该文件并会将其自动上载。请注意，如果您将文件（除 WAR 文件以外）复制到 ROOT 目录，在使用这些文件之前，将需要重新启动该应用程序服务器。Azure 上运行的 Tomcat Java Web 应用的自动上载功能基于所添加的新 WAR 文件，或添加到 **webapps** 文件夹的新文件或目录。
-
-[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
-
-<!-- External Links -->
-[Azure App Service]: /documentation/articles/app-service-changes-existing-services/
 
 <!---HONumber=74-->

@@ -48,6 +48,9 @@
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
 > + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web Apps）。
+> + 你可以[激活 Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/)：Visual Studio 订阅每月为你提供可用来试用付费版 Azure 服务的信用额度。
+>
+> 如果想要在注册 Azure 帐户之前开始使用 Azure，请转到[试用 Azure Web 应用](https://tryappservice.azure.com/)，你可以在 Azure 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 ## 设置生产 Web 应用
 
