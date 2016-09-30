@@ -245,15 +245,15 @@ Swashbuckle 可用于任何 ASP.NET Web API 项目。如果要将 Swagger 元数
 
 	浏览器将显示前面出现的相同 Swagger UI，但该 UI 现在在云中运行。尝试使用 Get 方法，会发现已返回到默认的 2 个待办事项。前面所做的更改已保存在本地计算机的内存中。
 
-12. 打开 [Azure 门户预览](https://portal.azure.cn/)。
+12. 打开 [Azure 门户](https://portal.azure.cn/)。
 
-	Azure 门户预览是用于管理 Azure 资源（例如 API 应用）的 Web 界面。
+	Azure 门户是用于管理 Azure 资源（例如 API 应用）的 Web 界面。
  
 14. 单击“浏览”>“应用程序服务”。
 
 	![浏览应用程序服务](./media/app-service-api-dotnet-get-started/browseas.png)
 
-15. 在“应用程序服务”边栏选项卡中，找到并单击新的 API 应用。（在 Azure 门户预览中，右侧打开的窗口称为“边栏选项卡”。）
+15. 在“应用程序服务”边栏选项卡中，找到并单击新的 API 应用。（在 Azure 门户中，右侧打开的窗口称为“边栏选项卡”。）
 
 	![“应用程序服务”边栏选项卡](./media/app-service-api-dotnet-get-started/choosenewapiappinportal.png)
 
@@ -356,7 +356,7 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 
 如果现在调用中间层 API 应用，它会使用仍在 Web.config 文件中的 localhost URL 尝试调用数据层。在本部分中，需将数据层 API 应用 URL 输入到中间层 API 应用的环境设置中。当中间层 API 应用中的代码检索数据层 URL 设置时，环境设置将覆盖 Web.config 文件中的内容。
  
-1. 转到 [Azure 门户预览](https://portal.azure.cn/)，然后导航到为托管 TodoListAPI（中间层）项目而创建的 API 应用的“API 应用”边栏选项卡。
+1. 转到 [Azure 门户](https://portal.azure.cn/)，然后导航到为托管 TodoListAPI（中间层）项目而创建的 API 应用的“API 应用”边栏选项卡。
 
 2. 在 API 应用的“设置”边栏选项卡中，单击“应用程序设置”。
  

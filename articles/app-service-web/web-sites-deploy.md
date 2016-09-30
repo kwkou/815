@@ -53,7 +53,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 ### <a name="howtoftp"></a>如何通过将文件手动复制到 Azure 进行部署
 将文件复制到 Azure 涉及几个简单步骤：
 
-1. 假设你已建立部署凭据，请转到“设置”>“属性”获取 FTP 连接信息，然后复制“FTP/开发用户”、“FTP 主机名”和“FTPS 主机名”的值。请复制 Azure 门户预览中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。
+1. 假设你已建立部署凭据，请转到“设置”>“属性”获取 FTP 连接信息，然后复制“FTP/开发用户”、“FTP 主机名”和“FTPS 主机名”的值。请复制 Azure 门户中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。
 2. 从 FTP 客户端，使用收集到的连接信息连接到你的应用。
 3. 将你的文件及其各自的目录结构复制到 Azure 中的 [**/site/wwwroot** 目录](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure)（或者将 Web 作业复制到 **/site/wwwroot/App\_Data/Jobs/** 目录）。
 4. 浏览到你的应用的 URL 以验证该应用是否正在正常运行。
@@ -77,7 +77,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 - 需要对相关 SCM 服务有一定的了解。
 
 ###<a name="vsts"></a>如何从基于云的源代码管理服务连续部署
-在 [Azure 门户预览](https://portal.azure.cn)中，可以从 GitHub、Bitbucket 和 Visual Studio Team Services 配置连续部署。
+在 [Azure 门户](https://portal.azure.cn)中，可以从 GitHub、Bitbucket 和 Visual Studio Team Services 配置连续部署。
 
 * [Continous Deployment to Azure App Service](/documentation/articles/app-service-continuous-deployment/)（连续部署到 Azure App Service）。
 
@@ -96,7 +96,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 - 连续部署没有任何现成的解决方案。
 
 ###<a name="vsts"></a>如何从本地 Git 部署
-在 [Azure 门户预览](https://portal.azure.cn)中，可以配置本地 Git 部署。
+在 [Azure 门户](https://portal.azure.cn)中，可以配置本地 Git 部署。
 
 * [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/)（从本地 Git 部署到 Azure App Service）。
 * [从任何 git/hg 存储库发布到 Web Apps](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。

@@ -28,7 +28,7 @@
 <a name="scalingsharedorbasic">
 ## <a name="scalingstandard"></a>向上缩放定价层
 
-1. 在浏览器中，打开 [Azure 门户预览][portal]。
+1. 在浏览器中，打开 [Azure 门户][portal]。
 
 2. 在应用的边栏选项卡中，单击“所有设置”，然后单击“向上缩放”。
 

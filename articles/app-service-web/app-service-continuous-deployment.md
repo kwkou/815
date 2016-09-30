@@ -22,7 +22,7 @@
 
 将应用内容发布到用于连续部署的存储库。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)]、[创建存储库 (BitBucket)] 和 [VSTS 入门]。以下步骤仅适用于 GitHub 存储库。有关 GitHub 以外的存储库，请参阅[手动触发部署](https://github.com/projectkudu/kudu/wiki/Manually-triggering-a-deployment)以设置 Webhook。
 
-1. 在 [Azure 门户预览]的应用边栏选项卡中，单击“设置”>“部署源”。单击“选择源”，然后单击“外部存储库”。
+1. 在 [Azure 门户]的应用边栏选项卡中，单击“设置”>“部署源”。单击“选择源”，然后单击“外部存储库”。
 
 4. 输入 GitHub 存储库的 URL 并输入要跟踪的分支。将“存储库类型”保留为“Git”，并单击“完成”
 
@@ -40,7 +40,7 @@
 
 8. 在“负载 URL”中，输入 `https://$<YOUR_WEB_APP>:<SOME_BIG_RANDOM_TOKEN>@<YOUR_WEB_APP>.scm.chinacloudsites.cn/deploy`，按原样保留所有项目，并单击“添加 Webhook”以保存新的 Webhook。
 
-5. 若要验证是否已成功部署应用，请在 Azure 门户预览的应用边栏选项卡顶部单击“URL”。
+5. 若要验证是否已成功部署应用，请在 Azure 门户的应用边栏选项卡顶部单击“URL”。
 
 6. 若要验证是否能够在从所选存储库进行连续部署，请将更改推送到该存储库。推送到存储库完成后，你的应用应该很快更新以反映更改。可以在应用的“部署”边栏选项卡中验证是否已拉取更新。
 
@@ -63,7 +63,7 @@
 
 若要禁用连续部署，请执行以下操作：
 
-1. 在 [Azure 门户预览]的应用边栏选项卡中，单击“设置”>“部署源”。然后，在“部署”边栏选项卡中单击“断开连接”。
+1. 在 [Azure 门户]的应用边栏选项卡中，单击“设置”>“部署源”。然后，在“部署”边栏选项卡中单击“断开连接”。
 
     ![](./media/app-service-continuous-deployment/cd_disconnect.png)
 
@@ -78,7 +78,7 @@
 * [项目 Kudu](https://github.com/projectkudu/kudu/wiki)
 
 [Azure App Service]: /documentation/articles/app-service-changes-existing-services/
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [VSTS Portal]: https://www.visualstudio.com/products/visual-studio-team-services-vs.aspx
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [如何使用适用于 Azure 的 PowerShell]: /documentation/articles/powershell-install-configure/

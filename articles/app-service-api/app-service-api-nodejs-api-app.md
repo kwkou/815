@@ -173,9 +173,9 @@
 
 ## <a id="createapiapp"></a>创建新的 API 应用
 
-本部分介绍如何使用 Azure 门户预览在 Azure 中创建新的 API 应用。此 API 应用代表 Azure 提供的、用于运行代码的计算资源。后续部分会将代码部署到新 API 应用。
+本部分介绍如何使用 Azure 门户在 Azure 中创建新的 API 应用。此 API 应用代表 Azure 提供的、用于运行代码的计算资源。后续部分会将代码部署到新 API 应用。
 
-1. 浏览到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 浏览到 [Azure 门户](https://portal.azure.cn/)。
 
 1. 单击“新建”>“Web + 移动”>“API 应用”。
 
@@ -272,7 +272,7 @@
 
     ![Git 提交输出](./media/app-service-api-nodejs-api-app/git-commit-output.png)
 
-1. 运行以下命令将代码推送到 Azure。当系统提示输入密码时，请输入前面在 Azure 门户预览中创建的密码。
+1. 运行以下命令将代码推送到 Azure。当系统提示输入密码时，请输入前面在 Azure 门户中创建的密码。
 
         git push azure master
 

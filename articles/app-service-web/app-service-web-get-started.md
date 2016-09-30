@@ -25,7 +25,7 @@
 - 在短短几秒内看到应用实时运行。
 - 以[推送 Git 提交](https://git-scm.com/docs/git-push)的相同方式来更新 Web 应用。
 
-另外，将提供 [Azure 门户预览](https://portal.azure.cn)的速览并探讨可用的功能。
+另外，将提供 [Azure 门户](https://portal.azure.cn)的速览并探讨可用的功能。
 
 ## <a name="Prerequisites"></a>先决条件
 
@@ -104,11 +104,11 @@
     git commit -m "<your_message>"
     git push azure master
 
-## 在 Azure 门户预览中查看应用
+## 在 Azure 门户中查看应用
 
-现在，让我们转到 Azure 门户预览，查看所创建的应用：
+现在，让我们转到 Azure 门户，查看所创建的应用：
 
-1. 使用具有 Azure 订阅的 Microsoft 帐户登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 使用具有 Azure 订阅的 Microsoft 帐户登录到 [Azure 门户](https://portal.azure.cn)。
 
 2. 在左栏中，单击“应用服务”。
 

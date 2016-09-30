@@ -16,7 +16,7 @@
 
 本主题介绍了如何将自定义 Java Web 应用上载到 [Azure App Service]。包括适用于 Java Web 应用的信息以及特定应用程序的示例。
 
-请注意，Azure 提供了一种使用 Azure 门户预览配置 UI 创建 Java Web 应用的方法，如 [Azure App Service 和 Java 入门](/documentation/articles/web-sites-java-get-started/)中所述。此教程适用于无需使用 Azure 配置 UI 的方案。
+请注意，Azure 提供了一种使用 Azure 门户配置 UI 创建 Java Web 应用的方法，如 [Azure App Service 和 Java 入门](/documentation/articles/web-sites-java-get-started/)中所述。此教程适用于无需使用 Azure 配置 UI 的方案。
 
 ## 配置指南
 

@@ -74,7 +74,7 @@
 
 	当你首次浏览到 UI 时它的显示会慢些，因为应用刚刚启动，但应确信它是一个功能齐全运行正常的应用程序。
 
-5.	返回到“部署”页，单击“管理”链接以查看 Azure 门户预览中的新应用程序。
+5.	返回到“部署”页，单击“管理”链接以查看 Azure 门户中的新应用程序。
 
 6.	在“必备”下拉列表中，单击资源组链接。还要注意，Web 应用已连接到“外部项目”下的 GitHub 存储库。
 
@@ -180,7 +180,7 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 
 请注意，在 `dependsOn` 元素中，除 Web 应用资源本身外，`sourcecontrols/web` 也取决于 `config/appsettings` 和 `config/connectionstrings`。这是因为一旦配置 `sourcecontrols/web` 后，Azure 部署进程将自动尝试部署、构建和启动应用程序代码。因此，插入此依赖项可帮助你确保在运行应用程序代码之前，应用程序有权访问所需的应用设置和连接字符串。
 
->[AZURE.NOTE] 另请注意，`IsManualIntegration` 设置为 `true`。此属性在本教程中是必需的，因为你实际上并不拥有 GitHub 存储库，因此不能实际授权 Azure 配置从 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 的连续发布（即将自动存储库更新推送到 Azure）。只有当之前已在 [Azure 门户预览](https://portal.azure.cn/)中配置了所有者的 GitHub 凭据时，才可将默认值 `false` 用于指定的存储库。换言之，如果之前已在 [Azure 门户预览](https://portal.azure.cn/)中使用用户凭据为任何应用将源代码管理设置到 GitHub 或 BitBucket，则 Azure 将记住凭据并在将来每当从 GitHub 或 BitBucket 部署任何应用时使用这些凭据。但是，如果还没有完成此操作，在 Azure Resource Manager 尝试配置 Web 应用的源代码管理设置时 JSON 模板的部署将失败，因为它不能使用存储库所有者的凭据登录到 GitHub 或 BitBucket。
+>[AZURE.NOTE] 另请注意，`IsManualIntegration` 设置为 `true`。此属性在本教程中是必需的，因为你实际上并不拥有 GitHub 存储库，因此不能实际授权 Azure 配置从 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 的连续发布（即将自动存储库更新推送到 Azure）。只有当之前已在 [Azure 门户](https://portal.azure.cn/)中配置了所有者的 GitHub 凭据时，才可将默认值 `false` 用于指定的存储库。换言之，如果之前已在 [Azure 门户](https://portal.azure.cn/)中使用用户凭据为任何应用将源代码管理设置到 GitHub 或 BitBucket，则 Azure 将记住凭据并在将来每当从 GitHub 或 BitBucket 部署任何应用时使用这些凭据。但是，如果还没有完成此操作，在 Azure Resource Manager 尝试配置 Web 应用的源代码管理设置时 JSON 模板的部署将失败，因为它不能使用存储库所有者的凭据登录到 GitHub 或 BitBucket。
 
 ## 自己部署资源组模板 ##
 
@@ -228,7 +228,7 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 
 		New-AzureRmResourceGroupDeployment -ResourceGroupName ContosoEngineering -TemplateFile .\Templates\DeploymentTemplate.json
 
-就这么简单！ 现在只需转到 [Azure 门户预览](https://portal.azure.cn/)，便可看到添加到 JSON 部署的应用程序中的新警报和自动缩放设置。
+就这么简单！ 现在只需转到 [Azure 门户](https://portal.azure.cn/)，便可看到添加到 JSON 部署的应用程序中的新警报和自动缩放设置。
 
 这部分中的步骤主要完成了以下内容：
 

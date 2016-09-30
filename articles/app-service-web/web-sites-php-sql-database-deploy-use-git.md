@@ -21,7 +21,7 @@
 
 你将学习以下内容：
 
-* 如何使用 [Azure 门户预览](https://manage.windowsazure.cn/)创建 Azure Web 应用和 SQL 数据库。由于在应用服务 Web 应用中已默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 [Azure 门户](https://manage.windowsazure.cn/)创建 Azure Web 应用和 SQL 数据库。由于在应用服务 Web 应用中已默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 Git 将应用程序发布和重新发布到 Azure。
  
 通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册 Web 应用程序。将在 Azure 网站中托管应用程序。以下是已完成应用程序的屏幕快照：
@@ -34,7 +34,7 @@
 
 按照以下步骤创建 Azure Web 应用和 SQL 数据库：
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 
 2. 单击仪表板左上方的“新建”图标打开 Azure 应用商店，接着单击应用商店旁的“全选”，然后选择“Web + 移动”。
 	

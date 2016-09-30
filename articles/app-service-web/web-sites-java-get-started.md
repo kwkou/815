@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-本教程演示如何通过 [Azure 门户预览][在 Azure App Service 中创建 Java Web 应用]。Azure 门户预览是可用于管理 Azure 资源的 Web 界面。
+本教程演示如何通过 [Azure 门户][在 Azure App Service 中创建 Java Web 应用]。Azure 门户是可用于管理 Azure 资源的 Web 界面。
 
 > [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以[注册试用帐户]。
 >
@@ -27,7 +27,7 @@
 
 1. 创建应用，然后配置**应用程序设置**。
 
-	应用服务提供多个使用默认配置的 Tomcat 和 Jetty 版本。如果要托管的应用程序可以使用某个内置版本，则这种设置 Web 容器的方法是最简单的，如果你只想将 war 文件上传至 Web 容器，这种方法则是最适合的。使用这种方法时，先在 Azure 门户预览中创建一个应用，然后转到应用的“应用程序设置”边栏选项卡，选择 Java 版本以及所需的 Java Web 容器。使用此方法时，Java 和 Web 容器均从“程序文件”运行。其他方法会将 Web 容器和 JVM（可能）放在磁盘空间中。使用此模型时，用户不具有编辑文件系统中此部分文件的权限。这意味着无法执行某些操作，如配置 *server.xml* 文件或将库文件放入 */lib* 文件夹。有关详细信息，请参阅本教程后面的[创建和配置 Java Web 应用](#appsettings)部分。
+	应用服务提供多个使用默认配置的 Tomcat 和 Jetty 版本。如果要托管的应用程序可以使用某个内置版本，则这种设置 Web 容器的方法是最简单的，如果你只想将 war 文件上传至 Web 容器，这种方法则是最适合的。使用这种方法时，先在 Azure 门户中创建一个应用，然后转到应用的“应用程序设置”边栏选项卡，选择 Java 版本以及所需的 Java Web 容器。使用此方法时，Java 和 Web 容器均从“程序文件”运行。其他方法会将 Web 容器和 JVM（可能）放在磁盘空间中。使用此模型时，用户不具有编辑文件系统中此部分文件的权限。这意味着无法执行某些操作，如配置 *server.xml* 文件或将库文件放入 */lib* 文件夹。有关详细信息，请参阅本教程后面的[创建和配置 Java Web 应用](#appsettings)部分。
 
 3. 创建一个应用，然后手动复制和编辑配置文件
 
@@ -38,13 +38,13 @@
 	* 你想要从头开始自行配置 Web 容器。
 	* 你想要使用的 Java 版本在应用服务中不受支持，因此想要自行上载它。
 
-	对于这样的情况，你可以通过 Azure 门户预览创建一个应用，然后手动提供相应的运行时文件。在本示例中，这些文件将占用你的应用服务计划的存储空间配额。有关详细信息，请参阅[将自定义 Java Web 应用上载到 Azure]。
+	对于这样的情况，你可以通过 Azure 门户创建一个应用，然后手动提供相应的运行时文件。在本示例中，这些文件将占用你的应用服务计划的存储空间配额。有关详细信息，请参阅[将自定义 Java Web 应用上载到 Azure]。
 
 ## <a name="portal" id="appsettings"></a> 创建和配置 Java Web 应用
 
 本部分演示如何使用门户的“应用程序设置”边栏选项卡创建 Web 应用并将其配置为适用于 Java。
 
-1. 登录到 [Azure 门户预览]。
+1. 登录到 [Azure 门户]。
 
 2. 单击“新建”>“Web + 移动”>“Web 应用”。
 
@@ -56,7 +56,7 @@
 
 5. 选择“资源组”或新建一个。
 
-	有关资源组的详细信息，请参阅[使用 Azure 门户预览管理 Azure 资源]。
+	有关资源组的详细信息，请参阅[使用 Azure 门户管理 Azure 资源]。
 
 6. 选择“App Service 计划/位置”或新建一个。
 
@@ -102,13 +102,13 @@
 
 [将应用程序或网页添加到 Java Web 应用]: /documentation/articles/web-sites-java-add-app/
 [Azure App Service 计划概述]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 [激活你的 Visual Studio 订户权益]: /pricing/1rmb-trial/
 [注册试用帐户]: /pricing/1rmb-trial/
 [Try App Service]: https://tryappservice.azure.com/
 [在 Azure App Service 中创建 Java Web 应用]: /documentation/articles/app-service-changes-existing-services/
 [Java 开发中心]: /develop/java/
-[使用 Azure 门户预览管理 Azure 资源]: /documentation/articles/resource-group-portal/
+[使用 Azure 门户管理 Azure 资源]: /documentation/articles/resource-group-portal/
 [将自定义 Java Web 应用上载到 Azure]: /documentation/articles/web-sites-java-custom-upload/
 
 <!-- IMG List -->

@@ -14,13 +14,13 @@
 
 # 在 Azure App Service 中配置 Web Apps #
 
-本主题介绍如何使用 [Azure 门户预览]配置 Web 应用。
+本主题介绍如何使用 [Azure 门户]配置 Web 应用。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## 应用程序设置
 
-1. 在 [Azure 门户预览]中，打开 Web 应用边栏选项卡。
+1. 在 [Azure 门户]中，打开 Web 应用边栏选项卡。
 2. 单击**“所有设置”**。
 3. 单击“应用程序设置”。
 
@@ -165,7 +165,7 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 <!-- URL List -->
 
 [ASP.NET SignalR]: http://www.asp.net/signalr
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 [在 Azure App Service 中配置自定义域名]: /documentation/articles/web-sites-custom-domain-name/
 [为 Azure App Service 中的 Web 应用部署到过渡环境]: /documentation/articles/web-sites-staged-publishing/
 [Enable HTTPS for an app in Azure App Service（为 Azure App Service 中的应用启用 HTTPS）]: /documentation/articles/web-sites-configure-ssl-certificate/
