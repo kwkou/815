@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/22/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="06/13/2016"
+	wacn.date="07/25/2016"/>
 
 # 在 Azure 虚拟机上开始使用 SQL Server
 

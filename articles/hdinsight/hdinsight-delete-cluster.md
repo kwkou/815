@@ -9,8 +9,8 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/09/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="05/20/2016"
+	wacn.date="07/28/2016"/>
 
 #如何删除 HDInsight 群集
 

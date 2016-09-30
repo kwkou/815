@@ -8,8 +8,8 @@
    editor="" />
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="08/15/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="05/08/2016"
+	wacn.date="06/29/2016"/>
 
 # 在 Visual Studio 中创建和管理 Linux 虚拟机
 

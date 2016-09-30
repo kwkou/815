@@ -10,8 +10,8 @@
 
 <tags
    ms.service="vpn-gateway"
-   ms.date="07/29/2016"
-   wacn.date="09/30/2016"/>
+   ms.date="07/15/2016"
+   wacn.date="08/23/2016"/>
 
 # 使用 Azure 资源管理器和 PowerShell 配置 VNet 到 VNet 连接
 

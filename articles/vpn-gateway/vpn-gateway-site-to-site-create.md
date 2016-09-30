@@ -10,8 +10,8 @@
 
 <tags
    ms.service="vpn-gateway"
-   ms.date="08/09/2016"
-   wacn.date="09/30/2016"/>
+   ms.date="05/13/2016"
+   wacn.date="08/01/2016"/>
 
 # 使用 Azure 经典管理门户创建具有站点到站点 VPN 连接的虚拟网络
 

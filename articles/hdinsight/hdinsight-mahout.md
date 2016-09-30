@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="05/18/2016"
+	wacn.date="07/28/2016"/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 

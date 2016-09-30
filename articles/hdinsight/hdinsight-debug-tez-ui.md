@@ -9,8 +9,8 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/19/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/29/2016"/>
 
 # 使用 Tez UI 调试基于 Windows 的 HDInsight 上的 Tez 作业
 

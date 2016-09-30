@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="08/15/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="06/01/2016"
+	wacn.date="07/28/2016"/>
 
 # 使用 Visual Studio 创建用于Web 应用程序的虚拟机
 

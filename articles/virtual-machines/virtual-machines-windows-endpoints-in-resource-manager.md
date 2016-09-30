@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="08/09/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="05/26/2016"
+	wacn.date="07/11/2016"/>
 
 # Resource Manager 中的经典终结点
 [AZURE.INCLUDE [virtual-machines-common-endpoints-in-resource-manager](../../includes/virtual-machines-common-endpoints-in-resource-manager.md)]
