@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="08/10/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/26/2016"/>
 
 # 使用 REST 来备份和还原 Azure 网站应用
 [Azure 网站应用](/home/features/web-site/)可以备份为 Azure 存储空间中的 blob。备份还可以包含该应用的数据库。如果曾经意外地删除了该应用，或者该应用需要还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。

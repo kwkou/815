@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="07/22/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/26/2016"/>
 
 # 使用 Visual Studio 将 ASP.NET Web 应用部署到 Azure
 

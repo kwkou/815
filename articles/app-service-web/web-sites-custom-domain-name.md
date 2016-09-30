@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="07/27/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/26/2016"/>
 
 # 在 Azure 中配置自定义域名
 
