@@ -52,9 +52,9 @@ EnableLogOnAudit.cmd 的内容：
     auditpol.exe /set /category:"Logon/Logoff" /success:enable /failure:enable
     Exit /B 0
 
-前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
+前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/zh-cn/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
 
-除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
+除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/zh-cn/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
 
 若要更改 Web 角色中的 IIS 日志记录，客户可以向 Web 角色服务定义文件添加启动任务。下面的示例为名为 Contoso 的网站启用 HTTP 日志记录，并指定 IIS 应记录 Contoso 网站的所有请求。
 
