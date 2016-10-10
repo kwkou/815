@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="09/23/2016" wacn.date="09/23/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="10/10/2016" wacn.date="10/10/2016" wacn.lang="cn" />
 
 #全部常见问题
 
@@ -127,8 +127,13 @@ MySQL Database on Azure采用MySQL 社区版本，兼容MYSQL常见的管理工�
 
 ### **用workbench 6.3.5连接MySQL on Azure, 出现连接问题**
 
-workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CBC-SHA”进行加密，但是，我们的代理服务器断，目前暂不支持识别，因此会造成无法利用workbench 6.3.5连接MySQL on Azure的问题。作为workaround, 请您配置SSL证书使用，步骤参见[SSL安全访问MySQL Database on Azure](/documentation/articles/mysql-database-ssl-connection/)，并且，您需要在SSL_Cipher中指明AES256-SHA，具体如下图所示。或者建议您可以选择6.3.5以前的版本，该问题将得以解决。
-![Workbench6.3.5连接方法][1]
+workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CBC-SHA”进行加密，但我们的代理服务器端目前暂不支持识别，因此会造成无法利用workbench 6.3.5连接MySQL Database on Azure的问题。作为workaround，请您配置SSL证书使用，具体步骤如下所示：
+
+1. [点击链接](https://www.wosign.com/root/WS_CA1_NEW.crt)，下载证书文件。
+2. 在workbench 6.3.5中，“SSL CA File”一栏指定该证书文件的位置，“SSL Cipher”一栏填写AES256-SHA，如下图所示。
+![Workbench6.3.5SSL连接方法][1]
+
+此外，您还可以选择6.3.5以前的版本，老版本没有这个问题。
 
 ### **用SQLyog连接MySQL on Azure, 出现连接问题**
 当user name超过16个字符时，该客户端会自动截取前16个字符，造成连接的问题。建议您采用最新版本的SQLyog客户端，或其他MySQL的管理客户端，如MySQL workbench。
@@ -156,6 +161,13 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 
 ## **其他问题**<a id="step6"></a> 
 
+## 关于mysql.exe命令行工具的已知问题：
+### status命令返回错误的服务器版本号
+mysql.exe命令行工具连接MySQL Database on Azure数据库后，若使用status命令查看服务器版本，则会返回错误的版本号——比如您创建的服务器是5.7，但status命令返回的版本号却是5.5，如下图所示。
+![status命令返回错误结果][3]
+如需使用mysql.exe命令行工具查看服务器版本号，请使用命令“show variables like '%version%';”（不包含双引号），如下图所示。
+![show命令返回正确结果][4]
+
 ## 关于数据库迁移的常见问题：
 ###导入TRIGGER, PROCEDURE, VIEW, FUNCTION, 或EVENT过程中报”Access denied; you need (at least one of) the SUPER privilege(s) for this operation” 错误。
 检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=`user`@`host`， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](/documentation/articles/mysql-database-operation-limitation/) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
@@ -171,3 +183,5 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 
 [1]: ./media/mysql-database-compatibilityinquiry/SSL.png
 [2]: ./media/mysql-database-serviceinquiry/mysql57.png
+[3]: ./media/mysql-database-otherinquiry/statusbug1.png
+[4]: ./media/mysql-database-otherinquiry/statusbug2.png
