@@ -158,37 +158,18 @@ ASP.NET 5/DNX（.NET 执行环境）是精简的 .NET 堆栈，用于构建在 O
 
 Git 是分布式版本控制系统，可用于部署 Azure App Service Web 应用。你将在本地 Git 存储库中存储你为 Web 应用编写的代码，并通过推送到远程存储库将代码部署到 Azure。
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)，找到你的 web 应用，选择**从源代码控制设置部署**。
 
-2. 单击“浏览”。
+![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
 
-3. 单击“Web 应用”，查看与 Azure 订阅关联的 Web 应用的列表。
+从“设置部署”对话框中，向下滚动并选择“本地 Git”选项。单击向右箭头以继续。
 
-4. 选择你在本教程中创建的 Web 应用。
+![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
 
-5. 在 Web 应用边栏选项卡，单击“设置”>“连续部署”。
+在设置 Git 发布之后，你将立即看到通知你正在创建存储库的页面。在存储库就绪时，会将你转至“部署”选项卡。“部署”选项卡包括有关如何连接的说明。
 
-	![Azure Web 应用主机](./media/web-sites-create-web-app-using-vscode/14-azure-deployment.png)
+![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)  
 
-6. 单击“选择源”>“本地 Git 存储库”。
-
-7. 单击**“确定”**。
-
-	![Azure 本地 Git 存储库](./media/web-sites-create-web-app-using-vscode/15-azure-localrepository.png)
-
-8. 如果你事先未设置部署凭据用于发布 Web 应用或其他 App Service 应用，现在请进行设置：
-
-	* 单击“设置”>“部署凭据”。此时将显示“设置部署凭据”边栏选项卡。
-
-	* 创建用户名和密码。稍后设置 Git 时，将要用到此密码。
-
-	* 单击“保存”。
-
-9. 在 Web 应用的边栏选项卡中，单击“设置”>“属性”。要部署到的远程 Git 存储库的 URL 将显示在“GIT URL”下。
-
-10. 复制“GIT URL”值以供教程稍后使用。
-
-	![Azure Git URL](./media/web-sites-create-web-app-using-vscode/17-azure-giturl.png)
 
 ## 将 Web 应用发布到 Azure App Service
 
