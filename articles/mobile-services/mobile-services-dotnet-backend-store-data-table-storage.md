@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 # 构建使用表存储的 .NET 后端移动服务
 

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/09/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 向 iOS 应用和 .NET 后端添加推送通知

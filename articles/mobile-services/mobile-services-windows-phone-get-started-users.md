@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="01/25/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 #  向移动服务应用程序添加身份验证
 

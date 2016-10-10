@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/25/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="07/21/2016" 
+	wacn.date="09/26/2016"/>
 
 # 注册应用程序以使用 Microsoft 帐户进行身份验证
 

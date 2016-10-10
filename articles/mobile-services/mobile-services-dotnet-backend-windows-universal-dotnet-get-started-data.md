@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="03/07/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 # 将移动服务添加到现有应用程序
 

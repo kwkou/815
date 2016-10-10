@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/07/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 # 在源代码管理中存储移动服务项目代码
 

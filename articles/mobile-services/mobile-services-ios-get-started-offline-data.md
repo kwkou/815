@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/09/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 #  移动服务中的脱机数据同步入门
 

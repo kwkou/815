@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/06/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 如何：在 JavaScript 后端移动服务中定义自定义 API 终结点
