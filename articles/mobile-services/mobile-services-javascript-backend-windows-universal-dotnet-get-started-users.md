@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="03/05/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="07/21/2016" 
+	wacn.date="09/26/2016"/>
 
 # 向通用 Windows 8.1 应用添加身份验证
 

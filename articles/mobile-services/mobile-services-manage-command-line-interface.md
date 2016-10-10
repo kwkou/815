@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="01/27/2016"
-	wacn.date="04/07/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 #  使用命令行工具自动操作移动服务 
 

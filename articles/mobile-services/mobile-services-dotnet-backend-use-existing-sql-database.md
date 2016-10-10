@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/09/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 使用现有的 SQL 数据库和移动服务 .NET 后端生成服务

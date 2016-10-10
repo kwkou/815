@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/11/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 
 # <a name="getting-started"> </a>移动服务入门

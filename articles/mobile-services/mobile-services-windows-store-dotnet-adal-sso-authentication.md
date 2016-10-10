@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="01/14/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 

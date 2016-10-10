@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
 

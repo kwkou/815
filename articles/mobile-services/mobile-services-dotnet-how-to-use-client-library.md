@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="01/28/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 # 如何使用 Azure 移动服务的托管客户端库
 

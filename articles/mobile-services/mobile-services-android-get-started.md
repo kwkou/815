@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/08/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 # 适用于 Android 的移动服务入门（JavaScript 后端）
 
