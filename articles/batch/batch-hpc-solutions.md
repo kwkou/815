@@ -9,8 +9,8 @@
 
 <tags
    ms.service="batch"
-   ms.date="04/21/2016"
-   wacn.date="06/06/2016"/>
+   ms.date="07/27/2016"
+   wacn.date="09/26/2016"/>
 
 # Azure 云中的批处理( Batch ) 和 HPC 解决方案
 

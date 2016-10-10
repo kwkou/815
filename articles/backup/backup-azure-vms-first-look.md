@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="04/22/2016"
-	wacn.date="07/27/2016"/>
+	ms.date="07/29/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 先睹为快：备份 Azure 虚拟机

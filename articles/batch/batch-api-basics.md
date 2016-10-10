@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="batch" 
-	ms.date="06/29/2016"
-	wacn.date="08/08/2016"/>
+	ms.date="08/12/2016"
+	wacn.date="09/26/2016"/>
 	
 # 面向开发人员的 Batch 功能概述
 

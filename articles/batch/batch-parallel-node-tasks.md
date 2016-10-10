@@ -9,8 +9,8 @@
 
    <tags
    	ms.service="batch"
-	ms.date="04/21/2016"
-   	wacn.date="08/05/2016"/>
+	ms.date="07/25/2016"
+   	wacn.date="09/26/2016"/>
 
 # 通过并发节点任务最大限度提高 Azure 批处理 ( Batch ) 计算资源的使用量
 
