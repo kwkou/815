@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="06/16/2016"
-     wacn.date="08/08/2016"/>
+     ms.date="09/12/2016"
+     wacn.date="10/10/2016"/>
 
 # 适用于 .NET 的 Azure IoT 中心入门
 

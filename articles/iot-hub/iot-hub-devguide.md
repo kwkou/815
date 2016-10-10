@@ -9,8 +9,13 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="08/11/2016" 
- wacn.date="08/29/2016"/>
+ ms.devlang="multiple"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="09/02/2016" 
+ ms.author="dobett"
+ wacn.date="10/10/2016"/>
 
 # Azure IoT 中心开发人员指南
 
@@ -45,7 +50,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
     - *接收云到设备的消息*设备使用此终结点来接收目标云到设备的消息。有关详细信息，请参阅[云到设备的消息传送](#c2d)。
     - *启动文件上载*。设备使用此终结点接收来自 IoT 中心的 Azure 存储空间 SAS URI，以便上载文件。有关详细信息，请参阅[文件上传](#fileupload)。
 
-    这些终结点是使用 HTTP 1.1、[MQTT v3.1.1][lnk-mqtt] 和 [AMQP 1.0][lnk-amqp] 协议公开的。请注意，也可以通过端口 443 上的 [WebSockets][lnk-websockets] 来实现 AMQP。
+    这些终结点使用 [MQTT v3.1.1][lnk-mqtt]、HTTP 1.1 和 [AMQP 1.0][lnk-amqp] 协议进行公开。请注意，也可以通过端口 443 上的 [WebSockets][lnk-websockets] 来实现 AMQP。
 * **服务终结点**。每个 IoT 中心公开应用程序后端可用来与设备通信的一组终结点。目前仅使用 [AMQP][lnk-amqp] 协议公开这些终结点。
     - *接收设备到云的消息*。此终结点与 [Azure 事件中心][lnk-event-hubs]兼容。后端服务可用它来读取由设备发送的所有设备到云的消息。有关详细信息，请参阅[设备到云的消息传递](#d2c)。
     - *发送云到设备的消息并接收传递确认*。这些终结点可让应用程序后端发送可靠的云到设备消息，以及接收对应的传送或过期确认。有关详细信息，请参阅[云到设备的消息传递](#c2d)。
@@ -80,6 +85,7 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 
 * [Java 事件中心客户端](https://github.com/hdinsight/eventhubs-client)
 * [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
+* [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
 
 ## 设备标识注册表
 
@@ -103,7 +109,7 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 | status | 必填 | 访问指示器。可以是 **Enabled** 或 **Disabled**。如果是 **Enabled**，则允许设备连接。如果是 **Disabled**，则此设备无法访问任何面向设备的终结点。 |
 | statusReason | 可选 | 128 个字符的字符串，用于存储设备标识状态的原因。允许所有 UTF-8 字符。 |
 | statusUpdateTime | 只读 | 临时指示器，显示上次状态更新的日期和时间。 |
-| connectionState | 只读 | 指示连接状态的字段：**Connected** 或 **Disconnected**。此字段表示设备连接状态的 IoT 中心视图。**重要说明**：此字段只用于开发/调试目的。只有使用 AMQP 或 MQTT 的设备更新连接状态。此外，它基于协议级别的 ping（MQTT ping 或 AMQP ping），并且最多只有 5 分钟的延迟。出于这些原因，可能会发生误报，例如，将设备报告为已连接，但实际上已断开连接。 |
+| connectionState | 只读 | 指示连接状态的字段：**Connected** 或 **Disconnected**。此字段表示设备连接状态的 IoT 中心视图。**重要说明**：此字段只用于开发/调试目的。仅使用 MQTT 或 AMQP 的设备才更新连接状态。此外，它基于协议级别的 ping（MQTT ping 或 AMQP ping），并且最多只有 5 分钟的延迟。出于这些原因，可能会发生误报，例如，将设备报告为已连接，但实际上已断开连接。 |
 | connectionStateUpdatedTime | 只读 | 临时指示器，显示上次更新连接状态的日期和时间。 |
 | lastActivityTime | 只读 | 临时指示器，显示设备上次连接、接收或发送消息的日期和时间。 |
 
@@ -133,13 +139,13 @@ IoT 中心设备标识注册表：
 
 IoT 解决方案通常具有不同的解决方案特定存储，其中包含应用程序特定的元数据。例如，智能建筑物解决方案中的解决方案特定存储将记录部署温度感应器的房间信息。
 
-> [AZURE.IMPORTANT] 请只将设备标识注册表用于设备管理和预配操作。运行时的高吞吐量操作不应依赖于在设备标识注册表中执行操作。例如，在发送命令前先检查设备的连接状态就是不支持的模式。请务必检查设备标识注册表的[限制速率](#throttling)以及[设备检测信号][lnk-guidance-heartbeat]模式。
+> [AZURE.IMPORTANT] 只将设备标识注册表用于设备管理和预配操作。运行时的高吞吐量操作不应依赖于在设备标识注册表中执行操作。例如，在发送命令前先检查设备的连接状态就是不支持的模式。请务必检查设备标识注册表的[限制速率](#throttling)以及[设备检测信号][lnk-guidance-heartbeat]模式。
 
 ### 禁用设备
 
 可以通过更新注册表中标识的**状态**属性来禁用设备。通常在两种情况下使用此属性：
 
-- 在预配协调过程中。有关详细信息，请参阅[设计你的解决方案 - 设备预配][lnk-guidance-provisioning]。
+- 在预配协调过程中。有关详细信息，请参阅 [Design your solution - Device Provisioning][lnk-guidance-provisioning]（设计你的解决方案 - 设备预配）。
 - 你出于任何原因认为设备遭到入侵或未经授权。
 
 ### 导入和导出设备标识 <a id="importexport"></a>
@@ -148,8 +154,8 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 
 可以使用 [IoT 中心资源提供程序终结点](#endpoints)上的异步操作，将设备标识批量导入 IoT 中心的标识注册表。导入是长时间运行的作业，它使用客户提供的 blob 容器中的数据，将设备标识数据写入设备标识注册表。
 
-- 有关导入和导出 API 的详细信息，请参阅 [Azure IoT 中心 — 资源提供程序 API][lnk-resource-provider-apis]。
-- 若要了解有关如何运行导入和导出作业的详细信息，请参阅[批量管理 IoT 中心的设备标识][lnk-bulk-identity]。
+- 有关导入和导出 API 的详细信息，请参阅 [Azure IoT 中心 - 资源提供程序 API][lnk-resource-provider-apis]。
+- 若要了解有关如何运行导入和导出作业的详细信息，请参阅 [Bulk management of IoT Hub device identities][lnk-bulk-identity]（批量管理 IoT 中心的设备标识）。
 
 ## 安全性 <a id="security"></a>
 
@@ -159,8 +165,8 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 
 IoT 中心使用以下一组*权限*向每个 IoT 中心的终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
 
-* **RegistryRead**。授予对设备标识注册表的读取访问权限。有关详细信息，请参阅[设备标识注册表](#device-identity-registry)。
-* **RegistryReadWrite**。授予对设备标识注册表的读取和写入访问权限。有关详细信息，请参阅[设备标识注册表](#device-identity-registry)。
+* **RegistryRead**。授予对设备标识注册表的读取访问权限。有关详细信息，请参阅 [Device identity registry](#device-identity-registry)（设备标识注册表）。
+* **RegistryReadWrite**。授予对设备标识注册表的读取和写入访问权限。有关详细信息，请参阅 [Device identity registry](#device-identity-registry)（设备标识注册表）。
 * **ServiceConnect**。授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。
 * **DeviceConnect**。授予对面向设备的通信终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。
 
@@ -197,7 +203,7 @@ Azure IoT 中心可根据共享访问策略和设备标识注册表安全凭据�
 
 #### 协议详情
 
-每个支持的协议（例如 AMQP、MQTT 和 HTTP）以不同的方式传输令牌。
+每个支持的协议（如 MQTT、AMQP 和 HTTP）以不同方式传输令牌。
 
 
 HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验证。
@@ -278,17 +284,23 @@ IoT 中心消息包含：
 
 ### 选择通信协议 <a id="amqpvshttp"></a>
 
-在设备端通信方面，Iot 中心支持 [AMQP][lnk-amqp]、基于 WebSockets 的 AMQP、MQTT 和 HTTP/1 协议。关于它们的用途，请考虑以下几点。
+在设备端通信方面，IoT 中心支持 MQTT、[AMQP][lnk-amqp]、基于 WebSockets 的 AMQP 和 HTTP/1 协议。下表提供了针对协议选取的高水平建议：
 
-* **云到设备模式**。HTTP/1 不会以有效的方式实现服务器推送。因此，使用 HTTP/1 时，设备将在 IoT 中心轮询云到设备的消息。此方法对于设备和 IoT 中心而言是非常低效的。根据当前 HTTP/1 准则，每个设备每 25 分钟或更长时间进行轮询。另一方面，接受云到设备的消息时，AMQP 和 MQTT 支持服务器推送。它们将启用从 IoT 中心到设备的直接消息推送。如果传送延迟是一大考虑因素，最好使用 AMQP 或 MQTT 协议。对于很少连接的设备，HTTP/1 也适用。
+| 协议 | 何时应选择此协议 |
+| -------- | ------------------------------------ |
+| MQTT | 用于无需 WebSockets 的所有设备。 |
+| AMQPS | 用于利用跨设备连接复用的字段和云网关。<br/> 需连接端口 443 时使用。 |
+| HTTPS | 用于不可支持其他协议的设备。 |
+
+应在选择设备端通信协议之前考虑以下几点：
+
+* **云到设备模式**。HTTP/1 不会以有效的方式实现服务器推送。因此，使用 HTTP/1 时，设备将在 IoT 中心轮询云到设备的消息。此方法对于设备和 IoT 中心而言是非常低效的。根据当前 HTTP/1 准则，每台设备每 25 分钟或更长时间轮询一次消息。而 MQTT 和 AMQP 支持服务器在收到云到设备的消息时进行推送。它们将启用从 IoT 中心到设备的直接消息推送。若担忧传送延迟，最好选用 AMQP 或 MQTT 协议。对于很少连接的设备，HTTP/1 也适用。
 * **现场网关**。使用 HTTP/1 和 MQTT 时，无法使用相同的 TLS 连接来连接到多个设备（各有自身的设备凭据）。因此，对于[现场网关方案][lnk-azure-gateway-guidance]，这些并不是最理想的协议，因为对于每个连接到现场网关的设备，这些协议需要在现场网关和 IoT 中心之间建立一个 TLS 连接。
-* **低资源设备**。MQTT 和 HTTP/1 库的占用空间比 AMQP 库更小。因此，如果设备拥有的资源很少（例如，小于 1 MB RAM），这些协议可能是唯一可用的协议实现。
-* **网络遍历**。MQTT 标准在端口 8883 上侦听，这可能会导致对非 HTTP 协议关闭的网络发生问题。HTTP 和 AMQP（基于 WebSockets）均可用于此方案。
-* **有效负载大小**。AMQP 和 MQTT 是二进制协议，因此明显比 HTTP/1 更精简。
+* **低资源设备**。MQTT 和 HTTP/1 库的占用空间比 AMQP 库更小。因此，如果设备的资源很少（如低于 1 MB RAM），可能只可实现这些协议。
+* **网络遍历**。MQTT 标准在端口 8883 上侦听，这可能会导致仅对 HTTP 协议开放的网络出现问题。HTTP 和 AMQP（基于 WebSockets）均可用于此方案。
+* **有效负载大小**。AMQP 和 MQTT 是二进制协议，因此其有效负载明显比 HTTP/1 更精简。
 
-一般说来，应尽可能使用 AMQP（或基于 WebSockets 的 AMQP），而且仅当资源的约束阻止使用 AMQP 时才使用 MQTT。应仅在网络遍历和网络配置都阻止使用 MQTT 和 AMQP 时才使用 HTTP/1。此外，在使用 HTTP/1 时，每个设备应该每隔 25 分钟或以上轮询一次云到设备的消息。
-
-> [AZURE.NOTE] 在开发期间可以 25 分钟以下的时间间隔进行轮询。
+> [AZURE.NOTE] 使用 HTTP/1 时，每台设备应每 25 分钟或更长时间轮询一次云到设备的消息。但在开发期间，可按低于 25 分钟的更高频率进行轮询。
 
 <a id="mqtt-support"></a>
 #### 有关 MQTT 支持的说明

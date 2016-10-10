@@ -9,8 +9,8 @@
 
 <tags
    ms.service="iot-hub"
-   ms.date="04/18/2016"
-   wacn.date="08/01/2016"/>
+   ms.date="08/23/2016"
+   wacn.date="10/10/2016"/>
 
 # 支持 IoT 中心的其他协议
 

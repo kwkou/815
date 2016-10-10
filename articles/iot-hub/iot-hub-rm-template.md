@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="05/31/2016"
-     wacn.date="08/01/2016"/>
+     ms.date="08/16/2016"
+     wacn.date="10/10/2016"/>
 
 # 使用 C# 程序和 ARM 模板创建 IoT 中心
 

@@ -9,8 +9,13 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="06/15/2016"
-     wacn.date="08/08/2016"/>
+     ms.devlang="cpp"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="09/12/2016"
+     ms.author="dobett"
+     wacn.date="10/10/2016"/>
 
 
 # IoT 网关 SDK (beta) – 使用网关 SDK 进行设备管理
@@ -203,7 +208,8 @@
 
 3. 将 **iotdm-edison-sample.bb** 文件从 **~/azure-iot-sdks/c/iotdm\_client/samples/iotdm\_edison\_sample/bitbake/** 文件夹复制到 **~/edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-support/iotdm-edison-sample** 文件夹。
 
-4. 将 **iotdm\_edison\_sample.service** 文件从 **~/azure-iot-sdks/c/iotdm\_client/samples/iotdm\_edison\_sample/bitbake/** 文件夹复制到 **~/edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-support/iotdm-edison-sample/files** 文件夹。
+4. 编辑文件 **~/edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-support/iotdm-edison-sample/iotdm-edison-sample.bb**，并将 `-Duse_http:BOOL=OFF` 替换为 `-Duse_http:BOOL=ON`。
+4. 将文件 **iotdm\_edison\_sample.service** 从 **~/azure-iot-sdks/c/iotdm\_client/samples/iotdm\_edison\_sample/bitbake/** 文件夹复制到 **~/edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-support/iotdm-edison-sample/files** 文件夹。
 
 5. 编辑 **~/edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb** 文件，为新脚本添加一个条目。在该文件的末尾添加以下行：
     
@@ -211,14 +217,14 @@
     IMAGE_INSTALL += "iotdm-edison-sample"
     ```
 
-6. 由于网关 SDK 和设备管理客户端共享某些库，因此需要编辑 **~/edison-src/out/linux64/poky/meta/classes/sstate.bbclass** 文件。在此文件的末尾添加以下行。请务必将 `<your user>` 替换为当前用户名：
+6. 网关 SDK 和设备管理客户端共享一些库，因此需编辑 **~/edison-src/out/linux64/poky/meta/classes/sstate.bbclass** 文件。在此文件的末尾添加以下行。请务必将 `<your user>` 替换为当前用户名：
     
     ```
     SSTATE_DUPWHITELIST += "/home/<your user>/edison-src/out/linux64/build/tmp/sysroots/edison/usr/lib/libaziotsharedutil.a"
     SSTATE_DUPWHITELIST += "/home/<your user>/edison-src/out/linux64/build/tmp/sysroots/edison/usr/include/azureiot"
     ```
 
-7. 通过编辑 **~/edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-connectivity/wpa\_supplicant/wpa-supplicant/wpa\_supplicant.conf-sane** 文件并在文件末尾添加以下行，将 WiFi 配置为在 Edison 主板上自动启动。请务必将 `<your wifi ssid>` 和 `<your wifi password>` 替换为 WiFi 网络的正确值：
+7. 编辑 **~/edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-connectivity/wpa\_supplicant/wpa-supplicant/wpa\_supplicant.conf-sane** 文件并在文件末尾添加以下行，配置为在 Edison 主板上自动启动 WiFi。请务必将 `<your wifi ssid>` 和 `<your wifi password>` 替换为 WiFi 网络的正确值：
     
     ```
     network={
@@ -231,7 +237,7 @@
     }
     ```
 
-8. 现在可以创建 Edison 主板的映像，其中包含网关 SDK 和设备管理客户端。**bitbake** 命令的运行速度比以前的速度快很多，因为它只需要创建新脚本并将其添加到映像：
+8. 现在可以创建 Edison 主板的映像，其中包含网关 SDK 和设备管理客户端。**bitbake** 命令的运行速度大幅提升，因为它只需创建新脚本并将其添加到映像：
     
     ```
     cd ~/edison-src/out/linux64/
@@ -246,29 +252,29 @@
     ./meta-intel-edison/utils/flash/postBuild.sh ./out/linux64/build/
     ```
 
-需要刷入 Edison 主板的文件现在出现在 **~/edison-src/out/linux64/build/toFlash/** 文件夹中。
+刷新 Edison 主板所需的文件现位于 **~/edison-src/out/linux64/build/toFlash/** 文件夹中。
 
 ### 使用自定义映像刷新 Intel Edison
 
 现在可以使用包含 IoT 中心设备管理客户端和网关软件的自定义映像来刷新 Intel Edison。
 
-在用于创建自定义映像的 Ubuntu 计算机上，将 **toFlash** 文件夹中的文件复制到使用 USB 电缆连接到 Edison 主板的计算机上。
+在构建自定义映像所用的 Ubuntu 计算机上，将 **toFlash** 文件夹中的文件复制到用 USB 电缆连接到 Edison 主板的计算机上。
 
-如果使用 Windows 计算机通过 USB 电缆连接到 Edison，则应该运行 **flashall.bat** 脚本来刷新 Edison。如果使用 Linux 计算机通过 USB 电缆连接到 Edison，则应该运行 **flashall.bat** 脚本来刷新 Edison。
+如果在 Windows 计算机上通过 USB 电缆连接到 Edison，则应运行 **flashall.bat** 脚本来刷新 Edison。如果在 Linux 计算机上通过 USB 电缆连接到 Edison，则应运行 **flashall.bat** 脚本来刷新。
 
-刷新过程完成后，请在主计算机上使用[串行连接][lnk-serial-connection]连接到 Edison，并并 **root** 身份登录。应该验证你的 Edison 主板现在是否已连接到 WiFi 网络。
+刷新完成后，请在主机上使用[串行连接][lnk-serial-connection]来连接到 Edison，并以 **root** 身份登录。应该验证你的 Edison 主板现在是否已连接到 WiFi 网络。
 
 ### 运行示例
 
-必须在 Edison 主板上配置设备管理客户端，才能将 **GW-device** 设备连接到 IoT 中心。使用文本编辑器（例如 **vi** 或 **nano**）在 Edison 的 /home/root 文件夹中创建名为 **.cs** 的文件。此文件只能包含 **GW-device** 的连接字符串。如果你以前并未记下此连接字符串，可以使用设备资源管理器或 [iothub-explorer][lnk-explorer-tools] 工具，从 IoT 中心设备注册表中检索此设备连接字符串。
+必须在 Edison 主板上配置设备管理客户端，才能作为 **GW-device** 设备连接到 IoT 中心。使用文本编辑器（如 **vi** 或 **nano**），在 Edison 的 /home/root 文件夹中创建名为 **.cs** 的文件。此文件只能包含 **GW-device** 的连接字符串。如果先前未记下此连接字符串，可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具，在 IoT 中心设备注册表中检索此设备连接字符串。
 
-创建 **.cs** 文件后，请使用以下命令重新启动 Edison 主板：
+创建 **.cs** 文件后，请使用以下命令重启 Edison 主板：
 
 ```
 reboot -h now
 ```
 
-当 Edison 重新启动时，请检查设备管理和网关服务是否以“正常”状态启动：
+重启 Edison 后，检查设备管理和网关服务是否以“正常”状态启动：
 
 ```
 [  OK  ] Started Daemon to receive the wpa_supplicant event.
@@ -295,13 +301,13 @@ systemctl status iotdm_edison_sample.service
 
 ### 启动固件更新作业
 
-IoT 设备管理服务请求的 Edison 固件更新通常会从某个 URL 下载一个包含固件的 zip 文件。若要简化本教程，可以手动将 zip 文件复制到 Edison 主板，然后在请求更新时使用 **file://** URL 而不是 **http://** URL。
+IoT 设备管理服务请求的 Edison 固件更新通常会从某个 URL 下载一个包含固件的 zip 文件。若要简化本教程，可将 zip 文件手动复制到 Edison 主板，然后在请求更新时使用 **file://** URL 而不是 **http://** URL。
 
 同样地，为了简化本教程，固件更新将重新应用相同的固件映像，而不是使用全新的映像。你可以看到此映像正在应用到 Edison 主板。
 
-创建名为 **edison.zip** 的 zip 文件，其中包含用于创建自定义映像的 Ubuntu 计算机上 **toFlash** 文件夹中的所有文件和子文件夹。确保 **toFlash** 文件夹的文件位于 zip 文件的根目录中。使用 SCP（如果使用 Putty，则为 PSCP）等工具将 **edison.zip** 文件复制到 Edison 主板上的文件 /home/root 文件夹。
+创建名为 **edison.zip** 的 zip 文件，其中包含创建自定义映像所用的 Ubuntu 计算机上 **toFlash** 文件夹中的所有文件和子文件夹。确保 **toFlash** 文件夹的文件位于 zip 文件的根目录中。使用 SCP（若使用 Putty，则为 PSCP）等工具将 **edison.zip** 文件复制到 Edison 主板的 /home/root 文件夹中。
 
-若要提交固件更新作业并监视其进度，请使用 Node.js [设备管理示例 UI][lnk-dm-sample-ui]。可以在 Windows 或 Linux 上运行本示例，它需要 [Node.js][lnk-nodejs] 6.1.0 或更高版本。若要在台式机上检索、生成和运行设备管理示例 UI，请遵循以下步骤：
+若要提交固件更新作业并监视进度，请使用 Node.js [设备管理示例 UI][lnk-dm-sample-ui]。可在 Windows 或 Linux 上运行本示例，它需要 [Node.js][lnk-nodejs] 6.1.0 或更高版本。若要在台式机上检索、生成和运行设备管理示例 UI，请遵循以下步骤：
 
 1. 打开**命令提示符**。
 
@@ -325,7 +331,7 @@ IoT 设备管理服务请求的 Edison 固件更新通常会从某个 URL 下载
     npm run build
     ```
 
-6. 使用文本编辑器在克隆文件夹的根目录中打开 user-config.json 文件。将“&lt;YOUR CONNECTION STRING HERE&gt;”文本替换为你的 IoT 中心连接字符串。可以在 Azure [门户][lnk-azure-portal]中找到此连接字符串。
+6. 使用文本编辑器在克隆文件夹的根目录中打开 user-config.json 文件。将“&lt;YOUR CONNECTION STRING HERE&gt;”文本替换为你的 IoT 中心连接字符串。Azure [门户预览][lnk-azure-portal]中提供此连接字符串。
 
 7. 在命令提示符处，运行以下命令启动设备管理 UX 应用：
 
@@ -339,7 +345,7 @@ IoT 设备管理服务请求的 Edison 固件更新通常会从某个 URL 下载
 
 9. 选择“GW-device”设备，在“设备作业”下拉列表中选择“固件更新”，然后单击“启动”。
 
-10. 在“包 URI”字段中，输入 **file:///home/root/edison.zip** 以使用前面复制到 Edison 主板的映像文件。依次单击“提交”、“是”、“作业历史记录”链接，以查看正在运行的新父级和子作业：**
+10. 在“包 URI”字段中，输入 **file:///home/root/edison.zip** 以使用之前复制到 Edison 主板的映像文件。依次单击“提交”、“是”、“作业历史记录”链接，查看正在运行的新父级和子作业：
 
     ![作业历史记录链接][img-history-link]
 
@@ -361,7 +367,7 @@ IoT 设备管理服务请求的 Edison 固件更新通常会从某个 URL 下载
     ...
     ```
 
-12. Edison 完成重新启动后，请在设备管理示例 UI 中刷新页面，以查看这两项固件更新作业的作业状态现在是否为“已完成”：
+12. Edison 启动完毕后，请在设备管理示例 UI 中刷新页面，查看这两项固件更新作业的作业状态现在是否为“已完成”：
 
     ![已完成作业状态][img-job-status]
 
@@ -373,7 +379,7 @@ IoT 设备管理服务请求的 Edison 固件更新通常会从某个 URL 下载
 
 ## 后续步骤
 
-有关使用 IoT 中心和示例 UI 进行设备管理的详细信息，请参阅 [Overview of Azure IoT Hub device management][lnk-device-management]（Azure IoT 中心设备管理概述）一文。
+若要深入了解如何使用 IoT 中心和示例 UI 管理设备，请参阅 [Azure IoT 中心设备管理概述][lnk-device-management]一文。
 
 如果想要深入了解网关 SDK 并体验一些代码示例，请访问 [Azure IoT Gateway SDK][lnk-gateway-sdk]（Azure IoT 网关 SDK）。
 

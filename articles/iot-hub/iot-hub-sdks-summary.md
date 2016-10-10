@@ -9,8 +9,8 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="06/23/2016"
- wacn.date="08/01/2016"/>
+ ms.date="09/13/2016"
+ wacn.date="10/10/2016"/>
 
 # IoT 中心 SDK
 
