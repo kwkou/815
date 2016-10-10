@@ -69,7 +69,7 @@ Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提供关�
 
 ## 创建第一个服务器级防火墙规则
 
-第一个服务器级防火墙设置可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)进行创建，也可以使用 REST API 或 Azure PowerShell 通过编程方式创建。后续的服务器级防火墙规则可以使用这些方法或通过Transact-SQL来创建和管理。有关服务器级防火墙规则的详细信息，请参阅[如何：使用 Azure PowerShell 配置 Azure SQL 服务器防火墙](/documentation/articles/sql-database-configure-firewall-settings-powershell//)。
+第一个服务器级防火墙设置可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)进行创建，也可以使用 REST API 或 Azure PowerShell 通过编程方式创建。后续的服务器级防火墙规则可以使用这些方法或通过Transact-SQL来创建和管理。有关服务器级防火墙规则的详细信息，请参阅[如何：使用 Azure PowerShell 配置 Azure SQL 服务器防火墙](/documentation/articles/sql-database-configure-firewall-settings-powershell/)。
 
 ## 创建数据库级防火墙规则
 
