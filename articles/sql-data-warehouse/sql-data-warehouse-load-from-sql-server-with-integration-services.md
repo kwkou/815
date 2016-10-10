@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/08/2016"
-   wacn.date="06/06/2016"/>
+   ms.date="08/08/2016"
+   wacn.date="09/26/2016"/>
 
 # 将数据从 SQL Server 载入 Azure SQL 数据仓库 (SSIS)
 

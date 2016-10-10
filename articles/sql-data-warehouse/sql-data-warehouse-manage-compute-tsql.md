@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/06/2016"
-   wacn.date="08/15/2016"/>
+   ms.date="08/08/2016"
+   wacn.date="09/26/2016"/>
 
 # 管理 Azure SQL 数据仓库中的计算能力 (T-SQL)
 
