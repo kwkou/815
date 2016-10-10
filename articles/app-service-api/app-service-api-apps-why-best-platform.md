@@ -16,7 +16,7 @@
 
 Azure 应用服务中的 API 应用提供各种功能，用于轻松在云中和本地开发、托管和使用 API。使用 API 应用可受益于企业级安全性、简单的访问控制、和自动 SDK 生成等功能。
 
-[Azure 应用服务](/documentation/articles/app-service-value-prop-what-is/)是完全托管的平台，适用于 Web、移动和集成方案。API 应用是 [Azure 应用服务](/documentation/articles/app-service-value-prop-what-is/)提供的四种应用类型之一。
+[Azure 应用服务](/documentation/articles/app-service-value-prop-what-is/)是完全托管的平台，适用于 Web、移动和集成方案。API 应用是 [Azure 应用服务](/documentation/articles/app-service-value-prop-what-is/)提供的三种应用类型之一。
 
 ![Azure 应用服务中的应用类型](./media/app-service-api-apps-why-best-platform/appservicesuite.png)
 
