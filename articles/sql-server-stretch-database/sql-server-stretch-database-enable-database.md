@@ -74,7 +74,7 @@
     
         CREATE MASTER KEY ENCRYPTION BY PASSWORD ='<password>'
 
-    有关数据库主密钥的详细信息，请参阅 [CREATE MASTER KEY (Transact-SQL)](https://msdn.microsoft.com/library/ms174382.aspx) 和[创建数据库主密钥](https://msdn.microsoft.com/library/aa337551.aspx)。
+    有关数据库主密钥的详细信息，请参阅 [CREATE MASTER KEY (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) 和[创建数据库主密钥](https://msdn.microsoft.com/zh-cn/library/aa337551.aspx)。
 
 4.  在为延伸数据库配置数据库时，必须提供用于在本地 SQL Server 与远程 Azure 服务器之间进行通信的延伸数据库凭据。可以使用两个选项。
 
@@ -92,7 +92,7 @@
         GO
         ```
 
-		有关凭据的详细信息，请参阅 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/library/mt270260.aspx)。创建凭据需要 ALTER ANY CREDENTIAL 权限。
+		有关凭据的详细信息，请参阅 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx)。创建凭据需要 ALTER ANY CREDENTIAL 权限。
 
     -   如果符合以下所有条件，则可以使用 SQL Server 的联合服务帐户来与远程 Azure 服务器通信。
 
