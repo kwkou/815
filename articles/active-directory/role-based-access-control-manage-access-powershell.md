@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/14/2016"
-	wacn.date="08/22/2016"/>  
+	ms.date="07/22/2016"
+	wacn.date="09/26/2016"/>  
 
 
 # 使用 Azure PowerShell 管理基于角色的访问控制

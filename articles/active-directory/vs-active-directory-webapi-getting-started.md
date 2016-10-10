@@ -9,8 +9,8 @@
   
 <tags 
 	ms.service="active-directory" 
-	ms.date="03/28/2016"
-	wacn.date="07/05/2016"/>
+	ms.date="08/15/2016"
+	wacn.date="09/26/2016"/>
 
 # 开始使用 Azure Active Directory 和 Visual Studio 连接服务（WebApi 项目）
 
