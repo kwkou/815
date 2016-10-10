@@ -8,16 +8,21 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="06/30/2016"
- wacn.date="08/01/2016"/>
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.date="08/18/2016"
+ wacn.date="10/10/2016"
+ ms.author="krisragh"/>
 
 # 如何使用 Azure 计划程序生成复杂的计划和高级循环  
 
 ## 概述
 
-Azure 计划程序作业的核心是计划。计划确定了计划程序何时以及如何执行作业。
+Azure 计划程序作业的核心是 *计划* 。计划确定了计划程序何时以及如何执行作业。
 
-Azure 计划程序允许你为作业指定不同的一次性计划和重复性计划。一次性计划在指定的时间触发一次 - 实际上，它们是只执行一次的重复性计划。重复性计划根据预先确定的频率触发。
+Azure 计划程序允许你为作业指定不同的一次性计划和重复性计划。 *一次性* 计划在指定的时间触发一次 - 实际上，它们是只执行一次的 *重复性* 计划。重复性计划根据预先确定的频率触发。
 
 由于具有这种灵活性，Azure 计划程序可让你支持各种业务方案：
 
@@ -183,7 +188,7 @@ Azure 计划程序作业中的日期时间引用遵循 [ISO-8601 规范](http://
  
  [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing/)
  
- [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/mt629143)
  
  [Azure 计划程序 PowerShell cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
  
@@ -195,4 +200,4 @@ Azure 计划程序作业中的日期时间引用遵循 [ISO-8601 规范](http://
  
   
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0926_2016-->
