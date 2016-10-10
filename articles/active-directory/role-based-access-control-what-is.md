@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/03/2016"
-	wacn.date="07/05/2016"/>
+	ms.date="08/03/2016"
+	wacn.date="09/26/2016"/>
 
 # Azure 门户中的访问管理入门
 
