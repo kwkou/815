@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="06/13/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="07/27/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 常用流分析使用模式的查询示例

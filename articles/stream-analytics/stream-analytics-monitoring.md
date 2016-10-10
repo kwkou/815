@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="05/03/2016" 
-	wacn.date="06/20/2016"/>
+	ms.date="07/27/2016" 
+	wacn.date="09/26/2016"/>
 
 # 了解流分析作业监视以及如何监视查询
 

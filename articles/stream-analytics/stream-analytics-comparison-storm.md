@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="05/03/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="07/27/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 帮助你选择流分析平台：Apache Storm 与 Azure 流分析的比较
