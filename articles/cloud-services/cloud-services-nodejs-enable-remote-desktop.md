@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="04/08/2016" 
+	ms.date="08/11/2016" 
 	wacn.date="09/26/2016"/>
 
 # 在 Azure 中启用远程桌面
