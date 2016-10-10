@@ -80,7 +80,7 @@
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-3-portalresourcegroup.png)
  
-7.	在资源组边栏选项卡中，请注意资源组中已存在两个 Web 应用和一个 SQL 数据库。
+7.	在资源组边栏选项卡中，请注意资源组中已存在两个 Web 应用。
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-4-portalresourcegroupclicked.png)
  
