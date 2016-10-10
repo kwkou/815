@@ -102,7 +102,7 @@
 | &nbsp; | Url-Id | 标题 | 说明 |
 | --: | :-- | :-- | :-- |
 | 43 | integrate-azure-stream-analytics | [将 Azure 流分析与 SQL 数据仓库配合使用](/documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics/) | 有关在开发解决方案时将 Azure 流分析与 Azure SQL 数据仓库配合使用的技巧。 |
-| 44 | integrate-power-bi | [将 Power BI 与 SQL 数据仓库配合使用](/documentation/articles/sql-data-warehouse-integrate-power-bi/) | 有关在开发解决方案时将 Power BI 与 Azure SQL 数据仓库配合使用的技巧。 |
+| 44 | integrate-power-bi | 有关在开发解决方案时将 Power BI 与 Azure SQL 数据仓库配合使用的技巧。 |
 | 45 | overview-integrate | [在 SQL 数据仓库中利用其他服务](/documentation/articles/sql-data-warehouse-overview-integrate/) | 用于集成 SQL 数据仓库的工具以及提供相应解决方案的合作伙伴。 |
 
 
