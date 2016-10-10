@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="key-vault"
-	ms.date="04/18/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="07/29/2016"
+	wacn.date="09/26/2016"/>
 
 
 
