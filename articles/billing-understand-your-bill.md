@@ -10,8 +10,8 @@
 
 <tags
    ms.service="billing"
-   ms.date="04/28/2016"
-   wacn.date="08/08/2016"/>
+   ms.date="07/21/2016"
+   wacn.date="09/26/2016"/>
 
 
 # 了解你的 Azure 帐单
