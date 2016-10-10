@@ -9,8 +9,13 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="08/08/2016"
-     wacn.date="08/29/2016"/>
+     ms.devlang="na"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="09/16/2016"
+     ms.author="hegate"
+     wacn.date="10/10/2016"/>
 
 # OS 平台和硬件与设备 SDK 的兼容性
 
@@ -145,7 +150,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 - [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 
-
+[lnk-iot-suite]: /documentation/services/iot-suite/
 
 [lnk-protocols]: /documentation/articles/iot-hub-protocol-gateway/
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/

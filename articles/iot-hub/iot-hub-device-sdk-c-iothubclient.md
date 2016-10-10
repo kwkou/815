@@ -9,8 +9,13 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="05/17/2016"
-     wacn.date="08/01/2016"/>
+     ms.devlang="cpp"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="09/06/2016"
+     ms.author="obloch"
+     wacn.date="10/10/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关 IoTHubClient 的详细信息
 
@@ -18,9 +23,9 @@
 
 前一篇文章介绍了如何使用 **IoTHubClient** 库将事件发送到 IoT 中心及接收消息。本文将扩大讨论范围，介绍**较低级别 API**，说明如何更精确地管理发送和接收数据的*时机*。此外将说明如何使用 **IoTHubClient** 库中的属性处理功能，将属性附加到事件（以及从消息中检索属性）。最后，进一步说明如何以不同的方式来处理从 IoT 中心收到的消息。
 
-本文的总结部分提供了多个其他主题，包括有关设备凭据的详细信息以及如何通过配置选项更改 **IoTHubClient** 的行为。
+本文结尾提供了几个其他主题，深入介绍了设备凭据以及如何通过配置选项更改 **IoTHubClient** 的行为。
 
-我们将使用 **IoTHubClient** SDK 示例来解释这些主题。如果想要继续，请参阅适用于 C 的 Azure IoT 设备 SDK 中随附的 **iothub\_client\_sample\_http** 和 **iothub\_client\_sample\_amqp** 应用程序。以下部分所述的所有内容都将通过这些示例来演示。
+我们将使用 **IoTHubClient** SDK 示例来阐释这些主题。如果想要继续，请参阅适用于 C 的 Azure IoT 设备 SDK 中随附的 **iothub\_client\_sample\_http** 和 **iothub\_client\_sample\_amqp** 应用程序。以下部分所述的所有内容都将通过这些示例来演示。
 
 你可在 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) GitHub 存储库中找到**适用于 C 语言的Azure IoT 设备 SDK**，并可在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
 
@@ -101,7 +106,7 @@ while (1)
 IoTHubClient_LL_SetMessageCallback(iotHubClientHandle, ReceiveMessageCallback, &receiveContext)
 ```
 
-经常在循环中调用 **IoTHubClient\_LL\_DoWork** 的原因是每次调用它时，它都会将一些缓冲的事件发送到 IoT 中心，并检索设备的下一个排队消息。每次调用并不保证发送所有缓冲的事件或检索所有排队的消息。如果你想要发送缓冲区中的所有事件，并继续进行其他处理，可以使用如下代码来替换此循环：
+经常在循环中调用 **IoTHubClient\_LL\_DoWork** 的原因是每次调用它时，它都会将 *一些* 缓冲的事件发送到 IoT 中心，并检索设备的*下一个* 排队消息。每次调用并不保证发送所有缓冲的事件或检索所有排队的消息。如果你想要发送缓冲区中的所有事件，并继续进行其他处理，可以使用如下代码来替换此循环：
 
 ```
 IOTHUB_CLIENT_STATUS status;
@@ -113,7 +118,7 @@ while ((IoTHubClient_LL_GetSendStatus(iotHubClientHandle, &status) == IOTHUB_CLI
 }
 ```
 
-此代码将一直调用 **IoTHubClient\_LL\_DoWork**，直到缓冲区中的所有事件都发送到 IoT 中心为止。请注意，这并不意味着已接收所有已排队的消息。部分原因是检查“所有”消息的确定性并不如操作那样强。如果检索了“所有”消息，但随即将另一个消息发送到设备，会发生什么情况？ 更好的处理方法是使用设定的超时。例如，每次调用消息回调函数时，可以重置计时器。例如，如果在过去 X 秒内未收到任何消息，可以接着编写逻辑来继续处理。
+此代码将一直调用 **IoTHubClient\_LL\_DoWork**，直到缓冲区中的所有事件都发送到 IoT 中心为止。请注意，这并不表示收到所有已排队的消息。部分原因是检查“所有”消息的确定性并不如操作那样强。如果检索了“所有”消息，但随即将另一个消息发送到设备，会发生什么情况？ 更好的处理方法是使用设定的超时。例如，每次调用消息回调函数时，可以重置计时器。例如，如果在过去 *X* 秒内未收到任何消息，可以接着编写逻辑来继续处理。
 
 当你完成引入事件和接收消息时，请务必调用相应的函数来清理资源。
 

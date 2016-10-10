@@ -9,20 +9,25 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="06/08/2016"
- wacn.date="08/01/2016"/>
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="08/25/2016"
+ ms.author="dobett"
+ wacn.date="10/10/2016"/>
 
 # 使用示例性 UI 探索 Azure IoT 中心设备管理
 
-与示例性设备管理 UI 交互将有助于你巩固 Azure IoT 中心设备管理[概述][lnk-dm-overview]和[入门][lnk-get-started]文章中涵盖的概念和功能。本文将指导你完成所有三个主要设备管理概念 –“设备克隆”、“设备查询”和“设备作业”，如示例性设备管理 Web UI 中表示的那样。
+与设备管理示例 UI 进行交互，这有助于巩固 Azure IoT 中心设备管理[概述][lnk-dm-overview]和[入门][lnk-get-started]文章中涵盖的概念和功能。本文将指导你完成所有三个主要设备管理概念 –“设备克隆”、“设备查询”和“设备作业”，如示例性设备管理 Web UI 中表示的那样。
 
 那些寻求构建他们自己的设备管理交互式体验的开发人员可以分叉示例性 UI 代码库来用作自定义项目的基础。你可以在 [Azure IoT 设备管理 UI][lnk-dm-github] GitHub 存储库中查看完整项目代码和详细介绍其他开发工具功能的自述文档。
 
 ## 先决条件
 
-开始本教程之前，应完成 [Azure IoT 中心设备管理入门][lnk-get-started]文章中的步骤。如果尚未执行，请返回并完成本文中的所有步骤，然后再继续。
+开始本教程之前，应完成 [Azure IoT 中心设备管理入门][lnk-get-started]文章中的步骤。若未执行，请返回完成本文中的所有步骤再继续操作。
 
-已完成“入门”教程后，测试系统上会运行以下设备：
+完成“入门”教程后，测试系统上会运行以下设备：
 
 - 六个“iotdm\_simple\_sample”模拟设备（在控制台/终端窗口中运行），每个都显示有成功的“已注册”消息。
 
@@ -30,7 +35,7 @@
 
 ## 默认设备视图
 
-设备管理示例性 UI 的默认主屏幕是“设备”视图，该视图包括以下 5 个组件：
+设备管理示例 UI 的默认主屏幕是“设备”视图，内附以下 5 个组件：
 
 ![][1]
 
@@ -46,17 +51,17 @@
 
 6.  设备网格：查看你向 IoT 中心实例注册的所有设备，该实例包括默认属性（“设备 ID”、“状态”和“标记”）。
 
-[设备管理概述][lnk-dm-overview]引入了“设备克隆”概念，它表示 Azure IoT 中心的物理（或模拟）设备。从设备网格可以选择任何已注册的设备，从设备列表可以查看和编辑该设备的设备克隆。
+[设备管理概述][lnk-dm-overview]介绍了“设备克隆”概念，它表示 Azure IoT 中心的物理（或模拟）设备。可在设备网格的设备列表中选择任何注册的设备，以查看和编辑该设备的设备克隆。
 
-通过选择相应的设备行，然后单击“编辑”按钮（也可以双击该行或在搜索框中输入设备 ID），在第一台模拟设备“Device11 7ce4a850”中输入此详细视图。
+选择相应的设备行，进入首台模拟设备 (**Device11-7ce4a850**) 上的该详细视图。然后单击“编辑”按钮（还可双击该行或在搜索框中输入设备 ID）。
 
-你现在查看到的是设备克隆组件的完整表示形式，可在其中更新可写属性并运行如下所述的其他设备操作：
+现即可查看设备克隆组件的完整表示形式，可在其中更新可写属性并运行下方的设备操作：
 
 ![][2]
 
-1.  编辑设备克隆：这包括设备的“启用/禁用”切换。
+1.  **编辑设备克隆**：此选项可切换设备的“启用/禁用”状态。
 
-2.  服务属性：这包括设备“标记”。
+2.  **服务属性**：此选项包括设备“标记”。
 
 3.  设备属性：单击此项可展开该部分。
 
@@ -86,9 +91,9 @@
 
 ## 使用设备作业模拟设备重启 
 
-你在设备管理概述中已了解到，设备作业可用于组织一个或多个物理设备上的简单或复杂操作。本节将介绍如何在示例性 UI 中创建设备作业，以在具有“bacon”标记的所有模拟设备上执行重启操作：
+你在设备管理概述中已了解到，设备作业可用于组织一个或多个物理设备上的简单或复杂操作。在本部分中，将在示例 UI 中创建设备作业，从而重启所有带“bacon”标记的模拟设备：
 
-1.  在“仅 Bacon”设备查询列表中，单击每个设备行以对其进行标记，以便执行重启作业操作：
+1.  在“仅 Bacon”设备查询列表中，单击每个设备行，将其标记为要重启：
 
     ![][6]
 
@@ -100,10 +105,10 @@
 
 ![][8]
 
-几分钟后刷新此屏幕会将父作业和三个子作业的状态更改为“已完成”，这表示重启操作已成功并通过模拟设备确认。使用“设备 ID”列确定哪些作业与哪些设备相关联。
+一段时间后，请刷新该屏幕，查看父作业和 3 个子作业的状态是否变为“已完成”。新的状态值表示重启操作成功完成且已由模拟设备确认。使用“设备 ID”列确定哪些作业与哪些设备相关联。
 
 
-> [AZURE.NOTE] 如果子作业返回“失败”状态，请检查模拟设备是否仍在你的测试系统上运行。如果没有，再次运行 simulate.bat 或 simulate.sh 脚本并重复上面的重启设备作业步骤。
+> [AZURE.NOTE] 如果子作业返回“失败”状态，请检查模拟设备是否仍在你的测试系统上运行。若没有，再次运行 simulate.bat 或 simulate.sh 脚本并重复上一部分中的重启设备作业步骤。
 
 ## 后续步骤
 
@@ -133,7 +138,7 @@
 [lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management/
-[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
+
 [lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
 [lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
 [lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/

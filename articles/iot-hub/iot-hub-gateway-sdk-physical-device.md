@@ -9,8 +9,13 @@
 
 <tags
      ms.service="iot-hub"
+     ms.devlang="cpp"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
      ms.date="05/31/2016"
-     wacn.date="08/01/2016"/>
+     ms.author="cstreet"
+     wacn.date="10/10/2016"/>
 
 
 # IoT 网关 SDK（Beta 版）– 使用 Linux 通过实际设备发送设备至云消息
@@ -36,11 +41,11 @@
 
 该网关包含以下模块：
 
-- BLE 模块，与 BLE 设备相连接，从设备接收温度数据并将命令发送到设备。
-- 记录器模块，用于生成消息总线诊断。
-- 标识映射模块，用于在 BLE 设备 MAC 地址和 Azure IoT 中心设备标识之间进行转换。
-- IoT 中心 HTTP 模块，用于将遥测数据上载到 IoT 中心并接收来自 IoT 中心的设备命令。
-- BLE 打印机模块，用于解释 BLE 设备的遥测，并将格式化数据输出到控制台，以启用故障排除和调试。
+- *BLE 模块*，与 BLE 设备相连接，从设备接收温度数据并将命令发送到设备。
+- *记录器模块*，用于生成消息总线诊断。
+- *标识映射模块*，用于在 BLE 设备 MAC 地址和 Azure IoT 中心设备标识之间进行转换。
+- *IoT 中心 HTTP 模块*，用于将遥测数据上载到 IoT 中心并接收来自 IoT 中心的设备命令。
+- *BLE 打印机模块*，用于解释 BLE 设备的遥测，并将格式化数据输出到控制台，以启用故障排除和调试。
 
 ### 数据如何流经网关
 
@@ -89,61 +94,31 @@
 
 运行示例之前，需要确认 Edison 板可以连接到 SensorTag 设备。
 
-首先，需要更新 Edison 上 BlueZ 软件的版本。请注意，即使你已安装 5.37 版本，也应完成以下步骤以确保安装已完成：
+首先，需确认 Edison 能否连接到 SensorTag 设备。
 
-1. 停止当前正在运行的蓝牙守护程序。
-    
-    ```
-    systemctl stop bluetooth
-    ```
-
-2. 下载并解压缩 BlueZ 版本 5.37 的[源代码](http://www.kernel.org/pub/linux/bluetooth/bluez-5.37.tar.xz)。
-    
-    ```
-    wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.37.tar.xz
-    tar -xvf bluez-5.37.tar.xz
-    cd bluez-5.37
-    ```
-
-3. 生成并安装 BlueZ。
-    
-    ```
-    ./configure --disable-udev --disable-systemd --enable-experimental
-    make
-    make install
-    ```
-
-4. 通过编辑文件 **/lib/systemd/system/bluetooth.service** 更改蓝牙的 *systemd* 服务配置，使其指向新的蓝牙守护程序。替换 **ExecStart** 属性的值，使其如下所示：
-    
-    ```
-    ExecStart=/usr/local/libexec/bluetooth/bluetoothd -E
-    ```
-
-5. 重新启动 Edison。
-
-接下来，需要确认 Edison 可以连接到 SensorTag 设备。
-
-1. 在 Edison 上取消阻止蓝牙，并检查版本号是否为 **5.37**。
+1. 打开 Edison 上的蓝牙，检查版本号是否为 **5.37**。
     
     ```
     rfkill unblock bluetooth
     bluetoothctl --version
     ```
 
-2. 执行 **bluetoothctl** 命令。你应看到如下输出：
+2. 执行 **bluetoothctl** 命令。现在，你已在交互式蓝牙外壳程序中。
+
+3. 输入“启动”命令，打开蓝牙控制器。你应看到如下输出：
     
     ```
     [NEW] Controller 98:4F:EE:04:1F:DF edison [default]
     ```
 
-3. 现在，你已在交互式蓝牙外壳程序中。输入命令 **scan on** 以扫描蓝牙设备。你应看到如下输出：
+4. 在交互式蓝牙程序中时，输入“打开扫描”命令以扫描蓝牙命令。你应看到如下输出：
     
     ```
     Discovery started
     [CHG] Controller 98:4F:EE:04:1F:DF Discovering: yes
     ```
 
-4. 通过按小按钮（绿色 LED 应闪烁）使 SensorTag 设备可检测到。Edison 应发现 SensorTag 设备：
+5. 通过按小按钮（绿色 LED 应闪烁）使 SensorTag 设备可检测到。Edison 应发现 SensorTag 设备：
     
     ```
     [NEW] Device A0:E6:F8:B5:F6:00 CC2650 SensorTag
@@ -151,16 +126,16 @@
     [CHG] Device A0:E6:F8:B5:F6:00 RSSI: -43
     ```
     
-    在此示例中，你可以看到 SensorTag 设备的 MAC 地址为 **A0:E6:F8:B5:F6:00**。
+    在此示例中，可看到 SensorTag 设备的 MAC 地址为 **A0:E6:F8:B5:F6:00**。
 
-5. 输入 **scan off** 命令以关闭扫描。
+6. 输入“关闭扫描”命令来关闭扫描。
     
     ```
     [CHG] Controller 98:4F:EE:04:1F:DF Discovering: no
     Discovery stopped
     ```
 
-6. 通过输入“connect <MAC address>”，使用其 MAC 地址连接到 SensorTag 设备。请注意，下面的示例输出已节略：
+7. 输入 **connect <MAC address>**，利用 MAC 地址连接到 SensorTag 设备。请注意，下面的示例输出已节略：
     
     ```
     Attempting to connect to A0:E6:F8:B5:F6:00
@@ -179,9 +154,9 @@
     [CHG] Device A0:E6:F8:B5:F6:00 Modalias: bluetooth:v000Dp0000d0110
     ```
     
-    注意：可使用“list-attributes”命令重新列出设备的 GATT 特征。
+    注意，可使用“list-attributes”命令重新列出设备的 GATT 特征。
 
-7. 现可使用“disconnect”命令与设备断开连接，然后使用“quit”命令退出蓝牙程序：
+8. 现可使用“disconnect”断开与设备的连接，然后使用“quit”命令退出蓝牙程序：
     
     ```
     Attempting to disconnect from A0:E6:F8:B5:F6:00
@@ -203,24 +178,24 @@
 
 ### 在 IoT 中心中配置两个示例设备
 
-- 在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，将需要中心的名称才能完成此演练。如果还没有 Azure 订阅，可以获取一个[试用帐户][lnk-free-trial]。
-- 将一台名为“SensorTag\_01”的设备添加到 IoT 中心，并记下其 ID 和设备密钥。可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具将此设备添加到在上步中创建的 IoT 中心，然后检索其密钥。配置网关时，可将此设备映射到 SensorTag 设备。
+- 若要在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，需要中心的名称来完成本演练。如果还没有 Azure 订阅，可获取[试用帐户][lnk-free-trial]。
+- 将名为 **SensorTag\_01** 的设备添加到 IoT 中心，记下其 ID 和设备密钥。可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具将此设备添加至上一步中创建的 IoT 中心，然后检索其密钥。配置网关时，可将此设备映射到 SensorTag 设备。
 
 ### 在 Edison 设备上生成网关 SDK
 
-Edsion 上的“git”版本不支持子模块。若要将网关 SDK 的完整源代码下载到 Edison，有两个选择：
+Edsion 上的 **git** 版本不支持子模块。若要将网关 SDK 的完整源代码下载到 Edison，有两个选择：
 
 - 选项 #1：在 Edison 上克隆 [Azure IoT 网关 SDK][lnk-sdk] 存储库，然后手动克隆每个子模块的存储库。
-- 选项 #2：在其中“git”支持子模块的桌面设备上克隆 [Azure IoT 网关 SDK][lnk-sdk] 存储库，然后将包含子模块的整个存储库复制到 Edison 中。
+- 选项 #2：在其中 **git** 支持子模块的桌面设备上克隆 [Azure IoT 网关 SDK][lnk-sdk] 存储库，然后将包含子模块的整个存储库复制到 Edison 中。
 
-如果你选择选项 #2，请使用以下“git”命令克隆网关 SDK 及其所有子模块：
+若选择选项 #2，请使用以下 **git** 命令克隆网关 SDK 及其所有子模块：
 
 ```
 git clone --recursive https://github.com/Azure/azure-iot-gateway-sdk.git 
 git submodule update --init --recursive
 ```
 
-然后应将整个本地存储库压缩成单个存档文件，然后再将其复制到 Edison。可使用实用程序（如“Putty”附带的“pscp”）将存档文件复制到 Edison。例如：
+然后应将整个本地存储库压缩成单个存档文件，然后再将其复制到 Edison。可使用实用程序（如 **Putty** 附带的 **pscp**）将存档文件复制到 Edison。例如：
 
 ```
 pscp .\gatewaysdk.zip root@192.168.0.45:/home/root
@@ -234,14 +209,14 @@ pscp .\gatewaysdk.zip root@192.168.0.45:/home/root
 
 ### 在 Edison 设备上配置和运行 BLE 示例
 
-若要启动和运行示例，需要配置参与网关的每个模块。在 JSON 文件中提供了此配置，你需要配置所有五个参与模块。存储库中提供了一个名为“gateway\_sample.json”的示例 JSON 文件，可使用它作为自行生成配置文件的起点。此文件位于网关 SDK 存储库的本地副本中的“samples/ble\_gateway\_hl/src”文件夹。
+若要启动和运行示例，需要配置参与网关的每个模块。在 JSON 文件中提供了此配置，你需要配置所有五个参与模块。存储库中提供了名为 **gateway\_sample.json** 的示例 JSON 文件，可将它用作自行生成配置文件的起点。此文件位于网关 SDK 存储库的本地副本的 **samples/ble\_gateway\_hl/src** 文件夹中。
 
-下列各节描述了如何为 BLE 示例编辑此配置文件，并假设网关 SDK 存储库位于 Edison 设备上的“/home/root/azure-iot-gateway-sdk/”文件夹中。如果存储库在其他位置，则应相应地调整路径：
+下述部分描述了如何编辑 BLE 示例的此配置文件，并假设网关 SDK 存储库位于 Edison 设备的 **/home/root/azure-iot-gateway-sdk/** 文件夹中。如果存储库在其他位置，则应相应地调整路径：
 
 
 #### 记录器配置
 
-假定网关存储库位于“/home/root/azure-iot-gateway-sdk/”文件夹中，请按如下所示配置记录器模块：
+假定网关存储库位于 **/home/root/azure-iot-gateway-sdk/** 文件夹中，如下配置记录器模块：
 
 ```json
 {
@@ -327,7 +302,7 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 
 #### 标识映射模块配置
 
-添加 SensorTag 设备的 MAC 地址以及已添加到 IoT 中心的“SensorTag\_01”设备的设备 ID 和密钥：
+添加 SensorTag 设备的 MAC 地址，以及添至 IoT 中心的 **SensorTag\_01** 设备的设备 ID 和密钥：
 
 ```json
 {
@@ -353,7 +328,7 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 }
 ```
 
-若要运行示例，需运行“ble\_gateway\_hl”二进制文件，以将路径传递给 JSON 配置文件。如果已使用“gateway\_sample.json”文件，则要执行的命令如下所示：
+若要运行示例，需运行 **ble\_gateway\_hl** 二进制文件，将路径传递给 JSON 配置文件。如果使用了 **gateway\_sample.json** 文件，则执行如下命令：
 
 ```
 ./build/samples/ble_gateway_hl/ble_gateway_hl ./samples/ble_gateway_hl/src/gateway_sample.json
