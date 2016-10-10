@@ -9,7 +9,7 @@ editor=""/>
 <tags 
 ms.service="cloud-services" 
 ms.date="02/25/2016" 
-wacn.date="07/18/2016"/>
+wacn.date="09/26/2016"/>
 
 # 使用 XPath 将角色配置设置公共为环境变量
 

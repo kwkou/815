@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="05/03/2016" 
-	wacn.date="05/31/2016"/>
+	wacn.date="09/26/2016"/>
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
 

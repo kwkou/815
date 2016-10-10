@@ -9,7 +9,7 @@
 <tags
  ms.service="cloud-services"
  ms.date="05/25/2016"
- wacn.date="07/18/2016"/>
+ wacn.date="09/26/2016"/>
 
 # 云服务的大小
 
