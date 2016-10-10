@@ -61,7 +61,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
     ResourceName      : ExampleClassicVM
     ResourceType      : Microsoft.ClassicCompute/virtualMachines
     ResourceGroupName : ExampleGroup
-    Location          : westus
+    Location          : chinaeast
     SubscriptionId    : {guid}
 
 但是，Resource Manager cmdlet **Get-AzureRmVM** 仅返回通过 Resource Manager 部署的虚拟机。以下命令不返回通过经典部署创建的虚拟机。
@@ -82,9 +82,9 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
 为了更好地理解这两个模型，让我们看看 Resource Manager 类型的特征：
 
-- 通过 [Azure 门户](https://portal.azure.cn/)创建。
+- 通过 [Azure 门户预览](https://portal.azure.cn/)创建。
 
-     ![Azure 门户](./media/resource-manager-deployment-model/portal.png)
+     ![Azure 门户预览](./media/resource-manager-deployment-model/portal.png)
 
      对于计算、存储和网络资源，你可以选择使用资源管理器或经典部署。选择“Resource Manager”。
 
@@ -127,7 +127,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
      ![经典管理门户](./media/resource-manager-deployment-model/classic-portal.png)
 
-     或者，通过 Azure 门户创建，然后指定“经典”部署（适用于“计算”、“存储”和“网络”资源）。
+     或者，通过 Azure 门户预览创建，然后指定“经典”部署（适用于“计算”、“存储”和“网络”资源）。
 
      ![经典部署](./media/resource-manager-deployment-model/select-classic.png)
 
@@ -145,7 +145,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
     ![经典类型](./media/resource-manager-deployment-model/classic-type.png)
 
-你仍可以使用 Azure 门户来管理通过经典部署创建的资源。
+你仍可以使用 Azure 门户预览来管理通过经典部署创建的资源。
 
 在 Azure 服务管理中，宿主虚拟机的计算、存储或网络资源由以下各项提供：
 
