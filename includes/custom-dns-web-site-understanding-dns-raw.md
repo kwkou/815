@@ -10,48 +10,46 @@ DNS 系统基于 *记录* 。记录将特定的 *名称*（例如 **contoso.com*
 
 ###地址记录（A 记录）
 
-A 记录将域（例如 **contoso.com** 或 **www.contoso.com**） *或通配符域* （例如 **\*.contoso.com**）映射到 IP 地址。对于 App Service 中的 Web 应用，这是服务的虚拟 IP 或者你为 Web 应用购买的具体 IP 地址。
+A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符域*（例如 ***.contoso.com**）映射到 IP 地址。对于 App Service 中的 Web 应用，这是服务的虚拟 IP 或者你为 Web 应用购买的具体 IP 地址。
 
 A 记录相比于 CNAME 记录的主要优势是：
 
 * 你可以将根域（例如 **contoso.com**）映射到 IP 地址；许多注册机构仅允许使用 A 记录执行此操作
 
-* 你可以有一个使用通配符的条目（例如 **\*.contoso.com**），它将处理多个子域（例如 **mail.contoso.com**、**blogs.contoso.com** 或 **www.contso.com**）的请求。
+* 你可以有一个使用通配符的条目（例如 ***.contoso.com**），它将处理多个子域（例如 **mail.contoso.com**、**blogs.contoso.com** 或 **www.contso.com**）的请求。
 
 > [AZURE.NOTE] 由于 A 记录映射到静态 IP 地址，因此它无法自动解析 Web 应用的 IP 地址的更改。用于 A 记录的 IP 地址是你为 Web 应用配置自定义域名设置时提供的；但是，如果你删除并重新创建 Web 应用或者将 App Service 计划模式改回“免费”，则该值可能会更改。
 
 ###别名记录（CNAME 记录）
 
-CNAME 记录将 *特定的* DNS 名称（例如 **mail.contoso.com** 或 **www.contoso.com**）映射到另一个（规范）域名。对于应用服务 Web 应用，规范域名是 Web 应用的 **&lt;yourwebappname>.chinacloudsites.cn** 域名。一旦创建，CNAME 即为 **&lt;你的 Web 应用名称>.chinacloudsites.cn** 域名创建一个别名。CNAME 条目将自动解析为 **&lt;你的 Web 应用名称>.chinacloudsites.cn** 域名的 IP 地址，因此，如果 Web 应用的 IP 地址发生更改，你不必采取任何操作。
+CNAME 记录将*特定的* DNS 名称（例如 **mail.contoso.com** 或 **www.contoso.com**）映射到另一个（规范）域名。对于应用服务 Web 应用，规范域名是 Web 应用的 **&lt;yourwebappname>.chinacloudsites.cn** 域名。一旦创建，CNAME 即为 **&lt;你的 Web 应用名称>.chinacloudsites.cn** 域名创建一个别名。CNAME 条目将自动解析为 **&lt;你的 Web 应用名称>.chinacloudsites.cn** 域名的 IP 地址，因此，如果 Web 应用的 IP 地址发生更改，你不必采取任何操作。
 
-> [AZURE.NOTE] 某些域注册机构只允许你在使用 CNAME 记录（例如 **www.contoso.com**）和非根名称（例如 **contoso.com**）时映射子域。有关 CNAME 记录的详细信息，请参阅由你的注册机构提供的文档、<a href="http://en.wikipedia.org/wiki/CNAME_record">CNAME 记录上的 Wikipedia 条目</a> 或 <a href="http://tools.ietf.org/html/rfc1035">IETF 域名 - 实现和规范</a>文档。
+> [AZURE.NOTE] 某些域注册机构只允许你在使用 CNAME 记录（例如 **www.contoso.com**）和非根名称（例如 **contoso.com**）时映射子域。有关 CNAME 记录的详细信息，请参阅由你的注册机构提供的文档、<a href="http://en.wikipedia.org/wiki/CNAME_record">CNAME 记录上的 Wikipedia 条目</a>或 <a href="http://tools.ietf.org/html/rfc1035">IETF 域名 - 实现和规范</a>文档。
 
 ###Web 应用 DNS 细节
 
-为 Web Apps 使用 A 记录需要你首先创建以下 CNAME 记录之一：
+为 Web 应用使用 A 记录需要首先创建以下 TXT 记录之一：
 
-* **对于根域或通配符子域** — 将 **awverify** 的 DNS 名称映射为 **awverify.&lt;你的 Web 应用名称&gt;.chinacloudsites.cn**。
+* **对于根域** - 将 **@** 的DNS TXT 记录映射为 **&lt;yourwebappname&gt;.chinacloudsites.cn**。
 
-* **对于特定的子域** — 将 **awverify.&lt;子域>** 的 DNS 名称映射为 **awverify.&lt;你的 Web 应用名称&gt;.chinacloudsites.cn**。例如，如果 A 记录用于 **blogs.contoso.com**，则为 **awverify.blogs**。
+* **对于特定的子域** - 将 **&lt;子域>** 的 DNS 名称映射为 **&lt;你的 Web 应用名称&gt;.chinacloudsites.cn**。例如，如果 A 记录用于 **blogs.contoso.com**，则为 **blogs**。
 
-此 CNAME 记录用于验证您正在尝试使用的您自己的域。此操作是对创建指向 Web 应用的虚拟 IP 地址的 A 记录的补充。
+* **对于通配符子域** - 将 ***** 的DNS TXT 记录映射为 **&lt;yourwebappname&gt;.chinacloudsites.cn**。
 
-你可以按照以下步骤找到 Web 应用的 IP 地址以及 **awverify** 名称和 **.chinacloudsites.cn** 名称：
+此 TXT 记录用于验证你是否拥有正在尝试使用的域。此操作是对创建指向 Web 应用的虚拟 IP 地址的 A 记录的补充。
 
-1. 在浏览器中，打开 [Azure 门户预览](https://portal.azure.cn)。
+可以按照以下步骤找到 Web 应用的 IP 地址和 **.chinacloudsites.cn** 名称：
 
-2. 在“Web Apps”边栏选项卡中，单击 Web 应用的名称，选择“配置”，然后从页面底部选择“自定义域和 SSL”。
+1. 在浏览器中，打开 [Azure 门户](https://portal.azure.cn)。
+
+2. 在“Web 应用”边栏选项卡中，单击 Web 应用的名称，然后从页面底部选择“自定义域”。
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-3. 在“自定义域和 SSL”边栏选项卡中，单击“自带外部域”。
+3. 在“自定义域”边栏选项卡上，你会看到虚拟 IP 地址。保存此信息，因为将在创建 DNS 记录时使用它
 
-	![](./media/custom-dns-web-site/dncmntask-cname-7.png)
+	![](./media/custom-dns-web-site/virtual-ip-address.png)
 
 	> [AZURE.NOTE] **免费** Web 应用不可使用自定义域名，并且必须将应用服务计划升级到**共享**、**基本**、**标准**或**高级**层。若要深入了解应用服务计划的定价层，包括如何更改 Web 应用的定价层，请参阅[如何缩放 Web 应用](/documentation/articles/web-sites-scale/)。
 
-6. 在“自带外部域”边栏选项卡中，将显示 **awverify** 信息、当前分配的 **.chinacloudsites.cn** 域名和虚拟 IP 地址。保存此信息，因为将在创建 DNS 记录时使用它。
-
-	![](./media/custom-dns-web-site/dncmntask-cname-8.png)
-
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0926_2016-->

@@ -1,24 +1,28 @@
 <properties
 	pageTitle="使用 Azure 表服务的 Node.js Web 应用"
-	description="本教程演示如何使用 Azure 表服务在 Azure App Service Web 应用所托管的 Node.js 应用程序中存储数据。"
+	description="本教程讲解如何使用 Azure 表服务存储 Azure 应用服务 Web 应用中托管的 Node.js 应用程序的数据。"
 	tags="azure-portal"
 	services="app-service\web, storage"
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/30/2016"/>
-
-
+	wacn.date=""
+	ms.author="robmcm"/>
 
 # 使用 Azure 表服务的 Node.js Web 应用
 
 ## 概述
-本教程演示如何使用 Azure 数据管理提供的表服务来存储和访问在 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 上托管的 [node] 应用程序的数据。本教程假定你之前有使用 node 和[Git]的经验。
+
+本教程说明如何使用 Azure 数据管理提供的表服务在 [Azure 应用服务](/documentation/articles/app-service-changes-existing-services/) Web 应用托管的 [node] 应用程序中存储和访问数据。本教程假定你之前有使用 node 和[Git]的经验。
 
 你将学习以下内容：
 
@@ -42,38 +46,32 @@
 
 * [Git]
 
-
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## 创建存储帐户
 
 创建 Azure 存储帐户。应用会使用此帐户存储待办事项。
 
-1. 打开你的 Web 浏览器并转到 [Azure 经典管理门户]。如果出现提示，请使用你的 Azure 订阅信息进行登录。
+1.  登录到 [Azure 门户预览版](https://portal.azure.cn/)。
 
-2. 在门户底部，单击“+新建”，然后选择“存储帐户”。
+2. 单击门户左下角的“新建”图标，然后单击“数据 + 存储”>“存储”。为存储帐户命名一个唯一名称，并为其新建一个[资源组](/documentation/articles/resource-group-overview/)。
 
-	![\+新建][portal-new]
+  	![新建按钮](./media/storage-nodejs-use-table-storage-web-site/configure-storage.png)
 
-	![存储帐户][portal-storage-account]
+	创建存储帐户后，**通知**按钮将呈绿色闪烁**成功**，且存储帐户的边栏选项卡处于打开状态以显示属于您创建的新资源组。
 
-3. 选择“快速创建”，然后为此存储帐户输入 URL 和区域/地缘组。由于这是一个教程，不需要全球复制，因此请取消选中“启用异地复制”。最后，单击“创建存储帐户”。
+5. 在存储帐户的边栏选项卡中，单击“设置”>“密钥”。将主访问密钥复制到剪贴板。
 
-	![快速创建][portal-quick-create-storage]
+    ![访问密钥][portal-storage-access-keys]
 
-	请记下你输入的 URL，因为后续步骤将引用此 URL 作为帐户名称。
 
-4. 在创建存储帐户后，单击页面底部的“管理密钥”。这将显示此存储帐户的主访问密钥和辅助访问密钥。复制并保存主访问密钥，然后单击复选标记。
-
-	![访问密钥][portal-storage-access-keys]
-
-## 安装模块并生成基架
+##安装模块并生成基架
 
 在本节中，你将创建新的 Node 应用程序并使用 npm 添加模块包。对于此应用程序，你将使用 [Express] 和 [Azure] 模块。Express 模块为 Node 提供了一个模型视图控制器框架，而 Azure 模块提供了与表服务的连接。
 
 ### 安装 Express 并生成基架
 
-1. 在命令行中，创建名为 **tasklist** 的新目录并切换到该目录。  
+1. 在命令行中，创建名为 **tasklist** 的新目录并切换到该目录。
 
 2. 请输入以下命令来安装 Express 模块。
 
@@ -89,7 +87,7 @@
 		├── mkdirp@0.3.5
 		└── commander@1.3.2 (keypress@0.1.0)
 
-	> [AZURE.NOTE]“-g”参数会全局安装模块。这样我们使用 **express** 生成 Web 应用基架，而无需键入其他路径信息。
+	> [AZURE.NOTE] “-g”参数会全局安装模块。这样我们使用 **express** 生成 Web 应用基架，而无需键入其他路径信息。
 
 4. 若要创建应用程序的基架，请输入 **express** 命令：
 
@@ -114,10 +112,10 @@
 		   create : ./public/javascripts
 		   create : ./bin
 		   create : ./bin/www
-		
+
 		   install dependencies:
 		     $ cd . && npm install
-		
+
 		   run the app:
 		     $ DEBUG=my-application ./bin/www
 
@@ -125,11 +123,11 @@
 
 ### 安装其他模块
 
-**express** 创建的其中一个文件是 **package.json**。此文件包含模块依赖项的列表。之后，当你将应用程序部署到 App Service Web 应用时，此文件会确定需要在 Azure 上安装的模块。
+**express** 创建的其中一个文件是 **package.json**。此文件包含模块依赖项的列表。之后，当你将应用程序部署到 App Service Web Apps 时，此文件会确定需要在 Azure 上安装的模块。
 
 在命令行中，输入以下命令，以安装 **package.json** 文件中描述的模块。可能需要使用“sudo”。
 
-        npm install
+    npm install
 
 此命令的输出显示类似于以下示例：
 
@@ -168,7 +166,7 @@
 
 ### 创建模型
 
-*模型*是表示应用程序中的数据的对象。对于应用程序，唯一的模型是任务对象，表示待办事项列表中的项。任务将具有以下字段：
+*模型* 是表示应用程序中的数据的对象。对于应用程序，唯一的模型是任务对象，表示待办事项列表中的项。任务将具有以下字段：
 
 - PartitionKey
 - RowKey
@@ -326,7 +324,7 @@
 
 1. 在 **tasklist** 目录中，打开 **app.js** 文件。此文件之前是通过运行 **express** 命令创建的。
 
-2. 在文件开头，添加以下代码来加载 azure 模块，设置表名称、partitionKey，并设置此示例使用的存储凭据：
+2. 在文件开头，添加以下代码来加载 azure 模块，设置表名称、分区键，并设置此示例使用的存储凭据：
 
 		var azure = require('azure-storage');
 		var nconf = require('nconf');
@@ -337,7 +335,7 @@
 		var accountName = nconf.get("STORAGE_NAME");
 		var accountKey = nconf.get("STORAGE_KEY");
 
-	> [AZURE.NOTE]nconf 将从环境变量或我们稍后将创建的 **config.json** 文件中加载配置值。
+	> [AZURE.NOTE] nconf 将从环境变量或我们稍后将创建的 **config.json** 文件中加载配置值。
 
 3. 在 app.js 文件中，向下滚动到以下行：
 
@@ -354,7 +352,7 @@
 		app.get('/', taskList.showTasks.bind(taskList));
 		app.post('/addtask', taskList.addTask.bind(taskList));
 		app.post('/completetask', taskList.completeTask.bind(taskList));
-	
+
 4. 保存 **app.js** 文件。
 
 ### 修改索引视图
@@ -368,7 +366,7 @@
 		block content
 		  h1= title
 		  br
-		
+
 		  form(action="/completetask", method="post")
 		    table.table.table-striped.table-bordered
 		      tr
@@ -378,7 +376,7 @@
 		        td Complete
 		      if (typeof tasks === "undefined")
 		        tr
-		          td 
+		          td
 		      else
 		        each task in tasks
 		          tr
@@ -393,9 +391,9 @@
 		    button.btn(type="submit") Update tasks
 		  hr
 		  form.well(action="/addtask", method="post")
-		    label Item Name: 
+		    label Item Name:
 		    input(name="item[name]", type="textbox")
-		    label Item Category: 
+		    label Item Category:
 		    input(name="item[category]", type="textbox")
 		    br
 		    button.btn(type="submit") Add item
@@ -465,13 +463,13 @@
 
 	此时会显示类似于以下示例的网页。
 
-![显示空白 tasklist 的网页][node-table-finished]
+	![显示空白 tasklist 的网页][node-table-finished]
 
-4. 若要创建新的待办事项，请输入名称和类别，然后单击“添加项”。 
+4. 若要创建新的待办事项，请输入名称和类别，然后单击“添加项”。
 
 6. 若要将任务标记为完成，请选中“完成”，然后单击“更新任务”。
 
-![任务列表中新项的图像][node-table-list-items]
+	![任务列表中新项的图像][node-table-list-items]
 
 即使应用程序在本地运行，它也会将数据存储在 Azure 表服务中。
 
@@ -479,8 +477,9 @@
 
 本部分中的步骤使用 Azure 命令行工具在 App Service 中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [AZURE.NOTE]还可以使用 [Azure 门户预览](https://portal.azure.cn/)执行这些步骤。请参阅[在 Azure App Service 中生成和部署 Node.js Web 应用]。
-><p> 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 门户预览部署此应用程序。
+> [AZURE.NOTE] 也可以使用 [Azure 门户预览版](https://portal.azure.cn/)执行这些步骤。请参阅 [Build and deploy a Node.js web app in Azure App Service]（在 Azure 应用服务中构建和部署 Node.js Web 应用）。
+>
+> 如果这是创建的第一个 Web 应用，则必须使用 Azure 门户预览版部署此应用程序。
 
 若要开始，请在命令行中输入以下命令以安装 [Azure CLI]：
 
@@ -488,15 +487,16 @@
 
 ### 导入发布设置
 
-在此步骤中，将下载包含有关你的订阅的信息的文件。
+此步骤将下载包含订阅相关信息的文件。
 
 1. 输入以下命令：
 
 		azure account download
 
-	此命令启动浏览器并导航到下载页面。如果出现提示，请使用与你的 Azure 订阅关联的帐户登录。
+	此命令启动浏览器并导航到下载页面。如果出现提示，请使用与 Azure 订阅关联的帐户登录。
 
 	<!-- ![The download page][download-publishing-settings] -->
+
 	文件下载会自动开始；如果没有自动开始，你可以单击该页面开头的链接手动下载文件。保存文件并记下文件路径。
 
 2. 输入以下命令以导入设置：
@@ -505,9 +505,9 @@
 
 	指定你在上一步中下载的发布设置文件的路径和文件名。
 
-3. 导入设置后，请删除发布设置文件。因为不再需要该文件并且它包含有关你的 Azure 订阅的敏感信息。
+3. 导入设置后，请删除发布设置文件。该文件包含有关 Azure 订阅的敏感信息，并且以后不再需要用到它。
 
-### 创建 App Service Web 应用
+### 创建App Service Web 应用
 
 1. 在命令行中，将目录更改为 **tasklist** 目录。
 
@@ -534,42 +534,33 @@
 		info:   Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE]如果这是你的订阅的第一个 App Service Web 应用，系统会指示你使用 Azure 经典管理门户创建 Web 应用。有关详细信息，请参阅[在 Azure App Service 中生成和部署 Node.js Web 应用]。
+	> [AZURE.NOTE] 如果这是订阅的第一个应用服务 Web 应用，系统会指示使用 Azure 门户预览版创建该 Web 应用。有关详细信息，请参阅 [Build and deploy a Node.js web app in Azure App Service]（在 Azure 应用服务中构建和部署 Node.js Web 应用）。
 
-### 切换到环境变量
+### 设置环境变量。
 
-前面我们实现了用于查找环境变量或从 **config.json** 文件中加载值的代码。在接下来的步骤中，你将在 Web 应用配置中创建应用程序通过环境变量实际访问的键值对。
+在此步骤中，会将环境变量添加到 Azure 上的 Web 应用配置中。
+在命令行中，输入以下信息：
 
-1. 从经典管理门户中，单击“ Web 应用”，然后选择你的 Web 应用。
+	azure site appsetting add
+		STORAGE_NAME=<storage account name>;STORAGE_KEY=<storage access key>;PARTITION_KEY=mytasks;TABLE_NAME=tasks
 
-	![打开 Web 应用仪表板][go-to-dashboard]
 
-2. 单击“配置”，然后找到页面的“应用设置”部分。
+将 **<storage account name>** 替换为前面创建的存储帐户的名称，将 **<storage access key>** 替换为存储帐户的主访问密钥。（使用与你先前创建的 config.json 文件相同的值。）
 
-	![配置链接][web-configure]
+或者，可以在 [Azure 门户预览版](https://portal.azure.cn/)中设置环境变量：
 
-3. 在“应用设置”部分的 **KEY** 字段中输入 **STORAGE\_NAME**，并在 **VALUE**字段中输入你的存储帐户的名称。单击复选标记以移到下一个字段。为以下密钥和值重复此过程：
+1.  通过单击“浏览” > “Web Apps” > 你的应用名称来打开 Web 应用的边栏选项卡。
 
-	* **STORAGE\_KEY** - 你的存储帐户的访问密钥
-	
-	* **PARTITION\_KEY** -“mytasks”
+1.  在 Web 应用边栏选项卡中，单击“所有设置” > “应用程序设置”。
 
-	* **TABLE\_NAME** -“tasks”
+  	<!-- ![Top Menu](./media/storage-nodejs-use-table-storage-web-site/PollsCommonWebSiteTopMenu.png) -->
 
-4. 最后，单击页面底部的“保存”图标，将此更改提交到运行时环境。
+1.  向下滚动到“应用设置”部分，然后添加键/值对。
 
-	![保存应用程序设置][app-settings-save]
+  	![应用设置](./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png)
 
-5. 从命令行中，将目录更改为 **tasklist** 目录，然后输入以下命令以删除 **config.json** 文件：
+1. 单击“保存”。
 
-		git rm config.json
-		git commit -m "Removing config file"
-
-6. 执行以下命令将更改部署到 Azure：
-
-		git push azure master
-
-在将更改部署到 Azure 后，你的 Web 应用应当继续工作，因为它现在从“应用设置”条目读取连接字符串。若要验证此情况，请在“应用设置”中将 **STORAGE\_KEY** 条目的值更改为一个无效值。保存该值后， Web 应用应该会因存储访问密钥设置无效而失败。
 
 ### 发布应用程序
 
@@ -584,7 +575,7 @@
 		git add .
 		git commit -m "adding files"
 
-3. 将提交的文件推送到 Web 应用：
+3. 将提交的文件推送到 App Service Web 应用：
 
 		git push azure master
 
@@ -593,33 +584,44 @@
 		To https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git
  		 * [new branch]      master -> master
 
-4. 推送操作完成后，浏览到 `azure create site` 命令之前返回的 Web 应用URL，以查看你的应用程序。
+4. 推送操作完成后，浏览到 `azure create site` 命令之前返回的 Web 应用 URL，以查看你的应用程序。
+
+
+## 后续步骤
+
+虽然本文中的步骤介绍了使用表服务来存储信息，但你也可以使用 MongoDB。有关详细信息，请参阅 [使用 MongoDB 的 Node.js Web 应用]。
 
 ## 其他资源
-[Azure 命令行界面][Azure CLI]
-[创建 Node.js 应用程序并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[使用 Git 发布到 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control/
-[Azure 开发人员中心]: /develop/nodejs/
 
+[Azure CLI]
 
+## 发生的更改
+* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
+
+<!-- URLs -->
+
+[Build and deploy a Node.js web app in Azure App Service]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Azure Developer Center]: /develop/nodejs/
 
 [node]: http://nodejs.org
 [Git]: http://git-scm.com
 [Express]: http://expressjs.com
-[for free]: http://www.azure.cn
+[for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
 [使用 MongoDB 的 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
 [Azure CLI]: /documentation/articles/xplat-cli-install/
 
-[使用 Git 发布到 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control/
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
 [async]: https://www.npmjs.com/package/async
 
-[Azure 经典管理门户]: http://manage.windowsazure.cn
+[Azure Portal Preview]: https://portal.azure.cn
 
+[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+ 
+<!-- Image References -->
 
 [node-table-finished]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png
 [node-table-list-items]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_list.png
@@ -628,12 +630,9 @@
 [portal-storage-account]: ./media/storage-nodejs-use-table-storage-web-site/new-storage.png
 [portal-quick-create-storage]: ./media/storage-nodejs-use-table-storage-web-site/quick-storage.png
 [portal-storage-access-keys]: ./media/storage-nodejs-use-table-storage-web-site/manage-access-keys.png
-
 [go-to-dashboard]: ./media/storage-nodejs-use-table-storage-web-site/go_to_dashboard.png
 [web-configure]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
 [app-settings-save]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
 
-[Create and deploy a Node.js application to an Azure  Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
-
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0926_2016-->

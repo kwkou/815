@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="使用 HTTPS 保护应用的自定义域 | Azure"
 	description="了解如何配置 SSL 证书绑定以在 Azure App Service 中保护应用的自定义域名。还将学习如何从多个工具处获取 SSL 证书。"
@@ -10,14 +12,25 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date=""
+	ms.author="cephalin"/>
 
 # 使用 HTTPS 保护应用的自定义域
 
+
+> [AZURE.SELECTOR]
+- [在 Azure 中购买 SSL 证书](/documentation/articles/web-sites-purchase-ssl-web-site/)
+- [从其他位置使用 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate/)
+
+
 本文演示如何为 Web 应用、移动应用后端或 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)（使用自定义域名）中的 API 应用启用 HTTPS。仅限服务器的身份验证。若需相互身份验证（包括客户端身份验证），请参阅[如何为应用服务配置 TLS 相互身份验证](/documentation/articles/app-service-web-configure-tls-mutual-auth/)。
 
-若要使用 HTTPS 保护拥有自定义域名的应用，可为该域名添加证书。默认情况下，Azure 使用单个 SSL 证书保护 **\*.chinacloudsites.cn** 通配符域的安全，因此客户端可能已在 **https:// *&lt;appname>* .chinacloudsites.cn** 处访问了应用。但若想使用 **contoso.com**、**www.contoso.com** 和 **\*.contoso.com** 等自定义域，默认证书不能提供保护。此外，与所有[ 通配符证书](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/)类似，默认证书的安全性没有使用证书的自定义域高。
+若要使用 HTTPS 保护拥有自定义域名的应用，可为该域名添加证书。默认情况下，Azure 使用单个 SSL 证书保护 ***.chinacloudsites.cn** 通配符域的安全，因此客户端可能已在 **https://*&lt;appname>*.chinacloudsites.cn** 处访问了应用。但若想使用 **contoso.com**、**www.contoso.com** 和 ***.contoso.com** 等自定义域，默认证书不能提供保护。此外，与所有[ 通配符证书](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/)类似，默认证书的安全性没有使用证书的自定义域高。
 
 >[AZURE.NOTE] 可随时在 [Azure 论坛](/support/forums/)获取 Azure 专家的帮助。有关更加个性化的支持，请转到 [Azure 支持](/support/contact/)，然后单击“获取支持”。
 
@@ -32,12 +45,14 @@
 	- 包含私钥。
 	- 创建用于交换密钥并导出到 .PFX 文件。
 	- 至少使用 2048 位加密。
-	- 其使用者名称应与需保护的自定义域相匹配。若要用一个证书保护多个域，需使用通配符名称（如 **\*.contoso.com**）或指定 subjectAltName 值。
+	- 其使用者名称应与需保护的自定义域相匹配。若要用一个证书保护多个域，需使用通配符名称（如 ***.contoso.com**）或指定 subjectAltName 值。
 	- 与 CA 使用的所有**[中间证书](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)**合并。否则，在某些客户端上可能会遇到不可再现的互操作性问题。
+
+		>[AZURE.NOTE] 若要获取满足所有要求的 SSL 证书，最简单的方法是 [直接在 Azure 门户预览版中购买](/documentation/articles/web-sites-purchase-ssl-web-site/)。本文演示了如何手动执行该操作，然后将它绑定到应用服务中的自定义域。<p>**椭圆曲线加密 (ECC) 证书**可用于应用服务，但文本不予讨论。按具体步骤结合 CA 来创建 ECC 证书。
 
 ## <a name="bkmk_getcert"></a>步骤 1。获取 SSL 证书
 
-由于 CA 提供不同价位的多种 SSL 证书类型，首先应确定要购买哪种 SSL 证书。若要保护单个域名（**www.contoso.com**），只需基本的证书。若需保护多个域名（**contoso.com**、**www.contoso.com** *和* **mail.contoso.com**），则需要[通配符证书](http://en.wikipedia.org/wiki/Wildcard_certificate)或带[使用者备用名称](http://en.wikipedia.org/wiki/SubjectAltName) (`subjectAltName`) 的证书。
+由于 CA 提供不同价位的多种 SSL 证书类型，首先应确定要购买哪种 SSL 证书。若要保护单个域名（**www.contoso.com**），只需基本的证书。若需保护多个域名（**contoso.com**、**www.contoso.com*** 和 ***mail.contoso.com**），则需要[通配符证书](http://en.wikipedia.org/wiki/Wildcard_certificate)或带[使用者备用名称](http://en.wikipedia.org/wiki/SubjectAltName) (`subjectAltName`) 的证书。
 
 确定要购买的 SSL 证书后，向 CA 提交证书签名请求 (CSR)。如果收到 CA 返回的请求证书，则从证书中生成 .pfx 文件。可自选工具执行这些步骤。下面是常用工具的说明：
 
@@ -392,40 +407,38 @@
 - 是否有映射到 Azure 应用的自定义域，
 - 应用是否正在**基本**层或更高层上运行，
 - 是否有 CA 的自定义域 SSL 证书。
- 
-1.	在 [Azure 门户预览](https://portal.azure.cn)中，请转到应用的“自定义域和 SSL”边栏选项卡。
 
-7.	单击“更多”>“上传证书”。
 
-	![](./media/web-sites-configure-ssl-certificate/sslupload.png)
+1. 在浏览器中，打开 **[Azure 门户预览版](https://portal.azure.cn/)**。
+2. 单击页面左侧的“应用服务”选项。
+3. 单击要分配此证书的应用的名称。
+4. 在“设置”中，单击“SSL 证书”
+5. 单击“上载证书”
+6. 选择[步骤 1](#bkmk_getcert) 中导出的 .pfx 文件并指定之前创建的密码。然后单击“上载”上载证书。随后可在“SSL 证书”边栏选项卡中看到上载的证书。
+7. 在“ssl 绑定”部分中，单击“添加绑定”
+8. 在“添加 SSL 绑定”边栏选项卡中，使用下拉列表选择要使用 SSL 保护的域名，然后选择要使用的证书。还可以选择是要使用**[服务器名称指示 (SNI)](http://en.wikipedia.org/wiki/Server_Name_Indication)** 还是基于 IP 的 SSL。
 
-8.	选择[步骤 1](#bkmk_getcert) 中导出的 .pfx 文件并指定之前创建的密码。然后单击“保存”以上传证书。现会显示上传的证书返回到“自定义域和 SSL”边栏选项卡中。
+    ![插入 SSL 绑定的图像](./media/web-sites-configure-ssl-certificate/sslbindings.png)
 
-	![](./media/web-sites-configure-ssl-certificate/sslcertview.png)
-
-9. 在“SSL 绑定”部分，选择将域名和 SSL 证书绑定到一起。还可选择是使用 SNI SSL 还是基于 IP 的 SSL。
-
-	![](./media/web-sites-configure-ssl-certificate/sslbindcert.png)
-
-	* **基于 IP 的 SSL** 通过将应用的专用公共 IP 地址映射到域名，将证书和域名进行绑定。这是传统的 SSL 绑定方法，且应用服务会创建绑定专用的 IP 地址。
-
-	* [**SNI SSL**](https://en.wikipedia.org/wiki/Server_Name_Indication) 允许将多个证书绑定到多个域。大多数新式浏览器（包括 Internet Explorer、Chrome、Firefox 和 Safari）都支持它，但较旧的浏览器可能不支持。
- 
-10. 单击“保存”完成操作。
+       • 基于 IP 的 SSL 通过将服务器的专用公共 IP 地址映射到域名，将证书与域名相关联。这要求与您的服务相关联的每个域名（contoso.com、fabricam.com 等）都具有专用的 IP 地址。这是将 SSL 证书与某一 Web 服务器相关联的传统方法。• 基于 SNI 的 SSL 是对 SSL 和**[传输层安全性](http://zh.wikipedia.org/wiki/Transport_Layer_Security)** (TLS) 的扩展，它允许多个域共享相同的 IP 地址，并且对于每个域都有单独的安全证书。当前常用的大多数浏览器（包括 Internet Explorer、Chrome、Firefox 和 Opera）都支持 SNI，但是，较旧的浏览器可能不支持 SNI。有关 SNI 的详细信息，请参阅 Wikipedia 上的文章 **[Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication)**（服务器名称指示）。
+     
+9. 单击“添加绑定”保存更改并启用 SSL。
 
 ## 步骤 3.更改域名映射（仅限基于 IP 的 SSL）
 
-如果使用 **SNI SSL** 绑定，请跳过此部分。多个 **SNI SSL** 绑定可在分配给应用的现有共享 IP 地址上协同工作。但是，如果创建**基于 IP 的 SSL** 绑定，应用服务会创建绑定专用的 IP 地址（因其需要）。因为此 IP 地址专用，下述情况将需要进一步配置应用：
+如果使用 **SNI SSL** 绑定，请跳过此部分。多个 **SNI SSL** 绑定可在分配给应用的现有共享 IP 地址上协同工作。但是，如果创建**基于 IP 的 SSL** 绑定，应用服务会创建绑定专用的 IP 地址（因其需要）。只能创建一个专用 IP 地址，因此只能添加一个**基于 IP 的 SSL** 绑定。
+
+因为此 IP 地址专用，下述情况将需要进一步配置应用：
 
 - [使用 A 记录将自定义域映射](/documentation/articles/web-sites-custom-domain-name/#a)到 Azure 应用，且刚添加 **基于 IP 的 SSL** 绑定。此应用场景下，需按以下步骤重新映射现有的 A 记录以指向专用 IP 地址：
 
-	1. 配置基于 IP 的 SSL 绑定后，按应用的“设置”>“属性”边栏选项卡查找新的 IP 地址（“自带外部域”边栏选项卡中的虚拟 IP 地址可能非最新）：
+	1. 配置基于 IP 的 SSL 绑定后，将会向你的应用分配专用 IP 地址。可以在“自定义域”页面中应用设置的下面（紧靠在“主机名”部分的上方）找到此 IP 地址。此 IP 地址作为“外部 IP 地址”列出
     
-	    ![虚拟 IP 地址](./media/web-sites-configure-ssl-certificate/staticip.png)
+	    ![虚拟 IP 地址](./media/web-sites-configure-ssl-certificate/virtual-ip-address.png)
 
 	2. [将自定义域名的 A 记录重新映射到新的 IP 地址](/documentation/articles/web-sites-custom-domain-name/#a)。
 
-- 应用中已有一个或多个 **SNI SSL** 绑定，且刚添加了**基于 IP 的 SSL** 绑定。绑定完成后， *&lt;appname>* .chinacloudsites.cn 域名指向新的 IP 地址。因此，任何[从自定义域映射](/documentation/articles/web-sites-custom-domain-name/#cname)到 *&lt;appname>* chinacloudsites.cn 的现有 CNAME（包括 **SNI SSL**保护的）也会收到新地址上的流量，其中该地址仅针对**基于 IP 的 SSL** 创建。此应用场景中，需按以下步骤将 **SNI SSL** 流量发回原始共享 IP 地址：
+- 应用中已有一个或多个 **SNI SSL** 绑定，且刚添加了**基于 IP 的 SSL** 绑定。绑定完成后，*&lt;appname>*.chinacloudsites.cn 域名指向新的 IP 地址。因此，任何[从自定义域映射](/documentation/articles/web-sites-custom-domain-name/#cname)到 *&lt;appname>* chinacloudsites.cn 的现有 CNAME（包括 **SNI SSL**保护的）也会收到新地址上的流量，其中该地址仅针对**基于 IP 的 SSL** 创建。此应用场景中，需按以下步骤将 **SNI SSL** 流量发回原始共享 IP 地址：
 
 	1. 标识所有到带 **SNI SSL** 绑定的自定义域的 [CNAME 映射](/documentation/articles/web-sites-custom-domain-name/#cname)。
 
@@ -491,7 +504,7 @@
 - [Azure 网站中解锁的设置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)
 - [在 Azure App Service 中配置 Web Apps](/documentation/articles/web-sites-configure/)
-- [Azure 经典管理门户](https://manage.windowsazure.cn)
+- [Azure 管理门户](https://manage.windowsazure.cn)
 
 [customdomain]: /documentation/articles/web-sites-custom-domain-name/
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx
@@ -517,4 +530,4 @@
 [certwiz3]: ./media/web-sites-configure-ssl-certificate/waws-certwiz3.png
 [certwiz4]: ./media/web-sites-configure-ssl-certificate/waws-certwiz4.png
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0926_2016-->

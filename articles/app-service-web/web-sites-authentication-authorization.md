@@ -1,41 +1,44 @@
 <properties 
-	pageTitle="使用 Active Directory 在 Azure 中进行身份验证" 
-	description="了解部署到 Azure App Service 的业务线应用程序的不同身份验证和授权选项" 
+	pageTitle="在 Azure 应用中使用本地 Active Directory 进行身份验证 | Azure" 
+	description="了解 Azure 应用服务中的业务线应用在本地 Active Directory 上进行身份验证时可用的不同选项" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="02/26/2016" 
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="web" 
+	ms.date="08/31/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
-# 使用 Active Directory 在 Azure 中进行身份验证 #
+# 在 Azure 应用中使用本地 Active Directory 进行身份验证 #
 
-[Azure App Service Web 应用](/documentation/services/web-sites/)通过支持单一登录 (SSO) 的用户启用企业业务线应用程序方案，允许你在本地环境或公共 Internet 访问应用程序。可以将它与 [Azure Active Directory](/home/features/identity/) (AAD) 或本地安全令牌服务 (STS)（如 Active Directory 联合身份验证服务 (AD FS)）集成，以便对内部 Active Directory (AD) 用户进行身份验证并正确授权。
+本文说明如何在 [Azure 应用服务](/documentation/articles/app-service-value-prop-what-is/)中使用本地 Active Directory (AD) 进行身份验证。Azure 应用托管在云中，但可以通过多种方法安全地对本地 AD 用户进行身份验证。
 
-## 手动实现身份验证和授权 ##
+## 通过 Azure Active Directory 进行身份验证
+Azure Active Directory 租户的目录可与本地 AD 同步。此方法可让 AD 用户从 Internet 访问应用，使用其本地凭据进行身份验证。此外，Azure 应用服务[为此方法提供周全的解决方案](/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/)。只需按几下鼠标，就能为 Azure 应用启用目录同步的租户的身份验证。此方法具有以下优点：
 
-在许多情况下，你想要自定义应用程序的身份验证和授权行为，例如，登录和注销页、自定义授权逻辑、多租户应用程序行为，等等。在这种情况下，最好是手动配置身份验证和授权以提高功能的灵活性。以下是两个主要选项
+-	应用中不需要任何身份验证代码。让应用服务自动执行身份验证，腾出时间专注于如何在应用中提供功能。
+-	使用 [Azure AD 图形 API](http://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx) 可从 Azure 应用访问目录数据。
+-	将 SSO 提供给 [Azure Active Directory 支持的所有应用程序](/home/features/identity/)，包括 Office 365、Dynamics CRM Online、Microsoft Intune 和数千个非 Microsoft 云应用程序。
+-	Azure Active Directory 支持基于角色的访问控制。可以使用 [Authorize(Roles="X")] 模式，并且只需对代码进行最少量的更改。
 
--	[Azure AD](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/) - 可以使用 Azure AD 为 Web 应用实施身份验证和授权。使用 Azure AD 作为标识提供程序具有以下特征：
-	-	支持常用的身份验证协议，如 [OAuth 2.0](http://oauth.net/2/)、[OpenID Connect](http://openid.net/connect/) 和 [SAML 2.0](http://en.wikipedia.org/wiki/SAML_2.0)。有关支持的协议的完整列表，请参阅 [Azure Active Directory 身份验证协议](/documentation/articles/active-directory-developers-guide/)。
-	-	可以使用没有任何本地基础结构的仅限 Azure 的标识提供者。
-	-	此外可以使用本地 AD（托管在本地）配置目录同步。
-	-	当 AD 用户从 Intranet 和 Internet 访问时，Azure AD 将从本地 AD 域进行目录同步，在 Web 应用中实现顺畅的 SSO 体验。AD 用户可从 Intranet 自动通过集成身份验证来访问 Web 应用。AD 用户可使用其 Windows 凭据从 Internet 登录 Web 应用。
-	-	将 SSO 提供给 [Azure AD 支持的所有应用程序](/home/features/identity/)，包括 Azure、Office 365、Dynamics CRM Online、Microsoft Intune 和数千个非 Microsoft 云应用程序。 
-	-	Azure AD 将[信赖方](http://en.wikipedia.org/wiki/Relying_party)应用程序管理委派到非管理员角色，但是，对敏感目录数据的应用程序访问仍须由全局管理员配置。
-	-	为所有信赖方应用程序发送一组通用声明类型。有关声明类型的列表，请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。声明不可自定义。
-	-	通过使用 [Azure AD 图形 API](http://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx)，应用程序能够访问 Azure AD 中的目录数据。
--	[本地安全令牌服务 (STS)，例如 AD FS](/documentation/articles/web-sites-dotnet-lob-application-adfs/) - 你可以使用本地 STS（如 AD FS）对 Web 应用实施身份验证和授权。本地 AD FS 的使用具有以下特征：
-	-	AD FS 拓扑必须在本地部署，会产生成本和管理开销。
-	-	当公司政策要求 AD 数据存储在本地时效果最佳。
-	-	只有 AD FS 管理员可以配置[信赖方信任和声明规则](http://technet.microsoft.com/zh-cn/library/dd807108.aspx)。
-	-	可以基于按应用程序管理[声明](http://technet.microsoft.com/zh-cn/library/ee913571.aspx)。
-	-	必须提供单独的解决方案，用于通过公司防火墙访问本地 AD 数据。
+若要了解如何编写使用 Azure Active Directory 进行身份验证的业务线 Azure 应用，请参阅 [Create a line-of-business Azure app with Azure Active Directory authentication](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/)（使用 Azure Active Directory 身份验证创建业务线 Azure 应用）。
 
+## 通过本地 STS 进行身份验证
+如果已安装本地安全令牌服务 (STS)（例如 Active Directory 联合身份验证服务 (AD FS)），可以使用该服务来联合 Azure 应用的身份验证。当公司策略禁止将 AD 数据存储在 Azure 中时，这是最合适的方法。但请注意以下事项：
 
+-	STS 拓扑必须在本地部署，这会产生成本和管理开销。
+-	只有 AD FS 管理员可以配置[信赖方信任和声明规则](http://technet.microsoft.com/zh-cn/library/dd807108.aspx)，这可能会限制开发人员的选项。另一方面，可以根据应用程序管理和自定义[声明](http://technet.microsoft.com/zh-cn/library/ee913571.aspx)。
+-	需要提供一个单独的解决方案通过公司防火墙访问本地 AD 数据。
 
-<!---HONumber=79-->
+若要了解如何编写使用本地 STS 进行身份验证的业务线 Azure 应用，请参阅 [Create a line-of-business Azure app with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs/)（使用 AD FS 身份验证创建业务线 Azure 应用）。
+ 
+
+<!---HONumber=Mooncake_0926_2016-->
