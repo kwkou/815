@@ -85,7 +85,7 @@ RPO 是恢复过程导致丢失数据的可接受时间范围。例如，如果 
 
 ##清单
 
-下面总结本文已讨论的要点（并列出有关 Azure 应用程序[高可用性](/documentation/articles/resiliency-high-availability-azure-applicationsAzure/)和[灾难恢复](/documentation/articles/resiliency-disaster-recovery-azure-applicationsAzure/)的相关文章）。本摘要旨在提供你在自己进行可用性和灾难恢复规划时应考虑事项的清单。这些最佳实践对于寻求认真实现成功的解决方案的客户非常有用。
+下面总结本文已讨论的要点（并列出有关 Azure 应用程序[高可用性](/documentation/articles/resiliency-high-availability-azure-applications/)和[灾难恢复](/documentation/articles/resiliency-disaster-recovery-azure-applications/)的相关文章）。本摘要旨在提供你在自己进行可用性和灾难恢复规划时应考虑事项的清单。这些最佳实践对于寻求认真实现成功的解决方案的客户非常有用。
 
 1. 对每个应用程序执行风险评估，因为每个应用程序的要求可能会有不同。某些应用程序比其他一些重要，有理由投入额外的成本为这些应用程序设计灾难恢复功能。
 1. 使用此信息定义每个应用程序的 RTO 和 RPO。
@@ -110,15 +110,15 @@ Azure 可检测并处理许多故障，但有许多类型的故障需要使用�
 
 ##其他资源
 
-[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applicationsAzure/)
+[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applications/)
 
-[构建在 Azure 基础之上的应用程序灾难恢复](/documentation/articles/resiliency-disaster-recovery-azure-applicationsAzure/)
+[构建在 Azure 基础之上的应用程序灾难恢复](/documentation/articles/resiliency-disaster-recovery-azure-applications/)
 
-[Azure 复原技术指南](/documentation/articles/resiliency-technical-guidanceAzure/)
+[Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)
 
 [概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity/)
 
-[Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-drAzure/)
+[Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)
 
 <!-- [防故障：弹性云体系结构指南](https://channel9.msdn.com/Series/FailSafe) -->
 
@@ -126,6 +126,6 @@ Azure 可检测并处理许多故障，但有许多类型的故障需要使用�
 
 ##后续步骤
 
-本文是着重介绍 Azure 应用程序灾难恢复和高可用性的系列教程的一部分。本系列教程的下一篇文章为[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applicationsAzure/)。
+本文是着重介绍 Azure 应用程序灾难恢复和高可用性的系列教程的一部分。本系列教程的下一篇文章为[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applications/)。
 
 <!---HONumber=Mooncake_0627_2016-->

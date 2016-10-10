@@ -20,7 +20,7 @@
 <a id="virtual-machines"></a>
 ##虚拟机
 
-若要在发生应用程序错误或意外删除后保护 Azure 虚拟机（有时称基础结构即服务 VM），可以使用 [Azure 备份](/services/backup/)。使用 Azure 备份可跨多个 VM 磁盘创建一致的备份。此外，可以跨区域复制备份保管库，以便在发生区域服务中断时进行恢复。
+若要在发生应用程序错误或意外删除后保护 Azure 虚拟机（有时称基础结构即服务 VM），可以使用 [Azure 备份](/home/features/backup/)。使用 Azure 备份可跨多个 VM 磁盘创建一致的备份。此外，可以跨区域复制备份保管库，以便在发生区域服务中断时进行恢复。
 
 <a id="storage"></a>
 ##存储
@@ -39,7 +39,7 @@
 <a id="database"></a>
 ##数据库
 
-Azure SQL 数据库有几个[业务连续性](/documentation/articles/sql-database-business-continuity/)（备份、还原）选项可供使用。可以使用[数据库复制](/documentation/articles/sql-database-copy/)功能或通过[导出](/documentation/articles/sql-database-export/)和[导入](https://msdn.microsoft.com/zh-cn/library/hh710052.aspx) SQL Server bacpac 文件来复制数据库。数据库复制提供事务一致的结果，而 bacpac（通过导入/导出服务）则不会提供事务一致的结果。这两种选项都在数据中心中作为基于队列的服务运行，当前不提供完成时间 SLA。
+Azure SQL 数据库有几个[业务连续性](/documentation/articles/sql-database-business-continuity/)（备份、还原）选项可供使用。可以使用[数据库复制](/documentation/articles/sql-database-copy/)功能或通过[导出](/documentation/articles/sql-database-export-powershell/)和[导入](https://msdn.microsoft.com/zh-cn/library/hh710052.aspx) SQL Server bacpac 文件来复制数据库。数据库复制提供事务一致的结果，而 bacpac（通过导入/导出服务）则不会提供事务一致的结果。这两种选项都在数据中心中作为基于队列的服务运行，当前不提供完成时间 SLA。
 
 >[AZURE.NOTE]数据库复制和导入/导出服务会对源数据库形成极大的负载。它们可能会触发资源争用或限制事件。
 

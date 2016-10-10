@@ -19,7 +19,7 @@
 >[AZURE.NOTE] 以下大多数建议可随时在应用程序中实施，因此很适合用于“快速修复”。最佳的长期解决方案通常涉及到为云构建的应用程序设计。有关这些功能的清单（更多面向设计的领域），请参阅 [Availability checklist（可用性清单）](/documentation/articles/best-practices-availability-checklist/)。
 
 ###是否在资源前面使用流量管理器？
-使用流量管理器有助于跨 Azure 区域或者在 Azure 与本地位置之间路由 Internet 流量。这样做有几项原因，包括延迟和可用性。若要了解有关如何使用流量管理器来提高复原能力并将流量分散到多个区域的详细信息，请阅读 [Running VMs in multiple datacenters on Azure for high availability（在 Azure 上的多个数据中心运行 VM 以实现高可用性）](/documentation/articles/guidance-compute-multiple-datacenters/)。
+使用流量管理器有助于跨 Azure 区域或者在 Azure 与本地位置之间路由 Internet 流量。这样做有几项原因，包括延迟和可用性。
 
 __不使用流量管理器会发生什么情况？__ 如果在应用程序前面不使用流量管理器，则你只能在单个区域中访问资源。这会限制缩放能力，远离所选区域的用户将感受到更长的延迟，而在发生区域范围的服务中断时将缺乏保护。
 

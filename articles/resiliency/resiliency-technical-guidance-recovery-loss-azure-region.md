@@ -31,7 +31,7 @@ Azure 在物理上和逻辑上划分为称为区域的单位。一个区域由�
 
 ###负载平衡
 
-若要实现各区域流量的负载平衡，需要使用流量管理解决方案。Azure 提供 [Azure 流量管理器](/services/traffic-manager/)。你也可以利用提供类似流理管理功能的第三方服务。
+若要实现各区域流量的负载平衡，需要使用流量管理解决方案。Azure 提供 [Azure 流量管理器](/home/features/traffic-manager/)。你也可以利用提供类似流理管理功能的第三方服务。
 
 ###策略
 
@@ -51,11 +51,11 @@ Azure 在物理上和逻辑上划分为称为区域的单位。一个区域由�
 基础结构即服务 (IaaS) 虚拟机 (VM) 的恢复在许多方面与平台即服务 (PaaS) 计算恢复相似。但是，由于 IaaS VM 包含 VM 和 VM 磁盘，因此两者之间也存在一些重要的差异。
 
   * __使用 Azure 备份创建应用程序一致的跨区域备份__。
-  [Azure 备份](/services/backup/)可让客户跨多个 VM 磁盘创建应用程序一致的备份，并支持跨区域的备份复制。为此，可在创建时选择异地复制备份保管库。请注意，必须在创建时配置备份保管库的复制，而不能在以后设置。如果某个区域发生服务中断，Microsoft 将向客户提供备份。然后，客户可以还原到配置的任何还原点。
+  [Azure 备份](/home/features/backup/)可让客户跨多个 VM 磁盘创建应用程序一致的备份，并支持跨区域的备份复制。为此，可在创建时选择异地复制备份保管库。请注意，必须在创建时配置备份保管库的复制，而不能在以后设置。如果某个区域发生服务中断，Microsoft 将向客户提供备份。然后，客户可以还原到配置的任何还原点。
 
   * __将数据磁盘与操作系统磁盘分开__。有关 IaaS VM 的一项重要注意事项就是，如果你不重新创建 VM 就不能更改操作系统磁盘。如果你的恢复策略是在灾难后部署的，这便不是问题。但是，如果你使用暖备份方法来保留容量，则它可能会成为问题。要正确实现这一点，必须将正确的操作系统磁盘部署到主要位置和辅助位置，而将应用程序数据存储在单独的驱动器上。如果可能，请使用这两个位置均可以提供标准的操作系统配置。在故障转移后，必须将数据驱动器连接到辅助 DC 中的现有 IaaS VM。可以使用 AzCopy 将数据磁盘的快照复制到远程站点。
 
-  * __注意异地故障转移多个 VM 磁盘后的潜在一致性问题__。VM 磁盘是作为 Azure 存储 Blob 实现的，具有相同的异地复制特征。除非使用 [Azure 备份](/services/backup/)，否则不能保证磁盘间的一致性，因为异地复制是异步进行的，并且是独立复制的。可以保证 VM 磁盘在异地故障转移后处于崩溃一致状态，但不能保证磁盘间的一致性。在某些情况下（例如使用磁盘条带化时）可能会产生问题。
+  * __注意异地故障转移多个 VM 磁盘后的潜在一致性问题__。VM 磁盘是作为 Azure 存储 Blob 实现的，具有相同的异地复制特征。除非使用 [Azure 备份](/home/features/backup/)，否则不能保证磁盘间的一致性，因为异地复制是异步进行的，并且是独立复制的。可以保证 VM 磁盘在异地故障转移后处于崩溃一致状态，但不能保证磁盘间的一致性。在某些情况下（例如使用磁盘条带化时）可能会产生问题。
 
 <a id="storage"></a>
 ##存储
@@ -107,7 +107,7 @@ Azure SQL 数据库提供两种类型的恢复：异地还原和活动异地复�
 
 ####活动异地复制
 
-[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)适用于所有数据库层。它专为恢复要求超出了异地还原的能力的应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。可以启动到任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何[配置异地复制](/documentation/articles/sql-database-geo-replication-portal/)和[故障转移到辅助数据库](/documentation/articles/sql-database-geo-replication-failover-portal/)的详细信息，请参阅 [Design for business continuity（业务连续性设计）](/documentation/articles/sql-database-business-continuity-design/)。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade/)。
+[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)适用于所有数据库层。它专为恢复要求超出了异地还原的能力的应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。可以启动到任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade/)。
 
 <a id="sql-server-on-virtual-machines"></a>
 ###虚拟机上的 SQL Server
@@ -165,7 +165,7 @@ Azure 媒体服务对于编码和流有不同的恢复方法。通常，在区�
 
 ##虚拟机清单
   1. 查看本文档的[虚拟机](#virtual-machines)部分。
-  2. 使用 [Azure 备份](/services/backup/)创建应用程序一致的跨区域备份。
+  2. 使用 [Azure 备份](/home/features/backup/)创建应用程序一致的跨区域备份。
 
 ##存储清单
   1. 查看本文档的[存储](#storage)部分。
