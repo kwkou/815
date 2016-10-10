@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="02/10/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 
