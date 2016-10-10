@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,区域性灾难,业务连续性方案,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="v-chuw" solutions="" manager="RongYu" editor="" />
 
-<tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="10/10/2016" wacn.date="10/10/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-business-continuity-disaster-recovery/)
@@ -65,23 +65,25 @@
 			当某些区域性灾难造成大面积服务中断时，需要在异地快速进行恢复。
 		</td>
 		<td>
-			目前提供两种恢复方案，用户可以根据紧急程度进行方案选择，如果用户在生产环境使用，建议采用自助服务方案。<br>
+			目前提供三种恢复方案，用户可以根据紧急程度进行方案选择；如果用户在生产环境使用，建议采用自助服务方案。<br>
 			-自助服务方案：当区域性灾难发生，用户无法通过管理门户进行异地还原时，可通过PowerShell命令行，将实例在异地进行还原。<br>
-			-PaaS方案：在严重区域性灾难发生时，MySQL服务也会针对所有受影响的实例进行异地还原。下面将重点介绍。
-
+			-PaaS方案：在严重区域性灾难发生时，MySQL服务也会针对所有受影响的实例进行异地还原。后文将重点介绍。<br>
+			-从异地从属实例中恢复：如果用户设置了异地从属实例，则在主实例不可用的时候，可在最短时间内通过手动或自动（在应用程序中设置）方式将应用切换到异地从属实例。
 		</td>
 	</tr>
 </table>
 
 ## 3. 区域性灾难恢复 ##
 
-如果发生区域性灾难，如大面积机房掉电，火灾或地震等不可抗力事件，MySQL on Azure目前提供异地还原功能帮助用户在灾难发生时，保持业务连续性。
+如果发生区域性灾难，如大面积机房掉电、火灾或地震等不可抗力事件，则MySQL Database on Azure的异地还原功能可帮助用户在灾难发生时保持业务连续性。
 
-###目前针对灾难恢复的方案有两种：###
+###目前针对灾难恢复的方案有三种：###
  
-* MySQL 服务层灾难恢复： MySQL on Azure服务本身会在灾难发生时，紧急响应判断灾难发生原因是否能够快速恢复 （在小于RPO的时间范围内），如果不能快速恢复，MySQL on Azure会针对所有受影响的实例在异地进行数据库还原，恢复的时间点将为离故障发生最接近的可恢复时间点。
+* MySQL服务层灾难恢复：MySQL Database on Azure服务本身会在灾难发生时，紧急响应判断灾难发生原因是否能够快速恢复（在小于RPO的时间范围内），如果不能快速恢复，则MySQL Database on Azure会针对所有受影响的实例在异地进行数据库还原，恢复的时间点将为离故障发生最接近的可恢复时间点。
 
-* 自助服务灾难恢复：如果用户使用的是生产环境，对恢复时间要求较高，用户可以通过PowerShell命令行，在灾难发生时，手动将受影响实例在异地进行恢复。 
+* 自助服务灾难恢复：如果用户使用的是生产环境，对恢复时间要求较高，则用户可以通过PowerShell命令行手动将受影响的实例在异地进行恢复。
+
+* 异地从属实例灾难恢复：如果用户事先设置了异地从属实例，则当主实例不可用时，用户可通过管理门户（手动）或应用程序（自动）切换到异地从属实例，从而实现快速灾难恢复。
 
 
 ###异地还原原理：###
@@ -104,6 +106,11 @@ New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName <Resou
 
 当还原实例创建完毕之后，需要将当前IP加入新实例的防火墙白名单中，并且需要手动将应用程序与数据库的连接字符串更新为新实例的hostname，从而恢复应用层业务。
 
-## 4. 常见业务连续性问题 ##
-1. 是否支持从异地副本中恢复？<br>
-目前仅支持异地还原，暂时不支持异地复制功能，即不支持从异地副本恢复，后续会推出。
+## 4. 从异地副本中恢复 ##
+如果用户设置了异地副本，发生灾难时，可以将业务切换到异地从属实例上。具体步骤为：
+
+1. 登录管理控制界面，选择异地从属实例；
+2. 提升异地从属实例为单个实例（详情请参见《[MySQL主从复制和只读实例](https://www.azure.cn/documentation/articles/mysql-database-read-replica/)》一文中的“提升从属实例”部分）；
+3. 修改应用端连接地址，连接到提升后的新实例。
+
+因为提升从属实例只需要花费几秒钟的时间，所以从异地副本恢复时，RPO和ERT是最小的，RPO在几秒，ERT在30秒以内。
