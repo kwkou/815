@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="05/03/2016" 
-	wacn.date="06/13/2016"/>
+	ms.date="08/04/2016" 
+	wacn.date="09/26/2016"/>
 
 
 # 什么是流分析？

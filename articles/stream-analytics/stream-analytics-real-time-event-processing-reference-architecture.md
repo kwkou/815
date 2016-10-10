@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics"
-	ms.date="05/03/2016" 
-	wacn.date="06/20/2016"/>
+	ms.date="07/27/2016" 
+	wacn.date="09/26/2016"/>
 
 # 参考体系结构：使用 Azure 流分析进行实时事件处理
 

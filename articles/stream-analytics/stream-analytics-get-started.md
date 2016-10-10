@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="05/20/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="07/27/2016"
+	wacn.date="09/26/2016"/>
 
 
 
