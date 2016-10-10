@@ -10,8 +10,8 @@
 
 <tags
    ms.service="security"
-   ms.date="05/23/2016"
-   wacn.date="08/01/2016"/>
+   ms.date="08/09/2016"
+   wacn.date="09/26/2016"/>
 
 # Azure 的数据分类
 

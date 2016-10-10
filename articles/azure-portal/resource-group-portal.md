@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="06/10/2016" 
-	wacn.date="07/18/2016"/>
+	ms.date="08/03/2016" 
+	wacn.date="09/26/2016"/>
 
 
 
