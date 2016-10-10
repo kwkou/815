@@ -4,14 +4,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016" 
+	ms.author="larryfr"/>
 
 #在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
 
@@ -23,13 +28,13 @@ Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时你需要�
 
 * 文本编辑器
  
-## <a name="python"></a>HDInsight 上的 Python
+##<a name="python"></a>HDInsight 上的 Python
 
 默认情况下，Python2.7 安装在 HDInsight 3.0 和更高版本的群集上。可以将 Hive 与此版本的 Python 配合使用，以进行流式处理（使用 STDOUT/STDIN 在 Hive 和 Python 之间传递数据）。
 
-HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无需采用流式处理即可知道如何与 Jython 通信，因此，在使用 Pig 时，Jython 是首选。
+HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无需采用流式处理即可知道如何与 Jython 通信，因此，在使用 Pig 时，Jython 是首选。但是，也可以将普通 Python (C Python) 与 Pig 配合使用。
 
-### <a name="hivepython"></a>Hive 和 Python
+##<a name="hivepython"></a>Hive 和 Python
 
 可以通过 HiveQL **TRANSFORM** 语句将 Python 用作 Hive 中的 UDF。例如，以下 HiveQL 将调用 **streaming.py** 文件中存储的 Python 脚本。
 
@@ -88,39 +93,51 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 有关如何在 HDInsight 群集上运行此示例的信息，请参阅[运行示例](#running)。
 
-### <a name="pigpython"></a>Pig 和 Python
+##<a name="pigpython"></a>Pig 和 Python
 
-在整个 **GENERATE** 语句中，Python 脚本可用作 Pig 中的 UDF。例如，以下示例使用 **jython.py** 文件中存储的 Python 脚本。
+在整个 **GENERATE** 语句中，Python 脚本可用作 Pig 中的 UDF。可通过两种方法实现此目的：使用 Jython（Java 虚拟机中实现的 Python）和 C Python（普通 Python）。
 
-	Register 'wasbs:///jython.py' using jython as myfuncs;
+这两种脚本的主要差别在于，Jython 在 JVM 上运行，并且原本就能从 Pig（也在 JVM 上运行）调用。 C Python 是外部进程（用 C 语言编写）。 因此，JVM 上的 Pig 中的数据将发送到 Python 进程中运行的脚本，然后，脚本的输出将发回到 Pig。
+
+若要确定 Pig 是使用 Jython 还是 C Python 来运行脚本，请在从 Pig Latin 引用 Python 脚本时使用 __register__。这样就会告知 Pig 要使用哪个解释器，以及要为脚本创建哪个别名。以下示例将脚本作为 __myfuncs__ 注册到 Pig：
+
+* __使用 Jython__：`register '/path/to/pig_python.py' using jython as myfuncs;`
+* __使用 C Python__：`register '/path/to/pig_python.py' using streaming_python as myfuncs;`
+
+> [AZURE.IMPORTANT] 使用 Jython 时，pig\_jython 文件的路径可以是本地路径或 WASB:// 路径。但是，使用 C Python 时，必须引用用于提交 Pig 作业的节点的本地文件系统上的文件。
+
+通过注册后，此示例的 Pig Latin 对于两个脚本是相同的：
+
     LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);
     LOG = FILTER LOGS by LINE is not null;
     DETAILS = FOREACH LOG GENERATE myfuncs.create_structure(LINE);
     DUMP DETAILS;
 
-下面是此示例的工作原理：
+下面是本示例执行的操作：
 
-1. 使用 **Jython** 注册包含 Python 脚本 (**jython.py**) 的文件，并将该脚本作为 **myfuncs** 公开给 Pig。Jython 是用 Java 编写的 Python 实现，可在 Pig 所在的同一个 Java 虚拟机中运行。这样，我们便可将 Python 脚本视为传统的函数调用，而不是对 Hive 使用的流式处理方法。
+1. 第一行代码将示例数据文件 **sample.log** 加载到 **LOGS** 中。由于此日志文件不包含一致的架构，因此它还将每条记录（在本例中为 **LINE**）定义为 **chararray**。简单而言，Chararray 就是一个字符串。
 
-2. 下一代码行将示例数据文件 **sample.log** 加载到 **LOGS** 中。由于此日志文件不包含一致的架构，因此它还将每条记录（在本例中为 **LINE**）定义为 **chararray**。简单而言，Chararray 就是一个字符串。
+2. 第二行代码筛选出所有 null 值，并将操作结果存储在 **LOG** 中。
 
-3. 第三个代码行筛选出所有 null 值，并将操作结果存储在 **LOG** 中。
+3. 接下来，它将循环访问 **LOG** 中的记录，并使用 **GENERATE** 来调用作为 **myfuncs** 加载的 Python/Jython 脚本中包含的 **create\_structure** 方法。**LINE** 用于将当前记录传递给函数。
 
-4. 接下来，它将循环访问 **LOG** 中的记录，并使用 **GENERATE** 来调用作为 **myfuncs** 加载的 **jython.py** 脚本中包含的 **create\_structure** 方法。**LINE** 用于将当前记录传递给函数。
+4. 最后，使用 **DUMP** 命令将输出转储到 STDOUT。这只是为了在完成操作后立即显示结果；在实际脚本中，你通常会使用 **STORE** 将数据存储到新文件中。
 
-5. 最后，使用 **DUMP** 命令将输出转储到 STDOUT。这只是为了在完成操作后立即显示结果；在实际脚本中，你通常会使用 **STORE** 将数据存储到新文件中。
+实际的 Python 脚本文件在 C Python 与 Jython 之间也很类似，唯一的差别在于，使用 C Python 时必须从 __pig\_util__ 导入。下面是 __pig\_python.py__ 脚本：
 
-<a name="jythonpy"></a>
-下面是该 Pig 示例使用的 **jython.py** 文件：
+# <a name="streamingpy"></a>如果使用 C Python，请取消注释以下代码
+    #from pig_util import outputSchema
 
-	@outputSchema("log: {(date:chararray, time:chararray, classname:chararray, level:chararray, detail:chararray)}")
-	def create_structure(input):
-	  if (input.startswith('java.lang.Exception')):
-	    input = input[21:len(input)] + ' - java.lang.Exception'
-	  date, time, classname, level, detail = input.split(' ', 4)
-	  return date, time, classname, level, detail
+    @outputSchema("log: {(date:chararray, time:chararray, classname:chararray, level:chararray, detail:chararray)}")
+    def create_structure(input):
+    if (input.startswith('java.lang.Exception')):
+        input = input[21:len(input)] + ' - java.lang.Exception'
+    date, time, classname, level, detail = input.split(' ', 4)
+    return date, time, classname, level, detail
 
-还记得吗？我们前面只是将 **LINE** 输入定义为 chararray，因为输入没有一致的架构。 **jython.py** 的任务是将数据转换成用于输出的一致架构。其工作方式如下所述：
+> [AZURE.NOTE] 安装时不必要考虑“pig\_util”，脚本会自动使用该选项。
+
+还记得吗？我们前面只是将 **LINE** 输入定义为 chararray，因为输入没有一致的架构。 Python 脚本的任务是将数据转换成用于输出的一致架构。其工作方式如下所述：
 
 1. **@outputSchema** 语句定义要返回到 Pig 的数据的格式。在本例中，该格式为**数据袋**，这是一种 Pig 数据类型。该数据袋包含以下字段，所有这些字段都是 chararray（字符串）：
 
@@ -132,7 +149,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 2. 接下来，**def create\_structure(input)** 将定义 Pig 要将行项传递到的函数。
 
-3. 示例数据 **sample.log** 基本上符合我们要返回的日期、时间、类名、级别和详细信息架构。但是，它还包含了一些以字符串“*java.lang.Exception*”开头的行，我们需要修改这些行，使之与架构匹配。**if** 语句将检查这些行，然后调整输入数据以将“*java.lang.Exception*”字符串移到末尾，使数据与预期的输出架构相一致。
+3. 示例数据 **sample.log** 基本上符合我们要返回的日期、时间、类名、级别和详细信息架构。但是，它还包含了一些以字符串“ *java.lang.Exception* ”开头的行，我们需要修改这些行，使之与架构匹配。**if** 语句将检查这些行，然后调整输入数据以将“ *java.lang.Exception* ”字符串移到末尾，使数据与预期的输出架构相一致。
 
 4. 接下来，使用 **split** 命令在前四个空格字符处拆分数据。这将生成五个值，它们将分配到“日期”、“时间”、“类名”、“级别”和“详细信息”。
 
@@ -140,7 +157,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 当数据返回到 Pig 时，其架构将与 **@outputSchema** 语句中的定义一致。
 
-## <a name="running"></a>运行示例
+##<a name="running"></a>运行示例
 
 如果使用的是基于 Windows 的 HDInsight 群集和 Windows 客户端，请使用 **PowerShell** 步骤。
 
@@ -169,9 +186,9 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 1. 使用 `pig` 命令来启动该 shell。在 shell 加载后，你应会看到 `grunt>` 提示符。
 
-2. 在 `grunt>` 提示符下输入以下语句。
+2. 在 `grunt>` 提示符下输入以下语句，运行带有 Jython 解释器的 Python 脚本。
 
-		Register wasbs:///jython.py using jython as myfuncs;
+		Register wasbs:///pig_python.py using jython as myfuncs;
 	    LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);
 	    LOG = FILTER LOGS by LINE is not null;
 	    DETAILS = foreach LOG generate myfuncs.create_structure(LINE);
@@ -185,19 +202,39 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 		((2012-02-03,20:11:56,SampleClass3,[TRACE],verbose detail for id 1718828806))
 		((2012-02-03,20:11:56,SampleClass3,[INFO],everything normal for id 530537821))
 
+4. 使用 `quit` 退出 Grunt shell，然后在本地文件系统上使用以下命令编辑 pig\_python.py 文件：
+
+    nano pig\_python.py
+
+5. 进入编辑器后，通过删除行开头的 `#` 字符来取消注释以下行：
+
+        #from pig_util import outputSchema
+
+    完成更改后，使用 Ctrl+X 退出编辑器。选择“Y”，然后按 Enter 保存更改。
+
+6. 使用 `pig` 命令再次启动 shell。在 `grunt>` 提示符下，使用以下命令运行带有 Jython 解释器的 Python 脚本。
+
+        Register 'pig_python.py' using streaming_python as myfuncs;
+	    LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);
+	    LOG = FILTER LOGS by LINE is not null;
+	    DETAILS = foreach LOG generate myfuncs.create_structure(LINE);
+	    DUMP DETAILS;
+
+    完成此作业后，看到的输出应该与之前使用 Jython 运行脚本后的输出相同。
+
 ###PowerShell
 
 这些步骤使用 Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前，参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
-1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [jython.py](#jythonpy) 创建开发计算机上的文件的本地副本。
+1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [pig\_python.py](#jythonpy) 在开发计算机上创建文件的本地副本。
 
-2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **jython.py** 文件上载到服务器。在脚本的前三行中替换为你的 Azure HDInsight 群集的名称，并替换为 **streaming.py** 和 **jython.py** 文件的路径。
+2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **pig\_python.py** 文件上载到服务器。在脚本的前三行中，替换 Azure HDInsight 群集的名称，以及 **streaming.py** 和 **pig\_python.py** 文件的路径。
 
 		$clusterName = YourHDIClusterName
 		$pathToStreamingFile = "C:\path\to\streaming.py"
-		$pathToJythonFile = "C:\path\to\jython.py"
+		$pathToJythonFile = "C:\path\to\pig_python.py"
 
 		$hdiStore = get-azurehdinsightcluster -name $clusterName
 		$storageAccountName = $hdiStore.DefaultStorageAccount.StorageAccountName.Split(".",2)[0]
@@ -218,9 +255,11 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
     # Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
+    # If using a Windows-based HDInsight cluster, change the USING statement to:
+    # "USING 'D:\Python27\python.exe streaming.py' AS " +
 	$HiveQuery = "add file wasbs:///streaming.py;" +
 	             "SELECT TRANSFORM (clientid, devicemake, devicemodel) " +
-	               "USING 'D:\Python27\python.exe streaming.py' AS " +
+	               "USING 'python streaming.py' AS " +
 	               "(clientid string, phoneLabel string, phoneHash string) " +
 	             "FROM hivesampletable " +
 	             "ORDER BY clientid LIMIT 50;"
@@ -243,7 +282,8 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	100042	Apple iPhone 4.2.x	375ad9a0ddc4351536804f1d5d0ea9b9
 	100042	Apple iPhone 4.2.x	375ad9a0ddc4351536804f1d5d0ea9b9
 
-####Pig
+####Pig (Jython)
+> [AZURE.NOTE] 使用 PowerShell 远程提交作业时，无法使用 C Python 作为解释器。
 
 	# Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
@@ -271,7 +311,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	((2012-02-03,20:11:56,SampleClass3,[TRACE],verbose detail for id 1718828806))
 	((2012-02-03,20:11:56,SampleClass3,[INFO],everything normal for id 530537821))
 
-## <a name="troubleshooting"></a>故障排除
+##<a name="troubleshooting"></a>故障排除
 
 ###运行作业时出现错误
 
@@ -300,7 +340,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 Hive|/HivePython/stderr<p>/HivePython/stdout
 Pig|/PigPython/stderr<p>/PigPython/stdout
 
-## <a name="next"></a>后续步骤
+##<a name="next"></a>后续步骤
 
 如果需要加载默认情况下未提供的 Python 模块，请参阅[如何将模块部署到 Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx)，以获取有关如何执行此操作的示例。
 
@@ -312,4 +352,4 @@ Pig|/PigPython/stderr<p>/PigPython/stdout
 
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0926_2016-->
