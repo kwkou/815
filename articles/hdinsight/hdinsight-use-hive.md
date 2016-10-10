@@ -5,14 +5,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/16/2016"
-	wacn.date="07/18/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="09/19/2016"
+	wacn.date="10/10/2016"
+	ms.author="larryfr"/>
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 
@@ -21,14 +26,18 @@
 
 在本教程中，你将学习如何在 HDInsight 上使用 Hadoop 中的 Apache Hive，以及选择如何运行 Hive 作业。此外，你还将了解 HiveQL 以及如何分析一个示例 Apache log4j 文件。
 
-## <a id="why"></a>什么是 Hive，为何要使用它？
+##<a id="why"></a>什么是 Hive，为何要使用它？
 [Apache Hive](http://hive.apache.org/) 是适用于 Hadoop 的数据仓库系统，可让你使用 HiveQL（类似于 SQL 的查询语言）来进行数据汇总、查询和数据分析。使用 Hive 能够以交互方式浏览数据，或者创建可重用的批处理作业。
 
 Hive 允许你在很大程度上未结构化的数据上投影结构。在定义结构后，你可以使用 Hive 来查询这些数据，而不需要具备 Java 或 MapReduce 的知识。**HiveQL**（Hive 查询语言）可让你使用类似于 T-SQL 的语句编写查询。
 
 Hive 知道如何处理结构化和半结构化数据，例如其中的字段以特定字符分隔的文本文件。Hive 还支持对复杂或不规则的结构化数据使用自定义**序列化程序/反序列化程序 (SerDe)**。有关详细信息，请参阅[如何将自定义 JSON SerDe 与 HDInsight 配合使用](http://blogs.msdn.com/b/bigdatasupport/archive/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight.aspx)。
 
+## 用户定义函数 (UDF)
+
 还可以通过**用户定义函数的 (UDF)** 扩展 Hive。UDF 允许你实现 HiveQL 中不容易建模的功能或逻辑。有关将 UDF 与 Hive 配合使用的示例，请参阅：
+
+* [结合使用 Java 用户定义函数和 Hive](/documentation/articles/hdinsight-hadoop-hive-java-udf/)
 
 * [在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python/)
 
@@ -36,13 +45,14 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 * [如何将自定义 Hive UDF 添加到 HDInsight](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx)
 
+* [将日期/时间格式转换为 Hive 时间戳的自定义 Hive UDF 示例](https://github.com/Azure-Samples/hdinsight-java-hive-udf)
 
 ## Hive 内部表与外部表
 
 以下是你需要了解的有关 Hive 内部表和外部表的一些信息：
 
 - **CREATE TABLE** 命令创建内部表。数据文件必须位于默认容器中。
-- **CREATE TABLE** 命令会将数据文件移到 /hive/warehouse/<表名> 文件夹中。
+- **CREATE TABLE** 命令会将数据文件移动到 /hive/warehouse/<表名> 文件夹中。
 - **CREATE EXTERNAL TABLE** 命令创建外部表。数据文件可以位于默认容器以外的位置。
 - **CREATE EXTERNAL TABLE** 命令不移动数据文件。
 - **CREATE EXTERNAL TABLE** 命令不允许在 LOCATION 中有任何文件夹。这是本教程生成 sample.log 文件的副本的原因。
@@ -50,7 +60,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 有关详细信息，请参阅 [HDInsight：Hive 内部和外部表简介][cindygross-hive-tables]。
 
 
-## <a id="data"></a>关于示例数据（一个 Apache log4j 文件）
+##<a id="data"></a>关于示例数据（一个 Apache log4j 文件）
 
 本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，用于显示类型和严重性，例如：
 
@@ -66,9 +76,9 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 由于 Azure Blob 存储是 HDInsight 的默认存储，因此你也可以使用 HiveQL 中的 **/example/data/sample.log** 访问该文件。
 
-> [AZURE.NOTE] 语法 **wasbs:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如 **wasbs://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
+> [AZURE.NOTE] 语法 **wasbs:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。若在预配群集时指定了其他存储帐户，且想要访问存储在这些帐户的文件，可指定容器的名称和存储帐户地址（如 **wasbs://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**）来访问数据。
 
-## <a id="job"></a>示例作业：将列投影到分隔的数据
+##<a id="job"></a>示例作业：将列投影到分隔的数据
 
 以下 HiveQL 语句将列投影到 **wasbs:///example/data** 目录中存储的分隔数据：
 
@@ -81,7 +91,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 在上例中，HiveQL 语句执行以下操作：
 
-* __set hive.execution.engine=tez;__：将执行引擎设置为使用 Tez。使用 Tez 而不是 MapReduce 可以提高查询性能。有关 Tez 的详细信息，请参阅[使用 Apache Tez 提高性能](#usetez)部分。
+* __set hive.execution.engine=tez;__：设置执行引擎以使用 Tez。使用 Tez 而不是 MapReduce 可以提高查询性能。有关 Tez 的详细信息，请参阅[使用 Apache Tez 提高性能](#usetez)部分。
 
 * **DROP TABLE**：删除表和数据文件（如果该表已存在）。
 * **CREATE EXTERNAL TABLE**：在 Hive 中创建新的**外部**表。外部表只会在 Hive 中存储表定义；数据以原始格式保留在原始位置。
@@ -90,7 +100,8 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 * **SELECT**：选择其列 **t4** 包含值 **[ERROR]** 的所有行计数。这应会返回值 **3**，因为有三个行包含此值。
 * **INPUT\_\_FILE\_\_NAME LIKE '%.log'** - 告诉 Hive，我们只应返回以 .log 结尾的文件中的数据。此项将搜索限定于包含数据的 sample.log 文件，使搜索不会返回与所定义架构不符的其他示例数据文件中的数据。
 
-> [AZURE.NOTE] 当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。<p>删除外部表**不会**删除数据，只会删除表定义。
+> [AZURE.NOTE] 当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
+> <p>删除外部表**不会**删除数据，只会删除表定义。
 
 创建外部表后，使用以下语句创建**内部**表。
 
@@ -108,11 +119,13 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 > [AZURE.NOTE] 与外部表不同，删除内部表会同时删除基础数据。
 
-## <a id="usetez"></a>使用 Apache Tez 提高性能
+##<a id="usetez"></a>使用 Apache Tez 提高性能
 
 [Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。
 
-> [AZURE.NOTE] 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，必须设置 Hive 查询的以下值：<p>```set hive.execution.engine=tez;``` <p>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)中找到详细信息。
+> [AZURE.NOTE] 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要利用 Tez，须设置 Hive 查询的以下值：
+<p>```set hive.execution.engine=tez;```
+<p>可为每个查询提交此值，方式是将其置于查询的开头。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)中找到详细信息。
 
 [Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
@@ -120,7 +133,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
 
-## <a id="run"></a>选择如何运行 HiveQL 作业
+##<a id="run"></a>选择如何运行 HiveQL 作业
 
 HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定哪种方法最适合你，然后按链接进行演练。
 
@@ -144,7 +157,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 在[此处][ssispack]了解有关 Azure Feature Pack for SSIS 的详细信息。
 
 
-## <a id="nextsteps"></a>后续步骤
+##<a id="nextsteps"></a>后续步骤
 
 现在，你已了解什么是 Hive，以及如何将它与 HDInsight 中的 Hadoop 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
 
@@ -196,4 +209,4 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->
