@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/30/2015" 
-	wacn.date="03/21/2016"/>
+	ms.date="07/21/2015" 
+	wacn.date="09/26/2016"/>
 
 
 # 使用 SendGrid 从移动服务发送电子邮件
