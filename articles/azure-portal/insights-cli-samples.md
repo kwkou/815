@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="azure-portal"
-	ms.date="03/30/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="07/10/2016"
+	wacn.date="09/26/2016"/>
 
 # Azure Insights 跨平台 CLI 快速启动示例
 
