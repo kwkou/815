@@ -234,9 +234,7 @@
 
 ![创建过渡部署槽位](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
 
-向资源组 `wordpressapp-group` 中添加另一个 MySQL 数据库 `wordpress-stage-db`。
-
- ![将 MySQL 数据库添加到资源组](./media/app-service-web-staged-publishing-realworld-scenarios/2addmysql.png)
+通过经典管理门户，添加另一个 MySQL 数据库 `wordpress-stage-db`。
 
 将过渡部署槽位的连接字符串更新为指向新建的数据库 `wordpress-stage-db`。请注意，生产 Web 应用 `wordpressprodapp` 和过渡 Web 应用 `wordpressprodapp-stage` 必须指向不同的数据库。
 

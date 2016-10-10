@@ -45,19 +45,17 @@
 
 	![向上缩放 Azure 应用的相关资源](./media/web-sites-scale/RGEssentialsLink.png)
 
-2. 在“资源组”边栏选项卡的“摘要”部分中，单击要进行缩放的一个资源。以下屏幕截图显示 SQL 数据库资源和 Azure 存储资源。
+2. 在“资源组”边栏选项卡的“摘要”部分中，单击要进行缩放的一个资源。以下屏幕截图显示 Azure 存储资源。
 
 	![导航到资源组边栏选项卡以向上缩放 Azure 应用](./media/web-sites-scale/ResourceGroup.png)
 
-3. 对于 SQL 数据库资源，请单击“设置”>“定价层”以缩放定价层。
-
-	![向上缩放 Azure 应用的 SQL 数据库后端](./media/web-sites-scale/ScaleDatabase.png)
-
-	还可以为 SQL 数据库实例打开[异地复制](/documentation/articles/sql-database-geo-replication-overview/)。
-
-    对于 Azure 存储资源，请单击“设置”>“配置”以向上缩放存储选项。
+3. 对于 Azure 存储资源，请单击“设置”>“配置”以向上缩放存储选项。
 
     ![向上缩放 Azure 应用使用的 Azure 存储帐户](./media/web-sites-scale/ScaleStorage.png)
+	
+	对于 SQL 数据库资源，请登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)，找到你的 SQL 数据库，点击“缩放”。
+
+	还可以点击“异地复制”，为 SQL 数据库实例打开[异地复制](/documentation/articles/sql-database-geo-replication-overview/)。
 
 ## <a name="devfeatures"></a>了解开发人员功能
 我们根据定价层提供以下面向开发人员的功能：

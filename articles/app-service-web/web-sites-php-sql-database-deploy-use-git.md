@@ -59,9 +59,13 @@
 
 	![Web 应用的资源组](./media/web-sites-php-sql-database-deploy-use-git/resource-group-blade.png)
 
-5. 在“设置”中，单击“连续部署”>“配置所需设置”。选择“本地 Git 存储库”，然后单击“确定”。
+11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
 
-	![你的源代码在哪里](./media/web-sites-php-sql-database-deploy-use-git/setup-local-git.png)
+		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
+
+		$a.Properties.scmType = "LocalGit"
+
+		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
 
 	如果之前未设置 Git 存储库，则必须提供用户名和密码。为此，请在 Web 应用的边栏选项卡中，单击“设置”>“部署凭据”。
 

@@ -51,18 +51,17 @@
 
 7. 创建 Web 应用程序后，用户将看到新的 Web 应用边栏选项卡。
 
-7. 在“设置”中，单击“连续部署”，然后单击“配置所需设置”。
-
-	![设置 Git 发布][setup-publishing]
-
-8. 为源选择“本地 Git 存储库”。
-
-    ![设置 Git 存储库][setup-repository]
-
-
 9. 若要启用 Git 发布，必须提供用户名和密码。记下你创建的用户名和密码。（如果之前已设置 Git 存储库，则将跳过此步骤。）
 
 	![创建发布凭据][credentials]
+
+11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
+
+		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
+
+		$a.Properties.scmType = "LocalGit"
+
+		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
 
 
 ## 获取远程 MySQL 连接信息

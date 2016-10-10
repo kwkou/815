@@ -80,11 +80,13 @@
 
 	![][deployment-part]
 
-11. 在“连续部署”边栏选项卡中，单击“选择源”
+11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
 
-12. 单击“本地 Git 存储库”，然后单击“确定”。
+		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
 
-	![][setup-git-publishing]
+		$a.Properties.scmType = "LocalGit"
+
+		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
 
 13. 如果尚未执行此操作，请设置部署凭据。
 
