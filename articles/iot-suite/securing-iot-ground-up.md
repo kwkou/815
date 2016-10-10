@@ -10,8 +10,8 @@
 
 <tags
  ms.service="iot-suite"
- ms.date="08/02/2016"
- wacn.date="09/05/2016"/>  
+ ms.date="08/16/2016"
+ wacn.date="10/10/2016"/>  
 
 
 [AZURE.INCLUDE [iot-security-ground-up](../../includes/iot-security-ground-up.md)]

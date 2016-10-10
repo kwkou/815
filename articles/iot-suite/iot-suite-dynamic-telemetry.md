@@ -11,19 +11,24 @@
 
 <tags
      ms.service="iot-suite"
-     ms.date="06/07/2016"
-     wacn.date="09/05/2016"/>  
+     ms.devlang="na"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="08/25/2016"
+     ms.author="dobett"
+     wacn.date="10/10/2016"/>  
 
 
 # 配合使用动态遥测和远程监视预配置解决方案
 
 ## 介绍
 
-动态遥测可让你将发送到远程监视预配置解决方案的任何遥测数据可视化。使用预配置解决方案部署的模拟设备将发送温度与湿度遥测数据，你可以在仪表板上可视化这些遥测。如果你自定义现有的模拟设备、创建新的模拟设备或者将物理设备连接到预配置解决方案，则可以发送其他遥测值，例如外部温度、RPM 或风速。然后，可以在仪表板上可视化这些附加的遥测数据。
+动态遥测可让你将发送到远程监视预配置解决方案的任何遥测数据可视化。部署了预配置解决方案的模拟设备会发送温度和湿度遥测，可在仪表板上直观显示这些数据。如果你自定义现有的模拟设备、创建新的模拟设备或者将物理设备连接到预配置解决方案，则可以发送其他遥测值，例如外部温度、RPM 或风速。然后，可以在仪表板上可视化这些附加的遥测数据。
 
 本教程使用一个简单的 Node.js 模拟设备，你可以轻松对它进行修改，以体验动态遥测。
 
-若要完成本教程，你需要：
+若要完成本教程，需要：
 
 - 一个有效的 Azure 订阅。如果没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用][lnk_free_trial]。
 - [Node.js][lnk-node] 0.12.x 或更高版本。
@@ -34,11 +39,11 @@
 
 ## 配置 Node.js 模拟设备
 
-1. 在远程监视仪表板上，单击“+ 添加设备”，然后添加新的自定义设备。记下 IoT 中心主机名、设备 ID 和设备密钥。在本课程稍后准备 remote\_monitoring.js 设备客户端应用程序时，需要用到这些信息。
+1. 在远程监视仪表板上，单击“+ 添加设备”，再添加自定义设备。记下 IoT 中心主机名、设备 ID 和设备密钥。在本教程稍后准备 remote\_monitoring.js 设备客户端应用程序时，需要使用它们。
 
 2. 请确保已在开发计算机上安装 Node.js 0.12.x 或更高版本。在命令提示符或 shell 中运行 `node --version` 以检查版本。有关使用包管理器在 Linux 上安装 Node.js 的信息，请参阅 [Installing Node.js via package manager][node-linux]（通过包管理器安装 Node.js）。
 
-3. 安装 Node.js 之后，请将最新版本的 [azure-iot-sdks][lnk-github-repo] 存储库复制到开发计算机。始终应该使用 **master** 分支来获取最新版本的库和示例。
+3. 安装 Node.js 之后，请将最新版本的 [azure-iot-sdks][lnk-github-repo] 存储库复制到开发计算机。始终对最新版的库和示例使用**主**分支。
 
 4. 从 [azure-iot-sdks][lnk-github-repo] 存储库的本地副本中，将以下两个文件从 node/device/samples 文件夹复制到开发计算机上的某个空文件夹：
 
@@ -57,7 +62,7 @@
     HostName={your IoT Hub hostname};DeviceId={your device id};SharedAccessKey={your device key}
     ```
 
-    如果 IoT 中心主机名是 **contoso** 并且设备 ID 是 **mydevice**，则连接字符串将如下所示：
+    如果 IoT 中心主机名是 **contoso**，而设备 ID 为 **mydevice**，则连接字符串如下所示：
 
     ```
     var connectionString = "HostName=contoso.azure-devices.cn;DeviceId=mydevice;SharedAccessKey=2s ... =="
@@ -82,13 +87,13 @@
 
 远程监视解决方案将自动检测其他外部温度遥测类型，并将其添加到仪表板上的图表中。
 
-## 添加新遥测类型
+## 添加遥测类型
 
 下一步是将 Node.js 模拟设备生成的遥测数据替换为一组新值：
 
 1. 在命令提示符或 shell 中键入 **Ctrl+C** 以停止 Node.js 模拟设备。
 
-2. 在 remote\_monitoring.js 文件中，你可以查看现有温度、湿度和外部温度遥测的基本数据值。添加 **rpm** 的基本数据值，如下所示：
+2. 在 remote\_monitoring.js 文件中，你可以查看现有温度、湿度和外部温度遥测的基本数据值。如下添加 **rpm** 的基本数据值：
 
     ```
     // Sensors data
@@ -98,7 +103,7 @@
     var rpm = 200;
     ```
 
-3. Node.js 模拟设备通过使用 remote\_monitoring.js 文件中的 **generateRandomIncrement** 函数为基本数据值添加随机增量来生成遥测数据。在现有随机化后面添加一行代码，以将 **rpm** 的值随机化，如下所示：
+3. Node.js 模拟设备使用 remote\_monitoring.js 文件中的 **generateRandomIncrement** 函数，向基本数据值添加随机增量。在现有随机化后面添加一行代码，以将 **rpm** 的值随机化，如下所示：
 
     ```
     temperature += generateRandomIncrement();
@@ -134,7 +139,7 @@
 
 ## 自定义仪表板显示内容
 
-**Device-Info** 消息可以包含设备可发送给 IoT 中心的遥测数据的相关元数据。此元数据可指定设备发送的遥测类型。修改 remote\_monitoring.js 文件中的 **deviceMetaData** 值以在 **Commands** 定义后包含 **Telemetry** 定义，如以下代码片段中所示（请务必在 **Commands** 定义后面添加 `,`）：
+**Device-Info** 消息可以包含设备可发送给 IoT 中心的遥测数据的相关元数据。此元数据可指定设备发送的遥测类型。修改 remote\_monitoring.js 文件中的 **deviceMetaData** 值，在 **Commands** 定义后附加 **Telemetry** 定义。以下代码片段显示 **Commands** 定义（务必在 **Commands** 定义后添加 `,`）：
 
 ```
 'Commands': [{
@@ -165,9 +170,9 @@
 }]
 ```
 
-> [AZURE.NOTE] 远程监视解决方案使用区分大小写的匹配来比较元数据定义与遥测流中的数据。
+> [AZURE.NOTE] 远程监视解决方案会比较元数据定义和遥测流中的数据并区分大小写。
 
-如上所述将 **Telemetry** 定义添加到示例不会更改仪表板的行为。但是，元数据也可以包含 **DisplayName** 属性来自定义仪表板中的显示内容。如下所示更新 **Telemetry** 元数据定义：
+按以上代码片段中所述添加 **Telemetry** 定义不会影响仪表板的行为。但是，元数据也可以包含 **DisplayName** 属性来自定义仪表板中的显示内容。如以下片段中所述更新 **Telemetry** 元数据定义：
 
 ```
 'Telemetry': [
@@ -226,8 +231,7 @@
 
 ![筛选仪表板上的遥测数据][image5]  
 
-
-请注意，这只影响图表显示内容，**ExternalTemperature** 值仍会存储并可供任何后端处理使用。
+此更改仅影响图表的显示效果。仍会存储 **ExternalTemperature** 数据值，并可用于任何后端处理。
 
 > [AZURE.NOTE] 可能需要在仪表板中的“设备”页上禁用 Node.js 设备然后重新将它启用，才能立即查看更改。
 
@@ -237,7 +241,7 @@
 
 ## 后续步骤
 
-了解如何利用动态遥测后，你可以在以下文章中详细了解预配置解决方案如何利用设备信息：[Device information metadata in the remote monitoring preconfigured solution][lnk-devinfo]（远程监视预配置解决方案中的设备信息元数据）。
+熟悉了动态遥测的使用方式，现在可深入了解预配置的解决方案如何使用设备信息：[远程监视预配置解决方案中的设备信息元数据][lnk-devinfo]。
 
 [lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/
 [image1]: ./media/iot-suite-dynamic-telemetry/image1.png
