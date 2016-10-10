@@ -21,7 +21,7 @@
 
 ## 部署模型的历史
 
-Azure 最初只提供经典部署模型。在此模型中，每个资源彼此独立；无法将相关的资源组合在一起。因此，必须手动跟踪哪些资源构成了解决方案或应用程序，并记得以协调的方式管理这些资源。若要部署解决方案，必须通过经典门户分别创建每个资源，或创建一个脚本以正确的顺序部署所有资源。若要删除解决方案，必须逐个删除每个资源。无法轻松应用和更新相关资源的访问控制策略。最后，无法将标记应用到资源，因此无法使用有助于监视资源和管理计费的术语来标记资源。
+Azure 最初只提供经典部署模型。在此模型中，每个资源彼此独立；无法将相关的资源组合在一起。因此，必须手动跟踪哪些资源构成了解决方案或应用程序，并记得以协调的方式管理这些资源。若要部署解决方案，必须通过经典管理门户分别创建每个资源，或创建一个脚本以正确的顺序部署所有资源。若要删除解决方案，必须逐个删除每个资源。无法轻松应用和更新相关资源的访问控制策略。最后，无法将标记应用到资源，因此无法使用有助于监视资源和管理计费的术语来标记资源。
 
 Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。资源组是共享同一生命周期的资源的容器。Resource Manager 部署模型具有几大优点：
 
@@ -123,9 +123,9 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
 在经典部署模型中创建的资源具有以下共同特性：
 
-- 通过[经典门户](https://manage.windowsazure.com)创建。
+- 通过[经典管理门户](https://manage.windowsazure.cn)创建。
 
-     ![经典门户](./media/resource-manager-deployment-model/classic-portal.png)
+     ![经典管理门户](./media/resource-manager-deployment-model/classic-portal.png)
 
      或者，通过 Azure 门户创建，然后指定“经典”部署（适用于“计算”、“存储”和“网络”资源）。
 
@@ -157,14 +157,6 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
   ![经典体系结构](./media/virtual-machines-azure-resource-manager-architecture/arm_arch1.png)
 
-## 从经典部署迁移到 Resource Manager 部署
-
-如果已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅：
-
-1. [有关平台支持的从经典部署模型到 Azure Resource Manager 的迁移的技术深入探讨](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-deep-dive/)
-2. [平台支持从经典部署模型迁移到 Azure Resource Manager 的 IaaS 资源](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)
-3. [使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager](/documentation/articles/virtual-machines-windows-ps-migration-classic-resource-manager/)
-4. [使用 Azure CLI 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型](/documentation/articles/virtual-machines-linux-cli-migration-classic-resource-manager/)
 
 ## 后续步骤
 
