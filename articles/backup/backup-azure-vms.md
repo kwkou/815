@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="04/08/2016"
-	wacn.date="04/12/2016"/>
+	ms.date="07/01/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 备份 Azure 虚拟机

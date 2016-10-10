@@ -9,8 +9,8 @@
 	
 <tags
 	ms.service="batch"
-	ms.date="04/21/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="07/25/2016"
+	wacn.date="09/26/2016"/>
 	
 	
 # 有效地查询 Azure 批处理 ( batch ) 服务

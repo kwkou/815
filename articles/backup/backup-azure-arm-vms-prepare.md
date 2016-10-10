@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="06/03/2016"
-	wacn.date="09/06/2016"/>
+	ms.date="08/01/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 准备好环境以备份 ARM 虚拟机

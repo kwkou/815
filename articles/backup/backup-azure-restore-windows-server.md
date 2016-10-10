@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup"
-	 ms.date="05/10/2016"
-	 wacn.date="08/22/2016"/>
+	 ms.date="08/02/2016"
+	 wacn.date="09/26/2016"/>
 	
 # 使用 Resource Manager 部署模型将文件还原到 Windows Server 或 Windows 客户端计算机
 

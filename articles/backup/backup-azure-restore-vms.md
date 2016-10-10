@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="05/06/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="08/02/2016"
+	wacn.date="09/26/2016"/>
 
 # 还原 Azure 中的虚拟机
 

@@ -10,8 +10,8 @@
 
 <tags
   ms.service="backup"
-  ms.date="05/10/2016"
-  wacn.date="09/06/2016"/>
+  ms.date="07/20/2016"
+  wacn.date="09/26/2016"/>
 
 # 准备使用 Azure 备份服务器来备份工作负荷
 
