@@ -1,17 +1,22 @@
-<properties 
- pageTitle="计划程序高可用性和可靠性" 
+<properties
+ pageTitle="计划程序高可用性和可靠性"
  description="计划程序高可用性和可靠性"
- services="scheduler" 
- documentationCenter=".NET" 
- authors="krisragh" 
- manager="dwrede" 
+ services="scheduler"
+ documentationCenter=".NET"
+ authors="krisragh"
+ manager="dwrede"
  editor=""/>
-<tags 
- ms.service="scheduler" 
- ms.date="06/30/2016"
- wacn.date="08/01/2016"/>
- 
- 
+<tags
+ ms.service="scheduler"
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.date="08/16/2016"
+ wacn.date="10/10/2016"
+ ms.author="krisragh"/>
+
+
 # 计划程序高可用性和可靠性
 
 ## Azure 计划程序高可用性
@@ -68,7 +73,7 @@ Azure 计划程序允许你配置重试策略。默认情况下，如果某个�
  
  [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity/)
  
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/mt629143)
  
  [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
  
@@ -81,4 +86,4 @@ Azure 计划程序允许你配置重试策略。默认情况下，如果某个�
 
 [2]: ./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image2.png
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0926_2016-->

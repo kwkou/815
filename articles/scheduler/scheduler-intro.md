@@ -8,8 +8,14 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="06/30/2016"
- wacn.date="08/01/2016"/>
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="hero-article"
+ ms.date="08/18/2016"
+ wacn.date="10/10/2016"
+ ms.author="krisragh"/>  
+
 
 # 什么是 Azure 计划程序？
 
@@ -35,7 +41,7 @@ Azure 计划程序允许你以声明方式描述要在云中运行的操作。�
 
  [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity/)
 
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/mt629143)
 
  [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
 
@@ -47,4 +53,4 @@ Azure 计划程序允许你以声明方式描述要在云中运行的操作。�
  
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0926_2016-->

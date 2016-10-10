@@ -5,11 +5,18 @@
  documentationCenter=".NET"
  authors="krisragh"
  manager="dwrede"
- editor=""/>
+ editor=""/>  
+
 <tags
  ms.service="scheduler"
- ms.date="06/30/2016"
- wacn.date="08/01/2016"/>
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="get-started-article"
+ ms.date="08/18/2016"
+ wacn.date="10/10/2016"
+ ms.author="krisragh"/>  
+
 
 # 计划程序的概念、术语和实体层次结构
 
@@ -232,7 +239,7 @@
 
  [如何使用 Azure 计划程序生成复杂的计划和高级循环](/documentation/articles/scheduler-advanced-complexity/)
 
- [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/mt629143)
 
  [Azure 计划程序 PowerShell cmdlet 参考](/documentation/articles/scheduler-powershell-reference/)
 
@@ -243,4 +250,4 @@
  [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0926_2016-->

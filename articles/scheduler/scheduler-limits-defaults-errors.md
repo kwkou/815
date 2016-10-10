@@ -8,8 +8,13 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="06/30/2016"
- wacn.date="08/01/2016"/>
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.date="08/18/2016"
+ wacn.date="10/10/2016"
+ ms.author="krisragh"/>
 
 # 计划程序限制和默认值
 
@@ -44,4 +49,4 @@
 
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0926_2016-->
