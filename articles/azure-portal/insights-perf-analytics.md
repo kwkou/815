@@ -8,8 +8,8 @@
 
 <tags 
 	ms.service="azure-portal" 
-	ms.date="09/23/2015"
-	wacn.date="05/09/2016"/>
+	ms.date="07/28/2015"
+	wacn.date="09/26/2016"/>
 
 # 监视 Azure 网站性能
 
