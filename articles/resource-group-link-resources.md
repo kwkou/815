@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="05/16/2016" 
-	wacn.date="07/11/2016"/>
+	ms.date="08/01/2016" 
+	wacn.date="09/26/2016"/>
 
 # Azure Resource Manager 中的链接资源
 

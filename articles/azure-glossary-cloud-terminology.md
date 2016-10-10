@@ -10,8 +10,8 @@
 
 <tags
     ms.service="multiple"
-    ms.date="04/04/2016"
-    wacn.date="05/30/2016"/>
+    ms.date="08/03/2016"
+    wacn.date="09/26/2016"/>
 
 
 # Azure 词汇表：Azure 平台上的云术语字典

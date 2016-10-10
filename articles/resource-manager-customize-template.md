@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="05/10/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="08/01/2016"
+	wacn.date="09/26/2016"/>
 
 # 自定义导出的 Azure Resource Manager 模板
 
