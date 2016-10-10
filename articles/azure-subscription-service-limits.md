@@ -187,7 +187,7 @@
 
 [AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
 
-列出的带星号 (*) 的配额[可联系 Azure 支持部门进行调整](./documentdb/documentdb-increase-limits.md)。
+列出的带星号 (*) 的配额[可联系 Azure 支持部门进行调整](/documentation/articles/documentdb-increase-limits/)。
 
 ### 媒体服务限制
 

@@ -83,7 +83,8 @@
 
 ## <a name="server-or-daemon-application-to-web-api"></a>服务器或守护程序应用程序到 Web API
 
-这些代码示例展示了如何构建守护程序或服务器应用程序来使用 [Azure AD 身份验证库 (ADAL)](active-directory-authentication-librariesactive-directory-authentication-libraries) 和 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx) 通过一个 Web API 获取资源。
+
+这些代码示例展示了如何构建守护程序或服务器应用程序来使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx) 通过一个 Web API 获取资源。
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
