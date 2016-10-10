@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="05/04/2016" 
-	wacn.date="05/31/2016"/>
+	ms.date="08/11/2016" 
+	wacn.date="09/26/2016"/>
 
 # 在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序
 
