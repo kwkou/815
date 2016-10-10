@@ -9,8 +9,8 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="07/06/2016"
- wacn.date="08/01/2016"/>
+ ms.date="08/11/2016"
+ wacn.date="09/26/2016"/>
 
 # 诊断度量值简介
 
