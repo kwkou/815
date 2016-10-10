@@ -10,8 +10,13 @@
 
 <tags
  ms.service="iot-suite"
- ms.date="07/18/2016"
- wacn.date="09/05/2016"/>
+ ms.devlang="na"
+ ms.topic="get-started-article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="08/17/2016"
+ ms.author="dobett"
+ wacn.date="10/10/2016"/>  
 
 # 远程监视预配置解决方案演练
 
@@ -19,7 +24,11 @@
 
 IoT 套件远程监视[预配置解决方案][lnk-preconfigured-solutions]是适用于在远程位置运行的多个计算机的端到端监视解决方案实现。该解决方案结合了关键 Azure 服务来提供业务方案的通用实现，你可以将其用作自己实现的起点。你可以根据特定的业务要求[自定义][lnk-customize]该解决方案。
 
-本文将逐步讲解远程监视解决方案的一些关键要素，以帮助你了解其工作原理。获得这些知识有助于对解决方案进行故障排除，根据自己的具体要求规划如何自定义解决方案，以及规划自己的、使用 Azure 服务的 IoT 解决方案。
+本文将逐步讲解远程监视解决方案的一些关键要素，以帮助你了解其工作原理。该知识有助于：
+
+- 排除解决方案中的问题。
+- 规划如何定制解决方案来满足自身的特定需求。
+- 自行设计使用 Azure 服务的 IoT 解决方案。
 
 ## 逻辑体系结构
 
@@ -31,15 +40,15 @@ IoT 套件远程监视[预配置解决方案][lnk-preconfigured-solutions]是适
 
 ## 模拟设备
 
-在该预配置解决方案中，模拟设备表示冷却设备（例如建筑物空调或设施空气处理单位）。当你部署预配置解决方案时，也会自动预配四个在 [Azure Web 作业][lnk-webjobs]中运行的模拟设备。模拟设备可让你轻松观测解决方案的行为，而不需要部署任何物理设备。若要部署实际的物理设备，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connect-rm]（将设备连接到远程监视预配置解决方案）教程。
+在该预配置解决方案中，模拟设备表示冷却设备（例如建筑物空调或设施空气处理单位）。部署预配置解决方案时，还会自动预配 4 个在 [Azure Web 作业][lnk-webjobs]中运行的模拟设备。模拟设备可让你轻松观测解决方案的行为，而不需要部署任何物理设备。若要部署实际的物理设备，请参阅 [Connect your device to the remote monitoring preconfigured solution][lnk-connect-rm]（将设备连接到远程监视预配置解决方案）教程。
 
 每个模拟设备可将以下消息类型发送到 IoT 中心：
 
 | 消息 | 说明 |
 |----------|-------------|
-| 启动 | 当设备启动时，它会发送**设备信息**消息，其中包含自身的相关信息，例如设备 ID、设备元数据、设备支持的命令列表，以及设备的当前配置。 |
-| 状态 | 设备定期发送**状态**消息，以报告该设备是否可以感应到传感器的状态。 |
-| 遥测 | 设备定期发送**遥测**消息，以报告从连接到模拟设备的模拟传感器收集到的温度和湿度模拟值。 |
+| 启动 | 设备启动后，会向后端发送含有其自身信息的**设备信息**消息。此数据包含设备 ID、设备元数据、设备支持的命令的列表，以及设备的当前配置。 |
+| 状态 | 设备会定期发送**状态**消息，报告该设备能否感应到传感器的状态。 |
+| 遥测 | 设备会定期发送**遥测**消息，报告从设备的模拟传感器收集到的温度和湿度模拟值。 |
 
 
 模拟设备在**设备信息**消息中发送以下设备属性：
@@ -60,7 +69,7 @@ IoT 套件远程监视[预配置解决方案][lnk-preconfigured-solutions]是适
 | 纬度 | 设备的纬度位置 |
 | 经度 | 设备的经度位置 |
 
-模拟器会以示例值在模拟设备中植入这些属性。模拟器每次初始化模拟设备时，设备会将预定义的元数据发布到 IoT 中心。请注意，这会覆盖设备门户中所做的任何元数据更新。
+模拟器会以示例值在模拟设备中植入这些属性。模拟器每次初始化模拟设备时，设备会将预定义的元数据发布到 IoT 中心。请注意这会如何覆盖在设备门户中所做的任何元数据更新。
 
 
 模拟设备可以处理通过 IoT 中心从解决方案仪表板发送的以下命令：
@@ -82,7 +91,7 @@ IoT 套件远程监视[预配置解决方案][lnk-preconfigured-solutions]是适
 
 ## Azure 流分析
 
-在远程监视解决方案中，[Azure 流分析][lnk-asa] (ASA) 将通过 IoT 中心从设备接收的消息分发到其他后端组件进行处理或存储。不同的 ASA 作业根据消息内容执行特定的功能。
+在远程监视解决方案中，[Azure 流分析][lnk-asa] (ASA) 将 IoT 中心发出的设备消息分发到其他后端组件进行处理或存储。不同的 ASA 作业根据消息内容执行特定的功能。
 
 **作业 1：设备信息**会筛选来自传入消息流的设备信息消息，并将它们发送到事件中心终结点。设备会在启动时发送设备信息消息，并且响应 **SendDeviceInfo** 命令。此作业使用以下查询定义来识别**设备信息**消息：
 
@@ -97,28 +106,28 @@ SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'Dev
 	WITH AlarmsData AS 
 	(
 	SELECT
-	     Stream.DeviceID,
+     	     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
 	     'Temperature' as ReadingType,
 	     Stream.Temperature as Reading,
 	     Ref.Temperature as Threshold,
 	     Ref.TemperatureRuleOutput as RuleOutput,
 	     Stream.EventEnqueuedUtcTime AS [Time]
 	FROM IoTTelemetryStream Stream
-	JOIN DeviceRulesBlob Ref ON Stream.DeviceID = Ref.DeviceID
+	JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
 	WHERE
 	     Ref.Temperature IS NOT null AND Stream.Temperature > Ref.Temperature
 	
 	UNION ALL
 	
 	SELECT
-	     Stream.DeviceID,
+	     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
 	     'Humidity' as ReadingType,
 	     Stream.Humidity as Reading,
 	     Ref.Humidity as Threshold,
 	     Ref.HumidityRuleOutput as RuleOutput,
 	     Stream.EventEnqueuedUtcTime AS [Time]
 	FROM IoTTelemetryStream Stream
-	JOIN DeviceRulesBlob Ref ON Stream.DeviceID = Ref.DeviceID
+	JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
 	WHERE
 	     Ref.Humidity IS NOT null AND Stream.Humidity > Ref.Humidity
 	)
@@ -141,13 +150,19 @@ SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'Dev
 	AS (
 	    SELECT
 	        *
-	    FROM 
-	      [IoTHubStream] 
+	    FROM [IoTHubStream]
 	    WHERE
 	        [ObjectType] IS NULL -- Filter out device info and command responses
 	) 
 	
 	SELECT
+	    IoTHub.ConnectionDeviceId AS DeviceId,
+	    Temperature,
+	    Humidity,
+	    ExternalTemperature,
+	    EventProcessedUtcTime,
+	    PartitionId,
+	    EventEnqueuedUtcTime,
 	    *
 	INTO
 	    [Telemetry]
@@ -155,19 +170,18 @@ SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'Dev
 	    [StreamData]
 	
 	SELECT
-	    DeviceId,
+	    IoTHub.ConnectionDeviceId AS DeviceId,
 	    AVG (Humidity) AS [AverageHumidity], 
 	    MIN(Humidity) AS [MinimumHumidity], 
 	    MAX(Humidity) AS [MaxHumidity], 
 	    5.0 AS TimeframeMinutes 
 	INTO
 	    [TelemetrySummary]
-	FROM
-	    [StreamData]
+	FROM [StreamData]
 	WHERE
 	    [Humidity] IS NOT NULL
 	GROUP BY
-	    DeviceId, 
+	    IoTHub.ConnectionDeviceId,
 	    SlidingWindow (mi, 5)
 
 ## 事件中心
@@ -176,7 +190,7 @@ SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'Dev
 
 ## Azure 存储空间
 
-解决方案使用 Azure Blob 存储来保存解决方案设备中的所有原始数据和汇总的遥测数据。仪表板从 Blob 存储读取遥测数据来填充图表。为了显示警报，仪表板将从 Blob 存储读取当遥测值超过设置的阈值时所记录的数据。解决方案还使用 Blob 存储来记录用户在仪表板中设置的阈值。
+解决方案使用 Azure Blob 存储来保存解决方案设备中的所有原始数据和汇总的遥测数据。仪表板从 Blob 存储读取遥测数据来填充图表。为了显示警报，仪表板将从 Blob 存储读取当遥测值超过设置的阈值时所记录的数据。解决方案还使用 Blob 存储来记录仪表板中所设的阈值。
 
 ## Web 作业
 
@@ -187,7 +201,7 @@ SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'Dev
 
 ## DocumentDB
 
-解决方案使用 DocumentDB 数据库来存储连接到解决方案的设备信息，例如设备的元数据以及从仪表板发送到设备的命令历史记录。
+解决方案使用 DocumentDB 数据库来存储有关连接到该方案的设备的信息。此信息包括设备元数据以及从仪表板发送到设备的命令历史记录。
 
 ## Web 应用
 
@@ -199,8 +213,8 @@ Web 应用程序中的此页面使用 PowerBI javascript 控件（请参阅 [Pow
 
 此 Web 应用可让你：
 
-- 预配新设备。这会设置唯一设备 ID 并生成身份验证密钥。将有关设备的信息同时写入 IoT 中心标识注册表以及特定于解决方案的 DocumentDB 数据库。
-- 管理设备属性。这包括查看现有属性和使用新属性进行更新。
+- 预配新设备。此操作会设置唯一设备 ID 并生成身份验证密钥。它会将设备相关信息同时写入 IoT 中心标识注册表和解决方案特定的 DocumentDB 数据库。
+- 管理设备属性。该操作包括查看现有属性和使用新数据进行更新。
 - 将命令发送到设备。
 - 查看设备的命令历史记录。
 - 启用和禁用设备。
