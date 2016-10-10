@@ -6,7 +6,7 @@
 - [中文](/documentation/articles/mysql-database-ssl-connection/)
 - [English](/documentation/articles/mysql-database-enus-ssl-connection/)
 
-<tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="10/10/2016" wacn.date="10/10/2016" wacn.lang="cn" />
 
 通过SSL加密访问数据库，可以保障您访问的安全性，本文介绍如何下载并配置SSL证书。目前MySQL Database on Azure支持利用公钥在服务器端进行加密验证。
 
@@ -19,7 +19,7 @@
 ## 步骤 2：使用SSL来连接MySQL Database on Azure上的服务器
 
 ### 利用MySQL客户端进行配置
-以MySQL.exe为例，创建连接时需使用--ssl-ca参数来指定公钥证书。关于SSL连接的更多信息，请参考 Using SSL for Secure Connections。
+以MySQL.exe为例，创建连接时需使用--ssl-ca参数来指定公钥证书。
 
 参考样例：
 
