@@ -1,16 +1,21 @@
-<properties 
-	pageTitle="使用 AzCopy 将数据复制或移动到存储 | Azure" 
-	description="使用 AzCopy 实用程序将数据移动或复制到 blob、表和文件内容或从 blob、表和文件内容移动或复制数据。从本地文件将数据复制到 Azure 存储空间，或者在存储帐户中或存储帐户之间复制数据。轻松地将数据迁移到 Azure 存储空间。" 
-	services="storage" 
-	documentationCenter="" 
-	authors="micurd" 
-	manager="jahogg" 
-	editor="cgronlun"/>
+<properties
+	pageTitle="使用 AzCopy 将数据复制或移动到存储空间 | Azure"
+	description="使用 AzCopy 实用程序将数据移动或复制到 blob、表和文件内容或从 blob、表和文件内容移动或复制数据。从本地文件将数据复制到 Azure 存储空间，或者在存储帐户中或存储帐户之间复制数据。轻松地将数据迁移到 Azure 存储空间。"
+	services="storage"
+	documentationCenter=""
+	authors="micurd"
+	manager="jahogg"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="06/14/2016"
-	wacn.date="07/25/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	wacn.date="10/10/2016"
+	ms.author="micurd"/>
 
 # 使用 AzCopy 命令行实用程序传输数据
 
@@ -37,7 +42,7 @@ AzCopy 命令的基本语法是：
 
 	AzCopy /Source:<source> /Dest:<destination> [Options]
 
-打开一个命令窗口，然后导航到计算机上的 AzCopy 安装目录，该位置存放着可执行的 `AzCopy.exe`。如果需要，你可以将 AzCopy 安装路径添加到系统路径。默认情况下，AzCopy 将被安装到 `%ProgramFiles(x86)%\Microsoft SDKs\Azure\AzCopy`（64 位 Windows）或 `%ProgramFiles%\Microsoft SDKs\Azure\AzCopy`（32 位 Windows）。
+打开一个命令窗口，然后导航到计算机上的 AzCopy 安装目录，该位置存放着可执行的 `AzCopy.exe`。如果需要，你可以将 AzCopy 安装路径添加到系统路径。默认情况下，AzCopy 安装到 `%ProgramFiles(x86)%\Microsoft SDKs\Azure\AzCopy` 或 `%ProgramFiles%\Microsoft SDKs\Azure\AzCopy`。
 
 以下示例演示了将数据复制到 Microsoft Azure Blob、文件和表以及从这些位置复制数据的各种情况。请参阅 [AzCopy 参数](#azcopy-parameters)部分，了解每个示例中使用的参数的详细说明。
 
@@ -122,7 +127,7 @@ AzCopy 命令的基本语法是：
 
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer/vd /DestKey:key /Pattern:abc.txt
 
-如果指定的虚拟目录不存在，则 AzCopy 将上载文件并在其名称中包括虚拟目录（*例如*上例中的 `vd/abc.txt`）。
+如果指定的虚拟目录不存在，则 AzCopy 将上载文件并在其名称中包括虚拟目录（ *例如* 上例中的 `vd/abc.txt`）。
 
 ### 上载全部文件
 
@@ -233,7 +238,7 @@ AzCopy 命令的基本语法是：
 
 	AzCopy /Source:https://myaccount.file.core.chinacloudapi.cn/myfileshare/myfolder1/ /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
-如果指定的源是 Azure 文件共享，则必须指定确切的文件名（例如`abc.txt`）来下载单个文件，或者指定选项 `/S` 来以递归方式下载该共享中的所有文件。尝试同时指定文件模式和选项 `/S` 将导致错误。
+如果指定的源是 Azure 文件共享，则必须指定确切的文件名（ *例如* `abc.txt`）来下载单个文件，或者指定选项 `/S` 来以递归方式下载该共享中的所有文件。尝试同时指定文件模式和选项 `/S` 将导致错误。
 
 ### 下载所有文件
 
@@ -301,7 +306,7 @@ AzCopy 将一个清单文件写入到指定的目标文件夹。导入进程使�
 
 	AzCopy /Source:https://myaccount.table.core.chinacloudapi.cn/mytable/ /Dest:C:\myfolder /SourceKey:key /S /SplitSize:100
 
-AzCopy 在已拆分数据文件名称中使用卷索引来区分多个文件。卷索引由两个部分组成：分区键范围索引和拆分文件索引。两个索引都是从零开始的。
+AzCopy 在已拆分数据文件名称中使用 *卷索引* 来区分多个文件。卷索引由两个部分组成： *分区键范围索引* 和 *拆分文件索引* 。两个索引都是从零开始的。
 
 如果用户未指定选项 `/PKRS`，则分区键范围索引将是 0。
 
@@ -862,4 +867,4 @@ AzCopy 旨在最大限度地利用计算机资源来加快数据传输，如果�
 - [AzCopy：使用跨帐户复制 Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy：为 Azure Blob 上载/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0926_2016-->

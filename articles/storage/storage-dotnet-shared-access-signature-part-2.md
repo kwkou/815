@@ -7,11 +7,15 @@
 	manager="adinah" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="05/31/2016"
-	wacn.date="07/18/2016"/>
-
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 
 
 # 共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 存储
@@ -31,7 +35,7 @@
 
 ## 第 1 部分：创建控制台应用程序以便生成共享访问签名
 
-首先，确保你安装了 Azure .NET 存储客户端库。你可以安装包含该客户端库的最新程序集的 [NuGet 程序包](http://nuget.org/packages/WindowsAzure.Storage/ "NuGet 包")；这是确保你具有最新修补程序的建议方法。你还可以通过下载包含该客户端库的最新 [Azure SDK for .NET](/downloads/) 版本来下载该客户端库。
+首先，确保你安装了 Azure .NET 存储客户端库。你可以安装包含该客户端库的最新程序集的 [NuGet 程序包](http://nuget.org/packages/WindowsAzure.Storage/ "NuGet 包")；这是确保你具有最新修补程序的建议方法。你还可以通过下载包含该客户端库的最新 [用于 .NET 的 Azure SDK](/downloads/) 版本来下载该客户端库。
 
 在 Visual Studio 中，创建一个新的 Windows 控制台应用程序并将其命名为 **GenerateSharedAccessSignatures**。使用以下方法之一添加对 **Microsoft.WindowsAzure.Configuration.dll** 和 **Microsoft.WindowsAzure.Storage.dll** 的引用：
 
@@ -551,5 +555,4 @@
 [sas-console-output-1]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-1.PNG
 [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
 
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->

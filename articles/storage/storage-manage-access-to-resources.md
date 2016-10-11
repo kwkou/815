@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/23/2016"
-	wacn.date="07/25/2016"/>
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 
 # 管理对容器和 blob 的匿名读取访问
 
@@ -18,7 +23,7 @@
 
 默认情况下，只有存储帐户的所有者可访问该帐户中的存储资源。如果是 Blob 存储，则可设置容器的权限，允许对容器及其 Blob 进行匿名读取访问，这样即可授予对这些资源的访问权限而不必共享你的帐户密钥。
 
-如果你想要始终允许对某些 Blob 进行匿名读取访问，则最好是启用匿名访问。若要进行更精细的控制，则可以创建一个共享访问签名，这样即可使用不同的权限在指定时间间隔内委派受限访问。有关创建共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+如果你想要始终允许对某些 Blob 进行匿名读取访问，则最好是启用匿名访问。若要进行更精细的控制，则可以创建一个共享访问签名，这样即可使用不同的权限在指定时间间隔内委派受限访问。有关创建共享访问签名的详细信息，请参阅[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 ## 授予对容器和 blob 的匿名用户权限
 
@@ -34,13 +39,13 @@
 
 你可以通过以下方式来设置容器权限：
 
-- 通过 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
+- 通过 [Azure 门户预览](https://portal.azure.cn)。
 - 通过使用存储客户端库或 REST API 以编程方式进行。
-- 通过使用 PowerShell 进行。若要了解如何通过 Azure PowerShell 来设置容器权限，请参阅[对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/#how-to-manage-azure-blobs)。
+- 通过使用 PowerShell 进行。若要了解如何通过 Azure PowerShell 来设置容器权限，请参阅[对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full#how-to-manage-azure-blobs/)。
 
-### 通过 Azure 经典管理门户设置容器权限
+### 通过 Azure 门户预览设置容器权限
 
-若要通过 Azure 经典管理门户设置容器权限，请按以下步骤操作：
+若要通过 [Azure 门户预览](https://portal.azure.cn)设置容器权限，请按以下步骤操作：
 
 1. 导航到存储帐户的仪表板。
 2. 从列表中选择容器名称。请注意，你必须在“名称”列的右侧单击来选择容器名称。单击该名称即可向下钻取到相应容器以显示其 blob。
@@ -148,7 +153,7 @@
 ## 另请参阅
 
 - [Azure 存储空间服务的身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)
-- [共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
+- [使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 - [使用共享的访问签名委托访问](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0926_2016-->

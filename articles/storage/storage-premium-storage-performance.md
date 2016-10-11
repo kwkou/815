@@ -5,13 +5,17 @@
     documentationCenter="na"
     authors="aungoo-msft"
     manager=""
-    editor="tysonn" />  
-
+    editor="tysonn" />
 
 <tags
     ms.service="storage"
-    ms.date="07/26/2016"
-    wacn.date="09/12/2016"/>
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/19/2016"
+    wacn.date="10/10/2016"
+    ms.author="aungoo-msft"/>
 
 # Azure 高级存储：高性能设计
 
@@ -85,8 +89,8 @@ IOPS 是指应用程序在一秒内发送到存储磁盘的请求数。可以按
 | 平均内存 | | | |
 | 队列深度 | | | |
 
->**重要说明：**  
->你应该根据应用程序未来的预期增长情况，来考虑对这些数字进行缩放。最好是预先对增长情况进行计划，因为以后可能更难通过更改基础结构来提高性能。
+>**重要说明：**
+你应该根据应用程序未来的预期增长情况，来考虑对这些数字进行缩放。最好是预先对增长情况进行计划，因为以后可能更难通过更改基础结构来提高性能。
 
 如果你在已经有一个应用程序的情况下想要转到高级存储，请首先构建一个针对现有应用程序的上述清单。然后，在高级存储上构建应用程序的原型，根据本文档后面部分的“优化应用程序性能”中描述的准则设计应用程序。下一部分说明那些可以用来收集性能度量的工具。
 
@@ -143,12 +147,12 @@ IO 大小是较为重要的因素之一。IO 大小是由应用程序生成的�
 
 如果你使用的应用程序不允许你更改 IO 大小，则可根据本文中的准则来优化与应用程序最相关的性能 KPI。例如，
 
--   OLTP 应用程序生成数以百万计的小型和随机 IO 请求。若要处理这些类型的 IO 请求，必须对应用程序基础结构进行设计，以便提高 IOPS。  
+-   OLTP 应用程序生成数以百万计的小型和随机 IO 请求。若要处理这些类型的 IO 请求，必须对应用程序基础结构进行设计，以便提高 IOPS。
 -   数据仓库应用程序生成大型和顺序 IO 请求。若要处理这些类型的 IO 请求，必须对应用程序基础结构进行设计，以便提高带宽或吞吐量。
 
 如果你使用的应用程序允许你更改 IO 大小，则可使用这条针对 IO 大小的经验法则以及其他性能准则。
 
--   通过降低 IO 大小来提高 IOPS。例如，对 OLTP 应用程序使用 8 KB 的 IO 大小。  
+-   通过降低 IO 大小来提高 IOPS。例如，对 OLTP 应用程序使用 8 KB 的 IO 大小。
 -   通过提高 IO 大小来提高带宽/吞吐量。例如，对数据仓库应用程序使用 1024 KB 的 IO 大小。
 
 下面是一个如何计算应用程序的 IOPS 和吞吐量/带宽的示例。以使用 P30 磁盘的应用程序为考虑对象。P30 磁盘能够实现的最大 IOPS 和吞吐量/带宽分别是 5000 IOPS 和 200 MB/秒。现在，如果你的应用程序要求实现 P30 磁盘能够达到的最大 IOPS，而你使用较小的 IO 大小（例如 8 KB），则你能够获得的最终带宽将是 40 MB/秒。但是，如果你的应用程序要求实现 P30 磁盘能够达到的最大吞吐量/带宽，而你使用较大的 IO 大小（例如 1024 KB），则最终 IOPS 将较小 (200 IOPS)。因此，可以调整 IO 大小，使之满足应用程序的 IOPS 和吞吐量/带宽要求。下表总结了 P30 磁盘的不同 IO 大小以及相应的 IOPS 和吞吐量。
@@ -162,8 +166,8 @@ IO 大小是较为重要的因素之一。IO 大小是由应用程序生成的�
 
 若要获取比单个高级存储磁盘的最大值还要高的 IOPS 和带宽，可将多个高级磁盘一起条带化。例如，将两个 P30 磁盘条带化得到的组合 IOPS 为 10,000 IOPS，得到的组合吞吐量为 400 MB/秒。如下一部分所述，你必须使用支持组合式磁盘 IOPS 和吞吐量的 VM 大小。
 
->**注意：**  
->当你增加 IOPS 或吞吐量这两个指标中的其中一个时，另一个指标也会增加，因此请确保在增加任何一个指标时不要超过磁盘或 VM 的吞吐量或 IOPS 限制。
+>**注意：**
+当你增加 IOPS 或吞吐量这两个指标中的其中一个时，另一个指标也会增加，因此请确保在增加任何一个指标时不要超过磁盘或 VM 的吞吐量或 IOPS 限制。
 
 若要了解 IO 大小对应用程序性能的影响，你可以在 VM 和磁盘上运行基准测试工具。创建多个测试运行并对每个运行使用不同的 IO 大小，即可观察相应的影响。如需更多详细信息，请参阅本文末尾的[基准测试](#Benchmarking)部分。
 
@@ -179,12 +183,12 @@ IO 大小是较为重要的因素之一。IO 大小是由应用程序生成的�
 若要查看所有可用 Azure VM 大小的完整列表，请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes/)或 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。选择能够满足或者在扩展后能够满足所需应用程序性能要求的 VM 大小。除此之外，在选择 VM 大小时，还需考虑以下重要事项。
 
 
-*规模限制* 
+*规模限制*
 每个 VM 和每个磁盘的最大 IOPS 限制是不同的，互不影响。请确保应用程序所要实现的 IOPS 处于 VM 以及连接到 VM 的高级磁盘的限制内。否则，应用程序性能就会受到限制。
 
 举例来说，假设应用程序要求的 IOPS 最大值为 4,000。为此，你在 DS1 VM 上预配了一个 P30 磁盘。P30 磁盘可以提供的 IOPS 最多为 5,000。但是，DS1 VM 的 IOPS 限制为 3,200。因此，应用程序性能将受限于 3,200 IOPS 的 VM 限制，性能将会下降。若要防止这种情况的发生，在选择 VM 和磁盘大小时，应确保二者都能满足应用程序要求。
 
-*运行成本* 
+*运行成本*
 在许多情况下，使用高级存储的总体运行成本可能会低于使用标准存储。
 
 例如，以需要 16,000 IOPS 的应用程序为考虑对象。若要达到这样的性能，你需要一个 Standard_D14 Azure IaaS VM，该 VM 可以使用 32 个标准存储 1TB 磁盘来实现 16,000 的最大 IOPS。每个 1 TB 标准存储磁盘最多可以实现 500 IOPS。此 VM 每月的估计成本将是 ￥13644.96。32 个标准存储磁盘每月的成本将是 ￥23592.96。每月估计的总成本将是 ￥37237.92。
@@ -221,7 +225,7 @@ Azure 高级存储目前提供了三种磁盘大小。每种磁盘大小对 IOPS
 例如，如果应用程序要求吞吐量最大为 250 MB/秒，而你使用的是带有单个 P30 磁盘的 DS4 VM。该 DS4 VM 可以提供高达 256 MB/秒的吞吐量。但是，单个 P30 磁盘的吞吐量限制为 200 MB/秒。结果就是，由于存在磁盘限制，应用程序的吞吐量将受限于 200 MB/秒。为了克服此限制，可为 VM 预配多个数据磁盘。
 
 >**注意：**
->缓存提供的读取不包括在磁盘 IOPS 和吞吐量之中，因此不受磁盘限制。缓存具有单独的 IOPS 和吞吐量限制，具体取决于每个 VM。
+缓存提供的读取不包括在磁盘 IOPS 和吞吐量之中，因此不受磁盘限制。缓存具有单独的 IOPS 和吞吐量限制，具体取决于每个 VM。
 >
 >例如，一开始的时候，你的读取和写入分别为 60MB/秒和 40MB/秒。随着时间的延长，缓存得到预热，可以通过缓存提供越来越多的读取。然后，你就可以从磁盘获得更高的写入吞吐量。
 
@@ -232,6 +236,8 @@ Azure 高级存储目前提供了三种磁盘大小。每种磁盘大小对 IOPS
 
 ## 磁盘缓存  
 利用 Azure 高级存储的高规格 VM 使用名为 BlobCache 的多层缓存技术。BlobCache 使用虚拟机 RAM 和本地 SSD 的组合进行缓存。此缓存适用于高级存储的永久性磁盘和 VM 本地磁盘。默认情况下，此缓存设置已设置为允许对 OS 磁盘进行读/写操作，允许对托管在高级存储中的数据磁盘进行只读操作。在高级存储磁盘上启用磁盘缓存后，高规格 VM 可以达到相当高的性能级别，超出基础磁盘性能。
+
+>[AZURE.WARNING] 更改 Azure 磁盘的缓存设置可分离和重新附加目标磁盘。如果它是操作系统磁盘，将重启 VM。更改磁盘缓存设置前，停止所有可能受此中断影响的应用程序/服务。
 
 若要详细了解 BlobCache 的工作方式，请参阅内部的 [Azure 高级存储](https://azure.microsoft.com/blog/azure-premium-storage-now-generally-available-2/)博客文章。
 
@@ -339,7 +345,7 @@ Azure 高级存储会预配指定数目的 IOPS 和吞吐量，具体取决于�
 启用 ReadOnly 主机缓存的磁盘将能够提供比磁盘限制更高的 IOPS。若要通过主机缓存来实现此最大读取性能，首先必须对此磁盘的缓存进行预热。这样可确保需要通过基准测试工具在 CacheReads 卷上实现的读取 IO 实际上可以直接命中缓存而不是磁盘。命中缓存导致单个启用缓存的磁盘可以实现额外的 IOPS。
 
 >**重要提示：**
->每次重启 VM 后，你必须在运行基准测试之前预热缓存。
+每次重启 VM 后，你必须在运行基准测试之前预热缓存。
 
 #### Iometer   
 在 VM 上[下载 Iometer 工具](http://sourceforge.net/projects/iometer/files/iometer-stable/2006-07-27/iometer-2006.07.27.win32.i386-setup.exe/download)。
@@ -361,7 +367,7 @@ Iometer 使用一个测试文件，该文件存储在将要运行基准测试的
 | RandomWrites_8K | 8K | 100 | 0 |
 | RandomReads_8K | 8K | 100 | 100 |
 
-最大吞吐量测试规范  
+*最大吞吐量测试规范*
 若要演示最大吞吐量，请使用较大的请求大小。使用 64k 请求大小，创建随机读写的规范。
 
 | 访问规范 | 请求大小 | 随机百分比 | 读取百分比 |
@@ -369,7 +375,7 @@ Iometer 使用一个测试文件，该文件存储在将要运行基准测试的
 | RandomWrites_64K | 64K | 100 | 0 |
 | RandomReads_64K | 64K | 100 | 100 |
 
-运行 Iometer 测试  
+*运行 Iometer 测试*
 执行以下步骤来预热缓存
 
 1.  使用显示在下面的值创建两个访问规范：
@@ -406,10 +412,10 @@ Iometer 使用一个测试文件，该文件存储在将要运行基准测试的
 
 以下是组合型 IOPS 和吞吐量方案的 Iometer 测试结果的屏幕快照。
 
-*组合型读写最大 IOPS* 
+*组合型读写最大 IOPS*
 ![](./media/storage-premium-storage-performance/image9.png)
 
-*组合型读写最大吞吐量* 
+*组合型读写最大吞吐量*
 ![](./media/storage-premium-storage-performance/image10.png)
 
 ### FIO  
@@ -449,18 +455,18 @@ FIO 是一种常用工具，可以在 Linux VM 上对存储进行基准测试。
 
 
 请注意以下重要事项，这些事项必须符合前面部分讨论的设计准则。这些规范是实现最大 IOPS 所必需的。
--   较高的队列深度：256。  
--   较小的块大小：8KB。  
+-   较高的队列深度：256。
+-   较小的块大小：8KB。
 -   多个执行随机写入的线程。
 
 运行以下命令，开始进行 30 秒的 FIO 测试：
 
 	sudo fio --runtime 30 fiowrite.ini
 
-进行测试时，你就能够看到 VM 和高级磁盘传送的写入 IOPS 数。如以下示例所示，DS14 VM 传送的写入 IOPS 达到了最大限制：50,000 IOPS。  
+进行测试时，你就能够看到 VM 和高级磁盘传送的写入 IOPS 数。如以下示例所示，DS14 VM 传送的写入 IOPS 达到了最大限制：50,000 IOPS。
 	![](./media/storage-premium-storage-performance/image11.png)
 
-最大读取 IOPS  
+*最大读取 IOPS*
 使用以下规范创建作业文件，以便获得最大读取 IOPS。将其命名为“fioread.ini”。
 
 
@@ -538,15 +544,15 @@ FIO 是一种常用工具，可以在 Linux VM 上对存储进行基准测试。
 
 请注意以下重要事项，这些事项必须符合前面部分讨论的设计准则。这些规范是实现最大 IOPS 所必需的。
 
--   较高的队列深度：128。  
--   较小的块大小：4KB。  
+-   较高的队列深度：128。
+-   较小的块大小：4KB。
 -   多个执行随机读取和写入的线程。
 
 运行以下命令，开始进行 30 秒的 FIO 测试：
 
 	sudo fio --runtime 30 fioreadwrite.ini
 
-进行测试时，你就能够看到 VM 和高级磁盘传送的组合型读取和写入 IOPS 数。如以下示例所示，DS14 VM 传送了 100,000 个以上的组合型读取和写入 IOPS。这是磁盘和缓存性能相结合。  
+进行测试时，你就能够看到 VM 和高级磁盘传送的组合型读取和写入 IOPS 数。如以下示例所示，DS14 VM 传送了 100,000 个以上的组合型读取和写入 IOPS。这是磁盘和缓存性能相结合。
 	![](./media/storage-premium-storage-performance/image13.png)
 
 *最大组合吞吐量*
@@ -556,11 +562,11 @@ FIO 是一种常用工具，可以在 Linux VM 上对存储进行基准测试。
 
 了解有关 Azure 高级存储的详细信息：
 
-- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)  
+- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)
 
 SQL Server 用户请阅读有关 SQL Server 性能最佳实践的文章：
 
 - [Azure 虚拟机中的 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)
-- [Azure 高级存储为 Azure VM 中的 SQL Server 提供最高性能](http://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx) 
+- [Azure 高级存储为 Azure VM 中的 SQL Server 提供最高性能](http://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx)
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0926_2016-->

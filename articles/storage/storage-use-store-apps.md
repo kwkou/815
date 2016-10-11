@@ -1,17 +1,19 @@
 <properties 
 	pageTitle="在 Windows 应用商店应用中使用 Azure 存储 | Azure" 
 	description="了解如何创建使用 Azure Blob、队列、表或文件存储的 Windows 应用商店应用。"
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
-	editor="cgronlun"/>
-
-<tags 
-	ms.service="storage" 
-	ms.date="05/23/2016" 
-	wacn.date="07/25/2016"/>
-
+	services="storage"
+	documentationCenter=""
+	authors="tamram"
+	manager="carmonm" />
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="mobile-windows-store"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 	
 # 如何在 Windows 应用商店应用中使用 Azure 存储空间
 
@@ -39,7 +41,7 @@
 
 ### 将库用于 Blob 和队列服务
 
-此时，你的应用已做好调用 Azure Blob 和队列服务的准备。添加以下 **using** 语句，以便可以直接引用 Azure 存储类型：
+此时，你的应用已做好调用 Azure Blob 和队列服务的准备。添加以下 using 语句，以便可以直接引用 Azure 存储类型：
 
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
@@ -52,9 +54,9 @@
     var container = blobClient.GetContainerReference("container1");
     await container.CreateIfNotExistsAsync();
 
-此代码假定你有两个字符串变量：accountName 和 accountKey。它们分别表示你的存储帐户名称以及与该帐户关联的帐户密钥。
+此代码假定你有两个字符串变量：*accountName* 和 *accountKey*。它们分别表示你的存储帐户名称以及与该帐户关联的帐户密钥。
 
-构建并运行应用程序。单击该按钮将检查名为 container1 的容器在你的帐户中是否存在，如果不存在则创建它。
+构建并运行应用程序。单击该按钮将检查名为 *container1* 的容器在你的帐户中是否存在，如果不存在则创建它。
 
 ### 将库用于表服务
 
@@ -68,7 +70,7 @@
 
 该命令将自动添加对你的项目的所有必需的引用。如果你不想使用程序包管理器控制台，可以将你的本地计算机上的 WCF Data Services NuGet 文件夹添加到程序包源的列表，然后通过在[使用对话框管理 NuGet 程序包](http://docs.nuget.org/docs/start-here/Managing-NuGet-Packages-Using-The-Dialog)中介绍的用户界面添加引用。
 
-在你引用 WCF Data Services NuGet 程序包后，更改你的按钮的 **Click** 事件中的代码：
+在你引用 WCF Data Services NuGet 程序包后，更改你的按钮的 Click 事件中的代码：
 
     var credentials = new StorageCredentials(accountName, accountKey);
     var account = new CloudStorageAccount(credentials, true);
@@ -76,7 +78,7 @@
     var table = tableClient.GetTableReference("table1");
     await table.CreateIfNotExistsAsync();
 
-该代码将检查名为 table1 的表在你的帐户中是否存在，如果不存在则创建它。
+该代码将检查名为 *table1* 的表在你的帐户中是否存在，如果不存在则创建它。
 
 你还可以添加对 Microsoft.WindowsAzure.Storage.Table.dll 的引用，该 dll 位于你下载的同一个程序包中。该库包含其他一些功能，例如基于反射的序列化和一般查询。请注意，该库不支持 JavaScript。
 
@@ -87,4 +89,4 @@
 [store-apps-storage-package-manager]: ./media/storage-use-store-apps/store-apps-storage-package-manager.png
  
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0926_2016-->

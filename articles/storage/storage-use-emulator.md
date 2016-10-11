@@ -5,12 +5,17 @@
 	documentationCenter="" 
 	authors="tamram" 
 	manager="carmonm" 
-	editor="tysonn"/>  
-
+	editor="tysonn"/>
 <tags 
 	ms.service="storage" 
-	ms.date="08/03/2016" 
-	wacn.date="09/12/2016"/>
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/07/2016" 
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>  
+
 
 # 使用 Azure 存储模拟器进行开发和测试
 
@@ -19,6 +24,8 @@
 Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进行开发的本地环境。使用存储模拟器，您可以在本地针对存储服务测试应用程序，而无需创建 Azure 订阅且不会产生任何费用。如果您对应用程序在模拟器中的工作情况感到满意，则可以切换到在云中使用 Azure 存储帐户。
 
 > [AZURE.NOTE] 存储模拟器作为 [Azure SDK](/downloads/) 的一部分提供。此外，还可以使用[独立安装程序](https://go.microsoft.com/fwlink/?linkid=717179&clcid=0x409)来安装存储模拟器。若要配置存储模拟器，必须在计算机上具有管理权限。
+> 
+> 存储模拟器目前仅在 Windows 上运行。
 >  
 > 请注意，在一个版本的存储模拟器中创建的数据不保证在使用不同版本时可以访问。如果需要长期保存数据，建议将该数据存储在 Azure 存储帐户中，而不是存储在存储模拟器中。
 
@@ -62,7 +69,7 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 此示例中创建的共享访问签名的有效期为一天。该签名将授予对容器内 Blob 的完整权限（例如，读取、写入、删除和列出）。
 
-有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+有关共享访问签名的详细信息，请参阅[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 
 ##<a id="start-and-initialize-the-storage-emulator"></a> 启动和初始化存储模拟器
@@ -201,7 +208,13 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 ## 存储模拟器发行说明
 
+### 版本 4.5
+
+- 修复了重命名后备数据库时导致存储模拟器初始化和安装失败的 bug。
+
 ### 版本 4.4
+
+- 存储模拟器现在支持 Blob、队列和表服务终结点上的 2015-12-11 版本的存储服务。
 
 - 现在，在处理大量 blob 时，存储模拟器的 blob 数据垃圾回收效率更高了。
 
@@ -242,4 +255,4 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 - 现在完全支持版本 2013年-08-15 的 Azure 存储服务。（以前仅存储模拟器 2.2.1 预览版本支持此版本。）
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0926_2016-->
