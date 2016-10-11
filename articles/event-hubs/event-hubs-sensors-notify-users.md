@@ -8,8 +8,12 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="05/31/2016"
-   wacn.date="07/25/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/25/2016"
+   wacn.date="10/10/2016" />
 
 # 通知用户已收到传感器或其他系统发出的数据
 
@@ -21,17 +25,17 @@
 
 ![][2]
 
-问题是如何在达到特定条件时接收关键信息，而不是亲自去查看静态报告。如果你使用 [Azure 事件中心][]或 [Dynamics AX][] 等企业应用程序发出的数据，则你可以使用多种选项来处理这些信息。你可以在网站上查看这些信息，对其进行分析和存储，还可以使用它们来触发命令以执行某种操作。为此，你可以使用功能强大的工具，如 [Azure 网站][]、[SQL Azure][]、[HDInsight][]、[Cortana Analytics Suite][] 或 [Azure 通知中心][]。但有时，你要做的一切就是以极小的开销向某人发送数据。为了向你展示如何以少量的代码实现此目的，我们提供了一个新示例 [AppToNotifyUsers][]。包括的选项为电子邮件 (SMTP)、短信和电话。
+问题是如何在达到特定条件时接收关键信息，而不是亲自去查看静态报告。如果使用 [Azure 事件中心][]或 [Azure IoT 中心][]接收设备或 [Dynamics AX][] 等企业应用程序发出的数据，可以使用多种选项来处理这些信息。你可以在网站上查看这些信息，对其进行分析和存储，还可以使用它们来触发命令以执行某种操作。为此，可以使用功能强大的工具，如 [Azure 网站][]、[SQL Azure][]、[HDInsight][]、[IoT Suite][]、[逻辑应用][]或 [Azure 通知中心][]。但有时，你要做的一切就是以极小的开销向某人发送数据。为了向你展示如何以少量的代码实现此目的，我们提供了一个新示例 [AppToNotifyUsers][]。包括的选项为电子邮件 (SMTP)、短信和电话。
 
 ## 应用程序结构
 
 该应用程序是以 C# 编写的，示例中的自述文件包含修改、生成和发布应用程序所需的全部信息。以下部分提供了有关该应用程序的功能的全面概述。
 
-首先假设你要将关键事件推送到 Azure 事件中心。事实上可以推送到任何中心，只要你有权访问它并知道连接字符串即可。
+首先假设你要将关键事件推送到 Azure 事件中心或 IoT 中心。事实上可以推送到任何中心，只要你有权访问它并知道连接字符串即可。
 
-如果你没有事件中心，可以遵循 [Connect The Dots](https://github.com/Azure/connectthedots) 中的说明，使用 Arduino 盾板和 Raspberry Pi 轻松设置一个测试平台。Arduino 盾板上的灯光传感器通过 Pi 向 [Azure 事件中心][] (**ehdevices**) 发送光能级，如果收到的光能级低于特定的级别，则 [Azure 流分析](/documentation/services/stream-analytics/)作业将向另一个事件中心 (**ehalerts**) 推送警报。
+如果你没有事件中心或 IoT 中心，可以遵循 [Connect The Dots](https://github.com/Azure/connectthedots) 中的说明，使用 Arduino 盾板和 Raspberry Pi 轻松设置一个测试平台。Arduino 盾板上的灯光传感器通过 Pi 向 [Azure 事件中心][] (**ehdevices**) 发送光能级，如果收到的光能级低于特定的级别，则 [Azure 流分析](https://azure.microsoft.com/services/stream-analytics/)作业将向另一个事件中心 (**ehalerts**) 推送警报。
 
-**AppToNotify** 启动时，会读取配置文件 (App.config) 来获取接收警报的事件中心的 URL 和凭据。然后，它会生成一个进程来持续监视是否有任何消息传入该事件中心 - 只要你有权访问事件中心的 URL 并拥有有效的凭据，则此事件中心读取器代码就会持续读取传入的数据。在启动期间，应用程序还会读取你要使用的消息传送服务（电子邮件、短信或电话）的 URL 和凭据，以及发件人的名称/地址和收件人的列表。
+**AppToNotify** 启动时，会读取配置文件 (App.config) 来获取接收警报的事件中心的 URL 和凭据。然后，它会生成一个进程来持续监视是否有任何消息传入该事件中心 - 只要你有权访问事件中心或 IoT 中心的 URL 并拥有有效的凭据，则此事件中心读取器代码就会持续读取传入的数据。在启动期间，应用程序还会读取你要使用的消息传送服务（电子邮件、短信或电话）的 URL 和凭据，以及发件人的名称/地址和收件人的列表。
 
 一旦事件中心监视器检测到消息，就会触发一个进程，以使用配置文件中指定的方法发送该消息。请注意，该监视器会发送它检测到的每条消息。如果将监视器设置为指向每秒接收 10 条消息的事件中心，则发件人将每秒发送 10 条消息 - 即每秒 10 封电子邮件、每秒 10 条短信或每秒 10 次电话呼叫。因此，请确保监视只会接收需要发出的警报的事件中心，而不要监视从传感器或应用程序接收所有原始数据的事件中心。
 
@@ -48,27 +52,33 @@
 有关这些中心的详细信息，请参阅以下文章：
 
 - [Azure 事件中心]
+- [Azure IoT 中心]
 - 使用[事件中心教程]入门。
+- [使用事件中心的完整示例应用程序]。
+- 使用服务总线队列的[队列消息解决方案]。
 
 若要部署解决方案以便基于这些中心收到的数据来通知用户，请访问：
 
 - [AppToNotifyUsers][]
 
 [事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
-[Azure 事件中心]: /documentation/services/event-hubs/
-[Azure 事件中心]: /documentation/services/event-hubs/
+[Azure IoT 中心]: https://azure.microsoft.com/services/iot-hub/
+[Azure 事件中心]: /services/event-hubs/
+[Azure 事件中心]: /services/event-hubs/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
 [AppToNotifyUsers]: https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications
 [Dynamics AX]: http://www.microsoft.com/zh-cn/dynamics/erp-ax-overview.aspx
-[Azure 网站]: /documentation/services/web-sites/
-[SQL Azure]: /documentation/services/sql-databases/
-[HDInsight]: /documentation/services/hdinsight/
-[Cortana Analytics Suite]: http://www.microsoft.com/server-cloud/cortana-analytics-suite/Overview.aspx?WT.srch=1&WT.mc_ID=SEM_lLFwOJm3&bknode=BlueKai
-[Azure 通知中心]: /documentation/services/notification-hubs/
-[Azure Stream Analytics]: /documentation/services/stream-analytics/
+[Azure 网站]: /services/app-service/web/
+[SQL Azure]: /services/sql-database/
+[HDInsight]: /services/hdinsight/
+[Cortana Intelligence Suite]: http://www.microsoft.com/server-cloud/cortana-analytics-suite/Overview.aspx?WT.srch=1&WT.mc_ID=SEM_lLFwOJm3&bknode=BlueKai
+[IoT Suite]: https://azure.microsoft.com/solutions/iot-suite/
+[逻辑应用]: https://azure.microsoft.com/services/app-service/logic/
+[Azure 通知中心]: /services/notification-hubs/
+[Azure Stream Analytics]: /services/stream-analytics/
  
 [1]: ./media/event-hubs-sensors-notify-users/event-hubs-sensor-alert.png
 [2]: ./media/event-hubs-sensors-notify-users/event-hubs-erp-alert.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0926_2016-->

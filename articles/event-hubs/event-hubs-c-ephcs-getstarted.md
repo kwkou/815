@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过 C 和 C# 使用事件中心入门 | Azure"
+	pageTitle="C 和 C# 中的事件中心入门 | Azure"
 	description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并使用 EventProcessorHost 通过 C# 接收事件。"
 	services="event-hubs"
 	documentationCenter=""
@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="05/13/2016"
-	wacn.date="05/30/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="c"
+	ms.devlang="csharp"
+	ms.topic="article"
+	ms.date="08/16/2016"
+	wacn.date="10/10/2016"/>  
+
 
 # 事件中心入门
 
@@ -24,9 +29,9 @@
 
 在本教程中，你将学习如何使用用 C 编写的控制台应用程序将消息引入事件中心，以及如何使用 C# [事件处理程序主机][]库并行检索这些消息。
 
-为了完成本教程，你将需要以下内容：
+若要完成本教程，需要满足以下条件：
 
-+ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/) 上。有关其他环境的说明，将在外部链接中提供。
++ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial/) 上。有关其他环境的说明，将在外部链接中提供。
 
 + Microsoft Visual Studio Express for Windows
 
@@ -64,11 +69,11 @@
 [24]: ./media/event-hubs-c-ephcs-getstarted/receive-eph-c.png
 
 <!-- Links -->
-[Azure 经典管理门户]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0926_2016-->
