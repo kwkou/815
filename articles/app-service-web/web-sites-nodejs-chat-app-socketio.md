@@ -14,7 +14,7 @@
 	ms.devlang="nodejs"
 	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date=""
+	wacn.date=“10/10/2016”
 	ms.author="robmcm"/>
 
 # 在 Azure App Service 中使用 Socket.IO 创建 Node.js 聊天应用程序
