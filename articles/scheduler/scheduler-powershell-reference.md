@@ -24,8 +24,8 @@
 
 有关 [Azure Resource Manager cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125356(v=azure.200).aspx) 的详细信息，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
-|Cmdlet|Cmdlet 说明|
-|---|---|
+Cmdlet|Cmdlet 说明
+---|---
 [Disable-AzureRmSchedulerJobCollection](https://msdn.microsoft.com/zh-cn/library/mt490133(v=azure.200).aspx) |禁用某一作业集合。 
 [Enable-AzureRmSchedulerJobCollection](https://msdn.microsoft.com/zh-cn/library/mt490135(v=azure.200).aspx) |启用某一作业集合。
 [Get-AzureRmSchedulerJob](https://msdn.microsoft.com/zh-cn/library/mt490125(v=azure.200).aspx) |获取计划程序作业。
