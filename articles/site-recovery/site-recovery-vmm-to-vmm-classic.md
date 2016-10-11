@@ -9,10 +9,20 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="05/06/2016"
-	wacn.date="06/06/2016"/>
+	ms.workload="backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2016"
+	wacn.date="10/10/2016"
+	ms.author="raynew"/>
 
 # 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点
+
+> [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/site-recovery-vmm-to-vmm/)
+- [经典门户](/documentation/articles/site-recovery-vmm-to-vmm-classic/)
+- [PowerShell - Resource Manager](/documentation/articles/site-recovery-vmm-to-vmm-powershell-resource-manager/)
 
 Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
 
@@ -37,8 +47,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 **先决条件** | **详细信息**
 --- | ---
 **Azure**| 需要一个 [Azure](https://azure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。[详细了解](/pricing/details/site-recovery/) Site Recovery 定价。
-**VMM** | 你将需要至少一个 VMM 服务器。<br/><br/>VMM 服务器应至少运行安装了最新累积更新的 System Center 2012 SP1。<br/><br/>如果你需要对单个 VMM 服务器设置保护，则需在服务器上至少配置两个云。<br/><br/>如果你需要为两个 VMM 服务器部署保护，则每个服务器都必须将至少一个云配置在所要保护的主 VMM 服务器上，一个云配置在需要用于保护和恢复的辅助 VMM 服务器上<br/><br/>所有 VMM 云都必须设置 Hyper-V 容量配置文件。<br/><br/>要保护的源云必须包含一个或多个 VMM 主机组。<br/><br/>若要详细了解如何设置 VMM 云，请参阅 Keith Mayer 的博客中的[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)。
-**Hyper-V** | 你需要在主 VMM 主机组和辅助 VMM 主机组中有一个或多个 Hyper-V 主机服务器，在每个 Hyper-V 主机服务器中有一个或多个虚拟机。<br/><br/>主机和目标 Hyper-V 服务器必须至少运行包含 Hyper-V 角色的 Windows Server 2012，并安装了最新更新。<br/><br/>任何包含你所要保护的 VM 的 Hyper-V 服务器都必须位于 VMM 云中。<br/><br/>如果你要在群集中运行 Hyper-V，请注意，如果你的群集是静态的基于 IP 地址的群集，则不会自动创建群集中转站。你需要手动配置群集代理。请阅读 Aidan Finn 的博客文章[了解详细信息](https://www.petri.com/use-hyper-v-replica-broker-prepare-host-clusters)。
+**VMM** | 需要至少一个 VMM 服务器。<br/><br/>VMM 服务器应至少运行安装了最新累积更新的 System Center 2012 SP1。<br/><br/>如果需要对单个 VMM 服务器设置保护，则需在服务器上至少配置两个云。<br/><br/>如果需要为两个 VMM 服务器部署保护，则每个服务器都必须将至少一个云配置在所要保护的主 VMM 服务器上，一个云配置在需要用于保护和恢复的辅助 VMM 服务器上<br/><br/>所有 VMM 云都必须设置 Hyper-V 容量配置文件。<br/><br/>要保护的源云必须包含一个或多个 VMM 主机组。<br/><br/>若要详细了解如何设置 VMM 云，请参阅 Keith Mayer 的博客中的[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)。
+**Hyper-V** | 需要在主 VMM 主机组和辅助 VMM 主机组中有一个或多个 Hyper-V 主机服务器，在每个 Hyper-V 主机服务器中有一个或多个虚拟机。<br/><br/>主机和目标 Hyper-V 服务器必须至少运行包含 Hyper-V 角色的 Windows Server 2012，并安装了最新更新。<br/><br/>任何包含所要保护的 VM 的 Hyper-V 服务器都必须位于 VMM 云中。<br/><br/>如果要在群集中运行 Hyper-V，请注意，如果群集是静态的基于 IP 地址的群集，则不会自动创建群集中转站。需要手动配置群集代理。在 Aidan Finn 的博客文章中[了解详细信息](https://www.petri.com/use-hyper-v-replica-broker-prepare-host-clusters)。
 **网络映射** | 你可以配置网络映射，以确保在故障转移后以最佳方式将复制的虚拟机放置在辅助 Hyper-V 主机服务器上，并确保它们连接到适当的 VM 网络。如果不配置网络映射，则在故障转移后，副本 VM 将不会连接到任何网络。<br/><br/>若要在部署期间设置网络映射，请确保源 Hyper-V 主机服务器上的虚拟机连接到 VMM VM 网络。该网络应链接到与云关联的逻辑网络。<br/<br/>辅助 VMM 服务器上用于恢复的目标云应当配置了相应的 VM 网络，并且该网络应当链接到与目标云关联的相应逻辑网络。<br/><br/>[详细了解](/documentation/articles/site-recovery-network-mapping/)网络映射。
 **存储映射** | 默认情况下，将源 Hyper-V 主机服务器上的虚拟机复制到目标 Hyper-V 主机服务器时，复制的数据存储到在 Hyper-V 管理器中为目标 Hyper-V 主机指定的默认位置。若要对存储已复制数据的位置进行更多的控制，可以配置存储映射<br/><br/>若要配置存储映射，需要在开始部署之前先在源和目标 VMM 服务器上设置存储分类。[了解详细信息](/documentation/articles/site-recovery-storage-mapping/)。
 
@@ -53,7 +63,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
-5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/pricing/details/site-recovery/)中的“地域可用性”。
+5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 Azure Site Recovery 价格详细信息中的“地域可用性”[](/pricing/details/site-recovery/)。
 
 6. 单击“创建保管库”。
 
@@ -70,7 +80,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	![“快速启动”图标](./media/site-recovery-vmm-to-vmm-classic/quick-start-icon.png)
 
 2. 在下拉列表中，选择“两个本地 VMM 站点之间”。
-3. 在“准备 VMM 服务器”中，单击“生成注册密钥文件”。密钥文件将自动生成并且自生成后在 5 天内有效。如果你不是从 VMM 服务器访问 Azure 门户，则需要将此文件复制到服务器。
+3. 在“准备 VMM 服务器”中，单击“生成注册密钥文件”。密钥文件将自动生成并且自生成后在 5 天内有效。如果不是从 VMM 服务器访问 Azure 门户，则需要将此文件复制到服务器。
 
 	![注册密钥](./media/site-recovery-vmm-to-vmm-classic/register-key.png)
 
@@ -80,7 +90,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 2. 在源 VMM 服务器上运行此文件。
 
-	>[AZURE.NOTE] 如果 VMM 部署到群集中并且你是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后在其他节点上安装该提供程序。请注意，如果你是在升级提供程序，则需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。
+	>[AZURE.NOTE] 如果 VMM 部署到群集中并且你是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后在其他节点上安装该提供程序。请注意，如果正在升级提供程序，则需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。
 
 3. 安装程序将执行简单的“先决条件检查”，并请求授权停止 VMM 服务以开始安装提供程序。VMM 服务将在安装程序完成时自动重新启动。如果你是在 VMM 群集上进行安装，则会提示你停止群集角色。
 
@@ -95,13 +105,16 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 6. 安装提供程序之后，请单击“注册”，以在保管库中注册服务器。
 
 	![InstallComplete](./media/site-recovery-vmm-to-vmm-classic/install-complete.png)
+9. 在“保管库名称”中，验证将要在其中注册服务器的保管库的名称。单击*“下一步”*。
+
+	![服务器注册](./media/site-recovery-vmm-to-vmm-classic/vaultcred.PNG)
 
 7. 在“Internet 连接”中，指定在 VMM 服务器上运行的提供程序如何连接到 Internet。选择“使用现有代理设置进行连接”以使用服务器上配置的默认 Internet 连接设置。
 
-	![Internet 设置](./media/site-recovery-vmm-to-vmm-classic/proxy-details.png)
+	![Internet 设置](./media/site-recovery-vmm-to-vmm-classic/proxydetails.PNG)
 
 	- 如果希望使用自定义代理，则应当在安装该提供程序之前设置它。当配置自定义代理设置时，会运行测试来检查代理连接。
-	- 如果你确实使用自定义代理，或者你的默认代理要求进行身份验证，则需要输入代理详细信息，包括代理地址和端口。
+	- 如果确实使用自定义代理，或者默认代理要求进行身份验证，则需要输入代理详细信息，包括代理地址和端口。
 	- 以下 URL 应可从 VMM 服务器和 Hyper-v 主机访问
 		- *.hypervrecoverymanager.windowsazure.cn
 		- *.accesscontrol.chinacloudapi.cn
@@ -111,22 +124,18 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	- 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/confirmation.aspx?id=41653)中所述的 IP 地址，以及 HTTPS (443) 协议。
 	- 如果你使用自定义代理，则将使用指定的代理凭据自动创建一个 VMM 运行身份帐户 (DRAProxyAccount)。对代理服务器进行配置以便该帐户可以成功通过身份验证。可以在 VMM 控制台中修改 VMM 运行身份帐户设置。若要执行此操作，请打开“设置”工作区，展开“安全性”，单击“运行身份帐户”，然后修改 DRAProxyAccount 的密码。你将需要重新启动 VMM 服务以使此设置生效。
 
-8. 在“注册密钥”中，选择你从 Azure Site Recovery 下载并复制到 VMM 服务器的密钥。
-9. 在“保管库名称”中，验证将要在其中注册服务器的保管库的名称。单击“下一步”。
 
-	![服务器注册](./media/site-recovery-vmm-to-vmm-classic/vault-creds.png)
+8. 在“注册密钥”中，选择从 Azure Site Recovery 下载并复制到 VMM 服务器的密钥。
+
 
 10.  仅当你要将 VMM 云中的 Hyper-V VM 复制到 Azure 时，才使用加密设置。如果要复制到辅助站点，则不使用加密设置。
-
-	![服务器注册](./media/site-recovery-vmm-to-vmm-classic/encrypt.png)
 
 11.  在“服务器名称”中，指定一个友好名称以在保管库中标识该 VMM 服务器。在群集配置中，请指定 VMM 群集角色名称。
 12.  在“同步云元数据”中，选择是否要将 VMM 服务器上所有云的元数据与保管库进行同步。此操作在每个服务器上只需执行一次。如果你不希望同步所有云，可以将此设置保留为未选中状态并在 VMM 控制台中的云属性中分别同步各个云。
 
-	![服务器注册](./media/site-recovery-vmm-to-vmm-classic/friendly-name.png)
+13.  单击“下一步”以完成此过程。注册后，Azure Site Recovery 将检索 VMM 服务器中的元数据。服务器显示在保管库中的“VMM 服务器”>“服务器”中。
 
-13.  单击“下一步”以完成此过程。注册后，Azure Site Recovery 将检索 VMM 服务器中的元数据。服务器显示在保管库中“服务器”页上的“VMM 服务器”选项卡中。
-
+	![服务器](./media/site-recovery-vmm-to-vmm-classic/provider13.PNG)
 
 ### 命令行安装
 
@@ -150,24 +159,24 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 其中的参数如下：
 
- - **/Credentials**：用于指定注册密钥文件所在位置的必需参数  
+ - **/Credentials**：用于指定注册密钥文件所在位置的必需参数
  - **/FriendlyName**：在 Azure Site Recovery 门户中显示的 Hyper-V 主机服务器名称的必需参数。
- - **/EncryptionEnabled**：仅当你需要在 Azure 中以静止方式为虚拟机加密时，才需要在 VMM 到 Azure 方案中使用这个可选参数。请确保提供的文件名具有 **.pfx** 扩展名。
+ - **/EncryptionEnabled**：仅当需要在 Azure 中以静止方式为虚拟机加密时，才需要在 VMM 到 Azure 方案中使用这个可选参数。请确保提供的文件名具有 **.pfx** 扩展名。
  - **/proxyAddress**：可选参数，用于指定代理服务器的地址。
  - **/proxyport**：可选参数，用于指定代理服务器的端口。
  - **/proxyUsername**：可选参数，用于指定代理服务器用户名（如果代理服务器要求身份验证）。
- - **/proxyPassword**：可选参数，用于指定密码，以便通过代理服务器进行身份验证（如果代理服务器要求身份验证）。  
+ - **/proxyPassword**：可选参数，用于指定密码，以便通过代理服务器进行身份验证（如果代理服务器要求身份验证）。
 
 ## 步骤 4：配置云保护设置
 
-在注册 VMM 服务器后，你可以配置云保护设置。如果你在安装提供程序时启用了选项“与保管库同步云数据”，则 VMM 服务器上的所有云都将显示在保管库中的“受保护的项”选项卡上。如果没有启用该选项，则可以在 VMM 控制台中云属性页面的“常规”选项卡中将特定的云同步到 Azure Site Recovery。
+在注册 VMM 服务器后，你可以配置云保护设置。如果在安装提供程序时启用了选项“与保管库同步云数据”，则 VMM 服务器上的所有云都将显示在保管库中的“受保护的项”选项卡上。如果没有启用该选项，则可以在 VMM 控制台中云属性页面的“常规”选项卡中将特定的云同步到 Azure Site Recovery。
 
 ![已发布的云](./media/site-recovery-vmm-to-vmm-classic/clouds-list.png)
 
 1. 在“快速启动”页上，单击“为 VMM 云设置保护”。
 2. 在“VMM 云”选项卡上，选择你要配置的云并转到“配置”选项卡。
 3. 在“目标”中，选择“VMM”。
-4. 在“目标位置”中，选择管理着你要用于恢复的云的现场 VMM 服务器。
+4. 在“目标位置”中，选择管理要用于恢复的云的现场 VMM 服务器。
 4. 在“目标云”中，选择要用于源云中虚拟机故障转移的目标云。请注意：
 
 	- 我们建议你选择可满足你要保护的虚拟机的恢复要求的目标云。
@@ -182,10 +191,10 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 8. 在“数据传输压缩”中，指定是否应压缩所传输的复制数据。
 9. 在“身份验证”中，指定如何对主 Hyper-V 主机服务器和恢复 Hyper-V 主机服务器之间的流量进行身份验证。除非你配置了有效的 Kerberos 环境，否则，请选择 HTTPS。Azure Site Recovery 将为 HTTPS 身份验证自动配置证书。不需要手动配置。如果你选择了 Kerberos，则将使用 Kerberos 票证执行主机服务器的相互身份验证。默认情况下，端口 8083 和 8084（用于证书）在 Hyper-V 主机服务器上的 Windows 防火墙中将处于打开状态。请注意，此设置仅适用于在 Windows Server 2012 R2 上运行的 Hyper-V 主机服务器。
 10. 在“端口”中，修改源和目标主机计算机用于侦听复制通信的端口号。例如，如果你希望对复制通信应用服务质量 (QoS) 网络带宽限制，可以修改此设置。确认该端口未被任何其他应用程序使用并且在防火墙设置中已打开。
-11. 在“复制方法”中，指定在开始定期复制之前将如何处理从源到目标位置的初始数据复制。
+11. 在“复制方法”中，指定在开始定期复制之前将如何处理从源到目标位置的初始数据复制：
 
 	- **通过网络** - 通过网络复制数据会相当耗时且需消耗大量资源。如果云包含的虚拟机所具有的虚拟硬盘相对较小，并且主站点通过较宽的带宽连接到辅助站点，则我们建议你使用此选项。你可以指定复制应当立即启动，或者选择一个时间。如果你使用网络复制，建议你将其安排在非高峰时间进行。
-	- **离线** - 此方法指定使用外部介质执行初始复制。如果你要避免网络性能下降或在地理上处于远程位置，则这种方法很有用。要使用这种方法，请在源云中指定导出位置，并在目标云中指定导入位置。当你为虚拟机启用保护时，虚拟硬盘将复制到指定的导出位置。你将其发送到目标站点，并将其复制到导入位置。系统将导入的信息复制到副本虚拟机。
+	- **脱机** - 此方法指定使用外部介质执行初始复制。如果你要避免网络性能下降或在地理上处于远程位置，则这种方法很有用。要使用这种方法，请在源云中指定导出位置，并在目标云中指定导入位置。当你为虚拟机启用保护时，虚拟硬盘将复制到指定的导出位置。你将其发送到目标站点，并将其复制到导入位置。系统将导入的信息复制到副本虚拟机。
 
 12. 选择“删除副本虚拟机”可指定当通过在云属性的“虚拟机”选项卡上选择“删除对虚拟机的保护”选项停止保护虚拟机时应当删除副本虚拟机。启用此设置后，当你禁用保护时，会从 Azure Site Recovery 中删除该虚拟机，从 VMM 控制台中删除该虚拟机的 Site Recovery 设置，并且会删除副本。
 
@@ -349,7 +358,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 - **收集的信息**：作为网络映射功能的一部分，服务将收集、处理和传输每个站点（主站点和数据中心）的逻辑网络的元数据。
 
-- **信息的使用**：服务使用该元数据来填充你的服务门户，你可以在该门户中映射网络信息。
+- **信息的使用**：服务使用该元数据来填充你的服务门户，可以在该门户中映射网络信息。
 
 - **选择**：这是服务必不可少的组成部分，无法关闭。如果不希望向“服务”发送该信息，请不要使用网络映射功能。
 
@@ -368,10 +377,9 @@ VMM 服务器上的提供程序将从“服务”那里收到事件通知，并�
 	- VMM 服务器中的云名称—当使用下面所述的“服务”云配对/取消配对功能时，云名称是必需的。当决定将主数据中心内的云与恢复数据中心内的另一个云进行配对时，需要提供恢复数据中心内所有云的名称。
 
 - **选择**：这是服务必不可少的组成部分，无法关闭。如果不希望向“服务”发送该信息，请不要使用本“服务”。
- 
+
 ## 后续步骤
 
-运行测试故障转移以确保环境功能正常以后，请[了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
+运行测试性故障转移以确保环境功能正常以后，请[了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
-
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0926_2016-->

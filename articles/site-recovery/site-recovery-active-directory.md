@@ -9,16 +9,21 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="06/13/2016"
-	wacn.date="07/11/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery"
+	ms.date="08/31/2016"
+	wacn.date="10/10/2016"
+	ms.author="pratshar"/>
 
 # 使用 Azure Site Recovery 保护 Active Directory 和 DNS
 
-企业应用程序，例如 SharePoint, Dynamics AX 和 SAP，都依赖于 Active Directory 和 DNS 基础结构才能正常工作。在为应用程序创建灾难恢复解决方案时，请务必记住，需要先保护和恢复 Active Directory 与 DNS，再保护和恢复其他应用程序组件，以确保灾难发生时一切可正常工作。
+企业应用程序，例如 SharePoint、Dynamics AX 和 SAP，都依赖于 Active Directory 和 DNS 基础结构才能正常工作。在为应用程序创建灾难恢复解决方案时，请务必记住，需要先保护和恢复 Active Directory 与 DNS，再保护和恢复其他应用程序组件，以确保灾难发生时一切可正常工作。
 
-站点恢复是一项 Azure 服务，可提供灾难恢复，对虚拟机的复制、故障转移和恢复进行协调。站点恢复支持一系列复制方案，可以前后一致地对虚拟机和应用程序进行保护和无缝故障转移，转移目标是私有云/公有云或托管商的云。
+站点恢复是一项 Azure 服务，可通过协调虚拟机的复制、故障转移和恢复来提供灾难恢复。站点恢复支持一系列复制方案，可以前后一致地对虚拟机和应用程序进行保护，并将它们无缝地故障转移到私有云/公有云或托管商的云。
 
-使用站点恢复，你可以为 Active Directory 创建一个完整的自动化灾难恢复计划。在出现中断时，你可以在数秒内从任何位置启动故障转移，在数分钟内启动和运行 Active Directory。如果你为主站点中的多个应用程序（如 SharePoint 和 SAP）部署了 Active Directory，而且希望故障转移整个站点，则可先使用站点恢复故障转移 Active Directory，然后再使用特定于应用程序的恢复计划故障转移其他应用程序。
+使用站点恢复，你可以为 Active Directory 创建一个完整的自动化灾难恢复计划。出现中断时，可在数秒内从任何位置启动故障转移，并在数分钟内启动和运行 Active Directory。如果你为主站点中的多个应用程序（如 SharePoint 和 SAP）部署了 Active Directory，而且希望故障转移整个站点，则可先使用站点恢复故障转移 Active Directory，然后再使用特定于应用程序的恢复计划故障转移其他应用程序。
 
 本文说明了如何为 Active Directory 创建灾难恢复解决方案，以及如何通过一键式恢复计划执行计划内、计划外和测试故障转移，同时还说明了支持的配置和先决条件。在开始之前，你应该熟悉 Active Directory 和 Azure Site Recovery。
 
@@ -30,9 +35,9 @@
 
 ### 方法 2
 
-如果你有大量的应用程序，而环境中有不止一个域控制器，或者你计划一次性故障转移多个应用程序，则我们建议，除了使用站点恢复复制域控制器虚拟机以外，还在目标站点（Azure 或本地数据中心）上设置附加的域控制器。
+如果应用程序数量较多，而环境中不止一个域控制器，或者你计划一次性故障转移多个应用程序，我们建议，除了使用站点恢复复制域控制器虚拟机以外，还可以在目标站点（Azure 或本地数据中心）上设置附加的域控制器。
 
->[AZURE.NOTE]即使你实施第 2 个选项来运行测试故障转移，仍然需要使用站点恢复来复制域控制器。有关详细信息，请详阅[测试故障转移注意事项](#considerations-for-test-failover)。
+>[AZURE.NOTE] 即使你实施第 2 个选项来运行测试故障转移，仍然需要使用站点恢复来复制域控制器。有关详细信息，请详阅[测试故障转移注意事项](#considerations-for-test-failover)。
 
 
 以下部分说明了如何在站点恢复中为域控制器启用保护，以及如何在 Azure 中设置域控制器。
@@ -54,11 +59,11 @@
 
 ###配置虚拟机网络设置
 
-对于域控制器/DNS 虚拟机，请在站点恢复中配置网络设置，以便在故障转移后将 VM 连接到正确的网络。例如，如果将 Hyper-V VM 复制到 Azure，你可以按如下所示选择 VMM 云或保护组中的 VM 以配置网络设置
+对于域控制器/DNS 虚拟机，请在站点恢复中配置网络设置，以便在故障转移后将 VM 连接到正确的网络。例如，如果将 Hyper-V VM 复制到 Azure，则可以按如下所示选择 VMM 云或保护组中的 VM 来配置网络设置
 
 ![VM 网络设置](./media/site-recovery-active-directory/VM-Network-Settings.png)
 
-## 使用 Active Directory 复制保护 Active Directory 
+## 使用 Active Directory 复制保护 Active Directory
 
 ### 站点到站点保护
 
@@ -66,10 +71,10 @@
 
 ###站点到 Azure 的保护
 
-遵照说明[在 Azure 虚拟网络中创建域控制器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)。将服务器提升为域控制器角色时，请指定主站点中使用的同一域名。
+按照说明[在 Azure 虚拟网络中创建域控制器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)。将服务器提升为域控制器角色时，请指定主站点中使用的同一域名。
 
 然后，[重新配置虚拟网络的 DNS 服务器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/#reconfigure-dns-server-for-the-virtual-network)，以便在 Azure 中使用 DNS 服务器。
-  
+
 ![Azure 网络](./media/site-recovery-active-directory/azure-network.png)
 
 ##<a id="considerations-for-test-failover"></a>测试故障转移注意事项
@@ -80,16 +85,16 @@
 
 1. 在站点恢复中为域控制器/DNS 虚拟机启用保护。
 2. 创建独立的网络。默认情况下，在 Azure 中创建的任何虚拟网络都是独立于其他网络的。建议将此网络的 IP 地址范围设置为与生产网络相同。不要在此网络上启用站点到站点连接。
-3. 提供创建的网站的 DNS IP 地址作为 DNS 虚拟机应该获取的 IP 地址。如果要复制到 Azure，请在 VM 属性的“目标 IP”中提供 VM 的 IP 地址用于故障转移。如果要复制到其他本地站点并使用 DHCP，请遵照说明来[针对测试故障转移设置 DNS 和 DHCP](/documentation/articles/site-recovery-failover/#prepare-dhcp) 
+3. 提供创建的网站的 DNS IP 地址作为 DNS 虚拟机应该获取的 IP 地址。如果要复制到 Azure，请在 VM 属性的“目标 IP”设置中提供 VM 用于故障转移的 IP 地址。如果要复制到其他本地站点并使用 DHCP，请按照说明来[针对测试故障转移设置 DNS 和 DHCP](/documentation/articles/site-recovery-failover/#prepare-dhcp)
 
 >[AZURE.NOTE] 如果 IP 地址可用于测试故障转移网络，则在测试故障转移期间分配给虚拟机的 IP 地址与在运行计划或非计划的故障转移时获取的 IP 地址相同。如果该 IP 地址不可用，则虚拟机收到的 IP 地址与测试故障转移网络中提供的 IP 地址不同。
 
-4. 在域控制器虚拟机上，在隔离的网络中对它运行测试故障转移。 
+4. 在域控制器虚拟机上，在隔离的网络中对它运行测试故障转移。使用域控制器虚拟机的最新可用的应用程序一致的恢复点来执行测试故障转移。
 5. 运行应用程序恢复计划的测试故障转移。
-6. 测试完成后，在站点恢复门户的“作业”选项卡中将针对域控制器虚拟机作业和恢复计划进行的故障转移标记为“完成”。 
+6. 测试完成后，在站点恢复门户的“作业”选项卡中将针对域控制器虚拟机和恢复计划进行的故障转移作业标记为“完成”。 
 
 ### 不同计算机上的 DNS 和域控制器
- 
+
 如果 DNS 与域控制器不在同一个虚拟机上，则需创建一个可以进行测试性故障转移的 DNS VM。如果它们位于同一 VM 上，则可跳过本部分。
 
 你可以使用全新的 DNS 服务器并创建所有需要的区域。例如，如果你的 Active Directory 域是 contoso.com，则可以使用名称 contoso.com 创建 DNS 区域。必须在 DNS 中更新与 Active Directory 对应的条目，如下所示：
@@ -101,22 +106,20 @@
 	- 必须启用区域以进行安全和非安全更新。
 	- 域控制器虚拟机的解析程序应指向 DNS 虚拟机的 IP 地址。
 
-2. 在域控制器虚拟机目录中运行以下命令：
+2. 在域控制器虚拟机中运行以下命令：
 
 	`nltest /dsregdns`
 
 3. 在 DNS 服务器上添加一个区域，允许非安全更新，并向 DNS 添加该区域的条目：
 
-	    dnscmd /zoneadd contoso.com  /Primary 
-	    dnscmd /recordadd contoso.com  contoso.com. SOA %computername%.contoso.com. hostmaster. 1 15 10 1 1 
-	    dnscmd /recordadd contoso.com %computername%  A <IP_OF_DNS_VM> 
+	    dnscmd /zoneadd contoso.com  /Primary
+	    dnscmd /recordadd contoso.com  contoso.com. SOA %computername%.contoso.com. hostmaster. 1 15 10 1 1
+	    dnscmd /recordadd contoso.com %computername%  A <IP_OF_DNS_VM>
 	    dnscmd /config contoso.com /allowupdate 1
 
 
 ## 后续步骤
 
-阅读[我可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload/)，详细了解如何使用 Azure Site Recovery 保护企业工作负荷。
+阅读[我可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload/)详细了解如何使用 Azure Site Recovery 保护企业工作负荷。
 
-
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0926_2016-->

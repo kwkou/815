@@ -9,11 +9,14 @@
 
 <tags
    ms.service="site-recovery"
-   ms.date="12/14/2015"
-   wacn.date="01/21/2016"/>
+   ms.devlang="powershell"
+   ms.tgt_pltfrm="na"
+   ms.topic="article"
+   ms.workload="required"
+   ms.date="08/23/2016"
+   wacn.date="10/10/2016"
+   ms.author="ruturajd@microsoft.com"/>
 
-  
-   
 
 # 将 Azure 自动化 Runbook 添加到恢复计划
 
@@ -81,11 +84,11 @@
 
 	![](./media/site-recovery-runbook-automation/07_1.png)
 
-你可以从 Azure 门户上的帐户设置页中找到你的订阅名称。
+可从 Azure 门户上的帐户设置页中找到订阅名称。
 
 ### 添加 Azure 登录凭据作为资产
 
-Azure 自动化使用 Azure PowerShell 连接到订阅以及对那里的项目进行操作。为此，你需要使用自己的 Microsoft 帐户、工作帐户或学校帐户进行身份验证。可以将帐户凭据存储在资产中，以供 Runbook 安全使用。
+Azure 自动化使用 Azure PowerShell 连接到订阅，并对该处的项目进行操作。为此，你需要使用自己的 Microsoft 帐户、工作帐户或学校帐户进行身份验证。可以将帐户凭据存储在资产中，以供 Runbook 安全使用。
 
 1.  在 Azure 自动化“资产”中添加新设置 ![](./media/site-recovery-runbook-automation/04.png) 并选择 ![](./media/site-recovery-runbook-automation/09.png)
 
@@ -135,11 +138,11 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 **变量名称** | **说明**
 ---|---
 RecoveryPlanName | 正在运行的计划的名称。帮助你根据名称使用相同的脚本执行操作
-FailoverType | 指定故障转移是测试、计划内还是计划外。 
+FailoverType | 指定故障转移是测试、计划内还是计划外。
 FailoverDirection | 指定恢复是恢复到主要站点还是辅助站点
 GroupID | 标识计划运行时恢复计划内的组编号
 VmMap | 组中所有虚拟机的阵列
-VMMap 键 | 每个 VM 的唯一键 (GUID)。与虚拟机的适用 VMM ID 相同。 
+VMMap 键 | 每个 VM 的唯一键 (GUID)。与虚拟机的适用 VMM ID 相同。
 RoleName | 正在恢复的 Azure VM 的名称
 CloudServiceName | 要在其下创建虚拟机的 Azure 云服务名称。
 
@@ -148,7 +151,7 @@ CloudServiceName | 要在其下创建虚拟机的 Azure 云服务名称。
 
 ![](./media/site-recovery-runbook-automation/13.png)
 
-## 创作 自动化 Runbook
+## 创作自动化 Runbook
 
 现在，请创建用于在前端虚拟机上打开端口 80 的 Runbook。
 
@@ -308,8 +311,8 @@ CloudServiceName | 要在其下创建虚拟机的 Azure 云服务名称。
 
 ## 其他资源
 
-[Azure 自动化概述](https://msdn.microsoft.com/zh-CN/library/azure/dn643629.aspx "Azure Automation 概述")
+[Azure 自动化概述](https://msdn.microsoft.com/zh-CN/library/azure/dn643629.aspx "Azure 自动化概述")
 
-[Azure 自动化示例脚本](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Azure Automation 示例脚本")
+[Azure 自动化示例脚本](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Azure 自动化示例脚本")
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0926_2016-->

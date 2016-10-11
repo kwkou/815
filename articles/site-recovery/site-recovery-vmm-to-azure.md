@@ -366,4 +366,4 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 了解[设置恢复计划](/documentation/articles/site-recovery-create-recovery-plans/)和[故障转移](/documentation/articles/site-recovery-failover/)。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0926_2016-->
