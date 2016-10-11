@@ -19,8 +19,6 @@
 
 本主题介绍非常简单的方法，以将 [docker](https://www.docker.com/) 与 [swarm](https://github.com/docker/swarm) 一起使用在 Azure 上创建 swarm 托管群集。它在 Azure 中创建四个虚拟机，其中一个虚拟机充当 swarm 管理器，而另外三个虚拟机则为 docker 主机群集的一部分。完成时，可以使用 swarm 查看群集，然后开始在其上使用 docker。此外，本主题中的 Azure CLI 调用将使用服务管理 (asm) 模式。
 
-> [AZURE.NOTE] 本主题会将 docker 与 swarm 和 Azure CLI 一起使用，*而不*使用 **docker-machine** 以显示不同工具如何协同工作，但又保持独立。**docker-machine** 具有 **--swarm** 开关，让你能够使用 **docker-machine** 直接将节点添加到 swarm 中。有关示例，请参阅 [docker-machine](https://github.com/docker/machine) 文档。如果你错过了针对 Azure VM 运行的 **docker-machine**，请参阅[如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine/)。
-
 ## 使用 Azure 虚拟机创建 docker 主机
 
 本主题将创建四个 VM，但你可以使用所需的任何数量。调用以下命令，并将 *&lt;password&gt;* 替换为你选择的密码。
@@ -129,7 +127,5 @@
 
 <!-- links -->
 
-[docker-machine-azure]: /documentation/articles/virtual-machines-linux-docker-machine/
- 
 
 <!---HONumber=Mooncake_0215_2016-->

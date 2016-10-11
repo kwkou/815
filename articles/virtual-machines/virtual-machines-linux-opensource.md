@@ -47,7 +47,6 @@
 
 ### Docker
 - [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)
-- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine/)
 
 ### Ubuntu
 - [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-classic-mysql-cluster/)
