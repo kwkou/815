@@ -7,9 +7,13 @@
     manager="timlt"
     editor="" />
 <tags 
-   ms.service="event-hubs"
-   ms.date="05/03/2016"
-   wacn.date="05/30/2016" />
+    ms.service="event-hubs"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="08/16/2016"
+    wacn.date="10/10/2016" />
 
 # 事件中心身份验证和安全模型概述
 
@@ -33,7 +37,7 @@
 
 ### 创建 SAS 密钥
 
-创建命名空间时，服务总线将生成名为 **RootManageSharedAccessKey** 的 256 位 SAS 密钥。此密钥授予对命名空间的发送、侦听和管理权限。你可以创建其他密钥。建议你生成一个密钥用于授予对特定事件中心的发送权限。本主题的余下内容假设你已将此密钥命名为 `EventHubSendKey`。
+创建事件中心命名空间时，Azure 事件中心将生成名为 **RootManageSharedAccessKey** 的 256 位 SAS 密钥。此密钥授予对命名空间的发送、侦听和管理权限。你可以创建其他密钥。建议你生成一个密钥用于授予对特定事件中心的发送权限。本主题的余下部分假设已将此密钥命名为 `EventHubSendKey`。
 
 在创建事件中心时，以下示例将创建一个仅限发送的密钥：
 
@@ -91,63 +95,23 @@ SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFm
 
 ## 后端应用程序的身份验证
 
-为了对使用设备生成的数据的后端应用程序进行身份验证，事件中心采用了与服务总线主题所用模型类似的安全模型。事件中心使用者组等效于服务总线主题的订阅。如果创建使用者组的请求附带了一个用于授予对事件中心或者对事件中心所属命名空间的管理权限的令牌，则客户端可以创建该使用者组。如果接收请求附带了一个用于授予对使用者组、事件中心或者事件中心所属命名空间的接收权限的令牌，则允许客户端使用该使用者组的数据。
+为了对使用设备生成的数据的后端应用程序进行身份验证，事件中心采用了与服务总线主题所用模型类似的安全模型。事件中心使用者组相当于服务总线主题的订阅。如果创建使用者组的请求附带了一个用于授予对事件中心或者对事件中心所属命名空间的管理权限的令牌，则客户端可以创建该使用者组。如果接收请求附带了一个用于授予对使用者组、事件中心或者事件中心所属命名空间的接收权限的令牌，则允许客户端使用该使用者组的数据。
 
-当前版本的服务总线不支持针对单个订阅的 SAS 规则。对于事件中心使用者组也是如此。将来会添加对这两项功能的 SAS 支持。
+当前版本的服务总线不支持对单个订阅使用 SAS 规则。对于事件中心使用者组也是如此。将来会添加对这两项功能的 SAS 支持。
 
 在无法为单个使用者组进行 SAS 身份验证的情况下，使用 SAS 密钥来保护具有一个公用密钥的所有使用者组。此方法能使应用程序使用事件中心的所有使用者组的数据。
-
-### 在 ACS 中创建服务标识、信赖方和规则
-
-ACS 支持通过多种方法创建服务标识、信赖方和规则，但最简单的方法是使用 [SBAZTool](http://code.msdn.microsoft.com/Authorization-SBAzTool-6fd76d93)。例如：
-
-1. 为 **EventHubSender** 创建服务标识。这将返回已创建的服务标识的名称及其密钥：
-
-	```
-	sbaztool.exe exe -n <namespace> -k <key>  makeid eventhubsender
-	```
-
-2. 授予 **EventHubSender** 对事件中心的“发送声明”权限。
-
-	```
-	sbaztool.exe -n <namespace> -k <key> grant Send /AuthTestEventHub eventhubsender
-	```
-
-3. 为使用者组 1 的接收者创建服务标识：
-
-	```
-	sbaztool.exe exe -n <namespace> -k <key> makeid consumergroup1receiver
-	```
-
-4. 授予 `consumergroup1receiver` 对 **ConsumerGroup1** 的“侦听声明”权限：
-
-	```
-	sbaztool.exe -n <namespace> -k <key> grant Listen /AuthTestEventHub/ConsumerGroup1 consumergroup1receiver
-	```
-
-5. 为**使用者组 2** 的接收者创建服务标识：
-
-	```
-	sbaztool.exe exe -n <namespace> -k <key>  makeid consumergroup2receiver
-	```
-
-6. 授予 `consumergroup2receiver` 对 **ConsumerGroup2** 的“侦听声明”权限：
-
-	```
-	sbaztool.exe -n <namespace> -k <key> grant Listen /AuthTestEventHub/ConsumerGroup2 consumergroup2receiver
-	```
 
 ## 后续步骤
 
 若要了解有关事件中心的详细信息，请访问以下主题：
 
 - [事件中心概述]
-- [使用事件中心的完整示例应用程序]
-- 使用服务总线队列的[队列消息解决方案]
+- 使用服务总线队列的[队列消息解决方案]。
+- [使用事件中心的完整示例应用程序]。
 
 [事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0926_2016-->

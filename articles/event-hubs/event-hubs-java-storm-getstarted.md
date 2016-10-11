@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="05/13/2016"
-	wacn.date="06/20/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/06/2016"
+	wacn.date="10/10/2016"/>  
+
 
 # 事件中心入门
 
@@ -25,7 +30,7 @@
 
 本教程介绍如何使用以 Java 编写的控制台应用程序将消息收集到事件中心，以及如何使用 Apache Storm 并行检索这些消息。
 
-为了完成本教程，你将需要以下内容：
+若要完成本教程，需要满足以下条件：
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
@@ -70,4 +75,5 @@
 [用 Storm 和 HDInsight 分析传感器数据]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
 [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
  
-<!---HONumber=Mooncake_0613_2016-->
+
+<!---HONumber=Mooncake_0926_2016-->

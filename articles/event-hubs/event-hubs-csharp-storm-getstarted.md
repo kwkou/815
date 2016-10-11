@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="05/13/2016"
-	wacn.date="06/06/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article" 
+	ms.date="09/06/2016"
+	wacn.date="10/10/2016"/>  
+
 
 # 事件中心入门
 
@@ -61,11 +66,11 @@
 [22]: ./media/event-hubs-csharp-storm-getstarted/receive-storm1.png
 
 <!-- Links -->
-[Azure 经典管理门户]: https://manage.windowsazure.cn/
-[Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
+[Azure classic portal]: https://manage.windowsazure.cn/
 [事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
-<!---HONumber=Mooncake_0530_2016-->
+
+<!---HONumber=Mooncake_0926_2016-->
