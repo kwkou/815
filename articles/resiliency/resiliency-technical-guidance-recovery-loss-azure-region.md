@@ -4,13 +4,17 @@
    services=""
    documentationCenter="na"
    authors="adamglick"
-   manager="hongfeig"
+   manager="saladki"
    editor=""/>
 
 <tags
    ms.service="resiliency"
-   ms.date="05/13/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/18/2016"
+   wacn.date="10/10/2016"/>
 
 #Azure 复原技术指南：在发生区域范围的服务中断后进行恢复
 
@@ -103,7 +107,7 @@ Azure SQL 数据库提供两种类型的恢复：异地还原和活动异地复�
 
 ####异地还原
 
-[异地还原](/documentation/articles/sql-database-geo-restore/)也适用于基本、标准和高级数据库。当数据库由于它所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与时间点还原一样，异地还原依赖于异地冗余的 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。有关详细信息，请参阅 [Recover from an outage（在中断后恢复）](/documentation/articles/sql-database-disaster-recovery/)。
+[异地还原](/documentation/articles/sql-database-recovery-using-backups/)也适用于基本、标准和高级数据库。当数据库由于它所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与时间点还原一样，异地还原依赖于异地冗余的 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。有关详细信息，请参阅 [Recover from an outage](/documentation/articles/sql-database-disaster-recovery/)（在中断后恢复）。
 
 ####活动异地复制
 
@@ -126,7 +130,7 @@ Azure SQL 数据库提供两种类型的恢复：异地还原和活动异地复�
 Azure 服务总线使用不跨越 Azure 区域的唯一命名空间。因此，首要要求是在备用区域中设置必要的服务总线命名空间。但是，对于排队消息的持久性，也有一些注意事项。有几种在 Azure 区域间复制消息的策略。有关这些复制策略和其他灾难恢复策略的详细信息，请参阅 [Best practices for insulating applications against Service Bus outages and disasters（使应用程序免受服务总线中断和灾难影响的最佳实践）](/documentation/articles/service-bus-outages-disasters/)。有关其他可用性注意事项，请参阅 [Service Bus (Availability)（服务总线（可用性））](/documentation/articles/resiliency-technical-guidance-recovery-local-failures/#service-bus)。
 
 <a id="web-apps"></a>
-###Web Apps
+###Web 应用
 
 要将 Azure Web 应用迁移到辅助 Azure 区域，必须有该网站可供发布的备份。如果中断不涉及整个 Azure 数据中心，则也许可以使用 FTP 下载站点内容的最新备份。然后，在备用区域创建新的 Web 应用，除非你之前已执行此操作来保留容量。将站点发布到新区域，然后进行必要的配置更改。这些更改可能包括数据库连接字符串或其他区域特定的设置。如有必要，请添加站点的 SSL 证书，并更改 DNS CNAME 记录，以使自定义域名指向重新部署的 Azure Web 应用 URL。
 
@@ -223,4 +227,4 @@ Azure 媒体服务对于编码和流有不同的恢复方法。通常，在区�
 
 本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。本系列教程的下一篇文章着重介绍如何[从本地数据中心恢复到 Azure](/documentation/articles/resiliency-technical-guidance-recovery-on-premises-azure/)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0926_2016-->

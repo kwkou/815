@@ -5,13 +5,17 @@
    services=""
    documentationCenter="na"
    authors="adamglick"
-   manager="hongfeig"
+   manager="saladki"
    editor=""/>
 
 <tags
    ms.service="resiliency"
-   ms.date="05/18/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/18/2016"
+   wacn.date="10/10/2016"/>
 
 #构建在 Azure 基础之上的应用程序灾难恢复
 
@@ -19,7 +23,7 @@
 
 ##Azure 灾难恢复功能
 
-和可用性注意事项一样，Azure 提供了旨在支持灾难恢复的[复原能力技术指南](/documentation/articles/resiliency-technical-guidance/)。Azure 的某些可用性功能与灾难恢复之间还存在某种关系。例如，跨容错域管理角色可提高应用程序的可用性。如果没有此项管理，则未经处理的硬件故障将会演变为“灾难”情形。因此，应将正确地应用许多可用性功能和策略视为应用程序防灾的重要部分。但是，本文不仅介绍一般的可用性问题，还涉及到严重（且罕见）的灾难事件。
+与可用性注意事项一样，Azure 提供了旨在支持灾难恢复的[复原能力技术指南](/documentation/articles/resiliency-technical-guidance/)。Azure 的某些可用性功能与灾难恢复之间还存在某种关系。例如，跨容错域管理角色可提高应用程序的可用性。如果没有此项管理，则未经处理的硬件故障将会演变为“灾难”情形。因此，应将正确地应用许多可用性功能和策略视为应用程序防灾的重要部分。但是，本文不仅介绍一般的可用性问题，还涉及到严重（且罕见）的灾难事件。
 
 ##多个数据中心区域
 
@@ -144,7 +148,7 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 实施功能完备的灾难模式策略需要将事务数据异步复制到次要区域。可进行复制的实际时间范围将决定应用程序的 RPO 特征。你仍然可以从主要区域恢复在复制期间丢失的数据。以后还可以与次要区域合并。
 
-以下体系结构示例介绍在故障转移情况下处理事务数据的几种不同方式。这些示例并未尽列，注意到这一点很重要。例如，可将中间存储位置（如队列）替换为 Azure SQL 数据库。队列自身可以是 Azure 存储空间或服务总线队列（请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)）。服务器存储目标也可能有所不同，如使用 Azure 表而不是 SQL 数据库。此外，在不同步骤中，还可插入辅助角色作为中介。重要的不在于精确地模仿这些体系结构，而是在恢复事务数据和相关模块时考虑各种备选方法。
+以下体系结构示例介绍在故障转移情况下处理事务数据的几种不同方式。这些示例并未尽列，注意到这一点很重要。例如，可将中间存储位置（如队列）替换为 Azure SQL 数据库。队列自身可以是 Azure 存储或 Azure 服务总线队列（请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)）。服务器存储目标也可能有所不同，如使用 Azure 表而不是 SQL 数据库。此外，在不同步骤中，还可插入辅助角色作为中介。重要的不在于精确地模仿这些体系结构，而是在恢复事务数据和相关模块时考虑各种备选方法。
 
 ####复制事务数据以准备灾难恢复
 
@@ -208,8 +212,7 @@ Azure 存储空间内置的冗余性在同一区域中创建备份文件的两�
 
 ###主动-被动
 
-许多公司倾向于选择主动-被动模式。与重新部署模式相比，这种模式增加相对较少的成本即可提高 RTO。
-在此方案中，同样存在主辅 Azure 区域。所有流量均流向主要区域内的主动部署。次要区域为灾难恢复所做的准备更充分，因为两个区域内均运行有数据库。而且，它们之间还建立了同步机制。这种备用方法可能涉及两种变化形式：仅数据库方法或在次要区域内进行完全部署的方法。
+许多公司倾向于选择主动-被动模式。与重新部署模式相比，这种模式增加相对较少的成本即可提高 RTO。在此方案中，同样存在主辅 Azure 区域。所有流量均流向主要区域内的主动部署。次要区域为灾难恢复所做的准备更充分，因为两个区域内均运行有数据库。而且，它们之间还建立了同步机制。这种备用方法可能涉及两种变化形式：仅数据库方法或在次要区域内进行完全部署的方法。
 
 ####仅数据库
 
@@ -303,4 +306,4 @@ IaaS 解决方案还为本地应用程序使用 Azure 作为故障转移选项�
 
 本文是着重介绍[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)的系列教程的一部分。本系列教程的前一篇文章为[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applications/)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0926_2016-->

@@ -5,13 +5,17 @@
    services=""
    documentationCenter="na"
    authors="adamglick"
-   manager="hongfeig"
+   manager="saladki"
    editor=""/>
 
 <tags
    ms.service="resiliency"
-   ms.date="05/13/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/18/2016"
+   wacn.date="10/10/2016"/>
 
 #Azure 复原技术指南 - 数据损坏或意外删除后进行恢复
 
@@ -39,7 +43,7 @@
 <a id="database"></a>
 ##数据库
 
-Azure SQL 数据库有几个[业务连续性](/documentation/articles/sql-database-business-continuity/)（备份、还原）选项可供使用。可以使用[数据库复制](/documentation/articles/sql-database-copy/)功能或通过[导出](/documentation/articles/sql-database-export-powershell/)和[导入](https://msdn.microsoft.com/zh-cn/library/hh710052.aspx) SQL Server bacpac 文件来复制数据库。数据库复制提供事务一致的结果，而 bacpac（通过导入/导出服务）则不会提供事务一致的结果。这两种选项都在数据中心中作为基于队列的服务运行，当前不提供完成时间 SLA。
+Azure SQL 数据库提供了多个[业务连续性](/documentation/articles/sql-database-business-continuity/)（备份、还原）选项。可以使用[数据库复制](/documentation/articles/sql-database-copy/)功能或通过[导出](/documentation/articles/sql-database-export-powershell/)和[导入](https://msdn.microsoft.com/zh-cn/library/hh710052.aspx) SQL Server bacpac 文件来复制数据库。数据库复制提供事务一致的结果，而 bacpac（通过导入/导出服务）则不会提供事务一致的结果。这两种选项都在数据中心中作为基于队列的服务运行，当前不提供完成时间 SLA。
 
 >[AZURE.NOTE]数据库复制和导入/导出服务会对源数据库形成极大的负载。它们可能会触发资源争用或限制事件。
 
@@ -61,27 +65,33 @@ Azure SQL 数据库的时间点备份是通过[复制 Azure SQL 数据库](/docu
 ##数据损坏和意外删除清单
 
 ##虚拟机清单
+
   1. 查看本文档的[虚拟机](#virtual-machines)部分。
   2. 使用 Azure 备份（或者在你自己的备份系统中使用 Azure Blob 存储和 VHD 快照）来备份和维护 VM 磁盘。
 
 ##存储清单
+
   1. 查看本文档的[存储](#storage)部分。
   2. 定期备份重要的存储资源。
   3. 考虑对 Blob 使用快照功能。
 
 ##数据库清单
+
   1. 查看本文档的[数据库](#database)部分。
   2. 使用“数据库复制”命令创建时间点备份。
 
 ##虚拟机上的 SQL Server 备份清单
+
   1. 查看本文档的[虚拟机上的 SQL Server 备份](#sql-server-on-virtual-machines-backup)部分。
   2. 使用传统备份和还原技术。
   3. 创建延迟的日志传送会话。
 
 ##Web Apps 清单
+
   1. 备份和维护关联的数据库（如果有）。
 
 ##媒体服务清单
+
   1. 备份和维护关联的存储资源。
 
 <!-- ##详细信息
@@ -90,6 +100,6 @@ Azure SQL 数据库的时间点备份是通过[复制 Azure SQL 数据库](/docu
 
 ##后续步骤
 
-本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。如果你正在查找有关复原、灾难恢复和高可用性的其他资源，请参阅 Azure 复原技术指南中的[其他资源](/documentation/articles/resiliency-technical-guidance/#additional-resources)。
+本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。如果要查找有关复原、灾难恢复和高可用性的其他资源，请参阅 Azure 复原技术指南中的[其他资源](/documentation/articles/resiliency-technical-guidance/#additional-resources)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0926_2016-->

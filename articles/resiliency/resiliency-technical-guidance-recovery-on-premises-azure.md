@@ -5,13 +5,17 @@
    services=""
    documentationCenter="na"
    authors="adamglick"
-   manager="hongfeig"
+   manager="saladki"
    editor=""/>
 
 <tags
    ms.service="resiliency"
-   ms.date="05/13/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/18/2016"
+   wacn.date="10/10/2016"/>
 
 #Azure 复原技术指南：从本地恢复到 Azure
 
@@ -78,7 +82,7 @@ AlwaysOn 可用性组可在本地和云中都有数据库副本的混合 IT 环�
 
 ##Azure 中的本地恢复清单
 
-###网络
+###联网
 
   1. 查看本文档的[网络](#networking)部分。
   2. 使用虚拟网络安全地将本地部署与云相连。
@@ -89,6 +93,7 @@ AlwaysOn 可用性组可在本地和云中都有数据库副本的混合 IT 环�
   2. 在 Hyper-V 和 Azure 之间重新定位 VM。
 
 ###存储
+
   1. 查看本文档的[存储](#storage)部分。
   2. 通过 StorSimple 服务来使用云存储。
   3. 使用 Azure 备份服务。
@@ -106,4 +111,4 @@ AlwaysOn 可用性组可在本地和云中都有数据库副本的混合 IT 环�
 
 本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。本系列教程的下一篇文章是[数据损坏或意外删除后进行恢复](/documentation/articles/resiliency-technical-guidance-recovery-data-corruption/)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_0926_2016-->
