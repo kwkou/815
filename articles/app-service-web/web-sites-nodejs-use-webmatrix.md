@@ -96,7 +96,7 @@
 
 如果在将应用程序部署到 Azure 后遇到应用程序问题，请参阅[如何在 Azure App Service 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)以了解有关诊断问题的信息。
 [Azure 经典管理门户]: http://manage.windowsazure.cn
-[使用 Git 发布 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control/
+[使用 Git 发布 Azure Web 应用]: /documentation/articles/app-service-deploy-local-git/
 [免费]: /zh-cn/pricing/1rmb-trial
 [WebMatrix Web 应用]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
