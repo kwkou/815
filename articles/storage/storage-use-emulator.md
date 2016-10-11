@@ -154,13 +154,12 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 若要查看选项列表，请在命令提示符下键入 `/help`。
 
 | 选项 | 说明 | 命令 | 参数 |
-|--------|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+|--------|---------|--------------|--------------|
 | **启动** | 启动存储模拟器。 | `AzureStorageEmulator start [-inprocess]` | *-inprocess*：在当前进程中启动模拟器而不是创建一个新的进程。 |
 | **停止** | 停止存储模拟器。 | `AzureStorageEmulator stop` | |
 | **状态** | 打印存储模拟器的状态。 | `AzureStorageEmulator status` | |
-| **清除** | 清除命令行上指定的所有服务中的数据。 | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `  
-| *blob*：清除 Blob 数据。<br/>*queue*：清除队列数据。<br/>*table*：清除表数据。<br/>*all*：清除所有服务中的所有数据。 |
-| **Init** | 执行一次性初始化以设置模拟器。 | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | *-server serverName\\instanceName*：指定托管 SQL 实例的服务器。<br/>*-sqlinstance instanceName*：指定要在默认服务器实例中使用的 SQL 实例的名称。<br/>*-forcecreate*：强制创建 SQL 数据库，即使该数据库已经存在。<br/>*-inprocess*：在当前进程而不是生成新的进程中执行初始化。您必须使用提升的权限启动当前进程以执行初始化。 |
+| **清除** | 清除命令行上指定的所有服务中的数据。 | `AzureStorageEmulator clear [blob] [table] [queue] [all]` |  <p>*blob*：清除 Blob 数据。</p><p>*queue*：清除队列数据。</p><p>*table*：清除表数据。</p><p>*all*：清除所有服务中的所有数据。</p> |                                          
+| **Init** | 执行一次性初始化以设置模拟器。 | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | <p>*-server serverName\\instanceName*：指定托管 SQL 实例的服务器。</p><p>*-sqlinstance instanceName*：指定要在默认服务器实例中使用的 SQL 实例的名称。</p><p>*-forcecreate*：强制创建 SQL 数据库，即使该数据库已经存在。</p><p>*-inprocess*：在当前进程而不是生成新的进程中执行初始化。您必须使用提升的权限启动当前进程以执行初始化。</p> |
                                                                                                                   
 ##<a id="differences-between-the-storage-emulator-and-azure-storage"></a> 存储模拟器与 Azure 存储之间的差异
 
