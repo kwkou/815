@@ -130,7 +130,7 @@
 
 ### 用户
 
-Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 计划程序进行细致的访问管理。若要了解如何使用“用户”选项卡，请参阅 [Azure 基于角色的访问控制](../active-directory/role-based-access-control-configure.md)
+Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 计划程序进行细致的访问管理。若要了解如何使用“用户”选项卡，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)
 
 
 ## 另请参阅
