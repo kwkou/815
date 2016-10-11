@@ -8,15 +8,20 @@
    editor="" />
 <tags
    ms.service="expressroute"
-   ms.date="04/18/2016"
-   wacn.date="06/06/2016"/>
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/29/2016"
+   ms.author="cherylmc"
+   wacn.date="10/10/2016"/>
 
 # ExpressRoute 线路预配工作流和线路状态
 本页从较高层面引导你完成服务预配和路由配置工作流。
 
 ![](./media/expressroute-workflows/expressroute-circuit-workflow.png)
 
-上图和以下对应的步骤显示预配端到端 ExpressRoute 线路所要执行的操作。
+下图和相应的步骤说明了预配端到端 ExpressRoute 线路所要执行的任务。
 
 1. 使用 PowerShell 配置 ExpressRoute 线路。有关更多详细信息，请遵循[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)一文中的说明。
 
@@ -41,7 +46,7 @@
 - 服务提供商预配状态
 - 状态
 
-“状态”表示 Microsoft 的预配状态。此属性可能是以下状态之一：*Enabled*、*Enabling* 或 *Disabling*ExpressRoute 线路必须处于 Enabled 状态才可供使用。
+“状态”表示 Microsoft 的预配状态。创建 Expressroute 线路时，此属性设置为 Enabled
 
 连接服务提供商预配状态表示连接服务提供商一端的状态。该状态可能是 *NotProvisioned*、*Provisioning* 或 *Provisioned*。ExpressRoute 线路必须处于 Provisioned 状态才可供使用。
 
@@ -51,7 +56,7 @@
 
 #### 创建时
 
-运行 PowerShell cmdlet 创建 ExpressRoute 线路后，你很快就会看到 ExpressRoute 线路处于以下所述状态。
+运行 PowerShell cmdlet 创建 ExpressRoute 线路后，很快就会看到 ExpressRoute 线路处于以下状态。
 
 	ServiceProviderProvisioningState : NotProvisioned
 	Status                           : Enabled
@@ -59,7 +64,7 @@
 
 #### 当连接服务提供商正在预配线路时
 
-当你将服务密钥传递给连接服务提供商并且他们已启动预配过程时，你很快就会看到 ExpressRoute 线路处于以下所述状态。
+将服务密钥传递给连接服务提供商并且他们已启动预配过程时，很快就会看到 ExpressRoute 线路处于以下状态。
 
 	ServiceProviderProvisioningState : Provisioning
 	Status                           : Enabled
@@ -67,34 +72,28 @@
 
 #### 当连接服务提供商完成预配过程时
 
-当连接服务提供商完成预配过程后，你很快就会看到 ExpressRoute 线路处于以下所述状态。
+当连接服务提供商完成预配过程后，很快就会看到 ExpressRoute 线路处于以下状态。
 
 	ServiceProviderProvisioningState : Provisioned
 	Status                           : Enabled
 
 线路只有处于 Provisioned 和 Enabled 状态时才可供使用。如果你使用第 2 层服务提供商，则只有在线路处于此状态时才能配置路由。
 
-#### 如果先在 Azure 端启动取消预配
+#### 当连接服务提供商正在取消预配线路时
 
-运行 PowerShell cmdlet 删除 ExpressRoute 线路后，你很快就会看到 ExpressRoute 线路处于以下所述状态。
-
-	ServiceProviderProvisioningState : Provisioned
-	Status                           : Disabling
-
-你必须联系你的连接服务提供商来取消预配 ExpressRoute 线路。**重要说明：** Azure 将持续收取线路费用，直到你运行 PowerShell cmdlet 来取消预配线路为止。
-
-#### 如果已在服务提供商一端启动取消预配
-
-如果你已事先请求服务提供商取消预配 ExpressRoute 线路，当服务提供商完成取消预配过程后，你将看到线路已设置为以下所述状态。
+如果已请求服务提供商取消预配 ExpressRoute 线路，当服务提供商完成取消预配过程后，将看到线路已设置为以下状态。
 
 
 	ServiceProviderProvisioningState : NotProvisioned
 	Status                           : Enabled
 
-如果需要，你可以选择重新启用线路，或运行 PowerShell cmdlet 删除线路。**重要说明：** Azure 将持续收取线路费用，直到你运行 PowerShell cmdlet 来取消预配线路为止。
+
+如果需要，你可以选择重新启用线路，或运行 PowerShell cmdlet 删除线路。
+
+>[AZURE.IMPORTANT] 当 ServiceProviderProvisioningState 为 Provisioning 或 Provisioned 时，如果运行该 PowerShell cmdlet 来删除线路，操作将会失败。请先让连接服务提供商取消 ExpressRoute 线路，然后删除线路。在运行 PowerShell cmdlet 删除线路之前，Azure 会持续收取线路费用。
 
 
-## <a name="routing-session-configuration-state"></a>路由会话配置状态
+## 路由会话配置状态
 
 BGP 预配状态可让你知道  Azure 边缘是否已启用 BGP 会话。必须处于已启用状态才能使用对等互连。
 

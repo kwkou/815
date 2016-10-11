@@ -9,8 +9,13 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="04/15/2016"
-   wacn.date="06/06/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/29/2016"
+   ms.author="cherylmc"
+   wacn.date="10/10/2016"/>
 
 # 创建和修改 ExpressRoute 线路
 
@@ -30,14 +35,14 @@
 
 
 - 在开始配置之前，请查看[先决条件](/documentation/articles/expressroute-prerequisites/)和[工作流](/documentation/articles/expressroute-workflows/)。
-- 确保你有权访问 [Azure 门户](https://manage.windowsazure.cn)。
+- 确保有权访问 [Azure 门户预览](https://portal.azure.cn)。
 - 确保你有权创建新的网络资源。如果你没有适当的权限，请与帐户管理员联系。
 
 ## 创建和预配 ExpressRoute 线路
 
-### 1\.登录到 Azure 门户
+### 1\.登录到 Azure 门户预览
 
-从浏览器导航到 [Azure 门户](http://manage.windowsazure.cn)并使用 Azure 帐户登录。
+从浏览器导航到 [Azure 门户预览](http://portal.azure.cn)并使用 Azure 帐户登录。
 
 ### 2\.创建新的 ExpressRoute 线路
 
@@ -60,20 +65,20 @@
 
 **查看所有线路**
 
-在左侧菜单中选择“所有资源”即可查看你创建的所有线路。
+在左侧菜单中选择“所有资源”即可查看创建的所有线路。
 	
 ![查看线路](./media/expressroute-howto-circuit-portal-resource-manager/listresource.png)
 
 **查看属性**
 
-可以通过选择线路来查看其属性。在此边栏选项卡上，请注意线路的服务密钥。必须复制线路的线路密钥并将其传送给服务提供商，才能完成预配过程。线路密钥特定于你的线路。
+	可选中回路查看其属性。在此边栏选项卡上，记下回路的服务密钥。必须复制回路的密钥并将其传递给服务供应商，才可完成预配流程。回路密钥是特定的。
 
 ![查看属性](./media/expressroute-howto-circuit-portal-resource-manager/listproperties1.png)
 
 
 ### 4\.将服务密钥发送给连接服务提供商进行预配
 
-在此边栏选项卡中，“提供商状态”提供有关服务提供商端当前预配状态的信息。“线路状态”提供 Microsoft 端的状态。有关线路预配状态的详细信息，请参阅[工作流](/documentation/articles/expressroute-workflows/#expressroute-circuit-provisioning-states)这篇文章。
+在此边栏选项卡中，“提供商状态”提供有关服务提供商端当前预配状态的信息。“线路状态”提供 Microsoft 端的状态。有关线路预配状态的详细信息，请参阅 [Workflows](/documentation/articles/expressroute-workflows/#expressroute-circuit-provisioning-states)（工作流）一文。
 
 当你创建新的 ExpressRoute 线路时，线路将是以下状态：
 
@@ -95,7 +100,7 @@
 
 ### 5\.定期检查线路密钥的状态
 
-选中你感兴趣的线路即可查看其属性。选中“提供商状态”，确保在你继续之前其已转为“已预配”。
+选中你感兴趣的线路即可查看其属性。选中“提供商状态”，确保在继续之前其已转为“已预配”。
 
 
 ![线路和提供商状态](./media/expressroute-howto-circuit-portal-resource-manager/viewstatusprovisioned.png)
@@ -103,13 +108,13 @@
 
 ### 6\.创建路由配置
 
-如需分步说明，请参阅 [ExpressRoute 线路路由配置](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)这篇文章，了解如何创建和修改线路对等互连。
+有关分步说明，请参阅 [ExpressRoute circuit routing configuration](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)（ExpressRoute 线路路由配置）一文，了解如何创建和修改线路对等互连。
 
 >[AZURE.IMPORTANT] 这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IP VPN，如 MPLS），则连接服务提供商将为你配置和管理路由。
 
 ### 7\.将虚拟网络链接到 ExpressRoute 线路
 
-接下来，将虚拟网络链接到 ExpressRoute 线路。在使用 Resource Manager 部署模式时，请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)这篇文章。
+接下来，将虚拟网络链接到 ExpressRoute 线路。使用 Resource Manager 部署模式时，请参阅 [Linking virtual networks to ExpressRoute circuits](/documentation/articles/expressroute-howto-linkvnet-arm/)（将虚拟网络链接到 ExpressRoute 线路）一文。
 
 ## 获取 ExpressRoute 线路的状态
 
@@ -130,20 +135,20 @@
 
 - 将计量套餐从数据流量套餐更改为无限制流量套餐。请注意，不支持将计量套餐从无限制流量套餐更改为数据流量套餐。
 
--  你可以启用和禁用“允许经典操作”。
+-  可以启用和禁用“允许经典操作”。
 
-有关限制和局限的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
+有关限制和局限性的详细信息，请参阅 [ExpressRoute FAQ](/documentation/articles/expressroute-faqs/)（ExpressRoute 常见问题）。
 
 
-## 删除和取消预配 ExpressRoute 线路
+## 取消预配和删除 ExpressRoute 线路
 
 可以通过选择“删除”图标来删除 ExpressRoute 线路。注意以下事项：
 
 - 必须取消所有虚拟网络与 ExpressRoute 线路的链接。如果此操作失败，请检查是否有虚拟网络链接到了该线路。
 
-- 如果启用了 ExpressRoute 线路服务提供商预配状态，则状态将从已启用状态转为“正在禁用”。你必须通过服务提供商在他们那一侧取消对线路的预配。在服务提供商取消对线路的预配并通知我们之前，我们会继续保留资源并向你收费。
+- 如果 ExpressRoute 线路服务提供商预配状态为“正在预配”或“已预配”，则必须与服务提供商合作，在他们一端取消预配线路。在服务提供商取消对线路的预配并通知我们之前，我们会继续保留资源并向你收费。
 
-- 如果在你运行前述 cmdlet 之前，服务提供商已取消对线路的预配（服务提供商预配状态已设置为“未预配”），我们会取消对线路的预配，并停止向你收费。
+- 如果服务提供商已取消预配线路（服务提供商预配状态设置为“未预配”），则可以删除线路。这样就会停止线路计费
 
 ## 后续步骤
 
