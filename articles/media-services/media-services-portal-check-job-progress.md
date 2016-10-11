@@ -7,12 +7,15 @@
 	manager="erikre" 
 	editor=""/>  
 
-
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"  
-	wacn.date="08/22/2016"/>
-
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/29/2016"  
+	wacn.date="10/10/2016"
+	ms.author="juliako"/>
 
 #如何：检查作业进度
 
@@ -40,4 +43,4 @@
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->

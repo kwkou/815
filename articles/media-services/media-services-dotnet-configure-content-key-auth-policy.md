@@ -3,18 +3,24 @@
 	description="了解如何使用适用于 .NET 的媒体服务 SDK 配置内容密钥的授权策略。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,Mingfeiy" 
+	authors="Mingfeiy" 
 	manager="erikre" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/15/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/15/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako;mingfeiy"/>
 
 
 
-#动态加密：配置内容密钥授权策略 
+# 动态加密：配置内容密钥授权策略
+
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
 ##概述
@@ -436,4 +442,4 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)主题。
  
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0926_2016-->

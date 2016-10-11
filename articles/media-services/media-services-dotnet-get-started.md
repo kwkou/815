@@ -1,16 +1,22 @@
 <properties
-	pageTitle="使用 .NET SDK 开始传送点播内容"
+	pageTitle="开始使用 .NET 传送点播内容 | Azure"
 	description="本教程将引导你完成使用 Azure 媒体服务和 .NET 实施点播内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
- 	ms.date="07/18/2016"
-	wacn.date="09/28/2016"/>
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="hero-article"
+ 	ms.date="08/17/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako"/>
 
 
 # 使用 .NET SDK 开始传送点播内容
@@ -259,7 +265,7 @@
 
 若要使用动态打包，必须执行下列操作：
 
-- 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件，  
+- 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件，
 - 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
 
 以下代码演示如何提交编码作业。该作业所包含的一项任务会指定要使用 **Media Encoder Standard** 将夹层文件转码成一组自适应比特率 MP4。代码会提交作业，并等待作业完成。
@@ -400,7 +406,7 @@ MPEG DASH 的流 URL 采用以下格式：
 
 在执行上一部分中定义的程序后，控制台窗口中会显示如下所示的 URL。
 
-自适应流式处理 URL：
+自适应流 URL：
 
 平滑流
 
@@ -450,7 +456,8 @@ MPEG DASH
 
 
 <!-- URLs. -->
+
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0926_2016-->

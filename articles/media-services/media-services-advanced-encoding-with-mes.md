@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/22/2016"   
-	wacn.date="08/15/2016"/>
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/30/2016"
+	wacn.date="10/10/2016"   
+	ms.author="juliako"/>
 
 
 #使用媒体编码器标准版进行高级编码
@@ -29,7 +34,7 @@
 - [仅音频预设](/documentation/articles/media-services-advanced-encoding-with-mes/#audio_only)
 - [连接两个或更多个视频文件](/documentation/articles/media-services-advanced-encoding-with-mes/#concatenate)
 - [使用媒体编码器标准版裁剪视频](/documentation/articles/media-services-advanced-encoding-with-mes/#crop)
-
+- [在输入不包含视频时插入视频轨迹](/documentation/articles/media-services-advanced-encoding-with-mes/#no_video)
 
 ##<a id="encoding_with_dotnet"></a>使用媒体服务 .NET SDK 进行编码
 
@@ -43,7 +48,7 @@
 	    string configuration = File.ReadAllText(fileName);  
 - 将编码任务添加到作业。
 - 指定要编码的输入资产。
-- 创建将包含所编码资产的输出资产。
+- 创建包含所编码资产的输出资产。
 - 添加事件处理程序以检查作业进度。
 - 提交作业。
 	
@@ -250,12 +255,12 @@
 	
 ##<a id="thumbnails"></a>生成缩略图
 
-本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并添加生成缩略图的代码。
+本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并添加生成缩略图的代码。
 
->[AZURE.NOTE]如果要编码为单比特率视频，以下预设中的 **SceneChangeDetection** 设置只能设为 true。如果要编码为多比特率视频并将 **SceneChangeDetection** 设为 true，则编码器将返回错误。
+>[AZURE.NOTE]如果要编码为单比特率视频，以下预设中的 **SceneChangeDetection** 设置只能设置为 true。如果要编码为多比特率视频并将 **SceneChangeDetection** 设置为 true，则编码器将返回错误。
 
 
-有关架构的信息，请参阅[此](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)主题。
+有关架构的信息，请参阅[此主题](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
 
 请务必仔细阅读[注意事项](/documentation/articles/media-services-advanced-encoding-with-mes/#considerations)部分。
 
@@ -365,7 +370,7 @@
 
 
 	<?xml version="1.0" encoding="utf-16"?>
-	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.cn/media/encoding/Preset/2014/03">
+	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
 	  <Encoding>
 	    <H264Video>
 	      <KeyFrameInterval>00:00:02</KeyFrameInterval>
@@ -444,8 +449,8 @@
 - Jpg/Png/BmpImage 元素包含 Start、Step 和 Range 字符串属性 – 这些属性解释如下：
 
 	- 帧数（如果为非负整数），例如："Start": "120"；
-	- 相对于源持续时间（如果以 % 后缀表示），例如："Start": "15%"，或者
-	- 时间戳（如果以 HH:MM:SS... 格式表示）。例如"Start" : "00:01:00"
+	- 相对于源持续时间（如果以 % 为后缀表示），例如："Start": "15%"，或者
+	- 时间戳（如果以 HH:MM:SS... 格式表示），例如，"Start" : "00:01:00"
 
 	你可以随意混搭使用表示法。
 	
@@ -458,7 +463,7 @@
 
 本部分说明如何修改编码器预设，以裁剪或修剪其输入为所谓的夹层文件或按需文件的输入视频。也可以使用编码器来剪辑或剪裁从实时流捕获或存档的资产 — [此博客](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)提供了详细信息。
 
-若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。请注意，**Sources** 应位于预设的开始处。
+若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。**Sources** 应位于预设的开始处。
  
 ###<a id="json"></a>JSON 预设
 	
@@ -582,7 +587,7 @@
 
 ###XML 预设
 	
-若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。
+若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并修改 **Sources** 元素（如下所示）。
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.cn/media/encoding/Preset/2014/03">
@@ -857,11 +862,11 @@
 
 ##<a id="silent_audio"></a>在输入不包含音频时插入静音曲目
 
-默认情况下，如果你要向编码器发送仅包含视频而不包含音频的输入，输出资产将包含仅有视频数据的文件。某些播放器可能无法处理此类输出流。对于这种方案，你可以使用此设置来强制编码器将静音曲目添加到输出。
+默认情况下，如果要向编码器发送仅包含视频而不包含音频的输入，则输出资产将包含仅有视频数据的文件。某些播放器可能无法处理此类输出流。对于这种方案，你可以使用此设置来强制编码器将静音曲目添加到输出。
 
 若要强制编码器在输入不包含音频时生成包含静音曲目的资产，请指定“InsertSilenceIfNoAudio”值。
 
-你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
+可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
 
 ###JSON 预设
 
@@ -962,9 +967,9 @@
 	  ]
 	}
 
-##<a id="concatenate"></a>连接两个或更多个视频文件
+##<a id="concatenate"></a>连接两个或更多视频文件
 
-以下示例演示如何生成预设来连接两个或更多个视频文件。最常见的应用场景：你想在主视频中添加标题或预告片。预期使用场合：当一起编辑的视频文件共享相同的属性（视频分辨率、帧速率、音轨计数等）时。务必注意不要混合使用不同帧速率或不同音轨数的视频。
+以下示例演示如何生成预设来连接两个或更多个视频文件。最常见的应用场景：你想在主视频中添加标题或预告片。预期使用场合：当一起编辑的视频文件共享属性（视频分辨率、帧速率、音轨计数等）时。务必注意不要混合使用不同帧速率或不同音轨数的视频。
 
 ###要求和注意事项
 
@@ -1073,10 +1078,64 @@
 
 ##<a id="crop"></a>使用媒体编码器标准版裁剪视频
 
-请参阅主题[《Crop videos with Media Encoder Standard》](/documentation/articles/media-services-crop-video/)（使用媒体编码器标准版裁剪视频）。
+请参阅主题 [Crop videos with Media Encoder Standard](/documentation/articles/media-services-crop-video/)（使用媒体编码器标准版裁剪视频）主题。
+
+##<a id="no_video"></a>在输入不包含视频时插入视频轨迹
+
+默认情况下，如果要向编码器发送仅包含音频而不包含视频的输入，则输出资产将包含仅有音频数据的文件。某些播放器（包括 Azure 媒体播放器）（请参阅[此处](https://feedback.azure.com/forums/169396-azure-media-services/suggestions/8082468-audio-only-scenarios)）可能无法处理这样的流。对于这种方案，可使用此设置来强制编码器将单色视频轨迹添加到输出。
+
+>[AZURE.NOTE]强制编码器插入输出视频轨迹会增加输出资产的大小，从而增加编码任务的相关成本。应运行测试来验证此成本增加对每月费用的影响不大。
+
+### 仅以最低比特率插入视频
+
+假设要使用多比特率编码预设（如[“H264 多比特率 720p”](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)）对整个输入目录进行编码以实现流式处理，且输入目录中混合了视频文件和仅音频文件。在此方案中，如果输入不包含视频，用户可能想要强制编码器仅以最低比特率插入单色视频轨迹，而不是按每个输出比特率插入视频。要实现此目的，需要指定“InsertBlackIfNoVideoBottomLayerOnly”标志。
+
+可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
+
+#### JSON 预设
+
+	{
+	      "KeyFrameInterval": "00:00:02",
+	      "StretchMode": "AutoSize",
+	      "Condition": "InsertBlackIfNoVideoBottomLayerOnly",
+	      "H264Layers": [
+	      …
+	      ]
+	}
+
+#### XML 预设
+
+	<KeyFrameInterval>00:00:02</KeyFrameInterval>
+	<StretchMode>AutoSize</StretchMode>
+	<Condition>InsertBlackIfNoVideoBottomLayerOnly</Condition>
+
+### 按所有输出比特率插入视频
+
+假设要使用多比特率编码预设（如[“H264 多比特率 720p”](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)）对整个输入目录进行编码以实现流式处理，且输入目录中混合了视频文件和仅音频文件。在此方案中，如果输入不包含视频，用户可能想要强制编码器按所有输出比特率插入单色视频轨迹。这可确保对于视频轨迹和音频曲目的数目，输出资产都是同源的。要实现此目的，需要指定“InsertBlackIfNoVideo”标志。
+
+可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
+
+#### JSON 预设
+
+	{
+	      "KeyFrameInterval": "00:00:02",
+	      "StretchMode": "AutoSize",
+	      "Condition": "InsertBlackIfNoVideo",
+	      "H264Layers": [
+	      …
+	      ]
+	}
+
+#### XML 预设
+	
+	<KeyFrameInterval>00:00:02</KeyFrameInterval>
+	<StretchMode>AutoSize</StretchMode>
+	<Condition>InsertBlackIfNoVideo</Condition>
+
+
 
 ##另请参阅 
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0926_2016-->

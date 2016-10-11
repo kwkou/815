@@ -5,13 +5,17 @@
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>  
+	editor=""/>
 
-
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"  
-	wacn.date="08/22/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/17/2016"  
+	wacn.date="10/10/2016"
+	ms.author="juliako"/>  
 
 
 # 使用 Azure 经典管理门户管理 Azure 媒体服务的内容
@@ -44,11 +48,11 @@
 	![UploadContentDialog][uploadcontent]
 
 5. 在“上载内容”对话框中，单击勾选按钮以接受文件和内容名称。
-6. 随后将开始上载，你可以从门户底部跟踪进度。
+6. 上传随即开始。可以从门户底部跟踪进度。
 
 	![JobStatus][status]
 
-上载完成后，内容列表中会列出新的资产。根据约定，名称的末尾将附加“**-Source**”，以便将新内容作为编码任务的源内容进行跟踪。
+上传完成后，内容列表中会列出新的资产。根据约定，名称的末尾将附加“**-Source**”，以便将新内容作为编码任务的源内容进行跟踪。
 
 ![ContentPage][contentpage]
 
@@ -64,7 +68,10 @@
 
 下面的步骤演示如何使用 Azure 经典管理门户为内容编制索引。
 
-1. 选择要编制索引的文件。如果此文件类型支持索引，则“内容”页底部将启用“处理”按钮。
+1. 选择要编制索引的文件。
+
+	如果此文件类型支持索引，则“内容”页底部将启用“处理”按钮。
+	
 1. 按“处理”按钮。
 2. 在“处理”对话框中，选择“Azure 媒体索引器”处理器。
 3. 然后，在“处理”对话框中，填写输入媒体文件的详细**标题**和**说明**信息。
@@ -78,35 +85,38 @@
 - [REST](/documentation/articles/media-services-rest-encode-asset/)
 - [门户](/documentation/articles/media-services-manage-content/#encode)
 
-要通过 Internet 传送数字视频，你必须对媒体进行压缩。媒体服务提供了一个媒体编码器，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
+要通过 Internet 传送数字视频，必须对媒体进行压缩。媒体服务提供了一个 Media Encoder ，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
 
 使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
+使用媒体服务提供的动态打包，可采用媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流式处理格式。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
 - 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
-通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
+通过动态打包，只需要存储及支付一种存储格式的文件，媒体服务就会根据客户端的要求创建并提供适当的响应。
 
-请注意，除了能够使用动态打包功能以外，点播流保留单元也为你提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，点播流在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
+除了能够使用动态打包功能以外，按需流式处理保留单元还提供了可按照 200 Mbps 的增量购买的专用出口容量。默认情况下，按需流式处理在共享实例模型中配置，该模型的服务器资源（例如计算、出口容量）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
 
 本部分介绍通过 Azure 经典管理门户使用媒体编码器标准版为内容编码时可以执行的步骤。
 
-1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
-4. 在“处理”对话框中，选择“媒体编码器标准版”处理器。
-5. 选择其中一个“编码配置”。
+1.  选择要编码的文件。
 
-![Process2][process2]  
+	如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
+
+2. 在“处理”对话框中，选择“媒体编码器标准版”处理器。
+3. 选择其中一个“编码配置”。
+
+	![Process2][process2]  
 
 
 
-[媒体编码器标准版的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
+	[媒体编码器标准版的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
 
-5. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
-6. 按“确定”。
+4. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
+5. 按“确定”。
 
 完成编码后，“内容”页将包含已编码的文件。
 
@@ -167,9 +177,9 @@ SAS URL 采用以下格式：
 
 定位符附带过期日期。当你使用门户发布资产时，将会创建过期日期在 100 年后的定位符。
 
->[AZURE.NOTE] 如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
+>[AZURE.NOTE] 如果在 2015 年 3 月之前使用了门户创建定位符，则会创建到期日期在两年后的定位符。
 
-若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET] (https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET] (https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，更新 SAS 定位符的到期日期时，URL 会发生变化。
 
 ###发布
 
@@ -210,4 +220,4 @@ SAS URL 采用以下格式：
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->

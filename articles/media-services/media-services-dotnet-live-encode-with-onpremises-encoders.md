@@ -1,18 +1,30 @@
 <properties 
-	pageTitle="如何使用本地编码器执行实时流式处理" 
-	description="本主题演示如何使用 .NET 通过本地编码器进行实时编码。" 
+	pageTitle="如何使用 .NET 通过本地编码器执行实时传送视频流 | Azure" 
+	description="本主题演示如何使用 .NET 通过本地编码器执行实时编码。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako,cenkdin" 
-	manager="dwrede" 
+	authors="Juliako" 
+	manager="erikre" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
- 	ms.date="05/05/2016"  
-	wacn.date="06/20/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
+ 	ms.date="08/31/2016"  
+	wacn.date="10/10/2016"
+	ms.author="cenkdin;juliako"/>
 
-#如何使用本地编码器执行实时流式处理
+#如何使用 .NET 通过本地编码器执行实时传送视频流
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-dotnet-live-encode-with-onpremises-encoders/)
+- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
+
+本教程将逐步演示如何使用 Azure 媒体服务 .NET SDK 创建为实现直通传送而配置的**频道**。
+
 
 ##先决条件
 
@@ -21,16 +33,16 @@
 - 一个 Azure 帐户。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。
 - 设置开发环境。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-set-up-computer/)。
-- 网络摄像机。例如，[Telestream Wirecast 编码器](http://www.telestream.net/wirecast/overview.htm)。 
+- 网络摄像机。例如，[Telestream Wirecast 编码器](http://www.telestream.net/wirecast/overview.htm)。
 
 建议阅读以下文章：
 
 - [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
 - [使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)
- 
+
 
 ##示例
-	
+
 下面的代码示例演示如何完成以下任务：
 
 - 连接到媒体服务
@@ -44,7 +56,7 @@
 - 更新流式处理终结点
 - 获取所有流式处理终结点的定位符
 - 关闭资源
-	
+
 有关如何配置实时编码器的信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 		using System;
@@ -119,7 +131,7 @@
 		
 		        public static IChannel CreateAndStartChannel()
 		        {
-					//If you want to change the Smooth fragments to HLS segment ratio, you would set the ChannelCreationOptions’s Output property.
+				//If you want to change the Smooth fragments to HLS segment ratio, you would set the ChannelCreationOptions’s Output property.
 	
 		            IChannel channel = _context.Channels.Create(
 		                new ChannelCreationOptions
@@ -385,5 +397,4 @@
 		    }
 		}
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0926_2016-->

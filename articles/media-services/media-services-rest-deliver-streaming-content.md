@@ -1,20 +1,24 @@
 <properties 
-	pageTitle="如何从媒体服务传送流内容" 
+	pageTitle="使用 REST 发布 Azure 媒体服务内容" 
 	description="了解如何创建用于生成流 URL 的定位符。代码使用 REST API。" 
 	authors="Juliako" 
 	manager="erikre" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>  
+	documentationCenter=""/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/30/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako"/>
 
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
-
-
-#如何：传送流内容
+# 使用 REST 发布 Azure 媒体服务内容
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-deliver-streaming-content/)
@@ -24,11 +28,11 @@
 ##概述
 
 
-你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-rest-encode-asset/)主题说明了如何编码成自适应比特率 MP4 集。如果内容已加密，则在创建定位符之前配置资产传送策略（如[本](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)主题中所述）。
+你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-rest-encode-asset/)主题说明了如何编码成自适应比特率 MP4 集。如果内容已加密，则在创建定位符之前配置资产传送策略（如[此](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)主题中所述）。
 
 你也可以使用 OnDemand 流式处理定位符生成指向可渐进式下载的 MP4 文件的 URL。
 
-本主题说明如何创建 OnDemand 流式处理定位符，以发布资产及生成平滑流、MPEG DASH 和 HLS 流 URL。此外，还将示范如何生成渐进式下载 URL。
+本主题说明如何创建 OnDemand 流式处理定位符，以发布资产及生成平滑流、MPEG DASH 和 HLS 流式处理 URL。此外，还将示范如何生成渐进式下载 URL。
 
 [以下](#types)部分显示了其值将在 REST 调用中使用的枚举类型。
   
@@ -181,4 +185,4 @@ URL：**路径** + 资产文件 mp4 名称
 
 [配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->

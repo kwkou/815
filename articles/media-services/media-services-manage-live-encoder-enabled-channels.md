@@ -3,15 +3,19 @@
 	description="本主题介绍如何设置频道，以从本地编码器接收单比特率实时流，然后使用媒体服务执行实时编码以将其转换为自适应比特率流。然后，该流可以使用以下自适应流式处理协议之一通过一个或多个流式处理终结点传递给客户端播放应用程序：HLS、平滑流、MPEG DASH、HDS。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
-	manager="dwrede" 
-	editor=""/>  
+	authors="anilmur" 
+	manager="erikre" 
+	editor=""/>
 
-
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/15/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako;anilmur"/>  
 
 
 #使用 Azure 媒体服务执行实时流式处理以创建多比特率流
@@ -191,23 +195,23 @@
 - 音频流应具有小于 1 Mbps 的平均比特率
 - 以下是支持的编解码器：
 
-	- MPEG-4 AVC/H.264 Video  
-	
-		- Baseline、Main、High Profile（8 位 4:2:0）
-		- High 10 Profile（10 位 4:2:0）
-		- High 422 Profile（10 位 4:2:2）
+- MPEG-4 AVC/H.264 Video
 
-	- MPEG-2 AAC-LC Audio
+- Baseline、Main、High Profile（8 位 4:2:0）
+- High 10 Profile（10 位 4:2:0）
+- High 422 Profile（10 位 4:2:2）
 
-		- Mono、Stereo、Surround (5.1, 7.1)
-		- 44\.1 kHz 采样率
-		- MPEG-2 样式 ADTS 打包
-	
+- MPEG-2 AAC-LC Audio
+
+- Mono、Stereo、Surround (5.1, 7.1)
+- 44\.1 kHz 采样率
+- MPEG-2 样式 ADTS 打包
+
 - 建议的编码器包括：
 
-	- Telestream Wirecast
-	- Flash 媒体实时编码器
-	- Tricaster
+- Telestream Wirecast
+- Flash 媒体实时编码器
+- Tricaster
 
 ####单比特率分片 MP4（平滑流）
 
@@ -250,7 +254,7 @@
 
 在频道开始摄取数据后，你可以预览流。
 
->[AZURE.NOTE]当前，不管指定了哪种输入类型，都只能以分片 MP4（平滑流）格式来传送预览流。你可以使用 [http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 经典管理门户中承载的播放器来查看你的流。
+>[AZURE.NOTE]当前，不管指定了哪种输入类型，都只能以分片 MP4（平滑流）格式来传送预览流。你可以使用 [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 经典管理门户中承载的播放器来查看你的流。
 
 ###允许的 IP 地址
 
@@ -467,4 +471,4 @@
 
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->

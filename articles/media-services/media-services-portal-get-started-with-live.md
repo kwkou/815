@@ -3,15 +3,19 @@
 	description="本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。"
 	services="media-services"
 	documentationCenter=""
-	authors="Juliako,cenkdin"
+	authors="cenkdin"
 	manager="erikre"
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"/>
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="ne"
+	ms.topic="article"
+	ms.date="09/15/2016" 
+	wacn.date="10/10/2016"
+	ms.author="juliako;cenkd"/>
 
 
 # 使用 Azure 经典管理门户创建从本地编码器接收多比特率实时流的通道
@@ -203,4 +207,4 @@
 
 <!-- Images -->
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->
