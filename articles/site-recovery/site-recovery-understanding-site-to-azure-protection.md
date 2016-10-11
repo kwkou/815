@@ -37,11 +37,11 @@ Hyper-V 站点部署与 VMM 部署相同 – 唯一区别在于提供程序和�
 ### 启用保护
 一旦从门户或本地保护一个虚拟机，则系统将启动一个名为 *启用保护* 的 ASR 作业，并在 JOBS 选项卡下进行监视。
 
-![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image001.PNG)
+![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image01.png)
 
 *启动保护* 作业在调用 [CreateReplicationRelationship](https://msdn.microsoft.com/zh-cn/library/hh850036.aspx)（使用在保护期间配置的输入创建到 Azure 的复制）之前检查先决条件。*启用保护* 作业通过调用 [StartReplication](https://msdn.microsoft.com/zh-cn/library/hh850303.aspx)（将虚拟机的虚拟磁盘发送到 Azure），从本地开始初始复制。
 
-![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/IMAGE002.PNG)
+![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image02.png)
 
 ### 完成保护
 当触发初始复制时，系统会拍摄一个 [Hyper-V 虚拟机快照](https://technet.microsoft.com/zh-cn/library/dd560637.aspx)。系统逐个处理虚拟硬盘，直到所有硬盘都被上载到 Azure。根据磁盘大小和带宽，这通常要花一段时间才能完成。请参阅[如何管理本地到 Azure 保护网络带宽使用](https://support.microsoft.com/zh-cn/kb/3056159)以优化你的网络使用。在初始复制完成时，*在虚拟机上完成保护*作业配置网络和复制后设置。当初始复制正在进行时，对磁盘做出的所有更改都会被记录下来，如下面的“增量复制”所述。当初始复制正在进行时，快照和 HRL 文件会占用额外的磁盘存储空间。在初始复制完成后，Hyper-V 虚拟机快照将被删除，导致系统将初始复制之后发生的数据变更合并到父磁盘中。
