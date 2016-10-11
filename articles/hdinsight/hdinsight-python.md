@@ -228,7 +228,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
-1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [pig\_python.py](#jythonpy) 在开发计算机上创建文件的本地副本。
+1. 使用 Python 示例 [streaming.py](#streamingpy) 和 pig_python.py 在开发计算机上创建文件的本地副本。
 
 2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **pig\_python.py** 文件上载到服务器。在脚本的前三行中，替换 Azure HDInsight 群集的名称，以及 **streaming.py** 和 **pig\_python.py** 文件的路径。
 

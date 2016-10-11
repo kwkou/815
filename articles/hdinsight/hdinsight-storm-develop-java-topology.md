@@ -34,7 +34,7 @@
 
 * <a href="https://maven.apache.org/download.cgi" target="_blank">Maven</a>：Maven 是 Java 项目的项目生成系统。
 
-* 文本编辑器，例如记事本、<a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs<a>、<a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>、<a href="https://atom.io/" target="_blank">Atom.io</a>、<a href="http://brackets.io/" target="_blank">Brackets.io</a>。或者使用集成开发环境 (IDE)，例如 <a href="https://eclipse.org/" target="_blank">Eclipse</a>（Luna 或更高版本）。
+* 文本编辑器，例如记事本、<a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs</a>、<a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>、<a href="https://atom.io/" target="_blank">Atom.io</a>、<a href="http://brackets.io/" target="_blank">Brackets.io</a>。或者使用集成开发环境 (IDE)，例如 <a href="https://eclipse.org/" target="_blank">Eclipse</a>（Luna 或更高版本）。
 
 	> [AZURE.NOTE] 你的编辑器或 IDE 可能具有处理 Maven 的特定功能，但本文档中未提供说明。有关环境编辑功能的详细信息，请参阅所使用产品的文档。
 
@@ -80,15 +80,15 @@
 
 Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache.org</url>` 行的后面添加以下内容：
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!--
-        Storm 0.10.0 is for HDInsight 3.3 and 3.4.
-        To find the version information for earlier HDInsight cluster
-        versions, see /documentation/articles/hdinsight-component-versioning-v1/
-        -->
-        <storm.version>0.10.0</storm.version>
-    </properties>
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <!--
+            Storm 0.10.0 is for HDInsight 3.3 and 3.4.
+            To find the version information for earlier HDInsight cluster
+            versions, see /documentation/articles/hdinsight-component-versioning-v1/
+            -->
+            <storm.version>0.10.0</storm.version>
+        </properties>
 
 现在，可以在其他部分中使用这些值。例如，在指定 Storm 组件的版本时，可以使用 `${storm.version}` 而无需将值硬编码。
 
@@ -96,13 +96,13 @@ Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache
 
 由于这是一个 Storm 拓扑，因此你必须添加 Storm 组件的依赖项。打开 **pom.xml**，并在 **&lt;dependencies>** 节中添加以下代码：
 
-	<dependency>
-	  <groupId>org.apache.storm</groupId>
-	  <artifactId>storm-core</artifactId>
-      <version>${storm.version}</version>
-	  <!-- keep storm out of the jar-with-dependencies -->
-	  <scope>provided</scope>
-	</dependency>
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>${storm.version}</version>
+            <!-- keep storm out of the jar-with-dependencies -->
+            <scope>provided</scope>
+        </dependency>
 
 在编译时，Maven 会使用此信息来查找 Maven 存储库中的 **storm-core**。它会先查找本地计算机上的存储库。如果文件不存在，它会从公共 Maven 存储库下载这些文件，并将其存储在本地存储库中。
 
@@ -112,12 +112,12 @@ Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache
 
 Maven 插件可让你自定义项目的生成阶段，例如，如何编译项目，或者如何将它打包成 JAR 文件。打开 **pom.xml**，并紧靠在 `</project>` 行的上方添加以下代码。
 
-	<build>
-	  <plugins>
-	  </plugins>
-      <resources>
-      </resources>
-	</build>
+        <build>
+            <plugins>
+            </plugins>
+            <resources>
+            </resources>
+        </build>
 
 此节用于添加插件、资源和其他生成配置选项。有关 __pom.xml__ 文件的完整参考信息，请参阅 [http://maven.apache.org/pom.html](http://maven.apache.org/pom.html)。
 
@@ -125,25 +125,25 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 针对 Storm 拓扑，<a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Exec Maven 插件</a>十分有用，因为它可让你轻松地在开发环境本地运行拓扑。将以下内容添加至 **pom.xml** 文件的 `<plugins>` 节，以包括 Exec Maven 插件：
 
-	<plugin>
-      <groupId>org.codehaus.mojo</groupId>
-      <artifactId>exec-maven-plugin</artifactId>
-      <version>1.4.0</version>
-      <executions>
-        <execution>
-        <goals>
-          <goal>exec</goal>
-        </goals>
-        </execution>
-      </executions>
-      <configuration>
-        <executable>java</executable>
-        <includeProjectDependencies>true</includeProjectDependencies>
-        <includePluginDependencies>false</includePluginDependencies>
-        <classpathScope>compile</classpathScope>
-        <mainClass>${storm.topology}</mainClass>
-      </configuration>
-    </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.4.0</version>
+            <executions>
+                <execution>
+                <goals>
+                <goal>exec</goal>
+                </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <executable>java</executable>
+                <includeProjectDependencies>true</includeProjectDependencies>
+                <includePluginDependencies>false</includePluginDependencies>
+                <classpathScope>compile</classpathScope>
+                <mainClass>${storm.topology}</mainClass>
+            </configuration>
+        </plugin>
 
 > [AZURE.NOTE] 请注意，`<mainClass>` 项使用 `${storm.topology}`。我们并未事先在 properties 节中定义此值（但应该定义。） 不过，在稍后的步骤中，将在开发环境中运行拓扑时从命令行设置此值。
 
@@ -151,27 +151,27 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 在 **pom.xml** 的 `<plugins>` 节中添加以下内容，以包括 Apache Maven Compiler 插件并将源和目标版本设置为 1.7。
 
-	<plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <version>3.3</version>
-      <configuration>
-        <source>1.7</source>
-        <target>1.7</target>
-      </configuration>
-    </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.3</version>
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+            </configuration>
+        </plugin>
 
 ###配置资源
 
 使用 resources 节可以包含非代码资源，例如拓扑中组件所需的配置文件。本示例将在 **pom.xml** 文件的 `<resources>` 节中添加以下内容。
 
-    <resource>
-        <directory>${basedir}/resources</directory>
-        <filtering>false</filtering>
-        <includes>
-          <include>log4j2.xml</include>
-        </includes>
-    </resource>
+        <resource>
+            <directory>${basedir}/resources</directory>
+            <filtering>false</filtering>
+            <includes>
+            <include>log4j2.xml</include>
+            </includes>
+        </resource>
 
 这会将项目根目录 (`${basedir}`) 中的 resources 目录添加为包含资源的位置，并包含名为 __log4j2.xml__ 的文件。此文件用于配置拓扑所要记录的信息。
 
@@ -497,22 +497,22 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 Storm 使用 Apache Log4j 来记录信息。如果未配置日志记录，拓扑将发出许多难以阅读的诊断信息。若要控制所记录的信息，请在 __resources__ 目录中创建名为 __log4j2.xml__ 的文件。将以下内容用作该文件的内容。
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <Configuration>
-    <Appenders>
-        <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
-        </Console>
-    </Appenders>
-    <Loggers>
-        <Logger name="com.microsoft.example" level="trace" additivity="false">
-            <AppenderRef ref="STDOUT"/>
-        </Logger>
-        <Root level="error">
-            <Appender-Ref ref="STDOUT"/>
-        </Root>
-    </Loggers>
-    </Configuration>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <Configuration>
+        <Appenders>
+            <Console name="STDOUT" target="SYSTEM_OUT">
+                <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            </Console>
+        </Appenders>
+        <Loggers>
+            <Logger name="com.microsoft.example" level="trace" additivity="false">
+                <AppenderRef ref="STDOUT"/>
+            </Logger>
+            <Root level="error">
+                <Appender-Ref ref="STDOUT"/>
+            </Root>
+        </Loggers>
+        </Configuration>
 
 这将为 __com.microsoft.example__ 类（包含本示例拓扑的组件）配置一个新记录器。此记录器的级别设置为“跟踪”，可以捕获此拓扑中的组件发出的任何日志记录信息。回顾此项目的代码，会发现只有 WordCount.java 文件实施日志记录 - 它会记录每个单词的计数。
 
@@ -619,42 +619,42 @@ YAML 文件定义要用于拓扑的组件、如何在组件之间流送数据，
 
     * 将以下插件添加到 `<plugins>` 节。此插件处理项目包（jar 文件）的创建，并在创建包时应用一些特定于 Flux 的转换。
 
-            <!-- build an uber jar -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <transformers>
-                        <!-- Keep us from getting a "can't overwrite file error" -->
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                        <!-- We're using Flux, so refer to it as main -->
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>org.apache.storm.flux.Flux</mainClass>
-                        </transformer>
-                    </transformers>
-                    <!-- Keep us from getting a bad signature error -->
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/*.SF</exclude>
-                                <exclude>META-INF/*.DSA</exclude>
-                                <exclude>META-INF/*.RSA</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+                <!-- build an uber jar -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <transformers>
+                            <!-- Keep us from getting a "can't overwrite file error" -->
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                            <!-- We're using Flux, so refer to it as main -->
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <mainClass>org.apache.storm.flux.Flux</mainClass>
+                            </transformer>
+                        </transformers>
+                        <!-- Keep us from getting a bad signature error -->
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                    <exclude>META-INF/*.SF</exclude>
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
 
     * 在 __exec-maven-plugin__ `<configuration>` 节中，将 `<mainClass>` 的值更改为 `org.apache.storm.flux.Flux`。这样，在开发环境本地运行拓扑时，Flux 便可以处理这种运行。
 
