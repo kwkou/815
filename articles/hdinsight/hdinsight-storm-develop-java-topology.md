@@ -4,22 +4,29 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="08/01/2016"
-	wacn.date="09/19/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="java"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/14/2016"
+   wacn.date="10/10/2016"
+   ms.author="larryfr"/>
 
 #使用 Apache Storm 和 HDInsight 上的 Maven 为基本的单词计数应用程序开发基于 Java 的拓扑
 
-了解使用 Maven 为 Apache Storm on HDInsight 创建基于 Java 的拓扑的基本过程。将会演练使用 Maven 和 Java 创建基本单词计数应用程序的过程。虽然本文提供了有关使用 Eclipse 的说明，但你也可以使用所选的文本编辑器。
+了解如何使用 Maven 为 HDInsight 上的 Apache Storm 创建基于 Java 的拓扑。本文将会演练使用 Maven 和 Java（如果拓扑是在 Java 中定义的）创建基本单词计数应用程序的过程。然后，介绍如何使用 Flux 框架定义拓扑。
+
+> [AZURE.NOTE] Storm 0.10.0 或更高版本中提供了 Flux 框架。HDInsight 3.3 随附了 Storm 0.10.0。
 
 完成本文档中的步骤之后，你将会获得一个用于部署到 Apache Storm on HDInsight 的基本拓扑。
 
-> [AZURE.NOTE] [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount) 上提供了此拓扑的完整版本。
+> [AZURE.NOTE] [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount) 上提供了本文档中所创建的拓扑的完成版本。
 
 ##先决条件
 
@@ -27,7 +34,7 @@
 
 * <a href="https://maven.apache.org/download.cgi" target="_blank">Maven</a>：Maven 是 Java 项目的项目生成系统。
 
-* 文本编辑器，例如记事本、<a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs<a>、<a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>、<a href="https://atom.io/" target="_blank">Atom.io</a>、<a href="http://brackets.io/" target="_blank">Brackets.io</a>。或者使用集成开发环境 (IDE)，例如 <a href="https://eclipse.org/" target="_blank">Eclipse</a>（Luna 或更高版本）。
+* 文本编辑器，例如记事本、<a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs</a>、<a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>、<a href="https://atom.io/" target="_blank">Atom.io</a>、<a href="http://brackets.io/" target="_blank">Brackets.io</a>。或者使用集成开发环境 (IDE)，例如 <a href="https://eclipse.org/" target="_blank">Eclipse</a>（Luna 或更高版本）。
 
 	> [AZURE.NOTE] 你的编辑器或 IDE 可能具有处理 Maven 的特定功能，但本文档中未提供说明。有关环境编辑功能的详细信息，请参阅所使用产品的文档。
 
@@ -47,7 +54,7 @@
 
 ##创建新的 Maven 项目
 
-从命令行中，使用以下代码创建名为 **WordCount** 的新 Maven 项目：
+在命令行中，使用以下代码创建名为 **WordCount** 的新 Maven 项目：
 
 	mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.microsoft.example -DartifactId=WordCount -DinteractiveMode=false
 
@@ -68,6 +75,22 @@
 *  **src\\test\\java\\com\\microsoft\\example\\AppTest.java**
 
 *  **src\\main\\java\\com\\microsoft\\example\\App.java**
+
+##添加属性
+
+Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache.org</url>` 行的后面添加以下内容：
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <!--
+            Storm 0.10.0 is for HDInsight 3.3 and 3.4.
+            To find the version information for earlier HDInsight cluster
+            versions, see /documentation/articles/hdinsight-component-versioning-v1/
+            -->
+        <storm.version>0.10.0</storm.version>
+    </properties>
+
+现在，可以在其他部分中使用这些值。例如，在指定 Storm 组件的版本时，可以使用 `${storm.version}` 而无需将值硬编码。
 
 ##添加依赖项
 
