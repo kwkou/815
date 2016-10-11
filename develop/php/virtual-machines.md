@@ -32,20 +32,20 @@
 <h2 id="header-1">管理</h2>
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-classic-setup-endpoints/">如何与虚拟机建立通信</a></h3>
 <p>了解如何与虚拟机建立通信。在 Azure 中创建的所有虚拟机均可以使用专用网络通道自动与位于同一云服务或虚拟网络中的其他虚拟机进行通信。</p>
-<h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-classic-log-on/">如何登录到运行 Linux 的虚拟机</a></h3>
+<h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/">如何登录到运行 Linux 的虚拟机</a></h3>
 <p>了解如何安装并和使用安全外壳 (SSH) 客户端以登录到运行 Linux 操作系统的虚拟机。</p>
 <h3>如何：<a href="/documentation/articles/cloud-services-certs-create/">创建 Linux 的管理证书</a></h3>
 <p>了解如何创建并上载管理证书，只要您需要使用服务管理 API 以便与 Azure 映像平台进行交互，就需要此证书。</p>
 <h3>如何：<a href="/documentation/articles/virtual-machines-linux-use-root-privileges/">在 Azure 中使用 Linux 虚拟机的根权限</a></h3>
 <p>了解如何通过上载 SSH 密钥或仅使用用户名和密码获取 Linux 虚拟机的根权限。</p>
-<h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-ssh-from-linux/">如何在 Azure 中将 SSH 用于 Linux</a></h3>
+<h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/">如何在 Azure 中将 SSH 用于 Linux</a></h3>
 <p>了解如何生成与 Azure 兼容的 SSH 密钥。</p>
 <h2 id="header-2">联网</h2>
 <h3>如何：<a href="/documentation/articles/virtual-machines-linux-load-balance/">平衡虚拟机负载</a></h3>
 <p>了解如何平衡运行 Linux 的和位于云服务中的虚拟机的负载。</p>
 
 <h2 id="header-3">安装软件</h2>
-<h3>如何：<a href="/documentation/articles/virtual-machines-linux-install-lamp-stack/">在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈</a></h3>
+<h3>如何：<a href="/documentation/articles/virtual-machines-linux-create-lamp-stack/">在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈</a></h3>
 <p>了解如何在 Ubuntu 或 CentOS 上安装 LAMP 堆栈。</p>
 <!--
 <h3>如何：<a href="/documentation/articles/store-mongodb-virtual-machines-linux-install-centos/">通过 Azure 在 CentOS Linux 虚拟机上安装 MongoDB</a></h3>

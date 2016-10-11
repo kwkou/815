@@ -360,7 +360,7 @@
 [resource-manager-overview]: /documentation/articles/resource-group-overview
 [select-vm-image]: /documentation/articles/virtual-machines-linux-cli-ps-findimage/
 [services-by-region]: https://azure.microsoft.com/regions/#services
-[ssh-linux]: /documentation/articles/virtual-machines-linux-ssh-from-linux/
+[ssh-linux]: /documentation/articles/virtual-machines-linux-mac-create-ssh-keys/
 [static-ip]: /documentation/articles/virtual-networks-reserved-public-ip/
 [storage-price]: /pricing/details/storage/
 [virtual-machine-sizes]: /documentation/articles/virtual-machines-linux-sizes/

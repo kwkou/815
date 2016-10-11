@@ -38,7 +38,7 @@
 
 - [ExpressRoute](/documentation/articles/expressroute-introduction/) – ExpressRoute 可以从你的 WAN 直接连接到 Azure，不需要通过公共 Internet。有关详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)和 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
-有关跨界连接的详细信息，请参阅[关于安全跨界连接](/documentation/articles/vpn-gateway-cross-premises-options/)。
+有关跨界连接的详细信息，请参阅[关于安全跨界连接](/documentation/articles/vpn-gateway-plan-design/)。
 
 ### 站点到站点连接和点到站点连接的区别是什么？
 
@@ -48,7 +48,7 @@
 
 你可以将虚拟网络配置为同时使用站点到站点连接和点到站点连接，前提是使用基于路由的 VPN 类型为网关创建站点到站点连接。在经典部署模型中，基于路由的 VPN 类型称为动态网关。
 
-有关详细信息，请参阅[关于虚拟网络的安全跨界连接](/documentation/articles/vpn-gateway-cross-premises-options/)。
+有关详细信息，请参阅[关于虚拟网络的安全跨界连接](/documentation/articles/vpn-gateway-plan-design/)。
 
 ### 什么是 ExpressRoute？
 

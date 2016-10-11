@@ -77,7 +77,7 @@
 	
 	![14](./media/azure-web-apps-mysql/14.png)
 	 
-	更多参考内容：[WordPress 官方网站](https://cn.wordpress.org/)、[从源控件发布到 Azure Web 应用](/documentation/articles/web-sites-publish-source-control/)。
+	更多参考内容：[WordPress 官方网站](https://cn.wordpress.org/)、[从源控件发布到 Azure Web 应用](/documentation/articles/app-service-deploy-local-git/)。
 
 ##Step 5: 应用的安装配置
 

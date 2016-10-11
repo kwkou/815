@@ -41,7 +41,7 @@ See [How to create and deploy web apps](/documentation/articles/web-sites-php-we
 
 ### Deploy the WordPress installation files  
 
-Next, deploy all the WordPress installation files you uncompressed in Step 1 to the new web app. At this point, we recommend that you use Git to complete the deployment process. Refer to [Publishing to Azure websites from source control](/documentation/articles/web-sites-publish-source-control/) for the specific method.
+Next, deploy all the WordPress installation files you uncompressed in Step 1 to the new web app. At this point, we recommend that you use Git to complete the deployment process. Refer to [Publishing to Azure websites from source control](/documentation/articles/app-service-deploy-local-git/) for the specific method.
 
 > [AZURE.NOTE]Step 3 is chiefly intended for new WordPress users. Some of you have already used Azure Web Apps and successfully deployed the WordPress installation files and begun using them. To keep the content consistent, we recommend that you export the data and then reimport it after you reinstall and deploy WordPress and successfully connect to a new MySQL database. Complete the specific WordPress data import and export procedures by using the WordPress control panel (as shown in the image below).
 

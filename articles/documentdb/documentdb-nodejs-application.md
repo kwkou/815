@@ -543,7 +543,7 @@
 
 ## <a name="_Toc395783182"></a>步骤 7：将应用程序开发项目部署到 Azure 网站
 
-1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Local Git Deployment to Azure App Service（从本地 GIT 部署到 Azure App Service）](/documentation/articles/web-sites-publish-source-control/)主题中找到如何执行此操作的说明。
+1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Local Git Deployment to Azure App Service（从本地 GIT 部署到 Azure App Service）](/documentation/articles/app-service-deploy-local-git/)主题中找到如何执行此操作的说明。
 
 2. 将 Azure 网站添加为 git 远程。
 

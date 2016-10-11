@@ -19,7 +19,7 @@
 
 在 Azure 经典管理门户中，使用“连接”按钮启动远程桌面会话，然后登录到 Windows VM。
 
-是否要连接到 Linux VM？ 请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-log-on/)。
+是否要连接到 Linux VM？ 请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 
 了解如何[使用新版 Azure 门户执行这些步骤](/documentation/articles/virtual-machines-windows-connect-logon/)。
 

@@ -172,7 +172,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 在这种情况下，部署 AD FS 的高级步骤如下：
 
-1. 使用 VPN 或 [ExpressRoute](/services/expressroute/) 创建[提供跨界连接的虚拟网络](/documentation/articles/vpn-gateway-cross-premises-options/)。
+1. 使用 VPN 或 [ExpressRoute](/services/expressroute/) 创建[提供跨界连接的虚拟网络](/documentation/articles/vpn-gateway-plan-design/)。
 
 2. 在虚拟网络上部署域控制器。此步骤是可选的，但建议执行。
 

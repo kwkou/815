@@ -26,7 +26,7 @@
 - [使用经典部署模型创建的 Azure 虚拟机的常见问题](/documentation/articles/virtual-machines-linux-classic-faq/)
 - [关于虚拟机的映像](/documentation/articles/virtual-machines-linux-classic-about-images/)
 - [上载自己的发行版映像](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)（以及使用 [Azure 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)的说明）
-- [使用 Azure 经典管理门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-classic-log-on/)
+- [使用 Azure 经典管理门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 ## 设置
 
@@ -35,7 +35,7 @@
 
 ## 教程
 
-- [在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack/)
+- [在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-create-lamp-stack/)
 - [Azure 虚拟机上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)
 - [如何：为 AMQP 和 Service Bus 安装 Apache Qpid Proton-C](/documentation/articles/service-bus-amqp-apache/)
 
@@ -59,7 +59,7 @@
 - [如何：在 Azure 上使用 CoreOS](https://coreos.com/os/docs/latest/booting-on-azure.html)
 
 ## 规划
-- [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines/)
+- [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-linux-infrastructure-subscription-accounts-guidelines/)
 - [选择 Linux 用户名](/documentation/articles/virtual-machines-linux-usernames/)
 - [如何在经典部署模型中为虚拟机配置可用性集](/documentation/articles/virtual-machines-linux-classic-configure-availability/)
 - [如何在 Azure VM 上安排计划内的维护](/documentation/articles/virtual-machines-linux-planned-maintenance-schedule/)
@@ -75,7 +75,7 @@
 
 ## 管理
 
-- [SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+- [SSH](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 - [如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-classic-reset-access/)
 - [使用 Root](/documentation/articles/virtual-machines-linux-use-root-privileges/)
 

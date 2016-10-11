@@ -31,7 +31,7 @@ editor="Eric Chen" />
 ###虚拟机
 
 - [创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
-- [登录到 Linux VM](/documentation/articles/virtual-machines-linux-classic-log-on/)
+- [登录到 Linux VM](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 - [准备 Linux 分发](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/)
 - [适用于 Mac 和 Linux 的工具](/documentation/articles/xplat-cli-install/)
 - **[全部显示](/develop/php/virtual-machines)**

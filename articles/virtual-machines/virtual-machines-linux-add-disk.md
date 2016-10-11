@@ -40,7 +40,7 @@
 
 ## 连接到 Linux VM 以装入新磁盘
 
-> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
+> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
 
 需要使用 SSH 访问 Azure VM 才能分区、格式化和装入新磁盘以供 Linux VM 使用。如果你不熟悉如何使用 **ssh** 进行连接，请注意，该命令采用 `ssh <username>@<FQDNofAzureVM> -p <the ssh port>` 格式，如下所示：
 
@@ -180,7 +180,7 @@
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
-> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。
+> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 
 
 ### Azure 中对 Linux 的 TRIM/UNMAP 支持
