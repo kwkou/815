@@ -80,17 +80,15 @@
 
 Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache.org</url>` 行的后面添加以下内容：
 
-<code>
-&lt;properties&gt;<br/>
-    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;<br/>
-        &lt;!--<br/>
-        Storm 0.10.0 is for HDInsight 3.3 and 3.4.<br/>
-        To find the version information for earlier HDInsight cluster<br/>
-        versions, see /documentation/articles/hdinsight-component-versioning-v1/<br/>
-        --&gt;<br/>
-    &lt;storm.version&gt;0.10.0&lt;/storm.version&gt;<br/>
-&lt;/properties&gt;
-</code>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <!--
+            Storm 0.10.0 is for HDInsight 3.3 and 3.4.
+            To find the version information for earlier HDInsight cluster
+            versions, see /documentation/articles/hdinsight-component-versioning-v1/
+            -->
+        <storm.version>0.10.0</storm.version>
+    </properties>
 
 现在，可以在其他部分中使用这些值。例如，在指定 Storm 组件的版本时，可以使用 `${storm.version}` 而无需将值硬编码。
 
