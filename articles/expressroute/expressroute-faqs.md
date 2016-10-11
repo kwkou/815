@@ -8,8 +8,13 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="08/04/2016"
-   wacn.date="09/12/2016"/>
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/19/2016"
+   ms.author="cherylmc"
+   wacn.date="10/10/2016"/>
 
 # ExpressRoute 常见问题
 
@@ -49,7 +54,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 
 - 与虚拟机和虚拟网络中部署的云服务的连接通过专用对等路径提供支持。
 - 可通过公共对等路径访问 Azure 网站。
-
+- 支持通过公共对等路径访问 IoT 中心。
 - 可通过公共对等路径访问所有其他服务。下面列出了例外情况 -
 
 **不支持以下服务：**
@@ -67,10 +72,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 ### ExpressRoute 支持的连接速度是多少？
 支持带宽提供：
 
-|**提供商**|**带宽**|
-|---|---|
-|**网络提供商**|10 Mbps、50 Mbps、100 Mbps、500 Mbps、1 Gbps|
-|**Exchange 提供商**|200 Mbps、500 Mbps、1Gbps、10Gbps|
+|50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, 1Gbps, 2 Gbps, 5 Gbps, 10Gbps|
 
 ### 可以选择哪些服务提供商？
 有关服务提供商和位置的列表，请参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations/)。
@@ -178,7 +180,7 @@ BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话�
 ### 什么是 ExpressRoute 高级版？
 ExpressRoute 高级版包括下面列出的功能集合。
 
- - 对于公共对等互连和专用对等互连，将路由表限制从 4000 个路由提升为 10,000 个路由。
+ - 对于专用对等互连，将路由表限制从 4000 个路由提升为 10,000 个路由。
  - 增加了可连接到 ExpressRoute 线路的 VNet 数量（默认数量为 10 个）。有关详细信息，请参阅下表。
  - 通过 Azure 核心网络建立全局连接。现在，你可以将一个服务区域中 VNet 链接到另一个区域中的 ExpressRoute 线路。**示例：**可以将中国北部创建的 VNet 链接到中国东部创建的 ExpressRoute 线路。
 

@@ -8,8 +8,13 @@
    editor=""/>
 <tags 
    ms.service="expressroute"
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
    ms.date="06/13/2016"
-   wacn.date="07/11/2016"/>
+   ms.author="cherylmc"
+   wacn.date="10/10/2016"/>
 
 # ExpressRoute 线路和路由域
 
@@ -29,7 +34,7 @@ ExpressRoute 线路最多可以有两个独立的对等互连：Azure 公共和A
 
 ### 配额、限制和局限性
 
-每条 ExpressRoute 线路应用默认的配额和限制。有关最新的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
+默认配额和限制适用于每条 ExpressRoute 线路。有关配额的最新信息，请参阅 [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits/)（Azure 订阅和服务限制、配额与约束）。
 
 ## ExpressRoute 路由域
 
@@ -47,11 +52,11 @@ ExpressRoute 线路最多可以有两个独立的对等互连：Azure 公共和A
 
 ### 公共对等互连
 
-Azure 存储空间、SQL 数据库和 Web 应用等服务是使用公共 IP 地址提供的。你可以通过公共对等路由域私下连接到公共 IP 地址（包括云服务的 VIP）上托管的服务。可以将公共对等域连接到外围网络，并从 WAN 连接到公共 IP 地址上的所有 Azure 服务，而无需通过 Internet 连接。
+Azure 存储空间、SQL 数据库和网站等服务是使用公共 IP 地址提供的。你可以通过公共对等路由域私下连接到公共 IP 地址（包括云服务的 VIP）上托管的服务。可以将公共对等域连接到外围网络，并从 WAN 连接到公共 IP 地址上的所有 Azure 服务，而无需通过 Internet 连接。
 
 始终会从 WAN 发起到 Azure 服务的连接。Azure 服务无法通过此路由域发起到你网络的连接。启用公共对等互连后，你将能够连接到所有 Azure 服务。我们不允许选择要将路由播发到的服务。可以通过世纪互联客服来查询 Azure 通过此对等互连播发给你的前缀列表。
 
-你可以在网络中定义自定义路由筛选器，以只使用所需的路由。有关路由配置的详细信息，请参阅[路由](/documentation/articles/expressroute-routing/)页。你可以在网络中定义自定义路由筛选器，以只使用所需的路由。
+你可以在网络中定义自定义路由筛选器，以只使用所需的路由。有关路由配置的详细信息，请参阅 [Routing](/documentation/articles/expressroute-routing/)（路由）页。你可以在网络中定义自定义路由筛选器，以只使用所需的路由。
 
 有关通过公共对等路由域支持的服务的详细信息，请参阅[常见问题页](/documentation/articles/expressroute-faqs/)。
  
@@ -73,7 +78,7 @@ Azure 存储空间、SQL 数据库和 Web 应用等服务是使用公共 IP 地�
 
 ## 后续步骤
 
-- 查找服务提供商。请参阅 [ExpressRoute 服务提供商和位置](/documentation/articles/expressroute-locations/)。
+- 查找服务提供商。请参阅 [ExpressRoute service providers and locations](/documentation/articles/expressroute-locations/)（ExpressRoute 服务提供商和位置）。
 - 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites/)。
 - 配置 ExpressRoute 连接。
 	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)
