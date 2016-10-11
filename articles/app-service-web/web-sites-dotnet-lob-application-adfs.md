@@ -323,7 +323,7 @@
 
 使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/home/features/sql-database/)作为 Web 应用的数据层。
 
-在 Azure 中国区，Azure 应用服务 Web 应用仅支持通过[虚拟网络](/documentation/articles/web-sites-integrate-with-vnet/)访问本地数据库。
+在 Azure 中国区，Azure 应用服务 Web 应用仅支持通过[虚拟网络](/documentation/articles/app-service-vnet-integration-powershell/)访问本地数据库。
 
 ## <a name="bkmk_resources"></a>其他资源
 

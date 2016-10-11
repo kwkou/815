@@ -589,7 +589,7 @@
 
 ## 后续步骤
 
-虽然本文中的步骤介绍了使用表服务来存储信息，但你也可以使用 MongoDB。有关详细信息，请参阅 [使用 MongoDB 的 Node.js Web 应用]。
+虽然本文中的步骤介绍了使用表服务来存储信息，但你也可以使用 MongoDB。
 
 ## 其他资源
 
@@ -609,7 +609,6 @@
 [for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[使用 MongoDB 的 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
 [Azure CLI]: /documentation/articles/xplat-cli-install/
 
 [azure]: https://github.com/Azure/azure-sdk-for-node
