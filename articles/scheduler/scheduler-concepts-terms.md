@@ -27,7 +27,7 @@
 |资源 | 说明 |
 |---|---|
 |**作业集合**|一个作业集合包含一组作业，并且维护该集合内各作业共享的设置、配额和限制。作业集合由订阅所有者创建，并基于使用情况或应用程序边界将作业组合在一起。它被约束到一个区域。通过作业集合，还可以强制执行配额以便约束对该集合中所有作业的使用。配额包括 MaxJobs 和 MaxRecurrence。|
-|**作业**|一个作业通过用于执行的简单或复杂策略定义单个重复发生的操作。操作可以包含 HTTP 请求或存储队列请求。|
+|**作业**|一个作业通过用于执行的简单或复杂策略定义单个重复发生的操作。操作可能包括 HTTP、存储队列、服务总线队列或服务总线主题请求。|
 |**作业历史记录**|作业历史记录表示用于执行作业的详细信息。它包含成功与失败信息以及任何响应详细信息。|
 
 ## 计划程序实体管理
@@ -36,19 +36,19 @@
 
 |功能|说明和 URI 地址|
 |---|---|
-|**作业集合管理**|针对创建和修改作业集合和其中包含的作业的 GET、PUT 和 DELETE 支持。作业集合是针对作业以及指向配额和共享设置的映射的容器。配额（在后面介绍）的例子包括最大作业数和最小重复间隔 <p>PUT 和 DELETE：`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET：`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
-|**作业管理**|针对创建和修改作业的 GET、PUT、POST、PATCH 和 DELETE 支持。所有作业都必须属于某一已存在的作业集合，因此没有显式创建 <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
-|**作业历史记录管理**|针对用于获取 60 天的作业执行历史记录（例如作业占用时间和作业执行结果）的 GET 支持。添加基于状态进行筛选的查询字符串参数支持 <P>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
+|**作业集合管理**|针对创建和修改作业集合和其中包含的作业的 GET、PUT 和 DELETE 支持。作业集合是针对作业以及指向配额和共享设置的映射的容器。配额（在后面介绍）的例子包括最大作业数和最小重复间隔 <p>PUT 和 DELETE：`https://management.core.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}`</p><p>GET：`https://management.core.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}`</p>
+|**作业管理**|针对创建和修改作业的 GET、PUT、POST、PATCH 和 DELETE 支持。所有作业都必须属于某一已存在的作业集合，因此没有显式创建 <p>`https://management.core.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}`</p>|
+|**作业历史记录管理**|针对用于获取 60 天的作业执行历史记录（例如作业占用时间和作业执行结果）的 GET 支持。添加基于状态进行筛选的查询字符串参数支持 <P>`https://management.core.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}/history`</p>|
 
 ## 作业类型
 
-有两种类型的作业：HTTP 作业（包括支持 SSL 的 HTTPS 作业）和存储队列作业。HTTP 作业适用于现有工作负载或服务的终结点。可以使用存储队列作业将消息发布到存储队列，因此这些作业适合使用存储队列的工作负荷。
+存在多种作业类型：HTTP 作业（包括支持 SSL 的 HTTPS 作业）、队列存储作业、服务总线队列作业和服务总线主题作业。HTTP 作业适用于现有工作负载或服务的终结点。可以使用存储队列作业将消息发布到存储队列，因此这些作业适合使用存储队列的工作负荷。同样，服务总线作业适用于使用服务总线队列和主题的工作负荷。
 
 ## “作业”实体详述
 
 在基本级别上，一个计划的作业具有若干部分：
 
-- 在作业计时器引发时要执行的操作  
+- 在作业计时器引发时要执行的操作
 
 - （可选）运行作业的时间
 
@@ -132,7 +132,7 @@
 
 ##<a id="action-and-erroraction"></a> action 和 errorAction
 
-“action”是每次执行时调用的操作，并且描述服务调用的类型。操作是将按提供的计划执行的内容。计划程序支持 HTTP 和存储队列操作。
+“action”是每次执行时调用的操作，并且描述服务调用的类型。操作是将按提供的计划执行的内容。计划程序支持 HTTP、存储队列、服务总线主题和服务总线队列操作。
 
 上例中的操作是一个 HTTP 操作。下面是存储队列操作的示例：
 
@@ -148,13 +148,54 @@
 			},
 	}
 
-“errorAction”是错误处理程序，在主操作失败时调用的操作。你可以使用此变量调用错误处理终结点或发送用户通知。这可用于在主终结点不可用时（例如，在终结点的站点上出现灾难情形时）访问辅助终结点，或者可用于通知错误处理终结点。与主操作相似，错误操作可以是基于其他操作的简单或复合逻辑。若要了解如何创建一个 SAS 令牌，请参阅[创建和使用共享访问签名](/documentation/articles/storage-manage-access-to-resources/)。
+下面是服务总线主题操作的示例。
+
+  "action": {
+    "type": "serviceBusTopic",
+    "serviceBusTopicMessage": {
+      "topicPath": "t1",  
+      "namespace": "mySBNamespace",
+      "transportType": "netMessaging", // Can be either netMessaging or AMQP
+      "authentication": {
+        "sasKeyName": "QPolicy",
+        "type": "sharedAccessKey"
+        },
+      "message": "Some message",
+      "brokeredMessageProperties": {},
+      "customMessageProperties": {
+        "appname": "FromScheduler"
+      }
+    },
+  }
+
+下面是服务总线队列操作的示例：
+
+
+  "action": {
+    "serviceBusQueueMessage": {
+      "queueName": "q1",  
+      "namespace": "mySBNamespace",
+      "transportType": "netMessaging", // Can be either netMessaging or AMQP
+      "authentication": {  
+        "sasKeyName": "QPolicy",
+        "type": "sharedAccessKey"
+      },
+      "message": "Some message",  
+      "brokeredMessageProperties": {},
+      "customMessageProperties": {
+          "appname": "FromScheduler"
+      }
+    },
+    "type": "serviceBusQueue"
+  }
+
+“errorAction”是错误处理程序，在主操作失败时调用的操作。你可以使用此变量调用错误处理终结点或发送用户通知。这可用于在主终结点不可用时（例如，在终结点的站点上出现灾难情形时）访问辅助终结点，或者可用于通知错误处理终结点。与主操作相似，错误操作可以是基于其他操作的简单或复合逻辑。若要了解如何创建一个 SAS 令牌，请参阅[创建和使用共享访问签名](https://msdn.microsoft.com/zh-CN/library/azure/jj721951.aspx)。
 
 ## recurrence
 
 重复周期具有若干部分：
 
-- 频率：分钟、小时、天、周、月、年之一  
+- 频率：分钟、小时、天、周、月、年之一
 
 - 间隔：针对重复周期的按给定频率的间隔
 
