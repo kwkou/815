@@ -154,7 +154,7 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 若要查看选项列表，请在命令提示符下键入 `/help`。
 
 | 选项 | 说明 | 命令 | 参数 |
-|--------|---------|--------------|--------------|
+|---|---|---|---|
 | **启动** | 启动存储模拟器。 | `AzureStorageEmulator start [-inprocess]` | *-inprocess*：在当前进程中启动模拟器而不是创建一个新的进程。 |
 | **停止** | 停止存储模拟器。 | `AzureStorageEmulator stop` | |
 | **状态** | 打印存储模拟器的状态。 | `AzureStorageEmulator status` | |
