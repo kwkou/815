@@ -58,7 +58,7 @@ Azure 只支持固定的 VHD 格式的虚拟硬盘。如果你想在 Azure 中�
 你需要通过适用于 Windows VM 的远程桌面连接或适用于 Linux VM 的安全外壳 (SSH) 建立登录虚拟机所需的远程连接。有关说明，请参阅：
 
 - [How to Log on to a Virtual Machine Running Windows Server](/documentation/articles/virtual-machines-windows-classic-connect-logon/)（如何登录到运行 Windows Server 的虚拟机）。除非将服务器配置为远程桌面服务会话主机，否则最多支持 2 个并发连接。
-- [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-classic-log-on/)（如何登录到运行 Linux 的虚拟机）。默认情况下，SSH 允许的并发连接最多为 10 个。通过编辑配置文件，可以增大此数目。
+- [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)（如何登录到运行 Linux 的虚拟机）。默认情况下，SSH 允许的并发连接最多为 10 个。通过编辑配置文件，可以增大此数目。
 
 
 如果你遇到远程桌面或 SSH 方面的问题，请安装和使用 [VMAccess](/documentation/articles/virtual-machines-windows-extensions-features/) 扩展来帮助解决问题。

@@ -1235,7 +1235,7 @@
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>任务：登录到基于 Linux 的虚拟机
 
-通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)。
+通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 
 ## <a id="stop-a-virtual-machine"></a>任务：停止 VM
 

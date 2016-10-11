@@ -190,6 +190,6 @@
 
 <!--Link references-->
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide/
-[Logon]: /documentation/articles/virtual-machines-linux-classic-log-on/
+[Logon]: /documentation/articles/virtual-machines-linux-mac-create-ssh-keys/
 
 <!---HONumber=Mooncake_0808_2016-->

@@ -33,7 +33,7 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 ## 如何访问我的虚拟机？
 
-需使用安全外壳 (SSH) 建立远程连接，以登录到虚拟机。请参阅如何[从 Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/) 或[从 Linux 和 Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/) 进行连接的相关说明。默认情况下，SSH 允许的并发连接最多为 10 个。通过编辑配置文件，可以增大此数目。
+需使用安全外壳 (SSH) 建立远程连接，以登录到虚拟机。请参阅如何[从 Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/) 或[从 Linux 和 Mac](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/) 进行连接的相关说明。默认情况下，SSH 允许的并发连接最多为 10 个。通过编辑配置文件，可以增大此数目。
 
 
 如果遇到问题，请查阅[排除安全外壳 (SSH) 连接故障](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)。
@@ -44,7 +44,7 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 ## 我是否可以复制或克隆现有的 Azure VM？
 
-是的。相关说明请参阅[如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本](/documentation/articles/virtual-machines-linux-specialized-image/)。
+是的。相关说明请参阅[如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本](/documentation/articles/virtual-machines-linux-copy-vm/)。
 
 ## VM 创建以后，我还能给它添加 NIC 吗？
 

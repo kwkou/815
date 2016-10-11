@@ -56,7 +56,7 @@
 
 [Azure 虚拟机的计划内维护](/documentation/articles/virtual-machines-windows-planned-maintenance/)
 
-[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-windows-infrastructure-service-guidelines/)
+[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-windows-infrastructure-subscription-accounts-guidelines/)
 
 [创建虚拟机的可用性集](/documentation/articles/virtual-machines-windows-classic-configure-availability/)
 
@@ -80,7 +80,7 @@
 
 [使用 Azure PowerShell 管理虚拟机](/documentation/articles/virtual-machines-windows-classic-manage-psh/)
 
-[将经典 VNet 连接到新的 VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto/)
+[将经典 VNet 连接到新的 VNet](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
 	
 [关于虚拟机代理和扩展](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)
 
@@ -144,7 +144,7 @@
 
 [HPC Pack](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)
 
-[混合云测试环境](/documentation/articles/virtual-machines-windows-classic-hybrid-test-env/)
+[混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/)
 
 [MongoDB](/documentation/articles/virtual-machines-windows-classic-install-mongodb/)
 

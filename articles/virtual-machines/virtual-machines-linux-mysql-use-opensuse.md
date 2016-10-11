@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/29/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="07/19/2016"
+	wacn.date="09/30/2016"/>
 
 # 在 Azure 中运行 OpenSUSE Linux 的虚拟机上安装 MySQL
 

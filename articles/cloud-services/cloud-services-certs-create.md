@@ -77,7 +77,7 @@ Export-Certificate -Type CERT -Cert $cert -FilePath .\my-cert-file.cer
 你可以使用 Java [创建证书](/documentation/articles/java-create-azure-website-using-java-sdk/#create-a-certificate)。
 
 ### Linux
-[本文](/documentation/articles/virtual-machines-linux-ssh-from-linux/)介绍如何通过 SSH 创建证书。
+[本文](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)介绍如何通过 SSH 创建证书。
 
 ## 后续步骤
 

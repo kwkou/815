@@ -28,7 +28,7 @@
 - 你在 Azure 中创建的所有内容都由一个或多个资源组成。虚拟机 (VM) 是一种资源，VM 所用的网络适配器接口 (NIC) 是一个资源，NIC 所用的公共 IP 地址是一种资源，NIC 所连接到的 VNet 也是一种资源。
 - 你可在 Azure 区域和订阅中创建资源。并且资源只能连接到它们所属的同一区域和订阅中存在的 VNet。 
 - 你可以使用 Azure [VPN 网关](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)将 VNet 彼此相连。你还可以通过这种方式跨区域和订阅连接 VNet。
-- 你可以使用 Azure 中提供的[连接选项](/documentation/articles/vpn-gateway-cross-premises-options/)之一将 VNet 连接到本地网络。 
+- 你可以使用 Azure 中提供的[连接选项](/documentation/articles/vpn-gateway-plan-design/)之一将 VNet 连接到本地网络。 
 - 不同资源可以在[资源组](/documentation/articles/resource-group-overview/#resource-groups)中分组在一起，这样可便于将资源作一个单元来进行管理。资源组可以包含多个区域中的资源，只要这些资源属于同一订阅。
 
 ### <a name="Define-requirements"></a> 定义要求
@@ -121,7 +121,7 @@ VNet 包含以下属性。
 
 - **用于子网中的所有 NIC 的专用 IP 地址不足**。如果你的子网地址空间未包含子网中的 NIC 数所对应的足够 IP 地址，则需要创建多个子网。请记住，Azure 保留每个子网中的 5 个专用 IP 地址，这些 IP 地址不能使用：地址空间的第一个和最后一个地址（用于子网地址和多播）和 3 个要内部使用的地址（用于 DHCP 和 DNS 目的）。 
 - **安全性**。你可以使用子网将 VM 组彼此分离以用于具有多层结构的工作负荷，并对这些子网应用不同的[网络安全组 (NSG)](/documentation/articles/virtual-networks-nsg/#subnets)。
-- **混合连接**。你可以使用 VPN 网关和到 ExpressRoute 线路来将 VNet 彼此[连接](/documentation/articles/vpn-gateway-cross-premises-options/)，并连接到本地数据中心。VPN 网关和 ExpressRoute 线路需要创建其自己的子网。
+- **混合连接**。你可以使用 VPN 网关和到 ExpressRoute 线路来将 VNet 彼此[连接](/documentation/articles/vpn-gateway-plan-design/)，并连接到本地数据中心。VPN 网关和 ExpressRoute 线路需要创建其自己的子网。
 - **虚拟设备**。可以在 Azure VNet 中使用虚拟设备，如防火墙、WAN 加速器或 VPN 网关。这样做时，需要[路由流量](/documentation/articles/virtual-networks-udr-overview/)到这些设备，并将其隔离在它们自己的子网中。
 
 ### 子网和 NSG 设计模式
@@ -260,6 +260,6 @@ VNet 包含以下属性。
 
 - 了解如何对 IaaS VM 进行[负载平衡](/documentation/articles/load-balancer-overview)，以及如何[管理通过多个 Azure 区域的路由](/documentation/articles/traffic-manager-overview/)。
 - 详细了解 [NSG 以及如何规划和设计](/documentation/articles/virtual-networks-nsg/) NSG 解决方案。
-- 详细了解[跨界连接和 VNet 连接选项](/documentation/articles/vpn-gateway-cross-premises-options/)。  
+- 详细了解[跨界连接和 VNet 连接选项](/documentation/articles/vpn-gateway-plan-design/)。  
 
 <!---HONumber=Mooncake_0418_2016-->

@@ -17,7 +17,7 @@
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/)
-- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+- [Linux/Mac](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 本主题介绍了如何在 Windows 上创建和使用 **ssh-rsa** 与 **.pem** 格式的公钥和私钥文件，并且你可以使用这些文件通过 **ssh** 命令连接到 Azure 上的 Linux VM。如果你已经创建了 **.pem** 文件，则可以使用那些文件创建 Linux VM，并且可以使用 **ssh** 连接到这些 VM。其他几个命令使用 **SSH** 协议和密钥文件来安全地执行工作。其中值得注意的是 **scp** 或 [安全复制](https://en.wikipedia.org/wiki/Secure_copy)，通过这两个命令可以安全地将文件复制到支持 **SSH** 连接的计算机或从该计算机中复制文件。
 
@@ -128,13 +128,13 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 
 6. 单击**“打开”**。您将收到与如下所示的提示：
 
-	![linuxgoodforeignkey](./media/virtual-machines-linux-ssh-from-linux/linuxgoodforeignkey.png)
+	![linuxgoodforeignkey](./media/virtual-machines-linux-mac-create-ssh-keys/linuxgoodforeignkey.png)
 
 7. 单击**“确定”**
 
 8. 单击在下面的屏幕截图中突出显示的**“保存私钥”**：
 
-	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-linux/linuxputtygenprivatekey.png)
+	![linuxputtyprivatekey](./media/virtual-machines-linux-mac-create-ssh-keys/linuxputtygenprivatekey.png)
 
 9. 将文件另存为 PPK
 
@@ -145,11 +145,11 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 2.	运行 putty.exe
 3.	从经典管理门户使用 IP 填充主机名：
 
-	![linuxputtyconfig](./media/virtual-machines-linux-ssh-from-linux/linuxputtyconfig.png)
+	![linuxputtyconfig](./media/virtual-machines-linux-mac-create-ssh-keys/linuxputtyconfig.png)
 
 4.	在选择**“打开”**之前，依次单击“连接”>“SSH”>“身份验证”选项卡以选择你的密钥。在下面的屏幕截图中查看要填充的字段：
 
-	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-linux/linuxputtyprivatekey.png)
+	![linuxputtyprivatekey](./media/virtual-machines-linux-mac-create-ssh-keys/linuxputtyprivatekey.png)
 
 5.	单击**“打开”**以连接到你的虚拟机
  

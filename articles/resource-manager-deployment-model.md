@@ -74,7 +74,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 - 使用资源管理器部署模型部署的虚拟机必须包含在虚拟网络中。
 - 使用经典部署模型部署的虚拟机不一定要包括在虚拟网络中。
 
-若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](/documentation/articles/virtual-networks-arm-asm-s2s/)。
+若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)。
 
 只有通过资源管理器创建的资源才支持标记。您不能将标记应用到经典资源。有关在资源管理器中使用标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 

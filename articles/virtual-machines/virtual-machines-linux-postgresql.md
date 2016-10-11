@@ -30,7 +30,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 在此示例中，使用端口 1999 作为 PostgreSQL 端口。
 
-通过 PuTTY 连接到你创建的 Linux VM。如果这是你首次使用 Azure Linux VM，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)，以了解如何使用 PuTTY 连接到 Linux VM。
+通过 PuTTY 连接到你创建的 Linux VM。如果这是你首次使用 Azure Linux VM，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)，以了解如何使用 PuTTY 连接到 Linux VM。
 
 1. 运行以下命令切换成根用户（管理员）：
 

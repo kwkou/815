@@ -48,7 +48,7 @@
 <h2 id="header-4">工具</h2>
 <h3>教程：<a href="https://nodejstools.codeplex.com/documentation">适用于 Visual Studio 的 Node.js 工具入门</a></h3>
 <p>了解如何开始使用适用于 Visual Studio 的 Node.js 工具来编辑、构建、调试和部署 Azure 的 Node.js 应用程序。</p>
-<h3>如何：<a href="/documentation/articles/web-sites-publish-source-control/">使用 Git 进行发布</a></h3>
+<h3>如何：<a href="/documentation/articles/app-service-deploy-local-git/">使用 Git 进行发布</a></h3>
 <p>Git 是一个受欢迎的、开源分布式版本控制系统。Azure 网站允许你为你的站点启用 Git 存储库，以便快速且轻松地将代码更改发布到该站点。这一常见任务提供有关如何开始将 Git 与 Azure 结合使用的详细信息。</p>
 <h3>功能指南：<a href="/documentation/articles/powershell-install-configure/">使用 PowerShell for Azure 进行开发和部署</a></h3>
 <p>Windows PowerShell for Azure 提供用于通过 Windows PowerShell cmdlet 开发和部署 Azure 应用程序的命令行环境。本指南介绍如何使用 Windows PowerShell cmdlet 创建、测试、部署和管理 Azure 服务。</p>

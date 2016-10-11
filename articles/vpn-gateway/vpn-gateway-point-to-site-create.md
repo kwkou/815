@@ -21,7 +21,7 @@
 
 点到站点设置可让你从客户端计算机单独创建与虚拟网络的安全连接。可通过从客户端计算机启动连接来建立 VPN 连接。如果你要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则点到站点连接是绝佳的解决方案。
 
-点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)和 [About cross-premises connections（关于跨界连接）](/documentation/articles/vpn-gateway-cross-premises-options/)。
+点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)和 [About cross-premises connections（关于跨界连接）](/documentation/articles/vpn-gateway-plan-design/)。
 
 本文适用于点到站点 VPN 网关连接，此类连接可连接到使用**经典部署模型**（服务管理）和经典管理门户创建的虚拟网络。在 Azure 经典管理门户中完成相应的步骤后，我们将从此页链接到该篇文章。
 

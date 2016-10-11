@@ -140,7 +140,7 @@ Resource Manager 中的容器，用于保存应用程序的相关资源。资源
 
 
 ### <a name="vnet"></a>虚拟网络  
-在 Azure 资源之间提供连接并与其他所有 Azure 租户隔离的网络。它可以通过 [Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)连接到其他 Azure 虚拟网络，以及使用[多个选项](/documentation/articles/vpn-gateway-cross-premises-options/)连接到本地网络。你可以完全控制该网络中的 IP 地址块、DNS 设置、安全策略和路由表。  
+在 Azure 资源之间提供连接并与其他所有 Azure 租户隔离的网络。它可以通过 [Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)连接到其他 Azure 虚拟网络，以及使用[多个选项](/documentation/articles/vpn-gateway-plan-design/)连接到本地网络。你可以完全控制该网络中的 IP 地址块、DNS 设置、安全策略和路由表。  
 另请参阅 [Virtual Network Overview（虚拟网络概述）](/documentation/articles/virtual-networks-overview/)
 
 

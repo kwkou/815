@@ -1,25 +1,26 @@
 <properties
- pageTitle="自动缩放 HPC 群集中的计算资源 | Azure"
+ pageTitle="自动缩放 HPC Pack 群集节点 | Azure"
  description="自动扩展和收缩 Azure 中的 HPC Pack 群集计算节点数"
  services="virtual-machines-windows"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
  editor=""
- tags="azure-service-management,hpc-pack"/>
+ tags="azure-service-management,hpc-pack"/>  
+
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/14/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="07/22/2016"
+	wacn.date="09/12/2016"/>
 
 # 在 Azure 中根据群集工作负荷自动扩展和收缩 HPC Pack 群集资源
 
 
 
 
-如果在 HPC Pack 群集中部署 Azure“突发”节点，或者在 Azure VM 中创建 HPC Pack 群集，你可能希望有一种方法能够根据群集上的当前工作负荷自动增大或减小 Azure 计算资源（例如核心）的数目。这可让你更有效地使用你的 Azure 资源并控制其成本。为此，可以设置 HPC Pack 群集属性 **AutoGrowShrink**。或者，使用随 HPC Pack 一起安装的 **AzureAutoGrowShrink.ps1** HPC PowerShell 脚本。
+如果在 HPC Pack 群集中部署 Azure“突发”节点，或者在 Azure VM 中创建 HPC Pack 群集，可能希望有一种方法能够根据群集上的当前工作负荷自动增大或减小 Azure 计算资源（例如节点或核心）的数目。这可让你更有效地使用你的 Azure 资源并控制其成本。为此，可以设置 HPC Pack 群集属性 **AutoGrowShrink**。或者，使用随 HPC Pack 一起安装的 **AzureAutoGrowShrink.ps1** HPC PowerShell 脚本。
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。此外，当前只能自动扩展和收缩正在运行 Windows Server 操作系统的 HPC Pack 计算节点。
 
 ## 设置 AutoGrowShrink 群集属性
 
@@ -30,7 +31,7 @@
 
 * **对于 Azure 中包含头节点的群集** - 如果你使用 HPC Pack IaaS 部署脚本来创建群集，请通过在群集配置文件中设置 AutoGrowShrink 选项来启用 **AutoGrowShrink** 群集属性。有关详细信息，请[下载的脚本](https://www.microsoft.com/download/details.aspx?id=44949)随附的文档。
 
-    或者，使用下一部分所述的 HPC PowerShell 命令在部署群集后设置 **AutoGrowShrink** 群集属性。若要使用 HPC PowerShell 执行此操作，请先完成以下步骤：
+    或者，使用下一部分所述的 HPC PowerShell 命令在部署群集后启用 **AutoGrowShrink** 群集属性。若要对此做好准备，先完成以下步骤：
     1. 在头节点和 Azure 订阅上配置 Azure 管理证书。对于测试部署，可以使用 HPC Pack 在头节点上安装的默认 Microsoft HPC Azure 自签名证书，并只将该证书上载到 Azure 订阅。有关选项和步骤，请参阅 [TechNet 库指南](https://technet.microsoft.com/zh-cn/library/gg481759.aspx)。
     2. 在头节点上运行 **regedit**，转到 HKLM\\SOFTWARE\\Micorsoft\\HPC\\IaasInfo，然后添加新字符串值。将“值”名称设置为“ThumbPrint”，将“值”数据设置为步骤 1 中的证书指纹。
 
@@ -66,7 +67,7 @@
 下面是可以使用 **Set-HpcClusterProperty** 命令修改的 AutoGrowShrink 参数。
 
 * **EnableGrowShrink** - 用于启用或禁用 **AutoGrowShrink** 属性的开关。
-* **ParamSweepTasksPerCore** - 用于扩展一个核心的参数扫描任务数目。默认为每个任务扩展一个核心。 
+* **ParamSweepTasksPerCore** - 用于扩展一个核心的参数扫描任务数目。默认为每个任务扩展一个核心。
  
     >[AZURE.NOTE] HPC Pack QFE KB3134307 将 **ParamSweepTasksPerCore** 更改为 **TasksPerResourceUnit**。它基于作业资源类型，并且可以是节点、套接字或核心。
     
@@ -74,9 +75,9 @@
 * **GrowInterval** - 触发自动扩展的间隔，以分钟为单位。默认间隔为 5 分钟。
 * **ShrinkInterval** - 触发自动收缩的间隔，以分钟为单位。默认间隔为 5 分钟。|
 * **ShrinkIdleTimes** - 指示节点为空闲状态之前，持续检查收缩的次数。默认值为 3 次。例如，如果 **ShrinkInterval** 为 5 分钟，HPC Pack 将每隔 5 分钟检查节点是否处于空闲状态。如果节点连续 3 次检查（15 分钟）都处于空闲状态，HPC Pack 将收缩该节点。
-* **ExtraNodesGrowRatio** - 要为消息传递接口 (MPI) 作业扩展的节点附加百分比。默认值为 1，表示 HPC Pack 针对 MPI 作业扩展节点 1%。 
+* **ExtraNodesGrowRatio** - 要为消息传递接口 (MPI) 作业扩展的节点附加百分比。默认值为 1，表示 HPC Pack 针对 MPI 作业扩展节点 1%。
 * **GrowByMin** - 用于指示自动扩展策略是否基于作业所需的最少资源的开关。默认值为 false，这意味着 HPC Pack 将基于作业所需的资源数上限为作业扩展节点。
-* **SoaJobGrowThreshold** - 传入 SOA 请求以触发自动扩展过程的阈值。默认值为 50000。  
+* **SoaJobGrowThreshold** - 传入 SOA 请求以触发自动扩展过程的阈值。默认值为 50000。
     
     >[AZURE.NOTE] 从 HPC Pack 2012 R2 Update 3 开始支持此参数。
     
@@ -98,7 +99,7 @@
 
 ### 先决条件
 
-* **HPC Pack 2012 R2 Update 1 或更高版本群集** - **AzureAutoGrowShrink.ps1** 脚本已安装在 %CCP\_HOME%bin 文件夹中。群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster/)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)（HPC Pack IaaS 部署脚本）。
+* **HPC Pack 2012 R2 Update 1 或更高版本群集** - **AzureAutoGrowShrink.ps1** 脚本已安装在 %CCP\_HOME%bin 文件夹中。群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster/)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)（HPC Pack IaaS 部署脚本），或使用 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)。
 
 * **Azure PowerShell 0.8.12** - 该脚本当前依赖于此特定版本的 Azure PowerShell。如果要在头节点上运行更高版本，可能需要将 Azure PowerShell 降级到[版本 0.8.12](http://az412849.vo.msecnd.net/downloads03/azure-powershell.0.8.12.msi) 才能运行该脚本。
 
@@ -120,7 +121,7 @@
 	[-UseLastConfigurations] [[-ArgFile] <String>] [[-LogFilePrefix] <String>]
 	[<CommonParameters>]
 
-### Parameters
+### 参数
 
  * **NodeTemplates** - 节点模板名称，可定义节点增加和减少的范围。如果没有指定（默认值是 @()），则在 **NodeType** 的值为 AzureNodes 时，**AzureNodes** 节点组中的所有节点都在范围内，在 **NodeType** 的值为 ComputeNodes 时，**ComputeNodes** 节点组中的所有节点都在范围内。
 
@@ -138,7 +139,7 @@
 
 * **NumOfActiveQueuedTasksPerNodeToGrow** - 要增加一个节点所需的活动已排队任务数量。如果 **NumOfQueuedJobsPerNodeToGrow** 指定为大于 0 的值，则忽略此参数。
 
-* **NumOfActiveQueuedTasksToGrowThreshold**- 要开始增加流程的活动已排队任务的阈值数量。
+* **NumOfActiveQueuedTasksToGrowThreshold** - 要开始增加流程的活动已排队任务的阈值数量。
 
 * **NumOfInitialNodesToGrow** - 要增加节点的初始最小数量，如果范围内的所有节点都处于**未部署**或**已停止（已取消分配）**状态。
 
@@ -152,16 +153,16 @@
 
 * **ArgFile**- 用于保存和更新配置以运行脚本的参数文件的名称。
 
-* **LogFilePrefix**- 日志文件的前缀名称。你可以指定一个路径。默认情况下，日志将写入当前工作目录。
+* **LogFilePrefix** - 日志文件的前缀名称。你可以指定一个路径。默认情况下，日志将写入当前工作目录。
 
 ### 示例 1
 
 下面的示例将使用“默认 AzureNode 模板”部署的 Azure 突发节点配置为自动增加和减少。如果所有节点最初都处于**未部署**状态，则至少启动了 3 个节点。如果已排队作业的数量超过 8 个，则脚本会启动节点，直至节点数量超过已排队作业与 **NumOfQueuedJobsPerNodeToGrow** 的比。如果发现一个节点连续 3 次闲置，则会停止此节点。
 
-	.\AzureAutoGrowShrink.ps1 -NodeTemplates @('Default AzureNodeTemplate') `
-			-NodeType AzureNodes -NumOfQueuedJobsPerNodeToGrow 5 `
-			-NumOfQueuedJobsToGrowThreshold 8 -NumOfInitialNodesToGrow 3 `
-			-GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 3
+	.\AzureAutoGrowShrink.ps1 -NodeTemplates @('Default AzureNode
+	 Template') -NodeType AzureNodes -NumOfQueuedJobsPerNodeToGrow 5
+	 -NumOfQueuedJobsToGrowThreshold 8 -NumOfInitialNodesToGrow 3
+	 -GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 3
 
 ### 示例 2
 
@@ -169,4 +170,4 @@
 
 	.\AzureAutoGrowShrink.ps1 -NodeTemplates 'Default ComputeNode Template' -JobTemplates 'Default' -NodeType ComputeNodes -NumOfActiveQueuedTasksPerNodeToGrow 10 -NumOfActiveQueuedTasksToGrowThreshold 15 -NumOfInitialNodesToGrow 5 -GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 10 -ArgFile 'IaaSVMComputeNodes_Arg.xml' -LogFilePrefix 'IaaSVMComputeNodes_log'
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0905_2016-->

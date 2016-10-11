@@ -41,7 +41,7 @@ WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQ
 
 ### 部署WordPress安装文件  
 
-接下来，将第一步中解压出来的所有WordPress安装文件部署到刚创建的Web应用中。这里建议使用Git来做部署操作。具体方式请参见[从源控件发布到 Azure Web 应用](/documentation/articles/web-sites-publish-source-control/)
+接下来，将第一步中解压出来的所有WordPress安装文件部署到刚创建的Web应用中。这里建议使用Git来做部署操作。具体方式请参见[从源控件发布到 Azure Web 应用](/documentation/articles/app-service-deploy-local-git/)
 
 > [AZURE.NOTE] **注意**：步骤3 主要针对WordPress的新用户，若您已经使用Azure Web应用并已成功部署WordPress安装文件并开始使用，出于内容一致性的目的，建议您将数据进行导出，重新安装部署WordPress并与新建的MySql数据库成功连接之后，再进行数据导入。具体的Wordpress数据导入导出，请通过WordPress控制台来完成（如下图所示）。  
 

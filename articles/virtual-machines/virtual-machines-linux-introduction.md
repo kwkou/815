@@ -23,7 +23,7 @@
 
 
  - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli/)
- - 请参阅[如何在 Azure 上将 SSH 用于 Linux 和 Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+ - 请参阅[如何在 Azure 上将 SSH 用于 Linux 和 Mac](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 ## 使用 `sudo` 获取超级用户特权
 
