@@ -10,12 +10,17 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="06/13/2016"
-   wacn.date="07/18/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-multiple"
+   ms.workload="infrastructure"
+   ms.date="08/15/2016"
+   wacn.date="10/10/2016" />
 
 # 使用 Azure CLI 查看部署操作
 
 > [AZURE.SELECTOR]
+- [门户](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 - [PowerShell](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)
 - [Azure CLI](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)
 - [REST API](/documentation/articles/resource-manager-troubleshoot-deployments-rest/)
@@ -36,7 +41,7 @@
 
         azure group log show ExampleGroup --last-deployment
 
-2. **azure group log show** 命令可以返回很多信息。进行故障排除，你通常希望专注于失败的操作。以下脚本使用 **--json** 选项和 [jq](https://stedolan.github.io/jq/) JSON 实用工具，在日志中搜索部署失败。
+2. **azure group log show** 命令返回很多信息。进行故障排除，你通常希望专注于失败的操作。以下脚本使用 **--json** 选项和 [jq](https://stedolan.github.io/jq/) JSON 实用工具，在日志中搜索部署失败。
 
         azure group log show ExampleGroup --json | jq '.[] | select(.status.value == "Failed")'
         
@@ -118,4 +123,4 @@
 - 若要了解如何使用审核日志来监视其他类型的操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit)。
 - 若要在执行部署之前验证部署，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy)。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->
