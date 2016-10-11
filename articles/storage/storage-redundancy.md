@@ -8,10 +8,15 @@
   manager="adinah" 
   editor=""/>
 
-<tags 
-  ms.service="storage" 
-  ms.date="08/03/2016"
-  wacn.date="09/12/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 
 # Azure 存储复制
 
@@ -26,11 +31,11 @@
 下表简要概述了 LRS、GRS 和 RA-GRS 之间的差异，而后续章节将详细介绍每种类型的复制。
 
 
-|复制策略|LRS|GRS|RA-GRS 
-|--------------------|---|---|------
-|数据在多个设施之间进行复制。|否|是|是|
-|可以从辅助位置和主位置读取数据。|否|否|是
-|在单独的节点上维护的数据副本数。|3|6|6
+| 复制策略 | LRS | GRS | RA-GRS |
+|:-----------------------------------------------------------------------------------|:----|:----|:-------|
+| 数据在多个设施之间进行复制。 | 否 | 是 | 是 |
+| 可以从辅助位置和主位置读取数据。 | 否 | 否 | 是 |
+| 在单独的节点上维护的数据副本数。 | 3 | 6 | 6 |
 
 有关不同冗余选项的定价信息，请参阅 [Azure 存储空间定价](/pricing/details/storage/)。
 
@@ -52,9 +57,8 @@
 
 对于启用了 GRS 的存储帐户，更新将首先提交到主区域，并在主区域复制三次。然后，更新将复制到辅助区域（也是复制三次），并且是在不同的容错域和升级域之间复制。
 
-
 > [AZURE.NOTE] 使用 GRS 时，写入数据请求将异步复制到辅助区域。请务必注意，选择 GRS 不会影响针对主区域发出的请求的延迟。但是，由于异步复制涉及延迟，遇到区域性灾难时，如果无法将数据从主区域中恢复，则尚未复制到辅助区域的更改可能会丢失。
-
+ 
 创建存储帐户时，可以为帐户选择主区域。辅助区域是根据主区域确定的且无法更改。下表显示了配对的主要区域和次要区域。
 
 |主要 |辅助
@@ -77,4 +81,4 @@
 - [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
  
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0926_2016-->

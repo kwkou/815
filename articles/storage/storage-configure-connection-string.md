@@ -7,10 +7,15 @@
 	manager="carmonm"
 	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="08/03/2016"
-	wacn.date="09/05/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 
 # 配置 Azure 存储空间连接字符串
 
@@ -71,7 +76,7 @@
 
 尽管连接字符串必须至少包含一个服务终结点，但每个服务终结点都是可选的。
 
-建议最好配合使用 HTTPS 与 SAS。有关共享访问签名的详细信息，请参阅 [Shared Access Signatures: Understanding the SAS Model](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)（共享访问签名：了解 SAS 模型）。
+建议最好配合使用 HTTPS 与 SAS。有关共享访问签名的详细信息，请参阅[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 >[AZURE.NOTE] 如果在配置文件的连接字符串中指定 SAS，可能需要为 URL 中的特殊字符编码。
 
@@ -161,4 +166,4 @@
 - [使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator/)
 - [Azure 存储资源管理器](/documentation/articles/storage-explorers/)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_0926_2016-->

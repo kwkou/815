@@ -7,10 +7,16 @@
 	manager="carolz" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="05/24/2016"
-	wacn.date="07/18/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2016"
+	wacn.date="10/10/2016"
+	ms.author="dineshm"/>
+
 
 # Azure 存储空间的使用 Java 客户端加密   
 
@@ -240,6 +246,6 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 - 下载适用于 Java 的 Azure 密钥保管库 Maven 程序包：
 	- [核心](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault-core)程序包
 	- [客户端](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault)程序包
-- 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/)  
+- 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->

@@ -7,10 +7,15 @@
 	manager="carmonm"
 	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="08/03/2016"
-	wacn.date="09/05/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 
 
 # 为 Blob 存储终结点配置自定义域名
@@ -121,4 +126,4 @@ Blob|**默认 URL：**http://mystorageaccount.blob.core.chinacloudapi.cn/myconta
 
 6. 在“管理自定义域”对话框中，单击“取消注册”。
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_0926_2016-->

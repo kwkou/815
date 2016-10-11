@@ -7,10 +7,15 @@
 	manager="carolz" 
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="05/23/2016"
-	wacn.date="07/18/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 
 # 对 Azure 存储服务的跨域资源共享 (CORS) 支持
 
@@ -74,7 +79,7 @@ CORS 规则在服务级别设置，因此你需要分别为每个服务（Blob�
 
 - **MaxAgeInSeconds**：浏览器应缓存预检 OPTIONS 请求的最长时间。
 
-Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元素指定带前缀的标头。若要允许某个标头类别，可以为该类别指定一个通用前缀。例如，如果指定x-ms-meta* 作为带前缀的标头，将会建立一条与所有以 x-ms-meta 开头的标头相匹配的规则。
+Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元素指定带前缀的标头。若要允许某个标头类别，可以为该类别指定一个通用前缀。例如，如果指定*x-ms-meta** 作为带前缀的标头，将会建立一条与所有以 x-ms-meta 开头的标头相匹配的规则。
 
 以下限制适用于 CORS 规则：
 
@@ -141,17 +146,17 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 第二个请求不与第一条规则相匹配，因为方法与允许的方法不相符。但是它却与第二条规则相匹配，因此它也成功完成。
 
-第三个请求与第二条规则中的源域和方法相匹配，因此不再评估其他规则。但是，第二条规则不允许 x-ms-client-request-id header 标头，因此，尽管第三条规则的语义允许它成功，但该请求仍然失败。
+第三个请求与第二条规则中的源域和方法相匹配，因此不再评估其他规则。但是，第二条规则不允许 *x-ms-client-request-id header* 标头，因此，尽管第三条规则的语义允许它成功，但该请求仍然失败。
 
 >[AZURE.NOTE] 虽然此示例先显示一个限制性较弱的规则，然后显示一个限制性更强的规则，但通常情况下，最佳做法是先列出限制性最强的规则。
 
 ## 了解如何设置 Vary 标头
 
-Vary 标头是一个由一组请求标头字段组成的标准 HTTP/1.1 标头，这些字段可告知浏览器或用户代理服务器选择用于处理该请求的条件。Vary 标头主要用于代理、浏览器和 CDN 缓存，它们使用该标头来确定应如何缓存响应。有关详细信息，请参阅 [Vary 标头](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)的规范。
+*Vary* 标头是一个由一组请求标头字段组成的标准 HTTP/1.1 标头，这些字段可告知浏览器或用户代理服务器选择用于处理该请求的条件。*Vary* 标头主要用于代理、浏览器和 CDN 缓存，它们使用该标头来确定应如何缓存响应。有关详细信息，请参阅 [Vary 标头](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)的规范。
 
 当浏览器或其他用户代理缓存 CORS 请求的响应时，源域将作为允许的来源缓存。如果第二个域在缓存处于活动时对存储资源发出相同请求，用户代理将会检索缓存的源域。由于第二个域与缓存的域不匹配，因此原本应该成功的请求将会失败。在某些情况下，Azure 存储空间会将 Vary 标头设置为 **Origin**，以便在发出请求的域不同于缓存的来源时，指示用户代理将后续 CORS 请求发送到服务。
 
-在以下情况下，Azure 存储空间会针对实际 GET/HEAD 请求，将 Vary 标头设置为 **Origin**：
+在以下情况下，Azure 存储空间会针对实际 GET/HEAD 请求，将 *Vary* 标头设置为 **Origin**：
 
 - 当请求来源与 CORS 规则定义的允许来源完全匹配时。要想成为精确匹配项，CORS 规则不能包含 ' * ' 通配符。
 
@@ -191,4 +196,4 @@ Vary 标头是一个由一组请求标头字段组成的标准 HTTP/1.1 标头�
 
 [W3C 跨域资源共享规范](http://www.w3.org/TR/cors/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->

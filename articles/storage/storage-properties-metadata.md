@@ -8,10 +8,14 @@
     editor=""/>
 
 <tags
-    ms.service="storage"
-    ms.date="05/23/2016"
-    wacn.date="07/25/2016"/>
-
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>
 
 # 设置和检索属性与元数据 #
 
@@ -94,4 +98,4 @@ Azure 存储中的对象支持系统属性和用户定义的元数据，除了�
 - [适用于 .NET 的 Azure 存储客户端库参考](http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
 - [适用于 .NET 的 Azure 存储客户端库包](https://www.nuget.org/packages/WindowsAzure.Storage/)  
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_0926_2016-->

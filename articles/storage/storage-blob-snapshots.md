@@ -5,12 +5,18 @@
 	documentationCenter=""
 	authors="tamram"
 	manager="carmonm"
-	editor="tysonn"/>  
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.date="08/03/2016"
-	wacn.date="09/05/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	wacn.date="10/10/2016"
+	ms.author="tamram"/>  
+
 
 # 创建 Blob 快照
 
@@ -167,4 +173,4 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 
 ![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_0926_2016-->
