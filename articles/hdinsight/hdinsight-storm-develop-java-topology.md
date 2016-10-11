@@ -501,7 +501,6 @@ Storm 使用 Apache Log4j 来记录信息。如果未配置日志记录，拓扑
     <Configuration>
         <Appenders>
             <Console name="STDOUT" target="SYSTEM_OUT">
-                <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
             </Console>
         </Appenders>
         <Loggers>
