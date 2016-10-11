@@ -80,15 +80,15 @@
 
 Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache.org</url>` 行的后面添加以下内容：
 
-        <properties>
-            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
             <!--
             Storm 0.10.0 is for HDInsight 3.3 and 3.4.
             To find the version information for earlier HDInsight cluster
             versions, see /documentation/articles/hdinsight-component-versioning-v1/
             -->
-            <storm.version>0.10.0</storm.version>
-        </properties>
+        <storm.version>0.10.0</storm.version>
+    </properties>
 
 现在，可以在其他部分中使用这些值。例如，在指定 Storm 组件的版本时，可以使用 `${storm.version}` 而无需将值硬编码。
 
@@ -96,13 +96,13 @@ Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache
 
 由于这是一个 Storm 拓扑，因此你必须添加 Storm 组件的依赖项。打开 **pom.xml**，并在 **&lt;dependencies>** 节中添加以下代码：
 
-        <dependency>
-            <groupId>org.apache.storm</groupId>
-            <artifactId>storm-core</artifactId>
-            <version>${storm.version}</version>
-            <!-- keep storm out of the jar-with-dependencies -->
-            <scope>provided</scope>
-        </dependency>
+    <dependency>
+        <groupId>org.apache.storm</groupId>
+        <artifactId>storm-core</artifactId>
+        <version>${storm.version}</version>
+        <!-- keep storm out of the jar-with-dependencies -->
+        <scope>provided</scope>
+    </dependency>
 
 在编译时，Maven 会使用此信息来查找 Maven 存储库中的 **storm-core**。它会先查找本地计算机上的存储库。如果文件不存在，它会从公共 Maven 存储库下载这些文件，并将其存储在本地存储库中。
 
@@ -112,12 +112,12 @@ Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache
 
 Maven 插件可让你自定义项目的生成阶段，例如，如何编译项目，或者如何将它打包成 JAR 文件。打开 **pom.xml**，并紧靠在 `</project>` 行的上方添加以下代码。
 
-        <build>
-            <plugins>
-            </plugins>
-            <resources>
-            </resources>
-        </build>
+    <build>
+        <plugins>
+        </plugins>
+        <resources>
+        </resources>
+    </build>
 
 此节用于添加插件、资源和其他生成配置选项。有关 __pom.xml__ 文件的完整参考信息，请参阅 [http://maven.apache.org/pom.html](http://maven.apache.org/pom.html)。
 
@@ -125,25 +125,25 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 针对 Storm 拓扑，<a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Exec Maven 插件</a>十分有用，因为它可让你轻松地在开发环境本地运行拓扑。将以下内容添加至 **pom.xml** 文件的 `<plugins>` 节，以包括 Exec Maven 插件：
 
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>1.4.0</version>
-            <executions>
-                <execution>
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.4.0</version>
+        <executions>
+            <execution>
                 <goals>
-                <goal>exec</goal>
+                    <goal>exec</goal>
                 </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <executable>java</executable>
-                <includeProjectDependencies>true</includeProjectDependencies>
-                <includePluginDependencies>false</includePluginDependencies>
-                <classpathScope>compile</classpathScope>
-                <mainClass>${storm.topology}</mainClass>
-            </configuration>
-        </plugin>
+            </execution>
+        </executions>
+        <configuration>
+            <executable>java</executable>
+            <includeProjectDependencies>true</includeProjectDependencies>
+            <includePluginDependencies>false</includePluginDependencies>
+            <classpathScope>compile</classpathScope>
+            <mainClass>${storm.topology}</mainClass>
+        </configuration>
+    </plugin>
 
 > [AZURE.NOTE] 请注意，`<mainClass>` 项使用 `${storm.topology}`。我们并未事先在 properties 节中定义此值（但应该定义。） 不过，在稍后的步骤中，将在开发环境中运行拓扑时从命令行设置此值。
 
@@ -151,27 +151,27 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 在 **pom.xml** 的 `<plugins>` 节中添加以下内容，以包括 Apache Maven Compiler 插件并将源和目标版本设置为 1.7。
 
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.3</version>
-            <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
-            </configuration>
-        </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+        </configuration>
+    </plugin>
 
 ###配置资源
 
 使用 resources 节可以包含非代码资源，例如拓扑中组件所需的配置文件。本示例将在 **pom.xml** 文件的 `<resources>` 节中添加以下内容。
 
-        <resource>
-            <directory>${basedir}/resources</directory>
-            <filtering>false</filtering>
-            <includes>
+    <resource>
+        <directory>${basedir}/resources</directory>
+        <filtering>false</filtering>
+        <includes>
             <include>log4j2.xml</include>
-            </includes>
-        </resource>
+        </includes>
+    </resource>
 
 这会将项目根目录 (`${basedir}`) 中的 resources 目录添加为包含资源的位置，并包含名为 __log4j2.xml__ 的文件。此文件用于配置拓扑所要记录的信息。
 
@@ -497,8 +497,8 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 Storm 使用 Apache Log4j 来记录信息。如果未配置日志记录，拓扑将发出许多难以阅读的诊断信息。若要控制所记录的信息，请在 __resources__ 目录中创建名为 __log4j2.xml__ 的文件。将以下内容用作该文件的内容。
 
-        <?xml version="1.0" encoding="UTF-8"?>
-        <Configuration>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Configuration>
         <Appenders>
             <Console name="STDOUT" target="SYSTEM_OUT">
                 <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
@@ -512,7 +512,7 @@ Storm 使用 Apache Log4j 来记录信息。如果未配置日志记录，拓扑
                 <Appender-Ref ref="STDOUT"/>
             </Root>
         </Loggers>
-        </Configuration>
+    </Configuration>
 
 这将为 __com.microsoft.example__ 类（包含本示例拓扑的组件）配置一个新记录器。此记录器的级别设置为“跟踪”，可以捕获此拓扑中的组件发出的任何日志记录信息。回顾此项目的代码，会发现只有 WordCount.java 文件实施日志记录 - 它会记录每个单词的计数。
 
