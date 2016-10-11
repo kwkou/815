@@ -77,7 +77,6 @@
 
 ## 后续步骤
 
-* [Learn how to use Visual Studio with the Hortonworks Sandbox](/documentation/articles/hdinsight-hadoop-emulator-visual-studio/)（了解如何将 Visual Studio 与 Hortonworks 沙盒配合使用）
 * [Learning the ropes of the Hortonworks Sandbox](http://hortonworks.com/hadoop-tutorial/learning-the-ropes-of-the-hortonworks-sandbox/)（学习 Hortonworks 沙盒的重要知识）
 * [Hadoop tutorial - Getting started with HDP](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/)（Hadoop 教程 - HDP 入门）
 
