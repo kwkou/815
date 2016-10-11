@@ -5,21 +5,21 @@
 	documentationCenter=""
 	authors="Asolanki"
 	manager="dwrede"
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="06/22/2016"   
-	wacn.date="08/22/2016"/>
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/12/2016"   
+	wacn.date="10/10/2016"
+	ms.author="adsolank;juliako;johndeu"/>
 
 
 
 # 使用 Azure Media Indexer 为媒体文件编制索引
-
-> [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-manage-content/#index)
-- [.NET](/documentation/articles/media-services-index-content/)
 
 
 使用 Azure Media Indexer，可以使媒体文件内容可供搜索，并为隐藏的字幕和关键字生成全文本脚本。你可以只处理一个媒体文件，也可以一次处理多个媒体文件。
@@ -48,7 +48,7 @@
 
 你还可以使用清单文件一次处理多个媒体文件。
 
-有关详细信息，请参阅 [Azure Media Indexer 的任务预设](#)。
+有关详细信息，请参阅 [Azure Media Indexer 的任务预设](https://msdn.microsoft.com/zh-cn/library/dn783454.aspx)。
 
 ## 为资产编制索引
 
@@ -164,7 +164,7 @@ __JobResult.txt__ |输出清单，仅当为多个文件编制索引时才提供�
 
 以下方法将多个媒体文件上载为资产，并创建一次性为所有这些文件编制索引的作业。
 
-使用 .lst 扩展名的清单文件在创建后将上载到资产中。该清单文件包含所有资产文件的列表。有关详细信息，请参阅 [Azure 媒体索引器的任务预设](https://msdn.microsoft.com/zh-cn/library/azure/dn783454.aspx)。
+使用 .lst 扩展名的清单文件在创建后将上载到资产中。该清单文件包含所有资产文件的列表。有关详细信息，请参阅 [Azure 媒体索引器的任务预设](https://msdn.microsoft.com/zh-cn/library/dn783454.aspx)。
 
 	static bool RunBatchIndexingJob(string[] inputMediaFiles, string outputFolder)
 	{
@@ -287,4 +287,4 @@ __features__ <br /><br />在版本 1.2 中添加。目前，唯一支持的功�
 
 
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->

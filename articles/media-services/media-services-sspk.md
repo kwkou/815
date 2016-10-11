@@ -7,10 +7,15 @@
 	manager="erikre" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
-	ms.date="07/19/2016"  
-	wacn.date="09/28/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/06/2016"  
+	wacn.date="10/10/2016"
+	ms.author="xpouyat"/>
 
 #授权 Microsoft® 平滑流式处理客户端移植工具包
 
@@ -26,19 +31,19 @@ Microsoft 平滑流式处理客户端移植工具包（简称 **SSPK**）是经�
 
 经过授权的 SSPK 可以提供优异的商业价值。SSPK 许可证为行业提供：
 
-- 采用 C++ 的平滑流式处理移植工具包源代码 
+- 采用 C++ 的平滑流式处理移植工具包源代码
   - 实现平滑流式处理客户端功能
   - 添加格式解析、启发、缓冲逻辑，等等
-- 播放器应用程序 API 
+- 播放器应用程序 API
   -	可与媒体播放器应用程序交互的编程接口
-- 平台抽象层 (PAL) 接口 
+- 平台抽象层 (PAL) 接口
   -	可与操作系统（线程、套接字）交互的编程接口
-- 硬件抽象层 (HAL) 接口 
+- 硬件抽象层 (HAL) 接口
   -	可与硬件 A/V 解码器（解码、绘制）交互的编程接口
-- 数字权限管理 (DRM) 接口 
+- 数字权限管理 (DRM) 接口
   -	可通过 DRM 抽象层 (DAL) 处理 DRM 的编程接口
   -	Microsoft PlayReady 移植工具包是单独发售的，但可通过此接口集成。有关 Microsoft PlayReady 设备许可的详细信息，请单击[此处](http://www.microsoft.com/playready/licensing/device_technology.mspx#pddipdl)。
-- 实现示例 
+- 实现示例
   -	适用于 Linux 的 PAL 实现示例
   -	适用于 GStreamer 的 HAL 实现示例
 
@@ -67,7 +72,7 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 
 - 交付的每个设备实现支付 0.10 美元
 - 每年的特许权使用费上限为 50,000 美元
-- 每年的前 10,000 个设备实现无需支付特许权使用费 
+- 每年的前 10,000 个设备实现无需支付特许权使用费
 
 ##许可过程和 SSPK 访问权限
 
@@ -86,6 +91,7 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Alticast Corporation
 - Amazon Digital Services, Inc.
 - AVC Multimedia Software Co., Ltd.
+- Cavium, Inc.
 - EchoStar Purchasing Corporation
 - Enseo, Inc.
 - Fluendo S.A.
@@ -102,6 +108,7 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - SoftAtHome
 - Sony Corporation
 - Tatung Technology Inc.
+- TCL Technoly Electronics (Huizhou) Co., Ltd.
 - Vestel Elektronik Sanayi ve Ticaret A.S.
 - VisualOn, Inc.
 - ZTE Corporation
@@ -124,8 +131,8 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Filmflex Movies Limited
 - Fluendo S.A.
 - Gibson Innovations Limited
+- Haier Information Applicantion S.R.L
 - HANDAN BroadInfoCom Co., Ltd.
-- Hisense International Co., Ltd
 - Homecast Co.,Ltd
 - Hon Hai Precision Industry Co., Ltd.
 - Infomir GMBH
@@ -153,4 +160,4 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Wistron Corporation
 - ZTE Corporation
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0926_2016-->

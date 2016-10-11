@@ -3,18 +3,23 @@
 	description="本教程将指导你使用 Azure 经典管理门户完成创建通道的步骤，该通道接收单比特率实时流，并将其编码为多比特率流。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,anilmur" 
+	authors="anilmur" 
 	manager="erikre" 
-	editor=""/>  
+	editor=""/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="get-started-article"
+	ms.date="09/06/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako;juliako"/>
 
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
 
-
-#如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 经典管理门户创建多比特率流
+#如何使用 Azure 媒体服务执行实时传送视频流以通过 Azure 经典管理门户创建多比特率流
 
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
@@ -44,8 +49,8 @@
 
 	使用此 URL 来验证频道是否正常接收实时流。
 
-3. 创建节目（这同时还会创建一个资源）。
-1. 发布节目（这将为关联的资源创建按需定位符）。
+3. 创建事件/节目（还将创建一个资产）。
+1. 发布事件（将创建相关资产的按需定位符）。
 
 	确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
 1. 在准备好开始流式传输和存档时，启动节目。
@@ -72,13 +77,11 @@
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 - 可以发送单比特率实时流的摄像头和编码器。
 
-##使用门户配置流式处理终结点
+##配置流式处理终结点 
 
-使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+媒体服务所提供的动态打包可让你以下述流格式传送多比特率 MP4，而无须重新打包成这些流格式：MPEG DASH、HLS、Smooth Streaming 或 HDS。通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
-使用实时流时，本地实时编码器（在本例中为 Wirecast）会将多比特率实时流引入你的通道。当用户请求流时，媒体服务会使用动态打包将源流重新打包成自适应比特率流（HLS、DASH 或平滑流）。
-
-若要利用动态打包，你需要获取计划从中传送内容的**流式处理终结点**的至少一个流式处理单元。
+若要利用动态打包，你需要获取计划从中传送内容的流式处理终结点的至少一个流式处理单元。
 
 若要更改流式处理保留单元数，请执行以下操作：
 
@@ -264,4 +267,4 @@
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->

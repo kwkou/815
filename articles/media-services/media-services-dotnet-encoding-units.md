@@ -7,14 +7,18 @@
 	manager="erikre" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
- 	ms.date="07/26/2016"
-	wacn.date="09/28/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+ 	ms.date="09/01/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako;milangada;gtrifonov"/>
 
 
 #如何使用 .NET SDK 缩放编码
-
 
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-portal-encoding-units/)
@@ -47,4 +51,4 @@
 
 
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0926_2016-->

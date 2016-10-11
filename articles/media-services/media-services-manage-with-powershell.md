@@ -7,10 +7,15 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags
-	ms.service="media-services"
-	ms.date="08/09/2016"
-	wacn.date="09/23/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/04/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako"/>  
 
 
 
@@ -46,7 +51,7 @@
 
 	New-AzureRmMediaService [-ResourceGroupName] <string> [-AccountName] <string> [-Location] <string> [-StorageAccounts] <PSStorageAccount[]> [-Tags <hashtable>]  [<CommonParameters>]
 
-### Parameters
+### 参数
 
 **-ResourceGroupName &lt;字符串&gt;**
 
@@ -142,7 +147,7 @@
 
 输入类型是可以发送到 cmdlet 的对象类型。
 
-### Outputs
+### 输出
 
 输出类型是 cmdlet 发出的对象类型。
 
@@ -154,7 +159,7 @@
 
 	Set-AzureRmMediaService [-ResourceGroupName] <string> [-AccountName] <string> [-Tags <hashtable>] [-StorageAccounts <PSStorageAccount[]>]  [<CommonParameters>]
 
-### Parameters
+### 参数
 
 **-ResourceGroupName &lt;字符串&gt;**
 
@@ -221,7 +226,7 @@
 
 输入类型是可以发送到 cmdlet 的对象类型。
 
-### Outputs
+### 输出
 
 输出类型是 cmdlet 发出的对象类型。
 
@@ -233,7 +238,7 @@
 
 	Remove-AzureRmMediaService [-ResourceGroupName] <string> [-AccountName] <string>  [<CommonParameters>]
 
-### Parameters
+### 参数
 
 **-ResourceGroupName &lt;字符串&gt;**
 
@@ -267,7 +272,7 @@
 
 输入类型是可以发送到 cmdlet 的对象类型。
 
-### Outputs
+### 输出
 
 输出类型是 cmdlet 发出的对象类型。
 
@@ -285,7 +290,7 @@ ParameterSet: AccountNameParameterSet
 
 	Get-AzureRmMediaService [-ResourceGroupName] <string> [-AccountName] <string>  [<CommonParameters>]
 
-### Parameters
+### 参数
 
 **-ResourceGroupName &lt;字符串&gt;**
 
@@ -321,7 +326,7 @@ ParameterSet: AccountNameParameterSet
 
 输入类型是可以发送到 cmdlet 的对象类型。
 
-### Outputs
+### 输出
 
 输出类型是 cmdlet 发出的对象类型。
 
@@ -333,7 +338,7 @@ ParameterSet: AccountNameParameterSet
 
 	Get-AzureRmMediaServiceKeys [-ResourceGroupName] <string> [-AccountName] <string>  [<CommonParameters>]
 
-### Parameters
+### 参数
 
 **-ResourceGroupName &lt;字符串&gt;**
 
@@ -367,7 +372,7 @@ ParameterSet: AccountNameParameterSet
 
 输入类型是可以发送到 cmdlet 的对象类型。
 
-### Outputs
+### 输出
 
 输出类型是 cmdlet 发出的对象类型。
 
@@ -379,7 +384,7 @@ ParameterSet: AccountNameParameterSet
 
 	Set-AzureRmMediaServiceKey [-ResourceGroupName] <string> [-AccountName] <string> [-KeyType] <KeyType> {Primary | Secondary}  [<CommonParameters>]
 
-### Parameters
+### 参数
 
 **-ResourceGroupName &lt;字符串&gt;**
 
@@ -427,7 +432,7 @@ ParameterSet: AccountNameParameterSet
 
 输入类型是可以发送到 cmdlet 的对象类型。
 
-### Outputs
+### 输出
 
 输出类型是 cmdlet 发出的对象类型。
 
@@ -439,7 +444,7 @@ ParameterSet: AccountNameParameterSet
 
 	Sync-AzureRmMediaServiceStorageKeys [-ResourceGroupName] <string> [-MediaServiceAccountName] <string>    [-StorageAccountName] <string>  [<CommonParameters>]
 
-### Parameters
+### 参数
 
 **-ResourceGroupName &lt;字符串&gt;**
 
@@ -485,7 +490,7 @@ ParameterSet: AccountNameParameterSet
 
 输入类型是可以发送到 cmdlet 的对象类型。
 
-### Outputs
+### 输出
 
 输出类型是 cmdlet 发出的对象类型。
 
@@ -495,4 +500,4 @@ ParameterSet: AccountNameParameterSet
 
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0926_2016-->

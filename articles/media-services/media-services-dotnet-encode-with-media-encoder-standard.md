@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用媒体编码器标准版对资产进行编码" 
+	pageTitle="使用 .NET 通过媒体编码器标准版对资产进行编码" 
 	description="本主题介绍如何使用 .NET 通过媒体编码器标准版对资产进行编码。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -7,13 +7,18 @@
 	manager="erikre" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
- 	ms.date="07/18/2016"
-	wacn.date="09/28/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+ 	ms.date="08/30/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako;anilmur"/>
 
 
-#如何使用媒体编码器标准版对资产进行编码
+# 使用 .NET 通过媒体编码器标准版对资产进行编码
 
 编码作业是媒体服务中最常见的处理操作之一。可通过创建编码作业将媒体文件从一种编码转换为另一种编码。进行编码时，可以使用媒体服务内置的 Media Encoder。你也可以使用媒体服务合作伙伴提供的编码器；可通过 Azure 应用商店获取第三方编码器。
 
@@ -137,4 +142,4 @@
 
 [如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/)
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0926_2016-->

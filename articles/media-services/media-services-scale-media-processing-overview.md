@@ -1,9 +1,9 @@
 <properties
-	pageTitle="如何使用 Azure 经典管理门户缩放媒体处理"
-	description="了解如何通过指定要为帐户设置的“按需流式处理保留单位”和“编码保留单位”数，缩放媒体服务。"
+	pageTitle="调整媒体处理的规模概述 | Azure"
+	description="本主题概述了如何使用 Azure 媒体服务调整媒体处理的规模。"
 	services="media-services"
 	documentationCenter=""
-	authors="milangada"
+	authors="juliako"
 	manager="erikre"
 	editor=""/>
 
@@ -13,29 +13,20 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2016"
+	ms.date="08/29/2016"
 	wacn.date="10/10/2016"
-	ms.author="juliako;milanga"/>
+	ms.author="juliako"/>
 
 
-# 如何使用 Azure 经典管理门户缩放媒体处理
+# 调整媒体处理的规模概述
 
-## 通过其他技术完成此任务
-
-此页概述了如何缩放媒体处理，并说明了如何使用 Azure 经典管理门户来完成它。你也可以通过下面的其他技术来完成此任务：
-
-> [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encoding-units/)
-- [门户](/documentation/articles/media-services-portal-encoding-units/)
-- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
-- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
-- [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
+此页概述了如何以及为何调整媒体处理的规模。
 
 ## 概述
 
 媒体服务帐户与保留单位类型关联，后者决定了编码处理任务的处理速度。你可以在以下保留单位类型之间进行选择：**S1**、**S2** 或 **S3**。例如，与 S1 保留单位类型相比，使用 S2 类型时，相同的编码作业运行速度更快。有关详细信息，请参阅[保留单位类型](https://azure.microsoft.com/blog/high-speed-encoding-with-azure-media-services/)。
 
-除了指定保留单元类型，你还可以指定如何通过媒体保留单元来设置帐户。设置的媒体保留单元数决定了给定帐户中可并发处理的媒体任务数。例如，如果你的帐户具有 5 个保留单元，则只要有任务要处理，就可以同时运行 5 个媒体任务。其余任务将排队等待，运行的任务完成后才选择它们以按顺序进行处理。如果帐户未设置任何保留单元，则按顺序选择任务进行处理。在这种情况下，完成一个任务和开始下一个任务之间的等待时间将取决于系统中资源的可用性。
+除了指定保留单位类型，你还可以指定通过保留单位来设置帐户。设置的保留单位数决定了给定帐户中可并发处理的媒体任务数。例如，如果帐户具有 5 个保留单元，则只要有任务要处理，就可以同时运行 5 个媒体任务。其余任务将排队等待，运行的任务完成后才选择它们以按顺序进行处理。如果帐户未设置任何保留单元，则按顺序选择任务进行处理。在这种情况下，完成一个任务和开始下一个任务之间的等待时间将取决于系统中资源的可用性。
 
 ## 在不同的保留单位类型之间进行选择
 
@@ -48,43 +39,31 @@
 
 ##注意事项
 
->[AZURE.IMPORTANT] 请注意以下事项：
+>[AZURE.IMPORTANT] 查看本节中所述的注意事项。
 
 - 保留单位可用于并行化所有媒体处理，其中使用 Azure Media Indexer 为作业编制索引。但是，与编码不同，索引作业使用更快的保留单位并不能更快地完成处理。
 
-- 如果使用共享的池，即没有任何保留单位，则编码任务将具有与 S1 RU 相同的性能。但是，你的任务在排队状态下花费的时间可能没有上限，并且在任何给定时间内，最多一项任务将在运行。
+- 如果使用共享的池（即没有任何保留单位），则编码任务将具有与 S1 RU 相同的性能。但是，任务在排队状态下花费的时间可能没有上限，并且在任何给定时间内，最多一项任务将在运行。
 
+- 下面的数据中心不提供 **S2** 保留单位类型：巴西南部、印度西部、印度中部和印度南部。
 
+- 下面的数据中心不提供 **S3** 保留单位类型：巴西南部、印度西部、印度中部。
 
 - 为 24 小时期间指定的最大单位数将用于计算成本。
 
-## 更改保留单位类型
-
-若要更改保留单位类型和保留单位数目，请执行以下操作：
-
-1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
-
-2. 选择“编码”页。
-
-	若要更改“保留单位类型”，请按“S1”、“S2”或“S3”。
-
-	若要更改所选保留单位类型的保留单位数，请使用“编码”滑块。
-
-
-	![“处理器”页](./media/media-services-portal-encoding-units/media-services-encoding-scale.png)
-
-3. 按“保存”按钮保存更改。
-
-	按“保存”后，会立即分配新的保留单位。
- 
 
 ##配额和限制
 
-有关配额和限制以及如何在线申请支持创建工单的信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
+有关配额和限制以及如何开具支持票证的信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
 
+##后续步骤
 
+通过以下技术之一完成调整媒体处理的规模任务：
 
-
- 
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-dotnet-encoding-units/)
+- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
+- [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
 <!---HONumber=Mooncake_0926_2016-->

@@ -1,27 +1,36 @@
 <properties 
-	pageTitle="使用 REST API 将文件上载到媒体服务帐户" 
+	pageTitle="使用 REST 将文件上传到媒体服务帐户 | Azure" 
 	description="了解如何通过创建和上载资产将媒体内容加入媒体服务。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>  
+	editor=""/>
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/19/2016"
+	wacn.date="10/10/2016"
+	ms.author="juliako"/>
 
 
-#使用 REST API 将文件上载到媒体服务帐户
+# 使用 REST 将文件上传到媒体服务帐户
 
-[AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
- 
+ > [AZURE.SELECTOR]
+ - [.NET](/documentation/articles/media-services-dotnet-upload-files/)
+ - [REST](/documentation/articles/media-services-rest-upload-files/)
 
 在媒体服务中，可以将数字文件上载到资产中。[资产](https://msdn.microsoft.com/zh-cn/library/azure/hh974277.aspx)实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 将文件上载到资产后，相关内容即安全地存储在云中供后续处理和流式处理。
 
-
->[AZURE.NOTE]生成流式处理内容的 URL（例如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）时，媒体服务会使用 IAssetFile.Name 属性的值。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+>[AZURE.NOTE]选择资产文件名时需考虑下列事项：
+>
+>- 构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+>
+>- 名称长度不应超过 260 个字符。
 
 上载资产的基本工作流分为下列各节：
 
@@ -229,7 +238,7 @@ SAS URL 采用以下格式：
 请注意以下事项：
 
 - 一项给定的资产一次最多只能与五个唯一的定位符相关联。有关详细信息，请参阅定位符。
-- 如果需要立即上载文件，应将 StartTime 值设置为当前时间前五分钟。这是因为你的客户端计算机与媒体服务之间可能存在时钟偏差。此外，StartTime 值必须采用以下 DateTime 格式：YYYY-MM-DDTHH:mm:ssZ（例如，“2014-05-23T17:53:50Z”）。	
+- 如果需要立即上载文件，应将 StartTime 值设置为当前时间前五分钟。这是因为你的客户端计算机与媒体服务之间可能存在时钟偏差。此外，StartTime 值必须采用以下 DateTime 格式：YYYY-MM-DDTHH:mm:ssZ（例如，“2014-05-23T17:53:50Z”）。
 - 定位符从创建到可用可能会有 30-40 秒的延迟。SAS URL 和源定位符都会出现这个问题。
 
 以下示例说明了如何创建 SAS URL 定位符，由请求正文中的 Type 属性定义（“1”表示 SAS 定位符，“2”表示按需来源定位符）。返回的 **Path** 属性包含上载文件时必须使用的 URL。
@@ -370,7 +379,7 @@ IngestManifest 是一个容器，用于放置一组资产、资产文件以及�
 
 **HTTP 请求**
 
-	POST https:// wamsshaclus001rest-hs.chinacloudapp.cn/API/IngestManifests HTTP/1.1
+	POST https://wamsshaclus001rest-hs.chinacloudapp.cn/API/IngestManifests HTTP/1.1
 	Content-Type: application/json;odata=verbose
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
@@ -513,4 +522,4 @@ ContentKey 通过发送 HTTP POST 请求关联到一个或多个资产。以下�
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor/
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->
