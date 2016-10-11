@@ -1,5 +1,5 @@
 <properties 
- pageTitle="开始在管理门户中使用 Azure 计划程序 | Azure"
+ pageTitle="Azure 门户预览中的 Azure 计划程序入门 | Azure"
  description="Azure 门户中的 Azure 计划程序入门"
  services="scheduler" 
  documentationCenter=".NET" 
@@ -9,206 +9,129 @@
 <tags
  ms.service="scheduler"
  ms.date="08/10/2016"
- wacn.date="08/29/2016"/>
+ wacn.date="10/11/2016"/>
 
-# Azure 经典管理门户中的 Azure 计划程序入门
+# Azure 门户预览中的 Azure 计划程序入门
 
 在 Azure 计划程序中创建计划的作业很简单。在本教程中，你将了解如何创建作业。还将学习计划程序的监视和管理功能。
 
 ## 创建作业
 
-1.  登录到[管理门户](https://manage.windowsazure.cn)。  
+1.  登录到 [Azure 门户预览](https://portal.azure.cn/)。
 
-2.  单击“应用程序服务”>“新建”>“计划程序”，然后单击“自定义创建”。<br /><br />![][2]
+2.  单击“+新建”> 在搜索框中键入“计划程序”> 在结果中选择“计划程序”> 单击“创建”。
 
-3.  在“作业集合”中的“作业集合”下拉列表下，选择现有作业集合的名称。如果你要将作业添加到的作业集合不存在，请选择“新建”并输入一个名称来标识新的作业集合。<br /><br /> ![][3]
+     ![][marketplace-create]
 
-4.  在“区域”中，为作业集合选择地理区域。
+3.  让我们来创建一个作业，这只需要使用 GET 请求访问 http://www.microsoft.com/。在“计划程序作业”屏幕上，输入以下信息：
 
-5.  单击箭头键以创建作业集合并转到下一阶段 – 创建作业。
+    1.  **名称：**`getmicrosoft`
 
-6.  让我们来创建一个作业，这只需要使用 GET 请求访问 http://www.microsoft.com/ 。在“作业操作”屏幕中，为请求的表单字段定义以下值：
+    2.  **订阅：**您的 Azure 订阅
 
-    1.  **名称：**` getmicrosoft`  
+    3.  **作业集合：**选择现有的作业集合，或者单击“新建”>“输入名称”。
 
-    2.  **操作类型：**` HTTP`  
+4.  接下来，在“操作设置”中，定义以下值：
 
-    3.  **方法：**` GET`  
+    1.  **操作类型：**` HTTP`
 
-    4.  **URI：**` http://www.microsoft.com`  
+    2.  **方法：**`GET`
 
-   	![][4]
+    3.  **URL：**` http://www.microsoft.com`
 
-7.  创建作业后，定义计划。该作业可定义为一次性作业，但是我们选择了重复执行的计划。本教程中的一些屏幕快照显示一分钟重复一次（仅用于演示目的），但是我们选择了 12 小时重复一次。
+      ![][action-settings]  
 
-    1.  **执行间隔：**` 12 Hours`  
 
-    2.  **开始时间：**` Now`  
+5.  最后，让我们来定义一个计划。该作业可定义为一次性作业，但是我们选择了重复执行的计划：
 
-    3.  **结束时间：**` Select date 2 days after current day and any time`  
+    1. **重复周期**：`Recurring`
 
-   	![][5]
+    2. **开始日期**：今天的日期
 
-8.  单击**“确定”**。  
-    创建作业和作业集合可能需要一段时间。若要检查状态，可以监视门户底部的通知。
+    3. **执行间隔**：`12 Hours`
 
-   	![][6]
+    4. **结束日期**：从今天起两天后的日期
 
-   	在创建作业和作业集合后，将显示一条消息，告知你已成功创建作业或作业集合。该作业将在“计划程序”部分的“作业”部分中列出，作业集合将在“作业集合”部分中列出。若要在作业中配置其他高级设置，请参阅以下“配置作业”部分。
+      ![][recurrence-schedule]  
 
-   	![][7]
 
-## 管理和监视作业集合和作业
+6.  单击“创建”
 
-创建作业集合后，该作业集合将显示在主计划程序管理屏幕中。
+## 管理和监视作业
 
-![][8]
+作业创建完成后，将出现在 Azure 主仪表板中。单击该作业，将打开具有以下选项卡的新窗口：
 
-单击某个作业集合将打开具有以下选项的新窗口：
+1.  属性
 
-1.  仪表板  
+2.  操作设置
 
-2.  缩放  
+3.  计划
 
-3.  历史记录  
+4.  历史记录
 
-4.  作业  
+5.  用户
 
-以下主题更为详细地介绍了这些选项卡。
+    ![][job-overview]
 
-### 仪表板
+### 属性
 
-单击作业集合名称时，显示“仪表板”选项卡。“仪表板”将显示以下信息：
+这些只读属性描述计划程序作业的管理元数据。
 
-![][9]
+   ![][job-properties]
 
-#### 作业使用概览和执行使用概览
 
-一个显示固定度量值列表的表和图表系列。这些度量值提供有关你的作业集合的运行状况的实时值，其中包括：
+### 操作设置
 
-1.  当前作业  
+在“作业”屏幕中单击某个作业可以配置该作业。如果未在快速创建向导中配置它们，此操作可配置高级设置。
 
-2.  已完成的作业  
+对于所有操作类型，都可以更改重试策略和错误操作。
 
-3.  出错的作业  
+对于 HTTP 和 HTTPS 作业操作类型，可以将方法更改为允许的任何 HTTP 谓词。你还可以添加、删除或更改标头及基本身份验证信息。
 
-4.  已启用的作业  
+对于存储队列操作类型，可以更改存储帐户、队列名称、SAS 令牌和正文。
 
-5.  已禁用的作业  
+对于服务总线操作类型，可以更改命名空间、主题/队列路径、身份验证设置、传输类型、消息属性和消息正文。
 
-6.  作业执行次数  
+   ![][job-action-settings]
 
-#### 速览
+### 计划
 
-一个显示状态和度量值设置的固定列表的表。这些度量值提供有关你的作业集合的状态和相关设置的实时值，其中包括：
+如果想要更改快速创建向导中创建的计划，此处能够重新配置该计划。
 
-1.  状态  
+这是[作业中生成复杂计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity/)的机会
 
-2.  区域  
+可以更改开始日期与时间、重复计划以及结束日期与时间（如果该作业是重复进行的。）
 
-3.  错误数  
+   ![][job-schedule]
 
-4.  错误发生次数  
-
-5.  URI  
-
-### 缩放
-
-在“缩放”选项卡中，你可以更改设置和计划程序使用的服务层。
-
-![][10]
-
-#### 常规
-
-这将会显示你执行的是“免费”还是“标准”计划。
-
-#### 配额
-
-Azure 计划程序基于几个条件实施配额。本节列出了配额阈值，你可以更改它们。默认情况下，配置了一组配额。这些配额设置的限制值由你的计划决定，更改计划可能影响定价。可以更改配额以缩放计划程序。选项包括：
-
-1.  最大作业数  
-
-2.  最大频率  
-
-3.  最大间隔  
 
 ### 历史记录
 
-“历史记录”选项卡显示所选作业的以下信息：
+“历史记录”选项卡显示在所选作业的系统中每次作业执行的所选度量值。这些度量值提供有关计划程序的运行状况实时值：
 
-![][11]
+1.  状态
 
-#### “历史记录”表
+2.  详细信息
 
-一个表，它显示在所选作业的系统中每次作业执行的所选度量值。这些度量值提供有关你的计划程序的运行状况的实时值。
+3.  重试次数
 
-#### 可用度量值
+4.  发生次数：第 1 次、第 2 次、第 3 次等
 
-提供以下性能计数器/度量值：
+5.  执行开始时间
 
-1.  状态  
+6.  执行结束时间
 
-2.  详细信息  
+   ![][job-history]  
 
-3.  重试次数  
 
-4.  执行次数（第一次、第二次、第三次等）  
+可单击运行以查看**历史记录详情**，包括每次执行的整个响应情况。此对话框还允许你将响应复制到剪贴板。
 
-5.  执行的时间戳  
+   ![][job-history-details]
 
-你可以单击“查看历史记录详细信息”以查看每次执行的响应情况。此对话框还允许你将响应复制到剪贴板。
+### 用户
 
-![][12]
+Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 计划程序进行细致的访问管理。若要了解如何使用“用户”选项卡，请参阅 [Azure 基于角色的访问控制](../active-directory/role-based-access-control-configure.md)
 
-### 作业
-
-“作业”选项卡显示以下信息来监视作业的执行历史记录：
-
-![][13]
-
-#### “作业”表
-
-一个表，它显示在系统中每个作业的所选度量值。这些度量值提供有关你的计划程序的运行状况的实时值。
-
-#### 禁用、启用或删除作业
-
-单击某个作业名称可提供启用、禁用或删除作业的选项。删除的作业可能无法恢复。
-
-#### 可用度量值
-
-提供以下计数器和度量值：
-
-1.  名称  
-
-2.  上次运行时间  
-
-3.  下次运行时间  
-
-4.  状态  
-
-5.  频率  
-
-6.  失败数  
-
-7.  错误数  
-
-8.  执行次数  
-
-9.  操作类型  
-
-### 配置作业
-
-在“作业”屏幕中单击某个作业可以配置该作业。这样，便可以配置快速创建向导中未提供的其他高级设置。若要配置某个作业，请在“作业”屏幕中单击该作业名称旁边的右箭头。
-
-你可以在作业配置页中更新作业设置。下面显示了 HTTP 和 HTTPS 作业的作业配置页。对于 HTTP 和 HTTPS 作业操作类型，可以将方法更改为允许的任何 HTTP 谓词。你还可以添加、删除或更改标头及基本身份验证信息。
-
-![][14]
-
-下面显示了存储队列作业的作业配置页。对于存储队列操作类型，可以更改存储帐户、队列名称、SAS 令牌和正文。“计划”部分（下图中未显示）与 HTTP/HTTPS 作业操作类型的“计划”部分相同。
-
-![][15]
-
-最后，对于所有操作类型，你可以更改计划本身及其重复行为。可以更改开始日期与时间、重复计划以及结束日期与时间（如果该作业是重复进行的。） 进行任何更改后，可单击“保存”以保存更改，或单击“放弃”以放弃更改。
 
 ## 另请参阅
 
@@ -231,6 +154,16 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
  [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
 
 
+[marketplace-create]: ./media/scheduler-get-started-portal/scheduler-v2-portal-marketplace-create.png
+[action-settings]: ./media/scheduler-get-started-portal/scheduler-v2-portal-action-settings.png
+[recurrence-schedule]: ./media/scheduler-get-started-portal/scheduler-v2-portal-recurrence-schedule.png
+[job-properties]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-properties.png
+[job-overview]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-overview-1.png
+[job-action-settings]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-action-settings.png
+[job-schedule]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-schedule.png
+[job-history]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-history.png
+[job-history-details]: ./media/scheduler-get-started-portal/scheduler-v2-portal-job-history-details.png
+
 
 [1]: ./media/scheduler-get-started-portal/scheduler-get-started-portal001.png
 [2]: ./media/scheduler-get-started-portal/scheduler-get-started-portal002.png
@@ -248,4 +181,4 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0822_2016-->
