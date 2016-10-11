@@ -22,12 +22,6 @@
 
 # 使用 HTTPS 保护应用的自定义域
 
-
-> [AZURE.SELECTOR]
-- [在 Azure 中购买 SSL 证书](/documentation/articles/web-sites-purchase-ssl-web-site/)
-- [从其他位置使用 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate/)
-
-
 本文演示如何为 Web 应用、移动应用后端或 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)（使用自定义域名）中的 API 应用启用 HTTPS。仅限服务器的身份验证。若需相互身份验证（包括客户端身份验证），请参阅[如何为应用服务配置 TLS 相互身份验证](/documentation/articles/app-service-web-configure-tls-mutual-auth/)。
 
 若要使用 HTTPS 保护拥有自定义域名的应用，可为该域名添加证书。默认情况下，Azure 使用单个 SSL 证书保护 ***.chinacloudsites.cn** 通配符域的安全，因此客户端可能已在 **https://*&lt;appname>*.chinacloudsites.cn** 处访问了应用。但若想使用 **contoso.com**、**www.contoso.com** 和 ***.contoso.com** 等自定义域，默认证书不能提供保护。此外，与所有[ 通配符证书](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/)类似，默认证书的安全性没有使用证书的自定义域高。
@@ -47,8 +41,6 @@
 	- 至少使用 2048 位加密。
 	- 其使用者名称应与需保护的自定义域相匹配。若要用一个证书保护多个域，需使用通配符名称（如 ***.contoso.com**）或指定 subjectAltName 值。
 	- 与 CA 使用的所有**[中间证书](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)**合并。否则，在某些客户端上可能会遇到不可再现的互操作性问题。
-
-		>[AZURE.NOTE] 若要获取满足所有要求的 SSL 证书，最简单的方法是 [直接在 Azure 门户预览版中购买](/documentation/articles/web-sites-purchase-ssl-web-site/)。本文演示了如何手动执行该操作，然后将它绑定到应用服务中的自定义域。<p>**椭圆曲线加密 (ECC) 证书**可用于应用服务，但文本不予讨论。按具体步骤结合 CA 来创建 ECC 证书。
 
 ## <a name="bkmk_getcert"></a>步骤 1。获取 SSL 证书
 

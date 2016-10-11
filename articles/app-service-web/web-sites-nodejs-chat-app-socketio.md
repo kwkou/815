@@ -267,7 +267,7 @@ Azure Web Apps 提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 
 [Azure Redis 缓存]: /documentation/services/redis-cache/
 [应用服务 Web 应用]: /documentation/articles/app-service-changes-existing-services/
-[Web Apps 定价页]: http://go.microsoft.com/fwlink/?LinkId=511643
+[Web Apps 定价页]: /documentation/articles/azure-subscription-service-limits/
 [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-chat-app-socketio/
 [在 Azure 云服务中使用 Socket.IO 构建 Node.js 聊天应用程序]: /documentation/articles/cloud-services-nodejs-chat-app-socketio/
 [Install and Configure the Azure CLI]: /documentation/articles/xplat-cli-install/

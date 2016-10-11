@@ -23,7 +23,7 @@
 	
 # 在 5 分钟内将第一个 Java Web 应用部署到 Azure
 
-本教程旨在帮助用户将一个简单的 Java Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。应用服务可用于创建 Web 应用、[移动应用后端](/documentation/service/app-service/mobile/)和 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。
+本教程旨在帮助用户将一个简单的 Java Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。应用服务可用于创建 Web 应用、[移动应用后端](/documentation/services/app-service/mobile/)和 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。
 
 用户将能够：
 
@@ -121,12 +121,6 @@
 需要更新时，只需将新的 WAR 文件上传到 FTP/FTPS 客户端中的同一个远程目录。
 
 ## 后续步骤
-
-[根据 Azure 应用商店中的模板创建 Java Web 应用](/documentation/articles/app-service-web-java-get-started/#marketplace)。可以获取自己的完全自定义 Tomcat 容器，也可获取熟悉的管理器用户界面。
-
-直接在 [IntelliJ](/documentation/articles/app-service-web-debug-java-web-app-in-intellij/) 或 [Eclipse](/documentation/articles/app-service-web-debug-java-web-app-in-eclipse/) 中调试 Azure Web 应用。
-
-或者，对第一个 Web 应用执行更多操作。例如：
 
 - 尝试[将代码部署到 Azure 的其他方法](/documentation/articles/web-sites-deploy/)。
 - 使 Azure 应用上升到更高的层次。对用户进行身份验证。按需缩放。设置一些性能警报。所有这些操作只需按几下鼠标即可完成。请参阅[在第一个 Web 应用中添加功能](/documentation/articles/app-service-web-get-started-2/)。

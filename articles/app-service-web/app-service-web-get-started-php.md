@@ -23,7 +23,7 @@
 	
 # 在 5 分钟内将第一个 PHP Web 应用部署到 Azure
 
-本教程旨在帮助用户将第一个 PHP Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。应用服务可用于创建 Web 应用、[移动应用后端](/documentation/service/app-service/mobile/)和 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。
+本教程旨在帮助用户将第一个 PHP Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。应用服务可用于创建 Web 应用、[移动应用后端](/documentation/services/app-service/mobile/)和 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。
 
 用户将能够：
 
