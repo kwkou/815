@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="02/25/2016"
-	wacn.date=""
+	wacn.date=“10/10/2016”
 	ms.author="cephalin"/>
 
 # Azure 应用服务 Web 应用高级配置和扩展
