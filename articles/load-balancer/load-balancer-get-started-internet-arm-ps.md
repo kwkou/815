@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。还可[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli.md)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。还可[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -192,7 +192,7 @@
 
 ## 创建虚拟机
 
-有关虚拟机创建和 NIC 分配的指南，请参阅[使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-create-powershell/#Example)中的选项 5。
+有关虚拟机创建和 NIC 分配的指南，请参阅[使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-create-powershell#Example)中的选项 5。
 
 ## 向负载均衡器添加网络接口
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 门户预览在 Resource Manager 中创建面向 Internet 的负载平衡器 | Microsoft Azure"
+   pageTitle="使用 Azure 门户预览在 Resource Manager 中创建面向 Internet 的负载平衡器 | Azure"
    description="了解如何使用 Azure 门户预览在 Resource Manager 中创建面向 Internet 的负载平衡器"
    services="load-balancer"
    documentationCenter="na"
@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。还可以[了解如何使用经典部署创建面向 Internet 的负载平衡器](load-balancer-get-started-internet-classic-portal.md)
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。还可以[了解如何使用经典部署创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 

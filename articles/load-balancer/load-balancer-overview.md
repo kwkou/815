@@ -57,7 +57,7 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 #### 通过 Azure Resource Manager 进行基于模板的部署
 
-负载均衡器可以通过基于 Resource Manager 的 API 和工具进行管理。若要了解有关 Resource Manager 的详细信息，请参阅 [Resource Manager overview](../resource-group-overview.md)（Resource Manager 概述）。
+负载均衡器可以通过基于 Resource Manager 的 API 和工具进行管理。若要了解有关 Resource Manager 的详细信息，请参阅 [Resource Manager overview](/documentation/articles/resource-group-overview/)（Resource Manager 概述）。
 
 ## 负载均衡器功能
 
@@ -103,14 +103,14 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
     负载均衡器配置支持适用于 UDP 的完整圆锥型 NAT。完整圆锥型 NAT 是一种类型的 NAT，其中的端口允许入站连接来自任何外部主机（响应出站请求）。
 
 
-    >[AZURE.NOTE] 对于 VM 启动的每个新的出站连接，还会由负载均衡器分配出站端口。外部主机会看到分配了虚拟 IP (VIP) 的端口的流量。对于需要大量出站连接的方案，建议使用[实例层级公共 IP](../virtual-network/virtual-networks-instance-level-public-ip.md) 地址，这样 VM 就有一个专用于 SNAT 的出站 IP 地址。这可降低端口耗尽的风险。
+    >[AZURE.NOTE] 对于 VM 启动的每个新的出站连接，还会由负载均衡器分配出站端口。外部主机会看到分配了虚拟 IP (VIP) 的端口的流量。对于需要大量出站连接的方案，建议使用[实例层级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip/) 地址，这样 VM 就有一个专用于 SNAT 的出站 IP 地址。这可降低端口耗尽的风险。
     >
     >VIP 或实例层级公共 IP (PIP) 可以使用的最大端口数为 64,000。这属于 TCP 标准限制。
 
 
 ### 支持为虚拟机提供多个负载均衡的 IP 地址
 
-可将多个负载均衡的公共 IP 地址分配给一组虚拟机。可以通过此功能在同一组虚拟机上托管多个 SSL 网站和/或多个 SQL Server AlwaysOn 可用性组侦听器。有关详细信息，请参阅[每项云服务拥有多个 VIP](load-balancer-multivip.md)。
+可将多个负载均衡的公共 IP 地址分配给一组虚拟机。可以通过此功能在同一组虚拟机上托管多个 SSL 网站和/或多个 SQL Server AlwaysOn 可用性组侦听器。有关详细信息，请参阅[每项云服务拥有多个 VIP](/documentation/articles/load-balancer-multivip/)。
 
 [AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../../includes/load-balancer-compare-tm-ag-lb-include.md)]
 
