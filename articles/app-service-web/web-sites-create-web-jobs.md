@@ -66,7 +66,7 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 
 2. 若要启动或停止连续 WebJob，右键单击列表中的 WebJob，然后单击“启动”或“停止”。
 	
-> [AZURE.NOTE] 如果 Web 应用在多个实例上运行，则连续运行的 WebJob 会在所有实例上运行。按需和按计划 WebJob 在 Azure 针对负载平衡所选择的单个实例上运行。
+> [AZURE.NOTE] 如果 Web 应用在多个实例上运行，则连续运行的 WebJob 会在所有实例上运行。按需和按计划 WebJob 在 Azure 针对负载均衡所选择的单个实例上运行。
 	
 > 要使连续 WebJob 在所有实例上可靠运行，请启用 Web 应用的 AlwaysOn* 配置设置；否则，WebJob 将在 SCM 主机站点闲置时间太长时停止运行。
 

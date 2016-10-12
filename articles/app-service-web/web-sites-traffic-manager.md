@@ -20,8 +20,8 @@
 ## 介绍
 你可以使用 Azure 流量管理器控制如何将来自 Web 客户端的请求分发到 Azure App Service 中。将 Web 应用终结点添加到 Azure 流量管理器配置文件后，Azure 流量管理器会跟踪 Web 应用的状态（正在运行、已停止或已删除），这样它就能确定那些终结点中有哪些应该接收流量。
 
-## 负载平衡方法
-Azure 流量管理器使用三种不同的负载平衡方法。以下列表描述了与 Azure Web 应用相关的这些方法。
+## 负载均衡方法
+Azure 流量管理器使用三种不同的负载均衡方法。以下列表描述了与 Azure Web 应用相关的这些方法。
 
 * **故障转移**：如果你在不同区域有克隆的 Web 应用，可使用此方法配置一个 Web 应用来服务所有的 Web 客户端流量，并配置另一区域的另一 Web 应用在前一个 Web 应用不可用时服务该流量。 
 	
@@ -29,10 +29,10 @@ Azure 流量管理器使用三种不同的负载平衡方法。以下列表描�
 	
 * **性能**：“性能”方法根据到客户端的最短往返行程时间来分布流量。“性能”方法可用于同一区域或不同区域中的 Web 应用。
 
-有关 Azure 流量管理器中负载平衡的详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-routing-methods/)。
+有关 Azure 流量管理器中负载均衡的详细信息，请参阅[关于流量管理器负载均衡方法](/documentation/articles/traffic-manager-routing-methods/)。
 
 ## Web 应用和流量管理器配置文件 
-若要通过配置来控制 Web 应用流量，你需要在 Azure 流量管理器中创建一个使用前述三种负载平衡方法之一的配置文件，然后将要控制其流量的终结点（在此例中是 Web 应用）添加到该配置文件。你的 Web 应用状态（正在运行、已停止或已删除）会定期传送到该配置文件，这样，Azure 流量管理器就可以相应地确定流量指向。
+若要通过配置来控制 Web 应用流量，你需要在 Azure 流量管理器中创建一个使用前述三种负载均衡方法之一的配置文件，然后将要控制其流量的终结点（在此例中是 Web 应用）添加到该配置文件。你的 Web 应用状态（正在运行、已停止或已删除）会定期传送到该配置文件，这样，Azure 流量管理器就可以相应地确定流量指向。
 
 在通过 Azure 使用 Azure Traffic Manager 时，请记住以下几点：
 
@@ -54,7 +54,7 @@ Azure 流量管理器使用三种不同的负载平衡方法。以下列表描�
 
 有关 Azure 流量管理器概念及技术方面的概述，请参阅[流量管理器概述](/documentation/articles/traffic-manager-overview/)。
 
-有关 Azure 流量管理器中负载平衡的详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-routing-methods/)。
+有关 Azure 流量管理器中负载均衡的详细信息，请参阅[关于流量管理器负载均衡方法](/documentation/articles/traffic-manager-routing-methods/)。
 
 有关将流量管理器用于 Web 应用的详细信息，请参阅博客文章[将 Azure 流量管理器用于 Azure Web 应用](http://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx)和 [Azure 流量管理器现在可以与 Azure Web 应用集成](http://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/)。
  

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="为 Azure App Service 中使用流量管理器进行负载平衡的 Web 应用配置自定义域名。"
-	description="为 Azure App Service 中包含流量管理器（用于负载平衡）的 Web 应用使用自定义域名。"
+	pageTitle="为 Azure App Service 中使用流量管理器进行负载均衡的 Web 应用配置自定义域名。"
+	description="为 Azure App Service 中包含流量管理器（用于负载均衡）的 Web 应用使用自定义域名。"
 	services="app-service\web"
 	documentationCenter=""
 	authors="rmcmurray"
@@ -18,7 +18,7 @@
 
 [AZURE.INCLUDE [intro](../../includes/custom-dns-web-site-intro-traffic-manager.md)]
 
-本文提供了将自定义域名与通过流量管理器进行负载平衡的 Azure App Service 配合使用的一般说明。
+本文提供了将自定义域名与通过流量管理器进行负载均衡的 Azure App Service 配合使用的一般说明。
 
 [AZURE.INCLUDE [tmwebsitefooter](../../includes/custom-dns-web-site-traffic-manager-notes.md)]
 
