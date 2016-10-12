@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="04/26/2016"
-	wacn.date="06/23/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"/>
 
 # 在单个应用中登录 Microsoft 帐户和 Azure AD 用户
 
@@ -18,24 +24,27 @@
 
 使用 v2.0 终结点的应用还可以通过其中一种帐户从 [Microsoft Graph](https://graph.microsoft.io) 和 [Office 365](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) 使用 REST API。
 
-## <a name="getting-started"></a> 入门
-从下面选择你偏爱的平台，以使用我们的开源库与框架来生成应用。或者，你可以使用我们的 OAuth 2.0 和 OpenID Connect 协议文档来直接发送和接收协议消息，而不必使用身份验证库。
-<!-- TODO: Finalize this table  -->
+<!-- For a quick introduction to the v2.0 endpoint, please view the [Getting Started with Microsoft Identities: Enterprise Grade Sign In For Your Apps](https://azure.microsoft.com/documentation/videos/build-2016-getting-started-with-microsoft-identities-enterprise-grade-sign-in-for-your-apps) video. -->
 
+## 入门
+
+从下面选择你偏爱的平台，以使用我们的开源库与框架来生成应用。或者，你可以使用我们的 OAuth 2.0 和 OpenID Connect 协议文档来直接发送和接收协议消息，而不必使用身份验证库。
+
+<!-- TODO: Finalize this table  -->
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-v2-quickstart-table.md)]
 
 ## 新增功能
 此处提供的概念性信息可帮助你了解 v2.0 终结点的定义及其功能。
 
-- 如果你在 v2.0 终结点 2015 预览期生成应用，请务必[阅读我们最近所做的重大协议更改](/documentation/articles/active-directory-v2-preview-oidc-changes/)。
-- 了解[使用 v2.0 终结点可以生成哪种类型的应用](/documentation/articles/active-directory-v2-flows/)。
-- 对于熟悉 Azure Active Directory 的开发人员，则应查看[协议更新和 v2.0 终结点的差异](/documentation/articles/active-directory-v2-compare/)。
+- 如果在 v2.0 终结点 2015 预览期构建了应用，请务必[阅读最近所做的重大协议更改](/documentation/articles/active-directory-v2-preview-oidc-changes/)。
+- 了解[使用 v2.0 终结点可以构建哪种类型的应用](/documentation/articles/active-directory-v2-flows/)。
+- 对于熟悉 Azure Active Directory 的开发人员，应查看[协议更新和 v2.0 终结点的差异](/documentation/articles/active-directory-v2-compare/)。
 - 了解 v2.0 终结点的[限制、局限性和约束](/documentation/articles/active-directory-v2-limitations/)。
 
 ## 引用
 这些链接有助于深入地利用平台：
 
-- Build 2016：[Getting Started with Microsoft Identities: Enterprise Grade Sign In For Your Apps（开始使用 Microsoft 标识：应用的企业级登录）](https://azure.microsoft.com/documentation/videos/build-2016-getting-started-with-microsoft-identities-enterprise-grade-sign-in-for-your-apps/)
+- Build 2016：[Getting Started with Microsoft Identities: Enterprise Grade Sign In For Your Apps](https://azure.microsoft.com/documentation/videos/build-2016-getting-started-with-microsoft-identities-enterprise-grade-sign-in-for-your-apps)（开始使用 Microsoft 标识：应用的企业级登录）
 - 使用 [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory) 或 [adal](http://stackoverflow.com/questions/tagged/adal) 标记获取有关堆栈溢出的帮助。
 - [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)
 - [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)
@@ -53,4 +62,4 @@
   - [Android OAuth2 Client](https://github.com/wuman/android-oauth-client)
   - [Android OpenID Connect Client](https://github.com/kalemontes/OIDCAndroidLib)
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0926_2016-->

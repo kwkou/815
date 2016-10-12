@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Azure Active Directory 身份验证协议 | Azure"
    description="概述 Azure Active Directory (AD) 支持的身份验证协议"
    documentationCenter="dev-center-name"
@@ -9,8 +9,14 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/16/2016"
-   wacn.date="08/08/2015"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/16/2016"
+   ms.author="mbaldwin"
+   wacn.date="10/11/2016"/>
+   wacn.date="10/11/2016"/>
 
 # Azure Active Directory 身份验证协议
 
@@ -24,26 +30,26 @@ Azure Active Directory (Azure AD) 支持多个最广泛使用的身份验证和�
 - [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/) - 了解 Azure AD 发布的标记中的声明。
 
 
-- [联合元数据](/documentation/articles/active-directory-federation-metadata/) - 了解如何查找和解释 Azure AD 生成的元数据文档。
+- [联合元数据](https://msdn.microsoft.com/zh-cn/library/azure/dn195592.aspx) - 了解如何查找和解释 Azure AD 生成的元数据文档。
 
 
 - [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/) - 了解 OAuth 2.0 在 Azure AD 中的实现。
 
 
-- [OpenID Connect 1.0](/documentation/articles/active-directory-protocols-openid-connect-code/) - 了解如何使用 OAuth 2.0（一种授权协议）进行身份验证。
+- [OpenID Connect 1.0](https://msdn.microsoft.com/zh-cn/library/azure/dn645541.aspx) - 了解如何使用 OAuth 2.0（一种授权协议）进行身份验证。
 
 
-- [SAML 协议参考](/documentation/articles/active-directory-saml-protocol-reference/) - 了解 Azure AD 的单一登录和单一注销 SAML 配置文件。
+- [SAML 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn195591.aspx) - 了解 Azure AD 的单一登录和单一注销 SAML 配置文件。
 
 
-- [WS-Federation 1.2](/documentation/articles/active-directory-developers-guide/) - 了解 Azure AD 中的 WS-Federation 1.2。
+- [WS-Federation 1.2](https://msdn.microsoft.com/zh-cn/library/azure/dn903702.aspx) - 了解 Azure AD 中的 WS-Federation 1.2。
 
 
 - [身份验证协议故障排除](https://msdn.microsoft.com/zh-cn/library/azure/dn195584.aspx) - 了解如何防止问题以及解释并解决在使用 Azure AD 时遇到的错误。
 
 
 
-## 另请参阅 
+## 另请参阅
 
 [Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
 
@@ -51,4 +57,4 @@ Azure Active Directory (Azure AD) 支持多个最广泛使用的身份验证和�
 
 [Active Directory 代码示例](/documentation/articles/active-directory-code-samples/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->

@@ -4,20 +4,26 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/03/2016"
-	wacn.date="06/14/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/20/2016"
+	ms.author="markusvi;andkjell"
+   wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"/>
 
 
 # Azure AD Connect 同步：了解用户和联系人
 
 有几个不同的原因导致你会有多个 Active Directory 林，并且还有几个不同的部署拓扑。常见的模型包括合并和收购之后的帐户-资源部署和 GAL 同步的林。但即使有纯模型，混合模型也是常见的模型。Azure AD Connect 同步中的默认配置不会假定任何特定模型，但具体取决于安装指南中如何选择用户匹配，可以观察到不同的行为。
 
-在本主题中，我们将讨论默认配置在某些拓扑中的行为方式。我们将讨论配置，并且同步规则编辑器可用于查看配置。
+本主题讨论默认配置在某些拓扑中的行为方式。我们将讨论配置，并且同步规则编辑器可用于查看配置。
 
 有几个配置假定的一般规则：
 
@@ -29,9 +35,9 @@
 
 ## 联系人
 
-合并和收购之后，不同林中具有表示用户的联系人很常见，其中，GALSync 解决方案对两个或多个 Exchange 林桥接。联系人对象始终使用邮件属性从连接器空间联接到 metaverse。如果已存在具有相同邮件地址的联系人对象或用户对象，则会将这些对象联接在一起。这在规则 **In from AD – Contact Join** 中进行配置。另外，还有一条名为 **In from AD – Contact Common** 的规则，该规则具有到包含常量 **Contact** 的 metaverse 属性 **sourceObjectType** 的属性流。如果将任何用户对象联接到相同的 metaverse 对象，则此规则的优先级非常低，并且 **In from AD – User Common** 规则会为此属性提供值 User。在使用此规则的情况下，如果没有联接任何用户，此属性则会具有值 Contact，如果至少找到了一个用户，则会具有值 User。
+合并和收购之后，不同林中具有表示用户的联系人很常见，其中，GALSync 解决方案对两个或多个 Exchange 林桥接。联系人对象始终使用邮件属性从连接器空间联接到 metaverse。如果已存在具有相同邮件地址的联系人对象或用户对象，则会将这些对象联接在一起。这在规则 **In from AD - Contact Join** 中进行配置。另外，还有一条名为 **In from AD - Contact Common** 的规则，该规则具有到包含常量 **Contact** 的 metaverse 属性 **sourceObjectType** 的属性流。如果将任何用户对象联接到相同的 metaverse 对象，则此规则的优先级非常低，并且 **In from AD - User Common** 规则会为此属性提供值 User。在使用此规则的情况下，如果没有联接任何用户，此属性则会具有值 Contact，如果至少找到了一个用户，则会具有值 User。
 
-对于为 Azure AD 设置对象，如果将 metaverse 属性 **sourceObjectType** 设置为 **Contact**，出站规则 **Out to AAD – Contact Join** 则会创建联系人对象。如果将此属性设置为 **User**，**Out to AAD – User Join** 规则则会改为创建用户对象。
+对于为 Azure AD 设置对象，如果将 metaverse 属性 **sourceObjectType** 设置为 **Contact**，出站规则 **Out to AAD - Contact Join** 则会创建联系人对象。如果将此属性设置为 **User**，**Out to AAD - User Join** 规则则会改为创建用户对象。
 当导入和同步更多源 Active Directory 时，对象很可能由 Contact 提升为 User。
 
 例如，在 GALSync 拓扑中，当我们导入第一个林时，我们会在第二个林中发现每个的联系人对象。这将会在 AAD 连接器中暂存新的联系人对象。当我们之后导入并同步第二个林时，我们会找到实际用户并将他们联接到现有的 metaverse 对象。然后我们会删除 AAD 中的联系人对象，并改为创建新的用户对象。
@@ -46,11 +52,11 @@
 
 ## 更改 sourceAnchor
 
-当对象已导出到 Azure AD 时，则不再允许更改 sourceAnchor。当已导出对象时，则采用 Azure AD 接受的 **sourceAnchor** 值设置 metaverse 属性 **cloudSourceAnchor**。如果更改了 **sourceAnchor**，且不匹配 **cloudSourceAnchor**，规则 **Out to AAD – User Join** 将引发错误“sourceAnchor 属性已更改”。在这种情况下，必须更正配置或数据，以便相同的 sourceAnchor 再次在 metaverse 中出现，然后才能再次同步对象。
+当对象已导出到 Azure AD 时，则不再允许更改 sourceAnchor。当已导出对象时，则采用 Azure AD 接受的 **sourceAnchor** 值设置 metaverse 属性 **cloudSourceAnchor**。如果更改了 **sourceAnchor**，且不匹配 **cloudSourceAnchor**，规则 **Out to AAD - User Join** 将引发错误"sourceAnchor 属性已更改"。在这种情况下，必须更正配置或数据，以便相同的 sourceAnchor 再次在 metaverse 中出现，然后才能再次同步对象。
 
 ## 其他资源
 
 * [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->

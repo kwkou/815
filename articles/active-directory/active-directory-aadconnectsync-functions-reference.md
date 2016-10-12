@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/27/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2016"
+	ms.author="andkjell;markvi"
+   wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"/>
 
 
 # Azure AD Connect 同步：函数参考
@@ -20,24 +26,26 @@
 `<output type> FunctionName(<input type> <position name>, ..)`
 
 如果函数被重载并接受多个语法，则会列出所有的有效语法。  
-该函数为强类型函数，并会验证传递的类型是否匹配记录的类型。   
-如果类型不匹配，则会引发错误。
+该函数为强类型函数，并会验证传递的类型是否匹配记录的类型。  
+如果类型不匹配，将引发错误。
 
 类型使用以下语法表示：
 
-- **bin** – 二进制
-- **bool** – 布尔值
-- **dt** – UTC 日期/时间
-- **enum** – 已知常量的枚举
-- **exp** – 表达式，计算结果预计为布尔值
-- **mvbin** – 多值二进制
-- **mvstr** – 多值字符串
-- **mvref** – 多值引用
-- **num** – 数值
-- **ref** – 单值引用
-- **str** – 单值字符串
-- **var** – （几乎）任何其他类型的变体
-- **void** – 不返回值
+- **bin** - 二进制
+- **bool** - 布尔值
+- **dt** - UTC 日期/时间
+- **enum** - 已知常量的枚举
+- **exp** - 表达式，计算结果预计为布尔值
+- **mvbin** - 多值二进制
+- **mvstr** - 多值字符串
+- **mvref** - 多值引用
+- **num** - 数值
+- **ref** - 引用
+- **str** - 字符串
+- **var** - （几乎）任何其他类型的变体
+- **void** - 不返回值
+
+**mvbin**、**mvstr** 和 **mvref** 类型的函数只适用于多值属性。**bin**、**str** 和 **ref** 类型的函数只适用于单值和多值属性。
 
 ## 函数引用
 
@@ -50,7 +58,7 @@
 **日期/时间** |  
 [DateAdd](#dateadd) | [DateFromNum](#datefromnum) | [FormatDateTime](#formatdatetime) | [Now](#now)
 [NumFromDate](#numfromdate) |  
-**目录** |  
+**Directory** |  
 [DNComponent](#dncomponent) | [DNComponentRev](#dncomponentrev) | [EscapeDNComponent](#escapedncomponent)
 **计算** |  
 [IsBitSet](#isbitset) | [IsDate](#isdate) | [IsEmpty](#isempty) | [IsGuid](#isguid)
@@ -71,7 +79,7 @@
 [UCase](#ucase) | [Word](#word)
 
 ----------
-### <a name="bitand"></a>BitAnd
+### BitAnd
 
 **说明：**  
 BitAnd 函数设置值的指定位。
@@ -79,12 +87,12 @@ BitAnd 函数设置值的指定位。
 **语法：**  
 `num BitAnd(num value1, num value2)`
 
-- value1、value2： 应该 AND 在一起的数字值
+- value1、value2：应该使用 AND 联接在一起的数字值
 
 **备注：**  
 此函数将两个参数转换为二进制表示形式，并将位设置为：
 
-- 0 - 如果掩码和标志中相应位的其中一个或两个均为 0
+- 0 - 如果*掩码*和*标志*中相应位的其中一个或两个均为 0
 - 1 - 如果两个相应位均为 1。
 
 换而言之，除了当两个参数的相应位均为 1 时之外，所有情况下均返回 0。
@@ -94,7 +102,7 @@ BitAnd 函数设置值的指定位。
 返回 7，因为十六进制 "F" AND "F7" 的计算结果为此值。
 
 ----------
-### <a name="bitor"></a>BitOr
+### BitOr
 
 **说明：**  
 BitOr 函数设置值的指定位。
@@ -105,10 +113,10 @@ BitOr 函数设置值的指定位。
 - value1、value2：应该 OR 在一起的数字值
 
 **备注：**  
-此函数将两个参数转换为二进制表示形式，并且当掩码和标志中相应位的其中一个或两个均为 1 时，将位设置为 1，当两个相应位均为 0 时，设置为 0。换而言之，除了当两个参数的相应位均为 0 时之外，所有情况下均返回 1。
+此函数将两个参数转换为二进制表示形式，当掩码和标志中相应位的其中一个或两个均为 1 时，将位设置为 1，当两个相应位均为 0 时，设置为 0。换而言之，除了当两个参数的相应位均为 0 时之外，所有情况下均返回 1。
 
 ----------
-### <a name="cbool"></a>CBool
+### CBool
 
 **说明：**  
 CBool 函数基于计算的表达式返回布尔值
@@ -117,15 +125,15 @@ CBool 函数基于计算的表达式返回布尔值
 `bool CBool(exp Expression)`
 
 **备注：**  
-如果表达式的计算结果为非零值，则 CBool 返回 True，否则则返回 False。
+如果表达式的计算结果为非零值，则 CBool 返回 True，否则返回 False。
 
 **示例：**  
-`CBool([attrib1] = [attrib2])`
+`CBool([attrib1] = [attrib2])`  
 
 如果两个属性具有相同的值，则返回 True。
 
 ----------
-### <a name="cdate"></a>CDate
+### CDate
 
 **说明：**  
 CDate 函数通过字符串返回 UTC DateTime。DateTime 不是 Sync 中的原生属性类型，但被某些函数使用。
@@ -136,7 +144,7 @@ CDate 函数通过字符串返回 UTC DateTime。DateTime 不是 Sync 中的原�
 - Value：具有日期、时间和可选时区的字符串
 
 **备注：**  
-返回的字符串始终是 UTC 格式。
+返回的字符串始终采用 UTC 格式。
 
 **示例：**  
 `CDate([employeeStartTime])`  
@@ -146,7 +154,7 @@ CDate 函数通过字符串返回 UTC DateTime。DateTime 不是 Sync 中的原�
 返回表示 "2013-01-11 12:00 AM" 的 DateTime
 
 ----------
-### <a name="cguid"></a>CGuid
+### CGuid
 
 **说明：**  
 CGuid 函数将 GUID 的字符串表示转换为其二进制表示形式。
@@ -157,7 +165,7 @@ CGuid 函数将 GUID 的字符串表示转换为其二进制表示形式。
 - 采用这种模式设置格式的字符串：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 或 {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
 
 ----------
-### <a name="contains"></a>Contains
+### Contains
 
 **说明：**  
 Contains 函数查找多值属性内的字符串
@@ -167,14 +175,14 @@ Contains 函数查找多值属性内的字符串
 `num Contains (mvstring attribute, str search, enum Casetype)`  
 `num Contains (mvref attribute, str search)` - 区分大小写
 
-- attribute：要搜索的多值属性。<br>
-- search：在属性中查找的字符串。<br>
-- Casetype：不区分大小写或区分大小写。<br>
+- attribute：要搜索的多值属性。
+- search：在属性中查找的字符串。
+- Casetype：CaseInsensitive 或 CaseSensitive。
 
 返回找到字符串的多值属性中的索引。如果未找到字符串，则返回 0。
 
 **备注：**  
-对于多值字符串属性，搜索会在值中查找子字符串。  
+对于多值字符串属性，搜索将在值中查找子字符串。  
 对于引用属性，搜索的字符串必须与视为匹配的值完全匹配。  
 
 **示例：**  
@@ -182,13 +190,13 @@ Contains 函数查找多值属性内的字符串
 如果 proxyAddresses 属性具有主电子邮件地址（由大写 "SMTP:" 表示），则返回 proxyAddress 属性，否则返回错误。
 
 ----------
-### <a name="convertfrombase64"></a>ConvertFromBase64
+### ConvertFromBase64
 
 **说明：**  
 ConvertFromBase64 函数将指定的 base64 编码值转换为规则的字符串。
 
 **语法：**  
-`str ConvertFromBase64(str source)` - 假定采用 Unicode 编码 <br>
+`str ConvertFromBase64(str source)` - 假设采用 Unicode 编码   
 `str ConvertFromBase64(str source, enum Encoding)`
 
 - source：Base64 编码的字符串
@@ -198,10 +206,10 @@ ConvertFromBase64 函数将指定的 base64 编码值转换为规则的字符串
 `ConvertFromBase64("SABlAGwAbABvACAAdwBvAHIAbABkACEA")`  
 `ConvertFromBase64("SGVsbG8gd29ybGQh", UTF8)`
 
-这两个示例均返回 "Hello world!"
+这两个示例均返回 "*Hello world!*"
 
 ----------
-### <a name="convertfromutf8hex"></a>ConvertFromUTF8Hex
+### ConvertFromUTF8Hex
 
 **说明：**  
 ConvertFromUTF8Hex 函数将指定的 UTF8 Hex 编码值转换为字符串。
@@ -213,14 +221,14 @@ ConvertFromUTF8Hex 函数将指定的 UTF8 Hex 编码值转换为字符串。
 
 **备注：**  
 该结果中此函数和 ConvertFromBase64 (,UTF8) 之间的差异对 DN 属性是友好的。  
-此格式被 Azure Active Directory 用作 DN。
+此格式被 Azure Active Directory 用作 DN。  
 
 **示例：**  
 `ConvertFromUTF8Hex("48656C6C6F20776F726C6421")`  
-返回 "Hello world!"
+返回 "*Hello world!*"
 
 ----------
-### <a name="converttobase64"></a>ConvertToBase64
+### ConvertToBase64
 
 **说明：**  
 ConvertToBase64 函数将字符串转换为 Unicode base64 字符串。  
@@ -234,7 +242,7 @@ ConvertToBase64 函数将字符串转换为 Unicode base64 字符串。
 返回 "SABlAGwAbABvACAAdwBvAHIAbABkACEA"
 
 ----------
-### <a name="converttoutf8hex"></a>ConvertToUTF8Hex
+### ConvertToUTF8Hex
 
 **说明：**  
 ConvertToUTF8Hex 函数将字符串转换为 UTF8 Hex 编码的值。
@@ -250,7 +258,7 @@ ConvertToUTF8Hex 函数将字符串转换为 UTF8 Hex 编码的值。
 返回 48656C6C6F20776F726C6421
 
 ----------
-### <a name="count"></a>计数
+### 计数
 
 **说明：**  
 Count 函数返回多值属性中的元素数量
@@ -259,7 +267,7 @@ Count 函数返回多值属性中的元素数量
 `num Count(mvstr attribute)`
 
 ----------
-### <a name="cnum"></a>CNum
+### CNum
 
 **说明：**  
 CNum 函数使用字符串并返回数值数据类型。
@@ -268,7 +276,7 @@ CNum 函数使用字符串并返回数值数据类型。
 `num CNum(str value)`
 
 ----------
-### <a name="cref"></a>CRef
+### CRef
 
 **说明：**  
 将字符串转换为引用属性
@@ -280,7 +288,7 @@ CNum 函数使用字符串并返回数值数据类型。
 `CRef("CN=LC Services,CN=Microsoft,CN=lcspool01,CN=Pools,CN=RTC Service," & %Forest.LDAP%)`
 
 ----------
-### <a name="cstr"></a>CStr
+### CStr
 
 **说明：**  
 CStr 函数转换为字符串数据类型。
@@ -297,7 +305,7 @@ CStr 函数转换为字符串数据类型。
 可能返回 "cn=Joe,dc=contoso,dc=com"
 
 ----------
-### <a name="dateadd"></a>DateAdd
+### DateAdd
 
 **说明：**  
 返回日期，其中包含已添加制定时间间隔的日期。
@@ -324,7 +332,7 @@ CStr 函数转换为字符串数据类型。
 添加 3 个月，并返回表示 "2001-04-01" 的 DateTime
 
 ----------
-### <a name="datefromnum"></a>DateFromNum
+### DateFromNum
 
 **说明：**  
 DateFromNum 函数将 AD 的日期格式的值转换为 DateTime 类型。
@@ -338,7 +346,7 @@ DateFromNum 函数将 AD 的日期格式的值转换为 DateTime 类型。
 返回表示 2012-01-01 23:00:00 的 DateTime
 
 ----------
-### <a name="dncomponent"></a>DNComponent
+### DNComponent
 
 **说明：**  
 DNComponent 函数返回从左边起的指定 DN 组件的值。
@@ -354,7 +362,7 @@ DNComponent 函数返回从左边起的指定 DN 组件的值。
 如果 dn 为 "cn=Joe,ou=…,"，则返回 Joe
 
 ----------
-### <a name="dncomponentrev"></a>DNComponentRev
+### DNComponentRev
 
 **说明：**  
 DNComponentRev 函数返回从右边起（末尾）的指定 DN 组件的值。
@@ -365,7 +373,7 @@ DNComponentRev 函数返回从右边起（末尾）的指定 DN 组件的值。
 
 - dn：要解释的引用属性
 - ComponentNumber - 要返回的 DN 中的组件
-- Options：DC – 忽略具有“dc=”的所有组件
+- Options：DC - 忽略具有"dc="的所有组件
 
 **示例：**  
 如果 dn 为 "cn=Joe,ou=Atlanta,ou=GA,ou=US, dc=contoso,dc=com"，则  
@@ -374,7 +382,7 @@ DNComponentRev 函数返回从右边起（末尾）的指定 DN 组件的值。
 两者都返回 US。
 
 ----------
-### <a name="error"></a>错误
+### 错误
 
 **说明：**  
 Error 函数用于返回自定义错误。
@@ -387,7 +395,7 @@ Error 函数用于返回自定义错误。
 如果属性 accountName 不存在，则对象上引发错误。
 
 ----------
-### <a name="escapedncomponent"></a>EscapeDNComponent
+### EscapeDNComponent
 
 **说明：**  
 EscapeDNComponent 函数使用 DN 的一个组件，并对其进行转义，以便它可以在 LDAP 中表示。
@@ -400,7 +408,7 @@ EscapeDNComponent 函数使用 DN 的一个组件，并对其进行转义，以�
 即使 displayName 属性具有必须在 LDAP 中转义的字符，请确保可以在 LDAP 目录中创建对象。
 
 ----------
-### <a name="formatdatetime"></a>FormatDateTime
+### FormatDateTime
 
 **说明：**  
 FormatDateTime 函数用于为具有指定格式的字符串设置 DateTime 格式
@@ -414,7 +422,7 @@ FormatDateTime 函数用于为具有指定格式的字符串设置 DateTime 格�
 **备注：**  
 格式的可能值可以在此处找到：[用户定义的日期/时间格式（Format 函数）](http://msdn2.microsoft.com/library/73ctwf33(VS.90).aspx)
 
-**示例：**  
+**示例：**
 
 `FormatDateTime(CDate("12/25/2007"),"yyyy-mm-dd")`  
 结果是 "2007-12-25"。
@@ -423,7 +431,7 @@ FormatDateTime 函数用于为具有指定格式的字符串设置 DateTime 格�
 结果可能是 "20140905081453.0Z"
 
 ----------
-### <a name="guid"></a>GUID
+### GUID
 
 **说明：**  
 函数 GUID 生成新的随机 GUID
@@ -432,7 +440,7 @@ FormatDateTime 函数用于为具有指定格式的字符串设置 DateTime 格�
 `str GUID()`
 
 ----------
-### <a name="iif"></a>IIF
+### IIF
 
 **说明：**  
 IIF 函数基于指定的条件返回一组可能值中的其中一个值。
@@ -441,15 +449,15 @@ IIF 函数基于指定的条件返回一组可能值中的其中一个值。
 `var IIF(exp condition, var valueIfTrue, var valueIfFalse)`
 
 - condition：计算结果可能为 true 或 false 的任何值或表达式。
-- valueIfTrue：如果条件计算结果为 true，则返回的值。
-- valueIfFalse：如果条件计算结果为 false，则返回的值。
+- valueIfTrue：如果条件计算结果为 true，则为返回值。
+- valueIfFalse：如果条件计算结果为 false，则为返回值。
 
 **示例：**  
 `IIF([employeeType]="Intern","t-" & [alias],[alias])`  
 如果用户是实习生，则返回用户的别名，同时将 "t-" 添加到其开头，否则按原样返回用户的别名。
 
 ----------
-### <a name="instr"></a>InStr
+### InStr
 
 **说明：**  
 InStr 函数查找字符串中第一次出现的子字符串
@@ -476,7 +484,7 @@ InStr 函数查找字符串中第一次出现的子字符串
 计算结果为 7
 
 ----------
-### <a name="instrrev"></a>InStrRev
+### InStrRev
 
 **说明：**  
 InStrRev 函数查找字符串中最后一次出现的子字符串
@@ -499,7 +507,7 @@ InStrRev 函数查找字符串中最后一次出现的子字符串
 返回 7
 
 ----------
-### <a name="isbitset"></a>IsBitSet
+### IsBitSet
 
 **说明：**  
 函数 IsBitSet 测试是否设置了位
@@ -514,7 +522,7 @@ InStrRev 函数查找字符串中最后一次出现的子字符串
 返回 True，因为位 "4" 在十六进制值 "F" 中设置
 
 ----------
-### <a name="isdate"></a>IsDate
+### IsDate
 
 **说明：**  
 如果表达式可以计算为 DateTime 类型，则 IsDate 函数计算结果为 True。
@@ -523,10 +531,10 @@ InStrRev 函数查找字符串中最后一次出现的子字符串
 `bool IsDate(var Expression)`
 
 **备注：**  
-用来确定 CDate() 是否会成功。
+用来确定 CDate() 是否成功。
 
 ----------
-### <a name="isempty"></a>IsEmpty
+### IsEmpty
 
 **说明：**  
 如果属性出现在 CS 或 MV 中，但计算结果为空字符串，则 IsEmpty 函数计算结果为 True。
@@ -535,7 +543,7 @@ InStrRev 函数查找字符串中最后一次出现的子字符串
 `bool IsEmpty(var Expression)`
 
 ----------
-### <a name="isguid"></a>IsGuid
+### IsGuid
 
 **说明：**  
 如果字符串可以转换为 GUID，则 IsGuid 函数计算结果为 true。
@@ -546,14 +554,14 @@ InStrRev 函数查找字符串中最后一次出现的子字符串
 **备注：**  
 GUID 定义为遵循以下其中一种模式的字符串：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 或 {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
 
-用来确定 CGuid() 是否会成功。
+用来确定 CGuid() 是否成功。
 
 **示例：**  
 `IIF(IsGuid([strAttribute]),CGuid([strAttribute]),NULL)`  
 如果 StrAttribute 具有 GUID 格式，则返回二进制表示形式，否则返回 Null。
 
 ----------
-### <a name="isnull"></a>IsNull
+### IsNull
 
 **说明：**  
 如果表达式的计算结果为 Null，则 IsNull 函数返回 true。
@@ -569,7 +577,7 @@ GUID 定义为遵循以下其中一种模式的字符串：xxxxxxxx-xxxx-xxxx-xx
 如果属性没有在 CS 或 MV 中出现，则返回 True。
 
 ----------
-### <a name="isnullorempty"></a>IsNullOrEmpty
+### IsNullOrEmpty
 
 **说明：**  
 如果表达式为 null 或空字符串，则 IsNullOrEmpty 函数返回 true。
@@ -578,7 +586,7 @@ GUID 定义为遵循以下其中一种模式的字符串：xxxxxxxx-xxxx-xxxx-xx
 `bool IsNullOrEmpty(var Expression)`
 
 **备注：**  
-对于属性，如果属性不存在，或存在但为空字符串，此语法计算结果则为 True。<br>
+对于属性，如果属性不存在，或存在但为空字符串，此语法计算结果则为 True。  
 此函数的逆函数被命名为 IsPresent。
 
 **示例：**  
@@ -586,7 +594,7 @@ GUID 定义为遵循以下其中一种模式的字符串：xxxxxxxx-xxxx-xxxx-xx
 如果属性在 CS 或 MV 中没有出现或为空字符串，则返回 True。
 
 ----------
-### <a name="isnumeric"></a>IsNumeric
+### IsNumeric
 
 **说明：**  
 IsNumeric 函数返回布尔值，该值指示表达式是否可以计算为数字类型。
@@ -595,10 +603,10 @@ IsNumeric 函数返回布尔值，该值指示表达式是否可以计算为数�
 `bool IsNumeric(var Expression)`
 
 **备注：**  
-用来确定 CNum() 是否会成功地分析表达式。
+用来确定 CNum() 是否能成功分析表达式。
 
 ----------
-### <a name="isstring"></a>IsString
+### IsString
 
 **说明：**  
 如果表达式可以计算为字符串类型，则 IsString 函数计算结果为 True。
@@ -607,10 +615,10 @@ IsNumeric 函数返回布尔值，该值指示表达式是否可以计算为数�
 `bool IsString(var expression)`
 
 **备注：**  
-用来确定 CStr() 是否会成功地分析表达式。
+用来确定 CStr() 是否能成功分析表达式。
 
 ----------
-### <a name="ispresent"></a>IsPresent
+### IsPresent
 
 **说明：**  
 如果表达式的计算结果为字符串，该字符串不是 Null 且不为空，则 IsPresent 函数返回 true。
@@ -625,7 +633,7 @@ IsNumeric 函数返回布尔值，该值指示表达式是否可以计算为数�
 `Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
 
 ----------
-### <a name="item"></a>项目
+### 项目
 
 **说明：**  
 Item 函数返回多值字符串/属性中的一个项。
@@ -637,7 +645,7 @@ Item 函数返回多值字符串/属性中的一个项。
 - index：对多值字符串中某个项的索引。
 
 **备注：**  
-Item 函数与 Contains 函数一起使用很有用，因为后者函数会返回对多值属性中某个项的索引。
+Item 函数与 Contains 函数一起使用很有利，因为后一函数返回对多值属性中某个项的索引。
 
 如果索引超出界限，则引发错误。
 
@@ -646,7 +654,7 @@ Item 函数与 Contains 函数一起使用很有用，因为后者函数会返�
 返回主电子邮件地址。
 
 ----------
-### <a name="itemornull"></a>ItemOrNull
+### ItemOrNull
 
 **说明：**  
 ItemOrNull 函数返回多值字符串/属性中的一个项。
@@ -658,12 +666,12 @@ ItemOrNull 函数返回多值字符串/属性中的一个项。
 - index：对多值字符串中某个项的索引。
 
 **备注：**  
-ItemOrNull 函数与 Contains 函数一起使用很有用，因为后者函数会返回对多值属性中某个项的索引。
+ItemOrNull 函数与 Contains 函数一起使用很有利，因为后一函数返回对多值属性中某个项的索引。
 
 如果索引超出界限，则返回 Null 值。
 
 ----------
-### <a name="join"></a>Join
+### Join
 
 **说明：**  
 Join 函数使用多值字符串，并返回每个项之间插入指定分隔符的单值字符串。
@@ -673,7 +681,7 @@ Join 函数使用多值字符串，并返回每个项之间插入指定分隔符
 `str Join(mvstr attribute, str Delimiter)`
 
 - attribute：包含要联接的字符串的多值属性。
-- delimiter：任意字符串，用于分隔返回的字符串中的子字符串。如果省略，则使用空格字符（“ ”）。如果分隔符为零长度字符串（“”）或零，则列表中的所有项都不使用分隔符连接。
+- delimiter：任意字符串，用于分隔返回的字符串中的子字符串。如果省略，则使用空格字符（" "）。如果分隔符为零长度字符串（""）或零，则列表中的所有项都不使用分隔符连接。
 
 **备注：**  
 Join 和 Split 函数之间没有奇偶校验。Join 函数使用字符串数组，并使用分隔符字符串将它们联接起来，以返回单个字符串。Split 函数使用字符串并以分隔符分隔，以返回字符串数组。但是，主要区别是 Join 可以使用任何分隔符字符串将字符串连接起来，而 Split 仅可以使用单个字符分隔符分隔字符串。
@@ -683,7 +691,7 @@ Join 和 Split 函数之间没有奇偶校验。Join 函数使用字符串数组
 可能返回："SMTP:john.doe@contoso.com,smtp:jd@contoso.com"
 
 ----------
-### <a name="bitand"></a>LCase
+### LCase
 
 **说明：**  
 LCase 函数将字符串中的所有字符都转换为小写。
@@ -696,7 +704,7 @@ LCase 函数将字符串中的所有字符都转换为小写。
 返回 "test"。
 
 ----------
-### <a name="left"></a>Left
+### Left
 
 **说明：**  
 Left 函数从字符串左侧起返回指定的字符数。
@@ -714,14 +722,14 @@ Left 函数从字符串左侧起返回指定的字符数。
 - 如果 numChar < 0，则返回输入字符串。
 - 如果字符串为 null，则返回空字符串。
 
-如果字符串包含的字符数比 numChar 中指定的数量少，则返回与该字符串相同的字符串（即：包含参数 1 中的所有字符）。
+如果字符串包含的字符数比 numChars 中指定的数量少，则返回与该字符串相同的字符串（即，包含参数 1 中的所有字符）。
 
 **示例：**  
 `Left("John Doe", 3)`  
-返回 “Joh”。
+返回 "Joh"。
 
 ----------
-### <a name="len"></a>Len
+### Len
 
 **说明：**  
 Len 函数返回字符串中的字符数。
@@ -734,7 +742,7 @@ Len 函数返回字符串中的字符数。
 返回 8
 
 ----------
-### <a name="ltrim"></a>LTrim
+### LTrim
 
 **说明：**  
 LTrim 函数从字符串中删除前导空格。
@@ -744,10 +752,10 @@ LTrim 函数从字符串中删除前导空格。
 
 **示例：**  
 `LTrim(" Test ")`  
-返回 "Test "。
+返回 "Test"
 
 ----------
-### <a name="mid"></a>Mid
+### Mid
 
 **说明：**  
 Mid 函数从字符串指定位置起返回指定的字符数。
@@ -769,7 +777,7 @@ Mid 函数从字符串指定位置起返回指定的字符数。
 - 如果 start <= 0，则返回输入字符串。
 - 如果字符串为 null，则返回空字符串。
 
-如果字符串中开始位置没有保留的 numChar 字符，则会返回尽可能多可以返回的字符。
+如果字符串中开始位置没有保留的 numChar 字符，则返回尽可能多的字符。
 
 **示例：**  
 `Mid("John Doe", 3, 5)`  
@@ -779,7 +787,7 @@ Mid 函数从字符串指定位置起返回指定的字符数。
 返回 "Doe"
 
 ----------
-### <a name="now"></a>Now
+### Now
 
 **说明：**  
 Now 函数根据计算机的系统日期和时间返回指定当前日期和时间的 DateTime。
@@ -788,7 +796,7 @@ Now 函数根据计算机的系统日期和时间返回指定当前日期和时�
 `dt Now()`
 
 ----------
-### <a name="numfromdate"></a>NumFromDate
+### NumFromDate
 
 **说明：**  
 NumFromDate 函数返回 AD 的日期格式的日期。
@@ -801,7 +809,7 @@ NumFromDate 函数返回 AD 的日期格式的日期。
 返回 129699324000000000
 
 ----------
-### <a name="padleft"></a>PadLeft
+### PadLeft
 
 **说明：**  
 PadLeft 函数使用提供的填充字符将字符串从左侧填充到指定长度。
@@ -827,7 +835,7 @@ PadLeft 函数使用提供的填充字符将字符串从左侧填充到指定长
 返回 "000000User"。
 
 ----------
-### <a name="padright"></a>PadRight
+### PadRight
 
 **说明：**  
 PadRight 函数使用提供的填充字符将字符串从右侧填充到指定长度。
@@ -853,7 +861,7 @@ PadRight 函数使用提供的填充字符将字符串从右侧填充到指定�
 返回 "User000000"。
 
 ----------
-### <a name="pcase"></a>PCase
+### PCase
 
 **说明：**  
 PCase 函数将字符串中每个空格分隔词的第一个字符转换为大写形式，并将所有其他字符都转换为小写形式。
@@ -861,12 +869,19 @@ PCase 函数将字符串中每个空格分隔词的第一个字符转换为大�
 **语法：**  
 `String PCase(string)`
 
+**备注：**
+
+- 此函数目前无法正常转换全大写单词（例如首字母缩写词）的大小写。
+
 **示例：**  
 `PCase("TEsT")`  
 返回 "Test"。
 
+`PCase(LCase("TEST"))`  
+返回 "Test"
+
 ----------
-### <a name="randomnum"></a>RandomNum
+### RandomNum
 
 **说明：**  
 RandomNum 函数返回指定间隔之间的随机数字。
@@ -882,7 +897,7 @@ RandomNum 函数返回指定间隔之间的随机数字。
 可以返回 734。
 
 ----------
-### <a name="bitand"></a>RemoveDuplicates
+### RemoveDuplicates
 
 **说明：**  
 RemoveDuplicates 函数使用多值字符串，并确保每个值都是唯一值。
@@ -895,7 +910,7 @@ RemoveDuplicates 函数使用多值字符串，并确保每个值都是唯一值
 返回净化的 proxyAddress 属性，其中所有重复值已被删除。
 
 ----------
-### <a name="removeduplicates"></a>将
+### 将
 
 **说明：**  
 Replace 函数将所有出现的某一字符串替换为另一个字符串。
@@ -910,16 +925,16 @@ Replace 函数将所有出现的某一字符串替换为另一个字符串。
 **备注：**  
 该函数可以识别以下特殊 moniker：
 
-- \\n – 新行
-- \\r – 回车符
-- \\t – 选项卡
+- \\n - 新行
+- \\r - 回车符
+- \\t - 选项卡
 
 **示例：**  
 `Replace([address],"\r\n",", ")`  
 将 CRLF 替换为逗号和空格，可能导致出现 "One Microsoft Way, Redmond, WA, USA"
 
 ----------
-### <a name="replacechars"></a>ReplaceChars
+### ReplaceChars
 
 **说明：**  
 ReplaceChars 函数替换 ReplacePattern 字符串中找到的所有出现的字符。
@@ -944,16 +959,16 @@ ReplaceChars 函数替换 ReplacePattern 字符串中找到的所有出现的字
 - 空格和 ReplacePattern 字符串中的其他空白字符被忽略。
 
 **示例：**  
-`%ReplaceString% = ’:,Å:A,Ä:A,Ö:O,å:a,ä:a,ö,o`
+`%ReplaceString% = ':,Å:A,Ä:A,Ö:O,å:a,ä:a,ö,o`
 
 `ReplaceChars("Räksmörgås",%ReplaceString%)`  
 返回 Raksmorgas
 
-`ReplaceChars("O’Neil",%ReplaceString%)`  
+`ReplaceChars("O'Neil",%ReplaceString%)`  
 返回 "ONeil"，定义要删除单次勾选。
 
 ----------
-### <a name="right"></a>Right
+### Right
 
 **说明：**  
 Right 函数从字符串右侧（末尾）起返回指定的字符数。
@@ -980,7 +995,7 @@ NumChars 字符从字符串的最后位置返回。
 返回 "Doe"。
 
 ----------
-### <a name="rtrim)"></a>RTrim
+### RTrim
 
 **说明：**  
 RTrim 函数从字符串中删除尾随空格。
@@ -990,10 +1005,10 @@ RTrim 函数从字符串中删除尾随空格。
 
 **示例：**  
 `RTrim(" Test ")`  
-返回 " Test"。
+返回 "Test"。
 
 ----------
-### <a name="split"></a>拆分
+### 拆分
 
 **说明：**  
 Split 函数使用采用分隔符分隔的字符串，并使其成为多值字符串。
@@ -1004,14 +1019,14 @@ Split 函数使用采用分隔符分隔的字符串，并使其成为多值字�
 
 - value：用分隔符字符来分隔的字符串。
 - delimiter：用作分隔符的单个字符。
-- limit：将返回的最大数目的值。
+- limit：可返回的最大数目的值。
 
 **示例：**  
 `Split("SMTP:john.doe@contoso.com,smtp:jd@contoso.com",",")`  
 返回多值字符串，其中 2 个元素对 proxyAddress 属性有用。
 
 ----------
-### <a name="bitand"></a>StringFromGuid
+### StringFromGuid
 
 **说明：**  
 StringFromGuid 函数使用二进制 GUID，并将其转换为字符串
@@ -1020,17 +1035,16 @@ StringFromGuid 函数使用二进制 GUID，并将其转换为字符串
 `str StringFromGuid(bin GUID)`
 
 ----------
-### <a name="StringFromGuid"></a>StringFromSid
+### StringFromSid
 
 **说明：**  
-StringFromSid 函数将字节数组或包含安全标识符的多值字节数组转换为字符串或多值字符串。
+StringFromSid 函数将包含安全标识符的字节数组转换为字符串。
 
 **语法：**  
 `str StringFromSid(bin ObjectSID)`  
-`mvstr StringFromSid(mvbin ObjectSID)`
 
 ----------
-### <a name="switch"></a>Switch
+### Switch
 
 **说明：**  
 Switch 函数用于基于计算的条件返回单个值。
@@ -1051,7 +1065,7 @@ Switch 函数参数列表包含表达式和值对。表达式从左到右计算�
 - 没有任何表达式求值为 True。
 - 第一个 True 表达式的相应值为 Null。
 
-Switch 会对所有表达式计算结果，即使它只返回其中一个结果。为此，你应监视非预期的负面影响。例如，如果任何表达式的计算结果导致除数为零的错误，则会出现错误。
+Switch 对所有表达式求值，即使它只返回其中一个结果。为此，你应监视非预期的负面影响。例如，如果任何表达式的计算结果导致除数为零的错误，则会出现错误。
 
 值还可以是将返回自定义字符串的错误函数。
 
@@ -1060,14 +1074,13 @@ Switch 会对所有表达式计算结果，即使它只返回其中一个结果�
 返回某些主要城市所使用的语言，否则返回错误。
 
 ----------
-### <a name="trim"></a>Trim
+### Trim
 
 **说明：**  
 Trim 函数从字符串中删除前导空格和尾随空格。
 
 **语法：**  
 `str Trim(str value)`  
-`mvstr Trim(mvstr value)`
 
 **示例：**  
 `Trim(" Test ")`  
@@ -1077,7 +1090,7 @@ Trim 函数从字符串中删除前导空格和尾随空格。
 删除 proxyAddress 属性中每个值的前导空格和尾随空格。
 
 ----------
-### <a name="ucase"></a>UCase
+### UCase
 
 **说明：**  
 UCase 函数将字符串中的所有字符都转换为大写形式。
@@ -1090,7 +1103,7 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 返回 "TEST"。
 
 ----------
-### <a name="word"></a>Word
+### Word
 
 **说明：**  
 基于描述要使用的分隔符与要返回的单词数的参数，Word 函数返回字符串中包含的单词。
@@ -1123,4 +1136,4 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 * [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0926_2016-->
