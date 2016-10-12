@@ -124,7 +124,7 @@
 	
 [使用 Azure PowerShell 管理 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps/)
 
-[创建负载平衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal)
+[创建负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal)
 
 	
 

@@ -14,7 +14,7 @@ DNS 系统基于 *records*。记录将特定的 *name*（例如 **contoso.com**�
 
 CNAME 记录将  *specific* DNS 名称（例如 **mail.contoso.com** 或 **www.contoso.com**）映射到另一个（规范）域名。对于使用 Traffic Manager 的 Azure Web 应用；规范域名是您的 Traffic Manager 配置文件的 **&lt;myapp>.trafficmanager.cn** 域名。创建后，CNAME 将为 **&lt;myapp>.trafficmanager.cn** 域名创建一个别名。CNAME 条目将自动解析为您的 **&lt;myapp>.trafficmanager.cn** 的 IP 地址，因此，如果 Web 应用的 IP 地址发生更改，您不必采取任何操作。
 
-一旦流量到达 Traffic Manager，后者随后会使用它为流量配置的负载平衡方法，将该流量路由到您的 Web 应用。这对您的 Web 应用访问者完全透明。他们将只在浏览器中看到自定义域。
+一旦流量到达 Traffic Manager，后者随后会使用它为流量配置的负载均衡方法，将该流量路由到您的 Web 应用。这对您的 Web 应用访问者完全透明。他们将只在浏览器中看到自定义域。
 
 > [WACOM.NOTE] 某些域注册机构只允许您在使用 CNAME 记录（例如 **www.contoso.com**）而不是根名称（例如 **contoso.com**）时映射子域。有关 CNAME 记录的详细信息，请参阅由您的注册机构提供的文档、<a href="http://en.wikipedia.org/wiki/CNAME_record">关于 CNAME 记录的 Wikipedia 条目</a>或 <a href="http://tools.ietf.org/html/rfc1035">IETF 域名 - 实现和规范</a>文档。
 <!--HONumber=41-->

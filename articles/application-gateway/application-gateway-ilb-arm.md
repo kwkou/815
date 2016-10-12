@@ -1,6 +1,6 @@
 <properties
-   pageTitle="使用 Azure 资源管理器创建和配置具有内部负载平衡器 (ILB) 的应用程序网关 | Azure"
-   description="本页提供有关使用 Azure 资源管理器创建、配置、启动和删除具有内部负载平衡器 (ILB) 的 Azure 应用程序网关的说明"
+   pageTitle="使用 Azure 资源管理器创建和配置具有内部负载均衡器 (ILB) 的应用程序网关 | Azure"
+   description="本页提供有关使用 Azure 资源管理器创建、配置、启动和删除具有内部负载均衡器 (ILB) 的 Azure 应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
@@ -12,13 +12,13 @@
    wacn.date="05/12/2016"/>
 
 
-# 使用 Azure 资源管理器创建具有内部负载平衡器 (ILB) 的应用程序网关
+# 使用 Azure 资源管理器创建具有内部负载均衡器 (ILB) 的应用程序网关
 
 > [AZURE.SELECTOR]
 - [Azure 经典步骤](/documentation/articles/application-gateway-ilb/)
 - [资源管理器 PowerShell 步骤](/documentation/articles/application-gateway-ilb-arm/)
 
-可以配置使用面向 Internet 的 VIP 或不向 Internet 公开的内部终结点（也称为内部负载平衡器 (ILB) 终结点）的 Azure 应用程序网关。配置使用 ILB 的网关适用于不向 Internet 公开的内部业务线应用程序。对于位于不向 Internet 公开的安全边界内的多层应用程序中的服务和层也很有用，但仍需要执行循环负载分散、会话粘性或安全套接字层 (SSL) 终止。
+可以配置使用面向 Internet 的 VIP 或不向 Internet 公开的内部终结点（也称为内部负载均衡器 (ILB) 终结点）的 Azure 应用程序网关。配置使用 ILB 的网关适用于不向 Internet 公开的内部业务线应用程序。对于位于不向 Internet 公开的安全边界内的多层应用程序中的服务和层也很有用，但仍需要执行循环负载分散、会话粘性或安全套接字层 (SSL) 终止。
 
 本文将引导你配置具有 ILB 的应用程序网关。
 
@@ -128,7 +128,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled
 
-为后端池中进行了负载平衡的网络流量配置应用程序网关设置“poolsetting01”。
+为后端池中进行了负载均衡的网络流量配置应用程序网关设置“poolsetting01”。
 
 ### 步骤 4
 
@@ -152,7 +152,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 	$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
-创建名为“rule01”的负载平衡器路由规则，并配置负载平衡器的行为。
+创建名为“rule01”的负载均衡器路由规则，并配置负载均衡器的行为。
 
 ### 步骤 8
 
@@ -227,11 +227,11 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
+如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载均衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb/)。
 
-如需负载平衡选项的其他常规信息，请参阅：
+如需负载均衡选项的其他常规信息，请参阅：
 
-<!--- [Azure 负载平衡器](/documentation/services/load-balancer)-->
+<!--- [Azure 负载均衡器](/documentation/services/load-balancer)-->
 - [Azure 流量管理器](/documentation/services/traffic-manager)
 
 <!---HONumber=Mooncake_0425_2016-->

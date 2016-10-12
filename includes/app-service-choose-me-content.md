@@ -15,7 +15,7 @@ Azure App Service 允许你选择在包含多个用户所创建的多个应用�
 
 入门都很轻松。借助 Azure App Service，用户可以从一系列应用程序、框架和模板中进行选择并在几秒内创建一个 Web 应用。然后，他们可以使用最喜欢的开发工具（WebMatrix、Visual Studio、任何其他编辑器）和源控件选项来设置持续集成，并作为一个团队进行开发。依赖于 MySQL 数据库的应用程序可以使用 ClearDB（Microsoft 合作伙伴）为 Azure 提供的 MySQL 服务。
 
-开发人员可以使用 Azure App Service 创建可缩放的大型 Web 应用。该技术支持使用 ASP.NET、PHP、Node.js 和 Python 创建应用程序。例如，应用程序可以使用易贴的会话，而许多现有 Web 应用可以不做任何更改移动到此云平台。在 Azure App Service 上构建的 Web 应用可随意使用 Azure 的其他方面，例如服务总线、SQL 数据库和 Blob 存储。你还可以在不同 VM 中运行一个应用程序的多个副本，而 Azure App Service 会自动在各 VM 中对请求进行负载平衡。因为新 Web 应用实例是在已存在的 VM 中创建的，因此可以非常快速地启动新的应用程序实例；这明显快于等待创建新的 VM。
+开发人员可以使用 Azure App Service 创建可缩放的大型 Web 应用。该技术支持使用 ASP.NET、PHP、Node.js 和 Python 创建应用程序。例如，应用程序可以使用易贴的会话，而许多现有 Web 应用可以不做任何更改移动到此云平台。在 Azure App Service 上构建的 Web 应用可随意使用 Azure 的其他方面，例如服务总线、SQL 数据库和 Blob 存储。你还可以在不同 VM 中运行一个应用程序的多个副本，而 Azure App Service 会自动在各 VM 中对请求进行负载均衡。因为新 Web 应用实例是在已存在的 VM 中创建的，因此可以非常快速地启动新的应用程序实例；这明显快于等待创建新的 VM。
 
 如[上图](#appservice_diagram)所示，你可以通过多种方式将代码和其他 Web 内容发布到 Azure App Service 中。你可以使用 FTP、FTPS 或 Microsoft 的 WebDeploy 技术。Azure App Service 还支持从源控件系统发布代码，例如 Git、GitHub、CodePlex、BitBucket、Dropbox、Mercurial、Team Foundation Server 和基于云的 Team Foundation Service。
 

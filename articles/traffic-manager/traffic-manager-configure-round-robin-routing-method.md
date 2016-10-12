@@ -1,6 +1,6 @@
 <properties
    pageTitle="配置流量管理器轮循机制流量路由方法 | Azure"
-   description="本文将帮助你为流量管理器终结点配置“循环”负载平衡。"
+   description="本文将帮助你为流量管理器终结点配置“循环”负载均衡。"
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
@@ -15,7 +15,7 @@
 
 一种常见的流量路由方法模式是提供一组相同的终结点（包括云服务和 Web 应用），并以循环方式向每个终结点发送流量。下面的步骤概述了如何对流量管理器进行配置以执行此类型的流量路由方法。有关不同流量路由方法的详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
 
->[AZURE.NOTE]Azure Web 应用已经针对数据中心（也称为区域）内的 Web 应用提供了“循环”负载平衡功能。你可以使用流量管理器为不同数据中心内的 Web 应用指定轮询机制流量路由方法。
+>[AZURE.NOTE]Azure Web 应用已经针对数据中心（也称为区域）内的 Web 应用提供了“循环”负载均衡功能。你可以使用流量管理器为不同数据中心内的 Web 应用指定轮询机制流量路由方法。
 
 ## 均衡地（轮循机制）在一组终结点之间路由流量：
 

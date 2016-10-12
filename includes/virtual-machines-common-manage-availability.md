@@ -10,7 +10,7 @@
 
 * [在可用性集中配置多个虚拟机以确保冗余]
 * [将每个应用程序层配置到不同的可用性集中]
-* [将负载平衡器与可用性集组合在一起]
+* [将负载均衡器与可用性集组合在一起]
 
 
 ### <a name="configure-multiple-virtual-machines-in-an-availability-set-for-redundancy"></a> 在可用性集中配置多个虚拟机以确保冗余
@@ -36,17 +36,17 @@
    ![应用程序层](./media/virtual-machines-common-manage-availability/application-tiers.png)
 
 
-### <a name="combine-the-load-balancer-with-availability-sets"></a> 将负载平衡器与可用性集组合在一起
-将 Azure Load Balancer 与可用性集组合在一起，以获取最大的应用程序复原能力。Azure 负载平衡器将流量分布到多个虚拟机中。对于标准层虚拟机来说，Azure 负载平衡器已包括在内。请注意，并非所有虚拟机层都包括 Azure 负载平衡器。有关对虚拟机进行负载平衡的更多信息，请参阅“对 [Windows](/documentation/articles/virtual-machines-windows-load-balance/) 或 [Linux](/documentation/articles/virtual-machines-linux-load-balance/) 虚拟机进行负载平衡”。
+### <a name="combine-the-load-balancer-with-availability-sets"></a> 将负载均衡器与可用性集组合在一起
+将 Azure Load Balancer 与可用性集组合在一起，以获取最大的应用程序复原能力。Azure 负载均衡器将流量分布到多个虚拟机中。对于标准层虚拟机来说，Azure 负载均衡器已包括在内。请注意，并非所有虚拟机层都包括 Azure 负载均衡器。有关对虚拟机进行负载均衡的更多信息，请参阅“对 [Windows](/documentation/articles/virtual-machines-windows-load-balance/) 或 [Linux](/documentation/articles/virtual-machines-linux-load-balance/) 虚拟机进行负载均衡”。
 
-如果没有将负载平衡器配置为对多个虚拟机上的流量进行平衡，则任何计划内维护事件都会影响唯一的那个处理流量的虚拟机，导致应用程序层中断。将同一层的多个虚拟机置于相同的负载平衡器和可用性集下可以确保至少有一个虚拟机实例能够持续处理流量。
+如果没有将负载均衡器配置为对多个虚拟机上的流量进行平衡，则任何计划内维护事件都会影响唯一的那个处理流量的虚拟机，导致应用程序层中断。将同一层的多个虚拟机置于相同的负载均衡器和可用性集下可以确保至少有一个虚拟机实例能够持续处理流量。
 
  
 
 <!-- Link references -->
 [在可用性集中配置多个虚拟机以确保冗余]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
 [将每个应用程序层配置到不同的可用性集中]: #configure-each-application-tier-into-separate-availability-sets
-[将负载平衡器与可用性集组合在一起]: #combine-the-load-balancer-with-availability-sets
+[将负载均衡器与可用性集组合在一起]: #combine-the-load-balancer-with-availability-sets
 [Avoid single instance virtual machines in availability sets]: #avoid-single-instance-virtual-machines-in-availability-sets
 
 

@@ -39,7 +39,7 @@
 
 ## 虚拟网络
 
-需要通过虚拟网络来支持虚拟机 (VM) 之间的通信。与物理网络一样，你可以定义子网、自定义 IP 地址、DNS 设置、安全筛选以及负载平衡。通过使用[站点到站点 VPN](/documentation/articles/vpn-gateway-topology/) 或 [Express Route 线路](/documentation/articles/expressroute-introduction/)，可以将 Azure 虚拟网络连接到本地网络。你可以了解有关[虚拟网络及其组件](/documentation/articles/virtual-networks-overview/)的详细信息。
+需要通过虚拟网络来支持虚拟机 (VM) 之间的通信。与物理网络一样，你可以定义子网、自定义 IP 地址、DNS 设置、安全筛选以及负载均衡。通过使用[站点到站点 VPN](/documentation/articles/vpn-gateway-topology/) 或 [Express Route 线路](/documentation/articles/expressroute-introduction/)，可以将 Azure 虚拟网络连接到本地网络。你可以了解有关[虚拟网络及其组件](/documentation/articles/virtual-networks-overview/)的详细信息。
 
 通过使用资源组，你可以灵活地设计虚拟网络组件。VM 可以连接到其资源组之外的虚拟网络。常见的设计方法就是创建可由一般小组管理且包含核心网络基础结构的集中式资源组，并将 VM 及其应用程序部署到单独的资源组。这允许应用程序所有者访问包含其 VM 的资源组，而无需开放对更多虚拟网络资源配置的访问。
 
@@ -94,8 +94,8 @@
 与本地物理网络基础结构一样，Azure 虚拟网络除了子网和 IP 地址之外，还可以包含更多组件。在设计应用程序基础结构时，你可能会想引入以下某些附加组件：
 
 - [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/) — 将 Azure 虚拟网络连接到其他 Azure 虚拟网络，通过站点到站点 VPN 连接使用本地网络，通过点到站点 VPN 连接为用户提供直接访问，或针对专用的安全连接实现 Express Route 连接。
-- [负载平衡器](/documentation/articles/load-balancer-overview/) — 根据需要为外部和内部流量提供流量负载平衡。
-- [应用程序网关](/documentation/articles/application-gateway-introduction/) — 应用程序层的 HTTP 负载平衡，除了部署 Azure Load Balancer 之外，还能为 Web 应用程序提供一些其他的好处。
+- [负载均衡器](/documentation/articles/load-balancer-overview/) — 根据需要为外部和内部流量提供流量负载均衡。
+- [应用程序网关](/documentation/articles/application-gateway-introduction/) — 应用程序层的 HTTP 负载均衡，除了部署 Azure Load Balancer 之外，还能为 Web 应用程序提供一些其他的好处。
 - [流量管理器](/documentation/articles/traffic-manager-overview/) — 基于 DNS 的流量分配，以将最终用户定向到最接近的可用应用程序终结点，让你可以在不同地区的 Azure 数据中心之外托管应用程序。
 
 

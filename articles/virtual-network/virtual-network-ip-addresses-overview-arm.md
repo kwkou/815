@@ -29,12 +29,12 @@
 在 Azure Resource Manager 中，[公共 IP](/documentation/articles/resource-groups-networking/#public-ip-address) 地址是具有其自身属性的资源。你可以将公共 IP 地址资源与以下任何资源相关联：
 
 - 虚拟机 (VM)
-- 面向 Internet 的负载平衡器
+- 面向 Internet 的负载均衡器
 - VPN 网关
 - 应用程序网关数
 
 ### 分配方法
-将 IP 地址分配给 *公共 IP 资源* 有两种方法 - *动态* 或 *静态* 。默认分配方法为 *动态* ，即**不是**在创建时分配的 IP 地址。公共 IP 地址是在启动（或创建）关联的资源（例如 VM 或负载平衡器）时分配的。停止（或删除）该资源时，就会释放该 IP 地址。因此，停止和启动资源都会导致 IP 地址更改。
+将 IP 地址分配给 *公共 IP 资源* 有两种方法 - *动态* 或 *静态* 。默认分配方法为 *动态* ，即**不是**在创建时分配的 IP 地址。公共 IP 地址是在启动（或创建）关联的资源（例如 VM 或负载均衡器）时分配的。停止（或删除）该资源时，就会释放该 IP 地址。因此，停止和启动资源都会导致 IP 地址更改。
 
 若要确保所关联资源的 IP 地址保持不变，可将分配方法显式设置为 *静态* 。在这种情况下，IP 地址是立刻分配的。仅当你删除该资源或将其分配方法更改为 *动态* 时，才会释放该地址。
 
@@ -57,14 +57,14 @@
 ### 虚拟机
 将公共 IP 地址分配到其**网络接口**可以将其与 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 相关联。对于多网络接口 VM，只能将它分配到 *主要* 网络接口。你可以向 VM 分配动态或静态公共 IP 地址。
 
-### 面向 Internet 的负载平衡器
-将公共 IP 地址分配给负载平衡器**前端**配置可以将其与 [Azure Load Balancer](/documentation/articles/load-balancer-overview/) 相关联。此公共 IP 地址充当负载平衡型虚拟 IP 地址 (VIP)。你可以向负载平衡器前端分配动态或静态公共 IP 地址。还可以向负载平衡器前端分配多个公共 IP 地址，这会启用[多 VIP](/documentation/articles/load-balancer-multivip/) 方案，如包含基于 SSL 的网站的多租户环境。
+### 面向 Internet 的负载均衡器
+将公共 IP 地址分配给负载均衡器**前端**配置可以将其与 [Azure Load Balancer](/documentation/articles/load-balancer-overview/) 相关联。此公共 IP 地址充当负载均衡型虚拟 IP 地址 (VIP)。你可以向负载均衡器前端分配动态或静态公共 IP 地址。还可以向负载均衡器前端分配多个公共 IP 地址，这会启用[多 VIP](/documentation/articles/load-balancer-multivip/) 方案，如包含基于 SSL 的网站的多租户环境。
 
 ### VPN 网关
 [Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)用于将 Azure 虚拟网络 (VNet) 连接到其他 Azure VNet 或本地网络。必须将公共 IP 地址分配给其 **IP 配置**，才能与远程网络通信。目前只能向 VPN 网关分配 *动态* 公共 IP 地址。
 
 ### 应用程序网关数
-将公共 IP 地址分配给网关的**前端**配置可以将其与 Azure [应用程序网关](/documentation/articles/application-gateway-introduction/)相关联。此公共 IP 地址充当负载平衡型 VIP。目前，你只能将 *动态* 公共 IP 地址分配给应用程序网关前端配置。
+将公共 IP 地址分配给网关的**前端**配置可以将其与 Azure [应用程序网关](/documentation/articles/application-gateway-introduction/)相关联。此公共 IP 地址充当负载均衡型 VIP。目前，你只能将 *动态* 公共 IP 地址分配给应用程序网关前端配置。
 
 ### 概览
 下表显示了将公共 IP 地址关联到顶级资源时所依据的特定属性，以及能够使用的可能分配方法（动态或静态）。
@@ -72,7 +72,7 @@
 |顶级资源|IP 地址关联|动态|静态|
 |---|---|---|---|
 |虚拟机|网络接口|是|是|
-|负载平衡器|前端配置|是|是|
+|负载均衡器|前端配置|是|是|
 |VPN 网关|网关 IP 配置|是|否|
 |应用程序网关|前端配置|是|否|
 
@@ -82,7 +82,7 @@
 在 Azure Resource Manager 部署模型中，可将专用 IP 地址关联到以下类型的 Azure 资源：
 
 - VM
-- 内部负载平衡器 (ILB)
+- 内部负载均衡器 (ILB)
 - 应用程序网关数
 
 ### 分配方法
@@ -108,8 +108,8 @@
 
 使用 Azure 托管的 DNS 服务器配置的 VM 可以将 VNet 中的所有 VM 的主机名解析为其专用 IP 地址。
 
-### 内部负载平衡器 (ILB) 和应用程序网关
-可以将专用 IP 地址分配给 [Azure 内部负载平衡器](/documentation/articles/load-balancer-internal-overview/) (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction/)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
+### 内部负载均衡器 (ILB) 和应用程序网关
+可以将专用 IP 地址分配给 [Azure 内部负载均衡器](/documentation/articles/load-balancer-internal-overview/) (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction/)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
 
 ### 概览
 下表显示了将专用 IP 地址关联到顶级资源时所依据的特定属性，以及能够使用的可能分配方法（动态或静态）。
@@ -117,7 +117,7 @@
 |顶级资源|IP 地址关联|动态|静态|
 |---|---|---|---|
 |虚拟机|网络接口|是|是|
-|负载平衡器|前端配置|是|是|
+|负载均衡器|前端配置|是|是|
 |应用程序网关|前端配置|是|是|
 
 ## 限制

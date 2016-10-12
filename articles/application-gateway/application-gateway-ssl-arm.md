@@ -138,7 +138,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此设置用作�
 
 	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Enabled
 
-为后端池中负载平衡的网络流量配置应用程序网关设置“poolsetting01”。
+为后端池中负载均衡的网络流量配置应用程序网关设置“poolsetting01”。
 
 ### 步骤 4
 
@@ -169,7 +169,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此设置用作�
 
 	$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
-创建名为“rule01”的负载平衡器路由规则，并配置负载平衡器的行为。
+创建名为“rule01”的负载均衡器路由规则，并配置负载均衡器的行为。
 
 ### 步骤 9
 
@@ -189,7 +189,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此设置用作�
 
 如果要将应用程序网关配置为与内部负载均衡器 (ILB) 配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载均衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
 
-如需负载平衡选项的其他常规信息，请参阅：
+如需负载均衡选项的其他常规信息，请参阅：
 
 - [Azure 流量管理器](/documentation/services/traffic-manager/)
 

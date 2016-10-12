@@ -153,7 +153,7 @@
 
 编辑配置项的括号之间的值。使用扩展名 .xml 保存文件。
 
-以下示例演示如何使用配置文件设置应用程序网关以负载平衡公共端口 80 上的 HTTP 流量，然后使用自定义探测将网络流量发送到两个 IP 地址之间的后端端口 80。
+以下示例演示如何使用配置文件设置应用程序网关以负载均衡公共端口 80 上的 HTTP 流量，然后使用自定义探测将网络流量发送到两个 IP 地址之间的后端端口 80。
 
 >[AZURE.IMPORTANT] 协议项 Http 或 Https 区分大小写。
 
@@ -222,6 +222,6 @@
 
 如果要配置安全套接字层 (SSL) 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载平衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
+如果你想要将应用程序网关配置为与内部负载均衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载均衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
 
 <!---HONumber=Mooncake_0912_2016-->

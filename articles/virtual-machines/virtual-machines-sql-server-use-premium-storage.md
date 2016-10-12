@@ -45,7 +45,7 @@
 
 ### 云服务
 
-在新的云服务中创建 VM 时，只能将 DS* VM 用于高级存储。如果你在 Azure 中使用 SQL Server AlwaysOn，则 AlwaysOn 侦听器将引用与云服务关联的 Azure 内部或外部负载平衡器 IP 地址。本文重点介绍如何在此方案中迁移，同时保持可用性。
+在新的云服务中创建 VM 时，只能将 DS* VM 用于高级存储。如果你在 Azure 中使用 SQL Server AlwaysOn，则 AlwaysOn 侦听器将引用与云服务关联的 Azure 内部或外部负载均衡器 IP 地址。本文重点介绍如何在此方案中迁移，同时保持可用性。
 
 > [AZURE.NOTE] DS* 系列必须是部署到新的云服务的第一个 VM。
 
@@ -363,9 +363,9 @@
 
 ![DeploymentsUseAlwaysOn][6]
 
-在 Azure 中，只能将一个 IP 地址分配给 VM 上的 NIC，因此，为了实现与本地相同的抽象层，Azure 将利用分配给内部/外部负载平衡器 (ILB/ELB) 的 IP 地址。在服务器间共享的 IP 资源将设置为与 ILB/ELB 相同的 IP。此 IP 在 DNS 中发布，客户端流量将通过 ILB/ELB 传递到主 SQL Server 副本。ILB/ELB 知道哪个 SQL Server 为主，因为它使用探测器来探测 AlwaysOn IP 资源。在前面的示例中，它会探测包含 ELB/ILB 引用的终结点的每个节点，做出响应的则是主 SQL Server。
+在 Azure 中，只能将一个 IP 地址分配给 VM 上的 NIC，因此，为了实现与本地相同的抽象层，Azure 将利用分配给内部/外部负载均衡器 (ILB/ELB) 的 IP 地址。在服务器间共享的 IP 资源将设置为与 ILB/ELB 相同的 IP。此 IP 在 DNS 中发布，客户端流量将通过 ILB/ELB 传递到主 SQL Server 副本。ILB/ELB 知道哪个 SQL Server 为主，因为它使用探测器来探测 AlwaysOn IP 资源。在前面的示例中，它会探测包含 ELB/ILB 引用的终结点的每个节点，做出响应的则是主 SQL Server。
 
-> [AZURE.NOTE] ILB 和 ELB 都分配给特定 Azure 云服务，因此 Azure 中的任何云迁移都很可能意味着负载平衡器 IP 将更改。
+> [AZURE.NOTE] ILB 和 ELB 都分配给特定 Azure 云服务，因此 Azure 中的任何云迁移都很可能意味着负载均衡器 IP 将更改。
 
 ### 迁移可以允许停机一段时间的 AlwaysOn 部署
 
@@ -376,7 +376,7 @@
 
 #### 1\.将更多辅助副本添加到现有 AlwaysOn 群集
 
-一种策略是将更多辅助副本添加到 AlwaysOn 可用性组。你需要将这些辅助副本添加到新的云服务中，并使用新的负载平衡器 IP 更新侦听器。
+一种策略是将更多辅助副本添加到 AlwaysOn 可用性组。你需要将这些辅助副本添加到新的云服务中，并使用新的负载均衡器 IP 更新侦听器。
 
 ##### 停机时间点：
 
@@ -395,7 +395,7 @@
 1. 在使用附加高级存储的新云服务中创建两个新的 SQL Server。
 1. 使用 **NORECOVERY** 复制完整备份并进行还原。
 1. 复制“用户数据库外”依赖对象，例如登录名等。
-1. 新建内部负载平衡器 (ILB) 或使用外部负载平衡器 (ELB)，然后在这两个新节点上设置负载平衡终结点。
+1. 新建内部负载均衡器 (ILB) 或使用外部负载均衡器 (ELB)，然后在这两个新节点上设置负载均衡终结点。
 > [AZURE.NOTE] 继续下一步之前，检查所有节点的终结点配置是否正确
 
 1. 禁止用户/应用程序访问 SQL Server（如果使用存储池）。
@@ -458,11 +458,11 @@
 
 ##### 停机时间点
 
-- 使用负载平衡终结点更新最后一个节点时，会出现停机时间。
+- 使用负载均衡终结点更新最后一个节点时，会出现停机时间。
 - 你的客户端重新连接可能会延迟，具体取决于你的客户端/DNS 配置。
 - 如果你选择将 AlwaysOn 群集组脱机来换出 IP 地址，则会增加停机时间。可以通过对添加的 IP 地址资源使用 OR 依赖关系和可能的所有者来避免出现这种情况。请参阅[附录](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage)的“在同一子网中添加 IP 地址资源”部分。
 
-> [AZURE.NOTE] 如果你想让添加的节点作为 AlwaysOn 故障转移伙伴参与其中，则需要为 Azure 终结点添加对负载平衡集的引用。当你通过运行 **Add-AzureEndpoint** 命令来执行此操作时，当前连接将保持打开，但在更新负载平衡器之前，将无法与侦听器建立新连接。在测试时，看到此现像持续 90 到 120 秒，应该对此进行测试。
+> [AZURE.NOTE] 如果你想让添加的节点作为 AlwaysOn 故障转移伙伴参与其中，则需要为 Azure 终结点添加对负载均衡集的引用。当你通过运行 **Add-AzureEndpoint** 命令来执行此操作时，当前连接将保持打开，但在更新负载均衡器之前，将无法与侦听器建立新连接。在测试时，看到此现像持续 90 到 120 秒，应该对此进行测试。
 
 ##### 优点
 
@@ -545,7 +545,7 @@
 
 ## <a name="appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage"></a> 附录：将多站点 AlwaysOn 群集迁移到高级存储
 
-本主题的剩余部分提供将多站点 AlwaysOn 群集转换为高级存储的详细示例。它还将侦听器从使用外部负载平衡器 (ELB) 转换为使用内部负载平衡器 (ILB)。
+本主题的剩余部分提供将多站点 AlwaysOn 群集转换为高级存储的详细示例。它还将侦听器从使用外部负载均衡器 (ELB) 转换为使用内部负载均衡器 (ILB)。
 
 ### 环境
 
@@ -645,7 +645,7 @@
     ##Set RegisterAllProvidersIP
     Get-ClusterResource $ListenerName| Set-ClusterParameter RegisterAllProvidersIP  1
 
-在后面的迁移步骤中，你将需要使用引用负载平衡器的已更新 IP 地址更新 AlwaysOn 侦听器，这将涉及删除和添加 IP 地址资源。更新 IP 之后，你需要确保已在 DNS 区域中更新新的 IP 地址并且客户端将更新其本地 DNS 缓存。
+在后面的迁移步骤中，你将需要使用引用负载均衡器的已更新 IP 地址更新 AlwaysOn 侦听器，这将涉及删除和添加 IP 地址资源。更新 IP 之后，你需要确保已在 DNS 区域中更新新的 IP 地址并且客户端将更新其本地 DNS 缓存。
 
 如果你的客户端驻留在不同网络段，并引用不同的 DNS 服务器，则你需要考虑在迁移期间将发生哪些与 DNS 区域传送相关的事件，因为应用程序重新连接时间将至少受到侦听器的任何新 IP 地址的区域传送时间的约束。如果你在此处受到时间约束，则应与 Windows 团队讨论并测试强制增量区域传送，同时还应将 DNS 主机记录设为较小的生存时间 (TTL)，以使客户端更新。有关详细信息，请参阅[增量区域传送](https://technet.microsoft.com/zh-cn/library/cc958973.aspx)和 [Start-DnsServerZoneTransfer](https://technet.microsoft.com/zh-cn/library/jj649917.aspx)。
 
@@ -850,7 +850,7 @@
     #Create VM
     $vmConfig  | New-AzureVM -ServiceName $destcloudsvc -Location $location -VNetName $vnet ## Optional (-ReservedIPName $reservedVIPName)
 
-#### 步骤 13：在新的云服务上创建 ILB，添加负载平衡终结点和 ACL
+#### 步骤 13：在新的云服务上创建 ILB，添加负载均衡终结点和 ACL
     #Check for existing ILB
     GET-AzureInternalLoadBalancer -ServiceName $destcloudsvc
 
@@ -1078,7 +1078,7 @@
     #Create VM
     $vmConfig  | New-AzureVM -ServiceName $destcloudsvc -Location $location -VNetName $vnet -Verbose
 
-#### 步骤 22：添加负载平衡终结点和 ACL
+#### 步骤 22：添加负载均衡终结点和 ACL
     #Endpoints
     $epname="sqlIntEP"
     $prot="tcp"

@@ -71,7 +71,7 @@
 
 ##默认运行状况探测出现问题
 ###原因
-此外，出现 502 错误经常意味着默认的运行状况探测无法访问后端 VM。预配某个应用程序网关实例时，该实例会使用 BackendHttpSetting 的属性自动将默认的运行状况探测配置到每个 BackendAddressPool。无需用户输入即可设置此探测。具体而言，在配置负载平衡规则时，将在 BackendHttpSetting 与 BackendAddressPool 之间建立关联。默认探测是针对其中每个关联配置的，而应用程序网关将在 BackendHttpSetting 元素中指定的端口上，与 BackendAddressPool 中每个实例发起周期性运行状况检查连接。下表列出了与默认运行状况探测关联的值。
+此外，出现 502 错误经常意味着默认的运行状况探测无法访问后端 VM。预配某个应用程序网关实例时，该实例会使用 BackendHttpSetting 的属性自动将默认的运行状况探测配置到每个 BackendAddressPool。无需用户输入即可设置此探测。具体而言，在配置负载均衡规则时，将在 BackendHttpSetting 与 BackendAddressPool 之间建立关联。默认探测是针对其中每个关联配置的，而应用程序网关将在 BackendHttpSetting 元素中指定的端口上，与 BackendAddressPool 中每个实例发起周期性运行状况检查连接。下表列出了与默认运行状况探测关联的值。
 
 
 |探测属性 | 值 | 说明|

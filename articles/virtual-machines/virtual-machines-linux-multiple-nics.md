@@ -72,7 +72,7 @@
     azure network nic create --resource-group TestRG --location ChinaNorth \
         -n NIC2 --subnet-vnet-name TestVNet --subnet-name BackEnd
 
-通常，你还会创建[网络安全组](/documentation/articles/virtual-networks-nsg/)或[负载平衡器](/documentation/articles/load-balancer-overview/)来帮助管理流量以及跨 VM 分布流量。这些命令与处理多个 NIC 时所用的命令也是一样的。创建的 NIC 将使用 `azure network nic set` 绑定到网络安全组或负载平衡器，例如，在以下示例中：
+通常，你还会创建[网络安全组](/documentation/articles/virtual-networks-nsg/)或[负载均衡器](/documentation/articles/load-balancer-overview/)来帮助管理流量以及跨 VM 分布流量。这些命令与处理多个 NIC 时所用的命令也是一样的。创建的 NIC 将使用 `azure network nic set` 绑定到网络安全组或负载均衡器，例如，在以下示例中：
 
     azure network nic set --resource-group TestRG --name NIC1 \
         --network-security-group-name TestNSG

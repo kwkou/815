@@ -12,19 +12,19 @@
    <td valign="middle"><p>9<sup>1</sup></p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>每个可用性集的内部负载平衡器数</p></td>
+   <td valign="middle"><p>每个可用性集的内部负载均衡器数</p></td>
    <td valign="middle"><p>1</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>每个可用性集的面向 Internet 负载平衡器数</p></td>
+   <td valign="middle"><p>每个可用性集的面向 Internet 负载均衡器数</p></td>
    <td valign="middle"><p>1</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>每个订阅的负载平衡器（面向内部和 Internet）</p></td>
+   <td valign="middle"><p>每个订阅的负载均衡器（面向内部和 Internet）</p></td>
    <td valign="middle"><p>每个区域 100 个<sup>1</sup></p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>每个负载平衡器的负载平衡器（面向内部或 Internet）规则数</p></td>
+   <td valign="middle"><p>每个负载均衡器的负载均衡器（面向内部或 Internet）规则数</p></td>
    <td valign="middle"><p>150</p></td>
 </tr>
 <tr>

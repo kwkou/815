@@ -404,7 +404,7 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 ## 资源
 
-- 查看在 Azure 虚拟机环境中使用的 Microsoft 服务器软件的支持策略。以下主题概述对 BitLocker、故障转移群集和网络负载平衡等功能的支持。[Microsoft 服务器软件对 Azure 虚拟机的支持](http://support.microsoft.com/kb/2721672)。
+- 查看在 Azure 虚拟机环境中使用的 Microsoft 服务器软件的支持策略。以下主题概述对 BitLocker、故障转移群集和网络负载均衡等功能的支持。[Microsoft 服务器软件对 Azure 虚拟机的支持](http://support.microsoft.com/kb/2721672)。
 
 - [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)
 

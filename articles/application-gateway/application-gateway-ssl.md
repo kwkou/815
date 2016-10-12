@@ -227,7 +227,7 @@
 ## 后续步骤
 
 
-如需负载平衡选项的其他常规信息，请参阅：
+如需负载均衡选项的其他常规信息，请参阅：
 
 - [Azure 流量管理器](/documentation/services/traffic-manager/)
 
