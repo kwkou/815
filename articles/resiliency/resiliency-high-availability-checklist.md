@@ -29,7 +29,7 @@ __不使用流量管理器会发生什么情况？__ 如果在应用程序前面
 __如果使用单个虚拟机作为角色，会发生什么情况？__ 单个计算机是单点故障，不适用于 [Azure 虚拟机服务级别协议](/support/sla/virtual-machines)。在最好的情况下，应用程序将正常运行，但这不是具有复原能力的设计，并且不受 Azure 虚拟机 SLA 的保障，如果发生故障，任何单点故障将增大停机的可能性。
 
 ###是否在应用程序的面向 Internet 的 VM 前面使用负载平衡器？
-负载平衡器可让你将应用程序的传入流量分散到任意数目的计算机。你可以随时在负载平衡器中添加/删除计算机，这适用于虚拟机（以及配合虚拟机缩放集来自动缩放），让你轻松处理流量增加或 VM 故障的情况。<!-- 若要详细了解负载平衡器，请阅读 [Azure Load Balancer overview（Azure Load Balancer 概述）](/documentation/articles/load-balancer-overview/)和 [Running multiple VMs on Azure for scalability and availability（在 Azure 上运行多个 VM 以提高可缩放性和可用性）](/documentation/articles/guidance-compute-multi-vm/)。-->
+负载平衡器可让你将应用程序的传入流量分散到任意数目的计算机。你可以随时在负载平衡器中添加/删除计算机，这适用于虚拟机（以及配合虚拟机规模集来自动缩放），让你轻松处理流量增加或 VM 故障的情况。<!-- 若要详细了解负载平衡器，请阅读 [Azure Load Balancer overview（Azure Load Balancer 概述）](/documentation/articles/load-balancer-overview/)和 [Running multiple VMs on Azure for scalability and availability（在 Azure 上运行多个 VM 以提高可缩放性和可用性）](/documentation/articles/guidance-compute-multi-vm/)。-->
 
 __如果在面向 Internet 的 VM 前面不使用负载平衡器，会发生什么情况？__ 如果没有负载平衡器，将无法横向扩展（添加更多计算机），而只能选择纵向扩展（增加面向 Web 的虚拟机的大小）。该虚拟机也面临着单点故障。你还需要编写 DNS 代码，以注意是否丢失面向 Internet 的计算机，并将 DNS 条目重新映射到开始接管的新计算机。
 
@@ -38,9 +38,9 @@ __如果在面向 Internet 的 VM 前面不使用负载平衡器，会发生什�
 
 __如果不对无状态应用程序和 Web 服务器使用可用性集，会发生什么情况？__ 不使用可用性集意味着无法利用 Azure VM SLA。这也意味着，如果主机进行更新（托管你使用的 VM 的计算机）或发生常见的硬件故障，该应用程序层中的计算机将全部脱机。
 
-<!-- ###是否对无状态应用程序和 Web 服务器使用虚拟机缩放集 (VMSS)？
-可缩放且有复原能力的良好设计使用 VMSS，以确保可以扩展/缩减应用程序层（例如 Web 层）中的计算机数目。VMSS 允许你定义应用程序层如何缩放（根据所选的条件来添加或删除服务器）。若要了解如何使用 Azure 虚拟机缩放集来灵活应对流量高峰的详细信息，请参阅 [Virtual Machine Scale Sets Overview（虚拟机缩放集概述）](/documentation/articles/virtual-machine-scale-sets-overview/)。
-__如果不对无状态应用程序或 Web 服务器使虚拟机缩放集，会发生什么情况？__ 如果不使用 VMSS，则就有点难以做到无限制缩放和优化资源用法。缺少 VMSS 的设计有其缩放上限，必须以额外的代码来处理（或手动）。缺少 VMSS 还意味着应用程序无法轻松添加和删除计算机（无论规模如何），因而无法帮助你处理较大的流量高峰（例如在促销期间，或者站点/应用/产品变得流行时）。 -->
+<!-- ###是否对无状态应用程序和 Web 服务器使用虚拟机规模集 (VMSS)？
+可缩放且有复原能力的良好设计使用 VMSS，以确保可以扩展/缩减应用程序层（例如 Web 层）中的计算机数目。VMSS 允许你定义应用程序层如何缩放（根据所选的条件来添加或删除服务器）。若要了解如何使用 Azure 虚拟机规模集来灵活应对流量高峰的详细信息，请参阅 [Virtual Machine Scale Sets Overview（虚拟机规模集概述）](/documentation/articles/virtual-machine-scale-sets-overview/)。
+__如果不对无状态应用程序或 Web 服务器使虚拟机规模集，会发生什么情况？__ 如果不使用 VMSS，则就有点难以做到无限制缩放和优化资源用法。缺少 VMSS 的设计有其缩放上限，必须以额外的代码来处理（或手动）。缺少 VMSS 还意味着应用程序无法轻松添加和删除计算机（无论规模如何），因而无法帮助你处理较大的流量高峰（例如在促销期间，或者站点/应用/产品变得流行时）。 -->
 
 ###是否对每个虚拟机使用高级存储和独立的存储帐户？
 生产虚拟机最好使用高级存储。此外，应确保每个虚拟机使用不同的存储帐户（在小规模部署中就应如此。对于大型部署，多个计算机可以重复使用存储帐户，但需要保持平衡，以确保更新域之间和应用程序层之间达到平衡）。若要了解有关 Azure 存储空间性能和可缩放性的详细信息，请阅读 [Azure Storage Performance and Scalability Checklist（Azure 存储空间性能和可缩放性清单）](/documentation/articles/storage-performance-checklist/)。
