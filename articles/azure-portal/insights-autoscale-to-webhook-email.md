@@ -30,8 +30,8 @@
 
     ![缩放依据](./media/insights-autoscale-to-webhook-email/insights-autoscale-scale-by.png)
 
-## 虚拟机缩放集
-对于较新的基于 ARM 的虚拟机（虚拟机缩放集），可以使用 REST API、PowerShell 和 CLI 对此进行配置。门户预览界面尚不可用。
+## 虚拟机规模集
+对于较新的基于 ARM 的虚拟机（虚拟机规模集），可以使用 REST API、PowerShell 和 CLI 对此进行配置。门户预览界面尚不可用。
 
 
 ## webhook 中的身份验证
@@ -82,7 +82,7 @@
 |subscriptionId|	是 |所缩放的目标资源的订阅 ID|
 |resourceGroupName|	是|	所缩放的目标资源的资源组名|
 |resourceName |是|	所缩放的目标资源的名称|
-|resourceType |是|	三个支持的值：“microsoft.classiccompute/domainnames/slots/roles”— 云服务角色、“microsoft.compute/virtualmachinescalesets”— 虚拟机缩放集和“Microsoft.Web/serverfarms”— Web 应用|
+|resourceType |是|	三个支持的值：“microsoft.classiccompute/domainnames/slots/roles”— 云服务角色、“microsoft.compute/virtualmachinescalesets”— 虚拟机规模集和“Microsoft.Web/serverfarms”— Web 应用|
 |resourceId |是|所缩放的目标资源的 ARM ID|
 |portalLink |是 |指向目标资源摘要页的 Azure 门户预览链接|
 |oldCapacity|	是 |自动缩放执行缩放操作时的当前（旧）实例计数|

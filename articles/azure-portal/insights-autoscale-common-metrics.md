@@ -16,7 +16,7 @@
 
 利用 Azure Insights 自动缩放，你可以根据遥测数据（指标）增加或减少正在运行的实例数。本文档介绍了你可能想要使用的常用指标。在云服务和服务器场的 Azure 门户预览中，你可以选择要作为缩放依据的资源指标。不过，你也可以选择其他资源的任何指标来作为缩放依据。
 
-下面介绍了有关如何找到并列出要作为缩放依据的指标的详细信息。下列信息对于缩放虚拟机缩放集同样适用。
+下面介绍了有关如何找到并列出要作为缩放依据的指标的详细信息。下列信息对于缩放虚拟机规模集同样适用。
 
 ## 计算指标
 默认情况下，Azure VM v2 附带已配置的诊断扩展，并已启用下列指标。
@@ -26,7 +26,7 @@
 
 你可以使用 `Get MetricDefinitions` API/PoSH/CLI 来查看 VMSS 资源的可用指标。
 
-如果你使用 VM 缩放集，而且发现特定指标未列出，可能是你的诊断扩展*已禁用*它。
+如果你使用 VM 规模集，而且发现特定指标未列出，可能是你的诊断扩展*已禁用*它。
 
 如果特定指标未采样或以所需的频率传输，你可以更新诊断配置。
 
@@ -160,7 +160,7 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 ## 常用的存储指标
 你可以将存储队列长度作为缩放依据，它是存储队列中的消息数目。存储队列长度是一个特殊指标，所应用的阈值将为每个实例的消息数。这意味着，如果有两个实例，且如果阈值设置为 100，则当队列中的消息总数为 200 时将进行缩放。例如，每个实例 100 条消息。
 
-你可以在 Azure 门户预览的“设置”边栏选项卡中进行此配置。若使用 VM 缩放集，你可以将 ARM 模板中的“自动缩放”设置更新为使用 metricName 作为 ApproximateMessageCount，并传递存储队列的 ID 作为 metricResourceUri。
+你可以在 Azure 门户预览的“设置”边栏选项卡中进行此配置。若使用 VM 规模集，你可以将 ARM 模板中的“自动缩放”设置更新为使用 metricName 作为 ApproximateMessageCount，并传递存储队列的 ID 作为 metricResourceUri。
 
 
 ```
@@ -173,7 +173,7 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 
 你可以按服务总线队列的长度进行缩放，该长度是服务总线队列中的消息数量。服务总线队列长度是一项特殊指标，应用的指定阈值将是每个实例的消息数量。这意味着，如果有两个实例，且如果阈值设置为 100，则当队列中的消息总数为 200 时将进行缩放。 例如，每个实例 100 条消息。
 
-若使用 VM 缩放集，你可以将 ARM 模板中的“自动缩放”设置更新为使用 metricName 作为 ApproximateMessageCount，并传递存储队列的 ID 作为 metricResourceUri。
+若使用 VM 规模集，你可以将 ARM 模板中的“自动缩放”设置更新为使用 metricName 作为 ApproximateMessageCount，并传递存储队列的 ID 作为 metricResourceUri。
 
 ```
 "metricName": "MessageCount",
