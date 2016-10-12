@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="使用MySQL Database on Azure部署Joomla!应用 - Azure微软云" metaKeywords="Azure云, 技术文档, 文档与资源, MySQL, 数据库, Joomla, Joomla!, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
+<properties linkid="" urlDisplayName="" pageTitle="使用MySQL Database on Azure部署Joomla!应用 - Azure微软云" metaKeywords="Azure云, 技术文档, 文档与资源, MySQL, 数据库, Joomla, Joomla!, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文详细解释了如何使用MySQL PaaS服务部署Joomla!应用的相关步骤。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
 
 <tags ms.service="mysql" ms.date="09/22/2016" wacn.date="09/22/2016" wacn.lang="cn" />
 
