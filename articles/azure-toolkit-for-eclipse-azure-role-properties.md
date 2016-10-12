@@ -35,7 +35,7 @@
 * [调试属性](#debugging_properties)
 * [终结点属性](#endpoints_properties)
 * [环境变量属性](#environment_variables_properties)
-* [负载平衡/会话相关性（即“粘滞会话”）属性](#session_affinity_properties)
+* [负载均衡/会话相关性（即“粘滞会话”）属性](#session_affinity_properties)
 * [本地存储属性](#local_storage_properties)
 * [服务器配置属性](#server_configuration_properties)
 * [SSL 卸载属性](#ssl_offloading_properties)
@@ -229,9 +229,9 @@
 为了正确配置用户对角色启用的某些功能（如服务器配置、远程调试或本地存储），该工具包可能会自动配置将与用户定义的环境变量一起列出的特殊环境变量。只要启用了关联的功能，该工具包就会禁止用户编辑或删除此类自动生成的环境变量。
 
 <a name="session_affinity_properties"></a>
-### 负载平衡/会话相关性（即“粘滞会话”）属性 ###
+### 负载均衡/会话相关性（即“粘滞会话”）属性 ###
 
-在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“负载平衡”。在此对话框中，你可以启用或禁用会话相关性，如下图所示。
+在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“负载均衡”。在此对话框中，你可以启用或禁用会话相关性，如下图所示。
 
 ![][ic719492]
 

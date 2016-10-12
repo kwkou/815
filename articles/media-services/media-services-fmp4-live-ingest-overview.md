@@ -44,7 +44,7 @@
 下面是适用于 Azure 媒体服务的实时引入的特殊格式定义列表：
 
 1. ‘ftyp’、LiveServerManifestBox 及 ‘moov’ 框必须连同每个请求 (HTTP POST) 一起发送。必须在流的开头发送，每当需要恢复流引入时，编码器都必须重新连接。有关详细信息，请参阅 [1] 中的“第 6 部分”。
-2. [1] 中的第 3.3.2 部分实时引入定义了名为 StreamManifestBox 的可选框。Azure 负载平衡器的路由逻辑使得此框的使用已过时，在引入到 Azure 媒体服务时不应该存在此框。如果存在此框，Azure 媒体服务会以无提示方式将其忽略。
+2. [1] 中的第 3.3.2 部分实时引入定义了名为 StreamManifestBox 的可选框。Azure 负载均衡器的路由逻辑使得此框的使用已过时，在引入到 Azure 媒体服务时不应该存在此框。如果存在此框，Azure 媒体服务会以无提示方式将其忽略。
 3. 每个片段必须有在 [1] 的 3.2.3.2 中定义的 TrackFragmentExtendedHeaderBoxMUST。
 4. 应该使用第 2 版的 TrackFragmentExtendedHeaderBox，才能在多个数据中心生成具有相同 URL 的媒体片段。对于跨数据中心故障转移基于索引的流格式（例如 Apple HTTP 实时流 (HLS) 和基于索引的 MPEG DASH），片段索引字段是必需的。若要启用跨数据中心故障转移，多个编码器之间的片段索引必须同步，后续的每个媒体片段会增加 1，即使跨编码器重新启动或失败。
 5. [1] 中的第 3.3.6 部分定义了名为 MovieFragmentRandomAccessBox (‘mfra’) 的框，此框可能会在实时引入结束时发送，表示通道 EOS（流式传输结束）。Azure 媒体服务的引入逻辑使得 EOS（流式传输结束）的使用方式已过时，不应该发送实时引入的 ‘mfra’ 框。如果已发送，Azure 媒体服务会无提示方式将其忽略。建议使用[通道重置](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx#reset_channels)来重置引入点的状态，此外，建议使用[节目停止](https://msdn.microsoft.com/zh-cn/library/azure/dn783463.aspx#stop_programs)来结束演播与流。

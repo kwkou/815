@@ -20,11 +20,11 @@
 
 * 使用同一存储帐户的两个虚拟机具有相同的可用性集，并且处于虚拟网络的同一子网中。
 * 每个虚拟机有单独的 NIC 和虚拟机 IP 地址。
-* 端口 80 上有一个带有负载平衡规则的负载平衡器
+* 端口 80 上有一个带有负载均衡规则的负载均衡器
 
 ![体系结构](./media/resource-group-overview/arm_arch.png)
 
-本主题将指导你完成为该基础结构创建 Resource Manager 模板的步骤。你创建的最后一个模板基于名为 [2 VMs in a Load Balancer and load balancing rules（负载平衡器中的 2 个 VM 和负载平衡规则）](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules)的快速入门模板。
+本主题将指导你完成为该基础结构创建 Resource Manager 模板的步骤。你创建的最后一个模板基于名为 [2 VMs in a Load Balancer and load balancing rules（负载均衡器中的 2 个 VM 和负载均衡规则）](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules)的快速入门模板。
 
 但是，要立即构建所有这些还有很多工作要做，因此，让我们首先创建一个存储帐户并将其部署。你掌握如何创建存储帐户后，可添加其他资源并重新部署模板以完成基础结构。
 
@@ -233,10 +233,10 @@
     }
 
 
-## 负载平衡器
-现在创建一个面向外部的负载平衡器。由于此负载平衡器使用公共 IP 地址，因此你必须在 **dependsOn** 节中声明公共 IP 地址的依赖性。这意味着在公共 IP 地址完成部署后，才部署负载平衡器。如果不定义此依赖性，你将收到错误，因为 Resource Manager 尝试以并行方式部署资源，并尝试将负载平衡器设置为尚不存在的公共 IP 地址。
+## 负载均衡器
+现在创建一个面向外部的负载均衡器。由于此负载均衡器使用公共 IP 地址，因此你必须在 **dependsOn** 节中声明公共 IP 地址的依赖性。这意味着在公共 IP 地址完成部署后，才部署负载均衡器。如果不定义此依赖性，你将收到错误，因为 Resource Manager 尝试以并行方式部署资源，并尝试将负载均衡器设置为尚不存在的公共 IP 地址。
 
-你还要在此资源定义中创建后端地址池、几个用于通过 RDP 连接到 VM 的入站 NAT 规则，以及端口 80 上包含 TCP 探测的负载平衡规则。有关所有属性，请查看 [REST API for load balancer（负载平衡器的 REST API）](https://msdn.microsoft.com/zh-cn/library/azure/mt163574.aspx)。
+你还要在此资源定义中创建后端地址池、几个用于通过 RDP 连接到 VM 的入站 NAT 规则，以及端口 80 上包含 TCP 探测的负载均衡规则。有关所有属性，请查看 [REST API for load balancer（负载均衡器的 REST API）](https://msdn.microsoft.com/zh-cn/library/azure/mt163574.aspx)。
 
     {
        "apiVersion": "2015-06-15",
@@ -324,7 +324,7 @@
     }
 
 ## 网络接口
-你将创建 2 个网络接口，每个 VM 各用一个。可以使用 [copyIndex() 函数](/documentation/articles/resource-group-create-multiple/) 来迭代复制循环（称为 nicLoop），并创建 `numberOfInstances` 变量中定义的网络接口个数，而不必包含重复的网络接口项。网络接口取决于虚拟网络和负载平衡器的创建。它使用创建虚拟网络时所定义的子网，以及负载平衡器 ID 来配置负载平衡器地址池和入站 NAT 规则。有关所有属性，请查看 [REST API for network interfaces（网络接口的 REST API）](https://msdn.microsoft.com/zh-cn/library/azure/mt163668.aspx)。
+你将创建 2 个网络接口，每个 VM 各用一个。可以使用 [copyIndex() 函数](/documentation/articles/resource-group-create-multiple/) 来迭代复制循环（称为 nicLoop），并创建 `numberOfInstances` 变量中定义的网络接口个数，而不必包含重复的网络接口项。网络接口取决于虚拟网络和负载均衡器的创建。它使用创建虚拟网络时所定义的子网，以及负载均衡器 ID 来配置负载均衡器地址池和入站 NAT 规则。有关所有属性，请查看 [REST API for network interfaces（网络接口的 REST API）](https://msdn.microsoft.com/zh-cn/library/azure/mt163668.aspx)。
 
     {
        "apiVersion": "2015-06-15",
@@ -546,7 +546,7 @@
         "lbProbeID": "[concat(variables('lbID'),'/probes/tcpProbe')]"
       }
 
-你已经完成此模板！ 你可以将你的模板与[快速入门库](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules)中[包含负载平衡器和负载平衡规则模板的 2 个 VM](https://github.com/Azure/azure-quickstart-templates) 下的完整模板相比较。由于使用不同的版本号，你的模板可能会略有不同。
+你已经完成此模板！ 你可以将你的模板与[快速入门库](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules)中[包含负载均衡器和负载均衡规则模板的 2 个 VM](https://github.com/Azure/azure-quickstart-templates) 下的完整模板相比较。由于使用不同的版本号，你的模板可能会略有不同。
 
 你可以使用部署存储帐户时使用的相同命令，重新部署该模板。在重新部署前无需删除存储帐户，因为 Resource Manager 将跳过重新创建已存在且未发生更改的资源。
 

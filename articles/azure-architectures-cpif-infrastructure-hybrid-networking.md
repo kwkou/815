@@ -46,9 +46,9 @@ CPIF 介绍了组织、客户和合作伙伴应该如何设计和部署使用混
 ## 另请参阅
 [CPIF 体系结构](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-bd1e434a)
 
-[全局负载平衡的 Web 层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a)
+[全局负载均衡的 Web 层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a)
 
-[负载平衡的数据层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-dfb09e41)
+[负载均衡的数据层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-dfb09e41)
 
 [Azure 搜索层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-e581d65d)
 

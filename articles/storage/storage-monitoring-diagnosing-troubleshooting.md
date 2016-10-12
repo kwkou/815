@@ -138,7 +138,7 @@
 
 您应通过监视以下每小时或每分钟度量值表中的 **Availability** 列中的值来监视存储帐户中存储服务的可用性：**$MetricsHourPrimaryTransactionsBlob**、**$MetricsHourPrimaryTransactionsTable**、**$MetricsHourPrimaryTransactionsQueue**、**$MetricsMinutePrimaryTransactionsBlob**、**$MetricsMinutePrimaryTransactionsTable**、**$MetricsMinutePrimaryTransactionsQueue**、**$MetricsCapacityBlob**。**Availability** 列包含一个百分比值，指示该服务的可用性或该行所表示的 API 操作的可用性（**RowKey** 显示行是包含整体服务的度量值还是包含特定 API 操作的度量值）。
 
-任何小于 100% 的值指示某些存储请求将失败。您可以通过检查度量值数据中显示具有不同错误类型（如 **ServerTimeoutError**）的请求数的其他列来了解失败原因。由于以下原因您应该会看到 **Availability** 暂时低于 100%：比如在该服务移动分区以更好地负载平衡请求时，出现暂时性服务器超时；客户端应用程序中的重试逻辑应处理此类间歇性情况。[存储分析记录的操作和状态消息](http://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx)一文列出了存储度量值纳入其**可用性**计算中的事务类型。
+任何小于 100% 的值指示某些存储请求将失败。您可以通过检查度量值数据中显示具有不同错误类型（如 **ServerTimeoutError**）的请求数的其他列来了解失败原因。由于以下原因您应该会看到 **Availability** 暂时低于 100%：比如在该服务移动分区以更好地负载均衡请求时，出现暂时性服务器超时；客户端应用程序中的重试逻辑应处理此类间歇性情况。[存储分析记录的操作和状态消息](http://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx)一文列出了存储度量值纳入其**可用性**计算中的事务类型。
 
 在 [Azure 门户预览](https://portal.azure.cn)中，你可以添加警报规则，以便在某项服务的**可用性**低于指定阈值时通知你。
 
@@ -439,7 +439,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 如果您看到 **PercentThrottlingError** 的值达到峰值的时间与应用程序活动的高峰期保持一致，则应在客户端中对重试实施指数（而非线性）退让策略：这将减少分区上的即时负载，并帮助您的应用程序消除流量峰值。有关如何使用存储客户端库实现重试策略的详细信息，请参阅 [Microsoft.WindowsAzure.Storage.RetryPolicies 命名空间](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.retrypolicies.aspx)。
 
-> [AZURE.NOTE] 您可能也会看到 **PercentThrottlingError** 的值达到峰值的时间与应用程序活动的高峰期不一致：这种情况最可能的原因是存储服务正在移动分区以改进负载平衡。
+> [AZURE.NOTE] 您可能也会看到 **PercentThrottlingError** 的值达到峰值的时间与应用程序活动的高峰期不一致：这种情况最可能的原因是存储服务正在移动分区以改进负载均衡。
 
 #### <a name="permanent-increase-in-PercentThrottlingError"></a>PercentThrottlingError 错误永久增加
 
@@ -455,13 +455,13 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 您的度量值显示其中一个存储服务的 **PercentTimeoutError** 增加。同时，客户端将收到存储操作发出的大量“500 操作超时”HTTP 状态消息。
 
-> [AZURE.NOTE] 当存储服务通过将分区移到新服务器来对请求进行负载平衡时，你可能会临时地看到超时错误。
+> [AZURE.NOTE] 当存储服务通过将分区移到新服务器来对请求进行负载均衡时，你可能会临时地看到超时错误。
 
 **PercentTimeoutError** 度量值是以下度量值的聚合：**ClientTimeoutError**、**AnonymousClientTimeoutError**、**SASClientTimeoutError**、**ServerTimeoutError**、**AnonymousServerTimeoutError** 和 **SASServerTimeoutError**。
 
 服务器超时是由于服务器上的错误导致的。客户端超时之所以发生是因为服务器上的操作已超出客户端指定的超时值；例如，使用存储客户端库的客户端可以使用 **QueueRequestOptions** 类的 **ServerTimeout** 属性为操作设置超时值。
 
-服务器超时指示存储服务存在需要进一步调查的问题。你可以使用度量值来了解是否已达到该服务的可伸缩性限制，并确定可能会导致此问题的流量峰值。如果问题是间歇性的，则可能是由于服务中的负载平衡活动导致的。如果问题是持久性的并且不是由于应用程序达到服务的可伸缩性限制导致的，则你应发送支持问题。对于客户端超时，你必须确定在客户端中超时是否设为适当的值，可更改客户端中设置的超时值，或者调查如何改善存储服务中的操作性能，例如通过优化表查询或缩小消息的大小。
+服务器超时指示存储服务存在需要进一步调查的问题。你可以使用度量值来了解是否已达到该服务的可伸缩性限制，并确定可能会导致此问题的流量峰值。如果问题是间歇性的，则可能是由于服务中的负载均衡活动导致的。如果问题是持久性的并且不是由于应用程序达到服务的可伸缩性限制导致的，则你应发送支持问题。对于客户端超时，你必须确定在客户端中超时是否设为适当的值，可更改客户端中设置的超时值，或者调查如何改善存储服务中的操作性能，例如通过优化表查询或缩小消息的大小。
 
 ### <a name="metrics-show-an-increase-in-PercentNetworkError"></a>度量值显示 PercentNetworkError 增加
 

@@ -32,7 +32,7 @@
 
 在这种情况下，当所有应用程序组件均受到影响并且需要作为一个单元进行故障转移时，将针对处理区域灾难对应用程序部署拓扑进行优化。对于地理冗余，应用程序逻辑和数据库被复制到另一个区域，但在正常情况下它们不用于应用程序工作负荷。次要区域中的应用程序应配置为使用辅助数据库的 SQL 连接字符串。流量管理器设置为使用[故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)。
 
-> [AZURE.NOTE] [Azure traffic manager](/documentation/articles/traffic-manager-overview/) 在整篇文章中仅供说明之用。你可以使用任何支持故障转移路由方法的负载平衡解决方案。
+> [AZURE.NOTE] [Azure traffic manager](/documentation/articles/traffic-manager-overview/) 在整篇文章中仅供说明之用。你可以使用任何支持故障转移路由方法的负载均衡解决方案。
 
 除了主应用程序实例外，还应考虑部署一个较小的[辅助角色应用程序](/documentation/articles/cloud-services-choose-me/#tellmecs)，以通过定期发出 T-SQL 只读 (RO) 命令来监视主数据库。可使用它自动触发故障转移和/或在应用程序的管理控制台上生成警报。若要确保监视不受区域范围的停机影响，应将监视应用程序实例部署到每个区域，并将每个实例连接到主要区域中的主数据库和本地区域中的辅助数据库。
 
@@ -68,7 +68,7 @@
 
 主要**不足**是次要区域中的冗余应用程序实例仅用于灾难恢复。
 
-## 设计模式 2：实现应用程序负载平衡的主动-主动部署
+## 设计模式 2：实现应用程序负载均衡的主动-主动部署
 此云灾难恢复选项最适合具有以下特征的应用程序：
 
 + 数据库读取与写入的比率较高
@@ -76,7 +76,7 @@
 + 可使用不同的连接字符串将只读逻辑与读写逻辑分开
 + 只读逻辑不依赖于正在与最新更新完全同步的数据
 
-如果应用程序具有这些特征，则对不同区域中的多个应用程序实例进行最终用户连接的负载平衡，可以提高性能和改善最终用户体验。若要实现负载平衡，每个区域应具有应用程序的活动实例，并将读写 (RW) 逻辑连接到主要区域中的主数据库。应将只读 (RO) 逻辑连接到与应用程序实例在同一区域中的辅助数据库。流量管理器应设置为使用[轮循机制路由](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)或[性能路由](/documentation/articles/traffic-manager-configure-performance-routing-method/)，并为每个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring/)。
+如果应用程序具有这些特征，则对不同区域中的多个应用程序实例进行最终用户连接的负载均衡，可以提高性能和改善最终用户体验。若要实现负载均衡，每个区域应具有应用程序的活动实例，并将读写 (RW) 逻辑连接到主要区域中的主数据库。应将只读 (RO) 逻辑连接到与应用程序实例在同一区域中的辅助数据库。流量管理器应设置为使用[轮循机制路由](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)或[性能路由](/documentation/articles/traffic-manager-configure-performance-routing-method/)，并为每个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring/)。
 
 如模式 #1 中所示，你应考虑部署类似的监视应用程序。但与模式 #1 不同的是，该监视应用程序不负责触发终结点故障转移。
 
@@ -149,7 +149,7 @@
 | 模式 | RPO | ERT
 | :--- |:--- | :---
 | 使用并置数据库访问权限进行灾难恢复的主动-被动部署 | 读写访问 < 5 秒 | 故障检测时间 + 故障转移 API 调用 + 应用程序验证测试
-| 实现应用程序负载平衡的主动-主动部署 | 读写访问 < 5 秒 | 故障检测时间 + 故障转移 API 调用 + SQL 连接字符串更改 + 应用程序验证测试
+| 实现应用程序负载均衡的主动-主动部署 | 读写访问 < 5 秒 | 故障检测时间 + 故障转移 API 调用 + SQL 连接字符串更改 + 应用程序验证测试
 | 实现保留数据的主动-被动部署 | 只读访问 < 5 秒，读写访问 = 0 | 只读访问 = 连接故障检测时间 + 应用程序验证测试 <br>读写访问 = 缓解服务中断所用时间
 
 ## 后续步骤

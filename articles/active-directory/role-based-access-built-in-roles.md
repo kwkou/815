@@ -171,9 +171,9 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.DevTestLab/labs/formulas/read | 读取公式 |
 | Microsoft.DevTestLab/labs/formulas/write | 添加或修改公式 |
 | Microsoft.DevTestLab/labs/policySets/evaluatePolicies/action | 评估实验室策略 |
-| Microsoft.Network/loadBalancers/backendAddressPools/join/action | 加入负载平衡器后端地址池 |
-| Microsoft.Network/loadBalancers/inboundNatRules/join/action | 加入负载平衡器入站 NAT 规则 |
-| Microsoft.Network/networkInterfaces/*/read | 读取网络接口（例如此网络接口所属的所有负载平衡器）的属性 |
+| Microsoft.Network/loadBalancers/backendAddressPools/join/action | 加入负载均衡器后端地址池 |
+| Microsoft.Network/loadBalancers/inboundNatRules/join/action | 加入负载均衡器入站 NAT 规则 |
+| Microsoft.Network/networkInterfaces/*/read | 读取网络接口（例如此网络接口所属的所有负载均衡器）的属性 |
 | Microsoft.Network/networkInterfaces/join/action | 将虚拟机连接到网络接口 |
 | Microsoft.Network/networkInterfaces/read | 读取网络接口 |
 | Microsoft.Network/networkInterfaces/write | 写入网络接口 |
@@ -430,10 +430,10 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Compute/virtualMachineScaleSets/* | 创建和管理虚拟机规模集 |
 | Microsoft.Insights/alertRules/* | 创建和管理 Insights 警报规则 |
 | Microsoft.Network/applicationGateways/backendAddressPools/join/action | 加入网络应用程序网关后端地址池 |
-| Microsoft.Network/loadBalancers/backendAddressPools/join/action | 加入负载平衡器后端地址池 |
-| Microsoft.Network/loadBalancers/inboundNatPools/join/action | 加入负载平衡器入站 NAT 池 |
-| Microsoft.Network/loadBalancers/inboundNatRules/join/action | 加入负载平衡器入站 NAT 规则 |
-| Microsoft.Network/loadBalancers/read | 读取负载平衡器 |
+| Microsoft.Network/loadBalancers/backendAddressPools/join/action | 加入负载均衡器后端地址池 |
+| Microsoft.Network/loadBalancers/inboundNatPools/join/action | 加入负载均衡器入站 NAT 池 |
+| Microsoft.Network/loadBalancers/inboundNatRules/join/action | 加入负载均衡器入站 NAT 规则 |
+| Microsoft.Network/loadBalancers/read | 读取负载均衡器 |
 | Microsoft.Network/locations/* | 创建和管理网络位置 |
 | Microsoft.Network/networkInterfaces/* | 创建和管理网络接口 |
 | Microsoft.Network/networkSecurityGroups/join/action | 加入网络安全组 |

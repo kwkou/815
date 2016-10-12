@@ -31,7 +31,7 @@ Azure Service Fabric 可简化可靠的无状态服务和有状态服务的编�
 - 要使用无状态服务实例时，可调用 `Task OnOpenAsync(IStatelessServicePartition, CancellationToken)` 
     OnOpenAsync。此时可以启动扩展的服务初始化任务。
 
-- `Task OnCloseAsync(CancellationToken)` 要正常关闭无状态服务实例时，可调用 OnCloseAsync。升级服务代码、由于负载平衡而移动服务实例或是检测到暂时性故障时，可能会出现这种情况。
+- `Task OnCloseAsync(CancellationToken)` 要正常关闭无状态服务实例时，可调用 OnCloseAsync。升级服务代码、由于负载均衡而移动服务实例或是检测到暂时性故障时，可能会出现这种情况。
     OnCloseAsync 可以用于安全地关闭任何资源、停止任何后台处理、完成外部状态保存或关闭现有连接。
 
 - `void OnAbort()` 

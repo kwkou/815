@@ -30,9 +30,9 @@
 当你扩展 VM 规模集时，将创建新的实例。新 VM 规模集的名称通常是 VM 规模集名称 + 下一个实例编号。在本示例中，即 BackEnd\_5。
 
 <!--
-## 将 VM 规模集负载平衡器映射到每个节点类型/VM 规模集
+## 将 VM 规模集负载均衡器映射到每个节点类型/VM 规模集
 
-如果你已从门户或使用提供的示例 ARM 模板部署群集，则当你获取资源组下所有资源的列表时，将看到每个 VM 规模集或节点类型的负载平衡器。
+如果你已从门户或使用提供的示例 ARM 模板部署群集，则当你获取资源组下所有资源的列表时，将看到每个 VM 规模集或节点类型的负载均衡器。
 
 该名称类似于 **LB-&lt;NodeType name&gt;**。例如，以下屏幕截图中显示了 LB-sfcluster4doc-0：
 
@@ -49,7 +49,7 @@
 
 若要获得此信息，必须获取 **Microsoft.Network/loadBalancers** 资源定义中定义的入站 NAT 规则值。
 
-在门户中，导航到“负载平衡器”边栏选项卡并选择“设置”。
+在门户中，导航到“负载均衡器”边栏选项卡并选择“设置”。
 
 ![LBBlade][LBBlade]
 
@@ -100,7 +100,7 @@
 	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 
-运行以下命令获取有关负载平衡器的详细信息，在值中，你将会找到 **inboundNatPools** 的描述：
+运行以下命令获取有关负载均衡器的详细信息，在值中，你将会找到 **inboundNatPools** 的描述：
 
 
 	Get-AzureRmResource -ResourceGroupName <RGname> -ResourceType Microsoft.Network/loadBalancers -ResourceName <load balancer name>

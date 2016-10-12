@@ -340,11 +340,11 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 	info:   vm export command OK
 
 ##<a name="Commands_to_manage_your_Azure_virtual_machine_endpoints"></a>用于管理 Azure 虚拟机终结点的命令
-下图显示了多个虚拟机实例的典型部署的体系结构。请注意，在本示例中，端口 3389 在每台虚拟机上均为打开状态（用于进行 RDP 访问），并且负载平衡器用于将流量路由到虚拟机的每台虚拟机上还有一个内部 IP 地址（例如，168.55.11.1）。此内部 IP 地址也可用于虚拟机之间的通信。
+下图显示了多个虚拟机实例的典型部署的体系结构。请注意，在本示例中，端口 3389 在每台虚拟机上均为打开状态（用于进行 RDP 访问），并且负载均衡器用于将流量路由到虚拟机的每台虚拟机上还有一个内部 IP 地址（例如，168.55.11.1）。此内部 IP 地址也可用于虚拟机之间的通信。
 
 ![azurenetworkdiagram](./media/virtual-machines-command-line-tools/networkdiagram.jpg)
 
-虚拟机的外部请求将通过负载平衡器。因此，不能针对包含多台虚拟机的部署中的特定虚拟机指定请求。对于包含多台虚拟机的部署，必须在虚拟机 (vm-port) 与负载平衡器 (lb-port) 之间配置端口映射。
+虚拟机的外部请求将通过负载均衡器。因此，不能针对包含多台虚拟机的部署中的特定虚拟机指定请求。对于包含多台虚拟机的部署，必须在虚拟机 (vm-port) 与负载均衡器 (lb-port) 之间配置端口映射。
 
 **vm endpoint create &lt;vm-name> &lt;lb-port> [vm-port]**
 

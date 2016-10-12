@@ -115,7 +115,7 @@ Azure 备份支持对域控制器 (DC) 虚拟机进行备份的方案。但在�
 ## <a name="restoring-vms-with-special-netwrok-configurations"></a>还原采用特殊网络配置的 VM
 Azure 备份支持备份虚拟机的以下特殊网络配置。
 
-- 采用负载平衡器的 VM（内部和外部）
+- 采用负载均衡器的 VM（内部和外部）
 - 具有多个保留 IP 的 VM
 - 具有多个 NIC 的 VM
 
@@ -124,7 +124,7 @@ Azure 备份支持备份虚拟机的以下特殊网络配置。
 >[AZURE.TIP]还原后，请使用基于 PowerShell 的还原流程来重新创建 VM 的特殊网络配置。
 
 ### 从 UI 还原：
-从 UI 还原时，请**始终选择新的云服务**。请注意，由于经典管理门户在执行还原流程时只接受强制参数，因此使用 UI 还原的 VM 将会丢失它们拥有的特殊网络配置。也就是说，还原后的 VM 将会是普通的 VM，而没有负载平衡器配置、多个 NIC 或多个保留 IP。
+从 UI 还原时，请**始终选择新的云服务**。请注意，由于经典管理门户在执行还原流程时只接受强制参数，因此使用 UI 还原的 VM 将会丢失它们拥有的特殊网络配置。也就是说，还原后的 VM 将会是普通的 VM，而没有负载均衡器配置、多个 NIC 或多个保留 IP。
 
 ### 从 PowerShell 还原：
 PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还原需要上述特殊网络配置的虚拟机时，此方法很有用。
@@ -133,7 +133,7 @@ PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还�
 
 1. 使用 [Azure 备份 PowerShell](/documentation/articles/backup-azure-vms-automation/#restore-an-azure-vm) 从备份保管库还原磁盘
 
-2. 使用 PowerShell cmdlet 创建负载平衡器/多个 NIC/多个保留 IP 所需的 VM 配置，并使用该配置创建具有所需配置的 VM。
+2. 使用 PowerShell cmdlet 创建负载均衡器/多个 NIC/多个保留 IP 所需的 VM 配置，并使用该配置创建具有所需配置的 VM。
 	- 创建具有[多个 NIC](/documentation/articles/virtual-networks-multiple-nics/) 的 VM
 	- 具有[多个保留 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 的 VM
   

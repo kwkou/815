@@ -102,7 +102,7 @@
 
 	![15](./media/open-source-azure-virtual-machines-configure-availability-set/15.png)
 
-3. 选择 HTTP， 勾选“创建负载平衡集“， 继续下一步。
+3. 选择 HTTP， 勾选“创建负载均衡集“， 继续下一步。
 
 	![16](./media/open-source-azure-virtual-machines-configure-availability-set/16.png)
 

@@ -35,8 +35,8 @@ CPIF 介绍了组织、客户和合作伙伴应该如何设计和部署使用混
 
 为了支持 Azure 中的解决方案体系结构开发，我们为常用场景提供了一系列模式指南。虽然这些方案指南将随着时间的推移而构造，设想的模式包括：
 
-- 全局负载平衡的 Web 层 
-- 负载平衡的数据层
+- 全局负载均衡的 Web 层 
+- 负载均衡的数据层
 - 批处理层
 - 混合网络
 - Azure 搜索 
@@ -45,9 +45,9 @@ CPIF 介绍了组织、客户和合作伙伴应该如何设计和部署使用混
 [CPIF 体系结构 (pdf)](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-bd1e434a)
 
 ## 另请参阅
-[全局负载平衡的 Web 层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a)
+[全局负载均衡的 Web 层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a)
 
-[负载平衡的数据层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-dfb09e41)
+[负载均衡的数据层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-dfb09e41)
 
 [批处理层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-0bc3f8b1)
 

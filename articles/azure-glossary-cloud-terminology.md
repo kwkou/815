@@ -76,8 +76,8 @@ Azure 术语以及上述两份参考文档提供了适用于 Azure 和云行业�
 另请参阅 [Azure subscription and service limits, quotas, and constraints（Azure 订阅和服务限制、配额与约束）](/documentation/articles/azure-subscription-service-limits/)
 
 
-### <a name="loadbalancer"></a>负载平衡器  
-在网络中的计算机之间分散传入流量的资源。在 Azure 中，负载平衡器将流量分散到负载平衡器集内定义的虚拟机。[负载平衡器](/documentation/articles/load-balancer-overview/)可以面向 Internet，也可以是内部的。
+### <a name="loadbalancer"></a>负载均衡器  
+在网络中的计算机之间分散传入流量的资源。在 Azure 中，负载均衡器将流量分散到负载均衡器集内定义的虚拟机。[负载均衡器](/documentation/articles/load-balancer-overview/)可以面向 Internet，也可以是内部的。
 
 
 ### <a name="portal"></a>经典管理门户  

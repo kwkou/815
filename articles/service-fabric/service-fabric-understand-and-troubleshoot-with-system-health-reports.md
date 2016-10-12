@@ -79,7 +79,7 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 - **后续步骤**：如果证书即将过期，则更新证书。
 
 ### 负载容量冲突
-如果 Service Fabric 负载平衡器检测到节点负载容量冲突，则报告警告。
+如果 Service Fabric 负载均衡器检测到节点负载容量冲突，则报告警告。
 
  - **SourceId**：System.PLB
  - **属性**：以 **Capacity** 开头

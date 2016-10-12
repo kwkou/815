@@ -50,7 +50,7 @@ Azure 备份服务提供两种类型的保管库（备份保管库和恢复服�
   - **Windows Server**：不支持低于 Windows Server 2008 R2 的版本。
 - 仅支持通过 PowerShell 还原属于多 DC 配置的域控制器 (DC) VM。阅读有关[还原多 DC 域控制器](/documentation/articles/backup-azure-restore-vms/#restoring-domain-controller-vms)的详细信息。
 - 仅支持通过 PowerShell 还原采用以下特殊网络配置的虚拟机。还原操作完成后，在 UI 中使用还原工作流创建的 VM 将不采用这些网络配置。若要了解详细信息，请参阅[还原采用特殊网络配置的 VM](/documentation/articles/backup-azure-restore-vms/#restoring-vms-with-special-netwrok-configurations)。
-  - 采用负载平衡器配置的虚拟机（内部和外部）
+  - 采用负载均衡器配置的虚拟机（内部和外部）
   - 使用多个保留 IP 地址的虚拟机
   - 使用多个网络适配器的虚拟机
 
