@@ -33,7 +33,6 @@
 - SQL 数据库
 - 自动缩放设置
 - 警报规则
-- App Insights
 
 ## 要指定的参数
 
@@ -432,25 +431,6 @@
         }
       }
     },
-    
-### App Insights
-
-    {
-      "apiVersion": "2014-04-01",
-      "name": "[concat('AppInsights', variables('webSiteName'))]",
-      "type": "Microsoft.Insights/components",
-      "location": "China North",
-      "dependsOn": [
-        "[variables('webSiteName')]"
-      ],
-      "tags": {
-        "[concat('hidden-link:', resourceId('Microsoft.Web/sites', variables('webSiteName')))]": "Resource",
-        "displayName": "AppInsightsComponent"
-      },
-      "properties": {
-        "ApplicationId": "[variables('webSiteName')]"
-      }
-    }
 
 ## 运行部署的命令
 
