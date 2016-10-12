@@ -82,13 +82,13 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 |-------------|------------------|--------------------|-----------------------------------------------------------------------------------|-------------------------------------|
 | 80、443 | 出站 | TCP | Azure 存储空间/PKI (Internet) 上的 Redis 依赖关系 | * |
 | 53 | 出站 | TCP/UDP | DNS (Internet/VNet) 上的 Redis 依赖关系 | * |
-| 6379、6380 | 入站 | TCP | 与 Redis 的客户端通信、Azure 负载平衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
+| 6379、6380 | 入站 | TCP | 与 Redis 的客户端通信、Azure 负载均衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
 | 8443 | 入站/出站 | TCP | Redis 的实现详细信息 | VIRTUAL\_NETWORK |
-| 8500 | 入站 | TCP/UDP | Azure 负载平衡 | AZURE\_LOADBALANCER |
+| 8500 | 入站 | TCP/UDP | Azure 负载均衡 | AZURE\_LOADBALANCER |
 | 10221-10231 | 入站/出站 | TCP | Redis 的实现详细信息（可以将远程终结点限制为 VIRTUAL\_NETWORK） | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
-| 13000-13999 | 入站 | TCP | 与 Redis 群集的客户端通信、Azure 负载平衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
-| 15000-15999 | 入站 | TCP | 与 Redis 群集的客户端通信、Azure 负载平衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
-| 16001 | 入站 | TCP/UDP | Azure 负载平衡 | AZURE\_LOADBALANCER |
+| 13000-13999 | 入站 | TCP | 与 Redis 群集的客户端通信、Azure 负载均衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
+| 15000-15999 | 入站 | TCP | 与 Redis 群集的客户端通信、Azure 负载均衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
+| 16001 | 入站 | TCP/UDP | Azure 负载均衡 | AZURE\_LOADBALANCER |
 | 20226 | 入站+出站 | TCP | Redis 群集的实现详细信息 | VIRTUAL\_NETWORK |
 
 

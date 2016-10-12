@@ -160,7 +160,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ### 步骤 8
 
-创建名为“rule01”的负载平衡器路由规则，并配置负载平衡器的行为。
+创建名为“rule01”的负载均衡器路由规则，并配置负载均衡器的行为。
 
 	$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 

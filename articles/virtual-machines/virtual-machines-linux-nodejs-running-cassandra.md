@@ -28,7 +28,7 @@ Azure 是一种开放式的云平台，该平台运行 Microsoft 软件和非 Mi
 Azure 网络允许部署独立的专用群集，并可对这些群集的访问进行限制，从而实现能够进行细化管理的网络安全性。由于本文是介绍 Cassandra 部署基础知识的，因此我们不会重点讲解一致性级别以及如何针对吞吐量来优化存储设计的问题。下面是有关网络要求的列表，针对的是我们的假设性群集：
 
 - 外部系统无法访问 Cassandra 数据库，不管是从 Azure 内部还是外部
-- Cassandra 群集必须位于负载平衡器之后，以便进行 Thrift 通信
+- Cassandra 群集必须位于负载均衡器之后，以便进行 Thrift 通信
 - 可以将 Cassandra 节点部署在每个数据中心的两个组中，以便增强群集可用性 
 - 锁定该群集，使得只有应用程序服务器场可以直接访问数据库
 - 除 SSH 之外，没有其他的公共网络终结点
@@ -47,7 +47,7 @@ Cassandra 可以部署到单个或多个 Azure 区域，具体取决于工作负
 
 请注意，在撰写本文的时候，Azure 并不允许将一组 VM 显式映射到特定的容错域；因此，即使采用图 1 所示的部署模型，也极有可能会将所有虚拟机映射到两个容错域，而不是四个容错域。
 
-**对 Thrift 通信进行负载平衡：**Web 服务器中的 Thrift 客户端库通过内部负载平衡器连接到群集。在使用云服务托管 Cassandra 群集的情况下，这需要执行相关过程，以便将内部负载平衡器添加到“数据”子网（参见图 1）。定义好内部负载平衡器以后，每个节点都需要添加进行过负载平衡的终结点，并使用以前定义的负载平衡器名称对负载平衡集进行标注。详情请查看[内部负载平衡](/documentation/articles/load-balancer-internal-overview/)。
+**对 Thrift 通信进行负载均衡：**Web 服务器中的 Thrift 客户端库通过内部负载均衡器连接到群集。在使用云服务托管 Cassandra 群集的情况下，这需要执行相关过程，以便将内部负载均衡器添加到“数据”子网（参见图 1）。定义好内部负载均衡器以后，每个节点都需要添加进行过负载均衡的终结点，并使用以前定义的负载均衡器名称对负载均衡集进行标注。详情请查看[内部负载均衡](/documentation/articles/load-balancer-internal-overview/)。
 
 **群集种子：**必须选择可用性最高的节点作为种子，因为新节点需要与种子节点进行通信才能发现群集的拓扑。将会从每个可用性集中选择一个节点作为种子节点，以免出现单节点故障。
 
@@ -148,7 +148,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 <table>
 <tr><th>字段名称             </th><th> 字段值	                   </th><th> 备注                                 </th></tr>
 <tr><td> 云服务	</td><td> 创建新的云服务	</td><td>云服务是类似虚拟机的容器计算资源</td></tr>
-<tr><td> 云服务 DNS 名称	</td><td>ubuntu-template.chinacloudapp.cn	</td><td>为计算机提供不可知的负载平衡器名称</td></tr>
+<tr><td> 云服务 DNS 名称	</td><td>ubuntu-template.chinacloudapp.cn	</td><td>为计算机提供不可知的负载均衡器名称</td></tr>
 <tr><td> 区域/地缘组/虚拟网络 </td><td>	中国北部	</td><td> 选择你的 Web 应用程序从中访问 Cassandra 群集的区域</td></tr>
 <tr><td>存储帐户 </td><td>	使用默认值	</td><td>使用特定区域的默认存储帐户或预先创建的存储帐户</td></tr>
 <tr><td>可用性集 </td><td>	无 </td><td>	将此字段留空</td></tr>
@@ -341,8 +341,8 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 1.  在特定区域创建空的云服务
 2.	从以前捕获的映像创建 VM，然后将其附加到以前创建的虚拟网络；对所有 VM 重复此过程
-3.	将内部负载平衡器添加到云服务，然后将其附加到“数据”子网
-4.	对于以前创建的每个 VM，可以通过一个已连接到以前创建的内部负载平衡器的负载平衡集添加进行 Thrift 通信的负载平衡终结点
+3.	将内部负载均衡器添加到云服务，然后将其附加到“数据”子网
+4.	对于以前创建的每个 VM，可以通过一个已连接到以前创建的内部负载均衡器的负载均衡集添加进行 Thrift 通信的负载均衡终结点
 
 以上过程可以通过 Azure 经典管理门户来执行；使用 Windows 计算机（如果无法访问 Windows 计算机，则可使用 Azure 上的 VM）；使用以下 PowerShell 脚本自动预配所有 8 个 VM。
 
@@ -436,7 +436,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 ## 测试单区域群集
 使用以下步骤测试群集：
 
-1.    使用 Powershell 命令 Get-AzureInternalLoadbalancer cmdlet 获取内部负载平衡器的 IP 地址（例如 10.1.2.101）。该命令的语法如下所示：Get-AzureLoadbalancer -ServiceName "hk-c-svc-china-north" [显示内部负载平衡器及其 IP 地址的详细信息]
+1.    使用 Powershell 命令 Get-AzureInternalLoadbalancer cmdlet 获取内部负载均衡器的 IP 地址（例如 10.1.2.101）。该命令的语法如下所示：Get-AzureLoadbalancer -ServiceName "hk-c-svc-china-north" [显示内部负载均衡器及其 IP 地址的详细信息]
 2.	使用 Putty 或 ssh 登录到 Web 场 VM（例如 hk-w1-china-north）
 3.	执行 $CASS\_HOME/bin/cqlsh 10.1.2.101 9160 
 4.	使用以下 CQL 命令验证群集是否正常工作：
@@ -558,7 +558,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 ## 测试多区域群集
 到目前为止，Cassandra 已部署到 16 个节点，每个 Azure 区域 8 个节点。这些节点具有通用的群集名称和种子节点配置，因此属于同一群集。使用以下过程测试群集：
 
-###步骤 1：使用 PowerShell 获取这两个区域的内部负载平衡器 IP
+###步骤 1：使用 PowerShell 获取这两个区域的内部负载均衡器 IP
 - Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-china-north"
 - Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-china-east"  
 

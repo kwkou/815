@@ -123,7 +123,7 @@
 	- 在缩放集中使用的虚拟机大小。有关虚拟机大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)。
 	- 用于定义将在缩放集中虚拟机上运行的操作系统的平台映像信息。有关选择映像的详细信息，请参阅[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching/)。
 	- 虚拟网络和子网的 IP 地址名称和前缀。
-	- 虚拟网络、负载平衡器和网络接口的名称和标识符。
+	- 虚拟网络、负载均衡器和网络接口的名称和标识符。
 	- 与缩放集中虚拟机关联的帐户的存储帐户名称。
 	- 已安装在虚拟机上的诊断扩展的设置。有关诊断扩展的详细信息，请参阅[使用 Azure Resource Manager 模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)。
     
@@ -167,7 +167,7 @@
           }
         },
 
-6. 添加负载平衡器和网络接口所使用的公共 IP 地址资源。
+6. 添加负载均衡器和网络接口所使用的公共 IP 地址资源。
 
         {
           "apiVersion": "2016-03-30",
@@ -194,7 +194,7 @@
           }
         },
 
-7. 添加缩放集使用的负载平衡器资源。有关详细信息，请参阅 [Azure Resource Manager 对负载平衡器的支持](/documentation/articles/load-balancer-arm/)。
+7. 添加缩放集使用的负载均衡器资源。有关详细信息，请参阅 [Azure Resource Manager 对负载均衡器的支持](/documentation/articles/load-balancer-arm/)。
 
         {
           "apiVersion": "2015-06-15",

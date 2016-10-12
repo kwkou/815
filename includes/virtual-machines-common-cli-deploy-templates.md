@@ -2,7 +2,7 @@
 - [在 Azure 中快速创建虚拟机](#quick-create-a-vm-in-azure)
 - [在 Azure 中从模板部署虚拟机](#deploy-a-vm-in-azure-from-a-template)
 - [从自定义映像创建虚拟机](#create-a-custom-vm-image)
-- [部署使用虚拟网络和负载平衡器的虚拟机](#deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer)
+- [部署使用虚拟网络和负载均衡器的虚拟机](#deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer)
 - [删除资源组](#remove-a-resource-group)
 - [显示资源组部署日志](#show-the-log-for-a-resource-group-deployment)
 - [显示有关虚拟机的信息](#display-information-about-a-virtual-machine)
@@ -731,13 +731,13 @@
     info:    group deployment create command OK
 
 
-## <a id="deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a>任务：部署使用虚拟网络和外部负载平衡器的多 VM 应用程序
+## <a id="deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a>任务：部署使用虚拟网络和外部负载均衡器的多 VM 应用程序
 
-你可以使用此模板在一个负载平衡器上创建两个虚拟机，然后在端口 80 上配置负载平衡规则。此模板还会部署存储帐户、虚拟网络、公共 IP 地址、可用性集和网络接口。
+你可以使用此模板在一个负载均衡器上创建两个虚拟机，然后在端口 80 上配置负载均衡规则。此模板还会部署存储帐户、虚拟网络、公共 IP 地址、可用性集和网络接口。
 
 ![](./media/virtual-machines-common-cli-deploy-templates/multivmextlb.png)
 
-按照以下步骤部署一个多 VM 应用程序，它会通过 Azure PowerShell 命令使用 Github 模板存储库中的资源管理器模板，然后就可以使用虚拟网络和负载平衡器。
+按照以下步骤部署一个多 VM 应用程序，它会通过 Azure PowerShell 命令使用 Github 模板存储库中的资源管理器模板，然后就可以使用虚拟网络和负载均衡器。
 
 ### 步骤 1：检查 JSON 文件中的模板
 

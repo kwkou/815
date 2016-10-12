@@ -65,7 +65,7 @@
 可以使用 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)将 Azure VNet 连接到其他 Azure VNet 或本地网络。为 VPN 网关动态地分配公共 IP 地址，启用与远程网络的通信。
 
 ### 应用程序网关数
-Azure [应用程序网关](/documentation/articles/application-gateway-introduction/)可使 Layer7 负载平衡用来根据 HTTP 路由网络流量。为应用程序网关动态地分配公共 IP 地址，该地址可作为负载平衡 VIP。
+Azure [应用程序网关](/documentation/articles/application-gateway-introduction/)可使 Layer7 负载均衡用来根据 HTTP 路由网络流量。为应用程序网关动态地分配公共 IP 地址，该地址可作为负载均衡 VIP。
 
 ### 速览
 下表显示了具有可能分配方法（动态/静态）的每种资源类型以及它是否具有分配多个公共 IP 地址的能力。
@@ -83,7 +83,7 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 在 Azure 经典部署模型中，可以将专用 IP 地址分配给以下 Azure 资源：
 
 - IaaS VM 和 PasS 角色实例
-- 内部负载平衡器
+- 内部负载均衡器
 - 应用程序网关
 
 ### IaaS VM 和 PasS 角色实例
@@ -114,8 +114,8 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 
 如果是独立云服务，则只能解析同一云服务内的所有 VM/角色实例的主机名。如果是 VNet 中的云服务，你将能够解析该 VNet 中的所有 VM/角色实例的主机名。
 
-### 内部负载平衡器 (ILB) 和应用程序网关
-可以将专用 IP 地址分配给 [Azure 内部负载平衡器](/documentation/articles/load-balancer-internal-overview/) (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction/)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。你还可以分配多个专用 IP 地址以启用多 vip 方案。
+### 内部负载均衡器 (ILB) 和应用程序网关
+可以将专用 IP 地址分配给 [Azure 内部负载均衡器](/documentation/articles/load-balancer-internal-overview/) (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction/)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。你还可以分配多个专用 IP 地址以启用多 vip 方案。
 
 ### 速览
 下表显示了具有可能分配方法（动态/静态）的每种资源类型以及它是否具有分配多个专用 IP 地址的能力。
@@ -125,7 +125,7 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 |VM（在独立云服务中）|是|是|是|
 |PaaS 角色实例（在独立云服务中）|是|否|是|
 |VM 或 PaaS 角色实例（在 VNet 中）|是|是|是|
-|内部负载平衡器前端|是|是|是|
+|内部负载均衡器前端|是|是|是|
 |应用程序网关前端|是|是|是|
 
 ## 限制
@@ -152,12 +152,12 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 |---|---|---|---|
 |**公共 IP 地址**|VM|称为 ILPIP（仅限动态）|称为公共 IP（动态或静态）|
 |||分配给 IaaS VM 或 PaaS 角色实例|与 VM 的 NIC 关联|
-||面向 Internet 的负载平衡器|称为 VIP（动态）或保留 IP（静态）|称为公共 IP（动态或静态）|
-|||分配给云服务|与负载平衡器的前端配置关联|
+||面向 Internet 的负载均衡器|称为 VIP（动态）或保留 IP（静态）|称为公共 IP（动态或静态）|
+|||分配给云服务|与负载均衡器的前端配置关联|
 ||||
 |**专用 IP 地址**|VM|称为 DIP|称为专用 IP 地址|
 |||分配给 IaaS VM 或 PaaS 角色实例|分配给 VM 的 NIC|
-||内部负载平衡器 (ILB)|分配给 ILB（动态或静态）|分配给 ILB 的前端配置（动态或静态）|
+||内部负载均衡器 (ILB)|分配给 ILB（动态或静态）|分配给 ILB 的前端配置（动态或静态）|
 
 ## 后续步骤
 - 通过经典管理门户[使用静态专用 IP 地址部署 VM](/documentation/articles/virtual-networks-static-private-ip-classic-pportal/)。

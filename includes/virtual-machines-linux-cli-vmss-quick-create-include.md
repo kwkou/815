@@ -13,7 +13,7 @@
 
 如果想要自定义位置或 image-urn，请查看命令 `azure location list` 和 `azure vm image {list-publishers|list-offers|list-skus|list|show}`。
 
-此命令返回后，将创建缩放集。此缩放集将包含一个负载平衡器，其 NAT 规则会将负载平衡器上的端口 50,000 + 映射到 VM i 上的端口 22。因此，在确定负载平衡器的 FQDN 后，我们就可以通过 ssh 连接到 VM：
+此命令返回后，将创建缩放集。此缩放集将包含一个负载均衡器，其 NAT 规则会将负载均衡器上的端口 50,000 + 映射到 VM i 上的端口 22。因此，在确定负载均衡器的 FQDN 后，我们就可以通过 ssh 连接到 VM：
 
 	# (if you decide to run this as a script, please invoke using bash)
 	

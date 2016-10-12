@@ -38,9 +38,9 @@
 
 本部分列出了一些典型的 VM 缩放集方案。一些高级 Azure 服务（如 Batch（批处理）、Service Fabric、Azure 容器服务）将使用这些方案。
 
- - **通过 RDP/SSH 连接到 VM 缩放集实例** - VM 缩放集是在 VNET 中创建的，并且没有为其中单独的 VM 分配公共 IP 地址。这是一件好事，因为你通常不希望承担为计算网格中的所有无状态资源分配单独的 IP 地址而产生支出和管理开销，并且你可以轻松地从 VNET 中的其他资源（包括负载平衡器或独立虚拟机等具有公共 IP 地址的资源）连接到这些 VM。
+ - **通过 RDP/SSH 连接到 VM 缩放集实例** - VM 缩放集是在 VNET 中创建的，并且没有为其中单独的 VM 分配公共 IP 地址。这是一件好事，因为你通常不希望承担为计算网格中的所有无状态资源分配单独的 IP 地址而产生支出和管理开销，并且你可以轻松地从 VNET 中的其他资源（包括负载均衡器或独立虚拟机等具有公共 IP 地址的资源）连接到这些 VM。
 
- - **使用 NAT 规则连接到 VM** - 可以创建一个公共 IP 地址，并将其分配给负载平衡器，然后定义入站 NAT 规则，用于将 IP 地址上的端口映射到 VM 缩放集中的 VM 上的端口。例如
+ - **使用 NAT 规则连接到 VM** - 可以创建一个公共 IP 地址，并将其分配给负载均衡器，然后定义入站 NAT 规则，用于将 IP 地址上的端口映射到 VM 缩放集中的 VM 上的端口。例如
 
 	Public IP->Port 50000 -> vmss\_0->Port 22
 	Public IP->Port 50001 -> vmss\_1->Port 22
@@ -55,9 +55,9 @@
 
 	作为此方法的一个示例，此模板创建了一个简单的 Mesos 群集，其中包含一个独立的主 VM，用于管理由 VM 组成的基于 VM 缩放集的群集：[https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json)
 
- - **使用轮循机制负载平衡到 VM 缩放集实例** - 如果你想要使用“轮循机制”方法向 VM 的计算群集交付工作，则可以使用负载平衡规则对 Azure 负载平衡器进行相应的配置。你还可以定义探测，通过使用指定的协议、间隔和请求路径对端口执行 ping 操作来验证应用程序是否正在运行。
+ - **使用轮循机制负载均衡到 VM 缩放集实例** - 如果你想要使用“轮循机制”方法向 VM 的计算群集交付工作，则可以使用负载均衡规则对 Azure 负载均衡器进行相应的配置。你还可以定义探测，通过使用指定的协议、间隔和请求路径对端口执行 ping 操作来验证应用程序是否正在运行。
 
-	下面的示例创建由在 IIS Web 服务器上运行的 VM 组成的 VM 缩放集，并使用负载平衡器来平衡每个 VM 接收的负载。它还使用 HTTP 协议对每个 VM 上的特定 URL 执行 ping 操作：[https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json](https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json) -查看 Microsoft.Network/loadBalancers 资源类型以及 virtualMachineScaleSet 中的 networkProfile 和 extensionProfile。
+	下面的示例创建由在 IIS Web 服务器上运行的 VM 组成的 VM 缩放集，并使用负载均衡器来平衡每个 VM 接收的负载。它还使用 HTTP 协议对每个 VM 上的特定 URL 执行 ping 操作：[https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json](https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json) -查看 Microsoft.Network/loadBalancers 资源类型以及 virtualMachineScaleSet 中的 networkProfile 和 extensionProfile。
 
  - **在 PaaS 群集管理器中将 VM 缩放集部署为计算群集** - VM 缩放集有时作为下一代辅助角色进行说明。这是有效的描述，但也可能导致将缩放集功能与 PaaS v1 辅助角色功能混淆。在某种意义上，VM 缩放集提供真正的“辅助角色”或辅助角色资源，并在此资源中提供独立于平台/运行时且集成到 Azure 资源管理器 IaaS 中的可自定义通用计算资源。
 

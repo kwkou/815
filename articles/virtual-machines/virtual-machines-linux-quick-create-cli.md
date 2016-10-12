@@ -21,7 +21,7 @@
 
 ## 快速命令摘要
 
-使用一个命令来部署 CoreOS VM 并附加 SSH 密钥：
+使用一个命令来部署 CentOS VM 并附加 SSH 密钥：
 
 	azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q Centos
 

@@ -299,7 +299,7 @@ Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流�
 
 句子从 Spout 发出，并分布到 Splitter Bolt 的实例。Splitter Bolt 将句子分割成多个单词，并将这些单词分布到 Counter Bolt。
 
-因为字数会本地保留在 Counter 实例中，所以我们想要确保特定单词流向相同的 Counter Bolt 实例，因此只能有一个实例跟踪特定单词。但是，针对 Splitter Bolt，哪个 Bolt 收到哪个句子并不重要，因此，我们只想要将句子负载平衡到那些实例。
+因为字数会本地保留在 Counter 实例中，所以我们想要确保特定单词流向相同的 Counter Bolt 实例，因此只能有一个实例跟踪特定单词。但是，针对 Splitter Bolt，哪个 Bolt 收到哪个句子并不重要，因此，我们只想要将句子负载均衡到那些实例。
 
 打开 **Program.cs**。重要的方法是 **ITopologyBuilder**，它用于定义提交到 Storm 的拓扑。将 **ITopologyBuilder** 的内容替换为以下代码，以实现上面所述的拓扑。
 

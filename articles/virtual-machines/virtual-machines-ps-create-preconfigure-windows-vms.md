@@ -136,7 +136,7 @@
 
 对于 Active Directory 域控制器，将 $hcaching 设为“None”。
 
-（可选）将虚拟机添加到用于外部流量的现有负载平衡集。
+（可选）将虚拟机添加到用于外部流量的现有负载均衡集。
 
 	$protocol="<Specify one: tcp, udp>"
 	$localport=<port number of the internal port>

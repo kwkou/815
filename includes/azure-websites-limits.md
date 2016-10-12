@@ -14,7 +14,7 @@ CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费�
 [带 FTP/S 和 SSL 的 chinacloudsites.cn 子域](/documentation/articles/web-sites-configure-ssl-certificate/)|X|X|X|X|X
 [自定义域](/documentation/articles/web-sites-custom-domain-name/)支持||X|X|X|X
 自定义域 [SSL 支持](/documentation/articles/web-sites-configure-ssl-certificate/)|||不受限制|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接
-集成负载平衡器||X|X|X|X
+集成负载均衡器||X|X|X|X
 [始终打开](/documentation/articles/web-sites-configure/)|||X|X|X
 [计划备份](/documentation/articles/web-sites-backup/)||||每天一次|每天 50 次
 [自动扩展](/documentation/articles/web-sites-scale/)|||X|X|X

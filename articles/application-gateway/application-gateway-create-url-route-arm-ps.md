@@ -14,7 +14,7 @@
 
 # 使用基于 URL 的路由创建应用程序网关 
 
-基于 URL 路径的路由可让你根据 Http 请求的 URL 路径来关联路由。它将检查是否有路由连接到针对应用程序网关中的 URL 列表配置的后端池，并将网络流量发送到定义的后端池。基于 URL 的路由的常见用法是将不同内容类型的请求负载平衡到不同的后端服务器池。
+基于 URL 路径的路由可让你根据 Http 请求的 URL 路径来关联路由。它将检查是否有路由连接到针对应用程序网关中的 URL 列表配置的后端池，并将网络流量发送到定义的后端池。基于 URL 的路由的常见用法是将不同内容类型的请求负载均衡到不同的后端服务器池。
 
 基于 URL 的路由将新的规则类型引入应用程序网关。应用程序网关有 2 种规则类型：基本和 PathBasedRouting。基本规则类型针对后端池提供轮循机制服务，而 PathBasedRouting 除了轮循机制分发以外，还在选择后端池时考虑请求 URL 的路径模式。
 
@@ -144,7 +144,7 @@ Azure Resource Manager 要求所有资源组指定一个位置。此位置将用
 在本示例中，将有两个后端池根据 URL 路径路由网络流量。一个池接收来自 URL 路径“/video”的流量，另一个池接收来自路径“/image”的流量。你必须替换上述 IP 地址才能添加你自己的应用程序 IP 地址终结点。
 
 ### 步骤 3
-为后端池中进行了负载平衡的网络流量配置应用程序网关设置“poolsetting01”和“poolsetting02”。在本示例中，你将为后端池配置不同的后端池设置。每个后端池可有自身的后端池设置。
+为后端池中进行了负载均衡的网络流量配置应用程序网关设置“poolsetting01”和“poolsetting02”。在本示例中，你将为后端池配置不同的后端池设置。每个后端池可有自身的后端池设置。
 
 	$poolSetting01 = New-AzureRmApplicationGatewayBackendHttpSettings -Name "besetting01" -Port 80 -Protocol Http -CookieBasedAffinity Disabled -RequestTimeout 120
 

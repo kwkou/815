@@ -1,6 +1,6 @@
 ## NIC
  
-网络接口卡 (NIC) 资源提供与虚拟网络资源中现有子网的网络连接。尽管可以将 NIC 作为独立对象来创建，但你需要将其关联到另一个对象才能实际提供连接。NIC 可以用于将 VM 连接到一个子网、公共 IP 地址或负载平衡器。
+网络接口卡 (NIC) 资源提供与虚拟网络资源中现有子网的网络连接。尽管可以将 NIC 作为独立对象来创建，但你需要将其关联到另一个对象才能实际提供连接。NIC 可以用于将 VM 连接到一个子网、公共 IP 地址或负载均衡器。
 
 |属性|说明|示例值|
 |---|---|---|
@@ -25,7 +25,7 @@ NIC 具有一个名为 **ipConfigurations** 的子对象，包含以下属性：
 |**primary**|NIC 是否是 VM 的主 NIC|true 或 false|
 |**publicIPAddress**|与 NIC 关联的 PIP|请参阅 [DNS 设置](#DNS-settings)|
 |**loadBalancerBackendAddressPools**|与 NIC 关联的后端地址池||
-|**loadBalancerInboundNatRules**|与 NIC 关联的入站负载平衡器 NAT 规则||
+|**loadBalancerInboundNatRules**|与 NIC 关联的入站负载均衡器 NAT 规则||
 
 采用 JSON 格式的示例公共 IP 地址：
 

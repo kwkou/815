@@ -16,7 +16,7 @@
 
 Azure 定期更新承载应用程序实例的操作系统。在应用更新时，虚拟机将关闭。更新域用来确保不是所有虚拟机实例都在同一时间更新。当您将多台虚拟机分配到某个可用性集时，Azure 可确保这些虚拟机将分配到不同的更新域。上图显示两台运行 Internet Information Services (IIS) 的虚拟机位于不同的更新域中，两台运行 SQL Server 的虚拟机也位于不同的更新域中。
 
-应结合使用可用性集和负载平衡终结点，以帮助确保应用程序始终可用并且高效运行。有关使用负载平衡终结点的更多信息，请参见[对虚拟机进行负载平衡][]。
+应结合使用可用性集和负载均衡终结点，以帮助确保应用程序始终可用并且高效运行。有关使用负载均衡终结点的更多信息，请参见[对虚拟机进行负载均衡][]。
 
 此任务包括下列步骤：
 
@@ -178,6 +178,6 @@ Azure 定期更新承载应用程序实例的操作系统。在应用更新时�
 
 <!-- LINKS -->
 
-[对虚拟机进行负载平衡]: /documentation/articles/virtual-machines-linux-load-balance/
+[对虚拟机进行负载均衡]: /documentation/articles/virtual-machines-linux-load-balance/
 [关于虚拟网络的地缘组]:https://msdn.microsoft.com/zh-CN/library/windowsazure/jj156085.aspx
 [如何连接云服务中的虚拟机]: /documentation/articles/virtual-machines-connect-cloud-service/

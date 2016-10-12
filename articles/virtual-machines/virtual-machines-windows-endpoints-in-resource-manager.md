@@ -22,6 +22,6 @@
 - [快速入门 — 使用 Azure PowerShell 来创建网络安全组和 ACL 规则](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)  
 - [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)  
 - [什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)
-- [负载平衡器的 Azure 资源管理器概述](/documentation/articles/load-balancer-arm/) 
+- [负载均衡器的 Azure 资源管理器概述](/documentation/articles/load-balancer-arm/) 
 
 <!---HONumber=Mooncake_0704_2016-->

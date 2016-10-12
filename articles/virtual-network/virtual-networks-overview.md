@@ -19,13 +19,13 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 
 ![本地网络](./media/virtual-networks-overview/figure01.png)
 
-上图显示了通过路由器连接到公共 Internet 的本地网络。你还可以看到路由器与托管 DNS 服务器和 Web 服务器场的外围网络之间的防火墙。Web 服务器场使用向 Internet 公开的硬件负载平衡器进行负载平衡，并使用内部子网中的资源。内部子网由另一个防火墙与外围网络隔开，并托管 Active Directory 域控制器服务器、数据库服务器和应用程序服务器。
+上图显示了通过路由器连接到公共 Internet 的本地网络。你还可以看到路由器与托管 DNS 服务器和 Web 服务器场的外围网络之间的防火墙。Web 服务器场使用向 Internet 公开的硬件负载均衡器进行负载均衡，并使用内部子网中的资源。内部子网由另一个防火墙与外围网络隔开，并托管 Active Directory 域控制器服务器、数据库服务器和应用程序服务器。
 
 可以在 Azure 中托管同一网络，如下图所示。
 
 ![Azure 虚拟网络](./media/virtual-networks-overview/figure02.png)
 
-请注意 Azure 基础结构如何起着路由器作用，允许从 VNet 访问公共 Internet 而无需进行任何配置。防火墙可由应用于每个单独子网的网络安全组 (NSG) 替代。而物理负载平衡器可由 Azure 中面向 Internet 的负载平衡器和内部负载平衡器替代。
+请注意 Azure 基础结构如何起着路由器作用，允许从 VNet 访问公共 Internet 而无需进行任何配置。防火墙可由应用于每个单独子网的网络安全组 (NSG) 替代。而物理负载均衡器可由 Azure 中面向 Internet 的负载均衡器和内部负载均衡器替代。
 
 >[AZURE.NOTE] 不能将经典 VNet 添加到地缘组，或创建为区域 VNet。如果你在地缘组中有一个 VNet，建议你[将它迁移到区域 VNet](/documentation/articles/virtual-networks-migrate-to-regional-vnet/)。
 
@@ -56,13 +56,13 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 
 若要详细了解 Azure 中的 IP 地址，请访问[虚拟网络中的 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-classic/)
 
-## Azure 负载平衡器
+## Azure 负载均衡器
 
-虚拟网络中的虚拟机和云服务可以通过 Azure 负载平衡器向 Internet 公开。只面向内部的业务线应用程序可以使用内部负载平衡器进行负载平衡。
+虚拟网络中的虚拟机和云服务可以通过 Azure 负载均衡器向 Internet 公开。只面向内部的业务线应用程序可以使用内部负载均衡器进行负载均衡。
 
-- **外部负载平衡器**。可以使用外部负载平衡器为从公共 Internet 访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
+- **外部负载均衡器**。可以使用外部负载均衡器为从公共 Internet 访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
-- **内部负载平衡器**。可以使用内部负载平衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
+- **内部负载均衡器**。可以使用内部负载均衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
 想学习更多关于 Azure 中的平衡负载器，请访问[平衡负载器概述](/documentation/articles/load-balancer-overview/)。
 

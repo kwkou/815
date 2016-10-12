@@ -77,7 +77,7 @@
 - 云服务终结点或网络安全组允许流量
 	- [经典模型 - 管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances/)
 	- [Resource Manager 模型 - 管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal/)
-- VM 中在测试 VM 和你的 VM 之间的路径运行的单独组件（例如负载平衡器或防火墙）允许流量。
+- VM 中在测试 VM 和你的 VM 之间的路径运行的单独组件（例如负载均衡器或防火墙）允许流量。
 
 在基于 Windows 的虚拟机上，使用具有高级安全性的 Windows 防火墙确定防火墙规则是否排除应用程序的入站和出站流量。
 
@@ -101,10 +101,10 @@
 	- 网络安全组允许入站请求和出站响应流量。
 	- 有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)。
 
-如果虚拟机或终结点是负载平衡集的成员，则：
+如果虚拟机或终结点是负载均衡集的成员，则：
 
 - 验证探测协议（TCP 或 UDP）和端口号是否正确。
-- 如果探测协议和端口与负载平衡集协议和端口不同，则：
+- 如果探测协议和端口与负载均衡集协议和端口不同，则：
 	- 验证应用程序是否在探测协议（TCP 或 UDP）和端口号（在目标 VM 上使用 **netstat -a**）上侦听。
 	- 目标 VM 上的主机防火墙允许入站探测请求和出站探测响应流量。
 

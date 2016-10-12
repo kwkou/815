@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)]
 
-本文将逐步讲述如何构建示例应用程序基础结构。我们将详细介绍如何设计简单在线商店的基础结构，此在线商店可将关于命名约定、可用性集、虚拟网络及负载平衡器的所有准则和决策聚集在一起；以及如何实际部署你的虚拟机 (VM)。
+本文将逐步讲述如何构建示例应用程序基础结构。我们将详细介绍如何设计简单在线商店的基础结构，此在线商店可将关于命名约定、可用性集、虚拟网络及负载均衡器的所有准则和决策聚集在一起；以及如何实际部署你的虚拟机 (VM)。
 
 
 ## 示例工作负荷
@@ -34,7 +34,7 @@ Adventure Works Cycles 想要在 Azure 中生成一个在线商店应用程序�
 
 ![不同应用程序基础结构层的关系图](./media/virtual-machines-common-infrastructure-service-guidelines/example-tiers.png)
 
-当客户浏览在线商店时，传入的安全 Web 流量需要在 Web 服务器之间进行负载平衡。来自 Web 服务器的 HTTP 请求形式的订单处理流量需要在应用程序服务器之间进行平衡。此外，基础结构必须设计为具有高可用性。
+当客户浏览在线商店时，传入的安全 Web 流量需要在 Web 服务器之间进行负载均衡。来自 Web 服务器的 HTTP 请求形式的订单处理流量需要在应用程序服务器之间进行平衡。此外，基础结构必须设计为具有高可用性。
 
 生成的设计必须引入：
 
@@ -119,8 +119,8 @@ Adventure Works Cycles 决定为其 Azure VM 使用以下名称：
 - 两个存储帐户
 - 四个可用性集，每个在线商店层一个
 - 四个层中的虚拟机
-- 用于从 Internet 到 Web 服务器的基于 HTTPS 的 Web 流量的外部负载平衡集
-- 用于从 Web 服务器到应用程序服务器的未加密 Web 流量的内部负载平衡集
+- 用于从 Internet 到 Web 服务器的基于 HTTPS 的 Web 流量的外部负载均衡集
+- 用于从 Web 服务器到应用程序服务器的未加密 Web 流量的内部负载均衡集
 - 单个资源组
 
 

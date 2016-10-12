@@ -14,7 +14,7 @@
 
 # 创建、启动或删除应用程序网关
 
-Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载平衡、基于 Cookie 的会话相关性和安全套接字层 (SSL) 卸载。
+Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载均衡、基于 Cookie 的会话相关性和安全套接字层 (SSL) 卸载。
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/application-gateway-create-gateway-portal/)
@@ -161,7 +161,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 >[AZURE.IMPORTANT] 协议项 Http 或 Https 区分大小写。
 
-以下示例演示如何使用配置文件设置应用程序网关负载平衡公共端口 80 上的 HTTP 流量，并将网络流量发送到两个 IP 地址之间的后端端口 80。
+以下示例演示如何使用配置文件设置应用程序网关负载均衡公共端口 80 上的 HTTP 流量，并将网络流量发送到两个 IP 地址之间的后端端口 80。
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<ApplicationGatewayConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/windowsazure">
@@ -406,9 +406,9 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload（配置应用程序网关以进行 SSL 卸载）](/documentation/articles/application-gateway-ssl/)。
 
-如果你想要将应用程序网关配置为与内部负载平衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载平衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
+如果你想要将应用程序网关配置为与内部负载均衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载均衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
 
-如需负载平衡选项的其他常规信息，请参阅：
+如需负载均衡选项的其他常规信息，请参阅：
 
 - [Azure 流量管理器](/documentation/services/traffic-manager/)
 

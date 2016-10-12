@@ -28,7 +28,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 
 尽管功能保持相同，但一些术语已有所变化：
 
-- “负载平衡方法”（确定流量管理器在响应特定的 DNS 请求时如何选择要将流量路由到的终结点）已重命名为“流量路由方法”。
+- “负载均衡方法”（确定流量管理器在响应特定的 DNS 请求时如何选择要将流量路由到的终结点）已重命名为“流量路由方法”。
 
 - “循环”流量路由方法已重命名为“加权”。
 
@@ -147,7 +147,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 Azure 终结点会引用在 Azure 中托管的其他服务。目前支持 3 种类型的 Azure 终结点：<BR>
 1.Azure Web Apps <BR>
 2.“经典”云服务（可能包含 PaaS 服务或 IaaS 虚拟机）<BR>
-3.ARM Microsoft.Network/publicIpAddress 资源（可以附加到负载平衡器或虚拟机 NIC）。请注意，必须为 publicIpAddress 指定 DNS 名称，然后才能在流量管理器中使用它。
+3.ARM Microsoft.Network/publicIpAddress 资源（可以附加到负载均衡器或虚拟机 NIC）。请注意，必须为 publicIpAddress 指定 DNS 名称，然后才能在流量管理器中使用它。
 
 在每种情况下，均可使用
  - Add-AzureRmTrafficManagerEndpointConfig 或 New-AzureRmTrafficManagerEndpoint 的“targetResourceId”参数指定服务。<BR>
@@ -172,7 +172,7 @@ Azure 终结点会引用在 Azure 中托管的其他服务。目前支持 3 种�
 	PS C:\> New-AzureRmTrafficManagerEndpoint -Name MyCloudServiceEndpoint -ProfileName MyProfile -ResourceGroupName MyRG -Type AzureEndpoints -TargetResourceId $cloudService.Id -EndpointStatus Enabled
 
 #### 示例 3：使用 New-AzureRmTrafficManagerEndpoint 添加 publicIpAddress 终结点
-在此示例中，ARM 公共 IP 地址资源添加到了流量管理器配置文件中。公共 IP 地址必须配置了 DNS 名称，并且可以绑定到 VM 的 NIC 或者绑定到负载平衡器。
+在此示例中，ARM 公共 IP 地址资源添加到了流量管理器配置文件中。公共 IP 地址必须配置了 DNS 名称，并且可以绑定到 VM 的 NIC 或者绑定到负载均衡器。
 
 	PS C:\> $ip = Get-AzureRmPublicIpAddress -Name MyPublicIP -ResourceGroupName MyRG
 	PS C:\> New-AzureRmTrafficManagerEndpoint -Name MyIpEndpoint -ProfileName MyProfile -ResourceGroupName MyRG -Type AzureEndpoints -TargetResourceId $ip.Id -EndpointStatus Enabled

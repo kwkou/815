@@ -54,7 +54,7 @@
     $NIC2 = New-AzureRmNetworkInterface -Name NIC2 -ResourceGroupName TestRG `
             -Location ChinaNorth -SubnetId $BackEnd.Id
 
-通常，你还会创建[网络安全组](/documentation/articles/virtual-networks-nsg/)或[负载平衡器](/documentation/articles/load-balancer-overview/)来帮助管理流量以及跨 VM 分布流量。[更详细的多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-arm-ps/) 文章将指导你创建网络安全组和分配 NIC。
+通常，你还会创建[网络安全组](/documentation/articles/virtual-networks-nsg/)或[负载均衡器](/documentation/articles/load-balancer-overview/)来帮助管理流量以及跨 VM 分布流量。[更详细的多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-arm-ps/) 文章将指导你创建网络安全组和分配 NIC。
 
 
 ## 创建虚拟机

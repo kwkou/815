@@ -24,7 +24,7 @@
 1. 创建包含 3 个节点的群集
 2. 将数据磁盘与操作系统磁盘隔离开来
 3. 在 RAID-0/条带化设置下创建数据磁盘，以提高 IOPS
-4. 使用 Azure 负载平衡器，以使 3 个节点的负载保持平衡
+4. 使用 Azure 负载均衡器，以使 3 个节点的负载保持平衡
 5. 为了最大程度地减少重复工作，可创建一个包含 MariaDB+Galera 的 VM 映像，并将其用于创建其他群集 VM。
 
 ![体系结构](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Setup.png)
@@ -288,10 +288,10 @@
 		sudo service mysql start
         chkconfig mysql on
 		
-## 对群集进行负载平衡
+## 对群集进行负载均衡
 在创建聚集 VM 时，你将其添加到了名为 **clusteravset** 的可用性集中，以确保其放置在不同的容错和更新域上，且 Azure 不会同时在所有虚拟机上执行维护。此配置符合该 Azure 服务级别协议 (SLA) 将支持的要求。
 
-现在，使用 Azure 负载平衡器，以平衡 3 个节点之间的请求。
+现在，使用 Azure 负载均衡器，以平衡 3 个节点之间的请求。
 
 在使用 Azure CLI 的机器上运行以下命令。命令参数结构是：`azure vm endpoint create-multiple <MachineName> <PublicPort>:<VMPort>:<Protocol>:<EnableDirectServerReturn>:<Load Balanced Set Name>:<ProbeProtocol>:<ProbePort>`
 
@@ -301,13 +301,13 @@
     azure vm endpoint create-multiple mariadb2 3306:3306:tcp:false:MySQL:tcp:3306
     azure vm endpoint create-multiple mariadb3 3306:3306:tcp:false:MySQL:tcp:3306
 	
-最后，由于 CLI 将负载平衡器的探测时间间隔设置为 15 秒（可能有点太长了），可以在经典管理门户中的“终结点”下更改任一 VM 的该时间间隔
+最后，由于 CLI 将负载均衡器的探测时间间隔设置为 15 秒（可能有点太长了），可以在经典管理门户中的“终结点”下更改任一 VM 的该时间间隔
 
 ![编辑终结点](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Endpoint.PNG)
 
-然后单击“重新配置负载平衡集”，并转到下一步
+然后单击“重新配置负载均衡集”，并转到下一步
 
-![重新配置负载平衡集](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Endpoint2.PNG)
+![重新配置负载均衡集](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Endpoint2.PNG)
 
 然后将“探测时间间隔”设置为 5 秒，并保存
 
@@ -315,7 +315,7 @@
 
 ## 验证群集
 
-繁琐的工作已经完成。现在应该可以在 `mariadbha.chinacloudapp.cn:3306` 访问群集，这将触发负载平衡器并在 3 个 VM 之间顺利、高效地路由请求。
+繁琐的工作已经完成。现在应该可以在 `mariadbha.chinacloudapp.cn:3306` 访问群集，这将触发负载均衡器并在 3 个 VM 之间顺利、高效地路由请求。
 
 使用偏好的 MySQL 客户端进行连接，或直接从任一 VM 进行连接，以验证此群集是否正常运行。
 
@@ -343,7 +343,7 @@
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
 
-在本文中，你在运行 CentOS 7 的 Azure 虚拟机上创建了包含 3 个节点的 MariaDB + Galera 高度可用群集。VM 已通过 Azure 负载平衡器实现了负载平衡。
+在本文中，你在运行 CentOS 7 的 Azure 虚拟机上创建了包含 3 个节点的 MariaDB + Galera 高度可用群集。VM 已通过 Azure 负载均衡器实现了负载均衡。
 
 你可能希望找到[另一种方式在 Linux 上对 MySQL 进行集群]以及探究如何[优化和测试 Azure Linux VM 上的 MySQL 性能]。
 

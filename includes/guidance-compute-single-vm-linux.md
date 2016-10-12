@@ -85,7 +85,7 @@
 
 - 可以通过[更改 VM 大小][vm-resize]来扩大或缩小 VM。
 
-- 若要水平扩大，请将两个或更多 VM 放入负载平衡器后面的可用性集中。有关详细信息，请参阅 [Running multiple VMs on Azure][multi-vm]（在 Azure 上运行多个 VM）。
+- 若要水平扩大，请将两个或更多 VM 放入负载均衡器后面的可用性集中。有关详细信息，请参阅 [Running multiple VMs on Azure][multi-vm]（在 Azure 上运行多个 VM）。
 
 ## 可用性注意事项
 

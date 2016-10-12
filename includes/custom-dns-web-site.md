@@ -2,7 +2,7 @@
 
 当创建 Web 应用时，Azure 会在 chinacloudsites.cn 域上提供一个友好子域，以便您的用户可以使用以下 URL 访问您的 Web 应用，如 http://&lt;mysite>.chinacloudsites.cn. 但是，如果将 Web 应用配置为共享或标准模式，则可以将 Web 应用映射到您自己的域名。
 
-另外，您可以使用 Azure Traffic Manager 对您的 Web 应用的传入流量实现负载平衡。有关 Traffic Manager 如何作用于 Web 应用的详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure Web 应用流量][trafficmanager]。
+另外，您可以使用 Azure Traffic Manager 对您的 Web 应用的传入流量实现负载均衡。有关 Traffic Manager 如何作用于 Web 应用的详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure Web 应用流量][trafficmanager]。
 
 > [WACOM.NOTE] 本任务中的步骤要求您将 Web 应用配置为共享或标准模式，这可能会更改对您的订阅的计费量。有关详细信息，请参阅<a href="/pricing/details/web-site/"> Web 应用定价详细信息</a>。
 
@@ -30,7 +30,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 > [WACOM.NOTE] 由于 A 记录映射到静态 IP 地址，因此它无法自动解析 Web 应用的 IP 地址的更改。用于 A 记录的 IP 地址是您为 Web 应用配置自定义域名设置时提供的；但是，如果您删除并重新创建了 Web 应用或者将 Web 应用模式改回了免费，则该值可能会更改。
 
-> [WACOM.NOTE] A 记录不能用于使用 Traffic Manager 的负载平衡。有关详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure Web 应用流量][trafficmanager]。
+> [WACOM.NOTE] A 记录不能用于使用 Traffic Manager 的负载均衡。有关详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure Web 应用流量][trafficmanager]。
  
 <a name="bkmk_configsharedmode"></a><h2>将 Web 应用配置为共享或标准模式</h2>
 
