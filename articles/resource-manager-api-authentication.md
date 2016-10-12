@@ -70,7 +70,7 @@ Web 应用：
 
 在开始编写代码之前，请先使用 Azure Active Directory (AD) 注册 Web 应用。应用注册将在 Azure AD 中为你的应用创建一个中心标识。该标识保留有关应用程序的基本信息，例如应用程序用来进行身份验证和访问 Azure Resource Manager API 的 OAuth 客户端 ID、回复 URL 和凭据。应用注册还会记录应用程序在代表用户访问 Microsoft API 时所需的各种委派权限。
 
-由于应用访问其他订阅，必须将它配置为多租户应用程序。为了通过验证，请提供与 Active Directory 关联的域。若要查看与 Active Directory 关联的域，请登录[经典门户](https://manage.windowsazure.com)。选择 Active Directory，然后选择“域”。
+由于应用访问其他订阅，必须将它配置为多租户应用程序。为了通过验证，请提供与 Active Directory 关联的域。若要查看与 Active Directory 关联的域，请登录[经典门户](https://manage.windowsazure.cn)。选择 Active Directory，然后选择“域”。
 
 以下示例演示如何使用 Azure PowerShell 注册应用。必须拥有最新版本（2016 年 8 月）Azure PowerShell 才能正常运行此命令。
 
@@ -90,7 +90,7 @@ Web 应用：
 
 Azure AD 还支持应用程序的证书凭据：创建自签名证书、保留私钥，以及将公钥添加到 Azure AD 应用程序注册。对于身份验证，应用程序会使用你的私钥将小负载发送到签名的 Azure AD，然后 Azure AD 使用注册的公钥来验证签名。
 
-有关使用证书创建 AD 应用的信息，请参阅 [Use Azure PowerShell to create a service principal to access resources](resource-group-authenticate-service-principal.md#create-service-principal-with-certificate)（使用 Azure PowerShell 创建服务主体来访问资源）或 [Use Azure CLI to create a service principal to access resources](resource-group-authenticate-service-principal-cli.md#create-service-principal-with-certificate)（使用 Azure CLI 创建服务主体来访问资源）。
+有关使用证书创建 AD 应用的信息，请参阅 [Use Azure PowerShell to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal#create-service-principal-with-certificate)（使用 Azure PowerShell 创建服务主体来访问资源）或 [Use Azure CLI to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal-cli#create-service-principal-with-certificate)（使用 Azure CLI 创建服务主体来访问资源）。
 
 ## 从订阅 ID 获取租户 ID
 
@@ -104,7 +104,7 @@ Azure AD 还支持应用程序的证书凭据：创建自签名证书、保留�
 
 应用程序使用 OAuth 2.0 授权请求将用户重定向到 Azure AD - 以验证用户的凭据并取回授权代码。应用程序使用授权代码来访问 Resource Manager 的令牌。[ConnectSubscription](https://github.com/dushyantgill/VipSwapper/blob/master/CloudSense/CloudSense/Controllers/HomeController.cs#L42) 方法创建授权请求。
 
-本主题说明用于对用户进行身份验证的 REST API 请求。也可以使用帮助库在代码中执行身份验证。有关这些库的详细信息，请参阅 [Azure Active Directory Authentication Libraries](./active-directory/active-directory-authentication-libraries.md)（Azure Active Directory 身份验证库）。有关在应用程序中集成标识管理的指导，请参阅 [Azure Active Directory developer's guide](./active-directory/active-directory-developers-guide.md)（Azure Active Directory 开发人员指南）。
+本主题说明用于对用户进行身份验证的 REST API 请求。也可以使用帮助库在代码中执行身份验证。有关这些库的详细信息，请参阅 [Azure Active Directory Authentication Libraries](/documentation/articles/active-directory-authentication-libraries/)（Azure Active Directory 身份验证库）。有关在应用程序中集成标识管理的指导，请参阅 [Azure Active Directory developer's guide](/documentation/articles/active-directory-developers-guide/)（Azure Active Directory 开发人员指南）。
 
 ### 授权请求 (OAuth 2.0)
 
@@ -126,7 +126,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 
 如果不只想要代表用户访问 Azure Resource Manager，而且还要允许用户使用其 Azure AD 帐户登录你的应用程序，请发出 Open ID Connect 授权请求。使用 Open ID Connect，应用程序也可以从 Azure AD 接收 id\_token，应用可以使用它来将用户登录。
 
-[Send the sign-in request](./active-directory/active-directory-protocols-openid-connect-code.md#send-the-sign-in-request)（发送登录请求）主题中介绍了适用于此请求的查询字符串参数。
+[Send the sign-in request](/documentation/articles/active-directory-protocols-openid-connect-code#send-the-sign-in-request)（发送登录请求）主题中介绍了适用于此请求的查询字符串参数。
 
 下面是一个示例 Open ID Connect 请求：
 
@@ -197,7 +197,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 
 现在，应用程序已获取令牌，可代表用户访问 Azure Resource Manager。下一步是将应用程序连接到订阅。在连接之后，即使用户不存在（长期脱机访问），仍然可以管理这些订阅。
 
-对于要连接的每个订阅，可调用 [Resource Manager 列出权限](https://msdn.microsoft.com/library/azure/dn906889.aspx) API 来确定用户是否拥有订阅的访问管理权限。
+对于要连接的每个订阅，可调用 [Resource Manager 列出权限](https://msdn.microsoft.com/zh-cn/library/azure/dn906889.aspx) API 来确定用户是否拥有订阅的访问管理权限。
 
 ASP.NET MVC 示例应用的 [UserCanManagerAccessForSubscription](https://github.com/dushyantgill/VipSwapper/blob/master/CloudSense/CloudSense/AzureResourceManagerUtil.cs#L44) 方法可实现此调用。
 
@@ -238,8 +238,6 @@ ASP.NET MVC 示例应用的 [UserCanManagerAccessForSubscription](https://github
 若要对应用进行身份验证并获取 Azure AD 图形 API 的令牌，请向 Azure AD 令牌终结点发出客户端凭据授予 OAuth2.0 流令牌请求 (**https://login.microsoftonline.com/{directory\_domain\_name}/OAuth2/Token**)。
 
 ASP.net MVC 示例应用程序的 [GetObjectIdOfServicePrincipalInOrganization](https://github.com/dushyantgill/VipSwapper/blob/master/CloudSense/CloudSense/AzureADGraphAPIUtil.cs) 方法使用适用于 .NET 的 Active Directory 身份验证库来获取图形 API 的仅限应用的访问令牌。
-
-[Request an Access Token](/documentation/articles/active-directory-protocols-oauth-service-to-service#request-an-access-token)（请求访问令牌）主题中介绍了适用于此请求的查询字符串参数。
 
 客户端凭据授予令牌的示例请求：
 
