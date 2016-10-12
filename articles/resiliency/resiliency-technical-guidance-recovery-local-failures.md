@@ -118,7 +118,7 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
 
 ####资源管理
 
-每个数据库在创建时，都配置了大小上限。当前可用的最大大小为 1 TB（大小限制随服务层而定），请参阅 [Azure SQL 数据库的服务层和性能级别](/documentation/article/sql-database-resource-limits#service-tiers-and-performance-levels)。当数据库达到大小限制时，它会拒绝其他 INSERT 或 UPDATE 命令。（仍可查询和删除数据。）
+每个数据库在创建时，都配置了大小上限。当前可用的最大大小为 1 TB（大小限制随服务层而定），请参阅 [Azure SQL 数据库的服务层和性能级别](/documentation/articles/sql-database-resource-limits#service-tiers-and-performance-levels)。当数据库达到大小限制时，它会拒绝其他 INSERT 或 UPDATE 命令。（仍可查询和删除数据。）
 
 在数据库内，Azure SQL 数据库使用结构来管理资源。但是，它不使用结构控制器，而是使用环形拓扑来检测故障。群集中的每个副本都有两个相邻副本，并负责检测这两个副本何时停止。当某个副本停止时，它的相邻副本便会触发重新配置代理，在另一台计算机上重新创建该副本。引擎限制可确保逻辑服务器不会在一台计算机上使用过多资源，或超过计算机的物理限制。
 
