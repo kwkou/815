@@ -16,9 +16,9 @@
 
 # 自动缩放虚拟机规模集中的 Linux 计算机
 
-使用虚拟机缩放集可以轻松地将相同的虚拟机作为集来进行部署和管理。缩放集为超大规模应用程序提供高度可缩放且可自定义的计算层，并且它们支持 Windows 平台映像、Linux 平台映像、自定义映像和扩展。有关详细信息，请参阅[虚拟机规模集概述](/documentation/articles/virtual-machine-scale-sets-overview/)。
+使用虚拟机规模集可以轻松地将相同的虚拟机作为集来进行部署和管理。规模集为超大规模应用程序提供高度可缩放且可自定义的计算层，并且它们支持 Windows 平台映像、Linux 平台映像、自定义映像和扩展。有关详细信息，请参阅[虚拟机规模集概述](/documentation/articles/virtual-machine-scale-sets-overview/)。
 
-本教程演示如何使用 Ubuntu Linux 的最新版本创建 Linux 虚拟机的虚拟机规模集，并自动缩放集中的虚拟机。为此，将使用 Azure CLI 创建 Azure Resource Manager 模板并部署它。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。若要了解有关规模集自动缩放的详细信息，请参阅[自动缩放和虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-autoscale-overview/)。
+本教程演示如何使用 Ubuntu Linux 的最新版本创建 Linux 虚拟机的虚拟机规模集，并自动规模集中的虚拟机。为此，将使用 Azure CLI 创建 Azure Resource Manager 模板并部署它。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。若要了解有关规模集自动缩放的详细信息，请参阅[自动缩放和虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-autoscale-overview/)。
 
 在本教程中，你将部署以下资源和扩展：
 
@@ -46,7 +46,7 @@
 
         azure group create vmsstestrg1 chinaeast
 
-3. **将存储帐户部署到新的资源组** - 本教程使用多个存储帐户来实现虚拟机缩放集。创建名为 **vmsstestsa** 的存储帐户。让命令界面窗口保持打开状态以便完成本教程中的后续步骤。
+3. **将存储帐户部署到新的资源组** - 本教程使用多个存储帐户来实现虚拟机规模集。创建名为 **vmsstestsa** 的存储帐户。让命令界面窗口保持打开状态以便完成本教程中的后续步骤。
 
         azure storage account create -g vmsstestrg1 -l chinaeast --kind Storage --sku-name LRS vmsstestsa
 
@@ -89,7 +89,7 @@
             
 	- 用于访问规模集中虚拟机的单独虚拟机的名称。
 	- 存储模板的存储帐户名称。
-	- 最初在缩放集中创建的虚拟机实例数。
+	- 最初在规模集中创建的虚拟机实例数。
 	- 虚拟机上的管理员帐户的名称和密码。
 	- 在资源组中创建的资源的前缀。
 
@@ -127,14 +127,14 @@
         "wadcfgxend": "[concat('\"><MetricAggregation scheduledTransferPeriod=\"PT1H\"/><MetricAggregation scheduledTransferPeriod=\"PT1M\"/></Metrics></DiagnosticMonitorConfiguration></WadCfg>')]"
         
 	- 网络接口所用的 DNS 名称。
-	- 在缩放集中使用的虚拟机大小。有关虚拟机大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)。
-	- 用于定义将在缩放集中虚拟机上运行的操作系统的平台映像信息。有关选择映像的详细信息，请参阅[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching/)。
+	- 在规模集中使用的虚拟机大小。有关虚拟机大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)。
+	- 用于定义将在规模集中虚拟机上运行的操作系统的平台映像信息。有关选择映像的详细信息，请参阅[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching/)。
 	- 虚拟网络和子网的 IP 地址名称和前缀。
 	- 虚拟网络、负载均衡器和网络接口的名称和标识符。
-	- 与缩放集中虚拟机关联的帐户的存储帐户名称。
+	- 与规模集中虚拟机关联的帐户的存储帐户名称。
 	- 已安装在虚拟机上的诊断扩展的设置。有关诊断扩展的详细信息，请参阅[使用 Azure Resource Manager 模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)。
 
-4. 将存储帐户资源添加到已添加到模板中的资源父元素下。此模板使用一个循环来创建建议的 5 个存储帐户，其中将存储操作系统磁盘和诊断数据。这组帐户可在一个缩放集中最多支持 100 个虚拟机，这是当前的最大值。每个存储帐户通过将变量中定义的字母指示符与模板的参数中提供的后缀组合来命名。
+4. 将存储帐户资源添加到已添加到模板中的资源父元素下。此模板使用一个循环来创建建议的 5 个存储帐户，其中将存储操作系统磁盘和诊断数据。这组帐户可在一个规模集中最多支持 100 个虚拟机，这是当前的最大值。每个存储帐户通过将变量中定义的字母指示符与模板的参数中提供的后缀组合来命名。
 
         {
           "type": "Microsoft.Storage/storageAccounts",
@@ -201,7 +201,7 @@
           }
         },
 
-7. 添加缩放集使用的负载均衡器资源。有关详细信息，请参阅 [Azure Resource Manager 对负载均衡器的支持](/documentation/articles/load-balancer-arm/)。
+7. 添加规模集使用的负载均衡器资源。有关详细信息，请参阅 [Azure Resource Manager 对负载均衡器的支持](/documentation/articles/load-balancer-arm/)。
         
         {
           "apiVersion": "2015-06-15",
@@ -319,7 +319,7 @@
           }
         },
 
-10.	添加虚拟机缩放集资源，并指定将在缩放集中的所有虚拟机上安装的诊断扩展。此资源的许多设置都与虚拟机资源相似。主要区别在于此资源中添加了指定应在规模集中初始化虚拟机的数量的容量元素和指定规模集中虚拟机更新方式的 upgradePolicy。在所有存储帐户都根据 dependsOn 元素的指定创建之前，不会创建规模集。
+10.	添加虚拟机规模集资源，并指定将在规模集中的所有虚拟机上安装的诊断扩展。此资源的许多设置都与虚拟机资源相似。主要区别在于此资源中添加了指定应在规模集中初始化虚拟机的数量的容量元素和指定规模集中虚拟机更新方式的 upgradePolicy。在所有存储帐户都根据 dependsOn 元素的指定创建之前，不会创建规模集。
 
             {
               "type": "Microsoft.Compute/virtualMachineScaleSets",
@@ -422,7 +422,7 @@
               }
             },
 
-11.	添加 autoscaleSettings 资源以定义缩放集如何根据集中虚拟机上的处理器使用率进行调整。
+11.	添加 autoscaleSettings 资源以定义规模集如何根据集中虚拟机上的处理器使用率进行调整。
         
             {
               "type": "Microsoft.Insights/autoscaleSettings",
@@ -475,14 +475,14 @@
     - **metricName** - 这与我们在 wadperfcounter 变量中定义的性能计数器相同。使用该变量，诊断扩展可收集 **Processor\\PercentProcessorTime** 计数器。
     - **metricResourceUri** - 虚拟机规模集的资源标识符。
     - **timeGrain** - 这是收集的指标的粒度。在此模板中，它设置为 1 分钟。
-    - **statistic** - 这可确定如何组合指标以调节自动缩放操作。可能的值包括：Average、Min、Max。在此模板中，我们要查找缩放集中虚拟机的平均总 CPU 使用率。
+    - **statistic** - 这可确定如何组合指标以调节自动缩放操作。可能的值包括：Average、Min、Max。在此模板中，我们要查找规模集中虚拟机的平均总 CPU 使用率。
     - **timeWindow** - 这是收集实例数据的时间范围。它必须介于 5 分钟和 12 个小时之间。
     - **timeAggregation** - 这可确定应如何随着时间的推移组合收集的数据。默认值为 Average。可能的值包括：Average、Minimum、Maximum、Last、Total、Count。
     - **operator** - 这是用于比较指标数据和阈值的运算符。可能的值包括：Equals、NotEquals、GreaterThan、GreaterThanOrEqual、LessThan、LessThanOrEqual。
-    - **threshold** - 这是将触发缩放操作的值。在此模板中，当缩放集中的虚拟机的平均 CPU 使用率超过 50% 时，会将虚拟机添加到缩放集。
-    - **direction** - 这可确定在达到阈值时执行的操作。可能的值为 Increase 或 Decrease。在此模板中，如果在定义的时间窗口中阈值超过 50%，则将增加缩放集中的虚拟机数。
+    - **threshold** - 这是将触发缩放操作的值。在此模板中，当规模集中的虚拟机的平均 CPU 使用率超过 50% 时，会将虚拟机添加到规模集。
+    - **direction** - 这可确定在达到阈值时执行的操作。可能的值为 Increase 或 Decrease。在此模板中，如果在定义的时间窗口中阈值超过 50%，则将增加规模集中的虚拟机数。
     - **type** - 这是应发生的操作类型，此属性必须设置为 ChangeCount。
-    - **value** - 这是已在规模集中添加或删除的虚拟机数。此值必须大于或等于 1。默认值为 1。在此模板中，当达到该阈值时，缩放集中的虚拟机数将递增 1。
+    - **value** - 这是已在规模集中添加或删除的虚拟机数。此值必须大于或等于 1。默认值为 1。在此模板中，当达到该阈值时，规模集中的虚拟机数将递增 1。
     - **cooldown** - 这是在上次缩放操作后，在下次操作发生之前要等待的时间。此值必须介于 1 分钟和 1 周之间。
 
 12.	保存模板文件。
@@ -528,14 +528,14 @@ https://portal.azure.cn/#create/Microsoft.Template/uri/<link to VM Scale Set JSO
 
 ## 步骤 5：监视资源
 
-你可以使用以下方法获取有关虚拟机缩放集的一些信息：
+你可以使用以下方法获取有关虚拟机规模集的一些信息：
 
  - Azure 门户预览 - 当前使用门户可以获取有限数量的信息。
  - Azure CLI - 使用此命令可获取一些信息：
 
 		azure resource show -n vmsstest1 -r Microsoft.Compute/virtualMachineScaleSets -o 2015-06-15 -g vmsstestrg1
 
- - 就像连接任何其他虚拟机一样连接到 jumpbox 虚拟机，然后可以远程访问缩放集中的虚拟机，以监视单个进程。
+ - 就像连接任何其他虚拟机一样连接到 jumpbox 虚拟机，然后可以远程访问规模集中的虚拟机，以监视单个进程。
 
 >[AZURE.NOTE]用于获取有关规模集的信息的完整 REST API 可在[虚拟机规模集](https://msdn.microsoft.com/zh-cn/library/mt589023.aspx)中找到。
 

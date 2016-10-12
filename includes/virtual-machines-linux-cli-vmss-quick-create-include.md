@@ -1,4 +1,4 @@
-如果尚未这样做，你可以获取 [Azure 订阅试用版](/pricing/1rmb-trial/)和 [Azure CLI](/documentation/articles/xplat-cli-install/) 来[连接到你的 Azure 帐户](/documentation/articles/xplat-cli-connect/)。然后，可以运行以下命令来快速创建缩放集：
+如果尚未这样做，你可以获取 [Azure 订阅试用版](/pricing/1rmb-trial/)和 [Azure CLI](/documentation/articles/xplat-cli-install/) 来[连接到你的 Azure 帐户](/documentation/articles/xplat-cli-connect/)。然后，可以运行以下命令来快速创建规模集：
 
 	# make sure we are in Resource Manager mode (/documentation/articles/resource-manager-deployment-model/)
 	azure config mode arm
@@ -13,7 +13,7 @@
 
 如果想要自定义位置或 image-urn，请查看命令 `azure location list` 和 `azure vm image {list-publishers|list-offers|list-skus|list|show}`。
 
-此命令返回后，将创建缩放集。此缩放集将包含一个负载均衡器，其 NAT 规则会将负载均衡器上的端口 50,000 + 映射到 VM i 上的端口 22。因此，在确定负载均衡器的 FQDN 后，我们就可以通过 ssh 连接到 VM：
+此命令返回后，将创建规模集。此规模集将包含一个负载均衡器，其 NAT 规则会将负载均衡器上的端口 50,000 + 映射到 VM i 上的端口 22。因此，在确定负载均衡器的 FQDN 后，我们就可以通过 ssh 连接到 VM：
 
 	# (if you decide to run this as a script, please invoke using bash)
 	
