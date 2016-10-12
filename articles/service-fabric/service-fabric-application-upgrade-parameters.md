@@ -50,7 +50,7 @@
 | 参数 | 说明 |
 | --- | --- |
 | ConsiderWarningAsError | 默认值为 False。在升级期间评估应用程序的运行状况时，将应用程序的警告运行状况事件视为错误。默认情况下，Service Fabric 不会将警告运行状况事件评估为失败（错误），因此即使存在警告事件，升级也可以继续。 |
-| MaxPercentUnhealthyDeployedApplications | 建议的默认值为 0。指定在将应用程序视为不正常和升级失败之前，可以不正常的最大已部署应用程序数（请参阅[运行状况部分](/documentation/articles/service-fabric-health-introduction/)）。这是节点上已打包的应用程序的运行状况，因此这对在升级期间检测直接问题以及检测节点上所部署应用程序包的哪些位置不正常（崩溃等）非常有用。通常情况下，应用程序的副本将与另一个节点负载平衡，因此使应用程序显示正常运行，从而使升级能够继续。通过指定严格的 MaxPercentUnhealthyDeployedApplications 运行状况，Service Fabric 可以快速检测应用程序包的问题，并帮助在升级过程中即时报告错误。 |
+| MaxPercentUnhealthyDeployedApplications | 建议的默认值为 0。指定在将应用程序视为不正常和升级失败之前，可以不正常的最大已部署应用程序数（请参阅[运行状况部分](/documentation/articles/service-fabric-health-introduction/)）。这是节点上已打包的应用程序的运行状况，因此这对在升级期间检测直接问题以及检测节点上所部署应用程序包的哪些位置不正常（崩溃等）非常有用。通常情况下，应用程序的副本将与另一个节点负载均衡，因此使应用程序显示正常运行，从而使升级能够继续。通过指定严格的 MaxPercentUnhealthyDeployedApplications 运行状况，Service Fabric 可以快速检测应用程序包的问题，并帮助在升级过程中即时报告错误。 |
 | MaxPercentUnhealthyServices | 建议的默认值为 0。指定在将应用程序视为不正常和升级失败之前，应用程序实例中可以不正常的最大服务数。 |
 | MaxPercentUnhealthyPartitionsPerService | 建议的默认值为 0。指定在将服务视为不正常之前，服务中可以不正常的最大分区数。 |
 | MaxPercentUnhealthyReplicasPerPartition | 建议的默认值为 0。指定在将分区视为不正常之前，分区中不正常的最大副本数。 |

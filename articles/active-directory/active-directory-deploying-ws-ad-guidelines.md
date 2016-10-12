@@ -77,7 +77,7 @@
 
 - **Azure 虚拟网络**：Azure 中的网络服务，通过它，客户可在 Azure 中创建和管理虚拟网络，并可使用虚拟专用网络 (VPN) 安全地将这些虚拟网络链接到其自身的本地网络基础结构。
 
-- **虚拟 IP 地址**：一个面向 Internet 的 IP 地址，它未绑定到特定的计算机或网络接口卡。云服务分配有一个虚拟 IP 地址，用于接收重定向到 Azure VM 的网络流量。虚拟 IP 地址是可包含一个或多个 Azure 虚拟机的云服务的属性。另请注意，Azure 虚拟网络可包含一个或多个云服务。虚拟 IP 地址提供本机负载平衡功能。
+- **虚拟 IP 地址**：一个面向 Internet 的 IP 地址，它未绑定到特定的计算机或网络接口卡。云服务分配有一个虚拟 IP 地址，用于接收重定向到 Azure VM 的网络流量。虚拟 IP 地址是可包含一个或多个 Azure 虚拟机的云服务的属性。另请注意，Azure 虚拟网络可包含一个或多个云服务。虚拟 IP 地址提供本机负载均衡功能。
 
 - **动态 IP 地址**：这是仅供内部使用的 IP 地址。它应配置为用于托管 DC/DNS 服务器角色的 VM 的静态 IP 地址（通过使用 Set-AzureStaticVNetIP cmdlet）。
 
@@ -135,7 +135,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 ## 是否可以在 Azure 虚拟机上部署 Windows Server AD FS？
 
-是的，你可以在 Azure 虚拟机上部署 Windows Server AD FS，本地 [AD FS 部署最佳实践](https://technet.microsoft.com/library/dn151324.aspx)同样适用于 Azure 上的 AD FS 部署。但是，其中一些最佳实践（例如负载平衡和高可用性）的要求超越了 AD FS 本身所能提供的技术，因此必须通过底层基础结构来提供。让我们回顾一下某些最佳实践，并了解如何使用 Azure 虚拟机和 Azure 虚拟网络来实现这些目的。
+是的，你可以在 Azure 虚拟机上部署 Windows Server AD FS，本地 [AD FS 部署最佳实践](https://technet.microsoft.com/library/dn151324.aspx)同样适用于 Azure 上的 AD FS 部署。但是，其中一些最佳实践（例如负载均衡和高可用性）的要求超越了 AD FS 本身所能提供的技术，因此必须通过底层基础结构来提供。让我们回顾一下某些最佳实践，并了解如何使用 Azure 虚拟机和 Azure 虚拟网络来实现这些目的。
 
 1. **切勿直接在 Internet 中公开安全令牌服务 (STS) 服务器。**
 
@@ -145,13 +145,13 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
     AD FS 服务器使用 Active Directory 域服务对用户进行身份验证。建议将域控制器部署在 AD FS 服务器所在的同一个网络中。这样，当 Azure 网络与本地网络之间的链接断开时可以保持业务连续性，并可以在登录时降低延迟和提高性能。
 
-3. **部署多个 AD FS 节点以实现高可用性和负载平衡。**
+3. **部署多个 AD FS 节点以实现高可用性和负载均衡。**
 
-    在大多数情况下，AD FS 启用的应用程序失败是不可接受的，因为需要安全令牌的应用程序往往是任务关键型应用程序。鉴于 AD FS 现在对于访问任务关键型应用程序起着关键作用，必须通过多个 AD FS 代理和 AD FS 服务器为 AD FS 服务提供高可用性。为实现请求分发，负载平衡器通常部署在 AD FS 代理和 AD FS 服务器的前端。
+    在大多数情况下，AD FS 启用的应用程序失败是不可接受的，因为需要安全令牌的应用程序往往是任务关键型应用程序。鉴于 AD FS 现在对于访问任务关键型应用程序起着关键作用，必须通过多个 AD FS 代理和 AD FS 服务器为 AD FS 服务提供高可用性。为实现请求分发，负载均衡器通常部署在 AD FS 代理和 AD FS 服务器的前端。
 
 4. **部署一个或多个 Web 应用程序代理节点以进行 Internet 访问。**
 
-    当用户需要访问受 AD FS 服务保护的应用程序时，需要通过 Internet 使用 AD FS 服务。这可以通过部署 Web 应用程序代理服务来实现。强烈建议部署多个节点以提供高可用性和负载平衡。
+    当用户需要访问受 AD FS 服务保护的应用程序时，需要通过 Internet 使用 AD FS 服务。这可以通过部署 Web 应用程序代理服务来实现。强烈建议部署多个节点以提供高可用性和负载均衡。
 
 5. **限制为只能从 Web 应用程序代理节点访问内部网络资源。**
 
@@ -178,36 +178,36 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 3. 在虚拟网络上部署已加入域的 AD FS 服务器。
 
-4. 创建[内部负载平衡集](http://azure.microsoft.com/blog/internal-load-balancing/)，该集包含 AD FS 服务器，并使用虚拟网络中的新专用 IP 地址（动态 IP 地址）。
+4. 创建[内部负载均衡集](http://azure.microsoft.com/blog/internal-load-balancing/)，该集包含 AD FS 服务器，并使用虚拟网络中的新专用 IP 地址（动态 IP 地址）。
 
-  1. 更新 DNS，以创建指向内部负载平衡集专用（动态）IP 地址的 FQDN。
+  1. 更新 DNS，以创建指向内部负载均衡集专用（动态）IP 地址的 FQDN。
 
 5. 为 Web 应用程序代理节点中创建云服务（或单独的虚拟网络）。
 
 6. 在云服务或虚拟网络中部署 Web 应用程序代理节点
 
-  1. 创建外部负载平衡集，其中包含 Web 应用程序代理节点。
+  1. 创建外部负载均衡集，其中包含 Web 应用程序代理节点。
 
   2. 将外部 DNS 名称 (FQDN) 更新为指向云服务的公共 IP 地址（虚拟 IP 地址）。
 
-  3. 将 AD FS 代理配置为使用对应于 AD FS 服务器内部负载平衡集的 FQDN。
+  3. 将 AD FS 代理配置为使用对应于 AD FS 服务器内部负载均衡集的 FQDN。
 
   4. 将基于声明的网站更新为使用其声明提供程序的外部 FQDN。
 
 7. 限制在 Web 应用程序代理与 AD FS 虚拟网络中的任何计算机之间进行访问。
 
-若要限制流量，需要对 Azure 内部负载平衡器的负载平衡集进行配置，以仅只向 TCP 端口 80 和 443 传送流量，并丢弃传送到负载平衡集内部动态 IP 地址的所有其他流量
+若要限制流量，需要对 Azure 内部负载均衡器的负载均衡集进行配置，以仅只向 TCP 端口 80 和 443 传送流量，并丢弃传送到负载均衡集内部动态 IP 地址的所有其他流量
 
 ![允许 TCP 443 和 80 的 ADFS 网络 ACL 示意图](./media/active-directory-deploying-ws-ad-guidelines/ADFS_ACLs.png)
 
 只允许以下源向 AD FS 服务器传送流量：
 
-- Azure 内部负载平衡器。
+- Azure 内部负载均衡器。
 - 本地网络上的管理员的 IP 地址。
 
 > [AZURE.WARNING] 在设计上，必须阻止 Web 应用程序代理节点访问 Azure 虚拟网络中的其他任何 VM 或本地网络中的任何位置。为此，可以在本地设备中针对 Express Route 连接或者在 VPN 设备上针对站点到站点 VPN 连接配置防火墙规则。
 
-这种做法的一个缺点是需要为多个设备（包括内部负载平衡器、AD FS 服务器，以及添加到虚拟网络中的其他任何服务器）配置网络 ACL。如果在部署中添加了任何设备但未将网络 ACL 配置为限制向该设备传送流量，则整个部署可能会面临风险。如果 Web 应用程序代理节点的 IP 地址发生变化，则必须重置网络 ACL（这意味着，应该将代理配置为使用[静态动态 IP 地址](http://azure.microsoft.com/blog/static-internal-ip-address-for-virtual-machines/)）。
+这种做法的一个缺点是需要为多个设备（包括内部负载均衡器、AD FS 服务器，以及添加到虚拟网络中的其他任何服务器）配置网络 ACL。如果在部署中添加了任何设备但未将网络 ACL 配置为限制向该设备传送流量，则整个部署可能会面临风险。如果 Web 应用程序代理节点的 IP 地址发生变化，则必须重置网络 ACL（这意味着，应该将代理配置为使用[静态动态 IP 地址](http://azure.microsoft.com/blog/static-internal-ip-address-for-virtual-machines/)）。
 
 ![Azure 上具有网络 ACLS 的 ADFS。](./media/active-directory-deploying-ws-ad-guidelines/ADFS_Azure.png)
 
@@ -247,7 +247,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 
 - 从 Azure 虚拟机传出的所有流量（传出流量）都要付费。如果成本是驱动要素，则最好在 Azure 上部署 Web 应用程序代理节点，使 AD FS 服务器保留在本地。如果将 AD FS 服务器也部署在 Azure 虚拟机上，则在对本地用户进行身份验证时将会产生额外的成本。无论是否遍历 ExpressRoute 或 VPN 站点到站点连接，传出流量都会产生成本。
 
-- 如果你决定使用 Azure 固有的服务器负载平衡功能为 AD FS 服务器提供高可用性，则请注意，负载平衡提供用于确定云服务中虚拟机的运行状况的探测。就 Azure 虚拟机（相对于 Web 或辅助角色）而言，必须使用自定义探测，因为 Azure 虚拟机上没有可响应自定义探测的代理。为简单起见，可使用自定义 TCP 探测 - 此方式只需成功建立 TCP 连接（使用 TCP SYN ACK 段发送和响应的 TCP SYN 段）即可确定虚拟机运行状况。可配置自定义探测以使其使用任何当前正在侦听虚拟机的 TCP 端口。
+- 如果你决定使用 Azure 固有的服务器负载均衡功能为 AD FS 服务器提供高可用性，则请注意，负载均衡提供用于确定云服务中虚拟机的运行状况的探测。就 Azure 虚拟机（相对于 Web 或辅助角色）而言，必须使用自定义探测，因为 Azure 虚拟机上没有可响应自定义探测的代理。为简单起见，可使用自定义 TCP 探测 - 此方式只需成功建立 TCP 连接（使用 TCP SYN ACK 段发送和响应的 TCP SYN 段）即可确定虚拟机运行状况。可配置自定义探测以使其使用任何当前正在侦听虚拟机的 TCP 端口。
 
 > [AZURE.NOTE] 需要直接向 Internet公开同一组端口（如端口 80 和 443）的虚拟机无法共享同一云服务。因此，建议为 Windows Server AD FS 服务器创建一个专用的云服务，以避免应用程序与 Windows Server AD FS 的端口要求之间可能发生重叠。
 
@@ -303,7 +303,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
 #### 说明
 
-一个已成功部署在本地并供企业用户使用的声明感知应用程序需要变为可直接从 Internet 访问该应用程序。该应用程序充当从中存储和检索数据的 SQL 数据库的 Web 前端。该应用程序使用的 SQL 服务器也位于企业网络上。已在本地部署两个 Windows Server AD FS STS 和一个负载平衡器来提供对公司用户的访问。另外，现在需要由业务合作伙伴使用其自己的企业身份以及由现有企业用户通过 Internet 直接访问该应用程序。
+一个已成功部署在本地并供企业用户使用的声明感知应用程序需要变为可直接从 Internet 访问该应用程序。该应用程序充当从中存储和检索数据的 SQL 数据库的 Web 前端。该应用程序使用的 SQL 服务器也位于企业网络上。已在本地部署两个 Windows Server AD FS STS 和一个负载均衡器来提供对公司用户的访问。另外，现在需要由业务合作伙伴使用其自己的企业身份以及由现有企业用户通过 Internet 直接访问该应用程序。
 
 为了简化和满足此新要求的部署和配置需要，决定在 Azure 虚拟机上另外安装两个 Web 前端和两个 Windows Server AD FS 代理服务器。将直接向 Internet 公开所有四个 VM，并将使用 Azure 虚拟网络的站点到站点 VPN 功能为其提供与本地网络的连接。
 
@@ -313,13 +313,13 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 
  > [AZURE.NOTE] 对于每个 Windows Server AD FS 证书，确保在 Azure 上运行的 Windows Server AD FS 实例可访问在证书模板和所得证书中定义的 URL。这可能需要与 PKI 基础结构的各部分具有跨界连接。例如，如果 CRL 的终结点基于 LDAP，并以独占方式托管在本地，则将需要跨界连接。如果这样不可取，则可能必须使用可通过 Internet 访问其 CRL 的 CA 颁发的证书。
 
-- [云服务配置](#BKMK_CloudSvcConfig)：确保有两个云服务以提供两个经过负载平衡的虚拟 IP 地址。第一个云服务的虚拟 IP 地址将定向到端口 80 和 443 上的两个 Windows Server AD FS 代理 VM。Windows Server AD FS 代理 VM 将配置为指向面向 Windows Server AD FS STS 的本地负载平衡器的 IP 地址。第二个云服务的虚拟 IP 地址将再次定向到端口 80 和 443 上两个运行 Web 前端的 VM。配置自定义探测以确保负载平衡器将流量仅定向到正常运行的 Windows Server AD FS 代理和 Web 前端 VM。
+- [云服务配置](#BKMK_CloudSvcConfig)：确保有两个云服务以提供两个经过负载均衡的虚拟 IP 地址。第一个云服务的虚拟 IP 地址将定向到端口 80 和 443 上的两个 Windows Server AD FS 代理 VM。Windows Server AD FS 代理 VM 将配置为指向面向 Windows Server AD FS STS 的本地负载均衡器的 IP 地址。第二个云服务的虚拟 IP 地址将再次定向到端口 80 和 443 上两个运行 Web 前端的 VM。配置自定义探测以确保负载均衡器将流量仅定向到正常运行的 Windows Server AD FS 代理和 Web 前端 VM。
 
 - [联合服务器配置](#BKMK_FedSrvConfig)：将 Windows Server AD FS 配置为联合服务器 (STS) 以为在云中创建的 Windows Server Active Directory 林生成安全令牌。设置联合声明提供程序与要从其接受身份的不同合作伙伴的信任关系，然后配置信赖方与要向其生成令牌的不同应用程序的信任关系。
 
-    大多数方案下，为安全起见，Windows Server AD FS 代理服务器均部署在面向 Internet 的设备中，而其对应的 Windows Server AD FS 联合服务器仍与直接 Internet 连接隔离。无论你采用哪种部署方案，都必须使用虚拟 IP 地址配置云服务，虚拟 IP 地址将提供公开的 IP 地址和能够跨两个 Windows Server AD FS STS 实例或代理实例进行负载平衡的端口。
+    大多数方案下，为安全起见，Windows Server AD FS 代理服务器均部署在面向 Internet 的设备中，而其对应的 Windows Server AD FS 联合服务器仍与直接 Internet 连接隔离。无论你采用哪种部署方案，都必须使用虚拟 IP 地址配置云服务，虚拟 IP 地址将提供公开的 IP 地址和能够跨两个 Windows Server AD FS STS 实例或代理实例进行负载均衡的端口。
 
-- [Windows Server AD FS 高可用性配置](#BKMK_ADFSHighAvail)：建议所部署的 Windows Server AD FS 场至少具有两个服务器以进行故障转移和负载平衡。可能要考虑对 Windows Server AD FS 配置数据使用 Windows 内部数据库 (WID)，并使用 Azure 的内部负载平衡功能将传入请求分配到场中的服务器上。
+- [Windows Server AD FS 高可用性配置](#BKMK_ADFSHighAvail)：建议所部署的 Windows Server AD FS 场至少具有两个服务器以进行故障转移和负载均衡。可能要考虑对 Windows Server AD FS 配置数据使用 Windows 内部数据库 (WID)，并使用 Azure 的内部负载均衡功能将传入请求分配到场中的服务器上。
 
 有关详细信息，请参阅 [AD DS Deployment Guide（AD DS 部署指南）](https://technet.microsoft.com/library/cc753963)。
 
@@ -378,7 +378,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 | [放置 Windows Server AD DS 数据库和 SYSVOL](#BKMK_PlaceDB) | 要将 Windows Server AD DS 数据库、日志和 SYSVOL 存储在何处？ | 更改 Dcpromo.exe 默认值。*必须*将这些关键的 Active Directory 文件放置在 Azure 数据磁盘上而非实施写入缓存的操作系统磁盘。 |
 | [备份和还原](#BKMK_BUR) | 如何保护和恢复数据？ | 创建系统状态备份 |
 | [联合服务器配置](#BKMK_FedSrvConfig) | <li>是否在云中部署具有联合的新林？</li> <li>是否在本地部署 AD FS 并在云中公开代理？</li> | <li>安全性</li> <li>合规性</li> <li>成本</li> <li>业务合作伙伴访问应用程序</li> |
-| [云服务配置](#BKMK_CloudSvcConfig) | 首次创建虚拟机时，将隐式部署一个云服务。是否需要部署其他云服务？ | <li>是否需要直接向 Internet 公开一个或多个 VM？</li> <li>服务是否需要负载平衡？</li> |
+| [云服务配置](#BKMK_CloudSvcConfig) | 首次创建虚拟机时，将隐式部署一个云服务。是否需要部署其他云服务？ | <li>是否需要直接向 Internet 公开一个或多个 VM？</li> <li>服务是否需要负载均衡？</li> |
 | [联合服务器对公共和专用 IP 寻址的要求（动态 IP 与虚拟 IP）](#BKMK_FedReqVIPDIP) | <li>是否需要直接从 Internet 访问 Windows Server AD FS 实例？</li> <li>部署到云中的应用程序是否需要自己的面向 Internet 的 IP 地址和端口？</li> | 为部署所需的每个虚拟 IP 地址创建一个云服务 |
 | [Windows Server AD FS 高可用性配置](#BKMK_ADFSHighAvail) | <li>我的 Windows Server AD FS 服务器场中有多少个节点？</li> <li>要在我的 Windows Server AD FS 代理场中部署多少个节点？</li> | 复原和容错 |
 
@@ -542,7 +542,7 @@ Windows Server AD FS 联合服务器 (STS) 的配置在某种程度上依赖于�
 
 ### <a name="BKMK_CloudSvcConfig"></a>云服务配置
 
-如果要向 Internet 直接公开 VM 或公开面向 Internet 的负载平衡应用程序，则需要云服务。由于每个云服务都提供一个可配置的虚拟 IP 地址，因此可做到这一点。
+如果要向 Internet 直接公开 VM 或公开面向 Internet 的负载均衡应用程序，则需要云服务。由于每个云服务都提供一个可配置的虚拟 IP 地址，因此可做到这一点。
 
 ### <a name="BKMK_FedReqVIPDIP"></a>联合服务器对公共和专用 IP 寻址的要求（动态 IP 与虚拟 IP）
 
@@ -556,7 +556,7 @@ Windows Server AD FS 联合服务器 (STS) 的配置在某种程度上依赖于�
 
 请参阅 [AD FS 2.0 Design Guide（AD FS 2.0 设计指南）](https://technet.microsoft.com/library/dd807036)中的 [AD FS 2.0 deployment topology considerations（AD FS 2.0 部署拓扑注意事项）](https://technet.microsoft.com/library/gg982489)以决定哪些部署配置选项最适合你的特定需要。
 
-> [AZURE.NOTE] 若要为 Azure 上的 Windows Server AD FS 终结点实现负载平衡，请在同一云服务中配置 Windows Server AD FS 场的所有成员，并将 Azure 的负载平衡功能用于 HTTP（默认 80）和 HTTPS 端口（默认 443）。有关详细信息，请参阅 [Azure load-balancer probe（Azure 负载平衡器探测）](https://msdn.microsoft.com/library/azure/jj151530)。
-Azure 不支持 Windows Server 网络负载平衡 (NLB)。
+> [AZURE.NOTE] 若要为 Azure 上的 Windows Server AD FS 终结点实现负载均衡，请在同一云服务中配置 Windows Server AD FS 场的所有成员，并将 Azure 的负载均衡功能用于 HTTP（默认 80）和 HTTPS 端口（默认 443）。有关详细信息，请参阅 [Azure load-balancer probe（Azure 负载均衡器探测）](https://msdn.microsoft.com/library/azure/jj151530)。
+Azure 不支持 Windows Server 网络负载均衡 (NLB)。
 
 <!---HONumber=Mooncake_0613_2016-->

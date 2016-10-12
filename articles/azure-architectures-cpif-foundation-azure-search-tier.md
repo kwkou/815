@@ -34,9 +34,9 @@ Azure 搜素层设计模式详细说明了 Azure 功能，以及能跨地理边�
 ## 另请参阅
 [CPIF 体系结构](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-bd1e434a)
 
-[全局负载平衡的 Web 层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a)
+[全局负载均衡的 Web 层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-2c3c663a)
 
-[负载平衡的数据层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-dfb09e41)
+[负载均衡的数据层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-dfb09e41)
 
 [混合网络](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-5e401f38)
 

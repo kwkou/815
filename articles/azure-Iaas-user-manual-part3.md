@@ -72,11 +72,11 @@ Azure 虚拟机在默认情况下，只开启了 RDP 的端口和 PowerShell 的
 
 	![advance5](./media/azure-Iaas-user-manual-part3/advance5.png)
 
-3.	然后输入名称，协议选择 TCP，公用端口和私有端口都设置为 80。同时勾选 ”创建负载平衡集”，如下图：
+3.	然后输入名称，协议选择 TCP，公用端口和私有端口都设置为 80。同时勾选 ”创建负载均衡集”，如下图：
 
 	![advance6](./media/azure-Iaas-user-manual-part3/advance6.png)
 
-4.	在配置负载平衡集中，设置负载平衡的名称。根据需求，设置探测间隔时间和探测数量。设置完毕后，点击完成。
+4.	在配置负载均衡集中，设置负载均衡的名称。根据需求，设置探测间隔时间和探测数量。设置完毕后，点击完成。
 
 	![advance7](./media/azure-Iaas-user-manual-part3/advance7.png)
 
@@ -85,7 +85,7 @@ Azure 虚拟机在默认情况下，只开启了 RDP 的端口和 PowerShell 的
 	![advance8](./media/azure-Iaas-user-manual-part3/advance8.png)
 
 6.	然后设置第 2 台 Azure VM。选择 ContosoWeb02 这台虚拟机，点击添加终结点。图略。
-7.	在弹出的添加端口中，选择将终结点添加到现有负载平衡集。如下图：
+7.	在弹出的添加端口中，选择将终结点添加到现有负载均衡集。如下图：
 
 	![advance9](./media/azure-Iaas-user-manual-part3/advance9.png)
 

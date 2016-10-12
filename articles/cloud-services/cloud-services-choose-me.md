@@ -38,7 +38,7 @@ Azure 云服务是适合你的选择吗？ Azure 提供了用于运行应用程�
 
 例如，一个简单的应用程序可能只使用一个 Web 角色，而一个稍复杂的应用程序可能使用一个 Web 角色来处理来自用户的传入请求，然后将那些请求创建的工作传递给辅助角色进行处理。（此通信可能使用 [Service Bus](/documentation/articles/service-bus-fundamentals-hybrid-solutions/) 或 [Azure 队列](/documentation/articles/storage-introduction/)。）
 
-如上图所示，一个应用程序中的所有 VM 都在同一云服务中运行。因此，用户通过单个公用 IP 地址访问应用程序，而请求会自动在应用程序的 VM 上实现负载平衡。该平台将采用一种能够避免单点硬件故障的方式在云服务应用程序中[缩放和部署](/documentation/articles/cloud-services-how-to-scale/) VM。
+如上图所示，一个应用程序中的所有 VM 都在同一云服务中运行。因此，用户通过单个公用 IP 地址访问应用程序，而请求会自动在应用程序的 VM 上实现负载均衡。该平台将采用一种能够避免单点硬件故障的方式在云服务应用程序中[缩放和部署](/documentation/articles/cloud-services-how-to-scale/) VM。
 
 即使应用程序在虚拟机中运行，理解云服务提供的是 PaaS 而非 IaaS 也很重要。以下办法有助于理解这一点：使用 IaaS（如 Azure 虚拟机），首先要创建和配置你的应用程序将运行的环境，然后将应用程序部署到此环境中。你要负责该环境的大部分管理工作，如在每个 VM 中部署操作系统的新修补版本。相反，在 PaaS 中，这样的环境似乎早已存在。您只需部署您的应用程序。已为你处理它所运行的平台的管理工作，包括部署操作系统的新版本。
 

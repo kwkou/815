@@ -23,7 +23,7 @@ Azure Service Fabric 中的可测试性方案可让开发人员不用再担心�
   + RestartNode：用于模拟计算机重启操作的非正常故障。
   + RestartDeployedCodePackage：用于模拟服务主机进程崩溃的非正常故障。
   + RemoveReplica：用于模拟副本删除操作的正常故障。
-  + MovePrimary：用于模拟 Service Fabric 负载平衡器触发的副本移动操作的正常故障。
+  + MovePrimary：用于模拟 Service Fabric 负载均衡器触发的副本移动操作的正常故障。
 
 
 	// Add a reference to System.Fabric.Testability.dll and System.Fabric.dll.

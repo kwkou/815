@@ -30,7 +30,7 @@ wacn.date="01/15/2016"/>
 ```
 
 ## 实例输入终结点
-实例输入终结点类似于输入终结点，但允许你通过使用负载平衡器上的端口转发，映射每个角色实例的面向公众的特定端口。你可以指定单个面向公众的端口，也可以指定一系列端口。
+实例输入终结点类似于输入终结点，但允许你通过使用负载均衡器上的端口转发，映射每个角色实例的面向公众的特定端口。你可以指定单个面向公众的端口，也可以指定一系列端口。
 
 实例输入终结点只能使用 **tcp** 或 **udp** 作为协议。
 
@@ -96,7 +96,7 @@ int port = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["StandardWeb"].
 
 > [AZURE.NOTE]Azure 托管库不提供用来确定其他角色实例的运行状况的方法，但如果你的服务需要此功能，则可以自行实现此类运行状况评估。你可以使用 [Azure Diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx) 来获取有关正在运行的角色实例的信息。
 
-若要确定角色实例上的内部终结点的端口号，可以使用 [InstanceEndpoints](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleinstance.instanceendpoints.aspx) 属性来返回 Dictionary 对象，该对象中将包含终结点名称及其对应的 IP 地址和端口。[IPEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleinstanceendpoint.ipendpoint.aspx) 属性返回指定终结点的 IP 地址和端口。**PublicIPEndpoint** 属性返回负载平衡终结点的端口。将不使用 **PublicIPEndpoint** 属性的 IP 地址部分。
+若要确定角色实例上的内部终结点的端口号，可以使用 [InstanceEndpoints](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleinstance.instanceendpoints.aspx) 属性来返回 Dictionary 对象，该对象中将包含终结点名称及其对应的 IP 地址和端口。[IPEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleinstanceendpoint.ipendpoint.aspx) 属性返回指定终结点的 IP 地址和端口。**PublicIPEndpoint** 属性返回负载均衡终结点的端口。将不使用 **PublicIPEndpoint** 属性的 IP 地址部分。
 
 下面是一个循环访问角色实例的示例。
 

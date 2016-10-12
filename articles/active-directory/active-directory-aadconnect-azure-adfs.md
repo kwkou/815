@@ -32,7 +32,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 * **DC/ADFS 服务器**：如果你的用户数目少于 1,000，则可以直接在域控制器上安装 AD FS 角色。如果不希望影响域控制器的性能，或者用户数目超过 1,000，请在不同的服务器上部署 AD FS。
 * **WAP 服务器**：必须部署 Web 应用程序代理服务器，以便不在公司网络中的用户可以连接到 AD FS。
 * **外围网络**：Web 应用程序代理服务器将位于外围网络，外围网络与内部子网之间只允许进行 TCP/443 访问。
-* **负载平衡器**：为了确保 AD FS 和 Web 应用程序代理伺服器具有高可用性，建议针对 AD FS 服务器使用内部负载平衡器，并针对 Web 应用程序代理服务器使用 Azure Load Balancer。
+* **负载均衡器**：为了确保 AD FS 和 Web 应用程序代理伺服器具有高可用性，建议针对 AD FS 服务器使用内部负载均衡器，并针对 Web 应用程序代理服务器使用 Azure Load Balancer。
 * **可用性集**：为了对 AD FS 部署提供冗余，建议将类似工作负荷的两个或更多个虚拟机分组到一个可用性集中。这种配置可以确保在发生计划内或计划外维护事件时，至少有一个虚拟机可用。
 * **存储帐户**：建议创建两个存储帐户。只创建一个存储帐户可能会产生单一故障点，并且如果存储帐户失效（尽管不太可能发生），部署将不可用。创建两个存储帐户有助于确保每条故障路线有一个关联的存储帐户。
 * **网络隔离**：将 Web 应用程序代理服务器部署在不同的外围网络。可以将一个虚拟网络分割成两个子网，然后在隔离的子网中部署 Web 应用程序代理服务器。只需为每个子网配置网络安全组设置，并只允许在两个子网之间进行所需的通信。下面提供了每种部署方案的更多详细信息
@@ -144,32 +144,32 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 * 将两个服务器提升为使用 DNS 的副本域控制器
 * 使用服务器管理器安装 AD FS 角色，以配置 AD FS 服务器。
 
-###6\.部署内部负载平衡器 (ILB)
+###6\.部署内部负载均衡器 (ILB)
 
 **6.1.创建 ILB**
 
-若要部署 ILB，请在 Azure 门户选择“负载平衡器”，然后单击“添加”(+)。
->[AZURE.NOTE] 如果菜单中未显示“负载平衡器”，请单击门户左下角的“浏览”并向下滚动，直到看到“负载平衡器”。然后，单击黄色星号将它添加到菜单中。现在，请选择新负载平衡器的图标打开面板，并开始配置负载平衡器。
+若要部署 ILB，请在 Azure 门户选择“负载均衡器”，然后单击“添加”(+)。
+>[AZURE.NOTE] 如果菜单中未显示“负载均衡器”，请单击门户左下角的“浏览”并向下滚动，直到看到“负载均衡器”。然后，单击黄色星号将它添加到菜单中。现在，请选择新负载均衡器的图标打开面板，并开始配置负载均衡器。
 
-![浏览负载平衡器](./media/active-directory-aadconnect-azure-adfs/browseloadbalancer.png)
+![浏览负载均衡器](./media/active-directory-aadconnect-azure-adfs/browseloadbalancer.png)
 
-* **名称**：为负载平衡器指定适当的名称
-* **方案**：由于此负载平衡器将放在 AD FS 服务器的前面以便只用于内部网络连接，因此请选择“内部”
+* **名称**：为负载均衡器指定适当的名称
+* **方案**：由于此负载均衡器将放在 AD FS 服务器的前面以便只用于内部网络连接，因此请选择“内部”
 * **虚拟网络**：选择要在其中部署 AD FS 的虚拟网络
 * **子网**：在此处选择内部子网
 * **IP 地址分配**：动态
 
-![内部负载平衡器](./media/active-directory-aadconnect-azure-adfs/ilbdeployment1.png)
+![内部负载均衡器](./media/active-directory-aadconnect-azure-adfs/ilbdeployment1.png)
  
-单击“创建”并部署 ILB 之后，它应会显示在负载平衡器列表中：
+单击“创建”并部署 ILB 之后，它应会显示在负载均衡器列表中：
 
-![创建 ILB 后的负载平衡器](./media/active-directory-aadconnect-azure-adfs/ilbdeployment2.png)
+![创建 ILB 后的负载均衡器](./media/active-directory-aadconnect-azure-adfs/ilbdeployment2.png)
  
 下一步是配置后端池和后端探测。
 
 **6.2.配置 ILB 后端池**
 
-在“负载平衡器”面板中选择新建的 ILB。此时将打开设置面板。  
+在“负载均衡器”面板中选择新建的 ILB。此时将打开设置面板。  
 1.	从设置面板中选择后端池  
 2.	在“添加后端池”面板中，单击“添加虚拟机”  
 3.	此时会显示一个面板，你可以在其中选择可用性集  
@@ -190,12 +190,12 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
  
 ![配置 ILB 探测](./media/active-directory-aadconnect-azure-adfs/ilbdeployment4.png)
  
-**6.4.创建负载平衡规则**
+**6.4.创建负载均衡规则**
 
-为了有效地平衡流量，应该为 ILB 设置负载平衡规则。若要创建负载平衡规则，请执行以下操作：  
-1.	在 ILB 的设置面板中选择“负载平衡规则”  
-2.	在“负载平衡规则”面板中单击“添加”  
-3.	在“添加负载平衡规则”面板中，指定以下值：  
+为了有效地平衡流量，应该为 ILB 设置负载均衡规则。若要创建负载均衡规则，请执行以下操作：  
+1.	在 ILB 的设置面板中选择“负载均衡规则”  
+2.	在“负载均衡规则”面板中单击“添加”  
+3.	在“添加负载均衡规则”面板中，指定以下值：  
   a. **名称**：提供规则的名称  
   b.**协议**：选择“TCP”  
   c.**端口**：443  
@@ -222,49 +222,49 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 不要将 Web 应用程序代理服务器加入域。通过选择“远程访问”角色，将 Web 应用程序代理角色安装在两个 Web 应用程序代理服务器上。服务器管理器将引导你完成 WAP 安装。
 有关如何部署 WAP 的详细信息，请阅读 [Install and Configure the Web Application Proxy Server（安装和配置 Web 应用程序代理服务器）](https://technet.microsoft.com/library/dn383662.aspx)。
 
-###8\.部署面向 Internet 的（公共）负载平衡器
+###8\.部署面向 Internet 的（公共）负载均衡器
 
-**8.1.创建面向 Internet 的（公共）负载平衡器**
+**8.1.创建面向 Internet 的（公共）负载均衡器**
  
-在 Azure 门户中选择“负载平衡器”，然后单击“添加”。在“创建负载平衡器”面板中输入以下信息  
-1. **名称**：负载平衡器的名称  
-2. **方案**：公共 – 此选项告知 Azure，此负载平衡器需要公共地址。  
+在 Azure 门户中选择“负载均衡器”，然后单击“添加”。在“创建负载均衡器”面板中输入以下信息  
+1. **名称**：负载均衡器的名称  
+2. **方案**：公共 – 此选项告知 Azure，此负载均衡器需要公共地址。  
 3. **IP 地址**：创建新 IP 地址（动态）  
 
-![面向 Internet 的负载平衡器](./media/active-directory-aadconnect-azure-adfs/elbdeployment1.png)
+![面向 Internet 的负载均衡器](./media/active-directory-aadconnect-azure-adfs/elbdeployment1.png)
 
-部署后，负载平衡器将出现在“负载平衡器”列表中。
+部署后，负载均衡器将出现在“负载均衡器”列表中。
 
-![负载平衡器列表](./media/active-directory-aadconnect-azure-adfs/elbdeployment2.png)
+![负载均衡器列表](./media/active-directory-aadconnect-azure-adfs/elbdeployment2.png)
  
 **8.2.向公共 IP 分配 DNS 标签**
 
-在“负载平衡器”面板中单击新建的负载平衡器条目，以显示配置面板。遵循以下步骤来配置公共 IP 的 DNS 标签：  
+在“负载均衡器”面板中单击新建的负载均衡器条目，以显示配置面板。遵循以下步骤来配置公共 IP 的 DNS 标签：  
 1.	单击该公共 IP 地址。此时将打开公共 IP 及其设置的面板  
 2.	单击“配置”  
-3.	提供 DNS 标签。此标签将成为可从任意位置访问的公共 DNS 标签，例如 contosofs.westus.chinacloudapi.azure.com。可以在外部 DNS 中添加用于联合身份验证服务的条目（例如 fs.contoso.com），该条目将解析为外部负载平衡器的 DNS 标签 (contosofs.westus.chinacloudapi.azure.com)。  
+3.	提供 DNS 标签。此标签将成为可从任意位置访问的公共 DNS 标签，例如 contosofs.westus.chinacloudapi.azure.com。可以在外部 DNS 中添加用于联合身份验证服务的条目（例如 fs.contoso.com），该条目将解析为外部负载均衡器的 DNS 标签 (contosofs.westus.chinacloudapi.azure.com)。  
 
-![配置面向 Internet 的负载平衡器](./media/active-directory-aadconnect-azure-adfs/elbdeployment3.png)
+![配置面向 Internet 的负载均衡器](./media/active-directory-aadconnect-azure-adfs/elbdeployment3.png)
 
-![配置面向 Internet 的负载平衡器 (DNS)](./media/active-directory-aadconnect-azure-adfs/elbdeployment4.png)
+![配置面向 Internet 的负载均衡器 (DNS)](./media/active-directory-aadconnect-azure-adfs/elbdeployment4.png)
 
-**8.3.为面向 Internet 的（公共）负载平衡器配置后端池**
+**8.3.为面向 Internet 的（公共）负载均衡器配置后端池**
 
-遵循创建内部负载平衡器所用的相同步骤，将面向 Internet 的（公共）负载平衡器的后端池配置为 WAP 服务器的可用性集。例如，contosowapset。
+遵循创建内部负载均衡器所用的相同步骤，将面向 Internet 的（公共）负载均衡器的后端池配置为 WAP 服务器的可用性集。例如，contosowapset。
 
-![配置面向 Internet 的负载平衡器的后端池](./media/active-directory-aadconnect-azure-adfs/elbdeployment5.png)
+![配置面向 Internet 的负载均衡器的后端池](./media/active-directory-aadconnect-azure-adfs/elbdeployment5.png)
  
 **8.4.配置探测**
 
-遵循配置内部负载平衡器所用的相同步骤来配置 WAP 服务器后端池的探测。
+遵循配置内部负载均衡器所用的相同步骤来配置 WAP 服务器后端池的探测。
 
-![配置面向 Internet 的负载平衡器的探测](./media/active-directory-aadconnect-azure-adfs/elbdeployment6.png)
+![配置面向 Internet 的负载均衡器的探测](./media/active-directory-aadconnect-azure-adfs/elbdeployment6.png)
  
-**8.5.创建负载平衡规则**
+**8.5.创建负载均衡规则**
 
-遵循在 ILB 中所用的相同步骤来配置 TCP 443 的负载平衡规则。
+遵循在 ILB 中所用的相同步骤来配置 TCP 443 的负载均衡规则。
 
-![配置面向 Internet 的负载平衡器的平衡规则](./media/active-directory-aadconnect-azure-adfs/elbdeployment7.png)
+![配置面向 Internet 的负载均衡器的平衡规则](./media/active-directory-aadconnect-azure-adfs/elbdeployment7.png)
  
 ###9\.保护网络
 
@@ -315,9 +315,9 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 
 ## 其他资源
 * [可用性集](https://aka.ms/Azure/Availability)
-* [Azure 负载平衡器](https://aka.ms/Azure/ILB)
-* [Internal Load Balancer（内部负载平衡器）](https://aka.ms/Azure/ILB/Internal)
-* [Internet Facing Load Balancer（面向 Internet 的负载平衡器）](https://aka.ms/Azure/ILB/Internet)
+* [Azure 负载均衡器](https://aka.ms/Azure/ILB)
+* [Internal Load Balancer（内部负载均衡器）](https://aka.ms/Azure/ILB/Internal)
+* [Internet Facing Load Balancer（面向 Internet 的负载均衡器）](https://aka.ms/Azure/ILB/Internet)
 * [存储帐户](https://aka.ms/Azure/Storage)
 * [Azure 虚拟网络](https://aka.ms/Azure/VNet)
 * [AD FS and Web Application Proxy Links（AD FS 和 Web 应用程序代理链接）](http://aka.ms/ADFSLinks)

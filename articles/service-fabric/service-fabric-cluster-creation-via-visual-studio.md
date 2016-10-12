@@ -48,7 +48,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 默认情况下，系统会自动生成群集名称，并在“群集”前缀后面附加一个随机后缀，使该名称唯一。这样便可以轻松使用模板作为**持续集成** (CI) 系统的一部分。如果想要为群集使用特定的名称，有效的方法之一是将 Resource Manager 模板文件 (`ServiceFabricCluster.json`) 中的 `clusterName` 变量的值设置为所选的名称。该名称是该文件中定义的第一个变量。
 
 ## 可选：添加公共应用程序端口
-在部署模板之前，你还可能想要更改群集的公共应用程序端口。默认情况下，模板只打开两个公共 TCP 端口（80 和 8081）。如果应用程序需要更多端口，请修改模板中的 Azure 负载平衡器定义。此定义存储在主模板文件 (`ServiceFabricCluster.json`) 中。打开该文件并搜索 `loadBalancedAppPort`。你将注意到每个端口与三个项目关联：
+在部署模板之前，你还可能想要更改群集的公共应用程序端口。默认情况下，模板只打开两个公共 TCP 端口（80 和 8081）。如果应用程序需要更多端口，请修改模板中的 Azure 负载均衡器定义。此定义存储在主模板文件 (`ServiceFabricCluster.json`) 中。打开该文件并搜索 `loadBalancedAppPort`。你将注意到每个端口与三个项目关联：
 
 1. 一个模板变量，用于定义端口的 TCP 端口值：
 
@@ -56,7 +56,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 		"loadBalancedAppPort1": "80"
 	
 
-2. 一个探测，用于定义 Azure 负载平衡器在故障转移到另一个节点之前，尝试使用特定 Service Fabric 节点的频率和时间长短。探测是负载平衡器资源的一部分。下面是第一个默认应用程序端口的探测定义：
+2. 一个探测，用于定义 Azure 负载均衡器在故障转移到另一个节点之前，尝试使用特定 Service Fabric 节点的频率和时间长短。探测是负载均衡器资源的一部分。下面是第一个默认应用程序端口的探测定义：
 
 
 		{
@@ -70,7 +70,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 	    }
 
 
-3. 一个负载平衡规则，用于将端口和探测绑定在一起，并在一组 Service Fabric 群集节点之间实现负载平衡：
+3. 一个负载均衡规则，用于将端口和探测绑定在一起，并在一组 Service Fabric 群集节点之间实现负载均衡：
 
 
 		{
@@ -93,7 +93,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 		    }
 		}
 
-如果你要部署到群集的应用程序需要更多端口，可以创建额外的探测和负载平衡规则定义来添加端口。有关如何通过 Resource Manager 模板使用 Azure 负载平衡器的详细信息。
+如果你要部署到群集的应用程序需要更多端口，可以创建额外的探测和负载均衡规则定义来添加端口。有关如何通过 Resource Manager 模板使用 Azure 负载均衡器的详细信息。
 
 ## 使用 Visual Studio 部署模板
 在 `ServiceFabricCluster.param.dev.json` 文件中保存所有必需的参数值后，可以部署模板并创建 Service Fabric 群集。在 Visual Studio 解决方案资源管理器中右键单击资源组项目，然后选择“部署 | 新建部署...”。Visual Studio 将显示“部署到资源组”对话框，要求你根据需要向 Azure 进行身份验证：

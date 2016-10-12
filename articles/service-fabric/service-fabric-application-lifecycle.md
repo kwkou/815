@@ -93,7 +93,7 @@
 
 4. 操作者添加和删除由应用程序管理员指定的节点。
 
-5. 当新节点被添加到群集中或从群集中删除现有节点时，Service Fabric 自动负载平衡正在群集中的所有节点上运行的应用程序，以获得最佳性能。
+5. 当新节点被添加到群集中或从群集中删除现有节点时，Service Fabric 自动负载均衡正在群集中的所有节点上运行的应用程序，以获得最佳性能。
 
 ## 删除
 1. 操作员可以使用 [**DeleteServiceAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.deleteserviceasync.aspx)、[**Remove-ServiceFabricService** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt126033.aspx) 或[**删除服务** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707687.aspx)来删除群集中正在运行的服务的特定实例，并且不会删除整个应用程序。

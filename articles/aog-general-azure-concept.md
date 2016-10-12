@@ -11,11 +11,11 @@
 # Azure 网络相关名词解释
 * [5-tuples/5 元组](#tuples)
 * [Application Gateway / 应用程序网关](#application-gateway)
-* [Azure SLB / Azure 负载平衡器](#azure-slb)
+* [Azure SLB / Azure 负载均衡器](#azure-slb)
 * [DIP / Dynamic IP address，动态 IP](#dip)
 * [Endpoint / 终结点](#endpoint)
 * [ExpressRoute](#expressroute)
-* [Azure ILB / Azure Internal load balancer / Azure 内部负载平衡器](#azure-ilb)
+* [Azure ILB / Azure Internal load balancer / Azure 内部负载均衡器](#azure-ilb)
 * [ILPIP / Instance-level public IP address / 实例级公共 IP](#ilpip)
 * [NSG / Network Security Group / 网络安全组](#nsg)
 * [P2S VPN / Point-to-Site VPN / 点到站点 VPN](#p2s-vpn)
@@ -26,22 +26,22 @@
 * [VPN Gateway / VPN 网关](#vpn-gateway)
 
 ## <a id="tuples"></a>5-tuples / 5元 组
-5 元组，包含源 IP、源端口、目标 IP、目标端口和协议类型。它是工作在传输层（OSI 的第 4 层）的 Azure 负载平衡器（Azure SLB）中的负载平衡模式。通过对 5 元组的哈希计算，负载平衡器将流量映射到 VIP 后的可用服务。根据不同的需求，Azure 还支持 2 元组（源 IP、目标 IP）或 3 元组（源 IP、目标 IP、协议类型），此操作需要通过 PowerShell 实现。
+5 元组，包含源 IP、源端口、目标 IP、目标端口和协议类型。它是工作在传输层（OSI 的第 4 层）的 Azure 负载均衡器（Azure SLB）中的负载均衡模式。通过对 5 元组的哈希计算，负载均衡器将流量映射到 VIP 后的可用服务。根据不同的需求，Azure 还支持 2 元组（源 IP、目标 IP）或 3 元组（源 IP、目标 IP、协议类型），此操作需要通过 PowerShell 实现。
 
 [详细介绍](/blog/2015/03/13/azure-load-balancer-new-distribution-mode)
 
 
 ## <a id="application-gateway"></a>Application Gateway / 应用程序网关
-Azure 应用程序网关是应用程序层负载平衡（OSI 的第 7 层）的 HTTP 负载平衡解决方案。它充当反向代理服务，截获客户端连接，并将请求转发到后端终结点。
+Azure 应用程序网关是应用程序层负载均衡（OSI 的第 7 层）的 HTTP 负载均衡解决方案。它充当反向代理服务，截获客户端连接，并将请求转发到后端终结点。
 
-应用程序网关当前支持以下第7层应用程序传送功能：HTTP 负载平衡，基于 Cookie 的会话相关性，安全套接字层 (SSL) 卸载，和基于 URL 的内容路由。
+应用程序网关当前支持以下第7层应用程序传送功能：HTTP 负载均衡，基于 Cookie 的会话相关性，安全套接字层 (SSL) 卸载，和基于 URL 的内容路由。
 
 [详细介绍](/documentation/articles/application-gateway-introduction/)
 
-## <a id="azure-slb"></a>Azure SLB / Azure 负载平衡器
-Azure 负载平衡器是一种工作在传输层（OSI 的第 4 层）类型的负载平衡器。它可以将传入的 TCP、UDP 流量分发到云服务中正常运行的服务实例上，或者分发到负载平衡器集内所定义的虚拟机上。
+## <a id="azure-slb"></a>Azure SLB / Azure 负载均衡器
+Azure 负载均衡器是一种工作在传输层（OSI 的第 4 层）类型的负载均衡器。它可以将传入的 TCP、UDP 流量分发到云服务中正常运行的服务实例上，或者分发到负载均衡器集内所定义的虚拟机上。
 
-Azure 负载平衡器使用的分发算法是对 5 元组（或 2 元组，3 元组）进行哈希运算。通过对运算结果的比较，负载平衡器将流量映射到对应的可用服务上。
+Azure 负载均衡器使用的分发算法是对 5 元组（或 2 元组，3 元组）进行哈希运算。通过对运算结果的比较，负载均衡器将流量映射到对应的可用服务上。
 
 [详细介绍（英文）](https://azure.microsoft.com/en-us/documentation/articles/load-balancer-overview/)
 
@@ -51,9 +51,9 @@ DIP 是虚拟机在部署时，Azure 通过 DHCP 分配给虚拟机的内部 IP 
 [如何设置静态内部专用 IP](/documentation/articles/virtual-networks-reserved-private-ip/)
 
 ## <a id="endpoint"></a>Endpoint / 终结点
-终结点包含 IP 协议和对应的端口。每个终结点都有一个公用端口和一个专用端口。Azure 负载平衡器使用公用端口侦听从 Internet 传入的虚拟机流量。虚拟机使用专用端口侦听通常发送到虚拟机上运行的应用程序或服务的传入流量。
+终结点包含 IP 协议和对应的端口。每个终结点都有一个公用端口和一个专用端口。Azure 负载均衡器使用公用端口侦听从 Internet 传入的虚拟机流量。虚拟机使用专用端口侦听通常发送到虚拟机上运行的应用程序或服务的传入流量。
 
-使用 Azure 经典管理门户创建终结点时，将为 IP 协议和众所周知的网络协议的 TCP 或 UDP 端口提供默认值。例如用于远程桌面和 Windows PowerShell 远程处理的终结点。对于自定义终结点，必须指定正确的 IP 协议（TCP 或 UDP）以及公用和专用端口。若要将传入流量随机分布到多个虚拟机上，必须创建包含多个终结点的负载平衡集。
+使用 Azure 经典管理门户创建终结点时，将为 IP 协议和众所周知的网络协议的 TCP 或 UDP 端口提供默认值。例如用于远程桌面和 Windows PowerShell 远程处理的终结点。对于自定义终结点，必须指定正确的 IP 协议（TCP 或 UDP）以及公用和专用端口。若要将传入流量随机分布到多个虚拟机上，必须创建包含多个终结点的负载均衡集。
 
 请注意，Azure 流量管理器（Traffic Manager）和 CDN 中也有终结点的概念，与此处的终结点不同，请勿混淆。
 
@@ -68,8 +68,8 @@ ExpressRoute 连接不通过公共 Internet。与通过 Internet 的典型连接
 
 [详细介绍](/documentation/articles/expressroute-introduction/)
 
-## <a id="azure-ilb"></a>Azure ILB / Azure Internal load balancer / Azure 内部负载平衡器
-Azure 内部负载平衡器是一种面向 Azure 内部的负载均衡器。只有 Azure 内部的资源以及接入 VPN 通道的设备能够访问 Azure 内部均衡器。所有通过内部负载平衡器的数据流量都不会直接流向公网。Azure 内部负载均衡器适用于对安全级别要求较高的负载均衡。例如在 Azure 内部部署的多层级应用的后端数据库需要负载平衡时，就可以使用 Azure 内部负载平衡器。对于跨界连接（例如 S2S VPN）中的负载均衡需求，Azure 内部负载平衡器也能很好的满足。
+## <a id="azure-ilb"></a>Azure ILB / Azure Internal load balancer / Azure 内部负载均衡器
+Azure 内部负载均衡器是一种面向 Azure 内部的负载均衡器。只有 Azure 内部的资源以及接入 VPN 通道的设备能够访问 Azure 内部均衡器。所有通过内部负载均衡器的数据流量都不会直接流向公网。Azure 内部负载均衡器适用于对安全级别要求较高的负载均衡。例如在 Azure 内部部署的多层级应用的后端数据库需要负载均衡时，就可以使用 Azure 内部负载均衡器。对于跨界连接（例如 S2S VPN）中的负载均衡需求，Azure 内部负载均衡器也能很好的满足。
 
 [详细介绍（英文）](https://azure.microsoft.com/en-us/documentation/articles/load-balancer-internal-overview/)
 

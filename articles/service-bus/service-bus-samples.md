@@ -103,7 +103,7 @@
 |示例名称|说明|最低 SDK 版本|可用性|
 |---|---|---|---|
 |[中继消息传送身份验证：简单的 WebToken](http://code.msdn.microsoft.com/Relayed-Messaging-32c74392)|演示如何使用简单的 Web 令牌凭据进行服务总线身份验证。该示例类似于 Echo 示例，但具有一些更改。具体而言，此示例在 ServiceHost（服务）和 ChannelFactory （客户端）应用程序中添加了一个动作。|1\.8|Azure Service Bus|
-|[中继消息传送：负载平衡](http://code.msdn.microsoft.com/Relayed-Messaging-Load-bd76a9f8)|演示如何使用 Azure 服务总线将消息路由到多个接收方。它介绍了通过 **NetTcpRelayBinding** 绑定与客户端进行的简单服务通信的多个实例|1\.8|Azure Service Bus|
+|[中继消息传送：负载均衡](http://code.msdn.microsoft.com/Relayed-Messaging-Load-bd76a9f8)|演示如何使用 Azure 服务总线将消息路由到多个接收方。它介绍了通过 **NetTcpRelayBinding** 绑定与客户端进行的简单服务通信的多个实例|1\.8|Azure Service Bus|
 |[中继消息传送绑定：Net 事件](http://code.msdn.microsoft.com/Relayed-Messaging-Bindings-c0176977)|演示如何使用 Azure 服务总线上的 **NetEventRelayBinding** 绑定。|1\.8|Azure Service Bus|
 |[中继消息传送绑定：WS2007Http 会话](http://code.msdn.microsoft.com/Relayed-Messaging-Bindings-ef1f1fcb)|演示如何使用启用了可靠会话的 **WS2007HttpRelayBinding** 绑定。还演示如何在配置文件中而不是以编程方式指定服务总线凭据。|1\.8|Azure Service Bus|
 |[中继消息传送绑定：WS2007Http MsgSecCertificate](http://code.msdn.microsoft.com/Relayed-Messaging-Bindings-f29c9da5)|演示如何使用具有消息安全的 **WS2007HttpRelayBinding** 绑定来确保端到端消息安全，并且仍要求客户端对服务总线进行身份验证。|1\.8|Azure Service Bus|

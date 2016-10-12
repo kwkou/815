@@ -35,7 +35,7 @@ wacn.date="07/18/2016"/>
 
 ## OnStart 方法
 
-当 Azure 使角色实例联机时，就会调用 **OnStart** 方法。OnStart 代码执行时，角色实例被标记为 **Busy**，并且负载平衡器不会将外部通信引导到该角色。你可以重写此方法以执行初始化工作，例如实现事件处理程序和启动 [Azure Diagnostics](/documentation/articles/cloud-services-how-to-monitor/)。
+当 Azure 使角色实例联机时，就会调用 **OnStart** 方法。OnStart 代码执行时，角色实例被标记为 **Busy**，并且负载均衡器不会将外部通信引导到该角色。你可以重写此方法以执行初始化工作，例如实现事件处理程序和启动 [Azure Diagnostics](/documentation/articles/cloud-services-how-to-monitor/)。
 
 如果 **OnStart** 返回 **true**，则该实例已成功初始化，并且 Azure 已调用 **RoleEntryPoint.Run** 方法。如果 **OnStart** 返回 **false**，则角色将立即终止，而不执行任何计划中的关闭序列。
 
