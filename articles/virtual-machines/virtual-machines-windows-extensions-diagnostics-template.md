@@ -66,7 +66,7 @@ Azure 诊断扩展可在基于 Windows 的 Azure 虚拟机上提供监视和诊�
 
 扩展始终与虚拟机关联，你可以直接在虚拟机的资源节点下定义扩展，也可以在基础级别定义扩展并使用分层命名约定将其与虚拟机关联。
 
-对于虚拟机缩放集，扩展配置在 *VirtualMachineProfile* 的 *extensionProfile* 属性中指定。
+对于虚拟机规模集，扩展配置在 *VirtualMachineProfile* 的 *extensionProfile* 属性中指定。
    
 值为 **Microsoft.Azure.Diagnostics** 的 *publisher* 属性和值为 **IaaSDiagnostics** 的 *type* 属性可唯一标识 Azure 诊断扩展。
 

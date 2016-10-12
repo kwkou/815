@@ -52,7 +52,7 @@
       }
       }
 
-## 适用于包含 VM 缩放集的 VM 扩展的示例模板代码段。
+## 适用于包含 VM 规模集的 VM 扩展的示例模板代码段。
 
     {
      "type":"Microsoft.Compute/virtualMachineScaleSets",
