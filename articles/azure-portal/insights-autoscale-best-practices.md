@@ -38,7 +38,7 @@
 如果只使用该组合的一部分，则自动缩放只会进行单向扩大或缩小，直到达到最大值或最小值。
 
 ### 管理自动缩放时，请勿在 Azure 门户预览与 Azure 经典管理门户之间切换
-对于云服务和应用程序服务 (Web Apps)，请使用 [Azure 门户预览](https://portal.azure.cn) 创建和管理自动缩放设置。对于虚拟机缩放集，请使用 PoSH、CLI 或 REST API 创建和管理自动缩放设置。管理自动缩放配置时，请勿在 [Azure 经典管理门户](https://manage.windowsazure.cn) 与 [Azure 门户预览](https://portal.azure.cn) 之间切换。Azure 经典管理门户及其基础后端具有限制。请使用图形用户界面移动到 Azure 门户预览来管理自动缩放。这些选项是使用自动缩放 PowerShell、CLI 或 REST API（通过 Azure 资源浏览器）。
+对于云服务和应用程序服务 (Web Apps)，请使用 [Azure 门户预览](https://portal.azure.cn) 创建和管理自动缩放设置。对于虚拟机规模集，请使用 PoSH、CLI 或 REST API 创建和管理自动缩放设置。管理自动缩放配置时，请勿在 [Azure 经典管理门户](https://manage.windowsazure.cn) 与 [Azure 门户预览](https://portal.azure.cn) 之间切换。Azure 经典管理门户及其基础后端具有限制。请使用图形用户界面移动到 Azure 门户预览来管理自动缩放。这些选项是使用自动缩放 PowerShell、CLI 或 REST API（通过 Azure 资源浏览器）。
 
 ### 为诊断指标选择相应统计信息
 对于诊断指标，可以选择“平均”、“最小值”、“最大值”和“总计”作为用作缩放依据的指标。最常见的统计信息是“平均值”。

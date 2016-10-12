@@ -51,7 +51,7 @@ Service Fabric 提供可以下载的安装包。下载了此包之后，你便�
 * **用作 Azure 资源的 Service Fabric 群集：**Service Fabric 群集是一种 ARM 资源，你可以像在 Azure 中处理其他 ARM 资源一样为它建模。
 * **与 Azure 基础结构集成：**Service Fabric 协调 OS 的 Azure 基础结构、网络和其他升级，以提高应用程序的可用性与可靠性。  
 * **诊断：**在 Azure 中，我们提供与 Azure 诊断和操作见解的集成。
-* **自动缩放：**对于 Azure 上的群集，我们借助虚拟机缩放集提供内置自动缩放功能。在本地和其他云环境中，你必须构建自己的自动缩放功能或使用 Service Fabric 为缩放群集而公开的 API 来手动缩放。
+* **自动缩放：**对于 Azure 上的群集，我们借助虚拟机规模集提供内置自动缩放功能。在本地和其他云环境中，你必须构建自己的自动缩放功能或使用 Service Fabric 为缩放群集而公开的 API 来手动缩放。
 
 ## 后续步骤
 在运行 Windows Server 的 VM 或计算机上创建群集：[创建适用于 Windows Server 的 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)
