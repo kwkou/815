@@ -65,8 +65,6 @@
 
 3. 确保选择 **.NET Framework 4.5.2** 作为目标框架。
 
-4.  Azure Application Insights 可监视 Web 应用的可用性、性能和使用情况。安装 Visual Studio 后首次创建 Web 项目时，默认情况下会选中“将 Application Insights 添加到项目”复选框。如果已选中该复选框，但你不想要尝试使用 Application Insights，请清除该复选框。
-
 4. 将应用程序命名为 **MyExample**，然后单击“确定”。
 
 	![“新建项目”对话框](./media/web-sites-dotnet-get-started/GS13newprojdb.png)
