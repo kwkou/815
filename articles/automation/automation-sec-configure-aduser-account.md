@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="MGoedtel"
    manager="jwhit"
-   editor="tysonn" />
+   editor="tysonn"
+   keywords="azure active directory 用户, azure 服务管理, azure ad 用户帐户" />
 <tags
    ms.service="automation"
    ms.date="05/10/2016"

@@ -215,7 +215,7 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 只能在 VNet 中使用计算服务。计算服务仅限于云服务（Web 和辅助角色）和 VM。
 
-- [将 VNet 集成和混合连接用于 Web 应用](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+- [将 VNet 集成用于 Web 应用](/documentation/articles/app-service-vnet-integration-powershell/)
 
 ### 是否可以在 VNet 中部署云服务与 Web 和辅助角色 (PaaS)？
 
