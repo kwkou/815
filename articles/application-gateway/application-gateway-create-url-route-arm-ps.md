@@ -84,6 +84,7 @@
 创建新的资源组（如果要使用现有的资源组，请跳过此步骤）。
 
     New-AzureRmResourceGroup -Name appgw-RG -location "China North"
+
 或者，可以为应用程序网关的资源组创建标记：
 	
 	$resourceGroup = New-AzureRmResourceGroup -Name appgw-RG -Location "China North" -Tags @{Name = "testtag"; Value = "Application Gateway URL routing"} 
