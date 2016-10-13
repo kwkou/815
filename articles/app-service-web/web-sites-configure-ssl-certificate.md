@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="使用 HTTPS 保护应用的自定义域 | Azure"
 	description="了解如何配置 SSL 证书绑定以在 Azure App Service 中保护应用的自定义域名。还将学习如何从多个工具处获取 SSL 证书。"
