@@ -122,7 +122,7 @@
 * 创建 Azure SQL 数据库。
 * 创建 Azure 存储帐户。
 * 配置解决方案，以便在 Azure 中运行时使用你的 Azure SQL 数据库。
-* 配置解决方案以便在 Azure 中运行时使用你的 Azure 存储帐户。
+* 配置解决方案，以便在 Azure 中运行时使用你的 Azure 存储帐户。
 * 将项目部署到 Azure 云服务。
 
 ### 创建 Azure 云服务
