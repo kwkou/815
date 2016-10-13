@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,区域性灾难,业务连续性方案,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="本文提供三种灾难恢复方案，保障用户的业务连续性。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="v-chenyh" solutions="" manager="RongYu" editor="" />
 
-<tags ms.service="mysql" ms.date="10/10/2016" wacn.date="10/10/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="10/13/2016" wacn.date="10/13/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-business-continuity-disaster-recovery/)
@@ -96,7 +96,7 @@ MySQL Database on Azure底层将用户数据存储在Azure存储的块blob中，
 
 如果用户事先通过管理门户创建了异地从属实例，则区域性灾难发生时可以提升该从属实例用于业务切换，保障业务的连续性。异地复制技术的性能指标为：**ERT < 30秒，RPO < 10秒**。
 
->[AZURE.NOTE] 注意：ERT、RTO和RPO是工程指标，仅供参考，且仅适用于区域性灾难，不属于MySQL数据库服务的SLA。
+>[AZURE.NOTE]ERT、RTO和RPO是工程指标，仅供参考，且仅适用于区域性灾难，不属于MySQL数据库服务的SLA。
 
 
 ## 灾难恢复方案 ##
@@ -105,7 +105,7 @@ MySQL Database on Azure底层将用户数据存储在Azure存储的块blob中，
 
 * **MySQL PaaS方案（利用异地还原技术）**	MySQL Database on Azure服务本身会在灾难发生时，紧急响应判断灾难发生原因是否能够快速恢复（在小于RPO的时间范围内），如果不能快速恢复，则MySQL Database on Azure会针对所有受影响的实例在异地进行数据库还原，恢复的时间点将为离故障发生最接近的可恢复时间点。
 
->[AZURE.NOTE] 注意：PaaS方案将会默认指定中断发生时数据完好的时间点，而MySQL Database on Azure会尽力将实例指定地域进行基于该时间点或是离该时间点最近的可恢复时间点进行还原。
+>[AZURE.NOTE]PaaS方案将会默认指定中断发生时数据完好的时间点，而MySQL Database on Azure会尽力将实例指定地域进行基于该时间点或是离该时间点最近的可恢复时间点进行还原。
 
 * **自助服务方案（利用异地还原技术）**	如果用户使用的是生产环境，对恢复时间要求较高，则用户可以通过PowerShell命令行手动将受影响的实例在异地进行恢复。
 
@@ -115,8 +115,7 @@ MySQL Database on Azure底层将用户数据存储在Azure存储的块blob中，
 
 	New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName <ResourceName> -ApiVersion 2015-09-01 -ResourceGroupName <ResourceGroupName> -Location <TargetLocation> -SkuObject @{name=<targetSKU>} -Properties @{creationSource=@{server='<SourceServerName>';region='<SourceLocation>';timepoint='<TimeTag>'};version = '<version number>'}
 
->[AZURE.NOTE] 注意：
->
+>[AZURE.NOTE]
 >1. timepoint是Optional的值，如果不填，则默认是当前的时间点；如果用户填写时间，则需按照Json中date-time格式填写（比如2016-05-06T08:00:00），我们统一使用的是UTC时间。
 >2. 通过Azure管理门户创建的实例，按地理位置默认分配在“Default-MySQL-ChinaNorth”和“Default-MySQL-ChinaEast”资源组中。
 
