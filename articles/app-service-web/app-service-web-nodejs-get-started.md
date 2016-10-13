@@ -213,6 +213,7 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 - [Azure App Service Web Apps: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx)
 - [Node.js 开发人员中心](/develop/nodejs/)
 - [Azure App Service 中的 Web 应用入门](/documentation/articles/app-service-web-get-started/)
+- [探索神秘无比的 Kudu 调试控制台]
 
 <!-- URL List -->
 
@@ -221,7 +222,7 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 [BOWER]: http://bower.io/
 [Create a Node.js chat application with Socket.IO in Azure App Service（在 Azure App Service 使用 Socket.IO 创建 Node.js 聊天应用程序）]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
 [Deploy a Sails.js web app to Azure App Service（将 Sails.js Web 应用部署到 Azure App Service）]: /documentation/articles/app-service-web-nodejs-sails/
-[探索神秘无比的 Kudu 调试控制台]: /documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/
+[探索神秘无比的 Kudu 调试控制台]: /documentation/articles/aog-web-app-diagnostics-kudu/
 [适用于 Yeoman 的 Express 生成器]: https://github.com/petecoop/generator-express
 [GIT]: http://www.git-scm.com/downloads
 [How to use io.js with Azure App Service Web Apps（如何将 io.js 与 Azure App Service Web 应用配合使用）]: /documentation/articles/web-sites-nodejs-iojs/

@@ -75,15 +75,19 @@
 
 接下来，使用 FTPS 将 Java 应用部署到 Azure。
 
-1. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
+5. 在 Web 应用边栏选项卡中，向下滚动到“应用程序设置”或进行搜索，然后单击。
 
-		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
+    ![](./media/app-service-web-get-started-languages/set-java-application-settings.png)  
 
-		$a.Properties.scmType = "LocalGit"
 
-		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
+6. 在“Java 版本”中，选择“Java 8”，单击“保存”。
 
-7. 返回 Azure 门户预览的 Web 应用边栏选项卡，单击“部署凭据”。
+    ![](./media/app-service-web-get-started-languages/set-java-application-settings.png)  
+
+
+    收到“已成功更新 Web 应用设置”通知时，导航到 http:// *&lt;appname>* .chinacloudsites.cn，查看默认 JSP servlet 的效果。
+
+7. 返回 Web 应用边栏选项卡，向下滚动到“部署凭据”或进行搜索，然后单击。
 
 8. 设置部署凭据，单击“保存”。
 
