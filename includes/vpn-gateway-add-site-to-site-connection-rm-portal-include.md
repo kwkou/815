@@ -1,3 +1,5 @@
+<!-- Ibiza portal: tested -->
+
 1. 找到你的虚拟网络网关，然后然后单击“所有设置”打开“设置”边栏选项卡。
 
 2. 在“设置”边栏选项卡上，单击“连接”，然后单击边栏选项卡顶部的“添加”打开“添加连接”边栏选项卡。
@@ -23,4 +25,4 @@
 	![创建站点到站点连接](./media/vpn-gateway-add-site-to-site-connection-rm-portal-include/connectionstatus450.png)
 
 
-<!---HONumber=Mooncake_0425_2016---->
+<!---HONumber=Mooncake_0425_2016-->

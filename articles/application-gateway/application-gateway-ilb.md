@@ -205,7 +205,7 @@
 
 如需负载均衡选项的其他常规信息，请参阅：
 
-- [Azure 负载均衡器](/documentation/services/load-balancer)
+<!--- [Azure 负载均衡器](/documentation/services/load-balancer)-->
 - [Azure 流量管理器](/documentation/services/traffic-manager)
 
 <!---HONumber=Mooncake_0307_2016-->

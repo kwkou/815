@@ -16,4 +16,4 @@
 
 8. 单击“创建”以创建本地网关。
 
-<!---HONumber=Mooncake_0822_2016---->
+<!---HONumber=Mooncake_0822_2016-->
