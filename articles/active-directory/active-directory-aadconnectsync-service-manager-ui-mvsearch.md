@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure AD Connect 同步：Synchronization Service Manager UI | Azure"
-	description="了解 Azure AD Connect 的 Synchronization Service Manager 中的"Metaverse 搜索"选项卡。"
+	description="了解 Azure AD Connect 的 Synchronization Service Manager 中的“Metaverse 搜索”选项卡。"
 	services="active-directory"
 	documentationCenter=""
 	authors="andkjell"
