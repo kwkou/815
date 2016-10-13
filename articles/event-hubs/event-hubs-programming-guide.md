@@ -183,7 +183,6 @@ while(receive)
 
 - [事件中心 API 概述](/documentation/articles/event-hubs-api-overview/)
 - [事件中心概述](/documentation/articles/event-hubs-overview/)
-- [事件中心代码示例](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
 - [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
 <!---HONumber=Mooncake_0926_2016-->
