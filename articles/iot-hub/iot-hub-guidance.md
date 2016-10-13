@@ -69,7 +69,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 下面是令牌服务模式的主要步骤：
 
-1. 为 IoT 中心创建包含 [DeviceConnect][lnk-devguide-security] 权限的 **IoT 中心共享访问策略**。可以在 [Azure 门户][lnk-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
+1. 为 IoT 中心创建包含 [DeviceConnect][lnk-devguide-security] 权限的 **IoT 中心共享访问策略**。可以在 [Azure 门户预览][lnk-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
 2. 当设备需要访问 IoT 中心时，将向令牌服务请求已签名的令牌。设备可以使用自定义设备标识注册表/身份验证方案来进行身份验证，以确定令牌服务用来创建令牌的设备标识。
 3. 令牌服务返回令牌。使用 `/devices/{deviceId}` 作为 `resourceURI`（其中 `deviceId` 是要身份验证的设备），并根据 [IoT 中心开发人员指南的安全部分][lnk-devguide-security]创建令牌。令牌服务使用共享访问策略来构造令牌。
 4. 设备直接通过 IoT 中心使用令牌。
