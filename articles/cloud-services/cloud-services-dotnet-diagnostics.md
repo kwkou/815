@@ -195,6 +195,7 @@
 [Debugging an Azure Application]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee405479.aspx
 [Collect Logging Data by Using Azure Diagnostics]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433048.aspx
 [试用版]: /pricing/1rmb-trial/
-[安装和配置 Azure PowerShell 0.8.7 或更高版本]：/documentation/articles/powershell-install-configure /
+[安装和配置 Azure PowerShell 0.8.7 或更高版本]:  /documentation/articles/powershell-install-configure/
+
 
 <!---HONumber=Mooncake_0328_2016-->

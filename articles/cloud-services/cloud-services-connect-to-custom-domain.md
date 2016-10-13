@@ -114,7 +114,7 @@
       </NetworkConfiguration>
     </ServiceConfiguration>
 
-接下来，请生成云服务项目并将它部署到 Azure。有关将云服务包部署到 Azure 的帮助，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/#deploy)
+接下来，请生成云服务项目并将它部署到 Azure。有关将云服务包部署到 Azure 的帮助，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/#deploy)。
 
 ## 将 Web/辅助角色连接到域
 
