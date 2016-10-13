@@ -17,7 +17,6 @@
    ms.date="09/16/2016"
    ms.author="mbaldwin"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # Azure AD 的身份验证方案
 

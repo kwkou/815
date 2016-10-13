@@ -16,7 +16,6 @@
    ms.date="08/19/2016"
    ms.author="andkjell;shoatman;billmath"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>  
 
 
 # Azure AD Connect：从 DirSync 升级
@@ -136,7 +135,7 @@ DirSync 支持以下配置更改，并且将会升级：
 2. 看到"欢迎使用 Azure AD Connect"屏幕时，请单击窗口右上角的"X"退出安装向导。
 3. 打开命令提示符。
 4. 在 Azure AD Connect 的安装位置下执行以下命令（默认安装位置为 C:\\Program Files\\Azure Active Directory Connect）：
-    `AzureADConnect.exe /ForceExport`。
+    `AzureADConnect.exe /ForceExport`
 5. 单击"导出设置"按钮。在单独的服务器上安装 Azure AD Connect 时，会将当前 DirSync 中的这些设置迁移到新的 Azure AD Connect 安装位置。
 
 ![分析已完成](./media/active-directory-aadconnect-dirsync-upgrade-get-started/forceexport.png)
@@ -152,7 +151,7 @@ DirSync 支持以下配置更改，并且将会升级：
 2. 看到"欢迎使用 Azure AD Connect"屏幕时，请单击窗口右上角的"X"退出安装向导。
 3. 打开命令提示符。
 4. 在 Azure AD Connect 的安装位置下执行以下命令（默认安装位置为 C:\\Program Files\\Azure Active Directory Connect）：
-    `AzureADConnect.exe /migrate`。
+    `AzureADConnect.exe /migrate`
     Azure AD Connect 安装向导将会启动并显示以下屏幕：  
 ![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ImportSettings.png)
 5. 选择从 DirSync 安装中导出的设置文件。

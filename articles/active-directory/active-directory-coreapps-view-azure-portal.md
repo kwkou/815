@@ -15,7 +15,6 @@
 	ms.topic="article"
 	ms.date="09/12/2016"
 	ms.author="curtand"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>
 
 # 在 Azure Active Directory 预览版中查看可以管理的所有企业应用

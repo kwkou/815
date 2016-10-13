@@ -15,7 +15,6 @@
 	ms.topic="article"
 	ms.date="07/20/2016"
 	ms.author="markusvi;andkjell"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>
 
 

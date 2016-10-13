@@ -15,7 +15,6 @@
 	ms.topic="article"
 	ms.date="09/12/2016"
 	ms.author="billmath"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>
 
 # Azure AD 联合身份验证兼容性列表

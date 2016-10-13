@@ -15,7 +15,6 @@
 	ms.topic="article"
 	ms.date="08/25/2016"
 	ms.author="billmath"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>
 
 # 混合标识所需的端口和协议

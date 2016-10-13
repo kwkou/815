@@ -16,7 +16,6 @@
 	ms.topic="get-started-article"
 	ms.date="09/13/2016"
 	ms.author="billmath;andkjell"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>  
 
 

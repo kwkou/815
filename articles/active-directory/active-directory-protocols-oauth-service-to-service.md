@@ -15,7 +15,6 @@
 	ms.topic="article"
 	ms.date="07/19/2016"
 	ms.author="priyamo"
-   wacn.date="10/11/2016"/>
    	wacn.date="10/11/2016"/>
 
 # 使用客户端凭据进行服务到服务调用

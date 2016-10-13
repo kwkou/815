@@ -14,7 +14,6 @@
     ms.topic="article"
     ms.date="09/01/2016"
     ms.author="andkjell"
-   wacn.date="10/11/2016"/>
     wacn.date="10/11/2016"/>
 
 # Azure AD Connect 同步：了解默认配置

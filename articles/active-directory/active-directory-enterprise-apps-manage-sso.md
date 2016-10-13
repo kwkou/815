@@ -15,7 +15,6 @@
     ms.workload="identity"
     ms.date="09/12/2016"
     ms.author="asmalser"
-   wacn.date="10/11/2016"/>
     wacn.date="10/11/2016"/>
 
 #预览：在新的 Azure 门户中管理企业应用的单一登录
