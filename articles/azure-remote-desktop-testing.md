@@ -24,7 +24,7 @@
 ## Step1：基础环境配置
 
 
-1. <a id="step1-9"></a>登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
+1. <a id="step1-1"></a>登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 	
 	![01](./media/azure-remote-desktop-testing/01.png)
 
