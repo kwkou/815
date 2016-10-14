@@ -80,15 +80,7 @@
 
 	![][deployment-part]
 
-11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
-
-		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
-
-		$a.Properties.scmType = "LocalGit"
-
-		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
-
-13. 如果尚未执行此操作，请设置部署凭据。
+13. 设置部署凭据。
 
 	a.在“Web 应用”边栏选项卡中，单击“设置”>“部署凭据”。
 
@@ -97,6 +89,14 @@
 	b.创建用户名和密码。
 	
 	![](./media/web-sites-nodejs-develop-deploy-mac/setdeploycreds.png)
+
+11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
+
+		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
+
+		$a.Properties.scmType = "LocalGit"
+
+		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
 
 14. 在“Web 应用”边栏选项卡中，单击“设置”，然后单击“属性”。
  

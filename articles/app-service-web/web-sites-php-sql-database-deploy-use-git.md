@@ -55,10 +55,6 @@
 
 	Web 应用创建完成后，“通知”按钮将闪烁绿色的“成功”字样，资源组边栏选项卡会打开，以显示该组中的 Web 应用和 SQL 数据库。
 
-4. 单击资源组边栏选项卡中 Web 应用的图标，以打开 Web 应用的边栏选项卡。
-
-	![Web 应用的资源组](./media/web-sites-php-sql-database-deploy-use-git/resource-group-blade.png)
-
 11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
 
 		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
@@ -66,6 +62,10 @@
 		$a.Properties.scmType = "LocalGit"
 
 		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
+
+4. 单击资源组边栏选项卡中 Web 应用的图标，以打开 Web 应用的边栏选项卡。
+
+	![Web 应用的资源组](./media/web-sites-php-sql-database-deploy-use-git/resource-group-blade.png)
 
 	如果之前未设置 Git 存储库，则必须提供用户名和密码。为此，请在 Web 应用的边栏选项卡中，单击“设置”>“部署凭据”。
 
