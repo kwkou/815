@@ -51,7 +51,7 @@
 
 >[AZURE.IMPORTANT] 重新启动仅适用于高级层缓存。
 
-## 重新启动常见问题
+## <a name="reboot-faq"></a>重新启动常见问题
 
 -	[测试我的应用程序时，应重新启动哪个节点？](#which-node-should-i-reboot-to-test-my-application)
 -	[能否通过重新启动缓存来清除客户端连接？](#can-i-reboot-the-cache-to-clear-client-connections)
@@ -93,7 +93,7 @@
 
 若要指定维护时段，请勾选合适的日期，然后指定每天的维护时段开始时间，最后再单击“确定”。请注意，维护时段使用 UTC 时间。
 
-## 计划更新常见问题
+## <a name="schedule-updates-faq"></a>计划更新常见问题
 
 -	[如果我不使用计划更新功能，何时进行更新？](#when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature)
 -	[在计划的维护时段进行哪种类型的更新？](#what-type-of-updates-are-made-during-the-scheduled-maintenance-window)
