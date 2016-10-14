@@ -62,9 +62,13 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 -	缓存的主节点和从节点
 -	使用高级缓存来执行群集功能时，可以针对缓存中的各个分片重新启动主节点和/或从节点
 
+有关详细信息，请参阅[重新启动](/documentation/articles/cache-administration/#reboot)和[重新启动常见问题](/documentation/articles/cache-administration/#reboot-faq)。
+
 ## 计划更新
 
 可以通过计划更新功能指定缓存的维护时段。指定维护时段后，将在此时段内进行任何 Redis 服务器更新。若要指定维护时段，请选择合适的日期，然后指定每天的维护时段开始时间。请注意，维护时段使用 UTC 时间。
+
+有关详细信息，请参阅[计划更新](/documentation/articles/cache-administration/#schedule-updates)和[计划更新常见问题](/documentation/articles/cache-administration/#schedule-updates-faq)。
 
 >[AZURE.NOTE] 仅在计划的维护时段进行 Redis 服务器更新。维护时段不适用于 Azure 更新或 VM 操作系统更新。
 
@@ -80,6 +84,6 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 -	[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)
 -	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
 -	[如何在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
-  
+-	[如何管理 Azure Redis 缓存](/documentation/articles/cache-administration/)
 
 <!---HONumber=Mooncake_0829_2016-->

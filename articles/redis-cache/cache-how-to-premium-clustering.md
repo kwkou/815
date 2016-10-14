@@ -41,9 +41,11 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 ![群集功能][redis-cache-clustering]
 
-目前，在 Azure 中国无法通过门户预览来设置群集，如果想要“分片计数”大于 1 的 Redis 缓存，请通过 Azure PowerShell 或者 Azure CLI 新建。以下是创建这样的 Redis 缓存 Azure PowerShell 命令。
+群集中最多可以有 10 个分片。单击“启用”，滑动滑块，或者针对“分片计数”键入 1 到 10 之间的一个数字，然后单击“确定”。
 
-	New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -ShardCount 2
+每个分片都是一个由 Azure 管理的主/副缓存对，而缓存的总大小则通过将定价层中选择的缓存大小乘以分片数来计算。
+
+![群集功能][redis-cache-clustering-selected]  
 
 创建缓存后，即可连接到缓存并使用缓存，就像该缓存没有进行群集一样，而 Redis 则会将数据分布到整个缓存分片中。如果诊断[已启用](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，则会分别为每个分片捕获相应的度量值，这些度量值可以在“Redis 缓存”边栏选项卡中[查看](/documentation/articles/cache-how-to-monitor/)。
 
@@ -51,7 +53,14 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 ## <a name="cluster-size" id="change-the-cluster-size-on-a-running-premium-cache"></a>更改正在运行的高级缓存上的群集大小
 
-目前，在 Azure 中国，缓存创建以后，群集大小不能更改。
+若要更改正在运行并且已启用群集的高级缓存的群集大小，请在“设置”边栏选项卡中单击“(预览) Redis 群集大小”。
+
+>[AZURE.NOTE] 请注意，虽然 Azure Redis 缓存高级层已发行公开上市版，但 Redis 群集大小功能目前以预览版提供。
+
+![Redis 群集大小][redis-cache-redis-cluster-size]  
+
+
+若要更改群集大小，请使用滑块，或在“分片计数”文本框中键入 1 到 10 之间的数字，然后单击“确定”进行保存。
 
 ## 群集功能常见问题
 
