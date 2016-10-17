@@ -1,41 +1,39 @@
 <properties
-	pageTitle="Azure Insights：使用审核日志在 Azure Insights 中发送电子邮件和 webhook 警报通知。| Azure"
-	description="了解如何在 Azure Insights 中使用服务审核日志条目来调用 Web URL 或发送电子邮件通知。"
+	pageTitle="针对 Azure 活动日志警报配置 webhook | Azure"
+	description="了解如何使用活动日志警报调用 webhook。"
 	authors="kamathashwin"
 	manager=""
 	editor=""
-	services="azure-portal"
-	documentationCenter="na"/>
+	services="monitoring-and-diagnostics"
+	documentationCenter="monitoring-and-diagnostics"/>  
 
 <tags
-	ms.service="azure-portal"
-	ms.date="03/30/2016"
-	wacn.date="05/09/2016"/>
-
-# 使用审核日志在 Azure Insights 中发送电子邮件和 webhook 警报通知
-
-本文演示在审核日志事件触发 webhook 时的负载架构，并介绍如何使用相同事件发送电子邮件。
-
->[AZURE.NOTE] 此功能目前处于预览状态。在未来几个月内，“事件警报”基础结构和性能会得到改进。在此预览版中，此功能只能使用 Azure PowerShell 和 CLI 进行访问。将来可以使用 Azure 门户预览访问相同功能。
-
-## Webhook
-通过 webhook 可以将 Azure 警报通知路由到其他系统以便用于后处理或自定义通知。例如，将警报路由到可以处理传入 web 请求的服务，以便使用聊天或消息服务来发送 SMS、记录 bug 或通知某人。Webhook URI 必须是有效 HTTP 或 HTTPS 终结点。
-
-## 电子邮件
-电子邮件可以发送到任何有效电子邮件地址。还会通知在其中运行规则的订阅的管理员和协同管理员。
-
-### 示例电子邮件规则
-必须设置电子邮件规则、webhook 规则，然后告诉这些规则在审核日志事件发生时启动。可以在 [Azure Insights PowerShell 快速入门示例](/documentation/articles/insights-powershell-samples/#alert-on-audit-log-event)处查看使用 PowerShell 的示例。
+	ms.service="monitoring-and-diagnostics"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/15/2016"
+	ms.author="ashwink"
+	wacn.date="10/17/2016"/>  
 
 
-## 身份验证
-有两种身份验证 URI 形式：
+# 针对 Azure 活动日志警报配置 webhook
 
-1. 基于令牌的身份验证（通过将具有令牌 ID 的 webhook URI 保存为查询参数）。例如 https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue
-2. 基本身份验证（通过使用用户 ID 和密码）。例如 https://userid:password@mysamplealert/webcallback?someparamater=somevalue&parameter=value
+通过 webhook 可以将 Azure 警报通知路由到其他系统，以便进行后续处理或自定义操作。可以针对警报使用 webhook，以将警报路由到可以发送短信、记录 Bug、通过聊天/消息通知团队，或执行任意数量的其他操作的服务。本文介绍如何针对 Azure 活动日志警报设置 webhook，以及 HTTP POST 对 webhook 的有效负载情况。有关 Azure 度量值警报的设置和架构的信息，[请参阅本页](./insights-webhooks-alerts.md)。还可以将活动日志警报设置为激活时发送电子邮件。
 
-## 审核日志事件通知 webhook 负载架构
-当新事件可用时，有关审核日志事件的警报会对 webhook 负载中的事件元数据执行配置的 webhook。下面的示例演示 webhook 负载架构：
+>[AZURE.NOTE] 此功能目前提供预览版，因此品质和性能可能会有变化。
+
+可以使用 [Azure PowerShell Cmdlet](/documentation/articles/insights-powershell-samples/#create-alert-rules)、[跨平台 CLI](/documentation/articles/insights-cli-samples/#work-with-alerts) 或 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置活动日志警报。
+
+## 对 webhook 进行身份验证
+Webhook 可以使用以下任一方法进行身份验证：
+
+1. **基于令牌的授权** - 保存的 webhook URI 具有令牌 ID，例如 `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
+2.	**基本授权** - 保存的 webhook URI 具有用户名和密码，例如 `https://userid:password@mysamplealert/webcallback?someparamater=somevalue&foo=bar`
+
+## 负载架构
+POST 操作对于所有基于活动日志的警报包含以下 JSON 有效负载和架构。此架构类似于基于度量值的警报使用的架构。
 
 ```
 {
@@ -87,32 +85,39 @@
 
 |元素名称|	说明|
 |---|---|
-|status |始终设置为“activated”|
-|context|事件的上下文|
-|resourceProviderName|受影响资源的资源提供程序|
-|conditionType |“Event”|
-|name |警报规则的名称|
-|id |警报的资源 ID|
-|description|	警报创建者对警报设置的说明|
-|subscriptionId |Azure 订阅 GUID|
-|timestamp|	处理与事件对应的请求的 Azure 服务生成事件时的时间戳|
-|resourceId |唯一标识资源的资源 ID URI|
-|resourceGroupName|受影响资源的资源组名|
-|properties |<Key  Value> 对集合（即字典<String  String>），包括有关事件的详细信息|
-|event|包含有关事件的元数据的元素|
-|authorization|捕获事件的 RBAC 属性。这些通常包括“action”、“role”和“scope”。|
-|category | 事件的类别。支持的值包括：Administrative、Alert、Security、ServiceHealth、Recommendation|
-|caller|执行操作的用户的电子邮件地址（基于可用性是 UPN 声明或 SPN 声明）。对于某些系统调用可以为 null。|
-|correlationId|	通常是字符串格式的 GUID。具有 correlationId 的事件属于更大的相同操作，通常共享相同的 correlationId。|
-|eventDescription |描述事件的静态文本|
-|eventDataId|事件的唯一标识符|
-|eventSource |生成事件的 Azure 服务或基础结构的名称|
+|status |用于度量值警报。对于活动日志警报始终设置为“已激活”。|
+|上下文|事件的上下文。|
+|resourceProviderName|受影响资源的资源提供程序。|
+|conditionType |始终为“事件”。|
+|名称 |警报规则的名称。|
+|id |警报的资源 ID。|
+|description|	创建警报期间设置的警报说明。|
+|subscriptionId |Azure 订阅 ID。|
+|timestamp|	处理请求的 Azure 服务生成事件的时间。|
+|resourceId |受影响资源的资源 ID。|
+|resourceGroupName|受影响资源的资源组的名称|
+|属性 |一组包含事件详细信息的 `<Key, Value>` 对（即 `Dictionary<String, String>`）。|
+|event|包含有关事件的元数据的元素。|
+|authorization|事件的 RBAC 属性。这些通常包括“action”、“role”和“scope”。|
+|category | 事件的类别。支持的值包括：Administrative、Alert、Security、ServiceHealth、Recommendation。|
+|caller|执行操作的用户的电子邮件地址（基于可用性的 UPN 声明或 SPN 声明）。对于某些系统调用可以为 null。|
+|correlationId|	通常是字符串格式的 GUID。具有属于同一较大操作的 correlationId 的事件，通常共享 correlationId。|
+|eventDescription |事件的静态文本说明。|
+|eventDataId|事件的唯一标识符。|
+|eventSource |生成事件的 Azure 服务或基础结构的名称。|
 |httpRequest|	通常包括“clientRequestId”、“clientIpAddress”和“method”（HTTP 方法，例如 PUT）。|
-|level|以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose”|
-|operationId|通常是在与单个操作对应的事件之间共享的 GUID|
-|operationName|操作的名称|
-|properties |event 元素中的元素包含事件的属性。|
-|status|描述操作状态的字符串。常用值包括：Started、In Progress、Succeeded、Failed、Active、Resolved|
+|级别|以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose”。|
+|operationId|通常是在与单个操作对应的事件之间共享的 GUID。|
+|operationName|操作的名称。|
+|属性 |事件的属性。|
+|status|字符串。操作的状态。常见值包括：“Started”、“In Progress”、“Succeeded”、“Failed”、“Active”、“Resolved”。|
 |subStatus|	通常包含对应 REST 调用的 HTTP 状态代码。它还可能包含描述子状态的其他字符串。常见子状态值包括：OK（HTTP 状态代码：200）、Created（HTTP 状态代码：201）、Accepted（HTTP 状态代码：202）、No Content（HTTP 状态代码：204）、Bad Request（HTTP 状态代码：400）、Not Found（HTTP 状态代码：404）、Conflict（HTTP 状态代码：409）、Internal Server Error（HTTP 状态代码：500）、Service Unavailable（HTTP 状态代码：503）、Gateway Timeout（HTTP 状态代码：504）|
 
-<!---HONumber=Mooncake_0503_2016-->
+## 后续步骤
+- [了解有关活动日志的更多信息](/documentation/articles/monitoring-overview-activity-logs/)
+- [对 Azure 警报执行 Azure 自动化脚本 (Runbook)](http://go.microsoft.com/fwlink/?LinkId=627081)
+- [使用逻辑应用通过 Twilio 从 Azure 警报发送短信](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app)。本示例适用于度量值警报，但经过修改后可用于活动日志警报。
+- [使用逻辑应用从 Azure 警报发送 Slack 消息](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)。本示例适用于度量值警报，但经过修改后可用于活动日志警报。
+- [使用逻辑应用从 Azure 警报将消息发送到 Azure 队列](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)。本示例适用于度量值警报，但经过修改后可用于活动日志警报。
+
+<!---HONumber=Mooncake_1010_2016-->

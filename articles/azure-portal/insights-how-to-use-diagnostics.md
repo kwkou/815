@@ -10,7 +10,7 @@
 <tags 
 	ms.service="azure-portal" 
 	ms.date="09/08/2015" 
-	wacn.date="05/09/2016"/>
+	wacn.date="10/17/2016"/>
 
 # 启用监视和诊断
 

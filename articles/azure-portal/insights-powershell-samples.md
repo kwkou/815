@@ -10,7 +10,7 @@
 <tags
 	ms.service="azure-portal"
 	ms.date="03/30/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="10/17/2016"/>
 
 # Azure Insights PowerShell 快速入门示例
 
@@ -167,7 +167,7 @@ $actionWebhook = New-AzureRmAlertRuleWebhook -ServiceUri https://example.com?tok
 在经典虚拟机上创建关于 CPU %指标的警报规则
 
 ```
-Add-AzureRmMetricAlertRule -Name vmcpu_gt_1 -Location "East US" -ResourceGroup myrg1 -TargetResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.ClassicCompute/virtualMachines/my_vm1 -MetricName "Percentage CPU" -Operator GreaterThan -Threshold 1 -WindowSize 00:05:00 -TimeAggregationOperator Average -Actions $actionEmail, $actionWebhook -Description "alert on CPU > 1%"
+Add-AzureRmMetricAlertRule -Name vmcpu_gt_1 -Location "chinanorth" -ResourceGroup myrg1 -TargetResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.ClassicCompute/virtualMachines/my_vm1 -MetricName "Percentage CPU" -Operator GreaterThan -Threshold 1 -WindowSize 00:05:00 -TimeAggregationOperator Average -Actions $actionEmail, $actionWebhook -Description "alert on CPU > 1%"
 ```
 
 检索警报规则

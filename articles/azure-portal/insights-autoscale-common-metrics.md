@@ -10,7 +10,7 @@
 <tags
 	ms.service="azure-portal"
 	ms.date="08/02/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 # Azure Insights 自动缩放常用指标
 
