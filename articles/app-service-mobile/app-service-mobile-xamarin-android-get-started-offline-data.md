@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="05/05/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 # 为 Xamarin.Android 移动应用启用脱机同步
 

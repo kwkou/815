@@ -5,12 +5,17 @@
 	services="app-service"
 	documentationCenter=""
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
 
 <tags
 	ms.service="app-service"
-	ms.date="05/04/2016"
-	wacn.date="09/26/2016"/>
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="08/22/2016"
+	ms.author="mahender"
+	wacn.date="10/17/2016"/>
 
 # 如何将应用服务应用程序配置为使用 Microsoft 帐户登录
 
@@ -20,9 +25,9 @@
 
 ## <a name="register-microsoft-account"></a>将应用注册到 Microsoft 帐户
 
-1. 登录到 [Azure 门户预览]并导航到应用程序。复制 **URL**。稍后要使用该 URL 在 Microsoft 帐户中配置应用。
+1. 登录到 [Azure 门户预览]并导航到应用程序。复制 **URL**，随后会用于使用 Microsoft 帐户来配置应用。
 
-2. 在 Microsoft 帐户开发人员中心内导航到[我的应用程序]页，然后根据需要使用 Microsoft 帐户登录。
+2. 在 Microsoft 帐户开发人员中心内导航到“[我的应用程序]”页，然后根据需要使用 Microsoft 帐户登录。
 
 3. 单击“添加应用”，键入应用程序名称，然后单击“创建应用程序”。
 
@@ -32,7 +37,8 @@
 
 6. 在“重定向 URI”下，提供应用程序的终结点，然后单击“保存”。
  
-	>[AZURE.NOTE]重定向 URI 是应用程序 URL 加上路径 _\_/.auth/login/microsoftaccount/callback\__。例如，`https://contoso.chinacloudsites.cn/.auth/login/microsoftaccount/callback`。请务必使用 HTTPS 方案。
+	>[AZURE.NOTE] 重定向 URI 是应用程序 URL 加上路径 _/.auth/login/microsoftaccount/callback_。例如，`https://contoso.chinacloudsites.cn/.auth/login/microsoftaccount/callback`。
+	>请务必使用 HTTPS 方案。
 
 7. 在“应用程序机密”下，单击“生成新密码”。请记下显示的值。关闭页面后，就不再显示该值。
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="08/02/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 # 使用适用于 Azure 移动应用的 .NET 后端服务器 SDK
 

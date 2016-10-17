@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="05/10/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 # 移动应用和移动服务中的客户端与服务器版本控制
 

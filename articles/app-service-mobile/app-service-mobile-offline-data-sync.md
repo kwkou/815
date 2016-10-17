@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="06/28/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 # Azure 移动应用中的脱机数据同步
 

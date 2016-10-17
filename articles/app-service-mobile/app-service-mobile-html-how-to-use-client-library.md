@@ -5,12 +5,17 @@
 	documentationCenter="javascript"
 	authors="adrianhall"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
 
 <tags
 	ms.service="app-service-mobile"
-	ms.date="06/29/2016"
-	wacn.date="09/26/2016"/>
+	ms.workload="mobile"
+	ms.tgt_pltfrm="html"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="09/12/2016"
+	ms.author="adrianha;ricksal"
+	wacn.date="10/17/2016"/>
 
 # 如何使用适用于 Azure 移动应用的 JavaScript 客户端库
 
@@ -55,13 +60,58 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 ###<a name="configure-external-redirect-urls"></a>如何为外部重定向 URL 配置移动应用服务。
 
-多种类型的 JavaScript 应用程序使用环回功能来处理 OAuth UI 流，例如，在本地运行服务时、在 Ionic 框架中使用实时重新加载，或重定向到应用服务进行身份验证时。这可能造成问题，因为默认情况下，应用服务身份验证只配置为允许从移动应用后端访问。
+有多种类型的 JavaScript 应用程序使用环回功能来处理 OAuth UI 流。这些功能包括：
 
-使用以下步骤更改应用服务设置，允许从 localhost 进行身份验证：
+* 在本地运行服务
+* 搭配使用实时重载和 Ionic 框架
+* 重定向至应用服务进行身份验证。
 
-1. 登录到 [Azure 门户预览]，导航到移动应用后端，然后单击“工具”>“资源浏览器”>“转到”，为移动应用后端（站点）打开新的资源浏览器窗口。
+在本地运行可能会导致问题产生，因为默认情况下，应用服务身份验证只配置为允许从移动应用后端访问。使用以下步骤更改应用服务设置，允许在本地运行服务器时进行身份验证：
 
-2. 展开应用的“config”节点，然后单击“authsettings”>“编辑”，找到 **allowedExternalRedirectUrls** 元素（应为 null）并将它更改为：
+可使用 REST API 配置移动应用。
+
+1. 从以下 URL 获取。
+
+        https://management.chinacloudapi.cn/subscriptions/<Subscription id>/resourceGroups/<resource group>/providers/Microsoft.Web/sites/<you app>/config/authsettings/list?api-version=2015-08-01
+
+2. 将出现类似于下面的内容：
+
+        {
+        "id": "/subscriptions/<Subscription id>/resourceGroups/<resource group>/providers/Microsoft.Web/sites/<you app>/config/authsettings",
+        "name": "authsettings",
+        "type": "Microsoft.Web/sites/config",
+        "location": "East Asia",
+        "tags": {
+            "hidden-related:/subscriptions/<Subscription id>/resourcegroups/<resource group>/providers/Microsoft.Web/serverfarms/<app service plan>": "empty"
+        },
+        "properties": {
+            "enabled": false,
+            "httpApiPrefixPath": null,
+            "unauthenticatedClientAction": null,
+            "tokenStoreEnabled": null,
+            "allowedExternalRedirectUrls": null,
+            "defaultProvider": null,
+            "clientId": null,
+            "clientSecret": null,
+            "issuer": null,
+            "allowedAudiences": null,
+            "additionalLoginParams": null,
+            "isAadAutoProvisioned": false,
+            "googleClientId": null,
+            "googleClientSecret": null,
+            "googleOAuthScopes": null,
+            "facebookAppId": null,
+            "facebookAppSecret": null,
+            "facebookOAuthScopes": null,
+            "twitterConsumerKey": null,
+            "twitterConsumerSecret": null,
+            "microsoftAccountClientId": null,
+            "microsoftAccountClientSecret": null,
+            "microsoftAccountOAuthScopes": null
+        }
+        }
+
+3. 更新 `allowedExternalRedirectUrls` 如下所示。
 
          "allowedExternalRedirectUrls": [
              "http://localhost:3000",
@@ -69,13 +119,17 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
          ],
 
     将数组中的 URL 替换为服务的 URL，在本示例中为本地 Node.js 示例服务的 `http://localhost:3000`。对于 Ripple 服务，也可以根据应用的配置方式，使用 `http://localhost:4400` 或其他某个 URL。
+
+8. 将 json 放置在 URL 的上面。
+
+还需要将相同的环回 URL 添加到 CORS 白名单设置：
+
+1. 导航回到 [Azure 门户预览]。
+2. 导航到移动应用后端。
+3. 在“API”菜单中单击“CORS”。
+4. 在空的“允许的来源”文本框中输入每个 URL。将创建新的文本框。
+5. 单击“保存”
     
-3. 在页面顶部，单击“读/写”，然后单击“PUT”保存更新。
-
-    仍要将相同的环回 URL 添加到 CORS 允许列表设置：
-
-4. 返回 [Azure 门户预览]，在移动应用后端，单击“所有设置”>“CORS”，将环回 URL 添加到允许列表，然后单击“保存”。
-
 后端更新后，可以在应用中使用新的环回 URL。
 
 <!-- URLs. -->
@@ -83,6 +137,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 [Get started with authentication]: /documentation/articles/app-service-mobile-cordova-get-started-users/
 [Add authentication to your app]: /documentation/articles/app-service-mobile-cordova-get-started-users/
 
+[Azure 门户预览]: https://portal.azure.cn/
 [Azure 移动应用 JavaScript SDK]: https://www.npmjs.com/package/azure-mobile-apps-client
 [Query object documentation]: https://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
 
