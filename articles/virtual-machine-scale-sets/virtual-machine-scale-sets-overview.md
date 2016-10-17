@@ -6,19 +6,25 @@
 	authors="gbowerman"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager"/>
+	tags="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machine-scale-sets"
-	ms.date="07/12/2016"
-	wacn.date="08/29/2016"/>  
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/13/2016"
+	wacn.date="10/17/2016"
+	ms.author="guybo"/>  
 
 
 # 虚拟机规模集概述
 
 虚拟机规模集是一种 Azure 计算资源，可用于部署和管理一组相同的 VM。VM 规模集中的所有 VM 均采用相同的配置，专用于支持真正的自动缩放，而无需对 VM 进行预配，这可更简便地生成面向大计算、大数据、容器化工作负荷的大规模服务。
 
-对于需要扩大和缩小计算资源的应用程序，缩放操作在容错域和更新域之间进行隐式平衡。有关 VM 规模集的简介，请参阅最近的 [Azure 博客公告](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/)。
+对于需要扩大和缩小计算资源的应用程序，缩放操作在容错域和更新域之间进行隐式平衡。有关 VM 规模集的简介，请参阅 [Azure 博客公告](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/)。
 
 有关 VM 规模集的详细信息，请查看这些视频：
 
@@ -28,13 +34,15 @@
 
 ## 创建和管理 VM 规模集
 
-可以使用 JSON 模板和 [REST API](https://msdn.microsoft.com/zh-cn/library/mt589023.aspx) 定义和部署 VM 规模集，就像定义和部署单个 Azure 资源管理器 VM 一样。因此，可以使用任何标准的 Azure 资源管理器部署方法。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
+可以在 [Azure 门户](https://portal.azure.cn)中选择“新建”，然后在搜索栏中键入“缩放”，来创建 VM 规模集。结果中会看到“虚拟机规模集”。从这里，可以填写必填字段，自定义和部署规模集。
+
+也可以使用 JSON 模板和 [REST API](https://msdn.microsoft.com/zh-cn/library/mt589023.aspx) 定义和部署 VM 规模集，就像定义和部署单个 Azure Resource Manager VM 一样。因此，可以使用任何标准的 Azure 资源管理器部署方法。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 可在[此处](https://github.com/Azure/azure-quickstart-templates)的 Azure 快速入门模板 GitHub 存储库中找到一组 VM 规模集的示例模板。（查找标题中含有 _vmss_ 的模板）
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 
-若要部署 VM 规模集，请下载模板，然后做必要的修改，并使用 Azure PowerShell 或者 Azure CLI 进行部署。如果你不确定某个资源是否支持大写或大小写混合，则更为安全的做法是始终使用小写参数值。此外，此处还对 VM 规模集模板进行了方便的视频解剖：
+若要部署 VM 规模集，请下载模板，执行必要的修改，然后使用 Azure PowerShell 或 Azure CLI 部署它。如果你不确定某个资源是否支持大写或大小写混合，则更为安全的做法是始终使用小写参数值。此外，此处还对 VM 规模集模板进行了方便的视频解剖：
 
 [VM 规模集模板详细分析](https://channel9.msdn.com/Blogs/Windows-Azure/VM-Scale-Set-Template-Dissection/player)
 
@@ -48,7 +56,7 @@
 
 ## 监视 VM 规模集
 
-[Azure 门户预览](https://portal.azure.cn)列出了规模集并显示了基本属性和规模集中的 VM 列表。
+[Azure 门户](https://portal.azure.cn)列出了规模集并显示了基本属性和规模集中的 VM 列表。
 
 ## VM 规模集方案
 
@@ -152,4 +160,4 @@
 
 **A.** 是的。VM 规模集是含有 5 个 FD 和 5 个 UD 的隐式可用性集。无需在 virtualMachineProfile 下进行任何配置。在将来的版本中，VM 规模集可能跨多个租户，但目前一个规模集只是单个可用性集。
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->
