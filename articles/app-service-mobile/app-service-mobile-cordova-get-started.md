@@ -12,7 +12,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="08/11/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 #创建 Apache Cordova 应用
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 
 # 如何使用移动应用的 Android 客户端库

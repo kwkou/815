@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="04/26/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="10/17/2016"/>
 
 # <a name="article-top"></a>将现有的 Azure 移动服务迁移到 Azure 应用服务
 
@@ -27,10 +27,10 @@
 Microsoft 建议迁移 Azure 移动服务来利用 Azure 应用服务的各项功能，其中包括：
 
   *  新的主机功能，包括 [Web 作业]和[自定义域名]。
-  *  除了[混合连接]以外，还可使用 [VNet] 连接到本地资源。
+  *  可使用 [VNet] 连接到本地资源。
   *  使用 New Relic 或 [Application Insights] 进行监视和故障排除。
   *  内置的 DevOps 工具，包括[过渡槽]、回滚和生产环境内测试。
-  *  [自动缩放]、负载平衡和[性能监视]。
+  *  [自动缩放]、负载均衡和[性能监视]。
 
 有关 Azure 应用服务优点的详细信息，请参阅 [Mobile Services vs.App Service]（移动服务与应用服务的比较）主题。
 
@@ -388,7 +388,6 @@ Azure 应用服务中通常会禁用诊断日志记录。若要启用诊断日�
 [自定义域名]: /documentation/articles/web-sites-custom-domain-name/
 [Fiddler]: http://www.telerik.com/fiddler
 [Azure 应用服务正式版]: /blog/announcing-general-availability-of-app-service-mobile-apps/
-[混合连接]: /documentation/articles/web-sites-hybrid-connection-get-started/
 [Logging]: /documentation/articles/web-sites-enable-diagnostic-log/
 [移动应用 Node.js SDK]: https://github.com/azure/azure-mobile-apps-node
 [Mobile Services vs.App Service]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services/
