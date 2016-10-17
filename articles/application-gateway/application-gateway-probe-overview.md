@@ -5,22 +5,31 @@
    description="了解 Azure 应用程序网关中的监视功能"
    services="application-gateway"
    documentationCenter="na"
-   authors="joaoma"
+   authors="georgewallace"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
-/>
+/>  
+
 <tags  
    ms.service="application-gateway"
-   ms.date="03/03/2016"
-   wacn.date="04/05/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/29/2016"
+   wacn.date="10/17/2016"
+   ms.author="gwallace" />  
+
 
 # 应用程序网关运行状况监视概述
 
-
 默认情况下，Azure 应用程序网关会监视其后端池中所有资源的运行状况，并自动从池中删除任何被视为不正常的资源。应用程序网关持续监视不正常的实例，一旦这些实例恢复可用状态并能响应运行状况探测，应用程序网关就会将它们添加回到正常的后端池中。
 
-除了使用默认的运行状况探测监视以外，还可以根据应用程序的要求自定义运行状况探测。本文将介绍默认和自定义的运行状况探测。
+![应用程序网关探测示例][1]  
+
+
+除了使用默认的运行状况探测监视以外，还可以根据应用程序的要求自定义运行状况探测。本文介绍默认的和自定义的运行状况探测。
 
 ## 默认的运行状况探测
 
@@ -30,37 +39,37 @@
 
 如果服务器 A 的默认探测检查失败，应用程序网关会从后端池删除该服务器，并且网络流量不再流向此服务器。默认探测仍继续每隔 30 秒检查服务器 A。当服务器 A 成功响应默认运行状况探测发出的请求时，将变为正常状态并重新加回到后端池，而流量也开始再次流向该服务器。
 
-默认探测只查看 http://127.0.0.1:<port> 来判断运行状况。如果需要配置运行状况探测以使其转到自定义 URL 或修改任何其他设置，你必须使用如下所述的自定义探测。
-
 ### 默认的运行状况探测设置
 
 |探测属性 | 值 | 说明|
 |---|---|---|
-| 探测 URL| http://127.0.0.1/ | URL 路径 |
+| 探测 URL| http://127.0.0.1:<端口>/ | URL 路径 |
 | 时间间隔 | 30 | 探测间隔（秒） |
 | 超时 | 30 | 探测超时（秒） |
 | 不正常阈值 | 3 | 探测重试计数。连续探测失败计数达到不正常阈值后，将后端服务器标记为故障。 |
 
+默认探测只查看 http://127.0.0.1:<端口> 来判断运行状况。如果需要配置运行状况探测以使其转到自定义 URL 或修改任何其他设置，必须使用以下步骤中所述的自定义探测。
 
 ## 自定义的运行状况探测
 
 自定义探测可让你更精细地控制运行状况监视。使用自定义探测时，你可以配置探测间隔、要测试的 URL 和路径，以及在将后端池实例标记为不正常之前可接受的失败响应次数。
 
-
 ### 自定义的运行状况探测设置
 
 |探测属性| 说明|
 |---|---|
-| Name | 探测的名称。此名称用于在后端 HTTP 设置中引用探测。 |
-| 协议 | 用于发送探测的协议。HTTP 是唯一有效的协议。 |
+| 名称 | 探测的名称。此名称用于在后端 HTTP 设置中引用探测。 |
+| 协议 | 用于发送探测的协议。HTTP 或 HTTPS 是有效的协议。 |
 | 主机 | 用于发送探测的主机名。 |
-| 路径 | 探测的相对路径。有效路径以“/”开头。探测将发送到 <protocol>://<host>:<port><path> |
+| 路径 | 探测的相对路径。有效路径以“/”开头。探测将发送到 <协议>://<主机>:<端口><路径> |
 | 时间间隔 | 探测间隔（秒）。这是每两次连续探测之间的时间间隔。|
 | 超时 | 探测超时（秒）。如果在此超时期间内未收到有效响应，则将探测标记为失败。 |
 | 不正常阈值 | 探测重试计数。连续探测失败计数达到不正常阈值后，将后端服务器标记为故障。 |
 
 ## 后续步骤
 
-在了解应用程序网关的运行状况监视之后，可以为 Azure 资源管理器配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)，或者为 Azure 经典部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-classic-ps/)。
+了解应用程序网关的运行状况监视后，可以在 Azure 门户中配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，或使用 PowerShell 和 Azure Resource Manager 部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)。
 
-<!---HONumber=Mooncake_0328_2016-->
+[1]: ./media/application-gateway-probe-overview/appgatewayprobe.png
+
+<!---HONumber=Mooncake_1010_2016-->
