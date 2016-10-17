@@ -18,7 +18,6 @@
 
 | **线路大小** | **针对 Standard 的 VNet 链接数** | **使用 Premium 附加设备时的 VNet 链接数** |
 |---|---|---|
-| 10 Mbps | 10 | 不支持 |
 | 50 Mbps | 10 | 20 |
 | 100 Mbps | 10 | 25 |
 | 200 Mbps | 10 | 25 |
@@ -28,4 +27,4 @@
 | 5 Gbps | 10 | 75 |
 | 10 Gbps | 10 | 100 |
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_1010_2016-->
