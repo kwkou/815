@@ -65,7 +65,7 @@
 
 	![10](./media/azure-remote-desktop-testing/10.png)
 	
-11. 再次浏览 [Azure 经典管理门户](https://manage.windowsazure.cn/) , 并使用 [Step1->9](#step1-9) 中创建的新用户和临时密码进行登录。
+11. 再次浏览 [Azure 经典管理门户](https://manage.windowsazure.cn/) , 并使用 <a href="/documentation/articles/azure-remote-desktop-testing/#step1-9" target="_blank">Step1->9</a> 中创建的新用户和临时密码进行登录。
 
 	![11](./media/azure-remote-desktop-testing/11.png)
 	
@@ -81,7 +81,7 @@
 
 	![14](./media/azure-remote-desktop-testing/14.png)
 	
-15. 在 **电子邮件地址** 处输入在 [Step1->9](#step1-9) 处所添加的 **用户名称** ，订阅选中 “**1元人民币的试用订阅**”，单击 **确定** 按钮。
+15. 在 **电子邮件地址** 处输入在 <a href="/documentation/articles/azure-remote-desktop-testing/#step1-9" target="_blank">Step1->9</a> 处所添加的 **用户名称** ，订阅选中 “**1元人民币的试用订阅**”，单击 **确定** 按钮。
 
 	![15](./media/azure-remote-desktop-testing/15.png)
 	
@@ -112,7 +112,7 @@
 
 	![21](./media/azure-remote-desktop-testing/21.png)
 	
-7. 在 **捕获**  窗口中，为映像设置一个 **映像名称** 和 **标签** ，选中 **我已在虚拟机上运行 Sysprep** 选项，单击确定按钮。
+7. <a id="step2-7"></a>在 **捕获**  窗口中，为映像设置一个 **映像名称** 和 **标签** ，选中 **我已在虚拟机上运行 Sysprep** 选项，单击确定按钮。
 
 	![22](./media/azure-remote-desktop-testing/22.png)
 	
@@ -143,11 +143,11 @@
 
 	![28](./media/azure-remote-desktop-testing/28.png)
 	
-6. 在定义凭据页面，设置 **凭据类型** 为 **Windows PowerShell 凭据** ，在 **名称** 位置设置一个凭据名称，该名称将在后续步骤的 runbook 中被调用，单击 **下一步** 按钮。
+6. <a id="step3-6"></a>在定义凭据页面，设置 **凭据类型** 为 **Windows PowerShell 凭据** ，在 **名称** 位置设置一个凭据名称，该名称将在后续步骤的 runbook 中被调用，单击 **下一步** 按钮。
 
 	![29](./media/azure-remote-desktop-testing/29.png)
 	
-7. 在 **用户名** 处输入 [Step1->9](#step1-9) 处所添加的用户，**密码** 和 **确认密码** 为 [Step1->12](#step1-12) 处所修改后的密码，单击 **确认** 按钮。
+7. 在 **用户名** 处输入 <a href="/documentation/articles/azure-remote-desktop-testing/#step1-9" target="_blank">Step1->9</a> 处所添加的用户，**密码** 和 **确认密码** 为 <a href="/documentation/articles/azure-remote-desktop-testing/#step1-12" target="_blank">Step1->12</a> 处所修改后的密码，单击 **确认** 按钮。
 
 	![30](./media/azure-remote-desktop-testing/30.png) 
 
@@ -155,11 +155,11 @@
 
 	![31](./media/azure-remote-desktop-testing/31.png) 
 	
-10. 单击 Azure 管理门户中的 **新建** 按钮，选择 **应用程序服务->自动化->RUNBOOK->快速创建**，设置一个 **RUNBOOK 名称**，在本示例中本次所创建的 RUNBOOK 用于进行开发测试环境部署，RUNBOOK 名称为 createdevvm， **自动化账户** 选择 [**Step3->2**](#step3-2) 中所创建的自动化账户，单击 **创建** 按钮。
+10. 单击 Azure 管理门户中的 **新建** 按钮，选择 **应用程序服务->自动化->RUNBOOK->快速创建**，设置一个 **RUNBOOK 名称**，在本示例中本次所创建的 RUNBOOK 用于进行开发测试环境部署，RUNBOOK 名称为 createdevvm， **自动化账户** 选择 <a href="/documentation/articles/azure-remote-desktop-testing/#step3-2" target="_blank">Step3->2</a> 中所创建的自动化账户，单击 **创建** 按钮。
 
 	![32](./media/azure-remote-desktop-testing/32.png) 
 	
-11. 创建完成后，单击页面底部的 **编辑 RUNBOOK** 按钮。
+11. <a id="step3-11"></a>创建完成后，单击页面底部的 **编辑 RUNBOOK** 按钮。
 
 	![33](./media/azure-remote-desktop-testing/33.png) 
 	
@@ -210,7 +210,7 @@
 	![34](./media/azure-remote-desktop-testing/34.png) 
 	
 	
-14. 参考 Step3->11 至 13 步，在同一自动化账户中再创建并发布三个名称分别为 deletedevvm、startvm、shutdownvm  的 RUNBOOK，其代码部分如下：
+14. 参考 <a href="/documentation/articles/azure-remote-desktop-testing/#step3-11" target="_blank">Step3->11 至 13 </a>步，在同一自动化账户中再创建并发布三个名称分别为 deletedevvm、startvm、shutdownvm  的 RUNBOOK，其代码部分如下：
 
 	以下是deletedevvm runbook代码：
 
@@ -293,13 +293,13 @@
 
 	![36](./media/azure-remote-desktop-testing/36.png) 
 	
-3. 在页面中出现的交互窗口中，分别输入以下信息：
+3. <a id="step4-3"></a>在页面中出现的交互窗口中，分别输入以下信息：
 
 	名称 | 值
 	---|---
 	CLOUDSERVICENAME | VM部署目标云服务名称
-	CREDENTIALNAME | Step3->6 中所设置的凭据名称
-	IMAGENAME | Step2->7 中所设置的 OS 映像名称
+	CREDENTIALNAME | <a href="/documentation/articles/azure-remote-desktop-testing/#step3-6" target="_blank">Step3->6</a> 中所设置的凭据名称
+	IMAGENAME | <a href="/documentation/articles/azure-remote-desktop-testing/#step2-7" target="_blank">Step2->7</a> 中所设置的 OS 映像名称
 	STORAGEACCOUNT | VM 部署目标存储账户，需与 OS 映像所在存储账户为同一存储账户
 	SUBNETNAME | VM 部署目标子网，需是本表 VNETNAME 参数所指定虚拟网络中的子网
 	VMADMINUSERNAME | VM 创建后操作系统管理员用户名
@@ -330,7 +330,7 @@
 
 ## Step5：开发测试环境自动化成本优化
 
-1. 在自动化账户页面，单击 **RUNBOOK** 选项卡，找到 **StartVM** RUNBOOK，单击其名称右侧的箭头。
+1. <a id="step5-1"></a>在自动化账户页面，单击 **RUNBOOK** 选项卡，找到 **StartVM** RUNBOOK，单击其名称右侧的箭头。
 
 	![41](./media/azure-remote-desktop-testing/41.png) 
 	
@@ -346,21 +346,21 @@
 
 	字段名称 | 值  
 	---|---  
-	$VMName | Step4->3 和 4 中所指定的 VM 名称  
-	$CloudServiceName | Step4->3 和 4 中所指定的云服务名称  
-	$VMSize | Step4->3 和 4 中所指定的实例大小  
-	$CredentialName | Step4->3 和 4 中所指定的凭据名称
+	$VMName | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的 VM 名称  
+	$CloudServiceName | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的云服务名称  
+	$VMSize | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的实例大小  
+	$CredentialName | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的凭据名称
 
 5. 修改后的结果如下图所示，单击 **发布** 按钮，选择 **是**。
 
 	![44](./media/azure-remote-desktop-testing/44.png) 
 	
 	
-6. 参考以上 Step5->1 至 5 步骤对 **shutdownvm** RUNBOOK 进行编辑并重新发布。
+6. 参考以上 <a href="/documentation/articles/azure-remote-desktop-testing/#step5-1" target="_blank">Step5->1</a> 至 5 步骤对 **shutdownvm** RUNBOOK 进行编辑并重新发布。
 
 	![45](./media/azure-remote-desktop-testing/45.png) 
 	
-7. 单击 shutdownvm RUNBOOK 的 **计划日程** 选项卡，单击 **链接到新计划** 。
+7. <a id="step5-7"></a>单击 shutdownvm RUNBOOK 的 **计划日程** 选项卡，单击 **链接到新计划** 。
 
 	![46](./media/azure-remote-desktop-testing/46.png) 
 	
@@ -378,7 +378,7 @@
 	
 	![50](./media/azure-remote-desktop-testing/50.png) 
 	
-11. 参考以上 Step5->7 至 10 步骤对 **startvm** RUNBOOK 进行计划日程设置，如执行时间为每天上午 9 点。
+11. 参考以上 <a href="/documentation/articles/azure-remote-desktop-testing/#step5-7" target="_blank">Step5->7 至 10</a> 步骤对 **startvm** RUNBOOK 进行计划日程设置，如执行时间为每天上午 9 点。
 
 	![51](./media/azure-remote-desktop-testing/51.png) 
 	
@@ -394,10 +394,10 @@
 
 	字段名称 | 值  
 	---|---
-	$VMName | Step4->3 和 4 中所指定的 VM 名称  
-	$CloudServiceName | Step4->3 和 4 中所指定的云服务名称  
-	$VMSize | Step4->3 和 4 中所指定的实例大小  
-	$CredentialName | Step4->3 和 4 中所指定的凭据名称  
+	$VMName | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的 VM 名称  
+	$CloudServiceName | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的云服务名称  
+	$VMSize | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的实例大小  
+	$CredentialName | <a href="/documentation/articles/azure-remote-desktop-testing/#step4-3" target="_blank">Step4->3 和 4</a> 中所指定的凭据名称  
 
 	>[AZURE.NOTE]上表为本演示环境中所使用参数，生产环境使用时需根据实际情况进行参数修改。
 	
