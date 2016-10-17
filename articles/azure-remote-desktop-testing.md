@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="multiple" ms.date="" wacn.date="10/14/2016"/>
+<tags ms.service="multiple" ms.date="" wacn.date="10/17/2016"/>
 
 # 远程开发测试环境自动化管理解决方案配置手册
 
@@ -73,7 +73,7 @@
 
 	![12](./media/azure-remote-desktop-testing/12.png)
 	
-13. 返回 [Step1->1](#step1-1) 中登录的 Azure 管理门户页面，单击 **设置** 。
+13. 返回 <a href="/documentation/articles/azure-remote-desktop-testing/#step1-1" target="_blank">Step1->1</a> 中登录的 Azure 管理门户页面，单击 **设置** 。
 
 	![13](./media/azure-remote-desktop-testing/13.png)
 	
@@ -168,17 +168,17 @@
 		workflow createdevvm
 		{
 		    param (
-		             [Parameter(Mandatory = $true)] [String] $VMName,         
-		             [Parameter(Mandatory = $true)] [String] $VNetName,              	
-		             [Parameter(Mandatory = $true)] [String] $CloudServiceName,
-		             [Parameter(Mandatory = $true)] [String] $VMAdminUserName,            
-		             [Parameter(Mandatory = $true)] [String] $VMPassword,            
-		             [Parameter(Mandatory = $true)] [String] $VMSize,           
-		             [Parameter(Mandatory = $true)] [String] $ImageName,                                
-		             [Parameter(Mandatory = $true)] [String] $StorageAccount,           
-		             [Parameter(Mandatory = $true)] [String] $SubnetName,
-		             [Parameter(Mandatory = $true)] [String] $CredentialName,
-		             [Parameter(Mandatory = $true)] [Sum] $VMNumber                      
+		          [Parameter(Mandatory = $true)] [String] $VMName,         
+		          [Parameter(Mandatory = $true)] [String] $VNetName,              	
+		          [Parameter(Mandatory = $true)] [String] $CloudServiceName,
+		          [Parameter(Mandatory = $true)] [String] $VMAdminUserName,            
+		          [Parameter(Mandatory = $true)] [String] $VMPassword,            
+		          [Parameter(Mandatory = $true)] [String] $VMSize,           
+		          [Parameter(Mandatory = $true)] [String] $ImageName,                                
+		          [Parameter(Mandatory = $true)] [String] $StorageAccount,           
+		          [Parameter(Mandatory = $true)] [String] $SubnetName,
+		          [Parameter(Mandatory = $true)] [String] $CredentialName,
+		          [Parameter(Mandatory = $true)] [Sum] $VMNumber                      
 		    )
 		    inlineScript {
 		             $VMNames = $using:VMName
