@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/30/2016"
-   wacn.date="08/15/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"/>  
+
 
 # SQL 数据仓库的设计决策和编程技术
 
@@ -71,4 +76,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

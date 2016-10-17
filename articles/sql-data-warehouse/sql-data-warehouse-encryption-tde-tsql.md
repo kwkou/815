@@ -1,4 +1,3 @@
-<!-- Remove Azure portal tde -->
 <properties
    pageTitle="SQL 数据仓库透明数据加密 (TDE) TSQL 入门 | Azure"
    description="SQL 数据仓库透明数据加密 (TDE) TSQL 入门"
@@ -6,17 +5,26 @@
    documentationCenter=""
    authors="ronortloff"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/07/2016"
-   wacn.date="07/04/2016"/>
+   ms.workload="data-management"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.date="08/29/2016"
+   wacn.date="10/17/2016" />  
+
 
 # 透明数据加密 (TDE) 入门
+
+
 > [AZURE.SELECTOR]
 - [TSQL](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
-<!-- - [Azure 门户](/documentation/articles/sql-data-warehouse-encryption-tde/) -->
+- [Azure 门户](/documentation/articles/sql-data-warehouse-encryption-tde/)
+
 
 Azure SQL 数据仓库透明数据加密 (TDE) 无需更改应用程序，即可对静止的数据库、关联的备份和事务日志执行实时加密和解密，帮助防止恶意活动的威胁。
 
@@ -43,6 +51,7 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 	    ALTER DATABASE [AdventureWorks] SET ENCRYPTION OFF;
 
+注意：在更改 TDE 设置之前，必须恢复暂停的 SQL 数据仓库。
 
 ##验证加密
 
@@ -64,6 +73,7 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 
 <!--Anchors-->
+
 [透明数据加密 (TDE)]: https://msdn.microsoft.com/zh-cn/library/bb934049.aspx
 [sys.databases]: http://msdn.microsoft.com/zh-cn/library/ms178534.aspx
 [sys.dm\_pdw\_nodes\_database\_encryption\_keys]: https://msdn.microsoft.com/zh-cn/library/mt203922.aspx
@@ -72,4 +82,4 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 <!--Link references-->
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1010_2016-->

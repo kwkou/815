@@ -5,12 +5,17 @@
    documentationCenter="NA"
    authors="sonyam"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/22/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/28/2016"
+   wacn.date="10/17/2016"/>  
 
 
 # 使用 DMV 监视工作负荷
@@ -19,7 +24,7 @@
 
 ## 监视连接
 
-[Sys.dm\_pdw\_exec\_sessions][] 视图允许你监视与 Azure SQL 数据仓库数据库的连接。此视图包含活动会话，以及最近断开连接的会话的历史记录。session\_id 是此视图的主键，并为每次新的登录按顺序分配。
+所有登录到 SQL 数据仓库的操作都记录到 [sys.dm\_pdw\_exec\_sessions][]。此 DMV 包含最后 10,000 个登录。session\_id 是主键，每次进行新的登录时按顺序分配。
 
 
 	SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed';
@@ -27,9 +32,9 @@
 
 ## 监视查询执行
 
-若要监视查询执行情况，请使用 [sys.dm\_pdw\_exec\_requests][] 启动。此视图包含进行中的查询，以及最近完成的查询的历史记录。request\_id 对每个查询进行唯一标识，并且为此视图的主键。按顺序对每个新的查询分配 request\_id。针对给定 session\_id 查询此表将显示给定登录的所有查询。
+在 SQL 数据仓库上执行的所有查询都记录到 [sys.dm\_pdw\_exec\_requests][]。此 DMV 包含最后 10,000 个执行的查询。request\_id 对每个查询进行唯一标识，并且为此 DMV 的主键。request\_id 在每次进行新的查询时按顺序分配，并会加上前缀 QID，代表查询 ID。针对给定 session\_id 查询此 DMV 将显示给定登录的所有查询。
 
->[AZURE.NOTE] 存储过程使用多个 request\_id。将按顺序分配请求 id。
+>[AZURE.NOTE] 存储过程使用多个请求 ID。按先后顺序分配请求 ID。
 
 以下是调查特定查询的查询执行计划和时间所要遵循的步骤。
 
@@ -48,16 +53,30 @@
 	FROM sys.dm_pdw_exec_requests 
 	ORDER BY total_elapsed_time DESC;
 
+	-- Find a query with the Label 'My Query'
+	-- Use brackets when querying the label column, as it it a key word
+	SELECT  *
+	FROM    sys.dm_pdw_exec_requests
+	WHERE   [label] = 'My Query';
+```
 
-从上面的查询结果中，记下想要调查的查询的**请求 ID**。
+从前面的查询结果中，记下想要调查的查询的**请求 ID**。
 
-由于其中并发限制，处于暂停状态的查询正在排队，有关详细信息，请参阅[并发性和工作负荷管理][]。这些查询也将出现在具有 UserConcurrencyResourceType 类型的 sys.dm\_pdw\_waits 等待查询中。查询也可能因其他原因（如准备锁定）处于等待状态。如果查询正在等待资源，请参阅[调查等待资源的查询][]。
+处于“已暂停”状态的查询是指因并发限制而排队的查询。这些查询也出现在类型为 UserConcurrencyResourceType 的 sys.dm\_pdw\_waits 等待查询中。请参阅 [Concurrency and workload management][]（并发和工作负荷管理），了解并发限制的更多详细信息。查询也可能因其他原因（如对象锁定）处于等待状态。如果查询正在等待资源，请参阅本文后面的[调查等待资源的查询][]。
 
-### 步骤 2：查找运行时间最长的查询计划步骤
-
-使用请求 ID 从 [sys.dm\_pdw\_request\_steps][] 中检索查询计划步骤的列表。通过查看总已用时间，查找长时间运行的步骤。
+为了简化在 sys.dm\_pdw\_exec\_requests 表中查找查询的过程，请使用 [LABEL][] 将注释指定给可在 sys.dm\_pdw\_exec\_requests 视图中查找的查询。
 
 
+	-- Query with Label
+	SELECT *
+	FROM sys.tables
+	OPTION (LABEL = 'My Query')
+	;
+
+
+### 步骤 2：调查查询计划
+
+使用请求 ID 从 [sys.dm\_pdw\_request\_steps][] 检索查询的分布式 SQL (DSQL) 计划。
 
 	-- Find the distributed query plan steps for a specific query.
 	-- Replace request_id with value from Step 1.
@@ -66,15 +85,16 @@
 	WHERE request_id = 'QID####'
 	ORDER BY step_index;
 
+当 DSQL 计划的执行时间超出预期时，原因可能是计划很复杂，包含许多 DSQL 步骤，也可能是一个步骤占用很长的时间。如果计划有很多步骤，包含多个移动操作，可考虑优化表分布，减少数据移动。[表分布][]一文说明了为何必须移动数据才能解决查询问题，并说明了如何使用某些分布策略，尽量减少数据移动。
 
-检查长时间运行的查询步骤的 *operation\_type* 列并记下**步骤索引**：
+若要查看单个步骤的更多详细信息，可检查长时间运行的查询步骤的 *operation\_type* 列并记下**步骤索引**：
 
 - 针对以下 **SQL 操作**继续执行步骤 3a：OnOperation、RemoteOperation、ReturnOperation。
 - 针对以下**数据移动操作**继续执行步骤 3b：ShuffleMoveOperation、BroadcastMoveOperation、TrimMoveOperation、PartitionMoveOperation、MoveOperation、CopyOperation。
 
-### 步骤 3a：查找 SQL 步骤的执行进度
+### 步骤 3a：查看分布式数据库上的 SQL
 
-使用请求 ID 和步骤索引来从 [sys.dm\_pdw\_sql\_requests][] 中检索详细信息，其中包含有关 SQL Server 分布式实例的查询执行情况的信息。
+使用请求 ID 和步骤索引从 [sys.dm\_pdw\_sql\_requests][] 中检索详细信息，其中包含所有分布式数据库上的查询步骤的执行信息。
 
 
 	-- Find the distribution run times for a SQL step.
@@ -84,7 +104,7 @@
 	WHERE request_id = 'QID####' AND step_index = 2;
 
 
-如果查询正在运行，则可以使用 [DBCC PDW\_SHOWEXECUTIONPLAN][] 检索特定分发中当前正在运行的 SQL 步骤的 SQL Server 计划高速缓存中的 SQL Server 估计计划。
+当查询步骤正在运行时，可以使用 [DBCC PDW\_SHOWEXECUTIONPLAN][] 从 SQL Server 计划缓存中检索 SQL Server 估计计划，了解在特定分布基础上运行的步骤。
 
 
 	-- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node.
@@ -93,9 +113,9 @@
 	DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 
 
-### 步骤 3b：查找 DMS 步骤的执行进度
+### 步骤 3b：查看在分布式数据库上进行的数据移动
 
-使用请求 ID 和步骤索引检索对 [sys.dm\_pdw\_dms\_workers][] 的每个分发运行的数据移动步骤的相关信息。
+使用请求 ID 和步骤索引检索在 [sys.dm\_pdw\_dms\_workers][] 中的每个分布上运行的数据移动步骤的相关信息。
 
 
 	-- Find the information about all the workers completing a Data Movement Step.
@@ -154,16 +174,18 @@
 [管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
-[并发性和工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
+[表分布]: /documentation/articles/sql-data-warehouse-tables-distribute
+[Concurrency and workload management]: /documentation/articles/sql-data-warehouse-develop-concurrency
 [调查等待资源的查询]: /documentation/articles/sql-data-warehouse-manage-monitor#waiting/
 
 <!--MSDN references-->
 [sys.dm\_pdw\_dms\_workers]: http://msdn.microsoft.com/zh-cn/library/mt203878.aspx
 [sys.dm\_pdw\_exec\_requests]: http://msdn.microsoft.com/zh-cn/library/mt203887.aspx
-[Sys.dm\_pdw\_exec\_sessions]: http://msdn.microsoft.com/zh-cn/library/mt203883.aspx
+[sys.dm\_pdw\_exec\_sessions]: http://msdn.microsoft.com/zh-cn/library/mt203883.aspx
 [sys.dm\_pdw\_request\_steps]: http://msdn.microsoft.com/zh-cn/library/mt203913.aspx
 [sys.dm\_pdw\_sql\_requests]: http://msdn.microsoft.com/zh-cn/library/mt203889.aspx
 [DBCC PDW\_SHOWEXECUTIONPLAN]: http://msdn.microsoft.com/zh-cn/library/mt204017.aspx
 [DBCC PDW_SHOWSPACEUSED]: http://msdn.microsoft.com/zh-cn/library/mt204028.aspx
+[LABEL]: https://msdn.microsoft.com/zh-cn/library/ms190322.aspx
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->
