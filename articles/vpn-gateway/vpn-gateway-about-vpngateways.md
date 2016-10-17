@@ -85,11 +85,6 @@ VPN 网关连接需依赖于多个具有特定设置的资源。大多数资源�
 
 Azure 当前具有两个部署模型：经典模型和 Resource Manager 模型。如果 Azure 已经使用了一段时间，则您的 Azure VM 和实例角色可能是在经典 VNet 上运行。而较新的 VM 和角色实例可能是在 Resource Manager 中创建的 VNet 上运行。可以在 Vnet 之间创建连接，使其中一个 VNet 中的资源能够直接与另一个 VNet 中的资源通信。
 
-#### VNet 对等互连
-
-只要虚拟网络符合特定要求，就能使用 VNet 对等互连来创建连接。VNet 对等互连不使用虚拟网络网关。[VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)目前以预览版提供。
-
-
 ### VNet 到 VNet 的部署模型和方法
 
 [AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
@@ -133,7 +128,7 @@ ExpressRoute 可以从 WAN 与 Microsoft 服务（包括 Azure）直接建立专
 
 ## 后续步骤
 
-规划 VPN 网关配置。请参阅 [VPN Gateway Planning and Design](/documentation/articles/vpn-gateway-plan-design/)（VPN 网关规划和设计）及 [Connecting your on-premises network to Azure](/documentation/articles/guidance-connecting-your-on-premises-network-to-azure/)（将本地网络连接到 Azure）。
+规划 VPN 网关配置。请参阅 [VPN Gateway Planning and Design](/documentation/articles/vpn-gateway-plan-design/)（VPN 网关规划和设计）。
 
 
 
