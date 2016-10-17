@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/16/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="mobile-xamarin"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   	wacn.date="10/17/2016"/>  
+
 
 
 # 将 Azure AD 集成到 Xamarin 应用程序中
@@ -34,10 +40,10 @@ Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备
 3. 安装并配置 ADAL。
 4. 使用 ADAL 从 Azure AD 获取令牌。
 
-若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
+若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ## *0.设置 Xamarin 开发环境*
-因为本教程包含 iOS、Android 和 Windows 项目，所以你需要 Visual Studio 和 Xamarin。若要创建必要的环境，请遵循 MSDN 上 [Visual Studio 和 Xamarin 的设置和安装](https://msdn.microsoft.com/library/mt613162.aspx)中的完整说明。这些说明包含的材料可供你在等待安装程序完成时查看，以深入了解 Xamarin。
+因为本教程包含 iOS、Android 和 Windows 项目，所以你需要 Visual Studio 和 Xamarin。若要创建必要的环境，请遵循 MSDN 上 [Visual Studio 和 Xamarin 的设置和安装](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx)中的完整说明。这些说明包含的材料可供你在等待安装程序完成时查看，以深入了解 Xamarin。
 
 完成必要的设置后，在 Visual Studio 中打开解决方案以开始操作。你会看到六个项目：五个特定于平台的项目，一个要在所有平台之间共享的可移植类库，即 `DirectorySearcher.cs`
 
@@ -57,13 +63,26 @@ Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备
 ## *2.安装并配置 ADAL*
 将应用程序注册到 Azure AD 后，可以安装 ADAL 并编写标识相关的代码。为了使 ADAL 能够与 Azure AD 通信，需要为 ADAL 提供一些有关应用程序的注册信息。
 -	首先，使用程序包管理器控制台将 ADAL 添加到解决方案中的各个项目。
-		
-	
-`PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirectorySearcherLib`
-`PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Android`
-`PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Desktop`
-`PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-iOS`
-`PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Universal`
+
+`
+PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirectorySearcherLib
+`
+
+`
+PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Android
+`
+
+`
+PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Desktop
+`
+
+`
+PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-iOS
+`
+
+`
+PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Universal
+`
 
 - 你应会发现，每个项目中添加了两个库 - ADAL 的 PCL 部分，和特定于平台的部分。
 
@@ -73,7 +92,7 @@ Xamarin 允许你使用 C# 编写可在 iOS、Android 和 Windows（移动设备
     - `returnUri` 是你在门户中输入的 redirectUri，例如 `http://DirectorySearcher`。
 
 ## *3.使用 ADAL 从 Azure AD 获取令牌*
-几乎所有的应用程序身份验证逻辑都在 `DirectorySearcher.SearchByAlias(...)` 中。在特定于平台的项目中，所要做的一切就是将上下文参数传递到 `DirectorySearcher` PCL。
+*几乎*所有的应用程序身份验证逻辑都在 `DirectorySearcher.SearchByAlias(...)` 中。在特定于平台的项目中，所要做的一切就是将上下文参数传递到 `DirectorySearcher` PCL。
 
 - 首先打开 `DirectorySearcher.cs`，然后将一个新参数添加到 `SearchByAlias(...)` 方法。`IPlatformParameters` 是上下文参数，用于封装 ADAL 需要对其执行身份验证的特定于平台的对象。
 
@@ -83,10 +102,10 @@ C#
 		{
 		
 
--	接下来，初始化 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标。然后调用 `AcquireTokenAsync(...)`，该类将会接受 `IPlatformParameters` 对象，并调用所需的身份验证流来向应用程序返回令牌。
+		-	接下来，初始化 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标。然后调用 `AcquireTokenAsync(...)`，该类将会接受 `IPlatformParameters` 对象，并调用所需的身份验证流来向应用程序返回令牌。
 
 C#
-		
+
 		...
 		    AuthenticationResult authResult = null;
 		    try
@@ -175,5 +194,4 @@ C#
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
- 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

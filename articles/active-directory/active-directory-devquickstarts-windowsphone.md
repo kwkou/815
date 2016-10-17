@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/16/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="mobile-windows-phone"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+	wacn.date="10/17/2016"/>  
+
 
 
 
@@ -26,7 +32,7 @@
 
 对于需要访问受保护资源的 .NET 本机客户端，Azure AD 提供 Active Directory 身份验证库 (ADAL)。在本质上，ADAL 的唯一用途就是方便应用程序获取访问令牌。为了演示操作的简单性，下面我们要生成一个“目录搜索器”Windows Phone 8.1 应用程序，该应用程序可以：
 
--	使用 [OAuth 2.0 身份验证协议](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx)获取调用 Azure AD Graph API 的访问令牌。
+-	使用 [OAuth 2.0 身份验证协议](/documentation/articles/active-directory-protocols-oauth-code/)获取调用 Azure AD Graph API 的访问令牌。
 -	在目录中搜索具有给定 UPN 的用户。
 -	将用户注销。
 
@@ -38,8 +44,7 @@
 
 若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
-## 1.注册目录搜索器应用程序  
-
+## *1.注册目录搜索器应用程序*
 若要让应用程序获取令牌，首先需要在 Azure AD 租户中注册该应用程序，并授予它访问 Azure AD Graph API 的权限：
 
 -	登录到 [Azure 管理门户](https://manage.windowsazure.cn)
@@ -52,7 +57,7 @@
 -	完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
 - 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。对于“Azure Active Directory”应用程序，在“委托的权限”下添加“访问组织的目录”权限。这样，你的应用程序便可以在 Graph API 中查询用户。
 
-## 2.安装并配置 ADAL
+## *2.安装并配置 ADAL*
 将应用程序注册到 Azure AD 后，可以安装 ADAL 并编写标识相关的代码。为了使 ADAL 能够与 Azure AD 通信，需要为 ADAL 提供一些有关应用程序的注册信息。
 -	首先，使用 Package Manager Console 将 ADAL 添加到 DirectorySearcher 项目。
 
@@ -74,79 +79,79 @@
 	ms-app://s-1-15-2-1352796503-54529114-405753024-3540103335-3203256200-511895534-1429095407/
 
 
-- 返回到 Azure 管理门户中应用程序的“配置”选项卡，并将 **RedirectUri** 的值替换为此值。  
+- 返回到 Azure 管理门户中应用程序的“配置”选项卡，并将 **RedirectUri** 的值替换为此值。
 
-## 3.使用 ADAL 从 Azure AD 获取令牌
+## *3.使用 ADAL 从 Azure AD 获取令牌*
 ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，它只需调用 `authContext.AcquireToken(…)`，然后 ADAL 就会负责其余的工作。
 
 -	第一步是初始化应用程序的 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标，并告诉 ADAL 如何缓存令牌。
 
 C#
 
-	public MainPage()
-	{
-	    ...
-
-	    // ADAL for Windows Phone 8.1 builds AuthenticationContext instances through a factory
-	    authContext = AuthenticationContext.CreateAsync(authority).GetResults();
-	}
+		public MainPage()
+		{
+		    ...
+		
+		    // ADAL for Windows Phone 8.1 builds AuthenticationContext instances through a factory
+		    authContext = AuthenticationContext.CreateAsync(authority).GetResults();
+		}
 
 
 - 现在查找 `Search(...)` 方法，当用户在应用程序的 UI 中单击“搜索”按钮时，将调用该方法。此方法将向 Azure AD Graph API 发出 GET 请求，以查询其 UPN 以给定搜索词开头的用户。但是，若要查询 Graph API，你需要在请求的 `Authorization` 标头中包含 access\_token - 这是 ADAL 传入的位置。
 
 C#
 		
-	private async void Search(object sender, RoutedEventArgs e)
-	{
-	    ...
-
-	    // Try to get a token without triggering any user prompt.
-	    // ADAL will check whether the requested token is in ADAL's token cache or can otherwise be obtained without user interaction.
-	    AuthenticationResult result = await authContext.AcquireTokenSilentAsync(graphResourceId, clientId);
-	    if (result != null && result.Status == AuthenticationStatus.Success)
-	    {
-	        // A token was successfully retrieved.
-	        QueryGraph(result);
-	    }
-	    else
-	    {
-	        // Acquiring a token without user interaction was not possible.
-	        // Trigger an authentication experience and specify that once a token has been obtained the QueryGraph method should be called
-	        authContext.AcquireTokenAndContinue(graphResourceId, clientId, redirectURI, QueryGraph);
-	    }
-	}
+		private async void Search(object sender, RoutedEventArgs e)
+		{
+		    ...
+		
+		    // Try to get a token without triggering any user prompt.
+		    // ADAL will check whether the requested token is in ADAL's token cache or can otherwise be obtained without user interaction.
+		    AuthenticationResult result = await authContext.AcquireTokenSilentAsync(graphResourceId, clientId);
+		    if (result != null && result.Status == AuthenticationStatus.Success)
+		    {
+		        // A token was successfully retrieved.
+		        QueryGraph(result);
+		    }
+		    else
+		    {
+		        // Acquiring a token without user interaction was not possible.
+		        // Trigger an authentication experience and specify that once a token has been obtained the QueryGraph method should be called
+		        authContext.AcquireTokenAndContinue(graphResourceId, clientId, redirectURI, QueryGraph);
+		    }
+		}
 
 - 如果需要交互式身份验证，ADAL 将使用 Windows Phone 的 Web 身份验证代理 (WAB) 和[延续模型](http://www.cloudidentity.com/blog/2014/06/16/adal-for-windows-phone-8-1-deep-dive/)来显示 Azure AD 登录页。当用户登录时，应用程序需要向 ADAL 传递 WAB 交互的结果。这只要实现 `ContinueWebAuthentication` 接口即可：
 
 C#
 		
-	// This method is automatically invoked when the application
-	// is reactivated after an authentication interaction through WebAuthenticationBroker.
-	public async void ContinueWebAuthentication(WebAuthenticationBrokerContinuationEventArgs args)
-	{
-	    // pass the authentication interaction results to ADAL, which will
-	    // conclude the token acquisition operation and invoke the callback specified in AcquireTokenAndContinue.
-	    await authContext.ContinueAcquireTokenAsync(args);
-	}
+		// This method is automatically invoked when the application
+		// is reactivated after an authentication interaction through WebAuthenticationBroker.
+		public async void ContinueWebAuthentication(WebAuthenticationBrokerContinuationEventArgs args)
+		{
+		    // pass the authentication interaction results to ADAL, which will
+		    // conclude the token acquisition operation and invoke the callback specified in AcquireTokenAndContinue.
+		    await authContext.ContinueAcquireTokenAsync(args);
+		}
 
 
 - 现在，可以使用 ADAL 返回给应用程序的 `AuthenticationResult`。在 `QueryGraph(...)` 回调中，在 Authorization 标头内将你获取的 access\_token 附加到 GET 请求：
 
 C#
 		
-	private async void QueryGraph(AuthenticationResult result)
-	{
-	    if (result.Status != AuthenticationStatus.Success)
-	    {
-	        MessageDialog dialog = new MessageDialog(string.Format("If the error continues, please contact your administrator.\n\nError: {0}\n\nError Description:\n\n{1}", result.Error, result.ErrorDescription), "Sorry, an error occurred while signing you in.");
-	        await dialog.ShowAsync();
-	    }
-
-	    // Add the access token to the Authorization Header of the call to the Graph API, and call the Graph API.
-	    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
-
-	    ...
-	}
+		private async void QueryGraph(AuthenticationResult result)
+		{
+		    if (result.Status != AuthenticationStatus.Success)
+		    {
+		        MessageDialog dialog = new MessageDialog(string.Format("If the error continues, please contact your administrator.\n\nError: {0}\n\nError Description:\n\n{1}", result.Error, result.ErrorDescription), "Sorry, an error occurred while signing you in.");
+		        await dialog.ShowAsync();
+		    }
+		
+		    // Add the access token to the Authorization Header of the call to the Graph API, and call the Graph API.
+		    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
+		
+		    ...
+		}
 
 - 你还可以使用 `AuthenticationResult` 对象在应用程序中显示有关用户的信息。在 `QueryGraph(...)` 方法中，使用该结果在页上显示用户的 ID：
 
@@ -159,13 +164,13 @@ C#
 
 C#
 		
-	private void SignOut()
-	{
-	    // Clear session state from the token cache.
-	    authContext.TokenCache.Clear();
-
-	    ...
-	}
+		private void SignOut()
+		{
+		    // Clear session state from the token cache.
+		    authContext.TokenCache.Clear();
+		
+		    ...
+		}
 
 
 祝贺你！ 现在，你已创建一个有效的 Windows Phone 应用程序，它可以对用户进行身份验证，使用 OAuth 2.0 安全调用 Web API，并获取有关用户的基本信息。如果你尚未这样做，可以在租户中填充一些用户。运行你的 DirectorySearcher 应用程序，并使用这些用户之一进行登录。根据用户的 UPN 搜索其他用户。关闭应用程序，然后重新运行它。请注意，用户的会话将保持不变。注销，然后以其他用户身份重新登录。
@@ -179,4 +184,4 @@ C#
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

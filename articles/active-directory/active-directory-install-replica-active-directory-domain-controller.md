@@ -4,13 +4,19 @@
 	services="virtual-network"
 	documentationCenter=""
 	authors="curtand"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags
 	ms.service="virtual-network"
-	ms.date="05/10/2016"
-	wacn.date="07/18/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2016"
+	ms.author="curtand"
+   	wacn.date="10/17/2016"/>  
+
 
 
 # 在 Azure 虚拟网络中安装副本 Active Directory 域控制器
@@ -20,34 +26,33 @@
 你也有可能对下列相关主题感兴趣：
 
 -  你可以选择性地在 Azure 虚拟网络中安装新的 Active Directory 林。如需相关步骤，请参阅[在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)。
--  有关在 Azure 虚拟网络上安装 Active Directory 域服务 (AD DS) 的概念性指南，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/library/azure/jj156090.aspx)。
+-  有关在 Azure 虚拟网络上安装 Active Directory 域服务 (AD DS) 的概念性指南，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)。
 
 
 ## 方案示意图
 
 在此案例中，外部用户需要访问在添加域的服务器上运行的应用程序。运行应用程序服务器和副本 DC 的 VM 安装在 Azure 虚拟网络中。虚拟网络可通过[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/) 连接方式连接到本地网络（如下图中所示），或者你可以使用 [ExpressRoute](/documentation/services/expressroute/) 进行更快地连接。
 
-应用程序服务器和 DC 将部署在独立的云服务中以分散计算处理，并在[可用性集](/documentation/articles/virtual-machines-windows-manage-availability/)中改进容错功能。
-DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相互复制。不需要任何同步工具。
+应用程序服务器和 DC 将部署在独立的云服务中以分散计算处理，并在[可用性集](/documentation/articles/virtual-machines-windows-manage-availability/)中改进容错功能。DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相互复制。不需要任何同步工具。
 
 ![用图解法表示 pf Active Directory 域控制器 Azure vnet][1]
 
 ## 创建 Azure 虚拟网络的 Active Directory 站点
 
-一个不错的想法是在 Active Directory 中创建一个站点来表示对应于虚拟网络的网络区域。这有助于优化身份验证、复制及其他 DC 位置操作。以下步骤说明了如何创建站点。有关更多背景信息，请参阅[添加新站点](https://technet.microsoft.com/library/cc781496.aspx)。
+一个不错的想法是在 Active Directory 中创建一个站点来表示对应于虚拟网络的网络区域。这有助于优化身份验证、复制及其他 DC 位置操作。以下步骤说明了如何创建站点。有关更多背景信息，请参阅[添加新站点](https://technet.microsoft.com/zh-cn/library/cc781496.aspx)。
 
 1. 打开 Active Directory 站点和服务：“服务器管理器”>“工具”>“Active Directory 站点和服务”。
-2. 创建一个站点用于表示创建的 Azure 虚拟网络所在的区域：单击“站点”>“操作”>“添加站点”> 键入新站点的名称（例如“Azure 美国西部”）> 选择站点链接 >“确定”。
+2. 创建一个站点用于表示创建的 Azure 虚拟网络所在的区域：单击“站点”>“操作”>“添加站点”> 键入新站点的名称（例如“Azure 中国北部”）> 选择站点链接 >“确定”。
 3. 创建子网并将其与新站点关联：双击“站点”> 右键单击“子网”>“添加子网”> 键入虚拟网络的 IP 地址范围（例如方案示意图中的 10.1.0.0/16）> 选择新的 Azure 站点 >“确定”。
 
 ## 创建 Azure 虚拟网络
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn)中，单击“添加”>“网络服务”>“虚拟网络”>“自定义创建”，然后使用以下值来完成向导。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，单击“新建”>“网络服务”>“虚拟网络”>“自定义创建”，然后使用以下值完成向导。
 
     在此向导页上... | 指定这些值
 	------------- | -------------
 	**虚拟网络详细信息** | <p>名称：键入虚拟网络的名称，例如 WestUSVNet。</p><p>区域：选择最靠近的区域。</p>
-	**DNS 和 VPN 连接** | <p>DNS 服务器：指定一个或多个本地 DNS 服务器的名称与 IP 地址。</p><p>连接：选择“配置站点到站点 VPN”。</p><p>局域网：指定新的局域网。</p>
+	**DNS 和 VPN 连接** | <p>DNS 服务器：指定一个或多个本地 DNS 服务器的名称与 IP 地址。</p><p>连接：选择“配置站点到站点 VPN”。</p><p>局域网：指定新的局域网。</p><p>如果你使用 ExpressRoute 而不是 VPN，请参阅[通过 Exchange 提供商配置 ExpressRoute 连接](/documentation/articles/expressroute-configuring-exps/)。</p>
 	**站点到站点连接** | <p>名称：键入本地网络的名称。</p><p>VPN 设备 IP 地址：指定要连接到虚拟网络的设备的公共 IP 地址。VPN 设备不能位于 NAT 的后面。</p><p>地址：指定本地网络的地址范围（例如方案示意图中的 192.168.0.0/16）。</p>
 	**虚拟网络地址空间** | <p>地址空间：指定你要在 Azure 虚拟网络中运行的 VM IP 地址范围（例如方案示意图中的 10.1.0.0/16）。此地址范围不能与本地网络的地址范围重叠。</p><p>子网：指定应用程序服务器的子网名称和地址（例如 Frontend、10.1.1.0/24）以及域控制器的子网名称和地址（例如 Backend、10.1.2.0/24）。</p><p>单击“添加网关子网”。</p>
 
@@ -57,10 +62,9 @@ DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相�
 
 ## 为 DC 角色创建 Azure VM
 
-重复以下步骤，根据需要创建用于托管 DC 角色的 VM。应该至少部署两个虚拟域控制器来提供容错和冗余。如果 Azure 虚拟网络包含至少两个采用类似配置的 DC（即，它们都是 GC、运行 DNS 服务器，并且都不包含任何 FSMO 角色，等等），那么，你可将运行这些 DC 的 VM 放在可用性集中，以获得更高的容错能力。
-若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
+重复以下步骤，根据需要创建用于托管 DC 角色的 VM。应该至少部署两个虚拟域控制器来提供容错和冗余。如果 Azure 虚拟网络包含至少两个采用类似配置的 DC（即，它们都是 GC、运行 DNS 服务器，并且都不包含任何 FSMO 角色，等等），那么，你可将运行这些 DC 的 VM 放在可用性集中，以获得更高的容错能力。若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn)中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
+1. 在 [Azure 经典管理门户中](https://manage.windowsazure.cn)中单击“新建”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 
     在此向导页上... | 指定这些值
 	------------- | -------------
@@ -78,11 +82,11 @@ DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相�
 
 ## 在 Azure VM 上安装 AD DS
 
-登录 VM，并确认你已通过站点到站点 VPN 建立连接，或者与本地网络上的资源建立了 ExpressRoute 连接。然后在 Azure VM 上安装 AD DS。可以使用在本地网络上安装其他域控制器的相同过程（UI、Windows PowerShell 或应答文件）。安装 AD DS 时，请务必指定新卷的 AD 数据库、日志和 SYSVOL 的位置。如果需要在 AD DS 安装中使用刷新程序，请参阅[安装 Active Directory 域服务（级别 100）](https://technet.microsoft.com/library/hh472162.aspx)或[在现有域中安装副本 Windows Server 2012 域控制器（级别 200）](https://technet.microsoft.com/library/jj574134.aspx)。
+登录 VM，并确认你已通过站点到站点 VPN 建立连接，或者与本地网络上的资源建立了 ExpressRoute 连接。然后在 Azure VM 上安装 AD DS。可以使用在本地网络上安装其他域控制器的相同过程（UI、Windows PowerShell 或应答文件）。安装 AD DS 时，请务必指定新卷的 AD 数据库、日志和 SYSVOL 的位置。如果需要在 AD DS 安装中使用刷新程序，请参阅[安装 Active Directory 域服务（级别 100）](https://technet.microsoft.com/zh-cn/library/hh472162.aspx)或[在现有域中安装副本 Windows Server 2012 域控制器（级别 200）](https://technet.microsoft.com/zh-cn/library/jj574134.aspx)。
 
 ## 重新配置虚拟网络的 DNS 服务器
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn)中，单击虚拟网络的名称，然后单击“配置”选项卡以[重新设置虚拟网络的 DNS 服务器 IP 地址](/documentation/articles/virtual-networks-manage-dns-in-vnet/)，从而使用分配到副本域控制器的静态 IP 地址，而不是本地 DNS 服务器的 IP 地址。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，单击虚拟网络的名称，然后单击“配置”选项卡，[重新配置虚拟网络的 DNS 服务器 IP 地址](/documentation/articles/virtual-networks-manage-dns-in-vnet/)，以使用分配到副本 DC 的静态 IP 地址，而不使用本地 DNS 服务器的 IP 地址。
 
 2. 为了确保虚拟网络上的所有副本 DC VM 都已配置为使用虚拟网络上的 DNS 服务器，请单击“虚拟机”，单击每个 VM 的状态列，然后单击“重新启动”。等到 VM 显示“正在运行”状态，然后尝试登录其中。
 
@@ -101,20 +105,20 @@ DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相�
 
 若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
-有关使用 Windows PowerShell 的详细信息，请参阅 [Azure Cmdlet 入门](https://msdn.microsoft.com/library/azure/jj554332.aspx)和 [Azure Cmdlet 参考](https://msdn.microsoft.com/library/azure/jj554330.aspx)。
+有关使用 Windows PowerShell 的详细信息，请参阅 [Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)和 [Azure Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)。
 
 ## 其他资源
 
--  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/library/azure/jj156090.aspx)
--  [如何使用 Azure PowerShell 将现有的本地 Hyper-V 域控制器上载到 Azure](http://support.microsoft.com/kb/2904015)
+-  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)
+-  [如何使用 Azure PowerShell 将现有的本地 Hyper-V 域控制器上载到 Azure](http://support.microsoft.com/zh-cn/kb/2904015)
 -  [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
 -  [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)
--  [Microsoft Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
--  [Microsoft Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
--  [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
--  [Azure 管理 Cmdlet](https://msdn.microsoft.com/library/azure/jj152841)
+-  [Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
+-  [Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
+-  [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
+-  [Azure 管理 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/jj152841)
 
 <!--Image references-->
 [1]: ./media/active-directory-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -1,20 +1,26 @@
-<properties 
-	pageTitle="Azure AD 服务限制和局限性" 
-	description="Azure Active Directory 服务的使用限制和其他服务限制。" 
-	services="active-directory" 
-	documentationCenter="" 
+<properties
+	pageTitle="Azure Active Directory 服务限制和局限性"
+	description="Azure Active Directory 服务的使用限制和其他服务限制。"
+	services="active-directory"
+	documentationCenter=""
 	authors="curtand"
 	manager="stevenpo"
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="04/26/2016"
-	wacn.date="08/22/2016"/>
+<tags
+	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="08/23/2016"
+	ms.author="curtand"
+   	wacn.date="10/17/2016"/>  
+
 
 # Azure AD 服务限制和局限性
 
-如果你正查找 Microsoft Azure 服务限制全集，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
+本文介绍 Azure Active Directory (Azure AD) 服务的使用限制和其他服务限制。如果正在查找 Azure 服务限制全集，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
 
 [AZURE.INCLUDE [AAD-service-limits](../../includes/active-directory-service-limits-include.md)]
 
@@ -22,4 +28,4 @@
 - [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
 - [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_1010_2016-->
