@@ -10,8 +10,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/28/2016"
-   wacn.date="08/22/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/08/2016"
+   wacn.date="10/17/2016"/>  
+
 
 # 语言元素
 
@@ -246,6 +251,7 @@
 - [sp\_pdw\_remove\_network\_credentials](https://msdn.microsoft.com/zh-cn/library/mt204038.aspx)
 - [sp\_pkeys](https://msdn.microsoft.com/zh-cn/library/ms189813.aspx)
 - [sp\_prepare](https://msdn.microsoft.com/zh-cn/library/ff848808.aspx)
+- [sp\_spaceused](https://msdn.microsoft.com/zh-cn/library/ms188776.aspx)
 - [sp\_special\_columns\_100](https://msdn.microsoft.com/zh-cn/library/mt204025.aspx)
 - [sp\_sproc\_columns](https://msdn.microsoft.com/zh-cn/library/ms182705.aspx)
 - [sp\_statistics](https://msdn.microsoft.com/zh-cn/library/ms173842.aspx)
@@ -288,4 +294,4 @@
 
 <!--MSDN references-->
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1010_2016-->

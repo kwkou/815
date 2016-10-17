@@ -3,14 +3,20 @@
    description="有关在开发解决方案时将 Azure 流分析与 Azure SQL 数据仓库配合使用的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="sahaj08"
+   authors="kevinvngo"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="08/88/2016"
-   wacn.date="09/26/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"/>  
+
 
 # 将 Azure 流分析与 SQL 数据仓库配合使用
 
@@ -44,17 +50,19 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 ### 步骤 3
 在下一页输入以下值：
 
-- 输出别名：输入此作业输出的友好名称。
-- 订阅：
-	- 如果你的 SQL 数据仓库数据库与此流分析作业位于同一订阅中，请选择“使用当前订阅中的 SQL 数据库”。
-	- 如果你的数据库在不同的订阅中，请选择“使用其他订阅中的 SQL 数据库”。
-- 数据库：指定目标数据库的名称。
-- 服务器名称：为刚刚指定的数据库指定服务器名称。
+- *输出别名* ：输入此作业输出的友好名称。
+- *订阅* ：
+	- 如果 SQL 数据仓库数据库与此流分析作业位于同一订阅中，请选择“使用当前订阅中的 SQL 数据库”。
+	- 如果数据库在不同的订阅中，请选择“使用其他订阅中的 SQL 数据库”。
+- *数据库* ：指定目标数据库的名称。
+- *服务器名称* ：为刚刚指定的数据库指定服务器名称。可以使用 Azure 经典门户查找此信息。
+
+![][server-name]  
 
 
-- 用户名：指定具有数据库写入访问权限的帐户的用户名。
-- 密码：提供指定的用户帐户的密码。
-- 表：指定数据库中目标表的名称。
+- *用户名* ：指定具有数据库写入访问权限的帐户的用户名。
+- *密码* ：提供指定的用户帐户的密码。
+- *表* ：指定数据库中目标表的名称。
 
 ![][add-database]
 
@@ -74,6 +82,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 <!--Image references-->
 
+
 [add-output]: ./media/sql-data-warehouse-integrate-azure-stream-analytics/add-output.png
 [server-name]: ./media/sql-data-warehouse-integrate-azure-stream-analytics/dw-server-name.png
 [add-database]: ./media/sql-data-warehouse-integrate-azure-stream-analytics/add-database.png
@@ -89,7 +98,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 <!--MSDN references-->
 
 <!--Other Web references-->
+
 [Azure Stream Analytics documentation]: /documentation/services/stream-analytics/
 
-
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_1010_2016-->

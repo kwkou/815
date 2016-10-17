@@ -1,4 +1,3 @@
-<!-- Remove portal -->
 <properties
    pageTitle="在 Azure SQL 数据仓库中管理数据库 | Azure"
    description="管理 SQL 数据仓库数据库的概述。包括管理工具、DWU 和向外扩展性能，对查询性能进行故障排除，建立良好的安全策略，以及从数据损坏或区域中断还原数据库。"
@@ -6,12 +5,18 @@
    documentationCenter="NA"
    authors="barbkess"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/13/2016"
-   wacn.date="07/18/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"/>  
+
 
 # 在 Azure SQL 数据仓库中管理数据库
 
@@ -33,17 +38,17 @@ SQL 数据仓库自动执行管理数据库的许多方面的操作。例如，�
 
 可以使用多种工具来管理 SQL 数据仓库中的数据库。管理数据库时，你将为需要执行的每种类型的任务制定工具首选项。
 
-<!-- ### Azure 门户
-[Azure 门户][]是一个基于 Web 的门户，你可以从中创建、更新和删除数据库以及监视数据库资源。如果你刚开始使用 Azure、管理少量的数据仓库数据库或需要快速执行某些操作，该工具是理想之选。
+### Azure 门户预览
+[Azure 门户预览][]是一个基于 Web 的门户，你可以从中创建、更新和删除数据库以及监视数据库资源。如果你刚开始使用 Azure、管理少量的数据仓库数据库或需要快速执行某些操作，该工具是理想之选。
 
-若要开始使用 Azure 门户，请参阅[创建 SQL 数据仓库（Azure 门户）][]。 -->
+若要开始使用 Azure 门户预览，请参阅[创建 SQL 数据仓库（Azure 门户预览）][]。
 
 ### Visual Studio 中的 SQL Server Data Tools
 使用 Visual Studio 中的 [SQL Server Data Tools][] (SSDT)，可以连接到你的数据库并对其进行管理和开发。如果你是熟悉 Visual Studio 或其他集成开发环境 (IDE) 的应用程序开发人员，请尝试使用 Visual Studio 中的 SSDT。
 
 使用 SSDT 包含的 SQL Server 对象资源管理器，可以针对 SQL 数据仓库数据库进行可视化、连接和执行脚本。若要快速连接到 SQL 数据仓库，只需在 Azure 经典管理门户中查看数据库详细信息时，单击命令栏中的“在 Visual Studio 中打开”按钮。
 
-若要开始使用 Visual Studio 中的 SSDT，请参阅[使用 Visual Studio 连接到 Azure SQL 数据仓库][]。
+若要开始使用 Visual Studio 中的 SSDT，请参阅 [使用 Visual Studio 查询 Azure SQL 数据仓库][]。
 
 ### 命令行工具
 命令行工具最适合用于自动执行工作负荷。PowerShell 和 sqlcmd 是自动执行过程的两个很好方法。由于可为所需的作业编写脚本并自动执行此类作业，因此我们建议使用这些工具来管理大量的逻辑服务器，以及在生产环境中部署资源更改。
@@ -52,7 +57,7 @@ SQL 数据仓库自动执行管理数据库的许多方面的操作。例如，�
 
 DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信息几乎都依赖于 DMV。若要查看 SQL 数据仓库 DMV 的列表，请参阅 [SQL 数据仓库系统视图][]。
 
-若要开始，请参阅 [Connect and query with sqlcmd（使用 sqlcmd 进行连接和查询）][]和 [Create a database (PowerShell)（创建数据库 (PowerShell)）][]。
+若要开始，请参阅 [Connect and query with sqlcmd][]（使用 sqlcmd 进行连接和查询）和 [Create a database (PowerShell)][]（创建数据库 (PowerShell)）。
 
 ## 缩放计算
 
@@ -68,7 +73,7 @@ DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信�
 
 ## 性能最佳实践
 
-开始使用一种新技术时，从一开始就发现最适用的提示和技巧可以节省大量时间。浏览我们的许多主题，你会发现最佳实践。
+开始使用一种新技术时，从一开始就发现最适用的提示和技巧可以节省大量时间。用户会发现，最佳实践贯穿了许多主题。
 
 若要查看在开发工作负荷时最重要的注意事项的摘要，请参阅 [SQL 数据仓库最佳实践][]。
 
@@ -76,7 +81,7 @@ DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信�
 
 有时查询运行时间太长，但你不能确定哪个是问题所在。SQL 数据仓库包含动态管理视图 (DMV)，可用于找出哪个查询用时过长。
 
-若要查找长时间运行的查询，请参阅 [Monitor your workload using DMVs（使用 DMV 监视工作负荷）][]。
+若要查找长时间运行的查询，请参阅 [Monitor your workload using DMVs][]（使用 DMV 监视工作负荷）。
 
 ## “安全”
 
@@ -93,19 +98,20 @@ DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信�
 
 <!--Image references-->
 
+
 <!--Article references-->
-[创建 SQL 数据仓库（Azure 门户）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
-[Create a database (PowerShell)（创建数据库 (PowerShell)）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
-[connection]: /documentation/articles/sql-data-warehouse-connect-overview/
-[使用 Visual Studio 连接到 Azure SQL 数据仓库]: /documentation/articles/sql-data-warehouse-query-visual-studio/
-[Connect and query with sqlcmd（使用 sqlcmd 进行连接和查询）]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
-[Monitor your workload using DMVs（使用 DMV 监视工作负荷）]: /documentation/articles/sql-data-warehouse-manage-monitor/
-[暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#pause-compute-bk/
-[从快照还原]: /documentation/articles/sql-data-warehouse-restore-database-overview/
-[恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#resume-compute-performance-bk/
-[缩放性能]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#scale-performance-bk/
-[安全性概述]: /documentation/articles/sql-data-warehouse-overview-manage-security/
+[创建 SQL 数据仓库（Azure 门户预览）]: /documentation/articles/sql-data-warehouse-get-started-provision/
+[Create a database (PowerShell)]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[connection]: /documentation/articles/sql-data-warehouse-develop-connections/
+[Connect to Azure SQL Data Warehouse with Visual Studio]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[Connect and query with sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-development/
+[Monitor your workload using DMVs]: /documentation/articles/sql-data-warehouse-manage-monitor/
+[暂停计算]: /documentation/articles/sql-data-warehouse-overview-scalability/#pause-compute-bk
+[从快照还原]: /documentation/articles/sql-data-warehouse-backup-and-restore-from-snapshot/
+[恢复计算]: /documentation/articles/sql-data-warehouse-overview-scalability/#resume-compute-performance-bk
+[缩放性能]: /documentation/articles/sql-data-warehouse-overview-scalability/#scale-performance-bk
+[安全性概述]: /documentation/articles/sql-data-warehouse-overview-security/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [SQL 数据仓库系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
 
@@ -113,5 +119,7 @@ DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信�
 [SQL Server Data Tools]: https://msdn.microsoft.com/zh-cn/library/mt204009.aspx
 
 <!--Other web references-->
-[Azure 门户]: https://manage.windowsazure.cn
-<!---HONumber=Mooncake_0711_2016-->
+
+[Azure 门户预览]: https://portal.azure.cn
+
+<!---HONumber=Mooncake_1010_2016-->

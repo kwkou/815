@@ -5,12 +5,17 @@
 	documentationCenter=""
 	authors="barbkess"
 	manager="jhubbard"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="sql-data-warehouse"
-	ms.date="07/17/2016"
-	wacn.date="08/29/2016"/>
+	ms.workload="sql-data-warehouse"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/21/2016"
+	wacn.date="10/17/2016"/>
 
 
 # 有关 Azure SQL 数据仓库服务的所有主题
@@ -19,13 +24,16 @@
 
 
 
+## 更新的文章
 
-## 概述
+本部分列出的文章是最近更新的，所做更新是大型的或重要的。每篇更新的文章都会显示大致的代码段，说明添加的 Markdown 文本。这些文章是在 **2016-07-26** 到 **2016-08-21** 期间更新的。
 
-| &nbsp; | Url-Id | 标题 | 说明 |
-| --: | :-- | :-- | :-- |
-| 1 | overview-what-is | [什么是 Azure SQL 数据仓库？](/documentation/articles/sql-data-warehouse-overview-what-is/) | 企业级分布式数据库，可处理 PB 量级的关系数据和非关系数据。它是行业首个云数据仓库，可以在数秒内增长、收缩和暂停。 |
-| 2 | overview-workload | [数据仓库工作负荷](/documentation/articles/sql-data-warehouse-overview-workload/) | 借助 SQL 数据仓库的弹性，你可以使用数据仓库单位 (DWU) 的可调缩放性扩大、收缩或暂停计算容量。本文介绍数据仓库指标以及它们如何与 DWU 相关。 |
+| &nbsp; | 文章 | 更新的文本, 代码段 |
+| --: | :-- | :-- |
+| 1 | [SQL 数据仓库中的并发性和工作负荷管理](/documentation/articles/sql-data-warehouse-develop-concurrency/) | **遵循并发限制的查询** 大多数查询都受资源类的约束。这些查询必须同时不超出并发查询和并发槽的阈值。最终用户无法选择从并发槽模型中排除查询。重申一下，以下语句**遵循**资源类：/ INSERT-SELECT / UPDATE / DELETE / SELECT（查询用户表时）/ ALTER INDEX REBUILD / ALTER INDEX REORGANIZE / ALTER TABLE REBUILD / CREATE INDEX / CREATE CLUSTERED COLUMNSTORE INDEX / CREATE TABLE AS SELECT (CTAS) / 由数据移动服务 (DMS) 执行的数据加载/数据移动操作 **不遵循并发限制的查询例外** |
+| 2 | [迁移到高级存储的详细信息](/documentation/articles/sql-data-warehouse-migrate-to-premium-storage/) | 通过对高级存储的更改，我们还增加了数据仓库基础结构中的数据库 blob 文件的数量。如果遇到任何性能问题，建议使用以下脚本重新生成聚集列存储索引。这样会强制将一些现有数据分发到其他 blob。如果不采取任何操作，随着您将更多数据加载到数据仓库表中，数据将自然地重新分发。**先决条件：**1.数据仓库应以 1,000 DWU 或更高 DWU 运行（请参阅“缩放计算能力”）2.执行脚本的用户应为 mediumrc 角色或更高级角色 1.若要将用户添加到此角色，请执行以下语句：1. ````EXEC sp_addrolemember 'xlargerc', 'MyUser'```` ````sql /------------------------------------------------------------------------------ /- 步骤 1：创建表控制索引重建 /- 以 mediumrc 或更高级用户的身份运行 /------------------------------------------------------------ |
+
+
 
 
 
@@ -164,4 +172,4 @@
 | 68 | service-capacity-limits | [SQL 数据仓库容量限制](/documentation/articles/sql-data-warehouse-service-capacity-limits/) | SQL 数据仓库的连接、数据库、表和查询的最大值。 |
 | 69 | 故障排除 | [排查 Azure SQL 数据仓库问题](/documentation/articles/sql-data-warehouse-troubleshoot/) | 排查 Azure SQL 数据仓库问题。 |
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->

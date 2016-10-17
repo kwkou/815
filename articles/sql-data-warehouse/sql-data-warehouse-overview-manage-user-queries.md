@@ -5,12 +5,17 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="08/08/2016"
-   wacn.date="09/05/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/17/2016"
+   wacn.date="10/17/2016"/>
 
 # 在 Azure SQL 数据仓库中监视用户查询
 
@@ -34,6 +39,7 @@
 
 <!--Image references-->
 
+
 <!--Article references-->
 [查找长时间运行的查询]: /documentation/articles/sql-data-warehouse-manage-monitor/
 [并发性和工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
@@ -44,4 +50,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1010_2016-->

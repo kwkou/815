@@ -5,17 +5,25 @@
    documentationCenter=""
    authors="ronortloff"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/07/2016" 
-   wacn.date="10/10/2016"/>
+   ms.workload="data-management"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.date="08/29/2016" 
+   wacn.date="10/17/2016"/>  
+
 
 # SQL 数据仓库中的透明数据加密 (TDE) 入门
+
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/sql-data-warehouse-encryption-tde/)
 - [TSQL](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
+
 
 Azure SQL 数据仓库透明数据加密 (TDE) 无需更改应用程序，即可对静止的数据库、关联的备份和事务日志执行实时加密和解密，帮助防止恶意活动的威胁。
 
@@ -27,9 +35,12 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中打开数据库
 2. 在数据库边栏选项卡中，单击“设置”按钮
-3. 选择“透明数据加密”选项 ![][1]
-4. 选择“打开”设置 ![][2]
-5. 选择“保存” ![][3]  
+3. 选择“透明数据加密”选项 
+![][1]
+4. 选择“打开”设置 
+![][2]
+5. 选择“保存” 
+![][3]  
 
 ##禁用加密
 
@@ -37,9 +48,12 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中打开数据库
 2. 在数据库边栏选项卡中，单击“设置”按钮
-3. 选择“透明数据加密”选项 ![][1]
-4. 选择“关闭”设置 ![][4]
-5. 选择“保存” ![][5]  
+3. 选择“透明数据加密”选项 
+![][1]
+4. 选择“关闭”设置 
+![][4]
+5. 选择“保存” 
+![][5]  
 
 ##加密 DMV
 
@@ -49,6 +63,7 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 - [sys.dm\_pdw\_nodes\_database\_encryption\_keys]
 
 <!--MSDN references-->
+
 [透明数据加密 (TDE)]: https://msdn.microsoft.com/zh-cn/library/bb934049.aspx
 [sys.databases]: http://msdn.microsoft.com/zh-cn/library/ms178534.aspx
 [sys.dm\_pdw\_nodes\_database\_encryption\_keys]: https://msdn.microsoft.com/zh-cn/library/mt203922.aspx
@@ -62,4 +77,4 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 <!--Link references-->
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1010_2016-->

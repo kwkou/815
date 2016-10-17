@@ -1,27 +1,32 @@
 <properties
-   pageTitle="在 Azure 门户中创建 SQL 数据仓库 | Azure"
-   description="了解如何在 Azure 门户中创建 Azure SQL 数据仓库"
+   pageTitle="在 Azure 门户预览中创建 SQL 数据仓库 | Azure"
+   description="了解如何在 Azure 门户预览中创建 Azure SQL 数据仓库"
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="barbkess"
    manager="jhubbard"
    editor=""
-   tags="azure-sql-data-warehouse"/>
+   tags="azure-sql-data-warehouse"/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/23/2016"
-   wacn.date="10/10/2016"/>  
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/25/2016"
+   wacn.date="10/17/2016"/>  
 
 
 # 创建 Azure SQL 数据仓库
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-data-warehouse-get-started-provision/)
+- [Azure 门户预览](/documentation/articles/sql-data-warehouse-get-started-provision/)
 - [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/)
 
-本教程使用 Azure 门户来创建包含 AdventureWorksDW 示例数据库的 SQL 数据仓库。
+本教程使用 Azure 门户预览来创建包含 AdventureWorksDW 示例数据库的 SQL 数据仓库。
 
 
 ## 先决条件
@@ -29,13 +34,13 @@
 若要开始，您需要：
 
 - **Azure 帐户**：访问 [Azure 试用版][] 或者 [MSDN Azure 信用额度][]，以创建帐户。
-- **Azure SQL Server**：有关详细信息，请参阅[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器][]。
+- **Azure SQL Server**：有关详细信息，请参阅[使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器][]。
 
 > [AZURE.NOTE] 创建 SQL 数据仓库可能会导致新的计费服务。有关详细信息，请参阅 [SQL 数据仓库定价][]。
 
 ## 创建 SQL 数据仓库
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 单击“+ 新建”>“数据 + 存储”>“SQL 数据仓库”。
 
@@ -59,9 +64,11 @@
 
     - **选择源**：单击“选择源”>“示例”。Azure 使用 AdventureWorksDW 自动填充“选择示例”选项。
 
+> [AZURE.NOTE] SQL 数据仓库的默认排序规则是 SQL\_Latin1\_General\_CP1\_CI\_AS。如果需要其他排序规则，则可使用 [T-SQL][] 通过其他排序规则创建数据库。
+
 4. 单击“创建”以创建 SQL 数据仓库。
 
-5. 请稍等几分钟。数据仓库准备就绪后，应返回到 [Azure 门户](https://portal.azure.cn)。你可以在仪表板上找到你的 SQL 数据仓库，它列于 SQL 数据库之下，或在用来创建它的资源组中。
+5. 请稍等几分钟。数据仓库准备就绪后，应返回到 [Azure 门户预览](https://portal.azure.cn)。你可以在仪表板上找到你的 SQL 数据仓库，它列于 SQL 数据库之下，或在用来创建它的资源组中。
 
     ![门户视图](./media/sql-data-warehouse-get-started-provision/database-portal-view.png)
 
@@ -80,7 +87,7 @@
 查看[最佳实践][]也是一个很好的想法。
 
 <!--Article references-->
-[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started#create-an-azure-sql-database-logical-server
+[使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started#create-an-azure-sql-database-logical-server
 [Create an Azure SQL Database logical server with PowerShell]: /documentation/articles/sql-database-get-started-powershell#database-setup-create-a-resource-group-server-and-firewall-rule
 [resource groups]: /documentation/articles/resource-group-template-deploy-portal/
 [最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
@@ -88,14 +95,16 @@
 [订阅]: /documentation/articles/azure-glossary-cloud-terminology#subscription
 [resource group]: /documentation/articles/azure-glossary-cloud-terminology#resource-group
 
+ 
 <!--MSDN references-->
 [sp\_set\_firewall\_rule]: https://msdn.microsoft.com/zh-cn/library/dn270017.aspx
 [sp\_set\_database\_firewall\_rule]: https://msdn.microsoft.com/zh-cn/library/dn270010.aspx
 
 <!--Other Web references-->
+
 [SQL Data Warehouse pricing]: /pricing/details/sql-data-warehouse/
 [SQL 数据仓库定价]: /pricing/details/sql-data-warehouse/
 [Azure 试用版]: /pricing/1rmb-trial
 [MSDN Azure 信用额度]: /pricing/member-offers/
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->

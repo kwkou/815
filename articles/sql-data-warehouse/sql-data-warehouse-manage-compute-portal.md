@@ -5,14 +5,20 @@
    documentationCenter="NA"
    authors="barbkess"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/01/2016"
-   wacn.date=""/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/22/2016"
+   wacn.date="10/17/2016"/>  
 
-# 管理 Azure SQL 数据仓库中的计算能力（Azure 门户预览）
+
+# 管理 Azure SQL 数据仓库中的计算能力（Azure 门户）
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute/)
@@ -30,7 +36,7 @@
 - 暂停计算
 - 恢复计算
 
-若要了解相关信息，请参阅 [管理计算概述][]。
+有关详细信息，请参阅 [管理计算概述][]。
 
 <a name="scale-performance-bk"></a>
 <a name="scale-compute-bk"></a>
@@ -49,7 +55,7 @@
 
     ![移动滑块][2]
 
-1. 单击“保存”。将显示确认消息。单击“是”以确认或“否”以取消。
+1. 单击“保存”。此时会显示确认消息。单击“是”以确认或“否”以取消。
 
     ![点击“保存”(Save)][3]
 
@@ -63,35 +69,42 @@
 
 1. 打开 [Azure 门户预览][]，并打开你的数据库。请注意，状态为“联机”。
 
-    ![联机状态][6]
+    ![联机状态][6]  
+
 
 1. 若要挂起计算和内存资源，请单击“暂停”，随后将显示确认消息。单击“是”以确认或“否”以取消。
 
-    ![确认暂停][7]
+    ![确认暂停][7]  
 
-1. 当 SQL 数据仓库正在启动时，状态将为“正在暂停”。
-2. 当状态为“已暂停”时，则暂停操作完成，将停止对你收取 DWU 费用。
 
-    ![暂停状态][4]
+1. 当 SQL 数据仓库正在启动数据库时，状态为“正在暂停”。
+2. 当状态为“已暂停”时，则暂停操作完成，将停止对用户收取 DWU 费用。
+
+    ![暂停状态][4]  
+
 
 <a name="resume-compute-bk"></a>
 
 ## 恢复计算
 
-[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../../includes/sql-data-warehouse-resume-description.md)] 恢复数据库：
+[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../../includes/sql-data-warehouse-resume-description.md)] 
+恢复数据库：
 
 1. 打开 [Azure 门户预览][]，并打开你的数据库。请注意，状态为“已暂停”。
 
-    ![暂停数据库][4]
+    ![暂停数据库][4]  
 
-1. 若要恢复数据库，单击“启动”，随后将显示确认消息。单击“是”以确认或“否”以取消。
 
-    ![确认恢复][5]
+1. 若要恢复数据库，请单击“启动”，随后将显示确认消息。单击“是”确认，单击“否”取消。
 
-1. 当 SQL 数据仓库正在启动时，状态将为“正在恢复”。
+    ![确认恢复][5]  
+
+
+1. 当 SQL 数据仓库正在启动数据库时，状态为“正在恢复”。
 2. 当状态为“联机”时，该数据库已就绪。
 
-    ![联机状态][6]
+    ![联机状态][6]  
+
 
 <a name="next-steps-bk"></a>
 
@@ -118,4 +131,4 @@
 
 [Azure 门户预览]: http://portal.azure.cn/
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

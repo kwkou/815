@@ -5,16 +5,22 @@
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/17/2016"
-   wacn.date="07/18/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"/>  
+
 
 #将示例数据载入 SQL 数据仓库
 
-请遵循以下简单步骤，加载并查询 Adventure Works 示例数据库。这些脚本首先使用 sqlcmd 运行 SQL，这会创建表和视图。创建了表之后，脚本会使用 bcp 加载数据。如果你还没有安装 sqlcmd和 bcp，请单击以下链接[安装 bcp][] 并[安装 sqlcmd][]。
+请遵循以下简单步骤，加载并查询 Adventure Works 示例数据库。这些脚本首先使用 sqlcmd 运行 SQL，这会创建表和视图。创建了表之后，脚本会使用 bcp 加载数据。如果还没有安装 sqlcmd和 bcp，请单击以下链接[安装 bcp][] 并[安装 sqlcmd][]。
 
 ##加载示例数据
 
@@ -30,7 +36,8 @@
         database=mydwdatabase
     
 
-4. 从 Windows 命令提示符运行编辑过的 aw\_create.bat。确保你所在的目录是保存了所编辑 aw\_create.bat 版本的位置。此脚本将...
+4. 从 Windows 命令提示符运行编辑过的 aw\_create.bat。确保你所在的目录是保存了所编辑 aw\_create.bat 版本的位置。
+此脚本将...
 	* 删除所有 Adventure Works 表或所有已在你数据库中的视图
 	* 创建 Adventure Works 表和视图
 	* 使用 bcp 加载每个 Adventure Works 表
@@ -40,7 +47,7 @@
 
 ##查询示例数据
 
-将一些示例数据载入 SQL 数据仓库后，你可以快速运行几个查询。若要运行查询，请使用 Visual Studio 和 SSDT 连接到 Azure SQL DW 中新建的 Adventure Works 数据库，如[连接][]文档中所述。
+将一些示例数据载入 SQL 数据仓库后，你可以快速运行几个查询。若要运行查询，请使用 Visual Studio 和 SSDT 连接到 Azure SQL DW 中新建的 Adventure Works 数据库，如 [使用 Visual Studio 进行查询][] 文档中所述。
 
 用于获取所有员工信息的简单 select 语句示例：
 
@@ -71,6 +78,7 @@ SQL 数据仓库几乎支持 SQL Server 所能支持的所有 T-SQL 构造。[�
 
 <!--Image references-->
 
+
 <!--Article references-->
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop
@@ -81,6 +89,7 @@ SQL 数据仓库几乎支持 SQL Server 所能支持的所有 T-SQL 构造。[�
 [安装 sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd
 
 <!--Other Web references-->
+
 [适用于 SQL 数据仓库的 Adventure Works 示例脚本]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksSQLDW2012.zip
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_1010_2016-->

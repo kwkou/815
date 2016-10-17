@@ -9,8 +9,12 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="08/08/2016"
-   wacn.date="09/05/2016"/>  
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"/>  
 
 
 # 适用于 SQL 数据仓库的 PowerShell cmdlet 和 REST API
@@ -106,4 +110,4 @@
 
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1010_2016-->
