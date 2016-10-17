@@ -397,7 +397,7 @@
 | userPrincipalName| X| | | UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
 
 ## Windows 10
-已加入 Windows 10 域的计算机（设备）会将某些属性同步到 Azure AD。有关方案的详细信息，请参阅 [Connect domain-joined devices to Azure AD for Windows 10 experiences](/documentation/articles/active-directory-azureadjoin-devices-group-policy/)（体验 Windows 10 时将已加入域的设备连接到 Azure AD）。这些属性始终同步，Windows 10 不会显示为可以取消选择的应用。通过填充 userCertificate 属性来标识已加入 Windows 10 域的计算机。
+已加入 Windows 10 域的计算机（设备）会将某些属性同步到 Azure AD。这些属性始终同步，Windows 10 不会显示为可以取消选择的应用。通过填充 userCertificate 属性来标识已加入 Windows 10 域的计算机。
 
 | 属性名称| 设备| 注释 |
 | --- | :-: | --- |

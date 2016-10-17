@@ -87,7 +87,6 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 密码同步 | <li>复制目录更改</li><li>复制所有目录更改。
 Exchange 混合部署 | [Exchange 混合写回](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/#exchange-hybrid-writeback/)中叙述了对用户、组和联系人的属性的写入权限。
 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/#step-4-set-up-the-appropriate-active-directory-permissions/)中叙述了对用户的属性的写入权限。
-设备写回 | [设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback/)中叙述了如何使用 PowerShell 脚本授予权限。
 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。
 
 ## 升级

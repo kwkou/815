@@ -82,7 +82,6 @@ UpgradeAbortedSyncExeInUse | 服务器上打开了 [Synchronization Service Mana
 UpgradeAbortedSyncOrConfigurationInProgress | 安装向导正在运行，或者在计划程序外部计划了同步。
 **UpgradeNotSupported** |
 UpgradeNotSupportedCustomizedSyncRules | 你已将自己的自定义规则添加到配置中。
-UpgradeNotSupportedDeviceWritebackEnabled | 你已启用[设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback/)功能。
 UpgradeNotSupportedGroupWritebackEnabled | 你已启用[组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback/)功能。
 UpgradeNotSupportedInvalidPersistedState | 安装不是快速设置或 DirSync 升级。
 UpgradeNotSupportedMetaverseSizeExceeeded | Metaverse 中的对象超过 100,000 个。
