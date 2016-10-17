@@ -25,7 +25,7 @@ ms.author="hermannd"/>
 
 本文介绍如何通过 SAP Cloud Appliance Library 3.0，在 Azure 上部署运行 SQL Server 和 Windows OS 的 SAP IDES。屏幕截图将逐步显示此过程。部署列表中的其他解决方案在过程上是相同的，只需选择不同的解决方案即可。
 
-若要开始使用 SAP Cloud Appliance Library (SAP CAL)，请转到[此处](https://cal.sap.com/)。SAP 提供了有关全新 [SAP Cloud Appliance Library 3.0](http://scn.sap.com/community/cloud-appliance-library/blog/2016/05/27/sap-cloud-appliance-library-30-came-with-a-new-user-experience) 的博客。
+SAP 提供了有关全新 [SAP Cloud Appliance Library 3.0](http://scn.sap.com/community/cloud-appliance-library/blog/2016/05/27/sap-cloud-appliance-library-30-came-with-a-new-user-experience) 的博客。
 
 
 以下屏幕截图逐步显示如何在 Azure 上部署 SAP IDES。其他解决方案的部署过程相同。

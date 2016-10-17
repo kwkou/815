@@ -42,12 +42,6 @@
 
 [AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
-
-#### VNet 对等互连
-
-只要虚拟网络配置符合特定要求，就能使用 VNet 对等互连来创建连接。VNet 对等互连不使用虚拟网络网关。[VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)目前以预览版提供。
-
-
 ## 关于 VNet 到 VNet 的连接
 
 将虚拟网络连接到虚拟网络（VNet 到 VNet）类似于将 VNet 连接到本地站点位置。这两种连接类型都使用 Azure VPN 网关来提供使用 IPsec/IKE 的安全隧道。你连接的 VNet 可位于不同的区域中。或者位于不同的订阅中。你甚至可以将 VNet 到 VNet 通信与多站点配置组合使用。这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑，如下图所示。

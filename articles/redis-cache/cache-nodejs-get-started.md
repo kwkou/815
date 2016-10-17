@@ -43,7 +43,7 @@ Azure Redis 缓存允许访问 Microsoft 管理的、专用安全的 Redis 缓�
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-## 检索主机名和访问密钥
+## <a name="retrieve-the-host-name-and-access-keys"></a> 检索主机名和访问密钥
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
