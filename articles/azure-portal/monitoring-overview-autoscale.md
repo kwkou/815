@@ -31,12 +31,12 @@ Azure Insights 自动缩放仅适用于[虚拟机规模集](/documentation/servi
 
 自动缩放是指在处理应用程序负载时让适当数量的资源运行。在负载增加时，可以通过自动缩放添加资源；在资源处于空闲状态时，可以通过自动缩放删除资源，节省资金。可以指定需要运行的实例的最小数目和最大数目，根据规则集自动添加或删除 VM。设置最小数目可确保应用程序在没有负载的情况下也会运行。设置最大数目是为了限制每小时可能会引发的总成本。可以使用创建的规则在这两种极限之间自动缩放。
 
- ![描述的自动缩放。添加和删除 VM](./media/monitoring-autoscale-overview/AutoscaleConcept.png)  
+ ![描述的自动缩放。添加和删除 VM](./media/monitoring-autoscale-overview/autoscaleconcept.png)  
 
 
 当满足规则条件时，将触发一个或多个自动缩放操作。可以添加和删除虚拟机，或执行其他操作。下面的概念关系图演示了此过程。
 
- ![自动缩放流概念关系图](./media/monitoring-autoscale-overview/AutoscaleOverview3.png)  
+ ![自动缩放流概念关系图](./media/monitoring-autoscale-overview/autoscaleoverview3.png)  
 
  
 
@@ -77,7 +77,7 @@ Azure Insights 自动缩放仅适用于[虚拟机规模集](/documentation/servi
         - **定期**：表示自动缩放应在何时执行此配置文件。例如，可以针对一天中的不同时间或者一周中的不同日期设置不同的自动缩放配置文件。
 - **通知设置**：定义在发生自动缩放事件时应发送的通知，前提是符合某个自动缩放设置的配置文件的条件。自动缩放可以将通知发送到一个或多个电子邮件地址，也可以对一个或多个 webhook 进行调用。
  
-![Azure 自动缩放设置、配置文件和规则结构](./media/monitoring-autoscale-overview/AzureResourceManagerRuleStructure3.png)  
+![Azure 自动缩放设置、配置文件和规则结构](./media/monitoring-autoscale-overview/azureresourcemanagerrulestructure3.png)  
 
 
 [Autoscale REST API](https://msdn.microsoft.com/zh-cn/library/dn931928.aspx) 中提供了可配置字段和说明的完整列表。

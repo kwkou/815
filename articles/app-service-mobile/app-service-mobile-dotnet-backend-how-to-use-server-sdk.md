@@ -363,7 +363,7 @@ SID 派生自提供程序特定的用户 ID，对于给定的用户和登录提�
         NotificationHubClient hub = NotificationHubClient
         .CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
 
-目前可以使用通知中心客户端将推送通知发送到已注册的设备。有关详细信息，请参阅 [Add push notifications to your app](/documentation/articles/app-service-mobile-ios-get-started-push/)（将推送通知添加到应用）。若要详细了解通知中心的所有功能，请参阅 [Notification Hubs Overview](/documentation/articles/notification-hubs-overview/)（通知中心概述）。
+目前可以使用通知中心客户端将推送通知发送到已注册的设备。有关详细信息，请参阅 [Add push notifications to your app](/documentation/articles/app-service-mobile-ios-get-started-push/)（将推送通知添加到应用）。
 
 ##<a name="tags"></a>如何将标记添加到设备安装以启用目标推送
 
@@ -406,7 +406,7 @@ Azure 应用服务提供多种适用于 ASP.NET 应用程序的调试和故障�
 
 - [Monitoring an Azure App Service](/documentation/articles/web-sites-monitor/)（监视 Azure 应用服务）
 - [Enable Diagnostic Logging in Azure App Service](/documentation/articles/web-sites-enable-diagnostic-log/)（在 Azure 应用服务中启用诊断记录）
-- [Toubleshoot an Azure App Service in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)（在 Visual Studio 中对 Azure 应用服务进行故障排除）
+
 
 ### 日志记录
 
