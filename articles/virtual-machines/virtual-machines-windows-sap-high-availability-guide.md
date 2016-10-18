@@ -660,11 +660,6 @@ _**图 7：**SAP DBMS 服务器 HA – SQL Server AlwaysOn HA 设置示例_
 
 本文档不会介绍如何组建 DBMS 群集。
 
-有关使用 Azure Resource Manager 部署模型在 Azure 中组建 SQL Server 群集的详细信息，请参阅以下文章：
-
-- [在 Azure VM 中手动配置 Always On 可用性组 - Resource Manager][virtual-machines-windows-portal-sql-alwayson-availability-groups-manual]
-- [在 Azure 中为 AlwaysOn 可用性组配置内部负载均衡器][virtual-machines-windows-portal-sql-alwayson-int-listener]
-
 ### <a name="045252ed-0277-4fc8-8f46-c5a29694a816"></a>可能的端到端 HA 部署方案
 
 下面是 Azure 中的完整 SAP NetWeaver HA 架构示例，其中将一个专用群集用于 SAP ASCS/SCS 实例，将另一个群集用于 DBMS。

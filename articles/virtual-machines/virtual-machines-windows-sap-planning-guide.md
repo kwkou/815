@@ -575,7 +575,7 @@ Azure 存储空间提供持久性存储，以及 SAN 存储所具有的典型保
 * 区域冗余存储可将三个映像分散到同一 Azure 区域内的不同数据中心。
 * 默认冗余级别是异地冗余，将内容以异步方式复制到托管在同一地缘政治区域中另一个 Azure 区域的另外 3 个数据映像。
 
-另请参阅以下文章顶部表格中有关不同冗余选项的信息：</pricing/details/storage/>
+另请参阅以下文章顶部表格中有关不同冗余选项的信息：<https://www.azure.cn/pricing/details/storage/>
 
 有关 Azure 存储空间的详细信息，请参阅：
 
@@ -602,7 +602,7 @@ Microsoft 在 2015 年 4 月推出了 Azure 高级存储。推出高级存储的
 * Azure 存储空间节点中的 SSD 磁盘使用方式
 * Azure 计算节点的本地 SSD 支持的新读取缓存
 
-相比于标准存储的容量不随磁盘（或 VHD）的大小而更改，高级存储目前有 3 种不同的磁盘类别，本文末尾的“常见问题”部分前面提供了说明：</pricing/details/storage/>
+相比于标准存储的容量不随磁盘（或 VHD）的大小而更改，高级存储目前有 3 种不同的磁盘类别，本文末尾的“常见问题”部分前面提供了说明：<https://www.azure.cn/pricing/details/storage/>
 
 如你所见，IOPS/VHD 和磁盘吞吐量/VHD 依赖于磁盘的大小类别
 
@@ -638,7 +638,7 @@ Azure 将提供一种网络基础结构，可让我们映射想要使用 SAP 软
 * 在客户的本地网络与 Azure 网络之间建立跨界连接
 * 在 Azure 站点之间建立跨 Azure 区域或数据中心的连接
 
-有关详细信息，请参阅：</documentation/services/networking/>
+有关详细信息，请参阅：<https://www.azure.cn/documentation/services/networking/>
 
 对于跨界方案，我们将依赖于本地 AD/OpenLDAP/DNS 已通过 VPN 或专用连接扩展到 Azure 这一事实。对于此处所述的某些方案，可能需要在 Azure 中安装 AD/OpenLDAP 副本。
 
@@ -692,9 +692,8 @@ Azure 中的每个虚拟机都需要连接到虚拟网络。
 
 \[comment]: <>（MSSedusch -- 可在此处找到详细信息）
 \[comment]: <>（MShermannd TODO：链接不再有效；但仍不支持 ARM - 请参阅下面的链接）
-\[comment]: <> (MSSedusch -- <http://msdn.microsoft.com/zh-cn/library/azure/dn133798.aspx>.)
 \[comment]: <> （MShermannd TODO：ARM 尚不支持点到站点）
-\[comment]: <> (MSSedusch -- </documentation/articles/vpn-gateway-point-to-site-create/>)
+\[comment]: <> (MSSedusch -- <https://www.azure.cn/documentation/articles/vpn-gateway-point-to-site-create/>)
 
 #### 多站点 VPN
 Azure 现在也可让为一个 Azure 订阅创建多站点 VPN 连接。以前，单个订阅仅限于一个站点到站点 VPN 连接。此限制在单个订阅可以有多站点 VPN 连接之后已不存在。可以通过跨界配置，针对特定订阅使用多个 Azure 区域。
@@ -704,28 +703,28 @@ Azure 现在也可让为一个 Azure 订阅创建多站点 VPN 连接。以前�
 
 #### VNet 到 VNet 连接
 使用多站点 VPN 时，需要在每个区域中配置不同的 Azure 虚拟网络。但是，通常必须让不同区域中的软件组件能够彼此通信。在理想情况下，此通信应该从一个 Azure 区域路由到本地，再由此路由到其他 Azure 区域。简而言之，Azure 可让设置从某个区域中的一个 Azure 虚拟网络到托管在另一个区域中的另一个 Azure 虚拟网络的连接。此功能称为 VNet 对 VNet 连接。有关此功能的详细信息，请参阅：
-</documentation/articles/vpn-gateway-vnet-vnet-rm-ps/>。
+<https://www.azure.cn/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/>。
 
 #### 与 Azure 建立专用连接 – ExpressRoute
 使用 Azure ExpressRoute 可在 Azure 数据中心与客户本地环境或共置环境中的基础结构之间建立专用连接。ExpressRoute 由不同的 MPLS（数据包交换）VPN 提供商或其他网络服务提供商提供。ExpressRoute 连接不通过公共 Internet 。与通过 Internet 建立的典型连接相比，ExpressRoute 连接可通过多个并行线路提供更高的安全性、更高的可靠性、更快的速度和更小的延迟。
 
 有关 Azure ExpressRoute 和产品的详细信息，请参阅：
 
-* </documentation/services/expressroute/>
-* </pricing/details/expressroute/>
-* </documentation/articles/expressroute-faqs/>
+* <https://www.azure.cn/documentation/services/expressroute/>
+* <https://www.azure.cn/pricing/details/expressroute/>
+* <https://www.azure.cn/documentation/articles/expressroute-faqs/>
 
 如文中所述，使用 Express Route 可通过一条 ExpressRoute 线路启用多个 Azure 订阅
 
-* </documentation/articles/expressroute-howto-linkvnet-arm/> 
-* </documentation/articles/expressroute-howto-circuit-arm/>
+* <https://www.azure.cn/documentation/articles/expressroute-howto-linkvnet-arm/> 
+* <https://www.azure.cn/documentation/articles/expressroute-howto-circuit-arm/>
 
 
 #### 跨界方案中的强制隧道
 要使 VM 通过站点到站点连接、点到站点连接或 ExpressRoute 加入到本地域，还需要确保为这些 VM 中的所有用户部署 Internet 代理设置。默认情况下，这些 VM 中运行的软件或者使用浏览器访问 Internet 的用户不会通过公司代理，而是直接通过 Azure 连接到 Internet。但是，即使进行了代理设置，也不能完全保证能够通过公司代理定向流量，因为检查代理是软件和服务的责任。如果 VM 中运行的软件不执行这种检查，或者由管理员处理这些设置，则定向到 Internet 的流量可能会再次直接通过 Azure 改道发往 Internet。
 
 若要避免此问题，可以在本地与 Azure 之间配置具有站点到站点连接的强制隧道。有关强制隧道功能的详细说明，请参阅 
-</documentation/articles/vpn-gateway-forced-tunneling-rm/> 
+<https://www.azure.cn/documentation/articles/vpn-gateway-forced-tunneling-rm/> 
 
 ExpressRoute 强制隧道由通过 ExpressRoute BGP 对等互连会话广告默认路由的客户启用。
 
@@ -779,8 +778,8 @@ Azure 门户是用于管理 Azure VM 部署的三个界面之一。基本的管�
  
 ![Azure 门户 - 虚拟机概览][planning-guide-figure-800]
 
-\[comment]: <> (MSSedusch * </documentation/articles/virtual-networks-create-vnet-arm-pportal/>)
-\[comment]: <> (MSSedusch * </documentation/articles/virtual-machines-windows-classic-tutorial/>)
+\[comment]: <> (MSSedusch * <https://www.azure.cn/documentation/articles/virtual-networks-create-vnet-arm-pportal/>)
+\[comment]: <> (MSSedusch * <https://www.azure.cn/documentation/articles/virtual-machines-windows-classic-tutorial/>)
 
 可以从 Azure 门户内部完成虚拟机实例的管理和配置任务。
 
@@ -810,7 +809,7 @@ Windows PowerShell 是一个功能强大的可扩展框架，在 Azure 中部署
 \[comment]: <> （MShermannd TODO：测试后将介绍新的 CLI 命令）
 部署适用于 SAP 的 Azure 监视扩展（请参阅本文档中的[适用于 SAP 的 Azure 监视解决方案][planning-guide-9.1]）只能通过 PowerShell 或 CLI 完成。因此，在 Azure 中部署或管理 SAP NetWeaver 系统时，必须安装并配置 PowerShell 或 CLI。
 
-随着 Azure 提供的功能越来越多，我们将会添加新的 PS cmdlet，这就需要你更新 cmdlet。因此，最好是每月至少查看 Azure 下载站点 </downloads/> 一次，以获取新版 cmdlet。只需覆盖旧版本安装新版本即可。
+随着 Azure 提供的功能越来越多，我们将会添加新的 PS cmdlet，这就需要你更新 cmdlet。因此，最好是每月至少查看 Azure 下载站点 <https://www.azure.cn/downloads/> 一次，以获取新版 cmdlet。只需覆盖旧版本安装新版本即可。
 
 有关 Azure 相关的 PowerShell 命令的综合列表，请查看以下网页：<https://msdn.microsoft.com/zh-cn/library/azure/dn708514.aspx>。
 
@@ -846,7 +845,7 @@ ___
 > Windows 设置（例如 Windows SID 和主机名）必须通过 sysprep 命令在本地 VM 抽象化/通用化。
 \[comment]: <>（MSSedusch > 在此处查看详细信息：）
 \[comment]: <>（MShermannd TODO：第一个链接与经典模型有关。找不到 Azure 文档）
-\[comment]: <> (MSSedusch > </documentation/articles/virtual-machines-create-upload-vhd-windows-server/>)
+\[comment]: <> (MSSedusch > <https://www.azure.cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/>)
 \[comment]: <> (MSSedusch > <http://blogs.technet.com/b/blainbar/archive/2014/09/12/modernizing-your-infrastructure-with-hybrid-cloud-using-custom-vm-images-and-resource-groups-in-microsoft-azure-part-21-blain-barton.aspx>)
 >
 > ![Linux][Logo_Linux] Linux
@@ -1313,82 +1312,82 @@ SAP GUI 不会立即连接到运行中的任何 SAP 实例（端口 32xx），�
 
 * 为每个培训/演示布局创建新资源组
 
-    $rgName = "SAPERPDemo1"
-    New-AzureRmResourceGroup -Name $rgName -Location "China North"
+        $rgName = "SAPERPDemo1"
+        New-AzureRmResourceGroup -Name $rgName -Location "China North"
 
 * 新建存储帐户
 
-    $suffix = Get-Random -Minimum 100000 -Maximum 999999
-    $account = New-AzureRmStorageAccount -ResourceGroupName $rgName -Name "saperpdemo$suffix" -SkuName Standard_LRS -Kind "Storage" -Location "China North"
+        $suffix = Get-Random -Minimum 100000 -Maximum 999999
+        $account = New-AzureRmStorageAccount -ResourceGroupName $rgName -Name "saperpdemo$suffix" -SkuName Standard_LRS -Kind "Storage" -Location "China North"
 
 * 为每个培训/演示布局创建新的虚拟网络，以允许使用相同的主机名和 IP 地址。虚拟网络受网络安全组的保护，只允许发往端口 3389 的流量，以针对 SSH 启用远程桌面访问和端口 22。
 
-    # Create a new Virtual Network
-    $rdpRule = New-AzureRmNetworkSecurityRuleConfig -Name SAPERPDemoNSGRDP -Protocol * -SourcePortRange * -DestinationPortRange 3389 -Access Allow -Direction Inbound -SourceAddressPrefix * -DestinationAddressPrefix * -Priority 100
-    $sshRule = New-AzureRmNetworkSecurityRuleConfig -Name SAPERPDemoNSGSSH -Protocol * -SourcePortRange * -DestinationPortRange 22 -Access Allow -Direction Inbound -SourceAddressPrefix * -DestinationAddressPrefix * -Priority 101
-    $nsg = New-AzureRmNetworkSecurityGroup -Name SAPERPDemoNSG -ResourceGroupName $rgName -Location  "China North" -SecurityRules $rdpRule,$sshRule
+        # Create a new Virtual Network
+        $rdpRule = New-AzureRmNetworkSecurityRuleConfig -Name SAPERPDemoNSGRDP -Protocol * -SourcePortRange * -DestinationPortRange 3389 -Access Allow -Direction Inbound -SourceAddressPrefix * -DestinationAddressPrefix * -Priority 100
+        $sshRule = New-AzureRmNetworkSecurityRuleConfig -Name SAPERPDemoNSGSSH -Protocol * -SourcePortRange * -DestinationPortRange 22 -Access Allow -Direction Inbound -SourceAddressPrefix * -DestinationAddressPrefix * -Priority 101
+        $nsg = New-AzureRmNetworkSecurityGroup -Name SAPERPDemoNSG -ResourceGroupName $rgName -Location  "China North" -SecurityRules $rdpRule,$sshRule
 
-    $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name Subnet1 -AddressPrefix  10.0.1.0/24 -NetworkSecurityGroup $nsg
-    $vnet = New-AzureRmVirtualNetwork -Name SAPERPDemoVNet -ResourceGroupName $rgName -Location "China North"  -AddressPrefix 10.0.1.0/24 -Subnet $subnetConfig
+        $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name Subnet1 -AddressPrefix  10.0.1.0/24 -NetworkSecurityGroup $nsg
+        $vnet = New-AzureRmVirtualNetwork -Name SAPERPDemoVNet -ResourceGroupName $rgName -Location "China North"  -AddressPrefix 10.0.1.0/24 -Subnet $subnetConfig
 
 * 创建可用于从 Internet 访问虚拟机的新公共 IP 地址
 
-    # Create a public IP address with a DNS name
-    $pip = New-AzureRmPublicIpAddress -Name SAPERPDemoPIP -ResourceGroupName $rgName -Location "China North" -DomainNameLabel $rgName.ToLower() -AllocationMethod Dynamic
+        # Create a public IP address with a DNS name
+        $pip = New-AzureRmPublicIpAddress -Name SAPERPDemoPIP -ResourceGroupName $rgName -Location "China North" -DomainNameLabel $rgName.ToLower() -AllocationMethod Dynamic
 
 * 为虚拟机创建新网络接口
 
-    # Create a new Network Interface
-    $nic = New-AzureRmNetworkInterface -Name SAPERPDemoNIC -ResourceGroupName $rgName -Location "China North" -Subnet $vnet.Subnets[0] -PublicIpAddress $pip 
+        # Create a new Network Interface
+        $nic = New-AzureRmNetworkInterface -Name SAPERPDemoNIC -ResourceGroupName $rgName -Location "China North" -Subnet $vnet.Subnets[0] -PublicIpAddress $pip 
 
 * 创建虚拟机。对于仅限云的方案，每个 VM 的名称都是相同的。这些 VM 中的 SAP NetWeaver 实例的 SAP SID 也是相同的。在 Azure 资源组中，VM 的名称需要唯一，但是，在不同的 Azure 资源组中，可以运行同名的 VM。Windows 的默认“Administrator”帐户和 Linux 的“root”帐户无效。因此，新的管理员用户名需要与密码一起定义。此外，还需要定义 VM 的大小。
 
-    #####
-    # Create a new virtual machine with an official image from the Azure Marketplace
-    #####
-    $cred=Get-Credential -Message "Type the name and password of the local administrator account."
-    $vmconfig = New-AzureRmVMConfig -VMName SAPERPDemo -VMSize Standard_D11
+        #####
+        # Create a new virtual machine with an official image from the Azure Marketplace
+        #####
+        $cred=Get-Credential -Message "Type the name and password of the local administrator account."
+        $vmconfig = New-AzureRmVMConfig -VMName SAPERPDemo -VMSize Standard_D11
 
-    # select image
-    $vmconfig = Set-AzureRmVMSourceImage -VM $vmconfig -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2012-R2-Datacenter" -Version "latest"
-    $vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Windows -ComputerName "SAPERPDemo" -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-    # $vmconfig = Set-AzureRmVMSourceImage -VM $vmconfig -PublisherName "SUSE" -Offer "SLES" -Skus "12" -Version "latest"
-    # $vmconfig = Set-AzureRmVMSourceImage -VM $vmconfig -PublisherName "RedHat" -Offer "RHEL" -Skus "7.2" -Version "latest"
-    # $vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Linux -ComputerName "SAPERPDemo" -Credential $cred
+        # select image
+        $vmconfig = Set-AzureRmVMSourceImage -VM $vmconfig -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2012-R2-Datacenter" -Version "latest"
+        $vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Windows -ComputerName "SAPERPDemo" -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+        # $vmconfig = Set-AzureRmVMSourceImage -VM $vmconfig -PublisherName "SUSE" -Offer "SLES" -Skus "12" -Version "latest"
+        # $vmconfig = Set-AzureRmVMSourceImage -VM $vmconfig -PublisherName "RedHat" -Offer "RHEL" -Skus "7.2" -Version "latest"
+        # $vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Linux -ComputerName "SAPERPDemo" -Credential $cred
 
-    $vmconfig = Add-AzureRmVMNetworkInterface -VM $vmconfig -Id $nic.Id
+        $vmconfig = Add-AzureRmVMNetworkInterface -VM $vmconfig -Id $nic.Id
 
-    $diskName="os"
-    $osDiskUri=$account.PrimaryEndpoints.Blob.ToString() + "vhds/" + $diskName  + ".vhd"
-    $vmconfig = Set-AzureRmVMOSDisk -VM $vmconfig -Name $diskName -VhdUri $osDiskUri -CreateOption fromImage
-    $vm = New-AzureRmVM -ResourceGroupName $rgName -Location "China North" -VM $vmconfig
+        $diskName="os"
+        $osDiskUri=$account.PrimaryEndpoints.Blob.ToString() + "vhds/" + $diskName  + ".vhd"
+        $vmconfig = Set-AzureRmVMOSDisk -VM $vmconfig -Name $diskName -VhdUri $osDiskUri -CreateOption fromImage
+        $vm = New-AzureRmVM -ResourceGroupName $rgName -Location "China North" -VM $vmconfig
 
-<br/>
+    <br/>
 
-    #####
-    # Create a new virtual machine with a VHD that contains the private image that you want to use
-    #####
-    $cred=Get-Credential -Message "Type the name and password of the local administrator account."
-    $vmconfig = New-AzureRmVMConfig -VMName SAPERPDemo -VMSize Standard_D11
+        #####
+        # Create a new virtual machine with a VHD that contains the private image that you want to use
+        #####
+        $cred=Get-Credential -Message "Type the name and password of the local administrator account."
+        $vmconfig = New-AzureRmVMConfig -VMName SAPERPDemo -VMSize Standard_D11
 
-    $vmconfig = Add-AzureRmVMNetworkInterface -VM $vmconfig -Id $nic.Id
+        $vmconfig = Add-AzureRmVMNetworkInterface -VM $vmconfig -Id $nic.Id
 
-    $diskName="osfromimage"
-    $osDiskUri=$account.PrimaryEndpoints.Blob.ToString() + "vhds/" + $diskName  + ".vhd"
+        $diskName="osfromimage"
+        $osDiskUri=$account.PrimaryEndpoints.Blob.ToString() + "vhds/" + $diskName  + ".vhd"
 
-    $vmconfig = Set-AzureRmVMOSDisk -VM $vmconfig -Name $diskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri <path to VHD that contains the OS image> -Windows
-    $vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Windows -ComputerName "SAPERPDemo" -Credential $cred
-    #$vmconfig = Set-AzureRmVMOSDisk -VM $vmconfig -Name $diskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri <path to VHD that contains the OS image> -Linux
-    #$vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Linux -ComputerName "SAPERPDemo" -Credential $cred
+        $vmconfig = Set-AzureRmVMOSDisk -VM $vmconfig -Name $diskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri <path to VHD that contains the OS image> -Windows
+        $vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Windows -ComputerName "SAPERPDemo" -Credential $cred
+        #$vmconfig = Set-AzureRmVMOSDisk -VM $vmconfig -Name $diskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri <path to VHD that contains the OS image> -Linux
+        #$vmconfig = Set-AzureRmVMOperatingSystem -VM $vmconfig -Linux -ComputerName "SAPERPDemo" -Credential $cred
 
-    $vm = New-AzureRmVM -ResourceGroupName $rgName -Location "China North" -VM $vmconfig
+        $vm = New-AzureRmVM -ResourceGroupName $rgName -Location "China North" -VM $vmconfig
 
 * （可选）添加更多磁盘，并还原所需的内容。请注意，所有 Blob 名称（Blob 的 URL）在 Azure 中必须唯一。
 
-    # Optional: Attach additional data disks
-    $vm = Get-AzureRmVM -ResourceGroupName $rgName -Name SAPERPDemo
-    $dataDiskUri = $account.PrimaryEndpoints.Blob.ToString() + "vhds/datadisk.vhd"
-    Add-AzureRmVMDataDisk -VM $vm -Name datadisk -VhdUri $dataDiskUri -DiskSizeInGB 1023 -CreateOption empty | Update-AzureRmVM
+        # Optional: Attach additional data disks
+        $vm = Get-AzureRmVM -ResourceGroupName $rgName -Name SAPERPDemo
+        $dataDiskUri = $account.PrimaryEndpoints.Blob.ToString() + "vhds/datadisk.vhd"
+        Add-AzureRmVMDataDisk -VM $vm -Name datadisk -VhdUri $dataDiskUri -DiskSizeInGB 1023 -CreateOption empty | Update-AzureRmVM
 
 ##### CLI
 
@@ -1724,7 +1723,7 @@ Azure 中的 SAP 高可用性的相关介绍可分为两个部分：
 Azure 中的 SAP 高可用性与本地物理或虚拟环境中的 SAP 高可用性在相比之下有一些差异。以下 SAP 文档说明了 Windows 虚拟环境中的标准 SAP 高可用性配置：<http://scn.sap.com/docs/DOC-44415>。不同于 Windows，Linux 没有集成 sapinst 的 SAP-HA 配置。有关 Linux 的本地 SAP HA 的详细信息，请参阅：<http://scn.sap.com/docs/DOC-8541>。
 
 ### Azure 基础结构高可用性
-Azure 虚拟机上目前没有提供单一 VM SLA。若要大致了解单一 VM 可用性的情形，只需计算可用的不同 Azure SLA 的积：</support/legal/sla/>。
+Azure 虚拟机上目前没有提供单一 VM SLA。若要大致了解单一 VM 可用性的情形，只需计算可用的不同 Azure SLA 的积：<https://www.azure.cn/support/legal/sla/>。
 
 计算的基数是每月 30 天，即 43200 分钟。因此，0.05% 停机时间就相当于 21.6 分钟。像往常一样，不同服务的可用性按以下方式相乘：
 
@@ -1741,7 +1740,7 @@ Azure 虚拟机上目前没有提供单一 VM SLA。若要大致了解单一 VM 
 * 计划内维护事件是指由 Microsoft 对底层 Azure平台进行定期更新，以改进虚拟机运行时所在的平台基础结构的总体可靠性、性能和安全性。
 * 计划外维护事件见于虚拟机所在硬件或物理基础结构出现某类故障的情况。此类故障可能包括：本地网络故障、本地磁盘故障，或者其他机架级别的故障。检测到此类故障时，Azure 平台会自动将虚拟机从所在的不健康物理服务器迁移到健康的物理服务器。此类事件很少见，但也会导致虚拟机重启。
 
-可在以下文档中找到更多详细信息：</documentation/articles/virtual-machines-manage-availability>
+可在以下文档中找到更多详细信息：<https://www.azure.cn/documentation/articles/virtual-machines-manage-availability>
 
 #### Azure 存储冗余
 
@@ -1749,7 +1748,7 @@ Azure 虚拟机上目前没有提供单一 VM SLA。若要大致了解单一 VM 
 
 由于 Azure 存储空间默认保留 3 个数据映像，因此不需要部署跨多个 Azure 磁盘的 RAID5 或 RAID1。
 
-可在以下文章中找到更多详细信息：</documentation/articles/storage-redundancy/>
+可在以下文章中找到更多详细信息：<https://www.azure.cn/documentation/articles/storage-redundancy/>
 
 #### 利用 Azure 基础结构 VM 重新启动来实现 SAP 应用程序的“更高可用性”
 
@@ -1793,7 +1792,7 @@ Azure 缩放单位内的 Azure 可用性集可使用不限数目的容错和升�
  
 ![Azure 中 SAP 应用程序服务器的 HA][planning-guide-figure-3000]
 
-可在以下文档中找到更多详细信息：</documentation/articles/virtual-machines-manage-availability>
+可在以下文档中找到更多详细信息：<https://www.azure.cn/documentation/articles/virtual-machines-manage-availability>
 
 
 #### Windows 上 SAP (A)SCS 实例的高可用性
@@ -1828,7 +1827,7 @@ SIOS DataKeeper 解决方案通过以下方式将共享磁盘群集资源提供�
 #### 整个 SAP 系统的端到端高可用性
 
 下面是 Azure 中整个 SAP NetWeaver HA 体系结构的两个示例 - 一个适用于 Windows，另一个适用于 Linux。
-当部署许多 SAP 系统，并且所部署的 VM 数目将超过每个订阅的存储帐户上限时，可能需要稍微折衷以下所述的概念。在此情况下，VM 的 VHD 需要合并到一个存储帐户中。通常你会通过合并不同 SAP 系统的 SAP 应用程序层 VM 的 VHD 来实现此目的。也可以将不同 SAP 系统的不同 DBMS VM 的不同 VHD 合并到一个 Azure 存储帐户中。因此，请记住 Azure 存储帐户的 IOPS 限制 ( </documentation/articles/storage-scalability-targets> )
+当部署许多 SAP 系统，并且所部署的 VM 数目将超过每个订阅的存储帐户上限时，可能需要稍微折衷以下所述的概念。在此情况下，VM 的 VHD 需要合并到一个存储帐户中。通常你会通过合并不同 SAP 系统的 SAP 应用程序层 VM 的 VHD 来实现此目的。也可以将不同 SAP 系统的不同 DBMS VM 的不同 VHD 合并到一个 Azure 存储帐户中。因此，请记住 Azure 存储帐户的 IOPS 限制 ( <https://www.azure.cn/documentation/articles/storage-scalability-targets> )
 
 ##### ![Windows][Logo_Windows] Windows 上的 HA
 
@@ -1887,7 +1886,7 @@ Autostart 参数可能还有一些缺点。具体而言，此参数在启动实�
 
 根据所选的 SAP 配置（第 2 层或第 3 层），可能需要执行备份。备份包括 VM 自身的内容以及数据库。应该使用数据库方法执行 DBMS 相关的备份。可以在 [DBMS Guide][dbms-guide]（DBMS 指南）中找到针对不同数据库的详细说明。另外，SAP 数据可以通过本部分所述的脱机方式（也包括数据库内容）或者下一部分所述的联机方式来备份。
 
-简单而言，执行脱机备份要求通过 Azure 门户关闭 VM，然后将基础 VM 磁盘以及所有附加的 VHD 复制到 VM。这样就能保存 VM 及其关联磁盘的时间点映像。建议将“备份”复制到一个不同的 Azure 存储帐户。因此，可以应用本文档的[在 Azure 存储帐户之间复制磁盘][planning-guide-5.4.2]一章中所述的过程。除了使用 Azure 门户关机之外，也可以按如下所述通过 Powershell 或 CLI 来执行此操作：</documentation/articles/virtual-machines-deploy-rmtemplates-powershell/>
+简单而言，执行脱机备份要求通过 Azure 门户关闭 VM，然后将基础 VM 磁盘以及所有附加的 VHD 复制到 VM。这样就能保存 VM 及其关联磁盘的时间点映像。建议将“备份”复制到一个不同的 Azure 存储帐户。因此，可以应用本文档的[在 Azure 存储帐户之间复制磁盘][planning-guide-5.4.2]一章中所述的过程。除了使用 Azure 门户关机之外，也可以按如下所述通过 Powershell 或 CLI 来执行此操作：<https://www.azure.cn/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/>
 
 还原该状态将要删除基础 VM 以及基础 VM 的原始磁盘和装载的 VHD，将保存的 VHD 复制回到原始存储帐户，然后重新部署系统。以下文章说明了如何使用 Powershell 编写此过程的脚本：<http://www.westerndevs.com/azure-snapshots/>
 
@@ -1906,9 +1905,9 @@ Autostart 参数可能还有一些缺点。具体而言，此参数在启动实�
 >
 > 理论上，如果 DBMS 系统支持 Windows VSS（卷影复制服务 <https://msdn.microsoft.com/zh-cn/library/windows/desktop/bb968832(v=vs.85).aspx>），则与 SQL Server 一样，将以一致的方式备份运行数据库的 VM。不过请注意，无法根据 Azure VM 备份时间点来还原数据库。因此，建议使用 DBMS 功能执行数据库的备份，而不要依赖于 Azure VM 备份
 >
-> 若要熟悉 Azure 虚拟机备份，请从此处着手：</documentation/articles/backup-azure-vms/>。
+> 若要熟悉 Azure 虚拟机备份，请从此处着手：<https://www.azure.cn/documentation/articles/backup-azure-vms/>。
 >
-> 也可以结合使用安装在 Azure VM 中的 Microsoft Data Protection Manager 及 Azure 备份来备份/还原数据库。有关详细信息，请参阅：</documentation/articles/backup-azure-dpm-introduction/>。
+> 也可以结合使用安装在 Azure VM 中的 Microsoft Data Protection Manager 及 Azure 备份来备份/还原数据库。有关详细信息，请参阅：<https://www.azure.cn/documentation/articles/backup-azure-dpm-introduction/>。
 
 
 > ![Linux][Logo_Linux] Linux
