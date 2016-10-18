@@ -217,8 +217,6 @@
 - 让外界使用的域名。
 - Ubuntu Server 版本号 - 但将只接受一个列表。
 
-查看有关[用户名和密码要求](/documentation/articles/virtual-machines-linux-faq/#what-are-the-username-requirements-when-creating-a-vm)的更多信息。
-
 确定这些值之后，就可以为模板创建组，并将此模板部署到 Azure 订阅。
 
     {

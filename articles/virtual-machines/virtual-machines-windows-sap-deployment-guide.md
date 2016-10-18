@@ -655,7 +655,7 @@ ___
 ## 每个部署步骤的详述
 
 ### <a name="604bcec2-8b6e-48d2-a944-61b0f5dee2f7"></a>部署 Azure PowerShell cmdlet
-* 转到 </downloads/>
+* 转到 <https://www.azure.cn/downloads/>
 * 在“命令行工具”部分下，有一个名为“Windows PowerShell”的部分。单击“安装”链接。
 * 此时将弹出 Microsoft 下载管理器，其中包含一个以 .exe 结尾的行项。选择“运行”选项。
 * 此时将出现一个弹出窗口，询问你是否要运行 Microsoft Web 平台安装程序。按“是”
@@ -688,7 +688,7 @@ ___
 如果屏幕与[上图][deployment-guide-figure-7]中所示的相同，则表示已安装最新的 Azure cmdlet 版本，无需继续安装。在这种情况下，你可以在此阶段“退出”安装。
 
 ### <a name="1ded9453-1330-442a-86ea-e0fd8ae8cab3"></a>部署 Azure CLI
-* 转到 </downloads/>
+* 转到 <https://www.azure.cn/downloads/>
 * 在“命令行工具”部分下，有一个名为“Azure 命令行接口”的部分。单击你的操作系统对应的“安装”链接。
 
 经常检查 Azure CLI 是否已更新。通常，我们每月都会提供更新。执行此操作的最简单方法是遵循上述安装步骤。
