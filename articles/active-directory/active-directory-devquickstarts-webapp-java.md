@@ -178,6 +178,7 @@ Java
 该文件应如下所示：
 
 xml
+
 	<?xml version="1.0"?>
 	<web-app id="WebApp_ID" version="2.4"
 		xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

@@ -97,6 +97,7 @@ C#
 - 现在查找 `Search(...)` 方法，当用户在应用的 UI 中单击“搜索”按钮时，将调用该方法。此方法将向 Azure AD Graph API 发出 GET 请求，以查询其 UPN 以给定搜索词开头的用户。但是，若要查询 Graph API，你需要在请求的 `Authorization` 标头中包含 access\_token - 这是 ADAL 传入的位置。
 
 C#
+
 	private async void Search(object sender, RoutedEventArgs e)
 	{
 	    ...

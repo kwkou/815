@@ -123,7 +123,7 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 | 文章指南 | |
 | :---: | --- |
 | Azure AD 访问管理功能的概述 | [有关管理对应用的访问的简介](/documentation/articles/active-directory-managing-access-to-apps/)<br /><br />[Azure AD 中访问管理的工作原理](/documentation/articles/active-directory-manage-groups/)|
-|
+
 
 
 
