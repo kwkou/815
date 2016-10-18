@@ -122,7 +122,7 @@
 
 <!--Article references-->
 [管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
-[Manage compute power overview]: /documentation/articles/sql-data-warehouse-overview-manage-compute/
+[Manage compute power overview]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 
 <!--MSDN references-->
 

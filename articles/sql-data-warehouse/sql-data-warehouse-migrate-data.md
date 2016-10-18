@@ -167,7 +167,7 @@ PolyBase 还支持名为“递归文件夹遍历”的功能。你可以使用�
 [AZCopy]: /documentation/articles/storage-use-azcopy/
 [ADF 复制]: /documentation/articles/data-factory-copy-activity/
 [ADF Copy examples]: /documentation/articles/data-factory-copy-activity-examples/
-[开发概述]: /documentation/articles/sql-data-warehouse-develop-overview/
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 [将解决方案迁移到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [使用 bcp 将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-load-with-bcp/

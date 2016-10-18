@@ -87,7 +87,7 @@
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-load-with-bcp/
-[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
+[加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
 [PowerShell cmdlet 和 REST API]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 [firewall rules]: /documentation/articles/sql-database-configure-firewall-settings/
 

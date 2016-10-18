@@ -146,7 +146,7 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 [最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
-[SQL DB 参与者]: /documentation/articles/role-based-access-built-in-roles.md#sql-db-contributor
+[SQL DB 参与者]: /documentation/articles/role-based-access-built-in-roles#sql-db-contributor
 
 <!--MSDN references-->
 [ALTER DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204042.aspx
