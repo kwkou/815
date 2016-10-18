@@ -682,7 +682,7 @@ _**图 8：**SAP HA 体系结构模板 1 – 包含 ASCS/SCS 的专用群集和 
 - Azure 应用商店映像：[https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image)
 - 自定义映像：[https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image)
 
-单击 SAP 3 层应用商店映像时，可在 Azure 门户中看到以下 UI：
+单击 SAP 3 层应用商店映像时，可在 Azure 门户预览中看到以下 UI：
 
 ![图 9：指定 SAP HA Azure Resource Manager 参数][sap-ha-guide-figure-3000]  
 
@@ -810,7 +810,7 @@ _**图 10：**配置 Azure VNET 的 DNS 服务器_
 
 部署用于群集的虚拟机之后，必须为所有 VM 设置静态 IP 地址。此操作无法在来宾 OS 内完成，必须在 Azure 虚拟网络配置中配置。
 
-为此可以使用 Azure 门户。在 Azure 门户中，导航到：
+为此可以使用 Azure 门户预览。在 Azure 门户预览中，导航到：
 
     <Resource Group> -> <Network Card> -> Settings -> IP Address
 
@@ -925,7 +925,7 @@ _**图 13：**Azure 内部负载均衡器 (ILB) 的默认 ASCS/SCS 负载均衡�
 
 如果要将其他实例编号用于 SAP ASCS 或 SCS 实例，必须更新这些端口的名称和值。
 
-可以使用 Azure 门户更新此设置。
+可以使用 Azure 门户预览更新此设置。
 
 转到 `<SID>-lb-ascs load balancer -> Load Balancing Rules`
 
@@ -1464,7 +1464,7 @@ _**图 60：**SIOS DataKeeper：将本地卷从群集节点 A 复制到群集节
 - 在 Windows 来宾 OS 中重新启动群集节点 A  
 （这会启动将 SAP <SID> 群集组从节点 A 故障转转到节点 B 的自动故障转移）  
 
-- 从 Azure 门户重新启动群集节点 A  
+- 从 Azure 门户预览重新启动群集节点 A  
 （这会启动将 SAP <SID> 群集组从节点 A 故障转转到节点 B 的自动故障转移）
 
 - 使用 Azure PowerShell 重新启动群集节点 A  

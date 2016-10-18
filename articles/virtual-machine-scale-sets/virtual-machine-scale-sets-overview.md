@@ -34,7 +34,7 @@
 
 ## 创建和管理 VM 规模集
 
-可以在 [Azure 门户](https://portal.azure.cn)中选择“新建”，然后在搜索栏中键入“缩放”，来创建 VM 规模集。结果中会看到“虚拟机规模集”。从这里，可以填写必填字段，自定义和部署规模集。
+可以在 [Azure 门户预览](https://portal.azure.cn)中选择“新建”，然后在搜索栏中键入“缩放”，来创建 VM 规模集。结果中会看到“虚拟机规模集”。从这里，可以填写必填字段，自定义和部署规模集。
 
 也可以使用 JSON 模板和 [REST API](https://msdn.microsoft.com/zh-cn/library/mt589023.aspx) 定义和部署 VM 规模集，就像定义和部署单个 Azure Resource Manager VM 一样。因此，可以使用任何标准的 Azure 资源管理器部署方法。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
@@ -56,7 +56,7 @@
 
 ## 监视 VM 规模集
 
-[Azure 门户](https://portal.azure.cn)列出了规模集并显示了基本属性和规模集中的 VM 列表。
+[Azure 门户预览](https://portal.azure.cn)列出了规模集并显示了基本属性和规模集中的 VM 列表。
 
 ## VM 规模集方案
 

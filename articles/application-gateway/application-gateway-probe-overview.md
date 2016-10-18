@@ -68,7 +68,7 @@
 
 ## 后续步骤
 
-了解应用程序网关的运行状况监视后，可以在 Azure 门户中配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，或使用 PowerShell 和 Azure Resource Manager 部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)。
+了解应用程序网关的运行状况监视后，可以在 Azure 门户预览中配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，或使用 PowerShell 和 Azure Resource Manager 部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)。
 
 [1]: ./media/application-gateway-probe-overview/appgatewayprobe.png
 

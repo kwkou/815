@@ -28,7 +28,7 @@
 
 使用点到站点 (P2S) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。如果要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则 P2S 连接会很有用。
 
-本文逐步讲解如何使用经典管理门户，在**经典部署模型**中创建具有点到站点连接的 VNet。目前无法在 Azure 门户中为经典部署模型创建这种端到端配置。
+本文逐步讲解如何使用经典管理门户，在**经典部署模型**中创建具有点到站点连接的 VNet。目前无法在 Azure 门户预览中为经典部署模型创建这种端到端配置。
 
 点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。可通过从客户端计算机启动连接来建立 VPN 连接。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)（VPN 网关常见问题）及 [Planning and Design](/documentation/articles/vpn-gateway-plan-design/)（规划和设计）。
 
@@ -59,7 +59,7 @@
 
 ### 第 1 部分：创建虚拟网络
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。这些步骤使用经典管理门户而不是 Azure 门户预览版。目前无法使用 Azure 门户预览版创建 P2S 连接。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。这些步骤使用经典管理门户而不是 Azure 门户预览。目前无法使用 Azure 门户预览创建 P2S 连接。
 
 2. 在屏幕左下角，单击“新建”。在导航窗格中，单击“网络服务”，然后单击“虚拟网络”。单击“自定义创建”以启动配置向导。
 

@@ -502,7 +502,7 @@ Azure 存储帐户不只是一种管理构造，还是一个具有各种限制�
 
 根据客户部署和测试，可在单个 Azure 标准存储帐户上预配大约 30 到 40 个包含数据库数据文件和日志文件的 VHD，并且性能仍在可接受的范围内。如先前所述，Azure 高级存储帐户的限制很可能是它可持有的数据容量，而不是 IOPS。
 
-与本地 SAN 设备一样，共享需要一些监视，以便最终能够检测到 Azure 存储帐户上的瓶颈。适用于 SAP 的 Azure 监视扩展和 Azure 门户等工具可用于检测可能提供次优 IO 性能的忙碌 Azure 存储帐户。如果检测到这种情况，建议将忙碌的 VM 移到另一个 Azure 存储帐户。有关如何激活 SAP 主机监视功能的详细信息，请参阅[部署指南][deployment-guide]。
+与本地 SAN 设备一样，共享需要一些监视，以便最终能够检测到 Azure 存储帐户上的瓶颈。适用于 SAP 的 Azure 监视扩展和 Azure 门户预览等工具可用于检测可能提供次优 IO 性能的忙碌 Azure 存储帐户。如果检测到这种情况，建议将忙碌的 VM 移到另一个 Azure 存储帐户。有关如何激活 SAP 主机监视功能的详细信息，请参阅[部署指南][deployment-guide]。
 
 可以在此处找到另一篇概述 Azure 标准存储和 Azure 标准存储帐户最佳实践的文章：<https://blogs.msdn.com/b/mast/archive/2014/10/14/configuring-azure-virtual-machines-for-optimal-storage-performance.aspx>
  
@@ -551,7 +551,7 @@ Azure 可用性集是 VM 或服务的逻辑分组，可确保 VM 和其他服务
 #### IP 地址
 强烈建议以弹性方式来设置 HA 配置的 VM。除非使用静态 IP 地址，否则，在 Azure 中依赖 IP 地址来处理 HA 配置内的 HA 伙伴并不可靠。Azure 中有两种“关闭”概念：
 
-* 通过 Azure 门户或 Azure PowerShell cmdlet Stop-AzureRmVM 来关闭：在这种情况下，会关闭虚拟机并解除分配。将不再针对此 VM 向你的 Azure 帐户收费，因此，只有在使用存储时才会向你收费。不过，如果网络接口的专用 IP 地址不是静态的，则会释放该 IP 地址，并且不保证在重新启动 VM 之后，会将旧的 IP 地址重新分配给网络接口。如果通过 Azure 门户或通过调用 Stop-AzureRmVM 来执行关闭，将自动解除分配。如果不希望解除计算机分配，请使用 Stop-AzureRmVM -StayProvisioned
+* 通过 Azure 门户预览或 Azure PowerShell cmdlet Stop-AzureRmVM 来关闭：在这种情况下，会关闭虚拟机并解除分配。将不再针对此 VM 向你的 Azure 帐户收费，因此，只有在使用存储时才会向你收费。不过，如果网络接口的专用 IP 地址不是静态的，则会释放该 IP 地址，并且不保证在重新启动 VM 之后，会将旧的 IP 地址重新分配给网络接口。如果通过 Azure 门户预览或通过调用 Stop-AzureRmVM 来执行关闭，将自动解除分配。如果不希望解除计算机分配，请使用 Stop-AzureRmVM -StayProvisioned
 * 如果从 OS 层关闭 VM，VM 将关闭并且不解除分配。不过，在此情况下，仍会针对 VM 向你的 Azure 帐户收费，即使关闭也一样。在这种情况下，仍会将 IP 地址分配给已停止的 VM。从中关闭 VM 并不会自动强制解除分配。
 
 实际上，在跨界方案中，关闭和解除分配都默认表示从 VM 中解除 IP 地址的分配，即使 DHCP 设置中的本地策略不同也一样。
@@ -704,7 +704,7 @@ SQL Server 2014 引入了一项称为缓冲池扩展的新功能。此功能使�
 不过，请记住，吞吐量还取决于用于备份的 Azure 存储帐户位置。最好是将存储帐户放置在 VM 运行区域以外的区域。例如，在中国西部运行 VM 配置，但将用于备份的存储帐户放在中国北部。当然，这会对备份吞吐量产生影响，而且不大可能生成每秒 150MB 的吞吐量，因为似乎只有在目标存储和 VM 运行于同一个区域数据中心时才会生成这么高的吞吐量。
 
 #### 管理备份 BLOB
-你需要自行管理备份。经常执行事务日志备份预期会创建多个 Blob，因此，管理这些 Blob 很容易使 Azure 门户过载。因此，建议使用 Azure 存储资源管理器。有几个不错的工具可帮助管理 Azure 存储帐户
+你需要自行管理备份。经常执行事务日志备份预期会创建多个 Blob，因此，管理这些 Blob 很容易使 Azure 门户预览过载。因此，建议使用 Azure 存储资源管理器。有几个不错的工具可帮助管理 Azure 存储帐户
 
 * 安装了 Azure SDK 的 Microsoft Visual Studio (<https://www.azure.cn/downloads/>)
 * Azure 存储资源管理器 (<https://www.azure.cn/downloads/>)
@@ -913,7 +913,7 @@ SAP 目前支持 SAP ASE 版本 16.0，可与 SAP Business Suite 产品搭配使
 
 在此情况下，你需要确保：
 
-* 在 Azure 门户中，针对用来与 ICM 通信的 TCP/IP 端口，向网络安全组添加入站规则
+* 在 Azure 门户预览中，针对用来与 ICM 通信的 TCP/IP 端口，向网络安全组添加入站规则
 * 针对用来与 ICM 通信的 TCP/IP 端口，向 Windows 防火墙配置添加入站规则
 
 针对自动导入的所有可用修正，建议定期应用适用于 SAP 版本的修正集合 SAP 说明：
@@ -1062,7 +1062,7 @@ SAP 目前支持 SAP ASE 版本 16.0，可与 SAP Business Suite 产品搭配使
 
 在此情况下，你需要确保：
 
-* 在 Azure 门户中，针对用来与 ICM 通信的 TCP/IP 端口，向网络安全组添加入站规则
+* 在 Azure 门户预览中，针对用来与 ICM 通信的 TCP/IP 端口，向网络安全组添加入站规则
 * 针对用来与 ICM 通信的 TCP/IP 端口，向 Windows 防火墙配置添加入站规则
 
 针对自动导入的所有可用修正，建议定期应用适用于 SAP 版本的修正集合 SAP 说明：

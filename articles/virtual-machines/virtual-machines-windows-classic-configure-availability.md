@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Windows 经典 VM 的可用性集 | Azure"
-	description="在经典部署模型中，使用 Azure 门户和 Azure PowerShell，为新的或现有的 Windows 虚拟机配置可用性集。"
+	description="在经典部署模型中，使用 Azure 门户预览和 Azure PowerShell，为新的或现有的 Windows 虚拟机配置可用性集。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"

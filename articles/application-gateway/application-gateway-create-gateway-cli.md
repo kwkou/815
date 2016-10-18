@@ -25,7 +25,7 @@
 Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载均衡、基于 Cookie 的会话相关性、安全套接字层 (SSL) 卸载、自定义运行状况探测，以及多站点支持。
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/application-gateway-create-gateway-portal/)
+- [Azure 门户预览](/documentation/articles/application-gateway-create-gateway-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
 - [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway/)
 - [Azure Resource Manager 模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
@@ -39,7 +39,7 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 
 ## 方案
 
-在此方案中，将学习如何使用 Azure 门户创建应用程序网关。
+在此方案中，将学习如何使用 Azure 门户预览创建应用程序网关。
 
 此方案将：
 

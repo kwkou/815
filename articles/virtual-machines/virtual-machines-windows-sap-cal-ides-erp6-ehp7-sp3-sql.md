@@ -44,22 +44,22 @@ SAP 提供了有关全新 [SAP Cloud Appliance Library 3.0](http://scn.sap.com/c
 ![](./media/virtual-machines-windows-sap-cal-ides-erp6-ehp7-sp3-sql/ides-pic3.jpg)  
 
 
-然后，必须输入可在 Azure 门户上找到的 Azure 订阅 ID - 请参阅下文有关如何获取该 ID 的内容。接下来，需要下载 Azure 管理证书。
+然后，必须输入可在 Azure 门户预览上找到的 Azure 订阅 ID - 请参阅下文有关如何获取该 ID 的内容。接下来，需要下载 Azure 管理证书。
 
 ![](./media/virtual-machines-windows-sap-cal-ides-erp6-ehp7-sp3-sql/ides-pic6.jpg)  
 
 
-在新 Azure 门户中，可以在左侧看到“订阅”项。单击该项可显示用户的所有活动订阅。
+在新 Azure 门户预览中，可以在左侧看到“订阅”项。单击该项可显示用户的所有活动订阅。
 
 ![](./media/virtual-machines-windows-sap-cal-ides-erp6-ehp7-sp3-sql/ides-pic7.jpg)  
 
 
-选择其中一个订阅并选择“管理证书”会出现一个新概念，那就是要对新的 Azure Resource Manager 模型使用“服务主体”。SAP CAL 尚未针对此新模型进行改编，仍需要在“经典”模型和旧版 Azure 门户中使用管理证书。
+选择其中一个订阅并选择“管理证书”会出现一个新概念，那就是要对新的 Azure Resource Manager 模型使用“服务主体”。SAP CAL 尚未针对此新模型进行改编，仍需要在“经典”模型和旧版 Azure 门户预览中使用管理证书。
 
 ![](./media/virtual-machines-windows-sap-cal-ides-erp6-ehp7-sp3-sql/ides-pic4.jpg)  
 
 
-此处显示的是旧版 Azure 门户。上载管理证书后，SAP CAL 便有权在客户订阅中创建虚拟机。在“订阅”选项卡下面，可以找到必须在 SAP CAL 门户中输入的订阅 ID。
+此处显示的是旧版 Azure 门户预览。上载管理证书后，SAP CAL 便有权在客户订阅中创建虚拟机。在“订阅”选项卡下面，可以找到必须在 SAP CAL 门户中输入的订阅 ID。
 
 ![](./media/virtual-machines-windows-sap-cal-ides-erp6-ehp7-sp3-sql/ides-pic5.jpg)  
 
@@ -94,7 +94,7 @@ SAP 提供了有关全新 [SAP Cloud Appliance Library 3.0](http://scn.sap.com/c
 ![](./media/virtual-machines-windows-sap-cal-ides-erp6-ehp7-sp3-sql/ides-pic13.jpg)  
 
 
-在 Azure 门户中，可以找到以 SAP CAL 中所提供的相同实例名称开头的虚拟机。
+在 Azure 门户预览中，可以找到以 SAP CAL 中所提供的相同实例名称开头的虚拟机。
 
 ![](./media/virtual-machines-windows-sap-cal-ides-erp6-ehp7-sp3-sql/ides-pic14.jpg)  
 
