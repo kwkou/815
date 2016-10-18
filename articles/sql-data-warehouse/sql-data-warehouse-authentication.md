@@ -62,7 +62,7 @@ Azure Active Directory 的优点包括：
 - 通过启用集成的 Windows 身份验证和 Azure Active Directory 支持的其他形式的身份验证来消除存储密码。
 - 使用包含的数据库用户在数据库级别对标识进行身份验证。
 - 支持对连接到 SQL 数据仓库的应用程序进行基于令牌的身份验证。
-- 支持通过用于 SQL Server Management Studio 的 Active Directory 通用身份验证进行多重身份验证。如需多重身份验证的说明，请参阅 [SSMS support for Azure AD MFA with SQL Database and SQL Data Warehouse](/documentation/articles/sql-database-ssms-mfa-authentication/)（SQL 数据库和 SQL 数据仓库针对 Azure AD MFA 的 SSMS 支持）。
+- 支持通过用于 SQL Server Management Studio 的 Active Directory 通用身份验证进行多重身份验证。
 
 > [AZURE.NOTE] Azure Active Directory 仍然相对较新，具有某些限制。若要确保 Azure Active Directory 适用于环境，请参阅 [Azure AD features and limitations][]（Azure AD 功能和限制），尤其是那些需要额外考虑的内容。
 
@@ -87,6 +87,6 @@ Azure Active Directory 的优点包括：
 [保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [使用 Visual Studio 进行查询]: /documentation/articles/sql-data-warehouse-query-visual-studio/
 [What is Azure Active Directory]: /documentation/articles/active-directory-whatis/
-[Azure AD features and limitations]: /documentation/articles/sql-database-aad-authentication.md#azure-ad-features-and-limitations
+[Azure AD features and limitations]: /documentation/articles/sql-database-aad-authentication#azure-ad-features-and-limitations
 
 <!---HONumber=Mooncake_1010_2016-->
