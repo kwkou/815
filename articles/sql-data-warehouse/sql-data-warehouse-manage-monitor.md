@@ -58,7 +58,7 @@
 	SELECT  *
 	FROM    sys.dm_pdw_exec_requests
 	WHERE   [label] = 'My Query';
-```
+
 
 从前面的查询结果中，记下想要调查的查询的**请求 ID**。
 
