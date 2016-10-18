@@ -37,8 +37,8 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 
 步骤如下：
 
-1. 单击此处下载 Reg key files： 
-	- 将Reg值返回Azure全球服务，请使用此处的 Reg key file
+1. 请使用一下 Reg key files： 
+	
 		
 	Azure.reg
 
@@ -51,8 +51,10 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 			"AzureRMAudienceEndpoint"="https://management.core.chinacloudapi.cn"
 			"EnableAzureRMIdentity"="true"
 			"GraphUrl"="graph.chinacloudapi.cn"
+	
+	若要将 Reg 值返回 Azure 全球服务，请使用此处的 Reg key file
 
-	TargetProduction.reg（将Reg值返回Azure全球服务）
+	TargetProduction.reg
 			
 			Windows Registry Editor Version 5.00
 
@@ -69,6 +71,7 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 			[HKEY_CURRENT_USER\SOFTWARE\Microsoft\VisualStudio\14.0\MicrosoftAzureServices]
 			"Resource Management Audience Endpoint"=-
 			"Service Management Endpoint"=-
+
 2. 双击 Azure.reg 文件，同意弹出信息，允许注册表值更改；
 3. 注册表值更改后，所有 Visual Studio 的登录信息都应连接到中国 Azure 服务。
 
