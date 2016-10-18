@@ -66,9 +66,9 @@
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
 
-### 从 Azure 门户添加自定义脚本扩展
+### 从 Azure 门户预览添加自定义脚本扩展
 
-在 <a href="https://portal.azure.cn/ " target="_blank">Azure 门户</a>中浏览到 VM，并通过指定要运行的脚本文件添加扩展。
+在 <a href="https://portal.azure.cn/ " target="_blank">Azure 门户预览</a>中浏览到 VM，并通过指定要运行的脚本文件添加扩展。
 
   ![][5]
 

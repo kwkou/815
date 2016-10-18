@@ -1,6 +1,6 @@
 <properties
 	pageTitle="在第一个 Windows VM 上安装 IIS | Azure"
-	description="通过使用 Azure 门户安装 IIS 并打开端口 80，体验第一个 Windows 虚拟机。"
+	description="通过使用 Azure 门户预览安装 IIS 并打开端口 80，体验第一个 Windows 虚拟机。"
 	keywords=""
 	services="virtual-machines-windows"
 	documentationCenter=""
@@ -22,13 +22,13 @@
 
 # 体验在 Windows VM 上安装角色
 	
-在第一个虚拟机 (VM) 启动并正常运行之后，可以接着安装软件和服务。本教程将使用 Windows Server VM 上的服务器管理器安装 IIS。然后，使用 Azure 门户为 IIS 流量打开端口 80，创建网络安全组 (NSG)。
+在第一个虚拟机 (VM) 启动并正常运行之后，可以接着安装软件和服务。本教程将使用 Windows Server VM 上的服务器管理器安装 IIS。然后，使用 Azure 门户预览为 IIS 流量打开端口 80，创建网络安全组 (NSG)。
 
-如果尚未创建第一个 VM，应先返回 [Create your first Windows virtual machine in the Azure portal](/documentation/articles/virtual-machines-windows-hero-tutorial/)（在 Azure 门户中创建第一个 Windows 虚拟机），然后继续学习本教程。
+如果尚未创建第一个 VM，应先返回 [Create your first Windows virtual machine in the Azure portal](/documentation/articles/virtual-machines-windows-hero-tutorial/)（在 Azure 门户预览中创建第一个 Windows 虚拟机），然后继续学习本教程。
 
 ## 确保 VM 正在运行
 
-1. 打开 [Azure 门户](https://portal.azure.cn)。
+1. 打开 [Azure 门户预览](https://portal.azure.cn)。
 2. 在中心菜单中，单击“虚拟机”。从列表中选择虚拟机。
 3. 如果状态为“已停止(已解除分配)”，请单击 VM“概要”边栏选项卡上的“启动”按钮。如果状态为“正在运行”，可以转到下一步。
 
@@ -38,7 +38,7 @@
 
 3. 在虚拟机边栏选项卡上，单击“连接”。随后将创建并下载远程桌面协议文件（.rdp 文件），该文件类似于用于连接计算机的快捷方式。你可以将此文件保存到桌面以便于访问。**打开**此文件以连接到 VM。
 
-	![显示如何连接到 VM 的 Azure 门户屏幕截图](./media/virtual-machines-windows-hero-tutorial/connect.png)  
+	![显示如何连接到 VM 的 Azure 门户预览屏幕截图](./media/virtual-machines-windows-hero-tutorial/connect.png)  
 
 
 4. 此时将出现 .rdp 来自未知发布者的警告。这是一般警报。在“远程桌面”窗口中，单击“连接”以继续。
@@ -95,7 +95,7 @@
 
 为使 VM 能够通过端口 80 接收入站流量，需将一个入站规则添加到网络安全组。
 
-1. 打开 [Azure 门户](https://portal.azure.cn)。
+1. 打开 [Azure 门户预览](https://portal.azure.cn)。
 2. 在“虚拟机”中，选择创建的 VM。
 3. 在虚拟机设置中，选择“网络接口”，然后选择现有的网络接口。
 
@@ -122,11 +122,11 @@
 	![显示用于添加安全规则的按钮的屏幕截图。](./media/virtual-machines-windows-hero-tutorial/port-80.png)  
 
  
-有关 NSG、入站和出站规则的详细信息，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（使用 Azure 门户对 VM 实现外部访问）。
+有关 NSG、入站和出站规则的详细信息，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（使用 Azure 门户预览对 VM 实现外部访问）。
  
 ## 连接到默认 IIS 网站
 
-1. 在 Azure 门户中，单击“虚拟机”，然后选择 VM。
+1. 在 Azure 门户预览中，单击“虚拟机”，然后选择 VM。
 2. 在“概要”边栏选项卡中，复制“公共 IP 地址”。
 
 	![显示可在何处找到 VM 公共 IP 地址的屏幕截图](./media/virtual-machines-windows-hero-tutorial/ipaddress.png)  

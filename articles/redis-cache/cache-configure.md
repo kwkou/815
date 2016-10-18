@@ -186,7 +186,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。�
 
 ### <a name="cluster-size"></a>Redis 群集大小
 
-此功能目前尚未在 Azure 中国区推出。而且，如果在 Azure 门户预览版中创建高级 Redis 缓存，则将无法设置群集大小。因此，如果想要创建 ShardCount 大于 1 的 Redis 缓存，应当使用 Azure PowerShell 进行创建。
+此功能目前尚未在 Azure 中国区推出。而且，如果在 Azure 门户预览中创建高级 Redis 缓存，则将无法设置群集大小。因此，如果想要创建 ShardCount 大于 1 的 Redis 缓存，应当使用 Azure PowerShell 进行创建。
 
 ## <a name="data-management-settings"></a>数据管理设置
 
@@ -300,7 +300,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。�
 
 “锁定”部分可用来锁定订阅、资源组或资源，以防止组织中的其他用户意外删除或修改关键资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
-Azure 门户预览版中的“用户”部分对基于角色的访问控制 (RBAC) 提供支持，以帮助组织简单准确地满足其访问管理要求。有关详细信息，请参阅 [Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
+Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 提供支持，以帮助组织简单准确地满足其访问管理要求。有关详细信息，请参阅 [Azure 门户预览中基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 单击“导出模板”可生成并导出已部署资源的模板，以用于将来部署。有关使用模板的详细信息，请参阅[使用 Azure Resource Manager 模板部署资源](/documentation/articles/resource-group-template-deploy/)。
 
@@ -310,13 +310,13 @@ Azure 门户预览版中的“用户”部分对基于角色的访问控制 (RBA
 
 >[AZURE.NOTE] 无法使用 `StackExchange.Redis.IServer.ConfigSet` 方法更改本部分中的设置。如果使用本部分中的命令之一调用此方法，将引发如下异常：
 <p>`StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'` 
-<p>任何可配置的值（例如 **max-memory-policy**）都可通过 Azure 门户预览版或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。
+<p>任何可配置的值（例如 **max-memory-policy**）都可通过 Azure 门户预览或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。
 
 |设置|默认值|说明|
 |---|---|---|
 |数据库|16|默认的数据库数为 16，但可以根据定价层配置不同数目。<sup>1</sup> 默认数据库是 DB 0，可以基于每个连接使用 `connection.GetDatabase(dbid)`（其中 dbid 是介于 `0` 和 `databases - 1` 之间的数字）选择其他数据库。|
 |maxclients|取决于定价层<sup>2</sup>|这是同一时间内允许的最大已连接客户端数。一旦达到该限制，Redis 将在关闭所有新连接的同时发送“达到客户端最大数量”的错误。|
-|maxmemory-policy|volatile-lru|Maxmemory 策略是达到 maxmemory（创建缓存时所选缓存服务的大小）时，Redis 将根据它选择要删除内容的设置。Azure Redis 缓存的默认设置为 volatile-lru，此设置使用 LRU 算法删除具有过期设置的密钥。可以在 Azure 门户中配置此设置。有关详细信息，请参阅 [Maxmemory-policy 和 maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved)。|
+|maxmemory-policy|volatile-lru|Maxmemory 策略是达到 maxmemory（创建缓存时所选缓存服务的大小）时，Redis 将根据它选择要删除内容的设置。Azure Redis 缓存的默认设置为 volatile-lru，此设置使用 LRU 算法删除具有过期设置的密钥。可以在 Azure 门户预览中配置此设置。有关详细信息，请参阅 [Maxmemory-policy 和 maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved)。|
 |maxmemory-samples|3|LRU 和最小 TTL 算法不是精确算法而是近似算法（为了节省内存），因此还可以选择示例大小进行检查。例如，对于默认设置，Redis 将检查三个密钥并选取最近使用较少的一个。|
 |lua-time-limit|5,000|Lua 脚本的最大执行时间（以毫秒为单位）。如果达到最大执行时间，Redis 将记录达到最大允许时间后仍继续执行的脚本，并将开始在查询答复时出现错误。|
 |lua-event-limit|500|这是脚本事件队列的最大大小。|

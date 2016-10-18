@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure Resource Manager 和 Azure 门户创建具有站点到站点 VPN 连接的虚拟网络 | Azure"
+   pageTitle="使用 Azure Resource Manager 和 Azure 门户预览创建具有站点到站点 VPN 连接的虚拟网络 | Azure"
    description="如何使用 Resource Manager 部署模型创建 VNet，并使用 S2S VPN 网关连接将其连接到本地网络。"
    services="vpn-gateway"
    documentationCenter="na"
@@ -20,7 +20,7 @@
    ms.author="cherylmc"/>  
 
 
-# 使用 Azure 门户预览版创建具有站点到站点连接的 VNet 
+# 使用 Azure 门户预览创建具有站点到站点连接的 VNet 
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
@@ -28,7 +28,7 @@
 - [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 
 
-本文逐步讲解如何使用 **Azure Resource Manager 部署模型**和 Azure 门户预览版创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。
+本文逐步讲解如何使用 **Azure Resource Manager 部署模型**和 Azure 门户预览创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。
 
 ![图表](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/s2srmportal.png)  
 

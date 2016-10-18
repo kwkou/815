@@ -28,7 +28,7 @@
 - [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 
 
-本文逐步讲解如何**经典部署模型**和经典管理门户创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。目前无法使用 Azure 门户预览版为经典部署模型创建端到端的站点到站点配置。
+本文逐步讲解如何**经典部署模型**和经典管理门户创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。目前无法使用 Azure 门户预览为经典部署模型创建端到端的站点到站点配置。
 
 ![站点到站点示意图](./media/vpn-gateway-site-to-site-create/site2site.png "站点到站点")  
 

@@ -136,13 +136,13 @@ Azure 流量管理器包括内置的终结点监视和终结点自动故障转�
 
 流量管理器属于单一的全局性服务，而不是区域性服务。选择资源组位置对部署在该资源组中的流量管理器配置文件没有影响。
 
-Azure Resource Manager 要求所有资源组指定一个位置，这决定了部署在该资源组中的资源的默认位置。通过 Azure 门户创建流量管理器配置文件时，如果你创建一个新的资源组，系统会要求你提供该位置。
+Azure Resource Manager 要求所有资源组指定一个位置，这决定了部署在该资源组中的资源的默认位置。通过 Azure 门户预览创建流量管理器配置文件时，如果你创建一个新的资源组，系统会要求你提供该位置。
 
-所有流量管理器都使用“全局”作为其位置。由于这是可以接受的唯一值，因此在 Azure 门户、PowerShell 或 Azure CLI 中无法访问此设置。这将覆盖资源组默认值。
+所有流量管理器都使用“全局”作为其位置。由于这是可以接受的唯一值，因此在 Azure 门户预览、PowerShell 或 Azure CLI 中无法访问此设置。这将覆盖资源组默认值。
 
 ### 如何确定每个终结点的当前运行状况？
 
-除了总体配置文件，每个终结点的当前监视状态也显示在 Azure 门户中。该信息也可通过流量监视器 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx)、[PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125941.aspx) 和[跨平台 Azure CLI](/documentation/articles/xplat-cli-install/) 获取。
+除了总体配置文件，每个终结点的当前监视状态也显示在 Azure 门户预览中。该信息也可通过流量监视器 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx)、[PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125941.aspx) 和[跨平台 Azure CLI](/documentation/articles/xplat-cli-install/) 获取。
 
 不能查看有关过去的终结点运行状况的历史信息，也不能配置有关终结点运行状况更改的警报。
 
@@ -157,7 +157,7 @@ Azure Resource Manager 要求所有资源组指定一个位置，这决定了部
 
 ### 终结点运行状况检查使用什么主机头？
 
-在 HTTP 和 HTTPS 运行状况检查中使用的主机头是与每个终结点关联的 DNS 名称。该主机头在 Azure 门户、[PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125941.aspx)、[跨平台 Azure CLI](/documentation/articles/xplat-cli-install/) 和 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx) 中被公开为终结点目标。
+在 HTTP 和 HTTPS 运行状况检查中使用的主机头是与每个终结点关联的 DNS 名称。该主机头在 Azure 门户预览、[PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125941.aspx)、[跨平台 Azure CLI](/documentation/articles/xplat-cli-install/) 和 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx) 中被公开为终结点目标。
 
 该值是终结点配置的一部分。在主机头中使用的值不能通过目标属性单独指定。
 

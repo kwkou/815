@@ -21,7 +21,7 @@
 
 是否要连接到 Linux VM？ 请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 
-了解如何[使用新版 Azure 门户执行这些步骤](/documentation/articles/virtual-machines-windows-connect-logon/)。
+了解如何[使用新版 Azure 门户预览执行这些步骤](/documentation/articles/virtual-machines-windows-connect-logon/)。
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 

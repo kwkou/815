@@ -27,7 +27,7 @@
 
 使用点到站点 (P2S) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。如果要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则 P2S 连接会很有用。
 
-本文逐步讲解如何在 **Resource Manager 部署模型**中创建具有点到站点连接的 VNet。这些步骤需要 PowerShell。目前无法在 Azure 门户中创建此端到端解决方案。
+本文逐步讲解如何在 **Resource Manager 部署模型**中创建具有点到站点连接的 VNet。这些步骤需要 PowerShell。目前无法在 Azure 门户预览中创建此端到端解决方案。
 
 点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。可通过从客户端计算机启动连接来建立 VPN 连接。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)（VPN 网关常见问题）及 [Planning and Design](/documentation/articles/vpn-gateway-plan-design/)（规划和设计）。
 
@@ -232,7 +232,7 @@ Azure 使用证书来验证需要通过 P2S 进行连接的客户端。请将根
 
 证书用于对点到站点 VPN 的 VPN 客户端进行身份验证。以下步骤指导如何添加和删除根证书。在将 Base64 编码 X.509 (.cer) 文件添加到 Azure 时，则是在告诉 Azure 信任该文件所代表的根证书。
 
-可以使用 PowerShell 或 Azure 门户添加或删除受信任的根证书。若要使用 Azure 门户执行此操作，请转到“虚拟网络网关”>“设置”>“点到站点配置”>“根证书”。以下步骤使用 PowerShell 完成相关任务。
+可以使用 PowerShell 或 Azure 门户预览添加或删除受信任的根证书。若要使用 Azure 门户预览执行此操作，请转到“虚拟网络网关”>“设置”>“点到站点配置”>“根证书”。以下步骤使用 PowerShell 完成相关任务。
 
 ### 添加受信任的根证书
 

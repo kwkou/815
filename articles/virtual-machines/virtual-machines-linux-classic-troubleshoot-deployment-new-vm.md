@@ -29,7 +29,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。
 
-在 Azure 门户预览版中，单击“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“审核日志”。
+在 Azure 门户预览中，单击“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“审核日志”。
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 

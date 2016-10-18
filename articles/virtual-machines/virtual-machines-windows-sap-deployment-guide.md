@@ -321,7 +321,7 @@ Azure 提供了优异的平台检测，以满足所有业务关键型应用程�
 在开始之前，请确保满足以下章节中所述的先决条件。
 
 #### 本地个人计算机
-本地个人计算机为 SAP 软件部署设置 Azure 虚拟机的过程包括多个步骤。若要管理 Windows VM 或 Linux VM，需要使用 PowerShell 脚本和 Azure 门户。为此，必须准备一台运行 Windows 7 或更高版本的本地个人计算机。如果你只想要管理 Linux VM，并想要使用 Linux 计算机执行此任务，则也可以使用 Azure 命令行接口 (Azure CLI)。
+本地个人计算机为 SAP 软件部署设置 Azure 虚拟机的过程包括多个步骤。若要管理 Windows VM 或 Linux VM，需要使用 PowerShell 脚本和 Azure 门户预览。为此，必须准备一台运行 Windows 7 或更高版本的本地个人计算机。如果你只想要管理 Linux VM，并想要使用 Linux 计算机执行此任务，则也可以使用 Azure 命令行接口 (Azure CLI)。
 
 #### Internet 连接
 若要下载和执行所需的工具与脚本，需要建立 Internet 连接。此外，运行 Azure 增强型监视扩展的 Azure 虚拟机也需要访问 Internet。如果此 Azure VM 是 Azure 虚拟网络或本地域的一部分，请确保根据本文档的[配置代理][deployment-guide-configure-proxy]一章中所述完成相关的代理设置。
@@ -370,7 +370,7 @@ Azure 提供了优异的平台检测，以满足所有业务关键型应用程�
 * [SCN](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes)，其中包含适用于 Linux 的全部所需的 SAP 说明
 * [Azure PowerShell][azure-ps] 中特定于 SAP 的 PowerShell cmdlet
 * [Azure CLI][azure-cli] 中特定于 SAP 的 Azure CLI
-* [Azure 门户][azure-portal]
+* [Azure 门户预览][azure-portal]
 
 [comment]: <>（MSSedusch TODO：在 SAP 说明 1409604 中添加 SAP 主机代理的 ARM 修补级别）
  
@@ -428,8 +428,8 @@ Azure 可让用户从 Azure 应用商店部署 VM 实例，该库提供 Windows 
 
 根据该流程图，需要执行以下步骤：
 
-#### 使用 Azure 门户创建虚拟机
-使用 Azure 应用商店中的映像创建新虚拟机的最简单方式是通过 Azure 门户。导航到 <https://portal.azure.cn/#create>。在搜索字段中输入要部署的操作系统类型（例如 Windows、SLES 或 RHEL），然后选择版本。请确保选择“Azure Resource Manager”部署模型，然后单击“创建”。
+#### 使用 Azure 门户预览创建虚拟机
+使用 Azure 应用商店中的映像创建新虚拟机的最简单方式是通过 Azure 门户预览。导航到 <https://portal.azure.cn/#create>。在搜索字段中输入要部署的操作系统类型（例如 Windows、SLES 或 RHEL），然后选择版本。请确保选择“Azure Resource Manager”部署模型，然后单击“创建”。
 
 向导将引导你完成创建虚拟机的所需参数以及全部所需资源（例如网络接口或存储帐户）。其中一些参数包括：
 
@@ -452,14 +452,14 @@ Azure 可让用户从 Azure 应用商店部署 VM 实例，该库提供 Windows 
 完成向导之后，虚拟机将部署在所选的资源组中。
 
 #### 使用模板创建虚拟机
-也可以使用 [azure-quickstart-templates github 存储库][azure-quickstart-templates-github]中发布的某个 SAP 模板来创建部署。或者，可以使用 [Azure 门户][virtual-machines-windows-tutorial]、[PowerShell][virtual-machines-ps-create-preconfigure-windows-resource-manager-vms] 或 [Azure CLI][virtual-machines-linux-tutorial] 手动创建虚拟机。
+也可以使用 [azure-quickstart-templates github 存储库][azure-quickstart-templates-github]中发布的某个 SAP 模板来创建部署。或者，可以使用 [Azure 门户预览][virtual-machines-windows-tutorial]、[PowerShell][virtual-machines-ps-create-preconfigure-windows-resource-manager-vms] 或 [Azure CLI][virtual-machines-linux-tutorial] 手动创建虚拟机。
 
 * [双层配置（仅一个虚拟机）模板][sap-templates-2-tier-marketplace-image]
 如果想要创建仅使用一个虚拟机的双层系统，请使用此模板。
 * [三层配置（多个虚拟机）模板][sap-templates-3-tier-marketplace-image]
 如果想要创建使用多个虚拟机的三层系统，请使用此模板。
 
-打开上述其中一个模板之后，Azure 门户将导航到“编辑参数”面板。输入以下信息：
+打开上述其中一个模板之后，Azure 门户预览将导航到“编辑参数”面板。输入以下信息：
 
 * **sapSystemId**：SAP 系统 ID
 * **osType**：要部署的操作系统，例如 Windows Server 2012 R2、SLES 12 或 RHEL 7.2
@@ -511,7 +511,7 @@ Azure 可让用户从 Azure 应用商店部署 VM 实例，该库提供 Windows 
 根据该流程图，需要执行以下步骤：
 
 #### 创建虚拟机
-若要通过 Azure 门户使用专用 OS 映像来创建部署，请使用 [azure-quickstart-templates github 存储库][azure-quickstart-templates-github]中发布的某个 SAP 模板。
+若要通过 Azure 门户预览使用专用 OS 映像来创建部署，请使用 [azure-quickstart-templates github 存储库][azure-quickstart-templates-github]中发布的某个 SAP 模板。
 也可以使用 [PowerShell][virtual-machines-upload-image-windows-resource-manager] 手动创建虚拟机。
 
 * [双层配置（仅一个虚拟机）模板][sap-templates-2-tier-user-image]
@@ -519,7 +519,7 @@ Azure 可让用户从 Azure 应用商店部署 VM 实例，该库提供 Windows 
 * [三层配置（多个虚拟机）模板][sap-templates-3-tier-user-image]
 如果想要创建使用多个虚拟机和自己的 OS 映像的三层系统，请使用此模板。
 
-打开上述其中一个模板之后，Azure 门户将导航到“编辑参数”面板。输入以下信息：
+打开上述其中一个模板之后，Azure 门户预览将导航到“编辑参数”面板。输入以下信息：
 
 * **sapSystemId**：SAP 系统 ID
 * **osType**：要部署的操作系统类型（Windows 或 Linux）
@@ -584,12 +584,12 @@ ___
 假设已在 Azure 中上载并定义磁盘（请参阅 [Planning and Implementation Guide][planning-guide]（规划和实施指南）），请遵循以下步骤
 
 #### 创建虚拟机
-若要通过 Azure 门户使用专用 OS 磁盘来创建部署，请使用 [azure-quickstart-templates github 存储库][azure-quickstart-templates-github]中发布的 SAP 模板。也可以使用 PowerShell 或 Azure CLI 手动创建虚拟机。
+若要通过 Azure 门户预览使用专用 OS 磁盘来创建部署，请使用 [azure-quickstart-templates github 存储库][azure-quickstart-templates-github]中发布的 SAP 模板。也可以使用 PowerShell 或 Azure CLI 手动创建虚拟机。
 
 * [双层配置（仅一个虚拟机）模板][sap-templates-2-tier-os-disk]
     * 如果想要创建仅使用一个虚拟机的双层系统，请使用此模板。
 
-打开上述模板之后，Azure 门户将导航到“编辑参数”面板。输入以下信息：
+打开上述模板之后，Azure 门户预览将导航到“编辑参数”面板。输入以下信息：
 
 * **sapSystemId**：SAP 系统 ID
 * **osType**：要部署的操作系统类型（Windows 或 Linux）
