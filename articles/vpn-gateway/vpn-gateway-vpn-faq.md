@@ -198,7 +198,7 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 
 ### <a name="multi-site-and-vnet-to-vnet-connectivity"></a>有关网关类型、要求和吞吐量的详细信息
 
-有关详细信息，请参阅 [关于 VPN 网关设置](/documentation/articles/vpn-gateway-about-vpn gateway-settings/)。
+有关详细信息，请参阅[关于 VPN 网关设置](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/)。
 
 ## 多站点连接和 VNet 到 VNet 连接
 
