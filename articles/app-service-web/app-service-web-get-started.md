@@ -39,7 +39,7 @@
 
 ## <a name="create"></a> 创建 Web 应用
 
-1. 使用 Azure 帐户登录到 [Azure 门户（预览版）](https://portal.azure.cn)。
+1. 使用 Azure 帐户登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 在左侧菜单中，单击“新建”>“Web + 移动”>“Web 应用”。
 

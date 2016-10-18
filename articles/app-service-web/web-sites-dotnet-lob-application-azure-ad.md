@@ -64,7 +64,7 @@
 
 ## <a name="bkmk_auth"></a>配置身份验证和目录访问
 
-1. 登录到 [Azure 门户预览版](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 从左侧菜单中，单击“应用程序服务”> **&lt;*应用名称*>** >“身份验证/授权”。
 
