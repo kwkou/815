@@ -58,7 +58,7 @@
     $DatabaseName = "database name"
 
 
-以下变量来自 BACPAC 所处的存储帐户。在 [Azure 门户](https://portal.azure.cn)中，浏览到存储帐户获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
+以下变量来自 BACPAC 所处的存储帐户。在 [Azure 门户预览](https://portal.azure.cn)中，浏览到存储帐户获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
 
 Blob 名称是要从中创建数据库的现有 BACPAC 文件的名称。需要包括 .bacpac 扩展名。
 

@@ -41,7 +41,7 @@
 
 ## 事务复制要求
 
-事务复制是一种内置技术，与 SQL Server 6.5 和更高版本的 SQL Server 集成。它是成熟且经过证实的技术，大多数 DBA 运用现有的经验就能操作。现在，可以使用 [SQL Server 2016](https://www.microsoft.com/zh-CN/cloud-platform/sql-server) 将 Azure SQL 数据库配置为本地发布的[事务复制订阅者](https://msdn.microsoft.com/zh-cn/library/mt589530.aspx)。从 Management Studio 设置的体验与在本地服务器上设置事务复制订阅者相同。当发布服务器和分发服务器至少是以下 SQL Server 版本之一时，支持此方案：
+事务复制是一种内置技术，与 SQL Server 6.5 和更高版本的 SQL Server 集成。它是成熟且经过证实的技术，大多数 DBA 运用现有的经验就能操作。现在，可以使用 [SQL Server 2016](https://www.microsoft.com/en-us/cloud-platform/sql-server) 将 Azure SQL 数据库配置为本地发布的[事务复制订阅者](https://msdn.microsoft.com/zh-cn/library/mt589530.aspx)。从 Management Studio 设置的体验与在本地服务器上设置事务复制订阅者相同。当发布服务器和分发服务器至少是以下 SQL Server 版本之一时，支持此方案：
 
  - SQL Server 2016 和更高版本
  - SQL Server 2014 SP1 CU3 和更高版本

@@ -30,7 +30,7 @@ DTU 是资源度量单位，这些资源保证可用于[独立数据库服务层
 ![SQL 数据库简介：按层和级别统计的单一数据库 DTU](./media/sql-database-what-is-a-dtu/single_db_dtus.png)  
 
 
-可以随时[更改服务层](/documentation/articles/sql-database-scale-up/)，将给应用程序造成的停机时间降至最低（通常平均为四秒以下）。许多业务和应用只要能够创建数据库并按需调高或调低单一数据库的性能即可，尤其是当使用模式相对容易预测时。但如果有无法预测的使用模式，则管理成本和业务模式就会变得相当困难。在此方案中，可以使用具有特定 eDTU 数目的弹性池。
+可以随时[更改服务层](/documentation/articles/sql-database-scale-up-powershell/)，将给应用程序造成的停机时间降至最低（通常平均为四秒以下）。许多业务和应用只要能够创建数据库并按需调高或调低单一数据库的性能即可，尤其是当使用模式相对容易预测时。但如果有无法预测的使用模式，则管理成本和业务模式就会变得相当困难。在此方案中，可以使用具有特定 eDTU 数目的弹性池。
 
 ## 什么是弹性数据库事务单位 (eDTU)
 
@@ -45,7 +45,7 @@ eDTU 是可以在 Azure SQL 服务器上一组数据库（称为[弹性池](/doc
 
 ## 如何确定工作负荷所需的 DTU 数目？
 
-如果要将现有的本地或 SQL Server 虚拟机工作负荷迁移到 Azure SQL 数据库，可以使用 [DTU 计算器](http://dtucalculator.azurewebsites.net/)来估算所需的 DTU 数目。对于现有的 Azure SQL 数据库工作负荷，可以使用 [SQL 数据库 Query Performance Insight](/documentation/articles/sql-database-query-performance/) 来了解数据库资源消耗量 (DTU)，更深入地探讨如何优化工作负荷。也可以使用 [sys.dm\_db\_ resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) DMV 获取最近一小时的资源消耗信息。或者，可以查询目录视图 [sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)，获取最近 14 天的同类数据，不过，五分钟平均值的准确性较低。
+如果要将现有的本地或 SQL Server 虚拟机工作负荷迁移到 Azure SQL 数据库，可以使用 [DTU 计算器](http://dtucalculator.azurewebsites.net/)来估算所需的 DTU 数目。对于现有的 Azure SQL 数据库工作负荷，可以使用 [sys.dm\_db\_ resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) DMV 获取最近一小时的资源消耗信息。或者，可以查询目录视图 [sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)，获取最近 14 天的同类数据，不过，五分钟平均值的准确性较低。
 
 ## 如何知道资源弹性池是否能够带来优势？
 
