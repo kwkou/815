@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication - 后续步骤" 
-	description="这个有关 Azure Multi-Factor Authentication 的页面介绍了使用 MFA 可以执行的后续步骤。其中包括报告、欺诈警报、一次性跳过、自定义语音消息、缓存，受信任的 IP 和应用密码。" 
+	pageTitle="Azure 多重身份验证- 后续步骤" 
+	description="这个有关 Azure 多重身份验证的页面介绍了使用 MFA 可以执行的后续步骤。其中包括报告、欺诈警报、一次性跳过、自定义语音消息、缓存，受信任的 IP 和应用密码。" 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -9,33 +9,28 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="08/04/2016" 
-	wacn.date="09/28/2016"/>
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/30/2016" 
+	ms.author="billmath"
+   	wacn.date="10/19/2016"/>
 
 # 配置 Azure 多重身份验证
 
-在启动并运行 Azure 多重身份验证后，可以参考以下文章来对其进行管理。该文章涵盖各种主题，可让你充分利用 Azure 多重身份验证。请注意，并非所有版本的 Azure 多重身份验证都提供这些功能。
+在启动并运行 Azure 多重身份验证后，可以参考以下文章来对其进行管理。本文涵盖各种主题，足以让用户充分利用 Azure 多重身份验证。请注意，并非所有版本的 Azure 多重身份验证都提供这些功能。
 
-<table class="table table-bordered table-striped table-condensed">
-   <tr>
-      <th>功能</th>
-      <th>说明</th>
-      <th>涵盖的内容</th>
-   </tr>
-   <tr>
-      <td><a href="#app-passwords">应用密码</a></td>
-      <td>应用密码允许非 MFA 感知应用程序跳过多重身份验证并继续工作</td>
-      <td>有关应用密码的信息 </td>
-   </tr>
-   
-</table>
-
-## <a name="app-passwords"></a>应用密码
+ 
+## 应用密码
 
 在 Office 2010 或更低版本和 Apple Mail 等某些应用中，无法使用多重身份验证。若要使用这些应用，你需要使用“应用密码”来替换传统密码。应用密码可让应用程序跳过多重身份验证并继续工作。
 
->[AZURE.NOTE]适用于 Office 2013 客户端的现代身份验证  
->Office 2013 客户端（包括 Outlook）现在支持新的身份验证协议，并且可以启用对多重身份验证的支持。这意味着一旦启用后，就不需要对 Office 2013 客户端使用应用密码。有关详细信息，请参阅 [Office 2013 现代身份验证公共预览版发布声明](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)。
+>[AZURE.NOTE] 适用于 Office 2013 客户端的现代身份验证
+>
+> Office 2013 客户端（包括 Outlook）现在支持新的身份验证协议，并且可以启用对多重身份验证的支持。这意味着一旦启用后，就不需要对 Office 2013 客户端使用应用密码。有关详细信息，请参阅 [Office 2013 现代身份验证公共预览版发布声明](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)。
+
+
 
 ### 有关应用密码的重要事项
 
@@ -43,7 +38,7 @@
 
 身份验证体验|对于基于浏览器的应用|对于非基于浏览器的应用
 :------------- | :------------- | :------------- 
-<ul><li>身份验证的第一个因素在本地执行</li><li>第二个因素是由云标识执行的基于电话的方法。</li><ul><li>管理员和用户可以使用应用密码来登录。
+|<ul><li>身份验证的第一个因素在本地执行</li><li>第二个因素是由云标识执行的基于电话的方法。</li>|<ul><li>管理员和用户可以使用应用密码来登录。
 
 - 用户可能有多个应用密码，从而增加了密码被盗的可能性。由于应用密码很难记住，因此用户可能会将密码写下来。不建议这么做并应阻止这么做，因为使用应用密码登录只需进行单重身份验证。
 - 缓存密码并在本地方案中使用该密码的应用可能会启动失败，因为超出组织 ID 范畴的应用密码是不可识别的。一个示例是 Exchange 电子邮件，这些电子邮件位于本地但存档邮件位于云中。同一密码将无法正常工作。
@@ -51,14 +46,16 @@
 - 目前，每个用户有 40 个密码的限制。系统将提示你删除旧应用密码（现有的应用密码之一），以便创建新的应用密码。
 - 对用户的帐户启用多重身份验证后，可以在大多数非浏览器客户端（例如 Outlook 和 Lync）上使用应用密码，但无法通过 Windows PowerShell 等非浏览器应用程序使用应用密码执行管理操作，即使该用户具有管理帐户。请确保使用强密码创建服务帐户以运行 PowerShell 脚本，而不要为该帐户启用多重身份验证。
 
->[AZURE.WARNING]  在客户端与同时与本地和云自动发现终结点通信的混合环境中，应用密码不起作用。  
+>[AZURE.WARNING]  在客户端与同时与本地和云自动发现终结点通信的混合环境中，应用密码不起作用。
+>
 >请注意，在客户端与同时与本地和云自动发现终结点通信的混合环境中，应用密码不起作用，因为需要使用域密码在本地进行身份验证，使用应用密码在云中进行身份验证。
+
 
 ### 应用密码命名指南
 建议应用密码名称应能反映使用应用密码的设备。例如，如果你有一台安装了非浏览器应用（如 Outlook、Word 和 Excel）的便携式计算机，则只需创建一个名为 Laptop 的应用密码，即可在所有这些应用程序中使用该应用密码。虽然你可以为所有这些应用程序创建单独的密码，但不建议这样做。建议的方式是每个设备使用一个应用密码。
 
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/naming.png)</center>
+![Cloud](./media/multi-factor-authentication-whats-next/naming.png)
 
 
 ### 联合 (SSO) 应用密码
@@ -79,7 +76,7 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 - 你要使用 Azure 多重身份验证
 
 
-<center>![Proofup](./media/multi-factor-authentication-whats-next/federated.png)</center>
+![验证](./media/multi-factor-authentication-whats-next/federated.png)
 
  在这些情况下，你必须执行以下操作：
 
@@ -97,16 +94,16 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 2. 在左侧单击“Active Directory”。
 3. 在“目录”下单击要为其启用此功能的用户的目录。
 4. 在顶部单击“用户”。
-5. 在页面底部，单击“管理多重身份验证”。此时将打开“Multi-Factor Authentication”页。
-6. 在“Multi-Factor Authentication”页的顶部，单击“服务设置”。
+5. 在页面底部，单击“管理 Multi-Factor Auth”。此时将打开“多重身份验证”页。
+6. 在“多重身份验证”页的顶部，单击“服务设置”。
 7. 确保选中了“允许用户创建用于登录到非浏览器应用程序的应用密码”旁边的单选按钮。
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/trustedips.png)</center>
+	![创建应用密码](./media/multi-factor-authentication-whats-next/trustedips3.png)
 
 ### 创建应用密码
 用户可以在最初注册时创建应用密码。注册过程结束时，系统将提供一个选项用于创建应用密码。
 
-此外，用户日后还可以通过在 Azure 门户和 Office 365 门户中更改设置来创建应用密码。
+此外，用户日后还可以通过在 Azure 门户预览和 Office 365 门户中更改设置来创建应用密码。
 
 ### 在 Office 365 门户中创建应用密码
 --------------------------------------------------------------------------------
@@ -121,12 +118,12 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 7. 输入应用密码的名称，然后单击“下一步”
 8. 将应用密码复制到剪贴板，然后将它粘贴到你的应用。
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/security.png)</center>
+	![Cloud](./media/multi-factor-authentication-whats-next/security.png)
 
 
-### 在 Azure 门户中创建应用密码
+### 在 Azure 门户预览中创建应用密码
 --------------------------------------------------------------------------------
-1. 登录到 Azure 经典管理门户
+1. 登录到 Azure 经典管理门户。
 3. 在顶部，右键单击你的用户名并选择“其他安全性验证”。
 5. 在验证页的顶部选择应用密码
 6. 单击“创建”
@@ -134,11 +131,11 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 8. 将应用密码复制到剪贴板，然后将它粘贴到你的应用。
 
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/app2.png)</center>
+	![应用密码](./media/multi-factor-authentication-whats-next/app2.png)
 
 ### 在没有 Office 365 或 Azure 订阅的情况下创建应用密码
 --------------------------------------------------------------------------------
-1. 登录到 [https://myapps.microsoft.com](https://myapps.microsoft.com)	
+1. 登录到 [https://myapps.microsoft.com](https://myapps.microsoft.com)
 2. 在顶部选择配置文件。
 3. 单击你的用户名并选择“其他安全性验证”。
 5. 在验证页的顶部选择应用密码
@@ -146,8 +143,8 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 7. 输入应用密码的名称，然后单击“下一步”
 8. 将应用密码复制到剪贴板，然后将它粘贴到你的应用。
 
-<center>![Cloud](./media/multi-factor-authentication-whats-next/myapp.png)</center>
+	![应用密码](./media/multi-factor-authentication-whats-next/myapp.png)
 
 
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_1010_2016-->
