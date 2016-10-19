@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="DocumentDB 的 SQL 语法和 SQL 查询 | Azure" 
-	description="了解有关 DocumentDB（一种 NoSQL 数据库）的 SQL 语法、数据库概念和 SQL 查询。SQL 可在 DocumentDB 中作为 JSON 查询语言使用。" 
-	keywords="sql 语法, sql 查询, sql 查询, json 查询语言, 数据库概念和 sql 查询"
+	description="了解 DocumentDB（一种 NoSQL 数据库）的 SQL 语法、数据库概念和 SQL 查询。SQL 可在 DocumentDB 中作为 JSON 查询语言使用。" 
+	keywords="sql 语法, sql 查询, sql 查询, json 查询语言, 数据库概念和 sql 查询, 聚合函数"
 	services="documentdb" 
 	documentationCenter="" 
 	authors="arramac" 
@@ -10,8 +10,14 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="07/07/2016" 
-	wacn.date=""/>  
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/22/2016" 
+	ms.author="arramac"
+   	wacn.date="10/18/2016"/>  
+
 
 # DocumentDB 中的 SQL 查询和 SQL 语法
 Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。DocumentDB 是真正无架构的。凭借其对数据库引擎内 JSON 数据模型的直接承诺，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。
@@ -19,11 +25,13 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 在设计 DocumentDB 的查询语言时，我们有两个目标：
 
 -	我们希望支持 SQL，而不是发明一种新的 JSON 查询语言。SQL 是最常见和最常用的查询语言之一。DocumentDB SQL 提供了一种正式的编程模型，用于对 JSON 文档进行丰富查询。
--	由于 JSON 文档数据库能够在数据库引擎中直接执行 JavaScript，我们希望将 JavaScript 的编程模型用作我们的查询语言的基础。DocumentDB SQL 植根于 JavaScript 的类型系统、表达式计算和函数调用中。而这反过来为关系投影、跨 JSON 文档的分层导航、自联接、空间查询以及调用完全采用 JavaScript 编写的用户定义的函数 (UDF) 和其他功能提供了自然编程模型。 
+-	由于 JSON 文档数据库能够在数据库引擎中直接执行 JavaScript，我们希望将 JavaScript 的编程模型用作我们的查询语言的基础。DocumentDB SQL 植根于 JavaScript 的类型系统、表达式计算和函数调用中。而这反过来为关系投影、跨 JSON 文档的分层导航、自联接、空间查询以及调用完全采用 JavaScript 编写的用户定义的函数 (UDF) 和其他功能提供了自然编程模型。
 
 我们相信这些功能是减少应用程序和数据库之间冲突的关键，并且对于开发人员的工作效率来说是至关重要的。
 
-我们建议从观看下面的视频开始，在此视频中，Aravind Ramachandran 会演示 DocumentDB 的查询功能，并且你可以首先访问我们的 [Query Playground（查询板块）](http://www.documentdb.com/sql/demo)，在其中尝试 DocumentDB 并对我们的数据集运行 SQL 查询。
+建议访问[查询板块](http://www.documentdb.com/sql/demo)来开始使用，可以在该板块中试用 DocumentDB，对数据集运行 SQL 查询。
+
+
 
 然后，返回到本文中，我们将从 SQL 查询教程开始，指导你完成一些简单的 JSON 文档和 SQL 命令。
 
@@ -51,7 +59,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 	}
 
 
-下面是另一个有着细微差异的文档 – 其中使用了 `givenName` 和 `familyName`，取代了 `firstName` 和 `lastName`。
+下面是另一个有着细微差异的文档 - 其中使用了 `givenName` 和 `familyName`，取代了 `firstName` 和 `lastName`。
 
 **文档**
 
@@ -164,7 +172,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 
 因此，在我们设计 DocumentDB 索引子系统时，我们设定了以下目标：
 
--	在无需架构的情况下索引文档：索引子系统不需要任何架构信息或对文档的架构做出任何假设。 
+-	在无需架构的情况下索引文档：索引子系统不需要任何架构信息或对文档的架构做出任何假设。
 
 -	支持高效、层次丰富的关系型查询：索引高效地支持 DocumentDB 查询语言，包括支持分层和关系投影。
 
@@ -546,7 +554,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 对于其他比较运算符（如 >、>=、!=、< 和 <=），以下规则适用：
 
 -	跨类型比较结果为 Undefined。
--	两个对象或两个数组之间比较结果为 Undefined。   
+-	两个对象或两个数组之间比较结果为 Undefined。
 
 如果筛选器中标量表达式的结果为 Undefined，则相应的文档不会包含在结果中，因为 Undefined 在逻辑上不等于“True”。
 
@@ -566,7 +574,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 
 了更快地执行查询，请记得创建索引策略，该策略对在 BETWEEN 子句中筛选的任何数值属性/路径使用范围索引类型。
 
-在 DocumentDB 与在 ANSI SQL 中使用 BETWEEN 的主要不同之处在于你可以对混合类型的属性执行快速范围查询 – 例如，你可以在某些文档中将“grade”设置为数字 (5)，并在其他文档中将其设置为字符串（“grade4”）。在这些情况下（如在 JavaScript 中），在两种不同类型之间进行比较的结果为“undefined”，将会跳过文档。
+在 DocumentDB 与在 ANSI SQL 中使用 BETWEEN 的主要不同之处在于你可以对混合类型的属性执行快速范围查询 - 例如，你可以在某些文档中将“grade”设置为数字 (5)，并在其他文档中将其设置为字符串（“grade4”）。在这些情况下（如在 JavaScript 中），在两种不同类型之间进行比较的结果为“undefined”，将会跳过文档。
 
 ### 逻辑（AND、OR 和 NOT）运算符
 逻辑运算符对布尔值进行运算。下表显示了这些运算符的逻辑真值表。
@@ -858,8 +866,8 @@ DocumentDB SQL 的另一个重要功能是数组/对象创建。请注意，在�
 	]
 
 
-###\*运算符：
-支持使用特殊运算符 (\*) 按原样投影文档。在使用时，它必须仅为投影的字段。当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
+###*运算符：
+支持使用特殊运算符 (*) 按原样投影文档。在使用时，它必须仅为投影的字段。当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
 
 **查询**
 
@@ -919,7 +927,7 @@ TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER B
 可将 TOP 与常量值（如以上所示）或使用参数化查询的变量值配合使用。有关更多详细信息，请参阅下面的参数化查询。
 
 ## ORDER BY 子句
-如同在 ANSI-SQL 中一样，在查询时可以包含可选的 Order By 子句。该子句可以包括可选的 ASC/DESC 参数以指定检索结果必须遵守的顺序。有关 Order By 的详细信息，请参阅 [DocumentDB Order By Walkthrough（DocumentDB Order By 演练）](/documentation/articles/documentdb-orderby/)。
+如同在 ANSI-SQL 中一样，在查询时可以包含可选的 Order By 子句。该子句可以包括可选的 ASC/DESC 参数以指定检索结果必须遵守的顺序。有关 Order By 的详细信息，请参阅 [DocumentDB Order By Walkthrough](/documentation/articles/documentdb-orderby/)（DocumentDB Order By 演练）。
 
 例如，下面是按居住城市的名称检索家庭的查询。
 
@@ -1046,7 +1054,7 @@ TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER B
 ### 联接
 在关系数据库中，跨表联接的要求是非常重要的。设计规范化的架构是一项逻辑要求。与此相反，DocumentDB 则处理无架构文档的非规范化数据模型。这在逻辑上等效于“自联接”。
 
-语言支持的语法为 < from\_source1 > JOIN < from\_source2 > JOIN ...JOIN < from\_sourceN >。总体而言，此语法返回一组 **N** 元组（带有 **N** 个值的元组）。每个元组拥有通过对它们相应的集遍历所有集合别名所产生的值。换言之，这是加入联接的集的完整叉积。
+语言支持的语法为 <from\_source1> JOIN <from\_source2> JOIN ...JOIN <from\_sourceN>。总体而言，此语法返回一组 **N** 元组（带有 **N** 个值的元组）。每个元组拥有通过对它们相应的集遍历所有集合别名所产生的值。换言之，这是加入联接的集的完整叉积。
 
 下面的示例演示了 JOIN 子句是如何工作的。在下面的示例中，由于源中每个文档和空集的叉积为空，因此结果为空。
 
@@ -1110,7 +1118,7 @@ TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER B
 
 -	在数组中扩展每个子元素 **c**。
 -	应用具有文档 **f** 的根的叉积，这些文档具有已在第一步中合并的每个子元素 **c**。
--	最后，单独投影根对象 **f** 名称属性。 
+-	最后，单独投影根对象 **f** 名称属性。
 
 第一个文档 (`AndersenFamily`) 仅包含一个子元素，因此结果集仅包含与此文档对应的单个对象。第二个文档 (`WakefieldFamily`) 包含两个子元素。因此，叉积会为每个子女生成单独的对象，从而产生两个对象，每个对象分别与此文档对应。请注意，这两个文档中的根字段将会是相同的，就如你在叉积中所预期的一样。
 
@@ -1383,96 +1391,96 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 <td><strong>说明</strong></td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_abs">ABS (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_abs">ABS (num_expr)</a></td>	
 <td>返回指定数值表达式的绝对（正）值。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_ceiling">CEILING (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ceiling">CEILING (num_expr)</a></td>	
 <td>返回大于或等于指定数值表达式的最小整数值。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_floor">FLOOR (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_floor">FLOOR (num_expr)</a></td>	
 <td>返回小于或等于指定数值表达式的最大整数。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_exp">EXP (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_exp">EXP (num_expr)</a></td>	
 <td>返回指定数值表达式的指数。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_log">LOG (num_expr [,base])</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_log">LOG (num_expr [,base])</a></td>	
 <td>返回指定数值表达式的自然对数，或使用指定底数的对数</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_log10">LOG10 (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_log10">LOG10 (num_expr)</a></td>	
 <td>返回指定数值表达式以 10 为底的对数值。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_round">ROUND (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_round">ROUND (num_expr)</a></td>	
 <td>返回一个数值，四舍五入到最接近的整数值。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_trunc">TRUNC (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_trunc">TRUNC (num_expr)</a></td>	
 <td>返回一个数值，截断到最接近的整数值。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_sqrt">SQRT (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sqrt">SQRT (num_expr)</a></td>	
 <td>返回指定数值表达式的平方根。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_square">SQUARE (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_square">SQUARE (num_expr)</a></td>	
 <td>返回指定数值表达式的平方。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_power">POWER (num_expr, num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_power">POWER (num_expr, num_expr)</a></td>	
 <td>返回指定数值表达式相对指定值的幂。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_sign">SIGN (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sign">SIGN (num_expr)</a></td>	
 <td>返回指定数值表达式的符号值 (-1, 0, 1)。</td>
 </tr>
 <tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_acos">ACOS (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_acos">ACOS (num_expr)</a></td>	
 <td>返回角度（弧度），其余弦是指定的数值表达式；也被称为反余弦。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_asin">ASIN (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_asin">ASIN (num_expr)</a></td>	
 <td>返回角度（弧度），其正弦是指定的数值表达式。也被称为反正弦。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_atan">ATAN (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_atan">ATAN (num_expr)</a></td>	
 <td>返回角度（弧度），其正切是指定的数值表达式。这也被称为反正切。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_atn2">ATN2 (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_atn2">ATN2 (num_expr)</a></td>	
 <td>返回正 x 轴与射线（原点到点 (y, x)）之间的角度（弧度），其中 x 和 y 是两个指定的浮点表达式的值。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_cos">COS (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_cos">COS (num_expr)</a></td>	
 <td>返回指定表达式中指定角度的三角余弦（弧度）。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_cot">COT (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_cot">COT (num_expr)</a></td>	
 <td>返回指定数值表达式中指定角度的三角余切。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_degrees">DEGREES (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_degrees">DEGREES (num_expr)</a></td>	
 <td>返回指定角度（弧度）的相应角度（度）。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_pi">PI ()</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_pi">PI ()</a></td>	
 <td>返回 PI 的常数值。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_radians">RADIANS (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_radians">RADIANS (num_expr)</a></td>	
 <td>返回输入的数值表达式（度）的弧度。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_sin">SIN (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sin">SIN (num_expr)</a></td>	
 <td>返回指定表达式中指定角度的三角正弦（弧度）。</td>
 </tr>
 <tr>
-<td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_tan">TAN (num_expr)</a></td>	
+<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_tan">TAN (num_expr)</a></td>	
 <td>返回指定表达式中输入表达式的正切。</td>
 </tr>
 
@@ -1499,35 +1507,35 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
   <td><strong>说明</strong></td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_array">IS_ARRAY (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_array">IS_ARRAY (expr)</a></td>
   <td>返回一个布尔值，它指示值的类型是否为数组。</td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_bool">IS_BOOL (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_bool">IS_BOOL (expr)</a></td>
   <td>返回一个布尔值，它指示值的类型是否为布尔。</td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_null">IS_NULL (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_null">IS_NULL (expr)</a></td>
   <td>返回一个布尔值，它指示值的类型是否为 null。</td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_number">IS_NUMBER (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_number">IS_NUMBER (expr)</a></td>
   <td>返回一个布尔值，它指示值的类型是否为数字。</td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_object">IS_OBJECT (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_object">IS_OBJECT (expr)</a></td>
   <td>返回一个布尔值，它指示值的类型是否为 JSON 对象。</td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_string">IS_STRING (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_string">IS_STRING (expr)</a></td>
   <td>返回一个布尔值，它指示值的类型是否为字符串。</td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_defined">IS_DEFINED (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_defined">IS_DEFINED (expr)</a></td>
   <td>返回一个布尔，它指示属性是否已经分配了值。</td>
 </tr>
 <tr>
-  <td><a href="https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_is_primitive">IS_PRIMITIVE (expr)</a></td>
+  <td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_is_primitive">IS_PRIMITIVE (expr)</a></td>
   <td>返回一个布尔值，它指示值的类型是否为字符串、数字、布尔或 null。</td>
 </tr>
 
@@ -1548,22 +1556,22 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 
 使用情况|说明
 ---|---
-[LENGTH (str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_length)|返回指定字符串的字符数
-[CONCAT (str\_expr, str\_expr [, str\_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_concat)|返回一个字符串，该字符串是连接两个或多个字符串值的结果。
-[SUBSTRING (str\_expr, num\_expr, num\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_substring)|返回部分字符串表达式。
-[STARTSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_startswith)|返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾
-[ENDSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_endswith)|返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾
-[CONTAINS (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_contains)|返回一个布尔值，该值指示第一个字符串表达式是否包含第二个字符串表达式。
-[INDEX\_OF (str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_index_of)|返回第一个指定的字符串表达式中第一次出现第二个字符串表达式的起始位置，如果未找到字符串，则返回 -1。
-[LEFT (str\_expr, num\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_left)|返回具有指定字符数的字符串的左侧部分。
-[RIGHT (str\_expr, num\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_right)|返回具有指定字符数的字符串的右侧部分。
-[LTRIM (str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_ltrim)|返回删除前导空格后的字符串表达式。
-[RTRIM (str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_rtrim)|返回截断所有尾随空格后的字符串表达式。
-[LOWER (str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_lower)|返回在将大写字符数据转换为小写后的字符串表达式。
-[UPPER (str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_upper)|返回在将小写字符数据转换为大写后的字符串表达式。
-[REPLACE (str\_expr, str\_expr, str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replace)|将出现的所有指定字符串值替换为另一个字符串值。
-[REPLICATE (str\_expr, num\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_replicate)|将一个字符串值重复指定的次数。
-[REVERSE (str\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_reverse)|返回字符串值的逆序排序形式。
+[LENGTH (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_length)|返回指定字符串的字符数
+[CONCAT (str\_expr, str\_expr [, str\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_concat)|返回一个字符串，该字符串是连接两个或多个字符串值的结果。
+[SUBSTRING (str\_expr, num\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_substring)|返回部分字符串表达式。
+[STARTSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_startswith)|返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾
+[ENDSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_endswith)|返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾
+[CONTAINS (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_contains)|返回一个布尔值，该值指示第一个字符串表达式是否包含第二个字符串表达式。
+[INDEX\_OF (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_index_of)|返回第一个指定的字符串表达式中第一次出现第二个字符串表达式的起始位置，如果未找到字符串，则返回 -1。
+[LEFT (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_left)|返回具有指定字符数的字符串的左侧部分。
+[RIGHT (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_right)|返回具有指定字符数的字符串的右侧部分。
+[LTRIM (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ltrim)|返回删除前导空格后的字符串表达式。
+[RTRIM (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_rtrim)|返回截断所有尾随空格后的字符串表达式。
+[LOWER (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_lower)|返回在将大写字符数据转换为小写后的字符串表达式。
+[UPPER (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_upper)|返回在将小写字符数据转换为大写后的字符串表达式。
+[REPLACE (str\_expr, str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replace)|将出现的所有指定字符串值替换为另一个字符串值。
+[REPLICATE (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replicate)|将一个字符串值重复指定的次数。
+[REVERSE (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_reverse)|返回字符串值的逆序排序形式。
 
 使用这些函数，你现在可以运行以下查询。例如，你可以返回大写形式的家庭名称，如下所示：
 
@@ -1618,10 +1626,10 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 
 使用情况|说明
 ---|---
-[ARRAY\_LENGTH (arr\_expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_length)|返回指定数组表达式的元素数。
-[ARRAY\_CONCAT (arr\_expr, arr\_expr [, arr\_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_concat)|返回一个数组，该数组是连接两个或更多数组值的结果。
-[ARRAY\_CONTAINS (arr\_expr, expr)](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_contains)|返回一个布尔，它指示数组是否包含指定的值。
-[ARRAY\_SLICE (arr\_expr, num\_expr [, num\_expr])](https://msdn.microsoft.com/library/azure/dn782250.aspx#bk_array_slice)|返回部分数组表达式。
+[ARRAY\_LENGTH (arr\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_length)|返回指定数组表达式的元素数。
+[ARRAY\_CONCAT (arr\_expr, arr\_expr [, arr\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_concat)|返回一个数组，该数组是连接两个或更多数组值的结果。
+[ARRAY\_CONTAINS (arr\_expr, expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_contains)|返回一个布尔，它指示数组是否包含指定的值。
+[ARRAY\_SLICE (arr\_expr, num\_expr [, num\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_slice)|返回部分数组表达式。
 
 数组函数可用于在 JSON 内操纵数组。例如，下面的查询返回其中一位父母是“Robin Wakefield”的所有文档。
 
@@ -1657,7 +1665,7 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 
 ### 空间函数
 
-DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。有关 DocumentDB 中地理支持的更多详细信息，请参阅 [Working with geospatial data in Azure DocumentDB（在 Azure DocumentDB 中使用地理数据）](/documentation/articles/documentdb-geospatial/)。
+DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。有关 DocumentDB 中地理支持的更多详细信息，请参阅 [Working with geospatial data in Azure DocumentDB](/documentation/articles/documentdb-geospatial/)（在 Azure DocumentDB 中使用地理数据）。
 
 <table>
 <tr>
@@ -1696,7 +1704,7 @@ DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟
       "id": "WakefieldFamily"
     }]
 
-如果在你的索引策略中包含空间索引，则将通过索引有效地进行“距离查询”。有关空间索引的更多详细信息，请参阅以下章节。如果你没有指定路径的空间索引，仍然可以通过指定 `x-ms-documentdb-query-enable-scan` 请求标头（其值设置为“true”）执行空间查询。在 .NET 中，可以通过将可选的 **FeedOptions** 参数传递到 [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) 设置为 true 的查询来完成此操作。
+如果在你的索引策略中包含空间索引，则将通过索引有效地进行“距离查询”。有关空间索引的更多详细信息，请参阅以下章节。如果你没有指定路径的空间索引，仍然可以通过指定 `x-ms-documentdb-query-enable-scan` 请求标头（其值设置为“true”）执行空间查询。在 .NET 中，可以通过将可选的 **FeedOptions** 参数传递到 [EnableScanInQuery](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) 设置为 true 的查询来完成此操作。
 
 ST\_WITHIN 可用于检查点是否在多边形内。多边形通常用来表示边界，例如邮政编码、省/自治区边界或自然构成物。再次说明，如果在你的索引策略中包含空间索引，则将通过索引有效地进行“within”查询。
 
@@ -1844,11 +1852,11 @@ LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。
 ### LINQ 到 SQL 转换
 DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的最有效映射。在以下描述中，我们假设读者对 LINQ 已经有了一个基本的了解。
 
-首先，对于类型系统，我们支持所有 JSON 基元类型 – 数值类型、布尔、字符串和 null。仅支持这些 JSON 类型。支持以下的标量表达式。
+首先，对于类型系统，我们支持所有 JSON 基元类型 - 数值类型、布尔、字符串和 null。仅支持这些 JSON 类型。支持以下的标量表达式。
 
--	常量值 – 这些包含评估查询时基元数据类型的常量值。
+-	常量值 - 这些包含评估查询时基元数据类型的常量值。
 
--	属性/数组索引表达式 – 这些表达式引用对象或数组元素的属性。
+-	属性/数组索引表达式 - 这些表达式引用对象或数组元素的属性。
 
 		family.Id;
 		family.children[0].familyName;
@@ -2216,7 +2224,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
 
 如果查询的结果无法包含在一页内，那么 REST API 通过 `x-ms-continuation-token` 响应标头返回继续标记。客户端可以通过在后续结果中包含该标头对结果进行分页。可以通过 `x-ms-max-item-count` 数量标头控制每页的结果数。
 
-若要管理查询的数据一致性策略，请使用 `x-ms-consistency-level` 标头（如所有的 REST API 请求）。对于会话一致性，还需要回显查询请求中最新的 `x-ms-session-token` Cookie 标头。请注意，查询集合的索引策略也可以影响查询结果的一致性。使用默认的索引策略，集合的索引始终与文档内容保持同步，且查询结果将与为数据选择的一致性匹配。如果索引策略太放松而具有延迟，那么查询会返回过时的结果。有关详细信息，请参阅 [DocumentDB Consistency Levels（DocumentDB 一致性级别）][consistency-levels]。
+若要管理查询的数据一致性策略，请使用 `x-ms-consistency-level` 标头（如所有的 REST API 请求）。对于会话一致性，还需要回显查询请求中最新的 `x-ms-session-token` Cookie 标头。请注意，查询集合的索引策略也可以影响查询结果的一致性。使用默认的索引策略设置，集合的索引始终与文档内容保持同步，且查询结果将与为数据选择的一致性匹配。如果索引策略太放松而具有延迟，那么查询会返回过时的结果。有关详细信息，请参阅 [DocumentDB Consistency Levels][consistency-levels]（DocumentDB 一致性级别）。
 
 如果为集合配置的索引策略不能支持指定的查询，那么 DocumentDB 服务器会返回 400“错误的请求”。在对为哈希（等式）查找配置的路径，以及从索引中显式排除的路径进行范围查询时，将返回此内容。当索引不可用时，可通过指定 `x-ms-documentdb-query-enable-scan` 标头以允许查询执行扫描。
 
@@ -2225,7 +2233,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
 
 
 	foreach (var family in client.CreateDocumentQuery(collectionLink, 
-	    "SELECT * FROM Families f WHERE f.id = \"AndersenFamily\""))
+	    "SELECT * FROM Families f WHERE f.id = "AndersenFamily""))
 	{
 	    Console.WriteLine("\tRead {0} from SQL", family);
 	}
@@ -2312,7 +2320,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
 
 你也可以通过使用 `IQueryable` 对象创建 `IDocumentQueryable`，然后读取 ` ResponseContinuationToken` 值并将其作为 `FeedOptions` 中的 `RequestContinuationToken` 传回来显式控制分页。当配置的索引策略无法支持查询时，也可以设置 `EnableScanInQuery` 以启用扫描。对于分区集合，可以使用 `PartitionKey` 来针对单个分区运行查询（尽管 DocumentDB 可以自动从查询文本中提取此内容），并使用 `EnableCrossPartitionQuery` 来运行需要针对多个分区运行的查询。
 
-有关包含查询的更多示例，请参阅 [DocumentDB .NET samples（DocumentDB .NET 示例）](https://github.com/Azure/azure-documentdb-net)。
+有关包含查询的更多示例，请参阅 [DocumentDB .NET samples](https://github.com/Azure/azure-documentdb-net)（DocumentDB .NET 示例）。
 
 ### JavaScript 服务器端 API 
 DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaScript 的应用程序逻辑提供编程模型。在集合级别上注册的 JavaScript 逻辑稍后可以对针对给定集合的文档的操作发出数据库操作。这些操作包装在环境 ACID 事务中。
@@ -2350,6 +2358,18 @@ DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaS
 	        });
 	}
 
+## 聚合函数
+
+对聚合函数的本机支持已在计划中，但如果同时需要 count 或 sum 功能，可以使用其他方法实现相同的结果。
+
+在读取路径上：
+
+- 可以通过检索数据并在本地进行计数来执行聚合函数。建议使用成本低廉的查询投影（如 `SELECT VALUE 1`），而不是使用全文档（如 `SELECT * FROM c`）。这有助于最大限度地增加每页结果中处理的文档数，从而避免额外的往返到服务（如果需要）。
+- 还可以使用存储过程最大限度地减少在重复的往返路径上的网络延迟。有关计算给定筛选器查询的计数的示例存储过程，请参阅 [Count.js](https://github.com/Azure/azure-documentdb-js-server/blob/master/samples/stored-procedures/Count.js)。该存储过程可以使用户能够组合丰富的业务逻辑并以高效的方式执行聚合运算。
+
+在写入路径上：
+
+- 另一种常见模式是在“写入”路径上预先聚合结果。当“读取”请求的量高于“写入”请求的量时，这特别有用。预先聚合后，单点读取请求可提供结果。在 DocumentDB 中预先聚合的最佳方法是设置在每次“写入”时调用的触发器和更新包含已具体化查询的最新结果的元数据文档。例如，请查看 [UpdateaMetadata.js](https://github.com/Azure/azure-documentdb-js-server/blob/master/samples/triggers/UpdateMetadata.js) 示例，该示例更新集合的元数据文档的 minSize、maxSize 和 totalSize。可以扩展该示例以更新计数器、合计等。
 
 ##参考
 1.	[Azure DocumentDB 简介][introduction]
@@ -2358,17 +2378,18 @@ DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaS
 4.	[DocumentDB Consistency Levels（DocumentDB 一致性级别）][consistency-levels]
 5.	ANSI SQL 2011 [http://www.iso.org/iso/iso\_catalogue/catalogue\_tc/catalogue\_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 6.	JSON [http://json.org/](http://json.org/)
-7.	Javascript 规范 [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 
-8.	LINQ [http://msdn.microsoft.com/library/bb308959.aspx](http://msdn.microsoft.com/library/bb308959.aspx) 
+7.	Javascript 规范 [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+8.	LINQ [http://msdn.microsoft.com/zh-cn/library/bb308959.aspx](http://msdn.microsoft.com/zh-cn/library/bb308959.aspx)
 9.	针对大型数据库的查询评估技术 [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
 10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
 11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
 12.	Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
-13. G.Graefe.The Cascades framework for query optimization.IEEE Data Eng.Bull., 18(3): 1995.
+13.     G.Graefe.The Cascades framework for query optimization.IEEE Data Eng.Bull., 18(3): 1995.
 
 
 [1]: ./media/documentdb-sql-query/sql-query1.png
 [introduction]: /documentation/articles/documentdb-introduction/
 [consistency-levels]: /documentation/articles/documentdb-consistency-levels/
+ 
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1010_2016-->

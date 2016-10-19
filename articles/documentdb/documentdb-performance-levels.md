@@ -1,20 +1,26 @@
-<properties 
-	pageTitle="DocumentDB 的性能级别 | Azure" 
-	description="了解 DocumentDB 中的性能级别如何让你能够在每个集合的基础上保留吞吐量。" 
-	services="documentdb" 
-	authors="johnfmacintyre" 
-	manager="jhubbard" 
-	editor="monicar" 
+<properties
+	pageTitle="DocumentDB 中的性能级别 | Azure"
+	description="了解 DocumentDB 中的性能级别如何让你能够在每个集合的基础上保留吞吐量。"
+	services="documentdb"
+	authors="mimig1"
+	manager="jhubbard"
+	editor="monicar"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.date="06/27/2016" 
-	wacn.date="08/08/2016"/>
+<tags
+	ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2016"
+	ms.author="mimig"
+   	wacn.date="10/18/2016"/>  
+
 
 # DocumentDB 中的性能级别
 
-本文概述了 [Azure DocumentDB](/services/documentdb/) 中的性能级别。
+本文概述 [Azure DocumentDB](/home/features/documentdb/) 中的性能级别。
 
 阅读本文之后，你将能够回答以下问题：
 
@@ -61,16 +67,16 @@
 
 DocumentDB 允许一组丰富的数据库操作，包括查询、利用用户定义的功能 (UDF) 的查询、存储过程和触发器。与这些操作中的每一个关联的处理成本取决于完成操作所需的 CPU、IO 和内存。与考虑和管理硬件资源不同的是，你可以考虑将请求单位作为所需资源的单个措施，以执行各种数据库操作和服务应用程序请求。
 
-可以通过 [Azure 新门户](https://portal.azure.cn)、[REST API](https://msdn.microsoft.com/library/azure/mt489078.aspx) 或任意 [DocumentDB SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) 创建集合。DocumentDB API 让你能够指定集合的性能级别。
+可以通过 [Azure 门户预览](https://portal.azure.cn)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt489078.aspx) 或任意 [DocumentDB SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 创建集合。DocumentDB API 让你能够指定集合的性能级别。
 
-> [AZURE.NOTE] 集合的性能级别可以通过 API 或 [Azure 新门户](https://portal.azure.cn/)进行调整。性能级别更改应在 3 分钟内完成。
+> [AZURE.NOTE] 集合的性能级别可以通过 API 或 [Azure 门户预览](https://portal.azure.cn/)进行调整。性能级别更改应在 3 分钟内完成。
 
 ## 设置集合的性能级别
 创建集合之后，基于指定的性能级别的 RU 的完整分配为集合所保留。
 
 注意，同时具有用户定义的性能级别和预定义的性能级别，DocumentDB 可基于保留的吞吐量进行运作。通过创建集合，应用程序已保留吞吐量且不论实际使用了多少该吞吐量，都会对已保留的吞吐量计费。对于用户定义的性能级别，存储基于消耗量按流量计费，但是对于预定义性能级别，将在创建集合时保留 10 GB 的存储。
 
-在创建集合后，可以通过 DocumentDB SDK 或通过 Azure 经典管理门户对性能级别进行修改。
+创建集合后，可以通过 DocumentDB SDK 或通过 Azure 经典管理门户对性能级别进行修改。
 
 > [AZURE.IMPORTANT] DocumentDB 标准集合以小时计费，且你创建的每个集合都将以最低一小时的使用量计费。
 
@@ -78,49 +84,53 @@ DocumentDB 允许一组丰富的数据库操作，包括查询、利用用户定
 
 请求单位基于性能级别设置而为每个集合保留。请求单位消耗以每秒速率评估。将限制集合上超出预配请求单位速率（或性能级别）的应用程序，直到速率降低到集合的保留级别之下。如果你的应用程序要求更高级别的吞吐量，可以提高每个集合的性能级别。
 
-> [AZURE.NOTE] 当你的应用程序超出一个或多个集合的性能级别时，将按每个集合限制请求。这意味着一些应用程序请求可能成功，而另一些则可能受限制。建议添加
+> [AZURE.NOTE] 当你的应用程序超出一个或多个集合的性能级别时，将按每个集合限制请求。这意味着一些应用程序请求可能成功，而另一些则可能受限制。建议受到限制时添加少量重试次数，以处理请求流量中的峰值。
 
 ## 使用性能级别工作
 DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对数据进行分组。利用 DocumentDB 的自动索引和查询支持，在同一集合内并置异类文档是相当常见的做法。决定是否应该使用单独集合的关键注意事项包括：
 
-- 查询 – 集合是查询执行的范围。如果需要在一组文档间进行查询，最有效的读取模式就是在单个集合中并置文档。
-- 事务 – 所有事务都处于单个集合的范围内。如果你有文档必须在单个存储过程或触发器内进行更新，则它们必须存储在相同的集合内。更具体地说，集合内的分区键就是事务边界。有关更多详细信息，请参阅 [DocumentDB 中的分区](/documentation/articles/documentdb-partition-data/)。
-- 性能隔离 – 一个集合具有关联的性能级别。这可确保每个集合通过保留的 RU 都有可预测的性能。可以根据访问频率将数据分配到具有不同性能级别的不同集合。
+- 查询 - 集合是查询执行的范围。如果需要在一组文档间进行查询，最有效的读取模式就是在单个集合中并置文档。
+- 事务 - 所有事务都处于单个集合的范围内。如果你有文档必须在单个存储过程或触发器内进行更新，则它们必须存储在相同的集合内。更具体地说，集合内的分区键就是事务边界。有关更多详细信息，请参阅 [DocumentDB 中的分区](/documentation/articles/documentdb-partition-data/)。
+- 性能隔离 - 一个集合具有关联的性能级别。这可确保每个集合通过保留的 RU 都有可预测的性能。可以根据访问频率将数据分配到具有不同性能级别的不同集合。
 
 > [AZURE.IMPORTANT] 重要的是，要了解将基于你的应用程序所创建的集合数，以全标准费率向你收费。
 
 建议你的应用程序利用小数量的集合，除非你有大的存储或吞吐量要求。确保你已清楚理解创建新集合的应用程序模式。你可以选择将集合创建保留为在应用程序外进行处理的管理操作。同样，调整集合的性能级别将更改集合计费的小时费率。如果你的应用程序对集合性能级别进行动态调整，那么你应监视它们。
 
-## 使用 Azure 门户更改性能级别
+## <a id="changing-performance-levels-using-the-azure-portal"></a>从 S1、S2、S3 更改为用户定义的性能
 
-在管理集合的性能级别时，Azure 新门户是你可用的一个选项。在 Azure 门户中按照这些步骤从使用预定义的吞吐量级别更改为用户定义的吞吐量级别。通过使用用户定义的吞吐量级别，可以根据你的需要定制吞吐量。如果你仍在使用 S1 帐户，则只需单击几下，即可将默认吞吐量从 250 RU/s 增加到 400 RU/s。
+在 Azure 门户预览中按照这些步骤从使用预定义的吞吐量级别更改为用户定义的吞吐量级别。通过使用用户定义的吞吐量级别，可以根据你的需要定制吞吐量。如果你仍在使用 S1 帐户，则只需单击几下，即可将默认吞吐量从 250 RU/s 增加到 400 RU/s。
 
+有关与用户定义和预定义的吞吐量相关的定价更改的详细信息，请参阅博客文章 [DocumentDB: Everything you need to know about using the new pricing options](https://azure.microsoft.com/blog/documentdb-use-the-new-pricing-options-on-your-existing-collections/)（DocumentDB：关于使用新的定价选项所需要了解的一切）。
 
-1. 在浏览器中导航至 [**Azure 新门户**](https://portal.azure.cn)。
+1. 在浏览器中导航至 [**Azure 门户预览**](https://portal.azure.cn)。
 2. 单击“浏览”->“DocumentDB 帐户”，然后选择要修改的 DocumentDB 帐户。
 3. 在“数据库”可重用功能区中，选择要修改的数据库，然后在“数据库”边栏选项卡中选择要修改的集合。使用预定义吞吐量的帐户拥有定价层 S1、S2 或 S3。
 
-      ![具有 S1 集合的“数据库”边栏选项卡屏幕截图](./media/documentdb-performance-levels/documentdb-change-performance-S1.png)
+      ![具有 S1 集合的“数据库”边栏选项卡屏幕截图](./media/documentdb-performance-levels/documentdb-change-performance-S1.png)  
 
-4. 在“集合”边栏选项卡的顶栏上单击“设置”。
+
+4. 在“集合”边栏选项卡中，单击“更多”，然后单击顶栏上的“设置”。
 5. 在“设置”边栏选项卡上单击“定价层”，请注意，此时“选择定价层”边栏选项卡上将显示每个计划的月成本估计值。若要更改为用户定义的吞吐量，请单击“标准”，然后单击“选择”以保存你的更改。
 
       ![“DocumentDB 设置”和“选择定价层”边栏选项卡屏幕截图](./media/documentdb-performance-levels/documentdb-change-performance.png)
 
-6. 返回到“设置”边栏选项卡中，“定价层”已更改为“标准”，“吞吐量(RU/s)”框显示默认值 400。可以在 400 和 10,000 [请求单位](documentdb-request-units.md)/秒 (RU/s) 之间设置吞吐量。页面底部的“定价摘要”将自动更新以提供月成本估计值。单击“确定”以保存你的更改。
-    
+6. 返回到“设置”边栏选项卡中，“定价层”已更改为“标准”，“吞吐量(RU/s)”框显示默认值 400。可以在 400 和 10,000 [请求单位](/documentation/articles/documentdb-request-units/)/秒 (RU/s) 之间设置吞吐量。页面底部的“定价摘要”将自动更新以提供月成本估计值。单击“确定”以保存你的更改。
+
 	![显示在何处更改吞吐量值的“设置”边栏选项卡屏幕截图](./media/documentdb-performance-levels/documentdb-change-performance-set-thoughput.png)
 
 7. 返回到“数据库”边栏选项卡，你可以核实该集合的新吞吐量。
 
-	![具有已修改的集合的“数据库”边栏选项卡屏幕截图](./media/documentdb-performance-levels/documentdb-change-performance-confirmation.png)
-如果你确定需要更多吞吐量（大于 10,000 RU/s）或更多存储（大于 10GB），可以创建分区集合。若要创建分区集合，请参阅[创建集合](/documentation/articles/documentdb-create-collection)。
+	![具有已修改的集合的“数据库”边栏选项卡屏幕截图](./media/documentdb-performance-levels/documentdb-change-performance-confirmation.png)  
+
+
+如果你确定需要更多吞吐量（大于 10,000 RU/s）或更多存储（大于 10GB），可以创建分区集合。若要创建分区集合，请参阅[创建集合](/documentation/articles/documentdb-create-collection/)。
 
 >[AZURE.NOTE] 更改集合的性能级别可能会花费 2 分钟。
 
-## <a name="changing-performance-levels-using-the-net-sdk"></a>使用 .NET SDK 更改性能级别
+## 使用 .NET SDK 更改性能级别
 
-另一个更改集合的性能级别的选项便是通过我们的 SDK 进行操作。本节只涵盖使用我们的 [.NET SDK](https://msdn.microsoft.com/library/azure/dn948556.aspx) 更改集合的性能级别，但对于其他的 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，过程也是相似的。如果你对我们的 .NET SDK 还不熟悉的话，请访问我们的[入门教程](/documentation/articles/documentdb-get-started)。
+另一个更改集合的性能级别的选项便是通过我们的 SDK 进行操作。本节只介绍使用 [.NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx) 更改集合的性能级别，但对于其他 [SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)，过程也是相似的。如果不熟悉 .NET SDK，请访问[入门教程](/documentation/articles/documentdb-get-started/)。
 
 此为将服务吞吐量更改为每秒 50,000 请求单位的代码片段：
 
@@ -129,17 +139,17 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 		              .Where(r => r.ResourceLink == collection.SelfLink)    
 		              .AsEnumerable()
 		              .SingleOrDefault();
-	                          
+
 	// Set the throughput to 5000 request units per second
 	offer = new OfferV2(offer, 5000);
-	                    
+
 	//Now persist these changes to the database by replacing the original resource
 	await client.ReplaceOfferAsync(offer);
 
 	// Set the throughput to S2
 	offer = new Offer(offer);
 	offer.OfferType = "S2";
-	                    
+
 	//Now persist these changes to the database by replacing the original resource
 	await client.ReplaceOfferAsync(offer);
 
@@ -147,27 +157,43 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 > [AZURE.NOTE] 预配为每秒 10,000 请求单位以下的集合可以于任何时间在用户定义的吞吐量服务（S1、S2、S3）和预定义吞吐量服务之间进行迁移。预配为每秒 10,000 请求单位以上的集合不能转换为预定义吞吐量级别。
 
-请访问 [MSDN](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.aspx) 以查看其他示例并了解更多有关我们的服务方法的信息：
+请访问 [MSDN](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.aspx) 以查看其他示例并了解更多有关服务方法的信息：
 
-- [**ReadOfferAsync**](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.readofferasync.aspx)
-- [**ReadOffersFeedAsync**](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.readoffersfeedasync.aspx)
-- [**ReplaceOfferAsync**](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.replaceofferasync.aspx)
-- [**CreateOfferQuery**](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.linq.documentqueryable.createofferquery.aspx) 
+- [**ReadOfferAsync**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.readofferasync.aspx)
+- [**ReadOffersFeedAsync**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.readoffersfeedasync.aspx)
+- [**ReplaceOfferAsync**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.replaceofferasync.aspx)
+- [**CreateOfferQuery**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.linq.documentqueryable.createofferquery.aspx)
+
+## <a id="change-throughput"></a>更改集合的吞吐量
+
+如果已在使用用户定义的性能，可以通过执行以下操作来更改集合的吞吐量。如果需要从 S1、S2 或 S3 性能级别（预定义性能）更改为用户定义的性能，请参阅[从 S1、S2、S3 更改为用户定义的性能](#changing-performance-levels-using-the-azure-portal)。
+
+1. 在浏览器中导航至 [**Azure 门户预览**](https://portal.azure.cn)。
+2. 单击“浏览”->“DocumentDB 帐户”，然后选择要修改的 DocumentDB 帐户。
+3. 在“DocumentDB 帐户”边栏选项卡的“数据库”可重用功能区中，选择要修改的数据库，然后在“数据库”边栏选项卡中选择要修改的集合。
+4. 在“集合”边栏选项卡的顶栏上单击“设置”。
+5. 在“设置”边栏选项卡中，增加“吞吐量(RU/秒)”框中的值，然后再单击“确定”以保存所做的更改。该边栏选项卡底部的“定价摘要”将更新以显示该集合在单个区域中新估计的每月费用。
+
+    ![“设置”边栏选项卡的屏幕截图，其中突出显示“吞吐量”框和“定价摘要”](./media/documentdb-performance-levels/documentdb-change-performance-set-thoughput.png)  
+
+
+如果不确定要增加多少吞吐量，请参阅[估计吞吐量需求](/documentation/articles/documentdb-request-units/#estimating-throughput-needs/)和[请求单位计算器](https://www.documentdb.com/capacityplanner)。
 
 ## 后续步骤
 
 若要了解更多有关 Azure DocumentDB 的定价和管理数据的信息，请浏览以下资源：
- 
-- [管理 DocumentDB 容量](/documentation/articles/documentdb-manage/) 
+
+- [DocumentDB 定价](/pricing/details/documentdb/)
+- [管理 DocumentDB 容量](/documentation/articles/documentdb-manage/)
 - [对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data/)
 - [对 DocumentDB 中的数据进行分区](/documentation/articles/documentdb-partition-data/)
 - [请求单位](/documentation/articles/documentdb-request-units/)
 
 若要了解有关 DocumentDB 的详细信息，请参阅 Azure DocumentDB [文档](/documentation/services/documentdb/)。
 
-若要开始使用 DocumentDB 进行规模和性能测试，请参阅 [Performance and Scale Testing with Azure DocumentDB](/documentation/articles/documentdb-performance-testing)（使用 Azure DocumentDB 进行性能和规模测试）。
+若要开始使用 DocumentDB 进行规模和性能测试，请参阅[使用 Azure DocumentDB 进行性能和规模测试](/documentation/articles/documentdb-performance-testing/)。
 
 [1]: ./media/documentdb-performance-levels/documentdb-change-collection-performance7-9.png
 [2]: ./media/documentdb-performance-levels/documentdb-change-collection-performance10-11.png
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1010_2016-->

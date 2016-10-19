@@ -10,8 +10,14 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/31/2016" 
-	wacn.date="08/18/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/23/2016" 
+	ms.author="stbaro"
+   	wacn.date="10/18/2016"/>  
+
 
 # DocumentDB 的 MongoDB 协议支持
 
@@ -29,9 +35,9 @@ Azure DocumentDB 是一个完全托管的 NoSQL 数据库服务，其构建目�
 
 - 了解如何[创建](/documentation/articles/documentdb-create-mongodb-account/)具有 MongoDB 协议支持的 DocumentDB 帐户。
 - 了解如何[连接](/documentation/articles/documentdb-connect-mongodb-account/)到具有 MongoDB 协议支持的 DocumentDB 帐户。
-- 了解如何配合具有 MongoDB 协议支持的 DocumentDB 帐户[使用 MongoChef](/documentation/articles/documentdb-mongodb-mongochef/)。
+- 了解如何对具有 MongoDB 协议支持的 DocumentDB 帐户[使用 MongoChef](/documentation/articles/documentdb-mongodb-mongochef/)。
 - 浏览具有 MongoDB 协议支持的 DocumentDB [示例](/documentation/articles/documentdb-mongodb-samples/)。
 
  
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1010_2016-->
