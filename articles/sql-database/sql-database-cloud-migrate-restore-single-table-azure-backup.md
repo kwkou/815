@@ -9,28 +9,34 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/02/2016"
-	wacn.date="07/11/2016"/>
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/31/2016"
+	wacn.date="10/17/2016"
+	ms.author="daleche"/>  
+
 
 
 # 如何从 Azure SQL 数据库备份中还原单个表
 
-你可能会遇到这种情况，不小心修改了 SQL 数据库中的某些数据，而现在你希望恢复单个受影响的表。本文介绍如何基于所选的性能层，从 Azure SQL 数据库自动执行的一个[备份](/documentation/articles/sql-database-automated-backups)中还原数据库中的单个表。
+你可能会遇到这种情况，不小心修改了 SQL 数据库中的某些数据，而现在你希望恢复单个受影响的表。本文介绍如何在数据库中从某个 SQL 数据库[自动备份](/documentation/articles/sql-database-automated-backups/)还原单个表。
 
 ## 准备步骤：重命名表，并还原数据库的一个副本
 1. 确定 Azure SQL 数据库中你要替换为还原的副本的表。使用 Microsoft SQL Management Studio 重命名此表。例如，将此表重命名为 &lt;table name&gt;\_old。
 
 	**注意**为了避免受到阻止，请确保你要重命名的表没有任何正在运行的活动。如果你遇到问题，请确保在维护时段内执行此过程。
 
-2. 将数据库的一个备份还原到你想要恢复到的一个时间点。要实现此操作，请参阅[从用户错误中恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery/)中的步骤。
+2. 使用[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)步骤，将数据库的一个备份还原到想要恢复到的一个时间点。
 
 	**说明**：
-	- 还原的数据库的名称的格式为 DBName+TimeStamp；例如，**Adventureworks2012\_2016-01-01T22-12Z**。此步骤不会覆盖服务器上现有的数据库名称。这是一项安全措施，目的是要让用户在删除其当前数据库之前确认还原的数据库，然后重命名此还原的数据库供生产之用。
+	- 还原的数据库的名称的格式为 DBName+TimeStamp；例如，**Adventureworks2012\_2016-01-01T22-12Z**。此步骤不会覆盖服务器上现有的数据库名称。这是一项安全措施，目的是让用户在删除其当前数据库之前确认还原的数据库，然后重命名此还原的数据库供生产之用。
 	- 服务根据不同的性能层使用不同的备份保留期指标来自动备份从基本到高级的所有性能层：
 
 | 数据库还原 | 基本层 | 标准层 | 高级层 |
 | :-- | :-- | :-- | :-- |
-| 时间点还原 | 7 天内的任何还原点|14 天内的任何还原点| 35 天内的任何还原点|
+| 时间点还原 | 7 天内的任何还原点|35 天内的任何还原点| 35 天内的任何还原点|
 
 ## 使用 SQL 数据库迁移工具从还原的数据库中复制表
 1. 下载并安装 [SQL 数据库迁移向导](https://sqlazuremw.codeplex.com)。
@@ -41,8 +47,8 @@
  - **服务器名称**：你的 SQL Azure 实例
  - **身份验证**：**SQL Server 身份验证**。输入你的登录凭据。
  - **数据库**：**Master 数据库（列出所有数据库）**。
- - **注意**默认情况下此向导将保存你的登录信息。如果你不想保存，请选择“忘记登录信息”。  
-![SQL 数据库迁移向导 - 选择源 - 步骤 1](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/2.png)
+ - **注意**默认情况下此向导将保存你的登录信息。如果你不想保存，请选择“忘记登录信息”。
+ ![SQL 数据库迁移向导 - 选择源 - 步骤 1](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/2.png)
 4. 在“选择源”对话框中，选择“准备步骤”部分中的还原的数据库名称作为你的源，然后单击“下一步”。
 
 	![SQL 数据库迁移向导 - 选择源 - 步骤 2](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/3.png)
@@ -71,4 +77,5 @@
 ## 后续步骤
 
 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)
-<!---HONumber=Mooncake_0704_2016-->
+
+<!---HONumber=Mooncake_1010_2016-->

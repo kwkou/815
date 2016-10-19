@@ -4,49 +4,47 @@
 	services="sql-database"
 	keywords="c# 数据库查询, c# 查询, 连接到数据库, SQL C#"
 	documentationCenter=""
-	authors="MightyPen"
+	authors="stevestein"
 	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/25/2016"
-	wacn.date="07/21/2016"/>
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="get-started-article"
+	ms.date="08/17/2016"
+	wacn.date="10/17/2016"
+	ms.author="stevestein"/>  
 
 
-# 用 C&#x23; 编写用于查询和连接到 SQL 数据库的程序
+
+
+# 使用 Visual Studio 连接到 SQL 数据库
 
 > [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-connect-query/)
+- [Visual Studio](/documentation/articles/sql-database-connect-query/)
 - [SSMS](/documentation/articles/sql-database-connect-query-ssms/)
 - [Excel](/documentation/articles/sql-database-connect-excel/)
 
-了解如何用 C# 编写用于查询和连接到云中的 Azure SQL 数据库。
-
-本文为那些不熟悉 Azure SQL 数据库、C# 和 ADO.NET 的用户介绍每个步骤。对于熟悉 Microsoft SQL Server 和 C# 的用户，可以跳过一些步骤，重点关注那些特定于 SQL 数据库的步骤。
-
+了解如何在 Visual Studio 中连接到 Azure SQL 数据库。
 
 ## 先决条件
 
 
-若要运行 C# 查询代码示例，你必须拥有：
+若要使用 Visual Studio 连接到 SQL 数据库，需具备以下条件：
 
 
-- Azure 帐户和订阅。你可以注册[试用版](/pricing/1rmb-trial)。
+- 可连接到的 SQL 数据库。本文使用 **AdventureWorks** 示例数据库。若要获取 AdventureWorks 示例数据库，请参阅 [Create the demo database](/documentation/articles/sql-database-get-started/)（创建演示数据库）。
 
 
-- Azure SQL 数据库服务的 **AdventureWorksLT** 演示数据库。
- - 在几分钟内[创建演示数据库](/documentation/articles/sql-database-get-started/)。
-
-
-- Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在免费提供 Visual Studio Community。
+- Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在*免费*提供 Visual Studio Community。
  - [Visual Studio Community，下载](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Visual Studio 的更多免费选项](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
 
 
-<a name="InstallVSForFree" id="InstallVSForFree"></a>
 
-&nbsp;
 
 ## 步骤 1：免费安装 Visual Studio Community
 
@@ -307,4 +305,4 @@
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_1010_2016-->

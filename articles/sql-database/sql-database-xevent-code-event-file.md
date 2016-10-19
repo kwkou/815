@@ -6,14 +6,18 @@
 	authors="MightyPen" 
 	manager="jhubbard" 
 	editor="" 
-	tags=""/>  
-
+	tags=""/>
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="06/24/2016" 
-	wacn.date="08/22/2016"/>
+	ms.workload="data-management" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/23/2016" 
+	wacn.date="10/17/2016"
+	ms.author="genemi"/>  
 
 
 
@@ -47,10 +51,10 @@
  - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
-- SQL Server Management Studio (ssms.exe) 2015 年 8 月预览版或更高版本。可从以下位置下载最新的 ssms.exe：
+- SQL Server Management Studio (ssms.exe)，最好是每月更新版。
+可从以下位置下载最新的 ssms.exe：
  - 标题为[下载 SQL Server Management Studio](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 的主题。
  - [直接指向下载位置的链接。](http://go.microsoft.com/fwlink/?linkid=616025)
- - Azure 建议定期更新 ssms.exe。在某些情况下，ssms.exe 将每个月更新。
 
 
 - 必须安装 [Azure PowerShell 模块](http://go.microsoft.com/?linkid=9811175)。
@@ -62,7 +66,7 @@
 
 此 PowerShell 是两阶段代码示例的第 1 阶段。
 
-脚本开头的命令将清除以前可能运行后的结果，并且设计为可重复运行。
+脚本开头的命令将清除以前可能运行后的结果，并且可重复运行。
 
 
 
@@ -78,7 +82,7 @@
  - 如果你想要重新运行脚本而不中断会话，可以很方便地选择注释禁止 **Add-AzureAccount** 命令。
 
 
-		![在准备运行脚本之前，必须准备好已装有 Azure 模块的 PowerShell ISE。][30_powershell_ise]
+![在准备运行脚本之前，必须准备好已装有 Azure 模块的 PowerShell ISE。][30_powershell_ise]
 
 
 			## TODO: Before running, find all 'TODO' and make each edit!
@@ -258,11 +262,11 @@
 ## 阶段 2：使用 Azure 存储空间容器的 Transact-SQL 代码
 
 
-- 在此代码示例的第 1 阶段，你已运行 PowerShell 脚本来创建 Azure 存储空间容器。
+- 在此代码示例的第 1 阶段，已运行 PowerShell 脚本来创建 Azure 存储容器。
 - 接下来在第 2 阶段，以下 Transact-SQL 脚本必须使用该容器。
 
 
-脚本开头的命令将清除以前可能运行后的结果，并且设计为可重复运行。
+脚本开头的命令将清除以前可能运行后的结果，并且可重复运行。
 
 
 PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact-SQL 脚本以使用这些值。在 Transact-SQL 脚本中查找 **TODO** 以找到编辑点。
@@ -557,10 +561,10 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 假设你要在 Microsoft SQL Server 上运行上述 Transact-SQL 示例。
 
 
-- 为了方便，你想要将 Azure 存储空间容器完全替换为一个简单文件（例如 **C:\\myeventdata.xel**）。该文件将写入托管 SQL Server 的计算机的本地硬盘驱动器上。
+- 为了方便，想要将 Azure 存储容器完全替换为一个简单文件（例如 **C:\\myeventdata.xel**）。该文件将写入托管 SQL Server 的计算机的本地硬盘驱动器上。
 
 
-- 你不需要为 **CREATE MASTER KEY** 和 **CREATE CREDENTIAL** 使用任何类型的 Transact-SQL 语句。
+- 不需要为 **CREATE MASTER KEY** 和 **CREATE CREDENTIAL** 使用任何类型的 Transact-SQL 语句。
 
 
 - 在 **CREATE EVENT SESSION** 语句的 **ADD TARGET** 子句中，将对 **filename=** 分配的 Http 值替换为完整路径字符串（例如 **C:\\myfile.xel**）。
@@ -587,4 +591,4 @@ Image references.
 
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1010_2016-->

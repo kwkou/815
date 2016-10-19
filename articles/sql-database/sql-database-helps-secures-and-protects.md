@@ -4,14 +4,20 @@
    keywords=""
    services="sql-database"
    documentationCenter=""
-   authors="carlrabeler"
+   authors="CarlRabeler"
    manager="jhubbard"
    editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="06/23/2016"
-   wacn.date="08/15/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
+   ms.date="09/13/2016"
+   wacn.date="10/17/2016"
+   ms.author="carlrab"/>  
+
    
 # Azure SQL 数据库提供安全和保护
 
@@ -44,7 +50,7 @@ SQL 数据库提供多层数据保护。通过在空闲时、运转中或使用�
 
 ## 后续步骤
 
-获取 [Azure 订阅](/pricing/1rmb-trial)，并[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
+获取 [Azure 订阅](/pricing/1rmb-trial)，并[创建首个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
 
 ## 其他资源
 
@@ -52,4 +58,4 @@ SQL 数据库提供多层数据保护。通过在空闲时、运转中或使用�
  
 查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

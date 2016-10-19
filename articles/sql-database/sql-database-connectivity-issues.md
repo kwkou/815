@@ -10,8 +10,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/27/2016"
-	wacn.date="08/15/2016"/>
+	ms.workload="sql-database"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date="10/17/2016"
+	ms.author="daleche"/>  
+
 
 
 # 排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误
@@ -79,7 +85,7 @@
 
 我们建议在第一次重试前延迟 5 秒钟。如果在少于 5 秒的延迟后重试，云服务有超载的风险。对于后续的每次重试，延迟应以指数级增大，最大值为 60 秒。
 
-[SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx) 中提供了有关使用 ADO.NET 的客户端的阻塞期的说明。
+[SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx) 中提供了有关使用 ADO.NET 的客户端的*阻塞期*的说明。
 
 你还可能想要设置程序在自行终止之前的重试次数上限。
 
@@ -105,7 +111,7 @@
 
 可以测试重试逻辑的方法，就是在程序运行时断中客户端计算机与网络的连接。将产生错误：
 
-- **SqlException.Number** = 11001
+- **SqlException.Number** =11001
 - 消息：“不存在已知的这种主机”
 
 
@@ -157,9 +163,9 @@
 
 为 **SqlConnection** 对象生成[连接字符串](http://msdn.microsoft.com/zh-cn/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx)时，应在以下参数之间协调值：
 
-- ConnectRetryCount &nbsp;&nbsp;（默认值为 1。范围是从 0 到 255。）
-- ConnectRetryInterval &nbsp;&nbsp;（默认值为 1 秒。范围是从 1 到 60。）
-- 连接超时值 &nbsp;&nbsp;（默认值为 15 秒。范围是从 0 到 2147483647）
+- ConnectRetryCount &nbsp;&nbsp;*（默认值为 1。范围是从 0 到 255。）*
+- ConnectRetryInterval &nbsp;&nbsp;*（默认值为 1 秒。范围是从 1 到 60。）*
+- 连接超时值 &nbsp;&nbsp;*（默认值为 15 秒。范围是从 0 到 2147483647）*
 
 
 具体而言，所选的值应使以下等式成立：
@@ -424,7 +430,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 以下 EntLib60 类对重试逻辑特别有用。所有这些类都包含在 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 命名空间或其子级中：
 
-在命名空间 Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling 中：
+*在命名空间 *Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling* 中**：*
 
 - **RetryPolicy** 类
  - **ExecuteAction** 方法
@@ -556,6 +562,6 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - [SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx)
 
 
-- [重试是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
+- [*重试*是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

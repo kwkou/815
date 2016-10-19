@@ -3,14 +3,20 @@
    description="了解如何开始使用 Azure SQL 数据库中的临时表。"
    services="sql-database"
    documentationCenter=""
-   authors="carlrabeler"
+   authors="CarlRabeler"
    manager="jhubbard"
    editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="06/15/2016"
-   wacn.date="07/25/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="sql-database"
+   ms.date="08/29/2016"
+   wacn.date="10/17/2016"
+   ms.author="carlrab"/>  
+
 
 #Azure SQL 数据库中的临时表入门
 
@@ -30,15 +36,21 @@
 
 根据是要开始新的开发工作，还是升级现有的应用程序，你可以创建临时表，或者通过添加临时属性来修改现有表。在一般情况下，你的方案可能混用了这两个选项。使用 [SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) (SSMS)、[SQL Server Data Tools](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) (SSDT) 或其他任何 Transact-SQL 开发工具执行以下操作。
 
+
+> [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+
+
 ###创建新表
 
 在 SSMS 对象资源管理器中使用上下文菜单项“新建版本由系统控制的表”打开包含临时表模板脚本的查询编辑器，然后使用“指定模板参数的值”(Ctrl+Shift+M) 来填充模板：
 
-![SSMSNewTable](./media/sql-database-temporal-tables/AzureTemporal2.png)
+![SSMSNewTable](./media/sql-database-temporal-tables/AzureTemporal2.png)  
+
 
 在 SSDT 中将新项添加到数据库项目时，请选择“临时表(版本由系统控制)”模板。此时将打开表设计器，让你轻松指定表布局：
 
-![SSDTNewTable](./media/sql-database-temporal-tables/AzureTemporal3.png)
+![SSDTNewTable](./media/sql-database-temporal-tables/AzureTemporal3.png)  
+
 
 也可以通过直接指定 Transact-SQL 语句来创建临时表，如以下示例中所示。请注意，每个临时表的必需元素为 PERIOD 定义以及可引用将存储历史行版本的另一个用户表的 SYSTEM\_VERSIONING 子句：
 
@@ -71,7 +83,8 @@
 
 临时表在对象资源管理器中以特定图标表示以便于识别，其历史记录表显示为子节点。
 
-![AlterTable](./media/sql-database-temporal-tables/AzureTemporal4.png)
+![AlterTable](./media/sql-database-temporal-tables/AzureTemporal4.png)  
+
 
 ###将现有表更改为临时表
 
@@ -99,7 +112,7 @@
 
 临时表的主要优点是不需要以任何方式更改或调整网站就可以执行更改跟踪。创建临时表后，每当你对数据进行修改时，会自动保存以前的行版本。
 
-若要为此特定方案使用自动更改跟踪功能，我们只需在每次用户结束网站上的会话时更新列 **PagesVisited**：
+若要为此特定方案使用自动更改跟踪功能，只需在每次用户结束网站上的会话时更新列 **PagesVisited**：
 
 
 	UPDATE WebsiteUserInfo  SET [PagesVisited] = 5 
@@ -108,11 +121,12 @@
 
 请务必注意，更新查询不需要知道实际操作进行的时间，也不需要知道如何保留历史数据以供将来分析使用。Azure SQL 数据库会自动处理这两个方面。下图演示了如何在每次更新时生成历史记录数据。
 
-![TemporalArchitecture](./media/sql-database-temporal-tables/AzureTemporal5.png)
+![TemporalArchitecture](./media/sql-database-temporal-tables/AzureTemporal5.png)  
+
 
 ##步骤 3：执行历史数据分析
 
-现在，当启用版本由系统控制的临时表时，只需一个查询就能执行历史数据分析。在本文中，我们将提供一些解决常见分析方案的示例 - 若要了解所有详细信息，请浏览随 [FOR SYSTEM\_TIME](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx#Anchor_3) 子句一起引入的各种选项。
+现在，当启用版本由系统控制的临时表时，只需一个查询就能执行历史数据分析。本文将提供一些解决常见分析方案的示例 - 若要了解所有详细信息，请浏览随 [FOR SYSTEM\_TIME](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx#Anchor_3) 子句一起引入的各种选项。
 
 若要查看按访问网页次数排序的前 10 个用户，请运行以下查询：
 
@@ -150,7 +164,8 @@
 
 图形可视化对于临时查询特别方便，因为可以轻松、直观地显示趋势和使用模式：
 
-![TemporalGraph](./media/sql-database-temporal-tables/AzureTemporal6.png)
+![TemporalGraph](./media/sql-database-temporal-tables/AzureTemporal6.png)  
+
 
 ##不断演变的表架构
 
@@ -192,4 +207,4 @@
 有关临时表的详细信息，请参阅 [MSDN 文档](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx)。
 访问第 9 频道收听[客户实施临时表的真实成功案例](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions)，并观看[临时表现场演示](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016)。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->
