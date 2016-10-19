@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Microsoft Authenticator 应用常见问题解答"
-	description="提供与 Microsoft Authenticator 应用和 Azure Multi-Factor Authentication 相关的常见问题与解答列表。"
+	description="提供与 Microsoft Authenticator 应用和 Azure 多重身份验证相关的常见问题与解答列表。"
 	services="multi-factor-authentication"
 	documentationCenter=""
 	authors="kgremban"
@@ -9,12 +9,17 @@
 
 <tags
 	ms.service="multi-factor-authentication"
-	ms.date="08/15/2016"
-	wacn.date="08/29/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/16/2016"
+	ms.author="kgremban"
+   	wacn.date="10/19/2016"/>
 
 # Microsoft Authenticator 应用程序常见问题解答
 
-Microsoft Authenticator 应用替代了 Azure Authenticator 应用，建议使用 Azure Multi-Factor Authentication 时使用该应用。此应用可用于 Windows Phone、Android 和 iOS。
+Microsoft Authenticator 应用替代了 Azure Authenticator 应用，建议使用 Azure 多重身份验证时使用该应用。此应用可用于 Windows Phone、Android 和 iOS。
 
 ## 常见问题
 
@@ -22,11 +27,11 @@ Microsoft Authenticator 应用替代了 Azure Authenticator 应用，建议使�
 
 如果您的 Microsoft 帐户使用的是个人帐户，并且想要切换到推送通知，则需要再次添加您的帐户。这是因为该程序使用一次性密码。向您的帐户重新注册该设备，并设置推送通知。
 
-如果您的帐户未已启用双重验证，请参阅[双重验证](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)来确定它是否适合您。
+如果您的帐户未已启用双重验证，请参阅[双重验证](https://support.microsoft.com/zh-cn/help/12408/microsoft-account-about-two-step-verification)来确定它是否适合您。
 
 **我什么时候能在 iPhone 或 iPad 上使用一键式推送通知？**
 
-此功能到 8 月底之前都处于测试阶段，之后将会广泛可用于 Microsoft 帐户。如果想加入我们的测试计划，请发送电子邮件至 andypick@microsoft.com。邮件中需包括您的名字、姓氏和 Apple ID。
+此功能到 8 月底之前都处于测试阶段，之后将会广泛可用于 Microsoft 帐户。如果想加入我们的测试计划，请发送电子邮件至 msauthenticator@microsoft.com。邮件中需包括您的名字、姓氏和 Apple ID。
 
 **问：一键式推送通知是否适用于非 Microsoft 帐户？**
 
@@ -34,8 +39,8 @@ Microsoft Authenticator 应用替代了 Azure Authenticator 应用，建议使�
 
 ## 相关主题
 
-- [Azure Multi-Factor Authentication 常见问题](/documentation/articles/multi-factor-authentication-faq/)
-- 关于 Microsoft 帐户的[双重验证](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)
-- [身份验证应用常见问题解答](https://support.microsoft.com/help/12414/microsoft-account-identity-verification-apps-faq)
+- [Azure 多重身份验证常见问题](/documentation/articles/multi-factor-authentication-faq/)
+- 关于 Microsoft 帐户的[双重验证](https://support.microsoft.com/zh-cn/help/12408/microsoft-account-about-two-step-verification)
+- [身份验证应用常见问题解答](https://support.microsoft.com/zh-cn/help/12414/microsoft-account-identity-verification-apps-faq)
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->
