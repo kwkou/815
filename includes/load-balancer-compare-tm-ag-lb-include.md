@@ -16,7 +16,7 @@
 | 支持的应用程序协议 |	任意 | HTTP 和 HTTPS | 	任何（HTTP 终结点是终结点监视所必需的） |
 | 终结点 | Azure VM 和云服务角色实例 | 任何 Azure 内部 IP 地址或公共 Internet IP 地址 | Azure VM、云服务、Azure Web 应用和外部终结点 |
 | 虚拟网络支持 | 可用于面向 Internet 的应用程序和内部 (Vnet) 应用程序 | 可用于面向 Internet 的应用程序和内部 (Vnet) 应用程序 |	仅支持面向 Internet 的应用程序 |
-终结点监视 | 通过探测支持 | 通过探测支持 | 通过 HTTP/HTTPS GET 支持 | 
+| 终结点监视 | 通过探测支持 | 通过探测支持 | 通过 HTTP/HTTPS GET 支持 | 
 
 Azure Load Balancer 和应用程序网关都将网络流量路由到终结点，但它们具有处理流量的不同使用方案。下表有助于了解这两种负载平衡器之间的区别：
 
