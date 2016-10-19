@@ -22,7 +22,6 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-manage-portal/)
 - [事务 - SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms/)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools/)
 
@@ -85,7 +84,7 @@ New-AzureRmResourceGroup -Name $resourceGroupName -Location $resourceGroupLocati
 
 若要允许其他 Azure 服务访问服务器，请创建防火墙规则，将 `-StartIpAddress` 和 `-EndIpAddress` 都设置为 **0.0.0.0**。这个特殊的防火墙规则允许所有 Azure 流量访问服务器。
 
-有关详细信息，请参阅 [Azure SQL 数据库防火墙](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx)。如需脚本示例，请参阅 [Create a SQL database PowerShell script](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)（创建 SQL 数据库 PowerShell 脚本）。
+有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。如需脚本示例，请参阅 [Create a SQL database PowerShell script](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)（创建 SQL 数据库 PowerShell 脚本）。
 
 
 ## 创建 SQL 数据库（空）

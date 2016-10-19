@@ -14,17 +14,16 @@
  - **身份验证类型**：本文介绍如何使用 **SQL Server 身份验证**进行连接。有关使用 Azure Active Directory 进行连接的详细信息，请参阅[使用 Active Directory 集成身份验证进行连接](/documentation/articles/sql-database-aad-authentication/#connect-using-active-directory-integrated-authentication)、[使用 Active Directory 密码身份验证进行连接](/documentation/articles/sql-database-aad-authentication/#connect-using-active-directory-password-authentication)。
  - **用户名**：输入有权访问服务器上的数据库的用户名称（例如，创建服务器时设置的“服务器管理员”）。
  - **密码**：输入指定用户的密码（例如，创建服务器时设置的“密码”）。
-   
-       ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-sql-server-management-studio-connect-server-principal/connect.png)  
+   ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-sql-server-management-studio-connect-server-principal/connect.png)  
 
 
 3. 单击“连接”。
  
 4. 默认情况下，新的服务器未定义[防火墙规则](/documentation/articles/sql-database-firewall-configure/)，因此最初阻止客户端进行连接。如果服务器尚不具有允许特定的 IP 地址进行连接的防火墙规则，那么 SSMS 会提示你创建服务器级防火墙规则。
 
-    单击“登录”并创建服务器级防火墙规则。必须是 Azure 管理员才能创建服务器级的防火墙规则。
- 
-       ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-sql-server-management-studio-connect-server-principal/newfirewallrule.png)  
+	单击“登录”并创建服务器级防火墙规则。必须是 Azure 管理员才能创建服务器级的防火墙规则。
+
+	![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-sql-server-management-studio-connect-server-principal/newfirewallrule.png)  
 
  
 

@@ -44,7 +44,7 @@
 
 ***重要说明***：将 BACPAC 导出至 Azure Blob 存储时，请使用标准存储。不支持从高级存储导入 BACPAC。
 
-	![Export settings](./media/sql-database-cloud-migrate/MigrateUsingBACPAC02.png)
+![Export settings](./media/sql-database-cloud-migrate/MigrateUsingBACPAC02.png)
 
 
 ## 后续步骤
