@@ -278,9 +278,9 @@ Azure Active Directory（AAD）可为本地部署和云应用程序提供身份�
 1. 考虑变量设置的级别。 对于整个计算机、单个用户或运行单个应用程序的环境，其环境变量设置的含义都不相同。
 2. 以适当的级别设置以下环境变量：
 
-	RELAYHOST=servicebus.chinacloudapi.cn
-	STSHOST=accesscontrol.chinacloudapi.cn 
-	RELAYENV=Custom
+		RELAYHOST=servicebus.chinacloudapi.cn
+		STSHOST=accesscontrol.chinacloudapi.cn 
+		RELAYENV=Custom
 
 >[AZURE.WARNING] 通过 csdef 文件中的 `<environment>` 标记为 Web 角色添加环境变量时，此选项不可用。 Web 角色在 w3wp.exe 的上下文中运行。 环境变量不会传播到 w3wp.exe 环境。 请参阅 Web 角色的选项 3。
 
