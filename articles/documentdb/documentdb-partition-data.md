@@ -9,11 +9,17 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/16/2016" 
-	wacn.date="07/04/2016"/> 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/14/2016" 
+	ms.author="arramac" 
+   	wacn.date="10/18/2016"/>  
+
 
 # Azure DocumentDB 中的分区和缩放
-[Microsoft Azure DocumentDB](/services/documentdb/) 本教程旨在帮助你实现快速、可预测的性能并且随着应用程序的增长无缝扩展。本文概述 DocumentDB 分区的工作原理，并且描述如何配置 DocumentDB 集合以有效地扩展应用程序。
+[Azure DocumentDB](/home/features/documentdb/) 旨在帮助用户实现快速、可预测的性能并且随着应用程序的增长无缝扩展。本文概述 DocumentDB 分区的工作原理，并且描述如何配置 DocumentDB 集合以有效地扩展应用程序。
 
 阅读本文后，你将能够回答以下问题：
 
@@ -68,7 +74,7 @@
 让我们看看所选的分区键如何影响应用程序的性能。
 
 ### 分区和设置的吞吐量
-DocumentDB 旨在提供可预测的性能。在创建集合时，你希望根据**每秒请求单位 (RU)** 来保留吞吐量。会为每个请求分配请求单位费用，该费用与系统资源（如操作使用的 CPU 和 IO）的数量成正比。读取 1 kb 会话一致性文档将使用 1 请求单位。读取为 1 RU 时不考虑存储的项数量或同时运行的并发请求数。较大的文档要求更高的请求单位，具体取决于大小。如果你知道实体大小及为应用程序提供支持需要的读取次数，则可以设置应用程序读取所需的那个吞吐量。
+DocumentDB 旨在提供可预测的性能。创建集合时，可以根据**每秒的[请求单位](/documentation/articles/documentdb-request-units/) (RU) 数**保留吞吐量。会为每个请求分配请求单位费用，该费用与系统资源（如操作使用的 CPU 和 IO）的数量成正比。读取 1 kb 会话一致性文档将使用 1 请求单位。读取为 1 RU 时不考虑存储的项数量或同时运行的并发请求数。较大的文档要求更高的请求单位，具体取决于大小。如果你知道实体大小及为应用程序提供支持需要的读取次数，则可以设置应用程序读取所需的那个吞吐量。
 
 DocumentDB 存储文档时，它将基于分区键值在分区间均匀地分布它们。吞吐量也均匀分布在可用分区中，即每个分区的吞吐量 =（每个集合的总吞吐量）/（分区的数目）。
 
@@ -78,13 +84,13 @@ DocumentDB 存储文档时，它将基于分区键值在分区间均匀地分布
 DocumentDB 支持创建单个分区和已分区的集合。
 
 - **已分区集合**可以跨越多个分区并支持数量非常大的存储和吞吐量。必须指定集合的分区键。
-- **单个分区集合**具有较低价格选项和在所有集合数据之间进行查询和执行事务的能力。它们具有单个分区的可伸缩性和存储限制。无需指定这些集合的分区键。 
+- **单个分区集合**具有较低价格选项和在所有集合数据之间进行查询和执行事务的能力。它们具有单个分区的可伸缩性和存储限制。无需指定这些集合的分区键。
 
 ![DocumentDB 中的已分区集合][2]
 
 对于不需要大容量存储或大吞吐量的情形，单个分区集合非常适合。请注意，单个分区集合拥有单个分区的可扩展性和存储限制，即最多 10 GB 的存储和每秒多达 10,000 个的请求单位。
 
-已分区集合可以支持数量非常大的存储和吞吐量。但是，默认的产品/服务将配置为最多 250 GB 的存储和增加到 250,000 个请求单位/秒。如果每个集合都需要更高的存储或吞吐量，请联系 [Azure 支持](/documentation/articles/documentdb-increase-limits/)为你的帐户增加这些配额。
+已分区集合可以支持数量非常大的存储和吞吐量。但是，默认的产品/服务将配置为最多 250 GB 的存储和增加到 250,000 个请求单位/秒。如果每个集合都需要更高的存储或吞吐量，请联系 [Azure 支持](/documentation/articles/documentdb-increase-limits/)为帐户增加这些内容。
 
 下表列出使用单个分区和已分区集合的区别：
 
@@ -135,13 +141,13 @@ DocumentDB 支持创建单个分区和已分区的集合。
 
 ## 使用 SDK
 
-Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsoft.com/library/azure/dn781481.aspx) 的自动分区支持。为了创建已分区集合，必须在支持的 SDK 平台之一（.NET、Node.js、Java、Python）下载 SDK 版本 1.6.0 或更高版本。
+Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 的自动分区支持。为了创建已分区集合，必须在支持的 SDK 平台之一（.NET、Node.js、Java、Python）下载 SDK 版本 1.6.0 或更高版本。
 
 ### 创建已分区集合
 
 下面的示例演示创建集合的 .NET 代码片段，以存储吞吐量为 20,000 个请求单位/秒的设备遥测数据。SDK 将设置 OfferThroughput 值（其反过来将设置 REST API 中的 `x-ms-offer-throughput` 请求标头）。这里，我们将 `/deviceId` 设为分区键。所选的分区键随集合元数据（如名称和索引策略）的其余部分一起保存。
 
-对于此示例，我们选取了 `deviceId`，因为我们知道：(a) 由于存在大量的设备，写入可以跨分区均匀地分步并且我们可以扩展数据库以引入海量数据，(b) 许多请求（如提取设备最近读取内容）仅限于单个设备 ID，并且可以从单个分区进行检索。
+对于此示例，我们选取了 `deviceId`，因为我们知道：(a) 由于存在大量的设备，写入可以跨分区均匀地分步并且我们可以扩展数据库以引入海量数据，(b) 许多请求（如提取设备最近读取内容）仅限于单个 deviceId，并且可以从单个分区进行检索。
 
     DocumentClient client = new DocumentClient(new Uri(endpoint), authKey);
     await client.CreateDatabaseAsync(new Database { Id = "db" });
@@ -161,7 +167,7 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
 
 > [AZURE.NOTE] 为了创建已分区集合，必须指定 > 10,000 个请求单位/秒的吞吐量值。由于吞吐量是 100 的倍数，因此必须是 10,100 或更多。
 
-此方法可对 DocumentDB 调用 REST API，且该服务将基于所请求的吞吐量设置分区数。根据你的性能需求的发展，可以更改集合的吞吐量。有关详细信息，请参阅[性能级别](/documentation/articles/documentdb-performance-levels/)。
+此方法可对 DocumentDB 调用 REST API，且该服务将基于所请求的吞吐量设置分区数。根据你的性能需求的发展，可以更改集合的吞吐量。有关更多详细信息，请参阅[性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ### 读取和写入文档
 
@@ -244,6 +250,24 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
         new FeedOptions { EnableCrossPartitionQuery = true })
         .Where(m => m.MetricType == "Temperature" && m.MetricValue > 100);
 
+### 并行查询执行
+
+DocumentDB SDK 1.9.0 及更高版本支持并行查询执行选项，这些选项可用于对已分区集合执行低延迟查询，即使在这些查询需要处理大量分区时，也是如此。例如，以下查询配置为跨分区并行运行。
+
+    // Cross-partition Order By Queries
+    IQueryable<DeviceReading> crossPartitionQuery = client.CreateDocumentQuery<DeviceReading>(
+        UriFactory.CreateDocumentCollectionUri("db", "coll"), 
+        new FeedOptions { EnableCrossPartitionQuery = true, MaxDegreeOfParallelism = 10, MaxBufferedItemCount = 100})
+        .Where(m => m.MetricType == "Temperature" && m.MetricValue > 100)
+        .OrderBy(m => m.MetricValue);
+
+可以通过调整以下参数来管理并行查询执行：
+
+- 通过设置 `MaxDegreeOfParallelism`，可以控制并行度，即，与集合的分区同时进行的网络连接的最大数量。如果将此参数设置为 -1，则由 SDK 管理并行度。如果 `MaxDegreeOfParallelism` 未指定或设置为 0，则与集合的分区的网络连接将有一个。
+- 通过设置 `MaxBufferedItemCount`，可以权衡查询延迟和客户端内存使用率。如果省略此参数或将此参数设置为 -1，则由 SDK 管理并行查询执行过程中缓冲的项目数。
+
+如果给定相同状态的集合，并行查询将以串行执行相同的顺序返回结果。执行包含排序（ORDER BY 和/或 TOP）的跨分区查询时，DocumentDB SDK 跨分区发出并行查询，并合并客户端中的部分排序结果，以生成全局范围内有序的结果。
+
 ### 执行存储过程
 
 你还可以对具有相同设备 ID 的文档执行原子事务，例如，如果你要在单个文档中维护聚合或设备的最新状态。
@@ -261,10 +285,11 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
 
 从单个分区集合迁移到已分区集合
 
-1. 将单个分区集合中的数据导出到 JSON。有关其他信息，请参阅[导出到 JSON 文件](/documentation/articles/documentdb-import-data/#export-to-json-file)。
-2. 将数据导入到使用分区键定义创建的、吞吐量超过 10,000 个请求单位/秒的已分区集合，如下例所示。有关其他信息，请参阅[导入到 DocumentDB](/documentation/articles/documentdb-import-data/#DocumentDBSeqTarget)。
+1. 将单个分区集合中的数据导出到 JSON。有关其他详细信息，请参阅[导出到 JSON 文件](/documentation/articles/documentdb-import-data/#export-to-json-file/)。
+2. 将数据导入到使用分区键定义创建的、吞吐量超过 10,000 个请求单位/秒的已分区集合，如下例所示。有关其他详细信息，请参阅[导入到 DocumentDB](/documentation/articles/documentdb-import-data/#DocumentDBSeqTarget/)。
 
-![将数据迁移到 DocumentDB 中的已分区集合][3]
+![将数据迁移到 DocumentDB 中的已分区集合][3]  
+
 
 >[AZURE.TIP] 为了实现更快的导入时间，请考虑将并行请求数增加到 100 或更多，从而充分利用已分区集合可用的更高吞吐量。
 
@@ -292,8 +317,8 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
 ### 分区和记录/时间序列数据
 DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分区键是很重要的，因为你可能需要读取/写入大量数据。选择将取决于读取和写入的速率以及你希望运行的查询种类。以下是有关如何选择适当分区键的一些提示。
 
-- 如果你的用例涉及很长时间积累的小速率写入，并且需要按时间戳范围和其他筛选器进行查询，则使用时间戳（例如数据）汇总作为分区键是个好方法。这使你能够查询某日单个分区中的所有数据。 
-- 如果你的工作负荷是更常见的写入密集型，应使用不基于时间戳的分区键，以使 DocumentDB 可以跨多个分区均匀地分布写入。此处，主机名、进程 ID、活动 ID 或其他具有较大基数的属性是不错的选择。 
+- 如果你的用例涉及很长时间积累的小速率写入，并且需要按时间戳范围和其他筛选器进行查询，则使用时间戳（例如数据）汇总作为分区键是个好方法。这使你能够查询某日单个分区中的所有数据。
+- 如果你的工作负荷是更常见的写入密集型，应使用不基于时间戳的分区键，以使 DocumentDB 可以跨多个分区均匀地分布写入。此处，主机名、进程 ID、活动 ID 或其他具有较大基数的属性是不错的选择。
 - 第三种方法是混合型分区键，其中你有多个集合，一个用于每日/月，且分区键是类似主机名的粒度属性。这样做的好处是可以基于时间窗口设置不同性能级别，例如，当月的集合设置为更高的吞吐量，因为它维护读取和写入操作，而之前的月份吞吐量设置为较低，因为它们只维护读取。
 
 ### 分区和多租户
@@ -307,8 +332,9 @@ DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分
 ## 后续步骤
 在本文中，我们已经介绍了分区在 Azure DocumentDB 中的工作原理，如何创建已分区的集合和如何为应用程序选取适当的分区键。
 
--   使用 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 的编码入门
--   了解 [DocumentDB 中设置的吞吐量](/documentation/articles/documentdb-performance-levels/)
+-   使用 DocumentDB 执行规模和性能测试。有关示例，请参阅[使用 Azure DocumentDB 进行性能和规模测试](/documentation/articles/documentdb-performance-testing/)。
+-   使用 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 的编码入门
+-   了解 [DocumentDB 中预配的吞吐量](/documentation/articles/documentdb-performance-levels/)
 -   如果你想要自定义应用程序执行分区的方式，可以插入自己的客户端分区实现。请参阅[客户端分区支持](/documentation/articles/documentdb-sharding/)。
 
 [1]: ./media/documentdb-partition-data/partitioning.png
@@ -317,4 +343,4 @@ DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分
 
  
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1010_2016-->

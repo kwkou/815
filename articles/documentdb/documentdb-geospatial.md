@@ -9,12 +9,18 @@
 
 <tags 
     ms.service="documentdb" 
-    ms.date="05/16/2016" 
-    wacn.date="06/28/2016"/>
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="data-services" 
+    ms.date="08/08/2016" 
+    ms.author="arramac"
+    wacn.date="10/18/2016"/>  
+
     
 # 使用 Azure DocumentDB 中的地理空间数据
 
-本文将介绍 [Azure DocumentDB](/documentation/services/documentdb/) 中的地理空间功能。在阅读本文之后，你将能够回答以下问题：
+本文将介绍 [Azure DocumentDB](/home/features/documentdb/) 中的地理空间功能。在阅读本文之后，你将能够回答以下问题：
 
 - 我如何在 Azure DocumentDB 中存储空间数据？
 - 我如何使用 SQL 和 LINQ 查询 Azure DocumentDB 中的地理空间数据？
@@ -29,7 +35,7 @@
 ### GeoJSON
 DocumentDB 支持对使用 [GeoJSON 规范](http://geojson.org/geojson-spec.html)表示的地理空间点数据进行索引编制和查询。GeoJSON 数据结构永远是有效的 JSON 对象，因此可以通过 DocumentDB 来存储和查询，无需任何专用的工具或库。DocumentDB SDK 提供帮助程序类和方法，让空间数据更易使用。
 
-### 点( Point )、线段（LineString）和多边形( Polygon )
+### 点、LineString 和多边形
 **点**代表空间中的单一位置。在地理空间数据中，某个点所代表的确切位置可能是杂货店、电话亭、汽车或城市的街道地址。点使用其坐标对或经纬度，以 GeoJSON 格式（和 DocumentDB）表示。以下是点的 JSON 示例。
 
 **DocumentDB 中的点**
@@ -58,19 +64,7 @@ DocumentDB 支持对使用 [GeoJSON 规范](http://geojson.org/geojson-spec.html
        }
     }
 
-除了点之外，GeoJSON 也支持线段和多边形。**线段** 表示空间中一连串的点（两个或更多个）以及连接这些点的线段。在地理空间数据中，线段通常用来表示高速公路或河流。**多边形**是由相连接的点组成的边界，并形成闭合的线段。多边形通常用来表示自然构成物（例如湖泊），或表示政治管辖权（例如省/市/自治区）。以下是 DocumentDB 中线段和多边形的示例。
-
-**DocumentDB 中的线段**
-
-		{
-		   "type":"LineString",
-		   "coordinates":[
-		       [ 31.8, -5 ],
-		       [ 31.8, -4.7 ],
-		       [ 32, -4.7 ],
-		       [ 32, -5 ]
-		   ]
-		}
+除了点之外，GeoJSON 也支持 LineString 和多边形。**LineString** 表示空间中一连串的点（两个或更多个）以及连接这些点的线段。在地理空间数据中，LineString 通常用来表示高速公路或河流。**多边形**是由相连接的点组成的边界，并形成闭合的 LineString。多边形通常用来表示自然构成物（例如湖泊），或表示政治管辖权（例如省/市/自治区）。以下是 DocumentDB 中多边形的示例。
 
 **DocumentDB 中的多边形**
 
@@ -89,7 +83,7 @@ DocumentDB 支持对使用 [GeoJSON 规范](http://geojson.org/geojson-spec.html
 >
 >多边形内的点必须以逆时针顺序指定。以顺时针顺序指定的多边形表示其中的区域倒转。
 
-除了点、线段和多边形之外，GeoJSON 也会针对如何对多个地理空间位置分组以及如何将任意属性与地理位置关联成为**特征**指定表示形式。由于这些对象都是有效的 JSON，因此均可在 DocumentDB 中存储及处理。不过，DocumentDB 仅支持自动编制点的索引。
+除了点、LineString 和多边形之外，GeoJSON 也会针对如何对多个地理空间位置分组以及如何将任意属性与地理位置关联成为**特征**指定表示形式。由于这些对象都是有效的 JSON，因此均可在 DocumentDB 中存储及处理。不过，DocumentDB 仅支持自动编制点的索引。
 
 ### 坐标参考系统
 
@@ -139,7 +133,7 @@ DocumentDB 支持对使用 [GeoJSON 规范](http://geojson.org/geojson-spec.html
             Location = new Point (-122.12, 47.66) 
         });
 
-如果你没有经纬度信息，但有物理地址或位置名称，如城市或国家/地区，则可以使用必应地图 REST 服务等地理编码服务来查找实际的坐标。在[此处](https://msdn.microsoft.com/library/ff701713.aspx)详细了解必应地图地理编码。
+如果你没有经纬度信息，但有物理地址或位置名称，如城市或国家/地区，则可以使用必应地图 REST 服务等地理编码服务来查找实际的坐标。在[此处](https://msdn.microsoft.com/zh-cn/library/ff701713.aspx)详细了解必应地图地理编码。
 
 ## 查询空间类型
 
@@ -185,7 +179,7 @@ DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟
       "id": "WakefieldFamily"
     }]
 
-如果在你的索引策略中包含空间索引，则将通过索引有效地进行“距离查询”。有关空间索引的更多详细信息，请参阅以下章节。如果你没有指定路径的空间索引，仍然可以通过指定 `x-ms-documentdb-query-enable-scan` 请求标头（其值设置为“true”）执行空间查询。在 .NET 中，可以通过将可选的 **FeedOptions** 参数传递到 [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) 设置为 true 的查询来完成此操作。
+如果在你的索引策略中包含空间索引，则将通过索引有效地进行“距离查询”。有关空间索引的更多详细信息，请参阅以下章节。如果你没有指定路径的空间索引，仍然可以通过指定 `x-ms-documentdb-query-enable-scan` 请求标头（其值设置为“true”）执行空间查询。在 .NET 中，可以通过将可选的 **FeedOptions** 参数传递到 [EnableScanInQuery](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) 设置为 true 的查询来完成此操作。
 
 ST\_WITHIN 可用于检查点是否在多边形内。多边形通常用来表示边界，例如邮政编码、省/自治区边界或自然构成物。再次说明，如果在你的索引策略中包含空间索引，则将通过索引有效地进行“within”查询。
 
@@ -239,7 +233,7 @@ ST\_ISVALID 和 ST\_ISVALIDDETAILED 可用来检查空间对象是否有效。�
     
 ### .NET SDK 中的 LINQ 查询
 
-DocumentDB .NET SDK 还提供存根方法 `Distance()` 和 `Within()`，供你在 LINQ 表达式中使用。DocumentDB LINQ 提供程序会将这些方法调用转换为等效的 SQL 内置函数调用（分别为 ST\_DISTANCE 和 ST\_WITHIN）。
+DocumentDB .NET SDK 还提供存根方法 `Distance()` 和 `Within()`，供用户在 LINQ 表达式中使用。DocumentDB LINQ 提供程序会将这些方法调用转换为等效的 SQL 内置函数调用（分别为 ST\_DISTANCE 和 ST\_WITHIN）。
 
 以下是 LINQ 查询的示例，该查询使用 LINQ 在 DocumentDB 集合中查找所有文档，这些文档的“位置”值在指定点的 30 公里半径内。
 
@@ -278,11 +272,13 @@ DocumentDB .NET SDK 还提供存根方法 `Distance()` 和 `Within()`，供你�
 
 ## 索引
 
-如[使用 Azure DocumentDB 进行模型不可知的索引](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)一文中所述，我们设计的 DocumentDB 数据库引擎具有真正不可知的架构，并提供一流的 JSON 支持。DocumentDB 的写入优化数据库引擎现在也可以通过本机方式了解用 GeoJSON 标准表示的空间数据。
+如[使用 Azure DocumentDB 进行架构不可知的索引](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)一文中所述，我们设计的 DocumentDB 数据库引擎具有真正不可知的架构，并提供一流的 JSON 支持。DocumentDB 的写入优化数据库引擎现在也可以通过本机方式了解用 GeoJSON 标准表示的空间数据。
 
-简单来说，测地坐标的几何图形会投影在 2D 平面上，然后使用 **quadtree** 以渐进方式划分成格子。这些格子会根据 **Hilbert 空间填充曲线**内的格子位置映射到 1D，并保留点的位置。此外，当位置数据进行索引编制后，会经历称为**分割**的过程，也就是说，在某个位置上相交的所有格子都会被识别为键并存储在 DocumentDB 索引中。在查询时，点和多边形等参数也会经过分割，以提取相关的格子 ID 范围，然后用于从索引检索数据。
+简单来说，测地坐标的几何图形会投影在 2D 平面上，然后使用**四叉树**以渐进方式划分成单元格。这些单元格会根据 **Hilbert 空间填充曲线**内的单元格位置映射到 1D，并保留点的位置。此外，当位置数据进行索引编制后，会经历称为**分割**的过程，也就是说，在某个位置上相交的所有单元格都会被识别为键并存储在 DocumentDB 索引中。在查询时，点和多边形等参数也会经过分割，以提取相关的格子 ID 范围，然后用于从索引检索数据。
 
 如果指定的索引策略包含 /*（所有路径）的空间索引，则表示在集合中找到的所有点均已编制索引，能进行有效的空间查询（ST\_WITHIN 和 ST\_DISTANCE）。空间索引没有精度值，并且始终使用默认的精度值。
+
+>[AZURE.NOTE] DocumentDB 支持 Point、Polygon（个人预览版）和 LineString（个人预览版）的自动索引。若要访问预览版，请发送电子邮件至 askdocdb@microsoft.com，或者通过“Azure 支持”与我们联系。
 
 以下 JSON 代码段演示已启用空间索引的索引策略，也就是为文档中找到的所有 GeoJSON 点编制索引，以用于空间查询。如果你要使用 Azure 门户预览修改索引策略，可以为索引策略指定以下 JSON，以便对集合启用空间索引。
 
@@ -354,4 +350,4 @@ DocumentDB .NET SDK 还提供存根方法 `Distance()` 和 `Within()`，供你�
 - 详细了解 [DocumentDB 查询](/documentation/articles/documentdb-sql-query/)
 - 详细了解 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -5,12 +5,19 @@
 	authors="mimig1" 
 	manager="jhubbard" 
 	editor="cgronlun" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="06/08/2016" 
-	wacn.date="08/02/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/15/2016" 
+	ms.author="arramac"
+   	wacn.date="10/18/2016"/>  
+
 
 
 # DocumentDB 的默认配额
@@ -19,6 +26,6 @@
 
 [AZURE.INCLUDE [azure-documentdb-limits](../../includes/azure-documentdb-limits.md)]
 
-[可联系 Azure 支持部门调整](/documentation/articles/documentdb-increase-limits/)带星号 (*) 的配额。
+可联系 Azure 支持部门调整带星号 (*) [ 的配额](/documentation/articles/documentdb-increase-limits/)。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1010_2016-->

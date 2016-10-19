@@ -10,10 +10,16 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/13/2016" 
-	wacn.date=""/>  
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/29/2016" 
+	ms.author="mimig"
+   	wacn.date="10/18/2016"/>  
 
-# DocumentDB SQL 备忘单 PDF
+
+# DocumentDB SQL 查询速查表 PDF
 
 **DocumentDB SQL 查询备忘单**通过在易于打印的 PDF 参考表中显示常见的数据库查询、关键字、内置函数和运算符，有助于你编写用于 DocumentDB 数据的查询。
 
@@ -23,9 +29,10 @@ DocumentDB 支持使用 [SQL](/documentation/articles/documentdb-sql-query/) 的
 
 通过下载 SQL 查询备忘单并将其用作快速参考可以加快编写查询的速度。SQL 备忘单 PDF 显示了用于检索两个示例 JSON 文档中的数据的常见查询。若要随身携带，可以采用信纸幅面尺寸（8.5 x 11 英寸）打印单面 SQL 查询备忘单。
 
-**在此处下载 SQL 备忘单：[Microsoft Azure DocumentDB SQL 备忘单](http://go.microsoft.com/fwlink/?LinkId=623215)**
+**在此处下载 SQL 速查表：[Azure DocumentDB SQL 速查表](http://go.microsoft.com/fwlink/?LinkId=623215)**
 
-![DocumentDB SQL 查询备忘单：DocumentDB 支持的 SQL 语法的快速参考 PDF - SQL 备忘单、SQL 备忘单 PDF、SQL 快速参考][cheat-sheet]
+![DocumentDB SQL 查询备忘单：DocumentDB 支持的 SQL 语法的快速参考 PDF - SQL 备忘单、SQL 备忘单 PDF、SQL 快速参考][cheat-sheet]  
+
 
 [cheat-sheet]: ./media/documentdb-sql-query-cheat-sheet/microsoft-documentdb-sql-query-cheat-sheet-v4.png
 
@@ -33,6 +40,10 @@ DocumentDB 支持使用 [SQL](/documentation/articles/documentdb-sql-query/) 的
 ## 编写 SQL 查询的更多帮助
 
 - 有关 DocumentDB 中可用的查询选项的演练操作，请参阅 [DocumentDB 查询](/documentation/articles/documentdb-sql-query/)。
-- 有关参考文档的相关信息，请参阅 [DocumentDB SQL 查询语言](https://msdn.microsoft.com/library/azure/dn782250.aspx)。
+- 有关参考文档的相关信息，请参阅 [DocumentDB SQL 查询语言](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)。
 
-<!---HONumber=Mooncake_0815_2016-->
+## 发行说明
+
+于 7/29/2016 更新以包括 TOP。
+
+<!---HONumber=Mooncake_1010_2016-->

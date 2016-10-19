@@ -10,8 +10,13 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="08/11/2016" 
-	wacn.date="09/19/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="hero-article" 
+	ms.date="08/25/2016" 
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>
 
 # <a name="_Toc395783175"></a>使用 DocumentDB 生成 Node.js Web 应用程序
 
@@ -23,9 +28,6 @@
 
 本 Node.js 教程展示如何使用 Azure DocumentDB 服务存储和访问托管在 Azure 网站上的 Node.js Express 应用程序中的数据。
 
-我们建议通过观看以下视频进行入门学习，其中你将了解如何设置 Azure DocumentDB 数据库帐户并将 JSON 文档存储在 Node.js 应用程序中。
-
-> [AZURE.VIDEO azure-demo-getting-started-with-azure-documentdb-on-nodejs-in-linux]
 
 再返回到本 Node.js 教程，你将了解以下问题的答案：
 
@@ -44,7 +46,7 @@
 
 在按照本文中的说明操作之前，你应确保已拥有下列项：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+- 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - [Node.js][] 版本 v0.10.29 或更高版本。
 - [Express 生成器](http://www.expressjs.com/starter/generator.html)（你可以通过 `npm install express-generator -g` 安装它）
 - [Git][]。
@@ -76,9 +78,10 @@
 
 		npm start
 
-5. 你可以通过导航浏览器到 [http://localhost:3000](http://localhost:3000) 以查看新的应用程序。
+5. 可以通过将浏览器导航到 http://localhost:3000 来查看新的应用程序。
 
-	![了解 Node.js - 浏览器窗口中 Hello World 应用程序的屏幕截图](./media/documentdb-nodejs-application/image12.png)
+	![了解 Node.js - 浏览器窗口中 Hello World 应用程序的屏幕截图](./media/documentdb-nodejs-application/image12.png)  
+
 
 ## <a name="_Toc395783179"></a>步骤 3：安装其他模块
 
@@ -161,11 +164,7 @@
 		                        id: collectionId
 		                    };
 							
-				 			var requestOptions = {
-								offerType: 'S1'
-							};
-							
-		                    client.createCollection(databaseLink, collectionSpec, requestOptions, function (err, created) {
+		                    client.createCollection(databaseLink, collectionSpec, function (err, created) {
 		                        callback(null, created);
 		                    });
 		
@@ -181,7 +180,7 @@
 
     > [AZURE.TIP] createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。
     >
-> 有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)
+    > 有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)
 		
 3. 保存并关闭 **docdbUtils.js** 文件。
 
@@ -386,8 +385,8 @@
 
 		var config = {}
 		
-		config.host = process.env.HOST || "[the URI value from the DocumentDB Keys blade on http://portal.azure.com]";
-		config.authKey = process.env.AUTH_KEY || "[the PRIMARY KEY value from the DocumentDB Keys blade on http://portal.azure.com]";
+		config.host = process.env.HOST || "[the URI value from the DocumentDB Keys blade on http://portal.azure.cn]";
+		config.authKey = process.env.AUTH_KEY || "[the PRIMARY KEY value from the DocumentDB Keys blade on http://portal.azure.cn]";
 		config.databaseId = "ToDoList";
 		config.collectionId = "Items";
 		
@@ -543,11 +542,11 @@
 
 ## <a name="_Toc395783182"></a>步骤 7：将应用程序开发项目部署到 Azure 网站
 
-1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Local Git Deployment to Azure App Service（从本地 GIT 部署到 Azure App Service）](/documentation/articles/app-service-deploy-local-git/)主题中找到如何执行此操作的说明。
+1. 如果尚未部署，则启用 Azure 网站的 git 存储库。可以在 [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/)（从本地 GIT 部署到 Azure App Service）主题中找到如何执行此操作的说明。
 
 2. 将 Azure 网站添加为 git 远程。
 
-		git remote add azure https://username@your-azure-website.scm.azurewebsites.net:443/your-azure-website.git
+		git remote add azure https://username@your-azure-website.scm.chinacloudsites.cn:443/your-azure-website.git
 
 3. 通过推送到远程进行部署。
 
@@ -568,4 +567,4 @@
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1010_2016-->

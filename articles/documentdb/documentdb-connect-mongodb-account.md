@@ -10,19 +10,26 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/31/2016" 
-	wacn.date="08/18/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/23/2016" 
+	ms.author="stbaro"
+   	wacn.date="10/18/2016"/>  
+
 
 # 如何连接到具有 MongoDB 协议支持的 DocumentDB 帐户
 
-了解如何使用标准 MongoDB 连接字符串 URI 格式连接到具有 MongoDB 协议支持的 DocumentDB 帐户。
+了解如何使用标准 MongoDB 连接字符串 URI 格式连接到具有 MongoDB 协议支持的 Azure DocumentDB 帐户。
 
 ## 获取帐户的连接字符串信息
 
 1. 在新窗口中，登录到 [Azure 门户](https://portal.azure.cn)。
-2. 在“所有设置”边栏选项卡中，单击“连接字符串”。若要导航到“所有设置”，请在跳转栏上单击“浏览”，单击“DocumentDB”帐户，然后选择具有 MongoDB 协议支持的 DocumentDB 帐户。
+2. 在“帐户”边栏选项卡的**左导航**栏中，单击“连接字符串”。若要导航到“帐户”边栏选项卡，请在跳转栏上单击“更多服务”，单击“DocumentDB (NoSQL)”，然后选择具有 MongoDB 协议支持的 DocumentDB 帐户。
 
-	![“所有设置”边栏选项卡的屏幕截图](./media/documentdb-connect-mongodb-account/SettingsBlade.png)
+	![“所有设置”边栏选项卡的屏幕截图](./media/documentdb-connect-mongodb-account/SettingsBlade.png)  
+
 
 3. 此时将打开“连接字符串信息”边栏选项卡，其中显示了使用 MongoDB 驱动程序连接到帐户所需的所有信息，包括预先构造的连接字符串。
 
@@ -75,9 +82,9 @@
 ## 后续步骤
 
 
-- 了解如何配合具有 MongoDB 协议支持的 DocumentDB 帐户[使用 MongoChef](/documentation/articles/documentdb-mongodb-mongochef/)。
+- 了解如何对具有 MongoDB 协议支持的 DocumentDB 帐户[使用 MongoChef](/documentation/articles/documentdb-mongodb-mongochef/)。
 - 浏览具有 MongoDB 协议支持的 DocumentDB [示例](/documentation/articles/documentdb-mongodb-samples/)。
 
  
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1010_2016-->

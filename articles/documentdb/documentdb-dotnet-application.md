@@ -6,21 +6,27 @@
 	documentationCenter=".net" 
 	authors="AndrewHoh" 
 	manager="jhubbard" 
-	editor="cgronlun"/>
+	editor="cgronlun"/>  
+
 
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="08/11/2016" 
-	wacn.date="09/12/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="hero-article" 
+	ms.date="08/25/2016" 
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>
 
-#<a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
+# <a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/documentdb-dotnet-application/)
 - [Node.js](/documentation/articles/documentdb-nodejs-application/)
 - [Java](/documentation/articles/documentdb-java-application/)
-- [Python](/documentation/articles/documentdb-python-application/)
+- [Python](/documentation/articles/documentdb-python-application/) 
 
 为了特别说明你可以如何有效地利用 Azure DocumentDB 来存储和查询 JSON 文档，本文提供了演示如何使用 Azure DocumentDB 构建待办事项应用的完整演练。任务将存储为 Azure DocumentDB 中的 JSON 文档。
 
@@ -34,11 +40,11 @@
 
 在按照本文中的说明操作之前，你应确保已拥有下列项：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+- 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - [Visual Studio 2015](http://www.visualstudio.com/)、Visual Studio 2013 Update 4 或更高版本。如果使用的是 Visual Studio 2013，则需安装 [Microsoft.Net.Compilers Nuget 包](https://www.nuget.org/packages/Microsoft.Net.Compilers/)以添加对 C# 6.0 的支持。
 - 用于 .NET 2.5.1 或更高版的 Azure SDK，可通过 [Microsoft Web 平台安装程序][]获取。
 
-本文中的所有屏幕截图都是使用已应用 Update 4 的 Visual Studio 2013 以及 用于 .NET 2.5.1 的 Azure SDK 版获取的。如果你的系统配备了不同的版本，那么，你的屏幕和选项可能不会完全相符，但只要你符合上述先决条件，本解决方案应该还是有效。
+本文中的所有屏幕截图都是使用已应用 Update 4 的 Visual Studio 2013 以及 用于 .NET 的 Azure SDK 2.5.1 版获取的。如果你的系统配备了不同的版本，那么，你的屏幕和选项可能不会完全相符，但只要你符合上述先决条件，本解决方案应该还是有效。
 
 ## <a name="_Toc395637761"></a>步骤 1：创建 DocumentDB 数据库帐户
 
@@ -48,7 +54,7 @@
 
 [AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
-<br/> 
+<br/>
 现在，我们将演练如何从头开始创建新的 ASP.NET MVC 应用程序。
 
 ## <a name="_Toc395637762"></a>步骤 2：创建新的 ASP.NET MVC 应用程序
@@ -81,7 +87,7 @@
 
   	我在此处没有选择“数据库服务器”，因为我们并未使用 Azure SQL 数据库服务器，稍后我们会在 Azure 门户预览中创建新的 Azure DocumentDB 帐户。
 
-	有关选择 **App Service 计划**和**资源组**的详细信息，请参阅 [Azure App Service 计划深入概述](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)。
+	有关选择 **App Service 计划**和**资源组**的详细信息，请参阅 [Azure App Service 计划深入概述](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)。
 
   	![屏幕截图：“配置 Azure 网站”对话框](./media/documentdb-dotnet-application/image11_1.png)
 
@@ -134,7 +140,7 @@
 
 2. 将新类命名为 **Item.cs**，然后单击“添加”。
 
-3. 在这个新的 **Item.cs** 文件中，将下列代码添加到最后一个 *using 语句*后面。
+3. 在这个新的 **Item.cs** 文件中，将下列代码添加到最后一个 *using 语句* 后面。
 		
 		using Newtonsoft.Json;
 	
@@ -260,7 +266,7 @@
 
 1. 在“解决方案资源管理器”中，右键单击该项目，单击“添加”，然后单击“类”。将新类命名为 **DocumentDBRepository**，然后单击“添加”。
  
-2. 在刚刚创建的 **DocumentDBRepository** 类中，在*命名空间*声明上方添加以下 *using 语句*
+2. 在刚刚创建的 **DocumentDBRepository** 类中，在 *命名空间* 声明上方添加以下 *using 语句*
 		
 		using Microsoft.Azure.Documents; 
 		using Microsoft.Azure.Documents.Client; 
@@ -341,7 +347,7 @@
 		<add key="database" value="ToDoList"/>
 		<add key="collection" value="Items"/>
 	
-4. 现在，使用 Azure 门户的“密钥”边栏选项卡来更新*终结点*和 *authKey* 的值。使用“密钥”边栏选项卡中的“URI”作为终结点设置的值，使用“密钥”边栏选项卡中的“主密钥”或“辅助密钥”作为 authKey 设置的值。
+4. 现在，使用 Azure 门户预览的“密钥”边栏选项卡来更新 *终结点* 和 *authKey* 的值。使用“密钥”边栏选项卡中的“URI”作为终结点设置的值，使用“密钥”边栏选项卡中的“主密钥”或“辅助密钥”作为 authKey 设置的值。
 
 
 	我们已经连接了 DocumentDB 存储库，现在让我们添加应用程序逻辑。
@@ -365,7 +371,7 @@
 		}
 
 
-6. 打开我们先前添加的 **ItemController**，并在命名空间声明上方添加以下 *using 语句*。
+6. 打开我们先前添加的 **ItemController**，并在命名空间声明上方添加以下 *using 语句* 。
 
 		using System.Net;
 		using System.Threading.Tasks;
@@ -398,7 +404,7 @@
 
 如果现在运行应用程序，则可转到 **HomeController** 以及该控制器的“索引”视图。这是我们一开始就选定的 MVC 模板项目默认行为，但是我们不想要这样的行为！ 让我们更改此 MVC 应用程序上的路由以改变此行为。
 
-打开 ***App\_Start\RouteConfig.cs***，找到以“defaults:”开头的行，然后将它更改为如下行。
+打开 ***App\_Start\\RouteConfig.cs***，找到以“defaults:”开头的行，然后将它更改为如下行。
 
 		defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
 
@@ -587,11 +593,10 @@
 若要向应用程序添加其他功能，请查看 [DocumentDB .NET 库](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx)中提供的 API，并欢迎你在 [GitHub][] 上的 DocumentDB .NET 库中补充内容。
 
 
-[*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
 [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
 [Microsoft Web 平台安装程序]: http://www.microsoft.com/web/downloads/platform.aspx
 [防止跨站点请求伪造]: http://go.microsoft.com/fwlink/?LinkID=517254
 [ASP.NET MVC 中的基本 CRUD 操作]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1010_2016-->
