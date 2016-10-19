@@ -9,24 +9,41 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/17/2016"
-	wacn.date="08/15/2016"/>
+	ms.workload="sql-database"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/21/2016"
+	wacn.date="10/17/2016"
+	ms.author="genemi"/>  
+
 
 
 # 有关 Azure SQL 数据库服务的所有主题
 
-本主题列出的每个主题都可以直接应用于 Azure **SQL 数据库**服务。你可以使用 **Ctrl+F** 来搜索此网页的关键字，以便查找当前感兴趣的主题。
+本主题列出的每个主题都可以直接应用于 Azure **SQL 数据库**服务。您可以使用 **Ctrl+F** 来搜索此网页的关键字，以便查找当前感兴趣的主题。
 
 
 
 
-## 了解 SQL 数据库
+## 新建
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 1 | [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/) | 了解哪个云 SQL Server 选项适合你的应用程序：Azure SQL (PaaS) 数据库或 Azure 虚拟机上的云中 SQL Server。 |
-| 2 | [SQL 数据库选项和性能：了解每个服务层提供的功能](/documentation/articles/sql-database-service-tiers/) | 比较 SQL 数据库服务层的性能和业务连续性功能，以便在缩放的同时，在成本与功能之间找到平衡点。 |
-| 3 | [什么是 SQL 数据库？ SQL 数据库简介](/documentation/articles/sql-database-technical-overview/) | 获取 SQL 数据库简介：Microsoft 在云中的关系数据库管理系统 (RDBMS) 的技术详细信息与功能。 |
+| 1 | [Azure SQL 数据库中的 JSON 功能入门](/documentation/articles/sql-database-json-features/) | 使用 Azure SQL 数据库可以分析、查询数据，以 JavaScript 对象表示法 (JSON) 设置数据格式。 |
+| 2 | SQL 数据库和 SQL 数据仓库针对 Azure AD MFA 的 SSMS 支持 | 将 Multi-Factored Authentication 与 SSMS 搭配用于 SQL 数据库和 SQL 数据仓库。 |
+
+
+## 更新的文章
+
+本部分列出最近做了重大更新的文章。每篇更新的文章都会显示大致的代码段，说明添加的 Markdown 文本。这些文章是在 **2016-07-26** 到 **2016-08-21** 期间更新的。
+
+| &nbsp; | 文章 | 更新的文本、代码片段 |
+| --: | :-- | :-- |
+| 3 | [使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件](/documentation/articles/sql-database-export-powershell/) | $subscriptionId = "YOUR AZURE SUBSCRIPTION ID" Login-AzureRmAccount -EnvironmentName AzureChinaCloud Set-AzureRmContext -SubscriptionId $subscriptionId Database to export $DatabaseName = "DATABASE-NAME" $ResourceGroupName = "RESOURCE-GROUP-NAME" $ServerName = "SERVER-NAME" $serverAdmin = "ADMIN-NAME" $serverPassword = "ADMIN-PASSWORD" $securePassword = ConvertTo-SecureString ΓÇôString $serverPassword ΓÇôAsPlainText -Force $creds = New-Object ΓÇôTypeName System.Management.Automation.PSCredential ΓÇôArgumentList $serverAdmin, $securePassword Generate a unique filename for the BACPAC $bacpacFilename = $DatabaseName + (Get-Date).ToString("yyyyMMddHHmm") + ".bacpac" Storage account info for the BACPAC $BaseStorageUri = "https://STORAGE-NAME.blob.core.chinacloudapi.cn/BLOB-CONTAINER-NAME/" $BacpacUri = $BaseStorageUri + $bacpacFilename $StorageKeytype = "StorageAccessKey" $StorageKey = "YOUR STORAGE KEY" $exportRequest = New-AzureRmSqlDatabaseExpo |
+| 4 | [SQL 数据库选项和性能：了解每个服务层提供的功能](/documentation/articles/sql-database-service-tiers/) | **选择服务层**若要确定服务层，请先确定数据库是独立数据库还是弹性池的一部分。**选择独立数据库的服务层**若要确定独立数据库的服务层，请先确定所需的数据库功能以选择 SQL 数据库版本：/ 数据库大小（“基本”层最多为 5 GB、“标准”层最多为 250 GB、“高级”层最多为 500 GB 到 1 TB - 具体取决于性能级别）/ 数据库备份保留期限（“基本”层为 7 天、“标准”层为 35 天、“高级”层为 35 天）。确定 SQL 数据库版本之后，便可以确定数据库的性能级别（DTU 数目）。可以根据实际经验猜测，然后动态扩展或缩减 (/documentation/articles/sql-database-scale-up/)。还可以使用 DTU 计算器 (http://dtucalculator.azurewebsites.net/) 估算所需的 DTU 数目。** C |
+
+
 
 
 
@@ -34,10 +51,10 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 4 | 使用具有隔离和效率的 Azure SQL 数据库构建多租户应用 | 了解 SQL 数据库如何构建多租户应用 |
+| 5 | [使用具有隔离和效率的 Azure SQL 数据库构建多租户应用](/documentation/articles/sql-database-build-multi-tenant-apps/) | 了解 SQL 数据库如何构建多租户应用 |
 | 5 | [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/) | 了解如何通过使用 SQL Server Management Studio (SSMS) 连接到在 Azure 上的 SQL 数据库。然后，使用 Transact-SQL (T-SQL) 运行示例查询。 |
 | 6 | [使用 .NET (C#) 连接到 SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/) | 使用本快速入门教程中的示例代码可以生成一个包含 C# 代码并由云中强大的 Azure SQL 数据库关系数据库支持的现代应用程序。 |
-| 7 | 使用 Azure 门户预览创建新的弹性数据库池 | 如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以简化多个数据库的管理和资源共享。 |
+| 7 | 使用 Azure 门户创建新的弹性数据库池 | 如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以简化多个数据库的管理和资源共享。 |
 | 8 | [浏览 Azure SQL 数据库教程](/documentation/articles/sql-database-explore-tutorials/) | 了解 SQL 数据库的特性和功能 |
 | 9 | [SQL 数据库教程：使用 Azure 经典管理门户在几分钟内创建一个 SQL 数据库](/documentation/articles/sql-database-get-started/) | 了解如何设置 SQL 数据库逻辑服务器、服务器防火墙规则、SQL 数据库、示例性数据，如何使用客户端工具连接以及如何配置用户和数据库防火墙规则。 |
 | 10 | [Azure SQL 数据库提供安全和保护](/documentation/articles/sql-database-helps-secures-and-protects/) | 了解 SQL 数据库如何帮助提供安全和保护 |
@@ -88,7 +105,6 @@
 | 34 | [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance/) | 弹性数据库池是由一组弹性数据库共享的可用资源的集合。本文提供相关的指导来帮助你评估是否适合对一组数据库使用弹性数据库池。 |
 | 35 | [弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/) | 大致介绍 Azure SQL 数据库的弹性数据库工具功能，包括易于使用的示例应用。 |
 | 36 | [SQL 数据库常见问题](/documentation/articles/sql-database-faq/) | 客户就云数据库、Azure SQL 数据库、Microsoft 的关系数据库管理系统 (RDBMS) 和云中“数据库即服务”经常提出的问题的解答。 |
-| 37 | SQL 数据库顾问 | Azure SQL 数据库顾问为你的现有 SQL 数据库提供建议，这样可以提高当前的查询性能。 |
 | 38 | SQL 数据库中的 In-Memory（预览版）入门 | SQL In-Memory 技术大幅提升了事务和分析工作负荷的性能。了解如何利用这些技术。 |
 | 39 | 使用 In-Memory OLTP（预览版）改善 SQL 数据库中的应用程序性能 | 利用 In-Memory OLTP 改善现有 SQL 数据库中的事务性能。 |
 | 40 | [监视 In-Memory OLTP 存储](/documentation/articles/sql-database-in-memory-oltp-monitoring/) | 估算和监视 XTP 内存中存储用量与容量；解决容量错误 41823 |
@@ -185,8 +201,6 @@
 | --: | :-- | :-- |
 | 90 | [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/) | 了解 SQL 数据库的内置备份，借助该备份可将 Azure SQL 数据库回滚到以前的时间点，或者将数据库复制到地理区域中的新数据库（最多 35 天）。 |
 | 91 | [使用 Azure SQL 数据库确保业务连续性](/documentation/articles/sql-database-business-continuity/) | 了解 Azure SQL 数据库如何支持云业务连续性和数据库恢复以及如何帮助保持运行任务关键型云应用程序。 |
-| 92 | [在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade/) | 本节对在升级应用程序期间如何避免停机提供了一些指导。 |
-| 93 | [Azure SQL 数据库业务连续性场景](/documentation/articles/sql-database-business-continuity-scenarios/) | Azure SQL 数据库业务连续性场景 |
 | 94 | [如何从 Azure SQL 数据库备份中还原单个表](/documentation/articles/sql-database-cloud-migrate-restore-single-table-azure-backup/) | 了解如何从 Azure SQL 数据库备份中还原单个表。 |
 | 95 | [使用 SQL 数据库中的活动异地复制功能为云灾难恢复设计应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/) | 了解如何使用 Azure SQL 数据库中应用程序数据备份的异地复制功能为业务连续性规划设计云灾难恢复解决方案。 |
 | 96 | [还原 Azure SQL 数据库或故障转移到辅助数据库](/documentation/articles/sql-database-disaster-recovery/) | 了解在发生区域性的数据中心中断或故障后，如何使用 Azure SQL 数据库活动异地复制和异地还原功能来恢复数据库。 |
@@ -201,8 +215,6 @@
 | 105 | 使用 Azure 门户预览还原已删除的 Azure SQL 数据库 | 还原已删除的 Azure SQL 数据库（Azure 门户）。 |
 | 106 | [使用 PowerShell 还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/) | 还原已删除的 Azure SQL 数据库 (PowerShell)。 |
 | 107 | 将数据库还原到以前的时间点、还原已删除的数据库，或者在数据中心服务中断的情况下进行恢复 | 了解如何在发生错误和服务中断时，使用 Azure SQL 数据库中的备份和副本恢复云数据库。 |
-| 108 | [在发生错误后恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery/) | 了解如何在发生用户错误、意外的数据损坏后进行恢复，或者使用 Azure SQL 数据库的时间点还原 (PITR) 功能还恢复已删除的数据库。 |
-| 109 | [将 Azure 存储空间用于 SQL Server 备份和还原](/documentation/articles/storage-use-storage-sql-server-backup-restore/) | 了解如何将 SQL Server 备份到 Azure 存储空间。说明将 SQL 数据库备份到 Azure 存储空间的好处。 |
 
 
 
@@ -234,7 +246,6 @@
 | --: | :-- | :-- |
 | 125 | [将 SQL Server 数据库迁移到云中的 SQL 数据库](/documentation/articles/sql-database-cloud-migrate/) | 了解如何将本地 SQL Server 数据库迁移到云中的 Azure SQL 数据库。在执行数据库迁移之前使用数据库迁移工具测试兼容性。 |
 | 126 | [复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/) | 创建 Azure SQL 数据库的副本 |
-| 117 | 创建和导出 Azure SQL 数据库的 BACPAC| 创建和导出 Azure SQL 数据库的 BACPAC |
 | 127 | 使用 Azure 门户预览将 Azure SQL 数据库存档到 BACPAC 文件 | 使用 Azure 门户将 Azure SQL 数据库存档到 BACPAC 文件 |
 
 
@@ -265,7 +276,6 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 143 | [使用 Azure 自动化管理 Azure SQL 数据库](/documentation/articles/automation-manage-sql-database/) | 了解如何使用 Azure 自动化服务来方便管理 Azure SQL 数据库。 |
 | 144 | [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started/) | SQL 数据库审核入门 |
 | 145 | 使用 Azure 门户预览配置 Azure SQL 数据库服务器级防火墙规则 | 了解如何配置防火墙以允许 IP 地址访问 Azure SQL 服务器。 |
 | 146 | 使用 Azure 门户预览复制 Azure SQL 数据库 | 创建 Azure SQL 数据库的副本 |
@@ -366,6 +376,4 @@
 
 - [在 Azure 中备份 Azure App Service 应用](/documentation/articles/web-sites-backup/)
 
-<a name="extra_documentation_tools"></a>
-
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

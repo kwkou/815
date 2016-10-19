@@ -11,8 +11,14 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="06/06/2016"
-   wacn.date="07/18/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-management"
+   ms.date="09/14/2016"
+   wacn.date="10/17/2016"
+   ms.author="rickbyh"/>  
+
 
 # SQL 数据库身份验证和授权：授予访问权限 
 
@@ -36,7 +42,7 @@
 也可以将某个 Azure Active Directory 帐户配置为管理员。此帐户可以是单个 Azure AD 用户，也可以是包含多个 Azure AD 用户的 Azure AD 组。配置 Azure AD 管理员是选择性的，但如果你需要使用 Windows Authentication for Azure AD 帐户连接到 SQL 数据库，则必须配置 Azure AD 管理员。有关配置 Azure Active Directory 访问权限的详细信息，请参阅[使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库](/documentation/articles/sql-database-aad-authentication/)。
 
 ### 配置防火墙
-配置服务器级防火墙以后，Azure SQL 数据库订户帐户和 Azure Active Directory 帐户可以连接到虚拟 master 数据库以及所有用户数据库。可以通过门户配置服务器级防火墙。建立连接以后，还可以使用 [sp\_set\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) Transact-SQL 语句配置其他服务器级防火墙规则。有关如何配置防火墙的详细信息，请参阅[如何：使用 Azure PowerShell 配置 Azure SQL 数据库防火墙](/documentation/articles/sql-database-configure-firewall-settings-powershell/)。
+配置服务器级防火墙以后，Azure SQL 数据库订户帐户和 Azure Active Directory 帐户可以连接到 master 数据库以及所有用户数据库。可以通过门户配置服务器级防火墙。建立连接以后，还可以使用 [sp\_set\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) Transact-SQL 语句配置其他服务器级防火墙规则。有关如何配置防火墙的详细信息，请参阅[如何：使用 Azure PowerShell 配置 Azure SQL 数据库防火墙](/documentation/articles/sql-database-configure-firewall-settings-powershell/)。
 
 ### 管理员访问路径
 
@@ -46,7 +52,10 @@
 使用服务器级防火墙中的开放端口时，管理员可以连接到任何 SQL 数据库。
 
 ### 通过使用 SQL Server Management Studio 连接到数据库
-有关如何使用 SQL Server Management Studio 进行连接的详细说明，请参阅[使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)。
+有关如何使用 SQL Server Management Studio 进行连接的详细说明，请参阅[使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)。
+
+
+> [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
 
 ## 其他特殊帐户
@@ -63,6 +72,8 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
      
 
      > [AZURE.NOTE] 创建登录名或包含数据库用户时必须使用强密码。有关详细信息，请参阅[强密码](https://msdn.microsoft.com/zh-cn/library/ms161962.aspx)。
+
+    为了提高性能，会暂时在数据库级别缓存登录名（服务器级主体）。若要刷新身份验证缓存，请参阅 [DBCC FLUSHAUTHCACHE](https://msdn.microsoft.com/zh-cn/library/mt627793.aspx)。
 
 3.	在虚拟 master 数据库中，使用 [CREATE USER](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx) 语句创建一个用户。该用户可以是 Azure Active Directory 身份验证包含数据库用户（如果你已针对 Azure AD 身份验证配置了环境），可以是 SQL Server 身份验证包含数据库用户，也可以是基于 SQL Server 身份验证登录名（在前一步骤中创建）的 SQL Server 身份验证用户。 示例语句：
 
@@ -87,7 +98,7 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
 
 ### 登录名管理器
 
-如果你愿意，你可以完成相同的步骤（创建登录名和用户，然后向 **loginmanager** 角色添加用户），允许用户在虚拟 master 数据库中创建新的登录名。大多数情况下，这是没有必要的，建议你使用包含数据库用户在数据库级进行身份验证，不必使用基于登录名的用户。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
+如果愿意，可以完成相同的步骤（创建登录名和用户，然后向 **loginmanager** 角色添加用户），允许用户在虚拟 master 数据库中创建新的登录名。一般而言，这是没有必要的，因为 Microsoft 建议使用包含数据库用户在数据库级进行身份验证，不必使用基于登录名的用户。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
 
 ## 非管理员用户
 
@@ -108,7 +119,7 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
 
 若要向其他用户授予对数据库的完全控制权限，可通过 `ALTER ROLE` 语句让这些用户成为 **db\_owner** 固定数据库角色的成员。
 
-> [AZURE.NOTE] 根据登录名创建数据库用户的主要原因是，有时候你的 SQL Server 身份验证用户需要访问多个数据库。基于登录名的用户与登录名绑定，并且只为该登录名保留一个密码。各个数据库中的包含数据库用户都是单个的实体，且均保留各自的密码。如果包含数据库用户的密码不相同，则可能会给这些用户造成混淆。
+> [AZURE.NOTE] 根据登录名创建数据库用户的主要原因是，有时候 SQL Server 身份验证用户需要访问多个数据库。基于登录名的用户与登录名绑定，并且只为该登录名保留一个密码。各个数据库中的包含数据库用户都是单个的实体，且均保留各自的密码。如果包含数据库用户的密码不相同，则可能会给这些用户造成混淆。
 
 ### 配置数据库级防火墙
 
@@ -128,7 +139,7 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
 
 - 在数据库中创建包含数据库用户。将一个或多个数据库用户放到一个数据库角色中。然后将权限分配给该数据库角色。
 
-数据库角色可以是内置的角色，例如 **db\_owner**、**db\_ddladmin**、**db\_datawriter**、**db\_datareader**、**db\_denydatawriter** 和 **db\_denydatareader**。**db\_owner** 通常用于向部分用户授予完全权限。其他固定数据库角色可用于快速开发简单的数据库，但不建议用于大多数生产数据库。例如，**db\_datareader** 固定数据库角色授予用户对数据库中每个表的读取访问权限，这通常超出了必要的范畴。而如果先使用 [CREATE ROLE](https://msdn.microsoft.com/zh-cn/library/ms187936.aspx) 语句创建你自己的用户定义数据库角色，然后再根据业务需要向每个角色授予所需的最低权限，则要合适得多。如果用户是多个角色的成员，则会聚合所有这些角色的权限。
+数据库角色可以是内置的角色，例如 **db\_owner**、**db\_ddladmin**、**db\_datawriter**、**db\_datareader**、**db\_denydatawriter** 和 **db\_denydatareader**。**db\_owner** 通常用于向部分用户授予完全权限。其他固定数据库角色可用于快速开发简单的数据库，但不建议用于大多数生产数据库。例如，**db\_datareader** 固定数据库角色授予用户对数据库中每个表的读取访问权限，这通常超出了必要的范畴。而如果先使用 [CREATE ROLE](https://msdn.microsoft.com/zh-cn/library/ms187936.aspx) 语句创建自己的用户定义数据库角色，然后再根据业务需要向每个角色授予所需的最低权限，则要合适得多。如果用户是多个角色的成员，则会聚合所有这些角色的权限。
 
 ## 权限
 
@@ -156,5 +167,4 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
 
 [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589.aspx)
 
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_1010_2016-->

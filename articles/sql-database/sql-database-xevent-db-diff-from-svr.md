@@ -9,10 +9,16 @@
 	tags=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="06/07/2016"
-	wacn.date="07/25/2016"/>
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2016"
+	wacn.date="10/17/2016"
+	ms.author="genemi"/>  
+
 
 
 # SQL 数据库中的扩展事件
@@ -27,7 +33,7 @@
 - SQL 数据库上的扩展事件功能集是强大的 SQL Server 功能子集。
 
 
-XEvents 是不正式的别名，有时在博客或其他非正式场合表示“扩展的事件”。
+*XEvents* 是不正式的别名，有时在博客或其他非正式场合表示“扩展的事件”。
 
 
 > [AZURE.NOTE] 从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式版 (GA) 的推出日期尚未确定。
@@ -42,7 +48,7 @@ XEvents 是不正式的别名，有时在博客或其他非正式场合表示“
 ## 先决条件
 
 
-本主题假设你有以下方面的经验：
+本主题假设读者有以下方面的经验：
 
 
 - [Azure SQL 数据库服务](/home/features/sql-database/)。
@@ -70,7 +76,7 @@ XEvents 是不正式的别名，有时在博客或其他非正式场合表示“
 
 - [SQL 数据库中扩展事件的环形缓冲区目标代码](/documentation/articles/sql-database-xevent-code-ring-buffer/)
  - 简短的 Transact-SQL 脚本。
- - 我们在代码示例主题中强调，当完成环形缓冲区目标时，应该通过执行 alter-drop `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` 语句释放其资源。然后可以通过 `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...` 添加环形缓冲区的另一个实例。
+ - 代码示例主题中强调，当完成环形缓冲区目标时，应该通过执行 alter-drop `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` 语句释放其资源。然后可以通过 `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...` 添加环形缓冲区的另一个实例。
 
 
 - [SQL 数据库中扩展事件的事件文件目标代码](/documentation/articles/sql-database-xevent-code-event-file/)
@@ -94,7 +100,7 @@ XEvents 是不正式的别名，有时在博客或其他非正式场合表示“
 ## 新的目录视图
 
 
-扩展事件功能受多个[目录视图](http://msdn.microsoft.com/zh-cn/library/ms174365.aspx)的支持。目录视图告诉你有关当前数据库中用户创建的事件会话的元数据或定义的信息。视图不会返回有关活动事件会话的实例的信息。
+扩展事件功能受多个[目录视图](http://msdn.microsoft.com/zh-cn/library/ms174365.aspx)的支持。目录视图告诉你有关当前数据库中用户创建的事件会话的*元数据或定义*的信息。视图不会返回有关活动事件会话的实例的信息。
 
 
 | 目录<br/>视图的名称 | 说明 |
@@ -106,7 +112,7 @@ XEvents 是不正式的别名，有时在博客或其他非正式场合表示“
 | **sys.database\_event\_sessions** | 返回 SQL 数据库中每个事件会话所对应的行。 |
 
 
-在 Microsoft SQL Server 中，类似目录视图的名称包含 .server\_ 而不是 .database\_。名称模式类似于 **sys.server\_event\_%**。
+在 Microsoft SQL Server 中，类似目录视图的名称包含 *.server\_* 而不是 *.database\_*。名称模式类似于 **sys.server\_event\_%**。
 
 
 ## 新的动态管理视图 [(DMV)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)
@@ -211,7 +217,7 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 ### 存储容器授权
 
 
-针对 Azure 存储容器生成的 SAS 令牌必须为权限指定 **rwl**。这会提供以下权限：
+针对 Azure 存储容器生成的 SAS 令牌必须为权限指定 **rwl**。**rwl** 值提供以下权限：
 
 
 - 读取
@@ -270,4 +276,4 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

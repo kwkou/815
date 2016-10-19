@@ -10,8 +10,14 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="05/03/2016"
-    wacn.date="08/24/2016"/>
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="powershell"
+    ms.workload="data-management"
+    ms.date="08/18/2016"
+    wacn.date="10/17/2016"
+    ms.author="sstein"/>  
+
 
 # C&#x23; 数据库开发：为 SQL 数据库创建和配置弹性数据库池
 
@@ -47,41 +53,48 @@
 
 在开始使用 C# 进行 SQL 开发之前，必须在 Azure 经典管理门户中完成一些任务。首先请通过设置所需的身份验证，使应用程序能够访问 REST API。
 
-[Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证，而不是早期 Azure 服务管理 REST API 使用的证书。
+[Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证，而不是早期经典部署模型使用的证书。
 
-若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在[管理门户](https://manage.windowsazure.cn)中完成应用程序的注册。
+若要对客户端应用程序进行身份验证，必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则已经有了默认的 AAD 域。在[Azure 经典管理门户](https://manage.windowsazure.cn/)中注册应用程序。
 
-若要创建新应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
+若要创建应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
 
-1. 滚动左侧的菜单，找到 **Active Directory** 服务并将它打开。
+1. 找到 **Active Directory** 服务并将其打开。
 
-    ![C# SQL 数据库开发：Active Directory 设置][1]
+    ![C# SQL 数据库开发：Active Directory 设置][1]  
+
 
 2. 选择用于对应用程序进行身份验证的目录，然后单击该目录的**名称**。
 
-    ![选择目录。][4]
+    ![选择目录。][4]  
+
 
 3. 在目录页上，单击“应用程序”。
 
-    ![单击“应用程序”。][5]
+    ![单击“应用程序”。][5]  
 
-4. 单击“添加”以创建新的应用程序。
 
-    ![单击“添加”按钮：创建 C# 应用程序。][6]
+4. 单击“添加”创建应用程序。
+
+    ![单击“添加”按钮：创建 C# 应用程序。][6]  
+
 
 5. 选择“添加我的组织正在开发的应用程序”。
 
 5. 提供应用的“名称”，然后选择“本机客户端应用程序”。
 
-    ![添加应用程序][7]
+    ![添加应用程序][7]  
+
 
 6. 提供“重定向 URI”。它不需要是实际的终结点，只要是有效的 URI 即可。
 
-    ![添加应用程序][8]
+    ![添加应用程序][8]  
 
-7. 完成创建应用，单击“配置”，然后复制“客户端 ID”（后面需要在代码中使用客户端 ID）。
 
-    ![获取客户端 ID][9]
+7. 完成创建应用，单击“配置”，然后复制“客户端 ID”（稍后需要在代码中使用客户端 ID）。
+
+    ![获取客户端 ID][9]  
+
 
 
 1. 在页面底部单击“添加应用程序”。
@@ -89,19 +102,20 @@
 1. 选择“Azure 服务管理 API”，然后完成向导。
 2. 选择 API 之后，需要通过选择“访问 Azure 服务管理(预览)”，授予访问此 API 所需的特定权限。
 
-    ![设置权限][2]
+    ![设置权限][2]  
+
 
 2. 单击“保存”。
 
 
 **其他 AAD 资源**
 
-在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
+在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability/)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
 
 
 ### 检索当前用户的访问令牌
 
-客户端应用程序必须检索当前用户的应用程序访问令牌。当用户首次执行代码时，系统会提示用户输入其用户凭据，生成的令牌将在本地缓存。后续的执行将从缓存中检索令牌，并且仅在令牌已过期时才提示用户登录。
+客户端应用程序必须检索当前用户的应用程序访问令牌。首次执行代码时，系统会提示输入凭据，生成的令牌将在本地缓存。后续的执行将从缓存中检索令牌，并且仅在令牌已过期时才提示登录。
 
 
     private static AuthenticationResult GetAccessToken()
@@ -145,7 +159,7 @@
 
 ## 创建服务器
 
-弹性数据库池将包含在 Azure SQL 数据库服务器中，因此下一步就是创建服务器。服务器名称在所有 Azure SQL Server 中必须全局唯一，因此，如果该服务器名称已被使用，你将会收到错误。还必须指出的是，该命令可能需要数分钟才能运行完毕。为了使应用程序能够连接到服务器，你还必须在服务器上创建防火墙规则，以允许从客户端 IP 地址进行访问。
+弹性数据库池将包含在 Azure SQL 数据库服务器中，因此下一步就是创建服务器。服务器名称在所有 Azure SQL Server 中必须全局唯一，因此，如果该服务器名称已被使用，将会出现错误。还必须指出的是，该命令可能需要数分钟才能运行完毕。为了使应用程序能够连接到服务器，你还必须在服务器上创建防火墙规则，以允许从客户端 IP 地址进行访问。
 
 
     // Create a SQL Database management client
@@ -190,7 +204,7 @@
 
 
 
-若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自任何 Azure 订阅的 Azure 流量访问该服务器。
+若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 StartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。这会允许来自*任何* Azure 订阅的 Azure 流量访问该服务器。
 
 
 ## 创建数据库
@@ -301,7 +315,7 @@
 
 ## 在弹性数据库池中创建新数据库
 
-创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql/)。
+*创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql/)。*
 
 以下示例将直接在池中创建一个新的数据库：
 
@@ -547,6 +561,7 @@
 [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-pool-csharp/aad.png
 [2]: ./media/sql-database-elastic-pool-csharp/permissions.png
 [3]: ./media/sql-database-elastic-pool-csharp/getdomain.png
@@ -557,4 +572,4 @@
 [8]: ./media/sql-database-elastic-pool-csharp/add-application2.png
 [9]: ./media/sql-database-elastic-pool-csharp/clientid.png
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_1010_2016-->

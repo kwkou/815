@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/02/2016"
-	wacn.date="07/25/2016"/>
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/31/2016"
+	wacn.date="10/17/2016"
+	ms.author="daleche"/>  
+
 
 # 排查 Azure SQL 数据库的连接问题
 
@@ -24,7 +30,7 @@
 连接问题可能由以下任何原因引起：
 
 - 在应用程序设计过程中无法应用最佳实践和设计准则。参阅[《SQL Database Development Overview（SQL 数据库开发概述）》](/documentation/articles/sql-database-develop-overview/)了解有关信息。
-- SQL Azure 数据库的重新配置
+- Azure SQL 数据库重新配置
 - 防火墙设置
 - 连接超时
 - 不正确的登录信息
@@ -40,7 +46,7 @@
 如果你遇到特定的连接错误，请尝试使用[此工具](https://support.microsoft.com/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database)，以帮助你快速识别并解决问题。
 
 ##<a id="troubleshoot-transient-errors"></a> 对暂时性错误进行故障排除
-如果你的应用程序发生暂时性错误，请查看以下主题以获取有关如何排查这些错误并减少其发生频率的提示：
+如果应用程序发生暂时性错误，请查看以下主题以获取有关如何排查这些错误并减少其发生频率的提示：
 
 - [针对“服务器 &lt;y&gt; 上的数据库 &lt;x&gt; 不可用（错误：40613）”进行故障排除](/documentation/articles/sql-database-troubleshoot-connection/)
 - [排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误](/documentation/articles/sql-database-connectivity-issues/)
@@ -49,7 +55,7 @@
 
 ##<a id="troubleshoot-the-persistent-errors"></a> 对永久性错误（非暂时性错误）进行故障排除
 
-如果应用程序一直无法连接到 SQL Azure 数据库，通常表示下列其中一项出现了问题：
+如果应用程序一直无法连接到 Azure SQL 数据库，通常表示下列其中一项出现了问题：
 
 - 防火墙配置。Azure SQL 数据库或客户端防火墙阻止了与 Azure SQL 数据库的连接。
 - 客户端上重新配置了网络：例如，使用了新的 IP 地址或代理服务器。
@@ -95,6 +101,4 @@
 - [暂时性错误处理的一般指南](/documentation/articles/best-practices-retry-general/)
 - [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)
 
-
-
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

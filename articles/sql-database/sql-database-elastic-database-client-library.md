@@ -9,12 +9,18 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="05/24/2016"
-    wacn.date="07/11/2016"/>
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/06/2016"
+    wacn.date="10/17/2016"
+    ms.author="ddove"/>  
+
 
 # 构建可缩放的云数据库
 
-使用 SQL Azure 数据库的可缩放工具和功能，可以轻松地扩大数据库。特别是，你可以使用**弹性数据库客户端库**来创建和管理扩大的数据库。此功能可让你使用成百上千个 Azure SQL 数据库，轻松地开发分区应用程序。
+使用 Azure SQL 数据库的可缩放工具和功能，可以轻松扩展数据库。特别是，你可以使用**弹性数据库客户端库**来创建和管理扩大的数据库。此功能可让你使用成百上千个 Azure SQL 数据库，轻松地开发分区应用程序。然后，可以使用[弹性作业](/documentation/articles/sql-database-elastic-jobs-powershell/)帮助简化这些数据库的管理。
 
 若要安装该库，请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)。
 
@@ -38,7 +44,7 @@
 
 ## 客户端功能
 
-无论对于开发人员还是管理员，使用分片扩展应用程序都存在挑战。客户端库通过提供工具让开发人员和管理员管理扩大的数据库，简化了管理任务。在典型的示例中，有许多称为“分片”的数据库要管理。客户并置于同一数据库，并且每位客户（单租户方案）一个数据库。客户端库包含下列功能：
+无论对于开发人员还是管理员，使用*分片*扩展应用程序都存在挑战。客户端库通过提供工具让开发人员和管理员管理扩大的数据库，简化了管理任务。在典型的示例中，有许多称为“分片”的数据库要管理。客户并置于同一数据库，并且每位客户（单租户方案）一个数据库。客户端库包含下列功能：
 
 1.  **分片映射管理**：创建一个称为“分片映射管理器”的特殊数据库。分片映射管理是一种使应用程序能够管理其分片相关元数据的功能。开发人员可使用此功能将数据库注册为分片（描述各个分片键或键范围到这些数据库的映射），并随着数据库的数量和组成发展来维护此元数据，以反映容量更改。如果不使用弹性数据库客户端库，实现分片时你必须花费大量时间来编写管理代码。有关详细信息，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 
@@ -60,7 +66,7 @@
 
 使用[弹性查询](/documentation/articles/sql-database-elastic-query-overview/)。
 
-[GitHub](https://github.com/Azure/elastic-db-tools) 以开源软件的形式提供该库。
+[GitHub](https://github.com/Azure/elastic-db-tools) 中以开源软件的形式提供该库。
 
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
@@ -69,5 +75,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-database-client-library/glossary.png
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1010_2016-->

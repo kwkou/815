@@ -1,16 +1,21 @@
 <properties
    pageTitle="将数据从 CSV 文件载入 Azure SQL 数据库 (bcp) | Azure"
    description="对于较小的数据，请使用 bcp 将数据导入到 Azure SQL 数据库。"
-   services="sql-data-warehouse"
+   services="sql-database"
    documentationCenter="NA"
-   authors="carlrabeler"
+   authors="CarlRabeler"
    manager="jhubbard"
    editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="06/30/2016"
-   wacn.date="08/15/2016"/>
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/13/2016"
+   ms.author="carlrab"/>  
+
 
 
 # 将数据从 CSV 载入 Azure SQL 数据仓库（平面文件）
@@ -33,12 +38,9 @@
 
 如果你使用自己的数据尝试学习本教程，则数据需要使用 ASCII 或 UTF-16 编码，因为 bcp 不支持 UTF-8。
 
-PolyBase 支持 UTF-8，但尚不支持 UTF-16。请注意，如果你要结合使用 bcp 和 PolyBase，则从 SQL Server 导出数据后，需要将数据转换为 UTF-8。
-
-
 ## 1\.创建目标表
 
-在 SQL 数据仓库中定义加载操作的目标表。该表中的列必须对应于数据文件每一行中的数据。
+将 SQL 数据库中的某个表定义为目标表。该表中的列必须对应于数据文件每一行中的数据。
 
 若要创建表，请打开命令提示符并使用 sqlcmd.exe 运行以下命令：
 
@@ -123,4 +125,4 @@ DateId |CalendarQuarter |FiscalQuarter
 <!--Other Web references-->
 [Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

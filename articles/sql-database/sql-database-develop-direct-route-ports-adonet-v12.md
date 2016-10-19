@@ -10,8 +10,14 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="04/25/2016" 
-	wacn.date="07/21/2016"/>
+	ms.workload="drivers"
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/17/2016"
+	wacn.date="10/17/2016"
+	ms.author="annemill"/>  
+
 
 
 # 用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口
@@ -33,13 +39,13 @@
 3. SQL 数据库将其响应发回给中间件，中间件将响应转发给 ADO.NET 端口 1433。
 
 
-**术语：**我们使用*代理 路由*来描述 ADO.NET 与 SQL 数据库交互的上述顺序。如果没有涉及到中间件，我们说使用的是*直接路由*。
+**术语：**我们使用*代理 路由*来描述 ADO.NET 与 SQL 数据库交互的上述顺序。如果没有涉及到中间件，使用的是*直接路由*。
 
 
 ## SQL 数据库 V12：内部与外部
 
 
-对于现 V12 的连接，我们必须询问你的客户端程序是在 Azure 云边界*外部*还是*内部*运行。以下小节讨论了两种常见案例。
+对于 V12 的连接，我们必须询问客户端程序是在 Azure 云边界*外部*还是*内部*运行。以下小节讨论了两种常见方案。
 
 
 #### *外部：*客户端在台式机上运行
@@ -108,9 +114,12 @@
 - [TDS 协议版本列表](http://www.freetds.org/userguide/tdshistory.htm)
 
 
-- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-develop-overview/)
+- [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
 
 
 - [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)
 
-<!---HONumber=Mooncake_0307_2016-->
+
+- [如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
+
+<!---HONumber=Mooncake_1010_2016-->

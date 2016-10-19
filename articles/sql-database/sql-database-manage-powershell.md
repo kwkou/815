@@ -22,6 +22,7 @@
 
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-manage-portal/)
 - [事务 - SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms/)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools/)
 
@@ -32,18 +33,18 @@
 
 使用 [New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/azure/mt759837.aspx) cmdlet 为 SQL 数据库和相关的 Azure 资源创建资源组。
 
-
-	$resourceGroupName = "resourcegroup1"
-	$resourceGroupLocation = "China East"
-	New-AzureRmResourceGroup -Name $resourceGroupName -Location $resourceGroupLocation
-
+```
+$resourceGroupName = "resourcegroup1"
+$resourceGroupLocation = "China East"
+New-AzureRmResourceGroup -Name $resourceGroupName -Location $resourceGroupLocation
+```
 
 有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 如需脚本示例，请参阅 [Create a SQL database PowerShell script](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)（创建 SQL 数据库 PowerShell 脚本）。
 
 ## 创建 SQL 数据库服务器
 
-使用 [New-AzureRmSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603715.aspx) cmdlet 创建 SQL 数据库服务器。将 *server1* 替换为服务器的名称。服务器名称必须在所有 Azure SQL 数据库服务器中都是唯一的。如果服务器名称已使用，则会出现错误。此命令可能需要几分钟才能完成。资源组必须已存在于订阅中。
+使用 [New-AzureRmSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603715.aspx) cmdlet 创建 SQL 数据库服务器。将 *server1* 替换为服务器的名称。服务器名称必须在所有 Azure SQL 数据库服务器中都是唯一的。如果服务器名称已使用，将出现错误。此命令可能需要几分钟才能完成。资源组必须已存在于订阅中。
 
 
 	$resourceGroupName = "resourcegroup1"
@@ -67,7 +68,7 @@
 
 ## 创建 SQL 数据库服务器防火墙规则
 
-使用 [New-AzureRmSqlServerFirewallRule](https://msdn.microsoft.com/zh-cn/library/azure/mt603860.aspx) cmdlet 创建访问服务器的防火墙规则。运行以下命令，将开始和结尾的 IP 地址替换为客户端的有效值。资源组和服务器必须已存在于订阅中。
+使用 [New-AzureRmSqlServerFirewallRule](https://msdn.microsoft.com/zh-cn/library/azure/mt603860.aspx) cmdlet 创建访问服务器的防火墙规则。运行以下命令，将开始和结束 IP 地址替换为客户端的有效值。资源组和服务器必须已存在于订阅中。
 
 
 	$resourceGroupName = "resourcegroup1"
@@ -163,7 +164,7 @@
 
 ## 删除 SQL 数据库服务器
 
-使用 [Remove-AzureRmSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603488.aspx) cmdlet 删除服务器。
+可以使用 [Remove-AzureRmSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603488.aspx) cmdlet 删除服务器。
 
 
 	$resourceGroupName = "resourcegroup1"
