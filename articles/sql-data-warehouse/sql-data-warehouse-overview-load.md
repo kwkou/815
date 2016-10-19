@@ -122,7 +122,7 @@ SQL 数据仓库支持通过 PolyBase 从 HDInsight 加载数据。该过程和�
 [《Migration overview》]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [解决方案合作伙伴]: /documentation/articles/sql-data-warehouse-solution-partners/
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 
 <!--MSDN references-->
 

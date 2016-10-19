@@ -1,7 +1,7 @@
 资源|默认限制|最大限制
 ---|---|---
 每个订阅的核心数 <sup>1</sup>|20|10,000
-每个订阅的[协同管理员数](/documentation/articles/billing-add-change-azure-subscription-administrator/)|200|200
+每个订阅的协同管理员数|200|200
 每个订阅的[存储帐户数](/documentation/articles/storage-create-storage-account/)<sup>2</sup>|100|100
 每个订阅的[云服务数](/documentation/articles/cloud-services-choose-me/)|20|200
 每个订阅的[本地网络数](http://msdn.microsoft.com/zh-cn/library/jj157100.aspx)|10|500

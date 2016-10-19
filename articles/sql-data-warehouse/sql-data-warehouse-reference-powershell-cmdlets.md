@@ -88,7 +88,7 @@
 <!--Article references-->
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [Create a SQL Data Warehouse using PowerShell（使用 PowerShell 创建 SQL 数据仓库）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
-[数据库还原]: /documentation/articles/sql-data-warehouse-manage-database-restore-powershell/
+[数据库还原]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [使用 REST 管理可伸缩性]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/
 
 <!--MSDN references-->

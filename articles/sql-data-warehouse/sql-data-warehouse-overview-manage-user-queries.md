@@ -41,7 +41,7 @@
 
 
 <!--Article references-->
-[查找长时间运行的查询]: /documentation/articles/sql-data-warehouse-manage-find-long-running-queries/
+[查找长时间运行的查询]: /documentation/articles/sql-data-warehouse-manage-monitor/
 [并发性和工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
 

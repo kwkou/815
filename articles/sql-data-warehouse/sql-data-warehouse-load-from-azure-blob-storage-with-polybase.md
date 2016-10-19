@@ -377,7 +377,7 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 [Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [管理列存储索引]: /documentation/articles/sql-data-warehouse-tables-index
-[Statistics]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [label]: /documentation/articles/sql-data-warehouse-develop-label/
 

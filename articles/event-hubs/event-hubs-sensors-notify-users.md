@@ -33,7 +33,7 @@
 
 首先假设你要将关键事件推送到 Azure 事件中心或 IoT 中心。事实上可以推送到任何中心，只要你有权访问它并知道连接字符串即可。
 
-如果你没有事件中心或 IoT 中心，可以遵循 [Connect The Dots](https://github.com/Azure/connectthedots) 中的说明，使用 Arduino 盾板和 Raspberry Pi 轻松设置一个测试平台。Arduino 盾板上的灯光传感器通过 Pi 向 [Azure 事件中心][] (**ehdevices**) 发送光能级，如果收到的光能级低于特定的级别，则 [Azure 流分析](https://azure.microsoft.com/services/stream-analytics/)作业将向另一个事件中心 (**ehalerts**) 推送警报。
+如果你没有事件中心或 IoT 中心，可以遵循 [Connect The Dots](https://github.com/Azure/connectthedots) 中的说明，使用 Arduino 盾板和 Raspberry Pi 轻松设置一个测试平台。Arduino 盾板上的灯光传感器通过 Pi 向 [Azure 事件中心][] (**ehdevices**) 发送光能级，如果收到的光能级低于特定的级别，则 [Azure 流分析](https://azure.microsoft.com/home/features/stream-analytics/)作业将向另一个事件中心 (**ehalerts**) 推送警报。
 
 **AppToNotify** 启动时，会读取配置文件 (App.config) 来获取接收警报的事件中心的 URL 和凭据。然后，它会生成一个进程来持续监视是否有任何消息传入该事件中心 - 只要你有权访问事件中心或 IoT 中心的 URL 并拥有有效的凭据，则此事件中心读取器代码就会持续读取传入的数据。在启动期间，应用程序还会读取你要使用的消息传送服务（电子邮件、短信或电话）的 URL 和凭据，以及发件人的名称/地址和收件人的列表。
 
@@ -62,21 +62,21 @@
 - [AppToNotifyUsers][]
 
 [事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
-[Azure IoT 中心]: https://azure.microsoft.com/services/iot-hub/
-[Azure 事件中心]: /services/event-hubs/
-[Azure 事件中心]: /services/event-hubs/
+[Azure IoT 中心]: /home/features/iot-hub/
+[Azure 事件中心]: /home/features/event-hubs/
+[Azure 事件中心]: /home/features/event-hubs/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
 [AppToNotifyUsers]: https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications
 [Dynamics AX]: http://www.microsoft.com/zh-cn/dynamics/erp-ax-overview.aspx
-[Azure 网站]: /services/app-service/web/
-[SQL Azure]: /services/sql-database/
-[HDInsight]: /services/hdinsight/
+[Azure 网站]: /home/features/web-site/
+[SQL Azure]: /home/features/sql-database/
+[HDInsight]: /home/features/hdinsight/
 [Cortana Intelligence Suite]: http://www.microsoft.com/server-cloud/cortana-analytics-suite/Overview.aspx?WT.srch=1&WT.mc_ID=SEM_lLFwOJm3&bknode=BlueKai
 [IoT Suite]: https://azure.microsoft.com/solutions/iot-suite/
-[逻辑应用]: https://azure.microsoft.com/services/app-service/logic/
-[Azure 通知中心]: /services/notification-hubs/
-[Azure Stream Analytics]: /services/stream-analytics/
+[逻辑应用]: https://azure.microsoft.com/home/features/app-service/logic/
+[Azure 通知中心]: /home/features/notification-hubs/
+[Azure Stream Analytics]: /home/features/stream-analytics/
  
 [1]: ./media/event-hubs-sensors-notify-users/event-hubs-sensor-alert.png
 [2]: ./media/event-hubs-sensors-notify-users/event-hubs-erp-alert.png

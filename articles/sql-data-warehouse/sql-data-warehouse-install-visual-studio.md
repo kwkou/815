@@ -51,7 +51,7 @@
 <!--Image references-->
 
 <!--Articles-->
-[连接]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[连接]: /documentation/articles/sql-data-warehouse-query-visual-studio/
 
 <!--Other-->
 
