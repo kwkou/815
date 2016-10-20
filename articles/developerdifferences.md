@@ -1,39 +1,39 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
 <tags ms.service="multiple" ms.date="" wacn.date="10/18/2016"/>
 
-#中国 Azure 应用程序开发说明
+#Azure 应用程序开发说明
 
 ##<a name="about"></a>文档简介
 
-Azure 全球服务由微软创建和部署云应用程序，提供了相应工具。
+在境外由微软运营的 Microsoft Azure 服务由微软创建和部署云应用程序，提供了相应工具。
 
-中国 Azure 是独立的 Azure 服务平台，由中国世纪互联公司提供并运营，其数据中心位于中国大陆（不包括香港特别行政区、澳门特别行政区和中国台湾地区）。因此，创建和部署由世纪互联运营的应用程序时，开发人员需要先了解中国 Azure 和 Azure 全球服务的主要区别，然后再设置编程环境，编写应用程序，部署在中国托管的服务。
+在中国，由世纪互联运营的 Microsoft Azure 是独立的服务平台，由世纪互联提供并运营，其数据中心位于中国大陆（不包括香港特别行政区、澳门特别行政区和中国台湾地区）。因此，创建和部署应用程序时，开发人员需要先了解由世纪互联运营的 Microsoft Azure 和在境外由微软运营的 Microsoft Azure 的主要区别，然后再设置编程环境，编写应用程序，部署在中国托管的服务。
 
-本文档概述了两种服务的区别，并为中国 [Azure 门户](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多地方发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及 Microsoft 员工发表的各种博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
+本文档概述了这两种服务的区别，并为中国 [Azure 官网](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多地方发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
 
-有关中国 Azure 功能可用性的更新，请访问中国[Azure 门户](https://www.azure.cn)。有关 Azure 当前内容资产列表信息，请参阅本文档附录。 
+有关由世纪互联运营的 Microsoft Azure 功能可用性的更新，请访问中国[Azure 官网](https://www.azure.cn)。有关 Azure 当前内容资产列表信息，请参阅本文档附录。 
  
 ##<a name="dev-guide"></a>开发人员指南
 
-由于目前 Microsoft 提供的大部分英文技术文档中，应用程序都针对 Azure 全球服务开发，而非中国 Azure，因此务必确保开发人员了解其主要区别。
+由于目前在境外由微软运营的 Microsoft Azure 提供的大部分英文技术文档中，应用程序都针对境外的 Microsoft Azure 服务开发，而非由世纪互联运营的 Microsoft Azure，因此务必确保开发人员了解其主要区别。
 
-首先，两者存在功能差异，Azure 全球服务中的某些功能在中国不可用。  
-其次，中国 Azure 提供的功能与 Azure 全球服务存在操作差异，因此要使用公用的英语文档（为 Azure 全球服务编写），用户应该根据需要自定义示例代码和步骤。
+首先，两者存在功能差异，在境外由微软运营的 Microsoft Azure 服务中的某些功能在中国不可用。  
+其次，由世纪互联运营的 Microsoft Azure 提供的功能与在境外由微软运营的 Microsoft Azure 服务存在操作差异，因此要使用在境外由微软运营的 Microsoft Azure 提供的英语文档，用户应该根据需要自定义示例代码和步骤。
 
 ##<a name="cncenter"></a>中国的数据中心
 
-目前，中国 Azure 有两个数据中心，在位置字段中显示为“中国北部”和“中国东部”。
+目前，由世纪互联运营的 Microsoft Azure 有两个数据中心，在位置字段中显示为 “中国北部” 和 “中国东部”。
 
 
-##<a name="cndiffoverview"></a>在中国 Azure 创建应用程序的区别概述
+##<a name="cndiffoverview"></a>在 Azure 创建应用程序的区别概述
 
-在中国 Azure 上开发应用程序与在 Azure 全球服务上开发的主要区别在于，中国 Azure 端点地址有不同的 URI。 例如，Azure 和 SQL 数据库 URI 通常以 windows.net 结尾。 URI 端点不同时，中国 Azure 开发人员必须能够识别，然后配置工具和应用程序，为这些不同的端点使用适合的 URI。
+在由世纪互联运营的 Microsoft Azure 上开发应用程序与在境外由微软运营的 Microsoft Azure 服务上开发的主要区别在于，由世纪互联运营的 Microsoft Azure 端点地址有不同的 URI。 例如，Azure 和 SQL 数据库 URI 通常以 windows.net 结尾。 URI 端点不同时，开发人员必须能够识别，然后配置工具和应用程序，为这些不同的端点使用适合的 URI。
 
 ##<a name="confdevcomp"></a>设置用于开发的计算机
 
-Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[Downloads | Visual Studio Official Site](https://www.visualstudio.com/downloads/)
+Visual Studio 支持由世纪互联运营的 Microsoft Azure 开发，使用 Visual Studio 2015 update 3。[Downloads | Visual Studio Official Site](https://www.visualstudio.com/downloads/)
 
-##为连接中国 Azure 安装 Visual Studio
+##为连接由世纪互联运营的 Microsoft Azure 安装 Visual Studio
 
 步骤如下：
 
@@ -52,7 +52,7 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 			"EnableAzureRMIdentity"="true"
 			"GraphUrl"="graph.chinacloudapi.cn"
 	
-	若要将 Reg 值返回 Azure 全球服务，请使用此处的 Reg key file
+	若要将 Reg 值返回在境外由微软运营的 Microsoft Azure 服务，请使用此处的 Reg key file
 
 	TargetProduction.reg
 			
@@ -73,7 +73,7 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 			"Service Management Endpoint"=-
 
 2. 双击 Azure.reg 文件，同意弹出信息，允许注册表值更改；
-3. 注册表值更改后，所有 Visual Studio 的登录信息都应连接到中国 Azure 服务。
+3. 注册表值更改后，所有 Visual Studio 的登录信息都应连接到由世纪互联运营的 Microsoft Azure 服务。
 
 ##实用场景示例
 
@@ -87,13 +87,13 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 
 	![02](./media/developerdifferences/developerdifferences-02.png)
 
-3. 从 Cloud Explorer 查看中国 Azure 订阅中的资源。
+3. 从 Cloud Explorer 查看由世纪互联运营的 Microsoft Azure 订阅中的资源。
 
 	![03](./media/developerdifferences/developerdifferences-03.png)
 
 ###发布 Web 应用程序
 
-1. 单机右键菜单，选择“发布”对话框；
+1. 单机右键菜单，选择 “发布” 对话框；
 
 	![04](./media/developerdifferences/developerdifferences-04.png)
 
@@ -101,22 +101,22 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 
 	![05](./media/developerdifferences/developerdifferences-05.png)
 
-3. 从帐户选择器中选择中国 Azure 帐户；
+3. 从帐户选择器中选择 Azure 帐户；
 
 	![06](./media/developerdifferences/developerdifferences-06.png)
 	![07](./media/developerdifferences/developerdifferences-07.png)
 	![08](./media/developerdifferences/developerdifferences-08.png)
 
 ###Azure 资源管理器工具
-1. 单机右键菜单，选择“部署”对话框；
+1. 单机右键菜单，选择 “部署” 对话框；
 
 	![09](./media/developerdifferences/developerdifferences-09.png)
 
-2. 从帐户选择器中选择中国 Azure 帐户；
+2. 从帐户选择器中选择 Azure 帐户；
 
 	![10](./media/developerdifferences/developerdifferences-10.png)
 
-3. 对于在资源模板中出现、但中国 Azure 不支持的资源，该界面会发出警告；
+3. 对于在资源模板中出现、但由世纪互联运营的 Microsoft Azure 不支持的资源，该界面会发出警告；
 
 	![11](./media/developerdifferences/developerdifferences-11.png)
 
@@ -124,32 +124,32 @@ Visual Studio 支持中国 Azure 开发，使用 Visual Studio 2015 update 3。[
 
 其他功能步骤类似。
 
-##应用程序代码中使用的中国 Azure 资源端点
+##应用程序代码中使用的由世纪互联运营的 Microsoft Azure 资源端点
 
-中国 Azure 的 URI 与 Azure 全球服务的 URI 存在差异。 用户需确保，应用程序代码和配置文件使用合适的连接字符串，与中国 Azure 端点连接。 请注意，如果 Visual Studio 连接到中国 Azure 订阅，Visual Studio 生成的连接字符串会自动为每个资源使用中国 Azure URI。
+由世纪互联运营的 Microsoft Azure 的 URI 与在境外由微软运营的 Microsoft Azure 服务的 URI 存在差异。 用户需确保，应用程序代码和配置文件使用合适的连接字符串，与由世纪互联运营的 Microsoft Azure 端点连接。 请注意，如果 Visual Studio 连接到由世纪互联运营的 Microsoft Azure 订阅，Visual Studio 生成的连接字符串会自动为每个资源使用由世纪互联运营的 Microsoft Azure 的 URI。
 
 ###<a name="endpointmap"></a>端点映射<a name="endpointmap"></a>
 
-下表指导用户将 Azure 全球服务资源端点映射到中国特定端点。
+下表指导用户将在境外由微软运营的 Microsoft Azure 服务资源端点映射到中国特定端点。
  
 
-服务类型|全球服务URI|中国服务URI
+服务类型|在境外由微软运营的 Microsoft Azure URI|由世纪互联运营的 Microsoft Azure URI
 :--|:--|:--
 Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn  
 Azure - Service Fabric Cluster | *.cloudapp.azure.com | *.chinaeast.chinacloudapp.cn
 Azure - 存储 | <p>*.blob.core.windows.net </p> <p>*.queue.core.windows.net </p> <p>*.table.core.windows.net</p> | <p>*.blob.core.chinacloudapi.cn </p><p> *.queue.core.chinacloudapi.cn </p><p> *.table.core.chinacloudapi.cn</p>
 Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
-Azure - 资源管理器(ARM) | https://management.azure.com | https://management.chinacloudapi.cn
+Azure - 资源管理器 (ARM) | https://management.azure.com | https://management.chinacloudapi.cn
 SQL 数据库 | *.database.windows.net | *.database.chinacloudapi.cn
 Azure - 管理门户 | <p>http://manage.windowsazure.com</p><p>https://portal.azure.com</p> | <p>https://manage.windowsazure.cn</p><p>https://portal.azure.cn</p>
-SQL Azure数据库管理API | https://management.database.windows.net | https://management.database.chinacloudapi.cn
+SQL Azure 数据库管理 API | https://management.database.windows.net | https://management.database.chinacloudapi.cn
 服务总线 | *.servicebus.windows.net | *.servicebus.chinacloudapi.cn
 ACS | *.accesscontrol.windows.net | *.accesscontrol.chinacloudapi.cn
 HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
 MySQL Paas | - | *.mysqldb.chinacloudapi.cn
-Azure PowerShell Login (Classic, 旧的azure服务管理) | Add-AzureAccount | Add-AzureAccount -EnvironmentName AzureChinaCloud
-Azure PowerShell Login (azure资源管理) | Add-AzureRmAccount | Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+Azure PowerShell Login (Classic, 旧的 Azure 服务管理) | Add-AzureAccount | Add-AzureAccount -EnvironmentName AzureChinaCloud
+Azure PowerShell Login (Azure 资源管理) | Add-AzureRmAccount | Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 AAD | *.onmicrosoft.com | *.partner.onmschina.cn
 AAD PowerShell Login | Connect-msolservice| Connect-msolservice
 AAD Login | https://login.windows.net| https://login.chinacloudapi.cn
@@ -161,7 +161,7 @@ SQL 数据库导入/导出服务映射端点 | | <p>1. 中国东部：[https://s
 
 用户必须使用自定义存储端点。 默认设置指向 `*.core.windows.net`，其中 * 随着用户应用程序和存储位置的不同而不同。
 
-例如，在 Cloud Services 应用程序的服务配置文件（.cscfg）中，设置自定义数据连接字符串，指向 Azure 中国的 blob，队列和表存储 URI。 以下代码为自定义端点的示例，其中 `<AccountKey>` 变量必须由特定的存储帐户键替换。 字符串 mystorageaccount 是在订阅下创建的存储帐户示例。
+例如，在 Cloud Services 应用程序的服务配置文件（.cscfg）中，设置自定义数据连接字符串，指向由世纪互联运营的 Microsoft Azure 的 blob，队列和表存储 URI。 以下代码为自定义端点的示例，其中 `<AccountKey>` 变量必须由特定的存储帐户键替换。 字符串 mystorageaccount 是在订阅下创建的存储帐户示例。
 
 	<Setting name="DataConnectionString" 
 	value="BlobEndpoint=https://mystorageaccount.blob.core.chinacloudapi.cn/;QueueEndpoint=https://mystorageaccount.queue.core.chinacloudapi.cn/;TableEndpoint=https://mystorageaccount.table.core.chinacloudapi.cn/;AccountName=mystorageaccount;AccountKey=<AccountKey> " />
@@ -184,7 +184,7 @@ SQL 数据库导入/导出服务映射端点 | | <p>1. 中国东部：[https://s
 
 Visual Studio 在服务配置文件中创建自定义存储端点，用户可以从角色代码中使用此存储端点。
 
-以下代码通过使用为中国 Azure 特定的自定义 URL，以编程方式连接到存储帐户。
+以下代码通过使用为由世纪互联运营的 Microsoft Azure 特定的自定义 URL，以编程方式连接到存储帐户。
 
 	CloudStorageAccount Account = new CloudStorageAccount( 
 	new StorageCredentialsAccountAndKey(ACCOUNTNAME, ACCOUNTKEY), 
@@ -213,7 +213,7 @@ Visual Studio 在服务配置文件中创建自定义存储端点，用户可以
 
 ##连接 SQL 数据库服务器
 
-SQL数据库服务器名称将由 `*.database.windows.net` 更改为 `*.devdatabase.chinacloudapi.cn`。 所有客户端应用程序或工具都必须为其连接字符串使用新名称，连接到数据库。 对于未在中国 Azure 运行的应用程序，可参照SQL数据库服务器的值，该值可以是服务定义文件中的DataConnectionString值，或.NET其它配置文件中的值。 例如：
+SQL 数据库服务器名称将由 `*.database.windows.net` 更改为 `*.devdatabase.chinacloudapi.cn`。 所有客户端应用程序或工具都必须为其连接字符串使用新名称，连接到数据库。 对于未在由世纪互联运营的 Microsoft Azure 运行的应用程序，可参照 SQL 数据库服务器的值，该值可以是服务定义文件中的DataConnectionString 值，或 .NET 其它配置文件中的值。 例如：
 
 	<configuration>
   		<connectionStrings>
@@ -229,14 +229,14 @@ SQL数据库服务器名称将由 `*.database.windows.net` 更改为 `*.devdatab
 
 Azure Active Directory（AAD）可为本地部署和云应用程序提供身份和访问功能。开发人员利用 AAD 功能，可为企业应用程序和软件即服务（SaaS）供应商实现单点登录和单点注销；可通过使用图形 API 查询和管理云目录对象；还可以与本地 Active Directory 整合，将目录数据同步到云端。
 
-中国 Azure 包含 Azure AD。然而从设计角度讲，仍存在一些影响开发人员体验的差异，以下会对这些差异展开介绍。
+由世纪互联运营的 Microsoft Azure 包含 Azure AD。然而从设计角度讲，仍存在一些影响开发人员体验的差异，以下会对这些差异展开介绍。
 
-中国 Azure 是个自定义产品，与 Azure 全球服务有许多共同特性。自定义会导致以下差异，对开发人员使用 AAD 造成影响：
+由世纪互联运营的 Microsoft Azure 是个自定义产品，与在境外由微软运营的 Microsoft Azure 服务有许多共同特性。自定义会导致以下差异，对开发人员使用 AAD 造成影响：
 
-- 中国 Azure 不包含访问控制（Access Control）命名空间。要集成应用程序以及与Azure身份验证服务同步的目录，需要使用 Azure 中的 Active Directory。在 Azure 经典管理门户中，单击" Active Directory”。
+- 由世纪互联运营的 Microsoft Azure 不包含访问控制（Access Control）命名空间。要集成应用程序以及与 Azure 身份验证服务同步的目录，需要使用 Azure 中的 Active Directory。在 Azure 经典管理门户中，单击 "Active Directory”。
 - ACS 管理门户仅适用于服务总线命名空间。
-- 除了这些自定义带来的差异，中国 Azure 中的 Azure AD 设计与 Azure 全球服务全部一致。
->[AZURE.NOTE]中国 Azure 在预览期间，其创建的访问控制命名空间既不能操作，也不能访问。 但是，类似的功能可在 Azure 管理门户的 Active Directory 中使用。
+- 除了这些自定义带来的差异，由世纪互联运营的 Microsoft Azure 中的 Azure AD 设计与在境外由微软运营的 Microsoft Azure 服务全部一致。
+>[AZURE.NOTE]由世纪互联运营的 Microsoft Azure 在预览期间，其创建的访问控制命名空间既不能操作，也不能访问。 但是，类似的功能可在 Azure 管理门户的 Active Directory 中使用。
 
 
 ###<a name="srvbusconf"></a>服务总线配置
@@ -247,7 +247,7 @@ Azure Active Directory（AAD）可为本地部署和云应用程序提供身份�
 
 * 选项 1：使用环境变量重定向单个或全部应用程序。
 * 选项 2：使用 ServiceBus.config 文件重定向单个应用程序。
-* 选项 3：使用 ServiceBus.config文 件重定向全部应用程序。
+* 选项 3：使用 ServiceBus.config 文件重定向全部应用程序。
 
 如果 EXE 文件或工作人员角色处于运行状态，任一选项均可用。 如果使用 Web 角色，仅选项 3 可用。
 
@@ -349,22 +349,22 @@ Azure Active Directory（AAD）可为本地部署和云应用程序提供身份�
 
 ##<a name="srvapi"></a>使用服务管理 API
 
-通过服务管理 API，开发人员可以对 Azure 中运行的托管服务进行部署管理。 事实上，Azure 全球服务和中国 Azure 的管理门户都使用服务管理 API。  
+通过服务管理 API，开发人员可以对 Azure 中运行的托管服务进行部署管理。 事实上，在境外由微软运营的 Microsoft Azure 服务和由世纪互联运营的 Microsoft Azure 的管理门户都使用服务管理 API。  
 
-全球服务使用的路径为<a href="https://management.core.windows.net">https://management.core.windows.net</a>。为中国服务编写代码的开发人员应使用的路径为<span class="Italic">
+在境外由微软运营的 Microsoft Azure 使用的路径为<a href="https://management.core.windows.net">https://management.core.windows.net</a>。为由世纪互联运营的 Microsoft Azure 服务编写代码的开发人员应使用的路径为<span class="Italic">
   <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>。
  
 
-##<a name="dnsred"></a>重定向自定义域名到中国 Azure 中的托管服务中
+##<a name="dnsred"></a>重定向自定义域名到由世纪互联运营的 Microsoft Azure 中的托管服务中
 
-如果用户使用的自定义域名转发到 Azure 全球服务中运行的托管服务，并将该托管服务移至中国 Azure，则必须更新转发域，指向新的中国特定终端点。
+如果用户使用的自定义域名转发到在境外由微软运营的 Microsoft Azure 服务中运行的托管服务，并将该托管服务移至由世纪互联运营的 Microsoft Azure，则必须更新转发域，指向新的中国特定终端点。
 
 例如，如果要将 www.contoso.com 重定向到运行在 contoso.cloudapp.net 的 web 角色中，现在必须将其重定向到 contoso.chinacloudapp.cn 中。
  
 
 ##<a name="wadig"></a>使用 Azure 诊断
 
-Azure 诊断使用开发计算机上的本地存储或中国 Azure 存储帐户来存储诊断信息。
+Azure 诊断使用开发计算机上的本地存储或由世纪互联运营的 Microsoft Azure 存储帐户来存储诊断信息。
 
 在* .cscfg文件中添加以下配置信息：
 
@@ -372,7 +372,7 @@ Azure 诊断使用开发计算机上的本地存储或中国 Azure 存储帐户�
   		<Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="<YourStorageString>" />
 	</ConfigurationSettings>
 
-`<YourStorageString>` 的值是个自定义端点，为中国 Azure 并入 URI.
+`<YourStorageString>` 的值是个自定义端点，为由世纪互联运营的 Microsoft Azure 并入 URI.
 
 ##<a name="http-cert"></a>为HTTPS端点重新发布证书
 
@@ -401,7 +401,7 @@ Azure 诊断使用开发计算机上的本地存储或中国 Azure 存储帐户�
 
 ##<a name="nodejs"></a>为 Node.js 使用 Azure SDK
 
-要在中国 Azure 中使用 SDK，需从管理门户或 CLI 中提供连接字符串。
+要在由世纪互联运营的 Microsoft Azure 中使用 SDK，需从管理门户或 CLI 中提供连接字符串。
 
 ###存储、服务总线和通知总线
 存储、服务总线和通知中心都接受各自的连接字符串，可通过管理门户或使用 CLI 获取该值。
@@ -421,7 +421,7 @@ Azure 诊断使用开发计算机上的本地存储或中国 Azure 存储帐户�
 
 #<a name="appendix"></a>附录：Azure 的内容库
 
-以下列出了 Azure 当前可用的所有内容资产，并指明该资产是否专门针对中国 Azure。
+以下列出了 Azure 当前可用的所有内容资产，并指明该资产是否专门针对由世纪互联运营的 Microsoft Azure。
  
 <table border="1" cellspacing="0" cellpadding="0">
   <tbody>
@@ -433,22 +433,22 @@ Azure 诊断使用开发计算机上的本地存储或中国 Azure 存储帐户�
     <tr>
       <td width="130" valign="top">azure.microsoft.com</td>
       <td width="180" valign="top"> 否 </td>
-      <td width="794" valign="top"> Azure 的全球门户。 </td>
+      <td width="794" valign="top"> 在境外由微软运营的 Microsoft Azure 官网。 </td>
     </tr>
     <tr>
       <td width="130" valign="top"> azure.cn </td>
       <td width="180" valign="top"> 是 </td>
-      <td width="794" valign="top"> 专为在中国运营的 Azure 构建的门户 </td>
+      <td width="794" valign="top"> 由世纪互联运营的 Microsoft Azure 官网 </td>
     </tr>
     <tr>
-      <td width="130" valign="top"> Azure 全球案例研究 </td>
+      <td width="130" valign="top"> 境外客户案例 </td>
       <td width="180" valign="top"> 否 </td>
       <td width="794" valign="top"><a href="http://azure.microsoft.com/zh-cn/case-studies/">http://azure.microsoft.com/zh-cn/case-studies/</a></td>
     </tr>
     <tr>
-      <td width="130" valign="top"> Azure 中国案例研究 </td>
+      <td width="130" valign="top"> 中国客户案例 </td>
       <td width="180" valign="top"> 是 </td>
-      <td><a href="/zh-cn/home/case-studies/">https://www.azure.cn/zh-cn/home/case-studies/</a></td>
+      <td><a href="/zh-cn/home/case-studies/">https://www.azure.cn/partnerancasestudy/case-studies/</a></td>
     </tr>
     <tr>
       <td width="130" valign="top"> P&amp;P 丛书 </td>
@@ -489,12 +489,12 @@ Azure 诊断使用开发计算机上的本地存储或中国 Azure 存储帐户�
     <tr>
       <td width="130" valign="top"> 视频 </td>
       <td width="180" valign="top"> 否 </td>
-      <td width="794" valign="top"> 第 9 频道的视频讨论全球服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同 </td>
+      <td width="794" valign="top"> 第 9 频道的视频讨论境外服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同 </td>
     </tr>
     <tr>
       <td width="130" valign="top"> Azure 培训包 </td>
       <td width="180" valign="top"> 否 </td>
-      <td width="794" valign="top"> Github 中的本地化培训包用于 Azure 全球服务 </td>
+      <td width="794" valign="top"> Github 中的本地化培训包用于境外服务 </td>
     </tr>
     <tr>
       <td width="130" valign="top"> MSDN 代码库 </td>
