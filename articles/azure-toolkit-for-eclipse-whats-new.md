@@ -337,7 +337,6 @@ Azure Plugin for Eclipse - 2011 年 12 月 CTP 已发布。新功能包括：新
 [在 Eclipse 中为 Azure 创建 Hello World 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699533
 [在 Eclipse 中调试 Azure 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699535
 [实施大型部署]: http://go.microsoft.com/fwlink/?LinkID=699536
-[]: http://go.microsoft.com/fwlink/?LinkID=699525#endpoints_properties
 [环境变量属性]: http://go.microsoft.com/fwlink/?LinkID=699525#environment_variables_properties
 [如何使用 Eclipse 在 Azure 访问控制服务上对 Web 用户进行身份验证]: http://go.microsoft.com/fwlink/?LinkID=264703
 [如何使用 SSL 卸载]: http://go.microsoft.com/fwlink/?LinkID=699545
