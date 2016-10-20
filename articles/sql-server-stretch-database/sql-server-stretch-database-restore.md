@@ -57,18 +57,16 @@ Azure 上的 SQL Server Stretch Database 服务在删除数据库之前会创建
 1.  如果你要使用不同的名称或在不同区域中连接到已还原的 Azure 数据库，请运行存储过程 [sys.sp\_rda\_deauthorize\_db](https://msdn.microsoft.com/zh-cn/library/mt703716.aspx) 以与以前的 Azure 数据库断开连接。  
 
 2.  运行存储过程 [sys.sp\_rda\_reauthorize\_db](https://msdn.microsoft.com/zh-cn/library/mt131016.aspx)，以将已启用延伸的本地数据库重新连接到 Azure 数据库。
-
-	-   提供现有的数据库范围凭据作为 sysname 或 varchar(128) 值。（不要使用 varchar(max)。） 你可以在视图 **sys.database\_scoped\_credentials** 中查找凭据名称。
-
+    -   提供现有的数据库范围凭据作为 sysname 或 varchar(128) 值。（不要使用 varchar(max)。） 你可以在视图 **sys.database\_scoped\_credentials** 中查找凭据名称。
 	-   指定是否要制作远程数据的副本并连接到该副本（推荐）。
 
 
 	    	USE <Stretch-enabled database name>;
-		GO
-		EXEC sp_rda_reauthorize_db
-		    @credential = N'<existing_database_scoped_credential_name>',
-			@with_copy = 1 ;  
-		GO
+    		GO
+    		EXEC sp_rda_reauthorize_db
+    		    @credential = N'<existing_database_scoped_credential_name>',
+    			@with_copy = 1 ;  
+    		GO
 
 
 ## 另请参阅

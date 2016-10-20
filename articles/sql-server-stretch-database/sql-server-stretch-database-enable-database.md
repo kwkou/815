@@ -106,7 +106,7 @@
 
 5.  若要为延伸数据库配置数据库，请运行 ALTER DATABASE 命令。
 
-    1.  对于 SERVER 参数，请提供现有 Azure 服务器的名称，包括该名称的 `.database.windows.net` 部分 - 例如 `MyStretchDatabaseServer.database.windows.net`。
+    1.  对于 SERVER 参数，请提供现有 Azure 服务器的名称，包括该名称的 `.database.chinacloudapi.cn` 部分 - 例如 `MyStretchDatabaseServer.database.chinacloudapi.cn`。
 
     2.  请提供具有 CREDENTIAL 参数的现有管理员凭据，或指定 FEDERATED\_SERVICE\_ACCOUNT = ON。以下示例提供了一个现有的凭据。
 
