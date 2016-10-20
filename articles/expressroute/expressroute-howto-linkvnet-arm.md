@@ -17,7 +17,7 @@
 > [AZURE.SELECTOR]
 - [Azure 门户 - Resource Manager](/documentation/articles/expressroute-howto-linkvnet-portal-resource-manager/)
 - [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-linkvnet-arm/)
-- [PowerShell - 经典](/documentation/articles/expressroute/expressroute-howto-linkvnet-classic/)
+- [PowerShell - 经典](/documentation/articles/expressroute-howto-linkvnet-classic/)
 
 
 本文将帮助你使用 Resource Manager 部署模型和 PowerShell 将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。
@@ -38,7 +38,7 @@
 
 最多可以将 10 个虚拟网络链接到一条标准 ExpressRoute 线路。使用标准 ExpressRoute 线路时，所有虚拟网络必须都位于同一地缘政治区域。
 
-如果已启用 ExpressRoute 高级外接程序，则可以链接 ExpressRoute 线路的地缘政治区域外部的虚拟网络，或者将更多虚拟网络连接到 ExpressRoute 线路。有关高级外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute/expressroute-faqs/)。
+如果已启用 ExpressRoute 高级外接程序，则可以链接 ExpressRoute 线路的地缘政治区域外部的虚拟网络，或者将更多虚拟网络连接到 ExpressRoute 线路。有关高级外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute-faqs/)。
 
 ## 将同一订阅中的虚拟网络连接到线路
 
