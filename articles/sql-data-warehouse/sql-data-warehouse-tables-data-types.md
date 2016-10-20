@@ -62,10 +62,10 @@ SQL 数据仓库支持最常用的数据类型。下面是 SQL 数据仓库支�
 |[ntext][ntext,text,image]|[nvarchar][]|
 |[sql_variant][]|将列拆分成多个强类型化列。|
 |[table][]|转换成暂时表。|
-|[timestamp][]|修改代码以使用 [datetime2][] 和 `CURRENT_TIMESTAMP` 函数。仅支持常量作为默认值，因此，不能将 current_timestamp 定义为默认约束。如果需要从 timestamp 类型化列迁移 rowversion 值，请对 NOT NULL 或 NULL 行版本值使用 [BINARY][](8) 或 [VARBINARY][BINARY](8)。|
+|[timestamp][]|修改代码以使用 [datetime2][] 和 **CURRENT_TIMESTAMP** 函数。仅支持常量作为默认值，因此，不能将 current_timestamp 定义为默认约束。如果需要从 timestamp 类型化列迁移 rowversion 值，请对 NOT NULL 或 NULL 行版本值使用 [BINARY][](8) 或 [VARBINARY][BINARY](8)。|
 |[xml][]|[varchar][]|
 |[user defined types][]|尽可能转换回本机类型|
-|默认值|默认值仅支持文本和常量。不支持非确定性表达式或函数，例如 `GETDATE()` 或 `CURRENT_TIMESTAMP`。|
+|默认值|默认值仅支持文本和常量。不支持非确定性表达式或函数，例如 **GETDATE()** 或 **CURRENT_TIMESTAMP**。|
 
 可以在当前 SQL 数据库上运行以下 SQL 来识别 Azure SQL 数据仓库不支持的列：
 

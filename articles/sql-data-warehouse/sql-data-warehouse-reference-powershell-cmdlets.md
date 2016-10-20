@@ -29,8 +29,8 @@
 2. 在 PowerShell 提示符下，运行以下命令以登录到 Azure Resource Manager，然后选择你的订阅。
 
 		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-	    	Get-AzureRmSubscription
-	    	Select-AzureRmSubscription -SubscriptionName "MySubscription"
+	    Get-AzureRmSubscription
+	    Select-AzureRmSubscription -SubscriptionName "MySubscription"
 
 ## 暂停 SQL 数据仓库示例
 
