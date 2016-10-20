@@ -336,7 +336,6 @@
 
 	![2][2]
 	
-	对自定义 API 方法的访问权限在“权限”选项卡中分配。若要了解此自定义 API 的创建方式，请参阅[从客户端调用自定义 API]。
 
 + 使用源代码管理。如果已启用源代码管理，只需在 git 存储库的 .\\service\\api 子文件夹中创建一个名为 <em>`<custom_api>`</em>.js 的文件，其中 <em>`<custom_api>`</em> 是要注册的自定义 API 的名称。此脚本文件包含自定义 API 公开的每个 HTTP 方法的 _exported_ 函数。权限在随附的 .json 文件中定义。有关详细信息，请参阅[源代码管理和共享代码][Source control, shared code, and helper functions]。
 
