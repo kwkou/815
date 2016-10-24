@@ -3,14 +3,21 @@
    description="Service Fabric Reliable Actors 的事件简介。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="vturecek"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/13/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/30/2016"
+   wacn.date="10/24/2016s"
+   ms.author="amanbha"/>  
+
 
 
 # 执行组件事件
@@ -59,7 +66,7 @@
 	await proxy.SubscribeAsync<IGameEvents>(new GameEventsHandler());
 
 
-如果发生故障转移，执行组件可能会故障转移到不同的进程或节点。执行组件代理管理活动的订阅，并自动重新订阅它们。你可以通过 `ActorProxyEventExtensions.SubscribeAsync<TEvent>` API 控制重新订阅的间隔。若要取消订阅，请使用 `ActorProxyEventExtensions.UnsubscribeAsync<TEvent>` API。
+如果发生故障转移，执行组件可能会故障转移到不同的进程或节点。执行组件代理管理活动的订阅，并自动重新订阅它们。可以通过 `ActorProxyEventExtensions.SubscribeAsync<TEvent>` API 控制重新订阅的间隔。若要取消订阅，请使用 `ActorProxyEventExtensions.UnsubscribeAsync<TEvent>` API。
 
 在执行组件上，只需在事件发生时发布事件。如果有订阅此事件的用户，那么执行组件运行时会向他们发送通知。
 
@@ -74,4 +81,4 @@
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1017_2016-->

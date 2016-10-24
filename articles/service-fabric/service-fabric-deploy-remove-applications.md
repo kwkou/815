@@ -5,14 +5,20 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/10/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/25/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>
 
-# 部署应用程序
+# 部署和删除使用 PowerShell 的应用程序
 
 [打包应用程序类型后][10]，就可以部署到 Azure Service Fabric 群集中。部署涉及以下三个步骤：
 
@@ -236,4 +242,4 @@ PS D:\temp>
 [11]: /documentation/articles/service-fabric-application-upgrade/
  
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1017_2016-->

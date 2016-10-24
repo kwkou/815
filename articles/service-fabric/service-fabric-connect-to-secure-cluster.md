@@ -5,20 +5,26 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/18/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/25/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>  
 
 
 # 连接到安全群集
 当客户端连接到 Service Fabric 群集节点时，可以使用证书安全性来与客户端建立经过身份验证的安全通信。这可确保只有经过授权的用户才能访问该群集和部署的应用程序，以及执行管理任务。创建群集时，必须事先在该群集上启用证书安全性。至少应有两个证书用于保护群集，一个用于保护群集和服务器证书，另一个用于保护客户端访问。建议您还使用其他辅助证书和客户端访问证书。有关群集安全方案的详细信息，请参阅[群集安全性](/documentation/articles/service-fabric-cluster-security/)。
 
-若要使用证书安全性来保护客户端与与群集节点之间的通信，必须先获取客户端证书，并将其安装到本地计算机上的个人（我的）存储或当前用户的个人存储。您还需要服务器证书的指纹，以便客户端可以对群集进行身份验证。
+若要使用证书安全性来保护客户端与与群集节点之间的通信，必须先获取客户端证书，并将其安装到本地计算机上的个人（我的）存储或当前用户的个人存储。你还需要服务器证书的指纹，以便客户端可以对群集进行身份验证。
 
-运行以下 PowerShell cmdlet，在要用于访问群集的计算机上设置客户端证书。
+运行以下 PowerShell cmdlet，在访问群集的计算机上设置客户端证书。
 
 
 	Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
@@ -110,4 +116,4 @@
 - [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction/)
 - [应用程序安全性和 RunAs](/documentation/articles/service-fabric-application-runas-security/)
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1017_2016-->
