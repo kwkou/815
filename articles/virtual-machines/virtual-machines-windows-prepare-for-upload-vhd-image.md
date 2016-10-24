@@ -6,16 +6,22 @@
 	authors="genlin"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager"/>
+	tags="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="08/11/2016"
-	wacn.date="09/05/2016"/>  
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/18/2016"
+	wacn.date=""
+	ms.author="glimoli;genli"/>  
 
 
 # 准备好要上载到 Azure 的 Windows VHD
-若要将 Windows VM 从本地上载到 Azure，必须正确地准备好虚拟硬盘 (VHD)。在将 VHD 上载到 Azure 之前，建议你完成几个步骤。运行 `sysprep` 是一个通用的过程，但通用化映像只需一个步骤。本文介绍如何准备好要上载到 Azure 的 Windows VHD。
+若要将 Windows VM 从本地上载到 Azure，必须正确地准备好虚拟硬盘 (VHD)。在将 VHD 上载到 Azure 之前，建议先完成几个步骤。本文介绍如何准备需上载到 Azure 的 Windows VHD，以及[何时以何种方式使用 Sysprep](#step23)。
 
 ## 准备虚拟磁盘
 
@@ -23,20 +29,20 @@
 
 确保 Windows VHD 在本地服务器上正常工作。在尝试转换磁盘或将其上载到 Azure 之前，请解决 VM 本身内部的所有错误。
 
-如果要将虚拟磁盘转换为 Azure 所需的格式，请使用以下部分中所述的方法之一。
+如果要将虚拟磁盘转换为 Azure 所需的格式，请使用以下部分中所述的方法之一。在运行任何虚拟磁盘转换过程或 Sysprep 之前备份 VM。
 
 ### 使用 Hyper-V 管理器转换
-- 打开 Hyper-V 管理器，在左侧选择你的本地计算机。在本地计算机上面的菜单中，单击“操作”>“编辑磁盘”。
+- 打开 Hyper-V 管理器，在左侧选择本地计算机。在本地计算机上面的菜单中，单击“操作”>“编辑磁盘”。
 	- 在“查找虚拟硬盘”屏幕上，浏览到并选择你的虚拟磁盘。
 	- 在下一个屏幕上选择“转换”
 		- 如果需要从 VHDX 进行转换，请选择“VHD”，然后单击“下一步”
 		- 如果需要从动态磁盘进行转换，请选择“固定大小”，然后单击“下一步”
-		
+
 	- 浏览到并选择“新 VHD 文件的路径”。
 	- 单击“完成”以关闭。
 
 ### 使用 PowerShell 转换
-可以使用 [Convert-VHD PowerShell cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx) 来转换虚拟磁盘。在以下示例中，我们将从 VHDX 转换为 VHD，然后从动态类型转换为固定类型：
+可以使用 [Convert-VHD PowerShell cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx) 来转换虚拟磁盘。以下示例演示如何从 VHDX 转换为 VHD，然后从动态类型转换为固定类型：
 
 	Convert-VHD -Path c:\test\MY-VM.vhdx -DestinationPath c:\test\MY-NEW-VM.vhd -VHDType Fixed
 
@@ -58,7 +64,7 @@
 
 3. 将磁盘 SAN 策略配置为 [Onlineall](https://technet.microsoft.com/zh-cn/library/gg252636.aspx)：
 
-		dispart san policy=onlineall
+		diskpart san policy=onlineall
 
 4. 为 Windows 使用协调世界时 (UTC) 时间，将 Windows 时间 (w32time) 服务的启动类型设置为“自动”：
 
@@ -81,17 +87,17 @@
 
 		sc config iphlpsvc start= auto
 
-		sc config PolicyAgent start= manual
+		sc config PolicyAgent start= demand
 
 		sc config LSM start= auto
 
-		sc config netlogon start= manual
+		sc config netlogon start= demand
 
-		sc config netman start= manual
+		sc config netman start= demand
 
-		sc config NcaSvc start= manual
+		sc config NcaSvc start= demand
 
-		sc config netprofm start= manual
+		sc config netprofm start= demand
 
 		sc config NlaSvc start= auto
 
@@ -101,17 +107,17 @@
 
 		sc config RpcEptMapper start= auto
 
-		sc config termService start= manual
+		sc config termService start= demand
 
 		sc config MpsSvc start= auto
 
-		sc config WinHttpAutoProxySvc start= manual
+		sc config WinHttpAutoProxySvc start= demand
 
 		sc config LanmanWorkstation start= auto
 
 		sc config RemoteRegistry start= auto
 
-## 配置远程桌面配置
+## 远程桌面配置
 6. 如果有任何自签名证书绑定到远程桌面协议 (RDP) 侦听器，请删除这些证书：
 
 		REG DELETE "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\SSLCertificateSHA1Hash"
@@ -175,25 +181,25 @@
 
 	- 出站
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (LLMNR-UDP-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (LLMNR-UDP-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (NB-Datagram-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (NB-Datagram-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (NB-Name-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (NB-Name-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (Pub-WSD-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (Pub-WSD-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (SSDP-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (SSDP-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (UPnPHost-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (UPnPHost-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (UPnP-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (UPnP-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (WSD Events-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD Events-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (WSD EventsSecure-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD EventsSecure-Out)" new enable=yes
 
-			netsh advfirewall firewall set rule dir=in name="Network Discovery (WSD-Out)" new enable=yes
+		netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD-Out)" new enable=yes
 
 
 ## 其他 Windows 配置步骤
@@ -201,24 +207,22 @@
 
 13. 确保“引导配置数据”(BCD) 设置与以下内容相符：
 
-		bcdedit /set {bootmgr} device partition=<Boot Partition>
-
 		bcdedit /set {bootmgr} integrityservices enable
 
-		bcdedit /set {default} device partition=<OS Partition>
+		bcdedit /set {default} device partition=C:
 
 		bcdedit /set {default} integrityservices enable
 
 		bcdedit /set {default} recoveryenabled Off
 
-		bcdedit /set {default} osdevice partition=<OS Partition>
+		bcdedit /set {default} osdevice partition=C:
 
 		bcdedit /set {default} bootstatuspolicy IgnoreAllFailures
 
 14. 删除所有其他传输驱动程序接口筛选器，例如分析 TCP 数据包的软件。
 15. 为了确保磁盘正常运行且一致，请运行 `CHKDSK /f` 命令。
-16.	卸载所有其他第三方软件和驱动程序。
-17. 确保第三方应用程序未使用端口 3389。此端口用于 Azure 中的 RDP 服务。
+16.	卸载与物理组件相关的任何其他第三方软件和驱动程序，或卸载任何其他虚拟化技术。
+17. 确保第三方应用程序未使用端口 3389。此端口用于 Azure 中的 RDP 服务。可以使用 `netstat -anob` 命令检查应用程序所使用的端口。
 18.	如果要上载的 Windows VHD 是域控制器，请遵循[这些附加步骤](https://support.microsoft.com/kb/2904015)来准备磁盘。
 19.	重新启动 VM，确保 Windows 仍可正常运行，并可以使用 RDP 连接来访问它。
 20.	重置当前本地管理员密码，确保可以使用此帐户通过 RDP 连接登录 Windows。此访问权限由“允许通过远程桌面服务登录”策略对象控制。此对象位于“计算机配置”\\“Windows 设置”\\“安全设置”\\“本地策略”\\“用户权限分配”下面。
@@ -248,19 +252,20 @@
 	- [KB3140410](https://support.microsoft.com/kb/3140410) MS16-031：Microsoft Windows 安全更新，解决权限提升过程中的问题：2016 年 3 月 8 日
 
 	- [KB3146723](https://support.microsoft.com/kb/3146723) MS16-048：描述 CSRSS 的安全更新：2016 年 4 月 12 日
-	- [KB2904100](https://support.microsoft.com/kb/2904100)：Windows 中发生磁盘 I/O 期间系统会冻结
+	- [KB2904100](https://support.microsoft.com/kb/2904100)：Windows 中发生磁盘 I/O 期间系统会冻结 <a id="step23"></a>
+23. 如果你想要创建一个映像并从中部署多个计算机，则在将 VHD 上载到 Azure 之前，需要运行 `sysprep` 来通用化该映像。不需运行 `sysprep` 即可使用专用的 VHD。有关如何创建通用化映像的详细信息，请参阅以下文章：
 
-23. 如果你想要创建一个映像并从中部署多个计算机，则在将 VHD 上载到 Azure 之前，需要运行 `sysprep` 来通用化该映像。有关如何创建通用化映像的详细信息，请参阅以下文章：
+	- [Create a VM image from an existing Azure VM using the Resource Manager deployment model（使用 Resource Manager 部署模型从现有 Azure VM 创建 VM 映像）](/documentation/articles/virtual-machines-windows-capture-image/)
+	- [Create a VM image from an existing Azure VM using the Classic deployment modem（使用经典部署模型从现有 Azure VM 创建 VM 映像）](/documentation/articles/virtual-machines-windows-classic-capture-image/)
+	- [针对服务器角色的 Sysprep 支持](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles)
 
-	- [Create a VM image from an existing Azure VM using the Resource Manager deployment model](/documentation/articles/virtual-machines-windows-capture-image/)（使用 Resource Manager 部署模型从现有 Azure VM 创建 VM 映像）
-	- [Create a VM image from an existing Azure VM using the Classic deployment modem](/documentation/articles/virtual-machines-windows-classic-capture-image/)（使用经典部署模型从现有 Azure VM 创建 VM 映像）
 
 
 ## 其他建议的配置
 
 以下设置不影响 VHD 上载。但是，我们强烈建议你配置这些设置。
 
-- 安装 [Azure 虚拟机代理](http://download.microsoft.com/download/3/4/3/3437907D-745F-46EF-8116-7FC025BBEBDB/WindowsAzureVmAgent.2.6.1198.718.rd_art_stable.150415-1739.fre.msi)。安装该代理后，可以启用 VM 扩展。VM 扩展实现了你要用于 VM 的大多数关键功能，例如重置密码、配置 RDP 和其他许多功能。
+- 安装 [Azure 虚拟机代理](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)。安装该代理后，可以启用 VM 扩展。VM 扩展实现了要用于 VM 的大多数关键功能，例如重置密码、配置 RDP 和其他许多功能。
 
 - 转储日志可帮助排查 Windows 崩溃问题。启用转储日志收集：
 
@@ -282,4 +287,4 @@
 
 - [将 Windows VM 映像上载到 Azure 以进行资源管理器部署](/documentation/articles/virtual-machines-windows-upload-image/)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1017_2016-->

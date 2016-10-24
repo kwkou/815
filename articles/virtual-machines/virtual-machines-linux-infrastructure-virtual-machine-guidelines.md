@@ -6,12 +6,19 @@
 	authors="iainfoulds"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager"/>
+	tags="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/22/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/08/2016"
+	wacn.date=""
+	ms.author="iainfou"/>  
+
 
 # 虚拟机准则
 
@@ -35,11 +42,11 @@
 
 ## 虚拟机
 
-Azure 环境中的主要组件之一很可能是 VM。你将在其中运行应用程序、数据库、身份验证服务等。
+Azure 环境中的主要组件之一很可能是 VM。可以在其中运行应用程序、数据库、身份验证服务等。
 
 务必了解[不同 VM 大小](/documentation/articles/virtual-machines-linux-sizes/)以便从性能和成本的角度确定环境的适当大小。如果 VM 的 CPU 核心数或内存不足，则无论应用程序的设计和开发如何完善，其性能都将受到影响。在确定要用于基础结构中每个组件的 VM 大小之前，请首先检查每个 VM 系列的建议工作负荷。完成部署后，你可以[更改 VM 大小](/documentation/articles/virtual-machines-linux-change-vm-size/)。
 
-存储在 VM 性能中扮演着重要角色。你可以使用应用常规旋转磁盘的标准存储，也可以使用应用 SSD 磁盘、可处理高 I/O 工作负荷、性能最佳的高级存储。置于 VM 大小，选择存储介质时应考虑成本。可参阅[“存储基础结构准则”文章](/documentation/articles/virtual-machines-linux-infrastructure-storage-solutions-guidelines/)，以了解如何设计适当存储以使 VM 发挥出最佳性能。
+存储在 VM 性能中扮演着重要角色。可以使用应用常规旋转磁盘的标准存储，也可以使用应用 SSD 磁盘、可处理高 I/O 工作负荷、性能最佳的高级存储。与 VM 大小一样，选择存储介质时应考虑成本。可参阅[“存储基础结构准则”文章](/documentation/articles/virtual-machines-linux-infrastructure-storage-solutions-guidelines/)，以了解如何设计适当存储以使 VM 发挥出最佳性能。
 
 
 ## 资源组
@@ -50,7 +57,7 @@ VM 等组件在逻辑上组合在一起，以便使用 [Azure 资源组](/docume
 你可以构建由声明性 JSON 文件定义的模板以创建 VM。模板通常还将随 VM 本身生成所需存储、网络、网络接口、IP 寻址等。你可以使用模板来创建一致的可重现开发和测试环境以轻松复制生产环境，反之亦然。可参阅有关[构建和使用模板](/documentation/articles/resource-group-overview/#template-deployment)的详细信息，以了解如何用其创建和部署 VM。
 
 
-## <a name="next-steps"></a> 后续步骤
+## <a name="next-steps"></a>后续步骤
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1017_2016-->
