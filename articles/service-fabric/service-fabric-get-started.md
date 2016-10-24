@@ -5,12 +5,18 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/16/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotNet"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/13/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>
 
 # 准备开发环境
  若要在开发计算机上生成并运行 [Azure Service Fabric 应用程序][1]，请安装运行时、SDK 和工具。此外，还需执行 SDK 中包含的 Windows PowerShell 脚本。
@@ -28,12 +34,10 @@
 
 ## 安装运行时、SDK 和工具
 
-Web 平台安装程序为 Service Fabric 开发提供三种配置：
+Web 平台安装程序为 Service Fabric 开发提供两种配置：
 
-- [安装适用于 Visual Studio 2015 Update 2 的 Service Fabric 运行时、SDK 和工具][full-bundle-vs2015]
-- [安装适用于 Visual Studio "15" 预览版的 Service Fabric 运行时、SDK 和工具][full-bundle-dev15]
+- [安装适用于 Visual Studio 2015 的 Service Fabric 运行时、SDK 和工具（需要 Visual Studio 2015 Update 2 或更高版本）][full-bundle-vs2015]
 - [仅安装 Service Fabric 运行时和 SDK（不安装 Visual Studio 工具）][core-sdk]
-
 
 ## 启用 PowerShell 脚本执行
 
@@ -54,9 +58,9 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 
 [1]: /home/features/service-fabric "Service Fabric 活动页"
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
-[full-bundle-vs2015]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015-2_1 "VS 2015 WebPI 链接"
-[full-bundle-dev15]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15-2_1 "Dev15 WebPI 链接"
-[core-sdk]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=ServiceFabricSDK_2_1 "Core SDK WebPI 链接"
-[powershell5-download]: https://www.microsoft.com/zh-cn/download/details.aspx?id=50395
+[full-bundle-vs2015]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015 "VS 2015 WebPI 链接"
+[full-bundle-dev15]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15 "Dev15 WebPI 链接"
+[core-sdk]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Core SDK WebPI 链接"
+[powershell5-download]: https://www.microsoft.com/zh-CN/download/details.aspx?id=50395
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1017_2016-->

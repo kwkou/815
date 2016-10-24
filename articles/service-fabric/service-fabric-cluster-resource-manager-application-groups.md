@@ -5,12 +5,19 @@
    documentationCenter=".net"
    authors="masnider"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="Service-Fabric"
-   ms.date="05/20/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/19/2016"
+   wacn.date="10/24/2016"
+   ms.author="masnider"/>  
+
 
 # 应用程序组简介
 Service Fabric 的群集资源管理器通常通过将负载（通过指标表示）平均分散到整个群集来管理群集资源。Service Fabric 还管理群集中节点的容量，以及通过容量的概念管理整个群集。这非常适合用于许多不同类型的工作负荷，但大量使用不同 Service Fabric 应用程序实例的模式还有其他要求。其他要求通常包括：
@@ -154,13 +161,13 @@ C#
 
 ## 后续步骤
 - 有关可用于配置服务的其他选项的详细信息，请查看 [Learn about configuring Services](/documentation/articles/service-fabric-cluster-resource-manager-configure-services/)（了解如何配置服务）中提供的其他群集资源管理器配置的相关主题
-- 若要了解群集资源管理器如何管理和平衡群集中的负载，请查看关于[平衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing/)的文章
-- [获取有关 Service Fabric 群集资源管理器的简介](/documentation/articles/service-fabric-cluster-resource-manager-introduction/)以帮助自己入门
+- 若要了解群集资源管理器如何管理和均衡群集中的负载，请查看有关[均衡负载](/documentation/articles/service-fabric-cluster-resource-manager-balancing/)的文章
+- 参阅 [Service Fabric 群集资源管理器简介](/documentation/articles/service-fabric-cluster-resource-manager-introduction/)，帮助自己入门
 - 有关在一般情况下指标的工作原理的详细信息，请阅读 [Service Fabric Load Metrics](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)（Service Fabric 负载指标）
-- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看有关这篇[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)的文章
+- 群集资源管理器提供许多用于描述群集的选项。若要详细了解这些选项，请查看这篇有关[描述 Service Fabric 群集](/documentation/articles/service-fabric-cluster-resource-manager-cluster-description/)的文章
 
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-application-groups/application-groups-max-nodes.png
 [Image2]: ./media/service-fabric-cluster-resource-manager-application-groups/application-groups-reserved-capacity.png
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1017_2016-->

@@ -5,12 +5,19 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/02/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="rest-api"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/25/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>  
+
 
 # 基于 REST 的应用程序生命周期示例
 
@@ -701,8 +708,9 @@
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
+
 ## 后续步骤
 
 [Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle/)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1017_2016-->

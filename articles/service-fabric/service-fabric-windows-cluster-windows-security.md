@@ -5,12 +5,19 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/14/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/25/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>  
+
 
 
 # 使用 Windows 安全性保护 Windows 上的独立群集
@@ -21,7 +28,7 @@
 由于升级群集后无法更改安全性选项，因此，请慎重地为节点到节点安全性选择适当的选项。更改安全性选项需要重建整个群集。
 
 ## 配置 Windows 安全性
-随 [Microsoft.Azure.ServiceFabric.WindowsServer.<version>.zip](http://go.microsoft.com/fwlink/?LinkId=730690) 独立群集包一起下载的示例 *ClusterConfig.Windows.JSON* 配置文件包含用于配置 Windows 安全性的模板。在 **Properties** 节中配置 Windows 安全性：
+随 [Microsoft.Azure.ServiceFabric.WindowsServer.<version>.zip](http://go.microsoft.com/fwlink/?LinkId=730690) 独立群集包一起下载的示例 *ClusterConfig.Windows.JSON* 配置文件包含用于配置 Windows 安全性的模板。在“属性”部分配置 Windows 安全性：
 
 
 	"security": {
@@ -51,7 +58,7 @@
 
 使用 **ClientIdentities** 配置[客户端到节点安全性](/documentation/articles/service-fabric-cluster-security/#client-to-node-security)。若要在客户端与群集之间建立信任关系，必须对群集进行配置，使其知道可以信任哪些客户端标识。这可以通过两种不同的方法来实现：指定可以连接的域组用户，或者指定可以连接的域节点用户。Service Fabric 针对连接到 Service Fabric 群集的客户端支持两种不同的访问控制类型：管理员和用户。访问控制可让群集管理员针对不同的用户组限制某些类型的特定群集操作的访问权限，使群集更加安全。管理员对管理功能（包括读取/写入功能）拥有完全访问权限。默认情况下，用户只有管理功能的读取访问权限（例如查询功能），以及解析应用程序和服务的能力。
 
-以下示例 **security** 节将配置 Windows 安全性，指定 *ServiceFabric/clusterA.contoso.com* 中的计算机是群集的一部分，并且 *CONTOSO\\usera* 具有管理员客户端访问权限：
+以下示例中的**安全性**部分配置了 Windows 安全性，并指定 *ServiceFabric/clusterA.contoso.com* 中的计算机是群集的一部分，并且 *CONTOSO\\usera* 具有管理员客户端访问权限：
 
 
 	"security": {
@@ -69,10 +76,10 @@
 
 ## 后续步骤
 
-在 *ClusterConfig.JSON* 文件中配置 Windows 安全性之后，请继续执行 [Create a standalone cluster running on Windows](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)（创建 Windows 上运行的独立群集）中的群集创建过程。
+在 *ClusterConfig.JSON* 文件中配置 Windows 安全性之后，请继续执行[创建 Windows 上运行的独立群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)中的群集创建过程。
 
-有关节点到节点安全性、客户端到节点安全性和基于角色的访问控制的详细信息，请参阅 [Cluster security scenarios](/documentation/articles/service-fabric-cluster-security/)（群集安全方案）。
+有关节点到节点安全性、客户端到节点安全性和基于角色的访问控制的详细信息，请参阅[群集安全方案](/documentation/articles/service-fabric-cluster-security/)。
 
-请参阅 [Connect to a secure cluster](/documentation/articles/service-fabric-connect-to-secure-cluster/)（连接到安全群集），以获取有关使用 PowerShell 或 FabricClient 进行连接的示例。
+有关使用 PowerShell 或 FabricClient 进行连接的示例，请参阅[连接到安全群集](/documentation/articles/service-fabric-connect-to-secure-cluster/)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1017_2016-->

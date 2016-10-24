@@ -5,12 +5,18 @@
    documentationCenter=".net"
    authors="seanmck"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="08/05/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotNet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/11/2016"
+   wacn.date="10/24/2016"
+   ms.author="seanmck"/>  
 
 
 
@@ -255,4 +261,4 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 <!-- external links -->
 [dotnetcore-install]: https://www.microsoft.com/net/core#windows
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1017_2016-->

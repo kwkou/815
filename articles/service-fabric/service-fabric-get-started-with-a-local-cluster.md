@@ -5,12 +5,18 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/10/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotNet"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/26/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>
 
 # 在本地群集上部署和升级应用程序入门
 Azure Service Fabric SDK 包含完整的本地开发环境，可让你快速地在本地群集上开始部署和管理应用程序。在本文中，您会从 Windows PowerShell 创建本地群集、将现有应用程序部署到该群集，然后将该应用程序升级为新版本。
@@ -176,7 +182,8 @@ Service Fabric 在应用程序推出于群集时监视其运行状况，从而�
 
     或者在 Service Fabric Explorer 的“操作”菜单或左窗格中应用程序列表视图的上下文菜单内，删除应用程序。
 
-    ![在 Service Fabric Explorer 中删除应用程序][sfe-delete-application]
+    ![在 Service Fabric Explorer 中删除应用程序][sfe-delete-application]  
+
 
 2. 从群集中删除应用程序后，可以注销 WordCount 应用程序类型的版本 1.0.0 和 2.0.0。删除操作将从群集的映像存储中删除该应用程序包，包括其代码和配置。
 
@@ -193,8 +200,8 @@ Service Fabric 在应用程序推出于群集时监视其运行状况，从而�
 
 ## 后续步骤
 - 现在，您已部署并升级某些预先生成的应用程序，接下来可以[尝试在 Visual Studio 中生成您自己的应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)。
-- 也可以对 Azure 群集执行本文中所述的对本地群集执行的所有操作。
-- 本文中执行的升级非常简单。若要深入了解 Service Fabric 升级的功能和灵活性，请参阅[升级文档](/documentation/articles/service-fabric-application-upgrade/)。
+- 也可以对 [Azure 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)执行本文中所述的对本地群集执行的所有操作。
+- 本文中执行的升级是基本的升级。若要深入了解 Service Fabric 升级的功能和灵活性，请参阅[升级文档](/documentation/articles/service-fabric-application-upgrade/)。
 
 <!-- Images -->
 
@@ -215,4 +222,4 @@ Service Fabric 在应用程序推出于群集时监视其运行状况，从而�
 [sfx-service-overview]: ./media/service-fabric-get-started-with-a-local-cluster/sfx-service-overview.png
 [sfe-delete-application]: ./media/service-fabric-get-started-with-a-local-cluster/sfe-delete-application.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1017_2016-->

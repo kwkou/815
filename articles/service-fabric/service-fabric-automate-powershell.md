@@ -5,12 +5,19 @@
 	documentationCenter=".net"
 	authors="rwike77"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="service-fabric"
-	ms.date="07/15/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/25/2016"
+	wacn.date="10/24/2016"
+	ms.author="ryanwi"/>  
+
 
 # 使用 PowerShell 自动化应用程序生命周期
 
@@ -24,7 +31,7 @@
 + [允许执行 PowerShell 脚本](/documentation/articles/service-fabric-get-started/#enable-powershell-script-execution)。
 + 启动本地群集。以管理员身份启动新的 PowerShell 窗口，然后从 SDK 文件夹运行群集设置脚本：`& "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1"`
 + 在运行本文中的任何 PowerShell 命令之前，请先使用 [**Connect-ServiceFabricCluster**](https://msdn.microsoft.com/zh-cn/library/azure/mt125938.aspx) 连接到本地 Service Fabric 群集：`Connect-ServiceFabricCluster localhost:19000`
-+ 以下任务需要用于部署的 v1 应用程序包和用于升级的 v2 应用程序包。下载 [**WordCount** 示例应用程序](http://aka.ms/servicefabricsamples)（位于“入门”示例中）。在 Visual Studio 中生成和打包应用程序（右键单击解决方案资源管理器中的 **WordCount**，然后选择“打包”）。将 `C:\ServiceFabricSamples\Services\WordCount\WordCount\pkg\Debug` 中的 v1 包复制到 `C:\Temp\WordCount`。将 `C:\Temp\WordCount` 复制到 `C:\Temp\WordCountV2`，创建用于升级的 v2 应用程序包。在文本编辑器中打开 `C:\Temp\WordCountV2\ApplicationManifest.xml`。在 **ApplicationManifest** 元素中，将 **ApplicationTypeVersion** 属性从“1.0.0”更改为“2.0.0”。这将更新应用程序的版本号。保存更改后的 ApplicationManifest.xml 文件。
++ 以下任务需要用于部署的 v1 应用程序包和用于升级的 v2 应用程序包。下载 [**WordCount** 示例应用程序](http://aka.ms/servicefabricsamples)（位于“入门”示例中）。在 Visual Studio 中生成和打包应用程序（右键单击解决方案资源管理器中的 **WordCount**，然后选择“打包”）。将 `C:\ServiceFabricSamples\Services\WordCount\WordCount\pkg\Debug` 中的 v1 包复制到 `C:\Temp\WordCount`。将 `C:\Temp\WordCount` 复制到 `C:\Temp\WordCountV2`，创建用于升级的 v2 应用程序包。在文本编辑器中打开 `C:\Temp\WordCountV2\ApplicationManifest.xml`。在 **ApplicationManifest** 元素中，将 **ApplicationTypeVersion** 属性从“1.0.0”更改为“2.0.0”，更新应用版本号。保存更改后的 ApplicationManifest.xml 文件。
 
 ## 任务：部署 Service Fabric 应用程序
 
@@ -56,7 +63,7 @@
 	New-ServiceFabricApplication fabric:/WordCount WordCount 1.0.0
 
 
-[**Get-ServiceFabricApplication**](https://msdn.microsoft.com/zh-cn/library/azure/mt163515.aspx) 命令将列出已成功创建的所有应用程序实例以及其整体状态。[**Get-ServiceFabricService**](https://msdn.microsoft.com/zh-cn/library/azure/mt125889.aspx) 命令将列出在给定的应用程序实例中成功创建的所有服务实例。将列出默认服务（如果有）。
+[**Get-ServiceFabricApplication**](https://msdn.microsoft.com/zh-cn/library/azure/mt163515.aspx) 命令将列出已成功创建的所有应用程序实例以及其整体状态。[**Get-ServiceFabricService**](https://msdn.microsoft.com/zh-cn/library/azure/mt125889.aspx) 命令将列出在给定的应用程序实例中成功创建的所有服务实例。列出默认服务（如果有）。
 
 
 	Get-ServiceFabricApplication
@@ -70,7 +77,7 @@
 为简单起见，此示例仅在系统必备组件中创建的 WordCountV2 应用程序包中更新了应用程序版本号。更加实际的方案则包括更新服务代码、配置或数据文件，然后使用已更新的版本号重新生成并打包应用程序。
 
 ### 步骤 1：上传已更新的应用程序包
-WordCount v1 应用程序已准备好升级。如果以管理员身份打开 PowerShell 窗口并键入 [**Get-ServiceFabricApplication**](https://msdn.microsoft.com/zh-cn/library/azure/mt163515.aspx)，你将看到 1.0.0 版本的 WordCount 应用程序类型已部署。
+WordCount v1 应用程序已准备好升级。如果以管理员身份打开 PowerShell 窗口并键入 [**Get-ServiceFabricApplication**](https://msdn.microsoft.com/zh-cn/library/azure/mt163515.aspx)，将看到 1.0.0 版本的 WordCount 应用程序类型已部署。
 
 现在，将更新的应用程序包复制到 Service Fabric 映像存储（Service Fabric 存储应用程序包的位置）。参数 **ApplicationPackagePathInImageStore** 告知 Service Fabric 可在何处找到应用程序包。以下命令将应用程序包复制到映像存储中的 **WordCountV2**：
 
@@ -103,7 +110,7 @@ WordCount v1 应用程序已准备好升级。如果以管理员身份打开 Pow
 	Get-ServiceFabricApplicationUpgrade fabric:/WordCount
 
 
-几分钟后，[Get-ServiceFabricApplicationUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt125988.aspx) cmdlet 将显示已升级所有升级域（已完成）。
+几分钟后，[Get-ServiceFabricApplicationUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt125988.aspx) cmdlet 会显示已升级所有升级域（已完成）。
 
 ## 任务：测试 Service Fabric 应用程序
 
@@ -168,4 +175,4 @@ WordCount v1 应用程序已准备好升级。如果以管理员身份打开 Pow
 
 [Azure Service Fabric 可测试性 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125844.aspx)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1017_2016-->

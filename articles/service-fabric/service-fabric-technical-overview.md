@@ -5,12 +5,17 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor="chackdan;subramar"/>
+   editor="chackdan;subramar"/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="08/11/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/25/2016"
+   ms.author="ryanwi"/>  
 
 
 # Service Fabric 术语概述
@@ -88,4 +93,4 @@ Service Fabric 是一种分布式系统平台，可让你轻松打包、部署�
 - [为什么通过微服务的方法构建应用程序？](/documentation/articles/service-fabric-overview-microservices/)
 - [应用程序方案](/documentation/articles/service-fabric-application-scenarios/)
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1017_2016-->

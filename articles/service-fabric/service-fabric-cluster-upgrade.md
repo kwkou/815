@@ -5,12 +5,19 @@
    documentationCenter=".net"
    authors="ChackDan"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="05/02/2016"
-   wacn.date="07/07/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/13/2016"
+   wacn.date="10/24/2016"
+   ms.author="chackdan"/>  
+
 
 
 # 升级 Service Fabric 群集
@@ -29,7 +36,7 @@ Microsoft 将维护群集中运行的结构代码和配置。我们将根据需�
 
 - 有关必须回滚群集升级的通知。
 - 建议的补救措施（如果有）。
-- 距离执行阶段 2 的天数 (N)。
+- 距离执行阶段 2 的天数 (n)。
 
 如果有任何升级因为基础结构方面的原因而失败，我们将尝试多次执行同一升级。自电子邮件发送日期的 n 天之后，我们将继续执行阶段 2。
 
@@ -43,7 +50,7 @@ Microsoft 将维护群集中运行的结构代码和配置。我们将根据需�
 
 - 有关必须回滚群集升级的通知。
 - 建议的补救措施（如果有）。
-- 距离执行阶段 3 的天数 (N)。
+- 距离执行阶段 3 的天数 (n)。
 
 如果有任何升级因为基础结构方面的原因而失败，我们将尝试多次执行同一升级。将在 n 天结束前的几天发送提醒电子邮件。自电子邮件发送日期的 n 天之后，我们将继续执行阶段 3。必须认真看待阶段 2 发送的电子邮件并采取补救措施。
 
@@ -67,22 +74,30 @@ Microsoft 将维护群集中运行的结构代码和配置。我们将根据需�
 
 ### 证书
 
-可以通过对 servicefabric.cluster 资源发出 PUT 命令，来轻松更新主证书或辅助证书。
+通过门户可以轻松为群集新增或删除证书。请参阅[此文档中的详细说明](/documentation/articles/service-fabric-cluster-security-update-certs-azure/)
 
->[AZURE.NOTE] 在标识用于群集资源的证书之前，必须先完成以下步骤，否则不会使用新的证书：
-1. 将新证书上载到 Azure 密钥保管库。有关说明，请参阅 [Service Fabric 安全性](/documentation/articles/service-fabric-cluster-security/)。从该文档的步骤 2 开始。
-2. 更新所有构成群集的虚拟机 (VM)，以便将证书部署到这些虚拟机上。为此，请参阅 [Azure 密钥保管库团队博客](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx)。
+![显示 Azure 门户中证书指纹的屏幕截图。][CertificateUpgrade]  
+
+
 
 ### 应用程序端口
 
-可以通过更改与节点类型关联的负载均衡器资源属性来更改应用程序端口。可以使用使用 Resource Manager PowerShell。
+可以通过更改与节点类型关联的负载均衡器资源属性来更改应用程序端口。可以使用门户或者直接使用 Resource Manager PowerShell。
 
 若要在某个节点类型中的所有 VM 上打开新端口，请执行以下操作：
 
 1. 将新探测添加到相应的负载均衡器。
 
+    如果群集是使用门户部署的，则负载均衡器将命名为“资源组 NodeTypename 的 LB 名称”，每个节点类型各有一个负载均衡器。由于负载均衡器名称只是在资源组中唯一，因此最好在特定资源组下搜索名称。
+
+    ![显示如何在门户中向负载均衡器添加探测的屏幕截图。][AddingProbes]  
+
 
 2. 将新规则添加到负载均衡器。
+
+    使用在上一个步骤中创建的探测，向同一负载均衡器添加新规则。
+
+    ![显示如何在门户中向负载均衡器添加新规则的屏幕截图。][AddingLBRules]  
 
 
 
@@ -110,8 +125,9 @@ Microsoft 将维护群集中运行的结构代码和配置。我们将根据需�
 - 了解[应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
 <!--Image references-->
-[CertificateUpgrade]: ./media/service-fabric-cluster-upgrade/CertificateUpgrade.png
-[AddingProbes]: ./media/service-fabric-cluster-upgrade/addingProbes.png
+
+[CertificateUpgrade]: ./media/service-fabric-cluster-upgrade/CertificateUpgrade2.png
+[AddingProbes]: ./media/service-fabric-cluster-upgrade/addingProbes2.PNG
 [AddingLBRules]: ./media/service-fabric-cluster-upgrade/addingLBRules.png
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_1017_2016-->
