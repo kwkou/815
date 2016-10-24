@@ -29,7 +29,6 @@
 -	如何使用 Azure Resource Manager 模板来部署和集成 DocumentDB 帐户与 Azure App Service 中的 Web 应用？
 -	如何使用 Azure Resource Manager 模板来部署和集成 DocumentDB 帐户、App Service Web Apps 中的 Web 应用以及 Webdeploy 应用程序？
 
-<a id="Prerequisites"></a>
 ## 先决条件
 > [AZURE.TIP] 虽然本教程不会假设先前有使用 Azure Resource Manager 模板或 JSON 的经验，但是，如果你想修改引用的模板或部署选项，则需要有其中每个领域的知识。
 
@@ -44,7 +43,6 @@
 
 2. 将“创建 DocumentDB 帐户和 Web 应用示例”模板下载到本地文件夹（例如 C:\\DocumentDBTemplates）。此模板将部署 DocumentDB 帐户、App Service Web 应用，并修改站点的应用程序设置以便轻松地呈现 DocumentDB 连接信息，但不包含 Web 应用程序。
 
-<a id="Build"></a>
 ##步骤 2：部署 DocumentDB 帐户、App Service Web 应用和演示应用程序示例
 
 现在让我们来部署第一个模板。
@@ -96,7 +94,6 @@
 
 11. 任意体验 DocumentDB 门户预览，或修改示例待办事项应用程序。当你准备好时，让我们来部署另一个模板。
 	
-<a id="Build"></a>
 ## 步骤 3：部署 DocumentDB 帐户和 Web 应用示例
 
 现在让我们来部署第二个模板。此模板可用于演示如何将帐户终结点和主密钥等 DocumentDB 连接信息插入 Web 应用，作为应用程序设置或自定义连接字符串。例如，你或许有想要使用 DocumentDB 帐户部署的 Web 应用程序，以及在部署期间自动填充的连接信息。
