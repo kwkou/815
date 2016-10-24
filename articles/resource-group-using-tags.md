@@ -1,17 +1,21 @@
-<!-- Remove Resource-group-portal -->
 <properties
 	pageTitle="使用标记组织 Azure 资源 | Azure"
 	description="演示如何应用标记来组织资源进行计费和管理。"
 	services="azure-resource-manager"
 	documentationCenter=""
 	authors="tfitzmac"
-	manager="wpickett"
-	editor=""/>
+	manager="timlt"
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="08/10/2016"
-	wacn.date="09/19/2016"/>
+	ms.workload="multiple"
+	ms.tgt_pltfrm="AzurePortal"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/16/2016"
+	wacn.date="10/24/2016"/>
 
 
 # 使用标记来组织 Azure 资源
@@ -85,104 +89,7 @@ Resource Manager 当前不支持处理标记名称和值对象。可以传递标
 
 ## PowerShell
 
-标记直接存在于资源和资源组中。若要查看现有的标记，只需分别使用 **Get-AzureRmResource** 或 **Get-AzureRmResourceGroup** 获取资源或资源组。让我们从一个资源组着手。
-
-    Get-AzureRmResourceGroup -Name tag-demo-group
-
-此 cmdlet 将返回有关资源组的元数据的多个片段，包括已应用了哪些标记（如果有）。
-
-    ResourceGroupName : tag-demo-group
-    Location          : chinaeast
-    ProvisioningState : Succeeded
-    Tags              :
-                    Name         Value
-                    ===========  ==========
-                    Dept         Finance
-                    Environment  Production
-
-获取某个资源的元数据时，不会直接显示标记。
-
-    Get-AzureRmResource -ResourceName tfsqlserver -ResourceGroupName tag-demo-group
-
-将在结果中看到，标记只作为 Hashtable 对象显示。
-
-    Name              : tfsqlserver
-    ResourceId        : /subscriptions/{guid}/resourceGroups/tag-demo-group/providers/Microsoft.Sql/servers/tfsqlserver
-    ResourceName      : tfsqlserver
-    ResourceType      : Microsoft.Sql/servers
-    Kind              : v12.0
-    ResourceGroupName : tag-demo-group
-    Location          : chinaeast
-    SubscriptionId    : {guid}
-    Tags              : {System.Collections.Hashtable}
-
-可以通过检索 **Tags** 属性来查看实际标记。
-
-    (Get-AzureRmResource -ResourceName tfsqlserver -ResourceGroupName tag-demo-group).Tags | %{ $_.Name + ": " + $_.Value }
-   
-该操作返回格式化结果：
-    
-    Dept: Finance
-    Environment: Production
-
-建议检索具有特定标记和值的所有资源或资源组，而不是查看特定资源组或资源的标记。若要获取具有特定标记的资源组，请结合 **-Tag** 参数使用 **Find-AzureRmResourceGroup** cmdlet。
-
-    Find-AzureRmResourceGroup -Tag @{ Name="Dept"; Value="Finance" } | %{ $_.Name }
-    
-该操作返回带有该标记值的资源组的名称。
-   
-    tag-demo-group
-    web-demo-group
-
-若要获取具有特定标记和值的所有资源，请使用 **Find-AzureRmResource** cmdlet。
-
-    Find-AzureRmResource -TagName Dept -TagValue Finance | %{ $_.ResourceName }
-    
-该操作返回带有该标记值的资源的名称。
-    
-    tfsqlserver
-    tfsqldatabase
-
-若要向当前没有标记的资源组添加标记，只需使用 **Set-AzureRmResourceGroup** 命令并指定一个标记对象。
-
-    Set-AzureRmResourceGroup -Name test-group -Tag @( @{ Name="Dept"; Value="IT" }, @{ Name="Environment"; Value="Test"} )
-
-该操作返回带有新的标记值的资源组。
-
-    ResourceGroupName : test-group
-    Location          : southcentralus
-    ProvisioningState : Succeeded
-    Tags              :
-                    Name          Value
-                    =======       =====
-                    Dept          IT
-                    Environment   Test
-                    
-可以使用 **Set-AzureRmResource** 命令向当前没有标记的资源添加标记。
-
-    Set-AzureRmResource -Tag @( @{ Name="Dept"; Value="IT" }, @{ Name="Environment"; Value="Test"} ) -ResourceId /subscriptions/{guid}/resourceGroups/test-group/providers/Microsoft.Web/sites/examplemobileapp
-
-标记作为一个整体更新。若要将一个标记添加到包含其他标记的资源，请使用数组，其中包含要保留的所有标记。首先选择现有标记，将其中一个标记添加到该集，然后重新应用所有标记。
-
-    $tags = (Get-AzureRmResourceGroup -Name tag-demo).Tags
-    $tags += @{Name="status";Value="approved"}
-    Set-AzureRmResourceGroup -Name test-group -Tag $tags
-
-若要删除一个或多个标记，只需保存不包含您要删除的标记的数组。
-
-该过程对于资源是相同的，不过，使用的是 **Get-AzureRmResource** 和 **Set-AzureRmResource** cmdlet。
-
-若要使用 PowerShell 获取订阅中所有标记的列表，请使用 **Get-AzureRmTag** cmdlet。
-
-    Get-AzureRmTag
-    Name                      Count
-    ----                      ------
-    env                       8
-    project                   1
-
-你可能会看到，有些标记以“hidden-”和“link:”开头。这些标记属于内部标记，应将其忽略并避免更改。
-
-使用 **New-AzureRmTag** cmdlet 可将新标记添加到分类。即使这些标记尚未应用到任何资源或资源组，也会包含在自动填充内容中。若要删除某个标记名称/值，请先从它可能已应用到的所有资源中将它删除，然后使用 **Remove-AzureRmTag** cmdlet 从分类中将它删除。
+[AZURE.INCLUDE [resource-manager-tag-resources](../includes/resource-manager-tag-resources-powershell.md)]
 
 ## Azure CLI
 
@@ -276,4 +183,4 @@ Resource Manager 当前不支持处理标记名称和值对象。可以传递标
 - 有关部署资源时使用 Azure CLI 的说明，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 - 有关使用门户的说明，请参阅 [Using the Azure portal to manage your Azure resources](/documentation/articles/resource-group-portal/)（使用 Azure 门户管理 Azure 资源）
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1017_2016-->
