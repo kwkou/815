@@ -5,12 +5,17 @@
    documentationCenter="na"
    authors="tfitzmac"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"/>  
+
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="08/11/2016"
-   wacn.date="09/19/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/12/2016"
+   wacn.date="10/24/2016"/>
 
 # Azure 资源管理器模板函数
 
@@ -31,7 +36,7 @@
 - [sub](#sub)
 
 
-<a id="add" />
+<a id="add" /></a>
 ### 添加
 
 **add(operand1, operand2)**
@@ -67,7 +72,7 @@
       }
     }
 
-<a id="copyindex" />
+<a id="copyindex" /></a>
 ### copyIndex
 
 **copyIndex(offset)**
@@ -95,7 +100,7 @@
     ]
 
 
-<a id="div" />
+<a id="div" /></a>
 ### div
 
 **div(operand1, operand2)**
@@ -131,7 +136,7 @@
       }
     }
 
-<a id="int" />
+<a id="int" /></a>
 ### int
 
 **int(valueToConvert)**
@@ -152,7 +157,7 @@
     }
 
 
-<a id="mod" />
+<a id="mod" /></a>
 ### mod
 
 **mod(operand1, operand2)**
@@ -188,7 +193,7 @@
       }
     }
 
-<a id="mul" />
+<a id="mul" /></a>
 ### mul
 
 **mul(operand1, operand2)**
@@ -224,7 +229,7 @@
       }
     }
 
-<a id="sub" />
+<a id="sub" /></a>
 ### sub
 
 **sub(operand1, operand2)**
@@ -281,7 +286,7 @@
 - [uri](#uri)
 
 
-<a id="base64" />
+<a id="base64" /></a>
 ### base64
 
 **base64 (inputString)**
@@ -299,7 +304,7 @@
       "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
     }
 
-<a id="concat" />
+<a id="concat" /></a>
 ### concat - 字符串
 
 **concat (string1, string2, string3, ...)**
@@ -323,7 +328,7 @@
     }
 
 
-<a id="lengthstring" />
+<a id="lengthstring" /></a>
 ### length - 字符串
 
 **length(string)**
@@ -346,7 +351,7 @@
     }
         
 
-<a id="padleft" />
+<a id="padleft" /></a>
 ### padLeft
 
 **padLeft(valueToPad, totalLength, paddingCharacter)**
@@ -368,7 +373,7 @@
         "paddedAppName": "[padLeft(parameters('appName'),10,'0')]"
     }
 
-<a id="replace" />
+<a id="replace" /></a>
 ### replace
 
 **replace(originalString, oldCharacter, newCharacter)**
@@ -390,7 +395,7 @@
         "newidentifier": "[replace(parameters('identifier'),'-','')]"
     }
 
-<a id="skipstring" />
+<a id="skipstring" /></a>
 ### skip - 字符串
 **skip(originalValue, numberToSkip)**
 
@@ -429,7 +434,7 @@
     }
 
 
-<a id="split" />
+<a id="split" /></a>
 ### split
 
 **split(inputString, delimiterString)**
@@ -466,7 +471,7 @@
       }
     }
 
-<a id="string" />
+<a id="string" /></a>
 ### 字符串
 
 **string(valueToConvert)**
@@ -502,7 +507,7 @@
       "intString": "[string(parameters('jsonInt'))]"
     }
 
-<a id="substring" />
+<a id="substring" /></a>
 ### substring
 
 **substring(stringToParse, startIndex, length)**
@@ -524,7 +529,7 @@
         "prefix": "[substring(parameters('inputString'), 0, 3)]"
     }
 
-<a id="takestring" />
+<a id="takestring" /></a>
 ### take - 字符串
 **take(originalValue, numberToTake)**
 
@@ -562,7 +567,7 @@
       }
     }
 
-<a id="tolower" />
+<a id="tolower" /></a>
 ### toLower
 
 **toLower(stringToChange)**
@@ -582,7 +587,7 @@
         "lowerCaseAppName": "[toLower(parameters('appName'))]"
     }
 
-<a id="toupper" />
+<a id="toupper" /></a>
 ### toUpper
 
 **toUpper(stringToChange)**
@@ -602,7 +607,7 @@
         "upperCaseAppName": "[toUpper(parameters('appName'))]"
     }
 
-<a id="trim" />
+<a id="trim" /></a>
 ### trim
 
 **trim (stringToTrim)**
@@ -622,39 +627,39 @@
         "trimAppName": "[trim(parameters('appName'))]"
     }
 
-<a id="uniquestring" />
+<a id="uniquestring" /></a>
 ### uniqueString
 
 **uniqueString (baseString, ...)**
 
-根据作为参数提供的值创建唯一字符串。
+根据作为参数提供的值创建确定性哈希字符串。
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
 | baseString | 是 | 哈希函数中用于创建唯一字符串的字符串。
 | 根据需要使用其他参数 | 否 | 你可以添加任意数目的字符串，以创建指定唯一性级别的值。
 
-当你需要创建资源的唯一名称时，此函数很有帮助。提供表示结果唯一性级别的参数值。可以指定该名称对于订阅、资源组或部署是否唯一。
+当你需要创建资源的唯一名称时，此函数很有帮助。提供参数值，这些值用于限制结果的唯一性范围。可以指定该名称对于订阅、资源组或部署是否唯一。
 
-返回的值不是随机字符串，而是哈希函数的结果。返回的值长度为 13 个字符。不保证是全局唯一。你可能需要根据命名约定使用前缀来组合值，以创建更容易识别的名称。以下示例显示了返回值的格式。当然，实际值取决于提供的参数。
+返回的值不是随机字符串，而是哈希函数的结果。返回的值长度为 13 个字符。并非全局唯一。可能需要根据命名约定使用前缀来组合值，以创建有意义的名称。以下示例显示了返回值的格式。当然，实际值取决于提供的参数。
 
     tcvhiyu5h2o5o
 
 以下示例演示如何使用 uniqueString 创建通用级别唯一值。
 
-根据订阅保持唯一
+仅对订阅唯一
 
     "[uniqueString(subscription().subscriptionId)]"
 
-根据资源组保持唯一
+仅对资源组唯一
 
     "[uniqueString(resourceGroup().id)]"
 
-根据资源组的部署保持唯一
+仅对资源组的部署唯一
 
     "[uniqueString(resourceGroup().id, deployment().name)]"
     
-以下示例演示显示如何根据资源组创建存储帐户的唯一名称。
+以下示例演示如何根据资源组创建存储帐户的唯一名称（如果构造方式相同，资源组内的名称则不是唯一的）。
 
     "resources": [{ 
         "name": "[concat('contosostorage', uniqueString(resourceGroup().id))]", 
@@ -663,7 +668,8 @@
 
 
 
-<a id="uri" />
+<a id="uri" /></a>
+
 ### uri
 
 **uri (baseUri, relativeUri)**
@@ -692,7 +698,7 @@
 
 若要获取由某个值分隔的字符串值数组，请参阅 [split](#split)。
 
-<a id="concatarray" />
+<a id="concatarray" /></a>
 ### concat - 数组
 
 **concat (array1, array2, array3, ...)**
@@ -721,7 +727,7 @@
      }
         
 
-<a id="length" />
+<a id="length" /></a>
 ### length - 数组
 
 **length(array)**
@@ -743,7 +749,7 @@
 
 有关对字符串值使用 length 的示例，请参阅 [length - 字符串](#lengthstring)。
 
-<a id="skip" />
+<a id="skip" />></a>
 ### skip - 数组
 **skip(originalValue, numberToSkip)**
 
@@ -782,7 +788,7 @@
       }
     }
 
-<a id="take" />
+<a id="take" /></a>
 ### take - 数组
 **take(originalValue, numberToTake)**
 
@@ -831,7 +837,7 @@
 
 若要从资源、资源组或订阅获取值，请参阅 [Resource functions](#resource-functions)（资源函数）。
 
-<a id="deployment" />
+<a id="deployment" /></a>
 ### 部署
 
 **deployment()**
@@ -888,7 +894,7 @@
         "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"  
     }  
 
-<a id="parameters" />
+<a id="parameters" /></a>
 ### 参数
 
 **parameters (parameterName)**
@@ -915,7 +921,7 @@
        }
     ]
 
-<a id="variables" />
+<a id="variables" /></a>
 ### variables
 
 **variables (variableName)**
@@ -952,8 +958,8 @@
 
 若要从参数、变量或当前部署获取值，请参阅 [Deployment value functions](#deployment-value-functions)（部署值函数）。
 
-<a id="listkeys" />
-<a id="list" />
+<a id="listkeys" /></a>
+<a id="list" /></a>
 ### listKeys 和 list{Value}
 
 **listKeys (resourceName or resourceIdentifier, apiVersion)**
@@ -1003,7 +1009,7 @@ ListKeys 返回的对象采用以下格式：
       ]
     }
 
-<a id="providers" />
+<a id="providers" /></a>
 ### providers
 
 **providers (providerNamespace, [resourceType])**
@@ -1032,7 +1038,7 @@ ListKeys 返回的对象采用以下格式：
 	    }
     }
 
-<a id="reference" />
+<a id="reference" /></a>
 ### reference
 
 **reference (resourceName or resourceIdentifier, [apiVersion])**
@@ -1085,9 +1091,10 @@ ListKeys 返回的对象采用以下格式：
 		}
 	}
 
-返回对象中的属性取决于资源类型。
+从 **reference** 函数中返回的对象上的属性因资源类型而异。若要查看资源类型的属性名称和值，请创建一个简单模板，该模板返回 **outputs** 部分中的对象。如果有现有的该类型的资源，则模板只返回对象而不部署任何新资源。如果没有现有的该类型的资源，则模板只部署该类型并返回对象。然后，将这些属性添加到需要在部署期间动态检索值的其他模板。
 
-<a id="resourcegroup" />
+<a id="resourcegroup" /></a>
+
 ### resourceGroup
 
 **resourceGroup()**
@@ -1119,7 +1126,7 @@ ListKeys 返回的对象采用以下格式：
        }
     ]
 
-<a id="resourceid" />
+<a id="resourceid" /></a>
 ### resourceId
 
 **resourceId ([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
@@ -1186,7 +1193,7 @@ ListKeys 返回的对象采用以下格式：
       }]
     }
 
-<a id="subscription" />
+<a id="subscription" />></a>
 ### 订阅
 
 **subscription()**
@@ -1215,4 +1222,4 @@ ListKeys 返回的对象采用以下格式：
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1017_2016-->

@@ -5,12 +5,17 @@
    documentationCenter="na"
    authors="tfitzmac"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"/>  
+
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="07/19/2016"
-   wacn.date="09/28/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="multiple"
+   ms.workload="na"
+   ms.date="09/07/2016"
+   wacn.date="10/24/2016"/>
 
 # 使用 Azure CLI 创建服务主体来访问资源
 
@@ -19,43 +24,60 @@
 - [Azure CLI](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 - [门户](/documentation/articles/resource-group-create-service-principal-portal/)
 
-如果应用程序或脚本需要访问资源，则多数情况下不需使用用户的凭据即可运行此过程。可以将该用户的不同权限分配给此过程，但用户的工作职责可能会变化。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。应用程序在每次运行时以此标识登录。本主题介绍如何通过[适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
 
-在本文中，用户将创建两个对象 - Active Directory (AD) 应用程序和服务主体。AD 应用程序包含凭据（应用程序 ID 和密码/证书）。服务主体包含角色分配情况。从 AD 应用程序可以创建多个服务主体。本主题重点介绍单租户应用程序，即应用程序只会在一个组织中运行。通常会将单租户应用程序作为在组织中运行的业务线应用程序使用。如果应用程序需在多个组织中运行，也可创建多租户应用程序。通常会将多租户应用程序用作软件即服务 (SaaS) 应用程序。若要设置多租户应用程序，请参阅[使用 Azure Resource Manager API 进行授权的开发人员指南](/documentation/articles/resource-manager-api-authentication/)。
-
-使用 Active Directory 需要了解多个概念。有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
+如果应用程序或脚本需要访问资源，用户在多数情况下不想要使用自己的凭据来运行此过程。用户可能有几种不同的权限可用于应用程序，如果用户职责改变，则不想要应用程序继续使用此凭据。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。每次应用运行时，将使用这些凭据对其自身进行身份验证。本主题介绍如何通过[适用于 Mac、Linux 和 Windows 的 Azure CLI](xplat-cli-install.md) 为应用程序进行设置，使之能够使用自己的凭据和标识运行。
 
 使用 Azure CLI 时，可以通过 2 个选项进行 AD 应用程序身份验证：
 
  - password
  - 证书
 
-在设置 AD 应用程序以后，如果需要从其他编程框架（例如 Python、Ruby 或 Node.js）登录 Azure，则最好是使用密码身份验证。在确定是使用密码还是证书之前，请参阅[示例应用程序](#sample-applications)部分，获取在不同框架中进行身份验证的示例。
+本主题演示如何在 Azure CLI 中使用这两个选项。如果想从一个编程框架（例如 Python、Ruby 或 Node.js）登录 Azure，则最好是使用密码身份验证。在确定是使用密码还是证书之前，请参阅[示例应用程序](#sample-applications)部分，获取在不同框架中进行身份验证的示例。
 
-## 获取租户 ID
+## Active Directory 概念
 
-以服务主体方式登录时，需提供 AD 应用所在目录的租户 ID。租户是 Active Directory 的实例。不管是使用密码还是使用证书进行身份验证，都需要该值，因此现在需获取该值。
+在本文中，用户将创建两个对象 - Active Directory (AD) 应用程序和服务主体。AD 应用程序是应用程序的全局表示形式。它包含凭据（应用程序 ID 和密码或证书）。服务主体是应用程序在 Active Directory 中的本地表示形式。它包含角色分配。本主题重点介绍单租户应用程序，即应用程序只会在一个组织中运行。通常会将单租户应用程序作为在组织中运行的业务线应用程序使用。在单租户应用程序中，有一个 AD 应用和一个服务主体。
+
+你可能会疑惑 - 为什么需要这两个对象？ 在考虑多租户应用程序时，此方法会更合理。通常对软件即服务 (SaaS) 应用程序使用多租户应用程序，其中应用程序在许多不同订阅中运行。对于多租户应用程序，有一个 AD 应用和多个服务主体（授予应用访问权限的每个 Active Directory 中有一个）。若要设置多租户应用程序，请参阅[使用 Azure Resource Manager API 进行授权的开发人员指南](resource-manager-api-authentication.md)。
+
+## 所需的权限
+
+若要完成本主题，必须在 Azure Active Directory 和 Azure 订阅中均具有足够的权限。具体而言，必须能够在 Active Directory 中创建应用并向角色分配服务主体。
+
+在 Active Directory 中，你的帐户必须是管理员（如“全局管理员”或“用户管理员”）。如果帐户分配为“用户”角色，则需要有管理员提升你的权限。
+
+在订阅中，帐户必须拥有[所有者](./active-directory/role-based-access-built-in-roles.md#owner)角色或[用户访问管理员](./active-directory/role-based-access-built-in-roles.md#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。如果你的帐户分配到“参与者”角色，则在尝试向角色分配服务主体时将收到错误。同样，订阅管理员必须向你授予足够的访问权限。
+
+现在转到[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate)身份验证部分。
+
+## 使用密码创建服务主体
+
+在本部分中，将执行步骤以：
+
+- 使用密码创建 AD 应用程序，并创建服务主体
+- 向服务主体分配“读取者”角色
+
+若要快速执行这些步骤，请使用以下命令。
+
+    azure ad sp create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example -p <Your_Password>
+    azure role assignment create --objectId ff863613-e5e2-4a6b-af07-fff6f2de3f4e -o Reader -c /subscriptions/{subscriptionId}/
+
+仔细浏览这些步骤以确保理解该过程。
 
 1. 登录到你的帐户。
 
         azure config mode arm
-        azure login -e AzureChinaCloud
-1. 若要检索当前进行验证的订阅的租户 ID，则不需提供订阅 ID 作为参数。**-r** 开关检索不带引号的值。
+        azure login -e AzureChinacloud
 
-        tenantId=$(azure account show -s <subscriptionId> --json | jq -r '.[0].tenantId')
+1. 创建应用程序的服务主体。提供显示名称、描述应用程序的页面的 URI、标识应用程序的 URI，以及应用程序标识的密码。此命令同时创建 AD 应用程序和服务主体。
 
-现在转到下面的一个部分，了解如何进行[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate)身份验证。
-
-
-## 使用密码创建服务主体
-
-此部分需执行相应步骤，使用密码创建服务主体，然后将其分配给角色。
-
-1. 创建应用程序的服务主体。提供应用程序的显示名称、描述应用程序的页面的 URI（该链接未验证）、标识应用程序的 URI，以及应用程序标识的密码。此命名同时创建 AD 应用程序和服务主体。
-
-        azure ad sp create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example -p <Your_Password>
+        azure ad sp create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example -p {your-password}
         
-    随后将返回新的服务主体。授权时需要使用对象 ID。登录时需提供服务主体名称。
+     对于单租户应用程序，不会验证 URI。
+     
+     如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication\_Unauthorized”或“上下文中找不到订阅”的错误消息。
+    
+     随后将返回新的服务主体。授权时需要使用对象 ID。登录时需提供服务主体名称。
     
         info:    Executing command ad sp create
         + Creating application exampleapp
@@ -67,23 +89,41 @@
         data:                             https://www.contoso.org/example
         info:    ad sp create command OK
 
-2. 向服务主体授予对订阅的权限。在此示例中，需要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。若要分配角色，必须拥有[所有者](/documentation/articles/role-based-access-built-in-roles#owner)角色或[用户访问管理员](/documentation/articles/role-based-access-built-in-roles#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。
+2. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 **ServicePrincipalName** 参数，请提供创建应用程序时使用的 **ObjectId**。
 
         azure role assignment create --objectId ff863613-e5e2-4a6b-af07-fff6f2de3f4e -o Reader -c /subscriptions/{subscriptionId}/
 
-就这么简单！ AD 应用程序和服务主体设置完毕。下部分说明如何通过 Azure CLI 使用凭据登录；但是，如果要在代码应用程序中使用凭据，则不需继续学习此主题。可以跳到[示例应用程序](#sample-applications)，获取使用应用程序 ID 和密码登录的示例。
+     如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明你的帐户**无权执行操作 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/{guid}'**。
+
+就这么简单！ AD 应用程序和服务主体设置完毕。下一部分演示如何通过 Azure CLI 使用凭据进行登录。如果想在代码应用程序中使用凭据，则不需要继续了解本主题。可以跳到[示例应用程序](#sample-applications)，获取使用应用程序 ID 和密码登录的示例。
 
 ### 通过 Azure CLI 提供凭据
 
-1. 至于用户名，可使用创建服务主体时返回的服务主体名称。如果需要检索应用程序 ID，请使用以下命令。在 **search** 参数中提供 Active Directory 应用程序的名称。
+现在，需要以应用程序方式登录以执行相应操作。
 
-        appId=$(azure ad app show --search exampleapp --json | jq -r '.[0].appId')
+1. 以服务主体方式登录时，需提供 AD 应用所在目录的租户 ID。租户是 Active Directory 的实例。若要检索当前已经过身份验证的订阅的租户 ID，请使用：
 
-3. 以服务主体身份登录。
+        azure account show
 
-        azure login -e AzureChinaCloud -u "$appId" --service-principal --tenant "$tenantId"
+     将返回：
 
-    系统将提示你输入密码。提供在创建 AD 应用程序时指定的密码。
+        info:    Executing command account show
+        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
+        data:    ID                          : {guid}
+        data:    State                       : Enabled
+        data:    Tenant ID                   : {guid}
+        data:    Is Default                  : true
+        ...
+
+     如果需要获取另一个订阅的租户 ID，请使用以下命令：
+
+        azure account show -s {subscription-id}
+
+3. 以服务主体方式登录。
+
+        azure login -u https://www.contoso.org/example --service-principal --tenant {tenant-id}
+
+    系统将提示输入密码。提供在创建 AD 应用程序时指定的密码。
 
         info:    Executing command login
         Password: ********
@@ -92,7 +132,12 @@
 
 ## 使用证书创建服务主体
 
-本部分需执行相关步骤，为使用证书进行身份验证的服务主体创建服务主体。
+在本部分中，将执行步骤以：
+
+- 创建自签名证书
+- 使用证书创建 AD 应用程序，并创建服务主体
+- 向服务主体分配“读取者”角色
+
 若要完成这些步骤，必须已安装 [OpenSSL](http://www.openssl.org/)。
 
 1. 创建自签名证书。
@@ -103,13 +148,22 @@
 
         cat privkey.pem cert.pem > examplecert.pem
 
-3. 打开 **examplecert.pem** 文件并复制证书数据。查找 **-----BEGIN CERTIFICATE-----** 和 **-----END CERTIFICATE-----** 之间的长字符序列。
+3. 打开 **examplecert.pem** 文件并查找 **-----BEGIN CERTIFICATE-----** 和 **-----END CERTIFICATE-----** 之间的长字符序列。复制证书数据。创建服务主体时将此数据作为参数传递。
 
-1. 创建应用程序的服务主体。提供上一步返回的应用程序 ID。
+1. 登录到你的帐户。
+
+        azure config mode arm
+        azure login -e AzureChinaCloud
+
+1. 创建应用程序的服务主体。提供显示名称、描述应用程序的页面的 URI、标识应用程序的 URI，以及复制的证书数据。此命令同时创建 AD 应用程序和服务主体。
 
         azure ad sp create -n "exampleapp" --home-page "https://www.contoso.org" -i "https://www.contoso.org/example" --key-value <certificate data>
         
-    随后将返回新的服务主体。授权时需要使用对象 ID。
+     对于单租户应用程序，不会验证 URI。
+     
+     如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication\_Unauthorized”或“上下文中找不到订阅”的错误消息。
+    
+     随后将返回新的服务主体。授权时需要使用对象 ID。
     
         info:    Executing command ad sp create
         - Creating service principal for application 4fd39843-c338-417d-b549-a545f584a74+
@@ -120,43 +174,81 @@
         data:                      https://www.contoso.org/example
         info:    ad sp create command OK
         
-2. 向服务主体授予对订阅的权限。在此示例中，需要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。若要分配角色，必须拥有[所有者](/documentation/articles/role-based-access-built-in-roles#owner)角色或[用户访问管理员](/documentation/articles/role-based-access-built-in-roles#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。
+2. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 **ServicePrincipalName** 参数，请提供创建应用程序时使用的 **ObjectId**。
 
         azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 
+     如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明你的帐户**无权执行操作 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/{guid}'**。
+
 ### 通过自动执行的 Azure CLI 脚本提供证书
 
-若要使用 Azure CLI 进行身份验证，请提供证书指纹、证书文件、应用程序 ID 和租户 ID。
+现在，需要以应用程序方式登录以执行相应操作。
 
-    azure login --service-principal --tenant 00000 -u 000000 --certificate-file C:\certificates\examplecert.pem --thumbprint 000000
+1. 以服务主体方式登录时，需提供 AD 应用所在目录的租户 ID。租户是 Active Directory 的实例。若要检索当前已经过身份验证的订阅的租户 ID，请使用：
 
-现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
+        azure account show
 
-若需检索证书指纹并删除不需要的字符，请使用：
+     将返回：
 
-    openssl x509 -in "C:\certificates\examplecert.pem" -fingerprint -noout | sed 's/SHA1 Fingerprint=//g'  | sed 's/://g'
+        info:    Executing command account show
+        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
+        data:    ID                          : {guid}
+        data:    State                       : Enabled
+        data:    Tenant ID                   : {guid}
+        data:    Is Default                  : true
+        ...
+
+     如果需要获取另一个订阅的租户 ID，请使用以下命令：
+
+        azure account show -s {subscription-id}
+
+1. 若要检索证书指纹并删除不需要的字符，请使用：
+
+        openssl x509 -in "C:\certificates\examplecert.pem" -fingerprint -noout | sed 's/SHA1 Fingerprint=//g'  | sed 's/://g'
     
-它返回的指纹值类似于：
+     它返回的指纹值类似于：
 
-    30996D9CE48A0B6E0CD49DBB9A48059BF9355851
+        30996D9CE48A0B6E0CD49DBB9A48059BF9355851
 
-若需检索应用程序 ID，请使用：
+1. 以服务主体方式登录。
 
-    azure ad app show --search exampleapp --json | jq -r '.[0].appId'
-
-### 通过自动执行的 Azure CLI 脚本提供证书
-
-你已创建 Active Directory 应用程序并为该应用程序创建服务主体。你已向角色分配服务主体。现在，你需要以服务主体身份登录，以便以服务主体身份执行操作。
-
-若要使用 Azure CLI 进行身份验证，请提供证书指纹、证书文件、应用程序 ID 和租户 ID。
-
-        azure login -e AzureChinaCloud --service-principal --tenant {tenant-id} -u {app-id} --certificate-file C:\certificates\examplecert.pem --thumbprint {thumbprint}
+        azure login --service-principal --tenant {tenant-id} -u https://www.contoso.org/example --certificate-file C:\certificates\examplecert.pem --thumbprint {thumbprint}
 
 现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
+
+## 示例应用程序
+
+以下示例应用程序演示如何以服务主体身份登录。
+
+**.NET**
+
+- [在 .NET 中使用模板部署启用 SSH 的 VM](https://azure.microsoft.com/documentation/samples/resource-manager-dotnet-template-deployment/)
+- [使用 .NET 管理 Azure 资源和资源组](https://azure.microsoft.com/documentation/samples/resource-manager-dotnet-resources-and-groups/)
+
+**Java**
+
+- [资源入门 - 在 Java 中使用 Azure Resource Manager 模板部署资源](https://azure.microsoft.com/documentation/samples/resources-java-deploy-using-arm-template/)
+- [资源入门 - 在 Java 中管理资源组](https://azure.microsoft.com/documentation/samples/resources-java-manage-resource-group//)
+
+**Python**
+
+- [在 Python 中使用模板部署启用 SSH 的 VM](https://azure.microsoft.com/documentation/samples/resource-manager-python-template-deployment/)
+- [使用 Python 管理 Azure 资源和资源组](https://azure.microsoft.com/documentation/samples/resource-manager-python-resources-and-groups/)
+
+**Node.js**
+
+- [在 Node.js 中使用模板部署启用 SSH 的 VM](https://azure.microsoft.com/documentation/samples/resource-manager-node-template-deployment/)
+- [使用 Node.js 管理 Azure 资源和资源组](https://azure.microsoft.com/documentation/samples/resource-manager-node-resources-and-groups/)
+
+**Ruby**
+
+- [在 Ruby 中使用模板部署启用 SSH 的 VM](https://azure.microsoft.com/documentation/samples/resource-manager-ruby-template-deployment/)
+- [使用 Ruby 管理 Azure 资源和资源组](https://azure.microsoft.com/documentation/samples/resource-manager-ruby-resources-and-groups/)
+
 
 ## 后续步骤
   
 - 有关将应用程序集成到 Azure 以管理资源的详细步骤，请参阅 [Developer's guide to authorization with the Azure Resource Manager API](/documentation/articles/resource-manager-api-authentication/)（使用 Azure Resource Manager API 进行授权的开发人员指南）。
 - 若要获取有关使用证书和 Azure CLI 的详细信息，请参阅[从 Linux 命令行对 Azure 服务主体进行基于证书的身份验证](http://blogs.msdn.com/b/arsen/archive/2015/09/18/certificate-based-auth-with-azure-service-principals-from-linux-command-line.aspx)。
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1017_2016-->

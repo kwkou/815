@@ -20,7 +20,7 @@
     	using System.Threading;
     	using Microsoft.ServiceBus.Messaging;
 
-5. 将以下字段添加到 **Program** 类，从而将占位符值分别替换为你在上一节中创建的事件中心的名称和连接字符串。
+5. 将以下字段添加到 **Program** 类，并将占位符值分别替换为你在上一节中创建的事件中心的名称和连接字符串。
 
     	static string eventHubName = "{Event Hub name}";
     	static string connectionString = "{send connection string}";

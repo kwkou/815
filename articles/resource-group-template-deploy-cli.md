@@ -1,4 +1,3 @@
-<!-- Temporarily remove REST API, 3rd round on -->
 <properties
    pageTitle="使用 Azure CLI 和模板部署资源 | Azure"
    description="使用 Azure Resource Manager 和 Azure CLI 将资源部署到 Azure。资源在 Resource Manager 模板中定义。"
@@ -6,43 +5,46 @@
    documentationCenter="na"
    authors="tfitzmac"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"/>  
+
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="07/11/2016"
-   wacn.date="08/15/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/15/2016"
+   wacn.date="10/24/2016"/>  
+
 
 # 使用 Resource Manager 模板和 Azure CLI 部署资源
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/resource-group-template-deploy)
-- [Azure CLI](/documentation/articles/resource-group-template-deploy-cli)
-- [REST API](/documentation/articles/resource-group-template-deploy-rest)
-<!--
-- [门户](/documentation/articles/resource-group-template-deploy-portal)
-- [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)
--->
+- [PowerShell](/documentation/articles/resource-group-template-deploy/)
+- [Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)
+- [门户](/documentation/articles/resource-group-template-deploy-portal/)
+- [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 
 本主题介绍如何将 Azure CLI 与 Resource Manager 模板配合使用向 Azure 部署资源。
 
 > [AZURE.TIP] 有关在部署过程中调试错误的帮助，请参阅：
 >
-> - [使用 Azure CLI 查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)，以了解如何获取有助于排查错误的信息
-> - [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，以了解如何解决常见的部署错误
+> - [使用 Azure CLI 查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)，了解如何获取有助于排查错误的信息
+> - [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，了解如何解决常见的部署错误
 
 你的模板可以是本地文件或是可通过 URI 访问的外部文件。如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
 
 ## 快速部署步骤
 
-本文介绍了部署过程中可用的所有不同选项。但是，通常你只需要两个简单的命令。若要快速开始进行部署，请使用以下命令：
+本文介绍了部署过程中可用的所有不同选项。但是，通常只需要两个简单的命令。若要快速开始进行部署，请使用以下命令：
 
     azure group create -n ExampleResourceGroup -l "China East"
     azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
 
 若要了解有关更适合于你的应用场景的部署选项的详细信息，请继续阅读本文。
 
-[AZURE.INCLUDE [resource-manager-deployments](../../includes/resource-manager-deployments.md)]
+[AZURE.INCLUDE [resource-manager-deployments](../includes/resource-manager-deployments.md)]
 
 ## 使用 Azure CLI 进行部署
 
@@ -59,15 +61,17 @@
 
         azure account set <YourSubscriptionNameOrId>
 
-3. 切换到 Azure 资源管理器模块。你将收到新模式确认。
+3. 切换到 Azure 资源管理器模块。将收到新模式确认。
 
         azure config mode arm
    
         info:     New mode is arm
 
-4. 如果目前没有资源组，请创建新的资源组。提供资源组的名称，以及解决方案所需的位置。将返回新资源组的摘要。
+4. 如果目前没有资源组，请创建资源组。提供资源组的名称，以及解决方案所需的位置。需要提供资源组的位置，因为资源组存储与资源有关的元数据。出于合规性原因，你可能会想要指定该元数据的存储位置。一般情况下，建议指定大部分资源将驻留的位置。使用相同位置可简化模板。
 
         azure group create -n ExampleResourceGroup -l "China East"
+
+     将返回新资源组的摘要。
    
         info:    Executing command group create
         + Getting resource group ExampleResourceGroup
@@ -85,7 +89,7 @@
 
         azure group template validate -f <PathToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup
 
-5. 若要为资源组创建新部署，请运行以下命令并提供所需的参数。参数包括部署的名称、资源组的名称、所创建模板的路径，以及方案所需的任何其他参数。
+5. 若要为资源组部署资源，请运行以下命令并提供所需的参数。参数包括部署的名称、资源组的名称、模板的路径或 URL，以及方案所需的任何其他参数。
    
      可以使用以下三个选项提供参数值：
 
@@ -101,7 +105,7 @@
     
             azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
 
-     通过上述 3 种方法之一部署资源后，你将看到部署的摘要。
+     通过上述三种方法之一部署资源后，你将看到部署的摘要。
   
         info:    Executing command group deployment create
         + Initializing template configurations and parameters
@@ -127,11 +131,11 @@
 
 以下步骤用于为模板设置存储帐户：
 
-1. 创建新的资源组。
+1. 创建资源组。
 
         azure group create -n "ManageGroup" -l "chinaeast"
 
-2. 新建存储帐户。存储帐户名称必须在 Azure 中唯一，因此，请为帐户提供自己的名称。
+2. 创建存储帐户。存储帐户名称必须在 Azure 中唯一，因此，请为帐户提供自己的名称。
 
         azure storage account create -g ManageGroup -l "westus" --sku-name LRS --kind Storage storagecontosotemplates
 
@@ -140,7 +144,7 @@
         export AZURE_STORAGE_ACCOUNT=storagecontosotemplates
         export AZURE_STORAGE_ACCESS_KEY={storage_account_key}
 
-4. 创建新容器。权限设置为“关闭”，这意味着只有所有者可以访问该容器。
+4. 创建容器。权限设置为“关闭”，这意味着只有所有者可以访问该容器。
 
         azure storage container create --container templates -p Off 
         
@@ -161,9 +165,9 @@
 
         azure group deployment create --template-uri $fullurl -g ExampleResourceGroup
 
-有关将 SAS 令牌与链接模板配合使用的示例，请参阅[《Using linked templates with Azure Resource Manager》](/documentation/articles/resource-group-linked-templates/)（将链接模板与 Azure Resource Manager 配合使用）。
+有关将 SAS 令牌与链接模板配合使用的示例，请参阅[将已链接的模版与 Azure Resource Manager 配合使用](/documentation/articles/resource-group-linked-templates/)。
 
-[AZURE.INCLUDE [resource-manager-parameter-file](../../includes/resource-manager-parameter-file.md)]
+[AZURE.INCLUDE [resource-manager-parameter-file](../includes/resource-manager-parameter-file)]
 
 ## 后续步骤
 - 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/virtual-machines-windows-csharp-template/)。
@@ -171,4 +175,4 @@
 - 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments/)。
 - 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1017_2016-->

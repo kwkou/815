@@ -1,17 +1,23 @@
 <properties
-   pageTitle="了解你的 Azure 帐单"
-   description="了解你的 Azure 帐单"
+   pageTitle="了解你的帐单 | Azure"
+   description="了解如何阅读并理解 Azure 订阅的使用情况和计费"
    services=""
-   documentationCenter="Azure"
+   documentationCenter=""
    authors="erihur"
    manager="stevenpo"
    editor=""
-   tags="billing"/>
+   tags="billing"/>  
+
 
 <tags
    ms.service="billing"
-   ms.date="07/21/2016"
-   wacn.date="09/26/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/13/2016"
+   wacn.date="10/24/2016"/>  
+
 
 
 # 了解你的 Azure 帐单
@@ -98,4 +104,4 @@ ResourceGuid | 计费测定仪标识符。此标识符用于进行计费使用�
 
 <!--Image references-->
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_1017_2016-->

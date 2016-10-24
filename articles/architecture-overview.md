@@ -1,16 +1,22 @@
 <properties 
-	pageTitle="Azure 上的应用程序体系结构" 
+	pageTitle="Azure 上的应用程序体系结构 | Azure" 
 	description="包括常见设计模式的体系结构概述" 
 	services="" 
 	documentationCenter="" 
 	authors="Rboucher" 
 	manager="jwhit" 
-	editor="mattshel"/>
+	editor="mattshel"/>  
+
 
 <tags 
 	ms.service="multiple" 
-	ms.date="05/19/2016" 
-	wacn.date="07/25/2015"/>
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/13/2016" 
+	wacn.date="10/24/2016"/>  
+
 
 #Azure 上的应用程序体系结构
 用于构建使用 Azure 的应用程序的资源。这包括一些工具，帮助您画图以直观地描述软件系统。
@@ -23,39 +29,37 @@ Microsoft 模式与实践部门已发布了[云设计模式](http://msdn.microso
 
 ##Microsoft 体系结构认证课程
 
-Microsoft 刚刚发布了支持 Microsoft 认证考试 70-534 的新的体系结构课程。在 [EDX.ORG 上免费提供](https://www.edx.org/course/architecting-microsoft-azure-solutions-microsoft-dev205x)。使用新的 [3D Blueprint Visio Template](#3d-blueprint-visio-template)。
+Microsoft 创建了支持 Microsoft 认证考试 70-534 的体系结构课程。在 [EDX.ORG 上免费提供](https://www.edx.org/course/architecting-microsoft-azure-solutions-microsoft-dev205x)。它使用 [3D Blueprint Visio 模板](#3d-blueprint-visio-template)。
 
-![Microsoft 体系结构认证课程](./media/architecture-overview/EDXCourse.png)
+![Microsoft 体系结构认证课程](./media/architecture-overview/EDXCourse.png)  
 
 
-##Microsoft 体系结构蓝图
 
-Microsoft 发布了一套高级别的 [体系结构蓝图](http://aka.ms/azblueprints)，介绍如何使用 Microsoft 产品构建特定类型的系统。
+##Microsoft 解决方案
 
-每个蓝图包含一个
+Microsoft 发布了一套高级别的[解决方案体系结构](http://aka.ms/azblueprints)，介绍如何使用 Microsoft 产品构建特定类型的系统。
 
-- 平面的基于**2D Visio** 2003 的文件，供你下载和修改
-- 彩色 **3D perspective PDF** 文件为较少的技术受众介绍蓝图
-- **Video** 通过 3D 版本运行。
+之前，Microsoft 发布了一组展示示例体系结构的蓝图。它们已替换为前面提到的解决方案体系结构，并已将该蓝图链接重定向为指向这些体系结构。如果出于某种原因，需访问之前的蓝图材料，请发送电子邮件到 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com) 说明请求。
 
-该蓝图使用[云和企业符号集](#symbol-and-icon-sets)。
+蓝图和解决方案体系结构图都会使用部分[云和企业符号集](#Drawing-symbol-and-icon-sets)。
 
-![Microsoft 体系结构蓝图 3D 图](./media/architecture-overview/BluePrintThumb.jpg)
+![Microsoft 体系结构蓝图 3D 图](./media/architecture-overview/BluePrintThumb.jpg)  
+
 
 
 
 ##3D Blueprint Visio Template
 
-3D 版 [Microsoft 体系结构蓝图](http://aka.ms/azblueprints)最初在非 Microsoft 工具中创建。新的 Visio 2013（和更高版本）模板于 2015 年 8 月 5 日发布，作为 [Microsoft 体系结构认证课程的一部分，分发在 EDX.ORG 上](#microsoft-architecture-certification-course)。
+3D 版 [Microsoft 体系结构蓝图](http://aka.ms/azblueprints)最初在非 Microsoft 工具中创建，现在已失效。Visio 2013（和更高版本）模板于 2015 年 8 月 5 日发布，作为 [Microsoft 体系结构认证课程的一部分，分发在 EDX.ORG 上](#microsoft-architecture-certification-course)。
 
 该模板在本课程外也可用。
 
 - 下载 [Microsoft 3d Blueprint Visio Template](http://aka.ms/3DBlueprintTemplate)
 - 下载与 3D 模板配合使用的[云和企业符号](#drawing-symbol-and-icon-sets)
 
-提供反馈，或者需要提培训材料无法答复的具体问题，请发邮件至 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com)。可用性是模板的主要目标之一，让我们了解其优点和缺点
+提供反馈，或者需要提培训材料无法答复的具体问题，请发邮件至 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com)。该模板不再处于积极开发阶段，但仍具有用途和相关性，因为它可以使用任何 PNG 或更新的[云和企业符号](#drawing-symbol-and-icon-sets)。
 
-![Microsoft 3D Blueprint Visio Template](./media/architecture-overview/3DBlueprintVisioTemplate.jpg)
+![Microsoft 3D Blueprint Visio Template](./media/architecture-overview/3DBlueprintVisioTemplate.jpg)  
 
 
 
@@ -63,7 +67,7 @@ Microsoft 发布了一套高级别的 [体系结构蓝图](http://aka.ms/azbluep
 
 [下载云和企业符号集](http://aka.ms/CnESymbols)来帮助创建描述 Azure、Windows Server 和 SQL Server 等的技术资料。如果此书培训用户如何使用 Microsoft 产品，您可以使用体系结构图的符号、培训材料、演示文稿、数据表、信息图、白皮书和甚至是第三方书籍。但是，它们并不适合在用户界面中使用。
 
-CnE 符号采用 Visio 和 PNG 格式。有关如何在 PowerPoint 中使用 PNG 的其他说明包括在集中。
+CnE 符号采用 Visio、SVG 和 PNG 格式。有关如何在 PowerPoint 中轻松使用符号的其他说明包括在集中。
 
 符号集按季度发布，一旦新服务发布就会更新。
 
@@ -71,7 +75,7 @@ Microsoft Office 和相关技术的其他符号可在 [Microsoft Office Visio st
 
 **反馈：**如果你曾经使用过 CnE 符号，请填写 5 个简短的[调查](http://aka.ms/azuresymbolssurveyv2)问题，如果有具体的问题或事宜需要咨询，请发电子邮件至 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com)。我们想知道您的想法，包括积极的反馈，以便我们知道可以继续对其投入时间。
 
-![云和企业符号/图标集](./media/architecture-overview/CnESymbols.png)
+![云和企业符号/图标集](./media/architecture-overview/CnESymbols.png)  
 
 
 ##体系结构信息图
@@ -80,4 +84,4 @@ Microsoft 发布了几个与体系结构相关的海报/信息图。它们包括
 
 ![Azure 体系结构信息图](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1017_2016-->
