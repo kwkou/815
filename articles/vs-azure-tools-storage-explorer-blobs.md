@@ -1,7 +1,7 @@
 <properties
 	pageTitle="使用存储资源管理器（预览版）管理 Azure Blob 存储资源 | Azure"
 	description="使用存储资源管理器（预览版）管理 Azure Blob 容器和 Blob"
-	services="visual-studio-online"
+	services="storage"
 	documentationCenter="na"
 	authors="TomArcher"
 	manager="douge"
@@ -9,9 +9,13 @@
 
 
  <tags
-	ms.service="visual-studio-online"
-	ms.date="07/14/2016"
-	wacn.date="08/22/2016" />
+	ms.service="storage"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/17/2016"
+	wacn.date="10/24/2016" />
 
 # 使用存储资源管理器（预览版）管理 Azure Blob 存储资源
 
@@ -56,8 +60,7 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 1.	打开存储资源管理器（预览版）。
 1.	在左窗格中，展开包含你想要查看的 Blob 容器的存储帐户。
 1.	展开存储帐户的“Blob 容器”。
-1.	右键单击你想要查看的 Blob 容器，然后从上下文菜单中选择“打开 Blob 容器编辑器”。
-也可双击你想要查看的 Blob 容器。
+1.	右键单击你想要查看的 Blob 容器，然后从上下文菜单中选择“打开 Blob 容器编辑器”。也可双击你想要查看的 Blob 容器。
 
 	![“打开 Blob 容器编辑器”上下文菜单][19]
 
@@ -74,8 +77,7 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 1.	打开存储资源管理器（预览版）。
 1.	在左窗格中，展开包含你想要查看的 Blob 容器的存储帐户。
 1.	展开存储帐户的“Blob 容器”。
-1.	右键单击你想要删除的 Blob 容器，然后从上下文菜单中选择“删除”。
-也可通过按“删除”来删除当前选定的 Blob 容器。
+1.	右键单击你想要删除的 Blob 容器，然后从上下文菜单中选择“删除”。也可通过按“删除”来删除当前选定的 Blob 容器。
 
 	![“删除 Blob 容器”上下文菜单][4]
 
@@ -120,8 +122,7 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 
 1.	指定完 SAS 选项以后，选择“创建”。
 
-1.	然后会显示第二个“共享访问签名”对话框，其中列出了可用来访问存储资源的 Blob 容器以及 URL 和 QueryString。
-选择要复制到剪贴板的 URL 旁边的“复制”。
+1.	然后会显示第二个“共享访问签名”对话框，其中列出了可用来访问存储资源的 Blob 容器以及 URL 和 QueryString。选择要复制到剪贴板的 URL 旁边的“复制”。
 
 	![复制 SAS URL][10]
 
@@ -279,4 +280,4 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 [18]: ./media/vs-azure-tools-storage-explorer-blobs/blob-upload-folder-options.png
 [19]: ./media/vs-azure-tools-storage-explorer-blobs/blob-container-open-editor-context-menu.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1017_2016-->
