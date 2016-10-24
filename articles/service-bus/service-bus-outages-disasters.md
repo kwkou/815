@@ -5,15 +5,21 @@
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" /> 
+   editor="tysonn" />  
+ 
 <tags 
-   ms.service="service-bus"
-    ms.date="05/06/2016"
-   wacn.date="08/15/2016" />
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/02/2016"
+    ms.author="sethm"
+    wacn.date="10/24/2016"/>  
 
 # 使应用程序免受服务总线中断和灾难影响的最佳实践
 
-任务关键型应用程序必须连续运行，即使是在计划外中断或灾难发生时。本主题介绍可用于保护服务总线应用程序免受潜在的中断和灾难影响的技术。
+任务关键型应用程序必须连续运行，即使是在计划外中断或灾难发生时。本主题介绍可用于保护服务总线应用程序免受潜在的服务中断和灾难影响的技术。
 
 中断定义为 Azure 服务总线暂时不可用。中断会影响服务总线的一些组件，例如消息存储空间，甚至整个数据中心。问题解决后，服务总线将恢复可用。通常情况下，中断不会导致消息或其他数据丢失。组件故障的一个示例是特定的消息存储空间不可用。数据中心范围中断的示例有数据中心电源故障或数据中心网络交换机故障。中断可能会持续几分钟到几天的时间。
 
@@ -81,14 +87,6 @@
 
 [使用服务总线中转消息进行异地复制][]示例演示了消息传送实体的被动复制。
 
-## 持久客户端队列
-
-如果应用程序可以容忍服务总线实体不可用（但不得丢失消息），则发送方可以使用一个持久客户端队列，将无法发送到服务总线的消息存储到本地。一旦服务总线实体恢复可用，将向该实体发送所有已缓冲消息。[持久消息发送方][]示例在 MSMQ 的协助下实现此类队列。或者，可以将消息写入本地磁盘。
-
-当服务总线实体不可用时，持久客户端队列将保存消息顺序并保护客户端应用程序免受异常影响。可将它用于简单的分布式事务。
-
-> [AZURE.NOTE] 此示例在基础结构即服务 (IaaS) 方案中正常工作，在这些方案中，本地磁盘或 MSMQ 的磁盘映射到存储帐户，并且消息使用 MSMQ 可靠地存储。此示例不适合平台即服务 (PaaS) 方案，例如云服务和 Web 应用程序。
-
 ## 后续步骤
 
 若要了解有关灾难恢复的详细信息，请参阅这些文章：
@@ -98,14 +96,12 @@
 
   [服务总线身份验证]: /documentation/articles/service-bus-authentication-and-authorization/
   [分区消息实体]: /documentation/articles/service-bus-partitioning/
-  [异步消息传送模式和高可用性]: /documentation/articles/service-bus-async-messaging/
+  [异步消息传送模式和高可用性]: /documentation/articles/service-bus-async-messaging/#failure-of-service-bus-within-an-azure-datacenter
   [使用服务总线中继消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-16dbfecd
   [BrokeredMessage.MessageId]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx
   [BrokeredMessage.Label]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx
   [使用服务总线中转消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-f5688664
-  [持久消息发送方]: http://code.msdn.microsoft.com/Service-Bus-Durable-Sender-0763230d
-  [Azure SQL 数据库业务连续性]: /documentation/articles//sql-database-business-continuity
+  [Azure SQL 数据库业务连续性]: /documentation/articles/sql-database-business-continuity/
   [Azure 复原技术指南]: /documentation/articles/resiliency-technical-guidance/
-  [Azure 业务连续性技术指南]: https://msdn.microsoft.com/zh-cn/library/azure/hh873027.aspx
 
 <!---HONumber=74-->

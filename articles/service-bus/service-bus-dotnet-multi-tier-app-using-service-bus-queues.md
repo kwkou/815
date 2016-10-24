@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="05/27/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="09/01/2016"
+	wacn.date="10/24/2016"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 

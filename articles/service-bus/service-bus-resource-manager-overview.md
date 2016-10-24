@@ -5,12 +5,19 @@
     documentationCenter=".net"
     authors="sethmanheim"
     manager="timlt"
-    editor=""/>
+    editor=""/>  
+
 
 <tags
     ms.service="service-bus"
+    ms.devlang="tbd"
+    ms.topic="article"
+    ms.tgt_pltfrm="dotnet"
+    ms.workload="na"
     ms.date="07/11/2016"
-    wacn.date="08/15/2016"/>
+    ms.author="sethm"
+    wacn.date="10/24/2016"/>  
+
 
 # 使用 Azure Resource Manager 模板创建服务总线资源
 
@@ -18,7 +25,7 @@
 
 Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源，以及指定可用于为不同环境输入值的参数和变量。模板中包含可用于构造部署值的 JSON 和表达式。有关编写 Azure Resource Manager 模板的详细信息，以及模板格式的讨论，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
 
->[AZURE.NOTE] 本文中的示例演示如何使用 Azure Resource Manager 来创建服务总线命名空间和消息实体（队列）。<!-- For other template examples, visit the [Azure Quickstart Templates gallery][] and search for "Service Bus." -->
+>[AZURE.NOTE] 本文中的示例演示如何使用 Azure Resource Manager 来创建服务总线命名空间和消息实体（队列）。
 
 ## 服务总线和事件中心 Resource Manager 模板
 
@@ -28,7 +35,7 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 - [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
 - [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
 - [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
-- [创建包含事件中心和使用者组的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-event-hub/)
+- [创建包含事件中心和使用者组的事件中心命名空间](/documentation/articles/event-hubs-resource-manager-namespace-event-hub/)
 
 ## 使用 PowerShell 进行部署
 

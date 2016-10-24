@@ -5,12 +5,18 @@
     documentationCenter=".net"
     authors="sethmanheim"
     manager="timlt"
-    editor=""/>
+    editor=""/>  
+
 
 <tags
     ms.service="service-bus"
+    ms.devlang="tbd"
+    ms.topic="article"
+    ms.tgt_pltfrm="dotnet"
+    ms.workload="na"
     ms.date="07/11/2016"
-    wacn.date="08/15/2016"/>
+    ms.author="sethm;shvija"
+    wacn.date="10/24/2016"/>  
 
 # 使用 Azure Resource Manager 模板创建包含主题和订阅的服务总线命名空间
 
@@ -23,11 +29,11 @@
 >[AZURE.NOTE] 以下 Azure Resource Manager 模板可供下载和部署。
 >
 >-    [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
->-    [创建包含事件中心和使用者组的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-event-hub/)
 >-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
->-    [创建服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace/)
+>-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace/)
+>-    [创建包含事件中心和使用者组的事件中心命名空间](/documentation/articles/event-hubs-resource-manager-namespace-event-hub/)
 >
->若要检查最新模板，请访问 [Azure 快速入门模板][] 库并搜索服务总线。
+>若要检查最新模板，请访问 [Azure 快速启动模板][]库并搜索服务总线。
 
 ## 你将部署什么内容？
 
@@ -39,7 +45,7 @@
 
 [![部署到 Azure](./media/service-bus-resource-manager-namespace-topic/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-servicebus-create-topic-and-subscription%2Fazuredeploy.json)
 
-## Parameters
+## 参数
 
 使用 Azure 资源管理器，可以定义在部署模板时想要指定的值的参数。该模板具有一个名为 `Parameters` 的部分，其中包含所有参数值。你应该为随着要部署的项目或要部署到的环境而变化的值定义参数。不要为永远保持不变的值定义参数。每个参数值可在模板中用来定义所部署的资源。
 
@@ -86,7 +92,7 @@
 ```
 ## 要部署的资源
 
-创建类型为“Messaging”的包含主题和订阅的标准服务总线命名空间。
+创建类型为 **Messaging** 的包含主题和订阅的标准服务总线命名空间。
 
 ```
 "resources ": [{
@@ -150,6 +156,7 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 
 
   [创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates/
+  [Azure 快速启动模板]: https://azure.microsoft.com/documentation/templates/?term=service+bus
   [Learn more about Service Bus topics and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [Using Azure PowerShell with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager/
   [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/
