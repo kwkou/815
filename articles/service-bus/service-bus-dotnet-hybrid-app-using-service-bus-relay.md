@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="05/23/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="09/16/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用 Azure 服务总线中继创建 .NET 本地/云混合应用程序
 

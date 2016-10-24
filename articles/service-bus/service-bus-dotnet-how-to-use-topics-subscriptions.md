@@ -9,8 +9,8 @@
 
 <tags
     ms.service="service-bus"
-    ms.date="05/06/2016"
-    wacn.date="07/25/2016"/>
+    ms.date="09/16/2016"
+    wacn.date="10/24/2016"/>
 
 # 如何使用服务总线主题和订阅
 

@@ -1,27 +1,34 @@
 <properties 
-   pageTitle="分区消息传送实体 | Azure"
-   description="介绍如何使用多个消息中转站对消息传递实体进行分区。"
-   services="service-bus"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-    editor="" /> 
+    pageTitle="分区的队列和主题 | Azure"
+    description="介绍如何使用多个消息中转站对服务总线队列和主题进行分区。"
+    services="service-bus"
+    documentationCenter="na"
+    authors="sethmanheim"
+    manager="timlt"
+    editor="" />  
+ 
 <tags 
-   ms.service="service-bus"
-    ms.date="07/01/2016"
-   wacn.date="08/15/2016" />
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/02/2016"
+    ms.author="sethm;hillaryc"
+    wacn.date="10/24/2016"/>  
 
-# 分区消息传送实体
 
-Azure 服务总线使用多个消息中转站来处理消息，并用多个消息传送存储来存储消息。传统的队列或主题由单个消息中转站进行处理并存储在一个消息传送存储中。服务总线还允许跨多个消息中转站和消息传送存储对队列或主题进行分区。这意味着分区的队列或主题的总吞吐量不再受到单个消息中转站或消息传送存储的性能所限制。此外，消息传送存储的临时中断不会导致分区的队列或主题不可用。分区的队列和主题可以包含所有先进的服务总线功能，如事务和会话支持。
+# 分区的队列和主题
+
+Azure 服务总线使用多个消息中转站来处理消息，并用多个消息传送存储来存储消息。传统的队列或主题由单个消息中转站进行处理并存储在一个消息存储中。服务总线还允许跨多个消息中转站和消息存储对队列或主题进行分区。这意味着分区的队列或主题的总吞吐量不再受到单个消息中转站或消息存储的性能所限制。此外，消息传送存储的临时中断不会导致分区的队列或主题不可用。分区的队列和主题可以包含所有先进的服务总线功能，如事务和会话支持。
 
 有关服务总线内部的更多详细信息，请参阅[服务总线体系结构][]主题。
 
-## 分区的队列和主题
+## 工作原理
 
 每个分区的队列或主题由多个片段构成。每个片段存储在不同的消息传送存储中并由不同的消息中转站进行处理。当向分区的队列或主题发送消息时，服务总线会将该消息分配到其中一个片段。选择是通过服务总线或发送方可以指定的分区键随机完成的。
 
-当客户端想要从分区队列或从分区主题的订阅接收消息时，服务总线查询所有片段以获取消息，然后将自任何消息传送存储获取的第一条消息返回到接收方。服务总线缓存其他消息并在收到其他接收请求时将它们返回。接收客户端无法识别分区；分区队列或主题的面向客户端的行为（例如，读取、完成、延迟、死信、预提取）与常规实体行为相同。
+当客户端想要从分区队列或从分区主题的订阅接收消息时，服务总线查询所有片段以获取消息，然后将自任何消息存储获取的第一条消息返回到接收方。服务总线缓存其他消息并在收到其他接收请求时将它们返回。接收客户端无法识别分区；分区队列或主题的面向客户端的行为（例如，读取、完成、延迟、死信、预提取）与常规实体行为相同。
 
 向分区队列或主题发送一条消息，或从分区队列或主题接收消息时无需额外付费。
 
@@ -29,9 +36,9 @@ Azure 服务总线使用多个消息中转站来处理消息，并用多个消�
 
 若要将分区队列和主题用于 Azure 服务总线，请使用 Azure SDK 2.2 版或更高版本，或在 HTTP 请求中指定 `api-version=2013-10`。
 
-你可以创建 1、2、3、4 或 5 GB 大小的服务总线队列和主题（默认值为 1 GB）。启用分区时，服务总线将为指定的每份大小创建 16 个分区。因此，如果你创建了一个大小为 5 GB 的队列，共有 16 个分区，最大队列大小为 (5 * 16) = 80 GB。可以通过在 [Azure 经典管理门户][]上查看分区队列或主题的条目，来了解该队列或主题的最大大小。
+你可以创建 1、2、3、4 或 5 GB 大小的服务总线队列和主题（默认值为 1 GB）。启用分区时，服务总线将为指定的每份大小创建 16 个分区。因此，如果你创建了一个大小为 5 GB 的队列，共有 16 个分区，最大队列大小为 (5 * 16) = 80 GB。可以通过在 [Azure 经典管理门户][]中查看分区队列或主题的条目，来了解该队列或主题的最大大小。
 
-有多种方法可以创建分区的队列或主题。当从你的应用程序中创建队列或主题时，可以通过分别将 [QueueDescription.EnablePartitioning][] 或 [TopicDescription.EnablePartitioning][] 属性设置为 **true** 来启用队列或主题的分区。这些属性必须在队列或主题创建时设置。不可能更改现有队列或主题上的这些属性。例如：
+有多种方法可以创建分区的队列或主题。当从你的应用程序中创建队列或主题时，可以通过分别将 [QueueDescription.EnablePartitioning][] 或 [TopicDescription.EnablePartitioning][] 属性设置为 **true** 来启用队列或主题的分区。这些属性必须在队列或主题创建时设置。无法更改现有队列或主题上的这些属性。例如：
 
 ```
 // Create partitioned topic
@@ -41,13 +48,13 @@ td.EnablePartitioning = true;
 ns.CreateTopic(td);
 ```
 
-或者，你可以在 Visual Studio 中或在 [Azure 经典管理门户][]中创建分区的队列或主题。当在门户中创建新的队列或主题时，请选中队列或主题窗口的“配置”选项卡中的“启用分区”选项。在 Visual Studio 中，单击“新队列”或“新主题”对话框中的“启用分区”复选框。
+或者，可以在 Visual Studio 中或在 [Azure 经典管理门户][]中创建分区的队列或主题。当在门户中创建新的队列或主题时，请将队列或主题“设置”窗口的“常规设置”边栏选项卡中的“启用分区”选项设为“true”。在 Visual Studio 中，单击“新队列”或“新主题”对话框中的“启用分区”复选框。
 
 ## 使用分区键
 
-当一条消息排入到分区的队列或主题时，服务总线将检查是否存在分区密钥。如果找到，它将选择基于该密钥的片段。如果找不到分区密钥，它将选择基于内部算法的片段。
+当一条消息在分区队列或主题中排队时，服务总线检查是否存在分区键。如果找到，它将选择基于该密钥的片段。如果找不到分区密钥，它将选择基于内部算法的片段。
 
-### 使用一个分区键
+### 使用分区键
 
 某些应用场景（例如会话或事务）中，要求将消息存储在特定的片段中。所有这些应用场景都需要使用分区键。使用相同的分区键的所有消息都分配到同一片段中。如果该片段暂时不可用，服务总线将返回一条错误消息。
 
@@ -87,9 +94,9 @@ committableTransaction.Commit();
 
 ## 将会话用于分区实体
 
-若要将事务性消息发送到会话感知的主题或队列，消息必须设置 [BrokeredMessage.SessionId][] 属性。如果也指定了 [BrokeredMessage.PartitionKey][] 属性，它必须与 [SessionId][] 属性相同。如果它们不同，服务总线会返回 **InvalidOperationException** 异常。
+若要将事务消息发送到会话感知的主题或队列，消息必须设置 [BrokeredMessage.SessionId][] 属性。如果也指定了 [BrokeredMessage.PartitionKey][] 属性，它必须与 [SessionId][] 属性相同。如果它们不同，服务总线会返回 **InvalidOperationException** 异常。
 
-与常规（非分区）的队列或主题不同，不可能使用单一事务来将多条消息发送到不同会话。如果进行尝试，服务总线会返回**InvalidOperationException**异常。例如：
+与常规（非分区）的队列或主题不同，不可能使用单一事务来将多条消息发送到不同会话。如果进行尝试，服务总线返回 **InvalidOperationException **异常。例如：
 
 ```
 CommittableTransaction committableTransaction = new CommittableTransaction();
@@ -110,9 +117,9 @@ Azure 服务总线支持从分区实体、向分区的实体或在分区的实�
 ## 注意事项和指南
 
 - **高度一致性功能**：如果实体使用会话、重复检测或显式控制分区键等功能，则消息传送操作一定会路由至特定的片段。如果任何片段遇到过高的流量，或基础存储处于不正常状态，这些操作将失败，而且可用性会降低。整体来说，一致性仍然远高于非分区实体；只有一部分流量会遇到问题，而不是所有流量。
-- **管理**：必须在实体的所有片段上执行创建、更新及删除等操作。如果任何片段处于不正常状态，可能会导致这些操作失败。以“获取”操作来说，必须汇总来自所有片段的信息，例如消息计数。如果任何片段处于不正常状态，则实体可用性状态会报告为受限制。
-- **少量消息方案**：对于这类方案，尤其是当使用 HTTP 协议时，可能必须执行多次接收操作，才能获取所有消息。对于接收请求，前端会在所有片段上执行接收，并缓存所有收到的响应。相同连接上的后续接收请求将受益于此缓存，而且接收延迟将会缩短。不过，如果你有多个连接或使用 HTTP，则会针对每个请求建立新的连接。因此，不保证抵达相同的节点。如果现有的所有消息均被锁定，而且在另一个前端中缓存，接收操作会返回 **null**。消息最后会到期，你可以再次接收它们。建议使用 HTTP 保持连接。
-- **浏览/速览消息**：PeekBatch 不一定会返回 [MessageCount 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.messagecount.aspx)中指定的消息数目。这有两个常见的原因。其中一个原因是消息集合的汇总大小超过大小上限 256KB。另一个原因是，如果队列或主题的 [EnablePartitioning 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx)设为 **true**，分区可能没有足够的消息来完成所请求的消息数目。一般情况下，如果应用程序想要接收特定数目的消息，它应该重复调用 [PeekBatch](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.peekbatch.aspx)，直到获得该数目的消息，或者已没有更多消息可速览为止。有关详细信息，包括代码示例，请参阅 [QueueClient.PeekBatch](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.peekbatch.aspx) 或 [SubscriptionClient.PeekBatch](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.peekbatch.aspx)。
+- **管理**：必须对实体的所有片段执行创建、更新及删除等操作。如果任何片段处于不正常状态，可能会导致这些操作失败。以“获取”操作来说，必须汇总来自所有片段的信息，例如消息计数。如果任何片段处于不正常状态，则实体可用性状态会报告为受限制。
+- **少量消息的情况**：对于这类情况，尤其是使用 HTTP 协议时，可能必须执行多次接收操作，才能获取所有消息。对于接收请求，前端会在所有片段上执行接收，并缓存所有收到的响应。相同连接上的后续接收请求将受益于此缓存，而且接收延迟将会缩短。不过，如果你有多个连接或使用 HTTP，则会针对每个请求建立新的连接。因此，不保证抵达相同的节点。如果现有的所有消息均被锁定，而且在另一个前端中缓存，则接收操作返回 **null**。消息最后会到期，你可以再次接收它们。建议使用 HTTP 保持连接。
+- **浏览/速览消息**：PeekBatch 不一定返回 [MessageCount 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.messagecount.aspx)中指定的消息数目。这有两个常见的原因。其中一个原因是消息集合的汇总大小超过大小上限 256KB。另一个原因是，如果队列或主题的 [EnablePartitioning 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx)设为 **true**，则分区可能没有足够的消息来完成所请求的消息数目。一般情况下，如果应用程序想要接收特定数目的消息，它应该重复调用 [PeekBatch](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.peekbatch.aspx)，直到获得该数目的消息，或者已没有更多消息可速览为止。有关详细信息，包括代码示例，请参阅 [QueueClient.PeekBatch](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.peekbatch.aspx) 或 [SubscriptionClient.PeekBatch](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.peekbatch.aspx)。
 
 ## 最新添加的功能
 
@@ -122,15 +129,11 @@ Azure 服务总线支持从分区实体、向分区的实体或在分区的实�
 
 ## 分区实体限制
 
-在其当前实现中，服务总线对分区的队列和主题施加以下限制：
-
--   分区的队列和主题均可通过 SBMP 或 HTTP/HTTPS 以及 AMQP 使用。
+当前，服务总线对分区的队列和主题施加以下限制：
 
 -   分区的队列和主题不支持在单个事务中发送属于不同会话的消息。
 
 -   服务总线当前允许为每个命名空间最多创建 100 个分区的队列或主题。每个分区的队列或主题都将计入每个命名空间的 10,000 个实体的配额。
-
--   Windows Server 版本 1.0 和 1.1 的服务总线上不支持分区的队列和主题。
 
 ## 后续步骤
 
