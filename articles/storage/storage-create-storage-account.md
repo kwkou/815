@@ -49,7 +49,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name/)。对于 Resource Manager 存储帐户，此功能尚未添加到 [Azure 门户预览](https://portal.azure.cn)，但你可以使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
 
-## 创建存储帐户
+## <a name="create-a-storage-account"></a> 创建存储帐户
 
 1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
