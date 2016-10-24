@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="06/07/2016"
-	wacn.date="08/22/2016"/>  
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/06/2016"
+	ms.author="adegeo"
+	wacn.date="10/24/2016"/>  
 
 
 
@@ -29,9 +34,9 @@
 
 在配置应用程序的缩放之前，应考虑以下信息：
 
-- 缩放受内核使用情况影响。角色实例越大，使用的核心越多。你只能在你的订阅的内核限制内缩放应用程序。例如，如果你的订阅的上限是二十个内核，并且你通过两个中等规模的云服务（一共四个内核）运行某个应用程序，则对于订阅中的其他云服务部署，你只能扩展十六个内核。有关大小的详细信息，请参阅 [Cloud Service Sizes（云服务的大小）](/documentation/articles/cloud-services-sizes-specs/)。
+- 缩放受内核使用情况影响。角色实例越大，使用的核心越多。你只能在你的订阅的内核限制内缩放应用程序。例如，如果你的订阅的上限是二十个内核，并且你通过两个中等规模的云服务（一共四个内核）运行某个应用程序，则对于订阅中的其他云服务部署，你只能扩展十六个内核。有关大小的详细信息，请参阅 [Cloud Service Sizes](/documentation/articles/cloud-services-sizes-specs/)（云服务的大小）。
 
-- 你可以基于队列消息阈值来进行缩放。有关如何使用队列的详细信息，请参阅 [How to use the Queue Storage Service（如何使用队列存储服务）](/documentation/articles/storage-dotnet-how-to-use-queues/)。
+- 你可以基于队列消息阈值来进行缩放。有关如何使用队列的详细信息，请参阅 [How to use the Queue Storage Service](/documentation/articles/storage-dotnet-how-to-use-queues/)（如何使用队列存储服务）。
 
 - 你还可以缩放与订阅关联的其他资源。
 
@@ -106,7 +111,7 @@
 
 ## 返回到手动缩放
 
-导航到“缩放设置”，并将[“缩放方式”](#where-scale-is-located)选项设置为“我手动输入的实例计数”。
+导航到“缩放设置”，并将“缩放方式”选项设置为“我手动输入的实例计数”。[](#where-scale-is-located)
 
 ![包含配置文件和规则的云服务缩放设置](./media/cloud-services-how-to-scale-portal/manual-basics.png)  
 

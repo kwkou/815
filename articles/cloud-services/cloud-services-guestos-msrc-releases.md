@@ -9,8 +9,8 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="07/19/2016"
-   wacn.date="09/19/2016"/>
+   ms.date="08/17/2016"
+   wacn.date="10/24/2016"/>
 
 # Azure 来宾 OS 
 
