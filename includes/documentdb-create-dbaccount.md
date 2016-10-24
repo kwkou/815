@@ -1,5 +1,5 @@
 1.	登录在线 [Azure 门户预览](https://portal.azure.cn/)。
-2.	在跳转栏中，依次单击“新建”、“数据 + 存储器”、“Azure DocumentDB”。
+2.	在跳转栏中，依次单击“New”、“Databases”、“DocumentDB”。
 
 	![创建数据库时的 Azure 门户预览屏幕截图，其中突出显示了“新建”按钮、“创建”边栏选项卡中的“数据 + 存储器”以及“数据 + 存储器”边栏选项卡中的“Azure DocumentDB”](./media/documentdb-create-dbaccount/create-nosql-db-databases-json-tutorial-1.png)
 
