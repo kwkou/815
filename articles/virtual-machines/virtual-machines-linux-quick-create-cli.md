@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
    ms.date="09/08/2016"
-   wacn.date=""
+   wacn.date="10/24/2016"
    ms.author="v-livech"/>  
 
 

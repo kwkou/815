@@ -116,7 +116,7 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 
 <br>  
 
-## <a name="ds-series"></a>DS 系列*
+## <a name="ds-series" id="standard-tier-ds-series"></a>DS 系列*
 
 
 | 大小 | CPU 核心数 | 内存：GiB | 本地磁盘大小：GiB | 最大数据磁盘数 | 缓存磁盘最大吞吐量：IOPS / MBps（以 GiB 为单位的缓存大小） | 非缓存磁盘最大吞吐量：IOPS / MBps | 最大网卡数/网络带宽等级 |

@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
    ms.date="08/23/2016"
-   wacn.date=""
+   wacn.date="10/24/2016"
    ms.author="iainfou"/>
 
 # 使用 Azure CLI 创建完整的 Linux 环境

@@ -16,13 +16,13 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/01/2016"
-	wacn.date=""
+	wacn.date="10/24/2016"
 	ms.author="iainfou"/>  
 
 
 # 创建并上载包含 Linux 操作系统的虚拟硬盘
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)] 还可以[使用 Azure Resource Manager 上载自定义磁盘映像](/documentation/articles/virtual-machines-linux-upload-vhd/)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。还可以[使用 Azure Resource Manager 上载自定义磁盘映像](/documentation/articles/virtual-machines-linux-upload-vhd/)。
 
 本文介绍如何创建和上载虚拟硬盘 (VHD)，以便可以使用它作为自己的映像在 Azure 中创建虚拟机。学习如何准备操作系统，以便使用它来基于该映像创建多个虚拟机。
 

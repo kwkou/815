@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/24/2016"
-	wacn.date=""
+	wacn.date="10/24/2016"
 	ms.author="szark"/>  
 
 
@@ -44,7 +44,7 @@
 ## 使用 SUSE Studio
 [SUSE Studio](http://www.susestudio.com) 可以轻松地创建和管理 Azure 和 Hyper-V 的 SLES 和 openSUSE 映像。这是自定义用户自己的 SUSE 和 openSUSE 映像的推荐方法。
 
-作为构建用户自己的 VHD 的替代方法，SUSE 也会为 [VMDepot](https://vmdepot.msopentech.com/User/Show?user=1007) 中的 SLES 发布 BYOS（自带订阅）映像。
+作为构建用户自己的 VHD 的替代方法，SUSE 也会为 VMDepot 中的 SLES 发布 BYOS（自带订阅）映像。
 
 
 ## 准备 SUSE Linux Enterprise Server 11 SP4 ##

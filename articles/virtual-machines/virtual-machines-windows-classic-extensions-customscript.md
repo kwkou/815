@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="08/06/2015"
-   wacn.date=""
+   wacn.date="10/24/2016"
    ms.author="kundanap"/>
 
 # 适用于 Windows 虚拟机的自定义脚本扩展
@@ -33,7 +33,7 @@
 
 ### 运行自定义脚本扩展的先决条件
 
-1. 安装 <a href="http://azure.microsoft.com/downloads" target="_blank">Azure PowerShell cmdlet</a> 0.8.0 或更高版本。
+1. 安装 <a href="/downloads" target="_blank">Azure PowerShell cmdlet</a> 0.8.0 或更高版本。
 2. 如果希望脚本在现有 VM 上运行，请确保已在该 VM 上启用 VM 代理。如果尚未安装，请执行以下[步骤](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)。如果 VM 是从 Azure 门户创建的，则会默认安装 VM 代理。
 3. 将你要在 VM 上运行的脚本上载到 Azure 存储。脚本可以来自单个容器或多个存储容器。
 4. 脚本应当以下述方式编写：使用扩展启动入口脚本，然后入口脚本再启动其他脚本。
