@@ -1,54 +1,65 @@
-<!-- ARM: tested -->
-
 <properties
-	pageTitle="使用 Azure 模板创建安全 Linux VM | Azure"
-	description="使用 Azure Resource Manager 模板在 Azure 上创建安全 Linux VM。"
+	pageTitle="使用 Azure 模板创建 Linux VM | Azure"
+	description="使用 Azure Resource Manager 模板在 Azure 上创建 Linux VM。"
 	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="vlivech"
 	manager="timlt"
 	editor=""
-	tags="azure-service-management,azure-resource-manager" />
+	tags="azure-service-management,azure-resource-manager" />  
+
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/27/2016"
-	wacn.date="06/29/2016"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="hero-article"
+	ms.date="08/17/2016"
+	wacn.date=""
+	ms.author="v-livech"/>  
 
-# 使用 Azure 模板创建受保护的 Linux VM
 
-若要从模板创建 Linux VM，需要使用 Resource Manager 模式的 [Azure CLI](/documentation/articles/xplat-cli-install/) (`azure config mode arm`)。
+# 使用 Azure 模板创建 Linux VM
+
+本文说明如何使用 Azure 模板在 Azure 上快速部署 Linux 虚拟机。本文需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)]、已通过 (`azure login`) 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)，并处于 Resource Manager 模式 (`azure config mode arm`)。也可以使用 [Azure 门户](/documentation/articles/virtual-machines-linux-quick-create-portal/)或 [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/) 快速部署 Linux VM。
 
 ## 快速命令摘要
 
-	chrisl@fedora$ azure group create -n <exampleRGname> -l <exampleAzureRegion> [--template-uri <URL> | --template-file <path> | <template-file> -e <parameters.json file>]
+	azure group create \
+	-n quicksecuretemplate \
+	-l chinaeast \
+	--template-file /path/to/azuredeploy.json
 
 ## 详细演练
 
-模板可让你在 Azure 上使用要在启动期间自定义的设置（如用户名和主机名）创建 VM。本文着重在使用 Azure 模板启动 Ubuntu VM，此 VM 创建只打开一个端口（22，以用于 SSH）的网络安全组 (NSG)，且需要 SSH 密钥才能登录。
+使用模板可以在 Azure 上创建具有所需设置的 VM，这些设置可在启动过程中自定义，例如用户名和主机名。对于本文，我们将推出一个利用 Ubuntu VM 和网络安全组 (NSG) 并打开端口 22 用于 SSH 的 Azure 模板。
 
-Azure Resource Manager 模板是一个 JSON 文件，可用于简单的一次性任务（例如本文中所述的启动 Ubuntu VM），或用于建构涵盖整个环境的复杂 Azure 配置（例如从网络、OS 到应用程序堆栈部署的测试、开发或生产部署）。
+Azure Resource Manager 模板是可用于简单一次性任务（例如启动 Ubuntu VM）的 JSON 文件，如本文中所示。Azure 模板还可用于构造整个环境的复杂 Azure 配置，如测试、开发或生产部署堆栈。
 
 ## 创建 Linux VM
 
-以下代码示例演示如何调用 `azure group create`，以使用[此 Azure Resource Manager 模板](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json)同时创建资源组和部署受 SSH 保护的 Linux VM。请记住，在示例中必须使用环境中唯一的名称。本示例使用 `quicksecuretemplate` 作为资源组名称，使用 `securelinux` 作为 VM 名称，使用 `quicksecurelinux` 作为子域名。
+下面的代码示例演示如何调用 `azure group create` 创建资源组，并同时使用[此 Azure Resource Manager 模板](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json)部署受 SSH 保护的 Linux VM。请记住，在示例中必须使用环境中唯一的名称。此示例使用 `quicksecuretemplate` 作为资源组名称，使用 `securelinux` 作为 VM 名称，并使用 `quicksecurelinux` 作为子域名称。
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 
-	chrisl@fedora$ azure group create -n quicksecuretemplate -l chinaeast --template-file /path/to/azuredeploy.json
+	azure group create \
+	-n quicksecuretemplate \
+	-l chinaeast \
+	--template-file /path/to/azuredeploy.json
+
+输出
+
 	info:    Executing command group create
 	+ Getting resource group quicksecuretemplate
 	+ Creating resource group quicksecuretemplate
 	info:    Created resource group quicksecuretemplate
 	info:    Supply values for the following parameters
-	adminUserName: ops
-	sshKeyData: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDRZ/XB8p8uXMqgI8EoN3dWQw... user@contoso.com
-	dnsLabelPrefix: quicksecurelinux
-	vmName: securelinux
+	sshKeyData: ssh-rsa AAAAB3Nza<..ssh public key text..>VQgwjNjQ== vlivech@azure
 	+ Initializing template configurations and parameters
 	+ Creating a deployment
 	info:    Created template deployment "azuredeploy"
-	data:    Id:                  /subscriptions/<guid>/resourceGroups/quicksecuretemplate
+	data:    Id:                  /subscriptions/<..subid text..>/resourceGroups/quicksecuretemplate
 	data:    Name:                quicksecuretemplate
 	data:    Location:            chinaeast
 	data:    Provisioning State:  Succeeded
@@ -56,10 +67,10 @@ Azure Resource Manager 模板是一个 JSON 文件，可用于简单的一次性
 	data:
 	info:    group create command OK
 
-你可以使用 `--template-uri` 参数创建新的资源组和部署 VM，或者使用 `--template-file` 参数并以模板文件路径作为参数在本地下载或创建模板并传递模板。Azure CLI 将提示你输入模板所需的参数。
+该示例使用 `--template-uri` 参数部署了 VM。还可以在本地下载或创建模板，然后使用 `--template-file` 形式参数并将模板文件的路径作为实际参数来传递该模板。Azure CLI 将提示你输入模板所需的参数。
 
 ## 后续步骤
 
-使用模板创建 Linux VM 后，你需要了解还有哪些应用框架可与模板配合使用。
+搜索[模板库](https://github.com/Azure/azure-quickstart-templates/)以发现下一步要部署哪些应用框架。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_1017_2016-->

@@ -5,14 +5,22 @@
    documentationCenter=""
    authors="iainfoulds"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="07/20/2016"
-	wacn.date="09/12/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="07/20/2016"
+   wacn.date=""
+   ms.author="iainfou"/>
 
 # 使用 Docker VM 扩展部署环境
+
+> [AZURE.NOTE] 如果有时间，请参加这个有关体验的[快速调查](https://aka.ms/linuxdocsurvey)，帮助我们改进 Azure Linux VM 文档。每个回答都将帮助我们帮助你完成工作。
 
 Docker 是流行的容器管理和映像处理平台，可让你在 Linux（和 Windows）上快速操作容器。通过 Azure，你可以根据需求使用几个不同的方式灵活部署 Docker：
 
@@ -29,7 +37,7 @@ Azure Docker VM 扩展在 Linux 虚拟机中安装并配置 Docker 守护程序�
 
 ## 使用 Docker VM 扩展部署模板：
 
-让我们使用现有的快速入门模板来演示如何部署已安装 Docker VM 扩展的 Ubuntu VM。可以在此处查看模板：[使用 Docker 轻松部署 Ubuntu VM](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
+让我们使用现有的快速入门模板来演示如何部署已安装 Docker VM 扩展的 Ubuntu VM。可以在此处查看模板：[使用 Docker 轻松部署 Ubuntu VM](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)。还需要在 Resource Manager 模式下 (`azure config mode arm`) 使用[最新的 Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 可以从 [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/docker-simple-on-ubuntu/azuredeploy.json) 下载该模板并运行以下命令。
 
@@ -38,7 +46,7 @@ Azure Docker VM 扩展在 Linux 虚拟机中安装并配置 Docker 守护程序�
 	azure group create --name myDockerResourceGroup --location "China North" \
 	  --template-file /path/to/azuredeploy.json
 
-回答为存储帐户命名、DNS 名称、用户名等的提示，然后等待几分钟时间完成部署。您应该会看到与下面类似的输出：
+根据提示命名存储帐户、用户名和密码以及 DNS 名称。应该会看到与下例类似的输出：
 
 	info:    Executing command group create
 	+ Getting resource group myDockerResourceGroup
@@ -60,13 +68,69 @@ Azure Docker VM 扩展在 Linux 虚拟机中安装并配置 Docker 守护程序�
 	data:
 	info:    group create command OK
 
-## 部署第一个 nginx 容器
+仅几秒钟后 Azure CLI 将返回到提示符，但在后台正在将模板部署到所创建的资源组。等待几分钟让部署完成，然后再尝试通过 SSH 连接到 VM。
+可以使用 `azure vm show` 命令来获取有关部署和 VM 的 DNS 名称的详细信息。在下面的示例中，将 `myDockerResourceGroup` 替换为在上一步中指定的名称：
 
+	azure vm show -g myDockerResourceGroup -n myDockerVM
+	info:    Executing command vm show
+	+ Looking up the VM "myDockerVM"
+	+ Looking up the NIC "myVMNicD"
+	+ Looking up the public ip "myPublicIPD"
+	data:    Id                              :/subscriptions/guid/resourceGroups/mydockerresourcegroup/providers/Microsoft.Compute/virtualMachines/MyDockerVM
+	data:    ProvisioningState               :Succeeded
+	data:    Name                            :MyDockerVM
+	data:    Location                        :chinanorth
+	data:    Type                            :Microsoft.Compute/virtualMachines
+	data:
+	data:    Hardware Profile:
+	data:      Size                          :Standard_F1
+	data:
+	data:    Storage Profile:
+	data:      Image reference:
+	data:        Publisher                   :Canonical
+	data:        Offer                       :UbuntuServer
+	data:        Sku                         :14.04.3-LTS
+	data:        Version                     :latest
+	data:
+	data:      OS Disk:
+	data:        OSType                      :Linux
+	data:        Name                        :osdisk1
+	data:        Caching                     :ReadWrite
+	data:        CreateOption                :FromImage
+	data:        Vhd:
+	data:          Uri                       :http://mydockerstorage.blob.core.chinacloudapi.cn/vhds/osdiskfordockersimple.vhd
+	data:
+	data:    OS Profile:
+	data:      Computer Name                 :MyDockerVM
+	data:      User Name                     :ops
+	data:      Linux Configuration:
+	data:        Disable Password Auth       :false
+	data:
+	data:    Network Profile:
+	data:      Network Interfaces:
+	data:        Network Interface #1:
+	data:          Primary                   :true
+	data:          MAC Address               :00-0D-3A-33-D3-95
+	data:          Provisioning State        :Succeeded
+	data:          Name                      :myVMNicD
+	data:          Location                  :chinanorth
+	data:            Public IP address       :13.91.107.235
+	data:            FQDN                    :mydockergroup.chinanorth.chinacloudapp.cn
+	data:
+	data:    Diagnostics Instance View:
+	info:    vm show command OK
+
+在输出的顶部附近，可看到 VM 的 `ProvisioningState`。当此项显示 `Succeeded` 时，部署已完成，可以通过 SSH 连接到 VM 了。
+
+接近输出的末尾，`FQDN` 根据所提供的 DNS 名称和所选的位置显示完全限定域名。在剩余步骤中将使用此 FQDN 通过 SSH 连接到 VM。
+
+
+## 部署第一个 nginx 容器
 部署完成之后，使用在部署期间提供的 DNS 名称通过 SSH 连接到新 Docker 主机。让我们尝试运行 nginx 容器：
 
-	docker run -d -p 80:80 nginx
+	sudo docker run -d -p 80:80 nginx
 
-您应该会看到与下面类似的输出：
+应该会看到与下例类似的输出：
 
 	Unable to find image 'nginx:latest' locally
 	latest: Pulling from library/nginx
@@ -81,7 +145,7 @@ Azure Docker VM 扩展在 Linux 虚拟机中安装并配置 Docker 守护程序�
 使用 `sudo docker ps` 检验主机上运行的容器：
 
 	CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                         NAMES
-	b6ed109fb743        nginx               "nginx -g 'daemon off"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, 443/tcp   nostalgic_murdock
+	b6ed109fb743        nginx               "nginx -g 'daemon off"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, 443/tcp   adoring_payne
 
 若要查看容器的运行情况，请打开 Web 浏览器并输入部署期间指定的 DNS 名称：
 
@@ -91,7 +155,7 @@ Azure Docker VM 扩展在 Linux 虚拟机中安装并配置 Docker 守护程序�
 
 ## Docker VM 扩展 JSON 模板参考
 
-本示例使用快速入门模板。若要使用自己的 Resource Manager 模板部署 Azure Docker VM 扩展，请添加以下内容：
+本示例使用快速入门模板。若要使用自己的 Resource Manager 模板部署 Azure Docker VM 扩展，请添加以下 JSON：
 
 	{
 	  "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -120,4 +184,4 @@ Azure Docker VM 扩展在 Linux 虚拟机中安装并配置 Docker 守护程序�
 2. [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)
 3. [开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序](/documentation/articles/virtual-machines-linux-docker-compose-quickstart/)。
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1017_2016-->
