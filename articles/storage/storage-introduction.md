@@ -128,7 +128,7 @@ Azure 文件存储提供了基于云的 SMB 文件共享，这样你可以将依
 
 有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。有关安全访问你的存储帐户的详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)和 [Azure 存储服务身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。
 
-## 用于实现持久性和高可用性的复制
+## <a name="replication-for-durability-and-high-availability"></a> 用于实现持久性和高可用性的复制
 
 始终复制 Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合[存储空间 SLA](/support/sla/storage/) 要求。
 

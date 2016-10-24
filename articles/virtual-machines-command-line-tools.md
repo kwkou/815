@@ -487,7 +487,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 	info:   http://myaccount.blob.core.chinacloudapi.cn/vm-images/Sample.vhd is uploaded successfully
 	info:   vm image create command OK
 
-##<a name="Commands_to_manage_your_Azure_virtual_machine_data_disks"></a>用于管理 Azure 虚拟机数据磁盘的命令
+##<a name="Commands_to_manage_your_Azure_virtual_machine_data_disks" id="commands-to-manage-your-azure-virtual-machine-data-disks"></a>用于管理 Azure 虚拟机数据磁盘的命令
 
 数据磁盘是 Blob 存储中可供虚拟机使用的 .vhd 文件。有关如何将数据磁盘部署到 Blob 存储的详细信息，请参阅前面所示的 Azure 技术图表。
 
