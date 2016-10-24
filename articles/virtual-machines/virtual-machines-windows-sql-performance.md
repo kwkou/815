@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="09/07/2016"
-	wacn.date=""
+	wacn.date="10/24/2016"
 	ms.author="jroth" />  
 
 
@@ -46,7 +46,7 @@
 
 有关*如何*和*为何*进行这些优化的详细信息，请参阅以下部分提供的详细信息与指导。
 
-## VM 大小指导原则
+## <a name="vm-size-guidance"></a> VM 大小指导原则
 
 对于性能敏感型应用程序，建议使用以下[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)：
 
@@ -55,7 +55,7 @@
 - **SQL Server Standard 和 Web Edition**：DS2 或更高
 
 
-## 存储指导原则
+## <a name="storage-guidance"></a> 存储指导原则
 
 DS 系列 VM 支持[高级存储](/documentation/articles/storage-premium-storage/)。对于生产工作负荷，建议使用高级存储。
 
@@ -63,7 +63,7 @@ DS 系列 VM 支持[高级存储](/documentation/articles/storage-premium-storag
 
 此外，我们建议你创建 Azure 存储帐户与 SQL Server 虚拟机在同一数据中心中，以减小传输延迟。创建存储帐户时应禁用异地复制，因为无法保证在多个磁盘上的写入顺序一致。相反，请考虑在两个 Azure 数据中心之间配置一个 SQL Server 灾难恢复技术。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
-## 磁盘指导原则
+## <a name="disks-guidance"></a> 磁盘指导原则
 
 Azure VM 上有三种主要磁盘类型：
 
@@ -111,7 +111,7 @@ D 系列、Dv2 系列和 G 系列 VM 上的临时驱动器基于 SSD。如果工
 
 	>[AZURE.WARNING] 在进行这些操作时，如果无法停止 SQL Server 服务，则会导致数据库损坏。
 
-## I/O 指导原则
+## <a name="io-guidance"></a> I/O 指导原则
 
 - 当你并行化你的应用程序和请求时可实现使用高级存储的最佳结果。高级存储专为 IO 队列深度大于 1 的方案设计，因此对于单线程串行请求（即使它们是存储密集型的），你将不会看到明显的性能提升。例如，这会影响性能分析工具（如 SQLIO）的单线程测试结果。
 
@@ -141,7 +141,7 @@ D 系列、Dv2 系列和 G 系列 VM 上的临时驱动器基于 SSD。如果工
 
 - 请考虑在传入/传出 Azure 时压缩所有数据文件。
 
-## 功能特定的指导原则
+## <a name="feature-specific-guidance"></a> 功能特定的指导原则
 
 某些部署可以使用更高级的配置技术，获得更多的性能好处。下面的列表主要介绍可帮助你实现更佳性能的一些 SQL Server 功能：
 

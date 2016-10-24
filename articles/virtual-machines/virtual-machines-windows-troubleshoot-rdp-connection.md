@@ -17,7 +17,7 @@
 	ms.devlang="na"
 	ms.topic="support-article"
 	ms.date="09/01/2016"
-	wacn.date=""
+	wacn.date="10/24/2016"
 	ms.author="iainfou"/>
 
 # 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除

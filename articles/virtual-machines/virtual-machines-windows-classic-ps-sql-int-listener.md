@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/19/2016"
-	wacn.date=""
+	wacn.date="10/24/2016"
 	ms.author="MikeRayMSFT" />  
 
 

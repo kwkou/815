@@ -16,7 +16,7 @@
  ms.tgt_pltfrm="vm-windows"
  ms.workload="big-compute"
  ms.date="08/25/2016"
- wacn.date=""
+ wacn.date="10/24/2016"
  ms.author="danlep"/>  
 
 
@@ -153,7 +153,7 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 
 ## 步骤 2.卸载 Excel 工作簿并从本地客户端运行 UDF
 
-### Excel 激活
+### <a name="excel-activation"></a> Excel 激活
 
 当对生产工作负荷使用 ComputeNodeWithExcel VM 映像时，需要提供有效的 Microsoft Office 许可密钥才能在计算节点上激活 Excel。否则，Excel 评估版将在 30 天后过期，运行 Excel 工作簿会失败并显示 COMException (0x800AC472)。
 

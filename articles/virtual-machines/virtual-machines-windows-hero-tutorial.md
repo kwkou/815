@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/06/2016"
-	wacn.date=""
+	wacn.date="10/24/2016"
 	ms.author="cynthn"/>  
 
 
@@ -28,7 +28,7 @@
 
 ## 从应用商店中选择 VM 映像
 
-我们将使用 Windows Server 2012 R2 Datacenter 映像作为示例，但这只是 Azure 提供的众多映像的其中一个。映像选择取决于订阅。例如，某些桌面映像适用于 [MSDN 订户](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+我们将使用 Windows Server 2012 R2 Datacenter 映像作为示例，但这只是 Azure 提供的众多映像的其中一个。
 
 1. 登录到 [Azure 门户预览版](https://portal.azure.cn)。
 

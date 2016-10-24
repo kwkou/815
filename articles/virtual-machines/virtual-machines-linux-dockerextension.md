@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
    ms.date="07/20/2016"
-   wacn.date=""
+   wacn.date="10/24/2016"
    ms.author="iainfou"/>
 
 # 使用 Docker VM 扩展部署环境

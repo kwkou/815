@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/18/2016"
-	wacn.date=""
+	wacn.date="10/24/2016"
 	ms.author="glimoli;genli"/>  
 
 
@@ -181,25 +181,25 @@
 
 	- 出站
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (LLMNR-UDP-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (LLMNR-UDP-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (NB-Datagram-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (NB-Datagram-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (NB-Name-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (NB-Name-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (Pub-WSD-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (Pub-WSD-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (SSDP-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (SSDP-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (UPnPHost-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (UPnPHost-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (UPnP-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (UPnP-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD Events-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD Events-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD EventsSecure-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD EventsSecure-Out)" new enable=yes
 
-		netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD-Out)" new enable=yes
+			netsh advfirewall firewall set rule dir=out name="Network Discovery (WSD-Out)" new enable=yes
 
 
 ## 其他 Windows 配置步骤
