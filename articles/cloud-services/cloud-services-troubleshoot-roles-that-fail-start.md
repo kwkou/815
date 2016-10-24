@@ -9,8 +9,8 @@
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
-   ms.date="06/03/2016"
-   wacn.date="07/18/2016" />
+   ms.date="09/02/2016"
+   wacn.date="10/24/2016" />
 
 # 对无法启动的云服务角色进行故障排除
 

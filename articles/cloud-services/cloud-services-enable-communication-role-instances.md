@@ -8,8 +8,8 @@ manager="timlt"
 editor=""/>
 <tags 
 ms.service="cloud-services" 
-ms.date="12/07/2015" 
-wacn.date="01/15/2016"/>
+ms.date="09/06/2016" 
+wacn.date="10/24/2016"/>
 
 # 为 Azure 中的角色实例启用通信
 
