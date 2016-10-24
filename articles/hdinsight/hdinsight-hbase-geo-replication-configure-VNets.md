@@ -218,7 +218,7 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 1. 在工作站中，打开 **Windows PowerShell ISE** 或 Windows PowerShell 控制台。
 2. 更新以下脚本中的参数，然后运行该脚本：
 
-		Add-AuzreAccount
+		Add-AuzreAccount -Environment AzureChinaCloud
 		Select-AzureSubscription -[AzureSubscriptionName]
 		Set-AzureVNetGatewayKey -VNetName ContosoVNet-CN -LocalNetworkSiteName Contoso-LNet-CE -SharedKey A1b2C3D4
 		Set-AzureVNetGatewayKey -VNetName ContosoVNet-CE -LocalNetworkSiteName Contoso-LNet-CN -SharedKey A1b2C3D4 

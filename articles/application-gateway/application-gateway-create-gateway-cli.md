@@ -61,7 +61,7 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 打开 **Azure 命令提示符**，然后登录。
 
-    azure login
+    azure login -e AzureChinaCloud
 
 键入前述示例后，将提供代码。在浏览器中导航到 https://aka.ms/devicelogin， 继续登录过程。
 
