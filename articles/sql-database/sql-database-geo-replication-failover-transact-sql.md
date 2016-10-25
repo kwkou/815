@@ -9,8 +9,13 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="07/19/2016"
-    wacn.date="09/19/2016"/>
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="data-management"
+    ms.date="08/29/2016"
+    wacn.date="10/17/2016"
+    ms.author="carlrab"/>
 
 # 使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移
 
@@ -91,10 +96,11 @@
 
 ## 后续步骤   
 
+- 故障转移后，请确保在新的主机上配置服务器和数据库的身份验证要求。有关详细信息，请参阅 [SQL Database security after disaster recovery](/documentation/articles/sql-database-geo-replication-security-config/)（灾难恢复后的 Azure SQL 数据库安全性）。
 - 若要了解如何使用活动异地复制进行灾难恢复，包括恢复前后步骤和执行灾难恢复演练，请参阅[灾难恢复](/documentation/articles/sql-database-disaster-recovery/)
 - 有关活动异地复制的 Sasha Nosov 博客文章，请参阅 [Spotlight on new Geo-Replication capabilities](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication/)（聚焦异地复制新功能）
 - 若要了解如何设计云应用程序以使用活动异地复制，请参阅[设计云应用程序以使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery/)
 - 若要了解如何通过弹性数据库池使用活动异地复制，请参阅[弹性池灾难恢复策略](/documentation/articles/sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool/)。
 - 有关业务连续性概述，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1010_2016-->

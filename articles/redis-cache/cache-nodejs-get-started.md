@@ -5,13 +5,17 @@
 	documentationCenter=""
 	authors="steved0x"
 	manager="douge"
-	editor="v-lincan"/>  
-
+	editor="v-lincan"/>
 
 <tags
 	ms.service="cache"
-	ms.date="05/31/2016"
-	wacn.date="09/05/2016"/>
+	ms.devlang="nodejs"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="08/16/2016"
+	wacn.date="10/17/2016"
+	ms.author="sdanie"/>
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
 
@@ -22,7 +26,7 @@
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
 
-Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问你的缓存。
+Azure Redis 缓存允许访问 Microsoft 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问缓存。
 
 本主题说明如何将Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio/)。
 
@@ -33,27 +37,31 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 
     npm install redis
 
-本教程使用 [node\_redis](https://github.com/mranney/node_redis)，但你可以使用 [http://redis.io/clients](http://redis.io/clients) 中列出的任何 Node.js 客户端。
+本教程使用的是 [node\_redis](https://github.com/mranney/node_redis)。有关使用其他 Node.js 客户端的示例，请使用与 [Node.js Redis 客户端](http://redis.io/clients#nodejs)中列出的 Node.js 客户端对应的各个文档。
 
 ## 在 Azure 上创建 Redis 缓存
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-## 检索主机名和访问密钥
+## <a name="retrieve-the-host-name-and-access-keys"></a> 检索主机名和访问密钥
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
+## 使用 SSL 安全地连接到缓存
 
-## 启用非 SSL 终结点
+最新版本的 [node\_redis](https://github.com/mranney/node_redis) 支持使用 SSL 连接到 Azure Redis 缓存。以下示例显示了如何使用 SSL 终结点 6380 连接到 Azure Redis 缓存。将 `<name>` 替换为缓存名称，将 `<key>` 替换为主密钥或辅助密钥，如前面的[检索主机名和访问密钥](#retrieve-the-host-name-and-access-keys)部分中所述。
 
-某些 Redis 客户端不支持 SSL，默认情况下，[为新的 Azure Redis 缓存实例禁用了非 SSL 端口](/documentation/articles/cache-configure/#access-ports)。在编写本文时，[node\_redis](https://github.com/mranney/node_redis) 客户端不支持 SSL。
-
-[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-non-ssl-port.md)]
+	 var redis = require("redis");
+	
+	  // Add your cache name and access key.
+	var client = redis.createClient(6380,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.chinacloudapi.cn'}});
 
 
 ## 在缓存中添加一些内容并检索此内容
 
-	  var redis = require("redis");
+以下示例显示了如何连接到 Azure Redis 缓存实例，以及如何在缓存中存储并检索项目。有关将 Redis 与 [node\_redis](https://github.com/mranney/node_redis) 客户端一起使用的更多示例，请参阅 [http://redis.js.org/](http://redis.js.org/)。
+
+	 var redis = require("redis");
 	
 	  // Add your cache name and access key.
 	var client = redis.createClient(6380,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.chinacloudapi.cn'}});
@@ -77,4 +85,4 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 - [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。
 - 阅读官方 [Redis 文档](http://redis.io/documentation)。
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1010_2016-->

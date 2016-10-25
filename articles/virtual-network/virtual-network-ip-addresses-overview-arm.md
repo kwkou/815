@@ -129,8 +129,8 @@ Azure 中的全套[网络限制](/documentation/articles/azure-subscription-serv
 在大多数情况下，公共 IP 地址是免费的。使用其他和/或静态公共 IP 地址要收取少许费用。确保用户了解[公共 IP 的定价结构](/pricing/details/reserved-ip-addresses/)。
 
 ## 后续步骤
-- [使用 Azure 门户通过静态公共 IP 部署 VM](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
+- [使用 Azure 门户预览通过静态公共 IP 部署 VM](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
 - [使用模板通过静态公共 IP 部署 VM](/documentation/articles/virtual-network-deploy-static-pip-arm-template/)
-- [通过 Azure 门户使用静态专用 IP 地址部署 VM](/documentation/articles/virtual-networks-static-private-ip-arm-pportal/)
+- [通过 Azure 门户预览使用静态专用 IP 地址部署 VM](/documentation/articles/virtual-networks-static-private-ip-arm-pportal/)
 
 <!---HONumber=Mooncake_0919_2016-->

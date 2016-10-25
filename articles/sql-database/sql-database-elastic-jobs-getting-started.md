@@ -3,19 +3,25 @@
 	description="如何使用弹性数据库作业"
 	services="sql-database"
 	documentationCenter=""  
-	manager="jeffreyg"
-	authors="sidneyh"/>
+	manager="jhubbard"
+	authors="ddove"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/23/2016"
-	wacn.date="07/11/2016" />
+	ms.workload="sql-database"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/06/2016"
+	wacn.date="10/17/2016"
+	ms.author="ddove" />  
+
 
 # 弹性数据库作业入门
 
 Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数据库可靠执行 T-SQL 脚本，同时自动重试并提供最终完成保证。有关弹性数据库作业功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
-本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中的示例做了延伸。完成本主题后，你将学会如何创建和管理用于管理一组相关数据库的作业。
+本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中的示例做了延伸。完成本主题后，你将学会如何创建和管理用于管理一组相关数据库的作业。无需使用弹性缩放工具即可利用弹性作业的优势。
 
 ## 先决条件
 
@@ -443,4 +449,4 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1010_2016-->

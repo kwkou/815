@@ -5,11 +5,18 @@
    documentationCenter=""
    authors="mgoedtel"
    manager="jwhit"
-   editor="tysonn" />
+   editor="tysonn" />  
+
 <tags
-	ms.service="automation"
-	ms.date="06/08/2016"
-	wacn.date="08/11/2016"/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/24/2016"
+   wacn.date="10/17/2016"
+   ms.author="magoedte;bwren" />  
+
 
 # Azure 自动化中的 Runbook 输出和消息
 
@@ -44,30 +51,43 @@
 
 	Workflow Test-Runbook
 	{
-	   Write-Verbose "Verbose outside of function"
-	   Write-Output "Output outside of function"
-	   $functionOutput = Test-Function
+        Write-Verbose "Verbose outside of function" -Verbose
+        Write-Output "Output outside of function"
+        $functionOutput = Test-Function
+        $functionOutput
 
-	   Function Test-Function
-	   {
-	      Write-Verbose "Verbose inside of function"
-	      Write-Output "Output inside of function"
-	   }
-	}
+    Function Test-Function
+     {
+        Write-Verbose "Verbose inside of function" -Verbose
+        Write-Output "Output inside of function"
+      }
+    }
+
 
 Runbook 作业的输出流将是：
 
-	Output outside of function
+	Output inside of function
+    Output outside of function
 
 Runbook 作业的详细流将是：
 
 	Verbose outside of function
 	Verbose inside of function
 
+发布 Runbook 后，在启动它之前，还必须在Runbook 设置中打开详细日志记录，以获取详细流输出。
+
 ### 声明输出数据类型
 
 工作流可以使用 [OutputType 属性](http://technet.microsoft.com/zh-cn/library/hh847785.aspx)指定其输出的数据类型。此属性在运行时不起作用，但在设计时，它可以向 Runbook 作者指明 Runbook 的预期输出。随着 Runbook 工具集的持续发展，在设计时声明输出数据类型的重要性也在不断提升。因此，最好是在你创建的所有 Runbook 中包含此声明。
 
+以下是示例输出类型列表：
+
+-	System.String
+-	System.Int32
+-	System.Collections.Hashtable
+-	Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+
+  
 以下示例 Runbook 将输出一个字符串对象，并包含其输出类型的声明。如果 Runbook 输出了特定类型的数组，则你仍应该指定相对于该类型数组的类型。
 
 	Workflow Test-Runbook
@@ -161,7 +181,7 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 
 ## 后续步骤
 
-- 若要详细了解 Runbook 执行方式、如何监视 Runbook 作业和其他技术详细信息，请参阅[跟踪 Runbook 作业](/documentation/articles/automation-runbook-execution/)
+- 若要详细了解 Runbook 执行方式、如何监视 Runbook 作业和其他技术详细信息，请参阅 [Track a runbook job](/documentation/articles/automation-runbook-execution/)（跟踪 Runbook 作业）
 - 若要了解如何设计和使用子 Runbook，请参阅 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1010_2016-->

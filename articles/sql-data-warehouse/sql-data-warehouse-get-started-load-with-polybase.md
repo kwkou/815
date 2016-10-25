@@ -252,7 +252,7 @@ SQL 数据仓库不会自动创建或自动更新统计信息。因此，若要�
 [Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
 [solution partners]: /documentation/articles/sql-data-warehouse-solution-partners/
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
-[统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [PolyBase 指南]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
 [AzCopy 命令行实用程序入门]: /documentation/articles/storage-use-azcopy/
 [最新版本的 AzCopy]: /documentation/articles/storage-use-azcopy/

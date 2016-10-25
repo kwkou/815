@@ -122,7 +122,7 @@ SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复�
 [Update 中的 ANSI Join]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [Delete 中的 ANSI Join]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [Merge 语句]: /documentation/articles/sql-data-warehouse-develop-ctas/
-[INSERT..EXEC]: /documentation/articles/sql-data-warehouse-develop-temporary-tables/
+[INSERT..EXEC]: /documentation/articles/sql-data-warehouse-tables-temporary/
 [Transact-SQL 主题]: /documentation/articles/sql-data-warehouse-reference-tsql-statements/
 
 [游标]: /documentation/articles/sql-data-warehouse-develop-loops/

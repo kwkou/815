@@ -30,7 +30,7 @@ Azure Load Balancer 提供相应的功能让你使用探测来监视服务器实
 - 允许实例标记为正在运行的成功探测数目。
 - 导致实例标记为未运行的失败探测数目。
 
-设置的超时和频率值。SuccessFailCount 确定是否将实例判定为在运行。在 Azure 门户中，超时设置为频率值的两倍。
+设置的超时和频率值。SuccessFailCount 确定是否将实例判定为在运行。在 Azure 门户预览中，超时设置为频率值的两倍。
 
 终结点（即负载均衡集）的所有负载均衡实例的探测配置必须相同。这意味着，对于同一托管服务中特定终结点组合的每个角色实例或虚拟机而言，不能使用不同的探测配置。例如，每个实例必须有相同的本地端口和超时。
 
@@ -75,7 +75,7 @@ TCP 探测通过使用定义的端口执行三方握手来初始化连接。
 - TCP 服务器在超时期限之后完全无响应。当探测标记为未运行的时机取决于失败探测的数目，即，在将探测标记为未运行之前，这些请求未获得答复的次数。
 - 探测从角色实例接收 TCP 重置。
 
-有关配置 HTTP 运行状况探测或 TCP 探测的详细信息，请参阅 [Get started creating an Internet-facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/#create-lb-rules-nat-rules-a-probe-and-a-load-balancer)（开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器）。
+有关配置 HTTP 运行状况探测或 TCP 探测的详细信息，请参阅 [Get started creating an Internet-facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps#create-lb-rules-nat-rules-a-probe-and-a-load-balancer)（开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器）。
 
 ## 将状况良好的实例添加回到负载均衡器
 

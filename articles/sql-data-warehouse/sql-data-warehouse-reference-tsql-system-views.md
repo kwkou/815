@@ -5,12 +5,18 @@
    documentationCenter="NA"
    authors="barbkess"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/17/2016"
-   wacn.date="07/25/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/22/2016"
+   wacn.date="10/17/2016" />  
+
 
 # 系统视图
 
@@ -54,6 +60,14 @@
 - [sys.dm\_pdw\_wait\_stats](http://msdn.microsoft.com/zh-cn/library/mt203909.aspx)
 - [sys.dm\_pdw\_waits](http://msdn.microsoft.com/zh-cn/library/mt203909.aspx)
 
+## 适用于 SQL 数据仓库的 SQL Server DMV
+
+以下 DMV 适用于 SQL 数据仓库，但必须在连接到 **master** 数据库后才能执行。
+
+- [sys.database\_service\_objectives](https://msdn.microsoft.com/zh-cn/library/mt712619.aspx)
+- [sys.dm\_operation\_status](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx)
+- [sys.fn\_helpcollations()](https://msdn.microsoft.com/zh-cn/library/ms187963.aspx)
+
 ## SQL Server 目录视图
 
 - [sys.all\_columns](http://msdn.microsoft.com/zh-cn/library/ms177522.aspx)
@@ -77,7 +91,6 @@
 - [sys.database\_role\_members](http://msdn.microsoft.com/zh-cn/library/ms189780.aspx)
 - [sys.databases](http://msdn.microsoft.com/zh-cn/library/ms178534.aspx)
 - [sys.default\_constraints](http://msdn.microsoft.com/zh-cn/library/ms173758.aspx)
-- [sys.extended\_properties](http://msdn.microsoft.com/zh-cn/library/ms177541.aspx)
 - [sys.external\_data\_sources](http://msdn.microsoft.com/zh-cn/library/dn935019.aspx)
 - [sys.external\_file\_formats](http://msdn.microsoft.com/zh-cn/library/dn935025.aspx)
 - [sys.external\_tables](http://msdn.microsoft.com/zh-cn/library/dn935029.aspx)
@@ -232,4 +245,4 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/07/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="09/02/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用 .NET SDK 管理 HDInsight 中的 Hadoop 群集
 

@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/16/2016"
-	wacn.date="07/11/2016"/>
+	ms.workload="drivers"
+	ms.tgt_pltfrm="na"
+	ms.devlang="ruby"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="andrela"/>  
+
 
 
 # 使用 Ruby 连接到 SQL 数据库 
@@ -46,4 +51,4 @@
 * [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
 * 浏览所有 [SQL 数据库功能](/home/features/sql-databases/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1010_2016-->

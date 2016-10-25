@@ -15,7 +15,7 @@
 # 管理 Azure SQL 数据仓库中的计算能力 (T-SQL)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute/)
+- [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
@@ -42,14 +42,13 @@
 2. 连接到与逻辑 SQL 数据库服务器关联的 master 数据库。
 2. 从 sys.database\_service\_objectives 动态管理视图中选择。下面是一个示例：
 
-
-	SELECT
-	 db.name [Database],
-	 ds.edition [Edition],
-	 ds.service_objective [Service Objective]
-	FROM
-	 sys.database_service_objectives ds
-	 JOIN sys.databases db ON ds.database_id = db.database_id
+    	SELECT
+    	 db.name [Database],
+    	 ds.edition [Edition],
+    	 ds.service_objective [Service Objective]
+    	FROM
+    	 sys.database_service_objectives ds
+    	 JOIN sys.databases db ON ds.database_id = db.database_id
 
 
 <a name="scale-dwu-bk"></a>
@@ -66,9 +65,9 @@
 2. 使用 [ALTER DATABASE][] TSQL 语句。以下示例将数据库 MySQLDW 的服务级别目标设置为 DW1000。
 
 
-	ALTER DATABASE MySQLDW
-	MODIFY (SERVICE_OBJECTIVE = 'DW1000')
-	;
+    	ALTER DATABASE MySQLDW
+    	MODIFY (SERVICE_OBJECTIVE = 'DW1000')
+    	;
 
 
 <a name="next-steps-bk"></a>

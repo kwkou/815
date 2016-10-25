@@ -68,11 +68,11 @@
 1. 创建子网和虚拟网络。
 
         $backendSubnet = New-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -AddressPrefix 10.0.2.0/24
-    New-AzureRmvirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG -Location 'China East' -AddressPrefix 10.0.0.0/16 -Subnet $backendSubnet
+        New-AzureRmvirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG -Location 'China East' -AddressPrefix 10.0.0.0/16 -Subnet $backendSubnet
 
 2. 使用 DNS 名称 **loadbalancernrp.chinaeast.chinacloudapp.cn** 创建要由前端 IP 池使用的名为 **PublicIP** 的 Azure 公共 IP 地址 资源。以下命令使用静态分配类型。
 
-	$publicIP = New-AzureRmPublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location 'China East' –AllocationMethod Static -DomainNameLabel loadbalancernrp 
+	    $publicIP = New-AzureRmPublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location 'China East' –AllocationMethod Static -DomainNameLabel loadbalancernrp 
 
     >[AZURE.IMPORTANT] 负载均衡器将公共 IP 的域标签用作 FQDN 的前缀。这不同于经典部署模型，后者将云服务用作负载均衡器 FQDN。
     该实例中，FQDN 是 **loadbalancernrp.chinaeast.chinacloudapp.cn**。
@@ -121,7 +121,7 @@
 
 4. 使用之前创建的对象创建负载均衡器。
 
-	$NRPLB = New-AzureRmLoadBalancer -ResourceGroupName NRP-RG -Name NRP-LB -Location 'China East' -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
+	    $NRPLB = New-AzureRmLoadBalancer -ResourceGroupName NRP-RG -Name NRP-LB -Location 'China East' -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
 
 ## 创建 NIC
 
@@ -134,11 +134,11 @@
 
 2. 创建名为 **lb-nic1-be** 的 NIC，并将其与第一个 NAT 规则和第一个（且仅有的）后端地址池相关联。
 
-	$backendnic1= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic1-be -Location 'China East' -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
+	    $backendnic1= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic1-be -Location 'China East' -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
 
 3. 创建名为 **lb-nic2-be** 的 NIC，并将其与第二个 NAT 规则和第一个（且仅有的）后端地址池相关联。
 
-	$backendnic2= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic2-be -Location 'China East' -PrivateIpAddress 10.0.2.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
+	    $backendnic2= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic2-be -Location 'China East' -PrivateIpAddress 10.0.2.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
 
 4. 检查 NIC。
 
@@ -148,7 +148,7 @@
 
         Name                 : lb-nic1-be
         ResourceGroupName    : NRP-RG
-	Location             : chinaeast
+	    Location             : chinaeast
         Id                   : /subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be
         Etag                 : W/"d448256a-e1df-413a-9103-a137e07276d1"
         ProvisioningState    : Succeeded
@@ -192,7 +192,7 @@
 
 ## 创建虚拟机
 
-有关虚拟机创建和 NIC 分配的指南，请参阅[使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-create-powershell#Example)中的选项 5。
+有关虚拟机创建和 NIC 分配的指南，请参阅[使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-create#Example)中的选项 5。
 
 ## 向负载均衡器添加网络接口
 

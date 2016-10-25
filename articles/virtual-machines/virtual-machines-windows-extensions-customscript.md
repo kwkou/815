@@ -6,21 +6,27 @@
    authors="kundanap"
    manager="timlt"
    editor=""
-   tags="azure-resource-manager"/>
+   tags="azure-resource-manager"/>  
+
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="03/29/2016"
-	wacn.date="09/12/2016"/>  
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="03/29/2016"
+   wacn.date="10/24/2016"
+   ms.author="kundanap"/>  
 
 
-# 将 Windows VM 的自定义脚本扩展与 Azure Resource Manager 模板配合使用
+# 使用 Azure Resource Manager 模板的 Windows VM 自定义脚本扩展
 
 [AZURE.INCLUDE [virtual-machines-common-extensions-customscript](../../includes/virtual-machines-common-extensions-customscript.md)]
 
 ## Windows VM 模板示例
 
-在模板的 Resource 节中定义以下资源
+在模板的 Resource 节中定义以下资源。
 
        {
        "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -44,10 +50,10 @@
        }
      }
 
-在上述示例中，请将文件 URL 和文件名替换为自己的设置。
-创作模板之后，可以使用 Azure Powershell 部署模板。
+在前述示例中，请将文件 URL 和文件名替换为自己的设置。
+创作模板之后，可以使用 Azure PowerShell 部署模板。
 
-在许多情况下，客户想要将脚本 URL 和参数保留为专用。为此，只需将脚本 URL 保留为专用，以便只能使用存储帐户名和密钥（以受保护设置的形式发送）访问它。此外，提供脚本参数时，也可以使用 1.7 版或更高版本的 Windows 自定义脚本扩展，以受保护设置的形式提供。
+若要让脚本 URL 和参数仅供私人专用，可将脚本 URL 设置为“专用”。。如果将脚本 URL 设置为“专用”，则只能使用作为受保护设置发送的存储帐户名称和密钥进行访问。对于 1.7 版或更高版本的自定义脚本扩展，也可以受保护设置的形式提供脚本参数。
 
 ## 使用受保护设置的 Windows VM 模板示例
 
@@ -66,11 +72,8 @@
         "storageAccountKey": "yourStorageAccountKey"
         }
         }
+若要了解最新版自定义脚本扩展的架构，请参阅 [Azure Windows VM extension configuration samples](/documentation/articles/virtual-machines-windows-extensions-configuration-samples/)（Azure Windows VM 扩展配置示例）。
 
-有关最新版自定义脚本扩展的架构的信息，请参阅[此文档](/documentation/articles/virtual-machines-windows-extensions-configuration-samples/)
+有关使用自定义脚本扩展的 VM 上的应用程序配置的示例，请参阅 [Custom Script extension on a Windows VM](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)（Windows VM 上的自定义脚本扩展）。
 
-有关在 VM 上使用自定义脚本扩展配置应用程序的完整示例，请参阅以下示例。
-
-* [Windows VM 上的自定义脚本扩展](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
-
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1017_2016-->

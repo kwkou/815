@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/16/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="09/09/2016"
+	wacn.date="10/25/2016"/>
 
 # 排查在 Azure 中重新启动或调整现有 Windows 虚拟机时遇到的 Resource Manager 部署问题
 
@@ -29,7 +29,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。以下链接包含有关过程的详细信息：
 
-[使用 Azure 门户对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
+[使用 Azure 门户预览对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 
 [使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)
 

@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/10/2016"
-	wacn.date="09/19/2016"/>
+	ms.date="09/06/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用

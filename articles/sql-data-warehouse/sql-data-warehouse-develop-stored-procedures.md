@@ -85,7 +85,7 @@ SQL 数据仓库中未实现 Transact-SQL 存储过程的某些方面。
 <!--Image references-->
 
 <!--Article references-->
-[临时表]: /documentation/articles/sql-data-warehouse-develop-temporary-tables/
+[临时表]: /documentation/articles/sql-data-warehouse-tables-temporary/
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->

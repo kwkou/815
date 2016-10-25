@@ -5,12 +5,17 @@
    documentationCenter="NA"
    authors="sonyam"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/18/2016"
-   wacn.date="09/05/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/30/2016"
+   wacn.date="10/17/2016"/>
 
 # 排查 Azure SQL 数据仓库问题
 
@@ -20,9 +25,11 @@
 
 | 问题 | 解决方法 |
 | :----------------------------------| :---------------------------------------------- |
-| CTAIP 错误 | 当登录名已在 SQL Server master 数据库中创建，但未在 SQL 数据仓库数据库中时，可能会出现此错误。如果你遇到此错误，请参阅[安全性概述][]一文。本文介绍如何在 master 中创建登录名，然后如何在 SQL 数据仓库数据库中创建用户。|
+| 用户 “NT AUTHORITY\\ANONYMOUS LOGON” 登录失败。(Microsoft SQL Server，错误: 18456) | 当 AAD 用户尝试连接到 master 数据库，但 master 中没有用户时，将会发生此错误。若要纠正此问题，可以在连接时指定要连接到的 SQL 数据仓库，也可以将用户添加到 master 数据库。有关详细信息，请参阅 [Security overview][]（安全概述）一文。|
+|服务器主体“MyUserName”无法在当前的安全上下文下访问数据库“master”。无法打开用户默认数据库。登录失败。用户“MyUserName”的登录失败。(Microsoft SQL Server，错误: 916) | 当 AAD 用户尝试连接到 master 数据库，但 master 中没有用户时，将会发生此错误。若要纠正此问题，可以在连接时指定要连接到的 SQL 数据仓库，也可以将用户添加到 master 数据库。有关详细信息，请参阅 [Security overview][]（安全概述）一文。|
+| CTAIP 错误 | 当登录名已在 SQL Server master 数据库中创建，但未在 SQL 数据仓库数据库中时，可能会出现此错误。如果你遇到此错误，请参阅[安全性概述][]一文。本文介绍如何在 master 中创建登录名和用户，然后如何在 SQL 数据仓库数据库中创建用户。|
 | 被防火墙阻止 |为了确保只有已知的 IP 地址可以访问数据库，Azure SQL 数据库受到服务器和数据库级别的防火墙保护。默认情况下，防火墙是安全的，这意味着，你需要显式启用单个 IP 地址或地址范围才能进行连接。若要配置防火墙的访问权限，请遵循[预配说明][]中的[为客户端 IP 配置服务器防火墙访问权限][]中所述的步骤。|
-| 无法使用工具或驱动程序进行连接 | SQL 数据仓库建议使用 [Visual Studio 2013 或 2015][] 来查询数据。针对客户端连接，建议使用 [SQL Server Native Client 10/11 (ODBC)][]。|
+| 无法使用工具或驱动程序进行连接 | SQL 数据仓库建议使用 [SSMS][]、[用于 Visual Studio 2015 的 SSDT][] 或 [sqlcmd][] 来查询数据。如需详细了解驱动程序以及如何连接到 SQL 数据仓库，请参阅 [Azure SQL 数据仓库驱动程序][] 和 [连接到 Azure SQL 数据仓库][] 这两篇文章。|
 
 
 ## 工具
@@ -68,7 +75,6 @@
 | 不支持 MERGE 语句 | 请参阅 [MERGE 解决方法][]。|
 | 存储过程限制 | 请参阅[存储过程限制][]，了解存储过程的一些限制。|
 | UDF 不支持 SELECT 语句 | 这是 UDF 的当前一项限制。有关我们支持的语法，请参阅 [CREATE FUNCTION][]。 |
-'<--LocComment: 找不到页面，已打破“存储过程限制”。我已尝试修复“文章参考”中的链接 -->'
 
 ## 后续步骤
 
@@ -82,15 +88,15 @@
 <!--Image references-->
 
 <!--Article references-->
+[Security overview]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [安全性概述]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [Create support ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
 [缩放 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 [DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units
 [请求增加配额]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket#request-quota-change
 [Learning how to monitor your queries]: /documentation/articles/sql-data-warehouse-manage-monitor/
-[预配说明]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
-[为客户端 IP 配置服务器防火墙访问权限]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/#create-a-new-azure-sql-server-level-firewall
-[Visual Studio 2013 或 2015]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[预配说明]: /documentation/articles/sql-data-warehouse-get-started-provision/
+[为客户端 IP 配置服务器防火墙访问权限]: /documentation/articles/sql-data-warehouse-get-started-provision/#create-a-new-azure-sql-server-level-firewall
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [表大小]: /documentation/articles/sql-data-warehouse-tables-overview/#table-size-queries
 [不支持的表功能]: /documentation/articles/sql-data-warehouse-tables-overview/#unsupported-table-features
@@ -109,14 +115,14 @@
 [UPDATE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#ansi-join-replacement-for-update-statements
 [DELETE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#ansi-join-replacement-for-delete-statements
 [MERGE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#replace-merge-statements
-[存储过程限制]: /documentation/articles/sql-data-warehouse-develop-stored-procedures#limitations
+[存储过程限制]: /documentation/articles/sql-data-warehouse-develop-stored-procedures/#limitations
 [向 Azure SQL 数据仓库进行身份验证]: /documentation/articles/sql-data-warehouse-authentication/
 [Working around the PolyBase UTF-8 requirement]: /documentation/articles/sql-data-warehouse-load-polybase-guide/#working-around-the-polybase-utf-8-requirement
 
 <!--MSDN references-->
-[SQL Server Native Client 10/11 (ODBC)]: https://msdn.microsoft.com/zh-cn/library/ms131415.aspx
 [sys.database\_principals]: https://msdn.microsoft.com/zh-cn/library/ms187328.aspx
 [CREATE FUNCTION]: https://msdn.microsoft.com/zh-cn/library/mt203952.aspx
+[sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
 
 <!--Other Web references-->
 
@@ -128,4 +134,4 @@
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Videos]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1010_2016-->

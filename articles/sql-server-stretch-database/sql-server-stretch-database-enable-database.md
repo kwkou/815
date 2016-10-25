@@ -77,12 +77,9 @@
     有关数据库主密钥的详细信息，请参阅 [CREATE MASTER KEY (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) 和[创建数据库主密钥](https://msdn.microsoft.com/zh-cn/library/aa337551.aspx)。
 
 4.  在为延伸数据库配置数据库时，必须提供用于在本地 SQL Server 与远程 Azure 服务器之间进行通信的延伸数据库凭据。可以使用两个选项。
-
     -   你可以提供管理员凭据。
-
-        -   如果通过运行向导来启用延伸数据库，则可以在运行向导时创建凭据。
-
-        -   如果你打算通过运行 **ALTER DATABASE** 启用 Stretch Database，则必须在运行 **ALTER DATABASE** 启用 Stretch Database 之前手动创建凭据。
+    -   如果通过运行向导来启用延伸数据库，则可以在运行向导时创建凭据。
+    -   如果你打算通过运行 **ALTER DATABASE** 启用 Stretch Database，则必须在运行 **ALTER DATABASE** 启用 Stretch Database 之前手动创建凭据。
 
 		下面是一个示例，用于创建新的凭据。
 
@@ -93,20 +90,15 @@
         ```
 
 		有关凭据的详细信息，请参阅 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx)。创建凭据需要 ALTER ANY CREDENTIAL 权限。
-
     -   如果符合以下所有条件，则可以使用 SQL Server 的联合服务帐户来与远程 Azure 服务器通信。
-
-        -   运行 SQL Server 实例的服务帐户是一个域帐户。
-
-        -   域帐户属于某个域，该域的 Active Directory 与 Azure Active Directory 相联合。
-
-        -   远程 Azure 服务器配置为支持 Azure Active Directory 身份验证。
-
-        -   必须将运行 SQL Server 实例的服务帐户配置为远程 Azure 服务器上的 dbmanager 或 sysadmin 帐户。
+    -   运行 SQL Server 实例的服务帐户是一个域帐户。
+    -   域帐户属于某个域，该域的 Active Directory 与 Azure Active Directory 相联合。
+    -   远程 Azure 服务器配置为支持 Azure Active Directory 身份验证。
+    -   必须将运行 SQL Server 实例的服务帐户配置为远程 Azure 服务器上的 dbmanager 或 sysadmin 帐户。
 
 5.  若要为延伸数据库配置数据库，请运行 ALTER DATABASE 命令。
 
-    1.  对于 SERVER 参数，请提供现有 Azure 服务器的名称，包括该名称的 `.database.windows.net` 部分 - 例如 `MyStretchDatabaseServer.database.windows.net`。
+    1.  对于 SERVER 参数，请提供现有 Azure 服务器的名称，包括该名称的 `.database.chinacloudapi.cn` 部分 - 例如 `MyStretchDatabaseServer.database.chinacloudapi.cn`。
 
     2.  请提供具有 CREDENTIAL 参数的现有管理员凭据，或指定 FEDERATED\_SERVICE\_ACCOUNT = ON。以下示例提供了一个现有的凭据。
 

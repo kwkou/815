@@ -6,14 +6,21 @@
 	authors="szarkos"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-manager,azure-service-management"/>
+	tags="azure-resource-manager,azure-service-management"/>  
+
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/09/2016"
-	wacn.date="06/13/2016"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2016"
+	wacn.date="10/24/2016"
+	ms.author="szark"/>  
 
-# <a id="nonendorsed"> </a>有关未认可分发的信息 #
+
+# <a id="nonendorsed"></a>有关未认可分发的信息 #
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
@@ -21,7 +28,7 @@
 **重要提示**：仅当使用某个[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
 
 - [Azure 上的 Linux - 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)
-- [Azure 中对 Linux 映像的支持](http://support2.microsoft.com/kb/2941892)
+- [Azure 中对 Linux 映像的支持](https://support.microsoft.com/kb/2941892)
 
 所有正在 Azure 上运行的分发都需要满足多个先决条件才能在平台上正常运行。本文并未涵盖所有信息，因为每个分发都是不同的；即使你满足以下所有条件，你也可能仍需显著调整你的 Linux 系统以确保其在平台上正常运行。
 
@@ -37,7 +44,7 @@
 本文的其余部分将重点介绍有关在 Azure 上运行 Linux 分发的一般准则。
 
 
-## <a id="linuxinstall" name="general-linux-installation-notes"> </a>常规 Linux 安装说明 ##
+## <a id="linuxinstall" name="general-linux-installation-notes"></a>常规 Linux 安装说明 ##
 
 - Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。如果你使用 VirtualBox，则意味着选择的是“固定大小”，而不是在创建磁盘时动态分配默认大小。
 
@@ -68,13 +75,13 @@
 
 ### 调整 VHD 大小 ###
 
-Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下，使用 Hyper-V 创建的 VHD 应已正确调整。如果未正确调整 VHD，则在你尝试基于 VHD 创建映像时，可能会收到如下错误消息：
+Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下，使用 Hyper-V 创建的 VHD 应已正确调整。如果未正确调整 VHD，则在你尝试基于 VHD 创建*映像*时，可能会收到如下错误消息：
 
 	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs)."
 
 若要修正此问题，可使用 Hyper-V 管理器控制台或 [Resize-VHD](http://technet.microsoft.com/zh-cn/library/hh848535.aspx) Powershell cmdlet 调整 VM 大小。如果你未在 Windows 环境中运行，则建议使用 qemu-img 转换（如果需要）并调整 VHD 大小。
 
-> [AZURE.NOTE] qemu-img 版本（>=2.2.1）中有一个已知 bug，会导致 VHD 格式不正确。我们会在即将发布的 qemu-img 版本中解决此问题。现在建议使用 qemu-img 版本 2.2.0 或较低版本。参考：https://bugs.launchpad.net/qemu/+bug/1490611
+> [AZURE.NOTE] qemu-img 版本（>=2.2.1）中有一个已知 bug，会导致 VHD 格式不正确。QEMU 2.6 中已修复此问题。建议使用 qemu-img 2.2.0 或更低版本，或者更新到 2.6 或更高版本。参考：https://bugs.launchpad.net/qemu/+bug/1490611。
 
 
  1. 直接使用工具（如 `qemu-img` 或 `vbox-manage`）调整 VHD 大小可能会生成无法启动的 VHD。因此，建议先将 VHD 转换为 RAW 磁盘映像。如果已将 VM 映像创建为 RAW 磁盘映像（对于 KVM 等某些虚拟机监控程序，这是默认设置），则可以跳过此步骤：
@@ -107,7 +114,7 @@ Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下�
 
 Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游 Linux 内核。包括最新 Linux 内核版本（即 3.x）在内的许多分发已提供这些驱动程序，或以其他方式为其内核提供了这些驱动程序的向后移植版本。这些驱动程序会不断地在上游内核中使用新的修补程序和功能进行更新，因此，如果可能，请运行[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)以包含这些修补程序和更新。
 
-如果你正在运行 Red Hat Enterprise Linux 版本 **6.0-6.3** 的一个变体，则需要为 Hyper-V 安装最新的 LIS 驱动程序。可[在此处](http://www.microsoft.com/zh-cn/download/search.aspx?q=linux%20integration%20services)找到这些驱动程序。从 RHEL **6.4+**（和派生产品）开始，LIS 驱动程序已包含在内核中，因此，无需其他安装包即在 Azure 上运行这些系统。
+如果你正在运行 Red Hat Enterprise Linux 版本 **6.0-6.3** 的一个变体，则需要为 Hyper-V 安装最新的 LIS 驱动程序。可[在此处](http://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409)找到这些驱动程序。从 RHEL **6.4+**（和派生产品）开始，LIS 驱动程序已包含在内核中，因此，无需其他安装包即在 Azure 上运行这些系统。
 
 如果需要自定义内核，建议使用较新的内核版本（即 **3.8+**）。对于这些分发或维护自己的内核的供应商，将需要执行一些操作，以便定期将 LIS 驱动程序从上游内核向后移植到自定义内核。即使你已运行相对较新的内核版本，也强烈建议你跟踪 LIS 驱动程序中的任何上游修复，并根据需要向后移植这些修复。LIS 驱动程序源文件的位置可在 Linux 内核源树中的 [MAINTAINER](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/MAINTAINERS) 文件中找到：
 
@@ -131,6 +138,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 - [storvsc：对 RAID 和虚拟主机适配器驱动程序禁用 WRITE SAME](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
 - [storvsc：NULL 指针取消引用修补程序](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
 - [storvsc：环形缓冲区故障可能会导致 I/O 冻结](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=e86fb5e8ab95f10ec5f2e9430119d5d35020c951)
+- [scsi\_sysfs：防止执行两次 \_\_scsi\_remove\_device](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/scsi_sysfs.c?id=be821fd8e62765de43cc4f0e2db363d0e30a7e9b)
 
 
 ## Azure Linux 代理 ##
@@ -150,11 +158,11 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 - 修改 GRUB 或 GRUB2 中的内核引导行，以便包含以下参数。这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题：
 
-		console=ttyS0 earlyprintk=ttyS0 rootdelay=300
+		console=ttyS0,115200n8 earlyprintk=ttyS0,115200 rootdelay=300
 
 	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。
 
-	除此之外，建议删除以下参数（如果存在）：
+	除此之外，建议*删除*以下参数（如果存在）：
 
 		rhgb quiet crashkernel=auto
 
@@ -170,7 +178,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 - 不要在操作系统磁盘上创建交换空间
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是临时磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -178,19 +186,14 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 		ResourceDisk.EnableSwap=y
 		ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
 
-- 在“/etc/sudoers”中，必须删除或注释掉以下行（如果存在）：
-
-		Defaults targetpw
-		ALL    ALL=(ALL) ALL
-
 - 最后一步，请运行以下命令以取消设置虚拟机：
 
 		# sudo waagent -force -deprovision
 		# export HISTSIZE=0
 		# logout
 
-	>[AZURE.NOTE] 运行 'waagent -force -deprovision' 之后，你可以在 Virtualbox 上看到以下错误：`[Errno 5] Input/output error`。此错误消息并不关键，可以忽略。
+	>[AZURE.NOTE] 运行“waagent -force -deprovision”之后，在 Virtualbox 上可能看到以下错误：`[Errno 5] Input/output error`。此错误消息并不关键，可以忽略。
 
 - 然后，需要关闭虚拟机并将 VHD 上载到 Azure。
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_1017_2016-->

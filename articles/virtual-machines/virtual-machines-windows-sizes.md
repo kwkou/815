@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="08/03/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 # 虚拟机的大小
 

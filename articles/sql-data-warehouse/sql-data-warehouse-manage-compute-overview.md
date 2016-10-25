@@ -1,4 +1,3 @@
-<!-- Remove Azure Portal -->
 <properties
    pageTitle="管理 Azure SQL 数据仓库中的计算能力（概述）| Azure"
    description="Azure SQL 数据仓库中的性能横向扩展功能。通过调整 DWU 数目进行横向扩展，或者通过暂停和恢复计算资源来节省成本。"
@@ -6,21 +5,27 @@
    documentationCenter="NA"
    authors="barbkess"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/01/2016"
-   wacn.date="08/15/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/03/2016"
+   wacn.date="10/17/2016"/>  
+
 
 # 管理 Azure SQL 数据仓库中的计算能力（概述）
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
+- [门户](/documentation/articles/sql-data-warehouse-manage-compute-portal/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
-<!-- - [门户](/documentation/articles/sql-data-warehouse-manage-compute-portal) -->
 
 SQL 数据仓库的体系结构对存储和计算功能进行了分隔，允许每项功能单独进行缩放。因此，你可以在扩大性能范围的同时节省成本，只需根据需要支付相关性能费用。
 
@@ -43,7 +48,7 @@ SQL 数据仓库的体系结构对存储和计算功能进行了分隔，允许�
  
 若要调整 DWU，可以使用以下任何单个方法。
 
-<!-- - [通过 Azure 门户缩放计算能力][] -->
+- [通过 Azure 门户缩放计算能力][]
 - [通过 PowerShell 缩放计算能力][]
 - [通过 REST API 缩放计算能力][]
 - [通过 TSQL 缩放计算能力][]
@@ -79,7 +84,7 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 若要暂停数据库，请使用下列任意方法之一。
 
-<!-- - [通过 Azure 门户暂停计算][] -->
+- [通过 Azure 门户暂停计算][]
 - [通过 PowerShell 暂停计算][]
 - [通过 REST API 暂停计算][]
 
@@ -91,11 +96,15 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 若要恢复数据库，请使用下列任意方法之一。
 
-<!-- - [通过 Azure 门户恢复计算][] -->
+- [通过 Azure 门户恢复计算][]
 - [通过 PowerShell 恢复计算][]
 - [通过 REST API 恢复计算][]
 
-<a name="next-steps-bk">
+## 权限
+
+缩放数据库将需要 [ALTER DATABASE][] 中所述的权限。暂停和恢复将需要 [SQL DB 参与者][]权限，具体说来就是 Microsoft.Sql/servers/databases/action。
+
+<a name="next-steps-bk"></a>
 
 ## 后续步骤
 请参阅以下文章，以帮助了解其他一些主要的性能概念：
@@ -137,9 +146,12 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 [最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
+[SQL DB 参与者]: /documentation/articles/role-based-access-built-in-roles#sql-db-contributor
+
 <!--MSDN references-->
+[ALTER DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204042.aspx
 
 <!--Other Web references-->
 [Azure portal]: http://portal.azure.cn/
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

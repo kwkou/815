@@ -739,7 +739,7 @@
         "count": "[length(parameters('siteNames'))]"
     }
 
-有关在数组中使用此函数的详细信息，请参阅[在 Azure 资源管理器中创建多个资源实例](resource-group-create-multiple.md)。
+有关在数组中使用此函数的详细信息，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
 
 有关对字符串值使用 length 的示例，请参阅 [length - 字符串](#lengthstring)。
 

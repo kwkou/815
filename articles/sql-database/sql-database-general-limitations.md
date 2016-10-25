@@ -3,13 +3,19 @@
    description="本页介绍 Azure SQL 数据库的某些一般性限制，以及互操作性和支持方面的问题。"
    services="sql-database"
    documentationCenter="na"
-   authors="carlrabeler"
+   authors="CarlRabeler"
    manager="jhubbard"
    editor="monicar" />
 <tags
    ms.service="sql-database"
-   ms.date="06/21/2016"
-   wacn.date="08/15/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-management"
+   ms.date="09/06/2016"
+   wacn.date="10/17/2016"
+   ms.author="carlrab" />  
+
 
 # Azure SQL 数据库的一般性限制和指导原则
 
@@ -27,11 +33,11 @@
 
 ## SQL Server 代理/作业
 
-Azure SQL 数据库不支持 SQL Server 代理或作业。但是，你可以在本地 SQL Server 上运行 SQL Server 代理并连接到 Azure SQL 数据库。
+Azure SQL 数据库不支持 SQL Server 代理，但可以使用弹性作业在一个或多个数据库中运行作业。有关弹性作业的详细信息，请参阅[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
 ## SQL Server 排序规则支持
 
-Azure SQL 数据库使用的默认数据库排序规则是 SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS。其中 LATIN1\_GENERAL 是英语（美国），CP1 是代码页 1252，CI 是不区分大小写，AS 是区分重音。无法改变 V12 数据库的排序规则。有关如何设置定序的详细信息，请参阅 [COLLATE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms184391.aspx)。
+Azure SQL 数据库使用的默认数据库排序规则是 **SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS**。其中 **LATIN1\_GENERAL** 是英语（美国），**CP1** 是代码页 1252，**CI** 是不区分大小写，**AS** 是区分重音。无法改变 V12 数据库的排序规则。有关如何设置定序的详细信息，请参阅 [COLLATE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms184391.aspx)。
 
 ## 命名要求
 
@@ -59,4 +65,4 @@ Azure SQL 数据库使用的默认数据库排序规则是 SQL\_LATIN1\_GENERAL\
 
 - 有关驱动程序可用性和 SQL 数据库支持的信息，请参阅 [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

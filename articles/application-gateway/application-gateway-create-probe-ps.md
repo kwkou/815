@@ -7,11 +7,17 @@
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
-/>
-<tags
-	ms.service="application-gateway"
-	ms.date="08/09/2016"
-	wacn.date="09/19/2016"/>
+/>  
+
+<tags  
+   ms.service="application-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/06/2016"
+   wacn.date="10/17/2016"
+   ms.author="gwallace" />
 
 # 使用适用于 Azure 资源管理器的 PowerShell 创建 Azure 应用程序网关的自定义探测
 
@@ -19,8 +25,6 @@
 - [Azure 门户预览](/documentation/articles/application-gateway-create-probe-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-probe-ps/)
 - [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/)
-
-<BR>
 
 [AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)]
 
@@ -41,21 +45,19 @@
 
 检查该帐户的订阅。
 
-		get-AzureRmSubscription
-
-系统将提示用户使用凭据进行身份验证。<BR>
+	Get-AzureRmSubscription
 
 ### 步骤 3
 
 选择要使用的 Azure 订阅。<BR>
 
 
-		Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+	Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
 ### 步骤 4
 
-创建新的资源组（如果要使用现有的资源组，请跳过此步骤）。
+创建资源组（如果要使用现有的资源组，请跳过此步骤）。
 
     New-AzureRmResourceGroup -Name appgw-rg -location "China North"
 
@@ -85,7 +87,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 分配子网变量，以完成后面的创建应用程序网关的步骤。
 
-	$subnet=$vnet.Subnets[0]
+	$subnet = $vnet.Subnets[0]
 
 ## 创建前端配置的公共 IP 地址
 
@@ -97,8 +99,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 创建使用自定义探测的应用程序网关配置对象
 
-在创建应用程序网关之前，需要设置所有配置项。以下步骤将创建应用程序网关资源所需的配置项。
-
+在创建应用程序网关之前设置所有配置项。以下步骤将创建应用程序网关资源所需的配置项。
 
 ### 步骤 1
 
@@ -110,7 +111,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 ### 步骤 2
 
 
-配置名为“pool01”的后端 IP 地址池，其 IP 地址为“134.170.185.46, 134.170.188.221,134.170.185.50”。这些 IP 地址将接收来自前端 IP 终结点的网络流量。可通过替换上述 IP 地址的方式添加用户自己的应用程序 IP 地址终结点。
+配置名为“pool01”的后端 IP 地址池，其 IP 地址为“134.170.185.46, 134.170.188.221,134.170.185.50”。这些值是接收来自前端 IP 终结点的网络流量的 IP 地址。可通过替换上述 IP 地址的方式添加用户自己的应用程序 IP 地址终结点。
 
 	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
@@ -122,22 +123,21 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用的参数为：
 
-- **-Interval** - 配置探测检查间隔，以秒为单位。
-- **-Timeout** - 定义 HTTP 响应检查的探测超时。
+- **Interval** - 配置探测检查间隔，以秒为单位。
+- **Timeout** - 定义 HTTP 响应检查的探测超时。
 - **-Hostname 和 -path** - 应用程序网关为了确定实例运行状况而调用的完整 URL 路径。例如，如果网站为 http://contoso.com/，则可以为“http://contoso.com/path/custompath.htm”配置自定义探测，使探测检查能够获得成功的 HTTP 响应。
-- **-UnhealthyThreshold** - 将后端实例标记为 *不正常* 所需的失败 HTTP 响应数目。
+- **UnhealthyThreshold** - 将后端实例标记为 *不正常* 所需的失败 HTTP 响应数目。
 
-<BR>
+<BR>  
+
 
 	$probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/path.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
-
 ### 步骤 4
 
-为后端池中的流量配置应用程序网关设置“poolsetting01”。此步骤还包括针对应用程序网关请求配置后端池响应超时。后端响应达到超时限制时，应用程序网关取消请求。这与仅适用于探测检查的后端响应的探测超时不同。
+为后端池中的流量配置应用程序网关设置“poolsetting01”。此步骤还包括针对应用程序网关请求配置后端池响应超时。后端响应达到超时限制时，应用程序网关取消请求。此值与仅适用于探测检查的后端响应的探测超时不同。
 
 	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled -Probe $probe -RequestTimeout 80
-
 
 ### 步骤 5
 
@@ -209,7 +209,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用 **Set-AzureRmApplicationGateway** 将配置保存到应用程序网关。
 
-	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
+	Set-AzureRmApplicationGateway -ApplicationGateway $getgw
 
 ## 从现有应用程序网关中删除探测
 
@@ -233,12 +233,16 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 使用 **-Set-AzureRmApplicationGatewayBackendHttpSettings** 更新后端池设置，删除探测与超时设置。
 
 
-	 $getgw=Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol http -CookieBasedAffinity Disabled
+	 $getgw = Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol http -CookieBasedAffinity Disabled
 
 ### 步骤 4
 
 使用 **Set-AzureRmApplicationGateway** 将配置保存到应用程序网关。
 
-	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
+	Set-AzureRmApplicationGateway -ApplicationGateway $getgw
 
-<!---HONumber=Mooncake_0912_2016-->
+## 后续步骤
+
+访问[配置 SSL 卸载](/documentation/articles/application-gateway-ssl-arm/)，了解如何配置 SSL 卸载
+
+<!---HONumber=Mooncake_1010_2016-->

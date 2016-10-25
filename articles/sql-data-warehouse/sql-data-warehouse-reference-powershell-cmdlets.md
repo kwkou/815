@@ -9,8 +9,12 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="08/08/2016"
-   wacn.date="09/05/2016"/>  
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"/>  
 
 
 # 适用于 SQL 数据仓库的 PowerShell cmdlet 和 REST API
@@ -25,8 +29,8 @@
 2. 在 PowerShell 提示符下，运行以下命令以登录到 Azure Resource Manager，然后选择你的订阅。
 
 		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-	    	Get-AzureRmSubscription
-	    	Select-AzureRmSubscription -SubscriptionName "MySubscription"
+	    Get-AzureRmSubscription
+	    Select-AzureRmSubscription -SubscriptionName "MySubscription"
 
 ## 暂停 SQL 数据仓库示例
 
@@ -84,7 +88,7 @@
 <!--Article references-->
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [Create a SQL Data Warehouse using PowerShell（使用 PowerShell 创建 SQL 数据仓库）]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
-[数据库还原]: /documentation/articles/sql-data-warehouse-manage-database-restore-powershell/
+[数据库还原]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [使用 REST 管理可伸缩性]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/
 
 <!--MSDN references-->
@@ -106,4 +110,4 @@
 
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1010_2016-->

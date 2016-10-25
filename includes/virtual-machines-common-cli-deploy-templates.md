@@ -28,13 +28,13 @@
 
 	docker run -it microsoft/azure-cli
 
-### 设置你的 Azure 帐户和订阅
+### 设置 Azure 帐户和订阅
 
-如果你还没有 Azure 订阅，你可以注册[试用版](/pricing/1rmb-trial/)。
+如果你还没有 Azure 订阅，你可以注册一个[试用版](/pricing/1rmb-trial/)。
 
 现在，键入 `azure login -e AzureChinaCloud` 并遵循提示来进行 Azure 帐户的交互式登录体验，[以交互方式登录你的 Azure 帐户](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)。
 
-> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，那么，**也**可以使用 `azure login -e AzureChinaCloud -u` 以及工作或学校 ID，在“没有” 交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id/)，以相同方式进行登录。
+> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，那么，**也**可以使用 `azure login -e AzureChinaCloud -u` 以及工作或学校 ID，在*没有* 交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id/)，以相同方式进行登录。
 
 你的帐户可能有多个订阅。可以通过键入 `azure account list` 列出订阅，如下所示：
 
@@ -47,7 +47,7 @@
     data:    Fabrikam test                     xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  false  
     data:    Contoso production                xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  false  
 
-若要设置当前 Azure 订阅，请键入以下内容。使用订阅名称或 ID（包含你要管理的资源）。
+若要设置当前 Azure 订阅，请键入以下内容。使用具有你要管理的资源的订阅名称或 ID。
 
 	azure account set <subscription name or ID> true
 
@@ -61,9 +61,9 @@
 
 ## 了解 Azure 资源模板和资源组
 
-大多数应用程序是通过不同资源类型的组合（例如，一个或多个 VM 和存储帐户、一个 SQL 数据库、一个虚拟网络或内容交付网络）构建的。默认 Azure 服务管理 API 和 Azure 经典管理门户使用基于服务的方法代表这些项。这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
+大多数应用程序是通过不同资源类型的组合（例如，一个或多个 VM 和存储帐户、一个 SQL 数据库、一个虚拟网络或内容交付网络）构建的。默认 Azure 服务管理 API 和 Azure 经典管理门户使用基于服务的方法来表示这些资源。这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
 
-不过，你可以利用 “Azure 资源管理器模板” 将这些不同的资源声明为一个逻辑部署单元，然后进行部署和管理。请不要以命令方式告知 Azure 逐一部署命令，而应该在 JSON 文件中描述整个部署 - 所有资源及关联的设置以及部署参数 - 然后告诉 Azure 将这些资源视为一个组进行部署。
+不过，你可以利用 *Azure 资源管理器模板* 将这些不同的资源声明为一个逻辑部署单元，然后进行部署和管理。请不要以命令方式告知 Azure 逐一部署命令，而应该在 JSON 文件中描述整个部署 - 所有资源及关联的设置以及部署参数 - 然后告诉 Azure 将这些资源视为一个组进行部署。
 
 然后，使用 Azure CLI 然后，使用 Azure CLI 资源管理命令执行以下操作，即可管理组的资源整体生命周期：
 
@@ -80,13 +80,13 @@
 
 首先，创建资源组。
 
-    azure group create coreos-quick chinanorth
+    azure group create centos-quick chinanorth
     info:    Executing command group create
-    + Getting resource group coreos-quick
-    + Creating resource group coreos-quick
-    info:    Created resource group coreos-quick
-    data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick
-    data:    Name:                coreos-quick
+    + Getting resource group centos-quick
+    + Creating resource group centos-quick
+    info:    Created resource group centos-quick
+    data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick
+    data:    Name:                centos-quick
     data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
@@ -94,7 +94,7 @@
     info:    group create command OK
 
 
-其次，你需要一个映像。若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。不过，本文只列出了以下常用映像的简短列表。我们将使用 CoreOS 的 Stable 映像来完成这个快速创建过程。
+其次，你需要一个映像。若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。不过，本文只列出了以下常用映像的简短列表。我们在此快速创建中使用 CentOS 7.1 映像。
 
 > [AZURE.NOTE] 对于 ComputeImageVersion，你也可以简单地在模板语言和 Azure CLI 中提供“latest”作为参数。这样，你无需修改脚本或模板，就始终都能使用映像的最新修补版本。如下所示。
 
@@ -113,44 +113,44 @@
 
     azure vm quick-create
     info:    Executing command vm quick-create
-    Resource group name: coreos-quick
-    Virtual machine name: coreos
+    Resource group name: centos-quick
+    Virtual machine name: centos
     Location name: chinanorth
     Operating system Type [Windows, Linux]: linux
-    ImageURN (format: "publisherName:offer:skus:version"): OpenLogic:coreos:7.1:latest
+    ImageURN (format: "publisherName:offer:skus:version"): OpenLogic:centos:7.1:latest
     User name: ops
     Password: *********
     Confirm password: *********
-    + Looking up the VM "coreos"
+    + Looking up the VM "centos"
     info:    Using the VM Size "Standard_A1"
     info:    The [OS, Data] Disk or image configuration requires storage account
     + Retrieving storage accounts
     info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
     + Creating storage account "cli9fd3fce49e9a9b3d14302" in "chinanorth"
     + Looking up the storage account cli9fd3fce49e9a9b3d14302
-    + Looking up the NIC "coreo-china-1430261891570-nic"
-    info:    An nic with given name "coreo-china-1430261891570-nic" not found, creating a new one
-    + Looking up the virtual network "coreo-china-1430261891570-vnet"
+    + Looking up the NIC "cento-china-1430261891570-nic"
+    info:    An nic with given name "cento-china-1430261891570-nic" not found, creating a new one
+    + Looking up the virtual network "cento-china-1430261891570-vnet"
     info:    Preparing to create new virtual network and subnet
-    / Creating a new virtual network "coreo-china-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-china-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
-    + Looking up the virtual network "coreo-china-1430261891570-vnet"
-    + Looking up the subnet "coreo-china-1430261891570-snet" under the virtual network "coreo-china-1430261891570-vnet"
+    / Creating a new virtual network "cento-china-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "cento-china-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
+    + Looking up the virtual network "cento-china-1430261891570-vnet"
+    + Looking up the subnet "cento-china-1430261891570-snet" under the virtual network "cento-china-1430261891570-vnet"
     info:    Found public ip parameters, trying to setup PublicIP profile
-    + Looking up the public ip "coreo-china-1430261891570-pip"
-    info:    PublicIP with given name "coreo-china-1430261891570-pip" not found, creating a new one
-    + Creating public ip "coreo-china-1430261891570-pip"
-    + Looking up the public ip "coreo-china-1430261891570-pip"
-    + Creating NIC "coreo-china-1430261891570-nic"
-    + Looking up the NIC "coreo-china-1430261891570-nic"
-    + Creating VM "coreos"
-    + Looking up the VM "coreos"
-    + Looking up the NIC "coreo-china-1430261891570-nic"
-    + Looking up the public ip "coreo-china-1430261891570-pip"
-    data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
+    + Looking up the public ip "cento-china-1430261891570-pip"
+    info:    PublicIP with given name "cento-china-1430261891570-pip" not found, creating a new one
+    + Creating public ip "cento-china-1430261891570-pip"
+    + Looking up the public ip "cento-china-1430261891570-pip"
+    + Creating NIC "cento-china-1430261891570-nic"
+    + Looking up the NIC "cento-china-1430261891570-nic"
+    + Creating VM "centos"
+    + Looking up the VM "centos"
+    + Looking up the NIC "cento-china-1430261891570-nic"
+    + Looking up the public ip "cento-china-1430261891570-pip"
+    data:    Id                             :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick/providers/Microsoft.Compute/virtualMachines/centos
     data:    ProvisioningState               :Succeeded
-    data:    Name                            :coreos
+    data:    Name                            :centos
     data:    Location                        :chinanorth
-    data:    FQDN                            :coreo-china-1430261891570-pip.chinanorth.chinacloudapp.cn
+    data:    FQDN                            :cento-china-1430261891570-pip.chinanorth.chinacloudapp.cn
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -159,7 +159,7 @@
     data:    Storage Profile:
     data:      Image reference:
     data:        Publisher                   :OpenLogic
-    data:        Offer                       :coreos
+    data:        Offer                       :centos
     data:        Sku                         :7.1
     data:        Version                     :7.1.20160329
     data:
@@ -172,7 +172,7 @@
     data:          Uri                       :https://cli9fd3fce49e9a9b3d14302.blob.core.chinacloudapi.cn/vhds/cli9fd3fce49e9a9b3d-os-1430261892283.vhd
     data:
     data:    OS Profile:
-    data:      Computer Name                 :coreos
+    data:      Computer Name                 :centos
     data:      User Name                     :ops
     data:      Linux Configuration:
     data:        Disable Password Auth       :false
@@ -180,16 +180,16 @@
     data:    Network Profile:
     data:      Network Interfaces:
     data:        Network Interface #1:
-    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-china-1430261891570-nic
+    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick/providers/Microsoft.Network/networkInterfaces/cento-china-1430261891570-nic
     data:          Primary                   :true
     data:          MAC Address               :00-0D-3A-30-72-E3
     data:          Provisioning State        :Succeeded
-    data:          Name                      :coreo-china-1430261891570-nic
+    data:          Name                      :cento-china-1430261891570-nic
     data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.1.4
     data:            Public IP address       :104.40.24.124
-    data:            FQDN                    :coreo-china-1430261891570-pip.chinanorth.chinacloudapp.cn
+    data:            FQDN                    :cento-china-1430261891570-pip.chinanorth.chinacloudapp.cn
     info:    vm quick-create command OK
 
 无论身在何处，新的 VM 就在你的身边。
@@ -198,15 +198,16 @@
 
 请参考以下各部分中所述的说明，使用 Azure CLI 从模板部署新的 Azure VM。此模板会在只有单个子网的新虚拟网络中创建单个虚拟机，而不同于 `azure vm quick-create`，它可以让你确切描述想要的内容，而且重复使用时也不会发生任何错误。以下是此模板创建的内容：
 
-![](./media/virtual-machines-common-cli-deploy-templates/new-vm.png)
+![](./media/virtual-machines-common-cli-deploy-templates/new-vm.png)  
+
 
 ### 步骤 1：检查 JSON 文件中的模板参数
 
 以下是模板的 JSON 文件内容。（[GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json) 中也提供了该模板。）
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 
-模板是弹性的，因此，设计人员可能已经选择提供很多的参数给你，或者选择创建一个更固定的模板，而只提供几个参数给你。为了收集信息，请将这个模板以参数的形式传递，然后打开模板文件（本主题内嵌了以下模板），然后检查 **parameters** 值。
+模板是弹性的，因此，设计人员可能已经选择提供很多的参数给你，或者选择创建一个更固定的模板，而只提供几个参数给你。为了收集信息，请将模板以参数的形式传递，打开模板文件（本主题包含一个模板，见下文），然后检查 **parameters** 的值。
 
 在此情况下，以下模板将要求提供：
 
@@ -216,7 +217,7 @@
 - 让外界使用的域名。
 - Ubuntu Server 版本号 - 但将只接受一个列表。
 
-确定这些值之后，就可以开始创建组，然后将此模板部署到 Azure 订阅。
+确定这些值之后，就可以为模板创建组，并将此模板部署到 Azure 订阅。
 
     {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -425,9 +426,7 @@
 
 下面是一个示例：
 
-你可以在 [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json) 下载模板，然后运行下面的命令。
-
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+下载 [azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json)，将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，以及将“cloudapp.azure.com”替换为“chinacloudapp.cn”，并运行以下命令。
 
     azure group deployment create --template-file /path/to/azuredeploy.json myResourceGroup firstDeployment
     info:    Executing command group deployment create
@@ -449,31 +448,30 @@
     data:    Mode               : Incremental
 	data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 	data:    DeploymentParameters :
-	data:    Name             Type          Value
+    data:    Name                   Type          Value
 	data:    ---------------  ------------  -----------
-	data:    adminUsername    String        ops
-	data:    adminPassword    SecureString  undefined
-	data:    dnsLabelPrefix   String        newdomainname
-	data:    ubuntuOSVersion  String        14.04.2-LTS
-	data:    Outputs            :
-	data:    Name        Type    Value
-	data:    ----------  ------  -----------------------------------------------
-	data:    hostname    String  newdomainname.chinanorth.chinacloudapp.cn
-	data:    sshCommand  String  ssh ops@newdomainname.chinanorth.chinacloudapp.cn
-	info:    group deployment create command OK
+    data:    adminUsername          String        ops
+    data:    adminPassword          SecureString  undefined
+    data:    dnsLabelPrefix String        newdomainname
+    data:    ubuntuOSVersion        String        14.04.2-LTS 
+    data:    Outputs            :
+    data:    Name        Type    Value
+    data:    ----------  ------  -----------------------------------------------
+    data:    hostname    String  newdomainname.chinanorth.chinacloudapp.cn
+    data:    sshCommand  String  ssh ops@newdomainname.chinanorth.chinacloudapp.cn
+    info:    group deployment create command OK
 
 
 
 ## <a id="create-a-custom-vm-image"></a>任务：创建自定义 VM 映像
 
-你已基本了解上述模板的用法，那么现在我们可以使用类似的说明，通过 Azure CLI 使用模板从 Azure 的特定 .vhd 文件创建自定义 VM 映像。其中的差别就是此模板会从指定的虚拟硬盘 (VHD) 创建单个虚拟机。（这个模板也可以在 [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-from-user-image/azuredeploy.json) 上找到。）
-
+你已基本了解上述模板的用法，那么现在我们可以使用类似的说明，通过 Azure CLI 使用模板从 Azure 的特定 .vhd 文件创建自定义 VM 映像。其中的差别就是此模板会从指定的虚拟硬盘 (VHD) 创建单个虚拟机。
 
 ### 步骤 1：检查 JSON 文件中的模板
 
-以下是本部分举例说明时，模板的 JSON 文件内容。
+以下是本部分举例说明时，模板的 JSON 文件内容。（[GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-from-user-image/azuredeploy.json) 中也提供了该模板。）
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 
 同样，参数如果没有默认值，就必须找出你想输入的值。当你运行 `azure group deployment create` 命令时，Azure CLI 会提示你输入这些值。
 
@@ -685,7 +683,7 @@
 
 然后使用 `--template-uri` 选项直接调用模板（或者使用 `--template-file` 选项，使用自己保存在本地的文件），开始创建部署。请注意，因为模板已指定默认值，所以系统会提示你只输入几项数据。如果将模板部署到几个不同的地方，可能会发现某些名称与默认值冲突（特别是你创建的 DNS 名称）。
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 
     azure group deployment create \
     > --template-file /path/to/azuredeploy.json \
@@ -710,8 +708,8 @@
     data:    ProvisioningState  : Succeeded
     data:    Timestamp          : 2015-04-28T14:55:48.0963829Z
     data:    Mode               : Incremental
-	data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-	data:    DeploymentParameters :
+    data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    data:    DeploymentParameters :
     data:    Name                           Type          Value
     data:    -----------------------------  ------------  ------------------------------------
     data:    userImageStorageAccountName    String        userImageStorageAccountName
@@ -735,15 +733,16 @@
 
 你可以使用此模板在一个负载均衡器上创建两个虚拟机，然后在端口 80 上配置负载均衡规则。此模板还会部署存储帐户、虚拟网络、公共 IP 地址、可用性集和网络接口。
 
-![](./media/virtual-machines-common-cli-deploy-templates/multivmextlb.png)
+![](./media/virtual-machines-common-cli-deploy-templates/multivmextlb.png)  
+
 
 按照以下步骤部署一个多 VM 应用程序，它会通过 Azure PowerShell 命令使用 Github 模板存储库中的资源管理器模板，然后就可以使用虚拟网络和负载均衡器。
 
 ### 步骤 1：检查 JSON 文件中的模板
 
-以下是模板的 JSON 文件内容。如果你需要最新版本，可查阅 [Github repository for templates（Github 模板存储库）](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json)。此主题使用 `--template-uri` 开关来调用模板，不过你也可以使用 `--template-file` 开关来传递本地版本。
+以下是模板的 JSON 文件内容。如果需要最新版本，可查阅 [Github repository for templates](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json)（Github 模板存储库）。此主题使用 `--template-uri` 开关来调用模板，不过你也可以使用 `--template-file` 开关来传递本地版本。
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 
     {
         "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
@@ -1117,8 +1116,8 @@
     data:    ProvisioningState  : Succeeded
     data:    Timestamp          : 2015-04-28T20:58:40.1678876Z
     data:    Mode               : Incremental
-	data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-	data:    DeploymentParameters :
+    data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    data:    DeploymentParameters :
     data:    Name                   Type          Value
     data:    ---------------------  ------------  ----------------------
     data:    location               String        chinanorth
@@ -1138,7 +1137,7 @@
     data:    vmSize                 String        Standard_A1
     info:    group deployment create command OK
 
-请注意，此模板部署的是 Windows Server 映像；但是，它可以轻松地替换为任何 Linux 映像。想要使用多个 Swarm 管理器创建一个 Docker 群集吗？
+请注意，此模板部署的是 Windows Server 映像；但是，它可以轻松地替换为任何 Linux 映像。想要使用多个 Swarm 管理器创建一个 Docker 群集吗？ [你可以做到](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-swarm-cluster/)。
 
 ## <a id="remove-a-resource-group"></a>任务：删除资源组
 
@@ -1152,7 +1151,7 @@
 
 ## <a id="show-the-log-for-a-resource-group-deployment"></a>任务：显示资源组部署日志
 
-创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。
+创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。（有关部署故障排除的详细信息以及有关问题的其他信息，请参阅[在 Azure 中排查资源组部署问题](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)。）
 
 为了查明特定的失败，你可以使用 **jq** 等工具来更清楚地查明前因后果，例如，你需要更正的单个失败。以下示例使用 **jq** 分析 **lbgroup** 的部署日志，以找出失败的原因。
 
@@ -1263,9 +1262,14 @@
 
     azure vm disk attach <resource-group> <vm-name> [vhd-url]
 
-然后需要装入该磁盘，就像平时在 Linux 中操作一样。
+然后需要装载该磁盘，就像通常在 Linux 中的操作一样。
 
 
 ## 后续步骤
 
-若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)。
+有关 Azure CLI 用法和 **arm** 模式的更多示例，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 用于 Azure 资源管理器](/documentation/articles/xplat-cli-azure-resource-manager/)。若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)。
+
+
+有关可用的其他模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)和[使用模板的应用程序框架](/documentation/articles/virtual-machines-linux-app-frameworks/)。
+
+<!---HONumber=Mooncake_1010_2016-->

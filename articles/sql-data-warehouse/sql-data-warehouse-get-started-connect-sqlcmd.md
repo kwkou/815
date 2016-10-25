@@ -6,12 +6,18 @@
    documentationCenter="NA"
    authors="sonyam"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/22/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/06/2016"
+   wacn.date="10/17/2016" />  
+
 
 # 查询 Azure SQL 数据仓库 (sqlcmd)
 
@@ -19,30 +25,38 @@
 - [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio/)
 - [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
 
-本演练使用 sqlcmd 命令行实用工具来查询 Azure SQL 数据仓库。
-
-## 先决条件
-
-若要逐步完成本教程，你需要：
-
--  [sqlcmd.exe][]。若要下载，请参阅 [Microsoft Command Line Utilities 11 for SQL Server][]，同样需要 [Microsoft ODBC Driver 11 for SQL Server Windows][]。
+本演练使用 [sqlcmd][] 命令行实用程序来查询 Azure SQL 数据仓库。
 
 ## 1\.连接
 
-若要开始使用 sqlcmd，请打开命令提示符并输入 **sqlcmd**，后跟 SQL 数据仓库数据库的连接字符串。连接字符串需包含以下必需参数：
+若要开始使用 [sqlcmd][]，请打开命令提示符并输入 **sqlcmd**，后跟 SQL 数据仓库数据库的连接字符串。连接字符串需要以下参数：
 
 + **服务器 (-S)：**采用 < 服务器名称 >.database.chinacloudapi.cn 格式的服务器
 + **数据库 (-d)：**数据库名称。
-+ **用户 (-U)：**采用  < 用户 > 格式的服务器用户
-+ **密码 (-P)：**与用户关联的密码
 + **启用带引号的标识符 (-I)：**必须启用带引号的标识符才能连接到 SQL 数据仓库实例。
+
+若要使用 SQL Server 身份验证，需添加用户名/密码参数：
+
++ **用户 (-U)：**采用 `<`用户`>` 格式的服务器用户
++ **密码 (-P)：**与用户关联的密码
 
 例如，你的连接字符串可能如下所示：
 
 
 	C:\>sqlcmd -S MySqlDw.database.chinacloudapi.cn -d Adventure_Works -U myuser -P myP@ssword -I
 
-> [AZURE.NOTE] 当前需要启用了带引号标识符的 -I 选项来连接到 SQL 数据仓库。
+
+若要使用 Azure Active Directory 集成身份验证，需添加 Azure Active Directory 参数：
+
++ **Azure Active Directory 身份验证 (-G)：**使用 Azure Active Directory 进行身份验证
+
+例如，你的连接字符串可能如下所示：
+
+
+	C:\>sqlcmd -S MySqlDw.database.chinacloudapi.cn -d Adventure_Works -U myuser -P myP@ssword -I
+
+
+> [AZURE.NOTE] 需[启用 Azure Active Directory 身份验证](/documentation/articles/sql-data-warehouse-authentication/)才能使用 Active Directory 进行身份验证。
 
 ## 2\.查询
 
@@ -67,19 +81,17 @@
 
 ## 后续步骤
 
-若要了解有关所有 sqlcmd 选项的信息，请参阅 [sqlcmd 文档][sqlcmd.exe]。
+请参阅 [sqlcmd 文档][sqlcmd]，详细了解 sqlcmd 中的可用选项。
 
-<!--Articles-->
-
-[connecting with PowerBI]: /documentation/articles/sql-data-warehouse-integrate-power-bi/
+<!--Image references-->
 
 
-<!--Other-->
-[sqlcmd.exe]: https://msdn.microsoft.com/zh-cn/library/ms162773.aspx
-[Microsoft ODBC Driver 11 for SQL Server Windows]: https://www.microsoft.com/download/details.aspx?id=36434
-[Microsoft Command Line Utilities 11 for SQL Server]: http://go.microsoft.com/fwlink/?LinkId=321501
-[Azure portal]: https://manage.windowsazure.cn
+<!--Article references-->
+
+<!--MSDN references--> 
+[sqlcmd]: https://msdn.microsoft.com/zh-cn/library/ms162773.aspx
+[Azure portal]: https://portal.azure.cn
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->

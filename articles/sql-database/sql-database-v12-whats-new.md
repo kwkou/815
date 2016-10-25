@@ -8,10 +8,16 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="05/19/2016"
-	wacn.date="07/25/2016"/>
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/15/2016"
+	wacn.date="10/17/2016"
+	ms.author="genemi"/>  
+
 
 
 # SQL 数据库 V12 的新增功能
@@ -42,7 +48,24 @@ SQL 数据库 V12 的主要目标是提高与 Microsoft SQL Server 2014 的兼�
 
 - [更改数据库范围的配置 (TRANSACT-SQL)](http://msdn.microsoft.com/zh-cn/library/mt629158.aspx)
 
-有关 SQL 数据库尚不支持的少部分功能，请参阅[此处](/documentation/articles/sql-database-transact-sql-information/)。
+有关 SQL 数据库尚不支持的少部分功能，请参阅[此文](/documentation/articles/sql-database-transact-sql-information/)。
+
+
+### 兼容级别 130
+
+
+> [AZURE.IMPORTANT] **2016 年 6 月**开始，Azure SQL 数据库 V12 上*新建*的数据库的兼容性级别均从 130 开始，这与 Microsoft SQL Server 2016 GA 匹配。
+> 
+> 如果愿意，也可以使用 `ALTER DATABASE YourDatabase SET COMPATIBILITY_LEVEL = 120`。
+> 
+> 此默认更改不会更改 2016 年 6 月之前所创建的数据库的兼容级别。从 V11 升级到 V12 也不会更改数据库级别。
+
+
+
+有关可以如何在最新兼容性级别与之前的兼容性级别之间比较你最重要的查询的说明，请参阅：
+
+- [Azure SQL 数据库中已改善的兼容级别 130 的查询性能](/documentation/articles/sql-database-compatibility-level-query-performance-130/)
+
 
 
 ## 更高级的性能，全新的性能级别
@@ -72,10 +95,10 @@ SQL 数据库 V12 中的性能增强功能需要这些端口。
 ## 更好支持云 SaaS 供应商
 
 
-我们只在 V12 中发布了新的标准性能级别 S3 与[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)公共预览版。这是专门为云 SaaS 供应商设计的解决方案。使用弹性数据库池，你可以：
+我们只在 V12 中发布了新的标准性能级别 S3 与[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)公共预览版。弹性数据库池是专门为云 SaaS 供应商设计的解决方案。使用弹性数据库池，你可以：
 
 
-- 在数据库之间共享 DTU，以降低部署大量数据库所带来的成本。
+- 在数据库之间共享 DTU，降低部署大量数据库所带来的成本。
 - 执行[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview/)大规模管理数据库。
 
 
@@ -98,13 +121,12 @@ SQL 数据库 V12 中的性能增强功能需要这些端口。
 ## 在需要恢复时提高业务连续性
 
 
-V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
+V12 提供更有利的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 
 
 | 业务连续性功能 | 早期版本 | V12 |
 | :-- | :-- | :-- |
 | 异地还原 | • RPO < 24 小时。<br/>• ERT < 12 小时。 | • RPO < 1 小时。<br/>• ERT < 12 小时。 |
-| 标准异地复制 | • RPO < 30 分钟。<br/>• ERT < 2 小时。 | • RPO < 5 秒。<br/>• ERT < 30 秒。 |
 | 活动异地复制 | • RPO < 5 分钟。<br/>• ERT < 1 小时。 | • RPO < 5 秒。<br/>• ERT < 30 秒。 |
 
 
@@ -117,7 +139,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 我们可以给出很多有说服力的理由来劝告客户立即从 V11 升级到 Azure SQL 数据库 V12：
 
 
-- 与 V11 相比，SQL 数据库 V12 中增加了许多新的功能。
+- 与 V11 的功能相比，SQL 数据库 V12 中增加了大量新功能。
 - 我们将持续在 V12 中新增功能，但是 V11 不会再新增功能。
 - 大多数新功能都会先在 SQL 数据库 V12 中发布，然后再发布到 Microsoft SQL Server。
 

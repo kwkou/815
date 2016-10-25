@@ -8,11 +8,15 @@
 	editor=""
 	keywords="重置管理员密码"/>  
 
-
 <tags
 	ms.service="sql-database"
-	ms.date="07/06/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/13/2016"
+	wacn.date="10/17/2016"
+	ms.author="v-shysun"/>  
 
 
 # 如何在 Azure SQL 数据库中执行重置管理员密码等常见管理任务
@@ -41,4 +45,4 @@
 ## 在虚拟 master 数据库中为高权限用户创建其他登录名
 -使用 [CREATE LOGIN](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx) 语句，并参阅[管理 Azure SQL 数据库中的数据库和登录名](/documentation/articles/sql-database-manage-logins/)的“管理登录名”部分以了解详细信息。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1010_2016-->

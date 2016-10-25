@@ -6,19 +6,25 @@
 	authors="gbowerman"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager"/>
+	tags="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machine-scale-sets"
-	ms.date="07/12/2016"
-	wacn.date="08/29/2016"/>  
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/13/2016"
+	wacn.date="10/17/2016"
+	ms.author="guybo"/>  
 
 
 # 虚拟机规模集概述
 
 虚拟机规模集是一种 Azure 计算资源，可用于部署和管理一组相同的 VM。VM 规模集中的所有 VM 均采用相同的配置，专用于支持真正的自动缩放，而无需对 VM 进行预配，这可更简便地生成面向大计算、大数据、容器化工作负荷的大规模服务。
 
-对于需要扩大和缩小计算资源的应用程序，缩放操作在容错域和更新域之间进行隐式平衡。有关 VM 规模集的简介，请参阅最近的 [Azure 博客公告](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/)。
+对于需要扩大和缩小计算资源的应用程序，缩放操作在容错域和更新域之间进行隐式平衡。有关 VM 规模集的简介，请参阅 [Azure 博客公告](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/)。
 
 有关 VM 规模集的详细信息，请查看这些视频：
 
@@ -28,13 +34,15 @@
 
 ## 创建和管理 VM 规模集
 
-可以使用 JSON 模板和 [REST API](https://msdn.microsoft.com/zh-cn/library/mt589023.aspx) 定义和部署 VM 规模集，就像定义和部署单个 Azure 资源管理器 VM 一样。因此，可以使用任何标准的 Azure 资源管理器部署方法。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
+可以在 [Azure 门户预览](https://portal.azure.cn)中选择“新建”，然后在搜索栏中键入“缩放”，来创建 VM 规模集。结果中会看到“虚拟机规模集”。从这里，可以填写必填字段，自定义和部署规模集。
+
+也可以使用 JSON 模板和 [REST API](https://msdn.microsoft.com/zh-cn/library/mt589023.aspx) 定义和部署 VM 规模集，就像定义和部署单个 Azure Resource Manager VM 一样。因此，可以使用任何标准的 Azure 资源管理器部署方法。有关模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 可在[此处](https://github.com/Azure/azure-quickstart-templates)的 Azure 快速入门模板 GitHub 存储库中找到一组 VM 规模集的示例模板。（查找标题中含有 _vmss_ 的模板）
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
 
-若要部署 VM 规模集，请下载模板，然后做必要的修改，并使用 Azure PowerShell 或者 Azure CLI 进行部署。如果你不确定某个资源是否支持大写或大小写混合，则更为安全的做法是始终使用小写参数值。此外，此处还对 VM 规模集模板进行了方便的视频解剖：
+若要部署 VM 规模集，请下载模板，执行必要的修改，然后使用 Azure PowerShell 或 Azure CLI 部署它。如果你不确定某个资源是否支持大写或大小写混合，则更为安全的做法是始终使用小写参数值。此外，此处还对 VM 规模集模板进行了方便的视频解剖：
 
 [VM 规模集模板详细分析](https://channel9.msdn.com/Blogs/Windows-Azure/VM-Scale-Set-Template-Dissection/player)
 
@@ -52,7 +60,7 @@
 
 ## VM 规模集方案
 
-本部分列出了一些典型的 VM 规模集方案。一些高级 Azure 服务（如 Batch（批处理）、Service Fabric、Azure 容器服务）将使用这些方案。
+本部分列出了一些典型的 VM 规模集方案。一些高级 Azure 服务（如 Batch（批处理）、Service Fabric）将使用这些方案。
 
  - **通过 RDP/SSH 连接到 VM 规模集实例** - VM 规模集是在 VNET 中创建的，并且没有为规模集中单独的 VM 分配公共 IP 地址。这是一件好事，因为您通常不希望承担为计算网格中的所有无状态资源分配单独的公共 IP 地址而产生的支出和管理开销，并且您可以轻松地从 VNET 中的其他资源（包括负载均衡器或独立虚拟机等具有公共 IP 地址的资源）连接到这些 VM。
 
@@ -74,13 +82,11 @@
 
  - **负载均衡到 VM 规模集实例** - 如果想要使用“轮循机制”方法向 VM 的计算群集交付工作，则可以使用负载均衡规则对 Azure Load Balancer 进行相应的配置。可以定义探测，通过使用指定的协议、间隔和请求路径对端口执行 ping 操作来验证应用程序是否正在运行。Azure [应用程序网关](/home/features/application-gateway/) 也支持规模集，以及更复杂的负载均衡方案。
 
-	[下面的示例创建了由运行 IIS Web 服务器的 VM 组成的 VM 规模集，并使用负载均衡器来平衡每个 VM 接收的负载。它还使用 HTTP 协议对每个 VM 上特定的 URL 执行 ping 操作。](https://github.com/gbowerman/azure-myriad/blob/master/vmss-win-iis-vnet-storage-lb.json)（查看 Microsoft.Network/loadBalancers 资源类型以及 virtualMachineScaleSet 中的 networkProfile 和 extensionProfile）
-
  - **在 PaaS 群集管理器中将 VM 规模集部署为计算群集** - VM 规模集有时作为下一代辅助角色进行说明。这是有效的描述，但也可能导致将规模集功能与 PaaS v1 辅助角色功能混淆。在某种意义上，VM 规模集提供真正的“辅助角色”或辅助角色资源，并在此资源中提供独立于平台/运行时且集成到 Azure 资源管理器 IaaS 中的可自定义通用计算资源。
 
 	PaaS v1 辅助角色虽然在平台/运行时支持方面受到限制（仅 Windows 平台映像），但它也包括多项服务，如 VIP 交换，可配置升级设置，以及_尚未_在 VM 规模集中提供，或者将由 Service Fabric 等其他更高级别 PaaS 服务提供的特定于运行时/应用部署的设置。考虑到这一点，你可以将 VM 规模集视为支持 PaaS 的基础结构。即，生成 Service Fabric 等 PaaS 解决方案或 Mesos 等群集管理器时，可以在将 VM 规模集作为可缩放计算层的基础上进行生成。
 
-	[作为此方法的一个示例，此模板创建了一个简单的 Mesos 群集，其中包含一个独立的主 VM，用于管理由 VM 组成的基于 VM 规模集的群集。](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json) [Azure 容器服务](https://azure.microsoft.com/blog/azure-container-service-now-and-the-future/)的将来版本将基于 VM 规模集部署此方案的更复杂/更强化版本。
+	[作为此方法的一个示例，此模板创建了一个简单的 Mesos 群集，其中包含一个独立的主 VM，用于管理由 VM 组成的基于 VM 规模集的群集。](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json)
 
 ## VM 规模集性能和缩放指南
 
@@ -152,4 +158,4 @@
 
 **A.** 是的。VM 规模集是含有 5 个 FD 和 5 个 UD 的隐式可用性集。无需在 virtualMachineProfile 下进行任何配置。在将来的版本中，VM 规模集可能跨多个租户，但目前一个规模集只是单个可用性集。
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -11,8 +11,14 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="06/03/2016" 
-	wacn.date="07/25/2016"/>
+	ms.workload="data-management" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/23/2016" 
+	wacn.date="10/17/2016"
+	ms.author="genemi"/>  
+
 
 
 # SQL 数据库中扩展事件的环形缓冲区目标代码
@@ -22,7 +28,7 @@
 你需要完整的代码示例以最简单快速的方式在测试期间捕获和报告扩展事件的信息。扩展事件数据最简单的目标是[环形缓冲区目标](http://msdn.microsoft.com/zh-cn/library/ff878182.aspx)。
 
 
-本主题演示了一个 Transact-SQL 代码示例：
+本主题演示一个 Transact-SQL 代码示例：
 
 
 1. 创建一个包含要演示的数据的表。
@@ -55,16 +61,16 @@
  - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
-- SQL Server Management Studio (ssms.exe) 2015 年 8 月预览版或更高版本。可从以下位置下载最新的 ssms.exe：
- - [主题中的链接。](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
+- SQL Server Management Studio (ssms.exe)，最好是每月更新版。
+可从以下位置下载最新的 ssms.exe：
+ - 标题为[下载 SQL Server Management Studio](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 的主题。
  - [直接指向下载位置的链接。](http://go.microsoft.com/fwlink/?linkid=616025)
- - Azure 建议你定期更新 ssms.exe（可以每月更新一次）。
 
 
 ## 代码示例
 
 
-只要稍加修改，就可以在 Azure SQL 数据库或 Microsoft SQL Server 上运行以下环形缓冲区的代码示例。不同之处在于步骤 5 的 FROM 子句中，有些动态管理视图 (DMV) 的名称出现了节点“\_database”。例如：
+只要稍加修改，就可以在 Azure SQL 数据库或 Microsoft SQL Server 上运行以下环形缓冲区的代码示例。不同之处在于步骤 5 的 FROM 子句中使用的某些动态管理视图 (DMV) 名称出现了节点“\_database”。例如：
 
 - sys.dm\_xe**\_database**\_session\_targets
 - sys.dm\_xe\_session\_targets
@@ -229,7 +235,7 @@
 
 为了查看结果，我们单击了 **target\_data\_XML** 列标题下的单元格。
 
-然后，在结果窗格中，我们单击了 **target\_data\_XML** 列标题下的单元格。这样就在 ssms.exe 中按结果单元格内容显示的顺序，以 XML 格式创建了另一个文件选项卡。
+然后，在结果窗格中，我们单击了 **target\_data\_XML** 列标题下的单元格。这个单击动作在 ssms.exe 中按结果单元格内容显示的顺序，以 XML 格式创建了另一个文件选项卡。
 
 
 输出显示在以下块中。结果看起来很长，但其实只是两个 **<event\>** 元素。
@@ -370,4 +376,4 @@
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_1010_2016-->

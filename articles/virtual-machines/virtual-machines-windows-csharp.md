@@ -499,11 +499,11 @@
 
 2. 在返回每个状态代码后，按 **Enter** 创建每个资源。创建虚拟机后，执行下一步骤，然后按 Enter 删除所有资源。
 
-	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 门户预览版中花费几分钟时间来验证资源的创建。
+	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 门户预览中花费几分钟时间来验证资源的创建。
 
-3. 在 Azure 门户预览版中浏览到“审核日志”，以查看资源的状态：
+3. 在 Azure 门户预览中浏览到“审核日志”，以查看资源的状态：
 
-	![在 Azure 门户预览版中浏览审核日志](./media/virtual-machines-windows-csharp/crpportal.png)
+	![在 Azure 门户预览中浏览审核日志](./media/virtual-machines-windows-csharp/crpportal.png)
     
 ## 后续步骤
 

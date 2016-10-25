@@ -9,8 +9,12 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/23/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"/>  
 
 
 # 安装适用于 SQL 数据仓库的 Visual Studio 2015 和 SSDT
@@ -47,7 +51,7 @@
 <!--Image references-->
 
 <!--Articles-->
-[连接]: /documentation/articles/sql-data-warehouse-get-started-connect/
+[连接]: /documentation/articles/sql-data-warehouse-query-visual-studio/
 
 <!--Other-->
 
@@ -55,4 +59,4 @@
 [安装 Visual Studio]: https://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx
 [SSDT 下载]: https://msdn.microsoft.com/zh-cn/library/mt204009.aspx
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1010_2016-->

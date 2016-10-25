@@ -415,7 +415,6 @@
 [如何使用 SSL 卸载]: /develop/java/
 [安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [会话相关性]: /documentation/articles/azure-toolkit-for-eclipse-enable-session-affinity/
-[]: /develop/java/
 [SSL 卸载]: /develop/java/
 
 <!-- IMG List -->

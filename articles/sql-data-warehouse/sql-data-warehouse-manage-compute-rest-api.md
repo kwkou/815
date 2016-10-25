@@ -15,7 +15,7 @@
 # 管理 Azure SQL 数据仓库中的计算能力 (REST)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute/)
+- [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)

@@ -5,12 +5,18 @@
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/31/2016"
-   wacn.date="07/18/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/25/2016"
+   wacn.date="10/17/2016"/>  
+
 
 # 迁移数据
 数据可以使用各种工具从不同源移动到 SQL 数据仓库中。 SSIS 和 bcp 都可用来实现此目标。但是，随着数据量的增加，你应该考虑将数据迁移过程划分成多个步骤。这样，你便有机会优化每个步骤以提高性能和弹性，确保顺利迁移数据。
@@ -57,7 +63,7 @@ SQLDW 数据迁移过程可以有效地划分成三个独立的步骤：
 2. 将数据传输到 Azure
 3. 载入目标 SQLDW 数据库
 
-每个步骤可以单独进行优化，以创建稳健、可重新启动且富有弹性的迁移过程，让每个步骤发挥最高的性能。
+每个步骤可以单独进行优化，创建稳健、可重新启动且富有弹性的迁移过程，让每个步骤发挥最高的性能。
 
 ## 优化数据加载
 反过来看，加载数据最快的方式是通过 PolyBase。优化 PolyBase 加载过程对上述步骤规定了先决条件，最好先了解这一点。它们具有以下特点：
@@ -69,9 +75,9 @@ SQLDW 数据迁移过程可以有效地划分成三个独立的步骤：
 ### 编码
 PolyBase 规定数据文件必须采用 UTF-8 编码。这意味着在导出数据时，数据必须符合这项要求。如果数据只包含基本 ASCII 字符（不是扩展的 ASCII），则这些直接映射到 UTF-8 标准，不需要太担心编码。但是，如果数据包含任何特殊字符，例如变音符、腔调符或符号，或数据支持非拉丁语言，则必须确保导出文件经过适当的 UTF-8 编码。
 
-> [AZURE.NOTE] bcp 不支持将数据导出为 UTF-8。
+> [AZURE.NOTE] bcp 不支持将数据导出为 UTF-8。因此，最好的选择是使用集成服务或 ADF 复制来导出数据。值得指出的是，数据文件中不需要 UTF-8 字节顺序标记 (BOM)。
 
-数据传输**之前**，任何使用 UFT-16 编码的文件都需要经过重新编写。
+数据传输***之前***，任何使用 UFT-16 编码的文件都需要经过重新编写。
 
 ### 数据文件的格式
 PolyBase 规定要有固定的行终止符 \\n 或换行符。数据文件必须符合此标准。字符串或列终止符没有任何限制。
@@ -103,9 +109,9 @@ SQL 数据仓库只使用 PolyBase 从 Azure Blob 存储加载数据。因此，
 感兴趣吗？ 有关详细信息和价格，请访问 [ExpressRoute 文档][]。
 
 ### Azure 导入和导出服务
-Azure 导入和导出服务是一个数据传输进程，用于将大量 (GB++) 和巨量 (TB++) 的数据传输到 Azure。它涉及到将数据写入磁盘并传送到 Azure 数据中心。然后代你将磁盘内容载入 Azure 存储 Blob。
+Azure 导入和导出服务是一个数据传输进程，用于将大量 (GB++) 和巨量 (TB++) 的数据传输到 Azure。它涉及到将数据写入磁盘并传送到 Azure 数据中心。然后代用户将磁盘内容载入 Azure 存储 Blob。
 
-导入导出过程的高级视图如下：
+导入导出过程的概略性视图如下：
 
 1. 配置要接收数据的 Azure Blob 存储容器
 2. 将数据导出到本地存储
@@ -156,10 +162,11 @@ PolyBase 还支持名为“递归文件夹遍历”的功能。你可以使用�
 
 <!--Image references-->
 
+
 <!--Article references-->
 [AZCopy]: /documentation/articles/storage-use-azcopy/
 [ADF 复制]: /documentation/articles/data-factory-copy-activity/
-[ADF 复制示例]: /documentation/articles/data-factory-copy-activity-examples/
+[ADF Copy examples]: /documentation/articles/data-factory-copy-activity-examples/
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 [将解决方案迁移到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
@@ -179,5 +186,4 @@ PolyBase 还支持名为“递归文件夹遍历”的功能。你可以使用�
 [ADO.NET 目标适配器]: https://msdn.microsoft.com/zh-cn/library/bb934041.aspx
 [SSIS 文档]: https://msdn.microsoft.com/zh-cn/library/ms141026.aspx
 
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_1010_2016-->

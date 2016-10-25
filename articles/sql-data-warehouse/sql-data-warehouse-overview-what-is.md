@@ -158,7 +158,6 @@ Polybase 可让你使用熟悉的 T-SQL 命令来利用不同源中的数据。P
 [如何加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
 [如何预配]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 [迁移文档]: /documentation/articles/sql-data-warehouse-overview-migrate/
-[SQL 数据仓库解决方案合作伙伴]: /documentation/articles/sql-data-warehouse-integrate-solution-partners/
 [集成工具概述]: /documentation/articles/sql-data-warehouse-overview-integrate/
 [备份和还原概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 

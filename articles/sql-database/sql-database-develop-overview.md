@@ -10,11 +10,17 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/02/2016"
-	wacn.date="07/11/2016"/>
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/17/2016"
+	wacn.date="10/17/2016"
+	ms.author="annemill"/>  
+
 
 # SQL 数据库开发概述
-本文逐步讲解开发人员在编写代码以连接到 Azure SQL 数据库时应考虑到的基本注意事项。
+本文逐步讲解开发人员在编写代码以连接到 Azure SQL 数据库时应考虑的基本注意事项。
 
 ## 语言和平台
 为各种编程语言和平台提供了代码示例。可在以下位置找到代码示例的链接：
@@ -32,13 +38,13 @@ Azure SQL 数据库提供用于在 SQL 数据库中限制访问、保护数据�
 * 详细信息：[Securing your SQL Database（保护 SQL 数据库）](/documentation/articles/sql-database-security)
 
 ## 身份验证
-* Azure SQL 数据库支持 SQL Server 身份验证用户和登录名，以及 [Azure Active Directory 身份验证](/documentation/articles/sql-database-aad-authentication)用户和登录名。
-* 需要指定一个特定的数据库，而不是默认使用 master 数据库。
+* Azure SQL 数据库支持 SQL Server 身份验证用户和登录名，以及 [Azure Active Directory 身份验证](/documentation/articles/sql-database-aad-authentication/)用户和登录名。
+* 需要指定一个特定的数据库，而不要默认使用 *master* 数据库。
 * 你无法使用 SQL 数据库上的 Transact-SQL **USE myDatabaseName;** 语句切换到其他数据库。
 * 详细信息：[SQL Database security: Manage database access and login security（SQL 数据库安全：管理数据库的访问和登录安全）](/documentation/articles/sql-database-manage-logins)
 
 ## 复原能力
-如果在连接到 SQL 数据库时发生暂时性错误，你的代码应重试调用。我们建议让重试逻辑使用退让逻辑，这样就不会因为多个客户端同时重试而对 SQL 数据库造成不必要的混乱。
+如果在连接到 SQL 数据库时发生暂时性错误，你的代码应重试调用。建议让重试逻辑使用退让逻辑，这样就不会因为多个客户端同时重试而对 SQL 数据库造成混乱。
 
 * 代码示例：有关演示重试逻辑的代码示例，请在以下位置参阅所选语言的示例：[Connection libraries for SQL Database and SQL Server（用于 SQL 数据库和 SQL Server 的连接库）](/documentation/articles/sql-database-libraries)
 * 详细信息：[Error messages for SQL Database client programs（SQL 数据库客户端程序的错误消息）](/documentation/articles/sql-database-develop-error-messages)
@@ -55,12 +61,12 @@ Azure SQL 数据库提供用于在 SQL 数据库中限制访问、保护数据�
 ## 数据分片和弹性缩放
 弹性缩放简化了扩展（和缩减）过程。
 
-
-* [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications)  
-* [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)  
-* [Azure SQL 数据库 Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)  
+* [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
+* [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)
+* [Azure SQL 数据库 Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started/)
 
 ## 后续步骤
 
 浏览所有 [SQL 数据库功能](/home/features/sql-database/)。
-<!---HONumber=Mooncake_0704_2016-->
+
+<!---HONumber=Mooncake_1010_2016-->

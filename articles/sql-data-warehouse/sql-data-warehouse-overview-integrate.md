@@ -36,7 +36,6 @@ Azure 流分析是复杂、完全托管的基础结构，用于处理和使用�
 [Azure Machine Learning]: /documentation/articles/sql-data-warehouse-integrate-azure-machine-learning/
 [Azure Stream Analytics]: /documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics/
 [Power BI]: /documentation/articles/sql-data-warehouse-integrate-power-bi/
-[Partners]: /documentation/articles/sql-data-warehouse-integrate-solution-partners/
 
 <!--MSDN references-->
 

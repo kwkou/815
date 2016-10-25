@@ -1,17 +1,23 @@
 
 <properties
-   pageTitle="使用 SQL Server Management Studio 将 SQL Server 数据库导出到 BACPAC 文件"
+   pageTitle="使用 SQL Server Management Studio 将 SQL Server 数据库导出到 BACPAC 文件 | Azure"
    description="Azure SQL 数据库, 数据库迁移, 导出数据库, 导出 BACPAC 文件, 导出数据层应用程序向导"
    services="sql-database"
    documentationCenter=""
-   authors="carlrabeler"
-   manager="jeffreyg"
+   authors="CarlRabeler"
+   manager="jhubbard"
    editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="05/31/2016"
-   wacn.date="07/11/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
+   ms.date="08/16/2016"
+   wacn.date="10/17/2016"
+   ms.author="carlrab"/>  
+
 
 # 使用 SQL Server Management Studio 将 SQL Server 数据库导出到 BACPAC 文件
 
@@ -34,11 +40,11 @@
 
 	![通过“任务”菜单导出数据层应用程序](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSSMS01.png)
 
-4. 在导出向导中，配置导出以将 BACPAC 文件保存到本地磁盘位置或 Azure blob。导出的 BACPAC 始终包括完整的数据库架构，默认情况下还包括所有表中的数据。如果你要排除部分或全部表中的数据，请使用“高级”选项卡。例如，你可以选择仅导出引用表的数据，而不是导出所有表中的数据。
+4. 在导出向导中，配置导出以将 BACPAC 文件保存到本地磁盘位置或 Azure blob。导出的 BACPAC 始终包括完整的数据库架构，默认情况下还包括所有表中的数据。若要排除部分或全部表中的数据，请使用“高级”选项卡。例如，你可以选择仅导出引用表的数据，而不是导出所有表中的数据。
 
-**重要说明**：将 BACPAC 导出至 Azure Blob 存储时，请使用标准存储。不支持从高级存储导入 BACPAC。
+***重要说明***：将 BACPAC 导出至 Azure Blob 存储时，请使用标准存储。不支持从高级存储导入 BACPAC。
 
-![导出设置](./media/sql-database-cloud-migrate/MigrateUsingBACPAC02.png)
+![Export settings](./media/sql-database-cloud-migrate/MigrateUsingBACPAC02.png)
 
 
 ## 后续步骤
@@ -55,4 +61,4 @@
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1010_2016-->

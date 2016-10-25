@@ -5,13 +5,16 @@
    documentationCenter="NA"
    authors="barbkess"
    manager="barbkess"
-   editor=""/>  
-
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="05/31/2016"
-   wacn.date="08/22/2016"/>  
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/22/2016"
+   wacn.date="10/17/2016"/>  
 
 
 #Transact-SQL 主题
@@ -61,10 +64,10 @@
 - [DBCC DROPCLEANBUFFERS](https://msdn.microsoft.com/zh-cn/library/ms187762.aspx)
 - [DBCC FREEPROCCACHE](https://msdn.microsoft.com/zh-cn/library/mt204018.aspx)
 - [DBCC SHRINKLOG](https://msdn.microsoft.com/zh-cn/library/mt204020.aspx)
-- [DBCC PDW\_SHOWEXECUTIONPLAN](https://msdn.microsoft.com/zh-cn/library/mt204017.aspx)
-- [DBCC PDW\_SHOWPARTITIONSTATS](https://msdn.microsoft.com/zh-cn/library/mt204013.aspx)
-- [DBCC PDW\_SHOWSPACEUSED](https://msdn.microsoft.com/zh-cn/library/mt204028.aspx)
-- [DBCC SHOW\_STATISTICS](https://msdn.microsoft.com/zh-cn/library/mt204043.aspx)
+- [DBCC PDW_SHOWEXECUTIONPLAN](https://msdn.microsoft.com/zh-cn/library/mt204017.aspx)
+- [DBCC PDW_SHOWPARTITIONSTATS](https://msdn.microsoft.com/zh-cn/library/mt204013.aspx)
+- [DBCC PDW_SHOWSPACEUSED](https://msdn.microsoft.com/zh-cn/library/mt204028.aspx)
+- [DBCC SHOW_STATISTICS](https://msdn.microsoft.com/zh-cn/library/mt204043.aspx)
 
 ## 查询语句
 
@@ -126,4 +129,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -3,14 +3,20 @@
    description="了解如何使用 PolyBase 将数据从 Azure Blob 存储载入 SQL 数据仓库。将公共数据中的一些表载入 Contoso 零售数据仓库架构。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="jrowlandjones"
+   authors="ckarst"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/30/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="08/25/2016"
+   wacn.date="10/17/2016"/>  
+
 
 
 # 将数据从 Azure Blob 存储载入 SQL 数据仓库 (PolyBase)
@@ -255,10 +261,32 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 	      OR r.label = 'CTAS : Load [cso].[FactOnlineSales]        '
 	;
 
+	-- To track bytes and files
+	SELECT
+	    r.command,
+	    s.request_id,
+	    r.status,
+	    count(distinct input_name) as nbr_files, 
+	    sum(s.bytes_processed)/1024/1024 as gb_processed
+	FROM
+	    sys.dm_pdw_exec_requests r
+	    inner join sys.dm_pdw_dms_external_work s
+	        on r.request_id = s.request_id
+	WHERE 
+	    r.[label] = 'CTAS : Load [cso].[DimProduct]             '
+	    OR r.[label] = 'CTAS : Load [cso].[FactOnlineSales]        '
+	GROUP BY
+	    r.command,
+	    s.request_id,
+	    r.status
+	ORDER BY
+	    nbr_files desc,
+	    gb_processed desc;
+
 
 ## 5\.优化列存储压缩
 
-默认情况下，SQL 数据仓库将表存储为聚集列存储索引。加载完成后，某些数据行可能未压缩到列存储中。发生这种情况的原因多种多样。若要了解详细信息，请参阅...
+默认情况下，SQL 数据仓库将表存储为聚集列存储索引。加载完成后，某些数据行可能未压缩到列存储中。发生这种情况的原因多种多样。若要了解详细信息，请参阅[管理列存储索引][]。
 
 若要在加载后优化查询性能和列存储压缩，请重新生成表，以强制列存储索引压缩所有行。
 
@@ -276,7 +304,7 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 
 最好是在加载之后马上创建单列统计信息。对于统计信息，可以使用多个选项。例如，如果针对每个列创建单列统计信息，则重新生成所有统计信息可能需要花费很长时间。如果你知道某些列不会在查询谓词中使用，可以不创建有关这些列的统计信息。
 
-如果你决定针对每个表的每个列创建单列统计信息，可以使用 [statistics][]（统计信息）一文中的存储过程代码示例 `prc_sqldw_create_stats`。
+如果决定针对每个表的每个列创建单列统计信息，可以使用 [statistics][]（统计信息）一文中的存储过程代码示例 `prc_sqldw_create_stats`。
 
 以下示例是创建统计信息的不错起点。它会针对维度表中的每个列以及事实表中的每个联接列创建单列统计信息。以后，你随时可以将单列或多列统计信息添加到其他事实表列。
 
@@ -337,31 +365,32 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 	GROUP BY p.[BrandName]
 
 
-接下来可以自由探索 SQL 数据仓库的功能。
-
 ## 后续步骤
 若要加载整个 Contoso 零售数据仓库数据，可以使用脚本。
 有关更多开发技巧，请参阅 [SQL Data Warehouse development overview][]（SQL 数据仓库开发概述）。
 
 <!--Image references-->
 
+
 <!--Article references-->
-[Create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[Create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [管理列存储索引]: /documentation/articles/sql-data-warehouse-tables-index
-[Statistics]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [label]: /documentation/articles/sql-data-warehouse-develop-label/
 
 <!--MSDN references-->
 [CREATE EXTERNAL DATA SOURCE]: https://msdn.microsoft.com/zh-cn/library/dn935022.aspx
 [CREATE EXTERNAL FILE FORMAT]: https://msdn.microsoft.com/zh-cn/library/dn935026.aspx
+[CREATE TABLE AS SELECT (Transact-SQL)]: https://msdn.microsoft.com/zh-cn/library/mt204041.aspx
 [sys.dm_pdw_exec_requests]: https://msdn.microsoft.com/zh-cn/library/mt203887.aspx
 [REBUILD]: https://msdn.microsoft.com/zh-cn/library/ms188388.aspx
 
 <!--Other Web references-->
+
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 [Load the full Contoso Retail Data Warehouse]: https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -80,7 +80,7 @@ Azure Resource Manager 中的所有资源将关联到资源组。创建资源组
 
         azure network lb create -n nrprg -l chinaeast
 
->[AZURE.NOTE] 内部负载均衡器的所有资源（如虚拟网络和虚拟网络子网）必须都在同一资源组中并在同一区域中。
+    >[AZURE.NOTE] 内部负载均衡器的所有资源（如虚拟网络和虚拟网络子网）必须都在同一资源组中并在同一区域中。
 
 2. 为内部负载均衡器创建前端 IP 地址。
 
@@ -89,23 +89,21 @@ Azure Resource Manager 中的所有资源将关联到资源组。创建资源组
         azure network lb frontend-ip create -g nrprg -l ilbset -n feilb -a 10.0.0.7 -e nrpvnetsubnet -m nrpvnet
 
     使用的参数：
-
-**-g** - 资源组 
-**-l** - 内部负载均衡器集的名称 
-**-n** - 前端 IP 的名称 
-**-a** - 子网范围内的专用 IP 地址。
-**-e** - 子网名称 
-**-m** - 虚拟网络名称
+    - **-g** - 资源组 
+    - **-l** - 内部负载均衡器集的名称 
+    - **-n** - 前端 IP 的名称 
+    - **-a** - 子网范围内的专用 IP 地址。
+    - **-e** - 子网名称 
+    - **-m** - 虚拟网络名称
 
 3. 创建后端地址池。
 
 	azure network lb address-pool create -g nrprg -l ilbset -n beilb
 
-使用的参数：
-
-    * **-g** - 资源组
-    * **-l** - 内部负载均衡器集的名称
-    * **-n** - 后端地址池的名称
+    使用的参数：
+    - **-g** - 资源组
+    - **-l** - 内部负载均衡器集的名称
+    - **-n** - 后端地址池的名称
 
 定义前端 IP 地址和后端地址池后，可以创建负载均衡器规则、入站 NAT 规则和自定义运行状况探测器。
 
@@ -116,13 +114,12 @@ Azure Resource Manager 中的所有资源将关联到资源组。创建资源组
         azure network lb rule create -g nrprg -l ilbset -n ilbrule -p tcp -f 1433 -b 1433 -t feilb -o beilb
 
     使用的参数：
-
-    * **-g** - 资源组
-    * **-l** - 内部负载均衡器集的名称
-    * **-n** - 负载均衡器规则名称
-    * **-p** - 规则所用的协议
-    * **-f** - 侦听负载均衡器前端中传入网络流量的端口
-    * **-b** - 接收后端地址池中网络流量的端口
+       - **-g** - 资源组
+       - **-l** - 内部负载均衡器集的名称
+       - **-n** - 负载均衡器规则名称
+       - **-p** - 规则所用的协议
+       - **-f** - 侦听负载均衡器前端中传入网络流量的端口
+       - **-b** - 接收后端地址池中网络流量的端口
 
 5. 创建入站 NAT 规则。
 
@@ -134,7 +131,6 @@ Azure Resource Manager 中的所有资源将关联到资源组。创建资源组
         azure network lb inbound-nat-rule create -g nrprg -l ilbset -n NATrule2 -p TCP -f 5433 -b 3389
 
     使用的参数：
-
     * **-g** - 资源组
     * **-l** - 内部负载均衡器集的名称
     * **-n** - 入站 NAT 规则的名称
@@ -149,7 +145,6 @@ Azure Resource Manager 中的所有资源将关联到资源组。创建资源组
         azure network lb probe create -g nrprg -l ilbset -n ilbprobe -p tcp -i 300 -c 4
 
     使用的参数：
-
     * **-g** - 资源组
     * **-l** - 内部负载均衡器集的名称
     * **-n** - 运行状况探测器的名称
@@ -168,7 +163,6 @@ Azure Resource Manager 中的所有资源将关联到资源组。创建资源组
         azure network nic create -g nrprg -n lb-nic1-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/beilb" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp1" eastus
 
     参数：
-
     * **-g** - 资源组名称
     * **-n** - NIC 资源的名称
     * **--subnet-name** - 子网的名称
@@ -204,17 +198,17 @@ Azure Resource Manager 中的所有资源将关联到资源组。创建资源组
 
 2. 创建名为 *lb-nic2-be* 的 NIC，并将其与 *rdp2* NAT 规则和 *beilb* 后端地址池相关联。
 
- 	azure network nic create -g nrprg -n lb-nic2-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/beilb" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp2" chinaeast
+ 	    azure network nic create -g nrprg -n lb-nic2-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/beilb" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp2" chinaeast
 
 3. 创建名为 *DB1* 的虚拟机 (VM)，并将其与名为 *lb-nic1-be* 的 NIC 相关联。名为 *web1nrp* 的存储帐户在运行以下命令之前已创建。
 
-	azure vm create --resource-group nrprg --name DB1 --location chinaeast --vnet-name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic1-be --availset-name nrp-avset --storage-account-name web1nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
+	    azure vm create --resource-group nrprg --name DB1 --location chinaeast --vnet-name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic1-be --availset-name nrp-avset --storage-account-name web1nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
 
     >[AZURE.IMPORTANT] 负载均衡器中的 VM 需要在同一可用性集中。使用 `azure availset create` 创建可用性集。
 
 4. 创建名为 *DB2* 的虚拟机 (VM)，并将其与名为 *lb-nic2-be* 的 NIC 相关联。名为 *web1nrp* 的存储帐户在运行以下命令之前已创建。
 
-	azure vm create --resource-group nrprg --name DB2 --location chinaeast --vnet-	name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic2-be --availset-name nrp-avset --storage-account-name web2nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
+	    azure vm create --resource-group nrprg --name DB2 --location chinaeast --vnet-	name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic2-be --availset-name nrp-avset --storage-account-name web2nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
 
 ## 删除负载均衡器
 

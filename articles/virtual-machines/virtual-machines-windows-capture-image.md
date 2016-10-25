@@ -27,7 +27,7 @@
 
 - 确保 Sysprep 支持计算机上运行的服务器角色。有关详细信息，请参阅 [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles)（Sysprep 对服务器角色的支持）
 
-## 准备源 VM 
+## <a name="prepare-the-vm-for-image-capture"></a>准备源 VM 
 
 本部分说明如何通用化 Windows 虚拟机，使其可以用作映像。
 
@@ -87,7 +87,7 @@
 		$vm.Statuses
 
 		
-## 创建映像 
+## <a name="capture-the-vm"></a>创建映像 
 
 1. 使用以下命令将虚拟机映像复制到目标存储容器。该映像在创建时所在的存储帐户与原始虚拟机的相同。`-Path` 变量在本地保存 JSON 模板的副本。`-DestinationContainerName` 变量是要在其中保存映像的容器的名称。如果该容器不存在，系统将自动创建。
 

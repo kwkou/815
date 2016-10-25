@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/15/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 #如何在 Azure 上结合使用 SSH 和 Windows
 

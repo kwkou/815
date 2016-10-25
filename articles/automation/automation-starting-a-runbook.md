@@ -5,12 +5,18 @@
    documentationCenter=""
    authors="mgoedtel"
    manager="jwhit"
-   editor="tysonn" />
+   editor="tysonn" />  
 
- <tags
+<tags
    ms.service="automation"
-   ms.date="06/06/2016"
-   wacn.date="08/11/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/15/2016"
+   wacn.date="10/17/2016"
+   ms.author="magoedte;bwren"/>  
+
 
 # 在 Azure 自动化中启动 Runbook
 
@@ -65,7 +71,7 @@ Start-AzureAutomationRunbook 将返回一个作业对象，启动 Runbook 后，
 	$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
 	Start-AzureAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -Parameters $params
 
-## <a name="runbook-parameters"></a> Runbook 参数
+## <a name="runbook-parameters" id="Runbook-parameters"></a> Runbook 参数
 
 当你使用 Azure 经典管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/) 中所述，以内联方式从另一个 Runbook 调用该参数值。
 
@@ -73,7 +79,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 命名值
 
-如果参数的数据类型为 object，则你可以使用以下 JSON 格式向它发送命名值列表：_{"Name1":Value1, "Name2":Value2, "Name3":Value3}_。这些值必须使用简单类型。Runbook 将以 [PSCustomObject](https://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject(v=vs.85).aspx) 的形式接收参数，该对象的属性对应于每个命名值。
+如果参数的数据类型为 [object]，则可以使用以下 JSON 格式向它发送命名值列表： *{Name1:'Value1', Name2:'Value2', Name3:'Value3'}* 。这些值必须使用简单类型。Runbook 将以 [PSCustomObject](https://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject%28v=vs.85%29.aspx) 的形式接收参数，该对象的属性对应于每个命名值。
 
 请考虑以下接受名为 user 的参数的测试 Runbook。
 
@@ -82,10 +88,11 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 	   param ( 
 	      [Parameter(Mandatory=$true)][object]$user
 	   )
-	    if ($user.Show) {
-	        foreach ($i in 1..$user.RepeatCount) {
-	            $user.FirstName
-	            $user.LastName
+    $userObject = $user | ConvertFrom-JSON
+	if ($userObject.Show) {
+        foreach ($i in 1..$userObject.RepeatCount) {
+            $userObject.FirstName
+            $userObject.LastName
 	        }
 	    } 
 	}
@@ -103,7 +110,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 数组
 
-如果参数是数组（如 array 或 string），则你可以使用以下 JSON 格式向它发送值列表：_[Value1,Value2,Value3]_。这些值必须使用简单类型。
+如果参数是数组（如 array 或 string），则你可以使用以下 JSON 格式向它发送值列表： *[Value1,Value2,Value3]* 。这些值必须使用简单类型。
 
 请考虑以下接受名为 *user* 的参数的测试 Runbook。
 
@@ -149,12 +156,12 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 	My Credential
 
-假设凭据中的用户名为 *jsmith*，则会导致生成以下输出。
+假设凭据中的用户名为 *jsmith* ，则会导致生成以下输出。
 
 	jsmith
 
 ## 后续步骤
 
--	本文中的 Runbook 体系结构提供了有关子 Runbook 的概括说明，若要了解详细信息，请参阅 [Child runbooks in Azure Automation（Azure 自动化中的子 Runbook）](/documentation/articles/automation-child-runbooks/)
+-	若要详细了解如何创建模块化 Runbook，以供其他 Runbook 用于特定或常用函数，请参阅[子 Runbook](/documentation/articles/automation-child-runbooks/)。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -82,117 +82,117 @@ SDK 包含多个主包的帮助器类。帮助器类实现于 auzre-mgmt-utility
 
 提供客户端 ID、机密和租户 ID 后，Java SDK 将包含一个用于创建访问令牌的帮助器类 AuthHelper。[ServicePrincipalExample](https://github.com/Azure/azure-sdk-for-java/blob/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/authentication/ServicePrincipalExample.java) 类中的以下示例使用 AuthHelper *getAccessTokenFromServicePrincipalCredentials* 方法来获取访问令牌：
 
-```java
-public static Configuration createConfiguration() throws Exception {
-   String baseUri = System.getenv("arm.url");
 
-   return ManagementConfiguration.configure(
-         null,
-         baseUri != null ? new URI(baseUri) : null,
-         System.getenv(ManagementConfiguration.SUBSCRIPTION_ID),
-         AuthHelper.getAccessTokenFromServicePrincipalCredentials(
-                  System.getenv(ManagementConfiguration.URI), System.getenv("arm.aad.url"),
-                  System.getenv("arm.tenant"), System.getenv("arm.clientid"),
-                  System.getenv("arm.clientkey"))
-                  .getAccessToken());
-}
-```
+    public static Configuration createConfiguration() throws Exception {
+       String baseUri = System.getenv("arm.url");
+    
+       return ManagementConfiguration.configure(
+             null,
+             baseUri != null ? new URI(baseUri) : null,
+             System.getenv(ManagementConfiguration.SUBSCRIPTION_ID),
+             AuthHelper.getAccessTokenFromServicePrincipalCredentials(
+                      System.getenv(ManagementConfiguration.URI), System.getenv("arm.aad.url"),
+                      System.getenv("arm.tenant"), System.getenv("arm.clientid"),
+                      System.getenv("arm.clientkey"))
+                      .getAccessToken());
+    }
+
 
 ## 创建虚拟机 
 实用程序包包含一个用于创建虚拟机的帮助器类 [ComputeHelper](https://github.com/Azure/azure-sdk-for-java/blob/master/resource-management/azure-mgmt-utility/src/main/java/com/microsoft/azure/utility/ComputeHelper.java)。在 azure-mgmt-samples 包的 [compute](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/compute) 下面，可以找到有关处理虚拟机的若干示例。
 
 下面是创建虚拟机的简单流程。在本示例中，帮助器类将在创建 VM 的过程中创建存储和网络：
 
-```java
-public static void main(String[] args) throws Exception {
-        Configuration config = createConfiguration();
-        ResourceManagementClient resourceManagementClient = ResourceManagementService.create(config);
-        StorageManagementClient storageManagementClient = StorageManagementService.create(config);
-        ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);
-        NetworkResourceProviderClient networkResourceProviderClient = NetworkResourceProviderService.create(config);
 
-        String resourceGroupName = "javasampleresourcegroup";
-        String region = "EastAsia";
+    public static void main(String[] args) throws Exception {
+            Configuration config = createConfiguration();
+            ResourceManagementClient resourceManagementClient = ResourceManagementService.create(config);
+            StorageManagementClient storageManagementClient = StorageManagementService.create(config);
+            ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);
+            NetworkResourceProviderClient networkResourceProviderClient = NetworkResourceProviderService.create(config);
+    
+            String resourceGroupName = "javasampleresourcegroup";
+            String region = "EastAsia";
+    
+            ResourceContext context = new ResourceContext(
+                    region, resourceGroupName, System.getenv(ManagementConfiguration.SUBSCRIPTION_ID), false);
+    
+            System.out.println("Start create vm...");
+    
+            try {
+                VirtualMachine vm = ComputeHelper.createVM(
+                        resourceManagementClient, computeManagementClient, networkResourceProviderClient, 
+                        storageManagementClient,
+                        context, vnName, vmAdminUser, vmAdminPassword)
+                  .getVirtualMachine();
+    
+                System.out.println(vm.getName() + " is created");
+            } catch (Exception ex) {
+                System.out.println(ex.toString());
+            }
+    }
 
-        ResourceContext context = new ResourceContext(
-                region, resourceGroupName, System.getenv(ManagementConfiguration.SUBSCRIPTION_ID), false);
-
-        System.out.println("Start create vm...");
-
-        try {
-            VirtualMachine vm = ComputeHelper.createVM(
-                    resourceManagementClient, computeManagementClient, networkResourceProviderClient, 
-                    storageManagementClient,
-                    context, vnName, vmAdminUser, vmAdminPassword)
-              .getVirtualMachine();
-
-            System.out.println(vm.getName() + " is created");
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-        }
-}
-```
 
 ## 部署模板
 [ResouceHelper](https://github.com/Azure/azure-sdk-for-java/blob/master/resource-management/azure-mgmt-utility/src/main/java/com/microsoft/azure/utility/ResourceHelper.java) 类旨在简化使用 Java SDK 部署 ARM 模板的过程。
 
-```java
-// create a new resource group
-ResourceManagementClient resourceManagementClient = createResourceManagementClient();
-ResourceContext resourceContext = new ResourceContext(
-        resourceGroupLocation, resourceGroupName,
-        System.getenv(ManagementConfiguration.SUBSCRIPTION_ID), false);
-ComputeHelper.createOrUpdateResourceGroup(resourceManagementClient, resourceContext);
 
-// create the template deployment
-DeploymentExtended deployment = ResourceHelper.createTemplateDeploymentFromURI(
-        resourceManagementClient,
-        resourceGroupName,
-        DeploymentMode.Incremental,
-        deploymentName,
-        TEMPLATE_URI,
-        "1.0.0.0",
-        parameters);
-```
+    // create a new resource group
+    ResourceManagementClient resourceManagementClient = createResourceManagementClient();
+    ResourceContext resourceContext = new ResourceContext(
+            resourceGroupLocation, resourceGroupName,
+            System.getenv(ManagementConfiguration.SUBSCRIPTION_ID), false);
+    ComputeHelper.createOrUpdateResourceGroup(resourceManagementClient, resourceContext);
+    
+    // create the template deployment
+    DeploymentExtended deployment = ResourceHelper.createTemplateDeploymentFromURI(
+            resourceManagementClient,
+            resourceGroupName,
+            DeploymentMode.Incremental,
+            deploymentName,
+            TEMPLATE_URI,
+            "1.0.0.0",
+            parameters);
+
 ## 列出所有虚拟机
 你不一定要使用帮助器类（不过它可以提供方便），而可以改为对每个资源提供程序直接使用服务类。在本示例中，我们将列出已经过身份验证的订阅下的某些资源 - 对于每个资源组，我们将查找虚拟机，然后查找与其关联的 IP。
 
-```java
-// authenticate and get access token
-Configuration config = createConfiguration();
-ResourceManagementClient resourceManagementClient = ResourceManagementService.create(config);
-ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);
-NetworkResourceProviderClient networkResourceProviderClient = NetworkResourceProviderService.create(config);
 
-// list all resource groups     
-ArrayList<ResourceGroupExtended> resourceGroups = resourceManagementClient.getResourceGroupsOperations().list(null).getResourceGroups();
-for (ResourceGroupExtended resourcesGroup : resourceGroups) {
-   String rgName = resourcesGroup.getName();
-   System.out.println("Resource Group: " + rgName);
-   
-   // list all virtual machines
-   ArrayList<VirtualMachine> vms = computeManagementClient.getVirtualMachinesOperations().list(rgName).getVirtualMachines();
-   for (VirtualMachine vm : vms) {
-      System.out.println("    VM: " + vm.getName());
-      // list all nics
-      ArrayList<NetworkInterfaceReference> nics = vm.getNetworkProfile().getNetworkInterfaces();
-      for (NetworkInterfaceReference nicReference : nics) {
-         String[] nicURI = nicReference.getReferenceUri().split("/");
-         NetworkInterface nic = networkResourceProviderClient.getNetworkInterfacesOperations().get(rgName, nicURI[nicURI.length - 1]).getNetworkInterface();
-         System.out.println("        NIC: " + nic.getName());
-         System.out.println("        Is primary: " + nic.isPrimary());
-         ArrayList<NetworkInterfaceIpConfiguration> ips = nic.getIpConfigurations();
+    // authenticate and get access token
+    Configuration config = createConfiguration();
+    ResourceManagementClient resourceManagementClient = ResourceManagementService.create(config);
+    ComputeManagementClient computeManagementClient = ComputeManagementService.create(config);
+    NetworkResourceProviderClient networkResourceProviderClient = NetworkResourceProviderService.create(config);
+    
+    // list all resource groups     
+    ArrayList<ResourceGroupExtended> resourceGroups = resourceManagementClient.getResourceGroupsOperations().list(null).getResourceGroups();
+    for (ResourceGroupExtended resourcesGroup : resourceGroups) {
+       String rgName = resourcesGroup.getName();
+       System.out.println("Resource Group: " + rgName);
+       
+       // list all virtual machines
+       ArrayList<VirtualMachine> vms = computeManagementClient.getVirtualMachinesOperations().list(rgName).getVirtualMachines();
+       for (VirtualMachine vm : vms) {
+          System.out.println("    VM: " + vm.getName());
+          // list all nics
+          ArrayList<NetworkInterfaceReference> nics = vm.getNetworkProfile().getNetworkInterfaces();
+          for (NetworkInterfaceReference nicReference : nics) {
+             String[] nicURI = nicReference.getReferenceUri().split("/");
+             NetworkInterface nic = networkResourceProviderClient.getNetworkInterfacesOperations().get(rgName, nicURI[nicURI.length - 1]).getNetworkInterface();
+             System.out.println("        NIC: " + nic.getName());
+             System.out.println("        Is primary: " + nic.isPrimary());
+             ArrayList<NetworkInterfaceIpConfiguration> ips = nic.getIpConfigurations();
+    
+             // find public ip address
+             for (NetworkInterfaceIpConfiguration ipConfiguration : ips) {
+                   System.out.println("        Private IP address: " + ipConfiguration.getPrivateIpAddress());
+                   String[] pipID = ipConfiguration.getPublicIpAddress().getId().split("/");
+                   PublicIpAddress pip = networkResourceProviderClient.getPublicIpAddressesOperations().get(rgName, pipID[pipID.length - 1]).getPublicIpAddress();
+                   System.out.println("        Public IP address: " + pip.getIpAddress());
+             }
+          }
+    }
 
-         // find public ip address
-         for (NetworkInterfaceIpConfiguration ipConfiguration : ips) {
-               System.out.println("        Private IP address: " + ipConfiguration.getPrivateIpAddress());
-               String[] pipID = ipConfiguration.getPublicIpAddress().getId().split("/");
-               PublicIpAddress pip = networkResourceProviderClient.getPublicIpAddressesOperations().get(rgName, pipID[pipID.length - 1]).getPublicIpAddress();
-               System.out.println("        Public IP address: " + pip.getIpAddress());
-         }
-      }
-}  
-```
 
 可以在示例包的 [templatedeployments](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/templatedeployments) 下面找到更多示例。
 
