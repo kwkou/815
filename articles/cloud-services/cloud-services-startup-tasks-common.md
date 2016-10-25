@@ -463,7 +463,7 @@ Startup2.cmd：
 
 ## 后续步骤
 
-查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package/)
+查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package/)。
 
 详细了解[任务](/documentation/articles/cloud-services-startup-tasks/)的工作方式。
 

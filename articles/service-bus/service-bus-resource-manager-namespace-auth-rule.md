@@ -28,7 +28,7 @@
 
 >[AZURE.NOTE] 以下 Azure Resource Manager 模板可供下载和部署。
 >
->-    [创建包含事件中心和使用者组的事件中心命名空间](/documentation/articles/event-hubs-resource-manager-namespace-event-hub/)
+
 >-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
 >-    [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
 >-    [创建服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace/)
