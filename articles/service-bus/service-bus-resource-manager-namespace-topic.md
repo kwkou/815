@@ -31,7 +31,6 @@
 >-    [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
 >-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
 >-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace/)
->-    [创建包含事件中心和使用者组的事件中心命名空间](/documentation/articles/event-hubs-resource-manager-namespace-event-hub/)
 >
 >若要检查最新模板，请访问 [Azure 快速启动模板][]库并搜索服务总线。
 

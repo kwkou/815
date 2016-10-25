@@ -114,7 +114,7 @@ DLL 或程序集缺失的症状可能为：
 
 ## 使用 IntelliTrace 诊断问题
 
-对于使用 .NET Framework 4 的辅助角色和 Web 角色，你可以使用 [Microsoft Visual Studio Ultimate](https://www.visualstudio.com/products/visual-studio-ultimate-with-MSDN-vs) 中提供的 [IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx)。
+对于使用 .NET Framework 4 的辅助角色和 Web 角色，你可以使用 Microsoft Visual Studio Ultimate 中提供的 [IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx)。
 
 请按照以下步骤操作来部署启用了 IntelliTrace 的服务：
 
