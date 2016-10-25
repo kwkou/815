@@ -64,7 +64,7 @@
 有关模板函数的完整列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)。
 
 
-## <a name="resource-group-authoring-templates"></a> Parameters
+## <a name="resource-group-authoring-templates" id="parameters"></a> Parameters
 
 在模板的 parameters 节中，你可以指定在部署资源时能够输入的值。提供针对特定环境（例如开发、测试和生产环境）定制的参数值可以自定义部署。无需在模板中提供参数，但如果没有参数，模板始终部署具有相同名称、位置和属性的相同资源。
 
@@ -151,7 +151,7 @@
 
 若要了解如何在部署过程中输入参数值，请参阅 [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/#parameter-file)（使用 Azure Resource Manager 模板部署应用程序）。
 
-## 变量
+## <a name="variables"></a> 变量
 
 在 variables 节中构造可在整个模板中使用的值。通常，这些变量基于通过参数提供的值。不需要定义变量，但使用变量可以减少复杂的表达式，从而简化模板。
 
@@ -197,7 +197,7 @@
        "instancesCount": "[variables('currentEnvironmentSettings').instancesCount]"
     }
 
-## 资源
+## <a name="resources"></a> 资源
 
 在 resources 节，可以定义部署或更新的资源。模板中的此位置可能比较复杂，因为你必须了解要部署哪些类型才能提供正确的值。若要进一步了解资源提供程序，请参阅 [Resource Manager providers, regions, API versions and schemas](/documentation/articles/resource-manager-supported-services/)（Resource Manager 提供程序、区域、API 版本和架构）。
 

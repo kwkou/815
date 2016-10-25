@@ -58,7 +58,7 @@
 
 拓扑中使用从事件中心读取数据 **com.microsoft.eventhubs.spout.EventHubSpout** 类，该类在 Storm on HDInsight 群集中提供。与 Web 应用的通信可通过使用 [socket.io client.java](https://github.com/nkzawa/socket.io-client.java) 来实现。
 
-或者，可以使用 Storm 随附的 [org.apache.storm.hbase.bolt.HBaseBolt](https://storm.apache.org/javadoc/apidocs/org/apache/storm/hbase/bolt/class-use/HBaseBolt.html) 来实现与 HBase 的通信。
+或者，可以使用 Storm 随附的 org.apache.storm.hbase.bolt.HBaseBolt 来实现与 HBase 的通信。
 
 下面是拓扑图。
 

@@ -33,7 +33,7 @@
 VM 预配完成并运行后，你可能想要连接和安装数据磁盘。请参阅[此处](/documentation/articles/virtual-machines-linux-add-disk/)的说明。
 
 
-## 捕获 VM
+## <a name="capture-the-vm"></a> 捕获 VM
 
 1. 若准备就绪可捕获 VM，使用 SSH 客户端连接到该 VM。
 

@@ -1194,8 +1194,6 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 </table><br>
 
-有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1-11.html)。Hortonworks 还提供了一款工具用于计算合适的内存设置。
-
 关于 Azure PowerShell 和 HDInsight SDK 错误消息：“群集未配置 HTTP 服务访问”：
 
 * 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，起因于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。但旧版的 HDInsight SDK 或 Azure PowerShell 无法正确解释此功能。结果造成某些作业提交操作失败。如果使用 HDInsight SDK API 或 Azure PowerShell cmdlet 提交作业（**Use-AzureRmHDInsightCluster** 或 **Invoke-AzureRmHDInsightHiveJob**），这些作业可能失败并返回错误消息“未在群集 <群集名称> 上配置 HTTP 服务访问权限”。 或者（根据具体的操作），你可能会收到其他错误消息，例如“无法连接到群集”。
@@ -1433,7 +1431,7 @@ HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
 
 
 ### 驱动程序
-SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-odbc-driver/)。
+SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/)。
 
 
 ### Bug 修复
@@ -1465,7 +1463,7 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
-[hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
+[hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.1.0.15_1.html
 
 [nuget-link]: https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.HDInsight/
 

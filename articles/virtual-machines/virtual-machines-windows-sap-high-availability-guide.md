@@ -378,7 +378,7 @@
 [virtual-machines-linux-attach-disk-portal]: /documentation/articles/virtual-machines-linux-attach-disk-portal/
 [virtual-machines-windows-attach-disk-portal]: /documentation/articles/virtual-machines-windows-attach-disk-portal/
 [virtual-machines-azure-resource-manager-architecture]: /documentation/articles/resource-manager-deployment-model/
-[virtual-machines-azure-resource-manager-architecture-benefits-arm]: /documentation/articles/resource-manager-deployment-model/#benefits-of-using-resource-manager-and-resource-groups
+[virtual-machines-azure-resource-manager-architecture-benefits-arm]: /documentation/articles/resource-manager-deployment-model/
 [virtual-machines-azurerm-versus-azuresm]: /documentation/articles/virtual-machines-windows-compare-deployment-models/
 [virtual-machines-windows-classic-configure-oracle-data-guard]: /documentation/articles/virtual-machines-windows-classic-configure-oracle-data-guard/
 [virtual-machines-linux-cli-deploy-templates]: virtual-machines-linux-cli-deploy-templates.md "使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机"
