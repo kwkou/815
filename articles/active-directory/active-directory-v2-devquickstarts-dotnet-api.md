@@ -1,20 +1,27 @@
 <properties
-	pageTitle="Azure AD v2.0 .NET Web API | Azure"
+	pageTitle="Azure AD v2.0 .NET Web API| Azure"
 	description="如何构建一个可从个人 Microsoft 帐户及公司或学校帐户接受令牌的 .NET MVC Web API。"
 	services="active-directory"
 	documentationCenter=".net"
 	authors="dstrockis"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="06/28/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
+
 
 # 保护 MVC Web API
 
-Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
+Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
@@ -25,13 +32,13 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet/archive/skeleton.zip)，或克隆该骨架：
 
 
-		git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git
+	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git
 
 
 该骨架应用包含简单 API 应用的重复使用代码，但是缺少与标识相关的所有部分。如果你不想要延用该应用，可以克隆或[下载完整的示例](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet/archive/skeleton.zip)。
 
 
-		git clone https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git
+	git clone https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git
 
 
 ## 注册应用程序
@@ -50,12 +57,11 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 注册应用后，需要将应用设置为与 v2.0 终结点通信，以验证传入的请求和令牌。
 
 - 若要开始，请打开解决方案，然后使用 Package Manager Console 将 OWIN 中间件 NuGet 包添加到 TodoListService 项目。
-
-
-		PM> Install-Package Microsoft.Owin.Security.OAuth -ProjectName TodoListService
-		PM> Install-Package Microsoft.Owin.Security.Jwt -ProjectName TodoListService
-		PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
-
+	
+	PM> Install-Package Microsoft.Owin.Security.OAuth -ProjectName TodoListService
+	PM> Install-Package Microsoft.Owin.Security.Jwt -ProjectName TodoListService
+	PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
+	
 
 ## 配置 OAuth 身份验证
 
@@ -63,79 +69,79 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 - 将类声明更改为 `public partial class Startup` - 我们已在另一个文件中实现了此类的一部分。在 `Configuration(…)` 方法中，调用 ConfgureAuth(...) 以设置 Web 应用的身份验证。
 
 C#
-
-		public partial class Startup
-		{
-		    public void Configuration(IAppBuilder app)
-		    {
-		        ConfigureAuth(app);
-		    }
-		}
+	
+	public partial class Startup
+	{
+	    public void Configuration(IAppBuilder app)
+	    {
+	        ConfigureAuth(app);
+	    }
+	}
 
 
 - 打开文件 `App_Start\Startup.Auth.cs` 并实现 `ConfigureAuth(…)` 方法，以便将 Web API 设置为接受来自 v2.0 终结点的令牌。
 
 C#
 
-		public void ConfigureAuth(IAppBuilder app)
-		{
-				var tvps = new TokenValidationParameters
-				{
-						// In this app, the TodoListClient and TodoListService
-						// are represented using the same Application Id - we use
-						// the Application Id to represent the audience, or the
-						// intended recipient of tokens.
-		
-						ValidAudience = clientId,
-		
-						// In a real applicaiton, you might use issuer validation to
-						// verify that the user's organization (if applicable) has
-						// signed up for the app.  Here, we'll just turn it off.
-		
-						ValidateIssuer = false,
-				};
-		
-				// Set up the OWIN pipeline to use OAuth 2.0 Bearer authentication.
-				// The options provided here tell the middleware about the type of tokens
-				// that will be recieved, which are JWTs for the v2.0 endpoint.
-		
-				// NOTE: The usual WindowsAzureActiveDirectoryBearerAuthenticaitonMiddleware uses a
-				// metadata endpoint which is not supported by the v2.0 endpoint.  Instead, this
-				// OpenIdConenctCachingSecurityTokenProvider can be used to fetch & use the OpenIdConnect
-				// metadata document.
-		
-				app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
-				{
-						AccessTokenFormat = new Microsoft.Owin.Security.Jwt.JwtFormat(tvps, new OpenIdConnectCachingSecurityTokenProvider("https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration")),
-				});
-		}
+	public void ConfigureAuth(IAppBuilder app)
+	{
+			var tvps = new TokenValidationParameters
+			{
+					// In this app, the TodoListClient and TodoListService
+					// are represented using the same Application Id - we use
+					// the Application Id to represent the audience, or the
+					// intended recipient of tokens.
+	
+					ValidAudience = clientId,
+	
+					// In a real applicaiton, you might use issuer validation to
+					// verify that the user's organization (if applicable) has
+					// signed up for the app.  Here, we'll just turn it off.
+	
+					ValidateIssuer = false,
+			};
+	
+			// Set up the OWIN pipeline to use OAuth 2.0 Bearer authentication.
+			// The options provided here tell the middleware about the type of tokens
+			// that will be recieved, which are JWTs for the v2.0 endpoint.
+	
+			// NOTE: The usual WindowsAzureActiveDirectoryBearerAuthenticaitonMiddleware uses a
+			// metadata endpoint which is not supported by the v2.0 endpoint.  Instead, this
+			// OpenIdConenctCachingSecurityTokenProvider can be used to fetch & use the OpenIdConnect
+			// metadata document.
+	
+			app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
+			{
+					AccessTokenFormat = new Microsoft.Owin.Security.Jwt.JwtFormat(tvps, new OpenIdConnectCachingSecurityTokenProvider("https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration")),
+			});
+	}
 
 
 - 现在，你可以使用 `[Authorize]` 属性并结合 OAuth 2.0 持有者身份验证来保护控制器和操作。使用 authorize 标记修饰 `Controllers\TodoListController.cs` 类。这会强制用户在访问该页面之前登录。
 
 C#
 
-		[Authorize]
-		public class TodoListController : ApiController
-		{
+	[Authorize]
+	public class TodoListController : ApiController
+	{
 
 
-- 如果已授权的调用方成功调用了某个 `TodoListController` API，该操作可能需要访问有关调用方的信息。OWIN 通过 `ClaimsPrincpal` 对象提供对持有者令牌中的声明的访问。  
+- 如果已授权的调用方成功调用了某个 `TodoListController` API，该操作可能需要访问有关调用方的信息。OWIN 通过 `ClaimsPrincpal` 对象提供对持有者令牌中的声明的访问。
 
 C#
-
-		public IEnumerable<TodoItem> Get()
-		{
-		    // You can use the ClaimsPrincipal to access information about the
-		    // user making the call.  In this case, we use the 'sub' or
-		    // NameIdentifier claim to serve as a key for the tasks in the data store.
-		
-		    Claim subject = ClaimsPrincipal.Current.FindFirst(ClaimTypes.NameIdentifier);
-		
-		    return from todo in todoBag
-		           where todo.Owner == subject.Value
-		           select todo;
-		}
+	
+	public IEnumerable<TodoItem> Get()
+	{
+	    // You can use the ClaimsPrincipal to access information about the
+	    // user making the call.  In this case, we use the 'sub' or
+	    // NameIdentifier claim to serve as a key for the tasks in the data store.
+	
+	    Claim subject = ClaimsPrincipal.Current.FindFirst(ClaimTypes.NameIdentifier);
+	
+	    return from todo in todoBag
+	           where todo.Owner == subject.Value
+	           select todo;
+	}
 
 
 -	最后，打开位于 TodoListService 项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入你的配置值。
@@ -160,13 +166,11 @@ C#
 [从 Web 应用调用 Web API >>](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet/)
 
 有关更多资源，请查看：
-
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview/)
-
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
 ## 获取关于我们产品的安全更新
 
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->

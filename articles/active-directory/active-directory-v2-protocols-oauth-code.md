@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/23/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/08/2016"
+	ms.author="dastrock"
+	wacn.date="10/25/2016"/>
+
 
 # v2.0 协议 — OAuth 2.0 授权代码流
 

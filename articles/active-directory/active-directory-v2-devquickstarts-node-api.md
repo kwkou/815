@@ -5,21 +5,28 @@
 	documentationCenter="nodejs"
 	authors="brandwe"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+  	ms.tgt_pltfrm="na"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="brandwe"
+   	wacn.date="10/25/2016"/>  
+
 
 # 使用 node.js 保护 Web API
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
+Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
 
-**Passport** 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Microsoft Azure Active Directory 开发了一个策略。我们将安装此模块，然后添加 Microsoft Azure Active Directory `passport-azure-ad` 插件。
+**Passport** 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Azure Active directory 开发了一个策略。我们将安装此模块，然后添加 Azure Active Directory `passport-azure-ad` 插件。
 
 ## 下载
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-nodejs/archive/skeleton.zip)，或克隆该骨架：
@@ -40,15 +47,15 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 ## 2：下载适用于平台的 node.js
 若要成功使用本示例，你必须正确安装 Node.js。
 
-请从 [http://nodejs.org](http://nodejs.org) 安装 Node.js。
+	Install Node.js from [http://nodejs.org](http://nodejs.org).
 
 ## 3：在平台上安装 MongoDB
 
 若要成功使用本示例，你必须正确安装 MongoDB。我们将使用 MongoDB 来使 REST API 持久保留在服务器实例之间。
 
-从 [http://mongodb.org](http://www.mongodb.org) 安装 MongoDB。
+	Install MongoDB from [http://mongodb.org](http://www.mongodb.org).
 
-> [AZURE.NOTE] 本演练假定你为 MongoDB 使用默认的安装与服务器终结点，在编写本文时，该终结点为：mongodb://localhost
+> [AZURE.NOTE] 本演练假定为 MongoDB 使用默认的安装与服务器终结点，在编写本文时，该终结点为：mongodb://localhost
 
 ## 4：将 Restify 模块安装到 Web API 中
 
@@ -75,22 +82,22 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 在安装 Restify 时，你可能会看到类似于下面的内容：
 
 Shell
-	
-		clang: error: no such file or directory: 'HD/azuread/node_modules/restify/node_modules/dtrace-provider/libusdt'
-		make: *** [Release/DTraceProviderBindings.node] Error 1
-		gyp ERR! build error
-		gyp ERR! stack Error: `make` failed with exit code: 2
-		gyp ERR! stack     at ChildProcess.onExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:267:23)
-		gyp ERR! stack     at ChildProcess.EventEmitter.emit (events.js:98:17)
-		gyp ERR! stack     at Process.ChildProcess._handle.onexit (child_process.js:789:12)
-		gyp ERR! System Darwin 13.1.0
-		gyp ERR! command "node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
-		gyp ERR! cwd /Volumes/Development HD/azuread/node_modules/restify/node_modules/dtrace-provider
-		gyp ERR! node -v v0.10.11
-		gyp ERR! node-gyp -v v0.10.0
-		gyp ERR! not ok
-		npm WARN optional dep failed, continuing dtrace-provider@0.2.8
 
+	clang: error: no such file or directory: 'HD/azuread/node_modules/restify/node_modules/dtrace-provider/libusdt'
+	make: *** [Release/DTraceProviderBindings.node] Error 1
+	gyp ERR! build error
+	gyp ERR! stack Error: `make` failed with exit code: 2
+	gyp ERR! stack     at ChildProcess.onExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:267:23)
+	gyp ERR! stack     at ChildProcess.EventEmitter.emit (events.js:98:17)
+	gyp ERR! stack     at Process.ChildProcess._handle.onexit (child_process.js:789:12)
+	gyp ERR! System Darwin 13.1.0
+	gyp ERR! command "node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+	gyp ERR! cwd /Volumes/Development HD/azuread/node_modules/restify/node_modules/dtrace-provider
+	gyp ERR! node -v v0.10.11
+	gyp ERR! node-gyp -v v0.10.0
+	gyp ERR! not ok
+	npm WARN optional dep failed, continuing dtrace-provider@0.2.8
+	
 
 
 Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许多操作系统不提供 DTrace。你可以安全地忽略这些错误。
@@ -118,7 +125,7 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 	├── verror@1.3.6 (extsprintf@1.0.2)
 	├── csv@0.3.6
 	├── http-signature@0.10.0 (assert-plus@0.1.2, asn1@0.1.11, ctype@0.5.2)
-	└── bunyan@0.22.0 (mv@0.0.5)
+	└── bunyan@0.22.0(mv@0.0.5)
 
 
 ## 5：将在 Passport.js 安装到 Web API
@@ -129,7 +136,7 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 
 输入以下命令以安装 passport.js
 
-		npm install passport
+	npm install passport
 
 该命令的输出应如下所示：
 
@@ -147,23 +154,23 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 
 键入以下命令以安装 Passport.js passport-azure-ad 模块：
 
-		npm install passport-azure-ad
+	npm install passport-azure-ad
 
 该命令的输出应如下所示：
 
 
-		passport-azure-ad@1.0.0 node_modules/passport-azure-ad
-		├── xtend@4.0.0
-		├── xmldom@0.1.19
-		├── passport-http-bearer@1.0.1 (passport-strategy@1.0.0)
-		├── underscore@1.8.3
-		├── async@1.3.0
-		├── jsonwebtoken@5.0.2
-		├── xml-crypto@0.5.27 (xpath.js@1.0.6)
-		├── ursa@0.8.5 (bindings@1.2.1, nan@1.8.4)
-		├── jws@3.0.0 (jwa@1.0.1, base64url@1.0.4)
-		├── request@2.58.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, tunnel-agent@0.4.1, oauth-sign@0.8.0, isstream@0.1.2, extend@2.0.1, json-stringify-safe@5.0.1, node-uuid@1.4.3, qs@3.1.0, combined-stream@1.0.5, mime-types@2.0.14, form-data@1.0.0-rc1, http-signature@0.11.0, bl@0.9.4, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
-		└── xml2js@0.4.9 (sax@0.6.1, xmlbuilder@2.6.4)
+	passport-azure-ad@1.0.0 node_modules/passport-azure-ad
+	├── xtend@4.0.0
+	├── xmldom@0.1.19
+	├── passport-http-bearer@1.0.1 (passport-strategy@1.0.0)
+	├── underscore@1.8.3
+	├── async@1.3.0
+	├── jsonwebtoken@5.0.2
+	├── xml-crypto@0.5.27 (xpath.js@1.0.6)
+	├── ursa@0.8.5 (bindings@1.2.1, nan@1.8.4)
+	├── jws@3.0.0 (jwa@1.0.1, base64url@1.0.4)
+	├── request@2.58.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, tunnel-agent@0.4.1, oauth-sign@0.8.0, isstream@0.1.2, extend@2.0.1, json-stringify-safe@5.0.1, node-uuid@1.4.3, qs@3.1.0, combined-stream@1.0.5, mime-types@2.0.14, form-data@1.0.0-rc1, http-signature@0.11.0, bl@0.9.4, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
+	└── xml2js@0.4.9 (sax@0.6.1, xmlbuilder@2.6.4)
 
 
 ## 7：将 MongoDB 模块添加到 Web API
@@ -171,8 +178,10 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 我们将使用 MongoDB 作为数据存储。为此，我们需要安装这两个广泛使用的插件来管理模型和称为 Mongoose 的架构，以及 MongoDB 的数据库驱动程序（也称为 MongoDB）。
 
 
-* `npm install mongoose`
-* `npm install mongodb`
+* `npm install mongoose`  
+
+* `npm install mongodb`  
+
 
 ## 8：安装其他模块
 
@@ -184,9 +193,11 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 	cd azuread
 
 
+
 输入以下命令，以在 node\_modules 目录中安装以下模块：
 
-* `npm install crypto`
+* `npm install crypto`  
+
 * `npm install assert-plus`
 * `npm install posix-getopt`
 * `npm install util`
@@ -204,7 +215,8 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 * `npm install grunt@0.4.1`
 * `npm install xtend@2.0.3`
 * `npm install bunyan`
-* `npm update`
+* `npm update`  
+
 
 
 ## 9：创建包含依赖项的 server.js
@@ -213,24 +225,25 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中创建 `server.js` 文件，然后添加以下信息：
 
 Javascript
 
-		'use strict';
-		/**
-		* Module dependencies.
-		*/
-		var util = require('util');
-		var assert = require('assert-plus');
-		var mongoose = require('mongoose/');
-		var bunyan = require('bunyan');
-		var restify = require('restify');
-		var config = require('./config');
-		var passport = require('passport');
-		var OIDCBearerStrategy = require('passport-azure-ad').OIDCStrategy;
+	'use strict';
+	/**
+	* Module dependencies.
+	*/
+	var util = require('util');
+	var assert = require('assert-plus');
+	var mongoose = require('mongoose/');
+	var bunyan = require('bunyan');
+	var restify = require('restify');
+	var config = require('./config');
+	var passport = require('passport');
+	var OIDCBearerStrategy = require('passport-azure-ad').OIDCStrategy;
 
 
 保存文件。稍后我们将会使用该文件。
@@ -242,19 +255,20 @@ Javascript
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中创建 `config.js` 文件，然后添加以下信息：
 
 Javascript
-
-		// Don't commit this file to your public repos. This config is for first-run
-		exports.creds = {
-		mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
-		issuer: 'https://sts.chinacloudapi.cn/**<your application id>**/',
-		audience: '<your redirect URI>',
-		identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-configuration' // For using Microsoft you should never need to change this.
-		};
+	
+	// Don't commit this file to your public repos. This config is for first-run
+	exports.creds = {
+	mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
+	issuer: 'https://sts.chinacloudapi.cn/**<your application id>**/',
+	audience: '<your redirect URI>',
+	identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-configuration' // For using Microsoft you should never need to change this.
+	};
 
 
 
@@ -262,9 +276,9 @@ Javascript
 
 ### 所需值
 
-IdentityMetadata：passport-azure-ad 将在此处查找适用于 IdP 的配置数据，以及用来验证 JWT 令牌的密钥。如果你使用 Azure Active Directory，则可能不想更改此项。
+*IdentityMetadata*：passport-azure-ad 将在此处查找适用于 IdP 的配置数据，以及用于验证 JWT 令牌的密钥。如果你使用 Azure Active Directory，则可能不想更改此项。
 
-audience：来自门户的重定向 URI。
+*audience*：来自门户的重定向 URI。
 
 > [AZURE.NOTE]
 我们会频繁滚动更新密钥。请确保始终从“openid\_keys”URL 提取密钥，并且应用程序能够访问 Internet。
@@ -276,41 +290,42 @@ audience：来自门户的重定向 URI。
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中打开 `server.js` 文件，并添加以下信息：
 
 Javascript
 
-		var config = require('./config');
+	var config = require('./config');
 
 然后，在 `server.js` 中替换包含以下代码的新节：
 
 Javascript
 
-		// We pass these options in to the ODICBearerStrategy.
-		var options = {
-		// The URL of the metadata document for your app. We will put the keys for token validation from the URL found in the jwks_uri tag of the in the metadata.
-		identityMetadata: config.creds.identityMetadata,
-		issuer: config.creds.issuer,
-		audience: config.creds.audience
-		};
-		// array to hold logged in users and the current logged in user (owner)
-		var users = [];
-		var owner = null;
-		// Our logger
-		var log = bunyan.createLogger({
-		name: 'Microsoft Azure Active Directory Sample'
-		});
+	// We pass these options in to the ODICBearerStrategy.
+	var options = {
+	// The URL of the metadata document for your app. We will put the keys for token validation from the URL found in the jwks_uri tag of the in the metadata.
+	identityMetadata: config.creds.identityMetadata,
+	issuer: config.creds.issuer,
+	audience: config.creds.audience
+	};
+	// array to hold logged in users and the current logged in user (owner)
+	var users = [];
+	var owner = null;
+	// Our logger
+	var log = bunyan.createLogger({
+	name: 'Azure Active Directory Sample'
+	});
 
 
 ## 12：使用 Moongoose 添加 MongoDB 模型和架构信息
 
 现在，我们已将这三个文件统一放在 REST API 服务中，接下来让我们的准备工作发挥作用。
 
-对于本演练，我们将使用 MongoDB 来存储**步骤 4** 中所述的任务。
+对于本演练，我们将使用 MongoDB 来存储***步骤 4*** 中所述的任务。
 
-回顾我们在步骤 11 中创建的 config.js 文件，我们将数据库称为 tasklist，因为这是我们在 mogoose\_auth\_local 连接 URL 的末尾放置的内容。你无需事先在 MongoDB 中创建此数据库，当你首次运行服务器应用程序时，系统将创建此数据库（假定它不存在）。
+回顾我们在步骤 11 中创建的 config.js 文件，我们将数据库称为 *tasklist*，因为这是我们在 mogoose\_auth\_local 连接 URL 的末尾放置的内容。你无需事先在 MongoDB 中创建此数据库，当你首次运行服务器应用程序时，系统将创建此数据库（假定它不存在）。
 
 现在，我们已告诉服务器要使用哪个 MongoDB 数据库，接下来我们需要编写一些附加的代码，以便为服务器任务创建模型和架构。
 
@@ -318,33 +333,34 @@ Javascript
 
 我们的架构模型非常简单，你可以根据需要对其进行扩展。
 
-NAME - 分配到任务的用户名。一个**字符串**。
+NAME - 分配到任务的用户名。一个***字符串***。
 
-TASK - 任务本身。一个**字符串**。
+TASK - 任务本身。一个***字符串***。
 
-DATE - 任务截止日期。一个**日期时间**
+DATE - 任务截止日期。一个***日期时间***
 
-COMPLETED - 任务是否已完成。一个**布尔值**
+COMPLETED - 任务是否已完成。一个***布尔值***
 
 #### 在代码中创建架构
 
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中打开 `server.js` 文件，并在配置条目下面添加以下信息：
 
 Javascript
 
-		// MongoDB setup
-		// Setup some configuration
-		var serverPort = process.env.PORT || 8080;
-		var serverURI = (process.env.PORT) ? config.creds.mongoose_auth_mongohq : config.creds.mongoose_auth_local;
-		// Connect to MongoDB
-		global.db = mongoose.connect(serverURI);
-		var Schema = mongoose.Schema;
-		log.info('MongoDB Schema loaded');
+	// MongoDB setup
+	// Setup some configuration
+	var serverPort = process.env.PORT || 8080;
+	var serverURI = (process.env.PORT) ? config.creds.mongoose_auth_mongohq : config.creds.mongoose_auth_local;
+	// Connect to MongoDB
+	global.db = mongoose.connect(serverURI);
+	var Schema = mongoose.Schema;
+	log.info('MongoDB Schema loaded');
 
 这将连接到 MongoDB 服务器，并向我们返回一个 Schema 对象。
 
@@ -354,18 +370,18 @@ Javascript
 
 Javascript
 
-		// Here we create a schema to store our tasks and users. Pretty simple schema for now.
-		var TaskSchema = new Schema({
-		owner: String,
-		task: String,
-		completed: Boolean,
-		date: Date
-		});
-		// Use the schema to register a model
-		mongoose.model('Task', TaskSchema);
-		var Task = mongoose.model('Task');
+	// Here we create a schema to store our tasks and users. Pretty simple schema for now.
+	var TaskSchema = new Schema({
+	owner: String,
+	task: String,
+	completed: Boolean,
+	date: Date
+	});
+	// Use the schema to register a model
+	mongoose.model('Task', TaskSchema);
+	var Task = mongoose.model('Task');
 
-从该代码中可以看到，我们将会创建架构，然后创建在定义“路由”时，将在整个代码中用于存储数据的模型对象。
+从该代码中可以看到，我们将会创建架构，然后创建在定义***路由***时，将在整个代码中用于存储数据的模型对象。
 
 ## 步骤 13：为任务 REST API 服务器添加路由
 
@@ -379,14 +395,14 @@ Restify 路由的典型模式是：
 
 Javascript
 
-		function createObject(req, res, next) {
-		// do work on Object
-		_object.name = req.params.object; // passed value is in req.params under object
-		///...
-		return next(); // keep the server going
-		}
-		....
-		server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
+	function createObject(req, res, next) {
+	// do work on Object
+	_object.name = req.params.object; // passed value is in req.params under object
+	///...
+	return next(); // keep the server going
+	}
+	....
+	server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
 
 
 
@@ -398,109 +414,110 @@ Javascript
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中打开 `server.js` 文件，并在前面创建的数据库条目下面添加以下信息：
 
 Javascript
 
-		/**
-		*
-		* APIs for our REST Task server
-		*/
-		// Create a task
-		function createTask(req, res, next) {
-		// Resitify currently has a bug which doesn't allow you to set default headers
-		// This headers comply with CORS and allow us to mongodbServer our response to any origin
-		res.header("Access-Control-Allow-Origin", "*");
-		res.header("Access-Control-Allow-Headers", "X-Requested-With");
-		// Create a new task model, fill it up and save it to Mongodb
-		var _task = new Task();
-		if (!req.params.task) {
-		req.log.warn({
-		params: p
-		}, 'createTodo: missing task');
-		next(new MissingTaskError());
-		return;
-		}
-		_task.owner = owner;
-		_task.task = req.params.task;
-		_task.date = new Date();
-		_task.save(function(err) {
-		if (err) {
-		req.log.warn(err, 'createTask: unable to save');
-		next(err);
-		} else {
-		res.send(201, _task);
-		}
-		});
-		return next();
-		}
-		// Delete a task by name
-		function removeTask(req, res, next) {
-		Task.remove({
-		task: req.params.task,
-		owner: owner
-		}, function(err) {
-		if (err) {
-		req.log.warn(err,
-		'removeTask: unable to delete %s',
-		req.params.task);
-		next(err);
-		} else {
-		log.info('Deleted task:', req.params.task);
-		res.send(204);
-		next();
-		}
-		});
-		}
-		// Delete all tasks
-		function removeAll(req, res, next) {
-		Task.remove();
-		res.send(204);
-		return next();
-		}
-		// Get a specific task based on name
-		function getTask(req, res, next) {
-		log.info('getTask was called for: ', owner);
-		Task.find({
-		owner: owner
-		}, function(err, data) {
-		if (err) {
-		req.log.warn(err, 'get: unable to read %s', owner);
-		next(err);
-		return;
-		}
-		res.json(data);
-		});
-		return next();
-		}
-		/// Simple returns the list of TODOs that were loaded.
-		function listTasks(req, res, next) {
-		// Resitify currently has a bug which doesn't allow you to set default headers
-		// This headers comply with CORS and allow us to mongodbServer our response to any origin
-		res.header("Access-Control-Allow-Origin", "*");
-		res.header("Access-Control-Allow-Headers", "X-Requested-With");
-		log.info("listTasks was called for: ", owner);
-		Task.find({
-		owner: owner
-		}).limit(20).sort('date').exec(function(err, data) {
-		if (err)
-		return next(err);
-		if (data.length > 0) {
-		log.info(data);
-		}
-		if (!data.length) {
-		log.warn(err, "There is no tasks in the database. Add one!");
-		}
-		if (!owner) {
-		log.warn(err, "You did not pass an owner when listing tasks.");
-		} else {
-		res.json(data);
-		}
-		});
-		return next();
-		}
+	/**
+	*
+	* APIs for our REST Task server
+	*/
+	// Create a task
+	function createTask(req, res, next) {
+	// Resitify currently has a bug which doesn't allow you to set default headers
+	// This headers comply with CORS and allow us to mongodbServer our response to any origin
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	// Create a new task model, fill it up and save it to Mongodb
+	var _task = new Task();
+	if (!req.params.task) {
+	req.log.warn({
+	params: p
+	}, 'createTodo: missing task');
+	next(new MissingTaskError());
+	return;
+	}
+	_task.owner = owner;
+	_task.task = req.params.task;
+	_task.date = new Date();
+	_task.save(function(err) {
+	if (err) {
+	req.log.warn(err, 'createTask: unable to save');
+	next(err);
+	} else {
+	res.send(201, _task);
+	}
+	});
+	return next();
+	}
+	// Delete a task by name
+	function removeTask(req, res, next) {
+	Task.remove({
+	task: req.params.task,
+	owner: owner
+	}, function(err) {
+	if (err) {
+	req.log.warn(err,
+	'removeTask: unable to delete %s',
+	req.params.task);
+	next(err);
+	} else {
+	log.info('Deleted task:', req.params.task);
+	res.send(204);
+	next();
+	}
+	});
+	}
+	// Delete all tasks
+	function removeAll(req, res, next) {
+	Task.remove();
+	res.send(204);
+	return next();
+	}
+	// Get a specific task based on name
+	function getTask(req, res, next) {
+	log.info('getTask was called for: ', owner);
+	Task.find({
+	owner: owner
+	}, function(err, data) {
+	if (err) {
+	req.log.warn(err, 'get: unable to read %s', owner);
+	next(err);
+	return;
+	}
+	res.json(data);
+	});
+	return next();
+	}
+	/// Simple returns the list of TODOs that were loaded.
+	function listTasks(req, res, next) {
+	// Resitify currently has a bug which doesn't allow you to set default headers
+	// This headers comply with CORS and allow us to mongodbServer our response to any origin
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	log.info("listTasks was called for: ", owner);
+	Task.find({
+	owner: owner
+	}).limit(20).sort('date').exec(function(err, data) {
+	if (err)
+	return next(err);
+	if (data.length > 0) {
+	log.info(data);
+	}
+	if (!data.length) {
+	log.warn(err, "There is no tasks in the database. Add one!");
+	}
+	if (!owner) {
+	log.warn(err, "You did not pass an owner when listing tasks.");
+	} else {
+	res.json(data);
+	}
+	});
+	return next();
+	}
 
 
 ### 为路由添加一些错误处理
@@ -511,40 +528,40 @@ Javascript
 
 Javascript
 
-		///--- Errors for communicating something interesting back to the client
-		function MissingTaskError() {
-		restify.RestError.call(this, {
-		statusCode: 409,
-		restCode: 'MissingTask',
-		message: '"task" is a required parameter',
-		constructorOpt: MissingTaskError
-		});
-		this.name = 'MissingTaskError';
-		}
-		util.inherits(MissingTaskError, restify.RestError);
-		function TaskExistsError(owner) {
-		assert.string(owner, 'owner');
-		restify.RestError.call(this, {
-		statusCode: 409,
-		restCode: 'TaskExists',
-		message: owner + ' already exists',
-		constructorOpt: TaskExistsError
-		});
-		this.name = 'TaskExistsError';
-		}
-		util.inherits(TaskExistsError, restify.RestError);
-		function TaskNotFoundError(owner) {
-		assert.string(owner, 'owner');
-		restify.RestError.call(this, {
-		statusCode: 404,
-		restCode: 'TaskNotFound',
-		message: owner + ' was not found',
-		constructorOpt: TaskNotFoundError
-		});
-		this.name = 'TaskNotFoundError';
-		}
-		util.inherits(TaskNotFoundError, restify.RestError);
-
+	///--- Errors for communicating something interesting back to the client
+	function MissingTaskError() {
+	restify.RestError.call(this, {
+	statusCode: 409,
+	restCode: 'MissingTask',
+	message: '"task" is a required parameter',
+	constructorOpt: MissingTaskError
+	});
+	this.name = 'MissingTaskError';
+	}
+	util.inherits(MissingTaskError, restify.RestError);
+	function TaskExistsError(owner) {
+	assert.string(owner, 'owner');
+	restify.RestError.call(this, {
+	statusCode: 409,
+	restCode: 'TaskExists',
+	message: owner + ' already exists',
+	constructorOpt: TaskExistsError
+	});
+	this.name = 'TaskExistsError';
+	}
+	util.inherits(TaskExistsError, restify.RestError);
+	function TaskNotFoundError(owner) {
+	assert.string(owner, 'owner');
+	restify.RestError.call(this, {
+	statusCode: 404,
+	restCode: 'TaskNotFound',
+	message: owner + ' was not found',
+	constructorOpt: TaskNotFoundError
+	});
+	this.name = 'TaskNotFoundError';
+	}
+	util.inherits(TaskNotFoundError, restify.RestError);
+	
 
 
 ## 步骤 14：创建服务器！
@@ -555,87 +572,87 @@ Restify（和 Express）允许你对 REST API 执行大量的深度自定义，�
 
 Javascript
 
-		/**
-		* Our Server
-		*/
-		var server = restify.createServer({
-		name: "Microsoft Azure Active Directroy TODO Server",
-		version: "2.0.1"
-		});
-		// Ensure we don't drop data on uploads
-		server.pre(restify.pre.pause());
-		// Clean up sloppy paths like //todo//////1//
-		server.pre(restify.pre.sanitizePath());
-		// Handles annoying user agents (curl)
-		server.pre(restify.pre.userAgentConnection());
-		// Set a per request bunyan logger (with requestid filled in)
-		server.use(restify.requestLogger());
-		// Allow 5 requests/second by IP, and burst to 10
-		server.use(restify.throttle({
-		burst: 10,
-		rate: 5,
-		ip: true,
-		}));
-		// Use the common stuff you probably want
-		server.use(restify.acceptParser(server.acceptable));
-		server.use(restify.dateParser());
-		server.use(restify.queryParser());
-		server.use(restify.gzipResponse());
-		server.use(restify.bodyParser({
-		mapParams: true
-		}));
+	/**
+	* Our Server
+	*/
+	var server = restify.createServer({
+	name: "Azure Active Directroy TODO Server",
+	version: "2.0.1"
+	});
+	// Ensure we don't drop data on uploads
+	server.pre(restify.pre.pause());
+	// Clean up sloppy paths like //todo//////1//
+	server.pre(restify.pre.sanitizePath());
+	// Handles annoying user agents (curl)
+	server.pre(restify.pre.userAgentConnection());
+	// Set a per request bunyan logger (with requestid filled in)
+	server.use(restify.requestLogger());
+	// Allow 5 requests/second by IP, and burst to 10
+	server.use(restify.throttle({
+	burst: 10,
+	rate: 5,
+	ip: true,
+	}));
+	// Use the common stuff you probably want
+	server.use(restify.acceptParser(server.acceptable));
+	server.use(restify.dateParser());
+	server.use(restify.queryParser());
+	server.use(restify.gzipResponse());
+	server.use(restify.bodyParser({
+	mapParams: true
+	}));
 
 ## 15：添加路由（目前不包括身份验证）
 
 Javascript
 
-		/// Now the real handlers. Here we just CRUD
-		/**
-		/*
-		/* Each of these handlers are protected by our OIDCBearerStrategy by invoking 'oidc-bearer'
-		/* in the pasport.authenticate() method. We set 'session: false' as REST is stateless and
-		/* we don't need to maintain session state. You can experiement removing API protection
-		/* by removing the passport.authenticate() method like so:
-		/*
-		/* server.get('/tasks', listTasks);
-		/*
-		**/
-		server.get('/tasks', listTasks);
-		server.get('/tasks', listTasks);
-		server.get('/tasks/:owner', getTask);
-		server.head('/tasks/:owner', getTask);
-		server.post('/tasks/:owner/:task', createTask);
-		server.post('/tasks', createTask);
-		server.del('/tasks/:owner/:task', removeTask);
-		server.del('/tasks/:owner', removeTask);
-		server.del('/tasks', removeTask);
-		server.del('/tasks', removeAll, function respond(req, res, next) {
-		res.send(204);
-		next();
-		});
-		// Register a default '/' handler
-		server.get('/', function root(req, res, next) {
-		var routes = [
-		'GET /',
-		'POST /tasks/:owner/:task',
-		'POST /tasks (for JSON body)',
-		'GET /tasks',
-		'PUT /tasks/:owner',
-		'GET /tasks/:owner',
-		'DELETE /tasks/:owner/:task'
-		];
-		res.send(200, routes);
-		next();
-		});
-		server.listen(serverPort, function() {
-		var consoleMessage = '\n Microsoft Azure Active Directory Tutorial';
-		consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++';
-		consoleMessage += '\n %s server is listening at %s';
-		consoleMessage += '\n Open your browser to %s/tasks\n';
-		consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n';
-		consoleMessage += '\n !!! why not try a $curl -isS %s | json to get some ideas? \n';
-		consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n\n';
-		});
+	/// Now the real handlers. Here we just CRUD
+	/**
+	/*
+	/* Each of these handlers are protected by our OIDCBearerStrategy by invoking 'oidc-bearer'
+	/* in the pasport.authenticate() method. We set 'session: false' as REST is stateless and
+	/* we don't need to maintain session state. You can experiement removing API protection
+	/* by removing the passport.authenticate() method like so:
+	/*
+	/* server.get('/tasks', listTasks);
+	/*
+	**/
+	server.get('/tasks', listTasks);
+	server.get('/tasks', listTasks);
+	server.get('/tasks/:owner', getTask);
+	server.head('/tasks/:owner', getTask);
+	server.post('/tasks/:owner/:task', createTask);
+	server.post('/tasks', createTask);
+	server.del('/tasks/:owner/:task', removeTask);
+	server.del('/tasks/:owner', removeTask);
+	server.del('/tasks', removeTask);
+	server.del('/tasks', removeAll, function respond(req, res, next) {
+	res.send(204);
+	next();
+	});
+	// Register a default '/' handler
+	server.get('/', function root(req, res, next) {
+	var routes = [
+	'GET /',
+	'POST /tasks/:owner/:task',
+	'POST /tasks (for JSON body)',
+	'GET /tasks',
+	'PUT /tasks/:owner',
+	'GET /tasks/:owner',
+	'DELETE /tasks/:owner/:task'
+	];
+	res.send(200, routes);
+	next();
+	});
+	server.listen(serverPort, function() {
+	var consoleMessage = '\n Azure Active Directory Tutorial';
+	consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++';
+	consoleMessage += '\n %s server is listening at %s';
+	consoleMessage += '\n Open your browser to %s/tasks\n';
+	consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n';
+	consoleMessage += '\n !!! why not try a $curl -isS %s | json to get some ideas? \n';
+	consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n\n';
+	});
 
 ## 16：在添加 OAuth 支持之前，让我们运行服务器。
 
@@ -643,24 +660,27 @@ Javascript
 
 最简单的检查方法是在命令行中使用 curl。在这样做之前，我们需要一个用于分析 JSON 输出的简单实用工具。为此，请安装 json 工具，因为下面的所有示例都要使用该工具。
 
-`$npm install -g jsontool`
+`$npm install -g jsontool`  
+
 
 这将全局安装 JSON 工具。现在，我们已安装了工具，让我们试运行服务器：
 
 首先，请确保 monogoDB 实例正在运行。
 
-`$sudo mongod`
+`$sudo mongod`  
+
 
 然后，切换到目录并开始运行。
 
 `$ cd azuread`
 `$ node server.js`
 
-`$ curl -isS http://127.0.0.1:8080 | json`
+`$ curl -isS http://127.0.0.1:8080 | json`  
+
 
 Shell
 
-	HTTP/1.1 200 OK
+	HTTP/1.1 2.0OK
 	Connection: close
 	Content-Type: application/json
 	Content-Length: 171
@@ -678,24 +698,26 @@ Shell
 
 然后，我们按如下所示添加一个任务：
 
-`$ curl -isS -X POST http://127.0.0.1:8888/tasks/brandon/Hello`
+`$ curl -isS -X POST http://127.0.0.1:8888/tasks/brandon/Hello`  
+
 
 响应应为：
 
 Shell
 
-		HTTP/1.1 201 Created
-		Connection: close
-		Access-Control-Allow-Origin: *
-		Access-Control-Allow-Headers: X-Requested-With
-		Content-Type: application/x-www-form-urlencoded
-		Content-Length: 5
-		Date: Tue, 04 Feb 2014 01:02:26 GMT
-		Hello
+	HTTP/1.1 201 Created
+	Connection: close
+	Access-Control-Allow-Origin: *
+	Access-Control-Allow-Headers: X-Requested-With
+	Content-Type: application/x-www-form-urlencoded
+	Content-Length: 5
+	Date: Tue, 04 Feb 2014 01:02:26 GMT
+	Hello
 
 我们可以按如下所示列出 Brandon 的任务：
 
-`$ curl -isS http://127.0.0.1:8080/tasks/brandon/`
+`$ curl -isS http://127.0.0.1:8080/tasks/brandon/`  
+
 
 如果一切正常，我们可以将 OAuth 添加到 REST API 服务器。
 
@@ -707,7 +729,8 @@ Shell
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 ### 1：使用 passport-azure-ad 包含的 oidcbearerstrategy
 
@@ -717,59 +740,59 @@ Shell
 
 Javascript
 
-		// Let's start using Passport.js
-		
-		server.use(passport.initialize()); // Starts passport
-		server.use(passport.session()); // Provides session support
+	// Let's start using Passport.js
+	
+	server.use(passport.initialize()); // Starts passport
+	server.use(passport.session()); // Provides session support
 
 
 > [AZURE.TIP]
-编写 API 时，应始终将数据链接到用户无法证明其在令牌中是唯一的项目。当此服务器存储 TODO 项目时，根据我们放在“所有者”字段的令牌（通过 token.sub 调用）中的用户订阅 ID 来存储它们。这可确保只有该用户可以访问其 TODO，其他任何人都不可以访问输入的 TODO。“所有者”API 中不公开任何信息，因此，外部用户可以请求其他的 TODO，即使它们已经过身份验证也一样。
+编写 API 时，应始终将数据链接到用户无法证明其在令牌中是唯一的项目。此服务器存储 TODO 项目时，会根据我们放在“所有者”字段的令牌（通过 token.sub 调用）中的用户订阅 ID 来存储它们。这可确保只有该用户可以访问其 TODO，其他任何人都不可以访问输入的 TODO。“所有者”API 中不公开任何信息，因此，外部用户可以请求其他的 TODO，即使它们已经过身份验证也一样。
 
 接下来，我们将使用随附在 passport-azure-ad 中的 Open ID Connect Bearer 策略。先看看下面的代码，稍后我将进行解释。将此代码放在上面粘贴的内容后面：
 
 Javascript
 
-		/**
-		/*
-		/* Calling the OIDCBearerStrategy and managing users
-		/*
-		/* Passport pattern provides the need to manage users and info tokens
-		/* with a FindorCreate() method that must be provided by the implementor.
-		/* Here we just autoregister any user and implement a FindById().
-		/* You'll want to do something smarter.
-		**/
-		var findById = function(id, fn) {
-		for (var i = 0, len = users.length; i < len; i++) {
-		var user = users[i];
-		if (user.sub === id) {
-		log.info('Found user: ', user);
-		return fn(null, user);
-		}
-		}
-		return fn(null, null);
-		};
-		var oidcStrategy = new OIDCBearerStrategy(options,
-		function(token, done) {
-		log.info('verifying the user');
-		log.info(token, 'was the token retreived');
-		findById(token.sub, function(err, user) {
-		if (err) {
-		return done(err);
-		}
-		if (!user) {
-		// "Auto-registration"
-		log.info('User was added automatically as they were new. Their sub is: ', token.sub);
-		users.push(token);
-		owner = token.sub;
-		return done(null, token);
-		}
-		owner = token.sub;
-		return done(null, user, token);
-		});
-		}
-		);
-		passport.use(oidcStrategy);
+	/**
+	/*
+	/* Calling the OIDCBearerStrategy and managing users
+	/*
+	/* Passport pattern provides the need to manage users and info tokens
+	/* with a FindorCreate() method that must be provided by the implementor.
+	/* Here we just autoregister any user and implement a FindById().
+	/* You'll want to do something smarter.
+	**/
+	var findById = function(id, fn) {
+	for (var i = 0, len = users.length; i < len; i++) {
+	var user = users[i];
+	if (user.sub === id) {
+	log.info('Found user: ', user);
+	return fn(null, user);
+	}
+	}
+	return fn(null, null);
+	};
+	var oidcStrategy = new OIDCBearerStrategy(options,
+	function(token, done) {
+	log.info('verifying the user');
+	log.info(token, 'was the token retreived');
+	findById(token.sub, function(err, user) {
+	if (err) {
+	return done(err);
+	}
+	if (!user) {
+	// "Auto-registration"
+	log.info('User was added automatically as they were new. Their sub is: ', token.sub);
+	users.push(token);
+	owner = token.sub;
+	return done(null, token);
+	}
+	owner = token.sub;
+	return done(null, user, token);
+	});
+	}
+	);
+	passport.use(oidcStrategy);
 
 
 Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有策略写入器都依循类似的模式。查看该策略，你会发现，我们已将它作为 function() 来传递，其中包含一个令牌和一个用作参数的 done。策略完成所有工作之后，便尽责地返回。完成后，我们需要存储用户并隐藏令牌，因此不需要再次请求它。
@@ -785,39 +808,39 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 Javascript
 
-		server.get('/tasks', passport.authenticate('oidc-bearer', {
-		session: false
-		}), listTasks);
-		server.get('/tasks', passport.authenticate('oidc-bearer', {
-		session: false
-		}), listTasks);
-		server.get('/tasks/:owner', passport.authenticate('oidc-bearer', {
-		session: false
-		}), getTask);
-		server.head('/tasks/:owner', passport.authenticate('oidc-bearer', {
-		session: false
-		}), getTask);
-		server.post('/tasks/:owner/:task', passport.authenticate('oidc-bearer', {
-		session: false
-		}), createTask);
-		server.post('/tasks', passport.authenticate('oidc-bearer', {
-		session: false
-		}), createTask);
-		server.del('/tasks/:owner/:task', passport.authenticate('oidc-bearer', {
-		session: false
-		}), removeTask);
-		server.del('/tasks/:owner', passport.authenticate('oidc-bearer', {
-		session: false
-		}), removeTask);
-		server.del('/tasks', passport.authenticate('oidc-bearer', {
-		session: false
-		}), removeTask);
-		server.del('/tasks', passport.authenticate('oidc-bearer', {
-		session: false
-		}), removeAll, function respond(req, res, next) {
-		res.send(204);
-		next();
-		});
+	server.get('/tasks', passport.authenticate('oidc-bearer', {
+	session: false
+	}), listTasks);
+	server.get('/tasks', passport.authenticate('oidc-bearer', {
+	session: false
+	}), listTasks);
+	server.get('/tasks/:owner', passport.authenticate('oidc-bearer', {
+	session: false
+	}), getTask);
+	server.head('/tasks/:owner', passport.authenticate('oidc-bearer', {
+	session: false
+	}), getTask);
+	server.post('/tasks/:owner/:task', passport.authenticate('oidc-bearer', {
+	session: false
+	}), createTask);
+	server.post('/tasks', passport.authenticate('oidc-bearer', {
+	session: false
+	}), createTask);
+	server.del('/tasks/:owner/:task', passport.authenticate('oidc-bearer', {
+	session: false
+	}), removeTask);
+	server.del('/tasks/:owner', passport.authenticate('oidc-bearer', {
+	session: false
+	}), removeTask);
+	server.del('/tasks', passport.authenticate('oidc-bearer', {
+	session: false
+	}), removeTask);
+	server.del('/tasks', passport.authenticate('oidc-bearer', {
+	session: false
+	}), removeAll, function respond(req, res, next) {
+	res.send(204);
+	next();
+	});
 
 
 ## 18：再次运行服务器应用程序并确保它拒绝你
@@ -835,15 +858,16 @@ Javascript
 
 试用基本 POST：
 
-`$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`
+`$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`  
+
 
 Shell
 
-		HTTP/1.1 401 Unauthorized
-		Connection: close
-		WWW-Authenticate: Bearer realm="Users"
-		Date: Tue, 14 Jul 2015 05:45:03 GMT
-		Transfer-Encoding: chunked
+	HTTP/1.1 401 Unauthorized
+	Connection: close
+	WWW-Authenticate: Bearer realm="Users"
+	Date: Tue, 14 Jul 2015 05:45:03 GMT
+	Transfer-Encoding: chunked
 
 
 401 在这里是正常的响应，表明 Passport 层正在尝试重定向到授权终结点，这正是你所希望的。
@@ -873,4 +897,4 @@ Shell
 
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->

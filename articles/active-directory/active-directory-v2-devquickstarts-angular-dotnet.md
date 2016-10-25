@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="dstrockis"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
+
 
 
 # 向 AngularJS 单页应用添加登录凭据 - .NET
@@ -38,13 +45,13 @@
 
 ## 注册应用程序
 
-首先，在[应用注册门户](https://apps.dev.microsoft.com)中创建应用，或者遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
+首先，在[应用注册门户](https://apps.dev.microsoft.com)中创建应用，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 为应用程序添加 **Web** 平台。
 - 输入正确的**重定向 URI**。本示例的默认值为 `https://localhost:44326/`。
-- 保留启用“允许隐式流”复选框。 
+- 保持启用“允许隐式流”复选框。
 
-复制分配给应用程序的“应用程序 ID”，因为稍后将要用到。
+复制分配给应用的“应用程序 ID”，因为稍后将要用到。
 
 ## 安装 adal.js
 若要开始，请导航到下载的项目并安装 adal.js。如果已安装 [bower](http://bower.io/)，只要运行以下命令即可。如有任何依赖版本不匹配的情况，只需选择较高的版本。
@@ -52,148 +59,148 @@
 	bower install adal-angular#experimental
 
 
-或者，你可以手动下载 [adal.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal.min.js) 和 [adal-angular.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal-angular.min.js)。将这两个文件添加到 `TodoSPA` 项目的 `app/lib/adal-angular-experimental/dist` 目录。
+或者，可以手动下载 [adal.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal.min.js) 和 [adal-angular.js](https://raw.githubusercontent.com/AzureAD/azure-activedirectory-library-for-js/experimental/dist/adal-angular.min.js)。将这两个文件添加到 `TodoSPA` 项目的 `app/lib/adal-angular-experimental/dist` 目录。
 
 接下来，在 Visual Studio 中打开该项目，并在主页主体的末尾加载 adal.js：
 
 html
-
-		<!--index.html-->
-		
-		...
-		
-		<script src="App/bower_components/dist/adal.min.js"></script>
-		<script src="App/bower_components/dist/adal-angular.min.js"></script>
-		
-		...
+	
+	<!--index.html-->
+	
+	...
+	
+	<script src="App/bower_components/dist/adal.min.js"></script>
+	<script src="App/bower_components/dist/adal-angular.min.js"></script>
+	
+	...
 
 
 ## 设置 REST API
 
-在设置的同时，让我们查看后端 REST API 的工作方式。在项目根目录中，打开 `web.config` 并替换 `audience` 值。REST API 使用此值来验证发出 AJAX 请求时从 Angular 应用收到的令牌。
-		
+在设置的同时，让我们查看后端 REST API 的工作方式。在项目的根目录中，打开 `web.config` 并替换 `audience` 值。REST API 使用此值来验证发出 AJAX 请求时从 Angular 应用收到的令牌。
+
 xml
+	
+	<!--web.config-->
+	
+	...
+	
+	    <appSettings>
+	        <add key="ida:Audience" value="[Your-application-id]" />
+	    </appSettings>
+	    
+	...
 
-		<!--web.config-->
-		
-		...
-		
-		    <appSettings>
-		        <add key="ida:Audience" value="[Your-application-id]" />
-		    </appSettings>
-		    
-		...
 
-
-有关 REST API 工作方式的讨论到此为止。你可以自由摸索代码，但是如果想要深入了解如何使用 Azure AD 保护 Web API，请参阅[此文](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api/)。
+有关 REST API 工作方式的讨论到此为止。可以自由摸索代码，但如果想要深入了解如何使用 Azure AD 保护 Web API，请参阅[此文](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api/)。
 
 ## 登录用户
 编写一些标识代码。你可能已发现 adal.js 包含 AngularJS 提供程序，该程序可以顺畅使用 Angular 路由机制。首先，将 adal 模块添加到应用：
 
 js
-
-		// app/scripts/app.js
-		
-		angular.module('todoApp', ['ngRoute','AdalAngular'])
-		.config(['$routeProvider','$httpProvider', 'adalAuthenticationServiceProvider',
-		 function ($routeProvider, $httpProvider, adalProvider) {
-		
-		...
+	
+	// app/scripts/app.js
+	
+	angular.module('todoApp', ['ngRoute','AdalAngular'])
+	.config(['$routeProvider','$httpProvider', 'adalAuthenticationServiceProvider',
+	 function ($routeProvider, $httpProvider, adalProvider) {
+	
+	...
 
 
 现在可以使用应用程序 ID 初始化 `adalProvider`：
 
 js
-
-		// app/scripts/app.js
-		
-		...
-		
-		adalProvider.init({
-		        
-		        // Use this value for the public instance of Azure AD
-		        instance: 'https://login.microsoftonline.com/', 
-		        
-		        // The 'common' endpoint is used for multi-tenant applications like this one
-		        tenant: 'common',
-		        
-		        // Your application id from the registration portal
-		        clientId: '<Your-application-id>',
-		        
-		        // If you're using IE, uncommment this line - the default HTML5 sessionStorage does not work for localhost.
-		        //cacheLocation: 'localStorage',
-		         
-		    }, $httpProvider);
+	
+	// app/scripts/app.js
+	
+	...
+	
+	adalProvider.init({
+	        
+	        // Use this value for the public instance of Azure AD
+	        instance: 'https://login.microsoftonline.com/', 
+	        
+	        // The 'common' endpoint is used for multi-tenant applications like this one
+	        tenant: 'common',
+	        
+	        // Your application id from the registration portal
+	        clientId: '<Your-application-id>',
+	        
+	        // If you're using IE, uncommment this line - the default HTML5 sessionStorage does not work for localhost.
+	        //cacheLocation: 'localStorage',
+	         
+	    }, $httpProvider);
 
 
 很好，现在 adal.js 有了保护应用和登录用户所需的所有信息。若要对应用中的特定路由强制登录，只需编写一行代码：
-		
-js
-
-		// app/scripts/app.js
-		
-		...
-		
-		}).when("/TodoList", {
-		    controller: "todoListCtrl",
-		    templateUrl: "/static/views/TodoList.html",
-		    requireADLogin: true, // Ensures that the user must be logged in to access the route
-		})
-		
-		...
-
-
-现在，当用户单击 `TodoList` 链接时，adal.js 会根据需要自动重定向到 Azure AD 以进行登录。你也可以通过在控制器中调用 adal.js，显式发送登录和注销请求：
 
 js
+	
+	// app/scripts/app.js
+	
+	...
+	
+	}).when("/TodoList", {
+	    controller: "todoListCtrl",
+	    templateUrl: "/static/views/TodoList.html",
+	    requireADLogin: true, // Ensures that the user must be logged in to access the route
+	})
+	
+	...
 
-		// app/scripts/homeCtrl.js
-		
-		angular.module('todoApp')
-		// Load adal.js the same way for use in controllers and views   
-		.controller('homeCtrl', ['$scope', 'adalAuthenticationService','$location', function ($scope, adalService, $location) {
-		    $scope.login = function () {
-		        
-		        // Redirect the user to sign in
-		        adalService.login();
-		        
-		    };
-		    $scope.logout = function () {
-		        
-		        // Redirect the user to log out    
-		        adalService.logOut();
-		    
-		    };
-		...
+
+现在，用户单击 `TodoList` 链接时，adal.js 会根据需要自动重定向到 Azure AD 以进行登录。你也可以通过在控制器中调用 adal.js，显式发送登录和注销请求：
+
+js
+	
+	// app/scripts/homeCtrl.js
+	
+	angular.module('todoApp')
+	// Load adal.js the same way for use in controllers and views   
+	.controller('homeCtrl', ['$scope', 'adalAuthenticationService','$location', function ($scope, adalService, $location) {
+	    $scope.login = function () {
+	        
+	        // Redirect the user to sign in
+	        adalService.login();
+	        
+	    };
+	    $scope.logout = function () {
+	        
+	        // Redirect the user to log out    
+	        adalService.logOut();
+	    
+	    };
+	...
 
 
 ## 显示用户信息
-用户现已登录，你可能需要访问应用程序中已登录用户的身份验证数据。Adal.js 在 `userInfo` 对象中为你公开此信息。若要在视图中访问此对象，首先请将 adal.js 添加到相应控制器的根范围：
+用户现已登录，你可能需要访问应用程序中已登录用户的身份验证数据。Adal.js 在 `userInfo` 对象中公开此信息。若要在视图中访问此对象，首先请将 adal.js 添加到相应控制器的根范围：
 
 js
 
-		// app/scripts/userDataCtrl.js
-		
-		angular.module('todoApp')
-		// Load ADAL for use in view
-		.controller('userDataCtrl', ['$scope', 'adalAuthenticationService', function ($scope, adalService) {}]);
-
+	// app/scripts/userDataCtrl.js
+	
+	angular.module('todoApp')
+	// Load ADAL for use in view
+	.controller('userDataCtrl', ['$scope', 'adalAuthenticationService', function ($scope, adalService) {}]);
+	
 
 然后可以直接在视图中寻址 `userInfo` 对象：
-		
+
 html
 
-		<!--app/views/UserData.html-->
-		
-		...
-		
-		    <!--Get the user's profile information from the ADAL userInfo object-->
-		    <tr ng-repeat="(key, value) in userInfo.profile">
-		        <td>{{key}}</td>
-		        <td>{{value}}</td>
-		    </tr>
-		...
-		
+	<!--app/views/UserData.html-->
+	
+	...
+	
+	    <!--Get the user's profile information from the ADAL userInfo object-->
+	    <tr ng-repeat="(key, value) in userInfo.profile">
+	        <td>{{key}}</td>
+	        <td>{{value}}</td>
+	    </tr>
+	...
+
 
 也可以使用 `userInfo` 对象来确定用户是否已登录。
 
@@ -212,30 +219,31 @@ html
 
 
 ## 调用 REST API
-最后，获取一些令牌并调用 REST API，以创建、读取、更新和删除任务。知道吗？ 你什么事都不用做。Adal.js 将自动为你获取、缓存和刷新令牌。它还会将这些令牌附加到发往 REST API 的传出 AJAX 请求。
+最后，获取一些令牌并调用 REST API，以创建、读取、更新和删除任务。知道吗？ *什么事*都不用做。Adal.js 将自动为你获取、缓存和刷新令牌。它还会将这些令牌附加到发往 REST API 的传出 AJAX 请求。
 
-到底是如何做到这一点的呢？ 一切归功于神奇的 [AngularJS 拦截器](https://docs.angularjs.org/api/ng/service/$http)，它可以让 adal.js 转换传出和传入的 http 消息。此外，adal.js 假设作为窗口发送到同一个域的任何请求都应该使用与 AngularJS 应用相同的应用程序 ID 所用的令牌。这就是为什么我们在 Angular 应用和 NodeJS REST API 中使用相同的应用程序 ID。当然，你可以重写此行为，并根据需要告知 adal.js 获取其他 REST API 的令牌 - 但是对于此简单方案，使用默认值即可。
+到底是如何做到这一点的呢？ 一切归功于神奇的 [AngularJS 拦截器](https://docs.angularjs.org/api/ng/service/$http)，它让 adal.js 能够转换传出和传入的 http 消息。此外，adal.js 假设作为窗口发送到同一个域的任何请求都应该使用与 AngularJS 应用相同的应用程序 ID 所用的令牌。这就是为什么我们在 Angular 应用和 NodeJS REST API 中使用相同的应用程序 ID。当然，你可以重写此行为，并根据需要告知 adal.js 获取其他 REST API 的令牌 - 但是对于此简单方案，使用默认值即可。
 
 下面代码段演示了如何轻松地从 Azure AD 发送包含持有者令牌的请求：
 
 js
 
-		// app/scripts/todoListSvc.js
-		
-		...
-		return $http.get('/api/tasks');
-		...
+	// app/scripts/todoListSvc.js
+	
+	...
+	return $http.get('/api/tasks');
+	...
 
 
-祝贺你！ 你现已完成创建 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果你需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)（免费）。
+祝贺你！ 你现已完成创建 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)（免费）。
 
-如果要继续了解 v2.0 终结点，请返回到 [v2.0 开发人员指南](/documentation/articles/active-directory-appmodel-v2-overview/)。有关更多资源，请查看：
+如果要继续了解 v2.0 终结点，请返回 [v2.0 开发人员指南](/documentation/articles/active-directory-appmodel-v2-overview/)。有关更多资源，请查看：
 
 - [GitHub 上的 Azure 示例 >>](https://github.com/Azure-Samples)
 - [堆栈溢出网站上的 Azure AD >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 - [Azure.com](/documentation/services/identity/) 上的 Azure AD 文档 >>
+
 ## 获取关于我们产品的安全更新
 
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->
