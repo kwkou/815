@@ -38,7 +38,7 @@
 	+ Updating VM "myuniquevmname"
 	info:    vm disk attach-new command OK
 
-## 连接到 Linux VM 以装入新磁盘
+## <a name="connect-to-the-linux-vm-to-mount-the-new-disk"></a> 连接到 Linux VM 以装入新磁盘
 
 > [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
 

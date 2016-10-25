@@ -26,7 +26,7 @@
 ## 公共 IP 地址
 公共 IP 地址可允许 Azure 资源与 Internet 以及面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/redis-cache/)、[Azure 事件中心](/home/features/event-hubs/)、[SQL 数据库](/documentation/articles/sql-database-technical-overview/)和 [Azure 存储空间](/documentation/articles/storage-introduction/)）通信。
 
-在 Azure Resource Manager 中，[公共 IP](/documentation/articles/resource-groups-networking/#public-ip-address) 地址是具有其自身属性的资源。你可以将公共 IP 地址资源与以下任何资源相关联：
+在 Azure Resource Manager 中，公共 IP 地址是具有其自身属性的资源。你可以将公共 IP 地址资源与以下任何资源相关联：
 
 - 虚拟机 (VM)
 - 面向 Internet 的负载均衡器

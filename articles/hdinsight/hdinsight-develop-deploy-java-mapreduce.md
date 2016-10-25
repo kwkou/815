@@ -210,7 +210,7 @@
 3. 运行单词计数 MapReduce 作业
 4. 检索作业结果
 
-默认情况下，HDInsight Emulator 使用 HDFS 作为文件系统。（可选）你可以将 HDInsight Emulator 配置为使用 Azure Blob 存储。有关详细信息，请参阅 [HDInsight Emulator 入门][hdinsight-emulator-wasb]。
+默认情况下，HDInsight Emulator 使用 HDFS 作为文件系统。（可选）你可以将 HDInsight Emulator 配置为使用 Azure Blob 存储。
 
 在本教程中，你将使用 HDFS 的 **copyFromLocal** 命令将数据文件上载到 HDFS。下一部分说明如何使用 Azure PowerShell 将文件上载到 Azure Blob 存储。有关将文件上载到 Azure Blob 存储的其他方法，请参阅[将数据上载到 HDInsight][hdinsight-upload-data]。
 

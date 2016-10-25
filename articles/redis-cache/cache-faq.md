@@ -22,8 +22,7 @@
 
 如果未在此处找到相关问题，请联系我们获取帮助。
 
--	您可以在此常见问题解答末尾的[内容反馈](#content_feedback)处发布问题，并与 Azure 内容团队和其他社区成员就本文进行讨论。
--	若希望更多的人看到您的问题，可以将问题发布在 [Azure 缓存 MSDN 论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=azurecache)并与 Azure 缓存团队和社区的其他成员讨论。
+-	您可以将问题发布在 [Azure 缓存 MSDN 论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=azurecache)并与 Azure 缓存团队和社区的其他成员讨论。
 
 ## Azure Redis 缓存基础知识
 

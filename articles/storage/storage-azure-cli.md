@@ -141,7 +141,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 
         azure storage blob download mycontainer myBlockBlob '~/downloadImages/downloaded.png'
 
-### 复制 blob
+### <a name="copy-blobs"></a> 复制 blob
 
 你可以在存储帐户和区域内或跨存储帐户和区域异步复制 Blob。
 

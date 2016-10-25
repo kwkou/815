@@ -81,7 +81,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 10. 单击“创建”以创建存储帐户。
 
-## 管理存储帐户
+## <a name="manage-your-storage-account"></a> 管理存储帐户
 
 ### 更改帐户配置
 

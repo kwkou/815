@@ -138,7 +138,7 @@
 - 用于配置网关与 VPN 设备之间的连接的共享密钥。
 
 
-## <a name="how-to-change-the-vpn-routing-type-for-your-gateway"></a>如何更改网关的 VPN 路由类型
+## <a name="how-to-change-the-vpn-routing-type-for-your-gateway" id="how-to-change-your-vpn-gateway-type"></a>如何更改网关的 VPN 路由类型
 
 由于某些连接配置仅适用于特定网关路由类型，你可能需要更改现有 VPN 网关的 VPN 路由网关类型。例如，你可能要将点到站点连接添加到具有静态网关的现有站点到站点连接。点到站点连接需要动态网关。这意味着若要配置 P2S 连接，必须将网关 VPN 路由类型从静态更改为动态。
 
