@@ -1,16 +1,22 @@
-<properties 
-	pageTitle="什么是 Azure 的自助注册？| Azure" 
-	description="概述 Azure 的自助服务注册以及如何管理注册过程。" 
-	services="active-directory" 
-	documentationCenter="" 
+<properties
+	pageTitle="什么是 Azure 的自助注册？| Azure"
+	description="概述 Azure 的自助注册、如何管理注册过程以及如何接管 DNS 域名。"
+	services="active-directory"
+	documentationCenter=""
 	authors="curtand"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="05/10/2016"
-	wacn.date="06/27/2016"/>
+<tags
+	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="08/23/2016"
+	ms.author="curtand"
+   	wacn.date="10/17/2016"/>  
+
 
 
 # 什么是 Azure 的自助服务注册？
@@ -20,7 +26,7 @@
 ## 为何使用自助服务注册？
 
 - 让客户更快获得所需的服务。
-- 为服务创建基于电子邮件的（迅速传播的）促销。
+- 为服务创建基于电子邮件的促销。
 - 创建基于电子邮件的注册流程，让用户使用易记的工作电子邮件别名快速创建标识。
 - 以后可以将非托管 Azure 目录转换成托管目录，并重复用于其他服务。
 
@@ -154,7 +160,6 @@
 例如：
 
 1. 使用用于响应自助服务产品的凭据连接到 Azure AD：
-
 		import-module MSOnline
 		$msolcred = get-credential
 		connect-msolservice -credential $msolcred
@@ -165,17 +170,17 @@
 
 3. 然后 Get-MsolDomainVerificationDns cmdlet 来创建质询：
 
-		Get-MsolDomainVerificationDns –DomainName *your\_domain\_name* –Mode DnsTxtRecord
+	Get-MsolDomainVerificationDns -DomainName *your_domain_name* -Mode DnsTxtRecord
 
 	例如：
 
-		Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
+	Get-MsolDomainVerificationDns -DomainName contoso.com -Mode DnsTxtRecord
 
 4. 复制从此命令返回的值（质询）。
 
 	例如：
 
-		MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
+	MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
 
 5. 在公共 DNS 命名空间中，创建包含你在上一步复制的值的 DNS txt 记录。
 
@@ -183,11 +188,11 @@
 
 6. 运行 Confirm-MsolDomain cmdlet 以验证质询：
 
-		Confirm-MsolEmailVerifiedDomain -DomainName *your\_domain\_name*
+	Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
 
 	例如：
 
-		Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
+	Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
 
 如果质询成功，你将返回到提示符，且不会显示错误。
 
@@ -211,7 +216,7 @@
 
 可以结合使用这两个参数，以更准确地定义如何控制自助服务注册。例如，以下命令允许用户执行自助服务注册，但前提是这些用户已在 Azure AD 中拥有一个帐户（换言之，需要创建电子邮件验证帐户的用户无法执行自助服务注册）：
 
-		Set-MsolCompanySettings -AllowEmailVerifiedUsers $false -AllowAdHocSubscriptions $true
+	Set-MsolCompanySettings -AllowEmailVerifiedUsers $false -AllowAdHocSubscriptions $true
 
 以下流程图解释了这些参数的所有不同组合，以及目录和自助注册的最终状态。
 
@@ -230,7 +235,7 @@
 -  [Set-MsolCompanySettings](https://msdn.microsoft.com/zh-cn/library/azure/dn194127.aspx)
 
 <!--Image references-->
+
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_1010_2016-->

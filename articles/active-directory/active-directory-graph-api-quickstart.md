@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD 图形 API 快速入门 | Aure"
+   pageTitle="Azure AD 图形 API 快速入门 | Azure"
    description="Azure Active Directory 图形 API 通过 OData REST API 终结点提供对 Azure AD 的编程访问权限。应用程序可以使用图形 API 对目录数据和对象执行创建、读取、更新和删除 (CRUD) 操作。"
    services="active-directory"
    documentationCenter="n/a"
@@ -8,14 +8,21 @@
    editor=""
    tags=""/>
 
-<tags
+
+   <tags
       ms.service="active-directory"
-      ms.date="03/28/2016"
-      wacn.date="07/04/2016"/>
+      ms.devlang="na"
+      ms.topic="article"
+      ms.tgt_pltfrm="na"
+      ms.workload="identity"
+      ms.date="09/16/2016"
+      ms.author="v-jibran@microsoft.com"
+      wacn.date="10/17/2016"/>
+
 
 # Azure AD 图形 API 快速入门
 
-Azure Active Directory (AD) 图形 API 通过 OData REST API 终结点提供对 Azure AD 的编程访问权限。应用程序可以使用图形 API 对目录数据和对象执行创建、读取、更新和删除 (CRUD) 操作。例如，可以使用图形 API 来创建新用户、查看或更新用户的属性、更改用户的密码、检查基于角色的访问的组成员身份、禁用或删除用户。有关图形 API 功能和应用方案的详细信息，请参阅 [Azure AD 图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) 和 [Azure AD 图形 API 先决条件](https://msdn.microsoft.com/library/hh974476(Azure.100).aspx)。
+Azure Active Directory (AD) 图形 API 通过 OData REST API 终结点提供对 Azure AD 的编程访问权限。应用程序可以使用图形 API 对目录数据和对象执行创建、读取、更新和删除 (CRUD) 操作。例如，可以使用图形 API 来创建新用户、查看或更新用户的属性、更改用户的密码、检查基于角色的访问的组成员身份、禁用或删除用户。有关图形 API 功能和应用方案的详细信息，请参阅 [Azure AD 图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) 和 [Azure AD 图形 API 先决条件](https://msdn.microsoft.com/zh-cn/library/hh974476.aspx)。
 
 > [AZURE.IMPORTANT] 也可以通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API 功能。Microsoft Graph 是统一的 API，其中包含 Outlook、OneDrive、OneNote、Planner 和 Office Graph 等其他 Microsoft 服务中的 API，可通过单个终结点和单个访问令牌进行访问。
 
@@ -52,9 +59,10 @@ Azure Active Directory (AD) 图形 API 通过 OData REST API 终结点提供对 
 
 下面是导航到图形资源管理器，选择“使用演示公司”，并输入 `https://graph.chinacloudapi.cn/GraphDir1.partner.onmschina.cn/users?api-version=1.6` 显示演示目录中所有用户时会看到的输出：
 
-![Azure AD 图形 API 资源管理器](./media/active-directory-graph-api-quickstart/graph_explorer.png)
+![Azure AD 图形 API 资源管理器](./media/active-directory-graph-api-quickstart/graph_explorer.png)  
 
-**加载图形资源管理器**：若要加载该工具，请导航到 [https://graphexplorer.cloudapp.net/](https://graphexplorer.cloudapp.net/)。单击“使用演示公司”针对示例租户中的数据运行图形资源管理器。无需凭据即可使用该演示公司。或者，你可以单击“登录”，并使用 Azure AD 帐户凭据登录，以针对租户运行图形资源资源器。如果你针对自己的租户运行图形资源资源器，则你或管理员需要在登录期间表示同意。如果你拥有 Office 365 订阅，则自然而然就拥有了 Azure AD 租户。用于登录 Office 365 的凭据事实上就是 Azure AD 帐户，你可以在图形资源资源器上使用这些凭据。
+
+**加载图形资源管理器**：若要加载该工具，请导航到 [https://graphexplorer.cloudapp.net/](https://graphexplorer.cloudapp.net/)。单击“使用演示公司”针对示例租户中的数据运行图形资源管理器。无需凭据即可使用该演示公司。或者，你可以单击“登录”，并使用 Azure AD 帐户凭据登录，以针对租户运行图形资源资源器。如果你针对自己的租户运行图形资源资源器，则你或管理员需要在登录期间表示同意。如果拥有 Office 365 订阅，则会自动拥有 Azure AD 租户。用于登录 Office 365 的凭据事实上就是 Azure AD 帐户，你可以在图形资源资源器上使用这些凭据。
 
 **运行查询**：若要运行查询，请在请求文本框中键入你的查询，然后单击“获取”或单击 **Enter** 键。结果将显示在响应框中。例如，`https://graph.chinacloudapi.cn/graphdir1.partner.onmschina.cn /groups?api-version=1.6` 将列出演示目录中的所有组对象。
 
@@ -87,12 +95,13 @@ Azure Active Directory (AD) 图形 API 通过 OData REST API 终结点提供对 
 
 4. 在紧靠在“发布”下拉列表下面的字段中，键入以下内容：
 
+    
+	Host: graph.chinacloudapi.cn
+	Authorization: your access token
+	Content-Type: application/json
 
-Host: graph.chinacloudapi.cn 
-Authorization: your access token  
-Content-Type: application/json  
 
- > [AZURE.NOTE] 将 &lt;your access token&gt; 替换为你的 Azure AD 目录的访问令牌。
+    > [AZURE.NOTE] 将 &lt;your access token&gt; 替换为你的 Azure AD 目录的访问令牌。
 
 5. 在“请求正文”字段中键入以下内容：
 
@@ -114,4 +123,4 @@ Content-Type: application/json
 - 了解有关 [Azure AD 图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) 的详细信息。
 - 了解有关 [Azure AD 图形 API 权限范围](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)的详细信息
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_1010_2016-->

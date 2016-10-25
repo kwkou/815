@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="03/18/2016"
-	wacn.date="07/13/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="mobile-ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="brandwe"
+	wacn.date="10/17/2016"/>
 
 # 将 Azure AD 集成到 iOS 应用程序中
 
@@ -20,7 +25,7 @@
 
 对于需要访问受保护资源的 iOS 客户端，Azure AD 提供 Active Directory 身份验证库 (ADAL)。在本质上，ADAL 的唯一用途就是方便应用程序获取访问令牌。为了演示这种简便性，我们生成了一个 Objective C 待办事项列表应用程序，其中包括：
 
--	使用 [OAuth 2.0 身份验证协议](https://msdn.microsoft.com/library/azure/dn645545.aspx)获取调用 Azure AD Graph API 的访问令牌。
+-	使用 [OAuth 2.0 身份验证协议](/documentation/articles/active-directory-protocols-oauth-code/)获取调用 Azure AD Graph API 的访问令牌。
 -	在目录中搜索具有给定别名的用户。
 
 若要生成完整的工作应用程序，你需要：
@@ -31,20 +36,22 @@
 
 若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip)。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
-## 1.确定用于 iOS 的重定向 URI
+## *1.确定用于 iOS 的重定向 URI*
 
 为了安全地在特定 SSO 方案中启动应用程序，我们需要以特定格式创建**重定向 URI**。重定向 URI 可确保将令牌返回给需要它们的正确应用程序。
 
 重定向 URI 的 iOS 格式为：
 
+
 	<app-scheme>://<bundle-id>
+
 
 - 	**aap-scheme** - 已在 XCode 项目中注册。它是其他应用程序与你联系的方式。可以在 Info.plist -> URL types -> URL Identifier 下找到此信息。如果尚未配置一个或多个方案，则你应该创建一个。
 - 	**bundle-id** - 这是在 XCode 项目设置中“identity”下可找到的捆绑标识符。
-	
-此快速入门代码的示例为：**msquickstart://com.microsoft.azureactivedirectory.samples.graph.QuickStart**
 
-## 2.注册 DirectorySearcher 应用程序
+此快速入门代码的示例为：***msquickstart://com.microsoft.azureactivedirectory.samples.graph.QuickStart***
+
+## *2.注册 DirectorySearcher 应用程序*
 若要让应用程序获取令牌，首先需要在 Azure AD 租户中注册该应用程序，并授予它访问 Azure AD Graph API 的权限：
 
 -	登录到 Azure 管理门户
@@ -57,7 +64,7 @@
 -	完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
 - 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。对于“Azure Active Directory”应用程序，在“委托的权限”下添加“访问组织的目录”权限。这样，你的应用程序便可以在 Graph API 中查询用户。
 
-## 3.安装并配置 ADAL
+## *3.安装并配置 ADAL*
 将应用程序注册到 Azure AD 后，可以安装 ADAL 并编写标识相关的代码。为了使 ADAL 能够与 Azure AD 通信，需要为 ADAL 提供一些有关应用程序的注册信息。
 -	首先，使用 Cocapods 将 ADAL 添加到 DirectorySearcher 项目。
 
@@ -76,7 +83,7 @@
 
 现在，请使用 cocoapods 加载 podfile。这会创建你要加载的新 XCode 工作区。
 
-		
+
 	$ pod install
 	...
 	$ open QuickStart.xcworkspace
@@ -204,7 +211,7 @@ ObjC
 
 
 - 当应用程序通过调用 `getToken(...)` 请求令牌时，ADAL 将尝试返回一个令牌，而不要求用户输入凭据。如果 ADAL 确定用户需要登录以获取令牌，将显示登录对话框，收集用户的凭据，并在身份验证成功后返回令牌。如果 ADAL 出于任何原因无法返回令牌，则会引发 `AdalException`。
-- 请注意，`AuthenticationResult` 对象包含 `tokenCacheStoreItem` 对象，后者可用于收集应用程序可能需要的信息。在快速入门项目中，`tokenCacheStoreItem` 用于确定身份验证是否已发生。 
+- 请注意，`AuthenticationResult` 对象包含 `tokenCacheStoreItem` 对象，后者可用于收集应用程序可能需要的信息。在快速入门项目中，`tokenCacheStoreItem` 用于确定身份验证是否已发生。
 
 
 ## 步骤 5：生成并运行应用程序
@@ -221,7 +228,8 @@ ObjC
 现在，你可以转到其他方案。你可能想要尝试：
 
 - [使用 Azure AD 保护 Node.JS Web API](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
-- 了解[如何使用 ADAL 在 iOS 上启用跨应用 SSO](/documentation/articles/active-directory-sso-ios/)  
+- 了解[如何使用 ADAL 在 iOS 上启用跨应用 SSO](/documentation/articles/active-directory-sso-ios/)
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
-<!---HONumber=Mooncake_0808_2016-->
+
+<!---HONumber=Mooncake_1010_2016-->

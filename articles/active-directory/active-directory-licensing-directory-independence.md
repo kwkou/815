@@ -9,8 +9,14 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/16/2016"
-   wacn.date="06/23/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="08/23/2016"
+   ms.author="curtand"
+   wacn.date="10/17/2016"/>
+
 
 # 添加和管理多个 Azure Active Directory 目录
 
@@ -35,10 +41,10 @@
 
 ##添加 Azure AD 目录
 
-若要在 Azure 经典门户中添加 Azure AD 目录，请选择左侧的 Azure Active Directory 扩展，然后点击“添加”。
+若要在 Azure 经典管理门户中添加 Azure AD 目录，请选择左侧的 Azure Active Directory 扩展，然后点击“添加”。
 
-> [AZURE.NOTE]   与其他 Azure 资源不同，你的目录不是 Azure 订阅的子资源。如果你取消 Azure 订阅或让其过期，则仍可以使用 Azure PowerShell、Azure 图形 API 或其他界面（例如 Office 365 管理中心）访问目录数据。还可以将其他订阅与目录相关联。
+> [AZURE.NOTE]   与其他 Azure 资源不同，目录不是 Azure 订阅的子资源。如果取消 Azure 订阅或让其过期，仍可使用 Azure PowerShell、Azure 图形 API 或其他界面（例如 Office 365 管理中心）访问目录数据。还可以将其他订阅与目录相关联。
 
 有关 Azure AD 许可问题和最佳实践的一般概述，请参阅[什么是 Azure Active Directory 许可？](/documentation/articles/active-directory-licensing-what-is/)。
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

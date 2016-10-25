@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+        ms.tgt_pltfrm="na"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="brandwe"
+	wacn.date="10/17/2016"/>  
+
 
 
 # 使用 Azure AD 执行 Java Web 应用登录和注销
@@ -31,7 +37,7 @@
 3. 使用 ADAL4J 库向 Azure AD 发出登录和注销请求。
 4. 列显有关用户的数据。
 
-若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
+若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
 ## 1\.将应用程序注册到 Azure AD
 若要使应用程序对用户进行身份验证，你首先需要在租户中注册新的应用程序。
@@ -55,116 +61,113 @@
 -	在项目的根目录中，打开/创建 `pom.xml`，找到 `// TODO: provide dependencies for Maven` 并替换为以下代码：
 
 Java
-		
-		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-			<modelVersion>4.0.0</modelVersion>
-			<groupId>com.microsoft.azure</groupId>
-			<artifactId>adal4jsample</artifactId>
-			<packaging>war</packaging>
-			<version>0.0.1-SNAPSHOT</version>
-			<name>adal4jsample</name>
-			<url>http://maven.apache.org</url>
-			<properties>
-				<spring.version>3.0.5.RELEASE</spring.version>
-			</properties>
-		
-			<dependencies>
-				<dependency>
-					<groupId>com.microsoft.azure</groupId>
-					<artifactId>adal4j</artifactId>
-					<version>1.1.1</version>
-				</dependency>
-				<dependency>
-					<groupId>com.nimbusds</groupId>
-					<artifactId>oauth2-oidc-sdk</artifactId>
-					<version>4.5</version>
-				</dependency>
-				<dependency>
-					<groupId>org.json</groupId>
-					<artifactId>json</artifactId>
-					<version>20090211</version>
-				</dependency>
-				<dependency>
-					<groupId>javax.servlet</groupId>
-					<artifactId>javax.servlet-api</artifactId>
-					<version>3.0.1</version>
-					<scope>provided</scope>
-				</dependency>
-				<dependency>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-					<version>1.7.5</version>
-				</dependency>
-				<!-- Spring 3 dependencies -->
-				<dependency>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-core</artifactId>
-					<version>${spring.version}</version>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-web</artifactId>
-					<version>${spring.version}</version>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-webmvc</artifactId>
-					<version>${spring.version}</version>
-				</dependency>
-			</dependencies>
-		
-			<build>
-				<finalName>sample-for-adal4j</finalName>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<configuration>
-							<source>1.7</source>
-							<target>1.7</target>
-							<encoding>UTF-8</encoding>
-						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-war-plugin</artifactId>
-						<version>2.4</version>
-						<configuration>
-							<warName>${project.artifactId}</warName>
-							<source>${project.basedir}\src</source>
-							<target>${maven.compiler.target}</target>
-							<encoding>utf-8</encoding>
-						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-dependency-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>install</id>
-								<phase>install</phase>
-								<goals>
-									<goal>sources</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-resources-plugin</artifactId>
-						<version>2.5</version>
-						<configuration>
-							<encoding>UTF-8</encoding>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		
-		</project>
 
-
-
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		<modelVersion>4.0.0</modelVersion>
+		<groupId>com.microsoft.azure</groupId>
+		<artifactId>adal4jsample</artifactId>
+		<packaging>war</packaging>
+		<version>0.0.1-SNAPSHOT</version>
+		<name>adal4jsample</name>
+		<url>http://maven.apache.org</url>
+		<properties>
+			<spring.version>3.0.5.RELEASE</spring.version>
+		</properties>
+	
+		<dependencies>
+			<dependency>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>adal4j</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nimbusds</groupId>
+				<artifactId>oauth2-oidc-sdk</artifactId>
+				<version>4.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>json</artifactId>
+				<version>20090211</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.0.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+			<!-- Spring 3 dependencies -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+		</dependencies>
+	
+		<build>
+			<finalName>sample-for-adal4j</finalName>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<warName>${project.artifactId}</warName>
+						<source>${project.basedir}\src</source>
+						<target>${maven.compiler.target}</target>
+						<encoding>utf-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>install</id>
+							<phase>install</phase>
+							<goals>
+								<goal>sources</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</build>
+	
+	</project>
 
 ## 3\.创建 Java Web 应用程序文件 (WEB-INF)
 
@@ -175,66 +178,65 @@ Java
 该文件应如下所示：
 
 xml
-		
-		<?xml version="1.0"?>
-		<web-app id="WebApp_ID" version="2.4"
-			xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-		    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-			<display-name>Archetype Created Web Application</display-name>
-			<context-param>
-				<param-name>authority</param-name>
-				<param-value>https://login.chinacloudapi.cn/</param-value>
-			</context-param>
-			<context-param>
-				<param-name>tenant</param-name>
-				<param-value>YOUR_TENANT_NAME</param-value>
-			</context-param>
-		
-			<filter>
-				<filter-name>BasicFilter</filter-name>
-				<filter-class>com.microsoft.aad.adal4jsample.BasicFilter</filter-class>
-				<init-param>
-					<param-name>client_id</param-name>
-					<param-value>YOUR_CLIENT_ID</param-value>
-				</init-param>
-				<init-param>
-					<param-name>secret_key</param-name>
-					<param-value>YOUR_CLIENT_SECRET</param-value>
-				</init-param>
-			</filter>
-			<filter-mapping>
-				<filter-name>BasicFilter</filter-name>
-				<url-pattern>/secure/*</url-pattern>
-			</filter-mapping>
-		
-			<servlet>
-				<servlet-name>mvc-dispatcher</servlet-name>
-				<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-				<load-on-startup>1</load-on-startup>
-			</servlet>
-		
-			<servlet-mapping>
-				<servlet-name>mvc-dispatcher</servlet-name>
-				<url-pattern>/</url-pattern>
-			</servlet-mapping>
-		
-			<context-param>
-				<param-name>contextConfigLocation</param-name>
-				<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
-			</context-param>
-		
-			<listener>
-				<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-			</listener>
-		</web-app>
+	<?xml version="1.0"?>
+	<web-app id="WebApp_ID" version="2.4"
+		xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+		<display-name>Archetype Created Web Application</display-name>
+		<context-param>
+			<param-name>authority</param-name>
+			<param-value>https://login.chinacloudapi.cn/</param-value>
+		</context-param>
+		<context-param>
+			<param-name>tenant</param-name>
+			<param-value>YOUR_TENANT_NAME</param-value>
+		</context-param>
+	
+		<filter>
+			<filter-name>BasicFilter</filter-name>
+			<filter-class>com.microsoft.aad.adal4jsample.BasicFilter</filter-class>
+			<init-param>
+				<param-name>client_id</param-name>
+				<param-value>YOUR_CLIENT_ID</param-value>
+			</init-param>
+			<init-param>
+				<param-name>secret_key</param-name>
+				<param-value>YOUR_CLIENT_SECRET</param-value>
+			</init-param>
+		</filter>
+		<filter-mapping>
+			<filter-name>BasicFilter</filter-name>
+			<url-pattern>/secure/*</url-pattern>
+		</filter-mapping>
+	
+		<servlet>
+			<servlet-name>mvc-dispatcher</servlet-name>
+			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+			<load-on-startup>1</load-on-startup>
+		</servlet>
+	
+		<servlet-mapping>
+			<servlet-name>mvc-dispatcher</servlet-name>
+			<url-pattern>/</url-pattern>
+		</servlet-mapping>
+	
+		<context-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+		</context-param>
+	
+		<listener>
+			<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		</listener>
+	</web-app>
 
 
 
 
-- `YOUR_CLIENT_ID` 是在注册门户中为应用分配的**应用程序 ID**。
-- `YOUR_CLIENT_SECRET` 是你在门户中创建的**应用程序机密**。
-- `YOUR_TENANT_NAME` 是应用的**租户名称**，例如 contoso.partner.onmschina.cn
+    -	The `YOUR_CLIENT_ID` is the **Application Id** assigned to your app in the registration portal.
+    -	The `YOUR_CLIENT_SECRET` is the **Application Secret**  you created in the portal.
+    -   The `YOUR_TENANT_NAME` is the **tenant name** of your app, e.g. contoso.partner.onmschina.cn
 
 将其余的配置参数保持不变。
 
@@ -244,29 +246,29 @@ xml
 -	接下来，在 `\webapp\WEB-INF` 中创建 `mvc-dispatcher-servlet.xml` 文件并输入以下内容：
 
 xml
-		
-		<beans xmlns="http://www.springframework.org/schema/beans"
-			xmlns:context="http://www.springframework.org/schema/context"
-			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="
-		        http://www.springframework.org/schema/beans     
-		        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-		        http://www.springframework.org/schema/context 
-		        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-		
-			<context:component-scan base-package="com.microsoft.aad.adal4jsample" />
-		
-			<bean
-				class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-				<property name="prefix">
-					<value>/</value>
-				</property>
-				<property name="suffix">
-					<value>.jsp</value>
-				</property>
-			</bean>
-		
-		</beans>
+	
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+	        http://www.springframework.org/schema/beans     
+	        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	        http://www.springframework.org/schema/context 
+	        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+		<context:component-scan base-package="com.microsoft.aad.adal4jsample" />
+	
+		<bean
+			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix">
+				<value>/</value>
+			</property>
+			<property name="suffix">
+				<value>.jsp</value>
+			</property>
+		</bean>
+	
+	</beans>
 
 
 这将告知 Web 应用要使用 Spring 以及在哪里查找我们在下面编写的 .jsp 文件。
@@ -282,15 +284,14 @@ xml
 -	首先，请在 `\webapp` 中创建 `index.jsp` 文件，并剪切/粘贴以下内容：
 
 jsp
-
-		<html>
-		<body>
-			<h2>Hello World!</h2>
-			<ul>
-			<li><a href="secure/aad">Secure Page</a></li>
-			</ul>
-		</body>
-		</html>
+	<html>
+	<body>
+		<h2>Hello World!</h2>
+		<ul>
+		<li><a href="secure/aad">Secure Page</a></li>
+		</ul>
+	</body>
+	</html>
 
 
 
@@ -299,50 +300,45 @@ jsp
 - 接下来，在同一个目录中创建 `error.jsp` 文件，用于捕获可能发生的任何错误：
 
 jsp
-		
-		<html>
-		<body>
-			<h2>ERROR PAGE!</h2>
-			<p>
-				Exception -
-				<%=request.getAttribute("error")%></p>
-			<ul>
-				<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
-			</ul>
-		</body>
-		</html>
+	<html>
+	<body>
+		<h2>ERROR PAGE!</h2>
+		<p>
+			Exception -
+			<%=request.getAttribute("error")%></p>
+		<ul>
+			<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
+		</ul>
+	</body>
+	</html>
 
 
-- 最后，在 `\webapp` 中创建名为 `\secure` 的文件夹，以生成所需的安全网页，因此，目录现在为 `\webapp\secure`。 
+- 最后，在 `\webapp` 中创建名为 `\secure` 的文件夹，以生成所需的安全网页，因此，目录现在为 `\webapp\secure`。
 
-- 然后，在此目录中创建 `aad.jsp` 文件，并剪切/粘贴以下内容：
-
+- 在此目录下，随后创建 `aad.jsp` 文件，并剪切/粘贴以下内容：
 jsp
-		
-		<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-		<html>
-		<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>AAD Secure Page</title>
-		</head>
-		<body>
-		
-			<h1>Directory - Users List</h1>
-			<p>${users}</p>
-		
-			<ul>
-				<li><a href="<%=request.getContextPath()%>/secure/aad?cc=1">Get
-						new Access Token via Client Credentials</a></li>
-			</ul>
-			<ul>
-				<li><a href="<%=request.getContextPath()%>/secure/aad?refresh=1">Get
-						new Access Token via Refresh Token</a></li>
-			</ul>
-			<ul>
-				<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
-			</ul>
-		</body>
-		</html>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>AAD Secure Page</title>
+	</head>
+	<body>			
+		<h1>Directory - Users List</h1>
+		<p>${users}</p>
+		<ul>
+			<li><a href="<%=request.getContextPath()%>/secure/aad?cc=1">Get
+				new Access Token via Client Credentials</a></li>
+		</ul>
+		<ul>
+			<li><a href="<%=request.getContextPath()%>/secure/aad?refresh=1">Get
+				new Access Token via Refresh Token</a></li>
+		</ul>
+		<ul>
+			<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
+		</ul>
+	</body>
+	</html>
 
 
 你会看到，此页将重定向到 BasicFilter Servlet 将要读取的特定请求，然后使用 `ADAJ4J` 库执行请求。很简单，是吧？
@@ -361,7 +357,7 @@ jsp
 
 让我们编写一些 Java 文件来执行此工作：
 
-1. 在名为“adal4jsample”的根目录中创建一个文件夹用于存储所有 Java 文件。 
+1. 在名为“adal4jsample”的根目录中创建一个文件夹用于存储所有 Java 文件。
 
 我们将在 Java 文件中使用命名空间 `com.microsoft.aad.adal4jsample`。大多数 IDE 将为此创建嵌套的文件夹结构（例如 `/com/microsoft/aad/adal4jsample`）。你可以根据需要创建这种结构，但不一定要这样做。
 
@@ -504,7 +500,7 @@ Java
 		                        }
 		                    } else {
 		                        if (fieldName.equalsIgnoreCase("password")) {
-		                            obj.put("passwordProfile", new JSONObject("{"password": "" + param + ""}"));
+		                            obj.put("passwordProfile", new JSONObject("{\"password\": \"" + param + "\"}"));
 		                        } else {
 		                            obj.put(fieldName, param);
 		
@@ -806,518 +802,518 @@ Java
 2. 创建名为 `User.java` 的文件，我们将用它来存储有关目录中任何用户的基本数据。同样，这是针对目录数据的基本 getter/setter，因此可以从以下内容中剪切/粘贴此信息：
 
 Java
+		
+		package com.microsoft.aad.adal4jsample;
+		
+		import java.security.acl.Group;
+		import java.util.ArrayList;
+		
+		import javax.xml.bind.annotation.XmlRootElement;
+		
+		import org.json.JSONObject;
+		
+		/**
+		 *  The User Class holds together all the members of a WAAD User entity and all the access methods and set methods
+		 *  @author Azure Active Directory Contributor
+		 */
+		@XmlRootElement
+		public class User extends DirectoryObject{
 			
-			package com.microsoft.aad.adal4jsample;
+			// The following are the individual private members of a User object that holds
+			// a particular simple attribute of an User object.
+			protected String objectId;
+			protected String objectType;
+			protected String accountEnabled;
+			protected String city;
+			protected String country;
+			protected String department;
+			protected String dirSyncEnabled;
+			protected String displayName;
+			protected String facsimileTelephoneNumber;
+			protected String givenName;
+			protected String jobTitle;
+			protected String lastDirSyncTime;
+			protected String mail;
+			protected String mailNickname;
+			protected String mobile;
+			protected String password;
+			protected String passwordPolicies;
+			protected String physicalDeliveryOfficeName;
+			protected String postalCode;
+			protected String preferredLanguage;
+			protected String state;
+			protected String streetAddress;
+			protected String surname;
+			protected String telephoneNumber;
+			protected String usageLocation;
+			protected String userPrincipalName;
+			protected boolean isDeleted;  // this will move to dto
+		
+			/**
+			 * below 4 properties are for future use
+			 */
+			// managerDisplayname of this user
+			protected String managerDisplayname;
 			
-			import java.security.acl.Group;
-			import java.util.ArrayList;
+			// The directReports holds a list of directReports
+			private ArrayList<User> directReports;
 			
-			import javax.xml.bind.annotation.XmlRootElement;
+			// The groups holds a list of group entity this user belongs to. 
+			private ArrayList<Group> groups;
 			
-			import org.json.JSONObject;
+			// The roles holds a list of role entity this user belongs to. 
+			private ArrayList<Group> roles;
+			
 			
 			/**
-			 *  The User Class holds together all the members of a WAAD User entity and all the access methods and set methods
-			 *  @author Azure Active Directory Contributor
+			 * The constructor for the User class. Initializes the dynamic lists and managerDisplayname variables.
 			 */
-			@XmlRootElement
-			public class User extends DirectoryObject{
-				
-				// The following are the individual private members of a User object that holds
-				// a particular simple attribute of an User object.
-				protected String objectId;
-				protected String objectType;
-				protected String accountEnabled;
-				protected String city;
-				protected String country;
-				protected String department;
-				protected String dirSyncEnabled;
-				protected String displayName;
-				protected String facsimileTelephoneNumber;
-				protected String givenName;
-				protected String jobTitle;
-				protected String lastDirSyncTime;
-				protected String mail;
-				protected String mailNickname;
-				protected String mobile;
-				protected String password;
-				protected String passwordPolicies;
-				protected String physicalDeliveryOfficeName;
-				protected String postalCode;
-				protected String preferredLanguage;
-				protected String state;
-				protected String streetAddress;
-				protected String surname;
-				protected String telephoneNumber;
-				protected String usageLocation;
-				protected String userPrincipalName;
-				protected boolean isDeleted;  // this will move to dto
-			
-				/**
-				 * below 4 properties are for future use
-				 */
-				// managerDisplayname of this user
-				protected String managerDisplayname;
-				
-				// The directReports holds a list of directReports
-				private ArrayList<User> directReports;
-				
-				// The groups holds a list of group entity this user belongs to. 
-				private ArrayList<Group> groups;
-				
-				// The roles holds a list of role entity this user belongs to. 
-				private ArrayList<Group> roles;
-				
-				
-				/**
-				 * The constructor for the User class. Initializes the dynamic lists and managerDisplayname variables.
-				 */
-				public User(){
-					directReports = null;
-					groups = new ArrayList<Group>();
-					roles = new ArrayList<Group>();
-					managerDisplayname = null;
-				}
-			//	
-			//	public User(String displayName, String objectId){
-			//		setDisplayName(displayName);
-			//		setObjectId(objectId);
-			//	}
-			//	
-			//	public User(String displayName, String objectId, String userPrincipalName, String accountEnabled){
-			//		setDisplayName(displayName);
-			//		setObjectId(objectId);
-			//		setUserPrincipalName(userPrincipalName);
-			//		setAccountEnabled(accountEnabled);
-			//	}
-			//	
-			
-				/**
-				 * @return The objectId of this user.
-				 */
-				public String getObjectId() {
-					return objectId;
-				}
-				
-				/**
-				 * @param objectId The objectId to set to this User object.
-				 */
-				public void setObjectId(String objectId) {
-					this.objectId = objectId;
-				}
-			
-			
-				/**
-				 * @return The objectType of this User.
-				 */
-				public String getObjectType() {
-					return objectType;
-				}
-			
-				/**
-				 * @param objectType The objectType to set to this User object.
-				 */
-				public void setObjectType(String objectType) {
-					this.objectType = objectType;
-				}
-			
-				/**
-				 * @return The userPrincipalName of this User.
-				 */
-				public String getUserPrincipalName() {
-					return userPrincipalName;
-				}
-			
-				/**
-				 * @param userPrincipalName The userPrincipalName to set to this User object.
-				 */
-				public void setUserPrincipalName(String userPrincipalName) {
-					this.userPrincipalName = userPrincipalName;
-				}
-			
-				
-				/**
-				 * @return The usageLocation of this User.
-				 */
-				public String getUsageLocation() {
-					return usageLocation;
-				}
-			
-				/**
-				 * @param usageLocation The usageLocation to set to this User object.
-				 */
-				public void setUsageLocation(String usageLocation) {
-					this.usageLocation = usageLocation;
-				}
-			
-				/**
-				 * @return The telephoneNumber of this User.
-				 */
-				public String getTelephoneNumber() {
-					return telephoneNumber;
-				}
-			
-				/**
-				 * @param telephoneNumber The telephoneNumber to set to this User object.
-				 */
-				public void setTelephoneNumber(String telephoneNumber) {
-					this.telephoneNumber = telephoneNumber;
-				}
-			
-				/**
-				 * @return The surname of this User.
-				 */
-				public String getSurname() {
-					return surname;
-				}
-			
-				/**
-				 * @param surname The surname to set to this User Object.
-				 */
-				public void setSurname(String surname) {
-					this.surname = surname;
-				}
-			
-				/**
-				 * @return The streetAddress of this User.
-				 */
-				public String getStreetAddress() {
-					return streetAddress;
-				}
-			
-				/**
-				 * @param streetAddress The streetAddress to set to this User.
-				 */
-				public void setStreetAddress(String streetAddress) {
-					this.streetAddress = streetAddress;
-				}
-			
-				/**
-				 * @return The state of this User.
-				 */
-				public String getState() {
-					return state;
-				}
-			
-				/**
-				 * @param state The state to set to this User object.
-				 */
-				public void setState(String state) {
-					this.state = state;
-				}
-			
-				/**
-				 * @return The preferredLanguage of this User.
-				 */
-				public String getPreferredLanguage() {
-					return preferredLanguage;
-				}
-			
-				/**
-				 * @param preferredLanguage The preferredLanguage to set to this User.
-				 */
-				public void setPreferredLanguage(String preferredLanguage) {
-					this.preferredLanguage = preferredLanguage;
-				}
-			
-				/**
-				 * @return The postalCode of this User.
-				 */
-				public String getPostalCode() {
-					return postalCode;
-				}
-			
-				/**
-				 * @param postalCode The postalCode to set to this User.
-				 */
-				public void setPostalCode(String postalCode) {
-					this.postalCode = postalCode;
-				}
-			
-				/**
-				 * @return The physicalDeliveryOfficeName of this User.
-				 */
-				public String getPhysicalDeliveryOfficeName() {
-					return physicalDeliveryOfficeName;
-				}
-			
-				/**
-				 * @param physicalDeliveryOfficeName The physicalDeliveryOfficeName to set to this User Object.
-				 */
-				public void setPhysicalDeliveryOfficeName(String physicalDeliveryOfficeName) {
-					this.physicalDeliveryOfficeName = physicalDeliveryOfficeName;
-				}
-			
-				/**
-				 * @return The passwordPolicies of this User.
-				 */
-				public String getPasswordPolicies() {
-					return passwordPolicies;
-				}
-			
-				/**
-				 * @param passwordPolicies The passwordPolicies to set to this User object.
-				 */
-				public void setPasswordPolicies(String passwordPolicies) {
-					this.passwordPolicies = passwordPolicies;
-				}
-			
-				/**
-				 * @return The mobile of this User.
-				 */
-				public String getMobile() {
-					return mobile;
-				}
-			
-				/**
-				 * @param mobile The mobile to set to this User object.
-				 */
-				public void setMobile(String mobile) {
-					this.mobile = mobile;
-				}
-				
-				/**
-				 * @return The Password of this User.
-				 */
-				public String getPassword() {
-					return password;
-				}
-			
-				/**
-				 * @param password The mobile to set to this User object.
-				 */
-				public void setPassword(String password) {
-					this.password = password;
-				}
-			
-				/**
-				 * @return The mail of this User.
-				 */
-				public String getMail() {
-					return mail;
-				}
-			
-				/**
-				 * @param mail The mail to set to this User object.
-				 */
-				public void setMail(String mail) {
-					this.mail = mail;
-				}
-				
-				/**
-				 * @return The MailNickname of this User.
-				 */
-				public String getMailNickname() {
-					return mailNickname;
-				}
-			
-				/**
-				 * @param mail The MailNickname to set to this User object.
-				 */
-				public void setMailNickname(String mailNickname) {
-					this.mailNickname = mailNickname;
-				}
-			
-			
-				/**
-				 * @return The jobTitle of this User.
-				 */
-				public String getJobTitle() {
-					return jobTitle;
-				}
-			
-				/**
-				 * @param jobTitle The jobTitle to set to this User Object.
-				 */
-				public void setJobTitle(String jobTitle) {
-					this.jobTitle = jobTitle;
-				}
-			
-				/**
-				 * @return The givenName of this User.
-				 */
-				public String getGivenName() {
-					return givenName;
-				}
-			
-				/**
-				 * @param givenName The givenName to set to this User.
-				 */
-				public void setGivenName(String givenName) {
-					this.givenName = givenName;
-				}
-			
-				/**
-				 * @return The facsimileTelephoneNumber of this User.
-				 */
-				public String getFacsimileTelephoneNumber() {
-					return facsimileTelephoneNumber;
-				}
-			
-				/**
-				 * @param facsimileTelephoneNumber The facsimileTelephoneNumber to set to this User Object.
-				 */
-				public void setFacsimileTelephoneNumber(String facsimileTelephoneNumber) {
-					this.facsimileTelephoneNumber = facsimileTelephoneNumber;
-				}
-			
-				/**
-				 * @return The displayName of this User.
-				 */
-				public String getDisplayName() {
-					return displayName;
-				}
-			
-				/**
-				 * @param displayName The displayName to set to this User Object.
-				 */
-				public void setDisplayName(String displayName) {
-					this.displayName = displayName;
-				}
-			
-				/**
-				 * @return The dirSyncEnabled of this User.
-				 */
-				public String getDirSyncEnabled() {
-					return dirSyncEnabled;
-				}
-			
-				/**
-				 * @param dirSyncEnabled The dirSyncEnabled to set to this User.
-				 */
-				public void setDirSyncEnabled(String dirSyncEnabled) {
-					this.dirSyncEnabled = dirSyncEnabled;
-				}
-			
-				/**
-				 * @return The department of this User.
-				 */
-				public String getDepartment() {
-					return department;
-				}
-			
-				/**
-				 * @param department The department to set to this User.
-				 */
-				public void setDepartment(String department) {
-					this.department = department;
-				}
-			
-				/**
-				 * @return The lastDirSyncTime of this User.
-				 */
-				public String getLastDirSyncTime() {
-					return lastDirSyncTime;
-				}
-			
-				/**
-				 * @param lastDirSyncTime The lastDirSyncTime to set to this User.
-				 */
-				public void setLastDirSyncTime(String lastDirSyncTime) {
-					this.lastDirSyncTime = lastDirSyncTime;
-				}
-			
-				/**
-				 * @return The country of this User.
-				 */
-				public String getCountry() {
-					return country;
-				}
-			
-				/**
-				 * @param country The country to set to this User.
-				 */
-				public void setCountry(String country) {
-					this.country = country;
-				}
-			
-				/**
-				 * @return The city of this User.
-				 */
-				public String getCity() {
-					return city;
-				}
-			
-				/**
-				 * @param city The city to set to this User.
-				 */
-				public void setCity(String city) {
-					this.city = city;
-				}
-			
-				/**
-				 * @return The accountEnabled attribute of this User.
-				 */
-				public String getAccountEnabled() {
-					return accountEnabled;
-				}
-			
-				/**
-				 * @param accountEnabled The accountEnabled to set to this User.
-				 */
-				public void setAccountEnabled(String accountEnabled) {
-					this.accountEnabled = accountEnabled;
-				}
-				
-				public boolean isIsDeleted() {
-					return this.isDeleted;
-				}
-			
-				public void setIsDeleted(boolean isDeleted) {
-					this.isDeleted = isDeleted;
-				}
-			
-				@Override
-				public String toString() {
-					return new JSONObject(this).toString();
-				}
-				
-				public String getManagerDisplayname(){
-					return managerDisplayname;
-				}
-				
-				public void setManagerDisplayname(String managerDisplayname){
-					this.managerDisplayname = managerDisplayname;
-				}
+			public User(){
+				directReports = null;
+				groups = new ArrayList<Group>();
+				roles = new ArrayList<Group>();
+				managerDisplayname = null;
+			}
+		//	
+		//	public User(String displayName, String objectId){
+		//		setDisplayName(displayName);
+		//		setObjectId(objectId);
+		//	}
+		//	
+		//	public User(String displayName, String objectId, String userPrincipalName, String accountEnabled){
+		//		setDisplayName(displayName);
+		//		setObjectId(objectId);
+		//		setUserPrincipalName(userPrincipalName);
+		//		setAccountEnabled(accountEnabled);
+		//	}
+		//	
+		
+			/**
+			 * @return The objectId of this user.
+			 */
+			public String getObjectId() {
+				return objectId;
 			}
 			
+			/**
+			 * @param objectId The objectId to set to this User object.
+			 */
+			public void setObjectId(String objectId) {
+				this.objectId = objectId;
+			}
+		
+		
+			/**
+			 * @return The objectType of this User.
+			 */
+			public String getObjectType() {
+				return objectType;
+			}
+		
+			/**
+			 * @param objectType The objectType to set to this User object.
+			 */
+			public void setObjectType(String objectType) {
+				this.objectType = objectType;
+			}
+		
+			/**
+			 * @return The userPrincipalName of this User.
+			 */
+			public String getUserPrincipalName() {
+				return userPrincipalName;
+			}
+		
+			/**
+			 * @param userPrincipalName The userPrincipalName to set to this User object.
+			 */
+			public void setUserPrincipalName(String userPrincipalName) {
+				this.userPrincipalName = userPrincipalName;
+			}
+		
 			
 			/**
-			 * The Class DirectReports Holds the essential data for a single DirectReport entry. Namely,
-			 * it holds the displayName and the objectId of the direct entry. Furthermore, it provides the
-			 * access methods to set or get the displayName and the ObjectId of this entry.
+			 * @return The usageLocation of this User.
 			 */
-			//class DirectReport extends User{
-			//
-			//	private String displayName;
-			//	private String objectId;
-			//	 
-			//	/**
-			//	 * Two arguments Constructor for the DirectReport Class.
-			//	 * @param displayName
-			//	 * @param objectId
-			//	 */
-			//	public DirectReport(String displayName, String objectId){
-			//		this.displayName = displayName;
-			//		this.objectId = objectId;
-			//	}
-			//
-			//	/**
-			//	 * @return The diaplayName of this direct report entry.
-			//	 */
-			//	public String getDisplayName() {
-			//		return displayName;
-			//	}
-			//
-			//	
-			//	/**
-			//	 *  @return The objectId of this direct report entry. 
-			//	 */
-			//	public String getObjectId() {
-			//		return objectId;
-			//	}
-			//
-			//}
+			public String getUsageLocation() {
+				return usageLocation;
+			}
+		
+			/**
+			 * @param usageLocation The usageLocation to set to this User object.
+			 */
+			public void setUsageLocation(String usageLocation) {
+				this.usageLocation = usageLocation;
+			}
+		
+			/**
+			 * @return The telephoneNumber of this User.
+			 */
+			public String getTelephoneNumber() {
+				return telephoneNumber;
+			}
+		
+			/**
+			 * @param telephoneNumber The telephoneNumber to set to this User object.
+			 */
+			public void setTelephoneNumber(String telephoneNumber) {
+				this.telephoneNumber = telephoneNumber;
+			}
+		
+			/**
+			 * @return The surname of this User.
+			 */
+			public String getSurname() {
+				return surname;
+			}
+		
+			/**
+			 * @param surname The surname to set to this User Object.
+			 */
+			public void setSurname(String surname) {
+				this.surname = surname;
+			}
+		
+			/**
+			 * @return The streetAddress of this User.
+			 */
+			public String getStreetAddress() {
+				return streetAddress;
+			}
+		
+			/**
+			 * @param streetAddress The streetAddress to set to this User.
+			 */
+			public void setStreetAddress(String streetAddress) {
+				this.streetAddress = streetAddress;
+			}
+		
+			/**
+			 * @return The state of this User.
+			 */
+			public String getState() {
+				return state;
+			}
+		
+			/**
+			 * @param state The state to set to this User object.
+			 */
+			public void setState(String state) {
+				this.state = state;
+			}
+		
+			/**
+			 * @return The preferredLanguage of this User.
+			 */
+			public String getPreferredLanguage() {
+				return preferredLanguage;
+			}
+		
+			/**
+			 * @param preferredLanguage The preferredLanguage to set to this User.
+			 */
+			public void setPreferredLanguage(String preferredLanguage) {
+				this.preferredLanguage = preferredLanguage;
+			}
+		
+			/**
+			 * @return The postalCode of this User.
+			 */
+			public String getPostalCode() {
+				return postalCode;
+			}
+		
+			/**
+			 * @param postalCode The postalCode to set to this User.
+			 */
+			public void setPostalCode(String postalCode) {
+				this.postalCode = postalCode;
+			}
+		
+			/**
+			 * @return The physicalDeliveryOfficeName of this User.
+			 */
+			public String getPhysicalDeliveryOfficeName() {
+				return physicalDeliveryOfficeName;
+			}
+		
+			/**
+			 * @param physicalDeliveryOfficeName The physicalDeliveryOfficeName to set to this User Object.
+			 */
+			public void setPhysicalDeliveryOfficeName(String physicalDeliveryOfficeName) {
+				this.physicalDeliveryOfficeName = physicalDeliveryOfficeName;
+			}
+		
+			/**
+			 * @return The passwordPolicies of this User.
+			 */
+			public String getPasswordPolicies() {
+				return passwordPolicies;
+			}
+		
+			/**
+			 * @param passwordPolicies The passwordPolicies to set to this User object.
+			 */
+			public void setPasswordPolicies(String passwordPolicies) {
+				this.passwordPolicies = passwordPolicies;
+			}
+		
+			/**
+			 * @return The mobile of this User.
+			 */
+			public String getMobile() {
+				return mobile;
+			}
+		
+			/**
+			 * @param mobile The mobile to set to this User object.
+			 */
+			public void setMobile(String mobile) {
+				this.mobile = mobile;
+			}
+			
+			/**
+			 * @return The Password of this User.
+			 */
+			public String getPassword() {
+				return password;
+			}
+		
+			/**
+			 * @param password The mobile to set to this User object.
+			 */
+			public void setPassword(String password) {
+				this.password = password;
+			}
+		
+			/**
+			 * @return The mail of this User.
+			 */
+			public String getMail() {
+				return mail;
+			}
+		
+			/**
+			 * @param mail The mail to set to this User object.
+			 */
+			public void setMail(String mail) {
+				this.mail = mail;
+			}
+			
+			/**
+			 * @return The MailNickname of this User.
+			 */
+			public String getMailNickname() {
+				return mailNickname;
+			}
+		
+			/**
+			 * @param mail The MailNickname to set to this User object.
+			 */
+			public void setMailNickname(String mailNickname) {
+				this.mailNickname = mailNickname;
+			}
+		
+		
+			/**
+			 * @return The jobTitle of this User.
+			 */
+			public String getJobTitle() {
+				return jobTitle;
+			}
+		
+			/**
+			 * @param jobTitle The jobTitle to set to this User Object.
+			 */
+			public void setJobTitle(String jobTitle) {
+				this.jobTitle = jobTitle;
+			}
+		
+			/**
+			 * @return The givenName of this User.
+			 */
+			public String getGivenName() {
+				return givenName;
+			}
+		
+			/**
+			 * @param givenName The givenName to set to this User.
+			 */
+			public void setGivenName(String givenName) {
+				this.givenName = givenName;
+			}
+		
+			/**
+			 * @return The facsimileTelephoneNumber of this User.
+			 */
+			public String getFacsimileTelephoneNumber() {
+				return facsimileTelephoneNumber;
+			}
+		
+			/**
+			 * @param facsimileTelephoneNumber The facsimileTelephoneNumber to set to this User Object.
+			 */
+			public void setFacsimileTelephoneNumber(String facsimileTelephoneNumber) {
+				this.facsimileTelephoneNumber = facsimileTelephoneNumber;
+			}
+		
+			/**
+			 * @return The displayName of this User.
+			 */
+			public String getDisplayName() {
+				return displayName;
+			}
+		
+			/**
+			 * @param displayName The displayName to set to this User Object.
+			 */
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+		
+			/**
+			 * @return The dirSyncEnabled of this User.
+			 */
+			public String getDirSyncEnabled() {
+				return dirSyncEnabled;
+			}
+		
+			/**
+			 * @param dirSyncEnabled The dirSyncEnabled to set to this User.
+			 */
+			public void setDirSyncEnabled(String dirSyncEnabled) {
+				this.dirSyncEnabled = dirSyncEnabled;
+			}
+		
+			/**
+			 * @return The department of this User.
+			 */
+			public String getDepartment() {
+				return department;
+			}
+		
+			/**
+			 * @param department The department to set to this User.
+			 */
+			public void setDepartment(String department) {
+				this.department = department;
+			}
+		
+			/**
+			 * @return The lastDirSyncTime of this User.
+			 */
+			public String getLastDirSyncTime() {
+				return lastDirSyncTime;
+			}
+		
+			/**
+			 * @param lastDirSyncTime The lastDirSyncTime to set to this User.
+			 */
+			public void setLastDirSyncTime(String lastDirSyncTime) {
+				this.lastDirSyncTime = lastDirSyncTime;
+			}
+		
+			/**
+			 * @return The country of this User.
+			 */
+			public String getCountry() {
+				return country;
+			}
+		
+			/**
+			 * @param country The country to set to this User.
+			 */
+			public void setCountry(String country) {
+				this.country = country;
+			}
+		
+			/**
+			 * @return The city of this User.
+			 */
+			public String getCity() {
+				return city;
+			}
+		
+			/**
+			 * @param city The city to set to this User.
+			 */
+			public void setCity(String city) {
+				this.city = city;
+			}
+		
+			/**
+			 * @return The accountEnabled attribute of this User.
+			 */
+			public String getAccountEnabled() {
+				return accountEnabled;
+			}
+		
+			/**
+			 * @param accountEnabled The accountEnabled to set to this User.
+			 */
+			public void setAccountEnabled(String accountEnabled) {
+				this.accountEnabled = accountEnabled;
+			}
+			
+			public boolean isIsDeleted() {
+				return this.isDeleted;
+			}
+		
+			public void setIsDeleted(boolean isDeleted) {
+				this.isDeleted = isDeleted;
+			}
+		
+			@Override
+			public String toString() {
+				return new JSONObject(this).toString();
+			}
+			
+			public String getManagerDisplayname(){
+				return managerDisplayname;
+			}
+			
+			public void setManagerDisplayname(String managerDisplayname){
+				this.managerDisplayname = managerDisplayname;
+			}
+		}
+		
+		
+		/**
+		 * The Class DirectReports Holds the essential data for a single DirectReport entry. Namely,
+		 * it holds the displayName and the objectId of the direct entry. Furthermore, it provides the
+		 * access methods to set or get the displayName and the ObjectId of this entry.
+		 */
+		//class DirectReport extends User{
+		//
+		//	private String displayName;
+		//	private String objectId;
+		//	 
+		//	/**
+		//	 * Two arguments Constructor for the DirectReport Class.
+		//	 * @param displayName
+		//	 * @param objectId
+		//	 */
+		//	public DirectReport(String displayName, String objectId){
+		//		this.displayName = displayName;
+		//		this.objectId = objectId;
+		//	}
+		//
+		//	/**
+		//	 * @return The diaplayName of this direct report entry.
+		//	 */
+		//	public String getDisplayName() {
+		//		return displayName;
+		//	}
+		//
+		//	
+		//	/**
+		//	 *  @return The objectId of this direct report entry. 
+		//	 */
+		//	public String getObjectId() {
+		//		return objectId;
+		//	}
+		//
+		//}
 
 
 
@@ -1334,69 +1330,69 @@ Java
 剪切/粘贴以下代码：
 
 Java
-		
-		package com.microsoft.aad.adal4jsample;
-		
-		import java.util.Map;
-		
-		import javax.servlet.http.HttpServletRequest;
-		
-		import com.microsoft.aad.adal4j.AuthenticationResult;
-		import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
-		import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
-		import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
-		
-		public final class AuthHelper {
-		
-		    public static final String PRINCIPAL_SESSION_NAME = "principal";
-		
-		    private AuthHelper() {
-		    }
-		
-		    public static boolean isAuthenticated(HttpServletRequest request) {
-		        return request.getSession().getAttribute(PRINCIPAL_SESSION_NAME) != null;
-		    }
-		
-		    public static AuthenticationResult getAuthSessionObject(
-		            HttpServletRequest request) {
-		        return (AuthenticationResult) request.getSession().getAttribute(
-		                PRINCIPAL_SESSION_NAME);
-		    }
-		
-		    public static boolean containsAuthenticationData(
-		            HttpServletRequest httpRequest) {
-		        Map<String, String[]> map = httpRequest.getParameterMap();
-		        return httpRequest.getMethod().equalsIgnoreCase("POST") && (httpRequest.getParameterMap().containsKey(
-		                        AuthParameterNames.ERROR)
-		                        || httpRequest.getParameterMap().containsKey(
-		                                AuthParameterNames.ID_TOKEN) || httpRequest
-		                        .getParameterMap().containsKey(AuthParameterNames.CODE));
-		    }
-		
-		    public static boolean isAuthenticationSuccessful(
-		            AuthenticationResponse authResponse) {
-		        return authResponse instanceof AuthenticationSuccessResponse;
-		    }
-		}
+
+	package com.microsoft.aad.adal4jsample;
+	
+	import java.util.Map;
+	
+	import javax.servlet.http.HttpServletRequest;
+	
+	import com.microsoft.aad.adal4j.AuthenticationResult;
+	import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
+	import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
+	import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
+	
+	public final class AuthHelper {
+	
+	    public static final String PRINCIPAL_SESSION_NAME = "principal";
+	
+	    private AuthHelper() {
+	    }
+	
+	    public static boolean isAuthenticated(HttpServletRequest request) {
+	        return request.getSession().getAttribute(PRINCIPAL_SESSION_NAME) != null;
+	    }
+	
+	    public static AuthenticationResult getAuthSessionObject(
+	            HttpServletRequest request) {
+	        return (AuthenticationResult) request.getSession().getAttribute(
+	                PRINCIPAL_SESSION_NAME);
+	    }
+	
+	    public static boolean containsAuthenticationData(
+	            HttpServletRequest httpRequest) {
+	        Map<String, String[]> map = httpRequest.getParameterMap();
+	        return httpRequest.getMethod().equalsIgnoreCase("POST") && (httpRequest.getParameterMap().containsKey(
+	                        AuthParameterNames.ERROR)
+	                        || httpRequest.getParameterMap().containsKey(
+	                                AuthParameterNames.ID_TOKEN) || httpRequest
+	                        .getParameterMap().containsKey(AuthParameterNames.CODE));
+	    }
+	
+	    public static boolean isAuthenticationSuccessful(
+	            AuthenticationResponse authResponse) {
+	        return authResponse instanceof AuthenticationSuccessResponse;
+	    }
+	}
 
 
 2. 创建名为 `AuthParameterNames.java` 的文件，用于提供 `ADAL4J` 所需的一些不可变变量。剪切/粘贴以下内容：
 
 Java
 
-		package com.microsoft.aad.adal4jsample;
-		
-		public final class AuthParameterNames {
-		
-		    private AuthParameterNames() {
-		    }
-		
-		    public static String ERROR = "error";
-		    public static String ERROR_DESCRIPTION = "error_description";
-		    public static String ERROR_URI = "error_uri";
-		    public static String ID_TOKEN = "id_token";
-		    public static String CODE = "code";
-		}
+	package com.microsoft.aad.adal4jsample;
+	
+	public final class AuthParameterNames {
+	
+	    private AuthParameterNames() {
+	    }
+	
+	    public static String ERROR = "error";
+	    public static String ERROR_DESCRIPTION = "error_description";
+	    public static String ERROR_URI = "error_uri";
+	    public static String ID_TOKEN = "id_token";
+	    public static String CODE = "code";
+	}
 
 
 3. 最后，创建名为 `AadController.java` 的文件，这是 MVC 模式的控制器，可提供 JSP 控制器，并公开应用的 `secure/aad` URL 终结点。此外，我们还要将图形查询放在此文件中。
@@ -1404,78 +1400,78 @@ Java
 剪切/粘贴以下内容：
 
 Java
-		
-		package com.microsoft.aad.adal4jsample;
-		
-		import java.net.HttpURLConnection;
-		import java.net.URL;
-		
-		import javax.servlet.http.HttpServletRequest;
-		import javax.servlet.http.HttpSession;
-		
-		import org.json.JSONArray;
-		import org.json.JSONObject;
-		import org.springframework.stereotype.Controller;
-		import org.springframework.ui.ModelMap;
-		import org.springframework.web.bind.annotation.RequestMapping;
-		import org.springframework.web.bind.annotation.RequestMethod;
-		
-		import com.microsoft.aad.adal4j.AuthenticationResult;
-		
-		@Controller
-		@RequestMapping("/secure/aad")
-		public class AadController {
-		
-		    @RequestMapping(method = { RequestMethod.GET, RequestMethod.POST })
-		    public String getDirectoryObjects(ModelMap model, HttpServletRequest httpRequest) {
-		        HttpSession session = httpRequest.getSession();
-		        AuthenticationResult result = (AuthenticationResult) session.getAttribute(AuthHelper.PRINCIPAL_SESSION_NAME);
-		        if (result == null) {
-		            model.addAttribute("error", new Exception("AuthenticationResult not found in session."));
-		            return "/error";
-		        } else {
-		            String data;
-		            try {
-		                data = this.getUsernamesFromGraph(result.getAccessToken(), session.getServletContext()
-		                        .getInitParameter("tenant"));
-		                model.addAttribute("users", data);
-		            } catch (Exception e) {
-		                model.addAttribute("error", e);
-		                return "/error";
-		            }
-		        }
-		        return "/secure/aad";
-		    }
-		
-		    private String getUsernamesFromGraph(String accessToken, String tenant) throws Exception {
-		        URL url = new URL(String.format("https://graph.chinacloudapi.cn/%s/users?api-version=2013-04-05", tenant,
-		                accessToken));
-		
-		        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		        // Set the appropriate header fields in the request header.
-		        conn.setRequestProperty("api-version", "2013-04-05");
-		        conn.setRequestProperty("Authorization", accessToken);
-		        conn.setRequestProperty("Accept", "application/json;odata=minimalmetadata");
-		        String goodRespStr = HttpClientHelper.getResponseStringFromConn(conn, true);
-		        // logger.info("goodRespStr ->" + goodRespStr);
-		        int responseCode = conn.getResponseCode();
-		        JSONObject response = HttpClientHelper.processGoodRespStr(responseCode, goodRespStr);
-		        JSONArray users = new JSONArray();
-		
-		        users = JSONHelper.fetchDirectoryObjectJSONArray(response);
-		
-		        StringBuilder builder = new StringBuilder();
-		        User user = null;
-		        for (int i = 0; i < users.length(); i++) {
-		            JSONObject thisUserJSONObject = users.optJSONObject(i);
-		            user = new User();
-		            JSONHelper.convertJSONObjectToDirectoryObject(thisUserJSONObject, user);
-		            builder.append(user.getUserPrincipalName() + "<br/>");
-		        }
-		        return builder.toString();
-		    }
-		
-		}
+
+	package com.microsoft.aad.adal4jsample;
+	
+	import java.net.HttpURLConnection;
+	import java.net.URL;
+	
+	import javax.servlet.http.HttpServletRequest;
+	import javax.servlet.http.HttpSession;
+	
+	import org.json.JSONArray;
+	import org.json.JSONObject;
+	import org.springframework.stereotype.Controller;
+	import org.springframework.ui.ModelMap;
+	import org.springframework.web.bind.annotation.RequestMapping;
+	import org.springframework.web.bind.annotation.RequestMethod;
+	
+	import com.microsoft.aad.adal4j.AuthenticationResult;
+	
+	@Controller
+	@RequestMapping("/secure/aad")
+	public class AadController {
+	
+	    @RequestMapping(method = { RequestMethod.GET, RequestMethod.POST })
+	    public String getDirectoryObjects(ModelMap model, HttpServletRequest httpRequest) {
+	        HttpSession session = httpRequest.getSession();
+	        AuthenticationResult result = (AuthenticationResult) session.getAttribute(AuthHelper.PRINCIPAL_SESSION_NAME);
+	        if (result == null) {
+	            model.addAttribute("error", new Exception("AuthenticationResult not found in session."));
+	            return "/error";
+	        } else {
+	            String data;
+	            try {
+	                data = this.getUsernamesFromGraph(result.getAccessToken(), session.getServletContext()
+	                        .getInitParameter("tenant"));
+	                model.addAttribute("users", data);
+	            } catch (Exception e) {
+	                model.addAttribute("error", e);
+	                return "/error";
+	            }
+	        }
+	        return "/secure/aad";
+	    }
+	
+	    private String getUsernamesFromGraph(String accessToken, String tenant) throws Exception {
+	        URL url = new URL(String.format("https://graph.chinacloudapi.cn/%s/users?api-version=2013-04-05", tenant,
+	                accessToken));
+	
+	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	        // Set the appropriate header fields in the request header.
+	        conn.setRequestProperty("api-version", "2013-04-05");
+	        conn.setRequestProperty("Authorization", accessToken);
+	        conn.setRequestProperty("Accept", "application/json;odata=minimalmetadata");
+	        String goodRespStr = HttpClientHelper.getResponseStringFromConn(conn, true);
+	        // logger.info("goodRespStr ->" + goodRespStr);
+	        int responseCode = conn.getResponseCode();
+	        JSONObject response = HttpClientHelper.processGoodRespStr(responseCode, goodRespStr);
+	        JSONArray users = new JSONArray();
+	
+	        users = JSONHelper.fetchDirectoryObjectJSONArray(response);
+	
+	        StringBuilder builder = new StringBuilder();
+	        User user = null;
+	        for (int i = 0; i < users.length(); i++) {
+	            JSONObject thisUserJSONObject = users.optJSONObject(i);
+	            user = new User();
+	            JSONHelper.convertJSONObjectToDirectoryObject(thisUserJSONObject, user);
+	            builder.append(user.getUserPrincipalName() + "<br/>");
+	        }
+	        return builder.toString();
+	    }
+	
+	}
 
 
 
@@ -1486,243 +1482,243 @@ Java
 创建名为 `BasicFilter.java` 的文件，其中包含以下内容：
 
 Java
-		
-		package com.microsoft.aad.adal4jsample;
-		
-		import java.io.IOException;
-		import java.io.UnsupportedEncodingException;
-		import java.net.URI;
-		import java.net.URLEncoder;
-		import java.util.Date;
-		import java.util.HashMap;
-		import java.util.Map;
-		import java.util.UUID;
-		import java.util.concurrent.ExecutionException;
-		import java.util.concurrent.ExecutorService;
-		import java.util.concurrent.Executors;
-		import java.util.concurrent.Future;
-		
-		import javax.naming.ServiceUnavailableException;
-		import javax.servlet.Filter;
-		import javax.servlet.FilterChain;
-		import javax.servlet.FilterConfig;
-		import javax.servlet.ServletException;
-		import javax.servlet.ServletRequest;
-		import javax.servlet.ServletResponse;
-		import javax.servlet.http.HttpServletRequest;
-		import javax.servlet.http.HttpServletResponse;
-		
-		import com.microsoft.aad.adal4j.AuthenticationContext;
-		import com.microsoft.aad.adal4j.AuthenticationResult;
-		import com.microsoft.aad.adal4j.ClientCredential;
-		import com.nimbusds.oauth2.sdk.AuthorizationCode;
-		import com.nimbusds.openid.connect.sdk.AuthenticationErrorResponse;
-		import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
-		import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
-		import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
-		
-		public class BasicFilter implements Filter {
-		
-		    private String clientId = "";
-		    private String clientSecret = "";
-		    private String tenant = "";
-		    private String authority;
-		
-		    public void destroy() {
-		
-		    }
-		
-		    public void doFilter(ServletRequest request, ServletResponse response,
-		            FilterChain chain) throws IOException, ServletException {
-		
-		        if (request instanceof HttpServletRequest) {
-		            HttpServletRequest httpRequest = (HttpServletRequest) request;
-		            HttpServletResponse httpResponse = (HttpServletResponse) response;
-		            try {
-		
-		                String currentUri = request.getScheme()
-		                        + "://"
-		                        + request.getServerName()
-		                        + ("http".equals(request.getScheme())
-		                                && request.getServerPort() == 80
-		                                || "https".equals(request.getScheme())
-		                                && request.getServerPort() == 443 ? "" : ":"
-		                                + request.getServerPort())
-		                        + httpRequest.getRequestURI();
-		                String fullUrl = currentUri
-		                        + (httpRequest.getQueryString() != null ? "?"
-		                                + httpRequest.getQueryString() : "");
-		                // check if user has a session
-		                if (!AuthHelper.isAuthenticated(httpRequest)) {
-		                    if (AuthHelper.containsAuthenticationData(httpRequest)) {
-		                        Map<String, String> params = new HashMap<String, String>();
-		                        for (String key : request.getParameterMap().keySet()) {
-		                            params.put(key,
-		                                    request.getParameterMap().get(key)[0]);
-		                        }
-		                        AuthenticationResponse authResponse = AuthenticationResponseParser
-		                                .parse(new URI(fullUrl), params);
-		                        if (AuthHelper.isAuthenticationSuccessful(authResponse)) {
-		
-		                            AuthenticationSuccessResponse oidcResponse = (AuthenticationSuccessResponse) authResponse;
-		                            AuthenticationResult result = getAccessToken(
-		                                    oidcResponse.getAuthorizationCode(),
-		                                    currentUri);
-		                            createSessionPrincipal(httpRequest, result);
-		                        } else {
-		                            AuthenticationErrorResponse oidcResponse = (AuthenticationErrorResponse) authResponse;
-		                            throw new Exception(String.format(
-		                                    "Request for auth code failed: %s - %s",
-		                                    oidcResponse.getErrorObject().getCode(),
-		                                    oidcResponse.getErrorObject()
-		                                            .getDescription()));
-		                        }
-		                    } else {
-		                            // not authenticated
-		                            httpResponse.setStatus(302);
-		                            httpResponse
-		                                    .sendRedirect(getRedirectUrl(currentUri));
-		                            return;
-		                    }
-		                } else {
-		                    // if authenticated, how to check for valid session?
-		                    AuthenticationResult result = AuthHelper
-		                            .getAuthSessionObject(httpRequest);
-		
-		                    if (httpRequest.getParameter("refresh") != null) {
-		                        result = getAccessTokenFromRefreshToken(
-		                                result.getRefreshToken(), currentUri);
-		                    } else {
-		                        if (httpRequest.getParameter("cc") != null) {
-		                            result = getAccessTokenFromClientCredentials();
-		                        } else {
-		                            if (result.getExpiresOnDate().before(new Date())) {
-		                                result = getAccessTokenFromRefreshToken(
-		                                        result.getRefreshToken(), currentUri);
-		                            }
-		                        }
-		                    }
-		                    createSessionPrincipal(httpRequest, result);
-		                }
-		            } catch (Throwable exc) {
-		                httpResponse.setStatus(500);
-		                request.setAttribute("error", exc.getMessage());
-		                httpResponse.sendRedirect(((HttpServletRequest) request)
-		                        .getContextPath() + "/error.jsp");
-		            }
-		        }
-		        chain.doFilter(request, response);
-		    }
-		
-		    private AuthenticationResult getAccessTokenFromClientCredentials()
-		            throws Throwable {
-		        AuthenticationContext context = null;
-		        AuthenticationResult result = null;
-		        ExecutorService service = null;
-		        try {
-		            service = Executors.newFixedThreadPool(1);
-		            context = new AuthenticationContext(authority + tenant + "/", true,
-		                    service);
-		            Future<AuthenticationResult> future = context.acquireToken(
-		                    "https://graph.chinacloudapi.cn", new ClientCredential(clientId,
-		                            clientSecret), null);
-		            result = future.get();
-		        } catch (ExecutionException e) {
-		            throw e.getCause();
-		        } finally {
-		            service.shutdown();
-		        }
-		
-		        if (result == null) {
-		            throw new ServiceUnavailableException(
-		                    "authentication result was null");
-		        }
-		        return result;
-		    }
-		
-		    private AuthenticationResult getAccessTokenFromRefreshToken(
-		            String refreshToken, String currentUri) throws Throwable {
-		        AuthenticationContext context = null;
-		        AuthenticationResult result = null;
-		        ExecutorService service = null;
-		        try {
-		            service = Executors.newFixedThreadPool(1);
-		            context = new AuthenticationContext(authority + tenant + "/", true,
-		                    service);
-		            Future<AuthenticationResult> future = context
-		                    .acquireTokenByRefreshToken(refreshToken,
-		                            new ClientCredential(clientId, clientSecret), null,
-		                            null);
-		            result = future.get();
-		        } catch (ExecutionException e) {
-		            throw e.getCause();
-		        } finally {
-		            service.shutdown();
-		        }
-		
-		        if (result == null) {
-		            throw new ServiceUnavailableException(
-		                    "authentication result was null");
-		        }
-		        return result;
-		
-		    }
-		
-		    private AuthenticationResult getAccessToken(
-		            AuthorizationCode authorizationCode, String currentUri)
-		            throws Throwable {
-		        String authCode = authorizationCode.getValue();
-		        ClientCredential credential = new ClientCredential(clientId,
-		                clientSecret);
-		        AuthenticationContext context = null;
-		        AuthenticationResult result = null;
-		        ExecutorService service = null;
-		        try {
-		            service = Executors.newFixedThreadPool(1);
-		            context = new AuthenticationContext(authority + tenant + "/", true,
-		                    service);
-		            Future<AuthenticationResult> future = context
-		                    .acquireTokenByAuthorizationCode(authCode, new URI(
-		                            currentUri), credential, null);
-		            result = future.get();
-		        } catch (ExecutionException e) {
-		            throw e.getCause();
-		        } finally {
-		            service.shutdown();
-		        }
-		
-		        if (result == null) {
-		            throw new ServiceUnavailableException(
-		                    "authentication result was null");
-		        }
-		        return result;
-		    }
-		
-		    private void createSessionPrincipal(HttpServletRequest httpRequest,
-		            AuthenticationResult result) throws Exception {
-		        httpRequest.getSession().setAttribute(
-		                AuthHelper.PRINCIPAL_SESSION_NAME, result);
-		    }
-		
-		    private String getRedirectUrl(String currentUri)
-		            throws UnsupportedEncodingException {
-		        String redirectUrl = authority
-		                + this.tenant
-		                + "/oauth2/authorize?response_type=code%20id_token&scope=openid&response_mode=form_post&redirect_uri="
-		                + URLEncoder.encode(currentUri, "UTF-8") + "&client_id="
-		                + clientId + "&resource=https%3a%2f%2fgraph.chinacloudapi.cn"
-		                + "&nonce=" + UUID.randomUUID() + "&site_id=500879";
-		        return redirectUrl;
-		    }
-		
-		    public void init(FilterConfig config) throws ServletException {
-		        clientId = config.getInitParameter("client_id");
-		        authority = config.getServletContext().getInitParameter("authority");
-		        tenant = config.getServletContext().getInitParameter("tenant");
-		        clientSecret = config.getInitParameter("secret_key");
-		    }
-		
-		}
+	
+	package com.microsoft.aad.adal4jsample;
+	
+	import java.io.IOException;
+	import java.io.UnsupportedEncodingException;
+	import java.net.URI;
+	import java.net.URLEncoder;
+	import java.util.Date;
+	import java.util.HashMap;
+	import java.util.Map;
+	import java.util.UUID;
+	import java.util.concurrent.ExecutionException;
+	import java.util.concurrent.ExecutorService;
+	import java.util.concurrent.Executors;
+	import java.util.concurrent.Future;
+	
+	import javax.naming.ServiceUnavailableException;
+	import javax.servlet.Filter;
+	import javax.servlet.FilterChain;
+	import javax.servlet.FilterConfig;
+	import javax.servlet.ServletException;
+	import javax.servlet.ServletRequest;
+	import javax.servlet.ServletResponse;
+	import javax.servlet.http.HttpServletRequest;
+	import javax.servlet.http.HttpServletResponse;
+	
+	import com.microsoft.aad.adal4j.AuthenticationContext;
+	import com.microsoft.aad.adal4j.AuthenticationResult;
+	import com.microsoft.aad.adal4j.ClientCredential;
+	import com.nimbusds.oauth2.sdk.AuthorizationCode;
+	import com.nimbusds.openid.connect.sdk.AuthenticationErrorResponse;
+	import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
+	import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
+	import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
+	
+	public class BasicFilter implements Filter {
+	
+	    private String clientId = "";
+	    private String clientSecret = "";
+	    private String tenant = "";
+	    private String authority;
+	
+	    public void destroy() {
+	
+	    }
+	
+	    public void doFilter(ServletRequest request, ServletResponse response,
+	            FilterChain chain) throws IOException, ServletException {
+	
+	        if (request instanceof HttpServletRequest) {
+	            HttpServletRequest httpRequest = (HttpServletRequest) request;
+	            HttpServletResponse httpResponse = (HttpServletResponse) response;
+	            try {
+	
+	                String currentUri = request.getScheme()
+	                        + "://"
+	                        + request.getServerName()
+	                        + ("http".equals(request.getScheme())
+	                                && request.getServerPort() == 80
+	                                || "https".equals(request.getScheme())
+	                                && request.getServerPort() == 443 ? "" : ":"
+	                                + request.getServerPort())
+	                        + httpRequest.getRequestURI();
+	                String fullUrl = currentUri
+	                        + (httpRequest.getQueryString() != null ? "?"
+	                                + httpRequest.getQueryString() : "");
+	                // check if user has a session
+	                if (!AuthHelper.isAuthenticated(httpRequest)) {
+	                    if (AuthHelper.containsAuthenticationData(httpRequest)) {
+	                        Map<String, String> params = new HashMap<String, String>();
+	                        for (String key : request.getParameterMap().keySet()) {
+	                            params.put(key,
+	                                    request.getParameterMap().get(key)[0]);
+	                        }
+	                        AuthenticationResponse authResponse = AuthenticationResponseParser
+	                                .parse(new URI(fullUrl), params);
+	                        if (AuthHelper.isAuthenticationSuccessful(authResponse)) {
+	
+	                            AuthenticationSuccessResponse oidcResponse = (AuthenticationSuccessResponse) authResponse;
+	                            AuthenticationResult result = getAccessToken(
+	                                    oidcResponse.getAuthorizationCode(),
+	                                    currentUri);
+	                            createSessionPrincipal(httpRequest, result);
+	                        } else {
+	                            AuthenticationErrorResponse oidcResponse = (AuthenticationErrorResponse) authResponse;
+	                            throw new Exception(String.format(
+	                                    "Request for auth code failed: %s - %s",
+	                                    oidcResponse.getErrorObject().getCode(),
+	                                    oidcResponse.getErrorObject()
+	                                            .getDescription()));
+	                        }
+	                    } else {
+	                            // not authenticated
+	                            httpResponse.setStatus(302);
+	                            httpResponse
+	                                    .sendRedirect(getRedirectUrl(currentUri));
+	                            return;
+	                    }
+	                } else {
+	                    // if authenticated, how to check for valid session?
+	                    AuthenticationResult result = AuthHelper
+	                            .getAuthSessionObject(httpRequest);
+	
+	                    if (httpRequest.getParameter("refresh") != null) {
+	                        result = getAccessTokenFromRefreshToken(
+	                                result.getRefreshToken(), currentUri);
+	                    } else {
+	                        if (httpRequest.getParameter("cc") != null) {
+	                            result = getAccessTokenFromClientCredentials();
+	                        } else {
+	                            if (result.getExpiresOnDate().before(new Date())) {
+	                                result = getAccessTokenFromRefreshToken(
+	                                        result.getRefreshToken(), currentUri);
+	                            }
+	                        }
+	                    }
+	                    createSessionPrincipal(httpRequest, result);
+	                }
+	            } catch (Throwable exc) {
+	                httpResponse.setStatus(500);
+	                request.setAttribute("error", exc.getMessage());
+	                httpResponse.sendRedirect(((HttpServletRequest) request)
+	                        .getContextPath() + "/error.jsp");
+	            }
+	        }
+	        chain.doFilter(request, response);
+	    }
+	
+	    private AuthenticationResult getAccessTokenFromClientCredentials()
+	            throws Throwable {
+	        AuthenticationContext context = null;
+	        AuthenticationResult result = null;
+	        ExecutorService service = null;
+	        try {
+	            service = Executors.newFixedThreadPool(1);
+	            context = new AuthenticationContext(authority + tenant + "/", true,
+	                    service);
+	            Future<AuthenticationResult> future = context.acquireToken(
+	                    "https://graph.chinacloudapi.cn", new ClientCredential(clientId,
+	                            clientSecret), null);
+	            result = future.get();
+	        } catch (ExecutionException e) {
+	            throw e.getCause();
+	        } finally {
+	            service.shutdown();
+	        }
+	
+	        if (result == null) {
+	            throw new ServiceUnavailableException(
+	                    "authentication result was null");
+	        }
+	        return result;
+	    }
+	
+	    private AuthenticationResult getAccessTokenFromRefreshToken(
+	            String refreshToken, String currentUri) throws Throwable {
+	        AuthenticationContext context = null;
+	        AuthenticationResult result = null;
+	        ExecutorService service = null;
+	        try {
+	            service = Executors.newFixedThreadPool(1);
+	            context = new AuthenticationContext(authority + tenant + "/", true,
+	                    service);
+	            Future<AuthenticationResult> future = context
+	                    .acquireTokenByRefreshToken(refreshToken,
+	                            new ClientCredential(clientId, clientSecret), null,
+	                            null);
+	            result = future.get();
+	        } catch (ExecutionException e) {
+	            throw e.getCause();
+	        } finally {
+	            service.shutdown();
+	        }
+	
+	        if (result == null) {
+	            throw new ServiceUnavailableException(
+	                    "authentication result was null");
+	        }
+	        return result;
+	
+	    }
+	
+	    private AuthenticationResult getAccessToken(
+	            AuthorizationCode authorizationCode, String currentUri)
+	            throws Throwable {
+	        String authCode = authorizationCode.getValue();
+	        ClientCredential credential = new ClientCredential(clientId,
+	                clientSecret);
+	        AuthenticationContext context = null;
+	        AuthenticationResult result = null;
+	        ExecutorService service = null;
+	        try {
+	            service = Executors.newFixedThreadPool(1);
+	            context = new AuthenticationContext(authority + tenant + "/", true,
+	                    service);
+	            Future<AuthenticationResult> future = context
+	                    .acquireTokenByAuthorizationCode(authCode, new URI(
+	                            currentUri), credential, null);
+	            result = future.get();
+	        } catch (ExecutionException e) {
+	            throw e.getCause();
+	        } finally {
+	            service.shutdown();
+	        }
+	
+	        if (result == null) {
+	            throw new ServiceUnavailableException(
+	                    "authentication result was null");
+	        }
+	        return result;
+	    }
+	
+	    private void createSessionPrincipal(HttpServletRequest httpRequest,
+	            AuthenticationResult result) throws Exception {
+	        httpRequest.getSession().setAttribute(
+	                AuthHelper.PRINCIPAL_SESSION_NAME, result);
+	    }
+	
+	    private String getRedirectUrl(String currentUri)
+	            throws UnsupportedEncodingException {
+	        String redirectUrl = authority
+	                + this.tenant
+	                + "/oauth2/authorize?response_type=code%20id_token&scope=openid&response_mode=form_post&redirect_uri="
+	                + URLEncoder.encode(currentUri, "UTF-8") + "&client_id="
+	                + clientId + "&resource=https%3a%2f%2fgraph.chinacloudapi.cn"
+	                + "&nonce=" + UUID.randomUUID() + "&site_id=500879";
+	        return redirectUrl;
+	    }
+	
+	    public void init(FilterConfig config) throws ServletException {
+	        clientId = config.getInitParameter("client_id");
+	        authority = config.getServletContext().getInitParameter("authority");
+	        tenant = config.getServletContext().getInitParameter("tenant");
+	        clientSecret = config.getInitParameter("secret_key");
+	    }
+	
+	}
 
 
 此 Servlet 将公开 `ADAL4J` 应该从我们的应用程序运行的所有方法。这包括：
@@ -1735,7 +1731,7 @@ Java
 
 ##在 Tomcat 中编译并运行示例
 
-更改回根目录，并运行下列命令来生成你刚刚使用 `maven` 组成的示例。这会使用你针对依赖项编写的 `pom.xml` 文件。
+切换回到根目录，并运行以下命令来生成你刚刚使用 `maven` 组成的示例。这会使用你针对依赖项编写的 `pom.xml` 文件。
 
 `$ mvn package`
 
@@ -1751,8 +1747,8 @@ Java
 
 祝贺你！ 现在，你已创建一个有效的 Java 应用程序，它可以对用户进行身份验证，使用 OAuth 2.0 安全调用 Web API，并获取有关用户的基本信息。如果你尚未这样做，可以在租户中填充一些用户。
 
-[此处以 .zip 格式提供了](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)完整示例（不包括配置值）供你参考，你也可以从 GitHub 克隆该示例：
+[此处以 .zip 格式提供了](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
 
 	git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->
