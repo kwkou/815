@@ -79,34 +79,34 @@ C#
 C#
 
 	public void ConfigureAuth(IAppBuilder app)
-				 {
-						 app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
+	{
+		app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
 	
-						 app.UseCookieAuthentication(new CookieAuthenticationOptions());
+		app.UseCookieAuthentication(new CookieAuthenticationOptions());
 	
-						 app.UseOpenIdConnectAuthentication(
-								 new OpenIdConnectAuthenticationOptions
-								 {
-										 // The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0 
-										 // The `Scope` describes the permissions that your app will need.  See https://azure.cn/documentation/articles/active-directory-v2-scopes/
-										 // In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
+		app.UseOpenIdConnectAuthentication(
+			new OpenIdConnectAuthenticationOptions
+			{
+				// The `Authority` represents the v2.0 endpoint - https://login.microsoftonline.com/common/v2.0 
+				// The `Scope` describes the permissions that your app will need.  See https://azure.cn/documentation/articles/active-directory-v2-scopes/
+				// In a real application you could use issuer validation for additional checks, like making sure the user's organization has signed up for your app, for instance.
 	
-										 ClientId = clientId,
-										 Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, "common", "/v2.0 "),
-										 RedirectUri = redirectUri,
-										 Scope = "openid email profile",
-										 ResponseType = "id_token",
-										 PostLogoutRedirectUri = redirectUri,
-										 TokenValidationParameters = new TokenValidationParameters
-										 {
-												 ValidateIssuer = false,
-										 },
-										 Notifications = new OpenIdConnectAuthenticationNotifications
-										 {
-												 AuthenticationFailed = OnAuthenticationFailed,
-										 }
-								 });
-				 }
+				ClientId = clientId,
+				Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, "common", "/v2.0 "),
+				RedirectUri = redirectUri,
+				Scope = "openid email profile",
+				ResponseType = "id_token",
+				PostLogoutRedirectUri = redirectUri,
+				TokenValidationParameters = new TokenValidationParameters
+				{
+					ValidateIssuer = false,
+				},
+				Notifications = new OpenIdConnectAuthenticationNotifications
+				{
+					AuthenticationFailed = OnAuthenticationFailed,
+				}
+			});
+		}
 
 
 ## 发送身份验证请求
