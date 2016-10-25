@@ -9,8 +9,15 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="07/06/2016"
-   wacn.date="08/22/2016"/>
+   ms.devlang="na"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/01/2016"
+   ms.author="mbaldwin"
+   wacn.date="10/11/2016"/>
+   wacn.date="10/11/2016"/>  
+
 
 
 # Azure Active Directory 开发人员指南
@@ -19,16 +26,15 @@
 作为标识管理即服务 (IDMaaS) 平台，Azure Active Directory (AD) 为开发人员提供了有效的方法将标识管理功能集成到其应用程序中。以下文章概述了 Azure AD 的实现和主要功能。我们建议你按顺序阅读这些文章。如果你要深入了解，请转到[入门](#getting-started)。
 
 
-1. [Azure Active Directory 集成的好处](/documentation/articles/active-directory-how-to-integrate/)：了解与 Azure Active Directory 集成为何能够为安全登录和授权提供最佳解决方案。
+1. [Azure AD 集成的好处](/documentation/articles/active-directory-how-to-integrate/)：了解与 Azure AD 集成为何能够提供最佳的安全登录和授权解决方案。
 
-2. [Active Directory 身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)：利用 Azure Active Directory 中的简化身份验证来登录应用程序。
+1. [Azure AD 身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)：利用 Azure AD 中的简化身份验证来登录应用程序。
 
-3. [将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications/)：了解如何从 Azure Active Directory 添加、更新和删除应用程序，以及有关集成应用的品牌准则。
+1. [将应用程序与 Azure AD 集成](/documentation/articles/active-directory-integrating-applications/)：了解如何从 Azure AD 添加、更新和删除应用程序，以及集成应用的品牌准则。
 
-4. [Azure Active Directory 图形 API](/documentation/articles/active-directory-graph-api/)：使用 Azure Active Directory 图形 API 通过 REST API 终结点以编程方式访问 Azure AD。请注意，也可通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API。Microsoft Graph 是统一的 API，可让你通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
+1. [Azure AD Graph API](/documentation/articles/active-directory-graph-api/)：使用 Azure AD Graph API 通过 REST API 终结点以编程方式访问 Azure AD。也可以通过 [Microsoft Graph](https://graph.microsoft.io) 访问 Azure AD Graph API。Microsoft Graph 提供统一的 API，可以通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
 
-5. [Azure Active Directory 身份验证库](/documentation/articles/active-directory-authentication-libraries/)：使用适用于 [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)、[JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js)、[Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc)、[Android](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/o) 和[其他语言](/documentation/articles/active-directory-authentication-libraries/)的 Azure 身份验证库轻松对用户进行身份验证以获取访问令牌。
-
+1. [Azure AD 身份验证库](/documentation/articles/active-directory-authentication-libraries/)：使用适用于 .NET、JavaScript、Objective-C、Android 及其他语言的 Azure AD 身份验证库，轻松对用户进行身份验证，获取访问令牌。
 
 
 ## 入门
@@ -37,15 +43,15 @@
 
 ### 移动和电脑应用程序快速入门指南
 
-|[![iOS](./media/active-directory-developers-guide/ios.png)](/documentation/articles/active-directory-devquickstarts-ios/)|[![Android](./media/active-directory-developers-guide/android.png)](/documentation/articles/active-directory-devquickstarts-android/)|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-dotnet/)| [![Windows Phone](./media/active-directory-developers-guide/windows.png)](/documentation/articles/active-directory-devquickstarts-windowsphone/)|[![Windows 应用商店](./media/active-directory-developers-guide/windows.png)](/documentation/articles/active-directory-devquickstarts-windowsstore/)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](/documentation/articles/active-directory-devquickstarts-xamarin/)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](/documentation/articles/active-directory-devquickstarts-cordova/)
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:
-|[iOS](/documentation/articles/active-directory-devquickstarts-ios/)|[Android](/documentation/articles/active-directory-devquickstarts-android/)|[.NET](/documentation/articles/active-directory-devquickstarts-dotnet/)|[Windows Phone](/documentation/articles/active-directory-devquickstarts-windowsphone/)|[Windows 应用商店](/documentation/articles/active-directory-devquickstarts-windowsstore/)|[Xamarin](/documentation/articles/active-directory-devquickstarts-xamarin/)|[Cordova](/documentation/articles/active-directory-devquickstarts-cordova/)
+|[![iOS](./media/active-directory-developers-guide/ios.png)](/documentation/articles/active-directory-devquickstarts-ios/)|[![Android](./media/active-directory-developers-guide/android.png)](/documentation/articles/active-directory-devquickstarts-android/)|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-dotnet/)|[![Windows Universal](./media/active-directory-developers-guide/windows.png)](/documentation/articles/active-directory-devquickstarts-windowsstore/)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](/documentation/articles/active-directory-devquickstarts-xamarin/)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](/documentation/articles/active-directory-devquickstarts-cordova/)|[![OAuth 2.0](./media/active-directory-developers-guide/oauth-2.png)](/documentation/articles/active-directory-protocols-oauth-code/)
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|[iOS](/documentation/articles/active-directory-devquickstarts-ios/)|[Android](/documentation/articles/active-directory-devquickstarts-android/)|[.NET](/documentation/articles/active-directory-devquickstarts-dotnet/)|[Windows Universal](/documentation/articles/active-directory-devquickstarts-windowsstore/)|[Xamarin](/documentation/articles/active-directory-devquickstarts-xamarin/)|[Cordova](/documentation/articles/active-directory-devquickstarts-cordova/)|[直接与 OAuth 2.0 集成](/documentation/articles/active-directory-protocols-oauth-code/)|
 
-### <a name="web-application-quick-start-guides"></a>Web 应用程序快速入门指南
+### Web 应用程序快速入门指南
 
-|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapp-dotnet/)|[![Java](./media/active-directory-developers-guide/java.png)](/documentation/articles/active-directory-devquickstarts-webapp-java/)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](/documentation/articles/active-directory-devquickstarts-angular/)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs/)
-|:--:|:--:|:--:|:--:|
-|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet/)|[Java](/documentation/articles/active-directory-devquickstarts-webapp-java/)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular/)|[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs/)
+|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapp-dotnet/)|[![Java](./media/active-directory-developers-guide/java.png)](/documentation/articles/active-directory-devquickstarts-webapp-java/)|[![AngularJS](./media/active-directory-developers-guide/angularjs.png)](/documentation/articles/active-directory-devquickstarts-angular/)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs/) | [![OpenID Connect](./media/active-directory-developers-guide/openid-connect.png)](/documentation/articles/active-directory-protocols-openid-connect-code/)
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet/)|[Java](/documentation/articles/active-directory-devquickstarts-webapp-java/)|[AngularJS](/documentation/articles/active-directory-devquickstarts-angular/)|[Javascript](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi)|[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs/)|[直接与 OpenID Connect 集成](/documentation/articles/active-directory-protocols-openid-connect-code/)|
 
 ### Web API 快速入门指南
 
@@ -63,20 +69,25 @@
 
 以下文章介绍如何使用 Azure Active Directory 执行特定任务：
 
-- [获取 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant/)
-- [列出 Azure Active Directory 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/)
-- [了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
-- [使用 Office 365 API 创建应用](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
+- [获取 Azure AD 租户](/documentation/articles/active-directory-howto-tenant/)
+- [通过多租户应用程序模式使 Azure AD 用户登录](/documentation/articles/active-directory-devhowto-multi-tenant-overview/)
+- 使用 ADAL 在 [Android](/documentation/articles/active-directory-sso-android/) 和 [iOS](/documentation/articles/active-directory-sso-ios/) 设备上实现跨应用 SSO
+- [针对 Azure AD 认证 AppSource 应用程序](/documentation/articles/active-directory-devhowto-appsource-certified/)
+- [列出 Azure AD 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/)
 - [将适用于 Office 365 的 Web 应用提交到卖家仪表板](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
-- 了解如何使用 ADAL 在 [Android](/documentation/articles/active-directory-sso-android/) 和 [iOS](/documentation/articles/active-directory-sso-ios/) 设备上启用跨应用 SSO
+- [了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
+- [了解客户端应用程序中登录按钮和应用获取按钮的品牌准则](/documentation/articles/active-directory-branding-guidelines/)
 - [预览：如何构建可以使用个人帐户和工作或学校帐户来登录用户的应用](/documentation/articles/active-directory-appmodel-v2-overview/)
+- [预览：如何构建可以注册和登录使用者的应用](/documentation/articles/active-directory-b2c-overview/)
 
-## <a name="reference"></a>引用
+
+## 引用
 
 以下文章提供了有关 REST 和身份验证库 API、协议、错误、代码示例和终结点的基础参考信息。
 
 ###  支持
 - [已标记问题](http://stackoverflow.com/questions/tagged/azure-active-directory)：通过搜索标记 [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory) 和 [adal](http://stackoverflow.com/questions/tagged/adal) 查找有关堆栈溢出的 Azure Active Directory 解决方案。
+- 请参阅 [Azure AD 开发人员术语表](/documentation/articles/active-directory-dev-glossary/)，了解应用程序开发和集成的一些相关常用术语。
 
 ### 代码
 
@@ -84,21 +95,31 @@
 
 - [Azure Active Directory 示例](https://github.com/azure-samples?query=active-directory)：浏览示例列表的最简单办法是使用[代码示例的索引](/documentation/articles/active-directory-code-samples/)。
 
-- [ADAL for .NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)：.NET 身份验证库文档。
+- [适用于 ADAL 的 .NET](https://msdn.microsoft.com/zh-cn/library/azure/mt417579.aspx)：.NET 身份验证库的文档。
 
-### 图形 API
+### Graph API
 
-- [图形 API 参考](https://msdn.microsoft.com/library/azure/hh974476.aspx)：Azure Active Directory 图形 API 的 REST 参考。[查看交互式图形 API 参考体验](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)。
+- [Graph API 参考](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx)：Azure Active Directory Graph API 的 REST 参考。[查看交互式 Graph API 参考体验](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)。
 
-- [图形 API 权限范围](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)：用于控制应用对租户中目录数据的访问权限的 OAuth 2.0 权限范围。
+- [Graph API 权限范围](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)：OAuth 2.0 权限范围，该权限范围用于控制应用对租户中目录数据的访问权限。
 
-### 身份验证协议
+### 身份验证和授权协议
 
-- [SAML 2.0 协议参考](https://msdn.microsoft.com/library/azure/dn195591.aspx)：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
+- [Azure AD 中的签名密钥滚动更新](/documentation/articles/active-directory-signing-key-rollover/)：了解 Azure AD 的签名密钥滚动更新频率，以及如何更新最常见应用程序方案的密钥。
 
-- [WS-Federation 1.2 协议](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html)：Azure Active Directory 根据 Web 服务联合身份验证版本 1.2 规范支持 WS-Federation 1.2。有关联合元数据文档的详细信息，请参阅 [Federation Metadata](/documentation/articles/active-directory-federation-metadata)（联合元数据）。
+- [OAuth 2.0 协议：使用授权代码授权](/documentation/articles/active-directory-protocols-oauth-code/)：可以使用 OAuth 2.0 协议的授权代码授权，授予对 Azure Active Directory 租户中 Web 应用程序和 Web API 的访问权限。
 
-- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)：你可以通过本指南来了解和评估 SAML 2.0 令牌与 JSON Web 令牌 (JWT) 令牌中的声明。
+- [OAuth 2.0 协议：了解隐式授权](/documentation/articles/active-directory-dev-understanding-oauth2-implicit-grant/)：了解隐式授权，以及它是否适合自己的应用程序。
+
+- [OAuth 2.0 协议：使用客户端凭据进行服务到服务的调用](/documentation/articles/active-directory-protocols-oauth-service-to-service/)：OAuth 2.0 客户端凭据授权允许 Web 服务（机密客户端）在调用其他 Web 服务时使用自己的凭据进行身份验证，而不是模拟用户。在这种情况下，客户端通常是中间层 Web 服务、后台程序服务或网站。
+
+- [OpenID Connect 1.0 协议：登录和身份验证](/documentation/articles/active-directory-protocols-openid-connect-code/)：OpenID Connect 1.0 协议扩展了 OAuth 2.0，使其能够用作身份验证协议。客户端应用程序可以接收 id\_token 来管理登录过程，或增加授权代码流，同时接收 id\_token 和授权代码。
+
+- [SAML 2.0 协议参考](/documentation/articles/active-directory-saml-protocol-reference/)：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
+
+- [WS 联合身份验证 1.2 协议](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html)：Azure Active Directory 根据 Web Services 联合身份验证版本 1.2 规范支持 WS 联合身份验证 1.2。若要了解联合元数据文档，请参阅[联合元数据](/documentation/articles/active-directory-federation-metadata/)。
+
+- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)：可以通过本指南来了解和评估 SAML 2.0 令牌与 JSON Web 令牌 (JWT) 中的声明。
 
 
 ### 构建
@@ -109,7 +130,7 @@
 
 ## 社交
 
-- [Active Directory 团队博客](http://blogs.technet.com/b/ad/)：Azure Active Directory 领域的最新开发情况。
+- [Active Directory 团队博客](http://blogs.technet.com/b/ad)：Azure Active Directory 领域的最新开发情况。
 
 - [Azure Active Directory Graph 团队博客](http://blogs.msdn.com/b/aadgraphteam)：特定于图形 API 的 Azure Active Directory 信息。
 
@@ -117,4 +138,4 @@
 
 - [Twitter 上的 Azure Active Directory](https://twitter.com/azuread)：以 140 个或更少的字符发布的 Azure Active Directory 公告。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_0926_2016-->

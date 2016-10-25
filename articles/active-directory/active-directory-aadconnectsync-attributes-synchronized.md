@@ -4,26 +4,30 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="andkjell"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/27/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/13/2016"
+	ms.author="markvi;andkjell"
+   wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"/>
 
 
 # Azure AD Connect 同步：与 Azure Active Directory 同步的属性
-
-本主题列出了通过 Azure AD Connect 同步进行同步的属性。  
+本主题列出通过 Azure AD Connect 同步进行同步的属性。  
 属性按照相关的 Azure AD 应用进行分组。
 
 ## 要同步的属性
-常见的问题是最少要同步的属性列表是什么。默认的（也是建议的）方法是保留默认属性，以便可以在云中构造完整的 GAL（全局地址列表），并获取 Office 365 工作负荷中的所有功能。在某些情况下，组织并不想要将某些属性同步到云中，因为它们包含敏感数据或 PII（个人身份信息），如以下示例中所示。
-
+常见的问题是最少要同步的属性列表是什么。默认的（也是建议的）方法是保留默认属性，以便可以在云中构造完整的 GAL（全局地址列表），并获取 Office 365 工作负荷中的所有功能。在某些情况下，组织并不想要将某些属性同步到云中，因为这些属性包含敏感数据或 PII（个人身份信息），如以下示例中所示：  
 ![错误的属性](./media/active-directory-aadconnectsync-attributes-synchronized/badextensionattribute.png)
 
-在此情况下，请从以下属性列表着手，并标识包含敏感数据或 PII 数据、因而不能同步的属性。然后在安装期间使用 [Azure AD 应用程序和属性筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#azure-ad-app-and-attribute-filtering)将它们取消选择。
+在此情况下，请从本主题中的属性列表着手，并识别包含敏感数据或 PII 数据、因而不能同步的属性。然后在安装期间使用 [Azure AD 应用程序和属性筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#azure-ad-app-and-attribute-filtering/)取消选择这些属性。
 
 >[AZURE.WARNING] 取消选择属性时，应该小心，只取消选择那些绝对不能同步的属性。取消选择其他属性可能会对功能造成负面影响。
 
@@ -32,17 +36,15 @@
 | 属性名称| 用户| 注释 |
 | --- | :-: | --- |
 | accountEnabled| X| 如果启用了帐户，则进行定义。|
-| cn| X|  |
-| displayName| X|  |
+| cn| X| |
+| displayName| X| |
 | objectSID| X| 机械属性。用于维护 Azure AD 和 AD 之间的同步的 AD 用户标识符。|
 | pwdLastSet| X| 机械属性。用于了解使已颁发令牌失效的时间。由密码同步和联合使用。|
 | sourceAnchor| X| 机械属性。用于保持 ADDS 与 Azure AD 之间的关系的不可变标识符。|
 | usageLocation| X| 机械属性。用户所在的国家/地区。用于进行许可证分配。|
 | userPrincipalName| X| UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
 
-
-
-## <a name="exchange-hybrid-writeback"></a>Exchange Online
+## Exchange Online
 
 | 属性名称| 用户| 联系人| 组| 注释 |
 | --- | :-: | :-: | :-: | --- |
@@ -164,7 +166,6 @@
 | userPrincipalName| X| | | UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
 | userSMIMECertificates| X| X| | |
 | wWWHomePage| X| X| | |
-
 
 ## SharePoint Online
 
@@ -299,7 +300,6 @@
 | userPrincipalName| X| | | UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
 | wWWHomePage| X| X| | |
 
-
 ## Azure RMS
 
 | 属性名称| 用户| 联系人| 组| 注释 |
@@ -316,7 +316,6 @@
 | sourceAnchor| X| X| X| 机械属性。用于保持 ADDS 与 Azure AD 之间的关系的不可变标识符。|
 | usageLocation| X| | | 机械属性。用户所在的国家/地区。用于进行许可证分配。|
 | userPrincipalName| X| | | 此 UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
-
 
 ## Intune
 
@@ -337,8 +336,6 @@
 | sourceAnchor| X| X| X| 机械属性。用于保持 ADDS 与 Azure AD 之间的关系的不可变标识符。|
 | usageLocation| X| | | 机械属性。用户所在的国家/地区。用于进行许可证分配。|
 | userPrincipalName| X| | | UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
-
-
 
 ## Dynamics CRM
 
@@ -375,9 +372,9 @@
 | userPrincipalName| X| | | UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
 
 ## 第三方应用程序
-这一组属性用作常规工作负荷或应用程序所需的最低属性。它可以用于上面未列出的工作负荷或非 Microsoft 应用程序。它显式用于以下目的：
+此组是用作常规工作负荷或应用程序所需的最低属性。它可以用于另一部分中未列出的工作负荷或非 Microsoft 应用。它显式用于以下目的：
 
-- Yammer（实际上只使用 User）
+- Yammer（只使用 User）
 - [SharePoint 等资源提供的混合企业到企业 (B2B) 跨组织协作方案](http://go.microsoft.com/fwlink/?LinkId=747036)
 
 如果不使用 Azure AD 目录来支持 Office 365、Dynamics 或 Intune，则可以使用这一组属性。它包含一小部分核心属性。
@@ -393,7 +390,7 @@
 | mailNickName| X| X| X| |
 | member| | | X| |
 | objectSID| X| | | 机械属性。用于维护 Azure AD 和 AD 之间的同步的 AD 用户标识符。|
-| proxyAddresses| X| X| x| |
+| proxyAddresses| X| X| X| |
 | pwdLastSet| X| | | 机械属性。用于了解使已颁发令牌失效的时间。由密码同步和联合使用。|
 | sn| X| X| | |
 | sourceAnchor| X| X| X| 机械属性。用于保持 ADDS 与 Azure AD 之间的关系的不可变标识符。|
@@ -401,7 +398,7 @@
 | userPrincipalName| X| | | UPN 是用户的登录 ID。大多数情况下与 [mail] 值相同。|
 
 ## Windows 10
-已加入 Windows 10 域的计算机（设备）会将某些属性同步到 Azure AD。这些属性始终同步，Windows 10 不会显示为可以取消选择的应用。通过填充 userCertificate 属性来标识已加入 Windows 10 域的计算机。
+已加入 Windows 10 域的计算机（设备）会将某些属性同步到 Azure AD。有关方案的详细信息，请参阅 [Connect domain-joined devices to Azure AD for Windows 10 experiences](/documentation/articles/active-directory-azureadjoin-devices-group-policy/)（体验 Windows 10 时将已加入域的设备连接到 Azure AD）。这些属性始终同步，Windows 10 不会显示为可以取消选择的应用。通过填充 userCertificate 属性来标识已加入 Windows 10 域的计算机。
 
 | 属性名称| 设备| 注释 |
 | --- | :-: | --- |
@@ -415,19 +412,19 @@
 | operatingSystemVersion | X| 也称为 deviceOSVersion。|
 | userCertificate | X| |
 
-用户的这些属性是所选其他应用的补充。
+**用户**的这些属性是所选其他应用的补充。
 
 | 属性名称| 用户| 注释 |
 | --- | :-: | --- |
 | domainFQDN| X| 也称为 dnsDomainName。例如 contoso.com。|
-| domainNetBios| X| 也称为 netBiosName。例如CONTOSO。|
+| domainNetBios| X| 也称为 netBiosName。例如 CONTOSO。|
 
 ## Exchange 混合写回
-当你选择启用 Exchange 混合部署时，这些属性将从 Azure AD 写回到本地 Active Directory。根据你的 Exchange 版本，可能会同步更少的属性。
+选择启用 **Exchange 混合**部署时，这些属性将从 Azure AD 写回到本地 Active Directory。根据你的 Exchange 版本，可能会同步更少的属性。
 
 | 属性名称| 用户| 联系人| 组| 注释 |
 | --- | :-: | :-: | :-: | --- |
-| msDS-ExternalDirectoryObjectID| X| | | 派生自 Azure AD 中的 cloudAnchor。这是 Exchange 2016 中的新属性。|
+| msDS-ExternalDirectoryObjectID| X| | | 派生自 Azure AD 中的 cloudAnchor。此属性是 Exchange 2016 中的新增属性。|
 | msExchArchiveStatus| X| | | 联机存档：使客户能够存档邮件。|
 | msExchBlockedSendersHash| X| | | 筛选：从客户端写回本地筛选及在线安全和已阻止的发件人数据。|
 | msExchSafeRecipientsHash| X| | | 筛选：从客户端写回本地筛选及在线安全和已阻止的发件人数据。|
@@ -458,12 +455,13 @@
 
 
 ## 说明
+
 - 使用替代 ID 时，本地属性 userPrincipalName 将与 Azure AD 属性 onPremisesUserPrincipalName 同步。替代 ID 属性（例如 mail）将与 Azure AD 属性 userPrincipalName 同步。
-- 在上述列表中，对象类型 User 也适用于对象类型 iNetOrgPerson。
+- 在上述列表中，对象类型 **User** 也适用于对象类型 **iNetOrgPerson**。
 
 ## 后续步骤
 了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0926_2016-->

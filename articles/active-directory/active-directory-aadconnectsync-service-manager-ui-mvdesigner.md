@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure AD Connect 同步：Synchronization Service Manager UI | Azure"
-	description="了解 Azure AD Connect 的 Synchronization Service Manager 中的“Metaverse 设计器”选项卡。"
+	description="了解 Azure AD Connect 的 Synchronization Service Manager 中的"Metaverse 设计器"选项卡。"
 	services="active-directory"
 	documentationCenter=""
 	authors="andkjell"
@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/27/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/07/2016"
+	ms.author="andkjell"
+   wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"/>
 
 
 # Azure AD Connect 同步：Synchronization Service Manager
@@ -27,4 +33,4 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0926_2016-->
