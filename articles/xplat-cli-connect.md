@@ -35,7 +35,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 有关不同帐户的标识和 Azure 订阅的背景信息，请参阅[Azure 订阅如何与 Azure Active Directory 相关联](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
-## 使用 azure 登录名以交互方式进行身份验证
+## <a name="use-the-log-in-method"></a> 使用 azure 登录名以交互方式进行身份验证
 
 使用 `azure login -e AzureChinaCloud` 命令（不带任何参数）- 使用以下任一标识以交互方式进行身份验证：
 
