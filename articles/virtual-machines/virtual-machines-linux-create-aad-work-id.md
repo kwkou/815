@@ -10,8 +10,8 @@
 
 <tags
    ms.service="virtual-machines-linux"
-   ms.date="06/06/2016"
-   wacn.date="07/28/2016"/>
+   ms.date="08/23/2016"
+   wacn.date="10/25/2016"/>
 
 # 在 Azure Active Directory 中创建工作或学校标识以配合 Linux 虚拟机使用
 

@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/14/2016"
-	wacn.date="08/08/2016"/>
+	ms.date="08/31/2016"
+	wacn.date="10/25/2016"/>
 
 # 故障排除：无法启用、访问或连接到运行于 Azure 虚拟机的应用程序
 

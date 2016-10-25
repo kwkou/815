@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/29/2016"
-	wacn.date="08/15/2016"/>
+	ms.date="09/06/2016"
+	wacn.date="10/25/2016"/>
 
 # 将磁盘添加到 Linux VM
 

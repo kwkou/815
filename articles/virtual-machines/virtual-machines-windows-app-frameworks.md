@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/06/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用 Azure Resource Manager 模板部署常用应用程序框架
 

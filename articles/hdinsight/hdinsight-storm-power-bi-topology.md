@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date="07/18/2016"/>
+	ms.date="08/16/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用 Power BI 直观显示 Apache Storm 拓扑中的数据
 

@@ -8,8 +8,8 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="05/31/2016"
-	wacn.date="08/11/2016"/>
+	ms.date="09/12/2016"
+	wacn.date="10/25/2016"/>
 
 # 在 Azure 自动化中创建或导入 Runbook
 

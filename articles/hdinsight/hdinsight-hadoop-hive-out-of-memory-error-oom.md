@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="09/02/2016"
+	wacn.date="10/25/2016"/>
 
 # 在 Azure HDInsight 的 Hadoop 中使用 Hive 内存设置解决内存不足 (OOM) 错误
 

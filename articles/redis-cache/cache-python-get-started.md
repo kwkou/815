@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="05/31/2016"
-	wacn.date="09/05/2016"/>  
+	ms.date="08/16/2016"
+	wacn.date="10/25/2016"/>  
 
 
 # 如何将 Azure Redis 缓存与 Python 配合使用

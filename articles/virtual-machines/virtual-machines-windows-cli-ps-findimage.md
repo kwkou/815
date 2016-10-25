@@ -11,8 +11,8 @@
 
 <tags
    ms.service="virtual-machines-windows"
-   ms.date="06/06/2016"
-   wacn.date="07/28/2016"/>
+   ms.date="08/23/2016"
+   wacn.date="10/25/2016"/>
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Windows 虚拟机映像
 

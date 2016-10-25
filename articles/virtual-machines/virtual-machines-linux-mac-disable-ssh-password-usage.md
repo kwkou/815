@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/29/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="08/26/2016"
+	wacn.date="10/25/2016"/>
 
 # 通过配置 SSHD 禁用 Linux VM 上的 SSH 密码
 

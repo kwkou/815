@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/16/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="09/06/2016"
+	wacn.date="10/25/2016"/>
 
 # 通过远程桌面将 Hive 与 HDInsight 上的 Hadoop 配合使用
 

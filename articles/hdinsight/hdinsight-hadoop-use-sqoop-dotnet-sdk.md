@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/28/2016"
-	wacn.date="08/23/2016"/>
+	ms.date="09/14/2016"
+	wacn.date="10/25/2016"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Sqoop 作业
 

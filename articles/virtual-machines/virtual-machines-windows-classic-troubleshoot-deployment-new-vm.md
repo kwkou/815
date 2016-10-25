@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/20/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="09/06/2016"
+	wacn.date="10/25/2016"/>
 
 # 排查在 Azure 中新建 Windows 虚拟机时遇到的经典部署问题
 
