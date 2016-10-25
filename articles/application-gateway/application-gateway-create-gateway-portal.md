@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="application-gateway"
-	ms.date="08/09/2016"
-	wacn.date="09/12/2016"/>
+	ms.date="09/09/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用门户创建应用程序网关
 

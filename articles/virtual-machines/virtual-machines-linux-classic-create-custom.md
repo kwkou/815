@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/07/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="08/23/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 如何创建自定义 Linux VM

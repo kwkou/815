@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="04/26/2016"
-	wacn.date="05/30/2016"/>
+	ms.date="08/31/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 使用动态 DNS 在自己的 DNS 服务器中注册主机名

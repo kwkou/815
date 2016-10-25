@@ -9,8 +9,8 @@
    keywords="azure active directory 用户, azure 服务管理, azure ad 用户帐户" />
 <tags
    ms.service="automation"
-   ms.date="05/10/2016"
-   wacn.date="08/11/2016" />
+   ms.date="09/12/2016"
+   wacn.date="10/25/2016" />
 
 # 使用 Azure 服务管理对 Runbook 进行身份验证
 

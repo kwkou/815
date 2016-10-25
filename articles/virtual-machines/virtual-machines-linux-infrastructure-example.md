@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/24/2016"
-	wacn.date="08/08/2016"/>
+	ms.date="09/08/2016"
+	wacn.date="10/25/2016"/>
 
 # 示例 Azure 基础结构演练
 

@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/29/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="08/18/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用门户预览在 Azure 上创建 Linux VM
 

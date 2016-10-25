@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/22/2016"
-	wacn.date="08/23/2016"/>
+	ms.date="09/07/2016"
+	wacn.date="10/25/2016"/>
 
 
 # Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门

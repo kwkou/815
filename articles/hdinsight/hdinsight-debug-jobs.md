@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/10/2016"
-	wacn.date="07/28/2016"/>
+	ms.date="09/02/2016"
+	wacn.date="10/25/2016"/>
 
 # 分析 HDInsight 日志
 

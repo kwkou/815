@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="06/24/2016"
-	wacn.date="08/11/2016"/>
+	ms.date="09/12/2016"
+	wacn.date="10/25/2016"/>
 
 # 学习 Windows PowerShell 工作流
 

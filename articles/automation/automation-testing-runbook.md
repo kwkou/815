@@ -8,8 +8,8 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="05/24/2016"
-	wacn.date="08/11/2016"/>
+	ms.date="09/12/2016"
+	wacn.date="10/25/2016"/>
 
 # 在 Azure 自动化中测试 Runbook
 测试 Runbook 时，将执行[草稿版](/documentation/articles/automation-creating-importing-runbook/#publishing-a-runbook)，并会完成其所执行的任何操作。不会创建作业历史记录，但会在测试输出窗格中显示“[输出](/documentation/articles/automation-runbook-output-and-messages/#output-stream)”与“[警告和错误](/documentation/articles/automation-runbook-output-and-messages/#message-streams)”。仅当 [$VerbosePreference 变量](/documentation/articles/automation-runbook-output-and-messages/#preference-variables)设置为 Continue 时，才会在输出窗格中显示发送到“[详细流](/documentation/articles/automation-runbook-output-and-messages/#message-streams)”的消息。

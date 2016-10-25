@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/06/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="08/24/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 在 Azure 中的 Linux VM 上配置 LVM

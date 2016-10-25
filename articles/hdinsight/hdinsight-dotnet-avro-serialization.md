@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/10/2016"
-	wacn.date="09/30/2016"/>
+	ms.date="09/14/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 使用 Microsoft Avro Library 序列化 Hadoop 中的数据
