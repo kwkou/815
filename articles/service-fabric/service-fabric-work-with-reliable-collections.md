@@ -9,6 +9,7 @@
 
 <tags
     ms.service="multiple"
+	ms.date="03/28/2016"
     wacn.date="07/04/2016"/>
 
 # 使用可靠集合
