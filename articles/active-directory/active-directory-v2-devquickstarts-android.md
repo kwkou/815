@@ -1,26 +1,33 @@
 <properties
-	pageTitle="Azure AD v2.0 Android 应用 | Azure"
-	description="如何生成使用个人 Microsoft 帐户和工作或学校帐户进行登录的 Android 应用。"
+	pageTitle="Azure Active Directory v2.0 Android 应用 | Azure"
+	description="如何生成一个使用 Microsoft 个人帐户和工作或学校帐户让用户登录并通过第三方库调用图形 API 的 Android 应用。"
 	services="active-directory"
 	documentationCenter=""
-	authors="dstrockis"
+	authors="brandwe"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="06/27/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="brandwe"
+   	wacn.date="10/25/2016"/>  
 
-# 使用 v2.0 终结点将登录帐户添加到 Android 应用
 
-Microsoft 标识平台使用开放式标准，例如 OAuth2 和 OpenID Connect。开发人员可以使用任何想要的库来与我们的服务集成。为了帮助开发人员将我们的平台与其他库结合使用，我们撰写了数篇演练（例如本演练），演示如何配置第三方库以连接到 Microsoft 标识平台。大部分实施 [RFC6749 OAuth2 规范](https://tools.ietf.org/html/rfc6749)的库都能连接到 Microsoft 标识平台。
+#  使用 v2.0 终结点，通过图形 API 将登录添加到使用第三方库的 Android 应用
+
+Microsoft 标识平台使用开放式标准，例如 OAuth2 和 OpenID Connect。开发人员可以使用任何想要的库来与我们的服务集成。为了帮助开发人员将我们的平台与其他库结合使用，我们撰写了数篇演练（例如本演练），演示如何配置第三方库，使其连接到 Microsoft 标识平台。大部分实施 [RFC6749 OAuth2 规范](https://tools.ietf.org/html/rfc6749)的库都能连接到 Microsoft 标识平台。
 
 借助本演练创建的应用程序，用户可以使用图形 API 登录到其组织，然后在组织中搜索他们自己。
 
 如果你是 OAuth2 或 OpenID Connect 新手，此示例配置可能不太适合你。建议阅读 [2\.0 协议 — OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols-oauth-code/)了解背景信息。
 
-> [AZURE.NOTE] 我们的平台中有些功能（例如条件性访问和 Intune 策略管理）采用 OAuth2 或 OpenID Connect 标准中的表达式，所以会要求你使用开放源代码 Microsoft Azure 标识库。
+> [AZURE.NOTE] 我们平台中的有些功能（例如条件访问和 Intune 策略管理）采用 OAuth2 或 OpenID Connect 标准中的表达式，所以会要求使用开放源代码 Azure 标识库。
 
 v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。
 
@@ -37,7 +44,7 @@ v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。
 你也可以下载以下示例，并立即开始使用：
 
 
-git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.git
+	git@github.com:Azure-Samples/active-directory-android-native-oidcandroidlib-v2.git
 
 
 ## 注册应用程序
@@ -45,7 +52,8 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 
 - 复制分配给应用的“应用程序 ID”，因为稍后将要用到。
 - 为应用添加**移动**平台。
-- 从门户复制**重定向 URI**。必须使用默认值 `https://login.microsoftonline.com/common/oauth2/nativeclient`。
+
+> 注：应用程序注册门户提供**重定向 URI** 值。但是，在此示例中，必须使用 `https://login.microsoftonline.com/common/oauth2/nativeclient` 的默认值。
 
 
 ## 下载 NXOAuth2 第三方库并创建工作区
@@ -55,8 +63,7 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 将 OIDCAndroidLib 副本克隆到你的计算机。
 
 
-`git@github.com:kalemontes/OIDCAndroidLib.git`  
-
+	git@github.com:kalemontes/OIDCAndroidLib.git
 
 
 ![androidStudio](./media/active-directory-android-native-oidcandroidlib-v2/emotes-url.png)  
@@ -89,7 +96,8 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 
 5. 将克隆的副本中的模块导入当前项目。
 
-	![导入 gradle 项目](./media/active-directory-android-native-oidcandroidlib-v2/SetUpSample6.PNG) ![创建新的模块页](./media/active-directory-android-native-oidcandroidlib-v2/SetUpSample7.PNG)
+	![导入 gradle 项目](./media/active-directory-android-native-oidcandroidlib-v2/SetUpSample6.PNG) 
+	![创建新的模块页](./media/active-directory-android-native-oidcandroidlib-v2/SetUpSample7.PNG)
 
 6. 针对 `oidlib-sample` 模块重复上述步骤。
 
@@ -132,14 +140,14 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 
 1. 由于你只使用 OAuth2 流来获得令牌并调用图形 API，因此将客户端设置为只使用 OAuth2。在后面的示例中将使用 OIDC。
 
-   xml
+	xml
 
 	    <bool name="oidc_oauth2only">true</bool>
 	
 
 2. 配置从注册门户收到的客户端 ID。
 
-   xml
+	xml
 
 	    <string name="oidc_clientId">86172f9d-a1ae-4348-aafa-7b3e5d1b36f5</string>
 	    <string name="oidc_clientSecret"></string>
@@ -147,14 +155,14 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 
 3. 使用下面的文本配置重定向 URI。
 
-   xml
+	xml
 
 	    <string name="oidc_redirectUrl">https://login.microsoftonline.com/common/oauth2/nativeclient</string>
 	
 
 4. 配置访问图形 API 所需的范围。
 
-  xml
+	xml
 
 	    <string-array name="oidc_scopes">
 	        <item>openid</item>
@@ -172,7 +180,7 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 
 - 打开 `oidc_endpoints.xml` 文件并进行以下更改：
 
-  xml
+xml
 
 	<!-- Stores OpenID Connect provider endpoints. -->
 	<resources>
@@ -193,7 +201,7 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 
 - 打开 `HomeActivity.java` 文件并进行以下更改：
 
- Java
+Java
 
 	   //TODO: set your protected resource url
 	    private static final String protectedResUrl = "https://graph.microsoft.com/v1.0/me/";
@@ -209,4 +217,4 @@ git@github.com: Azure-Samples/active-directory-android-native-oidcandroidlib-v2.
 
 我们建议你通过访问[安全技术中心](https://technet.microsoft.com/security/dd252948)并订阅“安全公告”来获取有关安全事件的通知。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1017_2016-->

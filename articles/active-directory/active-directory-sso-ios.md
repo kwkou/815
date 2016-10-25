@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="brandwe"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="brandwe"
+	wacn.date="10/25/2016"/>  
+
 
 
 # 如何使用 ADAL 在 iOS 上启用跨应用 SSO
@@ -27,17 +34,16 @@ Microsoft 标识平台以及 Microsoft 标识 SDK 能够为你完成所有这些
 本演练适用于：
 
 * Azure Active Directory
-* Azure Active Directory B2C
 * Azure Active Directory B2B
 
 
-请注意，以下文档假设你已了解如何[在旧版门户中为 Azure Active Directory 预配应用程序](/documentation/articles/active-directory-how-to-integrate/)，并且你已将应用程序与 [Microsoft Identity iOS SDK](https://github.com/AzureAD/azure-activedirectory-library-for-objc) 集成。
+请注意，以下文档假设已了解如何[在旧版门户中为 Azure Active Directory 预配应用程序](/documentation/articles/active-directory-how-to-integrate/)，并且已将应用程序与 [Microsoft Identity iOS SDK](https://github.com/AzureAD/azure-activedirectory-library-for-objc) 集成。
 
 ## Microsoft 标识平台中的 SSO 概念
 
 ### Microsoft 标识中转站
 
-Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允许为每个移动平台的应用程序，以及允许特殊的增强功能，需要一个安全的位置，从何处来验证凭据。我们称之为“中转站”。在 iOS 和 Android 提供这些方法通过可下载的应用程序的客户可以独立安装或由公司负责管理其员工的部分或全部设备推送到设备。这些中转站只是为了某些应用程序或整个根据 IT 管理员所需的设备支持安全管理。在 Windows 内置于操作系统，已知技术作为 Web 身份验证中转站帐户选择器提供此功能。
+Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允许为每个移动平台的应用程序，以及允许特殊的增强功能，需要一个安全的位置，从何处来验证凭据。我们称之为**中转站**。在 iOS 和 Android 提供这些方法通过可下载的应用程序的客户可以独立安装或由公司负责管理其员工的部分或全部设备推送到设备。这些中转站只是为了某些应用程序或整个根据 IT 管理员所需的设备支持安全管理。在 Windows 内置于操作系统，已知技术作为 Web 身份验证中转站帐户选择器提供此功能。
 
 为了理解我们如何使用这些中转站以及你的客户如何在 Microsoft 标识平台的登录流中发现它们的用途，请继续阅读以了解详细信息。
 
@@ -66,19 +72,19 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 下面介绍了 Microsoft 标识 SDK 如何与应用程序的共享存储配合工作以启用 SSO：
 
-```
-+------------+ +------------+  +-------------+
-|            | |            |  |             |
-|   App 1    | |   App 2    |  |   App 3     |
-|            | |            |  |             |
-|            | |            |  |             |
-+------------+ +------------+  +-------------+
-| Azure SDK  | | Azure SDK  |  | Azure SDK   |
-+------------+-+------------+--+-------------+
-|                                            |
-|            App Shared Storage              |
-+--------------------------------------------+
-```
+	
+	+------------+ +------------+  +-------------+
+	|            | |            |  |             |
+	|   App 1    | |   App 2    |  |   App 3     |
+	|            | |            |  |             |
+	|            | |            |  |             |
+	+------------+ +------------+  +-------------+
+	| Azure SDK  | | Azure SDK  |  | Azure SDK   |
+	+------------+-+------------+--+-------------+
+	|                                            |
+	|            App Shared Storage              |
+	+--------------------------------------------+
+
 
 #### 中转站辅助的登录
 
@@ -109,30 +115,30 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 
 下面介绍了 Microsoft 标识 SDK 如何与应用程序的中转站应用程序配合工作以启用 SSO：
+	
+	
+	+------------+ +------------+   +-------------+
+	|            | |            |   |             |
+	|   App 1    | |   App 2    |   |   Someone   |
+	|            | |            |   |    Else's   |
+	|            | |            |   |     App     |
+	+------------+ +------------+   +-------------+
+	| Azure SDK  | | Azure SDK  |   | Azure SDK   |
+	+-----+------+-+-----+------+-  +-------+-----+
+	      |              |                  |
+	      |       +------v------+           |
+	      |       |             |           |
+	      |       | Microsoft   |           |
+	      +-------> Broker      |^----------+
+	              | Application
+	              |             |
+	              +-------------+
+	              |             |
+	              |   Broker    |
+	              |   Storage   |
+	              |             |
+	              +-------------+
 
-```
-+------------+ +------------+   +-------------+
-|            | |            |   |             |
-|   App 1    | |   App 2    |   |   Someone   |
-|            | |            |   |    Else's   |
-|            | |            |   |     App     |
-+------------+ +------------+   +-------------+
-| Azure SDK  | | Azure SDK  |   | Azure SDK   |
-+-----+------+-+-----+------+-  +-------+-----+
-      |              |                  |
-      |       +------v------+           |
-      |       |             |           |
-      |       | Microsoft   |           |
-      +-------> Broker      |^----------+
-              | Application
-              |             |
-              +-------------+
-              |             |
-              |   Broker    |
-              |   Storage   |
-              |             |
-              +-------------+
-```
               
 了解这些背景信息后，你应该可以更好地理解 SSO 并使用 Microsoft 标识平台和 SDK 在应用程序中实现它。
 
@@ -159,40 +165,40 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 为了让 Microsoft 标识平台知道你可以跨应用程序共享令牌，每个应用程序需要共享同一个客户端 ID 或应用程序 ID。这是在门户中注册第一个应用程序时为你提供的唯一标识符。
 
-如果应用使用相同的应用程序 ID，你可能想要知道如何在 Microsoft 标识服务中标识不同的应用。答案是使用“重定向 URI”。每个应用程序可以在登记门户中注册多个重定向 URI。套件中的每个应用程序具有不同的重定向 URI。下面显示了这种情况的示例：
+如果应用使用相同的应用程序 ID，你可能想要知道如何在 Microsoft 标识服务中标识不同的应用。答案是使用**重定向 URI**。每个应用程序可以在登记门户中注册多个重定向 URI。套件中的每个应用程序具有不同的重定向 URI。下面显示了这种情况的示例：
 
-应用 1 重定向 URI：`x-msauth-mytestiosapp://com.myapp.mytestapp`
+App1 重定向 URI：`x-msauth-mytestiosapp://com.myapp.mytestapp`
 
-应用 2 重定向 URI：`x-msauth-mytestiosapp://com.myapp.mytestapp2`
+App2 重定向 URI：`x-msauth-mytestiosapp://com.myapp.mytestapp2`
 
-应用 3 重定向 URI：`x-msauth-mytestiosapp://com.myapp.mytestapp3`
+App3 重定向 URI：`x-msauth-mytestiosapp://com.myapp.mytestapp3`
 
 ....
 
 这些应用嵌套在同一个客户端 ID/应用程序 ID 下，可以根据你在 SDK 配置中返回给我们的重定向 URI 来查找。
 
-```
-+-------------------+
-|                   |
-|  Client ID        |
-+---------+---------+
-          |
-          |           +-----------------------------------+
-          |           |  App 1 Redirect URI               |
-          +----------^+                                   |
-          |           +-----------------------------------+
-          |
-          |           +-----------------------------------+
-          +----------^+  App 2 Redirect URI               |
-          |           |                                   |
-          |           +-----------------------------------+
-          |
-          +----------^+-----------------------------------+
-                      |  App 3 Redirect URI               |
-                      |                                   |
-                      +-----------------------------------+
+	
+	+-------------------+
+	|                   |
+	|  Client ID        |
+	+---------+---------+
+	          |
+	          |           +-----------------------------------+
+	          |           |  App 1 Redirect URI               |
+	          +----------^+                                   |
+	          |           +-----------------------------------+
+	          |
+	          |           +-----------------------------------+
+	          +----------^+  App 2 Redirect URI               |
+	          |           |                                   |
+	          |           +-----------------------------------+
+	          |
+	          +----------^+-----------------------------------+
+	                      |  App 3 Redirect URI               |
+	                      |                                   |
+	                      +-----------------------------------+
+	
 
-```
 
 
 *请注意，下面介绍了这些重定向 URI 的格式。你可以使用任何重定向 URI，除非你想要支持中转站，在这种情况下，它们必须如上所示*
@@ -201,28 +207,28 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 #### 创建在应用程序之间共享的密钥链
 
-启用密钥链共享超出了本文档的范围，Apple 文档[添加功能](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html)中作了具体介绍。重要的是，你需要决定密钥链的调用方式，并将该功能添加到所有应用程序。
+启用密钥链共享超出了本文档的范围，Apple 文档 [Adding Capabilities](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html)（添加功能）中作了具体介绍。重要的是，你需要决定密钥链的调用方式，并将该功能添加到所有应用程序。
 
-在所需权限设置正确你应看到标题为你的项目目录中的文件 `entitlements.plist`，其中包含类似于下面的内容：
+如果正确设置了授权，应在项目目录中看到标题为 `entitlements.plist` 的文件，其中包含类似如下的内容：
 
-
-		<?xml version="1.0" encoding="UTF-8"?>
-		<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-		<plist version="1.0">
-		<dict>
-			<key>keychain-access-groups</key>
-			<array>
-				<string>$(AppIdentifierPrefix)com.myapp.mytestapp</string>
-				<string>$(AppIdentifierPrefix)com.myapp.mycache</string>
-			</array>
-		</dict>
-		</plist>
-
-
-在每个应用程序中启用密钥链授权，并且你可供使用 SSO 后，请在 `ADAuthenticationSettings` 中使用以下设置来告知 Microsoft 标识 SDK 你要使用的密钥链：
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+	<dict>
+		<key>keychain-access-groups</key>
+		<array>
+			<string>$(AppIdentifierPrefix)com.myapp.mytestapp</string>
+			<string>$(AppIdentifierPrefix)com.myapp.mycache</string>
+		</array>
+	</dict>
+	</plist>
 
 
-		defaultKeychainSharingGroup=@"com.myapp.mycache";
+在每个应用程序中启用密钥链授权，并准备好使用 SSO 后，请在 `ADAuthenticationSettings` 中使用以下设置告知 Microsoft Identity SDK 关于密钥链的信息：
+
+
+	defaultKeychainSharingGroup=@"com.myapp.mycache";
 
 
 > [AZURE.WARNING] 
@@ -232,7 +238,7 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 ### 打开对中转站辅助 SSO 的 SSO
 
-应用程序使用安装在设备上的任何中转站的功能默认情况下已关闭。若要向中转站使用应用程序必须执行一些额外配置，并将一些代码添加到你的应用程序。
+**默认关闭**应用程序使用安装在设备上的任何中转站的功能。若要向中转站使用应用程序必须执行一些额外配置，并将一些代码添加到你的应用程序。
 
 要遵循的步骤如下：
 
@@ -245,11 +251,11 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 #### 步骤 1：在应用程序中启用中转站模式
 创建“上下文”或身份验证对象的初始安装时，应用程序使用了中转站的功能被打开的。通过在代码中设置凭据类型中执行此操作：
 
-		
-		/*! See the ADCredentialsType enumeration definition for details */
-		@propertyADCredentialsType credentialsType;
+	
+	/*! See the ADCredentialsType enumeration definition for details */
+	@propertyADCredentialsType credentialsType;
 
-`AD_CREDENTIALS_AUTO` 设置允许 Microsoft 标识 SDK 尝试调用中转站，而 `AD_CREDENTIALS_EMBEDDED` 阻止 Microsoft 标识 SDK 调用中转站。
+`AD_CREDENTIALS_AUTO` 设置允许 Microsoft Identity SDK 尝试调用中转站，而 `AD_CREDENTIALS_EMBEDDED` 阻止 Microsoft Identity SDK 调用中转站。
 
 #### 步骤 2：注册 URL 方案
 Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回给应用程序。若要完成这种往返过程，你需要为应用程序注册一个 Microsoft 标识平台所知的 URL 方案。此方案可以不同于你以前注册到应用程序的其他应用方案。
@@ -259,20 +265,20 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 下面是在项目配置中的显示方式示例。你也可以在 XCode 中执行此操作：
 
-
-		<key>CFBundleURLTypes</key>
-		<array>
-		    <dict>
-		        <key>CFBundleTypeRole</key>
-		        <string>Editor</string>
-		        <key>CFBundleURLName</key>
-		        <string>com.myapp.mytestapp</string>
-		        <key>CFBundleURLSchemes</key>
-		        <array>
-		            <string>x-msauth-mytestiosapp</string>
-		        </array>
-		    </dict>
-		</array>
+	
+	<key>CFBundleURLTypes</key>
+	<array>
+	    <dict>
+	        <key>CFBundleTypeRole</key>
+	        <string>Editor</string>
+	        <key>CFBundleURLName</key>
+	        <string>com.myapp.mytestapp</string>
+	        <key>CFBundleURLSchemes</key>
+	        <array>
+	            <string>x-msauth-mytestiosapp</string>
+	        </array>
+	    </dict>
+	</array>
 
 
 #### 步骤 3：使用 URL 方案建立新的重定向 URI
@@ -281,33 +287,35 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 重定向 URI 必须采用正确的格式：
 
-`<app-scheme>://<your.bundle.id>`
+`<app-scheme>://<your.bundle.id>`  
 
-例如：x msauth mytestiosapp://com.myapp.mytestapp
 
-需要使用 [Azure 经典门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
+例如：*x-msauth-mytestiosapp://com.myapp.mytestapp*
+
+需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate/)。
 
 
 ##### 步骤 3a：在应用和开发人员门户添加重定向 URI，以支持基于证书的身份验证
 
-为支持基于证书身份验证第二个“msauth”需要在应用程序中注册和 [Azure 经典门户](https://manage.windowsazure.cn/)处理证书身份验证，如果你想要在你的应用程序中添加该功能的支持。
+若要支持基于证书的身份验证，必须在应用程序和 [Azure 经典管理门户](https://manage.windowsazure.cn/)中注册第二个“msauth”，以处理证书身份验证（如果想要在应用程序中添加该支持）。
 
-`msauth://code/<broker-redirect-uri-in-url-encoded-form>`
+`msauth://code/<broker-redirect-uri-in-url-encoded-form>`  
+
 
 例如：*msauth://code/x-msauth-mytestiosapp%3A%2F%2Fcom.myapp.mytestapp*
 
 
 #### 步骤 4：iOS9：将配置参数添加到应用
 
-ADAL 使用 -canOpenURL: 来检查是否在设备上安装了中转站。在 iOS 9 中，Apple 锁定了应用程序可以查询的方案。你需要将“msauth”添加到 `info.plist file` 的 LSApplicationQueriesSchemes 节。
+ADAL 使用 -canOpenURL: 来检查是否在设备上安装了中转站。在 iOS 9 中，Apple 锁定了应用程序可以查询的方案。需要将“msauth”添加到 `info.plist file` 的 LSApplicationQueriesSchemes 节。
 
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>msauth</string>
-	</array>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+     <string>msauth</string>
+</array>
 
 ### 你已配置 SSO！
 
 现在，Microsoft 标识 SDK 将自动在应用程序之间共享凭据并调用中转站（如果在设备上存在）。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->
