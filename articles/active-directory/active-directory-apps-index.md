@@ -15,7 +15,6 @@
 	ms.topic="article"
 	ms.date="09/02/2016"
 	ms.author="markvi"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>
 
 #有关 Azure Active Directory 中应用程序管理的文章索引

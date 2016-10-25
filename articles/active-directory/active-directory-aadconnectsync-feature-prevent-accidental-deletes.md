@@ -16,7 +16,6 @@
    ms.date="09/01/2016"
    ms.author="andkjell"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # Azure AD Connect 同步：防止意外删除
 本主题说明 Azure AD Connect 中的防止意外删除功能。
@@ -52,10 +51,10 @@
 
 如果想要查看所有删除项，请执行以下操作：
 
-1. 若要暂时禁用此保护并允许删除这些项，请运行 PowerShell cmdlet：`Disable-ADSyncExportDeletionThreshold`。提供 Azure AD 全局管理员帐户和密码。
+1. 若要暂时禁用此保护并允许删除这些项，请运行 PowerShell cmdlet：`Disable-ADSyncExportDeletionThreshold` 提供 Azure AD 全局管理员帐户和密码。
 ![凭据](./media/active-directory-aadconnectsync-feature-prevent-accidental-deletes/credentials.png)
 2. 如果 Azure Active Directory 连接器仍被选中，请选择"运行"操作，再选择"导出"。
-3. 若要重新启用保护，请运行 PowerShell cmdlet：`Enable-ADSyncExportDeletionThreshold`。
+3. 若要重新启用保护，请运行 PowerShell cmdlet：`Enable-ADSyncExportDeletionThreshold`
 
 ## 后续步骤
 

@@ -15,7 +15,6 @@
 	ms.topic="article"
 	ms.date="08/15/2015"
 	ms.author="inhenk"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>
 
 # Azure AD 和应用程序：将用户分配到应用程序

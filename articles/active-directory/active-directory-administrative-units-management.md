@@ -16,7 +16,6 @@
    ms.date="08/23/2016"
    ms.author="curtand"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # Azure AD - 公共预览版中的管理单元管理
 

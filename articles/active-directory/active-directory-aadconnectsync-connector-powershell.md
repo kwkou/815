@@ -16,7 +16,6 @@
    ms.date="08/30/2016"
    ms.author="andkjell"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # Windows PowerShell 连接器技术参考
 本文介绍 Windows PowerShell 连接器。本文适用于以下产品：
@@ -74,10 +73,12 @@ Windows PowerShell 连接器用于存储同步服务数据库中的每个脚本�
 对于导入、导出和密码同步脚本，会将通用模块提取到连接器的 MAData 文件夹。对于架构、验证、层次结构和分区发现脚本，则将通用模块提取到 %TEMP% 文件夹。在这两种情况下，所提取的通用模块脚本根据通用模块脚本名称设置进行命名。
 
 若要从 MAData 文件夹加载名为 FIMPowerShellConnectorModule.psm1 的模块，请使用以下语句：
-`Import-Module (Join-Path -Path [Microsoft.MetadirectoryServices.MAUtils]::MAFolder -ChildPath "FIMPowerShellConnectorModule.psm1")`
+
+	Import-Module (Join-Path -Path [Microsoft.MetadirectoryServices.MAUtils]::MAFolder -ChildPath "FIMPowerShellConnectorModule.psm1")
 
 若要从 %TEMP% 文件夹加载名为 FIMPowerShellConnectorModule.psm1 的模块，请使用以下语句：
-`Import-Module (Join-Path -Path $env:TEMP -ChildPath "FIMPowerShellConnectorModule.psm1")`
+
+	Import-Module (Join-Path -Path $env:TEMP -ChildPath "FIMPowerShellConnectorModule.psm1")
 
 **参数验证**  
 验证脚本是可选的 Windows PowerShell 脚本，可用于确保管理员提供的连接器配置参数有效。验证服务器、连接凭据和连接参数是验证脚本的常见用途。如果修改以下选项卡和对话框，将会调用验证脚本：

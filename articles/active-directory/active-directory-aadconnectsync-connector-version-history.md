@@ -16,7 +16,6 @@
    ms.date="08/17/2016"
    ms.author="andkjell"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # 连接器版本发行历史记录
 Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接器会经常更新。

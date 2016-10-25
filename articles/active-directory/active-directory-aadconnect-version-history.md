@@ -16,7 +16,6 @@
    ms.date="08/23/2016"
    ms.author="andkjell"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # Azure AD Connect：版本发布历史记录
 

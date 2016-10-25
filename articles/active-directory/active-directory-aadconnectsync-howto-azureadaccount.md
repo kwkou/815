@@ -16,7 +16,6 @@
 	ms.topic="article"
 	ms.date="09/01/2016"
 	ms.author="andkjell"
-   wacn.date="10/11/2016"/>
 	wacn.date="10/11/2016"/>
 
 # Azure AD Connect 同步：如何管理 Azure AD 服务帐户
@@ -26,7 +25,7 @@ Azure AD 连接器所使用的服务帐户应该是免费服务。但如果需�
 如果 Azure AD 连接器上定义的服务帐户由于身份验证问题无法联系 Azure AD，则可以重置密码。
 
 1. 登录到 Azure AD Connect 同步服务器并启动 PowerShell。
-2. 运行 `Add-ADSyncAADServiceAccount`。  
+2. 运行 `Add-ADSyncAADServiceAccount`
 ![PowerShell cmdlet addadsyncaadserviceaccount](./media/active-directory-aadconnectsync-howto-azureadaccount/addadsyncaadserviceaccount.png)
 3. 提供 Azure AD 全局管理员凭据。
 

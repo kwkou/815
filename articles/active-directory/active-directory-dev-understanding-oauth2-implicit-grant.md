@@ -16,7 +16,6 @@
    ms.date="08/17/2016"
    ms.author="vittorib;bryanla"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # 了解 Azure Active Directory (AD) 中的 OAuth2 隐式授权流
 

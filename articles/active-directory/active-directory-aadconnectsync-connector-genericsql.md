@@ -16,7 +16,6 @@
    ms.date="08/30/2016"
    ms.author="andkjell"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>  
 
 
 # 泛型 SQL 连接器技术参考

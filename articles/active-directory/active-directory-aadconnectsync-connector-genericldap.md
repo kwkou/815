@@ -16,8 +16,6 @@
    ms.date="08/30/2016"
    ms.author="andkjell"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>  
-
 
 # 泛型 LDAP 连接器技术参考
 本指南介绍泛型 LDAP 连接器。本文适用于以下产品：

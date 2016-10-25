@@ -16,7 +16,6 @@
    ms.date="08/31/2016"
    ms.author="bryanla"
    wacn.date="10/11/2016"/>
-   wacn.date="10/11/2016"/>
 
 # Azure Active Directory 开发人员词汇表
 本文包含一些核心 Azure Active Directory (AD) 开发人员概念的定义，帮助你了解 Azure AD 的应用程序开发。
