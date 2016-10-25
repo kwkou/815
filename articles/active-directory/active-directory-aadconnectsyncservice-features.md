@@ -49,7 +49,6 @@ DirSyncFeature | 注释
 
 DirSyncFeature | 注释
 --- | ---
-DeviceWriteback | [Azure AD Connect：启用设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback/)
 DirectoryExtensions | [Azure AD Connect 同步：目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)
 PasswordSync | [使用 Azure AD Connect 同步实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)
 UnifiedGroupWriteback | [预览：组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback/)

@@ -64,38 +64,5 @@
 > 
 > 附加应用程序徽标（PNG 文件，150 x 122 像素，透明背景色）：
 
-##SAML 集成
 
-如果[使用这些说明添加自定义应用程序](/documentation/articles/active-directory-saas-custom-apps/)，支持 SAML 2.0 的任何应用程序都可直接与 Azure AD 租户集成。应用程序经测试可与 Azure AD 集成后，请将以下信息发送到 <waadpartners@microsoft.com>。
-
-* 提供应用程序测试租户或帐户的凭据，使 Azure AD 团队可以测试集成。
-
-* 按[此处](/documentation/articles/active-directory-saas-custom-apps/)所述提供应用程序的 SAML 登录 URL、颁发者 URL（实体 ID）和回复 URL（断言使用者服务）的值。如果你一般情况下在 SAML 元数据文件中提供了这些值，请随附该文件。
-
-* 提供有关如何在使用 SAML 2.0 的应用程序中配置 Azure AD 作为标识提供者的简短描述。如果应用程序支持通过自助服务管理门户将 Azure AD 配置为标识提供者，请确保上面提供的凭据可用于进行此项设置。
-
-* 提供以下信息：
-
-> 公司名称：
-> 
-> 公司网站：
-> 
-> 应用程序名称：
-> 
-> 应用程序说明（限制为 256 个字符）：
-> 
-> 应用程序网站（参考性）：
-> 
-> 应用程序技术支持网站或联系信息：
-> 
-> 客户注册和/或购买应用程序时所用的应用程序注册 URL：
-> 
-> 选择应用程序所要列入到的最多三个类别（有关可用类别，请参阅 [Azure Active Directory Marketplace](https://azure.microsoft.com/marketplace/active-directory)（Azure Active Directory 应用商店））：
-> 
-> 附加应用程序小图标（PNG 文件，45 x 45 像素，实色背景）：
-> 
-> 附加应用程序大图标（PNG 文件，215 x 215 像素，实色背景）：
-> 
-> 附加应用程序徽标（PNG 文件，150 x 122 像素，透明背景色）：
-
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_0411_2016-->

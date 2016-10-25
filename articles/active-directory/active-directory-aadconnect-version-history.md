@@ -120,7 +120,6 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **从预览版升级到 GA 的功能：**
 
-- [设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback/)。
 - [目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)。
 
 **新的预览功能：**
