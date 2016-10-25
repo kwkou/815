@@ -10,7 +10,7 @@
 	tags="azure-resource-manager" />
 
 <tags
-	ms.service="virtual-machine-linux"
+	ms.service="virtual-machine-scale-sets"
 	ms.date="03/31/2016"
 	wacn.date="08/29/2016"/>  
 
