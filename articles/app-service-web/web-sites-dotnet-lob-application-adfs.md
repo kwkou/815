@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/26/2016" 
-	wacn.date="04/26/2016"/>
+	ms.date="08/31/2016" 
+	wacn.date="10/25/2016"/>
 
 # 在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 

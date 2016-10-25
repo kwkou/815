@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="05/12/2016"
-	wacn.date="05/30/2016"/>
+	ms.date="09/09/2016"
+	wacn.date="10/25/2016"/>
 	
 # 在 5 分钟内将第一个 Web 应用部署到 Azure
 

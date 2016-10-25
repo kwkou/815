@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="04/07/2016"
-	wacn.date="05/30/2016"/>
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用 PowerShell 将应用程序连接到虚拟网络 #
 
