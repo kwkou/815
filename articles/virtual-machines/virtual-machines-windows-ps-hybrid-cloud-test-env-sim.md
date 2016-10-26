@@ -52,7 +52,7 @@
 
 登录到你的帐户。
 
-	Login-AzureRMAccount
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 使用以下命令获取订阅名称。
 

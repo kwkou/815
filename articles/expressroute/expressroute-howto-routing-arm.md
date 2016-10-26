@@ -62,7 +62,7 @@
 
 	登录到你的帐户
 
-		Login-AzureRmAccount
+		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 	选择要创建 ExpressRoute 线路的订阅
 		
@@ -182,7 +182,7 @@
 
 	登录到你的帐户
 
-		Login-AzureRmAccount
+		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 	选择要创建 ExpressRoute 线路的订阅
 		

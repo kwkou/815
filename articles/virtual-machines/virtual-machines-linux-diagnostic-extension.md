@@ -51,7 +51,7 @@ Linux 诊断扩展可帮助用户监视 Azure 上运行的 Linux VM。它具有�
 
 - **Azure CLI**。请按照[此 CLI 安装指南](/documentation/articles/xplat-cli-install/)中的说明在计算机上设置 Azure CLI 环境。安装 Azure CLI 之后，可以从命令行接口（Bash、终端或命令提示符）使用 **azure** 命令访问 Azure CLI 命令。例如：
 	- 运行 **azure vm extension set --help** 了解详细的帮助信息。
-	- 运行 **azure login** 以登录到 Azure。
+	- 运行 **azure login -e AzureChinaCloud** 以登录到 Azure。
 	- 运行 **azure vm list** 可列出你在 Azure 上拥有的所有虚拟机。
 - 用于存储数据的存储帐户。你将需要以前创建的存储帐户名称和访问密钥，以将数据上载到存储中。
 

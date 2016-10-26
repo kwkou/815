@@ -26,7 +26,7 @@
 
 - 一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）
 
-- 已使用 `azure login` 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)。
+- 已使用 `azure login -e AzureChinaCloud` 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 - Azure CLI _必须处于_ Azure Resource Manager 模式 `azure config mode arm`。
 

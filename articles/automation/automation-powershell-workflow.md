@@ -239,7 +239,7 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
     workflow CreateTestVms
     {
        $Cred = Get-AzureAutomationCredential -Name "MyCredential"
-       $null = Add-AzureRmAccount -Credential $Cred
+       $null = Add-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $Cred
 
        $VmsToCreate = Get-AzureAutomationVariable -Name "VmsToCreate"
 
@@ -254,7 +254,7 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
           $Cred = $null
           Checkpoint-Workflow
           $Cred = Get-AzureAutomationCredential -Name "MyCredential"
-          $null = Add-AzureRmAccount -Credential $Cred
+          $null = Add-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $Cred
          }
      } 
 

@@ -38,9 +38,9 @@
 
 ## 步骤 1：创建资源组和存储帐户
 
-1. **登录到 Azure** - 在命令行接口（Bash、终端、命令提示符）中，通过键入 `azure config mode arm` 确保处于资源管理器模式，然后通过键入 `azure login` 来[使用工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)，并按照提示完成 Azure 帐户的交互式登录体验。
+1. **登录到 Azure** - 在命令行接口（Bash、终端、命令提示符）中，通过键入 `azure config mode arm` 确保处于资源管理器模式，然后通过键入 `azure login -e AzureChinaCloud` 来[使用工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)，并按照提示完成 Azure 帐户的交互式登录体验。
 
-	> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，则可以使用 `azure login -u` 以及工作或学校 ID，在没有交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/resource-group-create-work-id-from-personal/)。
+	> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，则可以使用 `azure login -e AzureChinaCloud -u` 以及工作或学校 ID，在没有交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/resource-group-create-work-id-from-personal/)。
 
 2. **创建资源组** - 所有资源都必须部署到资源组。对于本教程，将资源组命名为 **vmsstest1**。
 

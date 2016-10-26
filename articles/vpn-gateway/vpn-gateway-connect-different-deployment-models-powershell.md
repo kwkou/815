@@ -242,7 +242,7 @@ VNet 名称 = RMVNet <br>
 
 在网关之间创建连接需要用到 PowerShell。您可能需要添加 Azure 帐户才能使用经典 PowerShell cmdlet。若要执行此操作，可以使用以下 cmdlet：
 		
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 1. 通过运行以下命令**设置共享密钥**。在本例中，`-VNetName` 是经典 VNet 的名称，`-LocalNetworkSiteName` 是在经典管理门户中配置本地网络时为其指定的名称。`-SharedKey` 是您可以生成并指定的值。此处指定的值必须与下一步中创建连接时指定的值相同。本示例的返回结果应显示“状态: 成功”。
 

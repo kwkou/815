@@ -46,7 +46,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 需有一个工作或学校帐户或者一个 Microsoft 帐户标识，才能使用 Azure 资源管理模板。如果你有其中一个帐户，请键入以下命令。
 
-	azure login
+	azure login -e AzureChinaCloud
 
 这将生成以下输出：
 

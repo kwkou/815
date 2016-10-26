@@ -59,7 +59,7 @@
 
 若要连接到 Azure 订阅，请键入：
 
-    PS C:\> Add-AzureAccount
+    PS C:\> Add-AzureAccount -Environment AzureChinaCloud
 
 在弹出的浏览器控件中，输入你的 Azure 帐户用户名和密码。PowerShell 将使用此帐户获取你拥有的所有订阅并自己判断使用第一个订阅作为默认订阅。请注意，使用 RBAC，你只有通过成为共同管理员或具有某种角色分配才能获取你有某些权限的订阅。
 

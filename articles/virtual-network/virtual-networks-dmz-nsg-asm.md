@@ -373,7 +373,7 @@
 	# ----------------------------- #	
 
 	  # Get your Azure accounts
-	    Add-AzureAccount
+	    Add-AzureAccount -Environment AzureChinaCloud
 	    Set-AzureSubscription –SubscriptionId $subID -ErrorAction Stop
 	    Select-AzureSubscription -SubscriptionId $subID -Current -ErrorAction Stop
 	

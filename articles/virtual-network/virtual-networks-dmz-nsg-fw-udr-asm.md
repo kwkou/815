@@ -689,7 +689,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	# ----------------------------- #
 	
 	  # Get your Azure accounts
-	    Add-AzureAccount
+	    Add-AzureAccount -Environment AzureChinaCloud
 	    Set-AzureSubscription -SubscriptionId $subID -ErrorAction Stop
 	    Select-AzureSubscription -SubscriptionId $subID -Current -ErrorAction Stop
 	

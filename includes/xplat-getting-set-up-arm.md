@@ -22,9 +22,9 @@
 
 如果你使用 [Azure Active Directory 租户](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant)或[服务主体名称](https://msdn.microsoft.com/library/azure/dn132633.aspx)，则只能使用 ARM 命令模式。（这些也称为*组织 ID*。）
 
-若要查看你是否已经有一个这样的标识，请登录，方法是键入 `azure login`，然后在系统提示时使用你工作单位或学校的用户名和密码。如果你确实有一个，你会看到下面这样的内容：
+若要查看你是否已经有一个这样的标识，请登录，方法是键入 `azure login -e AzureChinaCloud`，然后在系统提示时使用你工作单位或学校的用户名和密码。如果你确实有一个，你会看到下面这样的内容：
 
-    $ azure login
+    $ azure login -e AzureChinaCloud
     info:    Executing command login
     warn:    Please note that currently you can login only via Microsoft organizational account or service principal. For instructions on how to set them up, please read http://aka.ms/Dhf67j.
     Username: ahmet@contoso.partner.onmschina.cn
