@@ -125,7 +125,7 @@
         Mode              : Incremental
         ...
 
-     如果你的模板包括的一个参数与 PowerShell 命令中的某个参数同名，系统会提示你提供该参数的值。模板中的参数会包含后缀 **FromTemplate**。例如，模板中名为 **ResourceGroupName** 的参数与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数冲突。系统会提示你提供 **ResourceGroupNameFromTemplate** 的值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
+     如果你的模板包括的一个参数与 PowerShell 命令中的某个参数同名，系统会提示你提供该参数的值。模板中的参数会包含后缀 **FromTemplate**。例如，模板中名为 **ResourceGroupName** 的参数与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数冲突。系统会提示你提供 **ResourceGroupNameFromTemplate** 的值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
 
 6. 如果要记录可能帮助你排查任何部署错误的有关部署的其他信息，请使用 **DeploymentDebugLogLevel** 参数。你可以指定在对部署操作进行日志记录时记录请求内容或/和响应内容。
 
