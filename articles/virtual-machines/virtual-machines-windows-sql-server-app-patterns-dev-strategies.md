@@ -110,7 +110,7 @@
 ![3 层应用程序模式](./media/virtual-machines-windows-sql-server-app-patterns-dev-strategies/IC728009.png)  
 
 
-在这种应用程序模式中，每层只有一个虚拟机 (VM)。如果你使用 Azure 中的多个 VM，我们建议你设置虚拟网络。[Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)创建受信任安全边界，并允许 VM 通过专用 IP 地址相互通信。此外，请始终确保所有 Internet 连接仅进入呈现层。按此应用程序模式操作时，可通过管理网络安全组规则来控制访问。有关详细信息，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（允许通过 Azure 门户对 VM 进行外部访问）。
+在这种应用程序模式中，每层只有一个虚拟机 (VM)。如果你使用 Azure 中的多个 VM，我们建议你设置虚拟网络。[Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)创建受信任安全边界，并允许 VM 通过专用 IP 地址相互通信。此外，请始终确保所有 Internet 连接仅进入呈现层。按此应用程序模式操作时，可通过管理网络安全组规则来控制访问。有关详细信息，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（允许通过 Azure 门户预览对 VM 进行外部访问）。
 
 图中的 Internet 协议可以是 TCP、UDP、HTTP 或 HTTPS。
 
@@ -143,7 +143,7 @@
 
 若要充分利用一层的多个 VM 实例，必须配置应用程序层之间的 Azure 负载平衡器。若要配置每个层中的负载均衡器，请在每个层的 VM 上单独创建负载均衡终结点。对于特定层，请首先在同一云服务中创建 VM。这样可以确保它们具有同一公共虚拟 IP 地址。接下来，在该层的一个虚拟机上创建终结点。然后，将同一终结点分配给该层上的其他虚拟机，以便进行负载平衡。通过创建负载平衡集，你可将流量分布到多个虚拟机，并让负载平衡器能够在后端 VM 节点出现故障时确定连接哪一个节点。例如，负载平衡器之后有多个 Web 服务器实例，可以确保呈现层的高可用性。
 
-最佳做法是始终确保所有 Internet 连接首先进入呈现层。呈现层访问业务层，业务层再访问数据层。如需详细了解如何允许对呈现层的访问，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（允许通过 Azure 门户对 VM 进行外部访问）。
+最佳做法是始终确保所有 Internet 连接首先进入呈现层。呈现层访问业务层，业务层再访问数据层。如需详细了解如何允许对呈现层的访问，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（允许通过 Azure 门户预览对 VM 进行外部访问）。
 
 请注意，Azure 中的负载平衡器的工作方式类似于本地环境中的负载平衡器。有关更多信息，请参阅 [Azure 基础结构服务的负载平衡](/documentation/articles/virtual-machines-windows-load-balance/)。
 
@@ -293,7 +293,7 @@
 
 1. 设置本地企业网络和 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)之间的连接。若要设置本地企业网络和 Azure 中虚拟机之间的连接，请使用以下两种方法之一：
 
-	1. 通过 Azure 中虚拟机上的公共终结点，在本地和 Azure 之间建立连接。这种方法提供简单的设置，让你能够在虚拟机中使用 SQL Server 身份验证。另外，还可以设置网络安全组规则，控制到 VM 的公共流量。有关详细信息，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（允许通过 Azure 门户对 VM 进行外部访问）。
+	1. 通过 Azure 中虚拟机上的公共终结点，在本地和 Azure 之间建立连接。这种方法提供简单的设置，让你能够在虚拟机中使用 SQL Server 身份验证。另外，还可以设置网络安全组规则，控制到 VM 的公共流量。有关详细信息，请参阅 [Allow external access to your VM using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)（允许通过 Azure 门户预览对 VM 进行外部访问）。
 
 	1. 通过 Azure 虚拟专用网络 (VPN) 隧道，在本地和 Azure 之间建立连接。这种方法允许你将域策略缩放到 Azure 中的虚拟机。此外，你可以设置防火墙规则，并在虚拟机中使用 Windows 身份验证。当前，Azure 支持安全的站点到站点 VPN 和点到站点 VPN 连接：
 

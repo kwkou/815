@@ -33,7 +33,7 @@
 
 > [AZURE.WARNING] 通用化 VM 后，无法通过 RDP 登录到该 VM，因为通用化过程会删除所有用户帐户。这些更改是不可逆的。
 
-1. 登录到 Windows 虚拟机。在 [Azure 门户预览版](https://portal.azure.cn)中，导航到“浏览”>“虚拟机”> Windows 虚拟机 >“连接”。
+1. 登录到 Windows 虚拟机。在 [Azure 门户预览](https://portal.azure.cn)中，导航到“浏览”>“虚拟机”> Windows 虚拟机 >“连接”。
 
 2. 以管理员身份打开“命令提示符”窗口。
 
@@ -49,7 +49,7 @@
 
 	![运行 Sysprep](./media/virtual-machines-windows-capture-image/SysprepGeneral.png)
 
-   Sysprep 关闭虚拟机。它在 Azure 门户预览版中的状态将变为“已停止”。
+   Sysprep 关闭虚拟机。它在 Azure 门户预览中的状态将变为“已停止”。
 
 
 ## 登录到 Azure PowerShell
@@ -75,7 +75,7 @@
 
 		Stop-AzureRmVM -ResourceGroupName <resourceGroup> -Name <vmName>
 
-	Azure 门户中该 VM 的“状态”将从“已停止”更改为“已停止(已解除分配)”。
+	Azure 门户预览中该 VM 的“状态”将从“已停止”更改为“已停止(已解除分配)”。
 
 2. 将虚拟机的状态设置为“通用化”。
 
@@ -196,7 +196,7 @@
 
 
 
-完成后，应会在 [Azure 门户](https://portal.azure.cn)的“浏览”>“虚拟机”下看到新建的 VM，也可以使用以下 PowerShell 命令查看该 VM：
+完成后，应会在 [Azure 门户预览](https://portal.azure.cn)的“浏览”>“虚拟机”下看到新建的 VM，也可以使用以下 PowerShell 命令查看该 VM：
 
 	$vmList = Get-AzureRmVM -ResourceGroupName $rgName
 	$vmList.Name

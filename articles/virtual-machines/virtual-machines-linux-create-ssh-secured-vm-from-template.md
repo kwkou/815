@@ -22,7 +22,7 @@
 
 # 使用 Azure 模板创建 Linux VM
 
-本文说明如何使用 Azure 模板在 Azure 上快速部署 Linux 虚拟机。本文需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)]、已通过 (`azure login`) 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)，并处于 Resource Manager 模式 (`azure config mode arm`)。也可以使用 [Azure 门户](/documentation/articles/virtual-machines-linux-quick-create-portal/)或 [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/) 快速部署 Linux VM。
+本文说明如何使用 Azure 模板在 Azure 上快速部署 Linux 虚拟机。本文需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)]、已通过 (`azure login`) 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)，并处于 Resource Manager 模式 (`azure config mode arm`)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)或 [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/) 快速部署 Linux VM。
 
 ## 快速命令摘要
 

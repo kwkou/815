@@ -29,12 +29,12 @@
 ## <a id="quickfixrdp"></a> 快速故障排除步骤
 在执行每个故障排除步骤之后，请尝试连接到 VM：
 
-1. 使用 Azure 门户或 Azure PowerShell 重置远程访问权限
+1. 使用 Azure 门户预览或 Azure PowerShell 重置远程访问权限
 2. 重新启动 VM
 3. 重新部署 VM
 4. 检查网络安全组/云服务终结点规则
-5. 在 Azure 门户或 Azure PowerShell 中查看 VM 控制台日志
-6. 在 Azure 门户中查看 VM 资源运行状况
+5. 在 Azure 门户预览或 Azure PowerShell 中查看 VM 控制台日志
+6. 在 Azure 门户预览中查看 VM 资源运行状况
 7. 重置 VM 密码
 
 如需 Resource Manager 部署模型和经典部署模型的更详细步骤和说明，请继续阅读。
@@ -85,7 +85,7 @@
 
 在执行每个故障排除步骤之后，请尝试连接到 VM。
 
-1. 从 [Azure 门户预览版](https://portal.azure.cn)重置远程桌面服务。选择“浏览”>“虚拟机(经典)”> *用户的 VM* >“重置远程...”。
+1. 从 [Azure 门户预览](https://portal.azure.cn)重置远程桌面服务。选择“浏览”>“虚拟机(经典)”> *用户的 VM* >“重置远程...”。
 
 2. 重启 VM 以解决其他安装问题。选择“浏览”>“虚拟机(经典)”> *用户的 VM* >“重新启动”。
 

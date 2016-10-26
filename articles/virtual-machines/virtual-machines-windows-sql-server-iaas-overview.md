@@ -77,7 +77,7 @@
 
 ### 配置高可用性
 
-如果你需要高可用性，请考虑配置 SQL Server 可用性组。这涉及虚拟网络中的多个 Azure VM。Azure 门户预览版有一个模板，为用户设置了此配置。有关详细信息，请参阅 [Configure an AlwaysOn availability group in Classic virtual machines](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)（在经典虚拟机中配置 AlwaysOn 可用性组）。
+如果你需要高可用性，请考虑配置 SQL Server 可用性组。这涉及虚拟网络中的多个 Azure VM。Azure 门户预览有一个模板，为用户设置了此配置。有关详细信息，请参阅 [Configure an AlwaysOn availability group in Classic virtual machines](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)（在经典虚拟机中配置 AlwaysOn 可用性组）。
 
 有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 

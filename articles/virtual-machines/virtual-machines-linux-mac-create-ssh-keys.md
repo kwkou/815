@@ -215,7 +215,7 @@ ssh-keygen -f id_rsa.pub -m 'PEM' -e > id_rsa.pem
 下一步是使用新 SSH 公钥创建 Azure Linux VM。使用 SSH 公钥作为登录名创建的 Azure VM 受到的保护优于使用默认登录方法（即密码）创建的 VM。使用 SSH 密钥创建的 Azure VM 默认情况下配置为禁用密码，以避免强力猜测尝试。
 
 - [使用 Azure 模板创建安全 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
-- [使用 Azure 门户创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+- [使用 Azure 门户预览创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 - [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
 <!---HONumber=Mooncake_1017_2016-->
