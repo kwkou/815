@@ -1,5 +1,4 @@
 <properties
-
    pageTitle="Service Fabric 中的应用程序生命周期 | Azure" 
    description="介绍如何开发、部署、测试、升级、维护和删除 Service Fabric 应用程序。" 
    services="service-fabric" 
