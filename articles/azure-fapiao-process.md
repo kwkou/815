@@ -13,7 +13,7 @@
 #发票申请操作解析 - Azure在线业务
 
 ## 申请流程
-![申请流程](./media/azure-fapiao-process/01.png)
+![申请流程](./media/azure-fapiao-process/01.PNG)
 
 ## 第一步：如何申请发票
 
