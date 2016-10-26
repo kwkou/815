@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/07/2016"
-	wacn.date="07/11/2016"/>
+	ms.date="08/23/2016"
+	wacn.date="10/25/2016"/>
 
 # 如何从 Linux 虚拟机分离磁盘
 

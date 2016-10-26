@@ -1,40 +1,46 @@
-<!-- Ibiza portal: tested -->
-
 <properties
-	pageTitle="在 Windows VM 上重置密码或远程桌面 | Azure"
-	description="在使用资源管理器部署模型创建的 Windows VM 上重置管理员密码或远程桌面服务。"
+	pageTitle="在 Windows VM 上重置密码或远程桌面配置 | Azure"
+	description="了解如何使用 Azure 门户预览或 Azure PowerShell 在 Windows VM 上重置帐户密码或远程桌面服务。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="iainfoulds"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager"/>
+	tags="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/10/2016"
-	wacn.date="07/25/2016"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2016"
+	wacn.date="10/24/2016"
+	ms.author="iainfou"/>  
+
 
 # 如何在 Windows VM 中重置远程桌面服务或其登录密码
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-如果你由于忘记了密码或远程桌面服务配置有问题而无法连接到 Windows 虚拟机，你可以重置本地管理员密码或重置远程桌面服务配置。你可以使用 Azure 门户预览或 Azure PowerShell 中的 VM 访问扩展重置密码。如果使用 PowerShell，请务必在工作计算机上安装最新的 PowerShell 模块，并登录 Azure 订阅。有关详细步骤，请阅读[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+如果无法连接到 Windows 虚拟机，可以重置本地管理员密码或远程桌面服务配置。你可以使用 Azure 门户预览或 Azure PowerShell 中的 VM 访问扩展重置密码。如果使用 PowerShell，请务必在工作计算机上安装最新的 PowerShell 模块，并登录 Azure 订阅。有关详细步骤，请阅读 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）。
 
-> [AZURE.TIP] 可以使用 `Import-Module Azure, AzureRM; Get-Module Azure, AzureRM | Format-Table Name, Version` 来检查安装的 PowerShell 版本
+> [AZURE.TIP] 可以使用 `Import-Module Azure, AzureRM; Get-Module Azure, AzureRM | Format-Table Name, Version` 检查安装的 PowerShell 版本
 
 ## Resource Manager 部署模型中的 Windows VM
 
 ### Azure 门户预览
-通过单击“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“所有设置”>“重置密码”选择 VM。密码重置边栏选项卡将如以下所示：
+通过单击“浏览”>“虚拟机”> 用户的 Windows 虚拟机 >“所有设置”>“重置密码”选择 VM。此时会显示密码重置边栏选项卡：
 
-![密码重置页](./media/virtual-machines-windows-reset-rdp/Portal-RM-PW-Reset-Windows.png)
+![密码重置页](./media/virtual-machines-windows-reset-rdp/Portal-RM-PW-Reset-Windows.png)  
+
 
 输入用户名和新密码，然后单击“保存”。尝试重新连接到 VM。
 
 ### VMAccess 扩展和 PowerShell
 
-确保已安装 Azure PowerShell 1.0 或更高版本，并且已使用 `Login-AzureRmAccount` cmdlet 登录到你的帐户。
+确保已安装 Azure PowerShell 1.0 或更高版本，并且已使用 `Login-AzureRmAccount` cmdlet 登录到帐户。
 
 #### **重置本地管理员帐户密码**
 
@@ -49,49 +55,51 @@
 使用 VM Access 扩展设置新凭据，如下所示：
 
 	Set-AzureRmVMAccessExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccess" `
-		-Location WestUS -UserName $cred.GetNetworkCredential().Username `
+		-Location ChinaNorth -UserName $cred.GetNetworkCredential().Username `
 		-Password $cred.GetNetworkCredential().Password -typeHandlerVersion "2.0"
 
 
-将 `myRG`、`myVM`、`myVMAccess` 和位置替换为与你的设置相关的值。
+将 `myRG`、`myVM`、`myVMAccess` 和 location 替换为与设置相关的值。
 
 
 #### **重置远程桌面服务配置**
 
-可以使用 [Set-AzureRmVMExtension](https://msdn.microsoft.com/zh-cn/library/mt603745.aspx) 或 [Set-AzureRmVMAccessExtension](https://msdn.microsoft.com/zh-cn/library/mt619447.aspx) 来重置对 VM 的远程访问，如下所示。（将 `myRG`、`myVM`、`myVMAccess` 和 location 替换为你自己的值。）
+可以使用 [Set-AzureRmVMExtension](https://msdn.microsoft.com/zh-cn/library/mt603745.aspx) 或 [Set-AzureRmVMAccessExtension](https://msdn.microsoft.com/zh-cn/library/mt619447.aspx) 来重置对 VM 的远程访问，如下所示。（将 `myRG`、`myVM`、`myVMAccess` 和 location 替换为自己的值。）
 
 	Set-AzureRmVMExtension -ResourceGroupName "myRG" -VMName "myVM" `
-		-Name "myVMAccess" -ExtensionType "VMAccessAgent" -Location WestUS `
+		-Name "myVMAccess" -ExtensionType "VMAccessAgent" -Location ChinaNorth `
 		-Publisher "Microsoft.Compute" -typeHandlerVersion "2.0"
 
 或者：<br>
 
 	Set-AzureRmVMAccessExtension -ResourceGroupName "myRG" -VMName "myVM" `
-		-Name "myVMAccess" -Location WestUS -typeHandlerVersion "2.0
+		-Name "myVMAccess" -Location ChinaNorth -typeHandlerVersion "2.0
 
 
 > [AZURE.TIP] 这两个命令都在虚拟机中添加新的命名 VM 访问代理。无论何时，一个 VM 只能有一个 VM 访问代理。若要成功设置 VM 访问代理属性，请使用 `Remove-AzureRmVMAccessExtension` 或 `Remove-AzureRmVMExtension` 删除以前设置的访问代理。从 Azure PowerShell 版本 1.2.2 开始，如果将 `Set-AzureRmVMExtension` 与 `-ForceRerun` 选项结合使用，则无需执行此步骤。使用 `-ForceRerun` 时，请务必使用与前述命令设置的 VM 访问代理相同的名称。
 
-如果你仍然无法远程连接到虚拟机，请参阅[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)，以了解其他值得一试的步骤。
+如果仍然无法远程连接到虚拟机，请参阅 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)（对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除），了解其他值得一试的步骤。
 
 
 ## 经典部署模型中的 Windows VM
 
 ### Azure 门户预览
 
-对于使用经典部署模型创建的虚拟机，可以使用 [Azure 门户预览](https://portal.azure.cn)来重置远程桌面服务。单击“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程...”。将显示以下页。
+对于使用经典部署模型创建的虚拟机，可以使用 [Azure 门户预览](https://portal.azure.cn)重置远程桌面服务。单击“浏览”>“虚拟机(经典)”> 用户的 Windows 虚拟机 >“重置远程...”。将显示以下页。
 
-![重置 RDP 配置页](./media/virtual-machines-windows-reset-rdp/Portal-RDP-Reset-Windows.png)
+![重置 RDP 配置页](./media/virtual-machines-windows-reset-rdp/Portal-RDP-Reset-Windows.png)  
 
-还可以尝试重置本地管理员帐户的名称和密码。单击“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“所有设置”>“重置密码”。将显示以下页。
 
-![密码重置页](./media/virtual-machines-windows-reset-rdp/Portal-PW-Reset-Windows.png)
+还可以尝试重置本地管理员帐户的名称和密码。单击“浏览”>“虚拟机(经典)”> 用户的 Windows 虚拟机 >“所有设置”>“重置密码”。将显示以下页。
+
+![密码重置页](./media/virtual-machines-windows-reset-rdp/Portal-PW-Reset-Windows.png)  
+
 
 输入新用户名和密码，然后单击“保存”。
 
 ### VMAccess 扩展和 PowerShell
 
-确保在虚拟机上安装 VM 代理。只要 VM 代理可用，就不需要事先安装 VMAccess 扩展。使用以下命令验证是否已在虚拟机上安装 VM 代理。（分别将“myCloudService”和“myVM”替换为云服务和 VM 的名称。若要了解这些信息，可运行不带任何参数的 `Get-AzureVM`。）
+确保在虚拟机上安装 VM 代理。只要 VM 代理可用，就不需要事先安装 VMAccess 扩展。使用以下命令验证是否已在虚拟机上安装 VM 代理。（分别将“myCloudService”和“myVM”替换为云服务和 VM 的名称。若要了解这些名称，可运行不带任何参数的 `Get-AzureVM`。）
 
 	$vm = Get-AzureVM -ServiceName "myCloudService" -Name "myVM"
 	write-host $vm.VM.ProvisionGuestAgent
@@ -141,4 +149,4 @@ b. `Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Serv
 
 [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->

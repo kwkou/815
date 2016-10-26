@@ -204,7 +204,6 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 - [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 - [将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]
-- [为 HDInsight 开发 C# Hadoop 流式处理程序][hdinsight-develop-streaming]
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 
@@ -219,7 +218,6 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 [hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction/
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log/

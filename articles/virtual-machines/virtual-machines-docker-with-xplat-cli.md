@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/04/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 # 从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展
 

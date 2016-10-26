@@ -38,11 +38,11 @@
 
 ## 确定侦听器的可访问性
 
-[AZURE.INCLUDE [负载均衡istener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
+[AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
-本文重点介绍如何创建使用**外负载均衡衡**的侦听器。如果你想要创建专用于虚拟网络的侦听器，请参阅本文的另一个版本，其中提供了设置[使用 ILB 的侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)的步骤
+本文重点介绍如何创建使用**外部负载均衡**的侦听器。如果你想要创建专用于虚拟网络的侦听器，请参阅本文的另一个版本，其中提供了设置[使用 ILB 的侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)的步骤
 
-##负载均衡持直接服务器返回的负载均衡 VM 终结点负载均衡
+## 创建支持直接服务器返回的负载均衡 VM 终结点
 
 外部负载均衡使用托管 VM 的云服务的公共虚拟 IP 地址。因此，在这种情况下，你不需要创建或配置负载均衡器。
 
@@ -72,7 +72,7 @@
 
 ## 创建可用性组侦听器
 
-[AZURE.负载均衡UDE [防火墙](../../includes/virtual-machines-ag-listener-create-listener.md)]
+[AZURE.INCLUDE [防火墙](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
 1. 对于外部负载均衡，你必须获取包含副本的云服务的公共虚拟 IP 地址。登录到 Azure 经典管理门户。导航到包含你的可用性组 VM 的云服务。打开“仪表板”视图。
 
@@ -93,7 +93,7 @@
 		# cluster res $IPResourceName /priv enabledhcp=0 overrideaddressmatch=1 address=$CloudServiceIP probeport=59999  subnetmask=255.255.255.255
 
 
-1. 设置变量之后，打开提升的 Windows PowerShell 窗口，然后从文本编辑器复制脚本，并将其粘贴到 Azure PowerShell 会话中运行。如果提示符仍然显示负载均衡请再次按 Enter，以确保脚本开始运行。
+1. 设置变量之后，打开提升的 Windows PowerShell 窗口，然后从文本编辑器复制脚本，并将其粘贴到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。
 
 1. 在每个 VM 上重复此过程。此脚本将使用云服务的 IP 地址来配置 IP 地址资源，同时设置探测端口等其他参数。在 IP 地址资源联机后，它可以响应我们在本教程前面部分创建的负载均衡终结点在探测端口上的轮询。
 
@@ -109,7 +109,7 @@
 
 [AZURE.INCLUDE [Test-Listener-Within-VNET](../../includes/virtual-machines-ag-listener-test.md)]
 
-## 测试可用性组侦听器（通过 Internet）负载均衡
+## 测试可用性组侦听器（通过 Internet）
 
 若要从虚拟网络外部访问侦听器，必须使用外部/公共负载均衡（如本主题中所述）而不是 ILB，因为 ILB 只能在同一 VNet 中进行访问。在连接字符串中指定云服务名称。例如，如果你的云服务名为 *mycloudservice*，则 sqlcmd 语句将如下所示：
 
