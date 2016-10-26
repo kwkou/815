@@ -38,7 +38,7 @@
 
 1. 通过[Azure 经典管理门户](https://manage.windowsazure.cn/)登录到你的 Azure 帐户。
 
-2. 请确保你了解订阅的默认 Active Directory。只能为与订阅在同一目录中的应用程序授予访问权限。选择“设置”并查找与订阅关联的目录名称。有关详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](./active-directory/active-directory-how-subscriptions-associated-directory.md)。
+2. 请确保你了解订阅的默认 Active Directory。只能为与订阅在同一目录中的应用程序授予访问权限。选择“设置”并查找与订阅关联的目录名称。有关详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
    
      ![查找默认目录](./media/resource-group-create-service-principal-portal/show-default-directory.png)  
 

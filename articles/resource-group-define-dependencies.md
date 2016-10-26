@@ -46,7 +46,7 @@
       ...
     }
 
-若要在某个资源与通过 copy 循环创建的资源之间创建依赖关系，可将 dependsOn 元素设置为该循环的名称。有关示例，请参阅[在 Azure 资源管理器中创建多个资源实例](resource-group-create-multiple.md)。
+若要在某个资源与通过 copy 循环创建的资源之间创建依赖关系，可将 dependsOn 元素设置为该循环的名称。有关示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
 
 尽管你可能倾向使用 dependsOn 来映射资源之间的关系，但请务必了解这么做的理由，因为它会影响部署性能。例如，若要记录资源的互连方式，那么，dependsOn 方法并不合适。部署之后，无法查询 dependsOn 元素中定义的资源。通过使用 dependsOn，可以影响部署时间，因为 Resource Manager 不会并行部署两个具有依赖关系的资源。若要记录资源之间的关系，请改为使用[资源链接](/documentation/articles/resource-group-link-resources/)。
 
