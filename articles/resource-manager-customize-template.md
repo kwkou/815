@@ -201,7 +201,7 @@
 
      对于 Azure CLI，运行：
 
-        azure login
+        azure login -e AzureChinaCloud
 
         azure group create -n ExportGroup -l "China East"
 

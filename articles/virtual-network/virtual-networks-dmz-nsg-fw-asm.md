@@ -362,7 +362,7 @@ Web 服务器、IIS01 和防火墙都在相同的云服务中，因此共享相�
 	# ----------------------------- #
 	
 	  # Get your Azure accounts
-	    Add-AzureAccount
+	    Add-AzureAccount -Environment AzureChinaCloud
 	    Set-AzureSubscription -SubscriptionId $subID -ErrorAction Stop
 	    Select-AzureSubscription -SubscriptionId $subID -Current -ErrorAction Stop
 	

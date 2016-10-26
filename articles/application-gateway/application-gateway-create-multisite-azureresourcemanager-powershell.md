@@ -55,7 +55,7 @@
 
 ### 步骤 1
 登录到 Azure
-		Login-AzureRmAccount
+		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 系统将提示你使用凭据进行身份验证。<BR>
 

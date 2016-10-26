@@ -28,7 +28,7 @@
 
 ### Azure CLI 先决条件
 
-如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install/)。使用 `azure login` 命令登录并确保处于 Resource Manager 模式 (`azure config mode arm`)。
+如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install/)。使用 `azure login -e AzureChinaCloud` 命令登录并确保处于 Resource Manager 模式 (`azure config mode arm`)。
 
 确保已安装 [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/) 2.0.5 版或更高版本。
 

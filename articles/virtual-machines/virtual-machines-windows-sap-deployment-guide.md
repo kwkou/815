@@ -808,7 +808,7 @@ ___
 1. 如[此文][azure-cli]中所述安装 Azure CLI
 1. 使用 Azure 帐户登录
 
-        azure login
+        azure login -e AzureChinaCloud
 
 1. 切换到 Azure Resource Manager 模式
 

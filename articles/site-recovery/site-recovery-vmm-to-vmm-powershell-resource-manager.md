@@ -82,7 +82,7 @@
 		$Password = "<password>"
 		$SecurePassword = ConvertTo-SecureString -AsPlainText $Password -Force
 		$Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $UserName, $SecurePassword
-		Login-AzureRmAccount #-Credential $Cred 
+		Login-AzureRmAccount -EnvironmentName AzureChinaCloud #-Credential $Cred 
 	
 
 2. 获取你的订阅的列表。其中还会列出每个订阅的 subscriptionID。记下你希望在其中创建恢复服务保管库的订阅的订阅 ID

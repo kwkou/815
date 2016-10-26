@@ -46,7 +46,7 @@
 
 1. 使用权限提升的 Windows PowerShell 提示符运行以下 cmdlet：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 2. 在出现的登录屏幕中登录到帐户。
 
 3. 获取你的订阅的列表。
