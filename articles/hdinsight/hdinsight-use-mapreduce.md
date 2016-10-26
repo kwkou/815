@@ -48,10 +48,6 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 
 有关详细信息，请参阅 [Hadoop 流式处理](http://hadoop.apache.org/docs/r1.2.1/streaming.html)。
 
-有关将 Hadoop 流式处理与 hdinsight 配合使用的示例，请参阅：
-
-* [开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
-
 ## <a id="data"></a>关于示例数据
 
 对于本示例中的示例数据，你将使用 HDInsight 群集中作为文本文档提供的 Leonardo Da Vinci 笔记本。
@@ -170,7 +166,6 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-develop-mapreduce-jobs]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples/

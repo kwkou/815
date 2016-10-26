@@ -565,7 +565,6 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 ## <a id="nextsteps"></a>后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Java MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
 
-- [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序][hdinsight-develop-streaming]
 - [Azure HDInsight 入门][hdinsight-get-started]
 - [HDInsight Emulator 入门][hdinsight-emulator]
 - [将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]
@@ -583,8 +582,6 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
-
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
