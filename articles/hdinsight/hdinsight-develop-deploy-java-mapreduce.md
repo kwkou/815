@@ -14,8 +14,6 @@
 
 # 为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序
 
-[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-maven-mapreduce-selector.md)]
-
 本教程将引导完成一项端对端方案，在 Apache Maven 中使用 Java 来开发单词计数 Hadoop MapReduce 作业。本教程还将说明如何在 HDInsight Emulator for Azure 上测试该应用程序，然后在基于 Windows 的 HDInsight 群集上部署并运行它。
 
 ## <a name="prerequisites"></a>先决条件
