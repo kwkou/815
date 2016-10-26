@@ -1,6 +1,6 @@
 <properties
 	pageTitle="在 Windows VM 上重置密码或远程桌面配置 | Azure"
-	description="了解如何使用 Azure 门户或 Azure PowerShell 在 Windows VM 上重置帐户密码或远程桌面服务。"
+	description="了解如何使用 Azure 门户预览或 Azure PowerShell 在 Windows VM 上重置帐户密码或远程桌面服务。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="iainfoulds"

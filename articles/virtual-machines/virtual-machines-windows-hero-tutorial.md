@@ -1,6 +1,6 @@
 <properties
 	pageTitle="创建第一个 Windows VM | Azure"
-	description="了解如何使用 Azure 门户创建第一个 Windows 虚拟机。"
+	description="了解如何使用 Azure 门户预览创建第一个 Windows 虚拟机。"
 	keywords="Windows 虚拟机,创建虚拟机,虚拟计算机,设置虚拟机"
 	services="virtual-machines-windows"
 	documentationCenter=""
@@ -20,9 +20,9 @@
 	ms.author="cynthn"/>  
 
 
-# 在 Azure 门户预览版中创建第一个 Windows 虚拟机
+# 在 Azure 门户预览中创建第一个 Windows 虚拟机
 
-本教程介绍如何通过 Azure 门户预览版在数分钟内轻松地创建 Windows 虚拟机 (VM)。
+本教程介绍如何通过 Azure 门户预览在数分钟内轻松地创建 Windows 虚拟机 (VM)。
 
 如果没有 Azure 订阅，可在开始前创建一个[试用帐户](/pricing/1rmb-trial/)。
 
@@ -30,7 +30,7 @@
 
 我们将使用 Windows Server 2012 R2 Datacenter 映像作为示例，但这只是 Azure 提供的众多映像的其中一个。
 
-1. 登录到 [Azure 门户预览版](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 在“中心”菜单上，单击“新建”>“虚拟机”>“Windows Server 2012 R2 Datacenter”。
 
@@ -88,7 +88,7 @@
 
 3. 在虚拟机边栏选项卡上，单击“连接”。随后将创建并下载远程桌面协议文件（.rdp 文件），该文件类似于用于连接计算机的快捷方式。你可以将此文件保存到桌面以便于访问。**打开**此文件以连接到 VM。
 
-	![显示如何连接到 VM 的 Azure 门户预览版屏幕截图](./media/virtual-machines-windows-hero-tutorial/connect.png)  
+	![显示如何连接到 VM 的 Azure 门户预览屏幕截图](./media/virtual-machines-windows-hero-tutorial/connect.png)  
 
 
 4. 此时将出现 .rdp 来自未知发布者的警告。这是一般警报。在“远程桌面”窗口中，单击“连接”以继续。

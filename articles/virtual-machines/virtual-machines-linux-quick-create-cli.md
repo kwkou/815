@@ -30,7 +30,7 @@
 
 - Azure CLI _必须处于_ Azure Resource Manager 模式 `azure config mode arm`。
 
-也可以使用 [Azure 门户](/documentation/articles/virtual-machines-linux-quick-create-portal/)快速部署 Linux VM。
+也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)快速部署 Linux VM。
 
 ## 快速命令
 
