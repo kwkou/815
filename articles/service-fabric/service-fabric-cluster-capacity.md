@@ -105,6 +105,7 @@
 ## 后续步骤
 
 完成容量规划并设置群集后，请阅读以下文章：
+
 - [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security/)
 - [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction/)
 

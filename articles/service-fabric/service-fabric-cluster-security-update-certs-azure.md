@@ -23,7 +23,7 @@
 
 建议读者先阅读 [Cluster security scenarios](/documentation/articles/service-fabric-cluster-security/)（群集安全方案），了解 Service Fabric 使用 X.509 证书的方式。在继续下一步之前，必须先了解群集证书的定义和用途。
 
-在创建群集期间配置证书安全性时，Service Fabric 允许指定两个群集证书（主要证书和辅助证书）。有关详细信息，请参阅 [creating an azure cluster via portal](/documentation/articles/service-fabric-cluster-creation-via-portal/)（通过门户创建 Azure 群集）或 [creating an azure cluster via Azure Resource Manager](/documentation/articles/service-fabric-cluster-creation-via-Resource Manager/)（通过 Azure Resource Manager 创建 Azure 群集）。如果通过 Resource Manager 进行部署并且只指定了一个群集证书，将使用该证书作为主要证书。在创建群集后，可以添加一个新证书作为辅助证书。
+在创建群集期间配置证书安全性时，Service Fabric 允许指定两个群集证书（主要证书和辅助证书）。有关详细信息，请参阅 [creating an azure cluster via portal](/documentation/articles/service-fabric-cluster-creation-via-portal/)（通过门户创建 Azure 群集）或 [creating an azure cluster via Azure Resource Manager](/documentation/articles/service-fabric-cluster-creation-via-arm/)（通过 Azure Resource Manager 创建 Azure 群集）。如果通过 Resource Manager 进行部署并且只指定了一个群集证书，将使用该证书作为主要证书。在创建群集后，可以添加一个新证书作为辅助证书。
 
 >[AZURE.NOTE] 对于安全群集，始终至少需要部署一个有效的（未吊销或过期）证书（主要或辅助），否则，群集无法正常运行。在所有有效证书过期前的 90 天，系统将针对节点生成警告跟踪和警告运行状况事件。Service Fabric 当前不会针对此主题发送电子邮件或其他任何通知。
 
@@ -43,15 +43,15 @@
 
 单击“证书”。随即开始部署，“群集安全性”边栏选项卡中会显示一个蓝色状态栏。
 
-![门户中的证书指纹屏幕截图][SecurityConfigurations\_02]
+![门户中的证书指纹屏幕截图][SecurityConfigurations_02]
 
 部署成功完成后，可以使用主要证书或辅助证书在群集上执行管理操作。
 
-![正在部署证书的屏幕截图][SecurityConfigurations\_03]
+![正在部署证书的屏幕截图][SecurityConfigurations_03]
 
 以下屏幕截图显示完成部署后的安全性边栏选项卡外观。
 
-![部署后的证书指纹屏幕截图][SecurityConfigurations\_08]
+![部署后的证书指纹屏幕截图][SecurityConfigurations_08]
 
 
 现在，可以使用刚刚添加的证书建立连接，在群集上执行操作。
@@ -64,7 +64,7 @@
 以下步骤假设读者熟悉 Resource Manager 的工作原理，已使用 Resource Manager 模板至少部署了一个 Service Fabric 群集，并且已准备好用于设置群集的模板。此外，假设读者可以熟练使用 JSON。
 
 >[AZURE.NOTE]
-如需可用作参考或用作起点的示例模板与参数，可从此 [git-repo] 下载。(https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Cert%20Rollover%20Sample)。
+如需可用作参考或用作起点的示例模板与参数，可从此 [git-repo](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Cert%20Rollover%20Sample)下载。
 
 #### 编辑 Resource Manager 模板 
 
@@ -212,6 +212,9 @@
 
 <!--Image references-->
 
-[SecurityConfigurations_02]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_02.png [SecurityConfigurations_03]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_03.png [SecurityConfigurations_05]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_05.png [SecurityConfigurations_08]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_08.png
+[SecurityConfigurations_02]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_02.png  
+[SecurityConfigurations_03]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_03.png  
+[SecurityConfigurations_05]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_05.png  
+[SecurityConfigurations_08]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_08.png
 
 <!---HONumber=Mooncake_1017_2016-->
