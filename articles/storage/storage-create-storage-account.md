@@ -99,7 +99,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 > [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用 *共享访问签名* 。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
-#### 查看和复制存储访问密钥
+#### <a name="view-copy-and-regenerate-storage-access-keys"></a> 查看和复制存储访问密钥
 
 在 [Azure 门户预览](https://portal.azure.cn)中，导航到你的存储帐户，单击“所有设置”，然后单击“访问密钥”以查看、复制和重新生成帐户访问密钥。“访问密钥”边栏选项卡还包含使用你的主密钥和辅助密钥预配置的连接字符串，可复制到应用程序中使用。
 
