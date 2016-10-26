@@ -60,23 +60,9 @@
 
 现在让我们开始吧。
 
-1. 	导航到 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) App Service 示例。
+1. 	参照[使用 Azure App Service 进行敏捷软件开发](/documentation/articles/app-service-agile-software-development/)文档部署 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) App Service 示例。
 
-2.	 在 readme.md 中，单击“部署到 Azure”。
- 
-3.	你将会转到 [deploy-to-azure](https://deploy.azure.com) 站点并需要输入部署参数。请注意大多数字段将填充以存储库名称和某些随机字符串。可以更改所有字段（如果你想），但唯一一项必须输入的内容是 SQL Server 管理登录名和密码，然后单击“下一步”。
- 
-	![](./media/app-service-deploy-complex-application-predictably/gettemplate-1-deploybuttonui.png)
-
-4.	接下来，单击“部署”以启动部署进程。一旦进程运行至完成，则单击 http://todoapp*XXXX*.chinacloudsites.cn 链接以浏览部署的应用程序。
-
-	![](./media/app-service-deploy-complex-application-predictably/gettemplate-2-deployprogress.png)
-
-	当你首次浏览到 UI 时它的显示会慢些，因为应用刚刚启动，但应确信它是一个功能齐全运行正常的应用程序。
-
-5.	返回到“部署”页，单击“管理”链接以查看 Azure 门户预览中的新应用程序。
-
-6.	在“必备”下拉列表中，单击资源组链接。还要注意，Web 应用已连接到“外部项目”下的 GitHub 存储库。
+6.	在 Azure 门户预览可以查看你的应用。要注意，Web 应用已连接到“外部项目”下的 GitHub 存储库。
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-3-portalresourcegroup.png)
  

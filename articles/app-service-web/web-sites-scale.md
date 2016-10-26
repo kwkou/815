@@ -21,7 +21,7 @@
 
 缩放设置只需几秒钟即会应用，且影响范围遍及[应用服务计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)中的所有应用。在此过程中，你不需要更改代码或重新部署应用程序。
 
-有关各个应用服务计划的定价和功能的信息，请参阅[应用服务定价详细信息](/pricing/details/web-sites/)。
+有关各个应用服务计划的定价和功能的信息，请参阅[应用服务定价详细信息](/pricing/details/app-service/)。
 
 > [AZURE.NOTE] 从**免费**层切换应用服务计划之前，必须先删除 Azure 订阅的现有[支出限制](/pricing/spending-limits/)。若要查看或更改 Azure App Service 订阅的选项，请参阅 [Azure Subscriptions][azuresubscriptions]（Azure 订阅）。
 
@@ -72,7 +72,7 @@
 
 ## <a name="OtherFeatures"></a>了解其他功能
 
-- 有关应用服务计划中所有其他功能（包括定价和所有用户（包括开发人员）感兴趣的功能）的详细信息，请参阅 [应用服务定价详细信息](/pricing/details/web-sites/)。
+- 有关应用服务计划中所有其他功能（包括定价和所有用户（包括开发人员）感兴趣的功能）的详细信息，请参阅 [应用服务定价详细信息](/pricing/details/app-service/)。
 
 ## <a name="Next Steps"></a>后续步骤
 

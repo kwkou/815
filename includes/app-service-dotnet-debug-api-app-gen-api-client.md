@@ -2,7 +2,7 @@
 
 Visual Studio 中的 API 应用工具能更加轻松地生成可从桌面、应用商店和移动应用调用到 Azure API 应用的 C# 代码。
 
-1. 在 Visual Studio 中，打开包含[创建 API 应用](/documentation/articles/app-service-dotnet-create-api-app/)主题中的 API 应用的解决方案。
+1. 在 Visual Studio 中，打开包含[创建 API 应用](/documentation/articles/app-service-api-dotnet-get-started/)主题中的 API 应用的解决方案。
 
 2. 在“解决方案资源管理器”中，右键单击解决方案并选择“添加”>“新建项目”。
 
