@@ -6,18 +6,25 @@
 	documentationCenter=""
 	authors="trinadhk"
 	manager="shreeshd"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="backup"
-	ms.date="06/03/2016"
-	wacn.date="07/13/2016"/>
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/31/2016"
+	ms.author="trinadhk; jimpark; markgal;"
+   	wacn.date="10/26/2016"/>  
+
 
 # 管理和监视 Azure 虚拟机备份
 
 本文针对在 Azure 中受保护的经典模型虚拟机介绍了几种常见的管理和监视任务。
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 部署模型和经典部署模型](/documentation/articles/resource-manager-deployment-model)。有关使用经典部署模型 VM 的详细信息，请参阅[准备好环境以备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-prepare)。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[资源管理器部署模型和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。有关使用经典部署模型 VM 的详细信息，请参阅[进行备份 Azure 虚拟机所需的环境准备](/documentation/articles/backup-azure-vms-prepare/)。
 
 ## 管理受保护的虚拟机
 
@@ -74,7 +81,7 @@
 - 保留 Azure 备份保管库中与虚拟机关联的备份数据
 - 删除与虚拟机关联的备份数据
 
-如果你已选择保留与虚拟机关联的备份数据，则可使用该备份数据来还原虚拟机。有关此类虚拟机的定价详细信息，请单击[此处](/pricing/details/back-up/)。
+如果你已选择保留与虚拟机关联的备份数据，则可使用该备份数据来还原虚拟机。有关此类虚拟机的定价详细信息，请单击[此处](/pricing/details/backup/)。
 
 若要停止保护虚拟机，请执行以下操作：
 
@@ -84,11 +91,13 @@
 
 2. 选择虚拟机，然后单击页底部的“停止保护”。
 
-    ![停止保护](./media/backup-azure-manage-vms/stop-protection.png)
+    ![停止保护](./media/backup-azure-manage-vms/stop-protection.png)  
+
 
 3. 默认情况下，Azure 备份不会删除与虚拟机关联的备份数据。
 
-    ![确认停止保护](./media/backup-azure-manage-vms/confirm-stop-protection.png)
+    ![确认停止保护](./media/backup-azure-manage-vms/confirm-stop-protection.png)  
+
 
     如果你要删除备份数据，请选中该复选框。
 
@@ -102,16 +111,18 @@
 
     如果你未在“停止保护”向导中选择“删除关联的备份数据”选项，则在作业完成后，保护状态将更改为“已停止保护”。数据将会使用 Azure 备份保留，直到被显式删除。你随时都可通过在“受保护的项”页中选择虚拟机，然后单击“删除”来删除数据。
 
-    ![已停止保护](./media/backup-azure-manage-vms/protection-stopped-status.png)
+    ![已停止保护](./media/backup-azure-manage-vms/protection-stopped-status.png)  
 
-    如果你已选择“删除关联的备份数据”选项，则虚拟机将不会出现在“受保护的项”页中。
+
+    如果已选择“删除关联的备份数据”选项，则虚拟机不会出现在“受保护的项”页中。
 
 ## 重新保护虚拟机
 如果你未在“停止保护”中选择“删除关联的备份数据”选项，可以遵循类似于备份已注册虚拟机的步骤来重新保护虚拟机。受保护后，此虚拟机将在停止保护之前保留备份数据，并在重新保护后创建恢复点。
 
-重新保护之后，如果有“停止保护”之前的恢复点，则虚拟机的保护状态将更改为“受保护”。
+重新保护后，如果有“停止保护”之前的恢复点，则虚拟机的保护状态将更改为“受保护”。
 
-  ![重新保护 VM](./media/backup-azure-manage-vms/reprotected-status.png)
+  ![重新保护 VM](./media/backup-azure-manage-vms/reprotected-status.png)  
+
 
 >[AZURE.NOTE] 重新保护虚拟机时，你可以选择一个不同的策略，而不是最初用于保护虚拟机的策略。
 
@@ -183,7 +194,7 @@
 
 若要查看某个备份保管库的相应操作日志，请执行以下操作：
 
-1. 导航到 Azure 经典管理门户中的“管理服务”，然后单击“操作日志”选项卡。
+1. 导航到 Azure 门户预览中的“管理服务”，然后单击“操作日志”选项卡。
 
     ![操作日志](./media/backup-azure-manage-vms/ops-logs.png)
 
@@ -199,15 +210,13 @@
 
     ![操作详细信息](./media/backup-azure-manage-vms/ops-logs-details-window.png)
 
-## <a name="alert-notifications"></a>警报通知
-你可以获取门户中作业的自定义警报通知。为此，你需要针对操作日志事件定义基于 PowerShell 的警报规则。我们建议使用 PowerShell 1.3.0 或更高版本。
+## 警报通知
+你可以获取门户中作业的自定义警报通知。为此，你需要针对操作日志事件定义基于 PowerShell 的警报规则。我们建议使用 *PowerShell 1.3.0 或更高版本*。
 
 若要定义自定义通知以便在备份失败时发出警报，可使用如下所示的示例命令：
 
-
-		PS C:\> $actionEmail = New-AzureRmAlertRuleEmail -CustomEmail contoso@microsoft.com
-		PS C:\> Add-AzureRmLogAlertRule -Name backupFailedAlert -Location "East US" -ResourceGroup RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US -OperationName Microsoft.Backup/backupVault/Backup -Status Failed -TargetResourceId /subscriptions/86eeac34-eth9a-4de3-84db-7a27d121967e/resourceGroups/RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US/providers/microsoft.backupbvtd2/BackupVault/trinadhVault -Actions $actionEmail
-
+	PS C:\> $actionEmail = New-AzureRmAlertRuleEmail -CustomEmail contoso@microsoft.com
+	PS C:\> Add-AzureRmLogAlertRule -Name backupFailedAlert -Location "China East" -ResourceGroup RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US -OperationName Microsoft.Backup/backupVault/Backup -Status Failed -TargetResourceId /subscriptions/86eeac34-eth9a-4de3-84db-7a27d121967e/resourceGroups/RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US/providers/microsoft.backupbvtd2/BackupVault/trinadhVault -Actions $actionEmail
 
 **ResourceId**：你可以从“操作日志”弹出窗口中获取此项，如以上部分所述。操作的详细信息弹出窗口中的 ResourceUri 是要针对此 cmdlet 提交的 ResourceId。
 
@@ -215,7 +224,7 @@
 
 **Status**：支持的值包括 Started、Succeeded 和 Failed。
 
-**ResourceGroup**：触发操作时所在的资源的 ResourceGroup。可以从 ResourceId 值获取此项。ResourceId 值中字段 /resourceGroups/ 与字段 /providers/ 之间的值是 ResourceGroup 的值。
+**ResourceGroup**：触发操作时所在的资源的 ResourceGroup。可以从 ResourceId 值获取此项。ResourceId 值中字段 */resourceGroups/* 与字段 */providers/* 之间的值是 ResourceGroup 的值。
 
 **Name**：警报规则的名称。
 
@@ -227,11 +236,11 @@
 基于事件的警报会受到以下限制：
 
 1. 警报在备份保管库的所有虚拟机上触发。你不能通过自定义来获取备份保管库中特定虚拟机集的警报。
-2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples/#create-alert-rules)
-3. 你将收到来自“alerts-noreply@mail.windowsazure.com”的警报。目前你无法修改电子邮件发件人。
+2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples/#create-alert-rules/)
+3. 将收到来自“alerts-noreply@mail.windowsazure.com”的警报。目前你无法修改电子邮件发件人。
 
 ## 后续步骤
 
 - [还原 Azure VM](/documentation/articles/backup-azure-restore-vms/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1017_2016-->
