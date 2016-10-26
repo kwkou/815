@@ -1,7 +1,7 @@
 <a name="tellmeas"></a>
 ## 我想了解 App Service
 
-Azure 虚拟机可以处理各种云托管任务。但是，创建和管理 VM 基础结构需要有专业技能并付出大量的努力。如果你不需要完全控制运行 Web 应用、移动应用后端、API Apps 等的 VM，则可以使用一个比较简单（且更经济）的解决方案：*平台即服务* (PaaS)。使用 PaaS，Azure 可以处理大多数运行应用程序的 VM 的管理工作。[Azure App Service](/documentation/articles/app-service/app-service-value-prop-what-is) 是一种完全托管的 PaaS 产品，可让你在数秒内构建、部署和扩展企业级应用。
+Azure 虚拟机可以处理各种云托管任务。但是，创建和管理 VM 基础结构需要有专业技能并付出大量的努力。如果你不需要完全控制运行 Web 应用、移动应用后端、API Apps 等的 VM，则可以使用一个比较简单（且更经济）的解决方案：*平台即服务* (PaaS)。使用 PaaS，Azure 可以处理大多数运行应用程序的 VM 的管理工作。[Azure App Service](/documentation/articles/app-service-value-prop-what-is/) 是一种完全托管的 PaaS 产品，可让你在数秒内构建、部署和扩展企业级应用。
 
 对于许多类型的应用程序工作负荷而言，App Service 是最佳选择。企业可能想要构建或迁移可处理每周数以百万次点击的商业 Web 应用，该 Web 应用部署在全球若干数据中心。同一企业可能还部署了业务线应用用于从企业 Active Directory 跟踪已经过身份验证的用户的费用报告，应用可能包含移动设备组件并连接到本地资源和业务流程。费用报告可能需要使用周期性的后台作业来计算和汇总大量信息。IT 顾问可以采用常用的开放源应用程序为小型企业设置内容管理系统。下图显示了一些可以在 Azure App Service 中运行的 Web 应用类型。
 

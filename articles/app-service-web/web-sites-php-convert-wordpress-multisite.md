@@ -136,8 +136,8 @@ WordPress Multisite 当前没有用于映射自定义域的内置方法。但是
 [ben-lobaugh]: http://ben.lobaugh.net
 [ms-open-tech]: http://msopentech.com
 [wordpress-codex-create-a-network]: http://codex.wordpress.org/Create_A_Network
-[website-w-mysql-and-ftp-ftp-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-ftp/#header-0
-[website-w-mysql-and-git-git-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-git/#header-1
+[website-w-mysql-and-ftp-ftp-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-ftp/
+[website-w-mysql-and-git-git-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
 [wordpress-network-setup]: ./media/web-sites-php-convert-wordpress-multisite/wordpress-network-setup.png
 [wordpress-codex-types-of-networks]: http://codex.wordpress.org/Before_You_Create_A_Network#Types_of_multisite_network
 [wordpress-plugin-wordpress-mu-domain-mapping]: http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/
