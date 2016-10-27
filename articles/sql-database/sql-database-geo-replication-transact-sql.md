@@ -181,6 +181,6 @@
 ## 后续步骤
 
 - 若要了解有关活动异地复制的详细信息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- 若要了解业务连续性设计和恢复方案，请参阅[连续性方案](/documentation/articles/sql-database-business-continuity-scenarios/)
+- 若要了解业务连续性设计和恢复方案，请参阅[连续性方案](/documentation/articles/sql-database-business-continuity/)
 
 <!---HONumber=Mooncake_0808_2016-->

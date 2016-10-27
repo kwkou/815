@@ -86,7 +86,7 @@
 
 ### 时间点还原
 
-时间点还原使用自动的数据库备份将池中的数据库恢复到特定的时间点。请参阅[在发生用户错误后恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery/)
+时间点还原使用自动的数据库备份将池中的数据库恢复到特定的时间点。请参阅[在发生用户错误后恢复 Azure SQL 数据库](/documentation/articles/sql-database-business-continuity/)
 
 ### 异地还原
 
