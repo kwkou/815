@@ -113,7 +113,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 升级后，主动监视数据库，确保应用程序以所需性能运行，然后根据需要优化设置。
 
-除监视单个数据库外，还可以监视弹性数据库池。使用[Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)或通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/#monitoring-elastic-databases-and-elastic-database-pools) 监视、管理弹性数据库池并设置其大小。
+除监视单个数据库外，还可以监视弹性数据库池。使用[Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)或通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/) 监视、管理弹性数据库池并设置其大小。
 
 
 **资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm_ db_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 查看资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度级提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是一个用于计算过去一小时平均 DTU 消耗百分比的查询：
@@ -129,7 +129,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 其他监视信息：
 
-- [Azure SQL 数据库的单一数据库性能指导](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx)。
+- [Azure SQL 数据库的单一数据库性能指导](/documentation/articles/sql-database-performance-guidance/)。
 - [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 - [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs/)
 

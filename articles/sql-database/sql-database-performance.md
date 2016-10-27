@@ -38,7 +38,7 @@ Azure SQL 数据库提供的性能工具通过提供智能优化操作和建议�
 
 
 
-## SQL 数据库顾问
+##<a id="sql-database-advisor"></a> SQL 数据库顾问
 
 
 [SQL 数据库顾问](/documentation/articles/sql-database-advisor/)可提供智能优化建议，有助于提高数据库的性能。
@@ -50,7 +50,7 @@ Azure SQL 数据库提供的性能工具通过提供智能优化操作和建议�
 
 
 
-## Query Performance Insight
+##<a id="query-performance-insight"></a> Query Performance Insight
 
 [Query Performance Insight](/documentation/articles/sql-database-query-performance/) 通过提供以下功能使排查数据库性能问题花费的时间更少：
 

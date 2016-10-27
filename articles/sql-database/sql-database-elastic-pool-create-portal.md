@@ -28,7 +28,7 @@
 
 本文介绍如何在 [Azure 门户预览](https://portal.azure.cn/)中创建可缩放的[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。可以通过两种方法创建池。如果你知道想要的池设置，可以从头开始创建，或者根据服务的建议进行创建。SQL 数据库具有内置智能，可以根据数据库的过去的使用遥测数据来推荐更加经济高效的池设置。
 
-可以将多个池添加到服务器，但不能将数据库从不同的服务器添加到同一个池中。若要创建池，需要在 V12 服务器中至少有一个数据库。如果你没有这样的数据库，请参阅[创建首个 Azure SQL 数据库](sql-database-get-started.md)。可以创建只有一个数据库的池，但是池只有在具有多个数据库时才会经济高效。请参阅[弹性数据库池的价格和性能注意事项](sql-database-elastic-pool-guidance.md)。
+可以将多个池添加到服务器，但不能将数据库从不同的服务器添加到同一个池中。若要创建池，需要在 V12 服务器中至少有一个数据库。如果你没有这样的数据库，请参阅[创建首个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。可以创建只有一个数据库的池，但是池只有在具有多个数据库时才会经济高效。请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
 > [AZURE.NOTE] 池只能随 SQL 数据库 V12 服务器一起使用。如果在 V11 服务器上有数据库，可以在 V12 服务器上[使用 PowerShell 脚本将它们标识为池的候选数据库](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/)，然后在一个步骤中[使用 PowerShell 升级到 V12 并创建一个池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
@@ -110,9 +110,9 @@ SQL 数据库服务将评估使用量历史记录，并在比使用单一数据�
 
 ## 其他资源
 
-- [使用门户管理 SQL 数据库弹性池](/documentation/article/sql-database-elastic-pool-manage-portal/)
-- [使用 PowerShell 管理 SQL 数据库弹性池](/documentation/article/sql-database-elastic-pool-manage-powershell/)
-- [使用 C# 管理 SQL 数据库弹性池](/documentation/article/sql-database-elastic-pool-manage-csharp/)
-- [Scaling out with Azure SQL Database（使用 Azure SQL 数据库进行扩展）](/documentation/article/sql-database-elastic-scale-introduction/)
+- [使用门户管理 SQL 数据库弹性池](/documentation/articles/sql-database-elastic-pool-manage-portal/)
+- [使用 PowerShell 管理 SQL 数据库弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
+- [使用 C# 管理 SQL 数据库弹性池](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
+- [Scaling out with Azure SQL Database（使用 Azure SQL 数据库进行扩展）](/documentation/articles/sql-database-elastic-scale-introduction/)
 
 <!---HONumber=Mooncake_0912_2016--->

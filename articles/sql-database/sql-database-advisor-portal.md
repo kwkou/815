@@ -16,7 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [SQL 数据库顾问概述](/documentation/articles/sql-database-advisor/)
-- [门户](/documentation/articles/sql-database-advisor-portal/)
+- [Azure 门户预览](/documentation/articles/sql-database-advisor-portal/)
 
 可以在 Azure 门户预览中使用 Azure SQL 数据库顾问查看和实施为你的现有 SQL 数据库提供的建议，这些建议可以提高当前查询性能。
 

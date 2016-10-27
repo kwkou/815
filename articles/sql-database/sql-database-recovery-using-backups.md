@@ -38,7 +38,7 @@ SQL 数据库使用 [SQL 数据库自动备份](/documentation/articles/sql-data
 
 > [AZURE.IMPORTANT] 若要使用自动备份进行恢复，用户必须是订阅中的 SQL Server 参与者角色的成员或是订阅所有者。可使用 PowerShell 或 REST API 进行恢复。但不能使用 Transact-SQL。
 
-## 时间点还原
+##<a id="point-in-time-restore"></a> 时间点还原
 
 使用时间点还原，可以通过 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)将现有数据库作为新数据库还原到同一逻辑服务器上的较早时间点。无法覆盖现有数据库。可通过 [PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx) 还原到较早时间点。
 
@@ -52,7 +52,7 @@ SQL 数据库使用 [SQL 数据库自动备份](/documentation/articles/sql-data
 
 有关使用时间点还原从用户和应用程序错误中恢复的详细信息，请参阅[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)
 
-## 已删除的数据库还原
+##<a id="deleted-database-restore"></a> 已删除的数据库还原
 
 使用已删除的数据库还原，可以通过 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)将已删除的数据库还原到同一逻辑服务器上已删除的数据库的删除时间。
 
@@ -62,7 +62,7 @@ SQL 数据库使用 [SQL 数据库自动备份](/documentation/articles/sql-data
 
 
 
-## 异地还原
+##<a id="geo-restore"></a> 异地还原
 
 使用异地还原可以在任何 Azure 区域的任何服务器上从最新的异地复制[日常自动备份](/documentation/articles/sql-database-automated-backups/)还原 SQL 数据库。异地还原使用异地冗余备份作为源，即使由于停电而无法访问数据库或数据中心，也依然能够使用它来恢复数据库。可以使用 [PowerShell](/documentation/articles/sql-database-geo-restore-powershell/) 或 [REST (createMode=Recovery)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)
 

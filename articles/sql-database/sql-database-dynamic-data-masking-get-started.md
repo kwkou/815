@@ -18,7 +18,7 @@
 # SQL 数据库动态数据屏蔽入门（Azure 门户预览）
 
 > [AZURE.SELECTOR]
-- [动态数据屏蔽 - Azure 管理门户](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal/)
+- [动态数据屏蔽 - Azure 经典管理门户](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal/)
 
 ## 概述
 
