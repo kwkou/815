@@ -300,7 +300,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 
 Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁住 MySQL 数据库的表  
 
-它能备份 InnoDB, XtraDB, and MyISAM 表，支持 MySQL 5.1 [1], 5.5, 5.6 and 5.7    
+它能备份 InnoDB, XtraDB, and MyISAM 表，支持 MySQL 5.1 \[1], 5.5, 5.6 and 5.7    
 
 不管您的 MySQL 服务器是 24x7 高负载，还是只有少量交易的环境，Percona XtraBackup 设计是用来“绝不阻挠生产环境下的数据库服务器的表现”。
 
