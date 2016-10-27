@@ -119,14 +119,11 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 
 若要查看日志文件，必须按以下方式创建 FTP 凭据：
 
-1. 在 Web 应用边栏选项卡上单击“所有设置”。
-2. 单击“部署凭据”。
-3. 输入用户名和密码。
-4. 单击“保存”。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
 
-![设置部署凭据][configure03]
+1. 在“速览”部分中，单击“重置部署凭据”设置菜单项，提供用于将文件发布到应用的用户名和密码。
 
-完整的 FTP 用户名是“app\\username”，其中 *app* 是 Web 应用的名称。用户名列在 Web 应用边栏选项卡的“Essentials”下。
+1. 回到 [Azure 门户预览](https://portal.azure.cn)。完整的 FTP 用户名是“app\\username”，其中 *app* 是 Web 应用的名称。用户名列在 Web 应用边栏选项卡的“Essentials”下。
 
 ![FTP 部署凭据][configure02]
 

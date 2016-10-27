@@ -43,11 +43,11 @@
 
 6. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)，创建一个 MYSQL，然后再“仪表板”为你的 Web 应用找到 MYSQL 的连接字符串。
 
-6. 单击“设置”>“部署凭据”。
+6. 在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
 
-	![设置部署凭据][set-deployment-credentials]
+1. 在“速览”部分中，单击“重置部署凭据”设置菜单项，提供用于将文件发布到应用的用户名和密码。
 
-7. 若要启用 FTP 发布，必须提供用户名和密码。保存凭据并记下创建的用户名和密码。
+1. 回到 [Azure 门户预览](https://portal.azure.cn)。若要启用 FTP 发布，必须提供用户名和密码。保存凭据并记下创建的用户名和密码。
 
 	![创建发布凭据][portal-ftp-username-password]
 
