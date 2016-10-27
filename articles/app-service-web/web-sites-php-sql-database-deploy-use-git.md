@@ -55,21 +55,15 @@
 
 	Web 应用创建完成后，“通知”按钮将闪烁绿色的“成功”字样，资源组边栏选项卡会打开，以显示该组中的 Web 应用和 SQL 数据库。
 
-11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
 
-		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
+1. 在“速览”部分中，单击“重置部署凭据”设置菜单项，提供用于将文件发布到应用的用户名和密码。
 
-		$a.Properties.scmType = "LocalGit"
+3. 选择“从源控件设置部署”。在“设置部署”对话框中，选择“本地 Git 存储库”选项，然后单击“确定”。随后将创建在 Azure 中运行的、与应用关联的 Git 存储库。每次将代码提交到 Git 存储库的 *master* 分支时，代码就会发布到实时运行的 API 应用实例。
 
-		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
-
-4. 单击资源组边栏选项卡中 Web 应用的图标，以打开 Web 应用的边栏选项卡。
+1. 回到 [Azure 门户预览](https://portal.azure.cn)。单击资源组边栏选项卡中 Web 应用的图标，以打开 Web 应用的边栏选项卡。
 
 	![Web 应用的资源组](./media/web-sites-php-sql-database-deploy-use-git/resource-group-blade.png)
-
-	如果之前未设置 Git 存储库，则必须提供用户名和密码。为此，请在 Web 应用的边栏选项卡中，单击“设置”>“部署凭据”。
-
-	![](./media/web-sites-php-sql-database-deploy-use-git/deployment-credentials.png)
 
 6. 在“设置”中，单击“属性”以查看稍后要用于部署 PHP 应用所需的 Git 远程 URL。
 

@@ -72,33 +72,13 @@
 
 	不久之后（通常不到一分钟），Azure 将创建出新的 Web 应用。
 
-9. 单击“Web 应用”>“{你的新 Web 应用}”。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
 
-	![](./media/web-sites-nodejs-develop-deploy-mac/gotowebapp.png)
+1. 在“速览”部分中，单击“重置部署凭据”设置菜单项，提供用于将文件发布到应用的用户名和密码。
 
-10. 在“Web 应用”边栏选项卡中，单击“部署”部件。
+3. 选择“从源控件设置部署”。在“设置部署”对话框中，选择“本地 Git 存储库”选项，然后单击“确定”。随后将创建在 Azure 中运行的、与应用关联的 Git 存储库。每次将代码提交到 Git 存储库的 *master* 分支时，代码就会发布到实时运行的 API 应用实例。
 
-	![][deployment-part]
-
-13. 设置部署凭据。
-
-	a.在“Web 应用”边栏选项卡中，单击“设置”>“部署凭据”。
-
-	![][deployment-credentials]
- 
-	b.创建用户名和密码。
-	
-	![](./media/web-sites-nodejs-develop-deploy-mac/setdeploycreds.png)
-
-11. 使用以下 PowerShell 命令行设置“本地 Git 存储库”。
-
-		$a = Get-AzureRmResource -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
-
-		$a.Properties.scmType = "LocalGit"
-
-		Set-AzureRmResource -PropertyObject $a.Properties -ResourceId /subscriptions/<subscription id>/resourcegroups/<resource group name>/providers/Microsoft.Web/sites/<web app name>/Config/web -ApiVersion 2015-08-01
-
-14. 在“Web 应用”边栏选项卡中，单击“设置”，然后单击“属性”。
+1. 回到 [Azure 门户预览](https://portal.azure.cn)。 在“Web 应用”边栏选项卡中，单击“设置”，然后单击“属性”。
  
 	推送到远程 Git 存储库即可发布。存储库的 URL 将在“GIT URL”下列出。本教程的后面部分需使用此 URL。
 

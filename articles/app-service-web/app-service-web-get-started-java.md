@@ -87,11 +87,11 @@
 
     收到“已成功更新 Web 应用设置”通知时，导航到 http:// *&lt;appname>* .chinacloudsites.cn，查看默认 JSP servlet 的效果。
 
-7. 返回 Web 应用边栏选项卡，向下滚动到“部署凭据”或进行搜索，然后单击。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
 
-8. 设置部署凭据，单击“保存”。
+1. 在“速览”部分中，单击“重置部署凭据”设置菜单项，提供用于将文件发布到应用的用户名和密码。
 
-7. 返回 Web 应用边栏选项卡，单击“概述”。单击“FTP/部署用户名”和“FTPS 主机名”旁的“复制”按钮，复制这些值。
+7. 回到 [Azure 门户预览](https://portal.azure.cn)。在 Web 应用边栏选项卡，单击“概述”。单击“FTP/部署用户名”和“FTPS 主机名”旁的“复制”按钮，复制这些值。
 
     ![](./media/app-service-web-get-started-languages/get-ftp-url.png)  
 
