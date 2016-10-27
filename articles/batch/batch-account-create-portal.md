@@ -67,7 +67,7 @@
     `https://<account_name>.<region>.batch.azure.com`  
 
 
-![门户中的 Batch 帐户 URL][account_url]  
+	![门户中的 Batch 帐户 URL][account_url]  
 
 
 * **访问密钥**：应用程序在 Batch 帐户中处理资源时还需要一个访问密钥。若要查看或重新生成 Batch 帐户的访问密钥，请在“Batch 帐户”边栏选项卡左侧菜单的“搜索”框中输入 `keys`，然后选择“密钥”。
