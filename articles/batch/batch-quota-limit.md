@@ -1,17 +1,22 @@
 <properties
-	pageTitle="Batch 服务配额和限制 | Azure"
-	description="了解使用 Azure Batch 服务时的配额、限制和约束"
+	pageTitle="Batch 服务的配额和限制 | Azure"
+	description="了解默认的 Azure Batch 配额、限制和约束，以及如何请求提高配额"
 	services="batch"
 	documentationCenter=""
 	authors="mmacy"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="batch"
-	ms.date="06/10/2016"
-	wacn.date="07/11/2016"/>
-
+	ms.workload="big-compute"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/10/2016"
+	ms.author="marsma"
+   	wacn.date="10/26/2016"/>  
 
 
 # Azure Batch 服务的配额和限制
@@ -27,16 +32,16 @@
 ---|---|---
 每个区域每个订阅的 Batch 帐户数 | 1 | 50
 
-## <a name="batch-account-quotas"></a>Batch 帐户配额
+## Batch 帐户配额
 [AZURE.INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
 ## 其他限制
 **资源**|**最大限制**
 ---|---
-每个计算节点的[并发任务](/documentation/articles/batch-parallel-node-tasks)数 | 4 x 节点核心数
-每个 Batch 帐户的[应用程序](/documentation/articles/batch-application-packages)数 | 20
+每个计算节点的[并发任务](/documentation/articles/batch-parallel-node-tasks/)数 | 4 x 节点核心数
+每个 Batch 帐户的[应用程序](/documentation/articles/batch-application-packages/)数 | 20
 每个应用程序的应用程序包数 | 40
-应用程序包大小（每个） | 约 195 GB<sup>1</sup>
+应用程序包大小（每个） | 约 195GB<sup>1</sup>
 
 <sup>1</sup> 最大的块 Blob 大小的 Azure 存储空间限制
 
@@ -44,15 +49,16 @@
 
 可在 [Azure 门户预览][portal]中查看 Batch 帐户配额。
 
-1. 在门户中，单击“Batch 帐户”，然后单击你的 Batch 帐户的名称。
+1. 在门户中选择“Batch 帐户”，然后选择所需的 Batch 帐户。
 
-2. 在帐户边栏选项卡中，单击“所有设置”>“属性”。
+2. 在 Batch 帐户的菜单边栏选项卡中选择“属性”
 
-	![Batch 帐户配额][account_quotas]
+3. “属性”边栏选项卡显示了当前应用于 Batch 帐户的**配额**
 
-3. “属性”边栏选项卡显示了当前应用于 Batch 帐户的配额。
+	![Batch 帐户配额][account_quotas]  
 
-## <a name="increase-a-quota"></a>提高配额
+
+## 提高配额
 
 执行以下步骤，使用 [Azure 门户预览][portal]来请求提高配额。
 
@@ -70,15 +76,15 @@
 
 	d.“支持计划”>“配额支持 - 已包括”
 
-	单击**“下一步”**。
+	单击“下一步”。
 
 4. 在“问题”边栏选项卡上：
 
-	a.根据业务影响情况选择“严重性”。
+	a.根据[业务影响情况][support_sev]选择“严重性”。
 
 	b.在“详细信息”中，指定想要更改的每个配额、Batch 帐户名和新限制。
 
-	单击**“下一步”**。
+	单击“下一步”。
 
 5. 在“联系信息”边栏选项卡上：
 
@@ -92,7 +98,8 @@
 
 ## 相关主题
 
-* [创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)
+* [使用 Azure 门户预览创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)
+
 * [Azure Batch 功能概述](/documentation/articles/batch-api-basics/)
 
 * [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
@@ -103,4 +110,4 @@
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1017_2016-->
