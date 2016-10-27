@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="07/19/2016"
-	wacn.date="09/26/2016"
+	wacn.date="09/26/2016" />
 
 
 # 更改 SQL 数据库的服务层和性能级别（定价层）

@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="08/15/2016"
-	wacn.date="09/19/2016"
+	wacn.date="09/19/2016" />
 
 
 # 使用 Azure 门户预览将 Azure SQL 数据库存档到 BACPAC 文件
