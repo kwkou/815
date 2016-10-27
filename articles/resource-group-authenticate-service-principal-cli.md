@@ -40,7 +40,7 @@
 
 你可能会疑惑 - 为什么需要这两个对象？ 在考虑多租户应用程序时，此方法会更合理。通常对软件即服务 (SaaS) 应用程序使用多租户应用程序，其中应用程序在许多不同订阅中运行。对于多租户应用程序，有一个 AD 应用和多个服务主体（授予应用访问权限的每个 Active Directory 中有一个）。若要设置多租户应用程序，请参阅[使用 Azure Resource Manager API 进行授权的开发人员指南](/documentation/articles/resource-manager-api-authentication/)。
 
-## 所需的权限
+## <a name="required-permissions"></a> 所需的权限
 
 若要完成本主题，必须在 Azure Active Directory 和 Azure 订阅中均具有足够的权限。具体而言，必须能够在 Active Directory 中创建应用并向角色分配服务主体。
 
@@ -50,7 +50,7 @@
 
 现在转到[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate)身份验证部分。
 
-## 使用密码创建服务主体
+## <a name="create-service-principal-with-password"></a> 使用密码创建服务主体
 
 在本部分中，将执行步骤以：
 
@@ -130,7 +130,7 @@
 
 现在，用户已作为所创建服务主体的服务主体进行身份验证。
 
-## 使用证书创建服务主体
+## <a name="create-service-principal-with-certificate"></a> 使用证书创建服务主体
 
 在本部分中，将执行步骤以：
 
@@ -216,7 +216,7 @@
 
 现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
 
-## 示例应用程序
+## <a name="sample-applications"></a> 示例应用程序
 
 以下示例应用程序演示如何以服务主体身份登录。
 

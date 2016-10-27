@@ -181,6 +181,7 @@
 
 有关将 SAS 令牌与链接模板配合使用的示例，请参阅[将已链接的模版与 Azure Resource Manager 配合使用](/documentation/articles/resource-group-linked-templates/)。
 
+<a name="parameter-file"></a>
 [AZURE.INCLUDE [resource-manager-parameter-file](../includes/resource-manager-parameter-file)]
 
 ## 参数优先级

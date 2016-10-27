@@ -186,7 +186,7 @@ CF 公网 IP 是最后一步中部署 CF 环境中需要使用的。需要给 CF
 	azure network nsg rule create --resource-group lqicfrg01 --nsg-name lqicfnsg01-cf --access Allow --protocol Tcp --direction Inbound --priority 201 source-address-prefix Internet --source-port-range * --destination-address-prefix * --name cf-https --destination-port-range 443
 	azure network nsg rule create --resource-group lqicfrg01 --nsg-name lqicfnsg01-cf --access Allow --protocol Tcp --direction Inbound --priority 202 source-address-prefix Internet --source-port-range * --destination-address-prefix * --name cf-log --destination-port-range 4443
 
-![](./media/aog-virtual-machines-linuxlinux-deploy-cloud-foundry-manual/network-nsg-rule.png)	
+![](./media/aog-virtual-machines-linux-deploy-cloud-foundry-manual/network-nsg-rule.png)	
 
 ####<a id="ready_nic"></a> bosh 跳板机
 

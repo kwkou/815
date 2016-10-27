@@ -226,7 +226,7 @@
 | apiVersion | 是 | 用于创建资源的 REST API 版本。若要确定可用于特定资源类型的版本号，请参阅 [Supported API versions](/documentation/articles/resource-manager-supported-services/#supported-api-versions)（支持的 API 版本）。
 | type | 是 | 资源的类型。此值是资源提供程序的命名空间以及资源提供程序支持的资源类型的组合。
 | 名称 | 是 | 资源的名称。该名称必须遵循 RFC3986 中定义的 URI 构成部分限制。此外，向第三方公开资源名称的 Azure 服务将验证名称，以确保它不是尝试窃取另一个身份。请参阅[检查资源名称](https://msdn.microsoft.com/zh-cn/library/azure/mt219035.aspx)。
-| location | 多种多样 | 提供的资源支持的地理位置。若要确定可用的位置，请参阅 [Supported regions](/documentation/articles/resource-manager-supported-services/#supported-regions)（支持的区域）。大多数资源类型需要一个位置，但某些类型 （如角色分配）不需要位置。
+| location | 多种多样 | 提供的资源支持的地理位置。大多数资源类型需要一个位置，但某些类型 （如角色分配）不需要位置。
 | 标记 | 否 | 与资源关联的标记。
 | 注释 | 否 | 用于描述模板中资源的注释
 | dependsOn | 否 | 正在定义的资源所依赖的资源。将会评估资源之间的依赖关系，并按资源的依赖顺序来部署资源。如果资源不相互依赖，则会尝试并行部署资源。该值可以是资源名称或资源唯一标识符的逗号分隔列表。

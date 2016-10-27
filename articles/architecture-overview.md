@@ -27,7 +27,7 @@ Microsoft 模式与实践部门已发布了[云设计模式](http://msdn.microso
 
 ![模式与实践：云模式海报](./media/architecture-overview/PnPPatternPosterThumb.jpg)
 
-##Microsoft 体系结构认证课程
+## <a name="microsoft-architecture-certification-course"></a>Microsoft 体系结构认证课程
 
 Microsoft 创建了支持 Microsoft 认证考试 70-534 的体系结构课程。在 [EDX.ORG 上免费提供](https://www.edx.org/course/architecting-microsoft-azure-solutions-microsoft-dev205x)。它使用 [3D Blueprint Visio 模板](#3d-blueprint-visio-template)。
 
@@ -48,7 +48,7 @@ Microsoft 发布了一套高级别的[解决方案体系结构](http://aka.ms/az
 
 
 
-##3D Blueprint Visio Template
+## <a name="3d-blueprint-visio-template"></a>3D Blueprint Visio Template
 
 3D 版 [Microsoft 体系结构蓝图](http://aka.ms/azblueprints)最初在非 Microsoft 工具中创建，现在已失效。Visio 2013（和更高版本）模板于 2015 年 8 月 5 日发布，作为 [Microsoft 体系结构认证课程的一部分，分发在 EDX.ORG 上](#microsoft-architecture-certification-course)。
 
@@ -63,7 +63,7 @@ Microsoft 发布了一套高级别的[解决方案体系结构](http://aka.ms/az
 
 
 
-##绘制符号和图标集 
+## <a name="Drawing-symbol-and-icon-sets" id="drawing-symbol-and-icon-sets"></a>绘制符号和图标集 
 
 [下载云和企业符号集](http://aka.ms/CnESymbols)来帮助创建描述 Azure、Windows Server 和 SQL Server 等的技术资料。如果此书培训用户如何使用 Microsoft 产品，您可以使用体系结构图的符号、培训材料、演示文稿、数据表、信息图、白皮书和甚至是第三方书籍。但是，它们并不适合在用户界面中使用。
 
@@ -71,7 +71,7 @@ CnE 符号采用 Visio、SVG 和 PNG 格式。有关如何在 PowerPoint 中轻�
 
 符号集按季度发布，一旦新服务发布就会更新。
 
-Microsoft Office 和相关技术的其他符号可在 [Microsoft Office Visio stencil](http://www.microsoft.com/zh-cn/download/details.aspx?id=35772) 中使用，但并没有对体系结构图如 CnE 集进行优化。
+Microsoft Office 和相关技术的其他符号可在 [Microsoft Office Visio stencil](http://www.microsoft.com/download/details.aspx?id=35772) 中使用，但并没有对体系结构图如 CnE 集进行优化。
 
 **反馈：**如果你曾经使用过 CnE 符号，请填写 5 个简短的[调查](http://aka.ms/azuresymbolssurveyv2)问题，如果有具体的问题或事宜需要咨询，请发电子邮件至 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com)。我们想知道您的想法，包括积极的反馈，以便我们知道可以继续对其投入时间。
 

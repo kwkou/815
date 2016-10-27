@@ -251,7 +251,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Support/* | 创建和管理支持票证 |
 | NewRelic.APM/accounts/* | 创建并管理 New Relic 应用程序性能管理帐户 |
 
-### 所有者
+### <a name="owner"></a> 所有者
 可管理一切内容（包括访问权限）
 
 | **操作** ||
@@ -424,7 +424,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Storage/storageAccounts/* | 创建和管理存储帐户 |
 | Microsoft.Support/* | 创建和管理支持票证 |
 
-### 用户访问管理员
+### <a name="user-access-administrator"></a> 用户访问管理员
 可管理用户对 Azure 资源的访问权限
 
 | **操作** ||

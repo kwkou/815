@@ -125,11 +125,11 @@
 
 [AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
 
-### 虚拟机规模集限制
+### <a name="virtual-machine-scale-sets-limits"></a> 虚拟机规模集限制
 
 [AZURE.INCLUDE [virtual-machine-scale-sets-limits](../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-### 网络限制
+### <a name="networking-limits"></a> 网络限制
 
 [AZURE.INCLUDE [expressroute-limits](../includes/expressroute-limits.md)]
 
@@ -189,14 +189,13 @@
 
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
-<a id="media-services-limits"></a>
-
-### DocumentDB 限制
+### <a name="documentdb-limits"></a> DocumentDB 限制
 
 [AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
 
 列出的带星号 (*) 的配额[可联系 Azure 支持部门进行调整](/documentation/articles/documentdb-increase-limits/)。
 
+<a id="media-services-limits"></a>
 ### 媒体服务限制
 
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
@@ -260,7 +259,7 @@
 
 [AZURE.INCLUDE [redis-cache-service-limits](../includes/redis-cache-service-limits.md)]
 
-<a id="media-services-limits"></a>
+<a id="key-vault-limits"></a>
 ### 密钥保管库限制
 
 [AZURE.INCLUDE [key-vault-limits](../includes/key-vault-limits.md)]
