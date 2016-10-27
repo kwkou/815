@@ -54,7 +54,7 @@
 
 >[AZURE.NOTE]在创建虚拟机的向导中，不要修改自动添加的终结点（Windows 的 Remote Desktop 和 PowerShell， Linux 的 SSH）的协议和私有端口。这些是系统默认使用的协议和端口。若在此时被修改，会导致新创建的虚拟机对应的服务无法连接。待虚拟机部署完成后，可以根据实际的需求再做修改。
 
-## <a id="existVM"></a>在 Azure 经典管理门户管理终结点
+## <a id="existVM" name="portal"></a>在 Azure 经典管理门户管理终结点
 
 虚拟机创建过程中，Azure 自动添加的终结点仅用于与虚拟机建立连接。如果在虚拟机创建过程中没有添加自定义的终结点，用户也可以在 Azure 经典管理门户中为创建好的虚拟机添加终结点，或者修改已有的终结点。在 Azure 经典管理门户中选择需要修改终结点的虚拟机，然后点击终结点选项卡。
 
@@ -132,7 +132,7 @@ Azure 页面上会显示正在进行更新，大约半分钟后更新完成。
 
 ## <a id="powershell"></a>使用 PowerShell 设置终结点
 
-除了使用 Azure 经典管理门户，用户还可以使用 PowerShell 设置终结点。若要使用 PowerShell 来管理用户在 Azure 上的环境，需要安装 PowerShell 并且下载 Azure 订阅文件。关于如何使用 Windows Azure PowerShell，请浏览[这篇文章](/manage/linux/how-to-guides/powershell-cmdlets/)。
+除了使用 Azure 经典管理门户，用户还可以使用 PowerShell 设置终结点。若要使用 PowerShell 来管理用户在 Azure 上的环境，需要安装 PowerShell 并且下载 Azure 订阅文件。关于如何使用 Windows Azure PowerShell，请浏览[这篇文章](/documentation/articles/powershell-install-configure/)。
 
 ### <a id="powershellget"></a>获取终结点信息
 

@@ -387,7 +387,7 @@ Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁�
 ##<a id="backup-mongodb"></a>备份 MongoDB
 请参考文档 “[在Azure Linux虚拟机上管理配置MongoDB集群.docx](/documentation/articles/open-source-azure-virtual-machines-manage-mongodb-cluster/)” 中复制和分片的部分。  
 
-亦可使用mongodb tools.具体请参考[官网](#https://docs.mongodb.com/manual/administration/backup/)
+亦可使用mongodb tools.具体请参考[官网](https://docs.mongodb.com/manual/administration/backup/)
 
 
 <!--image reference -->

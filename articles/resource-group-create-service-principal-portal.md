@@ -203,7 +203,7 @@
 6. 选择“确定”完成角色分配。现在，已分配到资源组角色的用户列表中应会出现你的应用程序。
 
 
-有关通过门户将用户和应用程序分配到角色的详细信息，请参阅[使用角色分配来管理对 Azure 订阅资源的访问权限](/documentation/articles/role-based-access-control-configure/#manage-access-using-the-azure-management-portal)。
+有关通过门户将用户和应用程序分配到角色的详细信息，请参阅[使用角色分配来管理对 Azure 订阅资源的访问权限](/documentation/articles/role-based-access-control-configure/)。
 
 ## 示例应用程序
 

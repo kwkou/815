@@ -202,7 +202,7 @@ Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署�
 
 	PS C:\MyProject> Stop-AzureEmulator
 
-## 发布应用程序  
+## <a name="how-to-publish-your-application"></a> 发布应用程序  
 
 若要发布应用程序，需要先使用 [Import-AzurePublishSettingsFile](https://msdn.microsoft.com/zh-cn/library/azure/dn790370.aspx) cmdlet 导入发布设置。然后使用 [Publish-AzureServiceProject](https://msdn.microsoft.com/zh-cn/library/azure/dn495166.aspx) cmdlet 发布你的应用程序。有关登录的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 

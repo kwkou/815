@@ -40,7 +40,7 @@
 4. 如果你要移动 App Service 应用，则你已查看 [App Service 限制](#app-service-limitations)。
 5. 如果你要移动通过经典模型部署的资源，则你已查看[经典部署限制](#classic-deployment-limitations)。
 
-## 支持移动的服务
+## <a name="services-that-support-move"></a> 支持移动的服务
 
 就目前而言，支持移动到新资源组和订阅的服务是：
 
@@ -73,7 +73,7 @@
 - 虚拟网络（经典）- 请参阅[经典部署限制](#classic-deployment-limitations)
 - VPN 网关
 
-## App Service 限制
+## <a name="app-service-limitations"></a> App Service 限制
 
 使用 Web 应用时，你不能只移动 App Service 计划。若要移动 Web 应用，可以使用以下选项：
 
@@ -113,7 +113,7 @@
 
 例如，假设已设置将本地计算机复制到存储帐户 (Storage1)，并且想要受保护的计算机在故障转移到 Azure 之后显示为连接到虚拟网络 (Network1) 的虚拟机 (VM1)。不能在同一订阅中的资源组之间或在订阅之间移动这些 Azure 资源 - Storage1、VM1 和 Network1。
 
-## 经典部署限制
+## <a name="classic-deployment-limitations"></a> 经典部署限制
 
 移动通过经典模型部署的资源时，其选项各不相同，具体取决于是在订阅内移动资源，还是将资源移到新的订阅。
 
@@ -171,7 +171,7 @@
     }
 
 
-## 使用门户
+## <a name="use-portal"></a> 使用门户
 
 若要将资源移到同一订阅中的新资源组，请选择包含这些资源的资源组，然后选择“移动”按钮。
 
@@ -198,7 +198,7 @@
 ![显示移动结果](./media/resource-group-move-resources/show-result.png)  
 
 
-## 使用 PowerShell
+## <a name="use-powershell"></a> 使用 PowerShell
 
 若要将现有资源移到另一个资源组或订阅，请使用 **Move-AzureRmResource** 命令。
 
@@ -225,7 +225,7 @@
     /subscriptions/{guid}/resourceGroups/destinationgroup/providers/Microsoft.Web/sites/examplesite
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
-## 使用 Azure CLI
+## <a name="use-azure-cli"></a> 使用 Azure CLI
 
 若要将现有资源移到另一个资源组或订阅，请使用 **azure resource move** 命令。以下示例演示如何将一个 Redis 缓存移到新的资源组。在 **-i** 参数中，提供要移动的资源 ID 的逗号分隔列表。
 
@@ -238,7 +238,7 @@
     + Moving selected resources to NewRG
     info:    resource move command OK
 
-## 使用 REST API
+## <a name="use-rest-api"></a> 使用 REST API
 
 若要将现有资源移到另一个资源组或订阅中，请运行：
 
