@@ -56,7 +56,6 @@
 8. 单击**“确定”**
 9. 数据库还原过程随即将会开始，你可以使用“通知”监视还原进度
 
->[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
 
 ## 还原已删除的数据库
@@ -88,7 +87,6 @@
 8. 单击**“确定”**
 9. 数据库还原过程随即将会开始，你可以使用“通知”监视还原进度
 
->[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
 
 ## 后续步骤
@@ -103,7 +101,7 @@
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
 [PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
-[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
+
 
 <!--MSDN references-->
 

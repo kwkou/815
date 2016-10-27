@@ -35,7 +35,6 @@
 2. 使用[创建数据库还原请求][]操作开始还原。
 3. 使用[数据库操作状态][]操作跟踪还原状态。
 
->[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
 ## 还原已删除的数据库
 
@@ -46,7 +45,6 @@
 3.	使用[创建数据库还原请求][]操作开始还原。
 4.	使用[数据库操作状态][]操作跟踪还原状态。
 
->[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
 
 ## 后续步骤
@@ -57,7 +55,6 @@
 
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
-[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
 [How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/

@@ -100,7 +100,7 @@ Microsoft 提供了五种 SQL 产品/服务：
 - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
 - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
 
-如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)，了解两者区别的详细信息。
+如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/)，了解两者区别的详细信息。
 
 如果 SQL 听起来像是最佳选择，然后转到 [SQL Server](https://www.microsoft.com/server-cloud/products/) 了解有关 Microsoft SQL 产品和服务所提供内容的详细信息。
 
