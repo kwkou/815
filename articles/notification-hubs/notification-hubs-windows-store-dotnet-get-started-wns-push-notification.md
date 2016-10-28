@@ -113,7 +113,7 @@
 </li>
 </ol>
 
-&emsp;&emsp;![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
+   	![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
 
 
 你的通知中心现在已配置为使用 WNS，并且你有连接字符串用于注册你的应用程序和发送通知。
