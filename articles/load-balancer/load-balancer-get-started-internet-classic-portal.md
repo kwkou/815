@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -49,7 +49,7 @@
 
 5.	选择“创建负载均衡集”，然后单击右箭头。
 
-6. 在“配置负载平衡集”页上，键入负载平衡集的名称，然后分配用于 Azure 负载平衡器的探测行为的值。负载平衡器使用探测来确定负载平衡集中的虚拟机是否可用于接收传入流量。
+6. 在“配置负载均衡集”页上，键入负载均衡集的名称，然后分配用于 Azure 负载均衡器的探测行为的值。负载均衡器使用探测来确定负载均衡集中的虚拟机是否可用于接收传入流量。
 
 7.	单击复选标记以创建负载均衡的终结点。你将在虚拟机的“终结点”页的“负载均衡集名称”列中看到“是”。
 
