@@ -34,7 +34,7 @@ SSH 之另一项优点为其传输的数据可以是经过压缩的，所以可�
 
 **方案一:**
 
-通过 [azure 新 portal](https://portal.azure.cn/) 的重置远程访问
+通过 [azure 门户预览](https://portal.azure.cn/) 的重置远程访问
 
 ![reset-remote](./media/aog-virtual-machines-troubleshoot-ssh-remote-fail/reset-remote.png "reset-remote")
 

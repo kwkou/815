@@ -24,7 +24,7 @@
 
 ![powershell-version](./media/aog-automation-powershell-module-update/powershell-version.png "powershell-version")
 
-在[ Azure 传统门户](https://manage.windowsazure.cn/)里，找到自动化->自动化账户->资产，点击相应模块查看版本
+在[ Azure 经典管理门户](https://manage.windowsazure.cn/)里，找到自动化->自动化账户->资产，点击相应模块查看版本
 
 ![automation-account-property](./media/aog-automation-powershell-module-update/automation-account-property.png "automation-account-property")
 
@@ -32,7 +32,7 @@
 
 由于 Azure 自动化服务需要 PowerShell 模块以 zip 文件的形式被上传，用户需要在安装了相应模块的本地电脑上找到并打包模块。
 
-在本地电脑上进入 C:\Program Files (x86)\Microsoft SDKs 目录，找到相应的模块并打包成 .zip 文件。（Azure传统部署模式的模块默认位于 C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure 目录下，Azure 资源管理器部署模式的模块默认位于 C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ResourceManager\AzureResourceManager 目录下）
+在本地电脑上进入 C:\Program Files (x86)\Microsoft SDKs 目录，找到相应的模块并打包成 .zip 文件。（ Azure 经典部署模式的模块默认位于 C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure 目录下，Azure 资源管理器部署模式的模块默认位于 C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ResourceManager\AzureResourceManager 目录下）
 
 **在自动化服务中安装 PowerShell 模块**
 
