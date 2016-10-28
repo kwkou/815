@@ -1,11 +1,11 @@
-<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
+<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国区 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
 <tags ms.service="multiple" ms.date="" wacn.date="10/18/2016"/>
 
 
-# Azure 应用程序开发说明
+# 中国区 Azure 应用程序开发说明
 
 ##<a name="about"></a>文档简介
-*微软云( Microsoft Azure )，在境外由微软运营（以下简称为 “境外 Azure”），在中国由世纪互联公司运营（以下简称为 “中国区 Azure”）。*
+*微软云 ( Microsoft Azure )，在境外由微软运营（以下简称为 “境外 Azure”），在中国由世纪互联公司运营（以下简称为 “中国区 Azure”）。*
 
 微软公司为其境外 Azure 服务创建和部署云应用程序，提供了相应工具。
 
