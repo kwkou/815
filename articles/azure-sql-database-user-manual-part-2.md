@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date=""
-	wacn.date="09/21/2016"/>
+	wacn.date="10/28/2016"/>
 
 #Azure SQL 数据库用户手册
 
@@ -24,17 +24,17 @@
 
 Azure SQL 数据库中的服务器是虚拟的，可在同一个服务器下创建若干个数据库。这些数据库之间是资源隔离的，不会产生资源竞争。  
 
-1. 首先登陆 [Azure 管理门户](https://manage.windowsazure.cn/)  
+1. 首先登陆 [Azure 经典管理门户](https://manage.windowsazure.cn/)  
 
 2. 依次选择 SQL 数据库，服务器，创建 SQL 数据库服务器  
 
 	![创建 SQL 数据库服务器][8]
  
-3. 在弹出的窗口里，输入登陆的用户名和密码。如下图：  
+3. 在弹出的窗口里，输入登录的用户名和密码。如下图：  
 
 	![输入登陆的用户名和密码][9]
  
-	上图中有 3 个需要关注的点:  
+	上图中有 3 点需要关注:  
 
 	(1)	区域。中国东部表示 Azure 上海数据中心，中国北部表示 Azure 北京数据中心。  
 
@@ -64,7 +64,7 @@ Azure SQL 数据库中的服务器是虚拟的，可在同一个服务器下创�
 
 5.	请注意，我们只创建服务器，不创建数据库，不收取任何费用。  
 
-6.	因为我们是首次使用 Azure SQL 数据库，所以先介绍创建服务器，再创建数据库。如果您熟悉 Azure SQL 数据库，也可以在创建数据库的同时创建服务器。  
+6.	因为是首次使用 Azure SQL 数据库，所以先介绍创建服务器，再创建数据库。如果您熟悉 Azure SQL 数据库，也可以在创建数据库的同时创建服务器。  
 
 ###<a id="create-azure-sql-database"></a>2.2 创建 Azure SQL 数据库 
 
@@ -95,7 +95,7 @@ Azure SQL 数据库中的服务器是虚拟的，可在同一个服务器下创�
 
 (7)	继续创建另一个数据库，命名为 CRMDB。步骤同上。  
 
-###<a id="connect-to-azure-sql-database"></a>2.3 连接 Azure SQL 数据库(重要性高)  
+###<a id="connect-to-azure-sql-database"></a>2.3 连接 Azure SQL 数据库  
 
 本节将介绍如何使用本地计算机的 SQL Server Management Studio(SSMS) 连接创建好的 Azure SQL 数据库。这里使用的是 SQL 2014 的 SSMS。  
 
@@ -117,18 +117,18 @@ Azure SQL 数据库中的服务器是虚拟的，可在同一个服务器下创�
 
 	> [ 注意事项 ] 请注意: 上图的 ADO.NET 连接字符串，包含关键字 Encrypt=True，也就是可以通过 SSL 连接 Azure SQL 数据库，这就需要把本地的证书上传到 Azure。
 
-4. 打开本地计算机的 SSMS，输入上面的连接字符串，并输入在 4.1 小节创建的 Server Login Name 和 Password。  
+4. 打开本地计算机的 SSMS，输入上面的连接字符串，并输入在 2.1 小节创建的 Server Login Name 和 Password。  
 
 	![输入连接字符串][16]
  
-5. 点击连接，发现 SSMS 报错。在 4.1 小节中介绍过，访问 Azure SQL 数据库资源需要设置 IP 白名单。因为本机计算的出口 IP 地址没有设置在 IP 白名单里。  
+5. 点击连接，发现 SSMS 报错。在 2.1 小节中介绍过，访问 Azure SQL 数据库资源需要设置 IP 白名单。因为本机计算的出口 IP 地址没有设置在 IP 白名单里。  
 
 6. 如图：
 
 	![error][17]
  
 
-7. 回到 Azure 管理门户，点击下图的“管理允许的 IP 地址”：  
+7. 回到 Azure 经典管理门户，点击下图的“管理允许的 IP 地址”：  
 
 	![允许 IP 地址][18]
  
@@ -203,11 +203,11 @@ Azure SQL 数据库中的服务器是虚拟的，可在同一个服务器下创�
 
 如果在托管机房 IDC 已使用 SQL Server 2008, 2012 虚拟机，现在想使用基于云端的数据库 Azure SQL 数据库，这时候就需要考虑迁移。
 
-这篇用户手册简单介绍迁移到 Azure SQL 数据库的方法，分为三种：(更多方法，请参考上面的连接)  
+本文简单介绍迁移到 Azure SQL 数据库的方法，分为三种：  
 
 1.	推荐使用：SQL Server Data Tools for Visual Studio (SSDT)  
 
-2.	导出应用层数据(Data Tier wizard)  
+2.	导出应用层数据 (Data Tier wizard)  
 
 3.	SQL Azure Migration Wizard (SAMW)  
 
@@ -313,7 +313,7 @@ Azure SQL 数据库中的服务器是虚拟的，可在同一个服务器下创�
 
 	![发布结果][44] 
  
-17. 最后可以通过 BCP 工具，把本地 SQL Serve r的表数据，插入到 Azure SQL 数据库的表中  
+17. 最后可以通过 BCP 工具，把本地 SQL Server 的表数据，插入到 Azure SQL 数据库的表中  
 
 
 ####<a id="export-data-tier-application"></a>2.6.3 Export Data Tier Application  
@@ -336,7 +336,7 @@ Azure SQL 数据库中的服务器是虚拟的，可在同一个服务器下创�
 
 #####<a id="export-data-tier-application-details"></a>2.6.3.3 详细内容  
 
-1. 通过 SSMS，把本地 SQL Server 数据库导，导出 BACPAC 文件到本地磁盘我们选择相应的数据库，邮件，Tasks，Export Data-tier Application。  
+1. 通过 SSMS，把本地 SQL Server 数据库，导出 BACPAC 文件到本地磁盘我们选择相应的数据库，邮件，Tasks，Export Data-tier Application。  
 
 	![导出 BACPAC 文件][45]
  
@@ -458,13 +458,13 @@ Azure SQL 数据库提供了内置的监控功能，用户可以监控数据库�
 
 之前介绍了 Azure SQL 数据库支持无缝升级。  
 
-打个比方，即将上线的一个新项目在开发测试时，可以设置比较小的 DTU，比如基本服务层。因为开发测试用户访问量不大，使用基本服务层也比较节省成本。  
+举个例子，即将上线的一个新项目在开发测试时，可以设置比较小的 DTU，比如基本服务层。因为开发测试用户访问量不大，使用基本服务层也比较节省成本。  
 
 在项目上线之前，可以通过 Azure 管理界面将 Azure SQL 数据库升级到标准服务层或者是高级服务层。因为生产环境对 DTU 的要求会比较高。  
 
 ####<a id="scale-up-service-tier-and-performance-level-considerations"></a>2.9.1 注意事项
 
-请注意，Azure SQL 数据库在切换过程中，是对当前数据库按照新的性能指标，创建了一个新的副本，然后把客户端从当前数据库，切换到新的副本数据库。  
+Azure SQL 数据库在切换过程中，是对当前数据库按照新的性能指标，创建了一个新的副本，然后把客户端从当前数据库，切换到新的副本数据库。  
 
 在切换过程中数据不会丢失，但是会出现数据库连接被关闭的情况，所以有一些事务会回滚 (roll back)。这个过程时间长短不定，但平均时间小于 4 秒，超过 99% 的情况下小于 30 秒。极少数情况下，数据库连接关闭时，大量的事务处于提交过程中，切换过程可能花费较长时间。  
 
@@ -505,35 +505,25 @@ Azure SQL 数据库的切换时间，取决于数据库容量和数据库的性�
  
 4. 在数据库切换过程中，客户端仍可以正常连接到这个数据库  
 
-###<a id="standard-geo-replication"></a>2.10 跨数据中心标准地域复制(Standard Geo-Replication)   
+###<a id="standard-geo-replication"></a>2.10 跨数据中心活动异地复制(Active Geo-Replication)   
  
 ####<a id="standard-geo-replication-instruction"></a>2.10.1 说明  
 
-Azure SQL 数据库提供不同等级的、跨数据中心的异地冗余功能。  
+现在最新的 SQL Azure，同时支持基本服务层, 标准服务层和高级服务层三个级别，都可以创建跨数据中心活动异地复制(Active Geo-Replication)，最多支持4个只读副本。
 
-1.	基本服务层模式：不提供异地冗余能力  
+而且 SQL Azure Active Geo-Replication 支持故障转移。
 
-2.	标准服务层模式：提供跨数据中心的异地冗余数据库。但这个冗余数据库是冷备份，无法提供读取操作  
-
-3.	高级服务层模式：提供只读跨数据中心的异地冗余数据库。这个冗余数据库只能提供读操作
-
-如果用户的 Azure SQL 数据库需要较低的 DTU，但需要跨数据中心的异地冗余能力，则需把 SQL Azure 的性能升级到高级服务层级别，只有 P 级别只读异地冗余的数据库。  
-
-现在最新的 SQL Azure，同时支持基本服务层, 标准服务层和高级服务层三个级别，都可以创建跨数据中心标准地域复制 (Standard Geo-Replication)，最多支持4个只读副本。
-
-而且 SQL Azure Standard Geo-Replication 支持故障转移。  
-
- SQL Azure 主站点在 Azure 上海数据中心，只读站点在 Azure 北京数据中心。上海数据中心发生故障时，可以手动转移故障，将原来的主站点(上海)和只读站点(北京)做切换，即将 Azure 北京数据中心作为主站点，Azure 上海数据中心作为只读站点。这样可保证业务不会因为上海数据中心发生故障，造成业务宕机。
+SQL Azure 主站点在 Azure 上海数据中心，只读站点在 Azure 北京数据中心。上海数据中心发生故障时，可以手动转移故障，将原来的主站点(上海)和只读站点(北京)做切换，即将 Azure 北京数据中心作为主站点，Azure 上海数据中心作为只读站点。这样可保证业务不会因为上海数据中心发生故障，造成业务宕机。
 
 灾难恢复演练(Disaster Recovery Drills)  
 
-请注意，SQL Azure 故障转移和数据有关，是破坏性方法，所以需要周期性的测试故障转移工作流，确保应用程序的一致性和稳定性，这个过程称为灾难恢复演练(Disaster Recovery Drills)。可按如下方法测试数据库灾难恢复演练：关闭跨数据中心标准地域复制(Standard Geo-Replication)。  
+SQL Azure 故障转移和数据有关，是破坏性方法，所以需要周期性的测试故障转移工作流，确保应用程序的一致性和稳定性，这个过程称为灾难恢复演练(Disaster Recovery Drills)。可按如下方法测试数据库灾难恢复演练：关闭跨数据中心活动异地复制(Active Geo-Replication)。  
 
-注意，当关闭跨数据中心标准地域复制 (Standard Geo-Replication) 时，在主站点已经提交的事务，如果没有在备份节点提交，这些事务会丢失。由于可能会产生数据丢失的风险，因此不推荐在生产环境里实施灾难恢复演练 (DR Drills)。建议在主站点数据中心创建一个测试数据库，然后对这个数据库实施灾难恢复演练。  
+当关闭跨数据中心活动异地复制(Active Geo-Replication) 时，在主站点已经提交的事务，如果没有在备份节点提交，这些事务会丢失。由于可能会产生数据丢失的风险，因此不推荐在生产环境里实施灾难恢复演练 (DR Drills)。建议在主站点数据中心创建一个测试数据库，然后对这个数据库实施灾难恢复演练。  
 
 ####<a id="standard-geo-replication-demo"></a>2.10.2 演示
 
-接下来介绍演示内容，演示中有几个关键步骤：
+演示中有几个关键步骤：
 
 1. 注意这里牵涉到 Azure Resource Group 的概念，默认情况下，Azure 上海数据中心的 ResourceGroupName 为 Default-SQL-ChinaEast  
 
