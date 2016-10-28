@@ -43,7 +43,7 @@
 
 * **网络安全组：**和存储帐户一样，在某个区域中创建的网络安全组不能在其他地理区域中使用。因此，需要为新地理区域中的 INT 和 DMZ 子网创建类似于第一个地理区域中的网络安全组的新网络安全组。
 
-* **公共 IP 地址的 DNS 标签：**Azure 流量管理器仅可通过 DNS 标签参考终结点。因此，必须为外部负载平衡器的公共 IP 地址创建 DNS 标签。
+* **公共 IP 地址的 DNS 标签：**Azure 流量管理器仅可通过 DNS 标签参考终结点。因此，必须为外部负载均衡器的公共 IP 地址创建 DNS 标签。
 
 * **Azure 流量管理器：**使用 Azure 流量管理器可以控制用户流量的分布，将用户流量分布到在全球不同数据中心运行的服务终结点。Azure 流量管理器在 DNS 级别工作。它使用 DNS 响应将最终用户流量定向到全球分布的终结点。然后，客户端直接连接到这些终结点。借助性能、加权和优先级各有不同的路由选项，可以轻松地选择最适合组织需求的路由选项。
 
@@ -54,8 +54,8 @@
 ###在新地理区域中部署 AD FS
 请按照 [Azure 中的 AD FS 部署](/documentation/articles/active-directory-aadconnect-azure-adfs/)中的步骤和指南，在新地理区域中部署同一拓扑。
 
-###面向 Internet 的（公共）负载平衡器中公共 IP 地址的 DNS 标签
-如上所述，Azure 流量管理器仅可将 DNS 标签用作终结点的参考，因此必须为外部负载平衡器的公共 IP 地址创建 DNS 标签。以下屏幕快照显示如何配置公共 IP 地址的 DNS 标签。
+###面向 Internet 的（公共）负载均衡器中公共 IP 地址的 DNS 标签
+如上所述，Azure 流量管理器仅可将 DNS 标签用作终结点的参考，因此必须为外部负载均衡器的公共 IP 地址创建 DNS 标签。以下屏幕快照显示如何配置公共 IP 地址的 DNS 标签。
 
 ![DNS 标签](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/eastfabstsdnslabel.png)  
 
