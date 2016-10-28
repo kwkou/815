@@ -44,11 +44,11 @@
 
 [AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
-本文重点介绍如何创建使用**内部负载平衡器 (ILB)** 的侦听器。如果你需要一个公共/外部侦听器，请参阅本文的另一个版本，其中提供了有关设置[外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)的步骤
+本文重点介绍如何创建使用**内部负载均衡器 (ILB)** 的侦听器。如果你需要一个公共/外部侦听器，请参阅本文的另一个版本，其中提供了有关设置[外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)的步骤
 
-## 创建支持直接服务器返回的负载平衡 VM 终结点
+## 创建支持直接服务器返回的负载均衡 VM 终结点
 
-对于 ILB，必须先创建内部负载平衡器。以下脚本将执行此操作。
+对于 ILB，必须先创建内部负载均衡器。以下脚本将执行此操作。
 
 [AZURE.INCLUDE [load-balanced-endpoints](../../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
 
@@ -64,7 +64,7 @@
 
 1. 选择一个可用地址，并在以下脚本的 **$ILBStaticIP** 参数中使用它。
 
-3. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。有关 ILB 要求的详细信息，请参阅[内部负载平衡器](/documentation/articles/load-balancer-internal-overview/)。此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
+3. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。有关 ILB 要求的详细信息，请参阅[内部负载均衡器](/documentation/articles/load-balancer-internal-overview/)。此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
 
 		# Define variables
 		$ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
@@ -84,7 +84,7 @@
 
 1. 设置变量后，将脚本从文本编辑器复制到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。注意：
 
->[AZURE.NOTE] Azure 经典管理门户目前不支持内部负载均衡器，因此在 Azure 经典管理门户中看不到 ILB 或终结点。但是，如果负载平衡器在某个内部 IP 地址上运行，则 **Get-AzureEndpoint** 将返回该地址。否则，将返回 null。
+>[AZURE.NOTE] Azure 经典管理门户目前不支持内部负载均衡器，因此在 Azure 经典管理门户中看不到 ILB 或终结点。但是，如果负载均衡器在某个内部 IP 地址上运行，则 **Get-AzureEndpoint** 将返回该地址。否则，将返回 null。
 
 ## 如果需要，请验证是否已安装 KB2854082
 
@@ -98,7 +98,7 @@
 
 [AZURE.INCLUDE [防火墙](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
-1. 对于 ILB，必须使用前面创建的内部负载平衡器 (ILB) 的 IP 地址。在 PowerShell 中使用以下脚本获取此 IP 地址。
+1. 对于 ILB，必须使用前面创建的内部负载均衡器 (ILB) 的 IP 地址。在 PowerShell 中使用以下脚本获取此 IP 地址。
 
 		# Define variables
 		$ServiceName="<MyServiceName>" # the name of the cloud service that contains the AG nodes
@@ -131,7 +131,7 @@
 
 1. 设置变量之后，打开提升的 Windows PowerShell 窗口，然后从文本编辑器复制脚本，并将其粘贴到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。
 
-2. 在每个 VM 上重复此过程。此脚本将使用云服务的 IP 地址来配置 IP 地址资源，同时设置探测端口等其他参数。在 IP 地址资源联机后，它可以响应我们在本教程前面部分创建的负载平衡终结点在探测端口上的轮询。
+2. 在每个 VM 上重复此过程。此脚本将使用云服务的 IP 地址来配置 IP 地址资源，同时设置探测端口等其他参数。在 IP 地址资源联机后，它可以响应我们在本教程前面部分创建的负载均衡终结点在探测端口上的轮询。
 
 ## 使侦听器联机
 
