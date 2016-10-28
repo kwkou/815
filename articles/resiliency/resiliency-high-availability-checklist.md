@@ -28,10 +28,10 @@ __不使用流量管理器会发生什么情况？__ 如果在应用程序前面
 
 __如果使用单个虚拟机作为角色，会发生什么情况？__ 单个计算机是单点故障，不适用于 [Azure 虚拟机服务级别协议](/support/sla/virtual-machines)。在最好的情况下，应用程序将正常运行，但这不是具有复原能力的设计，并且不受 Azure 虚拟机 SLA 的保障，如果发生故障，任何单点故障将增大停机的可能性。
 
-###是否在应用程序的面向 Internet 的 VM 前面使用负载平衡器？
-负载平衡器可让你将应用程序的传入流量分散到任意数目的计算机。你可以随时在负载平衡器中添加/删除计算机，这适用于虚拟机（以及配合虚拟机规模集来自动缩放），让你轻松处理流量增加或 VM 故障的情况。<!-- 若要详细了解负载平衡器，请阅读 [Azure Load Balancer overview（Azure Load Balancer 概述）](/documentation/articles/load-balancer-overview/)和 [Running multiple VMs on Azure for scalability and availability（在 Azure 上运行多个 VM 以提高可缩放性和可用性）](/documentation/articles/guidance-compute-multi-vm/)。-->
+###是否在应用程序的面向 Internet 的 VM 前面使用负载均衡器？
+负载均衡器可让你将应用程序的传入流量分散到任意数目的计算机。你可以随时在负载均衡器中添加/删除计算机，这适用于虚拟机（以及配合虚拟机规模集来自动缩放），让你轻松处理流量增加或 VM 故障的情况。<!-- 若要详细了解负载均衡器，请阅读 [Azure Load Balancer overview（Azure Load Balancer 概述）](/documentation/articles/load-balancer-overview/)和 [Running multiple VMs on Azure for scalability and availability（在 Azure 上运行多个 VM 以提高可缩放性和可用性）](/documentation/articles/guidance-compute-multi-vm/)。-->
 
-__如果在面向 Internet 的 VM 前面不使用负载平衡器，会发生什么情况？__ 如果没有负载平衡器，将无法横向扩展（添加更多计算机），而只能选择纵向扩展（增加面向 Web 的虚拟机的大小）。该虚拟机也面临着单点故障。你还需要编写 DNS 代码，以注意是否丢失面向 Internet 的计算机，并将 DNS 条目重新映射到开始接管的新计算机。
+__如果在面向 Internet 的 VM 前面不使用负载均衡器，会发生什么情况？__ 如果没有负载均衡器，将无法横向扩展（添加更多计算机），而只能选择纵向扩展（增加面向 Web 的虚拟机的大小）。该虚拟机也面临着单点故障。你还需要编写 DNS 代码，以注意是否丢失面向 Internet 的计算机，并将 DNS 条目重新映射到开始接管的新计算机。
 
 ###你是否对无状态应用程序和 Web 服务器使用可用性集？
 将计算机包含在可用性集中的同一个应用程序层内可让 VM 符合 Azure VM SLA 的条件。成为可用性集的一部分还可确保将计算机放入不同的更新域（即，在不同时间修补的不同主机）和容错域（即，共享通用电源和网络交换机的主机）。不在可用性集中的 VM 可能位于同一主机，因此，可能潜藏着看不到的单点故障。若要了解有关使用可用性集提高 VM 可用性的详细信息，请参阅 [Manage the availability of virtual machines（管理虚拟机的可用性）](/documentation/articles/virtual-machines-windows-manage-availability/)。
@@ -47,10 +47,10 @@ __如果不对无状态应用程序或 Web 服务器使虚拟机规模集，会�
 
 __如果不对每个虚拟机使用独立的存储帐户，会发生什么情况？__ 就像其他许多资源一样，存储帐户也是单点故障。尽管 Azure 存储空间提供许多保护措施和复原能力，但存在单点故障绝对不是良好的设计。例如，如果该帐户的访问权限受损、达到存储限制或达到 [IOPS 限制](/documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits)，则使用该存储帐户的所有虚拟机将受到影响。此外，如果服务中断影响到包含该特定存储帐户的存储戳记，则多个虚拟机会受到影响。
 
-###是否在应用程序的每层之间使用负载平衡器或队列？
-在应用程序的每层之间使用负载平衡器或队列，可以轻松地单独缩放应用程序的每一层。应该根据延迟、复杂性和分布（即，应用分发的广度）需求，在这些技术之间做出选择。一般而言，队列的延迟和复杂性通常较高，但提供更高的复原能力，并且可让你将应用程序分发到更大的区域（例如跨区域）。若要了解有关如何使用内部负载平衡器或队列的详细信息，请阅读 <!-- [Internal Load balancer Overview（内部负载平衡器概述）](/documentation/articles/load-balancer-internal-overview/)和 --> [Azure Queues and Service Bus queues - compared and contrasted（Azure 队列和服务总线队列 - 比较与对照）](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)。
+###是否在应用程序的每层之间使用负载均衡器或队列？
+在应用程序的每层之间使用负载均衡器或队列，可以轻松地单独缩放应用程序的每一层。应该根据延迟、复杂性和分布（即，应用分发的广度）需求，在这些技术之间做出选择。一般而言，队列的延迟和复杂性通常较高，但提供更高的复原能力，并且可让你将应用程序分发到更大的区域（例如跨区域）。若要了解有关如何使用内部负载均衡器或队列的详细信息，请阅读 <!-- [Internal Load balancer Overview（内部负载均衡器概述）](/documentation/articles/load-balancer-internal-overview/)和 --> [Azure Queues and Service Bus queues - compared and contrasted（Azure 队列和服务总线队列 - 比较与对照）](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)。
 
-__如果在应用程序的每层之间不使用负载平衡器或队列，会发生什么情况？__ 如果应用程序的每层之间没有负载平衡器或队列，则难以扩展或缩减应用程序并将其负载分散到多个计算机。不这样做可能会导致资源预配过度或不足，如果流量出现意外的变化或发生系统故障，还可能造成停机或用户体验不佳。
+__如果在应用程序的每层之间不使用负载均衡器或队列，会发生什么情况？__ 如果应用程序的每层之间没有负载均衡器或队列，则难以扩展或缩减应用程序并将其负载分散到多个计算机。不这样做可能会导致资源预配过度或不足，如果流量出现意外的变化或发生系统故障，还可能造成停机或用户体验不佳。
  
 ###SQL 数据库是否使用活动异地复制？ 
 活动异地复制可让你在相同或不同区域中最多配置 4 个可读的辅助数据库。在发生服务中断或无法连接到主数据库时，可以使用辅助数据库。若要了解有关 SQL 数据库活动异地复制的详细信息，请参阅 [Overview: SQL Database Active Geo-Replication（概述：SQL 数据库活动异地复制）](/documentation/articles/sql-database-geo-replication-overview/)。

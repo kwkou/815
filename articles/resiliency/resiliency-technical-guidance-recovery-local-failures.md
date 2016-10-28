@@ -23,7 +23,7 @@
 * 设备（如驱动器和服务器）故障
 * 在高峰负载情况下关键资源（如计算资源）耗尽
 
-Azure 组合提供一套资源管理、弹性、负载平衡和分区功能，可在这些情况下实现高可用性。上述某些功能会对所有 Azure 服务自动执行。但在某些情况下，应用程序开发人员必须完成额外的工作，方可从这些功能中获益。
+Azure 组合提供一套资源管理、弹性、负载均衡和分区功能，可在这些情况下实现高可用性。上述某些功能会对所有 Azure 服务自动执行。但在某些情况下，应用程序开发人员必须完成额外的工作，方可从这些功能中获益。
 
 ##云服务
 
@@ -57,9 +57,9 @@ Azure 结构控制器使用两种类型的分区：
 
 ![容错域隔离的简化视图](./media/resiliency-technical-guidance-recovery-local-failures/partitioning-1.png)
 
-###负载平衡
+###负载均衡
 
-某个 Web 角色的所有入站流量都会通过无状态负载平衡器，由负载平衡器将客户请求在角色实例间分配。单个角色实例没有公共 IP 地址，无法直接从 Internet 访问。Web 角色是无状态角色，所以可将任何客户端请求路由到任何角色实例。每隔 15 秒会引发一次 [StatusCheck](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck.aspx) 事件。这可用来指示角色是已准备好接收流量，还是仍在忙碌，因而应从负载平衡器轮换中取出。
+某个 Web 角色的所有入站流量都会通过无状态负载均衡器，由负载均衡器将客户请求在角色实例间分配。单个角色实例没有公共 IP 地址，无法直接从 Internet 访问。Web 角色是无状态角色，所以可将任何客户端请求路由到任何角色实例。每隔 15 秒会引发一次 [StatusCheck](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck.aspx) 事件。这可用来指示角色是已准备好接收流量，还是仍在忙碌，因而应从负载均衡器轮换中取出。
 
 ##虚拟机
 
@@ -79,9 +79,9 @@ Azure 原本就能识别 PaaS 应用程序（Web 角色和辅助角色）中的�
 
 在上图中，Internet Information Services (IIS) 层（充当 Web 应用层）和 SQL 层（充当数据层）分配给不同的可用性集。这可确保通过将虚拟机分布在多个容错域中，使每一层的所有实例获得硬件冗余，并且整个层在更新期间不会关闭。
 
-###负载平衡
+###负载均衡
 
-如果应在各 VM 间分布流量，必须将应用程序中的 VM 分组，并对特定的 TCP 或 UDP 终结点进行负载平衡。有关详细信息，请参阅[对虚拟机进行负载平衡](/documentation/articles/virtual-machines-linux-load-balance/)。如果 VM 接收来自其他来源（如排队机制）的输入，则不需要负载平衡器。负载平衡器使用基本运行状况检查来确定是否应将流量发送到节点。你也可以创建自己的探测，实现应用程序特定的运行状况指标，以确定 VM 是否应接收流量。
+如果应在各 VM 间分布流量，必须将应用程序中的 VM 分组，并对特定的 TCP 或 UDP 终结点进行负载均衡。有关详细信息，请参阅[对虚拟机进行负载均衡](/documentation/articles/virtual-machines-linux-load-balance/)。如果 VM 接收来自其他来源（如排队机制）的输入，则不需要负载均衡器。负载均衡器使用基本运行状况检查来确定是否应将流量发送到节点。你也可以创建自己的探测，实现应用程序特定的运行状况指标，以确定 VM 是否应接收流量。
 
 ##存储
 
@@ -190,7 +190,7 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
   1. 查看本文档的[虚拟机](#virtual-machines)部分。
   2. 不要使用 D 驱动器作为持久存储。
   3. 将服务层中的计算机分组为可用性集。
-  4. 配置负载平衡和可选探测。
+  4. 配置负载均衡和可选探测。
 
 ###存储
 
