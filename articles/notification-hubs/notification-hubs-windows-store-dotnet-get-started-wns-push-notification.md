@@ -110,10 +110,12 @@
 
 <ol start="6">
 <li><p>选择“通知服务”<b></b>选项和“Windows (WNS)”<b></b>选项。然后在“安全密钥”<b></b>字段中输入“应用程序密码”<b></b>。输入在之前部分从 WNS 获取的“包 SID”<b></b>值，然后单击“保存”<b></b>。</p>
-</li>
+</li> 
 </ol>
 
-   	![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
+![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
+
+
 
 
 你的通知中心现在已配置为使用 WNS，并且你有连接字符串用于注册你的应用程序和发送通知。
