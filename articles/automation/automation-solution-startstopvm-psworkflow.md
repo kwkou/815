@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
 	ms.date="07/06/2016"
-	wacn.date=""
+	wacn.date="10/31/2016"
 	ms.author="bwren" />  
 
 
