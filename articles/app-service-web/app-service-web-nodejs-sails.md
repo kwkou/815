@@ -15,7 +15,7 @@
 	ms.devlang="nodejs"
 	ms.topic="article"
 	ms.date="09/23/2016"
-	wacn.date=""
+	wacn.date="10/31/2016"
 	ms.author="cephalin"/>
 
 # 将 Sails.js Web 应用部署到 Azure App Service

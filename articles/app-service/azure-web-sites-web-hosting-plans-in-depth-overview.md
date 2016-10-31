@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/13/2016"
-	wacn.date=""
+	wacn.date="10/31/2016"
 	ms.author="byvinyal"/>
 
 # Azure 应用服务计划深入概述#
