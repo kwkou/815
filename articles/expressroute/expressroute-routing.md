@@ -8,8 +8,13 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="08/10/2016"
-   wacn.date="10/10/2016"/>
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/14/2016"
+   ms.author="ganesr"
+   wacn.date="10/31/2016"/>  
 
 
 
@@ -56,13 +61,13 @@ a.b.c.d/29 拆分成 a.b.c.d/30 和 a.b.c.d+4/30 并通过预配 API 一路传�
 
 Azure 使用 AS 12076 进行 Azure 公共和Azure 专用。我们保留了 ASN 65515-65520 供内部使用。支持 16 和 32 位 AS 编号。
 
-数据传输对称没有相关要求。转发与返回路径可以遍历不同的路由器对。相同的路由必须在你拥有的多个线路对上，从任何一端播发。路由指标不需要完全相同。
+对于任何给定线路的主要和次要路径上的数据传输对称没有相关要求。转发与返回路径可以遍历不同的路由器对。相同的路由必须在你拥有的任何给定线路对上，从主要或次要端进行播发。路由指标不需要完全相同。
 
 ## 路由聚合与前缀限制
 
 我们支持通过 Azure 专用对等互连向我们播发最多 4000 个前缀。如果已启用 ExpressRoute 高级版附加组件，则可增加到 10,000 个前缀。我们接受为每个 BGP 会话最多使用 200 个前缀建立 Azure 公共互连。
 
-如果前缀数目超过此限制，将丢弃 BGP 会话。我们只接受专用对等互连链路上的默认路由。
+如果前缀数目超过此限制，将丢弃 BGP 会话。我们只接受专用对等互连链路上的默认路由。提供商或客户必须从其到 Azure 公共互连路径的 BGP 播发中筛选出默认路由和专用 IP 地址 (RFC 1918)。
 
 ## 传输路由和跨区域路由
 
@@ -75,7 +80,7 @@ ExpressRoute 不能配置为传输路由器。你必须依赖连接服务提供�
  若要连接其他 Azure 服务和基础结构服务，你必须确保已准备好下列其中一项：
 
  - 已启用 Azure 公共对等互连，以将流量路由到公共终结点
- - 已使用用户定义的路由，为需要 Internet 连接的每个子网建立 Internet 连接。
+ - 使用用户定义的路由可为需要 Internet 连接的每个子网建立 Internet 连接。
 
 **注意：**播发默认路由会中断 Windows 和其他 VM 许可证激活。请按照[此处](http://blogs.msdn.com/b/mast/archive/2015/05/20/use-azure-custom-routes-to-enable-kms-activation-with-forced-tunneling.aspx)的说明来解决此问题。
 
@@ -101,8 +106,8 @@ Azure 不遵循你设置的任何 BGP 社区值。你需要为每个对等互连
 
 - 配置 ExpressRoute 连接。
 
-	- [创建经典部署模型的 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)或[使用 Azure 资源管理器创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)
-	- [为经典部署模型配置路由](/documentation/articles/expressroute-howto-routing-classic/)或[为资源管理器部署模型配置路由](/documentation/articles/expressroute-howto-routing-arm/)
-	- [将经典 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)或[将资源管理器 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
+	- [创建经典部署模型的 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)或[使用 Azure Resource Manager 创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm/)
+	- [为经典部署模型配置路由](/documentation/articles/expressroute-howto-routing-classic/)或[为 Resource Manager 部署模型配置路由](/documentation/articles/expressroute-howto-routing-arm/)
+	- [将经典 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)或[将 Resource Manager VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
 <!---HONumber=Mooncake_0104_2016-->

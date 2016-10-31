@@ -9,14 +9,20 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="05/04/2016"
-   wacn.date="06/06/2016"/>
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/10/2016"
+   ms.author="charleywen"
+   wacn.date="10/31/2016"/>  
+
 
 # 为 Resource Manager 部署模型配置 ExpressRoute 和站点到站点共存的连接
 
 > [AZURE.SELECTOR]
 - [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-coexist-resource-manager/)
-- [PowerShell - Classic](/documentation/articles/expressroute-howto-coexist-classic/)
+- [PowerShell - 经典管理门户](/documentation/articles/expressroute-howto-coexist-classic/)
 
 能够配置站点到站点 VPN 和 ExpressRoute 具有多项优势。你可以将站点到站点 VPN 配置为 ExressRoute 的安全故障转移路径，或者使用站点到站点 VPN 连接到不是通过 ExpressRoute 进行连接的站点。我们将在本文中介绍这两种方案的配置步骤。本文适用于 Resource Manager 部署模型。此配置在 Azure 门户中不可用。
 
@@ -29,12 +35,11 @@
 
 ## 限制和局限性
 
-- **不支持转换性路由：**你将不能（通过 Azure）在通过站点到站点 VPN 连接的本地网络与通过 ExpressRoute 连接的本地网络之间进行路由。
-- **无法在站点到站点 VPN 网关上启用强制隧道：**你只能通过 ExpressRoute 将所有面向 Internet 的流量“强制”返回到本地网络。 
-- **仅限标准或高性能网关：**ExpressRoute 网关和站点到站点 VPN 网关必须使用标准或高性能网关。有关网关 SKU 的信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways/)。
-- **仅限基于路由的 VPN 网关：**必须使用基于路由的 VPN 网关。有关基于路由的 VPN 网关的信息，请参阅 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
-- **静态路由要求：**如果你的本地网络同时连接到 ExpressRoute 和站点到站点 VPN，则必须在本地网络中配置静态路由，以便将站点到站点 VPN 连接路由到公共 Internet。
-- **必须先配置 ExpressRoute 网关：**必须先创建 ExpressRoute 网关，然后再添加站点到站点 VPN 网关。
+- **不支持传输路由。** 无法在通过站点到站点 VPN 连接的本地网络与通过 ExpressRoute 连接的本地网络之间进行路由（通过 Azure）。
+- **不支持基本 SKU 网关。** 必须为 [ExpressRoute 网关](/documentation/articles/expressroute-about-virtual-network-gateways/)和 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)使用非基本 SKU 网关。
+- **仅支持基于路由的 VPN 网关。** 必须使用基于路由的 [VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
+- **应该为 VPN 网关配置静态路由。** 如果本地网络同时连接到 ExpressRoute 和站点到站点 VPN，则必须在本地网络中配置静态路由，以便将站点到站点 VPN 连接路由到公共 Internet。
+- **必须先配置 ExpressRoute 网关。** 必须先创建 ExpressRoute 网关，然后才能添加站点到站点 VPN 网关。
 
 
 ## 配置设计
@@ -60,11 +65,11 @@
 
 - 我没有 VNet，需要创建一个。
 	
-	如果你还没有虚拟网络，此过程将指导你使用 Resource Manager 部署模型创建新的虚拟网络，然后创建新的 ExpressRoute 和站点到站点 VPN 连接。若要配置，请遵循本文中[创建新的虚拟网络和并存连接](#new)部分中的步骤。
+	如果你还没有虚拟网络，此过程将指导你使用 Resource Manager 部署模型创建新的虚拟网络，然后创建新的 ExpressRoute 和站点到站点 VPN 连接。若要配置，请按照本文中[创建新的虚拟网络和并存连接](#new)部分中的步骤操作。
 
 - 我已有一个 Resource Manager 部署模型 VNet。
 
-	你可能已在具有现有站点到站点 VPN 连接或 ExpressRoute 连接的位置拥有虚拟网络。[为现有的 VNet 配置并存连接](#add)部分将指导你删除网关，然后创建新的 ExpressRoute 连接和站点到站点 VPN 连接。请注意，在创建新连接时，必须按照非常特定的顺序完成步骤。不要按照其他文章中的说明来创建网关和连接。
+	你可能已在具有现有站点到站点 VPN 连接或 ExpressRoute 连接的位置拥有虚拟网络。[为现有的 VNet 配置并存连接](#add)部分指导删除网关，然后创建新的 ExpressRoute 连接和站点到站点 VPN 连接。请注意，在创建新连接时，必须按照非常特定的顺序完成步骤。不要按照其他文章中的说明来创建网关和连接。
 
 	在此过程中，创建可以共存的连接将需要你删除网关，然后配置新网关。这意味着，在你删除并重新创建网关和连接时，跨界连接将会停止工作，但你无需将任何 VM 或服务迁移到新的虚拟网络。在你配置网关时，如果进行了相应配置，你的 VM 和服务仍可以通过负载均衡器与外界通信。
 
@@ -99,7 +104,7 @@
 
 		$vnet = Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
-4. <a name="gw"></a>创建 ExpressRoute 网关。有关 ExpressRoute 网关配置的详细信息，请参阅 [ExpressRoute 网关配置](/documentation/articles/expressroute-howto-add-gateway-resource-manager/)。GatewaySKU 必须是 Standard 或 HighPerformance。
+4. <a name="gw"></a>创建 ExpressRoute 网关。有关 ExpressRoute 网关配置的详细信息，请参阅 [ExpressRoute 网关配置](/documentation/articles/expressroute-howto-add-gateway-resource-manager/)。GatewaySKU 必须是 *Standard* 或 *HighPerformance*。
 
 		$gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
 		$gwIP = New-AzureRmPublicIpAddress -Name "ERGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
@@ -111,18 +116,33 @@
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "YourCircuit" -ResourceGroupName "YourCircuitResourceGroup"
 		New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -VirtualNetworkGateway1 $gw -PeerId $ckt.Id -ConnectionType ExpressRoute
 
-6. <a name="vpngw"></a>接下来，创建站点到站点 VPN 网关。有关 VPN 网关配置的详细信息，请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。GatewaySKU 必须是 Standard 或 HighPerformance。VpnType 必须为 RouteBased。
+6. <a name="vpngw"></a>接下来，创建站点到站点 VPN 网关。有关 VPN 网关配置的详细信息，请参阅[使用站点到站点连接配置 VNet](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)。GatewaySKU 必须是 *Standard*、*HighPerformance* 或 *UltraPerformance*。VpnType 必须为 *RouteBased*。
 
 		$gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
 		$gwIP = New-AzureRmPublicIpAddress -Name "VPNGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic
 		$gwConfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name "VPNGatewayIpConfig" -SubnetId $gwSubnet.Id -PublicIpAddressId $gwIP.Id
 		New-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "Standard"
 
+	Azure VPN 网关支持 BGP。可以在以下命令中指定 -EnableBgp。
+
+		$azureVpn = New-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -IpConfigurations $gwConfig -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "Standard" -EnableBgp $true
+
+	可以在 $azureVpn.BgpSettings.BgpPeeringAddress 和 $azureVpn.BgpSettings.Asn 中找到 Azure 用于 VPN 网关的 BGP 对等 IP 和 AS 编号。有关详细信息，请参阅为 Azure VPN 网关[配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
+
 7. 创建一个本地站点 VPN 网关实体。此命令不会配置本地 VPN 网关，而是允许你提供本地网关设置（如公共 IP 和本地地址空间），以便 Azure VPN 网关可以连接到它。
-	>[AZURE.NOTE] 如果你的本地网络具有多个路由，你可以通过数组的形式将其全部传入。$MyLocalNetworkAddress = @("10.100.0.0/16","10.101.0.0/16","10.102.0.0/16")
 
-		$localVpn = New-AzureRmLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress *<Public IP>* -AddressPrefix '10.100.0.0/16'
+	如果本地 VPN 设备仅支持静态路由，可按以下方式配置静态路由。
 
+		$MyLocalNetworkAddress = @("10.100.0.0/16","10.101.0.0/16","10.102.0.0/16")
+		$localVpn = New-AzureRmLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress *<Public IP>* -AddressPrefix $MyLocalNetworkAddress
+
+	如果本地 VPN 设备支持 BGP，并且想要启用动态路由，那么需要知道本地 VPN 设备使用的 BGP 对等 IP 和 AS 编号。
+
+		$localVPNPublicIP = "<Public IP>"
+		$localBGPPeeringIP = "<Private IP for the BGP session>"
+		$localBGPASN = "<ASN>"
+		$localAddressPrefix = $localBGPPeeringIP + "/32"
+		$localVpn = New-AzureRmLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress $localVPNPublicIP -AddressPrefix $localAddressPrefix -BgpPeeringAddress $localBGPPeeringIP -Asn $localBGPASN
 8. 配置本地 VPN 设备以连接到新的 Azure VPN 网关。有关 VPN 设备配置的详细信息，请参阅 [VPN 设备配置](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 9. 将 Azure 上的站点到站点 VPN 网关连接到本地网关。
