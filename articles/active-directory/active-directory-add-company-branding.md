@@ -31,9 +31,9 @@
 本主题说明如何自定义登录页和访问面板页。
 
 > [AZURE.NOTE]
->
->- 只有在升级到 Azure Active Directory 高级或基本版（或者成为 Office 365 用户）后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
->- 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国的 21Vianet 运营的 Azure 服务目前不支持 Azure Active Directory高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。
+><p>
+><p>- 只有在升级到 Azure Active Directory 高级或基本版（或者成为 Office 365 用户）后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
+><p>- 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国的 21Vianet 运营的 Azure 服务目前不支持 Azure Active Directory高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。
 
 
 
@@ -48,9 +48,9 @@
 当你使用非租户特定的 URL（例如 https://mail.office365.com）访问服务时，将出现没有品牌的登录页。在此情况下，输入你的用户 ID 或选择用户磁贴之后，品牌就会出现。
 
 > [AZURE.NOTE]
->
->- 在已配置品牌的 Azure 经典管理门户的“Active Directory”>“目录”>“域”部分中，域名必须显示为“活动”。
->- 登录页品牌不会带到 Microsoft 的使用者登录页。如果你使用个人 Microsoft 帐户登录，则可以看到 Azure AD 呈现的经过品牌打造的用户磁贴列表，但你组织的品牌将不会应用于 Microsoft 帐户登录页。
+><p>
+><p>- 在已配置品牌的 Azure 经典管理门户的“Active Directory”>“目录”>“域”部分中，域名必须显示为“活动”。
+><p>- 登录页品牌不会带到 Microsoft 的使用者登录页。如果你使用个人 Microsoft 帐户登录，则可以看到 Azure AD 呈现的经过品牌打造的用户磁贴列表，但你组织的品牌将不会应用于 Microsoft 帐户登录页。
 
 
 如果你要在此页上显示你公司的品牌、颜色和其他可自定义元素，请参阅下图以了解两种体验之间的差异。
