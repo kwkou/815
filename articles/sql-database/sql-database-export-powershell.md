@@ -24,7 +24,7 @@
 
 **注意事项**
 
-- 为保证存档的事务处理方式一致，须确保导出期间未发生写入活动，或者正在从 Azure SQL 数据库的[事务处理方式一致性副本](/documentation/article/sql-database-copy/)中导出。
+- 为保证存档的事务处理方式一致，须确保导出期间未发生写入活动，或者正在从 Azure SQL 数据库的[事务处理方式一致性副本](/documentation/articles/sql-database-copy/)中导出。
 - 存档到 Azure blob 存储的 BACPAC 文件的大小上限为 200 GB。可使用 [SqlPackage](https://msdn.microsoft.com/zh-cn/library/hh550080.aspx) 命令提示使用工具将更大的 BACPAC 文件存到恩地存储。此实用程序随 Visual Studio 和 SQL Server 一起提供。你还可以[下载](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)最新版本的 SQL Server Data Tools 以获取此实用程序。
 - 不支持使用 BACPAC 文件存档到 Azure 高级存储。
 - 如果导出操作耗时超过 20 个小时，可能会取消操作。为提高导出过程中的性能，你可以进行如下操作：
