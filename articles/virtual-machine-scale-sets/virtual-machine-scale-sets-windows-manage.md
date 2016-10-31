@@ -6,26 +6,33 @@
 	authors="davidmu1"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager"/>
+	tags="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machine-scale-sets"
-	ms.date="07/14/2016"
-	wacn.date="08/29/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="davidmu"/>  
+
 
 # 在虚拟机规模集中管理虚拟机
 
 使用本文中的任务在虚拟机规模集中管理虚拟机。
 
-执行所有涉及到在规模集中管理虚拟机的任务时，要求您知道要管理的虚拟机的实例 ID。
+在执行大多数涉及到在规模集中管理虚拟机的任务时，需要知道要管理的虚拟机的实例 ID。
 
-有关如何安装最新版 Azure PowerShell、选择要使用的订阅和登录到 Azure 帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
-## 显示有关虚拟机规模集的信息
+## 显示有关规模集的信息
 
-可获取有关规模集的常规信息，也称为实例视图。或者，可以获取更多特定信息，如规模集中资源的信息。
+可获取有关规模集的常规信息，也称为实例视图。或者可以获取更具体的信息，如规模集中资源的相关信息。
 
-在此命令中，将*资源组名称*替换为包含该虚拟机规模集的资源组名称，将*规模集名称*替换为该虚拟机规模集的名称，然后运行该命令：
+将带引号的值替换为资源组和规模集的名称，然后运行该命令：
 
     Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name"
 
@@ -85,11 +92,11 @@
         Settings                                : {"xmlCfg":"...","storageAccount":"astore"}
     ProvisioningState                           : Succeeded
     
-在此命令中，将*资源组名称*替换为包含该虚拟机规模集的资源组名称，将*规模集名称*替换为该虚拟机规模集名称，将 *#* 替换为要获取其信息的虚拟机的实例标识符，然后运行该命令：
+将带引号的值替换为资源组和规模集的名称。将 *#* 替换为要获取其相关信息的虚拟机的实例标识符，然后运行该命令：
 
     Get-AzureRmVmssVM -ResourceGroupName "resource group name" -VMScaleSetName "scale set name" -InstanceId #
         
-它会返回类似于下面的内容：
+它会返回与此示例类似的内容：
 
     Id                            : /subscriptions/{sub-id}/resourceGroups/myrg1/providers/Microsoft.Compute/
                                     virtualMachineScaleSets/myvmss1/virtualMachines/0
@@ -140,7 +147,7 @@
         
 ## 启动规模集中的虚拟机
 
-在此命令中，将*资源组名称*替换为包含该虚拟机规模集的资源组名称，将*规模集名称*替换为该规模集名称，将 *#* 替换为要启动的虚拟机的标识符，然后运行该命令：
+将带引号的值替换为资源组和规模集的名称。将 *#* 替换为要启动的虚拟机的标识符，然后运行该命令：
 
     Start-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name" -InstanceId #
 
@@ -164,7 +171,7 @@
     
 ## 停止规模集中的虚拟机
 
-在此命令中，将*资源组名称*替换为包含该虚拟机规模集的资源组名称，将*规模集名称*替换为该规模集名称，将 *#* 替换为要停止的虚拟机的标识符，然后运行该命令：
+将带引号的值替换为资源组和规模集的名称。将 *#* 替换为要停止的虚拟机的标识符，然后运行该命令：
 
 	Stop-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name" -InstanceId #
 
@@ -188,7 +195,7 @@
     
 ## 重启规模集中的虚拟机
 
-在此命令中，将*资源组名称*替换为包含该虚拟机规模集的资源组名称，将*规模集名称*替换为该规模集名称，将 *#* 替换为要重启的虚拟机的标识符，然后运行该命令：
+将带引号的值替换为资源组和规模集的名称。将 *#* 替换为要重启的虚拟机的标识符，然后运行该命令：
 
 	Restart-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name" -InstanceId #
     
@@ -196,10 +203,20 @@
 
 ## 从规模集中删除虚拟机
 
-在此命令中，将*资源组名称*替换为包含该虚拟机规模集的资源组名称，将*规模集名称*替换为该规模集名称，将 *#* 替换为要从规模集中删除的虚拟机的标识符，然后运行该命令：
+将带引号的值替换为资源组和规模集的名称。将 *#* 替换为要删除的虚拟机的标识符，然后运行该命令：
 
 	Remove-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name" -InstanceId #
 
 不使用 -InstanceId 参数即可一次性删除整个虚拟机规模集。
 
-<!---HONumber=Mooncake_0822_2016-->
+## 更改规模集的容量
+
+通过更改规模集的容量，可添加或删除虚拟机。获取要更改的规模集，按需设置容量，然后使用新容量更新规模集。在这些命令中，将带引号的值替换为资源组和规模集的名称。
+
+  $vmss = Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name"
+  $vmss.sku.capacity = 5
+  Update-AzureRmVmss -ResourceGroupName "resource group name" -Name "scale set name" -VirtualMachineScaleSet $vmss 
+
+如果要从规模集中删除虚拟机，则首先需要删除 ID 最高的虚拟机。
+
+<!---HONumber=Mooncake_1024_2016-->

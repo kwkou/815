@@ -5,11 +5,18 @@
 	documentationCenter=""
 	authors="mgoedtel"
 	manager="jwhit"
-	editor="tysonn" />
-<tags
+	editor="tysonn" />  
+
+<tags 
 	ms.service="automation"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
 	ms.date="07/06/2016"
-	wacn.date="08/11/2016"/>
+	wacn.date=""
+	ms.author="bwren" />  
+
 
 # Azure 自动化方案 - 启动和停止虚拟机
 
@@ -47,7 +54,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 | 资产类型 | 资产名称 | 说明 |
 |:---|:---|:---|:---|
 | 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount -Environment AzureChinaCloud** 活动的 **Credential** 参数中指定其他凭据资产。 |
-| 变量 | AzureSubscriptionId | 包含你的 Azure 订阅的订阅 ID。 |
+| 变量 | AzureSubscriptionId | 包含 Azure 订阅的订阅 ID。 |
 
 ## <a id="using-the-scenario" name="using-the-solution"></a> 使用方案
 
@@ -79,9 +86,9 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 | Start-AzureVMs | 虚拟机已运行 | MyVM 已运行 |
 | Start-AzureVMs | 已成功提交虚拟机启动请求 | MyVM 已启动 |
 | Start-AzureVMs | 虚拟机启动请求失败 | MyVM 无法启动 |
-| Stop-AzureVMs | 虚拟机已运行 | MyVM 已停止 |
-| Stop-AzureVMs | 已成功提交虚拟机启动请求 | MyVM 已启动 |
-| Stop-AzureVMs | 虚拟机启动请求失败 | MyVM 无法启动 |
+| Stop-AzureVMs | 虚拟机已停止 | MyVM 已停止 |
+| Stop-AzureVMs | 已成功提交虚拟机停止请求 | MyVM 已停止 |
+| Stop-AzureVMs | 虚拟机停止请求失败 | MyVM 无法停止 |
 
 例如，Runbook 中的以下代码段尝试启动服务名称为 *MyServiceName* 的所有虚拟机。如果任何启动请求失败，则可能会执行错误操作。
 
@@ -130,7 +137,8 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 	$SubId = Get-AutomationVariable -Name $AzureSubscriptionIdAssetName
     $null = Select-AzureSubscription -SubscriptionId $SubId -ErrorAction Stop
 
-后续行设置将要用于 Runbook 的剩余部分的凭据和 Azure 订阅。首先，我们使用 **Get-AutomationPSCredential** 来获取用于存储凭据的资产，这些凭据具有相应的访问权限，可用于启动和停止 Azure 订阅中的虚拟机。**Add-AzureAccount -Environment AzureChinaCloud** 然后就会使用此资产来设置凭据。该输出已分配给一个虚拟变量，因此不会包括在 Runbook 输出中。
+后续行设置将要用于 Runbook 的剩余部分的凭据和 Azure 订阅。
+首先，我们使用 **Get-AutomationPSCredential** 来获取用于存储凭据的资产，这些凭据具有相应的访问权限，可用于启动和停止 Azure 订阅中的虚拟机。**Add-AzureAccount -Environment AzureChinaCloud** 然后就会使用此资产来设置凭据。该输出已分配给一个虚拟变量，因此不会包括在 Runbook 输出中。
 
 然后会使用 **Get-AutomationVariable** 来检索包含订阅 ID 的变量资产，并使用 **Select-AzureSubscription** 来设置订阅。
 
@@ -182,7 +190,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 ## 后续步骤
 
-- 若要了解有关使用子 Runbook 的详细信息，请参阅 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/)
-- 若要详细了解执行 Runbook 期间的输出消息和日志记录以帮助进行故障排除，请参阅 [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
+- 若要了解有关使用子 Runbook 的详细信息，请参阅 [Child runbooks in Azure Automation](/documentation/articles/automation-child-runbooks/)（Azure 自动化中的子 Runbook）
+- 若要详细了解执行 Runbook 期间的输出消息和日志记录以帮助进行故障排除，请参阅 [Runbook output and messages in Azure Automation](/documentation/articles/automation-runbook-output-and-messages/)（Azure 自动化中的 Runbook 输出和消息）
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1024_2016-->
