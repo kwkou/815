@@ -23,7 +23,7 @@
 
 组织需要制定业务连续性和灾难恢复 (BCDR) 策略来确定应用、工作负荷和数据如何在计划内和计划外停机期间保持可用，并尽快恢复正常运行。
 
-站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助站点的复制，让你部署应用程序感知的弹性解决方案，从而为 BCDR 策略提供辅助。无论你的应用是基于 Windows 还是 Linux，是在物理服务器、VMware 还是 Hyper-V VM 上运行，你都可以使用站点恢复来协调复制，执行灾难恢复测试，以及运行故障转移和故障回复。
+站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助站点的复制，让你部署应用程序感知的弹性解决方案，从而为 BCDR 策略提供辅助。无论你的应用是基于 Windows 还是 Linux，是在物理服务器还是 Hyper-V VM 上运行，你都可以使用站点恢复来协调复制，执行灾难恢复测试，以及运行故障转移和故障回复。
 
 
 Site Recovery 集成 Microsoft 应用程序，其中包括 SharePoint、Exchange、Dynamics、SQL Server 和 Active Directory。Microsoft 还与领先供应商密切合作，包括 Oracle、SAP、IBM 和 Red Hat，以确保他们的应用程序和服务能在 Microsoft 平台（包括 Azure）上顺畅运行。你可以针对每个应用自定义解决方案。
@@ -45,20 +45,20 @@ Site Recovery 集成 Microsoft 应用程序，其中包括 SharePoint、Exchange
 
 站点恢复可复制受支持虚拟机上运行的任何应用。此外，我们已经与产品团队合作执行其他特定于应用的测试。
 
-**工作负载** | **将 Hyper-V VM 复制到辅助站点** | **将 Hyper-V VM 复制到 Azure** | **将 VMware VM 复制到辅助站点** | **将 VMware VM 复制到 Azure**
----|---|---|---|---
-Active Directory、DNS | Y | Y | Y | Y 
-Web Apps（IIS、SQL） | Y | Y | Y | Y
-SCOM | Y | Y | Y | Y
-Sharepoint | Y | Y | Y | Y
-SAP<br/><br/>将非群集 SAP 站点复制到 Azure | Y（Microsoft 已测试） | Y（Microsoft 已测试） | Y（Microsoft 已测试） | Y（Microsoft 已测试）
-Exchange（非 DAG） | Y | 即将支持 | Y | Y
-远程桌面/VDI | Y | Y | Y | 不适用 
-Linux（操作系统和应用） | Y（Microsoft 已测试） | Y（Microsoft 已测试） | Y（Microsoft 已测试） | Y（Microsoft 已测试） 
-Dynamics AX | Y | Y | Y | Y
-Dynamics CRM | Y | 即将支持 | Y | 即将支持
-Oracle | Y（Microsoft 已测试） | Y（Microsoft 已测试） | Y（Microsoft 已测试） | Y（Microsoft 已测试）
-Windows 文件服务器 | Y | Y | Y | Y
+**工作负载** | **将 Hyper-V VM 复制到辅助站点** | **将 Hyper-V VM 复制到 Azure** 
+---|---|---
+Active Directory、DNS | Y | Y 
+Web Apps（IIS、SQL） | Y | Y 
+SCOM | Y | Y 
+Sharepoint | Y | Y 
+SAP<br/><br/>将非群集 SAP 站点复制到 Azure | Y（Microsoft 已测试） | Y（Microsoft 已测试） 
+Exchange（非 DAG） | Y | 即将支持 
+远程桌面/VDI | Y | Y 
+Linux（操作系统和应用） | Y（Microsoft 已测试） | Y（Microsoft 已测试） 
+Dynamics AX | Y | Y 
+Dynamics CRM | Y | 即将支持 
+Oracle | Y（Microsoft 已测试） | Y（Microsoft 已测试） 
+Windows 文件服务器 | Y | Y 
 
 
 ## 复制 Active Directory 和 DNS
@@ -109,11 +109,11 @@ Azure Site Recovery 可通过以下方式帮助你保护 Dynamics AX ERP 解决�
 - 将托管或非托管池虚拟桌面到辅助站点以及远程应用程序和会话复制到辅助站点或 Azure。
 - 下面是可以复制的项：
 
-**RDS** | **将 Hyper-V VM 复制到辅助站点** | **将 Hyper-V VM 复制到 Azure** | **将 VMware VM 复制到辅助站点** | **将 VMware VM 复制到 Azure** | **将物理服务器复制到辅助站点** | **将物理服务器复制到 Azure**
----|---|---|---|---|---|---
-**入池虚拟桌面（非托管）** | 是 | 否 | 是 | 否 | 是 | 否
-**入池虚拟桌面（托管但不包含 UPD）** | 是 | 否 | 是 | 否 | 是 | 否
-**远程应用程序和桌面会话（不包含 UPD）** | 是 | 是 | 是 | 是 | 是 | 是
+**RDS** | **将 Hyper-V VM 复制到辅助站点** | **将 Hyper-V VM 复制到 Azure** | **将物理服务器复制到辅助站点** | **将物理服务器复制到 Azure**
+---|---|---|---|---
+**入池虚拟桌面（非托管）** | 是 | 否 | 是 | 否
+**入池虚拟桌面（托管但不包含 UPD）** | 是 | 否 | 是 | 否
+**远程应用程序和桌面会话（不包含 UPD）** | 是 | 是 | 是 | 是
 
 
 [详细了解](https://gallery.technet.microsoft.com/Remote-Desktop-DR-Solution-bdf6ddcb)如何保护 RDS。

@@ -29,7 +29,7 @@ Site Recovery 可帮助做到这一点，因为它能协调工作负荷和应用
 以下是 Site Recovery 可以为企业提供的帮助：
 
 - **简化 BCDR 策略** — Site Recovery 可让你从单个位置轻松处理多个企业工作负荷和应用的复制、故障转移及恢复。Site Recovery 会协调复制和故障转移，但不会拦截应用程序数据或拥有任何相关信息。
-- **提供灵活的复制** — 借助 Site Recovery，你可以复制 Hyper-V 虚拟机、VMware 虚拟机和 Windows/Linux 物理服务器上运行的工作负荷。 
+- **提供灵活的复制** — 借助 Site Recovery，你可以复制 Hyper-V 虚拟机和 Windows/Linux 物理服务器上运行的工作负荷。 
 - **简单故障转移和恢复** — Site Recovery 提供测试故障转移，既能支持灾难恢复练习，又不会影响生产环境。你也可以运行计划的故障转移，因为是预期中的中断，所以不会丢失任何数据；或是运行非计划的故障转移，以在发生非预期的灾难时将数据损失减到最少（取决于复制频率）。在故障转移之后，你可以故障回复到主站点。Site Recovery 提供包含脚本和 Azure 自动化工作簿的恢复计划，以供你自定义多层应用程序的故障转移和恢复。 
 - **消除辅助数据中心** — 你可以复制到辅助本地站点或 Azure。使用 Azure 作为灾难恢复目的地可免除辅助站点的维护成本与复杂度，而且复制的数据会存储在 Azure 存储空间，能够具备其提供的所有复原能力。
 - **与现有 BCDR 技术集成** — Site Recovery 能够与其他应用程序的 BCDR 功能搭配使用。例如，你可以使用 Site Recovery 保护企业工作负荷的 SQL Server 后端，包括本机支持 SQL Server AlwaysOn 以便管理可用性组的故障转移。 
@@ -42,14 +42,12 @@ Site Recovery 可帮助做到这一点，因为它能协调工作负荷和应用
 
 **REPLICATE** | **REPLICATE FROM** | **REPLICATE TO** | **ARTICLE**
 ---|---|---|---
-VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | Azure 存储空间 | 部署
-VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | 辅助 VMware 站点 | [部署](/documentation/articles/site-recovery-vmware-to-vmware/) 
 Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmm-to-azure/)
 Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | 辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-to-vmm/)
 Hyper-V VM 上运行的工作负荷 | 使用 SAN 存储的 VMM 云中的本地 Hyper-V 主机服务器| 具有 SAN 存储的辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-san/)
 Hyper-V VM 上运行的工作负荷 | 本地 Hyper-V 站点（无 VMM） | Azure 存储空间 | [部署](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
 物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | Azure 存储空间 | 部署
-物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | 辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware/) 
+
 
 
 ## 我可以保护哪些工作负荷？
@@ -57,7 +55,7 @@ Hyper-V VM 上运行的工作负荷 | 本地 Hyper-V 站点（无 VMM） | Azure
 Site Recovery 有助于应用程序感知 BCDR，让工作负荷和应用在发生中断时继续以一致的方式运行。Site Recovery 提供：
 
 - **应用程序一致的快照** — 使用单个或多层应用的应用程序一致快照进行复制。
-- **近乎同步的复制** — Hyper-V 的复制频率最低可为 30 秒，VMware 则可连续复制。
+- **近乎同步的复制** — Hyper-V 的复制频率最低可为 30 秒。
 - **与 SQL Server AlwaysOn 集成** — 你可以在 Site Recovery 恢复计划中管理可用性组的故障转移。 
 - **灵活的恢复计划** — 你可以使用外部脚本、手动操作和 Azure 自动化 Runbook 创建并自定义恢复计划，让你只要单击就能恢复整个应用程序堆栈。
 - **自动化库** — 丰富的 Azure 自动化库提供已可供生产环境使用的应用程序特定脚本供你下载，并可集成到 Site Recovery。

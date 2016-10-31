@@ -53,7 +53,6 @@
 **功能** | **要求** | **详细信息**
 ---|---|---
 Hyper-V 主机 | 应运行 Windows Server 2012 R2 | 如果操作系统不受支持，先决条件检查将会失败
-VMware 虚拟机监控程序 | 支持的操作系统 | 检查要求
 来宾操作系统 | 对于从 Hyper-V 到 Azure 的复制，站点恢复支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统 | 如果不支持，先决条件检查将会失败。 
 来宾操作系统体系结构 | 64 位 | 如果不支持，先决条件检查将会失败
 操作系统磁盘大小 | 最大 1023 GB | 如果不支持，先决条件检查将会失败
@@ -92,15 +91,15 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 确保可通过以下服务器访问 URL
 
 
-**URL** | **VMM 到 VMM** | **VMM 到 Azure** | **Hyper-V 站点到 Azure** | **VMware 到 Azure**
----|---|---|---|---
- *.accesscontrol.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
- *.backup.windowsazure.cn | | 需要访问权限 | 需要访问权限 | 需要访问权限
- *.hypervrecoverymanager.windowsazure.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
- *.store.core.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
+**URL** | **VMM 到 VMM** | **VMM 到 Azure** | **Hyper-V 站点到 Azure** 
+---|---|---|---
+ *.accesscontrol.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
+ *.backup.windowsazure.cn | | 需要访问权限 | 需要访问权限 
+ *.hypervrecoverymanager.windowsazure.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
+ *.store.core.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
  *.blob.core.chinacloudapi.cn | | 需要访问权限 | 需要访问权限 | 需要访问权限
- https://www.msftncsi.com/ncsi.txt | 需要访问权限 | 需要访问权限 | 需要访问权限 | 需要访问权限
- https://dev.mysql.com/get/archives/mysql-5.5/mysql-5.5.37-win32.msi | | | | 需要访问权限
+ https://www.msftncsi.com/ncsi.txt | 需要访问权限 | 需要访问权限 | 需要访问权限 
+ https://dev.mysql.com/get/archives/mysql-5.5/mysql-5.5.37-win32.msi | | | 
 
 
 ## 后续步骤

@@ -18,10 +18,10 @@
 
 ## 了解组件
 
-### 用于在本地与 Azure 之间复制的 VMware/物理站点部署。
-要在本地 VMware/物理计算机之间设置灾难恢复；需要配置配置服务器、主目标和进程服务器。在启用对源服务器的保护时，Azure Site Recovery 将安装移动服务。在源服务器故障转移到 Azure 发生本地中断后，客户需要在 Azure 中设置进程服务器和在本地设置主目标服务器，以防止源服务器在本地重新生成。
+### 用于在本地与 Azure 之间复制的物理站点部署。
+要在本地物理计算机之间设置灾难恢复；需要配置配置服务器、主目标和进程服务器。在启用对源服务器的保护时，Azure Site Recovery 将安装移动服务。在源服务器故障转移到 Azure 发生本地中断后，客户需要在 Azure 中设置进程服务器和在本地设置主目标服务器，以防止源服务器在本地重新生成。
 
-![用于在本地与 Azure 之间复制的 VMware/物理站点部署](./media/site-recovery-monitoring-and-troubleshooting/image18.png)
+![用于在本地与 Azure 之间复制的物理站点部署](./media/site-recovery-monitoring-and-troubleshooting/image18.png)
 
 ### 用于在本地站点之间复制的 VMM 站点部署。
 
@@ -131,7 +131,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 
 对于 Hyper-V 站点保护，请下载[工具](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab)，然后在 Hyper-V 主机上执行该工具以收集日志。
 
-对于 VMware/物理站点方案，请参阅[针对 VMware 和物理站点保护进行 Azure 站点恢复日志收集](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx)，以收集所需的日志。
+对于物理站点方案，请参阅[针对物理站点保护进行 Azure 站点恢复日志收集](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx)，以收集所需的日志。
 
 工具将在本地收集日志，这些日志位于 **%LocalAppData%\\ElevatedDiagnostics** 下随机命名的子文件夹中
 

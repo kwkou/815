@@ -14,7 +14,7 @@
 
 # 在 Azure Site Recovery 中规划用于保护虚拟机和物理服务器的容量
 
-Azure Site Recovery Capacity Planner 工具可帮助你确定通过 Azure Site Recovery 保护 Hyper-V VM、VMware VM 和 Windows/Linux 物理服务器时的容量要求。
+Azure Site Recovery Capacity Planner 工具可帮助你确定通过 Azure Site Recovery 保护 Hyper-V VM 和 Windows/Linux 物理服务器时的容量要求。
 
 
 ## 概述
@@ -34,7 +34,6 @@ Azure Site Recovery Capacity Planner 工具可帮助你确定通过 Azure Site R
 2. 确定已复制数据的每日更改（改动）率。为此，请按以下步骤操作：
 
 	- 如果你是在复制 Hyper-V VM，则可下载 [Hyper-V 容量规划工具](https://www.microsoft.com/download/details.aspx?id=39057)来获取更改率。[详细了解](/documentation/articles/site-recovery-capacity-planning-for-hyper-v-replication/)此工具。我们建议你运行此工具一周以上的时间以获取平均值。
-	- 如果你是在复制 VMware 虚拟机，则可使用 [vSphere 容量规划工具](https://labs.vmware.com/flings/vsphere-replication-capacity-planning-appliance)来计算改动率。
 	- 如果你是在复制物理服务器，则需手动进行估算。
 
 ## 运行快速规划器
@@ -45,10 +44,10 @@ Azure Site Recovery Capacity Planner 工具可帮助你确定通过 Azure Site R
 
 3.	在“容量规划器”工作表中输入所需信息。你必须填写以下屏幕快照中标有红圈的所有字段。
 
-	- 在“选择你的方案”中，选择“Hyper-V 到 Azure”或“VMware/物理设备到 Azure”。
-	- 在“平均每日数据更改率(%)”中输入你使用 [Hyper-V 容量规划工具](/documentation/articles/site-recovery-capacity-planning-for-hyper-v-replication/)或 [vSphere 容量规划工具](https://labs.vmware.com/flings/vsphere-replication-capacity-planning-appliance)收集的信息。
-	- “压缩”仅适用于将 VMware VM 或物理服务器复制到 Azure 时提供的压缩。我们的估计值是 30% 或以上，不过你可以根据需要修改此设置。将 Hyper-V VM 复制到 Azure 时，如果需要进行压缩，你可以使用第三方工具，例如 Riverbed。
-	-  在“保留输入”中，指定副本的保留时间。如果你复制的是 VMware 或物理服务器，则请输入天数值。如果你复制的是 Hyper-V，则请以小时为单位指定时间。
+	- 在“选择你的方案”中，选择“Hyper-V 到 Azure”。
+	- 在“平均每日数据更改率(%)”中输入你使用 [Hyper-V 容量规划工具](/documentation/articles/site-recovery-capacity-planning-for-hyper-v-replication/)。
+	- “压缩”仅适用于将物理服务器复制到 Azure 时提供的压缩。我们的估计值是 30% 或以上，不过你可以根据需要修改此设置。将 Hyper-V VM 复制到 Azure 时，如果需要进行压缩，你可以使用第三方工具，例如 Riverbed。
+	-  在“保留输入”中，指定副本的保留时间。如果你复制的是物理服务器，则请输入天数值。如果你复制的是 Hyper-V，则请以小时为单位指定时间。
 	-  在“完成成批虚拟机的初始复制所需的小时数”和“初始复制批处理的虚拟机数”中，你可以输入用于计算初始复制要求的设置。部署 Site Recovery 时，应上载整个初始数据集。
 
 	![输入](./media/site-recovery-capacity-planner/inputs.png)

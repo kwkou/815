@@ -30,7 +30,6 @@
 
 - **Hyper-V 虚拟机**：站点恢复可以保护 Hyper-V VM 上运行的任何工作负荷。
 - **物理服务器**：站点恢复可以保护运行 Windows 或 Linux 的物理服务器。
-- **VMware 虚拟机**：站点恢复可以保护 VMware VM 上运行的任何工作负荷。
 
 
 ### 在 Hyper-V 中我需要什么？
@@ -46,7 +45,7 @@
 
 ### 当 Hyper-V 在客户端操作系统上运行时，我可以保护 VM 吗？
 
-不可以。VM 必须位于在受支持的 Windows 服务器计算机上运行的 Hyper-V 主机服务器上。如果需要保护客户端计算机，可以将其作为物理计算机复制[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware/)。
+不可以。VM 必须位于在受支持的 Windows 服务器计算机上运行的 Hyper-V 主机服务器上。
 
 
 ### 我可以使用站点恢复来保护哪些工作负荷？
@@ -61,16 +60,9 @@
 ### 如果我只有一个 VMM 服务器，可以部署站点恢复来配合 VMM 吗？ 
 
 是的。你可以将 VMM 云中 Hyper-V 服务器上的 VM 复制到 Azure，或者在同一台服务器上的 VMM 云之间进行复制。对于本地到本地复制，我们建议在主站点与辅助站点中都部署一个 VMM 服务器。[了解详细信息](/documentation/articles/site-recovery-single-vmm/)
-<!--
-### 我可以保护哪些物理服务器？
-
-可以将运行受支持的 Windows 或 Linux 操作系统的物理服务器复制到 Azure 或辅助站点来进行保护。有关 Azure 或辅助站点复制的操作系统要求。
-请注意，发生故障转移时，复制到 Azure 存储空间的物理服务器将作为 Azure 中的 VM 运行。当你进行从 Azure 到本地站点的故障回复时，故障回复到物理服务器当前不受支持。仅可以故障回复到 VMware 上运行的虚拟机。-->
 
 
-### 我可以保护哪些 VMware VM？
 
-若要保护 VMware VM，则需要 vSphere 虚拟机监控程序和运行 VMware 工具的虚拟机。我们还建议你使用 VMware vCenter 服务器托管虚拟机监控程序。
 
 ### 我可以使用站点恢复来管理分支机构的灾难恢复吗？
 
@@ -81,7 +73,7 @@
 ### 复制数据是否会发送到 Site Recovery 服务？
 
 不会。Site Recovery 不拦截复制的数据，也不拥有虚拟机或物理服务器上运行哪些项目的任何相关信息。
-复制数据在本地 Hyper-V 主机、VMware 虚拟机监控程序或物理服务器和 Azure 存储空间或辅助站点之间交换。站点恢复并不具有拦截该数据的能力。只有协调复制与故障转移所需的元数据将发送到站点恢复服务。
+复制数据在本地 Hyper-V 主机、物理服务器和 Azure 存储空间或辅助站点之间交换。站点恢复并不具有拦截该数据的能力。只有协调复制与故障转移所需的元数据将发送到站点恢复服务。
 
 站点恢复已通过 ISO 27001:2013、27018、HIPAA、DPA 认证，目前正在接受 SOC2 和 FedRAMP JAB 评估。
 
@@ -126,7 +118,6 @@
 ### 我可以多久复制数据一次？
 
 - **Hyper-V：**可以每隔 30 秒、5 分钟或 15 分钟复制 Hyper-V VM 一次。如果你已设置 SAN 复制，则复制将是同步的。
-- **VMware 和物理服务器：**复制频率无关紧要。复制是连续的。
 
 ### 我可以将复制从现有的恢复站点扩展到其他站点吗？
 不支持扩展扩展或链式复制。
@@ -149,7 +140,6 @@
 
 是的。你可以从以下部署文章中阅读更多有关限制带宽的信息：
 
-- [Capacity planning for replicating VMware VMs and physical servers（复制 VMware VM 和物理服务器的容量规划）](/documentation/articles/site-recovery-vmware-to-azure/#step-5-capacity-planning)
 - [Capacity planning for replicating Hyper-V VMs in VMM clouds（复制 VMM 云中的 Hyper-V VM 的容量规划）](/documentation/articles/site-recovery-vmm-to-azure/#step-5-capacity-planning)
 - [Capacity planning for replicating Hyper-V VMs without VMM（复制无 VMM 的 Hyper-V VM 的容量规划）](/documentation/articles/site-recovery-hyper-v-site-to-azure/#step-5-capacity-planning)
 
@@ -160,7 +150,7 @@
 
 可以通过安全的 Internet 连接或者站点到站点 VPN 或 Azure ExpressRoute 访问 Azure VM。在连接之前你需要做许多准备。请从以下文章中阅读更多信息：
 
-- [Connect to Azure VMs after failover of VMware VMs or physical servers（故障转移 VMware VM 或物理服务器后连接到 Azure VM）](/documentation/articles/site-recovery-vmware-to-azure/#step-7-test-the-deployment)
+
 - [Connect to Azure VMs after failover of Hyper-V VMs in VMM clouds（故障转移 VMM 云中的 Hyper-V VM 后连接到 Azure VM）](/documentation/articles/site-recovery-vmm-to-azure/#step-7-test-your-deployment)
 - [Connect to Azure VMs after failover of Hyper-V VMs without VMM（故障转移无 VMM 的 Hyper-V VM 后连接到 Azure VM）](/documentation/articles/site-recovery-hyper-v-site-to-azure/#step-7-test-the-deployment)
 
