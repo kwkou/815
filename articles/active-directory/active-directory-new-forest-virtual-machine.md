@@ -59,7 +59,7 @@
  
 重复以下步骤，根据需要创建用于托管 DC 角色的 VM。应该至少部署两个虚拟域控制器来提供容错和冗余。如果 Azure 虚拟网络包含至少两个采用类似配置的 DC（即，它们都是 GC、运行 DNS 服务器，并且都不包含任何 FSMO 角色，等等），那么，你可将运行这些 DC 的 VM 放在可用性集中，以获得更高的容错能力。
 
-若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms/)
+若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
 1. 在经典门户中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 

@@ -845,7 +845,7 @@ ___
 > Windows 设置（例如 Windows SID 和主机名）必须通过 sysprep 命令在本地 VM 抽象化/通用化。
 \[comment]: <>（MSSedusch > 在此处查看详细信息：）
 \[comment]: <>（MShermannd TODO：第一个链接与经典模型有关。找不到 Azure 文档）
-\[comment]: <> (MSSedusch > <https://www.azure.cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/>)
+\[comment]: <> (MSSedusch > <https://www.azure.cn/documentation/articles/virtual-machines-windows-classic-createupload-vhd/>)
 \[comment]: <> (MSSedusch > <http://blogs.technet.com/b/blainbar/archive/2014/09/12/modernizing-your-infrastructure-with-hybrid-cloud-using-custom-vm-images-and-resource-groups-in-microsoft-azure-part-21-blain-barton.aspx>)
 >
 > ![Linux][Logo_Linux] Linux

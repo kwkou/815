@@ -89,7 +89,7 @@
 
 ![还原作业已完成](./media/backup-azure-restore-vms/restore-job-complete.png)
 
-还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 经典管理门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
+还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 经典管理门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
 
 ## 备份已还原的 VM
 如果将 VM 还原到的云服务与最初备份 VM 时所在的云服务同名，则还原之后，会继续备份该 VM。如果将 VM 还原到了不同的云服务或者为还原的 VM 指定了不同的名称，则系统会将此 VM 视为新 VM，因此你需要为还原的 VM 设置备份。

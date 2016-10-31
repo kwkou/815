@@ -135,7 +135,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	我们使用 haproxy 来作负载均衡，下面的步骤演示 haproxy 的安装配置过程。 
 
-	3.1 打开此 LB 虚拟机的访问端口80。请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
+	3.1 打开此 LB 虚拟机的访问端口80。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
 
 	3.2 下载软件包[http://www.haproxy.org/download/1.6/src/haproxy-1.6.3.tar.gz](http://www.haproxy.org/download/1.6/src/haproxy-1.6.3.tar.gz) 并上传至 LB 虚拟机。然后 SSH 连接到此 LB 虚拟机，去到此软件包所在目录下，执行如下命令： 
 
@@ -198,7 +198,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	如果是自己搭建，请参考下面步骤。
 
-	4.1在两台 redis 虚拟机上打开6379端口。6379端口是 Redis 的默认端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)打开端口。
+	4.1在两台 redis 虚拟机上打开6379端口。6379端口是 Redis 的默认端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口。
 
 	4.2 SSH 连接到 redis master 即 centosredis1 虚拟机上，编辑文件 install_redis.sh, 确保文件内容和下面一致：
 
@@ -319,7 +319,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	如果是自己搭建，请参考下面步骤。
 
-	5.1. 在两台机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
+	5.1. 在两台机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
 	
 	5.2. SSH 连接到 mysql master 即 centosmysql1 虚拟机，编辑文件 install_mysql.sh, 确保内容和下面一致：　
 
@@ -473,7 +473,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	我们使用 apache+php。
 
-	6.1 首先打开每台 web 的访问端口80。 请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
+	6.1 首先打开每台 web 的访问端口80。 请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
 
 	6.2 每台 web 的操作步骤都是一样的，下面以一台 web 为例。SSH 连接到 centosweb1, 编辑文件 install_apache.sh, 确保文件内容和下面一致： 
 		
@@ -612,7 +612,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 10. 注意事项
 
-	Azure 的虚拟机创建时默认只打开了22端口，所以一定要记得检查是否有把相应的服务端口打开。请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)。
+	Azure 的虚拟机创建时默认只打开了22端口，所以一定要记得检查是否有把相应的服务端口打开。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
 	监控，备份，安全等有相关的专题，可参考具体页面。
 
 

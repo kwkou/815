@@ -218,7 +218,7 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
  	 </tr>
 	</table>
 
-2.	在 Azure 虚机管理界面中打开以上三个节点的 27017 端口，具体操作请参考[链接](/documentation/articles/virtual-machines-set-up-endpoints/)。  
+2.	在 Azure 虚机管理界面中打开以上三个节点的 27017 端口，具体操作请参考[链接](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。  
 3.	确保这三个节点能够互相连接。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。  
 4.	/etc/mongod.conf 配置文件里默认绑定了 IP 地址 127.0.0.1。修改此项配置，所有三个节点都执行下面命令    
 		

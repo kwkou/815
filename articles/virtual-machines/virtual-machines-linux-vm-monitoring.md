@@ -50,7 +50,7 @@
 
 [Azure.Note] 可以从 2.0 版本更改为更高的版本（如果有）。
 
-有关配置监视指标和示例的详细信息，请访问文档- [Using Linux Diagnostic Extension to Monitor Linux VM's performance and diagnostic data（使用 Linux 诊断扩展监视 Linux VM 的性能和诊断数据）](/documentation/articles/virtual-machines-linux-diagnostic-extension/)。
+有关配置监视指标和示例的详细信息，请访问文档- [Using Linux Diagnostic Extension to Monitor Linux VM's performance and diagnostic data（使用 Linux 诊断扩展监视 Linux VM 的性能和诊断数据）](/documentation/articles/virtual-machines-linux-classic-diagnostic-extension/)。
 
 <!--Image references-->
 [1]: ./media/virtual-machines-linux-vm-monitoring/portal-enable-disable.png

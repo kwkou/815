@@ -13,7 +13,7 @@
 
 # 监视 Azure 网站性能
 
-在 [Azure 门户预览](http://portal.azure.cn)中，可以设置监视以收集有关 Azure 网站或[虚拟机](/documentation/articles/virtual-machines-about/)中的应用程序依赖项的统计信息和详细信息。
+在 [Azure 门户预览](http://portal.azure.cn)中，可以设置监视以收集有关 Azure 网站或[虚拟机](/documentation/articles/virtual-machines-linux-about/)中的应用程序依赖项的统计信息和详细信息。
 
 Azure 通过利用扩展来支持应用程序性能监视（即 APM）。这些扩展会安装到应用程序中，收集数据并报告回给监视服务。
 
