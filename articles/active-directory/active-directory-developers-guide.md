@@ -136,6 +136,4 @@
 
 - [云标识](http://www.cloudidentity.net)：从 Azure Active Directory PM 原理的角度讲解标识管理即服务的设计理念。
 
-- [Twitter 上的 Azure Active Directory](https://twitter.com/azuread)：以 140 个或更少的字符发布的 Azure Active Directory 公告。
-
 <!---HONumber=Mooncake_1024_2016-->

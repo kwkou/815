@@ -103,8 +103,9 @@ ID 令牌将传递给网站和本机客户端，包含有关用户的配置文�
 
 
 >[AZURE.NOTE]
-示例
->
+
+>示例
+
 >用户想要访问 2 个 Web 应用程序：A 和 B。
 >
 >
@@ -262,7 +263,7 @@ ID 令牌将传递给网站和本机客户端，包含有关用户的配置文�
 	Get-AzureADPolicy
 &nbsp;&nbsp;2.**将策略分配到服务主体。**
 
-接下来，将此新策略链接到服务主体。还需要通过某种方式访问服务主体的 **ObjectId**。可以查询 [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity) 或转到 [Graph Explorer Tool](https://graphexplorer.chinacloudapp.cn/)，然后登录到 Azure AD 帐户，查看租户的所有服务主体。
+接下来，将此新策略链接到服务主体。还需要通过某种方式访问服务主体的 **ObjectId**。可以查询 [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity) 或转到 [Graph Explorer Tool](https://graphexplorer.cloudapp.net/)，然后登录到 Azure AD 帐户，查看租户的所有服务主体。
 
 获取 **ObjectId** 后，运行以下命令。
         
@@ -315,7 +316,7 @@ ID 令牌将传递给网站和本机客户端，包含有关用户的配置文�
 
 现在，已针对整个租户设置了一个策略。假设我们要为特定的服务主体保留这个 30 天策略，但要将租户默认策略更改为上限“直到吊销”。
 
-首先，将此新策略链接到服务主体。还需要通过某种方式访问服务主体的 **ObjectId**。可以查询 [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity) 或转到 [Graph Explorer Tool](https://graphexplorer.chinacloudapp.cn/)，然后登录到 Azure AD 帐户，查看租户的所有服务主体。
+首先，将此新策略链接到服务主体。还需要通过某种方式访问服务主体的 **ObjectId**。可以查询 [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity) 或转到 [Graph Explorer Tool](https://graphexplorer.cloudapp.net/)，然后登录到 Azure AD 帐户，查看租户的所有服务主体。
 
 获取 **ObjectId** 后，运行以下命令。
 

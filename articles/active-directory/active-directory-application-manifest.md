@@ -152,7 +152,6 @@
 [GRAPH-API]: /documentation/articles/active-directory-graph-api/
 [IMPLICIT-GRANT]: /documentation/articles/active-directory-dev-understanding-oauth2-implicit-grant/
 [INTEGRATING-APPLICATIONS-AAD]: /documentation/articles/active-directory-integrating-applications/
-[O365-PERM-DETAILS]: https://msdn.microsoft.com/office/office365/HowTo/application-manifest
 [O365-SERVICE-DAEMON-APPS]: https://msdn.microsoft.com/office/office365/howto/building-service-apps-in-office-365
 [RBAC-CLOUD-APPS-AZUREAD]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
 

@@ -51,14 +51,13 @@
 
 可以下载并运行 [Azure 虚拟机就绪评估工具](https://www.microsoft.com/download/details.aspx?id=40898)。该评估工具将自动检查你的本地环境并根据本主题中的指南生成一份自定义报告以帮助你将环境迁移到 Azure。
 
-建议首先查看涉及以下主题的教程、指南和视频：
+建议首先查看涉及以下主题的教程、指南：
 
 - [在 Azure 门户预览中配置仅限云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)
 - [在 Azure 门户预览中配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)
 - [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
 - [在 Azure 上安装副本 Active Directory 域控制器 ](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)
 - [Azure IT Pro IaaS：(01) 虚拟机基础知识](https://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
-- [Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](https://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 
 ## 介绍
 
