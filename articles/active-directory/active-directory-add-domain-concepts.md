@@ -4,13 +4,20 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="jeffsta"
-	manager="stevenpo"
-	editor=""/>
+	manager="femila"
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/18/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/04/2016"
+	ms.author="curtand;jeffsta"
+	wacn.date="10/31/2016"/>  
+
 
 # Azure Active Directory 中自定义域名的概念性概述
 
@@ -38,13 +45,13 @@ Azure AD 通过在域名的域名服务 (DNS) 区域文件中查找特定的条�
 
 ## 联盟域名和托管域名
 
-你可以配置 Azure AD 中的自定义域名，让用户在本地 Active Directory 与 Azure AD 之间获得联合登录体验。为联盟配置域除了需要更新 Azure AD 中的特权资源，还需要更新 Windows Server Active Directory。配置联盟域的操作必须在 Azure AD Connect 中或使用 PowerShell 来完成。无法从 Azure 经典门户启动自定义域联盟操作。
+你可以配置 Azure AD 中的自定义域名，让用户在本地 Active Directory 与 Azure AD 之间获得联合登录体验。为联盟配置域除了需要更新 Azure AD 中的特权资源，还需要更新 Windows Server Active Directory。配置联盟域的操作必须在 Azure AD Connect 中或使用 PowerShell 来完成。无法从 Azure 经典管理门户启动自定义域联盟操作。
 
 未联盟的域有时也称为托管域。Azure AD 目录的初始域会隐式评估为托管域。
 
 ## 主要域名
 
-目录的主要域名是管理员在 [Azure 经典门户](https://manage.windowsazure.cn/)或其他门户（例如 Office 365 管理门户）中创建新用户时，预先选择作为用户名“域”部分的默认值的域名。一个目录只能有一个主要域名。管理员可以将主要域名更改为任何未联盟的已验证自定义域，或更改为初始域。
+目录的主要域名是管理员在 [Azure 经典管理门户](https://manage.windowsazure.cn/)或其他门户（例如 Office 365 管理门户）中创建新用户时，预先选择作为用户名“域”部分的默认值的域名。一个目录只能有一个主要域名。管理员可以将主要域名更改为任何未联盟的已验证自定义域，或更改为初始域。
 
 ## Azure AD 和其他 Microsoft Online Services 中的域名
 
@@ -54,14 +61,14 @@ Azure Web 应用使用其自身的机制来验证域的所有权。必须验证�
 
 ## 管理域名
 
-可以在 Azure 经典门户和 PowerShell 中完成域管理任务。许多任务可使用 Azure AD 图形 API（公共预览版）来完成。
+可以在 Azure 经典管理门户和 PowerShell 中完成域管理任务。许多任务可使用 Azure AD 图形 API（公共预览版）来完成。
 
 -   [添加和验证自定义域名](/documentation/articles/active-directory-add-domain/)
 
--   [在 Azure 经典门户中管理域](/documentation/articles/active-directory-add-manage-domain-names/)
+-   [在 Azure 经典管理门户中管理域](/documentation/articles/active-directory-add-manage-domain-names/)
 
--   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
+-   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/zh-cn/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
 -   [使用 Azure AD 图形 API 管理 Azure AD 中的域名](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1024_2016-->

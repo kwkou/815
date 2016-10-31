@@ -4,13 +4,20 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
-	manager="stevenpo"
-	editor=""/>
+	manager="femila"
+	editor=""/>  
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="06/21/2016"
-	wacn.date="08/22/2016"/>
+
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="09/22/2016"
+	ms.author="curtand"
+	wacn.date="10/31/2016"/>  
+
 
 # 向 Azure Active Directory 添加新用户或具有 Microsoft 帐户的用户
 
@@ -23,17 +30,17 @@
 3. 选择“用户”选项卡，然后在命令栏中选择“添加用户”。
 4. 在“告诉我们有关此用户的信息”页上的“用户类型”下，选择下列其中一项：
 
-	- **组织中的新用户** — 在目录中添加新的用户帐户。
-	- **具有现有 Microsoft 帐户的用户** — 将现有 Microsoft 使用者帐户添加到你的目录（例如 Outlook 帐户）
+	- **组织中的新用户** - 在目录中添加新的用户帐户。
+	- **具有现有 Microsoft 帐户的用户** - 将现有 Microsoft 使用者帐户添加到你的目录（例如 Outlook 帐户）
 
 5. 根据“用户类型”输入用户名（适用于新用户）或电子邮件地址（适用于具有 Microsoft 帐户的用户）。
-6. 在用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD（在 Azure AD 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。指定是否要为用户**启用 Multi-Factor Authentication**。
+6. 在用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅[在 Azure AD 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。指定是否要为用户**启用多重身份验证**。
 7. 在“获取临时密码”页上，选择“创建”。
 
 > [AZURE.IMPORTANT] 如果你所在的组织使用多个域，在添加用户帐户时你应知道以下问题：
 >
 > - 若要跨域添加具有相同用户主体名称 (UPN) 的用户帐户，例如，你可以**先**添加 geoffgrisso@contoso.partner.onmschina.cn，**再**添加 geoffgrisso@contoso.com。
-> - **不要**在添加 geoffgrisso@contoso.partner.onmschina.cn之前添加 geoffgrisso@contoso.com。此顺序非常重要，事后想要撤消操作将很麻烦。
+> - **不要**在添加 geoffgrisso@contoso.partner.onmschina.cn 之前添加 geoffgrisso@contoso.com。此顺序非常重要，事后想要撤消操作将很麻烦。
 
 ## 更改用户信息
 
@@ -60,11 +67,12 @@
 
 ## 设置来宾用户访问策略
 
-目录的“配置”选项卡包含用于控制来宾用户访问权限的选项。这些选项只能由目录全局管理员在 Azure 经典门户中更改。目前不支持 PowerShell 或 API 方法。
+目录的“配置”选项卡包含用于控制来宾用户访问权限的选项。这些选项只能由目录全局管理员在 Azure 经典管理门户中更改。目前不支持 PowerShell 或 API 方法。
 
-若要在 Azure 经典门户中打开“配置”选项卡，请选择“Active Directory”，然后选择目录的名称。
+若要在 Azure 经典管理门户中打开“配置”选项卡，请选择“Active Directory”，然后选择目录的名称。
 
-![Azure Active Directory 中的“配置”选项卡][1]
+![Azure Active Directory 中的“配置”选项卡][1]  
+
 
 然后，便可以编辑用于控制来宾用户访问权限的选项。
 
@@ -82,4 +90,4 @@
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1024_2016-->

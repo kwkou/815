@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="jeffsta"
 	manager="femila"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/18/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/04/2016"
+	ms.author="curtand;jeffsta"
+	wacn.date="10/31/2016"/>  
+
 
 # 将用户分配到自定义域
 
@@ -24,7 +31,7 @@
 
 若要更改现有用户帐户的域，请执行以下操作：
 
-1.  使用全局管理员或用户管理员帐户打开 Azure 经典门户。
+1.  使用全局管理员或用户管理员帐户打开 Azure 经典管理门户。
 
 2.  打开你的目录。
 
@@ -34,11 +41,11 @@
 
 5.  更改用户的域，然后选择“保存”。
 
-也可以使用 [Microsoft PowerShell](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains) 或[图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations) 完成此操作。
+也可以使用 [Microsoft PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains) 或[图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations) 完成此操作。
 
 ## 创建新用户时选择自定义域
 
-1.  使用全局管理员或用户管理员帐户打开 Azure 经典门户。
+1.  使用全局管理员或用户管理员帐户打开 Azure 经典管理门户。
 
 2.  打开你的目录。
 
@@ -58,4 +65,4 @@
 
 -   [了解 Azure AD 中的域管理概念](/documentation/articles/active-directory-add-domain-concepts/)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1024_2016-->

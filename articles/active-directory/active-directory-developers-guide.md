@@ -5,7 +5,8 @@
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
    manager="mbaldwin"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="active-directory"
@@ -13,9 +14,9 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/01/2016"
+   ms.date="10/11/2016"
    ms.author="mbaldwin"
-   wacn.date="10/11/2016"/>  
+   wacn.date="10/31/2016"/>  
 
 
 
@@ -31,7 +32,7 @@
 
 1. [将应用程序与 Azure AD 集成](/documentation/articles/active-directory-integrating-applications/)：了解如何从 Azure AD 添加、更新和删除应用程序，以及集成应用的品牌准则。
 
-1. [Azure AD Graph API](/documentation/articles/active-directory-graph-api/)：使用 Azure AD Graph API 通过 REST API 终结点以编程方式访问 Azure AD。也可以通过 [Microsoft Graph](https://graph.microsoft.io) 访问 Azure AD Graph API。Microsoft Graph 提供统一的 API，可以通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
+1. [Azure AD Graph API](/documentation/articles/active-directory-graph-api/)：使用 Azure AD Graph API 通过 REST API 终结点以编程方式访问 Azure AD。也可以通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD Graph API。Microsoft Graph 提供统一的 API，可以通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
 
 1. [Azure AD 身份验证库](/documentation/articles/active-directory-authentication-libraries/)：使用适用于 .NET、JavaScript、Objective-C、Android 及其他语言的 Azure AD 身份验证库，轻松对用户进行身份验证，获取访问令牌。
 
@@ -78,7 +79,7 @@
 - [了解客户端应用程序中登录按钮和应用获取按钮的品牌准则](/documentation/articles/active-directory-branding-guidelines/)
 - [预览：如何构建可以使用个人帐户和工作或学校帐户来登录用户的应用](/documentation/articles/active-directory-appmodel-v2-overview/)
 - [预览：如何构建可以注册和登录使用者的应用](/documentation/articles/active-directory-b2c-overview/)
-
+- [预览：使用 PowerShell 在 Azure AD 中配置令牌生存期](/documentation/articles/active-directory-configurable-token-lifetimes/)。请参阅[策略操作](https://msdn.microsoft.com/zh-cn/library/azure/ad/graph/api/policy-operations)和[策略实体](https://msdn.microsoft.com/zh-cn/library/azure/ad/graph/api/entity-and-complex-type-reference#policy-entity)，了解有关通过 Azure AD 图形 API 进行配置的详细信息。
 
 ## 引用
 
@@ -94,7 +95,7 @@
 
 - [Azure Active Directory 示例](https://github.com/azure-samples?query=active-directory)：浏览示例列表的最简单办法是使用[代码示例的索引](/documentation/articles/active-directory-code-samples/)。
 
-- [适用于 ADAL 的 .NET](https://msdn.microsoft.com/zh-cn/library/azure/mt417579.aspx)：.NET 身份验证库的文档。
+- [用于 .NET 的 Active Directory 身份验证库 (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet) - 适用于[最新主要版本](https://docs.microsoft.com/active-directory/adal/microsoft.identitymodel.clients.activedirectory)和[以前主要版本](https://docs.microsoft.com/active-directory/adal/v2/microsoft.identitymodel.clients.activedirectory)的参考文档。
 
 ### Graph API
 
@@ -129,7 +130,7 @@
 
 ## 社交
 
-- [Active Directory 团队博客](http://blogs.technet.com/b/ad)：Azure Active Directory 领域的最新开发情况。
+- [Active Directory 团队博客](http://blogs.technet.com/b/ad/)：Azure Active Directory 领域的最新开发情况。
 
 - [Azure Active Directory Graph 团队博客](http://blogs.msdn.com/b/aadgraphteam)：特定于图形 API 的 Azure Active Directory 信息。
 
@@ -137,4 +138,4 @@
 
 - [Twitter 上的 Azure Active Directory](https://twitter.com/azuread)：以 140 个或更少的字符发布的 Azure Active Directory 公告。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1024_2016-->

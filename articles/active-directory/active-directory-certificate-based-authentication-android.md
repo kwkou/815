@@ -4,16 +4,17 @@
     services="active-directory" 
     authors="markusvi"  
     documentationCenter="na" 
-    manager="femila"/>
+    manager="femila"/>  
+
 <tags 
     ms.service="active-directory" 
     ms.devlang="na" 
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="07/22/2016" 
-    ms.author="markvi"
-    wacn.date="10/11/2016"/>
+    ms.date="10/10/2016" 
+    ms.author="markvi" 
+    wacn.date="10/31/2016"/>
 
 
 
@@ -54,7 +55,7 @@
 - 必须颁发客户端证书以进行客户端身份验证。
 
 
-- 仅对于 Exchange ActiveSync 客户端，客户端证书的"使用者可选名称"字段的主体名称或 RFC822 名称必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的"代理地址"属性。
+- 仅对于 Exchange ActiveSync 客户端，客户端证书的“使用者可选名称”字段的主体名称或 RFC822 名称必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的“代理地址”属性。
 
 
 
@@ -79,11 +80,11 @@
 
 若要让 Azure Active Directory 吊销客户端证书，ADFS 令牌必须具有以下声明：
 
-  - `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`  
-（客户端证书的序列号）
+  - `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`
+  （客户端证书的序列号）
 
-  - `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`  
-（客户端证书颁发者的相应字符串）
+  - `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`
+  （客户端证书颁发者的相应字符串）
 
 如果 ADFS 令牌（或任何其他 SAML 令牌）具有这些声明，Azure Active Directory 会将这些声明添加到刷新令牌中。当需要验证刷新令牌时，此信息可用于检查吊销。
 
@@ -135,7 +136,7 @@
     } 
 
 
-若要上传信息，可以通过 Windows PowerShell 使用 Azure AD 模块。  
+若要上传信息，可以通过 Windows PowerShell 使用 Azure AD 模块。
 下面是添加、删除或修改证书颁发机构的示例。
 
 
@@ -247,7 +248,7 @@
 
 ## 吊销
 
-若要吊销客户端证书，Azure Active Directory 会从作为证书颁发机构信息的一部分上传的 URL 中提取证书吊销列表 (CRL)，并将其缓存。CRL 中的上次发布时间戳（"生效日期"属性）用于确保 CRL 仍然有效。将定期引用 CRL，以撤销对该列表中证书的访问权限。
+若要吊销客户端证书，Azure Active Directory 会从作为证书颁发机构信息的一部分上传的 URL 中提取证书吊销列表 (CRL)，并将其缓存。CRL 中的上次发布时间戳（“生效日期”属性）用于确保 CRL 仍然有效。将定期引用 CRL，以撤销对该列表中证书的访问权限。
 
 如果需要更即时的吊销（例如，如果用户丢失了设备），可以使用户的授权令牌失效。若要使授权令牌失效，请使用 Windows PowerShell 为此特定用户设置 **StsRefreshTokenValidFrom** 字段。必须为要撤销其访问权限的每个用户更新 **StsRefreshTokenValidFrom** 字段。
  
@@ -277,4 +278,4 @@
 <!--Image references-->
 [1]: ./media/active-directory-certificate-based-authentication-android/ic195031.png
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1024_2016-->

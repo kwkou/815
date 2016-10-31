@@ -1,16 +1,23 @@
 <properties
-	pageTitle="管理 Azure Active Directory 中的自定义域名 | Microsoft Azure"
+	pageTitle="管理 Azure Active Directory 中的自定义域名 | Azure"
 	description="用于管理 Azure Active Directory 中的自定义域的管理概念和操作指南"
 	services="active-directory"
 	documentationCenter=""
 	authors="jeffsta"
 	manager="femila"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/18/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/04/2016"
+	ms.author="curtand;jeffsta"
+	wacn.date="10/31/2016"/>  
+
 
 # 管理 Azure Active Directory 中的自定义域名
 
@@ -18,11 +25,11 @@
 
 ## 设置 Azure AD 目录的主域名
 
-创建目录后，初始域名（例如“contoso.partner.onmschina.cn”）也是目录的主域名。当你在 [Azure 经典门户](https://manage.windowsazure.cn/)或其他门户（如 Office 365 管理门户）中创建新用户时，主域是新用户的默认域名。这简化了管理员在门户中创建新用户的过程。
+创建目录后，初始域名（例如“contoso.partner.onmschina.cn”）也是目录的主域名。在 [Azure 经典管理门户](https://manage.windowsazure.cn/)或其他门户（如 Office 365 管理门户）中创建新用户时，主域是新用户的默认域名。这简化了管理员在门户中创建新用户的过程。
 
 若要更改目录的主域名，请执行以下操作：
 
-1.  使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1.  使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2.  在左侧导航栏上选择“Active Directory”。
 
@@ -66,7 +73,7 @@
 
 针对 Azure Active Directory 中域名的大多数管理任务也可以使用 Microsoft PowerShell 或者使用 Azure AD 图形 API（公共预览版）以编程方式来完成。
 
--   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
+-   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/zh-cn/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
 -   [使用图形 API 管理 Azure AD 中的域名](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations)
 
@@ -76,4 +83,4 @@
 
 -   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1024_2016-->

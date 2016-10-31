@@ -5,7 +5,8 @@
     documentationCenter=""
     authors="markusvi"
     manager="femila"
-    editor=""/>
+    editor=""/>  
+
 
    <tags
       ms.service="active-directory"
@@ -13,9 +14,9 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="07/20/2016"
+      ms.date="10/10/2016"
       ms.author="markvi"
-      wacn.date="10/17/2016"/>  
+      wacn.date="10/31/2016"/>  
 
 
 # 使用 Azure Active Directory 管理应用程序
@@ -137,4 +138,4 @@ Azure AD 提供预先集成的报告和监控功能，使你能够知道谁有�
 
 [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

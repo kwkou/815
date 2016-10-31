@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="jeffsta"
 	manager="femila"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/18/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="09/30/2016"
+	ms.author="curtand;jeffsta"
+	wacn.date="10/31/2016"/>  
+
 
 # 将自定义域名添加到 Azure Active Directory
 
@@ -20,11 +27,11 @@
 2. 在域名注册机构中为域名添加 DNS 条目
 3. 在 Azure AD 中验证自定义域名
 
-> [AZURE.NOTE] 如果你打算配置自定义域名以搭配 Active Directory 联合身份验证服务 (AD FS) 或公司网络上的其他安全令牌服务 (STS) 使用，请按照[添加和配置域以便与 Azure Active Directory 联盟](/documentation/articles/active-directory-add-domain-federated/)中的说明操作。如果你打算将公司目录中的用户同步到 Azure AD，但[密码哈希同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)不符合你的要求，这样做将非常有用。
+> [AZURE.NOTE] 如果打算配置自定义域名以搭配 Active Directory 联合身份验证服务 (AD FS) 或公司网络上的其他安全令牌服务 (STS) 使用，请按照[添加和配置域以便与 Azure Active Directory 联盟](/documentation/articles/active-directory-add-domain-federated/)中的说明操作。如果打算将公司目录中的用户同步到 Azure AD，但[密码哈希同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)不符合要求，这样做将非常有用。
 
-## <a name="add-your-custom-domain-name-to-azure-active-directory"></a>将自定义域名添加到目录
+## 将自定义域名添加到目录
 
-1. 使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2. 在“Active Directory”中打开你的目录，然后选择“域”选项卡。
 
@@ -52,7 +59,7 @@
 
 如果“添加域”向导仍保持打开，请在向导的第三页上选择“验证”。当你选择“验证”时，Azure AD 会在 DNS 区域文件中查找域的 DNS 条目。只有在 DNS 记录传播完成之后，Azure AD 才能验证域名。此传播通常只需要几秒钟，但有时可能需要一小时以上。如果第一次验证不成功，请稍后重试。
 
-如果“添加域”向导未保持打开，可以在 [Azure 经典门户](https://manage.windowsazure.cn/)中验证域。
+如果“添加域”向导未保持打开，可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中验证域：
 
 1.  使用充当 Azure AD 目录全局管理员的用户帐户登录。
 
@@ -62,7 +69,7 @@
 
 4. 在对话框中选择“验证”以完成验证。
 
-现在，你可以[分配包含自定义域名的用户名](/documentation/articles/active-directory-add-domain-add-users/)。
+现在，可以[分配包含自定义域名的用户名](/documentation/articles/active-directory-add-domain-add-users/)。
 
 ## 故障排除
 
@@ -85,6 +92,6 @@
 -   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)
 -   [了解 Azure AD 中的域管理概念](/documentation/articles/active-directory-add-domain-concepts/)
 -   [在用户登录时显示公司的品牌](/documentation/articles/active-directory-add-company-branding/)
--   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
+-   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/zh-cn/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1024_2016-->
