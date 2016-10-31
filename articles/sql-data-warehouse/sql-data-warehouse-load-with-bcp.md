@@ -3,21 +3,28 @@
    description="了解什么是 bcp，以及如何将它用于数据仓库方案。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="lodipalm"
+   authors="twounder"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="06/30/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="10/10/2016"
+   wacn.date="10/31/2016"/>  
+
 
 
 # 使用 bcp 加载数据
 
 > [AZURE.SELECTOR]
-- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase/)
-- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp/)
+- [Redgate](/documentation/articles/sql-data-warehouse-load-with-redgate/)
+- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase)
+- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp)
 
 
 **[bcp][]** 是一个命令行批量加载实用程序，可让你在 SQL Server、数据文件和 SQL 数据仓库之间复制数据。使用 bcp 实用程序可将大量的行导入 SQL 数据仓库表，或将 SQL Server 表中的数据导出到数据文件。除非与 queryout 选项一起使用，否则 bcp 不需要 Transact-SQL 方面的知识。
@@ -74,7 +81,7 @@ bcp 是将较小数据集移入和移出 SQL 数据仓库数据库的快速轻�
 
 ### 步骤 2：创建源数据文件
 
-打开记事本，将以下几行数据复制到新文本文件，然后将此文件保存到本地临时目录，路径为 C:\Temp\DimDate2.txt。
+打开记事本，将以下几行数据复制到新文本文件，然后将此文件保存到本地临时目录，路径为 C:\\Temp\\DimDate2.txt。
 
 
 	20150301,1,3
@@ -138,7 +145,7 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 
 
 ## 从 SQL 数据仓库导出数据
-在本教程中，你将从 Azure SQL 数据仓库中的表创建数据文件。我们将上面创建的数据导出到名为 DimDate2_export.txt 的新数据文件。
+在本教程中，你将从 Azure SQL 数据仓库中的表创建数据文件。我们将上面创建的数据导出到名为 DimDate2\_export.txt 的新数据文件。
 
 ### 步骤 1：导出数据
 
@@ -167,10 +174,10 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 >[AZURE.NOTE] 由于分布式系统的性质，数据顺序在不同 SQL 数据仓库数据库之间可能不同。另一种做法是使用 bcp 的 **queryout** 函数来编写查询提取，而不是导出整个表。
 
 ## 后续步骤
-有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][]。
-有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][]。
+有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][]。有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][]。
 
 <!--Image references-->
+
 
 <!--Article references-->
 
@@ -184,6 +191,7 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 [CREATE TABLE syntax]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
 
 <!--Other Web references-->
+
 [Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1024_2016-->

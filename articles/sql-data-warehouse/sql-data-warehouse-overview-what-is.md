@@ -1,4 +1,3 @@
-<!-- Remove portal -->
 <properties
    pageTitle="什么是 Azure SQL 数据仓库 | Azure"
    description="企业级分布式数据库，可处理 PB 量级的关系数据和非关系数据。它是行业首个云数据仓库，可以在数秒内增长、收缩和暂停。"
@@ -6,12 +5,17 @@
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/23/2016"
-   wacn.date="09/05/2016"/>
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/27/2016"
+   wacn.date="10/31/2016"/>
 
 
 
@@ -48,7 +52,7 @@ SQL 数据仓库是一种大规模并行处理 (MPP) 分布式数据库系统。
 
 **计算节点：**计算节点将充当 SQL 数据仓库背后的强大功能。它们是用于存储数据并处理查询的 SQL 数据库。当你添加数据时，SQL 数据仓库向计算节点分配行。计算节点是对数据运行并行查询的工作节点。在处理后，它们将结果传递回控制节点。若要完成查询，控制节点聚合结果并返回最终结果。
 
-**存储：**你的数据存储在 Azure Blob 存储中。当计算节点与数据进行交互时，它们直接将数据写入到 blob 存储中并直接从 blob 存储读取数据。由于 Azure 存储空间可透明和无限地扩展，因此 SQL 数据仓库也可同样做到。由于计算与存储是独立的，因此 SQL 数据仓库可自动将缩放存储与缩放计算分开进行，反之亦然。Azure Blob 存储还可以完全容错，并简化了备份和还原过程。
+**存储：**你的数据存储在 Azure Blob 存储中。当计算节点与数据进行交互时，它们直接将数据写入到 blob 存储中并直接从 blob 存储读取数据。由于 Azure 存储可以透明和大幅地进行扩展，因此 SQL 数据仓库也可以这样做。由于计算与存储是独立的，因此 SQL 数据仓库可自动将缩放存储与缩放计算分开进行，反之亦然。Azure Blob 存储还可以完全容错，并简化了备份和还原过程。
 
 **数据移动服务：**数据移动服务 (DMS) 可在节点之间移动数据。DMS 向计算节点提供访问进行联接和聚合所需数据的权限。DMS 不是一项 Azure 服务。它是在所有节点上与 SQL 数据库一起运行的 Windows 服务。由于 DMS 在后台运行，因此你不会直接与它交互。但是，当你查看查询计划时，你会注意到它们包括某些 DMS 操作，因为在并行运行每个查询时数据移动是必需的。
 
@@ -141,31 +145,41 @@ Polybase 可让你使用熟悉的 T-SQL 命令来利用不同源中的数据。P
 
 - Polybase 并不知道其集成状态。它为支持的所有源提供相同的特性和功能。Polybase 可读取各种格式的数据，包括分隔文件或 ORC 文件。
 
-- PolyBase 可用于访问也用作 HD Insight 群集的存储的 Blob 存储。这样就可以使用关系和非关系工具访问同一数据。
+- PolyBase 可用于访问 Blob 存储，该存储也用作 HDInsight 群集的存储。这样就可以使用关系和非关系工具访问同一数据。
 
 ## 后续步骤
 
-对 SQL 数据仓库有了初步的认识后，请继续了解 [数据仓库工作负荷]、[如何预配] SQL 数据仓库，以及[如何加载示例数据]。或者，查看一下以下一些其他 SQL 数据仓库资源。
+对 SQL 数据仓库有了初步的认识后，请继续了解如何快速[创建 SQL 数据仓库][]和[加载示例数据][]。如果用户不熟悉 Azure，可在遇到新术语时查看 [Azure 术语表][]。或者，查看一下以下一些其他 SQL 数据仓库资源。
 
-- [CAT 团队博客]
+- [博客]
 - [MSDN 论坛]
 
 
 <!--Image references-->
+
 [1]: ./media/sql-data-warehouse-overview-what-is/dwarchitecture.png
 
 <!--Article references-->
-[如何加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
-[如何预配]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[创建支持票证]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
+[how to load sample data]: /documentation/articles/sql-data-warehouse-get-started-load-sample-databases/
+[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [迁移文档]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[SQL Data Warehouse solution partners]: /documentation/articles/sql-data-warehouse-integrate-solution-partners/
 [集成工具概述]: /documentation/articles/sql-data-warehouse-overview-integrate/
 [备份和还原概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
+[Azure 术语表]: /documentation/articles/azure-glossary-cloud-terminology/
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-[CAT 团队博客]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
-[MSDN 论坛]: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureSQLDataWarehouse
+[客户成功案例]: https://customers.microsoft.com/search?sq=&ff=story_products_services%26%3EAzure%2FAzure%2FAzure%20SQL%20Data%20Warehouse%26%26story_product_families%26%3EAzure%2FAzure%26%26story_product_categories%26%3EAzure&p=0
+[博客]: https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/
+[客户顾问团队博客]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
+[功能请求]: https://feedback.azure.com/forums/307516-sql-data-warehouse
+[MSDN 论坛]: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=AzureSQLDataWarehouse
+[Stack Overflow 论坛]: http://stackoverflow.com/questions/tagged/azure-sqldw
+[Twitter]: https://twitter.com/hashtag/SQLDW
+[视频]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1024_2016-->

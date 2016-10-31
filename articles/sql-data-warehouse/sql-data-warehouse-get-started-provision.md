@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="08/25/2016"
-   wacn.date="10/17/2016"/>  
+   wacn.date="10/31/2016"/>  
 
 
 # 创建 Azure SQL 数据仓库
@@ -94,7 +94,7 @@
 [DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units
 [订阅]: /documentation/articles/azure-glossary-cloud-terminology#subscription
 [resource group]: /documentation/articles/azure-glossary-cloud-terminology#resource-group
-
+[T-SQL]: /documentation/articles/sql-data-warehouse-get-started-create-database-tsql/
  
 <!--MSDN references-->
 [sp\_set\_firewall\_rule]: https://msdn.microsoft.com/zh-cn/library/dn270017.aspx
@@ -107,4 +107,4 @@
 [Azure 试用版]: /pricing/1rmb-trial
 [MSDN Azure 信用额度]: /pricing/member-offers/
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->
