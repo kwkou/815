@@ -27,37 +27,12 @@
 
 部署站点恢复可在许多方案中协调复制：
 
-- **复制 VMware 虚拟机**：可将本地 VMware 虚拟机复制到[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware/)。
-- **复制物理机**：可将运行 Windows 或 Linux 的物理机复制到 [Azure](/documentation/articles/site-recovery-vmware-to-azure/) 或[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware/)。
 - **复制在 System Center VMM 云中管理的 Hyper-V VM**：可将 VMM 云中的本地 Hyper-V 虚拟机复制到 [Azure](/documentation/articles/site-recovery-vmm-to-azure/) 或[辅助数据中心](/documentation/articles/site-recovery-vmm-to-vmm/)。
 - **复制 Hyper-V VM（不包括 VMM）**：可以将不由 VMM 管理的 Hyper-V VM 复制到 [Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure/)。
 - **迁移 VM**：可以使用站点恢复在区域之间[迁移 Azure IaaS VM](/documentation/articles/site-recovery-migrate-azure-to-azure/)，或者[将 AWS Windows 实例迁移](/documentation/articles/site-recovery-migrate-aws-to-azure/)到 Azure IaaS VM。目前仅支持迁移，这意味着你可以故障转移这些 VM，但无法故障回复。
 
 Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应用。有关受支持应用的完整摘要，请参阅 [Azure Site Recovery 可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload/)
-<!--
-## 将本地 VMware 虚拟机或物理服务器复制到 Azure
 
-目前有两个不同的体系结构可用于将 VMware VM 或物理 Windows/Linux 服务器复制到 Azure：
-
-- [旧体系结构](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/)：此体系结构不应该用于新部署。 
-- [增强版体系结构](/documentation/articles/site-recovery-vmware-to-azure-classic/)：这是最新的体系结构，应该用于所有的新部署。如果你已使用旧体系结构部署此方案，请[了解如何迁移](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy/#migrate-to-the-enhanced-deployment)到增强型部署。
-
-在增强型部署中，需要设置具有所有站点恢复组件的本地管理服务器。在要保护的每台计算机上，自动推送（或手动安装）移动服务。初始复制之后，计算机上的移动服务会将增量复制数据发送到进程服务器，以在发送到 Azure 存储空间之前进行优化。
-
-![增强版](./media/site-recovery-components/arch-enhanced.png)
-![增强版](./media/site-recovery-components/arch-enhanced2.png)
--->
-### 本地
-下面是在本地需要的项：
-
-- **管理服务器**：需要使用 Windows Server 2012 R2 计算机作为管理服务器。在此服务器上，使用单个安装文件来安装所有站点恢复组件：
-
-	- **配置服务器组件**：在本地环境和 Azure 之间协调通信并管理数据复制和恢复。
-	- **进程服务器组件**：充当复制网关。此服务器接收受保护源计算机提供的复制数据，通过缓存、压缩和加密对其进行优化，然后将数据发送到 Azure 存储空间。它还处理用于保护计算机的移动服务的推送安装，并执行 VMware VM 的自动发现。随着部署扩大，可以添加作为进程服务器运行的独立专用进程服务器，目的仅在于处理更大的复制流量。
-	- **主目标服务器组件**：处理从 Azure 进行故障回复期间产生的复制数据。
-- **VMware ESX/ESXi 主机和 vCenter 服务器**：需要一个或多个运行 VMware VM 的 ESX/ESXi 主机服务器。我们建议你部署 vCenter 服务器来管理这些主机。**注意**：**即使复制的是物理服务器，也必须将这些服务器故障回复到 VMware**。复制物理服务器时，它将在故障转移到 Azure 时作为 Azure VM 运行。它将作为 VMware VM 故障回复到本地。
-	
-- **VM/物理服务器**：要复制到 Azure 的每台计算机都需要安装移动服务组件。此服务可以捕获计算机上的数据写入，并将其转发到进程服务器。可以手动安装此组件，也可以在启用计算机复制后由进程服务器自动推送并安装。
 
 ### Azure
 
@@ -66,22 +41,6 @@ Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应�
 	- **Azure 存储空间**：需要使用 Azure 存储帐户来存储复制的数据。复制的数据存储在 Azure 存储空间，Azure VM 在发生故障转移时启动。
 	- **Azure 网络**：需要启动 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。
 	
-	
-### 故障回复
-
-故障回复到本地时始终回复到 VMware VM，即使故障转移物理服务器。以下是你需要做好的准备：
-
-- **Azure 中的临时进程服务器**：如果想要在故障转移后从 Azure 故障回复，必须将 Azure VM 设置为进程服务器，以处理来自 Azure 的复制。故障回复完成后，可以删除此 VM。
-- **VPN 连接**：若要进行故障回复，需要设置从 Azure 网络到本地站点的 VPN 连接（或 Azure ExpressRoute）。
-- **单独的本地主目标服务器**：本地主目标服务器用于处理故障回复。主目标服务器默认安装在管理服务器上，但如果要故障回复大量数据，应该设置独立的本地主目标服务器。 
-
-![增强版故障回复](./media/site-recovery-components/enhanced-failback.png)
-
-
-[详细了解](/documentation/articles/site-recovery-failback-azure-to-vmware-classic/)如何故障回复增强型部署。
-
-
-
 
 ## 将 VMM 云中的 Hyper-V VM 复制到 Azure
 
@@ -100,18 +59,6 @@ Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应�
 	![VMM 到 Azure](./media/site-recovery-components/arch-onprem-onprem-azure-vmm.png)
 
 深入了解确切的[部署要求](/documentation/articles/site-recovery-vmm-to-azure/#before-you-start)。
-
-## 将 VMware 虚拟机或物理服务器复制到辅助站点
-
-若要将 VMware VM 或 Windows/Linux 物理服务器复制到辅助站点，需要下载 Azure Site Recovery 订阅中包含的 InMage Scout。在每个站点（配置、进程、主目标）中设置组件服务器，并在要复制的计算机上安装统一代理。初始复制之后，每台计算机上的代理将增量复制更改发送到进程服务器。进程服务器将优化这些数据，并将其传输到辅助站点上的主目标服务器。配置服务器将管理复制进程。
-
-![VMware 到 VMware](./media/site-recovery-components/vmware-to-vmware.png)
-
-### 本地主站点
-
-- **进程服务器**：设置主站点中的进程服务器组件，以处理缓存、压缩和数据优化。它还可以将安装的统一代理推送到你要保护的计算机。
-- **VMware ESX/ESXi 和 vCenter 服务器**：如果要保护 VMware VM，则需要 VMware EXS/ESXi 虚拟机监控程序以及（可选）用于管理虚拟机监控程序的 VMware vCenter 服务器。
-- **VM/物理服务器**：想要保护的 VMware VM 或 Windows/Linux 物理服务器需要安装统一代理。充当主目标服务器的计算机上也安装了统一代理。该代理充当所有组件之间的通信提供程序。
 	
 ### 本地辅助站点
  

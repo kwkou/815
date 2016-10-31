@@ -78,7 +78,7 @@ Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hy
 
 ## 其他参考资料
 
-- [监视 VMware、VMM、Hyper-V 和物理站点的保护以及对其进行故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting/)
+- [监视 VMM、Hyper-V 和物理站点的保护以及对其进行故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting/)
 - [联系 Microsoft 技术](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#reaching-out-for-microsoft-support)
 - [常见 ASR 错误及其解决方法](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#common-asr-errors-and-their-resolutions)
 
