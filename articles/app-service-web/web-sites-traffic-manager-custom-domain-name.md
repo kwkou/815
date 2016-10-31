@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/20/2016"
-	wacn.date=""
+	wacn.date="10/31/2016"
 	ms.author="robmcm"/>
 
 # 使用流量管理器为 Azure App Service 中的 Web 应用配置自定义域名

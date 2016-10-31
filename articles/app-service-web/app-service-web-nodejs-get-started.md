@@ -15,7 +15,7 @@
 	ms.devlang="nodejs"
 	ms.topic="get-started-article"
 	ms.date="07/01/2016"
-	wacn.date=""
+	wacn.date="10/31/2016"
 	ms.author="cephalin"/>  
 
 

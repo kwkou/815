@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/29/2016"
-	wacn.date=""
+	wacn.date="10/31/2016"
 	ms.author="aelnably"/>
 
 # 使用基于 Azure Resource Manager 的 PowerShell 来管理 Azure Web Apps#
