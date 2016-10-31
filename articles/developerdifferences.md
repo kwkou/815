@@ -5,11 +5,10 @@
 # 中国区 Azure 应用程序开发说明
 
 ##<a name="about"></a>文档简介
-*微软云 ( Microsoft Azure )，在境外由微软运营（以下简称为 “境外 Azure”），在中国由世纪互联公司运营（以下简称为 “中国区 Azure”）。*
 
-微软公司为其境外 Azure 服务创建和部署云应用程序，提供了相应工具。
+微软公司为其在境外由微软运营的 Azure 服务（以下简称为 “境外 Azure”），创建和部署云应用程序，提供了相应工具。
 
-中国区 Azure 是独立的服务平台，由世纪互联公司提供并运营，其数据中心位于中国大陆（不包括香港特别行政区、澳门特别行政区和中国台湾地区）。因此，创建和部署应用程序时，开发人员需先了解中国区 Azure 和境外 Azure 的主要区别，然后再设置编程环境，编写应用程序，部署在中国托管的服务。
+在中国，由世纪互联运营的 Microsoft Azure （以下简称为 “中国区 Azure”）是独立的服务平台，由世纪互联公司提供并运营，其数据中心位于中国大陆（不包括香港特别行政区、澳门特别行政区和中国台湾地区）。因此，创建和部署应用程序时，开发人员需先了解中国区 Azure 和境外 Azure 的主要区别，然后再设置编程环境，编写应用程序，部署在中国托管的服务。
 
 本文档概述了这两种服务的区别，并为中国 [Azure 门户](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。同时，官方信息也会通过多个途径发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及博客。本文目标读者为在中国部署、托管数据中心的合作伙伴及开发人员。
 
