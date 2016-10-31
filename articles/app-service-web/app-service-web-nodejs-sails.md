@@ -5,33 +5,41 @@
 	documentationCenter="nodejs"
 	authors="cephalin"
 	manager="wpickett"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/19/2016"
-	wacn.date="09/26/2016"/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="09/23/2016"
+	wacn.date=""
+	ms.author="cephalin"/>
 
 # 将 Sails.js Web 应用部署到 Azure App Service
 
 本教程说明如何将 Sails.js 应用部署到 Azure App Service。在此过程中，可以搜集一些有关如何将 Node.js 应用配置为在应用服务中运行的一般知识。
 
+应具备 Sails.js 的实践知识。本教程并非旨在帮助你解决运行 Sail.js 相关的一般性问题。
+
+
 ## 先决条件
 
-- [Node.js](https://nodejs.org/)。
-- [Sails.js](http://sailsjs.org/get-started)。
-- Sails.js 的实践知识。本教程并非旨在帮助你解决运行 Sail.js 相关的一般性问题。
-- [Git](http://www.git-scm.com/downloads)。
-- [Azure CLI](/documentation/articles/xplat-cli-install/)。
+- [Node.js](https://nodejs.org/)
+- [Sails.js](http://sailsjs.org/get-started)
+- [Git](http://www.git-scm.com/downloads)
+- [Azure CLI](/documentation/articles/xplat-cli-install/)
 - 一个 Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
-## 步骤 1：在开发环境中创建 Sails.js 应用
+## 步骤 1：在本地创建 Sails.js 应用
 
-首先，遵循以下步骤快速创建默认的 Sails.js 应用：
+首先，请执行以下步骤，在部署环境中快速创建默认的 Sails.js 应用：
 
 1. 打开所选的命令行终端，并使用 `CD` 切换到工作目录。
 
-2. 创建新的 Sails.js 应用并将它运行：
+2. 创建 Sails.js 应用并运行：
 
         sails new <appname>
         cd <appname>
@@ -39,11 +47,12 @@
 
     确保可以导航到 http://localhost:1377 上的默认主页。
 
-## 步骤 2：在 Azure 中创建应用服务应用资源。
+## 步骤 2：创建 Azure 应用资源
 
-接下来，创建 App Service 应用资源。稍后要将 Sails.js 应用部署到其中。
+接下来，在 Azure 中创建应用服务资源。稍后要将 Sails.js 应用部署到其中。
 
-1. 如下所示，在同一个终端中跳转到 ASM 模式，并登录到 Azure：
+1. 如下所示登录 Azure：
+1. 在同一终端中，更改为 ASM 模式并登录 Azure：
 
         azure config mode asm
         azure login -e AzureChinaCloud
@@ -108,6 +117,12 @@
             "sails-sqlserver": "<leave-as-is>"
         },
 
+3. 在 package.json 中，添加以下 `engines` 属性，将 Node.js 设置为所需的版本。
+
+        "engines": {
+            "node": "6.6.0"
+        },
+
 6. 保存更改并测试更改，以确保应用仍在本地运行。若要执行此操作，请删除 `node_modules` 文件夹，然后运行：
 
         npm install
@@ -134,7 +149,7 @@
                 .-..-.
 
     Sails              <|    .-..-.
-    v0.12.3             |\
+    v0.12.4             |\
                         /|.\
                         / || \
                     ,'  |'  \
@@ -144,39 +159,39 @@
     ____---___--___---___--___---___--___-__
 
     Server lifted in `D:\home\site\wwwroot`
-    To see your app, visit http://localhost:\\.\pipe\a76e8111-663e-449d-956e-5c5deff2d304
+    To see your app, visit http://localhost:\\.\pipe\c775303c-0ebc-4854-8ddd-2e280aabccac
     To shut down Sails, press <CTRL> + C at any time.
 
 可以控制 [config/log.js](http://sailsjs.org/#!/documentation/concepts/Logging) 文件中 stdout 日志的粒度。
 
 ## 连接到 Azure 中的数据库
 
-若要连接到 Azure 中的数据库，可以在 Azure 中创建所选的数据库，例如 Azure SQL 数据库、MySQL、MongoDB、Azure (Redis) 缓存等，并使用相应的[数据存储适配器](https://github.com/balderdashy/sails#compatibility)连接到该数据库。本部分中的步骤说明如何连接到 Azure SQL 数据库。
+若要连接到 Azure 中的数据库，可以在 Azure 中创建所选的数据库，例如 Azure SQL 数据库、MySQL、MongoDB、Azure (Redis) 缓存等，并使用相应的[数据存储适配器](https://github.com/balderdashy/sails#compatibility)连接到该数据库。本部分中的步骤说明如何连接到 Azure 中的 MySQL 数据库。
 
-1. 遵循[此处](/documentation/articles/sql-database-get-started/)的教程，在新的 SQL Server 中创建空白的 Azure SQL 数据库。默认防火墙设置允许 Azure 服务（例如应用服务）连接到该数据库。
+1. 遵循[此处](/documentation/articles/mysql-database-get-started/)的教程，在 Azure 中创建 MySQL 数据库。
 
-2. 从命令行终端安装 SQL Server 适配器：
+2. 从命令行终端安装 MySQL 适配器：
 
-        npm install sails-sqlserver --save
+        npm install sails-mysql --save
 
 3. 打开 config/connections.js 并将以下连接对象添加到列表：
 
-        sqlserver: {
-            adapter: 'sails-sqlserver',
+        mySql: {
+            adapter: 'sails-mysql',
             user: process.env.dbuser,
             password: process.env.dbpassword,
-            host: process.env.sqlserver, 
+            host: process.env.dbhost, 
             database: process.env.dbname,
             options: {
-                encrypt: true   // use this for Azure databases
+                encrypt: true
             }
         },
 
-4. 需要在应用服务中设置每个环境变量 (`process.env.*`)。为此，请从终端运行以下命令：
+4. 需要在应用服务中设置每个环境变量 (`process.env.*`)。为此，请从终端运行以下命令。Azure 经典管理门户提供所需的全部连接信息（请参阅[连接到 MySQL 数据库](/documentation/articles/mysql-database-get-started/#step5)）。
 
-        azure site appsetting add dbuser="<database server administrator>"
-        azure site appsetting add dbpassword="<database server password>"
-        azure site appsetting add sqlserver="<database server name>.database.chinacloudapi.cn"
+        azure site appsetting add dbuser="<database user>"
+        azure site appsetting add dbpassword="<database password>"
+        azure site appsetting add dbhost="<database hostname>"
         azure site appsetting add dbname="<database name>"
         
     将设置放在 Azure 应用设置中，可以使敏感数据不受源控件 (Git) 的控制。接下来，配置开发环境以便使用相同的连接信息。
@@ -184,31 +199,31 @@
 4. 打开 config/local.js，并添加以下连接对象：
 
         connections: {
-            sqlserver: {
-                user: "<database server administrator>",
-                password: "<database server password>",
-                host: "<database server name>.database.chinacloudapi.cn", 
+            mySql: {
+                user: "<database user>",
+                password: "<database password>",
+                host: "<database hostname>", 
                 database: "<database name>",
             },
         },
     
-    此配置将覆盖本地环境的 config/connections.js 文件中的设置。项目中默认的 .gitignore 排除了此文件，因此该文件不会存储在 Git 中。现在，可以从 Azure Web 应用和本地开发环境中连接到 Azure SQL 数据库。
+    此配置会覆盖 config/connections.js 文件中的本地环境设置。项目中默认的 .gitignore 排除了此文件，因此该文件不会存储在 Git 中。现在，可以从 Azure Web 应用和本地开发环境中连接到 MySQL 数据库。
 
 4. 打开 config/env/production.js 来配置生产环境，并添加以下 `models` 对象：
 
         models: {
-            connection: 'sqlserver',
+            connection: 'mySql',
             migrate: 'safe'
         },
 
 4. 打开 config/env/development.js 来配置开发环境，并添加以下 `models` 对象：
 
         models: {
-            connection: 'sqlserver',
+            connection: 'mySql',
             migrate: 'alter'
         },
 
-    通过 `migrate: 'alter'` 可以使用数据库迁移功能在 Azure SQL 数据库中轻松创建并更新数据库表。但是，在 Azure（生产）环境中使用 `migrate: 'safe'`，因为 Sails.js 不允许在生产环境中使用 `migrate: 'alter'`（请参阅 [Sails.js 文档](http://sailsjs.org/documentation/concepts/models-and-orm/model-settings)）。
+    通过 `migrate: 'alter'` 可以使用数据库迁移功能在 MySQL 中轻松创建和更新数据库表。但是，在 Azure（生产）环境中使用 `migrate: 'safe'`，因为 Sails.js 不允许在生产环境中使用 `migrate: 'alter'`（请参阅 [Sails.js 文档](http://sailsjs.org/documentation/concepts/models-and-orm/model-settings)）。
 
 4. 和往常一样在终端[生成](http://sailsjs.org/documentation/reference/command-line-interface/sails-generate) Sails.js 的[蓝图 API](http://sailsjs.org/documentation/concepts/blueprints)，然后运行 `sails lift` 以使用 Sails.js 数据库迁移功能创建数据库。例如：
 
@@ -223,7 +238,7 @@
     
     此 API 应在浏览器窗口中返回创建的条目，以表示已成功创建数据库。
 
-        {"id":1,"createdAt":"2016-03-28T23:08:01.000Z","updatedAt":"2016-03-28T23:08:01.000Z"}
+        {"id":1,"createdAt":"2016-09-23T13:32:00.000Z","updatedAt":"2016-09-23T13:32:00.000Z"}
 
 5. 现在将更改推送到 Azure，并浏览到应用以确保应用仍能正常工作。
 
@@ -236,11 +251,11 @@
 
         http://<appname>.chinacloudsites.cn/mywidget/create
 
-    如果 API 返回另一个新条目，那么 Azure Web 应用正在和 Azure SQL 数据库通信。
+    如果 API 返回另一个新条目，那么 Azure Web 应用正在和 MySQL 数据库通信。
 
 ## 更多资源
 
 - [在 Azure App Service 中 Node.js Web 应用入门](/documentation/articles/app-service-web-nodejs-get-started/)
 - [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1024_2016-->

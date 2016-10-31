@@ -5,33 +5,43 @@
 	documentationCenter=""
 	authors="ahmedelnably"
 	manager="stefsch"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="app-service-web"
-	ms.date="06/14/2016"
-	wacn.date="09/26/2016"/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/29/2016"
+	wacn.date=""
+	ms.author="aelnably"/>
 
 # 使用基于 Azure Resource Manager 的 PowerShell 来管理 Azure Web Apps#
 
-发行的 Azure PowerShell 版本 1.0.0 中添加了新新命令，可让用户使用基于 Azure Resource Manager 的 PowerShell 命令来管理 Web Apps。
+> [AZURE.SELECTOR]
+- [Azure CLI](/documentation/articles/app-service-web-app-azure-resource-manager-xplat-cli/)
+- [Azure PowerShell](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
+
+Azure PowerShell 1.0.0 中添加了新命令，可让用户使用基于 Azure Resource Manager 的 PowerShell 命令来管理 Web 应用。
 
 若要了解如何管理资源组，请参阅[将 Azure PowerShell 与 Azure Resource Manager 搭配使用](/documentation/articles/powershell-azure-resource-manager/)。
 
-若要了解 Web 应用 Azure Resource Manager PowerShell cmdlet 的完整参数和选项列表，请参阅 [Web 应用基于 Azure Resource Manager 的 PowerShell Cmdlet 的完整 Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/mt619237.aspx)
+若要了解 PowerShell cmdlet 的完整参数和选项列表，请参阅 [Web 应用的基于 Azure Resource Manager 的 PowerShell Cmdlet 的完整 Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/mt619237.aspx)
 
 ## 管理 App Service 计划 ##
 
 ### 创建 App Service 计划 ###
-若要创建新的 App Service 计划，请使用 **New-AzureRmAppServicePlan** cmdlet。
+若要创建应用服务计划，请使用 **New-AzureRmAppServicePlan** cmdlet。
 
 以下是各种参数的说明：
 
-- 	**Name**：App Service 计划的名称。
+- 	**Name**：应用服务计划的名称。
 - 	**Location**：服务计划位置。
 - 	**ResourceGroupName**：包含新创建的 App Service 计划的资源组。
 - 	**Tier**：所需的定价层（默认值是“免费”，其他选项包括“共享”、“基本”、“标准”和“高级”）。
-- 	**WorkerSize**：辅助角色大小（如果 Tier 参数指定为“基本”、“标准”或“高级”，则默认值为“小”。其他选项包括“中”和“大”。）
+- 	**WorkerSize**：工作节点大小（如果 Tier 参数指定为“基本”、“标准”或“高级”，则默认值为“小”。其他选项包括“中”和“大”。）
 - 	**NumberofWorkers**：App Service 计划中的辅助角色数目（默认值为 1）。
 
 使用此 cmdlet 的示例：
@@ -81,15 +91,15 @@
 
 ### 删除现有的 App Service 计划 ###
 
-若要删除现有的应用服务计划，必须先移动或删除分配的所有 Web 应用，然后使用 **Remove-AzureRmAppServicePlan** cmdlet，即可删除应用服务计划。
+若要删除现有的应用服务计划，请先移动或删除所有已分配的 Web 应用。然后使用 **Remove-AzureRmAppServicePlan** cmdlet 可删除应用服务计划。
 
     Remove-AzureRmAppServicePlan -Name ContosoAppServicePlan -ResourceGroupName ContosoAzureResourceGroup
 
 ## 管理应用服务 Web 应用 ##
 
-### 创建新的 Web 应用 ###
+### 创建 Web 应用 ###
 
-若要创建新的 Web 应用，请使用 **New-AzureRmWebApp** cmdlet。
+若要创建 Web 应用，请使用 **New-AzureRmWebApp** cmdlet。
 
 以下是各种参数的说明：
 
@@ -134,7 +144,7 @@
 	$connectionstrings = @{ ContosoConn1 = @{ Type = "MySql"; Value = "MySqlConn"}; ContosoConn2 = @{ Type = "SQLAzure"; Value = "SQLAzureConn"} }
 	Set-AzureRmWebApp -Name ContosoWebApp -ResourceGroupName ContosoAzureResourceGroup -ConnectionStrings $connectionstrings
 
-示例 (2)：添加应用设置的示例
+示例 (2)：添加或更改应用设置
 
 	$appsettings = @{appsetting1 = "appsetting1value"; appsetting2 = "appsetting2value"}
 	Set-AzureRmWebApp -Name ContosoWebApp -ResourceGroupName ContosoAzureResourceGroup -AppSettings $appsettings
@@ -166,7 +176,7 @@
 
 ### 管理 Web 应用发布配置文件 ###
 
-每个 Web 应用都有可用于发布应用的发布配置文件，并且可对发布配置文件执行许多操作。
+每个 Web 应用都有可用于发布应用的发布配置文件，并且可对发布配置文件执行一些操作。
 
 #### 获取发布配置文件 ####
 
@@ -174,7 +184,7 @@
 
     Get-AzureRmWebAppPublishingProfile -Name ContosoWebApp -ResourceGroupName ContosoAzureResourceGroup -OutputFile .\publishingprofile.txt
 
-请注意，这会将发布配置文件回显至命令行，以及将发布配置文件输出至文本文件。
+此命令将发布配置文件回显至命令行，以及将发布配置文件输出至文本文件。
 
 #### 重置发布配置文件 ####
 
@@ -187,10 +197,10 @@
 若要了解如何管理 Web 应用证书，请参阅[使用 PowerShell 创建 SSL 证书绑定](/documentation/articles/app-service-web-app-powershell-ssl-binding/)
 
 
-
 ### 后续步骤 ###
 - 若要了解 Azure Resource Manager PowerShell 支持，请参阅[将 Azure PowerShell 与 Azure Resource Manager 搭配使用](/documentation/articles/powershell-azure-resource-manager/)。
 - 若要了解如何使用 PowerShell 管理 App Service SSL 证书，请参阅[使用 PowerShell 创建 SSL 证书绑定](/documentation/articles/app-service-web-app-powershell-ssl-binding/)。
 - 若要了解适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell cmdlet 的完整列表，请参阅 [Azure Cmdlet Reference of Web Apps Azure Resource Manager PowerShell Cmdlets](https://msdn.microsoft.com/zh-cn/library/mt619237.aspx)（Web 应用 Azure Resource Manager PowerShell Cmdlet 的 Azure Cmdlet 参考）。
+- - 若要了解使用 CLI 管理应用服务的相关信息，请参阅[使用适用于 Azure Web 应用的基于 Azure Resource Manager 的 XPlat CLI](/documentation/articles/app-service-web-app-azure-resource-manager-xplat-cli/)。
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1024_2016-->
