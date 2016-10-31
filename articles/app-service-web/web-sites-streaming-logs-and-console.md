@@ -5,24 +5,31 @@
 	manager="wpickett" 
 	editor="" 
 	services="app-service\web" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="07/26/2016" 
-	wacn.date="09/30/2016"/>
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="10/12/2016" 
+	wacn.date="" 
+	ms.author="byvinyal"/>  
 
-#流式传输日志和控制台
 
-### 流式传输日志 ###
+# 流式传输日志和控制台
 
-Microsoft Azure 门户预览提供了集成的流式传输日志查看器，可用于实时查看来自你的 App Service 应用的跟踪事件。
+## 流式传输日志
+
+**Azure 门户预览版**提供集成的流式传输日志查看器，可用于实时查看来自**应用服务**应用的跟踪事件。
 
 设置此功能需要几个简单的步骤：
 
 - 在你的代码中编写跟踪
-- 在 Azure 门户预览中启用应用程序诊断
-- 在网站叶片上单击流式传输日志部分
+- 启用应用的应用程序**诊断日志**
+- 从 **Azure 门户预览版**中的内置“流式传输日志”UI 中查看流。
 
 ### 如何在你的代码中编写跟踪 ###
 
@@ -48,29 +55,26 @@ Trace 类驻留在 System.Diagnostics 命名空间中。
 console.log("My trace statement").
 `````````````````````````
 
-### 如何启用和查看流式传输日志 ###
-
-![][BrowseSitesScreenshot]诊断是基于每个网站来启用的。从[门户](https://portal.azure.cn)中，单击左菜单栏上的“浏览”按钮，然后单击“网站”以获取你所有网站的列表。
-
-单击要配置的网站名称以导航到该网站。
-
-![][DiagnosticsLogs] 然后单击“设置(1)”>“诊断日志”，并将“应用程序日志记录(文件系统)”设置为“打开”。可以使用“级别”更改要捕获的跟踪的严重程度级别。如果你只是尝试熟悉该功能，此设置应设为“详细”，因为这将确保你所有的跟踪语句都会被记录到日志中。
+### 如何启用和查看流式传输日志
+![][BrowseSitesScreenshot]诊断基于每个应用启用。首先浏览到想要在其中启用此功能的站点。
+  
+![][DiagnosticsLogs]
+从设置菜单中，向下滚动到“监视”部分，单击“(1) 诊断日志”。然后 **(2) 启用**“应用程序日志记录(文件系统)”或“应用程序日志记录(Blob)”，“级别”选项可供更改要捕获的跟踪的严重性级别。如果只是尝试熟悉该功能，请将级别设置为“详细”，以确保收集所有跟踪语句。
 
 单击边栏选项卡顶部的“保存”，然后就可以开始查看日志了。
 
-**注意：**“严重级别”越高，日志消耗的资源就越多，但你获得的跟踪线索也越多。为高流量/生产站点使用此功能时，请确保将此值设置为适当的级别。
+>[AZURE.NOTE] **严重性级别**越高，日志消耗的资源就越多，但生成的跟踪也越多。确保将**严重性级别**配置为适用于生产或高流量站点的正确详细级别。
 
-![][StreamingLogsScreenshot] 若要从门户内部查看流日志，请单击“工具(1)”>“日志流(2)”。如果应用主动写入跟踪语句，则会以近乎实时的方式在生成的窗口中看到它们。
+![][StreamingLogsScreenshot]
+若要从 Azure 门户预览版中查看**流式传输日志**，请单击同样位于设置菜单的“监视”部分中的“(1) 日志流”。如果应用主动写入跟踪语句，则会以近乎实时的方式在 **(2) 流式传输日志 UI** 中看到它们。
 
-## 控制台 ##
+## 控制台
+**Azure 门户预览版**提供对应用的控制台访问。可以浏览应用的文件系统并运行 Powershell/cmd 脚本。执行控制台命令时，受到与运行中的应用代码相同的权限集的约束。访问受保护的目录或正在运行的脚本需要提升的权限，此类访问被阻止。
 
-Azure 门户预览提供了对网站环境的控制台访问。可以浏览网站的文件系统并运行 Powershell/cmd 脚本。在执行控制台命令时，对您绑定的是与运行中的网站代码相同的权限集。将无法访问受保护的目录，也无法运行要求提升的权限的脚本。
+![][ConsoleScreenshot]
+从设置菜单中，向下滚动到“开发工具”部分，单击“(1) 控制台”，**(2) 控制台 UI** 会在右侧打开。
 
-![][ConsoleScreenshot] 若要使用控制台，请按上面部分的说明浏览到网站。单击“工具”>“控制台”，随即会打开控制台。
-
-要熟悉控制台，请尝试这样一些基本命令：
-
-
+若要熟悉**控制台**，请尝试执行以下基本命令：
 
 `````````````````````````
 dir
@@ -80,12 +84,11 @@ dir
 cd
 `````````````````````````
 
-
-
 <!-- Images. -->
+
 [DiagnosticsLogs]: ./media/web-sites-streaming-logs-and-console/diagnostic-logs.png
 [BrowseSitesScreenshot]: ./media/web-sites-streaming-logs-and-console/browse-sites.png
 [StreamingLogsScreenshot]: ./media/web-sites-streaming-logs-and-console/streaming-logs.png
 [ConsoleScreenshot]: ./media/web-sites-streaming-logs-and-console/console.png
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1024_2016-->
