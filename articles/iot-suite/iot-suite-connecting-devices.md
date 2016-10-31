@@ -11,8 +11,13 @@
 
 <tags
    ms.service="iot-suite"
-   ms.date="07/14/2016"
-   wacn.date="08/22/2016"/>  
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="10/05/2016"
+   ms.author="dobett"
+   wacn.date="10/31/2016"/>  
 
 
 
@@ -22,13 +27,13 @@
 
 ## 在 Windows 上创建 C 示例解决方案
 
-以下步骤演示如何使用 Visual Studio 以 C 语言创建一个简单的客户端应用程序，用来与远程监视预配置解决方案通信。
+以下步骤演示如何使用 Visual Studio 创建一个以 C 编写的客户端应用程序，用来与远程监视预配置解决方案通信。
 
 在 Visual Studio 2015 中创建初学者项目并添加 IoT 中心设备客户端 NuGet 包：
 
-1. 在 Visual Studio 2015 中，使用 Visual C++“Win32 控制台应用程序”模板创建一个新的 C 控制台应用程序。将该项目命名为 **RMDevice**。
+1. 在 Visual Studio 2015 中，使用 Visual C++ **Win32 控制台应用程序**模板创建一个 C 控制台应用程序。将该项目命名为 **RMDevice**。
 
-2. 在“Win32 应用程序向导”中的“应用程序设置”页上，确保选择“控制台应用程序”，并取消选中“预编译头”和“安全开发生命周期(SDL)检查”。
+2. 在“Win32 应用程序向导”中的“应用程序设置”页上，确保选中“控制台应用程序”，并取消选中“预编译头”和“安全开发生命周期(SDL)检查”。
 
 3. 在“解决方案资源管理器”中，删除文件 stdafx.h、targetver.h 和 stdafx.cpp。
 
@@ -48,9 +53,9 @@
 
 ## 指定 IoT 中心设备的行为
 
-IoT 中心客户端库使用一个模型来指定设备发送到 IoT 中心的消息的格式以及设备所响应的来自 IoT 中心的命令的格式。
+IoT 中心客户端库使用一个模型来指定设备发送到 IoT 中心的消息的格式以及从 IoT 中心接收的命令的格式。
 
-1. 在 Visual Studio 中，打开 RMDevice.c 文件。将现有 `#include` 语句替换为以下内容：
+1. 在 Visual Studio 中，打开 RMDevice.c 文件。将现有 `#include` 语句替换为以下代码：
 
     ```
     #include "iothubtransporthttp.h"
@@ -112,7 +117,7 @@ IoT 中心客户端库使用一个模型来指定设备发送到 IoT 中心的�
 
 ## 实现设备的行为
 
-现在必须添加实现模型中定义的行为的代码。
+现在添加实现模型中定义的行为的代码。
 
 1. 添加在设备从 IoT 中心接收 **SetTemperature** 和 **SetHumidity** 命令时执行的以下函数：
 
