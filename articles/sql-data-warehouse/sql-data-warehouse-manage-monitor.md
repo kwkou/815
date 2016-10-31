@@ -14,20 +14,29 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/28/2016"
-   wacn.date="10/17/2016"/>  
+   ms.date="10/08/2016"
+   wacn.date="10/31/2016"/>  
 
 
 # 使用 DMV 监视工作负荷
 
 本文介绍如何使用动态管理视图 (DMV) 在 Azure SQL 数据仓库中监视工作负荷及调查查询执行情况。
 
+## 权限
+
+若要查询本文中的 DMV，需具有 VIEW DATABASE STATE 或 CONTROL 权限。通常情况下，首选授予 VIEW DATABASE STATE 权限，因为该权限的限制要大得多。
+
+
+	GRANT VIEW DATABASE STATE TO myuser;
+
+
 ## 监视连接
 
 所有登录到 SQL 数据仓库的操作都记录到 [sys.dm\_pdw\_exec\_sessions][]。此 DMV 包含最后 10,000 个登录。session\_id 是主键，每次进行新的登录时按顺序分配。
 
 
-	SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed';
+	-- Other Active Connections
+	SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed' and session_id <> session_id();
 
 
 ## 监视查询执行
@@ -164,19 +173,19 @@
 如果查询正在主动等待另一个查询中的资源，则状态将为 **AcquireResources**。如果查询具有全部所需资源，则状态将为 **Granted**。
 
 ## 后续步骤
-有关动态管理视图 (DMV) 的详细信息，请参阅[系统视图][]。
-有关管理 SQL 数据仓库的提示，请参阅[管理概述][]。
-有关最佳实践，请参阅 [SQL 数据仓库最佳实践][]。
+请参阅[系统视图][]，了解 DMV 的详细信息。
+有关最佳实践的详细信息，请参阅 [SQL 数据仓库最佳实践][]
 
 <!--Image references-->
 
+
 <!--Article references-->
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
-[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
-[系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
+[Manage overview]: /documentation/articles/sql-data-warehouse-overview-manage
+[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices
+[系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views
 [表分布]: /documentation/articles/sql-data-warehouse-tables-distribute
 [Concurrency and workload management]: /documentation/articles/sql-data-warehouse-develop-concurrency
-[调查等待资源的查询]: /documentation/articles/sql-data-warehouse-manage-monitor#waiting/
+[调查等待资源的查询]: /documentation/articles/sql-data-warehouse-manage-monitor#waiting
 
 <!--MSDN references-->
 [sys.dm\_pdw\_dms\_workers]: http://msdn.microsoft.com/zh-cn/library/mt203878.aspx
@@ -188,4 +197,4 @@
 [DBCC PDW_SHOWSPACEUSED]: http://msdn.microsoft.com/zh-cn/library/mt204028.aspx
 [LABEL]: https://msdn.microsoft.com/zh-cn/library/ms190322.aspx
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

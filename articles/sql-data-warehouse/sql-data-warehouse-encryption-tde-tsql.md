@@ -1,6 +1,6 @@
 <properties
-   pageTitle="SQL 数据仓库透明数据加密 (TDE) TSQL 入门 | Azure"
-   description="SQL 数据仓库透明数据加密 (TDE) TSQL 入门"
+   pageTitle="SQL 数据仓库中的透明数据加密 (TDE) | Azure"
+   description="SQL 数据仓库 (T-SQL) 中的透明数据加密 (TDE)"
    services="sql-data-warehouse"
    documentationCenter=""
    authors="ronortloff"
@@ -14,25 +14,26 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="08/29/2016"
-   wacn.date="10/17/2016" />  
+   ms.date="09/24/2016"
+   wacn.date="10/31/2016" />  
 
 
 # 透明数据加密 (TDE) 入门
 
 
 > [AZURE.SELECTOR]
-- [TSQL](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
-- [Azure 门户](/documentation/articles/sql-data-warehouse-encryption-tde/)
+- [安全性概述](/documentation/articles/sql-data-warehouse-overview-manage-security/)
+- [身份验证](/documentation/articles/sql-data-warehouse-authentication/)
+- [加密（门户）](/documentation/articles/sql-data-warehouse-encryption-tde/)
+- [加密 (T-SQL)](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
 
+## 所需的权限
 
-Azure SQL 数据仓库透明数据加密 (TDE) 无需更改应用程序，即可对静止的数据库、关联的备份和事务日志执行实时加密和解密，帮助防止恶意活动的威胁。
+若要启用透明数据加密 (TDE)，用户必须是管理员或 dbmanager 角色的成员。
 
-TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的存储。在 SQL 数据库中，数据库加密密钥由内置服务器证书保护。内置服务器证书对每个 SQL 数据库服务器都是唯一的。Microsoft 每隔 90 天自动轮换这些证书至少一次。SQL 数据仓库使用的加密算法为 AES-256。有关 TDE 的一般描述，请参阅[透明数据加密 (TDE)]。
+## 启用加密
 
-##启用加密
-
-若要为 SQL 数据仓库启用 TDE，请遵循以下步骤：
+执行以下步骤，对 SQL 数据仓库启用 TDE：
 
 1. 使用在 master 数据库中充当管理员或 **dbmanager** 角色成员的登录名，连接到托管数据库的服务器上的 *master* 数据库
 2. 执行以下语句来加密数据库。
@@ -41,9 +42,9 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 	    ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 
-##禁用加密
+## 禁用加密
 
-若要为 SQL 数据仓库禁用 TDE，请遵循以下步骤：
+执行以下步骤，对 SQL 数据仓库禁用 TDE：
 
 1. 使用在 master 数据库中充当管理员或 **dbmanager** 角色成员的登录名，连接到 *master* 数据库
 2. 执行以下语句来加密数据库。
@@ -51,9 +52,9 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 	    ALTER DATABASE [AdventureWorks] SET ENCRYPTION OFF;
 
-注意：在更改 TDE 设置之前，必须恢复暂停的 SQL 数据仓库。
+> [AZURE.NOTE] 在更改 TDE 设置之前，必须恢复暂停的 SQL 数据仓库。
 
-##验证加密
+## 验证加密
 
 若要验证 SQL 数据仓库的加密状态，请遵循以下步骤：
 
@@ -66,15 +67,15 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 结果 ```1``` 表示数据库已加密，```0``` 表示数据库未加密。
 
-##加密 DMV  
+## 加密 DMV  
 
-- [sys.databases][] 
-- [sys.dm\_pdw\_nodes\_database\_encryption\_keys](https://msdn.microsoft.com/zh-cn/library/mt203922.aspx)
+- [sys.databases][]
+- [sys.dm\_pdw\_nodes\_database\_encryption\_keys][]
 
 
 <!--Anchors-->
 
-[透明数据加密 (TDE)]: https://msdn.microsoft.com/zh-cn/library/bb934049.aspx
+[Transparent Data Encryption (TDE)]: https://msdn.microsoft.com/zh-cn/library/bb934049.aspx
 [sys.databases]: http://msdn.microsoft.com/zh-cn/library/ms178534.aspx
 [sys.dm\_pdw\_nodes\_database\_encryption\_keys]: https://msdn.microsoft.com/zh-cn/library/mt203922.aspx
 
@@ -82,4 +83,4 @@ TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的�
 
 <!--Link references-->
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

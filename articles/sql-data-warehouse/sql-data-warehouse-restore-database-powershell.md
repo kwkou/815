@@ -3,14 +3,19 @@
    description="用于还原 SQL 数据仓库的 PowerShell 任务。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="elfisher"
+   authors="Lakshmi1812"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="07/18/2016"
-   wacn.date="09/05/2016"/>  
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/21/2016"
+   wacn.date="10/31/2016"/>  
 
 
 # 还原 Azure SQL 数据仓库 (PowerShell)
@@ -25,7 +30,7 @@
 
 ## 开始之前
 
-**验证 DTU 容量。** 每个 SQL 数据仓库都由一个具有默认 DTU 配额的 SQL 服务器（例如 myserver.database.windows.net）托管。在还原 SQL 数据仓库之前，请确保 SQL Server 的剩余 DTU 配额足够进行数据库还原。
+**验证 DTU 容量。** 每个 SQL 数据仓库都由一个具有默认 DTU 配额的 SQL 服务器（例如 myserver.database.chinacloudapi.cn）托管。在还原 SQL 数据仓库之前，请确保 SQL Server 的剩余 DTU 配额足够进行数据库还原。若要了解如何计算所需 DTU 或请求更多的 DTU，请参阅[请求 DTU 配额更改][]。
 
 ### 安装 PowerShell
 
@@ -73,6 +78,8 @@
         $RestoredDatabase.status
 
 
+>[AZURE.NOTE] 完成还原后，即可按 [Configure your database after recovery][]（在恢复后配置数据库）中的说明配置恢复的数据库。
+
 
 ## 还原已删除的数据库
 
@@ -88,7 +95,7 @@
 ```
 $SubscriptionName="<YourSubscriptionName>"
 $ResourceGroupName="<YourResourceGroupName>"
-$ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
+$ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.chinacloudapi.cn
 $DatabaseName="<YourDatabaseName>"
 $NewDatabaseName="<YourDatabaseName>"
         
@@ -106,6 +113,7 @@ $RestoredDatabase = Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –D
 $RestoredDatabase.status
 ```
 
+>[AZURE.NOTE] 完成还原后，即可按 [Configure your database after recovery][]（在恢复后配置数据库）中的说明配置恢复的数据库。
 
 
 ## 从 Azure 地理区域还原
@@ -119,18 +127,23 @@ $RestoredDatabase.status
 5. 创建对数据库的恢复请求。
 6. 验证异地还原的数据库的状态。
 
-```
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-Get-AzureRmSubscription
-Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
-# 获取要恢复的数据库
-$GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
-# 恢复数据库
-$GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
-# 验证异地还原的数据库是否处于联机状态
-$GeoRestoredDatabase.status
-```
 
+
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+	Get-AzureRmSubscription
+	Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+
+	# 获取要恢复的数据库
+	$GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
+
+	# 恢复数据库
+	$GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
+
+	# 验证异地还原的数据库是否处于联机状态
+	$GeoRestoredDatabase.status
+
+
+>[AZURE.NOTE] 若要在完成还原后配置数据库，请参阅 [Configure your database after recovery][]（在恢复后配置数据库）。
 
 
 如果源数据库启用了 TDE，则已恢复的数据库将启用 TDE。
@@ -144,11 +157,14 @@ $GeoRestoredDatabase.status
 
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
+[请求 DTU 配额更改]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket#request-quota-change
+[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery#configure-your-database-after-recovery
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
 [PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
+[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery#configure-your-database-after-recovery
 
 <!--MSDN references-->
 [Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt693390.aspx
@@ -157,4 +173,4 @@ $GeoRestoredDatabase.status
 [Azure Portal]: https://portal.azure.cn/
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1024_2016-->
