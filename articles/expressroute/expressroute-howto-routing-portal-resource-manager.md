@@ -9,8 +9,14 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="07/19/2016"
-   wacn.date="09/12/2016"/>
+   ms.devlang="na"
+   ms.topic="hero-article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/10/2016"
+   ms.author="cherylmc"
+   wacn.date="10/31/2016"/>
+
 
 # 创建和修改 ExpressRoute 线路的路由
 

@@ -8,8 +8,14 @@
    editor="tysonn"/>
 <tags 
    ms.service="expressroute"
-   ms.date="06/06/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/10/2016"
+   ms.author="ganesr"
+   wacn.date="10/31/2016"/>
+
 
 #ExpressRoute 故障排除指南 - 在经典部署模型中获取 ARP 表
 

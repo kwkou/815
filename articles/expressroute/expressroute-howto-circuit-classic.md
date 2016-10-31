@@ -13,9 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/14/2016"
+   ms.date="10/10/2016"
    ms.author="ganesr;cherylmc"
-   wacn.date="10/10/2016"/>
+   wacn.date="10/31/2016"/>
 
 # 创建和修改 ExpressRoute 线路
 
@@ -69,7 +69,7 @@
 
 在创建 ExpressRoute 线路之前，你需要支持的连接服务提供商、位置和带宽选项的列表。
 
-PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 返回此信息，后面的步骤将用到该信息：
+PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 将返回此信息，你将在后面的步骤中使用该信息：
 
 	Get-AzureDedicatedCircuitServiceProvider
 
@@ -87,7 +87,10 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 返回此信息，�
 
 	以下示例演示如何通过北京的 Beijing Telecom Ethernet 创建 200 Mbps 的 ExpressRoute 线路。如果你使用的是其他提供商和其他设置，请在发出请求时替换该信息。
 
-	下面是请求新的服务密钥的示例：
+>[AZURE.IMPORTANT] 从发布服务密钥的那一刻起，将对 ExpressRoute 线路进行计费。确保连接服务提供商准备好预配线路后就执行此操作。
+
+
+下面是请求新的服务密钥的示例：
 
 		#Creating a new circuit
 		$Bandwidth = 200
@@ -95,14 +98,14 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 返回此信息，�
 		$ServiceProvider = "Beijing Telecom Ethernet"
 		$Location = "Beijing"
 
-		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard -BillingType MeteredData 
+	New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard -BillingType MeteredData
 
-	或者，如果你想要通过高级版外接程序创建 ExpressRoute 线路，则可使用下述示例。请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)页，了解有关高级版外接程序的更多详细信息。
+或者，如果你想要通过高级版外接程序创建 ExpressRoute 线路，则可使用下述示例。请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)页，了解有关高级版外接程序的更多详细信息。
 
-		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium - BillingType MeteredData
-	
-	
-	响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
+	New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium - BillingType MeteredData
+
+
+响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
 
 		Get-Help New-AzureDedicatedCircuit -detailed 
 
@@ -121,11 +124,12 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 返回此信息，�
 		ServiceKey                       : *********************************
 		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : NotProvisioned
+		Sku                              : Standard
 		Status                           : Enabled
 
 可以随时使用 `Get-AzureDedicatedCircuit` cmdlet 检索此信息。进行不带任何参数的调用将列出所有线路。服务密钥将在 *ServiceKey* 字段中列出。
 
-		PS C:\> Get-AzureDedicatedCircuit
+	Get-AzureDedicatedCircuit
 
 		Bandwidth                        : 200
 		CircuitName                      : 21vDemo
@@ -133,6 +137,7 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 返回此信息，�
 		ServiceKey                       : *********************************
 		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : NotProvisioned
+		Sku                              : Standard
 		Status                           : Enabled
 
 	你可以通过运行以下命令获取所有这些参数的详细说明。
@@ -174,6 +179,7 @@ ExpressRoute 线路处于以下状态时，你才能使用它：
 		ServiceKey                       : *********************************
 		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : Provisioned
+		Sku                              : Standard
 		Status                           : Enabled
 
 ### 7\.创建路由配置
@@ -302,7 +308,18 @@ ExpressRoute 线路处于以下状态时，你才能使用它：
 		Sku                              : Standard
 		Status                           : Enabled
 
-现已在 Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
+将已在 Azure 一侧估计好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
+
+如果在增加线路带宽时看到以下错误，这意味着创建现有线路所在的物理端口上没有足够的带宽可用。必须删除此线路，然后创建所需大小的新线路。
+
+	Set-AzureDedicatedCircuitProperties : InvalidOperation : Insufficient bandwidth available to perform this circuit
+	update operation
+	At line:1 char:1
+	+ Set-AzureDedicatedCircuitProperties -ServiceKey ********************* ...
+	+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	    + CategoryInfo          : CloseError: (:) [Set-AzureDedicatedCircuitProperties], CloudException
+	    + FullyQualifiedErrorId : Microsoft.WindowsAzure.Commands.ExpressRoute.SetAzureDedicatedCircuitPropertiesCommand
+	
 
 ## 取消预配和删除 ExpressRoute 线路
 

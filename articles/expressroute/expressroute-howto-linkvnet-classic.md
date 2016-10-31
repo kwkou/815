@@ -9,8 +9,14 @@
    tags="azure-service-management"/>
 <tags 
    ms.service="expressroute"
-   ms.date="07/19/2016"
-   wacn.date="09/12/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/10/2016"
+   ms.author="ganesr"
+   wacn.date="10/31/2016"/>
+
 
 
 # 将虚拟网络链接到 ExpressRoute 线路

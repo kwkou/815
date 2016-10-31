@@ -13,9 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/29/2016"
+   ms.date="10/10/2016"
    ms.author="cherylmc"
-   wacn.date="10/10/2016"/>
+   wacn.date="10/31/2016"/>
 
 # 创建和修改 ExpressRoute 线路
 

@@ -14,7 +14,7 @@
    ms.workload="infrastructure-services"
    ms.date="09/19/2016"
    ms.author="cherylmc"
-   wacn.date="10/10/2016"/>
+   wacn.date="10/31/2016"/>
 
 # ExpressRoute 常见问题
 

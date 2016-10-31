@@ -8,8 +8,14 @@
    editor=""/>
 <tags 
    ms.service="expressroute"
-   ms.date="05/02/2016"
-   wacn.date="10/10/2016"/>
+   ms.devlang="na"
+   ms.topic="get-started-article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="10/10/2016"
+   ms.author="cherylmc"
+   wacn.date="10/31/2016"/>
+
 
 # ExpressRoute 技术概述
 

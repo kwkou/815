@@ -10,8 +10,14 @@
 
 <tags 
    ms.service="expressroute"
-   ms.date="04/06/2016"
-   wacn.date="05/16/2016"/>
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="10/10/2016"
+   ms.author="charwen"
+   wacn.date="10/31/2016"/>
+
 
 # 使用 Resource Manager 和 PowerShell 为 ExpressRoute 配置虚拟网络网关
 

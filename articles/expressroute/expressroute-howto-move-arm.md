@@ -9,8 +9,14 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="05/05/2016"
-   wacn.date="06/06/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/10/2016"
+   ms.author="ganesr"
+   wacn.date="10/31/2016"/>
+
 
 
 # 将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型

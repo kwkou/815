@@ -8,8 +8,14 @@
    editor="" />
 <tags
    ms.service="expressroute"
-   ms.date="04/19/2016"
-   wacn.date="06/06/2016"/>
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/10/2016"
+   ms.author="cherylmc"
+   wacn.date="10/31/2016"/>
+
 
 # 用于设置和管理路由的路由器配置示例
 
