@@ -10,13 +10,19 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/31/2016" 
-	wacn.date="08/18/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/23/2016" 
+	ms.author="stbaro"
+   	wacn.date="10/18/2016"/>  
+
 
 # DocumentDB 的 MongoDB 协议支持示例
 若要使用这些示例，必须：
 
-- [创建](/documentation/articles/documentdb-create-mongodb-account/)具有 MongoDB 协议支持的 DocumentDB 帐户。
+- [创建](/documentation/articles/documentdb-create-mongodb-account/)具有 MongoDB 协议支持的 Azure DocumentDB 帐户。
 - 检索具有 MongoDB 协议支持的 DocumentDB 帐户的[连接字符串](/documentation/articles/documentdb-connect-mongodb-account/)信息。
 
 ## 开始使用示例 ASP.NET MVC 任务列表应用程序
@@ -44,7 +50,7 @@
 
 		        // To do: update the connection string with the DNS name
         		// or IP address of your server. 
-        		//For example, "mongodb://testlinux.cloudapp.net
+        		//For example, "mongodb://testlinux.chinacloudapp.cn
         		private string connectionString = "mongodb://localhost:27017";
         		private string userName = "<your user name>";
         		private string host = "<your host>";
@@ -156,7 +162,7 @@
     		}
 		}
 
-2. 根据你的帐户设置在 Dal.cs 文件中修改以下变量：
+2.	根据你的帐户设置在 Dal.cs 文件中修改以下变量：
 
         private string userName = "<your user name>";
     	private string host = "<your host>";
@@ -171,4 +177,4 @@
 
  
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1010_2016-->

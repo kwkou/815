@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory 身份验证库 | Microsoft Azure"
+   pageTitle="Azure Active Directory 身份验证库 | Azure"
    description="通过 Azure AD 身份验证库 (ADAL)，客户端应用程序开发人员能够轻松利用云或本地 Active Directory (AD) 对用户进行身份验证，然后获取访问令牌，以进行安全的 API 调用。"
    services="active-directory"
    documentationCenter=""
@@ -8,8 +8,13 @@
    editor="mbaldwin" />
 <tags
    ms.service="active-directory"
-   ms.date="05/31/2016"
-   wacn.date="07/19/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/16/2016"
+   ms.author="mbaldwin"
+   wacn.date="10/11/2016"/>
 
 # Azure Active Directory 身份验证库
 
@@ -19,16 +24,16 @@
 
 |平台|包名称|客户端/服务器|下载|源代码|文档和示例|
 |---|---|---|---|---|---|
-|.NET 客户端、Windows 应用商店、Windows Phone(8.1)|适用于 .NET 的 Active Directory 身份验证库 (ADAL)|客户端|[Microsoft.IdentityModel.Clients.ActiveDirectory (NuGet)](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory)|[适用于 .NET 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet)|[文档](https://msdn.microsoft.com/library/azure/mt417579.aspx)|
+|.NET 客户端、Windows 应用商店、Windows Phone(8.1)|适用于 .NET 的 Active Directory 身份验证库 (ADAL)|客户端|[Microsoft.IdentityModel.Clients.ActiveDirectory (NuGet)](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory)|[适用于 .NET 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet)|[文档](https://msdn.microsoft.com/zh-cn/library/azure/mt417579.aspx)|
 |JavaScript|适用于 JavaScript 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 JavaScript 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-js)|[适用于 JavaScript 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-js)|示例：[SinglePageApp-DotNet (Github)](https://github.com/AzureADSamples/SinglePageApp-DotNet)|
 |OS X、iOS|适用于 Objective-C 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Objective-C 的 ADAL (CocoaPods)](https://cocoapods.org/?q=adal%20io)|[适用于 Objective-C 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-objc)|示例：[NativeClient-iOS (Github)](https://github.com/AzureADSamples/NativeClient-iOS)|
-|Android|适用于 Android 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Android 的 ADAL（中央存储库）](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/)|[适用于 Android 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-android)|示例：[NativeClient-Android (Github)](https://github.com/AzureADSamples/NativeClient-Android)|
+|Android|适用于 Android 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Android 的 ADAL（中央存储库）](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal)|[适用于 Android 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-android)|示例：[NativeClient-Android (Github)](https://github.com/AzureADSamples/NativeClient-Android)|
 |Node.js|适用于 Node.js 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Node.js 的 ADAL (npm)](https://www.npmjs.com/package/adal-node)|[适用于 Node.js 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-nodejs)|示例：[WebAPI-Nodejs (Github)](https://github.com/AzureADSamples/WebAPI-Nodejs)|
-|Node.js|适用于 Node 的 Microsoft Azure Active Directory Passport 身份验证中间件|客户端|[适用于 Node.js 的 Azure Active Directory Passport (npm)](https://www.npmjs.com/package/passport-azure-ad)|[适用于 Node.js 的 Azure Active Directory (Github)](https://github.com/AzureAD/passport-azure-ad)||
+|Node.js|适用于 Node 的 Azure Active Directory Passport 身份验证中间件|客户端|[适用于 Node.js 的 Azure Active Directory Passport (npm)](https://www.npmjs.com/package/passport-azure-ad)|[适用于 Node.js 的 Azure Active Directory (Github)](https://github.com/AzureAD/passport-azure-ad)||
 |Java|适用于 Java 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Java 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-java)|[适用于 Java 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-java)||
 |.NET|适用于 Microsoft.NET Framework 4.5 的标识协议扩展|服务器|[Microsoft.IdentityModel.Protocol.Extensions (NuGet)](https://www.nuget.org/packages/Microsoft.IdentityModel.Protocol.Extensions)|[适用于 .NET 的 Azure AD 标识模型扩展 (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
 |.NET|适用于 Microsoft.Net Framework 4.5 的 JSON Web 令牌处理程序|服务器|[System.IdentityModel.Tokens.Jwt (NuGet)](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt)|[适用于 .NET 的 Azure AD 标识模型扩展 (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
-|.NET|可让应用程序使用 Microsoft 技术进行身份验证的 OWIN 中间件。|服务器|[Microsoft.Owin.Security.ActiveDirectory (NuGet)](https://www.nuget.org/packages/Microsoft.Owin.Security.ActiveDirectory/)|[OWIN (CodePlex)](http://katanaproject.codeplex.com)||
+|.NET|可让应用程序使用 Microsoft 技术进行身份验证的 OWIN 中间件。|服务器|[Microsoft.Owin.Security.ActiveDirectory (NuGet)](https://www.nuget.org/packages/Microsoft.Owin.Security.ActiveDirectory)|[OWIN (CodePlex)](http://katanaproject.codeplex.com)||
 |.NET|可让应用程序使用 OpenIDConnect 进行身份验证的 OWIN 中间件。|服务器|[Microsoft.Owin.Security.OpenIdConnect (NuGet)](https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect)|[OWIN (CodePlex)](http://katanaproject.codeplex.com)|示例：[WebApp-OpenIDConnecty-DotNet (Github)](https://github.com/AzureADSamples/WebApp-OpenIDConnect-DotNet)|
 |.NET|可让应用程序使用 WS-Federation 进行身份验证的 OWIN 中间件。|服务器|[Microsoft.Owin.Security.WsFederation (NuGet)](https://www.nuget.org/packages/Microsoft.Owin.Security.WsFederation)|[OWIN (CodePlex)](http://katanaproject.codeplex.com)|示例：[WebApp-WSFederation-DotNet (Github)](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet)|
 
@@ -59,4 +64,4 @@
 
 [Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->

@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="dstrockis"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
+
 
 # 如何使用 v2.0 终结点注册应用
 
@@ -43,4 +50,4 @@
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-v2-quickstart-table.md)]
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->

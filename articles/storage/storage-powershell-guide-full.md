@@ -288,7 +288,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
     New-Item -Path $DestinationFolder -ItemType Directory -Force
     $blobs | Get-AzureStorageBlobContent -Destination $DestinationFolder -Context $Ctx
 
-### 如何将 Blob 复制到另一个存储容器
+### <a name="how-to-copy-blobs-from-one-storage-container-to-another"></a> 如何将 Blob 复制到另一个存储容器
 你可以跨存储帐户和区域异步复制 Blob。以下示例演示如何在两个不同的存储帐户，将一个存储容器中的 Blob 复制到另一个存储容器。该示例首先设置源和目标存储帐户的变量，然后创建每个帐户的存储上下文。接下来，该示例使用 [Start-AzureStorageBlobCopy](http://msdn.microsoft.com/zh-cn/library/azure/dn806394.aspx) cmdlet 将 Blob 从源容器复制到目标容器。该示例假设源存储帐户、目标存储帐户和容器已存在。
 
     #Define the source storage account and context.

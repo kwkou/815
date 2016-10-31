@@ -25,7 +25,7 @@
 
 ![azureuser 用户名][2]
  
-做身份验证最好使用密钥。如何产生密钥可以参考[使用密钥](/manage/linux/how-to-guides/ssh-into-linux)。如果使用密码，请务必选择复杂的密码，使得蛮力攻击不会很容易猜出你的密码，这样可以大大的增强安全性。如需修改密码，可以使用 VMAccess 扩展。具体可以参考 [VMAcess](/documentation/articles/virtual-machines-linux-classic-reset-access/)。
+做身份验证最好使用密钥。如何产生密钥可以参考[使用密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。如果使用密码，请务必选择复杂的密码，使得蛮力攻击不会很容易猜出你的密码，这样可以大大的增强安全性。如需修改密码，可以使用 VMAccess 扩展。具体可以参考 [VMAcess](/documentation/articles/virtual-machines-linux-classic-reset-access/)。
 
 其次是关闭标准端口，改用其他端口。这样黑客们起码需要扫遍很多端口才能开始尝试连接，增加了攻击的难度和时间。如果不设公用端口，系统默认为自动，会随机选一个端口。  
 

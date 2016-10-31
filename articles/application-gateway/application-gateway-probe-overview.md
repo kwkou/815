@@ -18,7 +18,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/29/2016"
-   wacn.date="10/17/2016"
+   wacn.date="10/31/2016"
    ms.author="gwallace" />  
 
 
@@ -43,12 +43,12 @@
 
 |探测属性 | 值 | 说明|
 |---|---|---|
-| 探测 URL| http://127.0.0.1:<端口>/ | URL 路径 |
+| 探测 URL| http://127.0.0.1:\<端口>/ | URL 路径 |
 | 时间间隔 | 30 | 探测间隔（秒） |
 | 超时 | 30 | 探测超时（秒） |
 | 不正常阈值 | 3 | 探测重试计数。连续探测失败计数达到不正常阈值后，将后端服务器标记为故障。 |
 
-默认探测只查看 http://127.0.0.1:<端口> 来判断运行状况。如果需要配置运行状况探测以使其转到自定义 URL 或修改任何其他设置，必须使用以下步骤中所述的自定义探测。
+默认探测只查看 http://127.0.0.1:\<端口> 来判断运行状况。如果需要配置运行状况探测以使其转到自定义 URL 或修改任何其他设置，必须使用以下步骤中所述的自定义探测。
 
 ## 自定义的运行状况探测
 
@@ -56,20 +56,25 @@
 
 ### 自定义的运行状况探测设置
 
+下表提供自定义运行状况探测的属性的定义。
+
 |探测属性| 说明|
 |---|---|
 | 名称 | 探测的名称。此名称用于在后端 HTTP 设置中引用探测。 |
-| 协议 | 用于发送探测的协议。HTTP 或 HTTPS 是有效的协议。 |
-| 主机 | 用于发送探测的主机名。 |
-| 路径 | 探测的相对路径。有效路径以“/”开头。探测将发送到 <协议>://<主机>:<端口><路径> |
+| 协议 | 用于发送探测的协议。探测使用后端 HTTP 设置中定义的协议 |
+| 主机 | 用于发送探测的主机名。仅在应用程序网关上配置了多站点的情况下适用，否则使用“127.0.0.1”。这与 VM 主机名不同。 |
+| 路径 | 探测的相对路径。有效路径以“/”开头。 |
 | 时间间隔 | 探测间隔（秒）。这是每两次连续探测之间的时间间隔。|
 | 超时 | 探测超时（秒）。如果在此超时期间内未收到有效响应，则将探测标记为失败。 |
 | 不正常阈值 | 探测重试计数。连续探测失败计数达到不正常阈值后，将后端服务器标记为故障。 |
 
+> [AZURE.IMPORTANT] 如果在应用程序网关中设置了单站点，则默认情况下，除非已在自定义探测中进行配置，否则应将主机名指定为“127.0.0.1”。
+例如，自定义探测会发送到 <协议>://<主机>:<端口><路径>。
+
 ## 后续步骤
 
-了解应用程序网关的运行状况监视后，可以在 Azure 门户预览中配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，或使用 PowerShell 和 Azure Resource Manager 部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)。
+了解应用程序网关的运行状况监视后，可以在 Azure 门户预览版中配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，或使用 PowerShell 和 Azure Resource Manager 部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)。
 
 [1]: ./media/application-gateway-probe-overview/appgatewayprobe.png
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

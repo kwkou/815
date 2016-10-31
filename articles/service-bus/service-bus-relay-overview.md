@@ -1,21 +1,28 @@
 <properties
-	pageTitle="服务总线中继消息传送概述 | Azure"
+	pageTitle="服务总线中继概述 | Azure"
 	description="服务总线中继的概述。"
 	services="service-bus"
 	documentationCenter=".net"
 	authors="sethmanheim"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="service-bus"
-	ms.date="05/06/2016"
-	wacn.date="06/21/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="get-started-article"
+	ms.date="09/01/2016"
+	ms.author="sethm"
+	wacn.date="10/24/2016"/>  
 
 
-# 服务总线中继消息传送
 
-服务总线的核心组件是集中化（但高度负载均衡）的中继服务，该服务使你能够构建可在 Azure 数据中心和你自己的本地企业环境中运行的混合应用程序。中继服务支持各种不同的传输协议和 Web 服务标准，包括 SOAP、WS-* 甚至 REST。服务总线中继简化了混合应用程序，它允许你安全地向公有云公开位于企业网络内的 Windows Communication Foundation (WCF) 服务，而无需打开防火墙连接，也无需对企业网络基础结构进行彻底的更改。
+# 服务总线中继概述
+
+服务总线的主要组成部分是集中化（但高度负载平衡）的*中继*服务，该服务支持构建可在 Azure 数据中心和你自己的本地企业环境中运行的混合应用程序。服务总线中继服务支持各种不同的传输协议和 Web 服务标准。包括 SOAP、WS-* 甚至 REST。中继服务改进了混合应用程序，允许安全地向公有云公开位于企业网络内的 Windows Communication Foundation (WCF) 服务，而无需打开防火墙连接，也无需对企业网络基础结构进行强制更改。
 
 ![中继概念](./media/service-bus-relay-overview/sb-relay-01.png)
 

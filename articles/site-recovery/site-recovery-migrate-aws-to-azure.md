@@ -24,7 +24,7 @@
 欢迎使用 Azure 站点恢复。根据本文所述的方法，使用站点恢复将 AWS 中运行的 Windows 实例迁移到 Azure。开始之前，请注意：
 
 - **目前仅能从 AWS 迁移到 Azure。可以从 AWS 将 VM 故障转移到 Azure，但不能重新对其进行故障回复。没有任何正在进行的复制。**
-- 本文中的迁移说明以将物理计算机复制到 Azure 的说明为基础。其中包括指向[将 VMware VM 或物理服务器复制到 Azure](/documentation/articles/site-recovery-vmware-to-azure/) 的步骤的链接，链接文章介绍了如何在 Azure 经典管理门户中复制物理服务器。
+- 本文中的迁移说明以将物理计算机复制到 Azure 的说明为基础。
 
 
 请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)
@@ -34,7 +34,7 @@
 
 以下是执行此部署所需的组件
 
-- **配置服务器**：运行 Windows Server 2012 R2 作为配置服务器的本地 VM。在此 VM 上也安装其他 Site Recovery 组件（包括进程服务器和主目标服务器）。有关详细信息，请参阅[方案体系结构](/documentation/articles/site-recovery-vmware-to-azure/#scenario-architecture)和[配置服务器先决条件](/documentation/articles/site-recovery-vmware-to-azure/#configuration-server-prerequisites)。
+- **配置服务器**：运行 Windows Server 2012 R2 作为配置服务器的本地 VM。在此 VM 上也安装其他 Site Recovery 组件（包括进程服务器和主目标服务器）。
 - **EC2 VM 实例**：想要迁移的运行 Windows 的实例。
 
 ## 部署步骤

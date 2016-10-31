@@ -14,8 +14,6 @@
 
 # 为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序
 
-[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-maven-mapreduce-selector.md)]
-
 本教程将引导完成一项端对端方案，在 Apache Maven 中使用 Java 来开发单词计数 Hadoop MapReduce 作业。本教程还将说明如何在 HDInsight Emulator for Azure 上测试该应用程序，然后在基于 Windows 的 HDInsight 群集上部署并运行它。
 
 ## <a name="prerequisites"></a>先决条件
@@ -210,7 +208,7 @@
 3. 运行单词计数 MapReduce 作业
 4. 检索作业结果
 
-默认情况下，HDInsight Emulator 使用 HDFS 作为文件系统。（可选）你可以将 HDInsight Emulator 配置为使用 Azure Blob 存储。有关详细信息，请参阅 [HDInsight Emulator 入门][hdinsight-emulator-wasb]。
+默认情况下，HDInsight Emulator 使用 HDFS 作为文件系统。（可选）你可以将 HDInsight Emulator 配置为使用 Azure Blob 存储。
 
 在本教程中，你将使用 HDFS 的 **copyFromLocal** 命令将数据文件上载到 HDFS。下一部分说明如何使用 Azure PowerShell 将文件上载到 Azure Blob 存储。有关将文件上载到 Azure Blob 存储的其他方法，请参阅[将数据上载到 HDInsight][hdinsight-upload-data]。
 
@@ -567,7 +565,6 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 ## <a id="nextsteps"></a>后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Java MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
 
-- [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序][hdinsight-develop-streaming]
 - [Azure HDInsight 入门][hdinsight-get-started]
 - [HDInsight Emulator 入门][hdinsight-emulator]
 - [将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]
@@ -585,8 +582,6 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
-
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/

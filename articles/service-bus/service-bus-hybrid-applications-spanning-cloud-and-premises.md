@@ -18,7 +18,7 @@
 
 ## 探究
 
-- [Service Bus 中继](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-relay/)
+- [Service Bus 中继](/documentation/articles/service-bus-dotnet-how-to-use-relay/)
 - [中继消息传送和中转消息传送](/documentation/articles/service-bus-messaging-overview/)
 
 ## 构建

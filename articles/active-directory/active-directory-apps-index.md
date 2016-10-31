@@ -4,15 +4,18 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="MarkusVi"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/03/2016"
-	wacn.date="08/02/2016"/>
-	
-	
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	ms.author="markvi"
+	wacn.date="10/11/2016"/>
 
 #有关 Azure Active Directory 中应用程序管理的文章索引
 
@@ -38,7 +41,7 @@
 | 功能区 | |
 | :---: | --- |
 | 联合单一登录 | [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
-| 本地 AD 与 Azure AD 之间的单一登录 | [密码同步疑难解答](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#managing-password-synchronization)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback) | 
+| 本地 AD 与 Azure AD 之间的单一登录 | [密码同步疑难解答](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshooting-password-synchronization/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback/) | 
 
 
 ##单一登录 (SSO)
@@ -50,12 +53,12 @@
 | 文章指南 | |
 | :---: | --- |
 | 联合身份验证和其他登录类型简介 | [使用 Azure AD 进行单一登录](/documentation/articles/active-directory-appssoaccess-whatis/) |
-| 通过已简化的单一登录配置步骤与 Azure AD 预先集成的数千个 SaaS 应用程序 | [Azure AD 应用程序库入门](/documentation/articles/active-directory-appssoaccess-whatis/#get-started-with-the-azure-ad-application-gallery)<br /><br />[支持联合身份验证的预先集成应用完整列表](http://aka.ms/aadfederatedapps)<br /><br />[如何将应用添加到 Azure AD 应用库](/documentation/articles/active-directory-app-gallery-listing/) |
+| 通过已简化的单一登录配置步骤与 Azure AD 预先集成的数千个 SaaS 应用程序 | [Azure AD 应用程序库入门](/documentation/articles/active-directory-appssoaccess-whatis/#get-started-with-the-azure-ad-application-gallery/)<br /><br />[支持联合身份验证的预先集成应用完整列表](http://aka.ms/aadfederatedapps)<br /><br />[如何将应用添加到 Azure AD 应用库](/documentation/articles/active-directory-app-gallery-listing/) |
 | 如何手动设置和自定义单一登录配置 | [如何针对预先集成的应用自定义在 SAML 令牌中颁发的声明](/documentation/articles/active-directory-saml-claims-customization/) |
 | 使用 SAML 协议的联合应用的故障排除指南 | [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
 | 如何设置应用的证书过期日期，以及如何续订证书 | [在 Azure Active Directory 中管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/) |
 
-联合单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果你的组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则你可以[使用组来分配对联合应用程序的访问权限](#how-to-manage-who-has-access-to-which-apps)。
+联合单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以[使用组来分配对联合应用程序的访问权限](#managing-access-to-applications)。
 
 ###基于密码的单一登录：非联合应用的帐户共享和 SSO
 
@@ -63,10 +66,24 @@
 
 | 文章指南 | |
 | :---: | --- |
-| 基于密码的 SSO 工作原理简介以及简要的技术概述 | [使用 Azure AD 进行基于密码的单一登录](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on) |
+| 基于密码的 SSO 工作原理简介以及简要的技术概述 | [使用 Azure AD 进行基于密码的单一登录](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on/) |
 | 与共享帐户相关的方案以及 Azure AD 如何解决这些问题的摘要 | [使用 Azure AD 共享帐户](/documentation/articles/active-directory-sharing-accounts/) |
+| 自动定期更改特定应用的密码 | [自动密码滚动更新（预览版）](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview) |
 
+基于密码的单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/) 支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以[使用组来分配对应用程序的访问权限](#managing-access-to-applications)。自动密码滚动更新是一项 [Azure AD 高级版](/pricing/details/identity/)功能。
 
+###应用程序代理：单一登录和远程访问本地应用程序
+
+如果专用网络中具有需要由网络外部的用户和设备访问的应用程序，可以使用 Azure AD 应用程序代理对这些应用程序启用安全远程访问。
+
+| 文章指南 | |
+| :---: | --- |
+| 有关如何配置应用程序代理以及如何发布第一个应用的教程 | [如何设置 Azure AD 应用代理](/documentation/articles/active-directory-application-proxy-enable/)<br /><br />[如何以无提示方式安装应用代理连接器](/documentation/articles/active-directory-application-proxy-silent-installation/)<br /><br />[如何使用应用代理发布应用程序](/documentation/articles/active-directory-application-proxy-publish/)<br /><br />[如何使用自己的域名](/documentation/articles/active-directory-application-proxy-custom-domains/) |
+| 如何对使用应用代理发布的应用程序启用单一登录和条件性访问 | [使用应用程序代理进行单一登录](/documentation/articles/active-directory-application-proxy-sso-using-kcd/)<br /><br />[条件性访问和应用程序代理](/documentation/articles/active-directory-application-proxy-conditional-access/) |
+| 有关如何对以下方案使用应用程序代理的指导 | [如何支持本机客户端应用程序](/documentation/articles/active-directory-application-proxy-native-client/)<br /><br />[如何支持声明感知应用程序](/documentation/articles/active-directory-application-proxy-claims-aware-apps/)<br /><br />[如何支持在不同网络和位置上发布的应用程序](/documentation/articles/active-directory-application-proxy-connectors/) |
+| 应用程序代理故障排除指南 | [应用代理故障排除指南](/documentation/articles/active-directory-application-proxy-troubleshoot/) |
+
+应用程序代理适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以[使用组来分配对应用程序的访问权限](#managing-access-to-applications)。
 
 
 ###在 Azure AD 与本地 AD 之间启用单一登录
@@ -76,10 +93,13 @@
 | 文章指南 | |
 | :---: | --- |
 | Azure AD Connect 中提供的单一登录选项概述，以及管理混合环境的相关信息 | [Azure AD Connect 中的用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/) |
+| 同时使用本地 Active Directory 和 Azure Active Directory 管理环境的一般指导 | Azure AD 混合标识设计注意事项<br /><br />[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/) |
 | 有关使用密码同步启用 SSO 的指导 | [使用 Azure AD Connect 实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)<br /><br />[密码同步疑难解答](https://support.microsoft.com/zh-cn/kb/2855271) |
-| 有关使用密码写回启用 SSO 的指导 | [Azure AD 中的密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback) |
+| 有关使用密码写回启用 SSO 的指导 | [Azure AD 中的密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback/) |
 | 有关使用第三方标识提供者启用 SSO 的指导 | [可用于启用单一登录的兼容第三方标识提供者列表](https://aka.ms/ssoproviders) | 
-| Windows 10 用户如何通过 Azure AD Join 享受单一登录的优点 | 通过 Azure Active Directory Join 将云功能扩展到 Windows 10 设备|
+| Windows 10 用户如何通过 Azure AD Join 享受单一登录的优点 | 通过 Azure Active Directory Join 将云功能扩展到 Windows 10 设备 |
+
+Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/details/identity/)。Azure AD 自助密码重置适用于 [Azure AD 基本版](/pricing/details/identity/)和 [Azure AD 高级版](/pricing/details/identity/)。对本地 AD 进行密码写回是一项 [Azure AD 高级版](/pricing/details/identity/)功能。
 
 ##应用和 Azure AD
 
@@ -90,19 +110,20 @@
 | 文章指南 | |
 | :---: | --- |
 | 有关 IT 专业人员和应用程序开发人员集成应用程序与 Azure AD 的指南 | [适用于开发 Azure AD 应用程序的 IT 专业人员指南](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications/)<br /><br />[Azure Active Directory 的开发人员指南](/documentation/articles/active-directory-developers-guide/) |
-
+| 应用程序供应商如何将其应用添加到 Azure AD 应用库 | [列出 Azure Active Directory 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/) |
+| 如何使用 Azure Active Directory 管理对开发的应用程序的访问 | [如何对开发的应用程序启用用户分配](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment/)<br /><br />[将用户分配到应用](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)<br /><br />[将组分配到应用](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups/) |
 
 
 ##管理对应用程序的访问
 
-###<a name="how-to-manage-who-has-access-to-which-apps"></a>使用组和自助服务管理谁可以访问哪些应用
+###使用组和自助服务管理谁可以访问哪些应用
 
 为了帮助管理谁有权访问哪些资源，Azure Active Directory 可让你使用组设置分配和权限级别。IT 可以选择启用自助功能，以便在需要时，用户可以直接请求权限。
 
 | 文章指南 | |
 | :---: | --- |
 | Azure AD 访问管理功能的概述 | [有关管理对应用的访问的简介](/documentation/articles/active-directory-managing-access-to-apps/)<br /><br />[Azure AD 中访问管理的工作原理](/documentation/articles/active-directory-manage-groups/)|
-|
+
 
 
 
@@ -113,10 +134,11 @@
 
 | 文章指南 | |
 | :---: | --- |
-| 用于将单一登录应用部署到用户的各种选项比较 | [为用户部署 Azure AD 集成的应用程序](/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users) |
+| 用于将单一登录应用部署到用户的各种选项比较 | [为用户部署 Azure AD 集成的应用程序](/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users/) |
+| 访问面板及其移动对应产品 MyApps 的概述 | 访问面板和 MyApps 简介<br /> — [iOS](https://itunes.apple.com/us/app/my-apps-azure-active-directory/id824048653?mt=8)<br /> — [Android](https://play.google.com/store/apps/details?id=com.microsoft.myapps) |
 | 如何从 Office 365 网站访问 Azure AD 应用 | [使用 Office 365 应用启动程序](https://support.office.com/zh-cn/article/Meet-the-Office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) |
 | 如何从 Intune Managed Browser 移动应用访问 Azure AD 应用 | [Intune Managed Browser](https://technet.microsoft.com/zh-cn/library/dn878029.aspx)<br /> - [iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8)<br /> - [Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser) |
-
+| 如何使用深层链接访问 Azure AD 应用和启动单一登录 | [获取应用的直接登录链接](/documentation/articles/active-directory-appssoaccess-whatis/#direct-sign-on-links-for-federated-password-based-or-existing-apps/) |
 
 访问面板适用于[所有版本的 Azure Active Directory](/pricing/details/identity/)。
 
@@ -125,6 +147,6 @@
 
 [什么是 Azure Active Directory？](/documentation/articles/active-directory-whatis/)
 
-[Azure Multi-Factor Authentication](/documentation/services/multi-factor-authentication/)
+[Azure Multi-Factor Authentication](/services/multi-factor-authentication/)
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0926_2016-->

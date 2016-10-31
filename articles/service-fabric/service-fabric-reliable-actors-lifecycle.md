@@ -3,14 +3,21 @@
    description="介绍 Service Fabric Reliable Actor 生命周期、垃圾回收和如何手动删除执行组件及其状态"
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="amanbha"
    manager="timlt"
-   editor=""/>
+   editor="vturecek"/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/13/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/30/2016"
+   wacn.date="10/24/2016"
+   ms.author="amanbha"/>  
+
 
 
 # 执行组件生命周期、自动垃圾回收和手动删除
@@ -30,7 +37,7 @@
 当停用了某个执行组件，将出现以下情况：
 
 - 如果在一段时间内未使用执行组件，则会从“活动执行组件”表中将其删除。
-- 将调用 `OnDeactivateAsync` 方法（该方法可以在执行组件实现中被覆盖）。这将清除此执行组件的所有计时器。
+- 将调用 `OnDeactivateAsync` 方法（该方法可以在执行组件实现中被覆盖）。这将清除此执行组件的所有计时器。不可从该方法中调用诸如状态更改的执行组件操作。
 
 > [AZURE.TIP] Fabric 执行组件运行时发出一些[与执行组件激活和停用相关的事件](/documentation/articles/service-fabric-reliable-actors-diagnostics/#actor-activation-and-deactivation-events)。它们可用于进行诊断和性能监视。
 
@@ -46,8 +53,8 @@
 
 在了解停用的详细信息之前，定义以下术语非常重要：
 
-- 扫描时间间隔。这是执行组件运行时为可以停用和进行垃圾回收的执行组件扫描其活动执行组件表的时间间隔。此状态的默认值为 1 分钟。
-- 空闲超时。这是在停用执行组件并对其进行垃圾回收之前，该执行组件需要保持未使用（空闲）状态的时间。此状态的默认值为 60 分钟。
+- *扫描时间间隔*。这是执行组件运行时为可以停用和进行垃圾回收的执行组件扫描其活动执行组件表的时间间隔。此状态的默认值为 1 分钟。
+- *空闲超时*。这是在停用执行组件并对其进行垃圾回收之前，该执行组件需要保持未使用（空闲）状态的时间。此状态的默认值为 60 分钟。
 
 通常不需要更改这些默认值。但是，如果有必要，可在注册[执行组件服务](/documentation/articles/service-fabric-reliable-actors-platform/)时通过 `ActorServiceSettings` 更改这些时间间隔。
 
@@ -124,6 +131,7 @@
 
 
 <!--Image references-->
+
 [1]: ./media/service-fabric-reliable-actors-lifecycle/garbage-collection.png
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1017_2016-->

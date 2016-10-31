@@ -9,8 +9,14 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/16/2016"
-   wacn.date="08/22/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/16/2016"
+   ms.author="mbaldwin"
+   wacn.date="10/17/2016"/>  
+
 
 # 与 Azure Active Directory 集成
 
@@ -24,7 +30,7 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ### 支持使用 Azure AD 作为登录应用程序的方式
 
-**减少登录问题并降低支持成本。** 如果使用 Azure AD 登录你的应用程序，你的用户不需要记住更多的名称和密码。作为开发人员，你可以减少要存储和保护的密码。无需重置忘记的密码，单凭这一点就能节省不少的精力。使用 Azure AD 可以登录世界上最热门的一些云应用程序，包括 Office 365 和 Microsoft Azure。Azure AD 包含了来自数百万家组织的几亿个用户，你的用户很可能已经登录到了 Azure AD。了解有关[添加 Azure AD 登录支持](/documentation/articles/active-directory-authentication-scenarios/)的详细信息。
+**减少登录问题并降低支持成本。** 如果使用 Azure AD 登录你的应用程序，你的用户不需要记住更多的名称和密码。作为开发人员，你可以减少要存储和保护的密码。无需重置忘记的密码，单凭这一点就能节省不少的精力。使用 Azure AD 可以登录世界上最热门的一些云应用程序，包括 Office 365 和 Azure。Azure AD 包含了来自数百万家组织的几亿个用户，你的用户很可能已经登录到了 Azure AD。了解有关[添加 Azure AD 登录支持](/documentation/articles/active-directory-authentication-scenarios/)的详细信息。
 
 **简化应用程序注册。** 在注册你的应用程序期间，Azure AD 可以发送有关用户的基本信息，以便你可以预先填充注册表单，或者完全清除表单。用户可以使用其 Azure AD 帐户，通过社交媒体和移动应用程序中常见的许可体验注册你的应用程序。任何用户都可以注册和登录与 Azure AD 集成的应用程序，而无需 IT 人员的参与。了解有关[注册应用程序以使用 Azure AD 帐户登录](/documentation/articles/mobile-services-how-to-register-active-directory-authentication/)的详细信息。
 
@@ -58,8 +64,11 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ### 高级安全功能
 
-**多重身份验证。** Azure AD 提供本机多重身份验证。IT 管理员可以要求访问应用程序之前经过多重身份验证，因此你无需编写此项支持的代码。了解有关 [Multi-Factor Authentication](/documentation/services/multi-factor-authentication/) 的详细信息。
+**多重身份验证。** Azure AD 提供本机多重身份验证。IT 管理员可以要求访问应用程序之前经过多重身份验证，因此你无需编写此项支持的代码。了解有关[多重身份验证](/documentation/services/multi-factor-authentication/)的详细信息。
 
+**异常登录检测。** Azure AD 每天要处理十亿次以上的登录，同时，使用机器学习算法来检测可疑活动，并通知 IT 管理员可能存在的问题。通过支持 Azure AD 登录，你的应用程序将从这种保护中受益。
+
+**条件性访问。** 除了多重身份验证以外，管理员可以要求用户在登录应用程序之前满足特定的条件。可设置的条件包括客户端设备的 IP 地址范围、指定的组中的成员资格，以及用于访问的设备的状态。
 
 ### 易于开发
 
@@ -69,12 +78,12 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ### 全球存在和高可用性
 
-**Azure AD 已部署在世界各地的数据中心，并受到全天候的管理和监视。** Azure AD 是 Microsoft Azure 和 Office 365 的标识管理系统，已部署在世界各地的 28 个数据中心。我们保证至少将目录数据复制到三个数据中心。全局负载均衡器确保用户访问包含其数据的最靠近 Azure AD 副本，如果检测到问题，会自动将请求重新路由到其他数据中心。
+**Azure AD 已部署在世界各地的数据中心，并受到全天候的管理和监视。** Azure AD 是 Azure 和 Office 365 的标识管理系统，已在世界各地的 28 个数据中心部署。我们保证至少将目录数据复制到三个数据中心。全局负载均衡器确保用户访问包含其数据的最靠近 Azure AD 副本，如果检测到问题，会自动将请求重新路由到其他数据中心。
 
 ## 后续步骤
 
-[开始编写代码](/documentation/articles/active-directory-developers-guide/#getting-started)。
+[开始编写代码](/documentation/articles/active-directory-developers-guide/#getting-started/)。
 
 [使用 Azure AD 登录用户](/documentation/articles/active-directory-authentication-scenarios/)
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

@@ -21,7 +21,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 通过 Azure CLI 有两种方式可以连接到你的订阅：
 
-* **使用工作或学校帐户或 Microsoft 帐户标识登录 Azure** - 使用 `azure login` 命令以及任何类型的帐户标识，以通过 Azure Active Directory 进行身份验证。大多数创建新的 Azure 部署的客户应使用该方法。对于某些帐户，`azure login -e AzureChinaCloud` 命令要求通过 web 门户以交互方式登录。
+* **使用工作或学校帐户或 Microsoft 帐户标识登录 Azure** - 使用 `azure login -e AzureChinaCloud` 命令以及任何类型的帐户标识，以通过 Azure Active Directory 进行身份验证。大多数创建新的 Azure 部署的客户应使用该方法。对于某些帐户，`azure login -e AzureChinaCloud` 命令要求通过 web 门户以交互方式登录。
 
     还可以使用 `azure login -e AzureChinaCloud` 命令来对 Azure Active Directory 应用程序的服务主体进行身份验证，这对于运行自动化服务非常有用。
     
@@ -35,7 +35,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 有关不同帐户的标识和 Azure 订阅的背景信息，请参阅[Azure 订阅如何与 Azure Active Directory 相关联](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
-## 使用 azure 登录名以交互方式进行身份验证
+## <a name="use-the-log-in-method"></a> 使用 azure 登录名以交互方式进行身份验证
 
 使用 `azure login -e AzureChinaCloud` 命令（不带任何参数）- 使用以下任一标识以交互方式进行身份验证：
 
@@ -61,7 +61,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 ## 使用包含用户名和密码的 azure 登录名
 
 
-在想要使用不需要多重身份验证的工作或学校帐户时，使用包含用户名参数或者同时包含用户名与密码的 `azure login` 命令进行身份验证。以下示例将传递组织帐户的用户名：
+在想要使用不需要多重身份验证的工作或学校帐户时，使用包含用户名参数或者同时包含用户名与密码的 `azure login -e AzureChinaCloud` 命令进行身份验证。以下示例将传递组织帐户的用户名：
 
 	azure login -e AzureChinaCloud -u ahmet@contoso.partner.onmschina.cn
 	info:    Executing command login
@@ -78,7 +78,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 ## 使用 azure 登录名与服务主体
 
-如果已创建 Active Directory 应用程序的服务主体，并且服务主体拥有针对订阅的权限，就可以使用 `azure login` 命令来对服务主体进行身份验证。根据你的应用场景，可以提供服务主体的凭据作为 `azure login` 命令的显式参数，或通过 CLI 脚本或应用程序代码。你也可以使用证书以非交互方式对自动化方案的服务主体进行身份验证。有关详细信息与示例，请参阅[使用 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
+如果已创建 Active Directory 应用程序的服务主体，并且服务主体拥有针对订阅的权限，就可以使用 `azure login -e AzureChinaCloud` 命令来对服务主体进行身份验证。根据你的应用场景，可以提供服务主体的凭据作为 `azure login -e AzureChinaCloud` 命令的显式参数，或通过 CLI 脚本或应用程序代码。你也可以使用证书以非交互方式对自动化方案的服务主体进行身份验证。有关详细信息与示例，请参阅[使用 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
 
 ## 使用发布设置文件
 

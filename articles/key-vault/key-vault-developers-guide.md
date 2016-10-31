@@ -5,21 +5,27 @@
    documentationCenter=""
    authors="BrucePerlerMS"
    manager="mbaldwin"
-   editor="bruceper" />
+   editor="bruceper" />  
+
 <tags
    ms.service="key-vault"
-   ms.date="04/29/2016"
-   wacn.date="06/27/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="08/16/2016"
+   ms.author="bruceper" 
+   wacn.date="10/19/2016"/>  
+
 
 # Azure 密钥保管库开发人员指南
-
 使用密钥保管库能够从应用程序中安全地访问敏感信息，以便：
 
-- 密钥和机密受到保护而不必自己编写代码，并且你能够轻松地从应用程序中使用它们。
+- 无需自己编写代码即可保护密钥和机密信息，并且能够轻松地在应用程序中使用它们。
 - 你能够让客户拥有和管理其自己的密钥，因此可以专注于提供核心软件功能。这样，你的应用程序便不会对客户的租户密钥和机密承担职责或潜在责任。
 - 你的应用程序可以使用密钥进行签名和加密，不过使密钥管理与应用程序分开，以便解决方案适用于地理分散的应用程序。
 
-有关 Azure 密钥保管库的更多常规信息，请参阅[什么是密钥保管库](/documentation/articles/key-vault-whatis/)。
+有关 Azure 密钥保管库的更多常规信息，请参阅 [What is Key Vault](/documentation/articles/key-vault-whatis/)（什么是密钥保管库）。
 
 ## 创建和管理密钥保管库
 
@@ -46,10 +52,10 @@
 
 为使用密钥保管库提供了以下 SDK：
 
-|[![.NET](./media/key-vault-developers-guide/net.png)](https://msdn.microsoft.com/zh-cn/library/azure/dn903301.aspx)|[![Node.js](./media/key-vault-developers-guide/nodejs.png)](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
+|[![.NET](./media/key-vault-developers-guide/msft.netlogo_purple.png)](https://msdn.microsoft.com/zh-cn/library/mt430941.aspx)|[![Node.js](./media/key-vault-developers-guide/nodejs.png)](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
 |:--:|:--:|
-|[.NET SDK 文档](https://msdn.microsoft.com/zh-cn/library/azure/dn903301.aspx)|[Node.js SDK 文档](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)|
-|[.NET SDK 包](https://azure.microsoft.com/documentation/api)|[Node.js SDK 包](https://www.npmjs.com/package/azure-keyvault)|
+|[.NET SDK 文档](https://msdn.microsoft.com/zh-cn/library/mt430941.aspx)|[Node.js SDK 文档](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)|
+|[.NET SDK 包](https://azure.microsoft.com/documentation/api/)|[Node.js SDK 包](https://www.npmjs.com/package/azure-keyvault)|
 
 
 有关将密钥保管库用于应用程序的完整示例，请参阅：
@@ -63,8 +69,13 @@
 
 - [如何在部署期间传递安全值（如密码）](/documentation/articles/resource-manager-keyvault-parameter/)- 当你需要在部署期间以参数形式传递安全值（例如密码）时，可以将该值存储为 Azure 密钥保管库中的机密，并在其他资源管理模板中引用该值。
 - [如何使用密钥保管库，以便通过 SQL Server 进行可扩展的密钥管理](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx) - 适用于 Azure 密钥保管库的 SQL Server 连接器允许 SQL Server 和 VM 中的 SQL 将 Azure 密钥保管库服务用作可扩展密钥管理 (EKM) 提供程序，以便保护其针对应用程序链接的加密密钥；透明数据加密、备份加密和列级加密。
+- [如何将密钥保管库中的证书部署到 VM](https://blogs.technet.microsoft.com/kv/2015/07/14/deploy-certificates-to-vms-from-customer-managed-key-vault/) - 在 Azure 上的 VM 中运行的云应用程序需要一个证书。现在，要如何将此证书部署到此 VM 中呢？
 
-如需更多将密钥保管库与 Azure 集成和结合使用的特定于任务的指导，请参阅 [Ryan Jones ARM template examples for Key Vault（针对密钥保管库的 Ryan Jones ARM 模板示例）](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)。
+
+如需更多将密钥保管库与 Azure 集成和结合使用的特定于任务的指导，请参阅 [Ryan Jones ARM template examples for Key Vault](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)（针对密钥保管库的 Ryan Jones ARM 模板示例）。
+
+
+
 
 ## 支持库
 
@@ -76,4 +87,4 @@
 - [密钥保管库博客](http://aka.ms/kvblog)
 - [密钥保管库论坛](http://aka.ms/kvforum)
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_1010_2016-->

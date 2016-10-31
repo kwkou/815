@@ -73,8 +73,6 @@
         $RestoredDatabase.status
 
 
->[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
-
 
 ## 还原已删除的数据库
 
@@ -108,7 +106,6 @@ $RestoredDatabase = Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –D
 $RestoredDatabase.status
 ```
 
->[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
 
 ## 从 Azure 地理区域还原
@@ -134,7 +131,6 @@ $GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGrou
 $GeoRestoredDatabase.status
 ```
 
->[AZURE.NOTE] 完成还原后，你可以根据[确认已恢复的数据库][]指南来配置已恢复的数据库。
 
 
 如果源数据库启用了 TDE，则已恢复的数据库将启用 TDE。
@@ -148,13 +144,11 @@ $GeoRestoredDatabase.status
 
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
-[Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize/
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
 [PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
-[确认已恢复的数据库]: /documentation/articles/sql-database-recovered-finalize/
 
 <!--MSDN references-->
 [Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt693390.aspx

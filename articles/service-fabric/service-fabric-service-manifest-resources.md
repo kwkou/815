@@ -3,14 +3,21 @@
    description="如何在服务清单中描述终结点资源，包括如何设置 HTTPS 终结点"
    services="service-fabric"
    documentationCenter=".net"
-   authors="sumukhs"
-   manager="anuragg"
-   editor=""/>
+   authors="mani-ramaswamy"
+   manager="timlt"
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="05/18/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/14/2016"
+   wacn.date="10/24/2016"
+   ms.author="subramar"/>  
+
 
 # 在服务清单中指定资源
 
@@ -20,7 +27,7 @@
 
 ## 终结点
 
-在服务清单中定义了终结点资源时，如果未指定显式端口，Service Fabric 将从保留的应用程序端口范围中分配端口（例见以下 *ServiceEndpoint1* 终结点）。此外，服务还可以请求在资源中使用特定端口。在不同群集节点上运行的服务副本可以分配不同的端口号，而运行在同一节点上的同一服务的副本共享同一个端口。此类端口可供服务副本用于各种目的，例如复制，侦听客户端请求等。
+在服务清单中定义了终结点资源时，如果未显式指定端口，则 Service Fabric 从保留的应用程序端口范围中分配端口。例如，可以查看本段落后面提供的清单代码段中指定的终结点 *ServiceEndpoint1*。此外，服务还可以请求在资源中使用特定端口。在不同群集节点上运行的服务副本可以分配不同的端口号，而运行在同一节点上的服务副本共享同一个端口。之后服务副本可根据需要将这些端口用于复制和侦听客户端请求。
 
 
 	<Resources>
@@ -86,12 +93,12 @@ HTTP 终结点由 Service Fabric 自动建立 ACL。
 
 ## 示例：指定用于你的服务的 HTTPS 终结点
 
-HTTPS 协议提供服务器身份验证，用于对客户端-服务器通信进行加密。若要在你的 Service Fabric 服务上启用此功能，当你定义服务时，请在服务清单的“资源”->“终结点”->“终结点”部分中指定协议，如上针对终结点 *ServiceEndpoint3* 的部分中所示。
+HTTPS 协议提供服务器身份验证，用于对客户端-服务器通信进行加密。若要在 Service Fabric 服务上启用 HTTPS，请在服务清单的“资源”->“终结点”->“终结点”部分中指定该协议，如前面针对终结点 *ServiceEndpoint3* 的操作所示。
 
->[AZURE.NOTE] 不能在应用程序升级期间更改服务的协议，因为这将是一项重大更改。
+>[AZURE.NOTE] 不能在应用程序升级期间更改服务的协议，因为这是一项破坏性更改。
 
 
-下面是你需要为 HTTPS 设置的一个示例 ApplicationManifest。（你将需要提供证书的指纹。） EndpointRef 是对 ServiceManifest 中 EndpointResource 的引用，你为其设置 HTTPS 协议。你可以添加多个 Endpointcertificate。
+下面是你需要为 HTTPS 设置的一个示例 ApplicationManifest。必须提供证书的指纹。EndpointRef 是对 ServiceManifest 中 EndpointResource 的引用，你为其设置 HTTPS 协议。可以添加多个 EndpointCertificate。
 
 
 	<?xml version="1.0" encoding="utf-8"?>
@@ -131,4 +138,5 @@ HTTPS 协议提供服务器身份验证，用于对客户端-服务器通信进�
 	    <EndpointCertificate Name="TestCert1" X509FindValue="FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF F0" X509StoreName="MY" />  
 	  </Certificates>
 	</ApplicationManifest>
-<!---HONumber=Mooncake_0627_2016-->
+
+<!---HONumber=Mooncake_1017_2016-->

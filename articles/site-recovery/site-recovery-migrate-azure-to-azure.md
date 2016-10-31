@@ -24,7 +24,7 @@
 欢迎使用 Azure Site Recovery！ 如果想要在 Azure 区域之间迁移 Azure VM，请参阅此文章。开始之前，请注意：
 
 - **目前仅能从一个区域迁移到另一个区域。可以将 VM 从一个 Azure 区域故障转移到另一个 Azure 区域，但不能重新对其进行故障回复。**
-- 本文中的迁移说明以将物理计算机复制到 Azure 的说明为基础。其中包括指向[将 VMware VM 或物理服务器复制到 Azure](/documentation/articles/site-recovery-vmware-to-azure/) 的步骤的链接，链接文章介绍了如何在 Azure 经典管理门户中复制物理服务器。
+- 本文中的迁移说明以将物理计算机复制到 Azure 的说明为基础。
 
 
 请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
@@ -34,7 +34,7 @@
 
 以下是执行此部署所需的组件：
 
-- **配置服务器**：运行 Windows Server 2012 R2 作为配置服务器的本地 VM。在此 VM 上也安装其他 Site Recovery 组件（包括进程服务器和主目标服务器）。有关详细信息，请参阅[方案体系结构](/documentation/articles/site-recovery-vmware-to-azure/#scenario-architecture)和[配置服务器先决条件](/documentation/articles/site-recovery-vmware-to-azure/#configuration-server-prerequisites)。
+- **配置服务器**：运行 Windows Server 2012 R2 作为配置服务器的本地 VM。在此 VM 上也安装其他 Site Recovery 组件（包括进程服务器和主目标服务器）。
 - **IaaS 虚拟机**：你想要迁移的虚拟机。将 VM 视为物理计算机进行迁移。
 
 ## 部署步骤

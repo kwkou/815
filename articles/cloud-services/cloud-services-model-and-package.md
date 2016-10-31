@@ -5,11 +5,18 @@
     documentationCenter=""
     authors="Thraka"
     manager="timlt"
-    editor=""/>
+    editor=""/>  
+
 <tags
     ms.service="cloud-services"
-    ms.date="06/07/2016"
-    wacn.date="07/18/2016"/>
+    ms.workload="tbd"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/06/2016"
+    ms.author="adegeo"
+    wacn.date="10/24/2016"/>  
+
 
 # 什么是云服务模型以及如何将其打包？
 云服务由以下三个组件创建：服务定义 _(.csdef)_、服务配置 _(.cscfg)_ 和服务包 _(.cspkg)_。**ServiceDefinition.csdef** 和 **ServiceConfig.cscfg** 文件都基于 XML，同时介绍云服务的结构及其配置方式；统称为模型。**ServicePackage.cspkg** 是从 **ServiceDefinition.csdef** 和其他文件生成的 zip 文件，它包含所有必需的基于二进制的依赖项。Azure 可从 **ServicePackage.cspkg** 和 **ServiceConfig.cscfg** 两者创建云服务。
@@ -78,24 +85,31 @@
 	</ServiceDefinition>
 
  
+可以参考 [服务定义架构][] 以更好地了解此处使用的 XML 架构，而以下是某些元素的快速说明：
 
-以下是某些元素的快速说明：
+**站点**
+包含 IIS7 中承载的网站或 Web 应用程序的定义。
 
-**Sites**包含 IIS7 中承载的网站或 Web 应用程序的定义。
+**InputEndpoints** 
+包含用于联系云服务的终结点的定义。
 
-**InputEndpoints** 包含用于联系云服务的终结点的定义。
+**InternalEndpoints** 
+包含角色实例用于相互通信的终结点的定义。
 
-**InternalEndpoints** 包含角色实例用于相互通信的终结点的定义。
+**ConfigurationSettings** 
+包含特定角色功能的设置定义。
 
-**ConfigurationSettings** 包含特定角色功能的设置定义。
+**证书**
+包含角色所需的证书的定义。前面的代码示例显示了用于 Azure Connect 的配置的证书。
 
-**Certificates**包含角色所需的证书的定义。前面的代码示例显示了用于 Azure Connect 的配置的证书。
+**LocalResources** 
+包含本地存储资源的定义。本地存储资源是角色实例在其中运行的虚拟机的文件系统中的保留目录。
 
-**LocalResources** 包含本地存储资源的定义。本地存储资源是角色实例在其中运行的虚拟机的文件系统中的保留目录。
+**导入**
+包含已导入模块的定义。前面的代码示例显示了远程桌面连接和 Azure Connect 的模块。
 
-**Imports**包含已导入模块的定义。前面的代码示例显示了远程桌面连接和 Azure Connect 的模块。
-
-**Startup**包含在角色启动时运行的任务。任务在 .cmd 文件或可执行文件中定义。
+**启动**
+包含在角色启动时运行的任务。任务在 .cmd 文件或可执行文件中定义。
 
 
 
@@ -123,13 +137,13 @@
 
 可以参考[服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)以更好了解此处使用的 XML 架构，而以下是元素的快速说明：
 
-**Instances**  
+**实例**
 为角色配置运行角色实例数。要防止云服务在升级期间可能变得不可用，建议你部署面向 Web 角色的多个实例。如此以来，则可遵守 [Azure 计算服务级别协议 (SLA)](/support/legal/sla) 中的准则，此协议可以保证在为一个服务部署了两个或多个角色实例时，面向 Internet 的角色有 99.95%的外部连接。
 
-**ConfigurationSettings**  
+**ConfigurationSettings**
 为角色配置运行实例的设置。`<Setting>` 元素的名称必须与服务定义文件中的设置定义匹配。
 
-**Certificates**  
+**证书**
 配置服务使用的证书。前面的代码示例演示如何定义 RemoteAccess 模块的证书。*指纹*属性的值必须设置为要使用的证书的指纹。
 
 <p/>
@@ -200,12 +214,11 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 
 <a name="cspkg"></a>
 ## ServicePackage.cspkg
-要将应用程序部署为 Azure 中的云服务，必须首先以适当的格式打包该应用程序。可以使用 **CSPack** 命令行工具（与 [Azure SDK](/downloads) 一起安装）来创建包文件作为 Visual Studio 的替代。
+要将应用程序部署为 Azure 中的云服务，必须首先以适当的格式打包该应用程序。可以使用 **CSPack** 命令行工具（与 [Azure SDK](/downloads/) 一起安装）来创建包文件作为 Visual Studio 的替代。
 
 **CSPack** 使用服务定义文件和服务配置文件的内容来定义包的内容。CSPack 生成可以使用 [Azure 门户](/documentation/articles/cloud-services-how-to-create-deploy-portal/#create-and-deploy)上载到 Azure 的应用程序包文件 (.cspkg)。默认情况下，该应用程序包名为 `[ServiceDefinitionFileName].cspkg`，但可以通过使用 **CSPack** 的 `/out` 选项指定不同的名称。
 
-CSPack 通常位于  
-`C:\Program Files\Microsoft SDKs\Azure\.NET SDK[sdk-version]\bin`
+CSPack 通常位于 `C:\Program Files\Microsoft SDKs\Azure\.NET SDK[sdk-version]\bin`
 
 >[AZURE.NOTE]
 CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Azure 命令提示符”快捷方式使用。
@@ -220,14 +233,14 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Azure �
 ### 打包云服务的示例命令
 以下示例创建包含 Web 角色信息的应用程序包。该命令指定待使用的服务定义文件、可以找到二进制文件的目录以及包文件名称。
 
-    cspack [DirectoryName][ServiceDefinition]
+    cspack [DirectoryName]\[ServiceDefinition]
            /role:[RoleName];[RoleBinariesDirectory]
            /sites:[RoleName];[VirtualPath];[PhysicalPath]
            /out:[OutputFileName]
 
 如果应用程序包含 Web 角色和辅助角色，则使用以下命令：
 
-    cspack [DirectoryName][ServiceDefinition]
+    cspack [DirectoryName]\[ServiceDefinition]
            /out:[OutputFileName]
            /role:[RoleName];[RoleBinariesDirectory]
            /sites:[RoleName];[VirtualPath];[PhysicalPath]
@@ -251,16 +264,14 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Azure �
 
 我正在创建云服务包，并且我想要...
 
-* [配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources/)
 * [为云服务实例设置远程桌面][remotedesktop]
 * [部署云服务项目][deploy]
 
 
+
+
 [deploy]: /documentation/articles/cloud-services-how-to-create-deploy-portal/
 [remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop/
-[vs_remote]: /documentation/articles/vs-azure-tools-remote-desktop-roles/
-[vs_deploy]: /documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/
-[vs_reconfigure]: /documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/
-[vs_create]: /documentation/articles/vs-azure-tools-azure-project-create/
+
 
 <!---HONumber=Mooncake_0328_2016-->

@@ -5,12 +5,18 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/10/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotNet"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/26/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>
 
 # 在 Visual Studio 中创建你的第一个 Azure Service Fabric 应用程序
 
@@ -105,6 +111,15 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
     ![故障转移之后的诊断事件查看器][diagnostic-events-viewer-detail-post-failover]  
 
 
+## 切换群集模式
+
+默认情况下，将本地开发群集配置为作为 5 节点群集运行，这对于调试在多个节点中部署的服务很有用。但是，将应用程序部署到 5 节点开发群集需要一些时间。如果想要快速遍历代码更改，而无需在 5 个节点上运行应用程序，可以将开发群集切换到 1 节点模式。若要在包含一个节点的群集上运行代码，请右键单击系统任务栏中的本地群集管理器，并选择“切换群集模式”->“1 个节点”。
+
+![切换群集模式][switch-cluster-mode]  
+
+
+更改群集模式时将重置开发群集，并删除所有在群集上预配或运行的应用程序。
+
 ## 清理
 
   结束之前，请务必记住该本地群集非常真实。停止调试器会删除您的应用程序实例，并注销应用程序类型。不过，群集将继续在后台运行。可通过几个选项对群集进行管理：
@@ -115,11 +130,13 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 ## 后续步骤
 
-- 了解如何[在 Windows 上创建独立群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)。
+- 了解如何[在 Azure 中创建群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)或[在 Windows 上创建独立群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)。
 - 尝试使用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-quick-start/) 或 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-get-started/) 编程模型创建服务。
 - 了解如何使用 [Web 服务前端](/documentation/articles/service-fabric-add-a-web-frontend/)向 Internet 服务公开服务。
+- 演练 [hands-on-lab](https://msdnshared.blob.core.windows.net/media/2016/07/SF-Lab-Part-I.docx)，创建无状态服务、配置监视和运行状况报告，并执行应用程序升级。
 
 <!-- Image References -->
+
 
 [1]: ./media/service-fabric-create-your-first-application-in-visual-studio/new-project-dialog.png
 [2]: ./media/service-fabric-create-your-first-application-in-visual-studio/new-project-dialog-2.png
@@ -132,5 +149,6 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 [systray-launch-sfx]: ./media/service-fabric-create-your-first-application-in-visual-studio/launch-sfx.png
 [diagnostic-events-viewer-detail-post-failover]: ./media/service-fabric-create-your-first-application-in-visual-studio/diagnostic-events-viewer-detail-post-failover.png
 [sfe-delete-application]: ./media/service-fabric-create-your-first-application-in-visual-studio/sfe-delete-application.png
+[switch-cluster-mode]: ./media/service-fabric-create-your-first-application-in-visual-studio/switch-cluster-mode.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1017_2016-->

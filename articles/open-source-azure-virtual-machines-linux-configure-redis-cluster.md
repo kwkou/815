@@ -86,7 +86,7 @@ Azure 有提供收费的 Redis 服务，请参考 [Azure Redis tutorial](/docume
         "bar"
         127.0.0.1:6379>
 
-4. 打开6379端口。6379端口是 Redis 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)打开端口 
+4. 打开6379端口。6379端口是 Redis 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口 
 5. 停掉 Redis 的命令
 
         $sudo ./redis-cli shutdown

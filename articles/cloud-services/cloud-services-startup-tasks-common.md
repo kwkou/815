@@ -8,8 +8,8 @@ manager="timlt"
 editor=""/>
 <tags 
 	ms.service="cloud-services" 
-ms.date="06/22/2016" 
-	wacn.date="08/22/2016"/>
+	ms.date="09/06/2016" 
+	wacn.date="10/24/2016"/>
 
 # 常见的云服务启动任务
 
@@ -463,7 +463,7 @@ Startup2.cmd：
 
 ## 后续步骤
 
-查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package/)
+查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package/)。
 
 详细了解[任务](/documentation/articles/cloud-services-startup-tasks/)的工作方式。
 

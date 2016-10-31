@@ -84,7 +84,7 @@
 		Select-AzureRmSubscription -SubscriptionId "<subscriptionID>"
 
 	
-## 获取存储帐户
+## <a name="createstorage"></a> 获取存储帐户
 
 需要在 Azure 中创建一个存储帐户用于容装上载的 VM 映像。你可以使用现有存储帐户，也可以创建新的存储帐户。
 

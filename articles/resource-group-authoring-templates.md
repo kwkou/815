@@ -64,7 +64,7 @@
 有关模板函数的完整列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)。
 
 
-## <a name="resource-group-authoring-templates"></a> Parameters
+## <a name="resource-group-authoring-templates" id="parameters"></a> Parameters
 
 在模板的 parameters 节中，你可以指定在部署资源时能够输入的值。提供针对特定环境（例如开发、测试和生产环境）定制的参数值可以自定义部署。无需在模板中提供参数，但如果没有参数，模板始终部署具有相同名称、位置和属性的相同资源。
 
@@ -151,7 +151,7 @@
 
 若要了解如何在部署过程中输入参数值，请参阅 [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/#parameter-file)（使用 Azure Resource Manager 模板部署应用程序）。
 
-## 变量
+## <a name="variables"></a> 变量
 
 在 variables 节中构造可在整个模板中使用的值。通常，这些变量基于通过参数提供的值。不需要定义变量，但使用变量可以减少复杂的表达式，从而简化模板。
 
@@ -197,7 +197,7 @@
        "instancesCount": "[variables('currentEnvironmentSettings').instancesCount]"
     }
 
-## 资源
+## <a name="resources"></a> 资源
 
 在 resources 节，可以定义部署或更新的资源。模板中的此位置可能比较复杂，因为你必须了解要部署哪些类型才能提供正确的值。若要进一步了解资源提供程序，请参阅 [Resource Manager providers, regions, API versions and schemas](/documentation/articles/resource-manager-supported-services/)（Resource Manager 提供程序、区域、API 版本和架构）。
 
@@ -226,7 +226,7 @@
 | apiVersion | 是 | 用于创建资源的 REST API 版本。若要确定可用于特定资源类型的版本号，请参阅 [Supported API versions](/documentation/articles/resource-manager-supported-services/#supported-api-versions)（支持的 API 版本）。
 | type | 是 | 资源的类型。此值是资源提供程序的命名空间以及资源提供程序支持的资源类型的组合。
 | 名称 | 是 | 资源的名称。该名称必须遵循 RFC3986 中定义的 URI 构成部分限制。此外，向第三方公开资源名称的 Azure 服务将验证名称，以确保它不是尝试窃取另一个身份。请参阅[检查资源名称](https://msdn.microsoft.com/zh-cn/library/azure/mt219035.aspx)。
-| location | 多种多样 | 提供的资源支持的地理位置。若要确定可用的位置，请参阅 [Supported regions](/documentation/articles/resource-manager-supported-services/#supported-regions)（支持的区域）。大多数资源类型需要一个位置，但某些类型 （如角色分配）不需要位置。
+| location | 多种多样 | 提供的资源支持的地理位置。大多数资源类型需要一个位置，但某些类型 （如角色分配）不需要位置。
 | 标记 | 否 | 与资源关联的标记。
 | 注释 | 否 | 用于描述模板中资源的注释
 | dependsOn | 否 | 正在定义的资源所依赖的资源。将会评估资源之间的依赖关系，并按资源的依赖顺序来部署资源。如果资源不相互依赖，则会尝试并行部署资源。该值可以是资源名称或资源唯一标识符的逗号分隔列表。

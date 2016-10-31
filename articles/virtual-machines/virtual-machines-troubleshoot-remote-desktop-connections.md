@@ -7,12 +7,18 @@
 	authors="iainfoulds"
 	manager="timlt"
 	editor=""
-	tags="top-support-issue,azure-service-management,azure-resource-manager"/>
+	tags="top-support-issue,azure-service-management,azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/14/2016"
-	wacn.date="09/12/2016"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="support-article"
+	ms.date="09/01/2016"
+	wacn.date="10/24/2016"
+	ms.author="iainfou"/>
 
 # 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
 
@@ -20,7 +26,21 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure ](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并选择“获取支持”。
 
-## <a id="quickfixrdp"></a> 故障排除通过使用 Resource Manager 部署模型创建的 VM
+## <a id="quickfixrdp"></a> 快速故障排除步骤
+在执行每个故障排除步骤之后，请尝试连接到 VM：
+
+1. 使用 Azure 门户预览或 Azure PowerShell 重置远程访问权限
+2. 重新启动 VM
+3. 重新部署 VM
+4. 检查网络安全组/云服务终结点规则
+5. 在 Azure 门户预览或 Azure PowerShell 中查看 VM 控制台日志
+6. 在 Azure 门户预览中查看 VM 资源运行状况
+7. 重置 VM 密码
+
+如需 Resource Manager 部署模型和经典部署模型的更详细步骤和说明，请继续阅读。
+
+
+## <a id="fix-common-remote-desktop-errors"></a> 故障排除通过使用 Resource Manager 部署模型创建的 VM
 
 在执行每个故障排除步骤之后，请尝试连接到 VM。
 
@@ -44,7 +64,7 @@
 		-VMName "myVM" -Name "myVMAccess" -Location Westus
 	```
 
-	> [AZURE.NOTE] 在前面的示例中，`myVMAccessExtension` 或 `MyVMAccess` 是为新扩展指定的名称，该扩展将在安装代理的过程中安装。这通常设置为 VM 的名称。如果以前使用过 VMAccessAgent，可以使用 `Get-AzureRmVM -ResourceGroupName "myRG" -Name "myVM"` 检查 VM 的属性，从而获取现有的扩展名称。然后在输出的“Extensions”节下查找。由于一个 VM 上只能有一个 VMAccessAgent，因此在使用 `Set-AzureRmVMExtension` 重新注册代理时，还需要添加 `-ForceReRun` 参数。
+	> [AZURE.NOTE] 在前面的示例中，`myVMAccessExtension` 或 `MyVMAccess` 是为新扩展指定的名称，该扩展将在安装代理的过程中安装。这通常设置为 VM 的名称。如果以前使用过 VMAccessAgent，可以使用 `Get-AzureRmVM -ResourceGroupName "myRG" -Name "myVM"` 检查 VM 的属性，从而获取现有的扩展名称。在输出的“Extensions”节下查找该名称。由于一个 VM 上只能有一个 VMAccessAgent，因此在使用 `Set-AzureRmVMExtension` 重新注册代理时，还需要添加 `-ForceReRun True` 参数。
 
 2. 重启 VM 以解决其他安装问题。选择“浏览”>“虚拟机”> *用户的 VM* >“重新启动”。
 
@@ -65,7 +85,7 @@
 
 在执行每个故障排除步骤之后，请尝试连接到 VM。
 
-1. 从 [Azure 门户预览版](https://portal.azure.cn)重置远程桌面服务。选择“浏览”>“虚拟机(经典)”> *用户的 VM* >“重置远程...”。
+1. 从 [Azure 门户预览](https://portal.azure.cn)重置远程桌面服务。选择“浏览”>“虚拟机(经典)”> *用户的 VM* >“重置远程...”。
 
 2. 重启 VM 以解决其他安装问题。选择“浏览”>“虚拟机(经典)”> *用户的 VM* >“重新启动”。
 
@@ -108,7 +128,7 @@
 
 如果你实际上不需要两个以上同时与 VM 的远程桌面连接，则可以使用服务器管理器删除远程桌面服务器角色。
 
-有关详细信息，请参阅博客文章 [Azure VM fails with "No Remote Desktop License Servers available"](http://blogs.msdn.com/b/wats/archive/2014/01/21/rdp-to-azure-vm-fails-with-quot-no-remote-desktop-license-servers-available-quot.aspx)（Azure VM 失败并出现“没有可用的远程桌面许可证服务器”）。
+有关详细信息，请参阅博客文章 [Azure VM fails with "No Remote Desktop License Servers available"](https://blogs.msdn.microsoft.com/mast/2014/01/21/rdp-to-azure-vm-fails-with-no-remote-desktop-license-servers-available/)（Azure VM 失败并出现“没有可用的远程桌面许可证服务器”）。
 
 ### <a id="rdpname"></a>远程桌面找不到计算机 "name"。
 
@@ -184,4 +204,4 @@
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1017_2016-->

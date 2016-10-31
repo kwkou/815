@@ -1,7 +1,7 @@
 
 <properties
    pageTitle="使用 Azure CLI 创建完整的 Linux 环境 | Azure"
-   description="使用 Azure CLI 从头开始创建存储、Linux VM、虚拟网络和子网、负载平衡器、NIC、公共 IP 和网络安全组。"
+   description="使用 Azure CLI 从头开始创建存储、Linux VM、虚拟网络和子网、负载均衡器、NIC、公共 IP 和网络安全组。"
    services="virtual-machines-linux"
    documentationCenter="virtual-machines"
    authors="iainfoulds"
@@ -29,7 +29,7 @@
 该环境包含：
 
 - 两个位于可用性集中的 VM。
-- 端口 80 上有一个带负载平衡规则的负载平衡器。
+- 端口 80 上有一个带负载均衡规则的负载均衡器。
 - 网络安全组 (NSG) 规则，阻止 VM 接受不需要的流量。
 
 ![基本环境概述](./media/virtual-machines-linux-create-cli-complete/environment_overview.png)
@@ -71,33 +71,33 @@
 
 	azure network public-ip create -g TestRG -n TestLBPIP -l chinaeast -d testlb -a static -i 4
 
-创建负载平衡器：
+创建负载均衡器：
 
 	azure network lb create -g TestRG -n TestLB -l chinaeast
 
-创建负载平衡器的前端 IP 池并关联公共 IP：
+创建负载均衡器的前端 IP 池并关联公共 IP：
 
 	azure network lb frontend-ip create -g TestRG -l TestLB -n TestFrontEndPool -i TestLBPIP
 
-创建负载平衡器的后端 IP 池：
+创建负载均衡器的后端 IP 池：
 
 	azure network lb address-pool create -g TestRG -l TestLB -n TestBackEndPool
 
-创建负载平衡器的 SSH 入站 NAT 规则：
+创建负载均衡器的 SSH 入站 NAT 规则：
 
 	azure network lb inbound-nat-rule create -g TestRG -l TestLB -n VM1-SSH -p tcp -f 4222 -b 22
 	azure network lb inbound-nat-rule create -g TestRG -l TestLB -n VM2-SSH -p tcp -f 4223 -b 22
 
-创建负载平衡器的 Web 入站 NAT 规则：
+创建负载均衡器的 Web 入站 NAT 规则：
 
 	azure network lb rule create -g TestRG -l TestLB -n WebRule -p tcp -f 80 -b 80 \
 	     -t TestFrontEndPool -o TestBackEndPool
 
-创建负载平衡器运行状况探测：
+创建负载均衡器运行状况探测：
 
 	azure network lb probe create -g TestRG -l TestLB -n HealthProbe -p "http" -f healthprobe.aspx -i 15 -c 4
 
-使用 JSON 分析器验证负载平衡器、IP 池和 NAT 规则：
+使用 JSON 分析器验证负载均衡器、IP 池和 NAT 规则：
 
 	azure network lb show -g TestRG -n TestLB --json | jq '.'
 
@@ -510,10 +510,10 @@ azure 存储容器列表
 	"location": "chinaeast"
 	}
 
-## 创建负载平衡器和 IP 池
-创建负载平衡器时，可以将流量分散到多个 VM。负载平衡器还可以在执行维护或承受重负载时运行多个 VM 来响应用户请求，为应用程序提供冗余。
+## 创建负载均衡器和 IP 池
+创建负载均衡器时，可以将流量分散到多个 VM。负载均衡器还可以在执行维护或承受重负载时运行多个 VM 来响应用户请求，为应用程序提供冗余。
 
-我们将创建具有以下特点的负载平衡器：
+我们将创建具有以下特点的负载均衡器：
 
 	azure network lb create -g TestRG -n TestLB -l chinaeast
 
@@ -531,7 +531,7 @@ azure 存储容器列表
 	data:    Provisioning state              : Succeeded
 	info:    network lb create command OK
 
-我们的负载平衡器很空，因此让我们创建一些 IP 池。我们想要为负载平衡器创建两个 IP 池：一个用于前端，一个用于后端。前端 IP 池将公开显示。它也是我们将前面创建的 PIP 分配到的位置。然后我们使用后端池作为 VM 要连接到的位置。这样，流量便可以通过负载平衡器流向 VM。
+我们的负载均衡器很空，因此让我们创建一些 IP 池。我们想要为负载均衡器创建两个 IP 池：一个用于前端，一个用于后端。前端 IP 池将公开显示。它也是我们将前面创建的 PIP 分配到的位置。然后我们使用后端池作为 VM 要连接到的位置。这样，流量便可以通过负载均衡器流向 VM。
 
 首先，让我们创建前端 IP 池：
 
@@ -564,7 +564,7 @@ azure 存储容器列表
 	data:    Provisioning state              : Succeeded
 	info:    network lb address-pool create command OK
 
-可以通过查看 `azure network lb show` 和 JSON 输出来了解负载平衡器的工作情况：
+可以通过查看 `azure network lb show` 和 JSON 输出来了解负载均衡器的工作情况：
 
 	azure network lb show TestRG TestLB --json | jq '.'
 
@@ -605,8 +605,8 @@ azure 存储容器列表
 	  "probes": []
 	}
 
-## 创建负载平衡器 NAT 规则
-若要获取流经负载平衡器的流量，需要创建 NAT 规则来指定入站或出站操作。可以指定要使用的协议，然后根据需要将外部端口映射到内部端口。针对我们的环境，让我们创建一些规则，以允许通过负载平衡器对 VM 进行 SSH 访问。将 TCP 端口 4222 和 4223 设置为定向到 VM 上的 TCP 端口 22（稍后将会创建）：
+## 创建负载均衡器 NAT 规则
+若要获取流经负载均衡器的流量，需要创建 NAT 规则来指定入站或出站操作。可以指定要使用的协议，然后根据需要将外部端口映射到内部端口。针对我们的环境，让我们创建一些规则，以允许通过负载均衡器对 VM 进行 SSH 访问。将 TCP 端口 4222 和 4223 设置为定向到 VM 上的 TCP 端口 22（稍后将会创建）：
 
 	azure network lb inbound-nat-rule create -g TestRG -l TestLB -n VM1-SSH -p tcp -f 4222 -b 22
 
@@ -632,7 +632,7 @@ azure 存储容器列表
 
 	azure network lb inbound-nat-rule create -g TestRG -l TestLB -n VM2-SSH -p tcp -f 4223 -b 22
 
-让我们继续为 TCP 端口 80 创建 NAT 规则，并将该规则挂接到 IP 池。如果将规则挂接到 IP 池，而不是将规则逐个挂接到 VM，则可以直接在 IP 池中添加或删除 VM。然后，负载平衡器会自动调整流量流：
+让我们继续为 TCP 端口 80 创建 NAT 规则，并将该规则挂接到 IP 池。如果将规则挂接到 IP 池，而不是将规则逐个挂接到 VM，则可以直接在 IP 池中添加或删除 VM。然后，负载均衡器会自动调整流量流：
 
 	azure network lb rule create -g TestRG -l TestLB -n WebRule -p tcp -f 80 -b 80 \
 	     -t TestFrontEndPool -o TestBackEndPool
@@ -657,9 +657,9 @@ azure 存储容器列表
 	data:    Backend address pool id         : /subscriptions/guid/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool
 	info:    network lb rule create command OK
 
-## 创建负载平衡器运行状况探测
+## 创建负载均衡器运行状况探测
 
-运行状况探测定期检查受负载平衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，这些 VM 将从操作中删除，以确保不会将用户定向到这些 VM。你可以针对运行状况探测定义自定义检查，以及间隔和超时值。有关运行状况探测的详细信息，请参阅 [Load Balancer probes](/documentation/articles/load-balancer-custom-probe-overview/)（负载平衡器探测）。
+运行状况探测定期检查受负载均衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，这些 VM 将从操作中删除，以确保不会将用户定向到这些 VM。你可以针对运行状况探测定义自定义检查，以及间隔和超时值。有关运行状况探测的详细信息，请参阅 [Load Balancer probes](/documentation/articles/load-balancer-custom-probe-overview/)（负载均衡器探测）。
 
 	azure network lb probe create -g TestRG -l TestLB -n HealthProbe -p "http" -f healthprobe.aspx -i 15 -c 4
 
@@ -679,17 +679,17 @@ azure 存储容器列表
 
 此处我们指定了 15 秒的运行状况检查间隔。在负载均衡器将该主机视为不再正常运行之前，我们最多可能会错过四个探测（1 分钟）。
 
-## 验证负载平衡器
+## 验证负载均衡器
 
-现已完成负载平衡器配置。下面是已执行的步骤：
+现已完成负载均衡器配置。下面是已执行的步骤：
 
-1. 首先，创建了负载平衡器。
+1. 首先，创建了负载均衡器。
 2. 其次，创建了前端 IP 池并为它分配了公共 IP 地址。
 3. 再次，创建了 VM 可以连接到的后端 IP 池。
 4. 接下来，创建了允许通过 SSH 连接到 VM 以进行管理的 NAT 规则，以及允许对 Web 应用使用 TCP 端口 80 的规则。
 5. 最后，添加了一个运行状况探测来定期检查 VM。此运行状况探测可以确保用户不会尝试访问不再正常运行和不再提供内容的 VM。
 
-让我们查看负载平衡器现在的情形：
+让我们查看负载均衡器现在的情形：
 
 	azure network lb show -g TestRG -n TestLB --json | jq '.'
 
@@ -969,7 +969,7 @@ azure 存储容器列表
 	info:    The storage URI 'https://computeteststore.blob.core.chinacloudapi.cn/' will be used for boot diagnostics settings, and it can be overwritten by the parameter input of '--boot-diagnostics-storage-uri'.
 	info:    vm create command OK
 
-可以使用默认的 SSH 密钥立即连接到 VM。请确保指定适当的端口，因为我们要通过负载平衡器传递流量。（对于第一个 VM，我们设置了 NAT 规则以将端口 4222 转发到 VM）：
+可以使用默认的 SSH 密钥立即连接到 VM。请确保指定适当的端口，因为我们要通过负载均衡器传递流量。（对于第一个 VM，我们设置了 NAT 规则以将端口 4222 转发到 VM）：
 
 	ssh ops@testlb.chinaeast.chinacloudapp.cn -p 4222
 
@@ -1019,7 +1019,7 @@ Ubuntu 附带了在适用法律允许的范围内绝对不担保的声明。
 	    --ssh-publickey-file ~/.ssh/id_rsa.pub \
 	    --admin-username ops
 
-现在，可以使用 `azure vm show testrg testvm` 命令来检查创建的内容。此时，已在 Azure 中运行了一个位于负载平衡器后面的 Ubuntu VM，只能使用 SSH 密钥对登录到该 VM（因为密码已禁用）。可以安装 nginx 或 httpd、部署 Web 应用，以及查看流量是否通过负载平衡器流向两个 VM。
+现在，可以使用 `azure vm show testrg testvm` 命令来检查创建的内容。此时，已在 Azure 中运行了一个位于负载均衡器后面的 Ubuntu VM，只能使用 SSH 密钥对登录到该 VM（因为密码已禁用）。可以安装 nginx 或 httpd、部署 Web 应用，以及查看流量是否通过负载均衡器流向两个 VM。
 
 	azure vm show TestRG TestVM1
 

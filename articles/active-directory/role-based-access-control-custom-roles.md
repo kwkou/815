@@ -4,13 +4,20 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="kgremban"
-	manager="stevenpo"
-	editor=""/>
+	manager="kgremban"
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="04/28/2016"
-	wacn.date="07/05/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="07/25/2016"
+	ms.author="kgremban"
+   	wacn.date="10/25/2016"/>  
+
 
 
 # Azure RBAC 中的自定义角色
@@ -20,33 +27,33 @@
 
 下面是用于监视和重新启动虚拟机的自定义角色的一个示例：
 
-
-		{
-		  "Name": "Virtual Machine Operator",
-		  "Id": "cadb4a5a-4e7a-47be-84db-05cad13b6769",
-		  "IsCustom": true,
-		  "Description": "Can monitor and restart virtual machines.",
-		  "Actions": [
-		    "Microsoft.Storage/*/read",
-		    "Microsoft.Network/*/read",
-		    "Microsoft.Compute/*/read",
-		    "Microsoft.Compute/virtualMachines/start/action",
-		    "Microsoft.Compute/virtualMachines/restart/action",
-		    "Microsoft.Authorization/*/read",
-		    "Microsoft.Resources/subscriptions/resourceGroups/read",
-		    "Microsoft.Insights/alertRules/*",
-		    "Microsoft.Insights/diagnosticSettings/*",
-		    "Microsoft.Support/*"
-		  ],
-		  "NotActions": [
 		
-		  ],
-		  "AssignableScopes": [
-		    "/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e",
-		    "/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624",
-		    "/subscriptions/34370e90-ac4a-4bf9-821f-85eeedeae1a2"
-		  ]
-		}
+	{
+		"Name": "Virtual Machine Operator",
+		"Id": "cadb4a5a-4e7a-47be-84db-05cad13b6769",
+		"IsCustom": true,
+		"Description": "Can monitor and restart virtual machines.",
+		"Actions": [
+			"Microsoft.Storage/*/read",
+			"Microsoft.Network/*/read",
+			"Microsoft.Compute/*/read",
+			"Microsoft.Compute/virtualMachines/start/action",
+			"Microsoft.Compute/virtualMachines/restart/action",
+			"Microsoft.Authorization/*/read",
+			"Microsoft.Resources/subscriptions/resourceGroups/read",
+			"Microsoft.Insights/alertRules/*",
+			"Microsoft.Insights/diagnosticSettings/*",
+			"Microsoft.Support/*"
+		],
+		"NotActions": [
+		
+		],
+		"AssignableScopes": [
+			"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e",
+			"/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624",
+			"/subscriptions/34370e90-ac4a-4bf9-821f-85eeedeae1a2"
+		]
+	}
 
 ## 操作
 自定义角色的 **Actions** 属性指定该角色向其授予访问权限的 Azure 操作。它是操作字符串的集合，可标识 Azure 资源提供程序的安全对象操作。包含通配符 (*) 的操作字符串可以授权访问与该操作字符串相匹配的所有操作。例如：
@@ -58,23 +65,36 @@
 
 使用 `Get-AzureRmProviderOperation`（在 PowerShell 中）或 `azure provider operations show`（在 Azure CLI 中）列出 Azure 资源提供程序的操作。还可以使用这些命令来验证操作字符串是否有效，并展开通配符操作字符串。
 
-![PowerShell 屏幕截图 - Get-AzureRMProviderOperation Microsoft.Compute/virtualMachines/*/action | FT Operation, OperationName](./media/role-based-access-control-configure/1-get-azurermprovideroperation-1.png)
+	
+	Get-AzureRMProviderOperation Microsoft.Compute/virtualMachines/*/action | FT Operation, OperationName
+	
+	Get-AzureRMProviderOperation Microsoft.Network/*
 
-![Azure CLI 屏幕截图 - Azure 提供程序操作显示“Microsoft.Compute/virtualMachines/*/action”](./media/role-based-access-control-configure/1-azure-provider-operations-show.png)
+![PowerShell 屏幕截图 - Get-AzureRMProviderOperation Microsoft.Compute/virtualMachines/*/action | FT Operation, OperationName](./media/role-based-access-control-configure/1-get-azurermprovideroperation-1.png)  
+
+
+
+	azure provider operations show "Microsoft.Compute/virtualMachines/*/action" --js on | jq '.[] | .operation'
+	
+	azure provider operations show "Microsoft.Network/*"
+
+
+![Azure CLI 屏幕截图 - Azure 提供程序操作显示“Microsoft.Compute/virtualMachines/*/action”](./media/role-based-access-control-configure/1-azure-provider-operations-show.png)  
+
 
 ## NotActions
-如果排除受限制的操作可以更方便地定义你希望允许的操作集，则使用 **NotActions** 属性。通过用 **Actions** 操作减去 **NotActions** 操作可以计算出自定义角色授予的访问权限。
+如果排除受限制的操作可以更方便地定义希望允许的操作集，则使用 **NotActions** 属性。通过用 **Actions** 操作减去 **NotActions** 操作可以计算出自定义角色授予的访问权限。
 
-> [AZURE.NOTE] 如果用户分配到的角色排除 **NotActions** 中的一个操作，而又分配了第二个角色向同一操作授予了访问权限，则用户可以执行该操作。**NotActions** 不是拒绝规则 - 只是一个在需要排除特定操作时创建一组允许的操作的简便方法。
+> [AZURE.NOTE] 如果用户分配到的角色排除 **NotActions** 中的一个操作，并且分配到向同一操作授予访问权限的第二个角色，则用户可以执行该操作。**NotActions** 不是拒绝规则 - 它只是一个简便方法，可在需要排除特定操作时创建一组允许的操作。
 
 ## AssignableScopes
-自定义角色的 **AssignableScopes** 属性指定了可以分配该自定义角色的范围（订阅、资源组或资源）。可以让自定义角色只在需要它的订阅或资源组中进行分配，而不影响其他订阅或资源组的用户体验。
+自定义角色的 **AssignableScopes** 属性指定可以分配该自定义角色的范围（订阅、资源组或资源）。可以让自定义角色只在需要它的订阅或资源组中进行分配，而不影响其他订阅或资源组的用户体验。
 
 有效的可分配范围的示例包括：
 
--	“/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e”, “/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624” - 可让角色在两个订阅中进行分配。
--	“/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e” - 可让角色在单个订阅中进行分配。
--  “/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Network” - 可让角色只在网络资源组中进行分配。
+-	“/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e”、“/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624”- 可让角色在两个订阅中进行分配。
+-	“/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e”- 可让角色在单个订阅中进行分配。
+-  “/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Network”- 可让角色只在网络资源组中进行分配。
 
 > [AZURE.NOTE] 必须使用至少一个订阅、资源组或资源 ID。
 
@@ -92,11 +112,11 @@
 	Azure RBAC 中的所有内置角色都允许查看可以进行分配的角色。范围中能够执行 `Microsoft.Authorization/roleDefinition/read` 操作的用户可以查看能在该范围中进行分配的 RBAC 角色。
 
 ## 另请参阅
-- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户中的 RBAC 入门。
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户预览中的 RBAC 入门。
 - 了解如何通过以下方式管理访问权限：
 	- [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
 	- [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)
 	- [REST API](/documentation/articles/role-based-access-control-manage-access-rest/)
 - [内置角色](/documentation/articles/role-based-access-built-in-roles/)：获取有关 RBAC 中的标准角色的详细信息。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1017_2016-->

@@ -685,7 +685,6 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 - [将 Sqoop 与 HDInsight 配合使用][hdinsight-use-sqoop]
 - [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
-- [为 HDInsight 开发 C# Hadoop 流作业][hdinsight-develop-streaming-jobs]
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-java-mapreduce]
 
 
@@ -707,7 +706,6 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
-[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 [hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 

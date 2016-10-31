@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="08/11/2016"
-	wacn.date="09/12/2016"/>
-	
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2016"
+	ms.author="mimig"
+   	wacn.date="10/18/2016"/>
+
 # DocumentDB 中的一致性级别
 
-DocumentDB 是从无到有开发出来的，其设计考虑到了全局分布。它旨在提供可预测的低延迟保证、99.99%的可用性 SLA，以及多个完善定义的宽松一致性模型。目前，DocumentDB 提供四种一致性级别：非常一致性、受限停滞一致性、会话一致性和最终级别。除了其他 NoSQL 数据库提供的**非常一致性**和**最终一致性**模型以外，DocumentDB 还提供两个谨慎代码化和操作化的一致性模型 – **受限停滞一致性**和**会话一致性**，并已根据真实用例验证其有效性。总而言之，这四个一致性级别可让你在一致性、可用性和延迟之间做出合理的取舍。
+Azure DocumentDB 是从无到有开发出来的，其设计考虑到了全局分发。它旨在提供可预测的低延迟保证、99.99%的可用性 SLA，以及多个完善定义的宽松一致性模型。目前，DocumentDB 提供四种一致性级别：非常一致性、受限停滞一致性、会话一致性和最终级别。除了其他 NoSQL 数据库提供的**非常一致性**和**最终一致性**模型以外，DocumentDB 还提供两个谨慎代码化和操作化的一致性模型 - **受限停滞一致性**和**会话一致性**，并已根据真实用例验证其有效性。总而言之，这四个一致性级别可让你在一致性、可用性和延迟之间做出合理的取舍。
 
 ## 一致性的范围
 
@@ -44,7 +49,7 @@ DocumentDB 是从无到有开发出来的，其设计考虑到了全局分布。
 - 受限停滞提供全局整体顺序，但在“停滞窗口”中除外。请注意，“停滞窗口”内部和外部的区域中提供单调读取保证。
 - 与会话或最终一致性相比，受限停滞一致性提供更强的一致性保证。对于全球分布式应用程序，如果你想要获得非常一致性，同时希望获得 99.99% 的可用性和低延迟，则我们建议你使用受限停滞。
 - 配置了受限停滞一致性的 DocumentDB 帐户可将任意数量的 Azure 区域与其 DocumentDB 帐户相关联。
-- 具有非常一致性的读取操作的开销（从消耗的 RU 来讲）高于会话一致性和最终一致性，但与非常一致性相同。
+- 具有受限停滞一致性的读取操作的开销（从消耗的 RU 来讲）高于会话一致性和最终一致性，但与非常一致性相同。
 
 **会话一致性**：
 
@@ -79,16 +84,17 @@ DocumentDB 是从无到有开发出来的，其设计考虑到了全局分布。
 
 ## 配置默认的一致性级别
 
-1.  在 [Azure 门户预览](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB 帐户”。
+1.  在 [Azure 门户](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB (NoSQL)”。
 
-2. 在“DocumentDB 帐户”边栏选项卡中，选择要修改的数据库帐户。
+2. 在“DocumentDB (NoSQL)”边栏选项卡中，选择要修改的数据库帐户。
 
 3. 在帐户边栏选项卡中，单击“默认一致性”。
 
 
-4. 在“默认一致性”边栏选项卡中，选择新的一致性级别，然后单击“确定”。
+4. 在“默认一致性”边栏选项卡中，选择新的一致性级别，然后单击“保存”。
 
-	![屏幕截图：突出显示“设置”图标和默认一致性条目](./media/documentdb-consistency-levels/database-consistency-level-1.png)
+	![屏幕截图：突出显示“设置”图标和默认一致性条目](./media/documentdb-consistency-levels/database-consistency-level-1.png)  
+
 
 ## 查询的一致性级别
 
@@ -99,7 +105,7 @@ DocumentDB 是从无到有开发出来的，其设计考虑到了全局分布。
 一致（默认值）|	从非常、受限停滞、会话或最终一致性级别中选择|	从非常、受限停滞、会话或最终一致性级别中选择|
 延迟|	从非常、受限停滞、会话或最终一致性级别中选择|	最终  
 
-与读取请求一样，你可以指定 [x-ms-consistency-level](https://msdn.microsoft.com/library/azure/mt632096.aspx) 请求标头，来降低特定查询请求的一致性级别。
+与读取请求一样，可以指定 [x-ms-consistency-level](https://msdn.microsoft.com/zh-cn/library/azure/mt632096.aspx) 请求标头，来降低特定查询请求的一致性级别。
 
 ## 后续步骤
 
@@ -119,4 +125,4 @@ DocumentDB 是从无到有开发出来的，其设计考虑到了全局分布。
 
 [1]: ./media/documentdb-consistency-levels/consistency-tradeoffs.png
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1010_2016-->

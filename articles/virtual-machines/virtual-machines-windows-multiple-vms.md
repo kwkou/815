@@ -48,6 +48,6 @@
 
 VM 规模集可以集中配置网络、存储、虚拟机和扩展属性，不需将多个资源（例如 NIC 和 VM）关联在一起。
 
-<!-- 如需 VM 规模集的简介，请参阅[虚拟机规模集产品页](/home/features/virtual-machine-scale-sets/)。有关详细信息，请访问[虚拟机规模集文档](/documentation/services/virtual-machine-scale-sets/) -->。
+如需 VM 规模集的简介，请参阅[虚拟机规模集产品页](/home/features/virtual-machine-scale-sets/)。有关详细信息，请访问[虚拟机规模集文档](/documentation/services/virtual-machine-scale-sets/)。
 
 <!---HONumber=Mooncake_1017_2016-->

@@ -89,7 +89,7 @@ Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一�
 
 **Redhat base Linux**: ( 以CentOS 7.0, 64-bit system, MySQL Server 5.6(yum install) 为例)  
 
-1.在主从机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)
+1.在主从机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
 2.连接到主服务器。编辑 /etc/my.cnf, 在 [mysqld] 下添加如下内容
 
@@ -159,7 +159,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 
 **Ubuntu Linux**: ( 以 Ubuntu 14.04, 64-bit system, MySQL Server 5.5(apt-get install) 为例)
 
-1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)   
+1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)   
 
 然后在主从服务器上编辑/etc/mysql/my.cnf  
 
@@ -229,7 +229,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 
 **SUSE Linux**: ( 以 SLES 12, 64-bit system, MySQL Server 5.6(rpm install) 为例)
 
-1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/) 
+1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/) 
 
 然后连接到主服务器。编辑 /etc/my.cnf, 在 [mysqld]下添加如下内容  
 
@@ -300,7 +300,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 
 Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁住 MySQL 数据库的表  
 
-它能备份 InnoDB, XtraDB, and MyISAM 表，支持 MySQL 5.1 [1], 5.5, 5.6 and 5.7    
+它能备份 InnoDB, XtraDB, and MyISAM 表，支持 MySQL 5.1 \[1], 5.5, 5.6 and 5.7    
 
 不管您的 MySQL 服务器是 24x7 高负载，还是只有少量交易的环境，Percona XtraBackup 设计是用来“绝不阻挠生产环境下的数据库服务器的表现”。
 
@@ -387,7 +387,7 @@ Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁�
 ##<a id="backup-mongodb"></a>备份 MongoDB
 请参考文档 “[在Azure Linux虚拟机上管理配置MongoDB集群.docx](/documentation/articles/open-source-azure-virtual-machines-manage-mongodb-cluster/)” 中复制和分片的部分。  
 
-亦可使用mongodb tools.具体请参考[官网](#https://docs.mongodb.com/manual/administration/backup/)
+亦可使用mongodb tools.具体请参考[官网](https://docs.mongodb.com/manual/administration/backup/)
 
 
 <!--image reference -->

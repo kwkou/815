@@ -51,7 +51,7 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 5 | [使用具有隔离和效率的 Azure SQL 数据库构建多租户应用](/documentation/articles/sql-database-build-multi-tenant-apps/) | 了解 SQL 数据库如何构建多租户应用 |
+| 5 | 使用具有隔离和效率的 Azure SQL 数据库构建多租户应用 | 了解 SQL 数据库如何构建多租户应用 |
 | 5 | [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/) | 了解如何通过使用 SQL Server Management Studio (SSMS) 连接到在 Azure 上的 SQL 数据库。然后，使用 Transact-SQL (T-SQL) 运行示例查询。 |
 | 6 | [使用 .NET (C#) 连接到 SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/) | 使用本快速入门教程中的示例代码可以生成一个包含 C# 代码并由云中强大的 Azure SQL 数据库关系数据库支持的现代应用程序。 |
 | 7 | 使用 Azure 门户创建新的弹性数据库池 | 如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以简化多个数据库的管理和资源共享。 |
@@ -165,7 +165,7 @@
 | 74 | [什么是 Azure 弹性数据库池？](/documentation/articles/sql-database-elastic-pool/) | 可通过使用池管理成百上千个数据库可通过池分发一组性能单位的一个价格。可随心所欲地移入或移出数据。 |
 | 75 | [使用 C# 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/) | 使用 C# 数据库开发技术在 Azure SQL 数据库中创建可缩放的弹性数据库池，以便可以在多个数据库之间共享资源。 |
 | 76 | [使用 PowerShell 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/) | 了解如何通过创建可缩放的弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。 |
-| 77 | [C# 数据库开发：为 SQL 数据库创建和配置弹性数据库池](/documentation/articles/sql-database-elastic-pool-csharp/) | 使用 C# 数据库开发技术创建 Azure SQL 数据库弹性数据库池，以便可以在多个数据库之间共享资源。 |
+| 77 | [C# 数据库开发：为 SQL 数据库创建和配置弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/) | 使用 C# 数据库开发技术创建 Azure SQL 数据库弹性数据库池，以便可以在多个数据库之间共享资源。 |
 | 78 | [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/) | 弹性数据库池是由一组弹性数据库共享的可用资源的集合。本文档提供一个 Powershell 脚本来帮助你评估是否适合对一组数据库使用弹性数据库池。 |
 | 79 | [使用 C# 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-csharp/) | 使用 C# 数据库开发技术来管理 Azure SQL 数据库弹性数据库池。 |
 | 80 | 使用 Azure 门户预览监视和管理弹性数据库池 | 了解如何使用 Azure 门户和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。 |
@@ -210,7 +210,7 @@
 | 100 | 导入 BACPAC 文件以创建新的 Azure SQL 数据库 | 通过导入现有的 BACPAC 文件创建新的 Azure SQL 数据库。 |
 | 101 | 使用 Azure 门户预览将 Azure SQL 数据库还原到之前的时间点 | 将 Azure SQL 数据库还原到之前的时间点。 |
 | 102 | [使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点](/documentation/articles/sql-database-point-in-time-restore-powershell/) | 将 Azure SQL 数据库还原到之前的时间点 |
-| 103 | [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize/) | 时间点还原, Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 经典门户, Azure 经典门户 |
+| 103 | [确认已恢复的 Azure SQL 数据库] | 时间点还原, Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 经典门户, Azure 经典门户 |
 | 104 | [使用自动数据库备份恢复 Azure SQL 数据库](/documentation/articles/sql-database-recovery-using-backups/) | 了解有关时间点还原的信息，它让你能够将 Azure SQL 数据库回滚到之前的时间点（最多 35 天）。 |
 | 105 | 使用 Azure 门户预览还原已删除的 Azure SQL 数据库 | 还原已删除的 Azure SQL 数据库（Azure 门户）。 |
 | 106 | [使用 PowerShell 还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/) | 还原已删除的 Azure SQL 数据库 (PowerShell)。 |

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect 同步：连接器版本发布历史记录 | Azure"
+   pageTitle="连接器版本发行历史记录 | Azure"
    description="本主题列出了 Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接器的所有版本"
    services="active-directory"
    documentationCenter=""
@@ -9,19 +9,27 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/24/2016"
-   wacn.date="07/12/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="08/17/2016"
+   ms.author="andkjell"
+   wacn.date="10/11/2016"/>
 
-# Azure AD Connect 同步：连接器版本发布历史记录
+# 连接器版本发行历史记录
 Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接器会经常更新。
 
-本文旨在帮助你跟踪已发布的版本，并了解你是否需要更新为最新版本。
+>[AZURE.NOTE]
+本主题仅适用于 FIM 和 MIM。Azure AD Connect 不支持这些连接器。
+
+本主题列出所有已发布的连接器版本。
 
 相关链接：
 
 - [下载最新连接器](http://go.microsoft.com/fwlink/?LinkId=717495)
-- [通用 LDAP 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericldap/)参考文档
-- [通用 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)参考文档
+- [泛型 LDAP 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericldap/)参考文档
+- [泛型 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)参考文档
 - [Web 服务连接器](http://go.microsoft.com/fwlink/?LinkID=226245)参考文档
 - [PowerShell 连接器](/documentation/articles/active-directory-aadconnectsync-connector-powershell/)参考文档
 - [Lotus Domino 连接器](/documentation/articles/active-directory-aadconnectsync-connector-domino/)参考文档
@@ -30,7 +38,7 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 发布时间：2016 年 3 月
 
 **新连接器**  
-[通用 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)的初始版本。
+[泛型 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)的初始版本。
 
 **新功能：**
 
@@ -60,32 +68,32 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 
 **通用 LDAP**
 
-- [KB3078617](https://support.microsoft.com/kb/3078617) - 1.0.0597，2015 年 9 月
-- [KB3044896](https://support.microsoft.com/kb/3044896) - 1.0.0549，2015 年 3 月
-- [KB3031009](https://support.microsoft.com/kb/3031009) - 1.0.0534，2015 年 1 月
-- [KB3008177](https://support.microsoft.com/kb/3008177) - 1.0.0419，2014 年 9 月
-- [KB2936070](https://support.microsoft.com/kb/2936070) - 4.3.1082，2014 年 3 月
+- [KB3078617](https://support.microsoft.com/zh-cn/kb/3078617) - 1.0.0597，2015 年 9 月
+- [KB3044896](https://support.microsoft.com/zh-cn/kb/3044896) - 1.0.0549，2015 年 3 月
+- [KB3031009](https://support.microsoft.com/zh-cn/kb/3031009) - 1.0.0534，2015 年 1 月
+- [KB3008177](https://support.microsoft.com/zh-cn/kb/3008177) - 1.0.0419，2014 年 9 月
+- [KB2936070](https://support.microsoft.com/zh-cn/kb/2936070) - 4.3.1082，2014 年 3 月
 
 **WebServices**
 
-- [KB3008178](https://support.microsoft.com/kb/3008178) - 1.0.0419，2014 年 9 月
+- [KB3008178](https://support.microsoft.com/zh-cn/kb/3008178) - 1.0.0419，2014 年 9 月
 
 **PowerShell**
 
-- [KB3008179](https://support.microsoft.com/kb/3008179) - 1.0.0419，2014 年 9 月
+- [KB3008179](https://support.microsoft.com/zh-cn/kb/3008179) - 1.0.0419，2014 年 9 月
 
 **Lotus Domino**
 
-- [KB3096533](https://support.microsoft.com/kb/3096533) - 1.0.0597，2015 年 9 月
-- [KB3044895](https://support.microsoft.com/kb/3044895) - 1.0.0549，2015 年 3 月
-- [KB2977286](https://support.microsoft.com/kb/2977286) - 5.3.0712，2014 年 8 月
-- [KB2932635](https://support.microsoft.com/kb/2932635) - 5.3.1003，2014 年 2 月  
-- [KB2899874](https://support.microsoft.com/kb/2899874) - 5.3.0721，2013 年 10 月
-- [KB2875551](https://support.microsoft.com/kb/2875551) - 5.3.0534，2013 年 8 月
+- [KB3096533](https://support.microsoft.com/zh-cn/kb/3096533) - 1.0.0597，2015 年 9 月
+- [KB3044895](https://support.microsoft.com/zh-cn/kb/3044895) - 1.0.0549，2015 年 3 月
+- [KB2977286](https://support.microsoft.com/zh-cn/kb/2977286) - 5.3.0712，2014 年 8 月
+- [KB2932635](https://support.microsoft.com/zh-cn/kb/2932635) - 5.3.1003，2014 年 2 月
+- [KB2899874](https://support.microsoft.com/zh-cn/kb/2899874) - 5.3.0721，2013 年 10 月
+- [KB2875551](https://support.microsoft.com/zh-cn/kb/2875551) - 5.3.0534，2013 年 8 月
 
 ## 后续步骤
 了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0926_2016-->

@@ -10,8 +10,13 @@
 
 <tags
     ms.service="documentdb"
-    ms.date="08/11/2016"
-    wacn.date="09/28/2016"/>
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="python"
+    ms.topic="hero-article"
+    ms.date="08/25/2016"
+    ms.author="anhoh"
+    wacn.date="10/18/2016"/>
 
 # 使用 DocumentDB 开发 Python Flask Web 应用程序
 
@@ -39,7 +44,7 @@
 
 在按照本文中的说明操作之前，你应确保已安装下列项：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+- 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 1元试用](/pricing/1rmb-trial/)。
 - [Visual Studio 2013](http://www.visualstudio.com/) 或更高版本，或者免费版 [Visual Studio Express]()。本教程中的说明专为 Visual Studio 2015 所编写。
 - 来自 [GitHub](http://microsoft.github.io/PTVS/) 的 Python Tools for Visual Studio。本教程使用的是 Python Tools for VS 2015。
 - [azure.cn](/downloads/) 上提供 Azure Python SDK for Visual Studio 2.4 版本或更高版本。我们使用的是 Azure SDK for Python 2.7。
@@ -57,7 +62,8 @@
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
-<br/> 现在，我们将演练如何从头开始新建 Python Flask Web 应用程序。
+<br/>
+现在，我们将演练如何从头开始新建 Python Flask Web 应用程序。
 
 ## 步骤 2：新建 Python Flask Web 应用程序
 
@@ -132,7 +138,7 @@
 1. 在解决方案资源管理器中，右键单击“教程”项目，单击“添加”，然后单击“新建项”。选择“空 Python 文件”并将该文件命名为 **forms.py**。
 2. 将以下代码添加到 forms.py 文件，然后保存该文件。
 
-
+Python
 
 	from flask.ext.wtf import Form
 	from wtforms import RadioField
@@ -150,7 +156,7 @@
 1. 在“解决方案资源管理器”中，展开 **tutorial** 文件夹并打开 **views.py** 文件。
 2. 将以下导入语句添加到 **views.py** 文件的顶部，然后保存该文件。这些语句将导入 DocumentDB 的 PythonSDK 和 Flask 包。
 
-
+Python
 
 	from forms import VoteForm
 	import config
@@ -162,7 +168,7 @@
 
 - 还是在 **views.py** 中，将以下代码添加到文件末尾。这将创建窗体使用的数据库。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
 
-
+Python
 
 	@app.route('/create')
 	def create():
@@ -180,7 +186,7 @@
 	    db = client.CreateDatabase({ 'id': config.DOCUMENTDB_DATABASE })
 
 	    # Create collection
-	    collection = client.CreateCollection(db['_self'],{ 'id': config.DOCUMENTDB_COLLECTION }, { 'offerType': 'S1' })
+	    collection = client.CreateCollection(db['_self'],{ 'id': config.DOCUMENTDB_COLLECTION })
 
 	    # Create document
 	    document = client.CreateDocument(collection['_self'],
@@ -205,7 +211,7 @@
 
 - 还是在 **views.py** 中，将以下代码添加到文件末尾。这将设置窗体、读取数据库、集合和文档。不要删除 **views.py** 中任何现有的代码。仅将其追加到末尾。
 
-
+Python
 
 	@app.route('/vote', methods=['GET', 'POST'])
 	def vote(): 
@@ -332,12 +338,12 @@ html
 
 2. 将以下代码添加到 config.py，需要在下一步更改 **DOCUMENTDB\_HOST** 和 **DOCUMENTDB\_KEY** 的值。
 
-python
+Python
 
 	CSRF_ENABLED = True
 	SECRET_KEY = 'you-will-never-guess'
 	
-	DOCUMENTDB_HOST = 'https://YOUR_DOCUMENTDB_NAME.documents.chinacloduapi.cn:443/'
+	DOCUMENTDB_HOST = 'https://YOUR_DOCUMENTDB_NAME.documents.azure.com:443/'
 	DOCUMENTDB_KEY = 'YOUR_SECRET_KEY_ENDING_IN_=='
 	
 	DOCUMENTDB_DATABASE = 'voting database'
@@ -345,7 +351,7 @@ python
 	DOCUMENTDB_DOCUMENT = 'voting document'
 	
 
-3. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”导航到“密钥”边栏选项卡，双击要使用的帐户名，然后单击**Essentials** 区域的“密钥”按钮。在“密钥”边栏选项卡中，复制 **URI** 值并将其粘贴到 **config.py** 文件中，作为 **DOCUMENTDB\_HOST** 属性的值。
+3. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”导航到“密钥”边栏选项卡，双击要使用的帐户名，然后单击 **Essentials** 区域的“密钥”按钮。在“密钥”边栏选项卡中，复制 **URI** 值并将其粘贴到 **config.py** 文件中，作为 **DOCUMENTDB\_HOST** 属性的值。
 4. 返回到 Azure 门户预览，在“密钥”边栏选项卡中，复制“主密钥”或“辅助密钥”的值，并将其粘贴到 **config.py** 文件，作为 **DOCUMENTDB\_KEY** 属性的值。
 5. 在 **\_\_init\_\_.py** 文件中，添加以下行。
 
@@ -353,7 +359,7 @@ python
 
     因此，该文件的内容应为：
 
-python
+Python
 
 	from flask import Flask
 	app = Flask(__name__)
@@ -375,7 +381,7 @@ python
 
 3. 单击“创建/清除投票数据库”以生成数据库。
 
-	![Web 应用程序 – 开发详细信息的创建页面的屏幕截图](./media/documentdb-python-application/image17.png)
+	![Web 应用程序 - 开发详细信息的创建页面的屏幕截图](./media/documentdb-python-application/image17.png)
 
 4. 然后，单击“投票”并选择选项。
 
@@ -429,14 +435,14 @@ python
 
 若要将其他功能添加到 Web 应用程序，请查看 [DocumentDB Python SDK](/documentation/articles/documentdb-sdk-python/) 中提供的 API。
 
-有关 Azure、Visual Studio 和 Python 的详细信息，请参阅 [Python 开发人员中心](https://azure.microsoft.com/develop/python/)。
+有关 Azure、Visual Studio 和 Python 的详细信息，请参阅 [Python 开发人员中心](/develop/python/)。
 
 有关其他 Python Flask 教程，请参阅 [The Flask Mega-Tutorial, Part I: Hello, World!](http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)（Flask 大型教程，第 I 部分：Hello, World!）。
 
   [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
   [2]: https://www.python.org/downloads/windows/
-  [3]: https://www.microsoft.com/download/details.aspx?id=44266
+  [3]: https://www.microsoft.com/zh-cn/download/details.aspx?id=44266
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure portal]: http://portal.azure.cn
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1010_2016-->

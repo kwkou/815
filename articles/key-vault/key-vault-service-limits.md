@@ -3,14 +3,20 @@
    description="了解适用于 Azure 密钥保管库的服务限制。"
    documentationCenter="dev-center-name"
    services="key-vault"  
-   authors="msmbaldwin" 
+   authors="msmbaldwin"
    manager="mbaldwin"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="key-vault"
-   ms.date="09/22/2015"
-   wacn.date="02/26/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/16/2016"
+   ms.author="mbaldwin"
+   wacn.date="10/19/2016"/>
 
 # Azure 密钥保管库服务限制
 
@@ -18,4 +24,4 @@
 
 [AZURE.INCLUDE [key-vault-limits](../../includes/key-vault-limits.md)]
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_1010_2016-->

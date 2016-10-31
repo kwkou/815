@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+  	ms.tgt_pltfrm="na"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="brandwe"
+	wacn.date="10/17/2016"/>  
+
 
 
 # 通过 Azure AD 使用 Java 命令行应用访问 API
@@ -31,9 +37,9 @@
 3. 使用 ADAL4J 库向 Azure AD 发出登录和注销请求。
 4. 列显有关用户的数据。
 
-若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](active-directory-howto-tenant.md)。
+若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
-## 1\.将应用程序注册到 Azure AD
+## 1\.将一个应用程序注册到 Azure AD
 若要使应用程序对用户进行身份验证，你首先需要在租户中注册新的应用程序。
 
 - 登录到 Azure 管理门户。
@@ -56,58 +62,58 @@
 
 Java
 
-	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-		<modelVersion>4.0.0</modelVersion>
-		<groupId>com.microsoft.azure</groupId>
-		<artifactId>public-client-adal4j-sample</artifactId>
-		<packaging>jar</packaging>
-		<version>0.0.1-SNAPSHOT</version>
-		<name>public-client-adal4j-sample</name>
-		<url>http://maven.apache.org</url>
-		<properties>
-			<spring.version>3.0.5.RELEASE</spring.version>
-		</properties>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+			<modelVersion>4.0.0</modelVersion>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>public-client-adal4j-sample</artifactId>
+			<packaging>jar</packaging>
+			<version>0.0.1-SNAPSHOT</version>
+			<name>public-client-adal4j-sample</name>
+			<url>http://maven.apache.org</url>
+			<properties>
+				<spring.version>3.0.5.RELEASE</spring.version>
+			</properties>
 		
-		<dependencies>
-			<dependency>
-				<groupId>com.microsoft.azure</groupId>
-				<artifactId>adal4j</artifactId>
-				<version>1.1.2</version>
-			</dependency>
-			<dependency>
-				<groupId>com.nimbusds</groupId>
-				<artifactId>oauth2-oidc-sdk</artifactId>
-				<version>4.5</version>
-			</dependency>
+			<dependencies>
 				<dependency>
-				<groupId>org.json</groupId>
-				<artifactId>json</artifactId>
-				<version>20090211</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>3.0.1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>1.7.5</version>
-			</dependency>
+					<groupId>com.microsoft.azure</groupId>
+					<artifactId>adal4j</artifactId>
+					<version>1.1.2</version>
+				</dependency>
+				<dependency>
+					<groupId>com.nimbusds</groupId>
+					<artifactId>oauth2-oidc-sdk</artifactId>
+					<version>4.5</version>
+				</dependency>
+				<dependency>
+					<groupId>org.json</groupId>
+					<artifactId>json</artifactId>
+					<version>20090211</version>
+				</dependency>
+				<dependency>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+					<version>3.0.1</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+					<version>1.7.5</version>
+				</dependency>
 		</dependencies>
-		<build>
-			<finalName>public-client-adal4j-sample</finalName>
-			<plugins>
-			<plugin>
-		         <groupId>org.codehaus.mojo</groupId>
-		          <artifactId>exec-maven-plugin</artifactId>
-		           <version>1.2.1</version>
-		           <configuration>
-		            <mainClass>PublicClient</mainClass>
+			<build>
+				<finalName>public-client-adal4j-sample</finalName>
+				<plugins>
+				        <plugin>
+		            <groupId>org.codehaus.mojo</groupId>
+		            <artifactId>exec-maven-plugin</artifactId>
+		            <version>1.2.1</version>
+		            <configuration>
+		                <mainClass>PublicClient</mainClass>
 		            </configuration>
-		     </plugin>
+		        </plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
@@ -165,19 +171,19 @@ Java
 		    </archive>
 		  </configuration>
 		</plugin>
-		</plugins>
-		</build>
+				</plugins>
+			</build>
 		
-	</project>
-
-
+		</project>
+		
+		
 
 
 
 
 ## 3\.创建 java PublicClient 文件
 
-如上所述，我们将使用图形 API 来获取有关已登录的用户的数据。为了顺利进行，我们应该创建一个表示“目录对象”的文件以及一个表示“用户”的单独文件，如此便可以使用 Java 的 OO 模式。
+如上所述，我们将使用图形 API 来获取有关已登录的用户的数据。为了顺利进行，我们应该创建一个表示**目录对象**的文件以及一个表示**用户**的单独文件，如此便可以使用 Java 的 OO 模式。
 
 1. 创建一个名为 `DirectoryObject.java` 的文件，我们将用它来存储有关任何 DirectoryObject 的基本数据（你稍后可以随意使用它来执行任何其他图形查询）。可以从以下内容中剪切/粘贴此信息：
 
@@ -253,7 +259,7 @@ Java
 
 
 > [AZURE.NOTE] 
-使用最新的 Tomcat 服务器部署 WAR 非常容易。只要导航到 `http://localhost:8080/manager/` 并遵循有关上载 ``adal4jsample.war` 文件的说明即可。它会为你自动部署正确的终结点。
+使用最新的 Tomcat 服务器部署 WAR 非常容易。只要导航到 `http://localhost:8080/manager/` 并遵循有关上传 `adal4jsample.war` 文件的说明即可。它会为你自动部署正确的终结点。
 
 ##后续步骤
 
@@ -263,4 +269,4 @@ Java
 
 	git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

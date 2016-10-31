@@ -152,7 +152,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 -   [**强制隧道**](/documentation/articles/vpn-gateway-about-forced-tunneling/)。借助强制隧道，你可以通过站点到站点 VPN 隧道，将 Azure 虚拟网络中的虚拟机所生成的全部 Internet 绑定流量重定向或“强制”返回到本地位置，以便进行检查和审核
 
--   [**终结点** ACL](/documentation/articles/virtual-machines-set-up-endpoints/)。你可以通过定义终结点 ACL 来控制哪些计算机允许从 Internet 到 Azure 虚拟网络上的虚拟机的入站连接。
+-   [**终结点** ACL](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。你可以通过定义终结点 ACL 来控制哪些计算机允许从 Internet 到 Azure 虚拟网络上的虚拟机的入站连接。
 
 
 ### Azure 如何实施虚拟网络和防火墙
@@ -175,7 +175,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 存储在云中的数据必须具有足够的安全措施来防止遭到攻击，并且需要在传输过程中保持机密性和完整性。这其中包括网络控制，同时结合使用组织的基于策略的、可审核的身份和访问管理机制。
 
-内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-log-on-windows-server/)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) 和 [Azure 经典管理门户](http://manage.windowsazure.cn)对虚拟机进行的访问始终加密。
+内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-windows-classic-connect-logon/)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) 和 [Azure 经典管理门户](http://manage.windowsazure.cn)对虚拟机进行的访问始终加密。
 
 为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction/) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
 

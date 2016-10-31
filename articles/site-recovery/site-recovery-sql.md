@@ -41,7 +41,6 @@ Site Recovery 可以保护下表中汇总的 SQL Server。
  |**本地到本地** | **本地到 Azure** 
 ---|---|---
 **Hyper-V** | 是 | 是
-**VMware** | 是 | 是 
 **物理服务器** | 是 | 是
 
 
@@ -99,12 +98,6 @@ SQL Server（任何版本） | Enterprise 或 Standard | 故障转移群集实�
 
 本文档中的说明假设辅助位置提供了域控制器。[详细了解](/documentation/articles/site-recovery-active-directory/)如何使用 Site Recovery 保护 Active Directory。
 
-## 使用 SQL Server Always-On（本地至 Azure）集成保护
-
-
-Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并且 Azure 虚拟机设置为“辅助”，则可以使用 Site Recovery 来管理可用性组的故障转移。
-
->[AZURE.NOTE] 此功能目前处于预览状态，当主要数据中心的 Hyper-V 主机服务器由 VMM 云管理以及 VMware 设置由[配置服务器](/documentation/articles/site-recovery-vmware-to-azure/#configuration-server-prerequisites)管理时可供使用。此功能目前尚无法在新的 Azure 门户中使用。
 
 #### 先决条件
 
@@ -288,7 +281,7 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 6. 创建可用性组侦听器，或更新现有的侦听器，以包含异步副本虚拟机。
 7. 确保应用程序场是使用侦听器设置的。如果它是使用数据库服务器名称设置的，请将其更新为使用侦听器，以便不需要在故障转移后重新配置该场。
 
-对于使用分布式事务的应用程序，建议你使用[包含 SAN 复制的 Site Recovery](/documentation/articles/site-recovery-vmm-san/) 或 [VMWare/物理服务器站点到站点复制](/documentation/articles/site-recovery-vmware-to-vmware/)。
+对于使用分布式事务的应用程序，建议你使用[包含 SAN 复制的 Site Recovery](/documentation/articles/site-recovery-vmm-san/)。
 
 ### 恢复计划注意事项
 
@@ -315,7 +308,7 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 
 ### 本地到本地
 
-- 如果应用程序使用分布式事务，建议你为 Hyper-V 环境部署[包含 SAN 复制的 Site Recovery](/documentation/articles/site-recovery-vmm-san/)，为 VMware 环境部署 [VMware/物理服务器到 VMware](/documentation/articles/site-recovery-vmware-to-vmware/)。
+- 如果应用程序使用分布式事务，建议你为 Hyper-V 环境部署[包含 SAN 复制的 Site Recovery](/documentation/articles/site-recovery-vmm-san/)。
 
 - 对于非 DTC 应用程序，可使用上述方法通过利用本地高安全性数据库镜像将群集恢复为独立服务器。
 
@@ -326,7 +319,7 @@ Site Recovery 本身支持 SQL AlwaysOn。如果你已创建 SQL 可用性组并
 
 1. 在本地站点中配置其他独立 SQL Server 实例。
 2. 将此实例配置为需要保护的数据库的镜像。在高安全模式下配置镜像。
-3.	根据环境（[Hyper-V](/documentation/articles/site-recovery-hyper-v-site-to-azure/) 或 [VMware/物理服务器](/documentation/articles/site-recovery-vmware-to-azure/)）在本地站点上配置 Site Recovery。
+3.	根据环境（[Hyper-V](/documentation/articles/site-recovery-hyper-v-site-to-azure/)）在本地站点上配置 Site Recovery。
 4.	使用 Site Recovery 复制将新的 SQL Server 实例复制到 Azure。该实例是高安全性镜像副本，因此会将它与主群集同步，但会使用站点恢复复制将它复制到 Azure。
 
 下图演示了此设置。

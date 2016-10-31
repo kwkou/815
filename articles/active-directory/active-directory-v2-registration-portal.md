@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="dstrockis"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
+
 
 # 应用注册参考
 本文档提供可在 Microsoft 应用注册门户 [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中找到的各种功能的上下文和说明。
@@ -38,5 +45,4 @@
 
 如果你只打算使用 Azure AD v2.0 终结点，则可以安全地禁用 Live SDK 支持。
 
-
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->

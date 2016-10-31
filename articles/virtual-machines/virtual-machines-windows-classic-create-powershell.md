@@ -102,7 +102,7 @@
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.Username -Password $cred.GetNetworkCredential().Password
 
- 选择一个强密码。若要检查其强度，请参阅[密码检查器：使用强密码](https://www.microsoft.com/security/pc-security/password-checker.aspx)。
+ 选择一个强密码。
 
 （可选）若要将 Windows 计算机添加到现有的 Active Directory 域，请指定本地管理员帐户和密码、域以及域帐户的名称和密码。
 

@@ -9,14 +9,20 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/16/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="brandwe"
+	wacn.date="10/17/2016"/>  
+
 
 # 节点 WEB API 入门
 
 [AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
-**Passport** 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Microsoft Azure Active Directory 开发了一个策略。我们将安装此模块，然后添加 Microsoft Azure Active Directory `passport-azure-ad` 插件。
+**Passport** 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Azure Active directory 开发了一个策略。我们将安装此模块，然后添加 Azure Active Directory `passport-azure-ad` 插件。
 
 为此，你需要：
 
@@ -26,15 +32,14 @@
 
 本教程的代码[在 GitHub 上](https://github.com/Azure-Samples/active-directory-node-webapi)维护。
 
-> [AZURE.NOTE] 本文未涵盖如何使用 Azure AD B2C 来实施登录、注册和配置文件管理，而是着重介绍如何在用户已通过身份验证后调用 Web API。你应该先从[如何与 Azure Active Directory 集成文档](/documentation/articles/active-directory-how-to-integrate/)开始（如果还没有进行），以了解 Azure Active Directory 的基础知识。
+> [AZURE.NOTE] 本文未涵盖如何使用 Azure AD B2C 来实施登录、注册和配置文件管理，而是着重介绍如何在用户已通过身份验证后调用 Web API。如果尚未开始，应该先从[如何与 Azure Active Directory 集成文档](/documentation/articles/active-directory-how-to-integrate/)入手，了解 Azure Active Directory 的基础知识。
 
 
 我们已在 GitHub 中的 MIT 许可证下发布了此运行示例的所有源代码，你可以任意克隆（甚至分发！）这些代码，并提供反馈和发出请求。
 
 ## 关于 Node.js 模块
 
-在本演练中，我们将使用 Node.js 模块。模块是可加载的 JavaScript 包，可为你的应用程序提供特定功能。你通常会使用 Node.js NPM 命令行工具在 NPM 安装目录中安装模块，但一些模块（如 HTTP 模块）是作为核心 Node.js 包的一部分提供的。
-安装的模块保存在 Node.js 安装目录的根目录下的 node\_modules 目录中。node\_modules 目录中的每个模块都保留自己的 node\_modules 目录，其中包含它依赖的所有模块，每个必需的模块都有一个 node\_modules 目录。这种递归的目录结构表示了依赖关系链。
+在本演练中，我们将使用 Node.js 模块。模块是可加载的 JavaScript 包，可为你的应用程序提供特定功能。你通常会使用 Node.js NPM 命令行工具在 NPM 安装目录中安装模块，但一些模块（如 HTTP 模块）是作为核心 Node.js 包的一部分提供的。安装的模块保存在 Node.js 安装目录的根目录下的 node\_modules 目录中。node\_modules 目录中的每个模块都保留自己的 node\_modules 目录，其中包含它依赖的所有模块，每个必需的模块都有一个 node\_modules 目录。这种递归的目录结构表示了依赖关系链。
 
 这种依赖关系链结构会导致应用程序占用空间变大，但保证满足所有依赖项的要求，并且开发中使用的模块版本也将在生产中使用。这使得生产应用程序的行为更有预测性，并防止出现影响用户的版本控制问题。
 
@@ -44,7 +49,7 @@
 
 ## 2\.创建应用程序
 
-你现在需要在目录中创建应用，以便为 Azure AD 提供一些必要信息，让它与应用安全地通信。在此案例中，因为客户端应用和 Web API 会组成一个逻辑应用，所以将由单一**应用程序 ID** 表示。若要创建应用，请遵循[这些说明](/documentation/articles/active-directory-how-applications-are-added/)。如果你要生成业务线应用，[这些附加说明可能很有用](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications/)。
+你现在需要在目录中创建应用，以便为 Azure AD 提供一些必要信息，让它与应用安全地通信。在此案例中，因为客户端应用和 Web API 会组成一个逻辑应用，所以将由单一**应用程序 ID** 表示。若要创建应用，请遵循[这些说明](/documentation/articles/active-directory-how-applications-are-added/)。如果要生成业务线应用，[这些附加说明可能很有用](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications/)。
 
 请务必：
 
@@ -149,13 +154,14 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 
 ## 6\.将 Passport.js 安装到 Web API 中
 
-[Passport](http://passportjs.org/) 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Azure Active directory 开发了一个策略。我们将安装此模块，然后添加 Azure Active Directory 策略插件。
+[Passport](http://passportjs.org) 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Azure Active directory 开发了一个策略。我们将安装此模块，然后添加 Azure Active Directory 策略插件。
 
 在命令行中，将目录切换到 azuread 目录。
 
 输入以下命令以安装 passport.js
 
-`npm install passport`
+`npm install passport`  
+
 
 该命令的输出应如下所示：
 
@@ -173,9 +179,8 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 
 键入以下命令以安装 Passport.js passport-azure-ad 模块：
 
-`npm install passport-azure-ad`
+`npm install passport-azure-ad`  
 
-该命令的输出应如下所示：
 
 	
 	passport-azure-ad@1.0.0 node\_modules/passport-azure-ad
@@ -197,7 +202,8 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 我们将使用 MongoDB 作为数据存储。为此，我们需要安装这两个广泛使用的插件来管理模型和称为 Mongoose 的架构，以及 MongoDB 的数据库驱动程序（也称为 MongoDB）。
 
 
-* `npm install mongoose`
+* `npm install mongoose`  
+
 
 ## 9\.安装其他模块
 
@@ -206,14 +212,17 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 
 输入以下命令，以在 node\_modules 目录中安装以下模块：
 
-* `npm install assert-plus`
+* `npm install assert-plus`  
+
 * `npm install bunyan`
-* `npm update`
+* `npm update`  
+
 
 
 ## 10\.创建包含依赖项的 server.js
@@ -222,7 +231,8 @@ server.js 文件将提供 Web API 服务器的大多数功能。我们要将大�
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中创建 `server.js` 文件，然后添加以下信息：
 
@@ -242,18 +252,21 @@ Javascript
 	var getopt = require('posix-getopt');
 	var mongoose = require('mongoose/');
 	var restify = require('restify');
-	var OIDCBearerStrategy = require('passport-azure-ad').BearerStrategy;
+	var passport = require('passport');
+	var BearerStrategy = require('passport-azure-ad').BearerStrategy;
+
 
 保存文件。稍后我们将会使用该文件。
 
-## 步骤 11：创建一个配置文件用于存储 Azure AD 设置
+## 11\.创建一个配置文件用于存储 Azure AD 设置
 
 此代码文件会将配置参数从 Azure Active Directory 门户传递到 Passport.js。当你在本演练的第一部分中向门户添加 Web API 时，已经创建了这些配置值。我们将解释在复制代码后，要输入其中的哪些参数值。
 
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中创建 `config.js` 文件，然后添加以下信息：
 
@@ -282,7 +295,8 @@ Javascript
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中打开 `server.js` 文件，并添加以下信息：
 
@@ -342,9 +356,9 @@ Javascript
 
 现在，我们已将这三个文件统一放在 REST API 服务中，接下来让我们的准备工作发挥作用。
 
-对于本演练，我们将使用 MongoDB 来存储 **步骤 4** 中所述的任务。
+对于本演练，我们将使用 MongoDB 来存储***步骤 4*** 中所述的任务。
 
-回顾我们在 **步骤 11** 中创建的 `config.js` 文件，我们将数据库称为 `tasklist`，因为这是我们在 mogoose\_auth\_local 连接 URL 的末尾放置的内容。你无需事先在 MongoDB 中创建此数据库，当你首次运行服务器应用程序时，系统将创建此数据库（假定它不存在）。
+回顾我们在 ***步骤 11*** 中创建的 `config.js` 文件，我们将数据库称为 `tasklist`，因为这是我们在 mogoose\_auth\_local 连接 URL 的末尾放置的内容。你无需事先在 MongoDB 中创建此数据库，当你首次运行服务器应用程序时，系统将创建此数据库（假定它不存在）。
 
 现在，我们已告诉服务器要使用哪个 MongoDB 数据库，接下来我们需要编写一些附加的代码，以便为服务器任务创建模型和架构。
 
@@ -352,20 +366,21 @@ Javascript
 
 我们的架构模型非常简单，你可以根据需要对其进行扩展。
 
-NAME - 分配到任务的用户名。一个**字符串**。
+NAME - 分配到任务的用户名。一个***字符串***。
 
-TASK - 任务本身。一个**字符串**。
+TASK - 任务本身。一个***字符串***。
 
-DATE - 任务截止日期。一个**日期时间**
+DATE - 任务截止日期。一个***日期时间***
 
-COMPLETED - 任务是否已完成。一个**布尔值**
+COMPLETED - 任务是否已完成。一个***布尔值***
 
 #### 在代码中创建架构
 
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中打开 `server.js` 文件，并在配置条目下面添加以下信息：
 
@@ -388,7 +403,7 @@ Javascript
 	mongoose.model('Task', TaskSchema);
 	var Task = mongoose.model('Task');
 
-从该代码中可以看到，我们将会创建架构，然后创建在定义**路由**时，将在整个代码中用于存储数据的模型对象。
+从该代码中可以看到，我们将会创建架构，然后创建在定义***路由***时，将在整个代码中用于存储数据的模型对象。
 
 ## 14\.为任务 REST API 服务器添加路由
 
@@ -428,7 +443,8 @@ Javascript
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 在偏好的编辑器中打开 `server.js` 文件，并在前面创建的数据库条目下面添加以下信息：
 
@@ -709,7 +725,7 @@ Javascript
 	next();
 	});
 	server.listen(serverPort, function() {
-	var consoleMessage = '\n Microsoft Azure Active Directory Tutorial';
+	var consoleMessage = '\n Azure Active Directory Tutorial';
 	consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++';
 	consoleMessage += '\n %s server is listening at %s';
 	consoleMessage += '\n Open your browser to %s/tasks\n';
@@ -725,20 +741,22 @@ Javascript
 
 最简单的检查方法是在命令行中使用 curl。在这样做之前，我们需要一个用于分析 JSON 输出的简单实用工具。为此，请安装 json 工具，因为下面的所有示例都要使用该工具。
 
-`$npm install -g jsontool`
+`$npm install -g jsontool`  
+
 
 这将全局安装 JSON 工具。现在，我们已安装了工具，让我们试运行服务器：
 
 首先，请确保 monogoDB 实例正在运行。
 
-`$sudo mongod`
+`$sudo mongod`  
+
 
 然后，切换到目录并开始运行。
 
-`$ cd azuread` 
-`$ node server.js`
+`$ cd azuread` `$ node server.js`
 
-`$ curl -isS http://127.0.0.1:8080 | json`
+`$ curl -isS http://127.0.0.1:8080 | json`  
+
 
 Shell
 	HTTP/1.1 200 OK
@@ -759,7 +777,8 @@ Shell
 
 然后，我们按如下所示添加一个任务：
 
-`$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`
+`$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`  
+
 
 响应应为：
 
@@ -776,7 +795,8 @@ Shell
 
 我们可以按如下所示列出 Brandon 的任务：
 
-`$ curl -isS http://127.0.0.1:8080/tasks/brandon/`
+`$ curl -isS http://127.0.0.1:8080/tasks/brandon/`  
+
 
 如果一切正常，我们可以将 OAuth 添加到 REST API 服务器。
 
@@ -789,7 +809,8 @@ Shell
 
 在命令行中，将目录切换到 **azuread** 文件夹（如果尚未进入）：
 
-`cd azuread`
+`cd azuread`  
+
 
 ### 1：使用 passport-azure-ad 随附的 OIDCBearerStrategy
 
@@ -865,7 +886,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 
 ### 2\.最后保护一些终结点
 
-通过结合你要使用的协议指定 `passport.authenticate()` 调用来保护终结点。
+通过结合要使用的协议指定 `passport.authenticate()` 调用来保护终结点。
 
 让我们在服务器代码编辑路由，以做一些更有趣的事：
 
@@ -916,12 +937,12 @@ Javascript
 
 然后，切换到目录并开始运行。
 
-  $ cd azuread 
+  $ cd azuread
   $ node server.js
 
 试用基本 POST：
 
-`$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`
+`$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`  
 
 Shell
 		
@@ -951,4 +972,4 @@ Shell
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

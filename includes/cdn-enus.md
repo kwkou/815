@@ -24,13 +24,13 @@ Existing Azure customers in China can now use CDN in the [Azure CDN portal](http
 You can create CDN endpoints for storage accounts, cloud services, websites, or media services in existing Azure subscriptions. You can also create new storage accounts, cloud services, or websites for use in Azure subscriptions by using the following method:
 
 ### Create a storage account for Azure subscriptions
-Refer to [How to create storage accounts](/zh-cn/documentation/articles/storage-create-storage-account/)
+Refer to [How to create storage accounts](/documentation/articles/storage-create-storage-account/)
 
 ### Create a cloud service for Azure subscriptions
-Refer to [How to create and deploy cloud services](/zh-cn/documentation/articles/cloud-services-how-to-create-deploy/)
+Refer to [How to create and deploy cloud services](/documentation/articles/cloud-services-how-to-create-deploy/)
 
 ### Create a website for Azure subscriptions
-Refer to [How to create and deploy websites](/zh-cn/documentation/articles/web-sites-create-deploy/)
+Refer to [How to create and deploy websites](/documentation/articles/web-sites-create-deploy/)
 
 ### Create a media service for Azure subscriptions
 Refer to [How to create and deploy media services](/documentation/articles/media-services-create-account/)

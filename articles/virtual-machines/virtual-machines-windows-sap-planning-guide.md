@@ -845,7 +845,7 @@ ___
 > Windows 设置（例如 Windows SID 和主机名）必须通过 sysprep 命令在本地 VM 抽象化/通用化。
 \[comment]: <>（MSSedusch > 在此处查看详细信息：）
 \[comment]: <>（MShermannd TODO：第一个链接与经典模型有关。找不到 Azure 文档）
-\[comment]: <> (MSSedusch > <https://www.azure.cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/>)
+\[comment]: <> (MSSedusch > <https://www.azure.cn/documentation/articles/virtual-machines-windows-classic-createupload-vhd/>)
 \[comment]: <> (MSSedusch > <http://blogs.technet.com/b/blainbar/archive/2014/09/12/modernizing-your-infrastructure-with-hybrid-cloud-using-custom-vm-images-and-resource-groups-in-microsoft-azure-part-21-blain-barton.aspx>)
 >
 > ![Linux][Logo_Linux] Linux
@@ -966,7 +966,7 @@ __Powershell__
 __Azure CLI__
 
 * 使用 _azure config mode arm_ 切换到 Azure Resource Manager 模式
-* 使用 _azure login_ 登录到订阅
+* 使用 _azure login -e AzureChinaCloud_ 登录到订阅
 * 使用 _azure account set `<subscription name or id`>_ 选择订阅
 * 使用 _azure storage blob upload_ 上载 VHD - 请参阅 [Using the Azure CLI with Azure Storage][storage-azure-cli]（将 Azure CLI 用于 Azure 存储空间）
 * 使用 _azure vm create_ 和参数 -d 创建新的 VM，并将上载的 VHD 指定为 OS 磁盘
@@ -991,7 +991,7 @@ __Azure CLI__
 
 * 在 Windows 上使用 _sysprep_ 或者在 Linux 上使用 _waagent -deprovision_ 将 VM 通用化 - 请参阅 [How to capture a Windows virtual machine in the Resource Manager deployment model][virtual-machines-windows-capture-image-prepare-the-vm-for-image-capture]（如何捕获 Resource Manager 部署模型中的 Windows 虚拟机）或 [How to capture a Linux virtual machine to use as a Resource Manager template][virtual-machines-linux-capture-image-capture]（如何捕获用作 Resource Manager 模板的 Linux 虚拟机）（适用于 Linux）
 * 使用 _azure config mode arm_ 切换到 Azure Resource Manager 模式
-* 使用 _azure login_ 登录到订阅
+* 使用 _azure login -e AzureChinaCloud_ 登录到订阅
 * 使用 _azure account set `<subscription name or id`>_ 选择订阅
 * 使用 _azure storage blob upload_ 上载 VHD - 请参阅 [Using the Azure CLI with Azure Storage][storage-azure-cli]（将 Azure CLI 用于 Azure 存储空间）
 * 使用 _azure vm create_ 和参数 -Q 创建新的 VM，并将上载的 VHD 指定为 OS 磁盘

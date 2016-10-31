@@ -28,7 +28,7 @@
 
 ### Azure CLI 先决条件
 
-如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install/)。使用 `azure login` 命令登录并确保处于 Resource Manager 模式 (`azure config mode arm`)。
+如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install/)。使用 `azure login -e AzureChinaCloud` 命令登录并确保处于 Resource Manager 模式 (`azure config mode arm`)。
 
 确保已安装 [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/) 2.0.5 版或更高版本。
 
@@ -79,7 +79,7 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
 	azure vm extension set <resource group> <vmname> VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
 
 ### 重新部署 VM
-你可以将 VM 重新部署到 Azure 中的另一个节点，这可能可以更正任何潜在的网络问题。若要使用 Azure 门户预览版重新部署 VM，请选择“浏览”>“虚拟机”> *你的 Linux 虚拟机* >“重新部署”。有关如何执行此操作的信息，请参阅 [Redeploy virtual machine to new Azure node](/documentation/articles/virtual-machines-windows-redeploy-to-new-node/)（将虚拟机重新部署到新的 Azure 节点）。当前不能使用 Azure CLI 重新部署 VM。
+你可以将 VM 重新部署到 Azure 中的另一个节点，这可能可以更正任何潜在的网络问题。若要使用 Azure 门户预览重新部署 VM，请选择“浏览”>“虚拟机”> *你的 Linux 虚拟机* >“重新部署”。有关如何执行此操作的信息，请参阅 [Redeploy virtual machine to new Azure node](/documentation/articles/virtual-machines-windows-redeploy-to-new-node/)（将虚拟机重新部署到新的 Azure 节点）。当前不能使用 Azure CLI 重新部署 VM。
 
 > [AZURE.NOTE] 请注意，完成此操作后，你会丢失临时磁盘数据，而系统则会更新与虚拟机关联的动态 IP 地址。
 
@@ -88,9 +88,9 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
 
 若要解决使用经典部署模型创建的 VM 中最常见的 SSH 连接失败问题，请尝试以下步骤。在执行每个步骤之后，请尝试重新连接到 VM。
 
-- 从 [Azure 门户预览版](https://portal.azure.cn)重置远程访问。在 Azure 门户预览版中，选择“浏览”>“虚拟机(经典)”> *你的 Linux 虚拟机* >“重置远程...”。
+- 从 [Azure 门户预览](https://portal.azure.cn)重置远程访问。在 Azure 门户预览中，选择“浏览”>“虚拟机(经典)”> *你的 Linux 虚拟机* >“重置远程...”。
 
-- 重启 VM。在 [Azure 门户预览版](https://portal.azure.cn)中，选择“浏览”>“虚拟机(经典)”> *你的 Linux 虚拟机* >“重启”。
+- 重启 VM。在 [Azure 门户预览](https://portal.azure.cn)中，选择“浏览”>“虚拟机(经典)”> *你的 Linux 虚拟机* >“重启”。
 
 	- 或 -
 

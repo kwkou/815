@@ -30,6 +30,6 @@
 提供有关积压工作的反馈有多种选择：
 
 * 在下面添加评论。
-* 在 [Azure 内容存储库](https://github.com/Azure/azure-content/blob/master/articles/hdinsight/hdinsight-documentation-backlog.md)中提交针对本文档的拉取请求。
+* 在 [Azure 内容存储库](https://github.com/wacn/techcontent/blob/master/articles/hdinsight/hdinsight-documentation-backlog.md)中提交针对本文档的拉取请求。
 
 <!---HONumber=Mooncake_0530_2016-->

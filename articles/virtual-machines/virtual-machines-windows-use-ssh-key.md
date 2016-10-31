@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/15/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 #如何在 Azure 上结合使用 SSH 和 Windows
 
@@ -128,13 +128,13 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 
 6. 单击**“打开”**。您将收到与如下所示的提示：
 
-	![linuxgoodforeignkey](./media/virtual-machines-linux-mac-create-ssh-keys/linuxgoodforeignkey.png)
+	![linuxgoodforeignkey](./media/virtual-machines-linux-ssh-from-linux/linuxgoodforeignkey.png)
 
 7. 单击**“确定”**
 
 8. 单击在下面的屏幕截图中突出显示的**“保存私钥”**：
 
-	![linuxputtyprivatekey](./media/virtual-machines-linux-mac-create-ssh-keys/linuxputtygenprivatekey.png)
+	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-linux/linuxputtygenprivatekey.png)
 
 9. 将文件另存为 PPK
 
@@ -145,11 +145,11 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 2.	运行 putty.exe
 3.	从经典管理门户使用 IP 填充主机名：
 
-	![linuxputtyconfig](./media/virtual-machines-linux-mac-create-ssh-keys/linuxputtyconfig.png)
+	![linuxputtyconfig](./media/virtual-machines-linux-ssh-from-linux/linuxputtyconfig.png)
 
 4.	在选择**“打开”**之前，依次单击“连接”>“SSH”>“身份验证”选项卡以选择你的密钥。在下面的屏幕截图中查看要填充的字段：
 
-	![linuxputtyprivatekey](./media/virtual-machines-linux-mac-create-ssh-keys/linuxputtyprivatekey.png)
+	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-linux/linuxputtyprivatekey.png)
 
 5.	单击**“打开”**以连接到你的虚拟机
  

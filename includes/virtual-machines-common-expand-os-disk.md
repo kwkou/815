@@ -11,7 +11,7 @@
 
 1.  在资源管理模式下登录你的 Azure 帐户，然后选择你的订阅，如下所示：
 
-	    Login-AzureRmAccount
+	    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 	    Select-AzureRmSubscription -SubscriptionName 'my-subscription-name'
 
 2.  设置资源组名称和 VM 名称，如下所示：
@@ -43,7 +43,7 @@
 ## 摘要
 在本文中，我们已使用 Powershell 的 Azure Resource Manager 模块扩展 IaaS 虚拟机的 OS 驱动器。以下重现了完整的脚本供你参考：
 
-	Login-AzureRmAccount
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 	Select-AzureRmSubscription -SubscriptionName 'my-subscription-name'
 	$rgName = 'my-resource-group-name'
 	$vmName = 'my-vm-name'

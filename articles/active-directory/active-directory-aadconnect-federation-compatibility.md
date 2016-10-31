@@ -9,17 +9,22 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="08/08/2016"
-	wacn.date="08/29/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/12/2016"
+	ms.author="billmath"
+	wacn.date="10/11/2016"/>
 
 # Azure AD 联合身份验证兼容性列表
 Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单一登录与增强的应用程序访问安全性，以便在不使用任何非 Microsoft 解决方案的情况下实施混合部署和仅限云的部署。与大多数 Microsoft Online 服务一样，Office 365 可与 Azure Active Directory 集成，以利用目录服务、身份验证和授权。Azure Active Directory 还为数千种 SaaS 应用程序与本地 Web 应用程序提供单一登录。有关支持的 SaaS 应用程序，请参阅 Azure Active Directory 应用程序库。
 
-对于投资了非 Microsoft 联合解决方案的组织，本主题包含有关通过以下“Azure Active Directory 联合兼容性列表”中所列的非 Microsoft 标识提供者，为使用 Microsoft 联机服务的 Windows Server Active Directory 用户配置单一登录的指导。
+对于投资了非 Microsoft 联合解决方案的组织，本主题包含有关通过以下"Azure Active Directory 联合兼容性列表"中所列的非 Microsoft 标识提供者，为使用 Microsoft 联机服务的 Windows Server Active Directory 用户配置单一登录的指导。
 
 
 ![](./media/active-directory-aadconnect-federation-compatibility/oxford2.jpg)   
-[Oxford Computer Group](http://oxfordcomputergroup.com/) 作为代表 Microsoft 的第三方，利用非 Microsoft 标识提供者针对 Azure Active Directory 的一组常见用例测试了这些单一登录体验。
+[Oxford Computer Group](http://oxfordcomputergroup.com) 作为代表 Microsoft 的第三方，利用非 Microsoft 标识提供者针对 Azure Active Directory 的一组常见用例测试了这些单一登录体验。
 
 有关如何获取此处列出的第三方标识提供者的信息，请通过 [idp@oxfordcomputergroup.com](mailto:idp@oxfordcomputergroup.com) 与 Oxford Computer Group 联系。
 
@@ -37,12 +42,12 @@ Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单
 - [Centrify](#centrify)
 - [IBM Tivoli Federated Identity Manager 6.2.2](#ibm-tivoli-federated-identity-manager-622)
 - [SecureAuth IdP 7.2.0](#secureauth-idp-720)
-- [CA SiteMinder 12.52](#ca-siteminder-1252)
+- [CA SiteMinder 12.52](#ca-siteminder-1252-sp1-cumulative-release-4)
 - [RadiantOne CFS 3.0](#radiantone-cfs-30)
 - [Okta](#okta)
 - [OneLogin](#onelogin)
 - [NetIQ Access Manager 4.0.1](#netiq-access-manager-401)
-- [BIG-IP with Access Policy Manager BIG-IP ver.11.3x – 11.6x](#big-ip-with-access-policy-manager-big-ip-ver-113x-116x)
+- [BIG-IP with Access Policy Manager BIG-IP ver.11.3x - 11.6x](#big-ip-with-access-policy-manager-big-ip-ver-113x-116x)
 - [VMware Workspace Portal version 2.1](#vmware-workspace-portal-version-21)
 - [Sign&go 5.3](#signampgo-53)
 - [IceWall Federation Version 3.0](#icewall-federation-version-30)
@@ -67,7 +72,7 @@ Azure Active Directory 可以通过与本地 Active-Directory 联合，或者在
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 |使用 ADAL 的现代应用程序，例如 Office 2016| 支持|无|
 
-有关将 Azure Active Directory 与 AD FS 配合使用的详细信息，请参阅 [Active Directory Federation Services (ADFS)（Active Directory 联合身份验证服务 (ADFS)）](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs)
+有关将 Azure Active Directory 与 AD FS 配合使用的详细信息，请参阅 [Active Directory 联合身份验证服务 (ADFS)](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs/)
 
 有关将 Azure Active Directory 与密码同步配合使用的详细信息，请参阅 [Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。
 
@@ -82,7 +87,7 @@ Optimal IDM Virtual Identity Server Federation Services 可以对位于客户本
 | --------- | --------- |--------- |
 | 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |无|
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |Windows 集成身份验证|
-| 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |有关客户端访问策略的详细信息，请参阅 [Limiting Access to Office 365 Services Based on the Location of the Client（基于客户端位置限制其对 Office 365 服务的访问权限）](https://technet.microsoft.com/library/hh526961.aspx)。|
+| 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |有关客户端访问策略的详细信息，请参阅 [Limiting Access to Office 365 Services Based on the Location of the Client](https://technet.microsoft.com/zh-cn/library/hh526961.aspx)（基于客户端位置限制其对 Office 365 服务的访问权限）。|
 
 
 
@@ -99,7 +104,7 @@ PingFederate 6.11 实施广泛使用的 WS 联合标识标准以提供单一登�
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |无（以前的版本必须升级到 6.11）|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关如何配置此 STS 从而为你的 Active Directory 用户提供单一登录体验的 PingFederate 说明，请从[此处](http://go.microsoft.com/fwlink/?LinkID=266321)下载 pdf 文件。
+有关如何配置此 STS 从而为你的 Active Directory 用户提供单一登录体验的 PingFederate 说明，请从[此处](http://go.microsoft.com/fwlink/?LinkID=266321)下载 PDF 文件。
 
 ## PingFederate 7.2 
 PingFederate 7.2 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
@@ -154,7 +159,7 @@ Centrify 帮助提供针对 Office 365 的联合单一登录体验，而无需�
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |无|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 IBM Tivoli Federated Identity Manager 的详细信息，请参阅 [IBM Security Access Manager for Microsoft Applications（Microsoft 应用程序的 IBM 安全访问管理）](http://www-01.ibm.com/support/docview.wss?uid=swg24029517)。
+有关 IBM Tivoli Federated Identity Manager 的详细信息，请参阅 [IBM Security Access Manager for Microsoft Applications](http://www-01.ibm.com/support/docview.wss?uid=swg24029517)（Microsoft 应用程序的 IBM 安全访问管理）。
 
 ## SecureAuth IdP 7.2.0 
 SecureAuth IdP 7.2.0 实施广泛使用的 WS 联合/WS 信任身份标准，以提供单一登录体验和属性交换框架。
@@ -169,18 +174,18 @@ SecureAuth IdP 7.2.0 实施广泛使用的 WS 联合/WS 信任身份标准，以
 
 有关 SecureAuth 的详细信息，请参阅 [SecureAuth IdP](http://go.microsoft.com/?linkid=9845293)。
 
-## CA SiteMinder 12.52 
+## CA SiteMinder 12.52 SP1 Cumulative Release 4
 CA SiteMinder Federation 12.52 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
 
 | 客户端 |支持 |异常|
 | --------- | --------- |--------- |
-| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |Windows 集成身份验证|
-| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |Windows 集成身份验证|
+| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |无|
+| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |无|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 CA SiteMinder 详细信息，请参阅 [CA SiteMinder Federation](http://www.ca.com/us/products/ca-single-sign-on.html)。
+有关 CA SiteMinder 详细信息，请参阅 [CA SiteMinder Federation。](http://www.ca.com/us/products/ca-single-sign-on.html)
 
 ## RadiantOne CFS 3.0 
 RadiantOne Cloud Federation Service (CFS) 3.0 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
@@ -193,7 +198,7 @@ RadiantOne Cloud Federation Service (CFS) 3.0 实施广泛使用的 WS 联合标
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |Windows 集成身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 RadiantOne CFS 的详细信息，请参阅 [RadiantOne CFS](http://www.radiantlogic.com/products/radiantone-cfs/)。
+有关 RadiantOne CFS 的详细信息，请参阅 [RadiantOne CFS。](http://www.radiantlogic.com/products/radiantone-cfs)
 
 
 ## Okta 
@@ -208,7 +213,7 @@ Okta 实施广泛使用的 WS 联合标识标准以提供单一登录和属性�
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |Windows 集成身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 Okta 的详细信息，请参阅 [Okta](https://www.okta.com/)。
+有关 Okta 的详细信息，请参阅 [Okta。](https://www.okta.com)
  
 ## OneLogin 
 2014 年 5 月测试的 OneLogin 实施广泛使用的 WS 联合/WS 信任标识标准，以提供单一登录和属性交换框架。
@@ -221,7 +226,7 @@ Okta 实施广泛使用的 WS 联合标识标准以提供单一登录和属性�
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |Windows 集成身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 OneLogin 的详细信息，请参阅 [OneLogin](https://www.onelogin.com/)。
+有关 OneLogin 的详细信息，请参阅 [OneLogin。](https://www.onelogin.com)
 
 ## NetIQ Access Manager 4.0.1 
 NetIQ Access Manager 4.0.1 实施广泛使用的 WS 联合/WS 信任标识标准，以提供单一登录和属性交换框架。
@@ -231,13 +236,13 @@ NetIQ Access Manager 4.0.1 实施广泛使用的 WS 联合/WS 信任标识标准
 | 客户端 |支持 |异常|
 | --------- | --------- |--------- |
 | 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |*支持 Kerberos 协定|
-| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持 Windows 集成身份验证|
+| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持集成 Windows 身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
 *NetIQ 支持通过配置 Kerberos 约定实现 Kerberos 身份验证。如需此配置的帮助，请联系 NetIQ 或查看设置指南。有关 NetIQ Access Manager 的详细信息，请参阅 [NetIQ Access Manager。](https://www.netiq.com/documentation/netiqaccessmanager4/identityserverhelp/data/b12iqp0m.html)
 
-## BIG-IP with Access Policy Manager BIG-IP ver.11.3x – 11.6x 
-BIG-IP with Access Policy Manager (APM) BIG-IP ver.11.3x – 11.6x 实施广泛使用的 SAML 标识标准以提供单一登录体验和属性交换框架。
+## BIG-IP with Access Policy Manager BIG-IP ver.11.3x - 11.6x 
+BIG-IP with Access Policy Manager (APM) BIG-IP ver.11.3x - 11.6x 实施广泛使用的 SAML 标识标准以提供单一登录体验和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
 
@@ -286,11 +291,11 @@ IceWall Federation Version 3.0 实施广泛使用的 WS 联合标识标准以提
 
 | 客户端 |支持 |异常|
 | --------- | --------- |--------- |
-| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持 Windows 集成身份验证|
-| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持 Windows 集成身份验证|
+| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持集成 Windows 身份验证|
+| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持集成 Windows 身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 IceWall Federation 的详细信息，请参阅[此处](http://h50146.www5.hp.com/products/software/security/icewall/eng/federation/)和[此处](http://h50146.www5.hp.com/products/software/security/icewall/federation/office365.html)。
+有关 IceWall Federation 的详细信息，请参阅[此处](http://h50146.www5.hp.com/products/software/security/icewall/eng/federation)和[此处。](http://h50146.www5.hp.com/products/software/security/icewall/federation/office365.html)
 
 ## CA Secure Cloud 
 
@@ -300,11 +305,11 @@ CA Secure Cloud 实施广泛使用的 WS 联合标识标准以提供单一登录
 
 | 客户端 |支持 |异常|
 | --------- | --------- |--------- |
-| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持 Windows 集成身份验证|
-| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持 Windows 集成身份验证|
+| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持集成 Windows 身份验证|
+| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持集成 Windows 身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 CA Secure Cloud 详细信息，请参阅 [CA Secure Cloud](http://www.ca.com/us/products/security-as-a-service.aspx)。
+有关 CA Secure Cloud 详细信息，请参阅 [CA Secure Cloud。](http://www.ca.com/us/products/security-as-a-service.aspx)
 
 ## Dell One Identity Cloud Access Manager v7.1 
 Dell One Identity Cloud Access Manager 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
@@ -317,9 +322,9 @@ Dell One Identity Cloud Access Manager 实施广泛使用的 WS 联合标识标�
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |无|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
-有关 Dell One Identity Cloud Access Manager 的详细信息，请参阅 [Dell One Identity Cloud Access Manager](http://software.dell.com/products/cloud-access-manager)。
+有关 Dell One Identity Cloud Access Manager 的详细信息，请参阅 [Dell One Identity Cloud Access Manager。](http://software.dell.com/products/cloud-access-manager)
 
- 有关如何配置此 STS 从而为你的 Office 365 用户提供单一登录体验的说明，请参阅 [Configure Office 365 Users（配置 Office 365 用户）](http://documents.software.dell.com/dell-one-identity-cloud-access-manager/7.1/how-to-configure-microsoft-office-365)。
+ 有关如何配置此 STS 从而为你的 Office 365 用户提供单一登录体验的说明，请参阅 [Configure Office 365 Users](http://documents.software.dell.com/dell-one-identity-cloud-access-manager/7.1/how-to-configure-microsoft-office-365)（配置 Office 365 用户）。
 
 ## AuthAnvil Single Sign On 4.5 
 AuthAnvil Single Sign On 4.5 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。
@@ -328,11 +333,11 @@ AuthAnvil Single Sign On 4.5 实施广泛使用的 WS 联合标识标准以提�
 
 | 客户端 |支持 |异常|
 | --------- | --------- |--------- |
-| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持 Windows 集成身份验证|
-| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持 Windows 集成身份验证|
+| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持集成 Windows 身份验证|
+| 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持集成 Windows 身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 
 
 有关详细信息，请参阅 [AuthAnvil 单一登录。](https://help.scorpionsoft.com/entries/26538603-How-can-I-Configure-Single-Sign-On-for-Office-365-)
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_0926_2016-->

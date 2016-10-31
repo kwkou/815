@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="05/27/2016"
-	wacn.date="07/25/2016"/>
+	ms.date="09/01/2016"
+	wacn.date="10/24/2016"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
@@ -32,8 +32,6 @@
 以下屏幕截图显示了已完成的应用程序。
 
 ![][0]
-
-> [AZURE.NOTE]Azure 还提供了存储队列功能。有关 Azure 存储队列和服务总线队列的详细信息，请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照][sbqueuecomparison]。
 
 ## 方案概述：角色间通信
 

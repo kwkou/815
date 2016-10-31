@@ -1,13 +1,13 @@
 
 本部分说明如何从 .NET 控制台应用以标记模板通知的形式发送突发新闻。
 
+如果你使用的是 Mobile Apps，请参阅 [Add push notifications for Mobile Apps](/documentation/articles/app-service-mobile-windows-store-dotnet-get-started-push/)（为 Mobile Apps 添加推送通知）教程，然后选择顶层的平台。
 
-
-如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/documentation/articles/notification-hubs-java-push-notification-tutorial/)。你可使用[通知中心 REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)通过任何后端发送通知。
+如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/documentation/articles/notification-hubs-java-push-notification-tutorial/)。你可使用[通知中心 REST 接口](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx)通过任何后端发送通知。
 
 如果你在完成[通知中心入门][get-started]时创建了用于发送通知的控制台应用，则跳过步骤 1-3。
 
-1. 在 Visual Studio 中创建新的 Visual C# 控制台应用程序： 
+1. 在 Visual Studio 中创建新的 Visual C# 控制台应用程序：
 
    	![][13]
 
@@ -70,12 +70,13 @@
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
+
 [get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices/
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
+[Get started with Mobile Services]:/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
-[Notification Hubs REST interface]: http://msdn.microsoft.com/library/windowsazure/dn223264.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
+[Notification Hubs REST interface]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1017_2016-->

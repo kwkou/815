@@ -131,7 +131,7 @@ https://contosovault.vault.chinacloudapi.cn:443/secrets/contososecret/01h9db0df2
           }
         },
 
-可在此处找到以上内容的示例模板 - [201-vm-winrm-keyvault-windows](https://azure.microsoft.com/documentation/templates/201-vm-winrm-keyvault-windows)
+可在此处找到以上内容的示例模板 - [201-vm-winrm-keyvault-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows)
 
 可在 [Github](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows) 中找到此模板的源代码.
 

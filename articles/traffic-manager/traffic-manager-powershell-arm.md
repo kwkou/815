@@ -53,7 +53,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 ### 步骤 2
 登录到你的 Azure 帐户。
 
-	PS C:\> Login-AzureRmAccount
+	PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 系统将提示你使用凭据进行身份验证。
 

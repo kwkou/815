@@ -36,7 +36,7 @@
 <h3>针对你需要对应用程序的部署和执行过程进行完全控制的情况</h3>
 <h3>教程：<a href="/documentation/articles/virtual-machines-linux-quick-create-portal/">创建 Linux 虚拟机</a></h3>
 <p>实现运行 CentOS 并托管在 Azure 中的虚拟机。你可以使用 Azure 虚拟机运行任何应用程序。可使用独立虚拟机托管 Node.js 应用程序，或者将虚拟机作为云服务的一部分进行集成。</p>
-<h3>教程：<a href="/documentation/articles/virtual-machines-windows-tutorial-classic-portal/">创建 Windows 虚拟机</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-windows-classic-tutorial/">创建 Windows 虚拟机</a></h3>
 <p>实现运行 Windows Server 并在 Azure 中托管的虚拟机。你可以使用 Azure 虚拟机运行任何应用程序。可使用独立虚拟机托管 Node.js 应用程序，或者将虚拟机作为云服务的一部分进行集成。</p>
 <h2 id="header-3">Node 模块</h2>
 <h3>如何： <a href="/documentation/articles/nodejs-use-node-modules-azure-apps/">将 Node.js 模块与 Azure 应用程序一起使用</a></h3>

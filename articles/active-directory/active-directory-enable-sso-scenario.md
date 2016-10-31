@@ -4,15 +4,21 @@
     services="active-directory"
     documentationCenter=""
     authors="markusvi"
-    manager="stevenpo"
+    manager="femila"
     editor=""/>
 
    <tags
       ms.service="active-directory"
-      ms.date="05/03/2016"
-      wacn.date="07/13/2016"/>
+      ms.devlang="na"
+      ms.topic="article"
+      ms.tgt_pltfrm="na"
+      ms.workload="identity"
+      ms.date="07/20/2016"
+      ms.author="markvi"
+      wacn.date="10/17/2016"/>  
 
-# 使用 Azure Active Directory (AD) 管理应用程序
+
+# 使用 Azure Active Directory 管理应用程序
 
 除了实际工作流或内容以外，企业对所有应用程序还会提出两个基本要求：
 
@@ -20,7 +26,7 @@
 
 2. 为了支持安全性和监管，在组织需要控制和监督谁可以和实际上正在访问每个应用程序
 
-在云应用程序的语境中，使用标识来控制“谁有权执行什么操作”是实现此目的的最佳方式。
+在云应用程序的语境中，使用标识来控制“*谁有权执行什么操作*”是实现此目的的最佳方式。
 
 在计算术语中：
 
@@ -30,7 +36,7 @@
 
 这两个组成部分统称为“标识和访问管理 (IAM)”，[Gartner](http://www.gartner.com/it-glossary/identity-and-access-management-iam) 小组将其定义为“允许适当的人员在适当的时间出于适当的理由访问适当的资源的安全策略”。
 
-那么，这有什么问题呢？ 如果不使用一个集中式解决方案在一个位置管理 IAM：
+那么，这有什么问题呢？ 如果*不*使用一个集中式解决方案在一个位置管理 IAM：
 
 - 标识管理员必须单独在所有应用程序中逐个创建和更新用户帐户，这是一个繁琐而耗时的活动。
 
@@ -54,9 +60,10 @@ Azure Active Directory 是 Microsoft 的综合性标识即服务 (IDaaS) 解决�
 
 - 提供中心访问管理、单一登录 (SSO) 及报告功能
 
+- 支持应用程序库中[数千个应用程序](https://azure.microsoft.com/marketplace/active-directory/)（包括 Salesforce、Google Apps、Box、Concur 等）的集成访问管理。
 
-借助 Azure Active Directory，你为合作伙伴与客户（企业或消费者）发布的所有应用程序都具有相同的标识和访问管理功能。<br> 
-这可让你大幅降低运营成本。
+
+借助 Azure Active Directory，你为合作伙伴与客户（企业或消费者）发布的所有应用程序都具有相同的标识和访问管理功能。<br> 这可让你大幅降低运营成本。
 
 如果需要实施未在应用程序库中列出的应用程序怎么办？ 尽管这比为应用程序库中的应用程序配置 SSO 更加耗时，但 Azure AD 提供的向导可以帮助你完成配置。
 
@@ -120,14 +127,14 @@ Azure AD 提供预先集成的报告和监控功能，使你能够知道谁有�
 
 ## 相关功能
 
-借助 Azure AD，可以使用精细的访问策略和预先集成的 MFA 来保护你的应用程序。若要了解有关 Azure MFA 的详细信息，请参阅 [Azure MFA](/documentation/services/multi-factor-authentication/)。
+借助 Azure AD，可以使用精细的访问策略和预先集成的 MFA 来保护你的应用程序。若要了解有关 Azure MFA 的详细信息，请参阅 [Azure MFA](/home/features/multi-factor-authentication/)。
 
 ## 入门
 
-若要开始将应用程序与 Azure AD 集成，请参阅[将 Azure Active Directory 与应用程序集成入门指南](/documentation/articles/active-directory-integrating-applications-getting-started)。
+若要开始将应用程序与 Azure AD 集成，请参阅[将 Azure Active Directory 与应用程序集成入门指南](/documentation/articles/active-directory-integrating-applications-getting-started/)。
 
 ## 另请参阅
 
-[有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
+[有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1010_2016-->

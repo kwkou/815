@@ -17,7 +17,7 @@
 
 Azure 资源管理器为你提供了一种新的方式来部署和管理构成应用程序的服务。大多数（但并非所有）服务都支持资源管理器，有些服务仅部分支持资源管理器。Microsoft 将为每个服务启用资源管理器，这对于未来的解决方案而言很重要，但在全面提供支持之前，你需要了解每个服务的当前支持状态。本主题提供支持 Azure 资源管理器的资源提供程序列表。
 
-部署资源时，你还需要知道哪些区域支持这些资源，以及哪些 API 版本可用于资源。[支持的区域](#supported-regions)部分说明了如何找出哪些区域支持相应的订阅和资源。[支持的 API 版本](#supported-api-versions)部分说明了如何判断可以使用哪些 API 版本。
+部署资源时，你还需要知道哪些区域支持这些资源，以及哪些 API 版本可用于资源。[支持的 API 版本](#supported-api-versions)部分说明了如何判断可以使用哪些 API 版本。
 
 <!-- 若要查看 Azure 门户和经典门户支持哪些服务，请参阅 [Azure 门户可用性图表](/features/azure-portal/availability/)。-->若要查看哪些服务支持移动资源，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 
@@ -129,7 +129,7 @@ Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色
 | 资源 | 是 | [链接的资源](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx) | [资源链接](/documentation/articles/resource-manager-template-links/) | [Microsoft.Resources](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Resources%22&type=Code) |
 
 
-## 资源提供程序和类型
+## <a name="resource-providers-and-types"></a> 资源提供程序和类型
 
 部署资源时，经常需要检索有关资源提供程序和类型的信息。可以通过 REST API、Azure PowerShell 或 Azure CLI 检索此信息。
 
@@ -218,7 +218,7 @@ Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色
       "location": "China North, China East"
     }
 
-## 支持的 API 版本
+## <a name="supported-api-versions"></a> 支持的 API 版本
 
 部署模板时，必须指定要用于创建每个资源的 API 版本。API 版本对应于资源提供程序发布的 REST API 操作版本。资源提供程序启用新功能时，将会发布 REST API 的新版本。因此，在模板中指定的 API 版本会影响你可以在模板中指定的属性。通常，在创建新模板时，你需要选择最新的 API 版本。对于现有模板，你可以决定是要继续使用以前的 API 版本，还是要选择最新版本来更新模板以利用新功能。
 

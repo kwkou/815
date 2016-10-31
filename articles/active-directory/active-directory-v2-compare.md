@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="dstrockis"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
+
 
 # v2.0 终结点有什么不同？
 
@@ -65,10 +72,10 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 	...
 
 
-其中 **resource** 参数指示客户端应用请求授权的资源。Azure AD 根据 Azure 门户中的静态设置计算应用程序所需的权限，并据以发出令牌。现在，相同的 OAuth 2.0 授权请求如下所示：
+其中 **resource** 参数指示客户端应用请求授权的资源。Azure AD 根据 Azure 门户预览中的静态设置计算应用程序所需的权限，并据以发出令牌。现在，相同的 OAuth 2.0 授权请求如下所示：
 
 
-	GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
+	GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
 	client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 	&scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.write
 	...
@@ -76,12 +83,12 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 
 其中 **scope** 参数指示应用请求授权的资源和权限。所需的资源仍是请求中最新的 - 它只包含在 scope 参数的每个值中。以此方式使用 scope 参数可让 v2.0 终结点更符合 OAuth 2.0 规范，并且更贴近常见的行业实践。它还可以让应用执行下一节中所述的[增量同意](#incremental-and-dynamic-consent)。
 
-## <a name="incremental-and-dynamic-consent"></a>增量同意和动态同意
-在正式版 Azure AD 服务中注册的应用程序必须于应用程序创建时在 Azure 门户中指定其所需的 OAuth 2.0 权限：
+## 增量同意和动态同意
+在正式版 Azure AD 服务中注册的应用程序必须于应用程序创建时在 Azure 门户预览中指定其所需的 OAuth 2.0 权限：
 
 ![权限注册 UI](./media/active-directory-v2-flows/app_reg_permissions.PNG)
 
-应用所需的权限是**以静态方式**配置的。尽管这可让应用程序的设置存在于 Azure 门户中并使代码好用又简单，但开发人员面临一些问题：
+应用所需的权限是**以静态方式**配置的。尽管这可让应用程序的设置存在于 Azure 门户预览中并使代码好用又简单，但开发人员面临一些问题：
 
 - 应用程序必须在应用程序创建时知道可能需要的所有权限。随着时间添加权限是一个繁琐的过程。
 - 应用程序必须事先知道可能访问的所有资源。很难创建能够访问任意数目的资源的应用程序。
@@ -105,7 +112,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 #### 脱机访问
 v2.0 终结点可能需要针对应用使用新的已知权限 — `offline_access` 范围。如果应用程序需要长期表示用户访问资源，则所有应用程序都需要请求此权限，即使用户可能不主动使用此应用程序亦然。在同意对话框中，`offline_access` 范围对用户显示为“脱机访问数据”，而用户必须同意。请求 `offline_access` 权限可让 Web 应用从 v2.0 终结点接收 OAuth 2.0 refresh\_tokens。Refresh\_tokens 属于长效令牌，可用于交换新的 OAuth 2.0 access\_tokens 以延长访问期间。
 
-如果应用未请求 `offline_access` 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow)中兑换 authorization\_code 时，只从 `/token` 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 `/authorize` 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
+如果应用未请求 `offline_access` 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/)中兑换 authorization\_code 时，只从 `/token` 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 `/authorize` 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
 
 若要深入了解 OAuth 2.0、refresh\_token 和 access\_token，请查看 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
@@ -119,8 +126,8 @@ v2.0 终结点可能需要针对应用使用新的已知权限 — `offline_acce
 
 这样，你就能够以最低泄漏的方式编码应用 - 只可以向用户请求应用执行其作业所需的信息集。有关这些范围的详细信息，请参阅 [v2.0 范围参考](/documentation/articles/active-directory-v2-scopes/)。
 
-
 ## 令牌声明
+
 v2.0 终结点颁发的令牌中的声明与正式版 Azure AD 终结点颁发的令牌不同 - 迁移到新服务的应用程序不应假设特定的声明存在于 id\_tokens 或 access\_tokens 中。v2.0 终结点颁发的令牌与 OAuth 2.0 和 OpenID Connect 规范兼容，但可能遵循与正式版 Azure AD 服务不同的语义。
 
 若要了解 v2.0 令牌中发出的特定声明，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)。
@@ -128,4 +135,4 @@ v2.0 终结点颁发的令牌中的声明与正式版 Azure AD 终结点颁发�
 ## 限制
 使用 v2.0 终结点时有一些要注意的限制。请参阅 [v2.0 限制文档](/documentation/articles/active-directory-v2-limitations/)，了解任何这些限制是否适用于特定的方案。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1017_2016-->

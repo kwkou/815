@@ -1,7 +1,7 @@
 <properties
 	pageTitle="使用 DocumentDB 的 Java 应用程序开发教程 | Azure"
 	description="此 Java Web 应用程序教程演示了如何使用 Azure DocumentDB 服务存储和访问托管在 Azure 网站上的 Java 应用程序中的数据。"
-	keywords="应用程序开发、数据库教程、Java 应用程序、Java Web 应用程序教程、documentdb、Azure、Microsoft Azure"
+	keywords="应用程序开发, 数据库教程, Java 应用程序, Java Web 应用程序教程, documentdb, Azure"
 	services="documentdb"
 	documentationCenter="java"
 	authors="AndrewHoh"
@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="08/11/2016"
-	wacn.date="09/19/2016"/>
+	ms.devlang="java"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-services"
+	ms.date="08/24/2016"
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>
 
 # 使用 DocumentDB 生成一个 Java Web 应用程序
 
@@ -35,9 +40,9 @@
 ##<a id="Prerequisites"></a>此 Java Web 应用程序教程的先决条件
 在开始本应用程序开发教程前，你必须具有：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+- 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 1元试用](/pricing/1rmb-trial/)。
 - [Java 开发工具包 (JDK) 7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)。
-- [Eclipse IDE for Java EE Developers](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)。
+- [Eclipse IDE for Java EE Developers。](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
 - [已启用 Java 运行时环境（例如 Tomcat 或 Jetty）的 Azure 网站。](/documentation/articles/web-sites-java-get-started/)
 
 如果你是首次安装这些工具，那么你可以参考 coreservlets.com 网站的 [教程：安装 TomCat7 并将其与 Eclipse 一起使用](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) 文章的 Quick Start 部分提供的安装过程演练。
@@ -212,13 +217,9 @@
 		                    DocumentCollection collectionDefinition = new DocumentCollection();
 		                    collectionDefinition.setId(COLLECTION_ID);
 
-		                    // Configure the new collection performance tier to S1.
-		                    RequestOptions requestOptions = new RequestOptions();
-		                    requestOptions.setOfferType("S1");
-
 		                    collectionCache = documentClient.createCollection(
 		                            getTodoDatabase().getSelfLink(),
-		                            collectionDefinition, requestOptions).getResource();
+		                            collectionDefinition, null).getResource();
 		                } catch (DocumentClientException e) {
 		                    // TODO: Something has gone terribly wrong - the app wasn't
 		                    // able to query or create the collection.
@@ -746,10 +747,10 @@
  - 在“目标”框中，选择一个目标以保存 WAR 文件。
  - 单击“完成”。
 
-3. 现在你已经具有 WAR 文件，只需将它上载到 Azure 网站的 **webapps** 目录。有关上载此文件的说明，请参阅[将应用程序添加到 Azure 的 Java 网站](/documentation/articles/web-sites-java-add-app/)。
+3. 现在你已经具有 WAR 文件，只需将它上载到 Azure 网站的 **webapps** 目录。有关上载此文件的说明，请参阅 [Adding an application to your Java website on Azure](/documentation/articles/web-sites-java-add-app/)（将应用程序添加到 Azure 上的 Java 网站）。
 
 	将 WAR 文件上载到 webapps 目录之后，运行时环境将检测到你已经添加了此文件，并将自动加载它。
-4. 若要查看你已完成的产品，请导航到 http://YOUR\_SITE\_NAME.azurewebsites.net/azure-documentdb-java-sample/ 然后开始添加你的任务！
+4. 若要查看你已完成的产品，请导航到 http://YOUR\_SITE\_NAME.chinacloudsites.cn/azure-documentdb-java-sample/ 然后开始添加你的任务！
 
 ##<a id="GetProject"></a>从 GitHub 获取项目
 
@@ -780,4 +781,4 @@ GitHub 上的 [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) 
 
 [1]: media/documentdb-java-application/keys.png
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1010_2016-->

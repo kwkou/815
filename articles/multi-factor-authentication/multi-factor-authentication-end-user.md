@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication 对我而言有什么用途？" 
-	description="本 Azure Multi-Factor Authentication 页面将会帮助你的最终用户开始使用 Azure Multi-Factor Authentication。" 
+	pageTitle="Azure 多重身份验证对我而言有什么用途？" 
+	description="本 Azure 多重身份验证页面将会帮助你的最终用户开始使用 Azure 多重身份验证。" 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -8,9 +8,15 @@
 	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication"  
-	ms.date="08/04/2016" 
-	wacn.date="09/12/2016"/>
+	ms.service="multi-factor-authentication" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/22/2016" 
+	ms.author="billmath"
+   	wacn.date="10/19/2016"/>  
+
 
 
 
@@ -31,9 +37,9 @@
 在确定验证方法后，你可以开始注册。使用[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time/)链接开始逐步完成注册过程。
 
 
-## 如何开始使用 Multi-Factor Authentication
+## 如何开始使用多重身份验证
 
-参考下列主题之一帮助自己入门。
+选择下面的主题之一以开始。
 
 主题|说明
 :------------- | :------------- | 
@@ -41,8 +47,8 @@
 [登录体验](/documentation/articles/multi-factor-authentication-end-user-signin/)|说明使用各种方法（例如电话或应用）登录时预期会发生的情况。
 [更改设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)|说明如何更改你的设置，例如电话号码或首选的注册方法。
 [有关应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)| 查找有关创建和使用应用密码的信息。
-
+[使用移动应用](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)|Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
 
  
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1010_2016-->

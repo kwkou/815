@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="05/06/2016"
-	wacn.date="06/21/2016"/>
+	ms.date="09/16/2016"
+	wacn.date="10/24/2016"/>
 
 
 # 如何使用 Azure 服务总线中继服务

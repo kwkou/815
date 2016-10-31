@@ -5,15 +5,22 @@
 	documentationCenter=""
 	authors="dstrockis"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/16/2016"
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
+
 
 # v2.0 终结点的类型
-v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些体系结构都基于行业标准协议 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow) 和/或 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow)。本文档简要介绍你可以构建的应用类型（无论你使用哪种语言或平台）。它将会帮助你了解一些高级方案，然后你便可以[开始编写代码](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started)。
+v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些体系结构都基于行业标准协议 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/) 和/或 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow/)。本文档简要介绍你可以构建的应用类型（无论你使用哪种语言或平台）。它可帮助了解一些高级方案，然后便可[开始编写代码](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started/)。
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
@@ -27,26 +34,26 @@ v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些
 
 注册后，应用将向 Azure Active Directory v2.0 终结点发送请求，以便与 Azure AD 通信。我们提供了用于处理这些请求详细信息的开源框架和库，你也可以自行编写对这些终结点的请求，来实现身份验证逻辑：
 
-
+	
 	https://login.microsoftonline.com/common/oauth2/v2.0/authorize
 	https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 <!-- TODO: Need a page for libraries to link to -->
 
-## <a name="web-apps"></a>Web 应用
-对于通过浏览器访问的 Web 应用（.NET、PHP、Java、Ruby、Python、Node 等），可以使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow) 来执行用户登录。在 OpenID Connect 中，Web 应用将接收 `id_token`，这是一个安全令牌，用于验证用户的标识并以声明形式提供有关用户的信息：
+## Web 应用
+对于通过浏览器访问的 Web 应用（.NET、PHP、Java、Ruby、Python、Node 等），可以使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow/) 来执行用户登录。在 OpenID Connect 中，Web 应用将接收 `id_token`，这是一个安全令牌，用于验证用户的标识并以声明形式提供有关用户的信息：
 
 
-		// Partial raw id_token
-		eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtyaU1QZG1Cd...
-		
-		// Partial content of a decoded id_token
-		{
-			"name": "John Smith",
-			"email": "john.smith@gmail.com",
-			"oid": "d9674823-dffc-4e3f-a6eb-62fe4bd48a58"
-			...
-		}
+	// Partial raw id_token
+	eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtyaU1QZG1Cd...
+	
+	// Partial content of a decoded id_token
+	{
+		"name": "John Smith",
+		"email": "john.smith@gmail.com",
+		"oid": "d9674823-dffc-4e3f-a6eb-62fe4bd48a58"
+		...
+	}
 
 
 你可以在 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)中了解提供给应用的各种令牌和声明。
@@ -57,19 +64,19 @@ v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些
 
 使用从 v2.0 终结点收到的公共签名密钥验证 id\_token 便足以确保用户的标识正确，以及设置可在后续页面请求中用来识别用户的会话 Cookie。
 
-若要查看此方案的工作方式，请尝试运行[入门](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started)部分中提供的 Web 应用登录代码示例之一。
+若要查看此方案的实际运行情况，请尝试运行[入门](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started/)部分提供的 Web 应用登录代码示例之一。
 
-除了简单登录，Web 服务器应用可能还需要访问其他一些 Web 服务，例如 REST API。在这种情况下，Web 服务器应用可以使用 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow)参与合并的 OpenID Connect 和 OAuth 2.0 流。[WebApp-WebAPI 入门主题](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet/)中介绍了此方案。
+除了简单登录，Web 服务器应用可能还需要访问其他一些 Web 服务，例如 REST API。在这种情况下，Web 服务器应用可以使用 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/)参与合并的 OpenID Connect 和 OAuth 2.0 流。下面的 [WebApp-WebAPI 入门主题](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet/)中介绍了此方案。
 
-## <a name="web-apis"></a>Web API
+## Web API
 你可以使用 v2.0 终结点来保护 Web 服务，例如应用的 RESTful Web API。Web API 使用 OAuth 2.0 access\_token 而不是 id\_token 和会话 Cookie 来保护数据以及对传入的请求进行身份验证。Web API 调用方会在 HTTP 请求的授权标头中附加一个 access\_token：
 
 
-		GET /api/items HTTP/1.1
-		Host: www.mywebapi.com
-		Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6...
-		Accept: application/json
-		...
+	GET /api/items HTTP/1.1
+	Host: www.mywebapi.com
+	Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6...
+	Accept: application/json
+	...
 
 
 然后 Web API 使用此 access\_token 来验证 API 调用方的标识，并从 access\_token 中编码的声明提取调用方的相关信息。你可以在 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)中了解提供给应用的各种令牌和声明。
@@ -82,10 +89,10 @@ Web API 可以从各种应用接收 access\_token，其中包括 Web 服务器�
 
 若要了解 authorization\_code、refresh\_token 和获取 access\_token 的详细步骤，请参阅 [OAuth 2.0 协议](/documentation/articles/active-directory-v2-protocols-oauth-code/)。
 
-若要了解如何使用 OAuth2 access\_tokens 保护 Web API，请查看[入门部分](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started)中的 Web API 代码示例。
+若要了解如何使用 OAuth2 access\_token 保护 Web API，请查看[入门部分](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started/)提供的 Web API 代码示例。
 
 
-## <a name="mobile-and-native-apps></a>移动和本机应用
+## 移动和本机应用
 安装在设备中的应用（如移动和桌面应用）通常需要访问用于存储数据和代表用户执行各种功能的后端服务或 Web API。这些应用可以使用 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols-oauth-code/)将登录凭据和授权添加到后端服务。
 
 在此流中，应用将在用户登录时从 v2.0 终结点接收 authorization\_code，这表示应用代表当前登录用户调用后端服务的权限。然后，应用可以在后台交换 OAuth 2.0 access\_token 和 refresh\_token 的 authoriztion\_code。应用可以使用 access\_token 在 HTTP 请求中向 Web API 进行身份验证，并可以在旧的 access\_token 过期时，用 refresh\_token 获取新的 access\_token。
@@ -99,7 +106,7 @@ Web API 可以从各种应用接收 access\_token，其中包括 Web 服务器�
 
 ![隐式流泳道图像](./media/active-directory-v2-flows/convergence_scenarios_implicit.png)
 
-若要查看此方案的工作方式，请尝试运行[入门](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started)部分中提供的单页应用代码示例之一。
+若要查看此方案的实际运行情况，请尝试运行[入门](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started/)部分提供的单页应用代码示例之一。
 
 ## 当前限制
 v2.0 终结点目前不支持这些类型的应用，但这项支持已列入开发路线图中。[v2.0 限制文章](/documentation/articles/active-directory-v2-limitations/)中说明了 v2.0 终结点的其他限制和局限性。
@@ -112,6 +119,6 @@ v2.0 终结点中目前不支持客户端凭据流。若要查看此流在正式
 ### 链接的 Web API（代理）
 许多体系结构包含需要调用另一个下游 Web API 的 Web API，这两者都受 v2.0 终结点的保护。此方案常见于具有 Web API 后端的本机客户端，该后端将调用 Office 365 或图形 API 等 Microsoft Online 服务。
 
-可以使用 OAuth 2.0 Jwt 持有者凭据授权（也称为[代理流](/documentation/articles/active-directory-v2-protocols/#oauth2-on-behalf-of-flow)）来支持这种链接的 Web API 方案。但是，v2.0 终结点中目前尚未实现代理流。若要查看此流在正式版 Azure AD 服务中如何工作，请参阅 [GitHub 上的代理代码示例](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet)。
+可以使用 OAuth 2.0 Jwt 持有者凭据授权（也称为[代理流](/documentation/articles/active-directory-v2-protocols/#oauth2-on-behalf-of-flow/)）来支持这种链接的 Web API 方案。但是，v2.0 终结点中目前尚未实现代理流。若要查看此流在正式版 Azure AD 服务中如何工作，请参阅 [GitHub 上的代理代码示例](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet)。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1017_2016-->

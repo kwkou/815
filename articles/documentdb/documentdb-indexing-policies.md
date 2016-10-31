@@ -1,7 +1,7 @@
 <properties 
     pageTitle="DocumentDB 索引策略 | Azure" 
     description="了解 DocumentDB 中的索引工作原理以及如何配置与更改索引策略。在 DocumentDB 中配置索引策略，实现自动索引并提高性能。" 
-	keywords="索引的工作原理, 自动索引, 索引数据库, documentdb, azure, Microsoft azure"
+    keywords="索引的工作原理, 自动索引, 索引数据库, documentdb, Azure"
     services="documentdb" 
     documentationCenter="" 
     authors="arramac" 
@@ -10,13 +10,19 @@
 
 <tags 
     ms.service="documentdb" 
-    ms.date="05/05/2016" 
-    wacn.date="06/28/2016"/>
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="data-services" 
+    ms.date="08/08/2016" 
+    ms.author="arramac"
+    wacn.date="10/18/2016"/>  
+
 
 
 # DocumentDB 索引策略
 
-尽管许多客户都愿意让 DocumentDB 自动处理[索引的方方面面](/documentation/articles/documentdb-indexing/)，但 DocumentDB 还支持在创建过程中为集合指定自定义**索引策略**。与其他数据库平台中提供的辅助索引相比，DocumentDB 中的索引策略更加灵活且功能强大，因为它允许你设计和自定义索引形状，而无需牺牲架构的灵活性。若要了解 DocumentDB 中的索引工作原理，就必须通过管理索引策略来了解它，你可以在索引存储开销、写入和查询吞吐量以及查询一致性之间进行详细权衡。
+尽管许多客户都愿意让 Azure DocumentDB 自动处理[索引的方方面面](/documentation/articles/documentdb-indexing/)，但 DocumentDB 还支持在创建过程中为集合指定自定义**索引策略**。与其他数据库平台中提供的辅助索引相比，DocumentDB 中的索引策略更加灵活且功能强大，因为它允许你设计和自定义索引形状，而无需牺牲架构的灵活性。若要了解 DocumentDB 中的索引工作原理，就必须通过管理索引策略来了解它，你可以在索引存储开销、写入和查询吞吐量以及查询一致性之间进行详细权衡。
 
 在本文中，我们将仔细研究 DocumentDB 索引策略、自定义索引策略的方法和相关的权衡方案。
 
@@ -34,7 +40,7 @@
 
 - **包括在索引中/从索引中排除文档和路径**。开发人员可以选择在向集合中插入文档或替换文档时，要从索引中排除或包括在索引中的某些文档。开发人员还可以针对某个索引中包含的文档，选择在索引时包括或排除某些 JSON 属性，也称为路径（包括通配符模式）。
 - **配置各种索引类型**。对于每个包括的路径，开发人员还可以根据其数据和预期查询工作负荷以及每个路径的数字/字符串“精度”，指定集合上需要的索引类型。
-- **配置索引更新模式**。DocumentDB 支持三种索引模式，可通过索引策略对 DocumentDB 集合进行配置︰一致、延迟和无。 
+- **配置索引更新模式**。DocumentDB 支持三种索引模式，可通过索引策略对 DocumentDB 集合进行配置︰一致、延迟和无。
 
 下面的.NET 代码段演示了如何在集合创建过程中设置自定义索引策略。这里我们以最大精度为字符串和数字设置范围索引策略。此策略可以让我们对字符串执行 Order By 查询。
 
@@ -288,11 +294,11 @@ DocumentDB 返回在“无”索引模式下对集合进行查询的错误。查
 
 ### 索引路径
 
-DocumentDB 将 JSON 文档和索引建立为树形，从而可以针对树中的路径调整策略。你可以在本 [DocumentDB 索引介绍](/documentation/articles/documentdb-indexing/)中找到更多详细信息。在这些文档中，你可以选择必须包括在索引中或从索引中排除的路径。如果事先已知查询模式，这可以提高写入性能并减少方案所需的索引存储。
+DocumentDB 将 JSON 文档和索引建立为树形，从而可以针对树中的路径调整策略。可以在此 [DocumentDB 索引简介](/documentation/articles/documentdb-indexing/)中找到更多详细信息。在这些文档中，你可以选择必须包括在索引中或从索引中排除的路径。如果事先已知查询模式，这可以提高写入性能并减少方案所需的索引存储。
 
 索引路径以根 (/) 开头，通常以通配符“?”结尾，表示前缀有多个可能值。例如，对于 SELECT * FROM Families F WHERE F.familyName = "Andersen"，必须在集合的索引策略中包含 /familyName/? 的索引路径。
 
-索引路径还可以使用 * 通配符以递归方式指定路径在前缀下的行为。例如，/payload/* 可用于从索引中排除负载属性下的所有内容。
+索引路径还可以使用 * 通配符运算符以递归方式指定路径在前缀下的行为。例如，/payload/* 可用于从索引中排除有效负载属性下的所有内容。
 
 下面是用于指定索引路径的常用模式︰
 
@@ -457,20 +463,22 @@ DocumentDB 将 JSON 文档和索引建立为树形，从而可以针对树中的
 
 现在，我们已经介绍了如何指定路径，让我们来讨论配置路径的索引策略时可以使用的选项。可以为每个路径指定一个或多个索引定义︰
 
-- 数据类型︰ **字符串**、**数值**或**点**（每个路径每个数据只可包含一个条目）
-- 索引类型︰**哈希**（等式查询）、**范围**（等式、范围或 Order By 查询）或**空间**（空间查询） 
+- 数据类型：**String**、**Number** 或 **Point**（每个路径每种数据类型只能包含一个条目）。个人预览版支持 **Polygon** 和 **LineString**
+- 索引种类：**哈希**（等式查询）、**范围**（等式、范围或 Order By 查询）或**空间**（空间查询）
 - 精度︰对于数字为 1-8 或 -1（最大精度），对于字符串为 1-100（最大精度）
 
 #### 索引种类
 
 DocumentDB 针对每个路径都支持哈希和范围索引类型（即可以配置为字符串、数值或两者）。
 
-- **哈希**支持高效的等式查询和 JOIN 查询。在大多数使用情况下，哈希索引需要的精度不会高于 3 个字节的默认值。
-- **范围**支持高效的等式查询、范围查询（分别使用 >、<、>=、<=、!=）和 Order By 查询。默认情况下，Order By 查询还需要最大索引精度 (-1)。
+- **哈希**支持高效的等式查询和联接查询。在大多数使用情况下，哈希索引需要的精度不会高于 3 个字节的默认值。
+- **范围**支持高效的等式查询、范围查询（使用 >、<、>=、<=、!=）和 Order By 查询。默认情况下，Order By 查询还需要最大索引精度 (-1)。
 
 DocumentDB 还针对每个路径支持空间索引，可为点数据类型指定空间索引。指定路径中的值必须是有效的 GeoJSON 点，如 `{"type": "Point", "coordinates": [0.0, 10.0]}`。
 
 - **空间**支持高效的空间（在其中和距离）查询。
+
+>[AZURE.NOTE] DocumentDB 支持 Point、Polygon（个人预览版）和 LineString（个人预览版）的自动索引。若要访问预览版，请发送电子邮件至 askdocdb@microsoft.com，或者通过“Azure 支持”与我们联系。
 
 下面是支持的索引类型以及可以使用的查询示例︰
 
@@ -496,7 +504,10 @@ DocumentDB 还针对每个路径支持空间索引，可为点数据类型指定
             </td>
             <td valign="top">
                 <p>
-                    通过 /prop /?（或 / *）的哈希可用于高效执行以下查询：SELECT * FROM collection c WHERE c.prop = "value"。通过 /props/[]/?（或 /*或 /props/*）的哈希可用于高效执行以下查询：SELECT tag FROM collection c JOIN tag IN c.props WHERE tag = 5
+                    通过 /prop /?（或 / *）的哈希可用于高效执行以下查询：
+		      SELECT * FROM collection c WHERE c.prop = "value"。
+		    通过 /props/[]/?（或 /*或 /props/*）的哈希可用于高效执行以下查询：
+		      SELECT tag FROM collection c JOIN tag IN c.props WHERE tag = 5
                 </p>
             </td>
         </tr>
@@ -508,7 +519,10 @@ DocumentDB 还针对每个路径支持空间索引，可为点数据类型指定
             </td>
             <td valign="top">
                 <p>
-                    通过 /prop /?（或 / *）的范围可用于高效执行以下查询：SELECT * FROM collection c WHERE c.prop = "value" SELECT * FROM collection c WHERE c.prop > 5 SELECT * FROM collection c ORDER BY c.prop
+                    通过 /prop /?（或 / *）的范围可用于高效执行以下查询：
+		      SELECT * FROM collection c WHERE c.prop = "value" 
+		      SELECT * FROM collection c WHERE c.prop > 5 
+		      SELECT * FROM collection c ORDER BY c.prop
                 </p>
             </td>
         </tr>
@@ -520,7 +534,10 @@ DocumentDB 还针对每个路径支持空间索引，可为点数据类型指定
             </td>
             <td valign="top">
                 <p>
-                    通过 /prop /?（或 / *）的范围可用于高效执行以下查询：SELECT * FROM collection c WHERE ST_DISTANCE(c.prop, {"type": "Point", "coordinates": [0.0, 10.0]}) &lt; 40 SELECT * FROM collection c WHERE ST_WITHIN(c.prop, {"type": "Polygon", ... })
+                    通过 /prop /?（或 / *）的范围可用于高效执行以下查询：
+		      SELECT * FROM collection c 
+		      WHERE ST_DISTANCE(c.prop, {"type": "Point", "coordinates": [0.0, 10.0]}) &lt; 40 
+		      SELECT * FROM collection c WHERE ST_WITHIN(c.prop, {"type": "Polygon", ... })
                 </p>
             </td>
         </tr>        
@@ -569,7 +586,7 @@ DocumentDB 还针对每个路径支持空间索引，可为点数据类型指定
 
 关闭自动索引后，你仍然可以选择性地只将特定的文档添加到索引中。相反，可以保留自动索引，并选择只排除特定的文档。当只需要查询一个文档子集时，索引开/关配置非常有用。
 
-例如，下面的示例演示了如何使用 [DocumentDB.NET SDK](https://github.com/Azure/azure-documentdb-java) 和 [RequestOptions.IndexingDirective](http://msdn.microsoft.com/library/microsoft.azure.documents.client.requestoptions.indexingdirective.aspx) 属性来显式包括文档。
+例如，下面的示例演示了如何使用 [DocumentDB.NET SDK](https://github.com/Azure/azure-documentdb-java) 和 [RequestOptions.IndexingDirective](http://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.client.requestoptions.indexingdirective.aspx) 属性来显式包括文档。
 
     // If you want to override the default collection behavior to either
     // exclude (or include) a Document from indexing,
@@ -584,9 +601,10 @@ DocumentDB 允许你动态更改集合的索引策略。更改 DocumentDB 集合
 
 **联机索引转换**
 
-![索引的工作原理 – DocumentDB 联机索引转换](./media/documentdb-indexing-policies/index-transformations.png)
+![索引的工作原理 - DocumentDB 联机索引转换](./media/documentdb-indexing-policies/index-transformations.png)  
 
-在联机状态下执行索引转换，这意味着按照旧策略索引的文档可以按照新策略有效转换，**而不会影响集合的写入可用性或配置的吞吐量**。在索引转换过程中，使用 REST API、SDK 或在存储的过程和触发器中执行读取和写入操作的一致性不会受到影响。这就意味着，在更改索引策略时，你的应用程序的性能不会下降，也没有停机时间。
+
+在联机状态下执行索引转换，这意味着按照旧策略索引的文档可以按照新策略有效转换，**而不会影响集合的写入可用性或预配的吞吐量**。在索引转换过程中，使用 REST API、SDK 或在存储的过程和触发器中执行读取和写入操作的一致性不会受到影响。这就意味着，在更改索引策略时，你的应用程序的性能不会下降，也没有停机时间。
 
 但是，无论索引模式配置如何（一致或延迟），在执行索引转换期间查询始终一致。这适用于使用所有接口（REST API、SDK 或从存储过程和触发器中）进行的查询。与延迟索引一样，使用特定副本可用的备用资源在后台以异步方式对副本执行索引转换。
 
@@ -596,10 +614,10 @@ DocumentDB 允许你动态更改集合的索引策略。更改 DocumentDB 集合
 
 但是在进行转换时，可以切换到延迟或无索引模式。
 
-- 当切换到延迟模式时，索引策略更改立即生效，并且 DocumentDB 开始以异步方式重新创建索引。 
-- 当切换到无模式时，索引会被立即删除。当想要取消正在进行的转换，并开始使用不同的索引策略时，切换到无模式非常有用。 
+- 当切换到延迟模式时，索引策略更改立即生效，并且 DocumentDB 开始以异步方式重新创建索引。
+- 当切换到无模式时，索引会被立即删除。当想要取消正在进行的转换，并开始使用不同的索引策略时，切换到无模式非常有用。
 
-如果使用 .NET SDK，则可以使用新的 **ReplaceDocumentCollectionAsync** 方法进行索引策略更改，并利用从 **ReadDocumentCollectionAsync** 调用中获得的 **IndexTransformationProgress** 响应属性跟踪索引转换的进度百分比。其他 SDK 和 REST API 支持使用等效属性和方法进行索引策略更改。
+如果使用 .NET SDK，则可以使用新的 **ReplaceDocumentCollectionAsync** 方法进行索引策略更改，并利用从 **ReadDocumentCollectionAsync** 调用中获得的 **IndexTransformationProgress** 响应属性跟踪索引转换的百分比进度。其他 SDK 和 REST API 支持使用等效属性和方法进行索引策略更改。
 
 以下代码段演示了如何将集合的索引策略从一致索引模式改为延迟。
 
@@ -656,7 +674,7 @@ DocumentDB 允许你动态更改集合的索引策略。更改 DocumentDB 集合
 
 DocumentDB API 提供有关性能指标的信息，如所用的索引存储以及每次操作的吞吐量成本（请求单位）。此信息可用于比较各种索引策略和优化性能。
 
-若要检查存储配额和集合用法，请针对集合资源运行 HEAD 或 GET 请求，并检查 x-ms-request-quota 和 x-ms-request-usage 标头。在 .NET SDK 中，[ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) 中的 [DocumentSizeQuota](http://msdn.microsoft.com/library/dn850325.aspx) 和 [DocumentSizeUsage](http://msdn.microsoft.com/library/azure/dn850324.aspx) 属性包含这些相应的值。
+若要检查存储配额和集合用法，请针对集合资源运行 HEAD 或 GET 请求，并检查 x-ms-request-quota 和 x-ms-request-usage 标头。在 .NET SDK 中，[ResourceResponse<T>](http://msdn.microsoft.com/zh-cn/library/dn799209.aspx) 中的 [DocumentSizeQuota](http://msdn.microsoft.com/zh-cn/library/dn850325.aspx) 和 [DocumentSizeUsage](http://msdn.microsoft.com/zh-cn/library/azure/dn850324.aspx) 属性包含这些相应的值。
 
      // Measure the document size usage (which includes the index size) against   
      // different policies.
@@ -664,7 +682,7 @@ DocumentDB API 提供有关性能指标的信息，如所用的索引存储以�
      Console.WriteLine("Document size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 
 
-要测量每次写入操作（创建、更新或删除）执行索引的开销，请检查 x-ms-request-charge header 标头（或同等的 .NET SDK 中 [ResourceResponse < T >](http://msdn.microsoft.com/library/dn799209.aspx) 中的 [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx) 属性）来测量这些操作占用的请求单位数。
+若要度量每个写入操作（创建、更新或删除）执行索引的开销，请检查 x-ms-request-charge header 标头（或 .NET SDK 中 [ResourceResponse<T>](http://msdn.microsoft.com/zh-cn/library/dn799209.aspx) 的等效 [RequestCharge](http://msdn.microsoft.com/zh-cn/library/dn799099.aspx) 属性）来度量这些操作占用的请求单位数。
 
      // Measure the performance (request units) of writes.     
      ResourceResponse<Document> response = await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri("db", "coll"), myDocument);              
@@ -712,7 +730,7 @@ JSON 规范中实现了以下更改︰
           }
        ],
        "ExcludedPaths":[
-          "/"nonIndexedContent"/*"
+          "/\"nonIndexedContent\"/*"
        ]
     }
 
@@ -750,10 +768,9 @@ JSON 规范中实现了以下更改︰
 通过下面的链接查看索引策略管理示例，并了解有关 DocumentDB 的查询语言的详细信息。
 
 1.	[DocumentDB .NET 索引管理代码示例](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/IndexManagement/Program.cs)
-2.	[DocumentDB REST API 集合操作](https://msdn.microsoft.com/library/azure/dn782195.aspx)
+2.	[DocumentDB REST API 集合操作](https://msdn.microsoft.com/zh-cn/library/azure/dn782195.aspx)
 3.	[使用 DocumentDB SQL 进行查询](/documentation/articles/documentdb-sql-query/)
 
  
 
-
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_1010_2016-->

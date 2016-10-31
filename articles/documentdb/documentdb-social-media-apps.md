@@ -11,7 +11,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="06/29/2016" 
-	wacn.date=""/>  
+	wacn.date="08/22/2016"/>  
 
 
 # 使用 DocumentDB 进行社交
@@ -38,7 +38,7 @@
 
 ## NoSQL 加载
 
-有许多特殊图形数据库可以[在 Azure 上运行](http://neo4j.com/developer/guide-cloud-deployment/#_windows_azure)，但它们成本较高且需要 IaaS 服务（基础结构即服务，主要是虚拟机）和维护。本文介绍的成本更低的解决方案适用于在 Azure 的 NoSQL 数据库 [DocumentDB](/services/documentdb/) 上运行的大多数方案。使用 [NoSQL](https://en.wikipedia.org/wiki/NoSQL) 方法以 JSON 格式存储数据并应用[非规范化](https://en.wikipedia.org/wiki/Denormalization)，就可以将我们以前的复杂帖子转换为单个[文档](https://en.wikipedia.org/wiki/Document-oriented_database)：
+有许多特殊图形数据库可以[在 Azure 上运行](http://neo4j.com/developer/guide-cloud-deployment/#_windows_azure)，但它们成本较高且需要 IaaS 服务（基础结构即服务，主要是虚拟机）和维护。本文介绍的成本更低的解决方案适用于在 Azure 的 NoSQL 数据库 [DocumentDB](/documentation/services/documentdb/) 上运行的大多数方案。使用 [NoSQL](https://en.wikipedia.org/wiki/NoSQL) 方法以 JSON 格式存储数据并应用[非规范化](https://en.wikipedia.org/wiki/Denormalization)，就可以将我们以前的复杂帖子转换为单个[文档](https://en.wikipedia.org/wiki/Document-oriented_database)：
 
     {
         "id":"ew12-res2-234e-544f",

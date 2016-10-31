@@ -31,7 +31,7 @@
 
 若要完成本教程，需要满足以下条件：
 
-+ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial/) 上。有关其他环境的说明，将在外部链接中提供。
++ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/) 上。有关其他环境的说明，将在外部链接中提供。
 
 + Microsoft Visual Studio Express for Windows
 

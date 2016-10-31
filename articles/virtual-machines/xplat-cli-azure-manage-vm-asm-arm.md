@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/12/2016"
-	wacn.date="08/23/2016"/>
+	ms.date="08/23/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 执行 VM 任务的常见资源管理器模型 Azure CLI 命令

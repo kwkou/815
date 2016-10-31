@@ -63,7 +63,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 [AZURE.INCLUDE [storage-versions-include](../../includes/storage-versions-include.md)]
 
-## Blob 存储
+## <a name="blob-storage"></a> Blob 存储
 
 对于有大量非结构化对象数据要存储在云中的用户，Blob 存储提供了一种经济高效且可伸缩的解决方案。你可以使用 Blob 存储来存储如下内容：
 

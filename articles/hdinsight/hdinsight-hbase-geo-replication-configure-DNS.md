@@ -15,7 +15,7 @@
 # 在两个 Azure 虚拟网络之间配置 DNS
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs/)
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/)
 - [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
 - [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
 

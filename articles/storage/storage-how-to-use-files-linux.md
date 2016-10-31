@@ -124,7 +124,7 @@ Linux 用户，我们希望倾听你的意见！
 
 ### 博客文章
 
-- [Azure 文件存储现已正式发布](/zh-cn/blog/)
+- [Azure 文件存储现已正式发布](/blog/)
 - [Azure 文件存储内部](/home/features/storage) 
 - [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

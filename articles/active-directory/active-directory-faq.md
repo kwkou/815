@@ -4,27 +4,35 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/20/2016"
-	wacn.date="08/02/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/16/2016"
+	ms.author="markusvi"
+   	wacn.date="10/17/2016"/>  
+
 
 # Azure Active Directory 常见问题
 
 Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其涉及到标识、访问管理和安全的方方面面。
 
 
-有关详细信息，请参阅 [What is Azure Active Directory?（什么是 Azure Active Directory？）](/documentation/articles/active-directory-whatis/)。
+有关详细信息，请参阅 [What is Azure Active Directory?](/documentation/articles/active-directory-whatis/)（什么是 Azure Active Directory？）。
+
+
 
 ## 访问 Azure 和 Azure Active Directory
 
 
-**问：当我尝试在 Azure 经典门户中访问 Azure AD 时，为何收到“找不到订阅”(https://manage.windowsazure.cn)？**
+**问：尝试在 Azure 经典管理门户 (https://manage.windowsazure.cn) 中访问 Azure AD 时，为何收到“找不到订阅”？**
 
-**答：**若要访问 Azure 经典门户，每位用户必须拥有 Azure 订阅的权限。请导航到 [我要购买](/pricing/pia/) 完成一次性的激活步骤，或者注册 [Azure 试用版](/pricing/1rmb-trial/)。
+**答：**若要访问 Azure 经典管理门户，每位用户都必须拥有 Azure 订阅的权限。如果使用付费版 Office 365 或 Azure AD，请导航到 [http://aka.ms/accessAAD](http://aka.ms/accessAAD) 完成一次性激活步骤，否则需要激活完整的 [Azure 试用版](/pricing/1rmb-trial/)或付费版订阅。
 
 有关详细信息，请参阅：
 
@@ -36,11 +44,11 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 **问：Azure AD、Office 365 与 Azure 之间有哪种关系？**
 
-**答：**Azure Active Directory 为所有 Microsoft 在线服务提供通用的标识和访问功能。无论你使用 Office 365、Microsoft Azure、Intune 还是其他服务，都可以使用 Azure AD 来为上述所有服务启用登录和访问管理。
+**答：**Azure Active Directory 为所有 Microsoft 在线服务提供通用的标识和访问功能。无论使用的是 Office 365、Azure、Intune 还是其他服务，都可以使用 Azure AD 来为上述所有服务启用登录和访问管理。
 
 事实上，为 Microsoft 在线服务启用的所有用户都定义为一个或多个 Azure AD 实例中的用户帐户。你可以为这些帐户启用免费的 Azure AD 功能，例如云应用程序访问。
  
-此外，Azure AD 付费版服务（例如 Azure AD Basic、Premium、EMS 等）可通过综合性的企业级管理和安全解决方案来弥补其他在线服务（例如 Office 365 和 Microsoft Azure）的不足。
+此外，Azure AD 付费版服务（例如，Azure AD Basic、Premium、EMS 等）可通过综合性的企业级管理和安全解决方案来弥补其他在线服务（例如 Office 365 和 Azure）的不足。
 
 
 ---
@@ -54,7 +62,7 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 **答：**可以使用 **Azure AD Connect** 将本地目录连接到 Azure AD。
 
-有关详细信息，请参阅 [Integrating your on-premises identities with Azure Active Directory（将本地标识与 Azure Active Directory 集成）](/documentation/articles/active-directory-aadconnect/)。
+有关详细信息，请参阅 [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect/)（将本地标识与 Azure Active Directory 集成）。
 
 
 ---
@@ -66,7 +74,7 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 通过联合身份验证解决方案（例如 ADFS）或通过配置密码哈希同步，就能轻松地从本地实现 SSO。可以使用 Azure AD Connect 配置向导轻松部署这两个选项。
   
 
-有关详细信息，请参阅 [Integrating your on-premises identities with Azure Active Directory（将本地标识与 Azure Active Directory 集成）](/documentation/articles/active-directory-aadconnect/)。
+有关详细信息，请参阅 [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect/)（将本地标识与 Azure Active Directory 集成）。
   
 
 ---
@@ -90,7 +98,7 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 **答：**密码写回实时运行。
 
-有关详细信息，请参阅 [Getting started with Password Management（密码管理入门）](/documentation/articles/active-directory-passwords-getting-started/)。
+有关详细信息，请参阅 [Getting started with Password Management](/documentation/articles/active-directory-passwords-getting-started/)（密码管理入门）。
 
 
 ---
@@ -99,10 +107,32 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 **答：**可以。如果已启用密码写回，管理员执行的密码操作将写回到你的本地环境。
 
-有关密码相关问题的详细解答，请参阅 [Password Management Frequently Asked Questions（密码管理常见问题）](/documentation/articles/active-directory-passwords-faq/)。
+有关密码相关问题的详细解答，请参阅 [Password Management Frequently Asked Questions](/documentation/articles/active-directory-passwords-faq/)（密码管理常见问题）。
 
 ---
 
+## 应用程序访问
+
+
+**问：在哪里可以找到与 Azure AD 预先集成的应用程序及其功能的列表？**
+
+**答：**Azure AD 中包含 Microsoft、应用程序服务提供商或第三方提供的 2600 多个预先集成的应用程序。所有预先集成的应用程序都支持 SSO。SSO 允许你使用组织凭据来访问应用。某些应用程序还支持自动预配和自动取消预配
+
+有关预先集成的应用程序的完整列表，请参阅 [Active Directory Marketplace](https://azure.microsoft.com/marketplace/active-directory/)（Active Directory 应用商店）。
+
+
+---
+
+**问：如果 Azure AD 应用商店中没有我需要的应用程序怎么办？**
+
+**答：**使用 Azure AD Premium，可以添加和配置所需的任何应用程序。你可以根据应用程序的功能和你的喜好来配置 SSO 和自动预配。
+
+有关详细信息，请参阅：
+
+- [使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配](/documentation/articles/active-directory-scim-provisioning/)
+
+
+---
 
 **问：用户如何使用 Azure Active Directory 来登录应用程序？**
  
@@ -116,7 +146,7 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 - 联合、基于密码或现有的应用的深层链接
 
-有关详细信息，请参阅 [Deploying Azure AD integrated applications to users（为用户部署 Azure AD 集成的应用程序）](/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users)。
+有关详细信息，请参阅[为用户部署 Azure AD 集成的应用程序](/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users/)。
 
 
 ---
@@ -129,9 +159,9 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 - [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)
 
-- [Active Directory 身份验证协议](https://msdn.microsoft.com/library/azure/dn151124.aspx)
+- [Active Directory 身份验证协议](/documentation/articles/active-directory-developers-guide/)
 
-- [Azure Active Directory 中单一登录的工作原理是什么？](/documentation/articles/active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work)
+- [Azure Active Directory 中单一登录的工作原理是什么？](/documentation/articles/active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work/)
 
 
 

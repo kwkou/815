@@ -3,14 +3,20 @@
    description="了解如何通过服务代码发送运行状况报告，并使用 Azure Service Fabric 提供的运行状况监视工具来检查服务的运行状况。"
    services="service-fabric"
    documentationCenter=".net"
-   authors="kunaldsingh"
-   manager="timlt"
-   editor=""/>
+   authors="toddabel"
+   manager="mfussell"
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/07/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/06/2016"
+   wacn.date="10/24/2016"
+   ms.author="toddabel"/>  
 
 
 # 报告和检查服务运行状况
@@ -18,11 +24,11 @@
 
 有两种方式可让你报告服务的运行状况：
 
-- 使用 [Partition](https://msdn.microsoft.com/zh-cn/library/system.fabric.istatefulservicepartition.aspx) 或 [CodePackageActivationContext](https://msdn.microsoft.com/zh-cn/library/system.fabric.codepackageactivationcontext.aspx) 对象。  
+- 使用 [Partition](https://msdn.microsoft.com/zh-cn/library/system.fabric.istatefulservicepartition.aspx) 或 [CodePackageActivationContext](https://msdn.microsoft.com/zh-cn/library/system.fabric.codepackageactivationcontext.aspx) 对象。
 你可以使用 `Partition` 和 `CodePackageActivationContext` 对象在属于当前上下文一部分的项目中报告运行状况。例如，作为副本一部分运行的代码只能报告该副本、其所属的分区，以及其所属应用程序的运行状况。
 
-- 使用 `FabricClient`。  
-如果群集不[安全](/documentation/articles/service-fabric-cluster-security/)或者服务以管理员权限运行，你可以使用 `FabricClient` 从服务代码报告运行状况。在大部分的真实方案中都不会发生此情况。你可以使用 `FabricClient` 报告任何属于群集一部分的实体的运行状况。但是，在理想情况下，服务代码应该只发送与其本身运行状况相关的报告。
+- 使用 `FabricClient`。如果群集不[安全](/documentation/articles/service-fabric-cluster-security/)或者使用管理员权限运行服务，则可以使用 `FabricClient` 从服务代码中报告运行状况。在大部分的真实方案中都不会发生此情况。
+你可以使用 `FabricClient` 报告任何属于群集一部分的实体的运行状况。但是，在理想情况下，服务代码应该只发送与其本身运行状况相关的报告。
 
 本文将引导你完成从服务代码报告运行状况的示例。本示例还演示如何使用 Service Fabric 提供的工具检查运行状况。本文旨在快速介绍 Service Fabric 中的运行状况监视功能。有关更多详细信息，可以从本文末尾的链接开始，阅读一系列有关运行状况的深入文章。
 
@@ -95,7 +101,7 @@ Visual Studio 中的 Service Fabric 项目模板包含相同的代码。以下�
     	}
 
 
-4. 如果服务是以管理员权限运行，或者群集不[安全](/documentation/articles/service-fabric-cluster-security/)，也可以使用 `FabricClient` 来报告运行状况，如以下步骤中所示。
+4. 如果使用管理员权限运行服务，或者群集不[安全](/documentation/articles/service-fabric-cluster-security/)，则也可以使用 `FabricClient` 来报告运行状况，如以下步骤中所示。
 
     a.在 `var myDictionary` 声明后面创建 `FabricClient`。
 
@@ -154,4 +160,4 @@ Visual Studio 中的 Service Fabric 项目模板包含相同的代码。以下�
 ## 后续步骤
 [深入了解 Service Fabric 运行状况](/documentation/articles/service-fabric-health-introduction/)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1017_2016-->

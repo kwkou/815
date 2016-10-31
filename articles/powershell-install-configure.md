@@ -113,7 +113,7 @@ import-module "C:\\Program Files\\WindowsPowerShell\\Modules\\Azure\\XXXX\\expre
     Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 
 
-## 步骤 3：连接
+## <a name="Connect"></a> 步骤 3：连接
 cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订阅，可以购买一个。有关说明，请参阅[如何购买 Azure](https://www.azure.cn/pricing/overview/)。
 
 1. 键入 **Login-AzureRmAccount -EnvironmentName AzureChinaCloud**

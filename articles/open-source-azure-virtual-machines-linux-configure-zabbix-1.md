@@ -143,7 +143,7 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
         $sudo /etc/init.d/zabbix_agentd start
         $ sudo sed -i '$a /etc/init.d/zabbix_server start\n/etc/init.d/zabbix_agentd start' /etc/rc.local
         
-11.	打开端口 80, 10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)打开这些端口
+11.	打开端口 80, 10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开这些端口
 12.	Zabbix server web 端配置. 打开网址 *http://zabbix server ip/zabbix*  
     Zabbix server ip 是您的 zabbix server 虚拟机的 IP 地址。打开的页面如下图所示
 
@@ -360,7 +360,7 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
         $ sudo chkconfig zabbix_agentd on
         $ sudo /etc/init.d/zabbix_agentd
     
-10.	打开端口10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)
+10.	打开端口10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
 当 zabbix agent 安装和启动之后，我们就可以把这些需要监控的虚拟机监控起来了！
 

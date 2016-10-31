@@ -75,9 +75,9 @@ NoSQL 是一种与 SQL 数据库截然不同的数据库。NoSQL 常用来指代
 
 Azure 具有以下四种完全托管的 NoSQL 服务：
 
-- [Azure DocumentDB](/services/documentdb/)
+- [Azure DocumentDB](/documentation/services/documentdb/)
 - [Azure 表存储](/documentation/services/storage/)
-- [作为 HDInsight 一部分的 Azure HBase](/services/hdinsight/)
+- [作为 HDInsight 一部分的 Azure HBase](/documentation/services/hdinsight/)
 - [Azure Redis Cache](/documentation/services/redis-cache/)
 
 下面的比较图表详细说明了每种服务的关键差异。哪个最能准确描述你应用程序的需求？
@@ -100,7 +100,7 @@ Microsoft 提供了五种 SQL 产品/服务：
 - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
 - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
 
-如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)，了解两者区别的详细信息。
+如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/)，了解两者区别的详细信息。
 
 如果 SQL 听起来像是最佳选择，然后转到 [SQL Server](https://www.microsoft.com/server-cloud/products/) 了解有关 Microsoft SQL 产品和服务所提供内容的详细信息。
 

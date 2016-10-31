@@ -154,7 +154,7 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，它可让你定义 JSON
 
 	![为 JDK 设置正确的配置值][image-hdi-hivejson-jdk]
 
-2. 安装 [Maven 3.3.1](http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.zip)
+2. 安装 Maven 3.3.1
 
 	转到“控件面板”->“编辑系统变量”（对应于你帐户的环境变量），将 bin 文件夹添加到你的路径。以下屏幕截图显示了如何执行此操作。
 

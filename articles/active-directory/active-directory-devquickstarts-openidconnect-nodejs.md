@@ -5,23 +5,29 @@
 	documentationCenter="nodejs"
 	authors="brandwe"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/31/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+  	ms.tgt_pltfrm="na"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="08/15/2016"
+	ms.author="brandwe"
+	wacn.date="10/17/2016"/>
 
 # 使用 Azure AD 执行 Web 应用登录和注销
 
 
 我们将在此处使用 Passport 来执行以下操作：
 
-- 使用 Azure AD 和 v2.0 应用模型将用户登录到应用。
+- 使用 Azure AD 将用户登录到应用。
 - 显示有关用户的一些信息。
 - 从应用中注销用户。
 
-**Passport** 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Microsoft Azure Active Directory 开发了一个策略。我们将安装此模块，然后添加 Microsoft Azure Active Directory `passport-azure-ad` 插件。
+**Passport** 是 Node.js 的身份验证中间件。Passport 极其灵活并且采用模块化结构，可以在不造成干扰的情况下放入任何基于 Express 的应用程序或 Resitify Web 应用程序。一套综合性策略支持使用用户名和密码、Facebook、Twitter 等进行身份验证。我们针对 Azure Active directory 开发了一个策略。我们将安装此模块，然后添加 Azure Active Directory `passport-azure-ad` 插件。
 
 为此，你需要：
 
@@ -32,7 +38,7 @@
 
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/skeleton.zip)，或克隆该骨架：
 
-	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs.git
+git clone --branch skeleton https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS.git
 
 本教程末尾也提供完成的应用程序。
 
@@ -43,7 +49,7 @@
 - 单击“应用程序”选项卡，然后在底部抽屉中单击“添加”。
 - 根据提示创建一个新的 **Web 应用程序和/或 WebAPI**。
     - 应用程序的**名称**向最终用户描述你的应用程序
-    -	“登录 URL”是应用程序的基本 URL。框架的默认值为 `http://localhost:3000/auth/openid/return``。
+    -	“登录 URL”是应用程序的基本 URL。框架的默认值为 http://localhost:3000/auth/openid/return``。
     - “应用程序 ID URI”是应用程序的唯一标识符。约定是使用 `https://<tenant-domain>/<app-name>`，例如 `https://contoso.partner.onmschina.cn/my-first-aad-app`
 - 完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
 
@@ -98,34 +104,34 @@ JavaScript
 	//   credentials (in this case, an OpenID identifier), and invoke a callback
 	//   with a user object.
 	passport.use(new OIDCStrategy({
-	    callbackURL: config.creds.returnURL,
-	    realm: config.creds.realm,
-	    clientID: config.creds.clientID,
-	    clientSecret: config.creds.clientSecret,
-	    oidcIssuer: config.creds.issuer,
-	    identityMetadata: config.creds.identityMetadata,
-	    skipUserProfile: config.creds.skipUserProfile,
-	    responseType: config.creds.responseType,
-	    responseMode: config.creds.responseMode
+		callbackURL: config.creds.returnURL,
+		realm: config.creds.realm,
+		clientID: config.creds.clientID,
+		clientSecret: config.creds.clientSecret,
+		oidcIssuer: config.creds.issuer,
+		identityMetadata: config.creds.identityMetadata,
+		skipUserProfile: config.creds.skipUserProfile,
+		responseType: config.creds.responseType,
+		responseMode: config.creds.responseMode
 	  },
 	  function(iss, sub, profile, accessToken, refreshToken, done) {
-	    if (!profile.email) {
-	      return done(new Error("No email found"), null);
-	    }
-	    // asynchronous verification, for effect...
-	    process.nextTick(function () {
-	      findByEmail(profile.email, function(err, user) {
-	        if (err) {
-	          return done(err);
-	        }
-	        if (!user) {
-	          // "Auto-registration"
-	          users.push(profile);
-	          return done(null, profile);
-	        }
-	        return done(null, user);
-	      });
-	    });
+		if (!profile.email) {
+		  return done(new Error("No email found"), null);
+		}
+		// asynchronous verification, for effect...
+		process.nextTick(function () {
+		  findByEmail(profile.email, function(err, user) {
+			if (err) {
+			  return done(err);
+			}
+			if (!user) {
+			  // "Auto-registration"
+			  users.push(profile);
+			  return done(null, profile);
+			}
+			return done(null, user);
+		  });
+		});
 	  }
 	));
 
@@ -140,6 +146,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 JavaScript
 
 	// Passport session setup. (Section 2)
+
 	//   To support persistent login sessions, Passport needs to be able to
 	//   serialize users into and deserialize users out of the session.  Typically,
 	//   this will be as simple as storing the user ID when serializing, and finding
@@ -150,7 +157,7 @@ JavaScript
 
 	passport.deserializeUser(function(id, done) {
 	  findByEmail(id, function (err, user) {
-	    done(err, user);
+		done(err, user);
 	  });
 	});
 
@@ -159,11 +166,11 @@ JavaScript
 
 	var findByEmail = function(email, fn) {
 	  for (var i = 0, len = users.length; i < len; i++) {
-	    var user = users[i];
+		var user = users[i];
 	   log.info('we are using user: ', user);
-	    if (user.email === email) {
-	      return fn(null, user);
-	    }
+		if (user.email === email) {
+		  return fn(null, user);
+		}
 	  }
 	  return fn(null, null);
 	};
@@ -174,7 +181,10 @@ JavaScript
 JavaScript
 
 	// configure Express (Section 2)
+
 	var app = express();
+
+
 	app.configure(function() {
 	  app.set('views', __dirname + '/views');
 	  app.set('view engine', 'ejs');
@@ -198,7 +208,8 @@ JavaScript
 JavaScript
 
 	// Our Auth routes (Section 3)
-	// POST /auth/openid
+
+	// GET /auth/openid
 	//   Use passport.authenticate() as route middleware to authenticate the
 	//   request.  The first step in OpenID authentication will involve redirecting
 	//   the user to their OpenID provider.  After authenticating, the OpenID
@@ -207,8 +218,8 @@ JavaScript
 	app.get('/auth/openid',
 	  passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
 	  function(req, res) {
-	    log.info('Authenitcation was called in the Sample');
-	    res.redirect('/');
+		log.info('Authentication was called in the Sample');
+		res.redirect('/');
 	  });
 
 	// GET /auth/openid/return
@@ -219,8 +230,8 @@ JavaScript
 	app.get('/auth/openid/return',
 	  passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
 	  function(req, res) {
-	    log.info('We received a return from AzureAD.');
-	    res.redirect('/');
+		log.info('We received a return from AzureAD.');
+		res.redirect('/');
 	  });
 
 	// POST /auth/openid/return
@@ -231,10 +242,10 @@ JavaScript
 	app.post('/auth/openid/return',
 	  passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
 	  function(req, res) {
-	    log.info('We received a return from AzureAD.');
-	    res.redirect('/');
+		log.info('We received a return from AzureAD.');
+		res.redirect('/');
 	  });
-		  
+  
 
 ## 4\.使用 Passport 向 Azure AD 发出登录和注销请求
 
@@ -245,6 +256,7 @@ JavaScript
 JavaScript
 
 	//Routes (Section 4)
+
 	app.get('/', function(req, res){
 	  res.render('index', { user: req.user });
 	});
@@ -252,11 +264,12 @@ JavaScript
 	app.get('/account', ensureAuthenticated, function(req, res){
 	  res.render('account', { user: req.user });
 	});
+
 	app.get('/login',
 	  passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
 	  function(req, res) {
-	    log.info('Login was called in the Sample');
-	    res.redirect('/');
+		log.info('Login was called in the Sample');
+		res.redirect('/');
 	});
 
 	app.get('/logout', function(req, res){
@@ -268,7 +281,7 @@ JavaScript
 
 -	我们详细探讨一下：
     -	`/` 路由将重定向到 index.ejs 视图，并在请求中传递用户（如果存在）
-    - `/account` 路由首先**确保我们已经过身份验证**（下面我们将会实现），然后在请求中传递用户，以便我们可以获取有关该用户的其他信息。
+    - `/account` 路由首先***确保我们已经过身份验证***（下面我们将会实现），然后在请求中传递用户，以便我们可以获取有关该用户的其他信息。
     - `/login` 路由将从 `passport-azuread` 调用 azuread-openidconnect 验证器，如果该操作不成功，则将用户重定向回到 /login
     - `/logout` 只是调用 logout.ejs（和路由），以便清除 Cookie 并将用户返回到 index.ejs
 
@@ -278,6 +291,7 @@ JavaScript
 JavaScript
 
 	// Simple route middleware to ensure user is authenticated. (Section 4)
+
 	//   Use this route middleware on any resource that needs to be protected.  If
 	//   the request is authenticated (typically via a persistent login session),
 	//   the request will proceed.  Otherwise, the user will be redirected to the
@@ -293,6 +307,8 @@ JavaScript
 JavaScript
 
 	app.listen(3000);
+
+
 
 
 ## 5\.在 Express 中创建视图与路由，以在网站中显示用户
@@ -397,7 +413,7 @@ HTML
 
 使用个人 Microsoft 帐户或者工作或学校帐户登录，随后你会看到该用户的标识已出现在 /account 列表中。Web 应用现在使用行业标准的协议进行保护，你可以使用个人和工作/学校帐户来验证用户。
 
-[此处以 .zip 格式提供了](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/complete.zip)完整示例（不包括配置值）供你参考，你也可以从 GitHub 克隆该示例：
+[此处以 .zip 格式提供了](https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
 
 	git clone --branch complete https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS.git
 
@@ -407,4 +423,4 @@ HTML
 [使用 Azure AD 保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1010_2016-->

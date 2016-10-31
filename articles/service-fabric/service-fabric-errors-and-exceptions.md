@@ -5,12 +5,19 @@
    documentationCenter=".net"
    authors="rwike77"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/11/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="08/25/2016"
+   wacn.date="10/24/2016"
+   ms.author="ryanwi"/>  
+
 
 # 使用 FabricClient API 时常见的异常和错误
 [FabricClient](https://msdn.microsoft.com/zh-cn/library/system.fabric.fabricclient.aspx) API 可让群集和应用程序管理员对 Service Fabric 造应用程序、服务或群集执行管理任务。例如，部署、升级和删除应用程序、检查群集的运行状况或测试服务。应用程序开发人员和群集管理员可以使用 FabricClient API 来开发用于管理 Service Fabric 群集和应用程序的工具。
@@ -38,6 +45,6 @@
 |InvalidProtectionLevel|保护级别无效。|
 |InvalidX509Store|无法打开 X509 证书存储。|
 |InvalidSubjectName|使用者名称无效。|
-|InvalidAllowedCommonNameList|公用名字符串列表的格式无效。应是逗号分隔的列表。|
+|InvalidAllowedCommonNameList|公用名字符串列表的格式无效。应为逗号分隔的列表。|
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1017_2016-->

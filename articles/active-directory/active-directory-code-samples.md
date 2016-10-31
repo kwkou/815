@@ -9,18 +9,24 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="05/16/2016"
-   wacn.date="07/19/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/16/2016"
+   ms.author="mbaldwin"
+   wacn.date="10/11/2016"/>
+
 
 # Azure Active Directory 代码示例
 
 [AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
-你可以使用 Microsoft Azure Active Directory (Azure AD) 向你的 web 应用程序和 web API 添加身份验证和授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，你可以找到在要求、安装和设置方面提供了帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
+可以使用 Azure Active Directory (Azure AD) 向 Web 应用程序和 Web API 添加身份验证与授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，可以找到在要求、安装和设置方面提供帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
 
-若要了解每个示例类型的基本方案，请参阅“Azure AD 的身份验证方案”。
+若要了解每个示例类型的基本方案，请参阅"Azure AD 的身份验证方案"。
 
-为我们在 GitHub 上的示例做出补充：[Microsoft Azure Active Directory 示例和文档](https://github.com/Azure-Samples?page=3&query=active-directory)。
+为 GitHub 上的示例做出补充：[Azure Active Directory 示例和文档](https://github.com/Azure-Samples?page=3&query=active-directory)。
 
 ## Web 浏览器到 Web 应用程序
 
@@ -50,7 +56,7 @@
 
 ## 本机应用程序到 Web API
 
-这些代码示例展示了如何构建本机应用程序来调用受 Azure AD 保护的 web API。它们使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx)。
+这些代码示例展示了如何构建本机应用程序来调用受 Azure AD 保护的 web API。它们使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/)。
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
@@ -71,20 +77,19 @@
 
 ## Web 应用程序到 Web API
 
-这些代码示例展示了如何使用 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx) 构建 web 应用程序来调用由 Azure AD 保护的 Web API。
+这些代码示例展示了如何使用 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/) 构建 web 应用程序来调用由 Azure AD 保护的 Web API。
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
 | C#/.NET | [WebApp-WebAPI-OpenIDConnect-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect) | 使用已注册用户的权限调用一个 Web API。
 | C#/.NET | [WebApp-WebAPI-OAuth2-AppIdentity-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-appidentity) | 使用应用程序的权限调用一个 Web API。
-| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-useridentity) | 使用 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx) 向现有 Web 应用程序添加授权以便它能够更调用 Web API。
+| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-useridentity) | 使用 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/) 向现有 Web 应用程序添加授权以便它能够更调用 Web API。
 | JavaScript | [WebAPI-Nodejs](https://github.com/Azure-Samples/active-directory-node-webapi) | 设置一个与 Azure AD 集成的 REST API 服务以提供 API 保护。使用 Web API 包括一个 Node.js 服务器。
 | C#/.NET | [WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-multitenant-openidconnect) | 一个多租户 MVC Web 应用程序，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从 Azure AD 租户对用户进行身份验证。使用授权代码来调用 Graph API。
 
-## <a name="server-or-daemon-application-to-web-api"></a>服务器或守护程序应用程序到 Web API
+## 服务器或守护程序应用程序到 Web API
 
-
-这些代码示例展示了如何构建守护程序或服务器应用程序来使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx) 通过一个 Web API 获取资源。
+这些代码示例展示了如何构建守护程序或服务器应用程序来使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/) 通过一个 Web API 获取资源。
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
@@ -123,10 +128,10 @@
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
-| C#/.NET | [Microsoft Azure AD 应用程序中基于角色的和基于 ACL 的授权](http://go.microsoft.com/fwlink/?LinkId=331694) | 在与 Azure AD 集成的应用程序中执行基于角色的授权 (RBAC) 和基于 ACL 的授权。
+| C#/.NET | [Azure AD 应用程序中基于角色和基于 ACL 的授权](http://go.microsoft.com/fwlink/?LinkId=331694) | 在与 Azure AD 集成的应用程序中执行基于角色的授权 (RBAC) 和基于 ACL 的授权。
 | C#/.NET | [AAL - Windows 应用商店应用到 REST 服务 - 身份验证](http://go.microsoft.com/fwlink/?LinkId=330605) | 使用适用于 Windows 应用商店 Beta 版的 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/)（以前称为 AAL）向 Windows 应用商店应用添加用户身份验证功能。
 | C#/.NET | [ADAL - 调用 REST 服务的本机应用 - 通过浏览器对话框使用 AAD 进行身份验证](http://go.microsoft.com/fwlink/?LinkId=259814) | 使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 向 WPF 客户端添加用户身份验证功能。
-| C#/.NET | [ADAL - 调用 REST 服务的本机应用 - 通过浏览器对话框使用 ACS 进行身份验证](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) | 使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和[访问控制服务 2.0 (ACS)](http://msdn.microsoft.com/library/azure/hh147631.aspx) 向 WPF 客户端添加用户身份验证功能。
+| C#/.NET | [ADAL - 调用 REST 服务的本机应用 - 通过浏览器对话框使用 ACS 进行身份验证](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) | 使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和[访问控制服务 2.0 (ACS)](http://msdn.microsoft.com/zh-cn/library/azure/hh147631.aspx) 向 WPF 客户端添加用户身份验证功能。
 | C#/.NET | [ADAL - 服务器到服务器的身份验证](http://go.microsoft.com/fwlink/?LinkId=259816) | 使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 保护从服务器端进程到 MVC4 Web API REST 服务的服务调用。
 | C#/.NET | [使用 Azure AD 将登录名添加到 Web 应用程序中](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) | 将 .NET 应用程序配置为根据你的 Azure AD 企业目录执行 Web 单一登录。
 | C#/.NET | [利用 Azure AD 开发多租户 Web 应用程序](https://github.com/Azure-Samples/active-directory-dotnet-webapp-multitenant-openidconnect) | 使用 Azure AD 向一个 .NET 应用程序添加单一登录和目录访问功能以便在多个组织中工作。
@@ -144,9 +149,8 @@ PHP | [Azure AD 图形 API 的 PHP 示例应用](http://code.msdn.microsoft.com/
 
 [Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
 
-[Azure AD 图形 API 概念和参考](https://msdn.microsoft.com/library/azure/hh974476.aspx)
+[Azure AD 图形 API 概念和参考](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx)
 
 [Azure AD Graph API 帮助程序库](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)
 
-
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_0926_2016-->

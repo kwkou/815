@@ -34,7 +34,7 @@
 ### 运行自定义脚本扩展的先决条件
 
 1. 安装 <a href="/downloads" target="_blank">Azure PowerShell cmdlet</a> 0.8.0 或更高版本。
-2. 如果希望脚本在现有 VM 上运行，请确保已在该 VM 上启用 VM 代理。如果尚未安装，请执行以下[步骤](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)。如果 VM 是从 Azure 门户创建的，则会默认安装 VM 代理。
+2. 如果希望脚本在现有 VM 上运行，请确保已在该 VM 上启用 VM 代理。如果尚未安装，请执行以下[步骤](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)。如果 VM 是从 Azure 门户预览创建的，则会默认安装 VM 代理。
 3. 将你要在 VM 上运行的脚本上载到 Azure 存储。脚本可以来自单个容器或多个存储容器。
 4. 脚本应当以下述方式编写：使用扩展启动入口脚本，然后入口脚本再启动其他脚本。
 
@@ -72,9 +72,9 @@
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
 
-### 从 Azure 门户添加自定义脚本扩展
+### 从 Azure 门户预览添加自定义脚本扩展
 
-在 <a href="https://portal.azure.cn/ " target="_blank">Azure 门户</a>中转到 VM，并通过指定要运行的脚本文件添加扩展。
+在 <a href="https://portal.azure.cn/ " target="_blank">Azure 门户预览</a>中转到 VM，并通过指定要运行的脚本文件添加扩展。
 
   ![指定脚本文件][5]  
 

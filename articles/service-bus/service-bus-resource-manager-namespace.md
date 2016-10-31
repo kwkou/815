@@ -5,16 +5,22 @@
     documentationCenter=".net"
     authors="sethmanheim"
     manager="timlt"
-    editor=""/>
+    editor=""/>  
+
 
 <tags
     ms.service="service-bus"
+    ms.devlang="tbd"
+    ms.topic="article"
+    ms.tgt_pltfrm="dotnet"
+    ms.workload="na"
     ms.date="04/15/2016"
-    wacn.date="08/15/2016"/>
+    ms.author="sethm;shvija"
+    wacn.date="10/24/2016"/>  
 
 # 使用 Azure Resource Manager 模板创建服务总线命名空间
 
-本文介绍如何使用创建包含标准/基本 SKU 的服务总线“消息传送”命名空间的 Azure Resource Manager 模板。本文还定义了为执行部署指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
+本文介绍如何使用 Azure Resource Manager 模板，该模板用于创建包含标准/基本 SKU 的类型为 **Messaging** 的服务总线命名空间。本文还定义了为执行部署指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
 
 有关创建模板的详细信息，请参阅[创作 Azure Resource Manager 模板][]。
 
@@ -22,22 +28,21 @@
 
 >[AZURE.NOTE] 以下 Azure Resource Manager 模板可供下载和部署。
 >
->-    [创建包含事件中心和使用者组的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-event-hub/)
 >-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
 >-    [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
 >-    [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
 >
->若要检查最新模板，请访问 [Azure 快速入门模板][]库并搜索服务总线。
+>若要检查最新模板，请访问 [Azure 快速启动模板][]库并搜索服务总线。
 
 ## 你将部署什么内容？
 
-使用此模板，你将部署包含[基本或标准](/pricing/details/service-bus/) SKU 的服务总线命名空间。
+使用此模板，可以部署包含[基本或标准](/pricing/details/service-bus/) SKU 的服务总线命名空间。
 
 若要自动运行部署，请单击以下按钮：
 
 [![部署到 Azure](./media/service-bus-resource-manager-namespace/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-servicebus-create-namespace%2Fazuredeploy.json)
 
-## Parameters
+## 参数
 
 使用 Azure 资源管理器，可以定义在部署模板时想要指定的值的参数。该模板具有一个名为 `Parameters` 的部分，其中包含所有参数值。你应该为随着要部署的项目或要部署到的环境而变化的值定义参数。不要为永远保持不变的值定义参数。每个参数值可在模板中用来定义所部署的资源。
 
@@ -74,7 +79,7 @@
 
 ```
 
-模板将定义此参数允许的值（Basic 或 Standard），如果未指定任何值，则分配默认值 (Standard)。
+模板定义此参数允许的值（Basic 或 Standard），如果未指定任何值，则分配默认值 (Standard)。
 
 
 有关服务总线定价的详细信息，请参阅[服务总线和定价][]。
@@ -144,7 +149,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --templat
 
   [创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates/
   [服务总线命名空间模板]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-servicebus-create-namespace/
-  [Azure 快速入门模板]: https://azure.microsoft.com/documentation/templates/
+  [Azure 快速启动模板]: https://azure.microsoft.com/documentation/templates/
   [服务总线和定价]: https://azure.microsoft.com/documentation/articles/service-bus-pricing-billing/
   [Using Azure PowerShell with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager/
   [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/

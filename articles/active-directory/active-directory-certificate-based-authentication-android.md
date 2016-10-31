@@ -7,8 +7,13 @@
     manager="femila"/>
 <tags 
     ms.service="active-directory" 
-    ms.date="07/13/2016" 
-    wacn.date="08/01/2016" />
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
+    ms.date="07/22/2016" 
+    ms.author="markvi"
+    wacn.date="10/11/2016"/>
 
 
 
@@ -40,7 +45,7 @@
 
 - 访问证书颁发机构以颁发客户端证书。
 
-- 必须在 Azure Active Directory 中配置证书颁发机构。有关如何完成该配置的详细步骤，可参阅“入门”部分。
+- 必须在 Azure Active Directory 中配置证书颁发机构。有关如何完成该配置的详细步骤，请参阅[入门](#getting-started)部分。
 
 - 必须在 Azure Active Directory 中配置根证书颁发机构和任何中间证书颁发机构。
 
@@ -49,7 +54,7 @@
 - 必须颁发客户端证书以进行客户端身份验证。
 
 
-- 仅对于 Exchange ActiveSync 客户端，客户端证书的“使用者可选名称”字段的主体名称或 RFC822 名称必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的“代理地址”属性。
+- 仅对于 Exchange ActiveSync 客户端，客户端证书的"使用者可选名称"字段的主体名称或 RFC822 名称必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的"代理地址"属性。
 
 
 
@@ -57,17 +62,19 @@
 
 | 应用 | 支持 |
 | ---                       | ---          |
-| OneDrive | 是 |
-| Outlook | 是 |
-| Word/Excel/PowerPoint | 是 |
-| Skype for Business | 是 |
+| Word/Excel/PowerPoint | ![勾选标记][1] |
+| OneNote | 即将支持 |
+| OneDrive | ![勾选标记][1] |
+| Outlook | ![勾选标记][1] |
+| Yammer | ![勾选标记][1] |
+| Skype for Business | ![勾选标记][1] |
 
 
 ### 要求  
 
 设备 OS 版本必须为 Android 5.0 (Lollipop) 及更高版本
 
-必须将联合服务器配置为在 Office 移动应用程序上执行 CBA。
+必须配置联合服务器。
 
 
 若要让 Azure Active Directory 吊销客户端证书，ADFS 令牌必须具有以下声明：
@@ -82,7 +89,7 @@
 
 作为最佳做法，你应该使用有关如何获取用户证书的说明来更新 ADFS 错误页。
 
-有关更多详细信息，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。
+有关更多详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/zh-cn/library/dn280950.aspx)（自定义 AD FS 登录页）。
 
 
 
@@ -98,38 +105,38 @@
 
 若要开始操作，你需要在 Azure Active Directory 中配置证书颁发机构。针对每个证书颁发机构，上传以下信息：
 
-- 证书的公共部分，格式为 .cer
+- 证书的公共部分，格式为 *.cer*
 
 - 证书吊销列表 (CRL) 所在的面向 Internet 的 URL
  
 
 下面是证书颁发机构的架构：
-	
-	    class TrustedCAsForPasswordlessAuth 
-	    { 
-	       CertificateAuthorityInformation[] certificateAuthorities;    
-	    } 
-	
-	    class CertificateAuthorityInformation 
-	
-	    { 
-	        CertAuthorityType authorityType; 
-	        X509Certificate trustedCertificate; 
-	        string crlDistributionPoint; 
-	        string deltaCrlDistributionPoint; 
-	        string trustedIssuer; 
-	        string trustedIssuerSKI; 
-	    }                
-	
-	    enum CertAuthorityType 
-	    { 
-	        RootAuthority = 0, 
-	        IntermediateAuthority = 1 
-	    } 
-	
+
+    class TrustedCAsForPasswordlessAuth 
+    { 
+       CertificateAuthorityInformation[] certificateAuthorities;    
+    } 
+
+    class CertificateAuthorityInformation 
+
+    { 
+        CertAuthorityType authorityType; 
+        X509Certificate trustedCertificate; 
+        string crlDistributionPoint; 
+        string deltaCrlDistributionPoint; 
+        string trustedIssuer; 
+        string trustedIssuerSKI; 
+    }                
+
+    enum CertAuthorityType 
+    { 
+        RootAuthority = 0, 
+        IntermediateAuthority = 1 
+    } 
+
 
 若要上传信息，可以通过 Windows PowerShell 使用 Azure AD 模块。  
-下面是添加、删除或修改证书颁发机构的示例。 
+下面是添加、删除或修改证书颁发机构的示例。
 
 
 
@@ -137,9 +144,9 @@
 
 1. 使用管理员特权启动 Windows PowerShell。
 
-2. 安装 Azure AD 模块。你需要安装版本 [1\.1.143.0](http://www.powershellgallery.com/packages/AzureADPreview/1.1.143.0) 或更高版本。
+2. 安装 Azure AD 模块。需要安装 [1\.1.143.0](http://www.powershellgallery.com/packages/AzureADPreview/1.1.143.0) 或更高版本。
 
-        Install-Module -Name AzureAD –RequiredVersion 1.1.143.0 
+        Install-Module -Name AzureADPreview -RequiredVersion 1.1.143.0 
 
 3. 连接到目标租户：
 
@@ -157,14 +164,14 @@
 
 5. 获取证书颁发机构：
 
-		Get-AzureADTrustedCertificateAuthority 
+        Get-AzureADTrustedCertificateAuthority 
 
 
 ### 检索证书颁发机构列表
 
 检索当前存储在 Azure Active Directory 中的租户的证书颁发机构：
 
-		Get-AzureADTrustedCertificateAuthority 
+        Get-AzureADTrustedCertificateAuthority 
 
 
 ### 删除证书颁发机构
@@ -193,6 +200,9 @@
 3. 设置**证书颁发机构**：
 
 		Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0] 
+
+
+
 
 ## 测试 Office 移动应用程序  
 
@@ -237,7 +247,7 @@
 
 ## 吊销
 
-若要吊销客户端证书，Azure Active Directory 会从作为证书颁发机构信息的一部分上传的 URL 中提取证书吊销列表 (CRL)，并将其缓存。CRL 中的上次发布时间戳（“生效日期”属性）用于确保 CRL 仍然有效。将定期引用 CRL，以撤销对该列表中证书的访问权限。
+若要吊销客户端证书，Azure Active Directory 会从作为证书颁发机构信息的一部分上传的 URL 中提取证书吊销列表 (CRL)，并将其缓存。CRL 中的上次发布时间戳（"生效日期"属性）用于确保 CRL 仍然有效。将定期引用 CRL，以撤销对该列表中证书的访问权限。
 
 如果需要更即时的吊销（例如，如果用户丢失了设备），可以使用户的授权令牌失效。若要使授权令牌失效，请使用 Windows PowerShell 为此特定用户设置 **StsRefreshTokenValidFrom** 字段。必须为要撤销其访问权限的每个用户更新 **StsRefreshTokenValidFrom** 字段。
  
@@ -263,4 +273,8 @@
 
 所设日期必须属于将来。如果日期不属于将来，则不会设置 **StsRefreshTokensValidFrom** 属性。如果日期属于将来，**StsRefreshTokensValidFrom** 会设置为当前时间（而不是由 Set-MsolUser 命令指示的日期）。
 
-<!---HONumber=Mooncake_0725_2016-->
+
+<!--Image references-->
+[1]: ./media/active-directory-certificate-based-authentication-android/ic195031.png
+
+<!---HONumber=Mooncake_0926_2016-->

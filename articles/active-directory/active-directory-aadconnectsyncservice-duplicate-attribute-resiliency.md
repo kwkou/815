@@ -9,27 +9,30 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="05/26/2016"
-	wacn.date="07/26/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/16/2016"
+	ms.author="markusvi"
+	wacn.date="10/11/2016"/>
 
 
 
 # 标识同步和重复属性复原
 重复属性复原是 Azure Active Directory 的一项功能，可在运行 Microsoft 的同步工具之一时，用于消除 **UserPrincipalName** 和 **ProxyAddress** 冲突所造成的不便。
 
-在给定 Azure Active Directory 目录的所有“用户”、“组”或“联系人”对象中，这两个属性通常必须是唯一的。
+在给定 Azure Active Directory 目录的所有"用户"、"组"或"联系人"对象中，这两个属性通常必须是唯一的。
 
 > [AZURE.NOTE] 只有用户可以拥有 UPN。
 
-此功能实现的新行为是同步管道的云部分，因此，此功能不区分客户端，而是与任何 Microsoft 同步产品（包括 Azure AD Connect、DirSync 和 MIM + 连接器）相关。本文档中使用的概括术语“同步客户端”用于表示上述任一产品。
+此功能实现的新行为是同步管道的云部分，因此，此功能不区分客户端，而是与任何 Microsoft 同步产品（包括 Azure AD Connect、DirSync 和 MIM + 连接器）相关。本文档中使用的概括术语"同步客户端"用于表示上述任一产品。
 
 ## 当前行为
 如果尝试预配的新对象具有违反此唯一性约束的 UPN 或 ProxyAddress 值，则 Azure Active Directory 会阻止创建该对象。同样地，如果以非唯一的 UPN 或 ProxyAddress 更新对象，则更新会失败。同步客户端在每个导出周期重试预配尝试或更新，在冲突解决前继续失败。每次尝试时都会生成错误报告电子邮件，并由同步客户端记录一个错误。
 
 ## 重复属性复原的行为
-Azure Active Directory 并不是完全无法预配或更新具有重复属性的对象，而是“隔离”违反唯一性约束的重复属性。如果预配时需要此属性（例如 UserPrincipalName），则服务将分配占位符值。这些临时值的格式为  
-“**<原始前缀>+<4 位数>@<初始租户域>.partner.onmschina.cn**”。  
-如果不需要此属性（例如 **ProxyAddress**），则 Azure Active Directory 只隔离冲突属性并继续创建或更新对象。
+Azure Active Directory 并不是完全无法预配或更新具有重复属性的对象，而是"隔离"违反唯一性约束的重复属性。如果预配时需要此属性（例如 UserPrincipalName），则服务将分配占位符值。这些临时值的格式为" ***<原始前缀>+<4 位数>@<初始租户域>.partner.onmschina.cn*** "。如果不需要此属性（例如 **ProxyAddress**），则 Azure Active Directory 只隔离冲突属性并继续创建或更新对象。
 
 隔离属性后，有关冲突的信息将以旧行为中使用的相同错误报告电子邮件发送。但是，此信息只出现在错误报告中一次，发生隔离时，将不继续记录在以后的电子邮件中。此外，由于此对象已成功导出，因此同步客户端不会记录错误，并且不会在后续的同步周期中重试创建/更新操作。
 
@@ -54,7 +57,7 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 本主题中的 PowerShell cmdlet 具有以下特点：
 
 - 以下所有 cmdlet 都区分大小写。
-- 始终必须包含 **–ErrorCategory PropertyConflict**。目前没有其他类型的 **ErrorCategory**，但将来可能会扩展。
+- 始终必须包含 **-ErrorCategory PropertyConflict**。目前没有其他类型的 **ErrorCategory**，但将来可能会扩展。
 
 首先，应运行 **Connect-MsolService** 并输入租户管理员的凭据。
 
@@ -78,8 +81,8 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict`
 
-随后将生成如下所示的结果:  
- ![Get-MsolDirSyncProvisioningError](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/1.png)  
+随后将生成如下所示的结果：  
+ ![Get-MsolDirSyncProvisioningError](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/1.png "Get-MsolDirSyncProvisioningError")  
 
 
 #### 按属性类型
@@ -92,7 +95,7 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
 #### 按冲突值
-若要查看与特定属性相关的错误，请添加 **-PropertyValue** 标志（添加此标志时还必须使用 **-PropertyName**）：
+若要查看与特定属性相关的错误，请添加 **-PropertyValue** 标志（添加此标志时也必须使用 **-PropertyName**）：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyValue User@domain.com -PropertyName UserPrincipalName`
 
@@ -123,7 +126,7 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 可以在 Office 365 管理中心查看目录同步错误。Office 365 门户中的报告只显示存在这些错误的 **User** 对象。它不显示有关 **Groups**、**Contacts** 或 **PublicFolders** 之间的冲突的信息。
 
 
-![活动用户](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/1234.png)
+![活动用户](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/1234.png "活动用户")
 
 有关如何在 Office 365 管理中心查看目录同步错误的说明，请参阅 [Identify directory synchronization errors in Office 365](https://support.office.com/zh-cn/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067)（识别 Office 365 中的目录同步错误）。
 
@@ -132,16 +135,15 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 使用此新行为处理具有重复属性冲突的对象时，通知将包含在标准标识同步错误报告电子邮件中，而该电子邮件将发送给租户的技术通知联系人。但是，此行为有一项重大变化。在过去，有关重复属性冲突的信息包含在每个后续错误报告中，直到解决冲突为止。使用此新行为，给定冲突的错误通知只出现一次 - 在冲突属性被隔离时。
 
 ProxyAddress 冲突的电子邮件通知示例如下所示：  
-
-    ![活动用户](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/6.png)
+![活动用户](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/6.png "活动用户")
 
 ## 解决冲突
 针对这些错误的故障排除策略和解决技巧不应与过去处理重复属性错误的方式不同。唯一的差别在于，计时器任务将扫描服务端的租户，以便在冲突解决后，自动将有问题的属性添加到适当的对象。
 
-以下文章概述了各种故障排除和解决策略：[Duplicate or invalid attributes prevent directory synchronization in Office 365（重复或无效的属性阻止 Office 365 中的目录同步）](https://support.microsoft.com/kb/2647098)。
+以下文章概述了各种故障排除和解决策略：[Duplicate or invalid attributes prevent directory synchronization in Office 365](https://support.microsoft.com/zh-cn/kb/2647098)（重复或无效的属性阻止 Office 365 中的目录同步）。
 
 ## 已知问题
-没有任何已知问题导致数据丢失或服务降级。其中有些问题是外观问题，有些问题将导致引发标准的“复原前”重复属性错误，而不是隔离冲突属性，还有一些问题导致特定错误需要额外的手动修复。
+没有任何已知问题导致数据丢失或服务降级。其中有些问题是外观问题，有些问题将导致引发标准的"*复原前*"重复属性错误，而不是隔离冲突属性，还有一些问题导致特定错误需要额外的手动修复。
 
 **核心行为：**
 
@@ -158,11 +160,11 @@ ProxyAddress 冲突的电子邮件通知示例如下所示：
 
     a. **UserA@contoso.com** 有非唯一的 UPN，因为另一个对象的 ProxyAddress 也有该值。
 
-    b.UserA 获取临时 **MOERA UPN** (**UserA1234@contoso.partner.onmschina.cn**)，真正的 UPN 值将被隔离（符合预期）。
+    b. UserA 获取临时 **MOERA UPN** (**UserA1234@contoso.partner.onmschina.cn**)，真正的 UPN 值将被隔离（符合预期）。
 
-    c.其他冲突对象的 ProxyAddress 随后将被删除。
+    c. 其他冲突对象的 ProxyAddress 随后将被删除。
 
-    d.UserA 的 UPN 永远不会自动修复；必须以手动方式更新。
+    d. UserA 的 UPN 永远不会自动修复；必须以手动方式更新。
 
 3. 如果在本地创建两个具有相同 SMTP 地址的组，则其中一个组在首次尝试预配时会失败并返回标准的重复 **ProxyAddress** 错误。但是，重复值将在下一个同步周期被适当隔离。
 
@@ -184,13 +186,13 @@ ProxyAddress 冲突的电子邮件通知示例如下所示：
 
     a.**用户 A** 首先使用 **UPN = User@contoso.com** 同步。
 
-    b.然后，尝试使用 **UPN = User@contoso.com** 同步**用户 B**。
+    b.然后，尝试使用 **UPN = User@contoso.com** 同步 **User B**。
 
     c.**用户 B** 的 UPN 已更改为 **User1234@contoso.partner.onmschina.cn**，**User@contoso.com** 已添加到 **DirSyncProvisioningErrors**。
 
-    d.**用户 B** 的错误消息应指出**用户 A** 已有用作 UPN 的 **User@contoso.com**，但却显示**用户 B** 自己的 displayName。
+    d.**用户 B** 的错误消息应指出 **User A** 已有用作 UPN 的 **User@contoso.com**，但却显示 **User B** 自己的 displayName。
 
-3. 此报告可能只对具有 **UPN** 冲突的用户而不对具有 **ProxyAddress** 错误的用户显示详细错误信息（还在调查此行为是否一致或因环境而异）。
+3. 此报告可能只对具有 **UPN** 冲突的用户而不对具有 **ProxyAddress** 错误的用户显示详细错误信息（仍调查此行为是否一致或因环境而异）。
 
 ## 另请参阅
 
@@ -198,6 +200,6 @@ ProxyAddress 冲突的电子邮件通知示例如下所示：
 
 - [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-- [Identify directory synchronization errors in Office 365（识别 Office 365 中的目录同步错误）](https://support.office.com/zh-cn/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067)
+- [Identify directory synchronization errors in Office 365](https://support.office.com/zh-cn/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067)（识别 Office 365 中的目录同步错误）
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_0926_2016-->
