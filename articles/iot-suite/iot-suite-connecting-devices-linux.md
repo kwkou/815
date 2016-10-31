@@ -11,8 +11,13 @@
 
 <tags
    ms.service="iot-suite"
-   ms.date="07/14/2016"
-   wacn.date="08/22/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="10/05/2016"
+   ms.author="dobett"
+   wacn.date="10/31/2016"/>
 
 
 # 将设备连接到远程监视预配置解决方案 (Linux)
@@ -21,7 +26,7 @@
 
 ## 生成并运行示例 C 客户端 Linux
 
-以下过程演示如何以 C 编写、生成并在 Ubuntu Linux 上运行一个简单的客户端应用程序，以便与远程监视预配置的解决方案通信。若要完成这些步骤，你需要一个运行 Ubuntu 版本 15.04 或 15.10 的设备。继续操作之前，请使用以下命令在 Ubuntu 设备上安装必备组件包：
+以下过程演示如何创建一个以 C 编写且在 Ubuntu Linux 系统上生成和运行的客户端应用程序，用来与远程监视预配置解决方案进行通信。若要完成这些步骤，你需要一个运行 Ubuntu 版本 15.04 或 15.10 的设备。继续操作之前，请使用以下命令在 Ubuntu 设备上安装必备组件包：
 
 ```
 sudo apt-get install cmake gcc g++
@@ -48,7 +53,7 @@ Azure IoT 中心客户端库以包的形式提供，你可以使用 **apt get** 
 
 在 Ubuntu 计算机上，创建名为 **remote\_monitoring** 的文件夹。在 **remote\_monitoring** 文件夹中创建四个文件：**main.c**、**remote\_monitoring.c**、**remote\_monitoring.h** 和 **CMakeLists.txt**。
 
-IoT 中心序列化程序客户端库使用一个模型来指定设备发送到 IoT 中心的消息的格式以及设备所响应的来自 IoT 中心的命令的格式。
+IoT 中心序列化程序客户端库使用一个模型来指定设备发送到 IoT 中心的消息的格式以及从 IoT 中心所接收的命令的格式。
 
 1. 在文本编辑器中，打开 **remote\_monitoring.c** 文件。添加以下 `#include` 语句：
 
@@ -197,7 +202,7 @@ IoT 中心序列化程序客户端库使用一个模型来指定设备发送到 
     }
     ```
 
-4. 添加以下函数以连接到 IoT 中心、发送和接收消息以及从中心断开连接。请注意设备如何在它连接之后立即将有关自身的元数据（包括它支持的命令）发送到 IoT 中心 - 这使解决方案可以在仪表板上将设备的状态更新为“正在运行”：
+4. 添加以下函数以连接到 IoT 中心、发送和接收消息以及从中心断开连接。请注意当设备连接时它如何向 IoT 中心发送有关其自身的元数据，其中包括它支持的命令。此元数据使解决方案能够在仪表板上将设备的状态更新为“正在运行”：
 
     ```
     void remote_monitoring_run(void)
@@ -382,7 +387,7 @@ int main(void)
 
 ## 使用 CMake 生成客户端应用程序
 
-以下步骤描述如何使用 CMake 生成客户端应用程序。
+以下步骤描述如何使用 *CMake* 生成客户端应用程序。
 
 1. 在文本编辑器中，打开 **remote\_monitoring** 文件夹中的 **CMakeLists.txt** 文件。
 
@@ -419,7 +424,7 @@ int main(void)
     )
     ```
 
-3. 在 **remote\_monitoring** 文件夹中，创建一个文件夹用于存储 CMake 生成的 make 文件，然后运行 **cmake** 和 **make** 命令，如下所示：
+3. 在 **remote\_monitoring** 文件夹中，创建一个文件夹用于存储 CMake 生成的 *make* 文件，然后运行 **cmake** 和 **make** 命令，如下所示：
 
     ```
     mkdir cmake

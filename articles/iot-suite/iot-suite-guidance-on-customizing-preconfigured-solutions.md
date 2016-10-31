@@ -11,8 +11,14 @@
 
 <tags
      ms.service="iot-suite"
-     ms.date="06/27/2016"
-     wacn.date="09/05/2016"/>  
+     ms.devlang="dotnet"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="10/11/2016"
+     ms.author="aguilaaj"
+     wacn.date="10/31/2016"/>
+
 
 
 # 自定义预配置解决方案

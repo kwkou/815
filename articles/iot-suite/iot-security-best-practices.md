@@ -11,8 +11,14 @@
 
 <tags
  ms.service="iot-suite"
- ms.date="08/02/2016"
- wacn.date="09/05/2016"/>  
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="10/17/2016"
+ ms.author="yurid"
+ wacn.date="10/31/2016"/>
+
 
 
 [AZURE.INCLUDE [iot-security-best-practices](../../includes/iot-security-best-practices.md)]

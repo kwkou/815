@@ -11,8 +11,13 @@
 
 <tags
    ms.service="iot-suite"
-   ms.date="07/14/2016"
-   wacn.date="08/22/2016"/>  
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="10/05/2016"
+   ms.author="dobett"
+   wacn.date="10/31/2016"/>  
 
 
 
@@ -50,7 +55,7 @@
 5. 保存文件。在包含这些文件的文件夹中的命令提示符处运行以下命令，以安装所需包，然后运行示例应用程序：
 
     ```
-    npm install
+    npm install --save
     node remote_monitoring.js
     ```
 
