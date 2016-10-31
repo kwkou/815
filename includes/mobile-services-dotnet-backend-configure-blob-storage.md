@@ -26,7 +26,7 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 
 	这些属性用于生成 SAS 并存储映像信息。请注意，这些属性的大小写与 JavaScript 后端版本相匹配。
 
-	>[AZURE.NOTE]使用默认数据库初始程序时，如果实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。不能为 Azure 中的 SQL 数据库使用默认的初始值设定项。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](/zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)。
+	>[AZURE.NOTE]使用默认数据库初始程序时，如果实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。不能为 Azure 中的 SQL 数据库使用默认的初始值设定项。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/)。
 
 ##更新 TodoItem 控制器以生成共享的访问签名 
 
@@ -129,7 +129,7 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 <!-- Images. -->
 
 <!-- URLs. -->
-[如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account
+[如何创建存储帐户]: /documentation/articles/storage-create-storage-account
 [应用设置]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
 <!---HONumber=Mooncake_0118_2016-->

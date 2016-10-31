@@ -16,7 +16,6 @@ wacn.date="09/19/2016"/>
 >[AZURE.SELECTOR]
 - [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)
 - [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/)
-- [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles/)
 
 
 你可以通过远程桌面访问在 Azure 中运行的角色的桌面。你可以使用远程桌面连接，在应用程序正在运行时排查和诊断其问题。

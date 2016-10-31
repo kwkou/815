@@ -26,7 +26,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 >[AZURE.NOTE]建议将任何需要高 IOPS 的虚拟机磁盘迁移到 Azure 高级存储，以便你的应用程序实现最佳性能。如果你的磁盘不需要高 IOPS，你可以通过在标准存储（将虚拟机磁盘数据存储在硬盘驱动器 (HDD) 上而不是 SSD 上）中对其进行维护来限制成本。
 
-若要开始使用 Azure 高级存储，请访问[开始免费试用](/zh-cn/pricing/1rmb-trial/)页。有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage/)。
+若要开始使用 Azure 高级存储，请访问[开始免费试用](/pricing/1rmb-trial/)页。有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage/)。
 
 ## 有关高级存储的重要事项
 

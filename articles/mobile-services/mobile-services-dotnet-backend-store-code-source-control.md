@@ -15,8 +15,8 @@
 # 在源代码管理中存储移动服务项目代码
 
 > [AZURE.SELECTOR]
-- [.NET backend](/zh-cn/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/)
-- [Javascript backend](/zh-cn/documentation/articles/mobile-services-store-scripts-source-control/)
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/)
+- [Javascript backend](/documentation/articles/mobile-services-store-scripts-source-control/)
 
 本主题说明如何使用 Azure 移动服务提供的源代码管理存储 .NET 后端服务项目。只需将项目从本地 Git 存储库上载到生产移动服务，便可以发布该项目。
 

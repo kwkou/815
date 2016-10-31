@@ -61,7 +61,6 @@ Azure 中的访问控制首先体现在计费方面。Azure 帐户的所有者�
 
 ## 后续步骤
 
-- 若要了解有关如何更改 Azure 订阅管理员的详细信息，请参阅[如何添加或更改 Azure 管理员角色](/documentation/articles/billing-add-change-azure-subscription-administrator/)
 
 - 有关 Azure Active Directory 如何与 Azure 订阅相关联的详细信息，请参阅 [How Azure subscriptions are associated with Azure Active Directory](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（Azure 订阅与 Azure Active Directory 的关联方式）
 

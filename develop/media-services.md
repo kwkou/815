@@ -24,32 +24,32 @@ editor="Eric Chen" />
 
 ###上载
 
-- [设置您的计算机](/zh-cn/documentation/articles/media-services-set-up-computer/)
+- [设置您的计算机](/documentation/articles/media-services-set-up-computer/)
 - [批量上载内容](http://msdn.microsoft.com/zh-cn/library/azure/jj853022.aspx)
-- [全部显示](/zh-cn/develop/media-services/resources)
+- [全部显示](/develop/media-services/resources)
 
 ###编码
 
-- [对资产进行编码](/zh-cn/documentation/articles/media-services-encode-asset/)
-- [检查作业进度](/zh-cn/documentation/articles/media-services-check-job-progress/)
-- [在经典管理门户中进行监视](/zh-cn/documentation/articles/media-services-monitor-services-account/)
-- [经典管理门户中的内容](/zh-cn/documentation/articles/media-services-manage-content/)
-- [全部显示](/zh-cn/develop/media-services/resources)
+- [对资产进行编码](/documentation/articles/media-services-encode-asset/)
+- [检查作业进度](/documentation/articles/media-services-check-job-progress/)
+- [在经典管理门户中进行监视](/documentation/articles/media-services-monitor-services-account/)
+- [经典管理门户中的内容](/documentation/articles/media-services-manage-content/)
+- [全部显示](/develop/media-services/resources)
 
 ###传送
 
-- [管理多个源](/zh-cn/documentation/articles/media-services-manage-origins/)
-- [通过下载传送资产](/zh-cn/documentation/articles/media-services-deliver-asset-download/)
-- [传送流式处理内容](/zh-cn/documentation/articles/media-services-deliver-streaming-content/)
+- [管理多个源](/documentation/articles/media-services-manage-origins/)
+- [通过下载传送资产](/documentation/articles/media-services-deliver-asset-download/)
+- [传送流式处理内容](/documentation/articles/media-services-deliver-streaming-content/)
 - [动态包装内容](https://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx)
-- [全部显示](/zh-cn/develop/media-services/resources)
+- [全部显示](/develop/media-services/resources)
 
 ###使用
 
 - [开发媒体服务应用程序](http://msdn.microsoft.com/zh-cn/library/dn223283.aspx)
-- [开发 Windows 8 播放器](/zh-cn/documentation/articles/media-services-build-smooth-streaming-apps/)
-- [开发 Flash 播放器](/zh-cn/documentation/articles/media-services-use-osmf-smooth-streaming-client-plugin/)
-- [全部显示](/zh-cn/develop/media-services/resources)
+- [开发 Windows 8 播放器](/documentation/articles/media-services-build-smooth-streaming-apps/)
+- [开发 Flash 播放器](/documentation/articles/media-services-use-osmf-smooth-streaming-client-plugin/)
+- [全部显示](/develop/media-services/resources)
 
 ##更多资源
 

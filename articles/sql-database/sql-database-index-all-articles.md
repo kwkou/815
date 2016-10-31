@@ -51,7 +51,7 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 5 | [使用具有隔离和效率的 Azure SQL 数据库构建多租户应用](/documentation/articles/sql-database-build-multi-tenant-apps/) | 了解 SQL 数据库如何构建多租户应用 |
+| 5 | 使用具有隔离和效率的 Azure SQL 数据库构建多租户应用 | 了解 SQL 数据库如何构建多租户应用 |
 | 5 | [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/) | 了解如何通过使用 SQL Server Management Studio (SSMS) 连接到在 Azure 上的 SQL 数据库。然后，使用 Transact-SQL (T-SQL) 运行示例查询。 |
 | 6 | [使用 .NET (C#) 连接到 SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/) | 使用本快速入门教程中的示例代码可以生成一个包含 C# 代码并由云中强大的 Azure SQL 数据库关系数据库支持的现代应用程序。 |
 | 7 | 使用 Azure 门户创建新的弹性数据库池 | 如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以简化多个数据库的管理和资源共享。 |

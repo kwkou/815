@@ -58,7 +58,7 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 ## 创建 Ruby 应用程序
 
-创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/zh-cn/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)。
+创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)。
 
 ## 配置应用程序以使用 Service Bus
 

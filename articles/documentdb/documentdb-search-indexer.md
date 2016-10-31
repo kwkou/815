@@ -266,7 +266,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 祝贺你！ 你已学习了如何使用 DocumentDB 索引器将 Azure DocumentDB 与 Azure 搜索进行集成。
 
- - 若要了解有关 Azure DocumentDB 的详细信息，请参阅 [DocumentDB 服务页](/services/documentdb/)。
+ - 若要了解有关 Azure DocumentDB 的详细信息，请参阅 [DocumentDB 服务页](/documentation/services/documentdb/)。
 
  - 要了解有关 Azure 搜索的详细信息，请参阅[搜索服务页](https://azure.microsoft.com/services/search/)。
 
