@@ -38,7 +38,7 @@
 	
 	- 确保配置 Azure 专用对等互连并运行你的网络和 Azure 之间的 BGP 对等互连，以便启用端到端连接。
 	
-	- 确保已创建并完全预配一个虚拟网络和一个虚拟网络网关。请按说明创建 [VPN 网关](documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)（仅遵循步骤 1-5）。
+	- 确保已创建并完全预配一个虚拟网络和一个虚拟网络网关。请按说明创建 [VPN 网关](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)（仅遵循步骤 1-5）。
 
 最多可以将 10 个虚拟网络链接到一条标准 ExpressRoute 线路。使用标准 ExpressRoute 线路时，所有虚拟网络必须都位于同一地缘政治区域。如果已启用 ExpressRoute 高级外接程序，则可以链接 ExpressRoute 线路的地缘政治区域外部的虚拟网络，或者将更多虚拟网络连接到 ExpressRoute 线路。有关高级外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute-faqs/)。
 
@@ -70,7 +70,7 @@
 
 ## 将不同订阅中的虚拟网络连接到线路
 
-此时，无法使用 Azure 门户跨订阅连接虚拟网络。但是，你可以使用 PowerShell 来执行此操作。有关详细信息，请参阅 [PowerShell](/documentation/articles/expressroute/expressroute-howto-linkvnet-arm/) 一文。
+此时，无法使用 Azure 门户跨订阅连接虚拟网络。但是，你可以使用 PowerShell 来执行此操作。有关详细信息，请参阅 [PowerShell](/documentation/articles/expressroute-howto-linkvnet-arm//) 一文。
 
 ## 后续步骤
 

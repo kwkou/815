@@ -50,7 +50,7 @@
 
 	**注意**：属于可用性集成员的虚拟机将部署到不同的故障域中。在一个可用性集中放置多台虚拟机将帮助确保您的应用程序在出现网络故障、本地磁盘硬件故障以及任何计划内停机时仍然可用。
 
-15.  在"终结点"下，查看为了允许通过远程桌面或安全 Shell (SSH) 客户端等连接到虚拟机而要创建的新终结点。您还可现在添加终结点，或者稍后创建终结点。有关稍后创建终结点的说明，请参阅[如何设置与虚拟机的通信](/zh-cn/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。 
+15.  在"终结点"下，查看为了允许通过远程桌面或安全 Shell (SSH) 客户端等连接到虚拟机而要创建的新终结点。您还可现在添加终结点，或者稍后创建终结点。有关稍后创建终结点的说明，请参阅[如何设置与虚拟机的通信](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。 
 
 16.  在"VM 代理"下，确定是否要安装 VM 代理。此代理为您提供安装扩展的环境，可帮助您与虚拟机交互。有关详细信息，请参阅[管理扩展](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。
 

@@ -285,6 +285,7 @@ xml
 -	首先，请在 `\webapp` 中创建 `index.jsp` 文件，并剪切/粘贴以下内容：
 
 jsp
+
 	<html>
 	<body>
 		<h2>Hello World!</h2>
@@ -301,6 +302,7 @@ jsp
 - 接下来，在同一个目录中创建 `error.jsp` 文件，用于捕获可能发生的任何错误：
 
 jsp
+
 	<html>
 	<body>
 		<h2>ERROR PAGE!</h2>
@@ -318,28 +320,29 @@ jsp
 
 - 在此目录下，随后创建 `aad.jsp` 文件，并剪切/粘贴以下内容：
 jsp
-	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>AAD Secure Page</title>
-	</head>
-	<body>			
-		<h1>Directory - Users List</h1>
-		<p>${users}</p>
-		<ul>
-			<li><a href="<%=request.getContextPath()%>/secure/aad?cc=1">Get
-				new Access Token via Client Credentials</a></li>
-		</ul>
-		<ul>
-			<li><a href="<%=request.getContextPath()%>/secure/aad?refresh=1">Get
-				new Access Token via Refresh Token</a></li>
-		</ul>
-		<ul>
-			<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
-		</ul>
-	</body>
-	</html>
+
+		<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+		<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>AAD Secure Page</title>
+		</head>
+		<body>			
+			<h1>Directory - Users List</h1>
+			<p>${users}</p>
+			<ul>
+				<li><a href="<%=request.getContextPath()%>/secure/aad?cc=1">Get
+					new Access Token via Client Credentials</a></li>
+			</ul>
+			<ul>
+				<li><a href="<%=request.getContextPath()%>/secure/aad?refresh=1">Get
+					new Access Token via Refresh Token</a></li>
+			</ul>
+			<ul>
+				<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
+			</ul>
+		</body>
+		</html>
 
 
 你会看到，此页将重定向到 BasicFilter Servlet 将要读取的特定请求，然后使用 `ADAJ4J` 库执行请求。很简单，是吧？

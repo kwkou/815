@@ -24,13 +24,13 @@ Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点�
 您可以为现有的Azure订阅中的存储账户，云服务， Web 应用或媒体服务创建CDN终结点。您也可以按以下过程创建新的存储帐户，云服务或者 Web 应用用于 Azure 订阅。
 
 ### 为 Azure 订阅创建存储帐户
-请参阅 [如何创建存储帐户](/zh-cn/documentation/articles/storage-create-storage-account/)
+请参阅 [如何创建存储帐户](/documentation/articles/storage-create-storage-account/)
 
 ### 为 Azure 订阅创建云服务
-请参阅 [如何创建和部署云服务](/zh-cn/documentation/articles/cloud-services-how-to-create-deploy/) 
+请参阅 [如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/) 
 
 ### 为 Azure 订阅创建 Web 应用
-请参阅 [如何创建和部署 Web 应用](/zh-cn/documentation/articles/web-sites-create-deploy/) 
+请参阅 [如何创建和部署 Web 应用](/documentation/articles/web-sites-create-deploy/) 
 
 ### 为 Azure 订阅创建媒体服务
 请参阅 [如何创建和部署媒体服务](/documentation/articles/media-services-create-account/) 

@@ -166,9 +166,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 | :-: | :-: | :-: | :-: |
 | 3 个基本报告| 3 个基本报告| 高级报告| 3 个基本报告|
 
-**更多详细信息：**
 
-- [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports/)
 
 
 
@@ -381,7 +379,6 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 
 - [Azure Active Directory 高级版入门](/documentation/articles/active-directory-get-started-premium/)
 - [向“登录”和“访问面板”页添加公司品牌](/documentation/articles/active-directory-add-company-branding/)
-- [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports/)
 
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png

@@ -63,7 +63,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 > [AZURE.NOTE] 只有 Active Directory 的对象类型用户才支持密码同步。不支持 iNetOrgPerson 对象类型。
 
 ### 密码同步在 Azure AD 域服务中的工作原理
-也可以使用密码同步功能将本地密码同步到 [Azure AD 域服务](/documentation/articles/active-directory-ds-overview/)。此方案可让 Azure AD 域服务以本地 AD 中所有可用的方法验证云中的用户。此方案的体验类似于在本地环境中使用 Active Directory 迁移工具 (ADMT)。
+也可以使用密码同步功能将本地密码同步到 Azure AD 域服务。此方案可让 Azure AD 域服务以本地 AD 中所有可用的方法验证云中的用户。此方案的体验类似于在本地环境中使用 Active Directory 迁移工具 (ADMT)。
 
 ### 安全注意事项
 同步密码时，纯文本版本的密码既不能向密码同步功能公开，也不能向 Azure AD 或任何相关联的服务公开。

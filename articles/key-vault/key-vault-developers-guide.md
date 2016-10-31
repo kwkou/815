@@ -70,16 +70,11 @@
 - [如何在部署期间传递安全值（如密码）](/documentation/articles/resource-manager-keyvault-parameter/)- 当你需要在部署期间以参数形式传递安全值（例如密码）时，可以将该值存储为 Azure 密钥保管库中的机密，并在其他资源管理模板中引用该值。
 - [如何使用密钥保管库，以便通过 SQL Server 进行可扩展的密钥管理](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx) - 适用于 Azure 密钥保管库的 SQL Server 连接器允许 SQL Server 和 VM 中的 SQL 将 Azure 密钥保管库服务用作可扩展密钥管理 (EKM) 提供程序，以便保护其针对应用程序链接的加密密钥；透明数据加密、备份加密和列级加密。
 - [如何将密钥保管库中的证书部署到 VM](https://blogs.technet.microsoft.com/kv/2015/07/14/deploy-certificates-to-vms-from-customer-managed-key-vault/) - 在 Azure 上的 VM 中运行的云应用程序需要一个证书。现在，要如何将此证书部署到此 VM 中呢？
-- [如何将密钥保管库与适用于 Windows 和 Linux IaaS VM 的 Azure 磁盘加密相集成](/documentation/articles/azure-security-disk-encryption/) - 此磁盘加密解决方案与 Azure 密钥保管库集成，可帮助控制和管理密钥保管库订阅中的磁盘加密密钥和机密，同时确保虚拟机磁盘中的所有数据可在 Azure 存储空间中静态加密。
-- [如何使用端到端密钥轮替和审核设置密钥保管库](/documentation/articles/key-vault-key-rotation-log-monitoring/) - 逐步介绍如何设置 Azure 密钥保管库的密钥轮替和审核。
+
 
 如需更多将密钥保管库与 Azure 集成和结合使用的特定于任务的指导，请参阅 [Ryan Jones ARM template examples for Key Vault](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)（针对密钥保管库的 Ryan Jones ARM 模板示例）。
 
-## 与密钥保管库集成
 
-这些文章介绍了使用密钥保管库或者与之集成的其他方案与服务。
-
-- [Azure 磁盘加密](/documentation/articles/azure-security-disk-encryption/)利用 Windows 的行业标准 [BitLocker](https://technet.microsoft.com/zh-cn/library/cc732774.aspx) 功能和 Linux 的 [DM-Crypt](https://en.wikipedia.org/wiki/Dm-crypt) 功能，为 OS 和数据磁盘提供卷加密。该解决方案与 Azure 密钥保管库集成，可帮助你控制和管理密钥保管库订阅中的磁盘加密密钥和机密，同时确保虚拟机磁盘中的所有数据可在 Azure 存储空间中静态加密。
 
 
 ## 支持库

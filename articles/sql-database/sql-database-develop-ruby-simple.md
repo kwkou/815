@@ -49,6 +49,6 @@
 ## 其他资源 
 
 * [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
-* 浏览所有 [SQL 数据库功能](/home/features/sql-databases/)
+* 浏览所有 [SQL 数据库功能](/home/features/sql-database/)
 
 <!---HONumber=Mooncake_1010_2016-->
