@@ -40,7 +40,7 @@
 
 1. **登录到 Azure** - 在命令行接口（Bash、终端、命令提示符）中，通过键入 `azure config mode arm` 确保处于资源管理器模式，然后通过键入 `azure login -e AzureChinaCloud` 来[使用工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)，并按照提示完成 Azure 帐户的交互式登录体验。
 
-	> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，则可以使用 `azure login -e AzureChinaCloud -u` 以及工作或学校 ID，在没有交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/resource-group-create-work-id-from-personal/)。
+	> [AZURE.NOTE] 如果有工作或学校 ID，而且知道尚未启用双因素身份验证，则可以使用 `azure login -e AzureChinaCloud -u` 以及工作或学校 ID，在没有交互式会话的情况下进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/virtual-machines-linux-create-aad-work-id/)。
 
 2. **创建资源组** - 所有资源都必须部署到资源组。对于本教程，将资源组命名为 **vmsstest1**。
 
@@ -127,8 +127,8 @@
         "wadcfgxend": "[concat('\"><MetricAggregation scheduledTransferPeriod=\"PT1H\"/><MetricAggregation scheduledTransferPeriod=\"PT1M\"/></Metrics></DiagnosticMonitorConfiguration></WadCfg>')]"
         
 	- 网络接口所用的 DNS 名称。
-	- 在规模集中使用的虚拟机大小。有关虚拟机大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)。
-	- 用于定义将在规模集中虚拟机上运行的操作系统的平台映像信息。有关选择映像的详细信息，请参阅[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching/)。
+	- 在规模集中使用的虚拟机大小。有关虚拟机大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes/)。
+	- 用于定义将在规模集中虚拟机上运行的操作系统的平台映像信息。有关选择映像的详细信息，请参阅[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
 	- 虚拟网络和子网的 IP 地址名称和前缀。
 	- 虚拟网络、负载均衡器和网络接口的名称和标识符。
 	- 与规模集中虚拟机关联的帐户的存储帐户名称。

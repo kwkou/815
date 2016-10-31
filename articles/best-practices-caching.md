@@ -283,11 +283,11 @@ Azure 经典管理门户包含便利的图形画面，可让你监视缓存的�
 - 针对多个读取者和单个写入者的同一会话状态数据支持受控的并发访问权限，以及
 - 可以使用压缩来节省内存，并提高网络性能。
 
-有关详细信息，请访问 Microsoft 网站上的 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-asp.net-session-state-provider/)页。
+有关详细信息，请访问 Microsoft 网站上的 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider/)页。
 
 > [AZURE.NOTE] 对在 Azure 环境外部运行的 ASP.NET 应用程序，请不要使用 Azure Redis 缓存的会话状态提供程序。从 Azure 外部访问缓存的延迟会抵消缓存数据带来的性能优势。
 
-同样地，Azure Redis 缓存的输出缓存提供程序可让你保存 ASP.NET Web 应用程序生成的 HTTP 响应。配合 Azure Redis 缓存使用输出缓存提供程序可以针对呈现复杂 HTML 输出的应用程序改善响应时间；生成类似响应的应用程序实例可以使用缓存中的共享输出段，而不用重新生成此 HTML 输出。有关详细信息，请访问 Microsoft 网站上的 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider/)页。
+同样地，Azure Redis 缓存的输出缓存提供程序可让你保存 ASP.NET Web 应用程序生成的 HTTP 响应。配合 Azure Redis 缓存使用输出缓存提供程序可以针对呈现复杂 HTML 输出的应用程序改善响应时间；生成类似响应的应用程序实例可以使用缓存中的共享输出段，而不用重新生成此 HTML 输出。有关详细信息，请访问 Microsoft 网站上的 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider/)页。
 
 ### Azure Redis 缓存
 

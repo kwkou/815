@@ -120,8 +120,8 @@
         "wadcfgxend": "[concat('\"><MetricAggregation scheduledTransferPeriod=\"PT1H\"/><MetricAggregation scheduledTransferPeriod=\"PT1M\"/></Metrics></DiagnosticMonitorConfiguration></WadCfg>')]"
 
     - 网络接口所用的 DNS 名称。
-	- 在规模集中使用的虚拟机大小。有关虚拟机大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs/)。
-	- 用于定义将在规模集中虚拟机上运行的操作系统的平台映像信息。有关选择映像的详细信息，请参阅[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching/)。
+	- 在规模集中使用的虚拟机大小。有关虚拟机大小的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes/)。
+	- 用于定义将在规模集中虚拟机上运行的操作系统的平台映像信息。有关选择映像的详细信息，请参阅[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
 	- 虚拟网络和子网的 IP 地址名称和前缀。
 	- 虚拟网络、负载均衡器和网络接口的名称和标识符。
 	- 与规模集中虚拟机关联的帐户的存储帐户名称。

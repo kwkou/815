@@ -59,7 +59,7 @@ DIP 是虚拟机在部署时，Azure 通过 DHCP 分配给虚拟机的内部 IP 
 
 [在经典 Azure 虚拟机上设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)
 
-[在经典 Azure Linux 虚拟机上设置终结点](/documentation/articles/virtual-machines-set-up-endpoints/)
+[在经典 Azure Linux 虚拟机上设置终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
 ## <a id="expressroute"></a>ExpressRoute
 ExpressRoute 是一项 Azure 网络相关的服务，允许你在 Azure 数据中心与你的本地环境或第三方托管设施中的基础结构之间创建专用连接。

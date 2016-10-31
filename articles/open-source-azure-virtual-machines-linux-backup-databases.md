@@ -89,7 +89,7 @@ Azure 有提供虚拟网络的服务，可以让不同的虚拟机处于同一�
 
 **Redhat base Linux**: ( 以CentOS 7.0, 64-bit system, MySQL Server 5.6(yum install) 为例)  
 
-1.在主从机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)
+1.在主从机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
 2.连接到主服务器。编辑 /etc/my.cnf, 在 [mysqld] 下添加如下内容
 
@@ -159,7 +159,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 
 **Ubuntu Linux**: ( 以 Ubuntu 14.04, 64-bit system, MySQL Server 5.5(apt-get install) 为例)
 
-1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/)   
+1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)   
 
 然后在主从服务器上编辑/etc/mysql/my.cnf  
 
@@ -229,7 +229,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 
 **SUSE Linux**: ( 以 SLES 12, 64-bit system, MySQL Server 5.6(rpm install) 为例)
 
-1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-set-up-endpoints/) 
+1.在主从机器上都打开3306端口。请参考链接 [创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/) 
 
 然后连接到主服务器。编辑 /etc/my.cnf, 在 [mysqld]下添加如下内容  
 
