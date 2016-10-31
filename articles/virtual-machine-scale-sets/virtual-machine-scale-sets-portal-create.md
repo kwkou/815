@@ -17,13 +17,13 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/15/2016"
-	wacn.date=""
+	wacn.date="10/31/2016"
 	ms.author="gatneil"/>  
 
 
 # 使用 Azure 门户预览创建虚拟机规模集
 
-本教程介绍如何通过 Azure 门户预览在数分钟内轻松创建虚拟机规模集。如果没有 Azure 订阅，可在开始前创建一个[免费帐户](https://azure.microsoft.com/free/)。
+本教程介绍如何通过 Azure 门户预览在数分钟内轻松创建虚拟机规模集。如果没有 Azure 订阅，可在开始前创建一个[免费帐户](/pricing/1rmb-trial-full/)。
 
 ## 从应用商店中选择 VM 映像
 

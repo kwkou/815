@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
    ms.date="09/15/2016"
-   wacn.date=""
+   wacn.date="10/31/2016"
    ms.author="zachal"/>  
 
 
