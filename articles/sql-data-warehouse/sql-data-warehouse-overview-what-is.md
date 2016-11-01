@@ -133,8 +133,6 @@ SQL 数据仓库还集成了 SQL Server 用户可能会熟悉的许多工具。�
 
 **基于云的工具：**SQL 数据仓库可与 Azure 中的多个新工具一起使用，包括数据工厂、流分析、机器学习和 Power BI。有关更完整的列表，请参阅[集成工具概述][]。
 
-**第三方工具：**大量的第三方工具提供商都已证明其工具能够与 SQL 数据仓库集成。有关完整列表，请参阅 [SQL Data Warehouse solution partners][]（SQL 数据仓库解决方案合作伙伴）。
-
 ## 混合数据源方案
 
 配合 PolyBase 使用 SQL 数据仓库可以给予用户前所未有的能力，在其生态系统之间移动数据，从而解锁使用非关系与本地数据源设置高级混合方案的能力。
@@ -164,7 +162,6 @@ Polybase 可让你使用熟悉的 T-SQL 命令来利用不同源中的数据。P
 [how to load sample data]: /documentation/articles/sql-data-warehouse-get-started-load-sample-databases/
 [创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [迁移文档]: /documentation/articles/sql-data-warehouse-overview-migrate/
-[SQL Data Warehouse solution partners]: /documentation/articles/sql-data-warehouse-integrate-solution-partners/
 [集成工具概述]: /documentation/articles/sql-data-warehouse-overview-integrate/
 [备份和还原概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [Azure 术语表]: /documentation/articles/azure-glossary-cloud-terminology/

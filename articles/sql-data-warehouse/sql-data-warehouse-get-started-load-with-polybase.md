@@ -251,9 +251,6 @@ SQL 数据仓库不会自动创建或自动更新统计信息。因此，若要�
 	CREATE STATISTICS [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 
 
-若要了解详细信息，请参阅[统计信息][]。
-
-
 ## 后续步骤
 有关在开发使用 PolyBase 的解决方案时应了解的其他信息，请参阅 [PolyBase 指南][]。
 
