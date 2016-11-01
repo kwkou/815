@@ -16,7 +16,7 @@ Azure IoT 套件通过以下两种方式保护 IoT 设备：
 
 - 为每个设备提供唯一标识密钥（安全令牌），设备可使用该密钥与 IoT 中心通信。
 
-- 使用设备内置 [X.509 证书][lnk-x509]和私钥作为一种向 IoT 中心验证设备的方式。此身份验证方式可确保任何时候都无法在设备外部获知设备上的私钥，从而提供更高级别的安全性。
+- 使用设备内置 X.509 证书和私钥作为一种向 IoT 中心验证设备的方式。此身份验证方式可确保任何时候都无法在设备外部获知设备上的私钥，从而提供更高级别的安全性。
 
 安全令牌方式通过将对称密钥与每个呼叫关联，为每个设备向 IoT 中心作出的呼叫提供身份验证。基于 X.509 的身份验证允许物理层 IoT 设备的身份验证作为 TLS 连接建立的一部分。基于安全令牌的方式可在没有 X.509 身份验证的情况下使用，但这种模式的安全性较低。这两种方式的选择主要取决于设备验证需要达到的安全程度和设备上安全储存的可用性（以安全存储私钥）。
 
@@ -118,10 +118,10 @@ Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析、Blo
 [lnk-use-x509]: /documentation/articles/iot-hub-sas-tokens
 [lnk-tls12]: https://tools.ietf.org/html/rfc5246
 [lnk-service-tokens]: /documentation/articles/iot-hub-sas-tokens#using-security-tokens-from-service-components
-[lnk-docdb]: /services/documentdb/
-[lnk-asa]: /services/stream-analytics/
-[lnk-appservices]: /services/app-service/
-[lnk-logicapps]: /services/app-service/logic/
-[lnk-blob]: /services/storage/
+[lnk-docdb]: /documentation/services/documentdb/
+[lnk-asa]: /documentation/services/stream-analytics/
+[lnk-appservices]: /documentation/services/app-service/
+[lnk-logicapps]: /documentation/services/app-service/logic/
+[lnk-blob]: /documentation/services/storage/
 
 <!---HONumber=Mooncake_0822_2016-->
