@@ -127,13 +127,13 @@ DIP 是入站流量的目标。在后端池中，每个 VM 公开 DIP 上唯一�
 
 请注意，本示例未更改目标端口。这是一个浮动 IP 方案，不过 Azure 负载均衡器也支持定义规则来重写后端的目标端口，使其与前端的目标端口不同。
 
-浮动 IP 规则类型是多种负载均衡器配置模式的基础。[具有多个侦听器的 SQL AlwaysOn](/documentation/articles/virtual-machines-windows-portal-sql-ps-alwayson-int-listener) 配置是目前提供的示例之一。一段时间后，我们会介绍更多此类方案。
+浮动 IP 规则类型是多种负载均衡器配置模式的基础。
 
 ## 限制
 
 * 只有 IaaS VM 支持多个 VIP 配置。
 * 使用浮点 IP 规则时，应用程序必须为出站流量使用 DIP。如果应用程序绑定到来宾 OS 中环回接口上配置的 VIP 地址，则无法使用 SNAT 来重写出站流量，此时流量处理将会失败。
-* 公共 IP 地址会影响计费。有关详细信息，请参阅 [IP Address pricing](/pricing/details/ip-addresses/)（IP 地址定价）。
+* 公共 IP 地址会影响计费。
 * 订阅有所限制。有关详细信息，请参阅 [Service limits](/documentation/articles/azure-subscription-service-limits#networking-limits)（服务限制）。
 
 <!---HONumber=Mooncake_1024_2016-->
