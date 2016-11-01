@@ -90,7 +90,7 @@
   </tr>
 </table>
 
-Azure 用户可以通过链接 https://support.windowsazure.cn/support 提交工单。
+Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https://support.windowsazure.cn/support) 提交工单。
 
 ### 问题二：自助修改登邮箱录，密码
 
@@ -113,7 +113,7 @@ Azure 用户可以通过链接 https://support.windowsazure.cn/support 提交工
 
 ### 问题三：查看订单 ID
 
-- 登录到 https://account.windowsazure.cn
+- 登录到 [https://account.windowsazure.cn](https://account.windowsazure.cn)
 - 依次点击“**订阅**”>要开具发票的订阅名称。
 - 右侧会显示订单 ID
 
