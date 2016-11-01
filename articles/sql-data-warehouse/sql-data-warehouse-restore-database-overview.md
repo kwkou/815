@@ -38,7 +38,7 @@ SQL 数据仓库提供本地和异地还原功能，这是其数据仓库灾难�
 有关详细信息，请参阅：
 
 -  [SQL 数据仓库备份](/documentation/articles/sql-data-warehouse-backups/)
--  [业务连续性概述](/documentation/articles/sql-database/sql-database-business-continuity/)
+-  [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
 ## 数据仓库还原点
 
@@ -46,11 +46,6 @@ SQL 数据仓库提供本地和异地还原功能，这是其数据仓库灾难�
 
 SQL 数据仓库始终将备份还原到新的数据仓库。可以保留还原的数据仓库和当前的数据仓库，也可以删除其中一个。若要将当前的数据仓库替换为还原的数据仓库，将其重命名即可。
 
-
-
-## 异地冗余还原
-
-如果使用的是异地冗余存储，则可将数据仓库还原到另一地理区域的[配对数据中心](/documentation/articles/best-practices-availability-paired-regions/)。从上次的每日备份还原数据仓库。
 
 ## 还原时间线
 

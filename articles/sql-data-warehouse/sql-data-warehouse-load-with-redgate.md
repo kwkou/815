@@ -109,7 +109,6 @@ DPS 会以可视化方式显示从本地 SQL Server 提取和上载数据的进�
 若要浏览 SQL 数据仓库中的数据，请先查看以下内容：
 
 - [查询 Azure SQL 数据仓库 (Visual Studio)][]
-- [使用 Power BI 可视化数据][]
 
 若要详细了解 Redgate 的 Data Platform Studio，请：
 
@@ -125,14 +124,14 @@ DPS 会以可视化方式显示从本地 SQL Server 提取和上载数据的进�
 
 <!--Image references-->
 
-[1]: media/sql-data-warehouse-redgate/2016-10-05_15-59-56.png
-[2]: media/sql-data-warehouse-redgate/2016-10-05_11-16-07.png
-[3]: media/sql-data-warehouse-redgate/2016-10-05_11-17-46.png
-[4]: media/sql-data-warehouse-redgate/2016-10-05_11-20-41.png
-[5]: media/sql-data-warehouse-redgate/2016-10-05_11-31-24.png
-[6]: media/sql-data-warehouse-redgate/2016-10-05_11-32-20.png
-[7]: media/sql-data-warehouse-redgate/2016-10-05_11-49-53.png
-[8]: media/sql-data-warehouse-redgate/2016-10-05_12-57-10.png
+[1]: ./media/sql-data-warehouse-redgate/2016-10-05_15-59-56.png
+[2]: ./media/sql-data-warehouse-redgate/2016-10-05_11-16-07.png
+[3]: ./media/sql-data-warehouse-redgate/2016-10-05_11-17-46.png
+[4]: ./media/sql-data-warehouse-redgate/2016-10-05_11-20-41.png
+[5]: ./media/sql-data-warehouse-redgate/2016-10-05_11-31-24.png
+[6]: ./media/sql-data-warehouse-redgate/2016-10-05_11-32-20.png
+[7]: ./media/sql-data-warehouse-redgate/2016-10-05_11-49-53.png
+[8]: ./media/sql-data-warehouse-redgate/2016-10-05_12-57-10.png
 
 <!--Article references-->
 

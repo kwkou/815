@@ -29,7 +29,7 @@
 
 ## 开始之前
 
-**验证 DTU 容量。** 每个 SQL 数据仓库都由一个具有默认 DTU 配额的 SQL 服务器（例如 myserver.database.chinacloudapi.cn）托管。在还原 SQL 数据仓库之前，请确保 SQL Server 的剩余 DTU 配额足够进行数据库还原。若要了解如何计算所需 DTU 或请求更多的 DTU，请参阅[请求 DTU 配额更改][]。
+**验证 DTU 容量。** 每个 SQL 数据仓库都由一个具有默认 DTU 配额的 SQL 服务器（例如 myserver.database.chinacloudapi.cn）托管。在还原 SQL 数据仓库之前，请确保 SQL Server 的剩余 DTU 配额足够进行数据库还原。
 
 
 ## 还原活动或暂停的数据库
@@ -108,7 +108,6 @@
 [PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
 [Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery#configure-your-database-after-recovery
-[请求 DTU 配额更改]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket#request-quota-change
 
 <!--MSDN references-->
 

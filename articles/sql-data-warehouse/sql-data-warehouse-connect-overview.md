@@ -85,10 +85,10 @@ SQL 数据仓库在连接和创建对象期间标准化一些设置。这些设�
 [Authentication to Azure SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-authentication/
 
 <!--MSDN references-->
-[ADO.NET]: https://msdn.microsoft.comzh-cn/zh-cn/library/e80y5yhx(v=vs.110).aspx
-[ODBC]: https://msdn.microsoft.comzh-cn/zh-cn/library/jj730314.aspx
-[PHP]: https://msdn.microsoft.comzh-cn/zh-cn/library/cc296172.aspx?f=255&MSPPError=-2147217396
-[JDBC]: https://msdn.microsoft.comzh-cn/zh-cn/library/mt484311(v=sql.110).aspx
+[ADO.NET]: https://msdn.microsoft.com/zh-cn/library/e80y5yhx(v=vs.110).aspx
+[ODBC]: https://msdn.microsoft.com/zh-cn/library/jj730314.aspx
+[PHP]: https://msdn.microsoft.com/zh-cn/library/cc296172.aspx?f=255&MSPPError=-2147217396
+[JDBC]: https://msdn.microsoft.com/zh-cn/library/mt484311(v=sql.110).aspx
 [ANSI\_NULLS]: https://msdn.microsoft.com/zh-cn/library/ms188048.aspx
 [QUOTED\_IDENTIFIERS]: https://msdn.microsoft.com/zh-cn/library/ms174393.aspx
 [DATEFORMAT]: https://msdn.microsoft.com/zh-cn/library/ms189491.aspx
