@@ -4,18 +4,24 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
-	manager="jeffreyg"
-	editor=""/>
+	manager="jhubbard"
+	editor=""/>  
+
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/16/2016"
-	wacn.date="07/11/2016"/>
+	ms.devlang="NA"
+	ms.date="09/19/2016"
+	wacn.date="10/31/2016"
+	ms.author="sstein"
+	ms.workload="data-management"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"/>  
+
 
 
 # 使用 Transact-SQL 复制 Azure SQL 数据库
 
-**单一数据库**
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-database-copy)
@@ -29,7 +35,7 @@
 若要完成本文中的步骤，你需要以下各项：
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
-- Azure SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)文章中的步骤创建一个。
+- Azure SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)一文中的步骤创建一个。
 - [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx)。如果你没有 SSMS，或无法使用本文中所述的功能，请[下载最新版本](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
 
@@ -70,7 +76,7 @@
 - 如果复制失败，新数据库的 sys.databases 视图的 state\_desc 列将设置为 SUSPECT。在这种情况下，对新数据库执行 DROP 语句并稍后重试。
 - 如果复制成功，新数据库的 sys.databases 视图的 state\_desc 列将设置为 ONLINE。在这种情况下，复制已完成并且新数据库是一个常规数据库，可独立于源数据库进行更改。
 
-> [AZURE.NOTE] - 如果你决定在复制过程中取消复制，请对新数据库执行 [DROP DATABASE](https://msdn.microsoft.com/zh-cn/library/ms178613.aspx) 语句。此外，对源数据库执行 DROP DATABASE 语句也将取消复制过程。
+> [AZURE.NOTE] - 如果决定在复制过程中取消复制，请对新数据库执行 [DROP DATABASE](https://msdn.microsoft.com/zh-cn/library/ms178613.aspx) 语句。此外，对源数据库执行 DROP DATABASE 语句也将取消复制过程。
 
 
 ## 在复制操作完成后解析登录名
@@ -97,6 +103,4 @@
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 - [SQL 数据库文档](/documentation/services/sql-databases/)
 
-
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1024_2016-->

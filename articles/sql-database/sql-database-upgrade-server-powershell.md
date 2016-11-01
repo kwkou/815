@@ -5,18 +5,24 @@
 	documentationCenter=""
 	authors="stevestein"
 	manager="jhubbard"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/06/2016"
-	wacn.date="08/10/2016"/>
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/19/2016"
+	wacn.date="10/31/2016"
+	ms.author="sstein"/>  
+
 
 # 使用 PowerShell 升级到 Azure SQL 数据库 V12
 
 
-> [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell/)
+
 
 
 SQL 数据库 V12 是最新版本，因此我们建议升级到 SQL 数据库 V12。
@@ -32,8 +38,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 此外，与升级到单一数据库的单独性能级别（定价层）相比，迁移到[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)更具成本效益。池还可以简化数据库管理，因为你只需管理池的性能设置，而无需分开管理单个数据库的性能级别。如果你的数据库位于多台服务器上，请考虑将它们迁移到同一台服务器，并利用入池所带来的优势。
 
-遵循本文中的步骤可以轻松地从 V11 服务器直接迁移到弹性数据库池。
-
+可以遵循本文中的步骤，轻松将数据库从 V11 服务器直接迁移到弹性数据库池。
 
 请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-connectivity-issues/)，则足以防止升级结束时连接中断。
 
@@ -44,31 +49,29 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 ## 准备升级
 
-- **升级所有 Web 和企业数据库**：请参阅[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell/)。
+- **升级所有 Web 和企业数据库**：[使用 PowerShell 升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell/)。
 - **检查和暂停异地复制**：如果你的 Azure SQL 数据库已针对异地复制进行配置，则你应记录其当前配置并停止异地复制。升级完成后，请重新为异地复制配置数据库。
 - **如果客户端在 Azure VM 上，请打开这些端口**：如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。有关详细信息，请参阅 [SQL 数据库 V12 的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)。
 
 
 ## 先决条件
 
-若要使用 PowerShell 将服务器升级到 V12，你需要安装并运行 Azure PowerShell，然后，根据具体的版本，你可能需要切换到资源管理器模式，以访问 Azure 资源管理器 PowerShell cmdlet。
-
-若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+若要使用 PowerShell 将服务器升级到 V12，需要安装并运行最新的 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
 ## 配置你的凭据，然后选择你的订阅
 
-若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
+若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下命令，然后就会出现一个要求输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
 	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
-若要选择要使用的订阅，你需要提供订阅 ID (**-SubscriptionId**) 或订阅名称 (**-SubscriptionName**)。你可以从前面的步骤中复制该信息，或者，如果你有多个订阅，你可以运行 **Get-AzureRmSubscription** cmdlet，然后从结果集中复制所需的订阅信息。
+若要选择要使用的订阅，需要提供订阅 ID (**-SubscriptionId**) 或订阅名称 (**-SubscriptionName**)。可以从前面的步骤中复制该信息，或者，如果有多个订阅，可以运行 **Get-AzureRmSubscription** cmdlet，然后从结果集中复制所需的订阅信息。
 
-使用你的订阅信息运行以下 cmdlet，以设置当前订阅：
+使用订阅信息运行以下 cmdlet，设置当前订阅：
 
-	Select-AzureRmSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
+	Set-AzureRmContext -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
 针对前面刚刚选择的订阅运行以下命令。
 
@@ -109,7 +112,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
     # Selecting the right subscription
     #
-    Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+    Set-AzureRmContext -SubscriptionName $SubscriptionName
 
     # Getting the upgrade recommendations
     #
@@ -189,11 +192,9 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
 
 
-
 ## 后续步骤
 
 - [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)，并将部分或全部数据库添加到该池。
-
 - [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up-powershell/)。
 
 
@@ -204,5 +205,4 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 - [Start-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt619403.aspx)
 - [Stop-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603589.aspx)
 
-
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1024_2016-->

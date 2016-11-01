@@ -4,14 +4,21 @@
 	keywords="数据库监视,云数据库性能"
 	services="sql-database"
 	documentationCenter=""
-	authors="carlrabeler"
+	authors="CarlRabeler"
 	manager="jhubbard"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/06/2016"
-	wacn.date="08/15/2016"/>
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
+	ms.date="09/27/2016"
+	wacn.date="10/31/2016"
+	ms.author="carlrab"/>  
+
 
 # 在 Azure SQL 数据库中监视数据库性能
 若要监视 Azure 中的 SQL 数据库的性能，首先需要监视所选数据库性能级别相关的资源利用率。监视功能可帮助你确定数据库是否超出容量，或者因资源超限而遇到问题，然后确定是否有必要调整数据库的性能级别和[服务层](/documentation/articles/sql-database-service-tiers/)。你可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn)中的图形工具或使用 SQL [动态管理视图](https://msdn.microsoft.com/zh-cn/library/ms188754.aspx)来监视数据库。
@@ -42,4 +49,4 @@
 
 对于弹性数据库池，可以使用本节中所述的技术来监视池中的单个数据库。但你还可以在总体上监视池。有关信息，请参阅[监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1024_2016-->

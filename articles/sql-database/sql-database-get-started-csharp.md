@@ -6,7 +6,8 @@
 	documentationCenter=""
 	authors="stevestein"
 	manager="jhubbard"
-	editor="cgronlun"/>
+	editor="cgronlun"/>  
+
 
 <tags
    ms.service="sql-database"
@@ -14,8 +15,8 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="csharp"
    ms.workload="data-management"
-   ms.date="09/14/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/04/2016"
+   wacn.date="10/31/2016"
    ms.author="sstein"/>  
 
 
@@ -27,18 +28,19 @@
 - [C#](/documentation/articles/sql-database-get-started-csharp/)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell/)
 
-了解如何使用[用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 创建 Azure SQL 数据库。本文介绍如何使用 SQL 和 C# 创建单一数据库。若要创建弹性数据库池，请参阅[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)。
+了解如何使用[用于 .NET 的 Azure SQL 管理库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 创建 Azure SQL 数据库。本文介绍如何使用 SQL 和 C# 创建单一数据库。若要创建弹性数据库池，请参阅[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)。
 
-适用于 .NET 的 Azure SQL 数据库库提供了基于 [Azure 资源管理器](/documentation/articles/resource-group-overview/)的 API，用于包装[基于资源管理器的 SQL 数据库 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)。
+用于 .NET 的 Azure SQL 数据库管理库提供了基于 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 的 API，用于包装[基于 Resource Manager 的 SQL 数据库 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)。
 
-
-> [AZURE.NOTE] 适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
-
+>[AZURE.NOTE] SQL 数据库的许多新功能仅在使用 [Azure Resource Manager 部署模型](/documentation/articles/resource-group-overview/)时才可用，因此，始终应该使用最新版本的**用于 .NET 的 Azure SQL 数据库管理库（[文档](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx) | [NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)）**。以前的[基于经典部署模型的库](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Sql)只是为了向后兼容而受到支持，因此，建议使用较新的基于 Resource Manager 的库。
 
 若要完成本文中的步骤，需要做好以下准备：
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
+
+>[AZURE.NOTE] 本文将创建一个新的空白 SQL 数据库。修改以下示例中的 *CreateOrUpdateDatabase(...)* 方法，即可复制数据库、缩放数据库、在池中创建数据库，等等。有关详细信息，请参阅 [DatabaseCreateMode](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.models.databasecreatemode.aspx) 和 [DatabaseProperties](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.models.databaseproperties.aspx) 类。
+
 
 
 ## 创建控制台应用并安装所需的库
@@ -51,7 +53,7 @@
 若要使用 C# 创建 SQL 数据库，请加载所需的管理库（使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)）：
 
 1. 单击“工具”->“NuGet 包管理器”->“包管理器控制台”。
-2. 键入 `Install-Package Microsoft.Azure.Management.Sql –Pre` 安装 [Azure SQL 管理库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
+2. 键入 `Install-Package Microsoft.Azure.Management.Sql –Pre` 安装最新的 [Azure SQL 管理库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
 3. 键入 `Install-Package Microsoft.Azure.Management.ResourceManager –Pre` 安装 [Azure Resource Manager 库](https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceManager)。
 4. 键入 `Install-Package Microsoft.Azure.Common.Authentication –Pre` 安装 [Azure 通用身份验证库](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication)。
 
@@ -294,4 +296,4 @@
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

@@ -5,7 +5,8 @@
 	documentationCenter="na"
 	authors="stevestein"
 	manager="jhubbard"
-	editor="monicar" />
+	editor="monicar" />  
+
 
 
 <tags
@@ -14,15 +15,15 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="NA"
-	ms.date="08/29/2016"
-	wacn.date="10/17/2016"
+	ms.date="09/26/2016"
+	wacn.date="10/31/2016"
 	ms.author="sstein" />
 
 # 概述：SQL 数据库的活动异地复制
 
 使用活动异地复制可在相同或不同数据中心位置（区域）中最多配置四个可读的辅助数据库。在数据中心发生服务中断或无法连接到主数据库时，可以使用辅助数据库进行查询和故障转移。
 
->[AZURE.NOTE] 活动异地复制现在可用于标准层和高级层中的数据库，可读辅助数据库（Readable Secondary）现在只供高级服务层中的数据库使用。
+>[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。
 
  可以使用 [PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)、[Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/) 或 [REST API - 创建或更新数据库](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)配置活动异地复制。
 
@@ -31,9 +32,9 @@
 - [配置：PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)
 - [配置：T-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/)
 
-如果主数据库因某种原因而出现故障，或者只是需要脱机，则可以 *故障转移* 到任何辅助数据库。激活故障转移以后，即可将主数据库故障转移到某个辅助数据库，然后所有其他辅助数据库就会自动链接到新的主数据库。
+如果主数据库因某种原因而出现故障，或者只是需要脱机，则可以*故障转移*到任何辅助数据库。激活故障转移以后，即可将主数据库故障转移到某个辅助数据库，然后所有其他辅助数据库就会自动链接到新的主数据库。
 
-可以使用 [PowerShell](/documentation/articles/sql-database-geo-replication-failover-powershell/)、[Transact-SQL](/documentation/articles/sql-database-geo-replication-failover-transact-sql/) 或 [REST API - 非计划故障转移](https://msdn.microsoft.com/zh-cn/library/azure/mt582027.aspx)故障转移到辅助数据库。
+可以使用 [PowerShell](/documentation/articles/sql-database-geo-replication-failover-powershell/)、[Transact-SQL](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)、[REST API - 计划故障转移](https://msdn.microsoft.com/zh-cn/ibrary/azure/mt575007.aspx)  或 [REST API - 非计划故障转移](https://msdn.microsoft.com/zh-cn/library/azure/mt582027.aspx)故障转移到辅助数据库。
 
 
 > [AZURE.SELECTOR]
@@ -45,11 +46,11 @@
 
 活动异地复制功能实现了一个机制，用于在同一 Azure 区域或不同区域中提供数据库冗余（异地冗余）。活动异地复制使用用于隔离的读取已提交快照隔离 (RCSI) 以异步方式将已提交的事务从数据库复制到不同服务器上的最多四个数据库副本中。在配置活动异地复制时，会在指定的服务器上创建辅助数据库。原始数据库将变成主数据库。主数据库以异步方式将已提交的事务复制到每个辅助数据库。只会复制完整事务。尽管在任意给定时间，辅助数据库可能略微滞后于主数据库，但系统可以保证辅助数据永不包含部分事务。[Overview of Business Continuity](/documentation/articles/sql-database-business-continuity/)（业务连续性概述）中提供了具体的 RPO 数据。
 
-活动异地复制的主要优势之一在于能够提供数据库级别的灾难恢复解决方案且恢复时间较短。将辅助数据库放在不同区域中的服务器上时，可以为应用程序增添极大的恢复能力。跨区域冗余使应用程序能够在自然灾害、灾难性人为失误或恶意行为导致整个或部分数据中心永久性数据丢失后得以恢复。下图显示了在高级数据库上配置的活动异地复制示例，其中主数据库位于中国北部区域，而辅助数据库位于中国东部区域。
+活动异地复制的主要优势之一在于能够提供数据库级别的灾难恢复解决方案且恢复时间较短。将辅助数据库放在不同区域中的服务器上时，可以为应用程序增添极大的恢复能力。跨区域冗余使应用程序能够在自然灾害、灾难性人为失误或恶意行为导致整个或部分数据中心永久性数据丢失后得以恢复。下图显示了配置的活动异地复制示例，其中主数据库位于中国北部区域，辅助数据库位于中国东部区域。
 
 
 
-另一个关键优势是辅助数据库是可读的，并且可用于卸载只读工作负荷，如报表作业。如果只想使用辅助数据库进行负载均衡，可以在主数据库所在的同一区域中创建它。然而，这将不会增加应用程序的灾难性故障的恢复能力。
+另一个关键优势是辅助数据库是可读的，并且可用于卸载只读工作负荷，如报表作业。如果只想使用辅助数据库进行负载均衡，可以在主数据库所在的同一区域中创建它。在同一区域中创建辅助数据库不会增加应用程序灾难性故障的恢复能力。
 
 可以用到活动异地复制的其他场合包括：
 
@@ -73,9 +74,14 @@
 
 - **辅助数据库的可配置性能级别**：可以使用低于主数据库的性能级别创建辅助数据库。主数据库和辅助数据库都需要有相同的服务层。不建议将此选项用于具有高数据库写入活动的应用程序，因为复制延迟时间的增长会加大故障转移后大量数据丢失的风险。此外，在故障转移后，应用程序的性能将受到影响，直到新的主数据库升级到更高的性能级别。在 Azure 门户上的日志 IO 百分比图表提供了一种评估维持复制负荷所需的辅助数据库的最小性能级别的好办法。例如，如果你的主数据库是 P6 (1000 DTU)，其日志 IO 百分比为 50%，则辅助数据库需要至少应为 P4 (500 DTU)。你还可以使用 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx) 或 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) 数据库视图检索日志 IO 数据。有关 SQL 数据库性能级别的详细信息，请参阅 [SQL Database options and performance](/documentation/articles/sql-database-service-tiers/)（SQL 数据库选项和性能）。
 
-- **用户控制的故障转移和故障回复**：辅助数据库可以通过应用程序或用户的显式操作，随时切换到主角色。在实际中断期间，应使用“计划外”选项，这会立即将辅助数据库升级为主数据库。当出现故障的主数据库恢复并再次可用时，系统会自动将恢复的主数据库标记为辅助数据库并使其与新的主数据库保持最新状态。由于复制的异步特性，在计划外故障转移期间，如果主数据库在将最新的更改复制到辅助数据库之前出现故障，则可能会丢失少量数据。当具有多个辅助数据库的主数据库进行故障转移时，系统将自动重新配置复制关系，并将剩余辅助数据库链接到新升级的主数据库，无需任何用户的干预。导致了故障转移的中断得到缓解后，可能需要将应用程序返回到主要区域。为此，应使用“计划内”选项调用故障转移命令。
+- **用户控制的故障转移和故障回复**：应用程序或用户可随时将辅助数据库显式切换到主角色。在实际中断期间，应使用“计划外”选项，这会立即将辅助数据库升级为主数据库。当出现故障的主数据库恢复并再次可用时，系统会自动将恢复的主数据库标记为辅助数据库并使其与新的主数据库保持最新状态。由于复制的异步特性，在计划外故障转移期间，如果主数据库在将最新的更改复制到辅助数据库之前出现故障，则可能会丢失少量数据。当具有多个辅助数据库的主数据库进行故障转移时，系统将自动重新配置复制关系，并将剩余辅助数据库链接到新升级的主数据库，无需任何用户的干预。导致了故障转移的中断得到缓解后，可能需要将应用程序返回到主要区域。为此，应使用“计划内”选项调用故障转移命令。
 
 - **保持凭据和防火墙规则同步**：建议将[数据库防火墙规则](/documentation/articles/sql-database-firewall-configure/)用于异地复制数据库，以便这些规则可以和数据库一起复制，从而确保所有辅助数据库具有与主数据库相同的防火墙规则。这样就不再需要客户手动配置和维护承载主数据库和辅助数据库的服务器上的防火墙规则。同样，将[包含的数据库用户](/documentation/articles/sql-database-manage-logins/)用于数据访问可确保主数据库和辅助数据库始终具有相同的用户凭据，以便在故障转移期间，不会因登录名和密码不匹配而产生中断。通过添加 [Azure Active Directory](/documentation/articles/active-directory-whatis/)，客户可以管理主数据库和辅助数据库的用户访问权限，且不再需要同时管理数据库中的凭据。
+
+## 升级或降级主数据库
+无需断开连接任何辅助数据库，即可将主数据库升级或降级到不同的性能级别（在相同的服务层中）。升级时，建议先升级辅助数据库，然后再升级主数据库。降级时，应反转顺序：先降级主数据库，然后降级辅助数据库。
+
+辅助数据库必须与主数据库位于相同的服务层中，因此，将主数据库迁移到不同的服务层需要终止异地复制链接并重命名辅助数据库，或直接删除辅助数据库。然后，将主数据库迁移到新服务层并重新配置异地复制。默认情况下，将自动创建新的辅助数据库，它的性能级别与主数据库相同。
 
 ## 防止丢失关键数据
 由于广域网的延迟时间较长，连续复制使用了异步复制机制。在发生故障时，异步复制会不可避免地丢失某些数据。但是，某些应用程序可能要求不能有数据丢失。为了保护这些关键更新，应用程序开发人员可以在提交事务后立即调用 [sp\_wait\_for\_database\_copy\_sync](https://msdn.microsoft.com/zh-cn/library/dn467644.aspx) 系统过程。调用 **sp\_wait\_for\_database\_copy\_sync** 会阻止调用线程，直到将上次提交的事务复制到辅助数据库。该过程将一直等待，直到辅助数据库确认所有排队的事务。**sp\_wait\_for\_database\_copy\_sync** 限于特定的连续复制链接。对主数据库具有连接权限的任何用户都可以调用此过程。
@@ -135,5 +141,6 @@
 - 若要了解 Azure SQL 数据库的自动备份，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)。
 - 若要了解如何使用自动备份进行恢复，请参阅[从服务启动的备份中还原数据库](/documentation/articles/sql-database-recovery-using-backups/)。
 - 若要了解如何使用自动备份进行存档，请参阅[数据库复制](/documentation/articles/sql-database-copy/)。
+- 若要了解新主服务器和数据库的身份验证要求，请参阅 [SQL Database security after disaster recovery](/documentation/articles/sql-database-geo-replication-security-config/)（灾难恢复后的 SQL 数据库安全性）。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

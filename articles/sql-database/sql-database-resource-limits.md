@@ -3,15 +3,21 @@
 	description="本页介绍 Azure SQL 数据库的一些常见资源限制。"
 	services="sql-database"
 	documentationCenter="na"
-	authors="carlrabeler"
+	authors="CarlRabeler"
 	manager="jhubbard"
-	editor="monicar" />
+	editor="monicar" />  
+
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/19/2016"
-	wacn.date="09/28/2016" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
+	ms.date="10/13/2016"
+	wacn.date="10/31/2016"
+	ms.author="carlrab" />
 
 
 # Azure SQL 数据库资源限制
@@ -41,11 +47,17 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 
 ## 服务层和性能级别
 
-对于单一数据库，数据库服务层和性能级别定义了数据库限制。下表描述了基本、标准和高级数据库在不同性能级别上的特征。
+独立数据库和弹性池都有服务层和性能级别。
+
+### 独立数据库
+
+对于独立数据库，数据库服务层和性能级别定义了数据库限制。下表描述了基本、标准和高级数据库在不同性能级别上的特征。
 
 [AZURE.INCLUDE [SQL 数据库服务层表](../../includes/sql-database-service-tiers-table.md)]
 
-[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)共享池中的数据库中的资源。下表描述了基本、标准和高级弹性数据库池的特征。
+### 弹性池
+
+[弹性池](/documentation/articles/sql-database-elastic-pool/)共享池中的数据库中的资源。下表描述了基本、标准和高级弹性数据库池的特征。
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
@@ -69,4 +81,4 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 
 [SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1024_2016-->

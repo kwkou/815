@@ -3,14 +3,21 @@
     description="使用 Transact-SQL 为 Azure SQL 数据库配置异地复制"
     services="sql-database"
     documentationCenter=""
-    authors="carlrabeler"
+    authors="CarlRabeler"
     manager="jhubbard"
-    editor=""/>
+    editor=""/>  
+
 
 <tags
     ms.service="sql-database"
-    ms.date="07/18/2016"
-    wacn.date="08/15/2016"/>
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/13/2016"
+    wacn.date="10/31/2016"
+    ms.author="carlrab"/>  
+
 
 # 使用 Transact-SQL 为 Azure SQL 数据库配置异地复制
 
@@ -23,7 +30,7 @@
 
 若要使用 Transact-SQL 启动故障转移，请参阅[使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)。
 
->[AZURE.NOTE] 活动异地复制现在可供标准服务层和高级服务层中的所有数据库使用。可读辅助副本目前只能用于高级服务层中的数据库。
+>[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。
 
 若要使用 Transact-SQL 配置活动异地复制，需提供：
 
@@ -133,7 +140,7 @@
 
 ## 监视异地复制配置和运行状况
 
-监视任务包括监视异地复制配置和监视数据复制运行状况。可以使用 master 数据库中的 **sys.dm\_geo\_replication\_links** 动态管理视图返回 Azure SQL 数据库逻辑服务器上每个数据库的所有现有复制链接的相关信息。此视图针对每个主数据库和辅助数据库之间的复制链接包含一行。可以使用 **sys.dm\_replication\_status** 动态管理视图针对当前参与复制链接的每个 Azure SQL 数据库返回一行。这包括主数据库和辅助数据库。如果给定主数据库有多个连续复制链接，此表将对每种关系包含一行。将在所有数据库（包括逻辑 master）中创建该视图。但是，在逻辑 master 中查询此视图会返回空集。可以使用 **sys.dm\_operation\_status** 动态管理视图来显示所有数据库操作的状态，包括复制链接的状态。有关详细信息，请参阅 [sys.geo\_replication\_links（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575501.aspx)、[sys.dm\_geo\_replication\_link\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575504.aspx)和 [sys.dm\_operation\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx)。
+监视任务包括监视异地复制配置和监视数据复制运行状况。可以使用 master 数据库中的 **sys.dm\_geo\_replication\_links** 动态管理视图返回 Azure SQL 数据库逻辑服务器上每个数据库的所有现有复制链接的相关信息。此视图针对每个主数据库和辅助数据库之间的复制链接包含一行。可以使用 **sys.dm\_replication\_link\_status** 动态管理视图针对当前参与复制链接的每个 Azure SQL 数据库返回一行。这包括主数据库和辅助数据库。如果给定主数据库有多个连续复制链接，此表将对每种关系包含一行。将在所有数据库（包括逻辑 master）中创建该视图。但是，在逻辑 master 中查询此视图会返回空集。可以使用 **sys.dm\_operation\_status** 动态管理视图来显示所有数据库操作的状态，包括复制链接的状态。有关详细信息，请参阅 [sys.geo\_replication\_links（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575501.aspx)、[sys.dm\_geo\_replication\_link\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575504.aspx)和 [sys.dm\_operation\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx)。
 
 使用以下步骤监视异地复制合作关系。
 
@@ -166,11 +173,11 @@
 > [AZURE.IMPORTANT] 并没有自助升级方法能够将不可读辅助数据库就地升级为可读辅助数据库。如果删除唯一的辅助数据库，主数据库将会维持未受保护的状态，直到新的辅助数据库完全同步为止。如果你的应用程序 SLA 要求主数据库始终受到保护，你应该考虑在其他服务器中创建并行辅助数据库，然后再应用上述升级步骤。请注意，每个主数据库最多可以有 4 个辅助数据库。
 
 
-1. 首先，连接到辅助服务器，然后删除不可读辅助数据库：
+1. 首先，连接到*辅助*服务器，然后删除不可读辅助数据库：
         
         DROP DATABASE <MyNonReadableSecondaryDB>;
 
-2. 现在，连接到主服务器，然后添加新的可读辅助数据库
+2. 现在，连接到*主*服务器，然后添加新的可读辅助数据库
 
         ALTER DATABASE <MyDB>
             ADD SECONDARY ON SERVER <MySecondaryServer> WITH (ALLOW_CONNECTIONS = ALL);
@@ -180,7 +187,7 @@
 
 ## 后续步骤
 
-- 若要了解有关活动异地复制的详细信息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
-- 若要了解业务连续性设计和恢复方案，请参阅[连续性方案](/documentation/articles/sql-database-business-continuity/)
+- 若要深入了解活动异地复制，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
+- 有关业务连续性概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1024_2016-->

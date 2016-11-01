@@ -4,14 +4,21 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="LuisBosquez"
-	manager="jeffreyg"
-	editor="genemi"/>
+	manager="jhubbard"
+	editor="genemi"/>  
+
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/16/2016"
-	wacn.date="07/11/2016"/>
+	ms.workload="drivers"
+	ms.tgt_pltfrm="na"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	wacn.date="10/31/2016"
+	ms.author="lbosq"/>  
+
 
 
 # 在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库
@@ -51,4 +58,4 @@
 * [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
 * 浏览所有 [SQL 数据库功能](/home/features/sql-database/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1024_2016-->

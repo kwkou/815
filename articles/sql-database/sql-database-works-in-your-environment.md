@@ -6,12 +6,18 @@
    documentationCenter=""
    authors="CarlRabeler"
    manager="jhubbard"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-database"
-   ms.date="07/19/2016"
-   wacn.date="09/28/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
+   ms.date="10/13/2016"
+   wacn.date="10/31/2016"
+   ms.author="carlrab"/>
 
 # Azure SQL 数据库在你的环境中正常工作
 
@@ -44,4 +50,4 @@
 浏览所有 [SQL 数据库的功能](/home/features/sql-database)。查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 * [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1024_2016-->

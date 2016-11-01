@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="stevestein"
 	manager="jhubbard"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/19/2016"
-	wacn.date="09/28/2016" />
+	ms.devlang="NA"
+	ms.date="10/12/2016"
+	wacn.date="10/31/2016"
+	ms.author="sstein"
+	ms.workload="data-management"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"/>  
+
 
 
 # 使用 PowerShell 更改 SQL 数据库的服务层和性能级别（定价层）
@@ -57,7 +64,7 @@
     $NewEdition = "Standard"
     $NewPricingTier = "S2"
 
-    $ScaleRequest = Set-AzureRmSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
+    Set-AzureRmSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
 
 
   
@@ -67,26 +74,26 @@
 
 ## 用于更改 SQL 数据库的服务层和性能级别的示例 PowerShell 脚本
 
+将 `{variables}` 替换为自己的值（不要包含大括号）。
     
 
     
-    $SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
+    $SubscriptionId = "{4cac86b0-1e56-bbbb-aaaa-000000000000}"
     
-    $ResourceGroupName = "resourceGroupName"
-    $Location = "China East"
+    $ResourceGroupName = "{resourceGroup}"
+    $Location = "{AzureRegion}"
     
-    $ServerName = "serverName"
-    $DatabaseName = "databaseName"
+    $ServerName = "{server}"
+    $DatabaseName = "{database}"
     
-    $NewEdition = "Standard"
-    $NewPricingTier = "S2"
+    $NewEdition = "{Standard}"
+    $NewPricingTier = "{S2}"
     
     Add-AzureRmAccount -EnvironmentName AzureChinaCloud
-    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
+    Set-AzureRmContext -SubscriptionId $SubscriptionId
     
-    $ScaleRequest = Set-AzureRmSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
-    
-    $ScaleRequest
+    Set-AzureRmSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
+
     
         
 
@@ -103,4 +110,4 @@
 - [SQL 数据库文档](/documentation/services/sql-databases)
 - [Azure SQL 数据库 Cmdlet](http://msdn.microsoft.com/zh-cn/library/mt574084.aspx)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1024_2016-->
