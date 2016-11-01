@@ -26,7 +26,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure ](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并选择“获取支持”。
 
-## <a id="quickfixrdp"></a> 快速故障排除步骤
+## <a id="quickfixrdp" name="quick-troubleshooting-steps"></a> 快速故障排除步骤
 在执行每个故障排除步骤之后，请尝试连接到 VM：
 
 1. 使用 Azure 门户预览或 Azure PowerShell 重置远程访问权限
