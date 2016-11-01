@@ -1,11 +1,12 @@
 <properties
-   pageTitle="云业务连续性 - SQL 数据库的内置备份 |Azure"
-   description="了解 SQL 数据库的内置备份，借助该备份可将 Azure SQL 数据库回退到以前的时间点，或者将数据库复制到地理区域中的新数据库（最多 35 天）。"
+   pageTitle="了解 SQL 数据库备份 | Azure" 
+   description="了解 SQL 数据库的内置数据库备份，使用它可以将 Azure SQL 数据库还原到以前的某个时间点，或者将数据库复制到地理区域中的新数据库（最多保留 35 天）。"
    services="sql-database"
    documentationCenter=""
    authors="CarlRabeler"
    manager="jhubbard"
-   editor="monicar"/>
+   editor="monicar"/>  
+
 
 <tags
    ms.service="sql-database"
@@ -13,9 +14,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/06/2016"
-   wacn.date="10/17/2016"
-   ms.author="carlrab"/>  
+   ms.date="10/14/2016"
+   wacn.date="10/31/2016"
+   ms.author="carlrab;barbkess"/>
 
 
 # SQL 数据库自动备份

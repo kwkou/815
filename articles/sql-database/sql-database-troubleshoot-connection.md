@@ -11,8 +11,13 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/06/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/21/2016"
+	wacn.date="10/31/2016"
+	ms.author="daleche"/>
 
 # 连接到 SQL 数据库时发生“服务器上的数据库当前不可用”错误
 [AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
@@ -37,4 +42,4 @@
 - 如果你收到其他错误，请评估[错误信息](/documentation/articles/sql-database-develop-error-messages/)，以便获取有关原因的线索。
 - 如果问题持续，请访问[排查 Azure SQL 数据库的常见连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/)中的指南。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1024_2016-->

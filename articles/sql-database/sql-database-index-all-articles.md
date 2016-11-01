@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="MightyPen"
 	manager="jhubbard"
-	editor=""/>
+	editor="MightyPen"/>  
+
 
 <tags
 	ms.service="sql-database"
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/21/2016"
-	wacn.date="10/17/2016"
+	ms.date="10/05/2016"
+	wacn.date="10/31/2016"
 	ms.author="genemi"/>  
 
 
@@ -376,4 +377,4 @@
 
 - [在 Azure 中备份 Azure App Service 应用](/documentation/articles/web-sites-backup/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

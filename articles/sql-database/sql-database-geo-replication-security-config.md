@@ -5,17 +5,23 @@
 	documentationCenter="na"
 	authors="CarlRabeler"
 	manager="jhubbard"
-	editor="monicar" />
+	editor="monicar" />  
+
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/16/2016"
-	wacn.date="09/19/2016" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
+	ms.date="10/13/2016"
+	wacn.date="10/31/2016"
+	ms.author="carlrab" />
 
 # 灾难恢复后如何管理 Azure SQL 数据库安全性
 
->[AZURE.NOTE] [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) (Active Geo-Replication) 现在可用于标准层和高级层中的数据库；可读辅助副本（Readable Secondary）目前只能用于高级服务层（ premium ）中的数据库。
+>[AZURE.NOTE] [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) 现可用于所有服务层中的所有数据库。
 
 ## 灾难恢复身份验证要求概述
 
@@ -91,4 +97,4 @@
 
 ## 其他资源
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1024_2016-->

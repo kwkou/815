@@ -6,12 +6,18 @@
    documentationCenter=""
    authors="CarlRabeler"
    manager="jhubbard"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-database"
-   ms.date="07/19/2016"
-   wacn.date="09/19/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
+   ms.date="10/13/2016"
+   wacn.date="10/31/2016"
+   ms.author="carlrab"/>
 
 # Azure SQL 数据库会自行学习和进行适应性调整
 
@@ -42,7 +48,7 @@ SQL 数据库提供应用所需的自动管理和数据保护，以便你能够�
 [阅读文档](http://go.microsoft.com/fwlink/?LinkID=787568)
 
 转到主页以查看 SQL 数据库可提供的其他功能。
-[请查看](/home/features/sql-database)
+[请查看](/home/features/sql-database/)
 
 ## 后续步骤
 
@@ -50,8 +56,8 @@ SQL 数据库提供应用所需的自动管理和数据保护，以便你能够�
 
 ## 其他资源
 
-浏览所有 [SQL 数据库的功能](/home/features/sql-database)。
+浏览所有 [SQL 数据库的功能](/home/features/sql-database/)。
  
 查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1024_2016-->

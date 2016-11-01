@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="ajlam"
 	manager="jhubbard"
-	editor=""/>
+	editor=""/>  
+
 
 
 <tags
@@ -14,7 +15,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="09/16/2016"
+	ms.date="10/03/2016"
+	wacn.date="10/31/2016"
 	ms.author="andrela"/>  
 
 
@@ -51,4 +53,4 @@
 * [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
 * 浏览所有 [SQL 数据库功能](/home/features/sql-database/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->
