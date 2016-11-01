@@ -51,7 +51,7 @@
 
         $SubscriptionName="<YourSubscriptionName>"
         $ResourceGroupName="<YourResourceGroupName>"
-        $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
+        $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.chinacloudapi.cn
         $DatabaseName="<YourDatabaseName>"
         $NewDatabaseName="<YourDatabaseName>"
         
