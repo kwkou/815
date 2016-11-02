@@ -14,16 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/30/2016"
-   wacn.date="10/17/2016"/>
+   ms.date="09/24/2016"
+   wacn.date="10/31/2016"/>
 
 # 保护 SQL 数据仓库中的数据库
 
 > [AZURE.SELECTOR]
 - [安全性概述](/documentation/articles/sql-data-warehouse-overview-manage-security/)
+- [身份验证](/documentation/articles/sql-data-warehouse-authentication/)
+- [加密（门户）](/documentation/articles/sql-data-warehouse-encryption-tde/)
 - [加密 (T-SQL)](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
-
-
 
 本文逐步讲述有关保护 Azure SQL 数据仓库数据库的基本知识。具体而言，本文将帮助你了解如何使用相应的资源，在数据库中限制访问、保护数据和监视活动。
 
@@ -37,7 +37,7 @@
 
 ## 身份验证
 
-身份验证是指连接到数据库时如何证明你的身份。SQL 数据仓库当前支持通过用户名和密码进行 SQL Server 身份验证，并支持 Azure Active Directory 的预览。
+身份验证是指连接到数据库时如何证明你的身份。SQL 数据仓库当前支持通过用户名和密码进行 SQL Server 身份验证，并支持 Azure Active Directory。
 
 在为数据库创建逻辑服务器时，你已指定一个包含用户名和密码的“服务器管理员”登录名。使用这些凭据，你可以通过 SQL Server 身份验证以数据库所有者（或“dbo”）的身份在该服务器对任何数据库进行验证。
 
@@ -48,6 +48,7 @@
 
 	-- Connect to master database and create a login
 	CREATE LOGIN ApplicationLogin WITH PASSWORD = 'strong_password';
+	CREATE USER ApplicationUser FOR LOGIN ApplicationLogin;
 
 然后，使用服务器管理员登录名连接到“SQL 数据仓库数据库”，并基于刚刚创建的服务器登录名创建数据库用户。
 
@@ -80,39 +81,34 @@
 
 ## 加密
 
-Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密处于“静止”状态或存储在数据库文件的数据，从而保护你的数据。必须是管理员或 dbmanager 角色的成员才能在 master 数据库中启用 TDE。若要加密你的数据库，请连接到服务器上的 master 数据库，并执行：
+Azure SQL 数据仓库透明数据加密 (TDE) 可以对静态数据进行实时加密和解密，避免恶意活动造成的威胁。在加密数据库时，可以对关联的备份和事务日志文件加密，无需对应用程序进行任何更改。TDE 使用称为数据库加密密钥的对称密钥来加密整个数据库的存储。在 SQL 数据库中，数据库加密密钥由内置服务器证书保护。内置服务器证书对每个 SQL 数据库服务器都是唯一的。Microsoft 每隔 90 天自动轮换这些证书至少一次。SQL 数据仓库使用的加密算法为 AES-256。有关 TDE 的一般描述，请参阅[透明数据加密][]。
 
-    ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
-
-<!-- 你也可以通过 [Azure 门户][]中的数据库设置启用透明数据加密。 --> 有关详细信息，请参阅[透明数据加密 (TDE) 入门][]。
-
-## 审核
-
-审核和跟踪数据库事件可帮助你保持合规性，以及识别可疑活动。SQL 数据仓库审核可让你将数据库中的事件记录到 Azure 存储帐户中的审核日志。SQL 数据仓库审核还与 Microsoft Power BI 集成，以帮助向下钻取报告和分析数据。有关详细信息，请参阅 [SQL 数据库审核入门][]。
+可以使用 [Azure 门户][Encryption with Portal]或 [T-SQL][Encryption with TSQL] 加密数据库。
 
 ## 后续步骤
+
 有关通过不同协议连接到 SQL 数据仓库的详细信息和示例，请参阅[连接到 SQL 数据仓库][]。
 
 <!--Image references-->
 
 <!--Article references-->
-[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-connect-overview/
-[SQL 数据库审核入门]: /documentation/articles/sql-database-auditing-get-started/
-[透明数据加密 (TDE) 入门]: /documentation/articles/sql-data-warehouse-encryption-tde/
+[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-connect-overview
+[Encryption with Portal]: /documentation/articles/sql-data-warehouse-encryption-tde
+[Encryption with TSQL]: /documentation/articles/sql-data-warehouse-encryption-tde-tsql
 [Connecting to SQL Data Warehouse By Using Azure Active Directory Authentication]: /documentation/articles/sql-data-warehouse-authentication
 
 <!--MSDN references-->
-[Azure SQL 数据库防火墙]: /documentation/articles/sql-database-firewall-configure/
+[Azure SQL 数据库防火墙]: https://msdn.microsoft.com/zh-cn/library/ee621782.aspx
 [sp\_set\_firewall\_rule]: https://msdn.microsoft.com/zh-cn/library/dn270017.aspx
 [sp\_set\_database\_firewall\_rule]: https://msdn.microsoft.com/zh-cn/library/dn270010.aspx
 [数据库角色]: https://msdn.microsoft.com/zh-cn/library/ms189121.aspx
-[在 Azure SQL 数据库中管理数据库和登录名]: /documentation/articles/sql-database-manage-logins/
+[在 Azure SQL 数据库中管理数据库和登录名]: https://msdn.microsoft.com/zh-cn/library/ee336235.aspx
 [权限]: https://msdn.microsoft.com/zh-cn/library/ms191291.aspx
 [存储过程]: https://msdn.microsoft.com/zh-cn/library/ms190782.aspx
 [透明数据加密]: https://msdn.microsoft.com/zh-cn/library/dn948096.aspx
-[Azure 门户]: https://manage.windowsazure.cn/
+[Azure portal]: https://manage.windowsazure.cn/
 
 <!--Other Web references-->
-[Azure 门户中基于角色的访问控制]: /documentation/articles/role-based-access-control-configure/
+[Azure 门户中基于角色的访问控制]: /documentation/articles/role-based-access-control-configure
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

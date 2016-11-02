@@ -1,4 +1,3 @@
-<!-- Temporarily comment out connect overview, visual studio, nex time on -->
 <properties
    pageTitle="对 Azure SQL 数据仓库进行身份验证 | Azure"
    description="对 Azure SQL 数据仓库进行的 Azure Active Directory (AAD) 和 SQL Server 身份验证。"
@@ -16,16 +15,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="10/17/2016"
-   wacn.date="10/17/2016"/>  
+   ms.date="09/24/2016"
+   wacn.date="10/31/2016"/>  
 
 
 # 对 Azure SQL 数据仓库进行身份验证
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-connect-overview/)
+- [安全性概述](/documentation/articles/sql-data-warehouse-overview-manage-security/)
 - [身份验证](/documentation/articles/sql-data-warehouse-authentication/)
-- [驱动程序](/documentation/articles/sql-data-warehouse-connection-strings/)
+- [加密（门户）](/documentation/articles/sql-data-warehouse-encryption-tde/)
+- [加密 (T-SQL)](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
 
 若要连接到 SQL 数据仓库，必须传入安全凭据进行身份验证。建立连接时，特定的连接设置已配置为建立查询会话的一部分。
 
@@ -83,10 +83,14 @@ Azure Active Directory 的优点包括：
 - 完成详细步骤。配置和使用 Azure Active Directory 身份验证的详细步骤与适用于 Azure SQL 数据库和 Azure SQL 数据仓库的步骤几乎完全相同。请遵循主题[使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库](/documentation/articles/sql-database-aad-authentication/)中的详细步骤。
 - 创建自定义数据库角色，并向角色添加用户。然后授予角色具体权限。有关详细信息，请参阅[数据库引擎权限入门](https://msdn.microsoft.com/zh-cn/library/mt667986.aspx)。
 
+## 后续步骤
+
+若要开始使用 Visual Studio 和其他应用程序查询数据仓库，请参阅[使用 Visual Studio 进行查询][]。
+
 <!-- Article references -->
 [保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [使用 Visual Studio 进行查询]: /documentation/articles/sql-data-warehouse-query-visual-studio/
 [What is Azure Active Directory]: /documentation/articles/active-directory-whatis/
 [Azure AD features and limitations]: /documentation/articles/sql-database-aad-authentication#azure-ad-features-and-limitations
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1024_2016-->

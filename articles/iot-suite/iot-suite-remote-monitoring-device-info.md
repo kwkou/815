@@ -10,8 +10,14 @@
 
 <tags
  ms.service="iot-suite"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
  ms.date="09/12/2016"
- wacn.date="10/10/2016"/>
+ ms.author="dobett"
+ wacn.date="10/31/2016"/>
+
 
 
 # 远程监视预配置解决方案中的设备信息元数据

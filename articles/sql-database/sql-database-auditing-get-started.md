@@ -9,9 +9,15 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/10/2016"
-	wacn.date="08/15/2016"/>
- 
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/05/2016"
+	wacn.date="10/31/2016"
+	ms.author="CarlRabeler; ronitr; giladm"/>  
+
+
 # SQL 数据库审核入门
 Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
 

@@ -6,21 +6,20 @@
    documentationCenter="NA"
    authors="sonyam"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="08/01/2016"
-   wacn.date="08/29/2016" />
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/24/2016"
+   wacn.date="10/31/2016"/>
 
 
 # Azure SQL 数据仓库的驱动程序
-
-> [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-connect-overview/)
-- [身份验证](/documentation/articles/sql-data-warehouse-authentication/)
-- [驱动程序](/documentation/articles/sql-data-warehouse-connection-strings/)
-
 
 用户可以使用多个不同的应用程序协议，例如 [ADO.NET][]、[ODBC][]、[PHP][] 和 [JDBC][] 连接到 SQL 数据仓库。下面是每个协议的连接字符串的一些示例。可以使用 Azure 门户来生成连接字符串。若要使用 Azure 门户生成连接字符串，请导航到数据库边栏选项卡，在“概要”下单击“显示数据库连接字符串”。
 
@@ -55,4 +54,4 @@
 
 <!--Other references-->
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1024_2016-->

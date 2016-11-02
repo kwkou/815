@@ -5,40 +5,67 @@
 	documentationCenter=""
 	authors="stevestein"
 	manager="jhubbard"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/09/2016"
-	wacn.date="09/28/2016" />
+	ms.devlang="NA"
+	ms.date="10/12/2016"
+	wacn.date="10/31/2016"
+	ms.author="sstein"
+	ms.workload="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"/>
 
 
 # 使用 PowerShell 还原已删除的 Azure SQL 数据库
 
-
+> [AZURE.SELECTOR]
+- [概述](/documentation/articles/sql-database-recovery-using-backups/)
+- [**还原已删除的数据库：PowerShell**](/documentation/articles/sql-database-restore-deleted-database-powershell/)
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 
+## 获取已删除数据库的列表
+
+
+	$resourceGroupName = "resourcegroupname"
+	$sqlServerName = "servername"
+
+	$DeletedDatabases = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $resourceGroupName -ServerName $sqlServerName
+
+
 ## 将已删除的数据库还原到独立数据库
 
-1. 使用 [Get-AzureRmSqlDeletedDatabaseBackup](https://msdn.microsoft.com/zh-cn/library/azure/mt693387.aspx) cmdlet 获取要还原的已删除数据库备份。
+使用 [Get-AzureRmSqlDeletedDatabaseBackup](https://msdn.microsoft.com/zh-cn/library/azure/mt693387.aspx) cmdlet 获取要还原的已删除数据库备份。然后，使用 [Restore-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt693390.aspx) cmdlet 从已删除的数据库备份开始还原。
 
-        $DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName "resourcegroup01" -ServerName "server01" -DatabaseName "database01"
 
-2. 使用 [Restore-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt693390.aspx) cmdlet 从已删除的数据库备份开始还原。
-    
-        Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName "RestoredDatabase" –ResourceId $DeletedDatabase.ResourceID -Edition "Standard" -ServiceObjectiveName "S2"
+	$resourceGroupName = "resourcegroupname"
+	$sqlServerName = "servername"
+	$databaseName = "deletedDbToRestore"
+
+	$DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $resourceGroupName -ServerName $sqlServerName -DatabaseName $databaseName
+
+	Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName "RestoredDatabase" –ResourceId $DeletedDatabase.ResourceID -Edition "Standard" -ServiceObjectiveName "S2"
+
+
 
 ## 将已删除的数据库还原到弹性数据库池中
 
-1. 使用 [Get-AzureRmSqlDeletedDatabaseBackup](https://msdn.microsoft.com/zh-cn/library/azure/mt693387.aspx) cmdlet 获取要还原的已删除数据库备份。
+使用 [Get-AzureRmSqlDeletedDatabaseBackup](https://msdn.microsoft.com/zh-cn/library/azure/mt693387.aspx) cmdlet 获取要还原的已删除数据库备份。然后，使用 [Restore-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt693390.aspx) cmdlet 从已删除的数据库备份开始还原。
 
-        $DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName "resourcegroup01" -ServerName "server01" -DatabaseName "database01"
 
-2. 使用 [Restore-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt693390.aspx) cmdlet 从已删除的数据库备份开始还原。
-    
-        Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName "RestoredDatabase" –ResourceId $DeletedDatabase.ResourceID –ElasticPoolName "elasticpool01" 
+	$resourceGroupName = "resourcegroupname"
+	$sqlServerName = "servername"
+	$databaseName = "deletedDbToRestore"
+
+	$DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $resourceGroupName -ServerName $sqlServerName -DatabaseName $databaseName
+
+	Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName "RestoredDatabase" –ResourceId $DeletedDatabase.ResourceID –ElasticPoolName "elasticpool01"
+
+
 
 ## 后续步骤
 
@@ -48,4 +75,4 @@
 - 若要了解更快的恢复选项，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 - 若要了解如何使用自动备份进行存档，请参阅[数据库复制](/documentation/articles/sql-database-copy/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1024_2016-->

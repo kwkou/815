@@ -43,4 +43,6 @@
 
 网络连接问题也可能导致连接错误和超时。只需重新尝试连接（如果知道服务器名称、凭据和防火墙规则正确）就可能成功。
 
-<!---HONumber=Mooncake_1010_2016-->
+有关连接问题的详细信息，请参阅[排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误](/documentation/articles/sql-database-connectivity-issues/)。
+
+<!---HONumber=Mooncake_1024_2016-->

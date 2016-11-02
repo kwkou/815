@@ -6,12 +6,18 @@
    documentationCenter=""
    authors="CarlRabeler"
    manager="jhubbard"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-database"
-   ms.date="07/19/2016"
-   wacn.date="09/28/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
+   ms.date="10/13/2016"
+   wacn.date="10/31/2016"
+   ms.author="carlrab"/>
 
 # Azure SQL 数据库动态缩放规模
 
@@ -51,4 +57,4 @@ SQL 数据库包含最前沿的内存技术，可执行极快的事务，同时�
  
 查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1024_2016-->

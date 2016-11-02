@@ -3,15 +3,21 @@
    description="了解如何通过使用动态管理视图监视 Azure SQL 数据库来检测并诊断常见性能问题。"
    services="sql-database"
    documentationCenter=""
-   authors="carlrabeler"
+   authors="CarlRabeler"
    manager="jhubbard"
    editor=""
-   tags=""/>
+   tags=""/>  
+
 
 <tags
    ms.service="sql-database"
-   ms.date="07/05/2016"
-   wacn.date="08/15/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-management"
+   ms.date="09/20/2016"
+   wacn.date="10/31/2016"
+   ms.author="carlrab"/>
 
 # 使用动态管理视图监视 Azure SQL 数据库
 
@@ -27,8 +33,7 @@ SQL 数据库部分支持三种类别的动态管理视图：
 
 ## 权限
 
-在 SQL 数据库中，查询动态管理视图需要 **VIEW DATABASE STATE** 权限。**VIEW DATABASE STATE** 权限返回有关当前数据库中的所有对象的信息。
-若要向特定数据库用户授予 **VIEW DATABASE STATE**权限，请运行以下查询：
+在 SQL 数据库中，查询动态管理视图需要 **VIEW DATABASE STATE** 权限。**VIEW DATABASE STATE** 权限返回有关当前数据库中的所有对象的信息。若要向特定数据库用户授予 **VIEW DATABASE STATE**权限，请运行以下查询：
 
 	GRANT VIEW DATABASE STATE TO database_user;
 
@@ -74,7 +79,7 @@ SQL 数据库部分支持三种类别的动态管理视图：
 	WHERE c.session_id = @@SPID;
 
 
-> [AZURE.NOTE] 在执行 **sys.dm_exec_requests** 和 **sys.dm_exec_sessions** 视图时，如果用户具有对数据库的 **VIEW DATABASE STATE** 权限，用户将会看到数据库上所有正在执行的会话；否则，用户只会看到当前会话。
+> [AZURE.NOTE] 在执行 **sys.dm\_exec\_requests** 和 **sys.dm\_exec\_sessions **视图时，如果具有对数据库的 **VIEW DATABASE STATE** 权限，将会看到数据库上所有正在执行的会话；否则，只会看到当前会话。
 
 ## 监视查询性能
 
@@ -133,4 +138,4 @@ SQL 数据库部分支持三种类别的动态管理视图：
 
 [SQL 数据库简介](/documentation/articles/sql-database-technical-overview/)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1024_2016-->
