@@ -162,7 +162,6 @@ Visual Studio 支持所有这三种部署过程（FTP、Git 和 Web 部署），
 * [设置使用 SQL 数据库的 Web 应用](/documentation/articles/app-service-web-arm-with-sql-database-provision/)
 * [按可预见的方式在 Azure 中设置和部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably/)
 * [使用 Azure 构建真实世界云应用 – 使一切自动化](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything)。电子书章节，其中介绍电子书中所示的示例应用程序如何使用 Windows PowerShell 脚本来创建 Azure 测试环境并部署到该环境中。请参阅[资源](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources)部分以获取指向其他 Azure PowerShell 文档的链接。
-* [使用 Windows PowerShell 脚本发布到开发和测试环境](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/)。如何使用 Visual Studio 生成的 Windows PowerShell 部署脚本。
 
 ###<a name="api"></a>使用 .NET 管理 API 自动进行部署
 
