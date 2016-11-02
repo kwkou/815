@@ -138,7 +138,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 1. 在 Visual Studio 中，右键单击你的解决方案并选择“设置启动项目”。选择“多个启动项目”，然后针对 **ReadFileUploadNotification** 和 **SimulatedDevice** 应用选择“启动”操作。
 
-2. 按 **F5**。这两个应用程序应该都会启动。你将在其中一个控制台应用中看到上载已完成，同时还会看到另一个控制台应用收到的上载通知消息。可以使用 [Azure 门户]或 Visual Studio 服务器资源管理器来检查你的存储帐户中是否出现了上载的文件。
+2. 按 **F5**。这两个应用程序应该都会启动。你将在其中一个控制台应用中看到上载已完成，同时还会看到另一个控制台应用收到的上载通知消息。可以使用 [Azure 门户预览]或 Visual Studio 服务器资源管理器来检查你的存储帐户中是否出现了上载的文件。
 
   ![][50]
 
@@ -166,7 +166,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 <!-- Links -->
 
-[Azure 门户]: https://manage.windowsazure.cn
+[Azure 门户]: https://portal.azure.cn
 
 
 [Hadoop]: /documentation/services/hdinsight/

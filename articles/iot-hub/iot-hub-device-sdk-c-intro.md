@@ -27,7 +27,7 @@
 
 本文将介绍适用于 C 语言的 Azure IoT 设备 SDK 的体系结构。我们将演示如何初始化设备库，将事件发送到 IoT 中心，以及从 IoT 中心接收消息。本文中的信息应足以让你开始使用 SDK，但同时也提供了有关库的其他信息的链接。
 
->> [AZURE.NOTE] 本文不包括有关如何使用 SDK 中的 C 语言库的 *设备管理* 功能的信息。若要了解如何使用设备管理功能，请参阅[适用于 C 语言的 Azure IoT 中心设备管理库简介](/documentation/articles/iot-hub-device-management-library/)。
+
 
 ## SDK 体系结构
 
@@ -469,7 +469,6 @@ serializer_deinit();
 ## 后续步骤
 
 本文介绍了有关使用**适用于 C 语言的 Azure IoT 设备 SDK** 中的库的基本知识。其中提供了足够的信息来让你了解 SDK 中包含哪些组件及其体系结构，以及如何开始使用 Windows 示例。下一篇文章通过讲解[有关 IoTHubClient 库的详细信息](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)来继续介绍该 SDK。
-若要了解如何使用**适用于 C 的 Azure IoT 设备 SDK** 中的设备管理功能，请参阅[适用于 C 语言的 Azure IoT 中心设备管理库简介](/documentation/articles/iot-hub-device-management-library/)。
 若要详细了解如何针对 IoT 中心进行开发，请参阅 [IoT 中心 SDK][lnk-sdks]。
 
 若要进一步探索 IoT 中心的功能，请参阅：

@@ -243,7 +243,7 @@ HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验�
 
 此机制类似于[事件中心发布者策略][lnk-event-hubs-publisher-policy]，可用于实施自定义身份验证方法。有关详细信息，请参阅[设计你的解决方案][lnk-guidance-security]的“安全”部分。
 
-## 消息传递
+## 消息传递<a id="messaging"></a>
 
 IoT 中心提供消息传送基元进行通信：
 
