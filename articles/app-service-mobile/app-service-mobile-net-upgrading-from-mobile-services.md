@@ -216,7 +216,7 @@
 
 移动服务的身份验证组件现已移入应用服务身份验证/授权功能。可以阅读 [Add authentication to your mobile app](/documentation/articles/app-service-mobile-ios-get-started-users/)（将身份验证添加到移动应用）主题，了解如何为站点启用此功能。
 
-对于某些提供程序（例如 AAD、Facebook 和 Google），应该可以利用复制应用程序的现有注册。只需导航到标识提供者的门户，并将新的重定向 URL 添加到注册即可。然后，使用客户端 ID 和机密配置应用服务身份验证/授权。
+对于某些提供程序（例如 AAD），应该可以利用复制应用程序的现有注册。只需导航到标识提供者的门户，并将新的重定向 URL 添加到注册即可。然后，使用客户端 ID 和机密配置应用服务身份验证/授权。
 
 ### 控制器操作授权
 现在，必须更改 `[AuthorizeLevel(AuthorizationLevel.User)]` 属性的所有实例才能使用标准的 ASP.NET `[Authorize]` 属性。此外，默认情况下，控制器现在是匿名的，如同在其他 ASP.NET 应用程序中一样。如果以前一直在使用其他某个 AuthorizeLevel 选项（例如 Admin 或 Application），请注意，现在这些选项都不再存在。可以改为设置共享机密的 AuthorizationFilters，或者配置 AAD 服务主体，安全启用服务到服务的调用。
