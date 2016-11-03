@@ -8,12 +8,13 @@
     editor=""
     tags=""/>
 
-<tags ms.service="multiple" ms.date="" wacn.date="11/01/2016" wacn.lang="cn"/>
+<tags ms.service="multiple" ms.date="" wacn.date="11/03/2016" wacn.lang="cn"/>
 
 #发票申请操作解析 - Azure在线业务
 
-## 申请流程
+## 申请流程:
 ![申请流程](./media/azure-fapiao-process/01.PNG)
+
 
 ## 第一步：如何申请发票
 
@@ -23,6 +24,7 @@
 
 	![Portal](./media/azure-fapiao-process/02.png)
 
+
 ## 第二步：发票系统注册
 
 当您进入世纪互联发票信息管理系统时，请填写以下信息进行注册。
@@ -30,6 +32,7 @@
 注册完账户后，系统会发送激活邮件给您的注册邮箱，请点击邮件中的激活链接以激活该账户。
 
 ![发票系统注册](./media/azure-fapiao-process/03.png)
+
 
 ## 第三步：开发票具体操作
 
@@ -64,6 +67,7 @@
 
 ![确认信息](./media/azure-fapiao-process/07.png)
 
+
 ## 第四步：开票和寄出
 
 您填写的信息自动传送到世纪互联服务中心，您的申请将在 2 个工作日完成操作。
@@ -76,7 +80,7 @@
 	![系统公告](./media/azure-fapiao-process/09.png)
 
 
-## 申请发票过程中常见问题：
+## 热点问题：
 
 ### 问题一：您可以通过在线支持得到哪些服务
 
@@ -91,6 +95,7 @@
 </table>
 
 Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https://support.windowsazure.cn/support) 提交工单。
+
 
 ### 问题二：自助修改登邮箱录，密码
 
@@ -111,6 +116,7 @@ Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https:/
 
 - 如果您忘记了登录邮箱，请致电 4000890365，我们的客服会帮助您解决问题。
 
+
 ### 问题三：查看订单 ID
 
 - 登录到 [https://account.windowsazure.cn](https://account.windowsazure.cn)
@@ -119,9 +125,11 @@ Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https:/
 
 ![查看订单 ID](./media/azure-fapiao-process/17.png)
 
+
 ### 问题四：注册时填错邮箱地址怎么办
 
 如果注册时填错邮箱，将无法收到激活邮件，24 小时之后注册链接会自动失效，您可以使用正确邮箱重新注册。
+
 
 ### 问题五：没有收到账号激活邮件怎么办
 
