@@ -118,7 +118,7 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
 - **丰富的遥测功能**：可以在门户中或以编程方式使用。
 
-<a href="#integration-with-app-service-mobile-apps"></a>
+<a id="integration-with-app-service-mobile-apps" href="#integration-with-app-service-mobile-apps"></a>
 ##与 App Service Mobile Apps 集成
 
 为了帮助在 Azure 服务之间提供无缝且统一的体验，[应用服务移动应用]原生支持使用通知中心来推送通知。[应用服务移动应用]提供面向企业开发人员和系统集成商的高度可缩放、全局可用的移动应用程序开发平台，该平台向移动开发人员提供一组丰富的功能。
