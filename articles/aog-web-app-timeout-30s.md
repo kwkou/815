@@ -1,12 +1,12 @@
 <properties
-    pageTitle="使用应用程序网关网页载入超过 30 秒（错误代码 502）的解决方法"
-    description="如何解决载入超过 30 秒出现 502 错误"
-    services="app-service-web"
-    documentationCenter=""
-    authors=""
-    manager=""
-    editor=""
-    tags=""/>
+	pageTitle="使用应用程序网关网页载入超过 30 秒（错误代码 502）的解决方法"
+	description="如何解决载入超过 30 秒出现 502 错误"
+	services="app-service-web"
+	documentationCenter=""
+	authors=""
+	manager=""
+	editor=""
+	tags=""/>
 
 <tags
 	ms.service="app-service-web-aog"

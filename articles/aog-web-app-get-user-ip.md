@@ -1,13 +1,12 @@
-
 <properties
-    pageTitle="应用程序网关中如何获取访问者源 IP"
-    description="介绍如何在应用程序网关中获取访问者源 IP。"
-    services="app-service-web"
-    documentationCenter=""
-    authors=""
-    manager=""
-    editor=""
-    tags=""/>
+	pageTitle="应用程序网关中如何获取访问者源 IP"
+	description="介绍如何在应用程序网关中获取访问者源 IP。"
+	services="app-service-web"
+	documentationCenter=""
+	authors=""
+	manager=""
+	editor=""
+	tags=""/>
 
 <tags
 	ms.service="app-service-web-aog"
