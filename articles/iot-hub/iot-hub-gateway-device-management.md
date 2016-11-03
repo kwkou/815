@@ -57,7 +57,6 @@
 - [IoT 网关 SDK - 使用 Linux 入门][lnk-gateway-get-started]
 - [IoT 网关 SDK – 使用 Linux 通过模拟设备发送设备至云消息][lnk-gateway-simulated]
 
-若要深入了解如何使用 IoT 中心管理设备，请参阅 [Azure IoT 中心设备管理客户端库简介][lnk-library-c]。
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
@@ -76,11 +75,6 @@
 [lnk-gateway-get-started]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-gateway-simulated]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/
-[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
-[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
-[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
-[lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
-[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/

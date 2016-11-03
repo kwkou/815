@@ -84,7 +84,7 @@ Azure AD 中的应用程序是使用 2 个对象表示的：应用程序对象�
     * [服务主体](https://msdn.microsoft.com/zh-cn/library/azure/dn194452.aspx)
 
 
-## 如何将应用程序添加到 Azure AD 实例？
+## <a name="who-has-permission-to-add-applications-to-my-azure-ad-instance"></a>如何将应用程序添加到 Azure AD 实例？
 可以使用多种方法将应用程序添加到 Azure AD：
 
 <!--* Add an app from the [Azure Active Directory App Gallery](/updates/azure-active-directory-over-1000-apps/)-->

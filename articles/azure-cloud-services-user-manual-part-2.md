@@ -791,7 +791,7 @@ csdef 文件 — 全称是云服务 Definition，定义了云服务的参数，�
 6. 如果角色是 Worker Role，WaHostBootstrapper 启动一个名为 WaWorkerHost 的进程；如果角色是 Web Role，WaHostBootstrapper 启动一个名为 WaIISHost 的进程；  
 7. 在上述进程中，载入角色的程序集并搜索其实施的 RoleEntryPoint 子类；  
 8. 调用 OnStart() 方法；  
-9. 调用 Run() 方法。同时，该实例被标记为 "Ready" 并加入负载平衡器；  
+9. 调用 Run() 方法。同时，该实例被标记为 "Ready" 并加入负载均衡器；  
 10. 如果 Run() 方法退出，OnStop() 方法被调用。WaWorkerHost / WaIISHost 结束运行，实例重启；  
 11. WaHostBootstrapper 开始循环监测实例的运行状态。  
 
@@ -807,7 +807,7 @@ Web Role 不一定需要实施 RoleEntryPoint 类，因为 Web Role 最终部署
 
 Role Instance 可以处于不同状态：Busy 或者 Ready。  
 
-Role 只有在处于 Ready 状态时，才参与负载平衡任务的分配。  
+Role 只有在处于 Ready 状态时，才参与负载均衡任务的分配。  
 
 如果用户想在代码中临时改变 Role Instance 的状态，可以响应 RoleEnvironment 类所定义的 StatusCheck (状态检查)事件，并且通过事件参数中 RoleInstanceStatusCheckEventArgs 的 Setbusy() 方法将实例标记为 Busy。这样，负载均衡器就不会把任务分配到当前实例，直至下一次 WaHostBootstrapper 对实例状态进行检查。  
 
@@ -1380,7 +1380,7 @@ BlobBrowser 是 GUI 图形界面的工具，背后其实是利用 AzCopy 命令�
 	创建第 3 台虚拟机(Nginx03，内网 IP 是 10.0.0.6)的命令如下：
 
 			New-AzureVMConfig -Name 'Nginx03' -InstanceSize 'Large' -ImageName $image.ImageName  -AvailabilitySetName 'NginxAvbSet' ` | Add-AzureProvisioningConfig -Linux -LinuxUser 'adminuser' -Password 'MyVM@6789' -TimeZone 'China Standard Time' | Set-AzureSubnet -SubnetNames 'Nginx-subnet' | Set-AzureStaticVNetIP -IPAddress '10.0.0.6' | New-AzureVM -ServiceName 'MyNginx' -VNetName 'MyVNet' 
- 
+ 
 8. 以上介绍的是创建 Linux 虚拟机，接下来介绍一下如何使用 PowerShell，创建 Windows 虚拟机。从上面的步骤 6开始，通过模糊查询，查询到 Windows Server 2012虚拟机；
 
 		$imageList = Get-AzureVMImage `
@@ -1522,7 +1522,7 @@ Web Role 已经加入了 Web-Subnet 子网。
 
 	![Copy Always][139]
 
-	修改Enable Diagnostics，输入Azure Storage Account Name和Account Key
+	修改Enable Diagnostics，输入Azure Storage Account Name和Account Key
 
 	把Azure诊断内容保存到Windows Azure Storage里。
 7. 最后把 Web 站点发布到 Windows Azure 托管服务上(过程略)，并且登陆该站点；

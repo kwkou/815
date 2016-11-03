@@ -103,7 +103,7 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 
 计划程序仍处于活动状态，并将在下次有机会时重新启动。
 
-## 自定义计划程序
+## <a name="custom-scheduler"></a>自定义计划程序
 本节中所述的 cmdlet 仅在内部版本 [1\.1.130.0](/documentation/articles/active-directory-aadconnect-version-history/#111300) 及更高版本中提供。
 
 如果内置的计划程序不符合你的要求，则可以使用 PowerShell 计划连接器。

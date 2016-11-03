@@ -94,7 +94,7 @@
 ### 其他
 - 可选：一个用于验证同步的测试用户帐户。
 
-## 组件先决条件
+## <a name="component-prerequisites"></a>组件先决条件
 
 ### PowerShell 和.Net Framework
 Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。你的服务器上需要安装此版本或更高版本。请根据 Windows Server 版本执行以下操作：
@@ -109,7 +109,7 @@ Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。你�
   - 可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取的 **Windows Management Framework 3.0** 中包含最新的受支持 PowerShell 版本。
  - .NET Framework 4.5.1 和更高版本可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取。
 
-### 为 Azure AD Connect 启用 TLS 1.2
+### <a name="enable-tls-12-for-azure-ad-connect"></a>为 Azure AD Connect 启用 TLS 1.2
 Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure AD 之间的通信进行加密。可以通过配置 .Net 应用程序在服务器上默认使用 TLS 1.2 来更改此项。有关 TLS 1.2 的详细信息，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。
 
 1. 无法在 Windows Server 2008 上启用 TLS 1.2。需要 Windows Server 2008R2 或更高版本。请确保已为操作系统安装了 .Net 4.5.1 修补程序，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。在你的服务器上可能已经安装了此版本或更高版本。
@@ -128,7 +128,7 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
 
 ## 联合身份验证安装和配置的先决条件
 
-### Windows 远程管理
+### <a name="windows-remote-management"></a>Windows 远程管理
 当你使用 Azure AD Connect 部署 Active Directory 联合身份验证服务或 Web 应用程序代理时，请检查以下要求，以确保连接和配置成功：
 
 - 如果目标服务器已加入域，请确保已启用“Windows 远程托管”
@@ -158,7 +158,7 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
 - 不支持基于 CryptoAPI 下一代 (CNG) 密钥和密钥存储提供者的证书。这意味着，你必须使用基于 CSP（加密服务提供者）而非 KSP（密钥存储提供者）的证书。
 - 支持通配符证书。
 
-### 联合服务器的名称解析
+### <a name="name-resolution-for-federation-servers"></a>联合服务器的名称解析
 - 针对 Intranet（内部 DNS 服务器）和 Extranet（通过域注册机构注册的公共 DNS）设置 AD FS 联合身份验证服务名称（例如 sts.contoso.com）的 DNS 记录。对于 Intranet 记录，请确保使用 A 记录而不是 CNAME 记录。只有这样，才能从加入域的计算机正常执行 Windows 身份验证。
 - 如果要部署多个 AD FS 服务器或 Web 应用程序代理服务器，请确保配置负载均衡器，以及指向负载均衡器的 AD FS 联合身份验证服务名称（例如 sts.contoso.com）的 DNS 记录。
 - 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 sts.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。

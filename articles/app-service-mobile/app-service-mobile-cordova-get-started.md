@@ -51,12 +51,10 @@
 完成本快速入门教程后，请继续学习下列教程之一：
 
 * 将[身份验证添加]到 Apache Cordova 应用。
-* 将[推送通知添加]到 Apache Cordova 应用。
 
 详细了解 Azure 应用服务的重要概念。
 
 * [身份验证]
-* [推送通知]
 
 了解如何使用 SDK。
 
@@ -73,7 +71,7 @@
 [身份验证添加]: /documentation/articles/app-service-mobile-cordova-get-started-users/
 [推送通知添加]: /documentation/articles/app-service-mobile-cordova-get-started-push/
 [身份验证]: /documentation/articles/app-service-mobile-auth/
-[推送通知]: /documentation/articles/notification-hubs-overview/
+
 [Apache Cordova SDK]: /documentation/articles/app-service-mobile-cordova-how-to-use-client-library/
 [ASP.NET Server SDK]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
 [Node.js Server SDK]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/

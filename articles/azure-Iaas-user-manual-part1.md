@@ -12,7 +12,6 @@
 	ms.date=""
 	wacn.date="09/30/2016"/>
 
-
 # Azure IaaS 用户手册 - 第一部分
 
 - [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2/)

@@ -34,7 +34,7 @@ Azure IoT 中的设备管理主要包括三个概念：
 
 1.  **设备字段**：设备字段是预定义的属性，用于 IoT 中心消息传递和设备管理。设备字段可帮助 IoT 中心标识和连接物理设备。设备字段不会同步到设备，只存储在设备克隆中。设备字段包括设备 ID 和身份验证信息。
 
-2.  **设备属性**：设备属性是预定义的属性字典，用于描述物理设备。物理设备是每个设备属性的主机，是每个对应值的权威存储位置。这些属性的最终一致表示存储在云中的设备克隆中。相干性和新鲜度受同步设置影响，如[教程：如何使用设备克隆][lnk-tutorial-twin]中所述。设备属性的一些示例包括固件版本、电池剩余电量和制造商名称。
+2.  **设备属性**：设备属性是预定义的属性字典，用于描述物理设备。物理设备是每个设备属性的主机，是每个对应值的权威存储位置。这些属性的最终一致表示存储在云中的设备克隆中。设备属性的一些示例包括固件版本、电池剩余电量和制造商名称。
 
 3.  **服务属性**：服务属性是开发人员添加到服务属性字典中的 **&lt;key,value&gt;** 对。这些属性扩展了设备克隆的数据模型，可让你更好地确定设备的特征。服务属性不会同步到设备，只存储在云中的设备克隆中。服务属性的其中一个示例是 **&lt;NextServiceDate, 11/12/2017&gt;**，该服务属性可用于按服务的下个日期查找设备。
 
@@ -97,7 +97,7 @@ DM 客户端库在设备管理方面主要负责以下两项任务：
 - 同步物理设备上的属性与 IoT 中心中其对应的设备克隆
 - 编排 IoT 中心发送到设备的设备作业
 
-若要了解上述职责与物理设备上的实现的详细信息，请参阅[面向 C 的 Azure IoT 中心设备管理客户端库介绍][lnk-library-c]。
+
 
 ## 后续步骤
 
@@ -111,9 +111,8 @@ DM 客户端库在设备管理方面主要负责以下两项任务：
 [img-client]: ./media/iot-hub-device-management-overview/image3.png
 
 [lnk-lwm2m]: http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0
-[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
 [lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
-[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
+
 [lnk-apidocs]: http://azure.github.io/azure-iot-sdks/
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks

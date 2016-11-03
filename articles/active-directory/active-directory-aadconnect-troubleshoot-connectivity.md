@@ -15,7 +15,7 @@
 # 使用 Azure AD Connect 排查连接问题
 本文说明 Azure AD Connect 与 Azure AD 之间的连接的工作方式，以及如何排查连接问题。这些问题很有可能出现在包含代理服务器的环境中。
 
-## 在安装向导中排查连接问题
+## <a name="troubleshoot-connectivity-issues-in-the-installation-wizard"></a>在安装向导中排查连接问题
 Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验证。安装向导和同步引擎要求正确配置 machine.config，因为它们是 .NET 应用程序。
 
 在本文中，我们将说明 Fabrikam 如何通过其代理连接到 Azure AD。代理服务器名为 fabrikamproxy，并使用端口 8080。

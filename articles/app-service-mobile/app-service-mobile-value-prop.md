@@ -40,7 +40,7 @@ Azure 应用服务是面向专业开发人员的完全托管型平台即服务 (
 
 - **推送通知** - 客户端 SDK 与 Azure 通知中心的注册功能紧密集成，可将推送通知同时发送给数百万用户。
 
-  深入了解[推送通知功能]。
+
 
 - **客户端 SDK** - 我们提供整套客户端 SDK 来全面满足本机开发（[iOS]、[Android] 和 [Windows]）、跨平台开发（[用于 iOS 和 Android 的 Xamarin]、[Xamarin Forms]）和混合应用程序开发 ([Apache Cordova]) 要求。每个客户端 SDK 附带 MIT 许可证，并且是开源的。
 
@@ -61,11 +61,9 @@ Azure 应用服务是面向专业开发人员的完全托管型平台即服务 (
 
 - **虚拟网络** - 应用服务可以使用虚拟网络、ExpressRoute 或混合连接来与本地资源建立连接。
 
-  深入了解[混合连接]、[虚拟网络]和 [ExpressRoute]。
 
 - **隔离/专用的环境** - 应用服务可以在一个完全隔离的专用环境中运行，安全运行大规模的 Azure 应用服务应用。这很适合用于需要大规模、隔离或安全网络访问的应用程序工作负荷。
 
-  深入了解[应用服务环境]。
 
 ## 入门 ##
 若要开始使用移动应用，请遵循[入门]教程。其中介绍了生成所选移动后端和客户端、集成身份验证、脱机同步和推送通知的基础知识。可以多次参考[入门]教程 - 操作每种客户端应用程序时都可以参考。
@@ -82,7 +80,7 @@ Azure 应用服务是面向专业开发人员的完全托管型平台即服务 (
 [DocumentDB]: /documentation/articles/documentdb-get-started/
 [身份验证功能]: /documentation/articles/app-service-mobile-auth/
 [数据功能]: /documentation/articles/app-service-mobile-offline-data-sync/
-[推送通知功能]: /documentation/articles/notification-hubs-overview/
+
 [iOS]: /documentation/articles/app-service-mobile-ios-how-to-use-client-library/
 [Android]: /documentation/articles/app-service-mobile-android-how-to-use-client-library/
 [Windows]: /documentation/articles/app-service-mobile-dotnet-how-to-use-client-library/

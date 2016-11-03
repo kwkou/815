@@ -44,10 +44,10 @@
 ### <a name="prerequisites"></a>先决条件
 你必须先完成以下先决条件才能启用和使用自助密码重置：
 
-- 创建 AAD 租户。有关详细信息，请参阅 [Azure AD 入门](/trial/get-started-active-directory/)。
+- 创建 AAD 租户。有关详细信息，请参阅 [Azure AD 入门](/home/features/identity/)。
 - 获取 Azure 订阅。有关详细信息，请参阅[什么是 Azure AD 租户？](/documentation/articles/active-directory-administer/#what-is-an-azure-ad-tenant)
 - 将你的 AAD 租户与 Azure 订阅相关联。有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx)。
-- 升级到 Azure AD Premium、Basic 或使用 O365 付费许可证。有关详细信息，请参阅 [Azure Active Directory 版本](/pricing/details/active-directory/)。
+- 升级到 Azure AD Premium、Basic 或使用 O365 付费许可证。有关详细信息，请参阅 [Azure Active Directory 版本](/pricing/details/identity/)。
 
   >[AZURE.NOTE] 若要为云用户启用自助密码重置，必须升级到 Azure AD Premium、Azure AD Basic 或 O365 付费许可证。中国 Azure 暂时没有Premium。 若要为本地用户启用自助密码重置，必须升级到 Azure AD Premium。有关详细信息，请参阅“Azure Active Directory 版本”。这些信息包括以下任务的详细说明：如何注册 Azure AD Premium 或 Basic、如何激活你的许可计划并激活 Azure AD 访问权限，以及如何为管理员和用户帐户分配访问权限。
 

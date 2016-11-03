@@ -9,15 +9,25 @@
 
 <tags
 	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	ms.author="krisragh"
+	wacn.date="10/17/2016"/>  
 
 
 # 向 iOS 应用和 .NET 后端添加推送通知
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
-本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-dotnet-backend-ios-get-started/)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的移动应用版本，请参阅[向 iOS 应用程序添加推送通知](/documentation/articles/app-service-mobile-ios-get-started-push/)。
+
+本主题介绍如何将推送通知添加到[快速入门项目](/documentation/articles/mobile-services-dotnet-backend-ios-get-started/)，以便在每次插入一条记录时，移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
 
 [AZURE.INCLUDE [启用 Apple 推送通知](../../includes/enable-apple-push-notifications.md)]
 
@@ -110,6 +120,7 @@
 [117]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-17.png
 
 <!-- URLs. -->
+
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
@@ -119,8 +130,8 @@
 
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
-[What are Notification Hubs?]: /documentation/articles/notification-hubs-push-notification-overview/
-[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview/
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news/
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-xplat-localized-apns-push-notification/
 
 <!---HONumber=Mooncake_0215_2016-->

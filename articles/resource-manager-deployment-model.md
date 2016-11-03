@@ -13,26 +13,26 @@
    ms.date="07/29/2016"
    wacn.date="09/19/2016"/>
 
-# Azure Resource Manager 与经典部署：了解部署模型和资源的状态
+# Azure Resource Manager 与经典部署：了解部署模型和资源状态
 
-本主题介绍 Azure Resource Manager 部署模型和经典部署模型、资源的状态，以及使用不同模型来部署资源的原因。Resource Manager 部署模型包含与经典部署模型的重要差异，这两个模型彼此之间并不完全兼容。为了简化资源的部署和管理，Azure 建议对新资源使用 Resource Manager，并尽可能通过 Resource Manager 重新部署现有资源。
+本主题介绍 Azure Resource Manager 部署模型和经典部署模型、资源的状态，以及使用不同模型来部署资源的原因。Resource Manager 部署模型与经典部署模型之间存在重要差异，两者并不完全兼容。为了简化资源的部署和管理，Azure 建议对新资源使用 Resource Manager，并尽可能通过 Resource Manager 重新部署现有资源。
 
 如果完全不熟悉 Resource Manager，请先查看 [Azure Resource Manager overview](/documentation/articles/resource-group-overview/)（Azure Resource Manager 概述）中定义的术语。
 
 ## 部署模型的历史
 
-Azure 最初只提供经典部署模型。在此模型中，每个资源彼此独立；无法将相关的资源组合在一起。因此，必须手动跟踪哪些资源构成了解决方案或应用程序，并记得以协调的方式管理这些资源。若要部署解决方案，必须通过经典管理门户分别创建每个资源，或创建一个脚本以正确的顺序部署所有资源。若要删除解决方案，必须逐个删除每个资源。无法轻松应用和更新相关资源的访问控制策略。最后，无法将标记应用到资源，因此无法使用有助于监视资源和管理计费的术语来标记资源。
+Azure 最初只提供经典部署模型。在此模型中，每个资源彼此独立；无法将相关的资源组合在一起。因此，必须手动跟踪构成解决方案或应用程序的资源 ，并记得以协调的方式管理。部署解决方案有两种方式：通过经典门户单独创建每个资源；或创建一个脚本，以正确的顺序部署所有资源。若要删除解决方案，必须逐个删除每个资源。无法轻松应用和更新相关资源的访问控制策略。最后，无法将标记应用到资源，因此无法使用有助于监视资源和管理计费的术语来标记资源。
 
-Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。资源组是共享同一生命周期的资源的容器。Resource Manager 部署模型具有几大优点：
+Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。资源组是一种容器，专门容纳共享同一生命周期的资源。Resource Manager 部署模型具有几大优点：
 
-- 您可以以群组形式部署、管理和监视解决方案的所有服务，而不是单独处理这些服务。
+- 用户可以采用群组形式部署、管理和监视解决方案的所有服务，无需单独处理。
 - 可以在解决方案的整个生命周期内重复部署该解决方案，确保以一致的状态部署资源。
 - 可以将访问控制应用到资源组中的所有资源。将新资源添加到资源组时，会自动应用这些策略。
 - 可以将标记应用到资源，以逻辑方式组织订阅中的所有资源。
 - 可以使用 JavaScript 对象表示法 (JSON) 来定义解决方案的基础结构。JSON 文件称为 Resource Manager 模板。
-- 您可以定义各资源之间的依赖关系，以便按正确的顺序进行部署。
+- 可以定义各资源之间的依赖关系，使其按正确的顺序进行部署。
 
-当添加资源管理器时，所有资源都追溯性地添加到默认资源组。如果你现在通过经典部署创建资源，资源将自动在该服务的默认资源组中创建，即使在部署时未指定该资源组也是如此。但是，仅存在于资源组内并不意味着资源已转换为 Resource Manager 模型。我们将在下一部分说明每个服务如何处理这两种部署模型。
+添加 Resource Manager 时，所有资源都追溯性地添加到默认资源组。如果现在通过经典部署创建资源，无论部署时指定资源组与否，资源都会在该服务默认的资源组中自动创建。但是，资源位于资源组内并不意味着其已转换为 Resource Manager 模型。下一部分会介绍每个服务如何处理这两种部署模型。
 
 ## 了解对模型的支持 
 
@@ -50,7 +50,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
 对于虚拟机、存储帐户和虚拟网络，如果资源是通过经典部署创建的，则必须继续通过经典操作对其进行操作。如果虚拟机、存储帐户或虚拟网络是通过 Resource Manager 部署创建的，则必须继续使用 Resource Manager 操作。如果订阅包含通过 Resource Manager 部署和经典部署创建的各种资源，则可能特别不容易进行这种区分。此资源组合会产生意外的结果，因为资源不支持相同的操作。
 
-在某些情况下，Resource Manager 命令可以检索通过经典部署创建的资源的相关信息，或者可以执行管理任务（例如将经典资源移到另一个资源组），但这些情况下，并不意味着该类型支持 Resource Manager 操作。例如，假设某个资源组包含使用经典部署创建的虚拟机。如果运行以下 Resource Manager PowerShell 命令：
+在某些情况下，Resource Manager 命令可以检索通过经典部署创建的资源信息，或者执行管理任务（例如将经典资源移到另一个资源组），但这些情况并不意味着该类型支持 Resource Manager 操作。例如，假设某个资源组包含使用经典部署创建的虚拟机。如果运行以下 Resource Manager PowerShell 命令：
 
     Get-AzureRmResource -ResourceGroupName ExampleGroup -ResourceType Microsoft.ClassicCompute/virtualMachines
 
@@ -80,7 +80,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
 ## 资源管理器的特征
 
-为了更好地理解这两个模型，让我们看看 Resource Manager 类型的特征：
+为了更好地理解这两个模型，请看看 Resource Manager 类型的特征：
 
 - 通过 [Azure 门户预览](https://portal.azure.cn/)创建。
 
@@ -149,14 +149,22 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
 在 Azure 服务管理中，宿主虚拟机的计算、存储或网络资源由以下各项提供：
 
-- 一项必不可少的云服务，用作宿主虚拟机的容器（计算）。虚拟机自动配备一个网络接口卡 (NIC) 并由 Azure 分配的 IP 地址。此外，云服务包含一个外部负载均衡器实例、一个公共 IP 地址以及若干默认终结点，以支持远程桌面、针对 Windows 虚拟机的远程 PowerShell 流量和针对 Linux 虚拟机的 Secure Shell (SSH) 流量。
-- 一个必不可少的存储帐户，存储虚拟机的 VHD，包括操作系统、临时文件和附加的数据磁盘（存储）。
+- 一项必不可少的云服务，用作宿主虚拟机的容器（计算）。虚拟机自动配备一个网络接口卡 (NIC) 以及由 Azure 分配的 IP 地址。此外，云服务包含一个外部负载均衡器实例、一个公共 IP 地址以及若干默认终结点，以支持远程桌面、针对 Windows 虚拟机的远程 PowerShell 流量和针对 Linux 虚拟机的 Secure Shell (SSH) 流量。
+- 一个必不可少的存储帐户，用于存储虚拟机的 VHD，包括操作系统、临时文件和附加的数据磁盘（存储）。
 - 一个可选的虚拟网络，用作额外的容器，可以在其中创建子网结构并指定虚拟机所在的子网（网络）。
 
 以下是 Azure 服务管理的组件及其关系。
 
   ![经典体系结构](./media/virtual-machines-azure-resource-manager-architecture/arm_arch1.png)
 
+## 从经典部署迁移到 Resource Manager 部署
+
+如果已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅：
+
+1. [平台支持的从经典部署模型迁移到 Azure Resource Manager 的技术深入探讨](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-deep-dive/)
+2. [平台支持从经典部署模型迁移到 Azure Resource Manager 的 IaaS 资源](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)
+3. [使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager](/documentation/articles/virtual-machines-windows-ps-migration-classic-resource-manager/)
+4. [使用 Azure CLI 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型](/documentation/articles/virtual-machines-linux-cli-migration-classic-resource-manager/)
 
 ## 后续步骤
 

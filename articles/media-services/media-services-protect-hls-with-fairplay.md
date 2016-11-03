@@ -5,26 +5,26 @@
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>  
-
+	editor=""/>
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/22/2016"
-	wacn.date="09/29/2016"/>  
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/15/2016"
+	wacn.date=""
+	ms.author="juliako"/>  
 
 
 #使用 Azure 媒体服务流式传输受 Apple FairPlay 保护的 HLS 内容 
 
-Azure 媒体服务使你能够动态地加密使用以下格式的 HTTP 实时传送视频流 (HLS) 内容：
+使用 Azure 媒体服务，可动态加密使用以下格式的 HTTP Live Streaming (HLS) 内容：
 
 - **AES-128 信封明文密钥** - 整个区块使用 **AES-128 CBC** 模式进行加密。iOS 和 OSX 播放器本身支持解密流。有关详细信息，请参阅[此文章](/documentation/articles/media-services-protect-with-aes128/)。
 
 - **Apple FairPlay** - 各视频和音频示例都使用 **AES-128 CBC** 模式进行加密。**FairPlay 流式处理** (FPS) 集成到设备操作系统，iOS 和 Apple TV 本身支持这项功能。OS X 上的 Safari 使用加密媒体扩展 (EME) 接口支持启用 FPS。
-
-	>[AZURE.NOTE]
-	使用 AMS 实现通过 FairPlay 加密 HLS 的功能目前在预览版中提供。
-
 
 下图显示了“FairPlay 动态加密”工作流。
 
@@ -40,7 +40,7 @@ Azure 媒体服务使你能够动态地加密使用以下格式的 HTTP 实时�
 	- 一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 	- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 	- 注册 [Apple 开发计划](https://developer.apple.com/)。
-	- Apple 要求内容所有者获取[部署包](https://developer.apple.com/contact/fps/)。请说明你已使用 Azure 媒体服务实现 KSM（密钥安全模块）的要求以及你正在请求最终 FPS 包。在最终 FPS 包中将有生成证书并获取 ASK 的说明，你可以用来配置 FairPlay。
+	- Apple 要求内容所有者获取[部署包](https://developer.apple.com/contact/fps/)。说明已使用 Azure 媒体服务实现 KSM（密钥安全模块）的请求以及正在请求最终 FPS 包。在最终 FPS 包中将有生成证书并获取 ASK 的说明，你可以用来配置 FairPlay。
 
 	- Azure 媒体服务 .NET SDK **3.6.0** 版本或更高版本。
 
@@ -64,7 +64,7 @@ Azure 媒体服务使你能够动态地加密使用以下格式的 HTTP 实时�
 			"C:\OpenSSL-Win32\bin\openssl.exe" pkcs12 -export -out fairplay-out.pfx -inkey privatekey.pem -in fairplay-out.pem -passin file:privatekey-pem-pass.txt 
 		
 	- **应用证书密码** - 客户创建 .pfx 文件的密码。
-	- **应用证书密码 ID** - 客户上载密码的方式必须与上载其他 AMS 密钥类似，并且必须使用 **ContentKeyType.FairPlayPfxPassword** 枚举值。在结果中，他们将得到 AMS ID，在密钥传送策略选项中，他们需要使用此 ID。
+	- **应用证书密码 ID** - 客户上载密码的方式必须与上载其他 AMS 密钥类似，并且必须使用 **ContentKeyType.FairPlayPfxPassword** 枚举值。最后，他们将得到 AMS ID，在密钥传送策略选项中，他们需要使用此 ID。
 	- **iv** - 16 字节随机值，该值必须与资产传送策略中的 iv 相匹配。客户生成 IV 并将其放入两个位置：资产传递策略和密钥传递策略选项。
 	- **ASK** - 当你使用 Apple 开发人员门户生成证书时会收到 ASK（应用程序机密密钥）。每个开发团队将会收到唯一的 ASK。请保存一份 ASK 副本，并将其存储在安全位置。你稍后需要将 ASK 作为 FairPlayAsk 配置到 Azure 媒体服务。
 	-  **ASK ID** - 在客户将 ASK 上载到 AMS 时获得。客户必须使用 **ContentKeyType.FairPlayASk** 枚举值上载 ASK。因此，将返回 AMS ID，在设置密钥传送策略选项时应使用此 ID。
@@ -92,7 +92,7 @@ Azure 媒体服务使你能够动态地加密使用以下格式的 HTTP 实时�
 	- 传送方法（在本例中为 FairPlay）、
 	- FairPlay 策略选项配置。有关如何配置 FairPlay 的详细信息，请参阅以下示例中的 ConfigureFairPlayPolicyOptions() 方法。
 	
-		>[AZURE.NOTE] 在大多数情况下，你可能需要仅配置一次 FairPlay 策略选项，因为你仅有一套证书和 ASK。
+		>[AZURE.NOTE] 通常，可能只需配置一次 FairPlay 策略选项，因为仅有一套证书和 ASK。
 	- 限制（打开或令牌）
 	- 以及特定于密钥传送类型的信息，其定义了将密钥传送到客户端的方式。
 	
@@ -107,15 +107,15 @@ Azure 媒体服务使你能够动态地加密使用以下格式的 HTTP 实时�
 	>- 一个 IAssetDeliveryPolicy 用来将 DASH 配置为 CENC（PlayReady 和 WideVine）并将平滑配置为 PlayReady。
 	>- 另一个 IAssetDeliveryPolicy 用来配置 HLS 的 FairPlay
 
-1. 创建 OnDemand 定位符以获取流 URL。
+1. 创建 OnDemand 定位符以获取流式处理 URL。
 
 ##使用播放器/客户端应用执行的 FairPlay 密钥传送
 
-客户可以通过使用 iOS SDK 开发播放器应用。为了能够播放 FairPlay 内容，客户必须实现许可证交换协议。许可证交换协议不由 Apple 指定，而是取决于每个应用发送密钥传送请求的方式。AMS FairPlay 密钥传送服务期望 SPC 为采用以下形式的 www-form-url 编码后消息：
+客户可以通过使用 iOS SDK 开发播放器应用。为了能够播放 FairPlay 内容，客户必须实现许可证交换协议。许可证交换协议不由 Apple 指定。而是取决于每个应用发送密钥传送请求的方式。AMS FairPlay 密钥传送服务期望 SPC 为采用以下形式的 www-form-url 编码后消息：
 
 	spc=<Base64 encoded SPC>
 
->[AZURE.NOTE] Azure Media Player 不支持现成的 FairPlay 播放。客户需要通过 Apple 开发人员帐户获得示例播放器，以便获得 MAC OSX 上的 FairPlay 播放。
+>[AZURE.NOTE] Azure Media Player 不支持现成的 FairPlay 播放。客户需要通过 Apple 开发人员帐户获得示例播放器，以便在 MAC OSX 上播放 FairPlay。
  
 
 ##.NET 示例
@@ -126,7 +126,7 @@ Azure 媒体服务使你能够动态地加密使用以下格式的 HTTP 实时�
 	PM> Install-Package windowsazure.mediaservices -Version 3.6.0
 
 
-1. 创建新的控制台项目。
+1. 创建控制台项目。
 1. 使用 NuGet 安装和添加 Azure 媒体服务 .NET SDK。
 2. 添加附加引用：System.Configuration。
 2. 添加包含帐户名称和密钥信息的配置文件：
@@ -543,4 +543,4 @@ Azure 媒体服务使你能够动态地加密使用以下格式的 HTTP 实时�
 		    }
 		}
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0926_2016-->

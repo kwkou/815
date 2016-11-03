@@ -31,7 +31,7 @@
 * 在 Windows 8.1 上运行的 Visual Studio 2013。
 * 完成[创建 Windows 应用][create a windows app]。
 * [Azure 移动服务 SQLite Store][sqlite store nuget]
-* [SQLite for Universal Windows Platform](http://www.sqlite.org/downloads)（适用于通用 Windows 平台的 SQLite）
+* SQLite for Universal Windows Platform（适用于通用 Windows 平台的 SQLite）
 
 ## 更新客户端应用以支持脱机功能
 

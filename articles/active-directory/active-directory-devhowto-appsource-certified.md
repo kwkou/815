@@ -1,16 +1,22 @@
 <properties
-   pageTitle="如何使 AppSource 通过 Azure Active Directory 的认证 | Microsoft Azure"
+   pageTitle="如何使 AppSource 通过 Azure Active Directory 的认证 | Azure"
    description="详细说明如何使应用程序 AppSource 通过 Azure Active Directory 的认证。"
    services="active-directory"
    documentationCenter=""
    authors="skwan"
    manager="mbaldwin"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="active-directory"
-   ms.date="07/05/2016"
-   wacn.date="08/29/2016"/>  
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/22/2016"
+   ms.author="skwan;bryanla"
+   wacn.date="10/31/2016"/>  
 
 
 #如何使 AppSource 通过 Azure Active Directory (AD) 的认证 
@@ -30,12 +36,12 @@
 
 <!--Reference style links -->
 [AAD-Auth-Scenarios]: /documentation/articles/active-directory-authentication-scenarios/
-[AAD-Auth-Scenarios-Browser-To-WebApp]: /documentation/articles/active-directory-authentication-scenarios/#web-browser-to-web-application
+[AAD-Auth-Scenarios-Browser-To-WebApp]: /documentation/articles/active-directory-authentication-scenarios/#web-browser-to-web-application/
 [AAD-Dev-Guide]: /documentation/articles/active-directory-developers-guide/
 [AAD-Howto-Multitenant-Overview]: /documentation/articles/active-directory-devhowto-multi-tenant-overview/
-[AAD-QuickStart-Web-Apps]: /documentation/articles/active-directory-developers-guide/#web-application-quick-start-guides
+[AAD-QuickStart-Web-Apps]: /documentation/articles/active-directory-developers-guide/#web-application-quick-start-guides/
 
 
 <!--Image references-->
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1024_2016-->
