@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/10/2016"
-   wacn.date="09/26/2016"/>
+   wacn.date="09/19/2016"/>
 
 # 在云服务角色上安装 .NET 
 
