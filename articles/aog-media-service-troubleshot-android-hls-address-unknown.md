@@ -1,6 +1,6 @@
 <properties
-	pageTitle="安卓SDK无法识别Azure媒体服务发布的HLS视频地址"
-	description="如何解决安卓SDK无法识别Azure媒体服务发布的HLS视频地址的问题。"
+	pageTitle="安卓 SDK 无法识别 Azure 媒体服务发布的 HLS 视频地址"
+	description="如何解决安卓 SDK 无法识别 Azure 媒体服务发布的 HLS 视频地址的问题。"
 	services="media-service"
 	documentationCenter=""
 	authors=""
@@ -21,7 +21,7 @@
 
 **现象：**
 
-在媒体服务发布的URL后面添加 `format=m3u8-appl-v3` 后，通过安卓 SDK (比如 ijkplayer )无法调用
+在媒体服务发布的 URL 后面添加 `format=m3u8-appl-v3` 后，通过安卓 SDK (比如 ijkplayer )无法调用
 
 **解决方法：**
 

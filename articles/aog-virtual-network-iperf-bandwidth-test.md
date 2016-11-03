@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure中使用iPerf进行网络带宽测试"
-	description="了解Azure中使用iPerf进行网络带宽测试。"
+	pageTitle="Azure 中使用 iPerf 进行网络带宽测试"
+	description="了解 Azure 中使用 iPerf 进行网络带宽测试。"
 	services="virtual-network"
 	documentationCenter=""
 	authors="Kyle Fu"
@@ -13,22 +13,22 @@
 	ms.date="11/03/2016"
 	wacn.date="11/03/2016"/>
 
-#Azure中使用iPerf进行网络带宽测试
+#Azure 中使用 iPerf 进行网络带宽测试
 
 
 ##iPerf 简介
 
 网络带宽是衡量两个网络节点之间通信性能的重要的指标之一。在评估云服务的时候，要充分考虑网络带宽对所承载的网路服务的影响。若已经部署的网络服务出现了故障，有时候可以考虑从网络实时带宽的角度来进行故障排查。
 
-网络带宽测试的工具有很多，测试方法也多种多样。针对Azure的虚拟机和云服务，我们推荐使用iPerf来进行网络带宽测试。iPerf 是专业的网络测试工具，它基于 TCP/IP 和 UDP/IP 协议，用以测量两个网络节点之间 TCP 和 UDP 端口的网络带宽，还能提供网络延迟、丢包率等统计信息。
+网络带宽测试的工具有很多，测试方法也多种多样。针对 Azure 的虚拟机和云服务，我们推荐使用 iPerf 来进行网络带宽测试。iPerf 是专业的网络测试工具，它基于 TCP/IP 和 UDP/IP 协议，用以测量两个网络节点之间 TCP 和 UDP 端口的网络带宽，还能提供网络延迟、丢包率等统计信息。
 
 iPerf 常用的版本有 iPerf2 和 iPerf3。 iPerf3 在 iPerf2 的基础上新增了一些功能，例如发送方/接收方角色互换，以 JSON 格式输出结果，零拷贝方式传输数据等等。也去掉了 iPerf2 中所支持少许功能，例如双向测试，以逗号为分隔符输出结果等。iPerf3 和 iPerf2 所执行的命令名字也不一样，iPerf3 为 iperf3，iPerf2 为 iperf。大家可以根据实际需要来选择安装的版本。下文中的测试都以 iPerf3 为例。
 
-iPerf在工作时，测试的两端一方作为Server，另一方为 Client。程序启动的命令相同，通过不同的参数来区别以哪种工作方式运行。通常情况下先启动Server端，使 iPerf 监听在某个固定端口。然后在 Client 端执行相应的命令开始测试。
+iPerf 在工作时，测试的两端一方作为 Server，另一方为 Client。程序启动的命令相同，通过不同的参数来区别以哪种工作方式运行。通常情况下先启动 Server 端，使 iPerf 监听在某个固定端口。然后在 Client 端执行相应的命令开始测试。
 
 ##iPerf 下载和安装
 
-iPerf支持大多数主流的操作系统，例如 Windows，Ubuntu，Fedora，openSUSE 和 Mac OS 等等。甚至在 Android 和 iPhone/iPad 的应用商店中，也有一款名为 HE.NET Network Tools 的 App 集成了 iPerf 工具。iPerf [下载网址](https://iperf.fr/iperf-download.php)。这个网页上列出了所有支持的操作系统的iPerf下载链接。最新的版本为 iPerf 3.1.3（不同操作系统所支持的最高版本可能不同）。如果要使用 iPerf2，可以下载2.0.X的版本。
+iPerf 支持大多数主流的操作系统，例如 Windows，Ubuntu，Fedora，openSUSE 和 Mac OS 等等。甚至在 Android 和 iPhone/iPad 的应用商店中，也有一款名为 HE.NET Network Tools 的 App 集成了 iPerf 工具。iPerf [下载网址](https://iperf.fr/iperf-download.php)。这个网页上列出了所有支持的操作系统的 iPerf 下载链接。最新的版本为 iPerf 3.1.3（不同操作系统所支持的最高版本可能不同）。如果要使用 iPerf2，可以下载 2.0.X 的版本。
 
 Windows 版的 iPerf 下载、解压后可以直接在命令提示符下运行。Windows 版的 iPerf 还有 UWP 版本，可以从 Microsoft Store 的 Windows App 中下载。针对不同发行版本的 Linux，iPerf 提供了 RPM 、DEB 等格式的安装包，直接用 rpm、dpkg 等命令安装即可。
 
@@ -54,7 +54,7 @@ Windows 版的 iPerf 下载、解压后可以直接在命令提示符下运行�
 
 完成后，iperf3 被安装至`/usr/local/bin/`下，在系统的任意路径都可以执行。
 
-若iperf运行报以下错误：
+若 iperf 运行报以下错误：
 
 	iperf3: error while loading shared libraries: libiperf.so.0: cannot open shared object file: No such file or directory
 
@@ -62,7 +62,7 @@ Windows 版的 iPerf 下载、解压后可以直接在命令提示符下运行�
 
 ##iPerf 工作模式和参数
 
-如前文所述，iPerf 的工作时需要指定 Server 模式或 Client 模式，通过不同的参数来区别（-s和-c）。iPerf3 所支持的功能也都通过设置不同的参数来实现。iPerf 的参数分为3类：通用参数，Server 端参数，Client 端参数。通用参数为 Server 端和 Client 端都可以使用的参数。以下是 iPerf 3.1.2支持的所有参数：
+如前文所述，iPerf 的工作时需要指定 Server 模式或 Client 模式，通过不同的参数来区别（-s 和-c）。iPerf3 所支持的功能也都通过设置不同的参数来实现。iPerf 的参数分为 3 类：通用参数，Server 端参数，Client 端参数。通用参数为 Server 端和 Client 端都可以使用的参数。以下是 iPerf 3.1.2 支持的所有参数：
 
 - 通用参数：
   - -p, --port #，Server 端监听、Client 端连接的端口号；
@@ -77,39 +77,39 @@ Windows 版的 iPerf 下载、解压后可以直接在命令提示符下运行�
   - -d, --debug，以 debug 模式输出结果；
   - -v, --version，显示版本信息并退出； 
   - -h, --help，显示帮助信息并退出。
-- Server端参数：
+- Server 端参数：
   - -s, --server，以 Server 模式运行；
   - -D, --daemon，在后台以守护进程运行；
   - -I, --pidfile file，指定 pid 文件；
-  - -1, --one-off，只接受1次来自 Client 端的测试，然后退出。
-- Client端参数
+  - -1, --one-off，只接受 1 次来自 Client 端的测试，然后退出。
+- Client 端参数
   - -c, --client <host>，以 Client 模式运行，并指定 Server 端的地址；
   - -u, --udp，以 UDP 协议进行测试；
-  - -b, --bandwidth #[KMG][/#]，限制测试带宽。UDP 默认为1Mbit/秒，TCP默认无限制；
-  - -t, --time #，以时间为测试结束条件进行测试，默认为10秒；
+  - -b, --bandwidth #[KMG][/#]，限制测试带宽。UDP 默认为 1Mbit/秒，TCP 默认无限制；
+  - -t, --time #，以时间为测试结束条件进行测试，默认为 10 秒；
   - -n, --bytes #[KMG]，以数据传输大小为测试结束条件进行测试；
   - -k, --blockcount #[KMG]，以传输数据包数量为测试结束条件进行测试；
-  - -l, --len #[KMG]，读写缓冲区的长度，TCP 默认为128K，UDP 默认为8K；
+  - -l, --len #[KMG]，读写缓冲区的长度，TCP 默认为 128K，UDP 默认为 8K；
   - --cport <port>，指定 Client 端运行所使用的 TCP 或 UDP 端口，默认为临时端口；
   - -P, --parallel #，测试数据流并发数量；
   - -R, --reverse，反向模式运行（Server 端发送，Client 端接收）；
   - -w, --window #[KMG]，设置套接字缓冲区大小，TCP 模式下为窗口大小；
   - -C, --congestion <algo>，设置 TCP 拥塞控制算法（仅支持 Linux 和 FreeBSD ）；
-  - -M, --set-mss #，设置 TCP/SCTP 最大分段长度（MSS，MTU 减40字节）；
+  - -M, --set-mss #，设置 TCP/SCTP 最大分段长度（MSS，MTU 减 40 字节）；
   - -N, --no-delay，设置 TCP/SCTP no delay，屏蔽 Nagle 算法；
-  - -4, --version4，仅使用IPv4；
-  - -6, --version6，仅使用IPv6；
-  - -S, --tos N，设置IP服务类型（TOS，Type Of Service）；
-  - -L, --flowlabel N，设置IPv6流标签（仅支持Linux）；
+  - -4, --version4，仅使用 IPv4；
+  - -6, --version6，仅使用 IPv6；
+  - -S, --tos N，设置 IP 服务类型（TOS，Type Of Service）；
+  - -L, --flowlabel N，设置 IPv6 流标签（仅支持 Linux）；
   - -Z, --zerocopy，使用 “zero copy”（零拷贝）方法发送数据；
-  - -O, --omit N，忽略前n秒的测试；
+  - -O, --omit N，忽略前 n 秒的测试；
   - -T, --title str，设置每行测试结果的前缀；
   - --get-server-output，从 Server 端获取测试结果；
-  - --udp-counters-64bit，在 UDP 测试包中使用64位计数器（防止计数器溢出）。
+  - --udp-counters-64bit，在 UDP 测试包中使用 64 位计数器（防止计数器溢出）。
   
 iPerf 功能十分强大，支持的参数特别多。但是在实际使用中，并不需要同时使用这么多参数。使用时，根据实际需求来设置关键参数就可以了。
 
-##Azure中使用iPerf
+##Azure 中使用 iPerf
 
 ### 前期准备
 
@@ -127,24 +127,24 @@ iPerf 功能十分强大，支持的参数特别多。但是在实际使用中�
 
 ###开始测试
 
-首先在 Server 端，我们运行以下命令使 iPerf 监听5001端口，每2秒输出一次结果。
+首先在 Server 端，我们运行以下命令使 iPerf 监听 5001 端口，每 2 秒输出一次结果。
 	
 	#iperf3 -s -p 5001 -i 2
 
 ![](./media/aog-virtual-network-iperf-bandwidth-test/iperf-listen.png)
  
-当终端显示 Server listening on 5001时，就表示 Server 已经正常运行，等待测试了。
-然后在 Client 端，我们并发4个数据流，测试总时长为30秒，每2秒输出一次结果。以下为测试所使用的命令。
+当终端显示 Server listening on 5001 时，就表示 Server 已经正常运行，等待测试了。
+然后在 Client 端，我们并发 4 个数据流，测试总时长为 30 秒，每 2 秒输出一次结果。以下为测试所使用的命令。
 
 	#iperf3 -c 139.219.2XX.XXX -P 4 -t 30 -i 2 -p 5001
 
-当Client端的命令执行后，测试就开始了。
+当 Client 端的命令执行后，测试就开始了。
 
 ![](./media/aog-virtual-network-iperf-bandwidth-test/iperf-connect.png)
  
-终端会每隔2秒滚动显示测试的结果，最后还有整个测试的总结。
+终端会每隔 2 秒滚动显示测试的结果，最后还有整个测试的总结。
 
-测试完成后，再次用以下命令测试并发8个数据流的情况，对比结果将在结果解读中展现。
+测试完成后，再次用以下命令测试并发 8 个数据流的情况，对比结果将在结果解读中展现。
 
 	#iperf3 -c 139.219.2XX.XXX -P 8 -t 30 -i 2 -p 5001
 ![](./media/aog-virtual-network-iperf-bandwidth-test/iperf-test.png)
@@ -155,13 +155,13 @@ iPerf 功能十分强大，支持的参数特别多。但是在实际使用中�
 
 ###过程输出
 
-下图是第一次4个数据流测试过程中 Server 端的部分输出。
+下图是第一次 4 个数据流测试过程中 Server 端的部分输出。
 
 ![](./media/aog-virtual-network-iperf-bandwidth-test/iperf-output.png)
  
-可以看到 iPerf 在不同的时间间隔内，都完整的显示了每个数据流传送的数据大小以及带宽。然后在第5行显示当前时间间隔内的传送的总数据大小和总带宽。
+可以看到 iPerf 在不同的时间间隔内，都完整的显示了每个数据流传送的数据大小以及带宽。然后在第 5 行显示当前时间间隔内的传送的总数据大小和总带宽。
 
-下图是第一次4个数据流测试过程中 Client 端的部分输出。
+下图是第一次 4 个数据流测试过程中 Client 端的部分输出。
 
 ![](./media/aog-virtual-network-iperf-bandwidth-test/iperf-output-client.png)
  
@@ -174,16 +174,16 @@ Client 端的数据除了传输的数据大小和实时带宽，还有 TCP 重�
 ![](./media/aog-virtual-network-iperf-bandwidth-test/iperf-output-final.png)
 
  
-这里可以看到4个数据流接收到的数据大小和平均带宽，还有接收到的总数据和总带宽。
+这里可以看到 4 个数据流接收到的数据大小和平均带宽，还有接收到的总数据和总带宽。
 
-我们再看一下8个数据流并发测试的结果，见下图。
+我们再看一下 8 个数据流并发测试的结果，见下图。
 
 ![](./media/aog-virtual-network-iperf-bandwidth-test/iperf-output-eight.png)
  
-对比这两个结果，我们能看出来4个数据流并发时，总带宽是163Mb/s。8个数据流并发时，总带宽达到了248Mb/s。这说明4个数据流并发时，并没有测试出最大带宽。所以在实际测试时，可以通过多次调整并发数据流数量，来获取真实的最大带宽值。
+对比这两个结果，我们能看出来 4 个数据流并发时，总带宽是 163Mb/s。8 个数据流并发时，总带宽达到了 248Mb/s。这说明 4 个数据流并发时，并没有测试出最大带宽。所以在实际测试时，可以通过多次调整并发数据流数量，来获取真实的最大带宽值。
 
 除了并发数据流数量，TCP 窗口大小、最大分段长度、拥塞算法等等都会影响到应用程序实际能获取到的网络带宽。有经验的网络工程师也会通过数据计算，然后设置这些相关的参数进行测试，来获取到最大网络带宽。
 
 ###延伸阅读
 
-本文针对 iPerf3 在 TCP 协议下的网络带宽测试进行了简单的介绍。推荐大家阅读官方的用户手册来了解更多测试方法，查询参数的细节，或者对比iPerf2 和 iPerf3 的区别。[用户手册网址](https://iperf.fr/iperf-doc.php)。
+本文针对 iPerf3 在 TCP 协议下的网络带宽测试进行了简单的介绍。推荐大家阅读官方的用户手册来了解更多测试方法，查询参数的细节，或者对比 iPerf2 和 iPerf3 的区别。[用户手册网址](https://iperf.fr/iperf-doc.php)。
