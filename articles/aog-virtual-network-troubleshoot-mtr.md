@@ -1,12 +1,12 @@
 <properties
-    pageTitle="Azure 中使用 MTR 进行网络故障排查"
-    description="Azure 中使用 MTR 进行网络故障排查。"
-    services="virtual-network"
-    documentationCenter=""
-    authors="Kyle Fu"
-    manager=""
-    editor=""
-    tags="Azure,MTR,WinMTR,ICMP,网络"/>
+	pageTitle="Azure 中使用 MTR 进行网络故障排查"
+	description="Azure 中使用 MTR 进行网络故障排查。"
+	services="virtual-network"
+	documentationCenter=""
+	authors="Kyle Fu"
+	manager=""
+	editor=""
+	tags="Azure,MTR,WinMTR,ICMP,网络"/>
 
 <tags
 	ms.service="virtual-network-aog"

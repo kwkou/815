@@ -1,12 +1,12 @@
 <properties
-    pageTitle="使用 fio 工具对 Azure 存储进行 IOPS 测试"
-    description="介绍如何使用 fio 工具对 Azure 存储进行 IOPS 测试。"
-    services="storage"
-    documentationCenter=""
-    authors=""
-    manager=""
-    editor=""
-    tags=""/>
+	pageTitle="使用 fio 工具对 Azure 存储进行 IOPS 测试"
+	description="介绍如何使用 fio 工具对 Azure 存储进行 IOPS 测试。"
+	services="storage"
+	documentationCenter=""
+	authors=""
+	manager=""
+	editor=""
+	tags=""/>
 
 <tags
 	ms.service="storage-aog"

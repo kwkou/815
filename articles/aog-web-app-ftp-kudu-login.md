@@ -1,12 +1,12 @@
 <properties
-    pageTitle="本文详细介绍了登录 Azure web 应用 FTP 服务器和 Azure web 应用 Kudu 站点的几种方法"
-    description="本文详细介绍了登录 Azure web 应用 FTP 服务器和 Azure web 应用 Kudu 站点的几种方法。"
-    services="app-service-web"
-    documentationCenter=""
-    authors=""
-    manager=""
-    editor=""
-    tags=""/>
+	pageTitle="本文详细介绍了登录 Azure web 应用 FTP 服务器和 Azure web 应用 Kudu 站点的几种方法"
+	description="本文详细介绍了登录 Azure web 应用 FTP 服务器和 Azure web 应用 Kudu 站点的几种方法。"
+	services="app-service-web"
+	documentationCenter=""
+	authors=""
+	manager=""
+	editor=""
+	tags=""/>
 
 <tags
 	ms.service="app-service-web-aog"
