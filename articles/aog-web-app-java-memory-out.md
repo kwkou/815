@@ -28,15 +28,15 @@
 
 	各参数的含义如下：
 
-            -Xms<size>        			设置初始Java堆大小
-            -Xmx<size>         			设置最大Java堆大小
-            -XX:PermSize<size>  		设置初始PermGen大小
-            -XX:MaxPermSize<size> 		设置最大PermGen大小
+            -Xms<size>        			设置初始 Java 堆大小
+            -Xmx<size>         			设置最大 Java 堆大小
+            -XX:PermSize<size>  		设置初始 PermGen 大小
+            -XX:MaxPermSize<size> 		设置最大 PermGen 大小
 
 	另外当日志中发现如下错误时，才需要考虑增加 MaxPermSize 的值
                java.lang.OutOfMemoryError: PermGen space
 
-3.	当网站所需要的总内存超过2G的时候，需要登录 Azure Portal，在配置页面下，将网站运行模式改成64位, 如图:
+3.	当网站所需要的总内存超过 2G 的时候，需要登录 Azure Portal，在配置页面下，将网站运行模式改成 64 位, 如图:
 
  	![](./media/aog-web-app-java-memory-out/bit-change.png)
 

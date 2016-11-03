@@ -1,7 +1,7 @@
 
 <properties
-    pageTitle="应用程序网关中如何获取访问者源IP"
-    description="介绍如何在应用程序网关中获取访问者源IP。"
+    pageTitle="应用程序网关中如何获取访问者源 IP"
+    description="介绍如何在应用程序网关中获取访问者源 IP。"
     services="app-service-web"
     documentationCenter=""
     authors=""
@@ -10,9 +10,9 @@
     tags=""/>
 
 <tags
-    ms.service="app-service-web-aog"
-    ms.date="10/27/2016"
-    wacn.date="11/03/2016"/>
+	ms.service="app-service-web-aog"
+	ms.date="10/27/2016"
+	wacn.date="11/03/2016"/>
 
 # 应用程序网关中如何获取访问者源 IP
 
@@ -38,7 +38,7 @@
 
 ![](./media/aog-web-app-get-user-ip/filter.png)
  
-3.展开检索之后的任意一条记录，查看 X-Forwarded-For 字段可以拿到访问者的源 IP。在下面示例中，我们可以得知访问者的源 IP 为16.22.255.29，而使用的源端口为61532。
+3.展开检索之后的任意一条记录，查看 X-Forwarded-For 字段可以拿到访问者的源 IP。在下面示例中，我们可以得知访问者的源 IP 为 16.22.255.29，而使用的源端口为 61532。
 
 	Frame 35: 727 bytes on wire (5816 bits), 727 bytes captured (5816 bits)
 	Ethernet II, Src: AristaNe_d0:44:61 (00:1c:73:d0:44:61), Dst: Microsof_00:6c:8f (00:17:fa:00:6c:8f)

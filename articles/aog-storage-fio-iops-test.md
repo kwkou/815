@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用fio工具对Azure存储进行IOPS测试"
-    description="介绍如何使用fio工具对Azure存储进行IOPS测试。"
+    pageTitle="使用 fio 工具对 Azure 存储进行 IOPS 测试"
+    description="介绍如何使用 fio 工具对 Azure 存储进行 IOPS 测试。"
     services="storage"
     documentationCenter=""
     authors=""
@@ -9,9 +9,9 @@
     tags=""/>
 
 <tags
-    ms.service="storage-aog"
-    ms.date="10/27/2016"
-    wacn.date="11/03/2016"/>
+	ms.service="storage-aog"
+	ms.date="10/27/2016"
+	wacn.date="11/03/2016"/>
 
 # 使用 fio 工具对 Azure 存储进行 IOPS 测试
  
@@ -51,13 +51,13 @@ fio 是用来测试磁盘 IOPS 的工具，具有安装简单，测试方法灵�
 **测试脚本下载：**[https://azuresupport.blob.core.windows.net/linux/fio.sh.tar.gz](https://azuresupport.blob.core.windows.net/linux/fio.sh.tar.gz)
 
 
-根据Azure高级存储磁盘的说明，当前Azure共有三种高级存储：P10, P20, P30。 这三者是怎么区分的呢？ 实际上，Azure根据磁盘的大小来划分该磁盘所属的性能类型。
+根据 Azure 高级存储磁盘的说明，当前 Azure 共有三种高级存储：P10, P20, P30。 这三者是怎么区分的呢？ 实际上，Azure 根据磁盘的大小来划分该磁盘所属的性能类型。
 
 高级存储磁盘性能类型如下：
 
 ![](./media/aog-storage-fio-iops-test/premium-storage.png)
 
-我们知道，通过 Portal 来添加高级存储磁盘， 其大小一般只有三种：128GB，512GB，1023GB。但如果我们通过命令的方式来添加磁盘，则磁盘大小是可以任意的（不超过当前最大的1T限制）。那么，当用户添加了一块129G的高级存储磁盘，其性能是属于 P10，还是 P20 呢？原来，Azure 在划分高级存储磁盘所属的性能类型时，采用的是向上舍入 (round up) 的方式。这样 10GB 的磁盘，其性能指标属于 P10， 129GB 的磁盘，其性能指标属于 P20，1000GB 的磁盘其性能指标属于P30
+我们知道，通过 Portal 来添加高级存储磁盘， 其大小一般只有三种：128GB，512GB，1023GB。但如果我们通过命令的方式来添加磁盘，则磁盘大小是可以任意的（不超过当前最大的 1T 限制）。那么，当用户添加了一块 129G 的高级存储磁盘，其性能是属于 P10，还是 P20 呢？原来，Azure 在划分高级存储磁盘所属的性能类型时，采用的是向上舍入 (round up) 的方式。这样 10GB 的磁盘，其性能指标属于 P10， 129GB 的磁盘，其性能指标属于 P20，1000GB 的磁盘其性能指标属于 P30
 
 
 以下是使用测试脚本对 P20, P30 及 Raid0 所做的 IOPS 测试
@@ -92,7 +92,7 @@ p30 测试：
 	  read : io=262544KB, bw=10224KB/s, iops=2556, runt= 25678msec
 	  write: io=261744KB, bw=10193KB/s, iops=2548, runt= 25678msec
  
-新增两块盘 sde(512G）,sdf（1023G) 做 raid 0测试：
+新增两块盘 sde(512G）,sdf（1023G) 做 raid 0 测试：
  
 	[root@DS13IOTEST ~]# yum -y install mdadm
 	[root@DS13IOTEST ~]#  mdadm --create /dev/md512 --level 0 --raid-devices 2 /dev/sdc1 /dev/sde1

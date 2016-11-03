@@ -9,9 +9,9 @@
     tags=""/>
 
 <tags
-    ms.service="app-service-web-aog"
-    ms.date="10/27/2016"
-    wacn.date="11/03/2016"/>
+	ms.service="app-service-web-aog"
+	ms.date="10/27/2016"
+	wacn.date="11/03/2016"/>
 
 
 
@@ -27,18 +27,18 @@
 
 1.登录信息您可以在网站页面获取
 
->注意：FTP部署用户名格式应为【网站名\用户名】
+>注意：FTP 部署用户名格式应为【网站名\用户名】
 
 ![](./media/aog-web-app-ftp-kudu-login/new-portal.png)
  
-2.在FTP中登录时，所填信息类似如下：
+2.在 FTP 中登录时，所填信息类似如下：
 
 	Host：ftp://cnws-prod-bjb-001.ftp.chinacloudsites.chinacloudapi.cn
 	Username；amaytestcreate1011\AzureCIE
-	Password：XXXX[您自己的FTP密码]
+	Password：XXXX[您自己的 FTP 密码]
   ![](./media/aog-web-app-ftp-kudu-login/ftp-login.png)
 
-### 使用发布配置文件进行FTP登录
+### 使用发布配置文件进行 FTP 登录
 
 >Tip：如果想要每个网站有独立的维护人时可以采取这种模式。
 
@@ -48,7 +48,7 @@
 
 	![](./media/aog-web-app-ftp-kudu-login/publish-settings.png)
  
-2. 使用文本编辑器打开该文件。在此文件中查找FTP的相关信息，如下截图信息：PublishProfileName, publishMethod, publishUrl, ftpPassiveMode, userName, userPWD.
+2. 使用文本编辑器打开该文件。在此文件中查找 FTP 的相关信息，如下截图信息：PublishProfileName, publishMethod, publishUrl, ftpPassiveMode, userName, userPWD.
 其中 publishUrl, userName, userPWD 是在登录 FTP 时需要的信息。
 
 	![](./media/aog-web-app-ftp-kudu-login/publish-settings-content.png)
@@ -64,25 +64,25 @@
 
 
 
-##登录Kudu站点：
+##登录 Kudu 站点：
 
->Tip:  Azure为每一个 web 应用都配置了 Kudu 站点，网站的 Kudu 站点可以方便对网站进行管理，kudu 的 URL为：https://[网站名].scm.chinacloudsites.cn 如:
+>Tip:  Azure 为每一个 web 应用都配置了 Kudu 站点，网站的 Kudu 站点可以方便对网站进行管理，kudu 的 URL 为：https://[网站名].scm.chinacloudsites.cn 如:
 
 https://amaydel1.scm.chinacloudsites.cn/ 
 
-###使用FTP用户名和密码登录
+###使用 FTP 用户名和密码登录
 
 具体步骤见下例：
 
 1. 获取登录的必要信息
 
 	Kudu URL：https://amaydel1.scm.chinacloudsites.cn/
-	用户名：may （Kudu站点的用户名不包括网站名称）
+	用户名：may （Kudu 站点的用户名不包括网站名称）
 	密码；xxxxx
 
 	![](./media/aog-web-app-ftp-kudu-login/publish-settings.png)
  
-2. 打开浏览器，输入Kudu URL地址，回车，输入用户名和密码。
+2. 打开浏览器，输入 Kudu URL 地址，回车，输入用户名和密码。
 
 	![](./media/aog-web-app-ftp-kudu-login/kudu-login.png)
  
