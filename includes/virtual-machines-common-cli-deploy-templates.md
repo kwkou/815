@@ -80,13 +80,13 @@
 
 首先，创建资源组。
 
-    azure group create centos-quick chinanorth
+    azure group create coreos-quick chinanorth
     info:    Executing command group create
-    + Getting resource group centos-quick
-    + Creating resource group centos-quick
-    info:    Created resource group centos-quick
-    data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick
-    data:    Name:                centos-quick
+    + Getting resource group coreos-quick
+    + Creating resource group coreos-quick
+    info:    Created resource group coreos-quick
+    data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick
+    data:    Name:                coreos-quick
     data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
@@ -94,7 +94,7 @@
     info:    group create command OK
 
 
-其次，你需要一个映像。若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。不过，本文只列出了以下常用映像的简短列表。我们在此快速创建中使用 CentOS 7.1 映像。
+其次，你需要一个映像。若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。不过，本文只列出了以下常用映像的简短列表。我们在此快速创建中使用 CoreOS 稳定映像。
 
 > [AZURE.NOTE] 对于 ComputeImageVersion，你也可以简单地在模板语言和 Azure CLI 中提供“latest”作为参数。这样，你无需修改脚本或模板，就始终都能使用映像的最新修补版本。如下所示。
 
@@ -102,6 +102,10 @@
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
 | OpenLogic | CentOS | 7 | 7\.0.201503 |
 | OpenLogic | CentOS | 7\.1 | 7\.1.201504 |
+| CoreOS                           | CoreOS                                     | Beta                             | 647.0.0             |
+| CoreOS                           | CoreOS                                     | Stable                           | 633.1.0             |
+| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-DW      | 12.0.2430           |
+| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-OLTP    | 12.0.2430           |
 | Canonical | UbuntuServer | 12\.04.5-LTS | 12\.04.201504230 |
 | Canonical | UbuntuServer | 14\.04.2-LTS | 14\.04.201503090 |
 | MicrosoftWindowsServer | WindowsServer | 2012-Datacenter | 3\.0.201503 |
@@ -113,44 +117,44 @@
 
     azure vm quick-create
     info:    Executing command vm quick-create
-    Resource group name: centos-quick
-    Virtual machine name: centos
+    Resource group name: coreos-quick
+    Virtual machine name: coreos
     Location name: chinanorth
     Operating system Type [Windows, Linux]: linux
-    ImageURN (format: "publisherName:offer:skus:version"): OpenLogic:centos:7.1:latest
+    ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:latest
     User name: ops
     Password: *********
     Confirm password: *********
-    + Looking up the VM "centos"
+    + Looking up the VM "coreos"
     info:    Using the VM Size "Standard_A1"
     info:    The [OS, Data] Disk or image configuration requires storage account
     + Retrieving storage accounts
     info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
     + Creating storage account "cli9fd3fce49e9a9b3d14302" in "chinanorth"
     + Looking up the storage account cli9fd3fce49e9a9b3d14302
-    + Looking up the NIC "cento-china-1430261891570-nic"
-    info:    An nic with given name "cento-china-1430261891570-nic" not found, creating a new one
-    + Looking up the virtual network "cento-china-1430261891570-vnet"
+    + Looking up the NIC "coreo-china-1430261891570-nic"
+    info:    An nic with given name "coreo-china-1430261891570-nic" not found, creating a new one
+    + Looking up the virtual network "coreo-china-1430261891570-vnet"
     info:    Preparing to create new virtual network and subnet
-    / Creating a new virtual network "cento-china-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "cento-china-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
-    + Looking up the virtual network "cento-china-1430261891570-vnet"
-    + Looking up the subnet "cento-china-1430261891570-snet" under the virtual network "cento-china-1430261891570-vnet"
+    / Creating a new virtual network "coreo-china-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-china-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
+    + Looking up the virtual network "coreo-china-1430261891570-vnet"
+    + Looking up the subnet "coreo-china-1430261891570-snet" under the virtual network "coreo-china-1430261891570-vnet"
     info:    Found public ip parameters, trying to setup PublicIP profile
-    + Looking up the public ip "cento-china-1430261891570-pip"
-    info:    PublicIP with given name "cento-china-1430261891570-pip" not found, creating a new one
-    + Creating public ip "cento-china-1430261891570-pip"
-    + Looking up the public ip "cento-china-1430261891570-pip"
-    + Creating NIC "cento-china-1430261891570-nic"
-    + Looking up the NIC "cento-china-1430261891570-nic"
-    + Creating VM "centos"
-    + Looking up the VM "centos"
-    + Looking up the NIC "cento-china-1430261891570-nic"
-    + Looking up the public ip "cento-china-1430261891570-pip"
-    data:    Id                             :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick/providers/Microsoft.Compute/virtualMachines/centos
+    + Looking up the public ip "coreo-china-1430261891570-pip"
+    info:    PublicIP with given name "coreo-china-1430261891570-pip" not found, creating a new one
+    + Creating public ip "coreo-china-1430261891570-pip"
+    + Looking up the public ip "coreo-china-1430261891570-pip"
+    + Creating NIC "coreo-china-1430261891570-nic"
+    + Looking up the NIC "coreo-china-1430261891570-nic"
+    + Creating VM "coreos"
+    + Looking up the VM "coreos"
+    + Looking up the NIC "coreo-china-1430261891570-nic"
+    + Looking up the public ip "coreo-china-1430261891570-pip"
+    data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
     data:    ProvisioningState               :Succeeded
-    data:    Name                            :centos
+    data:    Name                            :coreos
     data:    Location                        :chinanorth
-    data:    FQDN                            :cento-china-1430261891570-pip.chinanorth.chinacloudapp.cn
+    data:    FQDN                            :coreo-china-1430261891570-pip.chinanorth.chinacloudapp.cn
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -158,10 +162,10 @@
     data:
     data:    Storage Profile:
     data:      Image reference:
-    data:        Publisher                   :OpenLogic
-    data:        Offer                       :centos
-    data:        Sku                         :7.1
-    data:        Version                     :7.1.20160329
+    data:        Publisher                   :coreos
+    data:        Offer                       :coreos
+    data:        Sku                         :stable
+    data:        Version                     :633.1.0
     data:
     data:      OS Disk:
     data:        OSType                      :Linux
@@ -172,7 +176,7 @@
     data:          Uri                       :https://cli9fd3fce49e9a9b3d14302.blob.core.chinacloudapi.cn/vhds/cli9fd3fce49e9a9b3d-os-1430261892283.vhd
     data:
     data:    OS Profile:
-    data:      Computer Name                 :centos
+    data:      Computer Name                 :coreos
     data:      User Name                     :ops
     data:      Linux Configuration:
     data:        Disable Password Auth       :false
@@ -180,16 +184,16 @@
     data:    Network Profile:
     data:      Network Interfaces:
     data:        Network Interface #1:
-    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick/providers/Microsoft.Network/networkInterfaces/cento-china-1430261891570-nic
+    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick/providers/Microsoft.Network/networkInterfaces/coreo-china-1430261891570-nic
     data:          Primary                   :true
     data:          MAC Address               :00-0D-3A-30-72-E3
     data:          Provisioning State        :Succeeded
-    data:          Name                      :cento-china-1430261891570-nic
+    data:          Name                      :coreo-china-1430261891570-nic
     data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.1.4
     data:            Public IP address       :104.40.24.124
-    data:            FQDN                    :cento-china-1430261891570-pip.chinanorth.chinacloudapp.cn
+    data:            FQDN                    :coreo-china-1430261891570-pip.chinanorth.chinacloudapp.cn
     info:    vm quick-create command OK
 
 无论身在何处，新的 VM 就在你的身边。

@@ -14,6 +14,8 @@
 
 # Azure 虚拟机中的 SQL Server Business Intelligence
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
+
 Azure 虚拟机库包括含有 SQL Server 安装的映像。库映像中支持的 SQL Server 版本是可以安装到本地计算机和虚拟机的相同安装文件。本主题总结了在映像上安装的 SQL Server 商业智能 (BI) 功能和配置虚拟机后所需的配置步骤。本主题还介绍了 BI 功能和最佳实践支持的部署拓扑。
 
 ## 许可证注意事项

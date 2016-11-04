@@ -20,6 +20,8 @@
 
 [Azure 高级存储](/documentation/articles/storage-premium-storage/)是下一代提供低延迟和高吞吐量 IO 的存储。它最适用于关键 IO 密集型工作负荷，例如 IaaS [虚拟机](/home/features/virtual-machines/)上的 SQL Server。
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
+
 本文提供迁移运行 SQL Server 的虚拟机以使用高级存储的规划和指南。这包括 Azure 基础结构（网络、存储）以及来宾 Windows VM 步骤。[附录](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage)中的示例显示如何移动较大的 VM 以通过 PowerShell 利用改进的本地 SSD 存储的完整全面的端到端迁移。
 
 请务必了解将 Azure 高级存储用于 IAAS VM 上的 SQL Server 的端到端过程。这包括：

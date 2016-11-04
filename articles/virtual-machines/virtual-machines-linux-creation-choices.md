@@ -72,6 +72,8 @@ Azure CLI 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平
 | 别名 | 发布者 | 产品 | SKU | 版本 |
 |:----------|:----------|:-------------|:------------|:--------|
 | CentOS | OpenLogic | Centos | 7\.2 | 最新 |
+| CoreOS    | CoreOS    | CoreOS       | Stable      | 最新  |
+| Debian    | credativ  | Debian       | 8           | 最新  |
 | openSUSE | SUSE | openSUSE | 13\.2 | 最新 |
 | SLES | SUSE | SLES | 12-SP1 | 最新 |
 | UbuntuLTS | Canonical | UbuntuServer | 14\.04.3-LTS | 最新 |

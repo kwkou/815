@@ -24,7 +24,7 @@
 
 本主题介绍了在 Azure 虚拟机上运行 SQL Server 的选项，提供了[门户映像链接](#option-1-deploy-a-sql-vm-per-minute-licensing)，同时概述了[常见任务](#manage-your-sql-vm)。
 
->[AZURE.NOTE] 如果用户已熟悉 SQL Server，只是想了解如何部署 SQL Server VM，则请参阅 [Provision a SQL Server virtual machine using Azure PowerShell (Classic)](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)（在 Azure PowerShell 中创建 SQL Server 虚拟机（经典））。
+>[AZURE.NOTE] 如果用户已熟悉 SQL Server，只是想了解如何部署 SQL Server VM，则请参阅 [Provision a SQL Server virtual machine in the Azure Portal Preview](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)（在 Azure 门户预览中预配 SQL Server 虚拟机）。
 
 ## 概述
 你可能是想要将本地 SQL Server 工作负荷移至云的数据库管理员。或者，可能是针对 Azure 应用程序考虑 SQL Server 关系数据库功能的开发人员。在 Azure 虚拟机中运行 SQL Server 工作负荷有何优势？ 以下概述视频将讨论其优势并提供技术概述。
@@ -46,14 +46,14 @@
 
 |版本|操作系统|版本|
 |---|---|---|
-|**SQL 2016**|Windows Server 2012 R2|Enterprise、Standard、Web、Dev、Express|
-|**SQL 2014 SP1**|Windows Server 2012 R2|Enterprise、Standard、Web、Express|
-|**SQL 2014**|Windows Server 2012 R2|Enterprise、Standard、Web|
-|**SQL 2012 SP3**|Windows Server 2012 R2|Enterprise、Standard、Web、Express|
-|**SQL 2012 SP2**|Windows Server 2012 R2|Enterprise、Standard、Web|
-|**SQL 2012 SP2**|Windows Server 2012|Enterprise、Standard、Web、Express|
-|**SQL 2008 R2 SP3**|Windows Server 2008 R2|Enterprise、Standard、Web|
-|**SQL 2008 R2 SP3**|Windows Server 2012|Express|
+|**SQL 2016**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMEnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMStandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMWebWindowsServer2012R2), [Dev](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMDeveloperWindowsServer2012R2), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMExpressWindowsServer2012R2)|
+|**SQL 2014 SP1**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1WebWindowsServer2012R2), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1ExpressWindowsServer2012R2)|
+|**SQL 2014**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2014EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2014StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2014WebWindowsServer2012R2)|
+|**SQL 2012 SP3**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3WebWindowsServer2012R2), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3ExpressWindowsServer2012R2)|
+|**SQL 2012 SP2**|Windows Server 2012 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012R2)|
+|**SQL 2012 SP2**|Windows Server 2012|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2ExpressWindowsServer2012)|
+|**SQL 2008 R2 SP3**|Windows Server 2008 R2|[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2)|
+|**SQL 2008 R2 SP3**|Windows Server 2012|[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3ExpressWindowsServer2012)|
 
 ## 选项 2：部署 SQL VM (BYOL)
 另一个选项是自带许可 (BYOL)。在此方案中，你只需支付 VM 费用，SQL Server 许可不需要任何额外的费用。若要使用自己的许可证，请参考下面的 SQL Server 版本和操作系统对照表。在门户中，映像名称带有 **{BYOL}** 前缀。
@@ -64,9 +64,9 @@
 
 |版本|操作系统|版本|
 |---|---|---|
-|**SQL Server 2016**|Windows Server 2012 R2|Enterprise BYOL、Standard BYOL|
-|**SQL Server 2014 SP1**|Windows Server 2012 R2|Enterprise BYOL、Standard BYOL|
-|**SQL Server 2012 SP2**|Windows Server 2012 R2|Enterprise BYOL、Standard BYOL|
+|**SQL Server 2016**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2016RTMStandardWindowsServer2012R2), [Standard BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2016RTMStandardWindowsServer2012R2)|
+|**SQL Server 2014 SP1**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2014SP1EnterpriseWindowsServer2012R2), [Standard BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2014SP1StandardWindowsServer2012R2)|
+|**SQL Server 2012 SP2**|Windows Server 2012 R2|[Enterprise BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2012SP3EnterpriseWindowsServer2012R2), [Standard  BYOL](https://portal.azure.cn/#create/Microsoft.BYOLSQLServer2012SP3StandardWindowsServer2012R2)|
 
 ## <a name="manage-your-sql-vm"></a> 管理 SQL VM
 预配 SQL Server VM 之后，有几项可选的管理任务。在某些方面，你完全可以像在本地一样配置和管理 SQL Server。但某些任务是 Azure 特有的。下列各节重点介绍上述某些领域并提供详细信息链接。

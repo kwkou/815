@@ -83,7 +83,7 @@ SQL Server 2014 包括以下增强功能：
 
 ## 后续步骤
 
-如果你在规划 Azure VM 中的 SQL Server 部署，可在以下教程中找到预配指导：[在 Azure PowerShell 中创建 SQL Server 虚拟机（经典）](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)。
+如果你在规划 Azure VM 中的 SQL Server 部署，可在以下教程中找到预配指导：[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)。
 
 尽管备份和还原可用于迁移数据，但是，Azure VM 上的 SQL Server 可能还存在更便捷的数据迁移路径。有关迁移选项和建议的完整讨论，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql/)。
 

@@ -14,6 +14,8 @@
 
 # 在 Azure 中托管的 Web 应用中使用 ReportViewer
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
+
 你可以使用 Visual Studio ReportViewer 控件构建 Azure Web 应用，该控件用于显示存储在 Azure 虚拟机上的报表。ReportViewer 控件位于使用 ASP.NET Web 应用模板生成的 Web 应用中。
 
 >[AZURE.IMPORTANT]ASP.NET MVC Web 应用程序模板不支持 ReportViewer 控件。

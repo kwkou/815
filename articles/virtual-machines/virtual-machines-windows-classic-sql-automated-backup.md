@@ -14,7 +14,13 @@
 
 # 在 Azure 虚拟机（经典）中对 SQL Server 进行自动备份
 
+> [AZURE.SELECTOR]
+- [资源管理器](/documentation/articles/virtual-machines-windows-sql-automated-backup/)
+- [经典](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup/)
+
 自动备份将在运行 SQL Server 2014 Standard 或 Enterprise 的 Azure VM 上，自动为所有现有数据库和新数据库配置[托管备份到 Azure](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx)。这样，你便可以配置使用持久 Azure Blob 存储的定期数据库备份。自动备份依赖 [SQL Server IaaS 代理扩展](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/)。
+
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。若要查看本文的 Resource Manager 版本，请参阅[在 Azure 虚拟机 Resource Manager 中对 SQL Server 进行自动备份](/documentation/articles/virtual-machines-windows-sql-automated-backup/)。
 
 ## 先决条件
 

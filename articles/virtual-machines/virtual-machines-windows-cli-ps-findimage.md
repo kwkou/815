@@ -20,6 +20,8 @@
 
 | PublisherName | 产品 | SKU |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
+| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-DW      |
+| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-OLTP    |
 | MicrosoftWindowsServer           | WindowsServer                              | 2012-Datacenter               |
 | MicrosoftWindowsServer           | WindowsServer                              | 2012-R2-Datacenter |
 | MicrosoftWindowsServer           | WindowsServer                              | 2008-R2-SP1 |

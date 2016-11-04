@@ -23,7 +23,7 @@
 
 1. **如何创建装有 SQL Server 的 Azure 虚拟机？**
 
-	可通过两种方式来执行此操作。最简单的解决方法是创建包含 SQL Server 的虚拟机。有关注册 Azure 并创建 SQL VM 的教程，请参阅 [在 Azure PowerShell 中创建 SQL Server 虚拟机（经典）](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)。也可以选择手动在 VM 上安装 SQL Server，并重复使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)提供的本地许可证。
+	可通过两种方式来执行此操作。最简单的解决方法是创建包含 SQL Server 的虚拟机。有关注册 Azure 并创建 SQL VM 的教程，请参阅 [使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)。也可以选择手动在 VM 上安装 SQL Server，并重复使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)提供的本地许可证。
 
 1. **SQL VM 与 SQL 数据库服务之间的差别是什么？**
 
@@ -67,7 +67,7 @@
 
 其他资源包括：
 
-- [在 Azure PowerShell 中创建 SQL Server 虚拟机（经典）](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
+- [使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)
 - [将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql/)
 - [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)
 - [SQL Server 在 Azure 虚拟机中的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)
