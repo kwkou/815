@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/03/2016"
-   wacn.date=""
+   wacn.date="11/07/2016"
    ms.author="cherylmc" />
 
 # 从门户中的不同部署模型中连接虚拟网络
