@@ -11,7 +11,7 @@
 <tags
 	ms.service="automation"
 	ms.date="07/06/2016"
-	wacn.date="08/11/2016"/>
+	wacn.date="11/07/2016"/>
 
 # 常见 Azure 自动化错误的错误处理提示
 
