@@ -46,7 +46,6 @@
 从 VM 中删除数据磁盘 | `azure  vm disk detach [options] <resource-group> <vm-name> <lun>`
 将泛型扩展添加到 VM |`azure  vm extension set [options] <resource-group> <vm-name> <name> <publisher-name> <version>`
 将 VM 访问扩展添加到 VM | `azure vm reset-access [options] <resource-group> <name>`
-将 Docker 扩展添加到 VM | `azure  vm docker create [options] <resource-group> <name> <location> <os-type>`
 删除 VM 扩展 | `azure  vm extension set [options] -u <resource-group> <vm-name> <name> <publisher-name> <version>`
 获取 VM 资源的使用情况 | `azure vm list-usage [options] <location>`
 获取所有可用 VM 大小 | `azure vm sizes [options]`

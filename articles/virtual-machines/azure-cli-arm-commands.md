@@ -1739,10 +1739,6 @@
 	vm extension set [options] <resource-group> <vm-name> <name> <publisher-name> <version>
 	vm extension get [options] <resource-group> <vm-name>
 
-**用于管理 Docker 虚拟机的命令**
-
-	vm docker create [options] <resource-group> <name> <location> <os-type>
-
 **用于管理 VM 映像的命令**
 
 	vm image list-publishers [options] <location>
