@@ -30,7 +30,7 @@ Azure 提供使用日志记录和度量值来监视资源的功能
 
 可在 Azure 中使用不同类型的日志来对应用程序网关进行管理和故障排除。通过门户可以访问其中部分日志，所有日志都可从 Azure Blob 存储中提取并在不同工具（例如 Excel 和 PowerBI）中查看。可从以下列表了解有关不同类型日志的详细信息：
 
-- **审核日志：**可以使用 [Azure 审核日志](/documentation/articles/insights-debugging-with-events/)（以前称为操作日志）查看提交到 Azure 订阅的所有操作及其状态。默认启用审核日志，并可在 Azure 门户预览版中查看。
+- **审核日志：**可以使用 [Azure 审核日志](/documentation/articles/insights-debugging-with-events/)（以前称为操作日志）查看提交到 Azure 订阅的所有操作及其状态。默认启用审核日志，并可在 Azure 门户预览中查看。
 - **访问日志：**可以使用此日志来查看应用程序网关访问模式并分析重要信息，包括调用方的 IP、请求的 URL、响应延迟、返回问代码、输入和输出字节数。每隔 300 秒会收集一次访问日志。此日志包含每个应用程序网关实例的一条记录。应用程序网关实例可以由“instanceId”属性标识。
 - **性能日志：**可以使用此日志来查看应用程序网关实例的执行情况。此日志会捕获每个实例的性能信息，包括提供的请求总数、吞吐量（以字节为单位）、失败的请求计数、正常和不正常的后端实例计数。每隔 60 秒会收集一次性能日志。
 - **防火墙日志：**可以使用此日志来查看通过应用程序网关的检测或阻止模式（通过 Web 应用程序防火墙配置）记录的请求。
@@ -57,11 +57,11 @@ Azure 提供使用日志记录和度量值来监视资源的功能
 
 >[AZURE.NOTE] 审核日志不需要单独的存储帐户。使用存储来记录访问和性能需支付服务费用。
 
-## 使用 Azure 门户预览版启用日志记录
+## 使用 Azure 门户预览启用日志记录
 
 ### 步骤 1
 
-在 Azure 门户预览版中导航到资源。单击“诊断日志”.如果是首次配置诊断，边栏选项卡与下图类似：
+在 Azure 门户预览中导航到资源。单击“诊断日志”.如果是首次配置诊断，边栏选项卡与下图类似：
 
 对于应用程序网关，提供 3 种日志。
 
@@ -173,7 +173,7 @@ Azure 提供使用日志记录和度量值来监视资源的功能
 
 你可以使用任何以下方法查看和分析审核日志数据：
 
-- **Azure 工具：**通过 Azure PowerShell、Azure 命令行界面 (CLI)、Azure REST API 或 Azure 门户预览版检索审计日志中的信息。[使用资源管理器审核操作](/documentation/articles/resource-group-audit/)一文中详细介绍了每种方法的分步说明。
+- **Azure 工具：**通过 Azure PowerShell、Azure 命令行界面 (CLI)、Azure REST API 或 Azure 门户预览检索审计日志中的信息。[使用资源管理器审核操作](/documentation/articles/resource-group-audit/)一文中详细介绍了每种方法的分步说明。
 - **Power BI：**如果还没有 [Power BI](https://powerbi.microsoft.com/pricing) 帐户，你可以免费试用。使用[适用于 Power BI 的 Azure 审核日志内容包](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/)，你可以借助预配置的仪表板（可直接使用或进行自定义）分析你的数据。
 
 ## 查看及分析访问、性能和防火墙日志

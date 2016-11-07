@@ -70,7 +70,7 @@
 如果你对 Azure 帐户设置了多重身份验证，则不能使用 Azure Active Directory 用户向 Azure 进行身份验证，而只能使用证书或服务主体向 Azure 进行身份验证。
 
 **疑难解答提示：**
-若要将证书用于 Azure 服务管理 cmdlet，请参阅[创建并添加管理 Azure 服务所需的证书](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx)。 若要将服务主体用于 Azure Resource Manager cmdlet，请参阅[使用 Azure 门户预览版创建服务主体](/documentation/articles/resource-group-create-service-principal-portal/)和[通过 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
+若要将证书用于 Azure 服务管理 cmdlet，请参阅[创建并添加管理 Azure 服务所需的证书](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx)。 若要将服务主体用于 Azure Resource Manager cmdlet，请参阅[使用 Azure 门户预览创建服务主体](/documentation/articles/resource-group-create-service-principal-portal/)和[通过 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
 
 
 ## 解决使用 Runbook 时的常见错误
