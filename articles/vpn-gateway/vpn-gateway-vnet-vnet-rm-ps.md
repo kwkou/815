@@ -16,15 +16,15 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/31/2016"
-   wacn.date="10/17/2016"
+   wacn.date=""
    ms.author="cherylmc"/>  
 
 
 # 使用 PowerShell 为 Resource Manager 配置 VNet 到 VNet 连接
 
 > [AZURE.SELECTOR]
-- [Azure 经典管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)
-- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
+- [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
+- [经典 - 经典管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)
 
 本文逐步讲解如何使用 VPN 网关在 Resource Manager 部署模型中创建 VNet 之间的连接。虚拟网络可位于相同或不同的区域，来自相同或不同的订阅。
 
@@ -33,18 +33,18 @@
 
 
 
-### VNet 到 VNet 的部署模型和工具
+### VNet 到 VNet 的部署模型和方法
 
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
 
-可以通过使用多种不同工具在这两种部署模型中配置 VNet 到 VNet 的连接。有关详细信息，请参阅下表。我们将在由可用于此配置的新文章、新部署模型和其他工具时更新此表。当有文章可用时，我们将从表中直接链接到该文章。
+可以通过使用多种不同工具在这两种部署模型中配置 VNet 到 VNet 的连接。当我们发布有关此配置的新文章和其他可用工具时，将会更新以下表格。有相关的文章发布时，我们会直接从该表格链接到该文章。<br><br>
 
-[AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)] 
 
 ## 关于 VNet 到 VNet 的连接
 
-将虚拟网络连接到虚拟网络（VNet 到 VNet）类似于将 VNet 连接到本地站点位置。这两种连接类型都使用 Azure VPN 网关来提供使用 IPsec/IKE 的安全隧道。你连接的 VNet 可位于不同的区域中。或者位于不同的订阅中。你甚至可以将 VNet 到 VNet 通信与多站点配置组合使用。这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑，如下图所示。
+将虚拟网络连接到虚拟网络（VNet 到 VNet）类似于将 VNet 连接到本地站点位置。这两种连接类型都使用 Azure VPN 网关来提供使用 IPsec/IKE 的安全隧道。你连接的 VNet 可位于不同的区域中。或者位于不同的订阅中。你甚至可以将 VNet 到 VNet 通信与多站点配置组合使用。这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑，如下图所示：
 
 
 ![关于连接](./media/vpn-gateway-vnet-vnet-rm-ps/aboutconnections.png)  
@@ -64,7 +64,7 @@
 
 ### VNet 到 VNet 常见问题
 
-[AZURE.INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
+[AZURE.INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)] 
 
 
 ## 我应使用哪个步骤集？
@@ -176,7 +176,7 @@
 
 	本示例创建一个名为 TestVNet1 的虚拟网络和三个子网：一个名为 GatewaySubnet、一个名为 FrontEnd，还有一个名为 Backend。替换值时，请务必始终将网关子网特意命名为 GatewaySubnet。如果命名为其他名称，网关创建将会失败。
 
-	以下示例使用前面设置的变量。在本示例中，网关子网使用 /27。尽管可以使用小到 /29 的子网来创建网关子网，但是不建议这么做。建议使用更大的子网，例如 /27 或 /26。这样，便可以利用现有的或者将来可能需要更大网关子网的配置。
+	以下示例使用前面设置的变量。在本示例中，网关子网使用 /27。尽管创建的网关子网最小可为 /29，但建议至少选择 /28 或 /27，创建包含更多地址的更大子网。这样便可以留出足够多的地址，满足将来可能需要使用的其他配置。
 
 		$fesub1 = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName1 -AddressPrefix $FESubPrefix1
 		$besub1 = New-AzureRmVirtualNetworkSubnetConfig -Name $BESubName1 -AddressPrefix $BESubPrefix1
@@ -455,7 +455,7 @@
 
 3. **[订阅 1]** 创建 TestVNet1 到 TestVNet5 的连接
 
-	本步骤创建从 TestVNet1 到 TestVNet5 的连接。此处的差别在于无法直接获取 $vnet5gw，因为它位于不同的订阅中。需要使用上述步骤中从订阅 1 传递的值来创建新的 PowerShell 对象。将名称、ID 和共享密钥替换为自己的值。共享密钥必须与两个连接匹配，这一点非常重要。创建连接可能需要简短的一段时间才能完成。
+	本步骤创建从 TestVNet1 到 TestVNet5 的连接。此处的差别在于无法直接获取 $vnet5gw，因为它位于不同的订阅中。需要使用上述步骤中从订阅 1 传递的值来创建新的 PowerShell 对象。使用下面的示例。将名称、ID 和共享密钥替换为自己的值。共享密钥必须与两个连接匹配，这一点非常重要。创建连接可能需要简短的一段时间才能完成。
 
 	请确保连接到订阅 1。
 	
@@ -478,7 +478,11 @@
 
 ## <a name="verify"></a>如何验证连接
 
-[AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../../includes/vpn-gateway-verify-connection-rm-include.md)]
+
+[AZURE.INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
+
+
+[AZURE.INCLUDE [在 powershell 中验证连接](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
 
 ## 后续步骤
@@ -486,4 +490,4 @@
 - 连接完成后，即可将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)以获取相关步骤。
 - 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->

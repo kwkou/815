@@ -15,25 +15,26 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/31/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/06/2016"
+   wacn.date=""
    ms.author="cherylmc"/>  
 
 
 # 使用经典管理门户配置与 VNet 的点到站点连接
 
 > [AZURE.SELECTOR]
-- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
-- [门户 - 经典](/documentation/articles/vpn-gateway-point-to-site-create/)
+- [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
+- [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
+- [经典 - 经典管理门户](/documentation/articles/vpn-gateway-point-to-site-create/)
 
 使用点到站点 (P2S) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。如果要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则 P2S 连接会很有用。
 
-本文逐步讲解如何使用经典管理门户，在**经典部署模型**中创建具有点到站点连接的 VNet。目前无法在 Azure 门户预览中为经典部署模型创建这种端到端配置。
+本文逐步讲解如何使用**经典管理门户**，在**经典部署模型**中创建具有点到站点连接的 VNet。
 
 点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。可通过从客户端计算机启动连接来建立 VPN 连接。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)（VPN 网关常见问题）及 [Planning and Design](/documentation/articles/vpn-gateway-plan-design/)（规划和设计）。
 
 
-**用于点到站点连接的部署模型和工具**
+### P2S 连接的部署模型和方法
 
 [AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)]
 
@@ -200,4 +201,4 @@
 
 如果你需要有关虚拟网络的更多信息，请参阅[虚拟网络文档](/documentation/services/networking/)页。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->

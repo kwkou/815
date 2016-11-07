@@ -14,20 +14,21 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/31/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/06/2016"
+   wacn.date=""
    ms.author="cherylmc" />  
 
 
 # 使用 PowerShell 配置与 VNet 的点到站点连接
 
 > [AZURE.SELECTOR]
-- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
-- [门户 - 经典](/documentation/articles/vpn-gateway-point-to-site-create/)
+- [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
+- [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
+- [经典 - 经典管理门户](/documentation/articles/vpn-gateway-point-to-site-create/)
 
 使用点到站点 (P2S) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。如果要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则 P2S 连接会很有用。
 
-本文逐步讲解如何在 **Resource Manager 部署模型**中创建具有点到站点连接的 VNet。这些步骤需要 PowerShell。目前无法在 Azure 门户预览中创建此端到端解决方案。
+本文逐步讲解如何在 **Resource Manager 部署模型**中创建具有点到站点连接的 VNet。这些步骤需要 PowerShell。目前无法在 Azure 门户预览中创建这种端到端解决方案。
 
 点到站点连接不需要 VPN 设备或面向公众的 IP 地址即可运行。可通过从客户端计算机启动连接来建立 VPN 连接。有关点到站点连接的详细信息，请参阅 [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq/#point-to-site-connections)（VPN 网关常见问题）及 [Planning and Design](/documentation/articles/vpn-gateway-plan-design/)（规划和设计）。
 
@@ -114,7 +115,7 @@
 
 		New-AzureRmResourceGroup -Name $RG -Location $Location
 
-2. 为虚拟网络创建子网配置，并将其命名为 *FrontEnd* 、 *BackEnd* 和 *GatewaySubnet* 。这些前缀必须是上面声明的 VNet 地址空间的一部分。
+2. 为虚拟网络创建子网配置，并将其命名为 *FrontEnd* 、 *BackEnd* 和 *GatewaySubnet* 。这些前缀必须是声明的 VNet 地址空间的一部分。
 
 		$fesub = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName -AddressPrefix $FESubPrefix
 		$besub = New-AzureRmVirtualNetworkSubnetConfig -Name $BESubName -AddressPrefix $BESubPrefix
@@ -142,7 +143,7 @@ Azure 使用证书来验证需要通过 P2S 进行连接的客户端。请将根
 
 无论以何种方式获取证书，都需要将证书的 .cer 文件上载到 Azure，同时生成要在连接的客户端上安装的客户端证书。不要直接在客户端上安装自签名的证书。稍后可以在本文的[客户端配置](#cc)部分中生成客户端证书。
 		
-最多可以将 20 个受信任的证书添加到 Azure。若要获取公钥，请将证书导出为 Base64 编码 X.509 (.cer) 文件。导出为 .cer 的方法之一是打开 **certmger.msc**，在“个人/证书”中找到该证书。单击右键，然后将证书导出为不包含私钥的“Base-64 编码 X.509 (.CER)”证书。请记下导出到.cer 文件的文件路径。以下是获取证书的 Base64 字符串表示形式的一个示例。
+最多可以将 20 个受信任的证书添加到 Azure。若要获取公钥，请将证书导出为 Base64 编码 X.509 (.cer) 文件。导出为 .cer 的方法之一是打开 **certmgr.msc**，在“个人/证书”中找到该证书。单击右键，然后将证书导出为不包含私钥的“Base-64 编码 X.509 (.CER)”证书。请记下导出到.cer 文件的文件路径。以下是获取证书的 Base64 字符串表示形式的一个示例。
 
 将受信任的证书添加到 Azure。在此步骤中，需要使用自己的 .cer 文件路径。请特别注意本文第 1 部分中设置的 $P2SRootCertName = "ARMP2SRootCert.cer" 变量。如果证书名称不同，请相应地调整变量。
     
@@ -175,7 +176,7 @@ Azure 使用证书来验证需要通过 P2S 进行连接的客户端。请将根
 
 3. 复制并粘贴 Web 浏览器中返回的链接以下载包。然后在客户端计算机上安装该包。
 
-4. 在客户端计算机上，导航到“网络设置”，然后单击“VPN”。此时将会列出连接。其中显示了要连接到的虚拟网络的名称，如下所示：
+4. 在客户端计算机上，导航到“网络设置”，然后单击“VPN”。此时将会列出连接。其中显示了要连接到的虚拟网络的名称，如以下示例所示：
 
 	![VPN 客户端](./media/vpn-gateway-howto-point-to-site-rm-ps/vpn.png "VPN 客户端")  
 
@@ -240,12 +241,12 @@ Azure 使用证书来验证需要通过 P2S 进行连接的客户端。请将根
 
 1. 创建并准备好要添加到 Azure 的新根证书。将公钥导出为 Base-64 编码的 X.509 (.CER)，使用文本编辑器将它打开。然后，仅复制如下所示的部分。
  
-	按以下示例中所示复制所需的值。
+	按以下示例中所示复制所需的值：
 
 	![证书](./media/vpn-gateway-howto-point-to-site-rm-ps/copycert.png "证书")  
 
 	
-2. 在以下示例中，请指定证书名称和密钥信息作为变量。将信息替换为自己的值。
+2. 指定证书名称和密钥信息作为变量。将信息替换为自己的值，如以下示例中所示：
 
 		$P2SRootCertName2 = "ARMP2SRootCert2.cer"
 		$MyP2SCertPubKeyBase64_2 = "MIIC/zCCAeugAwIBAgIQKazxzFjMkp9JRiX+tkTfSzAJBgUrDgMCHQUAMBgxFjAUBgNVBAMTDU15UDJTUm9vdENlcnQwHhcNMTUxMjE5MDI1MTIxWhcNMzkxMjMxMjM1OTU5WjAYMRYwFAYDVQQDEw1NeVAyU1Jvb3RDZXJ0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyjIXoWy8xE/GF1OSIvUaA0bxBjZ1PJfcXkMWsHPzvhWc2esOKrVQtgFgDz4ggAnOUFEkFaszjiHdnXv3mjzE2SpmAVIZPf2/yPWqkoHwkmrp6BpOvNVOpKxaGPOuK8+dql1xcL0eCkt69g4lxy0FGRFkBcSIgVTViS9wjuuS7LPo5+OXgyFkAY3pSDiMzQCkRGNFgw5WGMHRDAiruDQF1ciLNojAQCsDdLnI3pDYsvRW73HZEhmOqRRnJQe6VekvBYKLvnKaxUTKhFIYwuymHBB96nMFdRUKCZIiWRIy8Hc8+sQEsAML2EItAjQv4+fqgYiFdSWqnQCPf/7IZbotgQIDAQABo00wSzBJBgNVHQEEQjBAgBAkuVrWvFsCJAdK5pb/eoCNoRowGDEWMBQGA1UEAxMNTXlQMlNSb290Q2VydIIQKazxzFjMkp9JRiX+tkTfSzAJBgUrDgMCHQUAA4IBAQA223veAZEIar9N12ubNH2+HwZASNzDVNqspkPKD97TXfKHlPlIcS43TaYkTz38eVrwI6E0yDk4jAuPaKnPuPYFRj9w540SvY6PdOUwDoEqpIcAVp+b4VYwxPL6oyEQ8wnOYuoAK1hhh20lCbo8h9mMy9ofU+RP6HJ7lTqupLfXdID/XevI8tW6Dm+C/wCeV3EmIlO9KUoblD/e24zlo3YzOtbyXwTIh34T0fO/zQvUuBqZMcIPfM1cDvqcqiEFLWvWKoAnxbzckye2uk1gHO52d8AVL3mGiX8wBJkjc/pMdxrEvvCzJkltBmqxTM6XjDJALuVh16qFlqgTWCIcb7ju"
@@ -318,4 +319,4 @@ Azure 使用证书来验证需要通过 P2S 进行连接的客户端。请将根
 
 你可以将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)以获取相关步骤。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->

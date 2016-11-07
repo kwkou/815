@@ -1,27 +1,36 @@
 <properties
-   pageTitle="将公司 Internet 域指向流量管理器域 | Azure"
-   description="本文将帮助你将公司域名指向流量管理器域名。"
-   services="traffic-manager"
-   documentationCenter=""
-   authors="joaoma"
-   manager="carmonm"
-   editor="tysonn" />
+    pageTitle="将公司 Internet 域指向流量管理器域名 | Azure"
+    description="本文将帮助你将公司域名指向流量管理器域名。"
+    services="traffic-manager"
+    documentationCenter=""
+    authors="sdwheeler"
+    manager="carmonm"
+    editor=""
+/>  
+
 <tags
-	ms.service="traffic-manager"
-	ms.date="03/17/2016"
-	wacn.date="04/26/2016"/>
+    ms.service="traffic-manager"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="10/11/2016"
+    wacn.date=""
+    ms.author="sewhee"
+/>  
+
 
 # 将公司 Internet 域指向 Azure 流量管理器域
 
-若要将公司域名指向流量管理器域名，请修改你的 Internet DNS 服务器上的 DNS 资源记录来使用 CNAME 记录类型，该记录类型将公司域名映射到流量管理器配置文件的域名。可以在流量管理器配置文件的“配置”页上的“常规”部分中查看流量管理器域名。
+创建流量管理器配置文件时，Azure 会自动为该配置文件分配一个 DNS 名称。若要使用 DNS 区域中的某个名称，请创建一条映射到流量管理器配置文件域名的 CNAME DNS 记录。可以在流量管理器配置文件的“配置”页上的“常规”部分中找到流量管理器域名。
 
-例如，若要将公司域名 www.contoso.com 指向流量管理器域名 contoso.trafficmanager.cn，需要将你的 DNS 资源记录更新为以下内容：
+例如，若要将名称 www.contoso.com 指向流量管理器 DNS 名称 contoso.trafficmanager.cn，请创建以下 DNS 资源记录：
 
     www.contoso.com IN CNAME contoso.trafficmanager.cn
 
-现在，对 *www.contoso.com* 的所有流量请求都将定向到 *contoso.trafficmanager.cn*。
+对 *www.contoso.com* 发出的所有流量请求将定向到 *contoso.trafficmanager.cn* 。
 
->[AZURE.IMPORTANT]无法将第二级域（例如 *contoso.com*）指向流量管理器域。这是 DNS 协议的一个限制，它不允许第二级域名存在 CNAME 记录。
+>[AZURE.IMPORTANT] 无法将第二级域（例如 *contoso.com* ）指向流量管理器域。DNS 协议标准不允许对二级域名使用 CNAME 记录。
 
 ## 后续步骤
 
@@ -31,4 +40,4 @@
 
 [流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint/)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_1031_2016-->

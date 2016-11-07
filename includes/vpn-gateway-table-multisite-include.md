@@ -1,9 +1,6 @@
-可以在虚拟网络与多个本地站点之间配置连接。有关更多信息，请参见下表。我们将在由可用于此配置的新文章、新部署模型和其他工具时更新此表。当有文章可用时，我们将从表中直接链接到该文章。
+|**部署模型/方法**| **Azure 门户预览** | **经典管理门户** | **PowerShell**|
+|---|---|---|---|
+| **资源管理器** |[文章](/documentation/articles/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/)| 不支持 | 支持|
+| **经典** | 不支持 | 不支持 | [文章](/documentation/articles/vpn-gateway-multi-site/) | 
 
-| | **经典部署** | **Resource Manager 部署** |
-|-----------------------------------------|-------------|---------------------|
-| **经典管理门户** | 不支持 | 不支持 |
-| **Azure 门户预览** | 不支持 | 不支持 |
-| **PowerShell** | [文章](/documentation/articles/vpn-gateway-multi-site/) | 是 |
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_1031_2016-->
