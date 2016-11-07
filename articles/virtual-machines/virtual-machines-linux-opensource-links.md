@@ -45,9 +45,6 @@
 - [在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问](/documentation/articles/virtual-machines-linux-classic-cassandra-nodejs/)
 - [创建多主的 MariaDb 群集](/documentation/articles/virtual-machines-linux-classic-mariadb-mysql-cluster/)
 
-### Docker
-- [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)
-
 ### Ubuntu
 - [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-classic-mysql-cluster/)
 - [如何：Node.js 和 Cassandra](/documentation/articles/virtual-machines-linux-classic-cassandra-nodejs/)

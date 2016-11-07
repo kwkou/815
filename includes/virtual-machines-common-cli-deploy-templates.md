@@ -1137,7 +1137,7 @@
     data:    vmSize                 String        Standard_A1
     info:    group deployment create command OK
 
-请注意，此模板部署的是 Windows Server 映像；但是，它可以轻松地替换为任何 Linux 映像。想要使用多个 Swarm 管理器创建一个 Docker 群集吗？ [你可以做到](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-swarm-cluster/)。
+请注意，此模板部署的是 Windows Server 映像；但是，它可以轻松地替换为任何 Linux 映像。
 
 ## <a id="remove-a-resource-group"></a>任务：删除资源组
 

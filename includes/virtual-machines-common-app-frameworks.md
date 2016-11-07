@@ -11,7 +11,6 @@
 | Couchbase | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/couchbase-on-ubuntu) |
 | DataStax | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/datastax) |
 | Django | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/django-app) |
-| Docker | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu) |
 | Elasticsearch | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch) |
 | Jenkins | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/jenkins-on-ubuntu) |
 | Kafka | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/kafka-on-ubuntu) |

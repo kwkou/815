@@ -144,32 +144,8 @@
         }
         }
 
-### Docker 扩展
-有关更新的架构，请参阅 [Docker 扩展文档](https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema)
+### Linux Diagnostics Extension
 
-        {
-          "publisher": "Microsoft.Azure.Extensions ",
-          "type": "DockerExtension ",
-          "typeHandlerVersion": "1.0",
-          "Settings": {
-            "docker":{
-                "port": "2376",
-                "options": ["-D", "--dns=8.8.8.8"]
-            },
-            "compose": {
-                "cache" : {
-                    "image" : "memcached",
-                    "ports" : ["11211:11211"]
-                },
-                "blog": {
-                    "image": "ghost",
-                    "ports": ["80:2368"]
-                }
-            }
-            }
-        }
-
-        ### Linux Diagnostics Extension
         {
         "storageAccountName": "storage account to receive data",
         "storageAccountKey": "key of the account",
