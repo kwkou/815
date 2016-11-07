@@ -1,75 +1,85 @@
 <properties
-   pageTitle="Azure 流量管理器性能注意事项 | Azure"
-   description="了解流量管理器的性能以及如何测试使用流量管理器时的网站性能"
-   services="traffic-manager"
-   documentationCenter=""
-   authors="kwill-MSFT"
-   manager="carmonm"
-   editor="joaoma" />
+    pageTitle="Azure 流量管理器性能注意事项 | Azure"
+    description="了解流量管理器的性能以及如何测试使用流量管理器时的网站性能"
+    services="traffic-manager"
+    documentationCenter=""
+    authors="sdwheeler"
+    manager="carmonm"
+    editor=""
+/>  
 
 <tags
-	ms.service="traffic-manager"
-	ms.date="06/10/2016"
-	wacn.date="07/28/2016"/>
+    ms.service="traffic-manager"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="10/11/2016"
+    wacn.date=""
+    ms.author="sewhee"
+/>  
 
 
 # 流量管理器的性能注意事项
 
-本页介绍使用流量管理器的性能注意事项。方案如下：你在中国北部和中国东部各有一个网站，其中一个网站未通过流量管理器探测器的运行状况检查，你的所有用户将定向到正常区域，该行为可能显示为性能问题，但根据用户请求的距离，它会是预期行为。
+本页介绍使用流量管理器的性能注意事项。假设出现了下面这种情景：
 
-  
+你在中国北部和东亚区域分别创建了网站的实例。其中一个实例未通过流量管理器探测的运行状况检查。应用程序流量定向到正常的区域。这种故障转移是意料之中的，但由于流量现在要传送到远方区域，这种延迟会给性能造成问题。
 
-## 有关流量管理器工作原理的重要说明
+## 流量管理器的工作方式
 
-- 流量管理器实质上只做一件事 - DNS 解析。这意味着流量管理器对你的网站会产生的唯一性能影响就是初始 DNS 查找。
-- 有关流量管理器 DNS 查找需要澄清的一点。流量管理器根据你的策略和探测器结果填充并定期更新常规的 Microsoft DNS 根服务器。流量管理器甚至不会参与初始 DNS 查找，因为 DNS 请求由常规 Microsoft DNS 根服务器处理。如果流量管理器出现故障（即，VM 在执行策略探测和 DNS 更新的过程中发生故障），也不会对流量管理器 DNS 名称产生任何影响，因为系统仍会保留 Microsoft DNS 服务器中的条目 - 产生的唯一影响是，不会执行基于策略的探测和更新（即，如果你的主站点出现故障，流量管理器将无法更新 DNS 来指向你的故障转移站点）。
-- 流量不会通过流量管理器。在你的客户端和 Azure 托管服务之间不存在充当中间人的流量管理器服务器。DNS 查找完成后，会从客户端和服务器之间的通信中完全移除流量管理器。
-- DNS 查找速度很快，且结果会进行缓存。初始 DNS 查找取决于客户端和其配置的 DNS 服务器，通常客户端可在 ~50 毫秒内执行一次 DNS 查找（请参阅 http://www.solvedns.com/dns-comparison/ )。  第一次查找完成后，将缓存 DNS TTL 的结果，对于流量管理器而言，默认值为 300 秒。
-- 你选择的流量管理器策略（性能、故障转移、轮循机制）对 DNS 性能没有影响。你的性能策略可能会对你的用户体验（例如，将美国用户发送到在亚洲托管的服务时）产生负面影响，但这一性能问题并不是由流量管理器所造成的。
+流量管理器对网站产生的唯一性能影响是初始 DNS 查找。针对流量管理器配置文件名称发出的 DNS 请求由托管 trafficmanager.cn 区域的 Microsoft DNS 根服务器处理。流量管理器根据流量管理器策略和探测结果填充并定期更新 Microsoft DNS 根服务器。因此，即使在初始 DNS 查找期间，也不会将 DNS 查询发送到流量管理器。
 
-  
+流量管理器由多个组件构成：DNS 名称服务器、API 服务、存储层和终结点监视服务。如果流量管理器服务组件发生故障，与流量管理器配置文件关联的 DNS 名称不会受到影响。Microsoft DNS 服务器中的记录将保留不变。但是，终结点监视和 DNS 更新不会发生。因此，当主站点关闭时，流量管理器无法将 DNS 更新为指向故障转移站点。
 
-## 测试流量管理器性能
+DNS 名称解析速度将会加快，结果将被缓存。初始 DNS 查找速度取决于客户端用于名称解析的 DNS 服务器。通常，客户端可在大约 50 毫秒内完成一个 DNS 查找。查找结果按照 DNS 生存时间 (TTL) 的持续时间缓存。流量管理器的默认 TTL 为 300 秒。
 
-你可以通过一些公开网站确定你的流量管理器性能和行为。这些网站有助于确定 DNS 延迟以及你世界各地的用户将被定向到的托管服务。请记住，这些工具大多数都不缓存 DNS 结果，因此，多次运行测试将显示完整的 DNS 查找，而在 TTL 持续时间内，连接到流量管理器终结点的客户端将只能看到一次完整的 DNS 查询性能影响。
+流量不会通过流量管理器。完成 DNS 查找后，客户端便获得了网站实例的 IP 地址。客户端直接连接到该地址，而不通过流量管理器。选择的流量管理器策略对 DNS 性能没有影响。但是，“性能”路由方法可能会对应用程序体验产生负面影响。例如，如果策略将来自北美的流量重定向到亚洲托管的实例，与这些会话之间的网络延迟可能会造成性能问题。
 
+## 测量流量管理器性能
 
-## 测量性能的示例工具
+可以使用多个网站了解流量管理器配置文件的性能和行为。其中的许多站点可以免费使用，但可能附带限制。某些站点以收费形式提供增强型监视和报告。
 
+这些站点上的工具可以测量 DNS 延迟，显示全球各地客户端位置的已解析 IP 地址。其中的大多数工具不会缓存 DNS 结果。因此，每次运行测试时，这些工具将显示完整的 DNS 查找。从自己的客户端测试时，只能在 TTL 持续期间内体验完整的 DNS 查找性能一次。
 
-其中最简单的工具就是 WebSitePulse。输入 URL，你会看到 DNS 解析时间、第一个字节、最后一个字节等统计信息以及其他性能统计信息。对于测试你的站点的位置，你可以从三个不同的位置进行选择。本示例中，你将看到第一次执行显示第一次 DNS 查找耗时 0.204 秒。在同一个流量管理器终结点上第二次运行此测试时，DNS 查找耗时 0.002 秒，因为结果已缓存。
+## 用于测量 DNS 性能的工具示例
 
-http://www.websitepulse.com/help/tools.php
+- [SolveDNS](http://www.solvedns.com/dns-comparison/)
 
+    SolveDNS 提供许多性能工具。DNS Comparison 工具可以显示解析 DNS 名称花费的时间，以及该时间与使用其他 DNS 服务提供程序时花费的时间的对比。
 
-![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-pulse.png)
+- [WebSitePulse](http://www.websitepulse.com/help/tools.php)
 
-DNS 缓存时间：
+    其中最简单的工具就是 WebSitePulse。输入 URL 即可查看 DNS 解析时间、第一个字节、最后一个字节和其他性能统计信息。可以从三个不同的测试位置中选择。在此示例中可以看到，第一次执行显示 DNS 查找花费了 0.204 秒。
 
-
-![pulse2](./media/traffic-manager-performance-considerations/traffic-manager-web-site-pulse2.png)
+    ![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-pulse.png)  
 
 
+    由于结果会缓存，针对同一个流量管理器终结点执行第二次测试时，DNS 查找仅花费了 0.002 秒。
 
-可同时从多个地理区域获取 DNS 解析时间的另一个有用工具是 Watchmouse 的检查网站工具。输入 URL，你会看到 DNS 解析时间、连接时间和各地理位置的连接速度。这也便于测试流量管理器性能策略，从而查看要将你世界各地的不同用户发送到的托管服务。
-
-http://www.watchmouse.com/en/checkit.php
+    ![pulse2](./media/traffic-manager-performance-considerations/traffic-manager-web-site-pulse2.png)  
 
 
-![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-watchmouse.png)
+- [CA App Synthetic Monitor](https://asm.ca.com/en/checkit.php)
 
-http://tools.pingdom.com/ - 这将测试网站并针对可视图形页面上的每个元素提供性能统计信息。如果你切换到“页面分析”选项卡，则可以看到执行 DNS 查找的耗时百分比。
+    前称 Watchmouse Check Website Tool，此站点可以同时从多个地理区域显示 DNS 解析时间。输入 URL 即可查看 DNS 解析时间、连接时间以及各个地理位置的连接速度。使用此测试可以查看针对全球不同位置返回了哪些托管服务。
 
- 
+    ![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-watchmouse.png)  
 
-http://www.whatsmydns.net/ - 此站点将从 20 个不同地理位置执行 DNS 查找，并在地图上显示结果。绝佳的直观表示形式有助于确定你的客户端要连接的托管服务。
 
- 
+- [Pingdom](http://tools.pingdom.com/)
 
-http://www.digwebinterface.com - 类似于 Watchmouse 站点，但此站点显示更详细的 DNS 信息，包括 CNAME 和 A 记录。请确保在选项下选中“着色输出”和“统计信息”，并在 Nameservers 下选中“全部”。
+    此工具提供网页上每个元素的性能统计信息。“Page Analysis”（页面分析）选项卡显示 DNS 查找花费的时间百分比。
+
+- [What's My DNS?](http://www.whatsmydns.net/)
+
+    此站点从 20 个不同的位置执行 DNS 查找，并在地图上显示结果。
+
+- [Dig Web Interface](http://www.digwebinterface.com)
+
+    此站点显示更详细的 DNS 信息，包括 CNAME 和 A 记录。请确保在选项下选中“着色输出”和“统计信息”，并在 Nameservers 下选中“全部”。
 
 ## 后续步骤
-
 
 [关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)
 
@@ -78,6 +88,5 @@ http://www.digwebinterface.com - 类似于 Watchmouse 站点，但此站点显�
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
- 
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_1031_2016-->

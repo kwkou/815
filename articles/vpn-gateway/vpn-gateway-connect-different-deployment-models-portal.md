@@ -6,11 +6,17 @@
    authors="cherylmc"
    manager="carmonm"
    editor=""
-   tags="azure-service-management,azure-resource-manager"/>
-<tags
-	ms.service="vpn-gateway"
-	ms.date="08/09/2016"
-	wacn.date="08/29/2016"/>
+   tags="azure-service-management,azure-resource-manager"/>  
+
+<tags 
+   ms.service="vpn-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/03/2016"
+   wacn.date=""
+   ms.author="cherylmc" />
 
 # 从门户中的不同部署模型中连接虚拟网络
 
@@ -21,15 +27,29 @@
 
 Azure 当前具有两个管理模型：经典模型和 Resource Manager (RM) 模型。如果 Azure 已经使用了一段时间，则您的 Azure VM 和实例角色可能是在经典 VNet 上运行。而较新的 VM 和角色实例可能是在 Resource Manager 中创建的 VNet 上运行。本文将指导您如何连接经典 VNet 和 Resource Manager Vnet，从而可以通过网关连接使不同部署模型中的资源能够相互通信。
 
-您可以创建不同订阅、不同区域和不同部署模型中的 VNet 之间的连接。您还可以连接已连接到本地网络的 VNet，只要它们配置的网关是动态或基于路由的。有关 VNet 到 VNet 连接的详细信息，请参阅本文末尾的 [VNet 到 VNet 常见问题解答](#faq)。
+可以在位于不同订阅、不同区域中的 VNet 之间创建连接。您还可以连接已连接到本地网络的 VNet，只要它们配置的网关是动态或基于路由的。有关 VNet 到 VNet 连接的详细信息，请参阅本文末尾的 [VNet 到 VNet 常见问题解答](#faq)。
+
+### VNet 到 VNet 连接的部署模型和方法
+
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+
+当我们发布有关此配置的新文章和其他可用工具时，将会更新以下表格。有相关的文章发布时，我们会直接从该表格链接到该文章。<br><br>
+
+**VNet 到 VNet**
+
+[AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
+
+#### VNet 对等互连
 
 [AZURE.INCLUDE [vpn-gateway-vnetpeeringlink](../../includes/vpn-gateway-vnetpeeringlink-include.md)]
 
 ## 开始之前
 
-以下步骤将指导您完成为每个 VNet 配置动态或基于路由的网关以及在网关之间创建 VPN 连接所需的设置。此配置不支持静态或基于策略的网关。在本文中，我们使用经典管理门户、Azure 门户预览和 PowerShell。目前，无法只使用 Azure 门户预览创建此配置。
+以下步骤将指导您完成为每个 VNet 配置动态或基于路由的网关以及在网关之间创建 VPN 连接所需的设置。此配置不支持静态或基于策略的网关。
 
-在开始之前，请确认是否满足以下条件：
+在本文中，我们将使用经典管理门户、Azure 门户预览和 PowerShell。目前，无法只使用 Azure 门户预览创建此配置。
+
+### 先决条件
 
  - 已创建了两个 VNet。
  - 两个 VNet 的地址范围不相互重叠，也不与网关可能连接到的其他连接的任何范围重叠。
@@ -37,29 +57,29 @@ Azure 当前具有两个管理模型：经典模型和 Resource Manager (RM) 模
 
 ### <a name="values"></a>示例设置
 
-在以下步骤中使用 PowerShell cmdlet 时，可使用这些示例设置作为参考。
+可以使用示例设置作为参考。
 
 **经典 VNet 设置**
 
-VNet 名称 = ClassicVNet <br> 
-位置 = 中国北部 <br> 
-虚拟网络地址空间 = 10.0.0.0/8 <br> 
-子网-1 = 10.0.0.0/11 <br> 
-GatewaySubnet = 10.32.0.0/29 <br> 
+VNet 名称 = ClassicVNet <br>
+位置 = 中国北部 <br>
+虚拟网络地址空间 = 10.0.0.0/24 <br>
+子网-1 = 10.0.0.0/27 <br>
+GatewaySubnet = 10.0.0.32/29 <br>
 本地网络名称 = RMVNetLocal <br>
 
 **Resource Manager VNet 设置**
 
-VNet 名称 = RMVNet <br> 
-资源组 = RG1 <br> 
-虚拟网络 IP 地址空间 = 192.168.1.0/16 <br> 
-子网-1 = 192.168.1.0/24 <br> 
-GatewaySubnet = 192.168.0.0/26 <br> 
-位置 = 中国东部 <br> 
-虚拟网络网关名称 = RMGateway <br> 
-网关公共 IP 名称 = gwpip <br> 
-网关类型 = VPN <br> 
-VPN 类型 = 基于路由 <br> 
+VNet 名称 = RMVNet <br>
+资源组 = RG1 <br>
+虚拟网络 IP 地址空间 = 192.168.0.0/16 <br>
+子网-1 = 192.168.1.0/24 <br>
+GatewaySubnet = 192.168.0.0/26 <br>
+位置 = 中国东部 <br>
+虚拟网络网关名称 = RMGateway <br>
+网关公共 IP 名称 = gwpip <br>
+网关类型 = VPN <br>
+VPN 类型 = 基于路由 <br>
 本地网络网关 = ClassicVNetLocal <br>
 
 ## <a name="createsmgw"></a>第 1 部分：配置经典 VNet 设置
@@ -105,6 +125,8 @@ VPN 类型 = 基于路由 <br>
 ### 第 1 节 - 创建网关子网
 
 将虚拟网络连接到网关之前，必须先创建要连接的虚拟网络的网关子网。创建 CIDR 计数为 /28 或更大（/27、/26 等）的网关子网
+
+[AZURE.INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
 
 从浏览器导航到 [Azure 门户预览](http://portal.azure.cn)并使用 Azure 帐户登录。
 
@@ -167,7 +189,7 @@ VPN 类型 = 基于路由 <br>
 		Set-AzureVNetGatewayKey -VNetName ClassicVNet `
 		-LocalNetworkSiteName RMVNetLocal -SharedKey abc123
 
-4. 通过运行以下命令创建 VPN 连接。
+4. 运行以下命令创建 VPN 连接：
 	
 	**设置变量**
 
@@ -193,4 +215,4 @@ VPN 类型 = 基于路由 <br>
 
 [AZURE.INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1031_2016-->

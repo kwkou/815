@@ -15,8 +15,8 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/31/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/14/2016"
+   wacn.date=""
    ms.author="cherylmc"/>  
 
 
@@ -24,23 +24,25 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
-- [Azure 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
-- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
+- [经典 - 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
 
-本文逐步讲解如何使用 **Azure Resource Manager 部署模型**创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。
+本文逐步讲解如何使用 Azure Resource Manager 部署模型创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 网关连接。站点到站点连接可以用于跨界和混合配置。
 
 ![站点到站点示意图](./media/vpn-gateway-create-site-to-site-rm-powershell/s2srmps.png "站点到站点")  
 
 
 
-### 用于站点到站点连接的部署模型和工具
+### 用于站点到站点连接的部署模型和方法
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [部署模型](../../includes/vpn-gateway-deployment-models-include.md)]
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
+下表显示了站点到站点配置当前可用的部署模型和方法。当有配置步骤相关的文章发布时，我们会直接从此表格链接到该文章。
+
+[AZURE.INCLUDE [站点到站点连接表](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
 如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。
 
+若要将站点到站点连接添加到已有连接的 VNet，请参阅[此文](/documentation/articles/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/)。
 
 ## 开始之前
 
@@ -55,7 +57,7 @@
 - 最新版本的 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
-## 1\.连接到订阅 
+## <a name="Login"></a>1.连接到订阅 
 
 确保切换到 PowerShell 模式，以便使用资源管理器 cmdlet。有关详细信息，请参阅[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 
@@ -71,9 +73,9 @@
 
 	Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
 
-## 2\.创建虚拟网络和网关子网
+## <a name="VNet"></a>2.创建虚拟网络和网关子网
 
-这些示例使用 /28 网关子网。尽管可以创建与 /29 一样小的网关子网，但是我们不建议这样做。建议创建网关子网 /27 或更大的子网（/26、/25 等），适应更高的功能要求。
+这些示例使用 /28 网关子网。尽管创建的网关子网最小可为 /29，但建议至少选择 /28 或 /27，创建包含更多地址的更大子网。这样便可以留出足够多的地址，满足将来可能需要使用的其他配置。
 
 如果已拥有一个包含 /29 或更大网关子网的虚拟网络，则可以往前跳转到[添加本地网关](#localnet)。
 
@@ -146,17 +148,17 @@ Azure 使用指定的 IP 地址前缀来识别要发送到本地位置的流量�
 有时你的局域网网关前缀会有变化。修改 IP 地址前缀时采取的步骤取决于是否已创建 VPN 网关连接。请参阅本文的[修改本地网关的 IP 地址前缀](#modify)部分。
 
 
-## 4\.为 VPN 网关请求一个公共 IP 地址
+## <a name="PublicIP"></a>4.为 VPN 网关请求一个公共 IP 地址
 
 接下来，需要请求一个公共 IP 地址并将其分配到 Azure VNet VPN 网关。这个地址与分配到 VPN 设备的 IP 地址不同，而是分配到 Azure VPN 网关本身。无法指定要使用的 IP 地址。它会动态分配到网关。在配置本地 VPN 设备连接到网关时，将使用这个 IP 地址。
 
 Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法，仅支持公共 IP 地址。但是，这并不意味着 IP 地址会更改。Azure VPN 网关 IP 地址只在删除或重新创建网关时更改。网关公共 public IP 地址不会因为重新调整大小、重置或其他 Azure VPN 网关内部维护/升级而更改。
 
-使用以下 PowerShell 示例。
+使用以下 PowerShell 示例：
 
 	$gwpip= New-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg -Location 'China North' -AllocationMethod Dynamic
 
-## 5\.创建网关 IP 寻址配置
+## <a name="GatewayIPConfig"></a>5.创建网关 IP 寻址配置
 
 网关配置定义要使用的子网和公共 IP 地址。使用以下示例创建网关配置。
 
@@ -164,7 +166,7 @@ Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法�
 	$subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -VirtualNetwork $vnet
 	$gwipconfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name gwipconfig1 -SubnetId $subnet.Id -PublicIpAddressId $gwpip.Id 
 
-## 6\.创建虚拟网络网关
+## <a name="CreateGateway"></a>6.创建虚拟网络网关
 
 本步骤创建虚拟网络网关。创建网关可能需要很长时间才能完成。通常需要 45 分钟或更长的时间。
 
@@ -179,15 +181,15 @@ Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法�
 		-Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
 		-VpnType RouteBased -GatewaySku Standard
 
-## 7\.配置 VPN 设备
+## <a name="ConfigureVPNDevice"></a>7.配置 VPN 设备
 
-此时，需要使用虚拟网络网关的公共 IP 地址来配置本地 VPN 设备。请联系你的设备制造商以获得具体的配置信息。此外，请参阅 [VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)以获得更多信息。
+此时，需要使用虚拟网络网关的公共 IP 地址来配置本地 VPN 设备。请联系你的设备制造商以获得具体的配置信息。有关详细信息，请参阅 [VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 若要查找虚拟网络网关的公共 IP 地址，请使用下面的示例：
 
 	Get-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg
 
-## 8\.创建 VPN 连接
+## <a name="CreateConnection"></a>8.创建 VPN 连接
 
 接下来，将在虚拟网络网关和 VPN 设备之间创建站点到站点 VPN 连接。请务必替换为你自己的值。共享密钥必须与你用于 VPN 设备配置的值匹配。请注意，站点到站点的 `-ConnectionType` 为 *IPsec* 。
 
@@ -226,4 +228,4 @@ VPN 连接有几种不同的验证方式。
 
 - 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->

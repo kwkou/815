@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/29/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/06/2016"
+   wacn.date=""
    ms.author="cherylmc" />  
 
 
@@ -23,17 +23,20 @@
 
 VPN 网关连接解决方案依赖于使用多个资源的配置在虚拟网络与本地位置之间发送网络流量。每个资源包含可配置的设置。资源与设置的组合决定了连接结果。
 
-本文的各个部分将介绍与 VPN 网关相关的资源和设置。使用连接拓扑图可能会有助于查看可用配置。可以在 [About VPN Gateway](/documentation/articles/vpn-gateway-about-vpngateways/)（关于 VPN 网关）一文中找到每种连接解决方案的介绍和拓扑图。
+本文的各个部分将介绍与 **Resource Manager** 部署模型中 VPN 网关相关的资源和设置。使用连接拓扑图可能会有助于查看可用配置。可以在 [About VPN Gateway](/documentation/articles/vpn-gateway-about-vpngateways/)（关于 VPN 网关）一文中找到每种连接解决方案的介绍和拓扑图。
 
 ## <a name="gwtype"></a>网关类型
 
-网关类型指定网关如何进行连接，它是 Resource Manager 部署模型的必需配置设置。每个虚拟网络只能有一种类型的虚拟网络网关。`-GatewayType` 的可用值为：
+每个虚拟网络只能有一种类型的虚拟网络网关。创建虚拟网络网关时，必须确保用于配置的网关类型正确。
+
+-GatewayType 的可用值为：
 
 - Vpn
 - ExpressRoute
 
+VPN 网关需要 `-GatewayType` *Vpn* 。
 
-VPN 网关需要 -GatewayType *Vpn* ，如以下 Resource Manager 部署模型 PowerShell 示例中所示。创建虚拟网络网关时，必须确保用于配置的网关类型正确。
+示例：
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 	-Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
@@ -42,13 +45,18 @@ VPN 网关需要 -GatewayType *Vpn* ，如以下 Resource Manager 部署模型 P
 
 ## <a name="gwsku"></a>网关 SKU
 
-创建 VPN 网关时，需要指定想要使用的虚拟网络网关 SKU。网关 SKU 适用于 ExpressRoute 和 VPN 网关类型。网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/pricing/details/vpn-gateway/)。有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。
 
-共有 3 种 VPN 网关 SKU：
+[AZURE.INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
 
-- 基本
-- 标准
-- HighPerformance
+**在 Azure 门户预览中指定网关 SKU**
+
+如果使用 Azure 门户预览创建 Resource Manager 虚拟网络网关，可以使用下拉列表选择网关 SKU。显示的选项对应于所选的网关类型和 VPN 类型。
+
+例如，如果选择“VPN”作为网关类型，选择“基于策略”作为 VPN 类型，则只会看到“基本”SKU，因为这是 PolicyBased SKU 唯一可用的 SKU。如果选择“基于路由”，则可以从“基本”、“标准”和“高性能”SKU 中选择。
+
+
+**使用 PowerShell 指定网关 SKU**
+
 
 以下 PowerShell 示例将 `-GatewaySku` 指定为 *Standard* 。
 
@@ -56,18 +64,23 @@ VPN 网关需要 -GatewayType *Vpn* ，如以下 Resource Manager 部署模型 P
 	-Location 'China North' -IpConfigurations $gwipconfig -GatewaySku Standard `
 	-GatewayType Vpn -VpnType RouteBased
 
+**更改网关 SKU**
 
-###  <a name="aggthroughput"></a>按 SKU 和网关类型列出的估计聚合吞吐量
+如果想要将网关 SKU 升级到更强大的 SKU（从“基本”/“标准”升级到“高性能”），可以使用 `Resize-AzureRmVirtualNetworkGateway` PowerShell cmdlet。也可以使用此 cmdlet 降级网关 SKU 大小。
 
+以下 PowerShell 示例演示如何将网关 SKU 的大小调整为“高性能”。
 
-下表显示网关类型和估计的聚合吞吐量。此表适用于 Resource Manager 与经典部署模型。
+	$gw = Get-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
+	Resize-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw -GatewaySku HighPerformance
+
+<br>下表显示网关类型和估计的聚合吞吐量。此表适用于 Resource Manager 与经典部署模型。
 
 [AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
 
 
 ## <a name="connectiontype"></a>连接类型
 
-每个配置都需要特定的虚拟网络网关连接类型。`-ConnectionType` 的可用 Resource Manager PowerShell 值为：
+在 Resource Manager 部署模型中，每个配置都需要特定的虚拟网络网关连接类型。`-ConnectionType` 的可用 Resource Manager PowerShell 值为：
 
 - IPsec
 - Vnet2Vnet
@@ -87,13 +100,12 @@ VPN 网关需要 -GatewayType *Vpn* ，如以下 Resource Manager 部署模型 P
 
 选择的 VPN 类型必须满足所要创建的解决方案的所有连接要求。例如，如果要为同一虚拟网络创建 S2S VPN 网关连接和 P2S VPN 网关连接，应使用 VPN 类型 *RouteBased* ，因为 P2S 需要 RouteBased VPN 类型。此外，需确认 VPN 设备支持 RouteBased VPN 连接。
 
-创建虚拟网络网关后，无法更改 VPN 类型。必须删除虚拟网络网关，然后新建一个。
-有两种 VPN 类型：
+创建虚拟网络网关后，无法更改 VPN 类型。必须删除虚拟网络网关，然后新建一个。有两种 VPN 类型：
 
 [AZURE.INCLUDE [vpn-gateway-vpntype](../../includes/vpn-gateway-vpntype-include.md)]
 
 
-以下 Resource Manager 部署模型 PowerShell 示例将 `-VpnType` 指定为 *RouteBased* 。在创建网关时，你必须确保用于配置的 -VpnType 正确。
+以下 PowerShell 示例将 `-VpnType` 指定为 *RouteBased* 。在创建网关时，你必须确保用于配置的 -VpnType 正确。
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 	-Location 'China North' -IpConfigurations $gwipconfig `
@@ -106,7 +118,7 @@ VPN 网关需要 -GatewayType *Vpn* ，如以下 Resource Manager 部署模型 P
 
 ## <a name="gwsub"></a>网关子网
 
-若要配置虚拟网络网关，需要先为 VNet 创建网关子网。网关子网必须命名为 *GatewaySubnet* 才能正常工作。此名称可以让 Azure 知道此子网将用于网关。如果使用的是经典管理门户，在门户界面中，网关子网将自动命名为 *Gateway* 。这仅特定于在经典管理门户中查看网关子网。在本例中，子网实际上是使用值 *GatewaySubnet* 创建的，可以在 Azure 门户预览和 PowerShell 中以这种方式进行查看。
+若要配置虚拟网络网关，需要先为 VNet 创建网关子网。网关子网必须命名为 *GatewaySubnet* 才能正常工作。此名称可以让 Azure 知道此子网将用于网关。
 
 网关子网的最小大小完全取决于要创建的配置。尽管网关子网最小可以创建为 /29，但建议创建 /28 或更大（/28、/27、/26 等）的网关子网。
 
@@ -116,16 +128,16 @@ VPN 网关需要 -GatewayType *Vpn* ，如以下 Resource Manager 部署模型 P
 
 	Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/27
 
->[AZURE.IMPORTANT] 确认未对网关子网应用网络安全组 (NSG)，否则可能会导致连接失败。
+[AZURE.INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
 
 ## <a name="lng"></a>本地网关
 
-创建 VPN 网关解决方案时，本地网络网关通常代表本地位置。在经典部署模型中，本地网络网关称为本地站点。
+创建 VPN 网关配置时，本地网络网关通常代表本地位置。在经典部署模型中，本地网络网关称为本地站点。
 
 指定本地网络网关的名称（即本地 VPN 设备的公共 IP 地址），并指定位于本地位置的地址前缀。Azure 将查看网络流量的目标地址前缀、查阅针对本地网络网关指定的配置，并相应地路由数据包。也应该针对使用 VPN 网关连接的 VNet 到 VNet 配置指定本地网络网关。
 
-以下 Resource Manager PowerShell 示例创建新的本地网络网关：
+以下 PowerShell 示例创建新的本地网络网关：
 
 	New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 	-Location 'China North' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.5.51.0/24'
@@ -154,4 +166,4 @@ VPN 网关需要 -GatewayType *Vpn* ，如以下 Resource Manager 部署模型 P
 
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->

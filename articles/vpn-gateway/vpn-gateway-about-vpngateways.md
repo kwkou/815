@@ -14,22 +14,36 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/01/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/06/2016"
+   wacn.date=""
    ms.author="cherylmc" />  
 
 
 # 关于 VPN 网关
 
 
-虚拟网络网关用于在 Azure 虚拟网络与本地位置之间以及 Azure 内的虚拟网络（VNet 到 VNet）之间发送网络流量。若要创建连接，可将一个虚拟网络网关添加到 VNet，同时指定其他资源及其设置。
+虚拟网络网关用于在 Azure 虚拟网络与本地位置之间以及 Azure 内的虚拟网络（VNet 到 VNet）之间发送网络流量。配置 VPN 网关时，必须创建并配置虚拟网络网关和虚拟网络网关连接。
 
-创建虚拟网络网关资源时，需要指定几项设置。其中一个必需的设置是“-GatewayType”。网关类型指定网关的连接方式。虚拟网络网关类型有两种：Vpn 和 ExpressRoute。如果网络流量是在专用连接上发送，可以使用网关类型“ExpressRoute”，也称为 ExpressRoute 网关。如果网络流量通过公共连接以加密形式发送，可以使用网关类型“Vpn”，称为 VPN 网关。站点到站点、点到站点和 VNet 到 VNet 连接都使用 VPN 网关。
+在 Resource Manager 部署模型中创建虚拟网络网关资源时，需要指定几项设置。其中一个必需的设置是“-GatewayType”。虚拟网络网关类型有两种：Vpn 和 ExpressRoute。
 
-对于每种网关类型，每个虚拟网络只能有一个虚拟网络网关。例如，一个虚拟网络网关使用 -GatewayType Vpn，另一个使用 -GatewayType ExpressRoute。本文重点介绍 VPN 网关。有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。
+如果网络流量是在专用连接上发送，可以使用网关类型“ExpressRoute”，也称为 ExpressRoute 网关。如果网络流量通过公共连接以加密形式发送，可以使用网关类型“Vpn”，称为 VPN 网关。站点到站点、点到站点和 VNet 到 VNet 连接都使用 VPN 网关。
 
-有关网关要求的信息，请参阅 [Gateway Requirements](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/#requirements)（网关要求）。有关估算的聚合吞吐量，请参阅 [About VPN Gateway Settings](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/#aggthroughput)（关于 VPN 网关设置）。有关价格，请参阅 [VPN Gateway Pricing](/pricing/details/vpn-gateway/)（VPN 网关定价）。有关订阅和服务限制，请参阅 [Networking Limits](/documentation/articles/azure-subscription-service-limits/#networking-limits)（网络限制）。
+对于每种网关类型，每个虚拟网络只能有一个虚拟网络网关。例如，一个虚拟网络网关使用 -GatewayType ExpressRoute，另一个使用 GatewayType Vpn。本文重点介绍 VPN 网关。有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。
 
+## 定价
+
+[AZURE.INCLUDE [vpn-gateway-about-pricing-include](../../includes/vpn-gateway-about-pricing-include.md)] 
+
+
+## <a name="vpntype"></a>网关 SKU
+
+[AZURE.INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
+对于使用基本 SKU 的网关，只能创建 PolicyBased VPN。
+有关网关 SKU 的详细信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/#gwsku)。
+
+下表显示网关类型和估计的聚合吞吐量。此表适用于 Resource Manager 与经典部署模型。
+
+[AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../../includes/vpn-gateway-table-gwtype-aggtput-include.md)] 
 
 ## 配置 VPN 网关
 
@@ -65,7 +79,7 @@ VPN 网关连接需依赖于多个具有特定设置的资源。大多数资源�
 
 ### 站点到站点和多站点的部署模型与方法
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)] 
 
 ## VNet 到 VNet
 
@@ -87,10 +101,10 @@ Azure 当前具有两个部署模型：经典模型和 Resource Manager 模型�
 
 ### VNet 到 VNet 的部署模型和方法
 
-[AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)] 
 
 
-## 点到站点
+## <a name="point-to-site"></a>点到站点
 
 使用点到站点 (P2S) VPN 网关连接可以创建从单个客户端计算机到虚拟网络的安全连接。P2S 是基于 SSTP（安全套接字隧道协议）的 VPN 连接。P2S 连接不需要 VPN 设备或面向公众的 IP 地址即可运行。从客户端计算机启动 VPN 连接即可建立这种连接。如果要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到 VNet 的客户端，则此解决方案会很有用。可以通过相同的 VPN 网关将 P2S 连接与 S2S 连接结合使用，前提是这两个连接的所有配置要求都兼容。
 
@@ -100,7 +114,7 @@ Azure 当前具有两个部署模型：经典模型和 Resource Manager 模型�
 
 ### 点到站点的部署模型和方法
 
-[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)] 
 
 
 ## ExpressRoute
@@ -123,7 +137,7 @@ ExpressRoute 可以从 WAN 与 Microsoft 服务（包括 Azure）直接建立专
 
 ### S2S 和 ExpressRoute 的部署模型与方法
 
-[AZURE.INCLUDE [vpn-gateway-table-coexist](../../includes/vpn-gateway-table-coexist-include.md)]
+[AZURE.INCLUDE [vpn-gateway-table-coexist](../../includes/vpn-gateway-table-coexist-include.md)] 
 
 
 ## 后续步骤
@@ -139,4 +153,4 @@ ExpressRoute 可以从 WAN 与 Microsoft 服务（包括 Azure）直接建立专
 
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->
