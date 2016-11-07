@@ -57,7 +57,7 @@
 
 有关详细建议，请参阅 [Best practices for creating Azure Resource Manager templates](/documentation/articles/resource-manager-template-best-practices/)（创建 Azure Resource Manager 模板的最佳实践）。
 
-## 资源组
+## <a name="resource-groups"></a> 资源组
 
 定义资源组时，需要考虑以下几个重要因素：
 
@@ -77,7 +77,7 @@
 
 若要部署和管理基础结构，需要了解有关资源提供程序的详细信息。需要了解其资源类型、REST API 操作的版本号、支持的操作，以及用于创建资源的架构。若要了解支持的资源提供程序，请参阅 [Resource Manager 提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 
-## 模板部署
+## <a name="template-deployment"></a> 模板部署
 
 使用 Resource Manager 可以创建一个模板（采用 JSON 格式），用于定义应用程序的部署和配置。使用模板可以在整个应用程序生命周期内反复部署该应用程序，并确保以一致的状态部署资源。Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建资源。有关详细信息，请参阅[在 Azure 资源管理器模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies/)。
 
