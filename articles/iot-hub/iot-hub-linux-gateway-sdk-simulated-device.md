@@ -9,8 +9,14 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="04/20/2016"
-     wacn.date="08/01/2016"/>
+     ms.devlang="cpp"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="08/29/2016"
+     ms.author="andbuc"
+     wacn.date="11/07/2016"/>  
+
 
 
 # IoT 网关 SDK（Beta 版）– 使用 Linux 通过模拟设备发送设备至云消息
@@ -22,7 +28,7 @@
 开始之前，必须：
 
 - [设置开发环境][lnk-setupdevbox]，以便在 Linux 上使用 SDK。
-- 在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，将需要中心的名称才能完成此演练。如果还没有 Azure 订阅，可以获取一个[帐户][lnk-free-trial]。
+- 若要在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，需要中心的名称来完成本演练。如果还没有 Azure 订阅，可以获取一个[帐户][lnk-free-trial]。
 - 将两个设备添加到 IoT 中心，并记下其 ID 和设备密钥。可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具来将设备添加到在上一步中创建的 IoT 中心，并检索其密钥。
 
 生成示例：
@@ -37,11 +43,12 @@
 
 在文本编辑器中，打开本地 **azure-iot-gateway-sdk** 存储库副本中的文件 **samples/simulated\_device\_cloud\_upload/src/simulated\_device\_cloud\_upload\_lin.json**。此文件配置示例网关中的模块：
 
-- **IoTHub** 模块连接到 IoT 中心。必须配置该模块才能将数据发送到 IoT 中心。具体而言，将 **IoTHubName** 值设置为 IoT 中心的名称，将 **IoTHubSuffix** 值设置为 **azure-devices.cn**。
+- **IoTHub** 模块连接到 IoT 中心。必须配置该模块才能将数据发送到 IoT 中心。具体而言，将 **IoTHubName** 值设置为 IoT 中心的名称，将 **IoTHubSuffix** 值设置为 **azure-devices.cn**。将 **Transport** 值设置为以下值之一：“HTTP”、“AMQP”或“MQTT”。请注意，当前只有“HTTP”会对所有设备消息共享一个 TCP 连接。如果将该值设置为“AMQP”或“MQTT”，则网关会为每个设备维护与 IoT 中心之间的单独 TCP 连接。
 - **mapping** 模块将模拟设备的 MAC 地址映射到 IoT 中心设备 ID。确保 **deviceId** 值与添加到 IoT 中心的两台设备的 ID 一致，确保 **deviceKey** 值包含两台设备的密钥。
 - **BLE1** 和 **BLE2** 模块是模拟设备。注意其 MAC 地址是否与 **mapping** 模块中的地址一致。
 - **Logger** 模块将网关活动记录到一个文件中。
 - 如下所示的 **module path** 值假定你将从本地 **azure-iot-gateway-sdk** 存储库副本的根文件夹运行示例。
+- JSON 文件的底部的 **links** 数组将 **BLE1** 和 **BLE2** 模块连接到 **mapping** 模块，并将 **mapping** 模块连接到 **IoTHub** 模块。它还确保 **Logger** 模块记录所有消息。
 
 ```
 {
@@ -49,27 +56,28 @@
     [ 
         {
             "module name" : "IoTHub",
-            "module path" : "./build/modules/iothubhttp/libiothubhttp_hl.so",
+            "module path" : "./build/modules/iothub/libiothub_hl.so",
             "args" : 
             {
                 "IoTHubName" : "{Your IoT hub name}",
-                "IoTHubSuffix" : "azure-devices.cn"
+                "IoTHubSuffix" : "azure-devices.cn",
+                "Transport": "HTTP"
             }
         },
         {
             "module name" : "mapping",
-            "module path" : "./build/modules/identitymap/libidentitymap_hl.so",
+            "module path" : "./build/modules/identitymap/libidentity_map_hl.so",
             "args" : 
             [
                 {
                     "macAddress" : "01-01-01-01-01-01",
-                    "deviceId"   : "GW-ble1-demo",
-                    "deviceKey"  : "{Device key}"
+                    "deviceId"   : "{Device ID 1}",
+                    "deviceKey"  : "{Device key 1}"
                 },
                 {
                     "macAddress" : "02-02-02-02-02-02",
-                    "deviceId"   : "GW-ble2-demo",
-                    "deviceKey"  : "{Device key}"
+                    "deviceId"   : "{Device ID 2}",
+                    "deviceKey"  : "{Device key 2}"
                 }
             ]
         },
@@ -97,6 +105,12 @@
                 "filename":"./deviceCloudUploadGatewaylog.log"
             }
         }
+    ],
+    "links" : [
+        { "source" : "*", "sink" : "Logger" },
+        { "source" : "BLE1", "sink" : "mapping" },
+        { "source" : "BLE2", "sink" : "mapping" },
+        { "source" : "mapping", "sink" : "IoTHub" }
     ]
 }
 
@@ -124,24 +138,20 @@
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+- [从根本上保护 IoT 解决方案][lnk-securing]
 
 <!-- Links -->
+
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
-[lnk-create-hub]: /documentation/articles/iot-hub-manage-through-portal/
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-explorer-tools]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 
 [lnk-physical-device]: /documentation/articles/iot-hub-gateway-sdk-physical-device/
-[lnk-manage-devices]: /documentation/articles/iot-hub-gateway-sdk-device-management/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+[lnk-securing]: /documentation/articles/iot-hub-security-ground-up/
+[lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
 <!---HONumber=Mooncake_0523_2016-->

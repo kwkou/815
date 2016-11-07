@@ -9,8 +9,14 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="07/19/2016"
- wacn.date="08/29/2016"/>
+ ms.devlang="multiple"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="10/05/2016"
+ ms.author="dobett"
+ wacn.date="11/07/2016"/>  
+
 
 # IoT 中心 MQTT 支持
 
@@ -18,11 +24,11 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 
 ## 连接到 IoT 中心
 
-设备既可以使用 [Azure IoT SDK][lnk-device-sdks] 中的库，也可以直接使用 MQTT 协议连接到 IoT 中心。
+设备既可以通过 [Azure IoT SDK][lnk-device-sdks] 中的库使用 MQTT 协议连接到 IoT 中心，也可以直接使用 MQTT 协议连接到 IoT 中心。
 
 ## 使用设备客户端 SDK
 
-支持 MQTT 协议的设备[客户端 SDK][lnk-device-sdks] 提供 Java、Node.js、C 和 C# 版本。设备客户端 SDK 使用标准 IoT 中心连接字符串来连接到 IoT 中心。若要使用 MQTT 协议，必须将客户端协议参数设置为 **MQTT**。默认情况下，设备客户端 SDK 连接到 **CleanSession** 标志设置为 **0** 的 IoT 中心，并使用 **QoS 1** 来与 IoT 中心交换消息。
+支持 MQTT 协议的[设备客户端 SDK][lnk-device-sdks] 提供 Java、Node.js、C 和 C# 版本。设备客户端 SDK 使用标准 IoT 中心连接字符串来连接到 IoT 中心。若要使用 MQTT 协议，必须将客户端协议参数设置为 **MQTT**。默认情况下，设备客户端 SDK 连接到 **CleanSession** 标志设置为 **0** 的 IoT 中心，并使用 **QoS 1** 来与 IoT 中心交换消息。
 
 当设备连接到 IoT 中心时，设备客户端 SDK 将提供方法让设备在 IoT 中心发送和接收消息。
 
@@ -35,6 +41,15 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 | [C][lnk-sample-c] | MQTT\_Protocol |
 | [C#][lnk-sample-csharp] | TransportType.Mqtt |
 | [Python][lnk-sample-python] | IoTHubTransportProvider.MQTT |
+
+### 将设备应用从 AMQP 迁移到 MQTT
+如果使用[设备客户端 SDK][lnk-device-sdks]，则从使用 AMQP 切换到 MQTT 需要在客户端初始化中更改协议参数，如上所述。
+
+执行此操作时，请确保检查下列各项：
+
+* AMQP 针对许多条件返回错误，而 MQTT 会终止连接。因此异常处理逻辑可能需要进行一些更改。
+* MQTT 在接收 [C2D 消息][lnk-messaging]时不支持*拒绝*操作。如果后端需要从设备应用接收响应，请考虑使用[直接方法][lnk-methods]。
+* 当前 MQTT 在 WebSocket 上不可用。
 
 ## 直接使用 MQTT 协议
 
@@ -54,12 +69,12 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
     1. 转到设备资源管理器中的“管理”选项卡。
     2. 单击“SAS 令牌”（右上角）。
     3. 在 **SASTokenForm** 上，从“DeviceID”下拉列表中选择你的设备。设置 **TTL**。
-    4. 单击“生成”以创建令牌。
+    4. 单击“生成”创建令牌。
     
-    所生成的 SAS 令牌如下所示：
+    所生成的 SAS 令牌具有以下结构：
     `HostName={your hub name}.azure-devices.cn;DeviceId=javadevice;SharedAccessSignature=SharedAccessSignature sr={your hub name}.azure-devices.net%2fdevices%2fMyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802`。
 
-    与“密码”字段一样使用 MQTT 连接的部分为：
+    此令牌中要用作“密码”字段以便使用 MQTT 进行连接的部分是：
     `SharedAccessSignature sr={your hub name}.azure-devices.cn%2fdevices%2fyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802g%3d&se=1456481802`。
 
 对于 MQTT 连接和断开连接数据包，IoT 中心将在**操作监视**通道上发出事件。
@@ -72,7 +87,7 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-encoded(<PropertyName2>)=RFC 2396-encoded(<PropertyValue2>)…
 ```
 
-> [AZURE.NOTE] 此编程与 HTTP 协议中用于查询字符串的编码相同。
+> [AZURE.NOTE] 此 `{property_bag}` 元素使用的编码与 HTTP 协议中用于查询字符串的编码相同。
 
 设备客户端应用程序还可以使用 `devices/{device_id}/messages/events/{property_bag}` 作为 **Will 主题名称**，来定义要以遥测消息形式转发的 *Will 消息*。
 
@@ -82,7 +97,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 ## 后续步骤
 
-有关 IoT 设备 SDK 的 MQTT 支持的更多信息，请参阅 Azure IoT 中心开发人员指南中的 [Notes on MQTT support][lnk-mqtt-devguide]（有关 MQTT 支持的说明）。
+有关详细信息，请参阅“Azure IoT 中心开发人员指南”中的[有关 MQTT 支持的说明][lnk-mqtt-devguide]。
 
 若要了解有关 MQTT 协议的详细信息，请参阅 [MQTT 文档][lnk-mqtt-docs]。
 
@@ -96,9 +111,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [lnk-mqtt-org]: http://mqtt.org/
@@ -109,15 +122,17 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
 [lnk-sample-python]: https://github.com/Azure/azure-iot-sdks/tree/master/python/device/samples
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/readme.md
-[lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens/#using-sas-tokens-as-a-device
-[lnk-mqtt-devguide]: /documentation/articles/iot-hub-devguide/#mqtt-support
+[lnk-sas-tokens]: /documentation/articles/iot-hub-devguide-security/#using-sas-tokens-as-a-device
+[lnk-mqtt-devguide]: /documentation/articles/iot-hub-devguide-messaging/#notes-on-mqtt-support
+
 [lnk-devices]: /documentation/articles/iot-hub-tested-configurations/
 [lnk-protocols]: /documentation/articles/iot-hub-protocol-gateway/
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+
+[lnk-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
+[lnk-messaging]: /documentation/articles/iot-hub-devguide-messaging/
 
 <!---HONumber=Mooncake_0307_2016-->

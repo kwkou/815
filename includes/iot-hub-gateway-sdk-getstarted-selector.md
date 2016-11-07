@@ -2,7 +2,7 @@
 - [Linux](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/)
 - [Windows](/documentation/articles/iot-hub-windows-gateway-sdk-get-started/)
 
-本文详细介绍了 [Hello World sample code（Hello World 示例代码）][lnk-helloworld-sample]，说明了 [Azure IoT Gateway SDK（Azure IoT 网关 SDK）][lnk-gateway-sdk]体系结构的基本组件。该示例使用网关 SDK 生成一个简单的网关，每隔 5 秒将“hello world”消息记录到文件中。
+本文详细介绍了 [Hello World sample code][lnk-helloworld-sample]（Hello World 示例代码），说明了 [Azure IoT Gateway SDK][lnk-gateway-sdk]（Azure IoT 网关 SDK）体系结构的基本组件。该示例使用 IoT 中心网关 SDK 生成一个简单的网关，每隔 5 秒将“hello world”消息记录到文件中。
 
 本文介绍的内容包括：
 
@@ -21,7 +21,8 @@
 
 使用 Azure IoT 网关 SDK 生成网关时，需创建*模块* 并对其进行组合。模块通过*消息* 来相互交换数据。一个模块收到一条消息，对其执行某些操作，选择性地将其转换为新的消息，然后将其发布，供其他模块处理。某些模块可能只生成新消息，不处理传入消息。一系列的模块会生成一个数据处理管道，每个模块在该管道的某个点对数据进行转换。
 
-![][1]
+![使用 Azure IoT 网关 SDK 构建的网关中的模块链][1]  
+
  
 该 SDK 包含：
 
@@ -31,38 +32,45 @@
 
 该 SDK 提供一个抽象层，你可以利用该抽象层生成在各种操作系统和平台上运行的网关。
 
-![][2]
+![Azure IoT 中心网关 SDK 抽象层][2]  
+
 
 ### 消息
 
-虽然可以通过思考模块互相传递消息的方式来了解网关运行过程中的概念，但这种思考过程并不能准确地反映实际发生的情况。模块使用消息总线来互相通信，它们会将消息发布到总线，然后总线就会将这些消息向连接到该总线的所有模块广播。
+虽然可以通过思考模块互相传递消息的方式来了解网关运行过程中的概念，但这种思考过程并不能准确地反映实际发生的情况。模块使用中转站来互相通信，它们将消息发布到中转站（总线、pubsub 或任何其他消息传送模式），然后让中转站将消息路由到与其连接的模块。
 
-模块使用 **MessageBus\_Publish** 函数将消息发布到消息总线。消息总线通过调用回调函数将消息传递给模块。一条消息由一组键/值属性以及作为内存块传递的内容组成。
+模块使用 **Broker\_Publish** 函数将消息发布到中转站。中转站通过调用回调函数将消息传递给模块。一条消息由一组键/值属性以及作为内存块传递的内容组成。
 
-![][3]
+![Azure IoT 网关 SDK 中的中转站角色][3]  
 
-由各个模块负责筛选消息，因为消息总线使用广播机制将每条消息传递给连接到该总线的所有模块。模块只会对应该发送给它的消息进行操作。消息筛选实际上是生成消息管道。模块通常会根据消息属性对接收到的消息进行筛选，以确定哪些消息应该处理。
+
+### 消息路由和筛选
+
+有两种方法可以将消息定向到正确的模块。可以将一组链接传递到中转站，这样一来，中转站就能够知道每个模块的源和接收器；也可以让模块根据消息的属性进行筛选。模块仅应在消息是其适用对象的情况下对消息执行操作。链接和消息筛选可以有效创建消息管道。
 
 ## Hello World 示例体系结构
 
 Hello World 示例体现了上一部分所述概念。Hello World 示例所实现的网关具有一个管道，该管道包含两个模块：
 
--	hello world 模块每 5 秒创建一条消息，并将该消息传递给记录器模块。
--	记录器 模块将接收的消息写入文件。
+-	*hello world* 模块每 5 秒创建一条消息，并将该消息传递给 logger 模块。
+-	*Logger* 模块将接收的消息写入文件。
 
-![][4]
+![使用 Azure IoT 网关 SDK 构建的 Hello World 示例的体系结构][4]  
 
-如前一部分所述，Hello World 模块并不是每隔 5 秒就直接将消息传递给记录器模块，而是每隔 5 秒将消息发布到消息总线。
 
-记录器模块从消息总线接收消息，在筛选器中检查其属性。如果记录器模块确定它应处理该消息，则会将消息内容写入文件。
+如前一部分所述，Hello World 模块并不是每隔 5 秒就直接将消息传递给记录器模块，而是每隔 5 秒将消息发布到中转站。
 
-记录器模块只从消息总线接收消息，而不将新消息发布到总线。
+Logger 模块从中转站接收消息并对消息执行操作，将消息内容写入文件。
 
-![][5]
+Logger 模块只使用来自中转站的消息，而不会将新消息发布到中转站。
 
-上图显示了 Hello World 示例的体系结构，同时显示了在 [repository（存储库）][lnk-gateway-sdk]中对示例不同部分进行实施的源文件的相对路径。请自行浏览代码，或使用下面的代码段作为指导。
+![中转站如何在 Azure IoT 网关 SDK 中的模块之间路由消息][5]  
+
+
+上图显示了 Hello World 示例的体系结构，同时显示了在[存储库][lnk-gateway-sdk]中对示例不同部分进行实现的源文件的相对路径。请自行浏览代码，或使用下面的代码段作为指导。
 
 <!-- Images -->
+
 [1]: ./media/iot-hub-gateway-sdk-getstarted-selector/modules.png
 [2]: ./media/iot-hub-gateway-sdk-getstarted-selector/modules_2.png
 [3]: ./media/iot-hub-gateway-sdk-getstarted-selector/messages_1.png
@@ -70,6 +78,7 @@ Hello World 示例体现了上一部分所述概念。Hello World 示例所实�
 [5]: ./media/iot-hub-gateway-sdk-getstarted-selector/detailed_architecture.png
 
 <!-- Links -->
+
 [lnk-helloworld-sample]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/hello_world
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 <!---HONumber=Mooncake_0523_2016-->

@@ -9,8 +9,14 @@
 
 <tags
      ms.service="iot-hub"
+     ms.devlang="multiple"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
      ms.date="09/07/2016"
-     wacn.date="10/10/2016"/>
+     ms.author="dobett"
+     wacn.date="11/07/2016"/>
+
 
 # 使用 PowerShell 创建 IoT 中心
 
@@ -134,10 +140,7 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Links -->
 [lnk-free-trial]: /pricing/1rmb-trial/

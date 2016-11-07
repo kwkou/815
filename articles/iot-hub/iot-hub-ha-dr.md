@@ -15,7 +15,7 @@
  ms.workload="na"
  ms.date="02/03/2016"
  ms.author="elioda"
- wacn.date="10/10/2016"/>
+ wacn.date="11/07/2016"/>
 
 # IoT 中心高可用性和灾难恢复
 
@@ -56,7 +56,7 @@ IoT 解决方案中部署拓扑的完整处理已超出本文的范围，但为�
 [Azure 应用程序的灾难恢复和高可用性]: /documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/
 [防故障：弹性云体系结构指南]: https://msdn.microsoft.com/zh-cn/library/azure/jj853352.aspx
 [Azure 流量管理器]: /documentation/services/traffic-manager/
-[IoT 中心开发人员指南 - 标识注册表]: /documentation/articles/iot-hub-devguide/#identityregistry
+[IoT 中心开发人员指南 - 标识注册表]: /documentation/articles/iot-hub-devguide-identity-registry
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/

@@ -5,12 +5,18 @@
 	documentationCenter=".net"
 	authors="fsautomata"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
      ms.service="iot-hub"
+     ms.devlang="dotnet"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
      ms.date="06/21/2016"
-     wacn.date="08/08/2016"/>
+     ms.author="elioda"
+     wacn.date="11/07/2016"/>  
 
 # 教程：如何使用 IoT 中心将文件从设备上载到云中
 
@@ -27,7 +33,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 > [AZURE.NOTE] IoT 中心通过 Azure IoT 设备 SDK 来支持许多设备平台和语言（包括 C、Java 和 Javascript）。有关如何将设备连接到本教程中所示的代码（通常是连接到 Azure IoT 中心）的逐步说明，请参阅 [Azure IoT Developer Center]（Azure IoT 开发人员中心）。
 
-为了完成本教程，你需要有：
+完成本教程需要具备以下项：
 
 + Microsoft Visual Studio 2015。
 
@@ -37,7 +43,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 由于模拟设备将文件上载到 Azure 存储 Blob，因此必须拥有与 IoT 中心关联的 [Azure 存储]帐户。将存储帐户与 IoT 中心关联时，中心将生成一个 SAS URI，设备可以使用它安全地将文件上载到 Blob 容器。IoT 中心服务和设备 SDK 协调生成 SAS URI 的过程，并使其可供设备用来上载文件。
 
-根据 [Manage IoT hubs through the Azure portal]（通过 Azure 门户管理 IoT 中心）中的说明，将 Azure 存储帐户关联到你的 IoT 中心。
+根据 [Configure file uploads using the Azure portal][lnk-configure-upload]（通过 Azure 门户配置文件上载）中的说明，将 Azure 存储帐户关联到 IoT 中心。
 
 ## 从模拟设备上载文件
 
@@ -138,7 +144,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 1. 在 Visual Studio 中，右键单击你的解决方案并选择“设置启动项目”。选择“多个启动项目”，然后针对 **ReadFileUploadNotification** 和 **SimulatedDevice** 应用选择“启动”操作。
 
-2. 按 **F5**。这两个应用程序应该都会启动。你将在其中一个控制台应用中看到上载已完成，同时还会看到另一个控制台应用收到的上载通知消息。可以使用 [Azure 门户预览]或 Visual Studio 服务器资源管理器来检查你的存储帐户中是否出现了上载的文件。
+2. 按 **F5**。这两个应用程序应该都会启动。你将在其中一个控制台应用中看到上载已完成，同时还会看到另一个控制台应用收到的上载通知消息。可以使用 [Azure 门户预览]或 Visual Studio 服务器资源管理器检查存储帐户中是否存在上载的文件。
 
   ![][50]
 
@@ -153,12 +159,10 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Images. -->
+
 
 [50]: ./media/iot-hub-csharp-csharp-file-upload/run-apps1.png
 [1]: ./media/iot-hub-csharp-csharp-file-upload/image-properties.png
@@ -166,7 +170,8 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 <!-- Links -->
 
-[Azure 门户]: https://portal.azure.cn
+
+[Azure 门户预览]: https://portal.azure.cn/
 
 
 [Hadoop]: /documentation/services/hdinsight/
@@ -178,28 +183,15 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [Azure 存储]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
-[Manage IoT hubs through the Azure portal]: /documentation/articles/iot-hub-manage-through-portal/#file-upload
+[lnk-configure-upload]: /documentation/articles/iot-hub-configure-file-upload/
 [Azure IoT - 服务 SDK NuGet 包]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [lnk-free-trial]: /pricing/1rmb-trial/
 
-[IoT 中心概述]: /documentation/articles/iot-hub-what-is-iot-hub/
-[IoT 中心指南]: /documentation/articles/iot-hub-guidance/
-[ IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide/
-[IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide/
-[IoT Hub Supported Devices]: /documentation/articles/iot-hub-supported-devices/
-[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
-[Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
-[Azure IoT 开发人员中心]: /develop/iot
-
-
 [lnk-create-hub]: /documentation/articles/iot-hub-rm-template-powershell/
 [lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
-[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
+[lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 
 <!---HONumber=Mooncake_0307_2016-->

@@ -5,7 +5,7 @@
  documentationCenter=""
  authors="dominicbetts"
  manager="timlt"
- editor=""/>
+ editor=""/>  
 
 <tags
  ms.service="iot-hub"
@@ -15,7 +15,7 @@
  ms.workload="na"
  ms.date="08/25/2016"
  ms.author="dobett"
- wacn.date="10/10/2016"/>  
+ wacn.date="11/07/2016"/>  
 
 
 # Azure IoT 中心是什么？
@@ -33,7 +33,8 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 ![在物联网解决方案中充当云网关的 Azure IoT 中心][img-architecture]
 
-> [AZURE.NOTE] 有关 IoT 体系结构的深入讨论，请参阅 [Azure IoT 参考体系结构][lnk-refarch]。
+
+> [AZURE.NOTE] 有关 IoT 体系结构的深入讨论，请参阅 [Azure IoT Reference Architecture][lnk-refarch]（Azure IoT 参考体系结构）。
 
 ## IoT 设备连接性挑战
 
@@ -106,15 +107,14 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 
 [img-architecture]: ./media/iot-hub-what-is-iot-hub/hubarchitecture.png
 
+
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
-[lnk-connect-device]: /develop/iot/
-[lnk-d2c]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [protocol-gateway]: https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md
 [lnk-service-assisted-pattern]: http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx "服务辅助通信，博客作者 Clemens Vasters"
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
 [lnk-gateway]: /documentation/articles/iot-hub-protocol-gateway/
-[lnk-field-gateway]: /documentation/articles/iot-hub-guidance/#field-gateways
-[lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide/#identityregistry
+[lnk-field-gateway]: /documentation/articles/iot-hub-devguide-endpoints/#field-gateways
+[lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide-identity-registry/
 [lnk-devguide-security]: /documentation/articles/iot-hub-devguide/#security
 [lnk-wns]: https://msdn.microsoft.com/zh-cn/library/windows/apps/mt187203.aspx
 [lnk-google-messaging]: https://developers.google.com/cloud-messaging/

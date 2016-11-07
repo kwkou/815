@@ -36,7 +36,7 @@
 
 ### 创建网关
 
-开发人员必须编写*网关进程*。该程序创建内部基础结构（消息总线）、加载模块，以及进行正常运行所需的所有设置。该 SDK 提供 **Gateway\_Create\_From\_JSON** 函数，允许你从 JSON 文件启动网关。若要使用 **Gateway\_Create\_From\_JSON** 函数，必须将 JSON 文件的路径传递给它，以便指定要加载的模块。
+开发人员必须编写*网关进程*。此程序创建内部基础结构（中转站）、加载模块，以及进行正常运行所需的所有设置。该 SDK 提供 **Gateway\_Create\_From\_JSON** 函数，允许你从 JSON 文件启动网关。若要使用 **Gateway\_Create\_From\_JSON** 函数，必须将 JSON 文件的路径传递给它，以便指定要加载的模块。
 
 你可以在 Hello World 示例的 [main.c][lnk-main-c] 文件中找到网关进程的代码。为了增强可读性，下面的代码段显示的是简化版网关进程代码。该程序创建一个网关，在卸除该网关之前，会等待用户按 **Enter** 键。
 
@@ -65,21 +65,34 @@ JSON 设置文件包含要加载的模块的列表。每个模块必须指定：
 - **module\_path**：包含模块的库的路径。在 Linux 上，这是一个 .so 文件，而在 Windows 上，这是一个 .dll 文件。
 - **args**：模块所需的任何配置信息。
 
-以下示例显示了用于在 Linux 上配置 Hello World 示例的 JSON 设置文件。模块是否需要参数取决于模块的设计。在此示例中，记录器模块使用的参数是输出文件的路径，而 Hello World 模块则不使用任何参数：
+JSON 文件还包含要传递到中转站的模块之间的链接。链接具有两个属性：
+- **源**：来自 `modules` 部分的模块名称，或“*”。
+- **接收器**：来自 `modules` 部分的模块名称
+
+每个链接都会定义消息路由和方向。来自模块 `source` 的消息会传递到模块 `sink`。`source` 可能会设置为“*”，指示来自任何模块的消息都会由 `sink` 接收。
+
+以下示例显示了用于在 Linux 上配置 Hello World 示例的 JSON 设置文件。模块 `hello_world` 生成的每条消息都会被模块 `logger` 使用。模块是否需要参数取决于模块的设计。在此示例中，记录器模块使用的参数是输出文件的路径，而 Hello World 模块则不使用任何参数：
 
 ```
 {
     "modules" :
     [ 
         {
-            "module name" : "logger_hl",
+            "module name" : "logger",
             "module path" : "./modules/logger/liblogger_hl.so",
             "args" : {"filename":"log.txt"}
         },
         {
-            "module name" : "helloworld",
+            "module name" : "hello_world",
             "module path" : "./modules/hello_world/libhello_world_hl.so",
 			"args" : null
+        }
+    ],
+    "links" :
+    [
+        {
+            "source" : "hello_world",
+            "sink" : "logger"
         }
     ]
 }
@@ -87,7 +100,7 @@ JSON 设置文件包含要加载的模块的列表。每个模块必须指定：
 
 ### Hello World 模块消息发布
 
-你可以在[“hello\_world.c”][lnk-helloworld-c]文件中找到“hello world”模块发布消息时使用的代码。以下代码段显示的是修改版，添加了更多的注释，并删除了部分处理错误的代码以增强可读性：
+可以在[“hello\_world.c”][lnk-helloworld-c]文件中找到“hello world”模块发布消息时使用的代码。以下代码段显示的是修改版，添加了更多的注释，并删除了部分处理错误的代码以增强可读性：
 
 ```
 int helloWorldThread(void *param)
@@ -121,8 +134,8 @@ int helloWorldThread(void *param)
         }
         else
         {
-            // Publish the message to the bus
-            (void)MessageBus_Publish(handleData->busHandle, helloWorldMessage);
+            // publish the message to the broker
+            (void)Broker_Publish(handleData->brokerHandle, helloWorldMessage);
             (void)Unlock(handleData->lockHandle);
         }
 
@@ -137,7 +150,7 @@ int helloWorldThread(void *param)
 
 ### Hello World 模块消息处理
 
-Hello World 模块不需处理其他模块发布到消息总线的任何消息。因此，在 Hello World 模块中实施消息回调时，使用的是不执行任何操作的函数。
+Hello World 模块不需处理其他模块发布到中转站的任何消息。因此，在 Hello World 模块中实施消息回调时，使用的是不执行任何操作的函数。
 
 ```
 static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
@@ -148,9 +161,9 @@ static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messag
 
 ### 记录器模块消息发布和处理
 
-记录器模块接收来自消息总线的消息，并将其写入文件中。它不会将消息发布到消息总线。因此，记录器模块的代码不会调用 **MessageBus\_Publish** 函数。
+Logger 模块接收来自中转站的消息，并将其写入文件中。它不发布任何消息。因此，Logger 模块的代码不会调用 **Broker\_Publish** 函数。
 
-[logger.c][lnk-logger-c] 文件中的 **Logger\_Recieve** 函数是消息总线发起的回调，用于将消息传递给记录器模块。以下代码段显示的是修改版，添加了更多的注释，并删除了部分处理错误的代码以增强可读性：
+[logger.c][lnk-logger-c] 文件中的 **Logger\_Recieve** 函数是中转站发起的回调，用于将消息传递给 Logger 模块。以下代码段显示的是修改版，添加了更多的注释，并删除了部分处理错误的代码以增强可读性：
 
 ```
 static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
@@ -173,17 +186,17 @@ static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHan
 
     // Start the construction of the final string to be logged by adding
     // the timestamp
-    STRING_HANDLE jsonToBeAppended = STRING_construct(",{"time":"");
+    STRING_HANDLE jsonToBeAppended = STRING_construct(",{\"time\":\"");
     STRING_concat(jsonToBeAppended, timetemp);
 
     // Add the message properties
-    STRING_concat(jsonToBeAppended, "","properties":"); 
+    STRING_concat(jsonToBeAppended, "\",\"properties\":"); 
     STRING_concat_with_STRING(jsonToBeAppended, jsonProperties);
 
     // Add the content
-    STRING_concat(jsonToBeAppended, ","content":"");
+    STRING_concat(jsonToBeAppended, ",\"content\":\"");
     STRING_concat_with_STRING(jsonToBeAppended, contentAsJSON);
-    STRING_concat(jsonToBeAppended, ""}]");
+    STRING_concat(jsonToBeAppended, "\"}]");
 
     // Write the formatted string
     LOGGER_HANDLE_DATA *handleData = (LOGGER_HANDLE_DATA *)moduleHandle;
@@ -195,10 +208,11 @@ static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHan
 
 若要了解如何使用网关 SDK，请参阅：
 
-- [IoT 网关 SDK – 使用 Linux 通过模拟设备发送设备至云消息][lnk-gateway-simulated]。
-- GitHub 上的 [Azure IoT Gateway SDK（Azure IoT 网关 SDK）][lnk-gateway-sdk]。
+- [IoT 网关 SDK - 使用 Linux 通过模拟设备发送设备到云消息][lnk-gateway-simulated]。
+- GitHub 上的 [Azure IoT Gateway SDK][lnk-gateway-sdk]（Azure IoT 网关 SDK）。
 
 <!-- Links -->
+
 [lnk-main-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/samples/hello_world/src/main.c
 [lnk-helloworld-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/hello_world/src/hello_world.c
 [lnk-logger-c]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/modules/logger/src/logger.c

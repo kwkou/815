@@ -15,7 +15,7 @@
      ms.workload="na"
      ms.date="09/13/2016"
      ms.author="dobett"
-     wacn.date="10/10/2016"/>
+     wacn.date="11/07/2016"/>
 
 # 教程：如何使用 IoT 中心和 Java 发送云到设备的消息
 
@@ -192,7 +192,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 [Get started with IoT Hub]: /documentation/articles/iot-hub-java-java-getstarted/
 [IoT 中心入门]: /documentation/articles/iot-hub-java-java-getstarted/
-[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
+[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide-messaging
 [IoT Hub Developer Guide]: /documentation/articles/iot-hub-devguide/
 [Azure IoT Developer Center]: /develop/iot
 [lnk-free-trial]: /pricing/1rmb-trial/

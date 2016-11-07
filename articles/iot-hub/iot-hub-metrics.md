@@ -9,8 +9,14 @@
 
 <tags
  ms.service="iot-hub"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
  ms.date="08/11/2016"
- wacn.date="09/26/2016"/>
+ ms.author="nberdy"
+ wacn.date="11/07/2016"/>
+
 
 # 诊断度量值简介
 
@@ -53,13 +59,10 @@ IoT 中心提供多个度量值，使你大致了解中心的运行状况及连�
 现在你已大概了解了诊断度量值，接下来请单击以下链接来了解有关管理 IoT 中心的详细信息：
 
 - [操作监视][lnk-monitor]
-- [管理 IoT 中心的访问权限][lnk-itpro]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 
 <!-- Links and images -->

@@ -5,16 +5,23 @@
  documentationCenter=""
  authors="fsautomata"
  manager="timlt"
- editor=""/>
+ editor=""/>  
+
 
 <tags
  ms.service="iot-hub"
- ms.date="03/14/2016"
- wacn.date="08/01/2016"/>
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="09/19/2016"
+ ms.author="elioda"
+ wacn.date="11/07/2016"/>  
+
 
 # 缩放 IoT 中心
 
-Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信息，请参阅 [IoT 中心定价][lnk-pricing]。每个 IoT 中心计价单位还允许许多日常消息。
+Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信息，请参阅 [IoT 中心定价][lnk-pricing]。每个 IoT 中心计价单位允许特定数量的日常消息。
 
 为了正确缩放解决方案，必须考虑 IoT 中心的特定用法。尤其要考虑以下类别的操作所需的高峰吞吐量：
 
@@ -36,8 +43,6 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 | S2 | 每个计价单位最多 16 MB/分钟<br/>（22.8 GB/天/计价单位） | 每个计价单位平均 4167 条消息/分钟<br/>（600 万条消息/天/计价单位） |
 | S3 | 每个计价单位最多 814 MB/分钟<br/>（1144.4 GB/天/计价单位） | 每个计价单位平均 208,333 条消息/分钟<br/>（3 亿条消息/天/计价单位） |
 
-云到设备的消息的性能根据每个设备缩放，每个设备每分钟最多接收 5 条消息。
-
 ## 标识注册表操作吞吐量
 
 由于大多数 IoT 中心标识注册表操作都与设备预配相关，因此不认为这些操作是运行时操作。
@@ -53,22 +58,12 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [lnk-pricing]: /pricing/details/iot-hub/
-[IoT 中心配额和限制]: /documentation/articles/iot-hub-devguide/#throttling
+[IoT 中心配额和限制]: /documentation/articles/iot-hub-devguide-quotas-throttling/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
-[lnk-mqtt]: /documentation/articles/iot-hub-mqtt-support/
-[lnk-devices]: /documentation/articles/iot-hub-tested-configurations/
-[lnk-protocols]: /documentation/articles/iot-hub-protocol-gateway/
-[lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
-[lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
 <!---HONumber=Mooncake_0307_2016-->

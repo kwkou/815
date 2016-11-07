@@ -8,9 +8,14 @@
  editor=""/>
 
 <tags
- ms.service="iot-hub"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
  ms.date="08/11/2016"
- wacn.date="08/29/2016"/>
+ ms.author="nberdy"
+ wacn.date="11/07/2016"/>
+
 
 
 # 操作监视简介
@@ -145,9 +150,7 @@ IoT 中心监视 5 种类别的事件：
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 
 <!-- Links and images -->
