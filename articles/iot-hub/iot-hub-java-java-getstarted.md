@@ -8,9 +8,14 @@
 	editor=""/>
 
 <tags
-     ms.service="iot-hub"
+     ms.devlang="java"
+     ms.topic="hero-article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
      ms.date="08/11/2016"
-     wacn.date="08/29/2016"/>
+     ms.author="dobett"
+     wacn.date="11/07/2016"/>
+
 
 # 适用于 Java 的 Azure IoT 中心入门
 
@@ -477,13 +482,13 @@
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
 [lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
-[lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
+[lnk-devguide-identity]: /documentation/articles/iot-hub-devguide-identity-registry/
 [lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/java-devbox-setup.md
 [lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 
-[lnk-hub-sdks]: /documentation/articles/iot-hub-sdks-summary/
+[lnk-hub-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-portal]: https://portal.azure.cn/
 

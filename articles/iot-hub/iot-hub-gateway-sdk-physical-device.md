@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="chipalost"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
      ms.service="iot-hub"
@@ -13,9 +14,9 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="05/31/2016"
-     ms.author="cstreet"
-     wacn.date="10/10/2016"/>
+     ms.date="08/29/2016"
+     ms.author="andbuc"
+     wacn.date="11/07/2016"/>
 
 
 # IoT 网关 SDK（Beta 版）– 使用 Linux 通过实际设备发送设备至云消息
@@ -42,9 +43,10 @@
 该网关包含以下模块：
 
 - *BLE 模块*，与 BLE 设备相连接，从设备接收温度数据并将命令发送到设备。
-- *记录器模块*，用于生成消息总线诊断。
+- *BLE 云到设备模块*，用于为 *BLE 模块*将来自云的 JSON 消息转换为 BLE 指令。
+- *记录器模块*，用于记录所有网关消息。
 - *标识映射模块*，用于在 BLE 设备 MAC 地址和 Azure IoT 中心设备标识之间进行转换。
-- *IoT 中心 HTTP 模块*，用于将遥测数据上载到 IoT 中心并接收来自 IoT 中心的设备命令。
+- *IoT 中心模块*，用于将遥测数据上传到 IoT 中心并接收来自 IoT 中心的设备命令。
 - *BLE 打印机模块*，用于解释 BLE 设备的遥测，并将格式化数据输出到控制台，以启用故障排除和调试。
 
 ### 数据如何流经网关
@@ -56,20 +58,22 @@
 通过以下步骤将遥测项从 BLE 设备传输到 IoT 中心：
 
 1. BLE 设备生成温度样本并将其通过蓝牙发送到网关的 BLE 模块。
-2. BLE 模块接收该样本，并将其与设备的 MAC 地址一起发布到消息总线。
-3. 标识映射模块从消息总线提取此消息，并使用内部表将设备的 MAC 地址转换为 IoT 中心设备标识（设备 ID 和设备密钥）。然后，它将新消息（包含温度样本数据、设备的 MAC 地址、设备 ID 和设备密钥）发布到消息总线。
-4. IoT 中心 HTTP 模块从消息总线接收此新消息（由标识映射模块生成），并将其发布到 IoT 中心。
-5. 记录器模块将消息总线中的所有消息记录到磁盘文件中。
+2. BLE 模块接收该样本，并将其与设备的 MAC 地址一起发布到中转站。
+3. 标识映射模块提取此消息，并使用内部表将设备的 MAC 地址转换为 IoT 中心设备标识（设备 ID 和设备密钥）。然后，它会发布新消息（包含温度样本数据、设备的 MAC 地址、设备 ID 和设备密钥）。
+4. IoT 中心模块接收此新消息（由标识映射模块生成），并将其发布到 IoT 中心。
+5. 记录器模块将中转站中的所有消息记录到磁盘文件中。
 
 以下块图说明了设备命令数据流管道：
 
 ![](./media/iot-hub-gateway-sdk-physical-device/gateway_ble_command_data_flow.png)
 
-1. IoT 中心 HTTP 模块会定期在 IoT 中心中轮询新的命令消息。
-2. 当 IoT 中心 HTTP 模块收到新的命令消息时，它会将其发布到消息总线。
-3. 标识映射模块从消息总线提取该命令消息，并使用内部表将 IoT 中心设备 ID 转换为设备 MAC 地址。然后，它将新消息（在消息的属性映射中包括目标设备的 MAC 地址）发布到消息总线。
-4. BLE 模块通过 BLE 设备进行通信提取该消息并执行 I/O 指令。
-5. 记录器模块将消息总线中的所有消息记录到磁盘文件中。
+
+1. IoT 中心模块会定期在 IoT 中心中轮询新的命令消息。
+2. 当 IoT 中心模块收到新的命令消息时，它会将其发布到中转站。
+3. 标识映射模块提取该命令消息，并使用内部表将 IoT 中心设备 ID 转换为设备 MAC 地址。然后，它发布新消息（在消息的属性映射中包括目标设备的 MAC 地址）。
+4. BLE 云到设备模块提取此消息，并为 BLE 模块将其转换为正确 BLE 指令。然后它发布新消息。
+5. BLE 模块通过 BLE 设备进行通信提取该消息并执行 I/O 指令。
+6. 记录器模块将中转站中的所有消息记录到磁盘文件中。
 
 ## 准备硬件
 
@@ -79,10 +83,10 @@
 
 在开始之前，你应确保可以将 Edison 设备连接到无线网络。若要设置 Edison 设备，需要将其连接到主计算机。Intel 针对以下操作系统提供了入门指南：
 
-- [Get Started with the Intel Edison Development Board on Windows 64-bit（Windows 64 位上的 Intel Edison 开发板入门）][lnk-setup-win64]。
-- [Get Started with the Intel Edison Development Board on Windows 32-bit（Windows 32 位上的 Intel Edison 开发板入门）][lnk-setup-win32]。
-- [Get Started with the Intel Edison Development Board on Mac OS X（Mac OS X 上的 Intel Edison 开发板入门）][lnk-setup-osx]。
-- [Getting Started with the Intel® Edison Board on Linux（Linux 上的 Intel® Edison 板入门）][lnk-setup-linux]。
+- [Get Started with the Intel Edison Development Board on Windows 64-bit][lnk-setup-win64]（Windows 64 位上的 Intel Edison 开发板入门）。
+- [Get Started with the Intel Edison Development Board on Windows 32-bit][lnk-setup-win32]（Windows 32 位上的 Intel Edison 开发板入门）。
+- [Get Started with the Intel Edison Development Board on Mac OS X][lnk-setup-osx]（Mac OS X 上的 Intel Edison 开发板入门）。
+- [Getting Started with the Intel® Edison Board on Linux][lnk-setup-linux]（Linux 上的 Intel® Edison 板入门）。
 
 若要设置 Edison 设备并熟悉它，应完成所有这些“入门”文章中除最后一步外的所有步骤，最后一步“选择 IDE”不是当前教程所必需的。在 Edison 设置过程结束时，你应已：
 
@@ -285,17 +289,18 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 }
 ```
 
-#### IoT 中心 HTTP 模块
+#### IoT 中心模块
 
 添加 IoT 中心的名称。后缀值通常是 **azure-devices.cn**：
 
 ```json
 {
   "module name": "IoTHub",
-  "module path": "/home/root/azure-iot-gateway-sdk/build/modules/iothubhttp/libiothubhttp_hl.so",
+  "module path": "/home/root/azure-iot-gateway-sdk/build/modules/iothub/libiothub_hl.so",
   "args": {
     "IoTHubName": "<<Azure IoT Hub Name>>",
-    "IoTHubSuffix": "<<Azure IoT Hub Suffix>>"
+    "IoTHubSuffix": "<<Azure IoT Hub Suffix>>",
+    "Transport": "HTTP"
   }
 }
 ```
@@ -326,6 +331,26 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
     "module path": "/home/root/azure-iot-gateway-sdk/build/samples/ble_gateway_hl/ble_printer/libble_printer.so",
     "args": null
 }
+```
+
+#### 路由配置
+
+以下配置可确保以下各项：
+- **Logger** 模块接收并记录所有消息。
+- **SensorTag** 模块将消息发送到 **mapping** 和 **BLE Printer** 模块。
+- **mapping** 模块将消息发送到 **IoTHub** 模块以向上发送到 IoT 中心。
+- **IoTHub** 模块将消息发送回 **mapping** 模块。
+- **mapping** 模块将消息发送回 **SensorTag** 模块。
+
+```json
+"links" : [
+    {"source" : "*", "sink" : "Logger" },
+    {"source" : "SensorTag", "sink" : "mapping" },
+    {"source" : "SensorTag", "sink" : "BLE Printer" },
+    {"source" : "mapping", "sink" : "IoTHub" },
+    {"source" : "IoTHub", "sink" : "mapping" },
+    {"source" : "mapping", "sink" : "SensorTag" }
+  ]
 ```
 
 若要运行示例，需运行 **ble\_gateway\_hl** 二进制文件，将路径传递给 JSON 配置文件。如果使用了 **gateway\_sample.json** 文件，则执行如下命令：
@@ -400,34 +425,25 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 [Azu
 
 如果想要深入了解网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
 
-- [管理网关设备][lnk-manage-devices]
-- [Azure IoT 网关 SDK][lnk-gateway-sdk]
+- [Azure IoT 网关 SDK][lnk-sdk]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Links -->
+
 [lnk-ble-samplecode]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/samples/ble_gateway_hl
-[lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
-[lnk-create-hub]: /documentation/articles/iot-hub-manage-through-portal/
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-explorer-tools]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md
-[lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 [lnk-setup-win64]: https://software.intel.com/get-started-edison-windows
 [lnk-setup-win32]: https://software.intel.com/get-started-edison-windows-32
 [lnk-setup-osx]: https://software.intel.com/get-started-edison-osx
 [lnk-setup-linux]: https://software.intel.com/get-started-edison-linux
 [lnk-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 
-[lnk-manage-devices]: /documentation/articles/iot-hub-gateway-sdk-device-management/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
+[lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
 <!---HONumber=Mooncake_0725_2016-->

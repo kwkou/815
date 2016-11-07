@@ -9,8 +9,13 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="07/04/2016"
-     wacn.date="08/08/2016"/>
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="09/23/2016"
+     ms.author="dobett"
+     wacn.date="11/07/2016"/>
 
 # 教程：如何使用 IoT 中心和 Node.js 发送云到设备的消息
 
@@ -24,26 +29,26 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 - 通过 IoT 中心从应用程序云后端将云到设备的消息发送到单个设备。
 - 在设备上接收云到设备的消息。
-- 从应用程序云后端请求确认收到从 IoT 中心发送到设备的消息（反馈）。
+- 从应用程序云后端请求确认收到从 IoT 中心发送到设备的消息（*反馈*）。
 
 可以在 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）中找到有关云到设备的消息的详细信息。
 
 在本教程最后，你将运行两个 Node.js 控制台应用程序：
 
-* **SimulatedDevice**，这是在 [Get started with IoT Hub]（IoT 中心入门）中创建的应用的修改版本，可连接到 IoT 中心并接收云到设备的消息。
+* **SimulatedDevice**，这是在 [IoT 中心入门]中创建的应用的修改版本，可连接到 IoT 中心并接收云到设备的消息。
 * **SendCloudToDeviceMessage**，它将云到设备的消息通过 IoT 中心发送到模拟设备，然后接收 IoT 中心的传送确认。
 
 > [AZURE.NOTE] IoT 中心通过 Azure IoT 设备 SDK 对许多设备平台和语言（包括 C、Java 和 Javascript）提供 SDK 支持。有关如何将设备连接到本教程中的代码（通常是连接到 Azure IoT 中心）的逐步说明，请参阅 [Azure IoT Developer Center]（Azure IoT 开发人员中心）。
 
-若要完成本教程，你需要以下各项：
+若要完成本教程，您需要以下各项：
 
-+ Node.js 版本 0.12.x 或更高版本。<br/>[Prepare your development environment][lnk-dev-setup]（准备开发环境）介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
++ Node.js 版本 0.10.x 或更高版本。
 
-+ 有效的 Azure 帐户。（如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure Trial][lnk-free-trial]（Azure 试用）。）
++ 有效的 Azure 帐户。（如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。）
 
 ## 在模拟设备上接收消息
 
-在本部分中，你将修改在 [Get started with IoT Hub]（IoT 中心入门）中创建的模拟设备应用程序，以接收来自 IoT 中心的云到设备消息。
+在本部分中，会修改 [IoT 中心入门]中创建的模拟设备应用程序，接收来自IoT 中心的云到设备消息。
 
 1. 使用文本编辑器打开 SimulatedDevice.js 文件。
 
@@ -71,13 +76,13 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
     };
     ```
 
-    > [AZURE.NOTE] 如果使用 HTTP/1 而不是 AMQP 作为传输，**DeviceClient** 实例不会经常检查 IoT 中心发来的消息（时间间隔小于 25 分钟）。有关 AMQP 和 HTTP/1 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）。
+    > [AZURE.NOTE] 如果使用 HTTP/1 而不是 AMQP 或 MQTT 作为传输，**DeviceClient** 实例不会经常检查 IoT 中心发来的消息（时间间隔小于 25 分钟）。有关 AMQP、MQTT 和 HTTP/1 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub Developer Guide - C2D]。
 
-## 从应用程序后端发送云到设备的消息
+## 发送云到设备的消息
 
-在本部分中，你将创建一个 Node.js 控制台应用，用于将云到设备的消息发送到模拟设备应用。需要使用你在 [Get started with IoT Hub]（IoT 中心入门）教程中添加的设备的 ID，以及可在 [Azure 门户]中找到的 IoT 中心连接字符串。
+在本部分中，你将创建一个 Node.js 控制台应用，用于将云到设备的消息发送到模拟设备应用。需要 [IoT 中心入门]教程中所添加的设备 ID。还需要 IoT 中心的连接字符串（位于 [Azure 门户预览]）。
 
-1. 新建名为 **sendcloudtodevicemessage** 的空文件夹。在命令提示符下的 **sendcloudtodevicemessage** 文件夹中，使用以下命令创建新的 package.json 文件。接受所有默认值：
+1. 创建名为 **sendcloudtodevicemessage** 的空文件夹。在命令提示符下的 **sendcloudtodevicemessage** 文件夹中，使用以下命令创建 package.json 文件。接受所有默认值：
 
     ```
     npm init
@@ -100,7 +105,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
     var Message = require('azure-iot-common').Message;
     ```
 
-5. 将以下代码添加到 **SendCloudToDeviceMessage.js** 文件，使用 [Get started with IoT Hub]（IoT 中心入门）教程中创建的 IoT 中心连接字符串替换连接字符串占位符值，使用 [Get started with IoT Hub]（IoT 中心入门）教程中添加的设备的 ID 替换目标设备占位符：
+5. 将以下代码添加到 **SendCloudToDeviceMessage.js** 文件。将连接字符串占位符值替换为在 [IoT 中心入门]教程中为 IoT 中心创建的连接字符串。将目标设备占位符替换为在 [IoT 中心入门]教程中所添加的设备 id：
 
     ```
     var connectionString = '{iot hub connection string}';
@@ -161,7 +166,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
     node SimulatedDevice.js 
     ```
 
-    ![][img-simulated-device]
+    ![运行模拟设备应用][img-simulated-device]  
 
 2. 在 **sendcloudtodevicemessage** 文件夹中的命令提示符下，运行以下命令以发送云到设备的消息并等待确认反馈：
 
@@ -169,7 +174,8 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
     node SendCloudToDeviceMessage.js 
     ```
 
-    ![][img-send-command]
+    ![运行应用以发送 c2d 命令][img-send-command]  
+
 
     > [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
 
@@ -188,18 +194,14 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 <!-- Links -->
 
 [Get started with IoT Hub]: /documentation/articles/iot-hub-node-node-getstarted/
-[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
-[Process Device-to-Cloud messages]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
-[Uploading files from devices]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
-[IoT Hub Overview]: /documentation/articles/iot-hub-what-is-iot-hub/
-[IoT Hub Guidance]: /documentation/articles/iot-hub-guidance/
+[IoT 中心入门]: /documentation/articles/iot-hub-node-node-getstarted/
+[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide-messaging/
 [IoT Hub Developer Guide]: /documentation/articles/iot-hub-devguide/
-[Supported device platforms and languages]: /documentation/articles/iot-hub-supported-devices/
 [Azure IoT Developer Center]: /develop/iot/
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
-[Azure 门户]: https://portal.azure.cn
+[Azure 门户预览]: https://portal.azure.cn
 [Azure IoT Suite]: https://azure.microsoft.com/documentation/suites/iot-suite/
 
 <!---HONumber=Mooncake_0801_2016-->

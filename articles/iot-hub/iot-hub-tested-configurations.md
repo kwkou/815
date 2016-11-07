@@ -13,9 +13,9 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="09/16/2016"
+     ms.date="10/04/2016"
      ms.author="hegate"
-     wacn.date="10/10/2016"/>
+     wacn.date="11/07/2016"/>
 
 # OS 平台和硬件与设备 SDK 的兼容性
 
@@ -145,9 +145,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 
 [lnk-iot-suite]: /documentation/services/iot-suite/

@@ -15,7 +15,7 @@
      ms.workload="na"
      ms.date="09/06/2016"
      ms.author="obloch"
-     wacn.date="10/10/2016"/>
+     wacn.date="11/07/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 
@@ -674,12 +674,9 @@ serializer_deinit();
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
-[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
+[lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/

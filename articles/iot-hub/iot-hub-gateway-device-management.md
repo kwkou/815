@@ -9,8 +9,14 @@
 
 <tags
  ms.service="iot-hub"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
  ms.date="04/29/2016"
- wacn.date="08/01/2016"/>
+ ms.author="cstreet"
+ wacn.date="11/07/2016"/>
+
  
 # 在 IoT 网关后启用托管设备
 
@@ -60,10 +66,8 @@
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
 - [开发人员指南][lnk-devguide]
-- [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+- [使用网关 SDK 模拟设备][lnk-gateway-simulated]
 
 <!-- Images and links -->
 [1]: ./media/iot-hub-gateway-device-management/overview.png

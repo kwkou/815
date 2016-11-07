@@ -1,120 +1,135 @@
 <properties
- pageTitle="设备管理概述 | Azure"
- description="Azure IoT 中心设备管理概述：设备克隆、设备查询、设备作业"
+ pageTitle="IoT 中心设备管理概述 | Azure"
+ description="本文概述了 Azure IoT 中心的设备管理：企业设备生命周期、重新启动、恢复出厂设置、固件更新、配置、设备克隆、查询、作业"
  services="iot-hub"
  documentationCenter=""
- authors="juanjperez"
+ authors="bzurcher"
  manager="timlt"
  editor=""/>
 
 <tags
  ms.service="iot-hub"
- ms.date="04/29/2016"
- wacn.date="08/01/2016"/>
+ ms.devlang="na"
+ ms.topic="get-started-article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="10/03/2016"
+ ms.author="bzurcher"
+ wacn.date="11/07/2016"/>
 
 # IoT 中心设备管理概述（预览版）
 
-Azure IoT 中心设备管理可实现标准的 IoT 设备管理，以便远程管理、配置以及更新设备。
+## 介绍
 
-Azure IoT 中的设备管理主要包括三个概念：
+Azure IoT 中心提供功能和可扩展性模型，使设备和后端开发人员可以构建功能强大的 IoT 设备管理解决方案。IoT 设备的范围从受约束的传感器和单一用途微控制器到功能强大的路由设备组通信的网关。此外，在不同行业中，IoT 操作员的用例和要求也显著不同。尽管有此不同，但 Azure IoT 中心设备管理提供了功能、模式和代码库，以满足不同设备和最终用户的需要。
 
-1.  **设备克隆**：物理设备在 IoT 中心的表示形式。
+创建成功的企业 IoT 解决方案的一个重要部分，是提供操作员如何处理其设备集合的日常管理的策略。IoT 操作员需要简单且可靠的工具和应用程序，使他们能够重点处理其工作的更具战略意义方面。本文将提供：
 
-2.  **设备查询**：可查找设备克隆并生成多个理解设备克隆的聚合。例如，可运行查询来查找固件版本为 1.0 的所有设备克隆。
+- Azure IoT 中心设备管理方法的简要概述。
+- 常见设备管理原则的说明。
+- 设备生命周期的说明。
+- 常见设备管理模式的概述。
 
-3.  **设备作业**：对一个或多个物理设备执行的操作，如固件更新、重启以及恢复出厂设置。
+## IoT 设备管理原则
 
-## 设备克隆
+IoT 带来了一系列独特的设备管理难题，每个企业级解决方案必须满足以下原则：
 
-设备克隆是物理设备在 Azure IoT 中的表示形式。**Microsoft.Azure.Devices.Device** 对象用于表示设备克隆。
+![Azure IoT 中心设备管理原则图形][img-dm_principles]  
 
-![][img-twin]
 
-设备克隆具有以下组件：
+- **规模和自动化**：IoT 解决方案需要可以自动执行日常任务的简单工具，使相对数量少的操作人员可以管理数百万台设备。每天，操作员希望远程批量处理设备操作，并且仅在出现需要直接干预的问题时才收到通知。
 
-1.  **设备字段**：设备字段是预定义的属性，用于 IoT 中心消息传递和设备管理。设备字段可帮助 IoT 中心标识和连接物理设备。设备字段不会同步到设备，只存储在设备克隆中。设备字段包括设备 ID 和身份验证信息。
+- **开放性和兼容性**：IoT 设备生态系统是截然不同的。管理工具必须进行定制以适应多种设备类、平台和协议。操作员必须能够支持许多类型的设备，从最受限制的嵌入式单进程芯片到功能强大且全功能的计算机。
 
-2.  **设备属性**：设备属性是预定义的属性字典，用于描述物理设备。物理设备是每个设备属性的主机，是每个对应值的权威存储位置。这些属性的最终一致表示存储在云中的设备克隆中。设备属性的一些示例包括固件版本、电池剩余电量和制造商名称。
+- **上下文感知**：IoT 环境是动态的、不断变化的。服务可靠性极为重要。设备管理操作必须考虑到 SLA 维护时段、网络和电源状态、正在使用情况和设备地理位置，以确保维护停机时间不会影响关键的业务操作或创造危险情况。
 
-3.  **服务属性**：服务属性是开发人员添加到服务属性字典中的 **&lt;key,value&gt;** 对。这些属性扩展了设备克隆的数据模型，可让你更好地确定设备的特征。服务属性不会同步到设备，只存储在云中的设备克隆中。服务属性的其中一个示例是 **&lt;NextServiceDate, 11/12/2017&gt;**，该服务属性可用于按服务的下个日期查找设备。
+- **为许多角色提供服务**：支持 IoT 操作角色的独特工作流和进程至关重要。操作人员必须与给定约束的内部 IT 部门协调工作。他们还必须找到可持续方法将实时设备操作信息传递给主管和其他业务管理角色。
 
-4.  **标记**：标记是服务属性的子集，是任意字符串而非字典属性。标记可用于批注设备克隆或对设备分组。标记不会同步到设备，只存储在设备克隆中。例如，如果设备克隆表示物理卡车，则可为卡车中的每种货物添加标记，如**苹果**、**橘子**和**香蕉**。
+## IoT 设备生命周期
 
-## 设备查询
+有一组所有企业 IoT 项目通用的常规设备管理阶段。在 Azure IoT 中，IoT 设备生命周期有五个阶段：
 
-在上一部分，你已经学习了设备克隆的不同组件。接下来，将介绍如何基于设备属性、服务属性或标记在 IoT 中心设备注册表中查找设备克隆。其中一个示例是使用查询来查找需要更新的设备。可查询具有特定固定版本的所有设备，并将结果馈送到特定的操作中（在 IoT 中心称为设备作业，将在下一部分解释）。
+![Azure IoT 设备生命周期的五个阶段：计划、预配、配置、监视、停用][img-device_lifecycle]  
 
-可使用标记和属性进行查询：
 
--   若要使用标记查询设备克隆，请传递字符串数组，查询将返回一组标记了所传递全部字符串的设备。
+在上述五个阶段的每个阶段中，都有几项应满足以提供完整解决方案的设备操作员要求：
 
--   若要使用服务属性或设备属性查询设备，请使用 JSON 查询表达式。下面的示例演示如何使用设备属性（键 **FirmwareVersion**，值 **1.0**）查询所有设备。可以看到属性的 **type** 为 **device**，表示基于设备属性而非服务属性进行查询：
+- **计划**：使操作员能够创建可让他们轻松且精确地查询的设备元数据方案，并针对一组设备进行批量管理操作。可以使用设备克隆以标记和属性的形式存储此设备元数据。
 
-  ```
-  {                           
-      "filter": {                  
-        "property": {                
-          "name": "FirmwareVersion",   
-          "type": "device"             
-        },                           
-        "value": "1.0",              
-        "comparisonOperator": "eq",  
-        "type": "comparison"         
-      },                           
-      "project": null,             
-      "aggregate": null,           
-      "sort": null                 
-  }
-  ```
+    *其他阅读材料* ：[设备克隆入门][lnk-twins-getstarted]、[了解设备克隆][lnk-twins-devguide]、[如何使用克隆属性][lnk-twin-properties]
 
-## 设备作业
+- **预配**：安全地为 IoT 中心预配新设备，使操作员立即发现设备功能。使用 IoT 中心设备注册表创建灵活的设备标识和凭据，并使用作业成批执行此操作。通过设备克隆中的设备属性构建设备来报告其功能和情况。
 
-设备管理的下一个概念是设备作业，设备作业可协调多台设备上的多步业务流程。
+    *其他阅读材料* ：[管理设备标识][lnk-identity-registry]、[批量管理设备标识][lnk-bulk-identity]、[如何使用克隆属性][lnk-twin-properties]
 
-Azure IoT 中心设备管理当前提供 6 种类型的设备作业（如果客户需要，将增加额外的作业）：
+- **配置**：在保持正常运行和安全性的同时便于对设备进行批量配置更改和固件更新。使用所需属性或通过直接方法和广播作业成批执行这些设备管理操作。
 
-- **固件更新**：更新物理设备上的固件（或 OS 映像）。
-- **重启**：重启物理设备。
-- **恢复出厂设置**：将物理设备上的固件（或 OS 映像）还原为设备上存储的出厂提供的备份映像。
-- **配置更新**：配置在物理设备上运行的 IoT 中心客户端代理。
-- **读取设备属性**：获取物理设备上的最新设备属性值。
-- **写入设备属性**：更改物理设备上的设备属性。
+    *其他阅读材料* ：[使用直接方法][lnk-c2d-methods]、[对设备调用直接方法][lnk-methods-devguide]、[如何使用克隆属性][lnk-twin-properties]、[计划和广播作业][lnk-jobs]、[在多台设备上计划作业][lnk-jobs-devguide]
 
-有关如何使用上述每个作业的详细信息，请参阅[面向 C# 和 node.js 的 API 文档][lnk-apidocs]。
+- **监视**：监视总体设备集合运行状况、正在进行的操作的状态并针对可能需要操作员注意的问题向操作员发出警报。应用设备克隆以允许设备报告实时操作情况和更新操作的状态。使用设备克隆查询生成显示最直接问题的功能强大的仪表板报告。
 
-一个作业可以在多台设备上运行。启动一个作业时，将为所有这些设备创建相关的子作业。一个子作业在一台设备上运行。每个子作业都有一个指针指向其父作业。父作业只是子作业的容器，它不实现任何逻辑来区分设备类型（如，更新 Intel Edison 与更新 Raspberry Pi）。下图说明了父作业、子作业以及相关物理设备的关系。
+    *其他阅读材料* ：[如何使用克隆属性][lnk-twin-properties]、[克隆和作业的查询语言][lnk-query-language]
 
-![][img-jobs]
+- **停用**：在发生故障、升级周期后，或在服务生存期结束时更换或停用设备。使用设备克隆来维护设备信息（如果正在更换物理设备），或者将设备信息存档（如果正在停用设备）。使用 IoT 中心设备注册表来安全地撤销设备标识和凭据。
 
-可查询作业历史记录以了解已启动的作业的状态。有关示例查询，请参阅[我们的查询库][lnk-query-samples]。
+    *其他阅读材料* ：[如何使用克隆属性][lnk-twin-properties]、[管理设备标识][lnk-identity-registry]
 
-## 设备实现
+## IoT 中心设备管理模式
 
-现在，我们已经介绍了服务端概念，接下来我们将讨论如何创建托管物理设备。Azure IoT 中心 DM 客户端库可让你通过 Azure IoT 中心管理 IoT 设备。“管理”包括重启、恢复出厂设置以及更新固件等操作。我们当前提供独立于平台的 C 库，但很快就会增加对其他语言的支持。
+IoT 中心启用以下设备管理模式集。[设备管理教程][lnk-get-started]更详细地介绍如何扩展这些模式以适合具体方案，以及如何基于这些核心模板设计新模式。
 
-DM 客户端库在设备管理方面主要负责以下两项任务：
+- **重新启动** - 后端应用程序通过直接方法通知设备它已启动重新启动。设备使用设备克隆报告属性来更新设备的重新启动状态。
 
-- 同步物理设备上的属性与 IoT 中心中其对应的设备克隆
-- 编排 IoT 中心发送到设备的设备作业
+    ![Azure IoT 中心设备管理重新启动模式图形][img-reboot_pattern]  
 
+
+- **恢复出厂设置** - 后端应用程序通过直接方法通知设备它已启动恢复出厂设置。设备使用设备克隆报告属性来更新设备的恢复出厂设置状态。
+
+    ![Azure IoT 中心设备管理恢复出厂设置模式图形][img-facreset_pattern]  
+
+
+- **配置** - 后端应用程序使用设备克隆所需属性来配置设备上运行的软件。设备使用设备克隆报告属性来更新设备的配置状态。
+
+    ![Azure IoT 中心设备管理配置模式图形][img-config_pattern]  
+
+
+- **固件更新** - 后端应用程序通过直接方法通知设备它已启动固件更新。设备将启动一个多步骤过程，用于下载固件包、应用固件包，最后重新连接到 IoT 中心服务。在整个多步骤过程中，设备使用设备克隆报告属性来更新设备的进度和状态。
+
+    ![Azure IoT 中心设备管理固件更新模式图形][img-fwupdate_pattern]  
+
+
+- **报告进度和状态** - 应用程序后端在一组设备上运行设备克隆查询，以报告设备上运行的操作的状态和进度。
+
+    ![Azure IoT 中心设备管理报告进度和状态模式图形][img-report_progress_pattern]  
 
 
 ## 后续步骤
 
-你可以使用 IoT 设备 SDK 在各种设备硬件平台和操作系统上实现客户端应用程序。IoT 设备 SDK 包含库，可协助将遥测数据发送到 IoT 中心，并接收云到设备的命令。使用 SDK 时，可从数个网络协议中进行选择，以便与 IoT 中心通信。若要了解详细信息，请参阅[有关设备 SDK 的信息][lnk-device-sdks]。
+可以使用 Azure IoT 中心设备管理提供的功能、模式和代码库，在每个设备生命周期阶段创建满足企业 IoT 操作员需求的 IoT 应用程序。
 
 若要继续了解 Azure IoT 中心设备管理功能，请参阅 [Azure IoT 中心设备管理入门][lnk-get-started]教程。
 
 <!-- Images and links -->
-[img-twin]: ./media/iot-hub-device-management-overview/image1.png
-[img-jobs]: ./media/iot-hub-device-management-overview/image2.png
-[img-client]: ./media/iot-hub-device-management-overview/image3.png
 
-[lnk-lwm2m]: http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0
+[img-dm_principles]: ./media/iot-hub-device-management-overview/image4.png
+[img-device_lifecycle]: ./media/iot-hub-device-management-overview/image5.png
+[img-config_pattern]: ./media/iot-hub-device-management-overview/configuration-pattern.png
+[img-facreset_pattern]: ./media/iot-hub-device-management-overview/facreset-pattern.png
+[img-fwupdate_pattern]: ./media/iot-hub-device-management-overview/fwupdate-pattern.png
+[img-reboot_pattern]: ./media/iot-hub-device-management-overview/reboot-pattern.png
+[img-report_progress_pattern]: ./media/iot-hub-device-management-overview/report-progress-pattern.png
+
+[lnk-twins-devguide]: /documentation/articles/iot-hub-devguide-device-twins/
 [lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
-
-[lnk-apidocs]: http://azure.github.io/azure-iot-sdks/
-[lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
-[lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
+[lnk-twins-getstarted]: /documentation/articles/iot-hub-node-node-twin-getstarted/
+[lnk-twin-properties]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/
+[lnk-hub-getstarted]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
+[lnk-identity-registry]: /documentation/articles/iot-hub-devguide-identity-registry/
+[lnk-bulk-identity]: /documentation/articles/iot-hub-bulk-identity-mgmt/
+[lnk-query-language]: /documentation/articles/iot-hub-devguide-query-language/
+[lnk-c2d-methods]: /documentation/articles/iot-hub-c2d-methods/
+[lnk-methods-devguide]: /documentation/articles/iot-hub-devguide-direct-methods/
+[lnk-jobs]: /documentation/articles/iot-hub-schedule-jobs/
+[lnk-jobs-devguide]: /documentation/articles/iot-hub-devguide-jobs/
 
 <!---HONumber=Mooncake_0523_2016-->

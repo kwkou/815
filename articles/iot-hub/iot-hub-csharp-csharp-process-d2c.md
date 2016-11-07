@@ -13,9 +13,9 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="07/19/2016"
+     ms.date="10/05/2016"
      ms.author="dobett"
-     wacn.date="10/10/2016"/>
+     wacn.date="11/07/2016"/>
 
 # 教程：如何使用 .Net 处理 IoT 中心设备到云的消息
 
@@ -422,7 +422,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 [Service Bus Queue]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
 [服务总线队列]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
 
-[Azure IoT 中心开发人员指南 - 设备到云]: /documentation/articles/iot-hub-devguide/#d2c
+[Azure IoT 中心开发人员指南 - 设备到云]: /documentation/articles/iot-hub-devguide-messaging/
 
 [Azure 存储]: /documentation/services/storage/
 [Azure 服务总线]: /documentation/services/service-bus/

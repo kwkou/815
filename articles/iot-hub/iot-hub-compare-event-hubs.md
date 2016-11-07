@@ -9,8 +9,14 @@
 
 <tags
  ms.service="iot-hub"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
  ms.date="06/06/2016"
- wacn.date="08/08/2016"/>
+ ms.author="elioda"
+ wacn.date="11/07/2016"/>
+
 
 # IoT 中心与事件中心的比较
 
@@ -39,12 +45,10 @@ Azure IoT 中心的主要用例之一是从设备收集遥测数据。因此，�
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [Azure 事件中心]: /documentation/articles/event-hubs-what-is-event-hubs/
-[IoT 中心开发人员指南的“安全性”部分]: /documentation/articles/iot-hub-devguide/#security
+[IoT 中心开发人员指南的“安全性”部分]: /documentation/articles/iot-hub-devguide-security/
 [Event Hub - security]: /documentation/articles/event-hubs-authentication-and-security-model-overview/
 [Event Hub publisher policies]: /documentation/articles/event-hubs-overview/#common-publisher-tasks
 [Azure 服务总线配额]: /documentation/articles/service-bus-quotas/

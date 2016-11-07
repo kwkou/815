@@ -5,18 +5,32 @@
  documentationCenter=""
  authors="dominicbetts"
  manager="timlt"
- editor=""/>
+ editor=""/>  
+
 
 <tags
  ms.service="iot-hub"
- ms.date="07/19/2016"
- wacn.date="08/29/2016"/>
+ ms.devlang="na"
+ ms.topic="get-started-article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="10/05/2016"
+ ms.author="dobett"
+ wacn.date="11/07/2016"/>  
+
 
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
 ## 后续步骤
 
-Azure IoT 中心是一项 Azure 服务，可在一个应用程序后端和数百万个设备之间实现安全可靠的双向通信。它可让应用程序后端接收设备的大规模遥测数据，将该数据路由到流事件处理器，从设备接收文件上载，而且还能对特定设备发送云到设备的命令。你可以使用 IoT 中心来实现自己的解决方案后端。此外，IoT 中心还包含设备标识注册表，可供用来设置设备、其安全凭据和其连接到中心的权限。若要了解有关 IoT 中心的详细信息，请参阅 [IoT 中心是什么？][lnk-iot-hub]。
+Azure IoT 中心是一项 Azure 服务，可在一个应用程序后端和数百万个设备之间实现安全可靠的双向通信。它使应用程序后端可以：
+
+- 从你的设备大规模接收遥测。
+- 将数据从你的设备路由到流事件处理器。
+- 从设备接收文件上传。
+- 将云到设备命令发送到特定设备。
+
+你可以使用 IoT 中心来实现自己的解决方案后端。此外，IoT 中心还包含设备标识注册表，可供用来设置设备、其安全凭据和其连接到中心的权限。若要了解有关 IoT 中心的详细信息，请参阅 [IoT 中心是什么？][lnk-iot-hub]。
 
 若要了解 Azure IoT 中心如何实现标准的 IoT 设备管理，以便远程管理、配置和更新设备，请参阅 [Azure IoT 中心设备管理概述][lnk-device-management]。
 
@@ -24,6 +38,7 @@ Azure IoT 中心是一项 Azure 服务，可在一个应用程序后端和数百
 
 若要开始编写一些代码并运行一些示例，请参阅 [IoT 中心入门][lnk-getstarted]教程。
 
+你也可能会对 [Azure IoT 套件][lnk-iot-suite]有兴趣，这是一套预配置的解决方案。IoT 套件可让你快速入门和扩展 IoT 项目，以应对常见的 IoT 案例，例如远程监视、资产管理和预测性维护。
 
 [lnk-getstarted]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md

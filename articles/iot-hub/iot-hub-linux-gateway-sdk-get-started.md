@@ -1,16 +1,23 @@
 <properties
 	pageTitle="IoT 中心网关 SDK 入门 | Azure"
-	description="使用 Linux 的 Azure IoT 中心网关 SDK 演练，说明使用 Azure IoT 中心网关 SDK 时应理解的关键概念。"
+	description="本 Azure IoT 中心网关 SDK 演练使用 Linux 说明使用 Azure IoT 中心网关 SDK 时应理解的关键概念。"
 	services="iot-hub"
 	documentationCenter=""
 	authors="chipalost"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
      ms.service="iot-hub"
-     ms.date="04/20/2016"
-     wacn.date="05/30/2016"/>
+     ms.devlang="cpp"
+     ms.topic="get-started-article"
+     ms.tgt_pltfrm="na"
+     ms.workload="na"
+     ms.date="08/25/2016"
+     ms.author="andbuc"
+     wacn.date="11/07/2016"/>  
+
 
 
 # IoT 网关 SDK（Beta 版）- 使用 Linux 入门
@@ -56,6 +63,13 @@
           "module path" : "./build/modules/hello_world/libhello_world_hl.so",
           "args" : null
         }
+      ],
+      "links" :
+      [
+        {
+          "source": "hello_world",
+          "sink": "logger_hl"
+        }
       ]
     }
     ```
@@ -70,6 +84,7 @@
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-code](../../includes/iot-hub-gateway-sdk-getstarted-code.md)]
 
 <!-- Links -->
+
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 
 

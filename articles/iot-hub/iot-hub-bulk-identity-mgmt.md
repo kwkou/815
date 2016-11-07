@@ -5,18 +5,25 @@
  documentationCenter=".net"
  authors="dominicbetts"
  manager="timlt"
- editor=""/>
+ editor=""/>  
+
 
 <tags
  ms.service="iot-hub"
- ms.date="04/29/2016"
- wacn.date="08/08/2016"/>
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="10/05/2016"
+ ms.author="dobett"
+ wacn.date="11/07/2016"/>  
+
 
 # 批量管理 IoT 中心的设备标识
 
-每个 IoT 中心都有一个设备标识注册表，用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列），以及让你访问面向设备的终结点。本文说明如何在设备标识注册表中批量导入和导出设备标识。
+每个 IoT 中心都有一个设备标识注册表，用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列）。设备标识注册表还可用于控制对面向设备的终结点的访问。本文说明如何在设备标识注册表中批量导入和导出设备标识。
 
-导入和导出操作在作业的上下文中进行，可让用户对 IoT 中心执行批量服务操作。
+导入和导出操作在 *作业* 的上下文中进行，可让用户对 IoT 中心执行批量服务操作。
 
 **RegistryManager** 类包含使用**作业**框架的 **ExportDevicesAsync** 和 **ImportDevicesAsync** 方法。这些方法可让你导出、导入和同步整个 IoT 中心设备注册表。
 
@@ -65,13 +72,13 @@ while(true)
 
 **ExportDevicesAsync** 方法需要两个参数：
 
-*  包含 Blob 容器 URI 的字符串。此 URI 必须包含可授予容器写入权限的 SAS 令牌。作业在此容器中创建用于存储序列化导出设备数据的块 Blob。SAS 令牌必须包含这些权限：
+*  包含 Blob 容器 URI 的 *字符串* 。此 URI 必须包含可授予容器写入权限的 SAS 令牌。作业在此容器中创建用于存储序列化导出设备数据的块 Blob。SAS 令牌必须包含这些权限：
     
     ```
     SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
     ```
 
-*  指示你是否要在导出数据中排除身份验证密钥的布尔值。如果为 **false**，则身份验证密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。
+*  指示你是否要在导出数据中排除身份验证密钥的 *布尔值* 。如果为 **false**，则身份验证密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。
 
 下面的 C# 代码段演示了如何启动在导出数据中包含设备身份验证密钥的导出作业，然后对完成情况进行轮询：
 
@@ -97,7 +104,7 @@ while(true)
 
 作业在提供的 Blob 容器中将其输出存储为名为 **devices.txt** 的块 Blob。输出数据包含 JSON 序列化设备数据，每行代表一个设备。
 
-下面是输出数据的示例：
+以下示例显示输出数据：
 
 ```
 {"id":"Device1","eTag":"MA==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"abc=","secondaryKey":"def="}}}
@@ -135,13 +142,13 @@ using (var streamReader = new StreamReader(await blob.OpenReadAsync(AccessCondit
 
 **ImportDevicesAsync** 方法有两个参数：
 
-*  一个字符串，其中包含作为作业的输入的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。此 URI 必须包含可授予容器读取权限的 SAS 令牌。此容器必须包含名为 **devices.txt** 的 Blob，而此 Blob 中包含要导入到设备标识注册表的序列化设备数据。导入数据必须包含使用 **ExportImportDevice** 作业所创建的相同 JSON 格式的设备信息。SAS 令牌必须包含这些权限：
+*  一个 *字符串* ，其中包含作为作业的 *输入* 的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。此 URI 必须包含可授予容器读取权限的 SAS 令牌。此容器必须包含名为 **devices.txt** 的 Blob，而此 Blob 中包含要导入到设备标识注册表的序列化设备数据。导入数据必须包含使用 **ExportImportDevice** 作业所创建的相同 JSON 格式的设备信息。SAS 令牌必须包含这些权限：
 
     ```
     SharedAccessBlobPermissions.Read
     ```
 
-*  一个字符串，其中包含作为作业的输出的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。作业在此容器中创建块 Blob，用于存储已完成的导入**作业**中的任何错误信息。SAS 令牌必须包含这些权限：
+*  一个 *字符串* ，其中包含作为作业的 *输出* 的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。作业在此容器中创建块 Blob，用于存储已完成的导入**作业**中的任何错误信息。SAS 令牌必须包含这些权限：
     
     ```
     SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
@@ -183,7 +190,11 @@ JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasU
 
 ## 导入设备示例 – 批量预配设备 
 
-以下 C# 代码示例演示如何生成包含身份验证密钥的多个设备标识，将该设备信息写入 Azure 存储块 Blob，然后将设备导入到设备标识注册表：
+以下 C# 代码示例说明了如何生成多个具有下述功能的设备标识：
+
+- 包括身份验证密钥。
+- 将该设备信息写入 Azure 存储块 blob。
+- 将设备导入设备标识注册表。
 
 ```
 // Provision 1,000 more devices
@@ -332,22 +343,16 @@ static string GetContainerSasUri(CloudBlobContainer container)
 
 - [使用指标][lnk-metrics]
 - [操作监视][lnk-monitor]
-- [管理 IoT 中心的访问权限][lnk-itpro]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 
 [lnk-metrics]: /documentation/articles/iot-hub-metrics/
 [lnk-monitor]: /documentation/articles/iot-hub-operations-monitoring/
-[lnk-itpro]: /documentation/articles/iot-hub-itpro-info/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
 <!---HONumber=Mooncake_0801_2016-->

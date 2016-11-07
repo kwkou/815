@@ -9,8 +9,14 @@
 
 <tags
    ms.service="iot-hub"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="08/23/2016"
-   wacn.date="10/10/2016"/>
+   ms.author="kdotchko"
+   wacn.date="11/07/2016"/>
+
 
 # 支持 IoT 中心的其他协议
 
@@ -43,9 +49,7 @@ MQTT 适配器还会演示用来为其他协议构建协议适配器的编程模
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/

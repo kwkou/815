@@ -1,195 +1,297 @@
 <properties
-	pageTitle="IoT 中心设备管理入门 | Azure"
-	description="面向 C# 的 Azure IoT 中心设备管理入门教程。配合 Azure IoT SDK 使用 Azure IoT 中心和 C# 来实现设备管理。"
-	services="iot-hub"
-	documentationCenter=".net"
-	authors="juanjperez"
-	manager="timlt"
-	editor=""/>
+ pageTitle="设备管理入门 | Azure"
+ description="本教程演示如何开始使用 Azure IoT 中心的设备管理"
+ services="iot-hub"
+ documentationCenter=".net"
+ authors="juanjperez"
+ manager="timlt"
+ editor=""/>  
+
 
 <tags
  ms.service="iot-hub"
- ms.date="08/11/2016"
- wacn.date="08/29/2016"/>
+ ms.devlang="multiple"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
+ ms.date="09/30/2016" 
+ ms.author="juanpere"
+ wacn.date="11/07/2016"/>  
 
-# 使用 C# 进行 Azure IoT 中心设备管理入门（预览版）
 
-[AZURE.INCLUDE [iot-hub-device-management-get-started-selector](../../includes/iot-hub-device-management-get-started-selector.md)]
+# 教程：设备管理入门（预览版）
 
 ## 介绍
-若要开始进行 Azure IoT 中心设备管理，必须创建 Azure IoT 中心、在 IoT 中心预配设备、启动多台模拟设备以及在设备管理示例 UI 中查看这些设备。本教程将指导你完成这些步骤。
+IoT 云应用程序可以使用 Azure IoT 中心中的基元（即设备克隆和直接方法）远程启动和监视设备上的设备管理操作。此文章提供有关 IoT 云应用程序和设备如何使用 IoT 中心协同工作来启动和监视远程设备重新启动的指导和代码。
 
-> [AZURE.NOTE]  即使有现有的 IoT 中心，也必须创建一个新的 IoT 中心来启用设备管理功能，因为现有 IoT 中心尚不具备这些功能。公开发布设备管理功能后，将升级全部现有 IoT 中心，以获得设备管理功能。
+若要从基于云的后端应用远程启动和监视设备上的设备管理操作，请使用 Azure IoT 中心基元（如[设备克隆][lnk-devtwin]和[云到设备 (C2D) 方法][lnk-c2dmethod]）。本教程说明后端应用和设备如何协同工作，实现从 IoT 中心启动和监视远程设备重新启动。
 
-## 先决条件
+使用 C2D 方法可以从云中的后端应用启动设备管理操作（如重新启动、恢复出厂设置和固件更新）。设备负责以下操作：
 
-本教程假定你正在使用 Windows 开发计算机。
+- 处理从 IoT 中心发送的方法请求。
+- 在设备上启动相应的设备特定操作。
+- 通过设备克隆向 IoT 中心报告的属性，提供状态更新。
 
-若要完成这些步骤，需要安装以下各项：
+可以使用云中的后端应用运行设备克隆查询，以报告设备管理操作的进度。
 
-- Microsoft Visual Studio 2015。
-- Git
+本教程演示如何：
 
-- CMake（2.8 版或更高版本）。从 <https://cmake.org/download/> 安装 CMake。对于 Windows PC 上，请选择“Windows Installer (.msi)”选项。确保选中“将 CMake 添加到当前用户 PATH 变量”的复选框。
+- 使用 Azure 门户创建 IoT 中心，以及如何在 IoT 中心创建设备标识。
+- 创建一个模拟设备，以便云可以调用其直接方法实现重新启动。
+- 创建一个控制台应用程序，以便通过 IoT 中心调用模拟设备上的重新启动直接方法。
+
+在本教程结束时，用户有两个 Node.js 控制台应用程序：
+
+**dmpatterns\_getstarted\_device.js**，它使用先前创建的设备标识连接到 IoT 中心，接收重新启动直接方法，模拟物理重新启动，并报告上次重新启动的时间。
+
+**dmpatterns\_getstarted\_service.js**，它在模拟设备上调用直接方法、显示响应以及显示更新的设备克隆报告属性。
+
+若要完成本教程，您需要以下各项：
+
+Node.js 版本 0.12.x 或更高版本，<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
 
-- Node.js 6.1.0 或更高版本。从 <https://nodejs.org/> 安装适用于平台的 Node.js。
+有效的 Azure 帐户。（如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。）
 
-- 一个有效的 Azure 订阅。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
+[AZURE.INCLUDE [iot-hub-get-started-create-hub-pp](../../includes/iot-hub-get-started-create-hub-pp.md)]
 
-## 创建支持设备管理的 IoT 中心
+## 创建模拟设备应用程序
 
-需要针对要连接到的模拟设备创建支持设备管理的 IoT 中心。以下步骤说明如何使用 Azure 门户预览完成此任务。
+在此部分中，会创建一个 Node.js 控制台应用，它响应云调用的直接方法，这会触发模拟设备重新启动，并使用设备克隆报告属性使设备克隆查询可以识别设备以及获取它们上次重新启动的时间。
 
-1.  登录到 [Azure 门户预览]。
-2.  在跳转栏中，依次单击“新建”、“物联网”和“Azure IoT 中心”。
+1. 新建名为 **manageddevice** 的空文件夹。在 **manageddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
 
-	![][img-new-hub]
+    ```
+    npm init
+    ```
+    
+2. 在命令提示符下的 **manageddevice** 文件夹中，运行以下命令以安装 **azure-iot-device@dtpreview** 设备 SDK 包和 **azure-iot-device-mqtt@dtpreview** 包：
 
-3.  在“IoT 中心”边栏选项卡中，选择 IoT 中心的配置。
+    ```
+    npm install azure-iot-device@dtpreview azure-iot-device-mqtt@dtpreview --save
+    ```
 
-	![][img-configure-hub]
+3. 在 **manageddevice** 文件夹中，利用文本编辑器创建新的 **dmpatterns\_getstarted\_device.js** 文件。
 
-  -   在“名称”框中，输入 IoT 中心的名称。如果该“名称”有效且可用，“名称”框中会出现绿色的勾选标记。
-  -   选择“定价和缩放层”。本教程不需要特定的层。
-  -   在“资源组”中，创建新资源组或选择现有的资源组。有关详细信息，请参阅[使用资源组管理 Azure 资源]。
-  -   选中“启用设备管理”复选框。
-  -   在“位置”中，选择托管 IoT 中心的位置。
+4. 在 **dmpatterns\_getstarted\_device.js** 文件开头添加以下“require”语句：
 
-    > [AZURE.NOTE]  如果不选中“启用设备管理”复选框，示例将不起作用。
+    ```
+    'use strict';
 
-4.  选择 IoT 中心配置选项后，单击“创建”。Azure 可能需要几分钟时间来创建 IoT 中心。若要检查状态，可以在“启动板”或“通知”面板中监视进度。
+    var Client = require('azure-iot-device').Client;
+    var Protocol = require('azure-iot-device-mqtt').Mqtt;
+    ```
 
-	![][img-monitor]
+5. 添加 **connectionString** 变量，并用其创建设备客户端。将连接字符串替换为设备连接字符串。
 
-5.  成功创建 IoT 中心后，请打开新 IoT 中心的边栏选项卡，记下“主机名”，然后单击“共享访问策略”。
+    ```
+    var connectionString = 'HostName={youriothostname};DeviceId=myDeviceId;SharedAccessKey={yourdevicekey}';
+    var client = Client.fromConnectionString(connectionString, Protocol);
+    ```
+
+6. 添加以下函数，实现设备上的直接方法
 
-	![][img-keys]
-
-6.  单击“iothubowner”策略，然后复制并记下“iothubowner”边栏选项卡中的连接字符串。将该连接字符串复制到稍后可访问的位置，因为完成本教程的其余部分需要连接字符串。
-
- 	> [AZURE.NOTE] 在生产方案中，切勿使用 **iothubowner** 凭据。
-
-	![][img-connection]
-
-现在就已经创建好支持设备管理的 IoT 中心。需要使用连接字符串来完成本教程的其余部分。
-
-## 生成示例并在 IoT 中心预配设备
-
-在本部分，将运行一个脚本来生成模拟设备和示例，并在 IoT 中心的设备注册表中预配一组新的设备标识。设备无法连接到 IoT 中心，除非它在设备注册表中具有相应的条目。
-
-若要生成示例并在 IoT 中心预配设备，请遵循以下步骤：
-
-1.  打开“VS2015 开发人员命令提示”。
-
-2.  克隆 GitHub 存储库。**确保克隆的目录中不包含任何空格。**
-
-	  ```
-	  git clone --recursive --branch dmpreview https://github.com/Azure/azure-iot-sdks.git
-	  ```
-
-3.  从克隆 **azure-iot-sdks** 存储库的根文件夹，浏览到 **\\azure-iot-sdks\\csharp\\service\\samples** 文件夹并运行，以将占位符值替换为上一部分中的连接字符串：
-
-	  ```
-	  setup.bat <IoT Hub Connection String>
-	  ```
-
-此脚本执行以下任务：
-
-1.  运行 **cmake** 创建模拟设备的 Visual Studio 2015 解决方案。此项目文件是 **azure-iot-sdks\\csharp\\service\\samples\\cmake\\iotdm\_client\\samples\\iotdm\_simple\_sample\\iotdm\_simple\_sample.vcxproj**。请注意，源文件位于文件夹 ***azure-iot-sdks\\c\\iotdm\_client\\samples\\iotdm\_simple\_sample** 中。
-
-2.  生成模拟设备项目 **iotdm\_simple\_sample.vcxproj**。
-
-3.  生成该设备管理示例 **azure-iot-sdks\\csharp\\service\\samples\\GetStartedWithIoTDM\\GetStartedWithIoTDM.sln**。
-
-4.  运行 **GenerateDevices.exe**，在 IoT 中心预配设备标识。**sampledevices.json**（位于 **azure iot sdks\\node\\service\\samples** 文件夹）介绍了设备，并且在设置了设备后，将凭据存储在 **devicecreds.txt** 文件中（位于 **azure iot sdks\\csharp\\service\\samples\\bin** 文件夹）。
-
-## 启动模拟设备
-
-设备已添加到设备注册表中，现在即可启动模拟托管设备。对 Azure IoT 中心设置的每个设备标识启动一个模拟设备。
-
-在 **\\azure-iot-sdks\\csharp\\service\\samples\\bin** 文件夹中使用开发人员命令提示符，运行：
-
-  ```
-  simulate.bat
-  ```
-
-此脚本对 **devicecreds.txt** 文件中列出的每台设备运行一个 **iotdm\_simple\_sample.exe** 的实例。模拟设备将继续运行，直至关闭命令窗口。
-
-**iotdm\_simple\_sample** 示例应用程序使用面向 C 的 Azure IoT 中心设备管理客户端库生成，该客户端库支持创建可由 Azure IoT 中心托管的 IoT 设备。设备制造商可以使用此库来报告设备属性，并实现设备作业要求的执行操作。此库是作为开放源代码 Azure IoT 中心 SDK 的一部分提供的组件。
-
-运行 **simulate.bat** 时，可在输出窗口中看到数据流。此输出显示传入和传出流量，以及应用程序特定的回调函数中的 **printf** 语句。此输出可让你查看传入和传出流量，以及示例应用程序如何处理已解码的数据包。当设备连接到 IoT 中心时，该服务将自动启动，以观察设备上的资源。然后，IoT 中心 DM 客户端库将调用设备回调，以从设备检索最新值。
-
-以下是 **iotdm\_simple\_sample** 示例应用程序的输出。在顶部，可以看到成功的“已注册”消息，该消息显示 ID 为 **Device11-7ce4a850** 的设备正在连接到 IoT 中心。
-
-> [AZURE.NOTE]  如果需要不太详细的输出，请生成并运行零售配置。
-
-![][img-output]
-
-确保在完成以下部分时，保持所有模拟设备处于运行状态。
-
-## 运行设备管理示例 UI
-
-现在，你已设置了一个 IoT 中心且运行并注册管理了多个模拟设备，因此你可以部署设备管理示例 UI。设备管理示例 UI 为你提供关于如何使用设备管理 API 来构建交互式 UI 体验的工作示例。有关设备管理示例 UI 的详细信息，包括[已知问题](https://github.com/Azure/azure-iot-device-management#knownissues)，请参阅 [Azure IoT 设备管理 UI][lnk-dm-github] GitHub 存储库。
-
-若要检索、构建和运行设备管理示例 UI，请遵循以下步骤：
-
-1. 打开**命令提示符**。
-
-2. 通过键入 `node --version`，确认你已根据系统必备部分安装了 Node.js 6.1.0 或更高版本。
-
-3. 通过运行以下命令来克隆 Azure IoT 设备管理 UI GitHub 存储库：
-
-	```
-	git clone https://github.com/Azure/azure-iot-device-management.git
-	```
-	
-4. 在 Azure IoT 设备管理 UI 存储库的克隆副本的根文件夹中，运行以下命令来检索相关程序包：
-
-	```
-	npm install
-	```
-
-5. npm install 命令完成后，运行以下命令以生成代码：
-
-	```
-	npm run build
-	```
-
-6. 使用文本编辑器在克隆文件夹的根目录中打开 user-config.json 文件。使用上一部分的 IoT 中心连接字符串替换文本“&lt;YOUR CONNECTION STRING HERE&gt;”并保存该文件。
-
-7. 在命令提示符处，运行以下命令启动设备管理 UX 应用：
-
-	```
-	npm run start
-	```
-
-8. 当命令提示符报告“服务已启动”时，打开 Web 浏览器 （目前支持 Edge/IE 11+/Safari/Chrome），然后通过以下 URL 导航到设备管理应用查看你的模拟设备：<http://127.0.0.1:3003>。
-
-	![][img-dm-ui]
-
-转到下一章设备管理教程时，使模拟设备和设备管理应用保持运行。
-
+    ```
+    var onReboot = function(request, response) {
+        
+        // Respond the cloud app for the direct method
+        response.send(200, 'Reboot started', function(err) {
+            if (!err) {
+                console.error('An error occured when sending a method response:\n' + err.toString());
+            } else {
+                console.log('Response to method \'' + request.methodName + '\' sent successfully.');
+            }
+        });
+        
+        // Report the reboot before the physical restart
+        var date = new Date();
+        var patch = {
+            iothubDM : {
+                reboot : {
+                    lastReboot : date.toISOString(),
+                }
+            }
+        };
+
+        // Get device Twin
+        client.getTwin(function(err, twin) {
+            if (err) {
+                console.error('could not get twin');
+            } else {
+                console.log('twin acquired');
+                twin.properties.reported.update(patch, function(err) {
+                    if (err) throw err;
+                    console.log('Device reboot twin state reported')
+                });  
+            }
+        });
+        
+        // Add your device's reboot API for physical restart.
+        console.log('Rebooting!');
+    };
+    ```
+
+7. 打开与 IoT 中心的连接并启动直接方法侦听器：
+
+    ```
+    client.open(function(err) {
+        if (err) {
+            console.error('Could not open IotHub client');
+        }  else {
+            console.log('Client opened.  Waiting for reboot method.');
+            client.onDeviceMethod('reboot', onReboot);
+        }
+    });
+    ```
+    
+8. 保存并关闭 **dmpatterns\_getstarted\_device.js** 文件。
+
+ [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，你应该按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
+
+## 使用直接方法在设备上触发远程重新启动 
+
+在此部分中，会创建一个 Node.js 控制台应用，它使用直接方法在设备上启动远程重新启动，并使用设备克隆查询找到该设备上次重新启动时间。
+
+1. 新建名为 **triggerrebootondevice** 的空文件夹。在 **triggerrebootondevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
+
+    ```
+    npm init
+    ```
+    
+2. 在命令提示符下的 **triggerrebootondevice** 文件夹中，运行以下命令以安装 **azure-iothub@dtpreview** 设备 SDK 包和 **azure-iot-device-mqtt@dtpreview** 包：
+
+    ```
+    npm install azure-iothub@dtpreview --save
+    ```
+    
+3. 在 **triggerrebootondevice** 文件夹中，使用文本编辑器创建新的 **dmpatterns\_getstarted\_service.js** 文件。
+
+4. 在 **dmpatterns\_getstarted\_service.js** 文件开头添加以下“require”语句：
+
+    ```
+    'use strict';
+
+    var Registry = require('azure-iothub').Registry;
+    var Client = require('azure-iothub').Client;
+    ```
+
+5. 添加以下变量声明并替换占位符值：
+
+    ```
+    var connectionString = '{iothubconnectionstring}';
+    var registry = Registry.fromConnectionString(connectionString);
+    var client = Client.fromConnectionString(connectionString);
+    var deviceToReboot = 'myDeviceId';
+    ```
+    
+6. 添加以下函数以调用设备方法来重新启动目标设备：
+
+    ```
+    var startRebootDevice = function(twin) {
+
+        var methodName = "reboot";
+        
+        var methodParams = {
+            methodName: methodName,
+            payload: null,
+            timeoutInSeconds: 30
+        };
+        
+        client.invokeDeviceMethod(deviceToReboot, methodParams, function(err, result) {
+            if (err) { 
+                console.error("Direct method error: "+err.message);
+            } else {
+                console.log("Successfully invoked the device to reboot.");  
+            }
+        });
+    };
+    ```
+
+7. 添加以下函数以查询设备并获取上次重新启动时间：
+
+    ```
+    var queryTwinLastReboot = function() {
+
+        registry.getTwin(deviceToReboot, function(err, twin){
+
+            if (twin.properties.reported.iothubDM != null)
+            {
+                if (err) {
+                    console.error('Could not query twins: ' + err.constructor.name + ': ' + err.message);
+                } else {
+                    var lastRebootTime = twin.properties.reported.iothubDM.reboot.lastReboot;
+                    console.log('Last reboot time: ' + JSON.stringify(lastRebootTime, null, 2));
+                }
+            } else 
+                console.log('Waiting for device to report last reboot time.');
+        });
+    };
+    ```
+    
+8. 添加以下代码以调用函数，将触发重新启动直接方法并查询上次重新启动时间：
+
+    ```
+    startRebootDevice();
+    setInterval(queryTwinLastReboot, 2000);
+    ```
+    
+9. 保存并关闭 **dmpatterns\_getstarted\_service.js** 文件。
+
+## 运行应用程序
+
+现在，你已准备就绪，可以运行应用程序了。
+
+1. 在 **manageddevice** 文件夹的命令提示符处，运行以下命令以开始侦听重新启动直接方法。
+
+    ```
+    node dmpatterns_getstarted_device.js
+    ```
+
+2. 在 **triggerrebootondevice** 文件夹的命令提示符处，运行以下命令以触发远程重新启动并查询设备克隆以查找上次重新启动时间。
+
+    ```
+    node dmpatterns_getstarted_service.js
+    ```
+
+3. 可通过打印出消息来查看对直接方法的反应
+
+## 自定义和扩展设备管理操作
+
+IoT 解决方案可以扩展已定义的设备管理模式集，或通过使用设备克隆和 C2D 方法基元启用自定义模式。设备管理操作的其他示例包括恢复出厂设置、固件更新、软件更新、电源管理、网络和连接管理以及数据加密。
+
+## 设备维护时段
+
+通常情况下，将设备配置为在某一时间执行操作，以最大程度减少中断和停机时间。设备维护时段是一种常用模式，用于定义设备应更新其配置的时间。后端解决方案使用设备克隆所需属性在设备上定义并激活策略，以启用维护时段。当设备收到维护时段策略时，它可以使用设备克隆报告属性报告策略状态。然后，后端应用可以使用设备克隆查询来证明设备和每个策略的符合性。
 
 ## 后续步骤
 
+在本教程中，使用直接方法来触发设备的远程重新启动，使用设备克隆报告属性来报告设备上次重新启动时间，并查询设备克隆来从云中发现设备上次重新启动时间。
+
+若要继续完成 IoT 中心和设备管理模式（如远程无线固件更新）的入门内容，请参阅：
+
+[教程：如何进行固件更新][lnk-fwupdate]
+
+若要了解如何扩展 IoT 解决方案并在多个设备上计划方法调用，请参阅 [Schedule and broadcast jobs][lnk-tutorial-jobs]（计划和广播作业）教程。
+
 若要继续完成 IoT 中心的入门内容，请参阅[网关 SDK 入门][lnk-gateway-SDK]。
 
-若要详细了解 Azure IoT 中心设备管理功能，请参阅[使用示例 UI 了解 Azure IoT 中心设备管理][lnk-sample-ui]教程。
 
 <!-- images and links -->
-[img-new-hub]: ./media/iot-hub-device-management-get-started/image1.png
-[img-configure-hub]: ./media/iot-hub-device-management-get-started/image2.png
-[img-monitor]: ./media/iot-hub-device-management-get-started/image3.png
-[img-keys]: ./media/iot-hub-device-management-get-started/image4.png
-[img-connection]: ./media/iot-hub-device-management-get-started/image5.png
-[img-output]: ./media/iot-hub-device-management-get-started/image6.png
-[img-dm-ui]: ./media/iot-hub-device-management-get-started/dmui.png
+
+[img-output]: ./media/iot-hub-get-started-with-dm/image6.png
+[img-dm-ui]: ./media/iot-hub-get-started-with-dm/dmui.png
+
+[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 
 [lnk-free-trial]: /pricing/1rmb-trial/
-[Azure 门户预览]: https://portal.azure.cn/
-[使用资源组管理 Azure 资源]: /documentation/articles/resource-group-portal/
+[lnk-fwupdate]: /documentation/articles/iot-hub-firmware-update/
+[Azure portal]: https://portal.azure.cn/
+[Using resource groups to manage your Azure resources]: /documentation/articles/resource-group-portal/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management
-[lnk-sample-ui]: /documentation/articles/iot-hub-device-management-ui-sample/
+[lnk-tutorial-jobs]: /documentation/articles/iot-hub-schedule-jobs/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 
-<!---HONumber=Mooncake_0523_2016-->
+[lnk-devtwin]: /documentation/articles/iot-hub-devguide-device-twins/
+[lnk-c2dmethod]: /documentation/articles/iot-hub-devguide-direct-methods/
+[lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
+
+<!---HONumber=Mooncake_1031_2016-->
