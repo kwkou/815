@@ -7,7 +7,8 @@
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
-/>
+/>  
+
 <tags
    ms.service="load-balancer"
    ms.devlang="na"
@@ -15,10 +16,10 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/31/2016"
-   wacn.date="10/10/2016" />  
+   wacn.date="11/08/2016" />  
 
 
-# 开始使用 Azure CLI 创建面向 Internet 的负载均衡器
+# 使用 Azure CLI 创建内部负载均衡器
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
 
@@ -33,16 +34,12 @@
 
 以下步骤说明如何使用 Azure Resource Manager 和 CLI 创建面向 Internet 的负载均衡器。借助 Azure Resource Manager，可单独创建和配置每个资源，再将其合成一个新资源。
 
-需要创建和配置以下对象才能部署负载均衡器。
+需要创建和配置以下对象才能部署负载均衡器：
 
 - 前端 IP 配置 - 包含传入网络流量的公共 IP 地址。
-
-- 后端地址池 - 包含要从负载均衡器接收网络流量的虚拟机的网络接口 (NIC)。
-
+- 后端地址池 - 包含从负载均衡器接收网络流量的虚拟机网络接口 (NIC)。
 - 负载均衡规则 - 包含将负载均衡器上的公共端口映射到后端地址池中的端口的规则。
-
 - 入站 NAT 规则 - 包含将负载均衡器上的公共端口映射到后端地址池中特定虚拟机的端口的规则。
-
 - 探测器 - 包含用于检查后端地址池中虚拟机实例的可用性的运行状况探测器。
 
 有关详细信息，请参阅 [Azure Resource Manager 对负载均衡器的支持](/documentation/articles/load-balancer-arm/)。
@@ -208,6 +205,7 @@
         azure network nic create -g nrprg -n lb-nic1-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/NRPbackendpool" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp1" eastus
 
     参数：
+
     * **-g** - 资源组名称
     * **-n** - NIC 资源的名称
     * **--subnet-name** - 子网的名称
@@ -311,4 +309,4 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

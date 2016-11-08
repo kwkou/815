@@ -7,7 +7,8 @@
    manager="narayan"
    editor=""
    tags="azure-resource-manager"
-/>
+/>  
+
 <tags
    ms.service="load-balancer"
    ms.devlang="na"
@@ -15,7 +16,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/14/2016"
-   ms.author="annahar" />
+   wacn.date="" />  
+
 
 # 开始使用 Azure 门户预览创建面向 Internet 的负载均衡器
 
@@ -115,4 +117,4 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

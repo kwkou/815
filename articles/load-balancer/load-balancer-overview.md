@@ -5,7 +5,8 @@
    documentationCenter="na"
    authors="sdwheeler"
    manager="carmonm"
-   editor="" />
+   editor="" />  
+
 <tags
    ms.service="load-balancer"
    ms.devlang="na"
@@ -13,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/22/2016"
-   wacn.date="10/10/2016" />
+   wacn.date="11/08/2016" />
 
 # Azure Load Balancer 概述
 
@@ -63,19 +64,19 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 * 基于哈希的分发
 
-    负载均衡器使用基于哈希的分发算法。默认情况下，它使用 5 元组（源 IP、源端口、目标 IP、目标端口和协议类型）哈希将流量映射到可用服务器。它仅在传输会话 *内* 提供粘性。同一 TCP 或 UDP 会话中的数据包将会定向到负载均衡的终结点后面的同一实例。当客户端关闭连接后再重新将其打开，或者从同一源 IP 启动新的会话时，源端口将会变化。这可能会导致流量转到其他数据中心的其他终结点。
+    负载均衡器使用基于哈希的分发算法。默认情况下，它使用 5 元组（源 IP、源端口、目标 IP、目标端口和协议类型）哈希将流量映射到可用服务器。它仅在传输会话*内* 提供粘性。同一 TCP 或 UDP 会话中的数据包将会定向到负载均衡的终结点后面的同一实例。当客户端关闭连接后再重新将其打开，或者从同一源 IP 启动新的会话时，源端口将会变化。这可能会导致流量转到其他数据中心的其他终结点。
 
 有关详细信息，请参阅[负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)。下图显示了基于哈希的分发：
 
-![Hash-based distribution](./media/load-balancer-overview/load-balancer-distribution.png)
+    ![Hash-based distribution](./media/load-balancer-overview/load-balancer-distribution.png)
 
 * 端口转发
 
-可以使用负载均衡器对入站通信的管理方式进行控制。该通信可能包括从 Internet 主机或者其他云服务或虚拟网络中的虚拟机发出的流量。终结点（也称输入终结点）代表的就是这种控制。
+    可以使用负载均衡器对入站通信的管理方式进行控制。该通信可能包括从 Internet 主机或者其他云服务或虚拟网络中的虚拟机发出的流量。终结点（也称输入终结点）代表的就是这种控制。
 
-输入终结点侦听公共端口，并将流量转发到内部端口。你可以对内部或外部终结点映射相同端口，也可以对其使用其他端口。例如，你可以将 Web 服务器配置为侦听端口 81，而公共终结点映射则为端口 80。创建公共终结点这一操作会触发负载均衡器实例的创建。
+    输入终结点侦听公共端口，并将流量转发到内部端口。你可以对内部或外部终结点映射相同端口，也可以对其使用其他端口。例如，你可以将 Web 服务器配置为侦听端口 81，而公共终结点映射则为端口 80。创建公共终结点这一操作会触发负载均衡器实例的创建。
 
-使用 Azure 门户进行创建时，该门户会针对远程桌面协议 (RDP) 和远程 Windows PowerShell 会话流量自动创建虚拟机的终结点。你可以使用这些终结点通过 Internet 远程管理虚拟机。
+    使用 Azure 门户进行创建时，该门户会针对远程桌面协议 (RDP) 和远程 Windows PowerShell 会话流量自动创建虚拟机的终结点。你可以使用这些终结点通过 Internet 远程管理虚拟机。
 
 * 自动重新配置
 
@@ -122,4 +123,4 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 [开始创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->
