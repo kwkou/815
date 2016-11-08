@@ -104,6 +104,6 @@
 
 ## 后续步骤
 
-- 连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅虚拟机[学习路径](https://azure.microsoft.com/documentation/learning-paths/virtual-machines)。
+- 连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
 
 <!---HONumber=Mooncake_1031_2016-->
