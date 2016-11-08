@@ -633,7 +633,7 @@ WITH_DATA(int, MyData)
 
 ## 其他主题
 
-值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些主题均涵盖在[前一篇文章](iot-hub-device-sdk-c-iothubclient.md)中。重点在于，所有这些功能与**序列化程序**库配合使用的方式与和 **IoTHubClient** 库配合使用的方式相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
+值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些主题均涵盖在[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)中。重点在于，所有这些功能与**序列化程序**库配合使用的方式与和 **IoTHubClient** 库配合使用的方式相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
 
 ```
 MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);
