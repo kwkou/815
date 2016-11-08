@@ -5,7 +5,8 @@
    documentationCenter="na"
    authors="adamglick"
    manager="saladki"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="resiliency"
@@ -14,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/18/2016"
-   wacn.date="10/10/2016"/>
+   wacn.date="11/08/2016"/>
 
 #Azure 复原技术指南：Azure 中发生局部故障后进行恢复
 
@@ -176,7 +177,7 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
 
 ###云服务
 
-  1. 查看本文档的[云服务](#cloud-services)部分。
+  1. 查看本文档的“云服务”部分。
   2. 为每个角色至少配置两个实例。
   3. 将状态保存在持久存储中，而不是角色实例上。
   4. 正确处理 StatusCheck 事件。
@@ -187,40 +188,40 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
 
 ###虚拟机
 
-  1. 查看本文档的[虚拟机](#virtual-machines)部分。
+  1. 查看本文档的“虚拟机”部分。
   2. 不要使用 D 驱动器作为持久存储。
   3. 将服务层中的计算机分组为可用性集。
   4. 配置负载均衡和可选探测。
 
 ###存储
 
-  1. 查看本文档的[存储](#storage)部分。
+  1. 查看本文档的“存储”部分。
   2. 在数据或带宽超过配额时使用多个存储帐户。
 
 ###SQL 数据库
 
-  1. 查看本文档的 [SQL 数据库](#sql-database)部分。
+  1. 查看本文档的“SQL 数据库”部分。
   2. 实现重试策略以处理暂时错误。
   3. 使用分区/分片作为扩展策略。
 
 ###虚拟机上的 SQL Server
 
-  1. 查看本文档的[虚拟机上的 SQL Server](#sql-server-on-virtual-machines) 部分。
+  1. 查看本文档的“虚拟机上的 SQL Server”部分。
   2. 遵循上述有关虚拟机的建议。
   3. 使用 SQL Server 高可用性功能，如 AlwaysOn。
 
 ###服务总线
 
-  1. 查看本文档的[服务总线](#service-bus)部分。
+  1. 查看本文档的“服务总线”部分。
   2. 考虑创建持久客户端队列作为备份。
 
 ###HDInsight
 
-  1. 查看本文档的 [HDInsight](#hdinsight) 部分。
+  1. 查看本文档的“HDInsight”部分。
   2. 对于局部故障无需采取其他可用性步骤。
 
 ##后续步骤
 
 本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。本系列教程的下一篇文章是[在发生区域范围的服务中断后进行恢复](/documentation/articles/resiliency-technical-guidance-recovery-loss-azure-region/)。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

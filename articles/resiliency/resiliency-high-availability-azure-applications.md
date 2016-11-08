@@ -4,13 +4,19 @@
    services=""
    documentationCenter="na"
    authors="adamglick"
-   manager="hongfeig"
-   editor=""/>
+   manager="saladki"
+   editor=""/>  
+
 
 <tags
    ms.service="resiliency"
-   ms.date="05/18/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/18/2016"
+   ms.author="11/08/2016"/>  
+
 
 #构建在 Azure 基础之上的应用程序高可用性
 
@@ -24,7 +30,7 @@ Azure 在平台中内置了多种功能，用于支持高度可用的应用程�
 
 Azure 结构控制器负责预配和监视 Azure 计算实例的状况。结构控制器检查主机和来宾计算机实例的硬件和软件的状态。检测到故障后，它通过自动重新定位 VM 实例来履行 SLA。容错域和升级域的概念进一步为计算 SLA 提供支持。
 
-部署多个角色实例时，Azure 将这些实例部署到不同的容错域。容错域边界基本上就是同一区域内的其他硬件机架。容错域可降低局部硬件故障将中断应用程序服务的可能性。你无法管理分配给辅助角色或 Web 角色的容错域的数量。结构控制器采用与 Azure 托管的应用程序分离的专用资源。由于它充当 Azure 系统的核心，因此其正常运行时间为 100%。它监视和管理各个容错域中的角色实例。
+部署多个云服务角色实例时，Azure 将这些实例部署到不同的容错域。容错域边界基本上就是同一区域内的其他硬件机架。容错域可降低局部硬件故障将中断应用程序服务的可能性。你无法管理分配给辅助角色或 Web 角色的容错域的数量。结构控制器采用与 Azure 托管的应用程序分离的专用资源。由于它充当 Azure 系统的核心，因此其正常运行时间为 100%。它监视和管理各个容错域中的角色实例。
 
 以下示意图显示了结构控制器在各个容错域中部署和管理的 Azure 共享资源。
 
@@ -36,7 +42,7 @@ Azure 结构控制器负责预配和监视 Azure 计算实例的状况。结构�
 
 除了这些支持高计算可用性的平台功能之外，Azure 还将高可用性功能嵌入到它的其他服务中。例如，Azure 存储空间保存所有 Blob、表和队列数据的 3 个副本。它还允许使用异地复制选项，将 Blob 和表的备份存储在次要区域内。通过 Azure 内容交付网络，可在世界各地缓存 Blob 以实现冗余和可缩放性。Azure SQL 数据库也保留多个副本。
 
-除 [Resiliency technical guidance（Azure 业务连续性技术指南）](/documentation/articles/resiliency-technical-guidance/)系列教程以外，另请参阅 [Best Practices for the Design of Large-Scale Services on Azure Cloud Services（在 Azure 云服务上设计大规模服务的最佳实践）](https://azure.microsoft.com/blog/best-practices-for-designing-large-scale-services-on-windows-azure/)一文。这些文章更深入介绍了 Azure 平台可用性功能。
+除 [Resiliency technical guidance](https://aka.ms/bctechguide)（Azure 业务连续性技术指南）系列教程以外，另请参阅 [Best Practices for the Design of Large-Scale Services on Azure Cloud Services](https://azure.microsoft.com/blog/best-practices-for-designing-large-scale-services-on-windows-azure/)（在 Azure 云服务上设计大规模服务的最佳实践）一文。这些文章更深入介绍了 Azure 平台可用性功能。
 
 尽管 Azure 提供多项支持高可用性的功能，但了解其限制也很重要：
 
@@ -139,4 +145,4 @@ Web 角色将脱离基础结构的其余部分进行自治。其可用性配置�
 
 本文是着重介绍[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)的系列教程的一部分。此系列教程的下一篇文章为[构建在 Azure 基础之上的应用程序灾难恢复](/documentation/articles/resiliency-disaster-recovery-azure-applications/)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1031_2016-->

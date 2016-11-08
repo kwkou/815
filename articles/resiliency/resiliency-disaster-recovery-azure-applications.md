@@ -6,7 +6,8 @@
    documentationCenter="na"
    authors="adamglick"
    manager="saladki"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="resiliency"
@@ -15,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/18/2016"
-   wacn.date="10/10/2016"/>
+   wacn.date="11/08/2016"/>
 
 #构建在 Azure 基础之上的应用程序灾难恢复
 
@@ -306,4 +307,4 @@ IaaS 解决方案还为本地应用程序使用 Azure 作为故障转移选项�
 
 本文是着重介绍[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)的系列教程的一部分。本系列教程的前一篇文章为[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applications/)。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

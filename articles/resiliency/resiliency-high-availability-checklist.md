@@ -1,17 +1,22 @@
-<!-- Remove load-balancer, vm-scale -->
 <properties
    pageTitle="高可用性清单 | Azure"
    description="为确保在 Azure 中提高应用程序可用性而可以采用的设置和操作的快速清单。"
    services=""
    documentationCenter="na"
    authors="adamglick"
-   manager="hongfeig"
-   editor=""/>
+   manager="saladki"
+   editor=""/>  
+
 
 <tags
    ms.service="resiliency"
-   ms.date="06/15/2016"
-   wacn.date="07/04/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/18/2016"
+   wacn.date="11/08/2016"/>  
+
 
 #高可用性清单
 使用 Azure 的好处之一是能够使用云提高应用程序的可用性（和可缩放性）。为了确保你可以充分利用这些选项，以下清单将帮助你了解一些重要的基础结构基本知识，以确保应用程序具有复原能力。
@@ -74,4 +79,4 @@ __不使用 CDN 会发生什么情况？__ 如果不使用 CDN，则所有客户
 
 ##后续步骤：
 若要了解有关如何设计应用程序以实现高可用性的详细信息，请阅读[构建在 Azure 基础之上的应用程序高可用性](/documentation/articles/resiliency-high-availability-azure-applications/)。
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1031_2016-->
