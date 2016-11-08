@@ -6,8 +6,8 @@
   authors="sdwheeler"
   manager="carmonm"
   editor=""
-  tags="azure-resource-manager"
-/>
+  tags="azure-resource-manager" />  
+
 <tags
   ms.service="load-balancer"
   ms.devlang="na"
@@ -15,7 +15,7 @@
   ms.tgt_pltfrm="na"
   ms.workload="infrastructure-services"
   ms.date="08/25/2016"
-  wacn.date="10/10/2016" />
+  wacn.date="11/08/2016" />
 
 # 负载均衡器探测
 
@@ -27,10 +27,10 @@ Azure Load Balancer 提供相应的功能让你使用探测来监视服务器实
 
 探测行为取决于：
 
-- 允许实例标记为正在运行的成功探测数目。
-- 导致实例标记为未运行的失败探测数目。
+- 允许实例标记为已开启的成功探测数目。
+- 导致实例标记为已关闭的失败探测数目。
 
-设置的超时和频率值。SuccessFailCount 确定是否将实例判定为在运行。在 Azure 门户预览中，超时设置为频率值的两倍。
+超时除以探测频率值等于 SuccessFailCount，这确定将实例假定为已开启还是已关闭。在 Azure 门户预览中，超时设置为频率值的两倍。
 
 终结点（即负载均衡集）的所有负载均衡实例的探测配置必须相同。这意味着，对于同一托管服务中特定终结点组合的每个角色实例或虚拟机而言，不能使用不同的探测配置。例如，每个实例必须有相同的本地端口和超时。
 
@@ -77,7 +77,7 @@ TCP 探测通过使用定义的端口执行三方握手来初始化连接。
 
 有关配置 HTTP 运行状况探测或 TCP 探测的详细信息，请参阅 [Get started creating an Internet-facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps#create-lb-rules-nat-rules-a-probe-and-a-load-balancer)（开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器）。
 
-## 将状况良好的实例添加回到负载均衡器
+## 将状况良好的实例添加回到负载均衡器轮转
 
 在以下情况下，会将 TCP 和 HTTP 探测视为状况良好，并将角色实例标记为状况良好：
 
@@ -90,4 +90,4 @@ TCP 探测通过使用定义的端口执行三方握手来初始化连接。
 
 可以使用[适用于负载均衡器的 Log Analytics](/documentation/articles/load-balancer-monitor-log/) 来检查探测运行状况和探测计数。可以配合 Power BI 或 Azure Operation Insights 使用日志记录，以提供有关负载均衡器运行状况的统计信息。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

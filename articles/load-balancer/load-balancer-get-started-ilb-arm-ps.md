@@ -1,25 +1,30 @@
-<properties 
+<properties
    pageTitle="在 Resource Manager 中使用 PowerShell 创建内部负载均衡器 | Azure"
    description="了解如何在 Resource Manager 中使用 PowerShell 创建内部负载均衡器"
    services="load-balancer"
    documentationCenter="na"
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
-/>
-<tags  
+/>  
+
+<tags
    ms.service="load-balancer"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
    ms.date="02/09/2016"
-   wacn.date="08/29/2016" />
+   wacn.date="11/08/2016" />
 
 # 开始使用 PowerShell 创建内部负载均衡器
 
-[AZURE.INCLUDE [load-balancer-get-started-ilb-arm-selectors-include.md](../../includes/load-balancer-get-started-ilb-arm-selectors-include.md)]
-<BR>
+[AZURE.INCLUDE [load-balancer-get-started-ilb-arm-selectors-include.md](../../includes/load-balancer-get-started-ilb-arm-selectors-include.md)] 
+<BR> 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代 [classic deployment model](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
@@ -68,11 +73,11 @@
 
 检查帐户的订阅
 
-		Get-AzureRmSubscription 
+		Get-AzureRmSubscription
 
 系统将提示你使用凭据进行身份验证。<BR>
 
-### 步骤 3 
+### 步骤 3
 
 选择要使用的 Azure 订阅。<BR>
 
@@ -110,15 +115,15 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 创建前端 IP 池和后端地址池
 
-针对传入负载均衡器网络流量设置前端 IP 池和后端地址池以接收经过负载均衡的流量。
+为传入负载均衡器网络流量设置前端 IP 池，并创建后端地址池用于接收负载均衡的流量。
 
-### 步骤 1 
+### 步骤 1
 
 使用专用 IP 地址 10.0.2.5 为子网 10.0.2.0/24 创建前端 IP 池，该池将是传入网络流量终结点。
 
 	$frontendIP = New-AzureRmLoadBalancerFrontendIpConfig -Name LB-Frontend -PrivateIpAddress 10.0.2.5 -SubnetId $vnet.subnets[0].Id
 
-### 步骤 2 
+### 步骤 2
 
 设置用于从前端 IP 池接收传入流量的后端地址池：
 
@@ -161,18 +166,18 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 创建内部负载均衡器后，需要定义哪些网络接口将接收传入的负载均衡网络流量、NAT 规则和探测器。在这种情况下，网络接口将单独配置，并可以在以后分配给虚拟机。
 
 
-### 步骤 1 
+### 步骤 1
 
 
 获取用于创建网络接口的资源虚拟网络和子网：
 
 	$vnet = Get-AzureRmVirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG
 
-	$backendSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -VirtualNetwork $vnet 
+	$backendSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -VirtualNetwork $vnet
 
 
 在此步骤中，我们将创建属于负载均衡器后端池的网络接口，并将为此网络接口关联 RDP 的第一个 NAT 规则：
-	
+
 	$backendnic1= New-AzureRmNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic1-be -Location "China East" -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
 
 ### 步骤 2
@@ -235,27 +240,27 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 
 
-### 步骤 3 
+### 步骤 3
 
 使用命令 Add-AzureRmVMNetworkInterface 将 NIC 分配给虚拟机。
 
-你可以按照文档 [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-windows-ps-create/#Example)（使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机）选项 4 或 5，找到相关分步说明，以创建虚拟机并将其分配给 NIC。
+你可以按照以下文档找到相关分步说明，以创建虚拟机并将其分配给 NIC：[使用 PowerShell 创建 Azure VM(/documentation/articles/virtual-machines-windows-create-powershell)。
 
 或者，如果你已创建虚拟机，则可以使用以下步骤添加网络接口：
 
-#### 步骤 1 
+#### 步骤 1
 
 将负载均衡器资源加载到变量中（如果你还没有这样做）。所用的变量名为 $lb，并使用前面创建的负载均衡器资源的相同名称。
 
 	$lb= Get-AzureRmLoadBalancer –name NRP-LB -resourcegroupname NRP-RG
 
-#### 步骤 2 
+#### 步骤 2
 
 将后端配置加载到变量。
 
 	$backend= Get-AzureRmLoadBalancerBackendAddressPoolConfig -name backendpool1 -LoadBalancer $lb
 
-#### 步骤 3 
+#### 步骤 3
 
 将已创建的网络接口加载到变量中。所用的变量名称为 $nic。所用的网络接口名称与前面的示例相同。
 
@@ -267,7 +272,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 	$nic.IpConfigurations[0].LoadBalancerBackendAddressPools=$backend
 
-#### 步骤 5 
+#### 步骤 5
 
 保存网络接口对象。
 
@@ -312,6 +317,5 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 [配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode)
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout)
- 
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1031_2016-->

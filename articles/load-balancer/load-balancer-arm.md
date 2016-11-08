@@ -5,7 +5,8 @@
    documentationCenter="na"
    authors="sdwheeler"
    manager="carmonm"
-   editor="tysonn" />
+   editor="tysonn" />  
+
 <tags
    ms.service="load-balancer"
    ms.devlang="na"
@@ -13,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/25/2016"
-   wacn.date="10/10/2016" />
+   wacn.date="11/07/2016" />
 
 
 # Azure Resource Manager 对负载均衡器的支持 
@@ -60,15 +61,15 @@ Azure Resource Manager 可让你使用声明性模板预配应用程序。在单
 Azure Resource Manager cmdlet、命令行工具和 REST API 入门
 
 - [Azure 网络 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt163510.aspx) 可用于创建负载均衡器。
-- [How to create a load balancer using Azure Resource Manager（如何使用 Azure Resource Manager 创建负载均衡器）](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
+- [How to create a load balancer using Azure Resource Manager（如何使用 Azure Resource Manager 创建负载均衡器）](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
 - [Using the Azure CLI with Azure Resource Management（将 Azure CLI 与 Azure 资源管理配合使用）](/documentation/articles/xplat-cli-azure-resource-manager/)
 - [Load Balancer REST APIs（负载均衡器 REST API）](https://msdn.microsoft.com/zh-cn/library/azure/mt163651.aspx)
 
 
 ## 后续步骤
 
-你还可以[开始创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)，并配置适合特定负载均衡器网络流量行为的[分发模式](/documentation/articles/load-balancer-distribution-mode/)类型。
+还可以[开始创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)，并配置适合特定负载均衡器网络流量行为的[分发模式](/documentation/articles/load-balancer-distribution-mode/)类型。
 
-如果应用程序需要始终保持对负载均衡器后面的服务器的连接，你可以详细了解[负载均衡器的空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)。该文章将有助于你了解使用 Azure Load Balancer 时的空闲连接行为。
+了解如何管理[负载均衡器的空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)。应用程序对于负载均衡器后的服务器需要使连接保持活动状态时，这非常重要。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

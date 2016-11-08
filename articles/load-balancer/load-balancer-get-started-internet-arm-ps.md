@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器 | Azure"
    description="了解如何使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器"
    services="load-balancer"
@@ -7,7 +7,8 @@
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
-/>
+/>  
+
 <tags
   ms.service="load-balancer"
   ms.devlang="na"
@@ -15,9 +16,10 @@
   ms.tgt_pltfrm="na"
   ms.workload="infrastructure-services"
   ms.date="08/31/2016"
-  wacn.date="10/10/2016" />
+  wacn.date="11/08/2016" />  
 
-# <a name="get-started"></a>开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器
+
+# <a name="get-started"></a>使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
 
@@ -47,7 +49,7 @@
 
 1. 登录 Azure。
 
-		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
     在系统提示时输入凭据。
 
@@ -93,8 +95,8 @@
 
 - 用于将端口 3441 上的所有传入流量转换到端口 3389 的 NAT 规则
 - 用于将端口 3442 上的所有传入流量转换到端口 3389 的 NAT 规则
-- 用于将端口 80 上的所有传入流量平衡到后端池中的地址端口 80 的负载均衡器规则
 - 用于检查 **HealthProbe.aspx** 页面上的运行状况状态的探测规则
+- 用于将端口 80 上的所有传入流量平衡到后端池中的地址端口 80 的负载均衡器规则
 - 使用上述所有对象的负载均衡器
 
 执行以下步骤：
@@ -105,11 +107,7 @@
 
         $inboundNATRule2= New-AzureRmLoadBalancerInboundNatRuleConfig -Name RDP2 -FrontendIpConfiguration $frontendIP -Protocol TCP -FrontendPort 3442 -BackendPort 3389
 
-2. 创建负载均衡器规则。
-
-        $lbrule = New-AzureRmLoadBalancerRuleConfig -Name HTTP -FrontendIpConfiguration $frontendIP -BackendAddressPool  $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
-
-3. 创建运行状况探测器。有两种方法可以配置探测器：
+2. 创建运行状况探测器。有两种方法可以配置探测器：
 
     HTTP 探测器
 
@@ -118,6 +116,10 @@
     TCP 探测器
 
         $healthProbe = New-AzureRmLoadBalancerProbeConfig -Name HealthProbe -Protocol Tcp -Port 80 -IntervalInSeconds 15 -ProbeCount 2
+
+3. 创建负载均衡器规则。
+
+        $lbrule = New-AzureRmLoadBalancerRuleConfig -Name HTTP -FrontendIpConfiguration $frontendIP -BackendAddressPool  $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 
 4. 使用之前创建的对象创建负载均衡器。
 
@@ -151,16 +153,22 @@
 	    Location             : chinaeast
         Id                   : /subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be
         Etag                 : W/"d448256a-e1df-413a-9103-a137e07276d1"
+        ResourceGuid         : 896cac4f-152a-40b9-b079-3e2201a5906e
         ProvisioningState    : Succeeded
         Tags                 :
         VirtualMachine       : null
         IpConfigurations     : [
                             {
+                            "Name": "ipconfig1",
+                            "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
+                            "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1",
                             "PrivateIpAddress": "10.0.2.6",
                             "PrivateIpAllocationMethod": "Static",
                             "Subnet": {
                                 "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/virtualNetworks/NRPVNet/subnets/LB-Subnet-BE"
                             },
+                            "ProvisioningState": "Succeeded",
+                            "PrivateIpAddressVersion": "IPv4",
                             "PublicIpAddress": {
                                 "Id": null
                             },
@@ -174,25 +182,24 @@
                                 "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/loadBalancers/NRPlb/inboundNatRules/RDP1"
                                 }
                             ],
-                            "ProvisioningState": "Succeeded",
-                            "Name": "ipconfig1",
-                            "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
-                            "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1"
+                            "Primary": true,
+                            "ApplicationGatewayBackendAddressPools": []
                             }
                         ]
         DnsSettings          : {
                             "DnsServers": [],
-                            "AppliedDnsServers": []
+                            "AppliedDnsServers": [],
+                            "InternalDomainNameSuffix": "prcwibzcuvie5hnxav0yjks2cd.dx.internal.cloudapp.net"
                         }
-        AppliedDnsSettings   :
+        EnableIPForwarding   : False
         NetworkSecurityGroup : null
-        Primary              : False
+        Primary              :
 
 5. 使用 `Add-AzureRmVMNetworkInterface` cmdlet 将 NIC 分配给不同 VM。
 
 ## 创建虚拟机
 
-有关虚拟机创建和 NIC 分配的指南，请参阅[使用 Resource Manager 和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-create#Example)中的选项 5。
+有关创建虚拟机和分配 NIC 的指南，请参阅[使用 PowerShell 创建 Azure VM](/documentation/articles/virtual-machines-windows-ps-create/)。
 
 ## 向负载均衡器添加网络接口
 
@@ -250,4 +257,4 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->
