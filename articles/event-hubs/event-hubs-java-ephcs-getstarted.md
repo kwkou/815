@@ -3,14 +3,20 @@
 	description="遵循本教程开始使用 Azure 事件中心，以通过 Java 发送事件，并使用 EventProcessorHost 通过 C# 接收事件。"
 	services="event-hubs"
 	documentationCenter=""
-	authors="fsautomata"
+	authors="jtaubensee"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="event-hubs"
-	ms.date="06/16/2016"
-	wacn.date="07/04/2016"/>
+	ms.workload="core"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date="11/08/2016"/>  
+
 
 # 事件中心入门
 
@@ -26,7 +32,7 @@
 
 若要完成本教程，你需要以下各项：
 
-+ Java 开发环境。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
++ Java 开发环境。对于本教程，我们将采用 Eclipse。
 
 + [Microsoft Visual Studio](http://visualstudio.com)
 
@@ -56,21 +62,21 @@
 
 - [使用事件中心的完整示例应用程序][]。
 - [使用事件中心扩大事件处理][]示例。
-- 使用服务总线队列的[队列消息解决方案][]。
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
 <!-- Images. -->
+
 [21]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs1.png
 [22]: ./media/event-hubs-java-ephcs-getstarted/java-send.png
 
 <!-- Links -->
+
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_1031_2016-->

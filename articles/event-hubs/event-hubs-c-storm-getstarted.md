@@ -3,9 +3,10 @@
 	description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并在 Apache Storm 群集中接收这些事件。"
 	services="event-hubs"
 	documentationCenter=""
-	authors="fsautomata"
+	authors="jtaubensee"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="event-hubs"
@@ -14,7 +15,7 @@
 	ms.devlang="java"
 	ms.topic="article"
 	ms.date="08/16/2016"
-	wacn.date="10/10/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
 # 事件中心入门
@@ -53,7 +54,7 @@
 
 	![][23]
 
-> [AZURE.NOTE] 在本教程中，只出于开发目的以本地模式使用 Storm。请参阅 [HDInsight Storm 概述]和官方 [Apache Storm] 文档，以了解 Storm 开发和模式的详细信息。
+> [AZURE.NOTE]  在本教程中，只出于开发目的以本地模式使用 Storm。请参阅 [HDInsight Storm overview]（HDInsight Storm 概述）和官方 [Apache Storm] 文档，了解 Storm 开发和模式的详细信息。
 
 ## 后续步骤
 
@@ -76,4 +77,4 @@
 [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

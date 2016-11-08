@@ -5,7 +5,8 @@
    documentationCenter="na"
    authors="spyrossak"
    manager="timlt"
-   editor="" />
+   editor="" />  
+
 <tags 
    ms.service="event-hubs"
    ms.devlang="na"
@@ -13,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/25/2016"
-   wacn.date="10/10/2016" />
+   wacn.date="11/08/2016" />
 
 # 通知用户已收到传感器或其他系统发出的数据
 
@@ -66,7 +67,6 @@
 [Azure 事件中心]: /home/features/event-hubs/
 [Azure 事件中心]: /home/features/event-hubs/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
 [AppToNotifyUsers]: https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications
 [Dynamics AX]: http://www.microsoft.com/zh-cn/dynamics/erp-ax-overview.aspx
 [Azure 网站]: /home/features/web-site/
@@ -81,4 +81,4 @@
 [1]: ./media/event-hubs-sensors-notify-users/event-hubs-sensor-alert.png
 [2]: ./media/event-hubs-sensors-notify-users/event-hubs-erp-alert.png
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

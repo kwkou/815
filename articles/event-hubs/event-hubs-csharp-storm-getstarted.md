@@ -3,9 +3,10 @@
 	description="遵循本教程开始使用 Azure 事件中心，以通过 C# 发送事件，并在 Apache Storm 群集中接收这些事件。"
 	services="event-hubs"
 	documentationCenter=""
-	authors="fsautomata"
+	authors="jtaubensee"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="event-hubs"
@@ -14,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article" 
 	ms.date="09/06/2016"
-	wacn.date="10/10/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
 # 事件中心入门
@@ -31,7 +32,7 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ Microsoft Visual Studio Express 2013 for Windows
++ [Microsoft Visual Studio](http://visualstudio.com)
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
@@ -60,9 +61,9 @@
 
 - [使用事件中心的完整示例应用程序][]。
 - [使用事件中心扩大事件处理][]示例。
-- 使用服务总线队列的[队列消息解决方案][]。
 
 <!-- Images. -->
+
 [22]: ./media/event-hubs-csharp-storm-getstarted/receive-storm1.png
 
 <!-- Links -->
@@ -70,7 +71,6 @@
 [事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

@@ -5,11 +5,17 @@
     documentationCenter="na"
     authors="sethmanheim"
     manager="timlt"
-    editor="" />
+    editor="" />  
+
 <tags 
     ms.service="event-hubs"
-    ms.date="06/07/2016"
-    wacn.date="07/25/2016" />
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/27/2016"
+    wacn.date="11/08/2016"/>  
+
 
 # 事件中心配额
 
@@ -17,4 +23,4 @@
 
 [AZURE.INCLUDE [service-bus-quotas-table](../../includes/event-hubs-limits.md)]
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_1031_2016-->
