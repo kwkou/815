@@ -139,7 +139,6 @@
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [从根本上保护 IoT 解决方案][lnk-securing]
 
 <!-- Links -->
 
@@ -151,7 +150,6 @@
 [lnk-physical-device]: /documentation/articles/iot-hub-gateway-sdk-physical-device/
 
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-securing]: /documentation/articles/iot-hub-security-ground-up/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
 <!---HONumber=Mooncake_0523_2016-->

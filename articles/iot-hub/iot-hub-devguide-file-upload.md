@@ -167,8 +167,8 @@ IoT 中心有两个 REST 终结点支持文件上传，一个用于获取存储�
 
 [lnk-devguide-identities]: /documentation/articles/iot-hub-devguide-identity-registry/
 [lnk-devguide-security]: /documentation/articles/iot-hub-devguide-security/
-[lnk-devguide-device-twins]: /documentation/articles/iot-hub-devguide-device-twins.
-[lnk-devguide-directmethods]: /documentation/articles/iot-hub-devguide-direct-methods.
+[lnk-devguide-device-twins]: /documentation/articles/iot-hub-devguide-device-twins/
+[lnk-devguide-directmethods]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-devguide-jobs]: /documentation/articles/iot-hub-devguide-jobs/
 
 <!---HONumber=Mooncake_1031_2016-->

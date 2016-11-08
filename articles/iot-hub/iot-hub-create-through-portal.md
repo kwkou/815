@@ -157,7 +157,6 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 
 - [开发人员指南][lnk-devguide]
 - [使用网关 SDK 模拟设备][lnk-gateway]
-- [从根本上保护 IoT 解决方案][lnk-securing]
 
 
   [4]: ./media/iot-hub-create-through-portal/create-iothub.png
@@ -173,6 +172,5 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-securing]: /documentation/articles/iot-hub-security-ground-up/
 
 <!---HONumber=Mooncake_1031_2016-->

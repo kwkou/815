@@ -234,7 +234,7 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 
 * [Java 事件中心客户端](https://github.com/hdinsight/eventhubs-client)
 * [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
-* [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
+
 
 ## 参考主题：
 

@@ -21,7 +21,7 @@
 
 # IoT 网关 SDK（Beta 版）– 使用 Linux 通过实际设备发送设备至云消息
 
-本演练的[蓝牙低功耗示例][lnk-ble-samplecode]演示如何使用 [Azure IoT 网关 SDK][lnk-sdk] 从物理设备将设备到云遥测转发到 IoT 中心以及如何从 IoT 中心将命令路由到物理设备。
+本演练的蓝牙低功耗示例演示如何使用 [Azure IoT 网关 SDK][lnk-sdk] 从物理设备将设备到云遥测转发到 IoT 中心以及如何从 IoT 中心将命令路由到物理设备。
 
 本文介绍的内容包括：
 
