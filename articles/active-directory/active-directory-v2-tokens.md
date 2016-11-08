@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2016"
+	ms.date="09/30/2016"
 	ms.author="dastrock"
-   	wacn.date="10/25/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
 # v2.0 令牌参考
@@ -155,4 +155,4 @@ Id\_Token 使用行业标准非对称式加密算法（例如 RSA 256）进行�
 | 授权代码（工作或学校帐户） | 10 分钟 | 授权代码的生存期有意缩短，应在收到时立即兑换 access\_token 和 refresh\_token。 |
 | 授权代码（个人帐户） | 5 分钟 | 授权代码的生存期有意缩短，应在收到时立即兑换 access\_token 和 refresh\_token。代表个人帐户颁发的授权代码也只能使用一次。 |
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1031_2016-->

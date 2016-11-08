@@ -5,16 +5,17 @@
    documentationCenter=""
    authors="msmbaldwin"
    manager="mbaldwin"
-   editor="mbaldwin" />
+   editor="mbaldwin" />  
+
 <tags
    ms.service="active-directory"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/25/2016"
+   ms.date="10/11/2016"
    ms.author="mbaldwin;bryanla" 
-   wacn.date="10/17/2016"/>  
+   wacn.date="11/08/2016"/>  
 
 
 # 将应用程序与 Azure Active Directory 集成
@@ -225,8 +226,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 1. 在顶部菜单中，单击“应用程序”，然后单击要配置的应用程序。“快速启动”页将显示单一登录信息和其他配置信息。
-1. 在命令栏中单击“管理清单”按钮，然后选择“下载清单”。
-打开 JSON 应用程序清单文件并将 "oauth2AllowImplicitFlow" 值设为“true”。默认情况下，它是“false”。
+1. 在命令栏中单击“管理清单”按钮，然后选择“下载清单”。打开 JSON 应用程序清单文件并将 "oauth2AllowImplicitFlow" 值设为“true”。默认情况下，它是“false”。
 
     `"oauth2AllowImplicitFlow": true,`  
 
@@ -283,7 +283,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 |参数|说明|
 |---|---|
 |TenantId|Azure AD 中已授予对你应用的访问权限的组织的唯一 ID。仅当客户授予了访问权限时，才要指定此参数。|
-|Consent|如果已授予对应用程序的访问权限，则该值将设置为 Granted；如果请求被拒绝，则设置为 Denied。|
+|同意|如果已授予对应用程序的访问权限，则该值将设置为 Granted；如果请求被拒绝，则设置为 Denied。|
 
 如果指定了其他参数作为 ConsentReturnUrl 编码 URL 的一部分，则会将这些参数返回到应用。下面显示了对某个访问授权请求返回的示例响应，该响应指明应用程序已被授权，并包含访问授权请求中提供的 ContextID：`https://adatum.com/ExpenseReport.aspx?ContextID=123456&Consent=Granted&TenantId=f03dcba3-d693-47ad-9983-011650e64134`。
 
@@ -303,7 +303,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 1. 返回到你的应用并更新配置，以开始使用新的密码密钥。有关要在何处执行此项更新的示例，请参阅[使用图形 API 查询 Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn151791.aspx)。
 
-1. 现在，你应该在整个生产环境中应用此更改 - 首先在一个节点上验证更改，然后将它应用到环境中的其他节点。
+1. 现在，应该在整个生产环境中应用此更改 — 首先在一个服务节点上验证更改，然后将它应用到环境中的其他节点。
 
 1. 在整个生产部署中完成更新后，可随时返回 Azure 经典管理门户并删除旧密钥。
 
@@ -353,12 +353,14 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 ## 后续步骤
 
-- 请参阅[适用于集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines/)
+- 有关应用的视觉指南的提示，请参阅[集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines/)。
 
-- 了解[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)
+- 有关应用程序的应用程序对象与服务主体对象之间关系的详细信息，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 
-- 了解 [Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
+- 若要了解有关应用程序清单扮演的角色的详细信息，请参阅[了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
 
-- 访问 [Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
+- 请参阅 [Azure AD developer glossary](/documentation/articles/active-directory-dev-glossary/)（Azure AD 开发人员术语表），了解某些核心的 Azure Active Directory (AD) 开发人员概念的定义。
 
-<!---HONumber=Mooncake_1010_2016-->
+- 请参阅 [Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)了解与所有开发人员相关内容的概述。
+
+<!---HONumber=Mooncake_1031_2016-->

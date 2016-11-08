@@ -15,9 +15,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="07/20/2016"
+    ms.date="09/30/2016"
     ms.author="curtand"
-    wacn.date="10/25/2016"/>  
+    wacn.date="11/08/2016"/>  
 
 
 # 将 Azure Active Directory 单一登录与 SaaS 应用相集成  
@@ -38,7 +38,7 @@
 
 否则，你可以手动将用户信息添加到应用，或使用应用商店中提供的其他预配解决方案。
 
-## 访问权限
+## 访问
 
 Azure AD 提供多种可自定义的方式来向组织中的用户部署应用程序。你不会受限于任一特定的部署或访问解决方案。可以使用[最符合需要的解决方案](/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users/)。
 
@@ -52,7 +52,7 @@ Azure AD 提供多种可自定义的方式来向组织中的用户部署应用�
 
 用户的标识通常有唯一身份标识符，可能是电子邮件地址或用户主体名称 (UPN)。需要将每个用户的应用程序标识链接（映射）到其各自的 Azure AD 标识。根据应用程序身份验证的要求，有几种方法可实现此目的。
 
-有关映射应用程序标识与 Azure AD 标识的详细信息，请参阅[自定义 SAML 令牌中颁发的声明](http://social.technet.microsoft.com/wiki/contents/articles/31257.azure-active-directory-customizing-claims-issued-in-the-saml-token-for-pre-integrated-apps.aspx)。
+有关映射应用程序标识与 Azure AD 标识的详细信息，请参阅 [Customizing claims issued in the SAML token](http://social.technet.microsoft.com/wiki/contents/articles/31257.azure-active-directory-customizing-claims-issued-in-the-saml-token-for-pre-integrated-apps.aspx)（自定义 SAML 令牌中颁发的声明）。
 
 ### 了解用户的登录体验
 
@@ -74,4 +74,4 @@ Azure.com 库中还提供了有关所有这些问题的更多详细信息，请�
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1031_2016-->

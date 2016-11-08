@@ -1,34 +1,41 @@
-<properties 
-	pageTitle="在 Azure 虚拟网络中安装 Active Directory 林" 
-	description="本教程介绍如何在 Azure 虚拟网络上的虚拟机 (VM) 中创建新的 Active Directory 林。" 
+<properties
+	pageTitle="在 Azure 虚拟网络中安装 Active Directory 林 | Azure"
+	description="本教程介绍如何在 Azure 虚拟网络上的虚拟机 (VM) 中创建新的 Active Directory 林。"
 	services="active-directory, virtual-network"
-	keywords="active directory 虚拟机, 安装 active directory 林, azure active directory 视频 "
+        keywords="active directory 虚拟机, 安装 active directory 林"
 	documentationCenter=""
 	authors="markusvi"
 	manager="femila"
-	tags=""/>
-
-<tags 
-	ms.service="active-directory" 
-	ms.date="07/13/2016"
-	wacn.date="08/22/2016"/>
+	tags=""/>  
 
 
-#在 Azure 虚拟网络中安装新的 Active Directory 林
+<tags
+	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="10/10/2016"
+	ms.author="markusvi"
+	wacn.date="11/08/2016"/>  
+
+
+
+# 在 Azure 虚拟网络中安装新的 Active Directory 林
 
 本主题说明如何在 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)上的虚拟机 (VM) 中创建新的 Windows Server Active Directory 环境。在此情况下，Azure 虚拟网络未连接到本地网络。
 
 你也有可能对下列相关主题感兴趣：
 
-- 有关这些步骤的演示视频，请参阅[如何在 Azure 虚拟网络中安装新的 Active Directory 林](http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-install-a-new-Active-Directory-forest-on-an-Azure-virtual-network)
-- 你可以有选择性地[配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)，然后安装新林，或者将本地林扩展到 Azure 虚拟网络。有关这些步骤的说明，请参阅[在 Azure 虚拟网络中安装副本 Active Directory 域控制器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)。
--  有关在 Azure 虚拟网络上安装 Active Directory 域服务 (AD DS) 的概念性指南，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/library/azure/jj156090.aspx)。
+- 可以有选择性地[配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)，然后安装新林，或者将本地林扩展到 Azure 虚拟网络。有关这些步骤的说明，请参阅[在 Azure 虚拟网络中安装副本 Active Directory 域控制器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)。
+-  有关在 Azure 虚拟网络上安装 Active Directory 域服务 (AD DS) 的概念性指南，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)。
 
 ## 方案示意图
 
 在此案例中，外部用户需要访问在添加域的服务器上运行的应用程序。运行应用程序服务器的 VM 及运行域控制器的 VM 安装在 Azure 虚拟网络中其自身的云服务内。它们还会包含在可用性集内以提高容错能力。
 
-![Azure 虚拟网络中虚拟机上的 Active Directory 林][1]
+![Azure 虚拟网络中虚拟机上的 Active Directory 林][1]  
+
 
 ## 在 Azure 上安装与在本地安装有什么不同？
 
@@ -44,8 +51,8 @@
 
 ## 创建 Azure 虚拟网络
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
-2. 创建虚拟网络。单击“网络”>“创建虚拟网络”。使用下表中的值来完成向导操作。 
+1. 登录到 Azure 经典管理门户。
+2. 创建虚拟网络。单击“网络”>“创建虚拟网络”。使用下表中的值来完成向导操作。
 
 	在此向导页上... | 指定这些值
 	------------- | -------------
@@ -56,12 +63,12 @@
 
 
 ## 创建 VM 以运行域控制器和 DNS 服务器角色
- 
+
 重复以下步骤，根据需要创建用于托管 DC 角色的 VM。应该至少部署两个虚拟域控制器来提供容错和冗余。如果 Azure 虚拟网络包含至少两个采用类似配置的 DC（即，它们都是 GC、运行 DNS 服务器，并且都不包含任何 FSMO 角色，等等），那么，你可将运行这些 DC 的 VM 放在可用性集中，以获得更高的容错能力。
 
 若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
-1. 在经典门户中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
+1. 在经典管理门户中，单击“新建”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 
     在此向导页上... | 指定这些值
 	------------- | -------------
@@ -115,25 +122,23 @@
 ## 另请参阅
 
 -  [如何在 Azure 虚拟网络中安装新的 Active Directory 林](http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-install-a-new-Active-Directory-forest-on-an-Azure-virtual-network)
--  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/library/azure/jj156090.aspx)
+-  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)
+
 -  [配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)
 -  [在 Azure 虚拟网络中安装副本 Active Directory 域控制器](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)
--  [Microsoft Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
--  [Microsoft Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
+-  [Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
+-  [Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 -  [虚拟网络概述](/documentation/articles/virtual-networks-overview/)
 -  [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)
-
--  [Azure PowerShell](http://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
-
+-  [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 -  [Azure Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)
-
 -  [设置 Azure VM 静态 IP 地址](http://windowsitpro.com/windows-azure/set-azure-vm-static-ip-address)
-
 -  [如何向 Azure VM 分配静态 IP](http://www.bhargavs.com/index.php/2014/03/13/how-to-assign-static-ip-to-azure-vm/)
--  [安装新的 Active Directory 林](https://technet.microsoft.com/library/jj574166.aspx)
--  [介绍 Active Directory 域服务 (AD DS) 虚拟化（级别 100）](https://technet.microsoft.com/library/hh831734.aspx)
+-  [安装新的 Active Directory 林](https://technet.microsoft.com/zh-cn/library/jj574166.aspx)
+-  [介绍 Active Directory 域服务 (AD DS) 虚拟化（级别 100）](https://technet.microsoft.com/zh-cn/library/hh831734.aspx)
 
 <!--Image references-->
+
 [1]: ./media/active-directory-new-forest-virtual-machine/AD_Forest.png
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1031_2016-->

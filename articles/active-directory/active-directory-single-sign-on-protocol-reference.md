@@ -5,18 +5,23 @@
 	documentationCenter=".net"
 	authors="priyamohanram"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/23/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	ms.author="priyamo"
+   	wacn.date="11/08/2016"/>  
+
 
 # 单一登录 SAML 协议
 
-[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
-
-在本文中，我们将了解 Azure Active Directory (Azure AD) 针对单一登录支持的 SAML 2.0 身份验证请求和响应。
+本文介绍了 Azure Active Directory (Azure AD) 针对单一登录支持的 SAML 2.0 身份验证请求和响应。
 
 下面的协议流程图描述了单一登录序列。云服务（服务提供者）使用 HTTP 重定向绑定将 `AuthnRequest`（身份验证请求）元素传递给 Azure AD（标识提供者）。然后，Azure AD 使用 HTTP POST 绑定将 `Response` 元素发布到云服务。
 
@@ -41,7 +46,7 @@
 | ----------------------- | ------------------------------- | --------------- |
 | ID | 必填 | Azure AD 使用此属性来填充返回的响应的 `InResponseTo` 属性。ID 的开头不能是数字，因此常见的策略是在 GUID 的字符串表示法前面加上类似于“id”的字符串。例如，`id6c1c178c166d486687be4aaf5e482730` 是有效的 ID。 |
 | 版本 | 必填 | 应为 **2.0**。|
-| IssueInstant | 必填 | 这是具有 UTC 值和[往返格式（“o”）](https://msdn.microsoft.com/library/az4se3k1.aspx)的日期时间字符串。Azure AD 需要这种类型的日期时间值，但不评估或使用该值。 |
+| IssueInstant | 必填 | 这是具有 UTC 值和[往返格式（“o”）](https://msdn.microsoft.com/zh-cn/library/az4se3k1.aspx)的日期时间字符串。Azure AD 需要这种类型的日期时间值，但不评估或使用该值。 |
 | AssertionConsumerServiceUrl | 可选 | 如果提供，它必须与 Azure AD 中云服务的 `RedirectUri` 匹配。 |
 | ForceAuthn | 可选 | 如果提供，应为 false。其他任何值会导致错误。|
 | IsPassive | 可选 | 如果提供，应为 false。其他任何值会导致错误。 |  
@@ -155,25 +160,10 @@ Azure AD 将忽略 `AuthnRequest` 元素的 `Subject` 元素。
 Azure AD 将 `Issuer` 元素设置为 `https://login.microsoftonline.com/<TenantIDGUID>/`，其中，<TenantIDGUID> 是 Azure AD 租户的租户 ID。
 
 例如，具有 Issuer 元素的示例响应看起来类似于这样：
-		
-		
-		<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
-
-
-### 签名
-
-Azure AD 在成功登录之后为 `Response` 元素签名。`Signature` 元素包含数字签名，可供应用程序用来对源进行身份验证以及验证响应的完整性。
-
-Azure AD 使用其元数据文档的 `IDPSSODescriptor` 元素中指定的签名密钥。有关详细信息，请参阅 [Federation Metadata Document（联合元数据文档）](active-directory-federation-metadata.md)。
-
-Azure AD 还为 `Assertion` 元素签名，但这两个 Signature 元素各自独立。
-
-下面是响应中的示例 `Signature` 元素：
 
 	
-	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-	    ...
-	  </ds:Signature>
+	<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
+	
 
 
 ### 状态
@@ -257,11 +247,11 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 
 包含用于标识目标受众的 URI。Azure AD 将此元素的值设置为发起登录的 `AuthnRequest` 的 `Issuer` 元素值。若要评估 `Audience` 值，请使用应用程序注册期间指定的 `App ID URI` 值。
 
-		
+	
 	<AudienceRestriction>
-		  <Audience>https://www.contoso.com</Audience>
+	        <Audience>https://www.contoso.com</Audience>
 	</AudienceRestriction>
-
+	
 
 与 `Issuer` 值一样，`Audience` 值必须与表示 Azure AD 中云服务的服务主体名称之一完全匹配。但是，如果 `Issuer` 元素值不是 URI 值，响应中的 `Audience` 值是带有 `spn:` 前缀的 `Issuer` 值。
 
@@ -269,7 +259,7 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 
 包含有关使用者或用户的声明。以下摘录包含一个示例 `AttributeStatement` 元素。省略号表示该元素可以包含多个属性和属性值。
 
-
+	
 	<AttributeStatement>
 	      <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
 	        <AttributeValue>testuser@contoso.com</AttributeValue>
@@ -279,7 +269,7 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 	      </Attribute>
 	      ...
 	</AttributeStatement>
-	
+		
 
 - **Name 声明**：`Name` 属性值 (`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`) 是经过身份验证的用户的用户主体名称，例如 `testuser@managedtenant.com`。
 - **ObjectIdentifier 声明**：`ObjectIdentifier` 属性值 (`http://schemas.microsoft.com/identity/claims/objectidentifier`) 是表示 Azure AD 中已经过身份验证用户的目录对象的 `ObjectId`。`ObjectId` 是已经过身份验证的不可变、全局唯一且可重复使用的安全标识符。
@@ -290,12 +280,12 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 
 - `AuthnInstant` 属性指定在 Azure AD 上对用户进行身份验证的时间。
 - `AuthnContext` 元素指定用于对用户进行身份验证的身份验证上下文。
-
-
+	
+	
 	<AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
 	      <AuthnContext>
 	        <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
 	      </AuthnContext>
 	</AuthnStatement>
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1031_2016-->

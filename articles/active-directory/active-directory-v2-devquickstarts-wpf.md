@@ -16,7 +16,7 @@ editor=""/>
 	ms.topic="article"
 	ms.date="07/30/2016"
 	ms.author="dastrock; vittorib"
-	wacn.date="10/25/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
 # 将登录凭据添加到 Windows 桌面应用
@@ -40,7 +40,7 @@ v2.0 终结点可让你快速地将身份验证添加桌面应用，同时支持
 本教程末尾也提供完成的应用。
 
 ## 注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 - 为应用添加**移动**平台。
@@ -49,7 +49,6 @@ v2.0 终结点可让你快速地将身份验证添加桌面应用，同时支持
 现在有了已向 Microsoft 注册的应用，可以安装 MSAL 并编写与标识相关的代码。为了使 MSAL 能够与 v2.0 终结点通信，需要提供一些与应用注册相关的信息。
 
 -	首先，使用包管理器控制台将 MSAL 添加到 TodoListClient 项目。
-
 
 	PM> Install-Package Microsoft.Identity.Client -ProjectName TodoListClient -IncludePrerelease
 
@@ -88,7 +87,7 @@ C#
 	
 	try
 	{
-		result = await app.AcquireTokenSilentAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Never, null));
+		result = await app.AcquireTokenSilentAsync(new string[] { clientId });
 	
 		// If we got here, a valid token is in the cache - or MSAL was able to get a new oen via refresh token.
 		// Proceed to fetch the user's tasks from the TodoListService via the GetTodoList() method.
@@ -134,7 +133,7 @@ C#
 		AuthenticationResult result = null;
 		try
 		{
-			result = await app.AcquireTokenAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Always, null));
+			result = await app.AcquireTokenAsync(new string[] { clientId });
 			SignInButton.Content = "Clear Cache";
 			GetTodoList();
 		}
@@ -265,4 +264,4 @@ C#
 
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1031_2016-->

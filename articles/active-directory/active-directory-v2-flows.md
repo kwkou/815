@@ -14,25 +14,25 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2016"
+	ms.date="09/30/2016"
 	ms.author="dastrock"
-   	wacn.date="10/25/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
-# v2.0 终结点的类型
+# v2.0 终结点的应用类型
 v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些体系结构都基于行业标准协议 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/) 和/或 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow/)。本文档简要介绍你可以构建的应用类型（无论你使用哪种语言或平台）。它可帮助了解一些高级方案，然后便可[开始编写代码](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started/)。
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
 ## 基础知识
-所有使用 v2.0 终结点的应用都必须在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 上注册。应用注册进程会收集一些值并将其分配到你的应用：
+所有使用 v2.0 终结点的应用都必须在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList) 上注册。应用注册进程会收集一些值并将其分配到你的应用：
 
 - 用于唯一标识应用的**应用程序 ID**
 - 用于将响应定向回到应用的**重定向 URI**
 - 其他一些特定于方案的值。有关详细信息，请了解如何[注册应用](/documentation/articles/active-directory-v2-app-registration/)。
 
-注册后，应用将向 Azure Active Directory v2.0 终结点发送请求，以便与 Azure AD 通信。我们提供了用于处理这些请求详细信息的开源框架和库，你也可以自行编写对这些终结点的请求，来实现身份验证逻辑：
+注册后，应用向 Azure Active Directory v2.0 终结点发送请求，以便与 Azure AD 通信。我们提供了用于处理这些请求详细信息的开源框架和库，你也可以自行编写对这些终结点的请求，来实现身份验证逻辑：
 
 	
 	https://login.microsoftonline.com/common/oauth2/v2.0/authorize
@@ -108,17 +108,22 @@ Web API 可以从各种应用接收 access\_token，其中包括 Web 服务器�
 
 若要查看此方案的实际运行情况，请尝试运行[入门](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started/)部分提供的单页应用代码示例之一。
 
-## 当前限制
-v2.0 终结点目前不支持这些类型的应用，但这项支持已列入开发路线图中。[v2.0 限制文章](/documentation/articles/active-directory-v2-limitations/)中说明了 v2.0 终结点的其他限制和局限性。
-
 ### 守护程序/服务器端应用
 包含长时运行进程或不需要用户操作的应用还需要通过其他方法访问受保护的资源，例如 Web API。这些应用可以通过 OAuth 2.0 客户端凭据流，使用应用的标识（而不是用户的委派标识）来进行身份验证和获取令牌。
 
-v2.0 终结点中目前不支持客户端凭据流。若要查看此流在正式版 Azure AD 服务中如何工作，请参阅 [GitHub 上的守护程序代码示例](https://github.com/AzureADSamples/Daemon-DotNet)。
+在该流中，应用通过直接与 `/token` 终结点交互来获取令牌：
+
+![守护应用泳道图像](./media/active-directory-v2-flows/convergence_scenarios_daemon.png)  
+
+
+若要生成守护程序，请参阅[入门](/documentation/articles/active-directory-appmodel-v2-overview/#getting-started/)部分中的客户端凭据文档，或者参考[此 .NET 示例应用](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2)。
+
+## 当前限制
+v2.0 终结点目前不支持这些类型的应用，但这项支持已列入开发路线图中。[v2.0 限制文章](/documentation/articles/active-directory-v2-limitations/)中说明了 v2.0 终结点的其他限制和局限性。
 
 ### 链接的 Web API（代理）
 许多体系结构包含需要调用另一个下游 Web API 的 Web API，这两者都受 v2.0 终结点的保护。此方案常见于具有 Web API 后端的本机客户端，该后端将调用 Office 365 或图形 API 等 Microsoft Online 服务。
 
 可以使用 OAuth 2.0 Jwt 持有者凭据授权（也称为[代理流](/documentation/articles/active-directory-v2-protocols/#oauth2-on-behalf-of-flow/)）来支持这种链接的 Web API 方案。但是，v2.0 终结点中目前尚未实现代理流。若要查看此流在正式版 Azure AD 服务中如何工作，请参阅 [GitHub 上的代理代码示例](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet)。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1031_2016-->

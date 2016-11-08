@@ -5,7 +5,8 @@
 	documentationCenter=".net"
 	authors="priyamohanram"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
@@ -13,13 +14,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/19/2016"
+	ms.date="10/03/2016"
 	ms.author="priyamo"
-   	wacn.date="10/11/2016"/>
+   	wacn.date="11/08/2016"/>
 
 # 使用客户端凭据进行服务到服务调用
 
-OAuth 2.0 客户端凭据授权流允许 Web 服务（ *机密客户端* ）在调用其他 Web 服务时使用它自己的凭据进行身份验证，而不是模拟用户。在这种情况下，客户端通常是中间层 Web 服务、后台程序服务或网站。
+OAuth 2.0 客户端凭据授权流允许 Web 服务（*机密客户端*）在调用其他 Web 服务时使用它自己的凭据进行身份验证，而不是模拟用户。在这种情况下，客户端通常是中间层 Web 服务、后台程序服务或网站。
 
 ## 客户端凭据授权流关系图
 
@@ -51,9 +52,9 @@ OAuth 2.0 客户端凭据授权流允许 Web 服务（ *机密客户端* ）在�
 | 参数 | | 说明 |
 |-----------|------|------------|
 | response\_type | 必填 | 指定请求的响应类型。客户端凭据授权流中的值必须是 **client\_credentials**。|
-| client\_id | 必填 | 指定调用 Web 服务的 Azure AD 客户端 ID。若要查找调用应用程序的客户端 ID，请在 Azure 管理门户中依次单击"Active Directory"、该目录、该应用程序、"配置"。|
-| client\_secret | 必填 | 在 Azure AD 中输入为调用 Web 服务注册的密钥。若要创建密钥，请在 Azure 管理门户中依次单击"Active Directory"、该目录、该应用程序、"配置"。 |
-| resource | 必填 | 输入接收 Web 服务的应用 ID URI。若要查找应用 ID URI，请在 Azure 管理门户中依次单击"Active Directory"、该目录、该应用程序、"配置"。 |
+| client\_id | 必填 | 指定调用 Web 服务的 Azure AD 客户端 ID。若要查找调用应用程序的客户端 ID，请在 Azure 管理门户中依次单击“Active Directory”、该目录、该应用程序、“配置”。|
+| client\_secret | 必填 | 在 Azure AD 中输入为调用 Web 服务注册的密钥。若要创建密钥，请在 Azure 管理门户中依次单击“Active Directory”、该目录、该应用程序、“配置”。 |
+| resource | 必填 | 输入接收 Web 服务的应用 ID URI。若要查找应用 ID URI，请在 Azure 管理门户中依次单击“Active Directory”、该目录、该应用程序、“配置”。 |
 
 ## 示例
 
@@ -97,4 +98,4 @@ OAuth 2.0 客户端凭据授权流允许 Web 服务（ *机密客户端* ）在�
 
 * [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->
