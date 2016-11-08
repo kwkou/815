@@ -6,7 +6,8 @@
     documentationCenter="na"
     authors="sethmanheim"
     manager="timlt"
-    editor="" />
+    editor="" />  
+
 <tags 
     ms.service="event-hubs"
     ms.devlang="na"
@@ -14,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="08/16/2016"
-    wacn.date="10/10/2016" />
+    wacn.date="11/08/2016" />
 
 # 事件中心身份验证和安全模型概述
 
@@ -32,7 +33,7 @@
 
 为每个设备分配一个唯一令牌，该令牌将上载到该设备。生成令牌后，每个唯一令牌将授予对不同唯一发布者的访问权限。拥有令牌的设备只能向一个发布者发送消息，但不能向其他发布者发送消息。如果多个设备共享同一令牌，则其中每个设备将共享一个发布者。
 
-可为设备配置令牌用于授予对事件中心的直接访问权限，但不建议这样做。持有此令牌的任何设备都可以直接将消息发送到该事件中心内。此类设备将不会受到限制。此外，无法将设备列入方块列表，使其无法向该事件中心发送消息。
+可为设备配置令牌用于授予对事件中心的直接访问权限，但不建议这样做。持有此令牌的任何设备都可以直接将消息发送到该事件中心内。此类设备将不会受到限制。此外，无法将设备列入方块列表，使其无法该事件中心发送消息。
 
 所有令牌使用 SAS 密钥进行签名。通常，所有令牌使用同一密钥进行签名。设备不知道该密钥；这可以防止设备生成令牌。
 
@@ -90,9 +91,9 @@ SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFm
 
 当设备向事件中心发送数据时，设备会在发送请求中标记其令牌。为了防止攻击者窃听和盗取令牌，设备与事件中心之间的通信必须通过加密通道进行。
 
-### 将设备列入屏蔽列表
+### 将设备列入方块列表
 
-如果盗取了令牌，攻击者可以模拟令牌已失窃的设备。将设备列入屏蔽列表会导致它不可用，直到为该设备提供了使用不同发布者的新令牌。
+如果盗取了令牌，攻击者可以模拟令牌已失窃的设备。将设备列入方块列表会导致它不可用，直到为该设备提供了使用不同发布者的新令牌。
 
 ## 后端应用程序的身份验证
 
@@ -115,4 +116,4 @@ SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFm
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

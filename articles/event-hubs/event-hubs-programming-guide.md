@@ -5,7 +5,8 @@
     documentationCenter="na"
     authors="sethmanheim"
     manager="timlt"
-    editor="" />
+    editor="" />  
+
 <tags 
     ms.service="event-hubs"
     ms.devlang="na"
@@ -13,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="tbd"
     ms.date="08/16/2016"
-    wacn.date="10/10/2016" />  
+    wacn.date="11/08/2016" />  
 
 
 # 事件中心编程指南
@@ -183,6 +184,7 @@ while(receive)
 
 - [事件中心 API 概述](/documentation/articles/event-hubs-api-overview/)
 - [事件中心概述](/documentation/articles/event-hubs-overview/)
+- [事件中心代码示例](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
 - [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

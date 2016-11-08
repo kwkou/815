@@ -3,9 +3,10 @@
 	description="遵循本教程开始使用以 C# 编写的 Azure 事件中心和 EventProcessorHost。"
 	services="event-hubs"
 	documentationCenter=""
-	authors="fsautomata"
+	authors="jtaubensee"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="event-hubs"
@@ -14,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/02/2016"
-	wacn.date="10/10/2016" />  
+	wacn.date="11/08/2016" />  
 
 
 # 事件中心入门
@@ -27,12 +28,11 @@
 
 本教程说明如何使用 Azure 经典管理门户创建事件中心。此外，还将说明如何使用以 C# 编写的控制台应用程序将消息收集到事件中心，以及如何使用 C# [事件处理程序主机][]库并行检索这些消息。
 
-本教程需准备：
+若要完成本教程，你需要以下各项：
 
-+ Microsoft Visual Studio 2013，或 Microsoft Visual Studio 2015。
++ [Microsoft Visual Studio](http://visualstudio.com)
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。详细信息请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
-
++ 有效的 Azure 帐户。如果没有帐户，只需几分钟时间就可以创建一个免费帐户。有关详细信息，请参阅 [Azure 免费试用](https://azure.microsoft.com/free/)。
 
 [AZURE.INCLUDE [event-hubs-create-event-hub](../../includes/event-hubs-create-event-hub.md)]
 
@@ -82,7 +82,6 @@
 
 - [使用事件中心的完整示例应用程序][]。
 - [使用事件中心扩大事件处理][]示例。
-- 使用服务总线队列的[队列消息解决方案][]。
 - [事件中心概述][]
 
 <!-- Images. -->
@@ -101,4 +100,4 @@
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->
