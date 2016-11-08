@@ -8,13 +8,15 @@
     editor=""
     tags=""/>
 
-<tags ms.service="multiple" ms.date="" wacn.date="11/03/2016" wacn.lang="cn"/>
+<tags ms.service="multiple" ms.date="" wacn.date="11/08/2016" wacn.lang="cn"/>
 
 #发票申请操作解析 - Azure在线业务
 
 ## 申请流程：
 ![申请流程](./media/azure-fapiao-process/01.PNG)
 
+<br />
+<br />
 
 ## 第一步：如何申请发票
 
@@ -24,6 +26,8 @@
 
 	![Portal](./media/azure-fapiao-process/02.png)
 
+<br />
+<br />
 
 ## 第二步：发票系统注册
 
@@ -33,14 +37,16 @@
 
 ![发票系统注册](./media/azure-fapiao-process/03.png)
 
+<br />
+<br />
 
 ## 第三步：开发票具体操作
 
 恭喜您成功注册，等您登录系统之后，在我的账单下选择并勾选上需要开具发票的批次，点击申请账单：
 
-- 支付系统是搭建在第三方平台，订单资料和支付结果需要3天的时间同步，请您耐心等待。
+支付系统是搭建在第三方平台，订单资料和支付结果需要3天的时间同步，请您耐心等待。
 	
-	![申请账单](./media/azure-fapiao-process/04.png)
+![申请账单](./media/azure-fapiao-process/04.png)
 
 请您先选择发票类型，然后继续完成“**发票信息**”，请完成 * 标记的待填项:
 
@@ -67,6 +73,8 @@
 
 ![确认信息](./media/azure-fapiao-process/07.png)
 
+<br />
+<br />
 
 ## 第四步：开票和寄出
 
@@ -77,8 +85,10 @@
 - 您的工单完成后，可以随时查看进度，我们会及时更新进度，例如“**已打印**”，“**已寄出**”。
 - 当票源紧张时，系统会发出公告并告知预计寄票时间，请您提交申请之后耐心等待。
 
-	![系统公告](./media/azure-fapiao-process/09.png)
+![系统公告](./media/azure-fapiao-process/09.png)
 
+<br />
+<br />
 
 ## 热点问题：
 
@@ -96,6 +106,8 @@
 
 Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https://support.windowsazure.cn/support) 提交工单。
 
+<br />
+<br />
 
 ### 问题二：自助修改登邮箱录，密码
 
@@ -116,6 +128,8 @@ Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https:/
 
 - 如果您忘记了登录邮箱，请致电 4000890365，我们的客服会帮助您解决问题。
 
+<br />
+<br />
 
 ### 问题三：查看订单 ID
 
@@ -125,11 +139,15 @@ Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https:/
 
 ![查看订单 ID](./media/azure-fapiao-process/17.png)
 
+<br />
+<br />
 
 ### 问题四：注册时填错邮箱地址怎么办
 
 如果注册时填错邮箱，将无法收到激活邮件，24 小时之后注册链接会自动失效，您可以使用正确邮箱重新注册。
 
+<br />
+<br />
 
 ### 问题五：没有收到账号激活邮件怎么办
 
