@@ -4,24 +4,32 @@
     services="storage"
     documentationCenter="na"
     authors="tamram"
-    manager="jdial"/>
+    manager="carmonm"
+    editor="tysonn"/>  
+
 
 <tags
     ms.service="storage"
-    ms.date="05/02/2016"
-    wacn.date="06/06/2016"/>
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/20/2016"
+    wacn.date="11/07/2016"
+    ms.author="micurd;tamram"/>  
+
 
 # 将 Azure CLI 用于 Azure 存储服务
 
 ## 概述
 
-Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。它提供了[经典管理门户](https://manage.windowsazure.cn)所提供的很多相同功能，以及各种数据访问功能。
+Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。它提供 [Azure 门户预览](https://portal.azure.cn)所能提供的很多相同功能，此外还有各种数据访问功能。
 
 在本指南中，我们将探讨如何使用 [Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli-install/)，以便通过 Azure 存储空间执行各种开发和管理任务。在使用本指南之前，我们建议你下载和安装或者升级到最新版 Azure CLI。
 
 本指南假定你了解 Azure 存储服务的基本概念。本指南提供了大量的脚本，用于演示 Azure CLI 与 Azure 存储服务的用法。在运行每个脚本之前，请确保根据配置更新脚本变量。
 
-> [AZURE.NOTE] 本指南提供在 Azure 服务管理 (ASM) 模式下运行的 Azure CLI 命令和脚本的示例。若要了解如何使用 Azure CLI 命令在 Azure 资源管理 (ARM) 模式下进行存储，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands/#azure-storage-commands-to-manage-your-storage-objects)。
+> [AZURE.NOTE] 本指南提供经典存储帐户的 Azure CLI 命令和脚本示例。若要了解如何使用适用于 Resource Manager 存储帐户的 Azure CLI 命令，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands/#azure-storage-commands-to-manage-your-storage-objects)。
 
 ## 在 5 分钟内开始使用 Azure 存储服务和 Azure CLI
 
@@ -68,17 +76,17 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 5. 在本地计算机中，打开首选的文本编辑器（例如 vim）。在文本编辑器中输入上述脚本。
 
-6. 现在，你需要基于你的环境配置中的设置更新脚本变量。
+6. 现在，你需要基于配置设置更新脚本变量。
 
-    - **<storage_account_name>**使用脚本中给定的名称，或输入存储帐户的新名称。**重要提示：**在 Azure 中，存储帐户的名称必须是唯一的。而且必须为小写！
+    - **<storage\_account\_name>**：使用脚本中给定的名称，或输入存储帐户的新名称。**重要提示：**在 Azure 中，存储帐户的名称必须是唯一的。它还必须为小写！
 
-    - **<storage_account_key>**你的存储帐户的访问密钥。
+    - **<storage\_account\_key>**：存储帐户的访问密钥。
 
-    - **<container_name>**使用脚本中给定的名称，或输入容器的新名称。
+    - **<container\_name>**：使用脚本中给定的名称，或输入容器的新名称。
 
-    - **<image_to_upload>**输入本地计算机上图片的路径，例如：“~/images/HelloWorld.png”。
+    - **<image\_to\_upload>**：输入本地计算机上图片的路径，例如：“~/images/HelloWorld.png”。
 
-    - **<destination_folder>**输入用于存储从 Azure 存储服务下载的文件的本地目录路径，例如：“~/downloadImages”。
+    - **<destination\_folder>**：输入用于存储从 Azure 存储下载的文件的本地目录路径，例如：“~/downloadImages”。
 
 7. 在 vim 中更新完必需的变量以后，按组合键“Esc, : , wq!”保存脚本。
 
@@ -88,9 +96,9 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ## 通过 Azure CLI 管理存储帐户
 
-### 连接到你的 Azure 订阅
+### 连接到 Azure 订阅
 
-大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请执行[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)中的步骤。
+大多数存储命令没有 Azure 订阅也可以使用，不过仍建议通过 Azure CLI 连接到订阅。若要配置 Azure CLI 以使用订阅，请执行[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)中的步骤。
 
 ### 新建存储帐户
 
@@ -117,7 +125,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ## 创建并管理 blob
 
-Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储的概念。有关详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
+Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储的概念。有关详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)和 [Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
 
 ### 创建容器
 
@@ -179,7 +187,7 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 
         azure storage directory create myshare myDir
 
-请注意，目录路径可以包括多个级别，例如 **a/b**。但是，你必须确保所有父目录都存在。例如，对于路径 **a/b**，你必须先创建目录 **a**，然后创建目录 **b**。
+请注意，目录路径可以包括多个级别，*例如* **a/b**。但是，你必须确保所有父目录都存在。例如，对于路径 **a/b**，你必须先创建目录 **a**，然后创建目录 **b**。
 
 ### 将本地文件上载到目录
 
@@ -217,4 +225,4 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_1031_2016-->

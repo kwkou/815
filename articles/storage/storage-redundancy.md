@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/07/2016"
-	wacn.date="10/10/2016"
-	ms.author="tamram"/>
+	ms.date="09/21/2016"
+	wacn.date="11/07/2016"
+	ms.author="jutang;tamram"/>
 
 # Azure 存储复制
 
@@ -38,6 +38,8 @@
 | 在单独的节点上维护的数据副本数。 | 3 | 6 | 6 |
 
 有关不同冗余选项的定价信息，请参阅 [Azure 存储空间定价](/pricing/details/storage/)。
+
+>[AZURE.NOTE] 高级存储仅支持本地冗余存储 (LRS)。有关高级存储的信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
 ## 本地冗余存储
 
@@ -81,4 +83,4 @@
 - [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

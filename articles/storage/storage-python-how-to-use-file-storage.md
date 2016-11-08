@@ -3,14 +3,20 @@
 	description="了解如何通过 Python 使用 Azure 文件存储上传、列出、下载和删除文件。"
 	services="storage"
 	documentationCenter="python"
-	authors="emgerner-msft"
-	manager="wpickett"
-	editor="tysonn"/>
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="07/26/2016"
-	wacn.date="09/12/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="minet;robinsh"/>
 
 # 如何通过 Python 使用 Azure 文件存储
 
@@ -96,4 +102,4 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1031_2016-->

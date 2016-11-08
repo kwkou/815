@@ -3,9 +3,10 @@
 	description="高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。Azure DS 系列 VM 支持高级存储。"
 	services="storage"
 	documentationCenter=""
-	authors="aungoo-msft"
-	manager=""
+	authors="yuemlu"
+	manager="aungoo-msft"
 	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
@@ -13,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/19/2016"
-	wacn.date="10/10/2016"
-	ms.author="aungoo-msft"/>  
+	ms.date="09/28/2016"
+	wacn.date="11/07/2016"
+	ms.author="yuemlu;aungoo;robinsh"/>  
 
 
 
@@ -573,4 +574,4 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 [Image1]: ./media/storage-premium-storage/Azure_attach_premium_disk.png
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

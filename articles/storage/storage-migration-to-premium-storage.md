@@ -4,13 +4,20 @@
     services="storage"
     documentationCenter="na"
     authors="aungoo-msft"
-    manager=""
-    editor="tysonn"/>
+    manager="tadb"
+    editor="tysonn"/>  
 
-<tags 
-    ms.service="storage" 
-    ms.date="07/25/2016"
-    wacn.date="09/05/2016"/>
+
+<tags
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/21/2016"
+    wacn.date="11/07/2016"
+    ms.author="aungoo;robinsh"/>  
+
 
 
 # 迁移到 Azure 高级存储
@@ -316,8 +323,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 此外，请参阅上一节有关注意事项的内容以了解可以对高级存储执行的各种优化。根据适用于你的应用程序的优化，迁移过程可能归入以下迁移方案之一。
 
 ### 简单迁移
-在此简单方案中，你希望在从标准存储迁移到高级存储时按原样保留你的配置。此处你按原样移动每个磁盘，然后同样转换 VM。
-此方案的优点是迁移轻松；缺点是生成的配置可能未针对最大限度地降低成本进行优化。
+在此简单方案中，你希望在从标准存储迁移到高级存储时按原样保留你的配置。此处你按原样移动每个磁盘，然后同样转换 VM。此方案的优点是迁移轻松；缺点是生成的配置可能未针对最大限度地降低成本进行优化。
 
 #### 准备工作
 1. 确保高级存储在你要迁移到的区域中可用。
@@ -679,4 +685,4 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-2.png
 [3]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

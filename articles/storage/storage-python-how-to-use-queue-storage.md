@@ -1,16 +1,23 @@
-<properties 
-	pageTitle="如何通过 Python 使用队列存储 | Azure" 
-	description="了解如何通过 Python 使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。" 
-	services="storage" 
-	documentationCenter="python" 
-	authors="emgerner-msft" 
-	manager="wpickett" 
-	editor=""/>
+<properties
+	pageTitle="如何通过 Python 使用队列存储 | Azure"
+	description="了解如何通过 Python 使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。"
+	services="storage"
+	documentationCenter="python"
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"/>  
 
-<tags 
-	ms.service="storage" 
-	ms.date="07/26/2016"
-	wacn.date="09/12/2016"/>
+
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="cbrooks;robinsh"/>  
+
 
 # 如何通过 Python 使用队列存储
 
@@ -39,14 +46,14 @@
 
 ## 如何：在队列中插入消息
 
-若要在队列中插入消息，可使用 **put_message** 方法创建一条新消息并将其添加到队列中。
+若要在队列中插入消息，可使用 **put\_message** 方法创建一条新消息并将其添加到队列中。
 
 	queue_service.put_message('taskqueue', u'Hello World')
 
 
 ## 如何：扫视下一条消息
 
-通过调用 **peek_messages** 方法，可以查看队列前面的消息，而不必从队列中将其删除。默认情况下，**peek_messages** 扫视单条消息。
+通过调用 **peek\_messages** 方法，可以查看队列前面的消息，而不必从队列中将其删除。默认情况下，**peek\_messages** 扫视单条消息。
 
 	messages = queue_service.peek_messages('taskqueue')
 	for message in messages:
@@ -60,34 +67,34 @@
 	messages = queue_service.get_messages('taskqueue')
 	for message in messages:
 		print(message.content)
-		queue_service.delete_message('taskqueue', message.message_id, message.pop_receipt)
+		queue_service.delete_message('taskqueue', message.id, message.pop_receipt)
 
-你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **get_messages** 方法来在一次调用中获取 16 条消息。然后，它会使用 for 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
+你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **get\_messages** 方法来在一次调用中获取 16 条消息。然后，它会使用 for 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
 
 	messages = queue_service.get_messages('taskqueue', num_messages=16, visibility_timeout=5*60)
 	for message in messages:
 		print(message.content)
-		queue_service.delete_message('taskqueue', message.message_id, message.pop_receipt)		
+		queue_service.delete_message('taskqueue', message.id, message.pop_receipt)		
 
 
 ## 如何：更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用 **update_message** 方法来更新消息。可见性超时设为 0，这意味着消息会立刻出现且内容将更新。
+你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用 **update\_message** 方法来更新消息。可见性超时设为 0，这意味着消息会立刻出现且内容将更新。
 
 	messages = queue_service.get_messages('taskqueue')
 	for message in messages:
-		queue_service.update_message('taskqueue', message.message_id, message.pop_receipt, 0, u'Hello World Again')
+		queue_service.update_message('taskqueue', message.id, message.pop_receipt, 0, u'Hello World Again')
 
 ## 如何：获取队列长度
 
-你可以获取队列中消息的估计数。**get_queue_metadata** 方法要求队列服务返回有关队列的元数据和 **approximate_message_count**。结果仅是近似值，因为在队列服务响应您的请求之后，可能添加或删除了消息。
+你可以获取队列中消息的估计数。**get\_queue\_metadata** 方法要求队列服务返回有关队列的元数据和 **approximate\_message\_count**。结果仅是近似值，因为在队列服务响应您的请求之后，可能添加或删除了消息。
 
 	metadata = queue_service.get_queue_metadata('taskqueue')
 	count = metadata.approximate_message_count
 
 ## 如何：删除队列
 
-若要删除队列及其中包含的所有消息，请调用 **delete_queue** 方法。
+若要删除队列及其中包含的所有消息，请调用 **delete\_queue** 方法。
 
 	queue_service.delete_queue('taskqueue')
 
@@ -103,4 +110,4 @@
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1031_2016-->

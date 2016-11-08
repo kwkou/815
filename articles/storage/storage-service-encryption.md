@@ -5,7 +5,8 @@
 	documentationCenter=".net"
 	authors="robinsh"
 	manager="carmonm"
-	editor="tysonn"/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
@@ -13,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/08/2016"
-	wacn.date="10/10/2016"
-	ms.author="robinsh"/>
+	ms.date="09/16/2016"
+	wacn.date="11/07/2016"
+	ms.author="lakasa;robinsh"/>
 
 # 静态数据的 Azure 存储空间服务加密
 
@@ -31,14 +32,15 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 SSE 的工作方式是在数据写入到 Azure 存储时对其加密，可用于块 blob、页 blob 和 追加 blob。它适用于：
 
 -   一般用途的存储帐户和 Blob 存储帐户
--   标准存储和主存储
+-   标准存储和高级存储
 -   所有冗余级别（LRS、GRS、RA-GRS）
 -   Azure Resource Manager 存储帐户（非经典）
 -   所有地区（中国东部和中国北部）
 
-此屏幕截图显示如何使用 [Azure 门户预览](https://portal.azure.cn)查找存储服务加密设置。在此屏幕上，单击“加密”以继续。
+若要启用或禁用存储帐户的存储服务加密，请登录 [Azure 门户预览](https://azure.portal.cn)，然后选择存储帐户。在“设置”边栏选项卡中，寻找如屏幕截图所示的“Blob 服务”部分，然后单击“加密”。
 
-![显示加密选项的门户截图](./media/storage-service-encryption/image1.png)
+![显示加密选项的门户截图](./media/storage-service-encryption/image1.png)  
+
 
 单击“加密”设置后，可以启用或禁用存储服务加密。
 
@@ -128,6 +130,8 @@ AzCopy 是一个 Windows 命令行实用工具，专用于将数据复制到 Azu
 
 答：可以创建新的 Resource Manager 存储帐户，并使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 将数据从现有经典存储帐户复制到新建的 Resource Manager 存储帐户。
 
+另一个选项是将经典存储帐户迁移到 Resource Manager 存储帐户。有关详细信息，请参阅 [Platform Supported Migration of IaaS Resources from Classic to Resource Manager](https://azure.microsoft.com/blog/iaas-migration-classic-resource-manager/)（平台支持的从经典部署模型到 Resource Manager 部署模型的 IaaS 资源迁移）。
+
 **问：我有一个现有的 Resource Manager 存储帐户。可以在其上启用 SSE 吗？**
 
 答：是的，但只加密新写入的 Blob。它不会返回去对已经存在的数据进行加密。
@@ -191,4 +195,4 @@ AzCopy 是一个 Windows 命令行实用工具，专用于将数据复制到 Azu
 
 Azure 存储空间提供配套的安全性功能，这些功能相辅相成，可让开发人员共同构建安全的应用程序。有关详细信息，请访问[存储安全指南](/documentation/articles/storage-security-guide/)。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

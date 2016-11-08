@@ -1,18 +1,24 @@
-<properties 
-	pageTitle="五分钟内开始使用 Azure 存储空间 | Azure" 
-	description="使用 Azure 存储空间快速入门、Visual Studio 和 Azure 存储模拟器快速掌握 Azure Blob、表和队列。在五分钟内运行你的第一个 Azure 存储空间应用程序。" 
-	services="storage" 
-	documentationCenter=".net" 
-	authors="tamram" 
-	manager="carmonm" 
-	editor="tysonn"/>
+<properties
+	pageTitle="五分钟内开始使用 Azure 存储 | Azure"
+	description="使用 Azure 存储空间快速入门、Visual Studio 和 Azure 存储模拟器快速掌握 Azure Blob、表和队列。在五分钟内运行你的第一个 Azure 存储空间应用程序。"
+	services="storage"
+	documentationCenter=".net"
+	authors="tamram"
+	manager="carmonm"
+	editor="tysonn"/>  
 
-<tags 
-	ms.service="storage" 
-	ms.date="07/21/2016"
-	wacn.date="09/05/2016"/>
 
-# 五分钟内开始使用 Azure 存储空间 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="get-started-article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="dineshm;tamram"/>
+
+# 五分钟内开始使用 Azure 存储空间
 
 ## 概述
 
@@ -26,7 +32,7 @@
 
 1. 若要编译和生成应用程序，你需要在你的计算机上安装 [Visual Studio](https://www.visualstudio.com/)。
 
-2. 安装最新版的[用于 .NET 的 Azure SDK](/downloads/)。SDK 包括 Azure 快速入门示例项目、Azure 存储模拟器和[用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
+2. 安装最新版的 [用于 .NET 的 Azure SDK](/downloads/)。SDK 包括 Azure 快速入门示例项目、Azure 存储模拟器和[用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
 3. 确保在你的计算机上安装了 [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653)，因为我们将在本教程中使用的 Azure 快速入门示例项目需要它。
 
@@ -113,4 +119,4 @@
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

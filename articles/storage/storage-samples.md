@@ -6,10 +6,15 @@
    authors="tamram"
    manager="na"
    editor="na" />
-<tags 
-   ms.service="storage"
-   ms.date="08/03/2016"
-   wacn.date="09/12/2016" />
+<tags
+	ms.service="storage"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage"
+	ms.date="09/21/2016"
+	wacn.date="11/07/2016"
+	ms.author="micurd;tamram" />
 
 # Azure 存储空间示例
 
@@ -24,7 +29,6 @@
 ## .NET 示例
 
 若要浏览 .NET 示例，请从 NuGet 下载 [.NET 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。同时也在 [Azure SDK for.NET](/downloads/) 中提供 .NET 存储客户端库。
-
 
 * [Getting Started with Azure Blob Service in .NET（.NET 中 Azure Blob 服务入门）](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started)
 * [Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started)
@@ -83,4 +87,4 @@
 - [C++ 存储客户端库的源代码](https://github.com/Azure/azure-storage-cpp)
 - [C++ 客户端库参考](http://azure.github.io/azure-storage-cpp/)
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1031_2016-->

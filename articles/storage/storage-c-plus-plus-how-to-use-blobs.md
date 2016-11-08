@@ -3,14 +3,20 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationCenter=".net"
-    authors="tamram"
-    manager="carmonm"
-    editor="tysonn"/>
+    authors="dineshmurthy"
+    manager="jahogg"
+    editor="tysonn"/>  
 
-<tags 
-    ms.service="storage" 
-    ms.date="07/25/2016"
-    wacn.date="09/05/2016"/>
+
+<tags
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/20/2016"
+    wacn.date="11/07/2016"
+    ms.author="dineshm;tamram"/>
 
 # 如何通过 C++ 使用 Blob 存储  
 
@@ -61,12 +67,12 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 下面的示例假定你使用了这两个方法之一来获取存储连接字符串。
 
 ## 检索你的连接字符串
-可以使用 **cloud_storage_account** 类来表示您的存储帐户信息。若要从存储连接字符串中检索您的存储帐户信息，您可以使用 **parse** 方法。
+可以使用 **cloud\_storage\_account** 类来表示您的存储帐户信息。若要从存储连接字符串中检索您的存储帐户信息，您可以使用 **parse** 方法。
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 
-其次，获取对 **cloud_blob_client** 类的引用，因为它允许您检索表示存储在 Blob 存储服务中的容器和 Blob 的对象。以下代码使用我们在上面检索到的存储帐户对象创建 **cloud_blob_client** 对象：
+其次，获取对 **cloud\_blob\_client** 类的引用，因为它允许您检索表示存储在 Blob 存储服务中的容器和 Blob 的对象。以下代码使用我们在上面检索到的存储帐户对象创建 **cloud\_blob\_client** 对象：
 
 	// Create the blob client.
 	azure::storage::cloud_blob_client blob_client = storage_account.create_cloud_blob_client();  
@@ -108,7 +114,7 @@ Internet 中的所有人都可以查看公共容器中的 Blob，但是，仅在
 ## 如何：将 Blob 上载到容器
 Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Blob。
 
-若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。拥有 Blob 引用后，您可以通过调用 **upload_from_stream** 方法将任何数据流上载到其中。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。下面的示例演示了如何将 Blob 上载到容器中，并假定已创建容器。  
+若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。拥有 Blob 引用后，您可以通过调用 **upload\_from\_stream** 方法将任何数据流上载到其中。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。下面的示例演示了如何将 Blob 上载到容器中，并假定已创建容器。
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -136,10 +142,10 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	azure::storage::cloud_block_blob blob3 = container.get_block_blob_reference(U("my-directory/my-sub-directory/my-blob-3"));
 	blob3.upload_text(U("other text"));  
 
-你还可以使用 **upload_from_file** 方法将文件上载到块 blob。
+您还可以使用 **upload\_from\_file** 方法将文件上载到块 Blob。
 
 ## 如何：列出容器中的 Blob
-若要列出容器中的 Blob，首先需要获取容器引用。然后，您可以使用容器的 **list_blobs** 方法来检索其中的 blob 和/或目录。若要针对一个返回的 **list_blob_item** 访问其丰富的属性和方法，您必须调用 **list_blob_item.as_blob** 方法以获取一个 **cloud_blob** 对象，或调用 **list_blob.as_directory** 方法以获取 cloud_blob_directory 对象。以下代码演示如何检索和输出 **my-sample-container** 容器中每一项的 URI：  
+若要列出容器中的 Blob，首先需要获取容器引用。然后，您可以使用容器的 **list\_blobs** 方法来检索其中的 Blob 和/或目录。若要针对一个返回的 **list\_blob\_item** 访问其丰富的属性和方法，您必须调用 **list\_blob\_item.as\_blob** 方法以获取一个 **cloud\_blob** 对象，或调用 **list\_blob.as\_directory** 方法以获取 cloud\_blob\_directory 对象。以下代码演示如何检索和输出 **my-sample-container** 容器中每一项的 URI：
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -167,7 +173,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 有关列出操作的更多详细信息，请参阅[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration/)。
 
 ## 如何：下载 Blob
-若要下载 Blob，请首先检索 Blob 引用，然后调用 **download_to_stream** 方法。以下示例使用 **download_to_stream** 方法将 Blob 内容传输到一个流对象，然后您可以将该对象保存到本地文件。  
+若要下载 Blob，请首先检索 Blob 引用，然后调用 **download\_to\_stream** 方法。以下示例使用 **download\_to\_stream** 方法将 Blob 内容传输到一个流对象，然后您可以将该对象保存到本地文件。
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -192,8 +198,8 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	outfile.write((char *)&data[0], buffer.size());
 	outfile.close();  
 
-或者，可以使用 **download_to_file** 方法将 blob 的内容下载到文件。
-此外，也可以使用 **download_text** 方法以文本字符串形式下载 Blob 的内容。  
+或者，可以使用 **download\_to\_file** 方法将 Blob 的内容下载到文件。
+此外，也可以使用 **download\_text** 方法以文本字符串形式下载 Blob 的内容。
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -211,7 +217,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	utility::string_t text = text_blob.download_text();
 
 ## 如何：删除 Blob
-若要删除 Blob，请先获取 Blob 引用，然后对其调用 **delete_blob** 方法。  
+若要删除 Blob，请先获取 Blob 引用，然后对其调用 **delete\_blob** 方法。
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -238,4 +244,4 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 -	[Azure 存档文档](/documentation/services/storage/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

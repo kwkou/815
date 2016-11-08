@@ -5,8 +5,9 @@
 	documentationCenter=""
 	authors="genlin"
 	manager="felixwu"
-	editor=""
-	tags="storage"/>
+	editor="tysonn"
+	tags="storage"/>  
+
 
 <tags
 	ms.service="storage"
@@ -14,9 +15,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2016"
-	wacn.date="10/10/2016"
-	ms.author="genli"/>
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="minet;genli;robinsh"/>
 
 # 对删除 Azure 存储帐户、容器或 VHD 进行故障排除
 
@@ -32,7 +33,7 @@
 ## 解决方法
 若要解决最常见的问题，请尝试以下方法：
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
+1. 切换到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 选择“虚拟机”>“磁盘”。
 
 	![Azure 经典门户中的虚拟机上的磁盘映像。](./media/storage-cannot-delete-storage-account-container-vhd/VMUI.png)
@@ -109,4 +110,4 @@
 - [删除存储帐户](/documentation/articles/storage-create-storage-account/#delete-a-storage-account)
 - [如何在 Azure（PowerShell）中中断 Blob 存储的锁定租约](https://gallery.technet.microsoft.com/scriptcenter/How-to-break-the-locked-c2cd6492)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

@@ -1,11 +1,12 @@
-<properties 
-	pageTitle="如何通过 Xamarin（预览版）使用 Blob 存储 | Azure" 
-	description="用于 Xamarin 的 Azure 存储客户端库预览版使开发人员能够使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用程序。本教程演示了如何通过 Xamarin 来创建使用 Azure Blob 存储的 Android 应用程序。" 
-	services="storage" 
-	documentationCenter="xamarin" 
-	authors="micurd" 
-	manager="" 
-	editor=""/>  
+<properties
+	pageTitle="如何通过 Xamarin 使用 Blob 存储 | Azure"
+	description="用于 Xamarin 的 Azure 存储客户端库使开发人员能够使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用。本教程演示了如何通过 Xamarin 来创建使用 Azure Blob 存储的应用程序。"
+	services="storage"
+	documentationCenter="xamarin"
+	authors="micurd"
+	manager="jahogg"
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
@@ -13,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/31/2016"
-	wacn.date="10/10/2016"
-	ms.author="micurd"/>
+	ms.date="10/08/2016"
+	wacn.date="11/07/2016"
+	ms.author="micurd;tamram"/>
 
 # 如何通过 Xamarin 使用 Blob 存储
 
@@ -42,7 +43,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 现在，应该有了这样一个应用程序：单击某个按钮即可让计数器递增。
 
-> [AZURE.NOTE] 用于 Xamarin 的 Azure 存储客户端库也适用于 Xamarin.Forms 应用程序。
+> [AZURE.NOTE] 用于 Xamarin 的 Azure 存储客户端库当前支持以下项目类型：Native Shared、Xamarin.Forms Shared、Xamarin.Android 和 Xamarin.iOS。
 
 ## 创建容器并上传 Blob
 
@@ -211,10 +212,9 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 ## 后续步骤
 
 在本入门指南中，你学习了如何使用 Azure 存储在 Xamarin 中创建跨平台应用程序。本入门指南侧重于 Blob 存储中的情况。但是，还可以进行更多操作，不光是使用 Blob 存储，还可以使用表、文件和队列存储。请参阅以下文章以了解更多信息：
-
 - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 - [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
 - [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)
 - [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

@@ -7,10 +7,17 @@
 	manager="carmonm"
 	editor="tysonn"/>  
 
+
 <tags
 	ms.service="storage"
-	ms.date="07/26/2016"
-	wacn.date="09/05/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="hero-article"
+	ms.date="10/12/2016"
+	wacn.date="11/07/2016"
+	ms.author="cbrooks;robinsh"/>  
+
 
 # 通过 .NET 开始使用 Azure 队列存储
 
@@ -122,7 +129,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 
 ## 更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 n，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
+你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -261,7 +268,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     - [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)来存储结构化数据。
     - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)来存储非结构化数据。
-    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)来存储关系数据。
+    - [使用.NET (C#) 连接到 SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)，存储关系数据。
 
 
 
@@ -274,4 +281,4 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->
