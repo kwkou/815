@@ -68,7 +68,7 @@
 [Azure 事件中心]: /home/features/event-hubs/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [AppToNotifyUsers]: https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications
-[Dynamics AX]: http://www.microsoft.com/zh-cn/dynamics/erp-ax-overview.aspx
+[Dynamics AX]: http://www.microsoft.com/dynamics/erp-ax-overview.aspx
 [Azure 网站]: /home/features/web-site/
 [SQL Azure]: /home/features/sql-database/
 [HDInsight]: /home/features/hdinsight/
