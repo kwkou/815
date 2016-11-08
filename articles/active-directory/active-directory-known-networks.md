@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="markusvi" 
 	manager="femila"  
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="active-directory" 
@@ -13,9 +14,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/20/2016" 
+	ms.date="10/10/2016" 
 	ms.author="markvi"
-   	wacn.date="10/17/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
 # 已知网络
@@ -36,7 +37,7 @@
 
 ###若要添加组织的公共 IP 地址范围，请执行以下步骤： 
 
-1.	登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1.	登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
 2.	在左窗格中，单击“Active Directory”。<br><br>![云应用程序发现的工作原理](./media/active-directory-known-networks/known-netwoks-01.png)
 
@@ -51,6 +52,7 @@
 7.	在出现的对话框中添加地址范围，然后在完成时单击选中按钮。<br><br>![云应用程序发现的工作原理](./media/active-directory-known-networks/known-netwoks-04.png)
 
 
+**其他资源**
 
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->

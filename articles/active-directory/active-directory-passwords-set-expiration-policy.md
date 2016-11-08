@@ -7,17 +7,24 @@
 	manager="femila"
 	editor=""/>  
 
+
 <tags
 	ms.service="active-directory"
-	ms.date="07/12/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/04/2016"
+	ms.author="curtand"
+	wacn.date="11/08/2016"/>  
+
 
 
 # 在 Azure Active Directory 中设置密码过期策略
 
 > [AZURE.IMPORTANT] **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
 
-作为 Microsoft 云服务的全局管理员，你可以使用适用于 Windows PowerShell 的 Microsoft Azure Active Directory 模块将用户密码设置为永不过期。你还可以使用 Windows PowerShell cmdlet 删除永不过期配置，或者查看已将哪些用户密码设置为永不过期。
+作为 Microsoft 云服务的全局管理员，你可以使用适用于 Windows PowerShell 的 Azure Active Directory 模块将用户密码设置为永不过期。你还可以使用 Windows PowerShell cmdlet 删除永不过期配置，或者查看已将哪些用户密码设置为永不过期。本文所提供的帮助针对于云服务，如 Microsoft Intune 和 Office 365，这些云服务依赖于 Azure Active Directory 为其提供标识与目录服务。
 
   > [AZURE.NOTE] 只能将未通过目录同步进行同步的用户帐户的密码配置为永不过期。有关目录同步的详细信息，请参阅[目录同步路线图](/documentation/articles/active-directory-aadconnect/)中的主题列表。
 
@@ -47,9 +54,9 @@
 
 2.  执行下列操作之一：
 
-	- 若要将某一个用户的密码设置为会过期，请使用用户主体名称 (UPN) 或该用户的用户 ID 运行以下 cmdlet：`Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires \$false`
-  	
-	- 若要将组织中所有用户的密码设置为会过期，请使用以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$false`
+	- 若要将某一个用户的密码设置为会过期，请使用用户主体名称 (UPN) 或该用户的用户 ID 运行以下 cmdlet：`Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires $false`
+
+	- 若要将组织中所有用户的密码设置为会过期，请使用以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires $false`
 
 ## <a name="set-a-password-to-never-expire"></a>将密码设置为永不过期
 
@@ -57,8 +64,12 @@
 
 2.  执行下列操作之一：
 
-	- 若要将某一个用户的密码设置为永不过期，请使用用户主体名称 (UPN) 或该用户的用户 ID 运行以下 cmdlet：`Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires \$true`
+	- 若要将某一个用户的密码设置为永不过期，请使用用户主体名称 (UPN) 或该用户的用户 ID 运行以下 cmdlet：`Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires $true`
 
-	- 若要将组织中所有用户的密码设置为永不过期，请运行以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$true`
+	- 若要将组织中所有用户的密码设置为永不过期，请运行以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires $true`
 
-<!---HONumber=Mooncake_0815_2016-->
+## 后续步骤
+
+* **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+
+<!---HONumber=Mooncake_1031_2016-->

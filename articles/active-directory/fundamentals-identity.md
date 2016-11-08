@@ -1,22 +1,22 @@
 <properties
 	pageTitle="Azure Identity | Azure"
-	description="了解如何在 Azure 中使用 Active Directory。"
+	description="了解如何使用 Azure Active Directory。"
 	services="active-directory"
 	documentationCenter=".net"
 	authors="curtand"
-	manager="stevenpo"
+	manager="femila"
 	editor=""/>  
 
 
 <tags
-	ms.service="multiple"
-	ms.workload="multiple"
+	ms.service="active-directory"
+	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/20/2016"
+	ms.date="10/04/2016"
 	ms.author="curtand"
-   	wacn.date="10/25/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
 
@@ -28,4 +28,4 @@
 
 [AZURE.INCLUDE [identity](../../includes/identity.md)]
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1031_2016-->

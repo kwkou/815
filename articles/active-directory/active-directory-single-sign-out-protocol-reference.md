@@ -5,12 +5,19 @@
 	documentationCenter=".net"
 	authors="priyamohanram"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
-	ms.date="06/23/2016"
-	wacn.date="08/02/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	ms.author="priyamo"
+	wacn.date="11/08/2016"/>  
+
 
 
 # 单一注销 SAML 协议
@@ -42,7 +49,7 @@ Azure Active Directory (Azure AD) 支持 SAML 2.0 Web 浏览器单一注销配�
 
 - `Version`：将此元素的值设置为 **2.0**。此值是必需的。
 
-- `IssueInstant`：这是一个 `DateTime` 字符串，它包含协调世界时 (UTC) 值并采用[往返格式（“o”）](https://msdn.microsoft.com/library/az4se3k1.aspx)。Azure AD 预期需要此类型的值，但这不是强制要求。
+- `IssueInstant`：这是一个 `DateTime` 字符串，它包含协调世界时 (UTC) 值并采用[往返格式（“o”）](https://msdn.microsoft.com/zh-cn/library/az4se3k1.aspx)。Azure AD 预期需要此类型的值，但这不是强制要求。
 
 - 如果在 `LogoutRequest` 元素中包含 `Consent`、`Destination`、`NotOnOrAfter` 和 `Reason` 属性，将忽略这些属性。
 
@@ -80,4 +87,4 @@ Azure AD 将此值设置为 `https://login.microsoftonline.com/<TenantIdGUID>/`�
 
 Azure AD 使用 `Status` 元素中的 `StatusCode` 元素指示注销的成功或失败。如果注销尝试失败，`StatusCode` 元素值还包含自定义错误消息。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1031_2016-->

@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/16/2016"
+	ms.date="10/10/2016"
 	ms.author="dastrock"
-   	wacn.date="10/25/2016"/>  
+   	wacn.date="11/08/2016"/>  
 
 
 # 保护 MVC Web API
@@ -26,7 +26,7 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-在 ASP.NET Web API 中，你可以使用随附在 .NET Framework 4.5 中的 Microsoft OWIN 中间件来完成此操作。在此处，我们将使用 OWIN 构建可让客户端通过用户待办事项列表创建和读取任务的“待办事项列表”MVC Web API。Web API 将验证传入的请求是否包含有效的访问令牌，并拒绝受保护路由上未通过验证的所有请求。
+在 ASP.NET Web API 中，你可以使用随附在 .NET Framework 4.5 中的 Microsoft OWIN 中间件来完成此操作。在此处，我们将使用 OWIN 构建可让客户端通过用户待办事项列表创建和读取任务的“待办事项列表”MVC Web API。Web API 将验证传入的请求是否包含有效的访问令牌，并拒绝受保护路由上未通过验证的所有请求。此示例使用 Visual Studio 2015 生成。
 
 ## 下载
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet/archive/skeleton.zip)，或克隆该骨架：
@@ -42,14 +42,13 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 
 
 ## 注册应用程序
-在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
+在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList) 中创建新的应用程序，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
 - 复制分配给应用程序的**应用程序 ID**，因为稍后将要用到。
 
 此 Visual Studio 解决方案还包含“TodoListClient”，这是一个简单的 WPF 应用。TodoListClient 用于演示用户如何登录，以及如何向 Web API 发出请求。在本例中，TodoListClient 和 TodoListService 由同一个应用代表。若要配置 TodoListClient，你还应该：
 
 - 为应用添加**移动**平台。
-- 从门户复制**重定向 URI**。必须使用默认值 `urn:ietf:wg:oauth:2.0:oob`。
 
 
 ## 安装 OWIN
@@ -61,7 +60,7 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 	PM> Install-Package Microsoft.Owin.Security.OAuth -ProjectName TodoListService
 	PM> Install-Package Microsoft.Owin.Security.Jwt -ProjectName TodoListService
 	PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
-	
+
 
 ## 配置 OAuth 身份验证
 
@@ -152,7 +151,6 @@ C#
 
 - 在 TodoListClient 项目中打开 `App.config`，然后在 `<appSettings>` 节中输入你的配置值。
   -	从门户复制的 `ida:ClientId` 应用程序 ID。
-	- `ida:RedirectUri` 是来自门户的**重定向 URI**。
 
 最后，清理、生成并运行每个项目！ 现在，你已构建了一个可从个人 Microsoft 帐户及公司或学校帐户接受令牌的 .NET MVC Web API。请登录到 TodoListClient，然后调用该 Web API 以将任务添加到用户的待办事项列表。
 
@@ -173,4 +171,4 @@ C#
 
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1031_2016-->

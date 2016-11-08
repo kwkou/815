@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="curtand"
 	manager="femila"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="virtual-network"
@@ -13,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/23/2016"
+	ms.date="09/30/2016"
 	ms.author="curtand"
-   	wacn.date="10/17/2016"/>  
+	wacn.date="11/08/2016"/>  
 
 
 
@@ -31,7 +32,7 @@
 
 ## 方案示意图
 
-在此案例中，外部用户需要访问在添加域的服务器上运行的应用程序。运行应用程序服务器和副本 DC 的 VM 安装在 Azure 虚拟网络中。虚拟网络可通过[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/) 连接方式连接到本地网络（如下图中所示），或者你可以使用 [ExpressRoute](/documentation/services/expressroute/) 进行更快地连接。
+在此案例中，外部用户需要访问在添加域的服务器上运行的应用程序。运行应用程序服务器和副本 DC 的 VM 安装在 Azure 虚拟网络中。虚拟网络可通过[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/) 连接方式连接到本地网络（如下图中所示），或者你可以使用 ExpressRoute 进行更快地连接。
 
 应用程序服务器和 DC 将部署在独立的云服务中以分散计算处理，并在[可用性集](/documentation/articles/virtual-machines-windows-manage-availability/)中改进容错功能。DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相互复制。不需要任何同步工具。
 
@@ -52,7 +53,7 @@
     在此向导页上... | 指定这些值
 	------------- | -------------
 	**虚拟网络详细信息** | <p>名称：键入虚拟网络的名称，例如 WestUSVNet。</p><p>区域：选择最靠近的区域。</p>
-	**DNS 和 VPN 连接** | <p>DNS 服务器：指定一个或多个本地 DNS 服务器的名称与 IP 地址。</p><p>连接：选择“配置站点到站点 VPN”。</p><p>局域网：指定新的局域网。</p><p>如果你使用 ExpressRoute 而不是 VPN，请参阅[通过 Exchange 提供商配置 ExpressRoute 连接](/documentation/articles/expressroute-configuring-exps/)。</p>
+	**DNS 和 VPN 连接** | <p>DNS 服务器：指定一个或多个本地 DNS 服务器的名称与 IP 地址。</p><p>连接：选择“配置站点到站点 VPN”。</p><p>局域网：指定新的局域网。</p>
 	**站点到站点连接** | <p>名称：键入本地网络的名称。</p><p>VPN 设备 IP 地址：指定要连接到虚拟网络的设备的公共 IP 地址。VPN 设备不能位于 NAT 的后面。</p><p>地址：指定本地网络的地址范围（例如方案示意图中的 192.168.0.0/16）。</p>
 	**虚拟网络地址空间** | <p>地址空间：指定你要在 Azure 虚拟网络中运行的 VM IP 地址范围（例如方案示意图中的 10.1.0.0/16）。此地址范围不能与本地网络的地址范围重叠。</p><p>子网：指定应用程序服务器的子网名称和地址（例如 Frontend、10.1.1.0/24）以及域控制器的子网名称和地址（例如 Backend、10.1.2.0/24）。</p><p>单击“添加网关子网”。</p>
 
@@ -64,7 +65,7 @@
 
 重复以下步骤，根据需要创建用于托管 DC 角色的 VM。应该至少部署两个虚拟域控制器来提供容错和冗余。如果 Azure 虚拟网络包含至少两个采用类似配置的 DC（即，它们都是 GC、运行 DNS 服务器，并且都不包含任何 FSMO 角色，等等），那么，你可将运行这些 DC 的 VM 放在可用性集中，以获得更高的容错能力。若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
-1. 在 [Azure 经典管理门户中](https://manage.windowsazure.cn)中单击“新建”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
+1. 在 [Azure 经典管理门户中](https://manage.windowsazure.cn)，单击“新建”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 
     在此向导页上... | 指定这些值
 	------------- | -------------
@@ -121,4 +122,4 @@
 <!--Image references-->
 [1]: ./media/active-directory-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1031_2016-->

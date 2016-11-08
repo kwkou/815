@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="dstrockis"
 	manager="msmbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
@@ -15,19 +16,19 @@
 	ms.topic="article"
 	ms.date="08/08/2016"
 	ms.author="dastrock"
-	wacn.date="10/25/2016"/>
+	wacn.date="11/08/2016"/>  
 
 
 # v2.0 协议 — OAuth 2.0 授权代码流
 
-OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问受保护的资源，例如 Web API。通过应用程序模型的 v2.0 实现 OAuth 2.0，可以将登录及 API 访问添加到移动应用程序和桌面应用程序。本指南与语言无关，介绍在不使用我们的任何开放源代码库的情况下，如何发送和接收 HTTP 消息。
+OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问受保护的资源，例如 Web API。使用应用模型 v2.0 的 OAuth 2.0 实现，可以将登录名及 API 访问添加到移动应用和桌面应用。本指南与语言无关，介绍在不使用我们的任何开放源代码库的情况下，如何发送和接收 HTTP 消息。
 
-<!-- TODO: Need link to libraries -->	
+<!-- TODO: Need link to libraries -->
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-有关 OAuth 2.0 授权代码流的说明，请参阅 [OAuth 2.0 规范第 4.1 部分](http://tools.ietf.org/html/rfc6749)。它用于在大部分的应用类型（包括 [Web 应用](/documentation/articles/active-directory-v2-flows/#web-apps)和[本机安装的应用](/documentation/articles/active-directory-v2-flows/#mobile-and-native-apps)）中执行身份验证与授权。它可让应用程序安全地获取 access\_tokens，用于访问以 v2.0 终结点保护的资源。
+有关 OAuth 2.0 授权代码流的说明，请参阅 [OAuth 2.0 规范第 4.1 部分](http://tools.ietf.org/html/rfc6749)。它用于在大部分的应用类型（包括 [Web 应用](/documentation/articles/active-directory-v2-flows/#web-apps/)和[本机安装的应用](/documentation/articles/active-directory-v2-flows/#mobile-and-native-apps/)）中执行身份验证与授权。它可让应用程序安全地获取 access\_tokens，用于访问以 v2.0 终结点保护的资源。
 
 ## 协议图
 从较高层面讲，本机/移动应用程序的整个身份验证流有点类似于：
@@ -49,14 +50,15 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 	&state=12345
 
 
-> [AZURE.TIP] 单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `code` 的 `https://localhost/myapp/`。<a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
+> [AZURE.TIP] 单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `code` 的 `https://localhost/myapp/`。
+    <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints)。 |
-| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
+| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)) 分配给应用的应用程序 ID。 |
 | response\_type | 必填 | 必须包括授权代码流的 `code`。 |
-| redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。对于本机和移动应用，应使用默认值 `urn:ietf:wg:oauth:2.0:oob`。 |
+| redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。对于本机和移动应用，应使用默认值 `https://login.microsoftonline.com/common/oauth2/nativeclient`。 |
 | 作用域 | 必填 | 你希望用户同意的[范围](/documentation/articles/active-directory-v2-scopes/)的空格分隔列表。 |
 | response\_mode | 建议 | 指定将生成的令牌送回到应用程序所应该使用的方法。可以是 `query` 或 `form_post`。 |
 | state | 建议 | 同样随令牌响应返回的请求中所包含的值。其可以是你想要的任何内容的字符串。随机生成的唯一值通常用于[防止跨站点请求伪造攻击](http://tools.ietf.org/html/rfc6749#section-10.12)。该状态也用于在身份验证请求出现之前，于应用程序中编码用户的状态信息，例如之前所在的网页或视图。 |
@@ -71,8 +73,8 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 #### 成功的响应
 使用 `response_mode=query` 的成功响应如下所示：
 
-	
-	GET urn:ietf:wg:oauth:2.0:oob?
+
+	GET https://login.microsoftonline.com/common/oauth2/nativeclient?
 	code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 	&state=12345
 
@@ -85,8 +87,8 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 #### 错误响应
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理：
 
-		
-	GET urn:ietf:wg:oauth:2.0:oob?
+
+	GET https://login.microsoftonline.com/common/oauth2/nativeclient?
 	error=access_denied
 	&error_description=the+user+canceled+the+authentication
 
@@ -133,8 +135,8 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints)。 |
-| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
+| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)) 分配给应用的应用程序 ID。 |
 | grant\_type | 必填 | 必须是授权代码流的 `authorization_code`。 |
 | 作用域 | 必填 | 范围的空格分隔列表。在此阶段中请求的范围必须相当于或为第一个阶段中所请求的范围子集。如果这个请求中指定的范围遍及多个资源服务器，v2.0 终结点将返回第一个范围内所指定资源的令牌。有关范围的更加详细的说明，请参阅[权限、同意和范围](/documentation/articles/active-directory-v2-scopes/)。 |
 | 代码 | 必填 | 在流的第一个阶段中获取的 authorization\_code。 |
@@ -146,12 +148,12 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 
 	
 	{
-	  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
-	  "token_type": "Bearer",
-	  "expires_in": 3599,
-	  "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
-	  "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
-	  "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
+		"access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
+		"token_type": "Bearer",
+		"expires_in": 3599,
+		"scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
+		"refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
+		"id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
 	}
 
 | 参数 | 说明 |
@@ -236,8 +238,8 @@ Access\_token 生存期很短，必须在其过期后刷新，才能继续访问
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | -------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints)。 |
-| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
+| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)) 分配给应用的应用程序 ID。 |
 | grant\_type | 必填 | 必须是授权代码流的此阶段的 `refresh_token`。 |
 | 作用域 | 必填 | 范围的空格分隔列表。在此阶段请求的范围必须等效于或者为原始 authorization\_code 请求阶段中所请求的范围子集。如果这个请求中指定的范围遍及多个资源服务器，v2.0 终结点将返回第一个范围内所指定资源的令牌。有关范围的更加详细的说明，请参阅[权限、同意和范围](/documentation/articles/active-directory-v2-scopes/)。 |
 | refresh\_token | 必填 | 在流的第二个阶段获取的 refresh\_token。 |
@@ -249,12 +251,12 @@ Access\_token 生存期很短，必须在其过期后刷新，才能继续访问
 
 	
 	{
-	   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
-	   "token_type": "Bearer",
-	   "expires_in": 3599,
-	   "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
-	   "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
-	   "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
+		"access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
+		"token_type": "Bearer",
+		"expires_in": 3599,
+		"scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
+		"refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
+		"id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
 	}
 
 | 参数 | 说明 |
@@ -291,4 +293,4 @@ Access\_token 生存期很短，必须在其过期后刷新，才能继续访问
 
 有关错误代码的描述和建议的客户端操作，请参阅[令牌终结点错误的错误代码](#error-codes-for-token-endpoint-errors)。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1031_2016-->

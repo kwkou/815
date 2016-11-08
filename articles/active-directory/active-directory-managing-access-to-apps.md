@@ -3,14 +3,21 @@
   description="介绍 Azure Active Directory 如何使组织能够指定每个用户有权访问的应用。"
   services="active-directory"
   documentationCenter=""
-  authors="msStevenPo"
-  manager="stevenpo"
-  editor=""/>
+  authors="femila"
+  manager="femila"
+  editor=""/>  
+
 
  <tags
   ms.service="active-directory"
-  ms.date="02/26/2016"
-  wacn.date="06/24/2016"/>
+  ms.workload="identity"
+  ms.tgt_pltfrm="na"
+  ms.devlang="na"
+  ms.topic="article"
+  ms.date="10/13/2016"
+  ms.author="femila"
+  wacn.date="11/08/2016"/>  
+
 
 
 # 管理对应用的访问
@@ -27,7 +34,7 @@
  Azure AD 的应用程序分配着重于两种主要分配模式：
 
 - **单独分配**：具有目录全局管理员权限的 IT 管理员可以选择单个用户帐户并授予这些用户访问应用程序的权限。
-- **基于组的分配（仅限付费版 Azure AD）**：具有目录全局管理员权限的 IT 管理员可以将组分配给应用程序。特定用户的访问权限取决于用户尝试访问应用程序时是否为组的成员。换而言之，管理员可以有效地创建分配规则，指明“分配组的任何现有成员都有权访问应用程序”。使用此分配选项，管理员可以受益于 Azure AD 组管理选项，外部系统组（例如，本地 Active Directory 或 Workday）、管理员管理的组或自助管理组。可以轻松地将单个组分配给多个应用程序，确保具有分配关联性的应用程序可以共享分配规则，从而降低总体管理复杂性。请注意，目前不支持使用嵌套的组成员身份来对应用程序进行基于组的分配。
+- **基于组的分配（仅限付费版 Azure AD）**：具有目录全局管理员权限的 IT 管理员可以将组分配给应用程序。特定用户的访问权限取决于用户尝试访问应用程序时是否为组的成员。换而言之，管理员可以有效地创建分配规则，指明“分配组的任何现有成员都有权访问应用程序”。使用此分配选项，管理员可受益于任意 Azure AD 组管理选项，包括外部系统组（例如，本地 Active Directory 或 Workday）、管理员管理的组或自助管理组。可以轻松地将单个组分配给多个应用程序，确保具有分配关联性的应用程序可以共享分配规则，从而降低总体管理复杂性。请注意，目前不支持使用嵌套的组成员身份来对应用程序进行基于组的分配。
 
 管理员可以使用这两种分配模式实现任何所需的分配管理方案。
 
@@ -44,12 +51,12 @@
 
 在此情况下，所有分配的用户将自动预配到 Salesforce，因为当他们添加到不同组时，他们的角色分配会在 Salesforce 中更新。用户可以通过 Microsoft 应用程序访问面板、Office Web 客户端甚至通过浏览到其组织的 Salesforce 登录页来发现和访问 Salesforce。管理员可以使用 Azure AD 报告轻松查看使用情况和分配状态。
 
- 
+
 ## 如何入门？
 
 首先，如果你未用过 Azure AD 并且你是 IT 管理员：
 
- - [立即试用！](/pricing/1rmb-trial-full/?v=c&form-type=waitinglist)- 你现在就可以使用此链接注册 30 天免费试用版，然后在不到 5 分钟内部署第一个云解决方案
+ - [立即试用！](/documentation/services/identity/) — 现在就可以使用此链接注册 30 天试用版，然后在不到 5 分钟内部署第一个云解决方案
 
 支持帐户共享的 Azure AD 功能包括：
 
@@ -62,5 +69,4 @@
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_1031_2016-->
