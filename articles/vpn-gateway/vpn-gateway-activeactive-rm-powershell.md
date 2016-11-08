@@ -60,7 +60,7 @@
 
 ### 开始之前
 
-- 确保你拥有 Azure 订阅。如果没有 Azure 订阅，可以注册一个[免费帐户](/pricing/1rmb-trial/)。
+- 确保你拥有 Azure 订阅。如果没有 Azure 订阅，可以注册一个 [1 元帐户](/pricing/1rmb-trial/)。
 	
 - 你需要安装 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 

@@ -53,23 +53,18 @@
 
 在本示例中，我们想要查看探测 URL 返回的响应：http://watestsdp2008r2.chinacloudapp.cn:80/Probe。 以下 PowerShell 示例演示了该问题。
 
-```powershell
     Invoke-WebRequest 'http://watestsdp2008r2.chinacloudapp.cn/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription
-```
 
 示例输出：
 
-```text
     StatusCode StatusDescription
     ---------- -----------------
             301 Moved Permanently
-```
 
 请注意我们收到了重定向响应。如前所述，任何非 200 状态代码都被视为失败。流量管理器将终结点状态更改为“脱机”。若要解决该问题，请检查网站配置，确保可以从探测路径返回正确的状态代码。将流量管理器探测重新配置为指向返回 200 的路径。
 
 如果探测使用 HTTPS 协议，可能需要禁用证书检查，避免测试期间出现 SSL/TLS 错误。以下 PowerShell 语句禁用当前 PowerShell 会话的证书验证：
 
-```powershell
     add-type @"
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
@@ -82,7 +77,6 @@
     }
     "@
     [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
-```
 
 ## 后续步骤
 

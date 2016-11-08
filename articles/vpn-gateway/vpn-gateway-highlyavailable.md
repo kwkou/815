@@ -100,6 +100,6 @@
 
 ## 后续步骤
 
-有关配置主动-主动跨界连接和 VNet 到 VNet 连接的步骤，请参阅 [Configuring Active-Active VPN Gateways for Cross-Premises and VNet-to-VNet Connections](http://go.microsoft.com/fwlink/?LinkId=828726)（为跨界连接和 VNet 到 VNet 连接配置主动-主动 VPN 网关）。
+有关配置主动-主动跨界连接和 VNet 到 VNet 连接的步骤，请参阅 [Configuring Active-Active VPN Gateways for Cross-Premises and VNet-to-VNet Connections](/documentation/articles/vpn-gateway-activeactive-rm-powershell/)（为跨界连接和 VNet 到 VNet 连接配置主动-主动 VPN 网关）。
 
 <!---HONumber=Mooncake_1031_2016-->
