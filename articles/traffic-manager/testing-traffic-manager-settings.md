@@ -5,7 +5,7 @@
    documentationCenter="na"
    authors="sdwheeler"
    manager="carmonm"
-   editor="tysonn" />  
+   editor="tysonn" />
 
 <tags
    ms.service="traffic-manager"
@@ -15,7 +15,7 @@
    ms.workload="infrastructure-services"
    ms.date="06/10/2016"
    wacn.date="11/07/2016"
-   ms.author="sewhee" />  
+   ms.author="sewhee" />
 
 
 # 测试流量管理器设置
