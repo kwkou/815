@@ -3,14 +3,20 @@
 	description="适用于 Python 的 Azure 存储客户端库支持客户端加密，实现 Azure 存储空间应用程序的最高安全性。"
 	services="storage"
 	documentationCenter="python"
-	authors="rickle-msft"
-	manager="carmonm"
-	editor=""/>
+	authors="dineshmurthy"
+	manager="jahogg"
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="08/08/2016"
-	wacn.date="09/05/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="dineshm;robinsh"/>
 
 
 # 使用适用于 Azure 存储空间的 Python 进行客户端加密
@@ -94,9 +100,7 @@
 	对于表，除了加密策略以外，用户还必须指定要加密的属性。为此，可将这些属性存储在 type 设置为 EdmType.STRING 且 encrypt 设置为 true 的 TableEntity 对象中，或者在 tableservice 对象中设置 encryption\_resolver\_function。加密解析程序是一个函数，它接受分区键、行键和属性名称并返回一个布尔值以指示是否应加密该属性。在加密过程中，客户端库将使用此信息来确定是否应在写入到网络时加密属性。该委托还可以围绕如何加密属性来实现逻辑的可能性。（例如，如果 X，则加密属性 A，否则加密属性 A 和 B。） 请注意，在读取或查询实体时，不需要提供此信息。
 
 ### 批处理操作
-一个加密策略将应用到批中的所有行。客户端库将为批中的每行在内部生成一个新的随机 IV 和随机 CEK。用户还可以选择通过在加密解析程序中定义此行为来加密批中的每个操作的不同属性。
-如果某个批是通过 tableservice batch() 方法以上下文管理器形式创建的，则 tableservice 的加密策略将自动应用到该批。如果某个批是通过调用构造函数显式创建的，则必须将加密策略作为参数来传递，并且在该批的生存期内都不要修改加密策略。
-请注意，使用批的加密策略将实例插入批时，会将实体加密（使用 tableservice 的加密策略提交批时不会加密实体）。
+一个加密策略将应用到批中的所有行。客户端库将为批中的每行在内部生成一个新的随机 IV 和随机 CEK。用户还可以选择通过在加密解析程序中定义此行为来加密批中的每个操作的不同属性。如果某个批是通过 tableservice batch() 方法以上下文管理器形式创建的，则 tableservice 的加密策略将自动应用到该批。如果某个批是通过调用构造函数显式创建的，则必须将加密策略作为参数来传递，并且在该批的生存期内都不要修改加密策略。请注意，使用批的加密策略将实例插入批时，会将实体加密（使用 tableservice 的加密策略提交批时不会加密实体）。
 
 ### 查询
 若要执行查询操作，必须指定一个能够解析结果集中的所有密钥的密钥解析程序。如果查询结果中包含的实体不能解析为提供程序，则客户端库将引发错误。对于执行服务器端投影的任何查询，在默认情况下，客户端库将为所选列添加特殊的加密元数据属性（\_ClientEncryptionMetadata1 和 \_ClientEncryptionMetadata2）。
@@ -120,8 +124,7 @@
 KEK 必须实现以下方法才能成功加密数据：
 - wrap\_key(cek)：使用用户所选的算法包装指定的 CEK（字节）。返回包装的密钥。
 - get\_key\_wrap\_algorithm()：返回用于包装密钥的算法。
-- get\_kid()：返回此 KEK 的字符串密钥 ID。
-KEK 必须实现以下方法才能成功解密数据：
+- get\_kid()：返回此 KEK 的字符串密钥 ID。KEK 必须实现以下方法才能成功解密数据：
 - unwrap\_key(cek, algorithm)：使用字符串指定的算法返回解包形式的指定 CEK。
 - get\_kid()：返回此 KEK 的字符串密钥 ID。
 
@@ -227,4 +230,4 @@ KEK 必须实现以下方法才能成功解密数据：
 - 下载[适用于 Java 的 Azure 存储客户端库 PyPi 包](https://pypi.python.org/pypi/azure-storage)
 - [从 GitHub 下载适用于 Python 的 Azure 存储客户端库源代码](https://github.com/Azure/azure-storage-python)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

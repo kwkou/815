@@ -1,16 +1,23 @@
 <properties 
-	pageTitle="监视、诊断和排查存储空间问题 | Azure" 
-	description="使用存储分析、客户端日志记录等功能及其他第三方工具来确定、诊断和排查与 Azure 存储空间相关的问题。" 
-	services="storage" 
-	documentationCenter="" 
+	pageTitle="监视、诊断和排查存储空间问题 |Azure" 
+	description="使用存储分析、客户端日志记录等功能及其他第三方工具来确定、诊断和排查与 Azure 存储空间相关的问题。"
+	services="storage"
+	documentationCenter=""
 	authors="jasonnewyork"
 	manager="tadb"
-	editor=""/>
+	editor="tysonn"/>  
 
-<tags 
-	ms.service="storage" 
-	ms.date="06/28/2016"
-	wacn.date="08/01/2016"/>
+
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/22/2016"
+	wacn.date="11/07/2016"
+	ms.author="jahogg;robinsh"/>  
+
 
 # 监视、诊断和排查 Azure 存储空间问题 
 
@@ -58,7 +65,7 @@
 	+ [容量度量值显示存储容量使用量意外增加]
 	+ [遇到具有大量附加 VHD 的虚拟机意外重新启动]
 	+ [你的问题是由于使用存储模拟器进行开发或测试而导致]
-	+ [安装 Azure SDK for .NET 时遇到问题]
+	+ [安装用于 .NET 的 Azure SDK 时遇到问题]
 	+ [你遇到了其他存储服务问题]
 + [附录]
 	+ [附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信]
@@ -154,7 +161,7 @@
 
 通常，对于作为出现需要调查的问题的指示器的任何这些值，你将监视其意外更改。
 
-在 [Azure 门户预览](https://portal.azure.cn)中，你可以添加警报规则，以便在此服务的任何性能度量值低于或超过你指定的阈值时通知你。
+在 [Azure 门户预览](https://portal.azure.cn)中，你可以添加警报规则，以便在此服务的任何性能度量值低于或超过指定阈值时通知你。
 
 本指南的“[故障排除指南]”一节将介绍与性能相关的一些常见存储服务问题。
 
@@ -205,7 +212,7 @@
 
 ### <a name="storage-emulator-issues"></a>存储模拟器问题
 
-Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行它。该模拟器可模拟 Azure 存储服务的大多数行为，因此在开发和测试期间很有用，使你能够无需 Azure 订阅和 Azure 存储帐户即可运行使用 Azure 存储服务的应用程序。
+Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行它。此模拟器可模拟 Azure 存储服务的大多数行为，因此在开发和测试期间很有用，让用户无需 Azure 订阅和 Azure 存储帐户即可运行使用 Azure 存储服务的应用程序。
 
 本指南的“[故障排除指南]”一节将介绍使用存储模拟器时遇到的一些常见问题。
 
@@ -345,7 +352,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 ----------
 
-[安装 Azure SDK for .NET 时遇到问题]
+[安装用于 .NET 的 Azure SDK 时遇到问题]
 
 ----------
 
@@ -717,7 +724,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 有关详细信息，请参阅[使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator/)。请注意，你也可以在 Visual Studio 中初始化存储模拟器，但这也需要管理特权。
 
-### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>安装 Azure SDK for .NET 时遇到问题
+### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>安装用于 .NET 的 Azure SDK 时遇到问题
 
 当你尝试安装 SDK 时，它尝试在本地计算机上安装存储模拟器时失败。安装日志包含以下消息之一：
 
@@ -901,7 +908,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [功能“X”在存储模拟器中无法正常工作]: #feature-X-is-not-working
 [使用存储模拟器时出现错误“其中一个 HTTP 标头的值的格式不正确”]: #error-HTTP-header-not-correct-format
 [运行存储模拟器需要管理权限]: #storage-emulator-requires-administrative-privileges
-[安装 Azure SDK for .NET 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
+[安装用于 .NET 的 Azure SDK 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
 [你遇到了其他存储服务问题]: #you-have-a-different-issue-with-a-storage-service
 
 [附录]: #appendices
@@ -912,6 +919,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 
 <!--Image references-->
+
 [1]: ./media/storage-monitoring-diagnosing-troubleshooting/overview.png
 [3]: ./media/storage-monitoring-diagnosing-troubleshooting/hour-minute-metrics.png
 [4]: ./media/storage-monitoring-diagnosing-troubleshooting/high-e2e-latency.png
@@ -922,4 +930,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1031_2016-->

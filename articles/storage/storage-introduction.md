@@ -1,19 +1,24 @@
-<properties 
-	pageTitle="存储简介 | Azure" 
+<properties
+	pageTitle="存储简介 | Azure"
 	description="Microsoft 的云中在线数据存储 - Azure 存储空间的概述。了解如何在应用程序中使用最佳的云存储解决方案。"
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
 	manager="carmonm"
-	editor="tysonn"/>
+	editor="tysonn"/>  
 
 
-<tags 
-	ms.service="storage" 
-	ms.date="07/21/2016"
-	wacn.date="09/05/2016"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="vamshik;tamram"/>
 
-# Azure 存储服务简介
+# Azure 存储空间简介
 
 ## 概述
 
@@ -126,7 +131,7 @@ Azure 文件存储提供了基于云的 SMB 文件共享，这样你可以将依
 
 最后，你可以指定一个容器及其 Blob 或某个特定的 Blob 可供公开访问。当你指定某个容器或 Blob 为公用的时，任何人都可以匿名读取它，不需要进行身份验证。公用容器和 Blob 非常适用于公开在网站上托管的资源，例如媒体和文档。若要降低全球受众的网络延迟，你可以通过 Azure CDN 来缓存网站使用的 Blob 数据。
 
-有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。有关安全访问你的存储帐户的详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)和 [Azure 存储服务身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。
+有关共享访问签名的详细信息，请参阅[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。有关安全访问你的存储帐户的详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)和 [Azure 存储服务身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。
 
 ## <a name="replication-for-durability-and-high-availability"></a> 用于实现持久性和高可用性的复制
 
@@ -137,7 +142,7 @@ Azure 文件存储提供了基于云的 SMB 文件共享，这样你可以将依
 创建存储帐户时，必须选择以下复制选项之一：
 
 - **本地冗余存储 (LRS)。** 本地冗余存储保留数据的三个副本。LRS 将在单个区域中的单个设施内复制三次。LRS 可以保护你的数据免受普通的硬件故障损害，但无法保护你的数据免受单个设施故障的损害。
-  
+
 	LRS 以折扣价格提供。为获得最大持久性，我们建议你使用下文所述的地域冗余存储。
 
 
@@ -256,4 +261,4 @@ Azure 存储空间资源可以通过任何发出 HTTP/HTTPS 请求的语言来�
 - [如何通过 Python 使用队列存储](/documentation/articles/storage-python-how-to-use-queue-storage/)
 - [如何通过 Python 使用文件存储](/documentation/articles/storage-python-how-to-use-file-storage/)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

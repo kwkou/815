@@ -3,15 +3,20 @@
 	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
 	services="storage"
 	documentationCenter="python"
-	authors="emgerner-msft"
-	manager="wpickett"
+	authors="tamram"
+	manager="carmonm"
 	editor="tysonn"/>  
 
 
 <tags
 	ms.service="storage"
-	ms.date="07/26/2016"
-	wacn.date="09/12/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="gusapost;tamram"/>
 
 
 # 如何通过 Python 使用表存储
@@ -42,12 +47,12 @@
 
 若要添加实体，请首先创建定义实体属性名称和值的字典或实体。请注意，对于每个实体，你必须指定 **PartitionKey** 和 **RowKey**。这些是您的实体的唯一标识符。你可以使用这些值进行查询，比查询其他属性快得多。系统使用 **PartitionKey** 自动将表的实体分发到多个存储节点上。具有相同的 **PartitionKey** 的实体存储在同一个节点上。**RowKey** 是实体在其所属分区内的唯一 ID。
 
-若要将实体添加到表中，请将字典对象传递给 **insert_entity** 方法。
+若要将实体添加到表中，请将字典对象传递给 **insert\_entity** 方法。
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-你还可以将 **Entity** 类的实例传递给 **insert_entity** 方法。
+你还可以将 **Entity** 类的实例传递给 **insert\_entity** 方法。
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -61,15 +66,15 @@
 此代码演示如何使用更新版本替换现有实体的旧版本。
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the garbage', 'priority' : 250}
-	table_service.update_entity('tasktable', task)
+	table_service.update_entity('tasktable', 'tasksSeattle', '1', task, content_type='application/atom+xml')
 
-如果要更新的实体不存在，更新操作将失败。如果你要存储实体，而不管它以前是否已存在，请使用 **insert_or_replace_entity**。在下面的示例中，第一次调用将替换现有实体。第二次调用将插入新实体，因为表中不存在具有指定的 **PartitionKey** 和 **RowKey** 的实体。
+如果要更新的实体不存在，更新操作将失败。如果你要存储实体，而不管它以前是否已存在，请使用 **insert\_or\_replace\_entity**。在下面的示例中，第一次调用将替换现有实体。第二次调用将插入新实体，因为表中不存在具有指定的 **PartitionKey** 和 **RowKey** 的实体。
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the garbage again', 'priority' : 250}
-	table_service.insert_or_replace_entity('tasktable', task)
+	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task, content_type='application/atom+xml')
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '3', 'description' : 'Buy detergent', 'priority' : 300}
-	table_service.insert_or_replace_entity('tasktable', task)
+	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task, content_type='application/atom+xml')
 
 ## 更改实体组
 
@@ -95,7 +100,7 @@
 
 ## 查询实体
 
-若要查询表中的实体，请使用 **get_entity** 方法并传递 **PartitionKey** 和 **RowKey**。
+若要查询表中的实体，请使用 **get\_entity** 方法并传递 **PartitionKey** 和 **RowKey**。
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
 	print(task.description)
@@ -116,7 +121,7 @@
 
 以下代码中的查询只返回表中实体的说明。
 
-[AZURE.NOTE]下面的代码段仅对云存储服务有效。不受存储模拟器支持。
+[AZURE.NOTE] 下面的代码段仅对云存储服务有效。不受存储模拟器支持。
 
 	tasks = table_service.query_entities('tasktable', filter="PartitionKey eq 'tasksSeattle'", select='description')
 	for task in tasks:
@@ -146,4 +151,4 @@
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1031_2016-->

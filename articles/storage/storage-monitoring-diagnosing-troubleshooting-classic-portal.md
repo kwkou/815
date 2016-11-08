@@ -1,16 +1,23 @@
 <properties
-	pageTitle="监视、诊断和排查存储空间问题 | Azure"
+	pageTitle="监视、诊断和排查存储空间问题 |Azure"
 	description="使用存储分析、客户端日志记录等功能及其他第三方工具来确定、诊断和排查与 Azure 存储空间相关的问题。"
 	services="storage"
 	documentationCenter=""
 	authors="jasonnewyork"
 	manager="tadb"
-	editor=""/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="04/29/2016"
-	wacn.date="06/06/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/22/2016"
+	wacn.date="11/07/2016"
+	ms.author="jahogg;robinsh"/>  
+
 
 # 监视、诊断和排查 Azure 存储空间问题
 
@@ -58,7 +65,7 @@
 	+ [容量度量值显示存储容量使用量意外增加]
 	+ [遇到具有大量附加 VHD 的虚拟机意外重新启动]
 	+ [你的问题是由于使用存储模拟器进行开发或测试而导致]
-	+ [安装 Azure SDK for .NET 时遇到问题]
+	+ [安装用于 .NET 的 Azure SDK 时遇到问题]
 	+ [你遇到了其他存储服务问题]
 + [附录]
 	+ [附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信]
@@ -205,7 +212,7 @@ MSDN 上的以下资源对了解与存储相关的状态和错误代码很有帮
 
 ### <a name="storage-emulator-issues"></a>存储模拟器问题
 
-Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行它。该模拟器可模拟 Azure 存储服务的大多数行为，因此在开发和测试期间很有用，使你能够无需 Azure 订阅和 Azure 存储帐户即可运行使用 Azure 存储服务的应用程序。
+Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行它。此模拟器可模拟 Azure 存储服务的大多数行为，因此在开发和测试期间很有用，让用户无需 Azure 订阅和 Azure 存储帐户即可运行使用 Azure 存储服务的应用程序。
 
 本指南的“[故障排除指南]”一节将介绍使用存储模拟器时遇到的一些常见问题。
 
@@ -261,7 +268,9 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 下面的代码示例演示如何通过附加 **OperationContext** 对象（向存储服务发出的请求）设置自定义 **ClientRequestId** 值。它还演示了如何从响应消息中检索 **ServerRequestId** 值。
 
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+    //Parse the connection string for the storage account.
+    const string ConnectionString = "DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key;EndpointSuffix=core.chinacloudapi.cn";
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConnectionString);
     CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
     // Create an Operation Context that includes custom ClientRequestId string based on constants defined within the application along with a Guid.
@@ -343,7 +352,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 ----------
 
-[安装 Azure SDK for .NET 时遇到问题]
+[安装用于 .NET 的 Azure SDK 时遇到问题]
 
 ----------
 
@@ -359,7 +368,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 请注意，存储服务仅对成功的请求计算度量值 **AverageE2ELatency**，与 **AverageServerLatency** 不同，它包括客户端发送数据及从存储服务接收确认所需的时间。因此，**AverageE2ELatency** 和 **AverageServerLatency** 之间的差异可能是由于客户端应用程序响应速度慢，或者是由网络上的情况导致的。
 
-> [AZURE.NOTE]您还可以在存储日志记录日志数据中查看单个存储操作的 **E2ELatency** 和 **ServerLatency**。
+> [AZURE.NOTE] 您还可以在存储日志记录日志数据中查看单个存储操作的 **E2ELatency** 和 **ServerLatency**。
 
 #### 调查客户端的性能问题
 
@@ -403,7 +412,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 较高的 **AverageServerLatency** 值也可能是设计欠佳的表或查询的症状，它会导致扫描操作或执行追加/前面预置反模式。有关详细信息，请参阅“[度量值显示 PercentThrottlingError 增加]”。
 
-> [AZURE.NOTE] 你可以在此处找到一份全面的性能清单：[Azure 存储空间性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)。
+> [AZURE.NOTE] 可在此处找到一份全面的性能清单：[Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)。
 
 ### <a name="you-are-experiencing-unexpected-delays-in-message-delivery"></a>队列上的消息传递出现意外的延迟
 
@@ -431,7 +440,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 如果您看到 **PercentThrottlingError** 的值达到峰值的时间与应用程序活动的高峰期保持一致，则应在客户端中对重试实施指数（而非线性）退让策略：这将减少分区上的即时负载，并帮助您的应用程序消除流量峰值。有关如何实现使用存储客户端库实现重试策略的详细信息，请参阅 MSDN 上的 <a href="http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.retrypolicies.aspx" target="_blank">Microsoft.WindowsAzure.Storage.RetryPolicies 命名空间</a>。
 
-> [AZURE.NOTE]您可能也会看到 **PercentThrottlingError** 的值达到峰值的时间与应用程序活动的高峰期不一致：这种情况最可能的原因是存储服务正在移动分区以改进负载均衡。
+> [AZURE.NOTE] 您可能也会看到 **PercentThrottlingError** 的值达到峰值的时间与应用程序活动的高峰期不一致：这种情况最可能的原因是存储服务正在移动分区以改进负载均衡。
 
 #### <a name="permanent-increase-in-PercentThrottlingError"></a>PercentThrottlingError 错误永久增加
 
@@ -441,13 +450,13 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 低效的查询设计也会导致你达到表分区的可伸缩性限制。例如，一个使用筛选器的查询仅选择分区中百分之一的实体，但却扫描该分区中的所有实体，从而将需要访问每个实体。读取的每个实体均将计入该分区中的事务总数；因此，很容易就可以达到可伸缩性目标。
 
-> [AZURE.NOTE]性能测试应显示你的应用程序中的任何低效查询设计。
+> [AZURE.NOTE] 性能测试应显示你的应用程序中的任何低效查询设计。
 
 ### <a name="metrics-show-an-increase-in-PercentTimeoutError"></a>度量值显示 PercentTimeoutError 增加
 
 您的度量值显示其中一个存储服务的 **PercentTimeoutError** 增加。同时，客户端将收到存储操作发出的大量“500 操作超时”HTTP 状态消息。
 
-> [AZURE.NOTE]当存储服务通过将分区移到新服务器来对请求进行负载均衡时，你可能会临时地看到超时错误。
+> [AZURE.NOTE] 当存储服务通过将分区移到新服务器来对请求进行负载均衡时，你可能会临时地看到超时错误。
 
 **PercentTimeoutError** 度量值是以下度量值的聚合：**ClientTimeoutError**、**AnonymousClientTimeoutError**、**SASClientTimeoutError**、**ServerTimeoutError**、**AnonymousServerTimeoutError** 和 **SASServerTimeoutError**。
 
@@ -610,7 +619,7 @@ e2d06d78-... | 重试策略不允许重试。操作失败，远程服务器返�
     SEC7120: Origin http://localhost:56309 not found in Access-Control-Allow-Origin header.
     SCRIPT7002: XMLHttpRequest: Network Error 0x80070005, Access is denied.
 
-> [AZURE.NOTE]在排查客户端 JavaScript 问题时，可以使用 Internet Explorer 中的 F12 开发人员工具来跟踪浏览器与存储服务之间交换的消息。
+> [AZURE.NOTE] 在排查客户端 JavaScript 问题时，可以使用 Internet Explorer 中的 F12 开发人员工具来跟踪浏览器与存储服务之间交换的消息。
 
 之所以发生这些错误是因为 Web 浏览器实施了“<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">同源策略</a>”安全限制，以防止网页调用与它来自的域不同的域中的 API。
 
@@ -677,7 +686,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 ### <a name="you-are-experiencing-unexpected-reboots"></a>遇到具有大量附加 VHD 的 Azure 虚拟机意外重新启动
 
-如果 Azure 虚拟机 (VM) 具有大量位于同一存储帐户的附加 VHD，则可能会超过单个存储帐户的可伸缩性目标，从而导致 VM 出现故障。您应查看存储帐户的每分钟度量值 (**TotalRequests**/**TotalIngress**/**TotalEgress**)，以获取超过一个存储帐户的可伸缩性目标的峰值。若要帮助确定是否已对您的存储帐户进行限制，请参阅“[度量值显示 PercentThrottlingError 增加]”一节。
+如果 Azure 虚拟机 (VM) 具有大量位于同一存储帐户的附加 VHD，则可能会超过单个存储帐户的可伸缩性目标，从而导致 VM 出现故障。应查看存储帐户的分钟度量值 (**TotalRequests**/**TotalIngress**/**TotalEgress**)，获取超过存储帐户的可伸缩性目标的峰值。若要帮助确定是否已对您的存储帐户进行限制，请参阅“[度量值显示 PercentThrottlingError 增加]”一节。
 
 通常，虚拟机对 VHD 进行的每个单独的输入或输出操作都会转换为对基础页 Blob 进行的“Get 页”或“Put 页”操作。因此，你可以根据应用程序的特定行为，对环境使用估计的 IOPS 以优化可以在单个存储帐户中设置的 VHD 数。我们不建议在单个存储帐户中设置超过 40 个的磁盘。有关存储帐户的当前可伸缩性目标的详细信息（尤其是您所用的存储帐户类型的总请求速率和总带宽），请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx" target="_blank">Azure 存储空间可伸缩性和性能目标</a>。如果你即将超过存储帐户的可伸缩性目标，则应将你的 VHD 放入多个不同的存储帐户中，以减少每个帐户中的活动。
 
@@ -709,7 +718,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 有关详细信息，请参阅 MSDN 上的<a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433132.aspx" target="_blank">使用命令行工具初始化存储模拟器</a>（也可以在 Visual Studio 中初始化存储模拟器，但这需要管理权限）。
 
-### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>安装 Azure SDK for .NET 时遇到问题
+### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>安装用于 .NET 的 Azure SDK 时遇到问题
 
 当你尝试安装 SDK 时，它尝试在本地计算机上安装存储模拟器时失败。安装日志包含以下消息之一：
 
@@ -747,7 +756,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 Fiddler 是一个有用的工具，用于分析客户端应用程序与你所用的 Azure 存储服务之间的 HTTP 和 HTTPS 通信。您可以从 <a href="http://www.telerik.com/fiddler" target="_blank">http://www.telerik.com/fiddler</a> 下载 Fiddler。
 
-> [AZURE.NOTE]Fiddler 可以解码 HTTPS 通信；你应仔细阅读 Fiddler 文档以了解它如何执行此操作，并了解安全隐患。
+> [AZURE.NOTE] Fiddler 可以解码 HTTPS 通信；你应仔细阅读 Fiddler 文档以了解它如何执行此操作，并了解安全隐患。
 
 本附录提供了一个简要演练，介绍如何配置 Fiddler 以捕获已安装 Fiddler 的本地计算机与 Azure 存储服务之间的通信。
 
@@ -758,7 +767,8 @@ Fiddler 是一个有用的工具，用于分析客户端应用程序与你所用
 
 若要限制 Fiddler 捕获的通信量，可以使用在“筛选器”选项卡中配置的筛选器。下面的屏幕截图显示了只捕获发送到 **contosoemaildist.table.core.chinacloudapi.cn** 存储终结点的流量的筛选器：
 
-![][5]
+![][5]  
+
 
 ### <a name="appendix-2"></a>附录 2：使用 Wireshark 捕获网络流量
 
@@ -771,7 +781,8 @@ Wireshark 是一种网络协议分析器，可用于查看各种网络协议的�
 3.	单击“捕获选项”。
 4.	将一个筛选器添加到“捕获筛选器”文本框中。例如，**host contosoemaildist.table.core.chinacloudapi.cn** 会将 Wireshark 配置为只捕获发送到 **contosoemaildist** 存储帐户中的表服务终结点或从该终结点发送的数据包。捕获的筛选器的完整列表请参阅 <a href="http://wiki.wireshark.org/CaptureFilters" target="_blank">http://wiki.wireshark.org/CaptureFilters</a>。
 
-    ![][6]
+    ![][6]  
+
 
 5.	单击“启动”。现在，当你在本地计算机上使用客户端应用程序时，Wireshark 将捕获发送到表服务终结点或从该终结点发送的所有数据包。
 6.	完成后，在主菜单上，依次单击“捕获”、“停止”。
@@ -779,13 +790,15 @@ Wireshark 是一种网络协议分析器，可用于查看各种网络协议的�
 
 WireShark 将在 **packetlist** 窗口中突出显示存在的任何错误。您还可以使用“专家信息”窗口（依次单击“分析”、“专家信息”）来查看错误和警告的摘要。
 
-![][7]
+![][7]  
+
 
 您还可以选择查看 TCP 数据（如果应用程序层看到该数据），方法是右键单击 TCP 数据，然后选择“跟踪 TCP 流”。当你不使用捕获筛选器捕获转储时，此方法特别有用。有关详细信息，请参阅“此处”。<a href="http://www.wireshark.org/docs/wsug_html_chunked/ChAdvFollowTCPSection.html" target="_blank"></a>
 
-![][8]
+![][8]  
 
-> [AZURE.NOTE]有关使用 Wireshark 的详细信息，请参阅 <a href="http://www.wireshark.org/docs/wsug_html_chunked/" target="_blank">Wireshark 用户指南</a>。
+
+> [AZURE.NOTE] 有关使用 Wireshark 的详细信息，请参阅 <a href="http://www.wireshark.org/docs/wsug_html_chunked/" target="_blank">Wireshark 用户指南</a>。
 
 ### <a name="appendix-3"></a>附录 3：使用 Microsoft Message Analyzer 捕获网络流量
 
@@ -797,7 +810,7 @@ WireShark 将在 **packetlist** 窗口中突出显示存在的任何错误。您
 
     contosodata.blob.core.chinacloudapi.cn contosodata.table.core.chinacloudapi.cn contosodata.queue.core.chinacloudapi.cn
 
-> [AZURE.NOTE]空格字符分隔主机名。
+> [AZURE.NOTE] 空格字符分隔主机名。
 
 当您准备好开始收集跟踪数据时，请单击“就此开始”按钮。
 
@@ -811,11 +824,13 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 下面的屏幕截图显示了“本地链路层”跟踪的一个示例，其中一些“信息性”消息显示在 **DiagnosisTypes** 列中。单击 **DiagnosisTypes** 列中的图标可显示消息的详细信息。在此示例中，服务器重新传输了消息 #305，因为它未收到来自客户端的确认消息：
 
-![][9]
+![][9]  
+
 
 当你在 Microsoft Message Analyzer 中创建跟踪会话时，可以指定筛选器，以减少跟踪中的干扰项量。在定义跟踪的“捕获/跟踪”页上，单击 **Microsoft-Windows-NDIS-PacketCapture** 旁边的“配置”链接。下面的屏幕截图显示了筛选三个存储服务的 IP 地址的 TCP 通信的配置：
 
-![][10]
+![][10]  
+
 
 有关 Microsoft Message Analyzer 本地链路层跟踪的详细信息，请参阅 TechNet 上的 <a href="http://technet.microsoft.com/zh-cn/library/jj659264.aspx" target="_blank">PEF-NDIS-PacketCapture 提供程序</a>。
 
@@ -892,7 +907,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [功能“X”在存储模拟器中无法正常工作]: #feature-X-is-not-working
 [使用存储模拟器时出现错误“其中一个 HTTP 标头的值的格式不正确”]: #error-HTTP-header-not-correct-format
 [运行存储模拟器需要管理权限]: #storage-emulator-requires-administrative-privileges
-[安装 Azure SDK for .NET 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
+[安装用于 .NET 的 Azure SDK 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
 [你遇到了其他存储服务问题]: #you-have-a-different-issue-with-a-storage-service
 
 [附录]: #appendices
@@ -903,6 +918,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 
 <!--Image references-->
+
 [1]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/overview.png
 [2]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/portal-screenshot.png
 [3]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/hour-minute-metrics.png
@@ -914,4 +930,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_1031_2016-->

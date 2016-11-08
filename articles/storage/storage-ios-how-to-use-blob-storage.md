@@ -4,12 +4,19 @@
     services="storage"
     documentationCenter="ios"
     authors="micurd"
-    manager="jahogg"/>
+    manager="jahogg"
+    editor="tysonn"/>  
+
 
 <tags
     ms.service="storage"
-    ms.date="07/27/2016"
-    wacn.date="09/05/2016"/>
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="objective-c"
+    ms.topic="article"
+    ms.date="09/20/2016"
+    wacn.date="11/07/2016"
+    ms.author="micurd;tamram"/>  
 
 
 # 如何通过 iOS 使用 Blob 存储
@@ -79,51 +86,7 @@
     // Include the following import statement to use blob APIs.
     #import <AZSClient/AZSClient.h>
 
-## 配置你的应用程序以访问 Blob 存储
-
-有两种方法可以对要访问存储服务的应用程序进行身份验证：
-
-- 共享密钥：使用共享密钥仅用于测试目的
-- 共享访问签名 (SAS)：对于生产应用程序使用 SAS
-
-### 共享密钥
-共享密钥身份验证意味着你的应用程序将使用帐户名和帐户密钥访问存储服务。为了快速说明如何通过 iOS 使用 Blob 存储，我们将在此入门指南中使用共享密钥身份验证。
-
-> [AZURE.WARNING (仅将“共享密钥”身份验证用于测试目的！) ] 为关联的存储帐户提供完全读/写访问权限的帐户名和帐户密钥将分发给下载你的应用的每个人。这**不**是好的做法，因为你会冒着不受信任的客户端泄露你的密钥的风险。
-
-使用共享密钥身份验证时，你将创建一个连接字符串。连接字符串由以下部分组成：
-
-- **DefaultEndpointsProtocol** - 可以选择 HTTP 或 HTTPS。但是，强烈建议使用 HTTPS。
-- **帐户名** - 存储帐户的名称
-- **帐户密钥** - 如果你在使用 [Azure 门户预览](https://portal.azure.cn)，请导航到你的存储帐户，然后单击“密钥”图标以查看此信息。如果使用 [Azure 经典管理门户](https://manage.windowsazure.cn)，请在该门户中导航到你的存储帐户，然后单击“管理访问密钥”。
-
-下面是该密钥在你的应用程序中的显示方式：
-
-    // Create a storage account object from a connection string.
-    AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn" error:&accountCreationError];
-
-### 共享访问签名 (SAS)
-对于 iOS 应用程序，客户端针对 Blob 存储对请求进行身份验证的建议方法是使用共享访问签名 (SAS)。SAS 允许你使用指定的权限集向客户端授予在指定的时间内对资源的访问权限。
-作为存储帐户所有者，你需要为 iOS 客户端生成要使用的 SAS。若要生成 SAS，你可能需要编写单独的服务，该服务生成要分发给客户端的 SAS。出于测试目的，可以使用 Azure 存储资源管理器来生成 SAS。创建 SAS 时，可以指定 SAS 有效的时间间隔，以及 SAS 授予客户端的权限。
-
-以下示例演示如何使用 Azure 存储资源管理器来生成 SAS。
-
-1. [安装 Azure 存储资源管理器](http://storageexplorer.com)（如果尚未安装）
-
-2. 连接到订阅
-
-3. 单击你的存储帐户，然后单击左下方的“操作”选项卡。单击“获取共享访问签名”，生成 SAS 的连接字符串。
-
-4. 下面是 SAS 连接字符串的示例，该字符串为存储帐户的 Blob 服务授予对服务、容器和对象级别的读取与写入权限。
-
-        SharedAccessSignature=sv=2015-04-05&ss=b&srt=sco&sp=rw&se=2016-07-21T18%3A00%3A00Z&sig=3ABdLOJZosCp0o491T%2BqZGKIhafF1nlM3MzESDDD3Gg%3D;BlobEndpoint=https://youraccount.blob.core.chinacloudapi.cn
-
-6. 在 iOS 应用程序中，现在可以通过以下方式使用连接字符串获取对你的帐户的引用：
-
-		// Get a reference to your Storage account
-    	AZSCloudStorageAccount *account = [AZSCloudStorageAccount accountFromConnectionString:@"SharedAccessSignature=sv=2015-04-05&ss=b&srt=sco&sp=rw&se=2016-07-21T18%3A00%3A00Z&sig=3ABdLOJZosCp0o491T%2BqZGKIhafF1nlM3MzESDDD3Gg%3D;BlobEndpoint=https://youraccount.blob.core.chinacloudapi.cn" error:&accountCreationError];
-
-如你所见，使用 SAS 令牌时，不会在 iOS 应用程序中公开你的帐户名和帐户密钥。你可以通过查阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)了解有关 SAS 的详细信息。
+[AZURE.INCLUDE [存储移动身份验证指南](../../includes/storage-mobile-authentication-guidance.md)]
 
 ## 异步操作
 > [AZURE.NOTE] 执行对服务的请求的所有方法都是异步操作。在代码示例中，你会发现这些方法都有完成处理程序。请求完成**后**，将运行完成处理程序内的代码。正在发出请求**时**，将运行完成处理程序后的代码。
@@ -410,4 +373,4 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 
 如果你对此库有任何疑问，请随意将问题发布到我们的 [MSDN Azure 论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazuredata)或[堆栈溢出](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files)。如果你有 Azure 存储空间的功能建议，请将建议发布到 [Azure 存储空间反馈](/product-feedback)。
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

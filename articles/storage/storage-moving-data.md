@@ -5,12 +5,18 @@
 	documentationCenter=""
 	authors="micurd"
 	manager="jahogg"
-	editor="tysonn"/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="07/27/2016"
-	wacn.date="09/12/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/21/2016"
+	wacn.date="11/07/2016"
+	ms.author="micurd;tamram"/>  
 
 
 # 将数据移动到和移出 Azure 存储空间
@@ -73,4 +79,4 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 请参阅 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 了解详细信息。
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1031_2016-->

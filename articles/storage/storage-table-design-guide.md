@@ -1,30 +1,37 @@
-<properties 
-   pageTitle="Azure 存储表设计指南 |Azure" 
-   description="在 Azure 表存储中设计可伸缩的高性能表"
-   services="storage"
-   documentationCenter="na"
-   authors="jasonnewyork" 
-   manager="tadb"
-   editor=""/>
+<properties
+	pageTitle="Azure 存储表设计指南 | Azure"
+	description="在 Azure 表存储中设计可伸缩的高性能表"
+	services="storage"
+	documentationCenter="na"
+	authors="jasonnewyork" 
+	manager="tadb"
+	editor="tysonn"/>  
+
 
 <tags
-   ms.service="storage"
-   ms.date="03/18/2016"
-   wacn.date="04/18/2016"/>
+	ms.service="storage"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage"
+	ms.date="09/22/2016"
+	wacn.date="11/07/2016"
+	ms.author="jahogg;tamram"/>  
+
 
 # Azure 存储表设计指南：设计可伸缩的高性能表
 
 ##<a id="azure-table-service-overview"></a> 概述
 
-要设计可伸缩的高性能表，必须考虑许多因素（如性能、可伸缩性和成本）。如果你以前已为关系数据库设计过架构，这些注意事项对你来说将会很熟悉，尽管 Azure 表服务存储模型与关系模型之间有一些相似之处，但也有许多重大差异。这些差异通常会导致非常不同的设计，这些设计对于熟悉关系数据库的人来说可能看起来不直观或是错误的，但如果你正在设计 Azure 表服务等 NoSQL 键/值存储，就会体会到这些设计是很合理的。许多设计差异将反映这样一个事实：表服务旨在支持云级别应用程序，这些应用程序可包含数十亿个实体（相当于关系数据库术语中的行）的数据，或者用于必须支持非常高事务量的数据集：因此，你需要以不同方式考虑如何存储数据，并了解表服务的工作原理。相对于使用关系数据库的解决方案而言，设计良好的 NoSQL 数据存储可以使你的解决方案更进一步的扩展（以更低的成本）。本指南可帮助你了解这些主题。
+要设计可伸缩的高性能表，必须考虑许多因素（如性能、可伸缩性和成本）。如果你以前已为关系数据库设计过架构，这些注意事项对你来说将会很熟悉，尽管 Azure 表服务存储模型与关系模型之间有一些相似之处，但也有许多重大差异。这些差异通常会导致非常不同的设计，这些设计对于熟悉关系数据库的人来说可能看起来不直观或是错误的，但如果你正在设计 Azure 表服务等 NoSQL 键/值存储，就会体会到这些设计是很合理的。许多设计差异将反映这样一个事实：表服务旨在支持云级别应用程序，这些应用程序可包含数十亿个实体（相当于关系数据库术语中的行）的数据，或者用于必须支持非常高事务量的数据集：因此，你需要以不同方式考虑如何存储数据，并了解表服务的工作原理。相对于使用关系数据库的解决方案而言，设计良好的 NoSQL 数据存储可以使你的解决方案更进一步的扩展（以更低的成本）。本指南帮助了解这些主题。
 
 ## 关于 Azure 表服务
 
-本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果你不熟悉 Azure 存储和表服务，在阅读本文的其他部分之前，请先阅读 [Azure 存储简介](/documentation/articles/storage-introduction/) 和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
+本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果不熟悉 Azure 存储和表服务，在阅读本文的其他部分之前，请先阅读 [Azure 存储简介](/documentation/articles/storage-introduction/) 和[通过 .NET 开始使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
 
 什么是表服务？ 从名称可以推测出，表服务将使用表格格式来存储数据。在标准术语中，表的每一行表示一个实体，而列存储该实体的各种属性。每个实体都有一对密钥来唯一标识它，并具有一个时间戳列，表服务使用该列来跟踪上次更新实体的时间（此操作是自动发生的，无法手动使用任意值来覆盖时间戳）。表服务使用此上次修改时间戳 (LMT) 来管理开放式并发。
 
->[AZURE.NOTE]表服务 REST API 操作还返回它从上次修过时间戳 (LMT) 获得的 **ETag** 值。在本文档中，我们将互换使用术语 ETag 和 LMT，因为它们是指同一基础数据。
+>[AZURE.NOTE] 表服务 REST API 操作还返回它从上次修过时间戳 (LMT) 获得的 **ETag** 值。在本文档中，我们将互换使用术语 ETag 和 LMT，因为它们是指同一基础数据。
 
 下面的示例演示了一个简单的表设计，该表用于存储员工和部门实体。本指南后面所示的许多示例都基于此简单设计。
 
@@ -125,14 +132,14 @@
 ### 表分区  
 帐户名称、表名称和 **PartitionKey** 共同标识表服务用于存储实体的存储服务中的分区。作为实体寻址方案的一部分，分区定义事务的作用域（请参阅下面的[实体组事务](#entity-group-transactions)），并形成表服务如何缩放的基础。有关分区的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
-在表服务中，单个节点为一个或多个完整的分区提供服务，并且该服务可通过对节点上的分区进行动态负载均衡来进行缩放。如果某个节点负载过轻，表服务可以将该节点提供服务的分区范围拆分为不同节点；当流量下降时，该服务可将无操作的节点的分区范围合并为单个节点。
+在表服务中，单个节点为一个或多个完整的分区提供服务，并且该服务可通过对节点上的分区进行动态负载均衡来进行缩放。如果某个节点负载过轻，表服务可以将该节点提供服务的分区范围*拆分*为不同节点；当流量下降时，该服务可将无操作的节点的分区范围*合并*为单个节点。
 
 有关表服务内部细节的详细信息（特别是该服务如何管理分区），请参阅文章 [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
 
 ###<a id="entity-group-transactions"></a> 实体组事务
 在表服务中，实体组事务 (EGT) 是唯一内置机制，用于对多个实体执行原子更新。在一些文档中，EGT 也称为*批处理事务*。EGT 只能应用于存储在同一分区（共享给定表中的同一分区键）的实体，因此每当你需要对多个实体执行原子事务行为时，都需要确保这些实体位于同一分区。这通常是将多个实体类型保存在同一个表（和分区）中，而不是对不同实体类型使用多个表的原因。单个 EGT 最多可应用于 100 个实体。如果你提交多个用于处理的并发 EGT，请确保不在 EGT 共用实体上操作这些 EGT，这一点很重要，否则处理会延迟。
 
-EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更多分区将增加应用程序的可伸缩性，因为 Azure 有更多机会对节点的请求进行负载负载均衡这可能会限制应用程序执行原子事务和维护数据高一致性的能力。此外，在分区级别还有特定的可伸缩性目标，这些目标可能会限制你可以对单个节点预期的事务吞吐量：有关 Azure 存储帐户和表服务的可伸缩性目标的详细信息，请参阅 MSDN 上的 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。本指南的后面部分将讨论各种设计策略，这些策略可帮助你管理此类权衡，并讨论如何根据客户端应用程序的特定要求最好地选择分区键。  
+EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更多分区将增加应用程序的可伸缩性，因为 Azure 有更多机会对节点的请求进行负载均衡，但这可能会限制应用程序执行原子事务和维护数据高一致性的能力。此外，在分区级别还有特定的可伸缩性目标，这些目标可能会限制可以对单个节点预期的事务吞吐量：有关 Azure 存储帐户和表服务的可伸缩性目标的详细信息，请参阅 MSDN 上的 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。本指南的后面部分将讨论各种设计策略，这些策略可帮助你管理此类权衡，并讨论如何根据客户端应用程序的特定要求最好地选择分区键。  
 
 ### 容量注意事项
 下表包括设计表服务解决方案时要注意的一些关键值：
@@ -150,15 +157,12 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 有关详细信息，请参阅 MSDN 上的[了解表服务数据模型](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)。
 
 ### 成本注意事项  
-表存储的价格相对便宜，但在评估任何使用表服务的解决方案时，应同时针对容量使用情况和事务数量进行成本估算。但是，在许多情况下，为提高解决方案的性能或可伸缩性，存储非规范化或重复的数据是可采取的有效方法。有关定价的详细信息，请参阅[存储定价详细信息](/pricing/details/storage/)。
-
-### 比较 Azure 表和 SQL Azure  
-有关 Azure SQL 数据库（关系数据库服务）与表服务之间的比较，请参阅 MSDN 上的 [Azure 表存储和 Azure SQL 数据库 - 比较和对照](http://msdn.microsoft.com/zh-cn/library/azure/jj553018.aspx)。  
+表存储的价格相对便宜，但在评估任何使用表服务的解决方案时，应同时针对容量使用情况和事务数量进行成本估算。但是，在许多情况下，为提高解决方案的性能或可伸缩性，存储非规范化或重复的数据是可采取的有效方法。有关定价的详细信息，请参阅 [Azure 存储定价](/pricing/details/storage/)。
 
 ## 表设计准则  
 这些列表汇总了一些设计表时需要牢记的重要原则，本指南稍后会更详细地对其进行解释。本指南的内容与设计关系数据库通常所遵循的指导原则大不相同。
 
-将表服务解决方案设计为高效读取：
+将表服务解决方案设计为高效*读取*：
 
 -	**针对查询大量读取应用程序进行设计。** 设计表时，在考虑将如何更新实体之前，请先考虑将执行的查询（特别是延迟敏感的查询）。这通常会产生一个高效且高性能的解决方案。  
 -	**在查询中指定 PartitionKey 和 RowKey。** 点查询此类查询是最高效的表服务查询。  
@@ -205,11 +209,11 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 
 前面的章节 [Azure 表服务概述](#azure-table-service-overview)介绍了对查询设计有直接影响的 Azure 表服务的一些主要功能。这些功能产生了以下设计表服务查询的通用准则。请注意，下面的示例所使用的筛选器语法源自表服务 REST API，有关详细信息，请参阅 MSDN 上的[查询实体](http://msdn.microsoft.com/zh-cn/library/azure/dd179421.aspx)。
 
--	***点查询***是一种最高效的查找，可用于并建议用于大容量查找或要求最低延迟的查找。此类查询可以通过指定 **PartitionKey** 和 **RowKey** 值使用索引非常高效地查找单个实体。例如：$filter=(PartitionKey eq 'Sales') and (RowKey eq '2')  
--	第二好的是***范围查询***，它使用 **PartitionKey**，并对某一范围的 **RowKey** 值进行筛选以返回多个实体。**PartitionKey** 值确定特定分区，**RowKey** 值确定该分区中的实体子集。例如：$filter=PartitionKey eq 'Sales' and RowKey ge 'S' and RowKey lt 'T'  
--	第三好的是***分区扫描***，它使用 **PartitionKey**，并对另一个非键属性进行筛选，并可能会返回多个实体。**PartitionKey** 值确定特定分区，而属性值将选择该分区中的实体子集。例如：$filter=PartitionKey eq 'Sales' and LastName eq 'Smith'  
--	***表扫描***不包括 **PartitionKey** 并且非常低效，因为它会依次搜索构成表的所有分区，以查找所有匹配的实体。它将执行表扫描而不管你的筛选器是否使用 **RowKey**。例如：$filter=LastName eq 'Jones'  
--	返回多个实体的查询将按 **PartitionKey** 和 **RowKey** 顺序返回实体。若要避免对客户端中的实体进行重新排序，请选择定义了最常见排序顺序的 **RowKey**。  
+-	***点查询***是一种最高效的查找，可用于并建议用于大容量查找或要求最低延迟的查找。此类查询可以通过指定 **PartitionKey** 和 **RowKey** 值使用索引非常高效地查找单个实体。例如：$filter=(PartitionKey eq 'Sales') and (RowKey eq '2')
+-	第二好的是***范围查询***，它使用 **PartitionKey**，并对某一范围的 **RowKey** 值进行筛选以返回多个实体。**PartitionKey** 值确定特定分区，**RowKey** 值确定该分区中的实体子集。例如：$filter=PartitionKey eq 'Sales' and RowKey ge 'S' and RowKey lt 'T'
+-	第三好的是***分区扫描***，它使用 **PartitionKey**，并对另一个非键属性进行筛选，并可能会返回多个实体。**PartitionKey** 值确定特定分区，而属性值将选择该分区中的实体子集。例如：$filter=PartitionKey eq 'Sales' and LastName eq 'Smith'
+-	***表扫描***不包括 **PartitionKey** 并且非常低效，因为它会依次搜索构成表的所有分区，以查找所有匹配的实体。它将执行表扫描而不管你的筛选器是否使用 **RowKey**。例如：$filter=LastName eq 'Jones'
+-	返回多个实体的查询将按 **PartitionKey** 和 **RowKey** 顺序返回实体。若要避免对客户端中的实体进行重新排序，请选择定义了最常见排序顺序的 **RowKey**。
 
 请注意，使用“**or**”指定基于 **RowKey** 值的筛选器将导致分区扫描，而不会视为范围查询。因此，应避免使用筛选器 （如查询：$filter=PartitionKey eq 'Sales' and (RowKey eq '121' or RowKey eq '322')
 
@@ -1502,8 +1506,8 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 
 在此异步示例中，你可以看到对同步版本进行了以下更改：
 
--	方法签名现在包括 **async** 修饰符，并返回 **Task** 实例。  
--	不是调用 **ExecuteSegmented** 方法来检索结果，该方法现在调用 **ExecuteSegmentedAsync** 方法，并使用 **await** 修饰符来以异步方式检索结果。  
+-	方法签名现在包括 **async** 修饰符，并返回 **Task** 实例。
+-	不是调用 **ExecuteSegmented** 方法来检索结果，该方法现在调用 **ExecuteSegmentedAsync** 方法，并使用 **await** 修饰符来以异步方式检索结果。
 
 客户端应用程序可以多次调用此方法（对 **department** 参数使用不同值），并且每个查询都将在一个单独的线程中运行。
 
@@ -1531,8 +1535,8 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 
 在此异步示例中，你可以看到对同步版本进行了以下更改：
 
--	方法签名现在包括 **async** 修饰符，并返回 **Task** 实例。  
--	不是调用 **Execute** 方法来更新实体，该方法现在调用 **ExecuteAsync** 方法，并使用 **await** 修饰符来以异步方式检索结果。  
+-	方法签名现在包括 **async** 修饰符，并返回 **Task** 实例。
+-	不是调用 **Execute** 方法来更新实体，该方法现在调用 **ExecuteAsync** 方法，并使用 **await** 修饰符来以异步方式检索结果。
 
 客户端应用程序可以调用多个类似这样的异步方法，每个方法调用都将在一个单独的线程中运行。
 
@@ -1569,4 +1573,5 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 [28]: ./media/storage-table-design-guide/storage-table-design-IMAGE28.png
 [29]: ./media/storage-table-design-guide/storage-table-design-IMAGE29.png
  
-<!---HONumber=Mooncake_0411_2016-->
+
+<!---HONumber=Mooncake_1031_2016-->

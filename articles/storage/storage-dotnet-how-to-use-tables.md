@@ -5,12 +5,18 @@
 	documentationCenter=".net"
 	authors="tamram"
 	manager="carmonm"
-	editor="tysonn"/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="07/23/2016"
-	wacn.date="09/05/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="hero-article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="gusapost;tamram"/>  
 
 
 
@@ -85,7 +91,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 
 ## 将实体添加到表
 
-实体使用派生自 **TableEntity** 的自定义类映射到 C# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开 `get` 和 `set` 的受支持类型的公共属性。此外，你的实体类型 *必须* 公开不带参数的构造函数。
+实体使用派生自 **TableEntity** 的自定义类映射到 C# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开 `get` 和 `set` 的受支持类型的公共属性。此外，你的实体类型*必须*公开不带参数的构造函数。
 
     public class CustomerEntity : TableEntity
     {
@@ -441,7 +447,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 - 了解如何使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/) 简化你编写的用于 Azure 存储空间的代码
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)来存储非结构化数据。
-    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)来存储关系数据。
+    - [使用.NET (C#) 连接到 SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)，存储关系数据。
 
 
   [下载并安装 Azure SDK for.NET]: /develop/net/
@@ -460,4 +466,4 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

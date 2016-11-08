@@ -1,21 +1,22 @@
-<properties 
-	pageTitle="管理对容器和 blob 的匿名读取访问 | Azure" 
-	description="了解如何使容器和 blob 可供匿名访问，以及如何对其进行程序式访问。" 
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="jdial" 
-	editor=""/>
+<properties
+	pageTitle="管理对容器和 Blob 的匿名读取访问 | Azure"
+	description="了解如何使容器和 blob 可供匿名访问，以及如何对其进行程序式访问。"
+	services="storage"
+	documentationCenter=""
+	authors="tamram"
+	manager="carmonm"
+	editor="tysonn"/>  
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2016"
-	wacn.date="10/10/2016"
-	ms.author="tamram"/>
+
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date="11/07/2016"
+	ms.author="michaelhauss;jwillis;tamram"/>
 
 # 管理对容器和 blob 的匿名读取访问
 
@@ -48,11 +49,12 @@
 若要通过 [Azure 门户预览](https://portal.azure.cn)设置容器权限，请按以下步骤操作：
 
 1. 导航到存储帐户的仪表板。
-2. 从列表中选择容器名称。请注意，你必须在“名称”列的右侧单击来选择容器名称。单击该名称即可向下钻取到相应容器以显示其 blob。
-3. 从工具栏中选择“编辑”。
-4. 在“编辑容器元数据”对话框的“访问权限”字段中，选择所需的权限级别，如以下屏幕截图所示。
+2. 从列表中选择容器名称。单击名称会公开所选容器中的 Blob
+3. 从工具栏选择“访问策略”。
+4. 在“访问类型”字段中，选择所需的权限级别，如下面的屏幕截图中所示。
 
-	![编辑“容器元数据”对话框](./media/storage-manage-access-to-resources/storage-manage-access-to-resources-1.png)
+	![编辑“容器元数据”对话框](./media/storage-manage-access-to-resources/storage-manage-access-to-resources-0.png)  
+
 
 ### 使用 .NET 通过编程方式设置容器权限
 
@@ -156,4 +158,4 @@
 - [使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 - [使用共享的访问签名委托访问](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

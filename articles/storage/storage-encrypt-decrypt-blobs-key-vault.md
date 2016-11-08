@@ -1,16 +1,23 @@
 <properties
-   pageTitle="在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob | Azure"
-   description="本教程将指导你如何将 Azure 存储空间的客户端加密与 Azure 密钥保管库配合使用来加密和解密 blob。"
-   services="storage"
-   documentationCenter=""
-   authors="adhurwit"
-   manager=""
-   editor=""/>
+	pageTitle="教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob | Azure"
+	description="本教程将指导你如何将 Azure 存储空间的客户端加密与 Azure 密钥保管库配合使用来加密和解密 blob。"
+	services="storage"
+	documentationCenter=""
+	authors="adhurwit"
+	manager=""
+	editor="tysonn"/>  
+
 
 <tags
-   ms.service="storage"
-   ms.date="03/31/2016"
-   wacn.date="05/16/2016"/>
+	ms.service="storage"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="required"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="lakasa;robinsh"/>  
+
 
 # 教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 Blob
 
@@ -22,7 +29,7 @@
 
 有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)
 
-有关 Azure 存储空间的客户端加密的概述信息，请参阅 [Azure 存储空间客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)
+有关 Azure 存储的客户端加密的概述信息，请参阅 [Azure 存储的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)
 
 
 ## 先决条件
@@ -36,7 +43,7 @@
 
 ## 客户端加密概述
 
-有关 Azure 存储空间的客户端加密的概述，请参阅 [Azure 存储空间客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)
+有关 Azure 存储的客户端加密的概述，请参阅 [Azure 存储的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)
 
 下面是客户端加密的工作原理的简要说明：
 
@@ -167,7 +174,7 @@
 
 ![显示包含加密元数据的 Blob 元数据的屏幕截图][1]
 
-> [AZURE.NOTE]如果您看一下 BlobEncryptionPolicy 构造函数，您将看到它可以接受密钥和/或解析程序。请注意，您现在无法将解析程序用于加密，因为它当前不支持默认密钥。
+> [AZURE.NOTE] 如果您看一下 BlobEncryptionPolicy 构造函数，您将看到它可以接受密钥和/或解析程序。请注意，您现在无法将解析程序用于加密，因为它当前不支持默认密钥。
 
 
 
@@ -229,6 +236,7 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 
 
 <!--Image references-->
+
 [1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_1031_2016-->

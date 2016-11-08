@@ -3,13 +3,20 @@
     description="了解如何在用于 C++ 的 Azure 存储客户端库中使用列表 API 来枚举容器、blob、队列、表和实体。" 
     documentationCenter=".net" 
     services="storage"
-    authors="tamram"
-    manager="carmonm"
-    editor="tysonn"/>
-<tags 
+    authors="dineshmurthy"
+    manager="jahogg"
+    editor="tysonn"/>  
+
+<tags
     ms.service="storage"
-	ms.date="07/24/2016"
-    wacn.date="09/05/2016"/>
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/20/2016"
+    wacn.date="11/07/2016"
+    ms.author="dineshm;tamram"/>  
+
 
 # 使用 C++ 列出 Azure 存储资源
 
@@ -46,7 +53,7 @@
 
 云存储的规模决定了要使用分段列表。例如，你可能在 Azure blob 容器中有超过一百万个 blob，或者在 Azure 表中有十亿个以上的实体。这些不是理论上的数字，而是实际的客户使用情况。
 
-因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有 *分段* 重载。
+因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有*分段*重载。
 
 分段列表操作的响应包括：
 
@@ -76,13 +83,13 @@
 	}
 	while (!token.empty());
 
-请注意，一页中返回的结果数可以通过每个 API 的重载中的参数 *max_results* 进行控制，例如：
+请注意，一页中返回的结果数可以通过每个 API 的重载中的参数 *max\_results* 进行控制，例如：
 
 	list_blob_item_segment list_blobs_segmented(const utility::string_t& prefix, bool use_flat_blob_listing,
 		blob_listing_details::values includes, int max_results, const continuation_token& token,
 		const blob_request_options& options, operation_context context)
 
-如果未指定 *max_results* 参数，则会在单个页面中返回默认的最大值（最多 5000 个结果）。
+如果未指定 *max\_results* 参数，则会在单个页面中返回默认的最大值（最多 5000 个结果）。
 
 另请注意，针对 Azure 表存储进行查询时，可能不会返回任何记录，或者返回的记录数小于你所指定的 *max_results* 参数的值，即使continuation_token不为空。可能的一个原因是，查询可能无法在 5 秒钟内完成。只要continuation_token不为空，查询就会继续，你的代码不应假定分段结果的大小。
 
@@ -124,7 +131,7 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 	    token = segment.continuation_token();
 	} while (!token.empty());
 
-你可以指定该段的 *max_results* 参数，在请求数和内存使用量之间进行平衡，以便满足应用程序的性能要求。
+你可以指定该段的 *max\_results* 参数，在请求数和内存使用量之间进行平衡，以便满足应用程序的性能要求。
 
 此外，如果你使用了分段列表 API，但采用“贪婪”方式将数据存储在本地集合中，则我们也强烈建议你对代码进行重构，谨慎地应对数据处理规模扩大时将数据存储在本地集合中带来的问题。
 
@@ -134,7 +141,7 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 
 如果你还使用 C# 或 Oracle Java SDK，则应熟悉枚举型编程模式，该模式提供懒惰形式的列表，仅在需要时才提取具有特定偏移量的数据。在 C++ 中，基于迭代器的模板也提供了类似方法。
 
-典型的懒惰列表 API（使用 **list_blobs** 作为示例）如下所示：
+典型的懒惰列表 API（使用 **list\_blobs** 作为示例）如下所示：
 
 	list_blob_item_iterator list_blobs() const;
 
@@ -180,4 +187,4 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	[Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure 存档文档](/documentation/services/storage/)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->

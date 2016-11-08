@@ -1,16 +1,22 @@
 <properties
-	pageTitle="如何通过 Python 使用 Azure Blob 存储 | Azure"
+	pageTitle="如何通过 Python 使用 Azure Blob 存储（对象存储）| Azure"
 	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
 	services="storage"
 	documentationCenter="python"
-	authors="emgerner-msft"
-	manager="wpickett"
-	editor="tysonn"/>
+	authors="tamram"
+	manager="carmonm"
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="07/26/2016"
-	wacn.date="09/12/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="jwillis;tamram"/>
 
 # 如何通过 Python 使用 Azure Blob 存储
 
@@ -55,7 +61,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 ## 将 Blob 上载到容器中
 
-若要创建块 Blob 并上载数据，请使用 **create_blob_from_path**、**create_blob_from_stream**、**create_blob_from_bytes** 或 **create_blob_from_text** 方法。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
+若要创建块 Blob 并上载数据，请使用 **create\_blob\_from\_path**、**create\_blob\_from\_stream**、**create\_blob\_from\_bytes** 或 **create\_blob\_from\_text** 方法。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
 
 **create\_blob\_from\_path** 从指定的路径上载文件的内容，**create\_blob\_from\_stream** 上载已打开的文件/流中的内容。**create\_blob\_from\_bytes** 上载字节数组，**create\_blob\_from\_text** 使用指定的编码（默认为 UTF-8）上载指定的文本值。
 
@@ -67,11 +73,11 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
         'myblockblob',
         'sunset.png',
         content_settings=ContentSettings(content_type='image/png')
-    )
+				)
 
 ## 列出容器中的 Blob
 
-若要列出容器中的 Blob，请使用 **list_blobs** 方法。此方法会返回一个生成器。以下代码将容器中每个 Blob 的“名称”输出到控制台。
+若要列出容器中的 Blob，请使用 **list\_blobs** 方法。此方法会返回一个生成器。以下代码将容器中每个 Blob 的“名称”输出到控制台。
 
 	generator = block_blob_service.list_blobs('mycontainer')
 	for blob in generator:
@@ -79,15 +85,15 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 ## 下载 Blob
 
-若要从 Blob 下载数据，请使用 **get_blob_to_path**、**get_blob_to_stream**、**get_blob_to_bytes** 或 **get_blob_to_text**。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
+若要从 Blob 下载数据，请使用 **get\_blob\_to\_path**、**get\_blob\_to\_stream**、**get\_blob\_to\_bytes** 或 **get\_blob\_to\_text**。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
 
-以下示例演示了如何使用 **get_blob_to_path** 下载 **myblob** Blob 的内容，并将其存储到 **out-sunset.png** 文件：
+以下示例演示了如何使用 **get\_blob\_to\_path** 下载 **myblob** Blob 的内容，并将其存储到 **out-sunset.png** 文件：
 
 	block_blob_service.get_blob_to_path('mycontainer', 'myblockblob', 'out-sunset.png')
 
 ## 删除 Blob
 
-最后，若要删除 Blob，请调用 **delete_blob**。
+最后，若要删除 Blob，请调用 **delete\_blob**。
 
 	block_blob_service.delete_blob('mycontainer', 'myblockblob')
 
@@ -123,4 +129,4 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Microsoft Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1031_2016-->

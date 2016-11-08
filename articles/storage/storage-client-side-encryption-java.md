@@ -1,11 +1,12 @@
-<properties 
-	pageTitle="Azure 存储空间的使用 Java 客户端加密 | Azure" 
-	description="用于 Java 的 Azure 存储客户端库支持客户端加密以及与 Azure 密钥保管库集成以实现 Azure 存储空间应用程序的最佳安全性。" 
-	services="storage" 
-	documentationCenter="java" 
-	authors="dineshm" 
-	manager="carolz" 
-	editor=""/>
+<properties
+	pageTitle="使用适用于 Azure 存储的 Java 进行客户端加密 | Azure"
+	description="用于 Java 的 Azure 存储客户端库支持客户端加密以及与 Azure 密钥保管库集成以实现 Azure 存储空间应用程序的最佳安全性。"
+	services="storage"
+	documentationCenter="java"
+	authors="dineshmurthy"
+	manager="jahogg"
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
@@ -13,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2016"
-	wacn.date="10/10/2016"
-	ms.author="dineshm"/>
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
+	ms.author="dineshm;robinsh"/>
 
 
 # Azure 存储空间的使用 Java 客户端加密   
@@ -248,4 +249,4 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 	- [客户端](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault)程序包
 - 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1031_2016-->

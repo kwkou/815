@@ -5,12 +5,18 @@
 	documentationCenter=""
 	authors="micurd"
 	manager="jahogg"
-	editor="tysonn"/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="storage"
-	ms.date="07/20/2016"
-	wacn.date="09/05/2016"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/21/2016"
+	wacn.date="11/07/2016"
+	ms.author="micurd;tamram"/>
 
 # Azure 存储客户端工具
 
@@ -233,4 +239,4 @@ Azure 存储空间用户经常要使用 Azure 存储客户端工具来查看其�
   </tr>
 </table>
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1031_2016-->
