@@ -56,7 +56,7 @@ IoT 中心返回以下内容，供设备用来上载文件：
 ```
 {
     "correlationId": "somecorrelationid",
-    "hostname": "contoso.azure-devices.net",
+    "hostname": "contoso.azure-devices.cn",
     "containerName": "testcontainer",
     "blobName": "test-device1/image.jpg",
     "sasToken": "1234asdfSAStoken"

@@ -329,7 +329,7 @@
 7. 将以下类级变量添加到 **App** 类，并将 **{youriothubname}** 替换为你的 IoT 中心名称，将 **{yourdevicekey}** 替换为“创建设备标识”部分中生成的设备密钥值：
 
     ```
-    private static String connString = "HostName={youriothubname}.azure-devices.net;DeviceId=myFirstJavaDevice;SharedAccessKey={yourdevicekey}";
+    private static String connString = "HostName={youriothubname}.azure-devices.cn;DeviceId=myFirstJavaDevice;SharedAccessKey={yourdevicekey}";
     private static IotHubClientProtocol protocol = IotHubClientProtocol.AMQPS;
     private static String deviceId = "myFirstJavaDevice";
     private static DeviceClient client;

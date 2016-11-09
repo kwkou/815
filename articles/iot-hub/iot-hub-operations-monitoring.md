@@ -8,6 +8,7 @@
  editor=""/>
 
 <tags
+ ms.service="iot-hub"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
