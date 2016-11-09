@@ -44,7 +44,7 @@
 
 1. 在命令提示符处键入以下命令登录
 	```
-	    azure login
+	    azure login -e AzureChinaCloud
 	```
 使用建议的 Web 浏览器和代码进行身份验证。
 
@@ -61,7 +61,7 @@
 
 3. 如果没有资源组，则可创建一个，将其命名为 **exampleResourceGroup**
 	```
-	    azure group create -n exampleResourceGroup -l westus
+	    azure group create -n exampleResourceGroup -l chinaeast
 	```
 
 > [AZURE.TIP] [Use the Azure CLI to manage Azure resources and resource groups][lnk-CLI-arm]（使用 Azure CLI 管理 Azure 资源和资源组）一文详细介绍了如何使用 Azure CLI 管理 Azure 资源。
@@ -87,7 +87,7 @@
 
  若要在资源组 **exampleResourceGroup** 中创建名为 **exampleIoTHubName** 的 IoT 中心，请直接运行以下命令
 ```
-    azure iothub create -g exampleResourceGroup -n exampleIoTHubName -l westus -k s1 -u 1
+    azure iothub create -g exampleResourceGroup -n exampleIoTHubName -l chinaeast -k s1 -u 1
 ```
 
 > [AZURE.NOTE] 此 CLI 命令为用户创建付费的 S1 标准 IoT 中心。可以使用以下命令删除 IoT 中心 **exampleIoTHubName**
