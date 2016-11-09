@@ -77,16 +77,16 @@ OpenID Connect 描述了元数据文档，该文档包含了应用执行登录�
 - 该请求必须包含 `nonce` 参数
 
 
-	// 换行符仅用于增强可读性
-	
-	GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-	client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-	&response_type=id_token
-	&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-	&response_mode=form_post
-	&scope=openid
-	&state=12345
-	&nonce=678910
+		// 换行符仅用于增强可读性
+		
+		GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
+		client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+		&response_type=id_token
+		&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+		&response_mode=form_post
+		&scope=openid
+		&state=12345
+		&nonce=678910
 	
 
 > [AZURE.TIP] 单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `id_token` 的 `https://localhost/myapp/`。请注意，此请求会使用 `response_mode=query`（仅用于教程）。建议使用 `response_mode=form_post`。
