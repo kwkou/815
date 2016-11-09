@@ -91,7 +91,7 @@ HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验�
 #### 示例
 
 用户名（DeviceId 区分大小写）：
-`iothubname.azure-devices.net/DeviceId`
+`iothubname.azure-devices.cn/DeviceId`
 
 密码（使用设备资源管理器生成 SAS）：`SharedAccessSignature sr=iothubname.azure-devices.cn%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
