@@ -122,6 +122,7 @@
 创建存储服务对象（例如 blockblobservice）后，用户可以向构成加密策略的字段赋值：key\_encryption\_key、key\_resolver\_function 和 require\_encryption。用户可以只提供 KEK、只提供解析程序，或者同时提供此两者。key\_encryption\_key 是使用密钥标识符标识的基本密钥类型，为包装/解包提供逻辑。key\_resolver\_function 在解密过程中用于解析密钥。在指定了密钥标识符的情况下，它将返回有效的 KEK。由此，用户能够在多个位置中托管的多个密钥之间进行选择。
 
 KEK 必须实现以下方法才能成功加密数据：
+
 - wrap\_key(cek)：使用用户所选的算法包装指定的 CEK（字节）。返回包装的密钥。
 - get\_key\_wrap\_algorithm()：返回用于包装密钥的算法。
 - get\_kid()：返回此 KEK 的字符串密钥 ID。KEK 必须实现以下方法才能成功解密数据：

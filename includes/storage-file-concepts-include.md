@@ -28,7 +28,7 @@
 -	**文件：**共享中的文件。文件大小最大可以为 1 TB。
 
 -   **URL 格式：**可使用以下 URL 格式对文件寻址：  
-	https://<storage account>.file.core.chinacloudapi.cn/<share>/<目录/目录>/<file>
+	https://<storage account\>.file.core.chinacloudapi.cn/<share\>/<directory/directories>/<file\>
     
     可使用以下示例 URL 寻址上图中的文件：`http://samples.file.core.chinacloudapi.cn/logs/CustomLogs/Log1.txt`
 
