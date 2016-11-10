@@ -61,7 +61,7 @@ Azure 为 CSP 提供管理 Azure 客户订阅所需的 API，允许通过编程�
 如何选择这两种模式取决于你客户的需求，以及你目前提供 Azure 服务的具体需要。有关这些模型的详细信息以及关联的基于角色的访问控制、网络和标识设计模式在以下链接中有详尽介绍：
 -	**基于角色的访问控制 (RBAC)** – RBAC 基于 Azure Active Directory。有关 Azure RBAC 的详细信息，请单击[此处](/documentation/articles/role-based-access-control-configure/)。
 -	**网络** – 介绍有关 Azure 中网络的各种主题。
--	**Azure Active Directory (AAD)** – AAD 提供针对 Azure 和第三方 SaaS 应用程序的标识管理。有关 Azure AD 的详细信息，请单击[此处](/documentation/services/active-directory/)。  
+-	**Azure Active Directory (AAD)** – AAD 提供针对 Azure 和第三方 SaaS 应用程序的标识管理。有关 Azure AD 的详细信息，请单击[此处](/documentation/services/identity/)。  
 
 
 ## 网络速度
