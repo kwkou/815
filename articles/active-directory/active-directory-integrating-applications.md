@@ -174,7 +174,7 @@
 有关以下各项公开的访问权限范围的完整介绍：
 
 - Azure AD 图形 API，请参阅[权限范围 | Graph API 概念](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)一文。
-- Office 365 API，请参阅 [Authentication and Authorization using Common Consent Framework](https://msdn.microsoft.com/office/office365/howto/application-manifest)（使用通用同意框架进行身份验证和授权）一文。有关如何生成可与 Office 365 API 集成的客户端应用的详细介绍，请参阅 [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/HowTo/setup-development-environment)（设置 Office 365 开发环境）。
+- 有关如何生成可与 Office 365 API 集成的客户端应用的详细介绍，请参阅 [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/HowTo/setup-development-environment)（设置 Office 365 开发环境）。
 
 >[AZURE.NOTE] 由于当前存在的限制，如果本机客户端应用程序使用“访问组织的目录”权限，则它们只能调用 Azure AD 图形 API。此限制不适用于 Web 应用程序。
 

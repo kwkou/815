@@ -377,7 +377,6 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 
 ## 后续步骤
 
-- [Azure Active Directory 高级版入门](/documentation/articles/active-directory-get-started-premium/)
 - [向“登录”和“访问面板”页添加公司品牌](/documentation/articles/active-directory-add-company-branding/)
 
 <!--Image references-->

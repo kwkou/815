@@ -33,7 +33,7 @@
 - 提升用户的生产力
 - 减少技术支持成本
 
-此外，如果你选择使用[**使用 AD FS 进行联合身份验证**](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Configuring-AD-FS-for-user-sign-in-with-Azure-AD-Connect)，则可以选择性地启用密码同步作为在 AD FS 基础结构发生故障时的备用身份验证方式。
+此外，如果你选择使用**使用 AD FS 进行联合身份验证**，则可以选择性地启用密码同步作为在 AD FS 基础结构发生故障时的备用身份验证方式。
 
 密码同步是由 Azure AD Connect Sync 实现的目录同步功能的扩展。若要在环境中使用密码同步，需要：
 
