@@ -79,7 +79,7 @@
 ## 用于查看诊断数据的工具
 将数据传输到存储空间以后，可以使用多个工具来查看这些数据。例如：
 
-- Visual Studio 中的服务器资源管理器 - 如果你安装了 Azure Tools for Microsoft Visual Studio，则可以在服务器资源管理器中使用“Azure 存储空间”节点从你的 Azure 存储帐户查看只读 Blob 和表数据。既可以从本地存储模拟器帐户显示数据，也可以从为 Azure 创建的存储帐户显示数据。有关详细信息，请参阅[使用服务器资源管理器浏览和管理存储资源](/documentation/articles/vs-azure-tools-storage-resources-server-explorer-browse-manage/)。
+- Visual Studio 中的服务器资源管理器 - 如果你安装了 Azure Tools for Microsoft Visual Studio，则可以在服务器资源管理器中使用“Azure 存储空间”节点从你的 Azure 存储帐户查看只读 Blob 和表数据。既可以从本地存储模拟器帐户显示数据，也可以从为 Azure 创建的存储帐户显示数据。
 
 
 

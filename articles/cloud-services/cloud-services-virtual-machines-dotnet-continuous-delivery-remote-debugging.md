@@ -19,7 +19,7 @@
 ## 为云服务启用远程调试
 
 1. 在生成代理上，根据 [Azure 的命令行生成](http://msdn.microsoft.com/zh-cn/library/hh535755.aspx)中所述设置 Azure 的初始环境。
-2. 由于包需要远程调试运行时 (msvsmon.exe)，请安装 [Remote Tools for Visual Studio 2015](http://www.microsoft.com/zh-cn/download/details.aspx?id=48155)（如果你使用的是 Visual Studio 2013，请安装 [Remote Tools for Microsoft Visual Studio 2013 Update 5](https://www.microsoft.com/zh-cn/download/details.aspx?id=48156)）。或者，也可以从装有 Visual Studio 的系统复制远程调试二进制文件。
+2. 由于包需要远程调试运行时 (msvsmon.exe)，请安装 Remote Tools for Visual Studio 2015（如果你使用的是 Visual Studio 2013，请安装 [Remote Tools for Microsoft Visual Studio 2013 Update 5](https://www.microsoft.com/zh-cn/download/details.aspx?id=48156)）。或者，也可以从装有 Visual Studio 的系统复制远程调试二进制文件。
 3. 根据 [Azure 云服务的证书概述](/documentation/articles/cloud-services-certs-create/)中所述创建证书。保留 .pfx 和 RDP 证书指纹，并将证书上载到目标云服务。
 4. 在 MSBuild 命令行中使用以下选项生成一个已启用远程调试的包。（将尖括号中的项替换为系统和项目文件的实际路径）。
 

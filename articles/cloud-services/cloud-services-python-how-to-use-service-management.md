@@ -52,7 +52,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
     openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer
 
-有关 Azure 证书的详细信息，请参阅 [Azure 云服务证书概述](/documentation/articles/cloud-services-certs-create/)。有关 OpenSSL 参数的完整说明，请参阅 [http://www.openssl.org/docs/apps/openssl.html](http://www.openssl.org/docs/apps/openssl.html) 上的文档。
+有关 Azure 证书的详细信息，请参阅 [Azure 云服务证书概述](/documentation/articles/cloud-services-certs-create/)。
 
 创建这些文件后，需要通过 [Azure 经典管理门户][management-portal]中“设置”选项卡的“上传”操作将 `.cer` 文件上传到 Azure，并且需要记下 `.pem` 文件的保存位置。
 

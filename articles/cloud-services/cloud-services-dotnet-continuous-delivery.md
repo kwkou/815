@@ -52,7 +52,7 @@
 
     此选项可缩写为 /t:Publish。安装 Azure SDK 后，MSBuild 中的 /t:Publish 选项不应与 Visual Studio 中的可用 Publish 命令混淆。/t:Publish 选项仅生成 Azure 包。其部署包的方式与 Visual Studio 中的 Publish 命令部署包的方式不同。
 
-    您也可以将项目名称指定为 MSBuild 参数。如果未指定，则将使用当前目录。有关 MSBuild 命令行选项的详细信息，请参阅 [MSBuild 命令行参考](1)。
+    您也可以将项目名称指定为 MSBuild 参数。如果未指定，则将使用当前目录。有关 MSBuild 命令行选项的详细信息，请参阅 [MSBuild 命令行参考](https://msdn.microsoft.com/zh-cn/library/ms164311%28v=vs.140%29.aspx)。
 
 4.  查找输出。默认情况下，此命令将创建与项目的根文件夹相关的目录，例如 *ProjectDir*\\bin\*Configuration*\\app.publish\\。在生成 Azure 项目时，将生成两个文件，即包文件本身和附带的配置文件：
 
