@@ -1,17 +1,17 @@
 <properties
-    pageTitle="如何使用 azure blob storage 在浏览器中实现对媒体文件拖拽点播"
-    description="如何使用 azure blob storage 在浏览器中实现对媒体文件拖拽点播。"
-    services="storage"
-    documentationCenter=""
-    authors=""
-    manager=""
-    editor=""
-    tags="blob存储,媒体文件,拖拽点播,Progressive Download"/>
+	pageTitle="如何使用 azure blob storage 在浏览器中实现对媒体文件拖拽点播"
+	description="如何使用 azure blob storage 在浏览器中实现对媒体文件拖拽点播。"
+	services="storage"
+	documentationCenter=""
+	authors=""
+	manager=""
+	editor=""
+	tags="blob存储,媒体文件,拖拽点播,Progressive Download"/>
 
 <tags
-    ms.service="storage"
-    ms.date="10/27/2016"
-    wacn.date="11/10/2016"/>
+	ms.service="storage"
+	ms.date="10/27/2016"
+	wacn.date="11/10/2016"/>
 
 
 #如何使用 azure blob storage 在浏览器中实现对媒体文件拖拽点播

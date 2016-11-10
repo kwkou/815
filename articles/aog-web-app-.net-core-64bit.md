@@ -1,17 +1,17 @@
 <properties
-    pageTitle="在 Azure WebApps 中运行64位 Asp.net Core 应用"
-    description="在 Azure WebApps 中运行64位 Asp.net Core 应用"
-    services="app-service-web"
-    documentationCenter=""
-    authors=""
-    manager=""
-    editor=""
-    tags=""/>
+	pageTitle="在 Azure WebApps 中运行64位 Asp.net Core 应用"
+	description="在 Azure WebApps 中运行64位 Asp.net Core 应用"
+	services="app-service-web"
+	documentationCenter=""
+	authors=""
+	manager=""
+	editor=""
+	tags=""/>
 
 <tags
-    ms.service="app-service-web-aog"
-    ms.date="10/27/2016"
-    wacn.date="11/10/2016"/>
+	ms.service="app-service-web-aog"
+	ms.date="10/27/2016"
+	wacn.date="11/10/2016"/>
 
 #在 Azure WebApps 中运行64位 Asp.net Core 应用
 
