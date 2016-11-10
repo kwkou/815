@@ -52,7 +52,7 @@
     ![][7]  
 
 
-5. 可以在 mbed 编译器窗口中看到导入此项目也会导入各种库。一些库由 Azure IoT 团队提供并维护（[azureiot\_common](https://developer.mbed.org/users/AzureIoTClient/code/azureiot_common/)、，[iothub\_client](https://developer.mbed.org/users/AzureIoTClient/code/iothub_client/)、[iothub\_amqp\_transport](https://developer.mbed.org/users/AzureIoTClient/code/iothub_amqp_transport/)、[azure\_uamqp](https://developer.mbed.org/users/AzureIoTClient/code/azure_uamqp/)），而另其他库是 mbed 库目录中可用的第三方库。
+5. 可以在 mbed 编译器窗口中看到导入此项目也会导入各种库。一些库由 Azure IoT 团队提供并维护（azureiot\_common、[iothub\_client](https://developer.mbed.org/users/AzureIoTClient/code/iothub_client/)、[iothub\_amqp\_transport](https://developer.mbed.org/users/AzureIoTClient/code/iothub_amqp_transport/)、azure\_uamqp），而另其他库是 mbed 库目录中可用的第三方库。
 
     ![][8]  
 
