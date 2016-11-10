@@ -130,7 +130,7 @@
 
 范围是资源定义的字符串（例如"Mail.Read"、"Directory.ReadWrite.All"），可在 [Azure 经典管理门户][AZURE-classic-portal]中通过资源的[应用程序清单](#application-manifest)进行管理，并且存储在资源的 [oauth2Permissions 属性][AAD-Graph-Sp-Entity]中。也可通过 Azure 经典管理门户配置用于访问范围的客户端应用程序[委托权限](#permissions)。
 
-命名约定最佳实践是使用"resource.operation.constraint"格式。有关 Azure AD 图形 API 公开的范围的详细介绍，请参阅 [Graph API Permission Scopes][AAD-Graph-Perm-Scopes]（图形 API 权限范围）。有关 Office 365 服务公开的范围，请参阅 [Office 365 API permissions reference][O365-Perm-Ref]（Office 365 API 权限参考）。
+命名约定最佳实践是使用"resource.operation.constraint"格式。有关 Azure AD 图形 API 公开的范围的详细介绍，请参阅 [Graph API Permission Scopes][AAD-Graph-Perm-Scopes]（图形 API 权限范围）。
 
 ## 安全令牌
 包含 OAuth2 令牌或 SAML 2.0 断言等声明的已签名文档。对于 OAuth2 [授权](#authorization-grant)，[访问令牌](#access-token) (OAuth2) 和 [ID 令牌](OpenID Connect) 都是安全令牌类型，并且这两种类型都已经作为 [JSON Web 令牌 (JWT)][JWT] 实现。
@@ -196,7 +196,6 @@ Azure AD 目录的实例称为 Azure AD 租户。所提供的功能包括：
 [Duyshant-Role-Blog]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
 [JWT]: https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32
 [Microsoft-Graph]: https://graph.microsoft.io
-[O365-Perm-Ref]: https://msdn.microsoft.com/zh-cn/office/office365/howto/application-manifest
 [OAuth2-Access-Token-Scopes]: https://tools.ietf.org/html/rfc6749#section-3.3
 [OAuth2-AuthZ-Endpoint]: https://tools.ietf.org/html/rfc6749#section-3.1
 [OAuth2-AuthZ-Grant-Types]: https://tools.ietf.org/html/rfc6749#section-1.3

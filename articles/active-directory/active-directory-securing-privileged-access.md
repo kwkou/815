@@ -29,9 +29,6 @@ Microsoft 建议遵循 [Securing Privileged Access（保护特权访问）](http
 
 Azure Multi-Factor Authentication 可帮助保护对数据和应用程序的访问，同时可以满足用户对简单登录过程的需求。它通过各种简单的验证选项（包括电话呼叫、短信、移动应用通知或验证码）和第三方 OATH 令牌）来提供强式身份验证。
 
-有关 Azure Multi-Factor Authentication 工作原理的概述，请观看以下视频。
-
->[AZURE.VIDEO windows-azure-multi-factor-authentication]
 
 有关详细信息，请参阅 [MFA for Office 365 and MFA for Azure（对 Office 365 的 MFA 和对 Azure 的 MFA）](https://blogs.technet.microsoft.com/ad/2014/02/11/mfa-for-office-365-and-mfa-for-azure/)。
 
@@ -63,7 +60,7 @@ Azure Active Directory Identity Protection 提供一个整合的视图来让你�
 
 
 - 启用 [Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-get-started-cloud/)
-- 启用[条件访问控制](/documentation/articles/active-directory-conditional-access/)
+
 
 
 有关构建完整安全路线图的详细信息，请参阅 [Microsoft Cloud Security for Enterprise Architects（针对企业结构设计的 Microsoft 云安全性）](http://aka.ms/securecustomer)文档中的“Customer responsibilities and roadmap”（客户责任和路线图）部分。有关运用 Microsoft 服务来帮助实现其中任一主题所述功能的详细信息，请联系 Microsoft 代表或访问我们的[网络安全解决方案网页](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)。

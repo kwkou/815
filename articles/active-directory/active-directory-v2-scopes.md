@@ -96,7 +96,7 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 在用户输入其凭据之后，v2.0 终结点将检查是否有匹配的**用户同意**记录。如果用户未曾同意所请求权限的任何一项，v2.0 终结点将请求用户授予请求的权限。
 
-![工作帐户同意屏幕截图](../media/active-directory-v2-flows/work_account_consent.png)
+![工作帐户同意屏幕截图](./media/active-directory-v2-flows/work_account_consent.png)
 
 当用户批准权限时，则记录同意，用户在后续登录时无需重新同意。
 

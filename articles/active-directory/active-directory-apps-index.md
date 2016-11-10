@@ -78,10 +78,10 @@
 
 | 文章指南 | |
 | :---: | --- |
-| 有关如何配置应用程序代理以及如何发布第一个应用的教程 | [如何设置 Azure AD 应用代理](/documentation/articles/active-directory-application-proxy-enable/)<br /><br />[如何以无提示方式安装应用代理连接器](/documentation/articles/active-directory-application-proxy-silent-installation/)<br /><br />[如何使用应用代理发布应用程序](/documentation/articles/active-directory-application-proxy-publish/)<br /><br />[如何使用自己的域名](/documentation/articles/active-directory-application-proxy-custom-domains/) |
-| 如何对使用应用代理发布的应用程序启用单一登录和条件性访问 | [使用应用程序代理进行单一登录](/documentation/articles/active-directory-application-proxy-sso-using-kcd/)<br /><br />[条件性访问和应用程序代理](/documentation/articles/active-directory-application-proxy-conditional-access/) |
-| 有关如何对以下方案使用应用程序代理的指导 | [如何支持本机客户端应用程序](/documentation/articles/active-directory-application-proxy-native-client/)<br /><br />[如何支持声明感知应用程序](/documentation/articles/active-directory-application-proxy-claims-aware-apps/)<br /><br />[如何支持在不同网络和位置上发布的应用程序](/documentation/articles/active-directory-application-proxy-connectors/) |
-| 应用程序代理故障排除指南 | [应用代理故障排除指南](/documentation/articles/active-directory-application-proxy-troubleshoot/) |
+| 有关如何配置应用程序代理以及如何发布第一个应用的教程 | 如何设置 Azure AD 应用代理<br /><br />如何以无提示方式安装应用代理连接器<br /><br />如何使用应用代理发布应用程序<br /><br />如何使用自己的域名 |
+| 如何对使用应用代理发布的应用程序启用单一登录和条件性访问 | 使用应用程序代理进行单一登录<br /><br />条件性访问和应用程序代理 |
+| 有关如何对以下方案使用应用程序代理的指导 | 如何支持本机客户端应用程序<br /><br />如何支持声明感知应用程序<br /><br />如何支持在不同网络和位置上发布的应用程序 |
+| 应用程序代理故障排除指南 | 应用代理故障排除指南 |
 
 应用程序代理适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以[使用组来分配对应用程序的访问权限](#managing-access-to-applications)。
 
@@ -111,7 +111,7 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 | :---: | --- |
 | 有关 IT 专业人员和应用程序开发人员集成应用程序与 Azure AD 的指南 | [适用于开发 Azure AD 应用程序的 IT 专业人员指南](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications/)<br /><br />[Azure Active Directory 的开发人员指南](/documentation/articles/active-directory-developers-guide/) |
 | 应用程序供应商如何将其应用添加到 Azure AD 应用库 | [列出 Azure Active Directory 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/) |
-| 如何使用 Azure Active Directory 管理对开发的应用程序的访问 | [如何对开发的应用程序启用用户分配](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment/)<br /><br />[将用户分配到应用](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)<br /><br />[将组分配到应用](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups/) |
+| 如何使用 Azure Active Directory 管理对开发的应用程序的访问 | [如何对开发的应用程序启用用户分配](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment/)<br /><br />[将用户分配到应用](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)<br /><br />将组分配到应用 |
 
 
 ##管理对应用程序的访问

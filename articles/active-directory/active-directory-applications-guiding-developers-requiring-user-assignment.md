@@ -24,7 +24,7 @@
 7. 将“访问应用需要进行用户分配”切换为“是”。
 8. 单击屏幕底部的“保存”按钮。
 
-现在，必须将用户和/或组分配到应用程序。请参阅[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)和[将组分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups/)。
+现在，必须将用户和/或组分配到应用程序。请参阅[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)和将组分配到应用程序。
 
 ## 后续步骤
 [AZURE.INCLUDE [active-directory-applications-guiding-developers-for-lob-applications-toc](../../includes/active-directory-applications-guiding-developers-for-lob-applications-toc.md)]

@@ -78,7 +78,6 @@
 - [了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
 - [了解客户端应用程序中登录按钮和应用获取按钮的品牌准则](/documentation/articles/active-directory-branding-guidelines/)
 - [预览：如何构建可以使用个人帐户和工作或学校帐户来登录用户的应用](/documentation/articles/active-directory-appmodel-v2-overview/)
-- [预览：如何构建可以注册和登录使用者的应用](/documentation/articles/active-directory-b2c-overview/)
 - [预览：使用 PowerShell 在 Azure AD 中配置令牌生存期](/documentation/articles/active-directory-configurable-token-lifetimes/)。请参阅[策略操作](https://msdn.microsoft.com/zh-cn/library/azure/ad/graph/api/policy-operations)和[策略实体](https://msdn.microsoft.com/zh-cn/library/azure/ad/graph/api/entity-and-complex-type-reference#policy-entity)，了解有关通过 Azure AD 图形 API 进行配置的详细信息。
 
 ## 引用

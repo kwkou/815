@@ -29,7 +29,7 @@
 - **自助密码重置**：最终用户或管理员可以自行重置密码，而无需请求管理员或支持人员提供支持。自助密码重置功能需要 Azure AD 高级或基本版。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
 - **管理员启动的密码重置**：管理员可以通过 Azure 经典管理门户重置某个最终用户的密码或其他管理员的密码。
 - **密码管理活动报告**：管理员可以深入了解发生在其组织中的密码重置和注册活动。
-- **密码写回**：从云管理本地密码，因此，上述所有方案都可以由联合用户或密码同步用户本人或其代表来执行。密码写回功能需要 Azure AD 高级版。有关详细信息，请参阅 [Azure Active Directory Premium 入门](/documentation/articles/active-directory-get-started-premium/)。
+- **密码写回**：从云管理本地密码，因此，上述所有方案都可以由联合用户或密码同步用户本人或其代表来执行。密码写回功能需要 Azure AD 高级版。
 
 > [AZURE.NOTE]
 Azure AD 高级版适用于使用世界范围的 Azure AD 实例的中国客户。由中国的 21Vianet 运营的 Azure 服务目前不支持 Azure AD Premium。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。
