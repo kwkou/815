@@ -31,20 +31,6 @@
 
 ![](./media/expressroute-optimize-routing/expressroute-case1-solution.png)
 
-## 非最优路由情况 2
-下面是另一示例：从 Azure 发出的连接需要更长的路径才能到达你的网络。在此示例中，你在[混合环境](https://technet.microsoft.com/library/jj200581%28v=exchg.150%29.aspx)中使用本地 Exchange 服务器和 Exchange Online。你的办公室都连接到 WAN。你通过两个 ExpressRoute 线路将两个办公室中的本地服务器的前缀都播发到 Microsoft。在进行邮箱迁移等情况下，Exchange Online 会发起到本地服务器的连接。遗憾的是，到你洛杉矶办公室的连接会在遍历整个大陆回到西海岸之前路由到美国东部的 ExpressRoute 线路。问题原因类似于第一个。在没有任何提示的情况下，Microsoft 网络无法判断哪个客户前缀靠近美国东部，哪个客户前缀靠近美国西部。它碰巧选取了到你洛杉矶办公室的错误路径。
 
-![](./media/expressroute-optimize-routing/expressroute-case2-problem.png)
-
-### 解决方案：使用 AS PATH 追加
-此问题有两种解决方案。第一种解决方案是，直接将你洛杉矶办公室的本地前缀 177.2.0.0/31 播发到美国西部的 ExpressRoute 线路上，将你纽约办公室的本地前缀 177.2.0.2/31 播发到美国东部的 ExpressRoute 线路上。结果就是，Microsoft 只能通过一个路径连接到你的每个办公室。路径不再模拟两可，路由得到了优化。使用此设计时，需要考虑故障转移策略。在通过 ExpressRoute 连接到 Microsoft 的路径断开的情况下，需确保 Exchange Online 仍能连接到你的本地服务器。
-
-第二种解决方案是，继续将两种前缀播发到两个 ExpressRoute 线路上，但除此之外你还需提示我们哪个前缀靠近你的哪个办公室。由于我们支持 BGP AS Path 追加，因此你可以对前缀的 AS Path 进行配置，使之影响路由。在此示例中，你可以延长美国东部 172.2.0.0/31 的 AS PATH，这样我们就会首选美国西部的 ExpressRoute 线路来传送目标为该前缀的流量（因为我们的网络会认为在西部，到此前缀的路径较短）。类似地，你可以延长美国西部 172.2.0.2/31 的 AS PATH，这样我们就会首选美国东部的 ExpressRoute 线路。路由是针对这两处办公室进行优化的。根据此设计，如果一个 ExpressRoute 线路断开，Exchange Online 仍可通过其他 ExpressRoute 线路以及你的 WAN 访问你。
-
-
-![](./media/expressroute-optimize-routing/expressroute-case2-solution.png)  
-
-
->[AZURE.IMPORTANT] 尽管此处给出的示例针对的是 Azure 和公共对等互连，但我们也支持专用对等互连的相同功能。此外，AS Path 追加会在单个 ExpressRoute 线路内工作，以影响主要和次要路径的选择。
 
 <!---HONumber=Mooncake_1024_2016-->
