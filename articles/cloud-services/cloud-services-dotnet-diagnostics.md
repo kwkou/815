@@ -186,8 +186,6 @@
 
 如果你遇到问题，请参阅 [Azure 诊断故障排除](/documentation/articles/azure-diagnostics-troubleshooting/)，以获得常见问题的帮助。-->
 
-## 后续步骤
-若要更改你收集的数据、排查问题或者了解有关诊断的一般信息，请参阅[与虚拟机相关的 Azure 诊断文章列表](/documentation/articles/azure-diagnostics/#cloud-services)。
 
 
 [EventSource 类]: http://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx

@@ -34,7 +34,7 @@
 
 ## 替代体系结构：网站和 Web 作业
 
-本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/services/web-sites)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources/)功能（目前以预览版提供）。有关如何使用 Web 作业的教程，请参阅 [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
+本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/documentation/services/web-sites)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources/)功能（目前以预览版提供）。有关如何使用 Web 作业的教程，请参阅 [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
 
 ## 学习内容
 
