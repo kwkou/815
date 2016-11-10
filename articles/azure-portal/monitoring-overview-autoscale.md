@@ -84,14 +84,14 @@ Azure Insights 自动缩放仅适用于[虚拟机规模集](/documentation/servi
 
 有关代码示例，请参阅
 
-* [Advanced Autoscale configuration using Resource Manager templates for VM Scale Sets](/documentation/articles/insights-advanced-autoscale-virtual-machine-scale-sets/)（通过用于 VM 规模集的 Resource Manager 模板进行的高级自动缩放配置）
+<!--* [Advanced Autoscale configuration using Resource Manager templates for VM Scale Sets](/documentation/articles/insights-advanced-autoscale-virtual-machine-scale-sets/)（通过用于 VM 规模集的 Resource Manager 模板进行的高级自动缩放配置）-->
 * [自动缩放 REST API](https://msdn.microsoft.com/zh-cn/library/dn931953.aspx)
 
 
 
 ## 水平缩放和垂直缩放
   
-自动缩放仅以水平方式增加资源的规模，即只增加（“放”）或减少（“缩”）VM 实例的数目。水平缩放在使用云服务的情况下更为灵活，因为这样可以运行数千个处理负载的 VM。垂直缩放与此不同。它保持 VM 数量不变，但会增强（“提高”）或削弱（“降低”）VM 的功能。功能按内存、CPU 速度、磁盘空间等指标衡量。垂直缩放有更多的限制。它取决于更大型硬件的可用性，后者存在地区差异，并会快速达到上限。垂直缩放通常还需要启动和停止 VM。有关详细信息，请参阅 [Vertically scale Azure virtual machine with Azure Automation](/documentation/articles/virtual-machines-linux-vertical-scaling-automation/)（使用 Azure 自动化垂直缩放 Azure 虚拟机）。
+自动缩放仅以水平方式增加资源的规模，即只增加（“放”）或减少（“缩”）VM 实例的数目。水平缩放在使用云服务的情况下更为灵活，因为这样可以运行数千个处理负载的 VM。垂直缩放与此不同。它保持 VM 数量不变，但会增强（“提高”）或削弱（“降低”）VM 的功能。功能按内存、CPU 速度、磁盘空间等指标衡量。垂直缩放有更多的限制。它取决于更大型硬件的可用性，后者存在地区差异，并会快速达到上限。垂直缩放通常还需要启动和停止 VM。
 
 
 ## 访问方法 
