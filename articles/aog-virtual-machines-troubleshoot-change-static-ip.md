@@ -1,17 +1,17 @@
 <properties
-    pageTitle="虚拟机配置静态 IP 以后无法连接的解决办法"
-    description="介绍如何解决虚拟机配置静态 IP 以后无法连接的问题"
-    services="virtual-machines"
-    documentationCenter=""
-    authors=""
-    manager=""
-    editor=""
-    tags=""/>
+	pageTitle="虚拟机配置静态 IP 以后无法连接的解决办法"
+	description="介绍如何解决虚拟机配置静态 IP 以后无法连接的问题"
+	services="virtual-machines"
+	documentationCenter=""
+	authors=""
+	manager=""
+	editor=""
+	tags=""/>
 
 <tags
-    ms.service="virtual-machine-aog"
-    ms.date="10/27/2016"
-    wacn.date="11/10/2016"/>
+	ms.service="virtual-machine-aog"
+	ms.date="10/27/2016"
+	wacn.date="11/10/2016"/>
 
 
 #虚拟机配置静态 IP 以后无法连接的解决办法
