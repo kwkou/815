@@ -657,7 +657,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
   2. 使用 Sencha Cmd，运行以下命令：
 
-    * *sencha app refresh*：这将指示 Sencha Cmd 找到所有的应用程序依赖关系，并下载任何所需的程序包（例如，[Sencha Touch Extensions for Azure](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)）。
+    * *sencha app refresh*：这将指示 Sencha Cmd 找到所有的应用程序依赖关系，并下载任何所需的程序包。
 
     * *sencha web start*：这将启动本地的 Web 服务器以测试我们的应用程序。
 

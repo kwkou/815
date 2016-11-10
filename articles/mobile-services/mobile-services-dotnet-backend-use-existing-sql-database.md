@@ -108,7 +108,7 @@
             }
         }
 
-    请注意，此类与模型中的 **Customer** 类相类似，差别在于 **Order** 的关系属性已删除。若要使对象正常使用移动服务脱机同步，需要使用一组*系统属性*来进行乐观并发，因此你会发现，DTO 继承自包含这些属性的 [**EntityData**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx)。原始模型中的基于 int 的 **CustomerId** 属性将替换为 **EntityData** 中基于字符串的 **Id** 属性，这将是移动服务使用的 **Id**。
+    请注意，此类与模型中的 **Customer** 类相类似，差别在于 **Order** 的关系属性已删除。若要使对象正常使用移动服务脱机同步，需要使用一组*系统属性*来进行乐观并发，因此你会发现，DTO 继承自包含这些属性的 [**EntityData**](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.entitydata.aspx)。原始模型中的基于 int 的 **CustomerId** 属性将替换为 **EntityData** 中基于字符串的 **Id** 属性，这将是移动服务使用的 **Id**。
 
 2. 在服务项目的 **DataObjects** 文件夹中创建 **MobileOrder.cs** 文件。
 
