@@ -27,7 +27,6 @@
 如果快速设置与拓扑不匹配，请参阅[相关文档](#related-documentation)中的其他方案。
 
 ## Azure AD Connect 的快速安装
-你可以在[视频](#videos)一节观看这些步骤的操作示范。
 
 1. 以本地管理员身份登录到要安装 Azure AD Connect 的服务器。应该在要用作同步服务器的服务器上执行此操作。
 2. 浏览到"AzureADConnect.msi"并双击。
