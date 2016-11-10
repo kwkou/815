@@ -154,7 +154,6 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **新的预览功能：**
 
-- [用于同步的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-sync/)
 - 支持 [Azure AD 域服务](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-or-change-their-ad-passwords/)密码同步。
 
 **新的受支持方案：**
@@ -219,7 +218,6 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 - [用户写回](/documentation/articles/active-directory-aadconnect-feature-preview/#user-writeback/)
 - [组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback/)
-- [设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback/)
 - [目录扩展](/documentation/articles/active-directory-aadconnect-feature-preview/#directory-extensions/)
 
 

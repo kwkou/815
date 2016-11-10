@@ -130,7 +130,7 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 更改默认配置 | [更改默认配置的最佳做法](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration/)
 
 ## 配置联合身份验证功能
-可将 ADFS 配置为支持[多个域](/documentation/articles/active-directory-aadconnect-multiple-domains/)。例如，你可能在联合身份验证功能中需要使用多个顶级域。
+可将 ADFS 配置为支持多个域。例如，你可能在联合身份验证功能中需要使用多个顶级域。
 
 如果 ADFS 服务器未配置为自动更新 Azure AD 中的证书，或者使用的是非 ADFS 解决方案，系统会在需要[更新证书](/documentation/articles/active-directory-aadconnect-o365-certs/)时通知用户。
 
@@ -139,7 +139,7 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 主题 |  
 --------- | ---------
 所有 AD FS 文章 | [Azure AD Connect 和联合身份验证](/documentation/articles/active-directory-aadconnectfed-whatis/)
-配置带有子域的 ADFS | [与 Azure AD 联合的多域支持](/documentation/articles/active-directory-aadconnect-multiple-domains/)
+配置带有子域的 ADFS | 与 Azure AD 联合的多域支持
 管理 AD FS 场 | [使用 Azure AD Connect 管理和自定义 AD FS](/documentation/articles/active-directory-aadconnect-federation-management/)
 手动更新联合身份验证证书 | [续订 Office 365 和 Azure AD 的联合身份验证证书](/documentation/articles/active-directory-aadconnect-o365-certs/)
 
