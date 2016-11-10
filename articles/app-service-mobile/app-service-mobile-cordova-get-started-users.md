@@ -85,7 +85,6 @@
 ##<a name="next-steps"></a>后续步骤
 
 * 了解[有关 Azure 应用服务身份验证]的详细信息。
-* 将[推送通知]添加到 Apache Cordova 应用，继续学习本教程。
 
 了解如何使用 SDK。
 
@@ -96,7 +95,7 @@
 <!-- URLs. -->
 [Get started with Mobile Apps]: /documentation/articles/app-service-mobile-cordova-get-started/
 [Content-Security-Policy 文档]: https://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html
-[推送通知]: /documentation/articles/app-service-mobile-cordova-get-started-push/
+
 [有关 Azure 应用服务身份验证]: /documentation/articles/app-service-mobile-auth/
 [Apache Cordova SDK]: /documentation/articles/app-service-mobile-codova-how-to-use-client-library/
 [ASP.NET Server SDK]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/

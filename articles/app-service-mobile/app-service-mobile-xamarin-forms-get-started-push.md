@@ -28,7 +28,7 @@
 
 如果不使用下载的快速入门服务器项目，必须将推送通知扩展包添加到项目。有关服务器扩展包的详细信息，请参阅 [Work with the .NET backend server SDK for Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/)（使用适用于 Azure 移动应用的 .NET 后端服务器 SDK）。
 
-向 iOS 设备发送推送通知需要 [Apple 开发人员计划成员身份](https://developer.apple.com/programs/ios/)。另外，必须使用物理 iOS 设备，因为 [iOS 模拟器不支持推送通知](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html)。
+向 iOS 设备发送推送通知需要 [Apple 开发人员计划成员身份](https://developer.apple.com/programs/ios/)。另外，必须使用物理 iOS 设备，因为 iOS 模拟器不支持推送通知。
 
 ##<a name="create-hub"></a>创建通知中心
 

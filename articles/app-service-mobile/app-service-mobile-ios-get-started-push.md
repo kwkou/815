@@ -20,7 +20,7 @@
 ## 概述
 本教程介绍如何向 [iOS 快速入门]项目添加推送通知，以便每次插入一条记录时，发送一条推送通知。本教程基于 [iOS quick start]（iOS 快速入门）教程，必须先完成该教程。如果不使用下载的快速入门服务器项目，必须将推送通知扩展包添加到项目。有关服务器扩展包的详细信息，请参阅 [Work with the .NET backend server SDK for Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/)（使用适用于 Azure 移动应用的 .NET 后端服务器 SDK）。
 
-[iOS 模拟器不支持推送通知](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html)，因此在本教程中，需要有一个 iOS 物理设备和 [Apple Developer Program 会员资格](https://developer.apple.com/programs/ios/)。
+iOS 模拟器不支持推送通知，因此在本教程中，需要有一个 iOS 物理设备和 [Apple Developer Program 会员资格](https://developer.apple.com/programs/ios/)。
 
 ##<a name="create-hub"></a>创建通知中心
 
