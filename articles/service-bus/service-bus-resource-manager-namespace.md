@@ -36,7 +36,7 @@
 
 ## 你将部署什么内容？
 
-使用此模板，可以部署包含[基本或标准](/pricing/details/service-bus/) SKU 的服务总线命名空间。
+使用此模板，可以部署包含[基本或标准](/pricing/details/messaging/) SKU 的服务总线命名空间。
 
 若要自动运行部署，请单击以下按钮：
 
