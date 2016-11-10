@@ -257,7 +257,7 @@
 
 以下步骤将指导你完成添加服务器更新脚本并对其进行测试的过程。
 
-1. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用。
+1. 登录到 [Azure 经典管理门户]，单击“移动服务”，然后单击你的应用。
 
    	![][7]
 
@@ -325,14 +325,6 @@
 
 	应用实例 2	
 	![][18]
-
-##后续步骤
-
-本教程演示了在处理移动服务中的数据时，如何让 Windows 应用商店应用程序处理写入冲突。接下来，请考虑完成以下 Windows 应用商店教程之一：
-
-
-* [向应用程序添加推送通知] 
-  <br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
  
 
 
@@ -369,9 +361,8 @@
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [Get started with data]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
-[向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=271146

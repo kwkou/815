@@ -55,7 +55,7 @@
 
 ## <a name="instantiating"></a>如何创建表引用
 
-在移动服务中查询或修改数据的最简单方法就是使用类型化编程模型，因为 Java 是强类型化语言（稍后我们将会介绍非类型化模型）。在客户端和移动服务之间发送数据时，此模型使用 [gson](http://go.microsoft.com/fwlink/p/?LinkId=290801) 库提供对 JSON 的无缝序列化和反序列化：开发人员无需执行任何操作，该框架将处理一切。
+在移动服务中查询或修改数据的最简单方法就是使用类型化编程模型，因为 Java 是强类型化语言（稍后我们将会介绍非类型化模型）。在客户端和移动服务之间发送数据时，此模型使用 gson 库提供对 JSON 的无缝序列化和反序列化：开发人员无需执行任何操作，该框架将处理一切。
 
 查询或修改数据所要执行的第一项操作就是通过对 **MobileServiceClient** 调用 **getTable** 方法来创建一个 **MobileServiceTable** 对象。下面是此方法的两个重载：
 
@@ -450,7 +450,7 @@
 
 ### <a name="json_insert"></a>如何插入到非类型化表中
 
-以下代码演示了如何执行插入。第一步是创建属于 <a href=" http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> 库的一部分的 [**JsonObject**](http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html)。
+以下代码演示了如何执行插入。第一步是创建属于 gson 库的一部分的 **JsonObject**。
 
 		JsonObject item = new JsonObject();
 		item.addProperty("text", "Wake up");
@@ -832,7 +832,7 @@
 - mDuration
 
 
-则你必须将客户端名称序列化为与服务器上 *ToDoItem* 表的列名称匹配的 JSON 名称。以下代码利用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> 库来执行此操作。
+则你必须将客户端名称序列化为与服务器上 *ToDoItem* 表的列名称匹配的 JSON 名称。以下代码利用 gson 库来执行此操作。
 
 	@com.google.gson.annotations.SerializedName("text")
 	private String mText;
@@ -848,16 +848,16 @@
 
 ### <a name="table"></a>如何在客户端与移动服务之间映射不同的表名称
 
-如以下代码所示，只需使用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=296840" target="_blank">getTable()</a> 函数的重写之一，就能轻松地将客户端表名称映射为不同的移动服务表名称。
+如以下代码所示，只需使用 getTable() 函数的重写之一，就能轻松地将客户端表名称映射为不同的移动服务表名称。
 
 		mToDoTable = mClient.getTable("ToDoItemBackup", ToDoItem.class);
 
 
 ### <a name="conversions"></a>如何自动执行列名称映射
 
-如前一部分中所示，映射只包含几个列的简短表的列名称并不复杂。但是，如果表包含大量的列（例如 20 或 30 个列），则我们可以调用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> API 并指定要应用到每个列的转换策略，这样就无需批注每一个列名称。
+如前一部分中所示，映射只包含几个列的简短表的列名称并不复杂。但是，如果表包含大量的列（例如 20 或 30 个列），则我们可以调用 gson API 并指定要应用到每个列的转换策略，这样就无需批注每一个列名称。
 
-为此，我们需要使用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> 库，Android 客户端库在幕后使用该库将 Java 对象序列化为要发送到 Azure 移动服务的 JSON 数据。
+为此，我们需要使用 gson 库，Android 客户端库在幕后使用该库将 Java 对象序列化为要发送到 Azure 移动服务的 JSON 数据。
 
 以下代码使用 *setFieldNamingStrategy()* 方法，我们在其中定义了 *FieldNamingStrategy()* 方法。此方法指定删除初始字符（“m”），然后将每个字段名称的下一个字符小写。此代码还启用了输出 JSON 的整齐打印。
 
@@ -881,7 +881,7 @@
 
 到目前为止，我们的所有序列化示例都使用了可轻松序列化成 JSON 和移动服务表的基元类型（例如整数和字符串）。假设我们要将一个不能自动序列化成 JSON 和表的复杂对象添加到客户端类型。例如，我们要将一个字符串数组添加到客户端对象。此时，我们需要指定如何执行序列化，以及如何将数组存储到移动服务表中。
 
-若要查看有关如何执行此操作的示例，请阅读博客文章<a href="http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson" target="_blank">在移动服务 Android 客户端中使用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=290801" target="_blank">gson</a> 库自定义序列化</a>。
+若要查看有关如何执行此操作的示例，请阅读博客文章<a href="http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson" target="_blank">在移动服务 Android 客户端中使用 gson 库自定义序列化</a>。
 
 每当我们要使用一个不能自动序列化成 JSON 和移动服务表的复杂对象时，就可以使用此常规方法。
 

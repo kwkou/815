@@ -172,7 +172,7 @@
 
 
 <!-- URLs. -->
-[移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/p?LinkId=262293
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
 
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [nodejs-org]: http://nodejs.org/

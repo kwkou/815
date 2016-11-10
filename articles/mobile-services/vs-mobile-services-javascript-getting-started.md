@@ -74,7 +74,7 @@
 
 ##删除条目
 
-删除数据表中的行。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 [done]() 方法以获取插入对象的副本并处理任何错误。
+删除数据表中的行。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 done 方法以获取插入对象的副本并处理任何错误。
 
 	todoTable.del(todoItem).done(function (item) {
 	    todoItems.splice(todoItems.indexOf(item), 1);

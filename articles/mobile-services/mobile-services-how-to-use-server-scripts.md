@@ -623,7 +623,6 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 		data:    register_notifications  application  application  user         application  application
 		info:    mobile script list command OK
 
-有关详细信息，请参阅[用于管理 Azure 移动服务的命令]。
 
 ## <a name="working-with-tables"></a>使用表
 
@@ -1015,16 +1014,15 @@ Stream|不支持
 [修改响应]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631631.aspx
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [计划作业]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860528.aspx
-[使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
-[用于管理 Azure 移动服务的命令]: /zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts
-[Windows Store Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
-[Windows Phone Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
-[iOS Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
-[Android Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
+[使用服务器脚本在移动服务中验证和修改数据]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
+[Windows Store Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
+[Windows Phone Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
+[iOS Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+[Android Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
 [发送 HTTP 请求]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631641.aspx
-[使用 SendGrid 从移动服务发送电子邮件]: /zh-cn/documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
-[身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+[使用 SendGrid 从移动服务发送电子邮件]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
+[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
 [path API]: http://go.microsoft.com/fwlink/p/?LinkId=288803
 [querystring API]: http://go.microsoft.com/fwlink/p/?LinkId=288804
@@ -1032,12 +1030,12 @@ Stream|不支持
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
 [自定义 API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn280974.aspx
-[从客户端调用自定义 API]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/#define-custom-api
+[从客户端调用自定义 API]: /documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/#define-custom-api
 [express.js 库]: http://go.microsoft.com/fwlink/p/?LinkId=309046
-[定义支持定期通知的自定义 API]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/
+[定义支持定期通知的自定义 API]: /documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/
 [express.js 中的 express 对象]: http://expressjs.com/api.html#express
-[Store server scripts in source control]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/
-[在服务器脚本中利用共享代码和 Node.js 模块]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/#use-npm
+[Store server scripts in source control]: /documentation/articles/mobile-services-store-scripts-source-control/
+[在服务器脚本中利用共享代码和 Node.js 模块]: /documentation/articles/mobile-services-store-scripts-source-control/#use-npm
 [service 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303371.aspx
 [应用设置]: http://msdn.microsoft.com/zh-cn/library/dn529070.aspx
 [config module]: http://msdn.microsoft.com/zh-cn/library/dn508125.aspx
