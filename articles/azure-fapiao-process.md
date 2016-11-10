@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="multiple" ms.date="" wacn.date="11/08/2016" wacn.lang="cn"/>
+<tags ms.service="multiple" ms.date="" wacn.date="11/10/2016" wacn.lang="cn"/>
 
 #发票申请操作解析 - Azure在线业务
 
@@ -112,20 +112,21 @@ Azure 用户可以通过链接 [https://support.windowsazure.cn/support](https:/
 ### 问题二：自助修改登邮箱录，密码
 
 - 登录发票管理系统 ([http://fapiao.cloud.21vianet.com/EmailAcount/LoginView](http://fapiao.cloud.21vianet.com/EmailAcount/LoginView))，直接修改邮箱和密码。
+<br /><br />
 
 	![修改邮箱和密码](./media/azure-fapiao-process/12.png)
-
+<br />
 - 如果您忘记了登录密码，请您使用登录邮箱重置密码。系统将新密码发送到您的邮箱，请您收到后用新密码登录。
-
+<br /><br />
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   		<tr>
-    		<td><img src="./media/azure-fapiao-process/13.png" /></td>
-			<td><img src="./media/azure-fapiao-process/14.png" /></td>
-    		<td><img src="./media/azure-fapiao-process/15.png" /></td>
-			<td><img src="./media/azure-fapiao-process/16.png" /></td>
+    		<td style="padding:5px 5px 5px 5px"><img src="./media/azure-fapiao-process/13.png" /></td>
+			<td style="padding:5px 5px 5px 5px"><img src="./media/azure-fapiao-process/14.png" /></td>
+    		<td style="padding:5px 5px 5px 5px"><img src="./media/azure-fapiao-process/15.png" /></td>
+			<td style="padding:5px 5px 5px 5px"><img src="./media/azure-fapiao-process/16.png" /></td>
   		</tr>
 	</table>
-
+<br />
 - 如果您忘记了登录邮箱，请致电 4000890365，我们的客服会帮助您解决问题。
 
 <br />
