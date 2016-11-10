@@ -94,7 +94,7 @@
 <a name="Logs"></a>
 ## 分析诊断日志
 
-当移动服务处理来自客户的请求时，会生成各种有用的诊断信息，并捕获遇到的任何异常。除此之外，你还可以利用每个 [**TableController**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.tables.tablecontroller.aspx) 的 [**Services**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.tables.tablecontroller.services.aspx) 属性上提供的 [**Log**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.apiservices.log.aspx) 属性，参考其他日志来检测控制器代码。
+当移动服务处理来自客户的请求时，会生成各种有用的诊断信息，并捕获遇到的任何异常。除此之外，你还可以利用每个 [**TableController**](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.tables.tablecontroller.aspx) 的 [**Services**](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.tables.tablecontroller.services.aspx) 属性上提供的 [**Log**](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.apiservices.log.aspx) 属性，参考其他日志来检测控制器代码。
 
 在本地调试时，日志显示在 Visual Studio 的“输出”窗口中。
 

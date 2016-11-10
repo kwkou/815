@@ -132,25 +132,25 @@
 	
 	现在 Visual Studio 还允许你使用用于 Visual Studio 的多设备混合应用程序扩展（它是预发行软件）构建跨平台的 Cordova 应用程序。有关详细信息，请参阅[使用 HTML 和 JavaScript 的多设备混合应用程序入门](http://msdn.microsoft.com/zh-cn/library/dn771545.aspx)。
 
-+ [**Sencha Touch**](http://go.microsoft.com/fwlink/p/?LinkId=509988)<br/>Sencha Touch 提供了一组针对触摸屏优化的控件，这些控件使用单个 HTML 和 JavaScript 代码库在各种移动设备上提供类似本机的体验。Sencha Touch 可与 PhoneGap 或 Cordova 库一起使用，为用户提供对本机设备资源的访问权限。有关详细信息，请参阅 [Sencha Touch 快速入门教程][Sencha]。
++ **Sencha Touch**<br/>Sencha Touch 提供了一组针对触摸屏优化的控件，这些控件使用单个 HTML 和 JavaScript 代码库在各种移动设备上提供类似本机的体验。Sencha Touch 可与 PhoneGap 或 Cordova 库一起使用，为用户提供对本机设备资源的访问权限。有关详细信息，请参阅 [Sencha Touch 快速入门教程][Sencha]。
 
 + [**Xamarin**](https://go.microsoft.com/fwLink/p/?LinkID=330242)<br/>使用 Xamarin 可以为 iOS 和 Android 设备创建完全本机应用程序，这些应用程序具有完全本机 UI 并可访问所有设备资源。Xamarin 应用程序使用 C#（而不是 Objective-C 和 Java）编码。这使 .NET 开发人员能够将应用程序发布到 iOS 和 Android 并共享 Windows 项目中的代码。Xamarin 通过 C# 代码在 iOS 和 Android 设备上提供完全本机用户体验。这使你能够在 iOS 和 Android 设备上重用 Windows 应用程序中的某些移动服务代码。有关详细信息，请参阅下面的 [Xamarin 开发](#xamarin)。
 
 
 <!-- URLs -->
-[Azure 通知中心]: /zh-cn/documentation/articles/notification-hubs-push-notification-overview/
-[SSO Windows Store]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
-[SSO Windows Phone]: /zh-cn/documentation/articles/mobile-services-windows-phone-single-sign-on/
+[Azure 通知中心]: /documentation/articles/notification-hubs-push-notification-overview/
+[SSO Windows Store]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
+[SSO Windows Phone]: /documentation/articles/mobile-services-windows-phone-single-sign-on/
 [Tutorials and resources]: /zh-cn/documentation/services/mobile-services/
-[Get started with Notification Hubs]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
-[向用户发送跨平台通知]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
-[Get started with push Windows dotnet]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012/
-[Get started with push Windows js]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/
-[Get started with push Windows Phone]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
-[Get started with push iOS]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
-[Get started with push Android]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
+[Get started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
+[向用户发送跨平台通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
+[Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012/
+[Get started with push Windows js]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/
+[Get started with push Windows Phone]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
+[Get started with push iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+[Get started with push Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193175.aspx
-[How to use a .NET client with Mobile Services]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+[How to use a .NET client with Mobile Services]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 [push 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554217.aspx
 [TemplatePushMessage]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
 [PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started/

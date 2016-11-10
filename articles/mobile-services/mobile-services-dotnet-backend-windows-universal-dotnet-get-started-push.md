@@ -34,7 +34,7 @@
 
 &nbsp;&nbsp;8.重复执行前面的步骤为 Windows Phone 应用商店应用项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对 **UploadChannel** 和剩余 `#if...#endif` 条件包装的额外调用。现在，这两个项目可以共用对 **UploadChannel** 的单一调用。
 
-> [AZURE.NOTE]此外，你还可以通过将 `#if...#endif` 包装的 [MobileServiceClient](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。
+> [AZURE.NOTE]此外，你还可以通过将 `#if...#endif` 包装的 [MobileServiceClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。
 
 现在可以在应用程序中启用推送通知，你必须更新移动服务以发送推送通知。
 

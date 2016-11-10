@@ -30,9 +30,9 @@
 
 ## 要求
 
-- 下载并安装 [Sencha Touch](http://wwww.sencha.com/products/touch/download"target="\_blank")。
+- 下载并安装 Sencha Touch。
 
-- 下载并安装 [Sencha Cmd Tool](http://www.sencha.com/products/sencha-cmd/download"target="\_blank")。
+- 下载并安装 Sencha Cmd Tool。
 
 - Java Runtime Environment (JRE) 或 Java 开发工具包（如果您创建 Android 应用程序）
 - Ruby 和 SASS gem。
@@ -695,7 +695,6 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 ## 其他资源
 
   * [下载 Sencha Touch](http://pages.sencha.com/touch-for-azure.html)
-  * [Sencha Touch Extensions for Azure](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)
  
 
 ## 摘要

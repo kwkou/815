@@ -114,7 +114,7 @@ SendGrid 是一项[基于云的电子邮件服务]，该服务提供了可靠的
 现在，你已了解结合使用 SendGrid 电子邮件服务和移动服务是多么简单，单击下面的链接可了解有关 SendGrid 的详细信息。
 
 -   SendGrid API 文档：<https://sendgrid.com/docs>
--   面向 Azure 客户的 SendGrid 特惠产品/服务：<https://sendgrid.com/windowsazure.html>
+-   面向 Azure 客户的 SendGrid 特惠产品/服务：<https://sendgrid.com/>
 
 <!-- Anchors. -->
 [创建 SendGrid 帐户]: #sign-up

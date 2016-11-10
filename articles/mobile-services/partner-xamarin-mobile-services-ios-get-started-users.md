@@ -114,7 +114,7 @@
    	当你成功登录时，应用应该运行而不出现错误，你应该能够查询移动服务，并对数据进行更新。
 
 ## 获取已完成的示例
-下载[已完成的示例项目]。请务必使用你自己的 Azure 设置更新 **applicationURL** 和 **applicationKey** 变量。
+下载已完成的示例项目。请务必使用你自己的 Azure 设置更新 **applicationURL** 和 **applicationKey** 变量。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -144,7 +144,6 @@
 [Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push/
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 
-[已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin Studio]: http://xamarin.com/download
 
 <!---HONumber=Mooncake_0118_2016-->
