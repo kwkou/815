@@ -138,7 +138,7 @@
 
 ## 后续步骤
 
-- 有关服务总线定价的更多详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/service-bus/)。
+- 有关服务总线定价的更多详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/messaging/)。
 
 - 有关服务总线和计费的一些常见问题解答，请参阅[服务总线定价常见问题解答](/documentation/articles/service-bus-faq/#service-bus-pricing)。
 

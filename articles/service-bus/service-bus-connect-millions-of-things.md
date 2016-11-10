@@ -21,7 +21,7 @@
 - [事件中心](/documentation/articles/event-hubs-overview/)
 - [分片模式](http://msdn.microsoft.com/zh-cn/library/dn589797.aspx)
 - [服务总线和 AMQP 1.0](/documentation/articles/service-bus-amqp-overview/)
-- [服务总线简介](/documentation/services/messaging/)
+- [服务总线简介](/documentation/services/service-bus/)
  
 ## 构建
 - [分区消息实体](/documentation/articles/service-bus-partitioning/)
