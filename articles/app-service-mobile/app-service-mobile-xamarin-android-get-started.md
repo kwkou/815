@@ -67,7 +67,6 @@
 ##后续步骤
 
 * [向应用添加身份验证](/documentation/articles/app-service-mobile-xamarin-android-get-started-users/) 了解如何使用标识提供者对应用的用户进行身份验证。
-* [向 Xamarin.Android 应用添加推送通知](/documentation/articles/app-service-mobile-xamarin-android-get-started-push/) 了解如何向应用添加推送通知。
 * [如何使用 Azure 移动应用的托管客户端](/documentation/articles/app-service-mobile-dotnet-how-to-use-client-library/) 了解如何在 Xamarin 应用中使用托管客户端 SDK。
 
 

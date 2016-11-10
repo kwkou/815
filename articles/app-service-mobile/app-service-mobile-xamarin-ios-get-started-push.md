@@ -93,7 +93,6 @@
 
 3. 在同一文件中，重写 **RegisteredForRemoteNotifications** 事件。在此代码中，将注册一个简单的模板通知，服务器会将此通知发送到所有支持的平台。
 
-	有关使用通知中心的模板的详细信息，请参阅[模板](/documentation/articles/notification-hubs-templates/)。
 
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)

@@ -139,7 +139,7 @@ Visual Studio 2015 需要使用一个扩展在 IDE 中开发 Node.js 应用程�
 
 1. 安装 Git（如果尚未安装）。安装 Git 所需的步骤因操作系统的不同而异。有关操作系统特定的分发和安装指南，请参阅[安装 Git](http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)。
 
-2. 根据 [Enable the App Service app repository](/documentation/articles/web-sites-deploy-local-git/#Step3)（启用应用服务应用存储库）中的步骤为后端站点启用 Git 存储库，并记下部署用户名和密码。
+2. 根据 Enable the App Service app repository（启用应用服务应用存储库）中的步骤为后端站点启用 Git 存储库，并记下部署用户名和密码。
 
 3. 在移动应用后端的边栏选项卡中，记下“Git 克隆 URL”设置。
 
@@ -827,7 +827,6 @@ Azure 应用服务提供多种适用于 Node.js 应用程序的调试和故障�
 
 - [Monitoring an Azure App Service]（监视 Azure 应用服务）
 - [Enable Diagnostic Logging in Azure App Service]（在 Azure 应用服务中启用诊断记录）
-- [Troubleshoot an Azure App Service in Visual Studio]（在 Visual Studio 中对 Azure 应用服务进行故障排除）
 
 Node.js 应用程序可访问各种诊断日志工具。在内部，Azure 移动应用 Node.js SDK 使用 [Winston] 进行诊断日志记录。启用调试模式，或者在 [Azure 门户预览]中将 **MS\_DebugMode** 应用设置指定为 true，即可自动启用此功能。生成的日志显示在 [Azure 门户预览]上的“诊断日志”中。
 
@@ -888,7 +887,7 @@ Azure 门户允许在应用服务编辑器中编辑 Node.js 后端脚本文件�
 [Windows 应用商店客户端快速入门]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started/
 [HTML/Javascript Client QuickStart]: /documentation/articles/app-service-html-get-started/
 [脱机数据同步]: /documentation/articles/app-service-mobile-offline-data-sync/
-[How to configure Azure Active Directory Authentication]: /documentation/articles/app-mobile-how-to-configure-active-directory-authentication/
+[How to configure Azure Active Directory Authentication]: /documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/
 [How to configure Microsoft Authentication]: /documentation/articles/app-service-mobile-how-to-configure-microsoft-authentication/
 [Azure App Service Deployment Guide]: /documentation/articles/web-sites-deploy/
 [Monitoring an Azure App Service]: /documentation/articles/web-sites-monitor/
