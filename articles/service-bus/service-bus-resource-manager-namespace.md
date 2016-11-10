@@ -40,7 +40,7 @@
 
 若要自动运行部署，请单击以下按钮：
 
-[![部署到 Azure](./media/service-bus-resource-manager-namespace/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-servicebus-create-namespace%2Fazuredeploy.json)
+[![部署到 Azure](./media/service-bus-resource-manager-namespace/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-servicebus-create-namespace%2Fazuredeploy.json)
 
 ## 参数
 
@@ -63,7 +63,7 @@
 
 ### serviceBusSKU
 
-要创建的服务总线 [SKU](/pricing/details/service-bus/) 的名称。
+要创建的服务总线 [SKU](/pricing/details/messaging/) 的名称。
 
 ```
 "serviceBusSku": { 
@@ -150,7 +150,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --templat
   [创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates/
   [服务总线命名空间模板]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-servicebus-create-namespace/
   [Azure 快速启动模板]: https://azure.microsoft.com/documentation/templates/
-  [服务总线和定价]: https://azure.microsoft.com/documentation/articles/service-bus-pricing-billing/
+  [服务总线和定价]: /documentation/articles/service-bus-pricing-billing/
   [Using Azure PowerShell with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager/
   [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/
 

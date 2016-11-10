@@ -142,7 +142,7 @@ namespace Microsoft.ServiceBus.Samples
 	
 	与其他接口实现类似，你可以在另一个文件中实现定义。但是，在本教程中，实现所在的文件与接口定义和 `Main` 方法所在的文件相同。
 
-1. 将 [ServiceBehaviorAttribute](https://msdn.microsoft.com/library/system.servicemodel.servicebehaviorattribute.aspx) 属性应用于 `IEchoContract` 接口。该属性指定服务名称和命名空间。完成后，`EchoService` 类将如下所示：
+1. 将 [ServiceBehaviorAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicebehaviorattribute.aspx) 属性应用于 `IEchoContract` 接口。该属性指定服务名称和命名空间。完成后，`EchoService` 类将如下所示：
 
 	```
 	[ServiceBehavior(Name = "EchoService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]

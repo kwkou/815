@@ -18,7 +18,6 @@
 
 有关创建模板的详细信息，请参阅[创作 Azure Resource Manager 模板][]。
 
-有关完整的模板，请参阅 GitHub 上的[服务总线事件中心和使用者组模板][]。
 
 >[AZURE.NOTE] 以下 Azure Resource Manager 模板可供下载和部署。
 >

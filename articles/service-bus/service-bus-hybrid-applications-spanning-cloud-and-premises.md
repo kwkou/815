@@ -30,7 +30,7 @@
 - [如何将移动服务与 REST 服务总线中继服务集成](http://blogs.msdn.com/b/paolos/archive/2013/07/09/how-to-integrate-a-mobile-service-with-a-rest-service-bus-relay-service.aspx)
  
 ## 热门
-- [服务总线定价信息](/pricing/details/service-bus/)
+- [服务总线定价信息](/pricing/details/messaging/)
 - [服务总线常见问题解答](/documentation/articles/service-bus-faq/)
 - [服务总线 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
 - [服务总线 REST API 参考](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh780717.aspx)

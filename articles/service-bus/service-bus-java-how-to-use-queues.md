@@ -239,6 +239,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
-  [Azure 经典管理门户]: http://manage.windowsazure.com
+  [Azure 经典管理门户]: http://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0104_2016-->
