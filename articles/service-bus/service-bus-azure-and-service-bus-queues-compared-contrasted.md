@@ -163,7 +163,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 - Azure 队列使你可以获取针对该队列执行的所有事务的详细日志以及聚合度量值。这两个选项可用于调试和了解你的应用程序如何使用 Azure 队列。它们还用于对应用程序进行性能优化并降低使用队列的成本。
 
-- 服务总线支持的“消息会话”概念允许属于特定逻辑组的消息与给定的接收者关联，而这样一来又能在消息与其各自接收者之间创建类似于会话的关联。可以通过对消息设置 [SessionID](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx) 属性，在服务总线中启用此高级功能。然后，接收者可以侦听特定会话 ID，并接收共享特定会话标识符的消息。
+- 服务总线支持的“消息会话”概念允许属于特定逻辑组的消息与给定的接收者关联，而这样一来又能在消息与其各自接收者之间创建类似于会话的关联。可以通过对消息设置 [SessionID](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx) 属性，在服务总线中启用此高级功能。然后，接收者可以侦听特定会话 ID，并接收共享特定会话标识符的消息。
 
 - 根据 [MessageID](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) 属性的值，服务总线队列支持的重复项检测功能会自动删除发送到队列或主题的重复消息。
 

@@ -438,7 +438,7 @@ namespace Microsoft.ServiceBus.Samples
 
 ### 创建接收器并从队列接收消息
 
-在 `Queue()` 方法中，使用 [QueueClient.ReceiveAsync](https://msdn.microsoft.com/library/azure/dn130423.aspx) 方法循环访问队列和接收消息，并将每条消息输出到控制台。在上一步中添加的代码后直接添加以下代码：
+在 `Queue()` 方法中，使用 [QueueClient.ReceiveAsync](https://msdn.microsoft.com/zh-cn/library/azure/dn130423.aspx) 方法循环访问队列和接收消息，并将每条消息输出到控制台。在上一步中添加的代码后直接添加以下代码：
 
 ```
 Console.WriteLine("Now receiving messages from Queue.");

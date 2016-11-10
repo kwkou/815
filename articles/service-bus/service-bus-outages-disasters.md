@@ -92,7 +92,7 @@
 若要了解有关灾难恢复的详细信息，请参阅这些文章：
 
 - [Azure SQL 数据库业务连续性][]
-- [Azure 复原技术指南][]
+
 
   [服务总线身份验证]: /documentation/articles/service-bus-authentication-and-authorization/
   [分区消息实体]: /documentation/articles/service-bus-partitioning/
@@ -102,6 +102,5 @@
   [BrokeredMessage.Label]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx
   [使用服务总线中转消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-f5688664
   [Azure SQL 数据库业务连续性]: /documentation/articles/sql-database-business-continuity/
-  [Azure 复原技术指南]: /documentation/articles/resiliency-technical-guidance/
 
 <!---HONumber=74-->

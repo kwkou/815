@@ -74,7 +74,7 @@
 
 ## 服务总线定价
 
-本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/service-bus/)。
+本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/messaging/)。
 
 ### 服务总线如何收取费用？
 
@@ -199,7 +199,7 @@
 
 [使用服务总线中转消息传送改进性能的最佳实践]: /documentation/articles/service-bus-performance-improvements/
 [使应用程序免受服务总线中断和灾难影响的最佳实践]: /documentation/articles/service-bus-outages-disasters/
-[Pricing overview]: /home/features/messaging/pricing
+[Pricing overview]: /pricing/details/messaging/
 [配额概述]: /documentation/articles/service-bus-quotas/
 [此处]: /documentation/articles/service-bus-powershell-how-to-provision/#migrate-a-namespace-to-another-azure-subscription
 [Exceptions overview]: /documentation/articles/service-bus-messaging-exceptions/

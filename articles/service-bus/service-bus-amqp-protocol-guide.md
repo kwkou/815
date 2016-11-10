@@ -58,7 +58,7 @@ Azure 服务总线随时都需要使用 TLS。它支持通过 TCP 端口 5671 �
 
 在设置连接和 TLS 之后，服务总线提供两个 SASL 机制选项：
 
--   SASL PLAIN 常用于将用户名和密码凭据发送到服务器。服务总线没有帐户，但是有命名的[共享访问安全规则](service-bus-shared-access-signature-authentication.md)，这些规则可授予权限并与某个密钥关联。规则名称可作为用户名，而密钥（如 base64 编码文本）可作为密码。与所选规则关联的权限控管允许在连接上进行的操作。
+-   SASL PLAIN 常用于将用户名和密码凭据发送到服务器。服务总线没有帐户，但是有命名的[共享访问安全规则](/documentation/articles/service-bus-shared-access-signature-authentication/)，这些规则可授予权限并与某个密钥关联。规则名称可作为用户名，而密钥（如 base64 编码文本）可作为密码。与所选规则关联的权限控管允许在连接上进行的操作。
 
 -   当客户端想要使用稍后所述的基于声明的安全 (CBS) 模型时，SASL ANONYMOUS 可用于绕过 SASL 授权。使用此选项，即可以匿名方式创建短期的客户端连接，在此连接期间，客户端只能与 CBS 终结点交互，并且 CBS 握手必须完成。
 

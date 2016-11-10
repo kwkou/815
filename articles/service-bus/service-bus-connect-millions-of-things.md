@@ -21,7 +21,7 @@
 - [事件中心](/documentation/articles/event-hubs-overview/)
 - [分片模式](http://msdn.microsoft.com/zh-cn/library/dn589797.aspx)
 - [服务总线和 AMQP 1.0](/documentation/articles/service-bus-amqp-overview/)
-- [服务总线简介](/services/service-bus/)
+- [服务总线简介](/documentation/services/messaging/)
  
 ## 构建
 - [分区消息实体](/documentation/articles/service-bus-partitioning/)
@@ -34,7 +34,7 @@
 
 ## 相关服务
 - [物联网（Microsoft 博客通告）](http://blogs.microsoft.com/iot/2015/03/16/microsoft-announces-azure-iot-suite)
-- [Azure Active Directory](/services/identity/)
-- [云服务](/services/identity/) 
+- [Azure Active Directory](/documentation/services/identity/)
+- [云服务](/documentation/services/cloud-services/) 
 
 <!---HONumber=82-->
