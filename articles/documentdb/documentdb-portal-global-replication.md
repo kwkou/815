@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="08/26/2016"
 	ms.author="mimig"
-   	wacn.date="10/18/2016"/>  
+   	wacn.date="11/10/2016"/>  
 
 
 # 如何使用 Azure 门户预览执行 DocumentDB 全局数据库复制
@@ -40,7 +40,6 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]推出。为数据库帐�
 
 ### 选择全局数据库区域
 
-在配置两个或更多个区域时，建议按照 [Business continuity and disaster recovery (BCDR): Azure Paired Regions][bcdr]（业务连续性和灾难恢复 (BCDR)：Azure 配对区域）一文中所述，根据区域对选择区域。
 
 具体而言，在配置多个区域时，请确保从每个配对区域列中选择相同数目的区域（使用 +/-1 可更改为奇数/偶数）。
 
@@ -73,7 +72,7 @@ While all regions associated with your DocumentDB database account can serve rea
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-[bcdr]: /documentation/articles/best-practices-availability-paired-regions/
+
 [consistency]: /documentation/articles/documentdb-consistency-levels/
 [azureregions]: https://azure.microsoft.com/zh-cn/regions/#services
 [offers]: /pricing/details/documentdb/

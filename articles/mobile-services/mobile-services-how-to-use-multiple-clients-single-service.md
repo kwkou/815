@@ -9,7 +9,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/10/2016"/>
 
 #  通过单个移动服务支持多个设备平台
  
@@ -141,8 +141,8 @@
 [Azure 通知中心]: /documentation/articles/notification-hubs-push-notification-overview/
 [SSO Windows Store]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
 [SSO Windows Phone]: /documentation/articles/mobile-services-windows-phone-single-sign-on/
-[Tutorials and resources]: /zh-cn/documentation/services/mobile-services/
-[Get started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
+[Tutorials and resources]: /documentation/services/mobile-services/
+
 [向用户发送跨平台通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
 [Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012/
 [Get started with push Windows js]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/

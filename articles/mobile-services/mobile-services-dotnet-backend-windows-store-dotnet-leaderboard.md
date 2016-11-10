@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/10/2016"/>
 
 # 使用 Azure 移动服务 .NET 后端创建排行榜应用程序
 
@@ -710,7 +710,6 @@ DTO 是定义如何通过网络发送数据的对象。如果你希望有线格�
 * [详细了解 Azure 移动服务]
 * [详细了解 Web API]
 * [处理数据库写入冲突]
-* [添加推送通知]（例如，当某人添加新玩家或更新分数时）。
 * [身份验证入门]
 
 <!-- Anchors. -->
@@ -754,7 +753,6 @@ DTO 是定义如何通过网络发送数据的对象。如果你希望有线格�
 [详细了解 Azure 移动服务]: /documentation/services/mobile-services/
 [详细了解 Web API]: http://asp.net/web-api
 [处理数据库写入冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/
-[添加推送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/
 
 <!---HONumber=Mooncake_0215_2016-->

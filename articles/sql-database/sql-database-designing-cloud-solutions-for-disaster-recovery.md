@@ -88,7 +88,7 @@
 如果在主要区域中检测到数据库服务中断，将启动主数据库到某个次要区域的故障转移，这会更改主数据库的位置。流量管理器自动从路由表中排除脱机终结点，但继续将最终用户流量路由到剩余的联机实例。由于主数据库现在位于不同的区域，所有联机实例都必须更改其读写 SQL 连接字符串以连接到新的主数据库。请务必在启动数据库故障转移之前进行此更改。只读 SQL 连接字符串应保持不变，因为它们始终指向同一区域中的数据库。故障转移步骤如下：
 
 1. 更改读写 SQL 连接字符串以指向新的主数据库。
-2. 调用指定的辅助数据库以[启动数据库故障转移](/docuemtation/articles/sql-database-geo-replication-powershell/)。
+2. 调用指定的辅助数据库以[启动数据库故障转移](/documentation/articles/sql-database-geo-replication-powershell/)。
 
 下图说明了在故障转移后的新配置。
 ![故障转移后的配置。云灾难恢复。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-2.png)

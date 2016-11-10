@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="08/11/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/10/2016"/>
 
 # 将身份验证添加到 Apache Cordova 应用
 
@@ -88,7 +88,6 @@
 
 了解如何使用 SDK。
 
-* [Apache Cordova SDK]
 * [ASP.NET Server SDK]
 * [Node.js Server SDK]
 
@@ -97,7 +96,6 @@
 [Content-Security-Policy 文档]: https://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html
 
 [有关 Azure 应用服务身份验证]: /documentation/articles/app-service-mobile-auth/
-[Apache Cordova SDK]: /documentation/articles/app-service-mobile-codova-how-to-use-client-library/
 [ASP.NET Server SDK]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
 [Node.js Server SDK]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/
 
