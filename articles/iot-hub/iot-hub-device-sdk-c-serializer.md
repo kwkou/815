@@ -605,7 +605,7 @@ WITH_DATA(int, MyData)
 
 本文着重介绍的示例应用程序为 **simplesample\_amqp**。此示例使用较高级别（非“LL”）API 来发送事件和接收消息。如果你使用这些 API，将运行后台线程来处理事件发送和消息接收。不过，你可以使用较低级别 (LL) API 来消除此后台线程的使用，并掌握发送事件或从云接收消息时的明确控制权。
 
-如[前一篇文章](iot-hub-device-sdk-c-iothubclient.md)中所述，有一组由较高级别 API 组成的函数：
+如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)中所述，有一组由较高级别 API 组成的函数：
 
 -   IoTHubClient\_CreateFromConnectionString
 
