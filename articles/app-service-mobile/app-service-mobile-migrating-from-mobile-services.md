@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="04/26/2016"
-	wacn.date="10/17/2016"/>
+	wacn.date="11/10/2016"/>
 
 # <a name="article-top"></a>将现有的 Azure 移动服务迁移到 Azure 应用服务
 
@@ -374,7 +374,6 @@ Azure 应用服务中通常会禁用诊断日志记录。若要启用诊断日�
 
 <!-- Links -->
 [App Service pricing]: /pricing/details/app-service/
-[Application Insights]: /documentation/articles/app-insights-overview/
 [自动缩放]: /documentation/articles/web-sites-scale/
 [Azure 应用服务]: /documentation/articles/app-service-value-prop-what-is/
 [Azure 应用服务部署文档]: /documentation/articles/web-sites-deploy/
@@ -386,7 +385,6 @@ Azure 应用服务中通常会禁用诊断日志记录。若要启用诊断日�
 [curl]: http://curl.haxx.se/
 [自定义域名]: /documentation/articles/web-sites-custom-domain-name/
 [Fiddler]: http://www.telerik.com/fiddler
-[Azure 应用服务正式版]: /blog/announcing-general-availability-of-app-service-mobile-apps/
 [Logging]: /documentation/articles/web-sites-enable-diagnostic-log/
 [移动应用 Node.js SDK]: https://github.com/azure/azure-mobile-apps-node
 [Mobile Services vs.App Service]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services/

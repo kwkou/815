@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="08/24/2016"
 	ms.author="anhoh"
-   	wacn.date="10/18/2016"/>
+   	wacn.date="11/10/2016"/>
 
 # 如何管理 DocumentDB 帐户
 
@@ -103,7 +103,6 @@
 [6]: ./media/documentdb-manage-account/chooseandsaveconsistency.png
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
-[bcdr]: /documentation/articles/best-practices-availability-paired-regions/
 [consistency]: /documentation/articles/documentdb-consistency-levels/
 [azureregions]: https://azure.microsoft.com/zh-cn/regions/#services
 [offers]: /pricing/details/documentdb/

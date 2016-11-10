@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-mobile"
 	ms.date="05/03/2016"
-	wacn.date="10/17/2016"/>
+	wacn.date="11/10/2016"/>
 
 # <a name="getting-started"></a>什么是移动应用？
 

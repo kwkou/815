@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="06/13/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/10/2016"/>
     
 # 从本地 Git 部署到 Azure App Service
 
@@ -161,7 +161,6 @@
 * [如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install/)
 
 [Azure App Service]: /documentation/articles/app-service-changes-existing-services/
-[Azure Developer Center]: /develop/overview/
 [Azure 门户预览]: https://portal.azure.cn
 [Git website]: http://git-scm.com
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
