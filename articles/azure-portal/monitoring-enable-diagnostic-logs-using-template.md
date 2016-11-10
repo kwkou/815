@@ -24,7 +24,7 @@
 通过 Resource Manager 模板启用诊断日志时，所用方法取决于资源类型。
 
 - **非计算**资源（例如，网络安全组、逻辑应用、自动化）使用[此文中描述的诊断设置](/documentation/articles/monitoring-overview-of-diagnostic-logs/#diagnostic-settings)。
-- **计算**（基于 WAD/LAD）资源使用[此文中描述的 WAD/LAD 配置文件](/documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/)。
+- **计算**（基于 WAD/LAD）资源使用 WAD/LAD 配置文件。
 
 本文介绍如何使用其中一种方法配置诊断。
 

@@ -134,7 +134,6 @@
 Azure 的产品/服务可用于监视从裸机基础结构到应用程序遥测在内的各种服务。最佳监视策略综合使用了所有这三种方式，可以对服务的运行状况进行全面、细致的了解。
 
 - [Azure Insights（平台）监视](http://aka.ms/azmondocs) – 提供了可视化、查询、路由、警报、自动缩放和自动化功能，可以对 Azure 基础结构（活动日志）和每个单独的 Azure 资源（诊断日志）的数据进行相关操作。本文是 Azure Insights 文档的一部分。
-- [Application Insights](/documentation/services/application-insights/) – 针对用户服务的应用程序层的问题，提供各种检测和诊断方式，该服务基于 Azure 监视中的数据进行了良好的集成。
 - [Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite) 的 [Log Analytics](/documentation/services/log-analytics/) 部分 – 提供全方位的 IT 管理解决方案，适用于本地基础结构和基于云的基础结构，包括从 Azure 资源进行日志搜索和分析。
 
 
@@ -142,9 +141,7 @@ Azure 的产品/服务可用于监视从裸机基础结构到应用程序遥测�
 详细了解以下内容
 
 - [Azure Insights](http://aka.ms/azmondocs)：浏览左侧目录中的链接以及此链接中的视频。
-- [Azure 诊断](/documentation/articles/azure-diagnostics/)：如果要尝试诊断云服务、虚拟机或 Service Fabric 应用程序中的问题。
 - [Application Insights](/documentation/services/application-insights/)：如果要尝试诊断应用服务 Web 应用中的问题。
 - [Azure 存储故障诊断](/documentation/articles/storage-e2e-troubleshooting/)：在使用存储 Blob、表或队列的情况下。
-- [Log Analytics](/documentation/services/log-analytics/) 和 [Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite)
 
 <!---HONumber=Mooncake_1010_2016-->

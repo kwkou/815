@@ -20,7 +20,7 @@
 
 # 针对 Azure 活动日志警报配置 webhook
 
-通过 webhook 可以将 Azure 警报通知路由到其他系统，以便进行后续处理或自定义操作。可以针对警报使用 webhook，以将警报路由到可以发送短信、记录 Bug、通过聊天/消息通知团队，或执行任意数量的其他操作的服务。本文介绍如何针对 Azure 活动日志警报设置 webhook，以及 HTTP POST 对 webhook 的有效负载情况。有关 Azure 度量值警报的设置和架构的信息，[请参阅本页](./insights-webhooks-alerts.md)。还可以将活动日志警报设置为激活时发送电子邮件。
+通过 webhook 可以将 Azure 警报通知路由到其他系统，以便进行后续处理或自定义操作。可以针对警报使用 webhook，以将警报路由到可以发送短信、记录 Bug、通过聊天/消息通知团队，或执行任意数量的其他操作的服务。本文介绍如何针对 Azure 活动日志警报设置 webhook，以及 HTTP POST 对 webhook 的有效负载情况。有关 Azure 度量值警报的设置和架构的信息，[请参阅本页](/documentation/articles/insights-webhooks-alerts/)。还可以将活动日志警报设置为激活时发送电子邮件。
 
 >[AZURE.NOTE] 此功能目前提供预览版，因此品质和性能可能会有变化。
 

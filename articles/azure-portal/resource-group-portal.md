@@ -126,9 +126,7 @@
 
 ## 锁定资源
 
-可以锁定订阅、资源组或资源，以防止组织中的其他用户意外删除或修改关键资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentaion/articles/resource-group-lock-resources/)。
-
-[AZURE.INCLUDE [resource-manager-lock-resources](../../includes/resource-manager-lock-resources.md)]
+可以锁定订阅、资源组或资源，以防止组织中的其他用户意外删除或修改关键资源。
 
 ## 查看订阅和成本
 

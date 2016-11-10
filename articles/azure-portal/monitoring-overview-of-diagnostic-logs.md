@@ -29,7 +29,7 @@
 
 - 将诊断日志保存到**存储帐户**进行审核或手动检查。可以使用“诊断设置”指定保留时间（天）。
 - [将诊断日志流式传输到**事件中心**](/documentation/articles/monitoring-stream-diagnostic-logs-to-event-hubs/)，方便第三方服务或自定义分析解决方案（例如 PowerBI）引入。
-- 使用 [OMS Log Analytics](/documentation/articles/log-analytics-azure-storage-json/) 对诊断日志进行分析
+
 
 ## 诊断设置
 可以使用“诊断设置”配置非计算资源的诊断日志。资源控制的“诊断设置”：
@@ -40,7 +40,6 @@
 
 这些设置可以通过“诊断”边栏选项卡（适用于 Azure 门户中的资源）、Azure PowerShell 和 CLI 命令或 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931943.aspx) 轻松进行配置。
 
-> [AZURE.WARNING] 计算资源（例如，VM 或 Service Fabric）的诊断日志和指标使用[单独的输出配置和选择机制](/documentation/articles/azure-diagnostics/)。
 
 ## 如何启用诊断日志集合
 可以在门户中通过资源的边栏选项卡在创建资源的过程中或在创建资源以后启用诊断日志集合。也可使用 Azure PowerShell 或 CLI 命令（或者使用 Insights REST API）在任何时间点启用诊断日志。
@@ -104,10 +103,6 @@
 | 软件负载均衡器 | [用于 Azure 负载均衡器的 Log Analytics（预览版）](/documentation/articles/load-balancer-monitor-log/) |
 | 网络安全组 | [网络安全组 (NSG) 的日志分析](/documentation/articles/virtual-network-nsg-manage-log/) |
 | 应用程序网关 | [应用程序网关的诊断日志记录](/documentation/articles/application-gateway-diagnostics/) |
-| 密钥保管库 | [Azure 密钥保管库日志记录](/documentation/articles/key-vault-logging/) |
-| Azure 搜索 | [允许并使用搜索流量分析](/documentation/articles/search-traffic-analytics/) |
-| 数据湖存储 | [Accessing diagnostic logs for Azure Data Lake Store](/documentation/articles/data-lake-store-diagnostic-logs/)（访问 Azure Data Lake Store 的诊断日志） |
-| 数据湖分析 | [Accessing diagnostic logs for Azure Data Lake Analytics](/documentation/articles/data-lake-analytics-diagnostic-logs/)（访问 Azure Data Lake Analytics 的诊断日志） |
 | Logic Apps | 没有可用架构。 |
 | Azure 批处理 | 没有可用架构。 |
 | Azure 自动化 | 没有可用架构。 |
@@ -138,6 +133,5 @@
 ## 后续步骤
 - [将诊断日志流式传输到**事件中心**](/documentation/articles/monitoring-stream-diagnostic-logs-to-event-hubs/)
 - [使用 Insights REST API 更改诊断设置](https://msdn.microsoft.com/zh-cn/library/azure/dn931931.aspx)
-- [使用 OMS Log Analytics 对日志进行分析](/documentation/articles//log-analytics-azure-storage-json/)
 
 <!---HONumber=Mooncake_1010_2016-->
