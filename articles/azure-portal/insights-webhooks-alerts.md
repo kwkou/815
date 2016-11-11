@@ -82,17 +82,17 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 | 字段 | 必需 | 一组固定的值 | 说明 |
 | :-------------| :-------------   | :-------------   | :-------------   |
 |status|Y|“Activated”, “Resolved”|以设置的条件为基础的警报的状态。|
-|上下文| Y | | 警报上下文。|
+|context| Y | | 警报上下文。|
 |timestamp| Y | | 触发警报的时间。|
 |id | Y | | 每个警报规则都具有一个唯一的 ID。|
 |name |Y | | 警报名称。|
 |description |Y | |警报的说明。|
 |conditionType |Y |“Metric”, “Event” |支持两种类型的警报。一种基于度量值条件，另一种基于活动日志中的事件。使用此值可检查警报是基于度量值还是基于事件。|
-|条件 |Y | | 根据 conditionType 要检查的特定字段。|
+|condition |Y | | 根据 conditionType 要检查的特定字段。|
 |metricName |用于指标警报 | |定义规则监视对象的指标的名称。|
 |metricUnit |用于指标警报 |“Bytes”、“BytesPerSecond”、“Count”、“CountPerSecond”、“Percent”、“Seconds”|	 指标中允许使用的单位。[允许的值列于此处](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.insights.models.unit.aspx)。|
 |metricValue |用于指标警报 | |导致警报的实际度量值。|
-|阈值 |用于指标警报 | |会激活警报的阈值。|
+|threshold |用于指标警报 | |会激活警报的阈值。|
 |windowSize |用于指标警报 | |用于根据阈值监视警报活动的时间段。必须介于 5 分钟到 1 天之间。ISO 8601 持续时间格式。|
 |timeAggregation |用于指标警报 |“Average”、“Last”、“Maximum”、“Minimum”、“None”、“Total” |	随着时间推移，收集的数据应如何组合。默认值为 Average。[允许的值列于此处](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.insights.models.aggregationtype.aspx)。|
 |operator |用于指标警报 | |用于比较当前度量值数据和所设阈值的运算符。|
@@ -103,7 +103,7 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 |resourceId |Y | |受影响资源的资源 ID。|
 |resourceRegion |Y | |受影响资源的区域或位置。|
 |portalLink |Y | |指向门户资源摘要页的直接链接。|
-|属性 |N |可选 |一组包含事件详细信息的 `<Key, Value>` 对（即 `Dictionary<String, String>`）。properties 字段是可选的。在自定义 UI 或基于逻辑应用的工作流中，用户可以输入键/值，该键/值可通过有效负载传递。将自定义属性传递回 webhook 的替代方法是通过 webhook URI 本身（作为查询参数）|
+|properties |N |可选 |一组包含事件详细信息的 `<Key, Value>` 对（即 `Dictionary<String, String>`）。properties 字段是可选的。在自定义 UI 或基于逻辑应用的工作流中，用户可以输入键/值，该键/值可通过有效负载传递。将自定义属性传递回 webhook 的替代方法是通过 webhook URI 本身（作为查询参数）|
 
 
 >[AZURE.NOTE] 仅可以使用 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置属性字段。

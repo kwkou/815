@@ -58,7 +58,7 @@ CROSS APPLY GetArrayElements(e.records) AS records
 Set-AzureRmDiagnosticSetting -ResourceId [your resource Id] -ServiceBusRuleId [your service bus rule id] -Enabled $true
 ```
 
-服务总线规则 ID 是以下格式的字符串：`{service bus resource ID}/authorizationrules/{key name}`，例如 `/subscriptions/{subscription ID}/resourceGroups/Default-ServiceBus-WestUS/providers/Microsoft.ServiceBus/namespaces/{service bus namespace}/authorizationrules/RootManageSharedAccessKey`。
+服务总线规则 ID 是以下格式的字符串：`{service bus resource ID}/authorizationrules/{key name}`，例如 `/subscriptions/{subscription ID}/resourceGroups/Default-ServiceBus-chinaeast/providers/Microsoft.ServiceBus/namespaces/{service bus namespace}/authorizationrules/RootManageSharedAccessKey`。
 
 
 ### 通过 Azure CLI
@@ -103,7 +103,7 @@ azure insights diagnostic set --resourceId <resourceId> --serviceBusRuleId <serv
                     "workflowId": "243aac67fe904cf195d4a28297803785",
                     "workflowName": "JohnKemTestLA",
                     "runId": "08587330013509921957",
-                    "location": "westus",
+                    "location": "chinaeast",
                     "actionName": "Send_email"
                 },
                 "correlation": {
@@ -129,7 +129,7 @@ azure insights diagnostic set --resourceId <resourceId> --serviceBusRuleId <serv
                     "workflowId": "243aac67fe904cf195d4a28297803785",
                     "workflowName": "JohnKemTestLA",
                     "runId": "08587330012106702630",
-                    "location": "westus",
+                    "location": "chinaeast",
                     "actionName": "Send_email"
                 },
                 "correlation": {
@@ -149,8 +149,8 @@ azure insights diagnostic set --resourceId <resourceId> --serviceBusRuleId <serv
 |category | 此事件的日志类别。 |
 |resourceId | 生成此事件的资源的资源 ID。 |
 |operationName | 操作的名称。 |
-|级别 | 可选。指示日志事件级别。 |
-|属性 | 事件的属性。 |
+|level | 可选。指示日志事件级别。 |
+|properties | 事件的属性。 |
 
 
 可以在[此处](/documentation/articles/monitoring-overview-of-diagnostic-logs/)查看支持流式传输到事件中心的所有资源提供程序的列表。

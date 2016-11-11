@@ -68,7 +68,7 @@ azure insights diagnostic set --resourceId /subscriptions/s1id1234-5679-0123-456
 | resourceId | 是 | 要设置诊断设置的资源的资源 ID。 |
 | storageId | 否 | 应该将诊断日志保存到其中的存储帐户的资源 ID。 |
 | categories | 否 | 要启用的日志类别的逗号分隔列表。 |
-| 已启用 | 是 | 一个布尔值，表示此资源是启用还是禁用了诊断。 |
+| enabled | 是 | 一个布尔值，表示此资源是启用还是禁用了诊断。 |
 
 ## 通过 REST API 存档诊断日志
 若要了解如何使用 Insights REST API 设置诊断设置，请[参阅此文档](https://msdn.microsoft.com/zh-cn/library/azure/dn931931.aspx)。
@@ -119,7 +119,7 @@ azure insights diagnostic set --resourceId /subscriptions/s1id1234-5679-0123-456
 | resourceId | 受影响资源的资源 ID。 |
 | operationName | 操作的名称。 |
 | category | 事件的日志类别。 |
-| 属性 | `<Key, Value>` 对集合（即字典），描述事件的详细信息。 |
+| properties | `<Key, Value>` 对集合（即字典），描述事件的详细信息。 |
 
 > [AZURE.NOTE] 这些属性的属性和使用情况各不相同，具体取决于资源。
 
