@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/29/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date="11/11/2016"/>
 
 # 使用通知中心针对 Xamarin 应用发送 iOS 推送通知
 
@@ -21,7 +21,7 @@
 > [AZURE.IMPORTANT] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/free-trial/)。
 
 本教程演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。
-你将创建一个空白 Xamarin.iOS 应用，它使用 [Apple Push Notification 服务 (APNs)](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html) 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。[NotificationHubs][GitHub] 应用程序示例中提供了完成的代码。
+你将创建一个空白 Xamarin.iOS 应用，它使用 [Apple Push Notification 服务 APNs 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。[NotificationHubs][GitHub] 应用程序示例中提供了完成的代码。
 
 本教程演示使用通知中心的简单推送消息广播方案。
 
@@ -247,7 +247,7 @@
 
 在本部分，我们将使用移动服务通过节点脚本来发送推送通知。
 
-若要使用移动服务发送通知，请按[移动服务入门]中的说明操作，然后：
+若要使用移动服务发送通知，请按移动服务入门中的说明操作，然后：
 
 1. 登录到 [Azure 经典门户]并选择你的移动服务。
 
@@ -305,9 +305,6 @@
 [Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-
-[移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-ios
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 [适用于 iOS 的通知中心操作方法指南]: http://msdn.microsoft.com/library/jj927168.aspx
@@ -323,7 +320,6 @@
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331329
 [Xamarin Studio]: http://xamarin.com/download
-[WindowsAzure.Messaging]: https://github.com/infosupport/WindowsAzure.Messaging.iOS
 [Azure 门户]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_0815_2016-->

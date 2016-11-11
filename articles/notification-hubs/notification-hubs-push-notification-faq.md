@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/29/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date="11/11/2016"/>
 
 #使用 Azure 通知中心推送通知 — 常见问题
 
@@ -59,7 +59,7 @@
 我们针对 .NET、Java、PHP、Python、Node.js 提供有 SDK 和[完整的示例]，因此，你可设置应用后端以使用这些平台中的任一个与通知中心通信。通知中心 API 以 REST 接口为基础，因此，如果你不想增加额外的依赖项，可以选择直接与其通信。你可以在 [NH — REST API] 页面找到更多详细信息。
 
 ###2\.支持哪些客户端平台？
-我们支持将推送通知发送到 [Apple iOS](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started)、[Windows 通用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)、[Windows Phone](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns)、[Kindle](/documentation/articles/notification-hubs-kindle-amazon-adm-push-notification)、[Android China（通过百度）](/documentation/articles/notification-hubs-baidu-china-android-notifications-get-started)、Xamarin ([iOS](/documentation/articles/xamarin-notification-hubs-ios-push notification-apns-get-started) 和 [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari) 平台。有关在这些平台上发送推送通知的入门教程的完整列表，请访问 [NH - Getting Started Tutorials（NH — 入门教程）]页面。
+我们支持将推送通知发送到 [Apple iOS](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started)、[Windows 通用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)、[Windows Phone](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns)、[Kindle](/documentation/articles/notification-hubs-kindle-amazon-adm-push-notification)、[Android China（通过百度）](/documentation/articles/notification-hubs-baidu-china-android-notifications-get-started)、Xamarin ([iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started) 和 [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari) 平台。有关在这些平台上发送推送通知的入门教程的完整列表，请访问 [NH - Getting Started Tutorials（NH — 入门教程）]页面。
 
 ###3\.是否支持 SMS/电子邮件/Web 通知？
 通知中心主要针对使用上面列出的平台将通知发送到移动应用而设计。我们目前不提供发送电子邮件或短信提示的功能；但提供这些功能的第三方平台可以与通知中心进行集成，以通过使用 [Azure Mobile Apps] 发送原生推送通知。

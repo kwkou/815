@@ -17,7 +17,7 @@
 	ms.topic="hero-article"
 	ms.date="07/22/2016"
 	ms.author="wesmc"
-   	wacn.date="10/27/2016"/>  
+   	wacn.date="11/11/2016"/>
 
 
 # 使用 Azure 通知中心向 Chrome 应用发送推送通知
@@ -445,9 +445,7 @@
 
 在[通知中心概述]中，了解有关通知中心的详细信息。
 
-若要针对特定用户，请参阅 [Azure 通知中心 - 通知用户]教程。
 
-如果要按兴趣组来划分用户，可以按 [Azure 通知中心突发新闻]教程操作。
 
 <!-- Images. -->
 
@@ -487,7 +485,6 @@
 [crypto-js 库]: http://code.google.com/p/crypto-js/
 [GCM with Chrome Apps]: https://developer.chrome.com/apps/cloudMessaging
 [Google Cloud Messaging for Chrome]: https://developer.chrome.com/apps/cloudMessagingV1
-[Azure 通知中心 - 通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
-[Azure 通知中心突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+
 
 <!---HONumber=Mooncake_1017_2016-->
