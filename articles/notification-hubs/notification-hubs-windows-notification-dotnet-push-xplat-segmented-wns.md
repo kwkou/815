@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/29/2016"
-	wacn.date="08/23/2016"/>  
+	wacn.date="11/11/2016"/>  
 
 # 使用通知中心发送突发新闻
 
@@ -250,7 +250,7 @@
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+
 
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 

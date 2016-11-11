@@ -16,7 +16,7 @@
 	ms.topic="hero-article"
 	ms.date="08/25/2016"
 	ms.author="wesmc"
-   	wacn.date="11/10/2016"/>  
+   	wacn.date="11/11/2016"/>  
 
 
 
@@ -152,7 +152,7 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
 + **[通知中心教程和指南]**
 
-+ **通知中心入门教程**（[iOS]、[Android]、[Windows Universal]、[Windows Phone]、[Kindle]）
++ **通知中心入门教程**（[iOS]、Android、[Windows Universal]、[Windows Phone]、[Kindle]）
 
 通知中心的相关 .NET 托管 API 参考位于此处：
 
@@ -165,10 +165,9 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [客户如何使用通知中心]: /home/features/notification-hubs/
   [通知中心教程和指南]: /documentation/services/notification-hubs/
   [iOS]: /documentation/articles/notification-hubs-ios-get-started/
-  [Android]: /documentation/articles/notification-hubs-android-get-started/
-  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
-  [Windows Phone]: /documentation/articles/notification-hubs-windows-phone-get-started/
-  [Kindle]: /documentation/articles/notification-hubs-kindle-get-started/
+  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
+  [Windows Phone]: /documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/
+  [Kindle]: /documentation/articles/notification-hubs-kindle-amazon-adm-push-notification/
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx
   [应用服务移动应用]: /documentation/articles/app-service-mobile-value-prop/

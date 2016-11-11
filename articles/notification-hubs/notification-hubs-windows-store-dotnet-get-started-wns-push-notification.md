@@ -16,7 +16,7 @@
 	ms.topic="hero-article"
 	ms.date="07/21/2016"
 	ms.author="wesmc"
-   	wacn.date="10/27/2016"/>  
+   	wacn.date="11/11/2016"/>  
 
 
 # 用于 Windows 通用平台应用的通知中心入门
@@ -280,8 +280,8 @@
 <!-- URLs. -->
 
 
-[使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
-[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-notification/
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/
 
 [toast 目录]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761494.aspx
 [磁贴目录]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761491.aspx

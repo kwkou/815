@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/29/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="11/11/2016"/>
 
 # 通过 Azure 通知中心向 iOS 发送推送通知
 
@@ -21,7 +21,7 @@
 
 > [AZURE.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial)。
 
-本教程演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。你将创建一个空白 iOS 应用，它使用 [Apple Push Notification 服务 (APNs)](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html) 接收推送通知。
+本教程演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。你将创建一个空白 iOS 应用，它使用 Apple Push Notification 服务 (APNs) 接收推送通知。
 
 完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。
 
@@ -489,9 +489,7 @@
 [Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started-ios
 [Azure Classic Portal]: https://manage.windowsazure.com/
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532

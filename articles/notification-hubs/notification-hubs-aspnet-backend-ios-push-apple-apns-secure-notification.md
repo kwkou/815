@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/29/2016"
-	wacn.date="08/02/2016"/>
+	wacn.date="11/11/2016"/>
 
 #Azure 通知中心安全推送
 
@@ -41,7 +41,7 @@
 
 > [AZURE.NOTE] 本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/) 中所述创建并配置了通知中心。
 
-[AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../../includes/notification-hubs-aspnet-backend-securepush)]
+[AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../../includes/notification-hubs-aspnet-backend-securepush.md)]
 
 ## 修改 iOS 项目
 
