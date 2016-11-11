@@ -86,17 +86,17 @@ POST 操作对于所有基于活动日志的警报包含以下 JSON 有效负载
 |元素名称|	说明|
 |---|---|
 |status |用于度量值警报。对于活动日志警报始终设置为“已激活”。|
-|上下文|事件的上下文。|
+|context|事件的上下文。|
 |resourceProviderName|受影响资源的资源提供程序。|
 |conditionType |始终为“事件”。|
-|名称 |警报规则的名称。|
+|name |警报规则的名称。|
 |id |警报的资源 ID。|
 |description|	创建警报期间设置的警报说明。|
 |subscriptionId |Azure 订阅 ID。|
 |timestamp|	处理请求的 Azure 服务生成事件的时间。|
 |resourceId |受影响资源的资源 ID。|
 |resourceGroupName|受影响资源的资源组的名称|
-|属性 |一组包含事件详细信息的 `<Key, Value>` 对（即 `Dictionary<String, String>`）。|
+|properties |一组包含事件详细信息的 `<Key, Value>` 对（即 `Dictionary<String, String>`）。|
 |event|包含有关事件的元数据的元素。|
 |authorization|事件的 RBAC 属性。这些通常包括“action”、“role”和“scope”。|
 |category | 事件的类别。支持的值包括：Administrative、Alert、Security、ServiceHealth、Recommendation。|
@@ -106,10 +106,10 @@ POST 操作对于所有基于活动日志的警报包含以下 JSON 有效负载
 |eventDataId|事件的唯一标识符。|
 |eventSource |生成事件的 Azure 服务或基础结构的名称。|
 |httpRequest|	通常包括“clientRequestId”、“clientIpAddress”和“method”（HTTP 方法，例如 PUT）。|
-|级别|以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose”。|
+|level|以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose”。|
 |operationId|通常是在与单个操作对应的事件之间共享的 GUID。|
 |operationName|操作的名称。|
-|属性 |事件的属性。|
+|properties |事件的属性。|
 |status|字符串。操作的状态。常见值包括：“Started”、“In Progress”、“Succeeded”、“Failed”、“Active”、“Resolved”。|
 |subStatus|	通常包含对应 REST 调用的 HTTP 状态代码。它还可能包含描述子状态的其他字符串。常见子状态值包括：OK（HTTP 状态代码：200）、Created（HTTP 状态代码：201）、Accepted（HTTP 状态代码：202）、No Content（HTTP 状态代码：204）、Bad Request（HTTP 状态代码：400）、Not Found（HTTP 状态代码：404）、Conflict（HTTP 状态代码：409）、Internal Server Error（HTTP 状态代码：500）、Service Unavailable（HTTP 状态代码：503）、Gateway Timeout（HTTP 状态代码：504）|
 

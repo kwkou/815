@@ -51,7 +51,7 @@ Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/r
 | 属性 | 必选 | 说明 |
 |------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | StorageAccountId | 否 | 应该将活动日志保存到其中的存储帐户的资源 ID。 |
-| 位置 | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。[访问此页](https://azure.microsoft.com/zh-CN/regions)或使用 [Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/gg441293.aspx) 即可查看所有区域的列表。 |
+| Locations | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。[访问此页](https://azure.microsoft.com/zh-CN/regions)或使用 [Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/gg441293.aspx) 即可查看所有区域的列表。 |
 | RetentionInDays | 是 | 事件的保留天数，介于 1 到 2147483647 之间。值为零时，将无限期（永久）存储日志。 |
 | Categories | 是 | 应收集的事件类别的逗号分隔列表。可能值包括：Write、Delete 和 Action。 |
 ## 通过 CLI 存档活动日志
@@ -63,7 +63,7 @@ azure insights logprofile add --name my_log_profile --storageId /subscriptions/s
 |-----------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 名称 | 是 | 日志配置文件的名称。 |
 | storageId | 否 | 应该将活动日志保存到其中的存储帐户的资源 ID。 |
-| 位置 | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。使用 [Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/gg441293.aspx) 即可查看所有区域的列表。 |
+| locations | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。使用 [Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/gg441293.aspx) 即可查看所有区域的列表。 |
 | retentionInDays | 是 | 事件的保留天数，介于 1 到 2147483647 之间。值为零时，将无限期（永久）存储日志。 |
 | categories | 是 | 应收集的事件类别的逗号分隔列表。可能值包括：Write、Delete 和 Action。 |
 
@@ -150,9 +150,9 @@ azure insights logprofile add --name my_log_profile --storageId /subscriptions/s
 | correlationId | 通常为字符串格式的 GUID。共享 correlationId 的事件属于同一 uber 操作。 |
 | identity | 描述授权和声明的 JSON blob。 |
 | authorization | 包含事件的 RBAC 属性的 Blob。通常包括“action”、“role”和“scope”属性。 |
-| 级别 | 事件的级别。以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose” |
+| level | 事件的级别。以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose” |
 | location | 位置所在的区域（或全局）。 |
-| 属性 | `<Key, Value>` 对集合（即字典），描述事件的详细信息。 |
+| properties | `<Key, Value>` 对集合（即字典），描述事件的详细信息。 |
 
 > [AZURE.NOTE] 这些属性的属性和使用情况各不相同，具体取决于资源。
 

@@ -114,10 +114,10 @@
 |Microsoft.Automation/automationAccounts|JobLogs|作业日志|
 |Microsoft.Automation/automationAccounts|JobStreams|作业流|
 |Microsoft.Batch/batchAccounts|ServiceLog|服务日志|
-|Microsoft.DataLakeAnalytics/accounts|审核|审核日志|
-|Microsoft.DataLakeAnalytics/accounts|请求|请求日志|
-|Microsoft.DataLakeStore/accounts|审核|审核日志|
-|Microsoft.DataLakeStore/accounts|请求|请求日志|
+|Microsoft.DataLakeAnalytics/accounts|Audit|审核日志|
+|Microsoft.DataLakeAnalytics/accounts|Requests|请求日志|
+|Microsoft.DataLakeStore/accounts|Audit|审核日志|
+|Microsoft.DataLakeStore/accounts|Requests|请求日志|
 |Microsoft.KeyVault/vaults|AuditEvent|审核日志|
 |Microsoft.Logic/workflows|WorkflowRuntime|工作流运行时诊断事件|
 |Microsoft.Network/networksecuritygroups|NetworkSecurityGroupEvent|网络安全组事件|

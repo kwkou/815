@@ -78,7 +78,7 @@ Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/r
 | 名称 | 是 | 日志配置文件的名称。 |
 | StorageAccountId | 否 | 应该将活动日志保存到其中的存储帐户的资源 ID。 |
 | serviceBusRuleId | 否 | 服务总线命名空间（需在其中创建事件中心）的服务总线规则 ID。将是以下格式的字符串：`{service bus resource ID}/authorizationrules/{key name}`。 |
-| 位置 | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。 |
+| locations | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。 |
 | RetentionInDays | 是 | 事件的保留天数，介于 1 到 2147483647 之间。值为零时，将无限期（永久）存储日志。 |
 | Categories | 否 | 应收集的事件类别的逗号分隔列表。可能值包括：Write、Delete 和 Action。 |
 
@@ -107,7 +107,7 @@ azure insights logprofile add --name my_log_profile --storageId /subscriptions/s
 | 名称 | 是 | 日志配置文件的名称。 |
 | storageId | 否 | 应该将活动日志保存到其中的存储帐户的资源 ID。 |
 | serviceBusRuleId | 否 | 服务总线命名空间（需在其中创建事件中心）的服务总线规则 ID。将是以下格式的字符串：`{service bus resource ID}/authorizationrules/{key name}`。 |
-| 位置 | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。 |
+| locations | 是 | 要为其收集活动日志事件的逗号分隔区域的列表。 |
 | retentionInDays | 是 | 事件的保留天数，介于 1 到 2147483647 之间。值为零时，将无限期（永久）存储日志。 |
 | categories | 否 | 应收集的事件类别的逗号分隔列表。可能值包括：Write、Delete 和 Action。 |
 
@@ -210,13 +210,13 @@ azure insights logprofile delete --name my_log_profile
 | eventDataId | 事件的唯一标识符。 |
 | eventSource | 生成此事件的 Azure 服务或基础结构的名称。 |
 | httpRequest | 描述 Http 请求的 Blob。通常包括“clientRequestId”、“clientIpAddress”和“method”（HTTP 方法，例如 PUT）。 |
-| 级别 | 事件的级别。以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose” |
+| level | 事件的级别。以下值之一：“Critical”、“Error”、“Warning”、“Informational”和“Verbose” |
 | resourceGroupName | 受影响资源的资源组的名称。 |
 | resourceProviderName | 受影响资源的资源提供程序的名称 |
 | resourceUri | 受影响资源的资源 ID。 |
 | operationId | 在多个事件（对应于单个操作）之间共享的 GUID。 |
 | operationName | 操作的名称。 |
-| 属性 | `<Key, Value>` 对集合（即字典），描述事件的详细信息。 |
+| properties | `<Key, Value>` 对集合（即字典），描述事件的详细信息。 |
 | status | 描述操作状态的字符串。部分常用值包括：Started、In Progress、Succeeded、Failed、Active、Resolved。 |
 | subStatus | 通常为相应 REST 调用的 HTTP 状态代码，但也可能包括用于描述子状态的其他字符串，例如以下常用值：OK（HTTP 状态代码：200）、Created（HTTP 状态代码：201）、Accepted（HTTP 状态代码：202）、No Content（HTTP 状态代码：204）、Bad Request（HTTP 状态代码：400）、Not Found（HTTP 状态代码：404）、Conflict（HTTP 状态代码：409）、Internal Server Error（HTTP 状态代码：500）、Service Unavailable（HTTP 状态代码：503）、Gateway Timeout（HTTP 状态代码：504）。 |
 | eventTimestamp | 处理与事件对应的请求的 Azure 服务生成事件时的时间戳。 |
