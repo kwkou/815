@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="09/19/2016"
+    wacn.date="11/11/2016"
     />
 
 #文档中心
@@ -43,14 +43,17 @@
 ##Web和移动
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
-  <tr col>
+  <tr>
     <td><a href="/documentation/services/app-service/">应用服务</a></td>
     <td><a href="/documentation/services/app-service/web/">Web 应用</a></td>
-    <td><a href="/documentation/services/app-service/mobile/">移动应用/a></td>
+    <td><a href="/documentation/services/app-service/mobile/">移动应用</a></td>
     <td><a href="/documentation/services/app-service/api/">API 应用</a></td>
+  </tr>
+  <tr col>
     <td><a href="/documentation/services/mobile-services/">移动服务</a></td>
-	<td><a href=""></a></td>
-	<td><a href=""></a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
   </tr>
 </table>
 
