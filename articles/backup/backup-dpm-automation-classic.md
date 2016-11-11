@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="07/01/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/11/2016"/>
 
 
 # 使用 PowerShell 部署和管理 Data Protection Manager (DPM) 服务器的 Azure 备份
@@ -110,7 +110,7 @@
 | /pw | 代理密码 | - |
 
 ### 注册到 Azure 备份服务
-在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-azure-dpm-introduction/)。你必须：
+在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-azure-dpm-introduction-classic/)。你必须：
 
 - 具备有效的 Azure 订阅
 - 有一个备份保管库
@@ -335,6 +335,6 @@ Get-DatasourceDiskAllocation -Datasource $DS
 
 ## 后续步骤
 
-- 有关适用于 DPM 的 Azure 备份的详细信息，请参阅 [DPM 备份简介](/documentation/articles/backup-azure-dpm-introduction)
+- 有关适用于 DPM 的 Azure 备份的详细信息，请参阅 [DPM 备份简介](/documentation/articles/backup-azure-dpm-introduction-classic)
 
 <!---HONumber=Mooncake_0704_2016-->

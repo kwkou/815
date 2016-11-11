@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup" 
 	ms.date="07/04/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="11/11/2016"/>
 
 
 # 将 SharePoint 场备份到 Azure
@@ -27,7 +27,7 @@ DPM 的 Azure 备份支持以下方案。
 在将 SharePoint 场备份到 Azure 之前，需要确保满足几个条件。
 
 ### 先决条件
-在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction/#prerequisites)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及在保管库中注册 DPM/Azure 备份服务器。
+在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有先决条件。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及在保管库中注册 DPM/Azure 备份服务器。
 
 ### DPM 代理
 必须在运行 SharePoint Server 或 SQL Server 的服务器以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关如何设置保护代理的详细信息，请参阅 [设置保护代理](https://technet.microsoft.com/zh-cn/library/hh758034(v=sc.12).aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将一台 WFE 服务器上的代理作为保护的入口点。
@@ -231,7 +231,6 @@ DPM 以 LocalSystem 帐户的形式运行。若要备份 SQL Server 数据库，
 答：由于 SharePoint 数据库是在 SQL AlwaysOn 中配置的，因此除非删除可用性组，否则无法修改它们。因此，DPM 无法将数据库还原到原始位置。你可以将 SQL Server 数据库恢复到另一个 SQL Server 实例。
 
 ## 后续步骤
-- 了解有关使用 DPM 保护 SharePoint 的详细信息 — 参阅[视频系列 — 使用 DPM 保护 SharePoint](http://channel9.msdn.com/Series/Azure-Backup/Microsoft-SCDPM-Protection-of-SharePoint-1-of-2-How-to-create-a-SharePoint-Protection-Group)
 - 查看 [System Center 2012 - Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860415.aspx)
 - 查看 [System Center 2012 SP1 中的 Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860394.aspx)
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="07/01/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="11/11/2016"/>
 
 
 # 用 DPM 在 Azure 上为 SQL 工作负载备份
@@ -26,7 +26,7 @@ Azure 上备份和 恢复 SQL Server 数据库步骤如下：
 3. 从 Azure 恢复数据库。
 
 ## 开始之前
-使用前，确保已满足 Azure 备份保护服务的[先决条件](/documentation/articles/backup-azure-dpm-introduction/#prerequisites)。这些条件包括：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
+使用前，确保已满足 Azure 备份保护服务的先决条件。这些条件包括：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
 
 ## 创建备份策略保护要备份到 Azure 的 SQL Server 数据库
 

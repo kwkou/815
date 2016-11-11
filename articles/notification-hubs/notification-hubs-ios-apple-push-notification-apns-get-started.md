@@ -436,7 +436,7 @@
 
 > [AZURE.NOTE] 如果在 Xcode7 中遇到有关 bitcode 支持的生成错误，应该在 Xcode 中将“生成设置”>“启用 Bitcode (ENABLE\_BITCODE)”更改为“否”。通知中心 SDK 目前不支持 Bitcode。
 
-可以在 Apple [本地和推送通知编程指南]中查看所有可能的通知负载。
+可以在 Apple 本地和推送通知编程指南中查看所有可能的通知负载。
 
 
 ##检查你的应用能否接收推送通知
@@ -499,7 +499,6 @@
 [Azure Notification Hubs Notify Users for iOS with .NET backend（Azure 通知中心 - 使用 .NET 后端通知 iOS 用户）]: /documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification/
 [Use Notification Hubs to send breaking news（使用通知中心发送突发新闻）]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
 
-[本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 [Azure 门户]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_0801_2016-->

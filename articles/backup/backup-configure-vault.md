@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="08/10/2016"
-	wacn.date="09/05/2016"/>  
+	wacn.date="11/11/2016"/>  
 
 
 # 通过 Resource Manager 部署模型将 Windows Server 或客户端备份到 Azure
@@ -177,7 +177,7 @@
 ## 后续步骤
 有关备份 VM 或其他工作负荷的详细信息，请参阅：
 
-- 备份文件和文件夹后，可以[管理保管库和服务器](/documentation/articles/backup-azure-manage-windows-server/)。
+- 备份文件和文件夹后，可以[管理保管库和服务器](/documentation/articles/backup-azure-manage-windows-server-classic/)。
 - 如果需要还原备份，请参阅[将文件还原到 Windows 计算机](/documentation/articles/backup-azure-restore-windows-server/)一文。
 
 <!---HONumber=Mooncake_0829_2016-->

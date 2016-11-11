@@ -10,7 +10,7 @@
 <tags
    ms.service="backup"
    ms.date="08/02/2016"
-   wacn.date="09/26/2016"/>
+   wacn.date="11/11/2016"/>
 
 # 使用经典部署模型将文件还原到 Windows Server 或 Windows 客户端计算机
 
@@ -117,6 +117,6 @@
 ## 了解详细信息
 - [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)
 - [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-introduction/)
-- [备份 Microsoft 工作负荷](/documentation/articles/backup-azure-dpm-introduction/)
+- [备份 Microsoft 工作负荷](/documentation/articles/backup-azure-dpm-introduction-classic/)
 
 <!---HONumber=Mooncake_0606_2016-->
