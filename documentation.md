@@ -44,7 +44,10 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr col>
-    <td><a href="/documentation/services/web-sites/">Web 应用</a></td>
+    <td><a href="/documentation/services/app-service/">应用服务</a></td>
+    <td><a href="/documentation/services/app-service/web/">Web 应用</a></td>
+    <td><a href="/documentation/services/app-service/mobile/">移动应用/a></td>
+    <td><a href="/documentation/services/app-service/api/">API 应用</a></td>
     <td><a href="/documentation/services/mobile-services/">移动服务</a></td>
 	<td><a href=""></a></td>
 	<td><a href=""></a></td>
