@@ -1,5 +1,5 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国区 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="multiple" ms.date="" wacn.date="10/18/2016"/>
+<tags ms.service="multiple" ms.date="" wacn.date="11/11/2016"/>
 
 
 # 中国区 Azure 应用程序开发说明
