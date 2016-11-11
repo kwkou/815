@@ -11,13 +11,11 @@
 <tags
   ms.service="backup"
   ms.date="07/20/2016"
-  wacn.date="09/26/2016"/>
+  wacn.date="11/11/2016"/>
 
 # 准备使用 Azure 备份服务器来备份工作负荷
 
 > [AZURE.SELECTOR]
-- [Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup/)
-- [SCDPM](/documentation/articles/backup-azure-dpm-introduction/)
 - [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic)
 - [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic)
 

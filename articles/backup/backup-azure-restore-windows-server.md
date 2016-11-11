@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	 ms.date="08/02/2016"
-	 wacn.date="09/26/2016"/>
+	 wacn.date="11/11/2016"/>
 	
 # 使用 Resource Manager 部署模型将文件还原到 Windows Server 或 Windows 客户端计算机
 
@@ -111,6 +111,6 @@
 11. 提供输入后，单击“恢复”，随即将会触发在提供的目标中还原备份文件的操作。
 
 ## 后续步骤
-- 恢复文件和文件夹后，你可以[管理备份](/documentation/articles/backup-azure-manage-windows-server/)。
+- 恢复文件和文件夹后，你可以[管理备份](/documentation/articles/backup-azure-manage-windows-server-classic/)。
 
 <!---HONumber=Mooncake_0808_2016-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="08/11/2016"
-	wacn.date="09/06/2016"/>  
+	wacn.date="11/11/2016"/>  
 
 
 # 监视 Azure 虚拟机备份的警报
@@ -77,6 +77,6 @@ PS C:\> Add-AzureRmLogAlertRule -Name backupFailedAlert -Location "China East" -
 
 有关 Azure 服务中事件、操作和审核日志的详细说明，请参阅 [View events and audit logs](/documentation/articles/insights-debugging-with-events/)（查看事件和审核日志）一文。
 
-有关如何从恢复点重新创建虚拟机的信息，请查看 [Restore Azure VMs](/documentation/articles/backup-azure-restore-vms/)（还原 Azure VM）。如果你需要有关如何保护虚拟机的信息，请参阅 [First look: Back up VMs to a Recovery Services vault](/documentation/articles/backup-azure-vms-first-look-arm/)（初步了解：将 VM 备份到恢复服务保管库）。
+有关如何从恢复点重新创建虚拟机的信息，请查看 [Restore Azure VMs](/documentation/articles/backup-azure-restore-vms/)（还原 Azure VM）。如果你需要有关如何保护虚拟机的信息，请参阅 [First look: Back up VMs to a Recovery Services vault](/documentation/articles/backup-azure-vms-first-look/)（初步了解：将 VM 备份到恢复服务保管库）。
 
 <!---HONumber=Mooncake_0822_2016-->
