@@ -1,44 +1,43 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
 <tags ms.service="multiple" ms.date="" wacn.date="10/18/2016"/>
 
-# Azure 应用程序开发说明
+#Azure 应用程序开发说明
 
 ##<a name="about"></a>文档简介
 
-微软公司为其在境外由微软运营的 Microsoft Azure 服务（以下简称为“境外 Azure”）创建和部署云应用程序，提供了相应工具。
+在境外由微软运营的 Microsoft Azure 服务由微软创建和部署云应用程序，提供了相应工具。
 
-在中国，由世纪互联运营的 Microsoft Azure （以下简称为“中国区 Azure”）是独立的服务平台，由世纪互联公司提供并运营，其数据中心位于中国大陆（不包括香港特别行政区、澳门特别行政区和中国台湾地区）。因此，创建和部署应用程序时，开发人员需要先了解中国区 Azure 和境外 Azure 的主要区别，然后再设置编程环境，编写应用程序，部署在中国托管的服务。
+在中国，由世纪互联运营的 Microsoft Azure 是独立的服务平台，由世纪互联提供并运营，其数据中心位于中国大陆（不包括香港特别行政区、澳门特别行政区和中国台湾地区）。因此，创建和部署应用程序时，开发人员需要先了解由世纪互联运营的 Microsoft Azure 和在境外由微软运营的 Microsoft Azure 的主要区别，然后再设置编程环境，编写应用程序，部署在中国托管的服务。
 
-本文档概述了这两种服务的区别，并为中国 [Azure 门户](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。同时，官方信息也会通过多个途径发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及博客。本文专门针对在中国部署、托管数据中心的合作伙伴及开发人员。
+本文档概述了这两种服务的区别，并为中国 [Azure 官网](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多地方发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
 
-有关中国区 Azure 服务功能的更新，请访问中国[Azure 门户](https://www.azure.cn)。有关当前 Azure 内容资产列表信息，请参阅本文档附录。 
+有关由世纪互联运营的 Microsoft Azure 功能可用性的更新，请访问中国[Azure 官网](https://www.azure.cn)。有关 Azure 当前内容资产列表信息，请参阅本文档附录。 
  
 ##<a name="dev-guide"></a>开发人员指南
 
-由于目前微软公司提供的大部分英文技术文档中，应用程序都针对境外 Azure 开发，而非中国区 Azure，因此开发人员必须了解两者主要区别。
+由于目前在境外由微软运营的 Microsoft Azure 提供的大部分英文技术文档中，应用程序都针对境外的 Microsoft Azure 服务开发，而非由世纪互联运营的 Microsoft Azure，因此务必确保开发人员了解其主要区别。
 
-首先，两者存在功能差异，境外 Azure 的某些功能在中国不可用。
-
-其次，中国区 Azure 的服务功能与境外 Azure 存在操作差异，因此使用为境外 Azure 编写的英文文档时，开发人员应该根据需要，自定义示例代码和步骤。
+首先，两者存在功能差异，在境外由微软运营的 Microsoft Azure 服务中的某些功能在中国不可用。  
+其次，由世纪互联运营的 Microsoft Azure 提供的功能与在境外由微软运营的 Microsoft Azure 服务存在操作差异，因此要使用在境外由微软运营的 Microsoft Azure 提供的英语文档，用户应该根据需要自定义示例代码和步骤。
 
 ##<a name="cncenter"></a>中国的数据中心
 
-目前，中国区 Azure 有两个数据中心，在位置字段中显示为“中国北部”和“中国东部”。
+目前，由世纪互联运营的 Microsoft Azure 有两个数据中心，在位置字段中显示为 “中国北部” 和 “中国东部”。
 
 
 ##<a name="cndiffoverview"></a>在 Azure 创建应用程序的区别概述
 
-在中国区 Azure 上开发应用程序与在境外 Azure 上开发的主要区别在于，中国区 Azure 端点地址有不同的 URI。 例如，Azure 和 SQL 数据库 URI 通常以 windows.net 结尾。 URI 端点不同时，开发人员必须能够识别，然后配置工具和应用程序，为这些不同的端点使用适合的 URI。
+在由世纪互联运营的 Microsoft Azure 上开发应用程序与在境外由微软运营的 Microsoft Azure 服务上开发的主要区别在于，由世纪互联运营的 Microsoft Azure 端点地址有不同的 URI。 例如，Azure 和 SQL 数据库 URI 通常以 windows.net 结尾。 URI 端点不同时，开发人员必须能够识别，然后配置工具和应用程序，为这些不同的端点使用适合的 URI。
 
 ##<a name="confdevcomp"></a>设置用于开发的计算机
 
-Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 update 3。[Downloads | Visual Studio Official Site](https://www.visualstudio.com/downloads/)
+Visual Studio 支持由世纪互联运营的 Microsoft Azure 开发，使用 Visual Studio 2015 update 3。[Downloads | Visual Studio Official Site](https://www.visualstudio.com/downloads/)
 
-##为连接中国区 Azure 安装 Visual Studio
+##为连接由世纪互联运营的 Microsoft Azure 安装 Visual Studio
 
 步骤如下：
 
-1. 请使用以下 Reg key files： 
+1. 请使用一下 Reg key files： 
 	
 		
 	Azure.reg
@@ -53,8 +52,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 			"EnableAzureRMIdentity"="true"
 			"GraphUrl"="graph.chinacloudapi.cn"
 	
-
-	若要将 Reg 值返回境外 Azure，请使用此处的 Reg key file
+	若要将 Reg 值返回在境外由微软运营的 Microsoft Azure 服务，请使用此处的 Reg key file
 
 	TargetProduction.reg
 			
@@ -75,8 +73,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 			"Service Management Endpoint"=-
 
 2. 双击 Azure.reg 文件，同意弹出信息，允许注册表值更改；
-
-3. 注册表值更改后，所有 Visual Studio 的登录信息都应连接到中国区 Azure 服务。
+3. 注册表值更改后，所有 Visual Studio 的登录信息都应连接到由世纪互联运营的 Microsoft Azure 服务。
 
 ##实用场景示例
 
@@ -90,8 +87,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 
 	![02](./media/developerdifferences/developerdifferences-02.png)
 
-
-3. 从 Cloud Explorer 查看中国区 Azure 订阅中的资源。
+3. 从 Cloud Explorer 查看由世纪互联运营的 Microsoft Azure 订阅中的资源。
 
 	![03](./media/developerdifferences/developerdifferences-03.png)
 
@@ -99,7 +95,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 
 1. 单机右键菜单，选择 “发布” 对话框；
 
-      ![04](./media/developerdifferences/developerdifferences-04.png)
+	![04](./media/developerdifferences/developerdifferences-04.png)
 
 2. 选择 Microsoft Azure App Service；
 
@@ -120,14 +116,13 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 
 	![10](./media/developerdifferences/developerdifferences-10.png)
 
-
-3. 对于在资源模板中出现、但中国区 Azure 不支持的资源，该界面会发出警告；
+3. 对于在资源模板中出现、但由世纪互联运营的 Microsoft Azure 不支持的资源，该界面会发出警告；
 
 	![11](./media/developerdifferences/developerdifferences-11.png)
 
 4. 编辑模板参数，继续部署。
 
-其他功能步骤类
+其他功能步骤类似。
 
 ##应用程序代码中使用的由世纪互联运营的 Microsoft Azure 资源端点
 
