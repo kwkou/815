@@ -9,7 +9,7 @@
 	tags="blob存储,媒体文件,拖拽点播,Progressive Download"/>
 
 <tags
-	ms.service="storage"
+	ms.service="storage-aog"
 	ms.date="10/27/2016"
 	wacn.date="11/10/2016"/>
 
