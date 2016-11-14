@@ -50,7 +50,7 @@
 **名称** | **说明** | **最新版本** | **支持** | **详细信息**
 ---|---|---|---| ---
 **Azure Site Recovery 提供程序** | <p>协调本地服务器与 Azure/辅助站点之间的通信 </p><p> 安装在本地 VMM 服务器或 Hyper-V 服务器（如果没有 VMM 服务器）上</p> | 5\.1.1700（可从门户获取） | [最新功能和修复](https://support.microsoft.com/zh-cn/kb/3155002)
-**移动服务** | 协调本地物理服务器和 Azure/辅助站点之间的复制 | NA（可从门户获取） | 在想要复制的每个物理服务器上安装。**Azure 恢复服务 (MARS) 代理** | 协调 Hyper-V 虚拟机和 Azure 之间的复制<br/><br/>安装在本地 Hyper-V 服务器（具有或不具有 VMM 服务器）上 | 2\.0.8689.0（可从门户获取） | 该代理由 Azure Site Recovery 和 Azure 备份使用）。[了解详细信息](https://support.microsoft.com/zh-cn/kb/2997692)
+**移动服务** | 协调本地物理服务器和 Azure/辅助站点之间的复制 | NA（可从门户获取） | 在想要复制的每个物理服务器上安装。**Azure 恢复服务 (MARS) 代理** | <p>协调 Hyper-V 虚拟机和 Azure 之间的复制</p><p>安装在本地 Hyper-V 服务器（具有或不具有 VMM 服务器）上</p>
 
 ## 后续步骤
 
