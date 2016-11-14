@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/30/2016" 
-	wacn.date="10/17/2016" 
+	wacn.date="11/14/2016" 
 	ms.author="sdanie"/>  
 
 
@@ -32,7 +32,7 @@ Azure Redis 缓存提供了用于监视缓存实例的几个选项。可以查�
 
 
 >[AZURE.IMPORTANT] 如果“Redis 指标”边栏选项卡中显示了以下消息，请按照[启用缓存诊断](#enable-cache-diagnostics)部分中的步骤启用缓存诊断。
->
+><p>
 >`Monitoring may not be enabled. Click here to turn on Diagnostics.`  
 
 
