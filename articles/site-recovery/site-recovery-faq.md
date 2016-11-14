@@ -38,9 +38,6 @@
 - **物理服务器**：站点恢复可以保护运行 Windows 或 Linux 的物理服务器。
 
 
-### 在 Hyper-V 中我需要什么？
-
-
 ### 在 Hyper-V 中，需要做好哪些准备才能使用 Site Recovery 来协调复制？
 
 对于 Hyper-V 主机服务器，你的所需取决于部署方案。在以下内容中查看 Hyper-V 先决条件：
@@ -101,7 +98,7 @@
 
 ### 将虚拟机复制到 Azure 需要满足任何先决条件吗？
 
-要复制到 Azure 的虚拟机应符合 [Azure 要求](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
+要复制到 Azure 的虚拟机应符合 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。
 
 ### 我可以将 Hyper-V 第 2 代虚拟机复制到 Azure 吗？
 
