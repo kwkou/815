@@ -4,20 +4,26 @@ description="了解如何使用 Apache Maven 构建基于 Java 的 Apache HBase 
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"
-tags="azure-portal"/>
+tags="azure-portal"/>  
+
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+ms.service="hdinsight"
+ms.workload="big-data"
+ms.tgt_pltfrm="na"
+ms.devlang="na"
+ms.topic="article"
+ms.date="10/03/2016"
+wacn.date="11/14/2016"
+ms.author="larryfr"/>
 
 # 借助 Maven 构建可将 HBase 与基于 Windows 的 HDInsight (Hadoop) 配合使用的 Java 应用程序
 
 了解如何通过使用 Apache Maven 在 Java 中创建和构建 [Apache HBase](http://hbase.apache.org/) 应用程序。然后，将该应用程序用于 Azure HDInsight (Hadoop)。
 
-[Maven](http://maven.apache.org/) 是一种软件项目管理和综合工具，可用于为 Java 项目构建软件、文档和报告。在本文中，你将要了解如何使用 Maven 创建一个基本的 Java 应用程序，该应用程序可在 Azure HDInsight 群集中创建、查询和删除 HBase 表。
+[Maven](http://maven.apache.org/) 是一种软件项目管理和综合工具，可用于为 Java 项目构建软件、文档和报告。在本文中，可了解如何使用 Maven 创建一个基本的 Java 应用程序，该应用程序可在 Azure HDInsight 群集中创建、查询和删除 HBase 表。
 
 ## 要求
 
@@ -37,13 +43,13 @@ tags="azure-portal"/>
 
         mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-    此时，将使用 __artifactID__ 参数（本示例中的 **hbaseapp**）指定的名称在当前目录中创建新目录。 此目录将包含以下项：
+    此命令使用 __artifactID__ 参数（此示例中的 **hbaseapp**）指定的名称在当前位置创建目录。 此目录包含以下项：
 
     * __pom.xml__：项目对象模型 ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html))，其中包含用于生成项目的信息和配置详细信息。
 
     * __src__：包含 __main\\java\\com\\microsoft\\examples__ 目录的目录，你将在其中创作应用程序。
 
-3. 删除 __src\\test\\java\\com\\microsoft\\examples\\apptest.java__ 文件，因为本示例用不到该文件。
+3. 删除 __src\\test\\java\\com\\microsoft\\examples\\apptest.java__ 文件，因为此示例不使用该文件。
 
 ## 更新项目对象模型
 
@@ -55,14 +61,14 @@ tags="azure-portal"/>
           <version>1.1.2</version>
         </dependency>
 
-    这将会告知 Maven，项目需要 __hbase-client__ 版本 __1.1.2__。在编译时，将从默认的 Maven 存储库下载该版本。你可以使用 [Maven 中央存储库](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar)搜索来了解有关此依赖性的详细信息。
+    此部分会告知 Maven，项目需要 __hbase-client__ 版本 __1.1.2__。在编译时，从默认的 Maven 存储库下载此依赖项。你可以使用 [Maven 中央存储库](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar)搜索来了解有关此依赖性的详细信息。
 
     > [AZURE.IMPORTANT] 版本号必须与 HDInsight 群集随附的 HBase 版本匹配。可以使用下表来查找正确的版本号。
 
-    HDInsight 群集版本 | 要使用的 HBase 版本
-    ----- | -----
-    3\.2 | 0\.98.4-hadoop2
-    3\.3 | 1\.1.2
+    | HDInsight 群集版本 | 要使用的 HBase 版本 |
+    | ----- | ----- |
+    | 3\.2 | 0\.98.4-hadoop2 |
+    | 3\.3 | 1\.1.2 |
 
     有关 HDInsight 版本和组件的详细信息，请参阅 [What are the different Hadoop components available with HDInsight](/documentation/articles/hdinsight-component-versioning-v1/)（HDInsight 提供哪些不同的 Hadoop 组件）。
 
@@ -74,9 +80,9 @@ tags="azure-portal"/>
             <version>4.4.0-HBase-1.1</version>
         </dependency>
     
-    此代码将会加载 Hbase 版本 1.1.x 使用的 phoenix-core 组件。
+    此依赖项会加载 Hbase 版本 1.1.x 使用的 phoenix-core 组件。
 
-2. 将以下代码添加到 __pom.xml__ 文件。它必须位于文件中的 `<project>...</project>` 标记内，例如 `</dependencies>` 和 `</project>` 之间。
+2. 将以下代码添加到 __pom.xml__ 文件。此部分必须位于文件中的 `<project>...</project>` 标记内，例如，`</dependencies>` 和 `</project>` 之间。
 
         <build>
           <sourceDirectory>src</sourceDirectory>
@@ -121,17 +127,17 @@ tags="azure-portal"/>
           </plugins>
         </build>
 
-    这将配置包含与 HBase 有关的配置信息的资源 (__conf\\hbase-site.xml__)。
+    `<resources>` 部分会配置包含 HBase 配置信息的资源 (__conf\\hbase-site.xml__)。
 
     > [AZURE.NOTE] 你也可以通过代码设置配置值。有关如何完成此操作的说明，请参阅所采用的 __CreateTable__ 示例中的注释。
 
-    此外，这还将配置 [Maven 编译器插件](http://maven.apache.org/plugins/maven-compiler-plugin/)和 [Maven 阴影插件](http://maven.apache.org/plugins/maven-shade-plugin/)。该编译器插件用于编译拓扑。该阴影插件用于防止在由 Maven 构建的 JAR 程序包中复制许可证。使用此插件的原因在于，重复的许可证文件会导致 HDInsight 群集在运行时出错。将 maven-shade-plugin 用于 `ApacheLicenseResourceTransformer` 实现可防止发生此错误。
+    此 `<plugins>` 部分会配置 [Maven 编译器插件](http://maven.apache.org/plugins/maven-compiler-plugin/)和 [Maven 阴影插件](http://maven.apache.org/plugins/maven-shade-plugin/)。该编译器插件用于编译拓扑。该阴影插件用于防止在由 Maven 构建的 JAR 程序包中复制许可证。使用此插件的原因在于，重复的许可证文件会导致 HDInsight 群集在运行时出错。将 maven-shade-plugin 用于 `ApacheLicenseResourceTransformer` 实现可防止发生此错误。
 
     maven-shade-plugin 还会生成 uber jar（或 fat jar），其中包含应用程序所需的所有依赖项。
 
 3. 保存 __pom.xml__ 文件。
 
-4. 在 __hbaseapp__ 目录中创建名为 __conf__ 的新目录。在 __conf__ 目录中，创建名为 __hbase-site.xml__ 的新文件，然后使用以下项作为内容：
+4. 在 __hbaseapp__ 目录中创建名为 __conf__ 的新目录。在 __conf__ 目录中，创建一个名为 __hbase-site.xml__ 的文件。将以下内容用作该文件的内容：
 
         <?xml version="1.0"?>
         <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -173,7 +179,7 @@ tags="azure-portal"/>
 
     此文件将用于加载 HDInsight 群集的 HBase 配置。
 
-    > [AZURE.NOTE] 这是极小的 hbase-site.xml 文件，其中包含 HDInsight 群集的基本最低设置。
+    > [AZURE.NOTE] 这是最小的 hbase-site.xml 文件，其中包含 HDInsight 群集的最低基本设置。
 
 3. 保存 __hbase-site.xml__ 文件。
 
@@ -181,7 +187,7 @@ tags="azure-portal"/>
 
 1. 转到 __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__ 目录，然后将 app.java 文件重命名为 __CreateTable.java__。
 
-2. 打开 __CreateTable.java__ 文件，并将现有内容替换为以下内容：
+2. 打开 __CreateTable.java__ 文件，将现有内容替换为以下代码：
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -249,7 +255,7 @@ tags="azure-portal"/>
 
 3. 保存 __CreateTable.java__ 文件。
 
-4. 在 __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__ 目录中，创建名为 __SearchByEmail.java__ 的新文件。使用以下项作为此文件的内容：
+4. 在 __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__ 目录中，创建名为 __SearchByEmail.java__ 的新文件。使用以下代码作为此文件的内容：
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -326,7 +332,7 @@ tags="azure-portal"/>
 
 5. 保存 __SearchByEmail.java__ 文件。
 
-6. 在 __hbaseapp\\src\\main\\hava\\com\\microsoft\\examples__ 目录中，创建名为 __DeleteTable.java__ 的新文件。使用以下项作为此文件的内容：
+6. 在 __hbaseapp\\src\\main\\hava\\com\\microsoft\\examples__ 目录中，创建名为 __DeleteTable.java__ 的新文件。使用以下代码作为此文件的内容：
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -362,7 +368,7 @@ tags="azure-portal"/>
 
     这将清除任何以前构建的项目，下载任何尚未安装的依赖项，然后构建和打包应用程序。
 
-3. 完成该命令后，__hbaseapp\\target__ 目录将包含名为 __hbaseapp-1.0-SNAPSHOT.jar__ 的文件。
+3. 完成该命令后，__hbaseapp\\target__ 目录会包含名为 __hbaseapp-1.0-SNAPSHOT.jar__ 的文件。
 
     > [AZURE.NOTE] __hbaseapp-1.0-SNAPSHOT.jar__ 文件是 uber jar（有时称为 fat jar），其中包含运行应用程序所需的所有依赖项。
 
@@ -589,9 +595,9 @@ tags="azure-portal"/>
 
         Add-HDInsightFile -localPath target\hbaseapp-1.0-SNAPSHOT.jar -destinationPath example/jars/hbaseapp-1.0-SNAPSHOT.jar -clusterName hdinsightclustername
 
-    将 __hdinsightclustername__ 替换为 HDInsight 群集的名称。此后，该命令将 __hbaseapp-1.0-SNAPSHOT.jar__ 上载到 HDInsight 群集的主存储中的 __example/jars__ 位置。
+    将 __hdinsightclustername__ 替换为 HDInsight 群集的名称。该命令将 __hbaseapp-1.0-SNAPSHOT.jar__ 上传到 HDInsight 群集的主存储中的 __example/jars__ 位置。
 
-3. 在上载这些文件后，使用以下代码来通过 __hbaseapp__ 创建新表：
+3. 上传这些文件后，使用以下代码来通过 __hbaseapp__ 创建表：
 
         Start-HBaseExample -className com.microsoft.examples.CreateTable -clusterName hdinsightclustername
 
@@ -614,7 +620,7 @@ tags="azure-portal"/>
           Gabriela Ingram - ID: 6
           Gabriela Ingram - gabriela@contoso.com - ID: 6
 
-    将 __fabrikam.com__ 用于 `-emailRegex` 值会返回电子邮件字段中包含 __fabrikam.com__ 的用户。由于此搜索是使用基于正则表达式的筛选器执行的，因此你也可以输入正则表达式，例如 __^r__，这样就会返回电子邮件以字母“r”开头的条目。
+    将 __fabrikam.com__ 用于 `-emailRegex` 值会返回电子邮件字段中包含 __fabrikam.com__ 的用户。此搜索使用基于正则表达式的筛选器执行，因此，也可以输入正则表达式，例如 __^r__，这样就会返回电子邮件以字母“r”开头的条目。
 
 ## 删除表
 
@@ -630,4 +636,4 @@ tags="azure-portal"/>
 
 使用 `-showErr` 参数可查看运行作业时生成的标准错误 (STDERR)。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1107_2016-->
