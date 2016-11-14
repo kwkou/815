@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="02/10/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/14/2016"/>
 
 # 应用服务工作方式
 

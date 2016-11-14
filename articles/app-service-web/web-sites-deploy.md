@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="09/06/2016"
-	wacn.date="08/22/2016"/>  
+	wacn.date="11/14/2016"/>  
     
 # 将应用部署到 Azure App Service
 

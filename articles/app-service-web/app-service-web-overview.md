@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="05/25/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/14/2016"/>
 
 # Web Apps 概述
 
