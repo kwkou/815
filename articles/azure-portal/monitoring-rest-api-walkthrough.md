@@ -32,56 +32,56 @@
 
 针对 Azure 监视器 API 执行的所有任务都使用 Azure Resource Manager 身份验证模型。因此，所有请求必须使用 Azure Active Directory (Azure AD) 进行身份验证。对客户端应用程序进行身份验证的方法之一是创建 Azure AD 服务主体，并检索身份验证 (JWT) 令牌。以下示例脚本演示如何通过 PowerShell 创建 Azure AD 服务主体。有关更详细的演练，请参阅有关[使用 Azure PowerShell 创建用于访问资源的服务主体](/documentation/articles/resource-group-authenticate-service-principal/#authenticate-service-principal-with-password—powershell)的文档。还可以[通过 Azure 门户创建服务主体](/documentation/articles/resource-group-create-service-principal-portal/)。
 
-```PowerShell
-$subscriptionId = "{azure-subscription-id}"
-$resourceGroupName = "{resource-group-name}"
-$location = "centralus"
 
-# Authenticate to a specific Azure subscription.
-Login-AzureRmAccount -SubscriptionId $subscriptionId
+    $subscriptionId = "{azure-subscription-id}"
+    $resourceGroupName = "{resource-group-name}"
+    $location = "centralus"
+    
+    # Authenticate to a specific Azure subscription.
+    Login-AzureRmAccount -SubscriptionId $subscriptionId
+    
+    # Password for the service principal
+    $pwd = "{service-principal-password}"
+    
+    # Create a new Azure AD application
+    $azureAdApplication = New-AzureRmADApplication `
+                            -DisplayName "My Azure Insights" `
+                            -HomePage "https://localhost/azure-monitor" `
+                            -IdentifierUris "https://localhost/azure-monitor" `
+                            -Password $pwd
+    
+    # Create a new service principal associated with the designated application
+    New-AzureRmADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
+    
+    # Assign Reader role to the newly created service principal
+    New-AzureRmRoleAssignment -RoleDefinitionName Reader `
+                              -ServicePrincipalName $azureAdApplication.ApplicationId.Guid
 
-# Password for the service principal
-$pwd = "{service-principal-password}"
 
-# Create a new Azure AD application
-$azureAdApplication = New-AzureRmADApplication `
-                        -DisplayName "My Azure Insights" `
-                        -HomePage "https://localhost/azure-monitor" `
-                        -IdentifierUris "https://localhost/azure-monitor" `
-                        -Password $pwd
-
-# Create a new service principal associated with the designated application
-New-AzureRmADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
-
-# Assign Reader role to the newly created service principal
-New-AzureRmRoleAssignment -RoleDefinitionName Reader `
-                          -ServicePrincipalName $azureAdApplication.ApplicationId.Guid
-
-```
 
 若要查询 Azure 监视器 API，客户端应用程序应使用事先创建的服务主体进行身份验证。以下示例 PowerShell 脚本演示了一种使用 [Active Directory 身份身份验证库](/documentation/articles/active-directory-authentication-libraries/) (ADAL) 帮助获取 JWT 身份验证令牌的方法。JWT 令牌作为请求中 HTTP 授权参数的一部分传递给 Azure Insights API。
 
-```PowerShell
-$azureAdApplication = Get-AzureRmADApplication -IdentifierUri "https://localhost/azure-monitor"
 
-$subscription = Get-AzureRmSubscription -SubscriptionId $subscriptionId
+    $azureAdApplication = Get-AzureRmADApplication -IdentifierUri "https://localhost/azure-monitor"
+    
+    $subscription = Get-AzureRmSubscription -SubscriptionId $subscriptionId
+    
+    $clientId = $azureAdApplication.ApplicationId.Guid
+    $tenantId = $subscription.TenantId
+    $authUrl = "https://login.windows.net/${tenantId}"
+    
+    $AuthContext = [Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext]$authUrl
+    $cred = New-Object -TypeName Microsoft.IdentityModel.Clients.ActiveDirectory.ClientCredential -ArgumentList ($clientId, $pwd)
+     
+    $result = $AuthContext.AcquireToken("https://management.core.chinacloudapi.cn/", $cred)
+    
+    # Build an array of HTTP header values 
+    $authHeader = @{
+    'Content-Type'='application/json'
+    'Accept'='application/json'
+    'Authorization'=$result.CreateAuthorizationHeader()
+    }
 
-$clientId = $azureAdApplication.ApplicationId.Guid
-$tenantId = $subscription.TenantId
-$authUrl = "https://login.windows.net/${tenantId}"
-
-$AuthContext = [Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext]$authUrl
-$cred = New-Object -TypeName Microsoft.IdentityModel.Clients.ActiveDirectory.ClientCredential -ArgumentList ($clientId, $pwd)
- 
-$result = $AuthContext.AcquireToken("https://management.core.chinacloudapi.cn/", $cred)
-
-# Build an array of HTTP header values 
-$authHeader = @{
-'Content-Type'='application/json'
-'Accept'='application/json'
-'Authorization'=$result.CreateAuthorizationHeader()
-}
-```
 
 身份验证设置步骤完成后，即可针对 Azure 监视器 REST API 执行查询。有两个有用的查询：
 
@@ -93,15 +93,15 @@ $authHeader = @{
 ## 检索指标定义
 >[AZURE.NOTE] 若要使用 Azure 监视器 REST API 检索指标定义，请使用“2016-03-01”作为 API 版本。
 
-```PowerShell
-$apiVersion = "2016-03-01"
-$request = "https://management.azure.cn/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/${resourceProviderNamespace}/${resourceType}/${resourceName}/providers/microsoft.insights/metricDefinitions?api-version=${apiVersion}"
 
-Invoke-RestMethod -Uri $request `
-                  -Headers $authHeader `
-                  -Method Get `
-                  -Verbose
-```
+    $apiVersion = "2016-03-01"
+    $request = "https://management.azure.cn/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/${resourceProviderNamespace}/${resourceType}/${resourceName}/providers/microsoft.insights/metricDefinitions?api-version=${apiVersion}"
+    
+    Invoke-RestMethod -Uri $request `
+                      -Headers $authHeader `
+                      -Method Get `
+                      -Verbose
+
 对于 Azure 逻辑应用，指标定义如以下屏幕截图中所示：
 
 ![Alt "指标定义响应的 JSON 视图。"](./media/monitoring-rest-api-walkthrough/available_metric_definitions_logic_app_json_response_clean.png)  
@@ -120,15 +120,15 @@ Invoke-RestMethod -Uri $request `
 
 例如，若要检索给定时间范围内时间粒度为 1 小时的 RunsSucceeded 指标数据点，请求将如下所示：
 
-```PowerShell
-$apiVersion = "2016-06-01"
-$filter = "(name.value eq 'RunsSucceeded') and aggregationType eq 'Total' and startTime eq 2016-09-23 and endTime eq 2016-09-24 and timeGrain eq duration'PT1H'"
-$request = "https://management.azure.cn/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/${resourceProviderNamespace}/${resourceType}/${resourceName}/providers/microsoft.insights/metrics?`$filter=${filter}&api-version=${apiVersion}"
-(Invoke-RestMethod -Uri $request `
-                   -Headers $authHeader `
-                   -Method Get `
-                   -Verbose).Value | ConvertTo-Json
-```
+
+    $apiVersion = "2016-06-01"
+    $filter = "(name.value eq 'RunsSucceeded') and aggregationType eq 'Total' and startTime eq 2016-09-23 and endTime eq 2016-09-24 and timeGrain eq duration'PT1H'"
+    $request = "https://management.azure.cn/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/${resourceProviderNamespace}/${resourceType}/${resourceName}/providers/microsoft.insights/metrics?`$filter=${filter}&api-version=${apiVersion}"
+    (Invoke-RestMethod -Uri $request `
+                       -Headers $authHeader `
+                       -Method Get `
+                       -Verbose).Value | ConvertTo-Json
+
 
 结果类似于以下屏幕截图中的示例：
 
@@ -137,15 +137,15 @@ $request = "https://management.azure.cn/subscriptions/${subscriptionId}/resource
 
 若要检索多个数据点或聚合点，请将指标定义名称和聚合类型添加到筛选器，如以下示例中所示：
 
-```PowerShell
-$apiVersion = "2016-06-01"
-$filter = "(name.value eq 'ActionsCompleted' or name.value eq 'RunsSucceeded') and (aggregationType eq 'Total' or aggregationType eq 'Average') and startTime eq 2016-09-23T13:30:00Z and endTime eq 2016-09-23T14:30:00Z and timeGrain eq duration'PT1M'"
-$request = "https://management.azure.cn/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/${resourceProviderNamespace}/${resourceType}/${resourceName}/providers/microsoft.insights/metrics?`$filter=${filter}&api-version=${apiVersion}"
-(Invoke-RestMethod -Uri $request `
-                   -Headers $authHeader `
-                   -Method Get `
-                   -Verbose).Value | ConvertTo-Json
-```
+
+    $apiVersion = "2016-06-01"
+    $filter = "(name.value eq 'ActionsCompleted' or name.value eq 'RunsSucceeded') and (aggregationType eq 'Total' or aggregationType eq 'Average') and startTime eq 2016-09-23T13:30:00Z and endTime eq 2016-09-23T14:30:00Z and timeGrain eq duration'PT1M'"
+    $request = "https://management.azure.cn/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/${resourceProviderNamespace}/${resourceType}/${resourceName}/providers/microsoft.insights/metrics?`$filter=${filter}&api-version=${apiVersion}"
+    (Invoke-RestMethod -Uri $request `
+                       -Headers $authHeader `
+                       -Method Get `
+                       -Verbose).Value | ConvertTo-Json
+
 
 ### 使用 ARMClient
 替代 PowerShell（如上所示）的做法是在 Windows 计算机上使用 [ARMClient](https://github.com/projectkudu/ARMClient)。ARMClient 将自动处理 Azure AD 身份验证（及生成的 JWT 令牌）。以下步骤概述如何使用 ARMClient 检索指标数据：
@@ -216,15 +216,15 @@ $request = "https://management.azure.cn/subscriptions/${subscriptionId}/resource
 ## 检索活动日志数据
 除了处理指标定义和相关值以外，还可以检索有关 Azure 资源的其他有趣的深入信息。例如，可以查询[活动日志](https://msdn.microsoft.com/zh-cn/library/azure/dn931934.aspx)数据。以下示例演示如何使用 Azure 监视器 REST API 查询 Azure 订阅在特定日期范围内的活动日志数据：
 
-```PowerShell
-$apiVersion = "2014-04-01"
-$filter = "eventTimestamp ge '2016-09-23' and eventTimestamp le '2016-09-24'and eventChannels eq 'Admin, Operation'"
-$request = "https://management.azure.cn/subscriptions/${subscriptionId}/providers/microsoft.insights/eventtypes/management/values?api-version=${apiVersion}&`$filter=${filter}"
-(Invoke-RestMethod -Uri $request `
-                   -Headers $authHeader `
-                   -Method Get `
-                   -Verbose).Value | ConvertTo-Json
-```
+
+    $apiVersion = "2014-04-01"
+    $filter = "eventTimestamp ge '2016-09-23' and eventTimestamp le '2016-09-24'and eventChannels eq 'Admin, Operation'"
+    $request = "https://management.azure.cn/subscriptions/${subscriptionId}/providers/microsoft.insights/eventtypes/management/values?api-version=${apiVersion}&`$filter=${filter}"
+    (Invoke-RestMethod -Uri $request `
+                       -Headers $authHeader `
+                       -Method Get `
+                       -Verbose).Value | ConvertTo-Json
+
 
 ## 后续步骤
 * 查看[监视概述](/documentation/articles/monitoring-overview/)。
