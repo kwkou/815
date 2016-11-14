@@ -102,7 +102,7 @@ azure insights logprofile add --name my_log_profile --storageId /subscriptions/s
 					}
 				},
 				"claims": {
-					"aud": "https://management.core.windows.cn/",
+					"aud": "https://management.core.chinacloudapi.cn/",
 					"iss": "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/",
 					"iat": "1421876371",
 					"nbf": "1421876371",

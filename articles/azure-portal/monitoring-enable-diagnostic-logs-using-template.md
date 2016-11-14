@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/17/2016"
+	ms.date="09/26/2016"
 	ms.author="johnkem"
-	wacn.date="10/17/2016"/>  
+	wacn.date="11/14/2016"/>
 
 
 # 在创建资源时使用 Resource Manager 模板自动启用诊断设置
-本文介绍如何使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)在创建资源时配置资源的诊断设置。这样可以让用户在创建资源时自动将诊断日志和指标流式传输到事件中心，或者将其存档到存储帐户中。
+本文介绍如何使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)在创建资源时配置资源的诊断设置。这样可以让用户在创建资源时自动将诊断日志和指标流式传输到事件中心、将其存档在存储帐户中。
 
 通过 Resource Manager 模板启用诊断日志时，所用方法取决于资源类型。
 
@@ -68,6 +68,7 @@
         "properties": {
           "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]",
           "serviceBusRuleId": "[parameters('serviceBusRuleId')]",
+          "workspaceId": "[parameters('workspaceId')]",
           "logs": [ 
             {
               "category": "/* log category name */",
@@ -132,6 +133,7 @@
 					"properties": {
 						"storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]",
                         "serviceBusRuleId": "[parameters('serviceBusRuleId')]",
+		         "workspaceId": "[parameters('workspaceId')]",
 						"logs": [
 							{
 								"category": "NetworkSecurityGroupEvent",
