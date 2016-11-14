@@ -19,6 +19,8 @@
 
 ## 概述
 
+>[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
+
 本教程将向你介绍如何使用 Visual Studio 工具，通过远程运行[调试模式](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx)或查看应用程序日志和 Web 服务器日志来帮助调试 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的 Web 应用。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
@@ -46,7 +48,7 @@
 
 ## <a name="sitemanagement"></a>Web 应用配置和管理
 
-通过 Visual Studio，用户可以访问 [Azure 门户](https://manage.windowsazure.cn/)中提供的 Web 应用管理功能和配置设置的子集。本部分介绍使用**服务器资源管理器**可以实现的功能。若要了解最新的 Azure 集成功能，请同时试用**云资源管理器**。可以从“视图”菜单打开这两个窗口。
+通过 Visual Studio，用户可以访问 [Azure 门户预览](/documentation/articles/app-service-web-app-azure-portal/)中提供的 Web 应用管理功能和配置设置的子集。本部分介绍使用**服务器资源管理器**可以实现的功能。若要了解最新的 Azure 集成功能，请同时试用**云资源管理器**。可以从“视图”菜单打开这两个窗口。
 
 1. 如果你还未在 Visual Studio 中登录到 Azure，请单击“服务器资源管理器”中的“连接至 Azure”按钮。
 
@@ -54,8 +56,6 @@
 
 	> [AZURE.NOTE]
 	将此订阅文件下载并保存到源代码目录之外的文件夹中（例如，在 Downloads 文件夹中），然后在导入完成后将其删除。获得了此订阅文件访问权的恶意用户可以编辑、创建和删除你的 Azure 服务。
-
-	有关从 Visual Studio 连接至 Azure 资源的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)。
 
 2. 在“服务资源管理器”中，展开“Azure”，然后展开“应用程序服务”。
 
@@ -67,12 +67,11 @@
 
 	![“Azure Web 应用”窗口](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configtab.png)  
 
-
 	本教程将向你介绍如何使用日志记录和跟踪下拉列表。其中，还将用到远程调试，但会通过不同方式启用该调试。
    
 	有关该窗口中“应用程序设置”和“连接字符串”框的信息，请参阅 [Azure Web Apps：应用程序字符串和连接字符串的工作原理](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)。
 
-	如果你想执行的 Web 应用管理任务无法在此窗口进行，请单击“在管理门户中打开”，以便在浏览器窗口中打开 Azure 门户。
+	如果你想执行的 Web 应用管理任务无法在此窗口进行，请单击“在管理门户中打开”，以便在浏览器窗口中打开 Azure 门户预览。
 
 ## <a name="remoteview"></a>在服务器资源管理器中访问 Web 应用文件
 
@@ -82,16 +81,13 @@
 
 ![无用的错误页](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror.png)  
 
-
 **发生错误：**
 
 ![无用的错误页](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror1.png)  
 
-
 **网站无法显示页面**
 
 ![无用的错误页](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror2.png)  
-
 
 找出错误原因的最简便方法通常是启用详细错误消息，如此，之前保留的屏幕快照中的第一个快照会告诉你如何做。而实现此目的需要在部署的 Web.config 文件中进行更改。你可以编辑项目中的 *Web.config* 文件，然后重新部署该项目，或创建 [Web.config 转换](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations)并部署调试版本，但还有一个更快捷的方式：在“解决方案资源管理器”中，可以通过使用远程视图功能直接查看并编辑远程 Web 应用上的文件。
 
@@ -108,7 +104,6 @@
 3. 将以下行添加到 `system.web` 元素：
 
 	`<customErrors mode="off"></customErrors>`  
-
 
 	![编辑 Web.config](./media/web-sites-dotnet-troubleshoot-visual-studio/webconfigedit.png)
 
@@ -151,13 +146,11 @@
 
 	![在调试模式下发布](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-publishdebug.png)  
 
-
 4. 部署结束后，浏览器将打开 Web 应用的 Azure URL，关闭浏览器。
 
 5. 在“服务器资源管理器”中右键单击该 Web 应用，然后单击“附加调试器”。
 
 	![附加调试程序](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-attachdebugger.png)  
-
 
 	浏览器将自动打开你运行在 Azure 中的主页。你可能必须等待 20 秒左右以便 Azure 针对调试设置服务器。此延迟只在首次于 Web 应用上运行调试模式时出现。接下来的 48 小时内，再次启动调试将不会出现延迟。
 
@@ -171,7 +164,6 @@
 
 	![在运行于 Azure 中的调试模式下查看变量](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugviewinwa.png)  
 
-
 	你看到时间是 Azure 服务器时间，可能与你本地计算机所处时区不同。
 
 8. 为 `currentTime` 变量输入一个新值，如“Now running in Azure”。
@@ -181,7 +173,6 @@
 	运行于 Azure 中的“关于”页面将显示你在 currentTime 变量中输入的新值。
 
 	![显示新值的关于页面](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugchangeinwa.png)  
-
 
 ## <a name="remotedebugwj"></a> 远程调试 Web 作业
 
@@ -199,7 +190,6 @@
 
 	![设置断点](./media/web-sites-dotnet-troubleshoot-visual-studio/wjbreakpoint.png)  
 
-
 1. 在“解决方案资源管理器”中，右键单击该 Web 项目（不是 Web 作业项目）并单击“发布”。
 
 2. 在“配置文件”下拉列表中，选择与 [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk/)中所用相同的配置文件。
@@ -214,7 +204,6 @@
 
 	![附加调试程序](./media/web-sites-dotnet-troubleshoot-visual-studio/wjattach.png)  
 
-
 	浏览器将自动打开你运行在 Azure 中的主页。你可能必须等待 20 秒左右以便 Azure 针对调试设置服务器。此延迟只在首次于 Web 应用上运行调试模式时出现。接下来的 48 小时内，再次启动调试将不会出现延迟。
 
 6. 在打开 Contoso 广告主页的 Web 浏览器中，创建新的广告。
@@ -225,7 +214,6 @@
 
 	![调试器中的 blobInfo 对象](./media/web-sites-dotnet-troubleshoot-visual-studio/blobinfo.png)  
 
- 
 5. 按 F5 继续运行。
 
 	GenerateThumbnail 方法将完成创建缩略图。
@@ -239,7 +227,6 @@
 8. 使用你的 Azure 凭据登录，然后单击 Web 作业名称转到 Web 作业的页面。
 
 	![单击 ContosoAdsWebJob](./media/web-sites-dotnet-troubleshoot-visual-studio/clickcaw.png)  
-
 
 	仪表板将显示最近执行的 GenerateThumbnail 函数。
 
@@ -371,7 +358,6 @@
 
 	![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd2.png)  
 
-
 	默认情况下，`trace.axd` 仅供本地使用。如果希望可以从远程 Web 应用使用，可将 `localOnly="false"` 添加到 `trace` 元素（位于 *Web.config* 文件中），如下所示：
 
 		<trace enabled="true" writeToDiagnosticsTrace="true" localOnly="false" mostRecent="true" pageOutput="false" />
@@ -388,13 +374,11 @@
 
 3. 在“服务器资源管理器”中，右键单击你的 Web 应用并选择“在输出窗口中查看流式传输日志”。
 
-	![上下文菜单中的查看流式传输日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewlogsmenu.png)  
-
+	![上下文菜单中的查看流式传输日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewlogsmenu.png)
 
 	“输出”窗口显示你已连接至日志流式传输服务，每过一分钟没有要显示的日志，就添加一个通知行。
 
 	![上下文菜单中的查看流式传输日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-nologsyet.png)  
-
 
 4. 在显示应用程序主页的浏览器窗口，单击“联系人”。
 
@@ -402,12 +386,9 @@
 
 	![输出窗口中的错误跟踪](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-errortrace.png)  
 
-
 	Visual Studio 仅显示错误级跟踪，因为这是启用日志监视服务时的默认设置。创建新的 Azure Web 应用时，默认禁用所有日志记录，正如之前打开设置页面时所见：
 
 	![应用程序日志记录关闭](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-apploggingoff.png)  
-
-
 
 	然而，如果选择了“查看流式传输日志”，Visual Studio 会自动将“应用程序日志记录(文件系统)”更改为“错误”，这意味着将报告错误级日志。为了查看所有跟踪日志，可将该设置更改为“详细”。如果选择的严重级别低于错误，所有更高严重级别的日志也将得到报告。因此，如果选择“详细”，还可查看信息、警告以及错误日志。
 
@@ -417,13 +398,11 @@
  
 	![将跟踪级别设置为详细](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-applogverbose.png)  
 
-
 6. 在现在显示的是“联系人”页面的浏览器窗口中，单击“主页”，然后依次单击“关于”和“联系人”。
 
 	几秒钟内,“输出”窗口将显示你的所有跟踪输出。
 
 	![详细的跟踪输出](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-verbosetraces.png)  
-
 
 	在本部分中，你已通过使用 Azure Web 应用设置启用和禁用了日志记录。你还可以通过修改 Web.config 文件启用和禁用跟踪侦听器。然而，修改 Web.config 文件会导致应用域回收，而通过 Web 应用配置启用日志记录则不会出此情况。如果问题重现需要花费较长时间或呈间歇性，回收应用域可能会“修正”该问题并强迫你一直等待直至其再次出现。在 Azure 中启用诊断功能不会如此，因此你可以立即开始捕获错误信息。
 
@@ -432,7 +411,6 @@
 “输出”窗口的“Azure 日志”选项卡上有若干按钮和一个文本框：
 
 ![日志选项卡按钮](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-icons.png)  
-
 
 这些控件执行以下功能：
 
@@ -452,18 +430,15 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 1. 在通过“服务器资源管理器”打开的“Azure Web 应用配置”选项卡上，将“Web 服务器日志记录”的状态更改为“开启”，然后单击“保存”。
 
-	![启用 Web 服务器日志记录](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-webserverloggingon.png)  
-
+	![启用 Web 服务器日志记录](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-webserverloggingon.png)
 
 2. 在“输出”窗口中，单击“指定要监视的 Azure 日志”按钮。
 	
 	![指定要监视的 Azure 日志。](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-specifylogs.png)  
 
-
 3. 在“Azure 日志记录选项”对话框中，选择“Web 服务器日志”，然后单击“确定”。
 
 	![监视 Web 服务器日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-monitorwslogson.png)  
-
 
 4. 在显示 Web 应用的浏览器窗口中，依次单击“主页”、“关于”、“联系人”。
 
@@ -471,9 +446,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![输出窗口中的 Web 服务器日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-wslogs.png)  
 
-
-
-默认情况下，通过使用 Visual Studio 第一次启用 Web 服务器日志时，Azure 会将日志写入文件系统。或者，你可以使用 Azure 门户指定将 Web 服务器日志写入存储帐户的 Blob 容器。
+默认情况下，通过使用 Visual Studio 第一次启用 Web 服务器日志时，Azure 会将日志写入文件系统。或者，你可以使用 Azure 门户预览指定将 Web 服务器日志写入存储帐户的 Blob 容器。
 
 如果使用门户将 Web 服务器日志记录写入 Azure 存储帐户，之后在 Visual Studio 中禁用日志记录，那么在 Visual Studio 中重新启用日志记录时，存储帐户设置将还原。
 
@@ -485,13 +458,11 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![启用详细的错误消息](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-detailedlogson.png)  
 
-
 2. 在“输出”窗口中，单击“指定要监视的 Azure 日志”按钮。
 
 3. 在“Azure 日志记录选项”对话框中单击“所有日志”，然后单击“确定”。
 
 	![监视所有日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-monitorall.png)  
-
 
 4. 在浏览器的地址栏中，向 URL 添加一个额外字符以导致 404 错误（例如 `http://localhost:53370/Home/Contactx`），然后按 Enter。
 
@@ -499,11 +470,9 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![输出窗口中详细的错误日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-detailederrorlog.png)  
 
-
 	Control + 单击该链接可在浏览器中看到排好格式的日志输出。
 
 	![浏览器窗口中详细的错误日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-detailederrorloginbrowser.png)  
-
 
 ## <a name="downloadlogs"></a>下载文件系统日志
 
@@ -513,16 +482,13 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![日志选项卡按钮](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadicon.png)  
 
-
 	“文件资源管理器”打开，其中显示 *Downloads* 文件夹中已下载文件处于选定状态。
 
 	![下载的文件](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadedfile.png)  
 
-
 2. 提取该 *.zip* 文件，你将看到以下文件夹结构：
 
 	![下载的文件](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)  
-
 
 	* 应用程序跟踪日志位于 *LogFiles\\Application* 文件夹的 *.txt* 文件中。
 	* Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) 之类的工具查看并处理这些文件。
@@ -550,8 +516,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 5. 在 Azure 节点下右键单击“存储”，然后单击“创建存储帐户”。
 
-![创建存储帐户](./media/web-sites-dotnet-troubleshoot-visual-studio/createstor.png)  
-
+	![创建存储帐户](./media/web-sites-dotnet-troubleshoot-visual-studio/createstor.png)  
 
 3. 在“创建存储帐户”对话框中，输入存储帐户的名称。
 
@@ -571,12 +536,10 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![新的存储帐户](./media/web-sites-dotnet-troubleshoot-visual-studio/newstorage.png)  
 
-
 1. 在 Visual Studio 的“Azure Web App”窗口中，单击“日志”选项卡，然后单击“在管理门户中配置日志记录”。
 
     <!-- todo:screenshot of new portal if the VS page link goes to new portal -->
 	![配置日志记录](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)  
-
 
 	这将在经典管理门户中为你的 Web 应用打开“配置”选项卡。
 
@@ -588,11 +551,9 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![单击管理表存储。](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-stgsettingsmgmtportal.png)  
 
-
 	在“针对应用程序诊断管理表存储”框中可选择你的存储帐户（如果你有多个此类帐户）。你可以创建一个新表或使用现有的表。
 
 	![管理表存储](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-choosestorageacct.png)  
-
 
 6. 在“对应用程序诊断管理表存储”框中，单击复选标记关闭该对话框。
 
@@ -612,7 +573,6 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![存储日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-storagelogs.png)  
 
-
 	请注意，在此视图中，可以看到每个日志的“进程 ID”和“线程 ID”，这在文件系统日志中是无法看到的。通过直接查看 Azure 存储表可看到额外字段。
 
 8. 单击“查看所有应用程序日志”。
@@ -623,13 +583,11 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![表视图中的存储日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)  
 
-
-	该视图将显示任何其他视图都没提供的额外字段。该视图还支持你使用特殊的 Query Builder UI 构建查询以筛选日志。有关详细信息，请参阅[通过服务器资源管理器浏览存储资源](http://msdn.microsoft.com/zh-cn/library/ff683677.aspx)中的“使用表资源 - 筛选实体”。
+	该视图将显示任何其他视图都没提供的额外字段。该视图还支持你使用特殊的 Query Builder UI 构建查询以筛选日志。
 
 7. 要查看单个行的详细信息，请双击其中一行。
 
 	![服务器资源管理器中的跟踪表](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracetablerow.png)  
-
 
 ## <a name="failedrequestlogs"></a>查看失败请求跟踪日志
 
@@ -651,10 +609,7 @@ Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 
 2. 在 Visual Studio 中，在“Azure Web App”窗口的“”选项卡中，单击“在管理门户中打开”。
 
-3. 在 [Azure 门户](https://portal.azure.cn)中你的 Web 应用的“设置”边栏选项卡上，单击“部署凭据”，然后输入新的用户名和密码。
-
-	![新的 FTP 用户名和密码](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-enterftpcredentials.png)  
-
+3. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中你的 Web 应用的“仪表板”页面，“速览”下，单击“重置部署凭据”，然后输入新的用户名和密码。
 
 	**当你登录时，必须使用以 Web 应用名称为前缀的完整用户名。例如，如果你输入“myid”作为用户名，而站点为“myexample”，那么，请使用“myexample\\myid”登录。
 
@@ -668,7 +623,6 @@ Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 
 	![打开 LogFiles 文件夹](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilesfolder.png)  
 
-
 7. 打开名为 W3SVC 加数值的文件夹。
 
 	![打开 W3SVC 文件夹](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-w3svcfolder.png)
@@ -677,14 +631,11 @@ Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 
 	![W3SVC 文件夹](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-w3svcfoldercontents.png)  
 
-
 8. 单击希望为之查看跟踪信息的失败请求的 XML 文件。
 
 	下图显示了示例错误的部分跟踪信息。
 
 	![浏览器中的失败请求跟踪](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-failedrequestinbrowser.png)  
-
-
 
 ## <a name="nextsteps"></a>后续步骤
 
@@ -710,7 +661,7 @@ Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 
 * [ASP.NET 站点上的 Azure 论坛](http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET)。
 * [MSDN 上的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs)。
-* [StackOverflow.com](http://www.stackoverflow.com)。
+* [CSDN](http://azure.csdn.net/)。
 
 ### 在 Visual Studio 中进行调试 
 
@@ -723,7 +674,6 @@ Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 * [远程调试 Azure App Service Web Apps 简介](https://azure.microsoft.com/blog/2014/05/06/introduction-to-remote-debugging-on-azure-web-sites/)。
 * [Azure App Service Web Apps 远程调试简介第 2 部分 - 远程调试洞析](https://azure.microsoft.com/blog/2014/05/07/introduction-to-remote-debugging-azure-web-sites-part-2-inside-remote-debugging/)
 * [Azure App Service Web Apps 远程调试简介第 3 部分 - 多实例环境和 GIT](https://azure.microsoft.com/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
-* [Web 作业调试（视频）](https://www.youtube.com/watch?v=ncQm9q5ZFZs&list=UU_SjTh-ZltPmTYzAybypB-g&index=1)
 
 如果你的 Web 应用使用 Azure Web API 或移动服务后端并且需要进行调试，请参阅[在 Visual Studio 中调试 .NET 后端](http://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx)。
 
