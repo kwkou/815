@@ -6,18 +6,23 @@
    authors="jimdial"
    manager="carmonm"
    editor="tysonn"
-   tags="azure-resource-manager" />
+   tags="azure-resource-manager" />  
+
 <tags
-	ms.service="virtual-network"
-	ms.date="04/27/2016"
-	wacn.date="09/28/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="04/27/2016"
+   wacn.date="11/14/2016"
+   ms.author="jdial" />
 
 # Azure 中的 IP 地址
 可以将 IP 地址分配给与其他 Azure 资源通信的 Azure 资源，也可以将其分配给本地网络和 Internet。可以在 Azure 中使用两种类型的 IP 地址：
 
 - **公共 IP 地址**：用来与 Internet 通信，包括与面向公众的 Azure 服务通信
 - **专用 IP 地址**：用于在 Azure 虚拟网络 (VNet) 中通信，以及在本地网络中通信（当你使用 VPN 网关或 ExpressRoute 线路将网络扩展到 Azure 时）。
-
 
 > [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-network-ip-addresses-overview-classic/)。
 
@@ -34,11 +39,11 @@
 - 应用程序网关数
 
 ### 分配方法
-将 IP 地址分配给 *公共 IP 资源* 有两种方法 - *动态* 或 *静态* 。默认分配方法为 *动态* ，即**不是**在创建时分配的 IP 地址。公共 IP 地址是在启动（或创建）关联的资源（例如 VM 或负载均衡器）时分配的。停止（或删除）该资源时，就会释放该 IP 地址。因此，停止和启动资源都会导致 IP 地址更改。
+将 IP 地址分配给*公共 IP 资源*有两种方法 - *动态*或*静态*。默认分配方法为*动态*，即**不是**在创建时分配的 IP 地址。公共 IP 地址是在启动（或创建）关联的资源（例如 VM 或负载均衡器）时分配的。停止（或删除）该资源时，就会释放该 IP 地址。因此，停止和启动资源都会导致 IP 地址更改。
 
-若要确保所关联资源的 IP 地址保持不变，可将分配方法显式设置为 *静态* 。在这种情况下，IP 地址是立刻分配的。仅当你删除该资源或将其分配方法更改为 *动态* 时，才会释放该地址。
+若要确保所关联资源的 IP 地址保持不变，可将分配方法显式设置为*静态*。在这种情况下，IP 地址是立刻分配的。仅当你删除该资源或将其分配方法更改为*动态* 时，才会释放该地址。
 
->[AZURE.NOTE] 即使将分配方法设置为 *静态*，也无法通过指定方式将实际 IP 地址分配到 *公共 IP 资源*，而只能在创建资源时所在的 Azure 位置通过包含可用 IP 地址的池对 IP 地址进行分配。
+>[AZURE.NOTE] 即使将分配方法设置为*静态*，也无法通过指定方式将实际 IP 地址分配到*公共 IP 资源*，而只能在创建资源时所在的 Azure 位置通过包含可用 IP 地址的池对 IP 地址进行分配。
 
 以下情况通常使用静态公共 IP 地址：
 
@@ -55,16 +60,16 @@
 >[AZURE.IMPORTANT] 所创建的每个域名标签在其 Azure 位置中必须是唯一的。
 
 ### 虚拟机
-将公共 IP 地址分配到其**网络接口**可以将其与 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 相关联。对于多网络接口 VM，只能将它分配到 *主要* 网络接口。你可以向 VM 分配动态或静态公共 IP 地址。
+将公共 IP 地址分配到其**网络接口**可以将其与 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 相关联。对于多网络接口 VM，只能将它分配到*主要*网络接口。你可以向 VM 分配动态或静态公共 IP 地址。
 
 ### 面向 Internet 的负载均衡器
-将公共 IP 地址分配给负载均衡器**前端**配置可以将其与 [Azure Load Balancer](/documentation/articles/load-balancer-overview/) 相关联。此公共 IP 地址充当负载均衡型虚拟 IP 地址 (VIP)。你可以向负载均衡器前端分配动态或静态公共 IP 地址。还可以向负载均衡器前端分配多个公共 IP 地址，这会启用[多 VIP](/documentation/articles/load-balancer-multivip/) 方案，如包含基于 SSL 的网站的多租户环境。
+你可以将公共 IP 地址与 [Azure Load Balancer](/documentation/articles/load-balancer-overview/) 相关联，只需将其分配给负载均衡器**前端**配置即可。此公共 IP 地址充当负载均衡型虚拟 IP 地址 (VIP)。你可以向负载均衡器前端分配动态或静态公共 IP 地址。还可以向负载均衡器前端分配多个公共 IP 地址，这会启用[多 VIP](/documentation/articles/load-balancer-multivip/) 方案，如包含基于 SSL 的网站的多租户环境。
 
 ### VPN 网关
-[Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)用于将 Azure 虚拟网络 (VNet) 连接到其他 Azure VNet 或本地网络。必须将公共 IP 地址分配给其 **IP 配置**，才能与远程网络通信。目前只能向 VPN 网关分配 *动态* 公共 IP 地址。
+[Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)用于将 Azure 虚拟网络 (VNet) 连接到其他 Azure VNet 或本地网络。必须将公共 IP 地址分配给其 **IP 配置**，才能与远程网络通信。目前只能向 VPN 网关分配*动态*公共 IP 地址。
 
 ### 应用程序网关数
-将公共 IP 地址分配给网关的**前端**配置可以将其与 Azure [应用程序网关](/documentation/articles/application-gateway-introduction/)相关联。此公共 IP 地址充当负载均衡型 VIP。目前，你只能将 *动态* 公共 IP 地址分配给应用程序网关前端配置。
+将公共 IP 地址分配给网关的**前端**配置可以将其与 Azure [应用程序网关](/documentation/articles/application-gateway-introduction/)相关联。此公共 IP 地址充当负载均衡型 VIP。目前，你只能将*动态*公共 IP 地址分配给应用程序网关前端配置。
 
 ### 概览
 下表显示了将公共 IP 地址关联到顶级资源时所依据的特定属性，以及能够使用的可能分配方法（动态或静态）。
@@ -88,9 +93,9 @@
 ### 分配方法
 可以根据资源所附加到的子网的地址范围来分配专用 IP 地址。子网本身的地址范围是 VNet 的地址范围的一部分。
 
-分配专用 IP 地址有两种方法： *动态* 或 *静态* 。默认分配方法为 *动态* ，即自动从资源的子网分配 IP 地址（使用 DHCP）。停止和启动该资源时，此 IP 地址可能更改。
+分配专用 IP 地址有两种方法：*动态*或*静态*。默认分配方法为*动态*，即自动从资源的子网分配 IP 地址（使用 DHCP）。停止和启动该资源时，此 IP 地址可能更改。
 
-可将分配方法设置为 *静态* ，以确保 IP 地址始终相同。在这种情况下，还需提供属于资源子网一部分的有效 IP 地址。
+可将分配方法设置为*静态*，以确保 IP 地址始终相同。在这种情况下，还需提供属于资源子网一部分的有效 IP 地址。
 
 静态专用 IP 地址通常用于：
 
@@ -109,7 +114,7 @@
 使用 Azure 托管的 DNS 服务器配置的 VM 可以将 VNet 中的所有 VM 的主机名解析为其专用 IP 地址。
 
 ### 内部负载均衡器 (ILB) 和应用程序网关
-可以将专用 IP 地址分配给 [Azure 内部负载均衡器](/documentation/articles/load-balancer-internal-overview/) (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction/)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
+你可以将专用 IP 地址分配给 [Azure 内部负载均衡器](/documentation/articles/load-balancer-internal-overview/) (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction/)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
 
 ### 概览
 下表显示了将专用 IP 地址关联到顶级资源时所依据的特定属性，以及能够使用的可能分配方法（动态或静态）。
@@ -126,11 +131,11 @@ Azure 中的全套[网络限制](/documentation/articles/azure-subscription-serv
 
 ## 定价
 
-在大多数情况下，公共 IP 地址是免费的。使用其他和/或静态公共 IP 地址要收取少许费用。确保用户了解[公共 IP 的定价结构](/pricing/details/reserved-ip-addresses/)。
+公共 IP 地址可能会产生少许费用。有关 Azure 中 IP 地址定价的详细信息，请阅读 [IP address pricing](/pricing/details/reserved-ip-addresses/)（IP 地址定价）页。
 
 ## 后续步骤
 - [使用 Azure 门户预览通过静态公共 IP 部署 VM](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
 - [使用模板通过静态公共 IP 部署 VM](/documentation/articles/virtual-network-deploy-static-pip-arm-template/)
 - [通过 Azure 门户预览使用静态专用 IP 地址部署 VM](/documentation/articles/virtual-networks-static-private-ip-arm-pportal/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1107_2016-->

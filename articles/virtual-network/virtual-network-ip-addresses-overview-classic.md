@@ -145,7 +145,7 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 
 在大多数情况下，公共 IP 地址是免费的。使用其他和/或静态公共 IP 地址要收取少许费用。确保用户了解[公共 IP 的定价结构](/pricing/details/reserved-ip-addresses/)。
 
-## <a name="Differences-between-Resource-Manager-and-classic-deployments"></a>资源管理器与经典部署之间的差异
+## <a name="Differences-between-Resource-Manager-and-classic-deployments" id="differences-between-resource-manager-and-classic-deployments"></a>资源管理器与经典部署之间的差异
 下面是 Resource Manager 和经典部署模型中的 IP 寻址功能的比较。
 
 ||资源|经典|资源管理器|

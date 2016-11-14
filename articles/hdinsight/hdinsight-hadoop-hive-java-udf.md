@@ -1,16 +1,23 @@
 <properties
-pageTitle="在 HDInsight 中通过 Hive 使用 Java 用户定义函数 (UDF) | Azure"
+pageTitle="在 HDInsight 中通过 Hive 使用 Java 用户定义函数 (UDF) |Azure"
 description="了解如何在 HDInsight 的 Hive 中创建并使用 Java 用户定义函数 (UDF)。"
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
-editor="cgronlun"/>
+manager="jhubbard"
+editor="cgronlun"/>  
+
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/07/2016"
-	wacn.date="08/01/2016"/>
+ms.service="hdinsight"
+ms.devlang="java"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="09/27/2016"
+wacn.date="11/14/2016"
+ms.author="larryfr"/>  
+
 
 # 在 HDInsight 中通过 Hive 使用 Java UDF
 
@@ -59,7 +66,61 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 
     这些输入指定了 HDInsight 3.3 和 3.4 群集中包含的 Hadoop 和 Hive 的版本。你可以在[HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1/)文档中找到 HDInsight 提供的 Hadoop 和 Hive 的版本信息。
 
-    进行此更改之后，保存该文件。
+    在文件末尾的 `</project>` 行前面添加 `<build>` 代码段。该代码段包含以下内容：
+
+        <build>
+            <plugins>
+                <!-- build for Java 1.7, even if you're on a later version -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <!-- build an uber jar -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <!-- Keep us from getting a can't overwrite file error -->
+                        <transformers>
+                            <transformer
+                                    implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer">
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer">
+                            </transformer>
+                        </transformers>
+                        <!-- Keep us from getting a bad signature error -->
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                    <exclude>META-INF/*.SF</exclude>
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    
+    这些条目用于定义如何生成项目。具体而言，就是项目使用的 Java 版本以及如何构建部署到群集的 uberjar。
+
+    一旦进行了更改，请保存该文件。
 
 4. 将 __exampleudf/src/main/java/com/microsoft/examples/App.java__ 重命名为 __ExampleUDF.java__，然后在编辑器中打开该文件。
 
@@ -98,9 +159,9 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 
     该命令假定你使用默认的群集登录帐户 __admin__。
 
-2. 当到达 `jdbc:hive2://localhost:10001/>` 提示符时，输入以下代码将 UDF 添加到 Hive，并将其作为函数公开。
+2. 显示 `jdbc:hive2://localhost:10001/>` 提示符后，输入以下代码将 UDF 添加到 Hive，并将其作为函数公开。
 
-        ADD JAR wasbs:///example/jar/ExampleUDF-1.0-SNAPSHOT.jar;
+        ADD JAR wasbs:///example/jars/ExampleUDF-1.0-SNAPSHOT.jar;
         CREATE TEMPORARY FUNCTION tolower as 'com.microsoft.examples.ExampleUDF';
 
 3. 使用该 UDF 将从表中检索的值转换为小写字符串。
@@ -128,6 +189,6 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 
 有关使用 Hive 的其他方式，请参阅[在 HDInsight 中使用 Hive](/documentation/articles/hdinsight-use-hive/)。
 
-有关 Hive 用户定义函数的详细信息，请参阅 apache.org 网站上的 Hive wiki 的 [Hive Operators and User-Defined Functions（Hive 运算符和用户定义函数）](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF)部分。
+有关 Hive 用户定义函数的详细信息，请参阅 apache.org 网站上的 Hive wiki 的 [Hive Operators and User-Defined Functions](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF)（Hive 运算符和用户定义函数）部分。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1107_2016-->

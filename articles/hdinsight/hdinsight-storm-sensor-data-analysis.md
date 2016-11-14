@@ -4,15 +4,22 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
-   editor="cgronlun"/>
+   manager="jhubbard"
+   editor="cgronlun"/>  
+
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/05/2016"
-	wacn.date="08/23/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="java"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/20/2016"
+   wacn.date="11/14/2016"
+   ms.author="larryfr"/>  
 
-# 使用 Apache Storm、事件中心和 HDInsight 中的 HBase (Hadoop) 分析传感器数据
+
+# 使用 Apache Storm、事件中心和 HDInsight 中的 HBase (Hadoop) 分析传感器数据 
 
 了解如何使用 Apache Storm on HDInsight 处理来自 Azure 事件中心的传感器数据，然后使用 D3.js 来可视化这些数据。本文档还将介绍如何使用 Azure 虚拟网络来连接 Storm on HDInsight 和 HBase on HDInsight，然后将拓扑中的数据存储到 HBase。
 
@@ -30,11 +37,12 @@
 
 * [Git](http://git-scm.com/)
 
-> [AZURE.NOTE]Java、JDK、Maven 和 Git 也可通过 [Chocolatey NuGet](http://chocolatey.org/) 包管理器获得。
+> [AZURE.NOTE] Java、JDK、Maven 和 Git 也可通过 [Chocolatey NuGet](http://chocolatey.org/) 包管理器获得。
 
 ## 体系结构
 
-![体系结构示意图](./media/hdinsight-storm-sensor-data-analysis/devicesarchitecture.png)
+![体系结构示意图](./media/hdinsight-storm-sensor-data-analysis/devicesarchitecture.png)  
+
 
 本示例包括以下组成部分：
 
@@ -46,27 +54,29 @@
 
 * **Azure 虚拟网络服务**（可选，使用 HBase 时必需）：在 Storm on HDInsight 和 HBase on HDInsight 群集之间启用安全通信。
 
-* **仪表板 Web 应用**：实时绘制数据图表的示例仪表板。
+* **仪表板网站**：实时绘制数据图表的示例仪表板。
 
-	* 该 Web 应用在 Node.js 中实现，因此它可以在用于测试的任何客户端操作系统上运行，或者可以部署到 Azure Web 应用。
+	* 该网站在 Node.js 中实现，因此它可以在用于测试的任何客户端操作系统上运行，或者可以部署到 Azure 网站。
 
-	* [Socket.io](http://socket.io/) 用于 Storm 拓扑和 Web 应用之间的实时通信。
+	* [Socket.io](http://socket.io/) 用于 Storm 拓扑和网站之间的实时通信。
 
-		> [AZURE.NOTE]这是实现详细信息。你可以使用任何通信框架，例如原始 WebSockets 或 SignalR。
+		> [AZURE.NOTE] 这是实现详细信息。你可以使用任何通信框架，例如原始 WebSockets 或 SignalR。
 
-	* [D3.js](http://d3js.org/) 用于绘制发送到 Web 应用的数据的图表。
+	* [D3.js](http://d3js.org/) 用于绘制发送到网站的数据的图表。
 
-拓扑中使用从事件中心读取数据 **com.microsoft.eventhubs.spout.EventHubSpout** 类，该类在 Storm on HDInsight 群集中提供。与 Web 应用的通信可通过使用 [socket.io client.java](https://github.com/nkzawa/socket.io-client.java) 来实现。
+拓扑中使用从事件中心读取数据 **com.microsoft.eventhubs.spout.EventHubSpout** 类，该类在 Storm on HDInsight 群集中提供。与网站的通信可通过使用 [socket.io client.java](https://github.com/nkzawa/socket.io-client.java) 来实现。
 
 或者，可以使用 Storm 随附的 org.apache.storm.hbase.bolt.HBaseBolt 来实现与 HBase 的通信。
 
 下面是拓扑图。
 
-![拓扑图示意图](./media/hdinsight-storm-sensor-data-analysis/sensoranalysis.png)
+![拓扑图示意图](./media/hdinsight-storm-sensor-data-analysis/sensoranalysis.png)  
 
-> [AZURE.NOTE]这是一个非常简单的拓扑视图。在运行时，每个组件的实例为每个分区创建事件中心所读取。这些实例分布在群集中，节点和数据在它们之间路由，如下所示：
-><p> * 从 spout 到分析器的数据已经过负载均衡。
-><p> * 从分析器到仪表板和 HBase（如果已使用）已按设备 ID 分组，因此来自同一设备的消息始终流向同一组件。
+
+> [AZURE.NOTE] 这是一个非常简单的拓扑视图。在运行时，每个组件的实例为每个分区创建事件中心所读取。这些实例分布在群集中，节点和数据在它们之间路由，如下所示：
+>
+> * 从 spout 到分析器的数据已经过负载平衡。
+> * 从分析器到仪表板和 HBase（如果已使用）已按设备 ID 分组，因此来自同一设备的消息始终流向同一组件。
 
 ### 组件
 
@@ -76,17 +86,23 @@
 
 * **DashboardBolt.java**：演示如何使用 Java 的 Socket.io 客户端库将数据实时发送到 Web 仪表板。
 
+此示例使用 [Flux](https://storm.apache.org/releases/0.10.0/flux.html) 框架，因此 YAML 文件中包含拓扑定义。有两个文件：
+
+* __no-hbase.yaml__ - 在开发环境中测试拓扑时使用此文件。它不使用 HBase 组件，因为无法从群集所在的虚拟网络外部访问 HBase Java API。
+
+* __with-hbase.yaml__ - 将拓扑部署到 Storm 群集时使用此文件。它使用 HBase 组件，因为它在与 HBase 群集相同的虚拟网络中运行。
+
 ## 准备环境
 
 在使用本示例之前，必须创建要由 Storm 读取的 Azure 事件中心。你还必须创建 Storm on HDInsight 拓扑，从事件中心读取数据的组件只在群集中可用。
 
-> [AZURE.NOTE]最终，事件中心 spout 将从 Maven 提供。
+> [AZURE.NOTE] 最终，事件中心 spout 将从 Maven 提供。
 
 ### 配置事件中心
 
 事件中心是此示例的数据源。按照下列步骤创建一个新的事件中心。
 
-1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，选择“新建”|“服务总线”|“事件中心”|“自定义创建”。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中选择**“新建”| Service Bus | Event Hub | Custom Create**.
 
 2. 在“添加新事件中心”对话框中，输入“事件中心名称”，选择要在其中创建中心的“区域”，然后创建新的命名空间或选择现有的命名空间。最后，单击箭头以继续。
 
@@ -96,11 +112,10 @@
 
 4. 选择“配置”，然后使用以下信息创建两个新的访问策略。
 
-	<table>
-	<tr><th>Name</th><th>权限</th></tr>
-	<tr><td>设备</td><td>发送</td></tr>
-	<tr><td>Storm</td><td>侦听</td></tr>
-	</table>
+	| 名称 | 权限 |
+    | ----- | ----- |
+	| devices | 发送 |
+	| storm | 侦听 |
 
 	创建权限后，在页面底部选择“保存”图标。这将创建共享的访问策略，该策略将用于向此中心发送消息以及从中读取消息。
 
@@ -108,7 +123,7 @@
 
 ### 创建 Storm on HDInsight 群集
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
+1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
 
@@ -118,7 +133,7 @@
 
 5. 输入 1 作为用于此群集的“数据节点”数量。
 
-	> [AZURE.NOTE]为了最大程度减少本文所用群集的成本，请将“群集大小”减至 1，并在群集使用完后删除群集。
+	> [AZURE.NOTE] 为了最大程度减少本文所用群集的成本，请将“群集大小”减至 1，并在群集使用完后删除群集。
 
 6. 输入管理员“用户名”和“密码”，然后单击箭头继续。
 
@@ -141,28 +156,30 @@
 命令执行完毕后，你将得到以下目录结构：
 
 	hdinsight-eventhub-example/
-		TemperatureMonitor/ - this is the Java topology
-			conf/
-				Config.properties
-				hbase-site.xml
-			src/
-			test/
-			dashboard/ - this is the node.js web dashboard
-			SendEvents/ - utilities to send fake sensor data
+		TemperatureMonitor/ - this contains the topology
+			resources/
+                log4j2.xml - set logging to minimal
+                no-hbase.yaml - topology definition for local testing
+                with-hbase.yaml - topology definition that uses HBase in a virutal network
+			src/ - the Java bolts
+            dev.properties - contains configuration values for your environment
+		dashboard/nodejs/ - this is the node.js web dashboard
+		SendEvents/ - utilities to send fake sensor data
 
-> [AZURE.NOTE]本文档不会深入介绍本示例中包含的代码；但是，代码带有全面的注释。
+> [AZURE.NOTE] 本文档不会深入介绍本示例中包含的代码；但是，代码带有全面的注释。
 
-打开 **Config.properties** 文件并添加先前创建事件中心时使用的信息。在添加此信息后，请保存该文件。
+打开 **hdinsight-eventhub-example/TemperatureMonitor/dev.properties** 文件，将事件中心信息添加到以下行：
 
-	eventhubspout.username = storm
+    eventhub.read.policy.name: storm
+    eventhub.read.policy.key: KeyForTheStormPolicy
+    eventhub.namespace: YourNamespace
+    eventhub.name: sensordata
 
-	eventhubspout.password = <the key of the 'storm' policy>
+> [AZURE.NOTE] 此示例假定使用 __storm__ 作为具有 __Listen__ 声明的策略的名称，且事件中心的名称为 __sensordata__。
 
-	eventhubspout.namespace = <the event hub namespace>
+ 在添加此信息后，请保存该文件。
 
-	eventhubspout.entitypath = <the event hub name>
 
-	eventhubspout.partitions.count = <the number of partitions for the event hub>
 
 	## if not provided, will use storm's zookeeper settings
 	## zookeeper.connectionstring=localhost:2181
@@ -175,13 +192,13 @@
 
 测试之前，必须启动仪表板以查看拓扑的输出，并生成要在事件中心中存储的数据。
 
-### 启动 Web 应用
+### 启动 Web 应用程序
 
-1. 打开新的命令提示符或终端，并将目录更改为 将目录更改为 **hdinsight-eventhub-example/dashboard**，并使用以下命令安装 Web 应用所需的依赖项：
+1. 打开新的命令提示符或终端，并将目录更改为 将目录更改为 **hdinsight-eventhub-example/dashboard**，并使用以下命令安装 Web 应用程序所需的依赖项：
 
 		npm install
 
-2. 使用以下命令启动 Web 应用：
+2. 使用以下命令启动 Web 应用程序：
 
 		node server.js
 
@@ -189,30 +206,32 @@
 
 		Server listening at port 3000
 
-2. 打开 Web 浏览器，并输入 **http://localhost:3000/** 作为地址。你应看到类似于下面的页面：
+2. 打开 Web 浏览器，并输入 http://localhost:3000/** 作为地址。你应看到类似于下面的页面：
 
-	![Web 仪表板](./media/hdinsight-storm-sensor-data-analysis/emptydashboard.png)
+	![Web 仪表板](./media/hdinsight-storm-sensor-data-analysis/emptydashboard.png)  
+
 
 	将此命令提示符或终端保持打开状态。测试完成后，使用 Ctrl-C 停止 Web 服务器。
 
 ### 开始生成数据
 
-> [AZURE.NOTE]本部分中的步骤使用 Node.js，以便它们可以在任何平台上运行。对于其他语言示例，请参阅 **SendEvents** 目录。
+> [AZURE.NOTE] 此部分中的步骤使用 Node.js，以便它们可以在任何平台上使用。对于其他语言示例，请参阅 **SendEvents** 目录。
 
-
-1. 打开新的命令提示符或终端，将目录切换为 **hdinsight-eventhub-example/SendEvents/nodejs**，然后使用以下命令安装应用程序所需的依赖项：
+1. 打开新的命令提示符、shell 或终端，将目录更改为 **hdinsight-eventhub-example/SendEvents/nodejs**，然后使用以下命令安装应用程序所需的依赖项：
 
 		npm install
 
 2. 在文本编辑器中打开 **app.js** 文件，并添加你之前获取的事件中心信息：
 
 		// ServiceBus Namespace
-		var namespace = 'servicebusnamespace';
+		var namespace = 'YourNamespace';
 		// Event Hub Name
-		var hubname ='eventhubname';
+		var hubname ='sensordata';
 		// Shared access Policy name and key (from Event Hub configuration)
 		var my_key_name = 'devices';
-		var my_key = 'key';
+		var my_key = 'YourKey';
+    
+    > [AZURE.NOTE] 此示例假定已使用 __sensordata__ 作为事件中心的名称并已使用__devices__ 作为具有 __Send__ 声明的策略的名称。
 
 2. 使用以下命令在事件中心插入新条目：
 
@@ -220,40 +239,49 @@
 
 	你应会看到包含发送到事件中心的数据的多个输出行。这些信息如下所示：
 
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":0,"Temperature":7}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":1,"Temperature":39}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":2,"Temperature":86}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":3,"Temperature":29}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":4,"Temperature":30}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":5,"Temperature":5}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":6,"Temperature":24}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":7,"Temperature":40}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":8,"Temperature":43}
-		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":9,"Temperature":84}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"0","Temperature":7}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"1","Temperature":39}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"2","Temperature":86}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"3","Temperature":29}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"4","Temperature":30}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"5","Temperature":5}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"6","Temperature":24}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"7","Temperature":40}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"8","Temperature":43}
+		{"TimeStamp":"2015-02-10T14:43.05.00320Z","DeviceId":"9","Temperature":84}
 
 ### 启动拓扑
 
-2. 使用下列命令从本地启动拓扑
+2. 打开新的命令提示符、shell 或终端，将目录更改为 __hdinsight-eventhub-example/TemperatureMonitor__，然后使用以下命令启动拓扑：
 
-	mvn compile exec:java -Dstorm.topology=com.microsoft.examples.Temperature
+        mvn compile exec:java -Dexec.args="--local -R /no-hbase.yaml --filter dev.properties"
+    
+    如果使用的是 PowerShell，请使用以下命令：
 
-	此操作将启动拓扑、从事件中心中读取文件并将其发送到 Azure 中运行的仪表板中。你应看到各行显示在 Web 仪表板中，如下所示：
+        mvn compile exec:java "-Dexec.args=--local -R /no-hbase.yaml --filter dev.properties"
 
-	![包含数据的仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)
+    > [AZURE.NOTE] 如果在 Linux/Unix/OS X 系统上，并且[已在开发环境中安装 Storm](http://storm.apache.org/releases/0.10.0/Setting-up-development-environment.html)，则可以使用以下命令：
+    >
+    > `mvn compile package` `storm jar target/WordCount-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux --local -R /no-hbase.yaml`
+
+	这会在本地模式下启动 __no-hbase.yaml__ 文件中定义的拓扑。__dev.properties__ 文件中包含的值提供事件中心的连接信息。启动后，拓扑会从事件中心读取条目，然后将它们发送到在本地计算机上运行的仪表板。你应看到各行显示在 Web 仪表板中，如下所示：
+
+	![包含数据的仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)  
+
 
 3. 当仪表板正在运行时，使用前面步骤中的 `node app.js` 命令将新数据发送到仪表板。由于温度值是随机生成的，因此图表应会更新以显示新值。
 
-3. 验证其运行情况后，按 Ctrl+C 停止拓扑。若要停止 SendEvent 应用，请选中窗口并按下任何键。也可以使用 Ctrl+C 来停止 Web 服务器。
+
 
 ## 打包拓扑并将其部署到 HDInsight 中
 
 在你的开发环境中，按照以下步骤在你的 HDInsight Storm 群集中执行“Temperature”拓扑。
 
-### 发布 Web 应用仪表板
+### 发布网站仪表板
 
-1. 若要将仪表板部署到 Azure Web 应用，请遵循[构建 Node.js Web 应用并将其部署到 Azure](/documentation/articles/web-sites-nodejs-develop-deploy-mac/) 中的步骤。记下 Web 应用的 URL，它类似于 **mywebsite.chinacloudsites.cn**。
+1. 若要将仪表板部署到 Azure 网站，请遵循[构建 Node.js 网站并将其部署到 Azure](/documentation/articles/web-sites-nodejs-develop-deploy-mac/) 中的步骤。记下网站的 URL，它类似于 **mywebsite.chinacloudsites.cn**。
 
-2. 创建 Web 应用后，转到 Azure 经典管理门户中的站点，然后选择“配置”选项卡。启用“Web 套接字”，然后在页面底部单击“保存”。
+2. 创建网站后，转到 Azure 经典管理门户中的站点，然后选择“配置”选项卡。启用“Web 套接字”，然后在页面底部单击“保存”。
 
 2. 打开 **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts\\DashboardBolt.java** 并将以下行更改为指向已发布仪表板的 URL：
 
@@ -271,9 +299,10 @@
 
 2. 根据[部署和管理 Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)中的步骤，在 Storm on HDInsight 群集上使用 **Storm 仪表板**上载和启动拓扑。
 
-3. 启动拓扑后，打开浏览器到 Azure 发布的 Web 应用，然后使用 `node app.js` 命令将数据发送到事件中心。你应该看到 Web 仪表板更新以显示信息。
+3. 启动拓扑后，打开浏览器到 Azure 发布的网站，然后使用 `node app.js` 命令将数据发送到事件中心。你应该看到 Web 仪表板更新以显示信息。
 
-	![仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)
+	![仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)  
+
 
 ## 可选：使用 HBase
 
@@ -283,7 +312,7 @@
 
 如果你打算对本示例使用 HBase，必须创建 Azure 虚拟网络并在其中包含 Storm on HDInsight 群集和 HBase on HDInsight 群集。
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 在页面底部，单击“+新建”>“网络服务”>“虚拟网络”>“快速创建”。
 
@@ -311,14 +340,13 @@
 
 9. 在页面底部，默认子网名称为 **Subnet-1**。使用“添加子网”按钮添加 **Subnet-2**。Storm 和 HBase 群集将位于这些子网中。
 
-	> [AZURE.NOTE]在本文中，我们将使用只有一个节点的群集。如果你创建的是多节点群集，你必须为用于群集的子网验证其 **CIDR（地址数）**。地址数必须大于辅助节点数加上七（网关：2，头节点：2，ZooKeeper：3）。例如，如果需要一个 10 节点 HBase 群集，子网的地址数必须大于 17 (10+7)。否则，部署将失败。
-	> <p>强烈建议为一个群集指定一个子网。
+	> [AZURE.NOTE] 在本文中，我们将使用只有一个节点的群集。如果你创建的是多节点群集，你必须为用于群集的子网验证其 **CIDR（地址数）**。地址数必须大于辅助节点数加上七（网关：2，头节点：2，ZooKeeper：3）。例如，如果需要一个 10 节点 HBase 群集，子网的地址数必须大于 17 (10+7)。否则，部署将失败。<p>强烈建议为一个群集指定一个子网。
 
 11. 单击页面底部的“保存”。
 
 ### 在虚拟网络中创建 Storm 和 HBase 群集
 
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
+1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
 
@@ -328,7 +356,7 @@
 
 5. 输入 1 作为用于此群集的“数据节点”数量。对于“区域/虚拟网络”，请选择先前创建的 Azure 虚拟网络。对于“虚拟网络子网”，请选择“Subnet-1”。
 
-	> [AZURE.NOTE]为了最大程度减少本文所用群集的成本，请将“群集大小”减至 1，并在群集使用完后删除群集。
+	> [AZURE.NOTE] 为了最大程度减少本文所用群集的成本，请将“群集大小”减至 1，并在群集使用完后删除群集。
 
 6. 输入管理员“用户名”和“密码”，然后单击箭头继续。
 
@@ -354,7 +382,7 @@
 	"host_name": "wordkernode0.<clustername>.b1.chinacloudapp.cn
 	...
 
-群集名称开头的域名称的部分是 DNS 后缀，例如 **mycluster.b1.chinacloudapp.cn**。
+域名称中以群集名称开头的部分是 DNS 后缀，例如 **mycluster.b1.chinacloudapp.cn**。
 
 ### 启用 HBase bolt
 
@@ -366,12 +394,8 @@
 
 1. 在文本编辑器中打开 **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts**，通过删除开头的 `//` 取消注释以下行。进行此更改之后，保存该文件。
 
-		topologyBuilder.setBolt("HBase", new HBaseBolt("SensorData", mapper).withConfigKey("hbase.conf"), spoutConfig.getPartitionCount())
-    	  .fieldsGrouping("Parser", "hbasestream", new Fields("deviceid")).setNumTasks(spoutConfig.getPartitionCount());
 
-	这将启用 HBase Bolt。
 
-	> [AZURE.NOTE]仅当你要部署到 Storm 群集而不是在本地测试时，才应启用 HBase bolt。
 
 ### HBase 和 Storm 数据
 
@@ -381,7 +405,7 @@
 
 2. 从桌面中启动 HDInsight 命令行并输入以下命令。
 
-    cd %HBASE\_HOME%
+    cd %HBASE\_HOME% 
     bin\\hbase shell
 
 3. 从 HBase Shell 中，输入以下命令以创建存储传感器数据的表。
@@ -394,7 +418,7 @@
 
 在 Storm 群集上启动拓扑并已开始处理数据后，你可以再次使用 `scan 'SensorData'` 命令来验证数据是否已插入 HBase。
 
-## 删除集群
+## 删除群集
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -420,4 +444,4 @@
 
 [azure-portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1107_2016-->

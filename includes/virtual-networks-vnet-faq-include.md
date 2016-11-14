@@ -7,15 +7,15 @@
 使用 VNet：
 
 - 创建私有云专用的虚拟网络
-									
+
 	有时你不需要适用于解决方案的跨界配置。创建 VNet 时，VNet 中的服务和 VM 可以在云中安全地互相直接通信。这可以在 VNet 内安全地保存流量，但仍允许你为需要 Internet 通信的 VM 和服务配置终结点连接，作为解决方案的一部分。
 
 - 安全地扩展数据中心
-									
+
 	借助 VNet，你可以构建传统的站点到站点 (S2S) VPN，以便安全地缩放数据中心容量。S2S VPN 使用 IPSEC 提供企业 VPN 网关和 Azure 之间的安全连接。
 
 - 实现混合云方案
-									
+
 	利用 VNet 可灵活地支持一系列混合云方案。你可以安全地将基于云的应用程序连接到任何类型的本地系统，例如大型机和 Unix 系统。
 
 ### 如何知道是否需要虚拟网络？
@@ -28,7 +28,7 @@
 
 ### 哪些服务可以与 VNet 共同使用？
 
-VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)、虚拟机和 Web 应用。但是，有几个 VNet 不支持的服务。请检查你想要使用的特定服务，并验证是否兼容。
+VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)、虚拟机和 Web Apps。但是，有几个 VNet 不支持的服务。请检查你想要使用的特定服务，并验证是否兼容。
 
 ### 没有跨界连接的情况下是否可以使用 VNet？
 
@@ -40,7 +40,13 @@ VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)�
 
 可以使用以下工具创建或配置虚拟网络：
 
-- 可以使用网络配置文件 (netcfg)。请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/)。
+- Azure 门户预览（用于经典 VNet 和 Resource Manager VNet）。
+
+- 网络配置文件（netcfg - 仅用于经典 VNet）。请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/)。
+
+- PowerShell（用于经典 VNet 和 Resource Manager VNet）。
+
+- Azure CLI（用于经典 VNet 和 Resource Manager VNet）。
 
 ### 在我的 VNet 中可以使用哪些地址范围？
 
@@ -116,13 +122,13 @@ Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后�
 
 ### 是否可以将 VNet 连接到 Azure 中的另一个 VNet？
 
-是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)。
+是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。
 
 ## 名称解析 (DNS)
 
 ### VNet 的 DNS 选项有哪些？
 
-使用“[VM 和角色实例的名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)”页的决策表，引导你浏览提供的所有 DNS 选项。
+使用[](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)“VM 和角色实例的名称解析”页的决策表，引导你浏览提供的所有 DNS 选项。
 
 ### 是否可以为 VNet 指定 DNS 服务器？
 
@@ -141,7 +147,7 @@ Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后�
 
 Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服务中，Azure 会注册所有 VM 和角色实例。此服务通过主机名为相同云服务内包含的 VM 和角色实例提供名称解析，并通过 FQDN 为相同 VNet 中的 VM 和角色实例提供名称解析。
 
-> [AZURE.NOTE]此时使用 Azure 提供的 DNS 进行跨租户名称解析时，虚拟网络中的前 100 个云服务具有限制。如果使用自己的 DNS 服务器，此限制则不适用。
+> [AZURE.NOTE] 此时使用 Azure 提供的 DNS 进行跨租户名称解析时，虚拟网络中的前 100 个云服务具有限制。如果使用自己的 DNS 服务器，此限制则不适用。
 
 ### 是否可以基于每个 VM/服务重写 DNS 设置？
 
@@ -171,7 +177,7 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 - **内部 IP 地址 -** 如果将 VM 部署到 VNet，该 VM 从您指定的内部 IP 地址池接收内部 IP 地址。VM 使用内部 IP 地址在 VNet 内进行通信。虽然 Azure 分配动态内部 IP 地址，但你可以为你的 VM 请求静态地址。若要了解有关静态内部 IP 地址的详细信息，请访问[如何设置静态内部 IP](/documentation/articles/virtual-networks-reserved-private-ip/)。
 
-- **VIP -** 你的 VM 还与 VIP 相关联，不过永远不会将 VIP 直接分配到 该 VM。VIP 是可以分配到云服务的公共 IP 地址。还可以为云服务保留 VIP。请参阅[保留的公用 IP](/documentation/articles/virtual-networks-reserved-public-ip/)。
+- **VIP -** 你的 VM 还与 VIP 相关联，不过永远不会将 VIP 直接分配到 该 VM。VIP 是可以分配到云服务的公共 IP 地址。还可以为云服务保留 VIP。
 
 - **ILPIP -** 还可以配置实例层级公共 IP 地址 (ILPIP)。ILPIP 是直接与 VM 相关联，而非云服务。若要了解有关 ILPIP 的详细信息，请访问[实例层级公共 IP 概述](/documentation/articles/virtual-networks-instance-level-public-ip/)。
 
@@ -191,7 +197,7 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 无变化。IP 地址（公共 VIP 和内部 IP 地址）将留在云服务或 VM 中。
 
-> [AZURE.NOTE]如果只想要关闭 VM，请不要使用经典管理门户执行此操作。目前，关闭按钮会释放虚拟机。
+> [AZURE.NOTE] 如果只想关闭 VM，请不要使用经典管理门户执行此操作。目前，关闭按钮会释放虚拟机。
 
 ### 在无需重新部署的情况下，是否可以将 VM 从一个子网移动到 VNet 中的另一个子网？
 
@@ -203,7 +209,7 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 ### 创建 MAC 后，其地址是否在 VM 中保持不变？
 
-否。VM 的 MAC 地址可以因不同的原因更改。如果 VM 处于停止（释放）状态，如果更改 VM 大小，或者，如果没有主机服务器的服务修复或计划内的维护，MAC 地址则不会保留。
+是，即使 VM 已停止（已解除分配）并重新启动，VM 的 MAC 地址也保持不变。
 
 ### 是否可以通过 VNet 中的 VM 连接到 Internet？
 
@@ -215,7 +221,12 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 只能在 VNet 中使用计算服务。计算服务仅限于云服务（Web 和辅助角色）和 VM。
 
-- [将 VNet 集成用于 Web 应用](/documentation/articles/app-service-vnet-integration-powershell/)
+### 是否可以共同使用 Web Apps 和虚拟网络？
+
+是的。可以在 VNet 内部署 Web 应用程序。此外，如果为 VNet 配置了点到站点，Web 应用则可以安全地连接和访问 Azure VNet 中的资源。有关详细信息，请参阅以下主题：
+
+
+- [Web Apps 虚拟网络集成](/documentation/articles/app-service-vnet-integration-powershell/)
 
 ### 是否可以在 VNet 中部署云服务与 Web 和辅助角色 (PaaS)？
 
@@ -253,4 +264,4 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 
 是的。PowerShell 和命令行工具可用于各种平台。可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx)找到更多信息。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1107_2016-->

@@ -5,7 +5,7 @@
 	documentationCenter=".net"
 	authors="tdykstra"
 	manager="wpickett"
-	editor=""/>  
+	editor=""/>
 
 
 <tags
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="08/19/2016"
-	wacn.date="10/17/2016"
+	ms.date="09/20/2016"
+	wacn.date="11/14/2016"
 	ms.author="rachelap"/>
 
 # Azure 应用服务中的 API 应用、ASP.NET 和 Swagger 入门
@@ -60,7 +60,7 @@ Visual Studio 解决方案包含三个项目：
 
 * ASP.NET Web API - 本教程中的说明假设读者基本了解如何在 Visual Studio 中使用 ASP.NET [Web API 2](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)。
 
-* Azure 帐户 - 可以[注册 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+* Azure 帐户 - 可以[打开 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 * Visual Studio 2015 和[用于 .NET 的 Azure SDK](/downloads/) - SDK 会自动安装 Visual Studio 2015（如果尚未安装）。
 
@@ -68,8 +68,7 @@ Visual Studio 解决方案包含三个项目：
 
 	![Azure App Tools 版本](./media/app-service-api-dotnet-get-started/apiversion.png)  
 
-
-	>[AZURE.NOTE] 根据计算机上已有 SDK 依赖项数量的不同，安装 SDK 可能耗时较长，从几分钟到半小时或更长时间不等。
+	>[AZURE.NOTE] 根据计算机上已有 SDK 依赖项数量的不同，安装 SDK 可能耗时较长，从几分钟到半小时或更长时间不等。	
 
 ## 下载示例应用程序
 
@@ -78,8 +77,7 @@ Visual Studio 解决方案包含三个项目：
 	可以单击“下载 ZIP”按钮，或克隆本地计算机上的存储库。
 
 2. 在 Visual Studio 2015 或 2013 中打开 ToDoList 解决方案。
-   1. 需要信任每个解决方案。
-		![安全警告](./media/app-service-api-dotnet-get-started/securitywarning.png)
+   1. 需要信任每个解决方案。![安全警告](./media/app-service-api-dotnet-get-started/securitywarning.png)
 
 3. 生成解决方案 (CTRL + SHIFT + B) 以还原 NuGet 包。
 
@@ -96,7 +94,6 @@ ASP.NET Web API 项目可以使用 [Swashbuckle](https://www.nuget.org/packages/
 1. 将 ToDoListDataAPI 项目（而**不是** ToDoListAPI 项目）设置为启动项目。
 
 	![将 ToDoDataAPI 设为启动项目](./media/app-service-api-dotnet-get-started/startupproject.png)  
-
 
 2. 按 F5 或单击“调试”>“开始调试”，以调试模式运行项目。
 
@@ -213,22 +210,89 @@ ASP.NET Web API 项目可以使用 [Swashbuckle](https://www.nuget.org/packages/
 
 Swashbuckle 可用于任何 ASP.NET Web API 项目。如果要将 Swagger 元数据生成添加到现有项目，只需安装 Swashbuckle 包。
 
->[AZURE.NOTE] Swagger 元数据包含每个 API 操作的唯一 ID。默认情况下，Swashbuckle 可能为 Web API 控制器方法生成重复的 Swagger 操作 ID。如果控制器有重载的 HTTP 方法（例如 `Get()` 和 `Get(id)`），就会发生这种情况。有关如何处理重载的信息，请参阅 [Customize Swashbuckle-generated API definitions](/documentation/articles/app-service-api-dotnet-swashbuckle-customize/)（自定义 Swashbuckle 生成的 API 定义）。如果在 Visual Studio 中使用 Azure API 应用模板创建 Web API 项目， *SwaggerConfig.cs* 文件中会自动添加用于生成唯一操作 ID 的代码。
+>[AZURE.NOTE] Swagger 元数据包含每个 API 操作的唯一 ID。默认情况下，Swashbuckle 可能为 Web API 控制器方法生成重复的 Swagger 操作 ID。如果控制器有重载的 HTTP 方法（例如 `Get()` 和 `Get(id)`），就会发生这种情况。有关如何处理重载的信息，请参阅 [Customize Swashbuckle-generated API definitions](/documentation/articles/app-service-api-dotnet-swashbuckle-customize/)（自定义 Swashbuckle 生成的 API 定义）。如果在 Visual Studio 中使用 Azure API 应用模板创建 Web API 项目，*SwaggerConfig.cs* 文件中会自动添加用于生成唯一操作 ID 的代码。
 
 ## <a id="createapiapp"></a>在 Azure 中创建 API 应用并向其部署代码
 
 本部分使用已集成到 Visual Studio 的“发布 Web”向导中的 Azure 工具，在 Azure 中创建新的 API 应用。然后，将 ToDoListDataAPI 项目部署到新的 API 应用，并通过运行 Swagger UI 来调用 API。
 
+>[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
+
 1. 在“解决方案资源管理器”中，右键单击 ToDoListDataAPI 项目，然后单击“发布”。
 
-	![在 Visual Studio 中单击“发布”](./media/app-service-api-dotnet-get-started/pubinmenu.png)  
+	![在 Visual Studio 中单击“发布”](./media/app-service-api-dotnet-get-started/pubinmenu.png)
 
+2.  在“发布 Web”向导的“配置文件”步骤中，单击“Azure 应用服务”。
 
-2. 选择“导入”。
+	![在“发布 Web”中单击 Azure 应用服务](./media/app-service-api-dotnet-get-started/selectappservice.png)
 
-3. 如果尚未下载“发布配置文件”，请转到 [Azure 门户预览](https://portal.azure.cn)下载。如果尚未创建 Web 应用，请创建一个。在“Web 应用”边栏选项卡中，单击“...更多”>“获取发布配置文件”。
+3. 如果尚未登录，请登录到 Azure 帐户；如果凭据已过期，请刷新凭据。
 
-4. 选择前面下载的“发布配置文件”，然后单击“确定”。
+4. 在“应用服务”对话框中，选择要使用的 Azure **订阅**，然后单击“添加”。
+
+	![在“应用服务”对话框中单击“新建”](./media/app-service-api-dotnet-get-started/clicknew.png)
+
+	此时将显示“创建应用服务”对话框的“托管”选项卡。
+
+	由于部署的是已安装 Swashbuckle 的 Web API 项目，因此 Visual Studio 假设要创建 API 应用。“API 应用名称”标题指出了这一点，另外，从“更改类型”下拉列表已设置为“API 应用”也能看出这一点。
+
+	![“应用服务”对话框中的应用类型](./media/app-service-api-dotnet-get-started/apptype.png)
+
+5. 输入在 *chinacloudsites.cn* 域中唯一的 **API 应用名称**。可以接受 Visual Studio 建议的默认名称。
+
+	如果输入的名称已被使用，右侧会出现红色感叹号。
+
+	API 应用的 URL 为 `{API app name}.chinacloudsites.cn`。
+
+6. 在“资源组”下拉列表中单击“新建”，然后输入“ToDoListGroup”或其他喜好的名称。
+
+	资源组是 Azure 资源的集合，例如 API 应用、数据库、VM 等等。在本教程中，最好创建新的资源组，因为这样可以通过一个步骤轻松删除针对本教程创建的所有 Azure 资源。
+
+	使用此框可以选择现有[资源组](/documentation/articles/resource-group-overview/)，或通过键入与订阅中任何现有资源组不同的名称，来创建新资源组。
+
+7. 单击“应用服务计划”下拉列表旁边的“新建”按钮。
+
+	屏幕截图显示了“API 应用名称”、“订阅”和“资源组”的示例值 -- 用户的值会有所不同。
+
+	![“创建应用服务”对话框](./media/app-service-api-dotnet-get-started/createas.png)
+
+	以下步骤为新资源组创建应用服务计划。应用服务计划指定 API 应用运行所在的计算资源。例如，如果你选择免费层，则 API 应用程序将在共享 VM 上运行；如果你选择某些付费层，则它在专用 VM 上运行。有关应用服务计划的信息，请参阅 [App Service plans overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)（应用服务计划概述）。
+
+8. 在“配置应用服务计划”对话框中，输入“ToDoListPlan”或其他喜好的名称。
+
+9. 在“位置”下拉列表中，选择最靠近的位置。
+
+	此设置指定你的应用将在哪个 Azure 数据中心运行。选择最靠近的位置，尽量减少[延迟](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090)。
+
+10. 在“大小”下拉列表中，单击“免费”。
+
+	对于本教程，免费定价层即可提供足够的性能。
+
+11. 在“配置应用服务计划”对话框中，单击“确定”。
+
+	![在“配置应用服务计划”中单击“确定”](./media/app-service-api-dotnet-get-started/configasp.png)
+
+12. 在“创建应用服务”对话框中，单击“创建”。
+
+	![在“创建应用服务”对话框中单击“创建”](./media/app-service-api-dotnet-get-started/clickcreate.png)
+
+	Visual Studio 将创建 API 应用，以及包含 API 应用全部所需设置的发布配置文件。然后，将打开“发布 Web”向导来部署项目。
+
+	打开的“发布 Web”向导最初显示“连接”选项卡（如下所示）。
+
+	在“连接”选项卡上，“服务器”和“站点名称”设置指向 API 应用。“用户名”和“密码”是 Azure 创建的部署凭据。部署后，Visual Studio 将在浏览器中打开**目标 URL**（这是**目标 URL** 的唯一用途）。
+
+13. 单击“下一步”。
+
+	![在“发布 Web”的“连接”选项卡中单击“下一步”](./media/app-service-api-dotnet-get-started/connnext.png)
+
+	下一个选项卡是“设置”选项卡（如下所示）。可以在此处更改生成配置选项卡，部署用于[远程调试](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug)的调试生成。该选项卡还提供了多个“文件发布选项”：
+
+	* 删除目标处的其他文件
+	* 在发布期间预编译
+	* 从 App\_Data 文件夹中排除文件
+
+	在本教程中，不需要使用这些选项。有关这些选项的作用的说明，请参阅 [How to: Deploy a Web Project Using One-Click Publish in Visual Studio](https://msdn.microsoft.com/zh-cn/library/dd465337.aspx)（如何：在 Visual Studio 中使用一键式发布来部署 Web 项目）。
 
 14. 单击“下一步”。
 
@@ -290,21 +354,30 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 
 2. 右键单击 ToDoListAPI 项目，然后单击“添加”>“REST API 客户端”。
 
-	![在 Visual Studio 中添加 REST API 客户端](./media/app-service-api-dotnet-get-started/codegenmenu.png)  
+	![在 Visual Studio 中添加 REST API 客户端](./media/app-service-api-dotnet-get-started/codegenmenu.png)
 
+3. 在“添加 REST API 客户端”对话框中，依次单击“Swagger URL”和“选择 Azure 资产”。
 
-3. 在“添加 REST API 客户端”对话框中，依次单击“Swagger URL”和“选择现有 Swagger 元数据文件”。
+	![选择 Azure 资产](./media/app-service-api-dotnet-get-started/codegenbrowse.png)
 
-4. 打开浏览器，从 `https://{your data tier API app name}.chinacloudsites.cn/swagger/docs/v1` 下载 Swagger 元数据文件。
+4. 在“应用服务”对话框中，展开本教程中使用的资源组，选择 API 应用，然后单击“确定”。
 
-5. 在“添加 REST API 客户端”对话框中，选择已下载的 json 文件，然后单击“确定”。
+	![选择用于生成代码的 API 应用](./media/app-service-api-dotnet-get-started/codegenselect.png)
+
+	可以看到，在返回“添加 REST API 客户端”对话框时，文本框中已填充前面在门户中看到的 API 定义 URL 值。
+
+	![API 定义 URL](./media/app-service-api-dotnet-get-started/codegenurlplugged.png)
+
+	>[AZURE.TIP] 获取用于生成代码的元数据的另一种方法是直接输入 URL，而无需通过浏览对话框。或者，如果要在部署到 Azure 之前生成客户端代码，可以在本地运行 Web API 项目，转到可提供 Swagger JSON 文件的 URL，保存文件，然后使用“选择现有的 Swagger 元数据文件”选项。
+
+5. 在“添加 REST API 客户端”对话框中，单击“确定”。
 
 	Visual Studio 将创建以 API 应用命名的文件夹，并生成客户端类。
 
 	![生成的客户端的代码文件](./media/app-service-api-dotnet-get-started/codegenfiles.png)  
 
 
-6. 在 ToDoListAPI 项目中，打开 *Controllers\\ToDoListController.cs* ，查看位于第 40 行的可使用生成的客户端调用 API 的代码。
+6. 在 ToDoListAPI 项目中，打开 *Controllers\\ToDoListController.cs*，查看位于第 40 行的可使用生成的客户端调用 API 的代码。
 
 	以下代码片段演示此代码如何实例化客户端对象和调用 Get 方法。
 
@@ -336,7 +409,7 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 		{
 		    var client = new ToDoListDataAPI(new Uri(ConfigurationManager.AppSettings["toDoListDataAPIURL"]));
 
-	更改为：
+更改为：
 
 		private static ToDoListDataAPI071316 NewDataAPIClient()
 		{
@@ -349,14 +422,23 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 
 1. 在“解决方案资源管理器”中，右键单击中间层 ToDoListAPI 项目（而不是数据层 ToDoListDataAPI），然后单击“发布”。
 
-	![在 Visual Studio 中单击“发布”](./media/app-service-api-dotnet-get-started/pubinmenu2.png)  
+	![在 Visual Studio 中单击“发布”](./media/app-service-api-dotnet-get-started/pubinmenu2.png)
 
+2.  在“发布 Web”向导的“配置文件”选项卡中，单击“Azure 应用服务”。
 
-2. 选择“导入”。
+3. 在“应用服务”对话框中，单击“新建”。
 
-3. 如果尚未下载“发布配置文件”，请转到 [Azure 门户预览](https://portal.azure.cn)下载。如果尚未创建 API 应用，请创建一个。在“Web 应用”边栏选项卡中，单击“...更多”>“获取发布配置文件”。
+4. 在“创建应用服务”对话框的“托管”选项卡中，接受默认的“API 应用名称”或者输入在 *chinacloudsites.cn* 域中唯一的名称。
 
-4. 选择前面下载的“发布配置文件”，然后单击“确定”。
+5. 选择一直使用的 Azure **订阅**。
+
+6. 在“资源组”下拉列表中，选择前面创建的资源组。
+
+7. 在“应用服务计划”下拉列表中，选择前面创建的同一个计划。默认已填充了该值。
+
+8. 单击“创建”。
+
+	Visual Studio 将创建 API 应用、创建其发布配置文件，并显示“发布 Web”向导的“连接”步骤。
 
 9.  在“发布 Web”向导的“连接”步骤中，单击“发布”。
 
@@ -407,6 +489,8 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 
 * “路由名称必须唯一”错误 -- 如果不小心将错误的项目部署到 API 应用，稍后再将正确的项目部署到其中，可能会收到这些错误。若要更正此问题，请将正确的项目重新部署到 API 应用，然后在“发布 Web”向导的“设置”选项卡上选择“删除目标位置的其他文件”。
 
+在 Azure 应用服务中运行 ASP.NET API 应用后，可能想要深入了解可简化故障排解的 Visual Studio 功能。有关日志记录、远程调试等功能的信息，请参阅 [Troubleshooting Azure App Service apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)（在 Visual Studio 中对 Azure 应用服务应用进行故障排除）。
+
 ## 后续步骤
 
 本文已介绍如何将现有 Web API 项目部署到 API 应用、生成 API 应用的客户端代码，以及从 .NET 客户端使用 API 应用。本系列教程的下一篇文章介绍如何[使用 CORS 从 JavaScript 客户端使用 API 应用](/documentation/articles/app-service-api-cors-consume-javascript/)。
@@ -419,4 +503,4 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 
 **Azure API 应用**项目模板相当于选择**空的** ASP.NET 4.5.2 模板、单击复选框以添加 Web API 支持，然后安装 Swashbuckle NuGet 包。此外，该模板添加了一些 Swashbuckle 配置代码，旨在避免创建重复的 Swagger 操作 ID。创建 API 应用项目之后，可以使用本教程中所述的相同方式将它部署到 API 应用。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1107_2016-->
