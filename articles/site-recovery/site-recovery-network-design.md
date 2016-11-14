@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="prateek9us"
 	manager="jwhit"
-	editor=""/>
+	editor=""/>  
 
-<tags 
-	ms.service="site-recovery" 
-	ms.date="06/21/2016"
-	wacn.date="08/01/2016"/>
+
+<tags
+	ms.service="site-recovery"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery"
+	ms.date="09/19/2016"
+	wacn.date="11/14/2016"
+	ms.author="pratshar"/>  
+
 
 #  设计用于灾难恢复的网络基础结构
 
@@ -175,4 +182,4 @@ Woodgrove 决定将来自 IP 地址范围（172.16.1.0/24、172.16.2.0/24）的 
 
 [了解](/documentation/articles/site-recovery-network-mapping/)当 VMM 服务器用于管理主站点时，Site Recovery 如何映射源和目标网络。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1107_2016-->

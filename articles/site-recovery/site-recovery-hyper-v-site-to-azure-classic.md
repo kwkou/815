@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="rayne-wiselman"
 	manager="jwhit"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="site-recovery"
-	ms.date="05/03/2016"
-	wacn.date="06/06/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery"
+	ms.date="09/19/2016"
+	wacn.date="11/14/2016"
+	ms.author="raynew"/>  
+
 
 
 # 使用 Azure Site Recovery 在本地 Hyper-V 虚拟机与 Azure 之间复制（不使用 VMM）
@@ -29,13 +36,13 @@
 
 站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。
 
-站点恢复可用于许多方案，并可保护许多工作负荷。在 [What is Azure Site Recovery?（什么是 Azure Site Recovery？）](/documentation/articles/site-recovery-overview/)中了解详细信息。
+站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
 
 
 ## Azure 先决条件
 
 - 需要一个 [Azure](https://azure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
-- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction/)。请注意，我们不支持跨资源组移动使用[新 Azure 门户](/documentation/articles/storage-create-storage-account/)创建的存储帐户。
+- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction/)。请注意，不支持跨资源组移动使用[新 Azure 门户](/documentation/articles/storage-create-storage-account/)创建的存储帐户。
 - 你需要一个 Azure 虚拟网络，以便在从主站点故障转移时，Azure 虚拟机可以连接到网络。
 
 ## Hyper-V 先决条件
@@ -56,12 +63,13 @@
 - 建议你始终运行最新版本的提供程序和代理。可以在站点恢复门户中获取这些程序。
 - 保管库中的所有 Hyper-V 服务器应有相同版本的提供程序和代理。
 - 服务器上运行的提供程序通过 Internet 连接到站点恢复。你可以使用 Hyper-V 服务器上当前配置的代理设置或者使用你在安装提供程序期间配置的自定义代理设置，在不使用代理的情况下完成部署。需确保你要使用的代理服务器可以访问这些 URL 以连接到 Azure：
-	- **.hypervrecoverymanager.windowsazure.cn
-	- **.accesscontrol.chinacloudapi.cn
-	- **.backup.windowsazure.cn
-	- **.blob.core.chinacloudapi.cn
-	- **.store.core.chinacloudapi.cn
+	- *.hypervrecoverymanager.windowsazure.cn
+	- *.accesscontrol.chinacloudapi.cn
+	- *.backup.windowsazure.cn
+	- *.blob.core.chinacloudapi.cn
+	- *.store.core.chinacloudapi.cn
 	
+
 
 此图显示了站点恢复用来完成业务流程和复制的不同通信通道和端口
 
@@ -128,25 +136,22 @@
 
 8. 完成安装后，请继续设置以在保管库中注册服务器。
 
-	![安装完成](./media/site-recovery-hyper-v-site-to-azure-classic/provider3.png)
-
-
-9. 在“Internet 连接”页，指定提供程序如何连接到 Azure Site Recovery。选择“使用默认系统代理设置”以使用服务器上配置的默认 Internet 连接设置。如果你未指定值，系统将使用默认设置。
-
-	![Internet 设置](./media/site-recovery-hyper-v-site-to-azure-classic/provider4.png)
-
 9. 在“保管库设置”页上，单击“浏览”以选择密钥文件。指定 Azure Site Recovery 订阅、保管库名称和 Hyper-V 服务器所属的 Hyper-V 站点。
 
-	![服务器注册](./media/site-recovery-hyper-v-site-to-azure-classic/select-key.png)
+	![服务器注册](./media/site-recovery-hyper-v-site-to-azure-classic/provider8.PNG)  
+
+
+10. 在“Internet 连接”页，指定提供程序如何连接到 Azure Site Recovery。选择“使用默认系统代理设置”以使用服务器上配置的默认 Internet 连接设置。如果你未指定值，系统将使用默认设置。
+
+	![Internet 设置](./media/site-recovery-hyper-v-site-to-azure-classic/provider7.PNG)  
 
 
 11. 注册过程将开始在保管库中注册服务器。
 
-	![服务器注册](./media/site-recovery-hyper-v-site-to-azure-classic/provider5.png)
+	![服务器注册](./media/site-recovery-hyper-v-site-to-azure-classic/provider15.PNG)  
+
 
 11. 完成注册后，Azure Site Recovery 将检索 Hyper-V 服务器中的元数据，该服务器将显示在保管库中“服务器”页上的“Hyper-V 站点”选项卡上。
-
-	![服务器注册](./media/site-recovery-hyper-v-site-to-azure-classic/provider6.png)
 
 
 ### 从命令行安装提供程序
@@ -180,7 +185,7 @@
 
 1. 在“准备资源”中，选择“创建存储帐户”以创建一个 Azure 存储帐户（如果你没有的话）。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。
 
-	![创建存储帐户](./media/site-recovery-hyper-v-site-to-azure-classic/create-resources.png)
+	![创建存储帐户](./media/site-recovery-hyper-v-site-to-azure-classic/create-resources.png)  
 
 >[AZURE.NOTE] 我们不支持跨资源组移动使用[新 Azure 门户](/documentation/articles/storage-create-storage-account/)创建的存储帐户。
 
@@ -191,9 +196,10 @@
 
 1. 在“创建和配置保护组”中，单击“创建保护组”。如果缺少任何必备组件，系统将发出一条消息，你可以单击“查看详细信息”来了解详细信息。
 
-2. 在“保护组”选项卡中，添加一个保护组。指定名称、源 Hyper-V 站点、目标 **Azure**、你的 Azure Site Recovery 订阅名称和 Azure 存储帐户。
+2. 在“保护组”选项卡中，添加一个保护组。指定名称、源 Hyper-V 站点、目标 **Azure**、Azure Site Recovery 订阅名称和 Azure 存储帐户。
 
-	![保护组](./media/site-recovery-hyper-v-site-to-azure-classic/protection-group.png)
+	![保护组](./media/site-recovery-hyper-v-site-to-azure-classic/protection-group.png)  
+
 
 
 2. 在“复制设置”中设置“复制频率”，以指定在源和目标之间同步数据差异的频率。可以设置为 30 秒、5 分钟或 15 分钟。
@@ -201,7 +207,8 @@
 4. 在“与应用程序一致的快照的频率”中，可以指定是否拍摄使用卷影复制服务 (VSS) 的快照来确保在拍摄快照时应用程序处于一致状态。默认情况下不拍摄这些快照。请确保将此值设置为小于配置的附加恢复点数。仅当虚拟机运行 Windows 操作系统时，才支持此操作。
 5. 在“初始复制开始时间”中，指定何时应将保护组中虚拟机的初始复制发送到 Azure。
 
-	![保护组](./media/site-recovery-hyper-v-site-to-azure-classic/protection-group2.png)
+	![保护组](./media/site-recovery-hyper-v-site-to-azure-classic/protection-group2.png)  
+
 
 
 ## 步骤 6：启用虚拟机保护
@@ -214,7 +221,8 @@
 1. 在保护组的“计算机”选项卡上，单击“将虚拟机添加到保护组以启用保护”。
 2. 在“启用虚拟机保护”页上，选择你要保护的虚拟机。
 
-	![启用虚拟机保护](./media/site-recovery-hyper-v-site-to-azure-classic/add-vm.png)
+	![启用虚拟机保护](./media/site-recovery-hyper-v-site-to-azure-classic/add-vm.png)  
+
 
 	随后将开始运行“启用保护”作业。你可以在“作业”选项卡上跟踪进度。在“完成保护”作业运行之后，虚拟机就可以进行故障转移了。
 3. 在设置保护后，你可以：
@@ -224,7 +232,8 @@
 		- **名称**：虚拟机在 Azure 中的名称。
 		- **大小**：故障转移的虚拟机的目标大小。
 
-		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure-classic/vm-properties.png)
+		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure-classic/vm-properties.png)  
+
 	- 在“受保护的项”>“保护组”>“protectiongroup\_name”>“虚拟机”>“virtual\_machine\_name”>“配置”中配置其他虚拟机设置，包括：
 
 		- **网络适配器**：网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles/virtual-machines-linux-sizes/#size-tables)，了解虚拟机大小所支持的 NIC 数目。
@@ -235,12 +244,13 @@
 
 			- 如果源计算机上的网络适配器数小于或等于目标计算机大小允许的适配器数，则目标的适配器数将与源相同。
 			- 如果源虚拟机的适配器数大于目标大小允许的数目，则使用目标大小允许的最大数目。
-			- 例如，如果源计算机有两个网络适配器，而目标计算机大小支持四个，则目标计算机将有两个适配器。如果源计算机有两个适配器，但支持的目标大小只支持一个，则目标计算机只有一个适配器。 	
+			- 例如，如果源计算机有两个网络适配器，而目标计算机大小支持四个，则目标计算机将有两个适配器。如果源计算机有两个适配器，但支持的目标大小只支持一个，则目标计算机只有一个适配器。
 		- **Azure 网络**：指定虚拟机应故障转移到的网络。如果虚拟机有多个网络适配器，所有适配器应连接到同一个 Azure 网络。
 		- **子网**：对于虚拟机上的每个网络适配器，请在 Azure 网络中选择故障转移后计算机应连接到的子网。
-		- **目标 IP 地址**：如果源虚拟机的网络适配器配置为使用静态 IP 地址，那么你可以指定目标虚拟机的 IP 地址，以确保计算机在故障转移后具有相同的 IP 地址。如果不指定 IP 地址，将在故障转移时分配任何可用的地址。如果指定了正在使用的地址，故障转移将会失败。
+		- **目标 IP 地址**：如果源虚拟机的网络适配器配置为使用静态 IP 地址，则可以指定目标虚拟机的 IP 地址，确保计算机在故障转移后具有相同的 IP 地址。如果不指定 IP 地址，将在故障转移时分配任何可用的地址。如果指定了正在使用的地址，故障转移将会失败。
 
-		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure-classic/multiple-nic.png)
+		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure-classic/multiple-nic.png)  
+
 
 
 
@@ -270,14 +280,15 @@
 1. 在“恢复计划”选项卡上，选择该计划并单击“测试故障转移”。
 2. 在“确认测试故障转移”页上，选择“无”或选择一个特定的 Azure 网络。请注意，如果你选择了“无”，则测试故障转移将检查虚拟机是否可以正确复制到 Azure，但不会检查你的复制网络配置。
 
-	![测试故障转移](./media/site-recovery-hyper-v-site-to-azure-classic/test-nonetwork.png)
+	![测试故障转移](./media/site-recovery-hyper-v-site-to-azure-classic/test-nonetwork.png)  
+
 
 3. 在“作业”选项卡上，你可以跟踪故障转移进度。在 Azure 门户中，你应当也能够看到虚拟机测试副本。如果你已设置为从本地网络访问虚拟机，则可以启动与虚拟机的远程桌面连接。
 4. 在故障转移到达“完成测试”阶段时，单击“完成测试”以结束测试故障转移。你可以向下钻取到“作业”选项卡来跟踪故障转移进度和状态以及执行所需的任何操作。
 5. 在故障转移后，你将能够在 Azure 门户中看到虚拟机测试副本。如果你已设置为从本地网络访问虚拟机，则可以启动与虚拟机的远程桌面连接。
 
 	1. 验证虚拟机成功启动。
-    2. 如果想要在故障转移之后使用远程桌面连接到 Azure 中的虚拟机，请在虚拟机上启用远程桌面连接，然后运行测试故障转移。还需要在虚拟机上添加 RDP 终结点。你可以利用 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation/) 来执行此操作。
+    2. 如果想要在故障转移之后使用远程桌面连接到 Azure 中的虚拟机，请在虚拟机上启用远程桌面连接，然后运行测试故障转移。还需要在虚拟机上添加 RDP 终结点。可以利用 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation/) 来执行此操作。
     3. 故障转移后，如果想要在远程桌面中使用公共 IP 地址连接到 Azure 中的虚拟机，请确保没有任何域策略阻止你使用公共地址连接到虚拟机。
 
 6. 完成测试后，执行以下操作：
@@ -295,4 +306,4 @@
 
 设置并运行部署以后，请[详细了解](/documentation/articles/site-recovery-failover/)故障转移。
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_1107_2016-->

@@ -7,14 +7,21 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags
-	ms.service="site-recovery"
-	ms.date="07/08/2016" 
-	wacn.date="08/01/2016"/>
+
+<tags 
+	ms.service="site-recovery" 
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery" 
+	ms.date="10/05/2016"
+	wacn.date="11/14/2016"
+	ms.author="raynew"/>  
+
 
 # 创建恢复计划
 
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。可将虚拟机复制到 Azure 或辅助本地数据中心。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)。
+Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)。
 
 
 ## 概述
@@ -110,7 +117,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 1. 打开要自定义的恢复脚本。
 2. 单击相应的控件添加虚拟机或新组。
 3. 若要添加脚本或手动操作，请单击“步骤”列表中的任意项，然后单击“脚本”或“手动操作”。指定是要在选定项的前面还是后面添加该脚本或操作。使用“上移”和“下移”命令按钮可以上下移动脚本的位置。
-4. 如果你要添加 VMM 脚本，请选择“故障转移到 VMM 脚本”，然后在“脚本路径”中键入共享的相对路径。对于本示例，共享位于 \<VMMServerName>\\MSSCVMMLibrary\\RPScripts 中，因此请指定路径：\\RPScripts\\RPScript.PS1。
+4. 如果你要添加 VMM 脚本，请选择“故障转移到 VMM 脚本”，然后在“脚本路径”中键入共享的相对路径。对于本示例，共享位于 \\<VMMServerName>\\MSSCVMMLibrary\\RPScripts 中，因此请指定路径：\\RPScripts\\RPScript.PS1。
 5. 如果你要添加 Azure 自动化 Runbook，请指定该 Runbook 所在的 **Azure 自动化帐户**，然后选择相应的 **Azure Runbook 脚本**。
 5. 执行恢复计划故障转移，以确保脚本按预期运行。
 
@@ -122,4 +129,4 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1107_2016-->

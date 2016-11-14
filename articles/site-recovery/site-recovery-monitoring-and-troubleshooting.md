@@ -5,12 +5,19 @@
 	documentationCenter="" 
 	authors="anbacker" 
 	manager="mkjain" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="07/06/2016" 
-	wacn.date="08/01/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery" 
+	ms.date="10/13/2016"	
+	wacn.date="11/14/2016"
+	ms.author="rajanaki"/>  
+
 	
 # 监视虚拟机和物理服务器的保护及其故障排除
 
@@ -33,7 +40,8 @@
 
 在本地和 Azure 之间设置 DR 的一部分操作；下载 Azure Site Recovery 提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
 
-![用于在本地与 Azure 之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image2.png)
+![用于在本地与 Azure 之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image2.png)  
+
 
 ### 用于在本地与 Azure 之间复制的 Hyper-V 站点部署
 
@@ -200,4 +208,4 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 ### 故障转移后进行远程桌面故障排除
 -   许多客户在连接到 Azure 中已故障转移的 VM 时会遇到问题。[参考故障排除文档使用 RDP 连接到 VM](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1107_2016-->

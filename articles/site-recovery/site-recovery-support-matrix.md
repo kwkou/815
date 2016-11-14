@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="rayne-wiselman"
 	manager="jwhit"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="site-recovery"
@@ -13,31 +14,31 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="09/07/2016"
-	wacn.date="10/10/2016"
+	ms.date="10/05/2016"
+	wacn.date="11/14/2016"
 	ms.author="raynew"/>
 
 # Azure Site Recovery 支持矩阵
 
-本文汇总了 Azure Site Recovery 部署支持的操作系统和组件。每篇部署文章中均提供有每种可用部署方案支持的组件和先决条件的列表，而本文是对这些内容的汇总。
+本文汇总了 Azure Site Recovery 部署支持的操作系统和组件。每篇相应部署文章中均提供有每种可用部署方案支持的组件和先决条件的列表，本文档是对这些内容的汇总。
 
 ## 虚拟化服务器支持的操作系统
 
 
-**复制** | **复制内容** | **复制目标** | **主机 OS**
+**源** | **目标** | **主机 OS**
 ---|---|---|--- 
-**Hyper-V 主机** | 任何工作负荷 | Azure | 带有最新更新的 Windows Server 2012 R2
-**VMM 云中的 Hyper-V 主机** | 任何工作负荷 | Azure | 带有最新更新的 Windows Server 2012 R2
-**VMM 云中的 Hyper-V 主机** | 任何工作负荷 | 辅助 VMM 站点 | 至少为装有最新更新的 Windows Server 2012
+**Hyper-V 主机（不包含 VMM）** | Azure | 带有最新更新的 Windows Server 2012 R2
+**Hyper-V 主机（包含 VMM）** | Azure | 带有最新更新的 Windows Server 2012 R2
+**Hyper-V 主机（包含 VMM）** | 辅助 VMM 站点 | 至少为装有最新更新的 Windows Server 2012
 
 
 ## 复制计算机的支持要求
 
-**复制** | **复制内容** | **复制目标** | **主机 OS**
+**源** | **复制内容** | **目标** | **主机 OS**
 ---|---|---|--- 
 **Hyper-V VM** | 任何工作负荷 | Azure | [Azure 支持的](https://technet.microsoft.com/zh-cn/library/cc794868.aspx)任何来宾 OS<br/><br/> VM 必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)
-**VMM 云中的 Hyper-V VM** | 任何工作负荷 | Azure | [Azure 支持的](https://technet.microsoft.com/zh-cn/library/cc794868.aspx)任何来宾 OS<br/><br/> VM 必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)
-**VMM 云中的 Hyper-V VM** | 任何工作负荷 | 辅助 VMM 站点 | [Hyper-V 支持的](https://technet.microsoft.com/zh-cn/library/mt126277.aspx)任何来宾 OS
+**Hyper-V VM（包含 VMM）** | 任何工作负荷 | Azure | [Azure 支持的](https://technet.microsoft.com/zh-cn/library/cc794868.aspx)任何来宾 OS<br/><br/> VM 必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)
+**Hyper-V VM（包含 VMM）** | 任何工作负荷 | 辅助 VMM 站点 | [Hyper-V 支持的](https://technet.microsoft.com/zh-cn/library/mt126277.aspx)任何来宾 OS
 **物理服务器** | 在 Windows 上运行的任何工作负荷 | Azure | 64 位 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 SP1 及其更高版本
 **物理服务器** | 在 Linux 上运行的任何工作负荷 | Azure | Red Hat Enterprise Linux 6.7、7.1、7.2 <br/><br/> Centos 6.5、6.6、6.7、7.0、7.1、7.2 <br/><br/> Oracle Enterprise Linux 6.4、6.5（运行 Red Hat 兼容内核或 Unbreakable Enterprise Kernel Release 3 (UEK3)）<br/><br/> SUSE Linux Enterprise Server 11 SP3 <br/><br/> 所需的存储：文件系统 (EXT3, ETX4, ReiserFS, XFS)；多路径软件设备映射器 (multipath))；卷管理器：(LVM2)。不支持使用 HP CCISS 控制器存储的物理服务器。ReiserFS 文件系统仅在 SUSE Linux Enterprise Server 11 SP3 上受支持。
 **物理服务器** | 在 Windows 上运行的任何工作负荷 | 辅助站点 | 64 位 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 SP1 及其更高版本
@@ -55,4 +56,4 @@
 
 [准备部署](/documentation/articles/site-recovery-best-practices/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1107_2016-->
