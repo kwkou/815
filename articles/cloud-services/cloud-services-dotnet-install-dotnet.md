@@ -9,8 +9,14 @@
 
 <tags
    ms.service="cloud-services"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="08/10/2016"
-   wacn.date="09/19/2016"/>
+   ms.author="adegeo"
+   wacn.date="11/14/2016"/>
+
 
 # 在云服务角色上安装 .NET 
 

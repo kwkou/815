@@ -3,14 +3,20 @@
    description="介绍有关 Microsoft 对云服务使用的 Azure 来宾 OS 提供的支持的信息。" 
    services="cloud-services" 
    documentationCenter="na" 
-   authors="yuemlu" 
+   authors="raiye" 
    manager="timlt" 
    editor=""/>
 
 <tags
    ms.service="cloud-services"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd" 
    ms.date="04/19/2016"
-   wacn.date="05/31/2016"/>
+   ms.author="raiye"
+   wacn.date="11/14/2016"/>
+
 
 # Azure 来宾 OS 可支持性和停用策略
 本页面上的信息与 Azure 来宾操作系统（[来宾 OS](/documentation/articles/cloud-services-guestos-update-matrix/)）相关。来宾 OS 仅适用于云服务辅助角色和 Web 角色 (PaaS)，而不适用于虚拟机 (IaaS)。

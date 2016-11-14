@@ -3,14 +3,19 @@
    description="提供有关 Azure 来宾 OS 系列 1 何时停用以及如何判断你是否受影响的信息"
    services="cloud-services"
    documentationCenter="na"
-   authors="yuemlu"
+   authors="raiye"
    manager="timlt"
    editor=""/>
 
 <tags
    ms.service="cloud-services"
-   ms.date="06/10/2015"
-   wacn.date="07/18/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd"
+   ms.date="06/10/2016"
+   ms.author="raiye"
+   wacn.date="11/14/2016"/>
 
 
 

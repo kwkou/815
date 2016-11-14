@@ -9,8 +9,14 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="07/27/2016"
-	wacn.date="09/19/2016"/>
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/11/2016"
+	ms.author="adegeo"
+	wacn.date="11/14/2016"/>
+
 
 
 
