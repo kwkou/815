@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="cloud-services"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="07/30/2016"
-	wacn.date="09/19/2016"/>
+	ms.author="tarcher"
+	wacn.date="11/14/2016"/>
+
 
 # 在 Azure 中持续交付云服务
 

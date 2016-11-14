@@ -3,18 +3,74 @@
    description="适用于 Azure 来宾 OS 版本的更新列表" 
    services="cloud-services" 
    documentationCenter="na" 
-   authors="yuemlu" 
-   manager="timlt" 
-   editor=""/>
+   authors="raiye" 
+   manager="markkie" 
+   editor=""/>  
+
 
 <tags
    ms.service="cloud-services"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd" 
    ms.date="08/17/2016"
-   wacn.date="10/24/2016"/>
+   ms.author="raiye"
+   wacn.date="11/14/2016"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 10 月来宾 OS 
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-118 | [3192887] | Internet Explorer 的累积安全更新 | 4\.37、3.44、2.56 | 2016 年 10 月 11 日 |
+| MS16-120 | [3192884] | Microsoft 图形组件的安全更新| 4\.37、3.44、2.56 | 2016 年 10 月 11 日 |
+| MS16-123 | [3192892] | 内核模式驱动程序的安全更新 | 4\.37、3.44、2.56 | 2016 年 10 月 11 日 |
+| MS16-124 | [3193227] | Windows 注册表的安全更新 | 4\.37、3.44、2.56 | 2016 年 10 月 11 日 |
+| MS16-126 | [3196067] | Microsoft Internet 消息处理 API 的安全更新 | 2\.56 | 2016 年 10 月 11 日 |
+| MS16-101 | [3178465] | Windows 身份验证方法的安全更新 | 4\.37、3.44、2.56 | 2016 年 10 月 11 日 |
+| | [3182203] | 2016 年 9 月针对西伯利亚的时区更改 | 4\.37、3.44、2.56 | 2016 年 10 月 11 日 |
+| | [3185278] | 适用于 Windows 7 SP1 和 Windows Server 2008 R2 SP1 的 2016 年 9 月更新汇总 | 2\.56 | 2016 年 10 月 11 日 |
+| | [3185280] | 适用于 Windows Server 2012 的 2016 年 9 月更新汇总 | 3\.44 | 2016 年 10 月 11 日 |
+| | [3185279] | 适用于 Windows 8.1 和 Windows Server 2012 R2 的 2016 年 9 月更新汇总 | 4\.37 | 2016 年 10 月 11 日 |
+[//]: # " | | [3194798] | 适用于 Windows 10 Version 1607 和 Windows Server 2016 的累积更新 | 5\.2 | 2016 年 10 月 11 日 |"
+
+## 9 月来宾 OS 
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-104 | [3183038] | Internet Explorer 的累积安全更新 | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| MS16-106 | [3185848] | Microsoft 图形组件的安全更新 | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| MS16-110 | [3178467] | Windows 的安全更新 | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| MS16-111 | [3186973] | Windows 内核的安全更新 | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| MS16-112 | [3178469] | Windows 锁屏的安全更新 | 4\.36 | 2016 年 9 月 13 日 |
+| MS16-114 | [3185879] | Windows SMB 服务器的安全更新 | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| MS16-115 | [3188733] | PDF 的安全更新 | 4\.35、3.43 | 2016 年 9 月 13 日 |
+| MS16-116 | [3188724] | 适用于 VBScript 脚本引擎的 OLE 自动化中的安全更新 | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| | [3174644] | 更新的 Diffie-Hellman 密钥交换支持 | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| | [3177723] | 时区更新 - 埃及取消了 DST | 4\.36、3.43、2.55 | 2016 年 9 月 13 日 |
+| | [3179573] | 适用于 Windows 7 SP1 和 Windows Server 2008 R2 SP1 的 2016 年 8 月更新汇总 | 2\.55 | 2016 年 9 月 13 日 |
+| | [3179575] | 适用于 Windows Server 2012 的 2016 年 8 月更新汇总 | 3\.43 | 2016 年 9 月 13 日 |
+| | [3179574] | 适用于 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的 2016 年 8 月更新汇总 | 4\.36 | 2016 年 9 月 13 日 |
+
+
+## 8 月来宾 OS 
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-095 | [3177356] | Internet Explorer 的累积安全更新 | 4\.35、3.42、2.54 | 2016 年 8 月 9 日 |
+| MS16-097 | [3177393] | Microsoft 图形组件的安全更新 | 4\.35、3.42、2.54 | 2016 年 8 月 9 日 |
+| MS16-098 | [3178466] | Windows 内核模式驱动程序的安全更新 | 4\.35、3.42、2.54 | 2016 年 8 月 9 日 |
+| MS16-100 | [3179577] | 安全启动的安全更新 | 4\.35、3.42 | 2016 年 8 月 9 日 |
+| MS16-101 | [3178465] | Windows 身份验证方法的安全更新 | 4\.35、3.42、2.54 | 2016 年 8 月 9 日 |
+| MS16-102 | [3182248] | Microsoft Windows PDF 库的安全更新 | 4\.35、3.42 | 2016 年 8 月 9 日 |
+| MS16-077 再发布版 | [3165191] | Web 代理服务器自动发现协议 (WPAD) 的安全更新 | 4\.35、3.42、2.54 | 2016 年 8 月 9 日 |
+| | [3172605] | 适用于 Windows 7 SP1 和 Windows Server 2008 R2 SP1 的 2016 年 7 月更新汇总 | 2\.54 | 2016 年 8 月 9 日 |
+| | [3172615] | 适用于 Windows Server 2012 的 2016 年 7 月更新汇总 | 3\.42 | 2016 年 8 月 9 日 |
+| | [3172614] | 适用于 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新汇总 | 4\.35 | 2016 年 8 月 9 日 |
 
 ## 7 月来宾 OS 
 
@@ -330,7 +386,41 @@
 | 不适用 | [2999802][2999802] | 在 Windows 中打印时，虚线变成实线 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 
+[3192887]: http://support.microsoft.com/zh-cn/kb/3192887
+[3192884]: http://support.microsoft.com/zh-cn/kb/3192884
+[3192892]: http://support.microsoft.com/zh-cn/kb/3192892
+[3193227]: http://support.microsoft.com/zh-cn/kb/3193227
+[3196067]: http://support.microsoft.com/zh-cn/kb/3196067
+[3178465]: http://support.microsoft.com/zh-cn/kb/3178465
+[3182203]: http://support.microsoft.com/zh-cn/kb/3182203
+[3185278]: http://support.microsoft.com/zh-cn/kb/3185278
+[3185280]: http://support.microsoft.com/zh-cn/kb/3185280
+[3185279]: http://support.microsoft.com/zh-cn/kb/3185279
+[3194798]: http://support.microsoft.com/zh-cn/kb/3194798
 
+[3183038]: http://support.microsoft.com/zh-cn/kb/3183038
+[3185848]: http://support.microsoft.com/zh-cn/kb/3185848
+[3178467]: http://support.microsoft.com/zh-cn/kb/3178467
+[3186973]: http://support.microsoft.com/zh-cn/kb/3186973
+[3178469]: http://support.microsoft.com/zh-cn/kb/3178469
+[3185879]: http://support.microsoft.com/zh-cn/kb/3185879
+[3188733]: http://support.microsoft.com/zh-cn/kb/3188733
+[3188724]: http://support.microsoft.com/zh-cn/kb/3188724
+[3174644]: http://support.microsoft.com/zh-cn/kb/3174644
+[3177723]: http://support.microsoft.com/zh-cn/kb/3177723
+[3179573]: http://support.microsoft.com/zh-cn/kb/3179573
+[3179575]: http://support.microsoft.com/zh-cn/kb/3179575
+[3179574]: http://support.microsoft.com/zh-cn/kb/3179574
+[3177356]: http://support.microsoft.com/zh-cn/kb/3177356
+[3177393]: http://support.microsoft.com/zh-cn/kb/3177393
+[3178466]: http://support.microsoft.com/zh-cn/kb/3178466
+[3179577]: http://support.microsoft.com/zh-cn/kb/3179577
+[3178465]: http://support.microsoft.com/zh-cn/kb/3178465
+[3182248]: http://support.microsoft.com/zh-cn/kb/3182248
+[3165191]: http://support.microsoft.com/zh-cn/kb/3165191
+[3172605]: http://support.microsoft.com/zh-cn/kb/3172605
+[3172614]: http://support.microsoft.com/zh-cn/kb/3172614
+[3172615]: http://support.microsoft.com/zh-cn/kb/3172615
 [3169991]: http://support.microsoft.com/zh-cn/kb/3169991
 [3170005]: http://support.microsoft.com/zh-cn/kb/3170005
 [3170050]: http://support.microsoft.com/zh-cn/kb/3170050
@@ -570,4 +660,4 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_1107_2016-->

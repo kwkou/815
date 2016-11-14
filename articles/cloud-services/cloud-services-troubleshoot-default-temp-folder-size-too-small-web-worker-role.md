@@ -9,8 +9,14 @@
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
-   ms.date="07/19/2016"
-   wacn.date="09/19/2016" />
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd"
+   ms.date="10/12/2016"
+   ms.author="v-six"
+   wacn.date="11/14/2016"/>
+
 
 # 云服务 Web 角色/辅助角色的默认 TEMP 文件夹大小太小
 

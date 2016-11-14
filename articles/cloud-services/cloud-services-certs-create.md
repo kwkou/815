@@ -9,8 +9,14 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="07/05/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/11/2016"
+	ms.author="adegeo"
+	wacn.date="11/14/2016"/>
+
 
 # Azure 云服务证书概述
 证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于通过管理 API 进行身份验证（[管理证书](#what-are-management-certificates)，适用于使用 Azure 经典管理门户而不是 ARM 的场合）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)以及将其[部署](#deploy)到 Azure。
