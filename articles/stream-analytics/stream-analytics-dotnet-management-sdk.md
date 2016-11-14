@@ -5,13 +5,19 @@
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
-	manager="paulettm"
-	editor="cgronlun"/>
+	manager="jhubbard"
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="07/27/2016"
-	wacn.date="09/26/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"/>  
+
 
 
 # 管理 .NET SDK：设置和运行使用 .NET 版 Azure 流分析 API 的分析作业
@@ -27,8 +33,8 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 在开始阅读本文前，你必须具有：
 
 - 安装 Visual Studio 2012 或 2013
-- 下载和安装 [Azure .NET SDK](/downloads/)。 
-- 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)；  
+- 下载和安装 [Azure .NET SDK](/downloads/)。
+- 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)；
 
 
 		# Log in to your Azure account
@@ -71,7 +77,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 		</appSettings>
 
 
-	将 **SubscriptionId** 和 **ActiveDirectoryTenantId** 的值替换为你的 Azure 订阅和租户 ID。你可以通过运行以下 Azure PowerShell cmdlet 来获取这些值：
+	将 **SubscriptionId** 和 **ActiveDirectoryTenantId** 的值替换为 Azure 订阅和租户 ID。你可以通过运行以下 Azure PowerShell cmdlet 来获取这些值：
 
 		Get-AzureAccount
 
@@ -147,7 +153,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 **resourceGroupName** 变量的值应该与你在先决条件步骤中创建或选取的资源组的名称相同。
 
-若要自动执行凭据演示方面的作业创建，请参阅[使用 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
+若要自动执行凭据演示方面的作业创建，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
 
 本文的剩余部分假定此代码位于 **Main** 方法的开头。
 
@@ -324,7 +330,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 
 ## 获取支持
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)。
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。
 
 
 ## 后续步骤
@@ -340,16 +346,18 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 
 <!--Image references-->
+
 [5]: ./media/markdown-template-for-new-articles/octocats.png
 [6]: ./media/markdown-template-for-new-articles/pretty49.png
 [7]: ./media/markdown-template-for-new-articles/channel-9.png
 
 
 <!--Link references-->
+
 [azure.blob.storage]: /documentation/services/storage/
 [azure.blob.storage.use]: /documentation/articles/storage-dotnet-how-to-use-blobs/
 
-[azure.event.hubs]: /services/event-hubs/
+[azure.event.hubs]: /home/features/event-hubs/
 [azure.event.hubs.developer.guide]: http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx
 
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
@@ -362,4 +370,4 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_1107_2016-->

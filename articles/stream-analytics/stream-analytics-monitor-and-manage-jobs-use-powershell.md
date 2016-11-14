@@ -5,13 +5,19 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
-	editor="cgronlun"/>
+	manager="jhubbard" 
+	editor="cgronlun"/>  
+
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="07/27/2016" 
-	wacn.date="09/26/2016"/>
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="data-services" 
+	ms.date="09/26/2016" 
+	wacn.date="11/14/2016"/>  
+
 
 
 # 使用 Azure PowerShell cmdlet 监视和管理流分析作业
@@ -20,7 +26,7 @@
 
 ## 针对流分析运行 Azure PowerShell cmdlet 的先决条件
 
- - 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)；  
+ - 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)；
 
 Azure PowerShell 0.9.8：
 
@@ -70,7 +76,7 @@ Azure PowerShell 1.0：
 
 	Get-AzureRMStreamAnalyticsJob
 
-此 PowerShell 命令在 Azure 订阅中返回有关所有流分析作业的信息。
+此 PowerShell 命令返回 Azure 订阅中所有关于流分析作业的信息。
 
 **示例 2**
 
@@ -333,8 +339,7 @@ Azure PowerShell 1.0：
  此 PowerShell 命令替换作业 StreamingJob 中 StreamingJobTransform 的定义。
 
 ### Remove-AzureStreamAnalyticsInput | Remove-AzureRMStreamAnalyticsInput
-以异步方式从  Azure 的流分析作业中删除特定的输入。  
-如果指定 -Force 参数，则会在不确认的情况下删除输入。
+以异步方式从 Microsoft Azure 的流分析作业中删除特定的输入。如果指定 -Force 参数，则会在不确认的情况下删除输入。
 
 **示例 1**
 
@@ -349,8 +354,7 @@ Azure PowerShell 1.0：
 此 PowerShell 命令删除作业 StreamingJob 中的输入 EventStream。
 
 ### Remove-AzureStreamAnalyticsJob | Remove-AzureRMStreamAnalyticsJob
-以异步方式删除  Azure 中的特定流分析作业。  
-如果指定 -Force 参数，则会在不确认的情况下删除作业。
+以异步方式删除 Microsoft Azure 中的特定流分析作业。如果指定 -Force 参数，则会在不确认的情况下删除作业。
 
 **示例 1**
 
@@ -365,8 +369,7 @@ Azure PowerShell 1.0：
 此 PowerShell 命令删除作业 StreamingJob。
 
 ### Remove-AzureStreamAnalyticsOutput | Remove-AzureRMStreamAnalyticsOutput
-以异步方式从  Azure 的流分析作业中删除特定的输出。  
-如果指定 -Force 参数，则会在不确认的情况下删除输出。
+以异步方式从 Azure 的流分析作业中删除特定的输出。如果指定 -Force 参数，则会在不确认的情况下删除输出。
 
 **示例 1**
 
@@ -471,4 +474,4 @@ Azure PowerShell 1.0：
 [stream.analytics.rest.api.reference]: https://msdn.microsoft.com/zh-cn/library/dn835031.aspx
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_1107_2016-->

@@ -5,14 +5,19 @@
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>  
 
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="07/27/2016"
-	wacn.date="09/26/2016"/>  
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"/>  
+
 
 # 数据连接：了解从事件到流分析的数据流输入
 
@@ -25,8 +30,7 @@
 数据流是一段时间内不受限制的事件序列。流分析作业必须包含至少一种可供作业使用和转换的数据流输入。Blob 存储、事件中心和 IoT 中心均可作为数据流输入源。事件中心用于从多个设备和服务（例如传感器提供的社交媒体活动源、股票交易信息或数据）收集事件流。IoT 中心经过优化以从物联网 (IoT) 方案中连接的设备收集数据。Blob 存储可用作按流的形式引入大量数据的输入源。
 
 ### 引用数据
-流分析支持称为引用数据的第二类输入。此类数据为辅助数据，处于静态或者缓慢变化状态，通常用于执行关联性操作和查找操作。目前只支持使用 Azure Blob 存储作为引用数据的输入源。引用数据源 Blob 存在 100MB 的大小限制。
-	若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data/)
+流分析支持称为引用数据的第二类输入。此类数据为辅助数据，处于静态或者缓慢变化状态，通常用于执行关联性操作和查找操作。目前只支持使用 Azure Blob 存储作为引用数据的输入源。引用数据源 Blob 存在 100MB 的大小限制。若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data/)
 
 ## 通过事件中心创建数据流输入
 
@@ -73,8 +77,7 @@
 
 ## 创建 IoT 中心数据流输入
 
-Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发布-订阅事件引入器。
-需要注意的是，来自流分析中 IoT 中心的事件默认时间戳是事件到达 IoT 中心的时间戳，即 EventEnqueuedUtcTime。若要在事件负载中使用时间戳以流方式处理数据，必须使用 [TIMESTAMP BY](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx) 关键字。
+Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发布-订阅事件引入器。需要注意的是，来自流分析中 IoT 中心的事件默认时间戳是事件到达 IoT 中心的时间戳，即 EventEnqueuedUtcTime。若要在事件负载中使用时间戳以流方式处理数据，必须使用 [TIMESTAMP BY](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx) 关键字。
 
 > [AZURE.NOTE] 只能处理使用 DeviceClient 属性发送的消息。
 
@@ -148,8 +151,7 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 </tr>
 <tr>
 <td>路径前缀模式 [可选]</td>
-<td>用于对指定容器中的 blob 进行定位的文件路径。
-在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}<P>请注意，“*”不是路径前缀允许使用的值。仅允许使用有效的 <a HREF="https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx">Azure blob 字符</a>。</td>
+<td>用于对指定容器中的 blob 进行定位的文件路径。在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}<P>请注意，“*”不是路径前缀允许使用的值。仅允许使用有效的 <a HREF="https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx">Azure blob 字符</a>。</td>
 </tr>
 <tr>
 <td>日期格式 [可选]</td>
@@ -214,4 +216,4 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1107_2016-->

@@ -6,7 +6,8 @@
 	documentationCenter="" 
 	authors="jeffstokes72"
 	manager="jhubbard" 
-	editor="cgronlun"/>
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="stream-analytics"
@@ -14,8 +15,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="08/29/2016"
-	wacn.date="10/10/2016"/>
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"/>
 
 # 流分析输出：存储、分析选项
 
@@ -228,4 +229,4 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1107_2016-->

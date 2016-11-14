@@ -5,13 +5,19 @@
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
-	manager="paulettm"
-	editor="cgronlun" />
+	manager="jhubbard"
+	editor="cgronlun" />  
+
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="07/27/2016"
-	wacn.date="09/26/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016" />  
+
 
 
 
@@ -32,7 +38,7 @@
 
 ## 先决条件
 
-- 从 Microsoft 下载中心下载 [TelcoGenerator.zip](http://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip) 
+- 从 Microsoft 下载中心下载 [TelcoGenerator.zip](http://download.microsoft.com/download/8/B/D/8BD50991-8D54-4F59-AB83-3354B69C8A7E/TelcoGenerator.zip)
 - 或者，从 [GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator) 获取事件生成器的源代码
 
 ## 创建 Azure 事件中心输入和使用者组
@@ -62,7 +68,7 @@
 2.	将 **telcodatagen.exe.config** 中的 Microsoft.ServiceBus.ConnectionString 和 EventHubName 值替换为事件中心的连接字符串和名称。
 3.	启动应用程序。用法如下：
 
-        telcodatagen.exe [#NumCDRsPerHour] [SIM Card Fraud Probability] [#DurationHours]
+   telcodatagen.exe [#NumCDRsPerHour] [SIM Card Fraud Probability] [#DurationHours]
 
 以下示例将生成 1000 个事件，在为时 2 小时的过程中，有 20% 的可能性会出现欺诈行为。
 
@@ -87,8 +93,11 @@
 
 1.	在 Azure 经典管理门户中，单击**“新建 > 数据服务 > 流分析 > 快速创建”**。
 2.	指定以下值，然后单击**“创建流分析作业”**：
+
 	* **作业名称**：输入作业名称。
+
 	* **区域**：选择要在其中运行作业的区域。考虑将作业和事件中心放在同一区域，以确保获得更好的性能，并确保在不同区域之间传输数据时不需付费。
+
 	* **存储帐户**：选择要使用的 Azure 存储帐户，以便为所有在此区域运行的流分析作业存储监视数据。你可以选择现有存储帐户，也可以创建新的存储帐户。
 
 3.	单击左窗格中的**“流分析”**，列出流分析作业。
@@ -102,14 +111,20 @@
 2.	选择**“数据流”**，然后单击右侧的按钮。
 3.	选择**“事件中心”**，然后单击右侧的按钮。
 4.	在第三页中键入或选择以下值：
-	* **输入别名**：输入此作业输入的友好名称，如 CallStream。请注意，你需要在后面的查询中使用此名称。
-	* **事件中心**：如果你创建的事件中心与流分析作业属于同一订阅，请选择事件中心所在的命名空间。
+
+	* **输入别名**：输入此作业输入的友好名称，如 *CallStream*。请注意，你需要在后面的查询中使用此名称。
+	* **事件中心**：如果创建的事件中心与流分析作业属于同一订阅，请选择事件中心所在的命名空间。
+
 	如果你的事件中心属于其他订阅，请选择**“使用其他订阅的事件中心”**，然后手动输入以下项目的相关信息：**Service Bus 命名空间**、**事件中心名称**、**事件中心策略名称**、**事件中心策略密钥**以及**事件中心分区计数**。
+
 	* **事件中心名称**：选择事件中心的名称。
+
 	* **事件中心策略名称**：选择此前在本教程中创建的事件中心策略。
+
 	* **事件中心使用者组**：键入此前在本教程中创建的使用者组。
 5.	单击右侧按钮。
 6.	指定以下值：
+
 	* **事件序列化程序格式**：JSON
 	* **编码**：UTF8
 7.	单击相应勾选按钮以添加此源，并确保流分析可以成功连接到事件中心。
@@ -211,7 +226,7 @@
 3.	在第三页中键入或选择以下值：
 
 	* **输出别名**：输入此作业输出的友好名称。
-	* **订阅**：如果你创建的 Blob 存储与流分析作业属于同一订阅，请选择**“使用当前订阅中的存储帐户”**。如果你的存储属于其他订阅，请选择**“使用其他订阅中的存储帐户”**，然后针对**“存储帐户”**、**“存储帐户密钥”**、**“容器”**手动输入相关信息。
+	* **订阅**：如果创建的 Blob 存储与流分析作业属于同一订阅，请选择“使用当前订阅中的存储帐户”。如果存储属于其他订阅，请选择“使用其他订阅中的存储帐户”，然后针对“存储帐户”、“存储帐户密钥”、“容器”手动输入相关信息。
 	* **存储帐户**：选择存储帐户的名称。
 	* **容器**：选择容器的名称。
 	* **文件名前缀**：键入写入 blob 输出时要使用的文件前缀。
@@ -249,4 +264,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1107_2016-->
