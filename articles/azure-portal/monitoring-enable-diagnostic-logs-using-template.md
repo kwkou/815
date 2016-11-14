@@ -118,7 +118,7 @@
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[parameters('nsgName')]",
             "apiVersion": "2016-03-30",
-            "location": "westus",
+            "location": "chinaeast",
             "properties": {
                 "securityRules": []
             },

@@ -35,7 +35,7 @@
 
     $subscriptionId = "{azure-subscription-id}"
     $resourceGroupName = "{resource-group-name}"
-    $location = "centralus"
+    $location = "chinaeast"
     
     # Authenticate to a specific Azure subscription.
     Login-AzureRmAccount -SubscriptionId $subscriptionId
