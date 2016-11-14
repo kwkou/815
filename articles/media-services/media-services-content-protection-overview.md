@@ -89,7 +89,7 @@ Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft 
 	- **cbc aapl**：Fairplay
 	- **cbc**：AES 信封加密。
 
-##常见方案
+##<a id="common-scenarios"></a>常见方案
 
 以下主题演示如何在存储中保护内容、以动态方式传送加密的流媒体、使用 AMS 密钥/许可证传送服务
 
