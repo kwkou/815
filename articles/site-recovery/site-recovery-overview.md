@@ -51,9 +51,8 @@ Site Recovery 可以协调本地物理服务器和虚拟机上运行的工作负
 
 **REPLICATE** | **REPLICATE TO** 
 ---|---
-
 在 VMM 云中管理的本地 Hyper-V VM 上运行的工作负荷 | [Azure](/documentation/articles/site-recovery-vmm-to-azure/)<br/><br/> [辅助站点](/documentation/articles/site-recovery-vmm-to-vmm/) 
-在 VMM 云中管理的、具有 SAN 存储的本地 Hyper-V VM 上运行的工作负荷| [辅助站点](/documentation/articles/site-recovery-vmm-san/)
+在 VMM 云中管理的、具有 SAN 存储的本地 Hyper-V VM 上运行的工作负荷 | [辅助站点](/documentation/articles/site-recovery-vmm-san/)
 在不包含 VMM 的本地 Hyper-V VM 上运行的工作负荷 | [Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
 
 
