@@ -5,13 +5,18 @@
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
-	manager="paulettm"
-	editor="cgronlun"/>
+	manager="jhubbard"
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="07/27/2016"
-	wacn.date="09/26/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"/>  
 
 
 # 帮助你选择流分析平台：Apache Storm 与 Azure 流分析的比较
@@ -585,4 +590,4 @@
     </tbody>
 </table>
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_1107_2016-->

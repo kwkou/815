@@ -5,14 +5,19 @@
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
-/>
+/>  
+
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="08/08/2016"
-	wacn.date="09/12/2016" 
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"
 />  
 
 
@@ -54,4 +59,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1107_2016-->

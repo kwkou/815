@@ -5,13 +5,19 @@
 	services="stream-analytics,event-hubs,storage,sql-database" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
-	editor=""/>
+	manager="jhubbard" 
+	editor=""/>  
+
 
 <tags 
-	ms.service="stream-analytics"
-	ms.date="07/27/2016" 
-	wacn.date="09/26/2016"/>
+	ms.service="stream-analytics" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2016" 
+	wacn.date="11/14/2016"/>  
+
 
 # 参考体系结构：使用 Azure 流分析进行实时事件处理
 
@@ -47,7 +53,7 @@ Azure 提供了各种类别的分析技术，支持一系列不同的解决方�
 
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
 
 ## 后续步骤
 
@@ -59,4 +65,4 @@ Azure 提供了各种类别的分析技术，支持一系列不同的解决方�
 
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_1107_2016-->

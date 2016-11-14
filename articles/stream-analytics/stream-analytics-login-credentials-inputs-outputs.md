@@ -5,14 +5,19 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
-	editor="cgronlun"/>
+	manager="jhubbard" 
+	editor="cgronlun"/>  
+
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="07/27/2016" 
-	wacn.date="09/26/2016"/>
-	
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="data-services" 
+	ms.date="09/26/2016" 
+	wacn.date="11/14/2016"/>  
+
 
 #在流分析作业中轮转输入和输出的登录凭据
 
@@ -190,14 +195,19 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 4.	转到第 4 部分。
 
 ###事件中心
-1.	找到“事件中心策略密钥”字段，将新生成的密钥粘贴到其中：  
-    
-    ![graphic33][graphic33]
+1.	找到“事件中心策略密钥”字段，将新生成的密钥粘贴到其中：![graphic33][graphic33]
+2.	单击“保存”命令，然后确认你将保存所做的更改：![graphic34][graphic34]
+3.	当你保存所做的更改时，连接测试将自动启动，请确保连接测试成功通过。
+4.	转到第 4 部分。
 
-2.	单击“保存”命令，然后确认你将保存所做的更改：  
-    
-    ![graphic34][graphic34]
+###Power BI
+1.	单击“续订授权”：
+* ![graphic35][graphic35]  
 
+* 你将获得以下确认：
+* ![graphic36][graphic36]  
+
+2.	单击“保存”命令，然后确认你将保存所做的更改：![graphic37][graphic37]
 3.	当你保存所做的更改时，连接测试将自动启动，请确保连接测试成功通过。
 4.	转到第 4 部分。
 
@@ -254,7 +264,7 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 	Command(s) completed successfully.
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
 
 ## 后续步骤
 
@@ -310,4 +320,4 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_1107_2016-->

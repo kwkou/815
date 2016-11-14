@@ -5,14 +5,18 @@
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>  
 
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.date="07/27/2016"
-	wacn.date="09/26/2016"/>
+<tags
+	ms.service="stream-analytics"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"/>  
 
 
 # 在流分析的输入流中使用引用数据或查找表
@@ -81,7 +85,6 @@
 > 这种情况的一个例外是，当作业需要按时重新处理数据时或第一次启动作业时。开始时，作业查找的是在指定的作业开始时间之前生成的最新 blob。这样做是为了确保在作业开始时存在**非空**的引用数据集。如果找不到引用数据集，该作业将显示以下诊断：`Initializing input without a valid reference data blob for UTC time <start time>`。
 
 
-<!--[-->Azure 数据工厂<!--](http://azure.microsoft.com/documentation/services/data-factory/)-->可用来安排这样的任务，创建流分析更新引用数据定义所需的已更新 blob。数据工厂是一项基于云的数据集成服务，可对数据移动和转换进行安排并使其实现自动化。数据工厂支持<!--[-->连接到大量基于云和本地的数据存储<!--](/articles/data-factory-data-movement-activities/)-->以及按你指定的定期计划轻松地移动数据。有关如何将数据工厂管道设置为生成按预定义计划刷新的流分析引用数据的详细信息和分步指导，请查看此 [GitHub 示例](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ReferenceDataRefreshForASAJobs)。
 
 ## 有关刷新引用数据的提示 ##
 
@@ -109,4 +112,4 @@
 [stream.analytics.query.language.reference]: https://msdn.microsoft.com/zh-cn/library/dn834998.aspx
 [stream.analytics.rest.api.reference]: https://msdn.microsoft.com/zh-cn/library/dn835031.aspx
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1107_2016-->

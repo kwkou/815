@@ -5,14 +5,18 @@
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>  
 
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="07/27/2016"
-	wacn.date="09/26/2016"/>  
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"/>  
 
 
 # 扩展 Azure 流分析作业，以增加流数据处理吞吐量
@@ -25,7 +29,7 @@
 若要对数据进行流式处理，作业需要至少一个输入源。可以将数据流输入源存储在 Azure Service Bus 事件中心或 Azure Blob 存储中。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)和[开始使用 Azure 流分析](/documentation/articles/stream-analytics-get-started/)。
 
 ## 配置流式处理单位
-流式处理单位 (SU) 代表执行 Azure 流分析作业的资源和能力。在已经对 CPU、内存以及读取和写入速率进行测量的情况下，可以使用 SU 来描述相对的事件处理能力。每个流式处理单位大致相当于 1MB/秒的吞吐量。
+流式处理单位 (SU) 代表执行 Azure 流分析作业所需的资源和计算能力。在已经对 CPU、内存以及读取和写入速率进行测量的情况下，可以使用 SU 来描述相对的事件处理能力。每个流式处理单位大致相当于 1MB/秒的吞吐量。
 
 选择特定作业所需的 SU 数目时，得根据输入的分区配置以及为作业定义的查询来决定。在使用 Azure 门户选择作业的流式处理单位数时，你最多可以选择定额数。默认情况下，每个 Azure 订阅的定额为最多 50 个流式处理单位，这适用于特定区域的所有分析作业。若要提高订阅的流式处理单位数，请联系 [Microsoft 支持](/support/contact/)。
 
@@ -50,8 +54,7 @@
 以下是一些易并行的示例方案。
 
 ### 简单查询
-输入 – 具有 8 个分区
-输出的事件中心 – 具有 8 个分区的事件中心
+输入 – 具有 8 个分区输出的事件中心 – 具有 8 个分区的事件中心
 
 **查询：**
 
@@ -62,8 +65,7 @@
 此查询是一个简单的筛选器，并在这种情况下，我们不需要担心对我们发送到事件中心的输入的分区。你会注意到该查询具有 **PartitionId** 的 **Partition By**，因此我们满足上述要求 #2。对于输出，我们需要配置作业中的事件中心输出，将“PartitionKey”字段设置为“PartitionId”。一个上次检查、输入分区 == 输出分区。此拓扑是易并行。
 
 ### 带分组键的查询
-输入 – 带 8 个分区
-输出的事件中心 – Blob
+输入 – 带 8 个分区输出的事件中心 – Blob
 
 **查询：**
 
@@ -74,8 +76,7 @@
 此查询具有分组键，在这种情况下，相同的密钥需要由同一个查询实例进行处理。这意味着我们需要以分区的方式将我们事件发送到事件中心。我们关注哪个键？ **PartitionId** 是作业的逻辑概念，我们所关心的真正键是 **TollBoothId**。这意味着我们应将发送到事件中心的事件数据的 **PartitionKey** 设置为事件的 **TollBoothId**。该查询具有 **PartitionId** 的 **Partition By**，所以我们没有问题。对于输出，因为它是 Blob，所以我们不需要担心如何配置 **PartitionKey**。对于要求 #4，同样由于这是 Blob，因此我们无需担心。此拓扑是易并行。
 
 ### 带有分组键的多步骤查询 ###
-输入 – 具有 8 个分区
-输出的事件中心 – 具有 8 个分区的事件中心
+输入 – 具有 8 个分区输出的事件中心 – 具有 8 个分区的事件中心
 
 **查询：**
 
@@ -95,20 +96,17 @@
 ## 非易并行的示例方案
 
 ### 分区计数不匹配 ###
-输入 – 具有 8 个分区
-输出的事件中心 – 具有 32 个分区的事件中心
+输入 – 具有 8 个分区输出的事件中心 – 具有 32 个分区的事件中心
 
 在这种情况下查询是什么并不重要，因为输入分区计数 != 输出分区计数。
 
 ### 未将事件中心或 Blob 用作输出
-输入 – 具有 8 个分区
-输出的事件中心 – PowerBI
+输入 – 具有 8 个分区输出的事件中心 – PowerBI
 
 PowerBI 输出当前不支持分区。
 
 ### 使用不同的 Partition By 值的多步骤查询
-输入 – 具有 8 个分区
-输出的事件中心 – 具有 8 个分区的事件中心
+输入 – 具有 8 个分区输出的事件中心 – 具有 8 个分区的事件中心
 
 **查询：**
 
@@ -246,6 +244,10 @@ PowerBI 输出当前不支持分区。
 ![Azure 流分析流单位规模][img.stream.analytics.streaming.units.scale]  
 
 
+在 Azure 门户预览中，可以在“设置”下访问缩放设置：
+
+![Azure 门户预览流分析作业配置][img.stream.analytics.preview.portal.settings.scale]  
+
 
 ## 监视作业性能
 
@@ -355,4 +357,4 @@ PowerBI 输出当前不支持分区。
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1107_2016-->
