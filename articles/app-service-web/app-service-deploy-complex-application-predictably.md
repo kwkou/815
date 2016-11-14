@@ -21,7 +21,7 @@
 
 # 按可预见的方式在 Azure 中设置和部署微服务 #
 
-本教程演示如何通过使用 JSON 资源组模板和 PowerShell 脚本以一种可预见的方式，在 [Azure App Service](/home/features/app-service/) 中将由[微服务](https://en.wikipedia.org/wiki/Microservices)构成的应用程序设置并部署为单个单元。
+本教程演示如何通过使用 JSON 资源组模板和 PowerShell 脚本以一种可预见的方式，在 [Azure App Service](/home/features/app-service/) 中将由[微服务](https://zh.wikipedia.org/wiki/微服务s)构成的应用程序设置并部署为单个单元。
 
 在设置和部署由高度分离的微服务构成的高扩展性应用程序时，可重复性和可预见性对成功至关重要。使用 [Azure 应用服务](/home/features/app-service/)，可以创建包括 Web 应用、移动应用和 API 应用的微服务。使用 [Azure 资源管理器](/documentation/articles/resource-group-overview/)，可以将所有微服务作为一个单元与资源依赖项（如数据库和源代码管理设置）一起进行管理。现在，你还可以使用 JSON 模板和简单的 PowerShell 脚本部署此类应用程序。
 

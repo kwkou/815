@@ -29,7 +29,7 @@ Microsoft 建议使用 Resource Manager 部署模型来部署新资源，但也�
 在 Azure 中：
 
 1. 网络接口是一种可以创建、删除的资源，具有自身的可配置的设置。
-2. 在创建时，网络接口必须连接到 Azure 虚拟网络 (VNet) 中的一个子网。如果你不熟悉 VNet，请阅读 [Virtual network overview](/documentation/articles/virtual-networks-overview/)（虚拟网络概述）一文了解详细信息。NIC 必须连接到与 NIC 位于相同 Azure [位置](https://azure.microsoft.com/regions)和[订阅](/documentation/articles/azure-glossary-cloud-terminology/#subscription)中的 VNet。创建 NIC 之后，可以更改它连接到的子网，但无法更改它连接到的 VNet。
+2. 在创建时，网络接口必须连接到 Azure 虚拟网络 (VNet) 中的一个子网。如果你不熟悉 VNet，请阅读 [Virtual network overview](/documentation/articles/virtual-networks-overview/)（虚拟网络概述）一文了解详细信息。NIC 必须连接到与 NIC 位于相同 Azure 位置和[订阅](/documentation/articles/azure-glossary-cloud-terminology/#subscription)中的 VNet。创建 NIC 之后，可以更改它连接到的子网，但无法更改它连接到的 VNet。
 3. 有一个分配的名称，创建 NIC 后无法更改此名称。该名称在 Azure [资源组](/documentation/articles/resource-group-overview/#resource-groups)中必须唯一，但是在订阅中、创建所在的 Azure 位置中或者连接到的 VNet 中不必要唯一。通常会在 Azure 订阅中创建多个 NIC。建议制定一种命名约定，以便更轻松地管理多个 NIC，而不像使用默认名称时那样麻烦。
 4. 可以附加到 VM，但只能附加到与 NIC 位于相同位置的单个 VM。
 5. 具有 MAC 地址。只要 NIC 与 VM 保持连接，MAC 地址就会在 NIC 上保留。无论是使用 Azure 门户、Azure PowerShell 或 Azure 命令行接口将 VM 重新启动（从操作系统内部）还是停止（解除分配）再启动，MAC 地址都会保留。如果将 NIC 从 VM 分离，然后将其附加到不同的 VM，则 NIC 会收到不同的 MAC 地址。如果删除 NIC，MAC 地址将分配到其他 NIC。

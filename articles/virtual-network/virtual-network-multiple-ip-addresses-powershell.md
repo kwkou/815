@@ -51,7 +51,7 @@
 
 1. 打开 PowerShell 命令提示符，在单个 PowerShell 会话中完成本部分余下的步骤。如果尚未安装并配置 PowerShell，请先完成[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）一文中所述的步骤。
 
-2. 将以下 $Variable 的“值”分别更改为虚拟网络所在的 Azure [位置](https://azure.microsoft.com/regions)、[资源组](/documentation/articles/resource-group-overview/#resource-groups)的名称、资源组中的 VNet、要将 NIC 连接到的子网以及 NIC 的名称。
+2. 将以下 $Variable 的“值”分别更改为虚拟网络所在的 Azure 位置、[资源组](/documentation/articles/resource-group-overview/#resource-groups)的名称、资源组中的 VNet、要将 NIC 连接到的子网以及 NIC 的名称。
 
         $Location = "chinaeast"
         $RgName   = "RG1"

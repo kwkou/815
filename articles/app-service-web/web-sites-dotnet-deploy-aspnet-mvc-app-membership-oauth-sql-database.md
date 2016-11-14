@@ -706,7 +706,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 有关如何使用 Entity Framework 的更高级教程，请参阅 [EF 和 MVC 入门](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)。
 
-本教程由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写完成。
+本教程由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) 在 Tom Dykstra 和 Barry Dorrans 的帮助下编写完成。
 
 ***请提供有关你喜欢的内容或者你希望看到改善的内容的反馈***，不仅关于教程本身，也关于它所演示的产品。你的反馈将帮助我们确定优先改进哪些方面。你还可以在[教我编写代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)上请求帮助以及对新主题投票。
 
