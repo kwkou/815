@@ -40,7 +40,7 @@ DNS 名称解析速度将会加快，结果将被缓存。初始 DNS 查找速�
 
 可以使用多个网站了解流量管理器配置文件的性能和行为。其中的许多站点可以免费使用，但可能附带限制。某些站点以收费形式提供增强型监视和报告。
 
-这些站点上的工具可以测量 DNS 延迟，显示全球各地客户端位置的已解析 IP 地址。其中的大多数工具不会缓存 DNS 结果。因此，每次运行测试时，这些工具将显示完整的 DNS 查找。从自己的客户端测试时，只能在 TTL 持续期间内体验完整的 DNS 查找性能一次。
+这些站点上的工具可以测量 DNS 延迟，显示全国各地客户端位置的已解析 IP 地址。其中的大多数工具不会缓存 DNS 结果。因此，每次运行测试时，这些工具将显示完整的 DNS 查找。从自己的客户端测试时，只能在 TTL 持续期间内体验完整的 DNS 查找性能一次。
 
 ## 用于测量 DNS 性能的工具示例
 
@@ -62,7 +62,7 @@ DNS 名称解析速度将会加快，结果将被缓存。初始 DNS 查找速�
 
 - [CA App Synthetic Monitor](https://asm.ca.com/en/checkit.php)
 
-    前称 Watchmouse Check Website Tool，此站点可以同时从多个地理区域显示 DNS 解析时间。输入 URL 即可查看 DNS 解析时间、连接时间以及各个地理位置的连接速度。使用此测试可以查看针对全球不同位置返回了哪些托管服务。
+    前称 Watchmouse Check Website Tool，此站点可以同时从多个地理区域显示 DNS 解析时间。输入 URL 即可查看 DNS 解析时间、连接时间以及各个地理位置的连接速度。使用此测试可以查看针对全国不同位置返回了哪些托管服务。
 
     ![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-watchmouse.png)  
 

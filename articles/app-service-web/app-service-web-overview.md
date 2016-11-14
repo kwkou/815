@@ -34,7 +34,7 @@
 
 - **DevOps 优化** — 使用 GitHub 设置[持续集成和部署](/documentation/articles/app-service-continuous-deployment/)。通过[测试和过渡环境](/documentation/articles/web-sites-staged-publishing/)提升更新。执行 [A/B 测试](/documentation/articles/app-service-web-test-in-production-get-start/)。使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 或[跨平台命令行接口 (CLI)](/documentation/articles/xplat-cli-install/) 在应用服务中管理应用。
  
-- **具有高可用性的全局缩放** — 以手动或自动方式[增加](/documentation/articles/web-sites-scale/)或[扩大](/documentation/articles/insights-how-to-scale/)。在 Microsoft 全球数据中心基础结构中的任意位置托管应用，并且应用服务 [SLA](/support/sla/app-service/) 承诺高可用性。
+- **具有高可用性的全局缩放** — 以手动或自动方式[增加](/documentation/articles/web-sites-scale/)或[扩大](/documentation/articles/insights-how-to-scale/)。在 Azure.cn 全国数据中心基础结构中的任意位置托管应用，并且应用服务 [SLA](/support/sla/app-service/) 承诺高可用性。
 
 - **连接到 SaaS 平台和本地数据** — 从适用于企业系统（例如 SAP、Siebel 和 Oracle）的 50 多个连接器、SaaS 服务（例如 Salesforce 和 Office 365）以及 Internet 服务中进行选择。使用 [Azure 虚拟网络](/documentation/articles/app-service-vnet-integration-powershell/)访问本地数据。
 
