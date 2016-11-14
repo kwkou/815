@@ -1,27 +1,34 @@
 <properties 
 	pageTitle="开发视频播放器应用程序" 
-	description="本主题提供了可用来开发自己的客户端应用程序（这些应用程序使用媒体服务中的流媒体）的播放器框架和插件的链接。" 
+	description="本主题提供可用于开发自己的客户端应用程序（这些应用程序使用媒体服务中的流媒体）的播放器框架和插件的链接。" 
 	authors="Juliako" 
 	manager="erikre" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/15/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 
 #开发视频播放器应用程序
 
 ##概述
 
-Azure 媒体服务提供你所需的工具，以便你创建适用于大多数平台的丰富、动态的客户端播放器应用程序，这些平台包括：iOS 设备、Android 设备、Windows、Windows Phone、Xbox 和机顶盒。本主题还提供了可用来开发自己的客户端应用程序（这些应用程序使用 Azure 媒体服务中的流媒体）的 SDK 和播放器框架的链接。
+Azure 媒体服务提供你所需的工具，以便你创建适用于大多数平台的丰富、动态的客户端播放器应用程序，这些平台包括：iOS 设备、Android 设备、Windows、Windows Phone、Xbox 和机顶盒。本主题还提供可用于开发自己的客户端应用程序（这些应用程序使用 Azure 媒体服务中的流媒体）的 SDK 和播放器框架的链接。
 
 ##Azure 媒体播放器
 
-[Azure 媒体播放器](/documentation/services/media-services/) 是一种 Web 视频播放器，用于在各种浏览器和设备中播放 Azure 媒体服务中的媒体内容。Azure 媒体播放器采用行业标准（如 HTML5、媒体源扩展 (MSE) 和加密媒体扩展插件 (EME)）来提供更丰富的自适应流式处理体验。如果无法在设备或浏览器中提供这些标准，Azure 媒体播放器将采用 Flash 和 Silverlight 作为回退技术。如果不考虑所使用的播放技术，开发人员将有一个统一的 JavaScript 接口来访问 API。这使 Azure 媒体服务提供的内容无需其他措施便可在各种设备和浏览中轻松播放。
+[Azure 媒体播放器](/documentation/services/media-services/)是 Web 视频播放器，用于在各种浏览器和设备中播放 Azure 媒体服务中的媒体内容。Azure 媒体播放器采用行业标准（如 HTML5、媒体源扩展 (MSE) 和加密媒体扩展插件 (EME)）来提供更丰富的自适应流式处理体验。如果无法在设备或浏览器中提供这些标准，Azure 媒体播放器将采用 Flash 和 Silverlight 作为回退技术。如果不考虑所使用的播放技术，开发人员将有一个统一的 JavaScript 接口来访问 API。这使 Azure 媒体服务提供的内容无需其他措施便可在各种设备和浏览中轻松播放。
 
 Azure 媒体服务允许播放使用 DASH、平滑流和 HLS 流格式提供的内容。Azure 媒体播放器会考虑这些不同的格式并基于平台/浏览器功能自动播放最佳链接。Azure 媒体服务还允许使用 PlayReady 加密或 AES 128 位信封加密对资产进行动态加密。Azure 媒体播放器在合理配置时允许对 PlayReady 和 AES-128 位加密的内容进行解密。
 
@@ -71,4 +78,4 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 [GitHub dash.js 存储库](https://github.com/Dash-Industry-Forum/dash.js)
  
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

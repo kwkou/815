@@ -1,16 +1,23 @@
 <properties
-	pageTitle="动态打包概述"
-	description="主题提供动态打包的概述。"
+	pageTitle="动态打包概述 | Azure"
+	description="本主题概述动态打包。"
 	authors="Juliako"
 	manager="erikre"
 	editor=""
 	services="media-services"
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags
 	ms.service="media-services"
-	ms.date="06/22/2016" 
-	wacn.date="08/15/2016"/>
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/19/2016" 
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 
 #动态打包
@@ -52,7 +59,7 @@ Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBOX、Silv
 3. [流式传输内容](/documentation/articles/media-services-deliver-content-overview/).
 
 - 或 -
- 
+
 1. 上载预先编码的 MP4 文件。
 
 	>[AZURE.NOTE] 不建议使用此选项。
@@ -68,4 +75,4 @@ Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBOX、Silv
 - Dolby Digital MP4 文件。
 - Dolby Digital 平滑流文件。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

@@ -6,12 +6,18 @@
 	manager="dwrede" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
 
-<tags
-	ms.service="media-services"
- 	ms.date="07/18/2016"
-	wacn.date="09/28/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+ 	ms.date="10/10/2016"
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>
 
 
 #使用媒体服务 .NET SDK 管理资产和相关的实体
@@ -368,4 +374,4 @@
 	}
 	
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1107_2016-->

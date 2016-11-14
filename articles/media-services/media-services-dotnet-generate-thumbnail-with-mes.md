@@ -5,12 +5,18 @@
 	documentationCenter="" 
 	authors="juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
- 	ms.date="07/18/2016"
-	wacn.date="09/28/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+ 	ms.date="10/10/2016"
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>
 
 
 #如何使用媒体编码器标准通过 .NET 来生成缩略图
@@ -370,4 +376,4 @@
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1107_2016-->

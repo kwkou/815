@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="08/30/2016"
-	wacn.date="10/10/2016"
+ 	ms.date="09/19/2016"
+	wacn.date="11/14/2016"
 	ms.author="juliako;anilmur"/>
 
 
@@ -140,6 +141,6 @@
 
 ##另请参阅 
 
-[如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/)
+[如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/)  
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1107_2016-->

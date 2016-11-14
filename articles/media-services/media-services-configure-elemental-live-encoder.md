@@ -1,16 +1,23 @@
 <properties 
 	pageTitle="将 Elemental Live 编码器配置为发送单比特率实时流" 
-	description="本主题说明了如何配置 Elemental Live 编码器，以便将单比特率流发送到 AMS 频道进行实时编码。" 
+	description="本主题说明如何配置 Elemental Live 编码器，以便将单比特率流发送到支持实时编码的 AMS 频道。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="cenkdin" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/15/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
+	ms.date="10/12/2016"
+	wacn.date="11/14/2016"
+	ms.author="cenkdin;anilmur;juliako"/>  
+
 
 #使用 Elemental Live 编码器发送单比特率实时流
 
@@ -20,7 +27,7 @@
 - [Wirecast](/documentation/articles/media-services-configure-wirecast-live-encoder/)
 - [FMLE](/documentation/articles/media-services-configure-fmle-live-encoder/)
 
-本主题说明了如何配置 [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live) 编码器，以便将单比特率流发送到 AMS 频道进行实时编码。有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
+本主题说明如何配置 [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live) 编码器，以便将单比特率流发送到支持实时编码的 AMS 频道。有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
 本教程演示了如何通过 Azure 媒体服务浏览器 (AMSE) 工具管理 Azure 媒体服务 (AMS)。此工具仅在 Windows 电脑上运行。如果你使用的是 Mac 或 Linux，则可使用 Azure 经典管理门户创建[频道](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/#create-a-channel)和[节目](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/#create-and-manage-a-program)。
 
@@ -29,7 +36,6 @@
 - 必须具有实践知识，了解如何使用 Elemental Live Web 界面来创建实时事件。
 - [创建 Azure 媒体服务帐户](/documentation/articles/media-services-create-account/)
 - 确保在运行流式处理终结点时，至少为其分配了一个流式处理单元。有关详细信息，请参阅[在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins/)
-
 - 安装最新版本的 [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) 工具。
 - 启动该工具并连接到你的 AMS 帐户。
 
@@ -52,10 +58,10 @@
 2. 指定频道名称，说明字段为可选字段。在“频道设置”下针对“实时编码”选项选择“标准”，将“输入协议”设置为“RTP (MPEG-TS)”。所有其他设置可保留原样。
 
 
-	 确保选中“立即启动新频道”。
- 
-3. 单击“创建频道”。  
-	![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental12.png)
+确保选中“立即启动新频道”。
+
+3. 单击“创建频道”。
+![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental12.png)
 
 >[AZURE.NOTE] 启动频道可能需要长达 20 分钟的时间。
 
@@ -161,4 +167,4 @@
 
 请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming/)主题以获取相关指导。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

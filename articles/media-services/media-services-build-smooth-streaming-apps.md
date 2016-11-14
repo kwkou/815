@@ -8,10 +8,15 @@
 	editor=""/>  
 
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"  
-	wacn.date="08/22/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2016"  
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
 
 
 
@@ -47,7 +52,7 @@
 
 ![平滑流式处理 Windows 应用商店应用程序示例][PlayerApplication]
  
-有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](https://developer.microsoft.com/zh-cn/windows)。 
+有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](https://developer.microsoft.com/zh-cn/windows)。
 本课包含以下过程：
 
 1.	创建 Windows 应用商店项目
@@ -293,7 +298,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 4.	在 **MainPage** 构造函数的末尾，添加以下行以订阅自适应源打开事件：
 	
 	adaptiveSourceManager.AdaptiveSourceOpenedEvent += 
-	    new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
+		new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
 
 5.	按 **CTRL+S** 保存文件。
 
@@ -478,8 +483,8 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 7.	在 **MediaOpened** 方法的末尾，添加以下代码：
 	
-	sliderProgress.StepFrequency = SliderFrequency(mediaElement.NaturalDuration.TimeSpan);
-	sliderProgress.Width = mediaElement.Width;
+	sliderProgress.StepFrequency = SliderFrequency(mediaElement.NaturalDuration.TimeSpan); 
+	sliderProgress.Width = mediaElement.Width; 
 	setupTimer();
 
 8.	按 **CTRL+S** 保存文件。
@@ -982,4 +987,4 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1107_2016-->

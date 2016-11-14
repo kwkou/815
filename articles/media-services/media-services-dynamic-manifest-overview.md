@@ -5,18 +5,25 @@
 	documentationCenter="" 
 	authors="cenkdin" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016" 
-	wacn.date="08/15/2016"/>
 
-#筛选器和动态清单
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
+	ms.date="09/26/2016" 
+	wacn.date="11/14/2016"
+	ms.author="cenkdin;juliako"/>  
+
+
+# 筛选器和动态清单
 
 从 2.11 版开始，媒体服务可让你为资产定义筛选器。这些筛选器是服务器端规则，可让你的客户选择运行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户请求创建的**动态清单**可以实现对资产进行这种筛选，并基于指定的筛选器流式传输视频。
 
-本主题讨论对你客户很有帮助的常见筛选器使用方案，并提供主题链接以演示如何以编程方式创建筛选器（目前你只能使用 REST API 创建筛选器）。
+本主题讨论对客户很有帮助的常见筛选器使用方案，并提供演示如何以编程方式创建筛选器（目前只能使用 REST API 创建筛选器）的主题链接。
 
 ##概述
 
@@ -168,7 +175,7 @@
 
 ##以编程方式创建筛选器
 
-以下主题讨论与筛选器相关的媒体服务实体。该主题还说明如何以编程方式创建筛选器。
+以下主题讨论与筛选器相关的媒体服务实体。本主题还说明如何以编程方式创建筛选器。
 
 [使用 REST API 创建筛选器](/documentation/articles/media-services-rest-dynamic-manifest/)。
 
@@ -223,4 +230,4 @@
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

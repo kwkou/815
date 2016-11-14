@@ -5,12 +5,19 @@
 	documentationCenter="" 
 	authors="Mingfeiy" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"  
-	wacn.date="08/15/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2016"  
+	wacn.date="11/14/2016"
+	ms.author="Mingfeiy;willzhan;Juliako"/>  
+
 
 
 #使用 castLabs 将 Widevine 许可证传送到 Azure 媒体服务
@@ -57,7 +64,7 @@ SigningCredentials|在 PlayReady 许可证服务器、castLabs 许可证服务�
 
 下表描述了 castLabs 中的 JWT 令牌。
 
-Name|说明
+名称|说明
 ---|---
 optData|一个包含你的相关信息的 JSON 字符串。 
 crt|一个包含有关资源、其许可证信息和播放权限的信息的 JSON 字符串。
@@ -108,4 +115,4 @@ jti|有关此令牌的唯一标识符（每个令牌只能在 castLabs 系统中
 7.	更新播放器。
 8.	视频应正在播放。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

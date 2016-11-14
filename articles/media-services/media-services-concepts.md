@@ -1,16 +1,23 @@
 <properties 
 	pageTitle="Azure 媒体服务概念" 
-	description="本部分概述 Azure 媒体服务的概念。" 
+	description="本主题概述 Azure 媒体服务的概念" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/15/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/19/2016"
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 #Azure 媒体服务概念 
 
@@ -73,7 +80,7 @@
 
 ###存储帐户
 
-对 Azure 存储空间进行的所有访问都要通过存储帐户完成。一个 Media Service 帐户可与一个或多个存储帐户相关联。一个帐户可以包含无限个容器，只要每个帐户的容器总大小不超过 500TB 即可。媒体服务提供 SDK 级工具，可用于管理多个存储帐户，并在上载到这些帐户时基于指标或随机分发使资产分发达到负载均衡。有关详细信息，请参阅[使用 Azure 存储空间](/documentation/services/storage/)。
+对 Azure 存储空间进行的所有访问都要通过存储帐户完成。一个媒体服务帐户可与一个或多个存储帐户相关联。一个帐户可以包含无限个容器，只要每个帐户的容器总大小不超过 500TB 即可。媒体服务提供 SDK 级工具，可用于管理多个存储帐户，并在上载到这些帐户时基于指标或随机分发使资产分发达到负载均衡。有关详细信息，请参阅[使用 Azure 存储空间](/documentation/services/storage/)。
 
 ##作业和任务
 
@@ -81,7 +88,7 @@
 
 作业包含有关要执行的处理的元数据。每个作业包含一个或多个[任务](https://msdn.microsoft.com/zh-cn/library/azure/hh974286.aspx)，这些任务指定一个原子处理任务、该任务的输入资产和输出资产、一个媒体处理器及其关联的设置。作业中的各个任务可连接在一起，其中一个任务的输出资产指定为下一任务的输入资产。因此，一个作业可以包含播放媒体所必需的全部处理过程。
 
-##<a id="encoding"></a>编码 
+##<a id="encoding"></a>编码
 
 Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项。
 
@@ -119,7 +126,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 每个媒体服务帐户均可包含多个通道、多个节目以及多个 StreamingEndpoint。根据带宽和安全性需求，StreamingEndpoint 服务可专用于一个或多个通道。任何 StreamingEndpoint 都可以从任何通道拉取。
 
 
-###节目 
+###节目
 
 [节目](https://msdn.microsoft.com/zh-cn/library/azure/dn783463.aspx)用于控制实时流中的片段的发布和存储。通道管理节目。频道和节目的关系非常类似于传统媒体，频道具有恒定的内容流，而节目的范围限定为该频道上的一些定时事件。
 你可以通过设置 **ArchiveWindowLength** 属性，指定你希望保留多少小时的节目录制内容。此值的设置范围是最短 5 分钟，最长 25 小时。
@@ -160,8 +167,8 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 有关详细信息，请参阅以下文章：
 
-[保护内容概述](/documentation/articles/media-services-content-protection-overview/)
-[使用 AES-128 提供保护](/documentation/articles/media-services-protect-with-aes128/)
+[保护内容概述](/documentation/articles/media-services-content-protection-overview/) 
+[使用 AES-128 提供保护](/documentation/articles/media-services-protect-with-aes128/) 
 [使用 DRM 提供保护](/documentation/articles/media-services-protect-with-drm/)
 
 ##传送
@@ -187,7 +194,7 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递�
 
 如果你有存储加密的资产，在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输你的内容。例如，若要传送使用高级加密标准 (AES) 加密密钥加密的资产，请将策略类型设为 DynamicEnvelopeEncryption。若要删除存储加密并以明文的形式流式传输资产，请将策略类型设为 NoDynamicEncryption。
 
-###渐进式下载 
+###渐进式下载
 
 渐进式下载可让你在下载完整个文件之前开始播放媒体。你只能渐进式下载 MP4 文件。
 
@@ -210,14 +217,14 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递�
 - 平滑流
 
 	{流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest
-		
+
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest
 
 
 - MPEG DASH
 
 	{流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=mpd-time-csf)
- 
+
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
 
 
@@ -242,4 +249,4 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递�
 
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->
