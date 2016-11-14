@@ -5,12 +5,19 @@
 	documentationCenter="" 
 	authors="juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
- 	ms.date="07/12/2016"  
-	wacn.date="08/15/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+ 	ms.date="10/10/2016"  
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 #使用 .NET 进行媒体服务开发
 
@@ -31,7 +38,7 @@
 
 ##创建和配置 Visual Studio 项目
 
-本部分演示如何在 Visual Studio 中创建项目，以及如何将该项目设置为进行媒体服务开发。在本示例中，该项目为 C# Windows 控制台应用程序，但此处所示的设置步骤同样适用于针对媒体服务应用程序（例如，Windows 窗体应用程序或 ASP.NET Web 应用）创建的其他类型的项目。
+本部分演示如何在 Visual Studio 中创建项目，以及如何将该项目设置为进行媒体服务开发。在本示例中，该项目为 C# Windows 控制台应用程序，但此处所示的设置步骤同样适用于针对媒体服务应用程序（例如，Windows 窗体应用程序或 ASP.NET Web 应用程序）创建的其他类型的项目。
 
 本部分说明如何使用 **NuGet** 添加媒体服务 .NET SDK 和其他依赖库。
 
@@ -94,4 +101,4 @@
 
 现在，你可以开始开发媒体服务应用程序了。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

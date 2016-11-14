@@ -14,16 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
- 	ms.date="08/17/2016"
-	wacn.date="10/10/2016"
+ 	ms.date="10/11/2016"
+	wacn.date="11/14/2016"
 	ms.author="juliako"/>
 
 
 # 使用 .NET SDK 开始传送点播内容
 
-
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
-
 
 >[AZURE.NOTE]
 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
@@ -40,7 +38,7 @@
 本教程说明如何完成以下任务：
 
 1.  创建媒体服务帐户（使用 Azure 经典管理门户）。
-2.  配置流式处理终结点（使用门户）。
+2.  配置流式处理终结点（使用 Azure 经典管理门户）。
 3.  创建和配置 Visual Studio 项目。
 5.  连接到媒体服务帐户。
 6.  创建新资产并上载视频文件。
@@ -54,7 +52,7 @@
 
 - 若要完成本教程，你需要一个 Azure 帐户。
 	
-	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 中的 Web 应用功能。
+	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure Web 应用中的 Web Apps 功能。
 - 操作系统：Windows 8 或更高版本、Windows 2008 R2、Windows 7。
 - .NET Framework 4.0 或更高版本
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
@@ -259,7 +257,7 @@
 
 ##将源文件编码为一组自适应比特率 MP4 文件
 
-将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度把那个运行这些活动，以确保较高的性能和可用性。这些活动称为作业，每个作业由原子任务构成，这些原子任务将在资产文件上执行具体的工作。
+将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度把那个运行这些活动，以确保较高的性能和可用性。这些活动称为作业，每个作业由原子任务构成，这些原子任务在资产文件上完成具体的工作。
 
 如前所述，使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。媒体服务可以将一组自适应比特率 MP4 文件动态打包为以下其中一种格式：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
@@ -447,12 +445,9 @@ MPEG DASH
 
 
 
-### 想要寻找其他内容吗？
-
-如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
-
 
 <!-- Anchors. -->
+
 
 
 <!-- URLs. -->
@@ -460,4 +455,4 @@ MPEG DASH
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1107_2016-->

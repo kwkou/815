@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="cenkdin" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="09/15/2016" 
-	wacn.date="10/10/2016"
+	ms.date="10/12/2016" 
+	wacn.date="11/14/2016"
 	ms.author="juliako;cenkd;anilmur"/>
 
 #使用 NewTek TriCaster 编码器发送单比特率实时流
@@ -125,7 +126,7 @@
 	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster11.png)
 
 >[AZURE.IMPORTANT] 在单击“流”之前，**必须**确保频道已就绪。
-另外，请确保不要让频道在没有一个输入/贡献源的情况下处于就绪状态的时间超出 15 分钟。
+>另外，请确保不要让频道在没有一个输入/贡献源的情况下处于就绪状态的时间超出 15 分钟。
 
 ##测试播放
   
@@ -159,4 +160,4 @@
 
 请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming/)主题以获取相关指导。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1107_2016-->

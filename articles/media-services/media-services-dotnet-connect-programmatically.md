@@ -5,12 +5,19 @@
 	documentationCenter="" 
 	authors="juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/22/2016"
-	wacn.date="08/15/2016"/>
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 
 # 使用适用于 .NET 的媒体服务 SDK 连接到媒体服务帐户
@@ -182,4 +189,4 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 	private static readonly string _accountName = ConfigurationManager.AppSettings["MediaServicesAccountName"];
 	private static readonly string _accountKey = ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

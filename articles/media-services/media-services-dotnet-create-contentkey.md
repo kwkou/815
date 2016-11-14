@@ -5,12 +5,19 @@
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/15/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 
 #使用 .NET 创建内容密钥
@@ -133,4 +140,4 @@ call
 
 	IContentKey key = CreateCommonTypeContentKey(encryptedsset); 
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

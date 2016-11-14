@@ -1,18 +1,25 @@
 <properties 
-	pageTitle="简要介绍并比较 Azure 按需媒体编码器" 
-	description="本主题概括介绍并比较了 Azure 按需媒体编码器。" 
+	pageTitle="Azure 按需媒体编码器概述和比较 | Azure" 
+	description="本主题概述并比较 Azure 按需媒体编码器。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016" 
-	wacn.date="08/15/2016"/>
 
-#简要介绍并比较 Azure 按需媒体编码器
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/19/2016" 
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
+
+#Azure 按需媒体编码器概述和比较
 
 ##编码概述
 
@@ -30,9 +37,8 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 媒体服务支持将在本文中介绍的以下按需编码器：
 
 - [媒体编码器标准版](/documentation/articles/media-services-encode-asset.md/#media-encoder-standard)
-- [Azure Media Encoder](/documentation/articles/media-services-encode-asset.md/#azure-media-encoder)
 
-本文简要概述了按需媒体编码器，并提供了指向介绍更多详细信息的文章的链接。本主题还提供了编码器的比较。
+本文简要概述了按需媒体编码器，并提供了指向介绍更多详细信息的文章的链接。本主题还提供编码器的比较。
 
 请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单位](/documentation/articles/media-services-portal-encoding-units/)。
 
@@ -179,7 +185,6 @@ AVI（8 位/10 位未压缩）|否|是
 ---|---|---
 AVC（H.264；8 位；最高支持 High Profile、Level 5.2；4K Ultra HD；AVC Intra）|仅限 8 位 4:2:0|是
 Avid DNxHD（MXF 格式）|否|是
-DVCPro/DVCProHD（MXF 格式）|否|是
 Mpeg-2（最高支持 422 Profile 和 High Level；包括 XDCAM、XDCAM HD、XDCAM IMX、CableLabs® 和 D10 等变体）|否|是
 MPEG-1|否|是
 Windows Media 视频/VC-1|否|是
@@ -229,6 +234,7 @@ TransientError|涵盖暂时性问题（例如 Azure 存储空间发生暂时性�
 
  
 <!--Reference links in article-->
+
 [1]: /pricing/details/media-services/
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

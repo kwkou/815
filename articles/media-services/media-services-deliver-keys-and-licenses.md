@@ -10,8 +10,13 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2016"
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
 
 
 
@@ -343,4 +348,4 @@ Azure 媒体服务 (AMS) 可让你引入、编码、添加内容保护，以及�
 
 [使用合作伙伴将 Widevine 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-licenses-partner-integration/)
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1107_2016-->

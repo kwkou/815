@@ -1,22 +1,29 @@
 <properties 
 	pageTitle="将现有 Blob 复制到媒体服务资产中" 
-	description="本主题说明如何将现有 Blob 复制到媒体服务资产中。" 
+	description="本主题说明如何将现有 blob 复制到媒体服务资产。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016" 
-	wacn.date="08/15/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
+	ms.date="10/13/2016" 
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 #将现有 Blob 复制到媒体服务资产中
 
-本主题介绍如何将存储帐户中的 Blob 复制到新的 Azure 媒体服务资产中。
+本主题介绍如何将存储帐户中的 blob 复制到新的 Azure 媒体服务资产。
 
-Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存在于不与媒体服务帐户关联的存储帐户中。本主题演示如何将 Blob 从存储帐户复制到媒体服务资产中。请注意，你还可以跨数据中心复制。但是，这样做可能会产生费用。有关定价的详细信息，请参阅[数据传输](/pricing/#header-11)。
+Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存在于不与媒体服务帐户关联的存储帐户中。本主题演示如何将 blob 从存储帐户复制到媒体服务资产。请注意，你还可以跨数据中心复制。但是，这样做可能会产生费用。有关定价的详细信息，请参阅[数据传输](/pricing/#header-11)。
 
 >[AZURE.NOTE] 在不使用媒体服务 API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
 
@@ -318,4 +325,4 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 
  
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1107_2016-->

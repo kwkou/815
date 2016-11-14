@@ -1,16 +1,23 @@
 <properties 
 	pageTitle="轮询长时运行的操作" 
-	description="本主题展示了如何轮询长时运行的操作。" 
+	description="本主题说明如何轮询长时间运行的操作。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
 
-<tags
-	ms.service="media-services"
- 	ms.date="04/18/2016" 
-	wacn.date="06/20/2016"/>
+
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+ 	ms.date="09/26/2016" 
+	wacn.date="11/14/2016"
+	ms.author="juliako"/>  
+
 
 
 #使用 Azure 媒体服务传送实时流
@@ -192,6 +199,4 @@ Azure 媒体服务提供了相应的 API 用来请求媒体服务启动操作（
 	Console.WriteLine(channelId);
  
 
-
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_1107_2016-->
