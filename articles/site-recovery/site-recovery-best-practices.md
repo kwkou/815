@@ -5,12 +5,19 @@
 	documentationCenter=""
 	authors="rayne-wiselman"
 	manager="jwhit"
-	editor="tysonn"/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="site-recovery"
-	ms.date="07/06/2016"
-	wacn.date="08/01/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery"
+	ms.date="10/05/2016"
+	wacn.date="11/14/2016"
+	ms.author="raynew"/>  
+
 
 # 准备 Azure Site Recovery 部署
 
@@ -45,7 +52,7 @@
 
 
 
-##<a id="virtual-machines"></a> Azure 虚拟机要求
+##<a id="azure-virtual-machine-requirements"></a>Azure 虚拟机要求
 
 可以部署站点恢复以复制运行受 Azure 支持的任何操作系统的虚拟机和物理服务器。这包括大多数的 Windows 和 Linux 版本。需要确保你要保护的本地虚拟机符合 Azure 要求。
 
@@ -65,6 +72,7 @@ iSCSI 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 共享 VHD | 不支持 | 如果不支持，先决条件检查将会失败
 FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 硬盘格式| VHD <br/><br/> VHDX | 尽管 Azure 当前不支持 VHDX，但当你故障转移到 Azure 时，站点恢复会自动将 VHDX 转换为 VHD。当你故障回复到本地时，虚拟机将继续使用 VHDX 格式。
+Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 虚拟机名称| 介于 1 和 63 个字符之间。限制为字母、数字和连字符。应以字母或数字开头和结尾 | 在 Site Recovery 中更新虚拟机属性中的值
 虚拟机类型 | <p>第 1 代</p> <p>第 2 代 - Windows</p> | 支持第 2 代虚拟机：具备包含 1 或 2 个数据卷、磁盘格式为 VHDX、磁盘大小小于 300GB 的基本磁盘的操作系统磁盘类型。不支持 Linux 第 2 代虚拟机。[了解详细信息](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
 
@@ -77,13 +85,13 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 - **操作系统卷大小**：将虚拟机复制到 Azure 时，操作系统卷必须小于 1TB。如果你的卷容量超过此值，可以在开始部署之前，手动将卷容量转移到另一个磁盘。
 - **数据磁盘大小**：如果要复制到 Azure，一个虚拟机中最多可以包含 32 个数据磁盘，每个磁盘的最大大小为 1 TB。可以有效地复制和故障转移约 32 TB 的虚拟机。
 - **恢复计划限制**：Site Recovery 可以扩展到数千个虚拟机。恢复计划旨在用作应一起故障转移的应用程序的模型，因此，我们可以将一个恢复计划中的计算机数目限制为 50。
-- **Azure 服务限制**：每个 Azure 订阅在核心、云服务等方面附带了一组默认限制。我们建议你运行测试故障转移，以验证你的订阅中资源的可用性。可以通过 Azure 支持人员修改这些限制。
-- **容量规划**：阅读站点恢复的[容量规划](/documentation/articles/site-recovery-capacity-planner/)的相关信息。
+- **Azure 服务限制**：每个 Azure 订阅在核心、云服务等方面附带了一组默认限制。建议运行测试故障转移，验证订阅中资源的可用性。可以通过 Azure 支持人员修改这些限制。
+- **容量规划**：阅读站点恢复的[容量规划](/documentation/articles/site-recovery-capacity-planner/)相关信息。
 - **复制带宽**：如果你的复制带宽不足，请注意：
 	- **ExpressRoute**：可以配合 Azure ExpressRoute 和 WAN 优化器（如 Riverbed）来使用 Site Recovery。[详细了解](http://blogs.technet.com/b/virtualization/archive/2014/07/20/expressroute-and-azure-site-recovery.aspx)有关 ExpressRoute 的信息。
 	- **复制流量**：Site Recovery 用户只能使用数据块（而不是整个 VHD）执行智能初始复制。在复制过程中，只会复制更改。
 	- **网络流量**：你可以通过使用基于目标 IP 地址和端口的策略设置 [Windows QoS](https://technet.microsoft.com/zh-cn/library/hh967468.aspx)，来控制用于复制的网络流量。此外，如果要使用 Azure 备份代理复制到 Azure Site Recovery，你可以配置该代理的限制。[了解详细信息](https://support.microsoft.com/zh-cn/kb/3056159)。
-- **RTO**：若要度量使用 Site Recovery 时预期的恢复时间目标 (RTO)，建议你运行测试故障转移并查看 Site Recovery 作业，以分析完成操作所花费的时间。如果你要故障转移到 Azure，为实现最佳 RTO，我们建议你通过与 Azure 自动化和恢复计划集成来自动化所有手动操作。
+- **RTO**：若要度量使用 Site Recovery 时预期的恢复时间目标 (RTO)，我们建议运行测试故障转移并查看 Site Recovery 作业，分析完成操作所花费的时间。如果你要故障转移到 Azure，为实现最佳 RTO，我们建议你通过与 Azure 自动化和恢复计划集成来自动化所有手动操作。
 - **RPO**：当你复制到 Azure 时，Site Recovery 支持近乎同步的恢复点目标 (RPO)。这假设数据中心和 Azure 之间有足够的带宽。
 
 
@@ -113,4 +121,4 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 - [使用 SAN 将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-san/)
 - [复制 Hyper-V VM（带单个 VMM 服务器）](/documentation/articles/site-recovery-single-vmm/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1107_2016-->

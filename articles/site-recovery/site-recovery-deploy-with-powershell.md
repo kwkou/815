@@ -3,14 +3,21 @@
 	description="了解如何使用站点恢复和 PowerShell 在 VMM 云中自动复制 Hyper-V 虚拟机。"
 	services="site-recovery"
 	documentationCenter=""
-	authors="csilauraa"
-	manager="jwhit"
-	editor="tysonn"/>
+	authors="bsiva"
+	manager="abhiag"
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="site-recovery"
-	ms.date="07/12/2016"
-	wacn.date="08/01/2016"/>
+	ms.workload="backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date="11/14/2016"
+	ms.author="bsiva"/>  
+
 
 # 使用 Powershell 将 VMM 云中的 Hyper-V 虚拟机复制到 Azure - 经典
 
@@ -37,9 +44,9 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 ### Azure 先决条件
 
-- 需要一个 [Azure](http://www.azure.cn) 帐户。你可以从[试用版](/pricing/1rmb-trial)开始。
-- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction/)。
-- 需要确保你要保护的虚拟机符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
+- 你将需要一个 [Azure](http://www.azure.cn) 帐户。你可以从[试用版](/pricing/1rmb-trial)开始。
+- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储的详细信息](/documentation/articles/storage-introduction/)。
+- 需确保要保护的虚拟机符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
 
 ### VMM 先决条件
 - 你需要具有运行 System Center 2012 R2 的 VMM 服务器。
@@ -64,7 +71,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 如果希望部署网络映射，需要满足下列条件：
 
 - 源 VMM 服务器上你要保护的虚拟机应当连接到某个 VM 网络。该网络应当该链接到与该云相关联的逻辑网络。
-- 具有在故障转移后复制的虚拟机可以连接到的 Azure 网络。你将在故障转移时选择此网络。此网络应当与你的 Azure Site Recovery 订阅位于同一区域中。
+- 具有在故障转移后复制的虚拟机可以连接到的 Azure 网络。你将在故障转移时选择此网络。此网络应与 Azure Site Recovery 订阅位于同一区域中。
 - [详细了解](/documentation/articles/site-recovery-network-mapping/)网络映射：
 
 ###PowerShell 必决条件
@@ -300,7 +307,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 
 
-最后一个 cmdlet 将在主网络与 Azure 虚拟机网络之间创建映射。该 cmdlet 将主网络指定为 $Networks 的第一个元素。该 cmdlet 使用虚拟机网络的 ID 将该网络指定为 $AzureVmNetworks 的第一个元素。该命令包含你的 Azure 订阅 ID。
+最后一个 cmdlet 将在主网络与 Azure 虚拟机网络之间创建映射。该 cmdlet 将主网络指定为 $Networks 的第一个元素。该 cmdlet 使用虚拟机网络的 ID 将该网络指定为 $AzureVmNetworks 的第一个元素。该命令包含 Azure 订阅 ID。
 
 
 	New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureSubscriptionId $Subscriptions[0].SubscriptionId -AzureVMNetworkId $AzureVmNetworks[0].Id
@@ -437,4 +444,4 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 [详细了解](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx) Azure Site Recovery PowerShell cmdlet</a>。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1107_2016-->
