@@ -42,13 +42,11 @@ WebMatrix 支持|X||X||
 访问 Service Bus、存储空间、SQL 数据库之类的服务|X|X|X|X|
 托管多层体系结构的 web 或 web 服务层|X|X|X|X|
 托管多层体系结构的中间层|X|X|X|X|应用服务 Web 应用可轻松托管 REST API 中间层，而 [WebJobs](/documentation/articles/websites-webjobs-resources/) 功能可托管后台处理作业。可在专用网站中运行 WebJobs，实现层的独立可扩展性。预览版 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)功能提供更多托管 REST 服务的功能。
-集成的 MySQL-as-a-service 支持|X|X|X||
 支持 ASP.NET、经典 ASP、Node.js、PHP、Python|X|X|X|X|Service Fabric 支持使用 [ASP.NET 5](/documentation/articles/service-fabric-add-a-web-frontend/) 创建 Web 前端，或者也可按[来宾可执行文件](/documentation/articles/service-fabric-deploy-existing-app/)的形式部署任何类型的应用程序（Node.js、Java 等）。
 向外扩展到多个实例且无需重新部署|X|X|X|X|虚拟机可以扩大到多个实例，但必须编写这些虚拟机上运行的服务，来处理向外扩展。你需要配置负载均衡器，跨计算机路由请求；还需要创建地缘组，防止因维护或硬件故障导致同时重新启动所有实例。
 支持 SSL|X|X|X|X|对于应用服务 Web 应用，只有基本和标准模式支持自定义域名的 SSL。若要了解如何结合使用 SSL 和 Web 应用，请参阅[为 Azure 网站配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate/)。
 Visual Studio 集成|X|X|X|X|
 远程调试|X|X|X||
-使用 TFS 部署代码|X|X|X|X|
 使用 [Azure 虚拟网络](/home/features/networking/)进行网络隔离|X|X|X|X|另请参阅 [Azure 网站的虚拟网络集成](/documentation/articles/app-service-vnet-integration-powershell/)
 支持 [Azure 流量管理器](/home/features/traffic-manager/)|X|X|X|X|
 集成的端点监视|X|X|X||
@@ -62,7 +60,7 @@ Visual Studio 集成|X|X|X|X|
 以下是一些常见的应用程序方案，其中每个方案都包含有关最适合的 Azure Web 托管选项的建议。
 
 - [我需要具有后台处理的 Web 前端和数据库后端，运行与本地资产集成的业务应用程序。](#onprem)
-- [我需要一种可靠的方式来托管公司网站，既可以进行良好地扩展也能实现全球覆盖。](#corp)
+- [我需要一种可靠的方式来托管公司网站，既可以进行良好地扩展也能实现全国覆盖。](#corp)
 - [我具有在 Windows Server 2003 上运行的 IIS6 应用程序。](#iis6)
 - [我是小型企业所有者，我需要使用一种成本较低的方式来托管站点，同时也要兼顾将来的业务增长。](#smallbusiness)
 - [我是 Web 或图形设计师，我想为客户设计和构建网站。](#designer)
@@ -78,17 +76,17 @@ Visual Studio 集成|X|X|X|X|
 Azure App Service 是针对复杂业务应用程序的理想解决方案。你可以通过该网站开发应用，这些应用可以在负载均衡平台上自动缩放、使用 Active Directory 进行保护并连接到本地资源。使用该网站，可以通过世界级门户和 API 轻松地管理这些应用，并且还能通过应用洞察工具深入了解客户使用这些应用的情况。[Webjobs][] 功能可将后台进程和任务作为 Web 层的一部分运行，而 VNET 功能则可轻松地重新连接到本地资源。Azure App Service 针对 Web 应用提供三个 9 的 SLA，且能够：
 
 * 在自愈性自动修补云平台上安全可靠地运行应用程序。
-* 跨数据中心的全球网络进行自动缩放。
+* 跨数据中心的全国网络进行自动缩放。
 * 备份和还原，以进行灾难恢复。
 * 遵守 ISO、SOC2 和 PCI 的要求。
 * 与 Azure Active Directory 集成
 
-### <a id="corp"></a> 我需要一种可靠的方式来托管公司网站，既可以进行良好地扩展也能实现全球覆盖。
+### <a id="corp"></a> 我需要一种可靠的方式来托管公司网站，既可以进行良好地扩展也能实现全国覆盖。
 
-Azure App Service 是托管公司网站的理想解决方案。通过 Web 应用，你可以轻松快速地缩放站点，满足整个数据中心全球网络的需求。它涵盖了本地范围，提供了容错和智能流量管理功能。所有内容均位于提供世界级管理工具的平台上，让你可以快速轻松地更深入了解站点运行状况和站点流量。Azure App Service 针对 Web 应用提供三个 9 的 SLA，且能够：
+Azure App Service 是托管公司网站的理想解决方案。通过 Web 应用，你可以轻松快速地缩放站点，满足整个数据中心全国网络的需求。它涵盖了本地范围，提供了容错和智能流量管理功能。所有内容均位于提供世界级管理工具的平台上，让你可以快速轻松地更深入了解站点运行状况和站点流量。Azure App Service 针对 Web 应用提供三个 9 的 SLA，且能够：
 
 * 在自愈性自动修补云平台上安全可靠地运行网站。
-* 跨数据中心的全球网络进行自动缩放。
+* 跨数据中心的全国网络进行自动缩放。
 * 备份和还原，以进行灾难恢复。
 * 使用集成工具管理日志和流量。
 * 遵守 ISO、SOC2 和 PCI 的要求。
@@ -96,7 +94,7 @@ Azure App Service 是托管公司网站的理想解决方案。通过 Web 应用
 
 ### <a id="iis6"></a> 我具有在 Windows Server 2003 上运行的 IIS6 应用程序。
 
-Azure App Service 可轻松避免在迁移较旧的 IIS6 应用程序时带来的基础结构成本。因为与 Visual Studio、TFS 和常见的 CMS 工具集成，所以能够更轻松地将 IIS6 应用程序直接部署到云中。部署后，Azure 门户预览可以提供强大的管理工具，帮助你通过缩减规模管理成本，并根据需要扩展规模来满足业务要求。使用迁移工具可以：
+Azure App Service 可轻松避免在迁移较旧的 IIS6 应用程序时带来的基础结构成本。因为与 Visual Studio 和常见的 CMS 工具集成，所以能够更轻松地将 IIS6 应用程序直接部署到云中。部署后，Azure 门户预览可以提供强大的管理工具，帮助你通过缩减规模管理成本，并根据需要扩展规模来满足业务要求。使用迁移工具可以：
 
 * 轻松快速地将旧版 Windows Server 2003 Web 应用程序迁移到云中。
 * 选择在本地保留附加的 SQL 数据库，以创建混合应用程序。
@@ -104,10 +102,10 @@ Azure App Service 可轻松避免在迁移较旧的 IIS6 应用程序时带来�
 
 ### <a id="smallbusiness"></a>我是小型企业所有者，我需要使用一种成本较低的方式来托管站点，同时也要兼顾将来的业务增长。
 
-Azure App Service 是适合该情况的强大解决方案，原因是其可免费使用且随后可按需添加更多功能。每个免费的 Web 应用都附带 Azure 提供的域 ( *your\_company* .chinacloudsites.cn)，并且平台中包含集成的部署和管理工具，以及帮助用户轻松入门的应用程序库。还有许多其他服务和扩展选项，让站点可以随着用户需求的增加而发展。通过 Azure App Service，可以：
+Azure App Service 是适合该情况的强大解决方案，原因是其可免费使用且随后可按需添加更多功能。每个免费的 Web 应用都附带 Azure 提供的域 ( *your\_company* .chinacloudsites.cn)，并且平台中包含集成的部署和管理工具。还有许多其他服务和扩展选项，让站点可以随着用户需求的增加而发展。通过 Azure App Service，可以：
 
 - 从免费层开始，然后根据需要向上扩展。
-- 使用应用程序库快速设置流行的 Web 应用程序，如 WordPress。
+- 设置流行的 Web 应用程序，如 WordPress。
 - 根据需要向你的应用程序添加其他 Azure 服务和功能。
 - 使用 HTTPS 保护 Web 应用。
 
@@ -119,7 +117,7 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 - 使用流行的语言，如 [.Net][dotnet]、[PHP][]、[Node.js][nodejs] 和 [Python][]。
 - 选择三个不同的扩展级别，向上扩展到超高容量。
 - 与其他 Azure 服务（例如 [SQL 数据库][sqldatabase]、[服务总线][servicebus]和[存储空间][]）集成。
-- 与工具集成，例如 Visual Studio、Git、WebMatrix、WebDeploy、TFS 和 FTP。
+- 与工具集成，例如 Visual Studio、Git、WebMatrix、WebDeploy 和 FTP。
 
 ### <a id="multitier"></a>我要将带有 Web 前端的多层应用程序迁移到云中
 
@@ -142,7 +140,7 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 
 - 使用多种流行的开放源代码语言，如 [.NET][dotnet]、[PHP][]、[Node.js][nodejs] 和 [Python][]。
 - 安装 WordPress、Drupal、Umbraco、DNN 和许多其他第三方 Web 应用程序。
-- 迁移现有应用程序，或通过应用程序库创建新的应用程序。
+- 迁移现有应用程序。
 
 如果应用服务不支持开源框架，则可在其他某个 Azure Web 托管选项上运行该框架。使用虚拟机，可以在计算机映像（基于 Windows 或 Linux）上安装和配置软件。
 
@@ -154,7 +152,7 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 
 利用基于 HTTP 的 Web 服务，你可以支持各种客户端，包括移动客户端。如 ASP.NET Web API 的框架与 Visual Studio 集成，能够更加轻松地创建和使用 REST 服务。这些服务来自 web 端点，因此可使用 Azure 上的任何 web 托管技巧支持此方案。但应用服务托管 REST API 的理想选择。通过应用服务，可以：
 
-- 快速创建[移动应用](/documentation/articles/app-service-mobile-value-prop/)或 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)，以便在 Azure 全球分布的某个数据中心托管 HTTP Web 服务。
+- 快速创建[移动应用](/documentation/articles/app-service-mobile-value-prop/)或 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)，以便在 Azure 全国分布的某个数据中心托管 HTTP Web 服务。
 - 迁移现有服务或创建新的服务。
 - 实现 SLA 的单个实例可用性，或者将可用性扩展到多台专用计算机。
 - 使用已发布的站点将 REST API 提供到任何 HTTP 客户端，包括移动客户端。

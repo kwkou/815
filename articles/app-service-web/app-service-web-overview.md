@@ -14,7 +14,7 @@
 
 # Web Apps 概述
 
-*应用服务 Web 应用* 是一个完全托管的计算平台，非常适合用来托管网站和 Web 应用程序。Azure 的这个[平台即服务](https://en.wikipedia.org/wiki/Platform_as_a_service) (PaaS) 产品可让用户专注于业务逻辑，而让 Azure 负责处理用来运行和缩放应用的基础结构。
+*应用服务 Web 应用* 是一个完全托管的计算平台，非常适合用来托管网站和 Web 应用程序。Azure 的这个[平台即服务](https://zh.wikipedia.org/wiki/平台即服务) (PaaS) 产品可让用户专注于业务逻辑，而让 Azure 负责处理用来运行和缩放应用的基础结构。
 
 ## 应用服务中的 Web 应用是什么？
 
@@ -32,7 +32,7 @@
 
 - **多种语言和框架** — 应用服务为 ASP.NET、Node.js、Java、PHP 和 Python 提供一流支持。也可以在应用服务 VM 上运行 [PowerShell 和其他脚本或可执行文件](/documentation/articles/web-sites-create-web-jobs/)。
 
-- **DevOps 优化** — 使用 Visual Studio Team Services、GitHub 或 BitBucket 设置[持续集成和部署](/documentation/articles/app-service-continuous-deployment/)。通过[测试和过渡环境](/documentation/articles/web-sites-staged-publishing/)提升更新。执行 [A/B 测试](/documentation/articles/app-service-web-test-in-production-get-start/)。使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 或[跨平台命令行接口 (CLI)](/documentation/articles/xplat-cli-install/) 在应用服务中管理应用。
+- **DevOps 优化** — 使用 GitHub 设置[持续集成和部署](/documentation/articles/app-service-continuous-deployment/)。通过[测试和过渡环境](/documentation/articles/web-sites-staged-publishing/)提升更新。执行 [A/B 测试](/documentation/articles/app-service-web-test-in-production-get-start/)。使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 或[跨平台命令行接口 (CLI)](/documentation/articles/xplat-cli-install/) 在应用服务中管理应用。
  
 - **具有高可用性的全局缩放** — 以手动或自动方式[增加](/documentation/articles/web-sites-scale/)或[扩大](/documentation/articles/insights-how-to-scale/)。在 Microsoft 全球数据中心基础结构中的任意位置托管应用，并且应用服务 [SLA](/support/sla/app-service/) 承诺高可用性。
 
