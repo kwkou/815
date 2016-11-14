@@ -478,7 +478,7 @@
 本部分中的步骤使用 Azure 命令行工具在 App Service 中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
 > [AZURE.NOTE] 也可以使用 [Azure 门户预览](https://portal.azure.cn/)执行这些步骤。请参阅 [Build and deploy a Node.js web app in Azure App Service]（在 Azure 应用服务中构建和部署 Node.js Web 应用）。
->
+><p>
 > 如果这是创建的第一个 Web 应用，则必须使用 Azure 门户预览部署此应用程序。
 
 若要开始，请在命令行中输入以下命令以安装 [Azure CLI]：

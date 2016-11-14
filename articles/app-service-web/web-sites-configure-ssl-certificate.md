@@ -134,11 +134,11 @@
 4. 从 IIS 管理器导出 SSL 证书。有关导出证书的详细信息，请参阅[导出服务器证书 (IIS 7)][exportcertiis] (Export a Server Certificate (IIS 7))。
 
 	>[AZURE.IMPORTANT] 在“证书导出向导”中，确保选择“是, 导出私钥”
-	>
+	><p>
 	>![导出私钥][certwiz1]
-	>
+	><p>
 	> 还可选择“个人信息交换- PKCS #12”、“将所有证书包括在证书路径内(如可能)”和“导出所有扩展属性”。
-	>
+	><p>
 	>![包括所有证书和扩展的属性][certwiz2]
 
 现可将导出的 PFX 文件上传到应用服务。请参阅[步骤 2.上传和绑定自定义 SSL 证书](#bkmk_configuressl)。

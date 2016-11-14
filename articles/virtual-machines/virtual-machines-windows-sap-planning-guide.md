@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
    ms.date="08/18/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/14/2016"
    ms.author="sedusch"/>  
 
 
@@ -442,12 +442,12 @@ SAP 通常被视为企业中最关键的应用程序之一。通常，这些应�
 有关如何将本地网络连接到 Azure 的详细信息，请参阅[此文][vpn-gateway-create-site-to-site-rm-powershell]。
 
 > [AZURE.IMPORTANT] 在讨论 Azure 与本地客户部署之间的跨界方案时，请注意整个 SAP 系统的粒度。_不支持_用于跨界方案的方案包括：
-> 
-> * 以不同的部署方法运行不同的 SAP 应用程序层。例如，在本地运行 DBMS 层，同时将 SAP 应用程序层作为 Azure VM 部署在 VM 中；反之亦然。
-> * 将 SAP 层的一些组件部署在 Azure 中，将另一些组件部署在本地。例如，在本地和 Azure VM 之间拆分 SAP 应用程序层的实例。
-> * 不支持跨多个 Azure 区域分布运行某个系统的 SAP 实例的 VM。
-> 
-> 施加这些限制的原因在于，要求在一个 SAP 系统中的应用程序实例与 DBMS 层之间提供低延迟高性能网络。
+><p>
+><p> * 以不同的部署方法运行不同的 SAP 应用程序层。例如，在本地运行 DBMS 层，同时将 SAP 应用程序层作为 Azure VM 部署在 VM 中；反之亦然。
+><p> * 将 SAP 层的一些组件部署在 Azure 中，将另一些组件部署在本地。例如，在本地和 Azure VM 之间拆分 SAP 应用程序层的实例。
+><p> * 不支持跨多个 Azure 区域分布运行某个系统的 SAP 实例的 VM。
+><p> 
+><p> 施加这些限制的原因在于，要求在一个 SAP 系统中的应用程序实例与 DBMS 层之间提供低延迟高性能网络。
 
 
 

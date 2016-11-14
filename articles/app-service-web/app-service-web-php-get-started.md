@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="06/03/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="11/14/2016"/>
 
 # 创建、配置 PHP Web 应用，并将其部署到 Azure
 
@@ -124,9 +124,9 @@
     你已完成环境变量的设置！
     
     >[AZURE.NOTE] 请稍等，让我们停下来解释一下此处 Laravel 和 Azure 进行了哪些操作。Laravel 使用根目录中的 `.env` 文件向应用提供环境变量，可以在该文件中找到行 `APP_DEBUG=true`（以及 `APP_KEY=...`）。通过代码 `'debug' => env('APP_DEBUG', false),` 可在 `config/app.php` 中访问该变量。其中 [env()](https://laravel.com/docs/5.2/helpers#method-env) 是使用底层的 PHP [getenv()](http://php.net/manual/en/function.getenv.php) 函数的 Laravel helper 方法。
-    >
+    ><p>
     >但是，Git 忽略了 `.env` 文件，因为根目录中的 `.gitignore` 文件列出了该文件。简而言之，本地 Git 存储库中的 `.env` 未和文件的其余部分一起推送到 Azure。当然，可以从 `.gitignore` 中移除该行，但是我们已经确定了不建议将此文件提交到源控件。不过，你仍需要一种方法在 Azure 中指定这些环境变量。
-    >
+    ><p>
     >好消息是 Azure App Service 中的应用程序设置支持 PHP 中的 [getenv()](http://php.net/manual/en/function.getenv.php)。因此，当使用 FTP 或其他方法将 `.env` 文件手动上载到 Azure 时，只需将所需变量指定为 Azure 应用程序设置，而无需在 Azure 中使用 `.env` 文件，正如你在前面所做的。而且，如果变量同时存在于 `.env` 文件和 Azure 应用程序设置中，则 Azure 应用程序设置具有更高优先级。
 
 4. 最后两个任务（设置虚拟目录和启用 Composer）需要使用 [Azure 门户预览](https://portal.azure.cn)，因此请使用 Azure 帐户登录该[门户](https://portal.azure.cn)。
