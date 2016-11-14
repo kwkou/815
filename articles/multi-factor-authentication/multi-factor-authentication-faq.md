@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="08/22/2016"
 	ms.author="billmath"
-   	wacn.date="10/19/2016"/>
+   	wacn.date="11/14/2016"/>
 
 # Azure 多重身份验证常见问题
 
@@ -88,7 +88,7 @@ Azure 多重身份验证服务通过短信聚合器发送短信。许多因素�
 
 请遵循以下过程：
 
-1. 转到 [Azure 门户预览配置文件](https://account.activedirectory.azure.cn/profile/)，然后使用组织帐户登录。
+1. 转到 Azure 门户预览配置文件，然后使用组织帐户登录。
 2. 如果需要，请单击“其他验证选项”，然后单击用于帐户验证的其他选项。
 3. 单击“其他安全验证”。
 4. 从移动应用中删除现有帐户。
