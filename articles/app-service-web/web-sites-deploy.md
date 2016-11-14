@@ -25,7 +25,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 - [FTP 或 FTPS](https://en.wikipedia.org/wiki/File_Transfer_Protocol)：使用你常用的支持 FTP 或 FTPS 的工具（从 [FileZilla](https://filezilla-project.org) 到功能齐全的 IDE，如 [NetBeans](https://netbeans.org)）将文件移至 Azure。这完全是文件上载进程。应用服务不提供任何附加服务，例如版本控制、文件结构管理等。
 
 - [Kudu (Git/Mercurial)](https://github.com/projectkudu/kudu/wiki/Deployment)：使用应用服务中的[部署引擎](https://github.com/projectkudu/kudu/wiki)。从任何存储库将你的代码直接推送到 Kudu。只要代码推送到 Kudu，Kudu 还提供附加服务，包括版本控制、程序包还原、MSBuild 和 [Web 挂钩](https://github.com/projectkudu/kudu/wiki/Web-hooks)以用于连续部署和其他自动化任务。Kudu 部署引擎支持 2 种不同类型的部署源：
-    * 从 GitHub、Bitbucket 和 Visual Studio Team Services 使用自动同步进行基于存储库的连续部署
+    * 从 GitHub 使用自动同步进行基于存储库的连续部署
     * 从本地 Git 使用手动同步进行基于存储库的部署
 
 - [Web 部署](http://www.iis.net/learn/publish/using-web-deploy/introduction-to-web-deploy)：使用自动部署到 IIS 服务器的相同工具，直接从偏好的 Microsoft 工具（例如 Visual Studio）将代码部署到应用服务。此工具支持仅差异部署、创建数据库、连接字符串转换等操作。Web 部署与 Kudu 的不同之处在于，应用程序二进制文件在部署到 Azure 之前生成。与 FTP 类似，应用服务不提供任何附加服务。
@@ -63,7 +63,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 * [创建 PHP-MySQL Web 应用并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)。
 
 ## <a name="continuousdeployment"></a>从基于云的源代码管理服务连续部署
-如果你的开发团队使用基于云的源代码管理 (SCM) 服务，如 [Visual Studio Team Services](http://www.visualstudio.com/)、[GitHub](https://www.github.com) 或 [BitBucket](https://bitbucket.org/)，则你可以将应用服务配置为与你的存储库集成并连续部署。
+如果你的开发团队使用基于云的源代码管理 (SCM) 服务，如 [GitHub](https://www.github.com)，则你可以将应用服务配置为与你的存储库集成并连续部署。
 
 从基于云的源代码管理服务部署的优点是：
 
@@ -77,7 +77,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 - 需要对相关 SCM 服务有一定的了解。
 
 ###<a name="vsts"></a>如何从基于云的源代码管理服务连续部署
-在 [Azure 门户预览](https://portal.azure.cn)中，可以从 GitHub、Bitbucket 和 Visual Studio Team Services 配置连续部署。
+在 Kudu 中，可以从 GitHub 配置连续部署。
 
 * [Continous Deployment to Azure App Service](/documentation/articles/app-service-continuous-deployment/)（连续部署到 Azure App Service）。
 
