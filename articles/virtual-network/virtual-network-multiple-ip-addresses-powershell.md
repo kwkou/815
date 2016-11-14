@@ -123,7 +123,7 @@
 		$IPConfigName3 = "IPConfig-3"
 		$IPConfig3 = New-AzureRmNetworkInterfaceIpConfig -Name $IPConfigName3 -Subnet $Subnet
 
-	>[AZURE.NOTE] 最多可为一个 NIC 分配 250 个专用 IP 地址。可在一个订阅中使用的公共 IP 地址数有限制。有关详细信息，请阅读 [Azure limits](/documentation/articles/azure-subscription-service-limits/#networking-limits---azure-resource-manager)（Azure 限制）一文。
+	>[AZURE.NOTE] 最多可为一个 NIC 分配 250 个专用 IP 地址。可在一个订阅中使用的公共 IP 地址数有限制。有关详细信息，请阅读 [Azure limits](/documentation/articles/azure-subscription-service-limits/#networking-limits)（Azure 限制）一文。
 
 6. 使用上一步骤中定义的 IP 配置创建 NIC。
 

@@ -50,7 +50,7 @@ PublicIPAddress 资源属于 Azure Resource Manager 资源。经典部署模型�
 外部终结点用于 Azure 外部的服务。例如，本地托管的服务或者具不同提供程序的服务。外部终结点可以单独使用，也可以在同一流量管理器配置文件中与 Azure 终结点结合使用。可以将 Azure 终结点与外部终结点结合用于多种方案：
 
 - 在主动-主动或主动-被动故障转移模型中，可以使用 Azure 为现有的本地应用程序提供增强的冗余。
-- 若要为全球各地的用户降低应用程序延迟，可以将现有的本地应用程序扩展到 Azure 中的其他地理位置。有关详细信息，请参阅 [Traffic Manager 'Performance' traffic routing](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)（流量管理器“性能”流量路由）。
+- 若要为全国各地的用户降低应用程序延迟，可以将现有的本地应用程序扩展到 Azure 中的其他地理位置。有关详细信息，请参阅 [Traffic Manager 'Performance' traffic routing](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)（流量管理器“性能”流量路由）。
 - 使用 Azure 为现有的本地应用程序提供额外容量既可以持续满足高峰需求，也可以通过“云爆发”解决方案满足此类需求。
 
 在某些情况下，可以使用外部终结点来引用 Azure 服务（有关示例，请参阅[常见问题](#faq)）。在本示例中，针对运行状况检查的计费是按照 Azure 终结点费率而非外部终结点费率进行的。但与 Azure 终结点不同，如果停止或删除基础服务，运行状况检查将持续计费，直到在流量管理器中禁用或删除该终结点为止。

@@ -21,7 +21,7 @@
 
 # 在 Azure App Service 中使用 Azure CDN
 
-[应用服务](/documentation/articles/app-service-changes-existing-services/)可以与 [Azure CDN](/home/features/cdn/) 相集成，增强[应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)中固有的全局缩放功能，在全球通过靠近客户的服务器节点提供 Web 应用内容（如需已更新的包含所有最新节点位置的列表，请单击[此处](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)）。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure 应用服务 Web 应用的性能，在全球显著改善 Web 应用的用户体验。
+[应用服务](/documentation/articles/app-service-changes-existing-services/)可以与 [Azure CDN](/home/features/cdn/) 相集成，增强[应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)中固有的全局缩放功能，在全国通过靠近客户的服务器节点提供 Web 应用内容（如需已更新的包含所有最新节点位置的列表，请单击[此处](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)）。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure 应用服务 Web 应用的性能，在全国显著改善 Web 应用的用户体验。
 
 将 Web Apps 与 Azure CDN 集成具有以下优点：
 

@@ -35,7 +35,7 @@
 
 ## <a name="traffic-manager-example"></a>流量管理器示例
 
-Contoso Corp 开发了一个新的合作伙伴门户。此门户的 URL 为 https://partners.contoso.com/login.aspx。该应用程序托管在三个 Azure 区域中。为了改善可用性并在全球最大程度地提高性能，他们使用流量管理器将客户端流量分布到最靠近的可用终结点。
+Contoso Corp 开发了一个新的合作伙伴门户。此门户的 URL 为 https://partners.contoso.com/login.aspx。该应用程序托管在三个 Azure 区域中。为了改善可用性并在全国最大程度地提高性能，他们使用流量管理器将客户端流量分布到最靠近的可用终结点。
 
 为了实现该配置：
 
