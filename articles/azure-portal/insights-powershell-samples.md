@@ -127,7 +127,7 @@ Get-AzureRmAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/
 
 `Get-AzureRmAlertRule` 支持其他参数。有关详细信息，请参阅 [Get-AlertRule](https://msdn.microsoft.com/zh-cn/library/mt282459.aspx)。
 
-## 创建警报规则
+## <a name="create-alert-rules"></a>创建警报规则
 可以使用 `Add-AlertRule` cmdlet 来创建、更新或禁用警报规则。
 
 可以分别使用 `New-AzureRmAlertRuleEmail` 和 `New-AzureRmAlertRuleWebhook` 创建电子邮件和 webhook 属性。在警报规则 cmdlet 中，将这些作为操作分配给警报规则的 **Actions** 属性。
@@ -226,7 +226,7 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 `Get-AzureRmMetricDefinition` 的可用选项的完整列表位于 [Get MetricDefinitions](https://msdn.microsoft.com/zh-cn/library/mt282458.aspx) 中。
 
 
-## 创建和管理自动缩放设置
+## <a name="create-and-manage-autoscale-settings"></a> 创建和管理自动缩放设置
 资源（例如 Web 应用、虚拟机、云服务或 VM 缩放设置）只能有一种为其配置的自动缩放设置。但是，每个自动缩放设置可具有多个配置文件。例如，一个用于基于性能的缩放配置文件，另一个用于基于计划的配置文件。每个配置文件可以为其配置多个规则。有关自动缩放的详细信息，请参阅[如何自动缩放应用程序](/documentation/articles/cloud-services-how-to-scale/)。
 
 下面列出了要使用的步骤：
