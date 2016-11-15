@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="06/01/2016" 
-	wacn.date=“10/10/2016” 
+	wacn.date="10/10/2016" 
 	ms.author="tdykstra"/>
 
 # 什么是 Azure WebJobs SDK
