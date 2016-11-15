@@ -21,7 +21,7 @@
 
 # Azure 安全概述
 
-Azure.cn上的 Microsoft Azure 安全信息站点针对 Azure 安全问题提供了技术解答。如果你对 Azure 法规遵循以及 Azure 如何保护其专属基础结构感兴趣，请访问[信任中心](https://www.trustcenter.cn/zh-cn/cloudservices/azure.html)。
+Azure.cn上的 Azure 安全信息站点针对 Azure 安全问题提供了技术解答。如果你对 Azure 法规遵循以及 Azure 如何保护其专属基础结构感兴趣，请访问[信任中心](https://www.trustcenter.cn/zh-cn/cloudservices/azure.html)。
 
 我们知道，安全是云中的首要任务，及时找到有关 Azure 安全性的准确信息极其重要。针对应用程序和服务使用 Azure 的最合理原因之一是可以利用各种可用的安全工具和功能。这些工具和功能可帮助在安全的 Azure 平台上创建安全的解决方案。
 

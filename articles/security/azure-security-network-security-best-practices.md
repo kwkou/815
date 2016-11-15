@@ -21,7 +21,7 @@
 
 # Azure 网络安全最佳实践
 
-Microsoft Azure 可让你将虚拟机和设备放在 Azure 虚拟网络上，从而将它们连接到其他网络设备。Azure 虚拟网络是一种虚拟网络构造，可让你将虚拟网络接口卡连接到虚拟网络，允许有网络功能的设备之间进行基于 TCP/IP 的通信。连接到 Azure 虚拟网络的 Azure 虚拟机能够连接到相同 Azure 虚拟网络、不同 Azure 虚拟网络、Internet 甚至你自己的本地网络上的设备。
+Azure 可让你将虚拟机和设备放在 Azure 虚拟网络上，从而将它们连接到其他网络设备。Azure 虚拟网络是一种虚拟网络构造，可让你将虚拟网络接口卡连接到虚拟网络，允许有网络功能的设备之间进行基于 TCP/IP 的通信。连接到 Azure 虚拟网络的 Azure 虚拟机能够连接到相同 Azure 虚拟网络、不同 Azure 虚拟网络、Internet 甚至你自己的本地网络上的设备。
 
 本文介绍一系列 Azure 网络安全最佳实践。这些最佳实践衍生自我们的 Azure 网络经验和客户的经验。
 
@@ -51,13 +51,13 @@ Microsoft Azure 可让你将虚拟机和设备放在 Azure 虚拟网络上，从
 
 ## 以逻辑方式分段子网
 
-[Azure 虚拟网络](https://www.azure.cn/documentation/services/networking/)类似于本地网络上的 LAN。Azure 虚拟网络背后的思路是创建单个基于空间的专用 IP 地址网络，将所有 [Azure 虚拟机](https://www.azure.cn/documentation/services/virtual-machines)置于其上。可用的专用 IP 地址空间位于类别 A (10.0.0.0/8)、类别 B (172.16.0.0/12) 和类别 C (192.168.0.0/16) 范围内。
+[Azure 虚拟网络](/documentation/services/networking/)类似于本地网络上的 LAN。Azure 虚拟网络背后的思路是创建单个基于空间的专用 IP 地址网络，将所有 [Azure 虚拟机](/documentation/services/virtual-machines)置于其上。可用的专用 IP 地址空间位于类别 A (10.0.0.0/8)、类别 B (172.16.0.0/12) 和类别 C (192.168.0.0/16) 范围内。
 
 类似于在本地执行的操作，需要将较大的地址空间分段成子网。可以使用基于 [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) 的子网原理来创建子网。
 
 子网之间的路由将自动发生，不需要手动配置路由表。但是，默认设置是 Azure 虚拟网络上创建的子网之间没有任何网络访问控制。若要创建子网之间的网络访问控制，必须在子网之间添加某项设置。
 
-可用于实现此任务的设置之一是[网络安全组](../virtual-network/virtual-networks-nsg.md) (NSG)。NSG 是简单的有状态数据包检查设备，使用 5 个元组（源 IP、源端口、目标 IP、目标端口和第 4 层协议）的方法来创建网络流量的允许/拒绝规则。你可以允许或拒绝单个 IP 地址、多个 IP 地址甚至整个子网的流量。
+可用于实现此任务的设置之一是[网络安全组](/documentation/articles/virtual-networks-nsg/) (NSG)。NSG 是简单的有状态数据包检查设备，使用 5 个元组（源 IP、源端口、目标 IP、目标端口和第 4 层协议）的方法来创建网络流量的允许/拒绝规则。你可以允许或拒绝单个 IP 地址、多个 IP 地址甚至整个子网的流量。
 
 将 NSG 用于子网之间的网络访问控制，可将属于同一安全区域或角色的资源置于其本身的子网中。例如，简单的 3 层式应用程序具有 Web 层、应用程序逻辑层和数据库层。可将属于上述各层的虚拟机置于其自身的子网中。然后使用 NSG 来控制子网之间的流量：
 
@@ -65,7 +65,7 @@ Microsoft Azure 可让你将虚拟机和设备放在 Azure 虚拟网络上，从
 - 应用程序逻辑虚拟机只能发起与数据库层的连接，并且只可接受来自 Web 层的连接
 - 数据库层虚拟机只能发起与其本身子网外部任何组件的连接，并且只可接受来自应用程序逻辑层的连接
 
-若要了解网络安全组以及如何使用它们以逻辑方式分段 Azure 虚拟网络的详细信息，请参阅 [What is a Network Security Group](../virtual-network/virtual-networks-nsg.md)（什么是网络安全组 (NSG)）一文。
+若要了解网络安全组以及如何使用它们以逻辑方式分段 Azure 虚拟网络的详细信息，请参阅 [What is a Network Security Group](/documentation/articles/virtual-networks-nsg/)（什么是网络安全组 (NSG)）一文。
 
 ## 控制路由行为
 
@@ -77,7 +77,7 @@ Microsoft Azure 可让你将虚拟机和设备放在 Azure 虚拟网络上，从
 
 > [AZURE.NOTE] 不需要用户定义的路由，默认系统路由适用于大多数情况。
 
-有关用户定义的路由及其配置方法的详细信息，请阅读 [What are User Defined Routes and IP Forwarding](../virtual-network/virtual-networks-udr-overview.md)（什么是用户定义的路由和 IP 转发）。
+有关用户定义的路由及其配置方法的详细信息，请阅读 [What are User Defined Routes and IP Forwarding](/documentation/articles/virtual-networks-udr-overview/)（什么是用户定义的路由和 IP 转发）。
 
 ## 启用强制隧道
 
@@ -89,7 +89,7 @@ Microsoft Azure 可让你将虚拟机和设备放在 Azure 虚拟网络上，从
 
 如果没有跨界连接，请务必使用网络安全组（前面已介绍）或 Azure 虚拟网络安全设备（接下来将介绍）来防止从 Azure 虚拟机对 Internet 的出站连接。
 
-若要详细了解强制隧道及其启用方式，请阅读 [Configure Forced Tunneling using PowerShell and Azure Resource Manager](../vpn-gateway/vpn-gateway-forced-tunneling-rm.md)（使用 PowerShell 和 Azure Resource Manager 配置强制隧道）一文。
+若要详细了解强制隧道及其启用方式，请阅读 [Configure Forced Tunneling using PowerShell and Azure Resource Manager](/documentation/articles/vpn-gateway-forced-tunneling-rm/)（使用 PowerShell 和 Azure Resource Manager 配置强制隧道）一文。
 
 ## 使用虚拟网络设备
 
@@ -128,13 +128,13 @@ Azure 网络安全设备可通过网络级别控件提供的功能来提供大�
 - 站点到站点 VPN
 - ExpressRoute
 
-[站点到站点 VPN](../vpn-gateway/vpn-gateway-site-to-site-create.md) 代表本地网络和 Azure 虚拟网络之间的虚拟专用连接。此连接通过 Internet 进行，可让你在网络与 Azure 之间的加密链接内“输送”信息。站点到站点 VPN 是安全成熟的技术，各种规模的企业已部署数十年。使用 [IPsec 隧道模式](https://technet.microsoft.com/library/cc786385.aspx)可执行隧道加密。
+[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/) 代表本地网络和 Azure 虚拟网络之间的虚拟专用连接。此连接通过 Internet 进行，可让你在网络与 Azure 之间的加密链接内“输送”信息。站点到站点 VPN 是安全成熟的技术，各种规模的企业已部署数十年。使用 [IPsec 隧道模式](https://technet.microsoft.com/zh-cn/library/cc786385.aspx)可执行隧道加密。
 
 尽管站点到站点 VPN 是可信、可靠且经过证实的技术，但隧道中的流量将遍历 Internet。此外，最大带宽相对受限于大约 200Mbps。
 
 如果你希望跨界连接具有突出的安全或性能级别，建议对跨界连接使用 Azure ExpressRoute。ExpressRoute 是你本地位置与 Exchange 托管提供商之间专用的 WAN 链接。因为这是电信运营商连接，所以数据不会通过 Internet 传输，也不会出现 Internet 通信固有的潜在风险。
 
-若要详细了解 Azure ExpressRoute 的工作原理和部署方式，请阅读 [ExpressRoute Technical Overview](../expressroute/expressroute-introduction.md)（ExpressRoute 技术概述）一文。
+若要详细了解 Azure ExpressRoute 的工作原理和部署方式，请阅读 [ExpressRoute Technical Overview](/documentation/articles/expressroute-introduction/)（ExpressRoute 技术概述）一文。
 
 ## 优化运行时间和性能
 机密性、完整性和可用性 (CIA) 三者构成现今最具影响力的安全模型。机密性与加密和隐私相关，完整与确保数据不会遭到未经授权人员的更改有关，可用性与确保经过授权的个人可以访问他们有权访问的信息有关。上述任何一个方面失败都代表可能破坏安全性。
@@ -158,7 +158,7 @@ Azure 网络安全设备可通过网络级别控件提供的功能来提供大�
 - 希望使用应用程序网关的 [SSL 卸载](https://f5.com/glossary/ssl-offloading)功能消除 Web 服务器场的 SSL 终端开销的应用程序。
 - 要求长时间运行的同一 TCP 连接上多个 HTTP 请求路由到或负载均衡到不同后端服务器的应用程序（例如内容传送网络）。
 
-若要详细了解 Azure 应用程序网关的工作原理及其在部署中的使用方式，请阅读 [Application Gateway Overview](../application-gateway/application-gateway-introduction.md)（应用程序网关概述）一文。
+若要详细了解 Azure 应用程序网关的工作原理及其在部署中的使用方式，请阅读 [Application Gateway Overview](/documentation/articles/application-gateway-introduction/)（应用程序网关概述）一文。
 
 ## 外部负载均衡
 来自 Internet 的传入连接在位于 Azure 虚拟网络中的服务器之间达到平衡负载时，将进行外部负载均衡。Azure 外部负载均衡器可以提供此功能，建议在不需要粘性会话或 SSL 卸载时使用。
@@ -167,19 +167,19 @@ Azure 网络安全设备可通过网络级别控件提供的功能来提供大�
 
 建议每当[无状态应用程序](http://whatis.techtarget.com/definition/stateless-app)接受来自 Internet 的传入请求时，使用外部负载均衡。
 
-若要详细了解 Azure 外部负载均衡器的工作原理和部署方式，请阅读 [Get Started Creating an Internet Facing Load Balancer in Resource Manager using PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md)（开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器）一文。
+若要详细了解 Azure 外部负载均衡器的工作原理和部署方式，请阅读 [Get Started Creating an Internet Facing Load Balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)（开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器）一文。
 
 ## 内部负载均衡
 内部负载均衡类似于外部负载均衡，使用相同的机制对其背后服务器的连接进行负载均衡。唯一的差别在于，在此情况下的负载均衡器将接受来自不在 Internet 上的虚拟机的连接。在大多数情况下，Azure 虚拟网络上的设备将发起负载均衡可接受的连接。
 
 建议将内部负载均衡用于将受益于此功能的方案，例如当需要对 SQL 服务器或内部 Web 服务器的连接进行负载均衡时。
 
-若要详细了解 Azure 内部负载均衡器的工作原理和部署方式，请阅读 [Get Started Creating an Internal Load Balancer using PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md#update-an-existing-load-balancer)（开始使用 PowerShell 创建 Internet 负载均衡器）一文。
+若要详细了解 Azure 内部负载均衡器的工作原理和部署方式，请阅读 [Get Started Creating an Internal Load Balancer using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/#update-an-existing-load-balancer)（开始使用 PowerShell 创建 Internet 负载均衡器）一文。
 
 ## 使用全局负载均衡
-使用公有云计算可部署遍布全球的应用程序，其组件位于世界各地的数据中心。由于 Azure 有全局数据中心，因此这种方案在 Microsoft Azure 上可行。相比于前面提到的负载均衡技术，全局负载均衡可让服务即使在整个数据中心可能不可用时也能使用。
+使用公有云计算可部署遍布全球的应用程序，其组件位于世界各地的数据中心。由于 Azure 有全局数据中心，因此这种方案在 Azure 上可行。相比于前面提到的负载均衡技术，全局负载均衡可让服务即使在整个数据中心可能不可用时也能使用。
 
-可以使用 [Azure 流量管理器](https://www.azure.cn/documentation/services/traffic-manager/)在 Azure 中实现这种类型的全局负载均衡。流量管理器可以根据用户的位置，对服务的连接进行负载均衡。
+可以使用 [Azure 流量管理器](/documentation/services/traffic-manager/)在 Azure 中实现这种类型的全局负载均衡。流量管理器可以根据用户的位置，对服务的连接进行负载均衡。
 
 例如，如果用户从欧盟对服务发出请求，此连接将被定向到位于欧盟数据中心的服务。这一部分的流量管理器全局负载均衡有助于改善性能，因为连接到最近的数据中心比连接到远处的数据中心还要快。
 
@@ -189,7 +189,7 @@ Azure 网络安全设备可通过网络级别控件提供的功能来提供大�
 
 如果所开发的云解决方案广泛分布于多个区域且需要最高级别的运行时间，我们建议使用流量管理器。
 
-若要详细了解 Azure 流量管理器及其部署方式，请阅读 [What is Traffic Manager](../traffic-manager/traffic-manager-overview.md)（什么是流量管理器）一文。
+若要详细了解 Azure 流量管理器及其部署方式，请阅读 [What is Traffic Manager](/documentation/articles/traffic-manager-overview/)（什么是流量管理器）一文。
 
 ## 禁用对 Azure 虚拟机的 RDP/SSH 访问
 使用[远程桌面协议](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol) (RDP) 和[安全 Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) 协议可以访问 Azure 虚拟机。这些协议可用于从远程位置管理虚拟机，并且是数据中心计算的标准。
@@ -202,21 +202,21 @@ Azure 网络安全设备可通过网络级别控件提供的功能来提供大�
 - 站点到站点 VPN
 - ExpressRoute
 
-[点到站点 VPN](../vpn-gateway/vpn-gateway-point-to-site-create.md) 是远程访问 VPN 客户端/服务器连接的另一种说法。点到站点 VPN 可让单个用户通过 Internet 连接到 Azure 虚拟网络。建立点到站点连接之后，用户能够使用 RDP 或 SSH 连接到位于用户通过点到站点 VPN 连接的 Azure 虚拟网络上的所有虚拟机。此处假设用户有权访问这些虚拟机。
+[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 是远程访问 VPN 客户端/服务器连接的另一种说法。点到站点 VPN 可让单个用户通过 Internet 连接到 Azure 虚拟网络。建立点到站点连接之后，用户能够使用 RDP 或 SSH 连接到位于用户通过点到站点 VPN 连接的 Azure 虚拟网络上的所有虚拟机。此处假设用户有权访问这些虚拟机。
 
 点到站点 VPN 比直接 RDP 或 SSH 连接更安全，因为用户必须事先通过两次身份验证才将连接到虚拟机。第一次，用户需要通过身份验证（并获得授权）才能创建点到站点 VPN 连接；第二次，用户需要通过身份验证（并获得授权）才能建立 RDP 或 SSH 会话。
 
-[站点到站点 VPN](../vpn-gateway/vpn-gateway-site-to-site-create.md) 通过 Internet 将整个网络连接到另一个网络。可以使用站点到站点 VPN 将本地网络连接到 Azure 虚拟网络。如果部署站点到站点 VPN，本地网络上的用户能够通过站点到站点 VPN 连接、使用 RDP 或 SSH 协议来连接到 Azure 虚拟网络上的虚拟机，而不需要你允许通过 Internet 的直接 RDP 或 SSH 访问。
+[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/) 通过 Internet 将整个网络连接到另一个网络。可以使用站点到站点 VPN 将本地网络连接到 Azure 虚拟网络。如果部署站点到站点 VPN，本地网络上的用户能够通过站点到站点 VPN 连接、使用 RDP 或 SSH 协议来连接到 Azure 虚拟网络上的虚拟机，而不需要你允许通过 Internet 的直接 RDP 或 SSH 访问。
 
-也可以使用专用的 WAN 链接提供类似于站点到站点 VPN 的功能。主要差异在于：1. 专用 WAN 链接不会遍历 Internet，2. 专用 WAN 链接通常更加稳定且性能更好。Azure 提供 [ExpressRoute](https://www.azure.cn/documentation/services/expressroute/) 形式的专用 WAN 链接解决方案。
+也可以使用专用的 WAN 链接提供类似于站点到站点 VPN 的功能。主要差异在于：1. 专用 WAN 链接不会遍历 Internet，2. 专用 WAN 链接通常更加稳定且性能更好。Azure 提供 [ExpressRoute](/documentation/services/expressroute/) 形式的专用 WAN 链接解决方案。
 
 ## 安全地将数据中心扩展到 Azure
 许多企业 IT 组织都希望扩展到云中，而不是扩建其本地数据中心。这种扩展意味着要将现有 IT 基础结构扩展到公有云。使用跨界连接选项，可将 Azure 虚拟网络视为本地网络基础结构上的另一个子网。
 
 但是，必须先解决许多规划和设计问题。这一点在网络安全方面格外重要。查看示例是了解如何着手处理这种设计的最佳方式之一。
 
-Microsoft 创建了[数据中心扩展参考体系结构关系图](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84#content)和相关支持材料，以帮助用户了解此类数据中心扩展的形式。其中提供了示例参考实现，可用于规划和设计如何安全地将企业数据中心扩展到云。我们建议你参阅此文档，以大致了解安全解决方案的重要组件。
+世纪互联创建了[数据中心扩展参考体系结构关系图](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84#content)和相关支持材料，以帮助用户了解此类数据中心扩展的形式。其中提供了示例参考实现，可用于规划和设计如何安全地将企业数据中心扩展到云。我们建议你参阅此文档，以大致了解安全解决方案的重要组件。
 
-若要详细了解如何安全地将数据中心扩展到 Azure，请观看视频 [Extending Your Datacenter to Microsoft Azure](https://channel9.msdn.com/Blogs/Windows-Azure/Extending-Your-Datacenter-into-Microsoft-Azure)（将数据中心扩展到 Microsoft Azure）。
+若要详细了解如何安全地将数据中心扩展到 Azure，请观看视频 [Extending Your Datacenter to Microsoft Azure](https://channel9.msdn.com/Blogs/Windows-Azure/Extending-Your-Datacenter-into-Microsoft-Azure)（将数据中心扩展到 Azure）。
 
 <!---HONumber=Mooncake_1024_2016-->

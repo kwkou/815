@@ -61,25 +61,25 @@ Microsoft 反恶意软件是一个针对应用程序和租户环境所提供的�
 - 反恶意软件引擎更新 - 自动更新 Microsoft 反恶意软件引擎。
 - 反恶意软件平台更新 – 自动更新 Microsoft 反恶意软件平台。
 - 主动保护 - 将检测到的威胁和可疑资源的遥测元数据报告给 Azure，确保做出快速响应，并通过 Microsoft Active Protection System (MAPS) 启用实时同步签名传递。
-- 示例报告 - 将示例提供并报告给 Microsoftt 反恶意软件服务，帮助改善服务并实现故障排除。
+- 示例报告 - 将示例提供并报告给 Microsoft 反恶意软件服务，帮助改善服务并实现故障排除。
 - 排除项 - 允许应用程序和服务管理员配置特定的文件、进程与驱动器，以便出于性能和/或其他原因将其从保护和扫描中排除。
 - 恶意软件事件收集 -在操作系统事件日志中记录反恶意软件服务的运行状况、可疑活动及采取的补救措施，并将这些数据收集到客户的 Azure 存储帐户。
 
 了解详细信息：有关使用反恶意软件保护虚拟机的详细信息，请参阅：
 
-- [适用于 Azure 云服务和虚拟机的 Microsoft 反恶意软件](../security/azure-security-antimalware.md)
+- [适用于 Azure 云服务和虚拟机的 Microsoft 反恶意软件](/documentation/articles/azure-security-antimalware/)
 - [在 Azure 虚拟机上部署反恶意软件解决方案](https://azure.microsoft.com/blog/deploying-antimalware-solutions-on-azure-virtual-machines/)
-- [如何在 Windows VM 上安装和配置 Asiainfo Deep Security 即服务](../virtual-machines/virtual-machines-windows-classic-install-trend.md)
+- [如何在 Windows VM 上安装和配置 Asiainfo Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend/)
 - [Azure 映像应用商店中的安全解决方案](https://market.azure.cn/List/Index?sort=Featured&filters=tag:security)
 
 ## 硬件安全模块
 
-加密和身份验证无法提高安全性，除非密钥本身也受到保护。通过将关键密码和密钥存储在 Azure 密钥保管库中，可以简化此类密码和密钥的管理和保护。密钥保管库使你可以将密钥存储在 FIPS 140-2 级别 2 标准认证的硬件安全模块 (HSM) 中。用于备份或[透明数据加密](https://msdn.microsoft.com/library/bb934049.aspx)的 SQL Server 加密密钥可以存储在密钥保管库中，此外还可存储应用程序中的任意密钥或机密。对这些受保护项的权限和访问权限通过 [Azure Active Directory](https://azure.microsoft.com/documentation/services/active-directory/) 进行管理。
+加密和身份验证无法提高安全性，除非密钥本身也受到保护。通过将关键密码和密钥存储在 Azure 密钥保管库中，可以简化此类密码和密钥的管理和保护。密钥保管库使你可以将密钥存储在 FIPS 140-2 级别 2 标准认证的硬件安全模块 (HSM) 中。用于备份或[透明数据加密](https://msdn.microsoft.com/zh-cn/library/bb934049.aspx)的 SQL Server 加密密钥可以存储在密钥保管库中，此外还可存储应用程序中的任意密钥或机密。对这些受保护项的权限和访问权限通过 [Azure Active Directory](/documentation/services/identity/) 进行管理。
 
 了解详细信息：
 
-- [什么是 Azure 密钥保管库？](../key-vault/key-vault-whatis.md)
-- [Azure 密钥保管库入门](../key-vault/key-vault-get-started.md)
+- [什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)
+- [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)
 - [Azure 密钥保管库博客](https://blogs.technet.microsoft.com/kv/)
 
 ## 虚拟机备份
@@ -88,8 +88,8 @@ Azure 备份是一个可缩放的解决方案，无需资本投资便可保护�
 
 了解详细信息：
 
-- [什么是 Azure 备份？](../backup/backup-introduction-to-azure-backup.md)
-- [Azure 备份服务 - 常见问题](../backup/backup-azure-backup-faq.md)
+- [什么是 Azure 备份？](/documentation/articles/backup-introduction-to-azure-backup/)
+- [Azure 备份服务 - 常见问题](/documentation/articles/backup-azure-backup-faq/)
 
 ## Azure Site Recovery
 
@@ -105,23 +105,23 @@ Site Recovery：
 
 了解详细信息：
 
-- [什么是 Azure Site Recovery？](../site-recovery/site-recovery-overview.md)
-- [Azure Site Recovery 的工作原理](../site-recovery/site-recovery-components.md)
-- [Azure Site Recovery 保护哪些工作负荷？](../site-recovery/site-recovery-workload.md)
+- [什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
+- [Azure Site Recovery 的工作原理](/documentation/articles/site-recovery-components/)
+- [Azure Site Recovery 保护哪些工作负荷？](/documentation/articles/site-recovery-workload/)
 
 ## 虚拟网络
 
-虚拟机需要网络连接。为了满足该要求，Azure 需要虚拟机连接到 Azure 虚拟网络。Azure 虚拟网络是构建在物理 Azure 网络结构基础之上的逻辑构造。每个逻辑 Azure 虚拟网络与其他所有 Azure 虚拟网络隔离。这种隔离有助于确保其他 Microsoft Azure 客户无法访问部署中的网络流量。
+虚拟机需要网络连接。为了满足该要求，Azure 需要虚拟机连接到 Azure 虚拟网络。Azure 虚拟网络是构建在物理 Azure 网络结构基础之上的逻辑构造。每个逻辑 Azure 虚拟网络与其他所有 Azure 虚拟网络隔离。这种隔离有助于确保其他 Azure 客户无法访问部署中的网络流量。
 
 了解详细信息：
 
-- [Azure 网络安全概述](../articles/security/security-network-overview.md)
-- [虚拟网络概述](../virtual-network/virtual-networks-overview.md)
+- [Azure 网络安全概述](/documentation/articles/security-network-overview/)
+- [虚拟网络概述](/documentation/articles/virtual-networks-overview/)
 
 
 ## 合规性
 
-21Vianet 运营的 Azure 虚拟机已通过 ISO/IEC 20000/27001、DJCP、Trusted Cloud Service Certification、GB18030 及其他重要合规计划的认证。由于通过了这些认证，你自己的 Azure 应用程序更容易符合法规请求，对于企业而言，可以解决各种国内与国际法规要求。
+世纪互联运营的 Azure 虚拟机已通过 ISO/IEC 20000/27001、DJCP、Trusted Cloud Service Certification、GB18030 及其他重要合规计划的认证。由于通过了这些认证，你自己的 Azure 应用程序更容易符合法规请求，对于企业而言，可以解决各种国内与国际法规要求。
 
 了解详细信息：
 
