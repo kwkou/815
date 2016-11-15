@@ -217,7 +217,7 @@ Visual Studio 将打开并创建新的 Integration Services (SSIS) 项目。然�
 <!--Other Web references-->
 [Microsoft SQL Server 2016 Integration Services Feature Pack for Azure（用于 Azure 的 Microsoft SQL Server 2016 Integration Services 功能包）]: http://go.microsoft.com/fwlink/?LinkID=626967
 [SQL Server 评估]: https://www.microsoft.com/zh-cn/evalcenter/evaluate-sql-server-2016
-[Visual Studio Community]: https://www.visualstudio.com/zh-cn/products/visual-studio-community-vs.aspx
+[Visual Studio Community]: https://www.visualstudio.com/vs/community/
 [AdventureWorks 2014 示例数据库]: https://msftdbprodsamples.codeplex.com/releases/view/125550
 
 <!---HONumber=Mooncake_0530_2016-->

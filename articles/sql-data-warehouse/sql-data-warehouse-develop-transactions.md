@@ -164,7 +164,7 @@ SQL 数据仓库有一些与事务相关的其他限制。
 <!--Image references-->
 
 <!--Article references-->
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units/
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [事务最佳实践]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/

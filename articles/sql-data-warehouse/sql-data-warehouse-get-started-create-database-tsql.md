@@ -63,16 +63,16 @@
 完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]，或[迁移][]数据。
 
 <!--Article references-->
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is
 [how to create a SQL Data Warehouse from the Azure portal]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [使用 Visual Studio 连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-connect/
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-overview-load/
 [加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
-[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server
-[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
-[如何创建资源组]: /documentation/articles/resource-group-template-deploy-portal#create-resource-group
+[使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/
+[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/rule
+[如何创建资源组]: /documentation/articles/resource-group-template-deploy-portal
 [Installing Visual Studio and SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio/
 [sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
 

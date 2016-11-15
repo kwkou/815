@@ -29,7 +29,7 @@ SQL 数据仓库允许多达 1,024 个并发连接。所有 1,024 个连接都�
 影响并发限制的有两个概念： *并发查询* 和 *并发槽* 。执行查询时，必须符合查询并发限制和并发槽分配要求。
 
 - 并发查询是指同时执行的查询。就大型 DWU 来说，SQL 数据仓库支持最多 32 个并发查询。
-- 根据 DWU 分配并发槽。每 100 个 DWU 提供 4 个并发槽。例如，DW100 分配 4 个并发槽，DW1000 分配 40 个。每个查询使用一个或多个并发槽，具体取决于查询的[资源类](#resource-classes)。在 smallrc 资源类中运行的查询占用一个并发槽。在更高资源类中运行的查询占用更多并发槽。
+- 根据 DWU 分配并发槽。每 100 个 DWU 提供 4 个并发槽。例如，DW100 分配 4 个并发槽，DW1000 分配 40 个。每个查询使用一个或多个并发槽，具体取决于查询的资源类。在 smallrc 资源类中运行的查询占用一个并发槽。在更高资源类中运行的查询占用更多并发槽。
 
 下表描述了不同 DWU 大小的并发查询数和并发槽数的限制。
 
@@ -66,7 +66,7 @@ SQL 数据仓库允许多达 1,024 个并发连接。所有 1,024 个连接都�
 
 较好的做法是将用户永久分配给资源类，而不是更改用户的资源类。例如，加载到聚集列存储表时，如果分配了更多的内存，则可创建质量更高的索引。为了确保加载项能够访问更多的内存，可创建一个用户来专门加载数据，并将该用户永久分配给更高级的资源类。
 
-有几种类型的查询不会得益于更大的内存分配。系统将忽略其资源类分配，而始终运行小资源类中的这些查询。如果这些查询始终在小资源类中运行，则当并发槽数紧张时仍可以运行这些查询，它们不会占用比所需的更多的槽。有关详细信息，请参阅[资源类例外](#query-exceptions-to-concurrency-limits)。
+有几种类型的查询不会得益于更大的内存分配。系统将忽略其资源类分配，而始终运行小资源类中的这些查询。如果这些查询始终在小资源类中运行，则当并发槽数紧张时仍可以运行这些查询，它们不会占用比所需的更多的槽。
 
 关于资源类的更多详细信息：
 
@@ -74,7 +74,6 @@ SQL 数据仓库允许多达 1,024 个并发连接。所有 1,024 个连接都�
 - 虽然可以将用户添加到一个或多个更高级别的资源类，但用户会呈现分配给他们的最高资源类的属性。也就是说，如果将用户同时分配给 mediumrc 和 largerc，则级别更高的资源类 (largerc) 将是用户所属的资源类。
 - 不能更改系统管理用户的资源类。
 
-有关详细的示例，请参阅[更改用户资源类示例](#changing-user-resource-class-example)。
 
 ## 内存分配
 
@@ -424,7 +423,7 @@ SQL 数据仓库具有以下等待类型：
 
 <!--Article references-->
 [Secure a database in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-manage-security/
-[重新生成索引以提高段质量]: /documentation/articles/sql-data-warehouse-tables-index#rebuilding-indexes-to-improve-segment-quality
+[重新生成索引以提高段质量]: /documentation/articles/sql-data-warehouse-tables-index/
 [保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 
 <!--MSDN references-->

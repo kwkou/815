@@ -83,7 +83,7 @@
 
 
 <!--Article references-->
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-load-with-bcp/
@@ -93,8 +93,8 @@
 
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [how to create a SQL Data Warehouse from the Azure Portal]: /documentation/articles/sql-data-warehouse-get-started-provision/
-[使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started#create-an-azure-sql-database-logical-server/
-[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell#database-setup-create-a-resource-group-server-and-firewall-rule/
+[使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/
+[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/
 [如何创建资源组]: /documentation/articles/resource-group-portal/
 
 <!--MSDN references--> 

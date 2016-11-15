@@ -138,8 +138,8 @@ SQL 数据仓库有多个 DMV 可用于监视查询执行。以下监视相关�
 [表数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types/
 [表数据分布]: /documentation/articles/sql-data-warehouse-tables-distribute/
 [表索引]: /documentation/articles/sql-data-warehouse-tables-index/
-[列存储索引质量差的原因]: /documentation/articles/sql-data-warehouse-tables-index#causes-of-poor-columnstore-index-quality/
-[重新生成列存储索引]: /documentation/articles/sql-data-warehouse-tables-index#rebuilding-indexes-to-improve-segment-quality/
+[列存储索引质量差的原因]: /documentation/articles/sql-data-warehouse-tables-index
+[重新生成列存储索引]: /documentation/articles/sql-data-warehouse-tables-index
 [表分区]: /documentation/articles/sql-data-warehouse-tables-partition/
 [管理表统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [临时表]: /documentation/articles/sql-data-warehouse-tables-temporary/

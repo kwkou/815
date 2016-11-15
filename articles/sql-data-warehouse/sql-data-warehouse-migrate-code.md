@@ -30,7 +30,7 @@
 - output 子句
 - 内联用户定义的函数
 - 多语句函数
-- [通用表表达式](#Common-table-expressions)
+- 通用表表达式
 - [递归通用表表达式 (CTE)](#Recursive-common-table-expressions-(CTE)
 - CLR 函数和过程
 - $partition 函数
