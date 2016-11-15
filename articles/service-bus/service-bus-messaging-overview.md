@@ -23,7 +23,7 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 服务总线支持两种不同的消息传递模式：中继消息传送和中转消息传送。
 
-## 中继消息传送
+## <a name="Relayed-messaging"></a> 中继消息传送
 
 服务总线的[中继](/documentation/articles/service-bus-relay-overview/)组件是一种集中式（但负载高度平衡的）服务，支持各种不同的传输协议和 Web 服务标准。包括 SOAP、WS-* 甚至 REST。[中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay/)提供了各种不同的中继连接选项，并且可以在有可能时帮助协商直接对等连接。服务总线针对使用 Windows Communication Foundation (WCF) 的 .NET 开发人员在性能与可用性方面进行了优化，并且通过 SOAP 和 REST 接口提供到中继服务的完全访问。这样就可以将任何 SOAP 或 REST 编程环境与服务总线进行集成。
 

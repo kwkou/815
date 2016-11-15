@@ -230,7 +230,7 @@ Client.OnMessage((message) =>
 
 如果应用程序在处理消息之后，但在发出 [Complete][] 请求之前发生崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 [MessageId](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) 属性来实现，该属性在多次传送尝试中保持不变。
  
-## 后续步骤
+## <a name="next-steps"></a> 后续步骤
 
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。
 

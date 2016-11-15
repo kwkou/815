@@ -15,7 +15,7 @@
 
 服务总线推出基本、标准和[高级](/documentation/articles/service-bus-premium-messaging/)三种层级。你可以为你创建的每个服务总线服务命名空间选择一个服务层，所选的服务层可应用于在该命名空间中创建的所有队列、主题/订阅、中继和事件中心。
 
->[AZURE.NOTE] 有关当前服务总线定价的详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/service-bus/)和[服务总线常见问题解答](/documentation/articles/service-bus-faq/#service-bus-pricing)。
+>[AZURE.NOTE] 有关当前服务总线定价的详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/messaging/)和[服务总线常见问题解答](/documentation/articles/service-bus-faq/#service-bus-pricing)。
 
 服务总线使用以下两种测定仪用于队列和主题/订阅：
 
@@ -110,7 +110,7 @@
 |中继小时数|每 100 中继小时数收取 0.52 元|
 |消息|每 10,000 条消息收取 0.05 元|
 
-## 常见问题
+## <a name="#FAQ"></a> 常见问题
 
 ### 如何计算中继小时数？
 

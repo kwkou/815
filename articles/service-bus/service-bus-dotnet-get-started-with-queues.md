@@ -42,13 +42,13 @@
 
 [AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## 使用 Azure 门户创建队列
+## <a name="2-create-a-queue-using-the-azure-portal"></a> 使用 Azure 门户创建队列
 
 如果你已创建服务总线队列，请跳转到[将消息发送到队列](#3-send-messages-to-the-queue)部分。
 
 [AZURE.INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 
-## 将消息发送到队列
+## <a name="3-send-messages-to-the-queue"></a> 将消息发送到队列
 
 为了将消息发送到队列中，我们将使用 Visual Studio 编写一个 C# 控制台应用程序。
 
