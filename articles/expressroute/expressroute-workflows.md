@@ -39,7 +39,7 @@
 5. 将虚拟网络链接到 ExpressRoute 线路 - 可以将虚拟网络链接到 ExpressRoute 线路。请按照说明[将 VNet 链接](/documentation/articles/expressroute-howto-linkvnet-arm/)到你的线路。这些 VNet 可以位于 ExpressRoute 线路所在的同一 Azure 订阅中，也可以位于不同的订阅中。
 
 
-## ExpressRoute 线路预配状态
+## <a name="expressroute-circuit-provisioning-states"></a> ExpressRoute 线路预配状态
 
 每条 ExpressRoute 线路有两种状态：
 
