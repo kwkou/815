@@ -36,7 +36,7 @@
 
 ## 创建设备标识
 
-在本部分中，你将创建一个 Windows 控制台应用程序，用于在 IoT 中心的标识注册表中创建新的设备标识。设备无法连接到 IoT 中心，除非它在设备标识注册表中具有条目。有关详细信息，请参阅 [IoT Hub Developer Guide][lnk-devguide-identity]（IoT 中心开发人员指南）中的“Device identity registry”（设备标识注册表）部分。当你运行此控制台应用时，它将生成唯一的设备 ID 和密钥，当设备向 IoT 中心发送设备到云的消息时，可以用于标识设备本身。
+在本部分中，你将创建一个 Windows 控制台应用程序，用于在 IoT 中心的标识注册表中创建新的设备标识。设备无法连接到 IoT 中心，除非它在设备标识注册表中具有条目。当你运行此控制台应用时，它将生成唯一的设备 ID 和密钥，当设备向 IoT 中心发送设备到云的消息时，可以用于标识设备本身。
 
 1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将新的 Visual C# Windows 经典桌面项目添加到当前解决方案。确保 .NET Framework 版本为 4.5.1 或更高。将项目命名为 **CreateDeviceIdentity**。
 
@@ -265,7 +265,7 @@
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-portal]: https://manage.windowsazure.cn
 [lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
-[lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
+
 [lnk-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
 [lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 

@@ -48,7 +48,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 > [AZURE.NOTE] IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提供 SDK 支持。若要了解如何将本教程中的模拟设备替换为物理设备，以及如何将设备连接到 IoT 中心，请参阅 [Azure IoT 开发人员中心]。
 
-本教程直接适用于使用事件中心兼容消息的其他方式，如 [HDInsight (Hadoop)] 项目。有关详细信息，请参阅 [Azure IoT 中心开发人员指南 - 设备到云]。
+本教程直接适用于使用事件中心兼容消息的其他方式，如 [HDInsight (Hadoop)] 项目。
 
 若要完成本教程，您需要以下各项：
 
@@ -142,7 +142,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 > [AZURE.NOTE] 本教程使用单个分区服务总线队列来处理所有检索自 IoT 中心的交互式消息。若要深入了解如何使用服务总线队列来满足解决方案的扩展性要求，请参阅 [Azure 服务总线]文档。
 
-### 预配 Azure 存储帐户和服务总线队列
+### <a name="provision-an-azure-storage-account-and-a-service-bus-queue"></a> 预配 Azure 存储帐户和服务总线队列
 
 若要使用 EventProcessorHost 类，必须具有 Azure 存储帐户以使该类能记录检查点信息。可使用现有的存储帐户，或按照[关于 About Azure 存储]中的说明来创建新帐户。请记下存储帐户连接字符串。
 
@@ -451,7 +451,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
     private final static String serviceBusRootUri = ".servicebus.chinacloudapi.cn";
     ```
 
-5. 将以下类级变量添加到 **App** 类。将 **{youreventhubcompatibleendpoint}** 替换为事件中心兼容的终结点名称。该终结点名称类似于 **ihs....namespace**，因此要删除 **sb://** 前缀和 **.servicebus.chinacloudapi.cn/** 后缀。将 **{youreventhubcompatiblename}** 替换为事件中心兼容的名称。将 **{youriothubkey}** 替换为 **iothubowner** 键。在 Java 版 Azure IoT 中心*教程的[创建 IoT 中心][lnk-create-an-iot-hub] section in the *部分中记下了这些值：
+5. 将以下类级变量添加到 **App** 类。将 **{youreventhubcompatibleendpoint}** 替换为事件中心兼容的终结点名称。该终结点名称类似于 **ihs....namespace**，因此要删除 **sb://** 前缀和 **.servicebus.chinacloudapi.cn/** 后缀。将 **{youreventhubcompatiblename}** 替换为事件中心兼容的名称。将 **{youriothubkey}** 替换为 **iothubowner** 键。在 Java 版 Azure IoT 中心教程的*创建 IoT 中心*部分中记下了这些值：
 
     ```
     private final static String consumerGroupName = "$Default";
@@ -731,7 +731,6 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 [Service Bus queue]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
 [服务总线队列]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
 
-[Azure IoT 中心开发人员指南 - 设备到云]: /documentation/articles/iot-hub-devguide/#d2c
 
 [Azure 存储]: /documentation/services/storage/
 [Azure 服务总线]: /documentation/services/service-bus/

@@ -40,7 +40,6 @@ Microsoft Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT
 有关与特定硬件设备的 SDK 兼容性的详细信息，请参阅以下文章：
 
 - [OS 平台和硬件与设备 SDK 的兼容性][lnk-compatibility]
-- [Microsoft Azure IoT 认证计划][lnk-certified]
 
 ## IoT 中心服务 SDK
 
@@ -94,7 +93,6 @@ Microsoft Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中�
 [lnk-node-service-sdk]: https://github.com/Azure/azure-iot-sdks/blob/master/node/service/README.md
 [lnk-python-device-sdk]: https://github.com/Azure/azure-iot-sdks/blob/master/python/device/readme.md
 [lnk-compatibility]: /documentation/articles/iot-hub-tested-configurations/
-[lnk-certified]: /documentation/articles/iot-hub-tested-configurations/#microsoft-azure-certified-for-iot
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/README.md
 
 [lnk-dotnet-ref]: https://msdn.microsoft.com/zh-cn/library/mt488521.aspx

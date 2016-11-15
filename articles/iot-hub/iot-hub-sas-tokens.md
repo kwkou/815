@@ -31,7 +31,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 ## 安全令牌结构
 可以使用安全令牌向设备和服务授予限时访问 IoT 中心特定功能的权限。为确保只有经过授权的设备和服务能够连接，安全令牌必须使用共享访问策略密钥或存储在标识注册表中并带有设备标识的对称密钥进行签名。
 
-使用共享访问策略密钥进行签名的令牌可以授权访问与共享访问策略权限相关的所有功能。请参阅 [IoT 中心开发人员指南的安全性部分][lnk-devguide-security]。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
+使用共享访问策略密钥进行签名的令牌可以授权访问与共享访问策略权限相关的所有功能。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
 
 安全令牌采用以下格式：
 
@@ -143,7 +143,6 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 使用共享访问策略访问设备功能的两个主要方案是：
 
 * [云协议网关][lnk-azure-protocol-gateway]，
-* 用于实现自定义身份验证方案的[令牌服务][lnk-devguide-security]。
 
 由于共享访问策略可潜在授权访问任何连接设备的权限，因此创建安全令牌时必须使用正确的资源 URI。这对令牌服务尤其重要，它必须使用资源 URI 将令牌的范围限定到特定设备。这一点与协议网关的关系不大，因为协议网关是对所有设备的通信进行调节。
 
@@ -170,7 +169,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 ## 使用服务组件提供的安全令牌
 
-如[IoT 中心开发人员指南的安全性部分][lnk-devguide-security]所述，服务组件只能使用共享访问策略生成安全令牌，授予适当权限。
+服务组件只能使用共享访问策略生成安全令牌，授予适当权限。
 
 以下是终结点上显示的服务功能：
 
@@ -257,7 +256,6 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 [lnk-apis-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [lnk-guidance-security]: /documentation/articles/iot-hub-guidance/#customauth
-[lnk-devguide-security]: /documentation/articles/iot-hub-devguide/#security
 [lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md
 

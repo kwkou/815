@@ -66,7 +66,7 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 - 在预配协调过程中。有关详细信息，请参阅 [Device Provisioning][lnk-guidance-provisioning]（设备预配）。
 - 你出于任何原因认为设备遭到入侵或未经授权。
 
-## 导入和导出设备标识
+## <a name="import-and-export-device-identities"></a> 导入和导出设备标识
 
 可以使用 [IoT 中心资源提供程序终结点][lnk-endpoints]上的异步操作，从 IoT 中心的标识注册表批量导出设备标识。导出是长时间运行的作业，它使用客户提供的 blob 容器来保存从标识注册表读取的设备标识数据。
 
@@ -75,13 +75,13 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 - 有关导入和导出 API 的详细信息，请参阅 [Azure IoT 中心 - 资源提供程序 API][lnk-resource-provider-apis]。
 - 若要了解有关如何运行导入和导出作业的详细信息，请参阅 [Bulk management of IoT Hub device identities][lnk-bulk-identity]（批量管理 IoT 中心的设备标识）。
 
-## 设备预配
+## <a name="device-provisioning"></a> 设备预配
 
 给定的 IoT 解决方案存储的设备数据取决于该解决方案的特定要求。但是，解决方案必须至少存储设备标识和身份验证密钥。Azure IoT 中心包含标识注册表，可以存储每个设备的值，例如 ID、身份验证密钥和状态代码。解决方案可以使用其他 Azure 服务（例如表、Blob 或 Azure DocumentDB）来存储任何其他设备数据。
 
 *设备预配* 是将初始设备数据添加到解决方案中存储中的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 IoT 中心标识注册表。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
 
-## 设备检测信号
+## <a name="device-heartbeat"></a> 设备检测信号
 
 IoT 中心标识注册表包含名为 **connectionState** 的字段。你只应在开发和调试期间使用 **connectionState** 字段，IoT 解决方案不应在运行时查询该字段（例如，为了检查设备是否已连接以确定是否要发送云到设备的消息或短信）。
 
@@ -97,7 +97,7 @@ IoT 中心标识注册表包含名为 **connectionState** 的字段。你只应�
 
 以下参考主题提供有关设备标识注册表的详细信息。
 
-## 设备标识属性
+## <a name="device-identity-properties"></a> 设备标识属性
 
 设备识别以包含以下属性的 JSON 文档表示。
 

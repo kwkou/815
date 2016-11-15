@@ -40,7 +40,7 @@
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub-pp](../../includes/iot-hub-get-started-create-hub-pp.md)]
 
-## 创建模拟设备应用
+## <a name="create-the-simulated-device-app"></a> 创建模拟设备应用
 
 在此部分中，你会创建一个 Node.js 控制台应用，它作为 **myDeviceId** 连接到你的中心，等待所需配置更新，然后对模拟配置更新过程报告更新。
 
@@ -184,14 +184,14 @@
                 var newConfigId = uuid.v4();
                 var newFrequency = process.argv[2] || "5m";
                 var patch = {
-                    properties: {
-                        desired: {
+                    properties: {
+                        desired: {
                             telemetryConfig: {
                                 configId: newConfigId,
                                 sendFrequency: newFrequency
                             }
                         }
-                    }
+                    }
                 }
                 twin.update(patch, function(err) {
                     if (err) {

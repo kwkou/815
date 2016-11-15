@@ -28,7 +28,7 @@ IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备克隆][ln
 * IoT 中心查询语言的主要功能简介，以及
 * 语言的详细说明。
 
-## 克隆查询入门
+## <a name="getting-started-with-twin-queries"></a> 克隆查询入门
 
 [设备克隆][lnk-twins]可以包含标记和属性形式的任意 JSON 对象。IoT 中心允许使用包含所有克隆信息的单个 JSON 文档查询设备克隆。
 例如，假设 IoT 中心克隆采用以下结构：
@@ -245,7 +245,7 @@ IoT 中心允许使用任意条件检索克隆筛选结果。例如，
 
 **FROM <from\_specification>** 子句只能采用两个值：**FROM devices** - 查询设备克隆；**FROM devices.jobs** - 查询每个设备上的作业详细信息。
 
-## WHERE 子句
+## <a name="where-clause"></a> WHERE 子句
 
 **WHERE <filter\_condition>** 子句是可选的。它指定若要包含为结果的一部分，FROM 集合中的 JSON 文档必须满足的条件。任何 JSON 文档必须将指定的条件求值为“true”才能包含在结果中。
 
@@ -302,7 +302,7 @@ GROUP BY 的正式语法为：
 
 目前，仅在查询克隆时才支持使用 GROUP BY 子句。
 
-## 表达式和条件
+## <a name="expressions-and-conditions"></a> 表达式和条件
 
 从较高层面讲， *表达式* 可以：
 

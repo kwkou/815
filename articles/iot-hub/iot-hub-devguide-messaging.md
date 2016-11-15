@@ -40,7 +40,7 @@ Iot 中心公开[与事件中心兼容的终结点][lnk-compatible-endpoint]，�
 
 有关 IoT 中心与事件中心服务的比较，请参阅 [IoT 中心与事件中心的比较][lnk-compare]。
 
-## 设备到云的消息
+## <a name="device-to-cloud-messages"></a> 设备到云的消息
 
 通过面向设备的终结点 (**/devices/{deviceId}/messages/events**) 发送设备到云消息。后端服务通过面向服务的与[事件中心][lnk-event-hubs]兼容的终结点 (**/messages/events**) 接收设备到云的消息。因此，可以使用标准[事件中心集成和 SDK][lnk-compatible-endpoint] 来接收设备到云的消息。
 
@@ -72,7 +72,7 @@ IoT 中心使用类似于[事件中心][lnk-event-hubs]的方式实现设备到�
 
 有关此类消息的最佳处理方式的详细信息，请参阅[教程：如何处理 IoT 中心设备到云的消息][lnk-d2c-tutorial]教程。
 
-### 设备到云的配置选项
+### <a name="device-to-cloud-configuration-options"></a> 设备到云的配置选项
 
 IoT 中心公开以下属性让你控制设备到云的消息传送。
 
@@ -83,7 +83,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 可以通过 [Azure IoT 中心 - 资源提供程序 API][lnk-management-portal] 以编程方式修改上述所有属性，或使用 [Azure 门户预览][lnk-resource-provider-apis]进行修改。
 
-### 反欺骗属性
+### <a name="anti-spoofing-properties"></a> 反欺骗属性
 
 为了避免设备到云的消息中出现设备欺骗，IoT 中心使用以下属性在所有消息上加上戳记：
 
@@ -103,7 +103,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 }
 ```
 
-## 云到设备的消息
+## <a name="cloud-to-device-messages"></a> 云到设备的消息
 
 可以通过面向服务的终结点 (**/messages/devicebound**) 发送云到设备的消息。设备可以通过特定于设备的终结点 (**/devices/{deviceId}/messages/devicebound**) 接收这些消息。
 
@@ -113,7 +113,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 > [AZURE.NOTE] 发送云到设备的消息时，属性名称和值只能包含 ASCII 字母数字字符加上 ``{'!', '#', '$', '%, '&', "'", '*', '*', '+', '-', '.', '^', '_', '`', '|', '~'}``。
 
-### 消息生命周期
+### <a name="message-lifecycle"></a> 消息生命周期
 
 为了保证至少一次消息传递，IoT 中心将云到设备的消息保留在每个设备队列中。设备必须显式确认 *完成* ，IoT 中心才会从队列中将其删除。这是为了保证连接失败和设备故障时能够恢复。
 
@@ -137,13 +137,13 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 > [AZURE.NOTE] 通常只要丢失消息不影响应用程序逻辑，就会完成云到设备的消息。例如，消息内容已成功保留在本地存储空间中，或已成功执行某操作。该消息还可能携带暂时性信息，该信息的丢失不会影响应用程序的功能。有时，对于长时间运行的任务，你可以在将任务说明保留到本地存储空间后完成该云到设备的消息。然后，在作业进度的不同阶段，你可以使用一条或多条设备到云的消息通知应用程序后端。
 
-### 消息到期时间（生存时间）
+### <a name="message-expiration-time-to-live"></a> 消息到期时间（生存时间）
 
 每条云到设备的消息都有过期时间。此时间可以由服务（在 **ExpiryTimeUtc** 属性中）设置，或者由 IoT 中心使用指定为 IoT 中心属性的默认 *生存时间* 来设置。请参阅[云到设备的配置选项][lnk-c2d-configuration]。
 
 > [AZURE.NOTE] 利用消息到期时间并避免将消息发送到已断开连接的设备的常见方法是设置较短的生存时间值。此方法可达到与维护设备连接状态一样的效果，而且更加有效。请求消息确认时，IoT 中心可以通知你哪些设备可以接收消息、哪些设备脱机或已出现故障。
 
-### 消息反馈
+### <a name="message-feedback"></a> 消息反馈
 
 当你发送云到设备的消息时，服务可以请求传送每条消息的反馈（关于该消息的最终状态）。
 
@@ -194,7 +194,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 ]
 ```
 
-### 云到设备的配置选项
+### <a name="cloud-to-device-configuration-options"></a> 云到设备的配置选项
 
 每个 IoT 中心都针对云到设备的消息传送公开以下配置选项。
 
@@ -207,7 +207,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 有关详细信息，请参阅[创建 IoT 中心][lnk-portal]。
 
-## 读取设备到云的消息
+## <a name="read-device-to-cloud-messages"></a> 读取设备到云的消息
 
 IoT 中心向后端服务公开终结点，以便让后端服务读取中心收到的设备到云的消息。该终结点与事件中心兼容，这样就可以使用事件中心服务支持的任何机制读取消息。
 
@@ -240,7 +240,7 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 
 以下参考主题提供有关与 IoT 中心交换消息的详细信息。
 
-## 消息格式
+## <a name="message-format"></a> 消息格式
 
 IoT 中心消息包含：
 
@@ -266,7 +266,7 @@ IoT 中心消息包含：
 | ConnectionDeviceGenerationId | IoT 中心对设备到云的消息设置的 ID。它包含发送消息的设备的 **generationId**（根据[设备标识属性][lnk-device-properties]）。 |
 | ConnectionAuthMethod | 由 IoT 中心对设备到云的消息设置的身份验证方法。此属性包含用于验证发送消息的设备的身份验证方法的相关信息。有关详细信息，请参阅[设备到云的反欺骗技术][lnk-antispoofing]。|
 
-## 通信协议
+## <a name="communication-protocols"></a> 通信协议
 
 在设备端通信方面，IoT 中心支持 MQTT、[AMQP][lnk-amqp]、基于 WebSockets 的 AMQP 和 HTTP/1 协议。下表提供了针对协议选取的高水平建议：
 
@@ -300,7 +300,7 @@ IoT 中心消息包含：
 
 在 Azure 区域创建 IoT 中心后，该中心将在生存期内保留同一 IP 地址。但为保证服务质量，如果 Microsoft 调整 IoT 中心的大小，则向其分配新的 IP 地址。
 
-## 有关 MQTT 支持的说明
+## <a name="notes-on-mqtt-support"></a> 有关 MQTT 支持的说明
 
 IoT 中心实现 MQTT v3.1.1 协议，但具有以下限制和特定行为：
 

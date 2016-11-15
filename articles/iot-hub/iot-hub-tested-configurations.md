@@ -23,7 +23,7 @@
 
 
 
-## OS 平台
+## <a name="os-platforms"></a> OS 平台
 
 Azure IoT 库在以下操作系统平台上进行了测试：
 

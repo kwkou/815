@@ -48,7 +48,7 @@
 
 ### 设备管理客户端
 
-[设备管理客户端][lnk-device-management]在 Edison 主板上以服务形式运行。这样，你便可以在 Edison 主板上运行远程作业，例如[固件更新][lnk-dm-jobs]、重新启动和配置更新，以及查询设备属性。在本教程中，设备管理客户端将接收并处理在 Edison 主板上执行固件更新的请求。
+[设备管理客户端][lnk-device-management]在 Edison 主板上以服务形式运行。这样，你便可以在 Edison 主板上运行远程作业，例如固件更新、重新启动和配置更新，以及查询设备属性。在本教程中，设备管理客户端将接收并处理在 Edison 主板上执行固件更新的请求。
 
 ### IoT 中心
 
@@ -418,7 +418,6 @@ IoT 设备管理服务请求的 Edison 固件更新通常会从某个 URL 下载
 [lnk-dm-sample-ui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway-physical]: /documentation/articles/iot-hub-gateway-sdk-physical-device/
 [lnk-gateway-scenario]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-dm-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
