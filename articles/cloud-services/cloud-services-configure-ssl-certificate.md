@@ -54,7 +54,7 @@
 
 接下来，你必须在服务定义和服务配置文件中包含有关此证书的信息。
 
-## 步骤 2：修改服务定义和配置文件
+## <a name="step-2-modify-the-service-definition-and-configuration-files"></a> 步骤 2：修改服务定义和配置文件
 
 必须将应用程序配置为使用此证书，并且必须添加 HTTPS 终结点。因此，需要更新服务定义和服务配置文件。
 
@@ -137,7 +137,7 @@
 
 现在已更新服务定义和服务配置文件，请打包部署以上载到 Azure。如果你使用的是 **cspack**，请不要使用 **/generateConfigurationFile** 标志，因为这会覆盖你插入的证书信息。
 
-## 步骤 3：上载证书
+## <a name="step-3-upload-a-certificate"></a> 步骤 3：上载证书
 
 已将部署包更新为使用此证书，并且已添加 HTTPS 终结点。现在你可以使用 Azure 经典管理门户将包和证书上载到 Azure。
 

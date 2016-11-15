@@ -17,7 +17,7 @@ wacn.date="09/26/2016"/>
 
 [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.aspx) 库中也提供了这些 XPath 值。
 
-## 应用在模拟器中运行
+## <a name="app-running-in-emulator"></a> 应用在模拟器中运行
 
 指示应用正在模拟器中运行。
 

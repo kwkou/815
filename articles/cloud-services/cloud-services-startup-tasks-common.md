@@ -217,7 +217,7 @@ Azure 将为你角色中启动的进程创建防火墙规则。例如，当你�
 </system.webServer>
 ```
 
-## 创建 PowerShell 启动任务
+## <a name="create-a-powershell-startup-task"></a> 创建 PowerShell 启动任务
 
 Windows PowerShell 脚本不能直接从 [ServiceDefinition.csdef] 文件调用，但它们可以从启动批处理文件中调用。
 
@@ -245,7 +245,7 @@ Windows PowerShell 脚本不能直接从 [ServiceDefinition.csdef] 文件调用�
     REM   If an error occurred, return the errorlevel.
     EXIT /B %errorlevel%
 
-## 通过启动任务在本地存储中创建文件
+## <a name="create-files-in-local-storage-from-a-startup-task"></a> 通过启动任务在本地存储中创建文件
 
 可以使用本地存储资源来存储应用程序稍后将访问的启动任务创建的文件。
 
@@ -341,7 +341,7 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
     )
 
 
-## 检测到你的任务已运行
+## <a name="detect-that-your-task-has-already-run"></a> 检测到你的任务已运行
 
 该角色可能会无需重新启动即可回收，从而不会导致启动任务重新运行。没有标志来指示任务已在宿主 VM 上运行。你可能有一些任务它们运行多次无关紧要。但是，也可能会遇到需要阻止任务运行多次的情况。
 
