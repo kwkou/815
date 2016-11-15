@@ -73,7 +73,7 @@ Azure 使用 AS 12076 进行 Azure 公共和Azure 专用。我们保留了 ASN 6
 
 ExpressRoute 不能配置为传输路由器。你必须依赖连接服务提供商的传输路由服务。
 
-## 播发默认路由
+## <a name="advertising-default-routes"></a> 播发默认路由
 
 只有 Azure 专用对等互连会话允许默认路由。在这种情况下，我们将所有流量从关联的虚拟网络路由到你的网络。在专用对等互连中播发默认路由会导致来自 Azure 的 Internet 路径遭到阻止。你必须依赖企业网络边缘，为 Azure 中托管的服务往返路由 Internet 的流量。
 

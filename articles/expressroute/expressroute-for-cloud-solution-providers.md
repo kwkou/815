@@ -82,7 +82,7 @@ ExpressRoute 支持将多个 vNet 连接到单个 ExpressRoute 线路，以便�
 
 你可以协助设置连接并配置路由，以便你数据中心的资源能够与你数据中心的客户端资源通信，或者与 Azure 中托管的资源通信。
 
-## ExpressRoute 路由域
+## <a name="ExpressRoute-routing-domains"></a> ExpressRoute 路由域
 ExpressRoute 提供三种路由域：公共对等互连、专用对等互连。在主动-主动配置中，每个路由域都配置了相同的路由器，以确保高可用性。有关 ExpressRoute 路由域的更多详细信息，请单击[此处](/documentation/articles/expressroute-circuit-peerings/)。
 
 你可以自定义路由筛选器，根据需要来允许相关路由。如需详细信息，或者需要了解如何进行此类更改，请参阅详细介绍路由筛选器的以下文章：[使用 PowerShell 创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-classic/)。
