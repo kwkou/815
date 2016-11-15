@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Microsoft Azure 安全入门 | Microsoft Azure"
-   description="本文概述了 Microsoft Azure 安全功能，以及组织在将其资产迁移到云提供商处时需要注意的一般性注意事项。"
+   pageTitle="Azure 安全入门 | Azure"
+   description="本文概述了 Azure 安全功能，以及组织在将其资产迁移到云提供商处时需要注意的一般性注意事项。"
    services="security"
    documentationCenter="na"
    authors="YuriDio"
@@ -54,7 +54,7 @@ Azure 中其他用于确保数据安全的功能包括：
 
 -   存储帐户密钥、共享访问签名、管理证书以及其他密钥对每个 Azure 租户来说都是唯一的。
 
--   Azure 支持和使用数据加密机制，包括 SSL/TLS、IPsec 和 AES，具体取决于数据类型、容器以及传输情况。
+-   Azure 支持和使用数种加密机制，包括 SSL/TLS、IPsec 和 AES，具体取决于数据类型、容器以及传输情况。
 
 ##虚拟化
 
