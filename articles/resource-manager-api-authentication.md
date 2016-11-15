@@ -126,7 +126,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 
 如果不只想要代表用户访问 Azure Resource Manager，而且还要允许用户使用其 Azure AD 帐户登录你的应用程序，请发出 Open ID Connect 授权请求。使用 Open ID Connect，应用程序也可以从 Azure AD 接收 id\_token，应用可以使用它来将用户登录。
 
-[Send the sign-in request](/documentation/articles/active-directory-protocols-openid-connect-code#send-the-sign-in-request)（发送登录请求）主题中介绍了适用于此请求的查询字符串参数。
+[Send the sign-in request](/documentation/articles/active-directory-protocols-openid-connect-code)（发送登录请求）主题中介绍了适用于此请求的查询字符串参数。
 
 下面是一个示例 Open ID Connect 请求：
 
@@ -155,7 +155,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 
     grant_type=authorization_code&code=AAABAAAAiL9Kn2Z*****L1nVMH3Z5ESiAA&redirect_uri=http%3A%2F%2Flocalhost%3A62080%2FAccount%2FSignIn&client_id=a0448380-c346-4f9f-b897-c18733de9394&client_secret=olna84E8*****goScOg%3D
 
-使用证书凭据时，请使用应用程序证书凭据的私钥来创建 JSON Web 令牌 (JWT) 并签名 (RSA SHA256)。令牌的声明类型在 [JWT 令牌声明](/documentation/articles/active-directory-protocols-oauth-code#jwt-token-claims)中显示。请参考 [Active Directory Auth Library (.NET) code](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/blob/dev/src/ADAL.PCL.Desktop/CryptographyHelper.cs)（Active Directory 身份验证库 (.NET) 代码）来为客户端断言 JWT 令牌签名。
+使用证书凭据时，请使用应用程序证书凭据的私钥来创建 JSON Web 令牌 (JWT) 并签名 (RSA SHA256)。令牌的声明类型在 [JWT 令牌声明](/documentation/articles/active-directory-protocols-oauth-code)中显示。请参考 [Active Directory Auth Library (.NET) code](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/blob/dev/src/ADAL.PCL.Desktop/CryptographyHelper.cs)（Active Directory 身份验证库 (.NET) 代码）来为客户端断言 JWT 令牌签名。
 
 有关客户端身份验证的详细信息，请参阅 [Open ID Connect spec](http://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)（Open ID Connect 规范）。
 
@@ -180,7 +180,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 
     https://login.microsoftonline.com/{tenant-id}/OAuth2/Token
 
-[授权代码授予流](/documentation/articles/active-directory-protocols-oauth-code#refreshing-the-access-tokens)中介绍了要在刷新请求中使用的参数。
+[授权代码授予流](/documentation/articles/active-directory-protocols-oauth-code)中介绍了要在刷新请求中使用的参数。
 
 以下示例演示如何使用刷新令牌：
 

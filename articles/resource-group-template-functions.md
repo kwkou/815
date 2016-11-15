@@ -835,7 +835,6 @@
 - [参数](#parameters)
 - [variables](#variables)
 
-若要从资源、资源组或订阅获取值，请参阅 [Resource functions](#resource-functions)（资源函数）。
 
 <a id="deployment" /></a>
 ### 部署
@@ -956,7 +955,6 @@
 - [resourceId](#resourceid)
 - [订阅](#subscription)
 
-若要从参数、变量或当前部署获取值，请参阅 [Deployment value functions](#deployment-value-functions)（部署值函数）。
 
 <a id="listkeys" /></a>
 <a id="list" /></a>

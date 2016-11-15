@@ -14,7 +14,7 @@
    
 # Resource Manager 模板演练
 
-创建模板时的首要问题之一是“如何开始？”。用户可以从空白模板开始，按照[创作模板](/documentation/articles/resource-group-authoring-templates/#template-format)一文中所述的基本结构操作，并添加资源和相应的参数和变量。一个不错的开始替代方法是，浏览[快速入门库](https://github.com/Azure/azure-quickstart-templates)并寻找与你要创建的模板类似的方案。可以合并多个模板或编辑现有模板以适合你自己的特定方案。
+创建模板时的首要问题之一是“如何开始？”。用户可以从空白模板开始，按照[创作模板](/documentation/articles/resource-group-authoring-templates/)一文中所述的基本结构操作，并添加资源和相应的参数和变量。一个不错的开始替代方法是，浏览[快速入门库](https://github.com/Azure/azure-quickstart-templates)并寻找与你要创建的模板类似的方案。可以合并多个模板或编辑现有模板以适合你自己的特定方案。
 
 让我们来看一下通用基础结构：
 
@@ -365,7 +365,7 @@
     }
 
 ## 虚拟机
-如同在创建[网络接口](#network-interface)时所做的一样，你将使用 copyIndex() 函数创建 2 个虚拟机。VM 的创建取决于存储帐户、网络接口和可用性集。如 `storageProfile` 属性中的定义，将从应用商店映像创建此 VM - `imageReference` 用于定义映像发布者、产品、SKU 和版本。最后，配置诊断配置文件以启用 VM 的诊断。
+如同在创建网络接口时所做的一样，你将使用 copyIndex() 函数创建 2 个虚拟机。VM 的创建取决于存储帐户、网络接口和可用性集。如 `storageProfile` 属性中的定义，将从应用商店映像创建此 VM - `imageReference` 用于定义映像发布者、产品、SKU 和版本。最后，配置诊断配置文件以启用 VM 的诊断。
 
 若要查找应用商店映像的相关属性，请遵循 [select Linux virtual machine images（选择 Linux 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)或 [select Windows virtual machine images（选择 Windows 虚拟机映像）](/documentation/articles/virtual-machines-windows-cli-ps-findimage/)文章。
 
