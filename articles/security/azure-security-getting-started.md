@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Microsoft Azure 安全入门 | Microsoft Azure"
-   description="本文概述了 Microsoft Azure 安全功能，以及组织在将其资产迁移到云提供商处时需要注意的一般性注意事项。"
+   pageTitle="Azure 安全入门 | Azure"
+   description="本文概述了 Azure 安全功能，以及组织在将其资产迁移到云提供商处时需要注意的一般性注意事项。"
    services="security"
    documentationCenter="na"
    authors="YuriDio"
