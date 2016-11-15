@@ -290,7 +290,7 @@ Windows PowerShell 脚本不能直接从 [ServiceDefinition.csdef] 文件调用�
 
     EXIT /b 0
 
-可以从 Azure SDK 中使用 [GetLocalResource](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) 方法访问本地存储文件夹。
+可以从 Azure SDK 中使用 [GetLocalResource](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) 方法访问本地存储文件夹。
 
 ```csharp
 string localStoragePath = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetLocalResource("StartupLocalStorage").RootPath;
