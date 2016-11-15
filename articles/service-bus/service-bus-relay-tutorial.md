@@ -494,7 +494,7 @@ namespace Microsoft.ServiceBus.Samples
 }
 ```
 
-## 配置 WCF 客户端
+## <a name="configure-the-wcf-client"></a> 配置 WCF 客户端
 
 在此步骤中，你可以为之前在本教程中创建的访问服务的基本客户端应用程序创建 App.config 文件。此 App.config 文件用于定义终结点的协定、绑定和名称。该过程后面的示例中提供了这些任务所用的代码。
 

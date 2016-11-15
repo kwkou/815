@@ -111,7 +111,7 @@ catch(ServiceException $e){
 
 > [AZURE.NOTE] 你可以对 `ServiceBusRestProxy` 对象使用 `listTopics` 方法，以检查具有指定名称的主题是否已位于服务命名空间中。
 
-## 创建订阅
+## <a name="create-a-subscription"></a> 创建订阅
 
 主题订阅同样使用 **ServiceBusRestProxy->createSubscription** 方法创建。订阅已命名，并且具有一个限制传递到订阅的虚拟队列的消息集的可选筛选器。
 
@@ -180,7 +180,7 @@ $ruleResult = $serviceBusRestProxy->createRule("mytopic", "LowMessages", $ruleIn
 
 现在，当消息发送到 `mytopic` 主题后，它总是会传送给订阅了 `mysubscription` 订阅的接收者，并且选择性地传送给订阅了 `HighMessages` 和 `LowMessages` 订阅的接收者（具体取决于消息内容）。
 
-## 将消息发送到主题
+## <a name="send-messages-to-a-topic"></a> 将消息发送到主题
 
 若要向服务总线主题发送消息，你的应用程序将调用 **ServiceBusRestProxy->sendTopicMessage** 方法。以下代码演示了如何将消息发送到前面在 `MySBNamespace` 服务命名空间中创建的 `mytopic` 主题。
 

@@ -151,7 +151,7 @@ catch [System.Exception]
     	$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
     	Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
 
-## 将命名空间迁移到另一个 Azure 订阅
+## <a name="migrate-a-namespace-to-another-azure-subscription"></a> 将命名空间迁移到另一个 Azure 订阅
 
 通过运行以下顺序的命令，可在 Azure 订阅之间移动命名空间。若要执行此操作，命名空间必须已经处于活动状态，而且运行 PowerShell 命令的用户必须既是源订阅又是目标订阅的管理员。
 
