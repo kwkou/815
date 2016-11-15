@@ -156,7 +156,7 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [Azure 上的 IPython Notebook]: /documentation/articles/virtual-machines-linux-jupyter-notebook/
 [云服务]: /documentation/articles/cloud-services-python-ptvs/
 [ Web 应用]: /documentation/articles/web-sites-python-ptvs-django-mysql/
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Python Tools for Visual Studio]: https://www.visualstudio.com/vs/python/
 [GitHub 上的 Python Tools for Visual Studio]: http://microsoft.github.io/PTVS/
 [Python 包索引]: http://pypi.python.org/pypi
 [Microsoft Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281

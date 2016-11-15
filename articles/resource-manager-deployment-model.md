@@ -157,15 +157,6 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
   ![经典体系结构](./media/virtual-machines-azure-resource-manager-architecture/arm_arch1.png)
 
-## 从经典部署迁移到 Resource Manager 部署
-
-如果已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅：
-
-1. [平台支持的从经典部署模型迁移到 Azure Resource Manager 的技术深入探讨](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-deep-dive/)
-2. [平台支持从经典部署模型迁移到 Azure Resource Manager 的 IaaS 资源](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)
-3. [使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager](/documentation/articles/virtual-machines-windows-ps-migration-classic-resource-manager/)
-4. [使用 Azure CLI 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型](/documentation/articles/virtual-machines-linux-cli-migration-classic-resource-manager/)
-
 ## 后续步骤
 
 - 若要演练如何创建用于定义虚拟机、存储帐户和虚拟网络的模板，请参阅 [Resource Manager template walkthrough](/documentation/articles/resource-manager-template-walkthrough/)（Resource Manager 模板演练）。

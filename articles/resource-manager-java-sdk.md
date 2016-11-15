@@ -46,8 +46,6 @@ Azure Resource Manager Java SDK 托管在 GitHub [Azure Java SDK 存储库](http
 
 （本概述中的示例将使用 Maven 作为 SDK 包源）
 
-SDK 包括某些方案的示例 - 身份验证、预配 VM，等等。可以在 [azure-mgmt-samples](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-mgmt-samples) GitHub 存储库中找到所有示例。
-
 ## 帮助器类
 
 SDK 包含多个主包的帮助器类。帮助器类实现于 auzre-mgmt-utility 包中：
@@ -80,7 +78,7 @@ SDK 包含多个主包的帮助器类。帮助器类实现于 auzre-mgmt-utility
 
 获取这些值后，可以获取有效期为一小时的 Active Directory 访问令牌。
 
-提供客户端 ID、机密和租户 ID 后，Java SDK 将包含一个用于创建访问令牌的帮助器类 AuthHelper。[ServicePrincipalExample](https://github.com/Azure/azure-sdk-for-java/blob/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/authentication/ServicePrincipalExample.java) 类中的以下示例使用 AuthHelper *getAccessTokenFromServicePrincipalCredentials* 方法来获取访问令牌：
+提供客户端 ID、机密和租户 ID 后，Java SDK 将包含一个用于创建访问令牌的帮助器类 AuthHelper。 ServicePrincipalExample 类中的以下示例使用 AuthHelper *getAccessTokenFromServicePrincipalCredentials* 方法来获取访问令牌：
 
 
     public static Configuration createConfiguration() throws Exception {
@@ -99,7 +97,7 @@ SDK 包含多个主包的帮助器类。帮助器类实现于 auzre-mgmt-utility
 
 
 ## 创建虚拟机 
-实用程序包包含一个用于创建虚拟机的帮助器类 [ComputeHelper](https://github.com/Azure/azure-sdk-for-java/blob/master/resource-management/azure-mgmt-utility/src/main/java/com/microsoft/azure/utility/ComputeHelper.java)。在 azure-mgmt-samples 包的 [compute](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/compute) 下面，可以找到有关处理虚拟机的若干示例。
+实用程序包包含一个用于创建虚拟机的帮助器类 ComputeHelper。
 
 下面是创建虚拟机的简单流程。在本示例中，帮助器类将在创建 VM 的过程中创建存储和网络：
 
@@ -134,7 +132,7 @@ SDK 包含多个主包的帮助器类。帮助器类实现于 auzre-mgmt-utility
 
 
 ## 部署模板
-[ResouceHelper](https://github.com/Azure/azure-sdk-for-java/blob/master/resource-management/azure-mgmt-utility/src/main/java/com/microsoft/azure/utility/ResourceHelper.java) 类旨在简化使用 Java SDK 部署 ARM 模板的过程。
+ResouceHelper 类旨在简化使用 Java SDK 部署 ARM 模板的过程。
 
 
     // create a new resource group
@@ -193,8 +191,6 @@ SDK 包含多个主包的帮助器类。帮助器类实现于 auzre-mgmt-utility
           }
     }
 
-
-可以在示例包的 [templatedeployments](https://github.com/Azure/azure-sdk-for-java/tree/master/azure-mgmt-samples/src/main/java/com/microsoft/azure/samples/templatedeployments) 下面找到更多示例。
 
 ## 其他阅读材料和帮助
 Azure SDK for Java 文档：[Java 文档](http://azure.github.io/azure-sdk-for-java/)

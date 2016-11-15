@@ -27,9 +27,9 @@
 如果你不熟悉 Azure Resource Manager，则可能不熟悉某些术语。
 
 - **资源** - 可通过 Azure 获取的可管理项。部分常见资源包括虚拟机、存储帐户、Web 应用、数据库和虚拟网络，但这只是其中一小部分。
-- **资源组** - 一个容器，用于保存 Azure 解决方案的相关资源。资源组可以包含解决方案的所有资源，也可以只包含想要作为组来管理的资源。根据对组织有利的原则，决定如何将资源分配到资源组。请参阅[资源组](#resource-groups)。
-- **资源提供程序** — 一种服务，提供可以通过 Resource Manager 进行部署和管理的资源。每个资源提供程序提供用于处理所部署资源的操作。部分常见资源提供程序包括 Microsoft.Compute（提供虚拟机资源）、Microsoft.Storage（提供存储帐户资源）和 Microsoft.Web（提供与 Web 应用相关的资源）。请参阅[资源提供程序](#resource-providers)。
-- **Resource Manager 模板** — 一个 JavaScript 对象表示法 (JSON) 文件，用于定义一个或多个要部署到资源组的资源。它也会定义所部署资源之间的依赖关系。使用模板能够以一致方式反复部署资源。请参阅[模板部署](#template-deployment)。
+- **资源组** - 一个容器，用于保存 Azure 解决方案的相关资源。资源组可以包含解决方案的所有资源，也可以只包含想要作为组来管理的资源。根据对组织有利的原则，决定如何将资源分配到资源组。
+- **资源提供程序** — 一种服务，提供可以通过 Resource Manager 进行部署和管理的资源。每个资源提供程序提供用于处理所部署资源的操作。部分常见资源提供程序包括 Microsoft.Compute（提供虚拟机资源）、Microsoft.Storage（提供存储帐户资源）和 Microsoft.Web（提供与 Web 应用相关的资源）。
+- **Resource Manager 模板** — 一个 JavaScript 对象表示法 (JSON) 文件，用于定义一个或多个要部署到资源组的资源。它也会定义所部署资源之间的依赖关系。使用模板能够以一致方式反复部署资源。
 - **声明性语法** - 一种语法，允许你声明“以下是我想要创建的项目”，而不需要编写一系列编程命令来进行创建。Resource Manager 模板便是声明性语法的其中一个示例。在该文件中，你可以定义要部署到 Azure 的基础结构的属性。
 
 ## 使用资源管理器的优势
@@ -73,7 +73,7 @@
 
 ## 资源提供程序
 
-每个资源提供程序都会提供一组用于技术区域的资源和操作。例如，若要存储密钥和密码，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型来创建密钥保管库，提供名为 **vaults/secrets** 的资源类型在密钥保管库中创建密码。它还通过[密钥保管库 REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)来提供操作。可以直接调用 REST API，也可以使用[密钥保管库 PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/dn868052.aspx) 和[密钥保管库 Azure CLI](/documentation/articles/key-vault-manage-with-cli/) 来管理密钥保管库。还可以使用几种编程语言来处理大多数资源。有关详细信息，请参阅 [SDKs and samples](#sdks-and-samples)（SDK 和示例）。
+每个资源提供程序都会提供一组用于技术区域的资源和操作。例如，若要存储密钥和密码，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型来创建密钥保管库，提供名为 **vaults/secrets** 的资源类型在密钥保管库中创建密码。它还通过[密钥保管库 REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)来提供操作。可以直接调用 REST API，也可以使用[密钥保管库 PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/dn868052.aspx) 和[密钥保管库 Azure CLI](/documentation/articles/key-vault-manage-with-cli/) 来管理密钥保管库。还可以使用几种编程语言来处理大多数资源。
 
 若要部署和管理基础结构，需要了解有关资源提供程序的详细信息。需要了解其资源类型、REST API 操作的版本号、支持的操作，以及用于创建资源的架构。若要了解支持的资源提供程序，请参阅 [Resource Manager 提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 
@@ -105,7 +105,7 @@
 
 资源不需要驻留在同一个资源组中就能共享一个标记。你可以创建自己的标记分类，以确保组织中的所有用户使用公用的标记，避免用户无意中应用稍有不同的标记（如“dept”而不是“department”）。
 
-有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。可以创建[自定义策略](#manage-resources-with-customized-policies)，要求在部署期间将标记添加到资源。
+有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
 ## 访问控制
 

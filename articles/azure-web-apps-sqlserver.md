@@ -96,5 +96,4 @@
 * [SQL 数据库入门指导](/documentation/articles/sql-database-get-started/)
 * [SQL Server 数据库的迁移指南](/documentation/articles/sql-database-cloud-migrate/)
 * [SQL 数据库常见问题](/documentation/articles/sql-database-faq/)
-* [Web 应用的相关技术文档](https://kingfaster.sharepoint.cn/dev/Shared%20Documents/Azure1元试用账号功能/Website%20Hosting0717.docx)
 

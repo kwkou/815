@@ -153,7 +153,7 @@
 
 1. 不能在 variables 节中使用 [reference](/documentation/articles/resource-group-template-functions/#reference) 函数。reference 函数从资源的运行时状态中派生其值，但变量是在初始模板分析期间解析的。应直接在模板的 **resources** 或 **outputs** 节中构造需要 **reference** 函数的值。
 
-1. 根据[资源名称](#resource-names)中所述，针对需要保持唯一的资源名称包含变量。
+1. 根据资源名称中所述，针对需要保持唯一的资源名称包含变量。
 
 1. 可以将变量组合成复杂对象。可以使用 **variable.subentry** 格式，从复杂对象引用值。组合变量有助于跟踪相关变量，并提高模板的易读性。
 

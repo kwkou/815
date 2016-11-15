@@ -114,7 +114,7 @@
 
             New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri <LinkToTemplate> -TemplateParameterUri <LinkToParameterFile>
 
-        使用外部参数文件时，不能传递是内联值的或本地文件中的其他值。有关详细信息，请参阅[参数优先级](#parameter-precendence)。
+        使用外部参数文件时，不能传递是内联值的或本地文件中的其他值。
 
      部署资源组后，你将看到部署摘要。
 

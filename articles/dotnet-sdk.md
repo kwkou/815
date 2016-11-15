@@ -37,7 +37,7 @@
 
 ###<a id="vwd"></a>Visual Studio Community Edition 2015
 
-如果你的计算机上没有 Visual Studio，SDK 将安装 [Visual Studio Community Edition 2015](https://www.visualstudio.com/products/visual-studio-community-vs)。
+如果你的计算机上没有 Visual Studio，SDK 将安装 [Visual Studio Community Edition 2015](https://www.visualstudio.com/vs/community/)。
 
 ###<a id="stgemulator"></a>Microsoft Azure 存储模拟器
 
@@ -120,7 +120,7 @@ Azure 模拟器模拟云服务环境，这样您就可以先在本地计算机�
 
 如果你想要使用最新工具针对 Azure 进行开发，则最好是安装该 SDK。如果你不愿意安装该 SDK，则在符合以下条件的情况下，你可以这样做：
 
-* 你已安装了最新的 [Visual Studio 更新](http://www.visualstudio.com/downloads/download-visual-studio-vs#DownloadFamilies_5)。
+* 你已安装了最新的 [Visual Studio 更新](http://www.visualstudio.com/downloads/download-visual-studio-vs)。
 * 你的开发仅针对 Azure 网站或移动服务，不针对云服务或虚拟机。
 * 你的应用程序不使用存储，或者它使用存储，但你不需要存储模拟器或 AzCopy 工具。
 
