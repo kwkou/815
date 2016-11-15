@@ -87,7 +87,7 @@ IoT 中心通过服务端遥测数据读取终结点使收到的遥测数据可�
 
 **DeviceInfo** 和**规则** ASA 作业将其输出发送到事件中心以传递到其他后端服务。该解决方案使用 [Web 作业][lnk-web-job]中运行的 [EventPocessorHost][lnk-event-processor] 实例从这些事件中心读取消息。**EventProcessorHost** 使用 **DeviceInfo** 数据更新 DocumentDB 数据库中的设备数据，使用**规则**数据调用逻辑应用和更新解决方案门户中显示的警报。
 
-## 设备标识注册表和 DocumentDB
+## <a name="device-identity-registry-and-documentdb"></a> 设备标识注册表和 DocumentDB
 
 每个 IoT 中心都包括存储设备密钥的[设备标识注册表][lnk-identity-registry]。IoT 中心使用此信息对设备进行身份验证 - 设备必须已注册，并具有有效的密钥，然后才能连接到中心。
 
