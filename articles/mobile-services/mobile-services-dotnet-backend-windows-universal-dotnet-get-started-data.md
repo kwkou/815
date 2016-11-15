@@ -55,7 +55,7 @@
 此时，Windows 应用商店应用程序和 Windows Phone 应用商店应用程序都已连接到新的移动服务。下一步是测试新的移动服务项目。
 
 
-##在本地测试移动服务项目
+## <a name="test-the-service-locally"></a> 在本地测试移动服务项目
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-api-documentation](../../includes/mobile-services-dotnet-backend-test-local-service-api-documentation.md)]
 

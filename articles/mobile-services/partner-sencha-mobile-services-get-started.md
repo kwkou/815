@@ -88,7 +88,7 @@
 
 您可以使用以下步骤手动将 Azure 扩展添加到您的应用程序：
 
-1. 从[此处](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)下载 Azure 扩展包。（您可能会使用自己的 Sencha 论坛 ID 访问此区域。）
+1. 下载 Azure 扩展包。（您可能会使用自己的 Sencha 论坛 ID 访问此区域。）
 
 2. 将该 Azure 扩展包从下载目录复制到您最终希望放置和解压缩它的位置：
 
@@ -689,7 +689,6 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
   * 示例应用程序[演练](http://docs.sencha.com/touch-azure/1.0.0/#!/guide/data_filters)
   * 在 [Sencha 论坛](http://www.sencha.com/forum)中获得帮助
   * 浏览 [Sencha 文档](http://docs.sencha.com/)
-  * 将 Sencha 与 Azure 移动服务配合使用：[（视频）](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-126-Using-Sencha-With-Windows-Azure-Mobile-Services)
 
 
 ## 其他资源
