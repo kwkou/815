@@ -82,7 +82,6 @@
 * [按 ID 查找记录](#lookingup)
 * [处理非类型化查询](#untypedqueries)
 * [插入数据](#inserting)
-* [更新数据](#updating)
 * [删除数据](#deleting)
 * [冲突解决和乐观并发](#optimisticconcurrency)
 * [绑定到 Windows 用户界面](#binding)
@@ -440,7 +439,7 @@
 
 假设已在服务器中使 PageSize 等于或大于 100，这样，每个请求最多可返回 100 个项。
 
-##<a name="#customapi"></a>使用自定义 API
+##<a name="customapi"></a>使用自定义 API
 
 自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。
 
@@ -463,11 +462,11 @@
 
 本部分介绍以下主题：
 
-+ [客户端托管的身份验证](#client-flow)
++ [客户端托管的身份验证](#clientflow)
 + [服务器托管的身份验证](#serverflow)
 + [缓存身份验证令牌](#caching)
 
-###<a name="client-flow"></a>客户端托管的身份验证
+###<a name="clientflow"></a>客户端托管的身份验证
 
 应用可以独立联系标识提供者，然后在用后端登录期间提供返回的令牌。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。这可能比使用服务器流更有利，因为它提供更直观的 UX 风格，并允许其他自定义。
 
@@ -761,7 +760,7 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 
 * [Xamarin.iOS](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push/#add-push)
 
-###<a name="register-xplat"></a>如何注册推送模板以发送跨平台通知
+###<a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a>如何注册推送模板以发送跨平台通知
 
 若要注册模板，请结合模板使用 `RegisterAsync()` 方法，如下所示：
 

@@ -163,7 +163,7 @@ Azure 门户中的服务器快速启动代码调用 **UseDefaultConfiguration()*
 
 	![](./media/app-service-mobile-dotnet-backend-how-to-use-server-sdk/publish-success.png)
 
-##<a name="define-table-controller"></a>如何定义表控制器
+##<a name="how-to-define-a-table-controller"></a>如何定义表控制器
 
 表控制器提供基于表的数据存储（例如 SQL 数据库或 Azure 表存储）中实体数据的访问权限。表控制器继承自 **TableController** 泛型类，其中泛型类型是模型中表示表架构的实体，如下所示：
 
@@ -365,7 +365,8 @@ SID 派生自提供程序特定的用户 ID，对于给定的用户和登录提�
 
 目前可以使用通知中心客户端将推送通知发送到已注册的设备。有关详细信息，请参阅 [Add push notifications to your app](/documentation/articles/app-service-mobile-ios-get-started-push/)（将推送通知添加到应用）。
 
-##<a name="tags"></a>如何将标记添加到设备安装以启用目标推送
+##<a name="how-to-add-tags-to-a-device-installation-to-enable-push-to-tags
+"></a>如何将标记添加到设备安装以启用目标推送
 
 通知中心允许使用标记将目标通知发送到特定的注册。安装 ID 是自动创建的标记之一，特定于给定设备上的应用实例。使用安装 ID 的注册也称为 *安装* 。可以使用安装 ID 来管理安装，例如添加标记。可以从 **MobileServiceClient** 上的 **installationId** 属性访问安装 ID。
 
