@@ -118,7 +118,6 @@
 - [如何使用查询查找设备克隆][lnk-tutorial-queries]
 - [如何使用设备作业更新设备固件][lnk-tutorial-jobs]
 - [在 IoT 网关后启用托管设备][lnk-dm-gateway]
-- [Azure IoT 中心设备管理客户端库介绍][lnk-library-c]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
@@ -139,11 +138,10 @@
 [lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management/
 
-[lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin/
-[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query/
-[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs/
+[lnk-tutorial-twin]: /documentation/articles/iot-hub-devguide-device-twins/
+[lnk-tutorial-queries]: /documentation/articles/iot-hub-devguide-query-language/
+[lnk-tutorial-jobs]: /documentation/articles/iot-hub-schedule-jobs/
 [lnk-dm-gateway]: /documentation/articles/iot-hub-gateway-device-management/
-[lnk-library-c]: /documentation/articles/iot-hub-device-management-library/
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/

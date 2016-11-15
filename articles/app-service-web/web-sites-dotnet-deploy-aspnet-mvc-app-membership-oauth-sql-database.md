@@ -475,7 +475,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 **Update-Database** 命令将运行 **Seed** 方法，而该方法将运行你前面添加的 **AddUserAndRole** 方法。**AddUserAndRole** 方法将创建用户 *user1@contoso.com*，并将其添加到 *canEdit* 角色。
 
-## 通过 SSL 和 Authorize 属性保护应用程序 ##
+## <a name="protect-the-application-with-ssl-and-the-authorize-attribute"></a> 通过 SSL 和 Authorize 属性保护应用程序 ##
 
 在本部分中，你将应用 [Authorize](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.authorizeattribute.aspx) 属性以限制对操作方法的访问。匿名用户将只能查看主控制器的 **Index** 操作方法。注册用户将能够查看联系人数据（Cm 控制器的“索引”和“详细信息”页）、“关于”页和“联系人”页。只有具有 *canEdit* 角色的用户才能访问更改数据的操作方法。
 

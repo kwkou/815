@@ -1907,7 +1907,7 @@ Autostart 参数可能还有一些缺点。具体而言，此参数在启动实�
 >
 > 若要熟悉 Azure 虚拟机备份，请从此处着手：<https://www.azure.cn/documentation/articles/backup-azure-vms/>。
 >
-> 也可以结合使用安装在 Azure VM 中的 Microsoft Data Protection Manager 及 Azure 备份来备份/还原数据库。有关详细信息，请参阅：<https://www.azure.cn/documentation/articles/backup-azure-dpm-introduction/>。
+> 也可以结合使用安装在 Azure VM 中的 Microsoft Data Protection Manager 及 Azure 备份来备份/还原数据库。
 
 
 > ![Linux][Logo_Linux] Linux

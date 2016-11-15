@@ -367,7 +367,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 - [虚拟机定价](/pricing/details/virtual-machines/)
 
 ## 备份
-使用高级存储的虚拟机可以使用 Azure 备份进行备份。[更多详细信息](/documentation/articles/backup-azure-vms-first-look-arm/)。
+使用高级存储的虚拟机可以使用 Azure 备份进行备份。
 ##<a id="quick-start"></a> 快速启动
 
 ##<a id="create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk"></a> 为虚拟机器数据磁盘创建和使用高级存储帐户
