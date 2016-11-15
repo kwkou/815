@@ -21,7 +21,7 @@
 # 管理 Azure SQL 数据仓库中的计算能力（Azure 门户）
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute/)
+- [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
 - [门户](/documentation/articles/sql-data-warehouse-manage-compute-portal/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
