@@ -92,15 +92,15 @@
 [安全性概述]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [Create support ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
 [缩放 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is
 [请求增加配额]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket#request-quota-change
 [Learning how to monitor your queries]: /documentation/articles/sql-data-warehouse-manage-monitor/
 [预配说明]: /documentation/articles/sql-data-warehouse-get-started-provision/
-[为客户端 IP 配置服务器防火墙访问权限]: /documentation/articles/sql-data-warehouse-get-started-provision/#create-a-new-azure-sql-server-level-firewall
+[为客户端 IP 配置服务器防火墙访问权限]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
-[表大小]: /documentation/articles/sql-data-warehouse-tables-overview/#table-size-queries
-[不支持的表功能]: /documentation/articles/sql-data-warehouse-tables-overview/#unsupported-table-features
-[不支持的数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types/#unsupported-data-types
+[表大小]: /documentation/articles/sql-data-warehouse-tables-overview/
+[不支持的表功能]: /documentation/articles/sql-data-warehouse-tables-overview/
+[不支持的数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types/
 [Overview]: /documentation/articles/sql-data-warehouse-tables-overview/
 [Data types]: /documentation/articles/sql-data-warehouse-tables-data-types/
 [Distribute]: /documentation/articles/sql-data-warehouse-tables-distribute/
@@ -108,16 +108,16 @@
 [Partition]: /documentation/articles/sql-data-warehouse-tables-partition/
 [Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [Temporary]: /documentation/articles/sql-data-warehouse-tables-temporary/
-[列存储索引质量不佳]: /documentation/articles/sql-data-warehouse-tables-index/#causes-of-poor-columnstore-index-quality
-[重建索引以提高段质量]: /documentation/articles/sql-data-warehouse-tables-index/#rebuilding-indexes-to-improve-segment-quality
+[列存储索引质量不佳]: /documentation/articles/sql-data-warehouse-tables-index/
+[重建索引以提高段质量]: /documentation/articles/sql-data-warehouse-tables-index/
 [工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
-[使用 CTAS 解决不支持的 UPDATE 和 DELETE 语法]: /documentation/articles/sql-data-warehouse-develop-ctas/#using-ctas-to-work-around-unsupported-features
-[UPDATE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#ansi-join-replacement-for-update-statements
-[DELETE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#ansi-join-replacement-for-delete-statements
-[MERGE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/#replace-merge-statements
-[存储过程限制]: /documentation/articles/sql-data-warehouse-develop-stored-procedures/#limitations
+[使用 CTAS 解决不支持的 UPDATE 和 DELETE 语法]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[UPDATE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[DELETE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[MERGE 解决方法]: /documentation/articles/sql-data-warehouse-develop-ctas/
+[存储过程限制]: /documentation/articles/sql-data-warehouse-develop-stored-procedures/
 [向 Azure SQL 数据仓库进行身份验证]: /documentation/articles/sql-data-warehouse-authentication/
-[Working around the PolyBase UTF-8 requirement]: /documentation/articles/sql-data-warehouse-load-polybase-guide/#working-around-the-polybase-utf-8-requirement
+[Working around the PolyBase UTF-8 requirement]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
 
 <!--MSDN references-->
 [sys.database\_principals]: https://msdn.microsoft.com/zh-cn/library/ms187328.aspx

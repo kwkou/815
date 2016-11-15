@@ -102,7 +102,7 @@
 <!--Image references-->
 
 <!--Article references-->
-[数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is#data-warehouse-units/
+[数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is/
 [SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
 [工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [Tempdb]: /documentation/articles/sql-data-warehouse-tables-temporary

@@ -44,10 +44,10 @@ SQL 数据仓库支持常见的业务数据类型。请参阅[数据类型][]一
 [迁移数据]: /documentation/articles/sql-data-warehouse-migrate-data/
 [最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
-[不受支持的表功能]: /documentation/articles/sql-data-warehouse-tables-overview#unsupported-table-features/
+[不受支持的表功能]: /documentation/articles/sql-data-warehouse-tables-overview
 [数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types
-[不受支持的数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types#unsupported-data-types
-[数据类型最佳实践]: /documentation/articles/sql-data-warehouse-tables-data-types#data-type-best-practices
+[不受支持的数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types
+[数据类型最佳实践]: /documentation/articles/sql-data-warehouse-tables-data-types
 
 <!--MSDN references-->
 
