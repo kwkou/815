@@ -31,7 +31,6 @@
 | 服务 | 灾难恢复指南 | 设计指南 |
 |:---------|:--------------------------:|:------------------:|
 | [云服务](/home/features/cloud-services/ "Azure 云服务") | [链接](/documentation/articles/cloud-services-disaster-recovery-guidance "Azure 云服务灾难恢复指南") | 不可用 |
-| [密钥保管库](/home/features/key-vault/ "Azure 密钥保管库") | [链接](/documentation/articles/key-vault-disaster-recovery-guidance "Azure 密钥保管库灾难恢复指南") | 不可用 |
 | [存储](/home/features/storage/ "Azure 存储空间") | [链接](/documentation/articles/storage-disaster-recovery-guidance "Azure 存储空间灾难恢复指南") | 不可用 |
 | [SQL 数据库](/home/features/sql-database/ "Azure SQL 数据库") | [链接](/documentation/articles/sql-database-disaster-recovery "Azure SQL 数据库灾难恢复指南") | [链接](/documentation/articles/sql-database-business-continuity-design "Azure SQL 数据库设计指南") |
 | [虚拟机](/home/features/virtual-machines/ "Azure 虚拟机") | [链接](/documentation/articles/virtual-machines-disaster-recovery-guidance "Azure 虚拟机灾难恢复指南") | 不可用 |

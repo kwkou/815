@@ -111,7 +111,7 @@ Azure SQL 数据库提供两种类型的恢复：异地还原和活动异地复�
 
 ####活动异地复制
 
-[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)适用于所有数据库层。它专为恢复要求超出了异地还原的能力的应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。可以启动到任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade/)。
+[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)适用于所有数据库层。它专为恢复要求超出了异地还原的能力的应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。可以启动到任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。
 
 <a id="sql-server-on-virtual-machines"></a>
 ###虚拟机上的 SQL Server
@@ -127,7 +127,7 @@ Azure SQL 数据库提供两种类型的恢复：异地还原和活动异地复�
 <a id="service-bus"></a>
 ###服务总线
 
-Azure 服务总线使用不跨越 Azure 区域的唯一命名空间。因此，首要要求是在备用区域中设置必要的服务总线命名空间。但是，对于排队消息的持久性，也有一些注意事项。有几种在 Azure 区域间复制消息的策略。有关这些复制策略和其他灾难恢复策略的详细信息，请参阅 [Best practices for insulating applications against Service Bus outages and disasters（使应用程序免受服务总线中断和灾难影响的最佳实践）](/documentation/articles/service-bus-outages-disasters/)。有关其他可用性注意事项，请参阅 [Service Bus (Availability)（服务总线（可用性））](/documentation/articles/resiliency-technical-guidance-recovery-local-failures/#service-bus)。
+Azure 服务总线使用不跨越 Azure 区域的唯一命名空间。因此，首要要求是在备用区域中设置必要的服务总线命名空间。但是，对于排队消息的持久性，也有一些注意事项。有几种在 Azure 区域间复制消息的策略。有关这些复制策略和其他灾难恢复策略的详细信息，请参阅 [Best practices for insulating applications against Service Bus outages and disasters（使应用程序免受服务总线中断和灾难影响的最佳实践）](/documentation/articles/service-bus-outages-disasters/)。有关其他可用性注意事项，请参阅 [Service Bus (Availability)（服务总线（可用性））](/documentation/articles/resiliency-technical-guidance-recovery-local-failures/)。
 
 <a id="web-apps"></a>
 ###Web 应用
@@ -137,12 +137,12 @@ Azure 服务总线使用不跨越 Azure 区域的唯一命名空间。因此，�
 <a id="mobile-services"></a>
 ###移动服务
 
-在辅助 Azure 区域中，为应用程序创建备份移动服务。将 Azure SQL 数据库还原到备用区域。然后使用 Azure 命令行工具，将移动服务移到备用区域。最后，将移动服务配置为使用还原的数据库。有关此过程的详细信息，请参阅 [Recover your mobile service in the event of a disaster（在发生灾难时恢复移动服务）](/documentation/articles/mobile-services-disaster-recovery/)。有关其他可用性注意事项，请参阅 [Mobile Services (Availability)（移动服务（可用性））](/documentation/articles/resiliency-technical-guidance-recovery-local-failures/#mobile-services)。
+在辅助 Azure 区域中，为应用程序创建备份移动服务。将 Azure SQL 数据库还原到备用区域。然后使用 Azure 命令行工具，将移动服务移到备用区域。最后，将移动服务配置为使用还原的数据库。有关此过程的详细信息，请参阅 [Recover your mobile service in the event of a disaster（在发生灾难时恢复移动服务）](/documentation/articles/mobile-services-disaster-recovery/)。有关其他可用性注意事项，请参阅 [Mobile Services (Availability)（移动服务（可用性））](/documentation/articles/resiliency-technical-guidance-recovery-local-failures/)。
 
 <a id="hdinsight"></a>
 ###HDInsight
 
-与 HDInsight 关联的数据默认存储在 Azure Blob 存储中。HDInsight 要求 Hadoop 群集处理 MapReduce 作业必须与包含所分析数据的存储帐户位于同一区域中。假如你使用可用于 Azure 存储空间的区域异地复制功能，则如果主要区域因为某些原因而无法使用，你可以访问复制到次要区域的数据。你可以在数据复制到的区域中创建新的 Hadoop 群集并继续处理这些数据。有关其他可用性注意事项，请参阅 [HDInsight (Availability)（HDInsight（可用性））](/documentation/articles/resiliency-technical-guidance-recovery-local-failures/#hdinsight)。
+与 HDInsight 关联的数据默认存储在 Azure Blob 存储中。HDInsight 要求 Hadoop 群集处理 MapReduce 作业必须与包含所分析数据的存储帐户位于同一区域中。假如你使用可用于 Azure 存储空间的区域异地复制功能，则如果主要区域因为某些原因而无法使用，你可以访问复制到次要区域的数据。你可以在数据复制到的区域中创建新的 Hadoop 群集并继续处理这些数据。有关其他可用性注意事项，请参阅 [HDInsight (Availability)（HDInsight（可用性））](/documentation/articles/resiliency-technical-guidance-recovery-local-failures/)。
 
 <a id="sql-reporting"></a>
 ###SQL 报告
@@ -179,7 +179,7 @@ Azure 媒体服务对于编码和流有不同的恢复方法。通常，在区�
 
 ##SQL 数据库清单
   1. 查看本文档的 [SQL 数据库](#sql-database)部分。
-  2. 根据情况使用[异地还原](/documentation/articles/sql-database-geo-restore/)或[异地复制](/documentation/articles/sql-database-geo-replication-overview/)。
+  2. 根据情况使用[异地复制](/documentation/articles/sql-database-geo-replication-overview/)。
 
 ##虚拟机上的 SQL Server 清单
   1. 查看本文档的[虚拟机上的 SQL Server](#sql-server-on-virtual-machines) 部分。
@@ -187,7 +187,7 @@ Azure 媒体服务对于编码和流有不同的恢复方法。通常，在区�
   3. 也可以使用备份和还原到 Blob 存储。
 
 ##服务总线清单
-  1. 查看本文档的[服务总线](#service-bus)部分。
+  1. 查看本文档的[服务总线]()部分。
   2. 在备用区域中配置服务总线命名空间。
   3. 考虑自定义跨区域消息的复制策略。
 
@@ -199,7 +199,7 @@ Azure 媒体服务对于编码和流有不同的恢复方法。通常，在区�
   5. 计划对应用程序和 DNS CNAME 记录的配置更改。
 
 ##移动服务清单
-  1. 查看本文档的[移动服务](#mobile-services)部分。
+  1. 查看本文档的[移动服务]()部分。
   2. 在备用区域创建备份移动服务。
   3. 管理关联 Azure SQL 数据库的备份，以在故障转移间进行还原。
   4. 使用 Azure 命令行工具来移动移动服务。

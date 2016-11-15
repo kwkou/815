@@ -111,7 +111,7 @@ Azure 存储空间数据持久性形成的方式，是在区域内完全独立�
 
 Azure SQL 数据库提供数据库即服务。它使应用程序可以快速预配和查询关系数据库，并在数据库中插入数据。它提供许多熟悉的 SQL Server 特性与功能，同时减少了硬件、配置、修补和复原方面的负担。
 
->[AZURE.NOTE] Azure SQL 数据库并不提供与 SQL Server 一一对应的功能。其目的在于满足专门适用于云应用程序的一套不同的要求（通过弹性扩展、数据库即服务来降低维护成本等）。有关详细信息，请参阅 [Choose a cloud SQL Server option: Azure SQL (PaaS) or SQL Server on Azure VMs (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)（选择云 SQL Server 选项：Azure SQL (PaaS) 或 Azure VM 上的 SQL Server (IaaS)）。
+>[AZURE.NOTE] Azure SQL 数据库并不提供与 SQL Server 一一对应的功能。其目的在于满足专门适用于云应用程序的一套不同的要求（通过弹性扩展、数据库即服务来降低维护成本等）。
 
 ####复制
 

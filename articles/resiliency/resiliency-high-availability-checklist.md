@@ -50,7 +50,7 @@ __如果不对无状态应用程序或 Web 服务器使虚拟机规模集，会�
 ###是否对每个虚拟机使用高级存储和独立的存储帐户？
 生产虚拟机最好使用高级存储。此外，应确保每个虚拟机使用不同的存储帐户（在小规模部署中就应如此。对于大型部署，多个计算机可以重复使用存储帐户，但需要保持平衡，以确保更新域之间和应用程序层之间达到平衡）。若要了解有关 Azure 存储空间性能和可缩放性的详细信息，请阅读 [Azure Storage Performance and Scalability Checklist（Azure 存储空间性能和可缩放性清单）](/documentation/articles/storage-performance-checklist/)。
 
-__如果不对每个虚拟机使用独立的存储帐户，会发生什么情况？__ 就像其他许多资源一样，存储帐户也是单点故障。尽管 Azure 存储空间提供许多保护措施和复原能力，但存在单点故障绝对不是良好的设计。例如，如果该帐户的访问权限受损、达到存储限制或达到 [IOPS 限制](/documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits)，则使用该存储帐户的所有虚拟机将受到影响。此外，如果服务中断影响到包含该特定存储帐户的存储戳记，则多个虚拟机会受到影响。
+__如果不对每个虚拟机使用独立的存储帐户，会发生什么情况？__ 就像其他许多资源一样，存储帐户也是单点故障。尽管 Azure 存储空间提供许多保护措施和复原能力，但存在单点故障绝对不是良好的设计。例如，如果该帐户的访问权限受损、达到存储限制或达到 [IOPS 限制](/documentation/articles/azure-subscription-service-limits/)，则使用该存储帐户的所有虚拟机将受到影响。此外，如果服务中断影响到包含该特定存储帐户的存储戳记，则多个虚拟机会受到影响。
 
 ###是否在应用程序的每层之间使用负载均衡器或队列？
 在应用程序的每层之间使用负载均衡器或队列，可以轻松地单独缩放应用程序的每一层。应该根据延迟、复杂性和分布（即，应用分发的广度）需求，在这些技术之间做出选择。一般而言，队列的延迟和复杂性通常较高，但提供更高的复原能力，并且可让你将应用程序分发到更大的区域（例如跨区域）。若要了解有关如何使用内部负载均衡器或队列的详细信息，请阅读 <!-- [Internal Load balancer Overview（内部负载均衡器概述）](/documentation/articles/load-balancer-internal-overview/)和 --> [Azure Queues and Service Bus queues - compared and contrasted（Azure 队列和服务总线队列 - 比较与对照）](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)。
