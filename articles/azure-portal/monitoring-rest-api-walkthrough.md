@@ -189,11 +189,6 @@
 
 还可以通过其他方法检索资源 ID，包括使用 Azure 资源浏览器，以及通过 Azure 门户、PowerShell 或 Azure CLI 查看所需的资源。
 
-### Azure 资源浏览器
-若要查找所需资源的资源 ID，一种有效的方法是使用 [Azure 资源浏览器](https://resources.azure.cn)工具。导航到所需的资源，然后查看如以下屏幕截图中所示的 ID：
-
-![Alt "Azure 资源浏览器"](./media/monitoring-rest-api-walkthrough/azure_resource_explorer.png)  
-
 
 ### Azure 门户预览
 还可以从 Azure 门户预览获取资源 ID。为此，请导航到所需的资源，然后选择“属性”。资源 ID 将显示在“属性”边栏选项卡中，如以下屏幕截图中所示：

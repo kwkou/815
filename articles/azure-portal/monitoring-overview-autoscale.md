@@ -84,7 +84,7 @@ Azure Insights 自动缩放仅适用于[虚拟机规模集](/documentation/servi
 
 有关代码示例，请参阅
 
-<!--* [Advanced Autoscale configuration using Resource Manager templates for VM Scale Sets](/documentation/articles/insights-advanced-autoscale-virtual-machine-scale-sets/)（通过用于 VM 规模集的 Resource Manager 模板进行的高级自动缩放配置）-->
+[Advanced Autoscale configuration using Resource Manager templates for VM Scale Sets](/documentation/articles/insights-advanced-autoscale-virtual-machine-scale-sets/)（通过用于 VM 规模集的 Resource Manager 模板进行的高级自动缩放配置）
 * [自动缩放 REST API](https://msdn.microsoft.com/zh-cn/library/dn931953.aspx)
 
 
@@ -113,7 +113,7 @@ Azure Insights 自动缩放仅适用于[虚拟机规模集](/documentation/servi
 | 虚拟机：Windows 规模集| [在 Windows 中缩放 VM 规模集](/documentation/articles/virtual-machine-scale-sets-windows-autoscale/) |
 | 虚拟机：Linux 规模集 | [在 Linux 中缩放 VM 规模集](/documentation/articles/virtual-machine-scale-sets-linux-autoscale/) |
 
-<!-- | 虚拟机：Windows 示例 | [Advanced Autoscale configuration using Resource Manager templates for VM Scale Sets](/documentation/articles/insights-advanced-autoscale-virtual-machine-scale-sets/)（通过用于 VM 规模集的 Resource Manager 模板进行的高级自动缩放配置） | -->
+ | 虚拟机：Windows 示例 | [Advanced Autoscale configuration using Resource Manager templates for VM Scale Sets](/documentation/articles/insights-advanced-autoscale-virtual-machine-scale-sets/)（通过用于 VM 规模集的 Resource Manager 模板进行的高级自动缩放配置） | 
 
 ## 后续步骤
 

@@ -81,7 +81,7 @@
 
 
 
->[AZURE.NOTE] 可以从 VM（基于 Azure Resource Manager）访问主机级指标和 VM 规模集，无需指定任何额外的诊断设置。这些新的主机级指标可供 Windows 和 Linux 实例使用。这些指标不会与在 VM 或 VMSS 上打开 Azure 诊断后，你有权访问的来宾 OS 级指标相混淆。有关配置 Azure 诊断的详细信息，请参阅 [What is Microsoft Azure Diagnostics](/documentation/articles/azure-diagnostics/)（什么是 Azure 诊断）。
+>[AZURE.NOTE] 可以从 VM（基于 Azure Resource Manager）访问主机级指标和 VM 规模集，无需指定任何额外的诊断设置。这些新的主机级指标可供 Windows 和 Linux 实例使用。这些指标不会与在 VM 或 VMSS 上打开 Azure 诊断后，你有权访问的来宾 OS 级指标相混淆。
 
 ## 通过 REST API 访问指标
 可以通过 Azure 监视器 API 访问 Azure 指标。有两个 API 可帮助发现和访问指标。使用：
