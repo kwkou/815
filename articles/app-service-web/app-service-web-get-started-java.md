@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/16/2016"
-	wacn.date=“10/10/2016” 
+	wacn.date="10/10/2016"
 	ms.author="cephalin"
 />  
 
