@@ -23,7 +23,7 @@
 ## 还原 SQL Server 数据
 若要从硬件故障或损坏中恢复，请从备份还原已启用延伸的 SQL Server 数据库。你可以继续使用当前使用的 SQL Server 还原方法。有关详细信息，请参阅[还原和恢复概述](https://msdn.microsoft.com/zh-cn/library/ms191253.aspx)。
 
-还原 SQL Server 数据库之后，必须运行存储过程 **sys.sp\_rda\_reauthorize\_db** 才能在已启用延伸的 SQL Server 数据库和远程 Azure 数据库之间重新建立连接。有关详细信息，请参阅[还原 SQL Server 数据库和远程 Azure 数据库之间的连接](#restore-the-connection-between-the-sql-server-database-and-the-remote-azure-database)。
+还原 SQL Server 数据库之后，必须运行存储过程 **sys.sp\_rda\_reauthorize\_db** 才能在已启用延伸的 SQL Server 数据库和远程 Azure 数据库之间重新建立连接。
 
 ## 还原远程 Azure 数据
 
