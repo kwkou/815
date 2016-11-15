@@ -62,7 +62,7 @@
 
 >[AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 MainPage.xaml.cs 文件中。
 
-## 发布移动服务
+## <a name="publish-your-mobile-service"></a> 发布移动服务
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../../includes/mobile-services-dotnet-backend-publish-service.md)]
 
@@ -102,7 +102,7 @@
 * [移动服务 .NET 后端故障排除]
 <br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
 
-有关通用 Windows 应用程序的详细信息，请参阅[通过单个移动服务支持多个设备平台](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#shared-vs)。
+有关通用 Windows 应用程序的详细信息，请参阅[通过单个移动服务支持多个设备平台](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/)。
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 

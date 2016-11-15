@@ -925,6 +925,6 @@
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-android-get-started/
 [移动服务快速入门]: /documentation/articles/mobile-services-android-get-started/
-[ASCII 控制代码 C0 和 C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
+[ASCII 控制代码 C0 和 C1]: https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%AD%97%E7%AC%A6
 
 <!---HONumber=Mooncake_0118_2016-->

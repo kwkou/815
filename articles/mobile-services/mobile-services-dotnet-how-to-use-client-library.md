@@ -272,7 +272,7 @@
 
 如果你尝试删除某个项但尚未设置“Id”字段，则服务无法识别要删除的实例，因此你会收到服务发出的 `MobileServiceInvalidOperationException`。同样，如果你尝试删除某个非类型化项但尚未设置“Id”字段，则也会收到服务发出的 `MobileServiceInvalidOperationException`。
 
-##<a name="#custom-api"></a>如何：调用自定义 API
+##<a name="custom-api"></a>如何：调用自定义 API
 
 自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api/)。
 
@@ -487,42 +487,6 @@ Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定
 ###客户端流
 
 你的应用程序还能够独立联系标识提供者，然后将返回的令牌提供给移动服务以进行身份验证。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。
-
-####单一登录使用来自 Facebook 或 Google 的令牌
-
-你可以根据以下代码段中所示，为 Facebook 或 Google 使用这种最简单形式的客户端流。
-
-	var token = new JObject();
-	// Replace access_token_value with actual value of your access token obtained
-	// using the Facebook or Google SDK.
-	token.Add("access_token", "access_token_value");
-
-	private MobileServiceUser user;
-	private async System.Threading.Tasks.Task Authenticate()
-	{
-		while (user == null)
-		{
-			string message;
-			try
-			{
-				// Change MobileServiceAuthenticationProvider.Facebook
-				// to MobileServiceAuthenticationProvider.Google if using Google auth.
-				user = await client
-					.LoginAsync(MobileServiceAuthenticationProvider.Facebook, token);
-				message =
-					string.Format("You are now logged in - {0}", user.UserId);
-			}
-			catch (InvalidOperationException)
-			{
-				message = "You must log in. Login Required";
-			}
-
-			var dialog = new MessageDialog(message);
-			dialog.Commands.Add(new UICommand("OK"));
-			await dialog.ShowAsync();
-		}
-	}
-
 
 ####单一登录将 Microsoft 帐户与 Live SDK 配合使用
 
