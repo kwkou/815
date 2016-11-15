@@ -43,7 +43,7 @@ Azure Load Balancer 提供相应的功能让你使用探测来监视服务器实
 
 此探测仅适用于 Azure 云服务。仅当实例处于就绪状态（即，不处于其他状态，例如“繁忙”、“正在回收”或“正在停止”）时，负载均衡器才利用虚拟机内部的来宾代理，然后侦听并以“HTTP 200 正常”作为响应。
 
-有关详细信息，请参阅 [Configuring the service definition file (csdef) for health probes](https://msdn.microsoft.com/zh-cn/library/azure/jj151530.asp)（配置运行状况探测的服务定义文件 (csdef)）或 [Get started creating an Internet-facing load balancer for cloud services](/documentation/articles/load-balancer-get-started-internet-classic-cloud/#check-load-balancer-health-status-for-cloud-services)（开始为云服务创建面向 Internet 的负载均衡器）。
+有关详细信息，请参阅 [Configuring the service definition file (csdef) for health probes](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)（配置运行状况探测的服务定义文件 (csdef)）或 [Get started creating an Internet-facing load balancer for cloud services](/documentation/articles/load-balancer-get-started-internet-classic-cloud)（开始为云服务创建面向 Internet 的负载均衡器）。
 
 ### 来宾代理探测将实例标记为状况不良的原因有哪些？
 
@@ -75,7 +75,7 @@ TCP 探测通过使用定义的端口执行三方握手来初始化连接。
 - TCP 服务器在超时期限之后完全无响应。当探测标记为未运行的时机取决于失败探测的数目，即，在将探测标记为未运行之前，这些请求未获得答复的次数。
 - 探测从角色实例接收 TCP 重置。
 
-有关配置 HTTP 运行状况探测或 TCP 探测的详细信息，请参阅 [Get started creating an Internet-facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps#create-lb-rules-nat-rules-a-probe-and-a-load-balancer)（开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器）。
+有关配置 HTTP 运行状况探测或 TCP 探测的详细信息，请参阅 [Get started creating an Internet-facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps)（开始使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器）。
 
 ## 将状况良好的实例添加回到负载均衡器轮转
 
