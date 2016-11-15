@@ -53,7 +53,7 @@
 
 ## 实施多重身份验证
 
-在 Microsoft Azure 中访问和控制数据的第一个步骤是对用户进行身份验证。[Azure 多重身份验证 (MFA)](/documentation/articles/multi-factor-authentication/) 是除了使用用户名与密码以外，还要求使用其他方法对用户标识进行身份验证的方法。这种身份验证方法可帮助保护对数据和应用程序的访问，同时可以满足用户对简单登录过程的需求。
+在 Azure 中访问和控制数据的第一个步骤是对用户进行身份验证。[Azure 多重身份验证 (MFA)](/documentation/articles/multi-factor-authentication/) 是除了使用用户名与密码以外，还要求使用其他方法对用户标识进行身份验证的方法。这种身份验证方法可帮助保护对数据和应用程序的访问，同时可以满足用户对简单登录过程的需求。
 
 如果针对用户启用 Azure MFA，则可为用户登录和事务增加第二层安全性。在此情况下，事务可能将访问位于文件服务器或 SharePoint Online 中的文档。Azure MFA 还可帮助 IT 部门减少使用透露的凭据访问企业数据的可能性。
 
