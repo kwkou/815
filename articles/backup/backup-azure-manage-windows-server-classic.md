@@ -5,19 +5,29 @@
 	documentationCenter=""
 	authors="Jim-Parker"
 	manager="jwhit"
-	editor="tysonn"/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="backup"
-	ms.date="06/15/2016"
-	wacn.date="08/29/2016"/>
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	ms.author="jimpark;markgal"
+	wacn.date="11/15/2016"/>
 
 
 # 使用经典部署模型管理 Azure 备份保管库和服务器
 
+> [AZURE.SELECTOR]
+- [资源管理器](/documentation/articles/backup-azure-vms-automation/)
+- [经典](/documentation/articles/backup-azure-manage-windows-server-classic/)
+
 本文概述了可通过 Azure 经典管理门户和 Azure 备份代理完成的备份管理任务。
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)] 资源管理器部署模型。
 
 ## 经典管理门户任务
 1. 登录到[经典管理门户](https://manage.windowsazure.cn)。
@@ -27,9 +37,9 @@
     ![恢复服务](./media/backup-azure-manage-windows-server-classic/rs-left-nav.png)  
 
 
-	在“快速启动”页面顶部选择选项后，可以看到可用的管理任务。
+在“快速启动”页面顶部选择选项后，可以看到可用的管理任务。
 
-	![管理选项卡](./media/backup-azure-manage-windows-server-classic/qs-page.png)  
+![管理选项卡](./media/backup-azure-manage-windows-server-classic/qs-page.png)  
 
 
 ### 仪表板
@@ -81,7 +91,7 @@
 
 ### 控制台
 
-打开 **Azure 备份代理**（可以通过在计算机中搜索 *Microsoft Azure 备份*来找到它）。
+打开 **Azure 备份代理**（可以通过在计算机中搜索 *Azure 备份*来找到它）。
 
 ![备份代理](./media/backup-azure-manage-windows-server-classic/snap-in-search.png)  
 
@@ -155,7 +165,7 @@ Azure 备份代理提供的“限制”选项卡可让你控制在数据传输�
 
 ## <a name="exclusion-settings"></a>排除设置
 
-1. 打开 **Microsoft Azure 备份代理**（可以通过在计算机中搜索 *Microsoft Azure 备份*来找到它）。
+1. 打开 **Azure 备份代理**（可以通过在计算机中搜索 *Azure 备份*来找到它）。
 
     ![打开备份代理](./media/backup-azure-manage-windows-server-classic/snap-in-search.png)
 
@@ -206,6 +216,6 @@ Azure 备份代理提供的“限制”选项卡可让你控制在数据传输�
 ## 后续步骤
 - [从 Azure 还原 Windows Server 或 Windows 客户端](/documentation/articles/backup-azure-restore-windows-server/)
 - 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup/)
-- 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)
+- 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=windowsazureonlinebackup)
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1107_2016-->

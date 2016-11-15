@@ -6,13 +6,19 @@
    authors="Jim-Parker"
    manager="jwhit"
    editor=""
-   keywords="如何备份;怎样备份"/>
+   keywords="如何备份;怎样备份"/>  
 
 <tags
-   ms.service="backup" 
-   ms.date="06/27/2016"
-   wacn.date="09/26/2016"/>
-   
+   ms.service="backup"
+   ms.workload="storage-backup-recovery"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="hero-article"
+   ms.date="09/27/2016"
+   ms.author="markgal;"	
+   wacn.date="11/15/2016"/>  
+
+
 # 先睹为快：将文件和文件夹从 Windows Server 或客户端备份到 Azure
 
 本文介绍如何使用 Azure 备份将 Windows Server（或 Windows 客户端）文件和文件夹备份到 Azure。本教程旨在引导你完成基本操作。如果想要开始使用 Azure 备份，本文的内容非常合适。
@@ -245,4 +251,4 @@
 - [备份 Windows Server](/documentation/articles/backup-configure-vault/)
 + 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_1107_2016-->

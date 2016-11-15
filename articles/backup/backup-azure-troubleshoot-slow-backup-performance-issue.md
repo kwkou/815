@@ -5,12 +5,18 @@
    documentationCenter=""
    authors="genlin"
    manager="jimpark"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
-	ms.service="backup"
-	ms.date="07/20/2016"
-	wacn.date="09/06/2016"/>  
+    ms.service="backup"
+    ms.workload="storage-backup-recovery"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/13/2016"
+    ms.author="genli"
+    wacn.date="11/15/2016"/>  
 
 
 # 排查在 Azure 备份中备份文件和文件夹时速度缓慢的问题
@@ -81,4 +87,4 @@ Windows 提供了名为[性能监视器](https://technet.microsoft.com/zh-cn/mag
 
 - **UI 未显示数据传输进度**。打开位于 C:\\Azure Recovery Services Agent\\Temp 中的日志，然后检查日志中的 FileProvider::EndData 条目。此条目表示数据传输已完成，正在进行目录操作。请不要取消备份作业，而是再等待片刻，让目录操作完成。如果问题持续出现，请联系 [Azure 支持](/support/support-ticket-form/?l=zh-cn)。
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1107_2016-->
