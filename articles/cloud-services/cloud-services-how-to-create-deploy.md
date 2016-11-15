@@ -88,7 +88,7 @@ Azure 经典管理门户为你提供两种创建和部署云服务的方法：�
 	![云服务\_云服务页](./media/cloud-services-how-to-create-deploy/CloudServices_CloudServicesPage.png)
 
 
-## 如何：为云服务上载证书
+## <a name="how-to-upload-a-certificate-for-a-cloud-service"></a> 如何：为云服务上载证书
 
 1. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中单击“云服务”，单击云服务的名称，然后单击“证书”。
 
@@ -109,7 +109,7 @@ Azure 经典管理门户为你提供两种创建和部署云服务的方法：�
 
 	![云服务\_证书进度](./media/cloud-services-how-to-create-deploy/CloudServices_CertificateProgress.png)
 
-## 如何：部署云服务
+## <a name="deploy"></a> 如何：部署云服务
 
 1. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中单击“云服务”，单击云服务的名称，然后单击“仪表板”。
 

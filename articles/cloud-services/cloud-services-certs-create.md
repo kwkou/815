@@ -19,13 +19,13 @@
 
 
 # Azure 云服务证书概述
-证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于通过管理 API 进行身份验证（[管理证书](#what-are-management-certificates)，适用于使用 Azure 经典管理门户而不是 ARM 的场合）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)以及将其[部署](#deploy)到 Azure。
+证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于通过管理 API 进行身份验证（[管理证书](#what-are-management-certificates)，适用于使用 Azure 经典管理门户而不是 ARM 的场合）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)以及将其部署到 Azure。
 
 在 Azure 中使用的证书是 x.509 v3 证书，且可由另一个受信任的证书进行签名或可进行自签名。自签名的证书由其自己的创建者进行签名，因此，默认情况下不受信任。大多数浏览器可以忽略这一点。自签名的证书仅应由自己在开发和测试云服务时使用。
 
 Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，它提供了一种可对证书进行明确识别的方法。该指纹用于在 Azure [配置文件](/documentation/articles/cloud-services-configure-ssl-certificate/)中识别云服务应使用的证书。
 
-## 什么是服务证书？
+## <a name="what-are-service-certificates"></a> 什么是服务证书？
 服务证书被附加到云服务，可实现与服务之间的安全通信。例如，如果你部署了 Web 角色，将需要提供可对公开的 HTTPS 终结点进行身份验证的证书。在你的服务定义中定义的服务证书会自动部署到运行你的角色实例的虚拟机。
 
 你可以使用 Azure 经典管理门户或服务管理 API 将服务证书上载到 Azure 经典管理门户。服务证书与特定的云服务相关联，并分配到服务定义文件中的部署。

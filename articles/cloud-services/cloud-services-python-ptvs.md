@@ -361,11 +361,11 @@ Visual Studio 模板应在 **./bin** 文件夹中创建了一个 **ps.cmd** 文�
 
 <!--External Link references-->
 
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Python Tools for Visual Studio]: https://www.visualstudio.com/vs/python/
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
 [云服务项目]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
-[Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
+[Azure SDK Tools for VS 2015]: https://www.visualstudio.com/vs/python/
 [Python 2.7（32 位）]: https://www.python.org/downloads/
 [Python 3.5（32 位）]: https://www.python.org/downloads/
 

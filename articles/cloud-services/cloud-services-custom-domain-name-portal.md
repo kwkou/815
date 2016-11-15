@@ -41,7 +41,7 @@ CNAME（即别名记录）和 A 记录都允许您将域名与特定服务器（
 CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是你的 Azure 托管应用程序的 **[myapp].chinacloudapp.cn** 域名。CNAME 创建后，将为 **[myapp].chinacloudapp.cn** 创建一个别名。CNAME 条目将自动解析为你的 **[myapp].chinacloudapp.cn** 服务的 IP 地址，因此，如果该云服务的 IP 地址发生更改，你无需采取任何措施。
 
 > [AZURE.NOTE]
-某些域注册机构只允许您在使用 CNAME 记录（例如 www.contoso.com） 和非根名称（例如 contoso.com）时映射子域。有关 CNAME 记录的详细信息，请参阅由您的注册机构提供的文档、[CNAME 记录上的 Wikipedia 条目](http://zh.wikipedia.org/wiki/CNAME_record)或 [IETF 域名 - 实现和规范文档](http://tools.ietf.org/html/rfc1035)。
+某些域注册机构只允许您在使用 CNAME 记录（例如 www.contoso.com） 和非根名称（例如 contoso.com）时映射子域。有关 CNAME 记录的详细信息，请参阅由您的注册机构提供的文档、[CNAME 记录上的 Wikipedia 条目](https://en.wikipedia.org/wiki/CNAME_record)或 [IETF 域名 - 实现和规范文档](http://tools.ietf.org/html/rfc1035)。
 
 ### A 记录
 
@@ -53,7 +53,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 > 为方便起见，在临时和生产部署之间切换或对现有部署执行就地升级时，将保留给定部署槽（生产或临时）的 IP 地址。有关执行这些操作的详细信息，请参阅[如何管理云服务](/documentation/articles/cloud-services-how-to-manage/)。
 
 
-## 为自定义域添加 CNAME 记录
+## <a name="add-a-cname-record-for-your-custom-domain"></a> 为自定义域添加 CNAME 记录
 
 若要创建 CNAME 记录，必须使用您的注册机构提供的工具在 DNS 表中为您的自定义域添加一个新条目。每个注册机构指定 CNAME 记录的方法类似但略有不同，但概念是相同的。
 
