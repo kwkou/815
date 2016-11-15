@@ -187,7 +187,7 @@
 * **事件中心** - /subscriptions/_{subscription-id}_/resourceGroups/_{resource-group-name}_/providers/Microsoft.EventHub/namespaces/_{eventhub-namespace}_
 
 
-还可以通过其他方法检索资源 ID，包括使用 Azure 资源浏览器，以及通过 Azure 门户、PowerShell 或 Azure CLI 查看所需的资源。
+还可以通过其他方法检索资源 ID，包括通过 Azure 门户、PowerShell 或 Azure CLI 查看所需的资源。
 
 
 ### Azure 门户预览
