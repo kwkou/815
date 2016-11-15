@@ -54,7 +54,7 @@
 
 [AZURE.INCLUDE [app-service-mobile-xamarin-ios-configure-project](../../includes/app-service-mobile-xamarin-ios-configure-project.md)]
 
-##向应用程序添加推送通知
+## <a name="add-push"></a>向应用程序添加推送通知
 
 1. 在 **QSTodoService** 中，添加以下属性使 **AppDelegate** 可以获取移动客户端：
 
