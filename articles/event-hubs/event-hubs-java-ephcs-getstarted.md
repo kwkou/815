@@ -34,7 +34,7 @@
 
 + Java 开发环境。对于本教程，我们将采用 Eclipse。
 
-+ [Microsoft Visual Studio](http://visualstudio.com)
++ [Microsoft Visual Studio](https://www.visualstudio.com)
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
