@@ -105,7 +105,7 @@ azure insights logs list --caller "myname@company.com"
 azure insights logs list --resourceProvider "Microsoft.Web" --caller "myname@company.com" --startTime 2016-03-08T00:00:00Z --endTime 2016-03-16T00:00:00Z
 ```
 
-## 使用警报
+## <a name="work-with-alerts></a> 使用警报
 可以按照该部分中的信息使用警报。
 
 ### 获取资源组中的警报规则
@@ -199,7 +199,7 @@ azure insights diagnostic set --resourceId /subscriptions/df602c9c-7aa0-407d-a6f
 ```
 
 
-## 自动缩放
+## <a name="autoscale></a> 自动缩放
 按照此部分中的信息使用自动缩放设置。需要修改这些示例。
 
 ### 获取资源组的自动缩放设置

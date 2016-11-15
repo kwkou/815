@@ -35,7 +35,7 @@
 - 在 PowerBI 中使用 [**PowerBI 内容包**](https://powerbi.microsoft.com/zh-CN/documentation/powerbi-content-pack-azure-audit-logs/)分析活动日志。
 - [将活动日志流式传输到**事件中心**](/documentation/articles/monitoring-stream-activity-logs-event-hubs/)，方便第三方服务或自定义分析解决方案（例如 PowerBI）引入。
 
-## 使用日志配置文件导出活动日志
+## <a name="export-the-activity-log-with-log-profiles"></a> 使用日志配置文件导出活动日志
 **日志配置文件**控制如何导出活动日志。可以使用日志配置文件配置：
 
 - 应将活动日志发送到何处：存储帐户或事件中心

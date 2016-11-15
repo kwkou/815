@@ -32,7 +32,7 @@
 
 
 
-### Windows VM v2 作为来宾 OS 时的计算指标
+### <a name="compute-metrics-for-windows-vm-v2-as-a-guest-os"></a> Windows VM v2 作为来宾 OS 时的计算指标
 
 当你在 Azure 中创建新的 VM (v2) 时，使用诊断扩展会启用诊断。
 
@@ -77,7 +77,7 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 
 
 
-### Linux VM v2 作为来宾 OS 时的计算指标
+### <a name="compute-metrics-for-linux-vm-v2-as-a-guest-os"></a> Linux VM v2 作为来宾 OS 时的计算指标
 
 当你在 Azure 中创建新的 VM (v2) 时，使用诊断扩展会默认启用诊断。
 

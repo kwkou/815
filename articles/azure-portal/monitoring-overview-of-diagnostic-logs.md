@@ -31,7 +31,7 @@
 - [将诊断日志流式传输到**事件中心**](/documentation/articles/monitoring-stream-diagnostic-logs-to-event-hubs/)，方便第三方服务或自定义分析解决方案（例如 PowerBI）引入。
 - 使用 [OMS Log Analytics](/documentation/articles/log-analytics-azure-storage-json/) 对诊断日志进行分析
 
-## 诊断设置
+## <a name="diagnostic-settings"></a> 诊断设置
 可以使用“诊断设置”配置非计算资源的诊断日志。资源控制的“诊断设置”：
 
 - 将诊断日志发送到何处：存储帐户、事件中心和/或 OMS Log Analytics。
