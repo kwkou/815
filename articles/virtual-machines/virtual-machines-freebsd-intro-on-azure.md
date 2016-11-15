@@ -70,5 +70,5 @@ FreeBSD 是一个卓越的操作系统，可用于服务器，桌面和嵌入式
 ## 下一步
 
 *	登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)创建 一个 FreeBSD 虚拟机吧！
-*	如您想带自定义的 FreeBSD 上 Azure，参考“[创建 FreeBSD VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-freebsd-create-upload-vhd)”。
+*	如您想带自定义的 FreeBSD 上 Azure，参考“[创建 FreeBSD VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-linux-classic-freebsd-create-upload-vhd)”。
 
