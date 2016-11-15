@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 门户为 Azure 服务创建警报 | Azure"
+	pageTitle="使用 Azure 门户预览为 Azure 服务创建警报 | Azure"
 	description="使用 Azure 门户创建 Azure 警报，以便在满足指定的条件时触发通知或自动化操作。"
 	authors="rboucher"
 	manager=""
@@ -18,16 +18,16 @@
 	wacn.date="11/14/2016"/>
 
 
-# 使用 Azure 门户为 Azure 服务创建警报
+# 使用 Azure 门户预览为 Azure 服务创建警报
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/insights-alerts-portal/)
+- [门户预览](/documentation/articles/insights-alerts-portal/)
 - [PowerShell](/documentation/articles/insights-alerts-powershell/)
 - [CLI](/documentation/articles/insights-alerts-command-line-interface/)
 
 ## 概述
 
-本文将展示如何使用 Azure 门户设置 Azure 警报。
+本文将展示如何使用 Azure 门户预览设置 Azure 警报。
 
 可以根据监视指标或事件接收 Azure 服务的警报。
 
@@ -40,11 +40,11 @@
 - 向服务管理员和共同管理员发送电子邮件通知
 - 向指定的其他电子邮件地址发送电子邮件。
 - 调用 Webhook
-- 开始执行 Azure Runbook（仅在 Azure 门户中可行）
+- 开始执行 Azure Runbook（仅在 Azure 门户预览中可行）
 
 可以使用以下工具配置和获取关于警报的信息：
 
-- [Azure 门户](/documentation/articles/insights-alerts-portal/)
+- [Azure 门户预览](/documentation/articles/insights-alerts-portal/)
 - [PowerShell](/documentation/articles/insights-alerts-powershell/)
 - [命令行界面 (CLI)](/documentation/articles/insights-alerts-command-line-interface/)
 - [Azure Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931945.aspx)
