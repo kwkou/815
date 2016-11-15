@@ -35,8 +35,6 @@
 
 警报可跨不同的服务使用，包括：
 
-- **Application Insights**：启用 Web 测试和指标警报。请参阅 [Set alerts in Application Insights](/documentation/articles/app-insights-alerts/)（在 Application Insights 中设置警报）和 [Monitor availability and responsiveness of any website](/documentation/articles/app-insights-monitor-web-app-availability/)（监视任何网站的可用性和响应能力）。
-- **Log Analytics (Operations Management Suite)**：用于将诊断日志路由到 Log Analytics。Operations Management Suite 允许指标、日志和其他警报类型。有关详细信息，请参阅 [Alerts in Log Analytics](/documentation/articles/log-analytics-alerts/)（Log Analytics 中的警报）。
 - **Azure 监视器**：基于指标值和活动日志事件启用警报。Azure 监视器包含 [Azure Insights REST API](https://msdn.microsoft.com/zh-cn/library/dn931943.aspx)。有关详细信息，请参阅 [Using the Azure portal, PowerShell, or the command-line interface to create alerts](/documentation/articles/insights-alerts-portal/)（使用 Azure 门户、PowerShell 或命令行接口创建警报）。
 
 ## 警报操作

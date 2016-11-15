@@ -76,7 +76,6 @@ OpsGenie 充当 Azure 所生成的警报的发送器。OpsGenie 根据值勤计�
 ## PagerDuty
 PagerDuty 是行业领先的事件管理解决方案，为 Azure 指标警报提供一流的支持。如今，除了 Azure 服务的平台级指标通知以外，PagerDuty 还支持 Azure Application Insights 警报通知、自动缩放通知与审核日志事件。这些增强功能使用户能够进一步洞察核心 Azure 平台，充分使用 PagerDuty 的实时响应事件管理功能。通过 Webhook 可以实现扩展的 Azure 集成，以便快速轻松地完成设置和自定义。
 
-[查看相关文档。][pagerduty-doc]
 
 ## 适用于 Azure 的 Splunk 外接程序
 适用于 Azure 的 Splunk 外接程序针对基础结构和 Azure 中运行的网站收集重要诊断、性能、审核与安全数据。
@@ -132,7 +131,6 @@ PagerDuty 是行业领先的事件管理解决方案，为 Azure 指标警报提
 [dynatrace-doc]: https://blog.ruxit.com/ruxit-monitoring-azure-web-apps/ "Dynatrace 文档。"
 [newrelic-doc]: https://newrelic.com/azure "NewRelic 文档。"
 [opsgenie-doc]: https://www.opsgenie.com/docs/integrations/azure-integration "OpsGenie 文档。"
-[pagerduty-doc]: https://www.pagerduty.com/docs/guides/azure-integration-guide/ "PagerDuty 文档"
 [splunk-doc]: https://splunkbase.splunk.com/app/3084/#/details "Splunk 文档。"
 [sumologic-doc]: https://www.sumologic.com/azure "SumoLogic 文档"
 
