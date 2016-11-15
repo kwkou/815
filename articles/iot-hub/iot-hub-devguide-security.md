@@ -37,7 +37,7 @@
 
 必须具有适当的权限，才能访问任何 IoT 中心终结点。例如，设备必须随它发送到 IoT 中心的每条消息提供包含安全凭据的令牌。
 
-## 访问控制和权限
+## <a name="access-control-and-permissions"></a> 访问控制和权限
 
 可以通过以下方式授予[权限](#iot-hub-permissions)：
 
@@ -110,7 +110,7 @@ HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验�
 
 此机制类似于[事件中心发布者策略][lnk-event-hubs-publisher-policy]，可用于实施自定义身份验证方法。
 
-## 安全令牌
+## <a name="security-tokens"></a> 安全令牌
 
 IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在线发送密钥。并且安全令牌的有效期和范围有限。[Azure IoT 中心 SDK][lnk-sdks] 无需任何特殊配置即可自动生成令牌。但在某些情况下，需要用户生成并直接使用安全令牌。包括 MQTT、AMQP 或 HTTP 应用层协议的直接使用，以及令牌服务模式的实现（如[自定义设备身份验证][lnk-custom-auth]中所述）。
 
@@ -185,7 +185,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 > [AZURE.NOTE] 由于 IoT 中心计算机会验证令牌的有效期，因此生成令牌的计算机的时间偏差必须很小。
 
-### 在设备客户端中使用 SAS 令牌
+### <a name="using-sas-tokens-as-a-device"></a> 在设备客户端中使用 SAS 令牌
 
 有两种方法可以使用安全令牌来获取 IoT 中心的 **DeviceConnect** 权限：使用[设备标识注册表中的对称设备密钥](#use-a-symmetric-key-in-the-identity-registry)，或者使用[共享访问策略密钥](#use-a-shared-access-policy)。
 
@@ -200,7 +200,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 | `{iot hub host name}/devices/{deviceId}/messages/events` | 发送设备到云的消息。 |
 | `{iot hub host name}/devices/{deviceId}/devicebound`   | 接收云到设备的消息。 |
 
-### 使用标识注册表中的对称密钥
+### <a name="use-a-symmetric-key-in-the-identity-registry"></a> 使用标识注册表中的对称密钥
 
 使用设备标识的对称密钥生成令牌时，将省略令牌的 policyName (`skn`) 元素。
 
@@ -224,7 +224,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 > [AZURE.NOTE] 可以使用 .NET 工具[设备资源管理器][lnk-device-explorer]来生成安全令牌。
 
-### 使用共享访问策略
+### <a name="use-a-shared-access-policy"></a> 使用共享访问策略
 
 使用共享访问策略创建令牌时，必须将策略名称字段 `skn` 设置为所使用的策略的名称。并且要求策略授予 **DeviceConnect** 权限。
 
@@ -286,7 +286,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
     SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices&sig=JdyscqTpXdEJs49elIUCcohw2DlFDR3zfH5KqGJo4r4%3D&se=1456973447&skn=registryRead
 
-## 支持的 X.509 证书
+## <a name="supported-x509-certificates"></a> 支持的 X.509 证书
 
 可以使用任何 X.509 证书通过 IoT 中心对设备进行身份验证。这包括：
 
@@ -341,7 +341,7 @@ var authMethod = new DeviceAuthenticationWithX509Certificate("<device id>", x509
 var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 ```
 
-## 自定义设备身份验证
+## <a name="custom-device-authentication"></a> 自定义设备身份验证
 
 可以使用 IoT 中心[设备标识注册表][lnk-identity-registry]来使用[令牌][lnk-sas-tokens]配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已经大幅投资自定义设备标识注册表和/或身份验证方案，可以通过创建 *令牌服务* ，将此现有基础结构与 IoT 中心集成。这样，便可以在解决方案中使用其他 IoT 功能。
 
@@ -370,7 +370,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 以下参考主题提供有关控制对 IoT 中心的访问的详细信息。
 
-## IoT 中心权限
+## <a name="iot-hub-permissions"></a> IoT 中心权限
 
 下表列出了可用于控制对 IoT 中心的访问的权限。
 

@@ -35,13 +35,13 @@ IoT 中心本身不中转消息，而是充当关联 Azure 存储帐户的调度
 
 若需将文件从设备上载到后端服务，而不是通过 IoT 中心发送消息，则可使用此 IoT 中心功能。
 
-## 将 Azure 存储帐户与 IoT 中心相关联
+## <a name="associate-an-azure-storage-account-with-iot-hub"></a> 将 Azure 存储帐户与 IoT 中心相关联
 
 若要使用文件上传功能，必须首先将 Azure 存储帐户链接到 IoT 中心。可以通过 [Azure 门户预览][lnk-management-portal]实现此操作，或通过 [Azure IoT 中心 - 资源提供程序 API][lnk-resource-provider-apis] 以编程方式实现此操作。将存储帐户与 IoT 中心关联后，当设备启动文件上传请求时，此服务将向该设备返回 SAS URI。
 
 > [AZURE.NOTE] [Azure IoT 中心 SDK][lnk-sdks] 自动处理检索 SAS URI、上载文件和通知 IoT 中心已完成上载。
 
-## 初始化文件上传
+## <a name="initialize-a-file-upload"></a> 初始化文件上传
 
 IoT 中心有一个终结点，专供设备在上载文件时请求用于存储的 SAS URI。设备可以使用以下 JSON 正文向 IoT 中心的 `{iot hub}.azure-devices.cn/devices/{deviceId}/files` 发送 POST，从而启动文件上载过程：
 
@@ -69,7 +69,7 @@ IoT 中心返回以下内容，供设备用来上载文件：
 
 IoT 中心有两个 REST 终结点支持文件上传，一个用于获取存储空间的 SAS URI，另一个用于通知 IoT 中心已完成上传。设备通过在 `{iot hub}.azure-devices.cn/devices/{deviceId}/files/{filename}` 向 IoT 中心发送 GET 来启动文件上载过程。该中心将返回特定于要上载的文件的 SAS URI，以及上载完成时要使用的相关性 ID。
 
-## 通知 IoT 中心已完成文件上传
+## <a name="notify-iot-hub-of-a-completed-file-upload"></a> 通知 IoT 中心已完成文件上传
 
 设备负责使用 Azure 存储 SDK 将文件上传到存储空间。上载完成后，设备会使用以下 JSON 正文向 IoT 中心的 `{iot hub}.azure-devices.cn/devices/{deviceId}/files/notifications` 发送 POST：
 
@@ -88,7 +88,7 @@ IoT 中心有两个 REST 终结点支持文件上传，一个用于获取存储�
 
 以下参考主题详细介绍了如何从设备上载文件。
 
-## 文件上传通知
+## <a name="file-upload-notifications"></a> 文件上传通知
 
 当设备上传文件并通知 IoT 中心上传完成时，该服务将选择性地生成包含该文件名称和存储位置的通知消息。
 
