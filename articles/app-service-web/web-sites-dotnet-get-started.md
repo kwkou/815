@@ -53,7 +53,7 @@
 
 如果你有 Visual Studio 2013 并想要使用它，可以[下载最新的 Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322)。某些屏幕可能看起来与这些插图不同。
 
-## 配置新的 Web 项目
+## <a name="configure-azure-resources-for-a-new-web-app"></a> 配置新的 Web 项目
 
 下一步是在 Visual Studio 中创建一个 Web 项目，并在 Azure App Service 中创建一个 Web 应用。在本教程部分，你将配置新的 Web 项目。
 
@@ -89,7 +89,7 @@
 
 6. 单击**“确定”**
 
-##<a name="deploy-the-application-to-azure"></a> 将项目部署到网站
+##<a name="deploy-the-application-to-azure" id="deploy-the-web-project-to-the-azure-web-app"></a> 将项目部署到网站
 
 在本部分中，你要将 Web 项目部署到 Web 应用。
 
