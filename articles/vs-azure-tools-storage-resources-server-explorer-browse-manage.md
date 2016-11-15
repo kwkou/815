@@ -17,7 +17,7 @@
 ## 概述
 如果你已安装 Azure Tools for Microsoft Visual Studio，可以从 Azure 的存储帐户中查看 Blob、队列和表数据。服务器资源管理器中的“Azure 存储空间”节点显示了位于本地存储模拟器帐户和其他 Azure 存储帐户中的数据。
 
-若要在 Visual Studio 中查看服务器资源管理器，请在菜单栏上选择“查看”>“服务器资源管理器”。存储节点显示用户要连接到的每个 Azure 订阅/证书下的所有存储帐户。如果存储帐户未出现，可以遵循[本主题稍后](#add-storage-accounts-by-using-server-explorer)的说明来添加帐户。
+若要在 Visual Studio 中查看服务器资源管理器，请在菜单栏上选择“查看”>“服务器资源管理器”。存储节点显示用户要连接到的每个 Azure 订阅/证书下的所有存储帐户
 
 从 Azure SDK 2.7 开始，你也可以使用新的云资源管理器来查看和管理 Azure 资源。有关详细信息，请参阅 [Managing Azure Resources with Cloud Explorer](/documentation/articles/vs-azure-tools-resources-managing-with-cloud-explorer/)（使用云资源管理器管理 Azure 资源）。
 

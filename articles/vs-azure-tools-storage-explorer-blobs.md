@@ -43,7 +43,7 @@
 
 	![“创建 Blob 容器”上下文菜单][0]
 
-1.	此时会在“Blob 容器”文件夹下显示一个文本框。输入你的 Blob 容器的名称。如需 Blob 容器命名规则和限制的列表，请参[容器命名规则](/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)部分。
+1.	此时会在“Blob 容器”文件夹下显示一个文本框。输入你的 Blob 容器的名称。如需 Blob 容器命名规则和限制的列表，请参[容器命名规则](/documentation/articles/storage-dotnet-how-to-use-blobs/)部分。
 
 	![“创建 Blob 容器”文本框][1]
 
@@ -70,7 +70,7 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 
 ## 删除 Blob 容器
 
-你可以根据需要轻松地创建和删除 Blob 容器。（若要了解如何删除各个 Blob，请参阅[管理 Blob 容器中的 Blob](#managing-blobs-in-a-blob-container) 部分。）
+你可以根据需要轻松地创建和删除 Blob 容器。
 
 以下步骤演示了如何在存储资源管理器（预览版）中删除 Blob 容器：
 
@@ -87,7 +87,7 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 
 ## 复制 Blob 容器
 
-你可以通过存储资源管理器（预览版）将 Blob 容器复制到剪贴板，然后再将该 Blob 容器粘贴到另一存储帐户中。（若要了解如何复制各个 Blob，请参阅[管理 Blob 容器中的 Blob](#managing-blobs-in-a-blob-container) 部分。）
+你可以通过存储资源管理器（预览版）将 Blob 容器复制到剪贴板，然后再将该 Blob 容器粘贴到另一存储帐户中。
 
 以下步骤演示了如何将 Blob 容器从一个存储帐户复制到另一个存储帐户。
 
@@ -196,7 +196,7 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 
 			![“上载文件”选项][16]
 
-		1.	将类型指定为“Blob 类型”。[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/#blob-service-concepts)一文说明了不同 Blob 类型的区别。
+		1.	将类型指定为“Blob 类型”。[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)一文说明了不同 Blob 类型的区别。
 
 		1.	（可选）指定要将选定文件上载到其中的目标文件夹。如果目标文件夹不存在，系统将会创建一个。
 
