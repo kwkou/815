@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/27/2016"
-	wacn.date=“10/10/2016”
+	wacn.date="10/10/2016"
 	ms.author="cephalin"/>
 
 # 将自定义域名映射到 Azure 应用
