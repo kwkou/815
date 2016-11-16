@@ -16,7 +16,7 @@
 	ms.workload="big-compute"
 	ms.date="08/29/2016"
 	ms.author="marsma" 
-   	wacn.date="10/26/2016"/>
+   	wacn.date="11/16/2016"/>
 
 # 在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序
 
@@ -31,8 +31,7 @@
 将具有多实例设置的任务提交给作业时，Batch 执行多实例任务特有的几个步骤：
 
 1. Batch 服务自动将任务拆分成一个主要任务和多个子任务。Batch 然后将主要任务和子任务排定在池的计算节点上执行。
-2. 这些任务（主要任务和子任务）下载在多实例设置中指定的任何
-3. *通用资源文件**。
+2. 这些任务（主要任务和子任务）下载在多实例设置中指定的任何**通用资源文件**。
 3. 下载通用资源文件之后，主任务和子任务将执行多实例设置中指定的**协调命令**。此协调命令通常用于启动后台服务（例如 [Microsoft MPI][msmpi_msdn] 的 `smpd.exe`），也可能确认节点已准备好处理节点间的消息。
 4. 主任务及所有子任务成功完成协调命令之后，*只有***主任务**执行多实例任务的**命令行**（“应用程序命令”）。例如，在基于 [MS-MPI][msmpi_msdn] 的方案中，你将在此处使用 `mpiexec.exe` 执行已启用 MPI 的应用程序。
 
@@ -42,13 +41,13 @@
 
 多实例任务需要有已启用节点间通信和已禁用并发任务执行的池。如果尝试在已禁用节点间通信，或 *maxTasksPerNode* 值大于 1 的池中运行多实例任务，则永远不排定任务 -- 它无限期停留在“活动”状态。本代码段显示如何使用 Batch .NET 库创建这种池。
 
-csharp
+csharp 
 
-	CloudPool myCloudPool =
-		myBatchClient.PoolOperations.CreatePool(
-			poolId: "MultiInstanceSamplePool",
-			targetDedicated: 3
-			virtualMachineSize: "small",
+	CloudPool myCloudPool = 
+		myBatchClient.PoolOperations.CreatePool( 
+			poolId: "MultiInstanceSamplePool", 
+			targetDedicated: 3 
+			virtualMachineSize: "small", 
 			cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
 	
 	// Multi-instance tasks require inter-node communication, and those nodes
@@ -57,15 +56,15 @@ csharp
 	myCloudPool.MaxTasksPerComputeNode = 1;
 	
 
-此外，多实例任务 *只能* 在 **2015 年 12 月 14 日之后创建的池**中的节点上执行。
+此外，多实例任务*只能*在 **2015 年 12 月 14 日之后创建的池**中的节点上执行。
 
-> [AZURE.TIP] 当你在 Batch 池中使用 [A8 或 A9 大小的计算节点](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs/)时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。[云服务的大小](/documentation/articles/cloud-services-sizes-specs/)提供了 Batch 池中可用的计算节点大小的完整列表。
+> [AZURE.TIP] 当你在 Batch 池中使用 A8 或 A9 大小的计算节点时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。[云服务的大小](/documentation/articles/cloud-services-sizes-specs/)提供了 Batch 池中可用的计算节点大小的完整列表。
 
 ### 使用 StartTask 安装 MPI 应用程序
 
 若要使用多实例任务来执行 MPI 应用程序，首先需要将 MPI 软件安装到池中的计算节点。这是使用 [StartTask][net_starttask] 的好时机，每当节点加入池或重新启动时，它就会执行。此代码片段创建 StartTask，用于将 MS-MPI 安装包指定为[资源文件][net_resourcefile]；此外，它指定在将资源文件下载到节点之后要执行的命令行。
 
-csharp
+csharp 
 
 	// Create a StartTask for the pool which we use for installing MS-MPI on
 	// the nodes as they join the pool (or when they are restarted).
@@ -88,7 +87,7 @@ csharp
 
 我们已讨论池的要求和 MPI 包安装，现在让我们创建多实例任务。在此代码段中，我们将创建一个标准 [CloudTask][net_task]，然后配置其 [MultiInstanceSettings][net_multiinstance_prop] 属性。如前所述，多实例任务不是独特的任务类型，而只是已配置多实例设置的标准 Batch 任务。
 
-csharp
+csharp 
 
 	// Create the multi-instance task. Its command line is the "application command"
 	// and will be executed *only* by the primary, and only after the primary and
@@ -117,9 +116,9 @@ csharp
 
 系统分配范围介于 0 到 numberOfInstances-1 的整数 ID 给这些任务。ID 为 0 的任务是主要任务，其他所有 ID 都是子任务。例如，如果为任务创建以下多实例设置，则主要任务的 ID 为 0，而子任务的 ID 为 1 到 9。
 
-csharp
+csharp 
 
-	int numberOfNodes = 10;
+	int numberOfNodes = 10; 
 	myMultiInstanceTask.MultiInstanceSettings = new MultiInstanceSettings(numberOfNodes);
 
 ## 协调命令
@@ -144,21 +143,21 @@ csharp
 
 这些环境变量可在计算节点上获取，用于主任务的应用程序命令运行的应用程序和脚本：
 
-* `CCP_NODES`
+* `CCP_NODES`  
 
 
   * **可用性**：CloudServiceConfiguration 和 VirtualMachineConfiguration 池
   * **格式**：`numNodes<space>nodeIP<space>numCores<space>`
   * **示例**：`2 10.0.0.4 1 10.0.0.5 1`
 
-* `AZ_BATCH_NODE_LIST`
+* `AZ_BATCH_NODE_LIST`  
 
 
   * **可用性**：CloudServiceConfiguration 和 VirtualMachineConfiguration 池
   * **格式**：`nodeIP;nodeIP`
   * **示例**：`10.0.0.4;10.0.0.5`
 
-* `AZ_BATCH_HOST_LIST`
+* `AZ_BATCH_HOST_LIST`  
 
 
   * **可用性**：VirtualMachineConfiguration 池
@@ -199,10 +198,10 @@ csharp
 
 以下代码段演示如何获取子任务信息，以及从它们执行所在的节点请求文件的内容。
 
-csharp
+csharp 
 
-	// Obtain the job and the multi-instance task from the Batch service
-	CloudJob boundJob = batchClient.JobOperations.GetJob("mybatchjob");
+	// Obtain the job and the multi-instance task from the Batch service 
+	CloudJob boundJob = batchClient.JobOperations.GetJob("mybatchjob"); 
 	CloudTask myMultiInstanceTask = boundJob.GetTask("mymultiinstancetask");
 	
 	// Now obtain the list of subtasks for the task
@@ -276,4 +275,4 @@ csharp
 
 [1]: ./media/batch-mpi/batch_mpi_01.png "多实例概述"
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1107_2016-->

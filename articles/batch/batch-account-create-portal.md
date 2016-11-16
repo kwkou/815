@@ -16,7 +16,7 @@
 	ms.topic="get-started-article"
 	ms.date="08/26/2016"
 	ms.author="marsma"
-  	wacn.date="10/26/2016"/>  
+  	wacn.date="11/16/2016"/>  
 
 
 # 使用 Azure 门户预览创建 Azure Batch 帐户
@@ -83,7 +83,7 @@ Batch 帐户只在“免费层”中提供，这意味着无需为 Batch 帐户�
 
 如前所述，可以将**常规用途**存储帐户链接到 Batch 帐户（可选）。与 [Batch 文件约定 .NET](/documentation/articles/batch-task-output/)库一样，Batch 的[应用程序包](/documentation/articles/batch-application-packages/)功能在链接的常规用途存储帐户中使用 Blob 存储。这些可选功能可帮助部署 Batch 任务运行的应用程序，以及保存它们生成的数据。
 
-Batch 目前 *仅* 支持**常规用途**存储帐户类型，如[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)的[创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account/)中步骤 5 所述。将某个 Azure 存储帐户链接到 Batch 帐户时，请确保*只*链接**常规用途**存储帐户。
+Batch 目前*仅*支持**常规用途**存储帐户类型，如[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)的[创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account/)中步骤 5 所述。将某个 Azure 存储帐户链接到 Batch 帐户时，请确保*只*链接**常规用途**存储帐户。
 
 ![创建“常规用途”存储帐户][storage_account]  
 
@@ -137,4 +137,4 @@ Batch 目前 *仅* 支持**常规用途**存储帐户类型，如[关于 Azure �
 [storage_account]: ./media/batch-account-create-portal/storage_account.png
 [quotas]: ./media/batch-account-create-portal/quotas.png
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1107_2016-->
