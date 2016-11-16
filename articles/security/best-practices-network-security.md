@@ -21,7 +21,7 @@
 
 # Microsoft Azure 网络安全 
 
-由 21Vianet 运营的 Microsoft Azure 提供超大规模的服务和基础结构、企业级的功能，以及许多混合连接选项。客户可以选择通过 Internet 或 Azure ExpressRoute（提供专用网络连接）访问这些服务。Microsoft Azure Platform 可让客户无缝地将基础结构扩展到云中并构建多层体系结构。此外，第三方可以提供安全服务和虚拟设备，以启用增强的功能。本白皮书概述了当客户使用通过 ExpressRoute 访问的 Microsoft Azure 创建安全服务时应该考虑的安全和体系结构问题。此外，还介绍了如何在 Azure 虚拟网络中创建其他安全服务。
+由世纪互联运营的 Microsoft Azure 提供超大规模的服务和基础结构、企业级的功能，以及许多混合连接选项。客户可以选择通过 Internet 或 Azure ExpressRoute（提供专用网络连接）访问这些服务。 Azure 平台可让客户无缝地将基础结构扩展到云中并构建多层体系结构。此外，第三方可以提供安全服务和虚拟设备，以启用增强的功能。本白皮书概述了当客户使用通过 ExpressRoute 访问的 Microsoft Azure 创建安全服务时应该考虑的安全和体系结构问题。此外，还介绍了如何在 Azure 虚拟网络中创建其他安全服务。
 
 ## 快速开始
 以下逻辑图表以具体示例说明了 Azure 平台提供的许多安全技术。有关快速参考，请找到最适合你案例的示例。有关更完整的说明，请继续阅读本文。
@@ -35,13 +35,13 @@
 [示例 6：使用 ExpressRoute 添加混合连接。](#example-6-adding-a-hybrid-connection-with-expressroute)</br> 
 未来几个月内，本文档中将会加入有关在虚拟网络之间添加连接、高可用性和服务链接的示例。
 
-## Microsoft 合规性与基础结构保护
-Microsoft 为企业客户所需的合规性方案提供首屈一指的支持。下面是 Azure 取得的部分认证：
+## 合规性与基础结构保护
+世纪互联为企业客户所需的合规性方案提供首屈一指的支持。下面是 Azure 取得的部分认证：
 ![Azure 合规性徽章][1]
 
-有关详细信息，请参阅 [Microsoft 信任中心](https://www.trustcenter.cn)上的合规性信息。
+有关详细信息，请参阅 [信任中心](https://www.trustcenter.cn)上的合规性信息。
 
-Microsoft 采取综合性的方案来保护运行超大规模服务所需的云基础结构。Microsoft Azure 基础结构包括硬件、软件、网络、管理和运营人员以及物理数据中心。
+世纪互联采取综合性的方案来保护运行超大规模服务所需的云基础结构。Microsoft Azure 基础结构包括硬件、软件、网络、管理和运营人员以及物理数据中心。
 
 ![Azure 安全功能][2]  
 
