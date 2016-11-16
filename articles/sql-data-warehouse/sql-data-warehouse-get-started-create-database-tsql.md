@@ -71,7 +71,7 @@
 [加载]: /documentation/articles/sql-data-warehouse-overview-load/
 [加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
 [使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/
-[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/rule
+[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell
 [如何创建资源组]: /documentation/articles/resource-group-template-deploy-portal
 [Installing Visual Studio and SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio/
 [sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
