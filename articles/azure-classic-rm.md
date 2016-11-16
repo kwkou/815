@@ -34,7 +34,7 @@ Azure 平台正在转换。不论你是 Azure 新手还是经验丰富的老手�
 - 在这两种模型中，创建、配置和管理 Azure 资源的方式有所不同。
 - 使用一种部署模型所创建的资源，不一定能与使用不同部署模型创建的资源互操作。例如，使用一种部署模型创建的 Azure 虚拟机只能连接到使用相同部署模型创建的 Azure 虚拟网络。    
 
-每种部署模型的基础是每个资源的应用程序编程接口 (API)。资源管理器部署模型有[资源管理器 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)，经典部署模型有[服务管理 API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。开发人员可以编写代码，以直接与这些 API 交互。
+每种部署模型的基础是每个资源的应用程序编程接口 (API)。资源管理器部署模型有[资源管理器 API](https://docs.microsoft.com/zh-cn/rest/api/resources/?redirectedfrom=MSDN)，经典部署模型有[服务管理 API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。开发人员可以编写代码，以直接与这些 API 交互。
 
 但是，IT 专业人员通常在 Web 浏览器中使用图形门户、在 Windows 计算机上使用 Azure PowerShell cmdlet，或在 Windows、OS X 或 Linux 计算机上使用 Azure 命令行界面 (CLI) 来与这些 API 间接交互。IT 专业人员使用的这三种间接方法都能直接与 API 交互。这意味着 Azure 平台或资源引入新功能时，始终可以先通过 API 直接获取，而在 API 可供使用后通过间接方法获取新资源和功能的支持。
 
