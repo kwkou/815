@@ -84,7 +84,6 @@
 - [简单部署 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux)
 - [创建 CDN 配置文件，以及创建使用存储帐户作为来源的 CDN 终结点](https://github.com/Azure/azure-quickstart-templates/tree/master/201-cdn-with-storage-account)
 - [使用 Powershell DSC 扩展创建包含 9 个 VM 的高可用性 SharePoint 场](https://github.com/Azure/azure-quickstart-templates/tree/master/sharepoint-server-farm-ha)
-- [简单部署已启用 WAD 的 5 节点安全 Service Fabric 群集](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype-wad)
 - [从 Windows 映像创建包含 4 个空数据磁盘的虚拟机](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-data-disk)
 
 

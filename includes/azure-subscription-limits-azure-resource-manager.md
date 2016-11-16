@@ -4,7 +4,7 @@
 每个订阅的协同管理员数|不受限制|不受限制
 每个订阅的[存储帐户数](/documentation/articles/storage-create-storage-account/)|100|100<sup>2</sup>
 每个订阅的[资源组](/documentation/articles/resource-group-overview/)数|800|800
-每个订阅的[可用性集](/documentation/articles/virtual-machines-windows-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)数|每个区域 2000 个|每个区域 2000 个
+每个订阅的[可用性集](/documentation/articles/virtual-machines-windows-manage-availability/)数|每个区域 2000 个|每个区域 2000 个
 资源管理器 API 读取次数|每小时 15000 次|每小时 15000 次
 资源管理器 API 写入次数|每小时 1200 次|每小时 1200 次
 资源管理器 API 请求大小|4194304 字节|4194304 字节
