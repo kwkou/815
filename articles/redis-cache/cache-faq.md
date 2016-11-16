@@ -12,7 +12,6 @@
 	ms.date="08/18/2016"
 	wacn.date="10/25/2016"/>  
 
-
 # Azure Redis 缓存常见问题
 
 了解常见问题的答案，以及有关 Azure Redis 缓存的模式和最佳实践。

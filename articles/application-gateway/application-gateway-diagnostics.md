@@ -186,7 +186,7 @@ Azure 提供使用日志记录和度量值来监视资源的功能
 
 度量值是某些 Azure 资源的一项功能，可供在门户中查看性能计数器。撰写本文时，应用程序网关有一个可用的度量值。此度量值是吞吐量，可在门户中看到。导航到应用程序网关，然后单击“度量值”。在“可用度量值”部分选择吞吐量，查看这些值。在下图中，可以看到一个示例，其中有可用于显示不同时间范围的数据的筛选器。
 
-<!-- 若要查看当前支持的度量值的列表，请参阅 [Azure Monitor 支持的度量值](/documentation/articles/monitoring-supported-metrics/) -->
+若要查看当前支持的度量值的列表，请参阅 [Azure Monitor 支持的度量值](/documentation/articles/monitoring-supported-metrics/)
 
 ![度量值视图][5]  
 
