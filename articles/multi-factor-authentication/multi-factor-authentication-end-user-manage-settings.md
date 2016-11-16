@@ -6,7 +6,8 @@
 	documentationCenter="" 
 	authors="billmath" 
 	manager="stevenpo" 
-	editor="curtland"/>
+	editor="curtland"/>  
+
 
 <tags 
 	ms.service="multi-factor-authentication" 
@@ -16,12 +17,12 @@
 	ms.topic="article" 
 	ms.date="08/22/2016" 
 	ms.author="billmath"
-	wacn.date="10/19/2016"/>  
+	wacn.date="11/16/2016"/>  
 
 
 # 使用 Azure 多重身份验证时遇到问题
 >[AZURE.IMPORTANT]
-请帮助我们改进此页面。如果你在此页面上找不到问题的解答，请提供详细的意见反应，好让我们添加所需的解答。
+>请帮助我们改进此页面。如果你在此页面上找不到问题的解答，请提供详细的意见反应，好让我们添加所需的解答。
 
 以下信息旨在帮助你解决可能遇到的一些常见问题。
 
@@ -71,7 +72,7 @@
 ![备用号码](./media/multi-factor-authentication-end-user-manage/altphone2.png)
 
 >[AZURE.IMPORTANT]
-必须配置辅助身份验证电话号码。由于你的主要电话号码和移动应用可能在同一部手机上，因此，当你的手机丢失或被盗时，只能通过辅助电话号码访问你的帐户。
+>必须配置辅助身份验证电话号码。由于你的主要电话号码和移动应用可能在同一部手机上，因此，当你的手机丢失或被盗时，只能通过辅助电话号码访问你的帐户。
 
 如果你未配置辅助身份验证电话号码，则需要与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#require-selected-users-to-provide-contact-methods-again/)。
 
@@ -111,7 +112,9 @@
 1. 登录到 [https://myapps.microsoft.com](https://myapps.microsoft.com)
 2. 在顶部选择配置文件。
 3. 选择“其他安全性验证”。
-![Myapps](./media/multi-factor-authentication-end-user-manage/myapps1.png)
+
+	![Myapps](./media/multi-factor-authentication-end-user-manage/myapps1.png)
+
 4. 随后你将转到可以更改设置的页面。
 
 	![验证](./media/multi-factor-authentication-end-user-manage-myapps/proofup.png)  
@@ -136,11 +139,10 @@
 如果你换了新手机，需要更改 MFA 使用的主要联系电话号码，可以使用以下两种方法之一来实现此目的。
 
 >[AZURE.IMPORTANT]
-必须配置辅助身份验证电话号码。由于你的主要电话号码和移动应用可能在同一部手机上，因此，当你的手机丢失或被盗时，只能通过辅助电话号码访问你的帐户。
+>必须配置辅助身份验证电话号码。由于你的主要电话号码和移动应用可能在同一部手机上，因此，当你的手机丢失或被盗时，只能通过辅助电话号码访问你的帐户。
 
 第一种方法是使用辅助身份验证方法。如果你指定了辅助身份验证电话号码，可以使用该号码登录。
 ![设置](./media/multi-factor-authentication-end-user-manage/altphone.png) 
-
 请注意，在上面的屏幕截图中，已设置两个电话号码。一个以 67 结尾，另一个以 30 结尾。
   
 若要使用备用电话号码登录，请像平时一样登录，然后选择“使用其他验证选项”。
@@ -187,4 +189,4 @@
 
 最后，请务必在此页面上留下一些详细的意见反馈，好让我们更新此页面，并通过提供更多的信息来持续改进此页面。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1107_2016-->
