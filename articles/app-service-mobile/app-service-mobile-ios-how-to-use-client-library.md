@@ -500,7 +500,7 @@ if (error.code == MSErrorPreconditionFailed) {
 
 可以借助 Active Directory 身份验证库 (ADAL) 使用 Azure Active Directory 将用户登录到应用程序。这通常比使用 `loginAsync()` 方法更有利，因为它提供更直观的 UX 风格，并允许其他自定义。
 
-1. 根据 [How to configure App Service for Active Directory login](/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/)（如何为 Active Directory 登录配置应用服务）教程的说明，为 AAD 登录配置移动应用。请务必完成注册本机客户端应用程序的可选步骤。对于 iOS，建议为重定向 URI 使用 `<app-scheme>://<bundle-id>` 格式（但不一定要这样做）。有关详细信息，请参阅 [ADAL iOS quickstart](/documentation/articles/active-directory-devquickstarts-ios/#em1-determine-what-your-redirect-uri-will-be-for-iosem)（ADAL iOS 快速入门）。
+1. 根据 [How to configure App Service for Active Directory login](/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/)（如何为 Active Directory 登录配置应用服务）教程的说明，为 AAD 登录配置移动应用。请务必完成注册本机客户端应用程序的可选步骤。对于 iOS，建议为重定向 URI 使用 `<app-scheme>://<bundle-id>` 格式（但不一定要这样做）。
 
 2. 使用 Cocoapods 安装 ADAL。编辑 Podfile 以包含以下内容，将 **YOUR-PROJECT** 替换为 Xcode 项目的名称：
 

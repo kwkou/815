@@ -29,9 +29,9 @@ IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在�
 -   [安全令牌结构][lnk-security-tokens]
 -   [将 SAS 令牌当做设备使用][lnk-sas-tokens]
 
-每个 IoT 中心都有一个[设备标识注册表][lnk-identity-registry]，可用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列），以及允许访问面向设备的终结点。IoT 中心标识注册表针对解决方案为设备标识和安全密钥提供安全存储。可将单个或一组设备标识添加到允许列表或方块列表，以便完全控制设备访问。以下文章提供有关设备标识注册表的结构和受支持操作的详细信息。
+每个 IoT 中心都有一个设备标识注册表，可用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列），以及允许访问面向设备的终结点。IoT 中心标识注册表针对解决方案为设备标识和安全密钥提供安全存储。可将单个或一组设备标识添加到允许列表或方块列表，以便完全控制设备访问。以下文章提供有关设备标识注册表的结构和受支持操作的详细信息。
 
-[IoT 中心支持 AMQP、MQTT 和 HTTPS 等协议][lnk-protocols]。每个协议使用 IoT 设备到 IoT 中心的安全令牌的方式不同：
+IoT 中心支持 AMQP、MQTT 和 HTTPS 等协议。每个协议使用 IoT 设备到 IoT 中心的安全令牌的方式不同：
 
 - AMQP：基于 SASL PLAIN 和 AMQP 声明的安全性（若是中心级别令牌，则为 {policyName}@sas.root.{iothubName}；若是设备范围令牌，则为 {deviceId}）。
 
@@ -79,11 +79,11 @@ Azure IoT 套件支持以下密码套件（按此顺序）。
 
 ## 保护云的安全
 
-Azure IoT 中心允许为每个安全密钥定义[访问控制策略][lnk-protocols]。它使用以下一组权限向每个 IoT 中心的终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
+Azure IoT 中心允许为每个安全密钥定义访问控制策略。它使用以下一组权限向每个 IoT 中心的终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
 
-- **RegistryRead**。授予对设备标识注册表的读取访问权限。有关详细信息，请参阅[设备标识注册表][lnk-identity-registry]。
+- **RegistryRead**。授予对设备标识注册表的读取访问权限。
 
-- **RegistryReadWrite**。授予对设备标识注册表的读取和写入访问权限。有关详细信息，请参阅[设备标识注册表][lnk-identity-registry]。
+- **RegistryReadWrite**。授予对设备标识注册表的读取和写入访问权限。
 
 - **ServiceConnect**。授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。
 
@@ -111,9 +111,7 @@ Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析、Blo
 
 [lnk-security-tokens]: /documentation/articles/iot-hub-sas-tokens/#security-token-structure
 [lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens#use-sas-tokens-as-a-device
-[lnk-identity-registry]: /documentation/articles/iot-hub-devguide#device-identity-registry
-[lnk-protocols]: /documentation/articles/iot-hub-devguide#security
-[lnk-custom-auth]: /documentation/articles/iot-hub-guidance#custom-device-authentication
+[lnk-custom-auth]: /documentation/articles/iot-hub-guidance#customauth
 [lnk-x509]: http://www.itu.int/rec/T-REC-X.509-201210-I/en
 [lnk-use-x509]: /documentation/articles/iot-hub-sas-tokens
 [lnk-tls12]: https://tools.ietf.org/html/rfc5246

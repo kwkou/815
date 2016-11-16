@@ -114,6 +114,6 @@
 	gcc sender.c -o sender -lqpid-proton
 	```
 
-> [AZURE.NOTE]在此代码中，我们使用传出窗口 1 以强制尽快发出消息。通常，你的应用程序应尝试批处理消息，以提高吞吐量。请参阅 [Qpid AMQP Messenger 页](http://qpid.apache.org/components/messenger/index.html)，以详细了解如何在此环境及其他环境中以及从为其提供了绑定的平台（目前为 Perl、PHP、Python 和 Ruby）中使用 Qpid Proton 库。
+> [AZURE.NOTE]在此代码中，我们使用传出窗口 1 以强制尽快发出消息。通常，你的应用程序应尝试批处理消息，以提高吞吐量。
 
 <!---HONumber=Mooncake_0104_2016-->

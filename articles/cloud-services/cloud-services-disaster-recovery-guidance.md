@@ -46,7 +46,7 @@ Azure 已在平台中内置多种功能，用于支持高度可用的应用程�
   * 对于 SQL 数据库源，请阅读[概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复](/documentation/articles/sql-database-business-continuity/)以了解基于所选复制模型而可用于应用程序的选项。
 
 ##选项 3：通过 Azure 流量管理器使用备份部署
-此选项假设你已考虑使用区域灾难恢复设计应用程序解决方案。如果你已具有在其他区域中运行且通过流量管理器通道连接的辅助云服务应用程序部署，则可以使用此选项。在这种情况下，请检查辅助部署的运行状况。如果它运行正常，则你可以通过 Azure 流量管理器将流量重定向到它。借助此策略，可以利用 Azure 流量管理器中的流量路由方法和故障转移顺序配置。有关详细信息，请参阅[如何配置流量管理器设置](/documentation/articles/traffic-manager-overview/#how-to-configure-traffic-manager-settings)。
+此选项假设你已考虑使用区域灾难恢复设计应用程序解决方案。如果你已具有在其他区域中运行且通过流量管理器通道连接的辅助云服务应用程序部署，则可以使用此选项。在这种情况下，请检查辅助部署的运行状况。如果它运行正常，则你可以通过 Azure 流量管理器将流量重定向到它。借助此策略，可以利用 Azure 流量管理器中的流量路由方法和故障转移顺序配置。
 
 ![使用 Azure 流量管理器跨区域平衡 Azure 云服务](./media/cloud-services-disaster-recovery-guidance/using-azure-traffic-manager.png)
 
