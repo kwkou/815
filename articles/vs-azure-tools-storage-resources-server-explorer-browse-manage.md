@@ -127,7 +127,7 @@ Blob 节点显示所选存储帐户的容器列表。Blob 容器包含 Blob 文�
 
 ### 查看传输到 Blob 的日志
 
-- 如果你正在使用 Azure 诊断来记录 Azure 应用程序中的数据，并且已将日志传输到存储帐户，则会看到 Azure 为这些日志创建的容器。在服务器资源管理器中查看这些日志是一种简便的确定应用程序问题的方法，尤其是当应用程序已部署到 Azure 时。有关 Azure 诊断的详细信息，请参阅 [Collect Logging Data by Using Azure Diagnostics](https://msdn.microsoft.com/library/azure/gg433048.aspx)（使用 Azure 诊断收集日志记录数据）。
+- 如果你正在使用 Azure 诊断来记录 Azure 应用程序中的数据，并且已将日志传输到存储帐户，则会看到 Azure 为这些日志创建的容器。在服务器资源管理器中查看这些日志是一种简便的确定应用程序问题的方法，尤其是当应用程序已部署到 Azure 时。有关 Azure 诊断的详细信息，请参阅 [Collect Logging Data by Using Azure Diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)（使用 Azure 诊断收集日志记录数据）。
 
 ### 获取 Blob 的 URL
 
@@ -228,7 +228,7 @@ Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL �
 
 1. 若要运行查询，请选择绿色三角形图标。
 
-    如果在筛选器字段中直接输入 WCF 数据服务筛选器字符串，还可以筛选“表设计器”中显示的实体数据。此类字符串类似 SQL WHERE 语句，但它以 HTTP 请求的形式发送到服务器。有关如何生成筛选器字符串的信息，请参阅 [Constructing Filter Strings for the Table Designer（生成表设计器的筛选字符串）](https://msdn.microsoft.com/zh-cn/library/azure/ff683669.aspx)。
+    如果在筛选器字段中直接输入 WCF 数据服务筛选器字符串，还可以筛选“表设计器”中显示的实体数据。此类字符串类似 SQL WHERE 语句，但它以 HTTP 请求的形式发送到服务器。
 
     下图显示了有效筛选器字符串的示例：
 
@@ -274,7 +274,7 @@ Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL �
 
     - 要用于新存储帐户的名称。
 
-    - 区域或地缘组（例如“美国西部”或“东亚”）。
+    - 区域或地缘组（例如“中国北部”或“中国东部”）。
 
     - 要用于存储帐户的复制类型，如“异地冗余”。
 
@@ -307,9 +307,5 @@ Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL �
 - 在服务器资源管理器中，打开帐户名称的快捷菜单，然后选择“删除”。如果删除某个存储帐户，则也会删除该帐户的所有已保存密钥信息。
 
     >[AZURE.NOTE] 从服务器资源管理器中删除存储帐户不会影响到存储帐户或其所包含的任何数据，它只是将引用从服务器资源管理器中删除了。若要永久删除存储帐户，请使用 Azure 经典管理门户。
-
-## 后续步骤
-
-若要详细了解如何使用 Azure 存储服务，请参阅 [Accessing the Azure Storage Services](https://msdn.microsoft.com/zh-cn/library/azure/ee405490.aspx)（访问 Azure 存储服务）。
 
 <!---HONumber=Mooncake_0912_2016-->
