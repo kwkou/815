@@ -25,7 +25,7 @@
 
     ![新的 IoT 中心边栏选项卡][4]
 
-6. 在“共享访问策略”边栏选项卡中，单击“iothubowner”策略，然后复制并记下“iothubowner”边栏选项卡中的连接字符串。有关详细信息，请参阅“Azure IoT 中心开发人员指南”中的[访问控制][lnk-access-control]。
+6. 在“共享访问策略”边栏选项卡中，单击“iothubowner”策略，然后复制并记下“iothubowner”边栏选项卡中的连接字符串。
 
     ![共享访问策略边栏选项卡][5]  
 
@@ -42,6 +42,6 @@
 [lnk-resource-groups]: /documentation/articles/resource-group-portal/
 [lnk-portal]: https://portal.azure.cn/
 [lnk-pricing]: /home/features/iot-hub/#pricing
-[lnk-access-control]: /documentation/articles/iot-hub-devguide/#accesscontrol
+
 
 <!---HONumber=Mooncake_0425_2016-->
