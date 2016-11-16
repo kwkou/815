@@ -13,7 +13,7 @@
 	wacn.date="08/31/2016"/>
 #使用 PowerShell 在 Azure Active Directory 中管理域的集成方式
 
-本文适用于已安装 Azure AD Connect 集成工具，将本地用户与 Azure AD 集成，并配置了基于密码同步的登录或基于 ADFS 联合身份验证服务的联合登陆的客户。关于如何安装并配置 Azure AD Connect，请参考[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/#install-azure-ad-connect)。
+本文适用于已安装 Azure AD Connect 集成工具，将本地用户与 Azure AD 集成，并配置了基于密码同步的登录或基于 ADFS 联合身份验证服务的联合登陆的客户。关于如何安装并配置 Azure AD Connect，请参考[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)。
 
 ##常见场景
 
@@ -104,5 +104,5 @@ PowerShell 将在本地域的 ADFS 服务中注册 Azure AD 的依赖方 (Relyin
 ## 更多信息
 
 - [将自定义域名添加到 Azure Active Directory](/documentation/articles/active-directory-add-domain/)
-- [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/#install-azure-ad-connect)
+- [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 

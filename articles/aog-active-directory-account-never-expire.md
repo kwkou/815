@@ -12,7 +12,7 @@
 	wacn.date="10/28/2016"/>
 # 如何配置 Azure Active Directory 账户密码永不过期 #
 
-本文适用于未将本地活动目录与 Azure AD 集成的账号。如果需要对集成后的账号配置密码用户过期，请在本地活动目录内对账号进行配置，并使用同步工具将配置同步至 Azure AD。关于更多集成的信息，请参考将[本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/#install-azure-ad-connect "https://www.azure.cn/documentation/articles/active-directory-aadconnect/#install-azure-ad-connect")。
+本文适用于未将本地活动目录与 Azure AD 集成的账号。如果需要对集成后的账号配置密码用户过期，请在本地活动目录内对账号进行配置，并使用同步工具将配置同步至 Azure AD。关于更多集成的信息，请参考将[本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/ "https://www.azure.cn/documentation/articles/active-directory-aadconnect/")。
 
 我们建议您不要将用户帐户的密码设置为永不过期。我们建议将服务帐户（如用于 Active Directory 同步的帐户）的密码设置为永不过期。
 
@@ -59,4 +59,4 @@ Azure AD 模块支持安装了默认版本的微软 .Net Framework 与 Windows P
 
 **更多信息**
 
-[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/#install-azure-ad-connect "https://www.azure.cn/documentation/articles/active-directory-aadconnect/#install-azure-ad-connect")
+[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/ "https://www.azure.cn/documentation/articles/active-directory-aadconnect/")
