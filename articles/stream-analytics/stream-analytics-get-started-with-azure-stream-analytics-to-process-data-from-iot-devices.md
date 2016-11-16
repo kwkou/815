@@ -125,7 +125,7 @@ Contoso 是一家工业自动化公司，该公司已将其制造流程完全自
 ![检测事件缺失](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-12.png)  
 
 
-此时，使用 **LEFT OUTER** 联接到相同的数据流（自联接）。对于 **INNER** 联接，仅当找到匹配项时才返回结果。对于 **LEFT OUTER** 联接，如果联接左侧的事件不匹配，则返回右侧所有列的带 NULL 的行。这种方法对于查找事件缺失很有用。有关详细信息，请参阅 MSDN 文档 [JOIN](https://msdn.microsoft.com/library/azure/dn835026.aspx)（联接）。
+此时，使用 **LEFT OUTER** 联接到相同的数据流（自联接）。对于 **INNER** 联接，仅当找到匹配项时才返回结果。对于 **LEFT OUTER** 联接，如果联接左侧的事件不匹配，则返回右侧所有列的带 NULL 的行。这种方法对于查找事件缺失很有用。有关详细信息，请参阅 MSDN 文档 [JOIN](https://msdn.microsoft.com/zh-cn/library/azure/dn835026.aspx)（联接）。
 
 ![联接结果](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-13.png)  
 
