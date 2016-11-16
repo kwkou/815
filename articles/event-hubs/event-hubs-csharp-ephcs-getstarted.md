@@ -30,7 +30,7 @@
 
 若要完成本教程，你需要以下各项：
 
-+ [Microsoft Visual Studio](http://visualstudio.com)
++ [Microsoft Visual Studio](https://www.visualstudio.com/)
 
 + 有效的 Azure 帐户。如果没有帐户，只需几分钟时间就可以创建一个免费帐户。有关详细信息，请参阅 [Azure 免费试用](https://azure.microsoft.com/free/)。
 

@@ -32,7 +32,7 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ [Microsoft Visual Studio](http://visualstudio.com)
++ [Microsoft Visual Studio](https://www.visualstudio.com/)
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
