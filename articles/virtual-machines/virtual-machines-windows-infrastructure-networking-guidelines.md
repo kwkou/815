@@ -46,7 +46,7 @@
 
 ## 虚拟网络
 
-需要通过虚拟网络来支持虚拟机 (VM) 之间的通信。与物理网络一样，可以定义子网、自定义 IP 地址、DNS 设置、安全筛选以及负载均衡。通过使用[站点到站点 VPN](/documentation/articles/vpn-gateway-topology/) 或 [Express Route 线路](/documentation/articles/expressroute-introduction/)，可以将 Azure 虚拟网络连接到本地网络。你可以了解有关[虚拟网络及其组件](/documentation/articles/virtual-networks-overview/)的详细信息。
+需要通过虚拟网络来支持虚拟机 (VM) 之间的通信。与物理网络一样，可以定义子网、自定义 IP 地址、DNS 设置、安全筛选以及负载均衡。通过使用[站点到站点 VPN](/documentation/articles/vpn-gateway-about-vpngateways/) 或 [Express Route 线路](/documentation/articles/expressroute-introduction/)，可以将 Azure 虚拟网络连接到本地网络。你可以了解有关[虚拟网络及其组件](/documentation/articles/virtual-networks-overview/)的详细信息。
 
 通过使用资源组，可以灵活地设计虚拟网络组件。VM 可以连接到其资源组之外的虚拟网络。常见的设计方法就是创建可由一般小组管理且包含核心网络基础结构的集中式资源组，并将 VM 及其应用程序部署到单独的资源组。此方法允许应用程序所有者访问包含其 VM 的资源组，而无需开放对更多虚拟网络资源的配置访问。
 
