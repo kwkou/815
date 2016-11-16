@@ -14,7 +14,7 @@
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
    ms.author="cherylmc"
-   wacn.date="10/31/2016"/>
+   wacn.date="11/16/2016"/>
 
 # ExpressRoute 线路预配工作流和线路状态
 本页从较高层面引导你完成服务预配和路由配置工作流。
@@ -93,7 +93,7 @@
 >[AZURE.IMPORTANT] 当 ServiceProviderProvisioningState 为 Provisioning 或 Provisioned 时，如果运行该 PowerShell cmdlet 来删除线路，操作将会失败。请先让连接服务提供商取消 ExpressRoute 线路，然后删除线路。在运行 PowerShell cmdlet 删除线路之前，Azure 会持续收取线路费用。
 
 
-## 路由会话配置状态
+##<a name="routing-session-configuration-state"></a> 路由会话配置状态
 
 BGP 预配状态可让你知道  Azure 边缘是否已启用 BGP 会话。必须处于已启用状态才能使用对等互连。
 

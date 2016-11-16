@@ -9,7 +9,7 @@
 <tags 
 	ms.service="storage"
    ms.date="08/03/2016"
-	wacn.date="09/12/2016" />
+	wacn.date="11/16/2016" />
 
 # Azure 存储空间可伸缩性和性能目标
 
@@ -26,7 +26,7 @@
 如果您的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。有关批量定价的信息，请参阅 [Azure 存储空间定价](/pricing/details/storage/)。
 
 
-##<a id="scalability-targets-for-standard-storage-accounts"></a> Blob、队列、表和文件的可伸缩性目标
+##<a id="scalability-targets-for-standard-storage-accounts"></a><a name="scalability-targets-for-blobs-queues-tables-and-files"></a> Blob、队列、表和文件的可伸缩性目标
 
 [AZURE.INCLUDE [azure-storage-limits](../../includes/azure-storage-limits.md)]
 
@@ -36,11 +36,11 @@
 
 请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes/)或 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)了解其他详细信息。
 
-### 标准存储帐户
+###<a name="standard-storage-accounts"></a> 标准存储帐户
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../../includes/azure-storage-limits-vm-disks-standard.md)]
 
-###<a id="scalability-targets-for-premium-storage-accounts"></a> 高级存储帐户
+###<a id="scalability-targets-for-premium-storage-accounts"></a><a name="premium-storage-accounts"></a> 高级存储帐户
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../../includes/azure-storage-limits-vm-disks-premium.md)]
 

@@ -10,7 +10,7 @@ Blob 存储的常见用途包括：
 - 存储数据以用于备份和还原、灾难恢复及存档
 -   存储数据以供本地或 Azure 托管服务执行分析
 
-## Blob 服务概念
+##<a name="blob-service-concepts"></a> Blob 服务概念
 
 Blob 服务包含以下组件：
 

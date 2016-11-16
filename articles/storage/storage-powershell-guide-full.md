@@ -9,7 +9,7 @@
 <tags
 	ms.service="storage"
 	ms.date="08/03/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="11/16/2016"/>
 
 # 对 Azure 存储空间使用 Azure PowerShell
 
@@ -249,7 +249,7 @@ Azure 存储帐户附带了两个帐户密钥。可以使用以下 cmdlet 示例
 
 	New-AzureStorageKey -StorageAccountName $StorageAccountName -KeyType “Secondary”
 
-## 如何管理 Azure blob
+##<a name="how-to-manage-azure-blobs"></a> 如何管理 Azure blob
 Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储服务的概念。有关详细信息，请参阅[通过 .NET 开始使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)和 [Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
 
 ### 如何创建容器

@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/08/2016"
-	wacn.date="10/10/2016"
+	wacn.date="11/16/2016"
 	ms.author="robinsh"/>
 
 #Azure 存储空间安全指南
@@ -359,7 +359,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 客户端加密也是一种可用于加密静态数据的方法，因为数据是以加密形式存储的。我们将在[静态加密](#encryption-at-rest)部分中详细介绍此功能。
 
-##静态加密
+##<a name="encryption-at-rest"></a>静态加密
 
 有三项 Azure 功能可提供静态加密。Azure 磁盘加密可用于加密 IaaS 虚拟机中的 OS 和数据磁盘。其他两种（客户端加密和 SSE）都用于加密 Azure 存储空间中的数据。让我们了解其中每项功能，然后进行比较，以确定在哪种情况下使用哪项功能。
 

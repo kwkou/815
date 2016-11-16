@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="10/10/2016"
+	wacn.date="11/16/2016"
 	ms.author="micurd"/>
 
 # 使用 AzCopy 命令行实用程序传输数据
@@ -493,7 +493,7 @@ AzCopy 会像在命令行上包括了所有个体参数一样来处理此命令�
 
 	AzCopy /Source:https://127.0.0.1:10002/myaccount/mytable/ /Dest:C:\myfolder /SourceKey:key /SourceType:Table
 
-## AzCopy 参数
+##<a name="azcopy-parameters"></a> AzCopy 参数
 
 下表中描述了 AzCopy 的参数。你还可以从命令行键入下列命令之一来获得有关如何使用 AzCopy 的帮助信息：
 

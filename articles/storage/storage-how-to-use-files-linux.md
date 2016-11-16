@@ -98,12 +98,6 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Az
 
 你还可以使用[适用于 Node.js 的 Azure 存储空间客户端库](https://github.com/Azure/azure-storage-node)针对文件存储进行开发。
 
-## 反馈和详细信息 ##
-
-Linux 用户，我们希望倾听你的意见！
-
-针对 Linux 用户组的 Azure 文件存储提供了一个论坛，当你在 Linux 上评估和采用文件存储时，可以在该论坛上共享反馈。向 [Azure 文件存储 Linux 用户](mailto:azurefileslinuxusers@microsoft.com)发送电子邮件可加入该用户组。
-
 ## 后续步骤
 
 请参阅以下链接以获取有关 Azure 文件存储的更多信息。

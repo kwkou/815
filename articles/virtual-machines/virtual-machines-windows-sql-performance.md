@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="09/07/2016"
-	wacn.date="10/24/2016"
+	wacn.date="11/16/2016"
 	ms.author="jroth" />  
 
 
@@ -63,7 +63,7 @@ DS 系列 VM 支持[高级存储](/documentation/articles/storage-premium-storag
 
 此外，我们建议你创建 Azure 存储帐户与 SQL Server 虚拟机在同一数据中心中，以减小传输延迟。创建存储帐户时应禁用异地复制，因为无法保证在多个磁盘上的写入顺序一致。相反，请考虑在两个 Azure 数据中心之间配置一个 SQL Server 灾难恢复技术。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
-## <a name="disks-guidance"></a> 磁盘指导原则
+## <a name="disks-guidance"></a><a name="disks-and-performance-considerations"></a> 磁盘指导原则
 
 Azure VM 上有三种主要磁盘类型：
 

@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/28/2016"
-	wacn.date="11/07/2016"
+	wacn.date="11/16/2016"
 	ms.author="yuemlu;aungoo;robinsh"/>  
 
 
@@ -55,7 +55,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 >[AZURE.NOTE] 高级存储帐户无法映射到自定义域名。
 
-## 支持高级存储的 VM
+##<a name="ds-dsv2-and-gs-series-vms"></a> 支持高级存储的 VM
 
 高级存储支持 DS 系列和 Fs 系列 Azure 虚拟机 (VM)。可以在支持高级存储的 VM 上同时使用标准和高级存储磁盘。但不能在不兼容高级存储的 VM 系列中使用高级存储磁盘。
 
@@ -420,7 +420,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 	![高级磁盘][Image1]
 
-请参阅[如何在 Azure 门户预览中附加数据磁盘](/documentation/articles/virtual-machineswindows--attach-disk-portal/)中的更详细步骤。
+请参阅[如何在 Azure 门户预览中附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal/)中的更详细步骤。
 
 #### IV.通过 Azure 门户预览更改磁盘缓存策略
 

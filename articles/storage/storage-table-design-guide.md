@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage"
 	ms.date="09/22/2016"
-	wacn.date="11/07/2016"
+	wacn.date="11/16/2016"
 	ms.author="jahogg;tamram"/>  
 
 
@@ -246,7 +246,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 许多设计必须满足要求，才能允许根据多个条件查找实体。例如，根据电子邮件、员工 ID 或姓氏查找员工实体。[表设计模式](#table-design-patterns)这部分中的以下模式满足这些类型的要求，并说明了解决表服务不提供辅助索引这一事实的方法：
 
 -	[内分区的第二索引模式](#intra-partition-secondary-index-pattern) - 存储使用不同 **RowKey** 值（在同一分区中）的各个实体的多个副本，以实现快速高效的查找，并通过使用不同 **RowKey** 值来替换排序顺序。  
--	[内分区的第二索引模式](#inter-partition-secondary-index-pattern) - 存储使用不同 RowKey 值（在同一分区中）的各个实体的多个副本，以实现快速高效的查找，并通过使用不同 **RowKey** 值来替换排序顺序。  
+-	[分区间的第二索引模式](#inter-partition-secondary-index-pattern) - 存储使用不同 RowKey 值（在同一分区中）的各个实体的多个副本，以实现快速高效的查找，并通过使用不同 **RowKey** 值来替换排序顺序。  
 -	[索引实体模式](#index-entities-pattern) - 维护索引实体以启用返回实体列表的高效搜索。  
 
 ###<a id="sorting-data-in-a-key-value-store-in-the-table-service"></a> 对表服务中的数据进行排序  
@@ -392,7 +392,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 
 请注意，还有可能引导你在表服务中实现一对一关系的实现注意事项：
 
--	处理大实体（有关详细信息，请参阅[使用大实体](#working-with-large-entities)）。  
+-	处理大实体（有关详细信息，请参阅[使用大实体](#large-entities-pattern)）。  
 -	实施访问控制（有关详细信息，请参阅[使用共享访问签名控制访问权限](#controlling-access-with-shared-access-signatures)）。  
 
 ### 在客户端中联接  
@@ -475,7 +475,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 -	[实体组事务](#entity-group-transactions)
 -	[处理异类实体类型](#working-with-heterogeneous-entity-types)
 
-### 分区间辅助索引模式
+###<a name="inter-partition-secondary-index-pattern"></a> 分区间辅助索引模式
 使用不同 **RowKey** 值在不同分区或不同表中存储每个实体的多个副本，以实现快速高效的查找，并通过使用不同 **RowKey** 值替换排序顺序。
 
 #### 上下文和问题
@@ -848,7 +848,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 
 实现此模式时，以下模式和指南也可能相关：
 
--	[大实体模式](#large-entity-pattern)  
+-	[大实体模式](#large-entities-pattern)  
 -	[合并或替换](#working-with-heterogeneous-entity-types)  
 -	[最终一致的事务模式](#eventually-consistent-transactions-pattern)（如果将数据序列存储在 Blob）  
 
@@ -915,7 +915,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 实现此模式时，以下模式和指南也可能相关：
 
 -	[最终一致的事务模式](#eventually-consistent-transactions-pattern)  
--	[宽实体模式](#large-entity-pattern)
+-	[宽实体模式](#large-entities-pattern)
 
 ###<a id="prepend-append-anti-pattern"></a> 前置/后置反模式  
 
