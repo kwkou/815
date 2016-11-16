@@ -94,7 +94,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
         New-AzureRmResourceGroupDeployment
 
-- 通过用于 REST 操作的 [Azure Resource Manager REST API](https://msdn.microsoft.com/library/azure/dn790568.aspx) 创建。
+- 通过用于 REST 操作的 [Azure Resource Manager REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx) 创建。
 
 - 通过在 **arm** 模式下运行的 Azure CLI 命令创建。
 
@@ -135,7 +135,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 
         New-AzureVM 
 
-- 通过用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/library/azure/ee460799.aspx) 创建。
+- 通过用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 创建。
 - 通过在 **asm** 模式下运行的 Azure CLI 命令创建。
 
         azure config mode asm
