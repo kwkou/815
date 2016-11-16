@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="07/12/2016"
-	wacn.date="08/15/2016"/>
+	wacn.date="11/16/2016"/>
 
 
 # 什么是 Azure 弹性数据库池？
@@ -25,7 +25,7 @@
 常见的 SaaS 应用程序模式是单租户数据库模型：每个客户都有一个数据库。每个客户（数据库）对内存、IO 和 CPU 具有不可预知的资源要求。由于需求有高峰和低谷，如何分配资源？ 通常有两个选项：(1) 基于高峰使用情况过度设置资源，因此需要支付额外的费用，或者 (2) 为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。弹性数据库池通过确保数据库在必要时获取所需的效能资源，同时在可预测的预算内提供简单的资源分配机制，以此来解决此问题。若要了解有关使用弹性池的 SaaS 应用程序的设计模式的详细信息，请参阅[具有 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。
 
 
-在 SQL 数据库中，单一数据库在数据库事务单位 (DTU) 中相对衡量数据库处理资源需求的能力，弹性数据库池则在弹性 DTU (eDTU) 中衡量此能力。请参阅 [Introduction to SQL Database（SQL 数据库简介）](/documentation/articles/sql-database-technical-overview/#understand-dtus)，了解有关 DTU 和 eDTU 的详细信息。
+在 SQL 数据库中，单一数据库在数据库事务单位 (DTU) 中相对衡量数据库处理资源需求的能力，弹性数据库池则在弹性 DTU (eDTU) 中衡量此能力。请参阅 [Introduction to SQL Database（SQL 数据库简介）](/documentation/articles/sql-database-what-is-a-dtu/)，了解有关 DTU 和 eDTU 的详细信息。
 
 对池提供了固定数量的 eDTU，以获得固定价格。在池中，单独的数据库都被赋予了在固定参数内自动缩放的灵活性。高负荷下的数据库可能会消耗更多的 eDTU 以满足需求。轻负荷下的数据库占用较少 eDTU，并且没有任何负荷的数据库不会消耗任何 eDTU。设置整个池（而非单个数据库）的资源简化了管理任务。此外，必须具有该池的可预测预算。
 
@@ -44,7 +44,7 @@
 
 > [AZURE.NOTE] 弹性数据库池仅适用于 SQL 数据库 V12 服务器。
 
-## 弹性池和弹性数据库的 eDTU 和存储限制
+##<a name="eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases"></a> 弹性池和弹性数据库的 eDTU 和存储限制
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 

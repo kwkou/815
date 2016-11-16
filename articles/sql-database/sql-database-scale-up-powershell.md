@@ -12,7 +12,7 @@
 	ms.service="sql-database"
 	ms.devlang="NA"
 	ms.date="10/12/2016"
-	wacn.date="10/31/2016"
+	wacn.date="11/16/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -72,7 +72,7 @@
    
 
 
-## 用于更改 SQL 数据库的服务层和性能级别的示例 PowerShell 脚本
+##<a name="sample-powershell-script-to-change-the-service-tier-and-performance-level-of-your-sql-database"></a> 用于更改 SQL 数据库的服务层和性能级别的示例 PowerShell 脚本
 
 将 `{variables}` 替换为自己的值（不要包含大括号）。
     

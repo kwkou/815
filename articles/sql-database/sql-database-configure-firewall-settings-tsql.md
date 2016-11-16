@@ -15,12 +15,12 @@
 	ms.devlang="dotnet"
 	ms.topic="article" 
 	ms.date="08/30/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/16/2016"
 	ms.author="rickbyh"/>  
 
 
 
-# 使用 T-SQL 配置 Azure SQL 数据库服务器级和数据库级防火墙规则
+#<a name="manage-server-level-firewall-rules-through-transact-sql"></a> 使用 T-SQL 配置 Azure SQL 数据库服务器级和数据库级防火墙规则
 
 
 > [AZURE.SELECTOR]
@@ -56,7 +56,7 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
  
  有关这些存储过程的详细信息，请参阅 [sp\_set\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) 和 [sp\_delete\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270024.aspx)。
 
-## 数据库级别防火墙规则
+##<a name="database-level-firewall-rules"></a> 数据库级别防火墙规则
 
 只有对数据库具备**控制**权限的数据库用户（例如数据库所有者）才能创建数据库级别防火墙规则。
 

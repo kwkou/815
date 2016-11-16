@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/20/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/16/2016"
 	ms.author="daleche"/>  
 
 
@@ -193,7 +193,7 @@
 
 <a id="a-connection-connection-string" name="a-connection-connection-string"></a>
 
-## 与 Azure SQL 数据库的连接
+##<a name="connections-to-azure-sql-database"></a> 与 Azure SQL 数据库的连接
 
 <a id="c-connection-string" name="c-connection-string"></a>
 

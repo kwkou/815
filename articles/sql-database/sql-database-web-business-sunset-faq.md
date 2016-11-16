@@ -9,7 +9,7 @@
 <tags
    ms.service="sql-database"
    ms.date="08/08/2016"
-   wacn.date="09/28/2016" />
+   wacn.date="11/16/2016" />
 
 # Web 和 Business Edition 停用常见问题
 
@@ -52,7 +52,7 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 [Azure SQL 数据库](/documentation/services/sql-databases)
 
-[Web 版和企业版定价](/pricing/details/sql-database//web-business)
+[Web 版和企业版定价](/pricing/details/sql-database/)
 
 [服务层](/documentation/articles/sql-database-service-tiers/)
 

@@ -10,9 +10,9 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="05/27/2016" 
-	wacn.date="07/18/2016"/>
+	wacn.date="11/16/2016"/>
 
-# 弹性数据库工具入门
+#<a name="Getting-started-with-elastic-database-tools"></a> 弹性数据库工具入门
 
 本文介绍开发人员运行示例应用时的体验。此示例将创建一个简单的分片应用程序，并探讨弹性数据库工具的主要功能。此示例演示[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的功能
 

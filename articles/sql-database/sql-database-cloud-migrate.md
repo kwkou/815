@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/24/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>  
 
 
@@ -52,7 +52,7 @@ SQL Server 提供多种方法来完成每个任务。本文概述了每个任务
 - [Microsoft SQL Server 2016 Upgrade Advisor Preview](http://www.microsoft.com/download/details.aspx?id=48119)（Microsoft SQL Server 2016 升级顾问预览版）：此独立工具目前以预览版提供，可检测并生成 SQL 数据库 V12 不兼容性报告。此工具还没有最新的兼容性规则。如果未检测到错误，则可以继续迁移到 SQL 数据库。如果检测到错误，必须使用其他工具来解决任何检测到的兼容性问题 - 建议使用 SSDT。
 - [SQL Azure Migration Wizard ("SAMW")](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)（SQL Azure 迁移向导 (SAMW)）：SAMW 是一个 codeplex 工具，使用 Azure SQL 数据库 V11 兼容性规则来检测 Azure SQL 数据库 V12 的不兼容性。如果检测到不兼容，某些问题可直接在此工具中解决。此工具可以发现不需修复的不兼容性。该工具是第一个可以使用的 Azure SQL 数据库迁移协助工具，受到 SQL Server 社区的积极支持。此外，此工具可在工具本身内部完成迁移。
 
-## 修复数据库迁移的兼容性问题
+##<a name="fix-database-migration-compatibility-issues"></a> 修复数据库迁移的兼容性问题
 
 如果检测到兼容性问题，必须先修复这些兼容性问题，才能继续 SQL Server 数据库迁移。根据源数据库中的 SQL Server 版本以及正在迁移的数据库复杂性，可能会发现各种不同的不兼容性问题。旧版 SQL Server 的兼容性问题更多。除了使用所选搜索引擎的目标 Internet 搜索以外，还可以使用以下资源：
 
@@ -76,7 +76,7 @@ SQL Server 提供多种方法来完成每个任务。本文概述了每个任务
 - 使用 [SQL Server Management Studio (SSMS)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssms/)：若要使用 SSMS，可以执行 Transact-SQL 命令，修复使用其他工具检测到的错误。此方法主要是供高级用户直接在源数据库中修改数据库架构。
 - 使用 [SQL Azure 迁移向导 (SAMW)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)：若要使用 SAMW，请从源数据库生成 Transact-SQL 脚本。该向导会尽可能转换脚本，使架构兼容 SQL 数据库 V12。完成后，SAMW 可以连接到 SQL 数据库 V12 以执行脚本。此工具还可分析跟踪文件，确定兼容性问题。生成的脚本可以只包含架构，也可以包含 BCP 格式的数据。
 
-## 将兼容的 SQL Server 数据库迁移到 SQL 数据库
+##<a name="migrate-a-compatible-sql-server-database-to-sql-database"></a> 将兼容的 SQL Server 数据库迁移到 SQL 数据库
 
 为了迁移兼容的 SQL Server 数据库，Microsoft 针对各种方案提供了多个迁移方法。所选择的方法取决于你对停机时间的容忍程度、对 SQL Server 数据库的大小和复杂性要求，以及与 Azure 云的连接。
 

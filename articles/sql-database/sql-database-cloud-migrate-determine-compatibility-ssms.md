@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/29/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>  
 
 
@@ -29,7 +29,7 @@
  
 在本文中，你将了解如何使用 SQL Server Management Studio 中的“导出数据层应用程序”向导确定要迁移到 SQL 数据库的 SQL Server 数据库是否兼容。
 
-## 使用 SQL Server Management Studio
+##<a name="using-sql-server-management-studio"></a> 使用 SQL Server Management Studio
 
 1. 确认你安装了最新版本的 SQL Server Management Studio。Management Studio 的新版本将每月更新一次，以与 Azure 门户的更新保持同步。
 

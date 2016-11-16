@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/06/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/16/2016"
 	ms.author="carlrab"/>
 
 # 选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)
@@ -130,7 +130,7 @@ Azure 虚拟机上的 SQL Server 经过优化，适合用于迁移现有的 SQL 
 
 ### <a name="market"></a>面市时间
 
-当开发人员生产力和快速面市为关键要素时，**SQL 数据库**是云式应用程序的理想解决方案。此选项提供类似于编程 DBA 的功能，非常适合云架构师和开发员，因为它能降低管理基础操作系统和数据库的需求。例如，可以使用 [REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx) 和 [PowerShell Cmdlet](http://msdn.microsoft.com/zh-cn/library/azure/dn546726.aspx) 来自动化和管理数千个数据库的管理操作。[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)等功能可让你将重点放在应用程序层上，更快地将解决方案推向市场。
+当开发人员生产力和快速面市为关键要素时，**SQL 数据库**是云式应用程序的理想解决方案。此选项提供类似于编程 DBA 的功能，非常适合云架构师和开发员，因为它能降低管理基础操作系统和数据库的需求。例如，可以使用 [REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx) 来自动化和管理数千个数据库的管理操作。[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)等功能可让你将重点放在应用程序层上，更快地将解决方案推向市场。
 
 如果现有或新的应用程序需要大型数据库、相互关联的数据库或者 SQL Server 或 Windows 中所有功能的访问权限，**Azure VM 上运行的 SQL Server** 是理想选择。此外，如果你想要依现状将现有的本地应用程序和数据库迁移到 Azure，则它也是一个不错的选择。由于你无需更改呈现、应用程序和数据层，你在重新架构现有解决方案时节省时间和预算。相反地，你可以将重点放在将所有解决方案迁移到 Azure，并执行 Azure 平台可能需要的某些性能优化。有关详细信息，请参阅 [Azure 虚拟机上 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance/)。
 

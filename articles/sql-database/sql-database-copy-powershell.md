@@ -11,7 +11,7 @@
 	ms.service="sql-database"
 	ms.devlang="NA"
 	ms.date="09/08/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/16/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -49,7 +49,7 @@ SQL 数据库的许多新功能仅在使用 [Azure Resource Manager 部署模型
 
     New-AzureRmSqlDatabaseCopy -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -CopyDatabaseName "database1_copy"
 
-## 将 SQL 数据库复制到不同的服务器
+##<a name="copy-your-sql-database"></a> 将 SQL 数据库复制到不同的服务器
 
 若要在另一服务器上创建副本，请包括 `-CopyServerName` 参数并将其设置为另一服务器。*副本*服务器必须已存在。如果该服务器位于另一资源组中，则还必须包括 `-CopyResourceGroupName` 参数。
 
@@ -68,7 +68,7 @@ SQL 数据库的许多新功能仅在使用 [Azure Resource Manager 部署模型
 若要在复制操作完成后解析登录名，请参阅[解析登录名](/documentation/articles/sql-database-copy-transact-sql/#resolve-logins-after-the-copy-operation-completes)
 
 
-## PowerShell 脚本示例
+##<a name="example-powershell-script"></a> PowerShell 脚本示例
 
 以下脚本假定所有资源组、服务器和池均已存在（请将变量值替换为现有的资源）。所有项目必须都存在，数据库副本除外。
 

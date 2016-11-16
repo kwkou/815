@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
 	ms.date="09/13/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/16/2016"
 	ms.author="carlrab" />  
 
 
@@ -68,7 +68,7 @@ Azure SQL 数据库提供三个[服务层](/documentation/articles/sql-database-
 
 弹性池的 eDTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)。
 
-## 服务层功能和限制
+##<a name="service-tier-capabilities-and-limits"></a> 服务层功能和限制
 每个服务层和性能级别都与不同的限制和性能特征相关联。下表描述单个数据库的这些特征。
 
 [AZURE.INCLUDE [SQL 数据库服务层表](../../includes/sql-database-service-tiers-table.md)]
@@ -130,7 +130,7 @@ Azure SQL 数据库提供三个[服务层](/documentation/articles/sql-database-
 - [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)
 - [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx)
 
-### 使用 sys.dm\_db\_resource\_stats
+###<a name="monitoring-resource-use-with-sysresourcestats"></a> 使用 sys.dm\_db\_resource\_stats
 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) 视图存在于每个 SQL 数据库中，提供了最近的相对于服务层的资源使用数据。CPU 平均百分比、数据 IO、日志写入以及内存每 15 秒记录一次，持续记录 1 小时。
 
 由于此视图提供了资源使用方面的更细致的信息，应该首先使用 **sys.dm\_db\_resource\_stats ** 进行当前状态分析或故障排除。例如，以下查询显示了当前数据库在过去 1 小时的平均资源使用率和最大资源使用率：

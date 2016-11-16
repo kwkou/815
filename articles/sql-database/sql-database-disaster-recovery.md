@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA" 
    ms.date="10/13/2016"
-   wacn.date="10/31/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>
 
 # 还原 Azure SQL 数据库或故障转移到辅助数据库
@@ -55,7 +55,7 @@ Azure SQL 数据库提供以下功能，以便在服务中断后进行恢复：
 
 Azure 团队会努力尽快还原服务可用性，但视根本原因而定，有可能需要数小时或数天的时间。如果你的应用程序可以容忍长时间停机，则可以等待恢复完成。在此情况下，你不需要采取任何操作。可在 [Azure 服务运行状况仪表板](/support/service-dashboard/)上查看当前服务状态。在区域恢复后，应用程序的可用性将会还原。
 
-## 故障转移到异地复制的辅助数据库
+##<a name="failover-to-geo-replicated-secondary-database"></a> 故障转移到异地复制的辅助数据库
 
 如果应用程序停机可能会带来业务责任，则应当在应用程序中使用异地复制的数据库。这样，应用程序在发生中断时，就可以快速还原其他区域的可用性。了解如何[配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/)。
 
@@ -66,7 +66,7 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 - [使用 PowerShell 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-powershell/)
 - [使用 T-SQL 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-transact-sql/) 
 
-## 使用异地还原进行恢复
+##<a name="recover-using-geo-restore"></a> 使用异地还原进行恢复
 
 如果应用程序停机不会带来业务责任，则可以使用异地还原作为恢复应用程序数据库的方法。它会从其最新的异地冗余备份创建数据库的副本。
 

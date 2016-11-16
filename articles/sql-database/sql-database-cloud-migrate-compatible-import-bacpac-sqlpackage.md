@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/24/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>  
 
 
@@ -29,7 +29,7 @@
 
 > [AZURE.NOTE] 以下步骤假定用户已预配 SQL 数据库服务器，手头有连接信息，并且已验证源数据库兼容。
 
-## 使用 SqlPackage 从 BACPAC 文件导入到 Azure SQL 数据库
+##<a name="import-from-a-bacpac-file-into-azure-sql-database-using-sqlpackage"></a> 使用 SqlPackage 从 BACPAC 文件导入到 Azure SQL 数据库
 
 使用以下步骤通过 [SqlPackage.exe](https://msdn.microsoft.com/zh-cn/library/hh550080.aspx) 命令行实用程序从 BACPAC 文件导入兼容的 SQL Server 数据库（或 Azure SQL 数据库）。
 

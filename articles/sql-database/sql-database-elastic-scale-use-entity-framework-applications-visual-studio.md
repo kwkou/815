@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="05/27/2016" 
-	wacn.date="07/18/2016"/>
+	wacn.date="11/16/2016"/>
 
 # 将弹性数据库客户端库与实体框架配合使用 
  
@@ -70,7 +70,7 @@
 
 以下指南指导如何满足使用弹性数据库工具的“代码优先”应用程序的这些要求。
 
-## 使用 EF DbContext 的数据相关路由 
+##<a name="data-dependent-routing-using-ef-dbcontext"></a> 使用 EF DbContext 的数据相关路由 
 
 使用实体框架的数据库连接通常通过 **DbContext** 的子类来管理。通过从 **DbContext** 派生创建这些子类。这是你定义你的 **DbSet** 的位置，它可为你的应用程序实现支持数据库的 CLR 对象的集合。在数据依赖路由的上下文中，我们可以标识多个有用的属性，这些属性不一定会为其他 EF 代码优先应用程序方案保存：
 

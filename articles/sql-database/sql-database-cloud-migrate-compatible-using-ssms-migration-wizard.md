@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/24/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>  
 
 
@@ -29,7 +29,7 @@
 
 SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”向导可将[兼容的 SQL Server 数据库](/documentation/articles/sql-database-cloud-migrate/)直接迁移到 Azure SQL 数据库服务器。
 
-## 使用“将数据库部署到 Azure 数据库”向导
+##<a name="use-the-deploy-database-to-microsoft-azure-database-wizard"></a> 使用“将数据库部署到 Azure 数据库”向导
 
 > [AZURE.NOTE] 以下步骤假定用户有预配的 SQL 数据库服务器。
 

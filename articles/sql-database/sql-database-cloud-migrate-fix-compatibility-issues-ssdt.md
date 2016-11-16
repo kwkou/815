@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/24/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>  
 
 
@@ -37,7 +37,7 @@
 
   > [AZURE.NOTE] 如果需要进行仅有架构的迁移，则可以将架构直接从 Visual Studio 发布到 Azure SQL 数据库。当数据库架构所需的更改量超过了 SAMW 单独可处理的数量时使用。
 
-## 使用 SQL Server Data Tools for Visual Studio 检测兼容性问题
+##<a name="detecting-compatibility-issues-using-sql-server-data-tools-for-visual-studio"></a> 使用 SQL Server Data Tools for Visual Studio 检测兼容性问题
    
 1.	在 Visual Studio 中打开“SQL Server 对象资源管理器”。使用“添加 SQL Server ”连接到包含被迁移数据库的 SQL Server 实例。在对象资源管理器中找到数据库，右键单击该数据库，然后选择“创建新项目...”
     
@@ -68,7 +68,7 @@
     
 	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/07MigrateSSDT.png)
     
-## 使用 SQL Server Data Tools for Visual Studio 解决兼容性问题
+##<a name="fixing-compatibility-issues-using-sql-server-data-tools-for-visual-studio"></a> 使用 SQL Server Data Tools for Visual Studio 解决兼容性问题
 
 1.	双击第一个脚本以在查询窗口中打开该脚本，注释掉该脚本，然后执行该脚本。
 	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/08MigrateSSDT.png)
