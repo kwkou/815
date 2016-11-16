@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="06/22/2016"
-    wacn.date="08/15/2016"/>
+    wacn.date="11/16/2016"/>
 
 # 使用 PowerShell 监视和管理弹性数据库池 
 
@@ -31,13 +31,13 @@
 * 弹性数据库池只能在 SQL 数据库 V12 服务器中使用。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
 
 
-## 将数据库移入弹性池
+##<a name="Move-a-database-into-an-elastic-pool"></a> 将数据库移入弹性池
 
 使用 [Set-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) 可以将数据库移入或移出池。
 
 	Set-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
-## 更改池的性能设置
+##<a name="change-performance-settings-of-a-pool"></a> 更改池的性能设置
 
 当性能受到影响时，可以更改池的设置以适应增长。使用 [Set-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603511.aspx) cmdlet。将 -Dtu 参数设置为每个池的 eDTU。有关该参数可能的值，请参阅 [eDTU 和存储限制](/documentation/articles/sql-database-elastic-pool/#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases)。
 
@@ -88,7 +88,7 @@
 	$metrics = (Get-AzureRmMetric -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015")  
 
 
-## 获取弹性数据库的资源使用情况数据
+##<a name="elastic-database-monitoring"></a> 获取弹性数据库的资源使用情况数据
 
 这些 API 与当前用来监视单独数据库的资源使用情况的 (V12) API 相同，但存在以下语义差异。
 
@@ -98,7 +98,7 @@
 
     $metrics = (Get-AzureRmMetric -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
-## 向池资源添加警报
+##<a name="add-an-alert-to-a-pool-resource"></a> 向池资源添加警报
 
 可以向资源添加警报规则，以便在资源达到你设置的使用阈值时，向 [URL 终结点](https://msdn.microsoft.com/zh-cn/library/mt718036.aspx)发送电子邮件通知或警报字符串。使用 Add-AzureRmMetricAlertRule cmdlet。
 

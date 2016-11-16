@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
     ms.date="08/29/2016"
-    wacn.date="10/17/2016"
+    wacn.date="11/16/2016"
     ms.author="sstein"/>
 
 # 使用 PowerShell 为 Azure SQL 数据库启动计划内或计划外故障转移
@@ -30,7 +30,7 @@
 
 
 
-## 启动计划的故障转移
+##<a name="initiate-a-planned-failover"></a> 启动计划的故障转移
 
 使用 **Set-AzureRmSqlDatabaseSecondary** cmdlet 并结合 **-Failover** 参数来升级辅助数据库，使它成为新的主数据库，并将现有主数据库降级为辅助数据库。此功能适用于计划的故障转移（例如灾难恢复演练期间），它要求主数据库可用。
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="08/10/2016"
-	wacn.date="09/28/2016"/>
+	wacn.date="11/16/2016"/>
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
 
@@ -28,7 +28,7 @@
 
 >[AZURE.NOTE] Web Edition 和 Business Edition 已停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/pricing/details/sql-database/)。
 
-## 单一数据库服务层和性能级别
+##<a name="service-tiers-for-single-databases"></a><a name="standalone-database-service-tiers-and-performance-levels"></a> 单一数据库服务层和性能级别
 对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层。有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up-powershell/)。
 
 此处列出的性能特征适用于使用 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/) 创建的数据库。在 Azure 中的基础硬件托管多个数据库的情况下，你的数据库仍可确保获得一系列资源，数据库的预期性能特征将不受影响。
@@ -39,7 +39,7 @@
 
 >[AZURE.NOTE] 如需本服务层表中所有其他行的详细说明，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance/#service-tier-capabilities-and-limits)。
 
-## 弹性池服务层和性能 (eDTU)
+##<a name="elastic-pool-service-tiers-and-performance-in-edtus"></a> 弹性池服务层和性能 (eDTU)
 除了创建和缩放单一数据库外，你还可以选择管理[弹性池](/documentation/articles/sql-database-elastic-pool/)中的多个数据库。弹性池中的所有数据库共享一组公用资源。性能特征由 *弹性数据库事务单位* (eDTU) 数度量。与单一数据库一样，弹性池有三个服务层：**基本**、**标准**和**高级**。对于池，这三个服务层仍定义整体性能限制和多个功能。
 
 池允许弹性数据库共享和使用 DTU 资源，而无需为该池中的数据库分配特定性能级别。例如，标准池中的单一数据库可使用 0 个 eDTU 到最大数据库 eDTU 数（配置池时设置的）运转。这允许多个具有不同工作负荷的数据库有效地使用可用于整个池的 eDTU 资源。有关详细信息，请参阅[弹性池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。

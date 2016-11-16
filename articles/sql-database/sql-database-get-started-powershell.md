@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management"
     ms.date="08/19/2016"
-    wacn.date="10/17/2016"
+    wacn.date="11/16/2016"
     ms.author="sstein"/>  
 
 
@@ -79,7 +79,7 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 
 成功创建数据库后，会显示数据库详细信息。
 
-## 创建 SQL 数据库 PowerShell 脚本
+##<a name="create-a-sql-database-powershell-script"></a> 创建 SQL 数据库 PowerShell 脚本
 
 以下 PowerShell 脚本创建一个 SQL 数据库及其所有相关资源。将所有的 `{variables}` 替换为订阅和资源特定的值（设置值时请删除 **{}**）。
 

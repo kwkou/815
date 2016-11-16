@@ -10,7 +10,7 @@
 <tags 
     ms.service="sql-database" 
     ms.date="05/27/2016" 
-    wacn.date="07/18/2016" />
+    wacn.date="11/16/2016" />
 
 
 # 拆分/合并安全配置  
@@ -21,7 +21,7 @@
 
 通过两种方式配置证书。
 
-1. [配置 SSL 证书](#To-Configure-the-SSL#Certificate)
+1. [配置 SSL 证书](#To-Configure-the-SSL-Certificate)
 2. [配置客户端证书](#To-Configure-Client-Certificates)
 
 ## 获取证书
@@ -45,7 +45,7 @@
 
 * 从 [Windows 8.1：下载工具包和工具](http://msdn.microsoft.com/windows/hardware/gg454513#drivers)获取 WDK
 
-## 配置 SSL 证书
+##<a name="To-Configure-the-SSL-Certificate"></a> 配置 SSL 证书
 若要对通信进行加密并对服务器进行身份验证，需要使用 SSL 证书。从下面的三个方案中选择最适合的方案，然后执行其所有步骤：
 
 ### 创建新的自签名证书
@@ -66,7 +66,7 @@
 1. [将 SSL 证书上载到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
 2. [在服务配置文件中更新 SSL 证书](#Update-SSL-Certificate-in-Service-Configuration-File)
 
-## 配置客户端证书
+##<a name="To-Configure-Client-Certificates"></a> 配置客户端证书
 若要对服务请求进行身份验证，需要使用客户端证书。从下面的三个方案中选择最适合的方案，然后执行其所有步骤：
 
 ### 禁用客户端证书
@@ -84,10 +84,10 @@
 
 ### 使用现有客户端证书
 1.    [查找 CA 公钥](#Find-CA-Public Key)
-2.    [将 CA 证书上载到云服务](#Upload-CA-certificate-to-cloud-service)
+2.    [将 CA 证书上载到云服务](#Upload-CA-Certificate-to-Cloud-Service)
 3.    [在服务配置文件中更新 CA 证书](#Update-CA-Certificate-in-Service-Configuration-File)
 4.    [复制客户端证书指纹](#Copy-Client-Certificate-Thumbprints)
-5.    [在服务配置文件中配置允许的客户端](#Configure-Allowed-Clients-in-the-Service-Configuration File)
+5.    [在服务配置文件中配置允许的客户端](#Configure-Allowed-Clients-in-the-Service-Configuration-File)
 6.    [配置客户端证书吊销检查](#Configure-Client-Certificate-Revocation-Check)
 
 ## 允许的 IP 地址
@@ -184,7 +184,7 @@
 * 配置 SSL 证书
 * 配置客户端证书
 
-## 创建自签名证书
+##<a name="Create-a-Self-Signed-Certificate"></a> 创建自签名证书
 执行：
 
     makecert ^
@@ -200,7 +200,7 @@
 *    -e，带有证书过期日期。
 创建强密码并在提示时指定它。
 
-## 为自签名 SSL 证书创建 PFX 文件
+##<a name="Create-PFX-file-for-Self-Signed-SSL-Certificate"></a> 为自签名 SSL 证书创建 PFX 文件
 
 执行：
 
@@ -210,7 +210,7 @@
 * 是，导出私钥
 * 导出所有扩展属性
 
-## 从证书存储中导出 SSL 证书
+##<a name="Export-SSL-Certificate-From-Certificate-Store"></a> 从证书存储中导出 SSL 证书
 
 * 查找证书
 * 依次单击“操作”->“所有任务”->“导出...”
@@ -219,19 +219,19 @@
     * 包括证书路径中的所有证书（如果可能）
     * 导出所有扩展属性
 
-## 将 SSL 证书上载到云服务
+##<a name="Upload-SSL-Certificate-to-Cloud-Service"></a> 将 SSL 证书上载到云服务
 
 使用带有 SSL 密钥对的现有或生成的 .PFX 文件上载证书：
 
 * 输入用于保护私钥信息的密码
 
-## 在服务配置文件中更新 SSL 证书
+##<a name="Update-SSL-Certificate-in-Service-Configuration-File"></a> 在服务配置文件中更新 SSL 证书
 
 在服务配置文件中，使用已上载到云服务的证书指纹更新以下设置的指纹值：
 
     <Certificate name="SSL" thumbprint="" thumbprintAlgorithm="sha1" />
 
-## 导入 SSL 证书颁发机构
+##<a name="Import-SSL-Certification-Authority"></a> 导入 SSL 证书颁发机构
 
 在将与该服务通信的所有帐户/计算机中，按照以下步骤进行操作：
 
@@ -239,7 +239,7 @@
 * 在“证书”对话框中，单击“安装证书...”
 * 将证书导入到“受信任的根证书颁发机构”存储中
 
-## 禁用基于客户端证书的身份验证
+##<a name="Turn-Off-Client-Certificate-Based-Authentication"></a> 禁用基于客户端证书的身份验证
 
 仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Azure 虚拟网络）。
 
@@ -252,7 +252,7 @@
 
     <Certificate name="CA" thumbprint="" thumbprintAlgorithm="sha1" />
 
-## 创建自签名证书颁发机构
+##<a name="Create-a-Self-Signed-Certification-Authority"></a> 创建自签名证书颁发机构
 执行以下步骤来创建自签名证书，以充当证书颁发机构：
 
     makecert ^
@@ -268,7 +268,7 @@
 *    -e，带有证书到期日期
 
 
-## 查找 CA 公钥
+##<a name="Find-CA-Public Key"></a> 查找 CA 公钥
 
 所有客户端证书都必须由服务信任的证书颁发机构颁发。为了将证书上载到云服务，需要查找颁发了客户端证书（将用于身份验证）的证书颁发机构提供的公钥。
 
@@ -289,11 +289,11 @@
     * 包括证书路径中的所有证书（如果可能）。
     * 导出所有扩展属性。
 
-## 将 CA 证书上载到云服务
+##<a name="Upload-CA-Certificate-to-Cloud-Service"></a> 将 CA 证书上载到云服务
 
 使用带有 CA 公钥的现有或生成的 .CER 文件上载证书。
 
-## 在服务配置文件中更新 CA 证书
+##<a name="Update-CA-Certificate-in-Service-Configuration-File"></a> 在服务配置文件中更新 CA 证书
 
 在服务配置文件中，使用已上载到云服务的证书指纹更新以下设置的指纹值：
 
@@ -303,7 +303,7 @@
 
     <Setting name="AdditionalTrustedRootCertificationAuthorities" value="" />
 
-## 颁发客户端证书
+##<a name="Issue-Client-Certificates"></a> 颁发客户端证书
 
 授予了访问服务权限的每个用户都应具有一个颁发的客户端证书供其独占使用，并且应选择自己的强密码来保护其私钥。
 
@@ -325,7 +325,7 @@
 
 此命令将提示创建密码，然后使用一次该密码。使用强密码。
 
-## 为客户端证书创建 PFX 文件
+##<a name="Create-PFX-files-for-Client-Certificates"></a> 为客户端证书创建 PFX 文件
 
 针对每个生成的客户端证书，执行：
 
@@ -341,7 +341,7 @@
 * 导出所有扩展属性
 * 将向其颁发此证书的单个用户应选择导出密码
 
-## 导入客户端证书
+##<a name="Import-Client-Certificate"></a> 导入客户端证书
 
 为其颁发了客户端证书的每个用户都应将密钥对导入到将用于与服务通信的计算机中：
 
@@ -349,7 +349,7 @@
 * 至少使用以下选项将证书导入到个人存储中：
     * 包括选中的所有扩展属性
 
-## 复制客户端证书指纹
+##<a name="Copy-Client-Certificate-Thumbprints"></a> 复制客户端证书指纹
 为其颁发了客户端证书的每个用户都必须遵循以下步骤，才能获取将添加到服务配置文件的证书的指纹：
 * 运行 certmgr.exe
 * 选择“个人”选项卡
@@ -361,19 +361,19 @@
 * 删除第一个数字前不可见的Unicode 字符
 * 删除所有空格
 
-## 在服务配置文件中配置允许的客户端
+##<a name="Configure-Allowed-Clients-in-the-Service-Configuration-File"></a> 在服务配置文件中配置允许的客户端
 
 在服务配置文件中，使用以逗号分隔的客户端证书（允许访问服务）的指纹列表更新以下设置的值：
 
     <Setting name="AllowedClientCertificateThumbprints" value="" />
 
-## 配置客户端证书吊销检查
+##<a name="Configure-Client-Certificate-Revocation-Check"></a> 配置客户端证书吊销检查
 
 默认设置不会通过证书颁发机构检查客户端证书吊销状态。若要启用检查，请在颁发了客户端证书的证书颁发机构支持此类检查时，使用在 X509RevocationMode 枚举中定义的值之一更改以下设置：
 
     <Setting name="ClientCertificateRevocationCheck" value="NoCheck" />
 
-## 为自签名加密证书创建 PFX 文件
+##<a name="Create-PFX-file-for-Self-Signed-Encryption-Certificate"></a> 为自签名加密证书创建 PFX 文件
 
 对于加密证书，请执行：
 
@@ -388,7 +388,7 @@
 *    导出所有扩展属性
 *    将证书上载到云服务时，你将需要密码。
 
-## 从证书存储中导出加密证书
+##<a name="Export-Encryption-Certificate-From-Certificate-Store"></a> 从证书存储中导出加密证书
 
 *    查找证书
 *    依次单击“操作”->“所有任务”->“导出...”
@@ -397,13 +397,13 @@
   *    包括证书路径中的所有证书（如果可能）
 *    导出所有扩展属性
 
-## 将加密证书上载到云服务
+##<a name="Upload-Encryption-Certificate-to-Cloud-Service"></a> 将加密证书上载到云服务
 
 使用带有加密密钥对的现有或生成的 .PFX 文件上载证书：
 
 * 输入用于保护私钥信息的密码
 
-## 在服务配置文件中更新加密证书
+##<a name="Update-Encryption-Certificate-in-Service-Configuration-File"></a> 在服务配置文件中更新加密证书
 
 在服务配置文件中，使用已上载到云服务的证书指纹更新以下设置的指纹值：
 

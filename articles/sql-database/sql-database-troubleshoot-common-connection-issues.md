@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/31/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/16/2016"
 	ms.author="daleche"/>  
 
 
@@ -25,7 +25,7 @@
 如果你遇到连接问题，请尝试本文中介绍的故障排除步骤。
 [AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
-## 原因
+##<a name="cause"></a> 原因
 
 连接问题可能由以下任何原因引起：
 
@@ -98,7 +98,6 @@
 ## 其他资源
 
 - [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
-- [暂时性错误处理的一般指南](/documentation/articles/best-practices-retry-general/)
 - [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)
 
 <!---HONumber=Mooncake_1010_2016-->

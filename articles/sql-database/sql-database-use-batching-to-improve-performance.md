@@ -12,7 +12,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016" />
+	wacn.date="11/16/2016" />
 
 
 # 如何使用批处理来改善 SQL 数据库应用程序的性能
@@ -38,7 +38,7 @@
 
 ## 批处理策略
 
-### 有关本主题中计时结果的注意事项
+###<a name="note-about-timing-results-in-this-topic"></a> 有关本主题中计时结果的注意事项
 >[AZURE.NOTE] 结果并不是基准，而是用于显示**相对性能**。计时基于至少运行 10 次测试后的平均值。操作将插入空表。这些测试将在 V12 以前的版本中测量，不一定对应于在使用新[服务层](/documentation/articles/sql-database-service-tiers/)的 V12 数据库中可能会获得的吞吐量。批处理技术的相对优势应该类似。
 
 ### 事务

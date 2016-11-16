@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/23/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>  
 
 
@@ -57,7 +57,7 @@
 
 - [最新版本的 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
 - [最新版本的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)
-- [SQL Server 2016](https://www.microsoft.com/zh-CN/cloud-platform/sql-server)
+- [SQL Server 2016](https://www.microsoft.com/en-us/sql-server/sql-server-2016)
 
 ## 其他资源
 

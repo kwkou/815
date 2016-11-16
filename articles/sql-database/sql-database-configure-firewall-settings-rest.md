@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="08/09/2016"
-	wacn.date="09/19/2016"/>
+	wacn.date="11/16/2016"/>
 
 
 #  使用 REST API 配置 Azure SQL 数据库服务器级防火墙规则
@@ -52,7 +52,7 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
 		https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/firewallRules/{rule-name}?api-version={api-version}
 
 
-## 使用 REST API 管理防火墙规则
+##<a name="manage-firewall-rules-using-the-service-management-rest-api"></a> 使用 REST API 管理防火墙规则
 
 * [创建或更新防火墙规则](https://msdn.microsoft.com/zh-cn/library/azure/mt445501.aspx)
 * [删除防火墙规则](https://msdn.microsoft.com/zh-cn/library/azure/mt445502.aspx)

@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="08/08/2016"
-	wacn.date="09/19/2016" />
+	wacn.date="11/16/2016" />
 
 
 # 何时使用弹性数据库池？
@@ -64,7 +64,7 @@ Azure SQL 数据库中的弹性池可使 SaaS 开发人员将一组数据库的�
 
 ### 数据库的最小数目
 
-如果单一数据库的性能级别的 DTU 总和比池所需的 eDTU 多 1.5 倍，则弹性池更具成本效益。有关可用的大小，请参阅[弹性数据库池和弹性数据库的 eDTU 和存储限制](/documentation/articles/sql-database-elastic-pool/#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases)。
+如果单一数据库的性能级别的 DTU 总和比池所需的 eDTU 多 1.5 倍，则弹性池更具成本效益。有关可用的大小，请参阅[弹性数据库池和弹性数据库的 eDTU 和存储限制](/documentation/articles/sql-database-elastic-pool/#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases)。
 
 **示例** <br>
 至少需要 2 个 S3 数据库或 15 个 S0 数据库，才能使 100 个 eDTU 池比使用单一数据库性能级别更具成本效益。

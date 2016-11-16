@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="05/25/2016" 
-	wacn.date="07/18/2016"/>
+	wacn.date="11/16/2016"/>
 
 # 使用分片映射管理器扩大数据库
 
@@ -95,7 +95,7 @@
 
 3. **应用程序缓存**：每个用于访问 **ShardMapManager** 对象的应用程序实例都可维护其映射的本地内存中缓存。它存储最近检索到的路由信息。
 
-## 构造 ShardMapManager
+##<a name="constructing-a-shardmapmanager"></a> 构造 ShardMapManager
 
 **ShardMapManager** 对象是使用[工厂](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.aspx)模式构造的。通过 **[ShardMapManagerFactory.GetSqlShardMapManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager.aspx)** 方法可获取具有 **ConnectionString** 形式的凭据（包括用于保存 GSM 的服务器名称和数据库名称），并返回 **ShardMapManager** 的实例。
 
@@ -132,7 +132,7 @@
  
 你可以使用 Powershell 作为替代方法来创建新的分片映射管理器。[此处](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db)提供了一个示例。
 
-## 获取 RangeShardMap 或 ListShardMap
+##<a name="get-a-rangeshardmap-or-listshardmap"></a> 获取 RangeShardMap 或 ListShardMap
 
 创建分片映射管理器后，使用 [TryGetRangeShardMap](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.trygetrangeshardmap.aspx)、[TryGetListShardMap](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.trygetlistshardmap.aspx) 或者 [GetShardMap](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.getshardmap.aspx) 方法获取 [RangeShardMap](https://msdn.microsoft.com/zh-cn/library/azure/dn807318.aspx) 或 [ListShardMap](https://msdn.microsoft.com/zh-cn/library/azure/dn807370.aspx)。
 

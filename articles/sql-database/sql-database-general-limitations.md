@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
    ms.date="09/06/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab" />  
 
 
@@ -53,7 +53,7 @@ Azure SQL 数据库使用的默认数据库排序规则是 **SQL\_LATIN1\_GENERA
 
 此外，登录名和用户名不得包含 \\ 字符（不支持 Windows 身份验证）。
 
-## 其他指导原则
+##<a name="additional-guidelines"></a> 其他指导原则
 
 - 除了本文所述的一般性限制外，SQL 数据库还会根据**服务层**实施特定的配额与限制。有关服务层的概述，请参阅 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/)。
 

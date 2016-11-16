@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
    ms.date="08/16/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="sashan;carlrab"/>  
 
 
@@ -71,7 +71,7 @@ SQL 数据库以可预测的每小时费率收费，同时根据服务层 + 单�
 如果 Azure 的智能引擎发现了担保的使用模式，将为数据库建议池。有关在单一数据库与弹性数据库之间进行选择的详细指导，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
 ## 具有高达备份存储的最大已设置数据库存储两倍的容量是什么意思？ 
-备份存储是与用于[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#-point-in-time-restore)和[异地还原](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)的自动数据库备份关联的存储。Azure SQL 数据库提供了高达你的备份存储的最大已设置数据库存储两倍的容量，不需要支付额外的成本。例如，如果你有一个标准数据库实例并且设置的数据库大小为 250 GB，则会向你提供 500 GB 的备份存储并且不额外收费。如果数据库超过提供的备份存储，则可以选择与 Azure 支持联系来缩短保留期，或针对按标准读取访问地域冗余存储 (RA-GRS) 费率计费的额外备份存储支付费用。有关 RA-GRS 计费的更多信息，请参阅“存储定价详细信息”。
+备份存储是与用于[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)和[异地还原](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)的自动数据库备份关联的存储。Azure SQL 数据库提供了高达你的备份存储的最大已设置数据库存储两倍的容量，不需要支付额外的成本。例如，如果你有一个标准数据库实例并且设置的数据库大小为 250 GB，则会向你提供 500 GB 的备份存储并且不额外收费。如果数据库超过提供的备份存储，则可以选择与 Azure 支持联系来缩短保留期，或针对按标准读取访问地域冗余存储 (RA-GRS) 费率计费的额外备份存储支付费用。有关 RA-GRS 计费的更多信息，请参阅“存储定价详细信息”。
 
 ## 我正在从 Web/企业版迁移到新服务层，我需要了解哪些信息？
 Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性层将取代即将停用的 Web 和企业数据库。我们制作了额外的常见问题解答，以帮助你完成此过渡期。[Web 和 Business Edition 停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq/)

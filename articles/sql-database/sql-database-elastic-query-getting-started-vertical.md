@@ -9,7 +9,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="05/23/2016"
-	wacn.date="07/18/2016" />
+	wacn.date="11/16/2016" />
 
 # 跨数据库查询（纵向分区）入门（预览）
 
@@ -47,7 +47,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 	INSERT INTO [dbo].[CustomerInformation] ([CustomerID], [CustomerName], [Company]) VALUES (2, 'Steve', 'XYZ') 
 	INSERT INTO [dbo].[CustomerInformation] ([CustomerID], [CustomerName], [Company]) VALUES (3, 'Lylla', 'MNO') 
 
-## 创建数据库对象
+##<a name="create-database-objects"></a> 创建数据库对象
 ### 数据库范围的主密钥和凭据
 
 1. 在 Visual Studio 中打开 SQL Server Management Studio 或 SQL Server Data Tools。

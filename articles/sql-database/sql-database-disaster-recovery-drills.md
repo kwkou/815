@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="07/31/2016"
-   wacn.date="09/19/2016"/>
+   wacn.date="11/16/2016"/>
 
 #执行灾难恢复演练
 
@@ -52,7 +52,7 @@
 ####恢复
 
 - 确保 DR 区域中的应用程序配置指向以前的辅助数据库，故障转移后，该数据库将成为完全可访问的新主数据库。
-- 执行[计划的故障转移](/documentation/articles/sql-database-geo-replication-powershell/#initiate-a-planned-failover)，使辅助数据库成为新的主数据库
+- 执行[计划的故障转移](/documentation/articles/sql-database-geo-replication-failover-powershell/#initiate-a-planned-failover)，使辅助数据库成为新的主数据库
 - 根据[在恢复后配置数据库](/documentation/articles/sql-database-disaster-recovery/)指南完成恢复。
 
 ####验证

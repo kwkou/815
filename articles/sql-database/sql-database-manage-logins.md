@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
    ms.date="09/14/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/18/2016"
    ms.author="rickbyh"/>  
 
 
@@ -100,7 +100,7 @@ SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，�
 
 如果愿意，可以完成相同的步骤（创建登录名和用户，然后向 **loginmanager** 角色添加用户），允许用户在虚拟 master 数据库中创建新的登录名。一般而言，这是没有必要的，因为 Microsoft 建议使用包含数据库用户在数据库级进行身份验证，不必使用基于登录名的用户。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
 
-## 非管理员用户
+##<a name="granting-database-access-to-a-login"></a> 非管理员用户
 
 非管理员帐户通常不需访问虚拟 master 数据库。使用 [CREATE USER (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx) 语句在数据库级别创建包含数据库用户。该用户可以是 Azure Active Directory 身份验证包含数据库用户（如果你已针对 Azure AD 身份验证配置了环境），可以是 SQL Server 身份验证包含数据库用户，也可以是基于 SQL Server 身份验证登录名（在前一步骤中创建）的 SQL Server 身份验证用户。 有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
 

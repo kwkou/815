@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
    ms.date="08/24/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/16/2016"
    ms.author="carlrab"/>  
 
    
@@ -37,7 +37,7 @@
 | [以用户身份连接到 Azure SQL 数据库](/documentation/articles/sql-database-get-started-security/#connect-to-azure-sql-database-as-a-user) | 在本教程中，你将学习如何使用数据库级用户帐户连接到 Azure SQL 数据库。|
 ||||
 
-## 弹性池
+##<a name="elastic-pools"></a> 弹性池
 
 以下教程介绍如何使用[弹性池](/documentation/articles/sql-database-elastic-pool/)管理使用模式变化很大且不可预测的多个数据库的性能目标。
 
@@ -46,8 +46,8 @@
 | [创建弹性池](/documentation/articles/sql-database-elastic-pool-create-powershell/) | 在本教程中，你将学习如何创建 Azure SQL 数据库的可缩放的池。 |
 | [监视弹性数据库](/documentation/articles/sql-database-elastic-pool-manage-powershell/#elastic-database-monitoring) | 在本教程中，你将学习如何监视单个弹性数据库的潜在问题。 |
 | [向池资源添加警报](/documentation/articles/sql-database-elastic-pool-manage-powershell/#add-an-alert-to-a-pool-resource) | 在本教程中，你将学习如何向资源添加规则，以便在资源达到设置的利用率阈值时，向人员发送电子邮件或是向 URL 终结点发送警报字符串。 |
-| [将数据库移入弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/#move-a-database-into-an-elastic-pool) | 在本教程中，你将学习如何将数据库移入弹性池。 |
-| [将数据库移出弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/#move-a-database-out-of-an-elastic-pool) | 在本教程中，你将学习如何将数据库移出弹性池。 |
+| [将数据库移入弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/#Move-a-database-into-an-elastic-pool) | 在本教程中，你将学习如何将数据库移入弹性池。 |
+| [将数据库移出弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/) | 在本教程中，你将学习如何将数据库移出弹性池。 |
 | [更改池的性能设置](/documentation/articles/sql-database-elastic-pool-manage-powershell/#change-performance-settings-of-a-pool) | 在本教程中，你将学习如何调整池的性能和存储限制。 |
 ||||
 

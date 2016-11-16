@@ -1,6 +1,6 @@
 
 
-## 使用 SQL Server 身份验证连接到 Azure SQL 数据库
+##<a name="connect-to-azure-sql-database-using-a-server-level-principal-login"></a> 使用 SQL Server 身份验证连接到 Azure SQL 数据库
 
 以下步骤演示了如何使用 SSMS 连接到 Azure SQL Server 和数据库。如果没有服务器和数据库，请参阅[在几分钟内创建一个 SQL 数据库](/documentation/articles/sql-database-get-started/)创建一个。
 

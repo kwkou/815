@@ -1,6 +1,6 @@
 
 
-## 授予新的数据库用户 db\_owner 权限
+##<a name="grant-new-database-user-dbowner-permissions"></a> 授予新的数据库用户 db\_owner 权限
 
 使用以下步骤授予现有数据库用户 db\_owner 权限
 
