@@ -183,7 +183,7 @@
 
 ### 按区域计算传入呼叫数：带聚合功能的翻转窗口
 
-为了比较每个区域的传入呼叫数，我们会使用 [TumblingWindow](https://msdn.microsoft.com/library/azure/dn835055.aspx) 来获取每五秒钟就按 **SwitchNum** 进行分组的传入呼叫的计数。
+为了比较每个区域的传入呼叫数，我们会使用 [TumblingWindow](https://msdn.microsoft.com/zh-cn/library/azure/dn835055.aspx) 来获取每五秒钟就按 **SwitchNum** 进行分组的传入呼叫的计数。
 
 1.	在代码编辑器中将查询更改为：
 

@@ -40,7 +40,7 @@
 若要完成本教程，需要满足以下先决条件：
 
 -   最新版本的 [Azure PowerShell](/documentation/articles/powershell-install-configure/)
--   Visual Studio 2015 或免费的 [Visual Studio Community](https://www.visualstudio.com/products/visual-studio-community-vs.aspx)
+-   Visual Studio 2015 或免费的 [Visual Studio Community](https://www.visualstudio.com/vs/community/)
 -   [Azure 订阅](/pricing/1rmb-trial/)
 -   计算机的管理员权限
 -   从 Microsoft 下载中心下载 [TollApp.zip](http://download.microsoft.com/download/D/4/A/D4A3C379-65E8-494F-A8C5-79303FD43B0A/TollApp.zip)

@@ -151,7 +151,7 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 </tr>
 <tr>
 <td>路径前缀模式 [可选]</td>
-<td>用于对指定容器中的 blob 进行定位的文件路径。在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}<P>请注意，“*”不是路径前缀允许使用的值。仅允许使用有效的 <a HREF="https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx">Azure blob 字符</a>。</td>
+<td>用于对指定容器中的 blob 进行定位的文件路径。在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}<P>请注意，“*”不是路径前缀允许使用的值。仅允许使用有效的 Azure blob 字符</a>。</td>
 </tr>
 <tr>
 <td>日期格式 [可选]</td>

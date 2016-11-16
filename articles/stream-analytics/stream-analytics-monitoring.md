@@ -67,7 +67,7 @@ Azure 经典管理门户和 Azure 门户预览都提供了可用于监视和故�
 
 ## 在 Azure 门户预览中自定义监视 ##
 
-可以在“编辑图表”设置中调整图表类型、显示的指标和时间范围。有关详细信息，请参阅[如何自定义监视](../azure-portal/insights-how-to-customize-monitoring.md)。
+可以在“编辑图表”设置中调整图表类型、显示的指标和时间范围。有关详细信息，请参阅[如何自定义监视](/documentation/articles/insights-how-to-customize-monitoring/)。
 
   ![Azure 门户预览查询监视器时间刻度](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)
 

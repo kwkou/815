@@ -25,7 +25,7 @@
 
 若要开始使用流分析，请创建一个新的流分析作业。请注意，该操作直到作业启动后才对计费产生影响。
 
-1.  登录在线 [Azure 经典管理门户](http://manage.windowsazure.com)或 [Azure 门户预览](https://portal.azure.cn/)。
+1.  登录在线 [Azure 经典管理门户](http://manage.windowsazure.cn)或 [Azure 门户预览](https://portal.azure.cn/)。
 2.  在门户中：单击“新建”，然后单击“数据服务”或“数据分析”（具体取决于门户），然后依次单击“Azure 流分析”/“流分析”和“快速创建”。
 
     ![数据分析处理作业向导](./media/stream-analytics-create-a-job/1-stream-analytics-create-a-job.png)  
