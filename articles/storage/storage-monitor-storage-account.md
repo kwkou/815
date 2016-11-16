@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="11/16/2016"/>
 
 # 监视 Azure 经典管理门户中的存储帐户
 
@@ -85,7 +85,7 @@
 
 使用以下过程可选择要在“监视”页上显示的度量值图表和表中查看哪些存储度量值。这些设置不会影响存储帐户下监视数据的收集、汇总和存储。
 
-## 如何：向度量值表中添加度量值
+##<a name="how-to-add-metrics-to-the-metrics-table"></a> 如何：向度量值表中添加度量值
 
 
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。

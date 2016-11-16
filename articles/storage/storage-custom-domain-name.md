@@ -68,7 +68,7 @@ Blob|**默认 URL：**http://mystorageaccount.blob.core.chinacloudapi.cn/myconta
 
 	如果注册成功，你将看到消息**你的自定义域处于活动状态**。用户现在可以查看你的自定义域上的 Blob 数据，只要用户具有适当的权限。
 
-## 使用中间 asverify 子域为你的存储帐户注册自定义域
+##<a name="register-a-custom-domain-for-your-storage-account-using-the-intermediary-asverify-subdomain"></a> 使用中间 asverify 子域为你的存储帐户注册自定义域
 
 如果你的自定义域当前所支持的应用程序的 SLA 要求没有停机时间，则使用此过程注册你的自定义域。通过创建从 asverify.&lt;subdomain&gt;.&lt;customdomain&gt; 指向 asverify.&lt;storageaccount&gt;.blob.core.chinacloudapi.cn 的 CNAME，你可以在 Azure 预先注册你的域。然后，你可以创建第二个从 &lt;subdomain&gt;.&lt;customdomain&gt; 指向 &lt;storageaccount&gt;.blob.core.chinacloudapi.cn 的 CNAME，此时到你的自定义域的流量将被定向到你的 Blob 终结点。
 

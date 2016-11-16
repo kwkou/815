@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="08/03/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="11/16/2016"/>
 
 # Azure 存储性能和可伸缩性清单
 
@@ -49,7 +49,6 @@
 ||Blob|	可伸缩性目标|	[你的应用程序是否会保持在针对单个 Blob 的带宽或操作可伸缩性目标范围之内？](#subheading16)
 ||Blob|	复制 Blob|	[你的 Blob 复制操作方式是否高效？](#subheading17)
 ||Blob|	复制 Blob|	[你是否会使用 AzCopy 对 Blob 进行批量复制？](#subheading18)
-||Blob|	复制 Blob|	[你是否会使用 Azure 导入/导出来传输非常大量的数据？](#subheading19)
 ||Blob|	使用元数据|	[你是否会将频繁使用的有关 Blob 的元数据存储在其元数据中？](#subheading20)
 ||Blob|	快速上载|	[尝试快速上载一个 Blob 时，你是否会以并行方式上载块？](#subheading21)
 ||Blob|	快速上载|	[尝试快速上载许多 Blob 时，你是否会以并行方式上载 Blob？](#subheading22)
@@ -103,7 +102,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 -	如果你的应用程序达到了带宽目标，可考虑压缩客户端的数据，以便减少将数据发送到存储服务所需的带宽。请注意，这虽然会节省带宽并改进网络性能，但也会带来某些负面影响。你可以评估一下这样操作对性能的影响，因为在客户端压缩和解压缩数据会有其他处理要求。此外，存储压缩数据会使问题解决起来更加困难，因为使用标准工具查看存储的数据可能会更困难。
 -	如果您的应用程序达到了可伸缩性目标，则请确保对重试使用指数性的回退（请参阅[重试](#subheading14)）。这会确保你的应用程序不会一直进行快速重试，以免加重限制，不过，最好还是使用上述方法之一来确保你永远不会达到可伸缩性目标。  
 
-####有用的资源
+####<a name="sub1useful"></a>有用的资源
 以下链接提供了有关可伸缩性目标的更多详细信息：
 -	有关可伸缩性目标的信息，请参阅 [Azure 存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 -	有关存储冗余选项的信息，请参阅 [Azure 存储复制](/documentation/articles/storage-redundancy/)和博客文章 [Azure 存储冗余选项和读取访问地域冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)。

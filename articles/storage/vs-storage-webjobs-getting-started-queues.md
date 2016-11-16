@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="07/18/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="11/16/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）
 
@@ -40,7 +40,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 除了 **string** 以外，参数还可以是字节数组、**CloudQueueMessage** 对象或你定义的 POCO。
 
-### POCO[（无格式传统 CLR 对象](http://zh.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
+### POCO[（无格式传统 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
 
 在下面的示例中，队列消息包含 **BlobInformation** 对象的 JSON，该对象包含一个 **BlobName** 属性。SDK 会自动反序列化该对象。
 
@@ -194,7 +194,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 		    outputQueueMessage = queueMessage;
 		}
 
-### POCO[（普通旧 CLR 对象](http://zh.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
+### POCO[（普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
 
 若要创建包含 POCO（而不是字符串）的队列消息，请将 POCO 类型作为输出参数传递给 **Queue** 属性构造函数。
 
@@ -284,7 +284,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 		    blobToDelete.Delete();
 		}
 
-### POCO[（普通旧 CLR 对象](http://zh.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
+### POCO[（普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
 
 对于队列消息中存储为 JSON 的 POCO，可以使用对 **Queue** 属性的 **blobPath** 参数中的对象属性进行命名的占位符。还可以将队列元数据属性名称用作占位符。请参阅[获取队列或队列消息元数据](#get-queue-or-queue-message-metadata)。
 

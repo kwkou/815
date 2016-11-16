@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="08/11/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="11/16/2016"/>
 
 
 # 如何通过 PHP 使用表存储
@@ -458,7 +458,7 @@
 		echo $code.": ".$error_message."<br />";
 	}
 
-## 后续步骤
+##<a name="next-steps"></a> 后续步骤
 
 现在，您已了解了 Azure 表服务的基础知识，单击下面的链接可了解有关更复杂的存储任务的详细信息。
 

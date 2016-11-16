@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/21/2016"
-	wacn.date="11/07/2016"
+	wacn.date="11/16/2016"
 	ms.author="micurd;tamram"/>
 
 # Azure 存储客户端工具
@@ -218,20 +218,6 @@ Azure 存储空间用户经常要使用 Azure 存储客户端工具来查看其�
     <td>X</td>
     <td></td>
     <td>Y</td>
-    <td>X</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><a href="https://zudio.co/">Zudio</a></td>
-    <td>X</td>
-    <td>X</td>
-    <td></td>
-    <td>X</td>
-    <td>X</td>
-    <td>X</td>
-    <td>试用</td>
     <td>X</td>
     <td></td>
     <td></td>

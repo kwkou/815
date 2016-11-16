@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="11/16/2016"/>
 
 
 # Azure 存储空间的客户端加密和 Azure 密钥保管库
@@ -52,7 +52,7 @@
 
 ## 加密机制
 
-存储客户端库使用 [AES](http://zh.wikipedia.org/wiki/Advanced_Encryption_Standard) 来加密用户数据。具体而言，是使用 AES 的[加密块链接 (CBC)](http://zh.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) 模式。每个服务的工作方式都稍有不同，因此我们将在此讨论其中每个服务。
+存储客户端库使用 [AES](http://zh.wikipedia.org/wiki/Advanced_Encryption_Standard) 来加密用户数据。具体而言，是使用 AES 的[加密块链接 (CBC)](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) 模式。每个服务的工作方式都稍有不同，因此我们将在此讨论其中每个服务。
 
 ### Blob
 

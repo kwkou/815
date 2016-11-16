@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/20/2016"
-	wacn.date="11/07/2016"
+	wacn.date="11/16/2016"
 	ms.author="dineshm;robinsh"/>
 
 
@@ -52,7 +52,7 @@
 4.	然后，使用内容加密密钥 (CEK) 解密已加密的用户数据。
 
 ## 加密机制  
-存储客户端库使用 [AES](http://zh.wikipedia.org/wiki/Advanced_Encryption_Standard) 来加密用户数据。具体而言，是使用 AES 的[加密块链接 (CBC)](http://zh.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) 模式。每个服务的工作方式都稍有不同，因此我们将在此讨论其中每个服务。
+存储客户端库使用 [AES](http://zh.wikipedia.org/wiki/Advanced_Encryption_Standard) 来加密用户数据。具体而言，是使用 AES 的[加密块链接 (CBC)](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) 模式。每个服务的工作方式都稍有不同，因此我们将在此讨论其中每个服务。
 
 ### Blob  
 目前，客户端库仅支持整个 Blob 的加密。具体而言，当用户使用 **upload*** 方法或 **openOutputStream** 方法时支持加密。对于下载，支持完整下载和范围下载。

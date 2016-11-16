@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="07/26/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="11/16/2016"/>
 
 
 # 关于 Azure 存储帐户
@@ -78,7 +78,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 ![存储页面](./media/storage-create-storage-account-classic-portal/Storage_StoragePage.png)
 
 
-### 存储帐户终结点
+###<a name="storage-account-endpoints"></a> 存储帐户终结点
 
 存储在 Azure 存储空间中的每个对象都有唯一的 URL 地址。存储帐户名称构成该地址的子域。特定于每个服务的子域和域名的组合构成你的存储帐户的*终结点*。
 
@@ -98,7 +98,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 此外还可以配置用于存储帐户的自定义域名称。请参阅[为 Blob 存储终结点配置自定义域名称](/documentation/articles/storage-custom-domain-name/)以了解详细信息。
 
-### 服务与地缘组的归置
+###<a name="service-co-location-with-an-affinity-group"></a> 服务与地缘组的归置
 
 *地缘组*是你的 Azure 服务和 VM 及 Azure 存储帐户的地理分组。通过定位同一数据中心或靠近目标用户受众的计算机工作负载，地缘组可提高服务性能。此外，当某个存储帐户中的数据被另一个服务访问，而该服务是同一个地缘组的一部分时，不会对出口流量收费。
 

@@ -18,7 +18,7 @@
 
 本文章提供了 C# 代码示例，用于演示如何在 Azure 表存储服务中使用 Azure WebJobs SDK 版本 1.x。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 版本 1.x。
 
-Azure 表存储服务使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。有关详细信息，请参阅[通过 .NET 开始使用 Azure 表存储](storage-dotnet-how-to-use-tables.md#create-a-table)。
+Azure 表存储服务使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。有关详细信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/#create-a-table)。
 
 一些代码段显示了手动调用（即：不是使用触发器属性之一调用）的函数中使用的 **Table** 属性。
 

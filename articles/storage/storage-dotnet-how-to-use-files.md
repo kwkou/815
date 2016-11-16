@@ -9,7 +9,7 @@
 
 <tags ms.service="storage"
 	ms.date="07/26/2016"
-      wacn.date="09/05/2016" />
+      wacn.date="11/16/2016" />
 
 # 在 Windows 上开始使用 Azure 文件存储
 

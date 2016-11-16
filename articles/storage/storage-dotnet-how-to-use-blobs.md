@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="09/20/2016"
-	wacn.date="11/07/2016"
+	wacn.date="11/16/2016"
 	ms.author="jwillis;tamram"/>
 
 
@@ -122,7 +122,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
         blockBlob.UploadFromStream(fileStream);
     }
 
-## 列出容器中的 Blob
+##<a name="list-the-blobs-in-a-container"></a> 列出容器中的 Blob
 
 若要列出容器中的 Blob，首先需要获取容器引用。然后，您可以使用容器的 **ListBlobs** 方法来检索其中的 Blob 和/或目录。若要访问返回的 **IListBlobItem** 的丰富属性和方法，您必须将它转换到 **CloudBlockBlob**、**CloudPageBlob** 或 **CloudBlobDirectory** 对象。如果类型未知，你可以使用类型检查来确定要将其转换为哪种类型。以下代码演示了如何检索和输出 `photos` 容器中每一项的 URI：
 
@@ -201,7 +201,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	Block blob of length 505623: https://<accountname>.blob.core.chinacloudapi.cn/photos/photo1.jpg
 
 
-## 下载 Blob
+##<a name="download-blobs"></a> 下载 Blob
 
 若要下载 Blob，请首先检索 Blob 引用，然后调用 **DownloadToStream** 方法。以下示例使用 **DownloadToStream** 方法将 Blob 内容传输到一个流对象，然后您可以将该对象保存到本地文件。
 
@@ -374,9 +374,7 @@ Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
 ## 后续步骤
 
 现在，你已了解 Blob 存储的基础知识，可单击下面的链接了解详细信息。
-<!--
-### Azure 存储空间资源管理器
-- [Azure 存储资源管理器 (MASE)](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/) 是 Microsoft 免费提供的独立应用，可用于在 Windows、OS X 和 Linux 上以可视方式处理 Azure 存储空间数据。-->
+
 
 ### Blob 存储参考
 

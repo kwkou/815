@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="08/11/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="11/16/2016"/>
 
 
 # 如何通过 Node.js 使用 Azure 表存储
@@ -151,7 +151,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 >
 > `tableSvc.insertEntity('mytable', task, {echoContent: true}, function (error, result, response) {...}`
 
-## 更新实体
+##<a name="update-an-entity"></a> 更新实体
 
 可使用多种方法来更新现有实体：
 

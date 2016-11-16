@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="08/05/2016"
-	wacn.date="11/07/2016"/>
+	wacn.date="11/16/2016"/>
 
 # Resource Manager 模式下的 Azure CLI 命令
 
@@ -1522,7 +1522,7 @@
 	role assignment list [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
 	role assignment delete [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
 
-## azure storage：用于管理存储对象的命令
+##<a name="azure-storage-commands-to-manage-your-storage-objects"></a> azure storage：用于管理存储对象的命令
 
 **用于管理存储帐户的命令**
 

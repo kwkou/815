@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/20/2016"
-	wacn.date="11/07/2016"
+	wacn.date="11/16/2016"
 	ms.author="aungoo;tamram"/>
 
 
@@ -93,7 +93,7 @@ Blob 快照是在某个时间点捕获的 Blob 只读版本。在创建快照后
 
 若要了解如何创建存储帐户和磁盘，请参阅 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account/)。
 
-若要了解如何备份 Azure VM，请参阅 [Plan Azure VM backups（规划 Azure VM 备份）](/documentation/articles//backup-azure-vms-introduction)。
+若要了解如何备份 Azure VM，请参阅 [Plan Azure VM backups（规划 Azure VM 备份）](/documentation/articles/backup-azure-vms-introduction/)。
 
 ## 使用增量快照维护磁盘备份的步骤
 

@@ -50,7 +50,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 - 存储分析目前不支持高级存储。若要使用高级存储帐户上的磁盘分析 VM 的性能度量值，请使用基于操作系统的工具，如 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)（对于 Windows VM）和 [IOSTAT](http://linux.die.net/man/1/iostat)（对于 Linux VM）。你还可以在 Azure 经典管理门户上启用 Azure VM 诊断。有关详细信息，请参阅[使用 Azure Diagnostics 扩展监视 Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。
 
-## 使用高级存储磁盘
+##<a name="using-premium-storage-for-disks"></a> 使用高级存储磁盘
 可通过两种方式使用高级存储磁盘：
 
 - 首先创建新的高级存储帐户，然后在创建 VM 时使用它。
@@ -179,7 +179,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 ### 注意：
 如果磁盘通信大多包含小型 I/O，应用程序在达到吞吐量限制前很可能会先达到 IOPS 限制。另一方面，如果磁盘通信主要包含大型 I/O，应用程序可能会达到吞吐量限制，而非 IOPS 限制。可以使用最佳的 I/O 大小和限制磁盘的挂起 I/O 请求数，来最大化应用程序的 IOPS 和吞吐量容量。
 
-## 使用高级存储时的快照与复制 Blob
+##<a name="snapshots-and-copy-blob-when-using-premium-storage"></a> 使用高级存储时的快照与复制 Blob
 可以像使用标准存储时创建快照的方式来为高级存储创建快照。由于高级存储是本地冗余存储，因此建议你创建快照，并将那些快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅 [Azure 存储冗余选项](http://msdn.microsoft.com/zh-cn/library/azure/dn727290.aspx)。
 
 如果磁盘已附加到 VM，在备份磁盘的页 Blob 上不允许某些 API 操作。例如，只要磁盘附加到 VM，你就无法在该 Blob 上执行[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 操作。此时，你必须先使用[快照 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691971.aspx) REST API 方法创建该 Blob 的快照，然后对该快照执行[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx) 以复制附加的磁盘。或者，可以中断附加磁盘，然后在基础 Blob 上执行任何必要的操作。

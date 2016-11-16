@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="07/26/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="11/16/2016"/>
 
 
 # 关于 Azure 存储帐户
@@ -81,7 +81,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 10. 单击“创建”以创建存储帐户。
 
-## <a name="manage-your-storage-account"></a> 管理存储帐户
+## <a name="manage-your-storage-account"></a><a name="manage-your-storage-access-keys"></a> 管理存储帐户
 
 ### 更改帐户配置
 
@@ -99,11 +99,11 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 > [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用 *共享访问签名* 。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。有关详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
-#### <a name="view-copy-and-regenerate-storage-access-keys"></a> 查看和复制存储访问密钥
+#### <a name="view-copy-and-regenerate-storage-access-keys"></a><a name="view-and-copy-storage-access-keys"></a> 查看和复制存储访问密钥
 
 在 [Azure 门户预览](https://portal.azure.cn)中，导航到你的存储帐户，单击“所有设置”，然后单击“访问密钥”以查看、复制和重新生成帐户访问密钥。“访问密钥”边栏选项卡还包含使用你的主密钥和辅助密钥预配置的连接字符串，可复制到应用程序中使用。
 
-#### 重新生成存储访问密钥
+####<a name="regenerate-storage-access-keys"></a> 重新生成存储访问密钥
 
 我们建议你定期更改存储帐户的访问密钥，以确保存储连接安全。分配了两个访问密钥，以便在你重新生成其中一个访问密钥时，始终能够使用另一个访问密钥连接到存储帐户。
 
@@ -125,7 +125,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 4. 以相同方式重新生成辅助访问密钥。
 
-## 删除存储帐户
+##<a name="delete-a-storage-account"></a> 删除存储帐户
 
 若要删除不再使用的存储帐户，请在 [Azure 门户预览](https://portal.azure.cn)中导航到该存储帐户，然后单击“删除”。删除存储帐户将删除整个帐户，包括该帐户中的所有数据。
 

@@ -15,7 +15,7 @@
     ms.devlang="objective-c"
     ms.topic="article"
     ms.date="09/20/2016"
-    wacn.date="11/07/2016"
+    wacn.date="11/16/2016"
     ms.author="micurd;tamram"/>  
 
 
@@ -362,7 +362,7 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
       }];
     }
 
-## 后续步骤
+##<a name="next-steps"></a> 后续步骤
 
 了解如何从 iOS 使用 Blob 存储后，请单击以下链接详细了解 iOS 库和存储服务。
 

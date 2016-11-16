@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="10/12/2016"
-	wacn.date="11/07/2016"
+	wacn.date="11/16/2016"
 	ms.author="cbrooks;robinsh"/>  
 
 
@@ -127,7 +127,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 	// Display message.
 	Console.WriteLine(peekedMessage.AsString);
 
-## 更改已排队消息的内容
+##<a name="change-the-contents-of-a-queued-message"></a> 更改已排队消息的内容
 
 你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 

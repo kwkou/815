@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="09/20/2016"
-    wacn.date="11/07/2016"
+    wacn.date="11/16/2016"
     ms.author="mihauss;robinsh"/>
 
 
@@ -165,7 +165,7 @@ Blob 存储帐户使用基于存储层的 Blob 存储的新定价模型。使用
 
 8. 选择想在其中创建新存储帐户的订阅。
 
-9. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles//resource-group-overview)。
+9. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview)。
 
 10. 选择存储帐户的区域。
 
@@ -308,7 +308,7 @@ AzCopy 是一个 Windows 命令行实用程序，旨在实现高性能地将数�
 
     热存储层中的 Blob 具有与通用存储帐户中的 Blob 相同的延迟。冷存储层中的 Blob 具有与通用存储帐户中的 Blob 类似的延迟（以毫秒为单位）。
 
-    冷存储层中的 Blob 将具有的可用性服务级别 (SLA) 比存储在热存储层中的 Blob 略低。有关更多详细信息，请参阅[存储的 SLA](/support/legal/sla/storage/)。
+    冷存储层中的 Blob 将具有的可用性服务级别 (SLA) 比存储在热存储层中的 Blob 略低。有关更多详细信息，请参阅[存储的 SLA](/support/sla/storage/)。
 
 8. **是否可以将页 blob 和虚拟机磁盘存储在 Blob 存储帐户中？**
 
