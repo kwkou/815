@@ -35,7 +35,7 @@ SQL 数据仓库还可以通过将数据存储在本地冗余 (LRS) Azure 高级
 详细了解以下内容：
 
 - 有关 Azure 高级存储的内容，请参阅 [Azure 高级存储简介](/documentation/articles/storage-premium-storage/)。
-- 有关本地冗余存储的内容，请参阅 [Azure Storage replication](/documentation/articles/storage-redundancy#locally-redundant-storage)（Azure 存储复制）。
+- 有关本地冗余存储的内容，请参阅 [Azure Storage replication](/documentation/articles/storage-redundancy/)（Azure 存储复制）。
 
 
 ## Azure 存储 Blob 快照
