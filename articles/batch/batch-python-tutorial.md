@@ -92,9 +92,11 @@ Batch Python 教程代码示例由两个 Python 脚本和若干数据文件组�
 [**步骤 5.**](#step-5-add-tasks-to-job) 将**任务**添加到作业。<br/>
 
   &nbsp;&nbsp;&nbsp;&nbsp;**5a.** 任务计划在节点上执行。<br/>
-	&nbsp;&nbsp;&nbsp;&nbsp;**5b.** 每项任务从 Azure 存储空间下载其输入数据，然后开始执行。<br/> 
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**5b.** 每项任务从 Azure 存储空间下载其输入数据，然后开始执行。<br/> 
 
 [**步骤 6.**](#step-6-monitor-tasks) 监视任务。<br/>
+
   &nbsp;&nbsp;&nbsp;&nbsp;**6a.** 当任务完成时，会将其输出数据上载到 Azure 存储空间。<br/> 
 
 [**步骤 7.**](#step-7-download-task-output) 从存储空间下载任务输出。
