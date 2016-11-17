@@ -76,7 +76,7 @@
 	- 要为其设置警报的资源的**资源 ID**
 	- 可用于该资源的**指标定义**
 	
-	获取资源 ID 的方法是使用 Azure 门户预览。假定该资源已创建，则在门户中将其选中。然后，在下一个边栏选项卡中的“设置”部分下选择“属性”。“资源 ID”是下一个边栏选项卡中的一个字段。
+	获取资源 ID 的方法是使用 Azure 门户预览。假定该资源已创建，则在门户预览中将其选中。然后，在下一个边栏选项卡中的“设置”部分下选择“属性”。“资源 ID”是下一个边栏选项卡中的一个字段。
 
     下面是 Web 应用的一个示例资源 ID：
 
@@ -125,7 +125,7 @@
 
     -OperationName 对应于活动日志中某个事件类型。示例有 *Microsoft.Compute/virtualMachines/delete* 和 *microsoft.insights/diagnosticSettings/write*。
 
-    可以使用 PowerShell 命令 [Get-AzureRmProviderOperation](https://msdn.microsoft.com/zh-cn/library/mt603720.aspx) 获取可能的 operationName 的列表。另外，还可以使用 Azure 门户来查询活动日志并查找要为其创建警报的过去的特定操作。各项操作以友好名称显示在图形化日志视图中。请查看条目的 JSON 并找出 OperationName 名称。
+    可以使用 PowerShell 命令 [Get-AzureRmProviderOperation](https://msdn.microsoft.com/zh-cn/library/mt603720.aspx) 获取可能的 operationName 的列表。另外，还可以使用 Azure 门户预览来查询活动日志并查找要为其创建警报的过去的特定操作。各项操作以友好名称显示在图形化日志视图中。请查看条目的 JSON 并找出 OperationName 名称。
 
 8. 通过查看各个规则来验证是否已正确创建了警报。
 
@@ -145,10 +145,8 @@
 
 ## 后续步骤
 
-* [大致了解 Azure 监视](/documentation/articles/monitoring-overview/)，包括可以收集和监视的信息的类型。
 * 详细了解[在警报中配置 Webhook](/documentation/articles/insights-webhooks-alerts/)。
 * 详细了解 [Azure 自动化 Runbook](/documentation/articles/automation-starting-a-runbook/)。
-* [大致了解如何收集诊断日志](/documentation/articles/monitoring-overview-of-diagnostic-logs/)以收集你的服务的详细高频指标。
 * [大致了解指标收集](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
 
 <!---HONumber=Mooncake_1107_2016-->

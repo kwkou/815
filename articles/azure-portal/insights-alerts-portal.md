@@ -92,10 +92,8 @@
 
 ## 后续步骤
 
-* [大致了解 Azure 监视](/documentation/articles/monitoring-overview/)，包括可以收集和监视的信息的类型。
 * 详细了解[在警报中配置 Webhook](/documentation/articles/insights-webhooks-alerts/)。
 * 详细了解 [Azure 自动化 Runbook](/documentation/articles/automation-starting-a-runbook/)。
-* [大致了解诊断日志](/documentation/articles/monitoring-overview-of-diagnostic-logs/)并收集你的服务的详细高频指标。
 * [大致了解指标收集](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
 
 <!---HONumber=Mooncake_1107_2016-->

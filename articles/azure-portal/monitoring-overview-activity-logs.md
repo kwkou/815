@@ -21,14 +21,13 @@
 # Azure 活动日志概述
 **Azure 活动日志**是一种日志，方便用户了解对订阅中的资源执行的操作。活动日志此前称为“审核日志”或“操作日志”，因为它报告订阅的控制平面事件。使用活动日志，用户可确定任何针对订阅中资源的写入（PUT、POST、DELETE）操作的“内容、人员和时间”，并可了解操作状态和其他相关属性。活动日志不包括读取 (GET) 操作。
 
-活动日志不同于[诊断日志](/documentation/articles/monitoring-overview-of-diagnostic-logs/)，后者全都是资源发出的日志。这些日志记录对该资源执行的操作，而不是在该资源上执行的操作。
 
-可以通过 Azure 门户、CLI、PowerShell cmdlet 和 Insights REST API 从活动日志检索事件。
+可以通过 Azure 门户预览、CLI、PowerShell cmdlet 和 Insights REST API 从活动日志检索事件。
 
 ## 可以对活动日志执行的操作
 可以对活动日志执行的部分操作如下：
 
-- 在 **Azure 门户**中查询和查看活动日志。
+- 在 **Azure 门户预览**中查询和查看活动日志。
 - 通过 REST API、PowerShell Cmdlet 或 CLI 查询活动日志。
 - [创建触发活动日志事件的电子邮件或 webhook 警报。](/documentation/articles/insights-auditlog-to-webhook-email/)
 - [将活动日志保存到**存储帐户**进行存档或手动检查](/documentation/articles/monitoring-archive-activity-log/)。可以使用“日志配置文件”指定保留时间（天）。
@@ -43,18 +42,18 @@
 - 应该导出哪些区域（位置）
 - 应该将活动日志保留在存储帐户中多长时间 – 保留期为 0 天表示永久保留日志。如果不需永久保留，则可将该值设置为 1 到 2147483647 之间的任意天数。如果设置了保留策略，但禁止将日志存储在存储帐户中（例如，如果仅选择事件中心或 OMS 选项），则保留策略无效。
 
-这些设置可以在门户的“活动日志”边栏选项卡中通过“导出”选项配置，也可以[使用 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx)、PowerShell cmdlet 或 CLI 通过编程方式配置。一个订阅只能有一个日志配置文件。
+这些设置可以在门户预览的“活动日志”边栏选项卡中通过“导出”选项配置，也可以[使用 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx)、PowerShell cmdlet 或 CLI 通过编程方式配置。一个订阅只能有一个日志配置文件。
 
-### 通过 Azure 门户配置日志配置文件
-可以在 Azure 门户中使用“导出”选项将活动日志流式传输到事件中心，或者将其存储在存储帐户中。
+### 通过 Azure 门户预览配置日志配置文件
+可以在 Azure 门户预览中使用“导出”选项将活动日志流式传输到事件中心，或者将其存储在存储帐户中。
 
-1. 使用门户左侧的菜单导航到“活动日志”边栏选项卡。
+1. 使用门户预览左侧的菜单导航到“活动日志”边栏选项卡。
 
-    ![在门户中导航到“活动日志”](./media/monitoring-overview-activity-logs/activity-logs-portal-navigate.png)  
+    ![在门户预览中导航到“活动日志”](./media/monitoring-overview-activity-logs/activity-logs-portal-navigate.png)  
 
 2. 单击边栏选项卡顶部的“导出”按钮。
 
-    ![门户中的“导出”按钮](./media/monitoring-overview-activity-logs/activity-logs-portal-export.png)  
+    ![门户预览中的“导出”按钮](./media/monitoring-overview-activity-logs/activity-logs-portal-export.png)  
 
 3. 在出现的边栏选项卡中，可以选择要导出事件的区域、要保存事件的存储帐户、要在存储中保留这些事件的天数（0 天意味着永久保留日志），以及要在其中创建事件中心（用于流式传输这些事件）的服务总线命名空间。
 
