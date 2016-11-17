@@ -62,7 +62,7 @@ VM 无法根据部署要求访问 Internet，或者现有的限制阻止访问 A
 1. 如果你指定了网络限制（例如 NSG），请部署 HTTP 代理服务器来路由流量。
 2. 如果你有网络安全组 (NSG)，请添加规则来允许从 HTTP 代理访问 Internet 。
 
-了解如何[为 VM 备份设置 HTTP 代理](/documentation/articles/backup-azure-vms-prepare/#using-an-http-proxy-for-vm-backups)。
+了解如何[为 VM 备份设置 HTTP 代理](/documentation/articles/backup-azure-vms-prepare)。
 
 ## 原因 2：VM 中安装的 Azure VM 代理已过时（适用于 Linux VM）
 

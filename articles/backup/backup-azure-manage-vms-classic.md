@@ -236,7 +236,7 @@
 基于事件的警报会受到以下限制：
 
 1. 警报在备份保管库的所有虚拟机上触发。你不能通过自定义来获取备份保管库中特定虚拟机集的警报。
-2. 此功能以预览版提供。[了解详细信息](/documentation/articles/insights-powershell-samples/#create-alert-rules/)
+2. 此功能以预览版提供。
 3. 将收到来自“alerts-noreply@mail.windowsazure.com”的警报。目前你无法修改电子邮件发件人。
 
 ## 后续步骤

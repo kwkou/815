@@ -144,7 +144,7 @@ PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还�
   
 
 ## 后续步骤
-- [排查错误](/documentation/articles/backup-azure-vms-troubleshoot/#restore)
+- [排查错误](/documentation/articles/backup-azure-vms-troubleshoot)
 - [管理虚拟机](/documentation/articles/backup-azure-manage-vms-classic/)
 
 <!---HONumber=Mooncake_0530_2016-->

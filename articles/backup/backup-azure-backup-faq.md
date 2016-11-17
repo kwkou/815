@@ -145,7 +145,7 @@ Azure 备份代理依赖于 NTFS。[文件路径长度规范受限于 Windows AP
 是的。
 
 ## 是否可以将备份服务配置为在备份作业失败时发送邮件？<br/>
-是，备份服务有多个可与 PowerShell 脚本配合使用的基于事件的警报。有关完整说明，请参阅 [Alert notifications](/documentation/articles/backup-azure-manage-vms-classic/#alert-notifications/)（警报通知）
+是，备份服务有多个可与 PowerShell 脚本配合使用的基于事件的警报。
 
 ## 要备份的每个数据源大小是否有限制？<br/>
 尽管在保管库级别，可以备份的数据数量没有限制，但 Azure 备份的确对数据源的大小上限设限（就所有实际用途而言，这些限制都非常高）。截至 2015 年 8 月，受支持操作系统的数据源大小上限为：
