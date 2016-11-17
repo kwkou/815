@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="10/05/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/17/2016"
 	ms.author="raynew"/>  
 
 
@@ -47,7 +47,7 @@
 **网络映射** | 设置网络映射，以便同一 Azure 网络上执行故障转移的所有虚拟机都能彼此互连，与这些虚拟机所属的恢复计划无关。如果目标 Azure 网络上有网关，虚拟机还可以连接到本地虚拟机。如果不设置网络映射，则只有同一个恢复计划中故障转移的计算机才能进行连接。 | 不适用 | 设置网络映射，以使虚拟机在故障转移之后连接到适当的网络，并以最佳方式将副本虚拟机放置在目标 Hyper-V 主机服务器上。如果不配置网络映射，则故障转移之后，复制的计算机将不会连接到任何 VM 网络。
 **存储映射** | 不适用 | 不适用 | 可以选择设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储（默认情况下，副本 VM 将存储在目标 Hyper-V 服务器上所指示的位置中）。
 **SAN 复制** | 不适用 | 不适用 | 如果你要使用 SAN 复制在两个在本地 VMM 站点之间复制，可以使用现有的 SAN 环境。请查看[支持的 SAN 阵列](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)。
-**详细信息** | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-azure/#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-hyper-v-site-to-azure/#before-you-start#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-vmm/#before-you-start)
+**详细信息** | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-azure/#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-hyper-v-site-to-azure/#before-you-start) | [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-vmm/#before-you-start)
 
 
 

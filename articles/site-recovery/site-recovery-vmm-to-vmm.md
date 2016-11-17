@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/10/2016"
+	wacn.date="11/17/2016"
 	ms.author="raynew"/>
 
 # 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点
@@ -35,7 +35,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ![E2E 拓扑](./media/site-recovery-vmm-to-vmm/e2e-topology.png)
 
-## 开始之前
+##<a name="before-you-start"></a> 开始之前
 
 确保已满足以下先决条件：
 
@@ -263,7 +263,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 2. 然后，为主虚拟机启用保护。Azure Site Recovery 和 VMM 将确保检测到相同的副本主机和虚拟机，并且 Azure Site Recovery 将使用在配置云期间配置的设置重用并重新建立复制。
 
 
-## 测试你的部署
+##<a name="test-your-deployment"></a> 测试你的部署
 
 若要测试你的部署，可针对一台虚拟机运行测试故障转移，或者创建一个包括多个虚拟机的恢复计划并针对该计划运行测试故障转移。测试故障转移在隔离的网络中模拟你的故障转移和恢复机制。
 

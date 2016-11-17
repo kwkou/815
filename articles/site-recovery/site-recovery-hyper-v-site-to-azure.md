@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="09/19/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/17/2016"
 	ms.author="raynew"/>  
 
 
@@ -41,7 +41,7 @@
 站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息。
 
 
-## Azure 先决条件
+##<a name="before-you-start"></a> Azure 先决条件
 
 - 需要一个 [Azure](https://azure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
 - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 保管库所在的同一区域，并与同一订阅相关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction/)。
@@ -257,7 +257,7 @@
 
 为了对部署进行测试，你可以针对单个虚拟机或单个恢复计划（其中包含一个或多个虚拟机）运行测试性故障转移。[了解](/documentation/articles/site-recovery-create-recovery-plans/)有关创建恢复计划的详细信息。
 
-## 步骤 8：测试部署
+##<a name="step-7-test-the-deployment"></a> 步骤 8：测试部署
 
 可通过两种方式运行到 Azure 的测试故障转移。
 

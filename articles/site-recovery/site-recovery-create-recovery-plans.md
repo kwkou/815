@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
 	ms.date="10/05/2016" 
-	wacn.date="11/14/2016"
+	wacn.date="11/17/2016"
 	ms.author="raynew"/>  
 
 
@@ -53,7 +53,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	- 如果你在部署中使用 VMM，请注意：
 
 		- 恢复计划中的脚本在 VMM 服务帐户的上下文中运行。确保此帐户对脚本所在的远程共享具有“读取”权限，并以 VMM 服务帐户权限级别测试要运行的脚本。
-		- Windows PowerShell 模块中随附了 VMM cmdlet。在安装 VMM 控制台时，会安装 VMM Windows PowerShell 模块。可以在脚本中使用以下命令将 VMM 模块加载到脚本中：Import-Module -Name virtualmachinemanager。[了解详细信息](hhttps://technet.microsoft.com/zh-cn/library/hh875013.aspx)。
+		- Windows PowerShell 模块中随附了 VMM cmdlet。在安装 VMM 控制台时，会安装 VMM Windows PowerShell 模块。可以在脚本中使用以下命令将 VMM 模块加载到脚本中：Import-Module -Name virtualmachinemanager。[了解详细信息](https://technet.microsoft.com/zh-cn/library/hh875013.aspx)。
 		- 确保 VMM 部署中至少有一个库服务器。默认情况下，VMM 服务器的库共享路径位于 VMM 服务器本地，其文件夹名称为 MSCVMMLibrary。
 		- 如果库共享路径在远程位置（或在本地，但不与 MSCVMMLibrary 共享），请按如下所示配置共享（例如，使用 \\libserver2.contoso.com\\share\\）：
 			- 打开注册表编辑器并导航到 HKEY\_LOCAL\_MACHINE\\SOFTWARE\\MICROSOFT\\Azure Site Recovery\\Registration。

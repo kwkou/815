@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="09/19/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/17/2016"
 	ms.author="pratshar"/>  
 
 
@@ -106,7 +106,7 @@ ASR 让故障转移变为可能，第一步是将指定的虚拟机从主要数�
 
 >[AZURE.NOTE] 在虚拟机使用 DHCP 的方案中，IP 地址的管理完全在 ASR 控制范围之外。管理员必须确保提供恢复站点上 IP 地址的 DHCP 服务器可以从与主站点相同的范围中提供地址。
 
-#### 故障转移到 Azure
+####<a name="failover-to-azure"></a> 故障转移到 Azure
 
 Azure Site Recovery (ASR) 能让 Azure 作为虚拟机的灾难恢复站点。在此情况下，你必须多处理一个限制。
 

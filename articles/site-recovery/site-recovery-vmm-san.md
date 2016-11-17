@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/06/2016"
-	wacn.date="08/01/2016"
+	wacn.date="11/17/2016"
 	ms.author="raynew"/>
 
 # 通过 Azure Site Recovery 使用 SAN 将 VMM 云中的 Hyper-V VM 复制到辅助站点
@@ -58,7 +58,7 @@
 -  **Azure 站点恢复保管库** - 保管库协调和安排本地站点之间的数据副本、故障转移和恢复。
 - **Azure 站点恢复提供程序** - 在每个 VMM 服务器上安装提供程序。
 
-## 开始之前
+##<a name="before-you-start"></a> 开始之前
 
 确保已满足以下先决条件：
 
@@ -199,7 +199,7 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 		- *.backup.windowsazure.cn
 		- *.blob.core.chinacloudapi.cn 
 		- *.store.core.chinacloudapi.cn 
-	- 允许 [Azure 数据中心 IP 范围](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx)中所述的 IP 地址，以及 HTTPS (443) 协议。必须将你打算使用的 Azure 区域以及中国东部的 IP 范围加入允许列表。
+	- 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/confirmation.aspx?id=41653)中所述的 IP 地址，以及 HTTPS (443) 协议。必须将你打算使用的 Azure 区域以及中国东部的 IP 范围加入允许列表。
 	- 如果你使用自定义代理，则将使用指定的代理凭据自动创建一个 VMM 运行身份帐户 (DRAProxyAccount)。对代理服务器进行配置以便该帐户可以成功通过身份验证。可以在 VMM 控制台中修改 VMM 运行身份帐户设置。若要执行此操作，请打开“设置”工作区，展开“安全性”，单击“运行身份帐户”，然后修改 DRAProxyAccount 的密码。你将需要重新启动 VMM 服务以使此设置生效。
 
 10. 在“注册密钥”中，选择你从 Azure Site Recovery 下载并复制到 VMM 服务器的密钥。

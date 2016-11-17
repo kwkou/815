@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
 	ms.date="10/05/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="11/17/2016" 
 	ms.author="raynew"/>  
 
 
@@ -148,7 +148,7 @@ Azure 到 Hyper-V 站点 | 不支持 | 支持 | 不支持
 > [AZURE.NOTE] 如果测试故障转移持续了两周以上，系统会强行将其结束。测试故障转移期间自动创建的任何元素或虚拟机将被删除。
 
 
-#### 准备 DHCP
+####<a name="prepare-dhcp"></a> 准备 DHCP
 
 如果测试故障转移中涉及的虚拟机使用 DHCP，则应在为进行测试故障转移创建的隔离网络中创建测试 DHCP 服务器。
 
