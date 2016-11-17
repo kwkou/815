@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Microsoft 云服务和网络安全性 | Microsoft Azure"
+   pageTitle="Microsoft 云服务和网络安全性 | Azure"
    description="了解 Azure 中用于帮助创建安全网络环境的某些重要功能"
    services="virtual-network"
    documentationCenter="na"
@@ -19,9 +19,9 @@
    ms.author="jonor;sivae"/>  
 
 
-# Microsoft Azure 网络安全 
+# Azure 网络安全 
 
-由世纪互联运营的 Microsoft Azure 提供超大规模的服务和基础结构、企业级的功能，以及许多混合连接选项。客户可以选择通过 Internet 或 Azure ExpressRoute（提供专用网络连接）访问这些服务。 Azure 平台可让客户无缝地将基础结构扩展到云中并构建多层体系结构。此外，第三方可以提供安全服务和虚拟设备，以启用增强的功能。本白皮书概述了当客户使用通过 ExpressRoute 访问的 Microsoft Azure 创建安全服务时应该考虑的安全和体系结构问题。此外，还介绍了如何在 Azure 虚拟网络中创建其他安全服务。
+由世纪互联运营的 Azure 提供超大规模的服务和基础结构、企业级的功能，以及许多混合连接选项。客户可以选择通过 Internet 或 Azure ExpressRoute（提供专用网络连接）访问这些服务。 Azure 平台可让客户无缝地将基础结构扩展到云中并构建多层体系结构。此外，第三方可以提供安全服务和虚拟设备，以启用增强的功能。本白皮书概述了当客户使用通过 ExpressRoute 访问的 Azure 创建安全服务时应该考虑的安全和体系结构问题。此外，还介绍了如何在 Azure 虚拟网络中创建其他安全服务。
 
 ## 快速开始
 以下逻辑图表以具体示例说明了 Azure 平台提供的许多安全技术。有关快速参考，请找到最适合你案例的示例。有关更完整的说明，请继续阅读本文。
@@ -41,12 +41,12 @@
 
 有关详细信息，请参阅 [信任中心](https://www.trustcenter.cn)上的合规性信息。
 
-世纪互联采取综合性的方案来保护运行超大规模服务所需的云基础结构。Microsoft Azure 基础结构包括硬件、软件、网络、管理和运营人员以及物理数据中心。
+世纪互联采取综合性的方案来保护运行超大规模服务所需的云基础结构。Azure 基础结构包括硬件、软件、网络、管理和运营人员以及物理数据中心。
 
 ![Azure 安全功能][2]  
 
 
-此方案提供更安全的基础，使客户能够将服务部署在 Microsoft Azure 中。客户要采取的后续措施是设计和创建安全体系结构来保护这些服务。
+此方案提供更安全的基础，使客户能够将服务部署在 Azure 中。客户要采取的后续措施是设计和创建安全体系结构来保护这些服务。
 
 ## 传统的安全体系结构与外围网络
 尽管 Azure 为保护云基础结构投入了大量资金，但客户仍必须保护其云服务和资源组。安全的多层方案提供最佳的防御措施。外围网络安全区域可防止不受信任的网络访问内部网络资源。外围网络是指位于 Internet 与受保护企业 IT 基础结构之间的网络边缘或组件。
@@ -455,7 +455,7 @@ IP 转发是 UDR 的随附功能。这是虚拟设备上的一项设置，使虚
 #### 环境描述
 可将使用 ExpressRoute 专用对等连接的混合网络添加到示例 1 或 2 中所述的任一种外围网络。
 
-如上图所示，ExpressRoute 专用对等在本地网络与 Azure 虚拟网络之间提供直接连接。流量只在服务提供商网络和 Microsoft Azure 网络上流动，永远不会传到 Internet。
+如上图所示，ExpressRoute 专用对等在本地网络与 Azure 虚拟网络之间提供直接连接。流量只在服务提供商网络和 Azure 网络上流动，永远不会传到 Internet。
 
 >[AZURE.NOTE] 由于 Azure 虚拟网关上使用的动态路由相当复杂，将 UDR 和 ExpressRoute 配合使用时存在某些限制。这些限制如下：
 >
@@ -486,13 +486,13 @@ IP 转发是 UDR 的随附功能。这是虚拟设备上的一项设置，使虚
 
 ## 参考
 ### 有用的网站和文档
-- 使用 PowerShell 访问 Azure：[https://azure.cn/documentation/articles/powershell-install-configure/](./powershell-install-configure.md)
-- 虚拟网络文档：[https://azure.cn/documentation/services/virtual-network/](./services/virtual-network/)
-- 网络安全组文档：[https://azure.cn/documentation/articles/virtual-networks-nsg/](./virtual-network/virtual-networks-nsg.md)
-- 用户定义的路由文档：[https://azure.cn/documentation/articles/virtual-networks-udr-overview/](./virtual-network/virtual-networks-udr-overview.md)
+- 使用 PowerShell 访问 Azure：[https://azure.cn/documentation/articles/powershell-install-configure/](/documentation/articles/powershell-install-configure)
+- 虚拟网络文档：[https://azure.cn/documentation/services/networking/](/documentation/services/networking/)
+- 网络安全组文档：[https://azure.cn/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-networks-nsg)
+- 用户定义的路由文档：[https://azure.cn/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-networks-udr-overview)
 - Azure 虚拟网关：[https://azure.cn/documentation/services/vpn-gateway/](./vpn-gateway/)
-- 站点到站点 VPN：[https://azure.cn/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell](./vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)
-- ExpressRoute 文档：[确保查看“入门”和“方法”部分](./expressroute/)
+- 站点到站点 VPN：[https://azure.cn/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell](./vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell)
+- ExpressRoute 文档：[确保查看“入门”和“方法”部分](/documentation/services/expressroute/)
 
 <!--Image References-->
 
@@ -517,13 +517,13 @@ IP 转发是 UDR 的随附功能。这是虚拟设备上的一项设置，使虚
 
 <!--Link References-->
 
-[Example1]: ./virtual-network/virtual-networks-dmz-nsg-asm.md
-[Example2]: ./virtual-network/virtual-networks-dmz-nsg-fw-asm.md
-[Example3]: ./virtual-network/virtual-networks-dmz-nsg-fw-udr-asm.md
-[Example4]: ./virtual-network/virtual-networks-hybrid-s2s-nva-asm.md
-[Example5]: ./virtual-network/virtual-networks-hybrid-s2s-agw-asm.md
-[Example6]: ./virtual-network/virtual-networks-hybrid-expressroute-asm.md
-[Example7]: ./virtual-network/virtual-networks-vnet2vnet-direct-asm.md
-[Example8]: ./virtual-network/virtual-networks-vnet2vnet-transit-asm.md
+[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm
+[Example2]: /documentation/articles/virtual-networks-dmz-nsg-fw-asm
+[Example3]: /documentation/articles/virtual-networks-dmz-nsg-fw-udr-asm
+[Example4]: /documentation/articles/virtual-networks-hybrid-s2s-nva-asm
+[Example5]: /documentation/articles/virtual-networks-hybrid-s2s-agw-asm
+[Example6]: /documentation/articles/virtual-networks-hybrid-expressroute-asm
+[Example7]: /documentation/articles/virtual-networks-vnet2vnet-direct-asm
+[Example8]: /documentation/articles/virtual-networks-vnet2vnet-transit-asm
 
 <!---HONumber=Mooncake_1024_2016-->
