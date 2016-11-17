@@ -55,7 +55,7 @@
 
 池中的每个数据库也遵循该层的单一数据库特征。例如，基本池具有每池最大会话数为 4800 - 28800 的限制，但该池中单个数据库具有 300 个会话数的数据库限制（即在上一节中指定的单个基本数据库的限制）。
 
-## 了解 DTU
+##<a name="understanding-dtus"></a> 了解 DTU
 
 [AZURE.INCLUDE [SQL 数据库 DTU 说明](../../includes/sql-database-understanding-dtus.md)]
 
@@ -81,7 +81,7 @@
 - 每个池的数据库数（基本池 400 个、标准池 400 个、高级池 50 个）
 - 每个池的最大存储（基本池 117 GB、标准池 1200、高级池 750）
 
-确定了池的服务层后，就可以确定池的性能级别 (eDTU)。可以根据实际经验猜测，然后[动态地增加或减少](sql-database-elastic-pool-manage-portal.md#change-performance-settings-of-a-pool)。还可以使用 [DTU 计算器](http://dtucalculator.azurewebsites.net/)估计池中单个数据库所需的 DTU 数，帮助设置该池的上限。
+确定了池的服务层后，就可以确定池的性能级别 (eDTU)。可以根据实际经验猜测，然后[动态地增加或减少](/documentation/articles/sql-database-elastic-pool-manage-powershell/#change-performance-settings-of-a-pool)。还可以使用 [DTU 计算器](http://dtucalculator.azurewebsites.net/)估计池中单个数据库所需的 DTU 数，帮助设置该池的上限。
 
 ## 后续步骤
 - [SQL 数据库定价](/pricing/details/sql-database/)中提供了有关这些层的价格详细信息。

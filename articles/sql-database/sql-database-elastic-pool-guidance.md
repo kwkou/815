@@ -97,7 +97,7 @@ Azure SQL 数据库中的弹性池可使 SaaS 开发人员将一组数据库的�
 * 池中所有数据库使用的最大 DTU。
 * 池中所有数据库使用的最大存储字节。
 
-有关可用的大小，请参阅[弹性数据库池和弹性数据库的 eDTU 和存储限制](/documentation/articles/sql-database-elastic-pool/#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases)。
+有关可用的大小，请参阅[弹性数据库池和弹性数据库的 eDTU 和存储限制](/documentation/articles/sql-database-elastic-pool/#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases)。
 
 SQL数据库自动评估现有 SQL 数据库服务器中数据库的历史资源使用率，并在 Azure 门户中推荐适当的池配置。除推荐外，内置体验还估算服务器上自定义组数据库的 eDTU 使用率。这使你可以执行“假设”分析，其方法为：通过交互方式将数据库添加到池并删除它们以在提交所做的更改之前获取资源使用率分析和调整建议。相关操作方式，请参阅[监视、管理弹性池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-powershell/)。
 

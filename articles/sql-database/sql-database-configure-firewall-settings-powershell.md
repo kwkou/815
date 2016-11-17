@@ -15,8 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="08/09/2016"
-	wacn.date="09/19/2016"
-	ms.author="sstein"/>
+	wacn.date="11/17/2016"/>
 
 
 # 使用 PowerShell 配置 Azure SQL 数据库服务器级防火墙规则
@@ -53,7 +52,7 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
     Remove-AzureRmSqlServerFirewallRule –RuleName 'ContosoFirewallRule' –ServerName 'Contoso'
 
 
-## 使用 PowerShell 管理防火墙规则
+##<a name="manage-firewall-rules-using-powershell"></a> 使用 PowerShell 管理防火墙规则
 
 还可使用 PowerShell 进行管理。相关详细信息，请参阅以下主题：
 
