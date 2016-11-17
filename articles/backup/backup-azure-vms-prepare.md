@@ -82,7 +82,7 @@
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)  
 
 
-7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/#azure-backup---storage-redundancy-options/)的更多内容。
+7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/)的更多内容。
 
     ![备份保管库列表](./media/backup-azure-vms-prepare/backup_vaultslist.png)  
 

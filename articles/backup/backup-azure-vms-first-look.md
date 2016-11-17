@@ -26,7 +26,7 @@
 本教程引导完成将 Azure 虚拟机 (VM) 备份到 Azure 备份保管库的步骤。本文介绍用于备份 VM 的经典模型或 Service Manager 部署模型。若要顺利完成本教程，必须满足以下先决条件：
 
 - 已在 Azure 订阅中创建 VM。
-- VM 已连接到 Azure 公共 IP 地址。有关其他信息，请参阅[网络连接](/documentation/articles/backup-azure-vms-prepare/#network-connectivity/)。
+- VM 已连接到 Azure 公共 IP 地址。有关其他信息，请参阅[网络连接](/documentation/articles/backup-azure-vms-prepare/)。
 
 若要备份 VM，需要执行五个主要步骤：
 
@@ -157,9 +157,9 @@
 
 ## 步骤 3 - 在虚拟机中安装 VM 代理
 
-Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。如果你的 VM 是从 Azure 库创建的，则该 VM 上已包含 VM 代理。可以跳到[保护 VM](/documentation/articles/backup-azure-vms-first-look/#step-4-protect-azure-virtual-machines/)。
+Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。如果你的 VM 是从 Azure 库创建的，则该 VM 上已包含 VM 代理。可以跳到[保护 VM](/documentation/articles/backup-azure-vms-first-look/)。
 
-如果你的 VM 是从本地数据中心迁移的，则该 VM 上可能尚未安装 VM 代理。必须先在虚拟机上安装 VM 代理，然后才能继续保护 VM。有关安装 VM 代理的详细步骤，请参阅[“备份 VM”一文中的“VM 代理”部分](/documentation/articles/backup-azure-vms-prepare/#vm-agent/)。
+如果你的 VM 是从本地数据中心迁移的，则该 VM 上可能尚未安装 VM 代理。必须先在虚拟机上安装 VM 代理，然后才能继续保护 VM。有关安装 VM 代理的详细步骤，请参阅[“备份 VM”一文中的“VM 代理”部分](/documentation/articles/backup-azure-vms-prepare/)。
 
 
 ## 步骤 4 - 创建备份策略
