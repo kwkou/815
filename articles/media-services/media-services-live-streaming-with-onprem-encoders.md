@@ -15,7 +15,7 @@
 	ms.devlang="ne" 
 	ms.topic="article" 
 	ms.date="06/22/2016" 
-	wacn.date="08/22/2016" 
+	wacn.date="11/17/2016" 
 	ms.author="cenkdin;juliako"/>
 
 
@@ -221,7 +221,7 @@ ismt 内的 TTML（Smooth Streaming 文本轨道）|媒体服务动态打包功�
 SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该信号来将广告接合到流中并使其占用规定的时间。SCTE-35 必须在输入流中作为稀疏轨道发送。<p><p>请注意，当前唯一受支持的可以携带广告信号的输入流格式是分片 MP4 (Smooth Streaming)。唯一受支持的输出格式也是 Smooth Streaming.
 
 
-##<a id="Considerations"></a>注意事项
+##<a id="considerations"></a>注意事项
 
 当使用本地实时编码器将多比特率流发送到一个频道时，以下限制将适用：
 

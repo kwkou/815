@@ -74,13 +74,6 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - 每年的特许权使用费上限为 50,000 美元
 - 每年的前 10,000 个设备实现无需支付特许权使用费
 
-##许可过程和 SSPK 访问权限
-
-若要咨询许可事宜，请向 [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com) 发送电子邮件。
-
-已注册的中期受证者可以访问 [SSPK 分发门户](https://microsoft.sharepoint.com/teams/SSPKDOWNLOAD/)。
-
-中期和最终 SSPK 受证者可以将技术问题提交到 [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com)。
 
 ##Microsoft 平滑流式处理客户端中期产品协议受证人
 

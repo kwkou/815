@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/17/2016"  
-	wacn.date="10/10/2016"
+	wacn.date="11/17/2016"
 	ms.author="juliako"/>  
 
 
@@ -81,7 +81,7 @@
 ##<a id="encode"></a>如何：对内容进行编码
 
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encode-asset/)
+- [.NET](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)
 - [REST](/documentation/articles/media-services-rest-encode-asset/)
 - [门户](/documentation/articles/media-services-manage-content/#encode)
 

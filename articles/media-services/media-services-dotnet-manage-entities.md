@@ -249,7 +249,7 @@
 	    }
 	}
 
-## 枚举大型实体集合
+##<a name="enumerating-through-large-collections-of-entities"></a> 枚举大型实体集合
 
 查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。枚举大型实体集合时，需要使用 Skip 和 Take。
 	

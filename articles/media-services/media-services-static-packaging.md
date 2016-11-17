@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
  	ms.date="06/22/2016" 
- 	wacn.date="08/22/2016"    
+ 	wacn.date="11/17/2016"    
 	ms.author="juliako"/>
 
 
@@ -41,7 +41,7 @@
 - 通过静态加密使用 PlayReady 来保护 HLSv3
 
 
-## 验证使用外部编码器编码的自适应比特率 MP4
+##<a name="validating-adaptive-bitrate-mp4s-encoded-with-external-encoders"></a> 验证使用外部编码器编码的自适应比特率 MP4
 
 如果你要使用一组未使用媒体服务的编码器编码的自适应比特率（多码率）MP4 文件，则应在进一步处理前验证这些文件。媒体服务包装程序可以验证包含一组 MP4 文件的资产，并可检查该资产是否可以打包成平滑流或 HLS。如果验证任务失败，则处理该任务的作业将完成并显示错误。用于定义验证任务的预设的 XML 可以在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx)主题中找到。
 

@@ -69,7 +69,7 @@
 
 >[AZURE.IMPORTANT] 请注意，只要频道进入就绪状态，就会开始计费。有关详细信息，请参阅[频道的状态](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#states)。
 
-###<a id=configure_elemental_rtp></a>配置 Elemental Live 编码器 
+###<a id="configure_elemental_rtp"></a>配置 Elemental Live 编码器 
 
 在本教程中，将使用以下输出设置。本部分的其余内容介绍更详细的配置步骤。
 
