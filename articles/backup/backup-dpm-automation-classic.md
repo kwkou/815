@@ -50,7 +50,7 @@
 1. [下载最新 PowerShell](https://github.com/Azure/azure-powershell/releases)（要求的最低版本：1.0.0）
 2. 通过 **Switch-AzureMode** cmdlet 切换到 *AzureResourceManager* 模式，从而启用 Azure 备份 cmdlet：
 
-	PS C:\> Switch-AzureMode AzureResourceManager
+		PS C:\> Switch-AzureMode AzureResourceManager
 
 使用 PowerShell 可以自动化以下设置和注册任务：
 
@@ -66,9 +66,9 @@
 
 可以使用 **New-AzureRMBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
 
-		
-		PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “West US”
-		PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
+			
+	PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “West US”
+	PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
 
 可以使用 **Get-AzureRMBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
 
@@ -254,8 +254,9 @@ DPM 服务器在注册到 Azure 备份保管库后，将使用默认的订阅设
 
 ### 更改 DPM 副本和恢复点卷的大小
 还可以使用 [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/zh-cn/library/hh881618.aspx) cmdlet 更改 DPM 副本卷和和卷影复制卷的大小，如以下示例所示：
-Get-DatasourceDiskAllocation -Datasource $DS 
-Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
+
+	Get-DatasourceDiskAllocation -Datasource $DS 
+	Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
 
 ### 将更改提交到保护组
 最后，需要提交更改，然后 DPM 才可以根据每个新保护组配置进行备份。这可以使用 [Set-DPMProtectionGroup](https://technet.microsoft.com/zh-cn/library/hh881758) cmdlet 来实现。
@@ -281,13 +282,13 @@ Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -Repl
 - 使用 ```Get-DPMRecoveryPoint``` cmdlet 获取备份点的数组。
 - 选择要从中还原的备份点。
 
-	PS C:\> $RecoveryOption = New-DPMRecoveryOption -HyperVDatasource -TargetServer "HVDCenter02" -RecoveryLocation AlternateHyperVServer -RecoveryType Recover -TargetLocation "C:\\VMRecovery"
-
-	PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer" 
-	PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0] 
-	PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
-
-	PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $RecoveryOption
+		PS C:\> $RecoveryOption = New-DPMRecoveryOption -HyperVDatasource -TargetServer "HVDCenter02" -RecoveryLocation AlternateHyperVServer -RecoveryType Recover -TargetLocation "C:\\VMRecovery"
+	
+		PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer" 
+		PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0] 
+		PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
+	
+		PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $RecoveryOption
 
 你可以针对任何数据源类型轻松扩展这些命令。
 

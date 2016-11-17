@@ -443,13 +443,13 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 
 此代码段演示了如何在现有池上通过 [Batch .NET][net_api] 库启用自动缩放功能。请注意，针对现有池启用公式和更新公式使用相同的方法。因此，如果已启用自动缩放功能，则此方法会针对指定池*更新* 公式。该代码段假设“mypool”是现有池 ([CloudPool][net_cloudpool]) 的 ID。
 
-		 // Define the autoscaling formula. In this snippet, the  formula sets the target number of nodes to 5 on
-		 // Mondays, and 1 on every other day of the week
-		 string myAutoScaleFormula = "$TargetDedicated = (time().weekday==1?5:1);";
-
-		 // Update the existing pool's autoscaling formula by calling the BatchClient.PoolOperations.EnableAutoScale
-		 // method, passing in both the pool's ID and the new formula.
-		 myBatchClient.PoolOperations.EnableAutoScale("mypool", myAutoScaleFormula);
+	// Define the autoscaling formula. In this snippet, the  formula sets the target number of nodes to 5 on
+	// Mondays, and 1 on every other day of the week
+	string myAutoScaleFormula = "$TargetDedicated = (time().weekday==1?5:1);";
+	
+	// Update the existing pool's autoscaling formula by calling the BatchClient.PoolOperations.EnableAutoScale
+	// method, passing in both the pool's ID and the new formula.
+	myBatchClient.PoolOperations.EnableAutoScale("mypool", myAutoScaleFormula);
 
 ## 评估自动缩放公式
 
