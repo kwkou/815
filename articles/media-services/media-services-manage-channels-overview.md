@@ -14,11 +14,11 @@
 	ms.devlang="ne" 
 	ms.topic="article" 
 	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"
+	wacn.date="11/17/2016"
 	ms.author="juliako"/>
 #使用 Azure 媒体服务实时传送视频流概述
 
-##概述
+##<a name="closed-captioning-and-ad-insertion"></a>概述
 
 使用 Azure 媒体服务传递实时流式处理事件时，通常涉及以下组件：
 
@@ -96,7 +96,7 @@
 
 ##频道及其相关组件的说明
 
-###通道
+###<a name="channel_input"></a>通道
 
 在媒体服务中，[通道](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)负责处理实时流内容。通道提供输入终结点（引入 URL），然后你将该终结点提供给实时转码器。通道从实时转码器接收实时输入流，并通过一个或多个 StreamingEndpoints 使其可用于流式处理。通道还提供可用于预览的预览终结点（预览 URL），并在进一步处理和传递流之前对流进行验证。
 

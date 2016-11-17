@@ -42,7 +42,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单位](/documentation/articles/media-services-portal-encoding-units/)。
 
-##媒体编码器标准版
+##<a name="media-encoder-standard"></a>媒体编码器标准版
 
 ###如何使用
 

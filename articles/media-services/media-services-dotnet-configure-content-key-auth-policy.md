@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="10/10/2016"
+	wacn.date="11/17/2016"
 	ms.author="juliako;mingfeiy"/>
 
 
@@ -236,7 +236,7 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 	Console.WriteLine();
 
 
-##PlayReady 动态加密 
+##<a name="playready-dynamic-encryption"></a>PlayReady 动态加密 
 
 媒体服务允许你配置相应的权限和限制，以便在用户尝试播放受保护的内容时，PlayReady DRM 运行时会强制实施这些权限和限制。
 

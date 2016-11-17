@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="08/19/2016" 
-	wacn.date="10/10/2016"   
+	wacn.date="11/17/2016"   
 	ms.author="juliako"/>
 
 # 使用 .NET 监视作业进度
@@ -26,7 +26,7 @@
 
 当你运行作业时，通常需要采用某种方式来跟踪作业进度。可以通过定义 StateChanged 事件处理程序（如本主题中所述）或使用 Azure 队列存储监视媒体服务作业通知（如[此](/documentation/articles/media-services-dotnet-check-job-progress-with-queues/)主题中所述）来检查进度。
 
-##<a id="statechange_event_handler"></a>定义 StateChanged 事件处理程序以监视作业进度
+##<a id="statechange_event_handler"></a><a name="check_progress_with_queues"></a>定义 StateChanged 事件处理程序以监视作业进度
 
 以下代码示例定义了 StateChanged 事件处理程序。此事件处理程序将跟踪作业进度，并根据现状提供更新的状态。该代码还定义了 LogJobStop 方法。此帮助器方法将记录错误详细信息。
 

@@ -16,7 +16,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="06/22/2016" 
-	wacn.date="08/22/2016" 
+	wacn.date="11/17/2016" 
 	ms.author="juliako"/>
 
 
@@ -118,7 +118,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 
 >[AZURE.NOTE]媒体服务不支持 $expand 操作以及“LINQ 注意事项（WCF 数据服务）”中所述的不受支持的 LINQ 方法。
 
-##枚举大型实体集合
+##<a name="enumerating-through-large-collections-of-entities"></a>枚举大型实体集合
 
 查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。使用 **skip** 和 **top** 来枚举大型实体集合。
 
