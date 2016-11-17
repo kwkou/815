@@ -14,6 +14,7 @@
 	data:    canonical  ubuntuserver  12.04.5-LTS  Linux  12.04.201601140  chinanorth  canonical:ubuntuserver:12.04.5-LTS:12.04.201601140
 	data:    canonical  ubuntuserver  12.04.5-LTS  Linux  12.04.201602010  chinanorth  canonical:ubuntuserver:12.04.5-LTS:12.04.201602010
 	data:    canonical  ubuntuserver  12.04.5-LTS  Linux  12.04.201606270  chinanorth  canonical:ubuntuserver:12.04.5-LTS:12.04.201606270
+	data:    canonical  ubuntuserver  12.04.5-LTS  Linux  12.04.201610201  chinanorth  canonical:ubuntuserver:12.04.5-LTS:12.04.201610201
 	data:    canonical  ubuntuserver  14.04.2-LTS  Linux  14.04.201507060  chinanorth  canonical:ubuntuserver:14.04.2-LTS:14.04.201507060
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201510190  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201510190
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201601190  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201601190
@@ -23,7 +24,11 @@
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201603140  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201603140
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201604060  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201604060
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201606270  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201606270
+	data:    canonical  ubuntuserver  14.04.4-LTS  Linux  14.04.201610200  chinanorth  canonical:ubuntuserver:14.04.4-LTS:14.04.201610200
+	data:    canonical  ubuntuserver  14.04.5-LTS  Linux  14.04.201610200  chinanorth  canonical:ubuntuserver:14.04.5-LTS:14.04.201610200
 	data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201606270  chinanorth  canonical:ubuntuserver:16.04.0-LTS:16.04.201606270
+	data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201610200  chinanorth  canonical:ubuntuserver:16.04.0-LTS:16.04.201610200
+	data:    canonical  ubuntuserver  16.10        Linux  16.10.201610201  chinanorth  canonical:ubuntuserver:16.10:16.10.201610201
 
 **Urn** 列是你传递给 `azure vm quick-create` 的表单。
 
@@ -32,9 +37,10 @@
     azure vm image list-publishers
     info:    Executing command vm image list-publishers
     Location: chinanorth
-    + Getting virtual machine and/or extension and/or extension image publishers (Location: "chinanorth")
+	+ Getting virtual machine and/or extension image publishers (Location: "chinanorth")
 	data:    Publisher                                        Location
 	data:    -----------------------------------------------  ----------
+	data:    AsiaInfo.DeepSecurity                            chinanorth
 	data:    Canonical                                        chinanorth
 	data:    CoreOS                                           chinanorth
 	data:    credativ                                         chinanorth
@@ -53,6 +59,7 @@
 	data:    Microsoft.SqlServer.Management                   chinanorth
 	data:    Microsoft.VisualStudio.Azure.RemoteDebug         chinanorth
 	data:    MicrosoftOSTC                                    chinanorth
+	data:    MicrosoftSQLServer                               chinanorth
 	data:    MicrosoftWindowsServer                           chinanorth
 	data:    MicrosoftWindowsServerHPCPack                    chinanorth
 	data:    MSOpenTech.Extensions                            chinanorth
@@ -68,10 +75,10 @@
     Location: chinanorth
     Publisher: canonical
     + Getting virtual machine image offers (Publisher: "canonical" Location:"chinanorth")
-	data:    Publisher  Offer         Location
-	data:    ---------  ------------  ----------
-	data:    canonical  UbuntuServer  chinanorth
-	info:    vm image list-offers command OK
+    data:    Publisher  Offer                      Location
+    data:    ---------  -------------------------  --------
+    data:    canonical  UbuntuServer               chinanorth
+    info:    vm image list-offers command OK
 
 现在，我们知道在中国北部区域中，Canonical 在 Azure 上发布 **UbuntuServer** 产品。但是，有哪些 SKU 呢？ 若要获取 SKU 信息，请调用 `azure vm image list-skus`，并在提示文字后面输入你找到的位置、发布者和产品信息。
 
@@ -81,26 +88,29 @@
     Publisher: canonical
     Offer: ubuntuserver
     + Getting virtual machine image skus (Publisher:"canonical" Offer:"ubuntuserver" Location:"chinanorth")
-	data:    Publisher  Offer         sku          Location
-	data:    ---------  ------------  -----------  ----------
-	data:    canonical  ubuntuserver  12.04.5-LTS  chinanorth
-	data:    canonical  ubuntuserver  14.04.2-LTS  chinanorth
-	data:    canonical  ubuntuserver  14.04.3-LTS  chinanorth
-	data:    canonical  ubuntuserver  14.10        chinanorth
-	data:    canonical  ubuntuserver  15.04        chinanorth
-	data:    canonical  ubuntuserver  15.10        chinanorth
-	data:    canonical  ubuntuserver  16.04.0-LTS  chinanorth
-	info:    vm image list-skus command OK
+    data:    Publisher  Offer         sku                Location
+    data:    ---------  ------------  -----------------  --------
+    data:    canonical  ubuntuserver  12.04.5-LTS        chinanorth
+    data:    canonical  ubuntuserver  14.04.2-LTS        chinanorth
+    data:    canonical  ubuntuserver  14.04.3-LTS        chinanorth
+    data:    canonical  ubuntuserver  14.04.4-LTS        chinanorth
+    data:    canonical  ubuntuserver  14.04.5-LTS        chinanorth
+    data:    canonical  ubuntuserver  14.10              chinanorth
+    data:    canonical  ubuntuserver  15.04              chinanorth
+    data:    canonical  ubuntuserver  15.10              chinanorth
+    data:    canonical  ubuntuserver  16.04.0-LTS        chinanorth
+    data:    canonical  ubuntuserver  16.10              chinanorth
+    info:    vm image list-skus command OK
 
 利用这些信息，现在可以通过在顶部调用原始调用，准确地找到你需要的映像。
 
     azure vm image list chinanorth canonical ubuntuserver 16.04.0-LTS
     info:    Executing command vm image list
     + Getting virtual machine images (Publisher:"canonical" Offer:"ubuntuserver" Sku: "16.04.0-LTS" Location:"chinanorth")
-	data:    Publisher  Offer         Sku          OS     Version          Location    Urn
-	data:    ---------  ------------  -----------  -----  ---------------  ----------  --------------------------------------------------
-	data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201606270  chinanorth  canonical:ubuntuserver:16.04.0-LTS:16.04.201606270
-	info:    vm image list command OK
+    data:    Publisher  Offer         Sku          OS     Version          Location  Urn
+    data:    ---------  ------------  -----------  -----  ---------------  --------  --------------------------------------------------
+    data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201606270  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201606270
+    info:    vm image list command OK
 
 现在，你可以确切地选择想要使用的映像。若要使用刚刚找到的 URN 信息快速创建虚拟机，或要使用包含该 URN 信息的模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 

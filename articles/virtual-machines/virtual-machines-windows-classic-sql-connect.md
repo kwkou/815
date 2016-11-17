@@ -13,9 +13,15 @@
 
 # 连接到 Azure 上的 SQL Server 虚拟机（经典部署）
 
+> [AZURE.SELECTOR]
+- [资源管理器](/documentation/articles/virtual-machines-windows-sql-connect/)
+- [经典](/documentation/articles/virtual-machines-windows-classic-sql-connect/)
+
 ## 概述
 
 本主题介绍如何连接到运行于 Azure 虚拟机的 SQL Server 实例。介绍一些[常规连接方案](#connection-scenarios)，并提供[在 Azure VM 中配置 SQL Server 连接的详细步骤](#steps-for-configuring-sql-server-connectivity-in-an-azure-vm)。
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## <a name="connection-scenarios"></a> 连接方案
 

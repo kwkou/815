@@ -15,7 +15,13 @@
 
 # 适用于 SQL Server VM 的 SQL Server 代理扩展（经典）
 
+> [AZURE.SELECTOR]
+- [资源管理器](/documentation/articles/virtual-machines-windows-sql-server-agent-extension/)
+- [经典](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/)
+
 Azure 虚拟机上运行的 SQL Server IaaS 代理扩展 (SQLIaaSAgent) 可以自动执行管理任务。本主题概述了该扩展支持的服务以及有关安装、状态及删除的说明。
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## <a name="supported-services"></a> 支持的服务
 

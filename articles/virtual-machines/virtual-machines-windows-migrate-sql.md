@@ -15,6 +15,8 @@
 
 # 将 SQL Server 数据库迁移到 Azure VM 中的 SQL Server
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+
 将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个[教程](#azure-vm-deployment-wizard-tutorial)，指导你使用**将 SQL Server 数据库部署到 Azure VM** 向导。
 
 [教程](#azure-vm-deployment-wizard-tutorial)中介绍的使用**将 SQL Server 数据库部署到 Azure VM** 向导的方法仅适用于经典部署模型。

@@ -22,10 +22,12 @@
 
 | PublisherName | 产品 | SKU |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
+| credativ                         | Debian                                     | 8                                | 
 | SUSE                             | openSUSE                                   | 13.2                             |
 | SUSE                             | SLES                                       | 12-SP1                           |
 | OpenLogic                        | CentOS                                     | 7.1                              |
 | Canonical                        | UbuntuServer                               | 14.04.3-LTS                      |
+| CoreOS                           | CoreOS                                     | Stable                           |
 
 [AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../../includes/virtual-machines-common-cli-ps-findimage.md)]
 

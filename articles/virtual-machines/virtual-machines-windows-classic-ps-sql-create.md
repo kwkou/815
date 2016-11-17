@@ -18,6 +18,8 @@
 
 本文提供了有关如何通过使用 PowerShell cmdlet 在 Azure 中创建 SQL Server 虚拟机的步骤。
 
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-classic-extensions-customscript/)。
+
 ## 安装和配置 PowerShell
 
 1. 如果你没有 Azure 帐户，请访问 [Azure 试用](/pricing/1rmb-trial/)。
@@ -161,6 +163,8 @@
 你可以在[虚拟机文档](/documentation/articles/virtual-machines-windows-classic-create-powershell/)中找到使用 PowerShell 设置虚拟机的其他说明。有关与 SQL Server 和高级存储相关的其他脚本，请参阅[将 Azure 高级存储用于虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-classic-sql-server-premium-storage/)。
 
 在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql/)。
+
+如果你对使用 Azure 门户预览创建 SQL 虚拟机也感兴趣，请查阅[在 Azure 预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。请注意，这个教程演示了怎么用门户创建 ARM 模型的虚拟机，而不是像本文里的经典模型。
 
 除了这些资源外，我们还建议你查看[与在 Azure 虚拟机中运行 SQL Server 相关的其他主题](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 

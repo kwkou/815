@@ -34,9 +34,9 @@
 
 ## 快速命令
 
-下面的示例演示如何部署 Centos VM 并附加安全外壳 (SSH) 密钥（你的参数可能不同）。
+下面的示例演示如何部署 CoreOS VM 并附加安全外壳 (SSH) 密钥（你的参数可能不同）。
 
-    azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q Centos
+    azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q CoreOS
 
 以下各节使用 Ubuntu Server 14.04 LTS 作为 Linux 分发说明了命令及其要求。
 
@@ -47,6 +47,8 @@
 | 别名 | 发布者 | 产品 | SKU | 版本 |
 |:----------|:----------|:-------------|:------------|:--------|
 | CentOS | OpenLogic | CentOS | 7\.2 | 最新 |
+| CoreOS    | CoreOS    | CoreOS       | Stable      | 最新  |
+| Debian    | credativ  | Debian       | 8           | 最新  |
 | openSUSE | SUSE | openSUSE | 13\.2 | 最新 |
 | SLES | SUSE | SLES | 12-SP1 | 最新 |
 | UbuntuLTS | Canonical | Ubuntu Server | 14\.04.3-LTS | 最新 |
