@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/11/2016"
-   wacn.date="08/08/2016"
+   wacn.date="11/17/2016"
    ms.author="oanapl"/>
 
 # 查看 Service Fabric 运行状况报告
@@ -60,7 +60,7 @@ Service Fabric 资源管理器提供群集的更直观展示。在下图中，�
 
 > [AZURE.NOTE] 了解有关 [Service Fabric 资源管理器](/documentation/articles/service-fabric-visualizing-your-cluster/)的更多信息。
 
-## 运行状况查询
+##<a name="health-queries"></a> 运行状况查询
 Service Fabric 为每个支持的[实体类型](/documentation/articles/service-fabric-health-introduction/#health-entities-and-hierarchy)提供运行状况查询。可以通过 API（可在 FabricClient.HealthManager 中找到的方法）、PowerShell cmdlet 和 REST 访问它们。这些查询返回有关实体的完整运行状况信息，包括聚合运行状况、报告的实体上的运行状况事件、子运行状况（在适用时）以及实体不正常时的不正常评估。
 
 > [AZURE.NOTE] 完全填充运行状况存储中时，运行状况实体返回给用户。实体必须是作用中（未删除），并且具有系统报告。层次结构链上其父实体还必须有系统报告。如果不满足上述条件之一，则运行状况查询返回一个异常，并显示未返回实体的原因。

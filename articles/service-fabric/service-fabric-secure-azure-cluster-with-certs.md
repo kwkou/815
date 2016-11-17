@@ -10,7 +10,7 @@
 <tags
    ms.service="service-fabric"
    ms.date="05/27/2016"
-   wacn.date="07/07/2016"/>
+   wacn.date="11/17/2016"/>
 
 # 使用证书保护 Azure 上的 Service Fabric 群集
 
@@ -31,7 +31,7 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 
 对于仅用于测试的群集，可以选择使用自签名证书。下面的步骤 2.5 说明如何执行该操作。
 
-## 步骤 2：将 X.509 证书上载到密钥保管库
+##<a name="step-2-upload-the-x509-certificate-to-the-key-vault"></a> 步骤 2：将 X.509 证书上载到密钥保管库
 
 这是一个复杂的过程，因此我们要将一个 PowerShell 模块上载到 Git 存储库，它将为完成此过程。
 

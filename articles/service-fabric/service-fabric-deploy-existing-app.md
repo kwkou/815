@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="na"
    ms.date="06/20/2016"
-   wacn.date="07/04/2016"
+   wacn.date="11/17/2016"
    ms.author="msfussell;mikhegn"/>
 
 #将现有可执行文件部署到 Azure Service Fabric
@@ -282,7 +282,7 @@ Service Fabric 服务可以采用各种“配置”进行部署。 例如，可�
 
 ![日志的位置](./media/service-fabric-deploy-existing-app/loglocation.png)
 
-## 使用 Visual Studio 打包现有应用程序
+##<a name="using-visual-studio-to-package-an-existing-application"></a> 使用 Visual Studio 打包现有应用程序
 
 Visual Studio 提供 Service Fabric 服务模板来帮助你将来宾可执行文件部署到 Service Fabric 群集。需要执行以下过程来完成发布：
 

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/10/2016"
-   wacn.date="08/29/2016"   
+   wacn.date="11/17/2016"   
    ms.author="seanmck"/>
 
 # 在 Service Fabric 中对应用程序建模
@@ -106,7 +106,7 @@ For more information about other features supported by service manifests, refer 
 *TODO: Configuration overrides
 -->
 
-## 描述应用程序
+##<a name="describe-an-application"></a> 描述应用程序
 
 
 应用程序清单以声明方式描述应用程序类型和版本。它指定服务组合元数据（如稳定名称、分区方案、实例计数/复制因子、安全/隔离策略、布置约束、配置替代和成分服务类型）。此外还描述了将在其中放置应用程序的负载均衡域。
@@ -152,7 +152,7 @@ For more information about other features supported by application manifests, re
 *TODO: Service Templates
 -->
 
-## 打包应用程序
+##<a name="package-an-application"></a> 打包应用程序
 
 ### 包布局
 

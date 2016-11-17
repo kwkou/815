@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="07/05/2016"
-   wacn.date="08/08/2016"
+   wacn.date="11/17/2016"
    ms.author="abhisram"/>
 
 # Reliable Actors 的诊断和性能监视
@@ -86,7 +86,7 @@ Reliable Actors 运行时定义以下性能计数器类别。
 
 ## 事件和性能计数器的列表
 
-### 执行组件方法事件和性能计数器
+###<a name="actor-method-events-and-performance-counters"></a> 执行组件方法事件和性能计数器
 Reliable Actors 运行时发出与 [Actor 方法](/documentation/articles/service-fabric-reliable-actors-introduction/#actors)相关的以下事件。
 
 |事件名称|事件 ID|级别|关键字|说明|
@@ -134,14 +134,14 @@ Reliable Actors 运行时发布与执行组件状态管理相关的以下性能�
 |Service Fabric 执行组件|每个加载状态操作的平均毫秒数|加载执行组件状态所用的时间（以毫秒为单位）|
 
 ### 与执行组件副本相关的事件
-Reliable Actors 运行时发出以下与[执行组件副本](/documentation/articles/service-fabric-reliable-actors-platform/#service-fabric-partition-concepts-for-stateful-actors)相关的事件。
+Reliable Actors 运行时发出以下与[执行组件副本](/documentation/articles/service-fabric-reliable-actors-platform/#service-fabric-partition-concepts-for-actors)相关的事件。
 
 |事件名称|事件 ID|级别|关键字|说明|
 |---|---|---|---|---|
 |ReplicaChangeRoleToPrimary|1|信息性|0x1|执行组件副本将角色更改为“主要”。这意味着在此副本内创建此分区的执行组件。|
 |ReplicaChangeRoleFromPrimary|2|信息性|0x1|执行组件副本将角色更改为“非主要”。这意味着不再在此副本内创建此分区的执行组件。不会将任何新请求传送到此副本中已创建的执行组件。正在进行中的任何请求完成后将会销毁执行组件。|
 
-### 执行组件激活和停用事件以及性能计数器
+###<a name="actor-activation-and-deactivation-events"></a> 执行组件激活和停用事件以及性能计数器
 Reliable Actors 运行时发出与 [执行组件激活和停用](/documentation/articles/service-fabric-reliable-actors-lifecycle/)相关的以下事件。
 
 |事件名称|事件 ID|级别|关键字|说明|

@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/09/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/17/2016"
    ms.author="chackdan"/>  
 
 
@@ -47,7 +47,7 @@
 ![资源][Resources]  
 
 
-## 远程连接到 VM 规模集实例或群集节点
+##<a name="remote-connect-to-a-vm-scale-set-instance-or-a-cluster-node"></a> 远程连接到 VM 规模集实例或群集节点
 在群集中定义的每个节点类型将设置为不同的 VM 规模集。这意味着，节点类型可以独立扩展或缩减，且可由不同的 VM SKU 组成。不同于单实例 VM，VM 规模集的实例没有自身的虚拟 IP 地址。因此你可能很难找到可用来远程连接到特定实例的 IP 地址和连接端口。
 
 可以遵循以下步骤来查找 IP 地址和端口。

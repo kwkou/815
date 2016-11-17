@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/14/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/17/2016"
    ms.author="subramar"/>  
 
 
@@ -56,7 +56,7 @@
 
 ## 使用电子表格进行成本计算
 
-现在，让我们在公式中放入一些实际数字。[示例电子表格](https://servicefabricsdkstorage.blob.core.chinacloudapi.cn/publicrelease/SF%20VM%20Cost%20calculator-NEW.xlsx)显示如何规划包含三种数据对象类型的应用程序的容量。针对每个对象，我们将估算其大小以及预期需要的对象数。我们还将选择对每个对象类型需要的副本数。电子表格将计算要在群集中存储的内存量总计。
+现在，让我们在公式中放入一些实际数字。[示例电子表格](https://servicefabricsdkstorage.blob.core.windows.net/publicrelease/SF%20VM%20Cost%20calculator-NEW.xlsx)显示如何规划包含三种数据对象类型的应用程序的容量。针对每个对象，我们将估算其大小以及预期需要的对象数。我们还将选择对每个对象类型需要的副本数。电子表格将计算要在群集中存储的内存量总计。
 
 然后，输入 VM 大小和每月成本。根据 VM 大小，电子表格将告诉你必须至少要提供多少个分区才能拆分数据，使其能够实际包含在节点中。可能需要大量的分区才能应对应用程序的特定计算和网络流量需求。电子表格显示目前管理用户配置文件对象的分区数已从 1 个增加到 6 个。
 

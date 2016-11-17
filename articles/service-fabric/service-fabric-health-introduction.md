@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/11/2016"
-   wacn.date="08/08/2016"
+   wacn.date="11/17/2016"
    ms.author="oanapl"/>
 
 # Service Fabric 运行状况监视简介
@@ -24,10 +24,10 @@ Service Fabric 组件使用此运行状况模型报告其当前状态。你可�
 
 > [AZURE.NOTE] 我们根据需要为监视的升级启动运行状况子系统。Service Fabric 提供监视的升级，该升级了解如何在没有停机时间、无用户干预最小化，并具有完整的群集和应用程序可用性的情况下升级群集或应用程序。若要执行此操作，升级会基于配置的升级策略检查运行状况，并且仅当运行状况遵从所需的阈值时允许升级继续。否则，升级会自动回滚或暂停，以便让管理员有机会修复问题。若要了解有关应用程序升级的详细信息，请参阅[此文](/documentation/articles/service-fabric-application-upgrade/)。
 
-## 运行状况存储
+##<a name="health-store"></a> 运行状况存储
 运行状况存储保留群集中关于实体的运行状况相关信息，以进行轻松的检索和评估。它作为 Service Fabric 保留的有状态服务进行实现，以确保高度可用性和可缩放性。运行状况存储是 **fabric:/System** 应用程序的一部分，并且只要群集已启动并正在运行，即可使用。
 
-## 运行状况实体和层次结构
+##<a name="health-entities-and-hierarchy"></a> 运行状况实体和层次结构
 运行状况实体采用逻辑层次结构进行组织，该结构会捕获不同实体之间的交互和依赖项。基于从 Service Fabric 组件接收的报告，运行状况存储自动生成实体和层次结构。
 
 运行状况实体镜像 Service Fabric 实体。（例如，**运行状况应用程序实体**匹配群集中部署的应用程序实例，**运行状况节点实体**匹配 Service Fabric 群集节点。） 运行状况层次结构捕获系统实体的交互并且是进行高级运行状况评估的基础。你可以通过 [Service Fabric 技术概述](/documentation/articles/service-fabric-technical-overview/)了解 Service Fabric 的关键概念。有关应用程序的详细信息，请参阅 [Service Fabric 应用程序模型](/documentation/articles/service-fabric-application-model/)。
@@ -66,7 +66,7 @@ Service Fabric 组件使用此运行状况模型报告其当前状态。你可�
 
 当设计大型云服务时，花时间规划如何报告和响应运行状况，可让该服务更轻松地进行调试、监视和后续操作。
 
-## 运行状况状态
+##<a name="health-states"></a> 运行状况状态
 Service Fabric 使用三种运行状况状态来说明实体是否正常：“正常”、“警告”和“错误”。发送到运行状况存储的任何报告都必须指定其中一种状态。运行状况评估结果是其中一种状态。
 
 可能的[运行状况](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.healthstate)如下：
@@ -79,7 +79,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 
 - **未知**。运行状况存储中不存在实体。此结果可以从合并来自多个组件的结果的分布式查询中获取。其中可包含获取 Service Fabric 节点列表的查询（其会转到 **FailoverManager** 和 **HealthManager**），或是获取应用程序列表的查询（其会转到 **ClusterManager** 和 **HealthManager**）。这些查询会合并来自多个系统组件的结果。如果另一个系统组件有一个实体，该实体尚未到达运行状况存储或已从运行状况存储中清除，则合并后的查询会使用未知运行状况状态来填充运行状况结果。
 
-## 运行状况策略
+##<a name="health-policies"></a> 运行状况策略
 运行状况存储应用运行状况策略，以便基于实体的报告及其子项来确定该实体是否正常。
 
 > [AZURE.NOTE] 可以在群集清单（适用于群集和节点运行状况评估）或应用程序清单（适用于应用程序评估及其任何子项）中指定运行状况策略。运行状况评估请求也可以在自定义运行状况评估策略中传递，并且仅用于该评估。
@@ -155,7 +155,7 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
     </Policies>
 
 
-## 运行状况评估
+##<a name="entity-health-evaluation"></a> 运行状况评估
 用户和自动化服务可以随时评估任何实体的运行状况。若要评估实体运行状况，运行状况存储聚合实体上的所有运行状况报告，并评估其所有子项（如果适用）。运行状况聚合算法使用运行状况策略，这类策略指定如何评估运行状况报告以及如何聚合子项运行状况状态（如果适用）。
 
 ### 运行状况报告聚合

@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/19/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/17/2016"
    ms.author="vturecek"/>  
 
 
@@ -282,7 +282,7 @@ Service Fabric 使用 X.509 证书保护群集。Azure 密钥保管库用于管�
  2. 选中“配置高级设置”复选框，输入**管理客户端**和**只读客户端**的客户端证书。在这些字段中，输入管理客户端证书的指纹和只读用户客户端证书的指纹（如果适用）。当管理员尝试连接群集时，仅当他们的证书指纹与此处输入的指纹值匹配时，才被授予访问权限。
 
 
-#### 4\.摘要
+####<a name="step-4--complete-the-cluster-creation"></a> 4\.摘要
 
 ![显示“正在部署 Service Fabric 群集”的开始面板屏幕截图。][Notifications]  
 

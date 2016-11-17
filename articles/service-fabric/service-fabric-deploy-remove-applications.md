@@ -15,10 +15,10 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/25/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/17/2016"
    ms.author="ryanwi"/>
 
-# 部署和删除使用 PowerShell 的应用程序
+#<a name="deploy-an-application"></a> 部署和删除使用 PowerShell 的应用程序
 
 [打包应用程序类型后][10]，就可以部署到 Azure Service Fabric 群集中。部署涉及以下三个步骤：
 
