@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="08/15/2016"
-	wacn.date="09/19/2016"
-	ms.author="sstein"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date="09/19/2016" />
 
 
 # 使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件

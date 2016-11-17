@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/14/2016"
-	ms.author="mcollier"/>  
+	ms.author="mcollier"
+	wacn.date="11/14/2016"/>  
 
 
 # Azure 监视 REST API 演练

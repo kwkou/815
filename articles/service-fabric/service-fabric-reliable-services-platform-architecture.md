@@ -9,13 +9,8 @@
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="03/30/2016"
-   wacn.date="07/04/2016"
-   ms.author="alanwar"/>
+   wacn.date="07/04/2016"/>
 
 # 有状态和无状态 Reliable Services 的体系结构
 

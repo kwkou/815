@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
+   wacn.date="08/08/2016"/>
 
 # 迁移应用程序之前了解云服务与 Service Fabric 之间的差异。
 Azure Service Fabric 是面向高度可缩放、高度可靠分布式应用程序的下一代云应用程序平台。其中引入了许多用于打包、部署、更新和管理分布式云应用程序的新功能。

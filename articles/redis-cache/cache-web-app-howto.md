@@ -7,15 +7,10 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
-	ms.date="10/11/2016" 
-	wacn.date="09/05/2016" 
-	ms.author="sdanie"/>
+<tags
+	ms.service="cache"
+	ms.date="07/22/2016"
+	wacn.date="09/05/2016"/>
 
 # 如何使用 Redis 缓存创建 Web 应用
 

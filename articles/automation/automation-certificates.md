@@ -6,15 +6,10 @@
    authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="02/23/2016"
-   wacn.date="08/11/2016"
-   ms.author="magoedte;bwren" />
+   wacn.date="08/11/2016" />
 
 # Azure 自动化中的证书资产
 

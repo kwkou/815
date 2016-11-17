@@ -8,13 +8,8 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
-	ms.date="09/22/2016"
-	wacn.date="08/08/2016"
-	ms.author="jroth" />
+	ms.date="06/23/2016"
+	wacn.date="08/08/2016"/>
 
 # 连接到 Azure 上的 SQL Server 虚拟机（经典部署）
 

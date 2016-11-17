@@ -8,15 +8,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="02/29/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="02/29/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 Web 应用

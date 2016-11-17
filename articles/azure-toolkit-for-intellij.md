@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="multiple"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="09/20/2016"
-	wacn.date="09/28/2016" 
-	ms.author="robmcm;asirveda"/>
+	ms.date="07/07/2016" 
+	wacn.date="09/28/2016"/>
 
 # Azure Toolkit for IntelliJ
 

@@ -10,14 +10,9 @@
   		tags="azure-service-management"/>
 
 <tags
-		ms.service="virtual-machines-linux"
-		ms.workload="infrastructure-services"
-		ms.tgt_pltfrm="vm-linux"
-		ms.devlang="na"
-		ms.topic="article"
-		ms.date="12/15/2015"
-		wacn.date="07/11/2016"
-		ms.author="Ning"/>
+	ms.service="virtual-machines-linux"
+	ms.date="12/15/2015"
+	wacn.date="07/11/2016"/>
 
 
 # 使用 Linux 诊断扩展监视 Linux VM 的性能和诊断数据

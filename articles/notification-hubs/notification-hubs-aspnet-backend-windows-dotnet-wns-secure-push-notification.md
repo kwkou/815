@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="notification-hubs" 
-	ms.workload="mobile"
-	ms.tgt_pltfrm="windows"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/08/2016"
-	ms.author="wesmc"/>
+	wacn.date="08/08/2016"/>
 
 #Azure 通知中心安全推送
 

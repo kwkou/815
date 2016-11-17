@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/05/2016" 
-	ms.author="robmcm"/>
+	wacn.date="09/05/2016"/>
 
 # 使用存储构建 Node.js Web 应用程序
 

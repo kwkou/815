@@ -7,15 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-xamarin-ios"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="07/21/2016"
-	wacn.date="09/26/2016" 
-	ms.author="donnam"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.date="07/21/2016" 
+	wacn.date="09/26/2016"/>
 
 # 向移动服务应用程序添加身份验证
 

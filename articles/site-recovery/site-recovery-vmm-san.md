@@ -7,15 +7,10 @@
 	manager="jwhit" 
 	editor="tysonn"/>
 
-<tags
-	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="site-recovery" 
 	ms.date="07/06/2016"
-	wacn.date="08/01/2016"
-	ms.author="raynew"/>
+	wacn.date="08/01/2016"/>
 
 # 通过 Azure Site Recovery 使用 SAN 将 VMM 云中的 Hyper-V VM 复制到辅助站点
 

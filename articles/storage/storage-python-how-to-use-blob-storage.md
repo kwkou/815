@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-    ms.date="09/20/2016"
-    wacn.date="11/07/2016"
+	ms.date="09/20/2016"
+	wacn.date="11/07/2016"
 	ms.author="jwillis;tamram"/>
 
 # 如何通过 Python 使用 Azure Blob 存储

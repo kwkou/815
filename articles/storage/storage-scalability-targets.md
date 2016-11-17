@@ -6,15 +6,10 @@
 	authors="tamram"
 	manager="na"
 	editor="na" />
-<tags
+<tags 
 	ms.service="storage"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage"
-	ms.date="08/03/2016"
-	wacn.date="11/16/2016"
-	ms.author="jahogg;robinsh" />
+   ms.date="08/03/2016"
+	wacn.date="11/16/2016" />
 
 # Azure 存储空间可伸缩性和性能目标
 

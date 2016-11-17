@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/14/2016"
-	wacn.date="03/10/2016"
-	ms.author="douglasl"/>
+	ms.date="02/26/2016"
+	wacn.date="03/10/2016"/>
 
 # 暂停和恢复数据迁移（SQL Server Stretch Database）
 

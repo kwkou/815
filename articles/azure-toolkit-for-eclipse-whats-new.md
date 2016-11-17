@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="multiple"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/26/2016"
-	wacn.date="08/01/2016" 
-	ms.author="robmcm;asirveda;martinsawicki"/>
+	ms.date="06/24/2016" 
+	wacn.date="08/01/2016"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694270.aspx -->
 

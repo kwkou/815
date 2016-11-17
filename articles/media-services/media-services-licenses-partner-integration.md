@@ -8,15 +8,10 @@
 	editor=""/>  
 
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/26/2016" 
-	wacn.date="08/22/2016"  
-	ms.author="juliako"/>
+<tags
+	ms.service="media-services"
+	ms.date="06/22/2016"  
+	wacn.date="08/22/2016"/>
 
 
 #使用合作伙伴将 Widevine 许可证传送到 Azure 媒体服务

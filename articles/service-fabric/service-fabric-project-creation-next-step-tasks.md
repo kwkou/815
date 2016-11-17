@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="07/08/2016"
-   wacn.date="08/08/2016"
-   ms.author="seanmck"/>
+   wacn.date="08/08/2016"/>
 
 # Service Fabric 应用程序和后续步骤
 已创建你的 Azure Service Fabric 应用程序。本文说明项目的构成以及有可能要执行的一些后续步骤。

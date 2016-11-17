@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="10/17/2016"
-	ms.author="mahender"/>
+	ms.date="05/05/2016"
+	wacn.date="10/17/2016"/>
 
 # Azure 移动应用中的身份验证和授权
 

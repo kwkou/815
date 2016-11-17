@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows-phone"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.date="10/03/2016"
-	wacn.date="08/23/2016"
-	ms.author="wesmc"/>  
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016"/>  
 
 # 在 Windows Phone 上借助 Azure 通知中心发送推送通知
 

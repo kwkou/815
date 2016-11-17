@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/19/2016"
-	wacn.date="05/16/2016"  
-	ms.author="adsolank"/>
+	ms.date="04/14/2016"   
+	wacn.date="05/16/2016"/>
 
 
 # Hyperlapse 媒体文件与 Azure Media Hyperlapse

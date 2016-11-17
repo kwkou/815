@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/26/2016"
-	wacn.date="10/26/2016"
-	ms.author="trinadhk;jimpark;"/>
+	ms.author="trinadhk;jimpark;"
+	wacn.date="10/26/2016"/>
 
 
 # Azure 虚拟机备份疑难解答

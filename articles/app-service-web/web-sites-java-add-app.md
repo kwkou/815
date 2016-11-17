@@ -8,14 +8,9 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
+	ms.service="app-service-web"
 	ms.date="08/11/2016" 
-	wacn.date="09/30/2016" 
-	ms.author="robmcm"/>
+	wacn.date="09/30/2016"/>
 
 # 将 Java 应用程序添加到 Azure App Service Web 应用
 

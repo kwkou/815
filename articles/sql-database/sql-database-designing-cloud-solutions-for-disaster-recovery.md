@@ -10,13 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management"
    ms.date="07/20/2016"
-   wacn.date="09/19/2016"
-   ms.author="sashan"/>
+   wacn.date="09/19/2016"/>
 
 # 使用 SQL 数据库中的活动异地复制功能为云灾难恢复设计应用程序
 

@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/12/2016"
-	wacn.date="11/14/2016"
-	ms.author="johnkem; magoedte"/>  
+	ms.author="johnkem; magoedte"
+	wacn.date="11/14/2016"/>  
 
 
 # Azure 诊断日志概述

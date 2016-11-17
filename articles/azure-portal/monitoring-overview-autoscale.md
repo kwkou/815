@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="10/17/2016"
-	ms.author="robb"/>  
+	ms.author="robb"
+	wacn.date="10/17/2016"/>  
 
 
 # Azure 虚拟机、云服务和 Web 应用自动缩放概述

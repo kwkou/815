@@ -9,14 +9,9 @@
  tags="azure-resource-manager,azure-service-management"/>  
 
 <tags
-ms.service="virtual-machines-linux"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-linux"
- ms.workload="infrastructure-services"
- ms.date="09/22/2016"
- wacn.date="09/05/2016"
- ms.author="cynthn"/>
+	ms.service="virtual-machines-linux"
+	ms.date="07/18/2016"
+	wacn.date="09/05/2016"/>
 
 # Linux VM 的计算基准测试分数
 

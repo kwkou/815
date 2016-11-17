@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management"
    ms.date="06/09/2016"
-   wacn.date="07/25/2016"
-   ms.author="thmullan;jackr"/>
+   wacn.date="07/25/2016"/>
 
 
 # 保护你的 SQL 数据库

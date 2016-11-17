@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="08/19/2016"
-	wacn.date="10/25/2016"
-	ms.author="jroth"/>
+	wacn.date="10/25/2016"/>
 
 # 将 Azure 高级存储用于虚拟机上的 SQL Server
 

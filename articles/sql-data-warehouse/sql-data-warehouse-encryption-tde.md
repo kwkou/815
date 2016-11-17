@@ -14,9 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="09/24/2016"
-   wacn.date="10/31/2016" 
-   ms.author="rortloff;barbkess;sonyama"/>  
+   ms.date="09/24/2016" 
+   wacn.date="10/31/2016"/>  
 
 
 # SQL 数据仓库中的透明数据加密 (TDE) 入门

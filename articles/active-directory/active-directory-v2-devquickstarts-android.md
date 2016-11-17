@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
-	ms.author="brandwe"/>  
+	ms.author="brandwe"
+   	wacn.date="10/25/2016"/>  
 
 
 #  使用 v2.0 终结点，通过图形 API 将登录添加到使用第三方库的 Android 应用

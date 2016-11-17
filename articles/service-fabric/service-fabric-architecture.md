@@ -8,14 +8,9 @@
    editor="rishirsinha"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
+    ms.service="service-fabric"
    ms.date="06/09/2016"
-   wacn.date="08/08/2016"
-   ms.author="rsinha"/>
+    wacn.date="08/08/2016"/>
 
 # Service Fabric 体系结构
 

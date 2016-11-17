@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="08/19/2016" 
-	wacn.date="10/10/2016"   
+	wacn.date="10/10/2016"  
 	ms.author="juliako"/>
 
 # 使用 Azure 队列存储通过 .NET 监视媒体服务作业通知

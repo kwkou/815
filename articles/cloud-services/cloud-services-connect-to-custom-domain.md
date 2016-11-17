@@ -9,13 +9,8 @@
 
   <tags
     ms.service="cloud-services"
-    ms.workload="tbd"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
     ms.date="09/06/2016"
-    wacn.date="10/24/2016"
-    ms.author="adegeo"/>
+    wacn.date="10/24/2016"/>
 
 # 将 Azure 云服务角色连接到 Azure 中托管的自定义 AD 域控制器
 

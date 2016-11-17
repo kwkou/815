@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/08/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="arramac"/>  
+	ms.author="arramac"
+   	wacn.date="10/18/2016"/>  
 
 	
 # Azure DocumentDB 中的自动索引

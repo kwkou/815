@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/12/2016"
-	ms.author="cynthn"/>  
+	wacn.date="09/12/2016"/>  
 
 
 # 创建 Windows Server VHD 并将其上载到 Azure

@@ -7,15 +7,10 @@
 	services="azure-portal"
 documentationCenter=""/>
 
-<tags
-	ms.service="monitoring-and-diagnostics"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="azure-portal" 
 	ms.date="09/08/2015"
-	wacn.date="10/17/2016"
-	ms.author="robb"/>
+	wacn.date="10/17/2016"/>
 
 # 监视服务指标
 

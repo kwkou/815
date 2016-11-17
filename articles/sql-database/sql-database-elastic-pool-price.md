@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="05/27/2016"
-	wacn.date="07/18/2016"
-	ms.author="srinia"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date="07/18/2016" />
 
 
 # 弹性数据库池计费和定价信息

@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/26/2016"
-	wacn.date="10/25/2016"
-	ms.author="v-livech"/>
+	wacn.date="10/25/2016"/>
 
 # 通过配置 SSHD 禁用 Linux VM 上的 SSH 密码
 

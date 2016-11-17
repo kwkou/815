@@ -7,15 +7,10 @@
 	manager="douge"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="dotnet"
-	ms.topic="article"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="mlearned"/>
+	wacn.date="09/26/2016"/>
 
 #  移动服务入门（.NET 项目）
 

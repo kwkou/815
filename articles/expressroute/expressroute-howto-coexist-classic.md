@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="10/31/2016"
-   ms.author="charwen"/>  
+   ms.author="charwen"
+   wacn.date="10/31/2016"/>  
 
 
 # 为经典部署模型配置 ExpressRoute 和站点到站点共存连接

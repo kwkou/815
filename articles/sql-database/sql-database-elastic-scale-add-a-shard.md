@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="05/27/2016" 
-	wacn.date="07/18/2016" 
-	ms.author="ddove"/>
+	wacn.date="07/18/2016"/>
 
 # 使用弹性数据库工具添加分片
 

@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="07/14/2016"
-	wacn.date="11/04/2016"
-	ms.author="jroth"/>
+	wacn.date="11/04/2016"/>
 
 # 为 Azure VM (Resource Manager) 上的 SQL Server 配置 Azure 密钥保管库集成
 

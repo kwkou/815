@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="05/27/2016" 
-	wacn.date="11/16/2016" 
-	ms.author="torsteng"/>
+	wacn.date="11/16/2016"/>
 
 # 将弹性数据库客户端库与实体框架配合使用 
  

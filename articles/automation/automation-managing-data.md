@@ -8,13 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="05/02/2016"
-   wacn.date="08/11/2016"
-   ms.author="bwren;sngun" />
+   wacn.date="08/11/2016" />
 
 # 管理 Azure 自动化数据
 

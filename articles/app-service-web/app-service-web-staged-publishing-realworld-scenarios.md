@@ -8,14 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="app-service"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="web"
-   ms.date="05/31/2016"
-   wacn.date="09/26/2016"
-   ms.author="sumuth"/>
+	ms.service="app-service"
+	ms.date="05/31/2016"
+	wacn.date="09/26/2016"/>
 
 # 对 Web 应用有效使用 DevOps 环境
 

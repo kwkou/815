@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/21/2016"
-	wacn.date="10/26/2016"
-	ms.author="trinadhk;giridham;jimpark;markgal"/>
+	ms.author="trinadhk;giridham;jimpark;markgal"
+   	wacn.date="10/26/2016"/>
 
 # 使用 DPM 准备将工作负荷备份到 Azure
 

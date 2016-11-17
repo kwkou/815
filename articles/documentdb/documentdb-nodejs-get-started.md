@@ -9,14 +9,9 @@
   	editor="monicar"/>
 
 <tags
-  ms.service="documentdb"
-  ms.workload="data-services"
-  ms.tgt_pltfrm="na"
-  ms.devlang="node"
-  ms.topic="hero-article"
-  ms.date="08/11/2016"
-  wacn.date="09/19/2016"
-  ms.author="anhoh"/>
+	ms.service="documentdb"
+  	ms.date="08/11/2016"
+	wacn.date="09/19/2016"/>
 
 # NoSQL Node.js 教程：DocumentDB Node.js 控制台应用程序  
 

@@ -7,15 +7,10 @@
    manager="rossort"
    editor=""
    tags="azure-resource-manager"/>
-<tags  
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/02/2016"
-   wacn.date="10/25/2016"
-   ms.author="amitsriva" />
+<tags
+	ms.service="application-gateway"
+	ms.date="09/02/2016"
+	wacn.date="10/25/2016"/>
 
 #排查应用程序网关中的网关无效错误
 

@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
 	ms.date="09/28/2015"
-	wacn.date="06/06/2016"
-	ms.author="dastrock"/>
+	wacn.date="06/06/2016" />
 
 # 如何获取 Azure Active Directory 租户
 

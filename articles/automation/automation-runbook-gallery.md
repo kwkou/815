@@ -8,13 +8,8 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
 	ms.date="09/18/2016"
-	wacn.date="10/25/2016"
-	ms.author="magoedte;bwren" />
+	wacn.date="10/25/2016"/>
 
 
 # Azure 自动化的 Runbook 和模块库

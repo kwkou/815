@@ -14,8 +14,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="brandwe"/>  
+	ms.author="brandwe"
+	wacn.date="10/17/2016"/>  
 
 
 # 节点 WEB API 入门

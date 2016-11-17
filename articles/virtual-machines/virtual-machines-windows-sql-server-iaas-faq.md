@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="09/13/2016"
-	wacn.date="10/25/2016"
-	ms.author="v-shysun"/>
+	wacn.date="10/25/2016"/>
 
 # Azure 虚拟机中的 SQL Server 常见问题
 

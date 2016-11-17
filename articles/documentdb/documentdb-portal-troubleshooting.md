@@ -14,8 +14,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/29/2016"
-    wacn.date="10/18/2016"
-    ms.author="mimig"/>  
+    ms.author="mimig"
+    wacn.date="10/18/2016"/>  
 
 
 # Azure DocumentDB 门户故障排除提示

@@ -8,14 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/11/2016"
-   wacn.date="09/30/2016"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="07/25/2016"
+	wacn.date="09/30/2016"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (Java)
 

@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.devlang="NA"
-	ms.tgt_pltfrm="NA"
-	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/19/2016"
-	ms.author="alainl"/>
+	wacn.date="09/19/2016"/>
 
 
 # 已改善 Azure SQL 数据库中兼容级别 130 的查询性能

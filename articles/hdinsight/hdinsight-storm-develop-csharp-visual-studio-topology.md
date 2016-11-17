@@ -9,14 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="java"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/17/2016"
-   wacn.date="10/25/2016"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="09/14/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用 Hadoop Tools for Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑
 

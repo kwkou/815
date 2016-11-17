@@ -15,8 +15,8 @@
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
     ms.date="08/08/2016" 
-    wacn.date="10/18/2016" 
-    ms.author="arramac"/>  
+    ms.author="arramac"
+    wacn.date="10/18/2016"/>  
 
 
 

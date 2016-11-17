@@ -8,14 +8,9 @@
 	editor=""/>
 
 <tags 
-    ms.service="cloud-services" 
-    ms.workload="tbd" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/04/2015" 
-    wacn.date="10/17/2015" 
-    ms.author="robb"/>
+	ms.service="cloud-services" 
+	ms.date="08/04/2015" 
+	wacn.date="10/17/2015"/>
 
 
 #如何监视云服务

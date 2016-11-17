@@ -10,13 +10,8 @@
 
 <tags
  ms.service="iot-suite"
- ms.devlang="na"
- ms.topic="get-started-article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
  ms.date="08/09/2016"
- wacn.date="09/05/2016"
- ms.author="dobett"/>  
+ wacn.date="09/05/2016"/>  
 
 
 # Azure IoT 套件预配置解决方案是什么？

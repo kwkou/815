@@ -14,8 +14,8 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="04/29/2016"
- wacn.date="11/07/2016"
- ms.author="cstreet"/>
+ ms.author="cstreet"
+ wacn.date="11/07/2016"/>
 
  
 # 在 IoT 网关后启用托管设备

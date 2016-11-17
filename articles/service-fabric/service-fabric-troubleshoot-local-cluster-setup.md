@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="07/08/2016"
-   wacn.date="08/08/2016"
-   ms.author="seanmck"/>
+   wacn.date="08/08/2016"/>
 
 # 排除本地开发群集安装的故障
 

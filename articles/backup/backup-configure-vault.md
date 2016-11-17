@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="11/11/2016"
-	ms.author="jimpark; trinadhk; markgal"/>  
+	wacn.date="11/11/2016"/>  
 
 
 # 通过 Resource Manager 部署模型将 Windows Server 或客户端备份到 Azure

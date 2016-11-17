@@ -15,8 +15,8 @@
     ms.devlang="python"
     ms.topic="hero-article"
     ms.date="08/25/2016"
-    wacn.date="10/18/2016"
-    ms.author="syamk"/>
+    ms.author="anhoh"
+    wacn.date="10/18/2016"/>
 
 # 使用 DocumentDB 开发 Python Flask Web 应用程序
 

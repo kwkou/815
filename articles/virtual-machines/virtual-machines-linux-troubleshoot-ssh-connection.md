@@ -11,13 +11,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="08/15/2016"
-	ms.author="iainfou"/>
+	ms.date="07/06/2016"
+	wacn.date="08/15/2016"/>
 
 # 对通过 SSH 连接到 Azure Linux VM 失败、出现错误或被拒绝进行故障排除
 

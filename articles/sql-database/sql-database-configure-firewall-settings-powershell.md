@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="08/09/2016"
-	wacn.date="09/19/2016"
-	ms.author="sstein"/>
+	wacn.date="09/19/2016"/>
 
 
 # 使用 PowerShell 配置 Azure SQL 数据库服务器级防火墙规则

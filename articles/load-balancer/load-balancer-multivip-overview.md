@@ -16,7 +16,6 @@
    ms.workload="infrastructure-services"
    ms.date="08/11/2016"
    wacn.date="10/31/2016"
-   ms.author="chkuhtz"
 />  
 
 

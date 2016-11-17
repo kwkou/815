@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="PHP"
-	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/26/2016"
-	ms.author="robmcm"/>
+	wacn.date="09/26/2016"/>
 
 # 如何创建 PHP Web 角色和辅助角色
 

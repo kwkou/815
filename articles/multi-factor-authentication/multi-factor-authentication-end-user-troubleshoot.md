@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/10/2016"
-	wacn.date="11/16/2016"
-	ms.author="kgremban"/>  
+	ms.author="kgremban"
+	wacn.date="11/16/2016"/>  
 
 
 # 执行双重验证时遇到问题

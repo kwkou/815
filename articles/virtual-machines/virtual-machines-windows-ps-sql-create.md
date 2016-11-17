@@ -7,15 +7,10 @@
     manager="jhubbard"
     editor=""
     tags="azure-resource-manager" />
-<tags
-    ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
-	ms.date="07/15/2016"
-	wacn.date="11/04/2016"
-	ms.author="jroth"/>
+<tags 
+	ms.service="virtual-machines-windows"
+	ms.date="04/20/2016"
+	wacn.date="11/04/2016"/>
 
 # 使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)
 

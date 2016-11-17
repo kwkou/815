@@ -6,15 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="01/27/2016"
-   wacn.date="08/11/2016"
-   ms.author="bwren" />
+   wacn.date="08/11/2016" />
 
 # Azure 自动化中的连接资产
 

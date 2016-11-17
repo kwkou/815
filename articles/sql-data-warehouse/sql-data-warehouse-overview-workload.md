@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
    ms.date="07/25/2016"
-   wacn.date="09/05/2016"
-   ms.author="barbkess;mausher;jrj;sonyama"/>
+   wacn.date="09/05/2016"/>
 
 
 # 数据仓库工作负荷

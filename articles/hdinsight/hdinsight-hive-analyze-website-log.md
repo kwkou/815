@@ -8,15 +8,10 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/17/2016" 
-	wacn.date="07/28/2016" 
-	ms.author="nitinme"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="05/17/2016"
+	wacn.date="07/28/2016"/>
 
 # 将 Hive 与 HDInsight 配合使用来分析来自网站的日志
 

@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="06/22/2016"
-	wacn.date="08/15/2016"
-	ms.author="ninarn"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date="08/15/2016"/>
 
 
 # 使用 Azure 门户预览监视和管理弹性数据库池

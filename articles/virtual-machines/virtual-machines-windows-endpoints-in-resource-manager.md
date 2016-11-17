@@ -8,14 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="virtual-machines-windows"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
-   wacn.date="09/30/2016"
-   ms.author="iainfou"/>
+	ms.service="virtual-machines-windows"
+	ms.date="08/09/2016"
+	wacn.date="09/30/2016"/>
 
 # Resource Manager 中的经典终结点
 [AZURE.INCLUDE [virtual-machines-common-endpoints-in-resource-manager](../../includes/virtual-machines-common-endpoints-in-resource-manager.md)]

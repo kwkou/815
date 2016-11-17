@@ -7,15 +7,10 @@
 	manager="femila"
 	editor="curtand"/>  
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="active-directory"  
 	ms.date="08/12/2016"
-	wacn.date="09/05/2016"
-	ms.author="asteen"/>  
+	wacn.date="09/05/2016"/>  
 
 # 如何排查密码管理问题
 

@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="10/18/2016"
-	ms.author="kirillg"/>
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>
 
 # 使用 DocumentDB 文档资源管理器查看、编辑、创建和上传 JSON 文档
 

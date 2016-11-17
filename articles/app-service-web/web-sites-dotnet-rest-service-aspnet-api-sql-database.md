@@ -8,15 +8,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="02/29/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="riande"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="02/29/2016"
+	wacn.date="09/26/2016"/>
 
 # 在 Azure App Service 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 

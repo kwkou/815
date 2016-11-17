@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="06/20/2016"
-	wacn.date="07/18/2016"
-	ms.author="jolevy"/>
+	wacn.date="07/18/2016"/>
 
 
 

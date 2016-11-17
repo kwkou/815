@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
-	ms.date="09/19/2016"
-	wacn.date="11/15/2016"
-	ms.author="sstein"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	ms.date="06/16/2016"
+	wacn.date=07/11/2016/>
 
 
 

@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/15/2016"
-	wacn.date="10/17/2016"
-	ms.author="ashwink"/>  
+	ms.author="ashwink"
+	wacn.date="10/17/2016"/>  
 
 
 # 针对 Azure 度量值警报配置 webhook

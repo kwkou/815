@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="06/27/2016"
-	wacn.date="08/01/2016"
-	ms.author="billmath"/>
+	wacn.date="08/01/2016"/>
 
 # Azure AD Connect：有关实例的特殊注意事项
 Azure AD Connect 最常用于全球范围内的 Azure AD 和 Office 365 实例。但也有其他实例，这些实例对 URL 具有不同的要求并且具有其他的特殊注意事项。

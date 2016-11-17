@@ -9,13 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="powershell"
-   ms.workload="NA"
     ms.date="07/14/2016"
-    wacn.date="09/19/2016"
-    ms.author="sstein"/>
+    wacn.date="09/19/2016"/>
 
 # 使用 PowerShell 为 Azure SQL 数据库配置异地复制
 

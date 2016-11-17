@@ -7,15 +7,10 @@
 	manager="dwrede" 
 	editor="mollybos"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-xamarin-android"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="07/21/2016"
-	wacn.date="09/26/2016" 
-	ms.author="donnam"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.date="07/21/2016" 
+	wacn.date="09/26/2016"/>
 
 # 移动服务中的身份验证入门
 

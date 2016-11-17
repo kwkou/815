@@ -10,13 +10,8 @@
 
 <tags
    ms.service="vpn-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="04/15/2016"
-   wacn.date="06/30/2016"
-   ms.author="yushwang"/>
+   wacn.date="06/30/2016"/>
 
 # 如何使用 Azure 资源管理器 和 PowerShell 在 Azure VPN 网关上配置 BGP
 

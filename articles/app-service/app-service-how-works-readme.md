@@ -8,15 +8,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
-	ms.date="02/10/2016" 
-	wacn.date="11/14/2016" 
-	ms.author="yochay"/>
+<tags
+	ms.service="app-service"
+	ms.date="02/10/2016"
+	wacn.date="11/14/2016"/>
 
 # 应用服务工作方式
 

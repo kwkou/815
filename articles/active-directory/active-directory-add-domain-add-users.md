@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/04/2016"
-	wacn.date="10/31/2016"
-	ms.author="curtand;jeffsta"/>  
+	ms.author="curtand;jeffsta"
+	wacn.date="10/31/2016"/>  
 
 
 # 将用户分配到自定义域

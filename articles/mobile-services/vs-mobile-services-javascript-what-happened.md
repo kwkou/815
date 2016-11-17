@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
-	ms.devlang="JavaScript" 
-	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="mlearned"/>
+	wacn.date="09/26/2016"/>
 
 # 当我使用连接的 Visual Studio 服务添加 Azure 移动服务时，我的 Javascript 项目会发生什么情况？
 

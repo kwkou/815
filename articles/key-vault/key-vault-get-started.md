@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="key-vault"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="10/10/2016"
-	wacn.date="05/13/2016"
-	ms.author="cabailey"/>
+	ms.date="04/07/2016"
+	wacn.date="05/13/2016"/>
 
 # Azure 密钥保管库入门 #
 在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/pricing/details/key-vault/)。

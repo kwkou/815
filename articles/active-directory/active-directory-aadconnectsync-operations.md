@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/01/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
+   ms.author="andkjell"
+   wacn.date="10/11/2016"/>
 
 # Azure AD Connect 同步：操作任务和注意事项
 本主题旨在介绍 Azure AD Connect 同步的操作任务。

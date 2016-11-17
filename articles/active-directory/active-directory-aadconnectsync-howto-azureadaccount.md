@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/01/2016"
-	wacn.date="10/11/2016"
-	ms.author="billmath"/>
+	ms.author="andkjell"
+	wacn.date="10/11/2016"/>
 
 # Azure AD Connect 同步：如何管理 Azure AD 服务帐户
 Azure AD 连接器所使用的服务帐户应该是免费服务。但如果需要重置其凭据，则可以参阅本主题。例如，全局管理员错误地使用 PowerShell 对服务帐户重置了密码。

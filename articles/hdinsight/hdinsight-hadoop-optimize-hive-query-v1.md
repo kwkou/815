@@ -9,13 +9,8 @@
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
    ms.date="07/28/2015"
-   wacn.date="01/15/2016"
-   ms.author="rashimg"/>
+   wacn.date="01/15/2016"/>
 
 
 # 在 Hdinsight 中优化 Hadoop 的 Hive 查询

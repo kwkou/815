@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/11/2016"
-	ms.author="curtand"/>
+	ms.author="curtand"
+	wacn.date="10/11/2016"/>
 
 # 已重置用户的密码
 

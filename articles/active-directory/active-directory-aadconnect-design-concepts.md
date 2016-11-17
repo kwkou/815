@@ -9,14 +9,13 @@
 
 <tags
    ms.service="active-directory"
-   ms.custom = "azure-ad-connect"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="Identity"
    ms.date="09/13/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
+   ms.author="andkjell"
+   wacn.date="10/11/2016"/>
 
 # Azure AD Connect：设计概念
 本主题旨在说明 Azure AD Connect 实现设计期间必须考虑到的各个方面。本主题是特定领域的深入探讨，其他主题中也简要描述了这些概念。

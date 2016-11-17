@@ -7,14 +7,9 @@
    manager="carmonm"
    editor="tysonn" />
 <tags
-   ms.service="dns"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/31/2016"
-   wacn.date="10/25/2016"
-   ms.author="sewhee" />
+	ms.service="virtual-network"
+	ms.date="08/31/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 使用动态 DNS 在自己的 DNS 服务器中注册主机名

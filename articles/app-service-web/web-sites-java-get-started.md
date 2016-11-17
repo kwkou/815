@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="get-started-article"
 	ms.date="08/11/2016"
-	wacn.date="09/26/2016"
-	ms.author="robmcm"/>
+	wacn.date="09/26/2016"/>
 
 # 在 Azure App Service 中创建 Java Web 应用
 

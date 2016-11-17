@@ -10,15 +10,10 @@
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="02/04/2016"
-   wacn.date="07/04/2016"
-   ms.author="jdial" />
+<tags
+	ms.service="virtual-network"
+	ms.date="02/04/2016"
+	wacn.date="07/04/2016"/>
 
 # 如何在 Azure 门户预览中设置静态专用 IP 地址（经典）
 

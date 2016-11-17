@@ -12,13 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="09/27/2016"
-	wacn.date="07/28/2016"
-	ms.author="davidmu"/>
+	ms.date="06/07/2016"
+	wacn.date="07/28/2016"/>
 
 # 使用 Resource Manager 和 PowerShell 创建 Windows VM
 

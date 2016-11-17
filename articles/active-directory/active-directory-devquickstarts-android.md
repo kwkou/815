@@ -14,8 +14,8 @@
 	ms.devlang="java"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/11/2016"
-	ms.author="brandwe"/>
+	ms.author="brandwe"
+	wacn.date="10/11/2016"/>
 
 # 将 Azure AD 集成到 Android 应用程序中
 

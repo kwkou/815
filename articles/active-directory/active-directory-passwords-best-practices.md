@@ -7,15 +7,10 @@
 	manager="femila"
 	editor="curtand"/>  
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="active-directory"  
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016"
-	ms.author="asteen"/>  
+	wacn.date="08/22/2016"/>  
 
 # 部署密码管理并向用户培训其用法
 启用密码重置之后，必须执行的下一个步骤就是让用户使用你组织中的服务。为此，需要确保已正确将用户配置为使用该服务，同时你必须培训用户，使他们可以顺利地管理其自己的密码。本文将解释以下概念：

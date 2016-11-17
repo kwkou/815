@@ -9,15 +9,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
+<tags 
+	ms.service="hdinsight" 
 	ms.date="09/14/2016"
-	wacn.date="10/25/2016"
-	ms.author="jgao"/>
+	wacn.date="10/25/2016"/>
 
 
 

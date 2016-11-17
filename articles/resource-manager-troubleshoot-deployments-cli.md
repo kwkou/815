@@ -15,8 +15,7 @@
    ms.tgt_pltfrm="vm-multiple"
    ms.workload="infrastructure"
    ms.date="08/15/2016"
-   wacn.date="10/10/2016"
-   ms.author="tomfitz"/>
+   wacn.date="10/10/2016" />
 
 # 使用 Azure CLI 查看部署操作
 

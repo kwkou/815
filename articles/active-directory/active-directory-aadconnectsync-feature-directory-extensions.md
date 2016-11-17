@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="08/19/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
+   ms.author="andkjell"
+   wacn.date="10/11/2016"/>
 
 # Azure AD Connect 同步：目录扩展
 目录扩展可让你使用本地 Active Directory 中自己的属性扩展 Azure AD 中的架构。此功能可以构建 LOB 应用来使用要在本地持续管理的属性。可以通过 [Azure AD Graph 目录扩展](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions)或 [Microsoft Graph](https://graph.microsoft.io) 使用这些属性。使用 [Azure AD Graph 资源管理器](https://graphexplorer.cloudapp.net)和 [Microsoft Graph 资源管理器](https://graphexplorer2.azurewebsites.net/)分别可以查看可用属性。

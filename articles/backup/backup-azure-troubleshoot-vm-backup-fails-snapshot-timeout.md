@@ -9,13 +9,8 @@
 
 <tags
     ms.service="backup"
-    ms.workload="storage-backup-recovery"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
     ms.date="07/14/2016"
-    wacn.date="08/22/2016"
-    ms.author="jimpark; markgal;genli"/>  
+    wacn.date="08/22/2016"/>  
 
 
 # Azure VM 备份失败：无法与 VM 代理通信以获取快照状态 - 快照 VM 子任务超时

@@ -13,8 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="08/31/2016"
-   wacn.date="10/10/2016"
-   ms.author="dugill;tomfitz" />
+   wacn.date="10/10/2016" />
 
 # 如何使用 Azure Active Directory 与 Resource Manager 管理客户的资源
 

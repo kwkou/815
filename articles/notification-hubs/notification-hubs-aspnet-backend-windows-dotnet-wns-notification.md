@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="10/03/2016"
-	wacn.date="08/02/2016"
-	ms.author="wesmc"/>
+	ms.date="06/29/2016"
+	wacn.date="08/02/2016"/>
 
 #Azure 通知中心 - 使用 .NET 后端通知用户
 

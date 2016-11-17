@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/10/2016"
-	wacn.date="09/30/2016"
-	ms.author="iainfou"/>
+	ms.date="07/20/2016"
+	wacn.date="09/30/2016"/>
 
 #在 Windows VM 上安装 MongoDB
 

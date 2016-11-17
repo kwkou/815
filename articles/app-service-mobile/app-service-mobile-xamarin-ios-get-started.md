@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.workload="na"
-	ms.tgt_pltfrm="mobile-xamarin-ios"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.date="10/01/2016"
-	wacn.date="09/26/2016"
-	ms.author="adrianha"/>
+	ms.date="08/04/2016"
+	wacn.date="09/26/2016"/>
 
 
 #创建 Xamarin iOS 应用

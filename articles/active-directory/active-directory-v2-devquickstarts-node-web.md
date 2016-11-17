@@ -11,12 +11,12 @@
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
-  ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
-	ms.author="brandwe"/>  
+	ms.author="brandwe"
+	wacn.date="10/25/2016"/>  
 
 
 # 将登录凭据添加到 nodeJS Web 应用

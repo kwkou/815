@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="multiple"
 	ms.date="10/14/2016"
-	wacn.date="11/16/2016"
-	ms.author="marsma"/>  
+	ms.author="marsma"
+	wacn.date="11/16/2016"/>  
 
 
 # 自动缩放 Azure Batch 池中的计算节点

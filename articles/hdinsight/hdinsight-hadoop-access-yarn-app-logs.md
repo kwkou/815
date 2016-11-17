@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"
-	ms.author="jgao"/>
+	wacn.date="09/30/2016"/>
 
 # 在基于 Windows 的 HDInsight 上访问 YARN 应用程序日志
 

@@ -9,13 +9,8 @@
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="05/17/2016"
-   wacn.date="07/04/2016"
-   ms.author="alanwar"/>
+   wacn.date="07/04/2016"/>
 
 # 有状态 Reliable Services 的诊断功能
 有状态 Reliable Services StatefulServiceBase 类会发出 [EventSource](https://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource.aspx) 事件，它们可以用于调试服务、提供对运行时运行方式的深入了解以及帮助进行故障排除。

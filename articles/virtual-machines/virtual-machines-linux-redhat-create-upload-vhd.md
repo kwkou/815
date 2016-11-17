@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="02/17/2016"
-	wacn.date="05/12/2016"
-	ms.author="mingzhan"/>
+	wacn.date="05/12/2016"/>
 
 
 # 为 Azure 准备基于 Red Hat 的虚拟机

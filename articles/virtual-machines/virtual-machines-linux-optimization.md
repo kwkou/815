@@ -11,13 +11,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="10/25/2016"
-	ms.author="rclaus"/>
+	wacn.date="10/25/2016"/>
 
 # 在 Azure 上优化 Linux VM
 

@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/08/2015"
-	wacn.date="11/14/2016"
-	ms.author="robb"/>
+	ms.author="robb"
+	wacn.date="11/14/2016"/>
 
 # 手动或自动缩放实例计数
 

@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/06/2016"
-   wacn.date="11/08/2016"
-   ms.author="mbaldwin"/>  
+   ms.author="mbaldwin"
+   wacn.date="11/08/2016"/>  
 
 
 # Azure AD 令牌参考

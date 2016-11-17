@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="10/31/2016"
-   ms.author="dkershaw;bryanla"/>
+   ms.author="dkershaw;bryanla"
+   wacn.date="10/31/2016"/>
 
 # 了解 Azure Active Directory 应用程序清单
 

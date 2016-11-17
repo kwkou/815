@@ -9,13 +9,8 @@
 
 <tags
    ms.service="batch"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="big-compute"
    ms.date="07/28/2016"
-   wacn.date="09/26/2016"
-   ms.author="danlep"/>
+   wacn.date="09/26/2016"/>
 
 # Azure 批处理 PowerShell cmdlet 入门
 本文将简要介绍可用于管理 Batch 帐户和处理 Batch 资源（例如池、作业和任务）的 Azure PowerShell cmdlet。你可以通过 Batch cmdlet 执行许多相同的任务，而 Batch cmdlet 可通过 Batch API 和 Azure 门户预览来执行。本文基于 Azure PowerShell 1.0 或更高版本中的 cmdlet。

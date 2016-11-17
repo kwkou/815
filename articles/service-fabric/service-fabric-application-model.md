@@ -8,14 +8,9 @@
    editor="mani-ramaswamy"/>
 
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/10/2016"
-   wacn.date="08/29/2016"   
-   ms.author="seanmck"/>
+    ms.service="service-fabric"
+   ms.date="08/10/2016"   
+    wacn.date="08/29/2016"/>
 
 # 在 Service Fabric 中对应用程序建模
 

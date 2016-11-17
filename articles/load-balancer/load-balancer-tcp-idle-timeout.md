@@ -6,15 +6,10 @@
    authors="joaoma"
    manager="carmonm"
    editor="tysonn" />
-<tags
+<tags 
    ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="03/03/2016"
-   wacn.date="08/29/2016"
-   ms.author="sewhee" />
+   wacn.date="08/29/2016" />
 
 
 # 如何更改负载均衡器的 TCP 空闲超时设置

@@ -7,15 +7,10 @@
 	manager="jeffreyg"
 	editor="monicar" 
 	tags="azure-service-management"/>
-<tags
+<tags 
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
-	ms.date="10/04/2016"
-	wacn.date="06/29/2016"
-	ms.author="asaxton" />
+	ms.date="05/13/2016"
+	wacn.date="06/29/2016" />
 
 # Azure 虚拟机中的 SQL Server Business Intelligence
 

@@ -7,15 +7,10 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="active-directory" 
 	ms.date="08/08/2016"
-	wacn.date="08/29/2016"
-	ms.author="billmath"/>
+	wacn.date="08/29/2016"/>
 
 # 后续步骤以及如何管理 Azure AD Connect
 以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。

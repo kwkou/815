@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="06/05/2016"
-	wacn.date="11/14/2016"
-	ms.author="mlearned"/>
+	ms.author="mlearned"
+	wacn.date="11/14/2016"/>
 
 
 # 教程：使用 Azure 门户进行开发运营

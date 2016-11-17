@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="07/11/2016"
-	ms.author="cynthn"/>
+	ms.date="05/25/2016"
+	wacn.date="07/11/2016"/>
 
 # 管理虚拟机的可用性
 

@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="04/14/2015"
-	wacn.date="01/21/2016"
-	ms.author="jparrel"/>
+	wacn.date="01/21/2016"/>
 
 # 使用负载均衡集群集化 Linux 上的 MySQL
 

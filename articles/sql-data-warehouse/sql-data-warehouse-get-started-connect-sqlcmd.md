@@ -16,8 +16,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="09/06/2016"
-   wacn.date="10/17/2016"
-   ms.author="barbkess;sonyama"/>  
+   wacn.date="10/17/2016" />  
 
 
 # 查询 Azure SQL 数据仓库 (sqlcmd)

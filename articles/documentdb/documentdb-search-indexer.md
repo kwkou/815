@@ -9,13 +9,8 @@
 
 <tags
     ms.service="documentdb"
-    ms.devlang="rest-api"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="data-services"
     ms.date="07/08/2016"
-    wacn.date="08/22/2016"
-    ms.author="denlee"/>
+    wacn.date="08/22/2016"/>
 
 #使用索引器连接 DocumentDB 和 Azure 搜索
 

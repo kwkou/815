@@ -14,8 +14,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="09/06/2016"
-    wacn.date="10/24/2016"
-    ms.author="adegeo"/>  
+    ms.author="adegeo"
+    wacn.date="10/24/2016"/>  
 
 
 # 什么是云服务模型以及如何将其打包？

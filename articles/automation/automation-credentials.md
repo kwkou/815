@@ -6,15 +6,10 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/09/2016"
-   wacn.date="08/11/2016"
-   ms.author="bwren" />
+<tags
+	ms.service="automation"
+	ms.date="06/09/2016"
+	wacn.date="08/11/2016"/>
 
 # Azure 自动化中的凭据资产
 

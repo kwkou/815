@@ -8,13 +8,8 @@ manager="timlt"
 editor=""/>
 <tags 
 ms.service="cloud-services" 
-ms.workload="tbd" 
-ms.tgt_pltfrm="na" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="08/10/2016" 
-wacn.date="09/26/2016" 
-ms.author="adegeo"/>
+ms.date="02/25/2016" 
+wacn.date="09/26/2016"/>
 
 # 使用 XPath 将角色配置设置公共为环境变量
 

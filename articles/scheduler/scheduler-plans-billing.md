@@ -14,7 +14,7 @@
  ms.topic="article"
  ms.date="08/18/2016"
  wacn.date="10/10/2016"
- ms.author="deli"/>
+ ms.author="krisragh"/>
 
 # Azure 计划程序中的计划和计费方式
 

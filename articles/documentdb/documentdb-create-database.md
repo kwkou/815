@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/17/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="mimig"/>  
+	ms.date="08/25/2016" 
+	ms.author="mimig"
+   	wacn.date="10/18/2016"/>  
 
 
 # 如何使用 Azure 门户预览创建 DocumentDB 数据库

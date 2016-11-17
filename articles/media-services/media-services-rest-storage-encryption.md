@@ -10,13 +10,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/26/2016" 
-	wacn.date="08/22/2016"
-	ms.author="juliako"/>
+	ms.date="06/22/2016"
+	wacn.date="08/22/2016"/>
 
 
 #使用 AMS REST API 通过存储空间加密来加密内容

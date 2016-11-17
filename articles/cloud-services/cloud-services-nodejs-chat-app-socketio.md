@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="robmcm"/>
+	wacn.date="09/26/2016"/>
 
 # 在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序
 

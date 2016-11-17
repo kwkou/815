@@ -8,15 +8,10 @@
 	editor=""
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags 
-	ms.service="virtual-machines-linux" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/17/2016" 
-	wacn.date="08/15/2016" 
-	ms.author="szark"/>
+<tags
+	ms.service="virtual-machines-linux"
+	ms.date="07/13/2016"
+	wacn.date="08/15/2016"/>
 
 
 

@@ -15,8 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/07/2016"
-   wacn.date="10/24/2016"
-   ms.author="tomfitz"/>  
+   wacn.date="10/24/2016"/>  
 
 
 # 使用门户创建可访问资源的 Active Directory 应用程序和服务主体

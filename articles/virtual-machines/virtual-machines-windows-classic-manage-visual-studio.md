@@ -7,14 +7,9 @@
    manager="douge"
    editor="" />
 <tags
-   ms.service="virtual-machines-windows"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows"
-   ms.workload="na"
-   ms.date="08/15/2016"
-   wacn.date="09/30/2016"
-   ms.author="tarcher" />
+	ms.service="virtual-machines-windows"
+	ms.date="08/15/2016"
+	wacn.date="09/30/2016"/>
 
 # 在 Visual Studio 中创建和管理 Windows 虚拟机
 

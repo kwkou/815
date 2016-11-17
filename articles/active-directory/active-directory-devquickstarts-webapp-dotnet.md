@@ -14,8 +14,8 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="dastrock"/>
+	ms.author="dastrock"
+	wacn.date="10/17/2016"/>
 
 # 使用 Azure AD 执行 Web 应用登录和注销
 

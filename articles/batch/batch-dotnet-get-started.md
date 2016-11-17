@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="batch"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-compute"
 	ms.date="08/15/2016"
-	wacn.date="09/12/2016"
-	ms.author="marsma"/>
+	wacn.date="09/12/2016"/>
 
 # 适用于 .NET 的 Azure Batch 库入门
 

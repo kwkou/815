@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="02/01/2016"
-	wacn.date="03/28/2016"
-	ms.author="mingzhan"/>
+	wacn.date="03/28/2016"/>
 
 
 #使用远程桌面连接到 Azure Linux VM

@@ -16,8 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/14/2016"
-   wacn.date="11/15/2016"
-   ms.author="annahar" />  
+   wacn.date="" />  
 
 
 # 开始使用 Azure 门户预览创建面向 Internet 的负载均衡器

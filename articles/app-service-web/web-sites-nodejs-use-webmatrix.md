@@ -7,15 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="08/11/2016" 
-	wacn.date="09/30/2016"
-	ms.author="robmcm"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="08/11/2016"
+	wacn.date="09/30/2016"/>
 
 
 # 使用 WebMatrix 构建 Node.js Web 应用并将其部署到 Azure

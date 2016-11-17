@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="10/12/2016" 
+	ms.date="10/12/2016"
 	wacn.date="11/14/2016"
 	ms.author="cenkdin;anilmur;juliako"/>  
 

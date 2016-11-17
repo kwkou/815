@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016"
-	ms.author="kgremban"/>  
+	wacn.date="08/22/2016"/>  
 
 # 基于角色的访问控制故障排除
 

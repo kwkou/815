@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
 	ms.date="08/25/2016"
-	wacn.date="10/25/2016"
-	ms.author="kgremban"/>  
+	ms.author="kgremban"
+   	wacn.date="10/25/2016"/>  
 
 
 #RBAC：内置角色

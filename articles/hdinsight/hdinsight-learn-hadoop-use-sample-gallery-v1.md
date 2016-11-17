@@ -8,14 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.workload="big-data"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.date="09/02/2016"
-   wacn.date="10/25/2016"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="09/02/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用 HDInsight 入门库了解 Hadoop
 

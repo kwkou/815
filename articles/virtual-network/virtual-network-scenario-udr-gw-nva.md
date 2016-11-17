@@ -6,15 +6,10 @@
    authors="telmosampaio"
    manager="christb"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="05/05/2016"
-   wacn.date="05/30/2016"
-   ms.author="jdial" />
+<tags
+	ms.service="virtual-network"
+	ms.date="05/05/2016"
+	wacn.date="05/30/2016"/>
 
 # 虚拟设备方案
 

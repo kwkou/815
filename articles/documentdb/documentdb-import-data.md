@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/06/2016"
-	wacn.date="10/18/2016"
-	ms.author="anhoh"/>  
+	ms.date="08/23/2016"
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>  
 
 
 # 使用数据库迁移工具将数据导入到 DocumentDB

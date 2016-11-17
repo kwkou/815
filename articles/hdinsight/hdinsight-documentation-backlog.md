@@ -8,14 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/05/2016"
-   wacn.date="07/28/2016"
-   ms.author="nitinme"/>
+	ms.service="hdinsight"
+	ms.date="06/01/2016"
+	wacn.date="07/28/2016"/>
 
 # Azure HDInsight 文档积压工作
 

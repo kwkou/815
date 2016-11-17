@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="02/12/2016"
-	wacn.date="09/26/2016"
-	ms.author="yochayk"/>
+	wacn.date="09/26/2016"/>
 
 
 # Azure App Service 和现有的 Azure 服务

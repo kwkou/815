@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="06/14/2016"
-	wacn.date="07/04/2016"
-	ms.author="douglasl"/>
+	wacn.date="07/04/2016"/>
 
 # 备份启用了延伸的数据库
 

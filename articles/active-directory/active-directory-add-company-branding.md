@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/30/2016"
-	wacn.date="10/31/2016"
-	ms.author="curtand"/>  
+	ms.author="curtand"
+	wacn.date="10/31/2016"/>  
 
 
 # 在登录页和访问面板页中添加公司品牌

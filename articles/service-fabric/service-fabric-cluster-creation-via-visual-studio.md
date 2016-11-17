@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="karolz@microsoft.com"/>
+   ms.date="06/27/2016"
+   wacn.date="08/08/2016"/>
 
 # 使用 Visual Studio 设置 Service Fabric 群集
 本文介绍如何使用 Visual Studio 和 Azure Resource Manager (ARM) 模板来设置 Azure Service Fabric 群集。我们将使用 Visual Studio Azure 资源组项目来创建模板。创建模板后，可以从 Visual Studio 直接将它部署到 Azure，不过也可以通过脚本使用它，或者将它用作连续集成 (CI) 工具的一部分。

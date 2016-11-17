@@ -12,9 +12,9 @@
 <tags
    ms.service="virtual-machines-windows"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="campaign-page"
    ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
+   ms.workload="na"
    ms.date="08/18/2016"
    wacn.date="10/17/2016"
    ms.author="goraco"/>  

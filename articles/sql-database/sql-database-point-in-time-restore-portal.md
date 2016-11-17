@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="07/17/2016"
-	wacn.date="09/26/2016"
-	ms.author="sstein"
-	ms.workload="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date="09/26/2016"/>
 
 
 # 使用 Azure 门户预览将 Azure SQL 数据库还原到之前的时间点

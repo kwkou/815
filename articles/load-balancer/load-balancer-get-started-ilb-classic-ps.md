@@ -8,15 +8,10 @@
    editor=""
    tags="azure-service-management"
 />
-<tags
+<tags  
    ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="02/09/2016"
-   wacn.date="08/29/2016"
-   ms.author="sewhee" />
+   wacn.date="08/29/2016" />
 
 # 开始使用 PowerShell 创建内部负载均衡器（经典）
 

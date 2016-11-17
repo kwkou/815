@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/27/2016"
-	wacn.date="07/11/2016"
-	ms.author="cynthn"/>
+	ms.date="05/17/2016"
+	wacn.date="07/11/2016"/>
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
 

@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/21/2016"
-	wacn.date="11/16/2016"
-	ms.author="marsma"/>  
+	ms.date="08/26/2016"
+	ms.author="marsma"
+  	wacn.date="11/16/2016"/>  
 
 
 # 使用 Azure 门户预览创建 Azure Batch 帐户

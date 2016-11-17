@@ -9,14 +9,9 @@
    manager="adinah"
    editor="tysonn" />
 <tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="03/15/2016"
-   wacn.date="07/12/2016"
-   ms.author="jdial" />
+	ms.service="virtual-network"
+	ms.date="03/15/2016"
+	wacn.date="07/12/2016"/>
 
 # 网络资源提供程序
 在当今社会要想获得业务成功，需要满足的一个基本需求就是，能够以灵活、弹性、安全且可重复的方式构建和管理可识别大型网络的应用程序。使用 Azure 资源管理器 (ARM) 可以在资源组中部署单个资源集合，从而可以创建此类应用程序。此类资源将通过 ARM 下的各种资源提供程序进行管理。

@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="11/15/2016"
-	ms.author="wesmc"/>
+	wacn.date=""/>
 
 #安全
 

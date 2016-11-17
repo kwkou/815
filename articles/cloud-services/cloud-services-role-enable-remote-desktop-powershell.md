@@ -6,15 +6,10 @@ documentationCenter=""
 authors="thraka" 
 manager="timlt" 
 editor=""/>
-<tags
-ms.service="cloud-services"
-ms.workload="tbd"
-ms.tgt_pltfrm="na"
-ms.devlang="na"
-ms.topic="article"
+<tags 
+ms.service="cloud-services" 
 ms.date="08/05/2016"
-wacn.date="09/19/2016"
-ms.author="adegeo"/>
+wacn.date="09/19/2016"/>
 
 # 使用 PowerShell 为 Azure 云服务中的角色启用远程桌面连接
 

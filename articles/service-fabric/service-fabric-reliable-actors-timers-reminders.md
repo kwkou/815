@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
+   wacn.date="08/08/2016"/>
 
 # 执行组件计时器和提醒
 执行组件可通过注册计时器或提醒来计划自身的定期工作。本文演示如何使用计时器和提醒，并说明它们之间的差异。

@@ -8,7 +8,7 @@
  editor=""
  tags="azure-service-management,hpc-pack"/>
 <tags
-ms.service="virtual-machines-windows"
+ ms.service="virtual-machines-windows"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="vm-windows"

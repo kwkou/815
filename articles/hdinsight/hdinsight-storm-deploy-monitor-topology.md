@@ -9,14 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="java"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="10/11/2016"
-   wacn.date="09/30/2016"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="07/26/2016"
+	wacn.date="09/30/2016"/>
 
 #在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑
 

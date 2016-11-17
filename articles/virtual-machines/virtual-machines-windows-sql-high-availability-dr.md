@@ -9,13 +9,8 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="07/12/2016"
-	wacn.date="08/23/2016"
-	ms.author="MikeRayMSFT" />
+	wacn.date="08/23/2016"/>
 
 # Azure 虚拟机中 SQL Server 的高可用性和灾难恢复
 

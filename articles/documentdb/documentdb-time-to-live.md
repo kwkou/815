@@ -10,13 +10,8 @@
 
 <tags
    ms.service="documentdb"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="04/28/2016"
-   wacn.date="06/29/2016"
-   ms.author="kipandya"/>
+   wacn.date="06/29/2016"/>
 
 # 利用 Time To Live 功能自动删除 DocumentDB 集合中的过期数据
 

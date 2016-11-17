@@ -7,15 +7,10 @@
 	manager="kbrint" 
 	editor="billmath"/>
 
-<tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="active-directory"  
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016"
-	ms.author="asteen"/>  
+	wacn.date="08/22/2016"/>  
 
 # 了解有关密码管理的详细信息
 

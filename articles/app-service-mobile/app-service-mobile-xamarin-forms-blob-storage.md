@@ -8,14 +8,9 @@
     services="app-service\mobile"/>
 
 <tags
-    ms.service="app-service-mobile"
-    ms.workload="mobile"
-    ms.tgt_pltfrm="mobile-xamarin-ios"
-    ms.devlang="dotnet"
-    ms.topic="article"
-    ms.date="10/01/2016"
-    wacn.date="09/26/2016"
-    ms.author="adrianha"/>
+	ms.service="app-service-mobile"
+	ms.date="05/10/2016"
+	wacn.date="09/26/2016"/>
 
 #在 Xamarin.Forms 应用中连接到 Azure 存储
 

@@ -10,13 +10,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/14/2016" 
-	wacn.date="08/08/2016" 
-	ms.author="andrl"/>
+	ms.date="03/30/2016" 
+	wacn.date="08/08/2016"/>
 
 # DocumentDB 服务器端编程：存储过程、数据库触发器和 UDF
 

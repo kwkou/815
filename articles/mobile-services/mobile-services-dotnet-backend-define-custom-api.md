@@ -7,15 +7,10 @@
 	manager="erikre"
 	editor=""/>
 
-<tags
+<tags 
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="glenga"/>
+	wacn.date="09/26/2016"/>
 
 
 # 如何：在 .NET 后端移动服务中定义自定义 API 终结点

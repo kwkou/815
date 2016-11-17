@@ -7,14 +7,9 @@
    manager="carmonm"
    editor="tysonn"/>
 <tags
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/09/2016"
-   wacn.date="10/25/2016"
-   ms.author="gwallace"/>
+	ms.service="application-gateway"
+	ms.date="09/09/2016"
+	wacn.date="10/25/2016"/>
 
 # 使用经典部署模型配置应用程序网关以进行 SSL 卸载
 

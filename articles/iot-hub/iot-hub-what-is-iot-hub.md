@@ -14,8 +14,8 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="08/25/2016"
- wacn.date="11/07/2016"
- ms.author="dobett"/>  
+ ms.author="dobett"
+ wacn.date="11/07/2016"/>  
 
 
 # Azure IoT 中心是什么？

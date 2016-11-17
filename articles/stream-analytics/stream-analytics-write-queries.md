@@ -16,8 +16,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016" 
-	ms.author="jeffstok"/>  
+	wacn.date="11/14/2016" />  
 
 
 # 如何使用流分析编写查询

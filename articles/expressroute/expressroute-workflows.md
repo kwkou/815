@@ -13,8 +13,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="11/16/2016"
-   ms.author="cherylmc"/>
+   ms.author="cherylmc"
+   wacn.date="11/16/2016"/>
 
 # ExpressRoute 线路预配工作流和线路状态
 本页从较高层面引导你完成服务预配和路由配置工作流。

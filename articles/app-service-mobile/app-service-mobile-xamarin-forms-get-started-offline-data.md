@@ -8,14 +8,9 @@
     services="app-service\mobile"/>
 
 <tags
-    ms.service="app-service-mobile"
-    ms.workload="mobile"
-    ms.tgt_pltfrm="mobile-xamarin-ios"
-    ms.devlang="dotnet"
-    ms.topic="article"
-	ms.date="10/04/2016"
-	wacn.date="09/26/2016"
-    ms.author="adrianha"/>
+	ms.service="app-service-mobile"
+	ms.date="06/18/2016"
+	wacn.date="09/26/2016"/>
 
 # 为 Xamarin.Forms 移动应用启用脱机同步
 

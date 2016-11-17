@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure-services"
 	ms.date="04/15/2015"
-	wacn.date="06/08/2016"
-	ms.author="v-ahsab"/>
+	wacn.date="06/08/2016"/>
 
 # MariaDB (MySQL) 
 

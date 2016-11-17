@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="mobile-baidu"
 	ms.workload="mobile"
 	ms.date="08/19/2016"
-	wacn.date="10/27/2016"
-	ms.author="wesmc"/>  
+	ms.author="wesmc"
+   	wacn.date="10/27/2016"/>  
 
 
 # 通过百度开始使用通知中心

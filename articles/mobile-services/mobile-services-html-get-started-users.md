@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="javascript" 
-	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="glenga"/>
+	wacn.date="09/26/2016"/>
 
 #  向移动服务应用程序添加身份验证 
 

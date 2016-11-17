@@ -14,9 +14,9 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/20/2016" 
-   wacn.date="10/31/2016"
-   ms.author="cherylmc"/>  
+   ms.date="09/20/2016"
+   ms.author="cherylmc"
+   wacn.date="10/31/2016"/>  
 
 
 # 在经典管理门户中为 ExpressRoute 创建虚拟网络

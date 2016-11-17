@@ -8,14 +8,9 @@
  editor=""
  tags="azure-service-management,hpc-pack"/>
 <tags
-ms.service="virtual-machines-windows"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="big-compute"
- ms.date="07/22/2016"
- wacn.date="09/30/2016"
- ms.author="danlep"/>
+	ms.service="virtual-machines-windows"
+	ms.date="07/22/2016"
+	wacn.date="09/30/2016"/>
 
 # 管理 Azure 的 HPC Pack 群集中计算节点的数量和可用性
 

@@ -8,15 +8,10 @@
 	editor="curtand"/>  
 
 
-<tags
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="10/17/2016"
-	wacn.date="11/16/2016"
-	ms.author="kgremban"/>
+<tags 
+	ms.service="multi-factor-authentication" 
+	ms.date="08/15/2016" 
+	wacn.date="11/16/2016"/>
 
 # 云中的 Azure 多重身份验证入门
 以下文章介绍如何在云中开始使用 Azure 多重身份验证。

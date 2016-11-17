@@ -10,15 +10,10 @@
    editor=""
    tags="azure-resource-manager"
 />
-<tags  
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="03/14/2016"
-   wacn.date="06/06/2016"
-   ms.author="jdial" />
+<tags
+	ms.service="virtual-network"
+	ms.date="03/14/2016"
+	wacn.date="06/06/2016"/>
 
 # 使用 Azure CLI 管理 NSG
 

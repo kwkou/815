@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/16/2015"
-	wacn.date="09/26/2016"
-	ms.author="naziml"/>
+	ms.date="12/10/2015"
+	wacn.date="09/26/2016"/>
 
 # Azure 应用服务安全性
 

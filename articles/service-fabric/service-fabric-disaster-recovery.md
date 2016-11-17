@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="08/10/2016"
-   wacn.date="08/29/2016"
-   ms.author="seanmck"/>
+   wacn.date="08/29/2016"/>
 
 # Azure Service Fabric 中的灾难恢复
 

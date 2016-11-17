@@ -9,13 +9,8 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
-	ms.date="10/07/2016"
-	wacn.date="08/23/2016"
-	ms.author="jroth" />
+	ms.date="07/15/2016"
+	wacn.date="08/23/2016"/>
 
 # 在 Azure PowerShell 中创建 SQL Server 虚拟机（经典）
 

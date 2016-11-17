@@ -9,14 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="08/23/2016"
-   wacn.date="10/25/2016"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="08/23/2016"
+	wacn.date="10/25/2016"/>
 
 #使用 Curl 配合 HDInsight 上的 Hadoop 运行 Pig 作业
 

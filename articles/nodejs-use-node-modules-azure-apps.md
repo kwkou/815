@@ -8,14 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
+	ms.service="multiple" 
 	ms.date="08/11/2016"
-	wacn.date="09/26/2016"
-	ms.author="robmcm"/>
+	wacn.date="09/26/2016"/>
 
 
 

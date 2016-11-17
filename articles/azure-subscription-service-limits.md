@@ -17,8 +17,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/29/2016"
-	wacn.date="10/24/2016"
-	ms.author="btardif"/>
+	wacn.date="10/24/2016"/>
 
 # Azure 订阅和服务限制、配额和约束
 

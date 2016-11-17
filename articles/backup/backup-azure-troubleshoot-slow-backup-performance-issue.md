@@ -15,8 +15,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/13/2016"
-    wacn.date="11/15/2016"
-    ms.author="genli"/>  
+    ms.author="genli"
+    wacn.date="11/15/2016"/>  
 
 
 # 排查在 Azure 备份中备份文件和文件夹时速度缓慢的问题

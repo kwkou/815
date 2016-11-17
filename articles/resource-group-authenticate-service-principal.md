@@ -15,8 +15,7 @@
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
    ms.date="09/12/2016"
-   wacn.date="10/24/2016"
-   ms.author="tomfitz"/>
+   wacn.date="10/24/2016"/>
 
 
 # 使用 Azure PowerShell 创建服务主体来访问资源

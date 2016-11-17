@@ -15,8 +15,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/21/2016"
-     wacn.date="11/07/2016"
-     ms.author="boltean"/>  
+     ms.author="boltean"
+     wacn.date="11/07/2016"/>  
 
 
 # 使用 CLI 创建 IoT 中心

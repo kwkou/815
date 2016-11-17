@@ -8,13 +8,8 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows"
-	ms.workload="infrastructure-services"
 	ms.date="09/06/2016"
-	wacn.date="10/25/2016"
-	ms.author="rclaus" />
+	wacn.date="10/25/2016"/>
 
 #配置适用于 Azure 的 Oracle GoldenGate
 本教程演示如何为 Azure 虚拟机环境设置 Oracle GoldenGate，以实现高可用性和灾难恢复。本教程重点介绍非 RAC Oracle 数据库的[双向复制](http://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_about_gg.htm)，并要求两个站点都处于活动状态。

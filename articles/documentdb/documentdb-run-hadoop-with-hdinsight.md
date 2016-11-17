@@ -8,15 +8,10 @@
 	documentationCenter=""/>
 
 
-<tags
-	ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="java"
-	ms.topic="article"
-	ms.date="09/20/2016"
-	wacn.date="07/22/2016"
-	ms.author="denlee"/>
+<tags 
+	ms.service="documentdb" 
+	ms.date="04/26/2016" 
+	wacn.date="07/22/2016"/>
 
 #<a name="DocumentDB-HDInsight"></a>使用 DocumentDB 和 HDInsight 运行 Hadoop 作业
 

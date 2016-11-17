@@ -15,8 +15,8 @@
    ms.devlang="na"
    ms.topic="hero-article"
    ms.date="09/27/2016"
-   wacn.date="11/15/2016"
-   ms.author="markgal;"/>  
+   ms.author="markgal;"	
+   wacn.date="11/15/2016"/>  
 
 
 # 先睹为快：将文件和文件夹从 Windows Server 或客户端备份到 Azure

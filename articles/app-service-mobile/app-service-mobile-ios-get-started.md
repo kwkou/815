@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.workload="na"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="hero-article"
-	ms.date="10/01/2016"
-	wacn.date="10/17/2016"
-	ms.author="yuaxu"/>
+	ms.date="06/30/2016"
+	wacn.date="10/17/2016"/>
 
 #创建 iOS 应用
 

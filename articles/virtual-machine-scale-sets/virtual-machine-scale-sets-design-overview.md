@@ -11,13 +11,8 @@
 
 <tags
 	ms.service="virtual-machine-scale-sets"
-	ms.workload="na"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/28/2016"
-	wacn.date="08/29/2016"
-	ms.author="gatneil"/>  
+	wacn.date="08/29/2016"/>  
 
 
 # 设计规模化的 VM 规模集

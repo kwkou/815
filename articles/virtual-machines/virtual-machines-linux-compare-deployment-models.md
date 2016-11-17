@@ -11,14 +11,9 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-   ms.service="virtual-machines-linux"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
-   wacn.date="10/25/2016"
-   ms.author="tomfitz"/>
+	ms.service="virtual-machines-linux"
+	ms.date="08/19/2015"
+	wacn.date="10/25/2016"/>
 
 # Azure 资源管理器部署模型中 Linux 应用程序的 Azure 计算、网络和存储提供程序
 

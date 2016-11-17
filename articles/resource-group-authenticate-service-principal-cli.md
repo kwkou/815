@@ -14,9 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="09/30/2016"
-   wacn.date="10/24/2016"
-   ms.author="tomfitz"/>
+   ms.date="09/07/2016"
+   wacn.date="10/24/2016"/>
 
 # 使用 Azure CLI 创建服务主体来访问资源
 

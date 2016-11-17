@@ -9,14 +9,9 @@
 
 
 <tags
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/10/2016" 
-	wacn.date="09/30/2016" 
-	ms.author="sdanie"/>  
+	ms.service="cache"
+	ms.date="08/10/2016"
+	wacn.date="09/30/2016"/>  
 
 
 # 使用 Azure PowerShell 管理 Azure Redis 缓存

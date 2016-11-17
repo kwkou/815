@@ -6,15 +6,10 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/05/2016"
-   wacn.date="09/30/2016"
-   ms.author="bwren" />
+<tags
+	ms.service="automation"
+	ms.date="08/05/2016"
+	wacn.date="09/30/2016"/>
 
 # 在 Azure 自动化中计划 Runbook
 

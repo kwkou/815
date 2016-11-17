@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/14/2016"
-	wacn.date="08/22/2016"
-	ms.author="kgremban"/>
+	wacn.date="08/22/2016"/>
 
 
 # 保护 Azure AD 中的特权访问

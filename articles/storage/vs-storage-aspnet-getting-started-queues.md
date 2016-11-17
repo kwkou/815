@@ -7,15 +7,10 @@
 	manager="douge"
 	editor=""/>
 
-<tags
+<tags 
 	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+	wacn.date="09/12/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务
 

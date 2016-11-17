@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/25/2016"
-	wacn.date="10/18/2016"
-	ms.author="anhoh"/>  
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>  
 
 
 # 请求提高 DocumentDB 帐户限制

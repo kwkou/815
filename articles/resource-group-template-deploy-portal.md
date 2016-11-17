@@ -15,8 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="10/24/2016" 
-	ms.author="tomfitz"/>  
+	wacn.date="10/24/2016"/>  
 
 
 # 使用 Resource Manager 模板和 Azure 门户预览部署资源

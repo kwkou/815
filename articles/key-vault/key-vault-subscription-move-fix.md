@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/13/2016"
-	wacn.date="10/19/2016"
-	ms.author="ambapat"/>  
+	ms.author="ambapat"
+   	wacn.date="10/19/2016"/>  
 
 
 # 订阅移动后更改密钥保管库租户 ID

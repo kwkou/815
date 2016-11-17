@@ -9,14 +9,9 @@
    tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="07/25/2016"
-   wacn.date="09/30/2016"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="07/25/2016"
+	wacn.date="09/30/2016"/>
 
 #使用 Curl 在 HDInsight 中的 Hadoop 上运行 Sqoop 作业
 

@@ -12,13 +12,8 @@
 
 <tags
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="03/15/2016"
-   wacn.date="07/28/2016"
-   ms.author="jdial"/>
+   wacn.date="07/28/2016"/>
 
 # 使用 Azure 门户预览创建虚拟网络（经典）
 

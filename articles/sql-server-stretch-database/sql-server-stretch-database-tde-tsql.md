@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-server-stretch-database"
-   ms.workload="data-management"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
    ms.date="06/14/2016"
-   wacn.date="07/25/2016"
-   ms.author="douglaslMS"/>
+   wacn.date="07/25/2016"/>
 
 # 为 Azure 上的 SQL Server Stretch Database 启用透明数据加密 (TDE)
 

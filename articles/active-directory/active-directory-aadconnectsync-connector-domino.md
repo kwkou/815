@@ -14,8 +14,8 @@
    ms.devlang="na"
    ms.topic="article"
    ms.date="08/30/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
+   ms.author="andkjell"
+   wacn.date="10/11/2016"/>
 
 # Lotus Domino 连接器技术参考
 本指南介绍 Lotus Domino 连接器。本文适用于以下产品：

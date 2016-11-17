@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="06/28/2016"
-	wacn.date="08/22/2016"
-	ms.author="brandwe"/>  
+	wacn.date="08/22/2016"/>  
 
 
 # 使用 v2.0 终结点，通过图形 API 将登录添加到使用第三方库的 iOS 应用

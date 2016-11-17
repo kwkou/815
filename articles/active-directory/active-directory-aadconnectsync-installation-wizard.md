@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/31/2016"
-	wacn.date="10/11/2016"
-	ms.author="billmath"/>
+	ms.author="andkjell"
+	wacn.date="10/11/2016"/>
 
 
 # Azure AD Connect 同步：第二次运行安装向导

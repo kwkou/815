@@ -12,13 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="na"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="07/25/2016"
-	ms.author="davidmu"/>
+	ms.date="06/07/2016"
+	wacn.date="07/25/2016"/>
 
 # 使用 Resource Manager 与 PowerShell 来管理 Azure 虚拟机
 

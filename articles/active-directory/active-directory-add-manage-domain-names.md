@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/04/2016"
-	wacn.date="10/31/2016"
-	ms.author="curtand;jeffsta"/>  
+	ms.author="curtand;jeffsta"
+	wacn.date="10/31/2016"/>  
 
 
 # 管理 Azure Active Directory 中的自定义域名

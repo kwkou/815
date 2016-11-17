@@ -10,15 +10,10 @@
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
-<tags
+<tags 
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="07/11/2016"
-	ms.author="cynthn"/>
+	ms.date="06/17/2016"
+	wacn.date="07/11/2016"/>
 
 
 # 创建可用性集 

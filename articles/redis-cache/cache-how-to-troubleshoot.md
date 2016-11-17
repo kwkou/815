@@ -7,15 +7,10 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/09/2016" 
-	wacn.date="09/05/2016" 
-	ms.author="sdanie"/>
+<tags
+	ms.service="cache"
+	ms.date="08/09/2016"
+	wacn.date="09/05/2016"/>
 
 # 如何排查 Azure Redis 缓存问题
 

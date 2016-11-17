@@ -12,13 +12,8 @@
 
 <tags
    ms.service="virtual-machines-linux"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure-services"
-   ms.date="09/22/2016"
-   wacn.date="06/29/2016"
-   ms.author="nepeters"/>
+   ms.date="03/29/2016"
+   wacn.date="06/29/2016"/>
 
 # 将 Linux VM 的自定义脚本扩展与 Azure 资源管理器模板配合使用
 

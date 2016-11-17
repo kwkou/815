@@ -16,8 +16,8 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="09/30/2016"
-    wacn.date="11/08/2016"
-    ms.author="curtand"/>  
+    ms.author="curtand"
+    wacn.date="11/08/2016"/>  
 
 
 # 将 Azure Active Directory 单一登录与 SaaS 应用相集成  

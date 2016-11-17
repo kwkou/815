@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="10/31/2016"
-   ms.author="skwan;bryanla"/>
+   ms.author="skwan;bryanla"
+   wacn.date="10/31/2016"/>
 
 # 如何使用多租户应用程序模式将任何 Azure Active Directory (AD) 用户登录
 如果你向许多组织提供软件即服务应用程序，可以将应用程序配置为可接受来自任何 Azure AD 租户的登录。在 Azure AD 中，这称为使应用程序成为多租户应用程序。任何 Azure AD 租户中的用户在同意配合你的应用程序使用其帐户之后，便可登录到你的应用程序。

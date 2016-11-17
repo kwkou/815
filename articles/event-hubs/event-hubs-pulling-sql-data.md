@@ -14,8 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/25/2016"
-   wacn.date="10/10/2016"
-   ms.author="spyros;sethm" />
+   wacn.date="10/10/2016" />
 
 # 将数据从 SQL 提取到 Azure 事件中心
 

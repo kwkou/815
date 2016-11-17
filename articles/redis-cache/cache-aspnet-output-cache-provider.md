@@ -8,13 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="cache"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="cache-redis"
-	ms.workload="tbd"
-	ms.date="09/27/2016"
-	wacn.date="08/23/2016"
-	ms.author="sdanie" />
+	ms.date="07/12/2016"
+	wacn.date="08/23/2016"/>
 
 # Azure Redis 缓存的 ASP.NET 输出缓存提供程序
 

@@ -7,15 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-api" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="08/23/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="rachelap"/>
+<tags
+	ms.service="app-service-api"
+	ms.date="05/03/2016"
+	wacn.date="09/26/2016"/>
 
 # API 应用概述
 

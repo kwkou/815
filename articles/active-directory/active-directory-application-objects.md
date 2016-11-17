@@ -14,8 +14,8 @@ ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="identity"
 ms.date="08/10/2016"
-wacn.date="10/11/2016"
-ms.author="bryanla;mbaldwin"/>
+ms.author="bryanla;mbaldwin"
+wacn.date="10/11/2016"/>
 
 # Azure Active Directory 中的应用程序对象和服务主体对象
 当你阅读有关 Azure Active Directory (AD)"应用程序"的文章时，不一定确切地知道作者所指为何。本文旨在更加明确地阐明其含义，其中将会定义 Azure AD 应用程序集成的概念和具体层面，然后举例说明如何注册和同意[多租户应用程序](/documentation/articles/active-directory-dev-glossary/#multi-tenant-application/)。
