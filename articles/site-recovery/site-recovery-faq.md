@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="10/10/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/17/2016"
 	ms.author="raynew"/>  
 
 
@@ -144,10 +144,7 @@
 
 ### 可以限制针对 Hyper-V 复制流量分配的带宽吗？
 
-是的。你可以从以下部署文章中阅读更多有关限制带宽的信息：
-
-- [Capacity planning for replicating Hyper-V VMs in VMM clouds（复制 VMM 云中的 Hyper-V VM 的容量规划）](/documentation/articles/site-recovery-vmm-to-azure/#step-5-capacity-planning)
-- [Capacity planning for replicating Hyper-V VMs without VMM（复制无 VMM 的 Hyper-V VM 的容量规划）](/documentation/articles/site-recovery-hyper-v-site-to-azure/#step-5-capacity-planning)
+是的。
 
 ## 故障转移
 

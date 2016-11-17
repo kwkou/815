@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/30/2016"
-	wacn.date="11/08/2016"
+	wacn.date="11/17/2016"
 	ms.author="curtand"/>  
 
 
@@ -85,7 +85,7 @@
 
 登录 VM，并确认你已通过站点到站点 VPN 建立连接，或者与本地网络上的资源建立了 ExpressRoute 连接。然后在 Azure VM 上安装 AD DS。可以使用在本地网络上安装其他域控制器的相同过程（UI、Windows PowerShell 或应答文件）。安装 AD DS 时，请务必指定新卷的 AD 数据库、日志和 SYSVOL 的位置。如果需要在 AD DS 安装中使用刷新程序，请参阅[安装 Active Directory 域服务（级别 100）](https://technet.microsoft.com/zh-cn/library/hh472162.aspx)或[在现有域中安装副本 Windows Server 2012 域控制器（级别 200）](https://technet.microsoft.com/zh-cn/library/jj574134.aspx)。
 
-## 重新配置虚拟网络的 DNS 服务器
+##<a name="reconfigure-dns-server-for-the-virtual-network"></a> 重新配置虚拟网络的 DNS 服务器
 
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，单击虚拟网络的名称，然后单击“配置”选项卡，[重新配置虚拟网络的 DNS 服务器 IP 地址](/documentation/articles/virtual-networks-manage-dns-in-vnet/)，以使用分配到副本 DC 的静态 IP 地址，而不使用本地 DNS 服务器的 IP 地址。
 

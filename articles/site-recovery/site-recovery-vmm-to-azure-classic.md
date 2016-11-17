@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="05/06/2016"
-	wacn.date="06/06/2016"
+	wacn.date="11/17/2016"
 	ms.author="raynew"/>
 
 #  将 VMM 云中的 Hyper-V 虚拟机复制到 Azure
@@ -51,7 +51,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 **先决条件** | **详细信息**
 --- | ---
 **Azure 帐户**| 需要一个 [Azure](https://azure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。[详细了解](/pricing/details/site-recovery/) Site Recovery 定价。
-**Azure 存储空间** | 你将需要使用 Azure 存储帐户来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。<br/><br/>你需要[标准异地冗余存储帐户](/documentation/articles//storage-redundancy#geo-redundant-storage)。该帐户必须位于 Site Recovery 服务所在的同一区域，并与同一订阅相关联。请注意，目前不支持复制到高级存储帐户，因此不应使用该功能。<br/><br/>[了解](/documentation/articles/storage-introduction/) Azure 存储空间。
+**Azure 存储空间** | 你将需要使用 Azure 存储帐户来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。<br/><br/>你需要[标准异地冗余存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)。该帐户必须位于 Site Recovery 服务所在的同一区域，并与同一订阅相关联。请注意，目前不支持复制到高级存储帐户，因此不应使用该功能。<br/><br/>[了解](/documentation/articles/storage-introduction/) Azure 存储空间。
 **Azure 网络** | 你需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。Azure 虚拟网络必须位于与 Site Recovery 保管库相同的区域中。
 
 ## 本地先决条件
@@ -300,7 +300,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 
 
-- **目标虚拟机的网络适配器数目** - 网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles//virtual-machines-linux-sizes#size-tables)，了解虚拟机大小所支持的适配器数目。修改虚拟机的大小并保存设置后，下一次打开“配置”页时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目，如下所示：
+- **目标虚拟机的网络适配器数目** - 网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles/virtual-machines-linux-sizes/#size-tables)，了解虚拟机大小所支持的适配器数目。修改虚拟机的大小并保存设置后，下一次打开“配置”页时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目，如下所示：
 
 	- 如果源计算机上的网络适配器数小于或等于目标计算机大小允许的适配器数，则目标的适配器数将与源相同。
 	- 如果源虚拟机的适配器数大于目标大小允许的数目，则使用目标大小允许的最大数目。
