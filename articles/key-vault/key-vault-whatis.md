@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="key-vault"
-	ms.date="04/07/2016"
-	wacn.date="05/13/2016"/>
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="10/10/2016"
+	wacn.date="05/13/2016"
+	ms.author="cabailey"/>
 
 
 

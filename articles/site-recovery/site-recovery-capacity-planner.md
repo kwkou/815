@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="site-recovery" 
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery" 
 	ms.date="07/12/2016" 
-	wacn.date="08/01/2016"/>
+	wacn.date="08/01/2016" 
+	ms.author="raynew"/>
 
 # 在 Azure Site Recovery 中规划用于保护虚拟机和物理服务器的容量
 

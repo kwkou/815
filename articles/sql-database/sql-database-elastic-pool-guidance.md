@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.devlang="NA"
 	ms.date="08/08/2016"
-	wacn.date="11/16/2016" />
+	wacn.date="11/16/2016"
+	ms.author="sstein"
+	ms.workload="data-management"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"/>
 
 
 # 何时使用弹性数据库池？

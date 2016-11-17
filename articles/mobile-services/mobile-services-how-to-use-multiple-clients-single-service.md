@@ -6,10 +6,15 @@
 	authors="ggailey777"
 	manager="dwrede"
 	editor="mollybos"/>
-<tags 
-	ms.service="mobile-services" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="multiple"
+	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="11/10/2016"/>
+	wacn.date="11/10/2016"
+	ms.author="glenga"/>
 
 #  通过单个移动服务支持多个设备平台
  

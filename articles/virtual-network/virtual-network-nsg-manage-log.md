@@ -11,9 +11,14 @@
    tags="azure-resource-manager"
 />
 <tags
-	ms.service="virtual-network"
-	ms.date="07/14/2016"
-	wacn.date="08/23/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="07/14/2016"
+   wacn.date="08/23/2016"
+   ms.author="jdial" />
 
 #网络安全组 (NSG) 的日志分析
 

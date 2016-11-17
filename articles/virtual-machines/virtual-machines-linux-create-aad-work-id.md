@@ -10,8 +10,13 @@
 
 <tags
    ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
    ms.date="08/23/2016"
-   wacn.date="10/25/2016"/>
+   wacn.date="10/25/2016"
+   ms.author="rasquill"/>
 
 # 在 Azure Active Directory 中创建工作或学校标识以配合 Linux 虚拟机使用
 

@@ -7,10 +7,15 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.date="09/08/2015" 
-	wacn.date="10/17/2016"/>
+<tags
+	ms.service="monitoring-and-diagnostics"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/08/2015"
+	wacn.date="10/17/2016"
+	ms.author="robb"/>
 
 # 接收警报通知
 

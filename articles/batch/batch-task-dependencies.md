@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="09/28/2016"
-	ms.author="marsma"
-	wacn.date="11/16/2016"/>
+	wacn.date="11/16/2016"
+	ms.author="marsma" />
 
 # Azure Batch 中的任务依赖关系
 

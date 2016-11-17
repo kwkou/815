@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016" 
+	ms.author="donnam;ricksal"/>
 
 # 扩展 Azure SQL 数据库支持的移动服务
 

@@ -7,10 +7,15 @@
     manager="wpickett"
     editor="" />
 
-<tags 
-	ms.service="active-directory" 
-	ms.date="08/11/2016" 
-	wacn.date="09/05/2016"/>
+<tags
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="Java"
+    ms.topic="article"
+    ms.date="08/11/2016"
+    wacn.date="09/05/2016" 
+    ms.author="robmcm" />
 
 # 如何查看 Azure Access Control 服务返回的 SAML
 

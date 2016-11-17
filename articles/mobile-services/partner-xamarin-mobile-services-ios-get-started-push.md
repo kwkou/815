@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-xamarin-ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="yuaxu"/>
 
 #  向移动服务应用程序添加推送通知
 

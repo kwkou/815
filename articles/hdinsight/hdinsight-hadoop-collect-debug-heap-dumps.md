@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/30/2016"
+	ms.author="jgao"/>
 
 
 # 将堆转储收集在 Blob 存储中，以便调试和分析 Hadoop 服务

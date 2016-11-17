@@ -8,10 +8,15 @@
 	editor=""
 />
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="09/05/2016" />
+	wacn.date="09/05/2016"
+	ms.author="curtand"/>
 
 
 # 使用 Azure Active Directory 组管理对资源的访问

@@ -10,8 +10,13 @@
 
 <tags 
 	ms.service="virtual-machines-windows" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vm-windows" 
+	ms.devlang="python" 
+	ms.topic="article" 
 	ms.date="08/04/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="01/21/2016" 
+	ms.author="huvalo"/>
 
 
 

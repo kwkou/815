@@ -10,8 +10,13 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="07/01/2016" 
-	wacn.date="08/02/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/03/2016" 
+	wacn.date="08/02/2016" 
+	ms.author="mimig"/>
 
 
 #有关 DocumentDB 的常见问题

@@ -8,13 +8,14 @@
 	editor=""/>
 
 <tags
+     ms.service="iot-hub"
      ms.devlang="java"
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/11/2016"
-     ms.author="dobett"
-     wacn.date="11/07/2016"/>
+     wacn.date="11/07/2016"
+     ms.author="dobett"/>
 
 
 # 适用于 Java 的 Azure IoT 中心入门

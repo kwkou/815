@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="na"
 	ms.date="09/08/2016"
-	ms.author="marsma" 
-   	wacn.date="10/26/2016"/>  
+	wacn.date="10/26/2016"
+	ms.author="marsma" />  
 
 
 # 在 Azure Batch 池中预配 Linux 计算节点

@@ -9,9 +9,14 @@
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/08/2016"
-	wacn.date="06/06/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/08/2016"
+   wacn.date="06/06/2016"
+   ms.author="jdial" />
 
 # 规划和设计 Azure 虚拟网络
 

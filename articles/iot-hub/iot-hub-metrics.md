@@ -14,8 +14,8 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="08/11/2016"
- ms.author="nberdy"
- wacn.date="11/07/2016"/>
+ wacn.date="11/07/2016"
+ ms.author="nberdy"/>
 
 
 # 诊断度量值简介

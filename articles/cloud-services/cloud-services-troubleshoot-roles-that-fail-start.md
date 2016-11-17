@@ -9,8 +9,13 @@
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd"
    ms.date="09/02/2016"
-   wacn.date="10/24/2016" />
+   wacn.date="10/24/2016"
+   ms.author="v-six" />
 
 # 对无法启动的云服务角色进行故障排除
 

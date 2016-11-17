@@ -7,10 +7,15 @@
 	manager="wpickett"
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="ruby"
+	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="09/12/2016"
+	ms.author="gusapost;robmcm"/>
 
 
 # 如何通过 Ruby 使用 Azure 表存储

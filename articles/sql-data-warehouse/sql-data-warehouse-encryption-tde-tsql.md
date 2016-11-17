@@ -15,7 +15,8 @@
    ms.devlang="na"
    ms.topic="article"
    ms.date="09/24/2016"
-   wacn.date="10/31/2016" />  
+   wacn.date="10/31/2016"
+   ms.author="rortloff;barbkess;sonyama"/>  
 
 
 # 透明数据加密 (TDE) 入门

@@ -15,7 +15,8 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/02/2016"
-	wacn.date="11/08/2016" />  
+	wacn.date="11/08/2016"
+	ms.author="jotaub;sethm"/>  
 
 
 # 事件中心入门

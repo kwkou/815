@@ -9,9 +9,14 @@
 	editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/16/2016"
-	wacn.date="07/18/2016"/>
+ms.service="hdinsight"
+ms.devlang="dotnet"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="05/16/2016"
+wacn.date="07/18/2016"
+ms.author="raviperi"/>
 
 #SCP 编程指南
 

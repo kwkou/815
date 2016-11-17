@@ -14,9 +14,9 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/26/2016"
+   ms.date="09/09/2016"
    wacn.date="10/24/2016"
-   ms.author="ryanwi"/>
+   ms.author="ryanwi;mikhegn"/>
 
 # 在本地群集上部署和升级应用程序入门
 Azure Service Fabric SDK 包含完整的本地开发环境，可让你快速地在本地群集上开始部署和管理应用程序。在本文中，您会从 Windows PowerShell 创建本地群集、将现有应用程序部署到该群集，然后将该应用程序升级为新版本。

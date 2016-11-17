@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="06/20/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/04/2016"
+   ms.author="bscholl"/>
 # Service Fabric Reliable Services 分区
 本文介绍 Azure Service Fabric Reliable Services 分区的基本概念。本文中使用的源代码也可以在 [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions) 上获取。
 

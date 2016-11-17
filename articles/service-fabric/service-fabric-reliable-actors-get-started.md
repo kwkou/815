@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/06/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/25/2016"
+   wacn.date="08/08/2016"
+   ms.author="vturecek"/>
 # Reliable Actors 入门
 本文介绍了 Azure Service Fabric Reliable Actors 的基础知识，并演示了如何在 Visual Studio 中创建、调试和部署简单的 Reliable Actor 应用程序。
 

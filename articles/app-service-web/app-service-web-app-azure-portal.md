@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/26/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="jaime-espinosa"/>
 
 # 有关在 Azure 门户预览中导航的参考
 

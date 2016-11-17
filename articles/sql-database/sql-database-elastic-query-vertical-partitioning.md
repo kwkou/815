@@ -8,8 +8,13 @@
 
 <tags
     ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
     ms.date="05/27/2016"
-    wacn.date="07/18/2016" />
+    wacn.date="07/18/2016"
+    ms.author="torsteng" />
 
 # 在具有不同架构的云数据库中进行查询。（预览）
 

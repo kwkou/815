@@ -8,10 +8,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="02/20/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="02/20/2016" 
+	wacn.date="09/26/2016"
+	ms.author="huvalo"/>
 
 
 # 在 Azure 中使用 Flask 创建 Web 应用

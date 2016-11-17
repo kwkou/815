@@ -6,10 +6,15 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="02/09/2016"
-	wacn.date="08/11/2016"/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/09/2016"
+   wacn.date="08/11/2016"
+   ms.author="bwren" />
 
 # Runbook 设置
 

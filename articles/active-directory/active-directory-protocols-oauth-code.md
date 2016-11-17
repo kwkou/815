@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/03/2016"
-	ms.author="priyamo"
-	wacn.date="11/08/2016"/>
+	wacn.date="11/08/2016"
+	ms.author="priyamo"/>
 
 
 # 使用 OAuth 2.0 和 Azure Active Directory 来授权访问 Web 应用程序

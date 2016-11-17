@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/24/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/28/2016"
+   wacn.date="08/08/2016"
+   ms.author="toddabel"/>
 
 
 # 如何使用 Azure 诊断收集日志

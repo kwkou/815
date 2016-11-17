@@ -9,8 +9,13 @@
 
 <tags
    ms.service="active-directory"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="Identity"
    ms.date="06/27/2016"
-   wacn.date="08/08/2016"/>
+   wacn.date="08/08/2016"
+   ms.author="billmath"/>
 
 # Azure AD Connect：从旧版升级到最新版本
 本主题介绍可将 Azure AD Connect 安装升级到最新版本的不同方法。我们建议你使用最新版本的 Azure AD Connect。

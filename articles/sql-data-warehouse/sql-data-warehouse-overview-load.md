@@ -10,8 +10,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
    ms.date="07/12/2016"
-   wacn.date="08/15/2016"/>
+   wacn.date="08/15/2016"
+   ms.author="lodipalm;barbkess;sonyama"/>
 
 # 将数据载入 Azure SQL 数据仓库
 

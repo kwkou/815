@@ -8,10 +8,15 @@
    editor=""
    tags="azure-service-management"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date="03/28/2016"/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date="03/28/2016"
+   ms.author="jdial" />
 
 #使用 PowerShell 部署多 NIC VM（经典）
 

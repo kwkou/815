@@ -16,7 +16,8 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"/>  
+	wacn.date="11/14/2016"
+	ms.author="jeffstok"/>  
 
 
 # 数据连接：了解从事件到流分析的数据流输入

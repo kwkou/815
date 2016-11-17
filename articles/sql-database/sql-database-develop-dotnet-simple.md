@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.workload="drivers"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="06/16/2016"
-	wacn.date="07/11/2016"/>
+	wacn.date="07/11/2016"
+	ms.author="tobiast"/>
 
 # 使用 .NET (C#) 连接到 SQL 数据库
 

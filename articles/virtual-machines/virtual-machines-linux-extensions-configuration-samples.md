@@ -11,9 +11,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="03/29/2016"
-	wacn.date="11/07/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="09/13/2016"
+   wacn.date="11/07/2016"
+   ms.author="kundanap"/>
 
 # Linux VM 扩展配置示例
 

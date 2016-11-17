@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/16/2016"
-	wacn.date="07/11/2016"/>
+	wacn.date="07/11/2016"
+	ms.author="singhkay"/>
 
 # 为 Azure Resource Manager 中的虚拟机设置 WinRM 访问权限
 

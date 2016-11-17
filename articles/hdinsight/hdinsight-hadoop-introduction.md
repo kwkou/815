@@ -9,9 +9,14 @@
 	editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/21/2016"
-	wacn.date="09/19/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="07/21/2016"
+   wacn.date="09/19/2016"
+   ms.author="cgronlun"/>
 
 
 # 云中的 Hadoop 是什么？ HDInsight 中的 Hadoop 生态系统简介

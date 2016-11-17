@@ -12,8 +12,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/14/2016"
-	wacn.date="08/23/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/06/2016"
+	wacn.date="08/23/2016"
+	ms.author="davidmu"/>
 
 # 使用资源管理器模板创建 Windows 虚拟机
 

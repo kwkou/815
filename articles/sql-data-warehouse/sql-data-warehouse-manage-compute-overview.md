@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="09/03/2016"
-   wacn.date="10/17/2016"/>  
+   wacn.date="10/17/2016"
+   ms.author="barbkess;sonyama"/>  
 
 
 # 管理 Azure SQL 数据仓库中的计算能力（概述）

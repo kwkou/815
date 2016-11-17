@@ -7,10 +7,15 @@
 	manager="wpickett"
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="09/12/2016"
+	ms.author="cbrooks;robmcm"/>
 
 
 # 如何通过 Node.js 使用队列存储

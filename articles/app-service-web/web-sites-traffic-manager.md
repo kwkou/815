@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/25/2016" 
-	wacn.date="09/26/2016"/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/25/2016"
+	wacn.date="09/26/2016"
+	ms.author="cephalin"/>
 
 # 使用 Azure 流量管理器控制 Azure Web 应用流量
 

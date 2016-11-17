@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="07/05/2016"
-   wacn.date="08/08/2016"/>
+   wacn.date="08/08/2016"
+   ms.author="abhisram"/>
 
 # Reliable Actors 的诊断和性能监视
 Reliable Actors 运行时发出 [EventSource](https://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource.aspx) 事件和[性能计数器](https://msdn.microsoft.com/zh-cn/library/system.diagnostics.performancecounter.aspx)，可用于深入了解运行时如何操作并帮助进行故障排除和性能监视。

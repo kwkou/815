@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
     ms.date="08/08/2016" 
-    ms.author="arramac"
-    wacn.date="10/18/2016"/>  
+    wacn.date="10/18/2016" 
+    ms.author="arramac"/>  
 
     
 # 使用 Azure DocumentDB 中的地理空间数据

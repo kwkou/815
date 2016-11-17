@@ -7,10 +7,15 @@
 	manager="erickson-doug" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="08/09/2016"
-	wacn.date="09/30/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/09/2016" 
+	wacn.date="09/30/2016" 
+	ms.author="sdanie"/>
 
 # 使用模板创建 Web 应用和 Redis 缓存
 

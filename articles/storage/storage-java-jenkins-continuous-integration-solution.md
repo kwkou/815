@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="storage" 
+	ms.workload="storage" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/05/2016"/>
+	wacn.date="09/05/2016" 
+	ms.author="dinesh;robmcm"/>
 
 
 # 将 Azure 存储空间用于 Jenkins 持续集成解决方案

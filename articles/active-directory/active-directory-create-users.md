@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/22/2016"
-	ms.author="curtand"
-	wacn.date="10/31/2016"/>  
+	wacn.date="10/31/2016"
+	ms.author="curtand"/>  
 
 
 # 向 Azure Active Directory 添加新用户或具有 Microsoft 帐户的用户

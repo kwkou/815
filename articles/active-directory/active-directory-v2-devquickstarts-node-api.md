@@ -15,8 +15,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	ms.author="brandwe"
-   	wacn.date="10/25/2016"/>  
+	wacn.date="10/25/2016"
+	ms.author="brandwe"/>  
 
 
 # 使用 node.js 保护 Web API

@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/30/2016"
+	ms.author="jgao"/>
 
 #使用 HDInsight 中的 Hive 分析航班延误数据
 

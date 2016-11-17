@@ -10,9 +10,14 @@
 	tags="azure-resource-manager" />
 
 <tags
-	ms.service="virtual-machine-scale-sets"
+	ms.service="virtual-machine-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="03/31/2016"
-	wacn.date="08/29/2016"/>  
+	wacn.date="08/29/2016"
+	ms.author="gatneil"/>  
 
 
 # 使用 Azure CLI 快速创建规模集

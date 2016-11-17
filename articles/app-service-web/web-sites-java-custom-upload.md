@@ -8,9 +8,14 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web"
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/30/2016"/>
+	wacn.date="09/30/2016" 
+	ms.author="robmcm"/>
 
 # 将自定义 Java Web 应用上载到 Azure
 

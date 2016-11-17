@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/19/2016" 
-	ms.author="kipandya"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016" 
+	ms.author="kipandya"/>  
 
 
 # 保护对 DocumentDB 数据的访问

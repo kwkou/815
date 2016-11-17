@@ -14,7 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/25/2016"
-   wacn.date="11/07/2016" />
+   wacn.date="11/07/2016"
+   ms.author="sewhee" />
 
 
 # Azure Resource Manager 对负载均衡器的支持 

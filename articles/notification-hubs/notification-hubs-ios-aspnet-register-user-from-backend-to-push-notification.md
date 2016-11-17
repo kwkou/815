@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="08/08/2016"
+	ms.author="wesmc"/>
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 

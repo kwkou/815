@@ -9,9 +9,14 @@
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
+	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="command-line-interface"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/05/2016"
-	wacn.date="11/16/2016"/>
+	wacn.date="11/16/2016"
+	ms.author="danlep"/>
 
 # Resource Manager 模式下的 Azure CLI 命令
 

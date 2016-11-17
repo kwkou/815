@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/01/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="03/28/2016"
+	ms.author="mingzhan"/>
 
 
 #如何在 Azure 上安装 MySQL

@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="key-vault"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/26/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="bruceper"/>
 
 # 使用 CLI 管理密钥保管库 #
 在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/pricing/details/key-vault/)。

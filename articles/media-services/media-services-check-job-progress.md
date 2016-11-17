@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/19/2016"   
-	wacn.date="10/10/2016"
+	ms.date="08/19/2016" 
+	wacn.date="10/10/2016"   
 	ms.author="juliako"/>
 
 # 使用 .NET 监视作业进度

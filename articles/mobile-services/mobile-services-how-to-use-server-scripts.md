@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="javascript" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016" 
+	ms.author="ricksal"/>
 
 
 #  使用 JavaScript 后端移动服务

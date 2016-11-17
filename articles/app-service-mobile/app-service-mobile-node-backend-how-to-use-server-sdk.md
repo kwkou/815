@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.date="08/02/2016"
-	wacn.date="09/26/2016"/>
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="node"
+	ms.topic="article"
+	ms.date="10/01/2016"
+	wacn.date="09/26/2016"
+	ms.author="adrianha"/>
 
 # 如何使用 Azure 移动应用 Node.js SDK
 

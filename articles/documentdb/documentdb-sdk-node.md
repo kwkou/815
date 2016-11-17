@@ -7,10 +7,15 @@
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.date="08/09/2016" 
-	wacn.date="09/28/2016"/>
+<tags
+	ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	wacn.date="09/28/2016"
+	ms.author="rnagpal"/>
 
 # DocumentDB SDK
 

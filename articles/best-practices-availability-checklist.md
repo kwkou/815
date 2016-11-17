@@ -10,8 +10,13 @@
 
 <tags
    ms.service="best-practice"
-   ms.date="04/01/2016"
-   wacn.date="07/08/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="07/13/2016"
+   wacn.date="07/08/2016"
+   ms.author="masashin"/>
 
 # 可用性核对清单
 

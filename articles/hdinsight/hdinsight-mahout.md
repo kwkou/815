@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/11/2016"
+	wacn.date="09/30/2016"
+	ms.author="larryfr"/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 

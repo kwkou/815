@@ -8,10 +8,15 @@
 	manager="stevenpo" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/04/2016"
-	wacn.date="09/19/2016"/>
+	wacn.date="09/19/2016"
+	ms.author="kgremban"/>
 
 # 在 Azure 多重身份验证中使用通知登录到移动应用
 

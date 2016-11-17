@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="06/14/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/19/2016"
+   wacn.date="08/08/2016"
+   ms.author="lemai"/>
    
 # 如何在服务中调用数据丢失
 

@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="06/01/2016"
-	wacn.date="07/28/2016"/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="06/01/2016" 
+	wacn.date="07/28/2016" 
+	ms.author="tdykstra"/>
 
 # 如何通过 WebJobs SDK 使用 Azure Service Bus
 

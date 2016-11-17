@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/23/2016"/>  
+	wacn.date="08/23/2016"
+	ms.author="wesmc"/>  
 
 # 路由和标记表达式
 

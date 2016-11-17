@@ -11,9 +11,14 @@
    tags="top-support-issue"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/16/2016"
-	wacn.date="07/18/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.topic="support-article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="required"
+   ms.date="09/20/2016"
+   wacn.date="07/18/2016"
+   ms.devlang="na"
+   ms.author="delhan"/>
 
 # 排查在 Azure 中重新启动或调整现有 Linux 虚拟机时遇到的经典部署问题
 

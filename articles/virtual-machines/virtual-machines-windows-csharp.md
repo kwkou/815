@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/14/2016"
-	wacn.date="08/15/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/06/2016"
+	wacn.date="08/15/2016"
+	ms.author="davidmu"/>
 
 # 使用 C 部署 Azure 资源# 
 

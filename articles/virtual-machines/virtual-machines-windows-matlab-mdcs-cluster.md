@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="05/09/2016"
-	wacn.date="06/13/2016"/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="Windows"
+   ms.workload="infrastructure-services"
+   ms.date="05/09/2016"
+   wacn.date="06/13/2016"
+   ms.author="markscu"/>
 
 # 在 Azure VM 上创建 MATLAB 分布式计算服务器群集 
 

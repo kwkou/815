@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
 	ms.date="05/27/2016" 
-	wacn.date="11/16/2016" />
+	wacn.date="11/16/2016" 
+	ms.author="ddove" />
 
 # 管理扩大的云数据库
 

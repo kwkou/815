@@ -8,10 +8,15 @@
 	manager="dwrede" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="05/25/2016"
-	wacn.date="11/14/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="get-started-article" 
+	ms.date="05/25/2016" 
+	wacn.date="11/14/2016" 
+	ms.author="omark"/>
 
 # 什么是 Azure 应用服务？
 

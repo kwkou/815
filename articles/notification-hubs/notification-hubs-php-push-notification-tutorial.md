@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="notification-hubs" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="php" 
+	ms.devlang="php" 
+	ms.topic="article" 
 	ms.date="06/07/2016" 
-	wacn.date="07/12/2016"/>
+	wacn.date="07/12/2016" 
+	ms.author="wesmc"/>
 
 # 如何通过 PHP 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]

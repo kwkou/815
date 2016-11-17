@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="06/24/2016"
-	wacn.date="08/08/2016"/>
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article" 
+	ms.date="06/24/2016" 
+	wacn.date="08/08/2016"
+	ms.author="mimig"/>
 
 # NoSQL 与 SQL
 

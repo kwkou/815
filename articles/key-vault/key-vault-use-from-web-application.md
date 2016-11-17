@@ -7,10 +7,15 @@
 	manager=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="key-vault" 
-	ms.date="04/13/2016" 
-	wacn.date="05/13/2016"/>
+<tags
+	ms.service="key-vault"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/05/2016"
+	wacn.date="05/13/2016"
+	ms.author="adhurwit"/>
 
 # 从 Web 应用程序使用 Azure 密钥保管库 #
 

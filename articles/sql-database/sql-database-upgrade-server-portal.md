@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
 	ms.date="08/08/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="sstein"/>
 
 
 # 使用 Azure 门户预览升级到 Azure SQL 数据库 V12

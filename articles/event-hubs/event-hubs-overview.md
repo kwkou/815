@@ -14,7 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="08/16/2016"
-    wacn.date="11/08/2016" />  
+    wacn.date="11/08/2016"
+    ms.author="sethm" />  
 
 
 # Azure 事件中心概述

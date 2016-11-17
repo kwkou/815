@@ -7,9 +7,14 @@
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="traffic-manager"
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
    ms.date="03/17/2016"
-	wacn.date="04/26/2016"/>
+   wacn.date="04/26/2016"
+   ms.author="sewhee" />
 
 # 添加、禁用、启用或删除终结点
 

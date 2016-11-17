@@ -11,8 +11,13 @@
 
 <tags
    ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
    ms.date="08/23/2016"
-   wacn.date="10/25/2016"/>
+   wacn.date="10/25/2016"
+   ms.author="rasquill"/>
 
 # 使用 Azure CLI 来选择 Linux 虚拟机映像
 

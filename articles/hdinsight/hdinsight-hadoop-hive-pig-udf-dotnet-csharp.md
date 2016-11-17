@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/12/2016"
-	wacn.date="08/23/2016"/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date="08/23/2016"
+	ms.author="larryfr"/>
 
 
 #在 HDInsight 中的 Hadoop 上将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用

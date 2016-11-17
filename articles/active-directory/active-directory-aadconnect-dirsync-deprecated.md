@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/27/2016"
-	wacn.date="08/01/2016"/>
+	wacn.date="08/01/2016"
+	ms.author="billmath"/>
 
 
 # 升级 Microsoft Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync)

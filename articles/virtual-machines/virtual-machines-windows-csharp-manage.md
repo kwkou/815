@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/24/2016"
-	wacn.date="08/15/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date="08/15/2016"
+	ms.author="davidmu"/>
 
 # 使用 Azure Resource Manager 与 C 来管理 Azure 虚拟机#  
 

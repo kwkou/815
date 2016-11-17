@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/24/2016"
-	ms.author="mimig"
-   	wacn.date="10/18/2016"/>
+	wacn.date="10/18/2016"
+	ms.author="syamk"/>
 
 # DocumentDB 中的一致性级别
 

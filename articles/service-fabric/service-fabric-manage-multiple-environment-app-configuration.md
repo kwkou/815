@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotNet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="07/19/2016"
-   wacn.date="08/29/2016"/>
+   wacn.date="08/29/2016"
+   ms.author="seanmck"/>
 
 # 管理多个环境的应用程序参数
 

@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/14/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="08/08/2016"
+	ms.author="anandy"/>
 
 
 # Azure AD Connect 和联合身份验证

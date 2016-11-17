@@ -11,9 +11,14 @@
    tags="azure-resource-manager"
 />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date="07/04/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date="07/04/2016"
+   ms.author="jdial" />
 
 # 如何使用模板创建 NSG
 

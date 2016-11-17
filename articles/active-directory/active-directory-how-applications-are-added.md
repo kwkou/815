@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="02/09/2016"
-   wacn.date="07/19/2016"/>
+      ms.service="active-directory"
+      ms.devlang="na"
+      ms.topic="article"
+      ms.tgt_pltfrm="na"
+      ms.workload="identity"
+      ms.date="02/09/2016"
+      wacn.date="07/19/2016"
+      ms.author="shoatman"/>
 
 # 如何以及为何将应用程序添加到 Azure AD
 

@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="10/06/2016"
-   wacn.date="10/31/2016"/>  
+   wacn.date="10/31/2016"
+   ms.author="lakshmir;barbkess"/>  
 
 
 # SQL 数据仓库备份

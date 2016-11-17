@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/08/2016"
-	ms.author="ashwink"
-	wacn.date="10/17/2016"/>  
+	wacn.date="10/17/2016"
+	ms.author="ashwink"/>  
 
 # Azure Insights 跨平台 CLI 快速启动示例
 

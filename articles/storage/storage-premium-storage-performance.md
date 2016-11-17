@@ -15,7 +15,7 @@
     ms.topic="article"
     ms.date="09/19/2016"
     wacn.date="11/16/2016"
-    ms.author="aungoo-msft"/>
+    ms.author="aungoo;robinsh"/>
 
 # Azure 高级存储：高性能设计
 

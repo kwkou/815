@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="07/21/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="09/05/2016"
+	ms.author="jimpark; trinadhk"/>
 
 # 什么是 Azure 备份？
 Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了现有的本地或异地备份解决方案，并且是可靠、安全、高性价比的基于云的解决方案。它还有助于保护在云中运行的资产。Azure 备份提供的恢复服务构建在一流的基础结构之上，具有可缩放、持久且高度可用的优点。

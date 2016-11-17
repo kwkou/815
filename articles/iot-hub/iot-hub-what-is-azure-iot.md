@@ -15,8 +15,8 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="10/05/2016"
- ms.author="dobett"
- wacn.date="11/07/2016"/>  
+ wacn.date="11/07/2016"
+ ms.author="dobett"/>  
 
 
 [AZURE.INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]

@@ -13,9 +13,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article"
-	ms.date="08/17/2016"   
-	wacn.date="10/10/2016"
-	ms.author="robmcm"/>
+	ms.date="10/12/2016"
+	wacn.date="10/10/2016"   
+	ms.author="juliako"/>
 
 
 # 开始使用 Java 传送点播内容

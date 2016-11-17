@@ -9,9 +9,14 @@
  tags="azure-service-management,azure-resource-manager"/>
 
 <tags
- 	ms.service="virtual-machines-linux"
- 	ms.date="08/23/2016"
- 	wacn.date="10/25/2016"/>
+ ms.service="virtual-machines-linux"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-linux"
+ ms.workload="infrastructure-services"
+ ms.date="09/22/2016"
+ wacn.date="10/25/2016"
+ ms.author="nepeters"/>
 
 #关于虚拟机扩展和功能
 

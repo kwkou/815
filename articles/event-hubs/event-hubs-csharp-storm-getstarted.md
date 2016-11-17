@@ -14,8 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="09/06/2016"
-	wacn.date="11/08/2016"/>  
+	ms.date="09/06/2016" 
+	wacn.date="11/08/2016"
+	ms.author="jotaub;sethm"/>  
 
 
 # 事件中心入门

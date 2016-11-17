@@ -9,8 +9,13 @@
 
 <tags
    ms.service="azure-resource-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="01/22/2016"
-   wacn.date="07/11/2016"/>
+   wacn.date="07/11/2016"
+   ms.author="tomfitz"/>
 
 # Azure 中的开发和测试环境
 

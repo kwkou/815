@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="cache"
+	ms.devlang="python"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
 	ms.date="08/16/2016"
-	wacn.date="10/25/2016"/>  
+	wacn.date="10/25/2016"
+	ms.author="sdanie"/>  
 
 
 # 如何将 Azure Redis 缓存与 Python 配合使用

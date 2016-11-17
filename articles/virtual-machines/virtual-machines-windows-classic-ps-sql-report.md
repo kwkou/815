@@ -9,8 +9,13 @@
 	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="05/13/2016"
-	wacn.date="06/29/2016" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="10/04/2016"
+	wacn.date="06/29/2016"
+	ms.author="asaxton" />
 
 # 使用 PowerShell 创建运行本机模式报表服务器的 Azure VM
 
