@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="09/16/2016"
-	ms.author="marsma" 
-   	wacn.date="10/26/2016"/>  
+	wacn.date="10/26/2016"
+	ms.author="marsma" />  
 
 
 # 在 Azure Batch 计算节点上运行作业准备和完成任务

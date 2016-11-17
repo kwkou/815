@@ -15,8 +15,8 @@
 	ms.devlang="multiple"
 	ms.topic="hero-article"
 	ms.date="08/25/2016"
-	ms.author="wesmc"
-   	wacn.date="11/11/2016"/>  
+	wacn.date="11/11/2016"
+	ms.author="wesmc"/>  
 
 
 

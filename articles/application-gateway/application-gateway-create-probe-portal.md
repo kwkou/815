@@ -8,10 +8,15 @@
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="application-gateway"
-	ms.date="08/09/2016"
-	wacn.date="09/12/2016"/>
+<tags  
+   ms.service="application-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/09/2016"
+   wacn.date="09/12/2016"
+   ms.author="gwallace" />
 
 # 使用门户创建应用程序网关的自定义探测
 

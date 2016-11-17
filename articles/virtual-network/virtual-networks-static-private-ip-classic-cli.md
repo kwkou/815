@@ -8,10 +8,15 @@
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date="04/26/2016"/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date="04/26/2016"
+   ms.author="jdial" />
 
 # 如何在 Azure CLI 中设置静态专用 IP 地址（经典）
 

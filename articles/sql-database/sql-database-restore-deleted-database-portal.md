@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.devlang="NA"
 	ms.date="07/09/2016"
-	wacn.date="09/26/2016" />
+	wacn.date="09/26/2016"
+	ms.author="sstein"
+	ms.workload="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"/>
 
 
 # 使用 Azure 门户预览还原已删除的 Azure SQL 数据库

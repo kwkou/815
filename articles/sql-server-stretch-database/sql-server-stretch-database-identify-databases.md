@@ -8,8 +8,13 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/14/2016"
-	wacn.date="07/25/2016"/>
+	wacn.date="07/25/2016"
+	ms.author="douglasl"/>
 
 # 通过运行SQL Server Stretch Database顾问来识别符合SQL Server Stretch Database条件的数据库和表
 

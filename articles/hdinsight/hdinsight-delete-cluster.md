@@ -8,9 +8,14 @@ manager="paulettm"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="08/09/2016"
-	wacn.date="09/30/2016"/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="08/09/2016"
+wacn.date="09/30/2016"
+ms.author="larryfr"/>
 
 #如何删除 HDInsight 群集
 

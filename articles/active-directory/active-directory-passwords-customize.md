@@ -7,10 +7,15 @@
 	manager="femila"
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory"  
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="09/05/2016"
+	ms.author="asteen"/>
 
 # 自定义密码管理以符合组织的需求
 

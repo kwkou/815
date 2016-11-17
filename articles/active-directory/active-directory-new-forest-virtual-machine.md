@@ -13,11 +13,11 @@
 	ms.service="active-directory"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.workload="identity"
 	ms.date="10/10/2016"
-	ms.author="markusvi"
-	wacn.date="11/08/2016"/>  
+	wacn.date="11/08/2016"
+	ms.author="markusvi"/>  
 
 
 

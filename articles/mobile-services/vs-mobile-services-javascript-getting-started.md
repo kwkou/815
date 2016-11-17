@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="vs-getting-started" 
+	ms.devlang="JavaScript" 
+	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016" 
+	ms.author="mlearned"/>
 
 # 通过使用 Visual Studio 连接服务添加 Azure 移动服务后开始使用 Javascript 移动应用
 

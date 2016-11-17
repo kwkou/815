@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/25/2016"
-	ms.author="mimig"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016"
+	ms.author="mimig"/>  
 
 
 # 监视 DocumentDB 请求、使用情况和存储

@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="07/19/2016"
-	wacn.date="09/05/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="07/19/2016"
+   wacn.date="09/05/2016"
+   ms.author="iainfou"/>
 
 [AZURE.INCLUDE [virtual-machines-common-regions-and-availability](../../includes/virtual-machines-common-regions-and-availability.md)]
 

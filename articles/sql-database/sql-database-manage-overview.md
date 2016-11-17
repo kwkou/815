@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/19/2016"
-	wacn.date="09/28/2016"/>
+	wacn.date="09/28/2016"
+	ms.author="sstein"/>
 
 # 概述：SQL 数据库的管理工具
 

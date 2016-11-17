@@ -9,8 +9,13 @@
 	tags="azure-resource-manager"/>
 <tags
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="07/14/2016"
-	wacn.date="11/04/2016"/>
+	wacn.date="11/04/2016"
+	ms.author="jroth" />
 
 # Azure 虚拟机 (Resource Manager) 中 SQL Server 的自动备份
 

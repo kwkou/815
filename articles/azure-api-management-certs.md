@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="na" 
-	ms.date="04/18/2016"
-	wacn.date="06/13/2016"/>
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/18/2016" 
+	wacn.date="06/13/2016"
+	ms.author="adegeo"/>
 
 
 # 上载 Azure Management API 管理证书

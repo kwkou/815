@@ -10,8 +10,13 @@
 
 <tags 
 	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
 	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"/>
+	wacn.date="08/22/2016" 
+	ms.author="cenkdin;juliako"/>
 
 
 #使用本地编码器执行实时流式处理以创建多比特率流

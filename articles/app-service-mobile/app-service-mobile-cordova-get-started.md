@@ -10,9 +10,14 @@
     keywords="cordova,javascript,移动,客户端" />
 
 <tags
-	ms.service="app-service-mobile"
-	ms.date="08/11/2016"
-	wacn.date="10/17/2016"/>
+    ms.service="app-service-mobile"
+    ms.workload="na"
+    ms.tgt_pltfrm="mobile-html"
+    ms.devlang="javascript"
+    ms.topic="hero-article"
+    ms.date="08/11/2016"
+    wacn.date="10/17/2016"
+    ms.author="adrianha"/>
 
 #创建 Apache Cordova 应用
 

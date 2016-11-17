@@ -15,8 +15,8 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="07/21/2016"
-	ms.author="wesmc"
-   	wacn.date="11/11/2016"/>  
+	wacn.date="11/11/2016"
+	ms.author="wesmc"/>  
 
 
 # 用于 Windows 通用平台应用的通知中心入门

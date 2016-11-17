@@ -8,9 +8,14 @@
 	documentationCenter=""/>
 
 <tags 
-	ms.service="documentdb"
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
 	ms.date="06/29/2016" 
-	wacn.date=""/>
+	wacn.date="11/15/2016" 
+	ms.author="syamk"/>
 
 #DocumentDB 中的请求单位
 现已推出：DocumentDB [请求单位计算器](https://www.documentdb.com/capacityplanner)。详细了解如何[估计吞吐量需求](/documentation/articles/documentdb-request-units/#estimating-throughput-needs)。

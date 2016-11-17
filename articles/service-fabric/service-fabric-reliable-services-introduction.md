@@ -9,8 +9,13 @@
 
 <tags
    ms.service="Service-Fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="03/25/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/04/2016"
+   ms.author="masnider;vturecek"/>
 
 # Reliable Services 概述
 Azure Service Fabric 可简化无状态和有状态 Reliable Services 的编写与管理。本文档将讨论：

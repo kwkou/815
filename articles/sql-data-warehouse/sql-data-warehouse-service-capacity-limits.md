@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="09/01/2016"
-   wacn.date="10/17/2016"/>
+   wacn.date="10/17/2016"
+   ms.author="sonyama;barbkess;jrj"/>
 
 # SQL 数据仓库容量限制
 

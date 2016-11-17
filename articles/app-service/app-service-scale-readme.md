@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/15/2016"
-	wacn.date="11/14/2016"/>
+	wacn.date="11/14/2016"
+	ms.author="byvinyal"/>
 
 # Azure 应用服务：缩放应用服务应用程序
 

@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="08/11/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="PHP" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="09/26/2016" 
+	ms.author="robmcm"/>
 
 
 

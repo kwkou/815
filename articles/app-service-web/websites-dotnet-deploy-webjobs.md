@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/27/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="na" 
+	ms.date="04/27/2016" 
+	wacn.date="09/26/2016" 
+	ms.author="tdykstra"/>
 
 # 使用 Visual Studio 部署 Web 作业
 

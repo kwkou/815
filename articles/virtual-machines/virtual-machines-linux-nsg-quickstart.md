@@ -9,9 +9,14 @@
 
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="08/08/2016"
-	wacn.date="09/12/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="08/08/2016"
+   wacn.date="09/12/2016"
+   ms.author="iainfou"/>
 
 # 打开端口和终结点
 通过创建网络筛选器可在 Azure 中打开端口或创建终结点，以允许流量到达子网或虚拟机 (VM) 网络接口上的所选端口。将这些筛选器（控制入站和出站流量）放在网络安全组中，并附加到将接收流量的资源。让我们在端口 80 上使用 Web 流量的常见示例。

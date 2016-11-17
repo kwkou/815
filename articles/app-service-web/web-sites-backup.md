@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/06/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/06/2016" 
+	wacn.date="09/26/2016" 
+	ms.author="cephalin"/>
 
 # 在 Azure 中备份应用
 

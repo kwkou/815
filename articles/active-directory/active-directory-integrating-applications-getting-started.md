@@ -9,8 +9,13 @@
 
 <tags
       ms.service="active-directory"
+      ms.devlang="na"
+      ms.topic="article"
+      ms.tgt_pltfrm="na"
+      ms.workload="identity"
       ms.date="02/09/2016"
-      wacn.date="06/23/2016"/>
+      wacn.date="06/23/2016"
+      ms.author="inhenk"/>
 
 
 # 将 Azure Active Directory 与应用程序集成入门指南

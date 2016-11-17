@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="09/07/2016"
 	wacn.date="10/10/2016"
-	ms.author="tamram"/>
+	ms.author="jwillis;tamram"/>
 
 
 # 为 Blob 存储终结点配置自定义域名

@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="07/11/2016"
-   wacn.date="08/08/2016"/>
+   wacn.date="08/08/2016"
+   ms.author="oanapl"/>
 
 # Service Fabric 运行状况监视简介
 Azure Service Fabric 引入了一个运行状况模型，该模型提供丰富、灵活且可扩展的运行状况评估和报告。这包括对群集的状态和在其中运行的服务进行近实时监视。你可以轻松地获取运行状况信息，并在潜在问题级联和造成大规模停机之前采取措施对其予以更正。在典型的模型中，服务基于其本地视图发送报告，并聚合信息，以提供整体的群集级别视图。

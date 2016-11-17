@@ -9,9 +9,14 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="07/25/2016"
+   wacn.date="09/30/2016"
+   ms.author="larryfr"/>
 
 #从远程桌面连接运行 Pig 作业
 

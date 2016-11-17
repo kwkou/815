@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.devlang="php"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="windows"
+	ms.workload="na"
 	ms.date="02/29/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="cfowler"/>
 
 # 通过 Memcache 协议将 Azure App Service 中的 Web 应用连接到 Redis 缓存
 

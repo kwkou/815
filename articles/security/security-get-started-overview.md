@@ -16,7 +16,7 @@
    ms.workload="na"
    ms.date="08/09/2016"
    wacn.date="10/31/2016"
-   ms.author="lingche"/>  
+   ms.author="terrylan"/>  
 
 
 # Azure 安全概述

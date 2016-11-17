@@ -9,8 +9,13 @@
 
 <tags
    ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
    ms.date="06/22/2015"
-   wacn.date="12/15/2015"/>
+   wacn.date="12/15/2015"
+   ms.author="rashimg"/>
 
 
 # 使用 HDInsight 中的 Hive 处理和分析 JSON 文档

@@ -9,9 +9,14 @@
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="09/02/2016"
-	wacn.date="10/25/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/02/2016"
+   wacn.date="10/25/2016"
+   ms.author="jgao"/>
 
 # 使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
 

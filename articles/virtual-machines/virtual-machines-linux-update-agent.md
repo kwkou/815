@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="12/14/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="01/29/2016"
+	ms.author="mingzhan"/>
 
 
 # 如何从 GitHub 将 VM 上的 Azure Linux 代理更新到最新版本

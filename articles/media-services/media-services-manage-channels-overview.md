@@ -7,10 +7,15 @@
 	manager="erikre" 
 	editor=""/>  
 
-<tags
-	ms.service="media-services"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
+	ms.date="06/22/2016" 
+	wacn.date="08/22/2016"
+	ms.author="juliako"/>
 #使用 Azure 媒体服务实时传送视频流概述
 
 ##概述

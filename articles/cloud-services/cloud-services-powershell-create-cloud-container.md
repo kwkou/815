@@ -9,8 +9,13 @@
 
 <tags
    ms.service="cloud-services"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="na"
    ms.date="04/25/2016"
-   wacn.date="09/26/2016"/>
+   wacn.date="09/26/2016"
+   ms.author="cawa"/>
 
 # 使用 Azure PowerShell 命令可创建一个空的云服务容器
 本文介绍如何使用 Azure PowerShell cmdlet 快速创建云服务容器。请执行以下步骤：

@@ -9,8 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="07/14/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date="08/23/2016"
+	ms.author="jroth" />
 
 # 在 Azure 虚拟机（经典）中对 SQL Server 进行自动备份
 

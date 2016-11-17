@@ -10,8 +10,13 @@
 
 <tags
     ms.service="multiple"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
     ms.date="08/03/2016"
-    wacn.date="09/26/2016"/>
+    wacn.date="09/26/2016"
+    ms.author="monicar"/>
 
 
 # Azure 词汇表：Azure 平台上的云术语字典

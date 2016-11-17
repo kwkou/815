@@ -6,10 +6,15 @@
 	authors="steved0x"
 	manager="douge"
 	editor="tysonn" />
-<tags
+<tags 
 	ms.service="cache"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
 	ms.date="07/13/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="09/12/2016"
+	ms.author="sdanie" />
 
 # 如何管理 Azure Redis 缓存
 

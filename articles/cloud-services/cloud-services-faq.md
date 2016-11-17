@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/19/2016"
-	ms.author="adegeo"
-	wacn.date="10/24/2016"/>  
+	wacn.date="10/24/2016"
+	ms.author="adegeo"/>  
 
 
 # 云服务常见问题

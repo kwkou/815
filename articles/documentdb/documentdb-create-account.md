@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/12/2016"
-	ms.author="mimig"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016"
+	ms.author="mimig"/>  
 
 
 # 如何使用 Azure 门户创建 DocumentDB NoSQL 帐户

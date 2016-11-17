@@ -16,7 +16,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/09/2016"
-   wacn.date="11/08/2016" />
+   wacn.date="11/08/2016"
+   ms.author="sewhee" />
 
 # 开始使用 PowerShell 创建内部负载均衡器
 

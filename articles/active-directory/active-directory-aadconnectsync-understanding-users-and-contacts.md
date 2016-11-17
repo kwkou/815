@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/10/2016"
-	ms.author="markusvi;andkjell"
-	wacn.date="10/31/2016"/>
+	wacn.date="10/31/2016"
+	ms.author="markusvi;andkjell"/>
 
 
 # Azure AD Connect 同步：了解用户和联系人

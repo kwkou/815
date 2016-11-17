@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="11/16/2016"/>
+	wacn.date="11/16/2016"
+	ms.author="fryu;robinsh"/>
 
 # 监视 Azure 经典管理门户中的存储帐户
 

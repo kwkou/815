@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="03/08/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="ahmedelnably"/>
 
 # 使用 Azure 门户预览克隆 Azure App Service 应用#
 

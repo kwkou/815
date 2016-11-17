@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="PHP"
+	ms.topic="article"
 	ms.date="06/01/2016"
-	wacn.date="07/04/2016"/>
+	wacn.date="07/04/2016"
+	ms.author="allclark;yaqiyang"/>
 
 # 下载 Azure SDK for PHP
 

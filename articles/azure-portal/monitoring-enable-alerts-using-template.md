@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/26/2016"
-	ms.author="johnkem"
-	wacn.date="11/14/2016"/>
+	wacn.date="11/14/2016"
+	ms.author="johnkem"/>
 
 
 # 使用 Resource Manager 模板创建指标警报

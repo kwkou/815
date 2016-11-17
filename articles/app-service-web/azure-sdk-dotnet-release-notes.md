@@ -7,10 +7,15 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/25/2016"
-	wacn.date="10/19/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/25/2016" 
+	wacn.date="10/19/2016" 
+	ms.author="juliako"/>
 
 
 

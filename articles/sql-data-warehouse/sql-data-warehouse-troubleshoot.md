@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="08/30/2016"
-   wacn.date="10/17/2016"/>
+   wacn.date="10/17/2016"
+   ms.author="sonyama;barbkess"/>
 
 # 排查 Azure SQL 数据仓库问题
 

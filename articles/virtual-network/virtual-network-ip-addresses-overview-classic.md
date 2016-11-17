@@ -8,9 +8,14 @@
    editor="tysonn"
    tags="azure-service-management" />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/11/2016"
-	wacn.date="09/28/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/11/2016"
+   wacn.date="09/28/2016"
+   ms.author="jdial" />
 
 # Azure 中的 IP 地址（经典）
 可以将 IP 地址分配给与其他 Azure 资源通信的 Azure 资源，也可以将其分配给本地网络和 Internet。可以在 Azure 中使用两种类型的 IP 地址：公共地址和专用地址。

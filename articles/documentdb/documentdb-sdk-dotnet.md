@@ -14,8 +14,8 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/01/2016" 
-	ms.author="rnagpal"
-   	wacn.date="10/18/2016"/>
+	wacn.date="10/18/2016" 
+	ms.author="rnagpal"/>
 
 # DocumentDB API 和 SDK 
 

@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/14/2016" 
-	ms.author="arramac" 
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016" 
+	ms.author="arramac"/>  
 
 
 # Azure DocumentDB 中的分区和缩放

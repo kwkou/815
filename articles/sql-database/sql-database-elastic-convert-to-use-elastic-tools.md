@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-database"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
    ms.date="04/26/2016"
-   wacn.date="06/14/2016"/>
+   wacn.date="06/14/2016"
+   ms.author="ddove"/>
 
 # 迁移要扩展的现有数据库
 

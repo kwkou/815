@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"
-   ms.date="06/27/2016"
-   wacn.date="08/08/2016"/>
+    ms.service="active-directory"
+    ms.devlang="na"
+    ms.tgt_pltfrm="na"
+    ms.workload="identity"
+	ms.topic="article"
+    ms.date="06/27/2016"
+    wacn.date="08/08/2016"
+    ms.author="billmath"/>
 
 # Azure AD Connect 的拓扑
 

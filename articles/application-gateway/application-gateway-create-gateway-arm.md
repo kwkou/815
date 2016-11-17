@@ -7,9 +7,14 @@
    manager="carmonm"
    editor="tysonn"/>
 <tags
-	ms.service="application-gateway"
-	ms.date="09/06/2016"
-	wacn.date="10/25/2016"/>
+   ms.service="application-gateway"
+   ms.devlang="na"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/06/2016"
+   wacn.date="10/25/2016"
+   ms.author="gwallace"/>
 
 
 # 使用 Azure Resource Manager 创建、启动或删除应用程序网关

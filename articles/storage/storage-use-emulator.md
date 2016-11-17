@@ -13,8 +13,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/07/2016" 
-	wacn.date="10/10/2016"
-	ms.author="tamram"/>  
+	wacn.date="10/10/2016" 
+	ms.author="micurd;tamram"/>  
 
 
 # 使用 Azure 存储模拟器进行开发和测试

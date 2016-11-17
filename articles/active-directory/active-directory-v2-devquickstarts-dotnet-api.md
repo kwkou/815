@@ -15,8 +15,8 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="10/10/2016"
-	ms.author="dastrock"
-   	wacn.date="11/08/2016"/>  
+	wacn.date="11/08/2016"
+	ms.author="dastrock"/>  
 
 
 # 保护 MVC Web API

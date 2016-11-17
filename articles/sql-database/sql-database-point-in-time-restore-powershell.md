@@ -9,8 +9,13 @@
 
 <tags
     ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="powershell"
+    ms.workload="NA"
     ms.date="07/17/2016"
-    wacn.date="09/28/2016"/>
+    wacn.date="09/28/2016"
+    ms.author="sstein"/>
 
 # 使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点
 

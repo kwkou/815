@@ -8,9 +8,14 @@
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="09/02/2016"
-	wacn.date="10/25/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="09/02/2016" 
+   wacn.date="10/25/2016"
+   ms.author="jgao"/>
 
 # 将 Apache Phoenix 和 SQuirreL 与 HDinsight 中的 HBase 配合使用  
 

@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/05/2016"/>  
+	wacn.date="09/05/2016"
+	ms.author="giridham;jimpark;trinadhk;markgal"/>  
 
 
 # 在备份保管库中恢复另一 DPM 服务器中的数据

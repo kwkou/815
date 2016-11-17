@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="08/24/2016"
-	wacn.date="10/25/2016"/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2016" 
+	wacn.date="10/25/2016" 
+	ms.author="rachelap"/>
 
 # 管理 Azure App Service 中的 Web 应用
 

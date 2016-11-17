@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/26/2016"
-	ms.author="mimig"
-   	wacn.date="11/10/2016"/>  
+	wacn.date="11/10/2016"
+	ms.author="mimig"/>  
 
 
 # 如何使用 Azure 门户预览执行 DocumentDB 全局数据库复制

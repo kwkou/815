@@ -16,7 +16,8 @@
   ms.tgt_pltfrm="na"
   ms.workload="infrastructure-services"
   ms.date="08/31/2016"
-  wacn.date="11/08/2016" />  
+  wacn.date="11/08/2016"
+  ms.author="sewhee" />  
 
 
 # <a name="get-started"></a>使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器

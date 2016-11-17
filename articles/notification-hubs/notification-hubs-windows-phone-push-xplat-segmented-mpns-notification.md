@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/29/2016" 
-	wacn.date="08/23/2016"/>  
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-phone"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/29/2016"
+	wacn.date="08/23/2016" 
+	ms.author="wesmc"/>  
 
 # 使用通知中心发送突发新闻
 

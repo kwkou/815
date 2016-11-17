@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/06/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date="08/23/2016"
+	ms.author="cynthn"/>
 
 	
 # 创建运行 Windows 的自定义虚拟机

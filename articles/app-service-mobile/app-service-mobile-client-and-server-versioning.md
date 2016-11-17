@@ -8,9 +8,14 @@
   editor=""/>
 
 <tags
-	ms.service="app-service-mobile"
-	ms.date="05/10/2016"
-	wacn.date="10/17/2016"/>
+  ms.service="app-service-mobile"
+  ms.workload="mobile"
+  ms.tgt_pltfrm="mobile-multiple"
+  ms.devlang="dotnet"
+  ms.topic="article"
+  ms.date="05/10/2016"
+  wacn.date="10/17/2016"
+  ms.author="adrianha"/>
 
 # 移动应用和移动服务中的客户端与服务器版本控制
 

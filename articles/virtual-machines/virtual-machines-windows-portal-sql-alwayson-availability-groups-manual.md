@@ -7,10 +7,15 @@
 	manager="jeffreyg"
 	editor="monicar"
 	tags="azure-service-management" />
-<tags 
+<tags
 	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="06/15/2016"
-	wacn.date="11/04/2016"/>
+	wacn.date="11/04/2016"
+	ms.author="MikeRayMSFT" />
 
 # 在 Azure VM 中手动配置 Always On 可用性组 - Resource Manager
 

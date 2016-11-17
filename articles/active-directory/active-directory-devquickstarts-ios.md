@@ -14,8 +14,8 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	ms.author="brandwe"
-	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="brandwe"/>
 
 # 将 Azure AD 集成到 iOS 应用程序中
 

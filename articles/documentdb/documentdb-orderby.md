@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
 	ms.date="07/07/2016" 
-	wacn.date="08/08/2016"/>
+	wacn.date="08/08/2016" 
+	ms.author="arramac"/>
 
 # 使用 Order By 对 DocumentDB 数据进行排序
 Azure DocumentDB 支持使用 JSON 文档的 SQL 对文档进行查询。可以使用 SQL 查询语句中的 ORDER BY 子句对查询结果进行排序。

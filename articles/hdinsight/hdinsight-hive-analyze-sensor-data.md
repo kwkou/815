@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date="08/23/2016" 
+	ms.author="larryfr"/>
 
 #使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
 

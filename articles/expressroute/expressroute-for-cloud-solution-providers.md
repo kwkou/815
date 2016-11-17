@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   ms.author="richcar"
-   wacn.date="10/31/2016"/>  
+   wacn.date="10/31/2016"
+   ms.author="richcar"/>  
 
 
 # 适用于云解决方案提供商 (CSP) 的 ExpressRoute

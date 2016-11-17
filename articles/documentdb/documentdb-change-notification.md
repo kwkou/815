@@ -10,8 +10,13 @@
 
 <tags 
     ms.service="documentdb" 
+    ms.workload="data-services" 
+    ms.tgt_pltfrm="na" 
+    ms.devlang="rest-api" 
+    ms.topic="article" 
     ms.date="06/14/2016" 
-    wacn.date="08/01/2016"/>
+    wacn.date="08/01/2016" 
+    ms.author="b-hoedid"/>
 
 # 使用逻辑应用针对新增或已更改的 DocumentDB 资源发送通知
 

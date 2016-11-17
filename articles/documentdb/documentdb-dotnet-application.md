@@ -17,8 +17,8 @@
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
 	ms.date="08/25/2016" 
-	ms.author="anhoh"
-   	wacn.date="10/18/2016"/>
+	wacn.date="10/18/2016" 
+	ms.author="syamk"/>
 
 # <a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
 

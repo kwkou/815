@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="08/16/2016"
-   wacn.date="10/17/2016"/>  
+   wacn.date="10/17/2016"
+   ms.author="barbkess;sonyama;"/>  
 
 
 # 在 Azure SQL 数据仓库中管理数据库

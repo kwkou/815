@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="08/02/2016"
-	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="adrianha"/>
 
 # 使用适用于 Azure 移动应用的 .NET 后端服务器 SDK
 

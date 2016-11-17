@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
    ms.date="06/14/2016"
-   wacn.date="08/01/2016"/>
+   wacn.date="08/01/2016"
+   ms.author="jrj;barbkess;sonyama"/>
 
 # SQL 数据仓库中的 Group By 选项
 

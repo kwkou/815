@@ -11,8 +11,13 @@
 
 <tags 
 	ms.service="cloud-services" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
 	ms.date="07/30/2016" 
-	wacn.date="09/19/2016"/>
+	wacn.date="09/19/2016" 
+	ms.author="tarcher"/>
 
 # 在 Azure 计算模拟器中使用 Visual Studio 探查器来本地测试云服务的性能
 

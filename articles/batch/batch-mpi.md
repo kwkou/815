@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="08/29/2016"
-	ms.author="marsma" 
-   	wacn.date="11/16/2016"/>
+	wacn.date="11/16/2016"
+	ms.author="marsma" />
 
 # 在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序
 

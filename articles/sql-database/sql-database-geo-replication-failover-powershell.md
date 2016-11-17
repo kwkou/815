@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
-    ms.date="08/29/2016"
+    ms.date="08/29/2016" 
     wacn.date="11/16/2016"
     ms.author="sstein"/>
 

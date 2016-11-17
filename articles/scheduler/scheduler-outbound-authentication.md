@@ -6,10 +6,15 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- ms.service="scheduler" 
+<tags
+ ms.service="scheduler"
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="article"
  ms.date="08/15/2016"
- wacn.date="08/29/2016"/>
+ wacn.date="08/29/2016"
+ ms.author="deli"/>
  
 # 计划程序出站身份验证
 

@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="required"
    ms.date="07/26/2016"
-   wacn.date="08/29/2016"/>
+   wacn.date="08/29/2016"
+   ms.author="vturecek"/>
 
 
 # Service Fabric 反向代理

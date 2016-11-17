@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	ms.author="anhoh"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016"
+	ms.author="kirillg"/>  
 
 
 # 使用查询资源管理器对 DocumentDB 编写、编辑和运行 SQL 查询 

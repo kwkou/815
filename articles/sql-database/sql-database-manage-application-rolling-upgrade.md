@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-database"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="07/16/2016"
-   wacn.date="09/19/2016"/>
+   wacn.date="09/19/2016"
+   ms.author="sashan"/>
 
 # 使用 SQL 数据库活动异地复制管理云应用程序的滚动升级
 

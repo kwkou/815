@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/23/2015"
-	wacn.date="04/07/2016"/>
+	wacn.date="04/07/2016"
+	ms.author="guybo"/>
 
 #使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序#
 

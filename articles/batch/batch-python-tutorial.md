@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
 	ms.date="09/08/2016"
-	ms.author="marsma"
-   	wacn.date="11/16/2016"/>  
+	wacn.date="11/16/2016"
+	ms.author="marsma"/>  
 
 
 # Azure Batch Python 客户端入门

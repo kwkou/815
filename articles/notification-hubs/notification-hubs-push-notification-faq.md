@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="multiple"
+	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="11/11/2016"/>
+	wacn.date="11/11/2016"
+	ms.author="wesmc" />
 
 #使用 Azure 通知中心推送通知 — 常见问题
 

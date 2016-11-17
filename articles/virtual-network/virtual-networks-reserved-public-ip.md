@@ -7,9 +7,14 @@
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/10/2016"
-	wacn.date="03/17/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/10/2016"
+   wacn.date="03/17/2016"
+   ms.author="jdial" />
 
 # 保留 IP 概述
 Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 Azure 管理的公共 IP 地址默认为动态 IP 地址。这意味着，用于给定云服务的 IP 地址 (VIP) 或用于直接访问 VM 或角色示例的 IP 地址 (ILPIP) 可能会在关闭资源或释放资源的情况下不时进行更改。

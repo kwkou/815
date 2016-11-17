@@ -9,8 +9,13 @@
 
 <tags
    ms.service="active-directory"
+   ms.workload="identity"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="article"
    ms.date="06/27/2016"
-   wacn.date="08/01/2016"/>
+   wacn.date="08/01/2016"
+   ms.author="billmath"/>
 
 # Azure AD Connect 的先决条件
 本主题介绍 Azure AD Connect 的先决条件和硬件要求。

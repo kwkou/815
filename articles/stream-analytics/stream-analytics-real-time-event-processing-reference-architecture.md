@@ -16,7 +16,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016"/>  
+	wacn.date="11/14/2016" 
+	ms.author="jeffstok"/>  
 
 
 # 参考体系结构：使用 Azure 流分析进行实时事件处理

@@ -13,8 +13,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/24/2016"
-	ms.author="markusvi;andkjell"
-	wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"
+	ms.author="markusvi;andkjell"/>
 
 
 # 使用 Azure AD Connect 同步实现密码同步

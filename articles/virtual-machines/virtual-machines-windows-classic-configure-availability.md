@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="08/08/2016"
+	ms.author="cynthn"/>
 
 # 如何在经典部署模型中为 Windows 虚拟机配置可用性集
 

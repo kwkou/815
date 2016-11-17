@@ -9,9 +9,14 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="08/23/2016"
-	wacn.date="10/25/2016"/>
+ ms.service="hdinsight"
+ ms.devlang="java"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="08/23/2016"
+ wacn.date="10/25/2016"
+ ms.author="larryfr"/>
 
 #使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
 

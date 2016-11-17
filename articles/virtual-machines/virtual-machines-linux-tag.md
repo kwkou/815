@@ -11,9 +11,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="07/05/2016"
-	wacn.date="08/23/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="07/05/2016"
+   wacn.date="08/23/2016"
+   ms.author="memccror"/>
 
 # 如何在 Azure 中标记 Linux 虚拟机
 

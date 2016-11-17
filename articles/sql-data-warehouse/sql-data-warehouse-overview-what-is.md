@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="09/27/2016"
-   wacn.date="10/31/2016"/>
+   wacn.date="10/31/2016"
+   ms.author="lodipalm;barbkess;mausher;jrj;sonyama;kevin"/>
 
 
 

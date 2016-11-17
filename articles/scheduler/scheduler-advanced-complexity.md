@@ -14,7 +14,7 @@
  ms.topic="article"
  ms.date="08/18/2016"
  wacn.date="10/10/2016"
- ms.author="krisragh"/>
+ ms.author="deli"/>
 
 # 如何使用 Azure 计划程序生成复杂的计划和高级循环  
 

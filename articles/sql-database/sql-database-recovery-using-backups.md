@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-database"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="08/01/2016"
-   wacn.date="09/28/2016"/>
+   wacn.date="09/28/2016"
+   ms.author="sstein"/>
 
 # 使用自动数据库备份恢复 Azure SQL 数据库
 

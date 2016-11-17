@@ -8,10 +8,15 @@
 	editor="monicar" 
 	documentationCenter="nodejs"/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.date="04/18/2016" 
-	wacn.date="09/28/2016"/>
+<tags
+	ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="04/18/2016"
+	wacn.date="09/28/2016"
+	ms.author="moderakh"/>
 
 
 # DocumentDB Node.js 示例

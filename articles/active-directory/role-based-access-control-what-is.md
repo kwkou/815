@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
 	ms.date="08/03/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="kgremban"/>
 
 # Azure 门户中的访问管理入门
 

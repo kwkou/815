@@ -10,10 +10,15 @@
    editor="tysonn"
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/23/2016"
-	wacn.date="06/06/2016"/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/23/2016"
+   wacn.date="06/06/2016"
+   ms.author="jdial" />
 
 # 如何在 Azure 资源管理器中使用 PowerShell 设置静态专用 IP 地址
 

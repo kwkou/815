@@ -8,10 +8,15 @@
    editor=""
    tags="azure-service-management"/>
 
-<tags
-	ms.service="vpn-gateway"
-	ms.date="08/11/2016"
-	wacn.date="08/29/2016"/>
+<tags 
+   ms.service="vpn-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/11/2016"
+   wacn.date="08/29/2016"
+   ms.author="cherylmc" />
 
 # 配置经典部署模型的 VPN 网关
 

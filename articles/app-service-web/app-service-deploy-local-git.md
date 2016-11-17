@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/13/2016"
-	wacn.date="11/10/2016"/>
+	wacn.date="11/10/2016"
+	ms.author="dariagrigoriu"/>
     
 # 从本地 Git 部署到 Azure App Service
 

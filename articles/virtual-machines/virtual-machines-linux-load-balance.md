@@ -8,9 +8,14 @@
 	editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="02/02/2016"
-	wacn.date="03/28/2016"/>
+    ms.service="load-balancer"
+    ms.workload="infrastructure-services"
+    ms.tgt_pltfrm="vm-linux"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/02/2016"
+    wacn.date="03/28/2016"
+    ms.author="sewhee"/>
 
 
 # Azure 基础结构服务的负载均衡#

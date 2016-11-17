@@ -14,8 +14,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="10/05/2016"
-     ms.author="dobett"
-     wacn.date="11/07/2016"/>
+     wacn.date="11/07/2016"
+     ms.author="dobett"/>
 
 # 教程：如何使用 .Net 处理 IoT 中心设备到云的消息
 

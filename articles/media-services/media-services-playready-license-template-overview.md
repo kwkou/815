@@ -8,10 +8,15 @@
 	documentationCenter=""/>  
 
 
-<tags
-	ms.service="media-services"
- 	ms.date="06/22/2016"  
-	wacn.date="08/22/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+ 	ms.date="06/22/2016" 
+ 	wacn.date="08/22/2016"  
+	ms.author="juliako"/>
 
 
 #媒体服务 PlayReady 许可证模板概述

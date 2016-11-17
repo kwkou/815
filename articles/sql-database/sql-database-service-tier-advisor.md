@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="08/08/2016"
-   wacn.date="09/26/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-management" 
+   ms.date="08/08/2016" 
+   wacn.date="09/26/2016"
+   ms.author="sstein"/>
 
 # SQL 数据库定价层建议
 

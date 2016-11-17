@@ -6,8 +6,13 @@
     documentationCenter="na" manager="stevenpo"/>
 <tags 
     ms.service="active-directory" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.tgt_pltfrm="na" 
+    ms.workload="identity" 
     ms.date="02/09/2016" 
-    wacn.date="06/27/2016" />
+    wacn.date="06/27/2016" 
+    ms.author="asmalser" />
 
 #如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录
 

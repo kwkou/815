@@ -15,8 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/18/2016" 
-	ms.author="mimig"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016" 
+	ms.author="syamk"/>  
 
 
 # 了解 DocumentDB 中的存储和可预测性能的预配信息

@@ -9,8 +9,13 @@
 	
 <tags
 	ms.service="batch"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows"
+	ms.workload="big-compute"
 	ms.date="07/25/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="marsma" />
 	
 	
 # 有效地查询 Azure 批处理 ( batch ) 服务

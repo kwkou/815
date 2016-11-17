@@ -9,9 +9,14 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/27/2016"
-	wacn.date="09/19/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="07/27/2016"
+   wacn.date="09/19/2016"
+   ms.author="larryfr"/>
 
 #Apache Storm on HDInsight 简介：面向 Hadoop 的实时分析
 

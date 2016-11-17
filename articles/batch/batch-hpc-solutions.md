@@ -9,8 +9,13 @@
 
 <tags
    ms.service="batch"
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="big-compute"
    ms.date="07/27/2016"
-   wacn.date="09/26/2016"/>
+   wacn.date="09/26/2016"
+   ms.author="danlep"/>
 
 # Azure 云中的批处理( Batch ) 和 HPC 解决方案
 

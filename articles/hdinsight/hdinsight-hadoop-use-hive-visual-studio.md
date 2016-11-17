@@ -9,9 +9,14 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="09/06/2016"
-	wacn.date="10/25/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/06/2016"
+   wacn.date="10/25/2016"
+   ms.author="larryfr"/>
 
 #使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 

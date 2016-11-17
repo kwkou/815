@@ -8,13 +8,14 @@
    editor=""
    tags="azure-service-management"/>
 <tags
+   ms.service="expressroute"
    ms.devlang="na"
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   ms.author="ganesr"
-   wacn.date="10/31/2016"/>
+   wacn.date="10/31/2016"
+   ms.author="ganesr"/>
 
 
 # 使用 PowerShell 创建和修改 ExpressRoute 线路的路由

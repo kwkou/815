@@ -10,14 +10,14 @@
 
 
 <tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="08/21/2016"
-	ms.author="trinadhk; markgal; jimpark;"
-   	wacn.date="10/26/2016"/>  
+   ms.service="backup"
+   ms.workload="storage-backup-recovery"
+	 ms.tgt_pltfrm="na"
+	 ms.devlang="na"
+	 ms.topic="get-started-article"
+	 ms.date="08/21/2016"
+	 wacn.date="10/26/2016"
+	 ms.author="trinadhk; markgal; jimpark;"/>  
 
 
 # 恢复服务保管库 - 常见问题

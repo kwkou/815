@@ -15,7 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/16/2016"
-	wacn.date="10/24/2016"/>
+	wacn.date="10/24/2016"
+	ms.author="tomfitz"/>
 
 
 # 使用标记来组织 Azure 资源

@@ -8,9 +8,14 @@
  editor=""
  tags="azure-resource-manager,azure-service-management"/>
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="07/18/2016"
-	wacn.date="09/05/2016"/>
+ms.service="virtual-machines-windows"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-windows"
+ ms.workload="infrastructure-services"
+ ms.date="07/18/2016"
+ wacn.date="09/05/2016"
+ ms.author="cynthn"/>
 
 # Windows VM 的计算基准测试分数
 

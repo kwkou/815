@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="mobile-cordova-ios"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="08/14/2016"
-    ms.author="mikejo"
-    wacn.date="10/17/2016"/>  
+	ms.date="08/14/2016"
+	wacn.date="10/17/2016"
+    ms.author="adrianha"/>  
 
 
 # 为 Cordova 移动应用启用脱机同步

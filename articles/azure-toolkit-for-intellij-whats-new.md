@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="07/07/2016" 
-	wacn.date="09/28/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="multiple"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="07/07/2016"
+	wacn.date="09/28/2016" 
+	ms.author="robmcm;asirveda;martinsawicki"/>
 
 # Azure Toolkit for IntelliJ 中的新增功能
 

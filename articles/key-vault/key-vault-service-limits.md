@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   ms.author="mbaldwin"
-   wacn.date="10/19/2016"/>
+   wacn.date="10/19/2016"
+   ms.author="mbaldwin"/>
 
 # Azure 密钥保管库服务限制
 

@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/13/2016"
-	wacn.date="05/12/2016"/>
+	wacn.date="05/12/2016"
+	ms.author="igalf"/>
 
 
 # 如何在 Azure VM 上安排计划内的维护

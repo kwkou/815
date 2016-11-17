@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="multiple"
    ms.workload="big-compute"
    ms.date="10/12/2016"
-   ms.author="marsma"
-   wacn.date="11/16/2016"/>  
+   wacn.date="11/16/2016"
+   ms.author="marsma"/>  
 
 
 # Azure Batch 诊断日志记录

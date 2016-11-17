@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
 	ms.date="10/10/2016"
-	ms.author="kgremban"
-	wacn.date="11/08/2016"/>  
+	wacn.date="11/08/2016"
+	ms.author="kgremban"/>  
 
 
 # 使用角色分配来管理对 Azure 订阅资源的访问权限

@@ -14,7 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/14/2016"
-    wacn.date="11/08/2016" />  
+    wacn.date="11/08/2016"
+    ms.author="sethm" />  
 
 
 # 事件中心消息传送异常

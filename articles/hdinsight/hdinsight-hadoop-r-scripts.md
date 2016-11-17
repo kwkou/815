@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/14/2016"
-	wacn.date="10/25/2016"/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+    ms.date="09/14/2016"
+    wacn.date="10/25/2016"
+	ms.author="jgao"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
 

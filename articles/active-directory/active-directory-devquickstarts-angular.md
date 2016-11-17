@@ -14,8 +14,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	ms.author="dastrock"
-	wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"
+	ms.author="dastrock"/>
 
 
 # 如何使用 Azure AD 保护 AngularJS 单页面应用程序

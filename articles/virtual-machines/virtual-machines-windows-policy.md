@@ -12,8 +12,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="04/13/2016"
-	wacn.date="06/07/2016"/>
+	wacn.date="06/07/2016"
+	ms.author="singhkay"/>
 
 # 将策略应用到 Azure Resource Manager 虚拟机
 

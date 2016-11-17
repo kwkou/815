@@ -10,8 +10,13 @@
 
 <tags
    ms.service="best-practice"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="04/06/2016"
-   wacn.date="07/08/2016"/>
+   wacn.date="07/08/2016"
+   ms.author="masashin"/>
 
 # 监视和诊断指南
 

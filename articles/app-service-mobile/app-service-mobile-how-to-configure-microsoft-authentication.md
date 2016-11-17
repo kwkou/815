@@ -14,8 +14,8 @@
 	ms.devlang="multiple"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	ms.author="mahender"
-	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="mahender"/>
 
 # 如何将应用服务应用程序配置为使用 Microsoft 帐户登录
 

@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="07/31/2016"
-   wacn.date="11/16/2016"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management" 
+   ms.date="07/31/2016" 
+   wacn.date="11/16/2016"
+   ms.author="mihaelab"/>
 
 #执行灾难恢复演练
 

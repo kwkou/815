@@ -7,10 +7,15 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags 
-	ms.service="multiple" 
-	ms.date="06/30/2015"  
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/30/2015"
+	wacn.date="10/03/2015"  
+	ms.author="robb"/>
 
 # 介绍 Azure
 

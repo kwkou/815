@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="09/07/2016"
 	wacn.date="10/10/2016"
-	ms.author="tamram"/>
+	ms.author="cbrooks;tamram"/>
 
 
 # 共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 存储
