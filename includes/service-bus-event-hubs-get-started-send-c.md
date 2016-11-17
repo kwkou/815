@@ -1,7 +1,7 @@
 ## 将消息发送到事件中心
 在本部分中，我们将编写用于将事件发送到事件中心的 C 应用。我们将从 [Apache Qpid 项目](http://qpid.apache.org/)使用 Proton AMQP 库。这类似于从 C 中将服务总线队列和主题与 AMQP 配合使用，如[此处](https://code.msdn.microsoft.com/WindowsAzure/Using-Apache-Qpid-Proton-C-afd76504)所示。有关详细信息，请参阅 [Qpid Proton 文档](http://qpid.apache.org/proton/index.html)。
 
-1. 从 [Qpid AMQP Messenger 页](http://qpid.apache.org/components/messenger/index.html)中，单击“安装 Qpid Proton”链接，并根据你的环境，按照说明操作。我们将采用一个 Linux 环境；例如，装有 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
+1. 从 [Qpid AMQP Messenger 页](http://qpid.apache.org/components/)中，单击“安装 Qpid Proton”链接，并根据你的环境，按照说明操作。我们将采用一个 Linux 环境；例如，装有 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
 
 2. 若要编译 Proton 库，请安装以下程序包：
 
