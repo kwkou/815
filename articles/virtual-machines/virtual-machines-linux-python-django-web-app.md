@@ -8,10 +8,15 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="11/17/2015"
-	wacn.date="06/13/2016"/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="11/17/2015" 
+	wacn.date="06/13/2016" 
+	ms.author="huvalo"/>
 	
 # Linux VM 上的 Django Hello World Web 应用程序
 

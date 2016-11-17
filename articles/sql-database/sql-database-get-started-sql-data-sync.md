@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/11/2016"
-	wacn.date="08/15/2016"/>
+	wacn.date="08/15/2016"
+	ms.author="jhubbard"/>
 
 
 #Azure SQL 数据同步入门（预览版）

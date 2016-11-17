@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/19/2016"
-	wacn.date="09/26/2016"/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="hero-article" 
+	ms.date="02/19/2016" 
+	wacn.date="09/26/2016"
+	ms.author="huvalo"/>
 
 
 # 在 Azure 中使用 Django 创建 Web 应用

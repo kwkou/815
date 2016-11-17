@@ -8,9 +8,14 @@
 	editor="" />
 
    <tags
-   	ms.service="batch"
+	ms.service="batch"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows"
+	ms.workload="big-compute"
 	ms.date="07/25/2016"
-   	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="marsma" />
 
 # 通过并发节点任务最大限度提高 Azure 批处理 ( Batch ) 计算资源的使用量
 

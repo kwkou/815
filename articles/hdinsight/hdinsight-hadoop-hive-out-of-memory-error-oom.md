@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
 	ms.date="09/02/2016"
-	wacn.date="10/25/2016"/>
+	wacn.date="10/25/2016"
+	ms.author="rashimg;jgao"/>
 
 # 在 Azure HDInsight 的 Hadoop 中使用 Hive 内存设置解决内存不足 (OOM) 错误
 

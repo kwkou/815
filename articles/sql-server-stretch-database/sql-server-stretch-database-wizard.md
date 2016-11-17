@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="hero-article"
 	ms.date="08/05/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="09/05/2016"
+	ms.author="douglasl"/>
 
 # 通过运行“为数据库启用延伸向导”开始操作
 

@@ -8,9 +8,14 @@ manager="paulettm"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/05/2016"
-	wacn.date="08/23/2016"/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="07/05/2016"
+wacn.date="08/23/2016"
+ms.author="larryfr"/>
 
 #在 HDInsight 群集创建过程中添加 Hive 库
 

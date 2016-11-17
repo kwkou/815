@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="03/24/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/04/2016"
+   ms.author="mfussell"/>
 
 # RunAs：使用不同的安全权限运行 Service Fabric 应用程序
 Azure Service Fabric 能够保护群集中以不同用户帐户（名为 **RunAs**）运行的应用程序。Service Fabric 还使用此用户帐户来保护应用程序所用的资源，例如文件、目录和证书。

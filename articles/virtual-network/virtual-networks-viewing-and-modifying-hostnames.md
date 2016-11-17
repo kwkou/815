@@ -6,10 +6,15 @@
    authors="joaoma"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="04/27/2016"
-	wacn.date="05/30/2016"/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="04/27/2016"
+   wacn.date="05/30/2016"
+   ms.author="jdial" />
 
 # 查看和修改主机名
 

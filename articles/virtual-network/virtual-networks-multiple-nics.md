@@ -9,9 +9,14 @@
    tags="azure-service-management,azure-resource-manager"
 />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date="09/23/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date="09/23/2016"
+   ms.author="jdial" />
 
 # 创建具有多个 NIC 的 VM
 

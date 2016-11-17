@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="vm-multiple"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/15/2016"
-	wacn.date="05/23/2016"/>
+	wacn.date="05/23/2016"
+	ms.author="danlep"/>
 
 # Azure 服务管理 (asm) 模式下的 Azure CLI 命令
 

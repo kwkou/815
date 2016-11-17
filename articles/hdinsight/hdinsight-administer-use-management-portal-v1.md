@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/30/2016"
+	ms.author="jgao"/>
 
 # 使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集
 

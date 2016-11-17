@@ -6,10 +6,15 @@
    authors="joaoma"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="traffic-manager"
-   ms.date="06/10/2016"
-	wacn.date="07/28/2016"/>
+<tags 
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"   
+   ms.date="06/10/2016"   
+   wacn.date="07/28/2016"
+   ms.author="sewhee" />
 
 # 禁用、启用或删除配置文件
 

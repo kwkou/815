@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/23/2016"
-   ms.author="kdotchko"
-   wacn.date="11/07/2016"/>
+   wacn.date="11/07/2016"
+   ms.author="kdotchko"/>
 
 
 # 支持 IoT 中心的其他协议

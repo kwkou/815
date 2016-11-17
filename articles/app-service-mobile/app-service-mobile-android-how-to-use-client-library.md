@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="yuaxu"/>
 
 
 # 如何使用移动应用的 Android 客户端库

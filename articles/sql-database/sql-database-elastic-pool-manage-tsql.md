@@ -9,8 +9,13 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="05/27/2016"
-    wacn.date="08/24/2016"/>
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="data-management" 
+    ms.date="05/27/2016" 
+    wacn.date="08/24/2016"
+    ms.author="srinia"/>
 
 # 使用 Transact-SQL 监视和管理弹性数据库池  
 

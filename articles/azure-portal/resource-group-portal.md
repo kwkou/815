@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/12/2016" 
-	ms.author="tomfitz"
-	wacn.date="10/17/2016"/>  
+	wacn.date="10/17/2016" 
+	ms.author="tomfitz"/>  
 
 
 # 通过门户管理 Azure 资源

@@ -9,9 +9,14 @@
    tags="azure-service-management"
 />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date="04/07/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date="04/07/2016"
+   ms.author="jdial" />
 
 # 如何在 Azure CLI 中创建 NSG（经典）
 

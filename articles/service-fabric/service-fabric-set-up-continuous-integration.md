@@ -8,8 +8,13 @@
    editor="" />
 <tags
    ms.service="multiple"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="multiple"
    ms.date="08/01/2016"
-   wacn.date="08/29/2016" />
+   wacn.date="08/29/2016"
+   ms.author="mthalman" />
 
 # 使用 Visual Studio Team Services 为 Service Fabric 应用程序设置持续集成
 

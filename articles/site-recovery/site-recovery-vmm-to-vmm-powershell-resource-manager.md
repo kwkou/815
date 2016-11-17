@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="site-recovery"
+	ms.workload="backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/19/2016"
-	wacn.date="08/29/2016"/>  
+	wacn.date="08/29/2016"
+	ms.author="sutalasi"/>  
 
 
 # 使用 PowerShell (Resource Manager) 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点

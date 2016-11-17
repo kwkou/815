@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="big-compute"
    ms.date="09/22/2016"
-   ms.author="danlep"
-   wacn.date="11/16/2016"/>  
+   wacn.date="11/16/2016"
+   ms.author="danlep"/>  
 
 
 # Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源

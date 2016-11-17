@@ -7,10 +7,15 @@
 	services="azure-portal" 
 	documentationCenter="na"/>
 
-<tags 
-	ms.service="azure-portal" 
-	ms.date="04/28/2015" 
-	wacn.date="05/09/2016"/>
+<tags
+	ms.service="monitoring-and-diagnostics"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="04/28/2015"
+	wacn.date="05/09/2016"
+	ms.author="robb"/>
 
 # 查看事件和审核日志
 

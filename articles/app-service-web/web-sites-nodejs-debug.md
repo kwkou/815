@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/30/2016"
+	ms.author="robmcm"/>
 
 # 如何在 Azure App Service 中调试 Node.js Web 应用
 

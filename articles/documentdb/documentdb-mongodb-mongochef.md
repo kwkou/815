@@ -15,8 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/25/2016" 
-	ms.author="stbaro"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016" 
+	ms.author="anhoh"/>  
 
 
 # 将 MongoChef 与具有 MongoDB 协议支持的 DocumentDB 帐户配合使用

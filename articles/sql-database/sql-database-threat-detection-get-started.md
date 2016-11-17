@@ -10,8 +10,13 @@
 
 <tags
    ms.service="sql-database"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
    ms.date="07/10/2016"
-   wacn.date="08/22/2016"/>  
+   wacn.date="08/22/2016"
+   ms.author="ronmat; ronitr"/>  
 
 
 

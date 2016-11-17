@@ -9,8 +9,13 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="06/22/2016"
-    wacn.date="11/16/2016"/>
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="powershell"
+    ms.workload="data-management" 
+    ms.date="06/22/2016" 
+    wacn.date="11/16/2016"
+    ms.author="srinia"/>
 
 # 使用 PowerShell 监视和管理弹性数据库池 
 

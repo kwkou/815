@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="na"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="hero-article"
 	ms.date="12/16/2015"
-	wacn.date="05/13/2016"/>
+	wacn.date="05/13/2016"
+	ms.author="dwrede"/>
 
 #  Azure 门户预览概述
 

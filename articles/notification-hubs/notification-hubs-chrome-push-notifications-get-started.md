@@ -16,8 +16,8 @@
 	ms.devlang="JavaScript"
 	ms.topic="hero-article"
 	ms.date="07/22/2016"
-	ms.author="wesmc"
-   	wacn.date="11/11/2016"/>
+	wacn.date="11/11/2016"
+	ms.author="wesmc"/>
 
 
 # 使用 Azure 通知中心向 Chrome 应用发送推送通知

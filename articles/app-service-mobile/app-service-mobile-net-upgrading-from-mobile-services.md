@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="adrianha"/>
 
 # 将现有 .NET Azure 移动服务升级到应用服务
 

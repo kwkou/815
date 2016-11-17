@@ -8,8 +8,13 @@
 
 <tags
 	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="yuaxu"/>
 
 # 为 Android 移动应用启用脱机同步
 

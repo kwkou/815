@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="04/19/2016"
-	wacn.date="06/29/2016" />
+	wacn.date="06/29/2016"
+	ms.author="jolevy"/>
 	
 
 

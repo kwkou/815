@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/05/2016"
-	wacn.date="06/29/2016"/>
+	wacn.date="06/29/2016"
+	ms.author="cynthn"/>
 
 # 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 

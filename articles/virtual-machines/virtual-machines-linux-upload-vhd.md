@@ -11,8 +11,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/15/2016"
-	wacn.date="09/12/2016"/>  
+	wacn.date="09/12/2016"
+	ms.author="iainfou"/>  
 
 
 # 上载自定义磁盘映像并从其创建 Linux VM

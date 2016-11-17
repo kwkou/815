@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="required"
    ms.date="07/29/2016"
-   wacn.date="08/29/2016"/>
+   wacn.date="08/29/2016"
+   ms.author="vturecek"/>
 
 
 # 入门：Service Fabric Web API 服务与 OWIN 自托管

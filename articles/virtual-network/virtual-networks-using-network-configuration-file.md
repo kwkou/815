@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date="04/26/2016"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services" 
+	ms.date="03/15/2016" 
+	wacn.date="04/26/2016"
+	ms.author="jdial"/>
 
 # 使用网络配置文件配置虚拟网络
 

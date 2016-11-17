@@ -15,7 +15,7 @@
  ms.topic="get-started-article"
  ms.date="08/18/2016"
  wacn.date="10/10/2016"
- ms.author="krisragh"/>  
+ ms.author="deli"/>  
 
 
 # 计划程序的概念、术语和实体层次结构

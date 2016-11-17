@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="09/07/2016"
 	wacn.date="10/10/2016"
-	ms.author="tamram"/>
+	ms.author="cbrooks;tamram"/>
 
 # 对 Azure 存储服务的跨域资源共享 (CORS) 支持
 

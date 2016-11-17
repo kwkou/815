@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/02/2016"/>
+	wacn.date="08/02/2016"
+	ms.author="wesmc"/>
 
 #Azure 通知中心富推送
 

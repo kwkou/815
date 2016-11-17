@@ -7,10 +7,15 @@
 	manager="douge"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="mlearned"/>
 
 # 使用“连接服务”添加 Azure 移动服务后，我的 Visual Studio .NET 项目发生了什么情况？
 

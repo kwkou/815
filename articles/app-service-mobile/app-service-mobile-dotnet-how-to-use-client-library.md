@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="06/11/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="adrianha"/>
 
 # 如何使用 Azure 移动应用的托管客户端
 

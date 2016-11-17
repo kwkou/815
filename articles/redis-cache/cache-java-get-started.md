@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="cache"
+	ms.devlang="java"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
 	ms.date="08/24/2016"
-	wacn.date="10/25/2016"/>
+	wacn.date="10/25/2016"
+	ms.author="sdanie"/>
 
 # 如何将 Azure Redis 缓存与 Java 配合使用
 

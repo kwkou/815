@@ -6,10 +6,15 @@
    authors="telmosampaio"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/22/2016"
-	wacn.date="05/24/2016"/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/22/2016"
+   wacn.date="05/24/2016"
+   ms.author="jdial" />
 
 # 如何设置静态内部专用 IP
 大多数情况下，你不需要指定虚拟机的静态内部 IP 地址。虚拟网络中的 VM 将自动从你所指定的范围接收内部 IP 地址。但在某些情况下，需要为特定 VM 指定静态 IP 地址。例如，在你的 VM 需要运行 DNS 或将要成为域控制器的情况下。

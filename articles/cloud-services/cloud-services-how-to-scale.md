@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/06/2016"
-	ms.author="adegeo"
-	wacn.date="10/24/2016"/>  
+	wacn.date="10/24/2016"
+	ms.author="adegeo"/>  
 
 
 # 如何自动缩放云服务

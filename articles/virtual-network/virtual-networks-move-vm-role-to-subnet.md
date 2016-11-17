@@ -6,10 +6,15 @@
    authors="telmosampaio"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/22/2016"
-	wacn.date="05/24/2016"/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/22/2016"
+   wacn.date="05/24/2016"
+   ms.author="jdial" />
 
 # 如何将 VM 或角色实例移到其他子网
 

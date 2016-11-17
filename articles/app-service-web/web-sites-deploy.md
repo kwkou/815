@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="11/14/2016"/>  
+	wacn.date="11/14/2016"
+	ms.author="cephalin;dariac"/>  
     
 # 将应用部署到 Azure App Service
 

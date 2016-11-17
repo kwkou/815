@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/30/2016"
+	ms.author="jgao"/>
 
 
 # 在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流

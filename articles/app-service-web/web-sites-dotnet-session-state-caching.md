@@ -8,9 +8,14 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
+	ms.service="app-service-web" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="get-started-article" 
 	ms.date="06/27/2016" 
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016" 
+	ms.author="riande"/>
 
 
 # 将 Azure App Service 中的 Azure Redis 缓存用于会话状态

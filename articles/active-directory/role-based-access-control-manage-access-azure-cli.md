@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
 	ms.date="07/22/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="kgremban"/>
 
 # 使用 Azure 命令行接口管理基于角色的访问控制
 

@@ -15,8 +15,8 @@
 	ms.devlang="python"
 	ms.topic="hero-article"
 	ms.date="08/03/2016"
-	ms.author="adegeo"
-	wacn.date="10/24"/>
+	wacn.date="10/24"
+	ms.author="adegeo"/>
 
 
 # 用于 Visual Studio 的 Python 工具中的 Python Web 角色和辅助角色

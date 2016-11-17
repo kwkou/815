@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-network"
-	ms.date="02/01/2016"
-	wacn.date="09/28/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/01/2016"
+   wacn.date="09/28/2016"
+   ms.author="jonor;sivae"/>
 
 # 示例 3 – 构建外围网络以通过防火墙、UDR 和 NSG 保护网络
 

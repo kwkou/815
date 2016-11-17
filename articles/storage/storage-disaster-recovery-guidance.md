@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="11/16/2016"/>
+	wacn.date="11/16/2016"
+	ms.author="jutang;robinsh"/>
 
 
 # 在 Azure 存储空间中断时该怎么办

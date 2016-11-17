@@ -8,9 +8,14 @@
  editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="08/23/2016"
-	wacn.date="10/25/2016"/>
+ms.service="hdinsight"
+ms.devlang="java"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="08/23/2016"
+wacn.date="10/25/2016"
+ms.author="larryfr"/>
 
 #使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据
 

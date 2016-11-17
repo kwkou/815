@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/25/2016" 
-	ms.author="mimig"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016" 
+	ms.author="mimig"/>  
 
 
 # 提升你的 DocumentDB 帐户

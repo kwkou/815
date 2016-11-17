@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="09/05/2016"
+	ms.author="asmalser-msft"/>
 
 #Azure Active Directory 的应用程序访问与单一登录是什么？
 

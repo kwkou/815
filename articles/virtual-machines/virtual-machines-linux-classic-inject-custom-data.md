@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/25/2016"/>
+	wacn.date="10/25/2016"
+	ms.author="rasquill"/>
 
 
 #将自定义数据注入到 Azure 虚拟机中

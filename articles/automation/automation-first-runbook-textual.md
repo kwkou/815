@@ -8,9 +8,14 @@
     editor=""
 	keywords="powershell 工作流, powershell 工作流示例, 工作流 powershell"/>
 <tags
-	ms.service="automation"
-	ms.date="07/19/2016"
-	wacn.date="09/30/2016"/>
+    ms.service="automation"
+    ms.workload="tbd"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="07/19/2016"
+    wacn.date="09/30/2016"
+    ms.author="magoedte;bwren"/>
 
 # 我的第一个 PowerShell 工作流 Runbook
 

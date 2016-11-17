@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/22/2016"
-	ms.author="curtand"
-	wacn.date="10/31/2016"/>
+	wacn.date="10/31/2016"
+	ms.author="curtand"/>
 
 # 在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户
 

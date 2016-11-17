@@ -16,8 +16,8 @@
   ms.tgt_pltfrm="na"
   ms.workload="na"
   ms.date="09/26/2016"
-  ms.author="araguila"
-  wacn.date="10/31/2016"/>
+  wacn.date="10/31/2016"
+  ms.author="araguila"/>
 
    
 # 有关 IoT 套件的常见问题

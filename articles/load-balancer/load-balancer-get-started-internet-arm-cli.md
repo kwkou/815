@@ -16,7 +16,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/31/2016"
-   wacn.date="11/08/2016" />  
+   wacn.date="11/08/2016"
+   ms.author="sewhee" />  
 
 
 # 使用 Azure CLI 创建内部负载均衡器

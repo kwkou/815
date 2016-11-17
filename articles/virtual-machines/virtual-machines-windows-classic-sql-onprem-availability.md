@@ -8,10 +8,15 @@
 	editor="monicar"
 	tags="azure-service-management"/>
 
-<tags 
+<tags
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="07/12/2016"
-	wacn.date="08/23/2016" />
+	wacn.date="08/23/2016"
+	ms.author="MikeRayMSFT" />
 
 # 将本地 AlwaysOn 可用性组扩展到 Azure
 

@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="09/07/2016"
-	ms.author="marsma" 
-   	wacn.date="10/26/2016"/>  
+	wacn.date="10/26/2016"
+	ms.author="marsma" />  
 
 
 # 保存 Azure Batch 作业和任务输出

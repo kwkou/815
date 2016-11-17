@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotNet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="08/09/2016"
-   wacn.date="08/29/2016"/>
+   wacn.date="08/29/2016"
+   ms.author="karolz@microsoft.com"/>
 
 
 # 将 Elasticsearch 用作 Service Fabric 应用程序跟踪存储

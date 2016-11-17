@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-html"
+	ms.devlang="javascript"
+	ms.topic="article"
 	ms.date="05/23/2016"
-	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="adrianha"/>
 
 # 如何使用适用于 Azure 移动应用的 Apache Cordova 客户端库
 

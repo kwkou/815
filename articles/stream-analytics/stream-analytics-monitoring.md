@@ -16,7 +16,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016" />
+	wacn.date="11/14/2016" 
+	ms.author="jeffstok"/>
 
 # 了解流分析作业监视以及如何监视查询
 

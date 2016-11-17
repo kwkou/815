@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
    ms.date="08/08/2016"
-   wacn.date="09/26/2016"/>
+   wacn.date="09/26/2016"
+   ms.author="lodipalm;sonyama;barbkess"/>
 
 # 将数据从 SQL Server 载入 Azure SQL 数据仓库 (SSIS)
 

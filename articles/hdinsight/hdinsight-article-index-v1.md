@@ -9,8 +9,13 @@
 
 <tags
    ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="index-page"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
    ms.date="08/17/2015"
-   wacn.date="01/15/2016"/>
+   wacn.date="01/15/2016"
+   ms.author="cjgronlund"/>
 
 # Azure 经典管理门户的 HDInsight 文章索引
 

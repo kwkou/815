@@ -9,9 +9,14 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="08/16/2016"
-	wacn.date="10/25/2016"/>
+ ms.service="hdinsight"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="08/16/2016"
+ wacn.date="10/25/2016"
+ ms.author="larryfr"/>
 
 # 使用 Power BI 直观显示 Apache Storm 拓扑中的数据
 

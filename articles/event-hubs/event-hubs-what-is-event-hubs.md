@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="event-hubs"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="08/17/2016"
-	wacn.date="10/10/2016"/>  
+	wacn.date="10/10/2016"
+	ms.author="sethm"/>  
 
 
 # 什么是 Azure 事件中心？

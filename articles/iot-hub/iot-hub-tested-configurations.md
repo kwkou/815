@@ -14,8 +14,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="10/04/2016"
-     ms.author="hegate"
-     wacn.date="11/07/2016"/>
+     wacn.date="11/07/2016"
+     ms.author="hegate"/>
 
 # OS 平台和硬件与设备 SDK 的兼容性
 

@@ -8,8 +8,13 @@
  editor=""/>
 <tags
  ms.service="scheduler"
+ ms.workload="infrastructure-services"
+ ms.tgt_pltfrm="na"
+ ms.devlang="dotnet"
+ ms.topic="hero-article"
  ms.date="08/10/2016"
- wacn.date="10/11/2016"/>
+ wacn.date="10/11/2016"
+ ms.author="deli"/>
 
 # Azure 门户预览中的 Azure 计划程序入门
 

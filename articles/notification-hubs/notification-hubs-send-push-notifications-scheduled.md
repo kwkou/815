@@ -9,8 +9,13 @@
 	editor=""/>
 <tags
 	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/23/2016"/>
+	wacn.date="08/23/2016"
+	ms.author="wesmc"/>
 
 # 如何：发送预定通知
 

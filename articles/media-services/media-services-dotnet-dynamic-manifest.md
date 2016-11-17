@@ -7,10 +7,15 @@
 	manager="dwrede,cenkdin" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
-	ms.date="07/18/2016"
-	wacn.date="09/28/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="ne" 
+	ms.topic="article" 
+	ms.date="07/18/2016" 
+	wacn.date="09/28/2016"
+	ms.author="juliako;cenkdin"/>
 
 
 #使用 Azure 媒体服务 .NET SDK 创建筛选器

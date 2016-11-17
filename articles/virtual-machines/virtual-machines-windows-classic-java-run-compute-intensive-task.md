@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="Java"
+	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/30/2016"/>
+	wacn.date="09/30/2016"
+	ms.author="robmcm"/>
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 

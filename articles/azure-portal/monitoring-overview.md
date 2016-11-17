@@ -8,14 +8,14 @@
 	documentationCenter="monitoring-and-diagnostics"/>
 
 <tags
-	ms.service="monitoring-and-diagnostics"
+	ms.service="monitoring-and-diagnostics"l
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/11/2016"
-	ms.author="robb"
-	wacn.date="11/14/2016"/>  
+	wacn.date="11/14/2016"
+	ms.author="robb"/>  
 
 
 # Azure 监视概述

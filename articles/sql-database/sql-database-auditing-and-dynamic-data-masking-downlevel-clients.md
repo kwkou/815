@@ -7,10 +7,15 @@
 	manager="jhubbard"
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/10/2016"
-	wacn.date="08/15/2016"/>
+	wacn.date="08/15/2016"
+	ms.author="ronitr"/>
  
 # SQL 数据库 - 针对审核的下层客户端支持和 IP 终结点更改
 

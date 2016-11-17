@@ -15,8 +15,8 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="09/19/2016"
- ms.author="elioda"
- wacn.date="11/07/2016"/>  
+ wacn.date="11/07/2016"
+ ms.author="elioda"/>  
 
 
 # 缩放 IoT 中心

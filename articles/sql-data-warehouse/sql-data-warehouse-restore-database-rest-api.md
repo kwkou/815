@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="09/21/2016"
-   wacn.date="10/31/2016"/>  
+   wacn.date="10/31/2016"
+   ms.author="lakshmir;barbkess;sonyama"/>  
 
 
 # 还原 Azure SQL 数据仓库 (REST API)

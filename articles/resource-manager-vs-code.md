@@ -9,8 +9,13 @@
 
 <tags
    ms.service="azure-resource-manager"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="06/29/2016"
-   wacn.date="08/01/2016"/>
+   wacn.date="08/01/2016"
+   ms.author="chmatsk;tomfitz"/>
 
 # 在 Visual Studio Code 中使用 Azure Resource Manager 模板
 

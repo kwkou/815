@@ -10,8 +10,13 @@
 
 <tags
    ms.service="azure-resource-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="06/23/2016"
-   wacn.date="08/15/2016"/>
+   wacn.date="08/15/2016"
+   ms.author="tomfitz"/>
 
 # 在部署期间传递安全值
 

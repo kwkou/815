@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="07/11/2016"
-   wacn.date="08/08/2016"/>
+   wacn.date="08/08/2016"
+   ms.author="oanapl"/>
 
 # 查看 Service Fabric 运行状况报告
 Azure Service Fabric 引入了一种由运行状况实体组成的[运行状况模型](/documentation/articles/service-fabric-health-introduction/)，系统组件和监视器可以在其上报告它们监视的本地状况。[运行状况存储](/documentation/articles/service-fabric-health-introduction/#health-store)聚合所有运行状况数据以确定实体是否正常运行。

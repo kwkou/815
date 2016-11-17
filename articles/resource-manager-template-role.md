@@ -9,8 +9,13 @@
 
 <tags
    ms.service="azure-resource-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="04/05/2016"
-   wacn.date="05/05/2016"/>
+   wacn.date="05/05/2016"
+   ms.author="tomfitz"/>
 
 # 角色分配模板架构
 

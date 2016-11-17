@@ -15,8 +15,8 @@
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="08/19/2016" 
-	ms.author="wesmc"
-   	wacn.date="11/11/2016"/>  
+	wacn.date="11/11/2016" 
+	ms.author="wesmc"/>  
 
 
 #Azure 通知中心 - 诊断指南

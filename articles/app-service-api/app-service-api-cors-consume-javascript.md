@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-api"
+	ms.workload="na"
+	ms.tgt_pltfrm="dotnet"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="05/27/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="rachelap"/>
 
 # 借助 CORS 从 JavaScript 使用 API 应用
 

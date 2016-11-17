@@ -9,8 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/07/2016"
-	wacn.date="08/15/2016"/>
+	wacn.date="08/15/2016"
+	ms.author="carlasab"/>
 
 
 # 将 SQL Server 数据库迁移到 Azure VM 中的 SQL Server

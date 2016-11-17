@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	ms.author="asteen"
-   	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="asteen"/>
 
 # 如何更新自己的密码
 如果不确定如何管理自己的工作或学校帐户密码，来这里就对了！ 请阅读以下内容，了解如何执行常见的步骤，例如更改密码、重置密码或注册密码重置。

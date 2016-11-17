@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="batch"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows"
+	ms.workload="big-compute"
 	ms.date="08/03/2016"
-	wacn.date="09/12/2016"/>  
+	wacn.date="09/12/2016"
+	ms.author="marsma"/>  
 
 
 # 使用 Batch Management .NET 管理 Azure Batch 帐户和配额

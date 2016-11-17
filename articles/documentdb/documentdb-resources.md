@@ -15,8 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	ms.author="anhoh"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016" 
+	ms.author="anhoh"/>  
 
 
 # DocumentDB 分层资源模型和概念

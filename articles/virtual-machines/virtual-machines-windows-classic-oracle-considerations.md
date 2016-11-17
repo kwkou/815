@@ -8,9 +8,14 @@
 	tags="azure-service-management"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="09/06/2016"
-	wacn.date="10/25/2016" />
+ms.service="virtual-machines-windows"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="vm-windows"
+ms.workload="infrastructure-services"
+ms.date="09/06/2016"
+wacn.date="10/25/2016"
+ms.author="rclaus" />
 
 #有关 Oracle 虚拟机映像的其他注意事项
 

@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="notification-hubs" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="python" 
+	ms.devlang="php" 
+	ms.topic="article" 
 	ms.date="06/29/2016" 
-	wacn.date=""/>
+	wacn.date="11/15/2016" 
+	ms.author="wesmc"/>
 
 # 如何通过 Python 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]

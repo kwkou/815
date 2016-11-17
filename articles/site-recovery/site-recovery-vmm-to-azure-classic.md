@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="site-recovery"
+	ms.workload="backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="hero-article"
 	ms.date="05/06/2016"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/06/2016"
+	ms.author="raynew"/>
 
 #  将 VMM 云中的 Hyper-V 虚拟机复制到 Azure
 

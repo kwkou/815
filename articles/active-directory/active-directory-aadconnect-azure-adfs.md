@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="07/13/2016"
-	wacn.date="08/01/2016"/>
+	wacn.date="08/01/2016"
+	ms.author="anandy;billmath"/>
 
 # Azure 中的 AD FS 部署 
 

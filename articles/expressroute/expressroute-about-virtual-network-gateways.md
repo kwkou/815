@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/03/2016"
-   ms.author="cherylmc"
-   wacn.date="10/31/2016"/>  
+   wacn.date="10/31/2016"
+   ms.author="cherylmc" />  
 
 
 # 关于 ExpressRoute 的虚拟网络网关

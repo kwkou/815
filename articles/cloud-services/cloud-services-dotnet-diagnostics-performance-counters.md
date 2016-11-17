@@ -8,8 +8,13 @@
    editor="tysonn" />
 <tags
    ms.service="cloud-services"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="02/29/2016"
-   wacn.date="04/06/2016" />
+   wacn.date="04/06/2016"
+   ms.author="robb" />
 
 # 在 Azure 应用程序中创建和使用性能计数器
 

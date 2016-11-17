@@ -11,9 +11,14 @@
    tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="08/19/2015"
-	wacn.date="10/25/2016"/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2015"
+   wacn.date="10/25/2016"
+   ms.author="tomfitz"/>
 
 # Azure 资源管理器部署模型中 Windows 应用程序的 Azure 计算、网络和存储提供程序
 

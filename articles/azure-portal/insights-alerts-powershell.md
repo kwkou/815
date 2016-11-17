@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/23/2016"
-	ms.author="robb"
-	wacn.date="11/14/2016"/>
+	wacn.date="11/14/2016"
+	ms.author="robb"/>
 
 
 # 使用 PowerShell 为 Azure 服务创建警报 

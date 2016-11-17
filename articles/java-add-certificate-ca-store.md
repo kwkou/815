@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016" 
+	ms.author="robmcm"/>
 
 # 将证书添加到 Java CA 证书存储
 以下步骤演示如何将证书颁发机构 (CA) 证书添加到 Java CA 证书 (cacerts) 存储。使用的示例适用于 Twilio 服务所需的 CA 证书。本主题中稍后提供的信息将介绍如何安装 Azure Service Bus 的 CA 证书。

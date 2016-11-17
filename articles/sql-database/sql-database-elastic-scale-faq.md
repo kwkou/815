@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
 	ms.date="05/03/2016" 
-	wacn.date="05/23/2016"/>
+	wacn.date="05/23/2016" 
+	ms.author="ddove"/>
 
 # 弹性数据库工具常见问题 
 

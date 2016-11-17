@@ -10,8 +10,13 @@
 
 <tags
  ms.service="iot-suite"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="na"
  ms.date="08/16/2016"
- wacn.date="10/10/2016"/>  
+ wacn.date="10/10/2016"
+ ms.author="yurid"/>  
 
 
 [AZURE.INCLUDE [iot-security-ground-up](../../includes/iot-security-ground-up.md)]

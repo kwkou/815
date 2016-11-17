@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/17/2016" 
-	wacn.date="10/10/2016"
+	wacn.date="10/10/2016" 
 	ms.author="juliako"/>
 
 #开始使用 REST 按需传送内容 

@@ -14,8 +14,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/12/2016"
-	ms.author="adrianha;ricksal"
-	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="adrianha"/>
 
 # 如何使用适用于 Azure 移动应用的 JavaScript 客户端库
 

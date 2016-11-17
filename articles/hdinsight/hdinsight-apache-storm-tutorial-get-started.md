@@ -10,9 +10,14 @@
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="09/07/2016"
-	wacn.date="10/25/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="java"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/07/2016"
+   wacn.date="10/25/2016"
+   ms.author="larryfr"/>
 
 
 # Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门

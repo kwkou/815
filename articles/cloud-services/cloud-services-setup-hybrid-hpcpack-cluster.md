@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="cloud-services"
+	ms.workload="big-compute"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/14/2016"
-	wacn.date="08/22/2016"/>
+	wacn.date="08/22/2016"
+	ms.author="danlep"/>
 
 
 

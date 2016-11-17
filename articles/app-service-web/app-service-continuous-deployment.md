@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/23/2016"
-	wacn.date="11/14/2016"/>
+	wacn.date="11/14/2016"
+	ms.author="dariagrigoriu"/>
     
 # 连续部署到 Azure App Service
 

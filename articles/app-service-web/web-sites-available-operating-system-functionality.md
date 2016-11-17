@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/01/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/01/2016" 
+	wacn.date="09/26/2016" 
+	ms.author="cephalin"/>
 
 # Azure App Service 上的操作系统功能 #
 

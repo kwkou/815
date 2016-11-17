@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="07/06/2015"
-   wacn.date="08/08/2016"/>
+   wacn.date="08/08/2016"
+   ms.author="vturecek"/>
 
 # 有关 Service Fabric Reliable Actors 类型序列化的说明
 

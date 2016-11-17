@@ -8,9 +8,14 @@
    editor=""
    tags="azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="07/07/2016"
-	wacn.date="08/08/2016"/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="big-compute"
+   ms.date="07/07/2016"
+   wacn.date="08/08/2016"
+   ms.author="danlep"/>
 
 # 使用 HPC Pack IaaS 部署脚本创建 Windows 高性能计算 (HPC) 群集
 

@@ -10,9 +10,14 @@
    keywords=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="03/04/2016"
-	wacn.date="09/26/2016"/>
+   ms.service="app-service"
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="03/04/2016"
+   wacn.date="09/26/2016"
+   ms.author="cfowler"/>
 
 # Azure 应用服务本地缓存概述
 

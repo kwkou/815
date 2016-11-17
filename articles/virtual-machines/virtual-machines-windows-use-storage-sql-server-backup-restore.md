@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="07/22/2016"
-	wacn.date="09/05/2016"/>
+	wacn.date="09/05/2016"
+	ms.author="mikeray"/>
 
 # 将 Azure 存储空间用于 SQL Server 备份和还原
 

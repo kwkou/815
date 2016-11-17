@@ -10,8 +10,13 @@
 
 <tags
    ms.service="azure-resource-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-multiple"
+   ms.workload="infrastructure"
    ms.date="06/14/2016"
-   wacn.date="07/25/2016"/>
+   wacn.date="07/25/2016"
+   ms.author="tomfitz"/>
 
 # 使用 Azure PowerShell 对资源组部署进行故障排除
 

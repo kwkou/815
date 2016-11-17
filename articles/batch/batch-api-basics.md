@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
 	ms.date="09/08/2016"
-	ms.author="marsma"
-   	wacn.date="11/16/2016"/>  
+	wacn.date="11/16/2016"
+	ms.author="marsma"/>  
 
 
 # 面向开发人员的 Batch 功能概述

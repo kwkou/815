@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="get-started-article"
 	ms.date="07/22/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="rachelap"/>
 
 # 使用 Visual Studio 将 ASP.NET Web 应用部署到 Azure App Service
 

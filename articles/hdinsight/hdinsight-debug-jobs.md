@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="10/25/2016"/>
+	wacn.date="10/25/2016"
+	ms.author="jgao"/>
 
 # 分析 HDInsight 日志
 

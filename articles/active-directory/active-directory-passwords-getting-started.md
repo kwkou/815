@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/05/2016"
-	ms.author="asteen"
-	wacn.date="11/08/2016"/>  
+	wacn.date="11/08/2016"
+	ms.author="asteen"/>  
 
 
 # 密码管理入门

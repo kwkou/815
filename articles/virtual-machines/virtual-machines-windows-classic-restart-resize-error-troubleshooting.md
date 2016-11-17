@@ -11,9 +11,14 @@
    tags="top-support-issue"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/16/2016"
-	wacn.date="07/25/2016"/>
+   ms.service="virtual-machines-windows"
+   ms.topic="support-article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="required"
+   ms.date="06/16/2016"
+   wacn.date="07/25/2016"
+   ms.devlang="na"
+   ms.author="delhan"/>
 
 # 排查在 Azure 中重新启动或调整现有 Windows 虚拟机时遇到的经典部署问题
 

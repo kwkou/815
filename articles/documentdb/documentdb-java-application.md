@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="NA"
 	ms.workload="data-services"
 	ms.date="08/24/2016"
-	ms.author="anhoh"
-   	wacn.date="10/18/2016"/>
+	wacn.date="10/18/2016"
+	ms.author="denlee"/>
 
 # 使用 DocumentDB 生成一个 Java Web 应用程序
 

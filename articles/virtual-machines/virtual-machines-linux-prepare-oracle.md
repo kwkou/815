@@ -6,10 +6,15 @@
 	documentationCenter=""
 	tags="azure-service-management,azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines-linux" 
-	ms.date="06/22/2015" 
-	wacn.date="09/18/2015" />
+<tags
+ms.service="virtual-machines-linux"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="vm-linux"
+ms.workload="infrastructure-services"
+ms.date="06/22/2015"
+wacn.date="09/18/2015"
+ms.author="bbenz" />
 
 #为 Azure 准备 Oracle Linux 虚拟机
 

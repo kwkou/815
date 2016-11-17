@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="09/07/2016"
 	wacn.date="10/10/2016"
-	ms.author="tamram"/>  
+	ms.author="jwillis;tamram"/>  
 
 
 # 创建 Blob 快照

@@ -15,7 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="08/16/2016"
-   wacn.date="10/17/2016"/>  
+   wacn.date="10/17/2016"
+   ms.author="kevin;barbkess;sonyama"/>  
 
 
 # 将 Azure 流分析与 SQL 数据仓库配合使用

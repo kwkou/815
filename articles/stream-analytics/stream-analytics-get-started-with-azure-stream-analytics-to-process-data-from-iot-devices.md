@@ -18,6 +18,7 @@
 	ms.workload="data-services"
 	ms.date="09/26/2016"
 	wacn.date="11/14/2016"
+	ms.author="jeffstok"
 />
 
 # 开始使用 Azure 流分析处理来自 IoT 设备的数据

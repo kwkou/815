@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	ms.author="billmath"
-   	wacn.date="11/16/2016"/>
+	wacn.date="11/16/2016"
+	ms.author="kgremban"/>
 
 # Azure 多重身份验证常见问题
 

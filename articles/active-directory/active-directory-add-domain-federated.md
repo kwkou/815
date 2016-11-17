@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/04/2016"
-	ms.author="curtand;jeffsta"
-	wacn.date="10/31/2016"/>  
+	wacn.date="10/31/2016"
+	ms.author="curtand;jeffsta"/>  
 
 
 # 将自定义域名添加到 Azure Active Directory

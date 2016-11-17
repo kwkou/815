@@ -14,8 +14,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/12/2016"
-     ms.author="dobett"
-     wacn.date="10/10/2016"/>
+     wacn.date="10/10/2016"
+     ms.author="dobett"/>
 
 
 # 适用于 Node.js 的 Azure IoT 中心入门

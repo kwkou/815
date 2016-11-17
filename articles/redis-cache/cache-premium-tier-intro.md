@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/29/2016"
-	wacn.date="09/05/2016"/>  
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="06/29/2016" 
+	wacn.date="09/05/2016" 
+	ms.author="sdanie"/>  
 
 
 # Azure Redis 缓存高级层简介

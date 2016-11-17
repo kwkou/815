@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="site-recovery"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery"
 	ms.date="07/06/2016"
-	wacn.date="08/01/2016"/>
+	wacn.date="08/01/2016"
+	ms.author="raynew"/>
 
 # 使用 Site Recovery 进行本地到本地 Hyper-V 复制的性能测试和缩放结果
 
